@@ -1,4 +1,5 @@
-# $OpenBSD: $
+# $OpenBSD$
+# $RedRiver$
 
 COMMENT=	"Functions for converting to/from bencoded strings"
 
