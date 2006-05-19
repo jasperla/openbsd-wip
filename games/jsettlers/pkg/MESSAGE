@@ -1,0 +1,25 @@
+To start the server and some robot players enter the following commands:
+
+  # Start the server 
+  java -jar ${PREFIX}/bin/JSettlersServer.jar 8880 10 dbUser dbPass &
+
+  # If MySQL is not installed and running (See "Database Setup"), you
+  # will see a warning with the appropriate explanation: 
+  #
+  #  Warning: failed to initialize database: ....  
+  # 
+  # The server will function normally except that user accounts cannot 
+  # be maintained.
+
+  # Start the robot players 
+  java -cp ${PREFIX}/bin/JSettlersServer.jar \
+    soc.robot.SOCRobotClient localhost 8880 robot1 passwd &
+  java -cp ${PREFIX}/bin/JSettlersServer.jar \
+    soc.robot.SOCRobotClient localhost 8880 robot2 passwd &
+  java -cp ${PREFIX}/bin/JSettlersServer.jar \
+    soc.robot.SOCRobotClient localhost 8880 robot3 passwd &
+
+
+Now start the player client with the following command:
+
+  java -jar ${PREFIX}/bin/JSettlers.jar localhost 8880
