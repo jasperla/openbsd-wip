@@ -1,11 +1,13 @@
 # $OpenBSD$
-# $RedRiver$
+# $RedRiver: Makefile,v 1.1 2006/05/19 23:24:07 andrew Exp $
 
 COMMENT=	"a version of the board game Settlers of Catan written in Java"
 COMMENT-web=	"web pages to make it easy for clients to connect to your jsettlers server"
 
 DISTNAME=	jsettlers-1.0.6
 PKGNAME-web=	${DISTNAME:S/-/-web-/}
+
+MAINTAINER=	Andrew Fresh <andrew@mad-techies.org>
 
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=jsettlers/}
