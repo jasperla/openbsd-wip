@@ -1,0 +1,12 @@
+To setup the http server and visit it on the web you could add something
+like this to your httpd.conf:
+
+Alias /jsettlers/ "/var/www/jsettlers/"
+
+<Directory "/var/www/jsettlers">
+    Options MultiViews
+    AllowOverride None
+    Order allow,deny
+    Allow from all
+</Directory>
+
