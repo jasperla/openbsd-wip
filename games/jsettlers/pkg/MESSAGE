@@ -11,7 +11,8 @@ To start the server and some robot players enter the following commands:
   # The server will function normally except that user accounts cannot 
   # be maintained.
 
-  # Start the robot players 
+  # Wait a few seconds then start the robot players 
+  sleep 10
   java -cp ${PREFIX}/bin/JSettlersServer.jar \
     soc.robot.SOCRobotClient localhost 8880 robot1 passwd &
   java -cp ${PREFIX}/bin/JSettlersServer.jar \
