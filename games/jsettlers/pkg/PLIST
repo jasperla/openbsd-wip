@@ -1,5 +1,5 @@
 @comment $OpenBSD$
-@commetn $RedRiver$
+@comment $RedRiver: PLIST,v 1.1 2006/05/19 23:24:07 andrew Exp $
 bin/JSettlers.jar
 bin/JSettlersServer.jar
 share/doc/jsettlers/

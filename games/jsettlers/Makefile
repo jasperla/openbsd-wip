@@ -1,5 +1,5 @@
 # $OpenBSD$
-# $RedRiver: Makefile,v 1.1 2006/05/19 23:24:07 andrew Exp $
+# $RedRiver: Makefile,v 1.2 2006/05/19 23:27:35 andrew Exp $
 
 COMMENT=	"a version of the board game Settlers of Catan written in Java"
 COMMENT-web=	"web pages to make it easy for clients to connect to your jsettlers server"
@@ -33,18 +33,18 @@ WWW_PREFIX=/var/www
   RUN_DEPENDS=	:jsettlers-*:games/jsettlers
 .endif
 
-WWW_FILES=	web JSettlers.jar
-DOC=		docs COPYING.txt README.txt VERSIONS.txt
 
 do-install:
-.for f in ${WWW_FILES}
-	@cp -r ${WRKSRC}/${f} ${WRKINST}${WWW_PREFIX}/jsettlers
-.endfor
+	@cp -r ${WRKSRC}/web ${WRKINST}${WWW_PREFIX}/jsettlers
+	@cp ${WRKSRC}/JSettlers.jar ${WRKINST}${WWW_PREFIX}/jsettlers
 	@cp -r ${WRKSRC}/docs/users ${WRKINST}${WWW_PREFIX}/jsettlers/users
+	
 	@cp ${WRKSRC}/JSettlers.jar ${PREFIX}/bin
 	@cp ${WRKSRC}/JSettlersServer.jar ${PREFIX}/bin
-.for f in ${DOC}
-	@cp -r ${WRKSRC}/${f} ${PREFIX}/share/doc/jsettlers
-.endfor
+	
+	@cp -r ${WRKSRC}/docs ${PREFIX}/share/doc/jsettlers
+	@cp ${WRKSRC}/COPYING.txt ${PREFIX}/share/doc/jsettlers
+	@cp ${WRKSRC}/README.txt ${PREFIX}/share/doc/jsettlers
+	@cp ${WRKSRC}/VERSIONS.txt ${PREFIX}/share/doc/jsettlers
 
 .include <bsd.port.mk>
