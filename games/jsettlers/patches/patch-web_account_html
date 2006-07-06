@@ -1,0 +1,21 @@
+$OpenBSD$
+--- web/account.html.orig	Wed Nov 17 09:12:24 2004
++++ web/account.html	Sun May 21 21:11:41 2006
+@@ -11,8 +11,8 @@
+ 
+   <p>
+   <center>
+-   <applet code="soc.client.SOCAccountClient.class" width="620" height="300">
+-    <param name=PORT        value="8880">
++   <applet code="soc.client.SOCAccountClient.class" archive="JSettlers.jar" width="620" height="300">
++    <param name=PORT        value="%38%38%38%30">
+     <param name=background  value="61AF71">
+     <param name=foreground  value="0">
+     Sorry, you need Java to create an account.
+@@ -38,4 +38,4 @@
+ </table>
+ 
+ </body>
+-</html>
+\ No newline at end of file
++</html>
