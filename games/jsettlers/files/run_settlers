@@ -1,0 +1,23 @@
+#!/bin/sh
+# $RedRiver$
+
+# Start the server
+java -jar /usr/local/bin/JSettlersServer.jar 8880 10 dbUser dbPass &
+
+# If MySQL is not installed and running (See "Database Setup"), you
+# will see a warning with the appropriate explanation:
+#
+#  Warning: failed to initialize database: ....
+#
+# The server will function normally except that user accounts cannot
+# be maintained.
+
+# Wait a few seconds then start the robot players
+sleep 10
+java -cp /usr/local/bin/JSettlersServer.jar \
+  soc.robot.SOCRobotClient localhost 8880 robot1 passwd &
+java -cp /usr/local/bin/JSettlersServer.jar \
+  soc.robot.SOCRobotClient localhost 8880 robot2 passwd &
+java -cp /usr/local/bin/JSettlersServer.jar \
+  soc.robot.SOCRobotClient localhost 8880 robot3 passwd &
+
