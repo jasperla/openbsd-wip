@@ -1,5 +1,5 @@
 # $OpenBSD$
-# $RedRiver: Makefile,v 1.3 2006/05/20 00:49:56 andrew Exp $
+# $RedRiver: Makefile,v 1.4 2006/07/06 19:07:07 andrew Exp $
 
 COMMENT=	"a version of the board game Settlers of Catan written in Java"
 COMMENT-web=	"web pages to make it easy for clients to connect to your jsettlers server"
@@ -11,6 +11,7 @@ MAINTAINER=	Andrew Fresh <andrew@mad-techies.org>
 
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=jsettlers/}
+HOMEPAGE=	http://sourceforge.net/projects/jsettlers/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
