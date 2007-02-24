@@ -1,5 +1,6 @@
 @comment $OpenBSD$
-@comment $RedRiver$
+@comment $RedRiver: PLIST-web,v 1.1 2006/05/19 23:24:07 andrew Exp $
+@group daemon
 jsettlers/
 jsettlers/JSettlers.jar
 jsettlers/account.html
