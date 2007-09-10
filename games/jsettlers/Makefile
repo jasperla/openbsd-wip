@@ -1,5 +1,5 @@
 # $OpenBSD$
-# $RedRiver: Makefile,v 1.6 2007/02/24 01:32:46 andrew Exp $
+# $RedRiver: Makefile,v 1.7 2007/05/02 02:12:42 andrew Exp $
 
 COMMENT-main=	"a version of the board game Settlers of Catan written in Java"
 COMMENT-web=	"web pages to make it easy for clients to connect to your jsettlers server"
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MULTI_PACKAGES=-main -web
 PREFIX-web=/var/www
 
-.if ! defined(SUBPACKAGE)
+.if defined(SUBPACKAGE) && ${SUBPACKAGE:L:M-main}
 RUN_DEPENDS=		:jre-*|jdk-*:devel/jdk/1.5
 .endif
 
@@ -42,9 +42,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/JSettlers.jar ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/JSettlersServer.jar ${PREFIX}/bin
 	
-	cp -r ${WRKSRC}/docs ${PREFIX}/share/doc/jsettlers
+	@cp -r ${WRKSRC}/docs ${PREFIX}/share/doc/jsettlers
 	${INSTALL_DATA} ${WRKSRC}/COPYING.txt ${PREFIX}/share/doc/jsettlers/
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${PREFIX}/share/doc/jsettlers/
 	${INSTALL_DATA} ${WRKSRC}/VERSIONS.txt ${PREFIX}/share/doc/jsettlers/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/jsettlers
+	${INSTALL_DATA} ${FILESDIR}/run_settlers ${PREFIX}/share/examples/jsettlers/
 
 .include <bsd.port.mk>
