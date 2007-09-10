@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+@comment $RedRiver$
 bin/JSettlers.jar
 bin/JSettlersServer.jar
 share/doc/jsettlers/
@@ -256,3 +257,5 @@ share/doc/jsettlers/users/tradehelp.html
 share/doc/jsettlers/users/tradehelp2.html
 share/doc/jsettlers/users/tradehelp3.html
 share/doc/jsettlers/users/yourplayerinfo.html
+share/examples/jsettlers/
+share/examples/jsettlers/run_settlers
