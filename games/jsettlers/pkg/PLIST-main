@@ -1,5 +1,5 @@
 @comment $OpenBSD$
-@comment $RedRiver$
+@comment $RedRiver: PLIST-main,v 1.2 2007/09/10 21:56:25 andrew Exp $
 bin/JSettlers.jar
 bin/JSettlersServer.jar
 share/doc/jsettlers/
@@ -257,5 +257,3 @@ share/doc/jsettlers/users/tradehelp.html
 share/doc/jsettlers/users/tradehelp2.html
 share/doc/jsettlers/users/tradehelp3.html
 share/doc/jsettlers/users/yourplayerinfo.html
-share/examples/jsettlers/
-share/examples/jsettlers/run_settlers

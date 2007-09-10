@@ -1,5 +1,5 @@
 # $OpenBSD$
-# $RedRiver: Makefile,v 1.7 2007/05/02 02:12:42 andrew Exp $
+# $RedRiver: Makefile,v 1.8 2007/09/10 21:56:25 andrew Exp $
 
 COMMENT-main=	"a version of the board game Settlers of Catan written in Java"
 COMMENT-web=	"web pages to make it easy for clients to connect to your jsettlers server"
@@ -46,7 +46,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/COPYING.txt ${PREFIX}/share/doc/jsettlers/
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${PREFIX}/share/doc/jsettlers/
 	${INSTALL_DATA} ${WRKSRC}/VERSIONS.txt ${PREFIX}/share/doc/jsettlers/
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/jsettlers
-	${INSTALL_DATA} ${FILESDIR}/run_settlers ${PREFIX}/share/examples/jsettlers/
 
 .include <bsd.port.mk>
