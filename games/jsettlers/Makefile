@@ -1,8 +1,8 @@
 # $OpenBSD$
-# $RedRiver: Makefile,v 1.8 2007/09/10 21:56:25 andrew Exp $
+# $RedRiver: Makefile,v 1.9 2007/09/10 22:05:48 andrew Exp $
 
-COMMENT-main=	"a version of the board game Settlers of Catan written in Java"
-COMMENT-web=	"web pages to make it easy for clients to connect to your jsettlers server"
+COMMENT-main=	the board game Settlers of Catan written in Java
+COMMENT-web=	web pages to make it easy to connect to the jsettlers server
 
 DISTNAME=	jsettlers-1.0.6
 PKGNAME-main=	${DISTNAME}
