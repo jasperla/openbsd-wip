@@ -1,0 +1,10 @@
+The Keyring PDB handler is a helper class for the Palm::PDB package. It
+parses Keyring for Palm OS databases. 
+
+http://gnukeyring.sourceforge.net/
+
+It has the standard Palm::PDB methods with 4 additional public methods.
+Unlock, Lock, Decrypt and Encrypt.
+
+It currently supports the v4 Keyring databases as well as the
+pre-release v5 databases.
