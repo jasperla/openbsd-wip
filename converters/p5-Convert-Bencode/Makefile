@@ -1,12 +1,12 @@
 # $OpenBSD$
-# $RedRiver: Makefile,v 1.2 2005/08/25 01:34:30 andrew Exp $
+# $RedRiver: Makefile,v 1.3 2007/05/04 22:17:28 andrew Exp $
 
 COMMENT=	"Functions for converting to/from bencoded strings"
 
 DISTNAME=	Convert-Bencode-1.03
 CATEGORIES=	converters
 
-MAINTAINER=	Andrew Fresh <andrew@mad-techies.org>
+MAINTAINER=	Andrew Fresh <andrew@afresh1.com>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
