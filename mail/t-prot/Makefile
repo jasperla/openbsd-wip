@@ -1,12 +1,12 @@
 # $OpenBSD$
-# $RedRiver: Makefile,v 1.1 2007/04/09 16:11:40 andrew Exp $
+# $RedRiver: Makefile,v 1.2 2007/06/05 19:08:43 andrew Exp $
 
 COMMENT=	"filter which improves readability of email and Usenet posts"
 
 DISTNAME=	t-prot-2.4
 CATEGORIES=    	mail news
 
-MAINTAINER=	Andrew Fresh <andrew@mad-techies.org>
+MAINTAINER=	Andrew Fresh <andrew@afresh1.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
