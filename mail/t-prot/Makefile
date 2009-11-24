@@ -1,9 +1,9 @@
 # $OpenBSD$
-# $RedRiver: Makefile,v 1.2 2007/06/05 19:08:43 andrew Exp $
+# $RedRiver: Makefile,v 1.3 2009/11/06 22:18:56 andrew Exp $
 
 COMMENT=	"filter which improves readability of email and Usenet posts"
 
-DISTNAME=	t-prot-2.4
+DISTNAME=	t-prot-2.7.1
 CATEGORIES=    	mail news
 
 MAINTAINER=	Andrew Fresh <andrew@afresh1.com>
