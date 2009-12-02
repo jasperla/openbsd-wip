@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/Email/Filter/
+${P5SITE}/Email/Filter/Rules.pm
+@man man/man3p/Email::Filter::Rules.3p
