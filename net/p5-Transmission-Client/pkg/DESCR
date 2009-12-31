@@ -1,0 +1,19 @@
+Transmission::Client is the main module in a collection of modules to
+communicate with Transmission. Transmission is:
+
+Transmission is a cross-platform BitTorrent client that is:
+* Easy
+* Lean
+* Native
+* Powerful
+* Free
+
+If you want to communicate with "transmission-daemon", this is a module
+which can help you with that.
+
+The documentation is half copy/paste from the Transmission RPC spec:
+<http://trac.transmissionbt.com/browser/trunk/doc/rpc-spec.txt>
+
+This module differs from P2P::Transmission in (at least) two ways: This
+one use Moose and it won't die. The latter is especially annoying in the
+constructor.
