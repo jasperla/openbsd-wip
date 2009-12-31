@@ -1,0 +1,19 @@
+@comment $OpenBSD$
+${P5SITE}/Transmission/
+${P5SITE}/Transmission/AttributeRole.pm
+${P5SITE}/Transmission/Client.pm
+${P5SITE}/Transmission/Session.pm
+${P5SITE}/Transmission/Stats.pm
+${P5SITE}/Transmission/Torrent/
+${P5SITE}/Transmission/Torrent.pm
+${P5SITE}/Transmission/Torrent/File.pm
+${P5SITE}/Transmission/Types.pm
+${P5SITE}/Transmission/Utils.pm
+@man man/man3p/Transmission::AttributeRole.3p
+@man man/man3p/Transmission::Client.3p
+@man man/man3p/Transmission::Session.3p
+@man man/man3p/Transmission::Stats.3p
+@man man/man3p/Transmission::Torrent.3p
+@man man/man3p/Transmission::Torrent::File.3p
+@man man/man3p/Transmission::Types.3p
+@man man/man3p/Transmission::Utils.3p
