@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+${P5ARCH}/auto/Convert/Bencode_XS/Bencode_XS.so
