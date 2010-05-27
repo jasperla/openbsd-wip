@@ -1,5 +1,5 @@
 # $OpenBSD$
-# $RedRiver: Makefile,v 1.4 2009/11/24 23:05:43 andrew Exp $
+# $RedRiver: Makefile,v 1.5 2010/05/27 17:04:07 andrew Exp $
 
 COMMENT=	filter which improves readability of email and Usenet posts
 
@@ -14,7 +14,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.escape.de/~tolot/mutt/t-prot/downloads/
+HOMEPAGE=		http://www.escape.de/~tolot/mutt/
+MASTER_SITES=		${HOMEPAGE}/t-prot/downloads/
 
 CONFIGURE_STYLE=	none
 NO_BUILD=		Yes
