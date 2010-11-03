@@ -1,7 +1,7 @@
 # $OpenBSD$
-# $RedRiver: Makefile,v 1.3 2007/05/04 22:17:28 andrew Exp $
+# $RedRiver: Makefile,v 1.4 2009/11/06 22:18:55 andrew Exp $
 
-COMMENT=	"Functions for converting to/from bencoded strings"
+COMMENT=	Functions for converting to/from bencoded strings
 
 DISTNAME=	Convert-Bencode-1.03
 CATEGORIES=	converters
