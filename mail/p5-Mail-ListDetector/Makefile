@@ -1,10 +1,9 @@
 #   $OpenBSD$
-#   $RedRiver$
+#   $RedRiver: Makefile,v 1.1.1.1 2009/12/01 19:26:36 andrew Exp $
 
 COMMENT=	Perl extension for detecting mailing list messages
 
-DISTNAME=	Mail-ListDetector-1.02
-PKGNAME=        p5-${DISTNAME}
+DISTNAME=	Mail-ListDetector-1.03
 CATEGORIES=	mail
 
 MAINTAINER=	Andrew Fresh <andrew@afresh1.com
