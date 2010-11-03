@@ -1,7 +1,7 @@
 #   $OpenBSD$
-#   $RedRiver$
+#   $RedRiver: Makefile,v 1.1.1.1 2009/12/02 18:21:31 andrew Exp $
 
-COMMENT=	Simple Rules for Routing Mail with Email::Filter
+COMMENT=	simple rules for routing mail with Email::Filter
 
 DISTNAME=	Email-Filter-Rules-1.2
 CATEGORIES=	mail
