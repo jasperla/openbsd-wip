@@ -1,5 +1,5 @@
 @comment $OpenBSD$
-@comment $RedRiver: PLIST,v 1.2 2009/11/24 23:05:43 andrew Exp $
+@comment $RedRiver: PLIST,v 1.3 2010/05/27 17:04:07 andrew Exp $
 bin/t-prot
 @man man/man1/t-prot.1
 share/doc/t-prot/
@@ -14,6 +14,6 @@ share/examples/t-prot/muttrc.t-prot
 share/examples/t-prot/muttrc.t-prot.m1512
 share/examples/t-prot/nailrc.t-prot
 share/examples/t-prot/t-prot-r1.238-gpg126.diff
-share/examples/t-prot/t-prot-r1.279-mutt1512.diff
+share/examples/t-prot/t-prot-r1.311-mutt1512.diff
 share/examples/t-prot/t-prot.sl
 share/examples/t-prot/t-prot.sl-slang2.diff
