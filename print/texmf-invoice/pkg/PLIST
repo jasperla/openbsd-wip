@@ -1,0 +1,10 @@
+@comment $OpenBSD$
+share/doc/texmf-invoice/
+share/doc/texmf-invoice/invoice.dvi
+share/doc/texmf-invoice/invoice.pdf
+share/doc/texmf-invoice/invoice.tex
+share/texmf-local/
+share/texmf-local/tex/
+share/texmf-local/tex/invoice/
+share/texmf-local/tex/invoice/invoice.def
+share/texmf-local/tex/invoice/invoice.sty
