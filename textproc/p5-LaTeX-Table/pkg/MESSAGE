@@ -1,0 +1,2 @@
+If you wish to use the scripts that come with this, you will likely need to:
+$ pkg_add p5-LaTeX-Driver p5-LaTeX-Encode p5-Number-Format p5-Text-CSV
