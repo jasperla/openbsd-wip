@@ -3,7 +3,7 @@
 COMMENT=	Package for Writing Invoices
 
 DISTNAME=	invoice
-PKGNAME=	texmf-${DISTNAME}-0.7
+PKGNAME=	texmf-${DISTNAME}-0.8
 EXTRACT_SUFX=	.zip
 CATEGORIES=	print
 
@@ -19,12 +19,10 @@ PERMIT_DISTFILES_FTP=	Yes
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
 
-RUN_DEPENDS=		::print/texmf-realcalc
-
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/texmf-local/tex/invoice
-	${INSTALL_DATA} ${WRKSRC}/texput/* ${PREFIX}/share/texmf-local/tex/invoice/
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/texmf-invoice
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/texmf-invoice/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/texmf/tex/latex/invoice
+	${INSTALL_DATA} ${WRKSRC}/texput/* ${PREFIX}/share/texmf/tex/latex/invoice/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/latex/texmf-invoice
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/latex/texmf-invoice/
 
 .include <bsd.port.mk>
