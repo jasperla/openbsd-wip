@@ -1,0 +1,15 @@
+@comment $OpenBSD$
+bin/rt-merge-users
+bin/rt-update-merged-users
+lib/RT/
+lib/RT/Extension/
+lib/RT/Extension/MergeUsers.pm
+${P5SITE}/RT/Extension/
+${P5SITE}/RT/Extension/MergeUsers.pm
+@man man/man3/RT::Extension::MergeUsers.3p
+share/rt3/html/Callbacks/
+share/rt3/html/Callbacks/RT-Extension-MergeUsers/
+share/rt3/html/Callbacks/RT-Extension-MergeUsers/Admin/
+share/rt3/html/Callbacks/RT-Extension-MergeUsers/Admin/Users/
+share/rt3/html/Callbacks/RT-Extension-MergeUsers/Admin/Users/Modify.html/
+share/rt3/html/Callbacks/RT-Extension-MergeUsers/Admin/Users/Modify.html/RightColumnBottom
