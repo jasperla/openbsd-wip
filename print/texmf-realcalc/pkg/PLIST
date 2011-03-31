@@ -1,5 +1,7 @@
 @comment $OpenBSD$
-share/texmf-local/
-share/texmf-local/tex/
-share/texmf-local/tex/realcalc/
-share/texmf-local/tex/realcalc/realcalc.sty
+share/texmf/
+share/texmf/tex/
+share/texmf/tex/latex/
+share/texmf/tex/latex/realcalc/
+share/texmf/tex/latex/realcalc/realcalc.tex
+@exec cd %D/share/texmf/tex/ && \ls -1LAR ./ >ls-R

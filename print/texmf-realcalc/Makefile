@@ -8,7 +8,7 @@ EXTRACT_SUFX=	.zip
 CATEGORIES=	print
 
 MASTER_SITES=	http://mirror.ctan.org/macros/generic/
-HOMEPAGE=	http://www.ctan.org/tex-archive/help/Catalogue/entries/
+HOMEPAGE=	http://www.ctan.org/tex-archive/help/Catalogue/entries/realcalc.html
 
 # Distribution without money seems ok
 PERMIT_PACKAGE_CDROM=	No
@@ -20,7 +20,7 @@ NO_BUILD=		Yes
 NO_REGRESS=		Yes
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/texmf-local/tex/realcalc
-	${INSTALL_DATA} ${WRKSRC}/realcalc.tex ${PREFIX}/share/texmf-local/tex/realcalc/realcalc.sty
+	${INSTALL_DATA_DIR} ${PREFIX}/share/texmf/tex/latex/realcalc
+	${INSTALL_DATA} ${WRKSRC}/realcalc.tex ${PREFIX}/share/texmf/tex/latex/realcalc/realcalc.tex
 
 .include <bsd.port.mk>
