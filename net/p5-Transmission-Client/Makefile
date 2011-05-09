@@ -3,7 +3,7 @@
 
 COMMENT=	Perl interface to the Transmission BitTorrent client RPC
 
-DISTNAME=	Transmission-Client-0.05
+DISTNAME=	Transmission-Client-0.0602
 CATEGORIES=	net
 
 MAINTAINER=	Andrew Fresh <andrew@afresh1.com>
