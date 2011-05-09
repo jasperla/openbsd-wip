@@ -16,10 +16,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE= modbuild
 
-REGRESS_DEPENDS=::devel/p5-Test-NoWarnings
+REGRESS_DEPENDS=devel/p5-Test-NoWarnings
 
-RUN_DEPENDS=	::devel/p5-Moose \
-		::devel/p5-MooseX-FollowPBP \
-		::textproc/p5-Template
+RUN_DEPENDS=	devel/p5-Moose \
+		devel/p5-MooseX-FollowPBP \
+		textproc/p5-Template
 
 .include <bsd.port.mk>
