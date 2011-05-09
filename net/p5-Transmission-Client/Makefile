@@ -1,5 +1,5 @@
 # $OpenBSD$
-# $RedRiver: Makefile,v 1.2 2010/05/26 19:15:45 andrew Exp $
+# $RedRiver: Makefile,v 1.3 2010/11/03 20:21:15 andrew Exp $
 
 COMMENT=	Perl interface to the Transmission BitTorrent client RPC
 
@@ -19,11 +19,11 @@ CPAN_AUTHOR=    JHTHORSEN
 
 CONFIGURE_ARGS=--skipdeps
 
-RUN_DEPENDS=	::converters/p5-JSON \
-		::devel/p5-DateTime \
-		::devel/p5-Moose \
-		::devel/p5-MooseX-Types \
-		::devel/p5-Sub-Exporter \
-		::www/p5-libwww
+RUN_DEPENDS=	converters/p5-JSON \
+		devel/p5-DateTime \
+		devel/p5-Moose \
+		devel/p5-MooseX-Types \
+		devel/p5-Sub-Exporter \
+		www/p5-libwww
 
 .include <bsd.port.mk>
