@@ -15,9 +15,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_ENV+= PREFIX=${PREFIX}
 
-RUN_DEPENDS=	::print/texlive/base \
-                ::devel/p5-Class-Accessor \
-                ::devel/p5-Exception-Class \
-		::devel/p5-File-Slurp
+RUN_DEPENDS=	print/texlive/base \
+                devel/p5-Class-Accessor \
+                devel/p5-Exception-Class \
+		devel/p5-File-Slurp
 
 .include <bsd.port.mk>
