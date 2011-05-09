@@ -18,8 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_ARGS=		PREFIX=${DESTDIR}${PREFIX} --skipdeps
 NO_REGRESS=		Yes
 
-RUN_DEPENDS=	::www/rt \
-		::devel/p5-Hook-LexWrap
+RUN_DEPENDS=	www/rt \
+		devel/p5-Hook-LexWrap
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/rt3
