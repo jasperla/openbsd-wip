@@ -3,7 +3,7 @@
 
 COMMENT=	Perl extension for detecting mailing list messages
 
-DISTNAME=	Mail-ListDetector-1.03
+DISTNAME=	Mail-ListDetector-1.04
 CATEGORIES=	mail
 
 MAINTAINER=	Andrew Fresh <andrew@afresh1.com
