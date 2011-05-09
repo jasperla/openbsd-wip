@@ -1,5 +1,5 @@
 # $OpenBSD$
-# $RedRiver: Makefile,v 1.2 2009/11/06 22:18:56 andrew Exp $
+# $RedRiver: Makefile,v 1.3 2009/11/25 16:44:12 andrew Exp $
 
 COMMENT=	Perl interface to Palm Keyrings
 
@@ -16,6 +16,6 @@ PERMIT_DISTFILES_FTP=   Yes
 MODULES=	cpan
 CPAN_AUTHOR=	ANDREW
 
-RUN_DEPENDS=    ::palm/p5-Palm
+RUN_DEPENDS=    palm/p5-Palm
 
 .include <bsd.port.mk>

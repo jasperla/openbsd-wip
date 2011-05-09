@@ -1,5 +1,5 @@
 #   $OpenBSD$
-#   $RedRiver: Makefile,v 1.1.1.1 2009/12/01 19:26:36 andrew Exp $
+#   $RedRiver: Makefile,v 1.2 2010/11/03 17:30:19 andrew Exp $
 
 COMMENT=	Perl extension for detecting mailing list messages
 
@@ -16,9 +16,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
 
-RUN_DEPENDS=	::mail/p5-Email-Abstract \
-                ::mail/p5-Email-Valid \
-		::mail/p5-Mail-Tools \
-		::www/p5-URI
+RUN_DEPENDS=	mail/p5-Email-Abstract \
+                mail/p5-Email-Valid \
+		mail/p5-Mail-Tools \
+		www/p5-URI
 
 .include <bsd.port.mk>
