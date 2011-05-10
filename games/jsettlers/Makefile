@@ -1,5 +1,5 @@
 # $OpenBSD$
-# $RedRiver: Makefile,v 1.10 2008/01/31 15:39:02 andrew Exp $
+# $RedRiver: Makefile,v 1.11 2009/11/06 22:18:55 andrew Exp $
 
 COMMENT-main=	the board game Settlers of Catan written in Java
 COMMENT-web=	web pages to make it easy to connect to the jsettlers server
@@ -24,7 +24,7 @@ MULTI_PACKAGES=-main -web
 PREFIX-web=/var/www
 
 .if defined(SUBPACKAGE) && ${SUBPACKAGE:L:M-main}
-RUN_DEPENDS=		:jre-*|jdk-*:devel/jdk/1.5
+RUN_DEPENDS=		jre-*|jdk-*:devel/jdk/1.5
 .endif
 
 NO_CONFIGURE=		Yes
