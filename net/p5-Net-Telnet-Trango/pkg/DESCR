@@ -1,0 +1,6 @@
+Perl access to the telnet interface on Trango APs and SUs.
+
+A handy feature is that it will parse the output from certain commands
+that is in the format "[key1] value1 [key2] value2" and put those in a
+hashref that is returned. This makes using the output from things like
+sysinfo very easy to do.

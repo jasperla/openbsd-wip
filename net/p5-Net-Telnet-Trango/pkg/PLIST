@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/Net/Telnet/
+${P5SITE}/Net/Telnet/Trango.pm
+@man man/man3p/Net::Telnet::Trango.3p
