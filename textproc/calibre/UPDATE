@@ -1,0 +1,4 @@
+Update to the newest version, also 0.8 tree from 0.7 we have in ports.
+Works for me, probably could use some more work:
+- detect plugged in devices
+- maybe rc scripts to start daemons, like the one used to share files
