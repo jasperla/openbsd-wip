@@ -1,8 +1,5 @@
 # $OpenBSD$
 
-# problems: 	crash when clicking on menus (fixed upstream)
-#		no license file in tarball (hopefully fixed in next release)
-
 SHARED_ONLY =		Yes
 
 COMMENT =		free CDE implementation
