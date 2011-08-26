@@ -1,0 +1,42 @@
+# $OpenBSD$
+
+COMMENT =		guitar tab editor
+
+DISTNAME =		kguitar-0.5.1
+
+CATEGORIES =		multimedia kde
+
+HOMEPAGE =		http://kguitar.sourceforge.net
+
+MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+
+# GPLv2+; for MusicXML copyright see licenseMusicXML.html
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
+
+WANTLIB = DCOP ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2 c
+WANTLIB += expat fontconfig freetype iconv idn intl jpeg kdecore
+WANTLIB += kdefx kdeprint kdesu kdeui kio kparts kwalletclient
+WANTLIB += m png pthread stdc++ util xcb z
+
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=kguitar/}
+EXTRACT_SUFX =		.tar.bz2
+
+MODULES =		x11/kde
+LIB_DEPENDS =		x11/kde/libs3
+
+USE_LIBTOOL =		Yes
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS +=	--prefix="${PREFIX}" \
+			--with-qt-dir="${LOCALBASE}" \
+			--with-qt-libraries="${LOCALBASE}/lib/qt3" \
+			--with-qt-includes="${LOCALBASE}/include/X11/qt3" \
+			--with-extra-libs="${LOCALBASE}/lib" \
+			--with-extra-includes="${LOCALBASE}/include/libpng"
+CONFIGURE_ENV +=	LOCALBASE=${LOCALBASE} CXXFLAGS="-pthread"
+
+NO_REGRESS =		Yes
+
+.include <bsd.port.mk>
