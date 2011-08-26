@@ -1,0 +1,12 @@
+$OpenBSD$
+--- hardware/arduino/cores/arduino/wiring_private.h.orig	Mon Sep 20 08:54:45 2010
++++ hardware/arduino/cores/arduino/wiring_private.h	Mon Jun  6 11:47:48 2011
+@@ -27,7 +27,7 @@
+ 
+ #include <avr/io.h>
+ #include <avr/interrupt.h>
+-#include <avr/delay.h>
++#include <util/delay.h>
+ #include <stdio.h>
+ #include <stdarg.h>
+ 

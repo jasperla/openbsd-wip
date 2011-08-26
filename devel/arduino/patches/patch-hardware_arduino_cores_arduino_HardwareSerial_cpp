@@ -1,0 +1,11 @@
+$OpenBSD$
+--- hardware/arduino/cores/arduino/HardwareSerial.cpp.orig	Mon Jun  6 11:50:40 2011
++++ hardware/arduino/cores/arduino/HardwareSerial.cpp	Mon Jun  6 11:50:56 2011
+@@ -24,6 +24,7 @@
+ #include <stdio.h>
+ #include <string.h>
+ #include <inttypes.h>
++#include <math.h>
+ #include "wiring.h"
+ #include "wiring_private.h"
+ 

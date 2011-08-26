@@ -1,0 +1,2 @@
+- Implement a correct way to allow for easy import libraries in the Makefile's.
+  something like MODULES="Ethernet CapTouch GPS"; .include snippets?
