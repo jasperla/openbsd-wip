@@ -29,7 +29,7 @@ Finished ports
 When a port is ready to get committed, please add
 an entry to /FINISHED in the following format (subject to change):
 
-net/gnaughty:	ready for import, sent to ports@ (jasperla)
+	net/gnaughty:	ready for import, sent to ports@ (jasperla)
 
 Use a TODO file to list what the outstanding issues are before the port can be
 listed in FINISHED.
@@ -41,9 +41,9 @@ Administrative files
 
 As one of the main goals of this repository is to ease the workload for
 committers, please use the following files to keep the overview of what's here:
-* FINISHED - Described above
-* TODO - File in the ports' directory explaining what needs to be done
-* UPDATE - Explain the update, could contain a ready-to-use commit message? :)
+- FINISHED - Described above
+- TODO - File in the ports' directory explaining what needs to be done
+- UPDATE - Explain the update, could contain a ready-to-use commit message? :)
 
 Workflow (open for discussion)
 ==================================
