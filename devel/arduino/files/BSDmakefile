@@ -60,7 +60,7 @@ LIBRARIES=
 ############################################################################
 # Below here nothing should be changed...
 
-ARDUINO = ${TRUEPREFIX}/share/arduino/cores/arduino
+ARDUINO = ${TRUEPREFIX}/share/arduino/
 .PATH: $(ARDUINO)/cores/arduino ${LIBRARIES:S|^|$(ARDUINO)/libraries/|g}
 AVR_TOOLS_PATH = ${TRUEPREFIX}/bin
 SRC = pins_arduino.c wiring.c wiring_analog.c wiring_digital.c \
