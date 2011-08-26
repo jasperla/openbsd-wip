@@ -41,9 +41,10 @@ Administrative files
 
 As one of the main goals of this repository is to ease the workload for
 committers, please use the following files to keep the overview of what's here:
-- FINISHED - Described above
-- TODO - File in the ports' directory explaining what needs to be done
-- UPDATE - Explain the update, could contain a ready-to-use commit message? :)
+
+- FINISHED: Described above
+- TODO: File in the ports' directory explaining what needs to be done
+- UPDATE: Explain the update, could contain a ready-to-use commit message? :)
 
 Workflow (open for discussion)
 ==================================

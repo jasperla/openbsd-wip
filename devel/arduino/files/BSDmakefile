@@ -65,7 +65,8 @@ ARDUINO = ${TRUEPREFIX}/share/arduino/
 AVR_TOOLS_PATH = ${TRUEPREFIX}/bin
 SRC = pins_arduino.c wiring.c wiring_analog.c wiring_digital.c \
 wiring_pulse.c wiring_shift.c WInterrupts.c
-CXXSRC = HardwareSerial.cpp WMath.cpp Print.cpp ${LIBRARIES:S|$|.cpp|g}
+CXXSRC = HardwareSerial.cpp WMath.cpp Print.cpp WString.cpp \
+	${LIBRARIES:S|$|.cpp|g}
 FORMAT = ihex
 
 
