@@ -13,5 +13,7 @@ ${TRUEPREFIX}/bin/arduinoproject to create a new project directory.
 
 Syntax highlighting
 ===================
-For vim syntax highlighting exists, for details see
-http://www.vim.org/scripts/script.php?script_id=2654
+
+* vim:   http://www.vim.org/scripts/script.php?script_id=2654
+* emacs: https://github.com/bookest/arduino-mode
+

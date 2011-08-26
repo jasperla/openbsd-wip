@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/03/11 08:52:29 ckuethe Exp $
+# $OpenBSD$
 
 COMMENT=	open-source electronics prototyping platform
 
@@ -15,14 +15,14 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=		http://arduino.googlecode.com/files/
+MASTER_SITES=	http://arduino.googlecode.com/files/
 
-RUN_DEPENDS=		devel/avr/binutils \
-			devel/avr/gcc \
-			devel/avr/libc \
-			devel/avrdude
+RUN_DEPENDS=	devel/avr/binutils \
+		devel/avr/gcc \
+		devel/avr/libc \
+		devel/avrdude
 
-BUILD_DEPENDS=		archivers/unzip
+BUILD_DEPENDS=	archivers/unzip
 
 NO_BUILD=       Yes
 NO_REGRESS=     Yes
