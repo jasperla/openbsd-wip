@@ -4,5 +4,7 @@ worked on and may not always build.
 
 The goal of this try-out is to get more people actively involved, and better
 keep track of (half-)finished ports out there.
+Updates are also welcome; just try to keep this tree clean by removing ports
+that are updated/imported upstream.
 
 Please let me know if you need write access to this repository.
