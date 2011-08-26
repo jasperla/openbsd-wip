@@ -1,0 +1,22 @@
+$OpenBSD: README,v 1.2 2010/11/10 23:35:41 ajacoutot Exp $
+
+Using Prosody in an OpenBSD environment
+
+1) Prosody documentation is available online at:
+
+   http://prosody.im/doc/configure
+
+   Use this information to edit:
+
+   ${SYSCONFDIR}/prosody/prosody.cfg.lua
+
+   to your liking.
+
+2) Prosody uses privilege dropping.  As such, you will need to initially
+   start prosody as root via prosodyctl:
+
+   # ${PREFIX}/sbin/prosodyctl start
+
+   You should now be able to start adding users:
+
+   # ${PREFIX}/sbin/prosodyctl adduser username@domain.tld
