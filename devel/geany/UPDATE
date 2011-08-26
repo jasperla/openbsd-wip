@@ -1,4 +1,0 @@
-split LIB_DEPENDS into BUILD_DEPENDS + LIB_DEPENDS.  caught during
-dpb rebuilding when pkg signatures don't match and the port has to
-be rebuilt everytime.  sent to maintainer + espie@ and nigel@
-sometime ago.
