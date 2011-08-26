@@ -1,0 +1,24 @@
+$OpenBSD$
+--- config.Mk.orig	Sat Jul  9 12:09:54 2011
++++ config.Mk	Thu Jul 21 09:01:45 2011
+@@ -1,13 +1,13 @@
+ # Available platforms:- FREEBSD LINUX OTHER
+-PLATFORM=FREEBSD
++PLATFORM?=FREEBSD
+ 
+-PREFIX=/usr/local
++PREFIX?=/usr/local
+ 
+-CC=gcc
+-CFLAGS=-I/usr/X11R6/include -I/usr/local/include
++CC?=gcc
++CFLAGS+=-I/usr/X11R6/include -I${LOCALBASE}/include
+ 
+-CPP=g++
+-CPPFLAGS=-I/usr/X11R6/include -I/usr/local/include
++CXX?=g++
++CXXFLAGS+=-I/usr/X11R6/include -I${LOCALBASE}/include
+ 
+-LDFLAGS=-L/usr/X11R6/lib -L/usr/local/lib
++LDFLAGS+=-L/usr/X11R6/lib -L${LOCALBASE}/lib
+ 

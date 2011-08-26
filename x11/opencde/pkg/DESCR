@@ -1,0 +1,14 @@
+OpenCDE is a free implementation of the Open Group's Common Desktop
+Environment, often found on commercial UNIX operating systems such as
+Solaris, AIX and HP-UX.
+
+The OpenCDE project aims to keep the code clean and simple, thus easy to
+compile and port to other systems. The desktop environment will never
+become bloated and features that would add too much complexity to the
+code design will be left out until such a time when a clean solution can
+be implemented.
+
+The project intends to utilize modern technologies and libraries however
+will always steer clear from the massive amounts of dependencies that
+are required by many similar projects. The number of dependencies which
+are not included in a typical base UNIX install, will always remain low.

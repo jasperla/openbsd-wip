@@ -1,0 +1,17 @@
+$OpenBSD$
+--- src/libopencde/Makefile.orig	Sat Jul  2 14:06:33 2011
++++ src/libopencde/Makefile	Thu Jul 21 09:20:07 2011
+@@ -9,11 +9,11 @@ OUT=../../lib/libopencde.so
+ all: ${OUT}
+ 
+ ${OUT}: ${OBJ}
+-	${CPP} -shared -o ${OUT} ${OBJ} ${LDFLAGS} -lXpm -lXm -lXt -lX11
++	${CXX} -shared -o ${OUT} ${OBJ} ${LDFLAGS} -lXpm -lXm -lXt -lX11
+ 	cp -r include/* ../../include
+ 
+ .cpp.o:
+-	${CPP} ${CPPFLAGS} -fPIC -DPLATFORM_${PLATFORM} -c -Iinclude -I../../include $< -o $@
++	${CXX} ${CXXFLAGS} -fPIC -DPLATFORM_${PLATFORM} -c -Iinclude -I../../include $< -o $@
+ 
+ .PHONY: clean
+ clean:

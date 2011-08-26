@@ -1,0 +1,21 @@
+$OpenBSD$
+--- src/libopencde/Environment.cpp.orig	Thu Jul 21 12:03:33 2011
++++ src/libopencde/Environment.cpp	Thu Jul 21 12:05:03 2011
+@@ -14,7 +14,7 @@ void Environment::initialize(int argc, char* argv[])
+   name = app.substr(app.find_last_of('/') + 1);
+   setenv("OPENCDE_PREFIX", prefix.c_str(), 1);
+ 
+-  if(Filesystem::folderExists(prefix + "/etc/opencde/" + name) == true)
++  if(Filesystem::folderExists("${SYSCONFDIR}/opencde/" + name) == true)
+   {
+     if(Filesystem::folderExists(getHome() + "/.opencde") == false)
+     {
+@@ -23,7 +23,7 @@ void Environment::initialize(int argc, char* argv[])
+ 
+     if(Filesystem::folderExists(getHome() + "/.opencde/" + name) == false)
+     {
+-      Filesystem::copyFolder(prefix + "/etc/opencde/" + name, getHome() + "/.opencde/" + name);
++      Filesystem::copyFolder("${SYSCONFDIR}/opencde/" + name, getHome() + "/.opencde/" + name);
+     }
+   }
+ 

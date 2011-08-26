@@ -1,0 +1,17 @@
+$OpenBSD$
+--- src/libmotifmm/Makefile.orig	Sat Jul  2 16:08:51 2011
++++ src/libmotifmm/Makefile	Thu Jul 21 09:19:55 2011
+@@ -9,11 +9,11 @@ OUT=../../lib/libmotifmm.so
+ all: ${OUT}
+ 
+ ${OUT}: ${OBJ}
+-	${CPP} -shared -o ${OUT} ${OBJ} ${LDFLAGS} -lXpm -lXm -lXt -lX11
++	${CXX} -shared -o ${OUT} ${OBJ} ${LDFLAGS} -lXpm -lXm -lXt -lX11
+ 	cp -r include/* ../../include
+ 
+ .cpp.o:
+-	${CPP} ${CPPFLAGS} -fPIC -DPLATFORM_${PLATFORM} -c -Iinclude $< -o $@
++	${CXX} ${CXXFLAGS} -fPIC -DPLATFORM_${PLATFORM} -c -Iinclude $< -o $@
+ 
+ .PHONY: clean
+ clean:

@@ -1,0 +1,16 @@
+$OpenBSD$
+--- src/dtsplash/Makefile.orig	Thu Jul 21 08:18:56 2011
++++ src/dtsplash/Makefile	Thu Jul 21 08:19:22 2011
+@@ -9,10 +9,10 @@ OUT=../../bin/dtsplash
+ all: ${OUT}
+ 
+ ${OUT}: ${OBJ}
+-	${CPP} -o ${OUT} ${OBJ} -L../../lib ${LDFLAGS} -lmotifmm -lopencde
++	${CXX} -o ${OUT} ${OBJ} -L../../lib ${LDFLAGS} -lmotifmm -lopencde
+ 
+ .cpp.o:
+-	${CPP} ${CPPFLAGS} -DPLATFORM_${PLATFORM} -c -I../../include $< -o $@
++	${CXX} ${CXXFLAGS} -DPLATFORM_${PLATFORM} -c -I../../include $< -o $@
+ 
+ .PHONY: clean
+ clean:
