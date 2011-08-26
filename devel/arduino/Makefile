@@ -2,13 +2,14 @@
 
 COMMENT=	open-source electronics prototyping platform
 
-V=22
+V=		22
 PKGNAME=	arduino-${V}
 DISTNAME=	arduino-00${V}-src
 CATEGORIES=	devel
 HOMEPAGE=	http://www.arduino.cc/
 
-# LGPL
+# arduino core + libraries: LGPLv2.1
+# frontend application: GPLv2 (not shipped yet)
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes

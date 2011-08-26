@@ -1,0 +1,17 @@
+$OpenBSD$
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+This port contains the libraries/headers as well as examples and documentation
+needed to start developing with Arduino.
+
+For now it doesn't contain the frontend application yet, instead a Makefile
+and various helper scripts are provided. Please use
+${TRUEPREFIX}/bin/arduinoproject to create a new project directory.
+
+Syntax highlighting
+===================
+For vim syntax highlighting exists, for details see
+http://www.vim.org/scripts/script.php?script_id=2654
