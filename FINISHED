@@ -1,0 +1,7 @@
+# Please add one line per port that is ready to go into OpenBSD.
+# When a port has been committed upstream, remove it from this repository.
+#
+# Format: pkgpath	message (owner)
+#
+# For example:
+# net/gnaughty:	ready for import, sent to ports@ (jasperla)
