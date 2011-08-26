@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+share/java/
+share/java/jna/
+share/java/jna/jna.jar
+share/java/jna/platform.jar
