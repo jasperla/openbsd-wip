@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_browser_renderer_host_render_sandbox_host_linux_cc,v 1.2 2011/08/16 08:17:44 robert Exp $
+--- content/browser/renderer_host/render_sandbox_host_linux.cc.orig	Wed Aug 24 10:52:53 2011
++++ content/browser/renderer_host/render_sandbox_host_linux.cc	Thu Aug 25 09:38:24 2011
+@@ -343,7 +343,7 @@ class SandboxIPCProcess  {
+       return;
+     }
+ 
+-    uint64_t inode;
++    uint64 inode;
+     if (!pickle.ReadUInt64(&iter, &inode))
+       return;
+ 

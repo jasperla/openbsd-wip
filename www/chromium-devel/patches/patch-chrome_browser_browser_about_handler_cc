@@ -1,0 +1,48 @@
+$OpenBSD$
+--- chrome/browser/browser_about_handler.cc.orig	Wed Aug 24 10:53:42 2011
++++ chrome/browser/browser_about_handler.cc	Thu Aug 25 09:38:24 2011
+@@ -77,7 +77,7 @@
+ #include "chrome/browser/chromeos/login/wizard_controller.h"
+ #include "chrome/browser/chromeos/version_loader.h"
+ #include "content/browser/zygote_host_linux.h"
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_OPENBSD)
+ #include "content/browser/zygote_host_linux.h"
+ #endif
+ 
+@@ -149,7 +149,7 @@ const char* const kChromePaths[] = {
+ #if defined(OS_WIN)
+   chrome::kChromeUIConflictsHost,
+ #endif
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+   chrome::kChromeUILinuxProxyConfigHost,
+   chrome::kChromeUISandboxHost,
+ #endif
+@@ -185,7 +185,7 @@ const char* const kAboutSourceNames[] = {
+ #if defined(USE_TCMALLOC)
+   chrome::kChromeUITCMallocHost,
+ #endif
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+   chrome::kChromeUILinuxProxyConfigHost,
+   chrome::kChromeUISandboxHost,
+ #endif
+@@ -984,7 +984,7 @@ std::string AboutStats(const std::string& query) {
+   return data;
+ }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+ std::string AboutLinuxProxyConfig() {
+   std::string data;
+   AppendHeader(&data, 0,
+@@ -1401,7 +1401,7 @@ void AboutSource::StartDataRequest(const std::string& 
+     response = ResourceBundle::GetSharedInstance().GetRawDataResource(
+         IDR_TERMS_HTML).as_string();
+ #endif
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+   } else if (host == chrome::kChromeUILinuxProxyConfigHost) {
+     response = AboutLinuxProxyConfig();
+   } else if (host == chrome::kChromeUISandboxHost) {

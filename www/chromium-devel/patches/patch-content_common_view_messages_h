@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_common_view_messages_h,v 1.2 2011/08/16 08:17:44 robert Exp $
+--- content/common/view_messages.h.orig	Wed Aug 24 10:52:53 2011
++++ content/common/view_messages.h	Thu Aug 25 09:38:24 2011
+@@ -1855,7 +1855,7 @@ IPC_SYNC_MESSAGE_CONTROL1_1(ViewHostMsg_AllocateShared
+ IPC_MESSAGE_CONTROL1(ViewHostMsg_SuddenTerminationChanged,
+                      bool /* enabled */)
+ 
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_OPENBSD)
+ // On OSX, we cannot allocated shared memory from within the sandbox, so
+ // this call exists for the renderer to ask the browser to allocate memory
+ // on its behalf. We return a file descriptor to the POSIX shared memory.

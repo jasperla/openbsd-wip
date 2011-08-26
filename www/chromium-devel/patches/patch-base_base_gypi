@@ -1,0 +1,38 @@
+$OpenBSD: patch-base_base_gypi,v 1.7 2011/08/16 08:17:44 robert Exp $
+--- base/base.gypi.orig	Wed Aug 24 10:53:14 2011
++++ base/base.gypi	Thu Aug 25 09:38:24 2011
+@@ -190,6 +190,7 @@
+           'process_util.h',
+           'process_util_linux.cc',
+           'process_util_mac.mm',
++          'process_util_openbsd.cc',
+           'process_util_posix.cc',
+           'process_util_win.cc',
+           'process_win.cc',
+@@ -388,12 +389,11 @@
+           }, {
+             'sources!' : [ 'message_pump_gtk.cc', ],
+           }],
+-          [ 'OS != "linux"', {
++          [ 'OS != "linux" and OS !="openbsd"', {
+               'sources!': [
+                 # Not automatically excluded by the *linux.cc rules.
+                 'gtk_util.cc',
+                 'gtk_util.h',
+-                'linux_util.cc',
+               ],
+             },
+           ],
+@@ -508,6 +508,12 @@
+             ],
+         }],
+         [ 'OS == "freebsd" or OS == "openbsd"', {
++          'sources!': [
++            'file_util_linux.cc',
++            'process_linux.cc',
++            'process_util_linux.cc',
++          ],
++          'include_dirs': [ '/usr/local/include' ],
+           'link_settings': {
+             'libraries': [
+               '-L/usr/local/lib -lexecinfo',

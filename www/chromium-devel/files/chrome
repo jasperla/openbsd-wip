@@ -1,0 +1,25 @@
+#!/bin/sh
+# $OpenBSD: chrome,v 1.7 2011/07/05 09:16:19 halex Exp $
+
+PROGDIR=TRUEPREFIX/chrome
+FDS=400
+
+[ `ulimit -Sn` -lt ${FDS} ] && ulimit -n ${FDS} 2>&-
+if [ `ulimit -Sn` -lt ${FDS} ]; then
+	LMSG="${LMSG}- increase openfiles-max to at least ${FDS}.\n"
+fi
+
+if [ ! -z "${LMSG}" ]; then
+	[ -f /etc/login.conf.db ] && LOGINDB=" and rebuild login.conf.db"
+	MSG="${MSG}\nYou should make the following changes for your login class in /etc/login.conf${LOGINDB}\n"
+	MSG="${MSG}(you will need to logout and login for these to take effect).\n${LMSG}"
+fi
+
+if ! pgrep -f  "^${PROGDIR}/chrome($| )" >&- && [ -n "${MSG}" ]; then
+	MSG="${MSG}\nDo you want to run Chromium anyway?"
+	MSG="${MSG}\n(If you don't increase these limits, Chromium might fail to work properly.)"
+
+	echo "${MSG}" | /usr/X11R6/bin/xmessage -file - -center -buttons yes:0,no:1 -default no || exit
+fi
+
+exec "${PROGDIR}/chrome" "$@"

@@ -1,0 +1,12 @@
+$OpenBSD$
+--- webkit/plugins/ppapi/plugin_delegate.h.orig	Wed Aug 24 10:52:50 2011
++++ webkit/plugins/ppapi/plugin_delegate.h	Thu Aug 25 09:38:24 2011
+@@ -343,7 +343,7 @@ class PluginDelegate {
+   virtual void PublishPolicy(const std::string& policy_json) = 0;
+ 
+   // For quota handlings for FileIO API.
+-  typedef Callback1<int64>::Type AvailableSpaceCallback;
++  typedef Callback1<int64_t>::Type AvailableSpaceCallback;
+   virtual void QueryAvailableSpace(const GURL& origin,
+                                    quota::StorageType type,
+                                    AvailableSpaceCallback* callback) = 0;

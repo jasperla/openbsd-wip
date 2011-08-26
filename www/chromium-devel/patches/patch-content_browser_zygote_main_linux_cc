@@ -1,0 +1,19 @@
+$OpenBSD$
+--- content/browser/zygote_main_linux.cc.orig	Thu Aug 25 09:39:15 2011
++++ content/browser/zygote_main_linux.cc	Thu Aug 25 09:40:00 2011
+@@ -695,6 +695,7 @@ static bool EnterSandbox() {
+     SkiaFontConfigSetImplementation(
+         new FontConfigIPC(kMagicSandboxIPCDescriptor));
+ 
++#if !defined(OS_OPENBSD)
+     // Previously, we required that the binary be non-readable. This causes the
+     // kernel to mark the process as non-dumpable at startup. The thinking was
+     // that, although we were putting the renderers into a PID namespace (with
+@@ -720,6 +721,7 @@ static bool EnterSandbox() {
+         return false;
+       }
+     }
++#endif
+ #if defined(SECCOMP_SANDBOX)
+   } else if (SeccompSandboxEnabled()) {
+     PreSandboxInit();

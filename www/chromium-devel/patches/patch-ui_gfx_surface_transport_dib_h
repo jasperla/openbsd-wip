@@ -1,0 +1,36 @@
+$OpenBSD: patch-ui_gfx_surface_transport_dib_h,v 1.1 2011/06/08 20:36:56 robert Exp $
+--- ui/gfx/surface/transport_dib.h.orig	Wed Aug 24 10:53:46 2011
++++ ui/gfx/surface/transport_dib.h	Thu Aug 25 09:38:24 2011
+@@ -9,7 +9,7 @@
+ #include "base/basictypes.h"
+ #include "ui/gfx/surface/surface_export.h"
+ 
+-#if defined(OS_WIN) || defined(OS_MACOSX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_OPENBSD)
+ #include "base/shared_memory.h"
+ #endif
+ 
+@@ -79,7 +79,7 @@ class SURFACE_EXPORT TransportDIB {
+     static int fake_handle = 10;
+     return reinterpret_cast<Handle>(fake_handle++);
+   }
+-#elif defined(OS_MACOSX)
++#elif defined(OS_MACOSX) || defined(OS_OPENBSD)
+   typedef base::SharedMemoryHandle Handle;
+   // On Mac, the inode number of the backing file is used as an id.
+   typedef base::SharedMemoryId Id;
+@@ -185,11 +185,12 @@ class SURFACE_EXPORT TransportDIB {
+ 
+  private:
+   TransportDIB();
+-#if defined(OS_WIN) || defined(OS_MACOSX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_OPENBSD)
+   explicit TransportDIB(base::SharedMemoryHandle dib);
+   base::SharedMemory shared_memory_;
+   uint32 sequence_num_;
+-#elif defined(USE_X11)
++#endif
++#if defined(USE_X11)
+   Id key_;  // SysV shared memory id
+   void* address_;  // mapped address
+   XSharedMemoryId x_shm_;  // X id for the shared segment

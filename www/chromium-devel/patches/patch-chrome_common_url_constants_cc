@@ -1,0 +1,12 @@
+$OpenBSD$
+--- chrome/common/url_constants.cc.orig	Wed Aug 24 10:53:45 2011
++++ chrome/common/url_constants.cc	Thu Aug 25 09:38:24 2011
+@@ -163,7 +163,7 @@ const char kChromeUIScreenshotPath[] = "screenshots";
+ const char kChromeUIThemePath[] = "theme";
+ const char kChromeUIThumbnailPath[] = "thumb";
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+ const char kChromeUILinuxProxyConfigHost[] = "linux-proxy-config";
+ const char kChromeUISandboxHost[] = "sandbox";
+ #endif

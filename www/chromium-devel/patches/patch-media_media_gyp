@@ -1,0 +1,47 @@
+$OpenBSD$
+--- media/media.gyp.orig	Thu Aug 25 09:40:30 2011
++++ media/media.gyp	Thu Aug 25 13:18:29 2011
+@@ -60,6 +60,8 @@
+         'audio/linux/alsa_wrapper.h',
+         'audio/linux/pulse_output.cc',
+         'audio/linux/pulse_output.h',
++        'audio/openbsd/sndio_output.cc',
++        'audio/openbsd/sndio_output.h',
+         'audio/openbsd/audio_manager_openbsd.cc',
+         'audio/openbsd/audio_manager_openbsd.h',
+         'audio/mac/audio_input_mac.cc',
+@@ -263,14 +265,18 @@
+         ['OS=="openbsd"', {
+           'sources/': [ ['exclude', 'alsa_' ],
+                         ['exclude', 'audio_manager_linux' ],
++                        ['exclude', 'pulse_' ],
+                         ['exclude', '\\.mm?$' ] ],
+           'link_settings': {
+             'libraries': [
++              '-lsndio',
+             ],
+           },
+         }],
+         ['OS!="openbsd"', {
+           'sources!': [
++            'audio/openbsd/sndio_output.cc',
++            'audio/openbsd/sndio_output.h',
+             'audio/openbsd/audio_manager_openbsd.cc',
+             'audio/openbsd/audio_manager_openbsd.h',
+           ],
+@@ -699,7 +705,6 @@
+           ],
+           'libraries': [
+             '-lGL',
+-            '-ldl',
+           ],
+           'sources': [
+             'tools/tile_render_bench/tile_render_bench.cc',
+@@ -719,7 +724,6 @@
+           ],
+           'link_settings': {
+             'libraries': [
+-              '-ldl',
+               '-lX11',
+               '-lXrender',
+               '-lXext',

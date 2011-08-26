@@ -1,0 +1,12 @@
+$OpenBSD$
+--- base/threading/platform_thread_posix.cc.orig	Thu Aug 25 09:38:59 2011
++++ base/threading/platform_thread_posix.cc	Thu Aug 25 09:39:08 2011
+@@ -136,7 +136,7 @@ PlatformThreadId PlatformThread::CurrentId() {
+   return syscall(__NR_gettid);
+ #elif defined(OS_ANDROID)
+   return gettid();
+-#elif defined(OS_FREEBSD)
++#elif defined(OS_FREEBSD) || defined(OS_OPENBSD)
+   // TODO(BSD): find a better thread ID
+   return reinterpret_cast<int64>(pthread_self());
+ #elif defined(OS_NACL) || defined(OS_SOLARIS)

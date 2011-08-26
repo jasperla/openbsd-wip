@@ -1,0 +1,13 @@
+$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.7 2011/08/16 08:17:44 robert Exp $
+--- chrome/chrome_browser.gypi.orig	Thu Aug 25 10:28:11 2011
++++ chrome/chrome_browser.gypi	Thu Aug 25 18:04:25 2011
+@@ -3950,8 +3950,7 @@
+           ],
+           'link_settings': {
+             'libraries': [
+-              # For dlsym() in 'browser/zygote_main_linux.cc'
+-              '-ldl',
++              '-lkvm',
+             ],
+           },
+           'sources!': [

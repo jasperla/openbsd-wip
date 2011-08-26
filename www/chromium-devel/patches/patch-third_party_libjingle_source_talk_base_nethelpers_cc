@@ -1,0 +1,21 @@
+$OpenBSD: patch-third_party_libjingle_source_talk_base_nethelpers_cc,v 1.2 2011/08/16 08:17:44 robert Exp $
+--- third_party/libjingle/source/talk/base/nethelpers.cc.orig	Wed Jul 27 10:04:28 2011
++++ third_party/libjingle/source/talk/base/nethelpers.cc	Tue Aug  2 20:12:19 2011
+@@ -139,7 +139,7 @@ hostent* SafeGetHostByName(const char* hostname, int* 
+   }
+   char* aux = static_cast<char*>(buf) + sizeof(hostent);
+   size_t aux_len = size - sizeof(hostent);
+-  while ((ret = gethostbyname_r(hostname, reinterpret_cast<hostent*>(buf), aux,
++  while ((ret = gethostbyname(hostname, reinterpret_cast<hostent*>(buf), aux,
+       aux_len, &result, herrno)) == ERANGE) {
+     size *= 2;
+     if (size > kMaxHostentLen) {
+@@ -168,6 +168,8 @@ hostent* SafeGetHostByName(const char* hostname, int* 
+ #elif defined(OSX) || defined(IOS)
+   // Mac OS returns an object with everything allocated.
+   result = getipnodebyname(hostname, AF_INET, AI_DEFAULT, herrno);
++#elif defined(__OpenBSD__)
++  result = gethostbyname(hostname);
+ #else
+ #error "I don't know how to do gethostbyname safely on your system."
+ #endif

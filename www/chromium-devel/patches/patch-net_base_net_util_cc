@@ -1,0 +1,11 @@
+$OpenBSD: patch-net_base_net_util_cc,v 1.4 2011/06/08 20:36:56 robert Exp $
+--- net/base/net_util.cc.orig	Tue Aug 23 10:28:31 2011
++++ net/base/net_util.cc	Wed Aug 24 10:54:23 2011
+@@ -28,6 +28,7 @@
+ #include <ifaddrs.h>
+ #endif
+ #include <netdb.h>
++#include <sys/socket.h>
+ #include <net/if.h>
+ #include <netinet/in.h>
+ #endif

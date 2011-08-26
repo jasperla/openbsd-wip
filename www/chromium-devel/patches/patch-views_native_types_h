@@ -1,0 +1,12 @@
+$OpenBSD$
+--- views/native_types.h.orig	Wed Aug 24 12:28:33 2011
++++ views/native_types.h	Wed Aug 24 12:28:45 2011
+@@ -32,7 +32,7 @@ namespace views {
+ #if defined(OS_WIN)
+ typedef MSG NativeEvent;
+ #endif
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+ typedef GdkEvent* NativeEvent;
+ #endif
+ #if defined(USE_X11)

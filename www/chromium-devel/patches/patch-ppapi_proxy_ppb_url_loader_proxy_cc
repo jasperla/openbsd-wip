@@ -1,0 +1,18 @@
+$OpenBSD: patch-ppapi_proxy_ppb_url_loader_proxy_cc,v 1.1 2011/06/08 20:36:56 robert Exp $
+--- ppapi/proxy/ppb_url_loader_proxy.cc.orig	Wed Aug 24 10:52:52 2011
++++ ppapi/proxy/ppb_url_loader_proxy.cc	Thu Aug 25 09:38:24 2011
+@@ -50,10 +50,10 @@ const int32_t kMaxReadBufferSize = 16777216;  // 16MB
+ // from the plugin.
+ void UpdateResourceLoadStatus(PP_Instance pp_instance,
+                               PP_Resource pp_resource,
+-                              int64 bytes_sent,
+-                              int64 total_bytes_to_be_sent,
+-                              int64 bytes_received,
+-                              int64 total_bytes_to_be_received) {
++                              int64_t bytes_sent,
++                              int64_t total_bytes_to_be_sent,
++                              int64_t bytes_received,
++                              int64_t total_bytes_to_be_received) {
+   Dispatcher* dispatcher = HostDispatcher::GetForInstance(pp_instance);
+   if (!dispatcher)
+     return;

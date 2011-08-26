@@ -1,0 +1,30 @@
+$OpenBSD: patch-content_renderer_render_process_impl_cc,v 1.2 2011/08/16 08:17:44 robert Exp $
+--- content/renderer/render_process_impl.cc.orig	Tue Aug 23 10:28:29 2011
++++ content/renderer/render_process_impl.cc	Wed Aug 24 10:54:23 2011
+@@ -106,7 +106,7 @@ TransportDIB* RenderProcessImpl::CreateTransportDIB(si
+ #if defined(OS_WIN) || defined(OS_LINUX)
+   // Windows and Linux create transport DIBs inside the renderer
+   return TransportDIB::Create(size, transport_dib_next_sequence_number_++);
+-#elif defined(OS_MACOSX)  // defined(OS_WIN) || defined(OS_LINUX)
++#elif defined(OS_MACOSX)  || defined(OS_OPENBSD) // defined(OS_WIN) || defined(OS_LINUX)
+   // Mac creates transport DIBs in the browser, so we need to do a sync IPC to
+   // get one.  The TransportDIB is cached in the browser.
+   TransportDIB::Handle handle;
+@@ -123,7 +123,7 @@ void RenderProcessImpl::FreeTransportDIB(TransportDIB*
+   if (!dib)
+     return;
+ 
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_OPENBSD)
+   // On Mac we need to tell the browser that it can drop a reference to the
+   // shared memory.
+   IPC::Message* msg = new ViewHostMsg_FreeTransportDIB(dib->id());
+@@ -141,7 +141,7 @@ skia::PlatformCanvas* RenderProcessImpl::GetDrawingCan
+   int width = rect.width();
+   int height = rect.height();
+   const size_t stride = skia::PlatformCanvas::StrideForWidth(rect.width());
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+   const size_t max_size = base::SysInfo::MaxSharedMemorySize();
+ #else
+   const size_t max_size = 0;

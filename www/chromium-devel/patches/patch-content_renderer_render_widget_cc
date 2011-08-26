@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_renderer_render_widget_cc,v 1.2 2011/08/16 08:17:44 robert Exp $
+--- content/renderer/render_widget.cc.orig	Wed Aug 24 10:52:54 2011
++++ content/renderer/render_widget.cc	Thu Aug 25 09:38:24 2011
+@@ -1137,7 +1137,7 @@ void RenderWidget::OnMsgPaintAtSize(const TransportDIB
+       // Close our unused handle.
+ #if defined(OS_WIN)
+       ::CloseHandle(dib_handle);
+-#elif defined(OS_MACOSX)
++#elif defined(OS_MACOSX) || defined(OS_OPENBSD)
+       base::SharedMemory::CloseHandle(dib_handle);
+ #endif
+     }

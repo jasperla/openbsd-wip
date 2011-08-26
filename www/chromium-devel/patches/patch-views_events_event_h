@@ -1,0 +1,12 @@
+$OpenBSD$
+--- views/events/event.h.orig	Wed Aug 24 10:53:12 2011
++++ views/events/event.h	Thu Aug 25 09:38:24 2011
+@@ -91,7 +91,7 @@ class VIEWS_EXPORT Event {
+ #if defined(OS_WIN)
+   // Returns the EventFlags in terms of windows flags.
+   int GetWindowsFlags() const;
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_OPENBSD)
+   // Get the views::Event flags from a native GdkEvent.
+   static int GetFlagsFromGdkEvent(NativeEvent native_event);
+ #endif

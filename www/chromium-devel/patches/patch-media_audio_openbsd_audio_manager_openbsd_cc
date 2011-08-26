@@ -1,0 +1,73 @@
+$OpenBSD$
+--- media/audio/openbsd/audio_manager_openbsd.cc.orig	Wed Aug 24 11:09:14 2011
++++ media/audio/openbsd/audio_manager_openbsd.cc	Wed Aug 24 11:10:50 2011
+@@ -4,14 +4,17 @@
+ 
+ #include "media/audio/openbsd/audio_manager_openbsd.h"
+ 
+-#include "base/logging.h"
++#include "base/sys_info.h"
++#include "media/audio/fake_audio_input_stream.h"
++#include "media/audio/fake_audio_output_stream.h"
++#include "media/audio/openbsd/audio_manager_openbsd.h"
++#include "media/audio/openbsd/sndio_output.h"
++#include "media/base/limits.h"
++#include "media/base/limits.h"
+ 
+-static AudioManagerOpenBSD* g_audio_manager = NULL;
+-
+ // Implementation of AudioManager.
+ bool AudioManagerOpenBSD::HasAudioOutputDevices() {
+-  NOTIMPLEMENTED();
+-  return false;
++  return true;
+ }
+ 
+ bool AudioManagerOpenBSD::HasAudioInputDevices() {
+@@ -21,8 +24,16 @@ bool AudioManagerOpenBSD::HasAudioInputDevices() {
+ 
+ AudioOutputStream* AudioManagerOpenBSD::MakeAudioOutputStream(
+     const AudioParameters& params) {
+-  NOTIMPLEMENTED();
+-  return NULL;
++  if (getenv("CHROME_SNDIO") == NULL) {
++    NOTIMPLEMENTED();
++    return NULL;
++  }
++
++  if (params.format == AudioParameters::AUDIO_MOCK) {
++    return FakeAudioOutputStream::MakeFakeStream(params);
++  }
++
++  return new PCMQueueOutAudioOutputStream(this, params);
+ }
+ 
+ AudioInputStream* AudioManagerOpenBSD::MakeAudioInputStream(
+@@ -37,10 +48,6 @@ AudioManagerOpenBSD::AudioManagerOpenBSD() {
+ AudioManagerOpenBSD::~AudioManagerOpenBSD() {
+ }
+ 
+-void AudioManagerOpenBSD::Init() {
+-  AudioManagerBase::Init();
+-}
+-
+ void AudioManagerOpenBSD::MuteAll() {
+   NOTIMPLEMENTED();
+ }
+@@ -52,4 +59,16 @@ void AudioManagerOpenBSD::UnMuteAll() {
+ // static
+ AudioManager* AudioManager::CreateAudioManager() {
+   return new AudioManagerOpenBSD();
++}
++
++// Called by the stream when it has been released by calling Close().
++void AudioManagerOpenBSD::ReleaseOutputStream(
++    PCMQueueOutAudioOutputStream* stream) {
++  DCHECK(stream);
++  delete stream;
++}
++
++// Called by the stream when it has been released by calling Close().
++void AudioManagerOpenBSD::ReleaseInputStream(PCMQueueInAudioInputStream* stream) {
++  NOTIMPLEMENTED();
+ }

@@ -1,0 +1,25 @@
+$OpenBSD: patch-build_linux_system_gyp,v 1.4 2011/08/16 08:17:44 robert Exp $
+--- build/linux/system.gyp.orig	Tue Aug 23 10:28:47 2011
++++ build/linux/system.gyp	Wed Aug 24 10:54:22 2011
+@@ -242,13 +242,6 @@
+             'libraries': [
+               '<!@(<(pkg-config) --libs-only-l gio-2.0)',
+             ],
+-            'conditions': [
+-              ['linux_link_gsettings==0', {
+-                'libraries': [
+-                  '-ldl',
+-                ],
+-              }],
+-            ],
+           },
+       }]]
+     },
+@@ -353,7 +346,6 @@
+             }, {
+               'link_settings': {
+                 'libraries': [
+-                  '-ldl',
+                 ],
+               },
+             }],

@@ -1,0 +1,17 @@
+$OpenBSD: patch-base_base_gyp,v 1.6 2011/08/16 08:17:44 robert Exp $
+--- base/base.gyp.orig	Wed Aug 24 10:53:14 2011
++++ base/base.gyp	Thu Aug 25 09:38:24 2011
+@@ -297,6 +297,13 @@
+           ],
+         }],
+       ],
++      'conditions': [
++        [ 'OS == "openbsd"', {
++            # fdatasync is not implemented on OpenBSD
++            'sources/': [ ['exclude', '^test/test_file_util_linux.cc$'] ],
++          },
++        ],
++      ],
+     },
+     {
+       'target_name': 'test_support_base',

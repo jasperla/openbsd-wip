@@ -1,0 +1,24 @@
+$OpenBSD$
+--- content/browser/zygote_host_linux.cc.orig	Thu Aug 25 18:06:24 2011
++++ content/browser/zygote_host_linux.cc	Thu Aug 25 18:07:01 2011
+@@ -332,7 +332,9 @@ void ZygoteHost::AdjustRendererOOMScore(base::ProcessH
+ 
+     std::vector<std::string> adj_oom_score_cmdline;
+     adj_oom_score_cmdline.push_back(sandbox_binary_);
++#if !defined(OS_OPENBSD)
+     adj_oom_score_cmdline.push_back(kAdjustOOMScoreSwitch);
++#endif
+     adj_oom_score_cmdline.push_back(base::Int64ToString(pid));
+     adj_oom_score_cmdline.push_back(base::IntToString(score));
+ 
+@@ -342,8 +344,10 @@ void ZygoteHost::AdjustRendererOOMScore(base::ProcessH
+       ProcessWatcher::EnsureProcessGetsReaped(sandbox_helper_process);
+     }
+   } else if (!using_suid_sandbox_) {
++#if !defined(OS_OPENBSD)
+     if (!base::AdjustOOMScore(pid, score))
+       PLOG(ERROR) << "Failed to adjust OOM score of renderer with pid " << pid;
++#endif
+   }
+ }
+ 

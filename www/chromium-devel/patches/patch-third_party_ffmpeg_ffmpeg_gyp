@@ -1,0 +1,11 @@
+$OpenBSD$
+--- third_party/ffmpeg/ffmpeg.gyp.orig	Thu Aug 25 09:42:01 2011
++++ third_party/ffmpeg/ffmpeg.gyp	Thu Aug 25 12:21:48 2011
+@@ -178,7 +178,6 @@
+                 '-std=c99',
+                 '-pthread',
+                 '-fno-math-errno',
+-                '-fno-signed-zeros',
+                 '-fno-tree-vectorize',
+                 '-fomit-frame-pointer',
+                 # Don't warn about libavformat using its own deprecated APIs.

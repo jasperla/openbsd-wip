@@ -1,0 +1,12 @@
+$OpenBSD: patch-ppapi_proxy_serialized_var_cc,v 1.3 2011/06/08 20:36:56 robert Exp $
+--- ppapi/proxy/serialized_var.cc.orig	Wed Aug 24 10:52:52 2011
++++ ppapi/proxy/serialized_var.cc	Thu Aug 25 09:38:24 2011
+@@ -207,7 +207,7 @@ bool SerializedVar::Inner::ReadFromMessage(const IPC::
+       var_.value.as_id = 0;
+       break;
+     case PP_VARTYPE_OBJECT:
+-      success = m->ReadInt64(iter, &var_.value.as_id);
++      success = m->ReadInt64(iter, (int64 *)&var_.value.as_id);
+       break;
+     case PP_VARTYPE_ARRAY:
+     case PP_VARTYPE_DICTIONARY:

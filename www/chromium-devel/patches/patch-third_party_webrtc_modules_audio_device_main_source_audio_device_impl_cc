@@ -1,0 +1,12 @@
+$OpenBSD$
+--- third_party/webrtc/modules/audio_device/main/source/audio_device_impl.cc.orig	Thu Aug 25 17:11:39 2011
++++ third_party/webrtc/modules/audio_device/main/source/audio_device_impl.cc	Thu Aug 25 17:15:04 2011
+@@ -29,6 +29,8 @@
+     #include "audio_device_utility_android.h"
+     #include "audio_device_android_jni.h"
+ #elif defined(WEBRTC_LINUX)
++    #include <stdlib.h>
++    #include <string.h>
+     #include "audio_device_utility_linux.h"
+  #if defined(LINUX_ALSA)
+     #include "audio_device_linux_alsa.h"
