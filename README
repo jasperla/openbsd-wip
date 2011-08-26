@@ -10,6 +10,9 @@ that are updated/imported upstream.
 
 If you're importing an update, please add an UPDATE file in the ports' directory
 with a summary of changes/explanation. This will make it easier to keep
-updates and new ports apart.
+updates and new ports apart. When a port is ready to get committed, please add
+an entry to /FINISHED in the following format (subject to change):
+
+net/gnaughty:	ready for import, sent to ports@ (jasperla)
 
 Please let me know if you need write access to this repository.
