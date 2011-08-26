@@ -1,2 +1,8 @@
 This tree is to be used to maintain and eventually migrate ports into the
-official OpenBSD ports tree.
+official OpenBSD ports tree. This means that ports in this tree are actively
+worked on and may not always build.
+
+The goal of this try-out is to get more people actively involved, and better
+keep track of (half-)finished ports out there.
+
+Please let me know if you need write access to this repository.
