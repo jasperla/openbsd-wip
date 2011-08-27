@@ -1,0 +1,96 @@
+$OpenBSD$
+--- default.build.orig	Thu Jan 20 13:25:04 2011
++++ default.build	Fri Aug 26 14:04:35 2011
+@@ -12,7 +12,7 @@
+ 	
+ 	<property name="mono" value="${'mono' == framework::get-family(framework::get-runtime-framework())}" />
+ 
+-	<property name="antlr.jar" value="lib/antlr-2.7.5/antlr-2.7.5.jar" />
++	<property name="antlr.jar" value="${path::combine(prefix, '/share/java/antlr-2.7.5.jar')}" />
+ 	<property name="java" value="java" />	
+ 	
+ 	<property name="ngen.exe" value="${framework::get-framework-directory(framework::get-target-framework())}/ngen.exe" />
+@@ -24,7 +24,7 @@
+ 	<property name="build.dir" value="build" dynamic="True"/>
+ 	<property name="distrobuild.dir" value="distrobuild"/>
+ 
+-	<property name="install.prefix" value="/usr/local" />
++	<property name="install.prefix" value="${prefix}" />
+ 	<property name="install.destdir" value="/" />
+ 
+ 	<property name="install.share" value="${path::combine(install.prefix,'share')}" />
+@@ -90,7 +90,7 @@
+ 		<property name="nosign" value="true" overwrite="true" />
+ 	</target>
+ 
+-	<target name="all" depends="booc, booi, booish, boo-pkgconfig, Boo.Lang.CodeDom, Boo.Lang.Useful, boo, Boo.Microsoft.Build.Tasks, update-vs-env, Boo.Lang.PatternMatching">
++	<target name="all" depends="booc, booi, booish, boo-pkgconfig, Boo.Lang.CodeDom, Boo.Lang.Useful, boo, Boo.Microsoft.Build.Tasks, Boo.Lang.PatternMatching">
+ 		<call target="gendarme" if="${gendarme.dir != ''}" />
+ 		<call target="verify-assemblies" />
+ 	</target>
+@@ -579,7 +579,7 @@
+ 
+ 		<property name="sharedmime.prefix" value="${pkg-config::get-variable('shared-mime-info','prefix')}" />
+ 		<property name="fakeroot.sharedmime" value="${install.destdir}/${sharedmime.prefix}" />
+-		<property name="gsv.prefix" value="${pkg-config::get-variable('gtksourceview-1.0','prefix')}" />
++		<property name="gsv.prefix" value="${pkg-config::get-variable('gtksourceview-2.0','prefix')}" />
+ 		<property name="fakeroot.gsv" value="${install.destdir}/${gsv.prefix}" />
+ 
+ 		<mkdir dir="${fakeroot.boolib}"/>
+@@ -634,7 +634,7 @@
+ 			</fileset>
+ 		</copy>
+ 		
+-		<copy file="extras/boo.lang" todir="${fakeroot.gsv}/share/gtksourceview-1.0/language-specs/" />
++		<copy file="extras/boo.lang" todir="${fakeroot.gsv}/share/gtksourceview-2.0/language-specs/" />
+ 		<copy file="${build.dir}/boo.pc" todir="${fakeroot.libdir}/pkgconfig/" />
+ 		<copy file="extras/boo-mime-info.xml" todir="${fakeroot.sharedmime}/share/mime/packages/" />
+ 
+@@ -678,7 +678,28 @@
+ 		</foreach>
+ 
+ 	</target>
+-	
++
++    <target name="install-docs">
++        <copy todir="${fakeroot.docsdir}">
++            <fileset basedir="${docs.dir}">
++                <include name="*.sxw" />
++            </fileset>
++        </copy>
++        <copy todir="${fakeroot.docsdir}">
++            <fileset basedir=".">
++                <include name="*.txt" />
++            </fileset>
++        </copy>
++    </target>
++
++    <target name="install-examples">
++        <copy todir="${fakeroot.examplesdir}">
++            <fileset basedir="${examples.dir}">
++                <include name="**" />
++            </fileset>
++        </copy>
++    </target>
++
+ 	<target name="uninstall">
+ 		<call target="uninstall-linux" if="${not(platform::is-win32())}"/>
+ 		<call target="uninstall-win32" if="${platform::is-win32()}"/>
+@@ -692,7 +713,7 @@
+ 
+ 		<property name="sharedmime.prefix" value="${pkg-config::get-variable('shared-mime-info','prefix')}" />
+ 		<property name="fakeroot.sharedmime" value="${install.destdir}/${sharedmime.prefix}" />
+-		<property name="gsv.prefix" value="${pkg-config::get-variable('gtksourceview-1.0','prefix')}" />
++		<property name="gsv.prefix" value="${pkg-config::get-variable('gtksourceview-2.0','prefix')}" />
+ 		<property name="fakeroot.gsv" value="${install.destdir}/${gsv.prefix}" />
+ 		
+ 		<foreach item="File" property="filename">
+@@ -715,7 +736,7 @@
+ 		
+ 		<delete file="${fakeroot.sharedmime}/share/mime-info/boo.keys" />
+ 		<delete file="${fakeroot.sharedmime}/share/mime-info/boo.mime" />
+-		<delete file="${fakeroot.gsv}/share/gtksourceview-1.0/language-specs/boo.lang" />
++		<delete file="${fakeroot.gsv}/share/gtksourceview-2.0/language-specs/boo.lang" />
+ 		<delete file="${fakeroot.libdir}/pkgconfig/boo.pc" />
+ 		<delete file="${fakeroot.sharedmime}/share/mime/packages/boo-mime-info.xml" />
+ 		<delete file="${fakeroot.bindir}/booi" />
