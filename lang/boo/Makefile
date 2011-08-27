@@ -4,15 +4,15 @@ COMMENT = 		Python like language for the .NET/Mono platform
 
 PNAME =			boo
 V =				0.9.4
-BUILD_NUM = 	9
+BUILD_NUM =		9
 
 PKGNAME = 		${PNAME}-${V}
 DISTNAME = 		${PKGNAME}.${BUILD_NUM}
 CATEGORIES = 	lang
 
-EXTRACT_SUFX = 		-src.zip
+EXTRACT_SUFX = 	-src.zip
 
-HOMEPAGE = 				http://boo.codehaus.org/
+HOMEPAGE = 		http://boo.codehaus.org/
 
 # MIT/BSD
 PERMIT_PACKAGE_CDROM =		Yes
@@ -20,33 +20,32 @@ PERMIT_PACKAGE_FTP = 		Yes
 PERMIT_DISTFILES_CDROM = 	Yes
 PERMIT_DISTFILES_FTP = 		Yes
 
-MASTER_SITES = 		http://dist.codehaus.org/boo/distributions/
+MASTER_SITES = 			http://dist.codehaus.org/boo/distributions/
 
-MODULES = 			lang/mono
+MODULES = 				lang/mono
 
-BUILD_DEPENDS +=	lang/antlr2
-LIB_DEPENDS += 		lang/mono \
-					misc/shared-mime-info \
-					x11/gtksourceview
+BUILD_DEPENDS +=	  		lang/antlr2
+LIB_DEPENDS += 			lang/mono \
+						misc/shared-mime-info \
+						x11/gtksourceview
 
-DOCDIR = 			/share/doc/${PNAME}
-EXAMPLEDIR =		/share/examples/${PNAME}
+DOCDIR = 				/share/doc/${PNAME}
+EXAMPLEDIR = 			/share/examples/${PNAME}
 
-WRKDIST =			${WRKDIR}
+WRKDIST = 				${WRKDIR}
 
-USE_NANT = 			Yes
+USE_NANT =  				Yes
 
-NANT_FLAGS = 		-D:docs.dir=docs \
-					-D:fakeroot.docsdir=${LOCALBASE}${DOCDIR} \
-					-D:examples.dir=examples \
-					-D:fakeroot.examplesdir=${LOCALBASE}${EXAMPLEDIR} \
-					-D:install.libdatadir=${LOCALBASE}/libdata \
-					-D:fakeroot.libdatadir=${LOCALBASE}/libdata
+NANT_FLAGS = 			-D:install.prefix=${PREFIX} \
+						-D:docs.dir=docs \
+						-D:fakeroot.boodocs=${LOCALBASE}${DOCDIR} \
+						-D:examples.dir=examples \
+						-D:fakeroot.booexamples=${LOCALBASE}${EXAMPLEDIR} \
+						-D:install.libdatadir=${LOCALBASE}/libdata \
+						-D:fakeroot.libdatadir=${LOCALBASE}/libdata \
+						-D:antlr.jar: ${PREFIX}/share/java/antlr-2.7.5.jar'
 
-NO_REGRESS =		Yes
-
-do-build:
-	@cd ${WRKSRC} && ${MAKE_FLAGS} ${NANT} ${NANT_FLAGS} -D:prefix="${PREFIX}"
+NO_REGRESS = 			Yes
 
 pre-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}${DOCDIR}

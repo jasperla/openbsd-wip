@@ -1,24 +1,6 @@
 $OpenBSD$
 --- default.build.orig	Thu Jan 20 13:25:04 2011
 +++ default.build	Fri Aug 26 14:04:35 2011
-@@ -12,7 +12,7 @@
- 	
- 	<property name="mono" value="${'mono' == framework::get-family(framework::get-runtime-framework())}" />
- 
--	<property name="antlr.jar" value="lib/antlr-2.7.5/antlr-2.7.5.jar" />
-+	<property name="antlr.jar" value="${path::combine(prefix, '/share/java/antlr-2.7.5.jar')}" />
- 	<property name="java" value="java" />	
- 	
- 	<property name="ngen.exe" value="${framework::get-framework-directory(framework::get-target-framework())}/ngen.exe" />
-@@ -24,7 +24,7 @@
- 	<property name="build.dir" value="build" dynamic="True"/>
- 	<property name="distrobuild.dir" value="distrobuild"/>
- 
--	<property name="install.prefix" value="/usr/local" />
-+	<property name="install.prefix" value="${prefix}" />
- 	<property name="install.destdir" value="/" />
- 
- 	<property name="install.share" value="${path::combine(install.prefix,'share')}" />
 @@ -90,7 +90,7 @@
  		<property name="nosign" value="true" overwrite="true" />
  	</target>
@@ -53,12 +35,12 @@ $OpenBSD$
 -	
 +
 +    <target name="install-docs">
-+        <copy todir="${fakeroot.docsdir}">
++        <copy todir="${fakeroot.boodocs}">
 +            <fileset basedir="${docs.dir}">
 +                <include name="*.sxw" />
 +            </fileset>
 +        </copy>
-+        <copy todir="${fakeroot.docsdir}">
++        <copy todir="${fakeroot.boodocs}">
 +            <fileset basedir=".">
 +                <include name="*.txt" />
 +            </fileset>
@@ -66,7 +48,7 @@ $OpenBSD$
 +    </target>
 +
 +    <target name="install-examples">
-+        <copy todir="${fakeroot.examplesdir}">
++        <copy todir="${fakeroot.booexamples}">
 +            <fileset basedir="${examples.dir}">
 +                <include name="**" />
 +            </fileset>
