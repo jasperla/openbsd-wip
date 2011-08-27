@@ -6,7 +6,7 @@ DISTNAME =	Unicode-UTF8simple-1.06
 CATEGORIES =	converters
 CPAN_AUTHOR =	GUS
 
-MAINTAINER =	Nigel Taylor <njtaylor@openbsd.org>
+MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM = 	 Yes

@@ -11,7 +11,7 @@ CATEGORIES =	www
 
 HOMEPAGE =	http://www.gnu.org/software/libmicrohttpd/
 
-MAINTAINER =	Nigel Taylor <njtaylor@openbsd.org>
+MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM =	 Yes

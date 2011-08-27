@@ -4,7 +4,7 @@ CATEGORIES ?=		security
 
 HOMEPAGE ?=		http://www.openvas.org/
 
-MAINTAINER ?=		Nigel Taylor <njtaylor@openbsd.org>
+MAINTAINER ?=		Nigel Taylor <nigel@openbsd.org>
 
 MASTER_SITES_OPENVAS =	http://wald.intevation.org/frs/download.php/
 

@@ -6,7 +6,7 @@ DISTNAME =	AMF-Connection-0.30
 CATEGORIES =	multimedia
 CPAN_AUTHOR =	AREGGIORI
 
-MAINTAINER =	Nigel Taylor <njtaylor@openbsd.org>
+MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =	 Yes

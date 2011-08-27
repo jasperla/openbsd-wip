@@ -6,7 +6,7 @@ DISTNAME =	Tk-TableMatrix-1.23
 CATEGORIES =	x11 devel
 CPAN_AUTHOR =   CERNEY
 
-MAINTAINER =	Nigel Taylor <njtaylor@openbsd.org>
+MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
 # custom
 PERMIT_PACKAGE_CDROM =	 Yes

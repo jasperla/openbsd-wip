@@ -6,7 +6,7 @@ DISTNAME =	Storable-AMF-1.00
 CATEGORIES =	multimedia
 CPAN_AUTHOR =	GRIAN
 
-MAINTAINER =	Nigel Taylor <njtaylor@openbsd.org>
+MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =	 Yes
