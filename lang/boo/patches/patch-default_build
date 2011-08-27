@@ -1,6 +1,6 @@
 $OpenBSD$
 --- default.build.orig	Thu Jan 20 13:25:04 2011
-+++ default.build	Fri Aug 26 14:04:35 2011
++++ default.build	Sat Aug 27 06:37:51 2011
 @@ -90,7 +90,7 @@
  		<property name="nosign" value="true" overwrite="true" />
  	</target>
@@ -28,37 +28,7 @@ $OpenBSD$
  		<copy file="${build.dir}/boo.pc" todir="${fakeroot.libdir}/pkgconfig/" />
  		<copy file="extras/boo-mime-info.xml" todir="${fakeroot.sharedmime}/share/mime/packages/" />
  
-@@ -678,7 +678,28 @@
- 		</foreach>
- 
- 	</target>
--	
-+
-+    <target name="install-docs">
-+        <copy todir="${fakeroot.boodocs}">
-+            <fileset basedir="${docs.dir}">
-+                <include name="*.sxw" />
-+            </fileset>
-+        </copy>
-+        <copy todir="${fakeroot.boodocs}">
-+            <fileset basedir=".">
-+                <include name="*.txt" />
-+            </fileset>
-+        </copy>
-+    </target>
-+
-+    <target name="install-examples">
-+        <copy todir="${fakeroot.booexamples}">
-+            <fileset basedir="${examples.dir}">
-+                <include name="**" />
-+            </fileset>
-+        </copy>
-+    </target>
-+
- 	<target name="uninstall">
- 		<call target="uninstall-linux" if="${not(platform::is-win32())}"/>
- 		<call target="uninstall-win32" if="${platform::is-win32()}"/>
-@@ -692,7 +713,7 @@
+@@ -692,7 +692,7 @@
  
  		<property name="sharedmime.prefix" value="${pkg-config::get-variable('shared-mime-info','prefix')}" />
  		<property name="fakeroot.sharedmime" value="${install.destdir}/${sharedmime.prefix}" />
@@ -67,7 +37,7 @@ $OpenBSD$
  		<property name="fakeroot.gsv" value="${install.destdir}/${gsv.prefix}" />
  		
  		<foreach item="File" property="filename">
-@@ -715,7 +736,7 @@
+@@ -715,7 +715,7 @@
  		
  		<delete file="${fakeroot.sharedmime}/share/mime-info/boo.keys" />
  		<delete file="${fakeroot.sharedmime}/share/mime-info/boo.mime" />

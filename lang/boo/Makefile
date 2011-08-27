@@ -24,7 +24,7 @@ MASTER_SITES = 			http://dist.codehaus.org/boo/distributions/
 
 MODULES = 				lang/mono
 
-BUILD_DEPENDS +=	  		lang/antlr2
+BUILD_DEPENDS +=	  	lang/antlr2
 LIB_DEPENDS += 			lang/mono \
 						misc/shared-mime-info \
 						x11/gtksourceview
@@ -34,16 +34,10 @@ EXAMPLEDIR = 			/share/examples/${PNAME}
 
 WRKDIST = 				${WRKDIR}
 
-USE_NANT =  				Yes
+USE_NANT =  			Yes
 
 NANT_FLAGS = 			-D:install.prefix=${PREFIX} \
-						-D:docs.dir=docs \
-						-D:fakeroot.boodocs=${LOCALBASE}${DOCDIR} \
-						-D:examples.dir=examples \
-						-D:fakeroot.booexamples=${LOCALBASE}${EXAMPLEDIR} \
-						-D:install.libdatadir=${LOCALBASE}/libdata \
-						-D:fakeroot.libdatadir=${LOCALBASE}/libdata \
-						-D:antlr.jar: ${PREFIX}/share/java/antlr-2.7.5.jar'
+						-D:antlr.jar=${PREFIX}/share/java/antlr-2.7.5.jar
 
 NO_REGRESS = 			Yes
 
