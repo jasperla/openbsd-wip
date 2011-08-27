@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/testzzuf/socat.c.orig	Mon Dec 20 20:16:56 2010
++++ src/testzzuf/socat.c	Mon Mar  7 23:35:42 2011
+@@ -82,7 +82,7 @@ zzuf_socat_start ()
+         }
+       return;
+     }
+-  setpgrp ();
++  setpgrp (0, 0);
+   execvp ("zzuf", args);
+   fprintf (stderr, "execution of `zzuf' failed: %s\n", strerror (errno));
+   zzuf_pid = 0;                 /* fork failed */
