@@ -1,0 +1,11 @@
+$OpenBSD$
+--- configure.orig	Fri Jan  7 16:37:28 2005
++++ configure	Mon May  4 20:32:06 2009
+@@ -2818,6 +2818,7 @@ case "${host}" in
+         *-*-linux*)     platform=LINUX ;;
+         *-*-freebsd*)   platform=FREEBSD ;;
+         *-*-netbsd*)    platform=NETBSD ;;
++        *-*-openbsd*)    platform=OPENBSD ;;
+         *-*-irix*)      platform=IRIX ;;
+         *-*-aix*)       platform=AIX ;;
+         ia64-hp*)       platform=HPUX ; osver=HPUX11 ; osvariant=IA64;;

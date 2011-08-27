@@ -1,0 +1,37 @@
+$OpenBSD$
+--- Makefile.incl.in.orig	Tue Oct  4 22:25:21 2005
++++ Makefile.incl.in	Mon May  4 20:01:22 2009
+@@ -290,6 +290,33 @@ ifeq ($(PLATFORM), NETBSD)
+   MAKE_SHARED_LOC=$(MAKE_SHARED)
+ endif
+ 
++#=============== OPENBSD SPECIFIC OPTIONS ======================
++
++ifeq ($(PLATFORM), OPENBSD)
++
++  SUPPORTED = TRUE
++  ALLLIBS = ${LIBS} -L/usr/local/lib
++  SHLIBSUFFIX=.so
++  PIC_OPTION = -fPIC
++
++  PLATFORM_COMPILE_OPTIONS = -D${PLATFORM} ${PIC_OPTION} ${WCSTOMBS}
++
++  # We need the ICU library if we are using the ICUBridge
++  ifdef XALAN_USE_ICU
++    LD_RPATH_PRE = -Wl,-rpath,
++    PLATFORM_LIB_LINK_OPTIONS = $(LD_RPATH_PRE)${ICUROOT}/lib
++    PLATFORM_LIB_LINK_OPTIONS += -licuuc -licudata
++    ALLLIBS += -L${ICUROOT}
++  endif
++
++  CC1 = $(CXX) $(CXXFLAGS) $(PLATFORM_COMPILE_OPTIONS)
++  CC4 = $(CC) $(CFLAGS) $(PLATFORM_COMPILE_OPTIONS)
++  MAKE_SHARED = $(CXX) $(CXXFLAGS) -D${PLATFORM} -shared ${PIC_OPTION} ${LDFLAGS}
++  LINK = $(CXX) -D${PLATFORM} ${PIC_OPTION} ${LDFLAGS}
++
++  MAKE_SHARED_LOC=$(MAKE_SHARED)
++endif
++
+ #=============== HPUX SPECIFIC OPTIONS =========================
+ 
+ 

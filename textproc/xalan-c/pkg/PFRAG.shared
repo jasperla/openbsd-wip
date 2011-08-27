@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+lib/libxalan-c.so
+@lib lib/libxalan-c.so.${LIBxalan-c_VERSION}
+lib/libxalanMsg.so
+@lib lib/libxalanMsg.so.${LIBxalanMsg_VERSION}

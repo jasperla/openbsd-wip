@@ -1,0 +1,9 @@
+Xalan is an XSLT processor for transforming XML documents into 
+HTML, text, or other XML document types.
+
+Xalan-C++ version 1.10 is a robust implementation of the W3C 
+Recommendations for XSL Transformations (XSLT) and the XML Path 
+Language (XPath). It works with a compatible release of the 
+Xerces-C++ XML parser: Xerces-C++ version 2.7.0. The focus for 
+this release is on bug fixes, pluggable memory management, and 
+enhanced stability improvements in stylesheet execution.

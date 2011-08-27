@@ -1,0 +1,39 @@
+$OpenBSD$
+--- runConfigure.orig	Wed Aug 17 00:48:26 2005
++++ runConfigure	Mon May  4 19:52:38 2009
+@@ -150,7 +150,7 @@ usage()
+     echo "runConfigure: Helper script to run \"configure\" for one of the supported platforms"
+     echo "Usage: runConfigure \"options\""
+     echo "       where options may be any of the following:"
+-    echo "       -p <platform> (accepts 'aix', 'linux', 'freebsd', 'netbsd', 'solaris',
++    echo "       -p <platform> (accepts 'aix', 'linux', 'freebsd', 'netbsd', 'openbsd', 'solaris',
+             'hp-10', 'hp-11', 'hp-11-ia64', 'irix', 'tru64', 'macosx', 'os390', 'os400', 'cygwin')"
+     echo "       -c <C compiler name> (e.g. gcc, cc, xlc)"
+     echo "       -x <C++ compiler name> (e.g. g++, CC, xlC)"
+@@ -338,7 +338,7 @@ echo "Extra configure options: $configureoptions"
+ #
+ 
+ case $platform in
+-   aix | linux | freebsd | netbsd | solaris | hp-11 | hp-11-ia64 | irix | tru64 | macosx | os390 | os400 | cygwin)
++   aix | linux | freebsd | netbsd | openbsd | solaris | hp-11 | hp-11-ia64 | irix | tru64 | macosx | os390 | os400 | cygwin)
+        # platform has been recognized
+        ;;
+    *)
+@@ -379,7 +379,7 @@ fi
+ 
+ #
+ #  aix | linux | hp-11 | hp-11-ia64 | solaris |
+-#  freebsd | netbsd | irix | openserver | unixware | os390 | os400 | ptx | tru64 | macosx
++#  freebsd | netbsd | openbsd | irix | openserver | unixware | os390 | os400 | ptx | tru64 | macosx
+ #
+ if test $bitsToBuild = 64; then
+     bitstobuildDefines=" -DXML_BITSTOBUILD_64 "
+@@ -528,6 +528,8 @@ elif test $platform = "freebsd"; then
+       threadingDefines=""
+     fi
+ elif test $platform = "netbsd"; then
++    threadingLibs="-pthread -lpthread"
++elif test $platform = "openbsd"; then
+     threadingLibs="-pthread -lpthread"
+ elif test $platform = "os400"; then
+     threadingLibs=""
