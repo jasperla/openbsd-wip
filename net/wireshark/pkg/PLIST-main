@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+@bin bin/wireshark
+lib/libwireshark.la
+lib/libwiretap.la
+lib/libwsutil.la
+@man man/man1/wireshark.1
