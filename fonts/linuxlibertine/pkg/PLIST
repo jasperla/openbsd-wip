@@ -1,0 +1,36 @@
+@comment $OpenBSD$
+lib/X11/fonts/
+@fontdir lib/X11/fonts/linuxlibertine/
+lib/X11/fonts/linuxlibertine/LinBiolinum_K.otf
+lib/X11/fonts/linuxlibertine/LinBiolinum_R.otf
+lib/X11/fonts/linuxlibertine/LinBiolinum_RB.otf
+lib/X11/fonts/linuxlibertine/LinBiolinum_RI.otf
+lib/X11/fonts/linuxlibertine/LinBiolinum_aBL.otf
+lib/X11/fonts/linuxlibertine/LinBiolinum_aRL.otf
+lib/X11/fonts/linuxlibertine/LinBiolinum_aS.otf
+lib/X11/fonts/linuxlibertine/LinBiolinum_aSB.otf
+lib/X11/fonts/linuxlibertine/LinBiolinum_aSI.otf
+lib/X11/fonts/linuxlibertine/LinBiolinum_aU.otf
+lib/X11/fonts/linuxlibertine/LinBiolinum_aUB.otf
+lib/X11/fonts/linuxlibertine/LinBiolinum_aUI.otf
+lib/X11/fonts/linuxlibertine/LinBiolinum_aW.otf
+lib/X11/fonts/linuxlibertine/LinBiolinum_aWB.otf
+lib/X11/fonts/linuxlibertine/LinBiolinum_aWI.otf
+lib/X11/fonts/linuxlibertine/LinLibertine_DR.otf
+lib/X11/fonts/linuxlibertine/LinLibertine_I.otf
+lib/X11/fonts/linuxlibertine/LinLibertine_R.otf
+lib/X11/fonts/linuxlibertine/LinLibertine_RB.otf
+lib/X11/fonts/linuxlibertine/LinLibertine_RBI.otf
+lib/X11/fonts/linuxlibertine/LinLibertine_RI.otf
+lib/X11/fonts/linuxlibertine/LinLibertine_RZ.otf
+lib/X11/fonts/linuxlibertine/LinLibertine_RZI.otf
+lib/X11/fonts/linuxlibertine/LinLibertine_aBL.otf
+lib/X11/fonts/linuxlibertine/LinLibertine_aBS.otf
+lib/X11/fonts/linuxlibertine/LinLibertine_aDRS.otf
+lib/X11/fonts/linuxlibertine/LinLibertine_aRL.otf
+lib/X11/fonts/linuxlibertine/LinLibertine_aS.otf
+lib/X11/fonts/linuxlibertine/LinLibertine_aSBI.otf
+lib/X11/fonts/linuxlibertine/LinLibertine_aSI.otf
+lib/X11/fonts/linuxlibertine/LinLibertine_aSZI.otf
+lib/X11/fonts/linuxlibertine/LinLibertine_aZL.otf
+lib/X11/fonts/linuxlibertine/LinLibertine_aZS.otf
