@@ -1,0 +1,17 @@
+$OpenBSD$
+--- src/CMakeLists.txt.orig	Wed Mar  2 14:21:27 2011
++++ src/CMakeLists.txt	Sun Mar  6 18:27:02 2011
+@@ -39,11 +39,11 @@ endif (OPENVAS_LIB_INSTALL_DIR)
+ ## Libraries
+ 
+ add_library (ovas-mngr-comm STATIC ovas-mngr-comm.c)
+-set_target_properties (ovas-mngr-comm PROPERTIES COMPILE_FLAGS "${GLIB_CFLAGS}")
++set_target_properties (ovas-mngr-comm PROPERTIES COMPILE_FLAGS "${HEADER_TEMP} ${OPENVAS_CFLAGS} ${GLIB_CFLAGS}")
+ 
+ add_library (manage STATIC manage.c manage_sql.c lsc_user.c)
+ set_target_properties (manage PROPERTIES COMPILE_FLAGS "${HEADER_TEMP} ${OPENVAS_CFLAGS} ${GLIB_CFLAGS}")
+-target_link_libraries (manage sqlite3 uuid glib-2.0 openvas_omp)
++target_link_libraries (manage sqlite3 e2fs-uuid glib-2.0 openvas_omp)
+ 
+ add_library (omp STATIC omp.c)
+ set_target_properties (omp PROPERTIES COMPILE_FLAGS "${HEADER_TEMP} ${OPENVAS_CFLAGS} ${GLIB_CFLAGS}")

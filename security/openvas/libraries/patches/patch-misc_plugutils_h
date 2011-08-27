@@ -1,0 +1,12 @@
+$OpenBSD$
+--- misc/plugutils.h.orig	Tue Nov  9 21:08:23 2010
++++ misc/plugutils.h	Tue Nov 30 23:02:51 2010
+@@ -189,7 +189,7 @@ void add_plugin_preference (struct arglist *, const ch
+ char *get_plugin_preference (struct arglist *, const char *);
+ const char *get_plugin_preference_fname (struct arglist *, const char *);
+ char *get_plugin_preference_file_content (struct arglist *, const char *);
+-const long get_plugin_preference_file_size (struct arglist *, const char *);
++long get_plugin_preference_file_size (struct arglist *, const char *);
+ 
+ char *find_in_path (char *, int);
+ 

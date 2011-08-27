@@ -1,0 +1,13 @@
+$OpenBSD$
+--- src/attack.c.orig	Mon Feb 21 09:40:34 2011
++++ src/attack.c	Sun Mar  6 17:45:06 2011
+@@ -30,6 +30,9 @@
+ #include <unistd.h>    /* for close() */
+ #include <errno.h>     /* for errno() */
+ #include <sys/wait.h>  /* for waitpid() */
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h> /* for inet_ntoa() */
+ #include <stdlib.h>    /* for exit() */
+ 

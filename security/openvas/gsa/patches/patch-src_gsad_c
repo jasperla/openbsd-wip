@@ -1,0 +1,55 @@
+$OpenBSD$
+--- src/gsad.c.orig	Wed Mar  2 11:43:39 2011
++++ src/gsad.c	Sun Mar  6 16:42:16 2011
+@@ -53,14 +53,12 @@
+ #undef G_LOG_FATAL_MASK
+ #define G_LOG_FATAL_MASK G_LOG_LEVEL_ERROR
+ 
+-#include <arpa/inet.h>
+ #include <assert.h>
+ #include <errno.h>
+ #include <gcrypt.h>
+ #include <glib.h>
+ #include <gnutls/gnutls.h>
+ #include <locale.h>
+-#include <netinet/in.h>
+ #include <openvas/misc/openvas_logging.h>
+ #include <openvas/base/pidfile.h>
+ #include <openvas/misc/openvas_uuid.h>
+@@ -71,9 +69,11 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
++#include <sys/types.h>
+ #include <sys/socket.h>
++#include <netinet/in.h>
++#include <arpa/inet.h>
+ #include <sys/stat.h>
+-#include <sys/types.h>
+ #include <unistd.h>
+ /* This must follow the system includes. */
+ #include <microhttpd.h>
+@@ -87,12 +87,12 @@
+ /**
+  * @brief Fallback GSAD port for HTTPS.
+  */
+-#define DEFAULT_GSAD_HTTPS_PORT 443
++#define DEFAULT_GSAD_HTTPS_PORT 8443
+ 
+ /**
+  * @brief Fallback GSAD port for HTTP.
+  */
+-#define DEFAULT_GSAD_HTTP_PORT 80
++#define DEFAULT_GSAD_HTTP_PORT 8080
+ 
+ /**
+  * @brief Fallback unprivileged GSAD port.
+@@ -102,7 +102,7 @@
+ /**
+  * @brief Fallback GSAD port.
+  */
+-#define DEFAULT_GSAD_REDIRECT_PORT 80
++#define DEFAULT_GSAD_REDIRECT_PORT 8080
+ 
+ /**
+  * @brief Fallback Administrator port.

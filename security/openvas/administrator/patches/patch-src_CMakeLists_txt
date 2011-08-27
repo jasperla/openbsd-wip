@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/CMakeLists.txt.orig	Mon Feb 21 10:04:30 2011
++++ src/CMakeLists.txt	Sun Mar  6 19:34:11 2011
+@@ -34,7 +34,7 @@ endif (OPENVAS_HEADER_INSTALL_DIR)
+ ## Libraries
+ 
+ add_library (admin STATIC admin.c)
+-target_link_libraries (admin uuid)
++target_link_libraries (admin e2fs-uuid)
+ set_target_properties (admin PROPERTIES COMPILE_FLAGS
+                        "${HEADER_TEMP} ${OPENVAS_CFLAGS} ${GLIB_CFLAGS}")
+ 

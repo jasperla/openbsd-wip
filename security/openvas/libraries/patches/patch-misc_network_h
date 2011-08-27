@@ -1,0 +1,14 @@
+$OpenBSD$
+--- misc/network.h.orig	Wed May 19 09:56:20 2010
++++ misc/network.h	Mon Sep 20 22:18:52 2010
+@@ -29,6 +29,10 @@
+ #include <sys/select.h>         /* at least for fd_set */
+ #include <netinet/in.h>         /* struct in_addr, struct in6_addr */
+ 
++#ifndef s6_addr32
++#define s6_addr32 __u6_addr.__u6_addr32
++#endif
++
+ #include <gnutls/gnutls.h>
+ #include <gnutls/x509.h>
+ 

@@ -1,0 +1,13 @@
+$OpenBSD$
+--- misc/network.c.orig	Wed Jun  1 14:38:37 2011
++++ misc/network.c	Wed Jun  1 16:17:17 2011
+@@ -37,7 +37,8 @@
+ 
+ #include <stdio.h>              /* for fprintf() */
+ #include <sys/time.h>           /* for gettimeofday */
+-
++#include <sys/socket.h>
++ 
+ #include <glib.h>
+ 
+ #include <gnutls/gnutls.h>

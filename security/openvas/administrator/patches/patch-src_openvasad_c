@@ -1,0 +1,28 @@
+$OpenBSD$
+--- src/openvasad.c.orig	Mon Feb 21 10:04:30 2011
++++ src/openvasad.c	Sun Mar  6 19:40:20 2011
+@@ -416,7 +416,8 @@ ssize_t
+ read_password (char **lineptr, size_t *n, FILE *stream)
+ {
+   struct termios old, new;
+-  int nread;
++  char *cptr;
++  int nread = -1;
+ 
+   /* Turn echoing off and fail if we can't. */
+   if (tcgetattr (fileno (stream), &old) != 0)
+@@ -427,7 +428,13 @@ read_password (char **lineptr, size_t *n, FILE *stream
+     return -1;
+ 
+   /* Read the password. */
+-  nread = getline (lineptr, n, stream);
++/*  nread = getline (lineptr, n, stream); */
++  cptr = fgetln(stream, n);
++  if (cptr != NULL) {
++    nread = *n;
++    *lineptr = calloc(1, nread + 1);
++    strlcpy(*lineptr, cptr, nread);
++  }
+ 
+   /* Restore terminal. */
+   (void) tcsetattr (fileno (stream), TCSAFLUSH, &old);

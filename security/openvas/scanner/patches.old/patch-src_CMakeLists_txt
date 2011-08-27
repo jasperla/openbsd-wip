@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/CMakeLists.txt.orig	Mon Feb 21 09:40:34 2011
++++ src/CMakeLists.txt	Sun Mar  6 18:11:00 2011
+@@ -133,7 +133,7 @@ endif (NVT_TIMEOUT)
+ set_target_properties (openvassd PROPERTIES LINK_FLAGS
+                        "${LIB_TEMP} ${GLIB_LDFLAGS} ${OPENVAS_LDFLAGS}")
+ 
+-target_link_libraries (openvassd gnutls dl gcrypt)
++target_link_libraries (openvassd gnutls gcrypt)
+ 
+ set_target_properties (openvassd PROPERTIES COMPILE_FLAGS
+                        "${HEADER_TEMP} ${OPENVAS_CFLAGS} ${GLIB_CFLAGS}")

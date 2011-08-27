@@ -1,0 +1,16 @@
+$OpenBSD$
+--- nasl/nasl_init.c.orig	Thu Mar  3 08:44:22 2011
++++ nasl/nasl_init.c	Sun Mar  6 13:10:44 2011
+@@ -17,6 +17,12 @@
+  *
+  */
+ 
++#include <stdlib.h>
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
++#include <netinet/in_systm.h>
++#include <netinet/ip.h>
+ #include "nasl_raw.h"       /* to e.g. favour BSD, but also for IPPROTO_TCP
+                                and TH_FIN */
+ 

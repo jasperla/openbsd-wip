@@ -1,0 +1,13 @@
+$OpenBSD$
+--- src/openvassd.c.orig	Mon Feb 21 09:40:34 2011
++++ src/openvassd.c	Sun Mar  6 17:51:46 2011
+@@ -46,6 +46,9 @@
+ #include <unistd.h>    /* for close() */
+ #include <errno.h>     /* for errno() */
+ #include <fcntl.h>     /* for open() */
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h> /* for inet_aton */
+ #include <signal.h>    /* for SIGTERM */
+ #include <netdb.h>     /* for addrinfo */

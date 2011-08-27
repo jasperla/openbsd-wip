@@ -1,0 +1,12 @@
+$OpenBSD$
+--- misc/openvas_server.h.orig	Wed May 19 09:56:20 2010
++++ misc/openvas_server.h	Sun Sep 26 21:30:07 2010
+@@ -46,7 +46,7 @@ extern "C"
+ #ifdef _WIN32
+ #include <winsock2.h>
+ #else
+-#include <netinet/ip.h>
++#include <netinet/in.h>
+ #endif
+ 
+ int openvas_server_open (gnutls_session_t *, const char *, int);

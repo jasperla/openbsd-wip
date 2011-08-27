@@ -1,0 +1,58 @@
+$OpenBSD$
+--- misc/CMakeLists.txt.orig	Thu Mar  3 08:44:22 2011
++++ misc/CMakeLists.txt	Mon Apr 18 18:04:12 2011
+@@ -40,11 +40,11 @@ endif (MINGW)
+ ## Config
+ 
+ if (NOT MINGW)
+-  message (STATUS "Looking for uuid...")
+-  find_library (UUID uuid)
+-  message (STATUS "Looking for uuid... ${UUID}")
++  message (STATUS "Looking for e2fs-uuid...")
++  find_library (UUID e2fs-uuid)
++  message (STATUS "Looking for e2fs-uuid... ${UUID}")
+   if (NOT UUID)
+-    message (FATAL_ERROR "The uuid library is required.")
++    message (FATAL_ERROR "The e2fs-uuid library is required.")
+   endif (NOT UUID)
+ endif (NOT MINGW)
+ 
+@@ -67,10 +67,10 @@ endif (NOT BUILD_WITH_LDAP)
+ 
+ # Library
+ 
+-set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2 -fstack-protector -Wl,-z,relro -Wl,-z,now")
++set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2 -fstack-protector")
+ 
+ set (CMAKE_C_FLAGS_DEBUG        "${CMAKE_C_FLAGS_DEBUG}")
+-set (CMAKE_C_FLAGS              "${CMAKE_C_FLAGS} ${HARDENING_FLAGS} -Wall -Werror -fPIC")
++set (CMAKE_C_FLAGS              "${CMAKE_C_FLAGS} ${HARDENING_FLAGS} -Wall -fPIC")
+ 
+ if (MINGW)
+   set (FILES openvas_auth.c openvas_server.c proctitle.c)
+@@ -160,19 +160,19 @@ if (OPENVAS_SYSCONF_DIR)
+ endif (OPENVAS_SYSCONF_DIR)
+ 
+ if (MINGW)
+-  target_link_libraries (openvas_misc_static uuid openvas_base ${GLIB_LDFLAGS} -lglib-2.0
++  target_link_libraries (openvas_misc_static e2fs-uuid openvas_base ${GLIB_LDFLAGS} -lglib-2.0
+                          -lgcrypt -lgnutls -lintl -liconv -lgpg-error -lws2_32
+                          -lole32 -lz)
+-  target_link_libraries (openvas_misc_shared uuid openvas_base ${GLIB_LDFLAGS} -lglib-2.0
++  target_link_libraries (openvas_misc_shared e2fs-uuid openvas_base ${GLIB_LDFLAGS} -lglib-2.0
+                          -lgcrypt -lgnutls -lintl -liconv -lgpg-error -lws2_32
+                          -lole32 -lz)
+ else (MINGW)
+   if (NOT BUILD_WITH_LDAP)
+-    target_link_libraries (openvas_misc_static uuid ${GLIB_LDFLAGS})
+-    target_link_libraries (openvas_misc_shared uuid ${GLIB_LDFLAGS})
++    target_link_libraries (openvas_misc_static e2fs-uuid ${GLIB_LDFLAGS})
++    target_link_libraries (openvas_misc_shared e2fs-uuid ${GLIB_LDFLAGS})
+   else (NOT BUILD_WITH_LDAP)
+-    target_link_libraries (openvas_misc_static uuid ${GLIB_LDFLAGS} ldap)
+-    target_link_libraries (openvas_misc_shared uuid ${GLIB_LDFLAGS} ldap)
++    target_link_libraries (openvas_misc_static e2fs-uuid ${GLIB_LDFLAGS} ldap)
++    target_link_libraries (openvas_misc_shared e2fs-uuid ${GLIB_LDFLAGS} ldap)
+   endif (NOT BUILD_WITH_LDAP)
+ endif (MINGW)
+ 
