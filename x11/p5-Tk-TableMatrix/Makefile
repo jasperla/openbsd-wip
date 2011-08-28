@@ -1,6 +1,8 @@
 # $OpenBSD$
 
-COMMENT =	Create and manuipldate table
+SHARED_ONLY =	Yes
+
+COMMENT =	create and manipulate tables
 
 DISTNAME =	Tk-TableMatrix-1.23
 CATEGORIES =	x11 devel
@@ -8,7 +10,8 @@ CPAN_AUTHOR =   CERNEY
 
 MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
-# custom
+# custom:
+# http://cpansearch.perl.org/src/CERNEY/Tk-TableMatrix-1.23/COPYING
 PERMIT_PACKAGE_CDROM =	 Yes
 PERMIT_PACKAGE_FTP =	 Yes
 PERMIT_DISTFILES_CDROM = Yes
@@ -19,12 +22,11 @@ WANTLIB +=	X11 m
 MODULES =	cpan
 
 RUN_DEPENDS =	x11/p5-Tk
-BUILD_DEPENDS =	x11/p5-Tk
+BUILD_DEPENDS =	${RUN_DEPENDS}
 
-USE_GROFF = 	Yes
+MODCPAN_EXAMPLES =	Yes
+MODCPAN_EXAMPLES_DIST =	demos
  
 REGRESS_IS_INTERACTIVE = X11
-
-PKG_ARCH = 	${MACHINE_ARCH}
 
 .include <bsd.port.mk>
