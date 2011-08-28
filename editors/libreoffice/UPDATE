@@ -1,0 +1,6 @@
+changed raptor to raptor2 in Makefile, no other change.
+
+NOT ready for import until textproc/liblrdf has been bumped from 0.40 to 0.50
+
+textproc/liblrdf is dead so taybin has taken maintainer and his forked project is at
+https://github.com/swh/LRDF/
