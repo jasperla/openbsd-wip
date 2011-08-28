@@ -12,6 +12,7 @@ ${P5ARCH}/Tk/pTk/version.h
 ${P5ARCH}/auto/Tk/TableMatrix/
 ${P5ARCH}/auto/Tk/TableMatrix/TableMatrix.bs
 ${P5ARCH}/auto/Tk/TableMatrix/autosplit.ix
+@comment ${P5ARCH}/auto/Tk/pTk/extralibs.ld
 @man man/man3p/Tk::TableMatrix.3p
 @man man/man3p/Tk::TableMatrix::Spreadsheet.3p
 @man man/man3p/Tk::TableMatrix::SpreadsheetHideRows.3p
