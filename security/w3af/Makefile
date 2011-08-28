@@ -1,9 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.60 2010/10/24 20:41:23 ajacoutot Exp $
-# $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
-# Original from: credit the original author here
-#
-# Replace ??? with appropriate values
-# Remove extraneous comments before commit.
+# $OpenBSD: $
 
 # Reasons why the port/package shouldn't be built
 #
@@ -13,26 +8,16 @@
 #COMES_WITH =		???
 #BROKEN =		reason
 
-#
-# Very short description of the package, 60 chars max
-#
 COMMENT =		Web Application Attack and Audit Framework
-# COMMENT-foo =		???	for multi packages
 
-#
-# What port/package will be created
-#
 DISTNAME =		w3af-1.0-stable
 PKGNAME =		${DISTNAME:S/-stable//}
-#PKGNAME-foo =		???	for multi packages
 
 # for any port that creates shared libraries.
 # both libtool and cmake handle this automatically.
 # for libtool-based ports, have a look at WRKBUILD/shared_libs.log
 #SHARED_LIBS =		???
 
-# the category used in the directory name, /usr/ports/<category>/portname,
-# must be included and listed first.
 CATEGORIES =		security www net
 
 HOMEPAGE =		http://w3af.sourceforge.net/
@@ -53,9 +38,9 @@ PERMIT_DISTFILES_FTP =	Yes
 #MASTER_SITES =		???
 #MASTER_SITES =		${HOMEPAGE}
 #MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=w3fa/w3af/w3af%201.0-stable/}
+
+# Using %20 for space character.
 MASTER_SITES =		http://downloads.sourceforge.net/project/w3af/w3af/${DISTNAME:S/-/%20/1}/
-#DISTFILES =		???
-#EXTRACT_ONLY =		???
 EXTRACT_SUFX =		.tar.bz2
 
 #DIST_SUBDIR =		???
@@ -68,7 +53,21 @@ EXTRACT_SUFX =		.tar.bz2
 #
 #MODULES =		???
 #BUILD_DEPENDS =	???
-#RUN_DEPENDS =		???
+
+RUN_DEPENDS =		devel/py-SOAPpy \
+			devel/py-fpconst \
+			devel/py-simplejson \
+			devel/pysvn \
+			math/graphviz,-main \
+			net/scapy \
+			security/py-openssl \
+			textproc/libxml,-python \
+			textproc/py-nltk \
+			textproc/py-pdf \
+			x11-py-gtksourceview \
+			x11/gtk+2,-main \
+			x11/py-gtk2 \
+
 #LIB_DEPENDS =		???
 #REGRESS_DEPENDS =	???
 
