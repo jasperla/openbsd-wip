@@ -6,3 +6,4 @@
 # For example:
 # net/gnaughty:	ready for import, sent to ports@ (jasperla)
 x11/roxterm:	update to 2.0.1 done, sent to ports@ (amitkulz)
+database/tinycdb:	ready for import, sent to ports@ 2005/8 (chrueger)
