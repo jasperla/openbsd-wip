@@ -1,0 +1,15 @@
+$OpenBSD$
+
+- Fix path to soundcard.h
+
+--- src/modules/oss/oss-util.c.orig	Wed Jun  8 13:10:07 2011
++++ src/modules/oss/oss-util.c	Wed Jun  8 13:10:21 2011
+@@ -24,7 +24,7 @@
+ #include <config.h>
+ #endif
+ 
+-#include <sys/soundcard.h>
++#include <soundcard.h>
+ #include <sys/ioctl.h>
+ #include <stdio.h>
+ #include <errno.h>
