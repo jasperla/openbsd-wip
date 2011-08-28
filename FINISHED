@@ -5,5 +5,4 @@
 #
 # For example:
 # net/gnaughty:	ready for import, sent to ports@ (jasperla)
-x11/roxterm:	update to 2.0.1 done, sent to ports@ (amitkulz)
 textproc/calibre:	update to 0.8.16, sent to ports@ (viq) Needs further work for enhanced functionality, but that's separate from the update.
