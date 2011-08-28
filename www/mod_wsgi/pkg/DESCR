@@ -1,0 +1,2 @@
+mod_wsgi is a simple to use Apache module which can host any Python
+application which supports the Python WSGI interface.
