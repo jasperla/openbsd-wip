@@ -1,0 +1,61 @@
+$OpenBSD: patch-src_dspam_c,v 1.8 2007/12/21 14:42:23 todd Exp $
+--- src/dspam.c.orig	Sat Jul 30 21:54:31 2011
++++ src/dspam.c	Mon Aug 22 10:14:12 2011
+@@ -415,7 +415,7 @@ process_message (
+       CTX->confidence = 1.0;
+       STATUS("A virus was detected in the message contents");
+       result = DSR_ISSPAM;
+-      strcpy(CTX->class, LANG_CLASS_VIRUS);
++      strlcpy(CTX->class, LANG_CLASS_VIRUS, sizeof (CTX->class));
+       internally_canned = 1;
+       if(!_ds_match_attribute(agent_config, "TrackSources", "virus")) {
+         if (!dspam_getsource (CTX, ip, sizeof (ip)))
+@@ -433,7 +433,7 @@ process_message (
+     CTX->result = DSR_ISSPAM;
+     CTX->probability = 1.0;
+     CTX->confidence = 1.0;
+-    strcpy(CTX->class, LANG_CLASS_BLOCKLISTED);
++    strlcpy(CTX->class, LANG_CLASS_BLOCKLISTED, sizeof (CTX->class));
+     internally_canned = 1;
+   }
+ 
+@@ -455,7 +455,7 @@ process_message (
+           CTX->result = DSR_ISSPAM;
+           CTX->probability = 1.0;
+           CTX->confidence = 1.0;
+-          strcpy(CTX->class, LANG_CLASS_BLACKLISTED);
++          strlcpy(CTX->class, LANG_CLASS_BLACKLISTED, sizeof (CTX->class));
+           internally_canned = 1;
+         }
+       }
+@@ -817,10 +817,10 @@ process_message (
+ 
+     switch (CTX->result) {
+       case DSR_ISSPAM:
+-        strcpy(data, "Spam");
++        strlcpy(data, "Spam", sizeof (data));
+         break;
+       default:
+-        strcpy(data, "Innocent");
++        strlcpy(data, "Innocent", sizeof (data));
+         break;
+     }
+ 
+@@ -1105,7 +1105,7 @@ int tag_message(AGENT_CTX *ATX, ds_message_t message)
+   int tagged = 0;
+   char spam_subject[16];
+ 
+-  strcpy(spam_subject, "[SPAM]");
++  strlcpy(spam_subject, "[SPAM]", sizeof (spam_subject));
+   if (_ds_pref_val(ATX->PTX, "spamSubject")[0] != '\n' &&
+       _ds_pref_val(ATX->PTX, "spamSubject")[0] != 0)
+   {
+@@ -1696,7 +1696,7 @@ int process_users(AGENT_CTX *ATX, buffer *message) {
+     if (parse_message == NULL) {
+       LOG(LOG_CRIT, ERR_MEM_ALLOC);
+       presult->exitcode = ERC_PROCESS;
+-      strcpy(presult->text, ERR_MEM_ALLOC);
++      strlcpy(presult->text, ERR_MEM_ALLOC, sizeof (presult->text));
+ 
+       if (ATX->results) {
+         nt_add(ATX->results, presult);

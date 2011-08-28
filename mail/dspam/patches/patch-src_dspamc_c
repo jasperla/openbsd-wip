@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_dspamc_c,v 1.1 2007/12/21 14:42:23 todd Exp $
+--- src/dspamc.c.orig	Mon Jan 11 22:21:58 2010
++++ src/dspamc.c	Sun Feb 27 15:08:19 2011
+@@ -120,6 +120,14 @@ main (int argc, char *argv[])
+     LOG(LOG_ERR, ERR_AGENT_RUNTIME_USER);
+     exitcode = EXIT_FAILURE;
+     goto BAIL;
++  }
++
++  /* Cache my username and uid for trusted user security */
++
++  if (!init_pwent_cache()) {
++    LOG(LOG_ERR, ERR_AGENT_RUNTIME_USER);
++    exitcode = EXIT_FAILURE;
++    goto BAIL;
+   } else
+     pwent_cache_init = 1;
+ 

@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.hash,v 1.2 2005/11/23 08:52:49 jakob Exp $
+@bin bin/cssclean
+@bin bin/csscompress
+@bin bin/cssconvert
+@bin bin/cssstat
