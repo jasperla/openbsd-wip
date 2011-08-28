@@ -1,0 +1,16 @@
+$OpenBSD: patch-config_rules_mk,v 1.7 2011/08/23 20:19:33 landry Exp $
+--- config/rules.mk.orig	Fri Jul 15 07:42:33 2011
++++ config/rules.mk	Sun Jul 31 22:20:15 2011
+@@ -623,6 +623,12 @@ endif
+ endif
+ endif
+ 
++ifeq ($(OS_ARCH),OpenBSD)
++ifdef IS_COMPONENT
++EXTRA_DSO_LDOPTS += -Wl,-Bsymbolic
++endif
++endif
++
+ #
+ # HP-UXBeOS specific section: for COMPONENTS only, add -Bsymbolic flag
+ # which uses internal symbols first
