@@ -1,2 +1,2 @@
 Add regression tests
-Test booish with different term types (issue with terminal colors on exit)
+Add readme file warning about running booish on VT220 (non-color) terminals
