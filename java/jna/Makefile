@@ -2,8 +2,8 @@
 
 COMMENT=	Java Native Access (JNA)
 
-V=		3.3.0
-DISTNAME=	jna
+V=		3.2.7
+DISTNAME=	twall-jna-$V-0-g3727f95
 PKGNAME=	jna-$V
 CATEGORIES=	java devel
 
@@ -15,24 +15,30 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/raw/3.3.0/jnalib/dist/
-
-DISTFILES=	${DISTNAME}.jar \
-		platform.jar
-
-EXTRACT_SUFX=	#empty
-EXTRACT_ONLY=	#empty
-
-DIST_SUBDIR=	jna
+MASTER_SITES=	http://distfiles.nl/
+EXTRACT_SUFX=	.zip
 
 MODULES=	java
-MODJAVA_VER=	1.5+
+MODJAVA_VER=	1.6+
 
-NO_BUILD=	Yes
-NO_REGRESS=	Yes
+BUILD_DEPENDS=	devel/apache-ant
+
+WRKDIST= 	${WRKDIR}/twall-jna-d928d42/
+
+JAR_DIR=	${PREFIX}/share/java/classes/
+DOC_DIR=	${PREFIX}/share/java/jna/
+
+do-build:
+	cd ${WRKSRC}/jnalib/ && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/ant
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/java/jna/
-	${INSTALL_DATA} ${FULLDISTDIR}/*.jar ${PREFIX}/share/java/jna/
+	${INSTALL_DATA_DIR} ${JAR_DIR} ${DOC_DIR}
+	${INSTALL_DATA} ${WRKSRC}/jnalib/build-*/openbsd-${ARCH}.jar \
+		${JAR_DIR}/jna-platform.jar
+	${INSTALL_DATA} ${WRKSRC}/jnalib/build-*/jna.jar ${JAR_DIR}
+	cp -r ${WRKSRC}/www/javadoc/ ${DOC_DIR}
+
+do-regress:
+	cd ${WRKSRC}/jnalib/ && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/ant test
 
 .include <bsd.port.mk>
