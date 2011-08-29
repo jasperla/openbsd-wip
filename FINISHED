@@ -7,3 +7,7 @@
 # net/gnaughty:	ready for import, sent to ports@ (jasperla)
 textproc/calibre:	update to 0.8.16, sent to ports@ (viq) Needs further work for enhanced functionality, but that's separate from the update.
 x11/p5-Tk-Matrix:	ready for import
+net/climm:		ready for import, has been sent to ports@ some time ago
+games/extremetuxracer:	basically ready if no tweaks are needed
+multimedia/kguitar:	basically ready if no tweaks are needed
+sysutils/conky:		enhanced functionality, sent to ports@ and maintainer
