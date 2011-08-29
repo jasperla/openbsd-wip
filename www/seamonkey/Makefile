@@ -13,7 +13,8 @@ MOZILLA_CODENAME =	suite
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-seamonkey-1.0beta5
-PKGNAME-enigmail =	enigmail-seamonkey-1.3
+PKGNAME-enigmail =	enigmail-seamonkey-1.3.1
+REVISION-main =		0
 EPOCH-lightning =	0
 REVISION-lightning =	0
 
@@ -58,11 +59,11 @@ LANGUAGES=	ca \
 		tr
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
-		enigmail-1.3.tar.gz
+		enigmail-1.3.1.tar.gz
 EXTRACT_CASES =	enigmail-*.tar.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | tar -C comm-${MOZILLA_BRANCH}/mailnews/extensions/ -xf -;;
 
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} \
-		enigmail-1.3.tar.gz:1
+		enigmail-1.3.1.tar.gz:1
 .for language in ${LANGUAGES}
 DISTFILES+=	seamonkey-${MOZILLA_VERSION}.${language}.langpack.xpi:0
 .endfor
@@ -112,7 +113,7 @@ GNU_ARCH =	${MACHINE_ARCH:S/amd64/x86_64/}
 GUIDS =	gdata-provider {a62ef8ec-5fdc-40c2-873c-223b8a6925cc} \
 	lightning {e2fda1a4-762b-4020-b5ad-a41df1933103} \
 	calendar-timezones calendar-timezones@mozilla.org \
-	../bin/enigmail-1.2-openbsd-${GNU_ARCH} {847b3a00-7ab1-11d4-8f02-006008948af5}
+	../bin/enigmail-1.4-openbsd-${GNU_ARCH} {847b3a00-7ab1-11d4-8f02-006008948af5}
 
 EXTDIR =	${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/
 
