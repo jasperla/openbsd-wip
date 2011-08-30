@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS=		i386 amd64
 
 COMMENT=		Chromium browser
 
-V=			15.0.861.0
+V=			15.0.865.0
 DISTNAME=		chromium-${V}
 PKGNAME=		chromium-devel-${V}
 
@@ -83,6 +83,9 @@ ALL_TARGET=	chrome
 
 BUILDDIR=	${WRKSRC}/out/${BUILDTYPE}
 
+PSEUDO_FLAVORS=	no_nss
+FLAVOR?=
+
 GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Duse_system_libevent=1 \
 		-Duse_system_libjpeg=1 \
@@ -96,6 +99,11 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Ddisable_nacl=1 \
 		-Ddisable_sse2=1 \
 		-DOS=openbsd
+
+.if ${FLAVOR:L:Mno_nss}
+GYP_DEFS+=	-Duse_openssl=1 \
+		-Duse_system_ssl=1
+.endif
 
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
