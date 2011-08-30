@@ -28,7 +28,7 @@ WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 jpeg m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs xcb xml2
-WANTLIB += z execinfo bz2 nss3 nssutil3 ssl3 smime3 softokn3 gconf-2
+WANTLIB += z execinfo bz2 ssl3 smime3 softokn3 gconf-2
 WANTLIB += GL Xxf86vm drm stdc++ xcb-render xcb-shm
 WANTLIB += Xtst event xslt vpx kvm>=10.0 sndio speex
 WANTLIB += cups gcrypt
@@ -56,7 +56,6 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		sysutils/flock
 LIB_DEPENDS=	devel/libexecinfo \
 		archivers/bzip2 \
-		security/nss \
 		devel/gconf2 \
 		multimedia/libvpx \
 		x11/gnome/libgnome-keyring \
@@ -103,6 +102,9 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 .if ${FLAVOR:L:Mno_nss}
 GYP_DEFS+=	-Duse_openssl=1 \
 		-Duse_system_ssl=1
+.else
+LIB_DEPENDS+=	security/nss
+WANTLIB+=	nss3 nssutil3
 .endif
 
 pre-configure:
