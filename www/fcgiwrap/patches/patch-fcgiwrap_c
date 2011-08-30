@@ -1,0 +1,14 @@
+$OpenBSD$
+--- fcgiwrap.c.orig	Fri Jun 11 07:40:53 2010
++++ fcgiwrap.c	Fri Mar 18 22:15:12 2011
+@@ -42,8 +42,9 @@
+ #include <sys/wait.h>
+ #include <ctype.h>
+ 
+-#include <arpa/inet.h>
+ #include <sys/socket.h>
++#include <netinet/in.h>
++#include <arpa/inet.h>
+ #include <sys/un.h>
+ 
+ /* glibc doesn't seem to export it */
