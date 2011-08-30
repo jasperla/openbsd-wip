@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/osgDB/FileUtils.cpp.orig	Tue Aug 30 22:03:05 2011
++++ src/osgDB/FileUtils.cpp	Tue Aug 30 22:03:32 2011
+@@ -76,7 +76,7 @@ typedef char TCHAR;
+     #if (MAC_OS_X_VERSION_MAX_ALLOWED <= 1040)
+         #define stat64 stat
+     #endif
+-#elif defined(__CYGWIN__) || defined(__FreeBSD__) || (defined(__hpux) && !defined(_LARGEFILE64_SOURCE))
++#elif defined(__CYGWIN__) || defined(__FreeBSD__) || defined(__OpenBSD__) || (defined(__hpux) && !defined(_LARGEFILE64_SOURCE))
+     #define stat64 stat
+ #endif
+ 

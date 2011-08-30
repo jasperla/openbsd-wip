@@ -1,0 +1,12 @@
+$OpenBSD$
+--- applications/present3D/Cluster.cpp.orig	Wed Aug 31 00:10:45 2011
++++ applications/present3D/Cluster.cpp	Wed Aug 31 00:11:02 2011
+@@ -33,7 +33,7 @@
+ #if defined(__linux)
+     #include <unistd.h>
+     #include <linux/sockios.h>
+-#elif defined(__FreeBSD__)
++#elif defined(__FreeBSD__) || defined(__OpenBSD__)
+     #include <unistd.h>
+     #include <sys/sockio.h>
+ #elif defined(__sgi)
