@@ -1,7 +1,7 @@
 $OpenBSD$
---- webkit/plugins/ppapi/ppapi_plugin_instance.cc.orig	Thu Aug 25 10:27:18 2011
-+++ webkit/plugins/ppapi/ppapi_plugin_instance.cc	Thu Aug 25 18:04:26 2011
-@@ -1058,7 +1058,7 @@ bool PluginInstance::PrintPDFOutput(PP_Resource print_
+--- webkit/plugins/ppapi/ppapi_plugin_instance.cc.orig	Mon Aug 29 10:25:59 2011
++++ webkit/plugins/ppapi/ppapi_plugin_instance.cc	Tue Aug 30 09:56:07 2011
+@@ -1063,7 +1063,7 @@ bool PluginInstance::PrintPDFOutput(PP_Resource print_
  #endif  // defined(OS_WIN)
  
    bool ret = false;
