@@ -1,0 +1,11 @@
+$OpenBSD$
+--- m4/iconv.m4.orig	Fri Dec 10 05:47:14 2010
++++ m4/iconv.m4	Tue Jun 28 11:35:24 2011
+@@ -60,6 +60,7 @@ AC_DEFUN([AM_ICONV_LINK],
+   fi
+   if test "$am_cv_lib_iconv" = yes; then
+     AC_MSG_CHECKING([how to link with libiconv])
++    LIBICONV="-liconv"
+     AC_MSG_RESULT([$LIBICONV])
+   else
+     dnl If $LIBICONV didn't lead to a usable library, we don't need $INCICONV

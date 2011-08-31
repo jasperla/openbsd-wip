@@ -1,0 +1,11 @@
+$OpenBSD$
+--- lib/rpmscript.c.orig	Fri Jan 28 06:22:02 2011
++++ lib/rpmscript.c	Tue Jun 28 13:13:44 2011
+@@ -2,6 +2,7 @@
+ 
+ #include <errno.h>
+ #include <unistd.h>
++#include <sys/wait.h>
+ 
+ #define _RPMSQ_INTERNAL
+ #include <rpm/rpmsq.h>

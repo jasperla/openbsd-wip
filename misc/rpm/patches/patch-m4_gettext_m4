@@ -1,0 +1,11 @@
+$OpenBSD$
+--- m4/gettext.m4.orig	Fri Dec 10 05:47:14 2010
++++ m4/gettext.m4	Tue Jun 28 12:20:42 2011
+@@ -296,6 +296,7 @@ return * gettext ("")$gt_expression_test_code + _nl_ms
+     if test "$gt_use_preinstalled_gnugettext" = "yes"; then
+       if { eval "gt_val=\$$gt_func_gnugettext_libintl"; test "$gt_val" = "yes"; }; then
+         AC_MSG_CHECKING([how to link with libintl])
++        LIBINTL="-lintl $LIBICONV"
+         AC_MSG_RESULT([$LIBINTL])
+         AC_LIB_APPENDTOVAR([CPPFLAGS], [$INCINTL])
+       fi

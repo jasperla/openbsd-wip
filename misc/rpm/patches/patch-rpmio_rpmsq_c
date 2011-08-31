@@ -1,0 +1,134 @@
+$OpenBSD$
+--- rpmio/rpmsq.c.orig	Fri Dec  3 07:11:57 2010
++++ rpmio/rpmsq.c	Tue Jun 28 13:07:12 2011
+@@ -40,6 +40,38 @@ static struct rpmsqElem rpmsqRock;
+ 
+ static rpmsq rpmsqQueue = &rpmsqRock;
+ 
++static int xsighold(int sig) {
++    sigset_t mask;
++
++    if (sigemptyset(&mask) == -1) {
++        fprintf(stderr, "%s line %d: %s", __func__, __LINE__, strerror(errno));
++        abort();
++    }
++
++    if (sigaddset(&mask, SIGCHLD) == -1) {
++        fprintf(stderr, "%s line %d: %s", __func__, __LINE__, strerror(errno));
++        abort();
++    }
++
++    return sigsuspend(&mask);
++}
++
++static int xsigrelse(int sig) {
++    sigset_t mask;
++
++    if (sigemptyset(&mask) == -1) {
++        fprintf(stderr, "%s line %d: %s", __func__, __LINE__, strerror(errno));
++        abort();
++    }
++
++    if (sigaddset(&mask, SIGCHLD) == -1) {
++        fprintf(stderr, "%s line %d: %s", __func__, __LINE__, strerror(errno));
++        abort();
++    }
++
++    return sigprocmask(SIG_UNBLOCK, &mask, NULL);    
++}
++
+ /** \ingroup rpmsq
+  * Insert node into from queue.
+  * @param elem          node to link
+@@ -52,7 +84,7 @@ static int rpmsqInsert(void * elem, void * prev)
+     int ret = -1;
+ 
+     if (sq != NULL) {
+-	ret = sighold(SIGCHLD);
++	ret = xsighold(SIGCHLD);
+ 	if (ret == 0) {
+ 	    sq->child = 0;
+ 	    sq->reaped = 0;
+@@ -63,7 +95,7 @@ static int rpmsqInsert(void * elem, void * prev)
+ 	    sq->id = ME();
+ 	    ret = pthread_mutex_init(&sq->mutex, NULL);
+ 	    insque(elem, (prev != NULL ? prev : rpmsqQueue));
+-	    ret = sigrelse(SIGCHLD);
++	    ret = xsigrelse(SIGCHLD);
+ 	}
+     }
+     return ret;
+@@ -80,7 +112,7 @@ static int rpmsqRemove(void * elem)
+     int ret = -1;
+ 
+     if (elem != NULL) {
+-	ret = sighold (SIGCHLD);
++	ret = xsighold (SIGCHLD);
+ 	if (ret == 0) {
+ 	    remque(elem);
+ 	   
+@@ -92,7 +124,7 @@ static int rpmsqRemove(void * elem)
+ 	    if (sq->pipes[1])	ret = close(sq->pipes[1]);
+ 	    if (sq->pipes[0])	ret = close(sq->pipes[0]);
+ 	    sq->pipes[0] = sq->pipes[1] = -1;
+-	    ret = sigrelse(SIGCHLD);
++	    ret = xsigrelse(SIGCHLD);
+ 	}
+     }
+     return ret;
+@@ -249,7 +281,7 @@ pid_t rpmsqFork(rpmsq sq)
+ 
+     xx = pipe(sq->pipes);
+ 
+-    xx = sighold(SIGCHLD);
++    xx = xsighold(SIGCHLD);
+ 
+     /* 
+      * Initialize the cond var mutex.   We have to aquire the lock we 
+@@ -287,7 +319,7 @@ pid_t rpmsqFork(rpmsq sq)
+     }
+ 
+ out:
+-    xx = sigrelse(SIGCHLD);
++    xx = xsigrelse(SIGCHLD);
+     return sq->child;
+ }
+ 
+@@ -304,7 +336,7 @@ static int rpmsqWaitUnregister(rpmsq sq)
+     int xx;
+ 
+     /* Protect sq->reaped from handler changes. */
+-    ret = sighold(SIGCHLD);
++    ret = xsighold(SIGCHLD);
+ 
+     /* Start the child, linux often runs child before parent. */
+     if (sq->pipes[0] >= 0)
+@@ -320,9 +352,9 @@ static int rpmsqWaitUnregister(rpmsq sq)
+     while (ret == 0 && sq->reaped != sq->child) {
+ 	if (nothreads)
+ 	    /* Note that sigpause re-enables SIGCHLD. */
+-	    ret = sigpause(SIGCHLD);
++	    ret = xsighold(SIGCHLD);
+ 	else {
+-	    xx = sigrelse(SIGCHLD);
++	    xx = xsigrelse(SIGCHLD);
+ 	    
+ 	    /* 
+ 	     * We start before the fork with this mutex locked;
+@@ -330,14 +362,14 @@ static int rpmsqWaitUnregister(rpmsq sq)
+ 	     * So if we get the lock the child has been reaped.
+ 	     */
+ 	    ret = pthread_mutex_lock(&sq->mutex);
+-	    xx = sighold(SIGCHLD);
++	    xx = xsighold(SIGCHLD);
+ 	}
+     }
+ 
+     /* Accumulate stopwatch time spent waiting, potential performance gain. */
+     sq->ms_scriptlets += rpmswExit(&sq->op, -1)/1000;
+ 
+-    xx = sigrelse(SIGCHLD);
++    xx = xsigrelse(SIGCHLD);
+ 
+     /* Remove processed SIGCHLD item from queue. */
+     xx = rpmsqRemove(sq);
