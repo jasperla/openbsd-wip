@@ -8,7 +8,6 @@
 textproc/calibre:	update to 0.8.16, sent to ports@ (viq)
 			Needs further work for enhanced functionality, but
 			that's separate from the update.
-x11/roxterm:	update to 2.0.1 done, sent to ports@ (amitkulz)
 database/tinycdb:	ready for import, sent to ports@ 2005/8 (chrueger)
 textproc/calibre:	update to 0.8.16, sent to ports@ (viq) Needs further work for enhanced functionality, but that's separate from the update.
 net/climm:		ready for import, has been sent to ports@ some time ago (pstumpf)
