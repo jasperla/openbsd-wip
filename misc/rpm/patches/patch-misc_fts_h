@@ -1,0 +1,12 @@
+$OpenBSD$
+--- misc/fts.h.orig	Fri Dec  3 07:11:57 2010
++++ misc/fts.h	Sun Jun 26 19:02:32 2011
+@@ -57,6 +57,8 @@
+ # define _D_EXACT_NAMLEN(d) ((d)->d_reclen)
+ #endif
+ 
++# define _D_EXACT_NAMLEN(d) ((d)->d_namlen)
++
+ #if defined(__APPLE__)
+ # define _D_EXACT_NAMLEN(d) (strlen((d)->d_name))
+ #endif
