@@ -41,7 +41,8 @@ SEPARATE_BUILD =    simple
 USE_GMAKE =         Yes
 USE_LIBTOOL =       Yes
 AUTOCONF_VERSION =  2.68
-CONFIGURE_STYLE =   autoconf gnu
+AUTOMAKE_VERSION =  1.11
+CONFIGURE_STYLE =   automake autoconf gnu
 CONFIGURE_ARGS +=   --localstatedir=/var \
                     --enable-static=yes \
                     --with-external-db \
