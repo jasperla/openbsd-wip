@@ -1,0 +1,11 @@
+$OpenBSD$
+--- utils/GPSsmooth/MIDG_main.cxx.orig	Wed Aug 31 16:52:33 2011
++++ utils/GPSsmooth/MIDG_main.cxx	Wed Aug 31 16:52:47 2011
+@@ -5,6 +5,7 @@
+ #ifdef HAVE_WINDOWS_H
+ #  include <windows.h>
+ #else
++#  include <arpa/inet.h>
+ #  include <netinet/in.h>       // htonl() ntohl()
+ #endif
+ 
