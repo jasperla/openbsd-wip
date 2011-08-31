@@ -1,0 +1,11 @@
+$OpenBSD$
+--- build/pack.c.orig	Tue Feb 15 08:03:56 2011
++++ build/pack.c	Tue Jun 28 13:39:00 2011
+@@ -8,6 +8,7 @@
+ #include <errno.h>
+ #include <netdb.h>
+ #include <time.h>
++#include <sys/wait.h>
+ 
+ #include <rpm/rpmlib.h>			/* RPMSIGTAG*, rpmReadPackageFile */
+ #include <rpm/rpmts.h>
