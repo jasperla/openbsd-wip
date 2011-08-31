@@ -10,7 +10,6 @@ textproc/calibre:	update to 0.8.16, sent to ports@ (viq)
 			that's separate from the update.
 database/tinycdb:	ready for import, sent to ports@ 2005/8 (chrueger)
 net/climm:		ready for import, has been sent to ports@ some time ago (pstumpf)
-games/extremetuxracer:	sent to landry@ (pstumpf)
 sysutils/conky:		enhanced functionality, sent to ports@ and maintainer (pstumpf)
 www/p5-Dancer:		ready for import, has been sent to ports@ some time ago; it depends on www/p5-HTTP-Server-Simple-PSGI
 www/p5-HTTP-Server-Simple-PSGI:	ready for import, has been sent to ports@ some time ago
