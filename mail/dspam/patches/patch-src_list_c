@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_list_c,v 1.2 2007/12/21 14:42:23 todd Exp $
+--- src/list.c.orig	Sat Jul 30 21:54:31 2011
++++ src/list.c	Mon Aug 22 10:11:32 2011
+@@ -115,7 +115,7 @@ bnr_list_insert (struct bnr_list *list, void *data, fl
+       perror("bnr_list_insert: memory allocation error");
+       return NULL;
+     }
+-    strcpy (vptr, data);
++    strlcpy (vptr, data, size);
+   }
+   else
+   {

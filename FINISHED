@@ -5,5 +5,12 @@
 #
 # For example:
 # net/gnaughty:	ready for import, sent to ports@ (jasperla)
-x11/roxterm:	update to 2.0.1 done, sent to ports@ (amitkulz)
+textproc/calibre:	update to 0.8.16, sent to ports@ (viq)
+			Needs further work for enhanced functionality, but
+			that's separate from the update.
+database/tinycdb:	ready for import, sent to ports@ 2005/8 (chrueger)
 textproc/calibre:	update to 0.8.16, sent to ports@ (viq) Needs further work for enhanced functionality, but that's separate from the update.
+net/climm:		ready for import, has been sent to ports@ some time ago (pstumpf)
+games/extremetuxracer:	basically ready if no tweaks are needed (pstumpf)
+multimedia/kguitar:	basically ready if no tweaks are needed (pstumpf)
+sysutils/conky:		enhanced functionality, sent to ports@ and maintainer (pstumpf)

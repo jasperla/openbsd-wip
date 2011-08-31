@@ -1,0 +1,7 @@
+update to dspam-3.10.1
+
+remove ldap-FLAVOR
+update WANTLIB for pgsql
+regen PLIST
+update/remove patches
+

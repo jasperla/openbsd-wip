@@ -1,0 +1,3 @@
+@comment $OpenBSD$
+@man man/man8/fcgiwrap.8
+@bin sbin/fcgiwrap

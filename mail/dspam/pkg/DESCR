@@ -1,0 +1,28 @@
+DSPAM is an open-source, freely available anti-spam solution designed to 
+combat unsolicited commercial email using advanced statistical analysis. 
+In short, DSPAM filters spam by learning what spam is and isn't by 
+learning each user's individual mail behavior. This allows DSPAM to 
+provide highly-accurate, personalized filtering for each user on even a 
+large system and provides an administratively maintenance free solution 
+capable of learning each user's email behaviors with very few false 
+positives.
+
+Available flavors are:
+
+- clamav: enable usage of the clam antivirus.
+
+- ldap: include support for LDAP verification.
+
+- sqlite: use the sqlite 2.x library as a storage engine.
+
+- sqlite3: use the sqlite 3.x library as a storage engine. This is the
+default.
+
+- pgsql: use a postgresql server as a storage engine.
+
+- mysql: use a mysql server as a storage engine.
+
+- hash: use the CRM Sparse Spectra (CSS) storage engine.
+
+- preferences : store user preferences in the database instead of flat files.
+Has any effect only on mysql and pgsql flavors.
