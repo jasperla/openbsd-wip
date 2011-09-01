@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP = Yes
 MASTER_SITES =      http://rpm.org/releases/rpm-4.9.x/
 
 WANTLIB +=          bz2 c db lua lzma m magic nspr4 nss3 nssutil3 plc4 \
-                    plds4 popt pthread python2.7 util z
+                    plds4 popt pthread util z ${MODPY_WANTLIB}
 
 MODULES =           devel/gettext \
                     lang/python
