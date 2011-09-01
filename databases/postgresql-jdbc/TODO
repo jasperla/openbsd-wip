@@ -1,0 +1,3 @@
+I am not setup for testing this port, can somebody who uses it please test and report?
+
+NB: Won't build with JDK1.7+, that has been fixed in later dev version.
