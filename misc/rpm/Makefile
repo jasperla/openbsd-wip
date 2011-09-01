@@ -26,7 +26,9 @@ WANTLIB +=          bz2 c db lua lzma m magic nspr4 nss3 nssutil3 plc4 \
 
 MODULES =           devel/gettext \
                     lang/python
+
 RUN_DEPENDS =       security/gnupg
+
 LIB_DEPENDS =       ${MODPY_LIB_DEPENDS} \
                     archivers/xz \
                     databases/db/v4 \
@@ -53,9 +55,11 @@ RPM_CPPFLAGS =      -I${LOCALBASE}/include \
                     -I${LOCALBASE}/include/db4 \
                     -I${LOCALBASE}/include/nspr \
                     -I${LOCALBASE}/include/nss
+
 RPM_LDFLAGS =       -L${LOCALBASE}/lib \
                     -L${LOCALBASE}/lib/db4 \
                     -L${LOCALBASE}/python${MODPY_VERSION}/config
+
 CONFIGURE_ENV +=    varprefix=/usr \
                     PYTHON_VERSION=${MODPY_VERSION} \
                     GPG=${LOCALBASE}/bin/gpg \
@@ -67,5 +71,6 @@ post-install:
 .for d in CHANGES COPYING CREDITS ChangeLog GROUPS README
 		${INSTALL_DATA} ${WRKSRC}/$d ${PREFIX}/share/doc/rpm/$d
 .endfor
+
 
 .include <bsd.port.mk>
