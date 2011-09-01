@@ -1,16 +1,16 @@
 $OpenBSD$
---- net/net.gyp.orig	Thu Aug 25 10:27:24 2011
-+++ net/net.gyp	Thu Aug 25 19:53:36 2011
-@@ -6,7 +6,7 @@
-   'variables': {
-     'chromium_code': 1,
+--- net/net.gyp.orig	Tue Aug 30 09:56:55 2011
++++ net/net.gyp	Tue Aug 30 09:58:38 2011
+@@ -8,7 +8,7 @@
  
--    'use_kerberos%': 1,
-+    'use_kerberos%': 0,
      'linux_link_kerberos%': 0,
-   },
-   'targets': [
-@@ -150,12 +150,8 @@
+     'conditions': [
+-      ['chromeos==1', {
++      ['chromeos==1 or OS=="openbsd"', {
+         # Disable Kerberos on ChromeOS, at least for now.
+         # It needs configuration (krb5.conf and so on).
+         'use_kerberos%': 0,
+@@ -158,12 +158,8 @@
          'base/network_change_notifier.cc',
          'base/network_change_notifier.h',
          'base/network_change_notifier_factory.h',
@@ -23,7 +23,7 @@ $OpenBSD$
          'base/network_change_notifier_win.cc',
          'base/network_change_notifier_win.h',
          'base/network_config_watcher_mac.cc',
-@@ -785,7 +781,6 @@
+@@ -793,7 +789,6 @@
                '../build/linux/system.gyp:gconf',
                '../build/linux/system.gyp:gdk',
                '../build/linux/system.gyp:gio',
@@ -31,3 +31,15 @@ $OpenBSD$
              ],
              'conditions': [
                ['use_openssl==1', {
+@@ -804,6 +799,11 @@
+               {  # else use_openssl==0, use NSS
+                 'dependencies': [
+                   '../build/linux/system.gyp:ssl',
++                ],
++              }],
++              ['OS!="openbsd"', {
++                'dependencies': [
++                  '../build/linux/system.gyp:libresolv',
+                 ],
+               }],
+               ['OS=="solaris"', {

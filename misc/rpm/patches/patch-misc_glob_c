@@ -1,0 +1,59 @@
+$OpenBSD$
+--- misc/glob.c.orig	Fri Dec  3 07:11:57 2010
++++ misc/glob.c	Tue Jun 28 12:55:31 2011
+@@ -101,7 +101,7 @@ next_brace_sub (const char *begin)
+   return cp;
+ }
+ 
+-static int __glob_pattern_p (const char *pattern, int quote);
++int glob_pattern_p (const char *pattern, int quote);
+ 
+ /* Do glob searching for PATTERN, placing results in PGLOB.
+    The bits defined above may be set in FLAGS.
+@@ -316,7 +316,7 @@ glob (const char *pattern, int flags,
+ #endif
+ 	  /* For now, disallow wildcards in the drive spec, to
+ 	     prevent infinite recursion in glob.  */
+-	  if (__glob_pattern_p (drive_spec, !(flags & GLOB_NOESCAPE)))
++	  if (glob_pattern_p (drive_spec, !(flags & GLOB_NOESCAPE)))
+ 	    return GLOB_NOMATCH;
+ 	  /* If this is "d:pattern", we need to copy `:' to DIRNAME
+ 	     as well.  If it's "d:/pattern", don't remove the slash
+@@ -588,7 +588,7 @@ glob (const char *pattern, int flags,
+       return GLOB_NOMATCH;
+     }
+ 
+-  if (__glob_pattern_p (dirname, !(flags & GLOB_NOESCAPE)))
++  if (glob_pattern_p (dirname, !(flags & GLOB_NOESCAPE)))
+     {
+       /* The directory name contains metacharacters, so we
+ 	 have to glob for the directory, and then glob for
+@@ -912,8 +912,8 @@ prefix_array (const char *dirname, char **array, size_
+ #if !defined _LIBC || !defined NO_GLOB_PATTERN_P
+ /* Return nonzero if PATTERN contains any metacharacters.
+    Metacharacters can be quoted with backslashes if QUOTE is nonzero.  */
+-static int
+-__glob_pattern_p (const char *pattern, int quote)
++int
++glob_pattern_p (const char *pattern, int quote)
+ {
+   register const char *p;
+   int open = 0;
+@@ -943,7 +943,7 @@ __glob_pattern_p (const char *pattern, int quote)
+   return 0;
+ }
+ # ifdef _LIBC
+-weak_alias (__glob_pattern_p, glob_pattern_p)
++weak_alias (glob_pattern_p, glob_pattern_p)
+ # endif
+ #endif
+ 
+@@ -968,7 +968,7 @@ glob_in_dir (const char *pattern, const char *director
+   int meta;
+   int save;
+ 
+-  meta = __glob_pattern_p (pattern, !(flags & GLOB_NOESCAPE));
++  meta = glob_pattern_p (pattern, !(flags & GLOB_NOESCAPE));
+   if (meta == 0)
+     {
+       if (flags & (GLOB_NOCHECK|GLOB_NOMAGIC))

@@ -1,15 +1,15 @@
 $OpenBSD$
---- ui/ui.gyp.orig	Thu Aug 25 10:28:12 2011
-+++ ui/ui.gyp	Thu Aug 25 18:04:26 2011
-@@ -301,6 +301,7 @@
+--- ui/ui.gyp.orig	Mon Aug 29 10:27:00 2011
++++ ui/ui.gyp	Tue Aug 30 09:56:07 2011
+@@ -314,6 +314,7 @@
+             'gfx/native_theme_linux.cc',
              'gfx/native_theme_linux.h',
-             'gfx/native_widget_types_gtk.cc',
            ],
 +	  'include_dirs': [ '/usr/local/include ' ],
            'link_settings': {
              'libraries': [
                '-lXrender',  # For XRender* function calls in x11_util.cc.
-@@ -412,7 +413,6 @@
+@@ -425,7 +426,6 @@
              'link_settings': {
                'libraries': [
                  '-lX11',

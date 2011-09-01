@@ -14,6 +14,8 @@ EXTRACT_SUFX = 	-src.zip
 
 HOMEPAGE = 		http://boo.codehaus.org/
 
+MAINTAINER = 	Ryan Boggs <rmboggs@gmail.com>
+
 # MIT/BSD
 PERMIT_PACKAGE_CDROM =		Yes
 PERMIT_PACKAGE_FTP = 		Yes

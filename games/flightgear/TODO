@@ -1,0 +1,6 @@
+- need ... faster ... graphics ... card ... :/
+- needs huge datasize (>1G): add wrapper script?
+
+Warning: detected OpenGL error 'invalid operation' at after RenderBin::draw(..)
+...
+^^ harmless?

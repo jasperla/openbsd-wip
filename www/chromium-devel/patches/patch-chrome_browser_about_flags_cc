@@ -1,7 +1,7 @@
 $OpenBSD: patch-chrome_browser_about_flags_cc,v 1.5 2011/08/16 08:17:44 robert Exp $
---- chrome/browser/about_flags.cc.orig	Thu Aug 25 10:28:07 2011
-+++ chrome/browser/about_flags.cc	Thu Aug 25 18:04:25 2011
-@@ -621,7 +621,7 @@ int GetCurrentPlatform() {
+--- chrome/browser/about_flags.cc.orig	Mon Aug 29 10:26:55 2011
++++ chrome/browser/about_flags.cc	Tue Aug 30 09:56:04 2011
+@@ -627,7 +627,7 @@ int GetCurrentPlatform() {
    return kOsWin;
  #elif defined(OS_CHROMEOS)  // Needs to be before the OS_LINUX check.
    return kOsCrOS;
