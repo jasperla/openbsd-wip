@@ -1,7 +1,24 @@
 $OpenBSD$
---- configure.ac.orig	Wed Mar  2 01:46:20 2011
-+++ configure.ac	Sun Jun 26 18:49:05 2011
-@@ -530,9 +530,8 @@ AS_IF([test "$enable_python" = yes],[
+--- configure.ac.orig	Tue Aug  2 06:11:02 2011
++++ configure.ac	Fri Sep  2 09:16:31 2011
+@@ -214,14 +214,9 @@ AC_CHECK_FUNC(gethostname, [], [
+ AC_CHECK_HEADERS(poll.h)
+ 
+ AC_CHECK_HEADERS(pthread.h)
++CFLAGS="$CFLAGS -pthread"
++LDFLAGS="$LDFLAGS -pthread"
+ 
+-AC_CHECK_LIB(pthread, pthread_mutex_trylock, [], [
+-  dnl OSF 5.0 has the the symbols prefixed with __ in libpthread.
+-  AC_CHECK_LIB(pthread, __pthread_mutex_trylock, [], [
+-    AC_CHECK_LIB(thread, mutex_lock)
+-  ])
+-])
+-
+ AC_SEARCH_LIBS(aio_read, [c rt aio posix4])
+ AC_SEARCH_LIBS(dlopen, [dl])
+ 
+@@ -538,9 +533,8 @@ AS_IF([test "$enable_python" = yes],[
      CPPFLAGS="$save_CPPFLAGS"
      save_LIBS="$LIBS"
      AC_SEARCH_LIBS([Py_Main],[python${PYTHON_VERSION} python],[

@@ -209,3 +209,4 @@ share/locale/sr@latin/LC_MESSAGES/rpm.mo
 share/locale/sv/LC_MESSAGES/rpm.mo
 share/locale/tr/LC_MESSAGES/rpm.mo
 share/locale/zh_TW/LC_MESSAGES/rpm.mo
+@sample var/db/rpm

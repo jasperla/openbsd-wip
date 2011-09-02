@@ -1,7 +1,16 @@
 $OpenBSD$
---- rpmio/rpmsq.c.orig	Fri Dec  3 07:11:57 2010
-+++ rpmio/rpmsq.c	Tue Jun 28 13:07:12 2011
-@@ -40,6 +40,38 @@ static struct rpmsqElem rpmsqRock;
+--- rpmio/rpmsq.c.orig	Fri Jul 15 04:17:57 2011
++++ rpmio/rpmsq.c	Fri Sep  2 11:48:36 2011
+@@ -10,6 +10,8 @@
+ #include <search.h>
+ #include <errno.h>
+ #include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
+ 
+ #include <pthread.h>
+ 
+@@ -40,6 +42,38 @@ static struct rpmsqElem rpmsqRock;
  
  static rpmsq rpmsqQueue = &rpmsqRock;
  
@@ -40,7 +49,7 @@ $OpenBSD$
  /** \ingroup rpmsq
   * Insert node into from queue.
   * @param elem          node to link
-@@ -52,7 +84,7 @@ static int rpmsqInsert(void * elem, void * prev)
+@@ -52,7 +86,7 @@ static int rpmsqInsert(void * elem, void * prev)
      int ret = -1;
  
      if (sq != NULL) {
@@ -49,7 +58,7 @@ $OpenBSD$
  	if (ret == 0) {
  	    sq->child = 0;
  	    sq->reaped = 0;
-@@ -63,7 +95,7 @@ static int rpmsqInsert(void * elem, void * prev)
+@@ -63,7 +97,7 @@ static int rpmsqInsert(void * elem, void * prev)
  	    sq->id = ME();
  	    ret = pthread_mutex_init(&sq->mutex, NULL);
  	    insque(elem, (prev != NULL ? prev : rpmsqQueue));
@@ -58,7 +67,7 @@ $OpenBSD$
  	}
      }
      return ret;
-@@ -80,7 +112,7 @@ static int rpmsqRemove(void * elem)
+@@ -80,7 +114,7 @@ static int rpmsqRemove(void * elem)
      int ret = -1;
  
      if (elem != NULL) {
@@ -67,7 +76,7 @@ $OpenBSD$
  	if (ret == 0) {
  	    remque(elem);
  	   
-@@ -92,7 +124,7 @@ static int rpmsqRemove(void * elem)
+@@ -92,7 +126,7 @@ static int rpmsqRemove(void * elem)
  	    if (sq->pipes[1])	ret = close(sq->pipes[1]);
  	    if (sq->pipes[0])	ret = close(sq->pipes[0]);
  	    sq->pipes[0] = sq->pipes[1] = -1;
@@ -76,7 +85,7 @@ $OpenBSD$
  	}
      }
      return ret;
-@@ -249,7 +281,7 @@ pid_t rpmsqFork(rpmsq sq)
+@@ -249,7 +283,7 @@ pid_t rpmsqFork(rpmsq sq)
  
      xx = pipe(sq->pipes);
  
@@ -85,7 +94,7 @@ $OpenBSD$
  
      /* 
       * Initialize the cond var mutex.   We have to aquire the lock we 
-@@ -287,7 +319,7 @@ pid_t rpmsqFork(rpmsq sq)
+@@ -287,7 +321,7 @@ pid_t rpmsqFork(rpmsq sq)
      }
  
  out:
@@ -94,7 +103,7 @@ $OpenBSD$
      return sq->child;
  }
  
-@@ -304,7 +336,7 @@ static int rpmsqWaitUnregister(rpmsq sq)
+@@ -304,7 +338,7 @@ static int rpmsqWaitUnregister(rpmsq sq)
      int xx;
  
      /* Protect sq->reaped from handler changes. */
@@ -103,7 +112,7 @@ $OpenBSD$
  
      /* Start the child, linux often runs child before parent. */
      if (sq->pipes[0] >= 0)
-@@ -320,9 +352,9 @@ static int rpmsqWaitUnregister(rpmsq sq)
+@@ -320,9 +354,9 @@ static int rpmsqWaitUnregister(rpmsq sq)
      while (ret == 0 && sq->reaped != sq->child) {
  	if (nothreads)
  	    /* Note that sigpause re-enables SIGCHLD. */
@@ -115,7 +124,7 @@ $OpenBSD$
  	    
  	    /* 
  	     * We start before the fork with this mutex locked;
-@@ -330,14 +362,14 @@ static int rpmsqWaitUnregister(rpmsq sq)
+@@ -330,14 +364,14 @@ static int rpmsqWaitUnregister(rpmsq sq)
  	     * So if we get the lock the child has been reaped.
  	     */
  	    ret = pthread_mutex_lock(&sq->mutex);
