@@ -3,7 +3,7 @@
 COMMENT =		ebook management application
 
 # 0.7.46 and higher have problems repainting their windows..
-DISTNAME =		calibre-0.8.16
+DISTNAME =		calibre-0.8.17
 CATEGORIES =		textproc
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calibre/}
 
