@@ -1,0 +1,239 @@
+@comment $OpenBSD: PLIST,v 1.6 2004/09/15 09:12:00 espie Exp $
+bin/smoke_some_mathgsl
+bin/smolder_mathgsl
+bin/smolder_smoke_signal
+${P5ARCH}/
+${P5ARCH}/Math/
+${P5ARCH}/Math/GSL/
+${P5ARCH}/Math/GSL.pm
+${P5ARCH}/Math/GSL/BLAS.pm
+${P5ARCH}/Math/GSL/BSpline.pm
+${P5ARCH}/Math/GSL/CBLAS.pm
+${P5ARCH}/Math/GSL/CDF.pm
+${P5ARCH}/Math/GSL/Chebyshev.pm
+${P5ARCH}/Math/GSL/Combination.pm
+${P5ARCH}/Math/GSL/Complex.pm
+${P5ARCH}/Math/GSL/Const.pm
+${P5ARCH}/Math/GSL/DHT.pm
+${P5ARCH}/Math/GSL/Deriv.pm
+${P5ARCH}/Math/GSL/Diff.pm
+${P5ARCH}/Math/GSL/Eigen.pm
+${P5ARCH}/Math/GSL/Errno.pm
+${P5ARCH}/Math/GSL/FFT.pm
+${P5ARCH}/Math/GSL/Fit.pm
+${P5ARCH}/Math/GSL/Heapsort.pm
+${P5ARCH}/Math/GSL/Histogram.pm
+${P5ARCH}/Math/GSL/Histogram2D.pm
+${P5ARCH}/Math/GSL/IEEEUtils.pm
+${P5ARCH}/Math/GSL/Integration.pm
+${P5ARCH}/Math/GSL/Interp.pm
+${P5ARCH}/Math/GSL/Linalg.pm
+${P5ARCH}/Math/GSL/Machine.pm
+${P5ARCH}/Math/GSL/Matrix.pm
+${P5ARCH}/Math/GSL/MatrixComplex.pm
+${P5ARCH}/Math/GSL/Min.pm
+${P5ARCH}/Math/GSL/Monte.pm
+${P5ARCH}/Math/GSL/Multifit.pm
+${P5ARCH}/Math/GSL/Multimin.pm
+${P5ARCH}/Math/GSL/Multiroots.pm
+${P5ARCH}/Math/GSL/NTuple.pm
+${P5ARCH}/Math/GSL/ODEIV.pm
+${P5ARCH}/Math/GSL/Permutation.pm
+${P5ARCH}/Math/GSL/Poly.pm
+${P5ARCH}/Math/GSL/PowInt.pm
+${P5ARCH}/Math/GSL/QRNG.pm
+${P5ARCH}/Math/GSL/RNG.pm
+${P5ARCH}/Math/GSL/Randist.pm
+${P5ARCH}/Math/GSL/Roots.pm
+${P5ARCH}/Math/GSL/SF.pm
+${P5ARCH}/Math/GSL/Siman.pm
+${P5ARCH}/Math/GSL/Sort.pm
+${P5ARCH}/Math/GSL/Spline.pm
+${P5ARCH}/Math/GSL/Statistics.pm
+${P5ARCH}/Math/GSL/Sum.pm
+${P5ARCH}/Math/GSL/Sys.pm
+${P5ARCH}/Math/GSL/Test.pm
+${P5ARCH}/Math/GSL/Vector.pm
+${P5ARCH}/Math/GSL/VectorComplex.pm
+${P5ARCH}/Math/GSL/Wavelet.pm
+${P5ARCH}/Math/GSL/Wavelet2D.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Math/
+${P5ARCH}/auto/Math/GSL/
+${P5ARCH}/auto/Math/GSL/BLAS/
+${P5ARCH}/auto/Math/GSL/BLAS/BLAS.so
+${P5ARCH}/auto/Math/GSL/BSpline/
+${P5ARCH}/auto/Math/GSL/BSpline/BSpline.so
+${P5ARCH}/auto/Math/GSL/CBLAS/
+${P5ARCH}/auto/Math/GSL/CBLAS/CBLAS.so
+${P5ARCH}/auto/Math/GSL/CDF/
+${P5ARCH}/auto/Math/GSL/CDF/CDF.so
+${P5ARCH}/auto/Math/GSL/Chebyshev/
+${P5ARCH}/auto/Math/GSL/Chebyshev/Chebyshev.so
+${P5ARCH}/auto/Math/GSL/Combination/
+${P5ARCH}/auto/Math/GSL/Combination/Combination.so
+${P5ARCH}/auto/Math/GSL/Complex/
+${P5ARCH}/auto/Math/GSL/Complex/Complex.so
+${P5ARCH}/auto/Math/GSL/Const/
+${P5ARCH}/auto/Math/GSL/Const/Const.so
+${P5ARCH}/auto/Math/GSL/DHT/
+${P5ARCH}/auto/Math/GSL/DHT/DHT.so
+${P5ARCH}/auto/Math/GSL/Deriv/
+${P5ARCH}/auto/Math/GSL/Deriv/Deriv.so
+${P5ARCH}/auto/Math/GSL/Diff/
+${P5ARCH}/auto/Math/GSL/Diff/Diff.so
+${P5ARCH}/auto/Math/GSL/Eigen/
+${P5ARCH}/auto/Math/GSL/Eigen/Eigen.so
+${P5ARCH}/auto/Math/GSL/Errno/
+${P5ARCH}/auto/Math/GSL/Errno/Errno.so
+${P5ARCH}/auto/Math/GSL/FFT/
+${P5ARCH}/auto/Math/GSL/FFT/FFT.so
+${P5ARCH}/auto/Math/GSL/Fit/
+${P5ARCH}/auto/Math/GSL/Fit/Fit.so
+${P5ARCH}/auto/Math/GSL/Heapsort/
+${P5ARCH}/auto/Math/GSL/Heapsort/Heapsort.so
+${P5ARCH}/auto/Math/GSL/Histogram/
+${P5ARCH}/auto/Math/GSL/Histogram/Histogram.so
+${P5ARCH}/auto/Math/GSL/Histogram2D/
+${P5ARCH}/auto/Math/GSL/Histogram2D/Histogram2D.so
+${P5ARCH}/auto/Math/GSL/IEEEUtils/
+${P5ARCH}/auto/Math/GSL/IEEEUtils/IEEEUtils.so
+${P5ARCH}/auto/Math/GSL/Integration/
+${P5ARCH}/auto/Math/GSL/Integration/Integration.so
+${P5ARCH}/auto/Math/GSL/Interp/
+${P5ARCH}/auto/Math/GSL/Interp/Interp.so
+${P5ARCH}/auto/Math/GSL/Linalg/
+${P5ARCH}/auto/Math/GSL/Linalg/Linalg.so
+${P5ARCH}/auto/Math/GSL/Machine/
+${P5ARCH}/auto/Math/GSL/Machine/Machine.so
+${P5ARCH}/auto/Math/GSL/Matrix/
+${P5ARCH}/auto/Math/GSL/Matrix/Matrix.so
+${P5ARCH}/auto/Math/GSL/MatrixComplex/
+${P5ARCH}/auto/Math/GSL/MatrixComplex/MatrixComplex.so
+${P5ARCH}/auto/Math/GSL/Min/
+${P5ARCH}/auto/Math/GSL/Min/Min.so
+${P5ARCH}/auto/Math/GSL/Monte/
+${P5ARCH}/auto/Math/GSL/Monte/Monte.so
+${P5ARCH}/auto/Math/GSL/Multifit/
+${P5ARCH}/auto/Math/GSL/Multifit/Multifit.so
+${P5ARCH}/auto/Math/GSL/Multimin/
+${P5ARCH}/auto/Math/GSL/Multimin/Multimin.so
+${P5ARCH}/auto/Math/GSL/Multiroots/
+${P5ARCH}/auto/Math/GSL/Multiroots/Multiroots.so
+${P5ARCH}/auto/Math/GSL/NTuple/
+${P5ARCH}/auto/Math/GSL/NTuple/NTuple.so
+${P5ARCH}/auto/Math/GSL/ODEIV/
+${P5ARCH}/auto/Math/GSL/ODEIV/ODEIV.so
+${P5ARCH}/auto/Math/GSL/Permutation/
+${P5ARCH}/auto/Math/GSL/Permutation/Permutation.so
+${P5ARCH}/auto/Math/GSL/Poly/
+${P5ARCH}/auto/Math/GSL/Poly/Poly.so
+${P5ARCH}/auto/Math/GSL/PowInt/
+${P5ARCH}/auto/Math/GSL/PowInt/PowInt.so
+${P5ARCH}/auto/Math/GSL/QRNG/
+${P5ARCH}/auto/Math/GSL/QRNG/QRNG.so
+${P5ARCH}/auto/Math/GSL/RNG/
+${P5ARCH}/auto/Math/GSL/RNG/RNG.so
+${P5ARCH}/auto/Math/GSL/Randist/
+${P5ARCH}/auto/Math/GSL/Randist/Randist.so
+${P5ARCH}/auto/Math/GSL/Roots/
+${P5ARCH}/auto/Math/GSL/Roots/Roots.so
+${P5ARCH}/auto/Math/GSL/SF/
+${P5ARCH}/auto/Math/GSL/SF/SF.so
+${P5ARCH}/auto/Math/GSL/Siman/
+${P5ARCH}/auto/Math/GSL/Siman/Siman.so
+${P5ARCH}/auto/Math/GSL/Sort/
+${P5ARCH}/auto/Math/GSL/Sort/Sort.so
+${P5ARCH}/auto/Math/GSL/Spline/
+${P5ARCH}/auto/Math/GSL/Spline/Spline.so
+${P5ARCH}/auto/Math/GSL/Statistics/
+${P5ARCH}/auto/Math/GSL/Statistics/Statistics.so
+${P5ARCH}/auto/Math/GSL/Sum/
+${P5ARCH}/auto/Math/GSL/Sum/Sum.so
+${P5ARCH}/auto/Math/GSL/Sys/
+${P5ARCH}/auto/Math/GSL/Sys/Sys.so
+${P5ARCH}/auto/Math/GSL/Vector/
+${P5ARCH}/auto/Math/GSL/Vector/Vector.so
+${P5ARCH}/auto/Math/GSL/VectorComplex/
+${P5ARCH}/auto/Math/GSL/VectorComplex/VectorComplex.so
+${P5ARCH}/auto/Math/GSL/Wavelet/
+${P5ARCH}/auto/Math/GSL/Wavelet/Wavelet.so
+${P5ARCH}/auto/Math/GSL/Wavelet2D/
+${P5ARCH}/auto/Math/GSL/Wavelet2D/Wavelet2D.so
+@man man/man1/smolder_smoke_signal.1
+@man man/man3p/Math::GSL.3p
+@man man/man3p/Math::GSL::BLAS.3p
+@man man/man3p/Math::GSL::BSpline.3p
+@man man/man3p/Math::GSL::CBLAS.3p
+@man man/man3p/Math::GSL::CDF.3p
+@man man/man3p/Math::GSL::Chebyshev.3p
+@man man/man3p/Math::GSL::Combination.3p
+@man man/man3p/Math::GSL::Complex.3p
+@man man/man3p/Math::GSL::Const.3p
+@man man/man3p/Math::GSL::DHT.3p
+@man man/man3p/Math::GSL::Deriv.3p
+@man man/man3p/Math::GSL::Eigen.3p
+@man man/man3p/Math::GSL::Errno.3p
+@man man/man3p/Math::GSL::FFT.3p
+@man man/man3p/Math::GSL::Fit.3p
+@man man/man3p/Math::GSL::Heapsort.3p
+@man man/man3p/Math::GSL::Histogram.3p
+@man man/man3p/Math::GSL::Histogram2D.3p
+@man man/man3p/Math::GSL::Integration.3p
+@man man/man3p/Math::GSL::Interp.3p
+@man man/man3p/Math::GSL::Linalg.3p
+@man man/man3p/Math::GSL::Machine.3p
+@man man/man3p/Math::GSL::Matrix.3p
+@man man/man3p/Math::GSL::MatrixComplex.3p
+@man man/man3p/Math::GSL::Min.3p
+@man man/man3p/Math::GSL::Monte.3p
+@man man/man3p/Math::GSL::Multifit.3p
+@man man/man3p/Math::GSL::Multimin.3p
+@man man/man3p/Math::GSL::Multiroots.3p
+@man man/man3p/Math::GSL::NTuple.3p
+@man man/man3p/Math::GSL::ODEIV.3p
+@man man/man3p/Math::GSL::Permutation.3p
+@man man/man3p/Math::GSL::Poly.3p
+@man man/man3p/Math::GSL::PowInt.3p
+@man man/man3p/Math::GSL::QRNG.3p
+@man man/man3p/Math::GSL::RNG.3p
+@man man/man3p/Math::GSL::Randist.3p
+@man man/man3p/Math::GSL::Roots.3p
+@man man/man3p/Math::GSL::SF.3p
+@man man/man3p/Math::GSL::Siman.3p
+@man man/man3p/Math::GSL::Sort.3p
+@man man/man3p/Math::GSL::Spline.3p
+@man man/man3p/Math::GSL::Statistics.3p
+@man man/man3p/Math::GSL::Sum.3p
+@man man/man3p/Math::GSL::Sys.3p
+@man man/man3p/Math::GSL::Test.3p
+@man man/man3p/Math::GSL::Vector.3p
+@man man/man3p/Math::GSL::VectorComplex.3p
+@man man/man3p/Math::GSL::Wavelet.3p
+share/examples/p5-Math-GSL/
+share/examples/p5-Math-GSL/aliased
+share/examples/p5-Math-GSL/benchmark/
+share/examples/p5-Math-GSL/benchmark/sort
+share/examples/p5-Math-GSL/clicker/
+share/examples/p5-Math-GSL/clicker/chart
+share/examples/p5-Math-GSL/clicker/logo
+share/examples/p5-Math-GSL/correlation
+share/examples/p5-Math-GSL/deriv/
+share/examples/p5-Math-GSL/deriv/basic
+share/examples/p5-Math-GSL/gsl_repl
+share/examples/p5-Math-GSL/gsl_sort
+share/examples/p5-Math-GSL/matrix/
+share/examples/p5-Math-GSL/matrix/nonsymmetric_eigen
+share/examples/p5-Math-GSL/matrix/nonsymmetric_eigen_old
+share/examples/p5-Math-GSL/rng
+share/examples/p5-Math-GSL/sf/
+share/examples/p5-Math-GSL/sf/README
+share/examples/p5-Math-GSL/sf/bessel
+share/examples/p5-Math-GSL/sf/bessel.png
+share/examples/p5-Math-GSL/sf/erfc_check
+share/examples/p5-Math-GSL/sf/plot_bessel.gnuplot
+share/examples/p5-Math-GSL/tkplotdataset
+share/examples/p5-Math-GSL/vector/
+share/examples/p5-Math-GSL/vector/dot_product
+share/examples/p5-Math-GSL/vector/serialize
+share/examples/p5-Math-GSL/vector/speed
