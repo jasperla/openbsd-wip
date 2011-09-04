@@ -1,0 +1,22 @@
+$OpenBSD$
+--- rpmio/Makefile.am.orig	Fri Jul 15 05:36:33 2011
++++ rpmio/Makefile.am	Fri Sep  2 10:43:04 2011
+@@ -17,7 +17,7 @@ librpmio_la_SOURCES = \
+ 	rpmstring.c rpmfileutil.c \
+ 	rpmkeyring.c
+ 
+-librpmio_la_LDFLAGS = -version-info 2:1:0
++librpmio_la_LDFLAGS = -version-info 2:1:0 -pthread
+ librpmio_la_LIBADD = \
+ 	../misc/libmisc.la \
+ 	@WITH_NSS_LIB@ \
+@@ -25,8 +25,7 @@ librpmio_la_LIBADD = \
+ 	@WITH_ZLIB_LIB@ \
+ 	@WITH_LIBELF_LIB@ \
+ 	@WITH_POPT_LIB@ \
+-	@WITH_LZMA_LIB@ \
+-	-lpthread
++	@WITH_LZMA_LIB@
+ 
+ if WITH_LUA
+ AM_CPPFLAGS += -I$(top_srcdir)/luaext/

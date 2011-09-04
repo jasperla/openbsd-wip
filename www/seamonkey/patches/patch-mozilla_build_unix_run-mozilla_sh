@@ -1,0 +1,31 @@
+$OpenBSD: patch-mozilla_build_unix_run-mozilla_sh,v 1.2 2011/07/24 07:31:57 landry Exp $
+help finding our debugger
+--- mozilla/build/unix/run-mozilla.sh.orig	Fri Jan 14 23:21:21 2011
++++ mozilla/build/unix/run-mozilla.sh	Sun Feb 13 23:19:41 2011
+@@ -103,25 +103,7 @@ moz_test_binary()
+ ##########################################################################
+ moz_get_debugger()
+ {
+-	debuggers="ddd gdb dbx bdb native-gdb"
+-	debugger="notfound"
+-	done="no"
+-	for d in $debuggers
+-	do
+-		moz_test_binary /bin/which
+-		if [ $? -eq 1 ]
+-		then
+-			dpath=`which ${d}`	
+-		else 	
+-			dpath=`LC_MESSAGES=C type ${d} | awk '{print $3;}' | sed -e 's/\.$//'`	
+-		fi
+-		if [ -x "$dpath" ]
+-		then
+-			debugger=$dpath
+-			break
+-		fi
+-	done
+-	echo $debugger
++	echo "/usr/bin/gdb"
+ 	return 0
+ }
+ ##########################################################################

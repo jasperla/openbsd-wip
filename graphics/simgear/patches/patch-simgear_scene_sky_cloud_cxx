@@ -1,0 +1,14 @@
+$OpenBSD$
+--- simgear/scene/sky/cloud.cxx.orig	Wed Aug 31 15:38:08 2011
++++ simgear/scene/sky/cloud.cxx	Wed Aug 31 15:42:07 2011
+@@ -74,6 +74,10 @@ using namespace osg;
+ // #  endif
+ // #endif
+ 
++extern "C" {
++	inline int isnan(double r) { return !(r <= 0 || r >= 0); }
++}
++
+ static osg::ref_ptr<osg::StateSet> layer_states[SGCloudLayer::SG_MAX_CLOUD_COVERAGES];
+ static osg::ref_ptr<osg::StateSet> layer_states2[SGCloudLayer::SG_MAX_CLOUD_COVERAGES];
+ static osg::ref_ptr<osg::TextureCubeMap> cubeMap;

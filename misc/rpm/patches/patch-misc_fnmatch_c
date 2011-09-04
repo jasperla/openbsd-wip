@@ -1,0 +1,12 @@
+$OpenBSD$
+--- misc/fnmatch.c.orig	Tue Jul 12 07:28:13 2011
++++ misc/fnmatch.c	Fri Sep  2 11:46:24 2011
+@@ -18,6 +18,8 @@
+ 
+ # include "system.h"
+ # include <stdlib.h>
++# include <string.h>
++# include <ctype.h>
+ 
+ /* Find the first occurrence of C in S or the final NUL byte.  */
+ static inline char *

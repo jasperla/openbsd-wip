@@ -1,0 +1,20 @@
+$OpenBSD$
+--- lib/backend/db3.c.orig	Wed Mar  2 01:40:10 2011
++++ lib/backend/db3.c	Sun Jun 26 19:46:27 2011
+@@ -6,6 +6,7 @@ static int _debug = 1;	/* XXX if < 0 debugging, > 0 un
+ 
+ #include "system.h"
+ 
++#include <signal.h>
+ #include <errno.h>
+ #include <sys/wait.h>
+ 
+@@ -213,7 +214,7 @@ errxit:
+ 
+ void dbSetFSync(void *dbenv, int enable)
+ {
+-    db_env_set_func_fsync(enable ? fdatasync : fsync_disable);
++    db_env_set_func_fsync(enable ? fsync : fsync_disable);
+ }
+ 
+ int dbiSync(dbiIndex dbi, unsigned int flags)

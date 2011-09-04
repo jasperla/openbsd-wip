@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+@lib lib/librpm.so.${LIBrpm_VERSION}
+@lib lib/librpmbuild.so.${LIBrpmbuild_VERSION}
+@lib lib/librpmio.so.${LIBrpmio_VERSION}
+@lib lib/librpmsign.so.${LIBrpmsign_VERSION}

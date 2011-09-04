@@ -259,6 +259,13 @@ lib/calibre/calibre/ebooks/BeautifulSoup.py
 lib/calibre/calibre/ebooks/BeautifulSoup.pyc
 lib/calibre/calibre/ebooks/__init__.py
 lib/calibre/calibre/ebooks/__init__.pyc
+lib/calibre/calibre/ebooks/azw4/
+lib/calibre/calibre/ebooks/azw4/__init__.py
+lib/calibre/calibre/ebooks/azw4/__init__.pyc
+lib/calibre/calibre/ebooks/azw4/input.py
+lib/calibre/calibre/ebooks/azw4/input.pyc
+lib/calibre/calibre/ebooks/azw4/reader.py
+lib/calibre/calibre/ebooks/azw4/reader.pyc
 lib/calibre/calibre/ebooks/chardet/
 lib/calibre/calibre/ebooks/chardet/__init__.py
 lib/calibre/calibre/ebooks/chardet/__init__.pyc
@@ -1631,6 +1638,8 @@ lib/calibre/calibre/gui2/store/stores/eharlequin_plugin.py
 lib/calibre/calibre/gui2/store/stores/eharlequin_plugin.pyc
 lib/calibre/calibre/gui2/store/stores/eknigi_plugin.py
 lib/calibre/calibre/gui2/store/stores/eknigi_plugin.pyc
+lib/calibre/calibre/gui2/store/stores/escapemagazine_plugin.py
+lib/calibre/calibre/gui2/store/stores/escapemagazine_plugin.pyc
 lib/calibre/calibre/gui2/store/stores/feedbooks_plugin.py
 lib/calibre/calibre/gui2/store/stores/feedbooks_plugin.pyc
 lib/calibre/calibre/gui2/store/stores/foyles_uk_plugin.py
@@ -1680,6 +1689,8 @@ lib/calibre/calibre/gui2/store/stores/ozon_ru_plugin.py
 lib/calibre/calibre/gui2/store/stores/ozon_ru_plugin.pyc
 lib/calibre/calibre/gui2/store/stores/pragmatic_bookshelf_plugin.py
 lib/calibre/calibre/gui2/store/stores/pragmatic_bookshelf_plugin.pyc
+lib/calibre/calibre/gui2/store/stores/rw2010_plugin.py
+lib/calibre/calibre/gui2/store/stores/rw2010_plugin.pyc
 lib/calibre/calibre/gui2/store/stores/smashwords_plugin.py
 lib/calibre/calibre/gui2/store/stores/smashwords_plugin.pyc
 lib/calibre/calibre/gui2/store/stores/virtualo_plugin.py
@@ -1805,6 +1816,8 @@ lib/calibre/calibre/library/schema_upgrades.pyc
 lib/calibre/calibre/library/server/
 lib/calibre/calibre/library/server/__init__.py
 lib/calibre/calibre/library/server/__init__.pyc
+lib/calibre/calibre/library/server/ajax.py
+lib/calibre/calibre/library/server/ajax.pyc
 lib/calibre/calibre/library/server/base.py
 lib/calibre/calibre/library/server/base.pyc
 lib/calibre/calibre/library/server/browse.py
@@ -3005,9 +3018,11 @@ share/calibre/recipes/gva_be.recipe
 share/calibre/recipes/h1.recipe
 share/calibre/recipes/h2.recipe
 share/calibre/recipes/h3.recipe
+share/calibre/recipes/h7_tumspor.recipe
 share/calibre/recipes/haaretz.png
 share/calibre/recipes/haaretz_en.png
 share/calibre/recipes/haaretz_en.recipe
+share/calibre/recipes/haber7.recipe
 share/calibre/recipes/hackernews.recipe
 share/calibre/recipes/hallo_assen.recipe
 share/calibre/recipes/handelsblatt.recipe
@@ -3026,6 +3041,7 @@ share/calibre/recipes/helsingin_sanomat.recipe
 share/calibre/recipes/heraldo.recipe
 share/calibre/recipes/hindu.recipe
 share/calibre/recipes/hindu_business_line.recipe
+share/calibre/recipes/hira.recipe
 share/calibre/recipes/histmag.recipe
 share/calibre/recipes/historiaro.png
 share/calibre/recipes/historiaro.recipe
@@ -3417,6 +3433,8 @@ share/calibre/recipes/nspm.png
 share/calibre/recipes/nspm.recipe
 share/calibre/recipes/nspm_int.png
 share/calibre/recipes/nspm_int.recipe
+share/calibre/recipes/ntv_spor.recipe
+share/calibre/recipes/ntv_tr.recipe
 share/calibre/recipes/nu.recipe
 share/calibre/recipes/nursingtimes.png
 share/calibre/recipes/nursingtimes.recipe
