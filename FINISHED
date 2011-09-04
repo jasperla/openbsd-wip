@@ -9,6 +9,7 @@ textproc/calibre:	update to 0.8.16, sent to ports@ (viq)
 			Needs further work for enhanced functionality, but
 			that's separate from the update.
 database/tinycdb:	ready for import, sent to ports@ 2005/8 (chrueger)
+devel/p5-Test-Most:	ready for import, depends on the update of p5-Test-Warn, did not sent to ports@(wenheping)
 devel/p5-Test-Warn:	update to 0.23, sent to ports(wenheping)
 net/climm:		ready for import, has been sent to ports@ some time ago (pstumpf)
 sysutils/conky:		enhanced functionality, sent to ports@ and maintainer (pstumpf)
