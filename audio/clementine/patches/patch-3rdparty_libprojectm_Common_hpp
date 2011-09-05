@@ -1,0 +1,12 @@
+$OpenBSD$
+--- 3rdparty/libprojectm/Common.hpp.orig	Mon Sep  5 10:37:48 2011
++++ 3rdparty/libprojectm/Common.hpp	Mon Sep  5 10:38:16 2011
+@@ -62,7 +62,7 @@ extern FILE *fmemopen(void *buf, size_t len, const cha
+ 
+ 
+ #ifdef LINUX
+-#include <cstdlib>
++#include <cmath>
+ #define projectM_isnan isnan
+ 
+ #endif

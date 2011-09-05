@@ -1,0 +1,13 @@
+$OpenBSD$
+--- 3rdparty/qxt/CMakeLists.txt.orig	Mon Sep  5 12:24:07 2011
++++ 3rdparty/qxt/CMakeLists.txt	Mon Sep  5 12:27:28 2011
+@@ -9,6 +9,9 @@ set(QXT-MOC-HEADERS
+   qxtglobalshortcut.h
+ )
+ 
++find_package(X11)
++include_directories(${X11_INCLUDE_DIR})
++
+ if(WIN32)
+   set(QXT-SOURCES ${QXT-SOURCES} qxtglobalshortcut_win.cpp)
+ elseif(APPLE)

@@ -1,0 +1,14 @@
+$OpenBSD$
+--- 3rdparty/libprojectm/Renderer/CMakeLists.txt.orig	Tue Mar 29 23:16:29 2011
++++ 3rdparty/libprojectm/Renderer/CMakeLists.txt	Mon Sep  5 10:23:42 2011
+@@ -17,7 +17,9 @@ else(MSVC)
+ 	SET (MATH_LIBRARIES m)
+ endif(MSVC)
+ 
+-INCLUDE_DIRECTORIES(${projectM_SOURCE_DIR})
++FIND_PACKAGE(X11)
++
++INCLUDE_DIRECTORIES(${projectM_SOURCE_DIR} ${X11_INCLUDE_DIR})
+ ADD_LIBRARY(Renderer STATIC ${Renderer_SOURCES})
+ SET_TARGET_PROPERTIES(Renderer PROPERTIES VERSION 2.00 SOVERSION 2)
+ TARGET_LINK_LIBRARIES(Renderer ${MATH_LIBRARIES} projectM)
