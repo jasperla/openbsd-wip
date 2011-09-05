@@ -13,9 +13,6 @@ Looks like debug symbols aren't available at all. But should play with
 Remi Pointel (rpointel@) have other KDE 4 update bits, hope his work will be
 merged soon.
 
-textproc/raptor2 dependency probably should be changed to textproc/raptor.
-See update for this port here, in openbsd-wip.
-
 Not sure what's worse: warnings about incorrect links when packaging, or
 extra "mkdir -p" in almost each port.
 
