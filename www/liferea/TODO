@@ -1,2 +1,7 @@
 "Hey, it compiles and runs!" - no tests besides that done yet.
-Make help menu work
+Menu works, feeds seem to fetch.
+
+Check whether adding feeds work, and normal operation.
+
+Get rid of:
+** (liferea:24743): WARNING **: Unrecognized image file format
