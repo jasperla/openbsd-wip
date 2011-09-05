@@ -1,0 +1,11 @@
+$OpenBSD$
+--- kdecore/util/kshareddatacache.cpp.orig	Sat Sep  3 23:11:25 2011
++++ kdecore/util/kshareddatacache.cpp	Sat Sep  3 23:11:52 2011
+@@ -39,6 +39,7 @@
+ 
+ #include <sys/types.h>
+ #include <sys/mman.h>
++#include <pthread.h>
+ #include <stdlib.h>
+ 
+ int ksdcArea()

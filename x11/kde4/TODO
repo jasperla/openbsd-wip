@@ -1,0 +1,53 @@
+The main idea is to make this pie-e-e-ece of shit run. Then make it stable.
+Then polish patches. Then mark as done and start hacking on KDE5. (*)
+
+There are some details in per-port TODO files, like what ports need to be
+updated first. And makefiles contain little comments too.
+
+Note: almost no shared library bumps were made. This should be no problem
+if you don't have any KDE 4 packages installed.
+
+Looks like debug symbols aren't available at all. But should play with
+"debug" flavor more.
+
+Remi Pointel (rpointel@) have other KDE 4 update bits, hope his work will be
+merged soon.
+
+textproc/raptor2 dependency probably should be changed to textproc/raptor.
+See update for this port here, in openbsd-wip.
+
+Not sure what's worse: warnings about incorrect links when packaging, or
+extra "mkdir -p" in almost each port.
+
+
+admin
+	Contains a lot of patches for ksystemlog to make it contain useful
+	defaults; probably they should be wrapped in "#ifdef (__OpenBSD__)".
+
+attica
+libs
+qimageblitz
+	Untested, but looks like work fine.
+
+baseapps
+pimlibs
+runtime
+workspace
+	Fear of Akonadi lives here. Looks like most crashes are related to
+	ASS (Akonadi-Soprano-Strigi) framework. knotify crashes almost
+	immediately at start too, but notification sound is played.
+
+kate
+multimedia
+	Works For Me(TM)
+
+kdenetwork
+	Almost unasable: Kopete and Krdc doesn't have protocols support,
+	no programs see plugins...
+
+l10n
+oxygen-icons
+	Done. Ready-to-use packages available at http://www.ohvost.ru/dnl/kde/
+
+---
+ * - Last one is a joke. (Captain)

@@ -1,0 +1,24 @@
+$OpenBSD: patch-kjs_collector_cpp,v 1.4 2010/06/18 11:14:42 espie Exp $
+--- kjs/collector.cpp.orig	Sat May 21 00:24:54 2011
++++ kjs/collector.cpp	Sat Sep  3 22:53:16 2011
+@@ -499,6 +499,12 @@ static inline void* currentThreadStackBase()
+     static pthread_t stackThread;
+     pthread_t thread = pthread_self();
+     if (stackBase == 0 || thread != stackThread) {
++#if defined(__OpenBSD__)
++	stack_t sinfo;
++	pthread_stackseg_np(thread, &sinfo);
++	stackBase = (char *)sinfo.ss_sp - sinfo.ss_size;
++        stackThread = thread;
++#else
+         pthread_attr_t sattr;
+ #if HAVE(PTHREAD_NP_H) || defined(__NetBSD__)
+         // e.g. on FreeBSD 5.4, neundorf@kde.org
+@@ -517,6 +523,7 @@ static inline void* currentThreadStackBase()
+         stackBase = (char *)stackBase + stackSize;      // a matter of interpretation, apparently...
+         assert(stackBase);
+         stackThread = thread;
++#endif
+     }
+ #else
+ #error Need a way to get the stack base on this platform

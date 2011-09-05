@@ -1,0 +1,32 @@
+$OpenBSD$
+--- krfb/libvncserver/CMakeLists.txt.orig	Tue Sep  6 01:08:33 2011
++++ krfb/libvncserver/CMakeLists.txt	Tue Sep  6 01:39:10 2011
+@@ -14,19 +14,15 @@ include(TestBigEndian)
+ macro_bool_to_01(ZLIB_FOUND LIBVNCSERVER_HAVE_LIBZ)
+ macro_bool_to_01(JPEG_FOUND LIBVNCSERVER_HAVE_LIBJPEG)
+ 
+-check_include_files(fcntl.h       LIBVNCSERVER_HAVE_FCNTL_H)
+-check_include_files(unistd.h      LIBVNCSERVER_HAVE_UNISTD_H)
+-check_include_files(sys/socket.h  LIBVNCSERVER_HAVE_SYS_SOCKET_H)
+-check_include_files(sys/types.h   LIBVNCSERVER_HAVE_SYS_TYPES_H)
+-check_include_files(sys/stat.h    LIBVNCSERVER_HAVE_SYS_STAT_H)
+-check_include_files(sys/time.h    LIBVNCSERVER_HAVE_SYS_TIME_H)
+-check_include_files(netinet/in.h  LIBVNCSERVER_HAVE_NETINET_IN_H)
+-check_include_files(stdint.h      LIBVNCSERVER_HAVE_STDINT_H)
+-check_include_files(ifaddrs.h     LIBVNCSERVER_HAVE_IFADDRS_H)
+-
+-message("+!+!+!+! LIBVNCSERVER_HAVE_SYS_TYPES_H = ${LIBVNCSERVER_HAVE_SYS_TYPES_H} !+!+!+!+")
+-message("+!+!+!+! LIBVNCSERVER_HAVE_SYS_SOCKET_H = ${LIBVNCSERVER_HAVE_SYS_SOCKET_H} !+!+!+!+")
+-message("+!+!+!+! LIBVNCSERVER_HAVE_NETINET_IN_H = ${LIBVNCSERVER_HAVE_NETINET_IN_H} !+!+!+!+")
++check_include_files("sys/types.h"		LIBVNCSERVER_HAVE_SYS_TYPES_H)
++check_include_files("sys/types.h;fcntl.h"	LIBVNCSERVER_HAVE_FCNTL_H)
++check_include_files("sys/types.h;unistd.h"	LIBVNCSERVER_HAVE_UNISTD_H)
++check_include_files("sys/types.h;sys/socket.h"	LIBVNCSERVER_HAVE_SYS_SOCKET_H)
++check_include_files("sys/types.h;sys/stat.h"	LIBVNCSERVER_HAVE_SYS_STAT_H)
++check_include_files("sys/types.h;sys/time.h"	LIBVNCSERVER_HAVE_SYS_TIME_H)
++check_include_files("sys/types.h;netinet/in.h"	LIBVNCSERVER_HAVE_NETINET_IN_H)
++check_include_files("sys/types.h;stdint.h"	LIBVNCSERVER_HAVE_STDINT_H)
++check_include_files("sys/types.h;ifaddrs.h"	LIBVNCSERVER_HAVE_IFADDRS_H)
+ 
+ check_function_exists(gettimeofday LIBVNCSERVER_HAVE_GETTIMEOFDAY)
+ 

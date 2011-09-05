@@ -1,0 +1,7 @@
+   * Xine XCB  <http://www.xine-project.org/>
+     Xine libraries
+     Xine and phonon-xine must be compiled with XCB support.
+
+   * TunePimp  <http://www.musicbrainz.org/products/tunepimp>
+     A library for developing MusicBrainz enabled tagging applications
+     Provides MusicBrainz tagging in Juk.

@@ -1,0 +1,16 @@
+$OpenBSD$
+--- ksystemlog/src/modes/cron/cronConfiguration.h.orig	Mon Sep  5 23:33:26 2011
++++ ksystemlog/src/modes/cron/cronConfiguration.h	Mon Sep  5 23:34:24 2011
+@@ -51,11 +51,8 @@ class CronConfiguration : public LogModeConfiguration 
+ 			configuration->setCurrentGroup(QLatin1String( "CronLogMode" ));
+ 
+ 			QStringList defaultCronPaths;
+-			defaultCronPaths << QLatin1String( "/var/log/syslog" );
++			defaultCronPaths << QLatin1String( "/var/cron/log" );
+ 			configuration->addItemStringList(QLatin1String( "LogFilesPaths" ), d->cronPaths, defaultCronPaths, QLatin1String( "LogFilesPaths" ));
+-
+-			QString defaultProcessFilter(QLatin1String( "/usr/sbin/cron" ));
+-			configuration->addItemString(QLatin1String( "ProcessFilter" ), d->processFilter, defaultProcessFilter, QLatin1String( "ProcessFilter" ));
+ 
+ 
+ 		}

@@ -1,0 +1,12 @@
+$OpenBSD$
+--- ksystemlog/src/modes/system/systemConfiguration.h.orig	Mon Sep  5 22:49:33 2011
++++ ksystemlog/src/modes/system/systemConfiguration.h	Mon Sep  5 22:49:46 2011
+@@ -39,7 +39,7 @@ class SystemConfiguration : public GenericLogModeConfi
+ 		SystemConfiguration() :
+ 			GenericLogModeConfiguration(
+ 					QLatin1String( SYSTEM_LOG_MODE_ID ),
+-					QStringList() << QLatin1String( "/var/log/syslog" ),
++					QStringList() << QLatin1String( "/var/log/messages" ),
+ 					QList<int>() << INFORMATION_LOG_LEVEL_ID
+ 			) {
+ 
