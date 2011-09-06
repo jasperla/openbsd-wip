@@ -49,9 +49,15 @@ kdenetwork
 	Almost unasable: Kopete and Krdc doesn't have protocols support,
 	no programs see plugins...
 
+konsole
+	Tab name formatting doesn't work.
+
 l10n
 oxygen-icons
 	Done. Ready-to-use packages available at http://www.ohvost.ru/dnl/kde/
+
+utils
+	Ark misses plugins, otherwise more or less works.
 
 ---
  * - Last one is a joke. (Captain)

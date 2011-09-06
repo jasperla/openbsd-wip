@@ -42,7 +42,7 @@
      SUBDIR += pim			# needs akonadi
      SUBDIR += sdk
      SUBDIR += toys
-     SUBDIR += utils
+     SUBDIR += utils			# plugins not loading
      SUBDIR += webdev
 
 # former kdeedu
@@ -89,7 +89,7 @@
      
 # other apps
      SUBDIR += kate			# OK
-     SUBDIR += konsole
+     SUBDIR += konsole			# issues
      
 # additional resources
      SUBDIR += artwork
