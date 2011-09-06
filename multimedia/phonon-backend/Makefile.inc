@@ -15,3 +15,12 @@ MODULES =		x11/qt4 devel/cmake
 BUILD_DEPENDS +=	x11/kde4/automoc
 
 LIB_DEPENDS +=		phonon->=4.5.0:multimedia/phonon
+
+FLAVORS =       debug
+FLAVOR ?=
+
+.if ${FLAVOR:L:Mdebug}
+CONFIGURE_ARGS +=       -DCMAKE_BUILD_TYPE:String=Debug
+.else
+CONFIGURE_ARGS +=       -DCMAKE_BUILD_TYPE:String=Release
+.endif

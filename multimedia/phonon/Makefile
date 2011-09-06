@@ -25,4 +25,13 @@ LIB_DEPENDS +=	x11/vlc
 
 WANTLIB +=  lib/qt4/QtDBus lib/qt4/QtGui m stdc++
 
+FLAVORS =	debug
+FLAVOR ?=
+
+.if ${FLAVOR:L:Mdebug}
+CONFIGURE_ARGS +=       -DCMAKE_BUILD_TYPE:String=Debug
+.else
+CONFIGURE_ARGS +=       -DCMAKE_BUILD_TYPE:String=Release
+.endif
+
 .include <bsd.port.mk>
