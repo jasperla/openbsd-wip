@@ -13,4 +13,5 @@ sysutils/conky:		enhanced functionality, sent to ports@ and maintainer (pstumpf)
 www/p5-Dancer:		ready for import, has been sent to ports@ some time ago; it depends on www/p5-HTTP-Server-Simple-PSGI
 www/p5-HTTP-Server-Simple-PSGI:	ready for import, has been sent to ports@ some time ago
 lang/boo:       sent to ports@ Aug 31 2011. Ready for import. (rmboggs)
+x11/parcellite:	ready for import, sent to ports@ Sep 6 2011. (lteo)
 
