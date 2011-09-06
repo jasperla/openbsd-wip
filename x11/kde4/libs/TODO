@@ -1,8 +1,20 @@
 Fix build that shared library could be resolved without symlink:
 make: don't know how to make /usr/local/lib/libpolkit-qt-core-1.so. Stop in /usr/ports/pobj/kdelibs-4.7.0/build-i386.
 
-Update soprano for enabling nepomuk.
-
 Check were katepart has gone.
 
-Prepend "attica->=0.9.0:" to x11/kde4/attica in LIB_DEPENDS.
+Look at sendfile(3) support.
+
+Look closer at following tests:
+-- Performing Test HAVE_X86_MMX
+-- Performing Test HAVE_X86_MMX - Success
+-- Performing Test HAVE_X86_SSE
+-- Performing Test HAVE_X86_SSE - Success
+-- Performing Test HAVE_X86_SSE2
+-- Performing Test HAVE_X86_SSE2 - Success
+-- Performing Test HAVE_X86_3DNOW
+-- Performing Test HAVE_X86_3DNOW - Success
+
+Port Grantlee >= 0.1.0.
+
+Hard ones: HUPnP and UDev emulation layers.
