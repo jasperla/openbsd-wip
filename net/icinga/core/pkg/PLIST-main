@@ -27,6 +27,8 @@ share/examples/icinga/objects/contacts.cfg
 @sample ${SYSCONFDIR}/icinga/objects/contacts.cfg
 share/examples/icinga/objects/localhost.cfg
 @sample ${SYSCONFDIR}/icinga/objects/localhost.cfg
+share/examples/icinga/objects/notifications.cfg
+@sample ${SYSCONFDIR}/icinga/objects/notifications.cfg
 share/examples/icinga/objects/printer.cfg
 @sample ${SYSCONFDIR}/icinga/objects/printer.cfg
 share/examples/icinga/objects/switch.cfg

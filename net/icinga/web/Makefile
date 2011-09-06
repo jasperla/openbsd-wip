@@ -3,8 +3,6 @@
 # Work in progress. Not yet linked to the build.
 
 COMMENT =	web UI for icinga
-V =		1.4.1
-REVISION =	0
 DISTNAME =	icinga-web-$V
 
 MODULES=	lang/php

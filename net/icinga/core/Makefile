@@ -11,10 +11,6 @@ PKGNAME-cgi =		icinga-cgi-$V
 PKGNAME-ido =		icinga-idoutils-$V
 PKGNAME-api =		icinga-api-$V
 
-REVISION =		1
-REVISION-ido =		2
-REVISION-main =		2
-
 MULTI_PACKAGES =	-main -cgi -api -ido
 PREFIX-cgi =		/var/www
 PREFIX-api =		/var/www
@@ -60,6 +56,8 @@ CONFIGURE_ARGS += \
 	--with-icinga-group=_icinga \
 	--with-icinga-user=_icinga \
 	--with-lockfile=/var/run/icinga/icinga.pid \
+	--with-log-dir=/var/log/icinga \
+	--with-p1-file-dir=${PREFIX}/bin \
 	--enable-embedded-perl \
 	--enable-idoutils \
 	--enable-ssl
