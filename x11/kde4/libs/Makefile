@@ -2,6 +2,7 @@
 
 COMMENT =		K Desktop Environment, libraries
 DISTNAME =		kdelibs-${VERSION}
+REVISION =		0
 
 SHARED_LIBS +=	kde3support          0.0      # .4.0
 SHARED_LIBS +=	kdecore              8.0      # .5.0
@@ -64,7 +65,7 @@ LIB_DEPENDS +=	graphics/openexr \
 		textproc/libxslt \
 		devel/pcre \
 		databases/strigi \
-		x11/kde4/attica \
+		attica->=0.9.0:x11/kde4/attica \
 		archivers/xz \
 		soprano->=2.5.60:databases/soprano \
 		multimedia/phonon \
