@@ -10,8 +10,8 @@
      SUBDIR += oxygen-icons		# OK
 
 # libraries
-     SUBDIR += libs			# review and test
-     SUBDIR += pimlibs			# review and test
+     SUBDIR += libs			# test
+     SUBDIR += pimlibs			# test
      SUBDIR += qimageblitz		# test
 
 # extra base
@@ -38,11 +38,11 @@
      SUBDIR += admin			# test
      SUBDIR += games
      SUBDIR += multimedia		# issues in dragon
-     SUBDIR += network			# major issues
+     SUBDIR += network			# test
      SUBDIR += pim			# needs akonadi
      SUBDIR += sdk
      SUBDIR += toys			# OK
-     SUBDIR += utils			# plugins not loading
+     SUBDIR += utils			# test
      SUBDIR += webdev
 
 # former kdeedu

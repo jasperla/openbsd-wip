@@ -1,6 +1,10 @@
 The main idea is to make this pie-e-e-ece of shit run. Then make it stable.
 Then polish patches. Then mark as done and start hacking on KDE5. (*)
 
+KDE 4 programs fail in a different ways when they're given a KDE 3 profile.
+So until we find a better way, move out (rename) your ~/.kde/, or start
+all KDE 4 programs with KDEHOME=~/something/else.
+
 There are some details in per-port TODO files, like what ports need to be
 updated first. And makefiles contain little comments too.
 
@@ -29,6 +33,7 @@ admin
 	defaults; probably they should be wrapped in "#ifdef (__OpenBSD__)".
 
 attica
+kdenetwork
 libs
 qimageblitz
 	Untested, but looks like work fine.
@@ -43,11 +48,8 @@ workspace
 
 kate
 multimedia
+utils
 	Works For Me(TM)
-
-kdenetwork
-	Almost unasable: Kopete and Krdc doesn't have protocols support,
-	no programs see plugins...
 
 konsole
 	Tab name formatting doesn't work.
@@ -55,9 +57,6 @@ konsole
 l10n
 oxygen-icons
 	Done. Ready-to-use packages available at http://www.ohvost.ru/dnl/kde/
-
-utils
-	Ark misses plugins, otherwise more or less works.
 
 ---
  * - Last one is a joke. (Captain)
