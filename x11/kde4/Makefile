@@ -41,7 +41,7 @@
      SUBDIR += network			# major issues
      SUBDIR += pim			# needs akonadi
      SUBDIR += sdk
-     SUBDIR += toys
+     SUBDIR += toys			# OK
      SUBDIR += utils			# plugins not loading
      SUBDIR += webdev
 
