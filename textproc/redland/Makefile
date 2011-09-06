@@ -4,7 +4,7 @@ COMMENT=		high-level interface for RDF
 DISTNAME=		redland-1.0.14
 CATEGORIES=		textproc
 
-SHARED_LIBS=		rdf	0.0 # 0.0
+SHARED_LIBS=		rdf	1.1 # 0.0
 
 HOMEPAGE=		http://librdf.org/
 
@@ -26,6 +26,7 @@ LIB_DEPENDS=	databases/iodbc \
 		textproc/rasqal
 
 CONFIGURE_STYLE=	gnu
+USE_LIBTOOL =		gnu
 USE_GROFF =		Yes
 
 CONFIGURE_ARGS=	--with-raptor=system \
@@ -33,6 +34,8 @@ CONFIGURE_ARGS=	--with-raptor=system \
 		--with-threestore=no \
 		--with-sqlite=no \
 		--with-mysql=no \
-		--with-postgresql=no
+		--with-postgresql=no \
+		--with-ltdl-include=${LOCALBASE}/include \
+		--with-ltdl-lib=${LOCALBASE}/lib
 
 .include <bsd.port.mk>
