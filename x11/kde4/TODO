@@ -18,6 +18,11 @@ extra "mkdir -p" in almost each port.
 
 See also main Makefile.
 
+Many programs produce such warnings:
+	ark(28160)/KSharedDataCache: Unable to find an appropriate lock to guard the shared cache.  This *should* be essentially impossible. :( 
+	ark(28160)/KSharedDataCache: Unable to perform initial setup, this system probably does not really support process-shared pthreads or semaphores, even though it claims otherwise. 
+Likely this is connected with problem of "missing plugins everywhere".
+
 
 admin
 	Contains a lot of patches for ksystemlog to make it contain useful
