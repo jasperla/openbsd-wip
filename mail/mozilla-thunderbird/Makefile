@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2011/08/24 06:19:51 landry Exp $
+# $OpenBSD: Makefile,v 1.135 2011/09/06 19:42:53 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -8,7 +8,7 @@ BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 # Don't forget to bump mail/thunderbird-i18n after updates.
 # Don't forget to update productivity/sunbird if patches changes.
 
-MOZILLA_VERSION =	6.0
+MOZILLA_VERSION =	6.0.2
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	mail
@@ -16,13 +16,14 @@ MOZILLA_CODENAME =	mail
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-1.0beta5
-PKGNAME-enigmail =	enigmail-1.3.1
-REVISION-main =		0
+PKGNAME-enigmail =	enigmail-1.3
+REVISION-enigmail =	0
+REVISION-lightning =	0
 EPOCH-lightning =	0
 
 MASTER_SITES0 =	http://www.mozilla-enigmail.org/download/source/
 DISTFILES +=	${MOZILLA_PROJECT}-${MOZILLA_VERSION}.source.tar.bz2 \
-		enigmail-1.3.1.tar.gz:0
+		enigmail-1.3.tar.gz:0
 EXTRACT_CASES =	enigmail-*.tar.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | tar -C comm-${MOZILLA_BRANCH}/mailnews/extensions/ -xf -;;
 
 SO_VERSION =	19.0
@@ -99,7 +100,7 @@ GNU_ARCH =	${MACHINE_ARCH:S/amd64/x86_64/}
 GUIDS =	gdata-provider {a62ef8ec-5fdc-40c2-873c-223b8a6925cc} \
 	lightning {e2fda1a4-762b-4020-b5ad-a41df1933103} \
 	calendar-timezones calendar-timezones@mozilla.org \
-	../bin/enigmail-1.4-openbsd-${GNU_ARCH} {847b3a00-7ab1-11d4-8f02-006008948af5}
+	../bin/enigmail-1.2-openbsd-${GNU_ARCH} {847b3a00-7ab1-11d4-8f02-006008948af5}
 
 EXTDIR =	${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/
 post-install:
