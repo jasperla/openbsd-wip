@@ -4,7 +4,7 @@ COMMENT =		light RDF manipulation with LADSPA plugin support
 DISTNAME =		swh-LRDF-4e416a5
 PKGNAME =		liblrdf-0.5.0
 
-SHARED_LIBS =		lrdf	0.0	# 0.0
+SHARED_LIBS =		lrdf	1.0	# 0.0
 
 CATEGORIES =		textproc
 
