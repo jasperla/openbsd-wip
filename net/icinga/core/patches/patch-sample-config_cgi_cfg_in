@@ -1,0 +1,15 @@
+$OpenBSD: patch-sample-config_cgi_cfg_in,v 1.2 2011/05/11 13:57:41 sthen Exp $
+--- sample-config/cgi.cfg.in.orig	Wed May 11 08:43:54 2011
++++ sample-config/cgi.cfg.in	Wed May 11 10:38:33 2011
+@@ -345,7 +345,10 @@ default_statuswrl_layout=4
+ # OS and distribution, so you may have to tweak this to
+ # work on your system.
+ 
+-ping_syntax=/bin/ping -n -U -c 5 $HOSTADDRESS$
++# For chroot, use /bin/ping and chroot 4555 /var/www/bin/ping.
++# Only needed for WML interface.
++#ping_syntax=/bin/ping -n -c 5 $HOSTADDRESS$
++ping_syntax=/sbin/ping -n -c 5 $HOSTADDRESS$
+ 
+ 
+ 
