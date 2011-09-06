@@ -1,0 +1,13 @@
+$OpenBSD$
+--- khtml/imload/decoders/pngloader.cpp.orig	Tue Sep  6 21:54:05 2011
++++ khtml/imload/decoders/pngloader.cpp	Tue Sep  6 21:55:15 2011
+@@ -198,7 +198,8 @@ class PNGLoader: public ImageLoader (private)
+     {
+         if (interlaced)
+         {
+-            Q_ASSERT(pngReadStruct->row_info.pixel_depth <= depth * 8);
++            // libpng internals aren't accessible since libpng v1.5.0
++            // Q_ASSERT(pngReadStruct->row_info.pixel_depth <= depth * 8);
+             requestScanline(rowNum, scanlineBuf);
+             png_progressive_combine_row(pngReadStruct, scanlineBuf, data);
+             notifyScanline(pass + 1, scanlineBuf);
