@@ -980,7 +980,7 @@ include/syndication/specificitemvisitor.h
 include/syndication/syndication.h
 include/syndication/tools.h
 lib/cmake/KdepimLibs/
-lib/cmake/KdepimLibs/KDEPimLibsLibraryTargetsWithPrefix-release.cmake
+lib/cmake/KdepimLibs/KDEPimLibsLibraryTargetsWithPrefix${CMAKE_TARGET_PREFIX}.cmake
 lib/cmake/KdepimLibs/KDEPimLibsLibraryTargetsWithPrefix.cmake
 lib/cmake/KdepimLibs/KdepimLibsConfig.cmake
 lib/cmake/KdepimLibs/KdepimLibsConfigVersion.cmake

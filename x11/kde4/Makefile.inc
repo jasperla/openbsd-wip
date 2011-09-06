@@ -32,7 +32,11 @@ SEPARATE_BUILD =		simple
 #CONFIGURE_ARGS +=	--debug-output --debug-trycompile
 .if ${FLAVOR:L:Mdebug}
 CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE:String=Debug
+CMAKE_TARGET_PREFIX =	-debug
 .else
 CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE:String=Release
+CMAKE_TARGET_PREFIX =	-release
 .endif
+
+SUBST_VARS +=		CMAKE_TARGET_PREFIX
 
