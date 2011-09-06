@@ -65,7 +65,7 @@ LIB_DEPENDS +=	graphics/openexr \
 		textproc/libxslt \
 		devel/pcre \
 		databases/strigi \
-		attica->=0.9.0:x11/kde4/attica \
+		attica->=0.1.9:x11/kde4/attica \
 		archivers/xz \
 		soprano->=2.5.60:databases/soprano \
 		multimedia/phonon \
