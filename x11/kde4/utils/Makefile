@@ -2,6 +2,8 @@
 
 COMMENT =	K Desktop Environment, utils
 DISTNAME =	kdeutils-${VERSION}
+REVISION =	0
+
 USE_GROFF =	Yes
 
 SHARED_LIBS +=	libkremotecontrol	0.0	# 1.0

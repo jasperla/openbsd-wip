@@ -2444,3 +2444,5 @@ share/sounds/pop.wav
 share/wallpapers/
 share/wallpapers/stripes.png
 share/wallpapers/stripes.png.desktop
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

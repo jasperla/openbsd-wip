@@ -1209,3 +1209,5 @@ share/kde4/servicetypes/korganizerpart.desktop
 share/kde4/servicetypes/korgprintplugin.desktop
 @man share/man/man1/kabcclient.1
 share/polkit-1/actions/org.kde.kalarmrtcwake.policy
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

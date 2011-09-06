@@ -1,7 +1,8 @@
 # $OpenBSD: Makefile,v 1.5 2010/11/22 08:37:02 espie Exp $
 
-COMMENT =		K Desktop Environment, multimedia
-DISTNAME =		kdemultimedia-${VERSION}
+COMMENT =	K Desktop Environment, multimedia
+DISTNAME =	kdemultimedia-${VERSION}
+REVISION =	0
 
 SHARED_LIBS += audiocdplugins 4.0	# .4.0
 SHARED_LIBS += kcddb          4.0       # .4.0

@@ -153,3 +153,5 @@ share/kde4/services/dragonplayer_part.desktop
 share/kde4/services/ffmpegthumbs.desktop
 share/kde4/services/libkcddb.desktop
 share/kde4/services/videopreview.desktop
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

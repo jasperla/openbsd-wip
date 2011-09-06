@@ -1,8 +1,10 @@
 # $OpenBSD: Makefile,v 1.8 2011/07/06 21:25:23 ajacoutot Exp $
 
-COMMENT=		K Desktop Environment, pim
-DISTNAME=		kdepim-${VERSION}
-HOMEPAGE=		http://pim.kde.org/
+COMMENT =	K Desktop Environment, pim
+DISTNAME =	kdepim-${VERSION}
+HOMEPAGE =	http://pim.kde.org/
+REVISION =	0
+
 USE_GROFF =		Yes
 
 SHARED_LIBS +=	akonadi_next 0.0

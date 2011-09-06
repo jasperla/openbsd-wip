@@ -1,7 +1,8 @@
 # $OpenBSD: Makefile,v 1.14 2010/11/22 08:37:02 espie Exp $
 
-COMMENT =		K Desktop Environment, workspace
-DISTNAME =		kde-workspace-${VERSION}
+COMMENT =	K Desktop Environment, workspace
+DISTNAME =	kde-workspace-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  kdecorations              0.0 # 4.7
 SHARED_LIBS +=  kephal                    0.0 # 4.7

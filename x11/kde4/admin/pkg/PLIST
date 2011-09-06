@@ -59,3 +59,5 @@ share/kde4/
 share/kde4/services/
 share/kde4/services/kcm_cron.desktop
 share/kde4/services/system-config-printer-kde.desktop
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
