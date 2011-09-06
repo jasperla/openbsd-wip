@@ -1,5 +1,0 @@
-update the ancient postgres jdbc driver to a current driver which works with postgresql 7.2+ to 9.0 (maybe 9.1 too)
-
-I am not setup for testing this port, can somebody who uses it please test and report?
-
-thanks
