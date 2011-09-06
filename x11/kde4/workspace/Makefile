@@ -29,7 +29,31 @@ SHARED_LIBS +=  taskmanager               0.0 # 4.7
 SHARED_LIBS +=  weather_ion               0.0 # 6.0
 
 USE_GROFF =	Yes
-BUILD_DEPENDS +=	x11/kde4/automoc
+
+WANTLIB += c m pthread stdc++ util z
+WANTLIB += GL GLU ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
+WANTLIB += Xfixes Xft Xinerama Xpm Xrandr Xrender Xss Xtst Xxf86misc
+WANTLIB += fontconfig freetype xkbfile
+
+WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDeclarative
+WANTLIB += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtOpenGL
+WANTLIB += lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg lib/qt4/QtTest
+WANTLIB += lib/qt4/QtXml lib/qt4/QtWebKit
+
+WANTLIB += akonadi-kcal akonadi-kde akonadi-kmime kabc kactivities
+WANTLIB += kcalcore kcalutils kcmutils kdeclarative kdefakes kde3support
+WANTLIB += kdecore>=8 kdesu kdewebkit kdeui kfile kholidays khtml
+WANTLIB += kidletime kio kjs kmime knewstuff3 knotifyconfig kparts
+WANTLIB += kpimutils kpty kresources krosscore ktexteditor
+WANTLIB += kunitconversion microblog nepomuk nepomukquery nepomukutils
+WANTLIB += phonon>=6 plasma qimageblitz solid soprano streamanalyzer
+WANTLIB += strigiqtdbusclient threadweaver syndication
+
+WANTLIB += ck-connector dbus-1 dbusmenu-qt gps jpeg png usb xmms
+
+BUILD_DEPENDS +=	x11/kde4/automoc \
+			devel/boost \
+
 LIB_DEPENDS +=		x11/kde4/libs \
 			x11/kde4/pimlibs \
 			multimedia/phonon \
@@ -39,23 +63,6 @@ LIB_DEPENDS +=		x11/kde4/libs \
 			misc/gpsd,-main \
 			audio/xmms,-main \
 			devel/libusb \
-
-WANTLIB += GL GLU ICE SM X11 Xau Xdmcp Xext Xft Xpm Xrender c \
-	kde3support kdecore>=8 kdesu kdeui kfile khtml kio kjs knewstuff3 \
-	knotifyconfig kparts kpty ktexteditor lib/qt4/Qt3Support \
-	lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg \
-	lib/qt4/QtXml m nepomuk nepomukquery phonon>=6 plasma pthread \
-	qimageblitz solid soprano stdc++ z
-WANTLIB += QtDeclarative QtOpenGL QtScript QtSql QtTest QtWebKit
-WANTLIB += Xcomposite Xcursor Xdamage Xfixes Xinerama Xrandr Xss
-WANTLIB += Xtst Xxf86misc ck-connector dbus-1 dbusmenu-qt fontconfig
-WANTLIB += freetype gps jpeg kactivities kcmutils kdeclarative
-WANTLIB += kdefakes kdewebkit kidletime krosscore kunitconversion
-WANTLIB += nepomukutils png streamanalyzer strigiqtdbusclient
-WANTLIB += threadweaver util xkbfile
-WANTLIB += akonadi-kcal akonadi-kde akonadi-kmime kabc kcalcore
-WANTLIB += kcalutils kholidays kmime kpimutils kresources microblog
-WANTLIB += syndication usb xmms
 
 # these come from libs in real case
 #pre-install:
