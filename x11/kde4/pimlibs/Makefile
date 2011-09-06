@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, pimlibs
 DISTNAME =	kdepimlibs-${VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=	kabc                 5.0      # .4.0
 SHARED_LIBS +=	kabc_file_core       0.0      # .4.0

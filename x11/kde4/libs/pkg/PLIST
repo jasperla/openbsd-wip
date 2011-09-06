@@ -1968,6 +1968,7 @@ include/threadweaver/ThreadWeaver.h
 include/threadweaver/WeaverInterface.h
 include/threadweaver/WeaverObserver.h
 include/threadweaver/threadweaver_export.h
+lib/kde4/
 lib/kde4/emoticonstheme_adium.so
 lib/kde4/emoticonstheme_kde.so
 lib/kde4/emoticonstheme_pidgin.so
@@ -2017,6 +2018,7 @@ lib/kde4/libexec/fileshareset
 lib/kde4/libkhtmlpart.so
 lib/kde4/libkmultipart.so
 lib/kde4/notepadpart.so
+lib/kde4/plugins/
 lib/kde4/plugins/designer/
 lib/kde4/plugins/designer/kde3supportwidgets.so
 lib/kde4/plugins/designer/kdedeprecated.so
@@ -3496,6 +3498,8 @@ share/icons/hicolor/48x48/actions/
 share/icons/hicolor/48x48/actions/presence_away.png
 share/icons/hicolor/48x48/actions/presence_offline.png
 share/icons/hicolor/48x48/actions/presence_online.png
+share/kde4/
+share/kde4/services/
 share/kde4/services/data.protocol
 share/kde4/services/emoticonstheme_adium.desktop
 share/kde4/services/emoticonstheme_kde.desktop
@@ -3605,6 +3609,7 @@ share/kde4/servicetypes/qimageio_plugin.desktop
 share/kde4/servicetypes/renamedialogplugin.desktop
 share/kde4/servicetypes/sonnetspeller.desktop
 share/locale/all_languages
+share/locale/en_US/
 share/locale/en_US/entry.desktop
 @man share/man/man1/checkXML.1
 @man share/man/man1/kde4-config.1

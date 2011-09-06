@@ -987,6 +987,7 @@ lib/cmake/KdepimLibs/KdepimLibsConfigVersion.cmake
 lib/gpgmepp/
 lib/gpgmepp/GpgmeppConfig.cmake
 lib/gpgmepp/GpgmeppLibraryDepends.cmake
+lib/kde4/
 lib/kde4/kabc_directory.so
 lib/kde4/kabc_file.so
 lib/kde4/kabc_ldapkio.so
@@ -1004,6 +1005,7 @@ lib/kde4/kio_nntp.so
 lib/kde4/kio_pop3.so
 lib/kde4/kio_sieve.so
 lib/kde4/kio_smtp.so
+lib/kde4/plugins/
 lib/kde4/plugins/designer/kholidayswidgets.so
 @lib lib/libakonadi-calendar.so.${LIBakonadi-calendar_VERSION}
 @lib lib/libakonadi-contact.so.${LIBakonadi-contact_VERSION}
@@ -1198,6 +1200,8 @@ share/doc/HTML/en/kioslave/smtp/
 share/doc/HTML/en/kioslave/smtp/common
 share/doc/HTML/en/kioslave/smtp/index.cache.bz2
 share/doc/HTML/en/kioslave/smtp/index.docbook
+share/kde4/
+share/kde4/services/
 share/kde4/services/akonadi/
 share/kde4/services/akonadi/contact/
 share/kde4/services/akonadi/contact/aimprotocol.desktop
