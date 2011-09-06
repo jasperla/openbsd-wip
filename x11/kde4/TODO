@@ -16,6 +16,8 @@ merged soon.
 Not sure what's worse: warnings about incorrect links when packaging, or
 extra "mkdir -p" in almost each port.
 
+See also main Makefile.
+
 
 admin
 	Contains a lot of patches for ksystemlog to make it contain useful
