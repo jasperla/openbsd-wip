@@ -1,0 +1,12 @@
+$OpenBSD$
+--- ConfigureChecks.cmake.orig	Tue Sep  6 22:43:52 2011
++++ ConfigureChecks.cmake	Tue Sep  6 22:44:10 2011
+@@ -1,5 +1,5 @@
+ include(CheckIncludeFiles)
+ 
+-check_include_files(sys/select.h  HAVE_SYS_SELECT_H)
+-check_include_files(sys/socket.h  HAVE_SYS_SOCKET_H)
+-check_include_files(sys/types.h   HAVE_SYS_TYPES_H)
++check_include_files("sys/types.h"		HAVE_SYS_TYPES_H)
++check_include_files("sys/types.h;sys/select.h"	HAVE_SYS_SELECT_H)
++check_include_files("sys/types.h;sys/socket.h"	HAVE_SYS_SOCKET_H)
