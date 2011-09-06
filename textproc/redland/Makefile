@@ -1,41 +1,42 @@
 # $OpenBSD: Makefile,v 1.5 2010/11/20 19:56:51 espie Exp $
 
-COMMENT=		high-level interface for RDF
-DISTNAME=		redland-1.0.14
-CATEGORIES=		textproc
+COMMENT =		high-level interface for RDF
+DISTNAME =		redland-1.0.14
+REVISION =		0
+CATEGORIES =		textproc
 
-SHARED_LIBS=		rdf	1.1 # 0.0
+SHARED_LIBS =		rdf	1.1 # 0.0
 
-HOMEPAGE=		http://librdf.org/
+HOMEPAGE =		http://librdf.org/
 
-MASTER_SITES=		http://download.librdf.org/source/
+MASTER_SITES =		http://download.librdf.org/source/
 
 # LGPL 2.1, GPL 2 or Apache 2
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE_FTP =		Yes
+PERMIT_DISTFILES_CDROM =	Yes
+PERMIT_DISTFILES_FTP =		Yes
 
-WANTLIB+=	c crypto curl idn iodbc iodbcinst m ssl xml2 \
-		xslt z raptor2 rasqal
+WANTLIB +=	c crypto curl idn iodbc iodbcinst m ssl xml2
+WANTLIB +=	xslt z raptor2 rasqal
 
-MODULES=	devel/gettext
+MODULES =	devel/gettext
 
-LIB_DEPENDS=	databases/iodbc \
+LIB_DEPENDS =	databases/iodbc \
 		textproc/raptor \
 		textproc/rasqal
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE =	gnu
 USE_LIBTOOL =		gnu
 USE_GROFF =		Yes
 
-CONFIGURE_ARGS=	--with-raptor=system \
-		--with-rasqal=system \
-		--with-threestore=no \
-		--with-sqlite=no \
-		--with-mysql=no \
-		--with-postgresql=no \
-		--with-ltdl-include=${LOCALBASE}/include \
-		--with-ltdl-lib=${LOCALBASE}/lib
+CONFIGURE_ARGS +=	--with-raptor=system \
+			--with-rasqal=system \
+			--with-threestore=no \
+			--with-sqlite=no \
+			--with-mysql=no \
+			--with-postgresql=no \
+			--with-ltdl-include=${LOCALBASE}/include \
+			--with-ltdl-lib=${LOCALBASE}/lib
 
 .include <bsd.port.mk>
