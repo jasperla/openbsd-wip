@@ -1,0 +1,12 @@
+$OpenBSD$
+--- cmake/modules/FindXKB.cmake.orig	Tue Sep  6 18:09:33 2011
++++ cmake/modules/FindXKB.cmake	Tue Sep  6 18:33:31 2011
+@@ -4,7 +4,7 @@
+   if (X11_XKB_INCLUDE_PATH)
+     MACRO_PUSH_REQUIRED_VARS()
+     set(CMAKE_REQUIRED_LIBRARIES "${X11_LIBRARIES} ${CMAKE_REQUIRED_LIBRARIES}")
+-    check_library_exists(X11 XkbLockModifiers "" HAVE_XKB)
++    check_library_exists(X11 XkbLockModifiers "${X11_LIB_SEARCH_PATH}" HAVE_XKB)
+     MACRO_POP_REQUIRED_VARS()
+     if (HAVE_XKB)
+         set(XKB_FOUND TRUE)
