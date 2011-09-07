@@ -34,7 +34,7 @@
      SUBDIR += smokeqt
      
 # fat packages
-     SUBDIR += accessibility
+     SUBDIR += accessibility		# test
      SUBDIR += admin			# test
      SUBDIR += games
      SUBDIR += multimedia		# issues in dragon
