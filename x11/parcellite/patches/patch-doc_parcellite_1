@@ -1,0 +1,19 @@
+$OpenBSD$
+--- doc/parcellite.1.orig	Mon Sep  5 16:01:03 2011
++++ doc/parcellite.1	Mon Sep  5 23:25:11 2011
+@@ -76,9 +76,12 @@ generally checking all these boxes is appropriate.
+ 
+ .SH History Dialog Behavior
+ .B use the Ctrl or Shift key in conjunction with right-click. 
+-.TP If you hold Ctrl, then it toggles the delete on a single item. 
+-.TP If you hold Shift while holding down right-click (this is like a right-drag), then it toggles each item as it enters the item.  
+-.TP To complete the delete, hit enter.
++.TP
++ If you hold Ctrl, then it toggles the delete on a single item. 
++.TP
++ If you hold Shift while holding down right-click (this is like a right-drag), then it toggles each item as it enters the item.  
++.TP
++ To complete the delete, hit enter.
+ .SH SEE ALSO
+ .PP
+ Website: http://parcellite.sourceforge.net
