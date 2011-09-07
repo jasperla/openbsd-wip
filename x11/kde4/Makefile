@@ -36,7 +36,7 @@
 # fat packages
      SUBDIR += accessibility		# test
      SUBDIR += admin			# test
-     SUBDIR += games
+     SUBDIR += games			# test
      SUBDIR += multimedia		# issues in dragon
      SUBDIR += network			# test
      SUBDIR += pim			# needs akonadi

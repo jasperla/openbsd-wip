@@ -1,0 +1,13 @@
+$OpenBSD$
+GCC bug, fixed in 4.4.
+--- libkdegames/kgamerenderer_p.h.orig	Wed Sep  7 03:48:03 2011
++++ libkdegames/kgamerenderer_p.h	Wed Sep  7 03:48:14 2011
+@@ -33,7 +33,7 @@ namespace KGRInternal
+ 	//Describes the state of a KGameRendererClient.
+ 	struct ClientSpec
+ 	{
+-		inline ClientSpec(const QString& spriteKey = QString(), int frame = -1, const QSize& size = QSize(), const QHash<QColor, QColor>& customColors = QHash<QColor, QColor>());
++		inline ClientSpec(const QString& spriteKey = QString(), int frame = -1, const QSize& size = QSize(), const QHash<QColor, QColor>& customColors = (QHash<QColor, QColor>()));
+ 		QString spriteKey;
+ 		int frame;
+ 		QSize size;
