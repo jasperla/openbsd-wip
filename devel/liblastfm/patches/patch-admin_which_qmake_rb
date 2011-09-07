@@ -1,0 +1,19 @@
+$OpenBSD$
+--- admin/which_qmake.rb.orig	Sat Sep 25 19:30:01 2010
++++ admin/which_qmake.rb	Fri Dec  3 07:45:32 2010
+@@ -8,7 +8,7 @@ def which_qmake
+   args += ' 2> /dev/null' unless Platform::IMPL == :mswin
+ 
+   versions = Hash.new
+-  ['qmake','qmake-qt4'].each do |qmake|
++  ['qmake','qmake4'].each do |qmake|
+     begin
+       /^Using Qt version (\d\.\d\.\d)(-(.+))?/.match( `#{qmake} #{args}` )
+     rescue
+@@ -35,4 +35,4 @@ def which_qmake
+   end
+ end
+ 
+-puts which_qmake if __FILE__ == $0
+\ No newline at end of file
++puts which_qmake if __FILE__ == $0
