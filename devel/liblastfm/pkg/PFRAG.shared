@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@lib lib/liblastfm.so.${LIBlastfm_VERSION}
-@lib lib/liblastfm_fingerprint.so.${LIBlastfm_fingerprint_VERSION}
