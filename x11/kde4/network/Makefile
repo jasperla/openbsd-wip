@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, network
 DISTNAME =	kdenetwork-${VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  kgetcore                0.0 # .4.0
 SHARED_LIBS +=  kopete                  3.0 # .4.0
@@ -32,6 +32,8 @@ LIB_DEPENDS +=	x11/kde4/libs \
 		net/libgadu \
 		security/libotr \
 		net/meanwhile
+
+RUN_DEPENDS +=	security/qca-ossl
 
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xpm Xss c gadu glib-2.0 \
 	gpg-error gpgme++-pthread gpgme-pthread idn kabc>=5 kdecore>=8 \
