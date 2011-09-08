@@ -1,8 +1,10 @@
+REVISION=6
 # $OpenBSD: Makefile,v 1.41 2011/08/16 08:29:13 sthen Exp $
 
 COMMENT =	imap4 webmail client
 
-DISTNAME =	roundcubemail-0.5.4
+DISTNAME =	roundcubemail-0.6-rc
+PKGNAME =	roundcubemail-0.6rc1
 CATEGORIES =	mail www
 HOMEPAGE =	http://www.roundcube.net/
 
@@ -30,6 +32,10 @@ RUN_DEPENDS =	lang/php/${MODPHP_VERSION},-mcrypt \
 		lang/php/${MODPHP_VERSION},-pspell \
 		sysutils/pecl-fileinfo \
 		php-mysql-*|php-pgsql-*|php-sqlite-*:lang/php/${MODPHP_VERSION},-sqlite
+
+do-configure:
+	perl -pi -e '$$. == 1 && s,^#!.*env.*php.*,#!${MODPHP_BIN},;' \
+	    -e 'close ARGV if eof;' ${WRKSRC}/bin/*
 
 do-install:
 	cp -Rp ${WRKDIST} ${INSTDIR}
