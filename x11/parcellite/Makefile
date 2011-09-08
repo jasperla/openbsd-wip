@@ -30,10 +30,12 @@ CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="`pkg-config --libs gtk+-2.0`"
 
-MODULES=	textproc/intltool
+MODULES=	devel/gettext \
+		textproc/intltool
 
-LIB_DEPENDS=	x11/gtk+2 \
-		devel/glib2
+LIB_DEPENDS=	x11/gtk+2
+
+RUN_DEPENDS=	devel/desktop-file-utils
 
 FAKE_FLAGS=	autostartdir=${PREFIX}/share/examples/parcellite/xdg/autostart/
 

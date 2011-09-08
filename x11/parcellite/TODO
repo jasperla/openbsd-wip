@@ -1,5 +1,3 @@
-Check if devel/glib2 LIB_DEPENDS is really necessary (feedback from David Coppa)
-Add gettext to MODULES (from Jasper)
 Have manpage wrap properly (from Jasper)
 "Also, this is lacking a run dependency on desktop-file-utils and the related goo." (from Jasper)
 Investigate middle-click weirdness (from Landry - http://article.gmane.org/gmane.os.openbsd.ports/50521)
