@@ -3,7 +3,7 @@
 CATEGORIES =	audio x11
 COMMENT =	Qt4-based music player forked from amaroK 1.4
 DISTNAME =	clementine-0.7.1
-REVISION =	0
+REVISION =	1
 HOMEPAGE =	http://clementine-player.org/
 
 MAINTAINER =	Vadim Zhukov <persgray@gmail.com>
@@ -32,7 +32,8 @@ LIB_DEPENDS +=	audio/taglib>=1.4 \
 		audio/libnjb \
 		devel/libmtp \
 		graphics/glew \
-		audio/libgpod,-main
+		audio/libgpod,-main \
+		devel/liblastfm
 
 MODULES =		devel/cmake x11/qt4 devel/gettext
 SEPARATE_BUILD =	Yes
