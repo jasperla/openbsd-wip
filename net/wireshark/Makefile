@@ -3,7 +3,7 @@
 COMMENT-main=	graphical network protocol analyzer
 COMMENT-text=	network protocol analyzer
 
-WVER=		1.6.1
+WVER=		1.6.2
 DISTNAME=	wireshark-${WVER}
 PKGNAME-main=	wireshark-${WVER}
 PKGNAME-text=	tshark-${WVER}
@@ -83,7 +83,7 @@ CONFIGURE_ARGS +=	--with-python
 .if ${FLAVOR:L:Mgtk3}
 BROKEN = yes
 CONFIGURE_ARGS +=	--with-gtk3=yes
-WANTLIB-main +=		gtk-x11-3.0
+WANTLIB-main +=		gtk-3
 LIB_DEPENDS +=		x11/gtk+3
 .endif
 
