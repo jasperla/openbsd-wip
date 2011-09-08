@@ -1,0 +1,2 @@
+update to roundcubemail 0.6 (rc for now)
+- fix up #! lines with ${MODPHP_BIN} in the scripts, make them +x
