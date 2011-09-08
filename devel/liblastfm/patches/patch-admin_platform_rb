@@ -1,0 +1,13 @@
+$OpenBSD$
+--- admin/platform.rb.orig	Fri Dec  3 07:46:11 2010
++++ admin/platform.rb	Fri Dec  3 07:44:21 2010
+@@ -52,6 +52,9 @@ module Platform
+    elsif RUBY_PLATFORM =~ /netbsd/i
+       OS = :unix
+       IMPL = :netbsd
++   elsif RUBY_PLATFORM =~ /openbsd/i
++      OS = :unix
++      IMPL = :openbsd
+    elsif RUBY_PLATFORM =~ /mswin/i
+       OS = :win32
+       IMPL = :mswin

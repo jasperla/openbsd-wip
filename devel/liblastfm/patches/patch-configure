@@ -1,0 +1,12 @@
+$OpenBSD$
+--- configure.orig	Sat Sep 25 19:30:01 2010
++++ configure	Fri Dec  3 07:55:38 2010
+@@ -20,7 +20,7 @@ begin
+   unless ARGV.include? '--skip-checks'
+     $qmake=which_qmake
+     pkgconfig 'samplerate', 'libsamplerate'
+-    pkgconfig 'fftw3f', 'fftw'
++    pkgconfig 'fftw3', 'fftw'
+     puts 'Using '+`which #{$qmake}` unless Platform::IMPL == :mswin
+   else
+     $qmake='qmake'

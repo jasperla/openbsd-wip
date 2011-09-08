@@ -179,7 +179,6 @@ lib/libknotifyplugin.so
 @lib lib/libmolletnetwork.so.${LIBmolletnetwork_VERSION}
 lib/libnepomukcommon.so
 lib/libnepomukdatamanagement.so
-lib/libnepomuksync.so.4
 @lib lib/libnepomuksync.so.${LIBnepomuksync_VERSION}
 share/applications/kde4/
 share/applications/kde4/Help.desktop

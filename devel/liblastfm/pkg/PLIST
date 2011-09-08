@@ -1,0 +1,32 @@
+@comment $OpenBSD$
+include/lastfm/
+include/lastfm.h
+include/lastfm/Album
+include/lastfm/Artist
+include/lastfm/Audioscrobbler
+include/lastfm/AuthenticatedUser
+include/lastfm/Fingerprint
+include/lastfm/FingerprintId
+include/lastfm/FingerprintableSource
+include/lastfm/InternetConnectionMonitor
+include/lastfm/Mbid
+include/lastfm/MutableTrack
+include/lastfm/NetworkAccessManager
+include/lastfm/ParseError
+include/lastfm/Playlist
+include/lastfm/RadioStation
+include/lastfm/RadioTuner
+include/lastfm/Scrobble
+include/lastfm/ScrobbleCache
+include/lastfm/ScrobblePoint
+include/lastfm/Tag
+include/lastfm/Track
+include/lastfm/UrlBuilder
+include/lastfm/User
+include/lastfm/XmlQuery
+include/lastfm/Xspf
+include/lastfm/global.h
+include/lastfm/misc.h
+include/lastfm/ws.h
+@lib lib/liblastfm.so.${LIBlastfm_VERSION}
+@lib lib/liblastfm_fingerprint.so.${LIBlastfm_fingerprint_VERSION}

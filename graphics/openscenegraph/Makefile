@@ -8,6 +8,8 @@ V =			3.0.1
 DISTNAME =		OpenSceneGraph-${V}
 PKGNAME =		openscenegraph-${V}
 
+SUBST_VARS +=		V
+
 SHARED_LIBS  =  OpenThreads               0.0 # 2.6
 SHARED_LIBS +=  osg                       0.0 # 3.0
 SHARED_LIBS +=  osgAnimation              0.0 # 3.0

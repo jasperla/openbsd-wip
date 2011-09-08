@@ -14,7 +14,7 @@ LIB_DEPENDS +=		x11/kde4/attica \
 			x11/kde4/libs \
 			multimedia/phonon \
 			databases/soprano \
-			graphics/exiv2
+			graphics/exiv2 \
 			net/samba \
 			multimedia/xine-lib \
 			security/libssh \
