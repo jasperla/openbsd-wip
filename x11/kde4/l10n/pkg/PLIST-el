@@ -87,6 +87,7 @@ share/apps/kvtml/${KDE_L10N_LANG}/currencies.kvtml
 share/apps/kvtml/${KDE_L10N_LANG}/easy.kvtml
 share/apps/kvtml/${KDE_L10N_LANG}/fruits.kvtml
 share/apps/kvtml/${KDE_L10N_LANG}/hard.kvtml
+share/apps/kvtml/${KDE_L10N_LANG}/inventions.kvtml
 share/apps/kvtml/${KDE_L10N_LANG}/medium.kvtml
 share/apps/kvtml/${KDE_L10N_LANG}/objects.kvtml
 share/apps/kvtml/${KDE_L10N_LANG}/people.kvtml
@@ -99,6 +100,11 @@ share/doc/HTML/${KDE_L10N_LANG}/common/fdl-translated.html
 share/doc/HTML/${KDE_L10N_LANG}/common/gpl-translated.html
 share/doc/HTML/${KDE_L10N_LANG}/common/kde-localised.css
 share/doc/HTML/${KDE_L10N_LANG}/common/lgpl-translated.html
+share/doc/HTML/${KDE_L10N_LANG}/kchars${KDE_L10N_LANG}ect/
+share/doc/HTML/${KDE_L10N_LANG}/kchars${KDE_L10N_LANG}ect/common
+share/doc/HTML/${KDE_L10N_LANG}/kchars${KDE_L10N_LANG}ect/index.cache.bz2
+share/doc/HTML/${KDE_L10N_LANG}/kchars${KDE_L10N_LANG}ect/index.docbook
+share/doc/HTML/${KDE_L10N_LANG}/kchars${KDE_L10N_LANG}ect/kchars${KDE_L10N_LANG}ect.png
 share/doc/HTML/${KDE_L10N_LANG}/konqueror/
 share/doc/HTML/${KDE_L10N_LANG}/konqueror/basics.docbook
 share/doc/HTML/${KDE_L10N_LANG}/konqueror/bookmarks.docbook
@@ -132,6 +138,12 @@ share/doc/HTML/${KDE_L10N_LANG}/konqueror/sidebar.docbook
 share/doc/HTML/${KDE_L10N_LANG}/konqueror/thumbnails.png
 share/doc/HTML/${KDE_L10N_LANG}/konqueror/view-extensions.docbook
 share/doc/HTML/${KDE_L10N_LANG}/konqueror/viewproperties-dialog.png
+share/doc/HTML/${KDE_L10N_LANG}/plasma-desktop/
+share/doc/HTML/${KDE_L10N_LANG}/plasma-desktop/add-widgets.png
+share/doc/HTML/${KDE_L10N_LANG}/plasma-desktop/common
+share/doc/HTML/${KDE_L10N_LANG}/plasma-desktop/index.cache.bz2
+share/doc/HTML/${KDE_L10N_LANG}/plasma-desktop/index.docbook
+share/doc/HTML/${KDE_L10N_LANG}/plasma-desktop/taskbar-settings.png
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/accountwizard.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/accountwizard_ical.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/accountwizard_imap.mo
@@ -814,3 +826,6 @@ share/man/
 share/man/${KDE_L10N_LANG}/
 share/man/${KDE_L10N_LANG}/man1/
 @man share/man/${KDE_L10N_LANG}/man1/kbookmarkmerger.1
+@man share/man/${KDE_L10N_LANG}/man1/plasmaengineexplorer.1
+@man share/man/${KDE_L10N_LANG}/man1/plasmapkg.1
+@man share/man/${KDE_L10N_LANG}/man1/plasmoidviewer.1

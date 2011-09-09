@@ -2,7 +2,6 @@
 
 COMMENT =		K Desktop Environment, admin tools
 DISTNAME =		kdeadmin-${VERSION}
-REVISION =		1
 
 WANTLIB += c kdecore>=8 kdeui kio kldap kntlm \
 	lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg \

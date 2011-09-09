@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, multimedia
 DISTNAME =	kdemultimedia-${VERSION}
-REVISION =	0
 
 SHARED_LIBS += audiocdplugins 4.0	# .4.0
 SHARED_LIBS += kcddb          4.0       # .4.0

@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, utils
 DISTNAME =	kdeutils-${VERSION}
-REVISION =	0
 
 USE_GROFF =	Yes
 

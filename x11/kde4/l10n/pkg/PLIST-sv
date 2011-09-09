@@ -166,10 +166,6 @@ share/doc/HTML/${KDE_L10N_LANG}/gwenview/browse_mode.png
 share/doc/HTML/${KDE_L10N_LANG}/gwenview/common
 share/doc/HTML/${KDE_L10N_LANG}/gwenview/index.cache.bz2
 share/doc/HTML/${KDE_L10N_LANG}/gwenview/index.docbook
-share/doc/HTML/${KDE_L10N_LANG}/gwenview/interface.docbook
-share/doc/HTML/${KDE_L10N_LANG}/gwenview/introduction.docbook
-share/doc/HTML/${KDE_L10N_LANG}/gwenview/keybindings.docbook
-share/doc/HTML/${KDE_L10N_LANG}/gwenview/mouse.docbook
 share/doc/HTML/${KDE_L10N_LANG}/gwenview/view_mode.png
 share/doc/HTML/${KDE_L10N_LANG}/jovie/
 share/doc/HTML/${KDE_L10N_LANG}/jovie/addtalker.png
@@ -285,6 +281,7 @@ share/doc/HTML/${KDE_L10N_LANG}/kate/mimetypechooser.png
 share/doc/HTML/${KDE_L10N_LANG}/kate/part.docbook
 share/doc/HTML/${KDE_L10N_LANG}/kate/plugins.docbook
 share/doc/HTML/${KDE_L10N_LANG}/kate/regular-expressions.docbook
+share/doc/HTML/${KDE_L10N_LANG}/kate/vi.docbook
 share/doc/HTML/${KDE_L10N_LANG}/katomic/
 share/doc/HTML/${KDE_L10N_LANG}/katomic/common
 share/doc/HTML/${KDE_L10N_LANG}/katomic/index.cache.bz2
@@ -1237,8 +1234,6 @@ share/doc/HTML/${KDE_L10N_LANG}/korganizer/korganizer-resource.png
 share/doc/HTML/${KDE_L10N_LANG}/korganizer/o2v_importing1.png
 share/doc/HTML/${KDE_L10N_LANG}/korganizer/o2v_importing2.png
 share/doc/HTML/${KDE_L10N_LANG}/korganizer/o2v_importing3.png
-share/doc/HTML/${KDE_L10N_LANG}/korganizer/outlook-to-vcalendar.docbook
-share/doc/HTML/${KDE_L10N_LANG}/korganizer/plugins-chapter.docbook
 share/doc/HTML/${KDE_L10N_LANG}/korganizer/remotefile-resource.png
 share/doc/HTML/${KDE_L10N_LANG}/korganizer/todo-general.png
 share/doc/HTML/${KDE_L10N_LANG}/kpat/

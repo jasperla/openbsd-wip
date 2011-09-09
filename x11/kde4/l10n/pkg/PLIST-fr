@@ -114,6 +114,10 @@ share/doc/HTML/${KDE_L10N_LANG}/blinken/blinken_nickprompt.png
 share/doc/HTML/${KDE_L10N_LANG}/blinken/common
 share/doc/HTML/${KDE_L10N_LANG}/blinken/index.cache.bz2
 share/doc/HTML/${KDE_L10N_LANG}/blinken/index.docbook
+share/doc/HTML/${KDE_L10N_LANG}/blogilo/
+share/doc/HTML/${KDE_L10N_LANG}/blogilo/common
+share/doc/HTML/${KDE_L10N_LANG}/blogilo/index.cache.bz2
+share/doc/HTML/${KDE_L10N_LANG}/blogilo/index.docbook
 share/doc/HTML/${KDE_L10N_LANG}/bomber/
 share/doc/HTML/${KDE_L10N_LANG}/bomber/common
 share/doc/HTML/${KDE_L10N_LANG}/bomber/index.cache.bz2
@@ -167,10 +171,6 @@ share/doc/HTML/${KDE_L10N_LANG}/gwenview/
 share/doc/HTML/${KDE_L10N_LANG}/gwenview/common
 share/doc/HTML/${KDE_L10N_LANG}/gwenview/index.cache.bz2
 share/doc/HTML/${KDE_L10N_LANG}/gwenview/index.docbook
-share/doc/HTML/${KDE_L10N_LANG}/gwenview/interface.docbook
-share/doc/HTML/${KDE_L10N_LANG}/gwenview/introduction.docbook
-share/doc/HTML/${KDE_L10N_LANG}/gwenview/keybindings.docbook
-share/doc/HTML/${KDE_L10N_LANG}/gwenview/mouse.docbook
 share/doc/HTML/${KDE_L10N_LANG}/jovie/
 share/doc/HTML/${KDE_L10N_LANG}/jovie/common
 share/doc/HTML/${KDE_L10N_LANG}/jovie/index.cache.bz2

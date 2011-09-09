@@ -38,6 +38,7 @@ share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kabc_net.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kabcformat_binary.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kaccess.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kaccessibleapp.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kactivitymanagerd.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kaddressbook.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kajongg.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kalarm.mo
@@ -50,6 +51,7 @@ share/locale/${KDE_L10N_LANG}/LC_MESSAGES/katefiletemplates.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/katehelloworld.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kateopenheader.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/katepart4.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/katesearch.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/katesymbolviewer.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/katetabbarextension.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/katetextfilter.mo

@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, network
 DISTNAME =	kdenetwork-${VERSION}
-REVISION =	1
 
 SHARED_LIBS +=  kgetcore                0.0 # .4.0
 SHARED_LIBS +=  kopete                  3.0 # .4.0

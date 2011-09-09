@@ -282,6 +282,7 @@ share/doc/HTML/${KDE_L10N_LANG}/kate/menus.docbook
 share/doc/HTML/${KDE_L10N_LANG}/kate/part.docbook
 share/doc/HTML/${KDE_L10N_LANG}/kate/plugins.docbook
 share/doc/HTML/${KDE_L10N_LANG}/kate/regular-expressions.docbook
+share/doc/HTML/${KDE_L10N_LANG}/kate/vi.docbook
 share/doc/HTML/${KDE_L10N_LANG}/katomic/
 share/doc/HTML/${KDE_L10N_LANG}/katomic/common
 share/doc/HTML/${KDE_L10N_LANG}/katomic/index.cache.bz2
@@ -311,6 +312,10 @@ share/doc/HTML/${KDE_L10N_LANG}/kbruch/common
 share/doc/HTML/${KDE_L10N_LANG}/kbruch/index.cache.bz2
 share/doc/HTML/${KDE_L10N_LANG}/kbruch/index.docbook
 share/doc/HTML/${KDE_L10N_LANG}/kbruch/man-kbruch.1.docbook
+share/doc/HTML/${KDE_L10N_LANG}/kcachegrind/
+share/doc/HTML/${KDE_L10N_LANG}/kcachegrind/common
+share/doc/HTML/${KDE_L10N_LANG}/kcachegrind/index.cache.bz2
+share/doc/HTML/${KDE_L10N_LANG}/kcachegrind/index.docbook
 share/doc/HTML/${KDE_L10N_LANG}/kcalc/
 share/doc/HTML/${KDE_L10N_LANG}/kcalc/commands.docbook
 share/doc/HTML/${KDE_L10N_LANG}/kcalc/common
@@ -1113,6 +1118,7 @@ share/doc/HTML/${KDE_L10N_LANG}/kopete/common
 share/doc/HTML/${KDE_L10N_LANG}/kopete/icq.docbook
 share/doc/HTML/${KDE_L10N_LANG}/kopete/index.cache.bz2
 share/doc/HTML/${KDE_L10N_LANG}/kopete/index.docbook
+share/doc/HTML/${KDE_L10N_LANG}/kopete/jabber.docbook
 share/doc/HTML/${KDE_L10N_LANG}/kopete/menus.docbook
 share/doc/HTML/${KDE_L10N_LANG}/kopete/pipes.docbook
 share/doc/HTML/${KDE_L10N_LANG}/korganizer/

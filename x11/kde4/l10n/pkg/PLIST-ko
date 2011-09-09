@@ -51,6 +51,7 @@ share/locale/${KDE_L10N_LANG}/LC_MESSAGES/audiorename_plugin.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/autorefresh.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/babelfish.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/blinken.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/bomber.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/bovo.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/cantor.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/cervisia.mo
@@ -308,10 +309,12 @@ share/locale/${KDE_L10N_LANG}/LC_MESSAGES/knetwalk.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/knode.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/knotes.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/knotify4.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/${KDE_L10N_LANG}llision.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/${KDE_L10N_LANG}lourpaint.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/${KDE_L10N_LANG}mmander.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/${KDE_L10N_LANG}mpare.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/${KDE_L10N_LANG}nqueror.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/${KDE_L10N_LANG}nquest.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/${KDE_L10N_LANG}nsole.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/${KDE_L10N_LANG}ntact.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/${KDE_L10N_LANG}pete.mo
@@ -360,6 +363,7 @@ share/locale/${KDE_L10N_LANG}/LC_MESSAGES/ktexteditor_plugins.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/ktimer.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/ktimetracker.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/ktraderclient.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/ktron.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/ktuberling.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/ktux.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kuiserver.mo
@@ -392,6 +396,7 @@ share/locale/${KDE_L10N_LANG}/LC_MESSAGES/lib${KDE_L10N_LANG}nq.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/libkremotecontrol.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/libksane.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/libkscreensaver.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/libkunitconversion.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/libkworkspace.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/libmessagelist.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/libmessageviewer.mo

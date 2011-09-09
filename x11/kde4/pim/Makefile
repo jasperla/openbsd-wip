@@ -3,7 +3,6 @@
 COMMENT =	K Desktop Environment, pim
 DISTNAME =	kdepim-${VERSION}
 HOMEPAGE =	http://pim.kde.org/
-REVISION =	0
 
 USE_GROFF =		Yes
 

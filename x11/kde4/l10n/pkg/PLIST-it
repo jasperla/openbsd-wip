@@ -236,10 +236,6 @@ share/doc/HTML/${KDE_L10N_LANG}/gwenview/common
 share/doc/HTML/${KDE_L10N_LANG}/gwenview/external_tools_dialog.png
 share/doc/HTML/${KDE_L10N_LANG}/gwenview/index.cache.bz2
 share/doc/HTML/${KDE_L10N_LANG}/gwenview/index.docbook
-share/doc/HTML/${KDE_L10N_LANG}/gwenview/interface.docbook
-share/doc/HTML/${KDE_L10N_LANG}/gwenview/introduction.docbook
-share/doc/HTML/${KDE_L10N_LANG}/gwenview/keybindings.docbook
-share/doc/HTML/${KDE_L10N_LANG}/gwenview/mouse.docbook
 share/doc/HTML/${KDE_L10N_LANG}/gwenview/view_mode.png
 share/doc/HTML/${KDE_L10N_LANG}/jovie/
 share/doc/HTML/${KDE_L10N_LANG}/jovie/common
@@ -490,10 +486,6 @@ share/doc/HTML/${KDE_L10N_LANG}/kcontrol/kded/
 share/doc/HTML/${KDE_L10N_LANG}/kcontrol/kded/common
 share/doc/HTML/${KDE_L10N_LANG}/kcontrol/kded/index.cache.bz2
 share/doc/HTML/${KDE_L10N_LANG}/kcontrol/kded/index.docbook
-share/doc/HTML/${KDE_L10N_LANG}/kcontrol/kdm/
-share/doc/HTML/${KDE_L10N_LANG}/kcontrol/kdm/common
-share/doc/HTML/${KDE_L10N_LANG}/kcontrol/kdm/index.cache.bz2
-share/doc/HTML/${KDE_L10N_LANG}/kcontrol/kdm/index.docbook
 share/doc/HTML/${KDE_L10N_LANG}/kcontrol/keyboard/
 share/doc/HTML/${KDE_L10N_LANG}/kcontrol/keyboard/common
 share/doc/HTML/${KDE_L10N_LANG}/kcontrol/keyboard/index.cache.bz2

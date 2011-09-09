@@ -439,6 +439,7 @@ share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_applet_gasCalculator.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_applet_groupingpanel.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_applet_kalzium.mo
