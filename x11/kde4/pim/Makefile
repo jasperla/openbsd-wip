@@ -49,7 +49,8 @@ SHARED_LIBS +=  templateparser            0.0 # 4.7
 MODULES =		devel/gettext
 
 BUILD_DEPENDS +=	x11/kde4/automoc
-LIB_DEPENDS+=		x11/kde4/libs \
+RUN_DEPENDS +=		x11/kde4/pim-runtime
+LIB_DEPENDS +=		x11/kde4/libs \
 			x11/kde4/pimlibs
 
 WANTLIB += X11 Xss akonadi-contact akonadi-kde akonadi-kmime \
