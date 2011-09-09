@@ -92,7 +92,6 @@
      SUBDIR += konsole			# issues
      
 # additional resources
-#     SUBDIR += artwork
 #     SUBDIR += plasma-addons
      SUBDIR += l10n			# OK
      SUBDIR += wallpapers
