@@ -1,0 +1,49 @@
+@comment $OpenBSD$
+@bin bin/calgebra
+@bin bin/kalgebra
+@bin bin/kalgebramobile
+lib/kde4/
+lib/kde4/plasma_applet_kalgebra.so
+@lib lib/libanalitza.so.${LIBanalitza_VERSION}
+@lib lib/libanalitzagui.so.${LIBanalitzagui_VERSION}
+share/applications/kde4/
+share/applications/kde4/kalgebra.desktop
+share/applications/kde4/kalgebramobile.desktop
+share/apps/kalgebra/
+share/apps/kalgebra/scripts/
+share/apps/kalgebra/scripts/console/
+share/apps/kalgebra/scripts/console/console.js
+share/apps/kalgebra/scripts/console/kalgebraconsole.desktop
+share/apps/kalgebra/scripts/plot2d/
+share/apps/kalgebra/scripts/plot2d/kalgebraplot2d.desktop
+share/apps/kalgebra/scripts/plot2d/plot2d.js
+share/apps/kalgebra/scripts/tables/
+share/apps/kalgebra/scripts/tables/kalgebratables.desktop
+share/apps/kalgebra/scripts/tables/tables.js
+share/apps/kalgebra/scripts/variables/
+share/apps/kalgebra/scripts/variables/kalgebravariables.desktop
+share/apps/kalgebra/scripts/variables/variables.js
+share/apps/katepart/syntax/kalgebra.xml
+share/doc/HTML/en/kalgebra/
+share/doc/HTML/en/kalgebra/commands.docbook
+share/doc/HTML/en/kalgebra/common
+share/doc/HTML/en/kalgebra/index.cache.bz2
+share/doc/HTML/en/kalgebra/index.docbook
+share/doc/HTML/en/kalgebra/kalgebra-main-window.png
+share/icons/hicolor/128x128/
+share/icons/hicolor/128x128/apps/
+share/icons/hicolor/128x128/apps/kalgebra.png
+share/icons/hicolor/16x16/apps/
+share/icons/hicolor/16x16/apps/kalgebra.png
+share/icons/hicolor/32x32/apps/
+share/icons/hicolor/32x32/apps/kalgebra.png
+share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/kalgebra.png
+share/icons/hicolor/64x64/apps/
+share/icons/hicolor/64x64/apps/kalgebra.png
+share/kde4/
+share/kde4/services/
+share/kde4/services/kalgebraplasmoid.desktop
+share/kde4/servicetypes/kalgebrascript.desktop
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
