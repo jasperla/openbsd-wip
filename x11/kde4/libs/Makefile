@@ -1,7 +1,8 @@
 # $OpenBSD: Makefile,v 1.18 2010/11/22 08:37:02 espie Exp $
 
-COMMENT =		K Desktop Environment, libraries
-DISTNAME =		kdelibs-${VERSION}
+COMMENT =	K Desktop Environment, libraries
+DISTNAME =	kdelibs-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=	kde3support          0.0      # .4.0
 SHARED_LIBS +=	kdecore              8.0      # .5.0
