@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+@lib lib/libwbxml2.so.${LIBwbxml2_VERSION}
