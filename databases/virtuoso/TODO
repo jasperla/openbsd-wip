@@ -1,6 +1,6 @@
 CRITICAL: uses pthread_mutexattr_setpshared.
 
-Unconditionally uses bundled PCRE library.
+Unconditionally uses bundled PCRE library, maildrop and who knows what else.
 
 Doesn't like either our YACC or GNU Bison.
 

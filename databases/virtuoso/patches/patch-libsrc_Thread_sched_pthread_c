@@ -1,0 +1,30 @@
+$OpenBSD$
+--- libsrc/Thread/sched_pthread.c.orig	Fri Sep  9 15:31:39 2011
++++ libsrc/Thread/sched_pthread.c	Fri Sep  9 15:32:34 2011
+@@ -206,7 +206,7 @@ thread_initial (unsigned long stack_size)
+   CKRET (rc);
+ #endif
+ 
+-#if defined (PTHREAD_PROCESS_PRIVATE) && !defined(oldlinux) && !defined(__FreeBSD__)
++#if defined (PTHREAD_PROCESS_PRIVATE) && !defined(oldlinux) && !defined(__FreeBSD__) && !defined(__OpenBSD__)
+   rc = pthread_mutexattr_setpshared (&_mutex_attr, PTHREAD_PROCESS_PRIVATE);
+   CKRET (rc);
+ #endif
+@@ -1038,7 +1038,7 @@ mutex_allocate_typed (int type)
+       if (!is_initialized)
+ 	{
+ 	  pthread_mutexattr_init (&_mutex_attr);
+-#if defined (PTHREAD_PROCESS_PRIVATE) && !defined(oldlinux) && !defined (__FreeBSD__)	  
++#if defined (PTHREAD_PROCESS_PRIVATE) && !defined(oldlinux) && !defined (__FreeBSD__) && !defined(__OpenBSD__)
+ 	  rc = pthread_mutexattr_setpshared (&_mutex_attr, PTHREAD_PROCESS_PRIVATE);
+ 	  CKRET (rc);
+ #endif
+@@ -1095,7 +1095,7 @@ dk_mutex_init (dk_mutex_t * mtx, int type)
+       if (!is_initialized) 
+ 	{
+ 	  pthread_mutexattr_init (&_attr);
+-#if defined (PTHREAD_PROCESS_PRIVATE) && !defined (__FreeBSD__) && !defined(oldlinux)
++#if defined (PTHREAD_PROCESS_PRIVATE) && !defined (__FreeBSD__) && !defined(__OpenBSD__) && !defined(oldlinux)
+ 	  rc = pthread_mutexattr_setpshared (&_attr, PTHREAD_PROCESS_PRIVATE);
+ 	  CKRET (rc);
+ #endif	  

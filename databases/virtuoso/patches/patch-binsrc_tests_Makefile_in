@@ -1,0 +1,12 @@
+$OpenBSD$
+--- binsrc/tests/Makefile.in.orig	Fri Sep  9 16:04:52 2011
++++ binsrc/tests/Makefile.in	Fri Sep  9 16:05:29 2011
+@@ -614,7 +614,7 @@ force_dbms_name_iodbc_CFLAGS = $(AM_CFLAGS) $(iODBC_CF
+ force_dbms_name_iodbc_LDADD = @iodbc_LDFLAGS@
+ inifile_SOURCES = inifile.c inifile.vers.c
+ inifile_CFLAGS = $(AM_CFLAGS) -DOPSYS=\"@OPSYS@\" -DHOST=\"@host@\" \
+-	-DCVSID=\"1.0\" -DFALSE=0 '-Dinitialize_locale='
++	-DCVSID=\"1.0\" -DFALSE=0 '-Dinitialize_locale=' -pthread
+ inifile_LDADD = $(client_libs)
+ 
+ # ----------------------------------------------------------------------

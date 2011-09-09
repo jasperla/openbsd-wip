@@ -1,0 +1,7 @@
+@comment $OpenBSD$
+lib/virtodbc.so
+lib/virtodbc_r.so
+lib/virtodbcu.so
+lib/virtodbcu_r.so
+lib/virtuoso/hosting/im.so
+lib/virtuoso/hosting/wbxml2.so
