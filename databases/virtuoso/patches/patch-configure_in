@@ -1,0 +1,22 @@
+$OpenBSD$
+--- configure.in.orig	Wed Mar 30 03:20:19 2011
++++ configure.in	Fri Sep  9 04:57:58 2011
+@@ -1404,7 +1404,8 @@ then
+ int
+ main ()
+ {
+-  WBXMLParser *wbxml_parser = wbxml_parser_create();
++  WB_UTINY *wbxml = wbxml_realloc(NULL, 100);
++  wbxml_free(wbxml);
+ 
+   return 0;
+ }],
+@@ -1651,7 +1652,7 @@ if test $with_pthreads = "yes"; then
+        [AC_CHECK_LIB(pthread, pthread_create,
+          [BUILD_OPTS="$BUILD_OPTS pthreads"
+ 	  WITH_PTHREADS="yes"
+-	  LIBTHR="-lpthread"
++	  LIBTHR="-pthread"
+ 	  AC_DEFINE([_REENTRANT], [1], [use reentrant code])
+ 	  AC_DEFINE([WITH_PTHREADS],
+ 	            [1],

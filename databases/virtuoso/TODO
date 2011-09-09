@@ -1,0 +1,7 @@
+CRITICAL: uses pthread_mutexattr_setpshared.
+
+Unconditionally uses bundled PCRE library.
+
+Doesn't like either our YACC or GNU Bison.
+
+Usual -lpthread problems (currently fixed by configure script patching).
