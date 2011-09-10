@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+@lib lib/libepub.so.${LIBepub_VERSION}

@@ -1,0 +1,7 @@
+@comment $OpenBSD$
+%%SHARED%%
+@bin bin/einfo
+bin/lit2epub
+include/epub.h
+include/epub_shared.h
+include/epub_version.h
