@@ -19,3 +19,6 @@ lib/liblqr-1.a
 lib/liblqr-1.la
 lib/pkgconfig/
 lib/pkgconfig/lqr-1.pc
+share/cmake/
+share/cmake/Modules/
+share/cmake/Modules/FindLqr-1.cmake
