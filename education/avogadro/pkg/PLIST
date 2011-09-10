@@ -1,0 +1,366 @@
+@comment $OpenBSD$
+%%SHARED%%
+@bin bin/avogadro
+bin/avopkg
+features/
+features/avogadro.prf
+include/avogadro/
+include/avogadro/animation.h
+include/avogadro/atom.h
+include/avogadro/bond.h
+include/avogadro/camera.h
+include/avogadro/color.h
+include/avogadro/color3f.h
+include/avogadro/colorbutton.h
+include/avogadro/cube.h
+include/avogadro/elementtranslator.h
+include/avogadro/engine.h
+include/avogadro/extension.h
+include/avogadro/fragment.h
+include/avogadro/glhit.h
+include/avogadro/global.h
+include/avogadro/glwidget.h
+include/avogadro/idlist.h
+include/avogadro/mesh.h
+include/avogadro/meshgenerator.h
+include/avogadro/molecule.h
+include/avogadro/moleculefile.h
+include/avogadro/navigate.h
+include/avogadro/neighborlist.h
+include/avogadro/painter.h
+include/avogadro/painterdevice.h
+include/avogadro/periodictableview.h
+include/avogadro/plotaxis.h
+include/avogadro/plotobject.h
+include/avogadro/plotpoint.h
+include/avogadro/plotwidget.h
+include/avogadro/plugin.h
+include/avogadro/pluginmanager.h
+include/avogadro/primitive.h
+include/avogadro/primitivelist.h
+include/avogadro/protein.h
+include/avogadro/pythonerror.h
+include/avogadro/pythoninterpreter.h
+include/avogadro/pythonscript.h
+include/avogadro/residue.h
+include/avogadro/tool.h
+include/avogadro/toolgroup.h
+include/avogadro/undosequence.h
+include/avogadro/zmatrix.h
+lib/avogadro/
+lib/avogadro/1_0/
+lib/avogadro/1_0/AvogadroBuildSettings.cmake
+lib/avogadro/1_0/AvogadroLibraryDeps.cmake
+lib/avogadro/1_0/AvogadroUse.cmake
+lib/avogadro/1_0/cmake/
+lib/avogadro/1_0/cmake/FindEigen2.cmake
+lib/avogadro/1_0/cmake/FindGLEW.cmake
+lib/avogadro/1_0/colors/
+lib/avogadro/1_0/engines/
+lib/avogadro/1_0/extensions/
+lib/avogadro/1_0/tools/
+lib/avogadro/AvogadroConfig.cmake
+lib/avogadro/AvogadroConfigVersion.cmake
+lib/python2.7/
+lib/python2.7/site-packages/
+share/avogadro/
+share/avogadro/builder/
+share/avogadro/builder/amino/
+share/avogadro/builder/amino/d-ala.zmat
+share/avogadro/builder/amino/d-arg.zmat
+share/avogadro/builder/amino/d-asn.zmat
+share/avogadro/builder/amino/d-asp.zmat
+share/avogadro/builder/amino/d-cys.zmat
+share/avogadro/builder/amino/d-gln.zmat
+share/avogadro/builder/amino/d-glu.zmat
+share/avogadro/builder/amino/d-his.zmat
+share/avogadro/builder/amino/d-ile.zmat
+share/avogadro/builder/amino/d-leu.zmat
+share/avogadro/builder/amino/d-lys.zmat
+share/avogadro/builder/amino/d-met.zmat
+share/avogadro/builder/amino/d-phe.zmat
+share/avogadro/builder/amino/d-pro.zmat
+share/avogadro/builder/amino/d-ser.zmat
+share/avogadro/builder/amino/d-thr.zmat
+share/avogadro/builder/amino/d-trp.zmat
+share/avogadro/builder/amino/d-tyr.zmat
+share/avogadro/builder/amino/d-val.zmat
+share/avogadro/builder/amino/gly.zmat
+share/avogadro/builder/amino/l-ala.zmat
+share/avogadro/builder/amino/l-arg.zmat
+share/avogadro/builder/amino/l-asn.zmat
+share/avogadro/builder/amino/l-asp.zmat
+share/avogadro/builder/amino/l-cys.zmat
+share/avogadro/builder/amino/l-gln.zmat
+share/avogadro/builder/amino/l-glu.zmat
+share/avogadro/builder/amino/l-his.zmat
+share/avogadro/builder/amino/l-ile.zmat
+share/avogadro/builder/amino/l-leu.zmat
+share/avogadro/builder/amino/l-lys.zmat
+share/avogadro/builder/amino/l-met.zmat
+share/avogadro/builder/amino/l-phe.zmat
+share/avogadro/builder/amino/l-pro.zmat
+share/avogadro/builder/amino/l-pyl.zmat
+share/avogadro/builder/amino/l-sec.zmat
+share/avogadro/builder/amino/l-ser.zmat
+share/avogadro/builder/amino/l-thr.zmat
+share/avogadro/builder/amino/l-trp.zmat
+share/avogadro/builder/amino/l-tyr.zmat
+share/avogadro/builder/amino/l-val.zmat
+share/avogadro/fragments/
+share/avogadro/fragments/alcohols/
+share/avogadro/fragments/alcohols/ethanol.cml
+share/avogadro/fragments/alcohols/methanol.cml
+share/avogadro/fragments/alcohols/propan-1-ol.cml
+share/avogadro/fragments/alcohols/propan-2-ol.cml
+share/avogadro/fragments/aldehydes/
+share/avogadro/fragments/aldehydes/acetaldehyde.cml
+share/avogadro/fragments/aldehydes/formaldehyde.cml
+share/avogadro/fragments/alkanes/
+share/avogadro/fragments/alkanes/2-methylpropane.cml
+share/avogadro/fragments/alkanes/ethane.cml
+share/avogadro/fragments/alkanes/methane.cml
+share/avogadro/fragments/alkanes/propane.cml
+share/avogadro/fragments/alkenes/
+share/avogadro/fragments/alkenes/but-1-ene.cml
+share/avogadro/fragments/alkenes/ethene.cml
+share/avogadro/fragments/alkynes/
+share/avogadro/fragments/alkynes/acetylene.cml
+share/avogadro/fragments/alkynes/propyne.cml
+share/avogadro/fragments/amides/
+share/avogadro/fragments/amides/N_N-dimethylacetamide.cml
+share/avogadro/fragments/amides/N_N-dimethylformamide.cml
+share/avogadro/fragments/amides/acetamide.cml
+share/avogadro/fragments/amides/ethyl_carbamate.cml
+share/avogadro/fragments/amides/oxamide.cml
+share/avogadro/fragments/amines/
+share/avogadro/fragments/amines/ammonia.cml
+share/avogadro/fragments/amines/azepane.cml
+share/avogadro/fragments/amines/ethylamine.cml
+share/avogadro/fragments/amines/methylamine.cml
+share/avogadro/fragments/amino_acids/
+share/avogadro/fragments/amino_acids/D-alanine.cml
+share/avogadro/fragments/amino_acids/D-allo-threonine.cml
+share/avogadro/fragments/amino_acids/D-arginine.cml
+share/avogadro/fragments/amino_acids/D-asparagine.cml
+share/avogadro/fragments/amino_acids/D-aspartic_acid.cml
+share/avogadro/fragments/amino_acids/D-cysteine.cml
+share/avogadro/fragments/amino_acids/D-glutamic_acid.cml
+share/avogadro/fragments/amino_acids/D-glutamine.cml
+share/avogadro/fragments/amino_acids/D-histidine.cml
+share/avogadro/fragments/amino_acids/D-isoleucine.cml
+share/avogadro/fragments/amino_acids/D-leucine.cml
+share/avogadro/fragments/amino_acids/D-lysine.cml
+share/avogadro/fragments/amino_acids/D-methionine.cml
+share/avogadro/fragments/amino_acids/D-phenylalanine.cml
+share/avogadro/fragments/amino_acids/D-proline.cml
+share/avogadro/fragments/amino_acids/D-serine.cml
+share/avogadro/fragments/amino_acids/D-threonine.cml
+share/avogadro/fragments/amino_acids/D-tryptophan.cml
+share/avogadro/fragments/amino_acids/D-tyrosine.cml
+share/avogadro/fragments/amino_acids/D-valine.cml
+share/avogadro/fragments/amino_acids/L-4-nitrophenylalanine.cml
+share/avogadro/fragments/amino_acids/L-alanine.cml
+share/avogadro/fragments/amino_acids/L-allo-isoleucine.cml
+share/avogadro/fragments/amino_acids/L-arginine.cml
+share/avogadro/fragments/amino_acids/L-asparagine.cml
+share/avogadro/fragments/amino_acids/L-aspartic_acid.cml
+share/avogadro/fragments/amino_acids/L-cysteine.cml
+share/avogadro/fragments/amino_acids/L-glutamic_acid.cml
+share/avogadro/fragments/amino_acids/L-glutamine.cml
+share/avogadro/fragments/amino_acids/L-histidine.cml
+share/avogadro/fragments/amino_acids/L-isoleucine.cml
+share/avogadro/fragments/amino_acids/L-leucine.cml
+share/avogadro/fragments/amino_acids/L-lysine.cml
+share/avogadro/fragments/amino_acids/L-methionine.cml
+share/avogadro/fragments/amino_acids/L-phenylalanine.cml
+share/avogadro/fragments/amino_acids/L-proline.cml
+share/avogadro/fragments/amino_acids/L-serine.cml
+share/avogadro/fragments/amino_acids/L-threonine.cml
+share/avogadro/fragments/amino_acids/L-tryptophan.cml
+share/avogadro/fragments/amino_acids/L-tyrosine.cml
+share/avogadro/fragments/amino_acids/L-valine.cml
+share/avogadro/fragments/amino_acids/glycine.cml
+share/avogadro/fragments/aromatics/
+share/avogadro/fragments/aromatics/1H-indene.cml
+share/avogadro/fragments/aromatics/aniline.cml
+share/avogadro/fragments/aromatics/anisole.cml
+share/avogadro/fragments/aromatics/anthracene.cml
+share/avogadro/fragments/aromatics/benzaldehyde.cml
+share/avogadro/fragments/aromatics/benzene.cml
+share/avogadro/fragments/aromatics/benzoic_acid.cml
+share/avogadro/fragments/aromatics/benzoyl_chloride.cml
+share/avogadro/fragments/aromatics/caffeine.cml
+share/avogadro/fragments/aromatics/naphthalene.cml
+share/avogadro/fragments/aromatics/nitrobenzene.cml
+share/avogadro/fragments/aromatics/phenol.cml
+share/avogadro/fragments/aromatics/toluene.cml
+share/avogadro/fragments/buckminsterfullerene.cml
+share/avogadro/fragments/carbamides/
+share/avogadro/fragments/carbamides/urea.cml
+share/avogadro/fragments/carbohydrates/
+share/avogadro/fragments/carbohydrates/d-allose.cml
+share/avogadro/fragments/carbohydrates/d-altrose.cml
+share/avogadro/fragments/carbohydrates/d-arabinose.cml
+share/avogadro/fragments/carbohydrates/d-erythrose.cml
+share/avogadro/fragments/carbohydrates/d-erythrulose.cml
+share/avogadro/fragments/carbohydrates/d-fructose.cml
+share/avogadro/fragments/carbohydrates/d-galactose.cml
+share/avogadro/fragments/carbohydrates/d-glucose.cml
+share/avogadro/fragments/carbohydrates/d-glyceraldehyde.cml
+share/avogadro/fragments/carbohydrates/d-gulose.cml
+share/avogadro/fragments/carbohydrates/d-idose.cml
+share/avogadro/fragments/carbohydrates/d-lyxose.cml
+share/avogadro/fragments/carbohydrates/d-mannose.cml
+share/avogadro/fragments/carbohydrates/d-psicose.cml
+share/avogadro/fragments/carbohydrates/d-ribose.cml
+share/avogadro/fragments/carbohydrates/d-ribulose.cml
+share/avogadro/fragments/carbohydrates/d-sorbose.cml
+share/avogadro/fragments/carbohydrates/d-tagatose.cml
+share/avogadro/fragments/carbohydrates/d-talose.cml
+share/avogadro/fragments/carbohydrates/d-threose.cml
+share/avogadro/fragments/carbohydrates/d-xylose.cml
+share/avogadro/fragments/carbohydrates/d-xylulose.cml
+share/avogadro/fragments/carbohydrates/dihydroxyacetone.cml
+share/avogadro/fragments/carboxylic_acids/
+share/avogadro/fragments/carboxylic_acids/2_2-dichloroacetic_acid.cml
+share/avogadro/fragments/carboxylic_acids/2_2_2-trichloroacetic_acid.cml
+share/avogadro/fragments/carboxylic_acids/2_2_2-trifluoroacetic_acid.cml
+share/avogadro/fragments/carboxylic_acids/D-lactic_acid.cml
+share/avogadro/fragments/carboxylic_acids/D-malic_acid.cml
+share/avogadro/fragments/carboxylic_acids/D-tartaric_acid.cml
+share/avogadro/fragments/carboxylic_acids/L-ascorbic_acid.cml
+share/avogadro/fragments/carboxylic_acids/L-lactic_acid.cml
+share/avogadro/fragments/carboxylic_acids/L-malic_acid.cml
+share/avogadro/fragments/carboxylic_acids/L-tartaric_acid.cml
+share/avogadro/fragments/carboxylic_acids/acetic_acid.cml
+share/avogadro/fragments/carboxylic_acids/butanoic_acid.cml
+share/avogadro/fragments/carboxylic_acids/citric_acid.cml
+share/avogadro/fragments/carboxylic_acids/formic_acid.cml
+share/avogadro/fragments/carboxylic_acids/isobutyric_acid.cml
+share/avogadro/fragments/carboxylic_acids/oxalic_acid.cml
+share/avogadro/fragments/carboxylic_acids/propanoic_acid.cml
+share/avogadro/fragments/coordination/
+share/avogadro/fragments/coordination/3-trigonal-planar.cml
+share/avogadro/fragments/coordination/3-trigonal-pyramidal.cml
+share/avogadro/fragments/coordination/4-planar.cml
+share/avogadro/fragments/coordination/4-tetrahedral.cml
+share/avogadro/fragments/coordination/5-square-pyramidal.cml
+share/avogadro/fragments/coordination/5-trigonal-bipyramidal.cml
+share/avogadro/fragments/coordination/6-octahedral.cml
+share/avogadro/fragments/cyclic alkanes/
+share/avogadro/fragments/cyclic alkanes/adamantane.cml
+share/avogadro/fragments/cyclic alkanes/cubane.cml
+share/avogadro/fragments/cyclic alkanes/cyclobutane.cml
+share/avogadro/fragments/cyclic alkanes/cycloheptane.cml
+share/avogadro/fragments/cyclic alkanes/cyclohexane.cml
+share/avogadro/fragments/cyclic alkanes/cyclopentane.cml
+share/avogadro/fragments/cyclic alkanes/cyclopropane.cml
+share/avogadro/fragments/cyclic alkanes/norbornane.cml
+share/avogadro/fragments/cyclic sugars/
+share/avogadro/fragments/cyclic sugars/alpha-D-allopyranose.cml
+share/avogadro/fragments/cyclic sugars/alpha-D-arabinopyranose.cml
+share/avogadro/fragments/cyclic sugars/alpha-D-fucopyranose.cml
+share/avogadro/fragments/cyclic sugars/alpha-D-galactopyranose.cml
+share/avogadro/fragments/cyclic sugars/alpha-D-galacturonopyranose.cml
+share/avogadro/fragments/cyclic sugars/alpha-D-glucopyranose.cml
+share/avogadro/fragments/cyclic sugars/alpha-D-glucuronopyranose.cml
+share/avogadro/fragments/cyclic sugars/alpha-D-gulopyranose.cml
+share/avogadro/fragments/cyclic sugars/alpha-D-idopyranose.cml
+share/avogadro/fragments/cyclic sugars/alpha-D-lyxopyranose.cml
+share/avogadro/fragments/cyclic sugars/alpha-D-mannopyranose.cml
+share/avogadro/fragments/cyclic sugars/alpha-D-psicopyranose.cml
+share/avogadro/fragments/cyclic sugars/alpha-D-rhamnopyranose.cml
+share/avogadro/fragments/cyclic sugars/alpha-D-ribopyranose.cml
+share/avogadro/fragments/cyclic sugars/alpha-D-tagatopyranose.cml
+share/avogadro/fragments/cyclic sugars/alpha-D-talopyranose.cml
+share/avogadro/fragments/cyclic sugars/alpha-D-xylopyranose.cml
+share/avogadro/fragments/cyclic sugars/alpha-L-arabinopyranose.cml
+share/avogadro/fragments/cyclic sugars/alpha-L-fucopyranose.cml
+share/avogadro/fragments/cyclic sugars/alpha-L-galactopyranose.cml
+share/avogadro/fragments/cyclic sugars/alpha-L-lyxopyranose.cml
+share/avogadro/fragments/cyclic sugars/alpha-L-rhamnopyranose.cml
+share/avogadro/fragments/cyclic sugars/alpha-L-ribopyranose.cml
+share/avogadro/fragments/cyclic sugars/alpha-L-sorbopyranose.cml
+share/avogadro/fragments/cyclic sugars/alpha-L-xylopyranose.cml
+share/avogadro/fragments/cyclic sugars/beta-D-allopyranose.cml
+share/avogadro/fragments/cyclic sugars/beta-D-arabinopyranose.cml
+share/avogadro/fragments/cyclic sugars/beta-D-fructopyranose.cml
+share/avogadro/fragments/cyclic sugars/beta-D-fucopyranose.cml
+share/avogadro/fragments/cyclic sugars/beta-D-galactopyranose.cml
+share/avogadro/fragments/cyclic sugars/beta-D-glucopyranose.cml
+share/avogadro/fragments/cyclic sugars/beta-D-gulopyranose.cml
+share/avogadro/fragments/cyclic sugars/beta-D-idopyranose.cml
+share/avogadro/fragments/cyclic sugars/beta-D-lyxopyranose.cml
+share/avogadro/fragments/cyclic sugars/beta-D-mannopyranose.cml
+share/avogadro/fragments/cyclic sugars/beta-D-rhamnopyranose.cml
+share/avogadro/fragments/cyclic sugars/beta-D-ribopyranose.cml
+share/avogadro/fragments/cyclic sugars/beta-D-tagatopyranose.cml
+share/avogadro/fragments/cyclic sugars/beta-D-talopyranose.cml
+share/avogadro/fragments/cyclic sugars/beta-D-xylopyranose.cml
+share/avogadro/fragments/cyclic sugars/beta-L-arabinopyranose.cml
+share/avogadro/fragments/cyclic sugars/beta-L-lyxopyranose.cml
+share/avogadro/fragments/cyclic sugars/beta-L-ribopyranose.cml
+share/avogadro/fragments/cyclic sugars/beta-L-xylopyranose.cml
+share/avogadro/fragments/ethers/
+share/avogadro/fragments/ethers/di-tert-butylether.cml
+share/avogadro/fragments/ethers/dibutylether.cml
+share/avogadro/fragments/ethers/diethylether.cml
+share/avogadro/fragments/ethers/diisopropylether.cml
+share/avogadro/fragments/ethers/dimethylether.cml
+share/avogadro/fragments/ethers/dipropylether.cml
+share/avogadro/fragments/ethers/ethylmethylether.cml
+share/avogadro/fragments/ethers/tetrahydrofuran.cml
+share/avogadro/fragments/fatty acids/
+share/avogadro/fragments/fatty acids/decanoic_acid.cml
+share/avogadro/fragments/fatty acids/hexanoic_acid.cml
+share/avogadro/fragments/fatty acids/lauric_acid.cml
+share/avogadro/fragments/fatty acids/linoleic_acid.cml
+share/avogadro/fragments/fatty acids/octanoic_acid.cml
+share/avogadro/fragments/fatty acids/oleic_acid.cml
+share/avogadro/fragments/fatty acids/palmitic_acid.cml
+share/avogadro/fragments/fatty acids/stearic_acid.cml
+share/avogadro/fragments/heteroaromatics/
+share/avogadro/fragments/heteroaromatics/1H-indole.cml
+share/avogadro/fragments/heteroaromatics/1H-pyrazole.cml
+share/avogadro/fragments/heteroaromatics/1H-pyrrole.cml
+share/avogadro/fragments/heteroaromatics/1_2-oxazole.cml
+share/avogadro/fragments/heteroaromatics/1_2-thiazole.cml
+share/avogadro/fragments/heteroaromatics/1_3-oxazole.cml
+share/avogadro/fragments/heteroaromatics/1_3-thiazole.cml
+share/avogadro/fragments/heteroaromatics/benzofuran.cml
+share/avogadro/fragments/heteroaromatics/benzothiophene.cml
+share/avogadro/fragments/heteroaromatics/furan.cml
+share/avogadro/fragments/heteroaromatics/pyridine.cml
+share/avogadro/fragments/heteroaromatics/thiophene.cml
+share/avogadro/fragments/ketones/
+share/avogadro/fragments/ketones/acetone.cml
+share/avogadro/fragments/ketones/butanone.cml
+share/avogadro/fragments/macrocycles/
+share/avogadro/fragments/macrocycles/porphin.cml
+share/avogadro/fragments/nucleobases/
+share/avogadro/fragments/nucleobases/adenine.cml
+share/avogadro/fragments/nucleobases/cytosine.cml
+share/avogadro/fragments/nucleobases/guanine.cml
+share/avogadro/fragments/nucleobases/thymine.cml
+share/avogadro/fragments/nucleobases/uracil.cml
+share/avogadro/fragments/steroids/
+share/avogadro/fragments/steroids/cholesterol.cml
+share/avogadro/fragments/steroids/estradiol.cml
+share/avogadro/fragments/steroids/testosterone.cml
+share/avogadro/fragments/sulfoxides/
+share/avogadro/fragments/sulfoxides/dimethyl_sulfoxide.cml
+share/avogadro/fragments/thiols/
+share/avogadro/fragments/thiols/ethanethiol.cml
+share/avogadro/fragments/thiols/methanethiol.cml
+share/avogadro/fragments/thiols/pentane-1-thiol.cml
+share/avogadro/fragments/water.cml
+share/libavogadro/
+share/libavogadro/engineScripts/
+share/libavogadro/engineScripts/wireframe.py
+share/libavogadro/extensionScripts/
+share/libavogadro/extensionScripts/example.py
+share/man/
+share/man/man1/
+@man share/man/man1/avogadro.1
+@man share/man/man1/avopkg.1
