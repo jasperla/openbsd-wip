@@ -22,10 +22,14 @@ WANTLIB += lib/qt4/QtGui lib/qt4/QtScript
 
 MODULES =		devel/cmake x11/qt4
 BUILD_DEPENDS =		devel/doxygen
-REGRESS_DEPENDS =	devel/cmake
+REGRESS_DEPENDS =	devel/cmake \
+			${BUILD_PKGPATH}
 
 SEPARATE_BUILD =	simple
 
 COPTS = 		-lc -pthread
+
+# NOTE: Some regression tests could fail when started by "make regress".
+# Re-run them manually from the command line to check.
 
 .include <bsd.port.mk>
