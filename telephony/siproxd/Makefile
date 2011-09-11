@@ -26,13 +26,10 @@ LIB_DEPENDS=    telephony/libosip2
 DOCDIR=		${PREFIX}/share/doc/siproxd
 EXDIR=		${PREFIX}/share/examples/siproxd
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKDIST}/src/siproxd ${PREFIX}/sbin
-
+post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKDIST}/doc/FAQ ${DOCDIR}
 	${INSTALL_DATA} ${WRKDIST}/doc/KNOWN_BUGS ${DOCDIR}
-
 	${INSTALL_DATA_DIR} ${EXDIR}
 	${INSTALL_DATA} ${WRKDIST}/doc/siproxd.conf.example ${EXDIR}
 	${INSTALL_DATA} ${WRKDIST}/doc/siproxd_passwd.cfg ${EXDIR}
