@@ -25,6 +25,10 @@ LIB_DEPENDS=    telephony/libosip2
 
 DOCDIR=		${PREFIX}/share/doc/siproxd
 EXDIR=		${PREFIX}/share/examples/siproxd
+SUBST_VARS=	PREFIX
+
+pre-build:
+	${SUBST_CMD} ${WRKSRC}/doc/siproxd.conf.example
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
