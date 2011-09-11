@@ -49,7 +49,7 @@
      SUBDIR += blinken
      SUBDIR += cantor
      SUBDIR += kalgebra
-#     SUBDIR += kalzium
+     SUBDIR += kalzium
      SUBDIR += kanagram
      SUBDIR += kbruch
 #     SUBDIR += kgeography
@@ -82,9 +82,9 @@
      SUBDIR += libkdcraw
      SUBDIR += libkexiv2
      SUBDIR += libkipi
-#     SUBDIR += libksane
+     SUBDIR += libksane
 #     SUBDIR += mobipocket
-#     SUBDIR += okular
+     SUBDIR += okular
 #     SUBDIR += svgpart
      
 # other apps
