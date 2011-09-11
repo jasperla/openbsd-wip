@@ -2,8 +2,7 @@
 
 COMMENT=	proxy/masquerading daemon for the SIP protocol
 
-DISTNAME=	siproxd-0.5.13
-REVISION=	0
+DISTNAME=	siproxd-0.8.1
 CATEGORIES=	telephony net
 
 HOMEPAGE=	http://siproxd.sourceforge.net/
