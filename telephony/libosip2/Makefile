@@ -2,10 +2,9 @@
 
 COMMENT=	GNU oSIP library
 
-DISTNAME=	libosip2-2.2.2
-REVISION=	0
-SHARED_LIBS=	osip2		3.1 \
-		osipparser2	3.1
+DISTNAME=	libosip2-3.5.0
+SHARED_LIBS=	osip2		4.0 \
+		osipparser2	4.0
 
 CATEGORIES=	telephony devel
 
