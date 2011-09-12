@@ -28,4 +28,7 @@ LIB_DEPENDS =		textproc/libxml \
 SEPARATE_BUILD =	simple
 NO_REGRESS =		Yes
 
+# For libzip
+COPTS =			-I${LOCALBASE}/lib/libzip/include
+
 .include <bsd.port.mk>
