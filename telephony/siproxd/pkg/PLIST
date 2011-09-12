@@ -32,4 +32,7 @@ share/examples/siproxd/siproxd_passwd.cfg
 @owner root
 @group _siproxd
 @sample /var/siproxd/
+@mode
+@owner
+@group
 @rcscript ${RCDIR}/siproxd
