@@ -1,0 +1,12 @@
+$OpenBSD$
+--- extra/kipi-plugins/panorama/CMakeLists.txt.orig	Sun Sep 11 16:16:51 2011
++++ extra/kipi-plugins/panorama/CMakeLists.txt	Sun Sep 11 16:17:12 2011
+@@ -1,6 +1,7 @@
+ SUBDIRS(icons)
+ 
+-INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/importwizard
++INCLUDE_DIRECTORIES(${PNG_INCLUDE_DIR}
++                    ${CMAKE_CURRENT_SOURCE_DIR}/importwizard
+                     ${CMAKE_CURRENT_SOURCE_DIR}/manager
+                     ${CMAKE_CURRENT_SOURCE_DIR}/plugin
+                    )
