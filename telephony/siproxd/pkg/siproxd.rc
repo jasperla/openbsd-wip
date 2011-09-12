@@ -3,7 +3,6 @@
 # $OpenBSD$
 
 daemon="${TRUEPREFIX}/sbin/siproxd"
-daemon_user="_siproxd"
 
 . /etc/rc.d/rc.subr
 
