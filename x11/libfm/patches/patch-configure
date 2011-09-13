@@ -1,0 +1,22 @@
+$OpenBSD$
+--- configure.orig	Tue Sep 13 13:02:27 2011
++++ configure	Tue Sep 13 13:02:53 2011
+@@ -14181,7 +14181,7 @@ cat >>confdefs.h <<_ACEOF
+ _ACEOF
+ 
+ 
+-ac_config_files="$ac_config_files Makefile src/Makefile src/tests/Makefile data/Makefile data/ui/Makefile po/Makefile.in docs/Makefile docs/reference/Makefile docs/reference/libfm/Makefile libfm.pc libfm-gtk.pc"
++ac_config_files="$ac_config_files Makefile src/Makefile src/tests/Makefile data/Makefile data/ui/Makefile po/Makefile.in libfm.pc libfm-gtk.pc"
+ 
+ 
+ cat >confcache <<\_ACEOF
+@@ -15237,9 +15237,6 @@ do
+     "data/Makefile") CONFIG_FILES="$CONFIG_FILES data/Makefile" ;;
+     "data/ui/Makefile") CONFIG_FILES="$CONFIG_FILES data/ui/Makefile" ;;
+     "po/Makefile.in") CONFIG_FILES="$CONFIG_FILES po/Makefile.in" ;;
+-    "docs/Makefile") CONFIG_FILES="$CONFIG_FILES docs/Makefile" ;;
+-    "docs/reference/Makefile") CONFIG_FILES="$CONFIG_FILES docs/reference/Makefile" ;;
+-    "docs/reference/libfm/Makefile") CONFIG_FILES="$CONFIG_FILES docs/reference/libfm/Makefile" ;;
+     "libfm.pc") CONFIG_FILES="$CONFIG_FILES libfm.pc" ;;
+     "libfm-gtk.pc") CONFIG_FILES="$CONFIG_FILES libfm-gtk.pc" ;;
+     "po/stamp-it") CONFIG_COMMANDS="$CONFIG_COMMANDS po/stamp-it" ;;

@@ -1,0 +1,2 @@
+handle --sysconfdir=/etc properly in CONFIGURE_ARGS such that it
+shows up in PLIST
