@@ -319,6 +319,7 @@ share/locale/${KDE_L10N_LANG}/LC_MESSAGES/libphonon.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/libplasma.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/libplasmaclock.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/libtaskmanager.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/libtemplateparser.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/lokalize.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/marble.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/marble_qt.mo

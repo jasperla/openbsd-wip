@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, base applications
 DISTNAME =	kde-baseapps-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=	konq			8.0	# 6.0
 SHARED_LIBS +=	konqsidebarplugin	5.0	# 4.0
@@ -26,6 +25,8 @@ BUILD_DEPENDS +=	x11/kde4/automoc
 
 LIB_DEPENDS +=		x11/kde4/libs \
 			multimedia/phonon
+
+RUN_DEPENDS +=		www/tidyp
 
 # these come from libs in real case
 #pre-install:

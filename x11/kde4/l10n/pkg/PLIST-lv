@@ -75,6 +75,7 @@ share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kabc_net.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kabcclient.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kabcformat_binary.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kaccess.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kactivitymanagerd.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kaddressbook.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kalarm.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kalgebra.mo
@@ -82,11 +83,15 @@ share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kalzium.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kanagram.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kapman.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kapptemplate.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kate.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/katebacktracebrowserplugin.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/katebuild-plugin.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/katefiletemplates.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/katefindinfilesplugin.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kategdbplugin.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/katehelloworld.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/katemailfilesplugin.mo
@@ -203,6 +208,7 @@ share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kdialog.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kdiamond.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kdmconfig.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kdmgreet.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kdontchangethehostname.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/keditbookmarks.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kfile.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kfile_avi.mo
@@ -392,6 +398,7 @@ share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kwin.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kwin_art_clients.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kwin_clients.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kwin_effects.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kwinshutdown.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kwinstartmenu.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kwordquiz.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kwrite.mo
@@ -454,6 +461,8 @@ share/locale/${KDE_L10N_LANG}/LC_MESSAGES/mf_konqplugin.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/minitoolsplugin.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/mplayerthumbs.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/mplayerthumbsconfig.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/nepomukbackup.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/nepomukcontroller.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/nepomukserver.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/nepomukservicestub.mo
@@ -565,6 +574,7 @@ share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_containmentactions_contextmenu.
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_containmentactions_switchactivity.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_containmentactions_switchdesktop.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_engine_calendar.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_engine_kuiserver.mo
@@ -581,6 +591,7 @@ share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_runner_browserhistory.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_runner_calculatorrunner.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_runner_contacts.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_runner_converterrunner.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_runner_katesessions.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_runner_kget.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_runner_kill.mo
@@ -601,6 +612,8 @@ share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_runner_windows.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_scriptengine_qscript.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_toolbox_desktoptoolbox.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_toolbox_paneltoolbox.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_wallpaper_color.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_wallpaper_image.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasma_wallpaper_mandelbrot.mo
@@ -614,6 +627,8 @@ share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasmapkg.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasmawallpaperviewer.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/plasmoidviewer.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/powerdevil.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/powerdevilglobalconfig.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/powerdevilprofilesconfig.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/printer-applet.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/processcore.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/processui.mo

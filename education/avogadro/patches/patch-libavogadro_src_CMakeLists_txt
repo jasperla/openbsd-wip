@@ -1,0 +1,11 @@
+$OpenBSD$
+--- libavogadro/src/CMakeLists.txt.orig	Sat Sep 10 21:35:08 2011
++++ libavogadro/src/CMakeLists.txt	Sat Sep 10 21:35:26 2011
+@@ -16,6 +16,7 @@ include_directories(
+   ${CMAKE_CURRENT_BINARY_DIR}
+   ${EIGEN2_INCLUDE_DIR}
+   ${OPENBABEL2_INCLUDE_DIR}
++  ${OPENGL_INCLUDE_DIR}
+ )
+ 
+ # I think this is necessary now in order to tell the linker where openbabel is

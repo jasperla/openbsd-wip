@@ -1,0 +1,12 @@
+$OpenBSD$
+--- binsrc/maildrop/Makefile.in.orig	Fri Sep  9 17:38:19 2011
++++ binsrc/maildrop/Makefile.in	Fri Sep  9 17:38:32 2011
+@@ -322,7 +322,7 @@ virt_mail_SOURCES = \
+ noinst_HEADERS = sysexits.h
+ BUILT_SOURCES = virt_mail_vers.c odbc_mail_vers.c
+ CLEANFILES = virt_mail_vers.c odbc_mail_vers.c
+-virt_mail_CFLAGS = @VIRT_AM_CFLAGS@ -DUDBC -I$(top_srcdir)/libsrc \
++virt_mail_CFLAGS = @VIRT_AM_CFLAGS@ -pthread -DUDBC -I$(top_srcdir)/libsrc \
+ 	-I$(top_srcdir)/libsrc/Dk -I$(top_srcdir)/libsrc/Wi \
+ 	-I$(top_srcdir)/libsrc/odbcsdk/include
+ virt_mail_LDADD = \

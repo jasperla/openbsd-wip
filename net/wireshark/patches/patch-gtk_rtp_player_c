@@ -3,9 +3,9 @@ $OpenBSD$
 initialize this variable earlier to avoid gcc warning (the code
 is built with -Werror so otherwise the build fails).
  
---- gtk/rtp_player.c.orig	Sun Aug 29 23:15:54 2010
-+++ gtk/rtp_player.c	Tue Aug 31 20:38:26 2010
-@@ -600,7 +600,7 @@ decode_rtp_stream(rtp_stream_info_t *rsi, gpointer ptr
+--- gtk/rtp_player.c.orig	Thu Sep  8 02:53:31 2011
++++ gtk/rtp_player.c	Thu Sep  8 18:57:08 2011
+@@ -599,7 +599,7 @@ decode_rtp_stream(rtp_stream_info_t *rsi, gpointer ptr
  	gint32 silence_frames;
  	int seq;
  	double delay;

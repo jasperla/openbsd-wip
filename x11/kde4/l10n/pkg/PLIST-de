@@ -401,6 +401,7 @@ share/doc/HTML/${KDE_L10N_LANG}/kate/menus.docbook
 share/doc/HTML/${KDE_L10N_LANG}/kate/part.docbook
 share/doc/HTML/${KDE_L10N_LANG}/kate/plugins.docbook
 share/doc/HTML/${KDE_L10N_LANG}/kate/regular-expressions.docbook
+share/doc/HTML/${KDE_L10N_LANG}/kate/vi.docbook
 share/doc/HTML/${KDE_L10N_LANG}/katomic/
 share/doc/HTML/${KDE_L10N_LANG}/katomic/common
 share/doc/HTML/${KDE_L10N_LANG}/katomic/in${KDE_L10N_LANG}x.cache.bz2
@@ -1297,6 +1298,7 @@ share/doc/HTML/${KDE_L10N_LANG}/kno${KDE_L10N_LANG}/kno${KDE_L10N_LANG}-news-acc
 share/doc/HTML/${KDE_L10N_LANG}/kno${KDE_L10N_LANG}/kno${KDE_L10N_LANG}-post-settings.png
 share/doc/HTML/${KDE_L10N_LANG}/kno${KDE_L10N_LANG}/kno${KDE_L10N_LANG}-read-news-settings.png
 share/doc/HTML/${KDE_L10N_LANG}/kno${KDE_L10N_LANG}/kno${KDE_L10N_LANG}-reply.png
+share/doc/HTML/${KDE_L10N_LANG}/kno${KDE_L10N_LANG}/kno${KDE_L10N_LANG}-rule-editor.png
 share/doc/HTML/${KDE_L10N_LANG}/kno${KDE_L10N_LANG}/kno${KDE_L10N_LANG}-search.png
 share/doc/HTML/${KDE_L10N_LANG}/kno${KDE_L10N_LANG}/kno${KDE_L10N_LANG}-start.png
 share/doc/HTML/${KDE_L10N_LANG}/kno${KDE_L10N_LANG}/kno${KDE_L10N_LANG}-subscribe.png
@@ -1428,8 +1430,10 @@ share/doc/HTML/${KDE_L10N_LANG}/kontact/todo-list-si${KDE_L10N_LANG}bar-icon.png
 share/doc/HTML/${KDE_L10N_LANG}/kopete/
 share/doc/HTML/${KDE_L10N_LANG}/kopete/chatstyle.docbook
 share/doc/HTML/${KDE_L10N_LANG}/kopete/common
+share/doc/HTML/${KDE_L10N_LANG}/kopete/icq.docbook
 share/doc/HTML/${KDE_L10N_LANG}/kopete/in${KDE_L10N_LANG}x.cache.bz2
 share/doc/HTML/${KDE_L10N_LANG}/kopete/in${KDE_L10N_LANG}x.docbook
+share/doc/HTML/${KDE_L10N_LANG}/kopete/jabber.docbook
 share/doc/HTML/${KDE_L10N_LANG}/kopete/menus.docbook
 share/doc/HTML/${KDE_L10N_LANG}/kopete/pipes.docbook
 share/doc/HTML/${KDE_L10N_LANG}/korganizer/

@@ -328,10 +328,6 @@ share/doc/HTML/${KDE_L10N_LANG}/gwenview/common
 share/doc/HTML/${KDE_L10N_LANG}/gwenview/full_screen_mode.png
 share/doc/HTML/${KDE_L10N_LANG}/gwenview/index.cache.bz2
 share/doc/HTML/${KDE_L10N_LANG}/gwenview/index.docbook
-share/doc/HTML/${KDE_L10N_LANG}/gwenview/interface.docbook
-share/doc/HTML/${KDE_L10N_LANG}/gwenview/introduction.docbook
-share/doc/HTML/${KDE_L10N_LANG}/gwenview/keybindings.docbook
-share/doc/HTML/${KDE_L10N_LANG}/gwenview/mouse.docbook
 share/doc/HTML/${KDE_L10N_LANG}/gwenview/view_mode.png
 share/doc/HTML/${KDE_L10N_LANG}/juk/
 share/doc/HTML/${KDE_L10N_LANG}/juk/common
@@ -1411,8 +1407,6 @@ share/doc/HTML/${KDE_L10N_LANG}/korganizer/o2v_progr${KDE_L10N_LANG}s.png
 share/doc/HTML/${KDE_L10N_LANG}/korganizer/o2v_save.png
 share/doc/HTML/${KDE_L10N_LANG}/korganizer/o2v_warning.png
 share/doc/HTML/${KDE_L10N_LANG}/korganizer/organizer.png
-share/doc/HTML/${KDE_L10N_LANG}/korganizer/outlook-to-vcalendar.docbook
-share/doc/HTML/${KDE_L10N_LANG}/korganizer/plugins-chapter.docbook
 share/doc/HTML/${KDE_L10N_LANG}/korganizer/remotefile-r${KDE_L10N_LANG}ource.png
 share/doc/HTML/${KDE_L10N_LANG}/korganizer/todo-general.png
 share/doc/HTML/${KDE_L10N_LANG}/kpat/

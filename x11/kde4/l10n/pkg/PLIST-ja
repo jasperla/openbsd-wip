@@ -488,6 +488,7 @@ share/locale/${KDE_L10N_LANG}/LC_MESSAGES/libincidenceeditors.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/libkasten.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/libkblog.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/libkcal.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/libkcalutils.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/libkcddb.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/libkcompactdisc.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/libkdcraw.mo

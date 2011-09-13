@@ -1,0 +1,11 @@
+$OpenBSD$
+--- binsrc/tests/biftest/bif_sample.c.orig	Fri Sep  9 16:07:44 2011
++++ binsrc/tests/biftest/bif_sample.c	Fri Sep  9 16:08:02 2011
+@@ -20,6 +20,7 @@
+  *
+  */
+ 
++#include <pthread.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>

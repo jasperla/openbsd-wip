@@ -1,0 +1,24 @@
+straightforward update to enlightenment 1.0.9
+
+Upstream changelog
+--- 1.0.9 ---
+Change EwinGetContainerXwin() to macro.
+Remove unnecessary EMapWindow's.
+Magnifier: Minor optimisation when not showing texts (Daniel Manjarres).
+Magnifier: Render text lines properly regardless of font size (Daniel Manjarres).
+Let EShapeUpdate return window shape status.
+Use defined values for shading directions.
+EwinInstantShade() does not need to set gravity.
+Avoid cancelling menus too early in certain situations.
+Magnifier - Cosmetics.
+Move HV resize code to separate function.
+Add option to enable "smart resizing" (based on patches by Daniel Manjarres).
+New maximisation algorithm (based on patches by Daniel Manjarres).
+Enable animation of resize operation (based on patches by Daniel Manjarres).
+Menu generation: Skip if NoDisplay=true.
+Menu generation: Only one menu tree (not GNOME/KDE/Other).
+Add EwinIsOnDesktop().
+Make EwinOpActivate() center "lost" windows.
+Fix pointer focus when a new window appears under the pointer.
+Cosmetics.
+Italian translation update (Massimo Maiurana).

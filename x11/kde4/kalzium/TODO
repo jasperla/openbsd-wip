@@ -1,0 +1,1 @@
+Works, but dumps core on exit (double free).

@@ -1,0 +1,5 @@
+Unconditionally uses bundled PCRE library, maildrop and who knows what else.
+
+Doesn't like either our YACC or GNU Bison - needs looking if we can avoid GNU shit.
+
+Usual -lpthread problems (currently fixed by configure script patching).

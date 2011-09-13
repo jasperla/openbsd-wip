@@ -1058,6 +1058,8 @@ share/locale/${KDE_L10N_LANG}/LC_MESSAGES/dragon${KDE_L10N_LANG}ayer.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/drkonqi.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/filelight.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/filetypes.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/fileviewgit${KDE_L10N_LANG}ugin.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/fileviewsvn${KDE_L10N_LANG}ugin.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/freespacenotifier.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/fsview.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/granatier.mo
@@ -1293,6 +1295,7 @@ share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kio_nepomuk.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kio_nepomuksearch.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kio_nfs.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kio_nntp.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kio_perldoc.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kio_pop3.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kio_remote.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kio_sftp.mo
@@ -1350,6 +1353,7 @@ share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kontactinterfaces.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kopete.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/korganizer-mobile.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/korganizer.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kpartloader.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kpartsaver.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kpasswdserver.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/kpat.mo
@@ -1475,6 +1479,7 @@ share/locale/${KDE_L10N_LANG}/LC_MESSAGES/libmessagecore.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/libmessagelist.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/libmessageviewer.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/liboktetacore.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/liboktetagui.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/liboktetakasten.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/libphonon.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/lib${KDE_L10N_LANG}asma.mo
@@ -1506,6 +1511,7 @@ share/locale/${KDE_L10N_LANG}/LC_MESSAGES/nepomukstrigiservice.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/newmailnotifieragent.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/notes-mobile.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/ns${KDE_L10N_LANG}ugin.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/okteta-mobile.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/okteta.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/oktetapart.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/okular.mo
@@ -1528,6 +1534,7 @@ share/locale/${KDE_L10N_LANG}/LC_MESSAGES/palapeli.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/parley.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/phonon_kde.mo
+share/locale/${KDE_L10N_LANG}/LC_MESSAGES/phonon_vlc.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/phononserver.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/${KDE_L10N_LANG}asma-desktop.mo
 share/locale/${KDE_L10N_LANG}/LC_MESSAGES/${KDE_L10N_LANG}asma-netbook.mo

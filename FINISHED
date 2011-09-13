@@ -9,9 +9,9 @@ database/tinycdb:	ready for import, sent to ports@ 2005/8 (chrueger)
 devel/p5-Test-Most:	ready for import, depends on the update of p5-Test-Warn, did not sent to ports@(wenheping)
 math/p5-Math-GSL:	ready for import, did not sent to ports@, regress depends on devel/p5-Test-Most (wenheping)
 net/climm:		ready for import, has been sent to ports@ some time ago (pstumpf)
-sysutils/conky:		enhanced functionality, sent to ports@ and maintainer (pstumpf)
 www/p5-Dancer:		ready for import, has been sent to ports@ some time ago; it depends on www/p5-HTTP-Server-Simple-PSGI
 www/p5-HTTP-Server-Simple-PSGI:	ready for import, has been sent to ports@ some time ago
-lang/boo:       sent to ports@ Aug 31 2011. Ready for import. (rmboggs)
-x11/parcellite:	ready for import, sent to ports@ Sep 6 2011. (lteo)
+lang/boo:		sent to ports@ Aug 31 2011. Ready for import. (rmboggs)
+x11/parcellite:		ready for import, sent to ports@ Sep 6 2011. (lteo)
+x11/enlightenment:	ready for import, sent to ports@ Aug 16 2011. (amitkulz)
 misc/rpm:		ready for import, sent to ports@ 06-Sep-2011. (dcantrell)

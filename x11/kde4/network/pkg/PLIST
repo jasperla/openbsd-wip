@@ -87,7 +87,6 @@ include/krdc/hostpreferences.h
 include/krdc/remoteview.h
 include/krdc/remoteviewfactory.h
 lib/kde4/kcm_kget_checksumsearchfactory.so
-lib/kde4/kcm_kget_contentfetchfactory.so
 lib/kde4/kcm_kget_metalinkfactory.so
 lib/kde4/kcm_kget_mirrorsearchfactory.so
 lib/kde4/kcm_kget_mmsfactory.so
@@ -116,7 +115,6 @@ lib/kde4/kcm_krdc_rdpplugin.so
 lib/kde4/kded_dnssdwatcher.so
 lib/kde4/kget_browser_integration.so
 lib/kde4/kget_checksumsearchfactory.so
-lib/kde4/kget_contentfetchfactory.so
 lib/kde4/kget_kiofactory.so
 lib/kde4/kget_metalinkfactory.so
 lib/kde4/kget_mirrorsearchfactory.so
@@ -176,7 +174,6 @@ lib/kde4/sambausershareplugin.so
 @lib lib/libkopetestatusmenu.so.${LIBkopetestatusmenu_VERSION}
 @lib lib/libkrdccore.so.${LIBkrdccore_VERSION}
 @lib lib/libkrfbprivate.so.${LIBkrfbprivate_VERSION}
-lib/libkrfbprivate.so.4.7.0
 @lib lib/libkyahoo.so.${LIBkyahoo_VERSION}
 @lib lib/liboscar.so.${LIBoscar_VERSION}
 lib/libqgroupwise.so
@@ -212,12 +209,6 @@ share/apps/kconf_update/kopete-update_icq_server.upd
 share/apps/kconf_update/kopete-update_yahoo_server.pl
 share/apps/kconf_update/kopete-update_yahoo_server.upd
 share/apps/kget/
-share/apps/kget/content_fetch_scripts/
-share/apps/kget/content_fetch_scripts/youtubedl/
-share/apps/kget/content_fetch_scripts/youtubedl/kget_youtubedl.py
-share/apps/kget/content_fetch_scripts/youtubedl/kget_youtubedl_option.py
-share/apps/kget/content_fetch_scripts/youtubedl/ui_youtube_option.py
-share/apps/kget/content_fetch_scripts/youtubedl/youtube_option.ui
 share/apps/kget/kget.notifyrc
 share/apps/kget/kgetui.rc
 share/apps/kget/pics/
@@ -1354,7 +1345,6 @@ share/apps/remoteview/zeroconf.desktop
 share/config.kcfg/historyconfig.kcfg
 share/config.kcfg/kget.kcfg
 share/config.kcfg/kget_checksumsearchfactory.kcfg
-share/config.kcfg/kget_contentfetchfactory.kcfg
 share/config.kcfg/kget_mirrorsearchfactory.kcfg
 share/config.kcfg/kget_mmsfactory.kcfg
 share/config.kcfg/kget_multisegkiofactory.kcfg
@@ -1602,8 +1592,6 @@ share/kde4/services/kconfiguredialog/kopete_webpresence_config.desktop
 share/kde4/services/kded/dnssdwatcher.desktop
 share/kde4/services/kget_checksumsearchfactory.desktop
 share/kde4/services/kget_checksumsearchfactory_config.desktop
-share/kde4/services/kget_contentfetchfactory.desktop
-share/kde4/services/kget_contentfetchfactory_config.desktop
 share/kde4/services/kget_kiofactory.desktop
 share/kde4/services/kget_metalinkfactory.desktop
 share/kde4/services/kget_metalinkfactory_config.desktop

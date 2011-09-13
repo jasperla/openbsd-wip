@@ -1,0 +1,11 @@
+$OpenBSD$
+--- libavogadro/src/glwidget.h.orig	Sat Sep 10 21:30:34 2011
++++ libavogadro/src/glwidget.h	Sat Sep 10 21:31:02 2011
+@@ -29,6 +29,7 @@
+ 
+ #include <avogadro/global.h>
+ 
++#include <GL/gl.h>
+ #ifdef ENABLE_GLSL
+   #include <GL/glew.h>
+ #endif
