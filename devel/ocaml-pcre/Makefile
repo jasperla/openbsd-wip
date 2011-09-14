@@ -29,13 +29,13 @@ NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 MAKE_ENV+=	OCAMLFIND_INSTFLAGS="-ldconf ignore"
 
-WRKSRC=		${WRKDIST}/lib
-ALL_TARGET=	byte-code-library \
-		${MODOCAML_NATIVE:S,Yes,native-code-library,:S,No,,}
-INSTALL_TARGET=	libinstall-byte-code \
-		${MODOCAML_NATIVE:S,Yes,libinstall-native-code,:S,No,,}
-
 pre-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml/site-lib/pcre
 
 .include <bsd.port.mk>
+
+.if ${MODOCAML_NATIVE:L:Mno}
+WRKSRC=		${WRKDIST}/lib
+ALL_TARGET=	byte-code-library
+INSTALL_TARGET=	libinstall-byte-code
+.endif
