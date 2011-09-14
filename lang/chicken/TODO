@@ -1,0 +1,4 @@
+- make build succeeds
+- make fake gives Warning: cannot run `chicken-install -update-db' when cross-compiling or DESTDIR is set
+- make plist complains about bogus elements for each file and fails.
+- Makefile.bsd has unnecessary(?) check for OpenBSD gcc version.
