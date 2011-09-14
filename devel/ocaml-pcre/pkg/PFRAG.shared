@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+lib/ocaml/site-lib/pcre/dllpcre_stubs.so
