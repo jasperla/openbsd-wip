@@ -1,0 +1,4 @@
+libfm is used as a separate desktop independent glib/gio based VFS
+library for pcmanfm
+
+part of the complete rewrite of pcmanfm 0.9 series

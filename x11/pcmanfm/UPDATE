@@ -1,0 +1,6 @@
+major update to 0.9.9, complete rewrite over the 0.3 and 0.5 series.
+
+changelog is scarce: but pcmanfm has been split into 
+1) menu-cache
+2) libfm
+3) pcmanfm

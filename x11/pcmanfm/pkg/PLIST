@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.5 2009/12/21 20:46:02 ajacoutot Exp $
+@bin bin/pcmanfm
+share/applications/
+share/applications/pcmanfm.desktop
+share/pcmanfm/
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+share/pcmanfm/ui/
+share/pcmanfm/ui/about.ui
+share/pcmanfm/ui/autorun.ui
+share/pcmanfm/ui/desktop-pref.ui
+share/pcmanfm/ui/pref.ui
