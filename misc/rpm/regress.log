@@ -1,0 +1,485 @@
+gmake  check-recursive
+gmake[1]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64'
+Making check in po
+gmake[2]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/po'
+gmake[2]: Nothing to be done for `check'.
+gmake[2]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/po'
+Making check in misc
+gmake[2]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/misc'
+gmake[2]: Nothing to be done for `check'.
+gmake[2]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/misc'
+Making check in luaext
+gmake[2]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/luaext'
+gmake[2]: Nothing to be done for `check'.
+gmake[2]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/luaext'
+Making check in rpmio
+gmake[2]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/rpmio'
+gmake  
+gmake[3]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/rpmio'
+gmake[3]: Nothing to be done for `all'.
+gmake[3]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/rpmio'
+gmake[2]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/rpmio'
+Making check in lib
+gmake[2]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/lib'
+gmake  check-am
+gmake[3]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/lib'
+gmake  
+gmake[4]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/lib'
+gmake  all-am
+gmake[5]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/lib'
+gmake[5]: Nothing to be done for `all-am'.
+gmake[5]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/lib'
+gmake[4]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/lib'
+gmake[3]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/lib'
+gmake[2]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/lib'
+Making check in sign
+gmake[2]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/sign'
+gmake[2]: Nothing to be done for `check'.
+gmake[2]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/sign'
+Making check in build
+gmake[2]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/build'
+gmake[2]: Nothing to be done for `check'.
+gmake[2]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/build'
+Making check in scripts
+gmake[2]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/scripts'
+gmake[2]: Nothing to be done for `check'.
+gmake[2]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/scripts'
+Making check in fileattrs
+gmake[2]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/fileattrs'
+gmake[2]: Nothing to be done for `check'.
+gmake[2]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/fileattrs'
+Making check in doc
+gmake[2]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/doc'
+gmake[2]: Nothing to be done for `check'.
+gmake[2]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/doc'
+Making check in .
+gmake[2]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64'
+gmake[2]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64'
+Making check in tests
+gmake[2]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests'
+gmake  atconfig atlocal /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/tests/rpmtests testing/usr/local/bin/rpmbuild
+gmake[3]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests'
+gmake[3]: `atconfig' is up to date.
+/usr/local/bin/autom4te --language=autotest -I '/usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/tests' -o /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/tests/rpmtests.tmp /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/tests/rpmtests.at
+mv /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/tests/rpmtests.tmp /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/tests/rpmtests
+rm -rf testing
+(cd .. && \
+          gmake DESTDIR=`pwd`/tests/testing install)
+gmake[4]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64'
+gmake  install-recursive
+gmake[5]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64'
+Making install in po
+gmake[6]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/po'
+mkdir -p -- /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/share
+installing /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/po/ca.gmo as /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/share/locale/ca/LC_MESSAGES/rpm.mo
+installing /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/po/cs.gmo as /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/share/locale/cs/LC_MESSAGES/rpm.mo
+installing /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/po/da.gmo as /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/share/locale/da/LC_MESSAGES/rpm.mo
+installing /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/po/de.gmo as /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/share/locale/de/LC_MESSAGES/rpm.mo
+installing /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/po/es.gmo as /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/share/locale/es/LC_MESSAGES/rpm.mo
+installing /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/po/fi.gmo as /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/share/locale/fi/LC_MESSAGES/rpm.mo
+installing /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/po/fr.gmo as /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/share/locale/fr/LC_MESSAGES/rpm.mo
+installing /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/po/is.gmo as /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/share/locale/is/LC_MESSAGES/rpm.mo
+installing /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/po/it.gmo as /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/share/locale/it/LC_MESSAGES/rpm.mo
+installing /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/po/ja.gmo as /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/share/locale/ja/LC_MESSAGES/rpm.mo
+installing /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/po/ko.gmo as /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/share/locale/ko/LC_MESSAGES/rpm.mo
+installing /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/po/ms.gmo as /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/share/locale/ms/LC_MESSAGES/rpm.mo
+installing /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/po/nb.gmo as /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/share/locale/nb/LC_MESSAGES/rpm.mo
+installing /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/po/nl.gmo as /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/share/locale/nl/LC_MESSAGES/rpm.mo
+installing /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/po/pl.gmo as /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/share/locale/pl/LC_MESSAGES/rpm.mo
+installing /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/po/pt.gmo as /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/share/locale/pt/LC_MESSAGES/rpm.mo
+installing /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/po/pt_BR.gmo as /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/share/locale/pt_BR/LC_MESSAGES/rpm.mo
+installing /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/po/ru.gmo as /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/share/locale/ru/LC_MESSAGES/rpm.mo
+installing /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/po/sk.gmo as /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/share/locale/sk/LC_MESSAGES/rpm.mo
+installing /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/po/sl.gmo as /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/share/locale/sl/LC_MESSAGES/rpm.mo
+installing /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/po/sr.gmo as /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/share/locale/sr/LC_MESSAGES/rpm.mo
+installing /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/po/sr@latin.gmo as /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/share/locale/sr@latin/LC_MESSAGES/rpm.mo
+installing /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/po/sv.gmo as /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/share/locale/sv/LC_MESSAGES/rpm.mo
+installing /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/po/tr.gmo as /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/share/locale/tr/LC_MESSAGES/rpm.mo
+installing /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/po/zh_TW.gmo as /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/share/locale/zh_TW/LC_MESSAGES/rpm.mo
+if test "rpm" = "gettext-tools"; then \
+  mkdir -p -- /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/share/gettext/po; \
+  for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do \
+    /usr/bin/install -c -m 644 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/po/$file \
+		    /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/share/gettext/po/$file; \
+  done; \
+  for file in Makevars; do \
+    rm -f /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/share/gettext/po/$file; \
+  done; \
+else \
+  : ; \
+fi
+gmake[6]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/po'
+Making install in misc
+gmake[6]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/misc'
+gmake[7]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/misc'
+gmake[7]: Nothing to be done for `install-exec-am'.
+gmake[7]: Nothing to be done for `install-data-am'.
+gmake[7]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/misc'
+gmake[6]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/misc'
+Making install in luaext
+gmake[6]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/luaext'
+gmake[7]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/luaext'
+gmake[7]: Nothing to be done for `install-exec-am'.
+gmake[7]: Nothing to be done for `install-data-am'.
+gmake[7]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/luaext'
+gmake[6]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/luaext'
+Making install in rpmio
+gmake[6]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/rpmio'
+gmake[7]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/rpmio'
+gmake[7]: Nothing to be done for `install-exec-am'.
+test -z "/usr/local/lib" || /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/install-sh -c -d "/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib"
+ /usr/ports/infrastructure/bin/libtool    --mode=install /usr/bin/install -c   librpmio.la '/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib'
+/usr/bin/install -c -m 644 ./.libs/librpmio.a /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/librpmio.a
+/usr/bin/install -c -m 644 ./.libs/librpmio.so.0.0 /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/librpmio.so.0.0
+/usr/bin/install -c -m 644 ./.libs/librpmio.lai /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/librpmio.la
+gmake[7]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/rpmio'
+gmake[6]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/rpmio'
+Making install in lib
+gmake[6]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/lib'
+gmake  install-am
+gmake[7]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/lib'
+gmake[8]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/lib'
+test -z "/usr/local/lib/rpm" || /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/install-sh -c -d "/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/rpm"
+test -z "/usr/local/lib" || /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/install-sh -c -d "/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib"
+ /usr/ports/infrastructure/bin/libtool    --mode=install /usr/bin/install -c   librpm.la '/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib'
+/usr/bin/install -c -m 644 ./.libs/librpm.a /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/librpm.a
+/usr/bin/install -c -m 644 ./.libs/librpm.so.1.0 /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/librpm.so.1.0
+/usr/bin/install -c -m 644 ./.libs/librpm.lai /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/librpm.la
+gmake[8]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/lib'
+gmake[7]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/lib'
+gmake[6]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/lib'
+Making install in sign
+gmake[6]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/sign'
+gmake[7]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/sign'
+gmake[7]: Nothing to be done for `install-exec-am'.
+test -z "/usr/local/lib" || /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/install-sh -c -d "/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib"
+ /usr/ports/infrastructure/bin/libtool    --mode=install /usr/bin/install -c   librpmsign.la '/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib'
+/usr/bin/install -c -m 644 ./.libs/librpmsign.a /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/librpmsign.a
+/usr/bin/install -c -m 644 ./.libs/librpmsign.so.0.0 /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/librpmsign.so.0.0
+/usr/bin/install -c -m 644 ./.libs/librpmsign.lai /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/librpmsign.la
+gmake[7]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/sign'
+gmake[6]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/sign'
+Making install in build
+gmake[6]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/build'
+gmake[7]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/build'
+gmake[7]: Nothing to be done for `install-exec-am'.
+test -z "/usr/local/lib" || /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/install-sh -c -d "/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib"
+ /usr/ports/infrastructure/bin/libtool    --mode=install /usr/bin/install -c   librpmbuild.la '/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib'
+/usr/bin/install -c -m 644 ./.libs/librpmbuild.a /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/librpmbuild.a
+/usr/bin/install -c -m 644 ./.libs/librpmbuild.so.1.0 /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/librpmbuild.so.1.0
+/usr/bin/install -c -m 644 ./.libs/librpmbuild.lai /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/librpmbuild.la
+gmake[7]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/build'
+gmake[6]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/build'
+Making install in scripts
+gmake[6]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/scripts'
+gmake[7]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/scripts'
+gmake[7]: Nothing to be done for `install-exec-am'.
+test -z "/usr/local/lib/rpm" || /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/install-sh -c -d "/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/rpm"
+ /usr/bin/install -c -m 644 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/rpm.daily /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/rpm.log /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/macros.perl /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/macros.php /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/macros.python '/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/rpm'
+test -z "/usr/local/lib/rpm" || /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/install-sh -c -d "/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/rpm"
+ /usr/bin/install -c /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/brp-compress /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/brp-python-bytecompile /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/brp-java-gcjcompile /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/brp-strip /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/brp-strip-comment-note /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/brp-python-hardlink /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/brp-strip-shared /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/brp-strip-static-archive /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/check-files /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/check-prereqs /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/check-buildroot /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/check-rpaths /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/check-rpaths-worker /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/find-lang.sh /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/perl.prov /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/perl.req /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/perldeps.pl /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/pythondeps.sh /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/osgideps.pl /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/mono-find-requires /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/mono-find-provides /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/pkgconfigdeps.sh /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/libtooldeps.sh /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/ocaml-find-requires.sh /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/ocaml-find-provides.sh /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/fontconfig.prov /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/desktop-file.prov /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/script.req /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/rpmdb_loadcvt /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/rpm2cpio.sh /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/tcl.req /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/tgpg '/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/rpm'
+gmake[7]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/scripts'
+gmake[6]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/scripts'
+Making install in fileattrs
+gmake[6]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/fileattrs'
+gmake[7]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/fileattrs'
+gmake[7]: Nothing to be done for `install-exec-am'.
+test -z "/usr/local/lib/rpm/fileattrs" || /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/install-sh -c -d "/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/rpm/fileattrs"
+ /usr/bin/install -c -m 644 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/fileattrs/desktop.attr /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/fileattrs/elf.attr /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/fileattrs/font.attr /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/fileattrs/libtool.attr /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/fileattrs/perl.attr /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/fileattrs/perllib.attr /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/fileattrs/pkgconfig.attr /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/fileattrs/python.attr /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/fileattrs/ocaml.attr /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/fileattrs/script.attr /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/fileattrs/mono.attr '/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/rpm/fileattrs'
+gmake[7]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/fileattrs'
+gmake[6]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/fileattrs'
+Making install in doc
+gmake[6]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/doc'
+gmake[7]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/doc'
+gmake[7]: Nothing to be done for `install-exec-am'.
+test -z "/usr/local/man/fr/man8" || /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/install-sh -c -d "/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/man/fr/man8"
+ /usr/bin/install -c -m 644 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/doc/fr/rpm.8 '/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/man/fr/man8'
+test -z "/usr/local/man/ja/man8" || /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/install-sh -c -d "/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/man/ja/man8"
+ /usr/bin/install -c -m 644 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/doc/ja/rpm.8 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/doc/ja/rpm2cpio.8 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/doc/ja/rpmbuild.8 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/doc/ja/rpmgraph.8 '/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/man/ja/man8'
+test -z "/usr/local/man/ko/man8" || /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/install-sh -c -d "/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/man/ko/man8"
+ /usr/bin/install -c -m 644 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/doc/ko/rpm.8 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/doc/ko/rpm2cpio.8 '/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/man/ko/man8'
+test -z "/usr/local/man/man1" || /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/install-sh -c -d "/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/man/man1"
+ /usr/bin/install -c -m 644 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/doc/gendiff.1 '/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/man/man1'
+test -z "/usr/local/man/man8" || /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/install-sh -c -d "/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/man/man8"
+ /usr/bin/install -c -m 644 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/doc/rpm.8 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/doc/rpmbuild.8 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/doc/rpmdeps.8 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/doc/rpmgraph.8 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/doc/rpm2cpio.8 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/doc/rpmdb.8 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/doc/rpmkeys.8 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/doc/rpmsign.8 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/doc/rpmspec.8 '/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/man/man8'
+test -z "/usr/local/man/pl/man1" || /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/install-sh -c -d "/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/man/pl/man1"
+ /usr/bin/install -c -m 644 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/doc/pl/gendiff.1 '/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/man/pl/man1'
+test -z "/usr/local/man/pl/man8" || /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/install-sh -c -d "/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/man/pl/man8"
+ /usr/bin/install -c -m 644 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/doc/pl/rpm.8 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/doc/pl/rpm2cpio.8 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/doc/pl/rpmbuild.8 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/doc/pl/rpmdeps.8 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/doc/pl/rpmgraph.8 '/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/man/pl/man8'
+test -z "/usr/local/man/ru/man8" || /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/install-sh -c -d "/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/man/ru/man8"
+ /usr/bin/install -c -m 644 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/doc/ru/rpm.8 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/doc/ru/rpm2cpio.8 '/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/man/ru/man8'
+test -z "/usr/local/man/sk/man8" || /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/install-sh -c -d "/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/man/sk/man8"
+ /usr/bin/install -c -m 644 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/doc/sk/rpm.8 '/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/man/sk/man8'
+gmake[7]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/doc'
+gmake[6]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/doc'
+Making install in .
+gmake[6]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64'
+gmake[7]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64'
+test -z "/usr/local/bin" || /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/install-sh -c -d "/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/bin"
+  /usr/ports/infrastructure/bin/libtool    --mode=install /usr/bin/install -c rpm2cpio rpmbuild rpmdb rpmkeys rpmsign rpmspec rpmgraph '/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/bin'
+/usr/bin/install -c ./.libs/rpm2cpio /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/bin
+/usr/bin/install -c ./.libs/rpmbuild /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/bin
+/usr/bin/install -c ./.libs/rpmdb /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/bin
+/usr/bin/install -c ./.libs/rpmkeys /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/bin
+/usr/bin/install -c ./.libs/rpmsign /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/bin
+/usr/bin/install -c ./.libs/rpmspec /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/bin
+/usr/bin/install -c ./.libs/rpmgraph /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/bin
+test -z "/usr/local/bin" || /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/install-sh -c -d "/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/bin"
+ /usr/bin/install -c /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/scripts/gendiff '/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/bin'
+test -z "/usr/local/lib/rpm" || /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/install-sh -c -d "/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/rpm"
+  /usr/ports/infrastructure/bin/libtool    --mode=install /usr/bin/install -c javadeps rpmdeps '/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/rpm'
+/usr/bin/install -c javadeps /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/rpm
+/usr/bin/install -c ./.libs/rpmdeps /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/rpm
+gmake  install-exec-hook
+gmake[8]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64'
+ln -s rpm /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/bin/rpmquery
+ln -s rpm /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/bin/rpmverify
+gmake[8]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64'
+test -z "/usr/local/include/rpm" || /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/install-sh -c -d "/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/include/rpm"
+test -z "/usr/local/lib/pkgconfig" || /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/install-sh -c -d "/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/pkgconfig"
+ /usr/bin/install -c -m 644 rpm.pc '/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/pkgconfig'
+test -z "/usr/local/include/rpm" || /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/install-sh -c -d "/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/include/rpm"
+ /usr/bin/install -c -m 644 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/rpmio/argv.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/rpmio/rpmio.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/rpmio/rpmurl.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/rpmio/rpmmacro.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/rpmio/rpmlog.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/rpmio/rpmpgp.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/rpmio/rpmsq.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/rpmio/rpmstring.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/rpmio/rpmsw.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/rpmio/rpmfileutil.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/rpmio/rpmutil.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/rpmio/rpmkeyring.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/lib/header.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/lib/rpmdb.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/lib/rpmcallback.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/lib/rpmcli.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/lib/rpmlib.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/lib/rpmds.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/lib/rpmfi.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/lib/rpmlegacy.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/lib/rpmpol.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/lib/rpmps.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/lib/rpmprob.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/lib/rpmtag.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/lib/rpmtd.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/lib/rpmte.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/lib/rpmts.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/lib/rpmtypes.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/lib/rpmvf.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/sign/rpmsign.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/build/rpmbuild.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/build/rpmfc.h /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/build/rpmspec.h '/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/include/rpm'
+test -z "`echo /usr/local/bin | /usr/bin/sed -e s,usr/bin,bin,`" || /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/install-sh -c -d "/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing`echo /usr/local/bin | /usr/bin/sed -e s,usr/bin,bin,`"
+  /usr/ports/infrastructure/bin/libtool    --mode=install /usr/bin/install -c rpm '/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/bin'
+/usr/bin/install -c ./.libs/rpm /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/bin
+test -z "/usr/local/lib/rpm" || /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/install-sh -c -d "/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/rpm"
+ /usr/bin/install -c -m 644 rpmrc macros rpmpopt-4.9.1.1 '/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/rpm'
+test -z "/usr/local/lib/rpm" || /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/install-sh -c -d "/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/rpm"
+ /usr/bin/install -c find-provides find-requires /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/mkinstalldirs /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/config.guess /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/config.sub '/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/rpm'
+test -z "/var/db/rpm" || /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/install-sh -c -d "/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/var/db/rpm"
+gmake[7]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64'
+gmake[6]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64'
+Making install in tests
+gmake[6]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests'
+gmake[7]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests'
+gmake[7]: Nothing to be done for `install-exec-am'.
+gmake[7]: Nothing to be done for `install-data-am'.
+gmake[7]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests'
+gmake[6]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests'
+Making install in python
+gmake[6]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/python'
+gmake[7]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/python'
+test -z "/usr/local/lib/python2.7/site-packages/rpm" || /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/install-sh -c -d "/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/python2.7/site-packages/rpm"
+ /usr/bin/install -c -m 644 /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/python/rpm/__init__.py /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/python/rpm/transaction.py '/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/python2.7/site-packages/rpm'
+test -z "/usr/local/lib/python2.7/site-packages/rpm" || /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/install-sh -c -d "/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/python2.7/site-packages/rpm"
+ /usr/ports/infrastructure/bin/libtool    --mode=install /usr/bin/install -c   _rpmmodule.la _rpmbmodule.la _rpmsmodule.la '/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/python2.7/site-packages/rpm'
+/usr/bin/install -c -m 644 ./.libs/_rpmmodule.a /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/python2.7/site-packages/rpm/_rpmmodule.a
+/usr/bin/install -c -m 644 ./.libs/_rpmmodule.so /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/python2.7/site-packages/rpm/_rpmmodule.so
+/usr/bin/install -c -m 644 ./.libs/_rpmmodule.lai /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/python2.7/site-packages/rpm/_rpmmodule.la
+/usr/bin/install -c -m 644 ./.libs/_rpmbmodule.a /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/python2.7/site-packages/rpm/_rpmbmodule.a
+/usr/bin/install -c -m 644 ./.libs/_rpmbmodule.so /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/python2.7/site-packages/rpm/_rpmbmodule.so
+/usr/bin/install -c -m 644 ./.libs/_rpmbmodule.lai /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/python2.7/site-packages/rpm/_rpmbmodule.la
+/usr/bin/install -c -m 644 ./.libs/_rpmsmodule.a /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/python2.7/site-packages/rpm/_rpmsmodule.a
+/usr/bin/install -c -m 644 ./.libs/_rpmsmodule.so /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/python2.7/site-packages/rpm/_rpmsmodule.so
+/usr/bin/install -c -m 644 ./.libs/_rpmsmodule.lai /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/python2.7/site-packages/rpm/_rpmsmodule.la
+gmake[7]: Nothing to be done for `install-data-am'.
+gmake[7]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/python'
+gmake[6]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/python'
+Making install in plugins
+gmake[6]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/plugins'
+gmake[7]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/plugins'
+gmake[7]: Nothing to be done for `install-exec-am'.
+test -z "/usr/local/lib/rpm-plugins" || /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/install-sh -c -d "/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/rpm-plugins"
+ /usr/ports/infrastructure/bin/libtool    --mode=install /usr/bin/install -c   exec.la sepolicy.la '/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/rpm-plugins'
+/usr/bin/install -c -m 644 ./.libs/exec.a /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/rpm-plugins/exec.a
+/usr/bin/install -c -m 644 ./.libs/exec.so /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/rpm-plugins/exec.so
+/usr/bin/install -c -m 644 ./.libs/exec.lai /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/rpm-plugins/exec.la
+/usr/bin/install -c -m 644 ./.libs/sepolicy.a /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/rpm-plugins/sepolicy.a
+/usr/bin/install -c -m 644 ./.libs/sepolicy.so /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/rpm-plugins/sepolicy.so
+/usr/bin/install -c -m 644 ./.libs/sepolicy.lai /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/testing/usr/local/lib/rpm-plugins/sepolicy.la
+gmake[7]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/plugins'
+gmake[6]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/plugins'
+gmake[5]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64'
+gmake[4]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64'
+gmake[3]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests'
+gmake  check-local
+gmake[3]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests'
+/bin/sh '/usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/tests/rpmtests'  ||:
+## ----------------------- ##
+## rpm 4.9.1.1 test suite. ##
+## ----------------------- ##
+
+Basic tests
+
+  1: rpm --version                                   ok
+  2: rpmbuild --version                              ok
+  3: rpm --version                                   ok
+  4: rpm --version                                   ok
+  5: rpm --showrc                                    ok
+  6: rpm --querytags                                 ok
+
+RPM queries
+
+  7: rpm --qf -p *.i386.rpm                          ok
+  8: rpm --qf -p *.src.rpm                           ok
+  9: rpm -ql -p *.src.rpm                            ok
+ 10: rpmspec -q                                      ok
+ 11: rpm -ql -p *.i386.rpm                           ok
+ 12: rpm -qp <manifest>                              FAILED (rpmquery.at:109)
+ 13: rpm -q --scripts -p *.i386.rpm                  ok
+ 14: rpm -qil hello                                  FAILED (rpmquery.at:150)
+ 15: integer array query                             FAILED (rpmquery.at:190)
+ 16: formatted filesbypkg query                      FAILED (rpmquery.at:206)
+ 17: hex formatted integer array extension query     FAILED (rpmquery.at:222)
+ 18: base64 extension query                          FAILED (rpmquery.at:236)
+ 19: integer array perms format query                FAILED (rpmquery.at:252)
+ 20: string array query                              FAILED (rpmquery.at:265)
+ 21: empty string array query                        FAILED (rpmquery.at:278)
+ 22: empty string array extension array format       FAILED (rpmquery.at:291)
+ 23: empty string array extension query              FAILED (rpmquery.at:304)
+ 24: different sizes arrays query                    FAILED (rpmquery.at:318)
+ 25: non-existent string tag                         FAILED (rpmquery.at:331)
+ 26: non-existent integer tag query                  FAILED (rpmquery.at:344)
+ 27: conditional queryformat                         FAILED (rpmquery.at:357)
+ 28: invalid tag query                               FAILED (rpmquery.at:371)
+ 29: invalid data for format query                   FAILED (rpmquery.at:384)
+
+RPM verification
+
+ 30: dependency problems                             FAILED (rpmverify.at:25)
+ 31: files with no problems                          FAILED (rpmverify.at:44)
+ 32: files with no problems in verbose mode          FAILED (rpmverify.at:64)
+ 33: verify files with problems present              FAILED (rpmverify.at:87)
+ 34: verifyscript failure                            FAILED (rpmverify.at:105)
+ 35: verifyscript success                            FAILED (rpmverify.at:121)
+
+RPM database access
+
+ 36: rpm --initdb                                    ok
+ 37: rpm -qa                                         FAILED (rpmdb.at:44)
+ 38: rpm -i *.noarch.rpm                             FAILED (rpmdb.at:64)
+ 39: rpm -U --replacepkgs                            FAILED (rpmdb.at:82)
+ 40: rpm -i --relocate=.. *.i386.rpm                 FAILED (rpmdb.at:103)
+ 41: rpm -i --relocate=.. *.ppc64.rpm                FAILED (rpmdb.at:127)
+ 42: rpm -U and verify status                        FAILED (rpmdb.at:150)
+ 43: rpm -U with _install_lang and verify status     FAILED (rpmdb.at:174)
+ 44: rpm -U and verify files on disk                 FAILED (rpmdb.at:196)
+ 45: rpm -e and verify files removed                 FAILED (rpmdb.at:219)
+
+RPM install tests
+
+ 46: rpm -U *.src.rpm                                ok
+ 47: rpm -i *.src.rpm                                ok
+ 48: rpm -i <nonexistent file>                       ok
+ 49: rpm -i --nomanifest <garbage text file>         ok
+ 50: rpm -i <garbage text file                       ok
+ 51: rpm -U upgrade to newer                         FAILED (rpmi.at:120)
+ 52: rpm -U upgrade to older                         FAILED (rpmi.at:134)
+ 53: rpm -U --oldpackage downgrade                   FAILED (rpmi.at:149)
+ 54: rpm -U two versions of same package             FAILED (rpmi.at:165)
+ 55: rpm -i two versions of same package             FAILED (rpmi.at:182)
+ 56: rpm -i identical versions of same package       FAILED (rpmi.at:199)
+
+RPM build
+
+ 57: rpmbuild -ba *.spec                             FAILED (rpmbuild.at:36)
+ 58: rpmbuild --rebuild                              FAILED (rpmbuild.at:72)
+ 59: rpmbuild -tb <tar with bad spec>                FAILED (rpmbuild.at:106)
+ 60: rpmbuild -tb                                    FAILED (rpmbuild.at:122)
+
+RPM version comparison
+
+ 61: rpmvercmp(1.0, 1.0) = 0                         ok
+ 62: rpmvercmp(1.0, 2.0) = -1                        ok
+ 63: rpmvercmp(2.0, 2.0.1) = -1                      ok
+ 64: rpmvercmp(2.0.1a, 2.0.1) = 1                    ok
+ 65: rpmvercmp(5.5p1, 5.5p2) = -1                    ok
+ 66: rpmvercmp(5.6p1, 5.5p2) = 1                     ok
+ 67: rpmvercmp(10a2, 10b2) = -1                      ok
+ 68: rpmvercmp(1.0a, 1.0aa) = -1                     ok
+ 69: rpmvercmp(6.0rc1, 6.0) = 1                      ok
+ 70: rpmvercmp(6.0.rc1, 6.0) = 1                     ok
+ 71: rpmvercmp(10.1.1.0001, 10.1.1.39) = -1          ok
+ 72: rpmvercmp(5.0, 4.999.9) = 1                     ok
+ 73: rpmvercmp(2.030, 2.031) = -1                    ok
+ 74: rpmvercmp(20101122, 20101121) = 1               ok
+ 75: rpmvercmp(2.0, 2_0) = 0                         ok
+
+RPM dependencies
+
+ 76: missing dependency                              FAILED (rpmdeps.at:24)
+ 77: cross-depending packages                        FAILED (rpmdeps.at:49)
+ 78: unsatisfied versioned require                   FAILED (rpmdeps.at:76)
+ 79: satisfied versioned require                     FAILED (rpmdeps.at:101)
+ 80: versioned conflict in transaction               FAILED (rpmdeps.at:127)
+ 81: versioned conflict in database                  FAILED (rpmdeps.at:154)
+ 82: erase to break dependencies                     FAILED (rpmdeps.at:181)
+
+RPM file conflicts
+
+ 83: rpm -U to package with file conflict            FAILED (rpmconflict.at:25)
+ 84: rpm -U two packages with a conflicting file     FAILED (rpmconflict.at:41)
+ 85: rpm -U package with shareable file              FAILED (rpmconflict.at:64)
+ 86: rpm -U two packages with shareable file         FAILED (rpmconflict.at:80)
+ 87: rpm -U replacing directory with symlink         FAILED (rpmconflict.at:106)
+ 88: rpm -U replacing symlink with directory         FAILED (rpmconflict.at:130)
+
+RPM config file behavior
+
+ 89: rpm -U to package with unchanged config file    FAILED (rpmconfig.at:25)
+ 90: rpm -U to package with locally modified config file FAILED (rpmconfig.at:49)
+ 91: rpm -U to package with unchanged config file    FAILED (rpmconfig.at:72)
+ 92: rpm -U to package with modified config file     FAILED (rpmconfig.at:98)
+
+RPM macros
+
+ 93: simple rpm --eval                               ok
+ 94: simple true conditional rpm --eval              ok
+ 95: simple false conditional rpm --eval             ok
+ 96: uncompress macro                                ok
+ 97: basename macro                                  ok
+ 98: suffix macro                                    ok
+ 99: url2path macro                                  ok
+100: shell expansion                                 ok
+101: simple lua --eval                               ok
+102: lua rpm extensions                              ok
+103: lua posix extensions                            ok
+104: lua script exit behavior                       /usr/ports/pobj/rpm-4.9.1.1/rpm-4.9.1.1/tests/rpmtests: /usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests/rpmtests.dir/at-groups/104/test-source[30]: syntax error: `}' unexpected
+rpmtests: WARNING: unable to parse test group: 104
+rpmtests: WARNING: A failure happened in a test group before any test could be
+rpmtests: WARNING: run. This means that test suite is improperly designed.  Please
+rpmtests: WARNING: report this failure to <rpm-maint@lists.rpm.org>.
+ FAILED (rpmmacro.at:133)
+
+Python bindings
+
+105: module import                                   FAILED (rpmpython.at:10)
+106: basic header manipulation                       FAILED (rpmpython.at:25)
+107: reading a package file                          FAILED (rpmpython.at:33)
+108: add package to transaction                      FAILED (rpmpython.at:42)
+
+RPM dependency matching
+
+109: provide - require pairs                         FAILED (rpmdepmatch.at:241)
+
+## ------------- ##
+## Test results. ##
+## ------------- ##
+
+ERROR: All 109 tests were run,
+65 failed unexpectedly.
+## ------------------------- ##
+## rpmtests.log was created. ##
+## ------------------------- ##
+
+Please send `tests/rpmtests.log' and all information you think might help:
+
+   To: <rpm-maint@lists.rpm.org>
+   Subject: [rpm 4.9.1.1] rpmtests: 12 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 37 38 39 40 41 42 43 44 45 51 52 53 54 55 56 57 58 59 60 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 104 105 106 107 108 109 failed
+
+You may investigate any problem if you feel able to do so, in which
+case the test suite provides a good starting point.  Its output may
+be found below `tests/rpmtests.dir'.
+
+gmake[3]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests'
+gmake[2]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/tests'
+Making check in python
+gmake[2]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/python'
+gmake[2]: Nothing to be done for `check'.
+gmake[2]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/python'
+Making check in plugins
+gmake[2]: Entering directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/plugins'
+gmake[2]: Nothing to be done for `check'.
+gmake[2]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64/plugins'
+gmake[1]: Leaving directory `/usr/ports/pobj/rpm-4.9.1.1/build-amd64'

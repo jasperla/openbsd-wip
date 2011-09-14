@@ -1,0 +1,11 @@
+$OpenBSD$
+--- tests/Makefile.am.orig	Fri Jul 15 04:59:12 2011
++++ tests/Makefile.am	Tue Sep 13 14:05:03 2011
+@@ -76,6 +76,7 @@ atlocal:	atlocal.in Makefile
+ 	  -e "s,[@]usrbindir[@],$(bindir)," \
+ 	  -e "s,[@]usrlibdir[@],$(libdir)," \
+ 	  -e "s,[@]RPMCONFIGDIR[@],$(rpmconfigdir)," \
++	  -e "s,[@]python[@],$(PYTHON)," \
+ 	< $(srcdir)/atlocal.in > atlocal
+ DISTCLEANFILES = atlocal
+ EXTRA_DIST += atlocal.in
