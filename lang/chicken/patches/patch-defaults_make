@@ -1,0 +1,12 @@
+$OpenBSD$
+--- defaults.make.orig	Wed Sep 14 21:03:46 2011
++++ defaults.make	Wed Sep 14 21:04:00 2011
+@@ -49,7 +49,7 @@ BINDIR = $(PREFIX)/bin
+ LIBDIR = $(PREFIX)/lib
+ SHAREDIR = $(PREFIX)/share
+ DATADIR = $(SHAREDIR)/$(PROGRAM_PREFIX)chicken$(PROGRAM_SUFFIX)
+-TOPMANDIR = $(SHAREDIR)/man
++TOPMANDIR = $(PREFIX)/man
+ MANDIR = $(TOPMANDIR)/man1
+ INCDIR = $(PREFIX)/include/$(PROGRAM_PREFIX)chicken$(PROGRAM_SUFFIX)
+ DOCDIR = $(DATADIR)/doc

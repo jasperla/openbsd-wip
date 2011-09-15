@@ -1,9 +1,13 @@
 # $OpenBSD: Makefile,v 1.17 2011/03/09 06:23:35 ajacoutot Exp $
 
+SHARED_ONLY=	Yes
+
 COMMENT=	practical and portable Scheme system
 
 V=		4.7.0
 DISTNAME=	chicken-$V
+
+SHARED_LIBS=	chicken	0.0
 
 CATEGORIES=	lang
 
@@ -19,17 +23,13 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 
-LIB_DEPENDS+=		devel/libffi
-WANTLIB=		c m pthread ffi
+WANTLIB=		c m pthread
 
-MAKE_ENV+=		PLATFORM=bsd
+MAKE_FLAGS+=		PLATFORM=bsd C_COMPILER=${CC} CXX_COMPILER=${CXX} \
+			C_COMPILER_OPTIMIZATION_OPTIONS=${CFLAGS} \
+			SONAME_VERSION=".${LIBchicken_VERSION}"
+MAKE_FILE=		GNUmakefile
 
-CONFIGURE_STYLE=	none
-
-do-build:
-	cd ${WRKSRC} && gmake PLATFORM=bsd
-
-do-install:
-	cd ${WRKSRC} && gmake PLATFORM=bsd install
+FAKE_FLAGS =		PREFIX=${TRUEPREFIX}
 
 .include <bsd.port.mk>
