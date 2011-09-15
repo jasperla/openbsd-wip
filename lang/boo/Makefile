@@ -39,6 +39,7 @@ WRKDIST = 				${WRKDIR}
 USE_NANT =  			Yes
 
 NANT_FLAGS = 			-D:install.prefix=${PREFIX} \
+						-D:skip.vs=true \
 						-D:antlr.jar=${PREFIX}/share/java/antlr-2.7.5.jar
 
 NO_REGRESS = 			Yes
