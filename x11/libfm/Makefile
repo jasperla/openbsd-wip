@@ -6,10 +6,10 @@ DISTNAME=	libfm-0.1.16
 
 CATEGORIES=	x11
 
-HOMEPAGE=	http://pcmanfm.sourceforge.net/
-
 SHARED_LIBS+=	fm-gtk	0.0 # 1.0
 SHARED_LIBS+=	fm	0.0 # 1.0
+
+HOMEPAGE=	http://pcmanfm.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -38,5 +38,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
 CONFIGURE_ARGS=	--sysconfdir=${SYSCONFDIR}
+
+FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/libfm
 
 .include <bsd.port.mk>

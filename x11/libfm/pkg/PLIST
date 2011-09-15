@@ -68,6 +68,14 @@ lib/pkgconfig/libfm-gtk.pc
 lib/pkgconfig/libfm.pc
 share/applications/
 share/applications/libfm-pref-apps.desktop
+share/examples/libfm/
+share/examples/libfm/xdg/
+@sample ${SYSCONFDIR}/xdg/
+share/examples/libfm/xdg/libfm/
+share/examples/libfm/xdg/libfm/libfm.conf
+@sample ${SYSCONFDIR}/xdg/libfm.conf
+share/examples/libfm/xdg/libfm/pref-apps.conf
+@sample ${SYSCONFDIR}/xdg/pref-apps.conf
 share/libfm/
 share/libfm/archivers.list
 share/libfm/ui/
