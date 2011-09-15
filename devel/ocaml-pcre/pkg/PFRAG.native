@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-lib/ocaml/site-lib/pcre/pcre.a
-lib/ocaml/site-lib/pcre/pcre.cmxa
