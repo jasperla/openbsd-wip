@@ -37,6 +37,7 @@ LIB_DEPENDS =       ${MODPY_LIB_DEPENDS} \
 
 MODPY_SETUPTOOLS =  No
 
+REGRESS_TARGET =    check
 SEPARATE_BUILD =    simple
 USE_GMAKE =         Yes
 USE_LIBTOOL =       Yes

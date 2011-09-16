@@ -24,11 +24,10 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += m menu-cache pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs xcb xcb-render xcb-shm z
 
-LIB_DEPENDS=	x11/gtk+2 \
+LIB_DEPENDS=	x11/gnome/icon-theme \
+		x11/gtk+2 \
 		x11/libfm \
 		x11/libmenu-cache
-
-RUN_DEPENDS=	x11/gnome/icon-theme
 
 MODULES=	devel/gettext
 USE_LIBTOOL=	Yes
@@ -38,5 +37,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
 CONFIGURE_ARGS= --sysconfdir=${SYSCONFDIR}
+
+FAKE_FLAGS=     sysconfdir=${PREFIX}/share/examples/pcmanfm
 
 .include <bsd.port.mk>

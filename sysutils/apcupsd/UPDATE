@@ -1,0 +1,18 @@
+Bug fix roll-up release incorporating a few recent bug fixes:
+
+* Fix missing status and spurrious incorrect status on newer BackUPS CS
+models using USB interface.
+
+* USB compatibility fixes for Mac OS X Lion
+
+* USB driver support for newer Microlink models on Mac OS X Lion and
+Windows
+
+* Ignore transitions to battery due to calibration (possible if
+user initiates calibration, then exits apctest and starts apcupsd before
+calibration completes.
+
+* Fix truncation of long UPS model names such as "Smart-UPS RT 5000 XL"
+
+* Fix MODEL vs. APCMODEL confusion. Remove APCMODEL and rename old
+MODEL aka 'mode' to DRIVER

@@ -1,6 +1,13 @@
 major update to 0.9.9, complete rewrite over the 0.3 and 0.5 series.
 
-changelog is scarce: but pcmanfm has been split into 
+pcmanfm has been split into 
 1) menu-cache
 2) libfm
 3) pcmanfm
+
+BUGS:
+1) trash can support is non-functional or incomprehensible.
+2) crashes when clicking on non-existing folders like Music, Pictures, 
+   Videos.
+3) don't click on thumbnails for file associations as support for it
+   is poor.

@@ -1,0 +1,27 @@
+$OpenBSD$
+--- tests/atlocal.in.orig	Fri Jul 15 04:59:12 2011
++++ tests/atlocal.in	Tue Sep 13 16:44:01 2011
+@@ -3,7 +3,7 @@ export LD_LIBRARY_PATH
+ PATH="${abs_builddir}/testing@rpmbindir@:${abs_builddir}/testing@usrbindir@:$PATH"
+ export PATH
+ 
+-PYLIBDIR=`python -c "from distutils.sysconfig import get_python_lib; import sys; sys.stdout.write(get_python_lib(1))"`
++PYLIBDIR=`@python@ -c "from distutils.sysconfig import get_python_lib; import sys; sys.stdout.write(get_python_lib(1))"`
+ PYTHONPATH="${abs_builddir}/testing${PYLIBDIR}"
+ export PYTHONPATH
+ 
+@@ -22,12 +22,12 @@ TOPDIR="${RPMTEST}/build"
+ 
+ RPM_XFAIL=${RPM_XFAIL-1}
+ 
+-function run()
++run()
+ {
+     "$@" --define "_topdir ${TOPDIR}"
+ }
+ 
+-function runroot()
++runroot()
+ {
+     (cd ${RPMTEST} && \
+      mkdir -p etc && touch etc/mtab &&
