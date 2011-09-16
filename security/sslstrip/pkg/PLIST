@@ -1,7 +1,7 @@
 @comment $OpenBSD$
 bin/sslstrip
 lib/python${MODPY_VERSION}/site-packages/sslstrip/
-lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/sslstrip-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/sslstrip/ClientRequest.py
 lib/python${MODPY_VERSION}/site-packages/sslstrip/ClientRequest.pyc
 lib/python${MODPY_VERSION}/site-packages/sslstrip/CookieCleaner.py
