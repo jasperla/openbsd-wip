@@ -1,0 +1,21 @@
+$OpenBSD$
+--- src/tsocks.c.orig	Sat Dec 11 17:28:08 2010
++++ src/tsocks.c	Fri Sep 16 19:53:06 2011
+@@ -180,7 +180,7 @@ void tsocks_init(void)
+                      (error)?error:"not found"); \
+     dlerror(); \
+     }
+-    pthread_mutex_lock(&tsocks_init_mutex);
++    /* pthread_mutex_lock(&tsocks_init_mutex); */
+ 
+     /* We only need to be called once */
+     if (tsocks_init_complete)
+@@ -250,7 +250,7 @@ void tsocks_init(void)
+     }
+ 
+     tsocks_init_complete=1;
+-    pthread_mutex_unlock(&tsocks_init_mutex);
++    /* pthread_mutex_unlock(&tsocks_init_mutex); */
+ 
+     show_msg(MSGWARN, "Exit tsocks_init \n");
+ }

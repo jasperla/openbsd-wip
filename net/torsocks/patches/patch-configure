@@ -1,0 +1,11 @@
+$OpenBSD$
+--- configure.orig	Fri Sep 16 18:55:58 2011
++++ configure	Fri Sep 16 18:56:08 2011
+@@ -4881,7 +4881,6 @@ fi
+ 
+ 
+ 
+-$as_echo "#define SUPPORT_RES_API /**/" >>confdefs.h
+ 
+ 
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for RTLD_NEXT from dlfcn.h" >&5

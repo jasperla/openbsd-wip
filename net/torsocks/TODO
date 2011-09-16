@@ -1,0 +1,4 @@
+- get libtorsocks.so to be linked to libpthread (commenting out pthread
+stuff works, but it's ugly ...)
+- no real IPv6 support, only IPv4-mapped.
+- RUN_DEPENDS on net/tor?
