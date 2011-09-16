@@ -1,0 +1,19 @@
+$OpenBSD$
+--- src/dead_pool.c.orig	Fri Sep 16 17:11:42 2011
++++ src/dead_pool.c	Fri Sep 16 17:12:24 2011
+@@ -755,6 +755,7 @@ our_getipnodebyname(dead_pool *pool, const char *name,
+     char addr_convert_buf[80];
+     struct in_addr pool_addr;
+ 
++#ifndef __OpenBSD__
+     if(af == AF_INET6) {
+         /* Caller has requested an AF_INET6 address, and is not prepared to
+            accept IPv4-mapped IPV6 addresses. There's nothing we can do to
+@@ -768,6 +769,7 @@ our_getipnodebyname(dead_pool *pool, const char *name,
+             want_4in6 = 1;
+         }
+     }
++#endif
+ 
+     pos = store_pool_entry(pool, (char *)name, &pool_addr);
+     if(pos == -1) {

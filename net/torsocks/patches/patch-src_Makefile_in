@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/Makefile.in.orig	Sat Dec 11 17:39:27 2010
++++ src/Makefile.in	Fri Sep 16 18:48:11 2011
+@@ -144,7 +144,7 @@ LD = @LD@
+ LDFLAGS = @LDFLAGS@
+ LD_PRELOAD = @LD_PRELOAD@
+ LIBOBJS = @LIBOBJS@
+-LIBS = -ldl -lc -lresolv
++LIBS = -lc
+ LIBTOOL = @LIBTOOL@
+ LIBTOOL_DEPS = @LIBTOOL_DEPS@
+ LIPO = @LIPO@
