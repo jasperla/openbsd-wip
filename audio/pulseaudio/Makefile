@@ -4,11 +4,12 @@ SHARED_ONLY=		Yes
 
 COMMENT=		cross-platform networked sound server
 
-DISTNAME=		pulseaudio-0.9.22
+VERSION=		0.9.23
+DISTNAME=		pulseaudio-${VERSION}
 SHARED_LIBS +=  pulse-browse              0.0 # 1.1
 SHARED_LIBS +=  pulse-mainloop-glib       0.0 # 0.4
 SHARED_LIBS +=  pulse-simple              0.0 # 0.3
-SHARED_LIBS +=  pulse                     0.0 # 12.3
+SHARED_LIBS +=  pulse                     0.0 # 12.4
 CATEGORIES=		audio
 
 HOMEPAGE=		http://www.pulseaudio.org/
@@ -24,11 +25,11 @@ TAR=			${LOCALBASE}/bin/gtar
 
 MODULES=		devel/gettext
 
-WANTLIB += ICE ORBit-2 SM X11 X11-xcb Xau Xdmcp Xext Xi Xtst avahi-client
+WANTLIB += ICE ORBit-2 SM X11 X11-xcb Xext Xi Xtst avahi-client
 WANTLIB += avahi-common c crypto dbus-1 execinfo gconf-2 gdbm
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += ltdl m pcre pthread pthread-stubs samplerate sndfile
-WANTLIB += speexdsp ssl xcb xcb-atom z
+WANTLIB += ltdl m ossaudio pcre pthread samplerate sndfile speexdsp
+WANTLIB += ssl xcb z
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		gnu
@@ -40,10 +41,9 @@ LIB_DEPENDS=		audio/libsamplerate \
 			devel/gconf2 \
 			devel/libexecinfo \
 			devel/libtool,-ltdl>=2.4 \
-			net/avahi,no_gtk,no_mono,no_qt3,no_qt4
-RUN_DEPENDS=		x11/gnome/audio
+			net/avahi
 
-AUTOCONF_VERSION=	2.67 # 2.66
+AUTOCONF_VERSION=	2.68
 CONFIGURE_STYLE=	autoconf gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-atomic-arm-linux-helpers \
@@ -68,6 +68,8 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 FAKE_FLAGS+=		xdgautostartdir="${PREFIX}/share/examples/pulseaudio/xdg/autostart" \
 			dbuspolicydir="${PREFIX}/share/examples/pulseaudio/dbus-1/system.d" \
 			pulseconfdir="${PREFIX}/share/examples/pulseaudio/pulse/"
+
+SUBST_VARS+=		VERSION
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/daemon/default.pa.in

@@ -2,8 +2,8 @@ $OpenBSD$
 
 - Adjust path to soundfiles.
 
---- src/daemon/default.pa.in.orig	Thu Jun 23 11:22:37 2011
-+++ src/daemon/default.pa.in	Thu Jun 23 11:25:01 2011
+--- src/daemon/default.pa.in.orig	Thu Jun 23 22:18:54 2011
++++ src/daemon/default.pa.in	Sat Sep 17 12:36:59 2011
 @@ -22,10 +22,10 @@
  .nofail
  
@@ -12,10 +12,10 @@ $OpenBSD$
 -#load-sample-lazy pulse-hotplug /usr/share/sounds/startup3.wav
 -#load-sample-lazy pulse-coldplug /usr/share/sounds/startup3.wav
 -#load-sample-lazy pulse-access /usr/share/sounds/generic.wav
-+#load-sample-lazy x11-bell ${LOCALBASE}/share/sounds/gtk-events/activate.wav
-+#load-sample-lazy pulse-hotplug ${LOCALBASE}/share/sounds/startup3.wav
-+#load-sample-lazy pulse-coldplug ${LOCALBASE}/share/sounds/startup3.wav
-+#load-sample-lazy pulse-access ${LOCALBASE}/share/sounds/generic.wav
++#load-sample-lazy x11-bell /usr/local/share/sounds/gtk-events/activate.wav
++#load-sample-lazy pulse-hotplug /usr/local/share/sounds/startup3.wav
++#load-sample-lazy pulse-coldplug /usr/local/share/sounds/startup3.wav
++#load-sample-lazy pulse-access /usr/local/share/sounds/generic.wav
  
  .fail
  

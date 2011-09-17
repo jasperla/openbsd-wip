@@ -1,2 +1,3 @@
 - fix -lpthread usage
 - ldd module-stream-restore.so doesn't work
+  * usage LD_DEBUG?
