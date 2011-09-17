@@ -1,4 +1,0 @@
-- Implement a correct way to allow for easy import libraries in the Makefile's.
-  something like LIBRARIES/MODULES="Ethernet CapTouch GPS"; .include snippets.
-- Build the Java frontend, perhaps as a different port due to massive
-  BUILD_DEPENDS, like devel/arduino-gui.
