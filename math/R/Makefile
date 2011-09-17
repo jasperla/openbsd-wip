@@ -10,7 +10,7 @@ SHARED_LIBS=	Rlapack 30.0 \
 CATEGORIES=    	math
 HOMEPAGE=	http://www.r-project.org/
 
-# GPL
+# GPL 2 | GPL 3
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
