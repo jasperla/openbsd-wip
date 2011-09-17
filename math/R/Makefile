@@ -4,8 +4,8 @@ SHARED_ONLY=	Yes
 
 COMMENT=	clone of S, a powerful math/statistics/graphics language
 DISTNAME=	R-2.13.1
-SHARED_LIBS=	Rlapack 213.1 \
-		Rblas	213.1
+SHARED_LIBS=	Rlapack 30.0 \
+		Rblas	30.0
 
 CATEGORIES=    	math
 HOMEPAGE=	http://www.r-project.org/
