@@ -25,11 +25,12 @@ PERMIT_DISTFILES_FTP=	Yes
 AUTOCONF_VERSION= 2.67
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS}
 
-# Needed for libltdl...
-USE_LIBTOOL=	Yes
+MAKE_ENV+= ${_lt_libs}
+MAKE_FLAGS+= ${_lt_libs}
+
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		GREP=/usr/bin/grep \
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+CONFIGURE_ENV=	GREP=/usr/bin/grep \
 		ac_cv_f77_compiler_gnu=yes \
 		ac_cv_path_SED=/usr/bin/sed \
 		lt_cv_prog_compiler_c_o_F77=yes \
