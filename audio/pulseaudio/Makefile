@@ -62,8 +62,9 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-oss-wrapper \
 			--localstatedir=/var
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			PTHREAD_LIBS="-pthread"
+			LDFLAGS="-L${LOCALBASE}/lib \
+				-Wl,-rpath,${TRUEPREFIX}/lib/pulse-${VERSION}/modules/"
+#			PTHREAD_LIBS="-pthread"
 
 FAKE_FLAGS+=		xdgautostartdir="${PREFIX}/share/examples/pulseaudio/xdg/autostart" \
 			dbuspolicydir="${PREFIX}/share/examples/pulseaudio/dbus-1/system.d" \
