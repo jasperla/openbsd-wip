@@ -1,0 +1,8 @@
+long overdue update prompted by email from Marty Toews who will
+test the updated version.
+
+by having it depend on texlive (tested 2011) the manuals are converted
+to dvi, pdf. Else the --configure option --enable-prebuilt-html can
+be used for forcing HTML help output. And the build takes too long
+and will need to be patched in a gazillion places because install
+wants to install pdf, dvi files

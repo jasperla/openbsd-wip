@@ -1,0 +1,6 @@
+please give feedback if it works or not.
+
+SHARED_LIBS was 29.0 and looking back it was based on
+version of R. Is it appropriate?
+
+built on amd64. awaiting tests.
