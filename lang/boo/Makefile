@@ -26,7 +26,7 @@ MASTER_SITES = 			http://dist.codehaus.org/boo/distributions/
 
 MODULES = 				lang/mono
 
-BUILD_DEPENDS +=	  	lang/antlr2
+BUILD_DEPENDS +=	  	lang/antlr3
 LIB_DEPENDS += 			lang/mono \
 						misc/shared-mime-info \
 						x11/gtksourceview
@@ -40,7 +40,7 @@ USE_NANT =  			Yes
 
 NANT_FLAGS = 			-D:install.prefix=${PREFIX} \
 						-D:skip.vs=true \
-						-D:antlr.jar=${PREFIX}/share/java/antlr-2.7.5.jar
+						-D:antlr.jar=${PREFIX}/share/java/classes/antlr3.jar
 
 NO_REGRESS = 			Yes
 
