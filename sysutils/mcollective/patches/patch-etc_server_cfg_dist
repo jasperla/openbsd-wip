@@ -1,0 +1,12 @@
+$OpenBSD$
+--- etc/server.cfg.dist.orig	Wed Jun  8 20:57:44 2011
++++ etc/server.cfg.dist	Mon Sep 12 01:23:39 2011
+@@ -1,7 +1,7 @@
+ topicprefix = /topic/
+ main_collective = mcollective
+ collectives = mcollective
+-libdir = /usr/libexec/mcollective
++libdir = /usr/local/share/mcollective/plugins
+ logfile = /var/log/mcollective.log
+ loglevel = info
+ daemonize = 1
