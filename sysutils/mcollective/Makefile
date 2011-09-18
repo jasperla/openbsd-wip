@@ -29,7 +29,8 @@ MAKE_FILE=ext/Makefile
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/etc/server.cfg.dist
 
+# Prevent patch/subst_cmd leftovers from ending up in PLIST
 pre-install:
-	rm ${WRKSRC}/etc/server.cfg.dist.orig
+	rm ${WRKSRC}/etc/server.cfg.dist.*
 
 .include <bsd.port.mk>

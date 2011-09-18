@@ -458,8 +458,6 @@ share/examples/mcollective/client.cfg.dist
 share/examples/mcollective/facts.yaml.dist
 share/examples/mcollective/rpc-help.erb
 share/examples/mcollective/server.cfg.dist
-share/examples/mcollective/server.cfg.dist.beforesubst
-share/examples/mcollective/server.cfg.dist.orig
 share/examples/mcollective/ssl/
 share/examples/mcollective/ssl/clients/
 share/mcollective/
