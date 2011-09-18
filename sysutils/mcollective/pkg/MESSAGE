@@ -1,7 +1,0 @@
-If you wish to have mcollective started automatically at boot time,
-simply add the follow lines to /etc/rc.local:
-
-if [ -x ${PREFIX}/sbin/mcollectived ]; then
-        echo -n ' mcollective';       ${PREFIX}/sbin/mcollectived
-fi
-
