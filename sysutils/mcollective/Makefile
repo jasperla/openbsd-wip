@@ -23,10 +23,12 @@ NO_REGRESS=	Yes
 
 MODULES=	lang/ruby
 
+MODRUBY_ADJ_FILES=mco mcollectived.rb mc-*
+
 # makefile is in ext/
 MAKE_FILE=ext/Makefile
 
-pre-configure:
+post-configure:
 	${SUBST_CMD} ${WRKSRC}/etc/server.cfg.dist
 
 # Prevent patch/subst_cmd leftovers from ending up in PLIST
