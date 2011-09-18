@@ -1,5 +1,8 @@
+# $OpenBSD$
+
 PKG_ARCH=	*
-COMMENT=	The Marionette Collective
+
+COMMENT=	framework for server orchestration/parallel job execution
 
 DISTNAME=	mcollective-1.3.0
 
@@ -18,7 +21,15 @@ PERMIT_DISTFILES_FTP=	Yes
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
+MODULES=	lang/ruby
+
 # makefile is in ext/
 MAKE_FILE=ext/Makefile
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/etc/server.cfg.dist
+
+pre-install:
+	rm ${WRKSRC}/etc/server.cfg.dist.orig
 
 .include <bsd.port.mk>

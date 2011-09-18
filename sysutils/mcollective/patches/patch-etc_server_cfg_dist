@@ -6,7 +6,7 @@ $OpenBSD$
  main_collective = mcollective
  collectives = mcollective
 -libdir = /usr/libexec/mcollective
-+libdir = /usr/local/share/mcollective/plugins
++libdir = ${TRUEPREFIX}/share/mcollective/plugins
  logfile = /var/log/mcollective.log
  loglevel = info
  daemonize = 1
