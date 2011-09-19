@@ -16,14 +16,14 @@ MOZILLA_CODENAME =	mail
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-1.0beta5
-PKGNAME-enigmail =	enigmail-1.3.1
+PKGNAME-enigmail =	enigmail-1.3.2
 REVISION-main =		1
 REVISION-lightning =	0
 EPOCH-lightning =	0
 
 MASTER_SITES0 =	http://www.mozilla-enigmail.org/download/source/
 DISTFILES +=	${MOZILLA_PROJECT}-${MOZILLA_VERSION}.source.tar.bz2 \
-		enigmail-1.3.1.tar.gz:0
+		enigmail-1.3.2.tar.gz:0
 EXTRACT_CASES =	enigmail-*.tar.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | tar -C comm-${MOZILLA_BRANCH}/mailnews/extensions/ -xf -;;
 
 SO_VERSION =	19.0
