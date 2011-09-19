@@ -11,7 +11,7 @@ HOMEPAGE =		https://github.com/ustuehler/git-cvs
 
 MAINTAINER =		Uwe Stuehler <uwe@openbsd.org>
 
-# OpenBSD
+# ISC
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
@@ -20,6 +20,9 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		http://bsdx.de/openbsd/distfiles/
 
 MODULES =		lang/python
+
+MODPY_ADJ_FILES =	scripts/git-cvs
+
 RUN_DEPENDS =		devel/py-rcsparse>=20090807 \
 			devel/git
 
