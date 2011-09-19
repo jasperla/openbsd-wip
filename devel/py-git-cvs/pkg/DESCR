@@ -1,0 +1,3 @@
+git-cvs is a tool to generate changesets from CVS and incrementally
+import them into Git with stable commit hashes.  It works as a Git
+subcommand.
