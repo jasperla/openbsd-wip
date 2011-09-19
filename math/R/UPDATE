@@ -2,7 +2,15 @@ long overdue update prompted by email from Marty Toews who will
 test the updated version.
 
 by having it depend on texlive (tested 2011) the manuals are converted
-to dvi, pdf. Else the --configure option --enable-prebuilt-html can
-be used for forcing HTML help output. And the build takes too long
-and will need to be patched in a gazillion places because install
-wants to install pdf, dvi files
+to dvi, pdf.
+
+SEPARATE_BUILD=Yes, configure checks if build_dir == src_dir
+
+revision-0:
+1) added textproc/icu4c to LIB_DEPENDS and corresponding
+change to WANTLIB
+2) did pthread related fixes as done in textproc/raptor
+3) for some reason, SHARED_LIBS is giving me problems i.e
+the version 213.1 vs 30.0. Please ignore for now, while we
+actually try to fix the port. When done, we will revisit this
+issue.

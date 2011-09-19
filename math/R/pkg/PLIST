@@ -61,13 +61,6 @@ lib/R/doc/html/resources.html
 lib/R/doc/html/right.jpg
 lib/R/doc/html/up.jpg
 lib/R/doc/manual/
-lib/R/doc/manual/R-FAQ.html
-lib/R/doc/manual/R-admin.html
-lib/R/doc/manual/R-data.html
-lib/R/doc/manual/R-exts.html
-lib/R/doc/manual/R-intro.html
-lib/R/doc/manual/R-ints.html
-lib/R/doc/manual/R-lang.html
 lib/R/etc/
 lib/R/etc/Makeconf
 lib/R/etc/Renviron
