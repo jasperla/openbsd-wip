@@ -2,7 +2,7 @@
 
 COMMENT =		fast, incremental CVS to Git conversion
 
-DISTNAME =		git-cvs-0.0.0
+DISTNAME =		git-cvs-0.0.1
 PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		devel
