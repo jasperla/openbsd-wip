@@ -2,7 +2,7 @@
 
 COMMENT=	lightweight GTK+ clipboard manager
 
-DISTNAME=	parcellite-1.0.2rc4
+DISTNAME=	parcellite-1.0.2rc5
 CATEGORIES=	x11
 
 MAINTAINER=	Lawrence Teo <lteo@devio.us>
@@ -40,5 +40,11 @@ RUN_DEPENDS=	devel/desktop-file-utils
 FAKE_FLAGS=	autostartdir=${PREFIX}/share/examples/parcellite/xdg/autostart/
 
 USE_GMAKE=	yes
+
+# Author accidentally included the parcellite binary and *.o files in the
+# source tarball for 1.0.2rc5, so a clean is needed before build. Author
+# has been notified via their project bug tracker (Bug ID 3411337).
+pre-build:
+	( cd ${WRKBUILD} && ${MAKE_PROGRAM} clean )
 
 .include <bsd.port.mk>

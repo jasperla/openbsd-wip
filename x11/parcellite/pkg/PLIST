@@ -1,7 +1,6 @@
 @comment $OpenBSD$
 @bin bin/parcellite
 @man man/man1/parcellite.1
-share/applications/
 share/applications/parcellite.desktop
 share/examples/parcellite/
 share/examples/parcellite/xdg/
