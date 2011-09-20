@@ -2,8 +2,8 @@ $OpenBSD$
 
 - Adjust path to soundfiles.
 
---- src/daemon/default.pa.in.orig	Thu Jun 23 11:22:37 2011
-+++ src/daemon/default.pa.in	Thu Jun 23 11:25:01 2011
+--- src/daemon/default.pa.in.orig	Thu Jun 23 22:18:54 2011
++++ src/daemon/default.pa.in	Sat Sep 17 12:36:59 2011
 @@ -22,10 +22,10 @@
  .nofail
  

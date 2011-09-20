@@ -1,0 +1,16 @@
+$OpenBSD$
+--- cogl-pango/cogl-pango.pc.in.orig	Tue Sep 20 16:12:59 2011
++++ cogl-pango/cogl-pango.pc.in	Tue Sep 20 16:13:53 2011
+@@ -3,11 +3,10 @@ exec_prefix=@exec_prefix@
+ libdir=@libdir@
+ includedir=@includedir@
+ apiversion=@COGL_API_VERSION@
+-requires=@COGL_PKG_REQUIRES@ @COGL_PANGO_PKG_REQUIRES@
+ 
+ Name: Cogl
+ Description: An pango integration library for Cogl
+ Version: @COGL_VERSION@
+ Libs: -L${libdir} -lcogl-pango
+ Cflags: -I${includedir}/cogl -DCOGL_ENABLE_EXPERIMENTAL_2_0_API
+-Requires: ${requires}
++Requires: @COGL_PKG_REQUIRES@ @COGL_PANGO_PKG_REQUIRES@

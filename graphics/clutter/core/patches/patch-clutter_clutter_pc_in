@@ -1,0 +1,17 @@
+$OpenBSD$
+--- clutter/clutter.pc.in.orig	Tue Sep 20 16:23:54 2011
++++ clutter/clutter.pc.in	Tue Sep 20 16:24:08 2011
+@@ -7,7 +7,6 @@ apiversion=@CLUTTER_API_VERSION@
+ winsys=@CLUTTER_WINSYS@
+ soname_infix=@CLUTTER_SONAME_INFIX@
+ cogl_driver=@COGL_DRIVER@
+-requires=@CLUTTER_REQUIRES@
+ 
+ # only kept for backward compatibility
+ cogl=@COGL_DRIVER@
+@@ -18,4 +17,4 @@ Description: Clutter Core Library (${winsys}/${cogl_dr
+ Version: @VERSION@
+ Libs: -L${libdir} -lclutter-${soname_infix}-${apiversion}
+ Cflags: -I${includedir}/clutter-${apiversion}
+-Requires: ${requires}
++Requires: @CLUTTER_REQUIRES@

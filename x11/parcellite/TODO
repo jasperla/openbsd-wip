@@ -1,1 +1,3 @@
 Investigate middle-click weirdness (from Landry - http://article.gmane.org/gmane.os.openbsd.ports/50521)
+
+Update to parcellite-1.0.2rc5 (there's only one change - "Fixed the primary deselect and file cut/paste issue." - perhaps that will fix Landry's issue?)

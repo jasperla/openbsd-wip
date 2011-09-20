@@ -13,7 +13,7 @@ MOZILLA_CODENAME =	suite
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-seamonkey-1.0beta5
-PKGNAME-enigmail =	enigmail-seamonkey-1.3.1
+PKGNAME-enigmail =	enigmail-seamonkey-1.3.2
 REVISION-main =		1
 EPOCH-lightning =	0
 REVISION-lightning =	1
@@ -59,11 +59,11 @@ LANGUAGES=	ca \
 		tr
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
-		enigmail-1.3.1.tar.gz
+		enigmail-1.3.2.tar.gz
 EXTRACT_CASES =	enigmail-*.tar.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | tar -C comm-${MOZILLA_BRANCH}/mailnews/extensions/ -xf -;;
 
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} \
-		enigmail-1.3.1.tar.gz:1
+		enigmail-1.3.2.tar.gz:1
 .for language in ${LANGUAGES}
 DISTFILES+=	seamonkey-${MOZILLA_VERSION}.${language}.langpack.xpi:0
 .endfor
