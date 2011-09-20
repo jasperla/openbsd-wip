@@ -3,7 +3,9 @@
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		3.1.91.1
+GNOME_VERSION=		3.0.2.1
+
+EXTRACT_SUFX=		.tar.gz
 
 SHARED_LIBS +=  mutter                    0.0 # 0.0
 

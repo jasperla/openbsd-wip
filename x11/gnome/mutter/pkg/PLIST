@@ -16,7 +16,6 @@ include/mutter/meta/gradient.h
 include/mutter/meta/group.h
 include/mutter/meta/keybindings.h
 include/mutter/meta/main.h
-include/mutter/meta/meta-background-actor.h
 include/mutter/meta/meta-plugin.h
 include/mutter/meta/meta-shadow-factory.h
 include/mutter/meta/meta-window-actor.h
