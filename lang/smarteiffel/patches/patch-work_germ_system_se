@@ -1,0 +1,93 @@
+$OpenBSD$
+--- work/germ/system.se.orig	Tue Jan 11 21:33:51 2011
++++ work/germ/system.se	Mon Jul  4 13:36:25 2011
+@@ -25,9 +25,9 @@
+ -- At last, 'tag' gives the version of install configuration (used only by the
+ -- installer)
+ 
+-bin: ${HOME}/SmartEiffel/bin/
+-sys: ${HOME}/SmartEiffel/sys/
+-short: ${HOME}/SmartEiffel/short/
++bin: ${WRKSRC}/bin/
++sys: ${WRKSRC}/sys/
++short: ${WRKSRC}/short/
+ os: UNIX
+ flavor: generic
+ tag: 3
+@@ -111,58 +111,58 @@ x_int: extract_internals
+ 
+ [boost]
+ c_compiler_type: gcc
+-c_compiler_options: -pipe -O2
++c_compiler_options: -pipe -O2 ${CFLAGS}
+ cpp_compiler_type: g++
+-cpp_compiler_options: -pipe -O2
++cpp_compiler_options: -pipe -O2 ${CXXFLAGS}
+ 
+ [no_check]
+ c_compiler_type: gcc
+-c_compiler_options: -pipe -O1
++c_compiler_options: -pipe -O1 ${CFLAGS}
+ cpp_compiler_type: g++
+-cpp_compiler_options: -pipe -O1
++cpp_compiler_options: -pipe -O1 ${CXXFLAGS}
+ 
+ [require_check]
+ c_compiler_type: gcc
+-c_compiler_options: -pipe
++c_compiler_options: -pipe ${CFLAGS}
+ cpp_compiler_type: g++
+-cpp_compiler_options: -pipe
++cpp_compiler_options: -pipe ${CXXFLAGS}
+ 
+ [ensure_check]
+ c_compiler_type: gcc
+-c_compiler_options: -pipe
++c_compiler_options: -pipe ${CFLAGS}
+ cpp_compiler_type: g++
+-cpp_compiler_options: -pipe
++cpp_compiler_options: -pipe ${CXXFLAGS}
+ 
+ [invariant_check]
+ c_compiler_type: gcc
+-c_compiler_options: -pipe
++c_compiler_options: -pipe ${CFLAGS}
+ cpp_compiler_type: g++
+-cpp_compiler_options: -pipe
++cpp_compiler_options: -pipe ${CXXFLAGS}
+ 
+ [loop_check]
+ c_compiler_type: gcc
+-c_compiler_options: -pipe
++c_compiler_options: -pipe ${CFLAGS}
+ cpp_compiler_type: g++
+-cpp_compiler_options: -pipe
++cpp_compiler_options: -pipe ${CXXFLAGS}
+ 
+ [all_check]
+ c_compiler_type: gcc
+-c_compiler_options: -pipe
++c_compiler_options: -pipe ${CFLAGS}
+ cpp_compiler_type: g++
+-cpp_compiler_options: -pipe
++cpp_compiler_options: -pipe ${CXXFLAGS}
+ 
+ [debug_check]
+ c_compiler_type: gcc
+-c_compiler_options: -pipe -g
++c_compiler_options: -pipe -g ${CFLAGS}
+ cpp_compiler_type: g++
+-cpp_compiler_options: -pipe -g
++cpp_compiler_options: -pipe -g ${CXXFLAGS}
+ smarteiffel_options: -no_strip
+ 
+ [release]
+ c_compiler_type: gcc
+-c_compiler_options: -pipe -O3 -fomit-frame-pointer
++c_compiler_options: -pipe -O3 -fomit-frame-pointer ${CFLAGS}
+ cpp_compiler_type: g++
+-cpp_compiler_options: -pipe -O3 -fomit-frame-pointer
++cpp_compiler_options: -pipe -O3 -fomit-frame-pointer ${CXXFLAGS}
+ smarteiffel_options: -no_split
+ 
+ 

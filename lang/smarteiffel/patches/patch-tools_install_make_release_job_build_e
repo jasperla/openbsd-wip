@@ -1,0 +1,12 @@
+$OpenBSD$
+--- tools/install/make_release_job_build.e.orig	Tue Jan 11 23:20:30 2011
++++ tools/install/make_release_job_build.e	Tue Jan 11 23:20:54 2011
+@@ -122,7 +122,7 @@ feature {}
+ 			else
+ 				gui.set_action("Bootstrapping " + x_c2c + " from the work germ")
+ 				if cc = system_tools.gcc then
+-					cmd := "gcc -pipe -O0 -lm -o " + c2c_path + " " + germ_path
++					cmd := "gcc ${CFLAGS} -pipe -O0 -lm -o " + c2c_path + " " + germ_path
+ 				elseif cc = system_tools.tcc then
+ 					cmd := "tcc -lm -o " + c2c_path + " " + germ_path
+ 				elseif cc = system_tools.lcc_win32 then

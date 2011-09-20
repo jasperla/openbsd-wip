@@ -40,6 +40,7 @@ lib/pkgconfig/mutter-plugins.pc
 @man man/man1/mutter-theme-viewer.1
 @man man/man1/mutter-window-demo.1
 @man man/man1/mutter.1
+share/applications/
 share/applications/mutter.desktop
 share/gnome/wm-properties/
 share/gnome/wm-properties/mutter-wm.desktop
@@ -94,6 +95,8 @@ share/locale/ka/LC_MESSAGES/mutter.mo
 share/locale/kn/LC_MESSAGES/mutter.mo
 share/locale/ko/LC_MESSAGES/mutter.mo
 share/locale/ku/LC_MESSAGES/mutter.mo
+share/locale/la/
+share/locale/la/LC_MESSAGES/
 share/locale/la/LC_MESSAGES/mutter.mo
 share/locale/lt/LC_MESSAGES/mutter.mo
 share/locale/lv/LC_MESSAGES/mutter.mo
