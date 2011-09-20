@@ -1,0 +1,103 @@
+$OpenBSD$
+--- make_release.sh.orig	Tue Jan 11 21:33:55 2011
++++ make_release.sh	Tue Jan 11 23:57:39 2011
+@@ -264,58 +264,58 @@ x_int: extract_internals
+ 
+ [boost]
+ c_compiler_type: gcc
+-c_compiler_options: -pipe -Os
++c_compiler_options: -pipe -Os ${CFLAGS}
+ cpp_compiler_type: g++
+-cpp_compiler_options: -pipe -Os
++cpp_compiler_options: -pipe -Os ${CXXFLAGS}
+ 
+ [no_check]
+ c_compiler_type: gcc
+-c_compiler_options: -pipe -O1
++c_compiler_options: -pipe -O1 ${CFLAGS}
+ cpp_compiler_type: g++
+-cpp_compiler_options: -pipe -O1
++cpp_compiler_options: -pipe -O1 ${CXXFLAGS}
+ 
+ [require_check]
+ c_compiler_type: gcc
+-c_compiler_options: -pipe
++c_compiler_options: -pipe ${CFLAGS}
+ cpp_compiler_type: g++
+-cpp_compiler_options: -pipe
++cpp_compiler_options: -pipe ${CXXFLAGS}
+ 
+ [ensure_check]
+ c_compiler_type: gcc
+-c_compiler_options: -pipe
++c_compiler_options: -pipe ${CFLAGS}
+ cpp_compiler_type: g++
+-cpp_compiler_options: -pipe
++cpp_compiler_options: -pipe ${CXXFLAGS}
+ 
+ [invariant_check]
+ c_compiler_type: gcc
+-c_compiler_options: -pipe
++c_compiler_options: -pipe ${CFLAGS}
+ cpp_compiler_type: g++
+-cpp_compiler_options: -pipe
++cpp_compiler_options: -pipe ${CXXFLAGS}
+ 
+ [loop_check]
+ c_compiler_type: gcc
+-c_compiler_options: -pipe
++c_compiler_options: -pipe ${CFLAGS}
+ cpp_compiler_type: g++
+-cpp_compiler_options: -pipe
++cpp_compiler_options: -pipe ${CXXFLAGS}
+ 
+ [all_check]
+ c_compiler_type: gcc
+-c_compiler_options: -pipe
++c_compiler_options: -pipe ${CFLAGS}
+ cpp_compiler_type: g++
+-cpp_compiler_options: -pipe
++cpp_compiler_options: -pipe ${CXXFLAGS}
+ 
+ [debug_check]
+ c_compiler_type: gcc
+-c_compiler_options: -pipe -g
++c_compiler_options: -pipe -g ${CFLAGS}
+ cpp_compiler_type: g++
+-cpp_compiler_options: -pipe -g
++cpp_compiler_options: -pipe -g ${CXXFLAGS}
+ smarteiffel_options: -no_strip
+ 
+ [release]
+ c_compiler_type: gcc
+-c_compiler_options: -pipe -O3 -fomit-frame-pointer
++c_compiler_options: -pipe -O3 -fomit-frame-pointer ${CFLAGS}
+ cpp_compiler_type: g++
+-cpp_compiler_options: -pipe -O3 -fomit-frame-pointer
++cpp_compiler_options: -pipe -O3 -fomit-frame-pointer ${CXXFLAGS}
+ smarteiffel_options: -no_split
+ EOF
+ 
+@@ -420,7 +420,7 @@ EOF
+ 		echo
+ 	    else
+ 		title "Bootstrapping compile_to_c from the subversion germ"
+-		run gcc -pipe -O0 -lm -o bin/compile_to_c$EXE_SUFFIX work/germ/compile_to_c.c
++		run gcc ${CFLAGS} -pipe -O0 -lm -o bin/compile_to_c$EXE_SUFFIX work/germ/compile_to_c.c
+ 		show_status $?
+ 	    fi
+ 	    rm -f bin/fstat$EXE_SUFFIX
+@@ -432,11 +432,11 @@ EOF
+ 	fi
+     elif [ -f work/germ/compile_to_c.c ]; then
+ 	title "Bootstrapping compile_to_c from the subversion germ"
+-	run gcc -pipe -O0 -lm -o bin/compile_to_c$EXE_SUFFIX work/germ/compile_to_c.c
++	run gcc ${CFLAGS} -pipe -O0 -lm -o bin/compile_to_c$EXE_SUFFIX work/germ/compile_to_c.c
+ 	show_status $?
+     elif [ -f install/germ/compile_to_c.h ]; then
+ 	title "Bootstrapping compile_to_c from the install germ"
+-	run gcc -pipe -O0 -lm -o bin/compile_to_c$EXE_SUFFIX install/germ/compile_to_c*.c
++	run gcc ${CFLAGS} -pipe -O0 -lm -o bin/compile_to_c$EXE_SUFFIX install/germ/compile_to_c*.c
+ 	show_status $?
+     else
+ 	foreground red
