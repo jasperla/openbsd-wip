@@ -1,4 +1,6 @@
 $OpenBSD$
+Bug Fix 681026
+
 --- mozilla/widget/src/xpwidgets/nsBaseWidget.cpp.orig	Fri Aug 12 15:16:46 2011
 +++ mozilla/widget/src/xpwidgets/nsBaseWidget.cpp	Fri Aug 26 15:38:17 2011
 @@ -828,21 +828,33 @@ nsBaseWidget::GetShouldAccelerate()

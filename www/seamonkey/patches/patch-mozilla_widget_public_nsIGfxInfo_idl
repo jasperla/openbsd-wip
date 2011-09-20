@@ -1,12 +1,14 @@
 $OpenBSD$
---- mozilla/widget/public/nsIGfxInfo.idl.orig	Fri Aug 12 15:16:45 2011
-+++ mozilla/widget/public/nsIGfxInfo.idl	Fri Aug 26 15:38:17 2011
+Bug fix 681026
+
+--- mozilla/widget/public/nsIGfxInfo.idl.orig	Sat Sep  3 00:56:23 2011
++++ mozilla/widget/public/nsIGfxInfo.idl	Tue Sep 20 22:22:52 2011
 @@ -131,5 +131,8 @@ interface nsIGfxInfo : nsISupports
     * underlying GL impl that's used to implement WebGL.
     */
    DOMString getWebGLParameter(in DOMString aParam);
 +
 +  // only useful on X11
-+  [notxpcom] void GetData();
++  [noscript, notxpcom] void GetData();
  };
  
