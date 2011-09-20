@@ -1,6 +1,6 @@
 $OpenBSD$
---- clutter/clutter.pc.in.orig	Tue Apr 26 11:07:18 2011
-+++ clutter/clutter.pc.in	Tue Apr 26 11:07:31 2011
+--- clutter/clutter.pc.in.orig	Tue Sep 20 16:23:54 2011
++++ clutter/clutter.pc.in	Tue Sep 20 16:24:08 2011
 @@ -7,7 +7,6 @@ apiversion=@CLUTTER_API_VERSION@
  winsys=@CLUTTER_WINSYS@
  soname_infix=@CLUTTER_SONAME_INFIX@

@@ -16,6 +16,8 @@ MASTER_SITES_CLUTTER?=	${HOMEPAGE}/sources/
 MASTER_SITES+=		http://distfiles.nl/clutter/
 DIST_SUBDIR=		clutter
 
+EXTRACT_SUFX=		.tar.xz
+
 USE_GMAKE?=		Yes
 
 USE_LIBTOOL?=		Yes
@@ -25,5 +27,5 @@ CONFIGURE_STYLE?=	gnu
 CONFIGURE_ARGS+=	--disable-silent-rules
 
 API_VERSION?=		1.0
-MAJOR?=			1.6
+MAJOR?=			1.8
 SUBST_VARS?=		MAJOR API_VERSION

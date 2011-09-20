@@ -2,24 +2,25 @@
 
 COMMENT=		OpenGL-based interactive canvas library
 
-DISTNAME=		clutter-${MAJOR}.16
-SHARED_LIBS +=  clutter-glx-1.0      1.0      # 600.14
+DISTNAME=		clutter-${MAJOR}.0
+SHARED_LIBS+=		clutter-glx-1.0      1.0      # 600.14
 
 MASTER_SITES=		${MASTER_SITES_CLUTTER:=clutter/${MAJOR}/}
 
 MODULES=		devel/gettext
 
 WANTLIB += GL X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes Xi
-WANTLIB += Xrender Xxf86vm atk-1.0 cairo cairo-gobject drm expat
-WANTLIB += fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 json-glib-1.0 m
+WANTLIB += Xrender Xxf86vm atk-1.0 cairo cairo-gobject cogl cogl-pango
+WANTLIB += drm expat fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 ffi json-glib-1.0 m
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread-stubs xcb xcb-render xcb-shm z
+WANTLIB += png pthread-stubs stdc++ xcb xcb-render xcb-shm z
 
 BUILD_DEPENDS=          devel/gobject-introspection
 LIB_DEPENDS+=		devel/atk \
 			devel/json-glib \
 			devel/pango \
+			graphics/cogl \
 			graphics/gdk-pixbuf2
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
