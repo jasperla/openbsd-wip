@@ -1,0 +1,11 @@
+"Eiffel is a pure object-oriented language aimed at the writing of
+software components that are easy to read, maintain, test, extend and
+reuse. Its emphasis on the collaborative aspects of software
+development, as communication and documentation, makes Eiffel a well
+suited language to large and very large projects. At the same time, its
+simplicity and careful choice of features make it ideal for learning
+object-orientation concepts and developing analysis and design skills.
+
+SmartEiffel extends traditional Eiffel care about reliability and good
+software engineering practises with a specific concern about runtime
+performance and tiny memory footprint."

@@ -1,0 +1,28 @@
+eiffeltest
+./compile failed with status 1
+Please look at /usr/obj/ports/smarteiffel-2.3/smarteiffel-2.3-r9377/make_release.log
+[...]
+C compiling using "eiffeltest.make" command file (4 jobs at a time)
+System call "gcc -pipe -Os -O2 -pipe -c -x c eiffeltest.c".
+In file included from eiffeltest.c:17:
+eiffeltest.h:751:24: error: X11/Xlib.h: No such file or directory
+eiffeltest.h:752:25: error: X11/Xutil.h: No such file or directory
+eiffeltest.h:753:25: error: X11/Xatom.h: No such file or directory
+
+
+Generating API docs
+./new_libs failed with status 1
+Please look at /usr/obj/ports/smarteiffel-2.3/smarteiffel-2.3-r9377/make_release.log
+[..]
+./new_libs
+se: Command not found.
+
+./new_libs
+se: Command not found.
+File /usr/obj/ports/smarteiffel-2.3/.serc not found.
+Please check the value of the environment Variable
+SmartEiffel wich must be the absolute path of
+the configuration file.
+
+set path correctly?
+

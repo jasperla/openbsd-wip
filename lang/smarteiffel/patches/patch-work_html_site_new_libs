@@ -1,0 +1,21 @@
+$OpenBSD$
+--- work/html/site/new_libs.orig	Thu Jan 13 19:22:56 2011
++++ work/html/site/new_libs	Thu Jan 13 19:22:59 2011
+@@ -17,7 +17,7 @@ if (! -e $libraries) then
+    $cmd
+ endif
+ cd $libraries
+-se doc -title "'SmartEiffel Library Documentation - svn rev $lib_version'" -home_address ../index.html -css $dir/eiffeldoc.css -js $dir/eiffeldoc.js -verbose -prune tools -prune tutorial -prune Local -wiki_prefix 'http://smarteiffel.loria.fr/wiki/en/index.php/'
++${WRKSRC}/bin/se doc -title "'SmartEiffel Library Documentation - svn rev $lib_version'" -home_address ../index.html -css $dir/eiffeldoc.css -js $dir/eiffeldoc.js -verbose -prune tools -prune tutorial -prune Local -wiki_prefix 'http://smarteiffel.loria.fr/wiki/en/index.php/'
+ if ($status) then
+    echo "se doc crash during library documentation."
+    exit 1
+@@ -30,7 +30,7 @@ if (! -e $tools) then
+    $cmd
+ endif
+ cd $tools
+-se doc -title "'SmartEiffel Tools Documentation - svn rev $tools_version'" -home_address ../index.html -css $dir/eiffeldoc.css -js $dir/eiffeldoc.js -verbose -prune lib -prune tutorial -prune Local -depends -wiki_prefix 'http://smarteiffel.loria.fr/wiki/en/index.php/'
++${WRKSRC}/bin/se doc -title "'SmartEiffel Tools Documentation - svn rev $tools_version'" -home_address ../index.html -css $dir/eiffeldoc.css -js $dir/eiffeldoc.js -verbose -prune lib -prune tutorial -prune Local -depends -wiki_prefix 'http://smarteiffel.loria.fr/wiki/en/index.php/'
+ if ($status) then
+    echo "se doc crash during tools documentation."
+    exit 1

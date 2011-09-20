@@ -3,7 +3,9 @@
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		3.0.1
+GNOME_VERSION=		3.0.2.1
+
+EXTRACT_SUFX=		.tar.gz
 
 SHARED_LIBS +=  mutter                    0.0 # 0.0
 
@@ -26,7 +28,8 @@ WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-3 json-glib-1.0
 WANTLIB += ltdl m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs startup-notification-1
-WANTLIB += vorbis vorbisfile xcb xcb-atom xcb-aux xcb-event xcb-render
+WANTLIB += vorbis vorbisfile xcb xcb-aux xcb-render
+WANTLIB += X11-xcb cogl cogl-pango stdc++
 WANTLIB += xcb-shm z
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
@@ -34,9 +37,7 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			devel/startup-notification \
 			graphics/clutter/core>=1.6.14 \
 			x11/gtk+3
-# XXX: Needed to pickup canberra-gtk.h
-BUILD_DEPENDS=		audio/libcanberra,-gtk2 \
-			${RUN_DEPENDS}
+BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		x11/gnome/zenity
 
 DESKTOP_FILES=		Yes
@@ -44,6 +45,7 @@ MODGCONF2_SCHEMAS_DIR=	mutter
 
 LIBTOOL_FLAGS+= 	--tag=disable-static
 
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
