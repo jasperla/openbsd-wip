@@ -1,0 +1,1197 @@
+? clutter.diff
+Index: Makefile.inc
+===================================================================
+RCS file: /cvs/ports/graphics/clutter/Makefile.inc,v
+retrieving revision 1.7
+diff -p -u -r1.7 Makefile.inc
+--- Makefile.inc	7 Apr 2011 12:15:44 -0000	1.7
++++ Makefile.inc	4 Jul 2011 12:37:37 -0000
+@@ -22,8 +22,8 @@ USE_LIBTOOL?=		Yes
+ LIBTOOL_FLAGS?=		--tag=disable-static
+ 
+ CONFIGURE_STYLE?=	gnu
+-CONFIGURE_ARGS+=	--disable-shave
++CONFIGURE_ARGS+=	--disable-silent-rules
+ 
+-API_VERSION?=		0.10
+-MAJOR?=			1.0
++API_VERSION?=		1.0
++MAJOR?=			1.6
+ SUBST_VARS?=		MAJOR API_VERSION
+Index: clutter-box2d/Makefile
+===================================================================
+RCS file: /cvs/ports/graphics/clutter/clutter-box2d/Makefile,v
+retrieving revision 1.8
+diff -p -u -r1.8 Makefile
+--- clutter-box2d/Makefile	7 Apr 2011 07:50:22 -0000	1.8
++++ clutter-box2d/Makefile	4 Jul 2011 12:37:37 -0000
+@@ -2,20 +2,20 @@
+ 
+ COMMENT=		clutter Box2D integration library
+ 
+-DISTNAME=		clutter-box2d-${API_VERSION}.0
++DISTNAME=		clutter-box2d-0.10.0
+ REVISION=		2
+ SHARED_LIBS +=  clutter-box2d-0.10    0.0      # .1000.0
+ 
+-MASTER_SITES=		${MASTER_SITES_CLUTTER:=clutter-box2d/${MAJOR}/}
++MASTER_SITES=		${MASTER_SITES_CLUTTER:=clutter-box2d/0.10/}
+ 
+ MODULES=		devel/gettext
+ 
+-WANTLIB += GL X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes Xxf86vm drm
+-WANTLIB += Xrender cairo expat fontconfig freetype gdk_pixbuf-2.0
+-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+-WANTLIB += json-glib-1.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+-WANTLIB += pcre pixman-1 png pthread-stubs xcb z clutter-glx-1.0
+-WANTLIB += stdc++ xcb-render xcb-render-util
++WANTLIB += GL X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes Xi
++WANTLIB += Xrender Xxf86vm atk-1.0 cairo cairo-gobject clutter-glx-1.0
++WANTLIB += drm expat fontconfig freetype gdk_pixbuf-2.0 gio-2.0
++WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 json-glib-1.0
++WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
++WANTLIB += png pthread-stubs stdc++ xcb xcb-render xcb-shm z
+ 
+ BUILD_DEPENDS=		devel/gobject-introspection
+ LIB_DEPENDS=		graphics/clutter/core
+Index: clutter-box2d/pkg/PLIST
+===================================================================
+RCS file: /cvs/ports/graphics/clutter/clutter-box2d/pkg/PLIST,v
+retrieving revision 1.3
+diff -p -u -r1.3 PLIST
+--- clutter-box2d/pkg/PLIST	27 Sep 2010 15:11:08 -0000	1.3
++++ clutter-box2d/pkg/PLIST	4 Jul 2011 12:37:37 -0000
+@@ -1,15 +1,14 @@
+ @comment $OpenBSD: PLIST,v 1.3 2010/09/27 15:11:08 jasper Exp $
+-include/clutter-${MAJOR}/
+-include/clutter-${MAJOR}/clutter-box2d/
+-include/clutter-${MAJOR}/clutter-box2d/clutter-box2d-collision.h
+-include/clutter-${MAJOR}/clutter-box2d/clutter-box2d-contact.h
+-include/clutter-${MAJOR}/clutter-box2d/clutter-box2d-joint.h
+-include/clutter-${MAJOR}/clutter-box2d/clutter-box2d-marshal.h
+-include/clutter-${MAJOR}/clutter-box2d/clutter-box2d-util.h
+-include/clutter-${MAJOR}/clutter-box2d/clutter-box2d.h
+-lib/libclutter-box2d-${API_VERSION}.la
+-@lib lib/libclutter-box2d-${API_VERSION}.so.${LIBclutter-box2d-0.10_VERSION}
+-lib/pkgconfig/clutter-box2d-${API_VERSION}.pc
++include/clutter-${API_VERSION}/clutter-box2d/
++include/clutter-${API_VERSION}/clutter-box2d/clutter-box2d-collision.h
++include/clutter-${API_VERSION}/clutter-box2d/clutter-box2d-contact.h
++include/clutter-${API_VERSION}/clutter-box2d/clutter-box2d-joint.h
++include/clutter-${API_VERSION}/clutter-box2d/clutter-box2d-marshal.h
++include/clutter-${API_VERSION}/clutter-box2d/clutter-box2d-util.h
++include/clutter-${API_VERSION}/clutter-box2d/clutter-box2d.h
++lib/libclutter-box2d-0.10.la
++@lib lib/libclutter-box2d-0.10.so.${LIBclutter-box2d-0.10_VERSION}
++lib/pkgconfig/clutter-box2d-0.10.pc
+ share/gtk-doc/html/clutter-box2d/
+ share/gtk-doc/html/clutter-box2d/ClutterBox2D.html
+ share/gtk-doc/html/clutter-box2d/ch01.html
+Index: clutter-gst/Makefile
+===================================================================
+RCS file: /cvs/ports/graphics/clutter/clutter-gst/Makefile,v
+retrieving revision 1.8
+diff -p -u -r1.8 Makefile
+--- clutter-gst/Makefile	7 Apr 2011 13:10:58 -0000	1.8
++++ clutter-gst/Makefile	4 Jul 2011 12:37:37 -0000
+@@ -2,25 +2,30 @@
+ 
+ COMMENT=		clutter GStreamer integration library
+ 
+-DISTNAME=		clutter-gst-${API_VERSION}.0
+-REVISION=		1
+-SHARED_LIBS +=  clutter-gst-0.10    0.0      # .1000.0
++DISTNAME=		clutter-gst-1.3.8
++SHARED_LIBS +=  clutter-gst-1.0    0.0      # 308.0
+ 
+-MASTER_SITES=		${MASTER_SITES_CLUTTER:=clutter-gst/${MAJOR}/}
++MASTER_SITES=		${MASTER_SITES_CLUTTER:=clutter-gst/1.3/}
+ 
+ MODULES=		devel/gettext
+ 
+-WANTLIB += GL X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes Xxf86vm drm
+-WANTLIB += Xrender cairo expat fontconfig freetype gdk_pixbuf-2.0
+-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gstbase-0.10
+-WANTLIB += gstreamer-0.10 gthread-2.0 json-glib-1.0 m pango-1.0
+-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
+-WANTLIB += xcb xml2 z clutter-glx-1.0 gstaudio-0.10 gstinterfaces-0.10
+-WANTLIB += gstvideo-0.10
++WANTLIB += GL X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes Xi
++WANTLIB += Xrender Xxf86vm atk-1.0 cairo cairo-gobject clutter-glx-1.0
++WANTLIB += drm expat fontconfig freetype gdk_pixbuf-2.0 gio-2.0
++WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gstaudio-0.10 gstbase-0.10
++WANTLIB += gstinterfaces-0.10 gstreamer-0.10 gstvideo-0.10 gthread-2.0
++WANTLIB += json-glib-1.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
++WANTLIB += pcre pixman-1 png pthread-stubs xcb xcb-render xcb-shm
++WANTLIB += xml2 z
++
++# XXX: the libtool wrapper script is passed as argument to g-ir-scanner,
++# instead of the actual library
++USE_LIBTOOL=		gnu
+ 
+ LIB_DEPENDS=		graphics/clutter/core \
+ 			multimedia/gstreamer-0.10/plugins-base
+ 
+-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
++CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
++			--enable-introspection
+ 
+ .include <bsd.port.mk>
+Index: clutter-gst/distinfo
+===================================================================
+RCS file: /cvs/ports/graphics/clutter/clutter-gst/distinfo,v
+retrieving revision 1.3
+diff -p -u -r1.3 distinfo
+--- clutter-gst/distinfo	10 Oct 2009 23:21:11 -0000	1.3
++++ clutter-gst/distinfo	4 Jul 2011 12:37:37 -0000
+@@ -1,5 +1,5 @@
+-MD5 (clutter/clutter-gst-0.10.0.tar.gz) = iZgvKYgJDkleBtSR9t7omw==
+-RMD160 (clutter/clutter-gst-0.10.0.tar.gz) = BFkbS+A7m1YeYMZxLI/OsrB8ixU=
+-SHA1 (clutter/clutter-gst-0.10.0.tar.gz) = 3C0EC3bokPegEKSWdrtZ7xtSvCM=
+-SHA256 (clutter/clutter-gst-0.10.0.tar.gz) = yAhKq+rDhrDN6Y4I5/9VDgEhErPlKwLyX/axBmVrK+c=
+-SIZE (clutter/clutter-gst-0.10.0.tar.gz) = 490143
++MD5 (clutter/clutter-gst-1.3.8.tar.gz) = yzqXZDFaGr2KjnfJOn50gg==
++RMD160 (clutter/clutter-gst-1.3.8.tar.gz) = M17EqdUnDKrA+DABg0C6pJU3Tns=
++SHA1 (clutter/clutter-gst-1.3.8.tar.gz) = ofb8RD9t2pLBu48M36CVYnTcXak=
++SHA256 (clutter/clutter-gst-1.3.8.tar.gz) = 98nt+5hlIpkVoyjv0SGuUfjU1j1E8QokbFfRLZ6uYv4=
++SIZE (clutter/clutter-gst-1.3.8.tar.gz) = 545613
+Index: clutter-gst/pkg/PLIST
+===================================================================
+RCS file: /cvs/ports/graphics/clutter/clutter-gst/pkg/PLIST,v
+retrieving revision 1.3
+diff -p -u -r1.3 PLIST
+--- clutter-gst/pkg/PLIST	27 Sep 2010 15:11:08 -0000	1.3
++++ clutter-gst/pkg/PLIST	4 Jul 2011 12:37:37 -0000
+@@ -1,17 +1,17 @@
+ @comment $OpenBSD: PLIST,v 1.3 2010/09/27 15:11:08 jasper Exp $
+-include/clutter-${MAJOR}/
+-include/clutter-${MAJOR}/clutter-gst/
+-include/clutter-${MAJOR}/clutter-gst/clutter-gst-audio.h
+-include/clutter-${MAJOR}/clutter-gst/clutter-gst-util.h
+-include/clutter-${MAJOR}/clutter-gst/clutter-gst-version.h
+-include/clutter-${MAJOR}/clutter-gst/clutter-gst-video-sink.h
+-include/clutter-${MAJOR}/clutter-gst/clutter-gst-video-texture.h
+-include/clutter-${MAJOR}/clutter-gst/clutter-gst.h
++include/clutter-${API_VERSION}/clutter-gst/
++include/clutter-${API_VERSION}/clutter-gst/clutter-gst-enum-types.h
++include/clutter-${API_VERSION}/clutter-gst/clutter-gst-util.h
++include/clutter-${API_VERSION}/clutter-gst/clutter-gst-version.h
++include/clutter-${API_VERSION}/clutter-gst/clutter-gst-video-sink.h
++include/clutter-${API_VERSION}/clutter-gst/clutter-gst-video-texture.h
++include/clutter-${API_VERSION}/clutter-gst/clutter-gst.h
++lib/girepository-${API_VERSION}/ClutterGst-${API_VERSION}.typelib
+ lib/libclutter-gst-${API_VERSION}.la
+-@lib lib/libclutter-gst-${API_VERSION}.so.${LIBclutter-gst-0.10_VERSION}
++@lib lib/libclutter-gst-${API_VERSION}.so.${LIBclutter-gst-1.0_VERSION}
+ lib/pkgconfig/clutter-gst-${API_VERSION}.pc
++share/gir-${API_VERSION}/ClutterGst-${API_VERSION}.gir
+ share/gtk-doc/html/clutter-gst/
+-share/gtk-doc/html/clutter-gst/ClutterGstAudio.html
+ share/gtk-doc/html/clutter-gst/ClutterGstVideoSink.html
+ share/gtk-doc/html/clutter-gst/ClutterGstVideoTexture.html
+ share/gtk-doc/html/clutter-gst/ch01.html
+Index: clutter-gtk/Makefile
+===================================================================
+RCS file: /cvs/ports/graphics/clutter/clutter-gtk/Makefile,v
+retrieving revision 1.10
+diff -p -u -r1.10 Makefile
+--- clutter-gtk/Makefile	7 Apr 2011 11:22:04 -0000	1.10
++++ clutter-gtk/Makefile	4 Jul 2011 12:37:37 -0000
+@@ -2,29 +2,28 @@
+ 
+ COMMENT=		GTK+2 widget for clutter
+ 
+-DISTNAME=		clutter-gtk-${API_VERSION}.2
+-REVISION=		4
+-SHARED_LIBS +=  clutter-gtk-0.10      0.0      # .0.0
++DISTNAME=		clutter-gtk-${API_VERSION}.0
++SHARED_LIBS +=  clutter-gtk-1.0      0.0      # .0.0
+ 
+-MASTER_SITES=		${MASTER_SITES_CLUTTER:=clutter-gtk/${MAJOR}/}
++MASTER_SITES=		${MASTER_SITES_CLUTTER:=clutter-gtk/${API_VERSION}/}
+ 
+ MODULES=		devel/gettext
+ 
+-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xxf86vm drm
+-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
+-WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
+-WANTLIB += json-glib-1.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+-WANTLIB += pcre pixman-1 png pthread-stubs xcb z xcb-render xcb-render-util
+-WANTLIB += clutter-glx-1.0
++WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
++WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo cairo-gobject
++WANTLIB += clutter-glx-1.0 drm expat fontconfig freetype gdk-3
++WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
++WANTLIB += gthread-2.0 gtk-3 json-glib-1.0 m pango-1.0 pangocairo-1.0
++WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs xcb xcb-render
++WANTLIB += xcb-shm z
+ 
+ # XXX: the libtool wrapper script is passed as argument to g-ir-scanner,
+ # instead of the actual library
+ USE_LIBTOOL=	gnu
+ 
+ BUILD_DEPENDS=		devel/gobject-introspection
+-LIB_DEPENDS=		graphics/clutter/core>=1.0.6p3 \
+-			x11/gtk+2
++LIB_DEPENDS=		graphics/clutter/core>=1.6.4 \
++			x11/gtk+3
+ 
+ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+ 			--enable-introspection
+Index: clutter-gtk/distinfo
+===================================================================
+RCS file: /cvs/ports/graphics/clutter/clutter-gtk/distinfo,v
+retrieving revision 1.4
+diff -p -u -r1.4 distinfo
+--- clutter-gtk/distinfo	10 Oct 2009 23:20:26 -0000	1.4
++++ clutter-gtk/distinfo	4 Jul 2011 12:37:37 -0000
+@@ -1,5 +1,5 @@
+-MD5 (clutter/clutter-gtk-0.10.2.tar.gz) = EgPb9wkbveDKNgU6ldnRjQ==
+-RMD160 (clutter/clutter-gtk-0.10.2.tar.gz) = 08zZRg8Ag6EtA6pAHVUm91sus8E=
+-SHA1 (clutter/clutter-gtk-0.10.2.tar.gz) = VduVOkBZ7mEfGRUBjaCGLlA28kI=
+-SHA256 (clutter/clutter-gtk-0.10.2.tar.gz) = rOKlmUHrdFStwg3u0Nc+HRBeeHpZiM2RTsK6rdnX6KI=
+-SIZE (clutter/clutter-gtk-0.10.2.tar.gz) = 389054
++MD5 (clutter/clutter-gtk-1.0.0.tar.gz) = HNXlQhpJrAPBdsaRBSNBPA==
++RMD160 (clutter/clutter-gtk-1.0.0.tar.gz) = aP02c3yc/F7uyTg9kmCXVP5ln58=
++SHA1 (clutter/clutter-gtk-1.0.0.tar.gz) = 1W1C4t8uCCrW110gpnFPwTe1Z1I=
++SHA256 (clutter/clutter-gtk-1.0.0.tar.gz) = yO30u+2+MUg+BwNH8MYrAmhiejgHYbgY5gK0Ye3Wsqg=
++SIZE (clutter/clutter-gtk-1.0.0.tar.gz) = 468314
+Index: clutter-gtk/patches/patch-clutter-gtk_Makefile_in
+===================================================================
+RCS file: clutter-gtk/patches/patch-clutter-gtk_Makefile_in
+diff -N clutter-gtk/patches/patch-clutter-gtk_Makefile_in
+--- clutter-gtk/patches/patch-clutter-gtk_Makefile_in	23 Apr 2010 11:04:47 -0000	1.1
++++ /dev/null	1 Jan 1970 00:00:00 -0000
+@@ -1,13 +0,0 @@
+-$OpenBSD: patch-clutter-gtk_Makefile_in,v 1.1 2010/04/23 11:04:47 ajacoutot Exp $
+---- clutter-gtk/Makefile.in.orig	Wed Jul 29 13:26:32 2009
+-+++ clutter-gtk/Makefile.in	Fri Apr 23 13:02:15 2010
+-@@ -257,9 +257,6 @@ INCLUDES = \
+- 	-DLIBDIR=\""$(libdir)"\" 		\
+-         -DCLUTTER_GTK_COMPILATION               \
+-         -DG_DISABLE_DEPRECATED                  \
+--        -DGDK_PIXBUF_DISABLE_DEPRECATED         \
+--        -DGDK_DISABLE_DEPRECATED                \
+--        -DGTK_DISABLE_DEPRECATED                \
+- 	-DCLUTTER_DISABLE_DEPRECATED
+- 
+- AM_CPPFLAGS = \
+Index: clutter-gtk/pkg/PLIST
+===================================================================
+RCS file: /cvs/ports/graphics/clutter/clutter-gtk/pkg/PLIST,v
+retrieving revision 1.4
+diff -p -u -r1.4 PLIST
+--- clutter-gtk/pkg/PLIST	7 Apr 2011 11:22:04 -0000	1.4
++++ clutter-gtk/pkg/PLIST	4 Jul 2011 12:37:37 -0000
+@@ -1,39 +1,42 @@
+ @comment $OpenBSD: PLIST,v 1.4 2011/04/07 11:22:04 jasper Exp $
+-include/clutter-${MAJOR}/clutter-gtk/
+-include/clutter-${MAJOR}/clutter-gtk/clutter-gtk.h
+-include/clutter-${MAJOR}/clutter-gtk/gtk-clutter-embed.h
+-include/clutter-${MAJOR}/clutter-gtk/gtk-clutter-scrollable.h
+-include/clutter-${MAJOR}/clutter-gtk/gtk-clutter-util.h
+-include/clutter-${MAJOR}/clutter-gtk/gtk-clutter-viewport.h
+-include/clutter-${MAJOR}/clutter-gtk/gtk-clutter-zoomable.h
+-lib/girepository-${MAJOR}/GtkClutter-${API_VERSION}.typelib
++include/clutter-gtk-${API_VERSION}/
++include/clutter-gtk-${API_VERSION}/clutter-gtk/
++include/clutter-gtk-${API_VERSION}/clutter-gtk/clutter-gtk.h
++include/clutter-gtk-${API_VERSION}/clutter-gtk/gtk-clutter-actor.h
++include/clutter-gtk-${API_VERSION}/clutter-gtk/gtk-clutter-embed.h
++include/clutter-gtk-${API_VERSION}/clutter-gtk/gtk-clutter-texture.h
++include/clutter-gtk-${API_VERSION}/clutter-gtk/gtk-clutter-util.h
++include/clutter-gtk-${API_VERSION}/clutter-gtk/gtk-clutter-version.h
++include/clutter-gtk-${API_VERSION}/clutter-gtk/gtk-clutter-window.h
++lib/girepository-${API_VERSION}/GtkClutter-${API_VERSION}.typelib
+ lib/libclutter-gtk-${API_VERSION}.la
+-@lib lib/libclutter-gtk-${API_VERSION}.so.${LIBclutter-gtk-0.10_VERSION}
++@lib lib/libclutter-gtk-${API_VERSION}.so.${LIBclutter-gtk-1.0_VERSION}
+ lib/pkgconfig/clutter-gtk-${API_VERSION}.pc
+-share/gir-${MAJOR}/GtkClutter-${API_VERSION}.gir
+-share/gtk-doc/html/clutter-gtk/
+-share/gtk-doc/html/clutter-gtk/GtkClutterEmbed.html
+-share/gtk-doc/html/clutter-gtk/GtkClutterScrollable.html
+-share/gtk-doc/html/clutter-gtk/GtkClutterViewport.html
+-share/gtk-doc/html/clutter-gtk/GtkClutterZoomable.html
+-share/gtk-doc/html/clutter-gtk/ch01.html
+-share/gtk-doc/html/clutter-gtk/ch02.html
+-share/gtk-doc/html/clutter-gtk/ch03.html
+-share/gtk-doc/html/clutter-gtk/ch04.html
+-share/gtk-doc/html/clutter-gtk/clutter-gtk-Utility-Functions.html
+-share/gtk-doc/html/clutter-gtk/clutter-gtk.devhelp
+-share/gtk-doc/html/clutter-gtk/clutter-gtk.devhelp2
+-share/gtk-doc/html/clutter-gtk/home.png
+-share/gtk-doc/html/clutter-gtk/index.html
+-share/gtk-doc/html/clutter-gtk/index.sgml
+-share/gtk-doc/html/clutter-gtk/ix01.html
+-share/gtk-doc/html/clutter-gtk/ix02.html
+-share/gtk-doc/html/clutter-gtk/ix03.html
+-share/gtk-doc/html/clutter-gtk/ix04.html
+-share/gtk-doc/html/clutter-gtk/ix05.html
+-share/gtk-doc/html/clutter-gtk/ix06.html
+-share/gtk-doc/html/clutter-gtk/left.png
+-share/gtk-doc/html/clutter-gtk/license.html
+-share/gtk-doc/html/clutter-gtk/right.png
+-share/gtk-doc/html/clutter-gtk/style.css
+-share/gtk-doc/html/clutter-gtk/up.png
++share/gir-${API_VERSION}/GtkClutter-${API_VERSION}.gir
++share/gtk-doc/html/clutter-gtk-${API_VERSION}/
++share/gtk-doc/html/clutter-gtk-${API_VERSION}/GtkClutterActor.html
++share/gtk-doc/html/clutter-gtk-${API_VERSION}/GtkClutterEmbed.html
++share/gtk-doc/html/clutter-gtk-${API_VERSION}/GtkClutterWindow.html
++share/gtk-doc/html/clutter-gtk-${API_VERSION}/annotation-glossary.html
++share/gtk-doc/html/clutter-gtk-${API_VERSION}/ch01.html
++share/gtk-doc/html/clutter-gtk-${API_VERSION}/ch02.html
++share/gtk-doc/html/clutter-gtk-${API_VERSION}/ch03.html
++share/gtk-doc/html/clutter-gtk-${API_VERSION}/clutter-gtk-${API_VERSION}-Utility-Functions.html
++share/gtk-doc/html/clutter-gtk-${API_VERSION}/clutter-gtk-${API_VERSION}.devhelp
++share/gtk-doc/html/clutter-gtk-${API_VERSION}/clutter-gtk-${API_VERSION}.devhelp2
++share/gtk-doc/html/clutter-gtk-${API_VERSION}/cluttergtk-glossary.html
++share/gtk-doc/html/clutter-gtk-${API_VERSION}/cluttergtk-object-hierarchy.html
++share/gtk-doc/html/clutter-gtk-${API_VERSION}/cluttergtk-object-index.html
++share/gtk-doc/html/clutter-gtk-${API_VERSION}/cluttergtk-objects.html
++share/gtk-doc/html/clutter-gtk-${API_VERSION}/home.png
++share/gtk-doc/html/clutter-gtk-${API_VERSION}/index.html
++share/gtk-doc/html/clutter-gtk-${API_VERSION}/index.sgml
++share/gtk-doc/html/clutter-gtk-${API_VERSION}/ix01.html
++share/gtk-doc/html/clutter-gtk-${API_VERSION}/ix02.html
++share/gtk-doc/html/clutter-gtk-${API_VERSION}/ix03.html
++share/gtk-doc/html/clutter-gtk-${API_VERSION}/ix04.html
++share/gtk-doc/html/clutter-gtk-${API_VERSION}/left.png
++share/gtk-doc/html/clutter-gtk-${API_VERSION}/license.html
++share/gtk-doc/html/clutter-gtk-${API_VERSION}/right.png
++share/gtk-doc/html/clutter-gtk-${API_VERSION}/style.css
++share/gtk-doc/html/clutter-gtk-${API_VERSION}/up.png
+Index: core/Makefile
+===================================================================
+RCS file: /cvs/ports/graphics/clutter/core/Makefile,v
+retrieving revision 1.10
+diff -p -u -r1.10 Makefile
+--- core/Makefile	7 Apr 2011 11:38:42 -0000	1.10
++++ core/Makefile	4 Jul 2011 12:37:37 -0000
+@@ -2,30 +2,28 @@
+ 
+ COMMENT=		OpenGL-based interactive canvas library
+ 
+-DISTNAME=		clutter-${MAJOR}.6
+-REVISION=		4
+-SHARED_LIBS +=  clutter-glx-1.0      0.0      # .0.6
++DISTNAME=		clutter-${MAJOR}.16
++SHARED_LIBS +=  clutter-glx-1.0      1.0      # 600.14
+ 
+-MASTER_SITES=		${MASTER_SITES_CLUTTER:=clutter/1.0/}
++MASTER_SITES=		${MASTER_SITES_CLUTTER:=clutter/${MAJOR}/}
+ 
+ MODULES=		devel/gettext
+ 
+-WANTLIB += GL X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes
+-WANTLIB += Xrender expat fontconfig freetype gio-2.0 glib-2.0
+-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 m pangoft2-1.0
+-WANTLIB += pcre pixman-1 png xcb-render xcb-render-util
+-WANTLIB += pthread-stubs xcb z Xxf86vm drm json-glib-1.0
+-WANTLIB += gdk_pixbuf-2.0 cairo pango-1.0 pangocairo-1.0
++WANTLIB += GL X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes Xi
++WANTLIB += Xrender Xxf86vm atk-1.0 cairo cairo-gobject drm expat
++WANTLIB += fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0
++WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 json-glib-1.0 m
++WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
++WANTLIB += png pthread-stubs xcb xcb-render xcb-shm z
+ 
+ BUILD_DEPENDS=          devel/gobject-introspection
+-LIB_DEPENDS+=		devel/json-glib \
++LIB_DEPENDS+=		devel/atk \
++			devel/json-glib \
+ 			devel/pango \
+ 			graphics/gdk-pixbuf2
+ 
+ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+ 			--enable-introspection \
+-			--with-json=check \
+-			--enable-manual=no \
+ 			--with-imagebackend=gdk-pixbuf \
+ 			--with-flavour=glx
+ 
+Index: core/distinfo
+===================================================================
+RCS file: /cvs/ports/graphics/clutter/core/distinfo,v
+retrieving revision 1.4
+diff -p -u -r1.4 distinfo
+--- core/distinfo	10 Oct 2009 23:19:25 -0000	1.4
++++ core/distinfo	4 Jul 2011 12:37:37 -0000
+@@ -1,5 +1,5 @@
+-MD5 (clutter/clutter-1.0.6.tar.gz) = hdre3NLHe234Ua5TpTz3kw==
+-RMD160 (clutter/clutter-1.0.6.tar.gz) = TdfaQvVNeYGZLFkNfG6hZOxvQsQ=
+-SHA1 (clutter/clutter-1.0.6.tar.gz) = pNVXvbQ36PmwRBMvdUf/Lwb3BL8=
+-SHA256 (clutter/clutter-1.0.6.tar.gz) = X/ql+ijwptGTADBvoIc0zBP8LcQpOwAUCRwxEB5KkGE=
+-SIZE (clutter/clutter-1.0.6.tar.gz) = 2643455
++MD5 (clutter/clutter-1.6.16.tar.gz) = nZMERwXSKY2OAmH7ntmh3Q==
++RMD160 (clutter/clutter-1.6.16.tar.gz) = 4xUYT4XyU3rJmuYJR3oeZhMNaAs=
++SHA1 (clutter/clutter-1.6.16.tar.gz) = EAxadVY8M7JPIxfUo3F++4sd70w=
++SHA256 (clutter/clutter-1.6.16.tar.gz) = Km9xDCqcMLD2c6wylkEdDTjkQ4XW/CpK/4P5FWGnp44=
++SIZE (clutter/clutter-1.6.16.tar.gz) = 6447471
+Index: core/patches/patch-clutter_Makefile_in
+===================================================================
+RCS file: core/patches/patch-clutter_Makefile_in
+diff -N core/patches/patch-clutter_Makefile_in
+--- core/patches/patch-clutter_Makefile_in	7 Apr 2011 07:44:46 -0000	1.1
++++ /dev/null	1 Jan 1970 00:00:00 -0000
+@@ -1,24 +0,0 @@
+-$OpenBSD: patch-clutter_Makefile_in,v 1.1 2011/04/07 07:44:46 jasper Exp $
+-
+-We don't use the internal JSONGlib copy.
+-
+---- clutter/Makefile.in.orig	Thu Apr  7 09:35:24 2011
+-+++ clutter/Makefile.in	Thu Apr  7 09:42:06 2011
+-@@ -1433,7 +1433,7 @@ clutter-enum-types.c: clutter-enum-types.h
+- @HAVE_INTROSPECTION_TRUE@		--include=Pango-1.0 \
+- @HAVE_INTROSPECTION_TRUE@		--include=PangoCairo-1.0 \
+- @HAVE_INTROSPECTION_TRUE@		--include=Cogl-@CLUTTER_API_VERSION@ \
+--@HAVE_INTROSPECTION_TRUE@	        --include=ClutterJson-@CLUTTER_API_VERSION@ \
+-+@HAVE_INTROSPECTION_TRUE@	        --include=Json-@CLUTTER_API_VERSION@ \
+- @HAVE_INTROSPECTION_TRUE@		--library=libclutter-@CLUTTER_FLAVOUR@-@CLUTTER_API_VERSION@.la \
+- @HAVE_INTROSPECTION_TRUE@		--libtool="$(top_builddir)/libtool" \
+- @HAVE_INTROSPECTION_TRUE@	        --pkg gobject-2.0 \
+-@@ -1445,7 +1445,7 @@ clutter-enum-types.c: clutter-enum-types.h
+- 
+- # ClutterJson.gir and Cogl.gir are used included into Clutter.gir, so need
+- # to be built before the typelib is generated
+--@HAVE_INTROSPECTION_TRUE@Clutter-@CLUTTER_API_VERSION@.typelib: ClutterJson-@CLUTTER_API_VERSION@.gir Cogl-@CLUTTER_API_VERSION@.gir
+-+@HAVE_INTROSPECTION_TRUE@Clutter-@CLUTTER_API_VERSION@.typelib: Cogl-@CLUTTER_API_VERSION@.gir
+- 
+- # We build Cogl.gir in the cogl/ subdir, but it needs to reference the shared
+- # library that it's built into, so we delay compiling the gir into typelib
+Index: core/patches/patch-clutter_clutter-animation_c
+===================================================================
+RCS file: core/patches/patch-clutter_clutter-animation_c
+diff -N core/patches/patch-clutter_clutter-animation_c
+--- core/patches/patch-clutter_clutter-animation_c	7 Apr 2011 07:44:46 -0000	1.1
++++ /dev/null	1 Jan 1970 00:00:00 -0000
+@@ -1,34 +0,0 @@
+-$OpenBSD: patch-clutter_clutter-animation_c,v 1.1 2011/04/07 07:44:46 jasper Exp $
+-
+-Fix spello, gobject-introspection would choke as it wouldn't be able to
+-find the n_properies symbol.
+-
+---- clutter/clutter-animation.c.orig	Thu Apr  7 09:39:06 2011
+-+++ clutter/clutter-animation.c	Thu Apr  7 09:39:26 2011
+-@@ -1982,7 +1982,7 @@ clutter_actor_animate (ClutterActor *actor,
+-  * @n_properties: number of property names and values
+-  * @properties: (array length=n_properties) (element-type utf8): a vector
+-  *    containing the property names to set
+-- * @values: (array length=n_properies): a vector containing the
+-+ * @values: (array length=n_properties): a vector containing the
+-  *    property values to set
+-  *
+-  * Animates the given list of properties of @actor between the current
+-@@ -2034,7 +2034,7 @@ clutter_actor_animatev (ClutterActor        *actor,
+-  * @n_properties: number of property names and values
+-  * @properties: (array length=n_properties) (element-type utf8): a vector
+-  *    containing the property names to set
+-- * @values: (array length=n_properies): a vector containing the
+-+ * @values: (array length=n_properties): a vector containing the
+-  *    property values to set
+-  *
+-  * Animates the given list of properties of @actor between the current
+-@@ -2089,7 +2089,7 @@ clutter_actor_animate_with_timelinev (ClutterActor    
+-  * @n_properties: number of property names and values
+-  * @properties: (array length=n_properties) (element-type utf8): a vector
+-  *    containing the property names to set
+-- * @values: (array length=n_properies): a vector containing the
+-+ * @values: (array length=n_properties): a vector containing the
+-  *    property values to set
+-  *
+-  * Animates the given list of properties of @actor between the current
+Index: core/patches/patch-clutter_clutter-json_h_in
+===================================================================
+RCS file: core/patches/patch-clutter_clutter-json_h_in
+diff -N core/patches/patch-clutter_clutter-json_h_in
+--- core/patches/patch-clutter_clutter-json_h_in	7 Apr 2011 07:44:46 -0000	1.1
++++ /dev/null	1 Jan 1970 00:00:00 -0000
+@@ -1,16 +0,0 @@
+-$OpenBSD: patch-clutter_clutter-json_h_in,v 1.1 2011/04/07 07:44:46 jasper Exp $
+-
+-Only include one top header, instead of all three.
+-
+---- clutter/clutter-json.h.in.orig	Thu Apr  7 09:36:58 2011
+-+++ clutter/clutter-json.h.in	Thu Apr  7 09:37:10 2011
+-@@ -6,8 +6,6 @@
+-  * without changing the other headers.
+-  */
+- 
+--#include "@JSON_PREFIX@/json-types.h"
+--#include "@JSON_PREFIX@/json-parser.h"
+--#include "@JSON_PREFIX@/json-generator.h"
+-+#include "@JSON_PREFIX@/json-glib.h"
+- 
+- #endif /* __CLUTTER_JSON_H__ */
+Index: core/patches/patch-clutter_clutter-scriptable_h
+===================================================================
+RCS file: core/patches/patch-clutter_clutter-scriptable_h
+diff -N core/patches/patch-clutter_clutter-scriptable_h
+--- core/patches/patch-clutter_clutter-scriptable_h	10 Oct 2009 23:19:25 -0000	1.1
++++ /dev/null	1 Jan 1970 00:00:00 -0000
+@@ -1,12 +0,0 @@
+-$OpenBSD: patch-clutter_clutter-scriptable_h,v 1.1 2009/10/10 23:19:25 landry Exp $
+---- clutter/clutter-scriptable.h.orig	Sat Sep 19 11:46:56 2009
+-+++ clutter/clutter-scriptable.h	Sat Sep 19 11:48:09 2009
+-@@ -31,7 +31,7 @@
+- 
+- #include <glib-object.h>
+- #include <clutter/clutter-script.h>
+--#include <clutter/clutter-json.h>
+-+#include <json-glib/json-glib.h>
+- 
+- G_BEGIN_DECLS
+- 
+Index: core/patches/patch-clutter_clutter_pc_in
+===================================================================
+RCS file: core/patches/patch-clutter_clutter_pc_in
+diff -N core/patches/patch-clutter_clutter_pc_in
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ core/patches/patch-clutter_clutter_pc_in	4 Jul 2011 12:37:37 -0000
+@@ -0,0 +1,17 @@
++$OpenBSD$
++--- clutter/clutter.pc.in.orig	Tue Apr 26 11:07:18 2011
+++++ clutter/clutter.pc.in	Tue Apr 26 11:07:31 2011
++@@ -7,7 +7,6 @@ apiversion=@CLUTTER_API_VERSION@
++ winsys=@CLUTTER_WINSYS@
++ soname_infix=@CLUTTER_SONAME_INFIX@
++ cogl_driver=@COGL_DRIVER@
++-requires=@CLUTTER_REQUIRES@
++ 
++ # only kept for backward compatibility
++ cogl=@COGL_DRIVER@
++@@ -18,4 +17,4 @@ Description: Clutter Core Library (${winsys}/${cogl_dr
++ Version: @VERSION@
++ Libs: -L${libdir} -lclutter-${soname_infix}-${apiversion}
++ Cflags: -I${includedir}/clutter-${apiversion}
++-Requires: ${requires}
+++Requires: @CLUTTER_REQUIRES@
+Index: core/patches/patch-clutter_cogl_cogl_cogl_pc_in
+===================================================================
+RCS file: core/patches/patch-clutter_cogl_cogl_cogl_pc_in
+diff -N core/patches/patch-clutter_cogl_cogl_cogl_pc_in
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ core/patches/patch-clutter_cogl_cogl_cogl_pc_in	4 Jul 2011 12:37:37 -0000
+@@ -0,0 +1,17 @@
++$OpenBSD$
++--- clutter/cogl/cogl/cogl.pc.in.orig	Tue Apr 26 11:08:32 2011
+++++ clutter/cogl/cogl/cogl.pc.in	Tue Apr 26 11:08:50 2011
++@@ -3,7 +3,6 @@ exec_prefix=@exec_prefix@
++ libdir=@libdir@
++ includedir=@includedir@
++ apiversion=@CLUTTER_API_VERSION@
++-requires=@CLUTTER_REQUIRES@
++ backend=@COGL_WINSYS@ #only kept for backward compatability
++ winsys=@COGL_WINSYS@
++ cogl=@COGL_DRIVER@ #only kept for backward compatability
++@@ -14,4 +13,4 @@ Description: Clutter GL abstraction library (${winsys}
++ Version: @VERSION@
++ Libs: -L${libdir} -lclutter-${winsys}-${apiversion}
++ Cflags: -I${includedir}/clutter-${apiversion}
++-Requires: ${requires}
+++Requires: @CLUTTER_REQUIRES@
+Index: core/patches/patch-clutter_cogl_cogl_pc_in
+===================================================================
+RCS file: core/patches/patch-clutter_cogl_cogl_pc_in
+diff -N core/patches/patch-clutter_cogl_cogl_pc_in
+--- core/patches/patch-clutter_cogl_cogl_pc_in	7 Apr 2011 11:38:42 -0000	1.1
++++ /dev/null	1 Jan 1970 00:00:00 -0000
+@@ -1,20 +0,0 @@
+-$OpenBSD: patch-clutter_cogl_cogl_pc_in,v 1.1 2011/04/07 11:38:42 jasper Exp $
+-
+-pkg-config can't deal with a list of requirements as a variable
+-
+---- clutter/cogl/cogl.pc.in.orig	Thu Apr  7 13:34:45 2011
+-+++ clutter/cogl/cogl.pc.in	Thu Apr  7 13:34:56 2011
+-@@ -3,7 +3,6 @@ exec_prefix=@exec_prefix@
+- libdir=@libdir@
+- includedir=@includedir@
+- apiversion=@CLUTTER_API_VERSION@
+--requires=@CLUTTER_REQUIRES@
+- backend=@clutterbackend@
+- cogl=@CLUTTER_COGL@
+- 
+-@@ -12,4 +11,4 @@ Description: Clutter GL abstraction library (${cogl} b
+- Version: @VERSION@
+- Libs: -L${libdir} -lclutter-${backend}-${apiversion}
+- Cflags: -I${includedir}/clutter-${apiversion}
+--Requires: ${requires}
+-+Requires: @CLUTTER_REQUIRES@
+Index: core/patches/patch-clutter_pc_in
+===================================================================
+RCS file: core/patches/patch-clutter_pc_in
+diff -N core/patches/patch-clutter_pc_in
+--- core/patches/patch-clutter_pc_in	10 Oct 2009 23:19:25 -0000	1.2
++++ /dev/null	1 Jan 1970 00:00:00 -0000
+@@ -1,20 +0,0 @@
+-$OpenBSD: patch-clutter_pc_in,v 1.2 2009/10/10 23:19:25 landry Exp $
+-
+-For some reason using ${requires} doesn't work as expected.
+-
+---- clutter.pc.in.orig	Mon Aug 24 15:59:27 2009
+-+++ clutter.pc.in	Sat Sep 19 11:41:30 2009
+-@@ -4,7 +4,6 @@ libdir=@libdir@
+- includedir=@includedir@
+- backend=@clutterbackend@
+- apiversion=@CLUTTER_API_VERSION@
+--requires=@CLUTTER_REQUIRES@
+- cogl=@CLUTTER_COGL@
+- 
+- Name: Clutter
+-@@ -12,4 +11,4 @@ Description: Clutter Core Library (${backend} backend)
+- Version: @VERSION@
+- Libs: -L${libdir} -lclutter-${backend}-${apiversion}
+- Cflags: -I${includedir}/clutter-${apiversion}
+--Requires: ${requires}
+-+Requires: @CLUTTER_REQUIRES@
+Index: core/patches/patch-clutter_x11_clutter-x11_pc_in
+===================================================================
+RCS file: core/patches/patch-clutter_x11_clutter-x11_pc_in
+diff -N core/patches/patch-clutter_x11_clutter-x11_pc_in
+--- core/patches/patch-clutter_x11_clutter-x11_pc_in	10 Oct 2009 23:19:25 -0000	1.2
++++ /dev/null	1 Jan 1970 00:00:00 -0000
+@@ -1,20 +0,0 @@
+-$OpenBSD: patch-clutter_x11_clutter-x11_pc_in,v 1.2 2009/10/10 23:19:25 landry Exp $
+-
+-For some reason using ${requires} doesn't work as expected.
+-
+---- clutter/x11/clutter-x11.pc.in.orig	Sat Jul  4 20:48:24 2009
+-+++ clutter/x11/clutter-x11.pc.in	Sat Sep 19 11:41:30 2009
+-@@ -4,11 +4,10 @@ libdir=@libdir@
+- includedir=@includedir@
+- backend=@clutterbackend@
+- apiversion=@CLUTTER_API_VERSION@
+--requires=@CLUTTER_REQUIRES@
+- 
+- Name: Clutter
+- Description: Clutter Core Library (${backend} backend)
+- Version: @VERSION@
+- Libs: -L${libdir} -lclutter-${backend}-${apiversion}
+- Cflags: -I${includedir}/clutter-${apiversion}
+--Requires: ${requires}
+-\ No newline at end of file
+-+Requires: @CLUTTER_REQUIRES@
+Index: core/patches/patch-configure
+===================================================================
+RCS file: core/patches/patch-configure
+diff -N core/patches/patch-configure
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ core/patches/patch-configure	4 Jul 2011 12:37:37 -0000
+@@ -0,0 +1,20 @@
++$OpenBSD$
++
++- Don't do bash pattern substitutions.
++
++--- configure.orig	Tue Jun 14 15:12:19 2011
+++++ configure	Mon Jul  4 14:31:16 2011
++@@ -14679,11 +14679,11 @@ $as_echo "$as_me: WARNING: unsupported compiler flags:
++ esac
++ 
++ # strip leading spaces
++-MAINTAINER_CFLAGS=${MAINTAINER_CFLAGS#*  }
+++MAINTAINER_CFLAGS=`echo ${MAINTAINER_CFLAGS} | sed 's,^[ \t]*,,g'`
++ 
++ 
++ # strip leading space
++-BACKEND_PC_FILES=${BACKEND_PC_FILES#* }
+++BACKEND_PC_FILES=`echo ${BACKEND_PC_FILES} | sed 's,^[ \t]*,,g'`
++ 
++ CLUTTER_REQUIRES="$CLUTTER_BASE_PC_FILES $IMAGE_PC_FILES $BACKEND_PC_FILES"
++ 
+Index: core/pkg/DESCR
+===================================================================
+RCS file: /cvs/ports/graphics/clutter/core/pkg/DESCR,v
+retrieving revision 1.1.1.1
+diff -p -u -r1.1.1.1 DESCR
+--- core/pkg/DESCR	15 Feb 2009 17:41:13 -0000	1.1.1.1
++++ core/pkg/DESCR	4 Jul 2011 12:37:37 -0000
+@@ -1,7 +1,6 @@
+-Clutter is an open source software library for creating fast, visually
+-rich and animated graphical user interfaces.
++Clutter is an open source software library for creating fast,
++compelling, portable and dynamic graphical user interfaces.
+ 
+-Clutter uses OpenGL (and optionally OpenGL ES for use on Mobile and
+-embedded platforms) for rendering but with an API which hides the
+-underlying GL complexity from the developer. The Clutter API is intended
+-to be easy to use, efficient and flexible.
++Clutter uses OpenGL for rendering (and optionally OpenGL|ES for use on
++mobile and embedded platforms), but wraps an easy to use, efficient,
++flexible API around GL's complexity.
+Index: core/pkg/PLIST
+===================================================================
+RCS file: /cvs/ports/graphics/clutter/core/pkg/PLIST,v
+retrieving revision 1.4
+diff -p -u -r1.4 PLIST
+--- core/pkg/PLIST	7 Apr 2011 07:44:46 -0000	1.4
++++ core/pkg/PLIST	4 Jul 2011 12:37:37 -0000
+@@ -1,96 +1,197 @@
+ @comment $OpenBSD: PLIST,v 1.4 2011/04/07 07:44:46 jasper Exp $
+-include/clutter-${MAJOR}/
+-include/clutter-${MAJOR}/clutter/
+-include/clutter-${MAJOR}/clutter/clutter-actor.h
+-include/clutter-${MAJOR}/clutter/clutter-alpha.h
+-include/clutter-${MAJOR}/clutter/clutter-animatable.h
+-include/clutter-${MAJOR}/clutter/clutter-animation.h
+-include/clutter-${MAJOR}/clutter/clutter-backend.h
+-include/clutter-${MAJOR}/clutter/clutter-behaviour-depth.h
+-include/clutter-${MAJOR}/clutter/clutter-behaviour-ellipse.h
+-include/clutter-${MAJOR}/clutter/clutter-behaviour-opacity.h
+-include/clutter-${MAJOR}/clutter/clutter-behaviour-path.h
+-include/clutter-${MAJOR}/clutter/clutter-behaviour-rotate.h
+-include/clutter-${MAJOR}/clutter/clutter-behaviour-scale.h
+-include/clutter-${MAJOR}/clutter/clutter-behaviour.h
+-include/clutter-${MAJOR}/clutter/clutter-binding-pool.h
+-include/clutter-${MAJOR}/clutter/clutter-cairo-texture.h
+-include/clutter-${MAJOR}/clutter/clutter-child-meta.h
+-include/clutter-${MAJOR}/clutter/clutter-clone.h
+-include/clutter-${MAJOR}/clutter/clutter-color.h
+-include/clutter-${MAJOR}/clutter/clutter-container.h
+-include/clutter-${MAJOR}/clutter/clutter-deprecated.h
+-include/clutter-${MAJOR}/clutter/clutter-enum-types.h
+-include/clutter-${MAJOR}/clutter/clutter-event.h
+-include/clutter-${MAJOR}/clutter/clutter-feature.h
+-include/clutter-${MAJOR}/clutter/clutter-fixed.h
+-include/clutter-${MAJOR}/clutter/clutter-frame-source.h
+-include/clutter-${MAJOR}/clutter/clutter-group.h
+-include/clutter-${MAJOR}/clutter/clutter-interval.h
+-include/clutter-${MAJOR}/clutter/clutter-json.h
+-include/clutter-${MAJOR}/clutter/clutter-keysyms.h
+-include/clutter-${MAJOR}/clutter/clutter-list-model.h
+-include/clutter-${MAJOR}/clutter/clutter-main.h
+-include/clutter-${MAJOR}/clutter/clutter-media.h
+-include/clutter-${MAJOR}/clutter/clutter-model.h
+-include/clutter-${MAJOR}/clutter/clutter-path.h
+-include/clutter-${MAJOR}/clutter/clutter-rectangle.h
+-include/clutter-${MAJOR}/clutter/clutter-score.h
+-include/clutter-${MAJOR}/clutter/clutter-script.h
+-include/clutter-${MAJOR}/clutter/clutter-scriptable.h
+-include/clutter-${MAJOR}/clutter/clutter-shader-types.h
+-include/clutter-${MAJOR}/clutter/clutter-shader.h
+-include/clutter-${MAJOR}/clutter/clutter-stage-manager.h
+-include/clutter-${MAJOR}/clutter/clutter-stage.h
+-include/clutter-${MAJOR}/clutter/clutter-text.h
+-include/clutter-${MAJOR}/clutter/clutter-texture.h
+-include/clutter-${MAJOR}/clutter/clutter-timeline.h
+-include/clutter-${MAJOR}/clutter/clutter-timeout-pool.h
+-include/clutter-${MAJOR}/clutter/clutter-types.h
+-include/clutter-${MAJOR}/clutter/clutter-units.h
+-include/clutter-${MAJOR}/clutter/clutter-util.h
+-include/clutter-${MAJOR}/clutter/clutter-version.h
+-include/clutter-${MAJOR}/clutter/clutter.h
+-include/clutter-${MAJOR}/clutter/glx/
+-include/clutter-${MAJOR}/clutter/glx/clutter-glx-texture-pixmap.h
+-include/clutter-${MAJOR}/clutter/glx/clutter-glx.h
+-include/clutter-${MAJOR}/clutter/x11/
+-include/clutter-${MAJOR}/clutter/x11/clutter-x11-enum-types.h
+-include/clutter-${MAJOR}/clutter/x11/clutter-x11-texture-pixmap.h
+-include/clutter-${MAJOR}/clutter/x11/clutter-x11.h
+-include/clutter-${MAJOR}/cogl/
+-include/clutter-${MAJOR}/cogl/cogl-bitmap.h
+-include/clutter-${MAJOR}/cogl/cogl-color.h
+-include/clutter-${MAJOR}/cogl/cogl-debug.h
+-include/clutter-${MAJOR}/cogl/cogl-defines-gl.h
+-include/clutter-${MAJOR}/cogl/cogl-deprecated.h
+-include/clutter-${MAJOR}/cogl/cogl-enum-types.h
+-include/clutter-${MAJOR}/cogl/cogl-fixed.h
+-include/clutter-${MAJOR}/cogl/cogl-material.h
+-include/clutter-${MAJOR}/cogl/cogl-matrix.h
+-include/clutter-${MAJOR}/cogl/cogl-offscreen.h
+-include/clutter-${MAJOR}/cogl/cogl-pango.h
+-include/clutter-${MAJOR}/cogl/cogl-path.h
+-include/clutter-${MAJOR}/cogl/cogl-shader.h
+-include/clutter-${MAJOR}/cogl/cogl-texture.h
+-include/clutter-${MAJOR}/cogl/cogl-types.h
+-include/clutter-${MAJOR}/cogl/cogl-vertex-buffer.h
+-include/clutter-${MAJOR}/cogl/cogl.h
+-lib/girepository-${MAJOR}/Clutter-${MAJOR}.typelib
+-lib/girepository-${MAJOR}/Cogl-${MAJOR}.typelib
+-lib/libclutter-glx-${MAJOR}.la
+-@lib lib/libclutter-glx-${MAJOR}.so.${LIBclutter-glx-1.0_VERSION}
+-lib/pkgconfig/clutter-${MAJOR}.pc
+-lib/pkgconfig/clutter-glx-${MAJOR}.pc
+-lib/pkgconfig/clutter-x11-${MAJOR}.pc
+-lib/pkgconfig/cogl-${MAJOR}.pc
+-lib/pkgconfig/cogl-gl-${MAJOR}.pc
+-share/gir-${MAJOR}/Clutter-${MAJOR}.gir
+-share/gir-${MAJOR}/Cogl-${MAJOR}.gir
++include/clutter-${API_VERSION}/
++include/clutter-${API_VERSION}/cally/
++include/clutter-${API_VERSION}/cally/cally-actor.h
++include/clutter-${API_VERSION}/cally/cally-clone.h
++include/clutter-${API_VERSION}/cally/cally-factory.h
++include/clutter-${API_VERSION}/cally/cally-group.h
++include/clutter-${API_VERSION}/cally/cally-main.h
++include/clutter-${API_VERSION}/cally/cally-rectangle.h
++include/clutter-${API_VERSION}/cally/cally-root.h
++include/clutter-${API_VERSION}/cally/cally-stage.h
++include/clutter-${API_VERSION}/cally/cally-text.h
++include/clutter-${API_VERSION}/cally/cally-texture.h
++include/clutter-${API_VERSION}/cally/cally-util.h
++include/clutter-${API_VERSION}/cally/cally.h
++include/clutter-${API_VERSION}/clutter/
++include/clutter-${API_VERSION}/clutter/clutter-action.h
++include/clutter-${API_VERSION}/clutter/clutter-actor-meta.h
++include/clutter-${API_VERSION}/clutter/clutter-actor.h
++include/clutter-${API_VERSION}/clutter/clutter-align-constraint.h
++include/clutter-${API_VERSION}/clutter/clutter-alpha.h
++include/clutter-${API_VERSION}/clutter/clutter-animatable.h
++include/clutter-${API_VERSION}/clutter/clutter-animation.h
++include/clutter-${API_VERSION}/clutter/clutter-animator.h
++include/clutter-${API_VERSION}/clutter/clutter-backend.h
++include/clutter-${API_VERSION}/clutter/clutter-behaviour-depth.h
++include/clutter-${API_VERSION}/clutter/clutter-behaviour-ellipse.h
++include/clutter-${API_VERSION}/clutter/clutter-behaviour-opacity.h
++include/clutter-${API_VERSION}/clutter/clutter-behaviour-path.h
++include/clutter-${API_VERSION}/clutter/clutter-behaviour-rotate.h
++include/clutter-${API_VERSION}/clutter/clutter-behaviour-scale.h
++include/clutter-${API_VERSION}/clutter/clutter-behaviour.h
++include/clutter-${API_VERSION}/clutter/clutter-bin-layout.h
++include/clutter-${API_VERSION}/clutter/clutter-bind-constraint.h
++include/clutter-${API_VERSION}/clutter/clutter-binding-pool.h
++include/clutter-${API_VERSION}/clutter/clutter-blur-effect.h
++include/clutter-${API_VERSION}/clutter/clutter-box-layout.h
++include/clutter-${API_VERSION}/clutter/clutter-box.h
++include/clutter-${API_VERSION}/clutter/clutter-cairo-texture.h
++include/clutter-${API_VERSION}/clutter/clutter-child-meta.h
++include/clutter-${API_VERSION}/clutter/clutter-click-action.h
++include/clutter-${API_VERSION}/clutter/clutter-clone.h
++include/clutter-${API_VERSION}/clutter/clutter-color-static.h
++include/clutter-${API_VERSION}/clutter/clutter-color.h
++include/clutter-${API_VERSION}/clutter/clutter-colorize-effect.h
++include/clutter-${API_VERSION}/clutter/clutter-config.h
++include/clutter-${API_VERSION}/clutter/clutter-constraint.h
++include/clutter-${API_VERSION}/clutter/clutter-container.h
++include/clutter-${API_VERSION}/clutter/clutter-deform-effect.h
++include/clutter-${API_VERSION}/clutter/clutter-deprecated.h
++include/clutter-${API_VERSION}/clutter/clutter-desaturate-effect.h
++include/clutter-${API_VERSION}/clutter/clutter-device-manager.h
++include/clutter-${API_VERSION}/clutter/clutter-drag-action.h
++include/clutter-${API_VERSION}/clutter/clutter-effect.h
++include/clutter-${API_VERSION}/clutter/clutter-enum-types.h
++include/clutter-${API_VERSION}/clutter/clutter-event.h
++include/clutter-${API_VERSION}/clutter/clutter-feature.h
++include/clutter-${API_VERSION}/clutter/clutter-fixed-layout.h
++include/clutter-${API_VERSION}/clutter/clutter-fixed.h
++include/clutter-${API_VERSION}/clutter/clutter-flow-layout.h
++include/clutter-${API_VERSION}/clutter/clutter-frame-source.h
++include/clutter-${API_VERSION}/clutter/clutter-group.h
++include/clutter-${API_VERSION}/clutter/clutter-input-device.h
++include/clutter-${API_VERSION}/clutter/clutter-interval.h
++include/clutter-${API_VERSION}/clutter/clutter-keysyms-compat.h
++include/clutter-${API_VERSION}/clutter/clutter-keysyms.h
++include/clutter-${API_VERSION}/clutter/clutter-layout-manager.h
++include/clutter-${API_VERSION}/clutter/clutter-layout-meta.h
++include/clutter-${API_VERSION}/clutter/clutter-list-model.h
++include/clutter-${API_VERSION}/clutter/clutter-main.h
++include/clutter-${API_VERSION}/clutter/clutter-marshal.h
++include/clutter-${API_VERSION}/clutter/clutter-media.h
++include/clutter-${API_VERSION}/clutter/clutter-model.h
++include/clutter-${API_VERSION}/clutter/clutter-offscreen-effect.h
++include/clutter-${API_VERSION}/clutter/clutter-page-turn-effect.h
++include/clutter-${API_VERSION}/clutter/clutter-path-constraint.h
++include/clutter-${API_VERSION}/clutter/clutter-path.h
++include/clutter-${API_VERSION}/clutter/clutter-rectangle.h
++include/clutter-${API_VERSION}/clutter/clutter-score.h
++include/clutter-${API_VERSION}/clutter/clutter-script.h
++include/clutter-${API_VERSION}/clutter/clutter-scriptable.h
++include/clutter-${API_VERSION}/clutter/clutter-settings.h
++include/clutter-${API_VERSION}/clutter/clutter-shader-effect.h
++include/clutter-${API_VERSION}/clutter/clutter-shader-types.h
++include/clutter-${API_VERSION}/clutter/clutter-shader.h
++include/clutter-${API_VERSION}/clutter/clutter-snap-constraint.h
++include/clutter-${API_VERSION}/clutter/clutter-stage-manager.h
++include/clutter-${API_VERSION}/clutter/clutter-stage-window.h
++include/clutter-${API_VERSION}/clutter/clutter-stage.h
++include/clutter-${API_VERSION}/clutter/clutter-state.h
++include/clutter-${API_VERSION}/clutter/clutter-table-layout.h
++include/clutter-${API_VERSION}/clutter/clutter-text.h
++include/clutter-${API_VERSION}/clutter/clutter-texture.h
++include/clutter-${API_VERSION}/clutter/clutter-timeline.h
++include/clutter-${API_VERSION}/clutter/clutter-timeout-pool.h
++include/clutter-${API_VERSION}/clutter/clutter-types.h
++include/clutter-${API_VERSION}/clutter/clutter-units.h
++include/clutter-${API_VERSION}/clutter/clutter-util.h
++include/clutter-${API_VERSION}/clutter/clutter-version.h
++include/clutter-${API_VERSION}/clutter/clutter.h
++include/clutter-${API_VERSION}/clutter/glx/
++include/clutter-${API_VERSION}/clutter/glx/clutter-glx-texture-pixmap.h
++include/clutter-${API_VERSION}/clutter/glx/clutter-glx.h
++include/clutter-${API_VERSION}/clutter/x11/
++include/clutter-${API_VERSION}/clutter/x11/clutter-x11-texture-pixmap.h
++include/clutter-${API_VERSION}/clutter/x11/clutter-x11.h
++include/clutter-${API_VERSION}/cogl/
++include/clutter-${API_VERSION}/cogl/cogl-attribute.h
++include/clutter-${API_VERSION}/cogl/cogl-bitmap.h
++include/clutter-${API_VERSION}/cogl/cogl-buffer.h
++include/clutter-${API_VERSION}/cogl/cogl-color.h
++include/clutter-${API_VERSION}/cogl/cogl-defines.h
++include/clutter-${API_VERSION}/cogl/cogl-deprecated.h
++include/clutter-${API_VERSION}/cogl/cogl-enum-types.h
++include/clutter-${API_VERSION}/cogl/cogl-fixed.h
++include/clutter-${API_VERSION}/cogl/cogl-index-array.h
++include/clutter-${API_VERSION}/cogl/cogl-indices.h
++include/clutter-${API_VERSION}/cogl/cogl-material-compat.h
++include/clutter-${API_VERSION}/cogl/cogl-matrix.h
++include/clutter-${API_VERSION}/cogl/cogl-object.h
++include/clutter-${API_VERSION}/cogl/cogl-offscreen.h
++include/clutter-${API_VERSION}/cogl/cogl-pango.h
++include/clutter-${API_VERSION}/cogl/cogl-path.h
++include/clutter-${API_VERSION}/cogl/cogl-pipeline.h
++include/clutter-${API_VERSION}/cogl/cogl-pixel-array.h
++include/clutter-${API_VERSION}/cogl/cogl-primitive.h
++include/clutter-${API_VERSION}/cogl/cogl-primitives.h
++include/clutter-${API_VERSION}/cogl/cogl-shader.h
++include/clutter-${API_VERSION}/cogl/cogl-texture-3d.h
++include/clutter-${API_VERSION}/cogl/cogl-texture-pixmap-x11.h
++include/clutter-${API_VERSION}/cogl/cogl-texture.h
++include/clutter-${API_VERSION}/cogl/cogl-types.h
++include/clutter-${API_VERSION}/cogl/cogl-vector.h
++include/clutter-${API_VERSION}/cogl/cogl-vertex-array.h
++include/clutter-${API_VERSION}/cogl/cogl-vertex-buffer.h
++include/clutter-${API_VERSION}/cogl/cogl.h
++include/clutter-${API_VERSION}/cogl/cogl2-path.h
++lib/girepository-${API_VERSION}/Cally-${API_VERSION}.typelib
++lib/girepository-${API_VERSION}/Clutter-${API_VERSION}.typelib
++lib/girepository-${API_VERSION}/ClutterX11-${API_VERSION}.typelib
++lib/girepository-${API_VERSION}/Cogl-${API_VERSION}.typelib
++lib/libclutter-glx-${API_VERSION}.la
++@lib lib/libclutter-glx-${API_VERSION}.so.${LIBclutter-glx-1.0_VERSION}
++lib/pkgconfig/cally-${API_VERSION}.pc
++lib/pkgconfig/clutter-${API_VERSION}.pc
++lib/pkgconfig/clutter-glx-${API_VERSION}.pc
++lib/pkgconfig/clutter-x11-${API_VERSION}.pc
++lib/pkgconfig/cogl-${API_VERSION}.pc
++lib/pkgconfig/cogl-gl-${API_VERSION}.pc
++share/gir-${API_VERSION}/Cally-${API_VERSION}.gir
++share/gir-${API_VERSION}/Clutter-${API_VERSION}.gir
++share/gir-${API_VERSION}/ClutterX11-${API_VERSION}.gir
++share/gir-${API_VERSION}/Cogl-${API_VERSION}.gir
++share/gtk-doc/html/cally/
++share/gtk-doc/html/cally/CallyActor.html
++share/gtk-doc/html/cally/CallyClone.html
++share/gtk-doc/html/cally/CallyGroup.html
++share/gtk-doc/html/cally/CallyRectangle.html
++share/gtk-doc/html/cally/CallyRoot.html
++share/gtk-doc/html/cally/CallyStage.html
++share/gtk-doc/html/cally/CallyText.html
++share/gtk-doc/html/cally/CallyTexture.html
++share/gtk-doc/html/cally/CallyUtil.html
++share/gtk-doc/html/cally/cally-General-API.html
++share/gtk-doc/html/cally/cally.devhelp
++share/gtk-doc/html/cally/cally.devhelp2
++share/gtk-doc/html/cally/callybase.html
++share/gtk-doc/html/cally/callyobjecthierarchy.html
++share/gtk-doc/html/cally/callyobjectindex.html
++share/gtk-doc/html/cally/callyobjects.html
++share/gtk-doc/html/cally/ch01.html
++share/gtk-doc/html/cally/ch02.html
++share/gtk-doc/html/cally/clutter-overview.html
++share/gtk-doc/html/cally/home.png
++share/gtk-doc/html/cally/index.html
++share/gtk-doc/html/cally/index.sgml
++share/gtk-doc/html/cally/ix01.html
++share/gtk-doc/html/cally/ix02.html
++share/gtk-doc/html/cally/ix03.html
++share/gtk-doc/html/cally/ix04.html
++share/gtk-doc/html/cally/left.png
++share/gtk-doc/html/cally/license.html
++share/gtk-doc/html/cally/right.png
++share/gtk-doc/html/cally/style.css
++share/gtk-doc/html/cally/up.png
+ share/gtk-doc/html/clutter/
++share/gtk-doc/html/clutter/ClutterAction.html
+ share/gtk-doc/html/clutter/ClutterActor.html
++share/gtk-doc/html/clutter/ClutterActorMeta.html
++share/gtk-doc/html/clutter/ClutterAlignConstraint.html
+ share/gtk-doc/html/clutter/ClutterAlpha.html
+ share/gtk-doc/html/clutter/ClutterAnimatable.html
++share/gtk-doc/html/clutter/ClutterAnimator.html
++share/gtk-doc/html/clutter/ClutterBackend.html
+ share/gtk-doc/html/clutter/ClutterBehaviour.html
+ share/gtk-doc/html/clutter/ClutterBehaviourDepth.html
+ share/gtk-doc/html/clutter/ClutterBehaviourEllipse.html
+@@ -98,28 +199,56 @@ share/gtk-doc/html/clutter/ClutterBehavi
+ share/gtk-doc/html/clutter/ClutterBehaviourPath.html
+ share/gtk-doc/html/clutter/ClutterBehaviourRotate.html
+ share/gtk-doc/html/clutter/ClutterBehaviourScale.html
++share/gtk-doc/html/clutter/ClutterBinLayout.html
++share/gtk-doc/html/clutter/ClutterBindConstraint.html
++share/gtk-doc/html/clutter/ClutterBlurEffect.html
++share/gtk-doc/html/clutter/ClutterBox.html
++share/gtk-doc/html/clutter/ClutterBoxLayout.html
+ share/gtk-doc/html/clutter/ClutterCairoTexture.html
+ share/gtk-doc/html/clutter/ClutterChildMeta.html
++share/gtk-doc/html/clutter/ClutterClickAction.html
+ share/gtk-doc/html/clutter/ClutterClone.html
++share/gtk-doc/html/clutter/ClutterColorizeEffect.html
++share/gtk-doc/html/clutter/ClutterConstraint.html
+ share/gtk-doc/html/clutter/ClutterContainer.html
++share/gtk-doc/html/clutter/ClutterDeformEffect.html
++share/gtk-doc/html/clutter/ClutterDesaturateEffect.html
++share/gtk-doc/html/clutter/ClutterDeviceManager.html
++share/gtk-doc/html/clutter/ClutterDragAction.html
++share/gtk-doc/html/clutter/ClutterEffect.html
++share/gtk-doc/html/clutter/ClutterFixedLayout.html
++share/gtk-doc/html/clutter/ClutterFlowLayout.html
+ share/gtk-doc/html/clutter/ClutterGroup.html
++share/gtk-doc/html/clutter/ClutterInputDevice.html
++share/gtk-doc/html/clutter/ClutterLayoutManager.html
++share/gtk-doc/html/clutter/ClutterLayoutMeta.html
+ share/gtk-doc/html/clutter/ClutterListModel.html
+ share/gtk-doc/html/clutter/ClutterMedia.html
+ share/gtk-doc/html/clutter/ClutterModel.html
+ share/gtk-doc/html/clutter/ClutterModelIter.html
++share/gtk-doc/html/clutter/ClutterOffscreenEffect.html
++share/gtk-doc/html/clutter/ClutterPageTurnEffect.html
+ share/gtk-doc/html/clutter/ClutterPath.html
++share/gtk-doc/html/clutter/ClutterPathConstraint.html
+ share/gtk-doc/html/clutter/ClutterRectangle.html
+ share/gtk-doc/html/clutter/ClutterScore.html
+ share/gtk-doc/html/clutter/ClutterScript.html
+ share/gtk-doc/html/clutter/ClutterScriptable.html
+-share/gtk-doc/html/clutter/ClutterShader.html
++share/gtk-doc/html/clutter/ClutterSettings.html
++share/gtk-doc/html/clutter/ClutterShaderEffect.html
++share/gtk-doc/html/clutter/ClutterSnapConstraint.html
+ share/gtk-doc/html/clutter/ClutterStage.html
++share/gtk-doc/html/clutter/ClutterState.html
++share/gtk-doc/html/clutter/ClutterTableLayout.html
+ share/gtk-doc/html/clutter/ClutterText.html
+ share/gtk-doc/html/clutter/ClutterTexture.html
+ share/gtk-doc/html/clutter/ClutterTimeline.html
+ share/gtk-doc/html/clutter/actor-box.png
+ share/gtk-doc/html/clutter/additionaldocs.html
++share/gtk-doc/html/clutter/animator-key-frames.png
+ share/gtk-doc/html/clutter/annotation-glossary.html
++share/gtk-doc/html/clutter/bin-layout.png
++share/gtk-doc/html/clutter/box-layout.png
+ share/gtk-doc/html/clutter/building-clutter.html
+ share/gtk-doc/html/clutter/ch01.html
+ share/gtk-doc/html/clutter/ch02.html
+@@ -130,19 +259,27 @@ share/gtk-doc/html/clutter/ch06.html
+ share/gtk-doc/html/clutter/ch07.html
+ share/gtk-doc/html/clutter/ch08.html
+ share/gtk-doc/html/clutter/ch09.html
+-share/gtk-doc/html/clutter/clutter-ClutterBackend.html
++share/gtk-doc/html/clutter/ch10.html
++share/gtk-doc/html/clutter/ch11.html
++share/gtk-doc/html/clutter/ch12.html
++share/gtk-doc/html/clutter/ch13.html
++share/gtk-doc/html/clutter/clutter-ClutterX11TexturePixmap.html
+ share/gtk-doc/html/clutter/clutter-Colors.html
+ share/gtk-doc/html/clutter/clutter-EGL-Specific-Support.html
+-share/gtk-doc/html/clutter/clutter-EGLX-Specific-Support.html
+ share/gtk-doc/html/clutter/clutter-Events.html
++share/gtk-doc/html/clutter/clutter-Features.html
+ share/gtk-doc/html/clutter/clutter-GLX-Specific-Support.html
+ share/gtk-doc/html/clutter/clutter-General.html
+ share/gtk-doc/html/clutter/clutter-Implicit-Animations.html
++share/gtk-doc/html/clutter/clutter-Intel-CE3100-CE4100-Specific-Support.html
+ share/gtk-doc/html/clutter/clutter-Key-Bindings.html
++share/gtk-doc/html/clutter/clutter-Shaders.html
++share/gtk-doc/html/clutter/clutter-Stage-Manager.html
+ share/gtk-doc/html/clutter/clutter-Unit-conversion.html
+ share/gtk-doc/html/clutter/clutter-Utilities.html
+ share/gtk-doc/html/clutter/clutter-Value-intervals.html
+ share/gtk-doc/html/clutter/clutter-Versioning-Macros.html
++share/gtk-doc/html/clutter/clutter-Wayland-Specific-Support.html
+ share/gtk-doc/html/clutter/clutter-Win32-Specific-Support.html
+ share/gtk-doc/html/clutter/clutter-X11-Specific-Support.html
+ share/gtk-doc/html/clutter/clutter-animation-behaviours.html
+@@ -162,9 +299,12 @@ share/gtk-doc/html/clutter/clutterobject
+ share/gtk-doc/html/clutter/clutterobjectindex.html
+ share/gtk-doc/html/clutter/clutterobjects.html
+ share/gtk-doc/html/clutter/cluttertools.html
++share/gtk-doc/html/clutter/constraints-example.png
+ share/gtk-doc/html/clutter/creating-your-own-behaviours.html
+ share/gtk-doc/html/clutter/easing-modes.png
+ share/gtk-doc/html/clutter/event-flow.png
++share/gtk-doc/html/clutter/flow-layout-horizontal.png
++share/gtk-doc/html/clutter/flow-layout-vertical.png
+ share/gtk-doc/html/clutter/go01.html
+ share/gtk-doc/html/clutter/home.png
+ share/gtk-doc/html/clutter/index.html
+@@ -177,8 +317,12 @@ share/gtk-doc/html/clutter/ix04.html
+ share/gtk-doc/html/clutter/ix05.html
+ share/gtk-doc/html/clutter/ix06.html
+ share/gtk-doc/html/clutter/ix07.html
++share/gtk-doc/html/clutter/ix08.html
++share/gtk-doc/html/clutter/ix09.html
++share/gtk-doc/html/clutter/ix10.html
+ share/gtk-doc/html/clutter/left.png
+ share/gtk-doc/html/clutter/license.html
++share/gtk-doc/html/clutter/migrating-ClutterBehaviour.html
+ share/gtk-doc/html/clutter/migrating-ClutterEffect.html
+ share/gtk-doc/html/clutter/migrating-ClutterPath.html
+ share/gtk-doc/html/clutter/migration.html
+@@ -191,25 +335,67 @@ share/gtk-doc/html/clutter/up.png
+ share/gtk-doc/html/clutter/using-cairo.html
+ share/gtk-doc/html/cogl/
+ share/gtk-doc/html/cogl/ch01.html
++share/gtk-doc/html/cogl/ch02.html
++share/gtk-doc/html/cogl/ch03.html
++share/gtk-doc/html/cogl/cogl-3D-textures.html
++share/gtk-doc/html/cogl/cogl-Bitmaps.html
+ share/gtk-doc/html/cogl/cogl-Blend-Strings.html
++share/gtk-doc/html/cogl/cogl-Buffers.html
++share/gtk-doc/html/cogl/cogl-Clipping-(Deprecated).html
++share/gtk-doc/html/cogl/cogl-Clipping.html
+ share/gtk-doc/html/cogl/cogl-Color-Type.html
+ share/gtk-doc/html/cogl/cogl-Fixed-Point-API.html
++share/gtk-doc/html/cogl/cogl-GType-Integration-API.html
++share/gtk-doc/html/cogl/cogl-General-API-(Deprecated).html
+ share/gtk-doc/html/cogl/cogl-General-API.html
++share/gtk-doc/html/cogl/cogl-Materials-(Deprecated).html
+ share/gtk-doc/html/cogl/cogl-Materials.html
+ share/gtk-doc/html/cogl/cogl-Matrices.html
++share/gtk-doc/html/cogl/cogl-Offscreen-Buffers-(Deprecated).html
+ share/gtk-doc/html/cogl/cogl-Offscreen-Buffers.html
++share/gtk-doc/html/cogl/cogl-Path-Primitives.html
+ share/gtk-doc/html/cogl/cogl-Primitives.html
++share/gtk-doc/html/cogl/cogl-Shaders-and-Programmable-Pipeline-(Deprecated).html
+ share/gtk-doc/html/cogl/cogl-Shaders-and-Programmable-Pipeline.html
++share/gtk-doc/html/cogl/cogl-Textures-(Deprecated).html
+ share/gtk-doc/html/cogl/cogl-Textures.html
++share/gtk-doc/html/cogl/cogl-Vectors.html
++share/gtk-doc/html/cogl/cogl-Vertex-Buffers-(Deprecated).html
+ share/gtk-doc/html/cogl/cogl-Vertex-Buffers.html
+ share/gtk-doc/html/cogl/cogl.devhelp
+ share/gtk-doc/html/cogl/cogl.devhelp2
++share/gtk-doc/html/cogl/cogl_ortho.png
++share/gtk-doc/html/cogl/coglglossary.html
++share/gtk-doc/html/cogl/fill-rule-even-odd.png
++share/gtk-doc/html/cogl/fill-rule-non-zero.png
+ share/gtk-doc/html/cogl/home.png
+ share/gtk-doc/html/cogl/index.html
+ share/gtk-doc/html/cogl/index.sgml
+ share/gtk-doc/html/cogl/ix01.html
++share/gtk-doc/html/cogl/ix02.html
++share/gtk-doc/html/cogl/ix03.html
++share/gtk-doc/html/cogl/ix04.html
++share/gtk-doc/html/cogl/ix05.html
++share/gtk-doc/html/cogl/ix06.html
++share/gtk-doc/html/cogl/ix07.html
+ share/gtk-doc/html/cogl/left.png
+ share/gtk-doc/html/cogl/license.html
++share/gtk-doc/html/cogl/quad-indices-order.png
++share/gtk-doc/html/cogl/quad-indices-triangles.png
+ share/gtk-doc/html/cogl/right.png
+ share/gtk-doc/html/cogl/style.css
+ share/gtk-doc/html/cogl/up.png
++share/locale/de/LC_MESSAGES/clutter-${API_VERSION}.mo
++share/locale/fr/LC_MESSAGES/clutter-${API_VERSION}.mo
++share/locale/gl/LC_MESSAGES/clutter-${API_VERSION}.mo
++share/locale/id/LC_MESSAGES/clutter-${API_VERSION}.mo
++share/locale/it/LC_MESSAGES/clutter-${API_VERSION}.mo
++share/locale/nb/LC_MESSAGES/clutter-${API_VERSION}.mo
++share/locale/nl/LC_MESSAGES/clutter-${API_VERSION}.mo
++share/locale/pa/LC_MESSAGES/clutter-${API_VERSION}.mo
++share/locale/pl/LC_MESSAGES/clutter-${API_VERSION}.mo
++share/locale/sv/LC_MESSAGES/clutter-${API_VERSION}.mo
++share/locale/te/LC_MESSAGES/clutter-${API_VERSION}.mo
++share/locale/uk/LC_MESSAGES/clutter-${API_VERSION}.mo
++share/locale/zh_CN/LC_MESSAGES/clutter-${API_VERSION}.mo
++share/locale/zh_TW/LC_MESSAGES/clutter-${API_VERSION}.mo

@@ -1,0 +1,20 @@
+$OpenBSD$
+
+- Don't do bash pattern substitutions.
+
+--- configure.orig	Tue Jun 14 15:12:19 2011
++++ configure	Mon Jul  4 14:31:16 2011
+@@ -14679,11 +14679,11 @@ $as_echo "$as_me: WARNING: unsupported compiler flags:
+ esac
+ 
+ # strip leading spaces
+-MAINTAINER_CFLAGS=${MAINTAINER_CFLAGS#*  }
++MAINTAINER_CFLAGS=`echo ${MAINTAINER_CFLAGS} | sed 's,^[ \t]*,,g'`
+ 
+ 
+ # strip leading space
+-BACKEND_PC_FILES=${BACKEND_PC_FILES#* }
++BACKEND_PC_FILES=`echo ${BACKEND_PC_FILES} | sed 's,^[ \t]*,,g'`
+ 
+ CLUTTER_REQUIRES="$CLUTTER_BASE_PC_FILES $IMAGE_PC_FILES $BACKEND_PC_FILES"
+ 
