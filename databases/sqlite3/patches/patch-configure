@@ -1,0 +1,17 @@
+$OpenBSD$
+
+Take care when updating that you patch the right place in the file...
+
+--- configure.orig	Mon Sep 19 19:47:10 2011
++++ configure	Tue Sep 20 21:03:32 2011
+@@ -19753,8 +19753,8 @@ for ac_lib in '' pthread; do
+   if test -z "$ac_lib"; then
+     ac_res="none required"
+   else
+-    ac_res=-l$ac_lib
+-    LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
++    ac_res=-$ac_lib
++    LIBS="-$ac_lib  $ac_func_search_save_LIBS"
+   fi
+   if ac_fn_c_try_link "$LINENO"; then :
+   ac_cv_search_pthread_create=$ac_res

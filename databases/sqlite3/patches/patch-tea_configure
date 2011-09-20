@@ -1,0 +1,29 @@
+.$OpenBSD$
+--- tea/configure.orig	Mon Sep 19 19:47:01 2011
++++ tea/configure	Tue Sep 20 20:59:41 2011
+@@ -5122,13 +5122,13 @@ $as_echo "#define _POSIX_PTHREAD_SEMANTICS 1" >>confde
+ 
+ $as_echo "#define _THREAD_SAFE 1" >>confdefs.h
+ 
+-	    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_mutex_init in -lpthread" >&5
+-$as_echo_n "checking for pthread_mutex_init in -lpthread... " >&6; }
++	    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_mutex_init in -pthread" >&5
++$as_echo_n "checking for pthread_mutex_init in -pthread... " >&6; }
+ if test "${ac_cv_lib_pthread_pthread_mutex_init+set}" = set; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -6424,7 +6424,7 @@ fi
+ 		CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
+ fi
+ 	    LD_SEARCH_FLAGS=${CC_SEARCH_FLAGS}
+-	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.${SHLIB_VERSION}'
++	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so'
+ 	    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ELF" >&5
+ $as_echo_n "checking for ELF... " >&6; }
+ if test "${tcl_cv_ld_elf+set}" = set; then :
