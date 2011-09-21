@@ -1,6 +1,0 @@
-Thunderbird has been updated to include upstream fixes for
-bug 681026, this causes hungs under certain conditions.
-
-Enigmail v1.3 has been updated to v1.3.1. 
-
-To be Tested on amd64.
