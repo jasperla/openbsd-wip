@@ -1,0 +1,12 @@
+$OpenBSD$
+--- Makefile.in.orig	Wed Sep 21 16:23:32 2011
++++ Makefile.in	Wed Sep 21 16:23:38 2011
+@@ -327,7 +327,7 @@ top_srcdir = @top_srcdir@
+ 
+ # Point to our macro directory and pick up user flags from the environment
+ ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
+-SUBDIRS = data js src browser-plugin tests po man
++SUBDIRS = data js src tests po man
+ EXTRA_DIST = \
+ 	.project	\
+ 	.settings	\

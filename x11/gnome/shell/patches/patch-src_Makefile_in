@@ -1,0 +1,63 @@
+$OpenBSD$
+--- src/Makefile.in.orig	Tue Sep 20 23:12:45 2011
++++ src/Makefile.in	Wed Sep 21 16:02:29 2011
+@@ -115,7 +115,7 @@ am__libgnome_shell_la_SOURCES_DIST = shell-marshal.h s
+ 	shell-arrow.c shell-contact-system.c shell-doc-system.c \
+ 	shell-embedded-window.c shell-generic-container.c \
+ 	shell-gtk-embed.c shell-global.c shell-mobile-providers.c \
+-	shell-mount-operation.c shell-network-agent.c shell-perf-log.c \
++	shell-mount-operation.c shell-perf-log.c \
+ 	shell-polkit-authentication-agent.h \
+ 	shell-polkit-authentication-agent.c shell-slicer.c \
+ 	shell-stack.c shell-tp-client.c shell-tray-icon.c \
+@@ -142,7 +142,6 @@ am_libgnome_shell_la_OBJECTS = $(am__objects_1) $(am__
+ 	libgnome_shell_la-shell-global.lo \
+ 	libgnome_shell_la-shell-mobile-providers.lo \
+ 	libgnome_shell_la-shell-mount-operation.lo \
+-	libgnome_shell_la-shell-network-agent.lo \
+ 	libgnome_shell_la-shell-perf-log.lo \
+ 	libgnome_shell_la-shell-polkit-authentication-agent.lo \
+ 	libgnome_shell_la-shell-slicer.lo \
+@@ -824,7 +823,6 @@ shell_public_headers_h = \
+ 	shell-global.h			\
+ 	shell-mobile-providers.h	\
+ 	shell-mount-operation.h		\
+-	shell-network-agent.h		\
+ 	shell-perf-log.h		\
+ 	shell-slicer.h			\
+ 	shell-stack.h			\
+@@ -846,7 +844,7 @@ libgnome_shell_la_SOURCES = $(shell_built_sources) \
+ 	shell-contact-system.c shell-doc-system.c \
+ 	shell-embedded-window.c shell-generic-container.c \
+ 	shell-gtk-embed.c shell-global.c shell-mobile-providers.c \
+-	shell-mount-operation.c shell-network-agent.c shell-perf-log.c \
++	shell-mount-operation.c shell-perf-log.c \
+ 	shell-polkit-authentication-agent.h \
+ 	shell-polkit-authentication-agent.c shell-slicer.c \
+ 	shell-stack.c shell-tp-client.c shell-tray-icon.c \
+@@ -899,7 +897,7 @@ libgnome_shell_la_LIBADD = \
+ 	$(NULL)
+ 
+ libgnome_shell_la_CPPFLAGS = $(gnome_shell_cflags)
+-Shell_0_1_gir_INCLUDES = Clutter-1.0 ClutterX11-1.0 Meta-3.0 TelepathyGLib-0.12 TelepathyLogger-0.2 Soup-2.4 GMenu-3.0 NetworkManager-1.0 NMClient-1.0 Folks-0.6
++Shell_0_1_gir_INCLUDES = Clutter-1.0 ClutterX11-1.0 Meta-3.0 TelepathyGLib-0.12 TelepathyLogger-0.2 Soup-2.4 GMenu-3.0 Folks-0.6
+ Shell_0_1_gir_CFLAGS = $(libgnome_shell_la_CPPFLAGS) -I $(srcdir)
+ Shell_0_1_gir_LIBS = libgnome-shell.la
+ Shell_0_1_gir_FILES = $(libgnome_shell_la_gir_sources)
+@@ -1174,7 +1172,6 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgnome_shell_la-shell-marshal.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgnome_shell_la-shell-mobile-providers.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgnome_shell_la-shell-mount-operation.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgnome_shell_la-shell-network-agent.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgnome_shell_la-shell-perf-log.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgnome_shell_la-shell-polkit-authentication-agent.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgnome_shell_la-shell-recorder-src.Plo@am__quote@
+@@ -2441,7 +2438,7 @@ shell-marshal.c: Makefile shell-marshal.list
+ 
+ shell-enum-types.h: stamp-shell-enum-types.h Makefile
+ 	@true
+-stamp-shell-enum-types.h: $(srcdir)/shell-enum-types.h.in $(shell_public_headers_h)
++stamp-shell-enum-types.h: $(srcdir)/shell-enum-types.h.in
+ 	$(AM_V_GEN) ( \
+ 	  $(GLIB_MKENUMS) \
+ 	    --template $< \
