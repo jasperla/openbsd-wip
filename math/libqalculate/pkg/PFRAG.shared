@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+@lib lib/libqalculate.so.${LIBqalculate_VERSION}
