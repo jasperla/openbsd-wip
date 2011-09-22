@@ -12,6 +12,7 @@ SHARED_LIBS +=  pulse-simple              0.0 # 0.3
 SHARED_LIBS +=  pulse                     0.0 # 12.4
 CATEGORIES=		audio
 
+MAINTAINER=		Robert Nagy <robert@openbsd.org>
 HOMEPAGE=		http://www.pulseaudio.org/
 
 # LGPLv2.1
