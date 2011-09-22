@@ -43,15 +43,15 @@
 #     SUBDIR += sdk
      SUBDIR += toys			# OK
      SUBDIR += utils			# test
-     SUBDIR += webdev
+#     SUBDIR += webdev
 
 # former kdeedu
-     SUBDIR += blinken
-     SUBDIR += cantor
-     SUBDIR += kalgebra
-     SUBDIR += kalzium
-     SUBDIR += kanagram
-     SUBDIR += kbruch
+     SUBDIR += blinken			# issues
+     SUBDIR += cantor			# OK
+     SUBDIR += kalgebra			# OK
+     SUBDIR += kalzium			# minor issues
+     SUBDIR += kanagram			# OK
+     SUBDIR += kbruch			# OK
 #     SUBDIR += kgeography
 #     SUBDIR += khangman
 #     SUBDIR += kig
@@ -62,30 +62,30 @@
 #     SUBDIR += ktouch
 #     SUBDIR += kturtle
 #     SUBDIR += kwordquiz
-     SUBDIR += libkdeedu
-     SUBDIR += marble
+     SUBDIR += libkdeedu		# untested
+     SUBDIR += marble			# issues
 #     SUBDIR += parley
 #     SUBDIR += rocs
 #     SUBDIR += step
      
 # former kdegraphics
-#     SUBDIR += graphics-strigi-analyzer
-#     SUBDIR += graphics-thumbnailers
-     SUBDIR += gwenview
-     SUBDIR += kamera
-     SUBDIR += kcolorchooser
-#     SUBDIR += kgamma
-#     SUBDIR += kolourpaint
-#     SUBDIR += kruler
-#     SUBDIR += ksaneplugin
-#     SUBDIR += ksnapshot
-     SUBDIR += libkdcraw
-     SUBDIR += libkexiv2
-     SUBDIR += libkipi
-     SUBDIR += libksane
+     SUBDIR += graphics-strigi-analyzer	# untested
+     SUBDIR += graphics-thumbnailers	# untested
+     SUBDIR += gwenview			# OK
+     SUBDIR += kamera			# untested
+     SUBDIR += kcolorchooser		# OK
+     SUBDIR += kgamma			# OK
+     SUBDIR += kolourpaint		# OK
+     SUBDIR += kruler			# OK
+     SUBDIR += ksaneplugin		# untested
+     SUBDIR += ksnapshot		# OK
+     SUBDIR += libkdcraw		# untested
+     SUBDIR += libkexiv2		# untested
+     SUBDIR += libkipi			# OK
+     SUBDIR += libksane			# untested
 #     SUBDIR += mobipocket
-     SUBDIR += okular
-#     SUBDIR += svgpart
+     SUBDIR += okular			# only PDF tested
+     SUBDIR += svgpart			# OK
      
 # other apps
      SUBDIR += kate			# OK
@@ -94,6 +94,6 @@
 # additional resources
 #     SUBDIR += plasma-addons
      SUBDIR += l10n			# OK
-     SUBDIR += wallpapers
+     SUBDIR += wallpapers		# OK
 
 .include <bsd.port.subdir.mk>
