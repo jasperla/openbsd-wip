@@ -22,7 +22,6 @@ share/gtk-doc/html/clutter-gtk-${API_VERSION}/ch01.html
 share/gtk-doc/html/clutter-gtk-${API_VERSION}/ch02.html
 share/gtk-doc/html/clutter-gtk-${API_VERSION}/ch03.html
 share/gtk-doc/html/clutter-gtk-${API_VERSION}/clutter-gtk-${API_VERSION}-Utility-Functions.html
-share/gtk-doc/html/clutter-gtk-${API_VERSION}/clutter-gtk-${API_VERSION}.devhelp
 share/gtk-doc/html/clutter-gtk-${API_VERSION}/clutter-gtk-${API_VERSION}.devhelp2
 share/gtk-doc/html/clutter-gtk-${API_VERSION}/cluttergtk-glossary.html
 share/gtk-doc/html/clutter-gtk-${API_VERSION}/cluttergtk-object-hierarchy.html
@@ -40,3 +39,5 @@ share/gtk-doc/html/clutter-gtk-${API_VERSION}/license.html
 share/gtk-doc/html/clutter-gtk-${API_VERSION}/right.png
 share/gtk-doc/html/clutter-gtk-${API_VERSION}/style.css
 share/gtk-doc/html/clutter-gtk-${API_VERSION}/up.png
+share/locale/pl/LC_MESSAGES/cluttergtk-${API_VERSION}.mo
+share/locale/zh_CN/LC_MESSAGES/cluttergtk-${API_VERSION}.mo
