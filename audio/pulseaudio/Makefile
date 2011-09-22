@@ -63,8 +63,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--localstatedir=/var
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib \
-				-Wl,-rpath,${TRUEPREFIX}/lib/pulse-${VERSION}/modules/"
-#			PTHREAD_LIBS="-pthread"
+				-Wl,-rpath,${TRUEPREFIX}/lib/pulse-${VERSION}/modules/" \
+			PTHREAD_LIBS="-pthread"
 
 FAKE_FLAGS+=		xdgautostartdir="${PREFIX}/share/examples/pulseaudio/xdg/autostart" \
 			dbuspolicydir="${PREFIX}/share/examples/pulseaudio/dbus-1/system.d" \
@@ -73,6 +73,7 @@ FAKE_FLAGS+=		xdgautostartdir="${PREFIX}/share/examples/pulseaudio/xdg/autostart
 SUBST_VARS+=		VERSION
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/src/daemon/default.pa.in
+	${SUBST_CMD} ${WRKSRC}/src/daemon/default.pa.in \
+			${WRKSRC}/src/pulse/util.c
 
 .include <bsd.port.mk>
