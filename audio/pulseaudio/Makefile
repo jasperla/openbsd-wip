@@ -52,6 +52,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-access-group=_pulse-access \
 			--with-database=gdbm \
 			--enable-x11 \
+			--disable-alsa \
 			--disable-jack \
 			--disable-hal \
 			--disable-hal-compat \

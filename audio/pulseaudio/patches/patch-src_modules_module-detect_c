@@ -1,47 +1,45 @@
 $OpenBSD$
 --- src/modules/module-detect.c.orig	Thu Jun 23 22:18:54 2011
-+++ src/modules/module-detect.c	Tue Sep 20 00:37:07 2011
-@@ -124,6 +124,8 @@ static int detect_oss(pa_core *c, int just_one) {
++++ src/modules/module-detect.c	Thu Sep 22 12:44:14 2011
+@@ -120,6 +120,7 @@ static int detect_alsa(pa_core *c, int just_one) {
+ #endif
+ 
+ #ifdef HAVE_OSS_OUTPUT
++#if !defined(__OpenBSD__)
+ static int detect_oss(pa_core *c, int just_one) {
      FILE *f;
      int n = 0, b = 0;
- 
-+    /* We don't have sndstat(4) on OpenBSD, so skip these checks. */
-+#ifndef __OpenBSD__
-     if (!(f = fopen("/dev/sndstat", "r")) &&
-         !(f = fopen("/proc/sndstat", "r")) &&
-         !(f = fopen("/proc/asound/oss/sndstat", "r"))) {
-@@ -133,6 +135,12 @@ static int detect_oss(pa_core *c, int just_one) {
- 
-         return -1;
-     }
+@@ -177,6 +178,33 @@ static int detect_oss(pa_core *c, int just_one) {
+     fclose(f);
+     return n;
+ }
 +#else
-+    if (!(f = fopen("/dev/audio", "r"))) {
-+	if (errno != ENOENT)
-+		pa_log_error("failed to open OSS audio device: %s", pa_cstrerror(errno));
++static int detect_oss(pa_core *c, int just_one) {
++    struct stat s;
++    const char *dev;
++    char args[64];
++
++    dev = getenv("AUDIODEV");
++    if (!dev)
++        dev = "/dev/audio";
++
++    if (stat(dev, &s) < 0) {
++        if (errno != ENOENT)
++            pa_log_error("failed to open device %s: %s", dev, pa_cstrerror(errno));
++        return -1;
 +    }
-+#endif /* !__OpenBSD__ */
- 
-     while (!feof(f)) {
-         char line[64], args[64];
-@@ -151,6 +159,7 @@ static int detect_oss(pa_core *c, int just_one) {
-         if (line[0] == 0)
-             break;
- 
-+#ifndef __OpenBSD__
-         if (sscanf(line, "%u: ", &device) == 1) {
-             if (device == 0)
-                 pa_snprintf(args, sizeof(args), "device=/dev/dsp");
-@@ -167,7 +176,13 @@ static int detect_oss(pa_core *c, int just_one) {
-             if (!pa_module_load(c, "module-oss", args))
-                 continue;
-         }
-+#else
-+	/* On OpenBSD we just want to use /dev/audio... */
-+	pa_snprintf(args, sizeof(args), "device=/dev/audio0");
- 
-+	if (!pa_module_load(c, "module-oss", args))
-+	  continue;
++
++    if (!S_ISCHR(s.st_mode))
++        return 0;
++
++    pa_snprintf(args, sizeof(args), "device=%s", dev);
++
++    if (!pa_module_load(c, "module-oss", args))
++        return 0;
++
++    return 1;
++}
 +#endif
-         n++;
+ #endif
  
-         if (just_one)
+ #ifdef HAVE_SOLARIS
