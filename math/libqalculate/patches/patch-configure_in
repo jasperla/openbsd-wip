@@ -1,0 +1,29 @@
+$OpenBSD$
+First chunk adds support for -pthread, second removes
+mention of -lhistory, which OpenBSD doesn't need for -lreadline.
+--- configure.in.orig	Tue Jan  5 18:15:27 2010
++++ configure.in	Thu Sep 22 03:00:45 2011
+@@ -87,7 +87,13 @@ dnl  --------------------------------
+ dnl | check for neccessary libraries |-----------------------------------------
+ dnl  --------------------------------
+ 
+-AC_CHECK_LIB(pthread, pthread_create, [LIBS="$LIBS -lpthread"])
++save_LIBS="$LIBS"
++LIBS="$LIBS -pthread"
++AC_CHECK_FUNCS(pthread_create,
++	[echo using -pthread for linking with threads library], [
++		LIBS="$save_LIBS";
++		AC_CHECK_LIB(pthread, pthread_create, [LIBS="$LIBS -lpthread"])
++	])
+ 
+ AC_LANG([C++])
+ 
+@@ -188,7 +194,7 @@ if test "x$enable_textport" = "xyes" ; then
+       fi
+     fi
+     if test x${HAVE_LIBREADLINE} = xtrue; then
+-      READLINE_LIBS="-lreadline -lhistory ${EXTRA_LIBREADLINE_DEPS}"
++      READLINE_LIBS="-lreadline ${EXTRA_LIBREADLINE_DEPS}"
+     else
+       AC_MSG_WARN([Could not find libreadline.])
+     fi
