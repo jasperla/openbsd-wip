@@ -26,7 +26,7 @@ TAR=			${LOCALBASE}/bin/gtar
 MODULES=		devel/gettext
 
 WANTLIB += ICE ORBit-2 SM X11 X11-xcb Xext Xi Xtst avahi-client
-WANTLIB += avahi-common c crypto dbus-1 execinfo gconf-2 gdbm
+WANTLIB += avahi-common c crypto dbus-1 execinfo ffi gconf-2 gdbm
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += ltdl m ossaudio pcre pthread samplerate sndfile speexdsp
 WANTLIB += ssl xcb z
