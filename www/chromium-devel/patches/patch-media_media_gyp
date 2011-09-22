@@ -1,35 +1,48 @@
 $OpenBSD$
 --- media/media.gyp.orig	Mon Aug 29 10:25:58 2011
-+++ media/media.gyp	Tue Aug 30 09:56:05 2011
-@@ -60,6 +60,8 @@
-         'audio/linux/alsa_wrapper.h',
-         'audio/linux/pulse_output.cc',
-         'audio/linux/pulse_output.h',
-+        'audio/openbsd/sndio_output.cc',
-+        'audio/openbsd/sndio_output.h',
-         'audio/openbsd/audio_manager_openbsd.cc',
-         'audio/openbsd/audio_manager_openbsd.h',
-         'audio/mac/audio_input_mac.cc',
-@@ -267,14 +269,18 @@
-         ['OS=="openbsd"', {
-           'sources/': [ ['exclude', 'alsa_' ],
-                         ['exclude', 'audio_manager_linux' ],
-+                        ['exclude', 'pulse_' ],
-                         ['exclude', '\\.mm?$' ] ],
++++ media/media.gyp	Thu Sep 22 17:59:20 2011
+@@ -6,7 +6,7 @@
+   'variables': {
+     'chromium_code': 1,
+     # Override to dynamically link the PulseAudio library.
+-    'use_pulseaudio%': 0,
++    'use_pulseaudio%': 1,
+   },
+   'targets': [
+     {
+@@ -239,7 +239,6 @@
+         ['OS=="linux" or OS=="freebsd" or OS=="solaris"', {
            'link_settings': {
              'libraries': [
-+              '-lsndio',
+-              '-lasound',
              ],
            },
-         }],
-         ['OS!="openbsd"', {
-           'sources!': [
-+            'audio/openbsd/sndio_output.cc',
-+            'audio/openbsd/sndio_output.h',
-             'audio/openbsd/audio_manager_openbsd.cc',
-             'audio/openbsd/audio_manager_openbsd.h',
-           ],
-@@ -703,7 +709,6 @@
+           'conditions': [
+@@ -268,6 +267,23 @@
+           'sources/': [ ['exclude', 'alsa_' ],
+                         ['exclude', 'audio_manager_linux' ],
+                         ['exclude', '\\.mm?$' ] ],
++          'conditions': [
++            ['use_pulseaudio == 1', {
++              'link_settings': {
++                'libraries': [
++                  '-lpulse',
++                ],
++              },
++              'defines': [
++                'USE_PULSEAUDIO',
++              ],
++            }, {  # else: use_pulseaudio == 0
++              'sources!': [
++                'audio/linux/pulse_output.cc',
++                'audio/linux/pulse_output.h',
++              ],
++            }],
++          ],
+           'link_settings': {
+             'libraries': [
+             ],
+@@ -703,7 +719,6 @@
            ],
            'libraries': [
              '-lGL',
@@ -37,7 +50,7 @@ $OpenBSD$
            ],
            'sources': [
              'tools/tile_render_bench/tile_render_bench.cc',
-@@ -723,7 +728,6 @@
+@@ -723,7 +738,6 @@
            ],
            'link_settings': {
              'libraries': [

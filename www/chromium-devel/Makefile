@@ -7,6 +7,7 @@ COMMENT=		Chromium browser
 V=			15.0.865.0
 DISTNAME=		chromium-${V}
 PKGNAME=		chromium-devel-${V}
+REVISION=		0
 
 CATEGORIES=		www
 
@@ -62,6 +63,7 @@ LIB_DEPENDS=	devel/libexecinfo \
 		textproc/libxslt \
 		x11/gtk+2 \
 		audio/speex \
+		audio/pulseaudio \
 		print/cups
 
 .include <bsd.own.mk>
@@ -109,6 +111,7 @@ WANTLIB+=	nss3 nssutil3
 
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
+	@ln -sf ${LOCALBASE}/include/pulse ${WRKDIR}/pulse
 	${SUBST_CMD} ${WRKSRC}/build/common.gypi
 	@cp -pR ${WRKSRC}/third_party/libvpx/source/config/linux \
 		${WRKSRC}/third_party/libvpx/source/config/openbsd

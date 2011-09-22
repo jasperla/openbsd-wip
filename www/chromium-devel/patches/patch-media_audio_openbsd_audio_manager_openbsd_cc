@@ -1,73 +1,164 @@
 $OpenBSD$
---- media/audio/openbsd/audio_manager_openbsd.cc.orig	Wed Aug 24 11:09:14 2011
-+++ media/audio/openbsd/audio_manager_openbsd.cc	Wed Aug 24 11:10:50 2011
-@@ -4,14 +4,17 @@
+--- media/audio/openbsd/audio_manager_openbsd.cc.orig	Thu Sep 22 13:17:46 2011
++++ media/audio/openbsd/audio_manager_openbsd.cc	Thu Sep 22 16:10:03 2011
+@@ -4,52 +4,143 @@
  
  #include "media/audio/openbsd/audio_manager_openbsd.h"
  
--#include "base/logging.h"
-+#include "base/sys_info.h"
++#include "base/command_line.h"
++#include "base/environment.h"
+ #include "base/logging.h"
++#include "base/nix/xdg_util.h"
++#include "base/process_util.h"
++#include "base/stl_util.h"
++#include "media/audio/audio_output_dispatcher.h"
 +#include "media/audio/fake_audio_input_stream.h"
 +#include "media/audio/fake_audio_output_stream.h"
-+#include "media/audio/openbsd/audio_manager_openbsd.h"
-+#include "media/audio/openbsd/sndio_output.h"
++#include "media/audio/linux/pulse_output.h"
 +#include "media/base/limits.h"
-+#include "media/base/limits.h"
++#include "media/base/media_switches.h"
  
 -static AudioManagerOpenBSD* g_audio_manager = NULL;
--
++// Maximum number of output streams that can be open simultaneously.
++static const size_t kMaxOutputStreams = 50;
+ 
++static const int kMaxInputChannels = 2;
++
  // Implementation of AudioManager.
- bool AudioManagerOpenBSD::HasAudioOutputDevices() {
+-bool AudioManagerOpenBSD::HasAudioOutputDevices() {
 -  NOTIMPLEMENTED();
 -  return false;
++bool AudioManagerLinux::HasAudioOutputDevices() {
++  // TODO(ajwong): Make this actually query audio devices.
 +  return true;
  }
  
- bool AudioManagerOpenBSD::HasAudioInputDevices() {
-@@ -21,8 +24,16 @@ bool AudioManagerOpenBSD::HasAudioInputDevices() {
+-bool AudioManagerOpenBSD::HasAudioInputDevices() {
+-  NOTIMPLEMENTED();
++bool AudioManagerLinux::HasAudioInputDevices() {
++  if (!initialized()) {
++    return false;
++  }
++
+   return false;
+ }
  
- AudioOutputStream* AudioManagerOpenBSD::MakeAudioOutputStream(
+-AudioOutputStream* AudioManagerOpenBSD::MakeAudioOutputStream(
++AudioOutputStream* AudioManagerLinux::MakeAudioOutputStream(
      const AudioParameters& params) {
 -  NOTIMPLEMENTED();
 -  return NULL;
-+  if (getenv("CHROME_SNDIO") == NULL) {
-+    NOTIMPLEMENTED();
-+    return NULL;
-+  }
-+
++  // Early return for testing hook.  Do this before checking for
++  // |initialized_|.
 +  if (params.format == AudioParameters::AUDIO_MOCK) {
 +    return FakeAudioOutputStream::MakeFakeStream(params);
 +  }
 +
-+  return new PCMQueueOutAudioOutputStream(this, params);
++  if (!initialized()) {
++    return NULL;
++  }
++
++  // Don't allow opening more than |kMaxOutputStreams| streams.
++  if (active_streams_.size() >= kMaxOutputStreams) {
++    return NULL;
++  }
++
++  AudioOutputStream* stream;
++  stream = new PulseAudioOutputStream(params, this, GetMessageLoop());
++  active_streams_.insert(stream);
++  return stream;
  }
  
- AudioInputStream* AudioManagerOpenBSD::MakeAudioInputStream(
-@@ -37,10 +48,6 @@ AudioManagerOpenBSD::AudioManagerOpenBSD() {
- AudioManagerOpenBSD::~AudioManagerOpenBSD() {
+-AudioInputStream* AudioManagerOpenBSD::MakeAudioInputStream(
++AudioInputStream* AudioManagerLinux::MakeAudioInputStream(
+     const AudioParameters& params) {
+   NOTIMPLEMENTED();
+-  return NULL;
++  return false;
+ }
+ 
+-AudioManagerOpenBSD::AudioManagerOpenBSD() {
++AudioManagerLinux::AudioManagerLinux() {
+ }
+ 
+-AudioManagerOpenBSD::~AudioManagerOpenBSD() {
++AudioManagerLinux::~AudioManagerLinux() {
++  // Make sure we stop the thread first. If we allow the default destructor to
++  // destroy the members, we may destroy audio streams before stopping the
++  // thread, resulting an unexpected behavior.
++  // This way we make sure activities of the audio streams are all stopped
++  // before we destroy them.
++  audio_thread_.Stop();
++
++  // Free output dispatchers, closing all remaining open streams.
++  output_dispatchers_.clear();
++
++  // Delete all the streams. Have to do it manually, we don't have ScopedSet<>,
++  // and we are not using ScopedVector<> because search there is slow.
++  STLDeleteElements(&active_streams_);
  }
  
 -void AudioManagerOpenBSD::Init() {
--  AudioManagerBase::Init();
--}
--
- void AudioManagerOpenBSD::MuteAll() {
++void AudioManagerLinux::Init() {
+   AudioManagerBase::Init();
+ }
+ 
+-void AudioManagerOpenBSD::MuteAll() {
++void AudioManagerLinux::MuteAll() {
    NOTIMPLEMENTED();
  }
-@@ -52,4 +59,16 @@ void AudioManagerOpenBSD::UnMuteAll() {
+ 
+-void AudioManagerOpenBSD::UnMuteAll() {
++void AudioManagerLinux::UnMuteAll() {
+   NOTIMPLEMENTED();
+ }
+ 
++void AudioManagerLinux::ReleaseOutputStream(AudioOutputStream* stream) {
++  if (stream) {
++    active_streams_.erase(stream);
++    delete stream;
++  }
++}
++
++bool AudioManagerLinux::CanShowAudioInputSettings() {
++  scoped_ptr<base::Environment> env(base::Environment::Create());
++  base::nix::DesktopEnvironment desktop = base::nix::GetDesktopEnvironment(
++      env.get());
++  return (desktop == base::nix::DESKTOP_ENVIRONMENT_GNOME ||
++          desktop == base::nix::DESKTOP_ENVIRONMENT_KDE3 ||
++          desktop == base::nix::DESKTOP_ENVIRONMENT_KDE4);
++}
++
++void AudioManagerLinux::ShowAudioInputSettings() {
++  scoped_ptr<base::Environment> env(base::Environment::Create());
++  base::nix::DesktopEnvironment desktop = base::nix::GetDesktopEnvironment(
++      env.get());
++  std::string command((desktop == base::nix::DESKTOP_ENVIRONMENT_GNOME) ?
++                      "gnome-volume-control" : "kmix");
++  base::LaunchProcess(CommandLine(FilePath(command)), base::LaunchOptions(),
++                      NULL);
++}
++
++void AudioManagerLinux::GetAudioInputDeviceNames(
++    media::AudioDeviceNames* device_names) {
++  // TODO(xians): query a full list of valid devices.
++  if (HasAudioInputDevices()) {
++    // Add the default device to the list.
++    // We use index 0 to make up the unique_id to identify the
++    // default devices.
++    media::AudioDeviceName name;
++    name.device_name = AudioManagerBase::kDefaultDeviceName;
++    name.unique_id = "0";
++    device_names->push_back(name);
++  }
++}
++
++bool AudioManagerLinux::HasAnyValidAudioInputDevice(void** hints) {
++  return false;
++}
++
  // static
  AudioManager* AudioManager::CreateAudioManager() {
-   return new AudioManagerOpenBSD();
-+}
-+
-+// Called by the stream when it has been released by calling Close().
-+void AudioManagerOpenBSD::ReleaseOutputStream(
-+    PCMQueueOutAudioOutputStream* stream) {
-+  DCHECK(stream);
-+  delete stream;
-+}
-+
-+// Called by the stream when it has been released by calling Close().
-+void AudioManagerOpenBSD::ReleaseInputStream(PCMQueueInAudioInputStream* stream) {
-+  NOTIMPLEMENTED();
+-  return new AudioManagerOpenBSD();
++  return new AudioManagerLinux();
  }

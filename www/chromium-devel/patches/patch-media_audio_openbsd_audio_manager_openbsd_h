@@ -1,39 +1,64 @@
 $OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_h,v 1.5 2011/05/20 08:35:24 robert Exp $
---- media/audio/openbsd/audio_manager_openbsd.h.orig	Tue Aug 23 10:28:23 2011
-+++ media/audio/openbsd/audio_manager_openbsd.h	Wed Aug 24 10:54:23 2011
-@@ -5,15 +5,16 @@
- #ifndef MEDIA_AUDIO_OPENBSD_AUDIO_MANAGER_OPENBSD_H_
- #define MEDIA_AUDIO_OPENBSD_AUDIO_MANAGER_OPENBSD_H_
+--- media/audio/openbsd/audio_manager_openbsd.h.orig	Thu Sep 22 13:17:48 2011
++++ media/audio/openbsd/audio_manager_openbsd.h	Thu Sep 22 16:03:54 2011
+@@ -1,17 +1,21 @@
+-// Copyright (c) 2010 The Chromium Authors. All rights reserved.
++// Copyright (c) 2011 The Chromium Authors. All rights reserved.
+ // Use of this source code is governed by a BSD-style license that can be
+ // found in the LICENSE file.
+ 
+-#ifndef MEDIA_AUDIO_OPENBSD_AUDIO_MANAGER_OPENBSD_H_
+-#define MEDIA_AUDIO_OPENBSD_AUDIO_MANAGER_OPENBSD_H_
++#ifndef MEDIA_AUDIO_LINUX_AUDIO_MANAGER_LINUX_H_
++#define MEDIA_AUDIO_LINUX_AUDIO_MANAGER_LINUX_H_
  
 -#include "media/audio/audio_io.h"
-+#include "base/basictypes.h"
-+#include "media/audio/audio_manager_base.h"
++#include <set>
  
-+class PCMQueueInAudioInputStream;
-+class PCMQueueOutAudioOutputStream;
+-class AudioManagerOpenBSD : public AudioManagerBase {
++#include "base/memory/ref_counted.h"
++#include "base/threading/thread.h"
++#include "media/audio/audio_manager_base.h"
 +
- class AudioManagerOpenBSD : public AudioManagerBase {
++class AudioManagerLinux : public AudioManagerBase {
   public:
-   AudioManagerOpenBSD();
+-  AudioManagerOpenBSD();
++  AudioManagerLinux();
  
 -  // Call before using a newly created AudioManagerOpenBSD instance.
--  virtual void Init();
--
++  // Call before using a newly created AudioManagerLinux instance.
+   virtual void Init();
+ 
    // Implementation of AudioManager.
-   virtual bool HasAudioOutputDevices();
+@@ -19,16 +23,26 @@ class AudioManagerOpenBSD : public AudioManagerBase {
    virtual bool HasAudioInputDevices();
-@@ -24,10 +25,12 @@ class AudioManagerOpenBSD : public AudioManagerBase {
+   virtual AudioOutputStream* MakeAudioOutputStream(
+       const AudioParameters& params);
+-  virtual AudioInputStream* MakeAudioInputStream(
+-      const AudioParameters& params);
++  virtual AudioInputStream* MakeAudioInputStream(const AudioParameters& params);
++  virtual bool CanShowAudioInputSettings();
++  virtual void ShowAudioInputSettings();
++  virtual void GetAudioInputDeviceNames(media::AudioDeviceNames* device_names);
++
    virtual void MuteAll();
    virtual void UnMuteAll();
  
-- protected:
++  virtual void ReleaseOutputStream(AudioOutputStream* stream);
++
+  protected:
 -  virtual ~AudioManagerOpenBSD();
-+  void ReleaseOutputStream(PCMQueueOutAudioOutputStream* stream);
-+  void ReleaseInputStream(PCMQueueInAudioInputStream* stream);
++  virtual ~AudioManagerLinux();
  
   private:
-+  virtual ~AudioManagerOpenBSD();
+-  DISALLOW_COPY_AND_ASSIGN(AudioManagerOpenBSD);
++  // Helper method to query if there is any valid input device
++  bool HasAnyValidAudioInputDevice(void** hint);
 +
-   DISALLOW_COPY_AND_ASSIGN(AudioManagerOpenBSD);
++  std::set<AudioOutputStream*> active_streams_;
++
++  DISALLOW_COPY_AND_ASSIGN(AudioManagerLinux);
  };
  
+-#endif  // MEDIA_AUDIO_OPENBSD_AUDIO_MANAGER_OPENBSD_H_
++#endif  // MEDIA_AUDIO_LINUX_AUDIO_MANAGER_LINUX_H_
