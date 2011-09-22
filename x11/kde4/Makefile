@@ -69,6 +69,7 @@
 #     SUBDIR += step
      
 # former kdegraphics
+     SUBDIR += digikam			# not fully tested
      SUBDIR += graphics-strigi-analyzer	# untested
      SUBDIR += graphics-thumbnailers	# untested
      SUBDIR += gwenview			# OK
