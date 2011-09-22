@@ -16,6 +16,7 @@ include/mutter/meta/gradient.h
 include/mutter/meta/group.h
 include/mutter/meta/keybindings.h
 include/mutter/meta/main.h
+include/mutter/meta/meta-background-actor.h
 include/mutter/meta/meta-plugin.h
 include/mutter/meta/meta-shadow-factory.h
 include/mutter/meta/meta-window-actor.h
@@ -40,7 +41,6 @@ lib/pkgconfig/mutter-plugins.pc
 @man man/man1/mutter-theme-viewer.1
 @man man/man1/mutter-window-demo.1
 @man man/man1/mutter.1
-share/applications/
 share/applications/mutter.desktop
 share/gnome/wm-properties/
 share/gnome/wm-properties/mutter-wm.desktop
@@ -95,8 +95,6 @@ share/locale/ka/LC_MESSAGES/mutter.mo
 share/locale/kn/LC_MESSAGES/mutter.mo
 share/locale/ko/LC_MESSAGES/mutter.mo
 share/locale/ku/LC_MESSAGES/mutter.mo
-share/locale/la/
-share/locale/la/LC_MESSAGES/
 share/locale/la/LC_MESSAGES/mutter.mo
 share/locale/lt/LC_MESSAGES/mutter.mo
 share/locale/lv/LC_MESSAGES/mutter.mo

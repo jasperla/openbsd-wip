@@ -3,9 +3,7 @@
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		3.0.2.1
-
-EXTRACT_SUFX=		.tar.gz
+GNOME_VERSION=		3.1.92
 
 SHARED_LIBS +=  mutter                    0.0 # 0.0
 
@@ -20,6 +18,8 @@ MODULES=		devel/gconf2 \
 			lang/python \
 			x11/gnome
 
+MODGNOME_TOOLS=		goi
+
 WANTLIB += GL ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
 WANTLIB += atk-1.0 c cairo cairo-gobject canberra canberra-gtk3
@@ -33,11 +33,12 @@ WANTLIB += X11-xcb cogl cogl-pango stdc++
 WANTLIB += xcb-shm z
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
-			devel/gobject-introspection \
 			devel/startup-notification \
 			graphics/clutter/core>=1.6.14 \
+			devel/gobject-introspection \
 			x11/gtk+3
-BUILD_DEPENDS=		${RUN_DEPENDS}
+BUILD_DEPENDS=		${RUN_DEPENDS} \
+			x11/gnome/doc-utils
 RUN_DEPENDS=		x11/gnome/zenity
 
 DESKTOP_FILES=		Yes
@@ -46,7 +47,14 @@ MODGCONF2_SCHEMAS_DIR=	mutter
 LIBTOOL_FLAGS+= 	--tag=disable-static
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--enable-gconf \
+			--enable-shape \
+			--enable-sm \
+			--enable-startup-notification \
+			--enable-xsync \
+			--enable-verbose-mode \
+			--with-libcanberra
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
