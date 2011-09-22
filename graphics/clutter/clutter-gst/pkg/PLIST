@@ -1,6 +1,8 @@
 @comment $OpenBSD: PLIST,v 1.3 2010/09/27 15:11:08 jasper Exp $
 include/clutter-${API_VERSION}/clutter-gst/
 include/clutter-${API_VERSION}/clutter-gst/clutter-gst-enum-types.h
+include/clutter-${API_VERSION}/clutter-gst/clutter-gst-player.h
+include/clutter-${API_VERSION}/clutter-gst/clutter-gst-types.h
 include/clutter-${API_VERSION}/clutter-gst/clutter-gst-util.h
 include/clutter-${API_VERSION}/clutter-gst/clutter-gst-version.h
 include/clutter-${API_VERSION}/clutter-gst/clutter-gst-video-sink.h
@@ -12,6 +14,7 @@ lib/libclutter-gst-${API_VERSION}.la
 lib/pkgconfig/clutter-gst-${API_VERSION}.pc
 share/gir-${API_VERSION}/ClutterGst-${API_VERSION}.gir
 share/gtk-doc/html/clutter-gst/
+share/gtk-doc/html/clutter-gst/ClutterGstPlayer.html
 share/gtk-doc/html/clutter-gst/ClutterGstVideoSink.html
 share/gtk-doc/html/clutter-gst/ClutterGstVideoTexture.html
 share/gtk-doc/html/clutter-gst/ch01.html
