@@ -1,2 +1,0 @@
-@comment $OpenBSD$
-@lib lib/jamvm/libjvm.so.${LIBjvm_VERSION}
