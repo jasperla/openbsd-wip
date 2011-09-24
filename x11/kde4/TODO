@@ -5,8 +5,7 @@ KDE 4 programs fail in a different ways when they're given a KDE 3 profile.
 So until we find a better way, move out (rename) your ~/.kde/, or start
 all KDE 4 programs with KDEHOME=~/something/else.
 
-There are some details in per-port TODO files, like what ports need to be
-updated first. And makefiles contain little comments too.
+Also the option of installing (not building, looks like it's not possible) KDE3 and KDE4 simultaneously should be investigated. Conflicting package names get the "4" suffix now. Maybe name all packages as kde4-XXX instead?
 
 Note: almost no shared library bumps were made. This should be no problem
 if you don't have any KDE 4 packages installed.
@@ -14,49 +13,17 @@ if you don't have any KDE 4 packages installed.
 Looks like debug symbols aren't available at all. But should play with
 "debug" flavor more.
 
-Remi Pointel (rpointel@) have other KDE 4 update bits, hope his work will be
-merged soon.
-
 Not sure what's worse: warnings about incorrect links when packaging, or
 extra "mkdir -p" in almost each port.
-
-See also main Makefile.
 
 Many programs produce such warnings:
 	ark(28160)/KSharedDataCache: Unable to find an appropriate lock to guard the shared cache.  This *should* be essentially impossible. :( 
 	ark(28160)/KSharedDataCache: Unable to perform initial setup, this system probably does not really support process-shared pthreads or semaphores, even though it claims otherwise. 
 Likely this is connected with problem of "missing plugins everywhere".
 
+Ready-to-use packages for l10n, oxygen-icons and wallpapers are available at http://www.ohvost.ru/dnl/kde/ .
 
-admin
-	Contains a lot of patches for ksystemlog to make it contain useful
-	defaults; probably they should be wrapped in "#ifdef (__OpenBSD__)".
-
-attica
-kdenetwork
-libs
-qimageblitz
-	Untested, but looks like work fine.
-
-baseapps
-pimlibs
-runtime
-workspace
-	Fear of Akonadi lives here. Looks like most crashes are related to
-	ASS (Akonadi-Soprano-Strigi) framework. knotify crashes almost
-	immediately at start too, but notification sound is played.
-
-kate
-multimedia
-utils
-	Works For Me(TM)
-
-konsole
-	Tab name formatting doesn't work.
-
-l10n
-oxygen-icons
-	Done. Ready-to-use packages available at http://www.ohvost.ru/dnl/kde/
+For more information see main Makefile and TODOs and Makefiles in subdirectories.
 
 ---
  * - Last one is a joke. (Captain)
