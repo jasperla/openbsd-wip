@@ -1,0 +1,80 @@
+$OpenBSD$
+Do not install files that interfere with system ones.
+--- cmake/modules/CMakeLists.txt.orig	Sat May 21 00:24:53 2011
++++ cmake/modules/CMakeLists.txt	Sun Sep 25 03:53:19 2011
+@@ -18,9 +18,7 @@ set(cmakeFilesDontInstall
+ # which are used inside kdelibs, but which don't have to be installed (and
+ # so become part of the public interface of kdelibs which has to be kept
+ # compatible).
+-set(cmakeFiles CheckCXXSourceCompiles.cmake
+-               CheckCXXSourceRuns.cmake
+-               CheckCXXSymbolExists.cmake
++set(cmakeFiles CheckCXXSymbolExists.cmake
+                CheckPointerMember.cmake
+                CheckPrototypeExists.cmake
+                CheckStructMember.cmake
+@@ -33,7 +31,6 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
+                FindBerkeleyDB.cmake
+                FindBlitz.cmake
+                FindBlueZ.cmake
+-               FindBoost.cmake
+                FindCarbon.cmake
+                FindDBusMenuQt.cmake
+                FindDNSSD.cmake
+@@ -46,8 +43,6 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
+                FindFlac.cmake
+                FindFlex.cmake
+                FindFontconfig.cmake
+-               FindFreetype.cmake
+-               FindGIF.cmake
+                FindGLIB2.cmake
+                FindGMP.cmake
+                FindGObject.cmake
+@@ -71,14 +66,10 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
+                FindKipi.cmake
+                FindKopete.cmake
+                FindKorundum.cmake
+-               FindLCMS.cmake
+                FindLibArt.cmake
+                FindLibAttica.cmake
+                FindLibKonq.cmake
+                FindLibLZMA.cmake
+-               FindLibXml2.cmake
+-               FindLibXslt.cmake
+-               FindLibintl.cmake
+                FindLibraryWithDebug.cmake
+                FindLinuxWirelesstools.cmake
+                FindMsgfmt.cmake
+@@ -88,24 +79,16 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
+                FindNetworkManager.cmake
+                FindOggVorbis.cmake
+                FindOpenEXR.cmake
+-               FindOpenSSL.cmake
+                FindPCRE.cmake
+                FindPhonon.cmake
+-               FindPkgConfig.cmake
+                FindPlasma.cmake
+                FindPopplerQt4.cmake
+-               FindPostgreSQL.cmake
+                FindPulseAudio.cmake
+                FindPyKDE4.cmake
+                FindPyQt4.cmake
+-               Qt4Macros.cmake
+-               Qt4ConfigDependentSettings.cmake
+-               FindPackageHandleStandardArgs.cmake
+-               CMakeParseArguments.cmake  # used by FindPackageHandleStandardArgs.cmake, will be in CMake 2.8.3
+                FindPythonLibrary.cmake
+                FindQCA2.cmake
+                FindQImageBlitz.cmake
+-               FindQt4.cmake
+                FindRUBY.cmake
+                FindSIP.cmake
+                FindSamba.cmake
+@@ -139,7 +122,6 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
+                MacroOptionalAddSubdirectory.cmake
+                MacroOptionalDependPackage.cmake
+                MacroOptionalFindPackage.cmake
+-               MacroPushRequiredVars.cmake
+                MacroWriteBasicCMakeVersionFile.cmake
+                NepomukMacros.cmake
+                NepomukAddOntologyClasses.cmake
