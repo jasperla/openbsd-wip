@@ -9,7 +9,7 @@ HOMEPAGE=	http://siproxd.sourceforge.net/
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
