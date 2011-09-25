@@ -15,4 +15,4 @@ Look closer at following tests:
 
 Hard ones: HUPnP and UDev emulation layers.
 
-kded4 constantly eats 25-30% CPU, the problem looks like lies in "networkstatus" module: after unloading it (through D-Bus), after a few seconds kded4 process gets in a "sleep/poll" state instead of "onproc".
+kded4 constantly eats 25-30% CPU, the problem relies in ksycoca4, which looks up access mode (through access(2)) and other info (through stat(2)) to system .desktop files in loop. It's integral part of kded, so cannot be disabled (if ever should).
