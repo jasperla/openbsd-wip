@@ -1,3 +1,23 @@
-big update from siproxd 0.5.13 to 0.8.1
-install default plugins (introduced in siproxd 0.7.1)
-rc script
+NOTE: This update depends on an updated telephony/libosip2.
+
+This diff updates siproxd to 0.8.1. It is based on stephan@'s
+earlier diff at
+http://marc.info/?l=openbsd-ports&m=127409163726259&w=2 but I have
+made these additional changes:
+
+- Ensured that the default plugins distributed with siproxd are
+  installed (plugins were introduced in siproxd 0.7.1).
+
+- Made the default siproxd.conf file look for plugins in the correct
+  directory.
+
+- If chrooting is used, prevent siproxd from creating a redundant PID
+  file outside the chroot jail.
+
+- Added an rc script for siproxd.
+
+- Added USE_LIBTOOL=Yes and libltdl LIB_DEPENDS. Note that for this to
+  work I had to tell CONFIGURE_ENV to set a funky -D define in CFLAGS;
+  otherwise we will get an "undefined reference to
+  `lt__PROGRAM__LTX_preloaded_symbols'" error with libtool/libltdl 2.4.
+  I am not sure if this is the right way to do it.
