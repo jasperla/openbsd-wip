@@ -316,24 +316,24 @@ RPM queries
   9: rpm -ql -p *.src.rpm                            ok
  10: rpmspec -q                                      ok
  11: rpm -ql -p *.i386.rpm                           ok
- 12: rpm -qp <manifest>                              FAILED (rpmquery.at:109)
+ 12: rpm -qp <manifest>                              ok
  13: rpm -q --scripts -p *.i386.rpm                  ok
  14: rpm -qil hello                                  FAILED (rpmquery.at:150)
- 15: integer array query                             FAILED (rpmquery.at:190)
- 16: formatted filesbypkg query                      FAILED (rpmquery.at:206)
- 17: hex formatted integer array extension query     FAILED (rpmquery.at:222)
- 18: base64 extension query                          FAILED (rpmquery.at:236)
- 19: integer array perms format query                FAILED (rpmquery.at:252)
- 20: string array query                              FAILED (rpmquery.at:265)
- 21: empty string array query                        FAILED (rpmquery.at:278)
- 22: empty string array extension array format       FAILED (rpmquery.at:291)
- 23: empty string array extension query              FAILED (rpmquery.at:304)
- 24: different sizes arrays query                    FAILED (rpmquery.at:318)
- 25: non-existent string tag                         FAILED (rpmquery.at:331)
- 26: non-existent integer tag query                  FAILED (rpmquery.at:344)
- 27: conditional queryformat                         FAILED (rpmquery.at:357)
- 28: invalid tag query                               FAILED (rpmquery.at:371)
- 29: invalid data for format query                   FAILED (rpmquery.at:384)
+ 15: integer array query                             ok
+ 16: formatted filesbypkg query                      ok
+ 17: hex formatted integer array extension query     ok
+ 18: base64 extension query                          ok
+ 19: integer array perms format query                ok
+ 20: string array query                              ok
+ 21: empty string array query                        ok
+ 22: empty string array extension array format       ok
+ 23: empty string array extension query              ok
+ 24: different sizes arrays query                    ok
+ 25: non-existent string tag                         ok
+ 26: non-existent integer tag query                  ok
+ 27: conditional queryformat                         ok
+ 28: invalid tag query                               ok
+ 29: invalid data for format query                   ok
 
 RPM verification
 
@@ -347,7 +347,7 @@ RPM verification
 RPM database access
 
  36: rpm --initdb                                    ok
- 37: rpm -qa                                         FAILED (rpmdb.at:44)
+ 37: rpm -qa                                         ok
  38: rpm -i *.noarch.rpm                             FAILED (rpmdb.at:64)
  39: rpm -U --replacepkgs                            FAILED (rpmdb.at:82)
  40: rpm -i --relocate=.. *.i386.rpm                 FAILED (rpmdb.at:103)
@@ -408,8 +408,8 @@ RPM dependencies
 
 RPM file conflicts
 
- 83: rpm -U to package with file conflict            FAILED (rpmconflict.at:25)
- 84: rpm -U two packages with a conflicting file     FAILED (rpmconflict.at:41)
+ 83: rpm -U to package with file conflict            ok
+ 84: rpm -U two packages with a conflicting file     ok
  85: rpm -U package with shareable file              FAILED (rpmconflict.at:64)
  86: rpm -U two packages with shareable file         FAILED (rpmconflict.at:80)
  87: rpm -U replacing directory with symlink         FAILED (rpmconflict.at:106)
@@ -458,7 +458,7 @@ RPM dependency matching
 ## ------------- ##
 
 ERROR: All 109 tests were run,
-65 failed unexpectedly.
+46 failed unexpectedly.
 ## ------------------------- ##
 ## rpmtests.log was created. ##
 ## ------------------------- ##
@@ -466,7 +466,7 @@ ERROR: All 109 tests were run,
 Please send `tests/rpmtests.log' and all information you think might help:
 
    To: <rpm-maint@lists.rpm.org>
-   Subject: [rpm 4.9.1.1] rpmtests: 12 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 37 38 39 40 41 42 43 44 45 51 52 53 54 55 56 57 58 59 60 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 104 105 106 107 108 109 failed
+   Subject: [rpm 4.9.1.1] rpmtests: 14 30 31 32 33 34 35 38 39 40 41 42 43 44 45 51 52 53 54 55 56 57 58 59 60 76 77 78 79 80 81 82 85 86 87 88 89 90 91 92 104 105 106 107 108 109 failed
 
 You may investigate any problem if you feel able to do so, in which
 case the test suite provides a good starting point.  Its output may

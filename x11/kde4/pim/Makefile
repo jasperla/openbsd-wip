@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, pim
 DISTNAME =	kdepim-${VERSION}
+REVISION =	0
 HOMEPAGE =	http://pim.kde.org/
 
 USE_GROFF =		Yes
@@ -51,7 +52,8 @@ MODULES =		devel/gettext
 BUILD_DEPENDS +=	x11/kde4/automoc
 RUN_DEPENDS +=		x11/kde4/pim-runtime
 LIB_DEPENDS +=		x11/kde4/libs \
-			x11/kde4/pimlibs
+			x11/kde4/pimlibs \
+			x11/grantlee
 
 WANTLIB += X11 Xss akonadi-contact akonadi-kde akonadi-kmime \
 	akonadiprotocolinternals c gpg-error gpgme++ gpgme++-pthread \

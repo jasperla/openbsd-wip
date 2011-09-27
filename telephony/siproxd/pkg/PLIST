@@ -3,21 +3,13 @@
 @newuser _siproxd:574:574:daemon:SIP proxy:/var/empty:/sbin/nologin
 %%SHARED%%
 lib/siproxd/
-lib/siproxd/plugin_defaulttarget.a
 lib/siproxd/plugin_defaulttarget.la
-lib/siproxd/plugin_demo.a
 lib/siproxd/plugin_demo.la
-lib/siproxd/plugin_fix_bogus_via.a
 lib/siproxd/plugin_fix_bogus_via.la
-lib/siproxd/plugin_logcall.a
 lib/siproxd/plugin_logcall.la
-lib/siproxd/plugin_prefix.a
 lib/siproxd/plugin_prefix.la
-lib/siproxd/plugin_regex.a
 lib/siproxd/plugin_regex.la
-lib/siproxd/plugin_shortdial.a
 lib/siproxd/plugin_shortdial.la
-lib/siproxd/plugin_stun.a
 lib/siproxd/plugin_stun.la
 @bin sbin/siproxd
 share/doc/siproxd/

@@ -1,8 +1,8 @@
 $OpenBSD$
 Target name with spaces is not a very good idea, kalarm in kdepim breaks.
---- cmake/modules/KDE4Macros.cmake.orig	Sun Sep  4 19:42:08 2011
-+++ cmake/modules/KDE4Macros.cmake	Sun Sep  4 19:42:33 2011
-@@ -1323,7 +1323,7 @@ function(KDE4_INSTALL_AUTH_ACTIONS HELPER_ID ACTIONS_F
+--- cmake/modules/KDE4Macros.cmake.orig	Mon Aug 22 17:22:03 2011
++++ cmake/modules/KDE4Macros.cmake	Sun Sep 25 03:47:07 2011
+@@ -1299,7 +1299,7 @@ function(KDE4_INSTALL_AUTH_ACTIONS HELPER_ID ACTIONS_F
                         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
                         COMMENT "Generating ${HELPER_ID}.policy"
                         DEPENDS ${_KDE4_KAUTH_POLICY_GEN_EXECUTABLE_DEP})

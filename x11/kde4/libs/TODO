@@ -1,8 +1,6 @@
 Fix build that shared library could be resolved without symlink:
 make: don't know how to make /usr/local/lib/libpolkit-qt-core-1.so. Stop in /usr/ports/pobj/kdelibs-4.7.0/build-i386.
 
-Check were katepart has gone.
-
 Look at sendfile(3) support.
 
 Look closer at following tests:
@@ -15,6 +13,6 @@ Look closer at following tests:
 -- Performing Test HAVE_X86_3DNOW
 -- Performing Test HAVE_X86_3DNOW - Success
 
-Port Grantlee >= 0.1.0.
-
 Hard ones: HUPnP and UDev emulation layers.
+
+kded4 constantly eats 25-30% CPU, the problem relies in ksycoca4, which looks up access mode (through access(2)) and other info (through stat(2)) to system .desktop files in loop. It's integral part of kded, so cannot be disabled (if ever should).
