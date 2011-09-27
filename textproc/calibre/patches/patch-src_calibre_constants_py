@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-src_calibre_constants_py,v 1.1 2011/09/05 12:38:36 jasper Exp $
 
 Add OpenBSD to list of recognized BSDs
 
