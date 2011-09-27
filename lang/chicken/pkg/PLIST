@@ -39,6 +39,7 @@ lib/chicken/6/utils.import.so
 lib/libchicken.a
 @comment lib/libchicken.so
 @lib lib/libchicken.so.${LIBchicken_VERSION}
+@bin lib/libchicken.so.6
 @man man/man1/chicken-bug.1
 @man man/man1/chicken-install.1
 @man man/man1/chicken-profile.1
