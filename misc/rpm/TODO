@@ -1,0 +1,5 @@
+46 test cases are failing, still working on figuring out why.  The current
+regress.log is in this directory to show what test cases are failing.
+
+Aside from that, the port is pretty much usable.  At least from my point
+of view.  I'm using it daily in my job.
