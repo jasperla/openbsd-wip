@@ -67,14 +67,15 @@ adjust `PORTSDIR_PATH` accordingly:
 
 	PORTSDIR_PATH=${PORTSDIR}:$(PORTSDIR)/openbsd-wip:${PORTSDIR}/mystuff
 
-To prevent "merge commits" from showing up in git log, it's
-recommended to either update your tree with:
+To prevent "merge commits" from showing up in git log, it's recommended to
+either update your tree with:
 
 	git fetch && git rebase origin
 
-or to add the following to .git/config in your local openbsd-wip repo under the
-[branch "master"] section:
-	rebase = true
+or set the following option in `.git/config` in your local openbsd-wip repo
+(see git-config(1) on `branch.<name>.rebase` and `branch.autosetuprebase`):
+
+	git config branch.master.rebase true
 
 How to contribute
 ==================================
