@@ -11,7 +11,7 @@ CATEGORIES=	x11
 
 HOMEPAGE=	http://www.enlightenment.org/
 
-MAINTAINER=	Paul Wang <op21@squish.org>
+MAINTAINER=	Amit Kulkarni <amitkulz@gmail.com>
 
 # X11
 PERMIT_PACKAGE_CDROM=	Yes
