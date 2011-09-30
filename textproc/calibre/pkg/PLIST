@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/09/13 07:00:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/09/29 17:33:31 jasper Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -2814,6 +2814,8 @@ share/calibre/recipes/deadspin.recipe
 share/calibre/recipes/degentenaar.recipe
 share/calibre/recipes/deia.recipe
 share/calibre/recipes/demorgen_be.recipe
+share/calibre/recipes/den_of_geek.png
+share/calibre/recipes/den_of_geek.recipe
 share/calibre/recipes/denver_post.recipe
 share/calibre/recipes/der_spiegel.recipe
 share/calibre/recipes/der_standard.png
@@ -2841,6 +2843,7 @@ share/calibre/recipes/di.recipe
 share/calibre/recipes/diagonales.recipe
 share/calibre/recipes/diario_cordoba.recipe
 share/calibre/recipes/diario_ibiza.recipe
+share/calibre/recipes/diario_la_republica.recipe
 share/calibre/recipes/diario_sport.recipe
 share/calibre/recipes/diariovasco.png
 share/calibre/recipes/diariovasco.recipe
@@ -2903,10 +2906,12 @@ share/calibre/recipes/eksiazki.recipe
 share/calibre/recipes/el_colombiano.recipe
 share/calibre/recipes/el_correo.recipe
 share/calibre/recipes/el_cultural.recipe
+share/calibre/recipes/el_espectador.recipe
 share/calibre/recipes/el_faro.recipe
 share/calibre/recipes/el_mercurio_chile.png
 share/calibre/recipes/el_mercurio_chile.recipe
 share/calibre/recipes/el_mostrador.recipe
+share/calibre/recipes/el_mundo_co.recipe
 share/calibre/recipes/el_observador.recipe
 share/calibre/recipes/el_pais.recipe
 share/calibre/recipes/el_pais_babelia.recipe
@@ -3017,6 +3022,7 @@ share/calibre/recipes/focus_de.recipe
 share/calibre/recipes/fokkeensukke.recipe
 share/calibre/recipes/folhadesaopaulo.png
 share/calibre/recipes/folhadesaopaulo.recipe
+share/calibre/recipes/folhadesaopaulo_sub.recipe
 share/calibre/recipes/forbes.recipe
 share/calibre/recipes/forbes_india.recipe
 share/calibre/recipes/foreign_policy.recipe
@@ -3078,6 +3084,7 @@ share/calibre/recipes/go_comics.recipe
 share/calibre/recipes/golem_de.recipe
 share/calibre/recipes/good_house_keeping.recipe
 share/calibre/recipes/good_to_know.recipe
+share/calibre/recipes/gosc_niedzielny.recipe
 share/calibre/recipes/gram_pl.png
 share/calibre/recipes/gram_pl.recipe
 share/calibre/recipes/granma.png
@@ -3331,6 +3338,7 @@ share/calibre/recipes/legeartis.recipe
 share/calibre/recipes/leggo_it.recipe
 share/calibre/recipes/legitymizm.png
 share/calibre/recipes/legitymizm.recipe
+share/calibre/recipes/leipzer_volkszeitung.recipe
 share/calibre/recipes/lemonde_dip.png
 share/calibre/recipes/lemonde_dip.recipe
 share/calibre/recipes/lenta_ru.recipe
@@ -3669,6 +3677,7 @@ share/calibre/recipes/regina_leader_post.recipe
 share/calibre/recipes/replicavedetelor.png
 share/calibre/recipes/replicavedetelor.recipe
 share/calibre/recipes/reptantes.recipe
+share/calibre/recipes/republica.recipe
 share/calibre/recipes/republika.recipe
 share/calibre/recipes/reuters.png
 share/calibre/recipes/reuters.recipe
@@ -3676,6 +3685,7 @@ share/calibre/recipes/reuters_ja.png
 share/calibre/recipes/reuters_ja.recipe
 share/calibre/recipes/revista_bla.recipe
 share/calibre/recipes/revista_muy.recipe
+share/calibre/recipes/revista_semana.recipe
 share/calibre/recipes/rga.recipe
 share/calibre/recipes/rheinische_post.recipe
 share/calibre/recipes/ria_ru.png
@@ -3743,6 +3753,7 @@ share/calibre/recipes/sfin.png
 share/calibre/recipes/sfin.recipe
 share/calibre/recipes/sg_hu.recipe
 share/calibre/recipes/shacknews.recipe
+share/calibre/recipes/sign_on_sd.recipe
 share/calibre/recipes/sinfest.recipe
 share/calibre/recipes/singtao_daily.recipe
 share/calibre/recipes/siol.png
