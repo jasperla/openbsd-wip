@@ -48,41 +48,46 @@ SHARED_LIBS +=  nepomuk			0.0 # 4.7
 SHARED_LIBS +=  nepomukquery		0.0 # 4.7
 SHARED_LIBS +=  nepomukutils		0.0 # 4.7
 
-WANTLIB += Half ICE Iex IlmImf IlmThread Imath SM X11 Xau Xcursor Xdmcp \
-	Xext Xfixes Xft Xpm Xrender Xtst asn1 aspell attica bz2 c com_err \
-	dbusmenu-qt \
-	enchant fam gif gssapi intl jasper jpeg krb5 lib/qt4/Qt3Support \
-	lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork \
-	lib/qt4/QtOpenGL lib/qt4/QtScript lib/qt4/QtSvg lib/qt4/QtWebKit \
-	lib/qt4/QtXml lzma m pcre pcreposix phonon png pthread qca>=3.0 \
-	soprano sopranoclient stdc++ streamanalyzer streams util xml2 xslt z
-WANTLIB += Xss lib/qt4/QtDeclarative lib/qt4/QtSql exslt polkit-qt-core-1
 
-BUILD_DEPENDS += misc/shared-mime-info \
-		x11/kde4/automoc \
-		misc/shared-desktop-ontologies
+WANTLIB += c krb5 m pthread stdc++ util z
+WANTLIB += ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xpm Xrender Xss
+WANTLIB += Xtst
+WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDeclarative
+WANTLIB += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtOpenGL
+WANTLIB += lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg
+WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml
+WANTLIB += attica phonon soprano sopranoclient streamanalyzer streams
+WANTLIB += Half Iex IlmImf IlmThread Imath asn1 aspell bz2 com_err
+WANTLIB += dbusmenu-qt enchant exslt fam gif gssapi intl jasper jpeg
+WANTLIB += lzma pcre pcreposix png polkit-qt-core-1 qca>=3.0 xml2 xslt
 
-RUN_DEPENDS +=  misc/shared-mime-info \
-		misc/shared-desktop-ontologies \
-		x11/kde4/oxygen-icons
+BUILD_DEPENDS +=	misc/shared-mime-info \
+			x11/kde4/automoc \
+			misc/shared-desktop-ontologies
 
-LIB_DEPENDS +=	graphics/openexr \
-		graphics/libungif \
-		graphics/jasper \
-		archivers/bzip2 \
-		textproc/aspell/core \
-		textproc/enchant \
-		textproc/libxslt \
-		devel/pcre \
-		databases/strigi \
-		attica->=0.1.9:x11/kde4/attica \
-		archivers/xz \
-		soprano->=2.5.60:databases/soprano \
-		multimedia/phonon \
-		security/qca2 \
-		x11/dbusmenu-qt \
-		x11/grantlee \
-		x11/polkit-qt4
+RUN_DEPENDS +=		misc/shared-mime-info \
+			misc/shared-desktop-ontologies \
+			sysutils/gamin,-server \
+			x11/kde4/oxygen-icons
+
+LIB_DEPENDS +=		archivers/bzip2 \
+			archivers/xz \
+			attica->=0.1.9:x11/kde4/attica \
+			databases/strigi \
+			devel/pcre \
+			graphics/openexr \
+			graphics/libungif \
+			graphics/jasper \
+			multimedia/phonon \
+			security/qca2 \
+			soprano->=2.5.60:databases/soprano \
+			sysutils/gamin \
+			textproc/aspell/core \
+			textproc/enchant \
+			textproc/libxslt \
+			x11/dbusmenu-qt \
+			x11/grantlee \
+			x11/polkit-qt4 \
 
 # we don't have krb5-config
 CONFIGURE_ARGS += -DGSSAPI_LIBS:STRING="-lgssapi -lkrb5 -lasn1 -lcom_err"
