@@ -91,6 +91,7 @@
 # other apps
      SUBDIR += kate			# OK
      SUBDIR += konsole			# issues
+     SUBDIR += akonadi-googledata	# untested
      
 # additional resources
      SUBDIR += plasma-addons		# not fully tested
