@@ -1,0 +1,35 @@
+$OpenBSD$
+Patch from upstream, should fix some crashes, especially bug #282946:
+https://bugs.kde.org/show_bug.cgi?id=282946
+
+Git revision Revision b5c376b0:a2855606
+--- akonadi/entitytreemodel_p.cpp
++++ akonadi/entitytreemodel_p.cpp
+@@ -1079,8 +1079,18 @@ void EntityTreeModelPrivate::monitoredItemMoved( const Akonadi::Item& item,
+   } else if ( isHidden( destCollection ) ) {
+     monitoredItemRemoved( item );
+     return;
++  } else {
++    monitoredItemRemoved( item );
++    monitoredItemAdded( item, destCollection );
++    return;
+   }
+-
++  // "Temporarily" commented out as it's likely the best course to
++  // avoid the dreaded "reset storm" (or layoutChanged storm). The
++  // whole itemMoved idea is great but not practical until all the
++  // other proxy models play nicely with it, right now they just
++  // transform moved signals in layout changed, which explodes into
++  // a reset of the source model inside of the message list (ouch!)
++#if 0
+   if ( !m_items.contains( item.id() ) ) {
+     kWarning() << "Got a stale notification for an item which was already removed." << item.id() << item.remoteId();
+     return;
+@@ -1112,6 +1122,7 @@ void EntityTreeModelPrivate::monitoredItemMoved( const Akonadi::Item& item,
+   node->parent = destCollection.id();
+   m_childEntities[ destCollection.id() ].append( node );
+   q->endMoveRows();
++#endif
+ }
+ 
+ void EntityTreeModelPrivate::monitoredItemLinked( const Akonadi::Item& item, const Akonadi::Collection& collection )
