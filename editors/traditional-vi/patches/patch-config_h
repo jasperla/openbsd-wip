@@ -1,0 +1,11 @@
+$OpenBSD$
+--- config.h.orig	Fri Sep 30 14:22:45 2011
++++ config.h	Fri Sep 30 14:23:03 2011
+@@ -133,6 +133,7 @@
+  *
+  * The argument to the sbrk() system call has this type.
+  */
++#include <stdint.h>
+ #ifdef	notdef
+ typedef int	intptr_t;
+ #endif
