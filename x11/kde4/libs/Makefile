@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, libraries
 DISTNAME =	kdelibs-${VERSION}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=	kde3support          0.0      # .4.0
 SHARED_LIBS +=	kdecore              8.0      # .5.0
@@ -100,7 +100,7 @@ CONFIGURE_ARGS +=	-DKDE4_LIB_INSTALL_DIR:String=${LOCALBASE}/lib
 CONFIGURE_ARGS +=	-DKDESU_USE_SUDO_DEFAULT:BOOL=TRUE
 USE_GROFF =	Yes
 
-FIXED_CMAKE_MODULES =	FindGettext
+FIXED_CMAKE_MODULES =	FindGettext FindLibXslt
 
 post-extract:
 	@if pkg_info -e 'kdelibs-<4'; then \

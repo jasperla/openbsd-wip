@@ -2156,6 +2156,7 @@ share/apps/cmake/modules/FindLibAttica.cmake
 share/apps/cmake/modules/FindLibKonq.cmake
 share/apps/cmake/modules/FindLibLZMA.cmake
 share/apps/cmake/modules/FindLibPython.py
+share/apps/cmake/modules/FindLibXslt.cmake
 share/apps/cmake/modules/FindLibraryWithDebug.cmake
 share/apps/cmake/modules/FindLinuxWirelesstools.cmake
 share/apps/cmake/modules/FindMsgfmt.cmake
