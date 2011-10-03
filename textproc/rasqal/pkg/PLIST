@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+@conflict redland-<1.0.14
 %%SHARED%%
 bin/rasqal-config
 @bin bin/roqet
