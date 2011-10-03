@@ -1,0 +1,5 @@
+PackageKit is a system designed to make installing and updating
+software on your computer easier. The primary design goal is to
+unify all the software graphical tools used in different distributions,
+and use some of the latest technology like PolicyKit to make the
+process suck less.

@@ -1,0 +1,6 @@
+No OpenBSD backend (should be written).
+
+When starting pkcon from the text console:
+Failed to contact PackageKit: Process /usr/local/libexec/dbus-daemon-launch-helper received signal 5
+
+Regression test dumps core.
