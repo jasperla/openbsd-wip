@@ -230,5 +230,3 @@ share/examples/boo/svnutils/src/svn_changed.boo
 share/examples/boo/svnutils/src/svn_ignore.boo
 share/examples/boo/svnutils/src/svn_ignore_all.boo
 share/examples/boo/svnutils/src/svn_locals.boo
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec %D/bin/update-mime-database %D/share/mime
