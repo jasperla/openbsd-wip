@@ -6,7 +6,7 @@ SEPARATE_BUILD =	flavored
 CATEGORIES ?=		x11 x11/kde
 VERSION ?=		4.7.1
 DIST_SUBDIR ?=		kde
-PKGNAME?=		${DISTNAME}
+PKGNAME ?=		${DISTNAME}
 MODULES +=		x11/qt4
 MODQT_MT ?=		Yes
 MODQT_OVERRIDE_UIC ?=	No
@@ -16,8 +16,8 @@ ONLY_FOR_ARCHS ?=	${GCC4_ARCHS}
 MODULES +=		devel/cmake
 CONFIGURE_STYLE ?=	cmake
 
-EXTRACT_SUFX?=		.tar.bz2
-MASTER_SITES?=		${MASTER_SITE_KDE:=stable/${VERSION}/src/}
+EXTRACT_SUFX ?=		.tar.bz2
+MASTER_SITES ?=		${MASTER_SITE_KDE:=stable/${VERSION}/src/}
 
 PORTHOME ?=		${WRKDIR}
 
@@ -27,7 +27,6 @@ PERMIT_DISTFILES_FTP ?=		Yes
 PERMIT_PACKAGE_CDROM ?=		Yes
 PERMIT_PACKAGE_FTP ?=		Yes
 CONFIGURE_ENV +=		QTDIR=${MODQT_LIBDIR} HOME=${WRKDIR}
-SEPARATE_BUILD =		simple
 
 #CONFIGURE_ARGS +=	--debug-output --debug-trycompile
 .if ${FLAVOR:L:Mdebug}

@@ -75,9 +75,9 @@ LIB_DEPENDS +=		archivers/bzip2 \
 			attica->=0.1.9:x11/kde4/attica \
 			databases/strigi \
 			devel/pcre \
-			graphics/openexr \
-			graphics/libungif \
 			graphics/jasper \
+			graphics/libungif \
+			graphics/openexr \
 			multimedia/phonon \
 			security/qca2 \
 			soprano->=2.5.60:databases/soprano \
