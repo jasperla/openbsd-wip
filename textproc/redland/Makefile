@@ -17,12 +17,13 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-WANTLIB +=	c crypto curl idn iodbc iodbcinst m ssl xml2
+WANTLIB +=	c crypto curl idn iodbc iodbcinst ltdl m ssl xml2
 WANTLIB +=	xslt z raptor2 rasqal
 
 MODULES =	devel/gettext
 
 LIB_DEPENDS =	databases/iodbc \
+		devel/libtool,-ltdl \
 		textproc/raptor \
 		textproc/rasqal
 
