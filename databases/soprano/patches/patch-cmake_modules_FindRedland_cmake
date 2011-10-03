@@ -1,0 +1,12 @@
+$OpenBSD$
+Remove Linux-specific linker option.
+--- cmake/modules/FindRedland.cmake.orig	Mon Oct  3 23:01:19 2011
++++ cmake/modules/FindRedland.cmake	Mon Oct  3 23:01:29 2011
+@@ -108,7 +108,6 @@ if(NOT WIN32)
+     try_run(_TEST_EXITCODE _TEST_COMPILED
+       "${CMAKE_CURRENT_BINARY_DIR}"
+       "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules/CheckLibraryLoads.c"
+-      CMAKE_FLAGS "-DLINK_LIBRARIES=dl"
+       RUN_OUTPUT_VARIABLE _OUTPUT
+       ARGS ${_REDLAND_STORAGE_LIBS}
+     )
