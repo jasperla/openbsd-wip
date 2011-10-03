@@ -35,7 +35,7 @@ EXAMPLEDIR =		${PREFIX}/share/examples/${PNAME}
 
 WRKDIST =		${WRKDIR}
 
-USE_NANT =		Yes
+MODMONO_NANT =		Yes
 
 NANT_FLAGS =		-D:install.prefix=${PREFIX} \
 			-D:skip.vs=true \
