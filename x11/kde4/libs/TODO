@@ -1,6 +1,3 @@
-Fix build that shared library could be resolved without symlink:
-make: don't know how to make /usr/local/lib/libpolkit-qt-core-1.so. Stop in /usr/ports/pobj/kdelibs-4.7.0/build-i386.
-
 Look at sendfile(3) support.
 
 Look closer at following tests:
