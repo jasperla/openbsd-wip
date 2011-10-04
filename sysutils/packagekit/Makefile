@@ -3,6 +3,7 @@
 CATEGORIES =	sysutils
 COMMENT =	cross-platform package management framework
 DISTNAME =	PackageKit-0.7.0
+PKGNAME =	${DISTNAME:L}
 HOMEPAGE =	http://www.packagekit.org/
 MAINTAINER =	Vadim Zhukov <persgray@gmail.com>
 
@@ -61,6 +62,12 @@ CONFIGURE_ARGS +=	--disable-browser-plugin \
 
 COPTS +=		-I${LOCALBASE}/include \
 			-L${LOCALBASE}/lib
+
+# Modelled after sysutils/consolekit
+FAKE_FLAGS =	DBUS_SYS_DIR=${TRUEPREFIX}/share/examples/packagekit/dbus-1 \
+		PK_DB_DIR=${TRUEPREFIX}/share/examples/packagekit/db \
+		sysconfdir=${TRUEPREFIX}/share/examples/packagekit \
+		SYSCONFDIR=${TRUEPREFIX}/share/examples/packagekit
 
 post-patch:
 	@echo "====> Regenerating MOC files"

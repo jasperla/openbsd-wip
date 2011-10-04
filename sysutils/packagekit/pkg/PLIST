@@ -75,8 +75,6 @@ lib/cmake/packagekit-qt2/
 lib/cmake/packagekit-qt2/packagekit-qt2-config-version.cmake
 lib/cmake/packagekit-qt2/packagekit-qt2-config.cmake
 lib/girepository-1.0/PackageKitGlib-1.0.typelib
-lib/gtk-3.0/
-lib/gtk-3.0/modules/
 lib/gtk-3.0/modules/libpk-gtk-module.a
 lib/gtk-3.0/modules/libpk-gtk-module.la
 lib/gtk-3.0/modules/libpk-gtk-module.so
@@ -320,6 +318,46 @@ share/cmake/Modules/FindQPackageKit.cmake
 share/dbus-1/interfaces/org.freedesktop.PackageKit.Transaction.xml
 share/dbus-1/interfaces/org.freedesktop.PackageKit.xml
 share/dbus-1/system-services/org.freedesktop.PackageKit.service
+share/examples/packagekit/
+share/examples/packagekit/PackageKit/
+@sample ${SYSCONFDIR}/PackageKit/
+share/examples/packagekit/PackageKit/CommandNotFound.conf
+@sample ${SYSCONFDIR}/PackageKit/CommandNotFound.conf
+share/examples/packagekit/PackageKit/PackageKit.conf
+@sample ${SYSCONFDIR}/PackageKit/PackageKit.conf
+share/examples/packagekit/PackageKit/Vendor.conf
+@sample ${SYSCONFDIR}/PackageKit/Vendor.conf
+share/examples/packagekit/PackageKit/events/
+@sample ${SYSCONFDIR}/PackageKit/events/
+share/examples/packagekit/PackageKit/events/post-transaction.d/
+@sample ${SYSCONFDIR}/PackageKit/events/post-transaction.d/
+share/examples/packagekit/PackageKit/events/post-transaction.d/README
+share/examples/packagekit/PackageKit/events/pre-transaction.d/
+@sample ${SYSCONFDIR}/PackageKit/events/pre-transaction.d/
+share/examples/packagekit/PackageKit/events/pre-transaction.d/README
+share/examples/packagekit/bash_completion.d/
+@sample ${SYSCONFDIR}/bash_completion.d/
+share/examples/packagekit/bash_completion.d/pk-completion.bash
+@sample ${SYSCONFDIR}/bash_completion.d/pk-completion.bash
+share/examples/packagekit/cron.daily/
+@sample ${SYSCONFDIR}/cron.daily/
+share/examples/packagekit/cron.daily/packagekit-background.cron
+@sample ${SYSCONFDIR}/cron.daily/packagekit-background.cron
+share/examples/packagekit/db/
+@sample /var/db/PackageKit/
+share/examples/packagekit/db/transactions.db
+@sample /var/db/PackageKit/transactions.db
+share/examples/packagekit/dbus-1/
+share/examples/packagekit/dbus-1/org.freedesktop.PackageKit.conf
+@sample ${SYSCONFDIR}/dbus-1/org.freedesktop.PackageKit.conf
+share/examples/packagekit/profile.d/
+@sample ${SYSCONFDIR}/profile.d/
+share/examples/packagekit/profile.d/PackageKit.sh
+@sample ${SYSCONFDIR}/profile.d/PackageKit.sh
+share/examples/packagekit/sysconfig/
+@sample ${SYSCONFDIR}/sysconfig/
+share/examples/packagekit/sysconfig/packagekit-background
+@sample ${SYSCONFDIR}/sysconfig/packagekit-background
 share/gir-1.0/PackageKitGlib-1.0.gir
 share/gtk-doc/html/PackageKit/
 share/gtk-doc/html/PackageKit/PackageKit-pk-bitfield.html
@@ -459,9 +497,10 @@ share/locale/uk/LC_MESSAGES/PackageKit.mo
 share/locale/wa/LC_MESSAGES/PackageKit.mo
 share/locale/zh_CN/LC_MESSAGES/PackageKit.mo
 share/locale/zh_TW/LC_MESSAGES/PackageKit.mo
-share/mime/
-share/mime/packages/
 share/mime/packages/packagekit-catalog.xml
 share/mime/packages/packagekit-package-list.xml
 share/mime/packages/packagekit-servicepack.xml
 share/polkit-1/actions/org.freedesktop.packagekit.policy
+@sample /var/cache/
+@sample /var/cache/PackageKit/
+@sample /var/cache/PackageKit/downloads/

@@ -1,0 +1,12 @@
+$OpenBSD$
+--- configure.ac.orig	Tue Oct  4 04:02:11 2011
++++ configure.ac	Tue Oct  4 04:02:48 2011
+@@ -707,7 +707,7 @@ fi
+ 
+ AC_SUBST(PK_CONF_DIR, "\$(sysconfdir)/PackageKit")
+ AC_SUBST(PK_YUM_PLUGIN_DIR, "\$(prefix)/lib/yum-plugins")
+-AC_SUBST(PK_DB_DIR, "\$(localstatedir)/lib/PackageKit")
++AC_SUBST(PK_DB_DIR, "\$(localstatedir)/db/PackageKit")
+ AC_SUBST(PK_LOG_DIR, "\$(localstatedir)/log")
+ AC_SUBST(PK_PLUGIN_DIR, "\$(libdir)/packagekit-backend")
+ AC_SUBST(PK_PLUGIN_CFLAGS, "-I\$(top_srcdir)/src -I\$(top_srcdir)/lib -DPK_COMPILATION $GLIB_CFLAGS $GMODULE_CFLAGS $GIO_CFLAGS")
