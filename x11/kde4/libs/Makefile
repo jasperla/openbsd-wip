@@ -103,9 +103,6 @@ USE_GROFF =	Yes
 # Contain (required) additional functionality compared to system ones
 FIXED_CMAKE_MODULES =	FindGettext FindLibXslt
 
-# Break build
-BROKEN_CMAKE_MODULES =	FindPackageHandleStandardArgs
-
 post-extract:
 	@if pkg_info -e 'kdelibs-<4'; then \
 		echo "Error: don't try to build with kde3 around"; \
@@ -113,9 +110,6 @@ post-extract:
 	fi
 .for M in ${FIXED_CMAKE_MODULES}
 	${SUBST_CMD} -c ${FILESDIR}/${M}.cmake ${WRKSRC}/cmake/modules/${M}.cmake
-.endfor
-.for M in ${BROKEN_CMAKE_MODULES}
-	rm ${WRKSRC}/cmake/modules/${M}.cmake
 .endfor
 
 .include <bsd.port.mk>
