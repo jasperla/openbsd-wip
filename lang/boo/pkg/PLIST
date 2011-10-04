@@ -61,6 +61,7 @@ share/doc/boo/BooManifesto.sxw
 share/doc/boo/license.txt
 share/doc/boo/notice.txt
 share/doc/boo/readme.txt
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/boo/
 share/examples/boo/asp.net/
 share/examples/boo/asp.net/Calendar.aspx
@@ -230,3 +231,14 @@ share/examples/boo/svnutils/src/svn_changed.boo
 share/examples/boo/svnutils/src/svn_ignore.boo
 share/examples/boo/svnutils/src/svn_ignore_all.boo
 share/examples/boo/svnutils/src/svn_locals.boo
+share/gtksourceview-2.0/
+share/gtksourceview-2.0/language-specs/
+share/gtksourceview-2.0/language-specs/boo.lang
+share/mime/
+share/mime-info/
+share/mime-info/boo.keys
+share/mime-info/boo.mime
+share/mime/packages/
+share/mime/packages/boo-mime-info.xml
+@exec %D/bin/update-mime-datebase %D/share/mime
+@unexec %D/bin/update-mime-datebase %D/share/mime

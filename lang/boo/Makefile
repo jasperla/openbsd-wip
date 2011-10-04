@@ -28,6 +28,7 @@ MODULES = 		lang/mono
 
 BUILD_DEPENDS +=	lang/antlr3
 LIB_DEPENDS +=		lang/mono \
+			misc/shared-mime-info \
 			x11/gtksourceview
 
 DOCDIR =		${PREFIX}/share/doc/${PNAME}
@@ -38,6 +39,7 @@ WRKDIST =		${WRKDIR}
 MODMONO_NANT =		Yes
 
 NANT_FLAGS =		-D:install.prefix=${PREFIX} \
+			-D:fakeroot=${WRKINST} \
 			-D:skip.vs=true \
 			-D:antlr.jar=${LOCALBASE}/share/java/classes/antlr3.jar
 
