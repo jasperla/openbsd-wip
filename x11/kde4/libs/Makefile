@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, libraries
 DISTNAME =	kdelibs-${VERSION}
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS +=	kde3support          0.0      # .4.0
 SHARED_LIBS +=	kdecore              8.0      # .5.0
