@@ -111,7 +111,7 @@ WANTLIB+=	nss3 nssutil3
 
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
-	@ln -sf ${LOCALBASE}/include/pulse ${WRKDIR}/pulse
+	@ln -sf ${LOCALBASE}/include/pulse ${WRKSRC}/pulse
 	${SUBST_CMD} ${WRKSRC}/build/common.gypi
 	@cp -pR ${WRKSRC}/third_party/libvpx/source/config/linux \
 		${WRKSRC}/third_party/libvpx/source/config/openbsd
