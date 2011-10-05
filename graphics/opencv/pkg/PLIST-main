@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2011/06/24 09:30:22 jasper Exp $
 @bin bin/opencv_createsamples
 @bin bin/opencv_haartraining
 @bin bin/opencv_performance

@@ -7,25 +7,24 @@ SHARED_ONLY=		Yes
 COMMENT-main=		library of programming functions for real time cv
 COMMENT-docs=		documentation for OpenCV
 
-V=			2.3.1
+V=			2.3.1a
 DISTNAME=		OpenCV-$V
 PKGNAME-main=		opencv-$V
 PKGNAME-docs=		opencv-docs-$V
 CATEGORIES=		graphics devel
 
-SHARED_LIBS +=		opencv_calib3d			0.0
-SHARED_LIBS +=		opencv_contrib			0.0
-SHARED_LIBS +=		opencv_core			0.0
-SHARED_LIBS +=		opencv_features2d		0.0
-SHARED_LIBS +=		opencv_flann			0.0
-SHARED_LIBS +=		opencv_gpu			0.0
-SHARED_LIBS +=		opencv_highgui			0.0
-SHARED_LIBS +=		opencv_imgproc			0.0
-SHARED_LIBS +=		opencv_legacy			0.0
-SHARED_LIBS +=		opencv_ml			0.0
-SHARED_LIBS +=		opencv_objdetect		0.0
-SHARED_LIBS +=		opencv_video			0.0
-SHARED_LIBS +=		opencv_ts			0.0
+SHARED_LIBS +=		opencv_calib3d			1.0
+SHARED_LIBS +=		opencv_contrib			1.0
+SHARED_LIBS +=		opencv_core			1.0
+SHARED_LIBS +=		opencv_features2d		1.0
+SHARED_LIBS +=		opencv_flann			1.0
+SHARED_LIBS +=		opencv_gpu			1.0
+SHARED_LIBS +=		opencv_highgui			1.0
+SHARED_LIBS +=		opencv_imgproc			1.0
+SHARED_LIBS +=		opencv_legacy			1.0
+SHARED_LIBS +=		opencv_ml			1.0
+SHARED_LIBS +=		opencv_objdetect		1.0
+SHARED_LIBS +=		opencv_video			1.0
 
 HOMEPAGE=		http://opencv.willowgarage.com/
 
@@ -39,6 +38,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=opencvlibrary/}
 EXTRACT_SUFX=		.tar.bz2
+EXTRACT_ONLY=
 
 WANTLIB += GL Half Iex IlmImf Imath X11 Xau Xcomposite Xcursor
 WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
@@ -53,10 +53,24 @@ WANTLIB += tiff vorbis vorbisenc vpx x264 xcb xcb-render xcb-shm
 WANTLIB += xml2 z ${MODPY_WANTLIB}
 
 MODULES=		devel/cmake \
-			devel/gettext \
-			lang/python
+			devel/gettext
 
 MULTI_PACKAGES= 	-main -docs
+
+FLAVORS=		python
+FLAVOR?=
+
+.if ${FLAVOR:L:Mpython}
+CONFIGURE_ARGS+=	-DBUILD_NEW_PYTHON_SUPPORT:Bool=On \
+			-DINSTALL_PYTHON_EXAMPLES:Bool=On
+
+MODULES=		devel/python
+RUN_DEPENDS-main=	math/py-numpy
+WANTLIB +=		${MODPY_WANTLIB}
+.else
+CONFIGURE_ARGS+=	-DBUILD_NEW_PYTHON_SUPPORT:Bool=Off \
+			-DINSTALL_PYTHON_EXAMPLES:Bool=Off
+.endif
 
 CONFIGURE_STYLE=	cmake
 LIB_DEPENDS-main=	multimedia/gstreamer-0.10/plugins-base \
@@ -75,16 +89,12 @@ USE_LIBTOOL=		Yes
 
 VMEM_WARNING=		Yes
 
-RUN_DEPENDS-main=	math/py-numpy
 BUILD_DEPENDS=		devel/doxygen
 
 # ATM opencv requires V4L1 compat, ask them to change it,
-# then see WITH_V4L below.
+# then see WITH_V4L below.:
 CONFIGURE_ARGS+=	-DBUILD_EXAMPLES:Bool=On \
 			-DINSTALL_C_EXAMPLES:Bool=On \
-			-DINSTALL_PYTHON_EXAMPLES:Bool=On \
-			-DBUILD_PYTHON_SUPPORT:Bool=On \
-			-DBUILD_LATEX_DOCS:Bool=Off \
 			-DWITH_GTK:Bool=On \
 			-DWITH_V4L:Bool=Off \
 			-DWITH_GSTREAMER:Bool=On \
@@ -92,7 +102,12 @@ CONFIGURE_ARGS+=	-DBUILD_EXAMPLES:Bool=On \
 			-DWITH_1394:Bool=Off \
 			-DWITH_FFMPEG:Bool=On
 
-post-configure:
+post-extract:
+	tar xfvj ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} -C ${WRKDIR};
+	mkdir -p ${WRKDIR}/OpenCV-2.3.1a ;
+	mv ${WRKDIR}/OpenCV-2.3.1/./* ${WRKDIR}/OpenCV-2.3.1a ;
+
+POST-Configure:
 	find ${WRKSRC} -type f -iname "*.make" -exec \
 		perl -pi -e 's/(CXX_DEFINES =).*/$1/' {} \;
 

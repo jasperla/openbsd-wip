@@ -3,5 +3,3 @@
 - (just) first extract fails because OpenCV-2.3.1 create an ugly
   OpenCV-2.3.1/./* dot sub-folder. I think this dot-folder is a 
   mistake. I hope it will fit it. (Bug-Ticket is out). 
-
-- next step (not for this update): java and py support in flavors?
