@@ -27,8 +27,7 @@ MASTER_SITES = 		http://dist.codehaus.org/boo/distributions/
 MODULES = 		lang/mono
 
 BUILD_DEPENDS +=	lang/antlr3
-LIB_DEPENDS +=		lang/mono \
-			misc/shared-mime-info \
+RUN_DEPENDS +=		misc/shared-mime-info \
 			x11/gtksourceview
 
 DOCDIR =		${PREFIX}/share/doc/${PNAME}
