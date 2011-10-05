@@ -240,5 +240,5 @@ share/mime-info/boo.keys
 share/mime-info/boo.mime
 share/mime/packages/
 share/mime/packages/boo-mime-info.xml
-@exec %D/bin/update-mime-datebase %D/share/mime
-@unexec %D/bin/update-mime-datebase %D/share/mime
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec %D/bin/update-mime-database %D/share/mime
