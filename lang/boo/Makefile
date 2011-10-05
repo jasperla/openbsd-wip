@@ -45,13 +45,10 @@ NANT_FLAGS =		-D:install.prefix=${PREFIX} \
 
 NO_REGRESS =		Yes
 
-pre-install:
-	@${INSTALL_DATA_DIR} ${DOCDIR}
-	@${INSTALL_DATA_DIR} ${EXAMPLEDIR}
-	
 post-install:
-	@cp -Rp ${WRKDIST}/docs/* ${DOCDIR}
-	@cp -Rp ${WRKDIST}/*.txt ${DOCDIR}
-	@cp -Rp ${WRKDIST}/examples/* ${EXAMPLEDIR}
+	${INSTALL_DATA_DIR} ${DOCDIR} ${EXAMPLEDIR}
+	cp -Rp ${WRKDIST}/docs/* ${DOCDIR}
+	cp -Rp ${WRKDIST}/*.txt ${DOCDIR}
+	cp -Rp ${WRKDIST}/examples/* ${EXAMPLEDIR}
 
 .include <bsd.port.mk>
