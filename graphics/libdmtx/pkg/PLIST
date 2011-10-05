@@ -1,0 +1,8 @@
+@comment $OpenBSD$
+%%SHARED%%
+include/dmtx.h
+lib/libdmtx.a
+lib/libdmtx.la
+lib/pkgconfig/
+lib/pkgconfig/libdmtx.pc
+@man man/man3/libdmtx.3
