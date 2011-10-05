@@ -26,7 +26,6 @@ MASTER_SITES = 		http://dist.codehaus.org/boo/distributions/
 
 MODULES = 		lang/mono
 
-BUILD_DEPENDS +=	lang/antlr3
 RUN_DEPENDS +=		misc/shared-mime-info \
 			x11/gtksourceview
 
@@ -40,7 +39,7 @@ MODMONO_NANT =		Yes
 NANT_FLAGS =		-D:install.prefix=${PREFIX} \
 			-D:fakeroot=${WRKINST} \
 			-D:skip.vs=true \
-			-D:antlr.jar=${LOCALBASE}/share/java/classes/antlr3.jar
+			-D:skip.antlr=true
 
 NO_REGRESS =		Yes
 
