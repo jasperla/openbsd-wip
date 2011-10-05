@@ -1,7 +1,7 @@
 $OpenBSD$
 Do not install files that interfere with system ones.
 --- cmake/modules/CMakeLists.txt.orig	Sat May 21 00:24:53 2011
-+++ cmake/modules/CMakeLists.txt	Sun Sep 25 03:53:19 2011
++++ cmake/modules/CMakeLists.txt	Thu Oct  6 01:43:10 2011
 @@ -18,9 +18,7 @@ set(cmakeFilesDontInstall
  # which are used inside kdelibs, but which don't have to be installed (and
  # so become part of the public interface of kdelibs which has to be kept
@@ -30,7 +30,7 @@ Do not install files that interfere with system ones.
                 FindGLIB2.cmake
                 FindGMP.cmake
                 FindGObject.cmake
-@@ -71,14 +66,10 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
+@@ -71,14 +66,11 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
                 FindKipi.cmake
                 FindKopete.cmake
                 FindKorundum.cmake
@@ -40,12 +40,12 @@ Do not install files that interfere with system ones.
                 FindLibKonq.cmake
                 FindLibLZMA.cmake
 -               FindLibXml2.cmake
--               FindLibXslt.cmake
+                FindLibXslt.cmake
 -               FindLibintl.cmake
                 FindLibraryWithDebug.cmake
                 FindLinuxWirelesstools.cmake
                 FindMsgfmt.cmake
-@@ -88,24 +79,16 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
+@@ -88,24 +80,16 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
                 FindNetworkManager.cmake
                 FindOggVorbis.cmake
                 FindOpenEXR.cmake
@@ -70,7 +70,7 @@ Do not install files that interfere with system ones.
                 FindRUBY.cmake
                 FindSIP.cmake
                 FindSamba.cmake
-@@ -139,7 +122,6 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
+@@ -139,7 +123,6 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
                 MacroOptionalAddSubdirectory.cmake
                 MacroOptionalDependPackage.cmake
                 MacroOptionalFindPackage.cmake
