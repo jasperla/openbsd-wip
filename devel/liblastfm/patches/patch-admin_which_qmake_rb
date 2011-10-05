@@ -6,7 +6,7 @@ $OpenBSD$
  
    versions = Hash.new
 -  ['qmake','qmake-qt4'].each do |qmake|
-+  ['qmake','qmake4'].each do |qmake|
++  ['qmake4','qmake-qt4','qmake'].each do |qmake|
      begin
        /^Using Qt version (\d\.\d\.\d)(-(.+))?/.match( `#{qmake} #{args}` )
      rescue

@@ -4,7 +4,6 @@ SHARED_ONLY =	Yes
 CATEGORIES =	audio devel net
 COMMENT =	Qt-based C++ library for the Last.fm webservices
 DISTNAME =	liblastfm-0.3.3
-REVISION =	0
 HOMEPAGE =	http://github.com/mxcl/liblastfm
 MAINTAINER =	Vadim Zhukov <persgray@gmail.com>
 
