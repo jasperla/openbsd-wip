@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, pimlibs
 DISTNAME =	kdepimlibs-${VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=	kabc                 5.0      # .4.0
 SHARED_LIBS +=	kabc_file_core       0.0      # .4.0
@@ -36,29 +36,24 @@ SHARED_LIBS +=  kcalcore		0.0 # 4.7
 SHARED_LIBS +=  kcalutils		0.0 # 4.7
 SHARED_LIBS +=  kmbox			0.0 # 4.7
 
-# XXX bug in cmake, remove after cmake 2.8.2
-#SHARED_LIBS += 	gpgmepp-pthread	     0.0      # .2.4
-#SHARED_LIBS += 	gpgmepp		     0.0      # .2.4
+MODULES =		devel/gettext
 
-MODULES =	devel/gettext
+BUILD_DEPENDS +=	devel/boost \
+			x11/kde4/automoc
 
-BUILD_DEPENDS += devel/boost \
-		x11/kde4/automoc
-LIB_DEPENDS +=	x11/kde4/libs \
-		security/cyrus-sasl2 \
-		databases/openldap \
-		security/gpgme>=0.4.5 \
-		x11/kde4/akonadi \
-		textproc/libical
+LIB_DEPENDS +=		databases/openldap \
+			graphics/prison \
+			security/cyrus-sasl2 \
+			security/gpgme>=0.4.5 \
+			textproc/libical \
+			x11/kde4/akonadi \
+			x11/kde4/libs
 
-# these come from libs in real case
-pre-install:
-	mkdir -p ${PREFIX}/share/doc/HTML/en/common
-
-WANTLIB += akonadiprotocolinternals assuan c gpg-error gpgme gpgme-pthread \
-	ical icalss kcmutils kemoticons kdecore>=8 kdeui kio kparts lber ldap \
-	lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSql \
-	lib/qt4/QtSvg lib/qt4/QtXml m nepomuk nepomukutils soprano phonon sasl2 \
-	solid stdc++
+WANTLIB += c m stdc++
+WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSql
+WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml 
+WANTLIB += akonadiprotocolinternals kcmutils kemoticons kdecore>=8 kdeui
+WANTLIB += kio kparts nepomuk nepomukutils prison soprano phonon solid
+WANTLIB += assuan gpg-error gpgme gpgme-pthread ical icalss lber ldap sasl2
 
 .include <bsd.port.mk>
