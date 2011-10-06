@@ -1,9 +1,9 @@
 # $OpenBSD: Makefile,v 1.3 2011/03/14 09:15:34 sthen Exp $
 
 COMMENT =		light RDF manipulation with LADSPA plugin support
-DISTNAME =		swh-LRDF-6c42936
+DISTNAME =		swh-LRDF-7ebc032
 PKGNAME =		liblrdf-0.5.0
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS =		lrdf	1.0	# 0.0
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =		crypto curl idn m raptor2 ssl xml2 xslt z
 
 HOMEPAGE =		http://github.com/swh/LRDF/
-MASTER_SITES =		https://github.com/swh/LRDF/tarball/6c4293641fd6394878ea3bc80b2d3d3e4776f279/
+MASTER_SITES =		https://github.com/swh/LRDF/tarball/7ebc03286f4ec180acae27565028f8d45055df2e/
 MODULES =		devel/gettext
 
 BUILD_DEPENDS = 	audio/ladspa
