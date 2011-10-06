@@ -11,6 +11,5 @@ math/p5-Math-GSL:	ready for import, did not sent to ports@, regress depends on d
 net/climm:		ready for import, has been sent to ports@ some time ago (pstumpf)
 www/p5-Dancer:		ready for import, has been sent to ports@ some time ago; it depends on www/p5-HTTP-Server-Simple-PSGI
 www/p5-HTTP-Server-Simple-PSGI:	ready for import, has been sent to ports@ some time ago
-lang/boo:		sent to ports@ Aug 31 2011. Ready for import. (rmboggs)
 devel/liblastfm:	sent to ports@ Sep 06 2011. Ready for import. (grayed)
 audio/clementine:	sent to ports@ Sep 06 2011. Ready for import. (grayed)
