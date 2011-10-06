@@ -4,8 +4,9 @@ COMMENT =		computing the convex hull
 
 VERSION =		2011.1
 DISTNAME =		qhull-${VERSION}
+REVISION =		0
 
-SHARED_LIBS =		qhull		0.0
+SHARED_LIBS =		qhull6		0.0 # 6.2
 
 CATEGORIES =		math
 
@@ -17,7 +18,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c m
+WANTLIB =		c m stdc++
 
 MASTER_SITES =		${HOMEPAGE}download/
 DISTFILES =		${DISTNAME}-src${EXTRACT_SUFX}

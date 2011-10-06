@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/11/19 09:01:12 shadchin Exp $
+@comment $OpenBSD$
 %%SHARED%%
 bin/qconvex
 @bin bin/qconvex-6.2.0.1385
@@ -58,7 +58,6 @@ include/road/
 include/road/RoadError.h
 include/road/RoadLogEvent.h
 include/road/RoadTest.h
-lib/libqhull6.so.6.2.0.1385
 lib/libqhullcpp.a
 lib/libqhullstatic.a
 lib/libqhullstatic_p.a
