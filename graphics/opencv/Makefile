@@ -107,7 +107,7 @@ post-extract:
 	mkdir -p ${WRKDIR}/OpenCV-2.3.1a ;
 	mv ${WRKDIR}/OpenCV-2.3.1/./* ${WRKDIR}/OpenCV-2.3.1a ;
 
-POST-Configure:
+post-configure:
 	find ${WRKSRC} -type f -iname "*.make" -exec \
 		perl -pi -e 's/(CXX_DEFINES =).*/$1/' {} \;
 
