@@ -2170,6 +2170,7 @@ share/apps/cmake/modules/FindOpenEXR.cmake
 share/apps/cmake/modules/FindPCRE.cmake
 share/apps/cmake/modules/FindPhonon.cmake
 share/apps/cmake/modules/FindPlasma.cmake
+share/apps/cmake/modules/FindPolkitQt-1.cmake
 share/apps/cmake/modules/FindPopplerQt4.cmake
 share/apps/cmake/modules/FindPulseAudio.cmake
 share/apps/cmake/modules/FindPyKDE4.cmake

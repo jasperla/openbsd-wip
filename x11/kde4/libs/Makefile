@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, libraries
 DISTNAME =	kdelibs-${VERSION}
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS +=	kde3support          0.0      # .4.0
 SHARED_LIBS +=	kdecore              8.0      # .5.0
@@ -101,6 +101,7 @@ CONFIGURE_ARGS +=	-DHSPELL_FOUND:Bool=FALSE
 CONFIGURE_ARGS +=	-DHUPNP_FOUND:Bool=FALSE
 CONFIGURE_ARGS +=	-DUDEV_FOUND:Bool=FALSE
 
+CONFIGURE_ARGS +=	-DKDE_DEFAULT_HOME=.kde4
 CONFIGURE_ARGS +=	-DKDE4_INCLUDE_INSTALL_DIR:String=${LOCALBASE}/include
 CONFIGURE_ARGS +=	-DKDE4_LIB_INSTALL_DIR:String=${LOCALBASE}/lib
 CONFIGURE_ARGS +=	-DKDESU_USE_SUDO_DEFAULT:BOOL=TRUE
@@ -110,7 +111,7 @@ USE_GROFF =	Yes
 REWR_CMAKE_MODULES =	FindXine
 
 # Contain (required) additional functionality compared to system ones
-FIXED_CMAKE_MODULES =	FindGettext FindLibXslt
+WRAP_CMAKE_MODULES =	FindGettext FindLibXslt
 
 post-extract:
 	@if pkg_info -e 'kdelibs-<4'; then \
@@ -120,7 +121,7 @@ post-extract:
 .for M in ${REWR_CMAKE_MODULES}
 	cp ${FILESDIR}/${M}.cmake ${WRKSRC}/cmake/modules/${M}.cmake
 .endfor
-.for M in ${FIXED_CMAKE_MODULES}
+.for M in ${WRAP_CMAKE_MODULES}
 	${SUBST_CMD} -c ${FILESDIR}/${M}.cmake ${WRKSRC}/cmake/modules/${M}.cmake
 .endfor
 
