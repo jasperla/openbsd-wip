@@ -63,12 +63,6 @@ post-configure:
 	    INSTALL_PROGRAM="${INSTALL_PROGRAM}" INSTALL_MAN="${INSTALL_MAN}" \
 	    INSTALL_SCRIPT="${INSTALL_SCRIPT}" INSTALL_DATA="${INSTALL_DATA}" \
 	    ${CONFIGURE_ENV} ./configure ${TCL_CONF_ARGS}
-#	cd ${WRKDIR}/sqlite-src-${SQLITE_VER0} && \
-#	    ${SETENV} CC="${CC}" CFLAGS="${CFLAGS}" \
-#	    INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
-#	    INSTALL_PROGRAM="${INSTALL_PROGRAM}" INSTALL_MAN="${INSTALL_MAN}" \
-#	    INSTALL_SCRIPT="${INSTALL_SCRIPT}" INSTALL_DATA="${INSTALL_DATA}" \
-#	    ${CONFIGURE_ENV} ./configure
 .endif
 
 post-build:
