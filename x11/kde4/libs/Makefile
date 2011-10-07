@@ -108,7 +108,7 @@ CONFIGURE_ARGS +=	-DKDESU_USE_SUDO_DEFAULT:BOOL=TRUE
 USE_GROFF =	Yes
 
 # Reimplemented CMake modules, because previous were totally broken
-REWR_CMAKE_MODULES =	FindXine
+REWR_CMAKE_MODULES =	FindXine FindPolkitQt
 
 # Contain (required) additional functionality compared to system ones
 WRAP_CMAKE_MODULES =	FindGettext FindLibXslt
