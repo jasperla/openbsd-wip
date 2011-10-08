@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/system/utility/FileUtility.cpp.orig	Sun Jun 26 23:51:45 2011
++++ src/system/utility/FileUtility.cpp	Sun Jun 26 23:52:25 2011
+@@ -65,7 +65,7 @@ FileUtility::FileUtility(char *argPath) {
+ 	m_resPath = m_appPath;
+ 	m_usrPath = m_resPath;
+ #endif //_WIN32
+-#if defined linux || defined __FreeBSD__
++#if defined linux || defined __FreeBSD__ || defined __OpenBSD__
+ #ifndef INSTALL_PREFIX
+ #define INSTALL_PREFIX "/usr/local";
+ #endif //INSTALL_PREFIX
