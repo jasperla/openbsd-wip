@@ -1,0 +1,25 @@
+$OpenBSD$
+--- source/glest_game/CMakeLists.txt.orig	Thu May 26 18:36:43 2011
++++ source/glest_game/CMakeLists.txt	Wed Sep 14 23:01:53 2011
+@@ -51,8 +51,8 @@ ENDIF()
+ FIND_PACKAGE(OGG REQUIRED)
+ INCLUDE_DIRECTORIES(${OGG_INCLUDE_DIR})
+ IF(UNIX)
+-#	SET(EXTERNAL_LIBS ${EXTERNAL_LIBS} ${OGG_LIBRARY})
+-#	SET(EXTERNAL_LIBS ${EXTERNAL_LIBS} ${VORBIS_LIBRARY})
++	SET(EXTERNAL_LIBS ${EXTERNAL_LIBS} ${OGG_LIBRARY})
++	SET(EXTERNAL_LIBS ${EXTERNAL_LIBS} ${VORBIS_LIBRARY})
+ 	SET(EXTERNAL_LIBS ${EXTERNAL_LIBS} ${VORBIS_FILE_LIBRARY})
+ ENDIF()
+ 
+@@ -220,10 +220,6 @@ IF(NOT CMAKE_INSTALL_PREFIX STREQUAL "")
+ 	# Installation of the program desktop icon file
+ 	INSTALL(FILES 
+ 	  "${PROJECT_SOURCE_DIR}/megaglest.png"
+-          "${PROJECT_SOURCE_DIR}/megaglest.bmp"
+-          "${PROJECT_SOURCE_DIR}/editor.ico"
+-          "${PROJECT_SOURCE_DIR}/glest.ico"
+-          "${PROJECT_SOURCE_DIR}/g3dviewer.ico"
+ 	  DESTINATION ${MEGAGLEST_ICON_INSTALL_PATH})
+ 
+ 	# Installation of the program manpage file

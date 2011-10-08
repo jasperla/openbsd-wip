@@ -1,0 +1,11 @@
+$OpenBSD$
+--- source/shared_lib/include/streflop/CMakeLists.txt.orig	Thu Jun 30 16:14:32 2011
++++ source/shared_lib/include/streflop/CMakeLists.txt	Thu Jun 30 16:14:47 2011
+@@ -1,6 +1,6 @@
+ AUX_SOURCE_DIRECTORY(libm/flt-32 libm_flt32_source)
+ 
+-SET(cxxflags "-w -O3 -I${CMAKE_CURRENT_SOURCE_DIR}/libm/headers")
++SET(cxxflags "-w -I${CMAKE_CURRENT_SOURCE_DIR}/libm/headers")
+ if (NOT $ENV{CXX} MATCHES "icpc")
+ 	SET(cxxflags "${cxxflags} -mfpmath=sse -msse")
+ endif (NOT $ENV{CXX} MATCHES "icpc")

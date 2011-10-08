@@ -1,0 +1,46 @@
+$OpenBSD$
+--- CMakeLists.txt.orig	Sat Jul  9 05:57:19 2011
++++ CMakeLists.txt	Wed Sep 14 22:54:31 2011
+@@ -68,7 +68,7 @@ IF(CMAKE_COMPILER_IS_GNUCXX OR MINGW)
+ 	SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g3")
+ 
+ 	# Release compiler flags
+-	SET(CMAKE_CXX_FLAGS_RELEASE "-O3 ${CMAKE_CXX_FLAGS_RELEASE} -O3 ")
++	SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE}")
+ 	SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -s")  ## Strip binary
+ 
+ 	# Release with debug info compiler flags
+@@ -119,7 +119,7 @@ IF(CMAKE_COMPILER_IS_GNUCXX OR MINGW)
+                 	SET(MEGAGLEST_ICON_INSTALL_PATH "share/pixmaps/" CACHE STRING "The installation path for icon files (this is appended to the CMAKE_INSTALL_PREFIX)")
+ 		ENDIF()
+ 		IF(NOT MEGAGLEST_MANPAGE_INSTALL_PATH)
+-                	SET(MEGAGLEST_MANPAGE_INSTALL_PATH "share/man/man6/" CACHE STRING "The installation path for manpage files (this is appended to the CMAKE_INSTALL_PREFIX)")
++                	SET(MEGAGLEST_MANPAGE_INSTALL_PATH "man/man6/" CACHE STRING "The installation path for manpage files (this is appended to the CMAKE_INSTALL_PREFIX)")
+ 		ENDIF()
+ 
+ 		IF(NOT CUSTOM_DATA_INSTALL_PATH)
+@@ -195,15 +195,15 @@ IF(EXISTS "${PROJECT_SOURCE_DIR}/source/")
+ 
+ 	ADD_SUBDIRECTORY( ${PROJECT_SOURCE_DIR}/source/shared_lib )
+ 	ADD_SUBDIRECTORY( ${PROJECT_SOURCE_DIR}/source/glest_game )
+-	#if(wxWidgets_FOUND)
+-	  ADD_SUBDIRECTORY( ${PROJECT_SOURCE_DIR}/source/glest_map_editor )
+-	  ADD_SUBDIRECTORY( ${PROJECT_SOURCE_DIR}/source/g3d_viewer )
+-	  ADD_SUBDIRECTORY( ${PROJECT_SOURCE_DIR}/source/configurator )
+-	#else()
+-	#  MESSAGE(STATUS "WARNING... the following game tools will NOT be built since we cannot find wxWidgets on this machine")
+-	#  MESSAGE(STATUS "map editor, g3d viewer, configurator")
+-	#endif()
+-	ADD_SUBDIRECTORY( ${PROJECT_SOURCE_DIR}/source/tools/glexemel )
++#	#if(wxWidgets_FOUND)
++#	  ADD_SUBDIRECTORY( ${PROJECT_SOURCE_DIR}/source/glest_map_editor )
++#	  ADD_SUBDIRECTORY( ${PROJECT_SOURCE_DIR}/source/g3d_viewer )
++#	  ADD_SUBDIRECTORY( ${PROJECT_SOURCE_DIR}/source/configurator )
++#	#else()
++#	#  MESSAGE(STATUS "WARNING... the following game tools will NOT be built since we cannot find wxWidgets on this machine")
++#	#  MESSAGE(STATUS "map editor, g3d viewer, configurator")
++#	#endif()
++#	ADD_SUBDIRECTORY( ${PROJECT_SOURCE_DIR}/source/tools/glexemel )
+ 
+ 	IF(APPLE)
+ 		include(${PROJECT_SOURCE_DIR}/mk/macosx/CMakeLists.txt)
