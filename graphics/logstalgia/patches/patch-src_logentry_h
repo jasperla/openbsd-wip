@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/logentry.h.orig	Wed Oct  5 17:27:16 2011
++++ src/logentry.h	Wed Oct  5 17:27:49 2011
+@@ -41,7 +41,7 @@ class LogEntry { (public)
+     void setSuccess();
+     void setResponseColour();
+ 
+-    long timestamp;
++    time_t timestamp;
+ 
+     std::string hostname;
+     std::string vhost;
