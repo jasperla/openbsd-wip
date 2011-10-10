@@ -13,7 +13,6 @@ include/libkgeomap/lookup_factory.h
 include/libkgeomap/modelhelper.h
 include/libkgeomap/tileindex.h
 include/libkgeomap/version.h
-lib/kde4/
 @lib lib/libkgeomap.so.${LIBkgeomap_VERSION}
 lib/pkgconfig/libkgeomap.pc
 share/apps/cmake/modules/FindKGeoMap.cmake
@@ -58,7 +57,10 @@ share/apps/libkgeomap/marker-ffff00-someselected.png
 share/apps/libkgeomap/marker-ffff00.png
 share/apps/libkgeomap/marker-icon-16x16.png
 share/icons/hicolor/16x16/actions/gpsimagetag.png
+share/icons/hicolor/22x22/actions/
 share/icons/hicolor/32x32/actions/gpsimagetag.png
+share/icons/hicolor/64x64/actions/
+share/icons/hicolor/scalable/actions/
 share/locale/bg/LC_MESSAGES/libkgeomap.mo
 share/locale/bs/LC_MESSAGES/libkgeomap.mo
 share/locale/cs/LC_MESSAGES/libkgeomap.mo
