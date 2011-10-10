@@ -3,6 +3,7 @@
 VERSION =		1.6.1
 COMMENT =		KDE PIM access libraries
 DISTNAME =		akonadi-${VERSION}
+REVISION =		0
 
 SHARED_LIBS += 		akonadiprotocolinternals 0.0	# 1.0
 
@@ -23,6 +24,6 @@ WANTLIB += lib/qt4/QtSql lib/qt4/QtXml
 WANTLIB += soprano
 WANTLIB += boost_program_options-mt sqlite3
 
-CONFIGURE_ARGS +=	-DDATABASE_BACKEND:STRING=POSTGRES
+CONFIGURE_ARGS +=	-DDATABASE_BACKEND:String=MYSQL
 
 .include <bsd.port.mk>
