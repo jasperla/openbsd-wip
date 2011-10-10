@@ -13,18 +13,15 @@ MODJAVA_VER =		1.6+
 MODJAVA_JRERUN =	Yes
 .endif
 
-LIB_DEPENDS = 	x11/kde4/libs
+LIB_DEPENDS =	x11/kde4/libs \
+		${MODPY_LIB_DEPENDS}
 
-RUN_DEPENDS +=	x11/kde4/runtime
+RUN_DEPENDS =	x11/kde4/runtime
 
 WANTLIB += c m stdc++
-WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
-WANTLIB += lib/qt4/QtXml
-WANTLIB += akonadi-kde akonadi-kmime
-WANTLIB += kcmutils kdecore kdeui kdnssd kemoticons kfile khtml
-WANTLIB += kidletime kio kjs knewstuff2 knewstuff3 kparts kprintutils
-WANTLIB += kpty ktexteditor kutils nepomuk nepomukquery nepomukutils
-WANTLIB += phonon plasma solid soprano sopranoclient sopranoserver
+WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtScript lib/qt4/QtXml
+WANTLIB += kdecore kpty krosscore
+WANTLIB += ${MODPY_WANTLIB}
 
 # Unported
 CONFIGURE_ARGS +=	-DBUILD_falcon:Bool=No
