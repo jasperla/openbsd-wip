@@ -1,6 +1,6 @@
 $OpenBSD$
---- core/libs/3rdparty/libpgf/PGFplatform.h.orig	Sun Sep 11 17:41:57 2011
-+++ core/libs/3rdparty/libpgf/PGFplatform.h	Sun Sep 11 17:43:44 2011
+--- core/libs/3rdparty/libpgf/PGFplatform.h.orig	Mon Oct  3 14:34:16 2011
++++ core/libs/3rdparty/libpgf/PGFplatform.h	Thu Oct  6 21:01:31 2011
 @@ -339,9 +339,9 @@ inline OSError SetFPos(HANDLE hFile, int posMode, INT6
  
  
@@ -10,12 +10,12 @@ $OpenBSD$
  //-------------------------------------------------------------------------------
 -#ifdef __NetBSD__
 +#if defined(__NetBSD__) || defined(__OpenBSD__)
- #ifndef __POSIX__
- #define __POSIX__
- #endif
+ #ifndef __POSIX__ 
+ #define __POSIX__ 
+ #endif 
 @@ -354,7 +354,7 @@ inline OSError SetFPos(HANDLE hFile, int posMode, INT6
- #define lseek64 lseek
- #endif
+ #define lseek64 lseek 
+ #endif 
  
 -#endif // __NetBSD__
 +#endif // defined(__NetBSD__) || defined(__OpenBSD__)

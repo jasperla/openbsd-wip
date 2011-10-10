@@ -1,0 +1,16 @@
+$OpenBSD$
+--- source/shared_lib/sources/feathery_ftp/ftpTargetPosix.c.orig	Thu Jun 30 10:29:18 2011
++++ source/shared_lib/sources/feathery_ftp/ftpTargetPosix.c	Thu Jun 30 10:31:34 2011
+@@ -27,7 +27,11 @@
+ #include <sys/stat.h>
+ #include <unistd.h>
+ 
+-#if defined(__FreeBSD__)
++#ifndef MSG_NOSIGNAL
++#define MSG_NOSIGNAL	0
++#endif
++
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+     #include <sys/uio.h>
+ #else
+     #include <sys/sendfile.h>

@@ -1,8 +1,16 @@
 $OpenBSD$
 Do not install files that interfere with system ones.
 --- cmake/modules/CMakeLists.txt.orig	Sat May 21 00:24:53 2011
-+++ cmake/modules/CMakeLists.txt	Thu Oct  6 01:43:10 2011
-@@ -18,9 +18,7 @@ set(cmakeFilesDontInstall
++++ cmake/modules/CMakeLists.txt	Sun Oct  9 01:57:19 2011
+@@ -9,7 +9,6 @@ set(module_install_dir ${DATA_INSTALL_DIR}/cmake/modul
+ set(cmakeFilesDontInstall
+                FindHUpnp.cmake
+                FindPolkitQt.cmake
+-               FindPolkitQt-1.cmake
+                FindUDev.cmake
+                )
+ 
+@@ -18,9 +17,7 @@ set(cmakeFilesDontInstall
  # which are used inside kdelibs, but which don't have to be installed (and
  # so become part of the public interface of kdelibs which has to be kept
  # compatible).
@@ -13,7 +21,7 @@ Do not install files that interfere with system ones.
                 CheckPointerMember.cmake
                 CheckPrototypeExists.cmake
                 CheckStructMember.cmake
-@@ -33,7 +31,6 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
+@@ -33,7 +30,6 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
                 FindBerkeleyDB.cmake
                 FindBlitz.cmake
                 FindBlueZ.cmake
@@ -21,7 +29,7 @@ Do not install files that interfere with system ones.
                 FindCarbon.cmake
                 FindDBusMenuQt.cmake
                 FindDNSSD.cmake
-@@ -46,8 +43,6 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
+@@ -46,8 +42,6 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
                 FindFlac.cmake
                 FindFlex.cmake
                 FindFontconfig.cmake
@@ -30,7 +38,7 @@ Do not install files that interfere with system ones.
                 FindGLIB2.cmake
                 FindGMP.cmake
                 FindGObject.cmake
-@@ -71,14 +66,11 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
+@@ -71,14 +65,11 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
                 FindKipi.cmake
                 FindKopete.cmake
                 FindKorundum.cmake
@@ -45,7 +53,7 @@ Do not install files that interfere with system ones.
                 FindLibraryWithDebug.cmake
                 FindLinuxWirelesstools.cmake
                 FindMsgfmt.cmake
-@@ -88,24 +80,16 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
+@@ -88,25 +79,17 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
                 FindNetworkManager.cmake
                 FindOggVorbis.cmake
                 FindOpenEXR.cmake
@@ -54,6 +62,7 @@ Do not install files that interfere with system ones.
                 FindPhonon.cmake
 -               FindPkgConfig.cmake
                 FindPlasma.cmake
++               FindPolkitQt-1.cmake
                 FindPopplerQt4.cmake
 -               FindPostgreSQL.cmake
                 FindPulseAudio.cmake
@@ -67,10 +76,11 @@ Do not install files that interfere with system ones.
                 FindQCA2.cmake
                 FindQImageBlitz.cmake
 -               FindQt4.cmake
-                FindRUBY.cmake
+-               FindRUBY.cmake
                 FindSIP.cmake
                 FindSamba.cmake
-@@ -139,7 +123,6 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
+                FindSane.cmake
+@@ -139,7 +122,6 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
                 MacroOptionalAddSubdirectory.cmake
                 MacroOptionalDependPackage.cmake
                 MacroOptionalFindPackage.cmake

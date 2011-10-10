@@ -2,6 +2,7 @@
 bin/cleanup_digikamdb
 @bin bin/digikam
 bin/digitaglinktree
+@bin bin/photolayoutseditor
 @bin bin/showfoto
 include/libkface/
 include/libkface/database.h
@@ -34,7 +35,6 @@ include/libmediawiki/revision.h
 include/libmediawiki/upload.h
 include/libmediawiki/usergroup.h
 include/libmediawiki/version.h
-lib/kde4/
 lib/kde4/digikamimageplugin_color.so
 lib/kde4/digikamimageplugin_decorate.so
 lib/kde4/digikamimageplugin_enhance.so
@@ -46,15 +46,20 @@ lib/kde4/kio_digikamdates.so
 lib/kde4/kio_digikammapimages.so
 lib/kde4/kio_digikamsearch.so
 lib/kde4/kio_digikamtags.so
+lib/kde4/kipiplugin_photolayoutseditor.so
 @bin lib/kde4/libexec/digikamdatabaseserver
+lib/kde4/photolayoutseditorborderplugin_polaroid.so
+lib/kde4/photolayoutseditorborderplugin_solid.so
+lib/libPropertyBrowser.a
 @lib lib/libdigikamcore.so.${LIBdigikamcore_VERSION}
 @lib lib/libdigikamdatabase.so.${LIBdigikamdatabase_VERSION}
 @lib lib/libkface.so.${LIBkface_VERSION}
 @lib lib/libmediawiki.so.${LIBmediawiki_VERSION}
 lib/pkgconfig/libkface.pc
 lib/pkgconfig/libmediawiki.pc
-share/applications/kde4/
 share/applications/kde4/digikam.desktop
+share/applications/kde4/photolayoutseditor.desktop
+share/applications/kde4/scangui.desktop
 share/applications/kde4/showfoto.desktop
 share/apps/cmake/modules/FindKface.cmake
 share/apps/cmake/modules/FindMediawiki.cmake
@@ -606,6 +611,8 @@ share/apps/libkface/haarcascades/haarcascade_mcs_mouth.xml
 share/apps/libkface/haarcascades/haarcascade_mcs_nose.xml
 share/apps/libkface/haarcascades/haarcascade_mcs_righteye.xml
 share/apps/libkface/haarcascades/haarcascade_profileface.xml
+share/apps/photolayoutseditor/
+share/apps/photolayoutseditor/photolayoutseditorui.rc
 share/apps/showfoto/
 share/apps/showfoto/data/
 share/apps/showfoto/data/banner-showfoto.png
@@ -615,6 +622,7 @@ share/apps/showfoto/showfotoui.rc
 share/apps/solid/
 share/apps/solid/actions/
 share/apps/solid/actions/digikam-opencamera.desktop
+share/config.kcfg/PLEConfigSkeleton.kcfgc
 share/doc/HTML/en/digikam/
 share/doc/HTML/en/digikam/2Greens.png
 share/doc/HTML/en/digikam/542px-CIExy1931_sRGB.svg.png
@@ -871,20 +879,25 @@ share/doc/HTML/en/showfoto/setupgeneral.png
 share/doc/HTML/en/showfoto/setupplugins.png
 share/doc/HTML/en/showfoto/setupslideshow.png
 share/icons/hicolor/128x128/apps/digikam.png
+share/icons/hicolor/128x128/apps/photolayoutseditor.png
 share/icons/hicolor/128x128/apps/showfoto.png
 share/icons/hicolor/16x16/apps/digikam.png
+share/icons/hicolor/16x16/apps/photolayoutseditor.png
 share/icons/hicolor/16x16/apps/showfoto.png
 share/icons/hicolor/22x22/apps/digikam.png
+share/icons/hicolor/22x22/apps/photolayoutseditor.png
 share/icons/hicolor/22x22/apps/showfoto.png
 share/icons/hicolor/32x32/apps/digikam.png
+share/icons/hicolor/32x32/apps/photolayoutseditor.png
 share/icons/hicolor/32x32/apps/showfoto.png
 share/icons/hicolor/48x48/apps/digikam.png
+share/icons/hicolor/48x48/apps/photolayoutseditor.png
 share/icons/hicolor/48x48/apps/showfoto.png
 share/icons/hicolor/64x64/apps/digikam.png
+share/icons/hicolor/64x64/apps/photolayoutseditor.png
 share/icons/hicolor/64x64/apps/showfoto.png
 share/icons/hicolor/scalable/apps/digikam.svgz
 share/icons/hicolor/scalable/apps/showfoto.svgz
-share/kde4/services/
 share/kde4/services/digikamalbums.protocol
 share/kde4/services/digikamdates.protocol
 share/kde4/services/digikamimageplugin_color.desktop
@@ -896,7 +909,12 @@ share/kde4/services/digikammapimages.protocol
 share/kde4/services/digikamnepomukservice.desktop
 share/kde4/services/digikamsearch.protocol
 share/kde4/services/digikamtags.protocol
+share/kde4/services/kipiplugin_photolayoutseditor.desktop
+share/kde4/services/photolayoutseditorborderplugin_polaroid.desktop
+share/kde4/services/photolayoutseditorborderplugin_solid.desktop
 share/kde4/servicetypes/digikamimageplugin.desktop
+share/kde4/servicetypes/photolayoutseditorborderplugin.desktop
+share/kde4/servicetypes/photolayoutseditoreffectplugin.desktop
 share/locale/ar/LC_MESSAGES/digikam.mo
 share/locale/be/LC_MESSAGES/digikam.mo
 share/locale/bg/LC_MESSAGES/digikam.mo
@@ -922,6 +940,7 @@ share/locale/hr/LC_MESSAGES/digikam.mo
 share/locale/hu/LC_MESSAGES/digikam.mo
 share/locale/is/LC_MESSAGES/digikam.mo
 share/locale/it/LC_MESSAGES/digikam.mo
+share/locale/it/LC_MESSAGES/libkgeomap.mo
 share/locale/ja/LC_MESSAGES/digikam.mo
 share/locale/km/LC_MESSAGES/digikam.mo
 share/locale/ko/LC_MESSAGES/digikam.mo
@@ -939,8 +958,6 @@ share/locale/pt/LC_MESSAGES/digikam.mo
 share/locale/pt_BR/LC_MESSAGES/digikam.mo
 share/locale/ro/LC_MESSAGES/digikam.mo
 share/locale/ru/LC_MESSAGES/digikam.mo
-share/locale/se/
-share/locale/se/LC_MESSAGES/
 share/locale/se/LC_MESSAGES/digikam.mo
 share/locale/sk/LC_MESSAGES/digikam.mo
 share/locale/sl/LC_MESSAGES/digikam.mo

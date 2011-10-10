@@ -2,29 +2,44 @@
 
 COMMENT =	K Desktop Environment, multimedia
 DISTNAME =	kdemultimedia-${VERSION}
+REVISION =	0
 
 SHARED_LIBS += audiocdplugins 4.0	# .4.0
 SHARED_LIBS += kcddb          4.0       # .4.0
 SHARED_LIBS += kcompactdisc   4.0       # .4.0
 
-LIB_DEPENDS +=	x11/kde4/libs \
+LIB_DEPENDS =	audio/cdparanoia \
 		audio/flac \
-		audio/cdparanoia \
 		audio/libogg \
-		audio/taglib \
 		audio/libmusicbrainz \
 		audio/libvorbis \
-		graphics/ffmpeg
+		audio/taglib \
+		graphics/ffmpeg \
+		x11/kde4/libs
 
-WANTLIB += FLAC c cdda_interface cdda_paranoia kde3support kdecore>=8 kdeui \
-	khtml kio kjs kparts lib/qt4/Qt3Support lib/qt4/QtDBus \
-	lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg lib/qt4/QtXml m ogg \
-	phonon>=6 pthread solid stdc++ tag vorbis vorbisenc vorbisfile
-WANTLIB += avcodec avformat avutil musicbrainz3 nepomuk nepomukutils phonon
-WANTLIB += plasma soprano swscale
+# Looks like Xine doesn't work
+#		multimedia/xine-lib
 
-# these come from libs in real case
-#pre-install:
-#	mkdir -p ${PREFIX}/share/doc/HTML/en/common
+RUN_DEPENDS =	x11/kde4/runtime
+
+WANTLIB += c m pthread stdc++
+WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
+WANTLIB += lib/qt4/QtNetwork lib/qt4/QtSvg lib/qt4/QtXml
+WANTLIB += kde3support kdecore>=8 kdeui khtml kio kjs kparts
+WANTLIB += nepomuk nepomukutils phonon>=6 plasma solid soprano
+WANTLIB += FLAC avcodec avformat avutil cdda_interface cdda_paranoia
+WANTLIB += musicbrainz3 ogg swscale tag vorbis vorbisenc vorbisfile
+
+# See above
+# WANTLIB += xine
+
+# PulseAudio is not ready yet
+CONFIGURE_ARGS +=	-DPULSEAUDIO_FOUND:Bool=FALSE
+
+# Doesn't worth to port, RDF WebService in MusicBrainz is deprecated
+CONFIGURE_ARGS +=	-DTUNEPIMP_FOUND:Bool=FALSE
+
+# See above
+CONFIGURE_ARGS +=	-DXINE_XCB_FOUND:Bool=FALSE
 
 .include <bsd.port.mk>

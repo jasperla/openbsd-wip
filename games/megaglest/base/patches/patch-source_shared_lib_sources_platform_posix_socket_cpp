@@ -1,0 +1,14 @@
+$OpenBSD$
+--- source/shared_lib/sources/platform/posix/socket.cpp.orig	Thu Jun 30 10:38:37 2011
++++ source/shared_lib/sources/platform/posix/socket.cpp	Thu Jun 30 10:39:20 2011
+@@ -13,6 +13,10 @@
+ #include <cstdlib>
+ #include <stdexcept>
+ 
++#ifndef MSG_NOSIGNAL
++#define MSG_NOSIGNAL	0
++#endif
++
+ #if defined(HAVE_SYS_IOCTL_H) || defined(__linux__)
+   #define BSD_COMP /* needed for FIONREAD on Solaris2 */
+   #include <sys/ioctl.h>

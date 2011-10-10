@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+lib/kde4/kross/
+lib/kde4/kross/kross.jar
+lib/kde4/krossjava.so
+lib/kde4/krosspython.so
+lib/kde4/krossruby.so

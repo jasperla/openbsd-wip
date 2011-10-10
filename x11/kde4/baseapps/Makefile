@@ -12,7 +12,7 @@ SHARED_LIBS +=	kbookmarkmodel_private	0.0	# 4.7
 USE_GROFF =	Yes
 
 WANTLIB += c m pthread stdc++ z
-WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xpm Xt
+WANTLIB += ICE SM X11 Xext Xt
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
@@ -26,10 +26,7 @@ BUILD_DEPENDS +=	x11/kde4/automoc
 LIB_DEPENDS +=		x11/kde4/libs \
 			multimedia/phonon
 
-RUN_DEPENDS +=		www/tidyp
-
-# these come from libs in real case
-#pre-install:
-#	mkdir -p ${PREFIX}/share/doc/HTML/en/common
+# Wants tidy, should be ported to tidyp
+# RUN_DEPENDS +=		www/tidyp
 
 .include <bsd.port.mk>

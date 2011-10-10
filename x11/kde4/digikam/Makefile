@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-VERSION =		2.1.0
+VERSION =		2.2.0
 COMMENT-main =		K Desktop Environment, photo management utility
 COMMENT-kipi =		collection of image plugins for KDE
 COMMENT-geomap =	KIPI interface library for Marble
@@ -11,6 +11,8 @@ PKGNAME-main =		${PKGNAME}
 PKGNAME-kipi =		kipi-plugins4-${VERSION}
 PKGNAME-geomap =	libkgeomap-${VERSION}
 PKGNAME-vkontakte =	libkvkontakte-1.0.0
+
+REVISION-vkontakte =	0
 
 SHARED_LIBS =	kipiplugins		0.0
 SHARED_LIBS +=  digikamcore		0.0 # 2.0
@@ -73,7 +75,10 @@ WANTLIB-vkontakte += qjson
 
 BUILD_DEPENDS =		devel/boost \
 			devel/doxygen \
-			databases/mysql,-server
+			databases/mysql,-server \
+			misc/shared-desktop-ontologies
+
+RUN_DEPENDS =		
 
 LIBS_DEPENDS-common =	${MODQT_LIB_DEPENDS}
 
@@ -104,6 +109,7 @@ LIB_DEPENDS-kipi =	${LIB_DEPENDS-common} \
 			graphics/opencv \
 			graphics/png \
 			graphics/tiff \
+			multimedia/phonon \
 			security/qca2 \
 			x11/kde4/libkdcraw \
 			x11/kde4/libkexiv2 \
@@ -119,12 +125,16 @@ LIB_DEPENDS-geomap =	${LIB_DEPENDS-common} \
 
 LIB_DEPENDS-vkontakte = ${LIB_DEPENDS-common} \
 			devel/qjson \
-			x11/kde4/libs \
+			x11/kde4/libs
 
 RUN_DEPENDS-main =	devel/desktop-file-utils \
-			databases/mysql,-server
+			databases/mysql,-server \
+			misc/shared-desktop-ontologies
 
 RUN_DEPENDS-kipi =	${MODGETTEXT_RUN_DEPENDS} \
-			devel/desktop-file-utils
+			devel/desktop-file-utils \
+			misc/shared-desktop-ontologies
+
+RUN_DEPENDS-vkontakte =	x11/kde4/runtime
 
 .include <bsd.port.mk>

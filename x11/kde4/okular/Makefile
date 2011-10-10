@@ -5,9 +5,7 @@ DISTNAME =	okular-${VERSION}
 
 SHARED_LIBS +=	okularcore		0.0	# 1.7
 
-LIB_DEPENDS += 	x11/kde4/libs \
-		x11/kde4/qimageblitz \
-		devel/chmlib \
+LIB_DEPENDS += 	devel/chmlib \
 		devel/ebook-tools \
 		graphics/djvulibre \
 		graphics/tiff \
@@ -15,6 +13,8 @@ LIB_DEPENDS += 	x11/kde4/libs \
 		print/libspectre \
 		print/poppler,-qt4 \
 		security/qca2 \
+		x11/kde4/libs \
+		x11/kde4/qimageblitz
 
 RUN_DEPENDS +=	devel/desktop-file-utils
 
