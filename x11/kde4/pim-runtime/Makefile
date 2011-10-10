@@ -12,12 +12,12 @@ SHARED_LIBS +=  maildir                   0.0 # 4.7
 BUILD_DEPENDS +=	devel/boost \
 			x11/kde4/automoc
 
-LIB_DEPENDS +=		x11/kde4/libs \
-			x11/kde4/pimlibs \
-			x11/kde4/akonadi \
-			databases/soprano \
+LIB_DEPENDS +=		databases/soprano \
 			databases/strigi \
-			multimedia/phonon
+			multimedia/phonon \
+			x11/kde4/akonadi \
+			x11/kde4/libs \
+			x11/kde4/pimlibs
 
 WANTLIB += c m pthread stdc++ xml2
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui

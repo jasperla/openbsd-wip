@@ -55,25 +55,22 @@ LIB_DEPENDS +=		x11/kde4/libs \
 			x11/kde4/pimlibs \
 			x11/grantlee
 
-WANTLIB += X11 Xss akonadi-contact akonadi-kde akonadi-kmime \
-	akonadiprotocolinternals c gpg-error gpgme++ gpgme++-pthread \
-	gpgme-pthread kabc>=5 kblog kcal kde3support kdecore>=8 \
-	kdeui kdnssd kfile kholidays khtml kimap kio kjs kldap kmime \
-	knotifyconfig kontactinterface kparts kpimidentities \
-	kpimtextedit kpimutils kresources ktexteditor ktnef \
-	lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui \
-	lib/qt4/QtNetwork lib/qt4/QtSql lib/qt4/QtSvg lib/qt4/QtXml m \
-	mailtransport nepomuk phonon pthread qgpgme solid stdc++ \
-	streamanalyzer streams syndication z
-
-WANTLIB += lib/qt4/QtDeclarative lib/qt4/QtOpenGL lib/qt4/QtScript
-WANTLIB += lib/qt4/QtWebKit akonadi-calendar
-WANTLIB += assuan kcalcore kcalutils kcmutils kdewebkit kidletime
-WANTLIB += kmbox knewstuff3 kprintutils nepomukquery nepomukutils
-WANTLIB += phonon plasma sasl2 soprano sopranoclient
-
-# these come from libs in real case
-#pre-install:
-#	mkdir -p ${PREFIX}/share/doc/HTML/en/common
+WANTLIB += c m pthread stdc++ z
+WANTLIB += X11 Xss
+WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDeclarative
+WANTLIB += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtOpenGL
+WANTLIB += lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg
+WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml
+WANTLIB += akonadi-calendar akonadi-contact akonadi-kde akonadi-kmime
+WANTLIB += akonadiprotocolinternals kabc>=5 kblog kcal kcalcore
+WANTLIB += kcalutils kcmutils kde3support kdecore>=8 kdeui kdewebkit
+WANTLIB += kdnssd kfile kholidays khtml kidletime kimap kio kjs kldap
+WANTLIB += kmbox kmime knewstuff3 knotifyconfig kontactinterface kparts
+WANTLIB += kpimidentities kpimtextedit kpimutils kprintutils kresources
+WANTLIB += ktexteditor ktnef mailtransport nepomuk nepomukquery
+WANTLIB += nepomukutils phonon plasma solid soprano sopranoclient
+WANTLIB += streamanalyzer streams syndication
+WANTLIB += assuan gpg-error gpgme++ gpgme++-pthread gpgme-pthread
+WANTLIB += grantlee_core grantlee_gui qgpgme sasl2
 
 .include <bsd.port.mk>

@@ -120,7 +120,6 @@ share/akonadi/agents/vcardresource.desktop
 share/applications/kde4/
 share/applications/kde4/accountwizard.desktop
 share/applications/kde4/akonaditray.desktop
-share/apps/akonadi/
 share/apps/akonadi/accountwizard/
 share/apps/akonadi/accountwizard/contacts/
 share/apps/akonadi/accountwizard/contacts/contactswizard.desktop
@@ -205,10 +204,7 @@ share/kde4/services/akonadi/davgroupware-providers/zimbra.desktop
 share/kde4/services/kcm_akonadi.desktop
 share/kde4/services/kcm_akonadi_resources.desktop
 share/kde4/services/kcm_akonadi_server.desktop
-share/kde4/services/kresources/
-share/kde4/services/kresources/kabc/
 share/kde4/services/kresources/kabc/akonadi.desktop
-share/kde4/services/kresources/kcal/
 share/kde4/services/kresources/kcal/akonadi.desktop
 share/kde4/servicetypes/davgroupwareprovider.desktop
 share/mime/packages/accountwizard-mime.xml
