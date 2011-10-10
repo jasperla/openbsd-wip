@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, base runtime
 DISTNAME =	kde-runtime-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=	kwalletbackend 		0.0	# 4.7
 SHARED_LIBS +=	molletnetwork 		0.0	# 4.7
@@ -23,6 +24,7 @@ BUILD_DEPENDS +=	archivers/bzip2 \
 
 RUN_DEPENDS +=		archivers/bzip2 \
 			archivers/xz \
+			devel/desktop-file-utils
 
 WANTLIB += c m pthread stdc++ util
 WANTLIB += ICE SM X11 Xcursor Xext
