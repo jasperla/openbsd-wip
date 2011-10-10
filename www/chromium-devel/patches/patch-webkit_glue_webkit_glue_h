@@ -1,9 +1,9 @@
 $OpenBSD: patch-webkit_glue_webkit_glue_h,v 1.5 2011/08/16 08:17:44 robert Exp $
---- webkit/glue/webkit_glue.h.orig	Wed Aug 24 10:52:50 2011
-+++ webkit/glue/webkit_glue.h	Thu Aug 25 09:38:24 2011
-@@ -245,7 +245,7 @@ bool IsSingleProcess();
- // Enables/Disables Spdy for requests afterwards. Used for benchmarking.
- void EnableSpdy(bool enable);
+--- webkit/glue/webkit_glue.h.orig	Sat Oct  8 10:33:14 2011
++++ webkit/glue/webkit_glue.h	Sun Oct  9 11:27:33 2011
+@@ -215,7 +215,7 @@ std::string GetWebKitLocale();
+ // Returns true if the embedder is running in single process mode.
+ bool IsSingleProcess();
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_OPENBSD)

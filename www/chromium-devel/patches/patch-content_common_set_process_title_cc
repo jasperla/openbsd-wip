@@ -1,0 +1,12 @@
+$OpenBSD$
+--- content/common/set_process_title.cc.orig	Sun Oct  9 11:42:31 2011
++++ content/common/set_process_title.cc	Sun Oct  9 11:49:14 2011
+@@ -22,7 +22,7 @@
+ // Linux/glibc doesn't natively have setproctitle().
+ #include "content/common/set_process_title_linux.h"
+ #endif
+-
++// XXXMAYBEXXX
+ #if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_SOLARIS)
+ 
+ void SetProcessTitleFromCommandLine(const char** main_argv) {

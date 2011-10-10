@@ -1,7 +1,7 @@
 $OpenBSD$
---- base/threading/platform_thread_posix.cc.orig	Thu Aug 25 09:38:59 2011
-+++ base/threading/platform_thread_posix.cc	Thu Aug 25 09:39:08 2011
-@@ -136,7 +136,7 @@ PlatformThreadId PlatformThread::CurrentId() {
+--- base/threading/platform_thread_posix.cc.orig	Sat Oct  8 10:33:40 2011
++++ base/threading/platform_thread_posix.cc	Sun Oct  9 11:27:32 2011
+@@ -132,7 +132,7 @@ PlatformThreadId PlatformThread::CurrentId() {
    return syscall(__NR_gettid);
  #elif defined(OS_ANDROID)
    return gettid();

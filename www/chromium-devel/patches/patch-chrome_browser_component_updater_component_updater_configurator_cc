@@ -1,0 +1,12 @@
+$OpenBSD$
+--- chrome/browser/component_updater/component_updater_configurator.cc.orig	Mon Oct 10 13:55:41 2011
++++ chrome/browser/component_updater/component_updater_configurator.cc	Mon Oct 10 13:55:21 2011
+@@ -50,7 +50,7 @@ const char kExtraInfo[] =
+   #else
+     #error "unknown windows architecture"
+   #endif
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_OPENBSD)
+   #if defined(__amd64__)
+     "os=linux&arch=x64";
+   #elif defined(__i386__)

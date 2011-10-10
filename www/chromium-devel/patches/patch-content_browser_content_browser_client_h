@@ -1,0 +1,12 @@
+$OpenBSD$
+--- content/browser/content_browser_client.h.orig	Sun Oct  9 11:42:31 2011
++++ content/browser/content_browser_client.h	Sun Oct  9 11:47:54 2011
+@@ -307,7 +307,7 @@ class ContentBrowserClient {
+   // This can be called on any thread.
+   virtual FilePath GetDefaultDownloadDirectory() = 0;
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
+   // Can return an optional fd for crash handling, otherwise returns -1. The
+   // passed |command_line| will be used to start the process in question.
+   virtual int GetCrashSignalFD(const CommandLine& command_line) = 0;

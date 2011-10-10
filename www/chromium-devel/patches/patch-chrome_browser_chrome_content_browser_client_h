@@ -1,0 +1,12 @@
+$OpenBSD$
+--- chrome/browser/chrome_content_browser_client.h.orig	Sun Oct  9 11:42:31 2011
++++ chrome/browser/chrome_content_browser_client.h	Sun Oct  9 11:52:55 2011
+@@ -122,7 +122,7 @@ class ChromeContentBrowserClient : public content::Con
+   virtual void ClearCookies(RenderViewHost* rvh) OVERRIDE;
+   virtual FilePath GetDefaultDownloadDirectory() OVERRIDE;
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
+   virtual int GetCrashSignalFD(const CommandLine& command_line) OVERRIDE;
+ #endif
+ #if defined(OS_WIN)

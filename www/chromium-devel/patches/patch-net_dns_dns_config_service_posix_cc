@@ -1,50 +1,28 @@
 $OpenBSD$
---- net/dns/dns_config_service_posix.cc.orig	Thu Aug 25 18:04:38 2011
-+++ net/dns/dns_config_service_posix.cc	Thu Aug 25 19:36:27 2011
-@@ -89,9 +89,17 @@ class DnsConfigServicePosix::WatcherDelegate
-     DnsConfig config;
+--- net/dns/dns_config_service_posix.cc.orig	Fri Oct  7 17:18:20 2011
++++ net/dns/dns_config_service_posix.cc	Fri Oct  7 17:19:38 2011
+@@ -29,7 +29,11 @@ class DnsConfigServicePosix::DnsConfigReader : public 
+ 
+   void DoRead() OVERRIDE {
      struct __res_state res;
-     bool success = false;
 +#if defined(OS_OPENBSD)
-+    if (resolver_lib_->ninit() == 0) {
++    if ((res_init() == 0) && (res.options & RES_INIT)) {
 +#else
-     if (resolver_lib_->ninit(&res) == 0) {
+     if ((res_ninit(&res) == 0) && (res.options & RES_INIT)) {
 +#endif
-       success = ConvertResToConfig(res, &config);
-+#if defined(OS_OPENBSD)
-+      resolver_lib_->nclose();
-+#else
-       resolver_lib_->nclose(&res);
-+#endif
+       success_ = ConvertResToConfig(res, &dns_config_);
+     } else {
+       // Note: res_ninit in glibc always returns 0 and sets RES_INIT.
+@@ -37,7 +41,7 @@ class DnsConfigServicePosix::DnsConfigReader : public 
      }
-     // If this fails, the loop is gone, so there is no point retrying.
-     message_loop_->PostTask(FROM_HERE, base::Bind(
-@@ -196,13 +204,24 @@ void DnsConfigServicePosix::StartWatch() {
+ #if defined(OS_MACOSX)
+     res_ndestroy(&res);
+-#else
++#elif !defined(OS_OPENBSD)
+     res_nclose(&res);
+ #endif
    }
- }
- 
-+#if defined(OS_OPENBSD)
-+int DnsConfigServicePosix::ResolverLib::ninit() {
-+  return ::res_init();
-+}
-+#else
- int DnsConfigServicePosix::ResolverLib::ninit(res_state statp) {
-   return ::res_ninit(statp);
- }
-+#endif
- 
-+#if defined(OS_OPENBSD)
-+void DnsConfigServicePosix::ResolverLib::nclose() {
-+}
-+#else
- void DnsConfigServicePosix::ResolverLib::nclose(res_state statp) {
-   return ::res_nclose(statp);
- }
-+#endif
- 
- DnsConfigServicePosix::FilePathWatcherShim::FilePathWatcherShim()
-   : watcher_(new base::files::FilePathWatcher()) {}
-@@ -269,7 +288,9 @@ bool ConvertResToConfig(const struct __res_state& res,
+@@ -122,7 +126,9 @@ bool ConvertResToConfig(const struct __res_state& res,
    dns_config->ndots = res.ndots;
    dns_config->timeout = base::TimeDelta::FromSeconds(res.retrans);
    dns_config->attempts = res.retry;

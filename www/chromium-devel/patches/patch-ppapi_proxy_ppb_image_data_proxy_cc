@@ -1,7 +1,7 @@
 $OpenBSD: patch-ppapi_proxy_ppb_image_data_proxy_cc,v 1.2 2011/08/16 08:17:44 robert Exp $
---- ppapi/proxy/ppb_image_data_proxy.cc.orig	Wed Aug 24 10:52:52 2011
-+++ ppapi/proxy/ppb_image_data_proxy.cc	Thu Aug 25 09:38:24 2011
-@@ -115,7 +115,7 @@ int32_t ImageData::GetSharedMemory(int* /* handle */,
+--- ppapi/proxy/ppb_image_data_proxy.cc.orig	Tue Oct  4 10:31:50 2011
++++ ppapi/proxy/ppb_image_data_proxy.cc	Fri Oct  7 11:56:37 2011
+@@ -78,7 +78,7 @@ int32_t ImageData::GetSharedMemory(int* /* handle */,
  
  #if defined(OS_WIN)
  const ImageHandle ImageData::NullHandle = NULL;
@@ -10,7 +10,7 @@ $OpenBSD: patch-ppapi_proxy_ppb_image_data_proxy_cc,v 1.2 2011/08/16 08:17:44 ro
  const ImageHandle ImageData::NullHandle = ImageHandle();
  #else
  const ImageHandle ImageData::NullHandle = 0;
-@@ -124,7 +124,7 @@ const ImageHandle ImageData::NullHandle = 0;
+@@ -87,7 +87,7 @@ const ImageHandle ImageData::NullHandle = 0;
  ImageHandle ImageData::HandleFromInt(int32_t i) {
  #if defined(OS_WIN)
      return reinterpret_cast<ImageHandle>(i);

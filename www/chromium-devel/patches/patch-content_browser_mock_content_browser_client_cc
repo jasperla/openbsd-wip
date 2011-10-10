@@ -1,0 +1,12 @@
+$OpenBSD$
+--- content/browser/mock_content_browser_client.cc.orig	Sun Oct  9 11:42:31 2011
++++ content/browser/mock_content_browser_client.cc	Sun Oct  9 11:48:03 2011
+@@ -273,7 +273,7 @@ FilePath MockContentBrowserClient::GetDefaultDownloadD
+   return download_dir_.path();
+ }
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
+ int MockContentBrowserClient::GetCrashSignalFD(
+     const CommandLine& command_line) {
+   return -1;

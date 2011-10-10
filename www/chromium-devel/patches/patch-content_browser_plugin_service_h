@@ -1,0 +1,30 @@
+$OpenBSD$
+--- content/browser/plugin_service.h.orig	Sun Oct  9 11:42:31 2011
++++ content/browser/plugin_service.h	Sun Oct  9 11:47:44 2011
+@@ -31,7 +31,7 @@
+ #include "base/win/registry.h"
+ #endif
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
+ #include "base/files/file_path_watcher.h"
+ #endif
+ 
+@@ -203,7 +203,7 @@ class CONTENT_EXPORT PluginService
+       const FilePath& plugin_path,
+       PluginProcessHost::Client* client);
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
+   // Registers a new FilePathWatcher for a given path.
+   static void RegisterFilePathWatcher(
+       base::files::FilePathWatcher* watcher,
+@@ -226,7 +226,7 @@ class CONTENT_EXPORT PluginService
+   base::WaitableEventWatcher hklm_watcher_;
+ #endif
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
+   ScopedVector<base::files::FilePathWatcher> file_watchers_;
+   scoped_refptr<PluginDirWatcherDelegate> file_watcher_delegate_;
+ #endif

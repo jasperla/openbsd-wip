@@ -1,0 +1,30 @@
+$OpenBSD$
+--- content/browser/browser_main.cc.orig	Sun Oct  9 11:42:31 2011
++++ content/browser/browser_main.cc	Sun Oct  9 11:46:18 2011
+@@ -42,7 +42,7 @@
+ #include <dbus/dbus-glib.h>
+ #endif
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
+ #include <sys/stat.h>
+ 
+ #include "content/browser/renderer_host/render_sandbox_host_linux.h"
+@@ -74,7 +74,7 @@ void InitializeBrokerServices(const MainFunctionParams
+     }
+   }
+ }
+-#elif defined(OS_POSIX) && !defined(OS_MACOSX)
++#elif defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
+ void SetupSandbox(const CommandLine& parsed_command_line) {
+   // TODO(evanm): move this into SandboxWrapper; I'm just trying to move this
+   // code en masse out of chrome_main for now.
+@@ -200,7 +200,7 @@ void BrowserMainParts::EarlyInitialization() {
+     crypto::EnsureNSPRInit();
+   }
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
+   SetupSandbox(parsed_command_line());
+ #endif
+ 

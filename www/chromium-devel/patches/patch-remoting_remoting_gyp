@@ -1,29 +1,15 @@
 $OpenBSD$
---- remoting/remoting.gyp.orig	Mon Aug 29 10:25:58 2011
-+++ remoting/remoting.gyp	Tue Aug 30 09:56:06 2011
-@@ -32,6 +32,13 @@
-         'plugin_extension': 'so',
-         'plugin_prefix': 'lib',
-       }],
-+      ['OS=="openbsd"', {
-+        'name_suffix': '- OpenBSD',
-+        'remoting_it2me_os_files': [
-+          'resources/linux/chromoting128.png',
-+          'resources/linux/chromoting16.png',
-+        ],
-+      }],
-       ['OS=="linux" and chromeos==1', {
-         'name_suffix': '- Chromebook',
-         'remoting_it2me_os_files': [
-@@ -450,6 +457,7 @@
+--- remoting/remoting.gyp.orig	Fri Oct  7 12:12:26 2011
++++ remoting/remoting.gyp	Fri Oct  7 12:12:58 2011
+@@ -478,6 +478,7 @@
+         'host/ui_strings.cc',
          'host/ui_strings.h',
          'host/user_authenticator.h',
-         'host/user_authenticator_linux.cc',
 +        'host/user_authenticator_bsd.cc',
+         'host/user_authenticator_linux.cc',
          'host/user_authenticator_mac.cc',
          'host/user_authenticator_win.cc',
-       ],
-@@ -467,7 +475,6 @@
+@@ -496,7 +497,6 @@
                '-lX11',
                '-lXdamage',
                '-lXtst',

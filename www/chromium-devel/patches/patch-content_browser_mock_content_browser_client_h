@@ -1,0 +1,12 @@
+$OpenBSD$
+--- content/browser/mock_content_browser_client.h.orig	Sun Oct  9 11:42:31 2011
++++ content/browser/mock_content_browser_client.h	Sun Oct  9 11:46:31 2011
+@@ -129,7 +129,7 @@ class MockContentBrowserClient : public ContentBrowser
+   virtual void ClearCookies(RenderViewHost* rvh)  OVERRIDE;
+   virtual FilePath GetDefaultDownloadDirectory() OVERRIDE;
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
+   virtual int GetCrashSignalFD(const CommandLine& command_line) OVERRIDE;
+ #endif
+ 

@@ -1,43 +1,25 @@
-$OpenBSD: patch-build_common_gypi,v 1.9 2011/08/16 08:17:44 robert Exp $
---- build/common.gypi.orig	Mon Aug 29 10:26:24 2011
-+++ build/common.gypi	Tue Aug 30 10:00:00 2011
-@@ -143,7 +143,7 @@
-       'webui_task_manager%': 0,
+$OpenBSD$
+--- build/common.gypi.orig	Sat Oct  8 10:33:39 2011
++++ build/common.gypi	Sun Oct  9 11:27:33 2011
+@@ -327,7 +327,7 @@
+         }],
  
-       # Python version.
--      'python_ver%': '2.6',
-+      'python_ver%': '2.7',
- 
-       # Set ARM-v7 compilation flags
-       'armv7%': 0,
-@@ -453,7 +453,7 @@
-     'linux_strip_reliability_tests%': 0,
- 
-     # Enable TCMalloc.
--    'linux_use_tcmalloc%': 1,
-+    'linux_use_tcmalloc%': 0,
- 
-     # Disable TCMalloc's debugallocation.
-     'linux_use_debugallocation%': 0,
-@@ -476,7 +476,7 @@
- 
-     # Used to disable Native Client at compile time, for platforms where it
-     # isn't supported
--    'disable_nacl%': 0,
-+    'disable_nacl%': 1,
- 
-     # Set Thumb compilation flags.
-     'arm_thumb%': 0,
-@@ -551,7 +551,7 @@
+         # Enable smooth scrolling for Mac, Win, Linux and ChromeOS
+-        ['OS=="linux" or OS=="mac" or OS=="win"', {
++        ['OS=="linux" or OS=="mac" or OS=="win" or OS=="openbsd"', {
+           'enable_smooth_scrolling%': 1,
+         }, {
+           'enable_smooth_scrolling%': 0,
+@@ -600,7 +600,7 @@
          # This is used to tweak build flags for gcc 4.4.
          'gcc_version%': '<!(python <(DEPTH)/build/compiler_version.py)',
          # Figure out the python architecture to decide if we build pyauto.
--        'python_arch%': '<!(<(DEPTH)/build/linux/python_arch.sh <(sysroot)/usr/lib/libpython<(python_ver).so.1.0)',
-+        'python_arch%': '<!(<(DEPTH)/build/linux/python_arch.sh <(sysroot)/usr/local/lib/libpython<(python_ver).so.1.0)',
+-        'python_arch%': '<!(<(DEPTH)/build/linux/python_arch.sh <(sysroot)/usr/<(system_libdir)/libpython<(python_ver).so.1.0)',
++        'python_arch%': '<!(<(DEPTH)/build/linux/python_arch.sh <(sysroot)/usr/local/<(system_libdir)/libpython<(python_ver).so.1.0)',
          'conditions': [
            ['branding=="Chrome"', {
              'linux_breakpad%': 1,
-@@ -970,7 +970,7 @@
+@@ -1126,7 +1126,7 @@
                '-Wsign-compare',
              ]
            }],
@@ -46,7 +28,7 @@ $OpenBSD: patch-build_common_gypi,v 1.9 2011/08/16 08:17:44 robert Exp $
              'cflags': [
                # Don't warn about ignoring the return value from e.g. close().
                # This is off by default in some gccs but on by default in others.
-@@ -1042,7 +1042,7 @@
+@@ -1204,7 +1204,7 @@
                ['exclude', '(^|/)(wayland)_[^/]*\\.(h|cc)$'],
              ],
            }],

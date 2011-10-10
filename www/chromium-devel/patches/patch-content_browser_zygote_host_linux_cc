@@ -1,7 +1,7 @@
 $OpenBSD$
---- content/browser/zygote_host_linux.cc.orig	Thu Aug 25 18:06:24 2011
-+++ content/browser/zygote_host_linux.cc	Thu Aug 25 18:07:01 2011
-@@ -332,7 +332,9 @@ void ZygoteHost::AdjustRendererOOMScore(base::ProcessH
+--- content/browser/zygote_host_linux.cc.orig	Tue Oct  4 10:31:53 2011
++++ content/browser/zygote_host_linux.cc	Fri Oct  7 11:56:37 2011
+@@ -336,7 +336,9 @@ void ZygoteHost::AdjustRendererOOMScore(base::ProcessH
  
      std::vector<std::string> adj_oom_score_cmdline;
      adj_oom_score_cmdline.push_back(sandbox_binary_);
@@ -11,7 +11,7 @@ $OpenBSD$
      adj_oom_score_cmdline.push_back(base::Int64ToString(pid));
      adj_oom_score_cmdline.push_back(base::IntToString(score));
  
-@@ -342,8 +344,10 @@ void ZygoteHost::AdjustRendererOOMScore(base::ProcessH
+@@ -346,8 +348,10 @@ void ZygoteHost::AdjustRendererOOMScore(base::ProcessH
        ProcessWatcher::EnsureProcessGetsReaped(sandbox_helper_process);
      }
    } else if (!using_suid_sandbox_) {

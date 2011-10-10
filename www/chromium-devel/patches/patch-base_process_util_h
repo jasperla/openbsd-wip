@@ -1,6 +1,6 @@
 $OpenBSD: patch-base_process_util_h,v 1.7 2011/08/16 08:17:44 robert Exp $
---- base/process_util.h.orig	Thu Aug 25 10:27:41 2011
-+++ base/process_util.h	Thu Aug 25 18:04:16 2011
+--- base/process_util.h.orig	Tue Oct  4 10:32:19 2011
++++ base/process_util.h	Fri Oct  7 11:56:37 2011
 @@ -14,14 +14,16 @@
  #if defined(OS_WIN)
  #include <windows.h>
@@ -19,7 +19,7 @@ $OpenBSD: patch-base_process_util_h,v 1.7 2011/08/16 08:17:44 robert Exp $
  #elif defined(OS_POSIX)
  #include <dirent.h>
  #include <limits.h>
-@@ -475,7 +477,7 @@ class BASE_EXPORT ProcessIterator {
+@@ -526,7 +528,7 @@ class BASE_EXPORT ProcessIterator {
  #if defined(OS_WIN)
    HANDLE snapshot_;
    bool started_iteration_;

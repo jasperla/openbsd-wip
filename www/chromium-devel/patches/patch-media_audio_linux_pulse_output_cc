@@ -1,7 +1,11 @@
 $OpenBSD$
---- media/audio/linux/pulse_output.cc.orig	Thu Sep 22 16:07:50 2011
-+++ media/audio/linux/pulse_output.cc	Thu Sep 22 16:30:49 2011
-@@ -7,7 +7,7 @@
+--- media/audio/linux/pulse_output.cc.orig	Tue Oct  4 10:31:46 2011
++++ media/audio/linux/pulse_output.cc	Fri Oct  7 17:43:01 2011
+@@ -4,10 +4,11 @@
+ 
+ #include "media/audio/linux/pulse_output.h"
+ 
++#include "base/bind.h"
  #include "base/message_loop.h"
  #include "media/audio/audio_parameters.h"
  #include "media/audio/audio_util.h"

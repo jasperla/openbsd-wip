@@ -1,6 +1,6 @@
 $OpenBSD$
---- net/dns/dns_config_service_posix.h.orig	Thu Aug 25 11:15:37 2011
-+++ net/dns/dns_config_service_posix.h	Thu Aug 25 11:33:57 2011
+--- net/dns/dns_config_service_posix.h.orig	Fri Oct  7 17:18:33 2011
++++ net/dns/dns_config_service_posix.h	Fri Oct  7 17:18:55 2011
 @@ -6,6 +6,12 @@
  #define NET_DNS_DNS_CONFIG_SERVICE_POSIX_H_
  #pragma once
@@ -14,17 +14,3 @@ $OpenBSD$
  #include <resolv.h>
  
  #include "base/compiler_specific.h"
-@@ -74,8 +80,13 @@ class NET_EXPORT_PRIVATE DnsConfigServicePosix::Resolv
-  public:
-   ResolverLib() {}
-   virtual ~ResolverLib() {}
-+#if defined(OS_OPENBSD)
-+  virtual int ninit();
-+  virtual void nclose();
-+#else
-   virtual int ninit(res_state statp);
-   virtual void nclose(res_state statp);
-+#endif
-  private:
-   DISALLOW_COPY_AND_ASSIGN(ResolverLib);
- };

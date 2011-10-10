@@ -4,10 +4,9 @@ ONLY_FOR_ARCHS=		i386 amd64
 
 COMMENT=		Chromium browser
 
-V=			15.0.865.0
+V=			16.0.903.0
 DISTNAME=		chromium-${V}
 PKGNAME=		chromium-devel-${V}
-REVISION=		0
 
 CATEGORIES=		www
 
@@ -99,6 +98,9 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Duse_system_zlib=0 \
 		-Ddisable_nacl=1 \
 		-Ddisable_sse2=1 \
+		-Dlinux_use_tcmalloc=0 \
+		-Dpython_ver=2.7 \
+		-Denable_webrtc=0 \
 		-DOS=openbsd
 
 .if ${FLAVOR:L:Mno_nss}
@@ -111,7 +113,7 @@ WANTLIB+=	nss3 nssutil3
 
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
-	@ln -sf ${LOCALBASE}/include/pulse ${WRKSRC}/pulse
+	@ln -sf ${LOCALBASE}/include/pulse ${WRKSRC}/
 	${SUBST_CMD} ${WRKSRC}/build/common.gypi
 	@cp -pR ${WRKSRC}/third_party/libvpx/source/config/linux \
 		${WRKSRC}/third_party/libvpx/source/config/openbsd

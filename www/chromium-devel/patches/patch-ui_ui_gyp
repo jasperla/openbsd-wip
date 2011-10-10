@@ -1,7 +1,7 @@
 $OpenBSD$
---- ui/ui.gyp.orig	Mon Aug 29 10:27:00 2011
-+++ ui/ui.gyp	Tue Aug 30 09:56:07 2011
-@@ -314,6 +314,7 @@
+--- ui/ui.gyp.orig	Tue Oct  4 10:32:52 2011
++++ ui/ui.gyp	Fri Oct  7 11:56:37 2011
+@@ -337,6 +337,7 @@
              'gfx/native_theme_linux.cc',
              'gfx/native_theme_linux.h',
            ],
@@ -9,7 +9,7 @@ $OpenBSD$
            'link_settings': {
              'libraries': [
                '-lXrender',  # For XRender* function calls in x11_util.cc.
-@@ -425,7 +426,6 @@
+@@ -483,7 +484,6 @@
              'link_settings': {
                'libraries': [
                  '-lX11',

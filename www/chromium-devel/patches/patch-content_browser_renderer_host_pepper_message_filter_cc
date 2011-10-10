@@ -1,7 +1,7 @@
 $OpenBSD$
---- content/browser/renderer_host/pepper_message_filter.cc.orig	Wed Aug 24 10:52:53 2011
-+++ content/browser/renderer_host/pepper_message_filter.cc	Thu Aug 25 09:38:24 2011
-@@ -119,8 +119,9 @@ bool NetAddressToAddressList(const PP_Flash_NetAddress
+--- content/browser/renderer_host/pepper_message_filter.cc.orig	Tue Oct  4 10:31:53 2011
++++ content/browser/renderer_host/pepper_message_filter.cc	Fri Oct  7 11:56:37 2011
+@@ -132,8 +132,9 @@ bool NetAddressToAddressList(const PP_Flash_NetAddress
  
  // Make sure the storage in |PP_Flash_NetAddress| is big enough. (Do it here
  // since the data is opaque elsewhere.)

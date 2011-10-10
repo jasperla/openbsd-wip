@@ -1,6 +1,6 @@
 $OpenBSD$
---- media/media.gyp.orig	Mon Aug 29 10:25:58 2011
-+++ media/media.gyp	Thu Sep 22 17:59:20 2011
+--- media/media.gyp.orig	Sat Oct  8 10:33:13 2011
++++ media/media.gyp	Sun Oct  9 11:27:33 2011
 @@ -6,7 +6,7 @@
    'variables': {
      'chromium_code': 1,
@@ -10,7 +10,7 @@ $OpenBSD$
    },
    'targets': [
      {
-@@ -239,7 +239,6 @@
+@@ -285,7 +285,6 @@
          ['OS=="linux" or OS=="freebsd" or OS=="solaris"', {
            'link_settings': {
              'libraries': [
@@ -18,7 +18,7 @@ $OpenBSD$
              ],
            },
            'conditions': [
-@@ -268,6 +267,23 @@
+@@ -314,6 +313,23 @@
            'sources/': [ ['exclude', 'alsa_' ],
                          ['exclude', 'audio_manager_linux' ],
                          ['exclude', '\\.mm?$' ] ],
@@ -42,7 +42,24 @@ $OpenBSD$
            'link_settings': {
              'libraries': [
              ],
-@@ -703,7 +719,6 @@
+@@ -438,7 +454,6 @@
+           'cflags': [
+             '-msse2',
+             '-msse3',
+-            '-mssse3',
+           ],
+         }],
+         [ 'OS == "mac"', {
+@@ -473,7 +488,7 @@
+             ],
+           },
+         }],
+-        [ 'OS=="linux"', {
++        [ 'OS=="linux" or OS=="openbsd"', {
+           'variables': {
+             'conditions': [
+               [ 'target_arch=="ia32"', {
+@@ -770,7 +785,6 @@
            ],
            'libraries': [
              '-lGL',
@@ -50,7 +67,7 @@ $OpenBSD$
            ],
            'sources': [
              'tools/tile_render_bench/tile_render_bench.cc',
-@@ -723,7 +738,6 @@
+@@ -791,7 +805,6 @@
            ],
            'link_settings': {
              'libraries': [

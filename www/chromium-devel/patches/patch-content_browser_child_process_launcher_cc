@@ -1,0 +1,21 @@
+$OpenBSD$
+--- content/browser/child_process_launcher.cc.orig	Sat Oct  8 10:33:18 2011
++++ content/browser/child_process_launcher.cc	Mon Oct 10 12:22:41 2011
+@@ -124,7 +124,7 @@ class ChildProcessLauncher::Context
+     // to reliably detect child termination.
+     file_util::ScopedFD ipcfd_closer(&ipcfd);
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
+     // On Linux, we need to add some extra file descriptors for crash handling.
+     std::string process_type =
+         cmd_line->GetSwitchValueASCII(switches::kProcessType);
+@@ -149,7 +149,7 @@ class ChildProcessLauncher::Context
+           ipcfd,
+           kPrimaryIPCChannel + base::GlobalDescriptors::kBaseDescriptor));
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
+       if (crash_signal_fd >= 0) {
+         fds_to_map.push_back(std::make_pair(
+             crash_signal_fd,

@@ -1,6 +1,6 @@
 $OpenBSD$
---- content/renderer/webplugin_delegate_proxy.cc.orig	Wed Aug 24 11:03:40 2011
-+++ content/renderer/webplugin_delegate_proxy.cc	Wed Aug 24 11:07:02 2011
+--- content/renderer/webplugin_delegate_proxy.cc.orig	Sat Oct  8 10:33:19 2011
++++ content/renderer/webplugin_delegate_proxy.cc	Sun Oct  9 11:27:32 2011
 @@ -494,7 +494,7 @@ void WebPluginDelegateProxy::OnChannelError() {
  static void CopyTransportDIBHandleForMessage(
      const TransportDIB::Handle& handle_in,
@@ -24,4 +24,4 @@ $OpenBSD$
 +#if defined(OS_MACOSX) || defined(OS_OPENBSD)
    TransportDIB::Handle handle;
    IPC::Message* msg = new ViewHostMsg_AllocTransportDIB(size, false, &handle);
-   if (!RenderThread::current()->Send(msg))
+   if (!RenderThreadImpl::current()->Send(msg))

@@ -1,7 +1,7 @@
 $OpenBSD$
---- base/logging.cc.orig	Wed Aug 24 10:58:14 2011
-+++ base/logging.cc	Wed Aug 24 10:58:36 2011
-@@ -135,7 +135,7 @@ int32 CurrentThreadId() {
+--- base/logging.cc.orig	Sat Oct  8 10:33:40 2011
++++ base/logging.cc	Sun Oct  9 11:27:32 2011
+@@ -134,7 +134,7 @@ int32 CurrentThreadId() {
    return syscall(__NR_gettid);
  #elif defined(OS_ANDROID)
    return gettid();

@@ -1,6 +1,6 @@
 $OpenBSD: patch-content_renderer_webplugin_delegate_proxy_h,v 1.1 2011/06/08 20:36:56 robert Exp $
---- content/renderer/webplugin_delegate_proxy.h.orig	Wed Aug 24 10:52:54 2011
-+++ content/renderer/webplugin_delegate_proxy.h	Thu Aug 25 09:38:24 2011
+--- content/renderer/webplugin_delegate_proxy.h.orig	Sat Oct  8 10:33:19 2011
++++ content/renderer/webplugin_delegate_proxy.h	Sun Oct  9 11:27:32 2011
 @@ -21,7 +21,7 @@
  #include "webkit/plugins/npapi/webplugin_delegate.h"
  #include "webkit/plugins/webplugininfo.h"
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_renderer_webplugin_delegate_proxy_h,v 1.1 2011/06/08 20:
  #include "base/hash_tables.h"
  #include "base/memory/linked_ptr.h"
  #endif
-@@ -243,7 +243,7 @@ class WebPluginDelegateProxy
+@@ -255,7 +255,7 @@ class WebPluginDelegateProxy
    // point the window has already been destroyed).
    void WillDestroyWindow();
  

@@ -218,6 +218,7 @@ chrome/resources/inspector/ScriptFormatterWorker.js
 chrome/resources/inspector/dataGrid.css
 chrome/resources/inspector/devTools.css
 chrome/resources/inspector/devtools.html
+chrome/resources/inspector/devtools_extension_api.js
 chrome/resources/inspector/inspectorCommon.css
 chrome/resources/inspector/networkLogView.css
 @man man/man1/chrome.1

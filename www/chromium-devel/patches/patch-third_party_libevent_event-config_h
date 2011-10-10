@@ -1,7 +1,7 @@
 $OpenBSD$
---- third_party/libevent/event-config.h.orig	Wed Aug 24 11:13:21 2011
-+++ third_party/libevent/event-config.h	Wed Aug 24 11:13:33 2011
-@@ -13,6 +13,8 @@
+--- third_party/libevent/event-config.h.orig	Tue Oct  4 10:32:03 2011
++++ third_party/libevent/event-config.h	Fri Oct  7 11:56:37 2011
+@@ -15,6 +15,8 @@
  #include "freebsd/event-config.h"
  #elif defined(__sun)
  #include "solaris/event-config.h"

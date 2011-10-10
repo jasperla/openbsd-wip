@@ -1,12 +1,13 @@
-$OpenBSD: patch-ui_gfx_surface_surface_gyp,v 1.2 2011/08/16 08:17:44 robert Exp $
---- ui/gfx/surface/surface.gyp.orig	Wed Aug 24 10:53:46 2011
-+++ ui/gfx/surface/surface.gyp	Thu Aug 25 09:38:24 2011
-@@ -37,7 +37,7 @@
-         'io_surface_support_mac.h',
+$OpenBSD$
+--- ui/gfx/surface/surface.gyp.orig	Fri Oct  7 12:14:14 2011
++++ ui/gfx/surface/surface.gyp	Fri Oct  7 20:36:49 2011
+@@ -38,8 +38,8 @@
          'surface_export.h',
          'transport_dib.h',
+         'transport_dib_android.cc',
 -        'transport_dib_linux.cc',
-+        'transport_dib_openbsd.cc',
          'transport_dib_mac.cc',
++        'transport_dib_openbsd.cc',
          'transport_dib_win.cc',
        ],
+       'defines': [

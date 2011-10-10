@@ -1,7 +1,15 @@
-$OpenBSD: patch-base_base_gypi,v 1.7 2011/08/16 08:17:44 robert Exp $
---- base/base.gypi.orig	Wed Aug 24 10:53:14 2011
-+++ base/base.gypi	Thu Aug 25 09:38:24 2011
-@@ -190,6 +190,7 @@
+$OpenBSD$
+--- base/base.gypi.orig	Sat Oct  8 10:33:40 2011
++++ base/base.gypi	Sun Oct  9 12:28:31 2011
+@@ -111,7 +111,6 @@
+           'file_version_info_win.h',
+           'files/file_path_watcher.cc',
+           'files/file_path_watcher.h',
+-          'files/file_path_watcher_linux.cc',
+           'files/file_path_watcher_mac.cc',
+           'files/file_path_watcher_stub.cc',
+           'files/file_path_watcher_win.cc',
+@@ -216,6 +215,7 @@
            'process_util.h',
            'process_util_linux.cc',
            'process_util_mac.mm',
@@ -9,22 +17,17 @@ $OpenBSD: patch-base_base_gypi,v 1.7 2011/08/16 08:17:44 robert Exp $
            'process_util_posix.cc',
            'process_util_win.cc',
            'process_win.cc',
-@@ -388,12 +389,11 @@
-           }, {
+@@ -419,7 +419,7 @@
              'sources!' : [ 'message_pump_gtk.cc', ],
+             'sources/' : [ [ 'include', 'message_pump_x.cc', ] ],
            }],
 -          [ 'OS != "linux"', {
-+          [ 'OS != "linux" and OS !="openbsd"', {
++          [ 'OS != "linux" and OS != "openbsd"', {
                'sources!': [
                  # Not automatically excluded by the *linux.cc rules.
-                 'gtk_util.cc',
-                 'gtk_util.h',
--                'linux_util.cc',
-               ],
-             },
+                 'linux_util.cc',
+@@ -588,6 +588,12 @@
            ],
-@@ -508,6 +508,12 @@
-             ],
          }],
          [ 'OS == "freebsd" or OS == "openbsd"', {
 +          'sources!': [

@@ -1,0 +1,12 @@
+$OpenBSD$
+--- content/shell/shell_content_browser_client.cc.orig	Sun Oct  9 11:42:31 2011
++++ content/shell/shell_content_browser_client.cc	Sun Oct  9 11:49:49 2011
+@@ -277,7 +277,7 @@ FilePath ShellContentBrowserClient::GetDefaultDownload
+   return FilePath();
+ }
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
+ int ShellContentBrowserClient::GetCrashSignalFD(
+     const CommandLine& command_line) {
+   return -1;

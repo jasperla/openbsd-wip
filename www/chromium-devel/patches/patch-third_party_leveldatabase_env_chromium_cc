@@ -1,16 +1,16 @@
 $OpenBSD$
---- third_party/leveldatabase/env_chromium.cc.orig	Thu Aug 25 09:43:31 2011
-+++ third_party/leveldatabase/env_chromium.cc	Thu Aug 25 09:43:57 2011
-@@ -30,7 +30,7 @@
- #include "base/win/win_util.h"
- #endif
+--- third_party/leveldatabase/env_chromium.cc.orig	Fri Oct  7 12:13:10 2011
++++ third_party/leveldatabase/env_chromium.cc	Fri Oct  7 12:13:31 2011
+@@ -32,7 +32,7 @@
  
--#if defined(OS_MACOSX) || defined(OS_WIN)
-+#if defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_OPENBSD)
- // The following are glibc-specific
  namespace {
  
-@@ -330,7 +330,7 @@ class ChromiumEnv : public Env {
+-#if defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_ANDROID)
++#if defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_ANDROID) || defined(OS_OPENBSD)
+ // The following are glibc-specific
+ 
+ size_t fread_unlocked(void *ptr, size_t size, size_t n, FILE *file) {
+@@ -343,7 +343,7 @@ class ChromiumEnv : public Env {
  
    virtual Status GetFileSize(const std::string& fname, uint64_t* size) {
      Status s;
