@@ -1,0 +1,14 @@
+$OpenBSD$
+--- src/c/clients/spdsend/common.c.orig	Wed Oct 12 02:14:26 2011
++++ src/c/clients/spdsend/common.c	Wed Oct 12 02:14:40 2011
+@@ -22,8 +22,9 @@
+ */
+ 
+ 
+-#include <limits.h>
++#include <sys/types.h>
+ #include <sys/socket.h>
++#include <limits.h>
+ #include <unistd.h>
+ 
+ #include "spdsend.h"

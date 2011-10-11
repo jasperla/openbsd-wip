@@ -1,0 +1,33 @@
+$OpenBSD$
+--- src/tests/Makefile.am.orig	Fri Sep 10 12:23:55 2010
++++ src/tests/Makefile.am	Wed Oct 12 02:32:13 2011
+@@ -8,19 +8,24 @@ AM_CFLAGS = -I$(top_srcdir)/src/c/api -DLOCALEDIR=\"$(
+ bin_PROGRAMS = long_message clibrary clibrary2 run_test connection_recovery
+ 
+ long_message_SOURCES = long_message.c
+-long_message_LDADD = $(c_api)/libspeechd.la -lpthread @EXTRA_SOCKET_LIBS@
++long_message_LDFLAGS = -pthread
++long_message_LDADD = $(c_api)/libspeechd.la @EXTRA_SOCKET_LIBS@
+ 
+ clibrary_SOURCES = clibrary.c
+-clibrary_LDADD = $(c_api)/libspeechd.la -lpthread @EXTRA_SOCKET_LIBS@
++clibrary_LDFLAGS = -pthread
++clibrary_LDADD = $(c_api)/libspeechd.la @EXTRA_SOCKET_LIBS@
+ 
+ clibrary2_SOURCES = clibrary2.c
+-clibrary2_LDADD = $(c_api)/libspeechd.la -lpthread @EXTRA_SOCKET_LIBS@
++clibrary2_LDFLAGS = -pthread
++clibrary2_LDADD = $(c_api)/libspeechd.la @EXTRA_SOCKET_LIBS@
+ 
+ connection_recovery_SOURCES = connection-recovery.c
+-connection_recovery_LDADD = $(c_api)/libspeechd.la -lpthread @EXTRA_SOCKET_LIBS@
++connection_recovery_LDFLAGS = -pthread
++connection_recovery_LDADD = $(c_api)/libspeechd.la @EXTRA_SOCKET_LIBS@
+ 
+ run_test_SOURCES = run_test.c
+-run_test_LDADD = $(c_api)/libspeechd.la -lpthread @EXTRA_SOCKET_LIBS@
++run_test_LDFLAGS = -pthread
++run_test_LDADD = $(c_api)/libspeechd.la @EXTRA_SOCKET_LIBS@
+ 
+ EXTRA_DIST= basic.test general.test keys.test priority_progress.test \
+             pronunciation.test punctuation.test sound_icons.test spelling.test \

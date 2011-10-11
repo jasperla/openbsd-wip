@@ -1,0 +1,3 @@
+@comment $OpenBSD$
+@lib lib/libspeechd.so.${LIBspeechd_VERSION}
+@lib lib/speech-dispatcher/libsdaudio.so.${LIBsdaudio_VERSION}
