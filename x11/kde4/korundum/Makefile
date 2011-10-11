@@ -1,0 +1,28 @@
+# $OpenBSD$
+
+COMMENT =	KDE 4 bindings for Ruby
+DISTNAME =	korundum-${VERSION}
+
+MODULES =	lang/ruby
+
+LIB_DEPENDS = 	x11/kde4/kate \
+		x11/kde4/libs \
+		x11/kde4/pimlibs \
+		x11/kde4/qtruby \
+		x11/kde4/smokekde
+
+RUN_DEPENDS =	x11/kde4/kross-interpreters
+
+WANTLIB += c m stdc++
+WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
+WANTLIB += lib/qt4/QtXml
+WANTLIB += kcmutils kdecore kdeui kdnssd kemoticons kfile khtml
+WANTLIB += kidletime kio kjs knewstuff2 knewstuff3 kparts kprintutils
+WANTLIB += kpty ktexteditor kutils nepomuk nepomukquery nepomukutils
+WANTLIB += phonon plasma solid soprano sopranoclient sopranoserver
+
+# Disable until KDE Smoke bug 283677 gets fixed,
+# https://bugs.kde.org/show_bug.cgi?id=283677
+CONFIGURE_ARGS +=	-DBUILD_Akonadi:Bool=False
+
+.include <bsd.port.mk>
