@@ -1,77 +1,83 @@
 # $OpenBSD$
 
+MODKDE4_VERSION =	4.7.1
+MODKDE_VERSION =	${MODKDE4_VERSION}
+
+# General options set by module
 SHARED_ONLY ?=		Yes
 ONLY_FOR_ARCHS ?=	${GCC4_ARCHS}
+EXTRACT_SUFX ?=		.tar.bz2
 
-VERSION ?=		4.7.1
-CATEGORIES ?=		x11 x11/kde4
-
+CATEGORIES +=		x11/kde4
+MODULES +=		devel/cmake
 SEPARATE_BUILD ?=	flavored
 
-DIST_SUBDIR ?=		kde
+# MODKDE4_RESOURCES: Yes/No
+#   If enabled, disable Qt and KDE dependencies, and set PKG_ARCH=*.
+#   Also, "debug" FLAVOR will not be added to FLAVORS.
 
-EXTRACT_SUFX ?=		.tar.bz2
-MASTER_SITES ?=		${MASTER_SITE_KDE:=stable/${VERSION}/src/}
-PORTHOME ?=		${WRKDIR}
+MODKDE4_RESOURCES ?=	No
+
+# MODKDE4_USE: [libs | standard] [PIM] [kross]
+#   - Set to empty for stuff that is a prerequisite for kde base blocks:
+#     kdelibs, kde-runtime, kdepimlibs or kdepim-runtime. This is the default
+#     value when MODKDE4_RESOURCES is enabled.
+#
+#   - Set to "libs" for ports that need only libs, without runtime support.
+#     All options below imply "Libs". If no from "none", "libs" or
+#     "standard" were specified, "libs" is implied.
+#
+#   - Set to "standard" for ports which depend on base KDE libraries and
+#     runtime components. This is the default setting until
+#     MODKDE4_RESOURCES is enabled.
+#
+#   - Set to "PIM" that depend on KDE PIM framework.
+#
+#   - Add "kross" when at least some apps in package use the Kross framework.
+#
+# NOTE: There are no options like "Kate" or "Okular", they should be handled
+#       with simple LIB_DEPENDS on corresponding packages in addition to
+#       options above.
+#
+
+.if ${MODKDE4_RESOURCES:L} == "no"
+MODKDE4_USE ?=		standard
+.else
+MODKDE4_USE ?=
+.endif
+
+MODKDE4_BUILD_DEPENDS =
+MODKDE4_LIB_DEPENDS =
+MODKDE4_RUN_DEPENDS =
 
 FLAVOR ?=
 
-
-
-# MODKDE4_RESOURCES: Yes/No
-# Default: No
-# If enabled, disable Qt and KDE dependencies, and set PKG_ARCH=*,
-# ignoring MODKDE4_UI, MODKDE4_DEPS_STD and MODKDE4_DEPS_PIM. Also,
-# "debug" FLAVOR will not be added to FLAVORS.
-#
-# MODKDE4_UI: Yes/No
-# Default: Yes
-# If enabled, adds typical dependencies for KDE UI applications.
-#
-# MODKDE4_DEPS: Libs/Standard/None [PIM]
-# Default: Standard
-#   - Set to "Libs" for ports that don't need anything except
-#     kdelibs (probably ones providing only libraries themself).
-#   - Set to "Standard" for ports which depend on base KDE libraries and
-#     runtime components.
-#   - Set to "None" for stuff that is a prerequisite for kdelibs
-#     and/or kde-runtime.
-#   - Add "PIM" when dependencies on pimlibs (and pim-runtime for "Standard"
-#     ports) are also required.
-
-MODKDE4_RESOURCES ?=	No
-MODKDE4_UI ?=		Yes
-MODKDE4_DEPS ?=		Standard
-
-MODKDE4_BUILD_DEPENDS =	x11/kde4/automoc
-MODKDE4_LIB_DEPENDS =	
-MODKDE4_RUN_DEPENDS =	
-
-# Small hack for more compact compares later
-.if ${MODKDE4_DEPS:L:Mstandard}
-MODKDE4_DEPS +=		Libs
+.if ${MODKDE4_USE:L:Mstandard} || ${MODKDE4_USE:L:Mpim}
+MODKDE4_USE +=		libs
 .endif
 
-
 .if ${MODKDE4_RESOURCES:L} != "no"
-.   if ${MODKDE4_UI:L} != "no"
-MODKDE4_RUN_DEPENDS +=	devel/desktop-file-utils
-.   endif
+# Resources usually don't need Qt
+MODKDE_NO_QT ?=		Yes
+.else
+MODKDE4_BUILD_DEPENDS +=	x11/kde4/automoc
 
-.   if ${MODKDE4_DEPS:L:Mlibs}
-MODKDE4_LIB_DEPENDS +=	x11/kde4/libs
-.       if ${MODKDE4_DEPS_PIM:L:Mpim}
-MODKDE4_LIB_DEPENDS +=	x11/kde4/pimlibs
+.   if ${MODKDE4_USE:L:Mlibs}
+MODKDE_NO_QT ?=	no
+MODKDE4_LIB_DEPENDS +=		x11/kde4/libs
+.       if ${MODKDE4_USE:L:Mpim}
+MODKDE4_LIB_DEPENDS +=		x11/kde4/pimlibs
 .       endif
 
-.       if ${MODKDE4_DEPS_PIM:L:Mstandard}
-MODKDE4_RUN_DEPENDS +=	x11/kde4/runtime
-.           if ${MODKDE4_DEPS_PIM:L:Mpim}
-MODKDE4_RUN_DEPENDS +=	x11/kde4/pim-runtime
+.       if ${MODKDE4_USE:L:Mstandard}
+MODKDE4_RUN_DEPENDS +=		x11/kde4/runtime
+.           if ${MODKDE4_USE:L:Mpim}
+MODKDE4_RUN_DEPENDS +=		x11/kde4/pim-runtime
 .           endif
 .       endif
-
-.   endif
+.   else
+MODKDE_NO_QT ?=	yes
+.   endif    # ${MODKDE4_USE:L:Mlibs}
 
 .   if ${FLAVOR:L:Mdebug}
 CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE:String=Debug
@@ -81,24 +87,31 @@ CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE:String=Release
 MODKDE4_CMAKE_PREFIX =	-release
 .   endif
 
-# NOTE: due to bugs in update-plist, plist may contain
+# NOTE: due to bugs in make-plist, plist may contain
 # ${FLAVORS} instead of ${MODKDE4_CMAKE_PREFIX}.
 # You've been warned.
 SUBST_VARS +=		MODKDE4_CMAKE_PREFIX
 
-.if ${MODKDE_NO_QT:L} != "no"
-MODULES +=		x11/qt4
-MODQT_MT ?=		Yes
-MODQT_OVERRIDE_UIC ?=	No
+# ${MODKDE4_RESOURCES:L} != "no"
 .endif
 
-#  ${MODKDE4_RESOURCES:L} != "no"
+MODKDE4_NO_QT ?=	${MODKDE_NO_QT}
+
+MODKDE4_CONFIGURE_ENV =	HOME=${WRKDIR}
+PORTHOME ?=		${WRKDIR}
+
+.if ${MODKDE4_NO_QT:L} != "no"
+MODULES +=			x11/qt4
+MODQT4_OVERRIDE_UIC ?=		No
+MODKDE4_CONFIGURE_ENV +=	QTDIR=${MODQT_LIBDIR}
 .endif
 
-MODULES +=		devel/cmake
+MODKDE_BUILD_DEPENDS =	${MODKDE4_BUILD_DEPENDS}
+MODKDE_LIB_DEPENDS =	${MODKDE4_LIB_DEPENDS}
+MODKDE_RUN_DEPENDS =	${MODKDE4_RUN_DEPENDS}
+MODKDE_CONFIGURE_ENV =	${MODKDE4_CONFIGURE_ENV}
 
-BUILD_DEPENDS +=	${MODKDE4_BUILD_DEPENDS}
-LIB_DEPENDS +=		${MODKDE4_LIB_DEPENDS}
-RUN_DEPENDS +=		${MODKDE4_RUN_DEPENDS}
-
-CONFIGURE_ENV +=	QTDIR=${MODQT_LIBDIR} HOME=${WRKDIR}
+BUILD_DEPENDS +=	${MODKDE_BUILD_DEPENDS}
+LIB_DEPENDS +=		${MODKDE_LIB_DEPENDS}
+RUN_DEPENDS +=		${MODKDE_RUN_DEPENDS}
+CONFIGURE_ENV +=	${MODKDE_CONFIGURE_ENV}
