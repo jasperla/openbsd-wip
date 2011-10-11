@@ -16,4 +16,4 @@ PERMIT_PACKAGE_CDROM ?=		Yes
 PERMIT_PACKAGE_FTP ?=		Yes
 
 # XXX temporary until all ports get updated to kde4.port.mk
-MODKDE4_USE =
+MODKDE4_USE ?=

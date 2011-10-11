@@ -1,13 +1,13 @@
 # $OpenBSD$
 
-PKGNAME =	kde-l10n-${VERSION}
-PKG_ARCH =	*
+PKGNAME =		kde-l10n-${MODKDE_VERSION}
+MODKDE4_RESOURCES =	Yes
 
 ALL_LANGS =	ar bg bs ca ca@valencia cs da de el en_GB es et eu fi fr ga gl
 ALL_LANGS +=	he hr hu ia id is it ja kk km kn ko lt lv nb nds nl nn pa pl
 ALL_LANGS +=	pt pt_BR ro ru sk sl sr sv th tr ug uk wa zh_CN zh_TW
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/${VERSION}/src/kde-l10n/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/${MODKDE_VERSION}/src/kde-l10n/}
 
 .for _L in ${ALL_LANGS}
 PSEUDO_FLAVORS +=	${_L}
@@ -26,8 +26,8 @@ LANGS = ${FLAVOR}
 
 .for _L in ${LANGS}
 COMMENT-${_L} =		KDE4 localization pack for ${_L} language
-DISTFILES +=		kde-l10n-${_L}-${VERSION}${EXTRACT_SUFX}
-PKGNAME-${_L} =		kde-l10n-${_L}-${VERSION}
+DISTFILES +=		kde-l10n-${_L}-${MODKDE_VERSION}${EXTRACT_SUFX}
+PKGNAME-${_L} =		kde-l10n-${_L}-${MODKDE_VERSION}
 MULTI_PACKAGES +=	-${_L}
 .endfor
 
@@ -52,7 +52,7 @@ post-extract:
 	echo 'project(kde4-l10n)' >>${BOOTSTRAP_CMAKE_CONF}
 .for _L in ${LANGS}
 	echo 'message("====> building ${_L} language pack")' >>${BOOTSTRAP_CMAKE_CONF}
-	echo 'add_subdirectory(kde-l10n-${_L}-${VERSION})' >>${BOOTSTRAP_CMAKE_CONF}
+	echo 'add_subdirectory(kde-l10n-${_L}-${MODKDE_VERSION})' >>${BOOTSTRAP_CMAKE_CONF}
 .endfor
 
 .include <bsd.port.mk>
