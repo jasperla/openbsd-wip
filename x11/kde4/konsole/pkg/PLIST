@@ -3,8 +3,8 @@
 bin/konsoleprofile
 lib/kde4/
 lib/kde4/libkonsolepart.so
-lib/libkdeinit4_konsole.so
-lib/libkonsoleprivate.so
+@lib lib/libkdeinit4_konsole.so.${LIBkdeinit4_konsole_VERSION}
+@lib lib/libkonsoleprivate.so.${LIBkonsoleprivate_VERSION}
 share/applications/kde4/
 share/applications/kde4/konsole.desktop
 share/apps/konsole/
