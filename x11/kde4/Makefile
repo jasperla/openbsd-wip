@@ -21,29 +21,29 @@
      SUBDIR += baseapps			# test
      
 # bindings and wrappers
-#     SUBDIR += kimono
-#     SUBDIR += korundum
-#     SUBDIR += kross-interpreters
-#     SUBDIR += perlkde
-#     SUBDIR += perlqt
-#     SUBDIR += pykde4
-#     SUBDIR += qtruby
-#     SUBDIR += qyoto
-#     SUBDIR += smokegen
-#     SUBDIR += smokekde
-#     SUBDIR += smokeqt
+     SUBDIR += kimono			# compilation fails
+     SUBDIR += korundum			# test
+     SUBDIR += kross-interpreters	# test
+     SUBDIR += perlkde			# test
+     SUBDIR += perlqt			# test
+     SUBDIR += pykde4			# no Polkit-Qt support, DLFCN trouble
+     SUBDIR += qtruby			# test
+     SUBDIR += qyoto			# test
+     SUBDIR += smokegen			# no Akonadi
+     SUBDIR += smokekde			# test
+     SUBDIR += smokeqt			# test
      
 # fat packages
      SUBDIR += accessibility		# test
      SUBDIR += admin			# test
      SUBDIR += games			# test
-     SUBDIR += multimedia		# issues in dragon
+     SUBDIR += multimedia		# issues in Dragon and KMix
      SUBDIR += network			# test
      SUBDIR += pim			# needs akonadi
-#     SUBDIR += sdk
+     SUBDIR += sdk			# OK
      SUBDIR += toys			# OK
      SUBDIR += utils			# test
-#     SUBDIR += webdev
+     SUBDIR += webdev
 
 # former kdeedu
      SUBDIR += blinken			# issues
@@ -52,21 +52,21 @@
      SUBDIR += kalzium			# minor issues
      SUBDIR += kanagram			# OK
      SUBDIR += kbruch			# OK
-#     SUBDIR += kgeography
-#     SUBDIR += khangman
-#     SUBDIR += kig
-#     SUBDIR += kiten
-#     SUBDIR += klettres
-#     SUBDIR += kmplot
-#     SUBDIR += kstars
+     SUBDIR += kgeography		# OK
+     SUBDIR += khangman			# OK
+     SUBDIR += kig			# OK
+     SUBDIR += kiten			# OK
+     SUBDIR += klettres			# test
+     SUBDIR += kmplot			# OK
+     SUBDIR += kstars			# minor issues
 #     SUBDIR += ktouch
 #     SUBDIR += kturtle
 #     SUBDIR += kwordquiz
      SUBDIR += libkdeedu		# untested
      SUBDIR += marble			# issues
-#     SUBDIR += parley
-#     SUBDIR += rocs
-#     SUBDIR += step
+     SUBDIR += parley			# minor issues
+     SUBDIR += rocs			# OK
+     SUBDIR += step			# OK
      
 # former kdegraphics
      SUBDIR += digikam			# not fully tested
