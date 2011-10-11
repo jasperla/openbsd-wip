@@ -1,6 +1,6 @@
 $OpenBSD$
---- base/base.gypi.orig	Sat Oct  8 10:33:40 2011
-+++ base/base.gypi	Sun Oct  9 12:28:31 2011
+--- base/base.gypi.orig	Mon Oct 10 10:31:56 2011
++++ base/base.gypi	Tue Oct 11 10:23:15 2011
 @@ -111,7 +111,6 @@
            'file_version_info_win.h',
            'files/file_path_watcher.cc',
@@ -9,7 +9,7 @@ $OpenBSD$
            'files/file_path_watcher_mac.cc',
            'files/file_path_watcher_stub.cc',
            'files/file_path_watcher_win.cc',
-@@ -216,6 +215,7 @@
+@@ -218,6 +217,7 @@
            'process_util.h',
            'process_util_linux.cc',
            'process_util_mac.mm',
@@ -17,7 +17,7 @@ $OpenBSD$
            'process_util_posix.cc',
            'process_util_win.cc',
            'process_win.cc',
-@@ -419,7 +419,7 @@
+@@ -421,7 +421,7 @@
              'sources!' : [ 'message_pump_gtk.cc', ],
              'sources/' : [ [ 'include', 'message_pump_x.cc', ] ],
            }],
@@ -26,7 +26,7 @@ $OpenBSD$
                'sources!': [
                  # Not automatically excluded by the *linux.cc rules.
                  'linux_util.cc',
-@@ -588,6 +588,12 @@
+@@ -590,6 +590,12 @@
            ],
          }],
          [ 'OS == "freebsd" or OS == "openbsd"', {

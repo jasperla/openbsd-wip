@@ -1,6 +1,6 @@
 $OpenBSD$
---- chrome/browser/browser_about_handler.cc.orig	Sat Oct  8 10:34:09 2011
-+++ chrome/browser/browser_about_handler.cc	Sun Oct  9 11:27:32 2011
+--- chrome/browser/browser_about_handler.cc.orig	Mon Oct 10 10:32:26 2011
++++ chrome/browser/browser_about_handler.cc	Tue Oct 11 10:23:15 2011
 @@ -78,7 +78,7 @@
  #include "chrome/browser/chromeos/version_loader.h"
  #include "chrome/browser/oom_priority_manager.h"
@@ -10,7 +10,7 @@ $OpenBSD$
  #include "content/browser/zygote_host_linux.h"
  #endif
  
-@@ -150,7 +150,7 @@ const char* const kChromePaths[] = {
+@@ -151,7 +151,7 @@ const char* const kChromePaths[] = {
  #if defined(OS_WIN)
    chrome::kChromeUIConflictsHost,
  #endif
@@ -19,7 +19,7 @@ $OpenBSD$
    chrome::kChromeUILinuxProxyConfigHost,
    chrome::kChromeUISandboxHost,
  #endif
-@@ -187,7 +187,7 @@ const char* const kAboutSourceNames[] = {
+@@ -189,7 +189,7 @@ const char* const kAboutSourceNames[] = {
  #if defined(USE_TCMALLOC)
    chrome::kChromeUITCMallocHost,
  #endif
@@ -28,7 +28,7 @@ $OpenBSD$
    chrome::kChromeUILinuxProxyConfigHost,
    chrome::kChromeUISandboxHost,
  #endif
-@@ -1049,7 +1049,7 @@ std::string AboutStats(const std::string& query) {
+@@ -1061,7 +1061,7 @@ std::string AboutStats(const std::string& query) {
    return data;
  }
  
@@ -37,7 +37,7 @@ $OpenBSD$
  std::string AboutLinuxProxyConfig() {
    std::string data;
    AppendHeader(&data, 0,
-@@ -1419,7 +1419,7 @@ void AboutSource::StartDataRequest(const std::string& 
+@@ -1431,7 +1431,7 @@ void AboutSource::StartDataRequest(const std::string& 
      return;
    } else if (host == chrome::kChromeUIHistogramsHost) {
      response = AboutHistograms(path);
@@ -46,7 +46,7 @@ $OpenBSD$
    } else if (host == chrome::kChromeUILinuxProxyConfigHost) {
      response = AboutLinuxProxyConfig();
  #endif
-@@ -1435,7 +1435,7 @@ void AboutSource::StartDataRequest(const std::string& 
+@@ -1447,7 +1447,7 @@ void AboutSource::StartDataRequest(const std::string& 
      response = ResourceBundle::GetSharedInstance().GetRawDataResource(
          IDR_OS_CREDITS_HTML).as_string();
  #endif

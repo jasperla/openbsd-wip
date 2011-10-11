@@ -1,7 +1,7 @@
 $OpenBSD$
---- content/browser/content_browser_client.h.orig	Sun Oct  9 11:42:31 2011
-+++ content/browser/content_browser_client.h	Sun Oct  9 11:47:54 2011
-@@ -307,7 +307,7 @@ class ContentBrowserClient {
+--- content/browser/content_browser_client.h.orig	Mon Oct 10 10:31:37 2011
++++ content/browser/content_browser_client.h	Tue Oct 11 10:23:15 2011
+@@ -322,7 +322,7 @@ class ContentBrowserClient {
    // This can be called on any thread.
    virtual FilePath GetDefaultDownloadDirectory() = 0;
  

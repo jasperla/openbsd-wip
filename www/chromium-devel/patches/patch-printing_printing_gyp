@@ -1,7 +1,7 @@
 $OpenBSD: patch-printing_printing_gyp,v 1.6 2011/08/16 08:17:44 robert Exp $
---- printing/printing.gyp.orig	Sat Oct  8 10:33:15 2011
-+++ printing/printing.gyp	Sun Oct  9 11:27:33 2011
-@@ -222,6 +222,9 @@
+--- printing/printing.gyp.orig	Mon Oct 10 10:31:33 2011
++++ printing/printing.gyp	Tue Oct 11 10:23:16 2011
+@@ -223,6 +223,9 @@
                    ]
                  },
                }, {

@@ -1,7 +1,7 @@
 $OpenBSD$
---- content/browser/mock_content_browser_client.h.orig	Sun Oct  9 11:42:31 2011
-+++ content/browser/mock_content_browser_client.h	Sun Oct  9 11:46:31 2011
-@@ -129,7 +129,7 @@ class MockContentBrowserClient : public ContentBrowser
+--- content/browser/mock_content_browser_client.h.orig	Mon Oct 10 10:31:36 2011
++++ content/browser/mock_content_browser_client.h	Tue Oct 11 10:23:15 2011
+@@ -131,7 +131,7 @@ class MockContentBrowserClient : public ContentBrowser
    virtual void ClearCookies(RenderViewHost* rvh)  OVERRIDE;
    virtual FilePath GetDefaultDownloadDirectory() OVERRIDE;
  

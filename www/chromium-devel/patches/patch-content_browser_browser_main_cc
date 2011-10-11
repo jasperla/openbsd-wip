@@ -1,7 +1,16 @@
 $OpenBSD$
---- content/browser/browser_main.cc.orig	Sun Oct  9 11:42:31 2011
-+++ content/browser/browser_main.cc	Sun Oct  9 11:46:18 2011
-@@ -42,7 +42,7 @@
+--- content/browser/browser_main.cc.orig	Mon Oct 10 10:31:37 2011
++++ content/browser/browser_main.cc	Tue Oct 11 19:18:52 2011
+@@ -38,7 +38,7 @@
+ #include "ui/base/l10n/l10n_util_win.h"
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_USES_GTK)
+ #include <glib-object.h>
+ #endif
+ 
+@@ -46,7 +46,7 @@
  #include <dbus/dbus-glib.h>
  #endif
  
@@ -10,7 +19,7 @@ $OpenBSD$
  #include <sys/stat.h>
  
  #include "content/browser/renderer_host/render_sandbox_host_linux.h"
-@@ -74,7 +74,7 @@ void InitializeBrokerServices(const MainFunctionParams
+@@ -78,7 +78,7 @@ void InitializeBrokerServices(const MainFunctionParams
      }
    }
  }
@@ -19,7 +28,16 @@ $OpenBSD$
  void SetupSandbox(const CommandLine& parsed_command_line) {
    // TODO(evanm): move this into SandboxWrapper; I'm just trying to move this
    // code en masse out of chrome_main for now.
-@@ -200,7 +200,7 @@ void BrowserMainParts::EarlyInitialization() {
+@@ -108,7 +108,7 @@ void SetupSandbox(const CommandLine& parsed_command_li
+ }
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_USES_GTK)
+ static void GLibLogHandler(const gchar* log_domain,
+                            GLogLevelFlags log_level,
+                            const gchar* message,
+@@ -204,7 +204,7 @@ void BrowserMainParts::EarlyInitialization() {
      crypto::EnsureNSPRInit();
    }
  
@@ -28,3 +46,12 @@ $OpenBSD$
    SetupSandbox(parsed_command_line());
  #endif
  
+@@ -280,7 +280,7 @@ void BrowserMainParts::InitializeToolkit() {
+   // of intersecting ifdefs we have.  To keep it easy to follow, there
+   // are no #else branches on any #ifs.
+ 
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_USES_GTK)
+   // We want to call g_thread_init(), but in some codepaths (tests) it
+   // is possible it has already been called.  In older versions of
+   // GTK, it is an error to call g_thread_init twice; unfortunately,
