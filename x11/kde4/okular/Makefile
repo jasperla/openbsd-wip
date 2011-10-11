@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, document viewer
 DISTNAME =	okular-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=	okularcore		0.0	# 1.7
 
@@ -25,6 +26,6 @@ WANTLIB += kcmutils kdecore kdeui kemoticons khtml kio kidletime
 WANTLIB += kjs kjsapi kparts kprintutils kpty kutils nepomuk
 WANTLIB += nepomukutils phonon qimageblitz soprano threadweaver
 WANTLIB += chm djvulibre epub freetype poppler-qt4 qca spectre
-WANTLIB += tiff
+WANTLIB += jpeg tiff
 
 .include <bsd.port.mk>
