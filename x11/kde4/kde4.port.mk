@@ -19,16 +19,16 @@ SEPARATE_BUILD ?=	flavored
 
 MODKDE4_RESOURCES ?=	No
 
-# MODKDE4_USE: [libs | standard] [PIM] [kross]
+# MODKDE4_USE: [libs | runtime] [PIM] [kross]
 #   - Set to empty for stuff that is a prerequisite for kde base blocks:
 #     kdelibs, kde-runtime, kdepimlibs or kdepim-runtime.
 #
 #   - Set to "libs" for ports that need only libs, without runtime support.
 #     All options below imply "Libs". If no from "none", "libs" or
-#     "standard" were specified, "libs" is implied. This is the default
+#     "runtime" were specified, "libs" is implied. This is the default
 #     value when MODKDE4_RESOURCES is enabled.
 #
-#   - Set to "standard" for ports which depend on base KDE libraries and
+#   - Set to "runtime" for ports which depend on base KDE libraries and
 #     runtime components. This is the default setting until
 #     MODKDE4_RESOURCES is enabled.
 #
@@ -42,7 +42,7 @@ MODKDE4_RESOURCES ?=	No
 #
 
 .if ${MODKDE4_RESOURCES:L} == "no"
-MODKDE4_USE ?=		standard
+MODKDE4_USE ?=		runtime
 .else
 MODKDE4_USE ?=		libs
 .endif
@@ -57,7 +57,7 @@ FLAVOR ?=
 MODKDE4_NO_QT ?=	${MODKDE_NO_QT}
 .endif
 
-.if ${MODKDE4_USE:L:Mstandard} || ${MODKDE4_USE:L:Mpim}
+.if ${MODKDE4_USE:L:Mruntime} || ${MODKDE4_USE:L:Mpim}
 MODKDE4_USE +=		libs
 .endif
 
@@ -75,7 +75,7 @@ MODKDE4_LIB_DEPENDS +=		x11/kde4/libs
 MODKDE4_LIB_DEPENDS +=		x11/kde4/pimlibs
 .       endif
 
-.       if ${MODKDE4_USE:L:Mstandard}
+.       if ${MODKDE4_USE:L:Mruntime}
 MODKDE4_RUN_DEPENDS +=		x11/kde4/runtime
 .           if ${MODKDE4_USE:L:Mpim}
 MODKDE4_RUN_DEPENDS +=		x11/kde4/pim-runtime
