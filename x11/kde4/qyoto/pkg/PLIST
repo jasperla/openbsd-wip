@@ -66,6 +66,6 @@ share/qyoto/cmake/CMakeDetermineCSharpCompiler.cmake
 share/qyoto/cmake/CMakeTestCSharpCompiler.cmake
 share/qyoto/cmake/FindMono.cmake
 share/qyoto/cmake/QyotoConfig.cmake
-share/qyoto/cmake/QyotoExport${CMAKE_TARGET_PREFIX}.cmake
+share/qyoto/cmake/QyotoExport${MODKDE4_CMAKE_PREFIX}.cmake
 share/qyoto/cmake/QyotoExport.cmake
 share/qyoto/key.snk

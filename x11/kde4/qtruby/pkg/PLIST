@@ -48,5 +48,5 @@ ${MODRUBY_SITEDIR}/qwt/qwt.rb
 share/qtruby4/
 share/qtruby4/cmake/
 share/qtruby4/cmake/QtRuby4Config.cmake
-share/qtruby4/cmake/QtRuby4Export${CMAKE_TARGET_PREFIX}.cmake
+share/qtruby4/cmake/QtRuby4Export${MODKDE4_CMAKE_PREFIX}.cmake
 share/qtruby4/cmake/QtRuby4Export.cmake

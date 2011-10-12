@@ -338,7 +338,7 @@ lib/cmake/kdevplatform/
 lib/cmake/kdevplatform/KDevPlatformConfig.cmake
 lib/cmake/kdevplatform/KDevPlatformConfigVersion.cmake
 lib/cmake/kdevplatform/KDevPlatformMacros.cmake
-lib/cmake/kdevplatform/KDevPlatformTargets${CMAKE_TARGET_PREFIX}.cmake
+lib/cmake/kdevplatform/KDevPlatformTargets${MODKDE4_CMAKE_PREFIX}.cmake
 lib/cmake/kdevplatform/KDevPlatformTargets.cmake
 lib/kde4/kcm_kdev_bgsettings.so
 lib/kde4/kcm_kdev_ccsettings.so

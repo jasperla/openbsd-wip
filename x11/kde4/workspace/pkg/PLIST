@@ -170,7 +170,7 @@ include/taskmanager/taskmanager_export.h
 lib/cmake/KDE4Workspace/
 lib/cmake/KDE4Workspace/KDE4WorkspaceConfig.cmake
 lib/cmake/KDE4Workspace/KDE4WorkspaceConfigVersion.cmake
-lib/cmake/KDE4Workspace/KDE4WorkspaceLibraryTargets${CMAKE_TARGET_PREFIX}.cmake
+lib/cmake/KDE4Workspace/KDE4WorkspaceLibraryTargets${MODKDE4_CMAKE_PREFIX}.cmake
 lib/cmake/KDE4Workspace/KDE4WorkspaceLibraryTargets.cmake
 lib/kconf_update_bin/
 @bin lib/kconf_update_bin/krdb_clearlibrarypath

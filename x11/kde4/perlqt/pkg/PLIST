@@ -91,6 +91,6 @@ share/perlqt/
 share/perlqt/cmake/
 share/perlqt/cmake/FindPerlMore.cmake
 share/perlqt/cmake/PerlQtConfig.cmake
-share/perlqt/cmake/PerlQtExport${CMAKE_TARGET_PREFIX}.cmake
+share/perlqt/cmake/PerlQtExport${MODKDE4_CMAKE_PREFIX}.cmake
 share/perlqt/cmake/PerlQtExport.cmake
 share/perlqt/doxsubpp.pl

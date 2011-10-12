@@ -24,7 +24,7 @@ include/libkdeedu/qtmml/qtmmlwidget.h
 include/libkdeedu/sharedkvtmlfiles.h
 lib/cmake/libkdeedu/
 lib/cmake/libkdeedu/LibKdeEduConfig.cmake
-lib/cmake/libkdeedu/LibKdeEduTargets${CMAKE_TARGET_PREFIX}.cmake
+lib/cmake/libkdeedu/LibKdeEduTargets${MODKDE4_CMAKE_PREFIX}.cmake
 lib/cmake/libkdeedu/LibKdeEduTargets.cmake
 @lib lib/libkeduvocdocument.so.${LIBkeduvocdocument_VERSION}
 lib/libqtmmlwidget.a

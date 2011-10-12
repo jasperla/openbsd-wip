@@ -188,7 +188,7 @@ lib/libkcardgame.so
 lib/libpala/
 @lib lib/libpala.so.${LIBpala_VERSION}
 lib/libpala/libpala-config.cmake
-lib/libpala/pala-targets${CMAKE_TARGET_PREFIX}.cmake
+lib/libpala/pala-targets${MODKDE4_CMAKE_PREFIX}.cmake
 lib/libpala/pala-targets.cmake
 share/applications/kde4/KGoldrunner.desktop
 share/applications/kde4/bomber.desktop
