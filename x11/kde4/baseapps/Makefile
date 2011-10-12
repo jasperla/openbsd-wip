@@ -27,6 +27,6 @@ LIB_DEPENDS +=		x11/kde4/libs \
 			multimedia/phonon
 
 # Wants tidy, should be ported to tidyp
-# RUN_DEPENDS +=		www/tidyp
+CONFIGURE_ARGS +=	-DWITH_LibTidy:Bool=False
 
 .include <bsd.port.mk>
