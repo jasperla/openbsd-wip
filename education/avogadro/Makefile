@@ -8,6 +8,7 @@ V =			1.0.3
 CATEGORIES =		education biology
 COMMENT =		molecule editor and visualizer
 DISTNAME =		avogadro-${V}
+REVISION =		0
 HOMEPAGE =		http://avogadro.openmolecules.net/
 
 SHARED_LIBS +=		avogadro		0.0	# 1.0
@@ -22,7 +23,7 @@ PERMIT_DISTFILES_FTP =	Yes | Reason if No
 WANTLIB += c m pthread stdc++ z
 WANTLIB += GL GLU ICE SM X11 Xext
 WANTLIB += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtOpenGL
-WANTLIB += boost_python-mt openbabel python2.7
+WANTLIB += boost_python-mt openbabel ${MODPY_WANTLIB}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=avogadro/${V}/}
 EXTRACT_SUFX =		.tar.bz2
