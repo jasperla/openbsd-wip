@@ -1,24 +1,23 @@
 # $OpenBSD$
 
 COMMENT =		K Desktop Environment, accessibility
-DISTNAME =		kdeaccessibility-${VERSION}
+DISTNAME =		kdeaccessibility-${MODKDE4_VERSION}
 
-#SHARED_LIBS +=  kttsd             3.0 # .4.0
+SHARED_LIBS +=	kttsd		4.0
 
-LIB_DEPENDS += 		x11/kde4/libs
+MODKDE4_USE =	libs
 
 WANTLIB += c m pthread stdc++
-WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xpm Xtst
+WANTLIB += ICE SM X11 Xext Xtst
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtSvg lib/qt4/QtXml
-WANTLIB += kde3support kdecore kdeui kio phonon>=6
+WANTLIB += kde3support kcmutils kdecore kdeui kemoticons kidletime kio
+WANTLIB += kparts kprintutils kutils nepomuk nepomukutils phonon>=6
+WANTLIB += soprano
+WANTLIB += speechd
 
-USE_GROFF =	Yes
+LIB_DEPENDS =	audio/speech-dispatcher
 
-# CONFIGURE_ARGS +=	-DKDE4_KTTSD_ALSA:BOOL=OFF
-
-# these come from libs in real case
-#pre-install:
-#	mkdir -p ${PREFIX}/share/doc/HTML/en/common
+# USE_GROFF =	Yes
 
 .include <bsd.port.mk>
