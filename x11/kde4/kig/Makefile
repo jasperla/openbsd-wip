@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	geometric constructions explorer for KDE
-DISTNAME =	kig-${VERSION}
+DISTNAME =	kig-${MODKDE_VERSION}
 
 MODULES =	lang/python
 

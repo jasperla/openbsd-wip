@@ -1,7 +1,7 @@
 # $OpenBSD: Makefile,v 1.9 2010/11/22 08:37:02 espie Exp $
 
 COMMENT =		K Desktop Environment, web development
-DISTNAME =		kdewebdev-${VERSION}
+DISTNAME =		kdewebdev-${MODKDE_VERSION}
 
 SHARED_LIBS +=	klinkstatuscommon	0.0
 SHARED_LIBS +=	kommandercore		0.0

@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	general purpose flash card program for KDE
-DISTNAME =	kwordquiz-${VERSION}
+DISTNAME =	kwordquiz-${MODKDE_VERSION}
 
 WANTLIB += c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork

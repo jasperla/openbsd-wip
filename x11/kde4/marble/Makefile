@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =		K Desktop Environment, maps
-DISTNAME =		marble-${VERSION}
+DISTNAME =		marble-${MODKDE_VERSION}
 
 SHARED_LIBS +=	marblewidget		0.0 # 0.12
 

@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =		K Desktop Environment, calculator
-DISTNAME =		kalgebra-${VERSION}
+DISTNAME =		kalgebra-${MODKDE_VERSION}
 
 SHARED_LIBS +=	analitza		0.0	# 4.7
 SHARED_LIBS +=	analitzagui		0.0	# 4.7

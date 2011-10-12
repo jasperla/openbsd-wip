@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	mathematical function plotter for KDE
-DISTNAME =	kmplot-${VERSION}
+DISTNAME =	kmplot-${MODKDE_VERSION}
 
 LIB_DEPENDS += 	x11/kde4/libs
 

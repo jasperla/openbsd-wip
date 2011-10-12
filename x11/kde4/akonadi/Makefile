@@ -1,8 +1,7 @@
 # $OpenBSD: Makefile,v 1.3 2010/11/22 08:37:02 espie Exp $
 
-VERSION =		1.6.2
 COMMENT =		KDE PIM access libraries
-DISTNAME =		akonadi-${VERSION}
+DISTNAME =		akonadi-1.6.2
 
 SHARED_LIBS += 		akonadiprotocolinternals 0.0	# 1.0
 

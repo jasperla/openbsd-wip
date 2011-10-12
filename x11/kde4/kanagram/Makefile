@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =		letter order game for KDE
-DISTNAME =		kanagram-${VERSION}
+DISTNAME =		kanagram-${MODKDE_VERSION}
 
 LIB_DEPENDS += 	x11/kde4/libs \
 		x11/kde4/libkdeedu

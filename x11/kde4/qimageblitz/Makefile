@@ -1,8 +1,7 @@
 # $OpenBSD: Makefile,v 1.5 2010/08/31 08:22:05 jasper Exp $
 
-VERSION =		0.0.6
 COMMENT =		image effects for kde
-DISTNAME =		qimageblitz-${VERSION}
+DISTNAME =		qimageblitz-0.0.6
 EXTRACT_SUFX =		.tar.bz2
 
 MASTER_SITES=	${MASTER_SITE_KDE:=stable/qimageblitz/}

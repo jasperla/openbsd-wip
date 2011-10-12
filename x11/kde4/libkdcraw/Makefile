@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	digital cameras RAW images manipulation library for KDE
-DISTNAME =	libkdcraw-${VERSION}
+DISTNAME =	libkdcraw-${MODKDE_VERSION}
 
 SHARED_LIBS +=	kdcraw			0.0	# 20.0
 

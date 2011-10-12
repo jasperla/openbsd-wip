@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	screen ruler for KDE
-DISTNAME =	kruler-${VERSION}
+DISTNAME =	kruler-${MODKDE_VERSION}
 
 #SHARED_LIBS +=	kolourpaint_lgpl	0.0	# 4.7
 

@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =		simple application to select the color for KDE
-DISTNAME =		kcolorchooser-${VERSION}
+DISTNAME =		kcolorchooser-${MODKDE_VERSION}
 
 LIB_DEPENDS += 	x11/kde4/libs 
 

@@ -1,7 +1,7 @@
 # $OpenBSD: Makefile,v 1.10 2010/11/22 08:37:02 espie Exp $
 
 COMMENT =	K Desktop Environment, utils
-DISTNAME =	kdeutils-${VERSION}
+DISTNAME =	kdeutils-${MODKDE_VERSION}
 
 USE_GROFF =	Yes
 

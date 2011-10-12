@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	planetarium for KDE
-DISTNAME =	kstars-${VERSION}
+DISTNAME =	kstars-${MODKDE_VERSION}
 
 LIB_DEPENDS += 	math/cfitsio \
 		math/eigen2 \

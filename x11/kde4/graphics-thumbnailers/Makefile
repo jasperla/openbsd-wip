@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	KDE thumbnail creation plugins
-DISTNAME =	kdegraphics-thumbnailers-${VERSION}
+DISTNAME =	kdegraphics-thumbnailers-${MODKDE_VERSION}
 
 LIB_DEPENDS +=		x11/kde4/libs \
 			x11/kde4/libkexiv2 \

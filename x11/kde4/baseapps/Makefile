@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, base applications
-DISTNAME =	kde-baseapps-${VERSION}
+DISTNAME =	kde-baseapps-${MODKDE_VERSION}
 
 SHARED_LIBS +=	konq			8.0	# 6.0
 SHARED_LIBS +=	konqsidebarplugin	5.0	# 4.0

@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	KDE 4 bindings helpers, for running interpreters
-DISTNAME =	kross-interpreters-${VERSION}
+DISTNAME =	kross-interpreters-${MODKDE_VERSION}
 
 FLAVORS =		no_java
 FLAVOR ?=

@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	Qt 4 bindings for Perl
-DISTNAME =	perlqt-${VERSION}
+DISTNAME =	perlqt-${MODKDE_VERSION}
 
 LIB_DEPENDS = 	x11/kde4/smokeqt
 

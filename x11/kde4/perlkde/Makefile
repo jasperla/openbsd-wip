@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	KDE 4 bindings for Perl
-DISTNAME =	perlkde-${VERSION}
+DISTNAME =	perlkde-${MODKDE_VERSION}
 
 LIB_DEPENDS = 	x11/kde4/kate \
 		x11/kde4/libs \

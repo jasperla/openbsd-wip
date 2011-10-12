@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	image plugins infrastructure for KDE
-DISTNAME =	libkipi-${VERSION}
+DISTNAME =	libkipi-${MODKDE_VERSION}
 
 SHARED_LIBS +=  kipi           0.0 # 4.7
 

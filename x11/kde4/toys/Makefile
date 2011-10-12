@@ -1,7 +1,7 @@
 # $OpenBSD: Makefile,v 1.9 2010/11/22 08:37:02 espie Exp $
 
 COMMENT =	K Desktop Environment, toys
-DISTNAME =	kdetoys-${VERSION}
+DISTNAME =	kdetoys-${MODKDE_VERSION}
 
 USE_GROFF =	Yes
 

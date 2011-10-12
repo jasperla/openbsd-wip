@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	KDE SDK
-DISTNAME =	kdesdk-${VERSION}
+DISTNAME =	kdesdk-${MODKDE_VERSION}
 
 SHARED_LIBS +=	kastencontrollers	0.0 # 4.7
 SHARED_LIBS +=	kastencore		0.0 # 4.7

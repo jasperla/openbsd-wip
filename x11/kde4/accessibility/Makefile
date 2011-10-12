@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =		K Desktop Environment, accessibility
-DISTNAME =		kdeaccessibility-${MODKDE4_VERSION}
+DISTNAME =		kdeaccessibility-${MODKDE_VERSION}
 
 SHARED_LIBS +=	kttsd		4.0
 

@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	image plugins infrastructure for KDE
-DISTNAME =	libkexiv2-${VERSION}
+DISTNAME =	libkexiv2-${MODKDE_VERSION}
 
 SHARED_LIBS +=	kexiv2			0.0	# 10.0
 

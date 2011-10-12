@@ -4,7 +4,7 @@ SHARED_ONLY =		Yes
 
 CATEGORIES =		devel
 COMMENT =		introspective wrappers around the Qt
-DISTNAME =		smokeqt-${VERSION}
+DISTNAME =		smokeqt-${MODKDE_VERSION}
 
 SHARED_LIBS +=	smokephonon		0.0 # 3.0
 SHARED_LIBS +=	smokeqimageblitz	0.0 # 3.0

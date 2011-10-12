@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	some fucking learning tool for KDE
-DISTNAME =	ktouch-${VERSION}
+DISTNAME =	ktouch-${MODKDE_VERSION}
 
 WANTLIB += c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork

@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =		interactive physics simulator for KDE
-DISTNAME =		step-${VERSION}
+DISTNAME =		step-${MODKDE_VERSION}
 
 WANTLIB += c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork

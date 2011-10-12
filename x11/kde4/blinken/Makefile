@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =		K Desktop Environment, game Simon Says
-DISTNAME =		blinken-${VERSION}
+DISTNAME =		blinken-${MODKDE_VERSION}
 
 LIB_DEPENDS += 	x11/kde4/libs 
 

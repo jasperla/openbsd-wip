@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	vocabulary trainer for KDE
-DISTNAME =	parley-${VERSION}
+DISTNAME =	parley-${MODKDE_VERSION}
 
 WANTLIB += c m pthread stdc++
 WANTLIB += ICE SM X11 Xext Xrender

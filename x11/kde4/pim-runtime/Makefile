@@ -1,7 +1,7 @@
 # $OpenBSD: Makefile,v 1.12 2011/07/06 21:25:23 ajacoutot Exp $
 
 COMMENT =	K Desktop Environment, PIM runtime support
-DISTNAME =	kdepim-runtime-${VERSION}
+DISTNAME =	kdepim-runtime-${MODKDE_VERSION}
 
 SHARED_LIBS +=  akonadi-filestore         0.0 # 4.7
 SHARED_LIBS +=  akonadi-xml               0.0 # 4.7

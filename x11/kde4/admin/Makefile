@@ -1,7 +1,7 @@
 # $OpenBSD: Makefile,v 1.8 2010/11/22 08:37:02 espie Exp $
 
 COMMENT =		K Desktop Environment, admin tools
-DISTNAME =		kdeadmin-${VERSION}
+DISTNAME =		kdeadmin-${MODKDE_VERSION}
 
 WANTLIB += c kdecore>=8 kdeui kio kldap kntlm \
 	lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg \

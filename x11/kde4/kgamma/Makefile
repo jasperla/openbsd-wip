@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	screen gamma management for KDE
-DISTNAME =	kgamma-${VERSION}
+DISTNAME =	kgamma-${MODKDE_VERSION}
 
 LIB_DEPENDS += 	x11/kde4/libs
 

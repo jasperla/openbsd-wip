@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	libraries used by the KDE Education Project applications
-DISTNAME =	libkdeedu-${VERSION}
+DISTNAME =	libkdeedu-${MODKDE_VERSION}
 REVISION =	0
 
 SHARED_LIBS +=  keduvocdocument           0.0 # 4.7

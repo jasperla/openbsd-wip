@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	KDE 4 bindings for Ruby
-DISTNAME =	korundum-${VERSION}
+DISTNAME =	korundum-${MODKDE_VERSION}
 
 MODULES =	lang/ruby
 

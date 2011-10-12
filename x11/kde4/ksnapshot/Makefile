@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	shaphot capturing utility for KDE
-DISTNAME =	ksnapshot-${VERSION}
+DISTNAME =	ksnapshot-${MODKDE_VERSION}
 
 LIB_DEPENDS += 		x11/kde4/libs  \
 			x11/kde4/libkipi

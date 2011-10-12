@@ -1,7 +1,7 @@
 # $OpenBSD: Makefile,v 1.11 2011/07/06 21:25:23 ajacoutot Exp $
 
 COMMENT =		K Desktop Environment, extra plasmoids
-DISTNAME =		kdeplasma-addons-${VERSION}
+DISTNAME =		kdeplasma-addons-${MODKDE_VERSION}
 
 SHARED_LIBS +=	lancelot-datamodels		0.0 # 1.7
 SHARED_LIBS +=	lancelot			0.0 # 1.9

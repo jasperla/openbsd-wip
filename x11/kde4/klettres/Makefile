@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	alphabet learning app for KDE
-DISTNAME =	klettres-${VERSION}
+DISTNAME =	klettres-${MODKDE_VERSION}
 
 LIB_DEPENDS += 	x11/kde4/libs
 

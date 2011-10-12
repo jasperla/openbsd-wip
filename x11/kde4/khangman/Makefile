@@ -1,7 +1,7 @@
 # $OpenBSD$
 
-COMMENT =		hangman game for KDE
-DISTNAME =		khangman-${VERSION}
+COMMENT =	hangman game for KDE
+DISTNAME =	khangman-${MODKDE_VERSION}
 
 LIB_DEPENDS += 	x11/kde4/libs \
 		x11/kde4/libkdeedu

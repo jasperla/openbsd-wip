@@ -4,7 +4,7 @@ SHARED_ONLY =		Yes
 
 CATEGORIES =		devel
 COMMENT =		introspective wrappers around the KDE
-DISTNAME =		smokekde-${VERSION}
+DISTNAME =		smokekde-${MODKDE_VERSION}
 
 SHARED_LIBS +=	smokeattica		0.0 # 3.0
 SHARED_LIBS +=	smokekate		0.0 # 3.0

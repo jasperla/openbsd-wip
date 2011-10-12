@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, document viewer
-DISTNAME =	okular-${VERSION}
+DISTNAME =	okular-${MODKDE_VERSION}
 REVISION =	0
 
 SHARED_LIBS +=	okularcore		0.0	# 1.7

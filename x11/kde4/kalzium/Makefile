@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =		K Desktop Environment, periodic system of elements
-DISTNAME =		kalzium-${VERSION}
+DISTNAME =		kalzium-${MODKDE_VERSION}
 
 SHARED_LIBS +=  science			0.0 # 4.7
 SHARED_LIBS +=  compoundviewer		0.0 # 4.7

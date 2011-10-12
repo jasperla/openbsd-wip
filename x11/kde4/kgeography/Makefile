@@ -1,7 +1,7 @@
 # $OpenBSD$
 
-COMMENT =		geography learning tool for KDE
-DISTNAME =		kgeography-${VERSION}
+COMMENT =	geography learning tool for KDE
+DISTNAME =	kgeography-${MODKDE_VERSION}
 
 LIB_DEPENDS += 	x11/kde4/libs
 

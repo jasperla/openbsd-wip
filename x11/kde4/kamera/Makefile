@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =		digital camera support for KDE
-DISTNAME =		kamera-${VERSION}
+DISTNAME =		kamera-${MODKDE_VERSION}
 
 LIB_DEPENDS += 	x11/kde4/libs \
 		graphics/libgphoto2

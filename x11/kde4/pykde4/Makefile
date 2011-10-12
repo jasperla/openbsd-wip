@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	KDE 4 bindings for Python
-DISTNAME =	pykde4-${VERSION}
+DISTNAME =	pykde4-${MODKDE_VERSION}
 
 MODULES =	lang/python
 

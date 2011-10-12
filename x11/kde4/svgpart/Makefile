@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	KDE 4 KPart for SVG
-DISTNAME =	svgpart-${VERSION}
+DISTNAME =	svgpart-${MODKDE_VERSION}
 
 LIB_DEPENDS = 	x11/kde4/libs
 

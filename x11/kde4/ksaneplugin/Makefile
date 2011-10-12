@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	scanning in KDE through libksane
-DISTNAME =	ksaneplugin-${VERSION}
+DISTNAME =	ksaneplugin-${MODKDE_VERSION}
 
 LIB_DEPENDS += 	x11/kde4/libs \
 		x11/kde4/libksane

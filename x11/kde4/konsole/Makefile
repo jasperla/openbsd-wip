@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	KDE terminal emulator
-DISTNAME =	konsole-${VERSION}
+DISTNAME =	konsole-${MODKDE_VERSION}
 REVISION =	0
 
 SHARED_LIBS +=	kdeinit4_konsole	0.0
