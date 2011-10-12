@@ -16,7 +16,7 @@ SHARED_LIBS +=	kdevplatformutil		0.0 # 3.0
 SHARED_LIBS +=	kdevplatformvcs			0.0 # 3.0
 SHARED_LIBS +=	sublime				0.0 # 3.0
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdevelop/${VERSION}/src/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdevelop/4.2.3/src/}
 
 WANTLIB += c m stdc++
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDesigner
