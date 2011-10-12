@@ -5,6 +5,11 @@ COMMENT =		KDE 4 bindings for .NET
 DISTNAME =		kimono-${VERSION}
 
 SHARED_LIBS +=	kimono			0.0 # 2.0
+SHARED_LIBS +=	khtml-sharp		0.0
+SHARED_LIBS +=	ktexteditor-sharp	0.0
+SHARED_LIBS +=	nepomuk-sharp		0.0
+SHARED_LIBS +=	plasma-sharp		0.0
+SHARED_LIBS +=	soprano-sharp		0.0
 
 WANTLIB += c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
