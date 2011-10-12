@@ -36,6 +36,6 @@ include/libkvkontakte/vkontaktejobs.h
 lib/cmake/LibKVkontakte/
 lib/cmake/LibKVkontakte/LibKVkontakteConfig.cmake
 lib/cmake/LibKVkontakte/LibKVkontakteConfigVersion.cmake
-lib/cmake/LibKVkontakte/LibKVkontakteTargets${CMAKE_TARGET_PREFIX}.cmake
+lib/cmake/LibKVkontakte/LibKVkontakteTargets${MODKDE4_CMAKE_PREFIX}.cmake
 lib/cmake/LibKVkontakte/LibKVkontakteTargets.cmake
 @lib lib/libkvkontakte.so.${LIBkvkontakte_VERSION}
