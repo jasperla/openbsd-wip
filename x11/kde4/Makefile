@@ -3,8 +3,21 @@
      SUBDIR =
 # don't even try to keep these sorted
 
+# Marks meaning:
+#  OK		- can be imported right now
+#  minor issues	- almost OK, some minor functionality does not work
+#  issues	- have troubles with general usage flow
+#  test		- looks like working but deepier tests needed
+#  untested	- only compilation tested
+# Other marks describe actual problems, meaning "this should be fixed".
+# Lack of mark means "port is on its way to import, please wait"
+
+# Eventually this stuff will be partly moved to corresponding directories,
+# leaving only "basic" KDE packages here (those who get in actual
+# releases of KDE SC).
+
 # basic bricks
-     SUBDIR += akonadi			# issues
+     SUBDIR += akonadi			# minor issues
      SUBDIR += attica			# test
      SUBDIR += automoc			# OK
      SUBDIR += oxygen-icons		# OK
@@ -21,7 +34,7 @@
      SUBDIR += baseapps			# test
      
 # bindings and wrappers
-     SUBDIR += kimono			# compilation fails
+     SUBDIR += kimono			# compilation fails, bug in mono-2.pc
      SUBDIR += korundum			# test
      SUBDIR += kross-interpreters	# test
      SUBDIR += perlkde			# test
@@ -59,9 +72,9 @@
      SUBDIR += klettres			# test
      SUBDIR += kmplot			# OK
      SUBDIR += kstars			# minor issues
-#     SUBDIR += ktouch
-#     SUBDIR += kturtle
-#     SUBDIR += kwordquiz
+     SUBDIR += ktouch			# issues
+     SUBDIR += kturtle			# OK
+     SUBDIR += kwordquiz		# OK
      SUBDIR += libkdeedu		# untested
      SUBDIR += marble			# issues
      SUBDIR += parley			# minor issues
@@ -69,7 +82,7 @@
      SUBDIR += step			# OK
      
 # former kdegraphics
-     SUBDIR += digikam			# not fully tested
+     SUBDIR += digikam			# test
      SUBDIR += graphics-strigi-analyzer	# untested
      SUBDIR += graphics-thumbnailers	# untested
      SUBDIR += gwenview			# OK
@@ -84,7 +97,7 @@
      SUBDIR += libkexiv2		# untested
      SUBDIR += libkipi			# OK
      SUBDIR += libksane			# untested
-#     SUBDIR += mobipocket
+     SUBDIR += mobipocket		# untested
      SUBDIR += okular			# only PDF tested
      SUBDIR += svgpart			# OK
      
@@ -92,9 +105,12 @@
      SUBDIR += kate			# OK
      SUBDIR += konsole			# issues
      SUBDIR += akonadi-googledata	# untested
+     SUBDIR += kdevplatform		# untested
+     SUBDIR += kdevelop
+     SUBDIR += yakuake			# minor issues
      
 # additional resources
-     SUBDIR += plasma-addons		# not fully tested
+     SUBDIR += plasma-addons		# test
      SUBDIR += l10n			# OK
      SUBDIR += wallpapers		# OK
 
