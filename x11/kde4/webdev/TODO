@@ -1,2 +1,0 @@
-Add Ruby support here: klinkstatus/src/plugins/scripting/scripts/CMakeLists.txt .
-And check shebangs for Ruby, see audio/amarok for sample.
