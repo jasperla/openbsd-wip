@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, libraries
 DISTNAME =	kdelibs-${MODKDE_VERSION}
-REVISION =	7
+REVISION =	8
 
 SHARED_LIBS +=	kde3support          0.0      # .4.0
 SHARED_LIBS +=	kdecore              8.0      # .5.0
@@ -63,7 +63,8 @@ WANTLIB += lzma pcre pcreposix png polkit-qt-core-1 qca>=3.0 xml2 xslt
 
 BUILD_DEPENDS +=	misc/shared-mime-info \
 			x11/kde4/automoc \
-			misc/shared-desktop-ontologies
+			misc/shared-desktop-ontologies \
+			textproc/docbook-xsl
 
 RUN_DEPENDS +=		misc/shared-mime-info \
 			misc/shared-desktop-ontologies \
