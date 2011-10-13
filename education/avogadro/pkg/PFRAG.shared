@@ -32,6 +32,7 @@ lib/avogadro/1_0/extensions/molecularpropextension.so
 lib/avogadro/1_0/extensions/networkfetchextension.so
 lib/avogadro/1_0/extensions/povrayextension.so
 lib/avogadro/1_0/extensions/propextension.so
+lib/avogadro/1_0/extensions/pythonterminal.so
 lib/avogadro/1_0/extensions/selectextension.so
 lib/avogadro/1_0/extensions/spectraextension.so
 lib/avogadro/1_0/extensions/supercellextension.so
@@ -48,3 +49,4 @@ lib/avogadro/1_0/tools/manipulatetool.so
 lib/avogadro/1_0/tools/navigatetool.so
 lib/avogadro/1_0/tools/selectrotatetool.so
 @lib lib/libavogadro.so.${LIBavogadro_VERSION}
+lib/python2.7/site-packages/Avogadro.so

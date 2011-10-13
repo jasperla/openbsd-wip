@@ -39,6 +39,9 @@ include/avogadro/pluginmanager.h
 include/avogadro/primitive.h
 include/avogadro/primitivelist.h
 include/avogadro/protein.h
+include/avogadro/pythonerror.h
+include/avogadro/pythoninterpreter.h
+include/avogadro/pythonscript.h
 include/avogadro/residue.h
 include/avogadro/tool.h
 include/avogadro/toolgroup.h
@@ -58,6 +61,8 @@ lib/avogadro/1_0/extensions/
 lib/avogadro/1_0/tools/
 lib/avogadro/AvogadroConfig.cmake
 lib/avogadro/AvogadroConfigVersion.cmake
+lib/python2.7/
+lib/python2.7/site-packages/
 share/avogadro/
 share/avogadro/builder/
 share/avogadro/builder/amino/
@@ -350,6 +355,11 @@ share/avogadro/fragments/thiols/ethanethiol.cml
 share/avogadro/fragments/thiols/methanethiol.cml
 share/avogadro/fragments/thiols/pentane-1-thiol.cml
 share/avogadro/fragments/water.cml
+share/libavogadro/
+share/libavogadro/engineScripts/
+share/libavogadro/engineScripts/wireframe.py
+share/libavogadro/extensionScripts/
+share/libavogadro/extensionScripts/example.py
 share/man/
 share/man/man1/
 @man share/man/man1/avogadro.1
