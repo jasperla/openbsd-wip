@@ -47,11 +47,13 @@ MODKDE4_USE ?=		runtime
 MODKDE4_USE ?=		libs
 .endif
 
+PKGNAME ?= ${DISTNAME}
+
 # Small hack, until automoc4 will be gone
-.if !${PKGNAME:Mautomoc4}
-MODKDE4_BUILD_DEPENDS =	x11/kde4/automoc
-.else
+.if ${PKGNAME:Mautomoc4-*}
 MODKDE4_BUILD_DEPENDS =
+.else
+MODKDE4_BUILD_DEPENDS =	x11/kde4/automoc
 .endif
 MODKDE4_LIB_DEPENDS =
 MODKDE4_RUN_DEPENDS =
