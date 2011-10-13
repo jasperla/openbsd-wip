@@ -3,6 +3,7 @@
 COMMENT =	drop-down KDE terminal emulator
 VERSION =	2.9.8
 DISTNAME =	yakuake-${VERSION}
+REVISION =	0
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/yakuake/${VERSION}/src/}
 
@@ -14,9 +15,9 @@ WANTLIB += kdecore kdeui kio kparts nepomuk nepomukutils soprano
 
 BUILD_DEPENDS =	x11/kde4/automoc
 
-LIB_DEPENDS =	x11/kde4/konsole \
-		x11/kde4/libs
+LIB_DEPENDS =	x11/kde4/libs
 
-RUN_DEPENDS =	x11/kde4/runtime
+RUN_DEPENDS =	x11/kde4/konsole \
+		x11/kde4/runtime
 
 .include <bsd.port.mk>
