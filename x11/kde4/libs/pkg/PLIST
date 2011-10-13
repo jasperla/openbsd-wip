@@ -2180,7 +2180,6 @@ share/apps/cmake/modules/FindPyQt4.cmake
 share/apps/cmake/modules/FindPythonLibrary.cmake
 share/apps/cmake/modules/FindQCA2.cmake
 share/apps/cmake/modules/FindQImageBlitz.cmake
-share/apps/cmake/modules/FindRUBY.cmake
 share/apps/cmake/modules/FindSIP.cmake
 share/apps/cmake/modules/FindSIP.py
 share/apps/cmake/modules/FindSamba.cmake
