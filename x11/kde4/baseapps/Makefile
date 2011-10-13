@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, base applications
 DISTNAME =	kde-baseapps-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS +=	konq			8.0	# 6.0
 SHARED_LIBS +=	konqsidebarplugin	5.0	# 4.0
@@ -25,6 +26,10 @@ BUILD_DEPENDS +=	x11/kde4/automoc
 
 LIB_DEPENDS +=		x11/kde4/libs \
 			multimedia/phonon
+
+# KJS is broken, so allow KDE browsers to work out of the box
+# using QtWebKit.
+RUN_DEPENDS =		x11/kde4/kwebkitpart
 
 # Wants tidy, should be ported to tidyp
 CONFIGURE_ARGS +=	-DWITH_LibTidy:Bool=False
