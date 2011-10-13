@@ -2,7 +2,7 @@
 
 COMMENT =	KDE terminal emulator
 DISTNAME =	konsole-${MODKDE_VERSION}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=	kdeinit4_konsole	0.0
 SHARED_LIBS +=	konsoleprivate		0.0

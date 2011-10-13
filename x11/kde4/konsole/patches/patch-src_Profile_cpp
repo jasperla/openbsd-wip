@@ -1,0 +1,16 @@
+$OpenBSD$
+--- src/Profile.cpp.orig	Thu Oct 13 06:53:57 2011
++++ src/Profile.cpp	Thu Oct 13 06:56:26 2011
+@@ -153,7 +153,12 @@ FallbackProfile::FallbackProfile()
+     setProperty(Icon,"utilities-terminal");
+     setProperty(Arguments,QStringList() << qgetenv("SHELL"));
+     setProperty(Environment,QStringList() << "TERM=xterm");
++#if defined(Q_OS_OPENBSD)
++    // No support for getting current directory there
++    setProperty(LocalTabTitleFormat,"%n (%u)");
++#else
+     setProperty(LocalTabTitleFormat,"%d : %n");
++#endif
+     setProperty(RemoteTabTitleFormat,"%H (%u)");
+     setProperty(TabBarMode,AlwaysShowTabBar);
+     setProperty(TabBarPosition,TabBarBottom);
