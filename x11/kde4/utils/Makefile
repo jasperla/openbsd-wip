@@ -24,8 +24,8 @@ WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xpm Xrender archive c gmp kabc>=5 \
 	kde3support kdecore>=8 kdeui kfile khtml kio kjs knewstuff2 konq \
 	kparts kpimutils kpty kresources krosscore kutils lib/qt4/Qt3Support \
 	lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtScript \
-	lib/qt4/QtSvg lib/qt4/QtXml m plasma pthread python2.7 qimageblitz \
-	solid stdc++ util
+	lib/qt4/QtSvg lib/qt4/QtXml m plasma pthread qimageblitz \
+	solid stdc++ util ${MODPY_WANTLIB}
 WANTLIB += lib/qt4/QtXmlPatterns kcmutils kemoticons kidletime kprintutils
 WANTLIB += nepomuk nepomukutils phonon raptor2 soprano
 
