@@ -98,6 +98,10 @@ CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE:String=Release
 MODKDE4_CMAKE_PREFIX =	-release
 .   endif
 
+# Enable faster fake: ports infrastructure preserve ordering anyway.
+# Leave it here for now, it it works fine, then prod it to cmake.port.mk
+CONFIGURE_ARGS +=	-DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY:Bool=True
+
 # NOTE: due to bugs in make-plist, plist may contain
 # ${FLAVORS} instead of ${MODKDE4_CMAKE_PREFIX}.
 # You've been warned.
