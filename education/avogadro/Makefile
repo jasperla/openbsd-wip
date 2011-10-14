@@ -1,13 +1,9 @@
 # $OpenBSD$
 
-#ONLY_FOR_ARCHS =	???
-#NOT_FOR_ARCHS =	???
-#SHARED_ONLY =		???
-
-V =			1.0.3
-CATEGORIES =		education biology
 COMMENT =		molecule editor and visualizer
+V =			1.0.3
 DISTNAME =		avogadro-${V}
+CATEGORIES =		education biology
 REVISION =		2
 HOMEPAGE =		http://avogadro.openmolecules.net/
 
