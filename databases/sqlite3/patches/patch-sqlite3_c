@@ -1,6 +1,6 @@
 $OpenBSD$
---- sqlite3.c.orig	Mon Sep 19 19:47:01 2011
-+++ sqlite3.c	Tue Sep 20 20:57:24 2011
+--- sqlite3.c.orig	Mon Sep 19 20:47:01 2011
++++ sqlite3.c	Thu Sep 29 14:51:30 2011
 @@ -301,11 +301,6 @@
  #pragma warn -spa /* Suspicious pointer arithmetic */
  #endif

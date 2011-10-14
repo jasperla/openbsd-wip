@@ -1,9 +1,10 @@
 $OpenBSD$
 
-Take care when updating that you patch the right place in the file...
+Extra lines of context because it is easy for patch to apply this to the
+wrong place if the configure script is reordered in a future version.
 
---- configure.orig	Mon Sep 19 19:47:10 2011
-+++ configure	Tue Sep 20 21:03:32 2011
+--- configure.orig	Mon Sep 19 20:47:10 2011
++++ configure	Thu Sep 29 14:55:59 2011
 @@ -19753,8 +19753,8 @@ for ac_lib in '' pthread; do
    if test -z "$ac_lib"; then
      ac_res="none required"
