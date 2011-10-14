@@ -8,6 +8,7 @@ MODULES +=		x11/kde4
 
 MASTER_SITES ?=		${MASTER_SITE_KDE:=stable/${VERSION}/src/}
 DIST_SUBDIR =		kde
+HOMEPAGE ?=		https://projects.kde.org/projects
 
 # KDE SC is mostly GPL, or LGPL/BSDL for the central libraries
 PERMIT_DISTFILES_CDROM ?=	Yes
@@ -17,3 +18,10 @@ PERMIT_PACKAGE_FTP ?=		Yes
 
 # XXX temporary until all ports get updated to kde4.port.mk
 MODKDE4_USE ?=
+
+# Do not rely on devel/cmake here: additional modules that are
+# set up in ports may have, say, lang/python before devel/cmake,
+# thus making lang/python evaluating first. And when lang/python
+# sees empty CONFIGURE_STYLE, it forces that this is Python
+# module port, and breaks build.
+CONFIGURE_STYLE =	cmake
