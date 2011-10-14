@@ -1,0 +1,11 @@
+Port ksysguard to OpenBSD (sensors framework and others).
+
+-- Performing Test HAVE_SETLOGIN
+systrace: deny user: pers, prog: /usr/ports/pobj/kde-workspace-4.7.1/build-i386/CMakeFiles/CMakeTmp/cmTryCompileExec, pid: 19037(0)[20572], policy: /usr/bin/
+env, filters: 233, syscall: native-setlogin(50), args: 4
+-- Performing Test HAVE_SETLOGIN - Success
+
+   * GoogleGadgets (0.11.0 or higher)  <http://code.google.com/p/google-gadgets-for-linux/>
+     Google Gadgets library
+     Needed to build plasma scriptengine for google gadgets
+

@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, workspace
 DISTNAME =	kde-workspace-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  kdecorations              0.0 # 4.7
 SHARED_LIBS +=  kephal                    0.0 # 4.7
@@ -28,8 +29,6 @@ SHARED_LIBS +=  solidcontrolifaces        0.0 # 4.7
 SHARED_LIBS +=  taskmanager               0.0 # 4.7
 SHARED_LIBS +=  weather_ion               0.0 # 6.0
 
-USE_GROFF =	Yes
-
 WANTLIB += c m pthread stdc++ util z
 WANTLIB += GL GLU ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xft Xinerama Xpm Xrandr Xrender Xss Xtst Xxf86misc
@@ -51,21 +50,28 @@ WANTLIB += strigiqtdbusclient threadweaver syndication
 
 WANTLIB += ck-connector dbus-1 dbusmenu-qt gps jpeg png usb xmms
 
-BUILD_DEPENDS +=	x11/kde4/automoc \
-			devel/boost \
+# Uses a static library, no .so provided
+BUILD_DEPENDS = sysutils/pciutils
 
-LIB_DEPENDS +=		x11/kde4/libs \
-			x11/kde4/pimlibs \
-			multimedia/phonon \
-			x11/kde4/qimageblitz \
-			sysutils/consolekit \
-			sysutils/pciutils \
-			misc/gpsd,-main \
-			audio/xmms,-main \
-			devel/libusb \
+LIB_DEPENDS =	audio/xmms \
+		databases/soprano \
+		devel/libusb \
+		math/libqalculate \
+		misc/gpsd \
+		misc/shared-desktop-ontologies \
+		multimedia/phonon \
+		sysutils/consolekit \
+		x11/dbusmenu-qt \
+		x11/kde4/akonadi \
+		x11/kde4/libs \
+		x11/kde4/pimlibs \
+		x11/kde4/pykde4 \
+		x11/kde4/qimageblitz
 
-# these come from libs in real case
-#pre-install:
-#	mkdir -p ${PREFIX}/share/doc/HTML/en/common
+RUN_DEPENDS =	x11/polkit-qt4
+
+CONFIGURE_ARGS +=	-DWITH_Sensors:Bool=False \
+			-DWITH_NetworkManager:Bool=False \
+			-DWITH_RAW1394:Bool=False
 
 .include <bsd.port.mk>
