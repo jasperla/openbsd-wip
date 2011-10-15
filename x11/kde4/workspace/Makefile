@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, workspace
 DISTNAME =	kde-workspace-${MODKDE_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  kdecorations              0.0 # 4.7
 SHARED_LIBS +=  kephal                    0.0 # 4.7
@@ -51,14 +51,15 @@ WANTLIB += strigiqtdbusclient threadweaver syndication
 WANTLIB += ck-connector dbus-1 dbusmenu-qt gps jpeg png usb xmms
 
 # Uses a static library, no .so provided
-BUILD_DEPENDS = sysutils/pciutils
+BUILD_DEPENDS =	misc/shared-desktop-ontologies \
+		sysutils/pciutils
 
 LIB_DEPENDS =	audio/xmms \
 		databases/soprano \
 		devel/libusb \
 		math/libqalculate \
+		misc/google-gadgets \
 		misc/gpsd \
-		misc/shared-desktop-ontologies \
 		multimedia/phonon \
 		sysutils/consolekit \
 		x11/dbusmenu-qt \
@@ -68,7 +69,8 @@ LIB_DEPENDS =	audio/xmms \
 		x11/kde4/pykde4 \
 		x11/kde4/qimageblitz
 
-RUN_DEPENDS =	x11/polkit-qt4
+RUN_DEPENDS =	misc/shared-desktop-ontologies \
+		x11/polkit-qt4
 
 CONFIGURE_ARGS +=	-DWITH_Sensors:Bool=False \
 			-DWITH_NetworkManager:Bool=False \
