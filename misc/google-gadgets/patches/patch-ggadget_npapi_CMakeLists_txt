@@ -1,0 +1,12 @@
+$OpenBSD$
+--- ggadget/npapi/CMakeLists.txt.ports.orig	Sat Oct 15 16:04:33 2011
++++ ggadget/npapi/CMakeLists.txt	Sat Oct 15 16:04:45 2011
+@@ -30,7 +30,7 @@ ADD_SUBDIRECTORY(tests)
+ ADD_LIBRARY(ggadget-npapi${GGL_EPOCH} SHARED ${SRCS})
+ TARGET_LINK_LIBRARIES(ggadget-npapi${GGL_EPOCH}
+   ggadget${GGL_EPOCH}
+-  dl
++  ${DL_LIBRARY}
+   ${X11_LIBRARIES}
+   ${XT_LIBRARIES}
+ )

@@ -1,0 +1,17 @@
+@comment $OpenBSD$
+@bin bin/ggl-qt
+include/google-gadgets/ggadget/qt/
+include/google-gadgets/ggadget/qt/qt_graphics.h
+include/google-gadgets/ggadget/qt/qt_main_loop.h
+include/google-gadgets/ggadget/qt/qt_menu.h
+include/google-gadgets/ggadget/qt/qt_view_host.h
+include/google-gadgets/ggadget/qt/qt_view_widget.h
+include/google-gadgets/ggadget/qt/utilities.h
+lib/google-gadgets/modules/qt-edit-element.so
+lib/google-gadgets/modules/qt-script-runtime.so
+lib/google-gadgets/modules/qt-system-framework.so
+lib/google-gadgets/modules/qt-xml-http-request.so
+lib/google-gadgets/modules/qtwebkit-browser-element.so
+@lib lib/libggadget-qt-1.0.so.${LIBggadget-qt-1.0_VERSION}
+lib/pkgconfig/libggadget-qt-1.0.pc
+share/applications/ggl-qt.desktop

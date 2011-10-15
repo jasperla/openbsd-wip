@@ -1,0 +1,18 @@
+$OpenBSD$
+--- cmake/GenerateOutput.cmake.ports.orig	Sat Oct 15 21:57:49 2011
++++ cmake/GenerateOutput.cmake	Sat Oct 15 21:58:32 2011
+@@ -28,9 +28,11 @@ ELSE(WIN32)
+       ${CMAKE_BINARY_DIR}/output/bin ${_target_name})
+   ENDMACRO(OUTPUT_EXECUTABLE _target_name)
+   MACRO(OUTPUT_LIBRARY _target_name)
+-    SET_TARGET_PROPERTIES(${_target_name} PROPERTIES
+-      VERSION ${GGL_LIB_VERSION}
+-      SOVERSION ${GGL_LIB_SOVERSION})
++    IF(DEFINED GGL_LIB_VERSION)
++      SET_TARGET_PROPERTIES(${_target_name} PROPERTIES
++        VERSION ${GGL_LIB_VERSION}
++        SOVERSION ${GGL_LIB_SOVERSION})
++    ENDIF(DEFINED GGL_LIB_VERSION)
+     OUTPUT_TARGET(${_target_name} lib)
+     INSTALL(TARGETS ${_target_name}
+       RUNTIME DESTINATION ${BIN_INSTALL_DIR}

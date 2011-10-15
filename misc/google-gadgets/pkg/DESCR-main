@@ -1,0 +1,15 @@
+Google Gadgets for Linux provides a platform for running desktop
+gadgets under Linux (and other *nix), catering to the unique needs
+of Linux users. It's compatible with the gadgets written for Google
+Desktop for Windows as well as the Universal Gadgets on iGoogle.
+
+There's two main components to the application: one is a common
+gadget library responsible for running and presenting a gadget, and
+the other is a host program that allows the user to choose gadgets
+and run them on the desktop. Currently we have hosts written for
+GTK+ and QT, with the GTK+ host offering a sidebar similar to that
+of Google Desktop for Windows.
+
+This package contains common libraries and data for Google gadgets.
+For actual interface you should install google-gadgets-gtk or
+google-gadgets-qt package.

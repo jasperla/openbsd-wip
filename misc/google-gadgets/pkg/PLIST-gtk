@@ -1,0 +1,21 @@
+@comment $OpenBSD$
+@bin bin/ggl-gtk
+include/google-gadgets/ggadget/gtk/
+include/google-gadgets/ggadget/gtk/cairo_graphics.h
+include/google-gadgets/ggadget/gtk/hotkey.h
+include/google-gadgets/ggadget/gtk/key_convert.h
+include/google-gadgets/ggadget/gtk/main_loop.h
+include/google-gadgets/ggadget/gtk/menu_builder.h
+include/google-gadgets/ggadget/gtk/npapi_plugin_element.h
+include/google-gadgets/ggadget/gtk/single_view_host.h
+include/google-gadgets/ggadget/gtk/tooltip.h
+include/google-gadgets/ggadget/gtk/utilities.h
+include/google-gadgets/ggadget/gtk/view_widget_binder.h
+@bin lib/google-gadgets/gtkmoz-browser-child
+lib/google-gadgets/modules/gtk-edit-element.so
+lib/google-gadgets/modules/gtk-flash-element.so
+lib/google-gadgets/modules/gtk-system-framework.so
+lib/google-gadgets/modules/gtkmoz-browser-element.so
+@lib lib/libggadget-gtk-1.0.so.${LIBggadget-gtk-1.0_VERSION}
+lib/pkgconfig/libggadget-gtk-1.0.pc
+share/applications/ggl-gtk.desktop

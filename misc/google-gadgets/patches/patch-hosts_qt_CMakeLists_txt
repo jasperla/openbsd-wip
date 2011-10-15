@@ -1,0 +1,13 @@
+$OpenBSD$
+--- hosts/qt/CMakeLists.txt.ports.orig	Sat Oct 15 16:45:40 2011
++++ hosts/qt/CMakeLists.txt	Sat Oct 15 16:46:37 2011
+@@ -27,6 +27,9 @@ ADD_DEFINITIONS(-DGGL_APP_NAME=\\\"ggl-qt\\\")
+ 
+ LINK_DIRECTORIES(${CMAKE_BINARY_DIR}/output/lib)
+ 
++FIND_PACKAGE(X11)
++INCLUDE_DIRECTORIES(${X11_INCLUDE_DIR})
++
+ SET(SRCS
+   main.cc
+   qt_host.cc

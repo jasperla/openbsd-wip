@@ -1,0 +1,11 @@
+$OpenBSD$
+--- hosts/gtk/standalone_gtk_host.cc.ports.orig	Sat Oct 15 16:43:31 2011
++++ hosts/gtk/standalone_gtk_host.cc	Sat Oct 15 16:44:10 2011
+@@ -227,6 +227,7 @@ class StandaloneGtkHost::Impl {
+   }
+ 
+   void RemoveGadget(Gadget *gadget, bool save_data) {
++    GGL_UNUSED(gadget);
+     GGL_UNUSED(save_data);
+     ASSERT(gadget && gadget == gadget_);
+     owner_->Exit();

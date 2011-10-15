@@ -1,0 +1,12 @@
+$OpenBSD$
+--- extensions/gtkmoz_browser_element/CMakeLists.txt.ports.orig	Sat Oct 15 16:04:59 2011
++++ extensions/gtkmoz_browser_element/CMakeLists.txt	Sat Oct 15 16:05:14 2011
+@@ -50,7 +50,7 @@ TARGET_LINK_LIBRARIES(gtkmoz-browser-child
+   ${GTK2_LIBRARIES}
+   ${GTHREAD_LIBRARIES}
+   ggadget${GGL_EPOCH}
+-  dl
++  ${DL_LIBRARY}
+ )
+ OUTPUT_EXECUTABLE(gtkmoz-browser-child)
+ INSTALL(TARGETS gtkmoz-browser-child
