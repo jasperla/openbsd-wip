@@ -18,6 +18,4 @@ WANTLIB += speechd
 
 LIB_DEPENDS =	audio/speech-dispatcher
 
-# USE_GROFF =	Yes
-
 .include <bsd.port.mk>

@@ -19,8 +19,4 @@ LIB_DEPENDS += 	x11/kde4/libs \
 
 RUN_DEPENDS +=	devel/desktop-file-utils
 
-# these come from libs in real case
-#pre-install:
-#	mkdir -p ${PREFIX}/share/doc/HTML/en/common
-
 .include <bsd.port.mk>

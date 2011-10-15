@@ -3,8 +3,6 @@
 COMMENT =	screen ruler for KDE
 DISTNAME =	kruler-${MODKDE_VERSION}
 
-#SHARED_LIBS +=	kolourpaint_lgpl	0.0	# 4.7
-
 LIB_DEPENDS += 	x11/kde4/libs
 
 RUN_DEPENDS +=	devel/desktop-file-utils

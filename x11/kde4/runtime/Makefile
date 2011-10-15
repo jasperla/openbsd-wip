@@ -8,8 +8,6 @@ SHARED_LIBS +=	kwalletbackend 		0.0	# 4.7
 SHARED_LIBS +=	molletnetwork 		0.0	# 4.7
 SHARED_LIBS +=	nepomuksync 		4.7	# 4.7
 
-# USE_GROFF =	Yes
-
 LIB_DEPENDS +=		databases/soprano \
 			graphics/exiv2 \
 			multimedia/phonon \

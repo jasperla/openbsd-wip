@@ -51,8 +51,4 @@ CONFIGURE_ARGS += -DQCA2_DEFINITIONS:STRING=-DQT_SHARED
 CONFIGURE_ARGS += -DQCA2_LIBRARIES:FILEPATH=${LOCALBASE}/lib/libqca.so.3.0
 CONFIGURE_ARGS += -DQCA2_FOUND:BOOL=true
 
-# these come from libs in real case
-#pre-install:
-#	mkdir -p ${PREFIX}/share/doc/HTML/en/common
-
 .include <bsd.port.mk>

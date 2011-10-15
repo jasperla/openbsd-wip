@@ -18,8 +18,4 @@ LIB_DEPENDS += 	x11/kde4/libs \
 CONFIGURE_ARGS +=	-DINSTALL_SYSTEM_CONFIG_PRINTER=TRUE
 MAKE_FLAGS +=		-DINSTALL_SYSTEM_CONFIG_PRINTER=TRUE
 
-# these come from libs in real case
-#pre-install:
-#	mkdir -p ${PREFIX}/share/doc/HTML/en/common
-
 .include <bsd.port.mk>

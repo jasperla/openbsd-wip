@@ -20,6 +20,4 @@ RUN_DEPENDS =	x11/kde4/runtime
 
 CONFIGURE_ARGS +=	-DSTEPCORE_TESTS:Bool=True
 
-# REGRESS_TARGET =	tests
-
 .include <bsd.port.mk>

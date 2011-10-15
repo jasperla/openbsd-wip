@@ -29,11 +29,6 @@ WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xpm Xrender archive c gmp kabc>=5 \
 WANTLIB += lib/qt4/QtXmlPatterns kcmutils kemoticons kidletime kprintutils
 WANTLIB += nepomuk nepomukutils phonon raptor2 soprano
 
-
-# these come from libs in real case
-#pre-install:
-#	mkdir -p ${PREFIX}/share/doc/HTML/en/common
-
 CONFIGURE_ARGS +=	 -DINSTALL_PRINTER_APPLET=TRUE
 MAKE_FLAGS +=		 -DINSTALL_PRINTER_APPLET=TRUE
 
