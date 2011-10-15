@@ -46,8 +46,7 @@ LIB_DEPENDS =		devel/glib \
 			www/webkit \
 			x11/dbus \
 			x11/gnome/librsvg \
-			x11/gtk+2 \
-
+			x11/gtk+2
 
 SEPARATE_BUILD =	simple
 #USE_GROFF =		Yes
@@ -57,15 +56,7 @@ SEPARATE_BUILD =	simple
 #REGRESS_TARGET =	???
 #REGRESS_DEPENDS =	???
 
-# CONFIGURE_ARGS +=	-DGGL_DEFAULT_BROWSER_PLUGINS_DIR=${LOCALBASE}/lib/mozilla/plugins
-
-CONFIGURE_ARGS +=	--with-browser-plugins-dir=${LOCALBASE}/lib/mozilla/plugins \
-			--with-gtkmozembed=xulrunner
-
-CONFIGURE_ENV +=	QT4_CFLAGS="-I${MODQT_INCDIR}" QT4_LIBS="-L${MODQT_LIBDIR}"
-
-# Disable NetworkManager checks without patching
-CONFIGURE_ENV +=	NETWORK_MANAGER_LIBS="NetworkManager absent on OpenBSD"
+CONFIGURE_ARGS +=	-DGGL_DEFAULT_BROWSER_PLUGINS_DIR=${LOCALBASE}/lib/mozilla/plugins
 
 # There are .orig leftovers in distribution
 PATCHORIG =		.ports.orig
