@@ -2,13 +2,20 @@
 
 COMMENT =	KDE 4 bindings for Python
 DISTNAME =	pykde4-${MODKDE_VERSION}
-REVISION =	0
+REVISION =	1
 
 MODULES =	lang/python
 
-LIB_DEPENDS = 	py-qt4->=4.8.4p2:x11/py-qt4 \
+BUILD_DEPENDS =	devel/py-sip \
+		misc/shared-desktop-ontologies
+
+RUN_DEPENDS =	misc/shared-desktop-ontologies
+
+LIB_DEPENDS = 	databases/soprano \
+		py-qt4->=4.8.4p2:x11/py-qt4 \
 		x11/kde4/pimlibs \
-		x11/kde4/libs
+		x11/kde4/libs \
+		x11/polkit-qt4
 
 WANTLIB += c m stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
