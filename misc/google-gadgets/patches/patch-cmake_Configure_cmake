@@ -1,12 +1,6 @@
 $OpenBSD$
 --- cmake/Configure.cmake.ports.orig	Wed Jan 27 08:59:13 2010
 +++ cmake/Configure.cmake	Sat Oct 15 21:43:27 2011
-@@ -1,4 +1,4 @@
--#
-+
- # Copyright 2008 Google Inc.
- #
- # Licensed under the Apache License, Version 2.0 (the "License");
 @@ -68,8 +68,11 @@ SET(GGL_EPOCH "-1.0")
  # defined in configure.ac, eg.:
  # LIBGGADGET_CURRENT, LIBGGADGET_REVISION and LIBGGADGET_AGE
