@@ -28,5 +28,6 @@ MODULES =		devel/cmake
 NO_REGRESS =		Yes
 
 CFLAGS +=		-fno-strict-aliasing
+CONFIGURE_ARGS +=	-D DOC_INSTALL_DIR=${PREFIX}/share/doc/qhull
 
 .include <bsd.port.mk>
