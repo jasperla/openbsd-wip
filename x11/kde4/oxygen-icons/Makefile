@@ -6,4 +6,6 @@ DISTNAME =	oxygen-icons-${MODKDE_VERSION}
 MODKDE4_RESOURCES =	Yes
 MODKDE4_USE =
 
+NO_BUILD=Yes
+
 .include <bsd.port.mk>
