@@ -24,7 +24,7 @@ WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xpm Xss Xdamage Xtst
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSql
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtTest lib/qt4/QtXml
-WANTLIB += kabc>=5 kcmutils kde3support kdecore>=8 kdeui kdnssd 
+WANTLIB += kabc>=5 kcmutils kde3support kdeui kdnssd 
 WANTLIB += gadu glib-2.0 gpg-error gpgme++-pthread gpgme-pthread idn
 WANTLIB += kemoticons kfile khtml kidletime kio kjs knewstuff2
 WANTLIB += knotifyconfig konq kparts kpimidentities kprintutils

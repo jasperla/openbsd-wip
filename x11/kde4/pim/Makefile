@@ -59,7 +59,7 @@ WANTLIB += lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml
 WANTLIB += akonadi-calendar akonadi-contact akonadi-kde akonadi-kmime
 WANTLIB += akonadiprotocolinternals kabc>=5 kblog kcal kcalcore
-WANTLIB += kcalutils kcmutils kde3support kdecore>=8 kdeui kdewebkit
+WANTLIB += kcalutils kcmutils kde3support kdeui kdewebkit
 WANTLIB += kdnssd kfile kholidays khtml kidletime kimap kio kjs kldap
 WANTLIB += kmbox kmime knewstuff3 knotifyconfig kontactinterface kparts
 WANTLIB += kpimidentities kpimtextedit kpimutils kprintutils kresources

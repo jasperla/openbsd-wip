@@ -15,7 +15,7 @@ WANTLIB += ICE SM X11 Xext Xt
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
-WANTLIB += kcmutils kde3support kdecore>=8 kdesu kdeui kfile khtml kio
+WANTLIB += kcmutils kde3support kdesu kdeui kfile khtml kio
 WANTLIB += kjs knewstuff3 kparts nepomuk nepomukquery nepomukutils
 WANTLIB += phonon>=6 plasma solid soprano
 WANTLIB += glib-2.0

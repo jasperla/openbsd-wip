@@ -14,7 +14,7 @@ WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xpm Xrender
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml lib/qt4/QtXmlPatterns 
-WANTLIB += archive gmp kabc>=5 kcmutils kde3support kdecore>=8 kdeui
+WANTLIB += archive gmp kabc>=5 kcmutils kde3support kdeui
 WANTLIB += kemoticons kfile khtml kidletime kio kjs knewstuff2 konq
 WANTLIB += kparts kpimutils kprintutils kpty kresources krosscore
 WANTLIB += kutils nepomuk nepomukutils phonon soprano plasma

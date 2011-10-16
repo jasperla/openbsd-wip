@@ -14,7 +14,7 @@ WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml
 WANTLIB += attica kcmutils kdewebkit kemoticons kidletime kio kjs
-WANTLIB += kdecore>=8 kdesu kdeui kdnssd kfile khtml kmediaplayer
+WANTLIB += kdesu kdeui kdnssd kfile khtml kmediaplayer
 WANTLIB += knewstuff3 knotifyconfig kparts kpty nepomuk nepomukquery
 WANTLIB += nepomukutils phonon>=6 plasma solid soprano
 WANTLIB += sopranoclient sopranoserver streamanalyzer streams

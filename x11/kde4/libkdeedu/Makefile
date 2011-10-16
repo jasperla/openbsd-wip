@@ -9,7 +9,7 @@ SHARED_LIBS =	keduvocdocument		0.0 # 4.7
 WANTLIB =  c m stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
-WANTLIB += kdecore kdeui kio
+WANTLIB += kdeui kio
 
 MODKDE4_USE =	libs
 

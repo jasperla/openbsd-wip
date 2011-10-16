@@ -41,7 +41,7 @@ WANTLIB += lib/qt4/QtXml lib/qt4/QtWebKit
 
 WANTLIB += akonadi-kcal akonadi-kde akonadi-kmime kabc kactivities
 WANTLIB += kcalcore kcalutils kcmutils kdeclarative kdefakes kde3support
-WANTLIB += kdecore>=8 kdesu kdewebkit kdeui kfile kholidays khtml
+WANTLIB += kdesu kdewebkit kdeui kfile kholidays khtml
 WANTLIB += kidletime kio kjs kmime knewstuff3 knotifyconfig kparts
 WANTLIB += kpimutils kpty kresources krosscore ktexteditor
 WANTLIB += kunitconversion microblog nepomuk nepomukquery nepomukutils

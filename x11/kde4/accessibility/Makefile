@@ -11,7 +11,7 @@ WANTLIB =  c m pthread stdc++
 WANTLIB += ICE SM X11 Xext Xtst
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtSvg lib/qt4/QtXml
-WANTLIB += kde3support kcmutils kdecore kdeui kemoticons kidletime kio
+WANTLIB += kde3support kcmutils kdeui kemoticons kidletime kio
 WANTLIB += kparts kprintutils kutils nepomuk nepomukutils phonon>=6
 WANTLIB += soprano
 WANTLIB += speechd

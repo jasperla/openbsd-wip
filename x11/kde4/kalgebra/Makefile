@@ -11,7 +11,7 @@ WANTLIB += GL GLU
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtOpenGL lib/qt4/QtScript lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
-WANTLIB += kdecore kdeui khtml kio kjs kparts ncurses nepomuk
+WANTLIB += kdeui khtml kio kjs kparts ncurses nepomuk
 WANTLIB += nepomukutils phonon plasma soprano
 WANTLIB += readline
 

@@ -18,7 +18,7 @@ WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtScript lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += lib/qt4/QtWebKit
 WANTLIB += akonadi-contact akonadi-kde attica kabc kcalcore kcmutils
-WANTLIB += kdecore>=8 kdeui kdewebkit kexiv2 kio kfile kmime knewstuff2
+WANTLIB += kdeui kdewebkit kexiv2 kio kfile kmime knewstuff2
 WANTLIB += knewstuff3 kparts kpimutils kresources krosscore
 WANTLIB += kunitconversion kworkspace marblewidget nepomuk nepomukutils
 WANTLIB += phonon plasma plasmaclock qca qimageblitz solid solidcontrol

@@ -15,7 +15,7 @@ MODJAVA_JRERUN =	Yes
 
 WANTLIB =  c m stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtScript lib/qt4/QtXml
-WANTLIB += kdecore kpty krosscore
+WANTLIB += kpty krosscore
 WANTLIB += ${MODPY_WANTLIB}
 
 LIB_DEPENDS =	${MODPY_LIB_DEPENDS}

@@ -9,7 +9,7 @@ WANTLIB =  c m pthread stdc++
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xpm
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtSvg
-WANTLIB += kdecore>=8 kdeui knotifyconfig kscreensaver
+WANTLIB += kdeui knotifyconfig kscreensaver
 
 # last one should be:
 #WANTLIB += kparts kscreensaver>=8

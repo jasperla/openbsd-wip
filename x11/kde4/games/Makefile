@@ -18,7 +18,7 @@ WANTLIB += GL GLU ICE SM X11 Xext
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtOpenGL lib/qt4/QtScript
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml 
-WANTLIB += kdecore>=8 kdeui kdnssd kfile kio knewstuff2 knewstuff3
+WANTLIB += kdeui kdnssd kfile kio knewstuff2 knewstuff3
 WANTLIB += knotifyconfig phonon>=6
 WANTLIB += openal qca sndfile
 

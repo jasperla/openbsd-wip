@@ -34,7 +34,7 @@ WANTLIB-common =  ${MODQT_WANTLIB}
 WANTLIB-common += c m stdc++
 WANTLIB-common += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB-common += lib/qt4/QtSvg lib/qt4/QtXml
-WANTLIB-common += kdecore kdeui kio kparts nepomuk nepomukutils soprano
+WANTLIB-common += kdeui kio kparts nepomuk nepomukutils soprano
 
 WANTLIB-main =  ${WANTLIB-common}
 WANTLIB-main += ICE SM X11 Xext pthread z

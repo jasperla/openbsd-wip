@@ -39,7 +39,7 @@ SHARED_LIBS +=  kmbox			0.0 # 4.7
 WANTLIB =  c m stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSql
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml 
-WANTLIB += akonadiprotocolinternals kcmutils kemoticons kdecore>=8 kdeui
+WANTLIB += akonadiprotocolinternals kcmutils kemoticons kdeui
 WANTLIB += kio kparts nepomuk nepomukutils prison soprano phonon solid
 WANTLIB += assuan gpg-error gpgme gpgme-pthread ical icalss lber ldap sasl2
 
