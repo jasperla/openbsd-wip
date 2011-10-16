@@ -21,8 +21,7 @@ WANTLIB += kpimtextedit kpimutils kresources krosscore mailtransport
 WANTLIB += microblog nepomuk nepomukquery phonon solid soprano
 WANTLIB += streamanalyzer streams
 
-BUILD_DEPENDS =	devel/boost \
-		x11/kde4/automoc
+BUILD_DEPENDS =	devel/boost
 
 LIB_DEPENDS =	databases/soprano \
 		databases/strigi \

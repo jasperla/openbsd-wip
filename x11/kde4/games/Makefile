@@ -24,8 +24,6 @@ WANTLIB += openal qca sndfile
 
 MODULES =	devel/cmake lang/python
 
-BUILD_DEPENDS =	x11/kde4/automoc
-
 RUN_DEPENDS =	x11/kde4/runtime
 
 LIB_DEPENDS =	multimedia/phonon \

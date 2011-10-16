@@ -14,8 +14,6 @@ WANTLIB += lib/qt4/QtXml
 WANTLIB += nepomuk nepomukutils soprano
 WANTLIB += kdecore kdeui kio knotifyconfig kparts kpty
 
-BUILD_DEPENDS =	x11/kde4/automoc
-
 # Do not depend on kde-runtime here, this app is considered as more
 # "base" than ones in kde-baseapps. Now read the last sentece fast.
 # Faster. Faster!

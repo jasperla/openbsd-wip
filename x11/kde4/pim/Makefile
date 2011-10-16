@@ -47,8 +47,6 @@ SHARED_LIBS +=  templateparser            0.0 # 4.7
 
 MODULES =		devel/gettext
 
-BUILD_DEPENDS =	x11/kde4/automoc
-
 RUN_DEPENDS =	x11/kde4/pim-runtime
 
 LIB_DEPENDS =	x11/kde4/libs \

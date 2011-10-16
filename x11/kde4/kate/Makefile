@@ -15,8 +15,6 @@ WANTLIB += kidletime kio knewstuff2 knewstuff3 kparts kprintutils
 WANTLIB += ktexteditor kutils m nepomuk nepomukutils plasma pthread
 WANTLIB += soprano stdc++
 
-BUILD_DEPENDS =	x11/kde4/automoc
-
 LIB_DEPENDS =		x11/kde4/libs
 
 .include <bsd.port.mk>

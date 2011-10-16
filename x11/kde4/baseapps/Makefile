@@ -20,8 +20,6 @@ WANTLIB += kjs knewstuff3 kparts nepomuk nepomukquery nepomukutils
 WANTLIB += phonon>=6 plasma solid soprano
 WANTLIB += glib-2.0
 
-BUILD_DEPENDS =	x11/kde4/automoc
-
 # KJS is broken, so allow KDE browsers to work out of the box
 # using QtWebKit.
 RUN_DEPENDS =	x11/kde4/kwebkitpart

@@ -45,8 +45,7 @@ WANTLIB += assuan gpg-error gpgme gpgme-pthread ical icalss lber ldap sasl2
 
 MODULES =	devel/gettext
 
-BUILD_DEPENDS =	devel/boost \
-		x11/kde4/automoc
+BUILD_DEPENDS =	devel/boost
 
 LIB_DEPENDS +=	databases/openldap \
 		graphics/prison \

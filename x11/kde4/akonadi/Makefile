@@ -15,8 +15,7 @@ WANTLIB += lib/qt4/QtSql lib/qt4/QtXml
 WANTLIB += soprano
 WANTLIB += boost_program_options-mt sqlite3
 
-BUILD_DEPENDS =		x11/kde4/automoc \
-			x11/qt4,-mysql \
+BUILD_DEPENDS =		x11/qt4,-mysql \
 			x11/qt4,-postgresql \
 			x11/qt4,-sqlite \
 			databases/mysql,-server
