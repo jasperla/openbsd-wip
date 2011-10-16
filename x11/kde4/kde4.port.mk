@@ -43,6 +43,7 @@ MODKDE4_RESOURCES ?=	No
 MODKDE4_USE ?=		runtime
 .else
 MODKDE4_USE ?=		libs
+MODKDE_NO_QT ?=		Yes
 .endif
 
 _MODKDE4_USE_ALL =	libs runtime pim
