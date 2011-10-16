@@ -1,23 +1,14 @@
 @comment $OpenBSD$
 %%SHARED%%
-bin/qconvex
-@bin bin/qconvex-6.2.0.1385
-bin/qdelaunay
-@bin bin/qdelaunay-6.2.0.1385
-bin/qhalf
-@bin bin/qhalf-6.2.0.1385
-bin/qhull
-@bin bin/qhull-6.2.0.1385
-bin/qvoronoi
-@bin bin/qvoronoi-6.2.0.1385
-bin/rbox
-@bin bin/rbox-6.2.0.1385
-bin/user_eg
-@bin bin/user_eg-6.2.0.1385
-bin/user_eg2
-@bin bin/user_eg2-6.2.0.1385
-bin/user_eg3
-@bin bin/user_eg3-6.2.0.1385
+@bin bin/qconvex
+@bin bin/qdelaunay
+@bin bin/qhalf
+@bin bin/qhull
+@bin bin/qvoronoi
+@bin bin/rbox
+@bin bin/user_eg
+@bin bin/user_eg2
+@bin bin/user_eg3
 include/libqhull/
 include/libqhull/geom.h
 include/libqhull/io.h
