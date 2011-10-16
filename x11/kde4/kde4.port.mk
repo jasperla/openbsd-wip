@@ -19,7 +19,7 @@ SEPARATE_BUILD ?=	flavored
 
 MODKDE4_RESOURCES ?=	No
 
-# MODKDE4_USE: [libs | runtime] [PIM] [kross]
+# MODKDE4_USE: [libs | runtime] [PIM]
 #   - Set to empty for stuff that is a prerequisite for kde base blocks:
 #     kdelibs, kde-runtime, kdepimlibs or kdepim-runtime.
 #
@@ -34,8 +34,6 @@ MODKDE4_RESOURCES ?=	No
 #
 #   - Set to "PIM" that depend on KDE PIM framework.
 #
-#   - Add "kross" when at least some apps in package use the Kross framework.
-#
 # NOTE: There are no options like "Kate" or "Okular", they should be handled
 #       with simple LIB_DEPENDS on corresponding packages in addition to
 #       options above.
@@ -47,16 +45,29 @@ MODKDE4_USE ?=		runtime
 MODKDE4_USE ?=		libs
 .endif
 
+_MODKDE4_USE_ALL =	libs runtime pim
+.for _modkde4_u in ${MODKDE4_USE:L}
+.   if !${_MODKDE4_USE_ALL:M${_modkde4_u}}
+ERRORS += "Fatal: unknown KDE 4 use flag: ${_modkde4_u}\n(not in ${_MODKDE4_USE_ALL})"
+.   endif
+.endfor
+.if ${MODKDE4_USE:L:Npim}
+.   if ${MODKDE4_USE:L:Nlibs:Nruntime}
+MODKDE4_USE +=		runtime
+.   endif
+.endif
+
 PKGNAME ?= ${DISTNAME}
 
-# Small hack, until automoc4 will be gone
-.if ${PKGNAME:Mautomoc4-*}
+# Force CMake which has merged KDE modules
 MODKDE4_BUILD_DEPENDS =
-.else
-MODKDE4_BUILD_DEPENDS =	x11/kde4/automoc
-.endif
 MODKDE4_LIB_DEPENDS =
 MODKDE4_RUN_DEPENDS =
+
+# Small hack, until automoc4 will be gone
+.if !${PKGNAME:Mautomoc4-*}
+MODKDE4_BUILD_DEPENDS +=	x11/kde4/automoc
+.endif
 
 FLAVOR ?=
 
