@@ -21,6 +21,8 @@ WANTLIB += smokeqtsql smokeqtsvg smokeqtxml
 
 MODULES =		lang/mono
 
+MODKDE4_USE =
+
 LIB_DEPENDS =		x11/kde4/qimageblitz \
 			x11/kde4/qyoto \
 			x11/kde4/smokekde

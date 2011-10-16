@@ -24,8 +24,7 @@ WANTLIB += glib-2.0
 # using QtWebKit.
 RUN_DEPENDS =	x11/kde4/kwebkitpart
 
-LIB_DEPENDS =	x11/kde4/libs \
-		multimedia/phonon
+LIB_DEPENDS =	multimedia/phonon
 
 # Wants tidy, should be ported to tidyp
 CONFIGURE_ARGS =	-DWITH_LibTidy:Bool=False

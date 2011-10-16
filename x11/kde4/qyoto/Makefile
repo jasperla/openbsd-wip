@@ -14,12 +14,14 @@ WANTLIB += qscintilla2 smokebase smokephonon smokeqsci smokeqtcore
 WANTLIB += smokeqtdbus smokeqtgui smokeqtnetwork smokeqtopengl
 WANTLIB += smokeqtsql smokeqtsvg smokeqtxml
 
-MODULES =		lang/mono
+MODULES =	lang/mono
 
-LIB_DEPENDS =		editors/qscintilla \
-			x11/kde4/qimageblitz \
-			x11/kde4/smokeqt
+MODKDE4_USE =
 
-NO_REGRESS =		Yes
+LIB_DEPENDS =	editors/qscintilla \
+		x11/kde4/qimageblitz \
+		x11/kde4/smokeqt
+
+NO_REGRESS =	Yes
 
 .include <bsd.port.mk>

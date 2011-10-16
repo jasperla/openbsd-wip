@@ -61,6 +61,8 @@ WANTLIB += Half Iex IlmImf IlmThread Imath asn1 aspell bz2 com_err
 WANTLIB += dbusmenu-qt enchant exslt fam gif gssapi intl jasper jpeg
 WANTLIB += lzma pcre pcreposix png polkit-qt-core-1 qca>=3.0 xml2 xslt
 
+MODKDE4_USE =	
+
 BUILD_DEPENDS =	misc/shared-desktop-ontologies \
 		misc/shared-mime-info \
 		textproc/docbook-xsl

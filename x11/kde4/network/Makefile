@@ -35,18 +35,18 @@ WANTLIB += assuan jasper jpeg otr raptor2 xml2 xmms xslt
 
 MODULES =	devel/gettext
 
+MODKDE4_USE =	runtime pim
+
 RUN_DEPENDS =	security/qca-ossl
 
-LIB_DEPENDS =	x11/kde4/libs \
-		x11/kde4/pimlibs \
-		x11/kde4/qimageblitz \
-		x11/kde4/workspace \
-		x11/kde4/baseapps \
-		audio/xmms \
-		security/qca2 \
+LIB_DEPENDS =	audio/xmms \
 		net/libgadu \
+		net/meanwhile \
 		security/libotr \
-		net/meanwhile
+		security/qca2 \
+		x11/kde4/baseapps \
+		x11/kde4/workspace \
+		x11/kde4/qimageblitz
 
 CONFIGURE_ARGS =	-DQCA2_INCLUDE_DIR:PATH=${LOCALBASE}/include/QtCrypto \
 			-DQCA2_DEFINITIONS:STRING=-DQT_SHARED \

@@ -15,8 +15,4 @@ WANTLIB += soprano
 
 BUILD_DEPENDS =	devel/boost
 
-RUN_DEPENDS =	x11/kde4/runtime
-
-LIB_DEPENDS = 	x11/kde4/libs
-
 .include <bsd.port.mk>

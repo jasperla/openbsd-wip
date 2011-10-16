@@ -50,6 +50,8 @@ WANTLIB += strigiqtdbusclient threadweaver syndication
 
 WANTLIB += ck-connector dbus-1 dbusmenu-qt gps jpeg png usb xmms
 
+MODKDE4_USE =	runtime pim
+
 # Uses a static library, no .so provided
 BUILD_DEPENDS =	misc/shared-desktop-ontologies \
 		sysutils/pciutils
@@ -67,8 +69,6 @@ LIB_DEPENDS =	audio/xmms \
 		sysutils/consolekit \
 		x11/dbusmenu-qt \
 		x11/kde4/akonadi \
-		x11/kde4/libs \
-		x11/kde4/pimlibs \
 		x11/kde4/pykde4 \
 		x11/kde4/qimageblitz
 

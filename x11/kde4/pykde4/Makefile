@@ -16,6 +16,8 @@ WANTLIB += kpty ktexteditor kutils nepomuk nepomukquery nepomukutils
 WANTLIB += phonon plasma solid soprano sopranoclient sopranoserver
 WANTLIB += python2.7
 
+MODKDE4_USE =	libs pim
+
 BUILD_DEPENDS =	devel/py-sip \
 		misc/shared-desktop-ontologies
 
@@ -23,8 +25,6 @@ RUN_DEPENDS =	misc/shared-desktop-ontologies
 
 LIB_DEPENDS = 	databases/soprano \
 		py-qt4->=4.8.4p2:x11/py-qt4 \
-		x11/kde4/pimlibs \
-		x11/kde4/libs \
 		x11/polkit-qt4
 
 # One who said that Polkit-Qt-1 is a drop-in replacement

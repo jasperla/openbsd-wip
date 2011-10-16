@@ -14,8 +14,7 @@ WANTLIB += kdecore kdeui khtml kio kjs knewstuff3 kparts
 WANTLIB += kunitconversion nepomuk nepomukutils phonon plasma
 WANTLIB += avogadro boost_python-mt openbabel python2.7
 
-LIB_DEPENDS = 	x11/kde4/libs \
-		education/avogadro \
+LIB_DEPENDS = 	education/avogadro \
 		math/eigen2 \
 		misc/openbabel \
 		lang/ocaml

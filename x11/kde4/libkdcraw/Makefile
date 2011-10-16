@@ -11,8 +11,9 @@ WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += kdecore kdeui kio
 WANTLIB += jpeg lcms
 
-LIB_DEPENDS = 	x11/kde4/libs \
-		x11/kde4/libkipi \
+MODKDE4_USE =	libs
+
+LIB_DEPENDS = 	x11/kde4/libkipi \
 		graphics/lcms \
 		graphics/jpeg
 

@@ -14,13 +14,10 @@ LIB_DEPENDS =	audio/cdparanoia \
 		audio/libmusicbrainz \
 		audio/libvorbis \
 		audio/taglib \
-		graphics/ffmpeg \
-		x11/kde4/libs
+		graphics/ffmpeg
 
 # Looks like Xine doesn't work
 #		multimedia/xine-lib
-
-RUN_DEPENDS =	x11/kde4/runtime
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui

@@ -12,11 +12,8 @@ WANTLIB += cln glib-2.0 gsl gslcblas iconv intl qalculate xml2
 
 MODULES =	devel/gettext
 
-RUN_DEPENDS =	x11/kde4/runtime
-
 LIB_DEPENDS = 	devel/gsl \
-		math/libqalculate \
-		x11/kde4/libs
+		math/libqalculate
 
 CONFIGURE_ARGS =	-DSTEPCORE_TESTS:Bool=True
 

@@ -13,11 +13,11 @@ WANTLIB += kidletime kio kjs knewstuff2 knewstuff3 kparts kprintutils
 WANTLIB += kpty ktexteditor kutils nepomuk nepomukquery nepomukutils
 WANTLIB += phonon plasma solid soprano sopranoclient sopranoserver
 
+MODKDE4_USE =	libs pim
+
 RUN_DEPENDS =	x11/kde4/kross-interpreters
 
 LIB_DEPENDS = 	x11/kde4/kate \
-		x11/kde4/libs \
-		x11/kde4/pimlibs \
 		x11/kde4/qtruby \
 		x11/kde4/smokekde
 

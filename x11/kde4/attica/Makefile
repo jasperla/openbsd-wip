@@ -9,4 +9,6 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/attica/}
 
 WANTLIB =	m stdc++ lib/qt4/QtNetwork
 
+MODKDE4_USE =
+
 .include <bsd.port.mk>

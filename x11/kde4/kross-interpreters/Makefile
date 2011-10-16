@@ -18,10 +18,7 @@ WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtScript lib/qt4/QtXml
 WANTLIB += kdecore kpty krosscore
 WANTLIB += ${MODPY_WANTLIB}
 
-RUN_DEPENDS =	x11/kde4/runtime
-
-LIB_DEPENDS =	x11/kde4/libs \
-		${MODPY_LIB_DEPENDS}
+LIB_DEPENDS =	${MODPY_LIB_DEPENDS}
 
 # Unported
 CONFIGURE_ARGS =	-DBUILD_falcon:Bool=No

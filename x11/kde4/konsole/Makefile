@@ -14,11 +14,11 @@ WANTLIB += lib/qt4/QtXml
 WANTLIB += nepomuk nepomukutils soprano
 WANTLIB += kdecore kdeui kio knotifyconfig kparts kpty
 
+MODKDE4_USE =	libs
+
 # Do not depend on kde-runtime here, this app is considered as more
 # "base" than ones in kde-baseapps. Now read the last sentece fast.
 # Faster. Faster!
 RUN_DEPENDS =	devel/desktop-file-utils
-
-LIB_DEPENDS =	x11/kde4/libs
 
 .include <bsd.port.mk>

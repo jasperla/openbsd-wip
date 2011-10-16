@@ -25,19 +25,17 @@ WANTLIB += phonon plasma plasmaclock qca qimageblitz solid solidcontrol
 WANTLIB += soprano taskmanager threadweaver weather_ion
 WANTLIB += cln glib-2.0 qalculate scim-1.0 xml2
 
-MODULES =		devel/gettext
+MODULES =	devel/gettext
 
-RUN_DEPENDS =	devel/desktop-file-utils
+MODKDE4_USE =	runtime pim
 
 LIB_DEPENDS =	eigen2->=2.0.3:math/eigen2 \
 		inputmethods/scim \
 		math/libqalculate \
 		security/qca2 \
 		x11/kde4/attica \
-		x11/kde4/libs \
 		x11/kde4/libkexiv2 \
 		x11/kde4/marble \
-		x11/kde4/pimlibs \
 		x11/kde4/qimageblitz \
 		x11/kde4/workspace
 

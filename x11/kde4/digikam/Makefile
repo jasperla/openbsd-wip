@@ -73,12 +73,14 @@ WANTLIB-vkontakte += lib/qt4/QtWebKit
 WANTLIB-vkontakte += kdewebkit
 WANTLIB-vkontakte += qjson
 
+# Define dependencies manually per subpackage
+# TODO: fix kde4.port.mk to allow such grained tuning
+MODKDE4_USE =
+
 BUILD_DEPENDS =		devel/boost \
 			devel/doxygen \
 			databases/mysql,-server \
 			misc/shared-desktop-ontologies
-
-RUN_DEPENDS =		
 
 RUN_DEPENDS-main =	devel/desktop-file-utils \
 			databases/mysql,-server \
@@ -87,6 +89,8 @@ RUN_DEPENDS-main =	devel/desktop-file-utils \
 RUN_DEPENDS-kipi =	${MODGETTEXT_RUN_DEPENDS} \
 			devel/desktop-file-utils \
 			misc/shared-desktop-ontologies
+
+RUN_DEPENDS-geomap =		
 
 RUN_DEPENDS-vkontakte =	x11/kde4/runtime
 

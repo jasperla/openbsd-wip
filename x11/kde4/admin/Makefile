@@ -8,15 +8,14 @@ WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
 WANTLIB += kdecore>=8 kdeui kio kldap kntlm
 
+MODKDE4_USE =	runtime pim
+
 BUILD_DEPENDS =	x11/kde4/pykde4 \
-		print/py-cups
+		print/py-cups \
+		print/system-config-printer
 
 RUN_DEPENDS =	x11/kde4/pykde4 \
-		print/py-cups
-
-LIB_DEPENDS = 	x11/kde4/libs \
-		x11/kde4/pimlibs \
-		x11/py-qt4,-main \
+		print/py-cups \
 		print/system-config-printer
 
 CONFIGURE_ARGS =	-DINSTALL_SYSTEM_CONFIG_PRINTER=TRUE

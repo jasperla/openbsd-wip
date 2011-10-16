@@ -10,12 +10,8 @@ WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += kdecore kdeui kio knewstuff3
 WANTLIB += cfitsio
 
-RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/kde4/runtime
-
 LIB_DEPENDS = 	math/cfitsio \
 		math/eigen2 \
-		x11/kde4/libs \
 		x11/xplanet
 
 .include <bsd.port.mk>

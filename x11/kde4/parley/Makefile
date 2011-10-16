@@ -12,14 +12,9 @@ WANTLIB += knewstuff3 kparts krosscore krossui nepomuk nepomukutils
 WANTLIB += phonon plasma soprano
 WANTLIB += xml2 xslt
 
-BUILD_DEPENDS =	
-
-RUN_DEPENDS =	x11/kde4/runtime
-
 LIB_DEPENDS = 	textproc/libxml \
 		textproc/libxslt \
 		x11/kde4/attica \
-		x11/kde4/libkdeedu \
-		x11/kde4/libs
+		x11/kde4/libkdeedu
 
 .include <bsd.port.mk>

@@ -14,9 +14,6 @@ WANTLIB += kdecore>=8 kdeui knotifyconfig kscreensaver
 # last one should be:
 #WANTLIB += kparts kscreensaver>=8
 
-LIB_DEPENDS = 	x11/kde4/libs \
-		x11/kde4/workspace
-
-RUN_DEPENDS =	devel/desktop-file-utils
+LIB_DEPENDS = 	x11/kde4/workspace
 
 .include <bsd.port.mk>

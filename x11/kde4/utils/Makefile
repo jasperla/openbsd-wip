@@ -21,9 +21,9 @@ WANTLIB += kutils nepomuk nepomukutils phonon soprano plasma
 WANTLIB += qimageblitz solid
 WANTLIB += raptor2 ${MODPY_WANTLIB}
 
-LIB_DEPENDS = 	x11/kde4/libs \
-		x11/kde4/pimlibs \
-		devel/gmp \
+MODKDE4_USE =	runtime pim
+
+LIB_DEPENDS = 	devel/gmp \
 		x11/kde4/qimageblitz \
 		x11/kde4/workspace \
 		x11/kde4/baseapps \

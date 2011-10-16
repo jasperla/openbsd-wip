@@ -12,6 +12,8 @@ SHARED_LIBS +=	cppparser		0.0
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtXml
 
+MODKDE4_USE =
+
 NO_REGRESS =	Yes
 
 .include <bsd.port.mk>

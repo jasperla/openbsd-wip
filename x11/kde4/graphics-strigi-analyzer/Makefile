@@ -6,8 +6,9 @@ DISTNAME =	kdegraphics-strigi-analyzer-${MODKDE_VERSION}
 WANTLIB =  c m stdc++
 WANTLIB += streamanalyzer streams tiff
 
-LIB_DEPENDS =	databases/strigi \
-		x11/kde4/libs
+MODKDE4_USE =	libs
+
+LIB_DEPENDS =	databases/strigi
 
 # TODO: No Qt!
 

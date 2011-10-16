@@ -28,14 +28,15 @@ WANTLIB += threadweaver
 WANTLIB += apr-1 hunspell-1.2 svn_client-1 svn_delta-1 svn_fs-1
 WANTLIB += svn_ra-1 svn_subr-1 xml2 xslt
 
+MODKDE4_USE =	runtime pim
+
 # For building KAppTemplate with weird file names
 USE_GMAKE =	Yes
 
 BUILD_DEPENDS =	archivers/gtar \
 		devel/boost
 
-RUN_DEPENDS =	devel/desktop-file-utils
-# XXX += update-mime-database?
+# XXX RUN_DEPENDS += update-mime-database?
 
 LIB_DEPENDS =	databases/strigi \
 	 	devel/subversion \
@@ -43,9 +44,7 @@ LIB_DEPENDS =	databases/strigi \
 		textproc/libxslt \
 		textproc/libxml \
 		textproc/hunspell \
-		x11/kde4/baseapps \
-		x11/kde4/libs \
-		x11/kde4/pimlibs
+		x11/kde4/baseapps
 
 # We have only pre-compiled Antlr3, and poxml wants
 # C runtime from Antlr2, which is not easy to port

@@ -20,6 +20,8 @@ WANTLIB += smokeqttest smokeqtuitools smokeqtwebkit smokeqtxml smokeqwt
 
 MODULES =		devel/cmake lang/ruby x11/qt4
 
+MODKDE4_USE =
+
 LIB_DEPENDS =		x11/kde4/smokeqt
 
 PATCHORIG =		.ports.orig

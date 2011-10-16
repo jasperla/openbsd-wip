@@ -24,8 +24,6 @@ WANTLIB += openal qca sndfile
 
 MODULES =	devel/cmake lang/python
 
-RUN_DEPENDS =	x11/kde4/runtime
-
 LIB_DEPENDS =	multimedia/phonon \
 		audio/openal \
 		audio/libsndfile \
@@ -33,7 +31,6 @@ LIB_DEPENDS =	multimedia/phonon \
 		games/ggz/ggz-client-libs \
 		math/qhull \
 		security/qca2 \
-		x11/kde4/libs \
 		x11/kde4/pykde4
 
 # for Kajongg to avoid build-time dependency and for GGZ

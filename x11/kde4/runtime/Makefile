@@ -21,6 +21,8 @@ WANTLIB += sopranoclient sopranoserver streamanalyzer streams
 WANTLIB += Half Iex IlmImf IlmThread IlmThread Imath
 WANTLIB += exiv2 jpeg smbclient ssh xine
 
+MODKDE4_USE =	libs
+
 BUILD_DEPENDS =	archivers/bzip2 \
 		archivers/xz \
 
@@ -34,8 +36,7 @@ LIB_DEPENDS =	databases/soprano \
 		multimedia/xine-lib \
 		net/samba \
 		security/libssh \
-		x11/kde4/attica \
-		x11/kde4/libs \
+		x11/kde4/attica
 
 # PulseAudio is not fully workable yet.
 # QNtrack depends on libnl, Linux-specific library.

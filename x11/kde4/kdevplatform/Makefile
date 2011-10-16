@@ -30,12 +30,9 @@ WANTLIB += svn_repos-1 svn_subr-1 svn_wc-1
 
 BUILD_DEPENDS =	devel/boost
 
-RUN_DEPENDS =	x11/kde4/runtime
-
 LIB_DEPENDS = 	devel/apr \
 		devel/apr-util \
 		devel/qjson \
-		devel/subversion \
-		x11/kde4/libs
+		devel/subversion
 
 .include <bsd.port.mk>

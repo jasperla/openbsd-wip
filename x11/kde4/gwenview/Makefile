@@ -14,10 +14,7 @@ WANTLIB += kdecore kdeui kfile kio kipi konq kparts nepomuk
 WANTLIB += nepomukutils phonon soprano
 WANTLIB += exiv2 jpeg
 
-RUN_DEPENDS =	devel/desktop-file-utils
-
-LIB_DEPENDS = 	x11/kde4/libs  \
-		x11/kde4/baseapps \
+LIB_DEPENDS = 	x11/kde4/baseapps \
 		x11/kde4/libkipi
 
 .include <bsd.port.mk>

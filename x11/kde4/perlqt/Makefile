@@ -12,6 +12,8 @@ WANTLIB += smokeqtopengl smokeqtscript smokeqtsql smokeqtsvg smokeqttest
 WANTLIB += smokeqtuitools smokeqtwebkit smokeqtxml smokeqtxmlpatterns
 WANTLIB += smokeqwt
 
+MODKDE4_USE =
+
 LIB_DEPENDS = 	x11/kde4/smokeqt
 
 # Avoid clashing Perl do_open and do_close with GCC's locale_facets.h

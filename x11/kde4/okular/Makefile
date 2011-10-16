@@ -15,7 +15,7 @@ WANTLIB += nepomukutils phonon qimageblitz soprano threadweaver
 WANTLIB += chm djvulibre epub freetype poppler-qt4 qca spectre
 WANTLIB += jpeg tiff
 
-RUN_DEPENDS =	devel/desktop-file-utils
+MODKDE4_USE =	runtime pim
 
 LIB_DEPENDS = 	devel/chmlib \
 		devel/ebook-tools \
@@ -25,7 +25,6 @@ LIB_DEPENDS = 	devel/chmlib \
 		print/libspectre \
 		print/poppler,-qt4 \
 		security/qca2 \
-		x11/kde4/libs \
 		x11/kde4/qimageblitz
 
 .include <bsd.port.mk>

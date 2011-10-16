@@ -10,4 +10,6 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/qimageblitz/}
 
 WANTLIB =  c lib/qt4/QtGui m pthread stdc++
 
+MODKDE4_USE =
+
 .include <bsd.port.mk>

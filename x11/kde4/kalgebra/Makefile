@@ -15,9 +15,6 @@ WANTLIB += kdecore kdeui khtml kio kjs kparts ncurses nepomuk
 WANTLIB += nepomukutils phonon plasma soprano
 WANTLIB += readline
 
-RUN_DEPENDS =	devel/desktop-file-utils
-
-LIB_DEPENDS = 	x11/kde4/libs \
-		x11/kde4/libkdeedu
+LIB_DEPENDS = 	x11/kde4/libkdeedu
 
 .include <bsd.port.mk>

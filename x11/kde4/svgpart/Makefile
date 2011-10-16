@@ -9,9 +9,6 @@ WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += kdecore kdeui kio kparts nepomuk nepomukutils
 WANTLIB += soprano
 
-RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/kde4/baseapps
-
-LIB_DEPENDS = 	x11/kde4/libs
+RUN_DEPENDS =	x11/kde4/baseapps
 
 .include <bsd.port.mk>

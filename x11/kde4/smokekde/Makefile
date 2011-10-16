@@ -38,12 +38,12 @@ WANTLIB += nepomukquery nepomukutils okularcore phonon plasma smokebase
 WANTLIB += smokeqtcore smokeqtdbus smokeqtgui smokeqtnetwork smokeqtsvg
 WANTLIB += smokeqtxml solid soprano sopranoclient sopranoserver
 
+MODKDE4_USE =	libs pim
+
 LIB_DEPENDS =	databases/soprano \
 		x11/kde4/akonadi \
 		x11/kde4/attica \
 		x11/kde4/kate \
-		x11/kde4/libs \
-		x11/kde4/pimlibs \
 		x11/kde4/okular \
 		x11/kde4/smokegen \
 		x11/kde4/smokeqt

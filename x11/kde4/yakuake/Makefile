@@ -13,9 +13,6 @@ WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
 WANTLIB += kdecore kdeui kio kparts nepomuk nepomukutils soprano
 
-RUN_DEPENDS =	x11/kde4/konsole \
-		x11/kde4/runtime
-
-LIB_DEPENDS =	x11/kde4/libs
+RUN_DEPENDS =	x11/kde4/konsole
 
 .include <bsd.port.mk>

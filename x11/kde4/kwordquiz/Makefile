@@ -9,9 +9,6 @@ WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += kdecore keduvocdocument kdeui kio knewstuff3 knotifyconfig
 WANTLIB += kprintutils phonon
 
-RUN_DEPENDS =	x11/kde4/runtime
-
-LIB_DEPENDS = 	x11/kde4/libkdeedu \
-		x11/kde4/libs
+LIB_DEPENDS = 	x11/kde4/libkdeedu
 
 .include <bsd.port.mk>

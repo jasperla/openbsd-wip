@@ -39,6 +39,8 @@ SHARED_LIBS +=	smokeqwt		0.0 # 3.0
 
 MODULES =	lang/ruby
 
+MODKDE4_USE =
+
 LIB_DEPENDS =	editors/qscintilla \
 		x11/kde4/qimageblitz \
 		x11/kde4/smokegen \

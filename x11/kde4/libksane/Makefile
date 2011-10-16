@@ -10,7 +10,8 @@ WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg
 WANTLIB += kdecore kdeui
 WANTLIB += sane
 
-LIB_DEPENDS = 	x11/kde4/libs \
-		graphics/sane-backends
+MODKDE4_USE =	libs
+
+LIB_DEPENDS = 	graphics/sane-backends
 
 .include <bsd.port.mk>

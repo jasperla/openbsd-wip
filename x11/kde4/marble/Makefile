@@ -13,7 +13,8 @@ WANTLIB += kdecore kdeui kio knewstuff3 kparts nepomuk
 WANTLIB += nepomukutils phonon plasma soprano
 WANTLIB += gps
 
-LIB_DEPENDS = 	x11/kde4/libs \
-		misc/gpsd,-main
+MODKDE4_USE =	libs
+
+LIB_DEPENDS = 	misc/gpsd,-main
 
 .include <bsd.port.mk>

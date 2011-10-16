@@ -9,6 +9,6 @@ WANTLIB =  QtDBus QtGui QtNetwork QtSvg QtXml c kdecore kdeui
 WANTLIB += kio m stdc++
 WANTLIB += kfile kparts nepomuk nepomukutils soprano
 
-LIB_DEPENDS = 	x11/kde4/libs
+MODKDE4_USE =	libs
 
 .include <bsd.port.mk>

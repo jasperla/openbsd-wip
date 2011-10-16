@@ -45,6 +45,8 @@ WANTLIB += assuan gpg-error gpgme gpgme-pthread ical icalss lber ldap sasl2
 
 MODULES =	devel/gettext
 
+MODKDE4_USE =	libs
+
 BUILD_DEPENDS =	devel/boost
 
 LIB_DEPENDS +=	databases/openldap \
@@ -52,7 +54,6 @@ LIB_DEPENDS +=	databases/openldap \
 		security/cyrus-sasl2 \
 		security/gpgme>=0.4.5 \
 		textproc/libical \
-		x11/kde4/akonadi \
-		x11/kde4/libs
+		x11/kde4/akonadi
 
 .include <bsd.port.mk>

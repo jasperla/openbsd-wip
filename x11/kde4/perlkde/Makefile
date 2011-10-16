@@ -14,8 +14,9 @@ WANTLIB += smokenepomukquery smokeokular smokeplasma smokeqtcore
 WANTLIB += smokeqtdbus smokeqtgui smokeqtnetwork smokesolid smokesoprano
 WANTLIB += smokesopranoclient smokesopranoserver
 
+MODKDE4_USE =	libs
+
 LIB_DEPENDS = 	x11/kde4/kate \
-		x11/kde4/libs \
 		x11/kde4/perlqt \
 		x11/kde4/smokekde
 

@@ -45,13 +45,11 @@ SHARED_LIBS +=  mailcommon                0.0 # 4.7
 SHARED_LIBS +=  messagecomposer           0.0 # 4.7
 SHARED_LIBS +=  templateparser            0.0 # 4.7
 
-MODULES =		devel/gettext
+MODULES =	devel/gettext
 
-RUN_DEPENDS =	x11/kde4/pim-runtime
+MODKDE4_USE =	runtime pim
 
-LIB_DEPENDS =	x11/kde4/libs \
-		x11/kde4/pimlibs \
-		x11/grantlee
+LIB_DEPENDS =	x11/grantlee
 
 WANTLIB =  c m pthread stdc++ z
 WANTLIB += X11 Xss

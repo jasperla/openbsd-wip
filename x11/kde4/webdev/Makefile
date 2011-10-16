@@ -19,13 +19,11 @@ WANTLIB += ruby${MODRUBY_BINREV} xml2 xslt
 
 MODULES =	lang/ruby
 
-RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/kde4/korundum \
-		x11/kde4/runtime
+MODKDE4_USE =	runtime pim
 
-LIB_DEPENDS =	x11/kde4/libs \
-		x11/kde4/pimlibs \
-		${MODRUBY_LIB_DEPENDS}
+RUN_DEPENDS =	x11/kde4/korundum
+
+LIB_DEPENDS =	${MODRUBY_LIB_DEPENDS}
 
 # Should be ported to tidyp?..
 CONFIGURE_ARGS =	-DWITH_LibTidy:Bool=No

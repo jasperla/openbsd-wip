@@ -8,4 +8,6 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/automoc4/${VERSION}/}
 
 WANTLIB =	c m pthread stdc++
 
+MODKDE4_USE =
+
 .include <bsd.port.mk>
