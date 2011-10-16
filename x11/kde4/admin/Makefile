@@ -8,8 +8,11 @@ WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
 WANTLIB += kdecore>=8 kdeui kio kldap kntlm
 
-# Run-time dependency is enough
-# RUN_DEPENDS =	x11/py-kde4
+BUILD_DEPENDS =	x11/kde4/pykde4 \
+		print/py-cups
+
+RUN_DEPENDS =	x11/kde4/pykde4 \
+		print/py-cups
 
 LIB_DEPENDS = 	x11/kde4/libs \
 		x11/kde4/pimlibs \
