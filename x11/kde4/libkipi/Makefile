@@ -5,9 +5,10 @@ DISTNAME =	libkipi-${MODKDE_VERSION}
 
 SHARED_LIBS =	kipi		0.0 # 4.7
 
-WANTLIB =  QtDBus QtGui QtNetwork QtSvg QtXml c kdeui
-WANTLIB += kio m stdc++
-WANTLIB += kfile kparts nepomuk nepomukutils soprano
+WANTLIB =  c m stdc++
+WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
+WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
+WANTLIB += kdeui kio kfile kparts nepomuk nepomukutils soprano
 
 MODKDE4_USE =	libs
 

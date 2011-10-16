@@ -144,6 +144,15 @@ share/doc/HTML/el/plasma-desktop/common
 share/doc/HTML/el/plasma-desktop/index.cache.bz2
 share/doc/HTML/el/plasma-desktop/index.docbook
 share/doc/HTML/el/plasma-desktop/taskbar-settings.png
+share/doc/HTML/el/printer-applet/
+share/doc/HTML/el/printer-applet/common
+share/doc/HTML/el/printer-applet/index.cache.bz2
+share/doc/HTML/el/printer-applet/index.docbook
+share/doc/HTML/el/sweeper/
+share/doc/HTML/el/sweeper/common
+share/doc/HTML/el/sweeper/index.cache.bz2
+share/doc/HTML/el/sweeper/index.docbook
+share/doc/HTML/el/sweeper/sweeper.png
 share/locale/el/LC_MESSAGES/accountwizard.mo
 share/locale/el/LC_MESSAGES/accountwizard_ical.mo
 share/locale/el/LC_MESSAGES/accountwizard_imap.mo

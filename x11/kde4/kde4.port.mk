@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-MODKDE4_VERSION =	4.7.1
+MODKDE4_VERSION =	4.7.2
 MODKDE_VERSION =	${MODKDE4_VERSION}
 
 # General options set by module

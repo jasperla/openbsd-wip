@@ -10,6 +10,6 @@ MODKDE4_USE =	libs
 
 LIB_DEPENDS =	databases/strigi
 
-# TODO: No Qt!
+MODKDE_NO_QT =	Yes
 
 .include <bsd.port.mk>

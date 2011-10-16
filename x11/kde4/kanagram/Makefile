@@ -3,8 +3,9 @@
 COMMENT =	letter order game for KDE
 DISTNAME =	kanagram-${MODKDE_VERSION}
 
-WANTLIB =  QtDBus QtGui QtSvg QtXml c kdeui knewstuff3
-WANTLIB += m phonon pthread stdc++ keduvocdocument
+WANTLIB =  c m pthread stdc++
+WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg lib/qt4/QtXml
+WANTLIB += kdeui knewstuff3 phonon keduvocdocument
 
 LIB_DEPENDS = 	x11/kde4/libkdeedu
 

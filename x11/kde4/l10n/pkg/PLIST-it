@@ -931,18 +931,6 @@ share/doc/HTML/it/kmahjongg/
 share/doc/HTML/it/kmahjongg/common
 share/doc/HTML/it/kmahjongg/index.cache.bz2
 share/doc/HTML/it/kmahjongg/index.docbook
-share/doc/HTML/it/kmail/
-share/doc/HTML/it/kmail/common
-share/doc/HTML/it/kmail/configure.docbook
-share/doc/HTML/it/kmail/credits-and-licenses.docbook
-share/doc/HTML/it/kmail/faq.docbook
-share/doc/HTML/it/kmail/getting-started.docbook
-share/doc/HTML/it/kmail/importing.docbook
-share/doc/HTML/it/kmail/index.cache.bz2
-share/doc/HTML/it/kmail/index.docbook
-share/doc/HTML/it/kmail/intro.docbook
-share/doc/HTML/it/kmail/menus.docbook
-share/doc/HTML/it/kmail/using-kmail.docbook
 share/doc/HTML/it/kmenuedit/
 share/doc/HTML/it/kmenuedit/common
 share/doc/HTML/it/kmenuedit/index.cache.bz2
@@ -1061,6 +1049,7 @@ share/doc/HTML/it/konqueror/path-complete.docbook
 share/doc/HTML/it/konqueror/plugins.docbook
 share/doc/HTML/it/konqueror/save-settings.docbook
 share/doc/HTML/it/konqueror/sidebar.docbook
+share/doc/HTML/it/konqueror/view-extensions.docbook
 share/doc/HTML/it/konquest/
 share/doc/HTML/it/konquest/common
 share/doc/HTML/it/konquest/index.cache.bz2

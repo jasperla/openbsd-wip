@@ -3,8 +3,6 @@
 COMMENT =	K Desktop Environment, utils
 DISTNAME =	kdeutils-${MODKDE_VERSION}
 
-USE_GROFF =	Yes
-
 SHARED_LIBS =	libkremotecontrol	0.0	# 1.0
 SHARED_LIBS +=	kerfuffle		0.0	# 4.0
 SHARED_LIBS +=	superkaramba		0.0	# 4.0

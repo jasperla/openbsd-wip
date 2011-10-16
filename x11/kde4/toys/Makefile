@@ -3,8 +3,6 @@
 COMMENT =	K Desktop Environment, toys
 DISTNAME =	kdetoys-${MODKDE_VERSION}
 
-USE_GROFF =	Yes
-
 WANTLIB =  c m pthread stdc++
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xpm
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
