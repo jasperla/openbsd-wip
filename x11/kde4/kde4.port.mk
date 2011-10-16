@@ -32,7 +32,7 @@ MODKDE4_RESOURCES ?=	No
 #     runtime components. This is the default setting until
 #     MODKDE4_RESOURCES is enabled.
 #
-#   - Set to "PIM" that depend on KDE PIM framework.
+#   - Add "PIM" when port depends on KDE PIM framework.
 #
 # NOTE: There are no options like "Kate" or "Okular", they should be handled
 #       with simple LIB_DEPENDS on corresponding packages in addition to
