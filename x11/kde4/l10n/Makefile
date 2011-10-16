@@ -37,11 +37,11 @@ KDE_L10N_LANG =	${SUBPACKAGE:S/^-//}
 SUBST_VARS +=	KDE_L10N_LANG
 DESCR =		${PKGDIR}/DESCR
 
-MODULES +=		devel/gettext
-NO_REGRESS =		Yes
-WRKSRC =		${WRKDIR}
-CONFIGURE_ENV +=	CFLAGS=-I${PREFIX}/include \
-			LDFLAGS="-pthread -L${PREFIX}/lib -liconv -lintl"
+MODULES =	devel/gettext
+NO_REGRESS =	Yes
+WRKSRC =	${WRKDIR}
+CONFIGURE_ENV =	CFLAGS=-I${PREFIX}/include \
+		LDFLAGS="-pthread -L${PREFIX}/lib -liconv -lintl"
 
 BOOTSTRAP_CMAKE_CONF =	${WRKSRC}/CMakeLists.txt
 

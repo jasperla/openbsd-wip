@@ -5,9 +5,7 @@ DISTNAME =	kdepim-${MODKDE_VERSION}
 REVISION =	0
 HOMEPAGE =	http://pim.kde.org/
 
-USE_GROFF =		Yes
-
-SHARED_LIBS +=	akonadi_next 0.0
+SHARED_LIBS =	akonadi_next 0.0
 SHARED_LIBS +=	akregatorinterfaces 0.0
 SHARED_LIBS +=	gwsoap 0.0
 SHARED_LIBS +=	kabcgroupwise 0.0
@@ -49,13 +47,15 @@ SHARED_LIBS +=  templateparser            0.0 # 4.7
 
 MODULES =		devel/gettext
 
-BUILD_DEPENDS +=	x11/kde4/automoc
-RUN_DEPENDS +=		x11/kde4/pim-runtime
-LIB_DEPENDS +=		x11/kde4/libs \
-			x11/kde4/pimlibs \
-			x11/grantlee
+BUILD_DEPENDS =	x11/kde4/automoc
 
-WANTLIB += c m pthread stdc++ z
+RUN_DEPENDS =	x11/kde4/pim-runtime
+
+LIB_DEPENDS =	x11/kde4/libs \
+		x11/kde4/pimlibs \
+		x11/grantlee
+
+WANTLIB =  c m pthread stdc++ z
 WANTLIB += X11 Xss
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDeclarative
 WANTLIB += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtOpenGL

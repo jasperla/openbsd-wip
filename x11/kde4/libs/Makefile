@@ -4,7 +4,7 @@ COMMENT =	K Desktop Environment, libraries
 DISTNAME =	kdelibs-${MODKDE_VERSION}
 REVISION =	8
 
-SHARED_LIBS +=	kde3support          0.0      # .4.0
+SHARED_LIBS =	kde3support          0.0      # .4.0
 SHARED_LIBS +=	kdecore              8.0      # .5.0
 SHARED_LIBS +=	kdefakes             8.0      # .5.0
 SHARED_LIBS +=	kdesu                8.0      # .5.0
@@ -49,7 +49,7 @@ SHARED_LIBS +=  nepomukquery		0.0 # 4.7
 SHARED_LIBS +=  nepomukutils		0.0 # 4.7
 
 
-WANTLIB += c krb5 m pthread stdc++ util z
+WANTLIB =  c krb5 m pthread stdc++ util z
 WANTLIB += ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xpm Xrender Xss
 WANTLIB += Xtst
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDeclarative
@@ -61,52 +61,52 @@ WANTLIB += Half Iex IlmImf IlmThread Imath asn1 aspell bz2 com_err
 WANTLIB += dbusmenu-qt enchant exslt fam gif gssapi intl jasper jpeg
 WANTLIB += lzma pcre pcreposix png polkit-qt-core-1 qca>=3.0 xml2 xslt
 
-BUILD_DEPENDS +=	misc/shared-mime-info \
-			x11/kde4/automoc \
-			misc/shared-desktop-ontologies \
-			textproc/docbook-xsl
+BUILD_DEPENDS =	misc/shared-mime-info \
+		x11/kde4/automoc \
+		misc/shared-desktop-ontologies \
+		textproc/docbook-xsl
 
-RUN_DEPENDS +=		misc/shared-mime-info \
-			misc/shared-desktop-ontologies \
-			sysutils/gamin,-server \
-			x11/kde4/oxygen-icons
+RUN_DEPENDS =	misc/shared-mime-info \
+		misc/shared-desktop-ontologies \
+		sysutils/gamin,-server \
+		x11/kde4/oxygen-icons
 
-LIB_DEPENDS +=		archivers/bzip2 \
-			archivers/xz \
-			attica->=0.1.9:x11/kde4/attica \
-			databases/strigi \
-			devel/pcre \
-			graphics/jasper \
-			graphics/libungif \
-			graphics/openexr \
-			multimedia/phonon \
-			security/qca2 \
-			soprano->=2.5.60:databases/soprano \
-			sysutils/gamin \
-			textproc/aspell/core \
-			textproc/enchant \
-			textproc/libxslt \
-			x11/dbusmenu-qt \
-			x11/grantlee \
-			x11/polkit-qt4 \
+LIB_DEPENDS =	archivers/bzip2 \
+		archivers/xz \
+		attica->=0.1.9:x11/kde4/attica \
+		databases/strigi \
+		devel/pcre \
+		graphics/jasper \
+		graphics/libungif \
+		graphics/openexr \
+		multimedia/phonon \
+		security/qca2 \
+		soprano->=2.5.60:databases/soprano \
+		sysutils/gamin \
+		textproc/aspell/core \
+		textproc/enchant \
+		textproc/libxslt \
+		x11/dbusmenu-qt \
+		x11/grantlee \
+		x11/polkit-qt4
 
 # we don't have krb5-config
-CONFIGURE_ARGS += -DGSSAPI_LIBS:STRING="-lgssapi -lkrb5 -lasn1 -lcom_err"
-CONFIGURE_ARGS += -DGSSAPI_INCS:STRING="/usr/include/kerberosV"
-CONFIGURE_ARGS += -DGSSAPI_FLAVOR:STRING="HEIMDAL"
-CONFIGURE_ARGS += -DGSSAPI_FOUND:BOOL=TRUE
+CONFIGURE_ARGS =	-DGSSAPI_LIBS:STRING="-lgssapi -lkrb5 -lasn1 -lcom_err" \
+			-DGSSAPI_INCS:STRING="/usr/include/kerberosV" \
+			-DGSSAPI_FLAVOR:STRING="HEIMDAL" \
+			-DGSSAPI_FOUND:BOOL=TRUE \
 
 # and do not have this stuff at all
-CONFIGURE_ARGS +=	-DACL_FOUND:Bool=FALSE
-CONFIGURE_ARGS +=	-DHSPELL_FOUND:Bool=FALSE
-CONFIGURE_ARGS +=	-DHUPNP_FOUND:Bool=FALSE
-CONFIGURE_ARGS +=	-DUDEV_FOUND:Bool=FALSE
+CONFIGURE_ARGS +=	-DACL_FOUND:Bool=FALSE \
+			-DHSPELL_FOUND:Bool=FALSE \
+			-DHUPNP_FOUND:Bool=FALSE \
+			-DUDEV_FOUND:Bool=FALSE
 
-CONFIGURE_ARGS +=	-DKDE_DEFAULT_HOME=.kde4
-CONFIGURE_ARGS +=	-DKDE4_INCLUDE_INSTALL_DIR:String=${LOCALBASE}/include
-CONFIGURE_ARGS +=	-DKDE4_LIB_INSTALL_DIR:String=${LOCALBASE}/lib
-CONFIGURE_ARGS +=	-DKDESU_USE_SUDO_DEFAULT:BOOL=TRUE
-USE_GROFF =	Yes
+# some basic defines
+CONFIGURE_ARGS +=	-DKDE_DEFAULT_HOME=.kde4 \
+			-DKDE4_INCLUDE_INSTALL_DIR:String=${LOCALBASE}/include \
+			-DKDE4_LIB_INSTALL_DIR:String=${LOCALBASE}/lib \
+			-DKDESU_USE_SUDO_DEFAULT:BOOL=TRUE
 
 # Reimplemented CMake modules, because previous were totally broken
 REWR_CMAKE_MODULES =	FindXine FindPolkitQt

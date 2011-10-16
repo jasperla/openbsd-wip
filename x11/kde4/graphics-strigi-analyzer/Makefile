@@ -3,11 +3,11 @@
 COMMENT =	KDE strigi analyzer for graphics files
 DISTNAME =	kdegraphics-strigi-analyzer-${MODKDE_VERSION}
 
-LIB_DEPENDS +=		databases/strigi \
-			x11/kde4/libs
-
-WANTLIB += c m stdc++
+WANTLIB =  c m stdc++
 WANTLIB += streamanalyzer streams tiff
+
+LIB_DEPENDS =	databases/strigi \
+		x11/kde4/libs
 
 # TODO: No Qt!
 

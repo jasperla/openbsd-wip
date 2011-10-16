@@ -4,9 +4,9 @@ COMMENT =	K Desktop Environment, multimedia
 DISTNAME =	kdemultimedia-${MODKDE_VERSION}
 REVISION =	0
 
-SHARED_LIBS += audiocdplugins 4.0	# .4.0
-SHARED_LIBS += kcddb          4.0       # .4.0
-SHARED_LIBS += kcompactdisc   4.0       # .4.0
+SHARED_LIBS =	audiocdplugins		4.0  # .4.0
+SHARED_LIBS +=	kcddb			4.0  # .4.0
+SHARED_LIBS +=	kcompactdisc		4.0  # .4.0
 
 LIB_DEPENDS =	audio/cdparanoia \
 		audio/flac \
@@ -22,7 +22,7 @@ LIB_DEPENDS =	audio/cdparanoia \
 
 RUN_DEPENDS =	x11/kde4/runtime
 
-WANTLIB += c m pthread stdc++
+WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += kde3support kdecore>=8 kdeui khtml kio kjs kparts
@@ -34,7 +34,7 @@ WANTLIB += musicbrainz3 ogg swscale tag vorbis vorbisenc vorbisfile
 # WANTLIB += xine
 
 # PulseAudio is not ready yet
-CONFIGURE_ARGS +=	-DPULSEAUDIO_FOUND:Bool=FALSE
+CONFIGURE_ARGS =	-DPULSEAUDIO_FOUND:Bool=FALSE
 
 # Doesn't worth to port, RDF WebService in MusicBrainz is deprecated
 CONFIGURE_ARGS +=	-DTUNEPIMP_FOUND:Bool=FALSE

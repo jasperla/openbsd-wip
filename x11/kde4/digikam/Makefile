@@ -80,6 +80,16 @@ BUILD_DEPENDS =		devel/boost \
 
 RUN_DEPENDS =		
 
+RUN_DEPENDS-main =	devel/desktop-file-utils \
+			databases/mysql,-server \
+			misc/shared-desktop-ontologies
+
+RUN_DEPENDS-kipi =	${MODGETTEXT_RUN_DEPENDS} \
+			devel/desktop-file-utils \
+			misc/shared-desktop-ontologies
+
+RUN_DEPENDS-vkontakte =	x11/kde4/runtime
+
 LIBS_DEPENDS-common =	${MODQT_LIB_DEPENDS}
 
 LIB_DEPENDS-main =	${LIB_DEPENDS-common} \
@@ -126,15 +136,5 @@ LIB_DEPENDS-geomap =	${LIB_DEPENDS-common} \
 LIB_DEPENDS-vkontakte = ${LIB_DEPENDS-common} \
 			devel/qjson \
 			x11/kde4/libs
-
-RUN_DEPENDS-main =	devel/desktop-file-utils \
-			databases/mysql,-server \
-			misc/shared-desktop-ontologies
-
-RUN_DEPENDS-kipi =	${MODGETTEXT_RUN_DEPENDS} \
-			devel/desktop-file-utils \
-			misc/shared-desktop-ontologies
-
-RUN_DEPENDS-vkontakte =	x11/kde4/runtime
 
 .include <bsd.port.mk>

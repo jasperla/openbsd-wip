@@ -4,7 +4,7 @@ COMMENT =	K Desktop Environment, workspace
 DISTNAME =	kde-workspace-${MODKDE_VERSION}
 REVISION =	1
 
-SHARED_LIBS +=  kdecorations              0.0 # 4.7
+SHARED_LIBS =   kdecorations              0.0 # 4.7
 SHARED_LIBS +=  kephal                    0.0 # 4.7
 SHARED_LIBS +=  kfontinst                 0.0 # 4.7
 SHARED_LIBS +=  kfontinstui               0.0 # 4.7
@@ -29,7 +29,7 @@ SHARED_LIBS +=  solidcontrolifaces        0.0 # 4.7
 SHARED_LIBS +=  taskmanager               0.0 # 4.7
 SHARED_LIBS +=  weather_ion               0.0 # 6.0
 
-WANTLIB += c m pthread stdc++ util z
+WANTLIB =  c m pthread stdc++ util z
 WANTLIB += GL GLU ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xft Xinerama Xpm Xrandr Xrender Xss Xtst Xxf86misc
 WANTLIB += fontconfig freetype xkbfile
@@ -54,6 +54,9 @@ WANTLIB += ck-connector dbus-1 dbusmenu-qt gps jpeg png usb xmms
 BUILD_DEPENDS =	misc/shared-desktop-ontologies \
 		sysutils/pciutils
 
+RUN_DEPENDS =	misc/shared-desktop-ontologies \
+		x11/polkit-qt4
+
 LIB_DEPENDS =	audio/xmms \
 		databases/soprano \
 		devel/libusb \
@@ -69,10 +72,7 @@ LIB_DEPENDS =	audio/xmms \
 		x11/kde4/pykde4 \
 		x11/kde4/qimageblitz
 
-RUN_DEPENDS =	misc/shared-desktop-ontologies \
-		x11/polkit-qt4
-
-CONFIGURE_ARGS +=	-DWITH_Sensors:Bool=False \
+CONFIGURE_ARGS =	-DWITH_Sensors:Bool=False \
 			-DWITH_NetworkManager:Bool=False \
 			-DWITH_RAW1394:Bool=False
 
