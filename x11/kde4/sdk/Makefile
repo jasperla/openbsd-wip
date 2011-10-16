@@ -28,7 +28,7 @@ WANTLIB += threadweaver
 WANTLIB += apr-1 hunspell-1.2 svn_client-1 svn_delta-1 svn_fs-1
 WANTLIB += svn_ra-1 svn_subr-1 xml2 xslt
 
-MODKDE4_USE =	runtime pim
+MODKDE4_USE =	pim
 
 # For building KAppTemplate with weird file names
 USE_GMAKE =	Yes

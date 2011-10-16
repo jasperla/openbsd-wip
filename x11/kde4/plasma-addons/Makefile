@@ -27,7 +27,7 @@ WANTLIB += cln glib-2.0 qalculate scim-1.0 xml2
 
 MODULES =	devel/gettext
 
-MODKDE4_USE =	runtime pim
+MODKDE4_USE =	pim
 
 LIB_DEPENDS =	eigen2->=2.0.3:math/eigen2 \
 		inputmethods/scim \

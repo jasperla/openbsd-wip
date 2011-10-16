@@ -15,7 +15,7 @@ WANTLIB += nepomukutils phonon qimageblitz soprano threadweaver
 WANTLIB += chm djvulibre epub freetype poppler-qt4 qca spectre
 WANTLIB += jpeg tiff
 
-MODKDE4_USE =	runtime pim
+MODKDE4_USE =	pim
 
 LIB_DEPENDS = 	devel/chmlib \
 		devel/ebook-tools \

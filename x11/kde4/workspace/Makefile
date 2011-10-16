@@ -50,7 +50,7 @@ WANTLIB += strigiqtdbusclient threadweaver syndication
 
 WANTLIB += ck-connector dbus-1 dbusmenu-qt gps jpeg png usb xmms
 
-MODKDE4_USE =	runtime pim
+MODKDE4_USE =	pim
 
 # Uses a static library, no .so provided
 BUILD_DEPENDS =	misc/shared-desktop-ontologies \

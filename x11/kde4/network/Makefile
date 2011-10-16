@@ -35,7 +35,7 @@ WANTLIB += assuan jasper jpeg otr raptor2 xml2 xmms xslt
 
 MODULES =	devel/gettext
 
-MODKDE4_USE =	runtime pim
+MODKDE4_USE =	pim
 
 RUN_DEPENDS =	security/qca-ossl
 

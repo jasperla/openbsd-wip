@@ -19,7 +19,7 @@ WANTLIB += ruby${MODRUBY_BINREV} xml2 xslt
 
 MODULES =	lang/ruby
 
-MODKDE4_USE =	runtime pim
+MODKDE4_USE =	pim
 
 RUN_DEPENDS =	x11/kde4/korundum
 

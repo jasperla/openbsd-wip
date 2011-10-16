@@ -47,7 +47,7 @@ SHARED_LIBS +=  templateparser            0.0 # 4.7
 
 MODULES =	devel/gettext
 
-MODKDE4_USE =	runtime pim
+MODKDE4_USE =	pim
 
 LIB_DEPENDS =	x11/grantlee
 
