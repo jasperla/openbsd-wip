@@ -51,7 +51,7 @@ _MODKDE4_USE_ALL =	libs runtime pim
 ERRORS += "Fatal: unknown KDE 4 use flag: ${_modkde4_u}\n(not in ${_MODKDE4_USE_ALL})"
 .   endif
 .endfor
-.if ${MODKDE4_USE:L:Npim}
+.if ${MODKDE4_USE:L:Mpim}
 .   if ${MODKDE4_USE:L:Nlibs:Nruntime}
 MODKDE4_USE +=		runtime
 .   endif
