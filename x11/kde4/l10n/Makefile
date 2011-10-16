@@ -34,6 +34,8 @@ MULTI_PACKAGES +=	-${_L}
 
 SUBPACKAGE ?=	-ru
 
+KDE_L10N_LANG =	${SUBPACKAGE:C/^-//:C/$/ language/}
+SUBST_VARS =	KDE_L10N_LANG
 DESCR =		${PKGDIR}/DESCR
 
 MODULES =	devel/gettext
