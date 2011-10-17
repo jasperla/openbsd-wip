@@ -34,7 +34,7 @@ FLAVOR ?=
 
 SEPARATE_BUILD =	flavored
 
-.if ${FLAVOR:L:Mdebug}
+.if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS +=       -DCMAKE_BUILD_TYPE:String=Debug
 .else
 CONFIGURE_ARGS +=       -DCMAKE_BUILD_TYPE:String=Release

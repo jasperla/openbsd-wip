@@ -104,7 +104,7 @@ MODKDE4_RUN_DEPENDS +=		x11/kde4/pim-runtime
 .       endif
 .   endif    # ${MODKDE4_USE:L:Mlibs}
 
-.   if ${FLAVOR:L:Mdebug}
+.   if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE:String=Debug
 MODKDE4_CMAKE_PREFIX =	-debug
 .   else
