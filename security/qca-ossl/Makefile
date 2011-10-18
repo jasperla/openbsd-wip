@@ -1,10 +1,8 @@
 # $OpenBSD$
 
-SHARED_ONLY =		Yes
-
 COMMENT =		SSL/TLS plugin for QCA2
 DISTNAME =		qca-ossl-2.0.0-beta3
-REVISION=		1
+REVISION=		2
 CATEGORIES =		security
 HOMEPAGE =		http://delta.affinix.com/qca/
 MAINTAINER =		Vadim Zhukov <persgray@gmail.com>
@@ -19,17 +17,10 @@ MASTER_SITES =		http://delta.affinix.com/download/qca/2.0/plugins/
 EXTRACT_SUFX =		.tar.bz2
 
 WANTLIB +=		crypto m qca ssl stdc++
-		
-MODULES =		x11/qt4
-BUILD_DEPENDS =		security/qca2
-RUN_DEPENDS =		security/qca2
 
-#SEPARATE_BUILD =	simple
-#CONFIGURE_STYLE =	simple
-#CONFIGURE_ARGS =	--release \
-#			--verbose \
-#			--qtdir=${MODQT4_LIBDIR} \
-#			--with-qca=${LOCALBASE}
+MODULES =		x11/qt4
+LIB_DEPENDS =		security/qca2
+RUN_DEPENDS =		security/qca2
 
 NO_REGRESS =		Yes
 
