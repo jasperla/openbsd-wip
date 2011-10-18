@@ -19,11 +19,10 @@ WANTLIB=	c osip2 osipparser2 pthread ltdl
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=siproxd/}
 
-USE_LIBTOOL=	Yes
+USE_LIBTOOL=	gnu
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -Dlt__PROGRAM__LTX_preloaded_symbols=lt_libltdl_LTX_preloaded_symbols" \
-		LDFLAGS="${LDFLAGS} -L${PREFIX}/lib"
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${PREFIX}/lib"
 
 LIB_DEPENDS=	telephony/libosip2 \
 		devel/libtool,-ltdl
