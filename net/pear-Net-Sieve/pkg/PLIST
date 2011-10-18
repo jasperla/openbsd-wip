@@ -1,9 +1,8 @@
 @comment $OpenBSD$
-@group
-pear/doc/
 @group daemon
-lib/
-lib/php/
+@comment pear/doc/
+@comment lib/
+@comment lib/php/
 pear/lib/.registry/net_sieve.reg
 pear/lib/Net/
 pear/lib/Net/Sieve.php
