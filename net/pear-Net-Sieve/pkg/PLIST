@@ -1,0 +1,14 @@
+@comment $OpenBSD$
+@group
+pear/doc/
+@group daemon
+lib/
+lib/php/
+pear/lib/.registry/net_sieve.reg
+pear/lib/Net/
+pear/lib/Net/Sieve.php
+pear/tests/Net_Sieve/
+pear/tests/Net_Sieve/tests/
+pear/tests/Net_Sieve/tests/SieveTest.php
+pear/tests/Net_Sieve/tests/largescript.siv
+pear/tests/Net_Sieve/tests/password.inc.php
