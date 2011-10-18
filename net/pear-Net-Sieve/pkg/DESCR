@@ -1,1 +1,2 @@
-pear-Net-Sieve contains a class for talking to the timsieved server that comes with Cyrus IMAP. It can be used in conjunction with dovecot-pigeonhole to provide vacation capabilities to horde/imp.
+pear-Net-Sieve contains a class for talking to managesieve servers,
+for example cyrus-imapd's "timsieved", or dovecot-pigeonhole.
