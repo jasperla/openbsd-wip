@@ -1,24 +1,19 @@
 # $OpenBSD$
 
-#ONLY_FOR_ARCHS =	???
-#NOT_FOR_ARCHS =	???
-#SHARED_ONLY =		???
-
-V =			1.0.3
-CATEGORIES =		education biology
 COMMENT =		molecule editor and visualizer
+V =			1.0.3
 DISTNAME =		avogadro-${V}
+CATEGORIES =		education biology
 REVISION =		2
 HOMEPAGE =		http://avogadro.openmolecules.net/
 
-SHARED_LIBS +=		avogadro		0.0	# 1.0
+SHARED_LIBS +=		avogadro	0.0	# 1.0
 
-#MAINTAINER =		???
-
-PERMIT_PACKAGE_CDROM =	Yes | Reason if No
-PERMIT_PACKAGE_FTP =	Yes | Reason if No
-PERMIT_DISTFILES_CDROM =Yes | Reason if No
-PERMIT_DISTFILES_FTP =	Yes | Reason if No
+# GPL v3
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += c m pthread stdc++ z
 WANTLIB += GL GLU ICE SM X11 Xext

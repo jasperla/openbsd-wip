@@ -1,20 +1,18 @@
 # $OpenBSD$
 
-COMMENT =		KDE advanced text editor
-DISTNAME =		kate-${MODKDE_VERSION}
+COMMENT =	KDE advanced text editor
+DISTNAME =	kate-${MODKDE_VERSION}
 
-SHARED_LIBS +=  kateinterfaces			0.0 # 4.7
-SHARED_LIBS +=  katepartinterfaces		0.0 # 4.7
-SHARED_LIBS +=  ktexteditor_codesnippets_core	0.0 # 0.0
+SHARED_LIBS =	kateinterfaces			0.0 # 4.7
+SHARED_LIBS +=	katepartinterfaces		0.0 # 4.7
+SHARED_LIBS +=	ktexteditor_codesnippets_core	0.0 # 0.0
 
-USE_GROFF =		Yes
-BUILD_DEPENDS +=	x11/kde4/automoc
-LIB_DEPENDS +=		x11/kde4/libs
-
-WANTLIB += Qt3Support QtDBus QtGui QtNetwork QtScript QtSql QtSvg
-WANTLIB += QtXml c kcmutils kdecore>=8 kdeui kemoticons kfile
-WANTLIB += kidletime kio knewstuff2 knewstuff3 kparts kprintutils
-WANTLIB += ktexteditor kutils m nepomuk nepomukutils plasma pthread
-WANTLIB += soprano stdc++
+WANTLIB =  c m pthread stdc++
+WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
+WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSql
+WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
+WANTLIB += kcmutils kdeui kemoticons kfile kidletime kio knewstuff2
+WANTLIB += knewstuff3 kparts kprintutils ktexteditor kutils nepomuk
+WANTLIB += nepomukutils plasma soprano
 
 .include <bsd.port.mk>

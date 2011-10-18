@@ -1,12 +1,12 @@
 # $OpenBSD$
 
-SHARED_ONLY =		Yes
+SHARED_ONLY =	Yes
 
-CATEGORIES =		devel
-COMMENT =		introspective wrappers around the KDE
-DISTNAME =		smokekde-${MODKDE_VERSION}
+CATEGORIES =	devel
+COMMENT =	introspective wrappers around the KDE
+DISTNAME =	smokekde-${MODKDE_VERSION}
 
-SHARED_LIBS +=	smokeattica		0.0 # 3.0
+SHARED_LIBS =	smokeattica		0.0 # 3.0
 SHARED_LIBS +=	smokekate		0.0 # 3.0
 SHARED_LIBS +=	smokekdecore		0.0 # 3.0
 SHARED_LIBS +=	smokekdeui		0.0 # 3.0
@@ -27,29 +27,29 @@ SHARED_LIBS +=	smokesoprano		0.0 # 3.0
 SHARED_LIBS +=	smokesopranoclient	0.0 # 3.0
 SHARED_LIBS +=	smokesopranoserver	0.0 # 3.0
 
-WANTLIB += c m stdc++
+WANTLIB =  c m stdc++
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtOpenGL lib/qt4/QtSql
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
-WANTLIB += attica kateinterfaces kcmutils kde3support kdecore kdeui
+WANTLIB += attica kateinterfaces kcmutils kde3support kdeui
 WANTLIB += kemoticons kfile khtml kidletime kio kjs knewstuff2
 WANTLIB += knewstuff3 kparts kprintutils ktexteditor nepomuk
 WANTLIB += nepomukquery nepomukutils okularcore phonon plasma smokebase
 WANTLIB += smokeqtcore smokeqtdbus smokeqtgui smokeqtnetwork smokeqtsvg
 WANTLIB += smokeqtxml solid soprano sopranoclient sopranoserver
 
-LIB_DEPENDS =		databases/soprano \
-			x11/kde4/akonadi \
-			x11/kde4/attica \
-			x11/kde4/kate \
-			x11/kde4/libs \
-			x11/kde4/pimlibs \
-			x11/kde4/okular \
-			x11/kde4/smokegen \
-			x11/kde4/smokeqt
+MODKDE4_USE =	libs pim
+
+LIB_DEPENDS =	databases/soprano \
+		x11/kde4/akonadi \
+		x11/kde4/attica \
+		x11/kde4/kate \
+		x11/kde4/okular \
+		x11/kde4/smokegen \
+		x11/kde4/smokeqt
 
 # smokegen segfaults, see upstream bug:
 # https://bugs.kde.org/show_bug.cgi?id=283677
-CONFIGURE_ARGS +=	-DBUILD_Akonadi:Bool=False
+CONFIGURE_ARGS =	-DBUILD_Akonadi:Bool=False
 
 .include <bsd.port.mk>

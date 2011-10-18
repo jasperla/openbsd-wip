@@ -1,0 +1,18 @@
+$OpenBSD$
+--- extensions/smjs_script_runtime/converter.cc.ports.orig	Sat Oct 15 19:39:54 2011
++++ extensions/smjs_script_runtime/converter.cc	Sat Oct 15 19:41:44 2011
+@@ -16,6 +16,14 @@
+ 
+ #include "converter.h"
+ 
++/*
++   Fix possible problems when PREFIX is defined in build system.
++   This name is used by Mozilla as well, in <jsstr.h>.
++*/
++#if defined(PREFIX)
++#undef PREFIX
++#endif
++
+ #include <jsobj.h>
+ #include <jscntxt.h>
+ #include <jsfun.h>

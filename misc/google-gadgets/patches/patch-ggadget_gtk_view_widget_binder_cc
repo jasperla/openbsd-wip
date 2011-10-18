@@ -1,0 +1,12 @@
+$OpenBSD$
+--- ggadget/gtk/view_widget_binder.cc.ports.orig	Sat Oct 15 16:39:47 2011
++++ ggadget/gtk/view_widget_binder.cc	Sat Oct 15 16:40:37 2011
+@@ -827,6 +827,8 @@ class ViewWidgetBinder::Impl : public SmallObject<> {
+                                       guint info, guint time,
+                                       gpointer user_data) {
+     GGL_UNUSED(widget);
++    GGL_UNUSED(x);
++    GGL_UNUSED(y);
+     GGL_UNUSED(info);
+     Impl *impl = reinterpret_cast<Impl *>(user_data);
+     if (!impl->current_drag_event_) {

@@ -2104,7 +2104,6 @@ share/apps/LICENSES/QPL_V1.0
 share/apps/cmake/
 share/apps/cmake/modules/
 share/apps/cmake/modules/BasicFindPackageVersion.cmake.in
-share/apps/cmake/modules/CheckCXXSymbolExists.cmake
 share/apps/cmake/modules/CheckPointerMember.cmake
 share/apps/cmake/modules/CheckPrototypeExists.cmake
 share/apps/cmake/modules/CheckStructMember.cmake
@@ -2193,7 +2192,6 @@ share/apps/cmake/modules/FindStrigi.cmake
 share/apps/cmake/modules/FindTaglib.cmake
 share/apps/cmake/modules/FindUSB.cmake
 share/apps/cmake/modules/FindWcecompat.cmake
-share/apps/cmake/modules/FindX11.cmake
 share/apps/cmake/modules/FindXKB.cmake
 share/apps/cmake/modules/FindXine.cmake
 share/apps/cmake/modules/FindXmms.cmake
@@ -2219,6 +2217,7 @@ share/apps/cmake/modules/MacroLogFeature.cmake
 share/apps/cmake/modules/MacroOptionalAddSubdirectory.cmake
 share/apps/cmake/modules/MacroOptionalDependPackage.cmake
 share/apps/cmake/modules/MacroOptionalFindPackage.cmake
+share/apps/cmake/modules/MacroPushRequiredVars.cmake
 share/apps/cmake/modules/MacroWriteBasicCMakeVersionFile.cmake
 share/apps/cmake/modules/NepomukAddOntologyClasses.cmake
 share/apps/cmake/modules/NepomukMacros.cmake
@@ -3536,6 +3535,8 @@ share/kde4/services/qimageioplugins/ppm.desktop
 share/kde4/services/qimageioplugins/psd.desktop
 share/kde4/services/qimageioplugins/ras.desktop
 share/kde4/services/qimageioplugins/rgb.desktop
+share/kde4/services/qimageioplugins/svg+xml-compressed.desktop
+share/kde4/services/qimageioplugins/svg+xml.desktop
 share/kde4/services/qimageioplugins/tga.desktop
 share/kde4/services/qimageioplugins/tiff.desktop
 share/kde4/services/qimageioplugins/xbm.desktop

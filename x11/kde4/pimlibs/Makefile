@@ -2,9 +2,8 @@
 
 COMMENT =	K Desktop Environment, pimlibs
 DISTNAME =	kdepimlibs-${MODKDE_VERSION}
-REVISION =	1
 
-SHARED_LIBS +=	kabc                 5.0      # .4.0
+SHARED_LIBS =	kabc                 5.0      # .4.0
 SHARED_LIBS +=	kabc_file_core       0.0      # .4.0
 SHARED_LIBS +=	kcal                 5.0      # .4.0
 SHARED_LIBS +=	kldap                0.0      # .4.0
@@ -36,24 +35,24 @@ SHARED_LIBS +=  kcalcore		0.0 # 4.7
 SHARED_LIBS +=  kcalutils		0.0 # 4.7
 SHARED_LIBS +=  kmbox			0.0 # 4.7
 
-MODULES =		devel/gettext
-
-BUILD_DEPENDS +=	devel/boost \
-			x11/kde4/automoc
-
-LIB_DEPENDS +=		databases/openldap \
-			graphics/prison \
-			security/cyrus-sasl2 \
-			security/gpgme>=0.4.5 \
-			textproc/libical \
-			x11/kde4/akonadi \
-			x11/kde4/libs
-
-WANTLIB += c m stdc++
+WANTLIB =  c m stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSql
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml 
-WANTLIB += akonadiprotocolinternals kcmutils kemoticons kdecore>=8 kdeui
+WANTLIB += akonadiprotocolinternals kcmutils kemoticons kdeui
 WANTLIB += kio kparts nepomuk nepomukutils prison soprano phonon solid
 WANTLIB += assuan gpg-error gpgme gpgme-pthread ical icalss lber ldap sasl2
+
+MODULES =	devel/gettext
+
+MODKDE4_USE =	libs
+
+BUILD_DEPENDS =	devel/boost
+
+LIB_DEPENDS +=	databases/openldap \
+		graphics/prison \
+		security/cyrus-sasl2 \
+		security/gpgme>=0.4.5 \
+		textproc/libical \
+		x11/kde4/akonadi
 
 .include <bsd.port.mk>

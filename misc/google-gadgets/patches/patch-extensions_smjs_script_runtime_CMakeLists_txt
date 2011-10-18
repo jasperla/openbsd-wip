@@ -1,0 +1,26 @@
+$OpenBSD$
+--- extensions/smjs_script_runtime/CMakeLists.txt.ports.orig	Sat Oct 15 16:05:27 2011
++++ extensions/smjs_script_runtime/CMakeLists.txt	Sat Oct 15 21:14:04 2011
+@@ -22,8 +22,11 @@ ADD_SUBDIRECTORY(tests)
+ 
+ # Added -fcheck-new to disable the warning about operator new returning NULL
+ # in jscntxt.h.
+-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fcheck-new")
+-STRING(REPLACE "-Wextra" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
++# Add -Wno-error=sign-compare to allow compilation on broken GCC versions with:
++#   .../limits:530: warning: negative integer implicitly converted to unsigned type
++SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fcheck-new -Wno-error")
++# STRING(REPLACE "-Wextra" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
++MESSAGE(STATUS "converter: resulting CMAKE_CXX_FLAGS: ${CMAKE_CXX_FLAGS}")
+ 
+ SET(SRCS
+   converter.cc
+@@ -44,7 +47,7 @@ TARGET_LINK_LIBRARIES(smjs-script-runtime
+   ggadget${GGL_EPOCH}
+   ggadget-js${GGL_EPOCH}
+   ${SMJS_LIBRARIES}
+-  dl
++  ${DL_LIBRARY}
+ )
+ OUTPUT_MODULE(smjs-script-runtime)
+ 

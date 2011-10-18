@@ -1,0 +1,12 @@
+$OpenBSD$
+--- CMakeLists.txt.orig	Fri Oct 14 22:13:20 2011
++++ CMakeLists.txt	Fri Oct 14 22:25:41 2011
+@@ -10,6 +10,8 @@ set(KDE4WORKSPACE_VERSION ${KDE4WORKSPACE_VERSION_MAJO
+ # where to look first for cmake modules, before ${CMAKE_ROOT}/Modules/ is checked
+ set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules ${CMAKE_MODULE_PATH} )
+ 
++include("/usr/local/share/apps/cmake/modules/FindX11.cmake")
++
+ #search packages used by KDE
+ set (QT_MIN_VERSION "4.7.0")
+ set(KDE_MIN_VERSION "4.7.1")

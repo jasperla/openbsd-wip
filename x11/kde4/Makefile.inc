@@ -16,9 +16,6 @@ PERMIT_DISTFILES_FTP ?=		Yes
 PERMIT_PACKAGE_CDROM ?=		Yes
 PERMIT_PACKAGE_FTP ?=		Yes
 
-# XXX temporary until all ports get updated to kde4.port.mk
-MODKDE4_USE ?=
-
 # Do not rely on devel/cmake here: additional modules that are
 # set up in ports may have, say, lang/python before devel/cmake,
 # thus making lang/python evaluating first. And when lang/python

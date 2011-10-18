@@ -1,0 +1,15 @@
+$OpenBSD$
+--- extensions/smjs_script_runtime/js_script_context.cc.ports.orig	Sat Oct 15 21:15:43 2011
++++ extensions/smjs_script_runtime/js_script_context.cc	Sat Oct 15 21:16:48 2011
+@@ -14,6 +14,11 @@
+   limitations under the License.
+ */
+ 
++// Avoid breaking the build with systems with PREFIX defined.
++#ifdef PREFIX
++#undef PREFIX
++#endif
++
+ #include "js_script_context.h"
+ 
+ #include <ggadget/logger.h>

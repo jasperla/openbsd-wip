@@ -3,9 +3,7 @@
 COMMENT =	Qt 4 bindings for Perl
 DISTNAME =	perlqt-${MODKDE_VERSION}
 
-LIB_DEPENDS = 	x11/kde4/smokeqt
-
-WANTLIB += c m perl pthread stdc++ util
+WANTLIB =  c m perl pthread stdc++ util
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtXml
 WANTLIB += smokebase smokephonon smokeqimageblitz smokeqsci
 WANTLIB += smokeqt3support smokeqtcore smokeqtdbus smokeqtdeclarative
@@ -13,6 +11,10 @@ WANTLIB += smokeqtgui smokeqthelp smokeqtmultimedia smokeqtnetwork
 WANTLIB += smokeqtopengl smokeqtscript smokeqtsql smokeqtsvg smokeqttest
 WANTLIB += smokeqtuitools smokeqtwebkit smokeqtxml smokeqtxmlpatterns
 WANTLIB += smokeqwt
+
+MODKDE4_USE =
+
+LIB_DEPENDS = 	x11/kde4/smokeqt
 
 # Avoid clashing Perl do_open and do_close with GCC's locale_facets.h
 post-patch:

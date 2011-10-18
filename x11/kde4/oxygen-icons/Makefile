@@ -3,6 +3,9 @@
 COMMENT =	K Desktop Environment, default theme
 DISTNAME =	oxygen-icons-${MODKDE_VERSION}
 
-PKG_ARCH =	*
+MODKDE4_RESOURCES =	Yes
+MODKDE4_USE =
+
+NO_BUILD=Yes
 
 .include <bsd.port.mk>

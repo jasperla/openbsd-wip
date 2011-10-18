@@ -1,0 +1,5 @@
+CouchApp is designed to structure standalone CouchDB application
+development for maximum application portability.
+
+CouchApp is a set of scripts and a jQuery plugin designed  to bring
+clarity and order to the freedom of CouchDB's document-based approach.

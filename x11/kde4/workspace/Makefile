@@ -3,7 +3,7 @@
 COMMENT =	K Desktop Environment, workspace
 DISTNAME =	kde-workspace-${MODKDE_VERSION}
 
-SHARED_LIBS +=  kdecorations              0.0 # 4.7
+SHARED_LIBS =   kdecorations              0.0 # 4.7
 SHARED_LIBS +=  kephal                    0.0 # 4.7
 SHARED_LIBS +=  kfontinst                 0.0 # 4.7
 SHARED_LIBS +=  kfontinstui               0.0 # 4.7
@@ -28,9 +28,7 @@ SHARED_LIBS +=  solidcontrolifaces        0.0 # 4.7
 SHARED_LIBS +=  taskmanager               0.0 # 4.7
 SHARED_LIBS +=  weather_ion               0.0 # 6.0
 
-USE_GROFF =	Yes
-
-WANTLIB += c m pthread stdc++ util z
+WANTLIB =  c m pthread stdc++ util z
 WANTLIB += GL GLU ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xft Xinerama Xpm Xrandr Xrender Xss Xtst Xxf86misc
 WANTLIB += fontconfig freetype xkbfile
@@ -42,7 +40,7 @@ WANTLIB += lib/qt4/QtXml lib/qt4/QtWebKit
 
 WANTLIB += akonadi-kcal akonadi-kde akonadi-kmime kabc kactivities
 WANTLIB += kcalcore kcalutils kcmutils kdeclarative kdefakes kde3support
-WANTLIB += kdecore>=8 kdesu kdewebkit kdeui kfile kholidays khtml
+WANTLIB += kdesu kdewebkit kdeui kfile kholidays khtml
 WANTLIB += kidletime kio kjs kmime knewstuff3 knotifyconfig kparts
 WANTLIB += kpimutils kpty kresources krosscore ktexteditor
 WANTLIB += kunitconversion microblog nepomuk nepomukquery nepomukutils
@@ -51,21 +49,30 @@ WANTLIB += strigiqtdbusclient threadweaver syndication
 
 WANTLIB += ck-connector dbus-1 dbusmenu-qt gps jpeg png usb xmms
 
-BUILD_DEPENDS +=	x11/kde4/automoc \
-			devel/boost \
+MODKDE4_USE =	pim
 
-LIB_DEPENDS +=		x11/kde4/libs \
-			x11/kde4/pimlibs \
-			multimedia/phonon \
-			x11/kde4/qimageblitz \
-			sysutils/consolekit \
-			sysutils/pciutils \
-			misc/gpsd,-main \
-			audio/xmms,-main \
-			devel/libusb \
+# Uses a static library, no .so provided
+BUILD_DEPENDS =	misc/shared-desktop-ontologies \
+		sysutils/pciutils
 
-# these come from libs in real case
-#pre-install:
-#	mkdir -p ${PREFIX}/share/doc/HTML/en/common
+RUN_DEPENDS =	misc/shared-desktop-ontologies \
+		x11/polkit-qt4
+
+LIB_DEPENDS =	audio/xmms \
+		databases/soprano \
+		devel/libusb \
+		math/libqalculate \
+		misc/google-gadgets \
+		misc/gpsd \
+		multimedia/phonon \
+		sysutils/consolekit \
+		x11/dbusmenu-qt \
+		x11/kde4/akonadi \
+		x11/kde4/pykde4 \
+		x11/kde4/qimageblitz
+
+CONFIGURE_ARGS =	-DWITH_Sensors:Bool=False \
+			-DWITH_NetworkManager:Bool=False \
+			-DWITH_RAW1394:Bool=False
 
 .include <bsd.port.mk>

@@ -34,7 +34,7 @@ WANTLIB-common =  ${MODQT_WANTLIB}
 WANTLIB-common += c m stdc++
 WANTLIB-common += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB-common += lib/qt4/QtSvg lib/qt4/QtXml
-WANTLIB-common += kdecore kdeui kio kparts nepomuk nepomukutils soprano
+WANTLIB-common += kdeui kio kparts nepomuk nepomukutils soprano
 
 WANTLIB-main =  ${WANTLIB-common}
 WANTLIB-main += ICE SM X11 Xext pthread z
@@ -73,12 +73,26 @@ WANTLIB-vkontakte += lib/qt4/QtWebKit
 WANTLIB-vkontakte += kdewebkit
 WANTLIB-vkontakte += qjson
 
+# Define dependencies manually per subpackage
+# TODO: fix kde4.port.mk to allow such grained tuning
+MODKDE4_USE =
+
 BUILD_DEPENDS =		devel/boost \
 			devel/doxygen \
 			databases/mysql,-server \
 			misc/shared-desktop-ontologies
 
-RUN_DEPENDS =		
+RUN_DEPENDS-main =	devel/desktop-file-utils \
+			databases/mysql,-server \
+			misc/shared-desktop-ontologies
+
+RUN_DEPENDS-kipi =	${MODGETTEXT_RUN_DEPENDS} \
+			devel/desktop-file-utils \
+			misc/shared-desktop-ontologies
+
+RUN_DEPENDS-geomap =		
+
+RUN_DEPENDS-vkontakte =	x11/kde4/runtime
 
 LIBS_DEPENDS-common =	${MODQT_LIB_DEPENDS}
 
@@ -126,15 +140,5 @@ LIB_DEPENDS-geomap =	${LIB_DEPENDS-common} \
 LIB_DEPENDS-vkontakte = ${LIB_DEPENDS-common} \
 			devel/qjson \
 			x11/kde4/libs
-
-RUN_DEPENDS-main =	devel/desktop-file-utils \
-			databases/mysql,-server \
-			misc/shared-desktop-ontologies
-
-RUN_DEPENDS-kipi =	${MODGETTEXT_RUN_DEPENDS} \
-			devel/desktop-file-utils \
-			misc/shared-desktop-ontologies
-
-RUN_DEPENDS-vkontakte =	x11/kde4/runtime
 
 .include <bsd.port.mk>

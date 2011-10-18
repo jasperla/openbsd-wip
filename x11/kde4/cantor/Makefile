@@ -1,19 +1,18 @@
 # $OpenBSD$
 
-COMMENT =		K Desktop Environment, mathematical applications
-DISTNAME =		cantor-${MODKDE_VERSION}
+COMMENT =	K Desktop Environment, mathematical applications
+DISTNAME =	cantor-${MODKDE_VERSION}
 
-SHARED_LIBS +=  cantorlibs                0.0 # 0.0
+SHARED_LIBS =  cantorlibs                0.0 # 0.0
 
-LIB_DEPENDS += 	x11/kde4/libs \
-		databases/soprano \
+WANTLIB =  c m pthread stdc++
+WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
+WANTLIB += lib/qt4/QtXml lib/qt4/QtXmlPatterns
+WANTLIB += kdeui kio knewstuff3 kparts kpty ktexteditor nepomuk
+WANTLIB += nepomukutils soprano spectre
+
+LIB_DEPENDS = 	databases/soprano \
 		print/libspectre \
 		math/R
-
-RUN_DEPENDS +=	devel/desktop-file-utils
-
-WANTLIB += QtDBus QtGui QtNetwork QtSvg QtXml QtXmlPatterns c
-WANTLIB += kdecore kdeui kio knewstuff3 kparts kpty ktexteditor
-WANTLIB += m nepomuk nepomukutils pthread stdc++ soprano spectre
 		
 .include <bsd.port.mk>

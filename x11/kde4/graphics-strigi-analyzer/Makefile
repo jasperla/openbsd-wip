@@ -3,12 +3,13 @@
 COMMENT =	KDE strigi analyzer for graphics files
 DISTNAME =	kdegraphics-strigi-analyzer-${MODKDE_VERSION}
 
-LIB_DEPENDS +=		databases/strigi \
-			x11/kde4/libs
-
-WANTLIB += c m stdc++
+WANTLIB =  c m stdc++
 WANTLIB += streamanalyzer streams tiff
 
-# TODO: No Qt!
+MODKDE4_USE =	libs
+
+LIB_DEPENDS =	databases/strigi
+
+MODKDE_NO_QT =	Yes
 
 .include <bsd.port.mk>

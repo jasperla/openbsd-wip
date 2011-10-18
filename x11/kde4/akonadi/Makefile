@@ -3,18 +3,19 @@
 COMMENT =		KDE PIM access libraries
 DISTNAME =		akonadi-1.6.2
 
-SHARED_LIBS += 		akonadiprotocolinternals 0.0	# 1.0
+SHARED_LIBS = 		akonadiprotocolinternals 0.0	# 1.0
 
 MODKDE4_USE =
 
 MASTER_SITES =		${MASTER_SITE_KDE:=stable/akonadi/src/}
 
-LIB_DEPENDS =		databases/soprano \
-			databases/sqlite3 \
-			devel/boost \
+WANTLIB =  c m pthread stdc++
+WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
+WANTLIB += lib/qt4/QtSql lib/qt4/QtXml
+WANTLIB += soprano
+WANTLIB += boost_program_options-mt sqlite3
 
-BUILD_DEPENDS =		x11/kde4/automoc \
-			x11/qt4,-mysql \
+BUILD_DEPENDS =		x11/qt4,-mysql \
 			x11/qt4,-postgresql \
 			x11/qt4,-sqlite \
 			databases/mysql,-server
@@ -24,12 +25,10 @@ BUILD_DEPENDS =		x11/kde4/automoc \
 RUN_DEPENDS =		mysql-server-*|postgresql-server-*|sqlite3->=3.7.5:databases/postgresql,-server \
 			qt4-mysql-*|qt4-postgresql-*:x11/qt4,-postgresql
 
-WANTLIB += c m pthread stdc++
-WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
-WANTLIB += lib/qt4/QtSql lib/qt4/QtXml
-WANTLIB += soprano
-WANTLIB += boost_program_options-mt sqlite3
+LIB_DEPENDS =		databases/soprano \
+			databases/sqlite3 \
+			devel/boost \
 
-CONFIGURE_ARGS +=	-DDATABASE_BACKEND:String=POSTGRES
+CONFIGURE_ARGS =	-DDATABASE_BACKEND:String=POSTGRES
 
 .include <bsd.port.mk>

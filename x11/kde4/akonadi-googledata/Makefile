@@ -6,16 +6,16 @@ REVISION =	0
 
 MASTER_SITES =	http://libgcal.googlecode.com/files/
 
-LIB_DEPENDS = 	devel/libgcal \
-		x11/kde4/libs \
-		x11/kde4/pimlibs
+WANTLIB =  c m pthread stdc++
+WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
+WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
+WANTLIB += akonadi-kde kabc kcal kdeui kio kresources
+WANTLIB += gcal
+
+MODKDE4_USE =	libs pim
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
-WANTLIB += c m pthread stdc++
-WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
-WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
-WANTLIB += akonadi-kde kabc kcal kdecore kdeui kio kresources
-WANTLIB += gcal
+LIB_DEPENDS = 	devel/libgcal
 
 .include <bsd.port.mk>

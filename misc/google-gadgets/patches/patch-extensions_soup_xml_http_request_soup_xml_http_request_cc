@@ -1,0 +1,31 @@
+$OpenBSD$
+--- extensions/soup_xml_http_request/soup_xml_http_request.cc.ports.orig	Sat Oct 15 21:33:27 2011
++++ extensions/soup_xml_http_request/soup_xml_http_request.cc	Sat Oct 15 21:35:29 2011
+@@ -857,6 +857,8 @@ class XMLHttpRequest : public ScriptableHelper<XMLHttp
+ 
+   static void MessageCompleteCallback(SoupSession *session, SoupMessage *msg,
+                                       gpointer user_data) {
++    GGL_UNUSED(session);
++    GGL_UNUSED(msg);
+     XMLHttpRequest *request = static_cast<XMLHttpRequest *>(user_data);
+ #ifdef SOUP_XHR_VERBOSE
+     PrintMessageInfo(request, "MessageCompleteCallback", msg, NULL);
+@@ -1082,6 +1084,8 @@ class XMLHttpRequestFactory : public XMLHttpRequestFac
+                                    SoupAuth *auth,
+                                    gboolean retrying,
+                                    gpointer user_data) {
++    GGL_UNUSED(session);
++    GGL_UNUSED(user_data);
+     XMLHttpRequest *request = static_cast<XMLHttpRequest *>(
+         g_object_get_data(G_OBJECT(msg), kSoupMessageXHRKey));
+     ASSERT(request);
+@@ -1101,6 +1105,9 @@ class XMLHttpRequestFactory : public XMLHttpRequestFac
+                                      SoupMessage *msg,
+                                      SoupSocket *socket,
+                                      gpointer user_data) {
++    GGL_UNUSED(session);
++    GGL_UNUSED(socket);
++    GGL_UNUSED(user_data);
+     XMLHttpRequest *request = static_cast<XMLHttpRequest *>(
+         g_object_get_data(G_OBJECT(msg), kSoupMessageXHRKey));
+ #ifdef SOUP_XHR_VERBOSE

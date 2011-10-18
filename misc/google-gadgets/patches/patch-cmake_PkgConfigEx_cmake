@@ -1,0 +1,48 @@
+$OpenBSD$
+--- cmake/PkgConfigEx.cmake.ports.orig	Sat Oct 15 01:59:51 2011
++++ cmake/PkgConfigEx.cmake	Sat Oct 15 03:32:17 2011
+@@ -51,14 +51,6 @@ MACRO(PKGCONFIG_EX _package _min_version
+       OUTPUT_VARIABLE ${_definitions}
+       OUTPUT_STRIP_TRAILING_WHITESPACE)
+ 
+-    # Get library names.
+-    EXECUTE_PROCESS(
+-      COMMAND pkg-config ${_package} --libs-only-l
+-      OUTPUT_VARIABLE ${_libraries}
+-      OUTPUT_STRIP_TRAILING_WHITESPACE)
+-    STRING(REGEX REPLACE "^-l" "" ${_libraries} "${${_libraries}}")
+-    STRING(REGEX REPLACE " -l" ";" ${_libraries} "${${_libraries}}")
+-
+     # Get -L link flags.
+     EXECUTE_PROCESS(
+       COMMAND pkg-config ${_package} --libs-only-L
+@@ -66,6 +58,29 @@ MACRO(PKGCONFIG_EX _package _min_version
+       OUTPUT_STRIP_TRAILING_WHITESPACE)
+     STRING(REGEX REPLACE "^-L" "" ${_link_dirs} "${${_link_dirs}}")
+     STRING(REGEX REPLACE " -L" ";" ${_link_dirs} "${${_link_dirs}}")
++
++    # Get library paths.
++    EXECUTE_PROCESS(
++      COMMAND pkg-config ${_package} --libs-only-l
++      OUTPUT_VARIABLE _llibs
++      OUTPUT_STRIP_TRAILING_WHITESPACE)
++    SEPARATE_ARGUMENTS(_llibs)
++    SET("${_libraries}")
++    FOREACH(_lib ${_llibs})
++      SET(_libvar "${_package}_LIB_${_lib}")
++      IF("${_lib}" MATCHES "^-l")
++        # Resolve actual library
++        STRING(REGEX REPLACE "^-l" "" _lib "${_lib}")
++        FIND_LIBRARY("${_package}_LIB_${_lib}" ${_lib} HINTS ${${_link_dirs}})
++      ELSE("${_lib}" MATCHES "^-l")
++        SET("${_package}_LIB_${_lib}" "${_lib}")
++      ENDIF("${_lib}" MATCHES "^-l")
++      LIST(APPEND "${_libraries}" "${${_package}_LIB_${_lib}}")
++    ENDFOREACH(_lib ${_llibs})
++
++    STRING(REGEX REPLACE "^-l" "" _llibs "${_llibs}")
++    STRING(REGEX REPLACE " -l" ";" _llibs "${_llibs}")
++    FIND_LIBRARY(${_libraries} NAMES ${_llibs} HINTS ${${_link_dirs}})
+ 
+     # Get other link flags.
+     EXECUTE_PROCESS(

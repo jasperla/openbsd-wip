@@ -1,12 +1,10 @@
 # $OpenBSD$
 
-COMMENT =		small program to practice calculating for KDE
-DISTNAME =		kbruch-${MODKDE_VERSION}
+COMMENT =	small program to practice calculating for KDE
+DISTNAME =	kbruch-${MODKDE_VERSION}
 
-LIB_DEPENDS += 	x11/kde4/libs 
-
-RUN_DEPENDS +=	devel/desktop-file-utils
-
-WANTLIB += QtDBus QtGui QtSvg c kdecore kdeui m pthread stdc++
+WANTLIB =  c m pthread stdc++
+WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg
+WANTLIB += kdeui
 
 .include <bsd.port.mk>

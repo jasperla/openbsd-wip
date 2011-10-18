@@ -2,12 +2,9 @@
 
 COMMENT =	K Desktop Environment, pim
 DISTNAME =	kdepim-${MODKDE_VERSION}
-REVISION =	0
 HOMEPAGE =	http://pim.kde.org/
 
-USE_GROFF =		Yes
-
-SHARED_LIBS +=	akonadi_next 0.0
+SHARED_LIBS =	akonadi_next 0.0
 SHARED_LIBS +=	akregatorinterfaces 0.0
 SHARED_LIBS +=	gwsoap 0.0
 SHARED_LIBS +=	kabcgroupwise 0.0
@@ -47,15 +44,13 @@ SHARED_LIBS +=  mailcommon                0.0 # 4.7
 SHARED_LIBS +=  messagecomposer           0.0 # 4.7
 SHARED_LIBS +=  templateparser            0.0 # 4.7
 
-MODULES =		devel/gettext
+MODULES =	devel/gettext
 
-BUILD_DEPENDS +=	x11/kde4/automoc
-RUN_DEPENDS +=		x11/kde4/pim-runtime
-LIB_DEPENDS +=		x11/kde4/libs \
-			x11/kde4/pimlibs \
-			x11/grantlee
+MODKDE4_USE =	pim
 
-WANTLIB += c m pthread stdc++ z
+LIB_DEPENDS =	x11/grantlee
+
+WANTLIB =  c m pthread stdc++ z
 WANTLIB += X11 Xss
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDeclarative
 WANTLIB += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtOpenGL
@@ -63,7 +58,7 @@ WANTLIB += lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml
 WANTLIB += akonadi-calendar akonadi-contact akonadi-kde akonadi-kmime
 WANTLIB += akonadiprotocolinternals kabc>=5 kblog kcal kcalcore
-WANTLIB += kcalutils kcmutils kde3support kdecore>=8 kdeui kdewebkit
+WANTLIB += kcalutils kcmutils kde3support kdeui kdewebkit
 WANTLIB += kdnssd kfile kholidays khtml kidletime kimap kio kjs kldap
 WANTLIB += kmbox kmime knewstuff3 knotifyconfig kontactinterface kparts
 WANTLIB += kpimidentities kpimtextedit kpimutils kprintutils kresources

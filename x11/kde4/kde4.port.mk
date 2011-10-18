@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-MODKDE4_VERSION =	4.7.1
+MODKDE4_VERSION =	4.7.2
 MODKDE_VERSION =	${MODKDE4_VERSION}
 
 # General options set by module
@@ -19,7 +19,7 @@ SEPARATE_BUILD ?=	flavored
 
 MODKDE4_RESOURCES ?=	No
 
-# MODKDE4_USE: [libs | runtime] [PIM] [kross]
+# MODKDE4_USE: [libs | runtime] [PIM]
 #   - Set to empty for stuff that is a prerequisite for kde base blocks:
 #     kdelibs, kde-runtime, kdepimlibs or kdepim-runtime.
 #
@@ -32,9 +32,7 @@ MODKDE4_RESOURCES ?=	No
 #     runtime components. This is the default setting until
 #     MODKDE4_RESOURCES is enabled.
 #
-#   - Set to "PIM" that depend on KDE PIM framework.
-#
-#   - Add "kross" when at least some apps in package use the Kross framework.
+#   - Add "PIM" when port depends on KDE PIM framework.
 #
 # NOTE: There are no options like "Kate" or "Okular", they should be handled
 #       with simple LIB_DEPENDS on corresponding packages in addition to
@@ -45,18 +43,33 @@ MODKDE4_RESOURCES ?=	No
 MODKDE4_USE ?=		runtime
 .else
 MODKDE4_USE ?=		libs
+MODKDE_NO_QT ?=		Yes
+.endif
+
+_MODKDE4_USE_ALL =	libs runtime pim
+.for _modkde4_u in ${MODKDE4_USE:L}
+.   if !${_MODKDE4_USE_ALL:M${_modkde4_u}}
+ERRORS += "Fatal: unknown KDE 4 use flag: ${_modkde4_u}\n(not in ${_MODKDE4_USE_ALL})"
+.   endif
+.endfor
+.if ${MODKDE4_USE:L:Mpim}
+.   if ${MODKDE4_USE:L:Nlibs:Nruntime}
+MODKDE4_USE +=		runtime
+.   endif
 .endif
 
 PKGNAME ?= ${DISTNAME}
 
-# Small hack, until automoc4 will be gone
-.if ${PKGNAME:Mautomoc4-*}
-MODKDE4_BUILD_DEPENDS =
-.else
-MODKDE4_BUILD_DEPENDS =	x11/kde4/automoc
-.endif
+# Force CMake which has merged KDE modules
+MODKDE4_BUILD_DEPENDS =	STEM->=2.8.6:devel/cmake
 MODKDE4_LIB_DEPENDS =
 MODKDE4_RUN_DEPENDS =
+MODKDE4_WANTLIB =
+
+# Small hack, until automoc4 will be gone
+.if !${PKGNAME:Mautomoc4-*}
+MODKDE4_BUILD_DEPENDS +=	x11/kde4/automoc
+.endif
 
 FLAVOR ?=
 
@@ -78,6 +91,7 @@ MODKDE4_BUILD_DEPENDS +=	x11/kde4/libs
 MODKDE4_NO_QT ?=	No
 .   if ${MODKDE4_USE:L:Mlibs}
 MODKDE4_LIB_DEPENDS +=		x11/kde4/libs
+MODKDE4_WANTLIB +=		kdecore>=8
 .       if ${MODKDE4_USE:L:Mpim}
 MODKDE4_LIB_DEPENDS +=		x11/kde4/pimlibs
 .       endif
@@ -90,7 +104,7 @@ MODKDE4_RUN_DEPENDS +=		x11/kde4/pim-runtime
 .       endif
 .   endif    # ${MODKDE4_USE:L:Mlibs}
 
-.   if ${FLAVOR:L:Mdebug}
+.   if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE:String=Debug
 MODKDE4_CMAKE_PREFIX =	-debug
 .   else
@@ -108,6 +122,11 @@ FLAVORS +=	debug
 # ${MODKDE4_RESOURCES:L} != "no"
 .endif
 
+# Enable faster fake: ports infrastructure preserve ordering anyway.
+# Leave it here for now, it it works fine, then prod it to cmake.port.mk
+CONFIGURE_ARGS +=	-DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY:Bool=True
+
+# FIXME
 MODKDE4_CONFIGURE_ENV =	HOME=${WRKDIR}
 PORTHOME ?=		${WRKDIR}
 
@@ -122,9 +141,11 @@ MODKDE4_CONFIGURE_ENV +=	QTDIR=${MODQT_LIBDIR}
 MODKDE_BUILD_DEPENDS =	${MODKDE4_BUILD_DEPENDS}
 MODKDE_LIB_DEPENDS =	${MODKDE4_LIB_DEPENDS}
 MODKDE_RUN_DEPENDS =	${MODKDE4_RUN_DEPENDS}
+MODKDE_WANTLIB =	${MODKDE4_WANTLIB}
 MODKDE_CONFIGURE_ENV =	${MODKDE4_CONFIGURE_ENV}
 
 BUILD_DEPENDS +=	${MODKDE_BUILD_DEPENDS}
 LIB_DEPENDS +=		${MODKDE_LIB_DEPENDS}
 RUN_DEPENDS +=		${MODKDE_RUN_DEPENDS}
+WANTLIB +=		${MODKDE_WANTLIB}
 CONFIGURE_ENV +=	${MODKDE_CONFIGURE_ENV}

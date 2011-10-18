@@ -2,6 +2,7 @@
 
 PKGNAME =		kde-l10n-${MODKDE_VERSION}
 MODKDE4_RESOURCES =	Yes
+MODKDE4_USE =
 
 ALL_LANGS =	ar bg bs ca ca@valencia cs da de el en_GB es et eu fi fr ga gl
 ALL_LANGS +=	he hr hu ia id is it ja kk km kn ko lt lv nb nds nl nn pa pl
@@ -33,15 +34,15 @@ MULTI_PACKAGES +=	-${_L}
 
 SUBPACKAGE ?=	-ru
 
-KDE_L10N_LANG =	${SUBPACKAGE:S/^-//}
-SUBST_VARS +=	KDE_L10N_LANG
+KDE_L10N_LANG =	${SUBPACKAGE:C/^-//:C/$/ language/}
+SUBST_VARS =	KDE_L10N_LANG
 DESCR =		${PKGDIR}/DESCR
 
-MODULES +=		devel/gettext
-NO_REGRESS =		Yes
-WRKSRC =		${WRKDIR}
-CONFIGURE_ENV +=	CFLAGS=-I${PREFIX}/include \
-			LDFLAGS="-pthread -L${PREFIX}/lib -liconv -lintl"
+MODULES =	devel/gettext
+NO_REGRESS =	Yes
+WRKSRC =	${WRKDIR}
+CONFIGURE_ENV =	CFLAGS=-I${PREFIX}/include \
+		LDFLAGS="-pthread -L${PREFIX}/lib -liconv -lintl"
 
 BOOTSTRAP_CMAKE_CONF =	${WRKSRC}/CMakeLists.txt
 

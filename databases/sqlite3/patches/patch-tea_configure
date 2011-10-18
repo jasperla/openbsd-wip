@@ -1,6 +1,6 @@
-.$OpenBSD$
---- tea/configure.orig	Mon Sep 19 19:47:01 2011
-+++ tea/configure	Tue Sep 20 20:59:41 2011
+$OpenBSD$
+--- tea/configure.orig	Mon Sep 19 20:47:01 2011
++++ tea/configure	Thu Sep 29 14:53:03 2011
 @@ -5122,13 +5122,13 @@ $as_echo "#define _POSIX_PTHREAD_SEMANTICS 1" >>confde
  
  $as_echo "#define _THREAD_SAFE 1" >>confdefs.h

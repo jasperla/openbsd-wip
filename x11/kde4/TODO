@@ -5,13 +5,19 @@ KDE 4 programs fail in a different ways when they're given a KDE 3 profile.
 So until we find a better way, move out (rename) your ~/.kde/, or start
 all KDE 4 programs with KDEHOME=~/something/else.
 
-Also the option of installing (not building, looks like it's not possible) KDE3 and KDE4 simultaneously should be investigated. Conflicting package names get the "4" suffix now. Maybe name all packages as kde4-XXX instead?
+Also the option of installing (not building, looks like it's not possible) KDE3 and KDE4 simultaneously should be investigated. Conflicting package names get the "4" suffix now. Maybe name all packages as kde4-XXX instead? Possibly, some stuff could get installed in /usr/loca/lib{,exec}/kde4 and then symlinked to /usr/local/bin?..
 
 Note: almost no shared library bumps were made. This should be no problem
 if you don't have any KDE 4 packages installed.
 
 Not sure what's worse: warnings about incorrect links when packaging, or
 extra "mkdir -p" in almost each port.
+
+Check all installed manpages for compatibility with mandoc(1).
+
+This command:
+   find . -name 'PLIST*' | xargs egrep '^lib/[^[:space:]/]+\.so$
+finds a lot of libraries in /usr/local/lib which are not registered in SHARED_LIBS. Also, a lot of shared libraries live in lib/kde4/, and it's worth to check if they're used by more than one port. For plugins there is lib/kde4/plugins/, theoretically.
 
 Many programs produce such warnings:
 	ark(28160)/KSharedDataCache: Unable to find an appropriate lock to guard the shared cache.  This *should* be essentially impossible. :( 

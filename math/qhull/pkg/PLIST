@@ -1,23 +1,14 @@
 @comment $OpenBSD$
 %%SHARED%%
-bin/qconvex
-@bin bin/qconvex-6.2.0.1385
-bin/qdelaunay
-@bin bin/qdelaunay-6.2.0.1385
-bin/qhalf
-@bin bin/qhalf-6.2.0.1385
-bin/qhull
-@bin bin/qhull-6.2.0.1385
-bin/qvoronoi
-@bin bin/qvoronoi-6.2.0.1385
-bin/rbox
-@bin bin/rbox-6.2.0.1385
-bin/user_eg
-@bin bin/user_eg-6.2.0.1385
-bin/user_eg2
-@bin bin/user_eg2-6.2.0.1385
-bin/user_eg3
-@bin bin/user_eg3-6.2.0.1385
+@bin bin/qconvex
+@bin bin/qdelaunay
+@bin bin/qhalf
+@bin bin/qhull
+@bin bin/qvoronoi
+@bin bin/rbox
+@bin bin/user_eg
+@bin bin/user_eg2
+@bin bin/user_eg3
 include/libqhull/
 include/libqhull/geom.h
 include/libqhull/io.h
@@ -63,39 +54,38 @@ lib/libqhullstatic.a
 lib/libqhullstatic_p.a
 @man man/man1/qhull.1
 @man man/man1/rbox.1
-share/doc/packages/
-share/doc/packages/qhull/
-share/doc/packages/qhull/index.htm
-share/doc/packages/qhull/normal_voronoi_knauss_oesterle.jpg
-share/doc/packages/qhull/qconvex.htm
-share/doc/packages/qhull/qdelau_f.htm
-share/doc/packages/qhull/qdelaun.htm
-share/doc/packages/qhull/qh--4d.gif
-share/doc/packages/qhull/qh--cone.gif
-share/doc/packages/qhull/qh--dt.gif
-share/doc/packages/qhull/qh--geom.gif
-share/doc/packages/qhull/qh--half.gif
-share/doc/packages/qhull/qh--rand.gif
-share/doc/packages/qhull/qh-code.htm
-share/doc/packages/qhull/qh-eg.htm
-share/doc/packages/qhull/qh-faq.htm
-share/doc/packages/qhull/qh-get.htm
-share/doc/packages/qhull/qh-impre.htm
-share/doc/packages/qhull/qh-optc.htm
-share/doc/packages/qhull/qh-optf.htm
-share/doc/packages/qhull/qh-optg.htm
-share/doc/packages/qhull/qh-opto.htm
-share/doc/packages/qhull/qh-optp.htm
-share/doc/packages/qhull/qh-optq.htm
-share/doc/packages/qhull/qh-optt.htm
-share/doc/packages/qhull/qh-quick.htm
-share/doc/packages/qhull/qhalf.htm
-share/doc/packages/qhull/qhull-cpp.xml
-share/doc/packages/qhull/qhull.htm
-share/doc/packages/qhull/qhull.man
-share/doc/packages/qhull/qhull.txt
-share/doc/packages/qhull/qvoron_f.htm
-share/doc/packages/qhull/qvoronoi.htm
-share/doc/packages/qhull/rbox.htm
-share/doc/packages/qhull/rbox.man
-share/doc/packages/qhull/rbox.txt
+share/doc/qhull/
+share/doc/qhull/index.htm
+share/doc/qhull/normal_voronoi_knauss_oesterle.jpg
+share/doc/qhull/qconvex.htm
+share/doc/qhull/qdelau_f.htm
+share/doc/qhull/qdelaun.htm
+share/doc/qhull/qh--4d.gif
+share/doc/qhull/qh--cone.gif
+share/doc/qhull/qh--dt.gif
+share/doc/qhull/qh--geom.gif
+share/doc/qhull/qh--half.gif
+share/doc/qhull/qh--rand.gif
+share/doc/qhull/qh-code.htm
+share/doc/qhull/qh-eg.htm
+share/doc/qhull/qh-faq.htm
+share/doc/qhull/qh-get.htm
+share/doc/qhull/qh-impre.htm
+share/doc/qhull/qh-optc.htm
+share/doc/qhull/qh-optf.htm
+share/doc/qhull/qh-optg.htm
+share/doc/qhull/qh-opto.htm
+share/doc/qhull/qh-optp.htm
+share/doc/qhull/qh-optq.htm
+share/doc/qhull/qh-optt.htm
+share/doc/qhull/qh-quick.htm
+share/doc/qhull/qhalf.htm
+share/doc/qhull/qhull-cpp.xml
+share/doc/qhull/qhull.htm
+share/doc/qhull/qhull.man
+share/doc/qhull/qhull.txt
+share/doc/qhull/qvoron_f.htm
+share/doc/qhull/qvoronoi.htm
+share/doc/qhull/rbox.htm
+share/doc/qhull/rbox.man
+share/doc/qhull/rbox.txt

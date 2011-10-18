@@ -1,8 +1,0 @@
-- Cleaned up the build, checked that the patches for qhull 2010
-might already be included in the CMakeLists.txt in ${WRKBUILD}
-
-- make plist, port-lib-depends-check & lib-depends-check are all
-happy. 
-
-- Somebody please check if qhull SHARED_LIBS bump is needed or its
-okay since qhull --> qhull6.

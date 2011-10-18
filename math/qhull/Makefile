@@ -4,7 +4,6 @@ COMMENT =		computing the convex hull
 
 VERSION =		2011.1
 DISTNAME =		qhull-${VERSION}
-REVISION =		0
 
 SHARED_LIBS =		qhull6		0.0 # 6.2
 
@@ -29,5 +28,6 @@ MODULES =		devel/cmake
 NO_REGRESS =		Yes
 
 CFLAGS +=		-fno-strict-aliasing
+CONFIGURE_ARGS +=	-D DOC_INSTALL_DIR=${PREFIX}/share/doc/qhull
 
 .include <bsd.port.mk>

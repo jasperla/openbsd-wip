@@ -1,0 +1,9 @@
+- Cleaned up the build, checked that the patches for qhull 2010
+are already included in the CMakeLists.txt in ${WRKBUILD} for qhull 2011
+
+- make plist, port-lib-depends-check & lib-depends-check are all
+happy.
+
+- qhull 2011 has switched to C++, hence different lib/libqhull* in PLIST 
+- qhull 2011 C interface is accessed through lib/libqhullstatic.a + the .so
+- qhull 2011 C++ interface accessed through lib/libqhullcpp.a
