@@ -5,6 +5,7 @@ SHARED_ONLY=	Yes
 COMMENT=	clone of S, a powerful math/statistics/graphics language
 DISTNAME=	R-2.13.1
 REVISION=	0
+BROKEN =	have to update to other porting efforts, don't use this one.
 
 SHARED_LIBS+=	Rblas 213.1
 SHARED_LIBS+=	Rlapack 213.1
