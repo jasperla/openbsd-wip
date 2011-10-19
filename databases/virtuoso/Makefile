@@ -1,20 +1,13 @@
 # $OpenBSD$
 
-#ONLY_FOR_ARCHS =	???
-#NOT_FOR_ARCHS =	???
-#SHARED_ONLY =		???
-
 COMMENT =	object-relational SQL database
 V =		6.1.3
 DISTNAME =	virtuoso-opensource-$V
 PKGNAME =	virtuoso-$V
+BROKEN =	garbled gawk generated files, investigate later.
 
 CATEGORIES =	databases
 HOMEPAGE =	http://www.openlinksw.com/
-
-# SHARED_LIBS =	???
-
-#MAINTAINER =		???
 
 # GPLv2, plus some more rights given
 PERMIT_PACKAGE_CDROM =	Yes
@@ -51,6 +44,8 @@ COPTS =			-I${LOCALBASE}/include/wbxml \
 			-L${LOCALBASE}/lib
 
 CONFIGURE_ENV =		FLEX="${LOCALBASE}/bin/gflex" \
+			GAWK="${LOCALBASE}/bin/gawk" \
+			AWK="${LOCALBASE}/bin/gawk" \
 			LEX="${LOCALBASE}/bin/gflex" \
 			YACC="${LOCALBASE}/bin/bison -y" \
 			CFLAGS="${CFLAGS}"
@@ -60,27 +55,17 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-hslookup \
 			--disable-all-vads \
 			--without-internal-zlib \
-			--with-jdk2=no
+			--with-jdk2=no \
+			--with-jdk3=no
 
 FLAVOR ?=
-PSEUDO_FLAVORS =	java15 java16
-.if ${FLAVOR:Mjava15}
-.	if ${FLAVOR:Njava15}
-ERRORS +=		Fatal: only one Java flavor (${FLAVORS})
-ERRORS +=		could be selected at the same time.
-.	endif
-MODULES +=		java
-MODJAVA_VER =		1.5
-CONFIGURE_ENV +=	--with-jdk3=${JAVA_HOME} \
-			--with-jdk4=no
-.elif ${FLAVOR:Mjava16}
+PSEUDO_FLAVORS =	java16
+.if ${FLAVOR:Mjava16}
 MODULES +=		java
 MODJAVA_VER =		1.6
-CONFIGURE_ENV +=	--with-jdk3=no \
-			--with-jdk4=${JAVA_HOME}
+CONFIGURE_ENV +=	--with-jdk4=${JAVA_HOME}
 .else
-CONFIGURE_ENV +=	--with-jdk3=no \
-			--with-jdk4=no
+CONFIGURE_ENV +=	--with-jdk4=no
 .endif
 
 #REGRESS_IS_INTERACTIVE =	Yes
