@@ -106,7 +106,7 @@
      SUBDIR += konsole			# issues
      SUBDIR += akonadi-googledata	# untested
      SUBDIR += kdevplatform		# untested
-     SUBDIR += kdevelop
+#     SUBDIR += kdevelop
      SUBDIR += yakuake			# minor issues
      
 # additional resources
