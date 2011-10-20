@@ -6,7 +6,7 @@ CATEGORIES =	devel
 COMMENT =	introspective wrappers around the Qt
 DISTNAME =	smokeqt-${MODKDE_VERSION}
 
-WANTLIB = c m stdc++
+WANTLIB = m stdc++
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDeclarative
 WANTLIB += lib/qt4/QtGui lib/qt4/QtHelp lib/qt4/QtMultimedia
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtOpenGL lib/qt4/QtScript
