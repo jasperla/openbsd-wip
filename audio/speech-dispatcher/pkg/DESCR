@@ -1,6 +1,0 @@
-Speech Dispatcher provides a high-level interface to Text-to-Speech
-systems and makes it possible to combine different applications
-with different speech synthesizers. Both Free Software and proprietary
-synthesizers are supported. Speech Dispatcher also manages
-synchronization and serialization of speech messages so that they
-are spoken in an orderly manner.
