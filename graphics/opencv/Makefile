@@ -2,6 +2,7 @@
 
 ONLY_FOR_ARCH=		${GCC4_ARCHS}
 
+BROKEN=			fix extract properly, doesn't work on amd64 atleast
 SHARED_ONLY=		Yes
 
 COMMENT-main=		library of programming functions for real time cv
