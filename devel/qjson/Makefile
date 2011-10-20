@@ -1,5 +1,4 @@
 # $OpenBSD$
-# $FreeBSD: ports/devel/qjson/Makefile,v 1.3 2010/06/12 10:41:02 avilla Exp $
 
 COMMENT=	Qt-based library that maps JSON data to QVariant objects
 DISTNAME =	qjson-0.7.1
@@ -23,11 +22,6 @@ PERMIT_PACKAGE_FTP =		Yes
 
 BUILD_DEPENDS =	devel/doxygen
 DOCSDIR =	${PREFIX}/share/doc/qjson
-
-#pre-configure:
-#	${REINPLACE_CMD} -e '/pkgconfig/ s/$${LIB_SUFFIX}/data/' \
-#		-e 's|apps/cmake/modules|cmake/Modules|' \
-#		${WRKSRC}/CMakeLists.txt
 
 post-build:
 	cd ${WRKSRC}/doc && doxygen
