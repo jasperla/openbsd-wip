@@ -64,6 +64,7 @@ MODKDE4_USE =
 
 BUILD_DEPENDS =	misc/shared-desktop-ontologies \
 		misc/shared-mime-info \
+		textproc/docbook \
 		textproc/docbook-xsl
 
 RUN_DEPENDS =	misc/shared-mime-info \
