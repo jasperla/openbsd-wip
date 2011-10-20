@@ -100,7 +100,7 @@ SEPARATE_BUILD =	simple
 #REGRESS_TARGET =	???
 #REGRESS_DEPENDS =	???
 
-CONFIGURE_ARGS +=	-DGGL_DEFAULT_BROWSER_PLUGINS_DIR=${LOCALBASE}/lib/mozilla/plugins
+CONFIGURE_ARGS	+=	-DGGL_DEFAULT_BROWSER_PLUGINS_DIR=${LOCALBASE}/lib/mozilla/plugins
 
 # There are .orig leftovers in distribution
 PATCHORIG =		.ports.orig
