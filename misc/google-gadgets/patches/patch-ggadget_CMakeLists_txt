@@ -1,12 +1,12 @@
 $OpenBSD$
---- ggadget/CMakeLists.txt.ports.orig	Sat Oct 15 03:54:46 2011
-+++ ggadget/CMakeLists.txt	Sat Oct 15 03:58:18 2011
-@@ -117,7 +117,7 @@ SET(SRCS
- 
- SET(LIBS
-   unzip
--  ltdl
-+  ${LTDL_LIBRARY}
+--- ggadget/CMakeLists.txt.ports.orig	Thu Oct 20 17:22:45 2011
++++ ggadget/CMakeLists.txt	Thu Oct 20 17:23:11 2011
+@@ -116,7 +116,7 @@ SET(SRCS
  )
  
- ADD_LIBRARY(ggadget${GGL_EPOCH} SHARED ${SRCS})
+ SET(LIBS
+-  ltdl
++  ${LTDL_LIBRARY}
+   unzip
+ )
+ 
