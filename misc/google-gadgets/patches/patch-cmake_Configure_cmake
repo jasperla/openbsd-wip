@@ -1,6 +1,6 @@
 $OpenBSD$
---- cmake/Configure.cmake.ports.orig	Wed Jan 27 08:59:13 2010
-+++ cmake/Configure.cmake	Sat Oct 15 21:43:27 2011
+--- cmake/Configure.cmake.ports.orig	Tue Jan 26 23:59:13 2010
++++ cmake/Configure.cmake	Thu Oct 20 18:11:06 2011
 @@ -68,8 +68,11 @@ SET(GGL_EPOCH "-1.0")
  # defined in configure.ac, eg.:
  # LIBGGADGET_CURRENT, LIBGGADGET_REVISION and LIBGGADGET_AGE
@@ -24,6 +24,15 @@ $OpenBSD$
  SET(GGL_INCLUDE_DIR "${CMAKE_INSTALL_PREFIX}/include/${PRODUCT_NAME}")
  SET(GGL_SYSDEPS_INCLUDE_DIR "${LIB_INSTALL_DIR}/${PRODUCT_NAME}/include")
  
+@@ -169,7 +172,7 @@ ENDIF(GGL_DEFAULT_SSL_CA_FILE)
+ 
+ INCLUDE(CheckCCompilerFlag)
+ IF(UNIX)
+-  SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -Wall -Werror -Wconversion -Wextra")
++  SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -Wconversion -Wextra")
+   # No "-Wall -Werror" for C flags, to avoid third_party code break.
+   SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
+   SET(PROJECT_RESOURCE_DIR share/${PRODUCT_NAME})
 @@ -244,11 +247,26 @@ ENDIF(HAVE_MMAP)
  
  # Check necessary libraries.
