@@ -52,7 +52,6 @@ lib/attica_kde.so
 lib/kconf_update_bin/
 @bin lib/kconf_update_bin/phonon_devicepreference_update
 @bin lib/kconf_update_bin/phonon_deviceuids_update
-lib/kde4/
 lib/kde4/comicbookthumbnail.so
 lib/kde4/cursorthumbnail.so
 lib/kde4/djvuthumbnail.so
@@ -161,7 +160,6 @@ lib/kde4/plasma_containment_newspaper.so
 lib/kde4/plasma_dataenginescript_javascript.so
 lib/kde4/plasma_packagestructure_javascriptaddon.so
 lib/kde4/plasma_runnerscript_javascript.so
-lib/kde4/plugins/
 lib/kde4/plugins/phonon_platform/
 lib/kde4/plugins/phonon_platform/kde.so
 lib/kde4/svgthumbnail.so
@@ -180,7 +178,6 @@ lib/libknotifyplugin.so
 lib/libnepomukcommon.so
 lib/libnepomukdatamanagement.so
 @lib lib/libnepomuksync.so.${LIBnepomuksync_VERSION}
-share/applications/kde4/
 share/applications/kde4/Help.desktop
 share/applications/kde4/knetattach.desktop
 share/applications/kde4/nepomukbackup.desktop
@@ -810,9 +807,9 @@ share/icons/hicolor/64x64/
 share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/knetattach.png
 @comment share/icons/hicolor/index.theme
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/knetattach.svgz
-share/kde4/
-share/kde4/services/
 share/kde4/services/about.protocol
 share/kde4/services/applications.protocol
 share/kde4/services/ar.protocol
