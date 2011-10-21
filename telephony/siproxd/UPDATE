@@ -16,8 +16,4 @@ made these additional changes:
 
 - Added an rc script for siproxd.
 
-- Added USE_LIBTOOL=Yes and libltdl LIB_DEPENDS. Note that for this to
-  work I had to tell CONFIGURE_ENV to set a funky -D define in CFLAGS;
-  otherwise we will get an "undefined reference to
-  `lt__PROGRAM__LTX_preloaded_symbols'" error with libtool/libltdl 2.4.
-  I am not sure if this is the right way to do it.
+- Added USE_LIBTOOL=gnu and libltdl LIB_DEPENDS.
