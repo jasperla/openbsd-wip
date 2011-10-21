@@ -10,10 +10,11 @@
 #  test		- looks like working but deepier tests needed
 #  untested	- only compilation tested
 # Other marks describe actual problems, meaning "this should be fixed".
-# Lack of mark means "port is on its way to import, please wait"
-# Architecture at end denotes, it has been make configure, make fake, make plist,
-	 make port-lib-depends-check, make lib-depends-check ALL work
-
+# Lack of mark means "port is on its way to import, please wait".
+#
+# Architecture at end denotes that configure, fake, plist, 
+# port-lib-depends-check and lib-depends-check ALL work on this arch.
+#
 # Eventually this stuff will be partly moved to corresponding directories,
 # leaving only "basic" KDE packages here (those who get in actual
 # releases of KDE SC).
@@ -110,6 +111,7 @@
      SUBDIR += kdevplatform		# untested
 #     SUBDIR += kdevelop
      SUBDIR += yakuake			# minor issues
+     SUBDIR += kwebkitpart		# OK
      
 # additional resources
      SUBDIR += plasma-addons		# test		i386
