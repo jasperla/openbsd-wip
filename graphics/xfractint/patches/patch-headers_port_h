@@ -1,0 +1,12 @@
+$OpenBSD$
+--- headers/port.h.orig	Fri Oct 21 16:20:15 2011
++++ headers/port.h	Fri Oct 21 16:20:38 2011
+@@ -44,7 +44,7 @@
+ /* If endian.h is not present, it can be handled in the code below, */
+ /* but if you have this file, it can make it more fool proof. */
+ #if (defined(XFRACT) && !defined(__sun))
+-#if defined(sgi)
++#if defined(sgi) || defined(__OpenBSD__)
+ #include <sys/endian.h>
+ #elif defined(__APPLE__)
+ #include <machine/endian.h>

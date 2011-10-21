@@ -1,0 +1,31 @@
+$OpenBSD$
+--- Makefile.orig	Fri Oct 21 16:35:40 2011
++++ Makefile	Fri Oct 21 16:39:37 2011
+@@ -343,18 +343,17 @@ clean:
+ 	cd $(UDIR) ; ${MAKE} clean
+ 
+ install: xfractint fractint.hlp
+-	$(STRIP) xfractint
+ 	$(INSTALL) -d $(BINDIR) $(MANDIR) $(SRCDIR)/$(PDIR) $(SRCDIR)/$(FDIR) \
+ 		$(SRCDIR)/$(IDIR) $(SRCDIR)/$(LDIR) $(SRCDIR)/$(MDIR) $(SRCDIR)/$(XDIR)
+-	$(INSTALL) xfractint -T $(BINDIR)/xfractint;
+-	$(INSTALL) -m 644 -T $(UDIR)/xfractint.man $(MANDIR)/xfractint.1;
+-	$(INSTALL) -m 644 -t $(SRCDIR) fractint.hlp sstools.ini $(DOCS)
+-	$(INSTALL) -m 644 -t $(SRCDIR)/$(PDIR) $(PARFILES)
+-	$(INSTALL) -m 644 -t $(SRCDIR)/$(FDIR) $(FRMFILES)
+-	$(INSTALL) -m 644 -t $(SRCDIR)/$(IDIR) $(IFSFILES)
+-	$(INSTALL) -m 644 -t $(SRCDIR)/$(LDIR) $(LFILES)
+-	$(INSTALL) -m 644 -t $(SRCDIR)/$(MDIR) $(MAPFILES)
+-	$(INSTALL) -m 644 -t $(SRCDIR)/$(XDIR) $(XTRAFILES)
++	$(BSD_INSTALL_PROGRAM) xfractint $(BINDIR)/xfractint;
++	$(INSTALL) -m 644 $(UDIR)/xfractint.man $(MANDIR)/xfractint.1;
++	$(INSTALL) -m 644 fractint.hlp sstools.ini $(DOCS) $(SRCDIR)
++	$(INSTALL) -m 644 $(PARFILES) $(SRCDIR)/$(PDIR)
++	$(INSTALL) -m 644 $(FRMFILES) $(SRCDIR)/$(FDIR)
++	$(INSTALL) -m 644 $(IFSFILES) $(SRCDIR)/$(IDIR)
++	$(INSTALL) -m 644 $(LFILES) $(SRCDIR)/$(LDIR)
++	$(INSTALL) -m 644 $(MAPFILES) $(SRCDIR)/$(MDIR)
++	$(INSTALL) -m 644 $(XTRAFILES) $(SRCDIR)/$(XDIR)
+ 
+ uninstall:
+ 	cd $(SRCDIR); rm -f $(PARFILES)
