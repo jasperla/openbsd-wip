@@ -1,5 +1,6 @@
 # $OpenBSD: Makefile,v 1.6 2010/11/20 19:56:47 espie Exp $
 
+SHARED_ONLY=	Yes
 COMMENT=	proxy/masquerading daemon for the SIP protocol
 
 DISTNAME=	siproxd-0.8.1
@@ -22,7 +23,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=siproxd/}
 USE_LIBTOOL=	gnu
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${PREFIX}/lib"
+CONFIGURE_ENV+=	LDFLAGS="-L${PREFIX}/lib"
 
 LIB_DEPENDS=	telephony/libosip2 \
 		devel/libtool,-ltdl
@@ -41,6 +42,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${EXDIR}
 	${INSTALL_DATA} ${WRKDIST}/doc/siproxd.conf.example ${EXDIR}
 	${INSTALL_DATA} ${WRKDIST}/doc/siproxd_passwd.cfg ${EXDIR}
-	rm ${PREFIX}/lib/siproxd/plugin_*.a
+	rm ${PREFIX}/lib/siproxd/plugin_*.a ${PREFIX}/lib/siproxd/plugin_*.la
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 $OpenBSD: patch-doc_siproxd_conf_example,v 1.1 2006/11/27 11:16:50 msf Exp $
 --- doc/siproxd.conf.example.orig	Mon Jun 20 16:25:27 2011
-+++ doc/siproxd.conf.example	Sat Sep 10 21:54:04 2011
++++ doc/siproxd.conf.example	Thu Oct 20 23:10:13 2011
 @@ -78,8 +78,8 @@ silence_log = 1
  # Secure Enviroment settings:
  #   user:	uid/gid to switch to after startup
@@ -30,12 +30,31 @@ $OpenBSD: patch-doc_siproxd_conf_example,v 1.1 2006/11/27 11:16:50 msf Exp $
  
  ######################################################################
  # global switch to control the RTP proxy behaviour
-@@ -323,7 +323,7 @@ debug_port = 0
+@@ -323,17 +323,17 @@ debug_port = 0
  # the processing order is given by the load order.
  #
  # plugin_dir: MUST be terminated with '/'
 -plugindir=/usr/lib/siproxd/
 +plugindir=${PREFIX}/lib/siproxd/
  #
- # List of plugins to load. MUST use the .la file extension!
- #load_plugin=plugin_demo.la
+-# List of plugins to load. MUST use the .la file extension!
+-#load_plugin=plugin_demo.la
+-#load_plugin=plugin_shortdial.la
+-load_plugin=plugin_logcall.la
+-#load_plugin=plugin_defaulttarget.la
+-#load_plugin=plugin_fix_bogus_via.la
+-#load_plugin=plugin_stun.la
+-#load_plugin=plugin_prefix.la
+-#load_plugin=plugin_regex.la
++# List of plugins to load.
++#load_plugin=plugin_demo.so
++#load_plugin=plugin_shortdial.so
++load_plugin=plugin_logcall.so
++#load_plugin=plugin_defaulttarget.so
++#load_plugin=plugin_fix_bogus_via.so
++#load_plugin=plugin_stun.so
++#load_plugin=plugin_prefix.so
++#load_plugin=plugin_regex.so
+ 
+ 
+ ######################################################################
