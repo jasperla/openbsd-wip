@@ -26,7 +26,7 @@
 
 # libraries
      SUBDIR += libs			# test		i386 amd64
-     SUBDIR += pimlibs			# test		i386 amd64
+     SUBDIR += pimlibs			# test, fake symlinks pkg	i386 amd64
      SUBDIR += qimageblitz		# test		i386 amd64
 
 # extra base
