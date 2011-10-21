@@ -11,38 +11,40 @@
 #  untested	- only compilation tested
 # Other marks describe actual problems, meaning "this should be fixed".
 # Lack of mark means "port is on its way to import, please wait"
+# Architecture at end denotes, it has been make configure, make fake, make plist,
+	 make port-lib-depends-check, make lib-depends-check ALL work
 
 # Eventually this stuff will be partly moved to corresponding directories,
 # leaving only "basic" KDE packages here (those who get in actual
 # releases of KDE SC).
 
 # basic bricks
-     SUBDIR += akonadi			# minor issues
-     SUBDIR += attica			# test
-     SUBDIR += automoc			# OK
-     SUBDIR += oxygen-icons		# OK
+     SUBDIR += akonadi			# minor issues	i386 amd64
+     SUBDIR += attica			# test		i386 amd64
+     SUBDIR += automoc			# OK		i386 amd64
+     SUBDIR += oxygen-icons		# OK		i386 amd64
 
 # libraries
-     SUBDIR += libs			# test
-     SUBDIR += pimlibs			# test
-     SUBDIR += qimageblitz		# test
+     SUBDIR += libs			# test		i386 amd64
+     SUBDIR += pimlibs			# test		i386 amd64
+     SUBDIR += qimageblitz		# test		i386 amd64
 
 # extra base
-     SUBDIR += runtime			# test
+     SUBDIR += runtime			# test, fake symlinks pkg	i386 amd64
      SUBDIR += pim-runtime		# test
      SUBDIR += workspace		# test
      SUBDIR += baseapps			# test
      
 # bindings and wrappers
-     SUBDIR += kimono			# compilation fails, bug in mono-2.pc
-     SUBDIR += korundum			# test
-     SUBDIR += kross-interpreters	# test
-     SUBDIR += perlkde			# test
+#     SUBDIR += kimono			# compilation fails, bug in mono-2.pc	i386
+     SUBDIR += korundum			# test					i386
+     SUBDIR += kross-interpreters	# test					i386
+     SUBDIR += perlkde			# test					i386
      SUBDIR += perlqt			# test
      SUBDIR += pykde4			# no Polkit-Qt support, DLFCN trouble
-     SUBDIR += qtruby			# test
+     SUBDIR += qtruby			# test					i386
      SUBDIR += qyoto			# test
-     SUBDIR += smokegen			# no Akonadi
+     SUBDIR += smokegen			# no Akonadi	i386 amd64
      SUBDIR += smokekde			# test
      SUBDIR += smokeqt			# test
      
@@ -110,8 +112,8 @@
      SUBDIR += yakuake			# minor issues
      
 # additional resources
-     SUBDIR += plasma-addons		# test
-     SUBDIR += l10n			# OK
-     SUBDIR += wallpapers		# OK
+     SUBDIR += plasma-addons		# test		i386
+     SUBDIR += l10n			# OK		i386
+     SUBDIR += wallpapers		# OK		i386
 
 .include <bsd.port.subdir.mk>
