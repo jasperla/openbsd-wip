@@ -46,7 +46,9 @@ MODULES =	devel/gettext
 
 MODKDE4_USE =	libs
 
-BUILD_DEPENDS =	devel/boost
+BUILD_DEPENDS =	devel/boost \
+		textproc/docbook \
+		textproc/docbook-xsl
 
 LIB_DEPENDS +=	databases/openldap \
 		graphics/prison \
