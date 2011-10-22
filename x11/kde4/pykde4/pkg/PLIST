@@ -402,7 +402,6 @@ share/sip/PyKDE4/kdeui/kpagemodel.sip
 share/sip/PyKDE4/kdeui/kpageview.sip
 share/sip/PyKDE4/kdeui/kpagewidget.sip
 share/sip/PyKDE4/kdeui/kpagewidgetmodel.sip
-share/sip/PyKDE4/kdeui/kpalette.sip
 share/sip/PyKDE4/kdeui/kpassivepopup.sip
 share/sip/PyKDE4/kdeui/kpassivepopupmessagehandler.sip
 share/sip/PyKDE4/kdeui/kpassworddialog.sip
@@ -458,7 +457,6 @@ share/sip/PyKDE4/kdeui/ktabwidget.sip
 share/sip/PyKDE4/kdeui/ktextbrowser.sip
 share/sip/PyKDE4/kdeui/ktextedit.sip
 share/sip/PyKDE4/kdeui/ktimecombobox.sip
-share/sip/PyKDE4/kdeui/ktimezone.sip
 share/sip/PyKDE4/kdeui/ktimezonewidget.sip
 share/sip/PyKDE4/kdeui/ktip.sip
 share/sip/PyKDE4/kdeui/ktitlewidget.sip
@@ -565,7 +563,6 @@ share/sip/PyKDE4/kio/kdesktopfileactions.sip
 share/sip/PyKDE4/kio/kdevicelistmodel.sip
 share/sip/PyKDE4/kio/kdirlister.sip
 share/sip/PyKDE4/kio/kdirmodel.sip
-share/sip/PyKDE4/kio/kdirnotify.sip
 share/sip/PyKDE4/kio/kdiroperator.sip
 share/sip/PyKDE4/kio/kdirselectdialog.sip
 share/sip/PyKDE4/kio/kdirsortfilterproxymodel.sip
