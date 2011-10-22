@@ -21,14 +21,13 @@ WANTLIB += kpimtextedit kpimutils kresources krosscore mailtransport
 WANTLIB += microblog nepomuk nepomukquery phonon solid soprano
 WANTLIB += streamanalyzer streams
 
-MODKDE4_USE =	libs
+MODKDE4_USE =	libs pim
 
 BUILD_DEPENDS =	devel/boost
 
 LIB_DEPENDS =	databases/soprano \
 		databases/strigi \
 		multimedia/phonon \
-		x11/kde4/akonadi \
-		x11/kde4/pimlibs
+		x11/kde4/akonadi
 
 .include <bsd.port.mk>
