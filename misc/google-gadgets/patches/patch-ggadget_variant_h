@@ -1,0 +1,26 @@
+$OpenBSD$
+--- ggadget/variant.h.ports.orig	Sat Oct 22 21:38:47 2011
++++ ggadget/variant.h	Sat Oct 22 21:44:39 2011
+@@ -189,6 +189,14 @@ class Variant {
+   }
+ 
+   /**
++   * Construct a @c Variant with a @c size_t value.
++   * The type of the constructed @c Variant is @c TYPE_INT64.
++   */
++  explicit Variant(size_t value) : type_(TYPE_INT64) {
++    v_.int64_value_ = static_cast<int64_t>(value);
++  }
++
++  /**
+    * Construct a @c Variant with a @c double value.
+    * The type of the constructed @c Variant is @c TYPE_DOUBLE.
+    */
+@@ -419,6 +427,7 @@ struct VariantType<c_type> {                          
+ 
+ SPECIALIZE_VARIANT_TYPE(void, TYPE_VOID)
+ SPECIALIZE_VARIANT_TYPE(bool, TYPE_BOOL)
++SPECIALIZE_VARIANT_TYPE(size_t, TYPE_INT64)
+ SPECIALIZE_VARIANT_TYPE(float, TYPE_DOUBLE)
+ SPECIALIZE_VARIANT_TYPE(double, TYPE_DOUBLE)
+ SPECIALIZE_VARIANT_TYPE(const char *, TYPE_STRING)
