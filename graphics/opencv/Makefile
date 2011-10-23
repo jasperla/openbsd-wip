@@ -1,5 +1,6 @@
 # $OpenBSD: Makefile,v 1.3 2011/07/16 22:43:57 espie Exp $
 
+BROKEN=			does not build, use official packages for now
 ONLY_FOR_ARCH=		${GCC4_ARCHS}
 
 SHARED_ONLY=		Yes
