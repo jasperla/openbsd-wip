@@ -172,14 +172,12 @@ lib/cmake/KDE4Workspace/KDE4WorkspaceConfig.cmake
 lib/cmake/KDE4Workspace/KDE4WorkspaceConfigVersion.cmake
 lib/cmake/KDE4Workspace/KDE4WorkspaceLibraryTargets${MODKDE4_CMAKE_PREFIX}.cmake
 lib/cmake/KDE4Workspace/KDE4WorkspaceLibraryTargets.cmake
-lib/kconf_update_bin/
 @bin lib/kconf_update_bin/krdb_clearlibrarypath
 @bin lib/kconf_update_bin/kwin_update_default_rules
 @bin lib/kconf_update_bin/kwin_update_tabbox_settings
 @bin lib/kconf_update_bin/kwin_update_window_settings
 @bin lib/kconf_update_bin/plasma-add-shortcut-to-menu
 @bin lib/kconf_update_bin/plasma-to-plasma-desktop
-lib/kde4/
 lib/kde4/classic_mode.so
 lib/kde4/devinfo.so
 lib/kde4/fontthumbnail.so
@@ -372,15 +370,16 @@ lib/kde4/plasma_engine_systemmonitor.so
 lib/kde4/plasma_engine_tasks.so
 lib/kde4/plasma_engine_time.so
 lib/kde4/plasma_engine_weather.so
+lib/kde4/plasma_package_ggl.so
 lib/kde4/plasma_packagestructure_dashboard.so
 lib/kde4/plasma_packagestructure_share.so
 lib/kde4/plasma_packagestructure_web.so
+lib/kde4/plasma_scriptengine_ggl.so
 lib/kde4/plasma_toolbox_desktoptoolbox.so
 lib/kde4/plasma_toolbox_nettoolbox.so
 lib/kde4/plasma_toolbox_paneltoolbox.so
 lib/kde4/plasma_wallpaper_color.so
 lib/kde4/plasma_wallpaper_image.so
-lib/kde4/plugins/
 lib/kde4/plugins/designer/ksignalplotterwidgets.so
 lib/kde4/plugins/designer/ksysguardlsofwidgets.so
 lib/kde4/plugins/designer/ksysguardwidgets.so
@@ -416,7 +415,7 @@ lib/libkdeinit4_plasma-windowed.so
 @lib lib/libkfontinst.so.${LIBkfontinst_VERSION}
 @lib lib/libkfontinstui.so.${LIBkfontinstui_VERSION}
 @lib lib/libkhotkeysprivate.so.${LIBkhotkeysprivate_VERSION}
-lib/libkickoff.so
+@lib lib/libkickoff.so.${LIBkickoff_VERSION}
 @lib lib/libkscreensaver.so.${LIBkscreensaver_VERSION}
 @lib lib/libksgrd.so.${LIBksgrd_VERSION}
 @lib lib/libksignalplotter.so.${LIBksignalplotter_VERSION}
@@ -430,19 +429,17 @@ lib/libkickoff.so
 @lib lib/libplasmaclock.so.${LIBplasmaclock_VERSION}
 @lib lib/libplasmagenericshell.so.${LIBplasmagenericshell_VERSION}
 @lib lib/libpowerdevilcore.so.${LIBpowerdevilcore_VERSION}
-lib/libpowerdevilui.so
+@lib lib/libpowerdevilui.so.${LIBpowerdevilui_VERSION}
 @lib lib/libprocesscore.so.${LIBprocesscore_VERSION}
 @lib lib/libprocessui.so.${LIBprocessui_VERSION}
 @lib lib/libsolidcontrol.so.${LIBsolidcontrol_VERSION}
 @lib lib/libsolidcontrolifaces.so.${LIBsolidcontrolifaces_VERSION}
-lib/libsystemsettingsview.so.2
+@lib lib/libsystemsettingsview.so.${LIBsystemsettingsview_VERSION}
 @lib lib/libtaskmanager.so.${LIBtaskmanager_VERSION}
 @lib lib/libweather_ion.so.${LIBweather_ion_VERSION}
-lib/python2.7/site-packages/PyKDE4/
 lib/python2.7/site-packages/PyKDE4/plasmascript.py
 lib/python2.7/site-packages/PyKDE4/plasmascript.pyc
 lib/strigi/strigita_font.so
-share/applications/kde4/
 share/applications/kde4/kfontview.desktop
 share/applications/kde4/kinfocenter.desktop
 share/applications/kde4/klipper.desktop
@@ -470,19 +467,16 @@ share/apps/color-schemes/Steel.colors
 share/apps/color-schemes/WontonSoup.colors
 share/apps/color-schemes/Zion.colors
 share/apps/color-schemes/ZionReversed.colors
-share/apps/desktoptheme/
 share/apps/desktoptheme/air-netbook/
 share/apps/desktoptheme/air-netbook/colors
 share/apps/desktoptheme/air-netbook/metadata.desktop
 share/apps/desktoptheme/air-netbook/widgets/
 share/apps/desktoptheme/air-netbook/widgets/background.svgz
 share/apps/desktoptheme/air-netbook/widgets/panel-background.svgz
-share/apps/desktoptheme/default/
 share/apps/desktoptheme/default/calendar/
 share/apps/desktoptheme/default/calendar/mini-calendar.svgz
 share/apps/desktoptheme/default/system-monitor/
 share/apps/desktoptheme/default/system-monitor/hdd_panel.svgz
-share/apps/desktoptheme/default/widgets/
 share/apps/desktoptheme/default/widgets/activities.svgz
 share/apps/desktoptheme/default/widgets/battery-oxygen.svgz
 share/apps/doc/
@@ -493,6 +487,8 @@ share/apps/freespacenotifier/
 share/apps/freespacenotifier/freespacenotifier.notifyrc
 share/apps/kaccess/
 share/apps/kaccess/kaccess.notifyrc
+share/apps/katepart/
+share/apps/katepart/syntax/
 share/apps/katepart/syntax/plasma-desktop-js.xml
 share/apps/kcminput/
 share/apps/kcminput/cursor_large_black.pcf.gz
@@ -741,8 +737,6 @@ share/apps/kmenuedit/icons/oxygen/32x32/actions/
 share/apps/kmenuedit/icons/oxygen/32x32/actions/menu_new.png
 share/apps/kmenuedit/icons/oxygen/32x32/actions/menu_new_sep.png
 share/apps/kmenuedit/kmenueditui.rc
-share/apps/konqsidebartng/
-share/apps/konqsidebartng/virtual_folders/
 share/apps/konqsidebartng/virtual_folders/services/
 share/apps/konqsidebartng/virtual_folders/services/fonts.desktop
 share/apps/kscreenlocker/
@@ -1038,7 +1032,6 @@ share/apps/systemsettings/classic/main.html
 share/apps/systemsettings/classic/systemsettings-classic.css
 share/apps/systemsettings/systemsettings.kcfg
 share/apps/systemsettings/systemsettingsui.rc
-share/autostart/
 share/autostart/klipper.desktop
 share/autostart/krunner.desktop
 share/autostart/kwrited-autostart.desktop
@@ -1258,8 +1251,12 @@ share/doc/HTML/en/ksysguard/index.docbook
 share/doc/HTML/en/plasma-desktop/
 share/doc/HTML/en/plasma-desktop/add-widgets.png
 share/doc/HTML/en/plasma-desktop/common
+share/doc/HTML/en/plasma-desktop/desktop-settings.png
 share/doc/HTML/en/plasma-desktop/index.cache.bz2
 share/doc/HTML/en/plasma-desktop/index.docbook
+share/doc/HTML/en/plasma-desktop/panel-settings.png
+share/doc/HTML/en/plasma-desktop/system-tray-settings.png
+share/doc/HTML/en/plasma-desktop/system-tray-up-arrow.png
 share/doc/HTML/en/plasma-desktop/taskbar-settings.png
 share/doc/HTML/en/systemsettings/
 share/doc/HTML/en/systemsettings/common
@@ -2035,24 +2032,15 @@ share/icons/Oxygen_Zion_Big/cursors/watch
 share/icons/Oxygen_Zion_Big/cursors/whats_this
 share/icons/Oxygen_Zion_Big/cursors/xterm
 share/icons/Oxygen_Zion_Big/index.theme
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/ksplash.png
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/kmenuedit.png
 share/icons/hicolor/16x16/apps/ksplash.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/kmenuedit.png
 share/icons/hicolor/22x22/apps/ksplash.png
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/kmenuedit.png
 share/icons/hicolor/32x32/apps/ksplash.png
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/kmenuedit.png
 share/icons/hicolor/48x48/apps/ksplash.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/ksplash.png
 share/icons/oxygen/128x128/apps/kcmkwm.png
 share/icons/oxygen/128x128/mimetypes/fonts-package.png
@@ -2091,8 +2079,6 @@ share/icons/oxygen/scalable/apps/kwin.svgz
 share/icons/oxygen/scalable/apps/preferences-desktop-font-installer.svgz
 share/icons/oxygen/scalable/mimetypes/
 share/icons/oxygen/scalable/mimetypes/fonts-package.svgz
-share/kde4/
-share/kde4/services/
 share/kde4/services/ScreenSavers/
 share/kde4/services/ScreenSavers/kblank.desktop
 share/kde4/services/ScreenSavers/krandom.desktop
@@ -2319,6 +2305,7 @@ share/kde4/services/plasma-layout-org.kde.plasma-netbook.defaultPage.desktop
 share/kde4/services/plasma-layout-org.kde.plasma-netbook.defaultPanel.desktop
 share/kde4/services/plasma-layout-org.kde.plasma-netbook.defaultSal.desktop
 share/kde4/services/plasma-packagestructure-dashboard.desktop
+share/kde4/services/plasma-packagestructure-googlegadgets.desktop
 share/kde4/services/plasma-packagestructure-share.desktop
 share/kde4/services/plasma-packagestructure-web.desktop
 share/kde4/services/plasma-pager-default.desktop
@@ -2354,6 +2341,7 @@ share/kde4/services/plasma-scriptengine-applet-dashboard.desktop
 share/kde4/services/plasma-scriptengine-applet-python.desktop
 share/kde4/services/plasma-scriptengine-applet-web.desktop
 share/kde4/services/plasma-scriptengine-dataengine-python.desktop
+share/kde4/services/plasma-scriptengine-googlegadgets.desktop
 share/kde4/services/plasma-scriptengine-ruby-applet.desktop
 share/kde4/services/plasma-scriptengine-ruby-dataengine.desktop
 share/kde4/services/plasma-scriptengine-runner-python.desktop
@@ -2439,7 +2427,6 @@ share/polkit-1/actions/org.kde.kcontrol.kcmclock.policy
 share/polkit-1/actions/org.kde.kcontrol.kcmkdm.policy
 share/polkit-1/actions/org.kde.ksysguard.processlisthelper.policy
 share/polkit-1/actions/org.kde.powerdevil.backlighthelper.policy
-share/sounds/
 share/sounds/pop.wav
 share/wallpapers/
 share/wallpapers/stripes.png

@@ -1,0 +1,12 @@
+$OpenBSD$
+--- kcontrol/fonts/CMakeLists.txt.orig	Sun Oct 23 08:39:28 2011
++++ kcontrol/fonts/CMakeLists.txt	Sun Oct 23 08:41:05 2011
+@@ -4,7 +4,7 @@ KDE4_NO_ENABLE_FINAL(fonts)
+ if(FONTCONFIG_FOUND)
+     include_directories(${FONTCONFIG_INCLUDE_DIR})
+ endif(FONTCONFIG_FOUND)
+-include_directories(${FREETYPE_INCLUDE_DIR})
++include_directories(${FREETYPE_INCLUDE_DIRS})
+ 
+ ########### next target ###############
+ 

@@ -3,34 +3,37 @@
 COMMENT =	K Desktop Environment, workspace
 DISTNAME =	kde-workspace-${MODKDE_VERSION}
 
-SHARED_LIBS =   kdecorations              0.0 # 4.7
-SHARED_LIBS +=  kephal                    0.0 # 4.7
-SHARED_LIBS +=  kfontinst                 0.0 # 4.7
-SHARED_LIBS +=  kfontinstui               0.0 # 4.7
-SHARED_LIBS +=  khotkeysprivate           0.0 # 4.7
-SHARED_LIBS +=  kscreensaver              0.0 # 5.0
-SHARED_LIBS +=  ksgrd                     0.0 # 4.7
-SHARED_LIBS +=  ksignalplotter            0.0 # 4.7
-SHARED_LIBS +=  kwineffects               0.0 # 1.0
-SHARED_LIBS +=  kwinnvidiahack            0.0 # 4.7
-SHARED_LIBS +=  kworkspace                0.0 # 4.7
-SHARED_LIBS +=  lsofui                    0.0 # 4.7
-SHARED_LIBS +=  oxygenstyle               0.0 # 4.7
-SHARED_LIBS +=  plasma-geolocation-interface 0.0 # 4.7
-SHARED_LIBS +=  plasma_applet-system-monitor 0.0 # 4.7
-SHARED_LIBS +=  plasmaclock               0.0 # 4.7
-SHARED_LIBS +=  plasmagenericshell        0.0 # 4.7
-SHARED_LIBS +=  powerdevilcore            0.0 # 0.1
-SHARED_LIBS +=  processcore               0.0 # 4.7
-SHARED_LIBS +=  processui                 0.0 # 4.7
-SHARED_LIBS +=  solidcontrol              0.0 # 4.7
-SHARED_LIBS +=  solidcontrolifaces        0.0 # 4.7
-SHARED_LIBS +=  taskmanager               0.0 # 4.7
-SHARED_LIBS +=  weather_ion               0.0 # 6.0
+SHARED_LIBS =	kdecorations			0.0 # 4.7
+SHARED_LIBS +=	kephal				0.0 # 4.7
+SHARED_LIBS +=	kfontinst			0.0 # 4.7
+SHARED_LIBS +=	kfontinstui			0.0 # 4.7
+SHARED_LIBS +=	khotkeysprivate			0.0 # 4.7
+SHARED_LIBS +=	kickoff				0.0
+SHARED_LIBS +=	kscreensaver			0.0 # 5.0
+SHARED_LIBS +=	ksgrd				0.0 # 4.7
+SHARED_LIBS +=	ksignalplotter			0.0 # 4.7
+SHARED_LIBS +=	kwineffects			0.0 # 1.0
+SHARED_LIBS +=	kwinnvidiahack			0.0 # 4.7
+SHARED_LIBS +=	kworkspace			0.0 # 4.7
+SHARED_LIBS +=	lsofui				0.0 # 4.7
+SHARED_LIBS +=	oxygenstyle			0.0 # 4.7
+SHARED_LIBS +=	plasma-geolocation-interface	0.0 # 4.7
+SHARED_LIBS +=	plasma_applet-system-monitor	0.0 # 4.7
+SHARED_LIBS +=	plasmaclock			0.0 # 4.7
+SHARED_LIBS +=	plasmagenericshell		0.0 # 4.7
+SHARED_LIBS +=	powerdevilcore			0.0 # 0.1
+SHARED_LIBS +=	powerdevilui			0.0
+SHARED_LIBS +=	processcore			0.0 # 4.7
+SHARED_LIBS +=	processui			0.0 # 4.7
+SHARED_LIBS +=	solidcontrol			0.0 # 4.7
+SHARED_LIBS +=	solidcontrolifaces		0.0 # 4.7
+SHARED_LIBS +=	systemsettingsview		0.0
+SHARED_LIBS +=	taskmanager			0.0 # 4.7
+SHARED_LIBS +=	weather_ion			0.0 # 6.0
 
 WANTLIB =  c m pthread stdc++ util z
-WANTLIB += GL GLU ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
-WANTLIB += Xfixes Xft Xinerama Xpm Xrandr Xrender Xss Xtst Xxf86misc
+WANTLIB += GL GLU ICE SM X11 XRes Xau Xcomposite Xcursor Xdamage Xdmcp Xext
+WANTLIB += Xfixes Xft Xi Xinerama Xrandr Xrender Xss Xtst Xxf86misc
 WANTLIB += fontconfig freetype xkbfile
 
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDeclarative
@@ -47,13 +50,15 @@ WANTLIB += kunitconversion microblog nepomuk nepomukquery nepomukutils
 WANTLIB += phonon>=6 plasma qimageblitz solid soprano streamanalyzer
 WANTLIB += strigiqtdbusclient threadweaver syndication
 
-WANTLIB += ck-connector dbus-1 dbusmenu-qt gps jpeg png usb xmms
+WANTLIB += ck-connector cln dbus-1 dbusmenu-qt ggadget-1.0 ggadget-qt-1.0
+WANTLIB += glib-2.0 gps jpeg png prison qalculate usb xml2 xmms
 
+MODULES =	devel/gettext
 MODKDE4_USE =	pim
 
 # Uses a static library, no .so provided
 BUILD_DEPENDS =	misc/shared-desktop-ontologies \
-		sysutils/pciutils
+		STEM->=3.1.2p2:sysutils/pciutils
 
 RUN_DEPENDS =	misc/shared-desktop-ontologies \
 		x11/polkit-qt4
@@ -62,7 +67,7 @@ LIB_DEPENDS =	audio/xmms \
 		databases/soprano \
 		devel/libusb \
 		math/libqalculate \
-		misc/google-gadgets \
+		misc/google-gadgets,-qt \
 		misc/gpsd \
 		multimedia/phonon \
 		sysutils/consolekit \
