@@ -2,7 +2,6 @@
 
 ONLY_FOR_ARCH=		${GCC4_ARCHS}
 
-BROKEN=			fix extract properly, doesn't work on amd64 atleast
 SHARED_ONLY=		Yes
 
 COMMENT-main=		library of programming functions for real time cv
@@ -40,6 +39,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=opencvlibrary/}
 EXTRACT_SUFX=		.tar.bz2
 EXTRACT_ONLY=
+WRKDIST=		${WRKDIR}/${DISTNAME:C/[a-z]*$//}
 
 WANTLIB += GL Half Iex IlmImf Imath X11 Xau Xcomposite Xcursor
 WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
@@ -87,6 +87,7 @@ RUN_DEPENDS-docs=	# empty
 PKG_ARCH-docs=		*
 
 USE_LIBTOOL=		Yes
+SEPARATE_BUILD=		flavored
 
 VMEM_WARNING=		Yes
 
@@ -104,9 +105,7 @@ CONFIGURE_ARGS+=	-DBUILD_EXAMPLES:Bool=On \
 			-DWITH_FFMPEG:Bool=On
 
 post-extract:
-	tar xfvj ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} -C ${WRKDIR};
-	mkdir -p ${WRKDIR}/OpenCV-2.3.1a ;
-	mv ${WRKDIR}/OpenCV-2.3.1/./* ${WRKDIR}/OpenCV-2.3.1a ;
+	cd ${WRKDIR} && pax -rj -s '/\/\.//g' <${DISTDIR}/${DISTFILES}
 
 post-configure:
 	find ${WRKSRC} -type f -iname "*.make" -exec \
