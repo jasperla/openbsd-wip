@@ -1,7 +1,5 @@
 # $OpenBSD$
 
-#SHARED_ONLY =		???
-
 V =			0.11.0
 CATEGORIES =		devel textproc
 COMMENT =		C library for handling WBXML documents
@@ -24,10 +22,6 @@ SEPARATE_BUILD =	simple
 USE_LIBTOOL =		Yes
 
 MODULES =		devel/cmake
-
-#REGRESS_IS_INTERACTIVE =	Yes
-#NO_REGRESS =		Yes
-#REGRESS_TARGET =	???
 
 CONFIGURE_ARGS +=	-DCHECK_FOUND=1 \
 			-DWBXML_LIB_VERBOSE=ON \
