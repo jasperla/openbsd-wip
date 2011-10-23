@@ -5,6 +5,7 @@ CATEGORIES =		math devel
 COMMENT =		
 DISTNAME =		libqalculate-${V}
 HOMEPAGE =		http://qalculate.sourceforge.net/
+VMEM_WARNING =		Yes
 
 SHARED_LIBS =		qalculate		0.0	# 5.0
 
