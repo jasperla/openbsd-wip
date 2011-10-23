@@ -28,7 +28,6 @@ include/konqmimedata.h
 include/konqsidebarplugin.h
 include/kversioncontrolplugin.h
 include/libkonq_export.h
-lib/kde4/
 lib/kde4/adblock.so
 lib/kde4/akregatorkonqfeedicon.so
 lib/kde4/autorefresh.so
@@ -83,7 +82,6 @@ lib/libkdeinit4_konqueror.so
 @lib lib/libkonq.so.${LIBkonq_VERSION}
 @lib lib/libkonqsidebarplugin.so.${LIBkonqsidebarplugin_VERSION}
 @lib lib/libkonquerorprivate.so.${LIBkonquerorprivate_VERSION}
-share/applications/kde4/
 share/applications/kde4/Home.desktop
 share/applications/kde4/dolphin.desktop
 share/applications/kde4/kdepasswd.desktop
@@ -163,7 +161,6 @@ share/apps/khtml/kpartplugins/plugin_webarchiver.desktop
 share/apps/khtml/kpartplugins/plugin_webarchiver.rc
 share/apps/khtml/kpartplugins/uachangerplugin.desktop
 share/apps/khtml/kpartplugins/uachangerplugin.rc
-share/apps/konqsidebartng/
 share/apps/konqsidebartng/dirtree/
 share/apps/konqsidebartng/dirtree/bookmarks_module.desktop
 share/apps/konqsidebartng/dirtree/dirtree_module.desktop
@@ -180,8 +177,6 @@ share/apps/konqsidebartng/plugins/konqsidebar_history.desktop
 share/apps/konqsidebartng/plugins/konqsidebar_places.desktop
 share/apps/konqsidebartng/plugins/konqsidebar_tree.desktop
 share/apps/konqsidebartng/plugins/konqsidebar_web.desktop
-share/apps/konqsidebartng/virtual_folders/
-share/apps/konqsidebartng/virtual_folders/remote/
 share/apps/konqsidebartng/virtual_folders/remote/.directory
 share/apps/konqsidebartng/virtual_folders/remote/ftp/
 share/apps/konqsidebartng/virtual_folders/remote/ftp/.directory
@@ -195,7 +190,6 @@ share/apps/konqsidebartng/virtual_folders/remote/web/look_web.desktop
 share/apps/konqsidebartng/virtual_folders/services/
 share/apps/konqsidebartng/virtual_folders/services/.directory
 share/apps/konqsidebartng/virtual_folders/services/applications.desktop
-share/apps/konqueror/
 share/apps/konqueror/about/
 share/apps/konqueror/about/box-centre-konqueror.png
 share/apps/konqueror/about/intro.html
@@ -248,7 +242,6 @@ share/apps/konqueror/profiles/kde_devel
 share/apps/konqueror/profiles/midnightcommander
 share/apps/konqueror/profiles/tabbedbrowsing
 share/apps/konqueror/profiles/webbrowsing
-share/apps/kwebkitpart/
 share/apps/kwebkitpart/kpartplugins/
 share/apps/kwebkitpart/kpartplugins/akregator_konqfeedicon.desktop
 share/apps/kwebkitpart/kpartplugins/akregator_konqfeedicon.rc
@@ -264,9 +257,7 @@ share/apps/kwebkitpart/kpartplugins/uachangerplugin.desktop
 share/apps/kwebkitpart/kpartplugins/uachangerplugin.rc
 share/apps/nsplugin/
 share/apps/nsplugin/nspluginpart.rc
-share/autostart/
 share/autostart/konqy_preload.desktop
-share/config.kcfg/
 share/config.kcfg/dolphin_columnmodesettings.kcfg
 share/config.kcfg/dolphin_detailsmodesettings.kcfg
 share/config.kcfg/dolphin_directoryviewpropertysettings.kcfg
@@ -350,26 +341,17 @@ share/doc/HTML/en/konqueror/sidebar.docbook
 share/doc/HTML/en/konqueror/thumbnails.png
 share/doc/HTML/en/konqueror/view-extensions.docbook
 share/doc/HTML/en/konqueror/viewproperties-dialog.png
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/konqueror.png
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/kfind.png
 share/icons/hicolor/16x16/apps/konqueror.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/fsview.png
 share/icons/hicolor/22x22/apps/kfind.png
 share/icons/hicolor/22x22/apps/konqueror.png
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/fsview.png
 share/icons/hicolor/32x32/apps/kfind.png
 share/icons/hicolor/32x32/apps/konqueror.png
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/kfind.png
 share/icons/hicolor/48x48/apps/konqueror.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/kfind.png
 share/icons/hicolor/64x64/apps/konqueror.png
 share/icons/hicolor/scalable/apps/konqueror.svgz
@@ -395,8 +377,6 @@ share/icons/oxygen/scalable/
 share/icons/oxygen/scalable/actions/
 share/icons/oxygen/scalable/actions/htmlvalidator.svgz
 share/icons/oxygen/scalable/actions/validators.svgz
-share/kde4/
-share/kde4/services/
 share/kde4/services/ServiceMenus/
 share/kde4/services/ServiceMenus/imageconverter.desktop
 share/kde4/services/bookmarks.desktop

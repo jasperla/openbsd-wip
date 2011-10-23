@@ -27,7 +27,6 @@
 @bin bin/kjotsmigrator
 @bin bin/kmail-migrator
 @bin bin/kres-migrator
-lib/kde4/
 lib/kde4/accountwizard_plugin.so
 lib/kde4/akonadi_akonotes_resource.so
 lib/kde4/akonadi_contacts_resource.so
@@ -117,7 +116,6 @@ share/akonadi/agents/openxchangeresource.desktop
 share/akonadi/agents/pop3resource.desktop
 share/akonadi/agents/vcarddirresource.desktop
 share/akonadi/agents/vcardresource.desktop
-share/applications/kde4/
 share/applications/kde4/accountwizard.desktop
 share/applications/kde4/akonaditray.desktop
 share/apps/akonadi/accountwizard/
@@ -187,9 +185,6 @@ share/icons/hicolor/64x64/
 share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/kolab.png
 share/icons/hicolor/64x64/apps/ox.png
-share/kde4/
-share/kde4/services/
-share/kde4/services/akonadi/
 share/kde4/services/akonadi.protocol
 share/kde4/services/akonadi/davgroupware-providers/
 share/kde4/services/akonadi/davgroupware-providers/citadel.desktop

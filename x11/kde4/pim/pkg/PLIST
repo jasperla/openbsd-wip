@@ -221,7 +221,6 @@ lib/kde4/messageviewer_bodypartformatter_text_vcard.so
 lib/kde4/messageviewer_bodypartformatter_text_xdiff.so
 lib/kde4/plasma_applet_akonotes_list.so
 lib/kde4/plasma_applet_akonotes_note.so
-lib/kde4/plugins/
 lib/kde4/plugins/designer/kdepimwidgets.so
 @lib lib/libakonadi_next.so.${LIBakonadi_next_VERSION}
 @lib lib/libakregatorinterfaces.so.${LIBakregatorinterfaces_VERSION}
@@ -309,9 +308,6 @@ share/apps/akregator_sharemicroblog_plugin/akregator_sharemicroblog_plugin.rc
 share/apps/blogilo/
 share/apps/blogilo/TextEditorInitialHtml
 share/apps/blogilo/blogiloui.rc
-share/apps/desktoptheme/
-share/apps/desktoptheme/default/
-share/apps/desktoptheme/default/widgets/
 share/apps/desktoptheme/default/widgets/stickynote.svgz
 share/apps/kaddressbook/
 share/apps/kaddressbook-mobile/
@@ -1003,14 +999,12 @@ share/icons/hicolor/16x16/apps/korg-journal.png
 share/icons/hicolor/16x16/apps/korg-todo.png
 share/icons/hicolor/16x16/apps/korganizer.png
 share/icons/hicolor/16x16/apps/ktimetracker.png
-share/icons/hicolor/22x22/
 share/icons/hicolor/22x22/actions/
 share/icons/hicolor/22x22/actions/format-text-blockquote.png
 share/icons/hicolor/22x22/actions/format-text-code.png
 share/icons/hicolor/22x22/actions/insert-more-mark.png
 share/icons/hicolor/22x22/actions/remove-link.png
 share/icons/hicolor/22x22/actions/upload-media.png
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/akonadiconsole.png
 share/icons/hicolor/22x22/apps/akregator.png
 share/icons/hicolor/22x22/apps/blogilo.png
