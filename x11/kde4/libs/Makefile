@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, libraries
 DISTNAME =	kdelibs-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kde3support          0.0      # .4.0
 SHARED_LIBS +=	kdecore              8.0      # .5.0
@@ -110,7 +111,7 @@ CONFIGURE_ARGS +=	-DKDE_DEFAULT_HOME=.kde4 \
 			-DKDESU_USE_SUDO_DEFAULT:BOOL=TRUE
 
 # Reimplemented CMake modules, because previous were totally broken
-REWR_CMAKE_MODULES =	FindXine FindPolkitQt
+REWR_CMAKE_MODULES =	FindXine FindXKB FindPolkitQt
 
 # Contain (required) additional functionality compared to system ones
 WRAP_CMAKE_MODULES =	FindGettext FindLibXslt
