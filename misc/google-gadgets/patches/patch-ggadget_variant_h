@@ -1,26 +1,58 @@
 $OpenBSD$
---- ggadget/variant.h.ports.orig	Sat Oct 22 21:38:47 2011
-+++ ggadget/variant.h	Sat Oct 22 21:44:39 2011
-@@ -189,6 +189,14 @@ class Variant {
+--- ggadget/variant.h.ports.orig	Mon Dec 28 13:39:57 2009
++++ ggadget/variant.h	Mon Oct 24 14:47:18 2011
+@@ -137,24 +137,23 @@ class Variant {
    }
  
    /**
-+   * Construct a @c Variant with a @c size_t value.
-+   * The type of the constructed @c Variant is @c TYPE_INT64.
-+   */
-+  explicit Variant(size_t value) : type_(TYPE_INT64) {
-+    v_.int64_value_ = static_cast<int64_t>(value);
-+  }
-+
-+  /**
-    * Construct a @c Variant with a @c double value.
-    * The type of the constructed @c Variant is @c TYPE_DOUBLE.
+-   * Construct a @c Variant with a @c int32_t value.
++   * Construct a @c Variant with a @c int value.
+    * Also supports <code>[unsigned]</code> char and <code>[unsigned]
+    * short</code>.
+    * The type of the constructed @c Variant is @c TYPE_INT64.
     */
-@@ -419,6 +427,7 @@ struct VariantType<c_type> {                          
+-  explicit Variant(int32_t value) : type_(TYPE_INT64) {
++  explicit Variant(int value) : type_(TYPE_INT64) {
+     v_.int64_value_ = value;
+   }
  
- SPECIALIZE_VARIANT_TYPE(void, TYPE_VOID)
- SPECIALIZE_VARIANT_TYPE(bool, TYPE_BOOL)
-+SPECIALIZE_VARIANT_TYPE(size_t, TYPE_INT64)
- SPECIALIZE_VARIANT_TYPE(float, TYPE_DOUBLE)
- SPECIALIZE_VARIANT_TYPE(double, TYPE_DOUBLE)
- SPECIALIZE_VARIANT_TYPE(const char *, TYPE_STRING)
+   /**
+-   * Construct a @c Variant with a @c uint32_t value.
++   * Construct a @c Variant with a @c unsigned int value.
+    * The type of the constructed @c Variant is @c TYPE_INT64.
+    */
+-  explicit Variant(uint32_t value) : type_(TYPE_INT64) {
++  explicit Variant(unsigned int value) : type_(TYPE_INT64) {
+     v_.int64_value_ = static_cast<int64_t>(value);
+   }
+ 
+-#if GGL_SIZEOF_LONG_INT != 8
+   /**
+    * Construct a @c Variant with a @c long value.
+    * The type of the constructed @c Variant is @c TYPE_INT64.
+@@ -170,21 +169,20 @@ class Variant {
+   explicit Variant(unsigned long value) : type_(TYPE_INT64) {
+     v_.int64_value_ = static_cast<int64_t>(value);
+   }
+-#endif
+ 
+   /**
+-   * Construct a @c Variant with a @c int64_t value.
++   * Construct a @c Variant with a @c long long value.
+    * The type of the constructed @c Variant is @c TYPE_INT64.
+    */
+-  explicit Variant(int64_t value) : type_(TYPE_INT64) {
++  explicit Variant(long long value) : type_(TYPE_INT64) {
+     v_.int64_value_ = value;
+   }
+ 
+   /**
+-   * Construct a @c Variant with a @c uint64_t value.
++   * Construct a @c Variant with a @c unsigned long long value.
+    * The type of the constructed @c Variant is @c TYPE_INT64.
+    */
+-  explicit Variant(uint64_t value) : type_(TYPE_INT64) {
++  explicit Variant(unsigned long long value) : type_(TYPE_INT64) {
+     v_.int64_value_ = static_cast<int64_t>(value);
+   }
+ 
