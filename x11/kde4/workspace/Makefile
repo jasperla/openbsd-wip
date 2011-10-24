@@ -56,9 +56,7 @@ WANTLIB += glib-2.0 gps jpeg png prison qalculate usb xml2 xmms
 MODULES =	devel/gettext
 MODKDE4_USE =	pim
 
-# Uses a static library, no .so provided
-BUILD_DEPENDS =	misc/shared-desktop-ontologies \
-		STEM->=3.1.2p2:sysutils/pciutils
+BUILD_DEPENDS =	misc/shared-desktop-ontologies
 
 RUN_DEPENDS =	misc/shared-desktop-ontologies \
 		x11/polkit-qt4
@@ -78,6 +76,7 @@ LIB_DEPENDS =	audio/xmms \
 
 CONFIGURE_ARGS =	-DWITH_Sensors:Bool=False \
 			-DWITH_NetworkManager:Bool=False \
-			-DWITH_RAW1394:Bool=False
+			-DWITH_RAW1394:Bool=False \
+			-DWITH_PCIUTILS:Bool=False
 
 .include <bsd.port.mk>
