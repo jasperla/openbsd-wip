@@ -2,8 +2,8 @@
 
 COMMENT =		top view shooting game
 
-DISTNAME =		violetland-v0.4.2-src
-PKGNAME =		violetland-0.4.2
+DISTNAME =		violetland-v0.4.3-src
+PKGNAME =		violetland-0.4.3
 
 CATEGORIES =		games x11
 
