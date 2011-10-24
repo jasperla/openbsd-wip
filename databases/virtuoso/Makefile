@@ -26,7 +26,7 @@ BUILD_DEPENDS =		devel/bison \
 			devel/flex \
 			lang/gawk
 
-LIB_DEPENDS =		devel/libwbxml \
+LIB_DEPENDS =		textproc/libwbxml \
 			graphics/ImageMagick \
 			textproc/libxml \
 
