@@ -1,13 +1,15 @@
 # $OpenBSD$
 
 COMMENT =	object-relational SQL database
-V =		6.1.3
-DISTNAME =	virtuoso-opensource-$V
-PKGNAME =	virtuoso-$V
-BROKEN =	garbled gawk generated files, investigate later.
+DISTNAME =	virtuoso-opensource-6.1.3
+PKGNAME =	${DISTNAME:C/-opensource//}
+REVISION =	0
 
 CATEGORIES =	databases
 HOMEPAGE =	http://www.openlinksw.com/
+
+FLAVORS =	java
+FLAVOR ?=
 
 # GPLv2, plus some more rights given
 PERMIT_PACKAGE_CDROM =	Yes
@@ -20,7 +22,14 @@ WANTLIB += djvulibre expat fftw3 fl fontconfig freetype iconv
 WANTLIB += jasper jbig jpeg lcms ltdl lzma m png pthread ssl tiff
 WANTLIB += wbxml2 wmf-0.2 wmflite-0.2 xcb xml2 z
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=virtuoso/virtuoso/$V/}
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=virtuoso/}
+
+MODULES =		lang/mono lang/php lang/python lang/ruby
+
+.if ${FLAVOR:Mjava}
+MODULES +=		java
+MODJAVA_VER =		1.6
+.endif
 
 BUILD_DEPENDS =		devel/bison \
 			devel/flex \
@@ -58,18 +67,14 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--with-jdk2=no \
 			--with-jdk3=no
 
-FLAVOR ?=
-PSEUDO_FLAVORS =	java16
-.if ${FLAVOR:Mjava16}
-MODULES +=		java
-MODJAVA_VER =		1.6
-CONFIGURE_ENV +=	--with-jdk4=${JAVA_HOME}
+.if ${FLAVOR:Mjava}
+CONFIGURE_ARGS +=	--with-jdk4=${JAVA_HOME}
 .else
-CONFIGURE_ENV +=	--with-jdk4=no
+CONFIGURE_ARGS +=	--with-jdk4=no
 .endif
 
 #REGRESS_IS_INTERACTIVE =	Yes
-#REGRESS_TARGET =	check
+#REGRESS_TARGET =		check
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/virtuoso

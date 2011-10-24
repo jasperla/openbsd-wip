@@ -3,3 +3,12 @@ Unconditionally uses bundled PCRE library, maildrop and who knows what else.
 Doesn't like either our YACC or GNU Bison - needs looking if we can avoid GNU shit.
 
 Usual -lpthread problems (currently fixed by configure script patching).
+
+Following warnings occur due to backslashes embedded in XML:
+
+	sql_code_ws.c:20073:1: warning: unknown escape sequence '\.'
+	sql_code_ws.c:20073:1: warning: unknown escape sequence '\.'
+	sql_code_ws.c:20073:1: warning: unknown escape sequence '\w'
+	sql_code_ws.c:20073:1: warning: unknown escape sequence '\w'
+
+and i dunno what to do with them.
