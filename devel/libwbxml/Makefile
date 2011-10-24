@@ -1,14 +1,13 @@
 # $OpenBSD$
 
-V =			0.11.0
 CATEGORIES =		devel textproc
 COMMENT =		C library for handling WBXML documents
-DISTNAME =		libwbxml-${V}
+DISTNAME =		libwbxml-0.11.0
 HOMEPAGE =		http://libwbxml.aymerick.com/
 
 SHARED_LIBS +=		wbxml2			0.0	# 1.0
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libwbxml/libwbxml/${V}/}
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libwbxml/}
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM =	Yes
