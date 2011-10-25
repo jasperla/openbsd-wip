@@ -17,4 +17,6 @@ MODKDE4_USE =	libs
 
 LIB_DEPENDS = 	misc/gpsd,-main
 
+PATCHORIG =	.ports.orig
+
 .include <bsd.port.mk>

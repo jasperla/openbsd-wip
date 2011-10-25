@@ -98,10 +98,8 @@ include/marble/WidgetGraphicsItem.h
 include/marble/geodata_export.h
 include/marble/global.h
 include/marble/marble_export.h
-lib/kde4/
 lib/kde4/libmarble_part.so
 lib/kde4/plasma_applet_worldclock.so
-lib/kde4/plugins/
 lib/kde4/plugins/marble/
 lib/kde4/plugins/marble/AprsPlugin.so
 lib/kde4/plugins/marble/CompassFloatItem.so
@@ -138,7 +136,6 @@ lib/kde4/plugins/marble/org/kde/edu/marble/
 lib/kde4/plugins/marble/org/kde/edu/marble/libMarbleDeclarativePlugin.so
 lib/kde4/plugins/marble/org/kde/edu/marble/qmldir
 @lib lib/libmarblewidget.so.${LIBmarblewidget_VERSION}
-share/applications/kde4/
 share/applications/kde4/marble.desktop
 share/apps/cmake/modules/FindMarble.cmake
 share/apps/marble/
@@ -914,8 +911,6 @@ share/icons/hicolor/48x48/apps/marble.png
 share/icons/hicolor/64x64/
 share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/marble.png
-share/kde4/
-share/kde4/services/
 share/kde4/services/marble_part.desktop
 share/kde4/services/plasma-applet-kworldclock.desktop
 @exec %D/bin/update-desktop-database
