@@ -6,7 +6,7 @@ DISTNAME =	kdenetwork-${MODKDE_VERSION}
 SHARED_LIBS =	kgetcore		0.0 # 4.0
 SHARED_LIBS +=	kopete			3.0 # 4.0
 SHARED_LIBS +=	kopete_videodevice	2.0 # 4.0
-SHARED_LIBS +=	kopeteaddaccountwizar	0.0 # 1.0
+SHARED_LIBS +=	kopeteaddaccountwizard	0.0 # 1.0
 SHARED_LIBS +=	kopetechatwindow_shared	0.0 # 1.0
 SHARED_LIBS +=	kopeteidentity		0.0 # 1.0
 SHARED_LIBS +=	kopeteprivacy		0.0 # 1.0
@@ -40,6 +40,7 @@ MODKDE4_USE =	pim
 RUN_DEPENDS =	security/qca-ossl
 
 LIB_DEPENDS =	audio/xmms \
+		multimedia/libmms \
 		net/libgadu \
 		net/meanwhile \
 		security/libotr \
