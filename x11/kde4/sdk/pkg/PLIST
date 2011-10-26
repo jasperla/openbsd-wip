@@ -458,7 +458,6 @@ lib/kde4/libkbytearrayedit.so
 lib/kde4/libkomparenavtreepart.so
 lib/kde4/libkomparepart.so
 lib/kde4/oktetapart.so
-lib/kde4/plugins/
 lib/kde4/plugins/designer/oktetadesignerplugin.so
 lib/kde4/quithumbnail.so
 @lib lib/libkastencontrollers.so.${LIBkastencontrollers_VERSION}

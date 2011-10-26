@@ -2,8 +2,11 @@
 @bin bin/amor
 @bin bin/kteatime
 @bin bin/ktux
+share/applications/
+share/applications/kde4/
 share/applications/kde4/amor.desktop
 share/applications/kde4/kteatime.desktop
+share/apps/
 share/apps/amor/
 share/apps/amor/billyrc
 share/apps/amor/blobrc
@@ -462,7 +465,11 @@ share/apps/ktux/sprites/flare0002.png
 share/apps/ktux/sprites/spriterc
 share/apps/ktux/sprites/star0001.png
 share/apps/ktux/sprites/star0002.png
+share/dbus-1/
+share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.kde.amor.xml
+share/doc/HTML/
+share/doc/HTML/en/
 share/doc/HTML/en/amor/
 share/doc/HTML/en/amor/billy.png
 share/doc/HTML/en/amor/bonhomme.png
@@ -484,20 +491,40 @@ share/doc/HTML/en/kteatime/common
 share/doc/HTML/en/kteatime/config.png
 share/doc/HTML/en/kteatime/index.cache.bz2
 share/doc/HTML/en/kteatime/index.docbook
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/128x128/
+share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/kteatime.png
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/amor.png
 share/icons/hicolor/16x16/apps/kteatime.png
 share/icons/hicolor/16x16/apps/ktux.png
+share/icons/hicolor/22x22/
+share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/amor.png
 share/icons/hicolor/22x22/apps/kteatime.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/amor.png
 share/icons/hicolor/32x32/apps/kteatime.png
 share/icons/hicolor/32x32/apps/ktux.png
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/amor.png
 share/icons/hicolor/48x48/apps/kteatime.png
+share/icons/hicolor/64x64/
+share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/kteatime.png
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/kteatime.svgz
+share/kde4/
+share/kde4/services/
+share/kde4/services/ScreenSavers/
 share/kde4/services/ScreenSavers/ktux.desktop
+share/man/
 share/man/man6/
 @man share/man/man6/amor.6
 @exec %D/bin/update-desktop-database

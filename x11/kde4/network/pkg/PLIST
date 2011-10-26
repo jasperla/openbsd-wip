@@ -1340,7 +1340,6 @@ share/apps/krfb/
 share/apps/krfb/krfb.notifyrc
 share/apps/kwebkitpart/kpartplugins/kget_plug_in.desktop
 share/apps/kwebkitpart/kpartplugins/kget_plug_in.rc
-share/apps/remoteview/
 share/apps/remoteview/zeroconf.desktop
 share/config.kcfg/historyconfig.kcfg
 share/config.kcfg/kget.kcfg
