@@ -2,7 +2,7 @@
 
 PKGNAME =		kde-l10n-${MODKDE_VERSION}
 MODKDE4_RESOURCES =	Yes
-MODKDE4_USE =
+MODKDE4_USE =	libs
 
 ALL_LANGS =	ar bg bs ca ca@valencia cs da de el en_GB es et eu fi fr ga gl
 ALL_LANGS +=	he hr hu ia id is it ja kk km kn ko lt lv nb nds nl nn pa pl
