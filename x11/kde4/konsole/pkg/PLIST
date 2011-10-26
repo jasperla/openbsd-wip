@@ -1,11 +1,9 @@
 @comment $OpenBSD$
 @bin bin/konsole
 bin/konsoleprofile
-lib/kde4/
 lib/kde4/libkonsolepart.so
 @lib lib/libkdeinit4_konsole.so.${LIBkdeinit4_konsole_VERSION}
 @lib lib/libkonsoleprivate.so.${LIBkonsoleprivate_VERSION}
-share/applications/kde4/
 share/applications/kde4/konsole.desktop
 share/apps/konsole/
 share/apps/konsole/BlackOnLightYellow.schema
@@ -28,8 +26,7 @@ share/doc/HTML/en/konsole/
 share/doc/HTML/en/konsole/common
 share/doc/HTML/en/konsole/index.cache.bz2
 share/doc/HTML/en/konsole/index.docbook
-share/kde4/
-share/kde4/services/
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/kde4/services/ServiceMenus/
 share/kde4/services/ServiceMenus/konsolehere.desktop
 share/kde4/services/konsolepart.desktop
