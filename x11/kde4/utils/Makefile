@@ -8,7 +8,7 @@ SHARED_LIBS +=	kerfuffle		0.0	# 4.0
 SHARED_LIBS +=	superkaramba		0.0	# 4.0
 
 WANTLIB =  c m pthread stdc++ util 
-WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xpm Xrender
+WANTLIB += ICE SM X11 Xext Xrender
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml lib/qt4/QtXmlPatterns 
@@ -17,9 +17,12 @@ WANTLIB += kemoticons kfile khtml kidletime kio kjs knewstuff2 konq
 WANTLIB += kparts kpimutils kprintutils kpty kresources krosscore
 WANTLIB += kutils nepomuk nepomukutils phonon soprano plasma
 WANTLIB += qimageblitz solid
-WANTLIB += raptor2 ${MODPY_WANTLIB}
+WANTLIB += ${MODPY_WANTLIB}
 
 MODKDE4_USE =	pim
+
+BUILD_DEPENDS =	x11/py-qt4 \
+		x11/kde4/pykde4
 
 LIB_DEPENDS = 	devel/gmp \
 		x11/kde4/qimageblitz \
