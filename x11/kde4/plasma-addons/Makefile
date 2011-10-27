@@ -31,7 +31,7 @@ MODKDE4_USE =	pim
 
 LIB_DEPENDS =	eigen2->=2.0.3:math/eigen2 \
 		inputmethods/scim \
-		math/libqalculate \
+		math/qalculate/libqalculate \
 		security/qca2 \
 		x11/kde4/attica \
 		x11/kde4/libkexiv2 \
