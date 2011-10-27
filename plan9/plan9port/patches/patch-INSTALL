@@ -1,0 +1,11 @@
+$OpenBSD$
+--- INSTALL.orig	Thu Oct 27 21:53:06 2011
++++ INSTALL	Thu Oct 27 21:53:34 2011
+@@ -102,7 +102,6 @@ if $dobuild; then
+ 	fi
+ 	
+ 	echo "* Building everything (be patient)..."
+-	mk clean
+ 	mk libs-nuke
+ 	mk all || exit 1
+ 	if [ ! -x $PLAN9/src/cmd/o.cleanname -o ! -x $PLAN9/src/cmd/acme/o.acme ]; then

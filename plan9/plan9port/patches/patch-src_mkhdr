@@ -1,0 +1,14 @@
+$OpenBSD$
+--- src/mkhdr.orig	Thu Oct 27 22:02:46 2011
++++ src/mkhdr	Thu Oct 27 22:02:56 2011
+@@ -28,8 +28,8 @@ LD=9l
+ AS=9a
+ AR=9ar
+ INSTALL=install
+-CFLAGS=
+-LDFLAGS=
++CFLAGS=-pthread
++LDFLAGS=-pthread
+ AFLAGS=
+ CLEANFILES=
+ NUKEFILES=
