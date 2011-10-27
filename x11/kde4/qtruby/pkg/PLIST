@@ -1,5 +1,4 @@
 @comment $OpenBSD$
-%%SHARED%%
 bin/rbqtapi
 @bin bin/rbrcc
 @bin bin/rbuic4
