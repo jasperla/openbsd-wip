@@ -1,13 +1,9 @@
 # $OpenBSD$
 
-V =			0.9.7
-CATEGORIES =		math devel
-COMMENT =		
-DISTNAME =		libqalculate-${V}
-HOMEPAGE =		http://qalculate.sourceforge.net/
-VMEM_WARNING =		Yes
-
-SHARED_LIBS =		qalculate		0.0	# 5.0
+V ?=			0.9.7
+CATEGORIES +=		math devel
+HOMEPAGE ?=		http://qalculate.sourceforge.net/
+VMEM_WARNING ?=		Yes
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -15,28 +11,21 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=qalculate/}
+MASTER_SITES ?=		${MASTER_SITE_SOURCEFORGE:=qalculate/}
 
-WANTLIB +=	c cln glib-2.0 gmp m ncurses pcre pthread readline
-WANTLIB +=	stdc++ xml2 z
+MODULES +=		devel/gettext
 
-MODULES =		devel/gettext
+BUILD_DEPENDS +=	textproc/p5-XML-Parser
 
-BUILD_DEPENDS =		textproc/p5-XML-Parser
-
-LIB_DEPENDS =		devel/cln \
-			devel/glib2 \
-			textproc/libxml
-
-USE_LIBTOOL =		Yes
-CONFIGURE_STYLE =	gnu
+USE_LIBTOOL ?=		Yes
+CONFIGURE_STYLE ?=	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 COPTS +=		-I${WRKSRC} -I${LOCALBASE}/include \
 			-L${LOCALBASE}/lib
-AUTOCONF_VERSION =	2.67
-AUTOMAKE_VERSION =	1.11
+AUTOCONF_VERSION ?=	2.67
+AUTOMAKE_VERSION ?=	1.11
 
-SEPARATE_BUILD =	simple
+SEPARATE_BUILD ?=	simple
 
 # Package puts part of documentation in share/doc/$(pkgname)-$(pkgversion),
 # and "make update-plist" thinks about it as about ${FULLPKGNAME}.
