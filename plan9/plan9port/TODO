@@ -4,3 +4,10 @@
 - verbose build?
 - separate databases? (see dict/README and sky/README)
 - fix install (no workee as ordinary user)
+
+working: acme, sam, troff, rc, page, most smaller utilities
+not working: 9term, db, acid
+disabled: mount, 9pfuse
+left to test: venti-related stuff, rio ...
+
+- depend on ghostscript at runtime? (page)

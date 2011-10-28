@@ -45,7 +45,7 @@ plan9/bin/9c
 plan9/bin/9fs
 plan9/bin/9l
 @bin plan9/bin/9p
-@bin plan9/bin/9pfuse
+@comment @bin plan9/bin/9pfuse
 @bin plan9/bin/9pserve
 @bin plan9/bin/9term
 plan9/bin/B
@@ -167,7 +167,7 @@ plan9/bin/man
 plan9/bin/mk9660
 @bin plan9/bin/mkdir
 @bin plan9/bin/mklatinkbd
-plan9/bin/mount
+@comment plan9/bin/mount
 @bin plan9/bin/mtime
 @bin plan9/bin/namespace
 @bin plan9/bin/ndbipquery
@@ -273,7 +273,7 @@ plan9/bin/u.rc
 @bin plan9/bin/unicode
 @bin plan9/bin/uniq
 @bin plan9/bin/units
-plan9/bin/unmount
+@comment plan9/bin/unmount
 @bin plan9/bin/unutf
 @bin plan9/bin/unvac
 @bin plan9/bin/unzip
@@ -4322,7 +4322,7 @@ plan9/man/man1/INDEX
 @man plan9/man/man1/mk.1
 @man plan9/man/man1/mk9660.1
 @man plan9/man/man1/mkdir.1
-@man plan9/man/man1/mount.1
+@comment @man plan9/man/man1/mount.1
 @man plan9/man/man1/namespace.1
 @man plan9/man/man1/ndb.1
 @man plan9/man/man1/netfiles.1
@@ -4523,7 +4523,7 @@ plan9/man/man3/INDEX
 @man plan9/man/man3/window.3
 plan9/man/man4/
 @man plan9/man/man4/0intro.4
-@man plan9/man/man4/9pfuse.4
+@comment @man plan9/man/man4/9pfuse.4
 @man plan9/man/man4/9pserve.4
 plan9/man/man4/INDEX
 @man plan9/man/man4/acme.4
@@ -5146,14 +5146,14 @@ plan9/src/cmd/9660srv/main.c
 plan9/src/cmd/9660srv/mkfile
 plan9/src/cmd/9660srv/xfile.c
 plan9/src/cmd/9p.c
-plan9/src/cmd/9pfuse/
-plan9/src/cmd/9pfuse/COPYRIGHT
-plan9/src/cmd/9pfuse/a.h
-plan9/src/cmd/9pfuse/errstr.c
-plan9/src/cmd/9pfuse/fuse.c
-plan9/src/cmd/9pfuse/fuse_kernel.h
-plan9/src/cmd/9pfuse/main.c
-plan9/src/cmd/9pfuse/mkfile
+@comment plan9/src/cmd/9pfuse/
+@comment plan9/src/cmd/9pfuse/COPYRIGHT
+@comment plan9/src/cmd/9pfuse/a.h
+@comment plan9/src/cmd/9pfuse/errstr.c
+@comment plan9/src/cmd/9pfuse/fuse.c
+@comment plan9/src/cmd/9pfuse/fuse_kernel.h
+@comment plan9/src/cmd/9pfuse/main.c
+@comment plan9/src/cmd/9pfuse/mkfile
 plan9/src/cmd/9pserve.c
 plan9/src/cmd/9term/
 plan9/src/cmd/9term/9term.c
