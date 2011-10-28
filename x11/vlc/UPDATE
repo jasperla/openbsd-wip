@@ -1,0 +1,36 @@
+Dumps core on start:
+
+(gdb) bt
+#0  0x000000020c4bb6ea in kill () from /usr/lib/libc.so.61.0
+#1  0x000000020c5204f1 in abort () at /usr/src/lib/libc/stdlib/abort.c:68
+#2  0x0000000203faf3c8 in vlc_tdestroy (root=0x0, freenode=0x6) at /usr/ports/pobj/vlc-1.1.10-debug/vlc-1.1.10/src/extras/tdestroy.c:106
+#3  0x0000000203faa93e in vlc_object_release (p_this=0x203ba8078) at /usr/ports/pobj/vlc-1.1.10-debug/vlc-1.1.10/src/misc/objects.c:275
+#4  0x0000000203f5bd8b in InputSourceClean (in=0x201f18898) at /usr/ports/pobj/vlc-1.1.10-debug/vlc-1.1.10/src/input/input.c:2712
+#5  0x0000000203f5d54f in End (p_input=0x20c145e78) at /usr/ports/pobj/vlc-1.1.10-debug/vlc-1.1.10/src/input/input.c:1382
+#6  0x0000000203f62f14 in input_Read (p_parent=Variable "p_parent" is not available.
+) at /usr/ports/pobj/vlc-1.1.10-debug/vlc-1.1.10/src/input/input.c:177
+#7  0x0000000203f3f8c8 in playlist_MLLoad (p_playlist=0x203ba8678) at /usr/ports/pobj/vlc-1.1.10-debug/vlc-1.1.10/src/playlist/loadsave.c:181
+#8  0x0000000203f3c2ff in playlist_Create (p_parent=Variable "p_parent" is not available.
+) at /usr/ports/pobj/vlc-1.1.10-debug/vlc-1.1.10/src/playlist/engine.c:172
+#9  0x0000000203f293a1 in libvlc_InternalInit (p_libvlc=0x20ad72078, i_argc=2, ppsz_argv=0x7f7fffff6ea0)
+    at /usr/ports/pobj/vlc-1.1.10-debug/vlc-1.1.10/src/libvlc.c:817
+#10 0x00000002087f85c7 in libvlc_new (argc=Variable "argc" is not available.
+) at /usr/ports/pobj/vlc-1.1.10-debug/vlc-1.1.10/src/control/core.c:58
+#11 0x000000000040161d in ?? ()
+#12 0x00000000004011f1 in ?? ()
+#13 0x0000000000000000 in ?? ()
+(gdb) f 2
+#2  0x0000000203faf3c8 in vlc_tdestroy (root=0x0, freenode=0x6) at /usr/ports/pobj/vlc-1.1.10-debug/vlc-1.1.10/src/extras/tdestroy.c:106
+106                  abort ();
+(gdb) l
+101         vlc_mutex_lock (&smallest.lock);
+102         for (size_t i = 0; i < count; i++)
+103         {
+104              smallest.node = tab[i];
+105              if (tdelete (smallest.node, &root, cmp_smallest) == NULL)
+106                  abort ();
+107         }
+108         vlc_mutex_unlock (&smallest.lock);
+109         assert (root == NULL);
+110
+(gdb) q

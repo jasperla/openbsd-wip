@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_demux_mkv_Makefile_in,v 1.1 2010/05/05 08:43:35 edd Exp $
+--- modules/demux/mkv/Makefile.in.orig	Mon Apr 11 19:54:21 2011
++++ modules/demux/mkv/Makefile.in	Thu Apr 28 21:47:48 2011
+@@ -709,7 +709,7 @@ libmkv_plugin_la_CFLAGS = $(AM_CFLAGS)
+ libmkv_plugin_la_CXXFLAGS = $(AM_CXXFLAGS)
+ libmkv_plugin_la_OBJCFLAGS = $(AM_OBJCFLAGS)
+ # Set LIBADD and DEPENDENCIES manually:
+-libmkv_plugin_la_LIBADD = $(AM_LIBADD)
++libmkv_plugin_la_LIBADD = $(AM_LIBADD) -lstdc++
+ libmkv_plugin_la_DEPENDENCIES = $(top_srcdir)/src/libvlccore.sym
+ all: $(BUILT_SOURCES)
+ 	$(MAKE) $(AM_MAKEFLAGS) all-am

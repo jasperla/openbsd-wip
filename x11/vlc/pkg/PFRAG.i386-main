@@ -1,0 +1,10 @@
+@comment $OpenBSD: PFRAG.i386-main,v 1.4 2011/05/06 08:18:54 dcoppa Exp $
+lib/vlc/plugins/3dnow/
+lib/vlc/plugins/3dnow/libmemcpy3dn_plugin.so
+lib/vlc/plugins/mmx/
+lib/vlc/plugins/mmx/libi420_rgb_mmx_plugin.so
+lib/vlc/plugins/mmx/libi420_yuy2_mmx_plugin.so
+lib/vlc/plugins/mmx/libi422_yuy2_mmx_plugin.so
+lib/vlc/plugins/mmx/libmemcpymmx_plugin.so
+lib/vlc/plugins/mmxext/
+lib/vlc/plugins/mmxext/libmemcpymmxext_plugin.so
