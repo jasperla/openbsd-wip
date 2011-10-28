@@ -33,6 +33,9 @@ LIB_DEPENDS = 	devel/gmp \
 		print/system-config-printer \
 		print/py-cups
 
+RUN_DEPENDS =	x11/py-qt4 \
+		x11/kde4/pykde4
+
 CONFIGURE_ARGS =	 -DINSTALL_PRINTER_APPLET=TRUE
 
 MAKE_FLAGS =		 -DINSTALL_PRINTER_APPLET=TRUE
