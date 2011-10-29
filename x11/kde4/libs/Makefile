@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, libraries
 DISTNAME =	kdelibs-${MODKDE_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	kde3support          0.0      # .4.0
 SHARED_LIBS +=	kdecore              8.0      # .5.0
@@ -56,11 +56,12 @@ WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDeclarative
 WANTLIB += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtOpenGL
 WANTLIB += lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml
-WANTLIB += attica phonon soprano sopranoclient streamanalyzer streams
+WANTLIB += attica soprano sopranoclient streamanalyzer streams
 WANTLIB += Half Iex IlmImf IlmThread Imath asn1 aspell bz2 com_err
 WANTLIB += dbusmenu-qt enchant exslt fam gif gssapi intl jasper jpeg
 WANTLIB += lzma pcre pcreposix png polkit-qt-core-1 qca>=3.0 xml2 xslt
 
+MODULES =	multimedia/phonon
 MODKDE4_USE =	
 
 BUILD_DEPENDS =	misc/shared-desktop-ontologies \
@@ -81,7 +82,6 @@ LIB_DEPENDS =	archivers/bzip2 \
 		graphics/jasper \
 		graphics/libungif \
 		graphics/openexr \
-		multimedia/phonon \
 		security/qca2 \
 		soprano->=2.5.60:databases/soprano \
 		sysutils/gamin \
