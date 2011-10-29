@@ -109,7 +109,7 @@
      SUBDIR += konsole			# issues
      SUBDIR += akonadi-googledata	# untested
      SUBDIR += kdevplatform		# untested
-#     SUBDIR += kdevelop
+     SUBDIR += kdevelop			# compilation fails
      SUBDIR += yakuake			# minor issues
      SUBDIR += kwebkitpart		# OK
      
