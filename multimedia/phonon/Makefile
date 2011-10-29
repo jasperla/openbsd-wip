@@ -1,45 +1,43 @@
 # $OpenBSD: Makefile,v 1.5 2010/11/19 07:23:15 espie Exp $
 
-COMMENT =	multimedia layer from qt4/kde4
-CATEGORIES =	multimedia devel
+COMMENT =	multimedia layer for Qt4/KDE4
+CATEGORIES =	multimedia devel x11/kde4
 VERSION =	4.5.0
 DISTNAME =	phonon-${VERSION}
-REVISION =	0
+REVISION =	1
 
-EXTRACT_SUFX =	.tar.bz2
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/phonon/${VERSION}/src/}
-
-# LGPL 2.1
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =   Yes
-PERMIT_PACKAGE_CDROM =   Yes
-PERMIT_PACKAGE_FTP =     Yes
-
-# higher than base kde4 to avoid issues
-
-SHARED_LIBS +=		phonon 6.0
-SHARED_LIBS +=		phononexperimental 1.0
-BUILD_DEPENDS +=	x11/kde4/automoc
-
-MODULES =		x11/qt4 devel/cmake
-
-# BUILD_DEPENDS +=	audio/pulseaudio
-
-LIB_DEPENDS +=	x11/vlc
-
-WANTLIB +=  lib/qt4/QtDBus lib/qt4/QtGui m stdc++
+# Higher than one in Qt4 to avoid issues
+SHARED_LIBS +=	phonon			6.0
+SHARED_LIBS +=	phononexperimental	1.0
 
 FLAVORS =	debug
 FLAVOR ?=
 
+# LGPL v2.1
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+
+EXTRACT_SUFX =	.tar.bz2
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/phonon/${VERSION}/src/}
+
+MODULES =	devel/cmake \
+		x11/qt4
+
+WANTLIB =	lib/qt4/QtDBus lib/qt4/QtGui m stdc++
+
+BUILD_DEPENDS =	x11/kde4/automoc
+
 SEPARATE_BUILD =	flavored
+
+CONFIGURE_ARGS =	-DUSE_PULSEAUDIO:Bool=No \
+			-DWITH_QZeitgeist:Bool=No
 
 .if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS +=       -DCMAKE_BUILD_TYPE:String=Debug
 .else
 CONFIGURE_ARGS +=       -DCMAKE_BUILD_TYPE:String=Release
 .endif
-
-CONFIGURE_ARGS +=	-DUSE_PULSEAUDIO:Bool=No
 
 .include <bsd.port.mk>

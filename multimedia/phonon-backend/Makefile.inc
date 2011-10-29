@@ -1,8 +1,11 @@
 # $OpenBSD$
 
-SHARED_ONLY =	Yes
-CATEGORIES =	multimedia devel
-EXTRACT_SUFX =	.tar.bz2
+SHARED_ONLY ?=	Yes
+CATEGORIES +=	multimedia devel
+PKGNAME ?=	${DISTNAME:C/-backend//}
+
+FLAVORS =       debug
+FLAVOR ?=
 
 # LGPL 2.1
 PERMIT_DISTFILES_CDROM = Yes
@@ -10,14 +13,18 @@ PERMIT_DISTFILES_FTP =   Yes
 PERMIT_PACKAGE_CDROM =   Yes
 PERMIT_PACKAGE_FTP =     Yes
 
-MODULES =		x11/qt4 devel/cmake
+EXTRACT_SUFX ?=	.tar.bz2
+
+MODULES =		devel/cmake \
+			multimedia/phonon
+
+MODPHONON_PLUGIN_DEPS =	No
 
 BUILD_DEPENDS +=	x11/kde4/automoc
 
-LIB_DEPENDS +=		phonon->=4.5.0:multimedia/phonon
+SEPARATE_BUILD ?=	flavored
 
-FLAVORS =       debug
-FLAVOR ?=
+CONFIGURE_ARGS +=	-DPHONON_BUILDSYSTEM_DIR:String=${LOCALBASE}/share/phonon-buildsystem
 
 .if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS +=       -DCMAKE_BUILD_TYPE:String=Debug

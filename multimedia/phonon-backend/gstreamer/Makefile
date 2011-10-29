@@ -5,8 +5,6 @@ VERSION =	4.5.1
 DISTNAME =	phonon-backend-gstreamer-${VERSION}
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/phonon/phonon-backend-gstreamer/${VERSION}/src/}
 
-MODULES +=	x11/qt4
-
 LIB_DEPENDS +=	multimedia/gstreamer-0.10/core \
 		devel/glib2,-main
 
