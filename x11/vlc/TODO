@@ -1,0 +1,70 @@
+Crashes at startup.
+
+Need to stabilize those things in PLISTs:
+ 
+diff -u pkg/PLIST-main{.orig,}
+--- pkg/PLIST-main.orig Sat Oct 29 19:22:33 2011
++++ pkg/PLIST-main      Sat Oct 29 19:51:21 2011
+@@ -101,6 +101,7 @@ lib/vlc/plugins/access/libaccess_avio_plugin.so
+ lib/vlc/plugins/access/libaccess_bd_plugin.so
+ lib/vlc/plugins/access/libaccess_fake_plugin.so
+ lib/vlc/plugins/access/libaccess_ftp_plugin.so
++lib/vlc/plugins/access/libaccess_gnomevfs_plugin.so
+ lib/vlc/plugins/access/libaccess_http_plugin.so
+ lib/vlc/plugins/access/libaccess_imem_plugin.so
+ lib/vlc/plugins/access/libaccess_mmap_plugin.so
+@@ -362,39 +363,26 @@ lib/vlc/plugins/visualization/libvisual_plugin.so
+ @man man/man1/vlc-wrapper.1
+ @man man/man1/vlc.1
+ share/applications/vlc.desktop
++share/apps/
++share/apps/solid/
++share/apps/solid/actions/
++share/apps/solid/actions/vlc-opencda.desktop
++share/apps/solid/actions/vlc-opendvd.desktop
++share/apps/solid/actions/vlc-openvcd.desktop
+ share/doc/vlc/
+ share/doc/vlc/bugreport-howto.txt
+ share/doc/vlc/fortunes.txt
+ share/doc/vlc/intf-vcd.txt
+-share/icons/
+-share/icons/hicolor/
+-share/icons/hicolor/128x128/
+-share/icons/hicolor/128x128/apps/
+ share/icons/hicolor/128x128/apps/vlc-christmas.png
+ share/icons/hicolor/128x128/apps/vlc.png
+-share/icons/hicolor/16x16/
+-share/icons/hicolor/16x16/apps/
+ share/icons/hicolor/16x16/apps/vlc.png
+ share/icons/hicolor/16x16/apps/vlc.xpm
+-share/icons/hicolor/256x256/
+-share/icons/hicolor/256x256/apps/
+ share/icons/hicolor/256x256/apps/vlc.png
+-share/icons/hicolor/32x32/
+-share/icons/hicolor/32x32/apps/
+ share/icons/hicolor/32x32/apps/vlc-christmas.xpm
+ share/icons/hicolor/32x32/apps/vlc.png
+ share/icons/hicolor/32x32/apps/vlc.xpm
+-share/icons/hicolor/48x48/
+-share/icons/hicolor/48x48/apps/
+ share/icons/hicolor/48x48/apps/vlc-christmas.png
+ share/icons/hicolor/48x48/apps/vlc.png
+-share/kde4/
+-share/kde4/apps/
+-share/kde4/apps/solid/
+-share/kde4/apps/solid/actions/
+-share/kde4/apps/solid/actions/vlc-opencda.desktop
+-share/kde4/apps/solid/actions/vlc-opendvd.desktop
+-share/kde4/apps/solid/actions/vlc-openvcd.desktop
+ share/locale/ach/
+ share/locale/ach/LC_MESSAGES/
+ share/locale/ach/LC_MESSAGES/vlc.mo
+@@ -492,8 +480,6 @@ share/locale/vi/LC_MESSAGES/vlc.mo
+ share/locale/wa/LC_MESSAGES/vlc.mo
+ share/locale/zh_CN/LC_MESSAGES/vlc.mo
+ share/locale/zh_TW/LC_MESSAGES/vlc.mo
+-share/locale/zu/
+-share/locale/zu/LC_MESSAGES/
+ share/locale/zu/LC_MESSAGES/vlc.mo
+ share/vlc/
+ share/vlc/http/
