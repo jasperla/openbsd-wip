@@ -1,6 +1,5 @@
 # $OpenBSD: Makefile,v 1.3 2011/07/16 22:43:57 espie Exp $
 
-BROKEN=			does not build, use official packages for now
 ONLY_FOR_ARCH=		${GCC4_ARCHS}
 
 SHARED_ONLY=		Yes
@@ -25,6 +24,7 @@ SHARED_LIBS +=		opencv_imgproc			1.0
 SHARED_LIBS +=		opencv_legacy			1.0
 SHARED_LIBS +=		opencv_ml			1.0
 SHARED_LIBS +=		opencv_objdetect		1.0
+SHARED_LIBS +=		opencv_ts			0.0
 SHARED_LIBS +=		opencv_video			1.0
 
 HOMEPAGE=		http://opencv.willowgarage.com/
