@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+@lib lib/libdcmdata.so.${LIBdcmdata_VERSION}
 @lib lib/libdcmimage.so.${LIBdcmimage_VERSION}
 @lib lib/libdcmimgle.so.${LIBdcmimgle_VERSION}
 @lib lib/libdcmjpeg.so.${LIBdcmjpeg_VERSION}
