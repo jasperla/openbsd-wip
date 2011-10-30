@@ -2,7 +2,7 @@
 
 COMMENT =		socks proxy for use with tor
 
-DISTNAME =		torsocks-1.1
+DISTNAME =		torsocks-1.2
 
 SHARED_LIBS =		torsocks	0.0 # 1.0
 
@@ -20,12 +20,16 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://torsocks.googlecode.com/files/
 
+RUN_DEPENDS =		net/tor
+
 FAKE_FLAGS =		CONFDIR=${PREFIX}/share/examples/torsocks
 
 USE_LIBTOOL =		Yes
 
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS +=	--datarootdir="${PREFIX}/share/torsocks"
 
-NO_REGRESS =		Yes
+do-regress:
+	cd ${WRKSRC}/test && sh run_tests.sh
 
 .include <bsd.port.mk>
