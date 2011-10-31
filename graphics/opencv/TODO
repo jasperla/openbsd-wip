@@ -1,9 +1,6 @@
 - test on other arch. Just tested on amd64
-- check SHARED_LIBS number, should be ++? But how 0.1 or 1.0?
-- (just) first extract fails because OpenCV-2.3.1 create an ugly
-  OpenCV-2.3.1/./* dot sub-folder. I think this dot-folder is a 
-  mistake. I hope it will fit it. (Bug-Ticket is out). 
+- SHARED_LIBS is incremented to 1.0
 
 - IMPORTANT:
-(just) first extract fails but second works fine... WHY!?
-KICK ASS OpenCV tarball!
+Extraction fails:
+Vadim Zhukov fixed the extraction failure and the build failure on amd64
