@@ -3,13 +3,10 @@
 COMMENT =	object-relational SQL database
 DISTNAME =	virtuoso-opensource-6.1.3
 PKGNAME =	${DISTNAME:C/-opensource//}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	databases
 HOMEPAGE =	http://www.openlinksw.com/
-
-FLAVORS =	java
-FLAVOR ?=
 
 # GPLv2, plus some more rights given
 PERMIT_PACKAGE_CDROM =	Yes
@@ -25,11 +22,6 @@ WANTLIB += wmf-0.2 wmflite-0.2 xcb xml2 z
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=virtuoso/}
 
 MODULES =		lang/mono lang/php lang/python lang/ruby
-
-.if ${FLAVOR:Mjava}
-MODULES +=		java
-MODJAVA_VER =		1.6
-.endif
 
 BUILD_DEPENDS =		devel/bison \
 			devel/flex \
@@ -67,13 +59,8 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-all-vads \
 			--without-internal-zlib \
 			--with-jdk2=no \
-			--with-jdk3=no
-
-.if ${FLAVOR:Mjava}
-CONFIGURE_ARGS +=	--with-jdk4=${JAVA_HOME}
-.else
-CONFIGURE_ARGS +=	--with-jdk4=no
-.endif
+			--with-jdk3=no \
+			--with-jdk4=no
 
 #REGRESS_IS_INTERACTIVE =	Yes
 #REGRESS_TARGET =		check
