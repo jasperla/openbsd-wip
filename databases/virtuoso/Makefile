@@ -19,8 +19,8 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += ICE MagickCore MagickWand SM X11 Xext Xt bz2 c crypto
 WANTLIB += djvulibre expat fftw3 fl fontconfig freetype iconv
-WANTLIB += jasper jbig jpeg lcms ltdl lzma m png pthread ssl tiff
-WANTLIB += wbxml2 wmf-0.2 wmflite-0.2 xcb xml2 z
+WANTLIB += jasper jbig jpeg lcms2 ltdl lzma m png pthread ssl tiff
+WANTLIB += wmf-0.2 wmflite-0.2 xcb xml2 z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=virtuoso/}
 
@@ -33,10 +33,12 @@ MODJAVA_VER =		1.6
 
 BUILD_DEPENDS =		devel/bison \
 			devel/flex \
+			graphics/lcms2 \
 			lang/gawk
 
 LIB_DEPENDS =		textproc/libwbxml \
 			graphics/ImageMagick \
+			graphics/lcms2 \
 			textproc/libxml \
 
 #USE_GROFF =		Yes
