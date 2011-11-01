@@ -3,7 +3,7 @@
 COMMENT-main=	graphical network protocol analyzer
 COMMENT-text=	network protocol analyzer
 
-WVER=		1.6.2
+WVER=		1.6.3
 DISTNAME=	wireshark-${WVER}
 PKGNAME-main=	wireshark-${WVER}
 PKGNAME-text=	tshark-${WVER}
@@ -59,7 +59,7 @@ LIB_DEPENDS-text= ${LIB_DEPENDS} \
 		security/gnutls
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
-		tshark-${WVER}:${PKGPATH},-text \
+		tshark-${WVER}:${PKGPATH},${FLAVOR},-text \
 		audio/portaudio-svn \
 		x11/gtk+2 \
 
@@ -81,7 +81,7 @@ CONFIGURE_ARGS +=	--with-python
 .endif
 
 .if ${FLAVOR:L:Mgtk3}
-BROKEN = yes
+BROKEN =	Yes
 CONFIGURE_ARGS +=	--with-gtk3=yes
 WANTLIB-main +=		gtk-3
 LIB_DEPENDS +=		x11/gtk+3
