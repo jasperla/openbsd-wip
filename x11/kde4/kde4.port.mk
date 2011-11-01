@@ -120,10 +120,6 @@ FLAVORS +=	debug
 # ${MODKDE4_RESOURCES:L} != "no"
 .endif
 
-# Enable faster fake: ports infrastructure preserve ordering anyway.
-# Leave it here for now, it it works fine, then prod it to cmake.port.mk
-CONFIGURE_ARGS +=	-DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY:Bool=True
-
 # FIXME
 MODKDE4_CONFIGURE_ENV =	HOME=${WRKDIR}
 PORTHOME ?=		${WRKDIR}
