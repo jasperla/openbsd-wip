@@ -9,7 +9,7 @@ FLAVOR ?=
 MODULES =		lang/python lang/ruby
 .if !${FLAVOR:Mno_java}
 MODULES +=		java
-MODJAVA_VER =		1.6+
+MODJAVA_VER =		1.7+
 MODJAVA_JRERUN =	Yes
 .endif
 
