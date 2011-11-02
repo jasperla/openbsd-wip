@@ -75,12 +75,17 @@ CONFIGURE_ARGS +=	-DWPD_INCLUDE_DIR=${LOCALBASE}/include/libwpd-0.8
 
 # aja@ trick + looping trick stolen from devel/monodevelop
 # Have to remove -Werror=return-type from files to allow compilation to proceed
+# Have to remove -fopenmp, because our gcc complains about missing libgomp.spec file
 
 REPLACE_WERROR =	flags.make	link.txt	relink.txt
 
 post-configure:
 	for i in ${REPLACE_WERROR}; do \
 		cd ${WRKBUILD} && find . -name $${i} | xargs perl -pi -e 's,-Werror=return-type,,g'; \
+	done
+	
+	for i in ${REPLACE_WERROR}; do \
+		cd ${WRKBUILD} && find . -name $${i} | xargs perl -pi -e 's,-fopenmp ,,g'; \
 	done
 
 .include <bsd.port.mk>
