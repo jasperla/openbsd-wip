@@ -1,7 +1,7 @@
 $OpenBSD$
---- krita/CMakeLists.txt.orig	Tue Nov  1 21:45:49 2011
-+++ krita/CMakeLists.txt	Tue Nov  1 21:47:15 2011
-@@ -44,12 +44,6 @@ if(OPENEXR_FOUND)
+--- krita/CMakeLists.txt.orig	Thu Feb 17 06:14:27 2011
++++ krita/CMakeLists.txt	Wed Nov  2 08:48:57 2011
+@@ -44,11 +44,12 @@ if(OPENEXR_FOUND)
      add_definitions(${OPENEXR_DEFINITIONS})
  endif(OPENEXR_FOUND)
  
@@ -10,7 +10,12 @@ $OpenBSD$
 -    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fopenmp")
 -    message("OpenMP found")
 -endif(OPENMP_FOUND)
--
++macro_optional_find_package(PNG)
++macro_log_feature(PNG_FOUND "png" "Official PNG reference library" "http://www.libpng.org/pub/png/libpng.html" FALSE "" "Required by the Krita PNG filter")
++
++if(PNG_FOUND)
++	include_directories(${PNG_PNG_INCLUDE_DIR})
++endif(PNG_FOUND)
+ 
  if(WIN32)
      if(MSVC)
-         # C4522: 'class' : multiple assignment operators specified

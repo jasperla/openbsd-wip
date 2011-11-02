@@ -23,7 +23,7 @@ WANTLIB =  c m pthread stdc++
 WANTLIB += X11
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
-WANTLIB += kdeui kio kparts nepomuk nepomukutils soprano
+WANTLIB += kdeui kio kparts nepomuk nepomukutils soprano png
 
 BUILD_DEPENDS =	devel/boost
 
@@ -84,8 +84,8 @@ post-configure:
 		cd ${WRKBUILD} && find . -name $${i} | xargs perl -pi -e 's,-Werror=return-type,,g'; \
 	done
 	
-	for i in ${REPLACE_WERROR}; do \
-		cd ${WRKBUILD} && find . -name $${i} | xargs perl -pi -e 's,-fopenmp ,,g'; \
-	done
+#	for i in ${REPLACE_WERROR}; do \
+#		cd ${WRKBUILD} && find . -name $${i} | xargs perl -pi -e 's,-fopenmp ,,g'; \
+#	done
 
 .include <bsd.port.mk>
