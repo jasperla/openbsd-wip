@@ -19,13 +19,9 @@ lib/kde4/kdevmanpage.so
 lib/kde4/kdevokteta.so
 lib/kde4/kdevqthelp.so
 lib/kde4/kdevqthelp_config.so
-lib/libkdev4cmakecommon.so
 @lib lib/libkdev4cmakecommon.so.${LIBkdev4cmakecommon_VERSION}
-lib/libkdev4cppduchain.so
 @lib lib/libkdev4cppduchain.so.${LIBkdev4cppduchain_VERSION}
-lib/libkdev4cppparser.so
 @lib lib/libkdev4cppparser.so.${LIBkdev4cppparser_VERSION}
-lib/libkdev4cpprpp.so
 @lib lib/libkdev4cpprpp.so.${LIBkdev4cpprpp_VERSION}
 share/applications/kde4/kdevelop.desktop
 share/apps/cmake/modules/FindKDevelop.cmake
