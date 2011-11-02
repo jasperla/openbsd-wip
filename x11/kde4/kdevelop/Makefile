@@ -5,15 +5,29 @@ VERSION =	4.2.3
 DISTNAME =	kdevelop-${VERSION}
 REVISION =	0
 
+SHARED_LIBS +=	kdev4cmakecommon	0.0
+SHARED_LIBS +=	kdev4cppduchain		0.0
+SHARED_LIBS +=	kdev4cppparser		0.0
+SHARED_LIBS +=	kdev4cpprpp		0.0
+
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdevelop/${VERSION}/src/}
 
 WANTLIB =  c m pthread stdc++
-WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
-WANTLIB += lib/qt4/QtScript lib/qt4/QtScriptTools lib/qt4/QtSvg
-WANTLIB += lib/qt4/QtXml
-WANTLIB += kdeui kio knewstuff3 kparts krosscore
-WANTLIB += krossui ktexteditor nepomuk nepomukutils plasma 
-WANTLIB += soprano
+WANTLIB += lib/qt4/QtDBus lib/qt4/QtDesigner lib/qt4/QtGui
+WANTLIB += lib/qt4/QtHelp lib/qt4/QtNetwork lib/qt4/QtScript
+WANTLIB += lib/qt4/QtSvg lib/qt4/QtWebKit lib/qt4/QtXml
+WANTLIB += kastencontrollers kastencore kastengui kcmutils kdeui
+WANTLIB += kdevplatformdebugger kdevplatformdocumentation
+WANTLIB += kdevplatforminterfaces kdevplatformlanguage
+WANTLIB += kdevplatformoutputview kdevplatformproject kdevplatformshell
+WANTLIB += kdevplatformutil kdevplatformvcs kemoticons kidletime kio
+WANTLIB += knotifyconfig kparts kprintutils ktexteditor kutils nepomuk
+WANTLIB += nepomukutils oktetacore oktetagui oktetakastencontrollers
+WANTLIB += oktetakastencore oktetakastengui processcore processui
+WANTLIB += soprano sublime threadweaver
+
+# Uses files with "{...}" in names
+USE_GMAKE =	Yes
 
 BUILD_DEPENDS =	misc/shared-mime-info
 
