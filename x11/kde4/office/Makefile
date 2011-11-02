@@ -70,8 +70,37 @@ WANTLIB += kde3support kfile khtml kjs krosscore krossui lcms
 WANTLIB += lcms2 mysqlclient ofstd okularcore openjpeg phonon
 WANTLIB += poppler poppler-qt4 qca sqlite3 sybdb tiff wpd-0.8
 WANTLIB += xml2 xslt z
+WANTLIB += GLEW QtSql QtWebKit fftw3 kabc kcmutils kemoticons
+WANTLIB += kidletime knewstuff3 knotifyconfig kpimutils kprintutils
+WANTLIB += kresources ktexteditor kutils threadweaver
 
-BUILD_DEPENDS =	devel/boost
+BUILD_DEPENDS =	devel/boost \
+		databases/freetds \
+		databases/mysql \
+		databases/libpqxx \
+		databases/sqlite3 \
+		devel/glib \
+		devel/gsl \
+		devel/libgsf \
+		dcmtk->=3.5.4p2:graphics/dcmtk \
+		graphics/exiv2 \
+		graphics/glew \
+		graphics/jpeg \
+		graphics/lcms2 \
+		graphics/libungif \
+		graphics/openjpeg \
+		graphics/png \
+		graphics/pstoedit \
+		graphics/tiff \
+		math/eigen2 \
+		math/fftw3,double \
+		print/poppler,-qt4 \
+		security/qca2 \
+		textproc/libwpd \
+		textproc/libxml \
+		textproc/libxslt \
+		x11/kde4/libkdcraw \
+		x11/kde4/okular
 
 # Optional stuff
 #RUN_DEPENDS =	graphics/create-resources
