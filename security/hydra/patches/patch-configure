@@ -1,7 +1,7 @@
 $OpenBSD$
-Remove test for include files and libraries as there is no
-means to disable and if they are added later the build
-may fail
+Remove tests for include files and libraries there are no
+configure options to disable support the build may fail or be altered
+if added
 --- configure.orig	Sun Oct  2 09:06:15 2011
 +++ configure	Tue Nov  1 20:03:28 2011
 @@ -246,44 +246,6 @@ if [ "X" = "X$POSTGRES_PATH" -o "X" = "X$POSTGRES_IPAT
