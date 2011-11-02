@@ -4,9 +4,11 @@ COMMENT =	library for parsing mms:// and mmsh:// type network streams
 
 DISTNAME =	libmms-0.6.2
 CATEGORIES =	multimedia net
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=libmms/}
+
 SHARED_LIBS =	mms 1.0 #0.2
 
-HOMEPAGE =	https://launchpad.net/libmms
+HOMEPAGE =	http://libmms.sourceforge.net/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
@@ -14,15 +16,16 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=libmms/}
+WANTLIB =	glib-2.0 pcre
 
-CONFIGURE_STYLE =	gnu
-MODULES =		converters/libiconv devel/gettext 
-USE_LIBTOOL =		Yes
-COPTS =			-I${LOCALBASE}/include
-SEPARATE_BUILD =	simple
+MODULES =	devel/gettext
 
 LIB_DEPENDS =	devel/glib2
-WANTLIB =	glib-2.0 pcre iconv
+
+SEPARATE_BUILD = simple
+USE_LIBTOOL =	Yes
+CONFIGURE_STYLE = gnu
+CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
