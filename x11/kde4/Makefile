@@ -112,6 +112,7 @@
      SUBDIR += kdevelop			# compilation fails
      SUBDIR += yakuake			# minor issues
      SUBDIR += kwebkitpart		# OK
+#     SUBDIR += office			# compilation fails
      
 # additional resources
      SUBDIR += plasma-addons		# test		i386
