@@ -593,14 +593,10 @@ lib/kde4/wpimport.so
 lib/kde4/xlsximport.so
 lib/kde4/xsltexport.so
 lib/kde4/xsltimport.so
-lib/libchartshapelib.so.8
 @lib lib/libchartshapelib.so.${LIBchartshapelib_VERSION}
 @lib lib/libflake.so.${LIBflake_VERSION}
-lib/libkarboncommon.so.8
 @lib lib/libkarboncommon.so.${LIBkarboncommon_VERSION}
-lib/libkarbonui.so.8
 @lib lib/libkarbonui.so.${LIBkarbonui_VERSION}
-lib/libkdchart.so.8
 @lib lib/libkdchart.so.${LIBkdchart_VERSION}
 lib/libkdeinit4_karbon.so
 lib/libkdeinit4_kplato.so
@@ -610,84 +606,47 @@ lib/libkdeinit4_krita.so
 lib/libkdeinit4_kspread.so
 lib/libkdeinit4_kthesaurus.so
 lib/libkdeinit4_kword.so
-lib/libkexicore.so.8
 @lib lib/libkexicore.so.${LIBkexicore_VERSION}
-lib/libkexidatatable.so.8
 @lib lib/libkexidatatable.so.${LIBkexidatatable_VERSION}
-lib/libkexidb.so.8
 @lib lib/libkexidb.so.${LIBkexidb_VERSION}
-lib/libkexiextendedwidgets.so.8
 @lib lib/libkexiextendedwidgets.so.${LIBkexiextendedwidgets_VERSION}
-lib/libkexiformutils.so.8
 @lib lib/libkexiformutils.so.${LIBkexiformutils_VERSION}
-lib/libkexiguiutils.so.8
 @lib lib/libkexiguiutils.so.${LIBkexiguiutils_VERSION}
-lib/libkeximain.so.8
 @lib lib/libkeximain.so.${LIBkeximain_VERSION}
-lib/libkeximigrate.so.8
 @lib lib/libkeximigrate.so.${LIBkeximigrate_VERSION}
-lib/libkexirelationsview.so.8
 @lib lib/libkexirelationsview.so.${LIBkexirelationsview_VERSION}
-lib/libkexiutils.so.8
 @lib lib/libkexiutils.so.${LIBkexiutils_VERSION}
-lib/libkformdesigner.so.8
 @lib lib/libkformdesigner.so.${LIBkformdesigner_VERSION}
-lib/libkformulalib.so.8
 @lib lib/libkformulalib.so.${LIBkformulalib_VERSION}
-lib/libkformulaprivate.so.8
 @lib lib/libkformulaprivate.so.${LIBkformulaprivate_VERSION}
-lib/libkochart.so.8
 @lib lib/libkochart.so.${LIBkochart_VERSION}
 @lib lib/libkokross.so.${LIBkokross_VERSION}
-lib/libkomain.so.8
 @lib lib/libkomain.so.${LIBkomain_VERSION}
-lib/libkoodf.so.8
 @lib lib/libkoodf.so.${LIBkoodf_VERSION}
 @lib lib/libkopageapp.so.${LIBkopageapp_VERSION}
 @lib lib/libkoplugin.so.${LIBkoplugin_VERSION}
 @lib lib/libkoproperty.so.${LIBkoproperty_VERSION}
-lib/libkoreport.so.8
 @lib lib/libkoreport.so.${LIBkoreport_VERSION}
 @lib lib/libkotext.so.${LIBkotext_VERSION}
-lib/libkowidgets.so.8
 @lib lib/libkowidgets.so.${LIBkowidgets_VERSION}
-lib/libkowmf.so.8
 @lib lib/libkowmf.so.${LIBkowmf_VERSION}
-lib/libkplatokernel.so.8
 @lib lib/libkplatokernel.so.${LIBkplatokernel_VERSION}
-lib/libkplatomodels.so.8
 @lib lib/libkplatomodels.so.${LIBkplatomodels_VERSION}
-lib/libkplatoprivate.so.8
 @lib lib/libkplatoprivate.so.${LIBkplatoprivate_VERSION}
-lib/libkplatoui.so.8
 @lib lib/libkplatoui.so.${LIBkplatoui_VERSION}
-lib/libkplatoworkapp.so.8
 @lib lib/libkplatoworkapp.so.${LIBkplatoworkapp_VERSION}
-lib/libkplatoworkfactory.so.8
 @lib lib/libkplatoworkfactory.so.${LIBkplatoworkfactory_VERSION}
-lib/libkpresenterprivate.so.8
 @lib lib/libkpresenterprivate.so.${LIBkpresenterprivate_VERSION}
-lib/libkritaimage.so.8
 @lib lib/libkritaimage.so.${LIBkritaimage_VERSION}
-lib/libkritalibbrush.so.8
 @lib lib/libkritalibbrush.so.${LIBkritalibbrush_VERSION}
-lib/libkritalibpaintop.so.8
 @lib lib/libkritalibpaintop.so.${LIBkritalibpaintop_VERSION}
-lib/libkritaui.so.8
 @lib lib/libkritaui.so.${LIBkritaui_VERSION}
-lib/libkspreadcommon.so.8
 @lib lib/libkspreadcommon.so.${LIBkspreadcommon_VERSION}
-lib/libkspreadodf.so.8
 @lib lib/libkspreadodf.so.${LIBkspreadodf_VERSION}
-lib/libkwmf.so.8
 @lib lib/libkwmf.so.${LIBkwmf_VERSION}
-lib/libkwordexportfilters.so.8
 @lib lib/libkwordexportfilters.so.${LIBkwordexportfilters_VERSION}
-lib/libkwordprivate.so.8
 @lib lib/libkwordprivate.so.${LIBkwordprivate_VERSION}
-lib/libmsooxml.so.8
 @lib lib/libmsooxml.so.${LIBmsooxml_VERSION}
-lib/libpigmentcms.so.8
 @lib lib/libpigmentcms.so.${LIBpigmentcms_VERSION}
 share/applications/kde4/KThesaurus.desktop
 share/applications/kde4/karbon.desktop

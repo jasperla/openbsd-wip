@@ -74,35 +74,9 @@ WANTLIB += GLEW QtSql QtWebKit fftw3 kabc kcmutils kemoticons
 WANTLIB += kidletime knewstuff3 knotifyconfig kpimutils kprintutils
 WANTLIB += kresources ktexteditor kutils threadweaver
 
-BUILD_DEPENDS =	devel/boost \
-		databases/freetds \
-		databases/mysql \
-		databases/libpqxx \
-		databases/sqlite3 \
-		devel/glib \
-		devel/gsl \
-		devel/libgsf \
-		dcmtk->=3.5.4p2:graphics/dcmtk \
-		graphics/exiv2 \
-		graphics/glew \
-		graphics/jpeg \
-		graphics/lcms2 \
-		graphics/libungif \
-		graphics/openjpeg \
-		graphics/png \
-		graphics/pstoedit \
-		graphics/tiff \
-		math/eigen2 \
-		math/fftw3,double \
-		print/poppler,-qt4 \
-		security/qca2 \
-		textproc/libwpd \
-		textproc/libxml \
-		textproc/libxslt \
-		x11/kde4/libkdcraw \
-		x11/kde4/okular
+BUILD_DEPENDS =	devel/boost
 
-# Optional stuff
+# Optional run-time dependency, does not affect build
 #RUN_DEPENDS =	graphics/create-resources
 
 MODKDE4_USE =	pim
@@ -122,7 +96,6 @@ LIB_DEPENDS =	databases/freetds \
 		graphics/libungif \
 		graphics/openjpeg \
 		graphics/png \
-		graphics/pstoedit \
 		graphics/tiff \
 		math/eigen2 \
 		math/fftw3,double \
@@ -142,7 +115,7 @@ CONFIGURE_ARGS =	-DWITH_LibRCPS:BOOL=Off \
 			-DWITH_WPG:BOOL=Off \
 			-DWITH_XBase:BOOL=Off
 
-# Karbon wants SVG support, which is a shareware plugin for pstoedit
+# Karbon wants SVG support through a shareware plugin for pstoedit
 CONFIGURE_ARGS +=	-DWITH_Pstoedit:BOOL=Off
 
 # Help bundled CMake modules
