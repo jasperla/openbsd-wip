@@ -35,7 +35,7 @@
      SUBDIR += pim-runtime		# test
      SUBDIR += workspace		# test
      SUBDIR += baseapps			# test
-     
+
 # bindings and wrappers
 #     SUBDIR += kimono			# compilation fails, bug in mono-2.pc	i386
      SUBDIR += korundum			# test					i386
@@ -48,7 +48,7 @@
      SUBDIR += smokegen			# no Akonadi	i386 amd64
      SUBDIR += smokekde			# test
      SUBDIR += smokeqt			# test
-     
+
 # fat packages
      SUBDIR += accessibility		# test
      SUBDIR += admin			# test
@@ -83,7 +83,7 @@
      SUBDIR += parley			# minor issues
      SUBDIR += rocs			# OK
      SUBDIR += step			# OK
-     
+
 # former kdegraphics
      SUBDIR += digikam			# test
      SUBDIR += graphics-strigi-analyzer	# untested
@@ -103,17 +103,17 @@
      SUBDIR += mobipocket		# untested
      SUBDIR += okular			# only PDF tested
      SUBDIR += svgpart			# OK
-     
+
 # other apps
      SUBDIR += kate			# OK
      SUBDIR += konsole			# issues
      SUBDIR += akonadi-googledata	# untested
      SUBDIR += kdevplatform		# untested
-     SUBDIR += kdevelop			# compilation fails
+     SUBDIR += kdevelop			# issues (crashes)
      SUBDIR += yakuake			# minor issues
      SUBDIR += kwebkitpart		# OK
-#     SUBDIR += office			# compilation fails
-     
+     SUBDIR += office			# untested
+
 # additional resources
      SUBDIR += plasma-addons		# test		i386
      SUBDIR += l10n			# OK		i386
