@@ -1,0 +1,12 @@
+$OpenBSD$
+--- documentation/qthelp/qthelpqtdoc.cpp.orig	Thu Nov  3 02:23:41 2011
++++ documentation/qthelp/qthelpqtdoc.cpp	Thu Nov  3 02:24:14 2011
+@@ -66,6 +66,8 @@ void QtHelpQtDoc::registerDocumentations()
+     QStringList tmp;
+     KStandardDirs::findAllExe(tmp, "qmake");
+     qmakes += tmp;
++    KStandardDirs::findAllExe(tmp, "qmake4");
++    qmakes += tmp;
+     KStandardDirs::findAllExe(tmp, "qmake-qt4");
+     qmakes += tmp;
+     QString dirName;
