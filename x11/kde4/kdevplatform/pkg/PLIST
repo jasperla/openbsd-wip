@@ -371,7 +371,6 @@ lib/kde4/kdevquickopen.so
 lib/kde4/kdevreviewboard.so
 lib/kde4/kdevsnippet.so
 lib/kde4/kdevstandardoutputview.so
-lib/kde4/kdevsubversion.so
 @lib lib/libkdevplatformdebugger.so.${LIBkdevplatformdebugger_VERSION}
 @lib lib/libkdevplatformdocumentation.so.${LIBkdevplatformdocumentation_VERSION}
 @lib lib/libkdevplatforminterfaces.so.${LIBkdevplatforminterfaces_VERSION}
@@ -472,7 +471,6 @@ share/kde4/services/kdevquickopen.desktop
 share/kde4/services/kdevreviewboard.desktop
 share/kde4/services/kdevsnippet.desktop
 share/kde4/services/kdevstandardoutputview.desktop
-share/kde4/services/kdevsubversion.desktop
 share/kde4/servicetypes/kdevelopplugin.desktop
 share/locale/ca/LC_MESSAGES/kdevappwizard.mo
 share/locale/ca/LC_MESSAGES/kdevclassbrowser.mo
@@ -498,7 +496,7 @@ share/locale/ca/LC_MESSAGES/kdevquickopen.mo
 share/locale/ca/LC_MESSAGES/kdevreviewboard.mo
 share/locale/ca/LC_MESSAGES/kdevsnippet.mo
 share/locale/ca/LC_MESSAGES/kdevstandardoutputview.mo
-share/locale/ca/LC_MESSAGES/kdevsubversion.mo
+@comment share/locale/ca/LC_MESSAGES/kdevsubversion.mo
 share/locale/ca@valencia/LC_MESSAGES/kdevappwizard.mo
 share/locale/ca@valencia/LC_MESSAGES/kdevclassbrowser.mo
 share/locale/ca@valencia/LC_MESSAGES/kdevcodeutils.mo
@@ -523,7 +521,7 @@ share/locale/ca@valencia/LC_MESSAGES/kdevquickopen.mo
 share/locale/ca@valencia/LC_MESSAGES/kdevreviewboard.mo
 share/locale/ca@valencia/LC_MESSAGES/kdevsnippet.mo
 share/locale/ca@valencia/LC_MESSAGES/kdevstandardoutputview.mo
-share/locale/ca@valencia/LC_MESSAGES/kdevsubversion.mo
+@comment share/locale/ca@valencia/LC_MESSAGES/kdevsubversion.mo
 share/locale/da/LC_MESSAGES/kdevappwizard.mo
 share/locale/da/LC_MESSAGES/kdevclassbrowser.mo
 share/locale/da/LC_MESSAGES/kdevcodeutils.mo
@@ -548,7 +546,7 @@ share/locale/da/LC_MESSAGES/kdevquickopen.mo
 share/locale/da/LC_MESSAGES/kdevreviewboard.mo
 share/locale/da/LC_MESSAGES/kdevsnippet.mo
 share/locale/da/LC_MESSAGES/kdevstandardoutputview.mo
-share/locale/da/LC_MESSAGES/kdevsubversion.mo
+@comment share/locale/da/LC_MESSAGES/kdevsubversion.mo
 share/locale/de/LC_MESSAGES/kdevappwizard.mo
 share/locale/de/LC_MESSAGES/kdevclassbrowser.mo
 share/locale/de/LC_MESSAGES/kdevcodeutils.mo
@@ -573,7 +571,7 @@ share/locale/de/LC_MESSAGES/kdevquickopen.mo
 share/locale/de/LC_MESSAGES/kdevreviewboard.mo
 share/locale/de/LC_MESSAGES/kdevsnippet.mo
 share/locale/de/LC_MESSAGES/kdevstandardoutputview.mo
-share/locale/de/LC_MESSAGES/kdevsubversion.mo
+@comment share/locale/de/LC_MESSAGES/kdevsubversion.mo
 share/locale/en_GB/LC_MESSAGES/kdevappwizard.mo
 share/locale/en_GB/LC_MESSAGES/kdevclassbrowser.mo
 share/locale/en_GB/LC_MESSAGES/kdevcodeutils.mo
@@ -597,7 +595,7 @@ share/locale/en_GB/LC_MESSAGES/kdevprojectmanagerview.mo
 share/locale/en_GB/LC_MESSAGES/kdevquickopen.mo
 share/locale/en_GB/LC_MESSAGES/kdevreviewboard.mo
 share/locale/en_GB/LC_MESSAGES/kdevsnippet.mo
-share/locale/en_GB/LC_MESSAGES/kdevstandardoutputview.mo
+@comment share/locale/en_GB/LC_MESSAGES/kdevstandardoutputview.mo
 share/locale/en_GB/LC_MESSAGES/kdevsubversion.mo
 share/locale/es/LC_MESSAGES/kdevappwizard.mo
 share/locale/es/LC_MESSAGES/kdevclassbrowser.mo
@@ -623,7 +621,7 @@ share/locale/es/LC_MESSAGES/kdevquickopen.mo
 share/locale/es/LC_MESSAGES/kdevreviewboard.mo
 share/locale/es/LC_MESSAGES/kdevsnippet.mo
 share/locale/es/LC_MESSAGES/kdevstandardoutputview.mo
-share/locale/es/LC_MESSAGES/kdevsubversion.mo
+@comment share/locale/es/LC_MESSAGES/kdevsubversion.mo
 share/locale/et/LC_MESSAGES/kdevappwizard.mo
 share/locale/et/LC_MESSAGES/kdevclassbrowser.mo
 share/locale/et/LC_MESSAGES/kdevcodeutils.mo
@@ -648,7 +646,7 @@ share/locale/et/LC_MESSAGES/kdevquickopen.mo
 share/locale/et/LC_MESSAGES/kdevreviewboard.mo
 share/locale/et/LC_MESSAGES/kdevsnippet.mo
 share/locale/et/LC_MESSAGES/kdevstandardoutputview.mo
-share/locale/et/LC_MESSAGES/kdevsubversion.mo
+@comment share/locale/et/LC_MESSAGES/kdevsubversion.mo
 share/locale/fr/LC_MESSAGES/kdevappwizard.mo
 share/locale/fr/LC_MESSAGES/kdevclassbrowser.mo
 share/locale/fr/LC_MESSAGES/kdevcodeutils.mo
@@ -673,7 +671,7 @@ share/locale/fr/LC_MESSAGES/kdevquickopen.mo
 share/locale/fr/LC_MESSAGES/kdevreviewboard.mo
 share/locale/fr/LC_MESSAGES/kdevsnippet.mo
 share/locale/fr/LC_MESSAGES/kdevstandardoutputview.mo
-share/locale/fr/LC_MESSAGES/kdevsubversion.mo
+@comment share/locale/fr/LC_MESSAGES/kdevsubversion.mo
 share/locale/it/LC_MESSAGES/kdevappwizard.mo
 share/locale/it/LC_MESSAGES/kdevclassbrowser.mo
 share/locale/it/LC_MESSAGES/kdevcodeutils.mo
@@ -698,7 +696,7 @@ share/locale/it/LC_MESSAGES/kdevquickopen.mo
 share/locale/it/LC_MESSAGES/kdevreviewboard.mo
 share/locale/it/LC_MESSAGES/kdevsnippet.mo
 share/locale/it/LC_MESSAGES/kdevstandardoutputview.mo
-share/locale/it/LC_MESSAGES/kdevsubversion.mo
+@comment share/locale/it/LC_MESSAGES/kdevsubversion.mo
 share/locale/nb/LC_MESSAGES/kdevappwizard.mo
 share/locale/nb/LC_MESSAGES/kdevclassbrowser.mo
 share/locale/nb/LC_MESSAGES/kdevcodeutils.mo
@@ -723,7 +721,7 @@ share/locale/nb/LC_MESSAGES/kdevquickopen.mo
 share/locale/nb/LC_MESSAGES/kdevreviewboard.mo
 share/locale/nb/LC_MESSAGES/kdevsnippet.mo
 share/locale/nb/LC_MESSAGES/kdevstandardoutputview.mo
-share/locale/nb/LC_MESSAGES/kdevsubversion.mo
+@comment share/locale/nb/LC_MESSAGES/kdevsubversion.mo
 share/locale/nds/LC_MESSAGES/kdevappwizard.mo
 share/locale/nds/LC_MESSAGES/kdevclassbrowser.mo
 share/locale/nds/LC_MESSAGES/kdevcodeutils.mo
@@ -748,7 +746,7 @@ share/locale/nds/LC_MESSAGES/kdevquickopen.mo
 share/locale/nds/LC_MESSAGES/kdevreviewboard.mo
 share/locale/nds/LC_MESSAGES/kdevsnippet.mo
 share/locale/nds/LC_MESSAGES/kdevstandardoutputview.mo
-share/locale/nds/LC_MESSAGES/kdevsubversion.mo
+@comment share/locale/nds/LC_MESSAGES/kdevsubversion.mo
 share/locale/nl/LC_MESSAGES/kdevappwizard.mo
 share/locale/nl/LC_MESSAGES/kdevclassbrowser.mo
 share/locale/nl/LC_MESSAGES/kdevcodeutils.mo
@@ -773,7 +771,7 @@ share/locale/nl/LC_MESSAGES/kdevquickopen.mo
 share/locale/nl/LC_MESSAGES/kdevreviewboard.mo
 share/locale/nl/LC_MESSAGES/kdevsnippet.mo
 share/locale/nl/LC_MESSAGES/kdevstandardoutputview.mo
-share/locale/nl/LC_MESSAGES/kdevsubversion.mo
+@comment share/locale/nl/LC_MESSAGES/kdevsubversion.mo
 share/locale/pt/LC_MESSAGES/kdevappwizard.mo
 share/locale/pt/LC_MESSAGES/kdevclassbrowser.mo
 share/locale/pt/LC_MESSAGES/kdevcodeutils.mo
@@ -798,7 +796,7 @@ share/locale/pt/LC_MESSAGES/kdevquickopen.mo
 share/locale/pt/LC_MESSAGES/kdevreviewboard.mo
 share/locale/pt/LC_MESSAGES/kdevsnippet.mo
 share/locale/pt/LC_MESSAGES/kdevstandardoutputview.mo
-share/locale/pt/LC_MESSAGES/kdevsubversion.mo
+@comment share/locale/pt/LC_MESSAGES/kdevsubversion.mo
 share/locale/pt_BR/LC_MESSAGES/kdevappwizard.mo
 share/locale/pt_BR/LC_MESSAGES/kdevclassbrowser.mo
 share/locale/pt_BR/LC_MESSAGES/kdevcodeutils.mo
@@ -823,7 +821,7 @@ share/locale/pt_BR/LC_MESSAGES/kdevquickopen.mo
 share/locale/pt_BR/LC_MESSAGES/kdevreviewboard.mo
 share/locale/pt_BR/LC_MESSAGES/kdevsnippet.mo
 share/locale/pt_BR/LC_MESSAGES/kdevstandardoutputview.mo
-share/locale/pt_BR/LC_MESSAGES/kdevsubversion.mo
+@comment share/locale/pt_BR/LC_MESSAGES/kdevsubversion.mo
 share/locale/ru/LC_MESSAGES/kdevappwizard.mo
 share/locale/ru/LC_MESSAGES/kdevclassbrowser.mo
 share/locale/ru/LC_MESSAGES/kdevcodeutils.mo
@@ -848,7 +846,7 @@ share/locale/ru/LC_MESSAGES/kdevquickopen.mo
 share/locale/ru/LC_MESSAGES/kdevreviewboard.mo
 share/locale/ru/LC_MESSAGES/kdevsnippet.mo
 share/locale/ru/LC_MESSAGES/kdevstandardoutputview.mo
-share/locale/ru/LC_MESSAGES/kdevsubversion.mo
+@comment share/locale/ru/LC_MESSAGES/kdevsubversion.mo
 share/locale/sl/LC_MESSAGES/kdevclassbrowser.mo
 share/locale/sl/LC_MESSAGES/kdevdocumentswitcher.mo
 share/locale/sl/LC_MESSAGES/kdevplatform.mo
@@ -876,7 +874,7 @@ share/locale/sv/LC_MESSAGES/kdevquickopen.mo
 share/locale/sv/LC_MESSAGES/kdevreviewboard.mo
 share/locale/sv/LC_MESSAGES/kdevsnippet.mo
 share/locale/sv/LC_MESSAGES/kdevstandardoutputview.mo
-share/locale/sv/LC_MESSAGES/kdevsubversion.mo
+@comment share/locale/sv/LC_MESSAGES/kdevsubversion.mo
 share/locale/th/LC_MESSAGES/kdevappwizard.mo
 share/locale/th/LC_MESSAGES/kdevgenericprojectmanager.mo
 share/locale/th/LC_MESSAGES/kdevkonsole.mo
@@ -905,7 +903,7 @@ share/locale/uk/LC_MESSAGES/kdevquickopen.mo
 share/locale/uk/LC_MESSAGES/kdevreviewboard.mo
 share/locale/uk/LC_MESSAGES/kdevsnippet.mo
 share/locale/uk/LC_MESSAGES/kdevstandardoutputview.mo
-share/locale/uk/LC_MESSAGES/kdevsubversion.mo
+@comment share/locale/uk/LC_MESSAGES/kdevsubversion.mo
 share/locale/zh_CN/LC_MESSAGES/kdevappwizard.mo
 share/locale/zh_CN/LC_MESSAGES/kdevclassbrowser.mo
 share/locale/zh_CN/LC_MESSAGES/kdevcodeutils.mo
@@ -930,7 +928,7 @@ share/locale/zh_CN/LC_MESSAGES/kdevquickopen.mo
 share/locale/zh_CN/LC_MESSAGES/kdevreviewboard.mo
 share/locale/zh_CN/LC_MESSAGES/kdevsnippet.mo
 share/locale/zh_CN/LC_MESSAGES/kdevstandardoutputview.mo
-share/locale/zh_CN/LC_MESSAGES/kdevsubversion.mo
+@comment share/locale/zh_CN/LC_MESSAGES/kdevsubversion.mo
 share/locale/zh_TW/LC_MESSAGES/kdevappwizard.mo
 share/locale/zh_TW/LC_MESSAGES/kdevclassbrowser.mo
 share/locale/zh_TW/LC_MESSAGES/kdevcodeutils.mo
@@ -955,6 +953,6 @@ share/locale/zh_TW/LC_MESSAGES/kdevquickopen.mo
 share/locale/zh_TW/LC_MESSAGES/kdevreviewboard.mo
 share/locale/zh_TW/LC_MESSAGES/kdevsnippet.mo
 share/locale/zh_TW/LC_MESSAGES/kdevstandardoutputview.mo
-share/locale/zh_TW/LC_MESSAGES/kdevsubversion.mo
+@comment share/locale/zh_TW/LC_MESSAGES/kdevsubversion.mo
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
