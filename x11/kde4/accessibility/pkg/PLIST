@@ -3,17 +3,14 @@
 @bin bin/kmag
 @bin bin/kmousetool
 @bin bin/kmouth
-lib/kde4/
 lib/kde4/jovie_stringreplacerplugin.so
 lib/kde4/jovie_talkerchooserplugin.so
 lib/kde4/jovie_xmltransformerplugin.so
 lib/kde4/kcm_kttsd.so
 @bin lib/kde4/libexec/kaccessibleapp
-lib/kde4/plugins/
 lib/kde4/plugins/accessiblebridge/
 lib/kde4/plugins/accessiblebridge/kaccessiblebridge.so
 @lib lib/libkttsd.so.${LIBkttsd_VERSION}
-share/applications/kde4/
 share/applications/kde4/jovieapp.desktop
 share/applications/kde4/kmag.desktop
 share/applications/kde4/kmousetool.desktop
@@ -184,8 +181,6 @@ share/icons/hicolor/48x48/actions/nospeak.png
 share/icons/hicolor/48x48/actions/speak.png
 share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/kmouth.png
-share/kde4/
-share/kde4/services/
 share/kde4/services/jovie.desktop
 share/kde4/services/jovie_stringreplacerplugin.desktop
 share/kde4/services/jovie_talkerchooserplugin.desktop

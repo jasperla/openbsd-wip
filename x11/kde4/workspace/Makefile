@@ -64,7 +64,7 @@ RUN_DEPENDS =	misc/shared-desktop-ontologies \
 LIB_DEPENDS =	audio/xmms \
 		databases/soprano \
 		devel/libusb \
-		math/libqalculate \
+		math/qalculate/libqalculate \
 		misc/google-gadgets,-qt \
 		misc/gpsd \
 		multimedia/phonon \

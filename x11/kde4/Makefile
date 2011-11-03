@@ -23,47 +23,47 @@
      SUBDIR += akonadi			# minor issues	i386 amd64
      SUBDIR += attica			# test		i386 amd64
      SUBDIR += automoc			# OK		i386 amd64
-     SUBDIR += oxygen-icons		# OK		i386 amd64
+     SUBDIR += oxygen-icons		# OK
 
 # libraries
      SUBDIR += libs			# test		i386 amd64
-     SUBDIR += pimlibs			# test, fake symlinks pkg	i386 amd64
+     SUBDIR += pimlibs			# test		i386 amd64
      SUBDIR += qimageblitz		# test		i386 amd64
 
 # extra base
-     SUBDIR += runtime			# test, fake symlinks pkg	i386 amd64
+     SUBDIR += runtime			# test		i386 amd64
      SUBDIR += pim-runtime		# test
      SUBDIR += workspace		# test
      SUBDIR += baseapps			# test
-     
+
 # bindings and wrappers
-#     SUBDIR += kimono			# compilation fails, bug in mono-2.pc	i386
+     SUBDIR += kimono			# test
      SUBDIR += korundum			# test					i386
      SUBDIR += kross-interpreters	# test					i386
      SUBDIR += perlkde			# test					i386
      SUBDIR += perlqt			# test
-     SUBDIR += pykde4			# no Polkit-Qt support, DLFCN trouble
+     SUBDIR += pykde4			# test
      SUBDIR += qtruby			# test					i386
      SUBDIR += qyoto			# test
      SUBDIR += smokegen			# no Akonadi	i386 amd64
      SUBDIR += smokekde			# test
      SUBDIR += smokeqt			# test
-     
+
 # fat packages
      SUBDIR += accessibility		# test
      SUBDIR += admin			# test
      SUBDIR += games			# test
      SUBDIR += multimedia		# issues in Dragon and KMix
      SUBDIR += network			# test
-     SUBDIR += pim			# needs akonadi
+     SUBDIR += pim			# OK
      SUBDIR += sdk			# OK
      SUBDIR += toys			# OK
      SUBDIR += utils			# test
-     SUBDIR += webdev
+     SUBDIR += webdev			# untested
 
 # former kdeedu
      SUBDIR += blinken			# issues
-     SUBDIR += cantor			# OK
+     SUBDIR += cantor			# test R backend
      SUBDIR += kalgebra			# OK
      SUBDIR += kalzium			# minor issues
      SUBDIR += kanagram			# OK
@@ -83,7 +83,7 @@
      SUBDIR += parley			# minor issues
      SUBDIR += rocs			# OK
      SUBDIR += step			# OK
-     
+
 # former kdegraphics
      SUBDIR += digikam			# test
      SUBDIR += graphics-strigi-analyzer	# untested
@@ -103,19 +103,20 @@
      SUBDIR += mobipocket		# untested
      SUBDIR += okular			# only PDF tested
      SUBDIR += svgpart			# OK
-     
+
 # other apps
      SUBDIR += kate			# OK
      SUBDIR += konsole			# issues
      SUBDIR += akonadi-googledata	# untested
      SUBDIR += kdevplatform		# untested
-#     SUBDIR += kdevelop
+     SUBDIR += kdevelop			# issues (crashes)
      SUBDIR += yakuake			# minor issues
      SUBDIR += kwebkitpart		# OK
-     
+     SUBDIR += office			# untested
+
 # additional resources
      SUBDIR += plasma-addons		# test		i386
-     SUBDIR += l10n			# OK		i386
-     SUBDIR += wallpapers		# OK		i386
+     SUBDIR += l10n			# OK
+     SUBDIR += wallpapers		# OK
 
 .include <bsd.port.subdir.mk>

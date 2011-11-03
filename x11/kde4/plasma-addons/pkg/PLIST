@@ -134,6 +134,7 @@ lib/kde4/plasma_applet_fileWatcher.so
 lib/kde4/plasma_applet_frame.so
 lib/kde4/plasma_applet_fuzzy_clock.so
 lib/kde4/plasma_applet_incomingmsg.so
+lib/kde4/plasma_applet_kdeobservatory.so
 lib/kde4/plasma_applet_kimpanel.so
 lib/kde4/plasma_applet_knowledgebase.so
 lib/kde4/plasma_applet_kolourpicker.so
@@ -302,7 +303,6 @@ share/apps/desktoptheme/default/widgets/nowplaying/nocover.svgz
 share/apps/desktoptheme/default/widgets/previewer-16.svgz
 share/apps/desktoptheme/default/widgets/previewer-22.svgz
 share/apps/desktoptheme/default/widgets/timer.svgz
-share/apps/desktoptheme/oxygen/
 share/apps/desktoptheme/oxygen/lancelot/
 share/apps/desktoptheme/oxygen/lancelot/action-list-view-headers.svgz
 share/apps/desktoptheme/oxygen/lancelot/category-triangle.svgz
@@ -398,6 +398,7 @@ share/config/virus_wallpaper.knsrc
 share/dbus-1/interfaces/org.kde.impanel.xml
 share/icons/hicolor/128x128/apps/bball.png
 share/icons/hicolor/128x128/apps/eyes.png
+share/icons/hicolor/128x128/apps/kdeobservatory.png
 share/icons/hicolor/128x128/apps/lancelot-start.png
 share/icons/hicolor/128x128/apps/lancelot.png
 share/icons/hicolor/128x128/apps/lifegame.png
@@ -407,6 +408,7 @@ share/icons/hicolor/128x128/apps/previewer.png
 share/icons/hicolor/128x128/apps/qalculate-applet.png
 share/icons/hicolor/16x16/apps/bball.png
 share/icons/hicolor/16x16/apps/eyes.png
+share/icons/hicolor/16x16/apps/kdeobservatory.png
 share/icons/hicolor/16x16/apps/lancelot-start.png
 share/icons/hicolor/16x16/apps/lancelot.png
 share/icons/hicolor/16x16/apps/lifegame.png
@@ -414,6 +416,7 @@ share/icons/hicolor/16x16/apps/luna.png
 share/icons/hicolor/16x16/apps/plasmaapplet-shelf.png
 share/icons/hicolor/16x16/apps/previewer.png
 share/icons/hicolor/22x22/apps/eyes.png
+share/icons/hicolor/22x22/apps/kdeobservatory.png
 share/icons/hicolor/22x22/apps/lancelot-start.png
 share/icons/hicolor/22x22/apps/lancelot.png
 share/icons/hicolor/22x22/apps/lifegame.png
@@ -424,6 +427,7 @@ share/icons/hicolor/256x256/apps/eyes.png
 share/icons/hicolor/256x256/apps/lifegame.png
 share/icons/hicolor/32x32/apps/bball.png
 share/icons/hicolor/32x32/apps/eyes.png
+share/icons/hicolor/32x32/apps/kdeobservatory.png
 share/icons/hicolor/32x32/apps/lancelot-start.png
 share/icons/hicolor/32x32/apps/lancelot.png
 share/icons/hicolor/32x32/apps/lifegame.png
@@ -431,6 +435,7 @@ share/icons/hicolor/32x32/apps/luna.png
 share/icons/hicolor/32x32/apps/plasmaapplet-shelf.png
 share/icons/hicolor/32x32/apps/previewer.png
 share/icons/hicolor/48x48/apps/bball.png
+share/icons/hicolor/48x48/apps/kdeobservatory.png
 share/icons/hicolor/48x48/apps/lancelot-start.png
 share/icons/hicolor/48x48/apps/lancelot.png
 share/icons/hicolor/48x48/apps/lifegame.png
@@ -439,6 +444,7 @@ share/icons/hicolor/48x48/apps/plasmaapplet-shelf.png
 share/icons/hicolor/48x48/apps/previewer.png
 share/icons/hicolor/48x48/apps/qalculate-applet.png
 share/icons/hicolor/64x64/apps/bball.png
+share/icons/hicolor/64x64/apps/kdeobservatory.png
 share/icons/hicolor/64x64/apps/lancelot-start.png
 share/icons/hicolor/64x64/apps/lancelot.png
 share/icons/hicolor/64x64/apps/lifegame.png
@@ -449,6 +455,7 @@ share/icons/hicolor/scalable/apps/accessories-dictionary.svgz
 share/icons/hicolor/scalable/apps/bball.svgz
 share/icons/hicolor/scalable/apps/eyes.svgz
 share/icons/hicolor/scalable/apps/fifteenpuzzle.svgz
+share/icons/hicolor/scalable/apps/kdeobservatory.svgz
 share/icons/hicolor/scalable/apps/lifegame.svgz
 share/kde4/services/CharRunner_config.desktop
 share/kde4/services/CharacterRunner.desktop
@@ -472,6 +479,7 @@ share/kde4/services/plasma-applet-charselect.desktop
 share/kde4/services/plasma-applet-eyes.desktop
 share/kde4/services/plasma-applet-fifteenPuzzle.desktop
 share/kde4/services/plasma-applet-incomingmsg.desktop
+share/kde4/services/plasma-applet-kdeobservatory.desktop
 share/kde4/services/plasma-applet-kimpanel.desktop
 share/kde4/services/plasma-applet-knowledgebase.desktop
 share/kde4/services/plasma-applet-konqprofiles.desktop
@@ -545,3 +553,5 @@ share/kde4/servicetypes/plasma_potdprovider.desktop
 share/mime/packages/lancelotpart-mime.xml
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime

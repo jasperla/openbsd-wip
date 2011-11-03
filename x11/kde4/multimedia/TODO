@@ -1,5 +1,4 @@
-KMix not building (needs to be ported to support sndio?):
-  ../lib/libkdeinit4_kmix.so: undefined reference to `_oss_ioctl'
+KMix does not build, should be ported to our mixer(4).
 
 Dragon is broken (but it was playing something for me before sometimes,
 so this is a regression too - grayed).

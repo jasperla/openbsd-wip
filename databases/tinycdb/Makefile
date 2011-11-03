@@ -5,7 +5,7 @@ COMMENT =	creating and reading constant databases
 DISTNAME =	tinycdb_0.77
 PKGNAME =	${DISTNAME:S/_/-/}
 CATEGORIES =	databases
-SHARED_LIBS =	cdb	1.0
+SHARED_LIBS =	cdb	0.0
 
 HOMEPAGE =	http://www.corpit.ru/mjt/tinycdb.html
 MASTER_SITES =	http://www.corpit.ru/mjt/tinycdb/

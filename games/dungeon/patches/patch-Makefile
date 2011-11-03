@@ -1,0 +1,16 @@
+$OpenBSD$
+--- Makefile.orig	Thu Feb 17 23:06:58 2011
++++ Makefile	Thu Feb 17 23:07:26 2011
+@@ -1,10 +1,10 @@
+ # Makefile for dungeon
+ 
+ # Where to install the program
+-BINDIR = /usr/games
++BINDIR = ${PREFIX}/bin
+ 
+ # Where to install the data file
+-LIBDIR = /usr/games/lib
++LIBDIR = ${PREFIX}/share/dungeon
+ 
+ # The dungeon program provides a ``more'' facility which tries to
+ # figure out how many rows the terminal has.  Several mechanisms are

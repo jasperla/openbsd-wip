@@ -41,6 +41,8 @@ MODULES =	lang/ruby
 
 MODKDE4_USE =
 
+# reminder: flesh out the build_depends here...
+#BUILD_DEPENDS =	
 LIB_DEPENDS =	editors/qscintilla \
 		x11/kde4/qimageblitz \
 		x11/kde4/smokegen \

@@ -1,17 +1,11 @@
 # $OpenBSD$
 
-#ONLY_FOR_ARCHS =	???
-#NOT_FOR_ARCHS =	???
-#SHARED_ONLY =		???
-
 CATEGORIES =		devel productivity
 COMMENT =		C library for Google calendar and contacts
 DISTNAME =		libgcal-0.9.6
 HOMEPAGE =		http://code.google.com/p/libgcal/
 
 SHARED_LIBS =		gcal	0.0
-
-#MAINTAINER =		???
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

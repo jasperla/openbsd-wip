@@ -1,7 +1,9 @@
 # $OpenBSD$
+# $FreeBSD: ports/devel/qjson/Makefile,v 1.3 2010/06/12 10:41:02 avilla Exp $
 
 COMMENT=	Qt-based library that maps JSON data to QVariant objects
 DISTNAME =	qjson-0.7.1
+REVISION =	0
 CATEGORIES =	devel
 SHARED_ONLY =	Yes
 

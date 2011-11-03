@@ -1,0 +1,12 @@
+$OpenBSD$
+--- libsrc/Wi/system.sql.orig	Tue Oct 25 02:39:17 2011
++++ libsrc/Wi/system.sql	Tue Oct 25 02:39:31 2011
+@@ -1060,7 +1060,7 @@ done:
+   inx := 0;
+   while (inx < length (cols))
+     {
+-      cid := (select COL_ID from DB.DBA.SYS_COLS where "TABLE" = tname and 0 = casemode_strcmp (\COLUMN, aref (cols, inx)));
++      cid := (select COL_ID from DB.DBA.SYS_COLS where "TABLE" = tname and 0 = casemode_strcmp (COLUMN, aref (cols, inx)));
+       if (cid is null)
+        {
+          txn_error (6);

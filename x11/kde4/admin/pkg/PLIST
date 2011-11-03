@@ -1,9 +1,7 @@
 @comment $OpenBSD: PLIST,v 1.5 2010/06/22 23:31:55 espie Exp $
 @bin bin/ksystemlog
 @bin bin/kuser
-lib/kde4/
 lib/kde4/kcm_cron.so
-share/applications/kde4/
 share/applications/kde4/ksystemlog.desktop
 share/applications/kde4/kuser.desktop
 share/apps/ksystemlog/
@@ -55,8 +53,6 @@ share/icons/hicolor/22x22/apps/kuser.png
 share/icons/hicolor/32x32/apps/kuser.png
 share/icons/hicolor/48x48/apps/kuser.png
 share/icons/hicolor/64x64/apps/kuser.png
-share/kde4/
-share/kde4/services/
 share/kde4/services/kcm_cron.desktop
 share/kde4/services/system-config-printer-kde.desktop
 @exec %D/bin/update-desktop-database

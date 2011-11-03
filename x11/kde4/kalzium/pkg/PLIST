@@ -21,8 +21,10 @@ lib/kde4/plasma_applet_molmassCalculator.so
 lib/kde4/plasma_engine_kalzium.so
 @lib lib/libcompoundviewer.so.${LIBcompoundviewer_VERSION}
 @lib lib/libscience.so.${LIBscience_VERSION}
+share/applications/
 share/applications/kde4/
 share/applications/kde4/kalzium.desktop
+share/apps/
 share/apps/desktoptheme/
 share/apps/desktoptheme/default/
 share/apps/desktoptheme/default/widgets/
@@ -385,9 +387,12 @@ share/apps/libkdeedu/data/isotopes.xml
 share/apps/libkdeedu/data/spectra.xml
 share/apps/libkdeedu/data/symbols.csv
 share/apps/libkdeedu/data/symbols2.csv
+share/config/
 share/config.kcfg/
 share/config.kcfg/kalzium.kcfg
 share/config/kalzium.knsrc
+share/doc/HTML/
+share/doc/HTML/en/
 share/doc/HTML/en/kalzium/
 share/doc/HTML/en/kalzium/common
 share/doc/HTML/en/kalzium/gradient.png
@@ -395,15 +400,23 @@ share/doc/HTML/en/kalzium/index.cache.bz2
 share/doc/HTML/en/kalzium/index.docbook
 share/doc/HTML/en/kalzium/infodialog_bohr.png
 share/doc/HTML/en/kalzium/infodialog_data_overview.png
+share/doc/HTML/en/kalzium/infodialog_extra.png
 share/doc/HTML/en/kalzium/infodialog_isotopes.png
 share/doc/HTML/en/kalzium/infodialog_misc.png
-share/doc/HTML/en/kalzium/infodialog_overview.png
 share/doc/HTML/en/kalzium/infodialog_spectrum.png
 share/doc/HTML/en/kalzium/man-kalzium.1.docbook
 share/doc/HTML/en/kalzium/quick-1.png
 share/doc/HTML/en/kalzium/quick-2.png
 share/doc/HTML/en/kalzium/quick-3.png
 share/doc/HTML/en/kalzium/quick-4.png
+share/doc/HTML/en/kalzium/screenshot-calc-conc.png
+share/doc/HTML/en/kalzium/screenshot-calc-eq.png
+share/doc/HTML/en/kalzium/screenshot-calc-gas.png
+share/doc/HTML/en/kalzium/screenshot-calc-mass.png
+share/doc/HTML/en/kalzium/screenshot-calc-nucl.png
+share/doc/HTML/en/kalzium/screenshot-mol-edit.png
+share/doc/HTML/en/kalzium/screenshot-rs-phrases.png
+share/doc/HTML/en/kalzium/screenshot-tables.png
 share/doc/HTML/en/kalzium/screenshot1.png
 share/doc/HTML/en/kalzium/screenshot2.png
 share/doc/HTML/en/kalzium/screenshot5.png
@@ -414,23 +427,31 @@ share/doc/HTML/en/kalzium/screenshotnuclidboard.png
 share/doc/HTML/en/kalzium/settings1.png
 share/doc/HTML/en/kalzium/settings2.png
 share/doc/HTML/en/kalzium/settings3.png
+share/doc/HTML/en/kalzium/settings4.png
 share/doc/HTML/en/kalzium/sidebar1.png
 share/doc/HTML/en/kalzium/sidebar2.png
+share/icons/
+share/icons/hicolor/
 share/icons/hicolor/128x128/
 share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/kalzium.png
+share/icons/hicolor/16x16/
 share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/kalzium.png
 share/icons/hicolor/22x22/
 share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/kalzium.png
+share/icons/hicolor/32x32/
 share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/kalzium.png
+share/icons/hicolor/48x48/
 share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/kalzium.png
 share/icons/hicolor/64x64/
 share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/kalzium.png
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/kalzium.svgz
 share/kde4/
 share/kde4/services/
@@ -440,4 +461,6 @@ share/kde4/services/nuclearCalculator.desktop
 share/kde4/services/plasma-applet-Molmasscalculator.desktop
 share/kde4/services/plasma-dataengine-kalzium.desktop
 share/kde4/services/plasma_didyouknow.desktop
+share/man/
+share/man/man1/
 @man share/man/man1/kalzium.1
