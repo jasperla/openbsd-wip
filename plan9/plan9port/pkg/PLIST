@@ -157,7 +157,6 @@ plan9/bin/lc
 @bin plan9/bin/listen1
 @bin plan9/bin/look
 plan9/bin/lookman
-plan9/bin/lpbin/
 @bin plan9/bin/ls
 plan9/bin/man
 @bin plan9/bin/mapd
@@ -4259,7 +4258,7 @@ plan9/man/man1/
 @man plan9/man/man1/9p.1
 @man plan9/man/man1/9term.1
 plan9/man/man1/INDEX
-@man plan9/man/man1/acid.1
+@comment @man plan9/man/man1/acid.1
 @man plan9/man/man1/acme.1
 @man plan9/man/man1/acmeevent.1
 @man plan9/man/man1/ascii.1
@@ -4280,7 +4279,7 @@ plan9/man/man1/INDEX
 @man plan9/man/man1/core.1
 @man plan9/man/man1/crop.1
 @man plan9/man/man1/date.1
-@man plan9/man/man1/db.1
+@comment @man plan9/man/man1/db.1
 @man plan9/man/man1/dc.1
 @man plan9/man/man1/dd.1
 @man plan9/man/man1/deroff.1

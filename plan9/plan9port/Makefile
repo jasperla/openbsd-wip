@@ -24,27 +24,76 @@ WANTLIB =		X11 Xext c kvm m pthread util
 MASTER_SITES =		${HOMEPAGE}
 EXTRACT_SUFX =		.tgz
 
+RUN_DEPENDS =		print/ghostscript/gnu
+
 WRKDIST =		${WRKDIR}/plan9
 
 PLAN9 =			${PREFIX}/plan9
+
+SCRIPTS = \" \"\" 9 9.rc 9a 9ar 9c 9fs 9l B E Getdir adict awd bundle \
+	codereview \
+	codereview.py doctype g ipso kill label lc lookman man mk9660 mount \
+	netfileget netfilelib.rc netfileput netfilestat nobs nroff osxvers ps \
+	psfonts psu psv samsave sig slay spell src ssam stack start stop tref \
+	troff2png u u.rc unmount vmount vwhois web wintext wmail yesterday
+
+BINS = 9660srv 9p 9pserve 9term Mail Netfiles acme acmeevent aescbc ascii \
+	asn12dsa asn12rsa astro auxclog auxstats awk basename bc bmp bunzip2 \
+	bzip2 cal calendar cat cb cleanname cmapcube cmp colors comm core crop \
+	date dc dd delatex deroff devdraw dial dict diff disknfs dns dnsdebug \
+	dnsquery dnstcp dsa2pub dsa2ssh dsagen dsasign du dump9660 echo ed eqn \
+	factor factotum file fmt fontsrv fortune freq fsize getflags gif grap \
+	graph grep gunzip gview gzip hget hist hoc htmlfmt htmlroff ico iconv \
+	idiff img import join jpg lex listen1 look ls mapd mc md5sum mk mkdir \
+	mklatinkbd mtime namespace ndbipquery ndbmkdb ndbmkhash ndbmkhosts \
+	ndbquery netkey news p page passwd pbd pemdecode pemencode pic plot \
+	plumb plumber png ppm pr primes proof psdownload ramfs rc read \
+	readcons resample rio rm rsa2csr rsa2pub rsa2ssh rsa2x509 rsafill \
+	rsagen sam samterm scat secstore secstored secuser sed seq sftpcache \
+	sha1sum sleep snarfer sort split sprog srv ssh-agent stats statusbar \
+	strings sum tail tar tbl tcolors tcs tee test time togif toico topng \
+	toppm touch tpic tr tr2post troff troff2html tweak unicode uniq units \
+	unutf unvac unzip usage vac vacfs vbackup vcat vmount0 vnfs wc win xd \
+	xshove yacc yuv zerotrunc zip 9pfuse acid acidtypes db
 
 post-patch:
 	cp ${FILESDIR}/OpenBSD-x86_64-asm.S ${WRKSRC}/src/libthread
 	cd ${WRKSRC}/src/libthread && cp Darwin-x86_64-swapcontext.c \
 		OpenBSD-x86_64.c
+	find ${WRKSRC} -name .cvsignore -exec rm -f {} \;
+	cd ${WRKSRC} && rm -rf .hg .hgignore .hgtags
+	cd ${WRKSRC} && perl -pi -e 's#/usr/local#${TRUEPREFIX}#' \
+		`cat lib/moveplan9.files`
 
 do-build:
 	cd ${WRKSRC} && ./INSTALL -b
 
 do-install:
-	cd ${WRKSRC} && perl -pi -e 's#/usr/local#${TRUEPREFIX}#' \
-		`cat lib/moveplan9.files`
-	cp -Rp ${WRKSRC} ${PREFIX}
-	cd ${PLAN9} && rm -rf .hg .hgignore .hgtags
-	find ${PLAN9} -name .cvsignore -exec rm -f {} \;
+	${INSTALL_DATA_DIR} ${PLAN9}
+	cd ${WRKSRC} && ${INSTALL_DATA} CONTRIBUTORS LICENSE README TODO \
+		rcmain ${PLAN9}
+	${INSTALL_PROGRAM_DIR} ${PLAN9}/bin
+	cd ${WRKSRC}/bin && ${INSTALL_SCRIPT} ${SCRIPTS} ${PLAN9}/bin
+	cd ${WRKSRC}/bin && ${INSTALL_PROGRAM} ${BINS} ${PLAN9}/bin
+	${INSTALL_PROGRAM_DIR} ${PLAN9}/bin/fs
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/fs/* ${PLAN9}/bin/fs
+	${INSTALL_PROGRAM_DIR} ${PLAN9}/bin/upas
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/upas/* ${PLAN9}/bin/upas
+	${INSTALL_PROGRAM_DIR} ${PLAN9}/bin/venti
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/venti/* ${PLAN9}/bin/venti
+
+	${INSTALL_MAN_DIR} ${PLAN9}/man
+.for f in fonts index.html junkwords lookman.index mkfile mkindex secindex
+	${INSTALL_DATA} ${WRKSRC}/man/${f} ${PLAN9}/man
+.endfor
+.for n in 1 3 4 5 6 7 8 9
+	${INSTALL_MAN_DIR} ${PLAN9}/man/man${n}
+	${INSTALL_MAN} ${WRKSRC}/man/man${n}/* ${PLAN9}/man/man${n}
+.endfor
+
+	cd ${WRKSRC} && pax -rw acid dict dist face font include lib log lp \
+		mac mail ndb news plumb postscript proto sky src tmac troff \
+		unix ${PLAN9}
 	cd ${PREFIX} && ln -s ../plan9/bin/9 bin/9
-#	cd ${PLAN9} && env PLAN9_TARGET="${TRUEPREFIX}/plan9" PLAN9="${PLAN9}" \
-#		PATH="${PATH}:${PLAN9}/bin" sh lib/moveplan9.sh ${WRKSRC}
-#	cd ${WRKSRC} && ./INSTALL -c -r "${PREFIX}/plan9"
 
 .include <bsd.port.mk>
