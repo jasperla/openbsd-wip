@@ -2942,5 +2942,5 @@ share/templates/SpreadSheet.desktop
 share/templates/TextDocument.desktop
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/shared-mime-info
-@exec %D/bin/shared-mime-info
-@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
