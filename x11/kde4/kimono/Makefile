@@ -11,13 +11,19 @@ SHARED_LIBS +=	nepomuk-sharp		0.0
 SHARED_LIBS +=	plasma-sharp		0.0
 SHARED_LIBS +=	soprano-sharp		0.0
 
-WANTLIB =  c m pthread stdc++
+WANTLIB =  c m stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
-WANTLIB += lib/qt4/QtScript lib/qt4/QtTest lib/qt4/QtWebKit
-WANTLIB += lib/qt4/QtXml
-WANTLIB += smokebase smokephonon smokeqsci smokeqtcore
-WANTLIB += smokeqtdbus smokeqtgui smokeqtnetwork smokeqtopengl
-WANTLIB += smokeqtsql smokeqtsvg smokeqtxml
+WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
+WANTLIB += kdecore kdeui kio kparts ktexteditor
+WANTLIB += nepomuk nepomukquery nepomukutils plasma qyoto
+WANTLIB += soprano sopranoclient sopranoindex sopranoserver
+WANTLIB += smokebase smokeqtcore smokekdecore smokekdeui
+WANTLIB += smokekfile smokekhtml smokekio smokeknewstuff2
+WANTLIB += smokeknewstuff3 smokekparts smokektexteditor smokekutils
+WANTLIB += smokenepomuk smokeplasma smokeqtdbus smokeqtgui
+WANTLIB += smokeqtnetwork smokeqtopengl smokeqtsql smokeqtsvg
+WANTLIB += smokeqtxml smokesoprano
+WANTLIB += gc mono-2.0
 
 MODULES =		lang/mono
 
