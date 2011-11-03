@@ -4,6 +4,7 @@ COMMENT =	KDE office suite
 VERSION =	2.3.3
 DISTNAME =	koffice-${VERSION}
 PKGNAME =	${DISTNAME:C/-/4-/1}
+REVISION =	0
 
 SHARED_LIBS =	flake			0.0 # 8.0
 SHARED_LIBS +=	kokross			0.0 # 8.0
@@ -76,8 +77,10 @@ WANTLIB += kresources ktexteditor kutils threadweaver
 
 BUILD_DEPENDS =	devel/boost
 
+RUN_DEPENDS =	misc/shared-mime-info
+
 # Optional run-time dependency, does not affect build
-#RUN_DEPENDS =	graphics/create-resources
+#RUN_DEPENDS +=	graphics/create-resources
 
 MODKDE4_USE =	pim
 
