@@ -3,7 +3,7 @@
 COMMENT =	KDE development enviornment
 VERSION =	4.2.3
 DISTNAME =	kdevelop-${VERSION}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=	kdev4cmakecommon	0.0
 SHARED_LIBS +=	kdev4cppduchain		0.0
