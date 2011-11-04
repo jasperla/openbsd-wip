@@ -7968,3 +7968,4 @@ plan9/unix/mkfile.regexp
 plan9/unix/mkfile.utf
 plan9/unix/mkfile.what
 plan9/unix/utf.h
+@unexec rm -f ${PREFIX}/plan9/man/whatis.db
