@@ -1,14 +1,17 @@
 $OpenBSD$
---- ksystemlog/src/modes/postfix/postfixConfiguration.h.orig	Mon Sep  5 23:44:25 2011
-+++ ksystemlog/src/modes/postfix/postfixConfiguration.h	Mon Sep  5 23:45:54 2011
-@@ -39,8 +39,8 @@ class PostfixConfiguration : public GenericLogModeConf
+--- ksystemlog/src/modes/postfix/postfixConfiguration.h.orig	Mon Sep 27 23:52:10 2010
++++ ksystemlog/src/modes/postfix/postfixConfiguration.h	Fri Nov  4 02:47:54 2011
+@@ -39,8 +39,13 @@ class PostfixConfiguration : public GenericLogModeConf
  		PostfixConfiguration() :
  			GenericLogModeConfiguration(
  					QLatin1String( POSTFIX_LOG_MODE_ID ),
--					QStringList() << QLatin1String( "/var/log/mail.log" ) << QLatin1String( "/var/log/mail.info" ) << QLatin1String( "/var/log/mail.warn" ) << QLatin1String( "/var/log/mail.err" ),
--					QList<int>() << NOTICE_LOG_LEVEL_ID << INFORMATION_LOG_LEVEL_ID << WARNING_LOG_LEVEL_ID << ERROR_LOG_LEVEL_ID
++#if defined(__OpenBSD__)
 +					QStringList() << QLatin1String( "/var/log/maillog" ),
 +					QList<int>() << INFORMATION_LOG_LEVEL_ID
++#else
+ 					QStringList() << QLatin1String( "/var/log/mail.log" ) << QLatin1String( "/var/log/mail.info" ) << QLatin1String( "/var/log/mail.warn" ) << QLatin1String( "/var/log/mail.err" ),
+ 					QList<int>() << NOTICE_LOG_LEVEL_ID << INFORMATION_LOG_LEVEL_ID << WARNING_LOG_LEVEL_ID << ERROR_LOG_LEVEL_ID
++#endif
  			) {
  
  		}
