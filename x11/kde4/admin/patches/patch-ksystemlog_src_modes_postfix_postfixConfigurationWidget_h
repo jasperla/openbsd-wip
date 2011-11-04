@@ -1,6 +1,6 @@
 $OpenBSD$
---- ksystemlog/src/modes/postfix/postfixConfigurationWidget.h.orig	Fri Nov  4 03:02:59 2011
-+++ ksystemlog/src/modes/postfix/postfixConfigurationWidget.h	Fri Nov  4 03:03:35 2011
+--- ksystemlog/src/modes/postfix/postfixConfigurationWidget.h.orig	Fri Nov  4 13:58:24 2011
++++ ksystemlog/src/modes/postfix/postfixConfigurationWidget.h	Fri Nov  4 13:58:50 2011
 @@ -45,13 +45,13 @@ class PostfixConfigurationWidget : public LogModeConfi
  
  	public:
@@ -16,4 +16,18 @@ $OpenBSD$
 +			QString description = i18n("<p>These files will be analyzed to show the <b>Mail Logs</b>.</p>");
  
  			fileList = new LogLevelFileList(this, description);
+ 
+@@ -67,11 +67,11 @@ class PostfixConfigurationWidget : public LogModeConfi
+ 
+ 		bool isValid() const {
+ 			if (fileList->isEmpty() == false) {
+-				logDebug() << "Postfix configuration valid" << endl;
++				logDebug() << "Mail configuration valid" << endl;
+ 				return true;
+ 			}
+ 
+-			logDebug() << "Postfix configuration not valid" << endl;
++			logDebug() << "Mail configuration not valid" << endl;
+ 			return false;
+ 		}
  
