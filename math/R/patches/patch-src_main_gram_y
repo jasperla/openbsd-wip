@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_main_gram_y,v 1.5 2008/10/26 23:04:00 mbalmer Exp $
+--- src/main/gram.y.orig	Tue Oct  7 02:05:09 2008
++++ src/main/gram.y	Sat Oct 25 22:43:34 2008
+@@ -99,7 +99,7 @@ static PROTECT_INDEX srindex;
+ 
+ static int mbcs_get_next(int c, wchar_t *wc)
+ {
+-    int i, res, clen = 1; char s[9];
++    int i, res, clen = 1; signed char s[9];
+     mbstate_t mb_st;
+ 
+     s[0] = c;
