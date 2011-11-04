@@ -21,14 +21,22 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		X11 Xext c kvm m pthread util
 
-MASTER_SITES =		${HOMEPAGE}
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX}:0 pgw.tar.bz2:1 \
+				roget.tar.bz2:1 scat.tgz:2
+DIST_SUBDIR =		plan9port
+MASTER_SITES0 =		${HOMEPAGE}
+MASTER_SITES1 =		http://pdos.lcs.mit.edu/~rsc/software/plan9/
+MASTER_SITES2 =		http://pdos.lcs.mit.edu/~rsc/
 EXTRACT_SUFX =		.tgz
 
+BUILD_DEPENDS =		archivers/bzip2
 RUN_DEPENDS =		print/ghostscript/gnu
 
 WRKDIST =		${WRKDIR}/plan9
 
 PLAN9 =			${PREFIX}/plan9
+
+SUBST_VARS +=		CFLAGS
 
 SCRIPTS = \" \"\" 9 9.rc 9a 9ar 9c 9fs 9l B E Getdir adict awd bundle \
 	codereview \
@@ -56,19 +64,26 @@ BINS = 9660srv 9p 9pserve 9term Mail Netfiles acme acmeevent aescbc ascii \
 	unutf unvac unzip usage vac vacfs vbackup vcat vmount0 vnfs wc win xd \
 	xshove yacc yuv zerotrunc zip 9pfuse acid acidtypes db
 
+post-extract:
+	cd ${WRKSRC}/dict && tar xjf ${FULLDISTDIR}/pgw.tar.bz2
+	cd ${WRKSRC}/dict && tar xjf ${FULLDISTDIR}/roget.tar.bz2
+	cd ${WRKSRC}/sky && tar xzf ${FULLDISTDIR}/scat.tgz
+
 post-patch:
 	cp ${FILESDIR}/OpenBSD-x86_64-asm.S ${WRKSRC}/src/libthread
 	cd ${WRKSRC}/src/libthread && cp Darwin-x86_64-swapcontext.c \
 		OpenBSD-x86_64.c
 	find ${WRKSRC} -name .cvsignore -exec rm -f {} \;
 	cd ${WRKSRC} && rm -rf .hg .hgignore .hgtags
-	cd ${WRKSRC} && perl -pi -e 's#/usr/local#${TRUEPREFIX}#' \
-		`cat lib/moveplan9.files`
+	${SUBST_CMD} ${WRKSRC}/src/mkhdr
 
 do-build:
 	cd ${WRKSRC} && ./INSTALL -b
 
 do-install:
+	cd ${WRKSRC} && perl -pi -e 's#/usr/local#${TRUEPREFIX}#' \
+		`cat lib/moveplan9.files`
+
 	${INSTALL_DATA_DIR} ${PLAN9}
 	cd ${WRKSRC} && ${INSTALL_DATA} CONTRIBUTORS LICENSE README TODO \
 		rcmain ${PLAN9}

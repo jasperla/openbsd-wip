@@ -1,8 +1,6 @@
 - test on i386 and powerpc
 - other arches? (need assembler implementation of {get,set}mcontext)
 - test ALL the programs! (and @comment those not working)
-- verbose build?
-- separate databases? (see dict/README and sky/README)
 
 working: acme, sam, troff, rc, page, most smaller utilities
 not working: 9term (need to fix OS-specific tty allocation code)
