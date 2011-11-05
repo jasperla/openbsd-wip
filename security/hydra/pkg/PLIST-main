@@ -2,5 +2,7 @@
 @pkgpath security/hydra
 @bin bin/hydra
 @bin bin/pw-inspector
+@man man/man1/hydra.1
+@man man/man1/pw-inspector.1
 share/doc/hydra/
 share/doc/hydra/README

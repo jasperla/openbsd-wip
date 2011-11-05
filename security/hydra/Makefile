@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2011/10/21 16:23:45 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2011/11/04 08:43:32 jasper Exp $
 
 COMMENT-main=	parallelized login hacker
 COMMENT-gui=	GTK frontend for hydra
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	no charge
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c m 
+WANTLIB=	c m
 
 MASTER_SITES =  http://www.thc.org/releases/
 MASTER_SITES +=	${MASTER_SITE_PACKETSTORM:=groups/thc/}
@@ -28,7 +28,6 @@ FLAVOR?=
 MULTI_PACKAGES=	-main
 
 CONFIGURE_STYLE=gnu dest
-CONFIGURE_ARGS +=
 
 USE_GMAKE= 	Yes
 NO_REGRESS=	Yes
