@@ -1,0 +1,2 @@
+ejabberdctl is installed 550 root:bin making rc script which uses user _ejabberd not work.
+This is actually done by upstream - I need to ask them why that is so.
