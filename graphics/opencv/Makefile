@@ -1,6 +1,5 @@
 # $OpenBSD: Makefile,v 1.3 2011/07/16 22:43:57 espie Exp $
 
-BROKEN=			does not build, use official packages for now
 ONLY_FOR_ARCH=		${GCC4_ARCHS}
 
 SHARED_ONLY=		Yes
@@ -37,10 +36,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=opencvlibrary/}
+MASTER_SITES=		http://www.sizeofvoid.org/pub/OpenBSD/distfiles/
 EXTRACT_SUFX=		.tar.bz2
-EXTRACT_ONLY=
-WRKDIST=		${WRKDIR}/${DISTNAME:C/[a-z]*$//}
 
 WANTLIB += GL Half Iex IlmImf Imath X11 Xau Xcomposite Xcursor
 WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
