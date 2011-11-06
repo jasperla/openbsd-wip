@@ -1,0 +1,14 @@
+$OpenBSD: patch-share_Makefile_in,v 1.8 2010/05/05 08:43:35 edd Exp $
+--- share/Makefile.in.orig	Mon Apr 11 19:54:30 2011
++++ share/Makefile.in	Thu Apr 28 21:50:33 2011
+@@ -1404,10 +1404,6 @@ uninstall-am: uninstall-dist_appdataDATA uninstall-dis
+ 
+ skins2/default.vlt: $(skins2_default_vlt_FILES)
+ 	mkdir -p skins2
+-	(cd "$(srcdir)/skins2"; find default -print0 | \
+-		LC_ALL=C sort -z | \
+-		tar cvv --exclude .svn --no-recursion --null -T -) | \
+-	gzip -n > skins2/default.vlt
+ 
+ .lua.luac:
+ 	$(AM_V_at)for f in $(EXTRA_DIST); do \

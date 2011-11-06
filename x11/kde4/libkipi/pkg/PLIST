@@ -14,33 +14,17 @@ include/libkipi/pluginloader.h
 include/libkipi/uploadwidget.h
 include/libkipi/version.h
 @lib lib/libkipi.so.${LIBkipi_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libkipi.pc
-share/apps/
 share/apps/kipi/
 share/apps/kipi/data/
 share/apps/kipi/data/kipi-icon.svg
 share/apps/kipi/data/kipi-logo.svg
 share/apps/kipi/data/kipi-plugins_logo.png
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/kipi.png
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/kipi.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/kipi.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/kipi.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/kipi.png
-share/kde4/
-share/kde4/servicetypes/
 share/kde4/servicetypes/kipiplugin.desktop
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

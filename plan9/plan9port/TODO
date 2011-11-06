@@ -1,13 +1,8 @@
 - test on i386 and powerpc
 - other arches? (need assembler implementation of {get,set}mcontext)
 - test ALL the programs! (and @comment those not working)
-- verbose build?
-- separate databases? (see dict/README and sky/README)
-- fix install (no workee as ordinary user)
 
 working: acme, sam, troff, rc, page, most smaller utilities
-not working: 9term, db, acid
-disabled: mount, 9pfuse
+not working: 9term (need to fix OS-specific tty allocation code)
+disabled: mount, 9pfuse, fs/*, acid, db
 left to test: venti-related stuff, rio ...
-
-- depend on ghostscript at runtime? (page)

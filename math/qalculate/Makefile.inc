@@ -47,5 +47,3 @@ post-patch:
 	cd ${dir} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoconf
 .endfor
-
-.include <bsd.port.mk>

@@ -1,0 +1,31 @@
+$OpenBSD$
+fix with png 1.4
+--- sources/darkplaces/image_png.c.orig	Thu Nov  3 19:44:44 2011
++++ sources/darkplaces/image_png.c	Thu Nov  3 19:46:48 2011
+@@ -36,7 +36,7 @@ static void*			(*qpng_create_read_struct)	(const char*
+ static void*			(*qpng_create_info_struct)	(void*);
+ static void				(*qpng_read_info)			(void*, void*);
+ static void				(*qpng_set_expand)			(void*);
+-static void				(*qpng_set_gray_1_2_4_to_8)	(void*);
++static void				(*qpng_set_expand_gray_1_2_4_to_8)	(void*);
+ static void				(*qpng_set_palette_to_rgb)	(void*);
+ static void				(*qpng_set_tRNS_to_alpha)	(void*);
+ static void				(*qpng_set_gray_to_rgb)		(void*);
+@@ -61,7 +61,7 @@ static dllfunction_t pngfuncs[] =
+ 	{"png_create_info_struct",	(void **) &qpng_create_info_struct},
+ 	{"png_read_info",			(void **) &qpng_read_info},
+ 	{"png_set_expand",			(void **) &qpng_set_expand},
+-	{"png_set_gray_1_2_4_to_8",	(void **) &qpng_set_gray_1_2_4_to_8},
++	{"png_set_expand_gray_1_2_4_to_8",	(void **) &qpng_set_expand_gray_1_2_4_to_8},
+ 	{"png_set_palette_to_rgb",	(void **) &qpng_set_palette_to_rgb},
+ 	{"png_set_tRNS_to_alpha",	(void **) &qpng_set_tRNS_to_alpha},
+ 	{"png_set_gray_to_rgb",		(void **) &qpng_set_gray_to_rgb},
+@@ -311,7 +311,7 @@ unsigned char *PNG_LoadImage_BGRA (const unsigned char
+ 	{
+ 		qpng_set_gray_to_rgb(png);
+ 		if (my_png.BitDepth < 8)
+-			qpng_set_gray_1_2_4_to_8(png);
++			qpng_set_expand_gray_1_2_4_to_8(png);
+ 	}
+ 
+ 	if (qpng_get_valid(png, pnginfo, PNG_INFO_tRNS))

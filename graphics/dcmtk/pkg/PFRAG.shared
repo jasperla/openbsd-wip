@@ -1,0 +1,13 @@
+@comment $OpenBSD$
+@lib lib/libdcmdata.so.${LIBdcmdata_VERSION}
+@lib lib/libdcmimage.so.${LIBdcmimage_VERSION}
+@lib lib/libdcmimgle.so.${LIBdcmimgle_VERSION}
+@lib lib/libdcmjpeg.so.${LIBdcmjpeg_VERSION}
+@lib lib/libdcmnet.so.${LIBdcmnet_VERSION}
+@lib lib/libdcmpstat.so.${LIBdcmpstat_VERSION}
+@lib lib/libdcmqrdb.so.${LIBdcmqrdb_VERSION}
+@lib lib/libdcmsign.so.${LIBdcmsign_VERSION}
+@lib lib/libdcmsr.so.${LIBdcmsr_VERSION}
+@lib lib/libdcmtls.so.${LIBdcmtls_VERSION}
+@lib lib/libdcmwlm.so.${LIBdcmwlm_VERSION}
+@lib lib/libofstd.so.${LIBofstd_VERSION}

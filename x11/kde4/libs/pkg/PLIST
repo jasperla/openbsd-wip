@@ -3614,3 +3614,5 @@ share/man/man8/
 share/mime/packages/kde.xml
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime

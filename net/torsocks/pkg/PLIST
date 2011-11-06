@@ -12,3 +12,19 @@ lib/torsocks/libtorsocks.la
 share/examples/torsocks/
 share/examples/torsocks/torsocks.conf
 @sample ${SYSCONFDIR}/torsocks.conf
+share/torsocks/
+share/torsocks/DEBUG
+share/torsocks/README
+share/torsocks/README.TORDNS
+share/torsocks/SOCKS4.protocol
+share/torsocks/SOCKS5
+share/torsocks/compilewarnings.patch
+share/torsocks/conffile.patch
+share/torsocks/expectedresults.txt
+share/torsocks/getaddrbyhost.patch
+share/torsocks/getpeername.patch
+share/torsocks/infiniteloop.patch
+share/torsocks/localaddresses.patch
+share/torsocks/run_tests.sh
+share/torsocks/socks-extensions.txt
+share/torsocks/tordns.patch

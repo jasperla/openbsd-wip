@@ -3,7 +3,7 @@
 COMMENT =	K Desktop Environment, pim
 DISTNAME =	kdepim-${MODKDE_VERSION}
 HOMEPAGE =	http://pim.kde.org/
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	akonadi_next 0.0
 SHARED_LIBS +=	akregatorinterfaces 0.0
@@ -48,6 +48,21 @@ SHARED_LIBS +=  templateparser            0.0 # 4.7
 MODULES =	devel/gettext
 
 MODKDE4_USE =	pim
+
+# textproc/dblatex adds all of texlive, make it optional?
+BUILD_DEPENDS =	devel/boost \
+		databases/soprano \
+		databases/strigi \
+		misc/shared-desktop-ontologies \
+		security/cyrus-sasl2 \
+		security/gpgme \
+		security/libassuan \
+		textproc/dblatex \
+		textproc/docbook \
+		textproc/docbook-xsl \
+		textproc/libxslt \
+		x11/grantlee \
+		x11/kde4/akonadi \
 
 LIB_DEPENDS =	x11/grantlee
 

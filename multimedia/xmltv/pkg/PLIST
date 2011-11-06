@@ -141,14 +141,14 @@ ${P5SITE}/XMLTV/Version.pm
 @man man/man3p/XMLTV::Summarize.3
 @man man/man3p/XMLTV::Supplement.3
 share/doc/pkg-readmes/${FULLPKGNAME}
-share/doc/${FULLPKGNAME}/
-share/doc/${FULLPKGNAME}/COPYING
-share/doc/${FULLPKGNAME}/QuickStart
-share/doc/${FULLPKGNAME}/README
-share/doc/${FULLPKGNAME}/README.tv_check
-share/doc/${FULLPKGNAME}/README.win32
-share/doc/${FULLPKGNAME}/tv_check_doc.html
-share/doc/${FULLPKGNAME}/tv_check_doc.jpg
+share/doc/xmltv-0.5.61/
+share/doc/xmltv-0.5.61/COPYING
+share/doc/xmltv-0.5.61/QuickStart
+share/doc/xmltv-0.5.61/README
+share/doc/xmltv-0.5.61/README.tv_check
+share/doc/xmltv-0.5.61/README.win32
+share/doc/xmltv-0.5.61/tv_check_doc.html
+share/doc/xmltv-0.5.61/tv_check_doc.jpg
 share/xmltv/
 share/xmltv/tv_grab_eu_epgdata/
 share/xmltv/tv_grab_eu_epgdata/channel_ids

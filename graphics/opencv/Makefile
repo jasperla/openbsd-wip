@@ -24,6 +24,7 @@ SHARED_LIBS +=		opencv_imgproc			1.0
 SHARED_LIBS +=		opencv_legacy			1.0
 SHARED_LIBS +=		opencv_ml			1.0
 SHARED_LIBS +=		opencv_objdetect		1.0
+SHARED_LIBS +=		opencv_ts			0.0
 SHARED_LIBS +=		opencv_video			1.0
 
 HOMEPAGE=		http://opencv.willowgarage.com/

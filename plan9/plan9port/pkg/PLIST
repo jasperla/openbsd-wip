@@ -1,38 +1,34 @@
 @comment $OpenBSD$
 bin/9
 plan9/
-@comment plan9/CHANGES
 plan9/CONTRIBUTORS
-@comment plan9/INSTALL
-@comment plan9/INSTALL.orig
 plan9/LICENSE
-@comment plan9/Makefile
 plan9/README
 plan9/TODO
-plan9/acid/
-plan9/acid/386
-plan9/acid/68020
-plan9/acid/acme
-plan9/acid/alef
-plan9/acid/alpha
-plan9/acid/arm
-plan9/acid/coverage
-plan9/acid/kernel
-plan9/acid/leak
-plan9/acid/mips
-plan9/acid/network
-plan9/acid/pool
-plan9/acid/port
-plan9/acid/power
-plan9/acid/pthread-linux-386
-plan9/acid/sparc
-plan9/acid/syscall
-plan9/acid/thread
-plan9/acid/transcript
-plan9/acid/trump
-plan9/acid/truss
-plan9/acid/venti
-plan9/acid/window
+@comment plan9/acid/
+@comment plan9/acid/386
+@comment plan9/acid/68020
+@comment plan9/acid/acme
+@comment plan9/acid/alef
+@comment plan9/acid/alpha
+@comment plan9/acid/arm
+@comment plan9/acid/coverage
+@comment plan9/acid/kernel
+@comment plan9/acid/leak
+@comment plan9/acid/mips
+@comment plan9/acid/network
+@comment plan9/acid/pool
+@comment plan9/acid/port
+@comment plan9/acid/power
+@comment plan9/acid/pthread-linux-386
+@comment plan9/acid/sparc
+@comment plan9/acid/syscall
+@comment plan9/acid/thread
+@comment plan9/acid/transcript
+@comment plan9/acid/trump
+@comment plan9/acid/truss
+@comment plan9/acid/venti
+@comment plan9/acid/window
 plan9/bin/
 plan9/bin/"
 plan9/bin/""
@@ -53,8 +49,8 @@ plan9/bin/E
 plan9/bin/Getdir
 @bin plan9/bin/Mail
 @bin plan9/bin/Netfiles
-@bin plan9/bin/acid
-@bin plan9/bin/acidtypes
+@comment @bin plan9/bin/acid
+@comment @bin plan9/bin/acidtypes
 @bin plan9/bin/acme
 @bin plan9/bin/acmeevent
 plan9/bin/adict
@@ -87,7 +83,7 @@ plan9/bin/codereview.py
 @bin plan9/bin/core
 @bin plan9/bin/crop
 @bin plan9/bin/date
-@bin plan9/bin/db
+@comment @bin plan9/bin/db
 @bin plan9/bin/dc
 @bin plan9/bin/dd
 @bin plan9/bin/delatex
@@ -118,15 +114,15 @@ plan9/bin/doctype
 @bin plan9/bin/fontsrv
 @bin plan9/bin/fortune
 @bin plan9/bin/freq
-plan9/bin/fs/
-@bin plan9/bin/fs/32vfs
-@bin plan9/bin/fs/cpiofs
-@bin plan9/bin/fs/tapfs
-@bin plan9/bin/fs/tarfs
-@bin plan9/bin/fs/tpfs
-@bin plan9/bin/fs/v10fs
-@bin plan9/bin/fs/v6fs
-@bin plan9/bin/fs/zipfs
+@comment plan9/bin/fs/
+@comment @bin plan9/bin/fs/32vfs
+@comment @bin plan9/bin/fs/cpiofs
+@comment @bin plan9/bin/fs/tapfs
+@comment @bin plan9/bin/fs/tarfs
+@comment @bin plan9/bin/fs/tpfs
+@comment @bin plan9/bin/fs/v10fs
+@comment @bin plan9/bin/fs/v6fs
+@comment @bin plan9/bin/fs/zipfs
 @bin plan9/bin/fsize
 plan9/bin/g
 @bin plan9/bin/getflags
@@ -157,7 +153,6 @@ plan9/bin/lc
 @bin plan9/bin/listen1
 @bin plan9/bin/look
 plan9/bin/lookman
-plan9/bin/lpbin/
 @bin plan9/bin/ls
 plan9/bin/man
 @bin plan9/bin/mapd
@@ -183,7 +178,7 @@ plan9/bin/netfilestat
 @bin plan9/bin/news
 plan9/bin/nobs
 plan9/bin/nroff
-plan9/bin/osxvers
+@comment plan9/bin/osxvers
 @bin plan9/bin/p
 @bin plan9/bin/page
 @bin plan9/bin/passwd
@@ -328,9 +323,12 @@ plan9/bin/yesterday
 @bin plan9/bin/yuv
 @bin plan9/bin/zerotrunc
 @bin plan9/bin/zip
-@comment plan9/configure
 plan9/dict/
 plan9/dict/README
+plan9/dict/pgw
+plan9/dict/pgwindex
+plan9/dict/roget
+plan9/dict/rogetindex
 plan9/dist/
 plan9/dist/README
 plan9/dist/addsrclinks
@@ -346,6 +344,7 @@ plan9/dist/fixurls
 plan9/dist/glendacircle.png
 plan9/dist/isum
 plan9/dist/isum.awk
+plan9/dist/isum.awk.orig
 plan9/dist/main.html
 plan9/dist/maketarball
 plan9/dist/manindexbottom.html
@@ -4111,9 +4110,6 @@ plan9/include/u.h
 @comment plan9/include/u.h.orig
 plan9/include/utf.h
 plan9/include/venti.h
-@comment plan9/install.log
-@comment plan9/install.sum
-@comment plan9/install.txt
 plan9/lib/
 plan9/lib/CVS.IEXIST
 plan9/lib/acme.rc
@@ -4259,7 +4255,7 @@ plan9/man/man1/
 @man plan9/man/man1/9p.1
 @man plan9/man/man1/9term.1
 plan9/man/man1/INDEX
-@man plan9/man/man1/acid.1
+@comment @man plan9/man/man1/acid.1
 @man plan9/man/man1/acme.1
 @man plan9/man/man1/acmeevent.1
 @man plan9/man/man1/ascii.1
@@ -4280,7 +4276,7 @@ plan9/man/man1/INDEX
 @man plan9/man/man1/core.1
 @man plan9/man/man1/crop.1
 @man plan9/man/man1/date.1
-@man plan9/man/man1/db.1
+@comment @man plan9/man/man1/db.1
 @man plan9/man/man1/dc.1
 @man plan9/man/man1/dd.1
 @man plan9/man/man1/deroff.1
@@ -5109,9 +5105,20 @@ plan9/proto/allproto
 plan9/rcmain
 plan9/sky/
 plan9/sky/README
+plan9/sky/abell.scat
+plan9/sky/bayer.scat
+plan9/sky/con.scat
+plan9/sky/conindex.scat
 plan9/sky/constelnames
 plan9/sky/estartab
 plan9/sky/here.sample
+plan9/sky/mindex.scat
+plan9/sky/name.scat
+plan9/sky/ngc2000.scat
+plan9/sky/ngc2000type.scat
+plan9/sky/patch.scat
+plan9/sky/patchindex.scat
+plan9/sky/sao.scat
 plan9/src/
 plan9/src/cmd/
 plan9/src/cmd/9660/
@@ -5177,29 +5184,29 @@ plan9/src/cmd/9term/util.c
 plan9/src/cmd/9term/win.c
 plan9/src/cmd/9term/wind.c
 plan9/src/cmd/acid/
-plan9/src/cmd/acid/Notes
-plan9/src/cmd/acid/acid.h
-plan9/src/cmd/acid/builtin.c
-plan9/src/cmd/acid/dbg.y
-plan9/src/cmd/acid/dot.c
-plan9/src/cmd/acid/exec.c
-plan9/src/cmd/acid/expr.c
-plan9/src/cmd/acid/lex.c
-plan9/src/cmd/acid/list.c
-plan9/src/cmd/acid/main.c
-plan9/src/cmd/acid/mkfile
-plan9/src/cmd/acid/print.c
-plan9/src/cmd/acid/proc.c
-plan9/src/cmd/acid/util.c
-plan9/src/cmd/acidtypes/
-plan9/src/cmd/acidtypes/dat.h
-plan9/src/cmd/acidtypes/dwarf.c
-plan9/src/cmd/acidtypes/main.c
-plan9/src/cmd/acidtypes/mkfile
-plan9/src/cmd/acidtypes/stabs.c
-plan9/src/cmd/acidtypes/sym.c
-plan9/src/cmd/acidtypes/type.c
-plan9/src/cmd/acidtypes/util.c
+@comment plan9/src/cmd/acid/Notes
+@comment plan9/src/cmd/acid/acid.h
+@comment plan9/src/cmd/acid/builtin.c
+@comment plan9/src/cmd/acid/dbg.y
+@comment plan9/src/cmd/acid/dot.c
+@comment plan9/src/cmd/acid/exec.c
+@comment plan9/src/cmd/acid/expr.c
+@comment plan9/src/cmd/acid/lex.c
+@comment plan9/src/cmd/acid/list.c
+@comment plan9/src/cmd/acid/main.c
+@comment plan9/src/cmd/acid/mkfile
+@comment plan9/src/cmd/acid/print.c
+@comment plan9/src/cmd/acid/proc.c
+@comment plan9/src/cmd/acid/util.c
+@comment plan9/src/cmd/acidtypes/
+@comment plan9/src/cmd/acidtypes/dat.h
+@comment plan9/src/cmd/acidtypes/dwarf.c
+@comment plan9/src/cmd/acidtypes/main.c
+@comment plan9/src/cmd/acidtypes/mkfile
+@comment plan9/src/cmd/acidtypes/stabs.c
+@comment plan9/src/cmd/acidtypes/sym.c
+@comment plan9/src/cmd/acidtypes/type.c
+@comment plan9/src/cmd/acidtypes/util.c
 plan9/src/cmd/acme/
 plan9/src/cmd/acme/acme.c
 plan9/src/cmd/acme/addr.c
@@ -5422,22 +5429,22 @@ plan9/src/cmd/cmp.c
 plan9/src/cmd/comm.c
 plan9/src/cmd/core.c
 plan9/src/cmd/date.c
-plan9/src/cmd/db/
-plan9/src/cmd/db/command.c
-plan9/src/cmd/db/defs.h
-plan9/src/cmd/db/expr.c
-plan9/src/cmd/db/fns.h
-plan9/src/cmd/db/format.c
-plan9/src/cmd/db/input.c
-plan9/src/cmd/db/main.c
-plan9/src/cmd/db/mkfile
-plan9/src/cmd/db/output.c
-plan9/src/cmd/db/pcs.c
-plan9/src/cmd/db/print.c
-plan9/src/cmd/db/regs.c
-plan9/src/cmd/db/runpcs.c
-plan9/src/cmd/db/setup.c
-plan9/src/cmd/db/trcrun.c
+@comment plan9/src/cmd/db/
+@comment plan9/src/cmd/db/command.c
+@comment plan9/src/cmd/db/defs.h
+@comment plan9/src/cmd/db/expr.c
+@comment plan9/src/cmd/db/fns.h
+@comment plan9/src/cmd/db/format.c
+@comment plan9/src/cmd/db/input.c
+@comment plan9/src/cmd/db/main.c
+@comment plan9/src/cmd/db/mkfile
+@comment plan9/src/cmd/db/output.c
+@comment plan9/src/cmd/db/pcs.c
+@comment plan9/src/cmd/db/print.c
+@comment plan9/src/cmd/db/regs.c
+@comment plan9/src/cmd/db/runpcs.c
+@comment plan9/src/cmd/db/setup.c
+@comment plan9/src/cmd/db/trcrun.c
 plan9/src/cmd/dc.c
 plan9/src/cmd/dd.c
 plan9/src/cmd/delatex.lx
@@ -6315,20 +6322,20 @@ plan9/src/cmd/srv.c
 plan9/src/cmd/strings.c
 plan9/src/cmd/sum.c
 plan9/src/cmd/tail.c
-plan9/src/cmd/tapefs/
-plan9/src/cmd/tapefs/32vfs.c
-plan9/src/cmd/tapefs/cpiofs.c
-plan9/src/cmd/tapefs/fs.c
-plan9/src/cmd/tapefs/mkfile
-plan9/src/cmd/tapefs/tapefs.h
-plan9/src/cmd/tapefs/tapfs.c
-plan9/src/cmd/tapefs/tarfs.c
-plan9/src/cmd/tapefs/tpfs.c
-plan9/src/cmd/tapefs/util.c
-plan9/src/cmd/tapefs/v10fs.c
-plan9/src/cmd/tapefs/v6fs.c
-plan9/src/cmd/tapefs/zip.h
-plan9/src/cmd/tapefs/zipfs.c
+@comment plan9/src/cmd/tapefs/
+@comment plan9/src/cmd/tapefs/32vfs.c
+@comment plan9/src/cmd/tapefs/cpiofs.c
+@comment plan9/src/cmd/tapefs/fs.c
+@comment plan9/src/cmd/tapefs/mkfile
+@comment plan9/src/cmd/tapefs/tapefs.h
+@comment plan9/src/cmd/tapefs/tapfs.c
+@comment plan9/src/cmd/tapefs/tarfs.c
+@comment plan9/src/cmd/tapefs/tpfs.c
+@comment plan9/src/cmd/tapefs/util.c
+@comment plan9/src/cmd/tapefs/v10fs.c
+@comment plan9/src/cmd/tapefs/v6fs.c
+@comment plan9/src/cmd/tapefs/zip.h
+@comment plan9/src/cmd/tapefs/zipfs.c
 plan9/src/cmd/tar.c
 plan9/src/cmd/tbl/
 plan9/src/cmd/tbl/mkfile
@@ -7700,6 +7707,7 @@ plan9/src/mkcommon
 plan9/src/mkdirs
 plan9/src/mkfile
 plan9/src/mkhdr
+plan9/src/mkhdr.beforesubst
 @comment plan9/src/mkhdr.orig
 plan9/src/mklib
 plan9/src/mkmany
@@ -7960,3 +7968,4 @@ plan9/unix/mkfile.regexp
 plan9/unix/mkfile.utf
 plan9/unix/mkfile.what
 plan9/unix/utf.h
+@unexec rm -f ${PREFIX}/plan9/man/whatis.db

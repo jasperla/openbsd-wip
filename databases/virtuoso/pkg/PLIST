@@ -37,12 +37,9 @@ lib/virtuoso/
 lib/virtuoso/hosting/
 lib/virtuoso/hosting/im.a
 lib/virtuoso/hosting/im.la
-lib/virtuoso/hosting/wbxml2.a
-lib/virtuoso/hosting/wbxml2.la
 share/virtuoso/
 @sample /var/lib/virtuoso/db/
 share/virtuoso/db/
-@sample /var/lib/virtuoso/db/virtuoso.ini
 share/virtuoso/db/virtuoso.ini
 share/virtuoso/doc/
 share/virtuoso/doc/AUTHORS
@@ -61,12 +58,12 @@ share/virtuoso/doc/README.jsse
 share/virtuoso/doc/README.php5
 share/virtuoso/doc/README.sesame2
 share/virtuoso/doc/README.sesame3
+@sample /var/lib/virtuoso/vsp/admin/index_left.vsp
 share/virtuoso/vad/
 @sample /var/lib/virtuoso/vsp/
 share/virtuoso/vsp/
 @sample /var/lib/virtuoso/vsp/admin/
 share/virtuoso/vsp/admin/
-@sample /var/lib/virtuoso/vsp/admin/index_left.vsp
 share/virtuoso/vsp/admin/index_left.vsp
 @sample /var/lib/virtuoso/vsp/admin_style.html
 share/virtuoso/vsp/admin_style.html
@@ -79,8 +76,8 @@ share/virtuoso/vsp/demo-index.html
 @sample /var/lib/virtuoso/vsp/downfr.html
 share/virtuoso/vsp/downfr.html
 @sample /var/lib/virtuoso/vsp/images/
-share/virtuoso/vsp/images/
 @sample /var/lib/virtuoso/vsp/images/PoweredByVirtuoso.gif
+share/virtuoso/vsp/images/
 share/virtuoso/vsp/images/PoweredByVirtuoso.gif
 @sample /var/lib/virtuoso/vsp/images/PoweredByVirtuosoSmall2.jpg
 share/virtuoso/vsp/images/PoweredByVirtuosoSmall2.jpg
@@ -297,8 +294,8 @@ share/virtuoso/vsp/releasenotes.html
 @sample /var/lib/virtuoso/vsp/robots.txt
 share/virtuoso/vsp/robots.txt
 @sample /var/lib/virtuoso/vsp/vsmx/
-share/virtuoso/vsp/vsmx/
 @sample /var/lib/virtuoso/vsp/vsmx/close_16.gif
+share/virtuoso/vsp/vsmx/
 share/virtuoso/vsp/vsmx/close_16.gif
 @sample /var/lib/virtuoso/vsp/vsmx/default.css
 share/virtuoso/vsp/vsmx/default.css

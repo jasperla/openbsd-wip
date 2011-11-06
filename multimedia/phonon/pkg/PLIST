@@ -174,13 +174,9 @@ share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.kde.Phonon.AudioOutput.xml
 share/phonon-buildsystem/
 share/phonon-buildsystem/COPYING-CMAKE-SCRIPTS
-share/phonon-buildsystem/FindAutomoc4.cmake
-share/phonon-buildsystem/FindPackageHandleStandardArgs.cmake
 share/phonon-buildsystem/FindPhononInternal.cmake
-share/phonon-buildsystem/FindQt4.cmake
 share/phonon-buildsystem/MacroEnsureVersion.cmake
 share/phonon-buildsystem/MacroLogFeature.cmake
 share/phonon-buildsystem/MacroOptionalFindPackage.cmake
-share/phonon-buildsystem/MacroPushRequiredVars.cmake
 share/phonon-buildsystem/PhononMacros.cmake
 share/phonon-buildsystem/cmake_uninstall.cmake.in

@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, network
 DISTNAME =	kdenetwork-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kgetcore		0.0 # 4.0
 SHARED_LIBS +=	kopete			3.0 # 4.0
@@ -20,18 +21,18 @@ SHARED_LIBS +=	krdccore		0.0 # 4.4
 SHARED_LIBS +=	krfbprivate		4.7 # 4.7
 
 WANTLIB =  c m pthread stdc++ z
-WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xpm Xss Xdamage Xtst
+WANTLIB += ICE SM X11 Xext Xdamage Xtst
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
-WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSql
+WANTLIB += lib/qt4/QtNetwork lib/qt4/QtSql
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtTest lib/qt4/QtXml
 WANTLIB += kabc>=5 kcmutils kde3support kdeui kdnssd 
 WANTLIB += gadu glib-2.0 gpg-error gpgme++-pthread gpgme-pthread idn
 WANTLIB += kemoticons kfile khtml kidletime kio kjs knewstuff2
 WANTLIB += knotifyconfig konq kparts kpimidentities kprintutils
-WANTLIB += kresources krosscore krossui ktexteditor kutils meanwhile
+WANTLIB += kresources ktexteditor kutils meanwhile
 WANTLIB += nepomuk nepomukutils phonon>=5 plasma qca>=3 qgpgme
-WANTLIB += qimageblitz solid soprano
-WANTLIB += assuan jasper jpeg otr raptor2 xml2 xmms xslt
+WANTLIB += qimageblitz solid soprano mms kworkspace
+WANTLIB += assuan jasper jpeg otr xml2 xmms xslt
 
 MODULES =	devel/gettext
 

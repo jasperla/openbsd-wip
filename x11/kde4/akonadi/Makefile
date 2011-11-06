@@ -2,6 +2,7 @@
 
 COMMENT =		KDE PIM access libraries
 DISTNAME =		akonadi-1.6.2
+REVISION =		0
 
 SHARED_LIBS = 		akonadiprotocolinternals 0.0	# 1.0
 
@@ -23,7 +24,8 @@ BUILD_DEPENDS =		x11/qt4,-mysql \
 # XXX no way to force correleation between dependency options below
 # No qt4-sqlite dependency as Akonadi uses own SQLite plugin.
 RUN_DEPENDS =		mysql-server-*|postgresql-server-*|sqlite3->=3.7.5:databases/postgresql,-server \
-			qt4-mysql-*|qt4-postgresql-*:x11/qt4,-postgresql
+			qt4-mysql-*|qt4-postgresql-*:x11/qt4,-postgresql \
+			misc/shared-mime-info
 
 LIB_DEPENDS =		databases/soprano \
 			databases/sqlite3 \

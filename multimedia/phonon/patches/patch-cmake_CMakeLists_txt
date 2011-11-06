@@ -1,0 +1,17 @@
+$OpenBSD$
+--- cmake/CMakeLists.txt.orig	Sat Oct 29 02:12:40 2011
++++ cmake/CMakeLists.txt	Sat Oct 29 02:13:43 2011
+@@ -1,13 +1,9 @@
+ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in
+               ${CMAKE_CURRENT_SOURCE_DIR}/COPYING-CMAKE-SCRIPTS
+-              ${CMAKE_CURRENT_SOURCE_DIR}/FindAutomoc4.cmake
+-              ${CMAKE_CURRENT_SOURCE_DIR}/FindPackageHandleStandardArgs.cmake
+               ${CMAKE_CURRENT_SOURCE_DIR}/FindPhononInternal.cmake
+               ${CMAKE_CURRENT_SOURCE_DIR}/PhononMacros.cmake
+-              ${CMAKE_CURRENT_SOURCE_DIR}/FindQt4.cmake
+               ${CMAKE_CURRENT_SOURCE_DIR}/MacroEnsureVersion.cmake
+               ${CMAKE_CURRENT_SOURCE_DIR}/MacroLogFeature.cmake
+               ${CMAKE_CURRENT_SOURCE_DIR}/MacroOptionalFindPackage.cmake
+-              ${CMAKE_CURRENT_SOURCE_DIR}/MacroPushRequiredVars.cmake
+               ${CMAKE_CURRENT_SOURCE_DIR}/PhononMacros.cmake
+         DESTINATION ${BUILDSYSTEM_INSTALL_DIR})

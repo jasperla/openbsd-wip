@@ -1,5 +1,7 @@
-*.orig
-*.swp
 *~
+*.bak
+*.core
+*.orig
 *.rej
+*.swp
 CVS
