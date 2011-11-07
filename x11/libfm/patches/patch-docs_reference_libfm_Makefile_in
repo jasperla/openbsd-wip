@@ -1,0 +1,11 @@
+$OpenBSD$
+--- docs/reference/libfm/Makefile.in.orig	Sat Nov  5 14:59:25 2011
++++ docs/reference/libfm/Makefile.in	Sat Nov  5 14:59:55 2011
+@@ -775,7 +775,6 @@ dist-hook: dist-check-gtkdoc dist-hook-local
+ #TESTS_ENVIRONMENT = cd $(srcsrc) &&
+ #TESTS = $(GTKDOC_CHECK)
+ 
+--include $(top_srcdir)/git.mk
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

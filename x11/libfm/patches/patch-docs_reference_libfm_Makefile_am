@@ -1,0 +1,8 @@
+$OpenBSD$
+--- docs/reference/libfm/Makefile.am.orig	Sat Nov  5 14:59:32 2011
++++ docs/reference/libfm/Makefile.am	Sat Nov  5 14:59:48 2011
+@@ -139,4 +139,3 @@ if ENABLE_GTK_DOC
+ #TESTS = $(GTKDOC_CHECK)
+ endif
+ 
+--include $(top_srcdir)/git.mk
