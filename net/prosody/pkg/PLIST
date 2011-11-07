@@ -139,3 +139,7 @@ share/examples/prosody/prosody.cfg.lua
 share/examples/prosody/prosody.log
 @mode 660
 @sample /var/prosody/prosody.log
+@owner
+@group
+@mode
+@rcscript ${RCDIR}/prosody

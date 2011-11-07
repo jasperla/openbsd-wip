@@ -1,6 +1,13 @@
--- checking for module 'fftw3>=3.2'
---   found fftw3, version 3.2.2
--- FFTW Found Version: 
+Updating MIME database produces:
+Unknown media type in type 'all/all'                                                                                                                                  
+Unknown media type in type 'all/allfiles'
+Unknown media type in type 'uri/mms'
+Unknown media type in type 'uri/mmst'
+Unknown media type in type 'uri/mmsu'
+Unknown media type in type 'uri/pnm'
+Unknown media type in type 'uri/rtspt'
+Unknown media type in type 'uri/rtspu'
+Unknown media type in type 'interface/x-winamp-skin'
 
 -- Looking for sys/iconv.h
 -- Looking for sys/iconv.h - not found

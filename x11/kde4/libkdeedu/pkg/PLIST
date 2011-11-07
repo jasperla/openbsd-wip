@@ -58,7 +58,6 @@ share/icons/hicolor/16x16/actions/newimplicit.png
 share/icons/hicolor/16x16/actions/newparametric.png
 share/icons/hicolor/16x16/actions/newpolar.png
 share/icons/hicolor/16x16/actions/resetview.png
-share/icons/hicolor/22x22/
 share/icons/hicolor/22x22/actions/
 share/icons/hicolor/22x22/actions/editplots.png
 share/icons/hicolor/22x22/actions/functionhelp.png
@@ -102,7 +101,6 @@ share/icons/hicolor/64x64/
 share/icons/hicolor/64x64/actions/
 share/icons/hicolor/64x64/actions/maximum.png
 share/icons/hicolor/64x64/actions/minimum.png
-share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/actions/
 share/icons/hicolor/scalable/actions/deriv_func.svgz
 share/icons/hicolor/scalable/actions/editconstants.svgz
