@@ -18,7 +18,7 @@ MODULES +=		devel/gettext
 BUILD_DEPENDS +=	textproc/p5-XML-Parser
 
 USE_LIBTOOL ?=		Yes
-CONFIGURE_STYLE ?=	gnu
+CONFIGURE_STYLE ?=	gnu autoconf automake
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 COPTS +=		-I${WRKSRC} -I${LOCALBASE}/include \
 			-L${LOCALBASE}/lib
@@ -44,6 +44,4 @@ post-patch:
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoheader
 	cd ${dir} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} automake
-	cd ${dir} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoconf
 .endfor
