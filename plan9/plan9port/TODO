@@ -4,5 +4,6 @@
 
 working: acme, sam, troff, rc, page, most smaller utilities
 not working: 9term (threading issue :( )
+known issue: https://bitbucket.org/rsc/plan9port/issue/65/9term-other-gui-programs-non-functional-on
 disabled: mount, 9pfuse, fs/*, acid, db
 left to test: venti-related stuff, rio ...

@@ -30,7 +30,8 @@ MASTER_SITES2 =		http://pdos.lcs.mit.edu/~rsc/
 EXTRACT_SUFX =		.tgz
 
 BUILD_DEPENDS =		archivers/bzip2
-RUN_DEPENDS =		print/ghostscript/gnu
+RUN_DEPENDS =		print/ghostscript/gnu \
+			print/gv
 
 WRKDIST =		${WRKDIR}/plan9
 
