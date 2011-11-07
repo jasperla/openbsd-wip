@@ -344,7 +344,7 @@ plan9/dist/fixurls
 plan9/dist/glendacircle.png
 plan9/dist/isum
 plan9/dist/isum.awk
-plan9/dist/isum.awk.orig
+@comment plan9/dist/isum.awk.orig
 plan9/dist/main.html
 plan9/dist/maketarball
 plan9/dist/manindexbottom.html

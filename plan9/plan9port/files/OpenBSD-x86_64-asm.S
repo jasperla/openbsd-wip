@@ -1,12 +1,5 @@
 #include "Darwin-x86_64-asm.s"
 
-.globl _tas
-_tas:
-	movl $0xCAFEBABE, %eax
-	movq 8(%rsp), %rcx
-	xchgl %eax, 0(%rcx)
-	ret
-
 /*-
  * Copyright (c) 2000 Peter Wemm <peter@FreeBSD.org>
  * Copyright (c) 2003 Alan L. Cox <alc@cs.rice.edu>
