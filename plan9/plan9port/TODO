@@ -3,6 +3,6 @@
 - test ALL the programs! (and @comment those not working)
 
 working: acme, sam, troff, rc, page, most smaller utilities
-not working: 9term (need to fix OS-specific tty allocation code)
+not working: 9term (threading issue :( )
 disabled: mount, 9pfuse, fs/*, acid, db
 left to test: venti-related stuff, rio ...

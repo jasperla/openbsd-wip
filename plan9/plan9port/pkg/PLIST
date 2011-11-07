@@ -200,7 +200,7 @@ plan9/bin/psfonts
 plan9/bin/psu
 plan9/bin/psv
 @bin plan9/bin/ramfs
-@bin plan9/bin/rc
+@shell plan9/bin/rc
 @bin plan9/bin/read
 @bin plan9/bin/readcons
 @bin plan9/bin/resample
