@@ -1,7 +1,7 @@
 $OpenBSD$
---- chrome/browser/browser_about_handler.cc.orig	Mon Oct 10 10:32:26 2011
-+++ chrome/browser/browser_about_handler.cc	Tue Oct 11 10:23:15 2011
-@@ -78,7 +78,7 @@
+--- chrome/browser/browser_about_handler.cc.orig	Mon Nov  7 12:21:57 2011
++++ chrome/browser/browser_about_handler.cc	Tue Nov  8 18:40:08 2011
+@@ -80,7 +80,7 @@
  #include "chrome/browser/chromeos/version_loader.h"
  #include "chrome/browser/oom_priority_manager.h"
  #include "content/browser/zygote_host_linux.h"
@@ -10,7 +10,7 @@ $OpenBSD$
  #include "content/browser/zygote_host_linux.h"
  #endif
  
-@@ -151,7 +151,7 @@ const char* const kChromePaths[] = {
+@@ -152,7 +152,7 @@ const char* const kChromePaths[] = {
  #if defined(OS_WIN)
    chrome::kChromeUIConflictsHost,
  #endif
@@ -19,7 +19,7 @@ $OpenBSD$
    chrome::kChromeUILinuxProxyConfigHost,
    chrome::kChromeUISandboxHost,
  #endif
-@@ -189,7 +189,7 @@ const char* const kAboutSourceNames[] = {
+@@ -188,7 +188,7 @@ const char* const kAboutSourceNames[] = {
  #if defined(USE_TCMALLOC)
    chrome::kChromeUITCMallocHost,
  #endif
@@ -28,7 +28,7 @@ $OpenBSD$
    chrome::kChromeUILinuxProxyConfigHost,
    chrome::kChromeUISandboxHost,
  #endif
-@@ -1061,7 +1061,7 @@ std::string AboutStats(const std::string& query) {
+@@ -1062,7 +1062,7 @@ std::string AboutStats(const std::string& query) {
    return data;
  }
  
@@ -37,7 +37,7 @@ $OpenBSD$
  std::string AboutLinuxProxyConfig() {
    std::string data;
    AppendHeader(&data, 0,
-@@ -1431,7 +1431,7 @@ void AboutSource::StartDataRequest(const std::string& 
+@@ -1447,7 +1447,7 @@ void AboutSource::StartDataRequest(const std::string& 
      return;
    } else if (host == chrome::kChromeUIHistogramsHost) {
      response = AboutHistograms(path);
@@ -46,7 +46,7 @@ $OpenBSD$
    } else if (host == chrome::kChromeUILinuxProxyConfigHost) {
      response = AboutLinuxProxyConfig();
  #endif
-@@ -1447,7 +1447,7 @@ void AboutSource::StartDataRequest(const std::string& 
+@@ -1463,7 +1463,7 @@ void AboutSource::StartDataRequest(const std::string& 
      response = ResourceBundle::GetSharedInstance().GetRawDataResource(
          IDR_OS_CREDITS_HTML).as_string();
  #endif

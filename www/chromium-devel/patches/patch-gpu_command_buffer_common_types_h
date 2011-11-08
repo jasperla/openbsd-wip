@@ -1,0 +1,30 @@
+$OpenBSD$
+--- gpu/command_buffer/common/types.h.orig	Mon Nov  7 12:21:11 2011
++++ gpu/command_buffer/common/types.h	Tue Nov  8 18:40:09 2011
+@@ -28,7 +28,7 @@ typedef int                 int32;
+ 
+ // The NSPR system headers define 64-bit as |long| when possible.  In order to
+ // not have typedef mismatches, we do the same on LP64.
+-#if __LP64__
++#if defined(__LP64__) && !defined(__APPLE__) && !defined(__OpenBSD__)
+ typedef long                int64;
+ #else
+ typedef long long           int64;
+@@ -53,7 +53,7 @@ typedef unsigned int       uint32;
+ #endif
+ 
+ // See the comment above about NSPR and 64-bit.
+-#if __LP64__
++#if defined(__LP64__) && !defined(__APPLE__) && !defined(__OpenBSD__)
+ typedef unsigned long uint64;
+ #else
+ typedef unsigned long long uint64;
+@@ -95,7 +95,7 @@ char (&ArraySizeHelper(T (&array)[N]))[N];
+ // That gcc wants both of these prototypes seems mysterious. VC, for
+ // its part, can't decide which to use (another mystery). Matching of
+ // template overloads: the final frontier.
+-#ifndef _MSC_VER
++#if !defined(_MSC_VER)
+ template <typename T, size_t N>
+ char (&ArraySizeHelper(const T (&array)[N]))[N];
+ #endif

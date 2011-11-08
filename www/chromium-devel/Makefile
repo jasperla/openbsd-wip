@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS=		i386 amd64
 
 COMMENT=		Chromium browser
 
-V=			16.0.904.0
+V=			17.0.932.0
 DISTNAME=		chromium-${V}
 PKGNAME=		chromium-devel-${V}
 
@@ -34,8 +34,8 @@ WANTLIB += Xtst event xslt vpx kvm>=10.0 sndio speex
 WANTLIB += cups gcrypt
 
 MASTER_SITES=	http://blade2k.humppa.hu/distfiles/ \
-		http://build.chromium.org/buildbot/official/ \
-		ftp://rene-ladan.nl/pub/distfiles/
+		http://build.chromium.org/buildbot/official/
+MASTER_SITES0=	http://codereview.chromium.org/download/
 
 MODULES=	devel/gettext \
 		lang/python
@@ -101,6 +101,7 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Dlinux_use_tcmalloc=0 \
 		-Dpython_ver=2.7 \
 		-Denable_webrtc=0 \
+		-Duse_kerberos=0 \
 		-DOS=openbsd
 
 .if ${FLAVOR:L:Mno_nss}
@@ -111,12 +112,20 @@ LIB_DEPENDS+=	security/nss
 WANTLIB+=	nss3 nssutil3
 .endif
 
+PATCHFILES=		issue8227008_18001.diff:0 \
+			issue8341052_18033.diff:0 \
+			issue8490020_1.diff:0 \
+			issue8339020_1.diff:0 \
+			issue8342001_13002.diff:0
+PATCH_DIST_STRIP=	-p1
+
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
-	@ln -sf ${LOCALBASE}/include/pulse ${WRKSRC}/
-	${SUBST_CMD} ${WRKSRC}/build/common.gypi
+#	@ln -s#f ${LOCALBASE}/include/pulse ${WRKSRC}/
+#
 	@cp -pR ${WRKSRC}/third_party/libvpx/source/config/linux \
 		${WRKSRC}/third_party/libvpx/source/config/openbsd
+
 
 # gyp_chromium generates all the Makefiles from gyp
 do-configure:

@@ -1,6 +1,6 @@
 $OpenBSD$
---- skia/ext/vector_platform_device_skia.h.orig	Fri Oct  7 13:32:17 2011
-+++ skia/ext/vector_platform_device_skia.h	Fri Oct  7 13:32:25 2011
+--- skia/ext/vector_platform_device_skia.h.orig	Mon Nov  7 12:21:18 2011
++++ skia/ext/vector_platform_device_skia.h	Tue Nov  8 18:40:09 2011
 @@ -40,7 +40,7 @@ class VectorPlatformDeviceSkia : public PlatformDevice
    virtual void DrawToNativeContext(CGContext* context, int x, int y,
                                     const CGRect* src_rect);

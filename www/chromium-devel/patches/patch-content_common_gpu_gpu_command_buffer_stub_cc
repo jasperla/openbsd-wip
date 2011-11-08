@@ -1,0 +1,12 @@
+$OpenBSD$
+--- content/common/gpu/gpu_command_buffer_stub.cc.orig	Mon Nov  7 12:21:14 2011
++++ content/common/gpu/gpu_command_buffer_stub.cc	Tue Nov  8 18:40:08 2011
+@@ -193,7 +193,7 @@ void GpuCommandBufferStub::OnInitialize(
+         renderer_id_,
+         route_id_,
+         handle_);
+-#elif defined(OS_WIN) || defined(OS_LINUX)
++#elif defined(OS_WIN) || defined(OS_LINUX) || defined(OS_OPENBSD)
+     surface_ = gfx::GLSurface::CreateViewGLSurface(software_, handle_);
+ #endif
+   } else {

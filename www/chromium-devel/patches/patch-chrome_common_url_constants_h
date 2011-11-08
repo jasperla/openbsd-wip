@@ -1,9 +1,9 @@
 $OpenBSD$
---- chrome/common/url_constants.h.orig	Mon Oct 10 10:32:29 2011
-+++ chrome/common/url_constants.h	Tue Oct 11 10:23:15 2011
-@@ -171,7 +171,7 @@ extern const char kChromeUIScreenshotPath[];
+--- chrome/common/url_constants.h.orig	Mon Nov  7 12:22:13 2011
++++ chrome/common/url_constants.h	Tue Nov  8 18:40:08 2011
+@@ -178,7 +178,7 @@ extern const char kChromeUIWorkersHost[];
+ extern const char kChromeUIScreenshotPath[];
  extern const char kChromeUIThemePath[];
- extern const char kChromeUIThumbnailPath[];
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_OPENBSD)

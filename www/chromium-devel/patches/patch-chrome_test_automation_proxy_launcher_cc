@@ -1,0 +1,14 @@
+$OpenBSD$
+--- chrome/test/automation/proxy_launcher.cc.orig	Mon Nov  7 12:21:58 2011
++++ chrome/test/automation/proxy_launcher.cc	Tue Nov  8 18:40:08 2011
+@@ -29,6 +29,10 @@
+ #include "ipc/ipc_descriptors.h"
+ #include "sql/connection.h"
+ 
++#if defined(OS_POSIX)
++#include <signal.h>
++#endif
++
+ namespace {
+ 
+ // Passed as value of kTestType.

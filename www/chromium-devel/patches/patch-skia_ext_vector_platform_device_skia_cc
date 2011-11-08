@@ -1,6 +1,6 @@
 $OpenBSD$
---- skia/ext/vector_platform_device_skia.cc.orig	Fri Oct  7 13:32:52 2011
-+++ skia/ext/vector_platform_device_skia.cc	Fri Oct  7 13:33:02 2011
+--- skia/ext/vector_platform_device_skia.cc.orig	Mon Nov  7 12:21:18 2011
++++ skia/ext/vector_platform_device_skia.cc	Tue Nov  8 18:40:09 2011
 @@ -88,7 +88,7 @@ CGContextRef VectorPlatformDeviceSkia::GetBitmapContex
    SkASSERT(false);
    return NULL;

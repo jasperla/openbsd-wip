@@ -1,6 +1,6 @@
-$OpenBSD: patch-skia_ext_bitmap_platform_device_linux_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
---- skia/ext/bitmap_platform_device_linux.cc.orig	Fri Jan 21 10:19:58 2011
-+++ skia/ext/bitmap_platform_device_linux.cc	Mon Jan 24 10:59:29 2011
+$OpenBSD$
+--- skia/ext/bitmap_platform_device_linux.cc.orig	Mon Nov  7 12:21:18 2011
++++ skia/ext/bitmap_platform_device_linux.cc	Tue Nov  8 18:40:09 2011
 @@ -6,7 +6,11 @@
  
  #include "skia/ext/bitmap_platform_device_data.h"

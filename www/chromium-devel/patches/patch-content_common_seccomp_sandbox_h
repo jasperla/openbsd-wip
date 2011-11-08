@@ -1,13 +1,13 @@
 $OpenBSD$
---- content/common/seccomp_sandbox.h.orig	Thu Aug 25 17:22:02 2011
-+++ content/common/seccomp_sandbox.h	Thu Aug 25 17:22:14 2011
+--- content/common/seccomp_sandbox.h.orig	Mon Nov  7 12:21:14 2011
++++ content/common/seccomp_sandbox.h	Tue Nov  8 18:40:08 2011
 @@ -18,7 +18,8 @@
- #include "content/common/content_switches.h"
+ #include "content/public/common/content_switches.h"
  
  #if defined(ARCH_CPU_X86_FAMILY) && !defined(CHROMIUM_SELINUX) && \
 -  !defined(__clang__) && !defined(OS_CHROMEOS) && !defined(TOOLKIT_VIEWS)
 +  !defined(__clang__) && !defined(OS_CHROMEOS) && !defined(TOOLKIT_VIEWS) && \
-+  !defined(__OpenBSD__)
++  !defined(OS_OPENBSD)
  #define SECCOMP_SANDBOX
  #include "seccompsandbox/sandbox.h"
  #endif

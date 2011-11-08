@@ -1,0 +1,30 @@
+$OpenBSD$
+--- chrome/renderer/chrome_ppb_pdf_impl.cc.orig	Mon Nov  7 12:21:58 2011
++++ chrome/renderer/chrome_ppb_pdf_impl.cc	Tue Nov  8 18:40:08 2011
+@@ -43,7 +43,7 @@ using content::RenderThread;
+ 
+ namespace chrome {
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+ class PrivateFontFile : public ppapi::Resource {
+  public:
+   PrivateFontFile(PP_Instance instance, int fd) : Resource(instance), fd_(fd) {
+@@ -187,7 +187,7 @@ PP_Resource GetFontFileWithFallback(
+     PP_Instance instance_id,
+     const PP_FontDescription_Dev* description,
+     PP_PrivateFontCharset charset) {
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+   // Validate the instance before using it below.
+   if (!HostGlobals::Get()->GetInstance(instance_id))
+     return 0;
+@@ -219,7 +219,7 @@ bool GetFontTableForPrivateFontFile(PP_Resource font_f
+                                     uint32_t table,
+                                     void* output,
+                                     uint32_t* output_length) {
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+   ppapi::Resource* resource =
+       PpapiGlobals::Get()->GetResourceTracker()->GetResource(font_file);
+   if (!resource)

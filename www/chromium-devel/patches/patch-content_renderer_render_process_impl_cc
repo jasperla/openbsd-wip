@@ -1,25 +1,29 @@
-$OpenBSD: patch-content_renderer_render_process_impl_cc,v 1.2 2011/08/16 08:17:44 robert Exp $
---- content/renderer/render_process_impl.cc.orig	Sat Oct  8 10:33:19 2011
-+++ content/renderer/render_process_impl.cc	Sun Oct  9 11:30:17 2011
-@@ -106,7 +106,7 @@ TransportDIB* RenderProcessImpl::CreateTransportDIB(si
- #if defined(OS_WIN) || defined(OS_LINUX)
+$OpenBSD$
+--- content/renderer/render_process_impl.cc.orig	Mon Nov  7 12:21:14 2011
++++ content/renderer/render_process_impl.cc	Tue Nov  8 18:40:09 2011
+@@ -86,7 +86,7 @@ RenderProcessImpl::~RenderProcessImpl() {
+ 
+ bool RenderProcessImpl::InProcessPlugins() {
+   const CommandLine& command_line = *CommandLine::ForCurrentProcess();
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+   // Plugin processes require a UI message loop, and the Linux message loop
+   // implementation only allows one UI loop per process.
+   if (command_line.HasSwitch(switches::kInProcessPlugins))
+@@ -102,10 +102,10 @@ bool RenderProcessImpl::InProcessPlugins() {
+ // Platform specific code for dealing with bitmap transport...
+ 
+ TransportDIB* RenderProcessImpl::CreateTransportDIB(size_t size) {
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_OPENBSD)
    // Windows and Linux create transport DIBs inside the renderer
    return TransportDIB::Create(size, transport_dib_next_sequence_number_++);
 -#elif defined(OS_MACOSX)  // defined(OS_WIN) || defined(OS_LINUX)
-+#elif defined(OS_MACOSX) || defined(OS_OPENBSD) // defined(OS_WIN) || defined(OS_LINUX)
++#elif defined(OS_MACOSX)
    // Mac creates transport DIBs in the browser, so we need to do a sync IPC to
    // get one.  The TransportDIB is cached in the browser.
    TransportDIB::Handle handle;
-@@ -123,7 +123,7 @@ void RenderProcessImpl::FreeTransportDIB(TransportDIB*
-   if (!dib)
-     return;
- 
--#if defined(OS_MACOSX)
-+#if defined(OS_MACOSX) || defined(OS_OPENBSD)
-   // On Mac we need to tell the browser that it can drop a reference to the
-   // shared memory.
-   IPC::Message* msg = new ViewHostMsg_FreeTransportDIB(dib->id());
-@@ -141,7 +141,7 @@ skia::PlatformCanvas* RenderProcessImpl::GetDrawingCan
+@@ -140,7 +140,7 @@ skia::PlatformCanvas* RenderProcessImpl::GetDrawingCan
    int width = rect.width();
    int height = rect.height();
    const size_t stride = skia::PlatformCanvas::StrideForWidth(rect.width());

@@ -1,0 +1,30 @@
+$OpenBSD$
+--- content/browser/browser_main_loop.cc.orig	Mon Nov  7 12:21:14 2011
++++ content/browser/browser_main_loop.cc	Tue Nov  8 18:40:08 2011
+@@ -36,7 +36,7 @@
+ #include "net/base/winsock_init.h"
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+ #include <glib-object.h>
+ #endif
+ 
+@@ -86,7 +86,7 @@ void SetupSandbox(const CommandLine& parsed_command_li
+ }
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+ static void GLibLogHandler(const gchar* log_domain,
+                            GLogLevelFlags log_level,
+                            const gchar* message,
+@@ -305,7 +305,7 @@ void BrowserMainLoop::InitializeToolkit() {
+   // are no #else branches on any #ifs.
+   // TODO(stevenjb): Move platform specific code into platform specific Parts
+   // (Need to add InitializeToolkit stage to BrowserParts).
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+   // Glib type system initialization. Needed at least for gconf,
+   // used in net/proxy/proxy_config_service_linux.cc. Most likely
+   // this is superfluous as gtk_init() ought to do this. It's
