@@ -1,5 +1,6 @@
 @comment $OpenBSD$
 @bin bin/cantor
+@bin bin/cantor_rserver
 include/cantor/
 include/cantor/animationresult.h
 include/cantor/backend.h
@@ -18,7 +19,6 @@ include/cantor/result.h
 include/cantor/session.h
 include/cantor/syntaxhelpobject.h
 include/cantor/textresult.h
-lib/kde4/
 lib/kde4/cantor_advancedplotassistant.so
 lib/kde4/cantor_creatematrixassistant.so
 lib/kde4/cantor_differentiateassistant.so
@@ -32,6 +32,7 @@ lib/kde4/cantor_nullbackend.so
 lib/kde4/cantor_octavebackend.so
 lib/kde4/cantor_plot2dassistant.so
 lib/kde4/cantor_plot3dassistant.so
+lib/kde4/cantor_rbackend.so
 lib/kde4/cantor_runscriptassistant.so
 lib/kde4/cantor_sagebackend.so
 lib/kde4/cantor_solveassistant.so
@@ -39,7 +40,6 @@ lib/kde4/cantor_variablemanagerplugin.so
 lib/kde4/libcantorpart.so
 lib/libcantor_config.so
 @lib lib/libcantorlibs.so.${LIBcantorlibs_VERSION}
-share/applications/kde4/
 share/applications/kde4/cantor.desktop
 share/apps/cantor/
 share/apps/cantor/cantor_advancedplot_assistant.rc
@@ -65,15 +65,16 @@ share/apps/cantor/octavebackend/cantor_plot3d.m
 share/apps/cantor/octavebackend/cantor_print.m
 share/apps/cantor/xslt/
 share/apps/cantor/xslt/latex.xsl
-share/config.kcfg/
 share/config.kcfg/cantor.kcfg
 share/config.kcfg/cantor_libs.kcfg
 share/config.kcfg/maximabackend.kcfg
 share/config.kcfg/octavebackend.kcfg
+share/config.kcfg/rserver.kcfg
 share/config.kcfg/sagebackend.kcfg
 share/config/cantor.knsrc
 share/config/cantor_kalgebra.knsrc
 share/config/cantor_maxima.knsrc
+share/config/cantor_r.knsrc
 share/config/cantor_sage.knsrc
 share/doc/HTML/en/cantor/
 share/doc/HTML/en/cantor/common
@@ -81,18 +82,13 @@ share/doc/HTML/en/cantor/index.cache.bz2
 share/doc/HTML/en/cantor/index.docbook
 share/doc/HTML/en/cantor/latex_formula.png
 share/doc/HTML/en/cantor/screenshot.png
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/cantor.png
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/cantor.png
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/cantor.png
 share/icons/hicolor/48x48/apps/maximabackend.png
 share/icons/hicolor/48x48/apps/octavebackend.png
 share/icons/hicolor/48x48/apps/rbackend.png
 share/icons/hicolor/48x48/apps/sagebackend.png
-share/kde4/
-share/kde4/services/
 share/kde4/services/cantor/
 share/kde4/services/cantor/advancedplotassistant.desktop
 share/kde4/services/cantor/cantor_part.desktop
@@ -108,6 +104,7 @@ share/kde4/services/cantor/nullbackend.desktop
 share/kde4/services/cantor/octavebackend.desktop
 share/kde4/services/cantor/plot2dassistant.desktop
 share/kde4/services/cantor/plot3dassistant.desktop
+share/kde4/services/cantor/rbackend.desktop
 share/kde4/services/cantor/runscriptassistant.desktop
 share/kde4/services/cantor/sagebackend.desktop
 share/kde4/services/cantor/solveassistant.desktop

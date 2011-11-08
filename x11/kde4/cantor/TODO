@@ -1,0 +1,3 @@
+R backend doesn't work: libRblas and libRlapack are not resolved,
+didn't find any way better than setting LD_LIBRARY_PATH to
+"${LOCALBASE}/lib/R/lib".
