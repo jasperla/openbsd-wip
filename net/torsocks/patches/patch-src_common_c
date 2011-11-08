@@ -1,7 +1,7 @@
 $OpenBSD$
---- src/common.c.orig	Fri Sep 16 17:13:32 2011
-+++ src/common.c	Fri Sep 16 17:13:49 2011
-@@ -47,9 +47,9 @@
+--- src/common.c.orig	Sun Oct 23 19:17:30 2011
++++ src/common.c	Sun Oct 30 17:07:11 2011
+@@ -39,9 +39,9 @@
  #include <string.h>
  #include <time.h>
  #include <unistd.h>
@@ -10,5 +10,5 @@ $OpenBSD$
  #include <sys/types.h>
 -#include <netinet/in.h>
  
- /* Globals */
- int loglevel = MSGERR;    /* The default logging level is to only log
+ #include "common.h"
+ 

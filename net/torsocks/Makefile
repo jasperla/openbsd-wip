@@ -27,13 +27,11 @@ FAKE_FLAGS =		CONFDIR=${PREFIX}/share/examples/torsocks
 USE_LIBTOOL =		Yes
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--datarootdir="${PREFIX}/share/torsocks"
+
+NO_REGRESS =		Yes
 
 post-install:
 	cd ${PREFIX}/lib/torsocks && ln -s \
 		libtorsocks.so.${LIBtorsocks_VERSION} libtorsocks.so
-
-do-regress:
-	cd ${WRKSRC}/test && sh run_tests.sh
 
 .include <bsd.port.mk>
