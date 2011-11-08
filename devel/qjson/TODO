@@ -1,3 +1,4 @@
-Compiled OK, needs more testing.
+Floating files in PLIST:
 
-This is a KDE 4 dependency.
+share/doc/qjson/moc__parserrunnable_8cxx_source.html
+share/doc/qjson/moc__serializerrunnable_8cxx_source.html
