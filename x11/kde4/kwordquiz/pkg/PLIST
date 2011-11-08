@@ -198,6 +198,7 @@ share/doc/HTML/en/kwordquiz/
 share/doc/HTML/en/kwordquiz/common
 share/doc/HTML/en/kwordquiz/index.cache.bz2
 share/doc/HTML/en/kwordquiz/index.docbook
+share/doc/HTML/en/kwordquiz/kwordquiz-icon.png
 share/doc/HTML/en/kwordquiz/kwq-dlg-characters.png
 share/doc/HTML/en/kwordquiz/kwq-dlg-configure-appearance.png
 share/doc/HTML/en/kwordquiz/kwq-dlg-configure-characters.png
@@ -214,6 +215,11 @@ share/doc/HTML/en/kwordquiz/kwq-editor.png
 share/doc/HTML/en/kwordquiz/kwq-flashcard.png
 share/doc/HTML/en/kwordquiz/kwq-multiple.png
 share/doc/HTML/en/kwordquiz/kwq-qanda.png
+share/doc/HTML/en/kwordquiz/kwq-tutor-popup-minimalistic.png
+share/doc/HTML/en/kwordquiz/kwq-tutor-popup-native.png
+share/doc/HTML/en/kwordquiz/kwq-tutor-settings.png
+share/doc/HTML/en/kwordquiz/kwq-tutor-shortcuts.png
+share/doc/HTML/en/kwordquiz/kwq-tutor-welcome.png
 share/icons/hicolor/128x128/apps/kwordquiz.png
 share/icons/hicolor/16x16/apps/kwordquiz.png
 share/icons/hicolor/22x22/apps/kwordquiz.png
