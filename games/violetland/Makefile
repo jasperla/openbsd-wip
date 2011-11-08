@@ -33,8 +33,6 @@ RUN_DEPENDS = 		devel/desktop-file-utils
 	
 CONFIGURE_ARGS = 	-DCMAKE_INSTALL_PREFIX="${PREFIX}"
 
-SEPARATE_BUILD =	simple
-
 NO_REGRESS =		Yes
 
 WRKDIST =		${WRKDIR}/${DISTNAME:S/-src//}

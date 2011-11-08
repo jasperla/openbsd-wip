@@ -32,8 +32,6 @@ RUN_DEPENDS = 		archivers/p7zip,-main \
 			devel/desktop-file-utils \
 			games/megaglest/data
 
-SEPARATE_BUILD =	simple
-
 CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=RELEASE \
 			-DWANT_SVN_STAMP=OFF
 
