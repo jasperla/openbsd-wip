@@ -8,7 +8,7 @@ SHARED_LIBS +=	kerfuffle		0.0	# 4.0
 SHARED_LIBS +=	superkaramba		0.0	# 4.0
 
 WANTLIB =  c m pthread stdc++ util 
-WANTLIB += ICE SM X11 Xext Xrender
+WANTLIB += ICE SM X11 Xext Xrender Xtst
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml lib/qt4/QtXmlPatterns 
