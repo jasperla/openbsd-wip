@@ -17,7 +17,7 @@ WANTLIB =  c m pthread stdc++
 WANTLIB += ICE SM X11 Xext Xrender Xtst
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtScript lib/qt4/QtSvg lib/qt4/QtXml
-WANTLIB += lib/qt4/QtWebKit
+WANTLIB += lib/qt4/QtWebKit lib/qt4/QtSql qwt
 WANTLIB += akonadi-contact akonadi-kde attica kabc kcalcore kcmutils
 WANTLIB += kdeui kdewebkit kexiv2 kio kfile kmime knewstuff2
 WANTLIB += knewstuff3 kparts kpimutils kresources krosscore
@@ -38,6 +38,7 @@ LIB_DEPENDS =	eigen2->=2.0.3:math/eigen2 \
 		x11/kde4/libkexiv2 \
 		x11/kde4/marble \
 		x11/kde4/qimageblitz \
-		x11/kde4/workspace
+		x11/kde4/workspace \
+		x11/qwt
 
 .include <bsd.port.mk>
