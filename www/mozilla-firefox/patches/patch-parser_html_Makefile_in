@@ -1,0 +1,13 @@
+$OpenBSD: patch-parser_html_Makefile_in,v 1.4 2011/10/03 21:06:09 landry Exp $
+
+gcc runs out of memory with optimization.
+
+--- parser/html/Makefile.in.orig	Thu Aug 25 02:37:16 2011
++++ parser/html/Makefile.in	Mon Aug 29 14:54:55 2011
+@@ -88,3 +88,6 @@ include $(topsrcdir)/config/rules.mk
+ INCLUDES	+= \
+ 		-I$(srcdir)/../../content/base/src \
+ 		$(NULL)
++
++nsHtml5NamedCharacters.o: CXXFLAGS := $(filter-out -O%,$(CXXFLAGS))
++nsHtml5ElementName.o: CXXFLAGS := $(CXXFLAGS) -O1

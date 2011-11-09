@@ -1,0 +1,59 @@
+@comment $OpenBSD: PLIST-main,v 1.7 2011/10/03 21:07:05 landry Exp $
+@conflict mozilla-thunderbird-<=3.1.11
+@pkgpath mail/mozilla-thunderbird
+bin/${MOZILLA_PROJECT}
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/README.txt
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/application.ini
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/blocklist.xml
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome.manifest
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/default16.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/default22.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/default24.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/default256.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/default32.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/default48.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/binary.manifest
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/defaults/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/defaults/messenger/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/defaults/messenger/mailViews.dat
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/defaults/pref/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/defaults/pref/channel-prefs.js
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/dictionaries/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/dictionaries/en-US.aff
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/dictionaries/en-US.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/chrome.manifest
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/icon.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/preview.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_en_US.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/isp/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/isp/SpamAssassin.sfd
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/isp/SpamPal.sfd
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/isp/movemail.rdf
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/isp/rss.rdf
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libldap60.so.${LIBldap60_VERSION}
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libldif60.so.${LIBldif60_VERSION}
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libmozalloc.so.${LIBmozalloc_VERSION}
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libprldap60.so.${LIBprldap60_VERSION}
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libxpcom.so.${LIBxpcom_VERSION}
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libxul.so.${LIBxul_VERSION}
+@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/mozilla-xremote-client
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/omni.jar
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/platform.ini
+@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/plugin-container
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/removed-files
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/run-mozilla.sh
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/${MOZILLA_PROJECT}
+@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/${MOZILLA_PROJECT}-bin
+share/applications/${MOZILLA_PROJECT}.desktop
+share/doc/pkg-readmes/${FULLPKGNAME}
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
