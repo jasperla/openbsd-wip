@@ -50,6 +50,9 @@ share/apps/kipiplugin_expoblending/pics/assistant-stack.png
 share/apps/kipiplugin_expoblending/pics/assistant-tripod.png
 share/apps/kipiplugin_flashexport/
 share/apps/kipiplugin_flashexport/index.template
+share/apps/kipiplugin_flashexport/index2.template
+share/apps/kipiplugin_flashexport/index3.template
+share/apps/kipiplugin_flashexport/index4.template
 share/apps/kipiplugin_flashexport/simpleviewer_html/
 share/apps/kipiplugin_flashexport/simpleviewer_html/space.png
 share/apps/kipiplugin_galleryexport/
@@ -326,8 +329,10 @@ share/icons/oxygen/64x64/apps/dngconverter.png
 share/icons/oxygen/64x64/apps/rawconverter.png
 share/icons/oxygen/scalable/
 share/icons/oxygen/scalable/apps/
+share/icons/oxygen/scalable/apps/digikam.svgz
 share/icons/oxygen/scalable/apps/dngconverter.svgz
 share/icons/oxygen/scalable/apps/rawconverter.svgz
+share/icons/oxygen/scalable/apps/showfoto.svgz
 share/kde4/services/kipiplugin_acquireimages.desktop
 share/kde4/services/kipiplugin_advancedslideshow.desktop
 share/kde4/services/kipiplugin_batchprocessimages.desktop
@@ -1312,7 +1317,6 @@ share/locale/zh_TW/LC_MESSAGES/kipiplugin_advancedslideshow.mo
 share/locale/zh_TW/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 share/locale/zh_TW/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/zh_TW/LC_MESSAGES/kipiplugin_dngconverter.mo
-share/locale/zh_TW/LC_MESSAGES/kipiplugin_expoblending.mo
 share/locale/zh_TW/LC_MESSAGES/kipiplugin_facebook.mo
 share/locale/zh_TW/LC_MESSAGES/kipiplugin_flashexport.mo
 share/locale/zh_TW/LC_MESSAGES/kipiplugin_flickrexport.mo

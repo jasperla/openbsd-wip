@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-VERSION =		2.2.0
+VERSION =		2.3.0
 COMMENT-main =		K Desktop Environment, photo management utility
 COMMENT-kipi =		collection of image plugins for KDE
 COMMENT-geomap =	KIPI interface library for Marble
@@ -11,10 +11,6 @@ PKGNAME-main =		${PKGNAME}
 PKGNAME-kipi =		kipi-plugins4-${VERSION}
 PKGNAME-geomap =	libkgeomap-${VERSION}
 PKGNAME-vkontakte =	libkvkontakte-1.0.0
-
-REVISION-main =		0
-REVISION-vkontakte =	0
-REVISION-geomap =	0
 
 SHARED_LIBS =	kipiplugins		0.0
 SHARED_LIBS +=  digikamcore		0.0 # 2.0
@@ -56,8 +52,8 @@ WANTLIB-kipi =  ${WANTLIB-common} ${MODGETTEXT_WANTLIB}
 WANTLIB-kipi += ICE SM X11 Xext expat pthread z
 WANTLIB-kipi += GL GLU Xrandr
 WANTLIB-kipi += lib/qt4/QtOpenGL lib/qt4/QtXmlPatterns qca
-WANTLIB-kipi += kabc kcal kdcraw kexiv2 kfile kgeomap khtml kjs kipi
-WANTLIB-kipi += kresources ksane kvkontakte phonon
+WANTLIB-kipi += kcalcore kdcraw kexiv2 kfile kgeomap khtml kjs kipi
+WANTLIB-kipi += ksane kvkontakte phonon
 WANTLIB-kipi += gdk_pixbuf-2.0 gmodule-2.0 gobject-2.0
 WANTLIB-kipi += gthread-2.0
 WANTLIB-kipi += opencv_calib3d opencv_contrib opencv_core

@@ -48,8 +48,6 @@ lib/kde4/kio_digikamsearch.so
 lib/kde4/kio_digikamtags.so
 lib/kde4/kipiplugin_photolayoutseditor.so
 @bin lib/kde4/libexec/digikamdatabaseserver
-lib/kde4/photolayoutseditorborderplugin_polaroid.so
-lib/kde4/photolayoutseditorborderplugin_solid.so
 lib/libPropertyBrowser.a
 @lib lib/libdigikamcore.so.${LIBdigikamcore_VERSION}
 @lib lib/libdigikamdatabase.so.${LIBdigikamdatabase_VERSION}
@@ -625,7 +623,7 @@ share/apps/solid/actions/digikam-opencamera.desktop
 share/config.kcfg/PLEConfigSkeleton.kcfgc
 share/doc/HTML/en/digikam/
 share/doc/HTML/en/digikam/2Greens.png
-share/doc/HTML/en/digikam/542px-CIExy1931_sRGB.svg.png
+share/doc/HTML/en/digikam/542px-CIExy1931_sRGB_svg.png
 share/doc/HTML/en/digikam/DAM-Metadata.png
 share/doc/HTML/en/digikam/DAM-Workflow.png
 share/doc/HTML/en/digikam/DAM-errors.png
@@ -878,26 +876,27 @@ share/doc/HTML/en/showfoto/introductionplugininterfaces.png
 share/doc/HTML/en/showfoto/setupgeneral.png
 share/doc/HTML/en/showfoto/setupplugins.png
 share/doc/HTML/en/showfoto/setupslideshow.png
-share/icons/hicolor/128x128/apps/digikam.png
+share/icons/hicolor/128x128/actions/flash.png
 share/icons/hicolor/128x128/apps/photolayoutseditor.png
-share/icons/hicolor/128x128/apps/showfoto.png
-share/icons/hicolor/16x16/apps/digikam.png
 share/icons/hicolor/16x16/apps/photolayoutseditor.png
-share/icons/hicolor/16x16/apps/showfoto.png
-share/icons/hicolor/22x22/apps/digikam.png
 share/icons/hicolor/22x22/apps/photolayoutseditor.png
-share/icons/hicolor/22x22/apps/showfoto.png
-share/icons/hicolor/32x32/apps/digikam.png
 share/icons/hicolor/32x32/apps/photolayoutseditor.png
-share/icons/hicolor/32x32/apps/showfoto.png
-share/icons/hicolor/48x48/apps/digikam.png
 share/icons/hicolor/48x48/apps/photolayoutseditor.png
-share/icons/hicolor/48x48/apps/showfoto.png
-share/icons/hicolor/64x64/apps/digikam.png
 share/icons/hicolor/64x64/apps/photolayoutseditor.png
-share/icons/hicolor/64x64/apps/showfoto.png
-share/icons/hicolor/scalable/apps/digikam.svgz
-share/icons/hicolor/scalable/apps/showfoto.svgz
+share/icons/oxygen/128x128/apps/digikam.png
+share/icons/oxygen/128x128/apps/showfoto.png
+share/icons/oxygen/16x16/apps/digikam.png
+share/icons/oxygen/16x16/apps/showfoto.png
+share/icons/oxygen/22x22/apps/digikam.png
+share/icons/oxygen/22x22/apps/showfoto.png
+share/icons/oxygen/256x256/apps/digikam.png
+share/icons/oxygen/256x256/apps/showfoto.png
+share/icons/oxygen/32x32/apps/digikam.png
+share/icons/oxygen/32x32/apps/showfoto.png
+share/icons/oxygen/48x48/apps/digikam.png
+share/icons/oxygen/48x48/apps/showfoto.png
+share/icons/oxygen/64x64/apps/digikam.png
+share/icons/oxygen/64x64/apps/showfoto.png
 share/kde4/services/digikamalbums.protocol
 share/kde4/services/digikamdates.protocol
 share/kde4/services/digikamimageplugin_color.desktop
@@ -910,8 +909,6 @@ share/kde4/services/digikamnepomukservice.desktop
 share/kde4/services/digikamsearch.protocol
 share/kde4/services/digikamtags.protocol
 share/kde4/services/kipiplugin_photolayoutseditor.desktop
-share/kde4/services/photolayoutseditorborderplugin_polaroid.desktop
-share/kde4/services/photolayoutseditorborderplugin_solid.desktop
 share/kde4/servicetypes/digikamimageplugin.desktop
 share/kde4/servicetypes/photolayoutseditorborderplugin.desktop
 share/kde4/servicetypes/photolayoutseditoreffectplugin.desktop
