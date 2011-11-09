@@ -12,7 +12,6 @@ include/libkdeedu/parser.h
 include/libkdeedu/psetables.h
 include/libkdeedu/spectrum.h
 include/libkdeedu/spectrumparser.h
-lib/kde4/
 lib/kde4/concentrationCalculator.so
 lib/kde4/gasCalculator.so
 lib/kde4/nuclearCalculator.so
@@ -21,13 +20,7 @@ lib/kde4/plasma_applet_molmassCalculator.so
 lib/kde4/plasma_engine_kalzium.so
 @lib lib/libcompoundviewer.so.${LIBcompoundviewer_VERSION}
 @lib lib/libscience.so.${LIBscience_VERSION}
-share/applications/
-share/applications/kde4/
 share/applications/kde4/kalzium.desktop
-share/apps/
-share/apps/desktoptheme/
-share/apps/desktoptheme/default/
-share/apps/desktoptheme/default/widgets/
 share/apps/desktoptheme/default/widgets/chalkboard.svg
 share/apps/kalzium/
 share/apps/kalzium/data/
@@ -387,12 +380,8 @@ share/apps/libkdeedu/data/isotopes.xml
 share/apps/libkdeedu/data/spectra.xml
 share/apps/libkdeedu/data/symbols.csv
 share/apps/libkdeedu/data/symbols2.csv
-share/config/
-share/config.kcfg/
 share/config.kcfg/kalzium.kcfg
 share/config/kalzium.knsrc
-share/doc/HTML/
-share/doc/HTML/en/
 share/doc/HTML/en/kalzium/
 share/doc/HTML/en/kalzium/common
 share/doc/HTML/en/kalzium/gradient.png
@@ -430,37 +419,17 @@ share/doc/HTML/en/kalzium/settings3.png
 share/doc/HTML/en/kalzium/settings4.png
 share/doc/HTML/en/kalzium/sidebar1.png
 share/doc/HTML/en/kalzium/sidebar2.png
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/kalzium.png
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/kalzium.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/kalzium.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/kalzium.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/kalzium.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/kalzium.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/kalzium.svgz
-share/kde4/
-share/kde4/services/
 share/kde4/services/concentrationCalculator.desktop
 share/kde4/services/gasCalculator.desktop
 share/kde4/services/nuclearCalculator.desktop
 share/kde4/services/plasma-applet-Molmasscalculator.desktop
 share/kde4/services/plasma-dataengine-kalzium.desktop
 share/kde4/services/plasma_didyouknow.desktop
-share/man/
-share/man/man1/
 @man share/man/man1/kalzium.1

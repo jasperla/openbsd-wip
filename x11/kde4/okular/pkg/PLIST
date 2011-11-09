@@ -29,7 +29,6 @@ include/okular/interfaces/printinterface.h
 lib/cmake/Okular/
 lib/cmake/Okular/OkularConfig.cmake
 lib/cmake/Okular/OkularConfigVersion.cmake
-lib/kde4/
 lib/kde4/kio_msits.so
 lib/kde4/okularGenerator_chmlib.so
 lib/kde4/okularGenerator_comicbook.so
@@ -47,7 +46,6 @@ lib/kde4/okularGenerator_tiff.so
 lib/kde4/okularGenerator_xps.so
 lib/kde4/okularpart.so
 @lib lib/libokularcore.so.${LIBokularcore_VERSION}
-share/applications/kde4/
 share/applications/kde4/okular.desktop
 share/applications/kde4/okularApplication_chm.desktop
 share/applications/kde4/okularApplication_comicbook.desktop
@@ -105,7 +103,6 @@ share/apps/okular/pics/uparrow.png
 share/apps/okular/pics/upleftarrow.png
 share/apps/okular/shell.rc
 share/apps/okular/tools.xml
-share/config.kcfg/
 share/config.kcfg/gssettings.kcfg
 share/config.kcfg/okular.kcfg
 share/doc/HTML/en/okular/
@@ -126,8 +123,6 @@ share/icons/hicolor/32x32/apps/okular.png
 share/icons/hicolor/48x48/apps/okular.png
 share/icons/hicolor/64x64/apps/okular.png
 share/icons/hicolor/scalable/apps/okular.svgz
-share/kde4/
-share/kde4/services/
 share/kde4/services/libokularGenerator_chmlib.desktop
 share/kde4/services/libokularGenerator_comicbook.desktop
 share/kde4/services/libokularGenerator_djvu.desktop

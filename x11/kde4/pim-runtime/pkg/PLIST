@@ -172,14 +172,9 @@ share/config/kmail-migratorrc
 share/config/kres-migratorrc
 share/dbus-1/interfaces/org.kde.Akonadi.Maildir.Settings.xml
 share/dbus-1/interfaces/org.kde.Akonadi.MixedMaildir.Settings.xml
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/ox.png
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/ox.png
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/ox.png
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/ox.png
 share/icons/hicolor/64x64/
 share/icons/hicolor/64x64/apps/

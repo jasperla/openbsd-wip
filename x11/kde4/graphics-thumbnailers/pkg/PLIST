@@ -1,8 +1,6 @@
 @comment $OpenBSD$
-lib/kde4/
 lib/kde4/gsthumbnail.so
 lib/kde4/rawthumbnail.so
-share/kde4/services/
 share/kde4/services/gsthumbnail.desktop
 share/kde4/services/rawthumbnail.desktop
 @exec %D/bin/update-desktop-database

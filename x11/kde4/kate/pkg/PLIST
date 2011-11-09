@@ -15,7 +15,6 @@ include/ktexteditor_codesnippets_core/
 include/ktexteditor_codesnippets_core/completionmodel.h
 include/ktexteditor_codesnippets_core/ktexteditor_codesnippets_core_export.h
 include/ktexteditor_codesnippets_core/repository.h
-lib/kde4/
 lib/kde4/kate_kttsd.so
 lib/kde4/katebacktracebrowserplugin.so
 lib/kde4/katebuildplugin.so
@@ -54,7 +53,6 @@ lib/kde4/plasma_applet_katesession.so
 lib/libkdeinit4_kate.so
 lib/libkdeinit4_kwrite.so
 @lib lib/libktexteditor_codesnippets_core.so.${LIBktexteditor_codesnippets_core_VERSION}
-share/applications/kde4/
 share/applications/kde4/kate.desktop
 share/applications/kde4/ktesnippets_editor.desktop
 share/applications/kde4/kwrite.desktop
@@ -123,10 +121,13 @@ share/apps/kate/plugins/katexmlcheck/ui.rc
 share/apps/kate/plugins/katexmltools/
 share/apps/kate/plugins/katexmltools/ui.rc
 share/apps/kate/tips
+share/apps/katepart/
+share/apps/katepart/api/
 share/apps/katepart/api/05_cursor.js
 share/apps/katepart/api/10_range.js
 share/apps/katepart/katepartsimpleui.rc
 share/apps/katepart/katepartui.rc
+share/apps/katepart/script/
 share/apps/katepart/script/cstyle.js
 share/apps/katepart/script/haskell.js
 share/apps/katepart/script/lilypond.js
@@ -136,6 +137,7 @@ share/apps/katepart/script/python.js
 share/apps/katepart/script/ruby.js
 share/apps/katepart/script/utils.js
 share/apps/katepart/script/xml.js
+share/apps/katepart/syntax/
 share/apps/katepart/syntax/abap.xml
 share/apps/katepart/syntax/abc.xml
 share/apps/katepart/syntax/actionscript.xml
@@ -329,13 +331,16 @@ share/apps/katexmltools/xhtml1-strict.dtd.xml
 share/apps/katexmltools/xhtml1-transitional.dtd.xml
 share/apps/katexmltools/xslt-1.0.dtd.xml
 share/apps/kconf_update/kate-2.4.upd
+share/apps/ktexteditor_exporter/
 share/apps/ktexteditor_exporter/ktexteditor_exporterui.rc
 share/apps/ktexteditor_iconinserter/
 share/apps/ktexteditor_iconinserter/ktexteditor_iconinserterui.rc
 share/apps/ktexteditor_insanehtml_le/
 share/apps/ktexteditor_insanehtml_le/insanehtml_le_ui.rc
 share/apps/ktexteditor_insanehtml_le/xhtml.cfg
+share/apps/ktexteditor_insertfile/
 share/apps/ktexteditor_insertfile/ktexteditor_insertfileui.rc
+share/apps/ktexteditor_kdatatool/
 share/apps/ktexteditor_kdatatool/ktexteditor_kdatatoolui.rc
 share/apps/ktexteditor_snippets/
 share/apps/ktexteditor_snippets/data/
@@ -372,20 +377,11 @@ share/doc/HTML/en/kwrite/
 share/doc/HTML/en/kwrite/common
 share/doc/HTML/en/kwrite/index.cache.bz2
 share/doc/HTML/en/kwrite/index.docbook
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/kate.png
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/kate.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/kate.png
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/kate.png
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/kate.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/kate.png
 share/icons/hicolor/scalable/apps/kate.svgz
 share/icons/hicolor/scalable/apps/ktexteditorautobrace.svgz
@@ -394,8 +390,6 @@ share/icons/oxygen/16x16/actions/repoadd.png
 share/icons/oxygen/16x16/actions/repomanage.png
 share/icons/oxygen/16x16/actions/snippetadd.png
 share/icons/oxygen/16x16/actions/snippetedit.png
-share/kde4/
-share/kde4/services/
 share/kde4/services/kate_kttsd.desktop
 share/kde4/services/katebacktracebrowserplugin.desktop
 share/kde4/services/katebuildplugin.desktop

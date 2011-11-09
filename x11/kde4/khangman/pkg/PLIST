@@ -1,6 +1,5 @@
 @comment $OpenBSD$
 @bin bin/khangman
-share/applications/kde4/
 share/applications/kde4/khangman.desktop
 share/apps/khangman/
 share/apps/khangman/fonts/
@@ -16,7 +15,6 @@ share/apps/khangman/pics/standardthemes.xml
 share/apps/khangman/sounds/
 share/apps/khangman/sounds/EW_Dialogue_Appear.ogg
 share/apps/khangman/sounds/new_game.ogg
-share/config.kcfg/
 share/config.kcfg/khangman.kcfg
 share/config/khangman.knsrc
 share/doc/HTML/en/khangman/
@@ -33,18 +31,11 @@ share/doc/HTML/en/khangman/man-khangman.6.docbook
 share/doc/HTML/en/khangman/settings-general.png
 share/doc/HTML/en/khangman/settings-languages.png
 share/doc/HTML/en/khangman/settings-timers.png
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/khangman.png
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/khangman.png
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/khangman.png
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/khangman.png
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/khangman.png
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/khangman.png
 share/icons/hicolor/scalable/apps/khangman.svgz
 share/man/man6/

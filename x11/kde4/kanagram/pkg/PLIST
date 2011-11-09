@@ -1,6 +1,5 @@
 @comment $OpenBSD$
 @bin bin/kanagram
-share/applications/kde4/
 share/applications/kde4/kanagram.desktop
 share/apps/kanagram/
 share/apps/kanagram/images/
@@ -9,7 +8,6 @@ share/apps/kanagram/sounds/
 share/apps/kanagram/sounds/chalk.ogg
 share/apps/kanagram/sounds/right.ogg
 share/apps/kanagram/sounds/wrong.ogg
-share/config.kcfg/
 share/config.kcfg/kanagram.kcfg
 share/config/kanagram.knsrc
 share/doc/HTML/en/kanagram/
@@ -26,18 +24,11 @@ share/doc/HTML/en/kanagram/newstuff-settings.png
 share/doc/HTML/en/kanagram/shortcuts-settings.png
 share/doc/HTML/en/kanagram/vocab-editor.png
 share/doc/HTML/en/kanagram/vocab-settings.png
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/kanagram.png
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/kanagram.png
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/kanagram.png
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/kanagram.png
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/kanagram.png
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/kanagram.png
 share/icons/hicolor/scalable/apps/kanagram.svgz
 @exec %D/bin/update-desktop-database

@@ -1,6 +1,5 @@
 @comment $OpenBSD$
 @bin bin/kbruch
-share/applications/kde4/
 share/applications/kde4/kbruch.desktop
 share/apps/kbruch/
 share/apps/kbruch/AppMenuWidgetui.rc
@@ -20,7 +19,6 @@ share/apps/kbruch/pics/icon_learning.png
 share/apps/kbruch/pics/icon_learning_1.png
 share/apps/kbruch/pics/icon_test_case.png
 share/apps/kbruch/pics/icon_test_case_1.png
-share/config.kcfg/
 share/config.kcfg/kbruch.kcfg
 share/doc/HTML/en/kbruch/
 share/doc/HTML/en/kbruch/checked.png
@@ -34,24 +32,16 @@ share/doc/HTML/en/kbruch/index.cache.bz2
 share/doc/HTML/en/kbruch/index.docbook
 share/doc/HTML/en/kbruch/learning.png
 share/doc/HTML/en/kbruch/man-kbruch.1.docbook
+share/doc/HTML/en/kbruch/mixed.png
 share/doc/HTML/en/kbruch/percentage.png
 share/doc/HTML/en/kbruch/reduced.png
 share/doc/HTML/en/kbruch/settings.png
 share/doc/HTML/en/kbruch/statistics.png
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/kbruch.png
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/kbruch.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/kbruch.png
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/kbruch.png
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/kbruch.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/kbruch.png
 share/icons/hicolor/scalable/apps/kbruch.svgz
 @man share/man/man1/kbruch.1

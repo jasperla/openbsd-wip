@@ -791,24 +791,15 @@ share/emoticons/kde4/unlove.png
 share/emoticons/kde4/wilted_rose.png
 share/emoticons/kde4/wink.png
 share/icons/default.kde4
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/knetattach.png
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/knetattach.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/knetattach.png
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/knetattach.png
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/knetattach.png
 share/icons/hicolor/64x64/
 share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/knetattach.png
 @comment share/icons/hicolor/index.theme
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/knetattach.svgz
 share/kde4/services/about.protocol
 share/kde4/services/applications.protocol

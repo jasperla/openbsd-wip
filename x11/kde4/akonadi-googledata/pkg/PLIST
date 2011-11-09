@@ -23,6 +23,8 @@ share/locale/hr/LC_MESSAGES/akonadi_gcal_resource.mo
 share/locale/hu/LC_MESSAGES/akonadi_gcal_resource.mo
 share/locale/is/LC_MESSAGES/akonadi_gcal_resource.mo
 share/locale/ja/LC_MESSAGES/akonadi_gcal_resource.mo
+share/locale/km/
+share/locale/km/LC_MESSAGES/
 share/locale/km/LC_MESSAGES/akonadi_gcal_resource.mo
 share/locale/lt/LC_MESSAGES/akonadi_gcal_resource.mo
 share/locale/lv/LC_MESSAGES/akonadi_gcal_resource.mo
