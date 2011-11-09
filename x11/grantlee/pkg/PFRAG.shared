@@ -1,7 +1,7 @@
 @comment $OpenBSD$
-lib/grantlee/0.1/grantlee_defaultfilters.so
-lib/grantlee/0.1/grantlee_defaulttags.so
-lib/grantlee/0.1/grantlee_i18ntags.so
-lib/grantlee/0.1/grantlee_loadertags.so
+lib/grantlee/0.2/grantlee_defaultfilters.so
+lib/grantlee/0.2/grantlee_defaulttags.so
+lib/grantlee/0.2/grantlee_i18ntags.so
+lib/grantlee/0.2/grantlee_loadertags.so
 @lib lib/libgrantlee_core.so.${LIBgrantlee_core_VERSION}
 @lib lib/libgrantlee_gui.so.${LIBgrantlee_gui_VERSION}

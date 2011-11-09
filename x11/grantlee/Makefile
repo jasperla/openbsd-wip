@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =		template and text document library for Qt
-DISTNAME =		grantlee-0.1.9
+DISTNAME =		grantlee-0.2.0
 CATEGORIES =		devel x11 x11/qt4
 HOMEPAGE =		http://www.gitorious.org/grantlee/
 

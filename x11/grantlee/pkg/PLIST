@@ -38,8 +38,9 @@ lib/cmake/
 lib/cmake/grantlee/
 lib/cmake/grantlee/GrantleeConfig.cmake
 lib/cmake/grantlee/GrantleeConfigVersion.cmake
+lib/cmake/grantlee/GrantleeParseArguments.cmake
 lib/cmake/grantlee/GrantleeTargets-noconfig.cmake
 lib/cmake/grantlee/GrantleeTargets.cmake
 lib/cmake/grantlee/GrantleeUse.cmake
 lib/grantlee/
-lib/grantlee/0.1/
+lib/grantlee/0.2/
