@@ -2,7 +2,7 @@
 
 COMMENT =		KDE PIM access libraries
 DISTNAME =		akonadi-1.6.2
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS = 		akonadiprotocolinternals 0.0	# 1.0
 
@@ -27,7 +27,7 @@ RUN_DEPENDS =		mysql-server-*|postgresql-server-*|sqlite3->=3.7.5:databases/post
 			qt4-mysql-*|qt4-postgresql-*:x11/qt4,-postgresql \
 			misc/shared-mime-info
 
-LIB_DEPENDS =		databases/soprano \
+LIB_DEPENDS =		STEM->=2.7.3:databases/soprano \
 			databases/sqlite3 \
 			devel/boost \
 
