@@ -1,4 +1,4 @@
-# $OpenBSD
+# $OpenBSD$
 
 COMMENT =		text adventure game
 
@@ -22,6 +22,8 @@ MASTER_SITES =		ftp://ftp.ifarchive.org/if-archive/games/source/ \
 			http://www.vaxdungeon.com/vax-dungeon/Archive/dungeon/ \
 			http://ifarchive.flavorplex.com/if-archive/games/source/
 DISTFILES =		dungn27s.zip
+
+BUILD_DEPENDS =		archivers/unzip
 
 ALL_TARGET =		dungeon
 
