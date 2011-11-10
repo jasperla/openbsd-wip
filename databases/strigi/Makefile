@@ -23,21 +23,28 @@ SHARED_LIBS +=  streams            1.0 # .0.5
 SHARED_LIBS +=  strigihtmlgui      1.0 # .0.5
 SHARED_LIBS +=  strigiqtdbusclient 1.0 # .0.5
 
+BUILD_DEPENDS =	devel/cppunit
+
 LIB_DEPENDS =	clucene-core->=0.9.21:textproc/clucene \
 		archivers/bzip2 \
+		graphics/exiv2 \
+		graphics/ffmpeg \
+		sysutils/gamin \
 		textproc/libxml \
 		x11/qt4 \
 		x11/dbus \
-		graphics/exiv2
 
 WANTLIB += bz2 c clucene>=1 dbus-1 exiv2 \
 	lib/qt4/QtCore lib/qt4/QtDBus lib/qt4/QtGui \
-	fam m png pthread stdc++ xml2 z ${MODLIBICONV_WANTLIB}
+	fam m pthread stdc++ xml2 z avcodec avformat avutil swscale
 
 MODULES +=		devel/cmake converters/libiconv
 CONFIGURE_STYLE =	cmake
-SEPARATE_BUILD =	simple
 
-CONFIGURE_ARGS +=	-DHyperEstraier_FOUND:BOOL=0
+# Not ported
+CONFIGURE_ARGS =	-DENABLE_LOG4CXX:Bool=No
+
+# Depends on Java
+CONFIGURE_ARGS +=	-DENABLE_REGENERATEXSD:Bool=No
 
 .include <bsd.port.mk>
