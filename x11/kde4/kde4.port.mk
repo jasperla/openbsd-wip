@@ -83,21 +83,21 @@ MODKDE4_USE +=		libs
 PKG_ARCH ?=		*
 MODKDE4_NO_QT ?=	Yes	# resources usually don't need Qt
 .   if ${MODKDE4_USE:L:Mlibs}
-MODKDE4_BUILD_DEPENDS +=	x11/kde4/libs
+MODKDE4_BUILD_DEPENDS +=	STEM->=${MODKDE4_VERSION}:x11/kde4/libs
 .   endif
 .else
 MODKDE4_NO_QT ?=	No
 .   if ${MODKDE4_USE:L:Mlibs}
-MODKDE4_LIB_DEPENDS +=		x11/kde4/libs
+MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/libs
 MODKDE4_WANTLIB +=		kdecore>=8
 .       if ${MODKDE4_USE:L:Mpim}
-MODKDE4_LIB_DEPENDS +=		x11/kde4/pimlibs
+MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/pimlibs
 .       endif
 
 .       if ${MODKDE4_USE:L:Mruntime}
-MODKDE4_RUN_DEPENDS +=		x11/kde4/runtime
+MODKDE4_RUN_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/runtime
 .           if ${MODKDE4_USE:L:Mpim}
-MODKDE4_RUN_DEPENDS +=		x11/kde4/pim-runtime
+MODKDE4_RUN_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/pim-runtime
 .           endif
 .       endif
 .   endif    # ${MODKDE4_USE:L:Mlibs}
@@ -109,6 +109,11 @@ MODKDE4_CMAKE_PREFIX =	-debug
 CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE:String=Release
 MODKDE4_CMAKE_PREFIX =	-release
 .   endif
+
+# Use right directories
+CONFIGURE_ARGS +=	-DMAN_INSTALL_DIR=${PREFIX}/man \
+			-DINFO_INSTALL_DIR=${PREFIX}/info \
+			-DLIBEXEC_INSTALL_DIR=${PREFIX}/libexec
 
 # NOTE: due to bugs in make-plist, plist may contain
 # ${FLAVORS} instead of ${MODKDE4_CMAKE_PREFIX}.
