@@ -88,6 +88,7 @@ lib/pkgconfig/libstreamanalyzer.pc
 lib/pkgconfig/libstreams.pc
 lib/strigi/
 lib/strigi/StrigiConfig.cmake
+lib/strigi/strigiea_ffmpeg.so
 lib/strigi/strigiea_jpeg.so
 lib/strigi/strigiea_riff.so
 lib/strigi/strigiindex_clucene.so
