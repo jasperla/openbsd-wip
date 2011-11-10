@@ -1,7 +1,7 @@
 $OpenBSD$
---- binsrc/vspx/vspx.sql.orig	Tue Oct 25 03:02:47 2011
-+++ binsrc/vspx/vspx.sql	Tue Oct 25 03:03:23 2011
-@@ -6024,7 +6024,7 @@ create procedure VSPX_PK_COLUMNS (in tab varchar)
+--- binsrc/vspx/vspx.sql.orig	Wed Oct 26 08:54:03 2011
++++ binsrc/vspx/vspx.sql	Thu Nov 10 15:28:09 2011
+@@ -6028,7 +6028,7 @@ create procedure VSPX_PK_COLUMNS (in tab varchar)
  {
    declare ses, ret any;
    ses := string_output ();
@@ -10,7 +10,7 @@ $OpenBSD$
     	DB.DBA.SYS_KEYS v1,
  	DB.DBA.SYS_KEYS v2,
  	DB.DBA.SYS_KEY_PARTS kp,
-@@ -6037,10 +6037,10 @@ create procedure VSPX_PK_COLUMNS (in tab varchar)
+@@ -6041,10 +6041,10 @@ create procedure VSPX_PK_COLUMNS (in tab varchar)
  	and v1.KEY_SUPER_ID = v2.KEY_ID
  	and kp.KP_KEY_ID = v1.KEY_ID
  	and kp.KP_NTH < v1.KEY_DECL_PARTS

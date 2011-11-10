@@ -1,9 +1,8 @@
 # $OpenBSD$
 
 COMMENT =	object-relational SQL database
-DISTNAME =	virtuoso-opensource-6.1.3
+DISTNAME =	virtuoso-opensource-6.1.4
 PKGNAME =	${DISTNAME:C/-opensource//}
-REVISION =	2
 
 CATEGORIES =	databases
 HOMEPAGE =	http://www.openlinksw.com/
@@ -25,7 +24,6 @@ MODULES =		lang/mono lang/php lang/python lang/ruby
 
 BUILD_DEPENDS =		devel/bison \
 			devel/flex \
-			graphics/lcms2 \
 			lang/gawk
 
 LIB_DEPENDS =		textproc/libwbxml \
@@ -37,7 +35,7 @@ LIB_DEPENDS =		textproc/libwbxml \
 USE_LIBTOOL =		Yes
 
 CONFIGURE_STYLE =	gnu autoconf
-AUTOCONF_VERSION =	2.65
+AUTOCONF_VERSION =	2.68
 AUTOMAKE_VERSION =	1.9
 
 # Disable system cache, or configure will pickup flex from base system

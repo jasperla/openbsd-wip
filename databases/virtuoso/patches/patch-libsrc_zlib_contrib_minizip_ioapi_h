@@ -1,0 +1,12 @@
+$OpenBSD$
+--- libsrc/zlib/contrib/minizip/ioapi.h.orig	Thu Nov 10 15:58:56 2011
++++ libsrc/zlib/contrib/minizip/ioapi.h	Thu Nov 10 15:58:42 2011
+@@ -44,7 +44,7 @@
+ #include <stdlib.h>
+ #include "zlib.h"
+ 
+-#if defined(USE_FILE32API)
++#if defined(USE_FILE32API) || defined(__OpenBSD__)
+ #define fopen64 fopen
+ #define ftello64 ftell
+ #define fseeko64 fseek
