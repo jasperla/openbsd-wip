@@ -1,0 +1,15 @@
+$OpenBSD$
+--- media/base/media_switches.cc.orig	Wed Nov  9 11:40:01 2011
++++ media/base/media_switches.cc	Wed Nov  9 21:26:24 2011
+@@ -13,8 +13,10 @@ const char kAlsaOutputDevice[] = "alsa-output-device";
+ const char kAlsaInputDevice[] = "alsa-input-device";
+ #endif
+ 
+-// Use PulseAudio instead of ALSA on Linux.
++// Use PulseAudio on platforms that support it.
++#if defined(OS_POSIX) && !defined(OS_MACOSX)
+ const char kUsePulseAudio[] = "use-pulseaudio";
++#endif
+ 
+ // Set number of threads to use for video decoding.
+ const char kVideoThreads[] = "video-threads";

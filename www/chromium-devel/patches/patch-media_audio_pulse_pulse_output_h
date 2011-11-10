@@ -1,0 +1,37 @@
+$OpenBSD$
+--- media/audio/pulse/pulse_output.h.orig	Wed Nov  9 21:25:59 2011
++++ media/audio/pulse/pulse_output.h	Wed Nov  9 21:26:24 2011
+@@ -31,14 +31,23 @@ namespace media {
+ class SeekableBuffer;
+ }
+ 
++#if defined(OS_LINUX)
+ class AudioManagerLinux;
++typedef AudioManagerLinux AudioManagerPulse;
++#elif defined(OS_OPENBSD)
++class AudioManagerOpenBSD;
++typedef AudioManagerOpenBSD AudioManagerPulse;
++#else
++#error Unsupported platform
++#endif
++
+ struct AudioParameters;
+ class MessageLoop;
+ 
+ class PulseAudioOutputStream : public AudioOutputStream {
+  public:
+   PulseAudioOutputStream(const AudioParameters& params,
+-                         AudioManagerLinux* manager,
++                         AudioManagerPulse* manager,
+                          MessageLoop* message_loop);
+ 
+   virtual ~PulseAudioOutputStream();
+@@ -86,7 +95,7 @@ class PulseAudioOutputStream : public AudioOutputStrea
+   const uint32 bytes_per_frame_;
+ 
+   // Audio manager that created us.  Used to report that we've closed.
+-  AudioManagerLinux* manager_;
++  AudioManagerPulse* manager_;
+ 
+   // PulseAudio API structs.
+   pa_context* pa_context_;

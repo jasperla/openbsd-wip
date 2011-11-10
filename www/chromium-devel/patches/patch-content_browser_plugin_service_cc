@@ -1,6 +1,6 @@
 $OpenBSD$
---- content/browser/plugin_service.cc.orig	Mon Nov  7 12:21:14 2011
-+++ content/browser/plugin_service.cc	Tue Nov  8 18:40:08 2011
+--- content/browser/plugin_service.cc.orig	Wed Nov  9 11:40:06 2011
++++ content/browser/plugin_service.cc	Wed Nov  9 21:25:59 2011
 @@ -37,7 +37,7 @@
  #include "webkit/plugins/npapi/plugin_list.h"
  #include "webkit/plugins/webplugininfo.h"
@@ -19,7 +19,7 @@ $OpenBSD$
  // Delegate class for monitoring directories.
  class PluginDirWatcherDelegate : public FilePathWatcher::Delegate {
    virtual void OnFilePathChanged(const FilePath& path) OVERRIDE {
-@@ -173,7 +173,7 @@ void PluginService::StartWatchingPlugins() {
+@@ -175,7 +175,7 @@ void PluginService::StartWatchingPlugins() {
        hklm_watcher_.StartWatching(hklm_event_.get(), this);
      }
    }
@@ -28,7 +28,7 @@ $OpenBSD$
  // The FilePathWatcher produces too many false positives on MacOS (access time
  // updates?) which will lead to enforcing updates of the plugins way too often.
  // On ChromeOS the user can't install plugins anyway and on Windows all
-@@ -615,7 +615,7 @@ content::PepperPluginInfo* PluginService::GetRegistere
+@@ -609,7 +609,7 @@ content::PepperPluginInfo* PluginService::GetRegistere
    return &ppapi_plugins_[ppapi_plugins_.size() - 1];
  }
  

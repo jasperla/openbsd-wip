@@ -1,0 +1,29 @@
+$OpenBSD$
+--- media/audio/openbsd/audio_manager_openbsd.h.orig	Wed Nov  9 11:40:00 2011
++++ media/audio/openbsd/audio_manager_openbsd.h	Wed Nov  9 21:26:24 2011
+@@ -5,7 +5,11 @@
+ #ifndef MEDIA_AUDIO_OPENBSD_AUDIO_MANAGER_OPENBSD_H_
+ #define MEDIA_AUDIO_OPENBSD_AUDIO_MANAGER_OPENBSD_H_
+ 
+-#include "base/basictypes.h"
++#include <set>
++
++#include "base/compiler_specific.h"
++#include "base/memory/ref_counted.h"
++#include "base/threading/thread.h"
+ #include "media/audio/audio_manager_base.h"
+ 
+ class AudioManagerOpenBSD : public AudioManagerBase {
+@@ -23,8 +27,12 @@ class AudioManagerOpenBSD : public AudioManagerBase {
+   virtual void MuteAll() OVERRIDE;
+   virtual void UnMuteAll() OVERRIDE;
+ 
++  virtual void ReleaseOutputStream(AudioOutputStream* stream);
++
+  private:
+   virtual ~AudioManagerOpenBSD();
++
++  std::set<AudioOutputStream*> active_streams_;
+ 
+   DISALLOW_COPY_AND_ASSIGN(AudioManagerOpenBSD);
+ };

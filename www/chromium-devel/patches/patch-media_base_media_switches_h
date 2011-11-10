@@ -1,0 +1,13 @@
+$OpenBSD$
+--- media/base/media_switches.h.orig	Wed Nov  9 11:40:01 2011
++++ media/base/media_switches.h	Wed Nov  9 21:26:24 2011
+@@ -17,7 +17,9 @@ extern const char kAlsaOutputDevice[];
+ extern const char kAlsaInputDevice[];
+ #endif
+ 
++#if defined(OS_POSIX) && !defined(OS_MACOSX)
+ MEDIA_EXPORT extern const char kUsePulseAudio[];
++#endif
+ MEDIA_EXPORT extern const char kVideoThreads[];
+ 
+ }  // namespace switches

@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS=		i386 amd64
 
 COMMENT=		Chromium browser
 
-V=			17.0.932.0
+V=			17.0.933.1
 DISTNAME=		chromium-${V}
 PKGNAME=		chromium-devel-${V}
 
@@ -35,7 +35,6 @@ WANTLIB += cups gcrypt
 
 MASTER_SITES=	http://blade2k.humppa.hu/distfiles/ \
 		http://build.chromium.org/buildbot/official/
-MASTER_SITES0=	http://codereview.chromium.org/download/
 
 MODULES=	devel/gettext \
 		lang/python
@@ -102,6 +101,7 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Dpython_ver=2.7 \
 		-Denable_webrtc=0 \
 		-Duse_kerberos=0 \
+		-Duse_pulseaudio=1 \
 		-DOS=openbsd
 
 .if ${FLAVOR:L:Mno_nss}
@@ -112,17 +112,13 @@ LIB_DEPENDS+=	security/nss
 WANTLIB+=	nss3 nssutil3
 .endif
 
-PATCHFILES=		issue8227008_18001.diff:0 \
-			issue8341052_18033.diff:0 \
-			issue8490020_1.diff:0 \
-			issue8339020_1.diff:0 \
-			issue8342001_13002.diff:0
-PATCH_DIST_STRIP=	-p1
+pre-patch:
+	mkdir -p ${WRKSRC}/media/audio/pulse
+	cp ${WRKSRC}/media/audio/linux/pulse_output.* \
+		${WRKSRC}/media/audio/pulse/
 
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
-#	@ln -s#f ${LOCALBASE}/include/pulse ${WRKSRC}/
-#
 	@cp -pR ${WRKSRC}/third_party/libvpx/source/config/linux \
 		${WRKSRC}/third_party/libvpx/source/config/openbsd
 

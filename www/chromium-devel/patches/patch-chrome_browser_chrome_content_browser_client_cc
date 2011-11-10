@@ -1,7 +1,7 @@
 $OpenBSD$
---- chrome/browser/chrome_content_browser_client.cc.orig	Mon Nov  7 12:21:57 2011
-+++ chrome/browser/chrome_content_browser_client.cc	Tue Nov  8 18:40:08 2011
-@@ -82,7 +82,7 @@
+--- chrome/browser/chrome_content_browser_client.cc.orig	Wed Nov  9 11:40:41 2011
++++ chrome/browser/chrome_content_browser_client.cc	Wed Nov  9 21:25:59 2011
+@@ -83,7 +83,7 @@
  #include "chrome/browser/chrome_browser_main_mac.h"
  #elif defined(OS_CHROMEOS)
  #include "chrome/browser/chromeos/chrome_browser_main_chromeos.h"
@@ -10,8 +10,8 @@ $OpenBSD$
  #include "chrome/browser/chrome_browser_main_linux.h"
  #elif defined(OS_POSIX)
  #include "chrome/browser/chrome_browser_main_posix.h"
-@@ -96,7 +96,7 @@
- #include "chrome/browser/chrome_browser_parts_gtk.h"
+@@ -101,7 +101,7 @@
+ #include "chrome/browser/chrome_browser_parts_touch.h"
  #endif
  
 -#if defined(OS_LINUX)
@@ -19,7 +19,7 @@ $OpenBSD$
  #include "base/linux_util.h"
  #include "chrome/browser/crash_handler_host_linux.h"
  #endif
-@@ -213,7 +213,7 @@ void ChromeContentBrowserClient::CreateBrowserMainPart
+@@ -218,7 +218,7 @@ void ChromeContentBrowserClient::CreateBrowserMainPart
    parts_list->push_back(new ChromeBrowserMainPartsMac(parameters));
  #elif defined(OS_CHROMEOS)
    parts_list->push_back(new ChromeBrowserMainPartsChromeos(parameters));
@@ -28,7 +28,7 @@ $OpenBSD$
    parts_list->push_back(new ChromeBrowserMainPartsLinux(parameters));
  #elif defined(OS_POSIX)
    parts_list->push_back(new ChromeBrowserMainPartsPosix(parameters));
-@@ -953,7 +953,7 @@ std::string ChromeContentBrowserClient::GetDefaultDown
+@@ -960,7 +960,7 @@ std::string ChromeContentBrowserClient::GetDefaultDown
    return l10n_util::GetStringUTF8(IDS_DEFAULT_DOWNLOAD_FILENAME);
  }
  
@@ -37,7 +37,7 @@ $OpenBSD$
  int ChromeContentBrowserClient::GetCrashSignalFD(
      const CommandLine& command_line) {
    if (command_line.HasSwitch(switches::kExtensionProcess)) {
-@@ -979,7 +979,7 @@ int ChromeContentBrowserClient::GetCrashSignalFD(
+@@ -986,7 +986,7 @@ int ChromeContentBrowserClient::GetCrashSignalFD(
  
    return -1;
  }

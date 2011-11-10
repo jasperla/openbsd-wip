@@ -1,6 +1,6 @@
 $OpenBSD$
---- third_party/devscripts/licensecheck.pl.orig	Mon Nov  7 12:21:19 2011
-+++ third_party/devscripts/licensecheck.pl	Mon Nov  7 12:21:19 2011
+--- third_party/devscripts/licensecheck.pl.orig	Wed Nov  9 11:40:11 2011
++++ third_party/devscripts/licensecheck.pl	Wed Nov  9 11:40:11 2011
 @@ -241,6 +241,12 @@ my @files = ();
  my @find_args = ();
  my $files_count = @ARGV;
