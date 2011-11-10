@@ -1,0 +1,2 @@
+@comment $OpenBSD:$
+lib/firefox-${V}/extensions/langpack-nso@firefox.mozilla.org.xpi
