@@ -141,4 +141,12 @@ LIB_DEPENDS-vkontakte = ${LIB_DEPENDS-common} \
 			devel/qjson \
 			x11/kde4/libs
 
+CONFIGURE_ARGS =	-DENABLE_INTERNALMYSQL:Bool=No
+
+FLAVOR ?=
+
+.if ${FLAVOR:Mdebug}
+CONFIGURE_ARGS +=	-DENABLE_ADVANCEDDEBUGMSG:Bool=Yes
+.endif
+
 .include <bsd.port.mk>
