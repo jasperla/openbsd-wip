@@ -19,6 +19,8 @@ audio/clementine:	sent to ports@ Sep 06 2011. Ready for import. (grayed)
 games/dungeon:		ready, sent to ports some time ago (pstumpf)
 security/nss		update sent to ports@
 www/firefox36		update sent to ports@
+www/firefox-i18n	To send to ports@ for wider testing
+www/mozilla-firefox	To send to ports@ for wider testing
 
 KDE 4.7.2 related
 
