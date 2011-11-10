@@ -6,6 +6,7 @@ CATEGORIES =	databases devel textproc sysutils
 
 HOMEPAGE =	http://strigi.sourceforge.net
 DISTNAME =	strigi-0.7.5
+REVISION =	0
 
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	http://www.vandenoever.info/software/strigi/ \
