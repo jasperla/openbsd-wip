@@ -1046,25 +1046,25 @@ share/config/colorschemes.knsrc
 @comment share/config/kdm/
 @comment share/config/kdm.knsrc
 @comment share/config/kdm/README
-share/config/kdm/README.bak
+@comment share/config/kdm/README.bak
 @comment share/config/kdm/Xaccess
-share/config/kdm/Xaccess.bak
+@comment share/config/kdm/Xaccess.bak
 @comment share/config/kdm/Xreset
-share/config/kdm/Xreset.bak
+@comment share/config/kdm/Xreset.bak
 @comment share/config/kdm/Xresources
-share/config/kdm/Xresources.bak
+@comment share/config/kdm/Xresources.bak
 @comment share/config/kdm/Xsession
-share/config/kdm/Xsession.bak
+@comment share/config/kdm/Xsession.bak
 @comment share/config/kdm/Xsetup
-share/config/kdm/Xsetup.bak
+@comment share/config/kdm/Xsetup.bak
 @comment share/config/kdm/Xstartup
-share/config/kdm/Xstartup.bak
+@comment share/config/kdm/Xstartup.bak
 @comment share/config/kdm/Xwilling
-share/config/kdm/Xwilling.bak
+@comment share/config/kdm/Xwilling.bak
 @comment share/config/kdm/backgroundrc
-share/config/kdm/backgroundrc.bak
+@comment share/config/kdm/backgroundrc.bak
 @comment share/config/kdm/kdmrc
-share/config/kdm/kdmrc.bak
+@comment share/config/kdm/kdmrc.bak
 @comment share/config/kdm/sessions/
 share/config/ksplash.knsrc
 share/config/ksysguard.knsrc
