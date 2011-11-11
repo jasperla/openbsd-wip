@@ -2,7 +2,6 @@
 
 COMMENT =	KDE SDK
 DISTNAME =	kdesdk-${MODKDE_VERSION}
-REVISION =	0
 
 SHARED_LIBS =	kastencontrollers	0.0 # 4.7
 SHARED_LIBS +=	kastencore		0.0 # 4.7

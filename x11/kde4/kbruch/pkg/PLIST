@@ -1,5 +1,6 @@
 @comment $OpenBSD$
 @bin bin/kbruch
+@man man/man1/kbruch.1
 share/applications/kde4/kbruch.desktop
 share/apps/kbruch/
 share/apps/kbruch/AppMenuWidgetui.rc
@@ -44,6 +45,5 @@ share/icons/hicolor/32x32/apps/kbruch.png
 share/icons/hicolor/48x48/apps/kbruch.png
 share/icons/hicolor/64x64/apps/kbruch.png
 share/icons/hicolor/scalable/apps/kbruch.svgz
-@man share/man/man1/kbruch.1
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

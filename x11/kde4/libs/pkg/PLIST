@@ -22,13 +22,6 @@ bin/checkXML
 @bin bin/meinproc4_simple
 @bin bin/nepomuk-rcgen
 bin/preparetips
-etc/
-etc/dbus-1/
-etc/dbus-1/system.d/
-etc/dbus-1/system.d/org.kde.auth.conf
-etc/xdg/
-etc/xdg/menus/
-etc/xdg/menus/applications.menu
 include/KDE/ConversionCheck/
 include/KDE/ConversionCheck/QVconvertible
 include/KDE/ConversionCheck/type_toQString
@@ -274,6 +267,7 @@ include/KDE/KCategoryDrawer
 include/KDE/KCharMacroExpander
 include/KDE/KCharSelect
 include/KDE/KCharsets
+include/KDE/KCheckableProxyModel
 include/KDE/KCmdLineArgs
 include/KDE/KCmdLineOptions
 include/KDE/KCodecs
@@ -783,6 +777,7 @@ include/KDE/KUrlRequesterDialog
 include/KDE/KUser
 include/KDE/KUserGroup
 include/KDE/KVBox
+include/KDE/KViewStateMaintainer
 include/KDE/KWallet/
 include/KDE/KWallet/Wallet
 include/KDE/KWebPage
@@ -1994,26 +1989,6 @@ lib/kde4/krossqts.so
 lib/kde4/kspell_aspell.so
 lib/kde4/kspell_enchant.so
 lib/kde4/ktranscript.so
-lib/kde4/libexec/
-lib/kde4/libexec/filesharelist
-@mode u+s
-@owner root
-lib/kde4/libexec/fileshareset
-@mode
-@owner
-@bin lib/kde4/libexec/kauth-policy-gen
-@bin lib/kde4/libexec/kconf_update
-@bin lib/kde4/libexec/kdesu_stub
-@bin lib/kde4/libexec/kio_http_cache_cleaner
-@bin lib/kde4/libexec/kioslave
-@bin lib/kde4/libexec/klauncher
-@bin lib/kde4/libexec/kmailservice
-@bin lib/kde4/libexec/kpac_dhcp_helper
-@bin lib/kde4/libexec/ksendbugmail
-@bin lib/kde4/libexec/ktelnetservice
-@bin lib/kde4/libexec/lnusertemp
-@bin lib/kde4/libexec/start_kdeinit
-@bin lib/kde4/libexec/start_kdeinit_wrapper
 lib/kde4/libkhtmlpart.so
 lib/kde4/libkmultipart.so
 lib/kde4/notepadpart.so
@@ -2087,6 +2062,39 @@ lib/libkdeinit4_klauncher.so
 @lib lib/libplasma.so.${LIBplasma_VERSION}
 @lib lib/libsolid.so.${LIBsolid_VERSION}
 @lib lib/libthreadweaver.so.${LIBthreadweaver_VERSION}
+libexec/filesharelist
+@mode u+s
+@owner root
+libexec/fileshareset
+@mode
+@owner
+@bin libexec/kauth-policy-gen
+@bin libexec/kconf_update
+@bin libexec/kdesu_stub
+@bin libexec/kio_http_cache_cleaner
+@bin libexec/kioslave
+@bin libexec/klauncher
+@bin libexec/kmailservice
+@bin libexec/kpac_dhcp_helper
+@bin libexec/ksendbugmail
+@bin libexec/ktelnetservice
+@bin libexec/lnusertemp
+@bin libexec/start_kdeinit
+@bin libexec/start_kdeinit_wrapper
+@man man/man1/checkXML.1
+@man man/man1/kde4-config.1
+@man man/man1/kdecmake.1
+@man man/man1/kjs.1
+@man man/man1/kjscmd.1
+@man man/man1/kross.1
+@man man/man1/makekdewidgets.1
+@man man/man7/kdeoptions.7
+@man man/man7/qtoptions.7
+@man man/man8/kbuildsycoca4.8
+@man man/man8/kcookiejar4.8
+@man man/man8/kded4.8
+@man man/man8/kdeinit4.8
+@man man/man8/meinproc4.8
 share/applications/kde4/
 share/applications/kde4/kmailservice.desktop
 share/applications/kde4/ktelnetservice.desktop
@@ -2137,9 +2145,6 @@ share/apps/cmake/modules/FindHUNSPELL.cmake
 share/apps/cmake/modules/FindIOKit.cmake
 share/apps/cmake/modules/FindKDE4Internal.cmake
 share/apps/cmake/modules/FindKDE4Workspace.cmake
-share/apps/cmake/modules/FindKDEWIN32.cmake
-share/apps/cmake/modules/FindKDEWIN_Packager.cmake
-share/apps/cmake/modules/FindKDEWin.cmake
 share/apps/cmake/modules/FindKDevPlatform.cmake
 share/apps/cmake/modules/FindKdcraw.cmake
 share/apps/cmake/modules/FindKdeMultimedia.cmake
@@ -3460,6 +3465,13 @@ share/doc/HTML/en/sonnet/
 share/doc/HTML/en/sonnet/common
 share/doc/HTML/en/sonnet/index.cache.bz2
 share/doc/HTML/en/sonnet/index.docbook
+share/examples/dbus-1/system.d/
+share/examples/dbus-1/system.d/org.kde.auth.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.auth.conf
+share/examples/xdg/
+share/examples/xdg/menus/
+share/examples/xdg/menus/applications.menu
+@sample ${SYSCONFDIR}/xdg/menus/applications.menu
 share/icons/hicolor/16x16/actions/
 share/icons/hicolor/16x16/actions/presence_away.png
 share/icons/hicolor/16x16/actions/presence_offline.png
@@ -3587,22 +3599,6 @@ share/kde4/servicetypes/sonnetspeller.desktop
 share/locale/all_languages
 share/locale/en_US/
 share/locale/en_US/entry.desktop
-@man share/man/man1/checkXML.1
-@man share/man/man1/kde4-config.1
-@man share/man/man1/kdecmake.1
-@man share/man/man1/kjs.1
-@man share/man/man1/kjscmd.1
-@man share/man/man1/kross.1
-@man share/man/man1/makekdewidgets.1
-share/man/man7/
-@man share/man/man7/kdeoptions.7
-@man share/man/man7/qtoptions.7
-share/man/man8/
-@man share/man/man8/kbuildsycoca4.8
-@man share/man/man8/kcookiejar4.8
-@man share/man/man8/kded4.8
-@man share/man/man8/kdeinit4.8
-@man share/man/man8/meinproc4.8
 share/mime/packages/kde.xml
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

@@ -24,7 +24,7 @@ MODKDE4_USE =	libs pim
 RUN_DEPENDS =	x11/kde4/kross-interpreters
 
 LIB_DEPENDS = 	x11/kde4/kate \
-		x11/kde4/qtruby \
+		x11/kde4/ruby-qt \
 		x11/kde4/smokekde
 
 # Disable until KDE Smoke bug 283677 gets fixed,

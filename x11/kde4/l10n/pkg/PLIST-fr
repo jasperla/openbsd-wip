@@ -1,4 +1,50 @@
 @comment $OpenBSD$
+man/fr/
+man/fr/man1/
+@man man/fr/man1/adddebug.1
+@man man/fr/man1/ark.1
+@man man/fr/man1/cheatmake.1
+@man man/fr/man1/checkXML.1
+@man man/fr/man1/create_cvsignore.1
+@man man/fr/man1/create_makefile.1
+@man man/fr/man1/create_makefiles.1
+@man man/fr/man1/cvscheck.1
+@man man/fr/man1/cvslastchange.1
+@man man/fr/man1/cvslastlog.1
+@man man/fr/man1/cvsrevertlast.1
+@man man/fr/man1/cxxmetric.1
+@man man/fr/man1/extractrc.1
+@man man/fr/man1/fixincludes.1
+@man man/fr/man1/kabcclient.1
+@man man/fr/man1/kalzium.1
+@man man/fr/man1/kate.1
+@man man/fr/man1/kbookmarkmerger.1
+@man man/fr/man1/kbruch.1
+@man man/fr/man1/kdesu.1
+@man man/fr/man1/kfind.1
+@man man/fr/man1/kig.1
+@man man/fr/man1/kmag.1
+@man man/fr/man1/kmousetool.1
+@man man/fr/man1/kmouth.1
+@man man/fr/man1/kmplot.1
+@man man/fr/man1/ktouch.1
+@man man/fr/man1/plasmaengineexplorer.1
+@man man/fr/man1/po2xml.1
+@man man/fr/man1/preparetips.1
+@man man/fr/man1/pruneemptydirs.1
+@man man/fr/man1/qtdoc.1
+@man man/fr/man1/reportview.1
+@man man/fr/man1/split2po.1
+@man man/fr/man1/swappo.1
+@man man/fr/man1/xml2pot.1
+@man man/fr/man1/zonetab2pot.py.1
+man/fr/man6/
+@man man/fr/man6/amor.6
+@man man/fr/man6/khangman.6
+man/fr/man8/
+@man man/fr/man8/meinproc4.8
+@man man/fr/man8/nepomukserver.8
+@man man/fr/man8/nepomukservicestub.8
 share/apps/
 share/apps/khangman/
 share/apps/khangman/fr.txt
@@ -838,7 +884,6 @@ share/doc/HTML/fr/klipper/
 share/doc/HTML/fr/klipper/common
 share/doc/HTML/fr/klipper/index.cache.bz2
 share/doc/HTML/fr/klipper/index.docbook
-share/doc/HTML/fr/klipper/screenshot.png
 share/doc/HTML/fr/kmag/
 share/doc/HTML/fr/kmag/common
 share/doc/HTML/fr/kmag/index.cache.bz2
@@ -2121,50 +2166,3 @@ share/locale/fr/LC_MESSAGES/validatorsplugin.mo
 share/locale/fr/LC_MESSAGES/webarchiver.mo
 share/locale/fr/LC_MESSAGES/xml_mimetypes.mo
 share/locale/fr/entry.desktop
-share/man/
-share/man/fr/
-share/man/fr/man1/
-@man share/man/fr/man1/adddebug.1
-@man share/man/fr/man1/ark.1
-@man share/man/fr/man1/cheatmake.1
-@man share/man/fr/man1/checkXML.1
-@man share/man/fr/man1/create_cvsignore.1
-@man share/man/fr/man1/create_makefile.1
-@man share/man/fr/man1/create_makefiles.1
-@man share/man/fr/man1/cvscheck.1
-@man share/man/fr/man1/cvslastchange.1
-@man share/man/fr/man1/cvslastlog.1
-@man share/man/fr/man1/cvsrevertlast.1
-@man share/man/fr/man1/cxxmetric.1
-@man share/man/fr/man1/extractrc.1
-@man share/man/fr/man1/fixincludes.1
-@man share/man/fr/man1/kabcclient.1
-@man share/man/fr/man1/kalzium.1
-@man share/man/fr/man1/kate.1
-@man share/man/fr/man1/kbookmarkmerger.1
-@man share/man/fr/man1/kbruch.1
-@man share/man/fr/man1/kdesu.1
-@man share/man/fr/man1/kfind.1
-@man share/man/fr/man1/kig.1
-@man share/man/fr/man1/kmag.1
-@man share/man/fr/man1/kmousetool.1
-@man share/man/fr/man1/kmouth.1
-@man share/man/fr/man1/kmplot.1
-@man share/man/fr/man1/ktouch.1
-@man share/man/fr/man1/plasmaengineexplorer.1
-@man share/man/fr/man1/po2xml.1
-@man share/man/fr/man1/preparetips.1
-@man share/man/fr/man1/pruneemptydirs.1
-@man share/man/fr/man1/qtdoc.1
-@man share/man/fr/man1/reportview.1
-@man share/man/fr/man1/split2po.1
-@man share/man/fr/man1/swappo.1
-@man share/man/fr/man1/xml2pot.1
-@man share/man/fr/man1/zonetab2pot.py.1
-share/man/fr/man6/
-@man share/man/fr/man6/amor.6
-@man share/man/fr/man6/khangman.6
-share/man/fr/man8/
-@man share/man/fr/man8/meinproc4.8
-@man share/man/fr/man8/nepomukserver.8
-@man share/man/fr/man8/nepomukservicestub.8

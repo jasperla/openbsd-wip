@@ -1,4 +1,10 @@
 @comment $OpenBSD$
+man/lt/
+man/lt/man1/
+@man man/lt/man1/checkXML.1
+@man man/lt/man1/kfind.1
+man/lt/man8/
+@man man/lt/man8/kbuildsycoca4.8
 share/doc/HTML/
 share/doc/HTML/lt/
 share/doc/HTML/lt/akregator/
@@ -118,6 +124,8 @@ share/doc/HTML/lt/marble/routing-2.png
 share/doc/HTML/lt/marble/routing-6.png
 share/doc/HTML/lt/marble/search-1.png
 share/doc/HTML/lt/marble/search-2.png
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/accountwizard.mo
 share/locale/lt/LC_MESSAGES/accountwizard_ical.mo
 share/locale/lt/LC_MESSAGES/accountwizard_imap.mo
@@ -134,6 +142,7 @@ share/locale/lt/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/lt/LC_MESSAGES/akonadi_imap_resource.mo
 share/locale/lt/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/lt/LC_MESSAGES/akonadi_kabc_resource.mo
+share/locale/lt/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/lt/LC_MESSAGES/akonadi_kcal_resource.mo
 share/locale/lt/LC_MESSAGES/akonadi_kdeaccounts_resource.mo
 share/locale/lt/LC_MESSAGES/akonadi_knut_resource.mo
@@ -851,10 +860,3 @@ share/locale/lt/LC_SCRIPTS/libplasma/plasmoids.js
 share/locale/lt/LC_SCRIPTS/plasma_applet_fuzzy_clock/
 share/locale/lt/LC_SCRIPTS/plasma_applet_fuzzy_clock/plasma_applet_fuzzy_clock.js
 share/locale/lt/entry.desktop
-share/man/
-share/man/lt/
-share/man/lt/man1/
-@man share/man/lt/man1/checkXML.1
-@man share/man/lt/man1/kfind.1
-share/man/lt/man8/
-@man share/man/lt/man8/kbuildsycoca4.8

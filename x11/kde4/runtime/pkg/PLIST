@@ -36,8 +36,6 @@ bin/kde4
 @bin bin/plasma-remote-helper
 @bin bin/plasmapkg
 @bin bin/solid-hardware
-etc/dbus-1/system.d/org.kde.kcontrol.kcmremotewidgets.conf
-etc/xdg/menus/kde-information.menu
 include/knotify_export.h
 include/knotifyconfig.h
 include/knotifyplugin.h
@@ -129,21 +127,6 @@ lib/kde4/kio_trash.so
 lib/kde4/kshorturifilter.so
 lib/kde4/kuriikwsfilter.so
 lib/kde4/kurisearchfilter.so
-@bin lib/kde4/libexec/drkonqi
-@bin lib/kde4/libexec/kcmremotewidgetshelper
-lib/kde4/libexec/kdeeject
-@bin lib/kde4/libexec/kdesu
-@mode g+s
-@bin lib/kde4/libexec/kdesud
-@mode
-@bin lib/kde4/libexec/kdontchangethehostname
-lib/kde4/libexec/khc_docbookdig.pl
-lib/kde4/libexec/khc_htdig.pl
-lib/kde4/libexec/khc_htsearch.pl
-@bin lib/kde4/libexec/khc_indexbuilder
-lib/kde4/libexec/khc_mansearch.pl
-@bin lib/kde4/libexec/kioexec
-@bin lib/kde4/libexec/knetattach
 lib/kde4/libkmanpart.so
 lib/kde4/librenaudioplugin.so
 lib/kde4/librenimageplugin.so
@@ -178,6 +161,26 @@ lib/libknotifyplugin.so
 lib/libnepomukcommon.so
 lib/libnepomukdatamanagement.so
 @lib lib/libnepomuksync.so.${LIBnepomuksync_VERSION}
+@bin libexec/drkonqi
+@bin libexec/kcmremotewidgetshelper
+libexec/kdeeject
+@bin libexec/kdesu
+@group wheel
+@mode g+s
+@bin libexec/kdesud
+@group
+@mode
+@bin libexec/kdontchangethehostname
+libexec/khc_docbookdig.pl
+libexec/khc_htdig.pl
+libexec/khc_htsearch.pl
+@bin libexec/khc_indexbuilder
+libexec/khc_mansearch.pl
+@bin libexec/kioexec
+@bin libexec/knetattach
+@man man/man1/kdesu.1
+@man man/man8/nepomukserver.8
+@man man/man8/nepomukservicestub.8
 share/applications/kde4/Help.desktop
 share/applications/kde4/knetattach.desktop
 share/applications/kde4/nepomukbackup.desktop
@@ -790,6 +793,10 @@ share/emoticons/kde4/unhappy.png
 share/emoticons/kde4/unlove.png
 share/emoticons/kde4/wilted_rose.png
 share/emoticons/kde4/wink.png
+share/examples/dbus-1/system.d/org.kde.kcontrol.kcmremotewidgets.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.kcontrol.kcmremotewidgets.conf
+share/examples/xdg/menus/kde-information.menu
+@sample ${SYSCONFDIR}/xdg/menus/kde-information.menu
 share/icons/default.kde4
 share/icons/hicolor/128x128/apps/knetattach.png
 share/icons/hicolor/16x16/apps/knetattach.png
@@ -1980,9 +1987,6 @@ share/locale/l10n/zm/flag.png
 share/locale/l10n/zw/
 share/locale/l10n/zw/entry.desktop
 share/locale/l10n/zw/flag.png
-@man share/man/man1/kdesu.1
-@man share/man/man8/nepomukserver.8
-@man share/man/man8/nepomukservicestub.8
 share/mime/packages/network.xml
 share/ontology/kde/
 share/ontology/kde/kext.ontology

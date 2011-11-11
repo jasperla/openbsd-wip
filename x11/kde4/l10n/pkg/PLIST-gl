@@ -1,4 +1,43 @@
 @comment $OpenBSD$
+man/gl/
+man/gl/man1/
+@man man/gl/man1/adddebug.1
+@man man/gl/man1/cheatmake.1
+@man man/gl/man1/checkXML.1
+@man man/gl/man1/create_cvsignore.1
+@man man/gl/man1/create_makefiles.1
+@man man/gl/man1/cvscheck.1
+@man man/gl/man1/cvslastchange.1
+@man man/gl/man1/cvslastlog.1
+@man man/gl/man1/cvsrevertlast.1
+@man man/gl/man1/cxxmetric.1
+@man man/gl/man1/demangle.1
+@man man/gl/man1/extend_dmalloc.1
+@man man/gl/man1/extractrc.1
+@man man/gl/man1/fixincludes.1
+@man man/gl/man1/kalzium.1
+@man man/gl/man1/kbruch.1
+@man man/gl/man1/kconfig_compiler.1
+@man man/gl/man1/kde4-config.1
+@man man/gl/man1/kig.1
+@man man/gl/man1/kmplot.1
+@man man/gl/man1/ktouch.1
+@man man/gl/man1/makekdewidgets.1
+@man man/gl/man1/po2xml.1
+@man man/gl/man1/preparetips.1
+@man man/gl/man1/pruneemptydirs.1
+@man man/gl/man1/qtdoc.1
+@man man/gl/man1/reportview.1
+@man man/gl/man1/split2po.1
+@man man/gl/man1/swappo.1
+@man man/gl/man1/transxx.1
+@man man/gl/man1/xml2pot.1
+@man man/gl/man1/zonetab2pot.py.1
+man/gl/man6/
+@man man/gl/man6/khangman.6
+man/gl/man7/
+@man man/gl/man7/kdeoptions.7
+@man man/gl/man7/qtoptions.7
 share/apps/
 share/apps/ktuberling/
 share/apps/ktuberling/sounds/
@@ -1083,43 +1122,3 @@ share/locale/gl/LC_MESSAGES/validatorsplugin.mo
 share/locale/gl/LC_MESSAGES/webarchiver.mo
 share/locale/gl/LC_MESSAGES/xml_mimetypes.mo
 share/locale/gl/entry.desktop
-share/man/
-share/man/gl/
-share/man/gl/man1/
-@man share/man/gl/man1/adddebug.1
-@man share/man/gl/man1/cheatmake.1
-@man share/man/gl/man1/checkXML.1
-@man share/man/gl/man1/create_cvsignore.1
-@man share/man/gl/man1/create_makefiles.1
-@man share/man/gl/man1/cvscheck.1
-@man share/man/gl/man1/cvslastchange.1
-@man share/man/gl/man1/cvslastlog.1
-@man share/man/gl/man1/cvsrevertlast.1
-@man share/man/gl/man1/cxxmetric.1
-@man share/man/gl/man1/demangle.1
-@man share/man/gl/man1/extend_dmalloc.1
-@man share/man/gl/man1/extractrc.1
-@man share/man/gl/man1/fixincludes.1
-@man share/man/gl/man1/kalzium.1
-@man share/man/gl/man1/kbruch.1
-@man share/man/gl/man1/kconfig_compiler.1
-@man share/man/gl/man1/kde4-config.1
-@man share/man/gl/man1/kig.1
-@man share/man/gl/man1/kmplot.1
-@man share/man/gl/man1/ktouch.1
-@man share/man/gl/man1/makekdewidgets.1
-@man share/man/gl/man1/po2xml.1
-@man share/man/gl/man1/preparetips.1
-@man share/man/gl/man1/pruneemptydirs.1
-@man share/man/gl/man1/qtdoc.1
-@man share/man/gl/man1/reportview.1
-@man share/man/gl/man1/split2po.1
-@man share/man/gl/man1/swappo.1
-@man share/man/gl/man1/transxx.1
-@man share/man/gl/man1/xml2pot.1
-@man share/man/gl/man1/zonetab2pot.py.1
-share/man/gl/man6/
-@man share/man/gl/man6/khangman.6
-share/man/gl/man7/
-@man share/man/gl/man7/kdeoptions.7
-@man share/man/gl/man7/qtoptions.7

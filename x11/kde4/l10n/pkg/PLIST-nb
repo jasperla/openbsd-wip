@@ -1,4 +1,7 @@
 @comment $OpenBSD$
+man/nb/
+man/nb/man1/
+@man man/nb/man1/kbookmarkmerger.1
 share/apps/
 share/apps/katepart/
 share/apps/katepart/syntax/
@@ -832,7 +835,3 @@ share/locale/nb/LC_SCRIPTS/
 share/locale/nb/LC_SCRIPTS/kdelibs4/
 share/locale/nb/LC_SCRIPTS/kdelibs4/kdelibs4.js
 share/locale/nb/entry.desktop
-share/man/
-share/man/nb/
-share/man/nb/man1/
-@man share/man/nb/man1/kbookmarkmerger.1

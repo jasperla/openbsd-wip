@@ -1,5 +1,6 @@
 @comment $OpenBSD$
 @bin bin/ktouch
+@man man/man1/ktouch.1
 share/applications/kde4/ktouch.desktop
 share/apps/ktouch/
 share/apps/ktouch/ar.keyboard.xml
@@ -111,6 +112,5 @@ share/icons/hicolor/22x22/apps/ktouch.png
 share/icons/hicolor/32x32/apps/ktouch.png
 share/icons/hicolor/48x48/apps/ktouch.png
 share/icons/hicolor/scalable/apps/ktouch.svgz
-@man share/man/man1/ktouch.1
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

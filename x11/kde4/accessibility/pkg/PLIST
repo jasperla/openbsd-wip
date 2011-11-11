@@ -7,10 +7,13 @@ lib/kde4/jovie_stringreplacerplugin.so
 lib/kde4/jovie_talkerchooserplugin.so
 lib/kde4/jovie_xmltransformerplugin.so
 lib/kde4/kcm_kttsd.so
-@bin lib/kde4/libexec/kaccessibleapp
 lib/kde4/plugins/accessiblebridge/
 lib/kde4/plugins/accessiblebridge/kaccessiblebridge.so
 @lib lib/libkttsd.so.${LIBkttsd_VERSION}
+@bin libexec/kaccessibleapp
+@man man/man1/kmag.1
+@man man/man1/kmousetool.1
+@man man/man1/kmouth.1
 share/applications/kde4/jovieapp.desktop
 share/applications/kde4/kmag.desktop
 share/applications/kde4/kmousetool.desktop
@@ -183,6 +186,3 @@ share/kde4/services/jovie_xmltransformerplugin.desktop
 share/kde4/services/kcmkttsd.desktop
 share/kde4/services/kttsd.desktop
 share/kde4/servicetypes/jovie_filterplugin.desktop
-@man share/man/man1/kmag.1
-@man share/man/man1/kmousetool.1
-@man share/man/man1/kmouth.1

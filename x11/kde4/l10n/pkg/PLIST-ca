@@ -1,4 +1,68 @@
 @comment $OpenBSD$
+man/ca/
+man/ca/man1/
+@man man/ca/man1/adddebug.1
+@man man/ca/man1/ark.1
+@man man/ca/man1/cheatmake.1
+@man man/ca/man1/checkXML.1
+@man man/ca/man1/create_cvsignore.1
+@man man/ca/man1/create_makefile.1
+@man man/ca/man1/create_makefiles.1
+@man man/ca/man1/cvscheck.1
+@man man/ca/man1/cvslastchange.1
+@man man/ca/man1/cvslastlog.1
+@man man/ca/man1/cvsrevertlast.1
+@man man/ca/man1/cxxmetric.1
+@man man/ca/man1/demangle.1
+@man man/ca/man1/extend_dmalloc.1
+@man man/ca/man1/extractrc.1
+@man man/ca/man1/fixincludes.1
+@man man/ca/man1/kabcclient.1
+@man man/ca/man1/kalzium.1
+@man man/ca/man1/kate.1
+@man man/ca/man1/kbookmarkmerger.1
+@man man/ca/man1/kbruch.1
+@man man/ca/man1/kconfig_compiler.1
+@man man/ca/man1/kde4-config.1
+@man man/ca/man1/kdesu.1
+@man man/ca/man1/kfind.1
+@man man/ca/man1/kig.1
+@man man/ca/man1/kjs.1
+@man man/ca/man1/kjscmd.1
+@man man/ca/man1/kmag.1
+@man man/ca/man1/kmousetool.1
+@man man/ca/man1/kmouth.1
+@man man/ca/man1/kmplot.1
+@man man/ca/man1/kross.1
+@man man/ca/man1/ktouch.1
+@man man/ca/man1/makekdewidgets.1
+@man man/ca/man1/plasmaengineexplorer.1
+@man man/ca/man1/plasmapkg.1
+@man man/ca/man1/plasmoidviewer.1
+@man man/ca/man1/po2xml.1
+@man man/ca/man1/preparetips.1
+@man man/ca/man1/pruneemptydirs.1
+@man man/ca/man1/qtdoc.1
+@man man/ca/man1/reportview.1
+@man man/ca/man1/split2po.1
+@man man/ca/man1/swappo.1
+@man man/ca/man1/transxx.1
+@man man/ca/man1/xml2pot.1
+@man man/ca/man1/zonetab2pot.py.1
+man/ca/man6/
+@man man/ca/man6/amor.6
+@man man/ca/man6/khangman.6
+man/ca/man7/
+@man man/ca/man7/kdeoptions.7
+@man man/ca/man7/qtoptions.7
+man/ca/man8/
+@man man/ca/man8/kbuildsycoca4.8
+@man man/ca/man8/kcookiejar4.8
+@man man/ca/man8/kded4.8
+@man man/ca/man8/kdeinit4.8
+@man man/ca/man8/meinproc4.8
+@man man/ca/man8/nepomukserver.8
+@man man/ca/man8/nepomukservicestub.8
 share/apps/
 share/apps/khangman/
 share/apps/khangman/ca.txt
@@ -168,6 +232,19 @@ share/doc/HTML/ca/PolicyKit-kde/howitworks.docbook
 share/doc/HTML/ca/PolicyKit-kde/index.cache.bz2
 share/doc/HTML/ca/PolicyKit-kde/index.docbook
 share/doc/HTML/ca/PolicyKit-kde/introduction.docbook
+share/doc/HTML/ca/akregator/
+share/doc/HTML/ca/akregator/add-feed.png
+share/doc/HTML/ca/akregator/add-feed2.png
+share/doc/HTML/ca/akregator/add-folder.png
+share/doc/HTML/ca/akregator/advanced-tab.png
+share/doc/HTML/ca/akregator/appearance-tab.png
+share/doc/HTML/ca/akregator/archive-tab.png
+share/doc/HTML/ca/akregator/browser-tab.png
+share/doc/HTML/ca/akregator/common
+share/doc/HTML/ca/akregator/general-tab.png
+share/doc/HTML/ca/akregator/index.cache.bz2
+share/doc/HTML/ca/akregator/index.docbook
+share/doc/HTML/ca/akregator/quick-filter.png
 share/doc/HTML/ca/amor/
 share/doc/HTML/ca/amor/common
 share/doc/HTML/ca/amor/index.cache.bz2
@@ -257,10 +334,20 @@ share/doc/HTML/ca/kate/part.docbook
 share/doc/HTML/ca/kate/plugins.docbook
 share/doc/HTML/ca/kate/regular-expressions.docbook
 share/doc/HTML/ca/kate/vi.docbook
+share/doc/HTML/ca/katomic/
+share/doc/HTML/ca/katomic/common
+share/doc/HTML/ca/katomic/index.cache.bz2
+share/doc/HTML/ca/katomic/index.docbook
+share/doc/HTML/ca/kbruch/
+share/doc/HTML/ca/kbruch/common
+share/doc/HTML/ca/kbruch/index.cache.bz2
+share/doc/HTML/ca/kbruch/index.docbook
+share/doc/HTML/ca/kbruch/man-kbruch.1.docbook
 share/doc/HTML/ca/kcharselect/
 share/doc/HTML/ca/kcharselect/common
 share/doc/HTML/ca/kcharselect/index.cache.bz2
 share/doc/HTML/ca/kcharselect/index.docbook
+share/doc/HTML/ca/kcharselect/kcharselect.png
 share/doc/HTML/ca/kcontrol/
 share/doc/HTML/ca/kcontrol/attica/
 share/doc/HTML/ca/kcontrol/attica/common
@@ -613,6 +700,15 @@ share/doc/HTML/ca/kget/
 share/doc/HTML/ca/kget/common
 share/doc/HTML/ca/kget/index.cache.bz2
 share/doc/HTML/ca/kget/index.docbook
+share/doc/HTML/ca/kgpg/
+share/doc/HTML/ca/kgpg/common
+share/doc/HTML/ca/kgpg/index.cache.bz2
+share/doc/HTML/ca/kgpg/index.docbook
+share/doc/HTML/ca/kgpg/keygen.png
+share/doc/HTML/ca/kgpg/keyprop.png
+share/doc/HTML/ca/kgpg/keyserver.png
+share/doc/HTML/ca/kgpg/options.png
+share/doc/HTML/ca/kgpg/select-secret-key.png
 share/doc/HTML/ca/khangman/
 share/doc/HTML/ca/khangman/common
 share/doc/HTML/ca/khangman/getnewstuff.png
@@ -794,6 +890,18 @@ share/doc/HTML/ca/kleopatra/
 share/doc/HTML/ca/kleopatra/common
 share/doc/HTML/ca/kleopatra/index.cache.bz2
 share/doc/HTML/ca/kleopatra/index.docbook
+share/doc/HTML/ca/klettres/
+share/doc/HTML/ca/klettres/common
+share/doc/HTML/ca/klettres/index.cache.bz2
+share/doc/HTML/ca/klettres/index.docbook
+share/doc/HTML/ca/klettres/klettres-newstuff.png
+share/doc/HTML/ca/klettres/klettres-newstuff2.png
+share/doc/HTML/ca/klettres/klettres1.png
+share/doc/HTML/ca/klettres/klettres2.png
+share/doc/HTML/ca/klettres/klettres3.png
+share/doc/HTML/ca/klettres/klettres4.png
+share/doc/HTML/ca/klettres/klettres5.png
+share/doc/HTML/ca/klettres/klettres6.png
 share/doc/HTML/ca/klipper/
 share/doc/HTML/ca/klipper/common
 share/doc/HTML/ca/klipper/index.cache.bz2
@@ -1017,8 +1125,12 @@ share/doc/HTML/ca/kteatime/index.cache.bz2
 share/doc/HTML/ca/kteatime/index.docbook
 share/doc/HTML/ca/ktimer/
 share/doc/HTML/ca/ktimer/common
+share/doc/HTML/ca/ktimer/first.png
 share/doc/HTML/ca/ktimer/index.cache.bz2
 share/doc/HTML/ca/ktimer/index.docbook
+share/doc/HTML/ca/ktimer/main.png
+share/doc/HTML/ca/ktimer/running.png
+share/doc/HTML/ca/ktimer/two.at.once.png
 share/doc/HTML/ca/ktouch/
 share/doc/HTML/ca/ktouch/color_options.png
 share/doc/HTML/ca/ktouch/common
@@ -1032,14 +1144,27 @@ share/doc/HTML/ca/ktouch/man-ktouch.1.docbook
 share/doc/HTML/ca/ktouch/statistics_dialog.png
 share/doc/HTML/ca/ktouch/statistics_dialog_chart.png
 share/doc/HTML/ca/ktouch/training_options.png
+share/doc/HTML/ca/kturtle/
+share/doc/HTML/ca/kturtle/common
+share/doc/HTML/ca/kturtle/getting-started.docbook
+share/doc/HTML/ca/kturtle/glossary.docbook
+share/doc/HTML/ca/kturtle/index.cache.bz2
+share/doc/HTML/ca/kturtle/index.docbook
+share/doc/HTML/ca/kturtle/mainwindow.png
+share/doc/HTML/ca/kturtle/mainwindow_flower_nrs.png
+share/doc/HTML/ca/kturtle/programming-reference.docbook
+share/doc/HTML/ca/kturtle/translator-guide.docbook
+share/doc/HTML/ca/kturtle/using-kturtle.docbook
 share/doc/HTML/ca/kuser/
 share/doc/HTML/ca/kuser/common
 share/doc/HTML/ca/kuser/index.cache.bz2
 share/doc/HTML/ca/kuser/index.docbook
 share/doc/HTML/ca/kwallet/
 share/doc/HTML/ca/kwallet/common
+share/doc/HTML/ca/kwallet/first-open-request.png
 share/doc/HTML/ca/kwallet/index.cache.bz2
 share/doc/HTML/ca/kwallet/index.docbook
+share/doc/HTML/ca/kwallet/kwalletmanager.png
 share/doc/HTML/ca/kwatchgnupg/
 share/doc/HTML/ca/kwatchgnupg/common
 share/doc/HTML/ca/kwatchgnupg/index.cache.bz2
@@ -1826,64 +1951,3 @@ share/locale/ca/LC_SCRIPTS/
 share/locale/ca/LC_SCRIPTS/kdelibs4/
 share/locale/ca/LC_SCRIPTS/kdelibs4/kdelibs4.js
 share/locale/ca/entry.desktop
-share/man/
-share/man/ca/
-share/man/ca/man1/
-@man share/man/ca/man1/adddebug.1
-@man share/man/ca/man1/cheatmake.1
-@man share/man/ca/man1/checkXML.1
-@man share/man/ca/man1/create_cvsignore.1
-@man share/man/ca/man1/create_makefile.1
-@man share/man/ca/man1/create_makefiles.1
-@man share/man/ca/man1/cvscheck.1
-@man share/man/ca/man1/cvslastchange.1
-@man share/man/ca/man1/cvslastlog.1
-@man share/man/ca/man1/cvsrevertlast.1
-@man share/man/ca/man1/cxxmetric.1
-@man share/man/ca/man1/demangle.1
-@man share/man/ca/man1/extend_dmalloc.1
-@man share/man/ca/man1/extractrc.1
-@man share/man/ca/man1/fixincludes.1
-@man share/man/ca/man1/kalzium.1
-@man share/man/ca/man1/kate.1
-@man share/man/ca/man1/kbookmarkmerger.1
-@man share/man/ca/man1/kbruch.1
-@man share/man/ca/man1/kconfig_compiler.1
-@man share/man/ca/man1/kde4-config.1
-@man share/man/ca/man1/kdesu.1
-@man share/man/ca/man1/kfind.1
-@man share/man/ca/man1/kjs.1
-@man share/man/ca/man1/kjscmd.1
-@man share/man/ca/man1/kmag.1
-@man share/man/ca/man1/kmousetool.1
-@man share/man/ca/man1/kmouth.1
-@man share/man/ca/man1/kross.1
-@man share/man/ca/man1/ktouch.1
-@man share/man/ca/man1/makekdewidgets.1
-@man share/man/ca/man1/plasmaengineexplorer.1
-@man share/man/ca/man1/plasmapkg.1
-@man share/man/ca/man1/plasmoidviewer.1
-@man share/man/ca/man1/po2xml.1
-@man share/man/ca/man1/preparetips.1
-@man share/man/ca/man1/pruneemptydirs.1
-@man share/man/ca/man1/qtdoc.1
-@man share/man/ca/man1/reportview.1
-@man share/man/ca/man1/split2po.1
-@man share/man/ca/man1/swappo.1
-@man share/man/ca/man1/transxx.1
-@man share/man/ca/man1/xml2pot.1
-@man share/man/ca/man1/zonetab2pot.py.1
-share/man/ca/man6/
-@man share/man/ca/man6/amor.6
-@man share/man/ca/man6/khangman.6
-share/man/ca/man7/
-@man share/man/ca/man7/kdeoptions.7
-@man share/man/ca/man7/qtoptions.7
-share/man/ca/man8/
-@man share/man/ca/man8/kbuildsycoca4.8
-@man share/man/ca/man8/kcookiejar4.8
-@man share/man/ca/man8/kded4.8
-@man share/man/ca/man8/kdeinit4.8
-@man share/man/ca/man8/meinproc4.8
-@man share/man/ca/man8/nepomukserver.8
-@man share/man/ca/man8/nepomukservicestub.8

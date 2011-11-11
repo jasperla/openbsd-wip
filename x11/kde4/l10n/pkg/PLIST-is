@@ -1,4 +1,6 @@
 @comment $OpenBSD$
+share/locale/is/
+share/locale/is/LC_MESSAGES/
 share/locale/is/LC_MESSAGES/adblock.mo
 share/locale/is/LC_MESSAGES/akregator.mo
 share/locale/is/LC_MESSAGES/akregator_konqplugin.mo

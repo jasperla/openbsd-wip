@@ -82,6 +82,8 @@ lib/libkdeinit4_konqueror.so
 @lib lib/libkonq.so.${LIBkonq_VERSION}
 @lib lib/libkonqsidebarplugin.so.${LIBkonqsidebarplugin_VERSION}
 @lib lib/libkonquerorprivate.so.${LIBkonquerorprivate_VERSION}
+@man man/man1/kbookmarkmerger.1
+@man man/man1/kfind.1
 share/applications/kde4/Home.desktop
 share/applications/kde4/dolphin.desktop
 share/applications/kde4/kdepasswd.desktop
@@ -447,8 +449,6 @@ share/kde4/servicetypes/konqaboutpage.desktop
 share/kde4/servicetypes/konqdndpopupmenuplugin.desktop
 share/kde4/servicetypes/konqpopupmenuplugin.desktop
 share/kde4/servicetypes/uasprovider.desktop
-@man share/man/man1/kbookmarkmerger.1
-@man share/man/man1/kfind.1
 share/templates/
 share/templates/.source/
 share/templates/.source/CAMERA-Device.desktop

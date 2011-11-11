@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, libraries
 DISTNAME =	kdelibs-${MODKDE_VERSION}
-REVISION =	3
 
 SHARED_LIBS =	kde3support          0.0      # .4.0
 SHARED_LIBS +=	kdecore              8.0      # .5.0
@@ -72,7 +71,8 @@ BUILD_DEPENDS =	misc/shared-desktop-ontologies \
 RUN_DEPENDS =	misc/shared-mime-info \
 		misc/shared-desktop-ontologies \
 		sysutils/gamin,-server \
-		STEM->=${MODKDE4_VERSION}:x11/kde4/oxygen-icons
+		STEM->=${MODKDE4_VERSION}:x11/kde4/oxygen-icons \
+		x11/dbus
 
 LIB_DEPENDS =	archivers/bzip2 \
 		archivers/xz \
@@ -108,13 +108,17 @@ CONFIGURE_ARGS +=	-DACL_FOUND:Bool=FALSE \
 CONFIGURE_ARGS +=	-DKDE_DEFAULT_HOME=.kde4 \
 			-DKDE4_INCLUDE_INSTALL_DIR:String=${LOCALBASE}/include \
 			-DKDE4_LIB_INSTALL_DIR:String=${LOCALBASE}/lib \
-			-DKDESU_USE_SUDO_DEFAULT:BOOL=TRUE
+			-DKDESU_USE_SUDO_DEFAULT:Bool=TRUE \
+			-DSYSCONF_INSTALL_DIR:String=${SYSCONFDIR}
 
 # Reimplemented CMake modules, because previous were totally broken
 REWR_CMAKE_MODULES =	FindXine FindXKB FindPolkitQt
 
 # Contain (required) additional functionality compared to system ones
 WRAP_CMAKE_MODULES =	FindGettext FindLibXslt
+
+WRONG_SYSCONF_FILES =	dbus-1	share/examples \
+			xdg	share/examples
 
 post-extract:
 	@if pkg_info -e 'kdelibs-<4'; then \

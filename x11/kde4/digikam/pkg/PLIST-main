@@ -54,6 +54,8 @@ lib/libPropertyBrowser.a
 @lib lib/libmediawiki.so.${LIBmediawiki_VERSION}
 lib/pkgconfig/libkface.pc
 lib/pkgconfig/libmediawiki.pc
+@man man/man1/cleanup_digikamdb.1
+@man man/man1/digitaglinktree.1
 share/applications/kde4/digikam.desktop
 share/applications/kde4/photolayoutseditor.desktop
 share/applications/kde4/scangui.desktop
@@ -967,7 +969,5 @@ share/locale/uk/LC_MESSAGES/digikam.mo
 share/locale/vi/LC_MESSAGES/digikam.mo
 share/locale/zh_CN/LC_MESSAGES/digikam.mo
 share/locale/zh_TW/LC_MESSAGES/digikam.mo
-@man share/man/man1/cleanup_digikamdb.1
-@man share/man/man1/digitaglinktree.1
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

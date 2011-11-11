@@ -1,4 +1,10 @@
 @comment $OpenBSD$
+man/el/
+man/el/man1/
+@man man/el/man1/kbookmarkmerger.1
+@man man/el/man1/plasmaengineexplorer.1
+@man man/el/man1/plasmapkg.1
+@man man/el/man1/plasmoidviewer.1
 share/apps/
 share/apps/ktuberling/
 share/apps/ktuberling/sounds/
@@ -629,6 +635,7 @@ share/locale/el/LC_MESSAGES/messageviewer_text_xdiff_plugin.mo
 share/locale/el/LC_MESSAGES/mf_konqplugin.mo
 share/locale/el/LC_MESSAGES/minitoolsplugin.mo
 share/locale/el/LC_MESSAGES/mplayerthumbs.mo
+share/locale/el/LC_MESSAGES/mplayerthumbsconfig.mo
 share/locale/el/LC_MESSAGES/nepomukbackup.mo
 share/locale/el/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/el/LC_MESSAGES/nepomukserver.mo
@@ -831,10 +838,3 @@ share/locale/el/LC_MESSAGES/validatorsplugin.mo
 share/locale/el/LC_MESSAGES/webarchiver.mo
 share/locale/el/LC_MESSAGES/xml_mimetypes.mo
 share/locale/el/entry.desktop
-share/man/
-share/man/el/
-share/man/el/man1/
-@man share/man/el/man1/kbookmarkmerger.1
-@man share/man/el/man1/plasmaengineexplorer.1
-@man share/man/el/man1/plasmapkg.1
-@man share/man/el/man1/plasmoidviewer.1

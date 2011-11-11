@@ -1,4 +1,69 @@
 @comment $OpenBSD$
+man/uk/
+man/uk/man1/
+@man man/uk/man1/adddebug.1
+@man man/uk/man1/ark.1
+@man man/uk/man1/cheatmake.1
+@man man/uk/man1/checkXML.1
+@man man/uk/man1/create_cvsignore.1
+@man man/uk/man1/create_makefile.1
+@man man/uk/man1/create_makefiles.1
+@man man/uk/man1/cvscheck.1
+@man man/uk/man1/cvslastchange.1
+@man man/uk/man1/cvslastlog.1
+@man man/uk/man1/cvsrevertlast.1
+@man man/uk/man1/cxxmetric.1
+@man man/uk/man1/demangle.1
+@man man/uk/man1/extend_dmalloc.1
+@man man/uk/man1/extractrc.1
+@man man/uk/man1/fixincludes.1
+@man man/uk/man1/kabcclient.1
+@man man/uk/man1/kalzium.1
+@man man/uk/man1/kate.1
+@man man/uk/man1/kbookmarkmerger.1
+@man man/uk/man1/kbruch.1
+@man man/uk/man1/kconfig_compiler.1
+@man man/uk/man1/kde4-config.1
+@man man/uk/man1/kdesu.1
+@man man/uk/man1/kfind.1
+@man man/uk/man1/kig.1
+@man man/uk/man1/kjs.1
+@man man/uk/man1/kjscmd.1
+@man man/uk/man1/kmag.1
+@man man/uk/man1/kmousetool.1
+@man man/uk/man1/kmouth.1
+@man man/uk/man1/kmplot.1
+@man man/uk/man1/kross.1
+@man man/uk/man1/ktouch.1
+@man man/uk/man1/makekdewidgets.1
+@man man/uk/man1/plasmaengineexplorer.1
+@man man/uk/man1/plasmapkg.1
+@man man/uk/man1/plasmoidviewer.1
+@man man/uk/man1/po2xml.1
+@man man/uk/man1/preparetips.1
+@man man/uk/man1/pruneemptydirs.1
+@man man/uk/man1/qtdoc.1
+@man man/uk/man1/reportview.1
+@man man/uk/man1/split2po.1
+@man man/uk/man1/swappo.1
+@man man/uk/man1/transxx.1
+@man man/uk/man1/xml2pot.1
+@man man/uk/man1/zonetab2pot.py.1
+man/uk/man6/
+@man man/uk/man6/amor.6
+@man man/uk/man6/khangman.6
+@man man/uk/man6/kpat.6
+man/uk/man7/
+@man man/uk/man7/kdeoptions.7
+@man man/uk/man7/qtoptions.7
+man/uk/man8/
+@man man/uk/man8/kbuildsycoca4.8
+@man man/uk/man8/kcookiejar4.8
+@man man/uk/man8/kded4.8
+@man man/uk/man8/kdeinit4.8
+@man man/uk/man8/meinproc4.8
+@man man/uk/man8/nepomukserver.8
+@man man/uk/man8/nepomukservicestub.8
 share/apps/
 share/apps/klettres/
 share/apps/klettres/uk/
@@ -2469,69 +2534,3 @@ share/locale/uk/LC_SCRIPTS/kgeography/
 share/locale/uk/LC_SCRIPTS/kgeography/general.pmap
 share/locale/uk/LC_SCRIPTS/kgeography/kgeography.js
 share/locale/uk/entry.desktop
-share/man/
-share/man/uk/
-share/man/uk/man1/
-@man share/man/uk/man1/adddebug.1
-@man share/man/uk/man1/ark.1
-@man share/man/uk/man1/cheatmake.1
-@man share/man/uk/man1/checkXML.1
-@man share/man/uk/man1/create_cvsignore.1
-@man share/man/uk/man1/create_makefile.1
-@man share/man/uk/man1/create_makefiles.1
-@man share/man/uk/man1/cvscheck.1
-@man share/man/uk/man1/cvslastchange.1
-@man share/man/uk/man1/cvslastlog.1
-@man share/man/uk/man1/cvsrevertlast.1
-@man share/man/uk/man1/cxxmetric.1
-@man share/man/uk/man1/demangle.1
-@man share/man/uk/man1/extend_dmalloc.1
-@man share/man/uk/man1/extractrc.1
-@man share/man/uk/man1/fixincludes.1
-@man share/man/uk/man1/kabcclient.1
-@man share/man/uk/man1/kalzium.1
-@man share/man/uk/man1/kate.1
-@man share/man/uk/man1/kbookmarkmerger.1
-@man share/man/uk/man1/kbruch.1
-@man share/man/uk/man1/kconfig_compiler.1
-@man share/man/uk/man1/kde4-config.1
-@man share/man/uk/man1/kdesu.1
-@man share/man/uk/man1/kfind.1
-@man share/man/uk/man1/kig.1
-@man share/man/uk/man1/kjs.1
-@man share/man/uk/man1/kjscmd.1
-@man share/man/uk/man1/kmag.1
-@man share/man/uk/man1/kmousetool.1
-@man share/man/uk/man1/kmouth.1
-@man share/man/uk/man1/kmplot.1
-@man share/man/uk/man1/kross.1
-@man share/man/uk/man1/ktouch.1
-@man share/man/uk/man1/makekdewidgets.1
-@man share/man/uk/man1/plasmaengineexplorer.1
-@man share/man/uk/man1/plasmapkg.1
-@man share/man/uk/man1/plasmoidviewer.1
-@man share/man/uk/man1/po2xml.1
-@man share/man/uk/man1/preparetips.1
-@man share/man/uk/man1/pruneemptydirs.1
-@man share/man/uk/man1/qtdoc.1
-@man share/man/uk/man1/reportview.1
-@man share/man/uk/man1/split2po.1
-@man share/man/uk/man1/swappo.1
-@man share/man/uk/man1/transxx.1
-@man share/man/uk/man1/xml2pot.1
-@man share/man/uk/man1/zonetab2pot.py.1
-share/man/uk/man6/
-@man share/man/uk/man6/amor.6
-@man share/man/uk/man6/khangman.6
-@man share/man/uk/man6/kpat.6
-share/man/uk/man7/
-@man share/man/uk/man7/kdeoptions.7
-@man share/man/uk/man7/qtoptions.7
-share/man/uk/man8/
-@man share/man/uk/man8/kbuildsycoca4.8
-@man share/man/uk/man8/kcookiejar4.8
-@man share/man/uk/man8/kded4.8
-@man share/man/uk/man8/kdeinit4.8
-@man share/man/uk/man8/meinproc4.8
-@man share/man/uk/man8/nepomukserver.8
-@man share/man/uk/man8/nepomukservicestub.8

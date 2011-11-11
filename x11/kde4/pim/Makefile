@@ -3,7 +3,6 @@
 COMMENT =	K Desktop Environment, pim
 DISTNAME =	kdepim-${MODKDE_VERSION}
 HOMEPAGE =	http://pim.kde.org/
-REVISION =	1
 
 SHARED_LIBS =	akonadi_next 0.0
 SHARED_LIBS +=	akregatorinterfaces 0.0
@@ -83,5 +82,7 @@ WANTLIB += nepomukutils phonon plasma solid soprano sopranoclient
 WANTLIB += streamanalyzer streams syndication
 WANTLIB += assuan gpg-error gpgme++ gpgme++-pthread gpgme-pthread
 WANTLIB += grantlee_core grantlee_gui qgpgme sasl2
+
+WRONG_SYSCONF_FILES =	dbus-1	share/examples
 
 .include <bsd.port.mk>

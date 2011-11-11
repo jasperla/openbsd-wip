@@ -1,15 +1,8 @@
-Remove devel/desktop-file-utils from RUN_DEPENDS in all ports depending
-on us, we'll always contain this dependency.
-
 Missing optional dependencies:
 
    * OpenSLP  <http://www.openslp.org/>
      SLP (Service Location Protocol) implementation
      Provides SLP support in the network:/ kioslave.
-
-   * QtZeitgeist  <http://gitorious.org/kde-zeitgeist/libqzeitgeist/>
-     Qt bindings for Zeitgeist
-     RECOMMENDED: Zeitgeist and QtZeitgeist is needed for resource tracking
 
    * QNtrack  <http://launchpad.net/ntrack>
      Network status tracking library

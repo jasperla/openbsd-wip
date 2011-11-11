@@ -3,7 +3,7 @@
 COMMENT =	KDE development enviornment
 VERSION =	4.2.3
 DISTNAME =	kdevelop-${VERSION}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=	kdev4cmakecommon	0.0
 SHARED_LIBS +=	kdev4cppduchain		0.0
@@ -26,6 +26,8 @@ WANTLIB += nepomukutils oktetacore oktetagui oktetakastencontrollers
 WANTLIB += oktetakastencore oktetakastengui processcore processui
 WANTLIB += soprano sublime threadweaver
 
+MODKDE4_USE =	workspace
+
 # Uses files with "{...}" in names
 USE_GMAKE =	Yes
 
@@ -33,6 +35,5 @@ BUILD_DEPENDS =	misc/shared-mime-info
 
 LIB_DEPENDS = 	x11/kde4/kdevplatform \
 		x11/kde4/sdk \
-		x11/kde4/workspace
 
 .include <bsd.port.mk>

@@ -1,4 +1,33 @@
 @comment $OpenBSD$
+man/da/
+man/da/man1/
+@man man/da/man1/adddebug.1
+@man man/da/man1/cheatmake.1
+@man man/da/man1/create_cvsignore.1
+@man man/da/man1/create_makefiles.1
+@man man/da/man1/cvscheck.1
+@man man/da/man1/cvslastchange.1
+@man man/da/man1/cvslastlog.1
+@man man/da/man1/cvsrevertlast.1
+@man man/da/man1/cxxmetric.1
+@man man/da/man1/demangle.1
+@man man/da/man1/extend_dmalloc.1
+@man man/da/man1/extractrc.1
+@man man/da/man1/fixincludes.1
+@man man/da/man1/kalzium.1
+@man man/da/man1/kbookmarkmerger.1
+@man man/da/man1/kdesu.1
+@man man/da/man1/kmouth.1
+@man man/da/man1/po2xml.1
+@man man/da/man1/pruneemptydirs.1
+@man man/da/man1/qtdoc.1
+@man man/da/man1/reportview.1
+@man man/da/man1/split2po.1
+@man man/da/man1/swappo.1
+@man man/da/man1/xml2pot.1
+@man man/da/man1/zonetab2pot.py.1
+man/da/man6/
+@man man/da/man6/amor.6
 share/apps/
 share/apps/khangman/
 share/apps/khangman/da.txt
@@ -1175,33 +1204,3 @@ share/locale/da/LC_MESSAGES/validatorsplugin.mo
 share/locale/da/LC_MESSAGES/webarchiver.mo
 share/locale/da/LC_MESSAGES/xml_mimetypes.mo
 share/locale/da/entry.desktop
-share/man/
-share/man/da/
-share/man/da/man1/
-@man share/man/da/man1/adddebug.1
-@man share/man/da/man1/cheatmake.1
-@man share/man/da/man1/create_cvsignore.1
-@man share/man/da/man1/create_makefiles.1
-@man share/man/da/man1/cvscheck.1
-@man share/man/da/man1/cvslastchange.1
-@man share/man/da/man1/cvslastlog.1
-@man share/man/da/man1/cvsrevertlast.1
-@man share/man/da/man1/cxxmetric.1
-@man share/man/da/man1/demangle.1
-@man share/man/da/man1/extend_dmalloc.1
-@man share/man/da/man1/extractrc.1
-@man share/man/da/man1/fixincludes.1
-@man share/man/da/man1/kalzium.1
-@man share/man/da/man1/kbookmarkmerger.1
-@man share/man/da/man1/kdesu.1
-@man share/man/da/man1/kmouth.1
-@man share/man/da/man1/po2xml.1
-@man share/man/da/man1/pruneemptydirs.1
-@man share/man/da/man1/qtdoc.1
-@man share/man/da/man1/reportview.1
-@man share/man/da/man1/split2po.1
-@man share/man/da/man1/swappo.1
-@man share/man/da/man1/xml2pot.1
-@man share/man/da/man1/zonetab2pot.py.1
-share/man/da/man6/
-@man share/man/da/man6/amor.6

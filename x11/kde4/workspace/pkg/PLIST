@@ -46,12 +46,6 @@ bin/krdb
 @bin bin/solid-action-desktop-gen
 bin/startkde
 @bin bin/systemsettings
-etc/dbus-1/system.d/org.kde.fontinst.conf
-etc/dbus-1/system.d/org.kde.kcontrol.kcmclock.conf
-etc/dbus-1/system.d/org.kde.kcontrol.kcmkdm.conf
-etc/dbus-1/system.d/org.kde.ksysguard.processlisthelper.conf
-etc/dbus-1/system.d/org.kde.powerdevil.backlighthelper.conf
-etc/ksysguarddrc
 include/KDE/Plasma/Weather/
 include/KDE/Plasma/Weather/Ion
 include/kcommondecoration.h
@@ -275,25 +269,6 @@ lib/kde4/kwin_b2_config.so
 lib/kde4/kwin_oxygen_config.so
 lib/kde4/kwin_plastik_config.so
 lib/kde4/kwin_tabstrip_config.so
-@bin lib/kde4/libexec/backlighthelper
-@bin lib/kde4/libexec/fontinst
-@bin lib/kde4/libexec/fontinst_helper
-lib/kde4/libexec/fontinst_x11
-@mode 6555
-lib/kde4/libexec/kcheckpass
-@mode
-@bin lib/kde4/libexec/kcmdatetimehelper
-@bin lib/kde4/libexec/kcmkdmhelper
-@bin lib/kde4/libexec/kdm_config
-@bin lib/kde4/libexec/kdm_greet
-@bin lib/kde4/libexec/kfontprint
-@bin lib/kde4/libexec/krootimage
-@bin lib/kde4/libexec/kscreenlocker
-@bin lib/kde4/libexec/ksysguardprocesslist_helper
-@bin lib/kde4/libexec/kwin_killer_helper
-@bin lib/kde4/libexec/kwin_opengl_test
-@bin lib/kde4/libexec/kwin_rules_dialog
-@bin lib/kde4/libexec/test_kcm_xinerama
 lib/kde4/plasma-geolocation-gps.so
 lib/kde4/plasma-geolocation-ip.so
 lib/kde4/plasma_animator_default.so
@@ -440,6 +415,28 @@ lib/libkdeinit4_plasma-windowed.so
 lib/python2.7/site-packages/PyKDE4/plasmascript.py
 lib/python2.7/site-packages/PyKDE4/plasmascript.pyc
 lib/strigi/strigita_font.so
+@bin libexec/backlighthelper
+@bin libexec/fontinst
+@bin libexec/fontinst_helper
+libexec/fontinst_x11
+@mode 6555
+libexec/kcheckpass
+@mode
+@bin libexec/kcmdatetimehelper
+@bin libexec/kcmkdmhelper
+@bin libexec/kdm_config
+@bin libexec/kdm_greet
+@bin libexec/kfontprint
+@bin libexec/krootimage
+@bin libexec/kscreenlocker
+@bin libexec/ksysguardprocesslist_helper
+@bin libexec/kwin_killer_helper
+@bin libexec/kwin_opengl_test
+@bin libexec/kwin_rules_dialog
+@bin libexec/test_kcm_xinerama
+@man man/man1/plasmaengineexplorer.1
+@man man/man1/plasmapkg.1
+@man man/man1/plasmoidviewer.1
 share/applications/kde4/kfontview.desktop
 share/applications/kde4/kinfocenter.desktop
 share/applications/kde4/klipper.desktop
@@ -1049,15 +1046,25 @@ share/config/colorschemes.knsrc
 @comment share/config/kdm/
 @comment share/config/kdm.knsrc
 @comment share/config/kdm/README
+share/config/kdm/README.bak
 @comment share/config/kdm/Xaccess
+share/config/kdm/Xaccess.bak
 @comment share/config/kdm/Xreset
+share/config/kdm/Xreset.bak
 @comment share/config/kdm/Xresources
+share/config/kdm/Xresources.bak
 @comment share/config/kdm/Xsession
+share/config/kdm/Xsession.bak
 @comment share/config/kdm/Xsetup
+share/config/kdm/Xsetup.bak
 @comment share/config/kdm/Xstartup
+share/config/kdm/Xstartup.bak
 @comment share/config/kdm/Xwilling
+share/config/kdm/Xwilling.bak
 @comment share/config/kdm/backgroundrc
+share/config/kdm/backgroundrc.bak
 @comment share/config/kdm/kdmrc
+share/config/kdm/kdmrc.bak
 @comment share/config/kdm/sessions/
 share/config/ksplash.knsrc
 share/config/ksysguard.knsrc
@@ -1262,6 +1269,19 @@ share/doc/HTML/en/systemsettings/
 share/doc/HTML/en/systemsettings/common
 share/doc/HTML/en/systemsettings/index.cache.bz2
 share/doc/HTML/en/systemsettings/index.docbook
+share/examples/dbus-1/system.d/org.kde.fontinst.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.fontinst.conf
+share/examples/dbus-1/system.d/org.kde.kcontrol.kcmclock.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.kcontrol.kcmclock.conf
+share/examples/dbus-1/system.d/org.kde.kcontrol.kcmkdm.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.kcontrol.kcmkdm.conf
+share/examples/dbus-1/system.d/org.kde.ksysguard.processlisthelper.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.ksysguard.processlisthelper.conf
+share/examples/dbus-1/system.d/org.kde.powerdevil.backlighthelper.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.powerdevil.backlighthelper.conf
+share/examples/kde/
+share/examples/kde/ksysguarddrc
+@sample ${SYSCONFDIR}/ksysguarddrc
 share/icons/Oxygen_Black/
 share/icons/Oxygen_Black/cursors/
 share/icons/Oxygen_Black/cursors/00000000000000020006000e7e9ffc3f
@@ -2419,9 +2439,6 @@ share/kde4/servicetypes/solidnetworkmanager.desktop
 share/kde4/servicetypes/systemsettingscategory.desktop
 share/kde4/servicetypes/systemsettingsexternalapp.desktop
 share/kde4/servicetypes/systemsettingsview.desktop
-@man share/man/man1/plasmaengineexplorer.1
-@man share/man/man1/plasmapkg.1
-@man share/man/man1/plasmoidviewer.1
 share/polkit-1/actions/org.kde.fontinst.policy
 share/polkit-1/actions/org.kde.kcontrol.kcmclock.policy
 share/polkit-1/actions/org.kde.kcontrol.kcmkdm.policy

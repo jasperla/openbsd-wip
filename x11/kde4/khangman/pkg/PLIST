@@ -1,5 +1,6 @@
 @comment $OpenBSD$
 @bin bin/khangman
+@man man/man6/khangman.6
 share/applications/kde4/khangman.desktop
 share/apps/khangman/
 share/apps/khangman/fonts/
@@ -38,7 +39,5 @@ share/icons/hicolor/32x32/apps/khangman.png
 share/icons/hicolor/48x48/apps/khangman.png
 share/icons/hicolor/64x64/apps/khangman.png
 share/icons/hicolor/scalable/apps/khangman.svgz
-share/man/man6/
-@man share/man/man6/khangman.6
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

@@ -20,6 +20,7 @@ lib/kde4/plasma_applet_molmassCalculator.so
 lib/kde4/plasma_engine_kalzium.so
 @lib lib/libcompoundviewer.so.${LIBcompoundviewer_VERSION}
 @lib lib/libscience.so.${LIBscience_VERSION}
+@man man/man1/kalzium.1
 share/applications/kde4/kalzium.desktop
 share/apps/desktoptheme/default/widgets/chalkboard.svg
 share/apps/kalzium/
@@ -432,4 +433,3 @@ share/kde4/services/nuclearCalculator.desktop
 share/kde4/services/plasma-applet-Molmasscalculator.desktop
 share/kde4/services/plasma-dataengine-kalzium.desktop
 share/kde4/services/plasma_didyouknow.desktop
-@man share/man/man1/kalzium.1

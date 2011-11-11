@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-MODKDE4_VERSION =	4.7.2
+MODKDE4_VERSION =	4.7.3
 MODKDE_VERSION =	${MODKDE4_VERSION}
 
 # General options set by module
@@ -32,6 +32,9 @@ MODKDE4_RESOURCES ?=	No
 #     runtime components. This is the default setting until
 #     MODKDE4_RESOURCES is enabled.
 #
+#   - Set to "workspace" for ports that require KDE workspace libraries.
+#     This automatically implies "runtime".
+#
 #   - Add "PIM" when port depends on KDE PIM framework.
 #
 # NOTE: There are no options like "Kate" or "Okular", they should be handled
@@ -46,13 +49,13 @@ MODKDE4_USE ?=		libs
 MODKDE_NO_QT ?=		Yes
 .endif
 
-_MODKDE4_USE_ALL =	libs runtime pim
+_MODKDE4_USE_ALL =	libs runtime workspace pim
 .for _modkde4_u in ${MODKDE4_USE:L}
 .   if !${_MODKDE4_USE_ALL:M${_modkde4_u}}
 ERRORS += "Fatal: unknown KDE 4 use flag: ${_modkde4_u}\n(not in ${_MODKDE4_USE_ALL})"
 .   endif
 .endfor
-.if ${MODKDE4_USE:L} == "pim"
+.if ${MODKDE4_USE:L} == "pim" || ${MODKDE4_USE:L} == "workspace"
 MODKDE4_USE +=		runtime
 .endif
 
@@ -98,6 +101,10 @@ MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/pimlibs
 MODKDE4_RUN_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/runtime
 .           if ${MODKDE4_USE:L:Mpim}
 MODKDE4_RUN_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/pim-runtime
+.           endif
+
+.           if ${MODKDE4_USE:L:Mworkspace}
+MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/workspace
 .           endif
 .       endif
 .   endif    # ${MODKDE4_USE:L:Mlibs}

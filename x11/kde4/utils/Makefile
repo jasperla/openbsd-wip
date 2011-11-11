@@ -19,22 +19,26 @@ WANTLIB += kutils nepomuk nepomukutils phonon soprano plasma
 WANTLIB += qimageblitz solid
 WANTLIB += ${MODPY_WANTLIB}
 
-MODKDE4_USE =	pim
+MODULES =	lang/python
+MODKDE4_USE =	pim workspace
 
-BUILD_DEPENDS =	x11/py-qt4 \
-		x11/kde4/pykde4
+BUILD_DEPENDS =	archivers/bzip2 \
+		archivers/xz \
+		x11/py-qt4 \
+		x11/kde4/py-kde
 
 LIB_DEPENDS = 	devel/gmp \
 		x11/kde4/qimageblitz \
-		x11/kde4/workspace \
 		x11/kde4/baseapps \
 		python->=2.7,<2.8:lang/python/2.7 \
 		archivers/libarchive \
 		print/system-config-printer \
 		print/py-cups
 
-RUN_DEPENDS =	x11/py-qt4 \
-		x11/kde4/pykde4
+RUN_DEPENDS =	archivers/bzip2 \
+		archivers/xz \
+		x11/py-qt4 \
+		x11/kde4/py-kde
 
 CONFIGURE_ARGS =	 -DINSTALL_PRINTER_APPLET=TRUE
 

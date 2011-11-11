@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, games
 DISTNAME =	kdegames-${MODKDE_VERSION}
-REVISION =	0
 
 SHARED_LIBS =	kdegames             5.0      # .4.0
 SHARED_LIBS +=	kmahjongglib         0.0      # .1.0
@@ -31,7 +30,7 @@ LIB_DEPENDS =	multimedia/phonon \
 		games/ggz/ggz-client-libs \
 		math/qhull \
 		security/qca2 \
-		x11/kde4/pykde4
+		x11/kde4/py-kde
 
 # for Kajongg to avoid build-time dependency and for GGZ
 CONFIGURE_ARGS =	-DINSTALL_KAJONGG:Bool=True \

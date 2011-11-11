@@ -71,12 +71,15 @@ LIB_DEPENDS =	audio/xmms \
 		sysutils/consolekit \
 		x11/dbusmenu-qt \
 		x11/kde4/akonadi \
-		x11/kde4/pykde4 \
+		x11/kde4/py-kde \
 		x11/kde4/qimageblitz
 
 CONFIGURE_ARGS =	-DWITH_Sensors:Bool=False \
 			-DWITH_NetworkManager:Bool=False \
 			-DWITH_RAW1394:Bool=False \
 			-DWITH_PCIUTILS:Bool=False
+
+WRONG_SYSCONF_FILES =	dbus-1		share/examples \
+			ksysguarddrc	share/examples/kde
 
 .include <bsd.port.mk>

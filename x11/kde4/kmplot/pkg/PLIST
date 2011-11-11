@@ -1,6 +1,7 @@
 @comment $OpenBSD$
 @bin bin/kmplot
 lib/kde4/libkmplotpart.so
+@man man/man1/kmplot.1
 share/applications/kde4/kmplot.desktop
 share/apps/kmplot/
 share/apps/kmplot/kmplot_part.rc
@@ -48,4 +49,3 @@ share/icons/hicolor/48x48/apps/kmplot.png
 share/icons/hicolor/64x64/apps/kmplot.png
 share/icons/hicolor/scalable/apps/kmplot.svgz
 share/kde4/services/kmplot_part.desktop
-@man share/man/man1/kmplot.1

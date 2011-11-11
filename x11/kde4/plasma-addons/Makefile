@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, extra plasmoids
 DISTNAME =	kdeplasma-addons-${MODKDE_VERSION}
-REVISION =	1
 
 SHARED_LIBS =	lancelot-datamodels		0.0 # 1.7
 SHARED_LIBS +=	lancelot			0.0 # 1.9
@@ -28,7 +27,7 @@ WANTLIB += cln glib-2.0 qalculate scim-1.0 xml2
 
 MODULES =	devel/gettext
 
-MODKDE4_USE =	pim
+MODKDE4_USE =	pim workspace
 
 LIB_DEPENDS =	eigen2->=2.0.3:math/eigen2 \
 		inputmethods/scim \
@@ -38,7 +37,6 @@ LIB_DEPENDS =	eigen2->=2.0.3:math/eigen2 \
 		x11/kde4/libkexiv2 \
 		x11/kde4/marble \
 		x11/kde4/qimageblitz \
-		x11/kde4/workspace \
 		x11/qwt
 
 .include <bsd.port.mk>

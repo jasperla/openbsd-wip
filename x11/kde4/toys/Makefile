@@ -4,16 +4,16 @@ COMMENT =	K Desktop Environment, toys
 DISTNAME =	kdetoys-${MODKDE_VERSION}
 
 WANTLIB =  c m pthread stdc++
-WANTLIB += ICE SM X11 Xext Xtst
+WANTLIB += ICE SM X11 Xext
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtSvg
 WANTLIB += kdeui knotifyconfig kscreensaver ${MODPY_WANTLIB}
+
+MODKDE4_USE =	workspace
 
 # last one should be:
 #WANTLIB += kparts kscreensaver>=8
 BUILD_DEPENDS =	textproc/docbook \
 		textproc/docbook-xsl
-
-LIB_DEPENDS = 	x11/kde4/workspace
 
 .include <bsd.port.mk>

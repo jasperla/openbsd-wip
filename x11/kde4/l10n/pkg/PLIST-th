@@ -1,4 +1,6 @@
 @comment $OpenBSD$
+share/locale/th/
+share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/accountwizard.mo
 share/locale/th/LC_MESSAGES/accountwizard_imap.mo
 share/locale/th/LC_MESSAGES/accountwizard_kolab.mo

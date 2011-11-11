@@ -37,7 +37,6 @@ bin/kmail_sav.sh
 @bin bin/kwatchgnupg
 @bin bin/notes-mobile
 @bin bin/tasks-mobile
-etc/dbus-1/system.d/org.kde.kalarmrtcwake.conf
 lib/akonadi/
 lib/akonadi/contact/
 lib/akonadi/contact/editorpageplugins/
@@ -214,7 +213,6 @@ lib/kde4/korg_yearprint.so
 lib/kde4/korganizerpart.so
 lib/kde4/ktexteditorkabcbridge.so
 lib/kde4/ktimetrackerpart.so
-@bin lib/kde4/libexec/kalarm_helper
 lib/kde4/messageviewer_bodypartformatter_application_mstnef.so
 lib/kde4/messageviewer_bodypartformatter_text_calendar.so
 lib/kde4/messageviewer_bodypartformatter_text_vcard.so
@@ -263,6 +261,8 @@ lib/kde4/plugins/designer/kdepimwidgets.so
 lib/strigi/strigiea_ctg.so
 lib/strigi/strigiea_ics.so
 lib/strigi/strigiea_vcf.so
+@bin libexec/kalarm_helper
+@man man/man1/kabcclient.1
 share/akonadi/agents/nepomukemailfeeder.desktop
 share/applications/kde4/KMail2.desktop
 share/applications/kde4/KNode.desktop
@@ -1240,7 +1240,6 @@ share/kde4/servicetypes/dbuscalendar.desktop
 share/kde4/servicetypes/dbusmail.desktop
 share/kde4/servicetypes/korganizerpart.desktop
 share/kde4/servicetypes/korgprintplugin.desktop
-@man share/man/man1/kabcclient.1
 share/polkit-1/actions/org.kde.kalarmrtcwake.policy
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

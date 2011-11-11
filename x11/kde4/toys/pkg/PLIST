@@ -2,6 +2,7 @@
 @bin bin/amor
 @bin bin/kteatime
 @bin bin/ktux
+@man man/man6/amor.6
 share/applications/kde4/amor.desktop
 share/applications/kde4/kteatime.desktop
 share/apps/amor/
@@ -498,7 +499,5 @@ share/icons/hicolor/48x48/apps/kteatime.png
 share/icons/hicolor/64x64/apps/kteatime.png
 share/icons/hicolor/scalable/apps/kteatime.svgz
 share/kde4/services/ScreenSavers/ktux.desktop
-share/man/man6/
-@man share/man/man6/amor.6
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

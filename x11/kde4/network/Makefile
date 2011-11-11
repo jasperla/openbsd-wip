@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, network
 DISTNAME =	kdenetwork-${MODKDE_VERSION}
-REVISION =	0
 
 SHARED_LIBS =	kgetcore		0.0 # 4.0
 SHARED_LIBS +=	kopete			3.0 # 4.0
@@ -36,7 +35,7 @@ WANTLIB += assuan jasper jpeg otr xml2 xmms xslt
 
 MODULES =	devel/gettext
 
-MODKDE4_USE =	pim
+MODKDE4_USE =	pim workspace
 
 RUN_DEPENDS =	security/qca-ossl
 
@@ -47,7 +46,6 @@ LIB_DEPENDS =	audio/xmms \
 		security/libotr \
 		security/qca2 \
 		x11/kde4/baseapps \
-		x11/kde4/workspace \
 		x11/kde4/qimageblitz
 
 CONFIGURE_ARGS =	-DQCA2_INCLUDE_DIR:PATH=${LOCALBASE}/include/QtCrypto \

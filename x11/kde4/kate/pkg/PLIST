@@ -53,6 +53,7 @@ lib/kde4/plasma_applet_katesession.so
 lib/libkdeinit4_kate.so
 lib/libkdeinit4_kwrite.so
 @lib lib/libktexteditor_codesnippets_core.so.${LIBktexteditor_codesnippets_core_VERSION}
+@man man/man1/kate.1
 share/applications/kde4/kate.desktop
 share/applications/kde4/ktesnippets_editor.desktop
 share/applications/kde4/kwrite.desktop
@@ -425,7 +426,6 @@ share/kde4/services/ktexteditor_kdatatool.desktop
 share/kde4/services/ktexteditor_python-encoding.desktop
 share/kde4/services/plasma-applet-katesession.desktop
 share/kde4/servicetypes/kateplugin.desktop
-@man share/man/man1/kate.1
 share/mime/packages/ktesnippets.xml
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

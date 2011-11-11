@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, admin tools
 DISTNAME =	kdeadmin-${MODKDE_VERSION}
-REVISION =	1
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
@@ -11,11 +10,11 @@ WANTLIB += kdeui kio kldap kntlm
 
 MODKDE4_USE =	pim
 
-BUILD_DEPENDS =	x11/kde4/pykde4 \
+BUILD_DEPENDS =	x11/kde4/py-kde \
 		print/py-cups \
 		print/system-config-printer
 
-RUN_DEPENDS =	x11/kde4/pykde4 \
+RUN_DEPENDS =	x11/kde4/py-kde \
 		print/py-cups \
 		print/system-config-printer
 

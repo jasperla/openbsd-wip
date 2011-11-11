@@ -1,4 +1,22 @@
 @comment $OpenBSD$
+man/pl/
+man/pl/man1/
+@man man/pl/man1/kalzium.1
+@man man/pl/man1/kbookmarkmerger.1
+@man man/pl/man1/kbruch.1
+@man man/pl/man1/kde4-config.1
+@man man/pl/man1/kdesu.1
+@man man/pl/man1/kfind.1
+@man man/pl/man1/kig.1
+@man man/pl/man1/kmplot.1
+@man man/pl/man1/ktouch.1
+@man man/pl/man1/plasmaengineexplorer.1
+man/pl/man6/
+@man man/pl/man6/amor.6
+@man man/pl/man6/khangman.6
+man/pl/man8/
+@man man/pl/man8/nepomukserver.8
+@man man/pl/man8/nepomukservicestub.8
 share/apps/
 share/apps/khangman/
 share/apps/khangman/pl.txt
@@ -1725,22 +1743,3 @@ share/locale/pl/LC_SCRIPTS/kgeography/
 share/locale/pl/LC_SCRIPTS/kgeography/general.pmap
 share/locale/pl/LC_SCRIPTS/kgeography/kgeography.js
 share/locale/pl/entry.desktop
-share/man/
-share/man/pl/
-share/man/pl/man1/
-@man share/man/pl/man1/kalzium.1
-@man share/man/pl/man1/kbookmarkmerger.1
-@man share/man/pl/man1/kbruch.1
-@man share/man/pl/man1/kde4-config.1
-@man share/man/pl/man1/kdesu.1
-@man share/man/pl/man1/kfind.1
-@man share/man/pl/man1/kig.1
-@man share/man/pl/man1/kmplot.1
-@man share/man/pl/man1/ktouch.1
-@man share/man/pl/man1/plasmaengineexplorer.1
-share/man/pl/man6/
-@man share/man/pl/man6/amor.6
-@man share/man/pl/man6/khangman.6
-share/man/pl/man8/
-@man share/man/pl/man8/nepomukserver.8
-@man share/man/pl/man8/nepomukservicestub.8

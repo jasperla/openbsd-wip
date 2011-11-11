@@ -1,4 +1,6 @@
 @comment $OpenBSD$
+share/locale/kk/
+share/locale/kk/LC_MESSAGES/
 share/locale/kk/LC_MESSAGES/accountwizard.mo
 share/locale/kk/LC_MESSAGES/accountwizard_ical.mo
 share/locale/kk/LC_MESSAGES/accountwizard_imap.mo
@@ -54,6 +56,7 @@ share/locale/kk/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/kk/LC_MESSAGES/audiorename_plugin.mo
 share/locale/kk/LC_MESSAGES/autorefresh.mo
 share/locale/kk/LC_MESSAGES/babelfish.mo
+share/locale/kk/LC_MESSAGES/blinken.mo
 share/locale/kk/LC_MESSAGES/blogilo.mo
 share/locale/kk/LC_MESSAGES/calendarsupport.mo
 share/locale/kk/LC_MESSAGES/cervisia.mo
@@ -202,6 +205,7 @@ share/locale/kk/LC_MESSAGES/kcmxinerama.mo
 share/locale/kk/LC_MESSAGES/kcolorchooser.mo
 share/locale/kk/LC_MESSAGES/kcron.mo
 share/locale/kk/LC_MESSAGES/kde-menu.mo
+share/locale/kk/LC_MESSAGES/kdeasciiquarium.mo
 share/locale/kk/LC_MESSAGES/kdebugdialog.mo
 share/locale/kk/LC_MESSAGES/kdecalendarsystems.mo
 share/locale/kk/LC_MESSAGES/kdelibs4.mo
@@ -302,6 +306,7 @@ share/locale/kk/LC_MESSAGES/kjotsmigrator.mo
 share/locale/kk/LC_MESSAGES/kleopatra.mo
 share/locale/kk/LC_MESSAGES/klinkstatus.mo
 share/locale/kk/LC_MESSAGES/klipper.mo
+share/locale/kk/LC_MESSAGES/klock.mo
 share/locale/kk/LC_MESSAGES/kmag.mo
 share/locale/kk/LC_MESSAGES/kmail-migrator.mo
 share/locale/kk/LC_MESSAGES/kmail-mobile.mo
@@ -329,6 +334,7 @@ share/locale/kk/LC_MESSAGES/kopete.mo
 share/locale/kk/LC_MESSAGES/korganizer-mobile.mo
 share/locale/kk/LC_MESSAGES/korganizer.mo
 share/locale/kk/LC_MESSAGES/kpartloader.mo
+share/locale/kk/LC_MESSAGES/kpartsaver.mo
 share/locale/kk/LC_MESSAGES/kpasswdserver.mo
 share/locale/kk/LC_MESSAGES/kppp.mo
 share/locale/kk/LC_MESSAGES/kppplogview.mo
@@ -361,6 +367,7 @@ share/locale/kk/LC_MESSAGES/kstart.mo
 share/locale/kk/LC_MESSAGES/kstartperf.mo
 share/locale/kk/LC_MESSAGES/kstyle_config.mo
 share/locale/kk/LC_MESSAGES/kstyle_keramik_config.mo
+share/locale/kk/LC_MESSAGES/kstyle_phase_config.mo
 share/locale/kk/LC_MESSAGES/ksysguard.mo
 share/locale/kk/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/kk/LC_MESSAGES/ksystemlog.mo
@@ -382,6 +389,7 @@ share/locale/kk/LC_MESSAGES/kwalletd.mo
 share/locale/kk/LC_MESSAGES/kwalletmanager.mo
 share/locale/kk/LC_MESSAGES/kwatchgnupg.mo
 share/locale/kk/LC_MESSAGES/kwin.mo
+share/locale/kk/LC_MESSAGES/kwin_art_clients.mo
 share/locale/kk/LC_MESSAGES/kwin_clients.mo
 share/locale/kk/LC_MESSAGES/kwin_effects.mo
 share/locale/kk/LC_MESSAGES/kwinshutdown.mo
@@ -389,6 +397,7 @@ share/locale/kk/LC_MESSAGES/kwinstartmenu.mo
 share/locale/kk/LC_MESSAGES/kwrite.mo
 share/locale/kk/LC_MESSAGES/kwriteconfig.mo
 share/locale/kk/LC_MESSAGES/kxkb.mo
+share/locale/kk/LC_MESSAGES/kxsconfig.mo
 share/locale/kk/LC_MESSAGES/lancelot.mo
 share/locale/kk/LC_MESSAGES/libakonadi-calendar.mo
 share/locale/kk/LC_MESSAGES/libakonadi-kmime.mo

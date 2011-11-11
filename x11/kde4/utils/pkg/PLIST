@@ -35,6 +35,7 @@ lib/libkdeinit4_kcalc.so
 @lib lib/libkerfuffle.so.${LIBkerfuffle_VERSION}
 @lib lib/liblibkremotecontrol.so.${LIBlibkremotecontrol_VERSION}
 @lib lib/libsuperkaramba.so.${LIBsuperkaramba_VERSION}
+@man man/man1/ark.1
 share/applications/kde4/KCharSelect.desktop
 share/applications/kde4/KFloppy.desktop
 share/applications/kde4/ark.desktop
@@ -360,6 +361,5 @@ share/kde4/services/plasma-package-superkaramba.desktop
 share/kde4/services/plasma-scriptengine-superkaramba.desktop
 share/kde4/servicetypes/kerfufflePlugin.desktop
 share/kde4/servicetypes/kremotecontrolmanager.desktop
-@man share/man/man1/ark.1
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

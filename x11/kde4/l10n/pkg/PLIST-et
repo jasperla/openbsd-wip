@@ -1,4 +1,69 @@
 @comment $OpenBSD$
+man/et/
+man/et/man1/
+@man man/et/man1/adddebug.1
+@man man/et/man1/ark.1
+@man man/et/man1/cheatmake.1
+@man man/et/man1/checkXML.1
+@man man/et/man1/create_cvsignore.1
+@man man/et/man1/create_makefile.1
+@man man/et/man1/create_makefiles.1
+@man man/et/man1/cvscheck.1
+@man man/et/man1/cvslastchange.1
+@man man/et/man1/cvslastlog.1
+@man man/et/man1/cvsrevertlast.1
+@man man/et/man1/cxxmetric.1
+@man man/et/man1/demangle.1
+@man man/et/man1/extend_dmalloc.1
+@man man/et/man1/extractrc.1
+@man man/et/man1/fixincludes.1
+@man man/et/man1/kabcclient.1
+@man man/et/man1/kalzium.1
+@man man/et/man1/kate.1
+@man man/et/man1/kbookmarkmerger.1
+@man man/et/man1/kbruch.1
+@man man/et/man1/kconfig_compiler.1
+@man man/et/man1/kde4-config.1
+@man man/et/man1/kdesu.1
+@man man/et/man1/kfind.1
+@man man/et/man1/kig.1
+@man man/et/man1/kjs.1
+@man man/et/man1/kjscmd.1
+@man man/et/man1/kmag.1
+@man man/et/man1/kmousetool.1
+@man man/et/man1/kmouth.1
+@man man/et/man1/kmplot.1
+@man man/et/man1/kross.1
+@man man/et/man1/ktouch.1
+@man man/et/man1/makekdewidgets.1
+@man man/et/man1/plasmaengineexplorer.1
+@man man/et/man1/plasmapkg.1
+@man man/et/man1/plasmoidviewer.1
+@man man/et/man1/po2xml.1
+@man man/et/man1/preparetips.1
+@man man/et/man1/pruneemptydirs.1
+@man man/et/man1/qtdoc.1
+@man man/et/man1/reportview.1
+@man man/et/man1/split2po.1
+@man man/et/man1/swappo.1
+@man man/et/man1/transxx.1
+@man man/et/man1/xml2pot.1
+@man man/et/man1/zonetab2pot.py.1
+man/et/man6/
+@man man/et/man6/amor.6
+@man man/et/man6/khangman.6
+@man man/et/man6/kpat.6
+man/et/man7/
+@man man/et/man7/kdeoptions.7
+@man man/et/man7/qtoptions.7
+man/et/man8/
+@man man/et/man8/kbuildsycoca4.8
+@man man/et/man8/kcookiejar4.8
+@man man/et/man8/kded4.8
+@man man/et/man8/kdeinit4.8
+@man man/et/man8/meinproc4.8
+@man man/et/man8/nepomukserver.8
+@man man/et/man8/nepomukservicestub.8
 share/apps/
 share/apps/khangman/
 share/apps/khangman/et.txt
@@ -1879,69 +1944,3 @@ share/locale/et/LC_MESSAGES/validatorsplugin.mo
 share/locale/et/LC_MESSAGES/webarchiver.mo
 share/locale/et/LC_MESSAGES/xml_mimetypes.mo
 share/locale/et/entry.desktop
-share/man/
-share/man/et/
-share/man/et/man1/
-@man share/man/et/man1/adddebug.1
-@man share/man/et/man1/ark.1
-@man share/man/et/man1/cheatmake.1
-@man share/man/et/man1/checkXML.1
-@man share/man/et/man1/create_cvsignore.1
-@man share/man/et/man1/create_makefile.1
-@man share/man/et/man1/create_makefiles.1
-@man share/man/et/man1/cvscheck.1
-@man share/man/et/man1/cvslastchange.1
-@man share/man/et/man1/cvslastlog.1
-@man share/man/et/man1/cvsrevertlast.1
-@man share/man/et/man1/cxxmetric.1
-@man share/man/et/man1/demangle.1
-@man share/man/et/man1/extend_dmalloc.1
-@man share/man/et/man1/extractrc.1
-@man share/man/et/man1/fixincludes.1
-@man share/man/et/man1/kabcclient.1
-@man share/man/et/man1/kalzium.1
-@man share/man/et/man1/kate.1
-@man share/man/et/man1/kbookmarkmerger.1
-@man share/man/et/man1/kbruch.1
-@man share/man/et/man1/kconfig_compiler.1
-@man share/man/et/man1/kde4-config.1
-@man share/man/et/man1/kdesu.1
-@man share/man/et/man1/kfind.1
-@man share/man/et/man1/kig.1
-@man share/man/et/man1/kjs.1
-@man share/man/et/man1/kjscmd.1
-@man share/man/et/man1/kmag.1
-@man share/man/et/man1/kmousetool.1
-@man share/man/et/man1/kmouth.1
-@man share/man/et/man1/kmplot.1
-@man share/man/et/man1/kross.1
-@man share/man/et/man1/ktouch.1
-@man share/man/et/man1/makekdewidgets.1
-@man share/man/et/man1/plasmaengineexplorer.1
-@man share/man/et/man1/plasmapkg.1
-@man share/man/et/man1/plasmoidviewer.1
-@man share/man/et/man1/po2xml.1
-@man share/man/et/man1/preparetips.1
-@man share/man/et/man1/pruneemptydirs.1
-@man share/man/et/man1/qtdoc.1
-@man share/man/et/man1/reportview.1
-@man share/man/et/man1/split2po.1
-@man share/man/et/man1/swappo.1
-@man share/man/et/man1/transxx.1
-@man share/man/et/man1/xml2pot.1
-@man share/man/et/man1/zonetab2pot.py.1
-share/man/et/man6/
-@man share/man/et/man6/amor.6
-@man share/man/et/man6/khangman.6
-@man share/man/et/man6/kpat.6
-share/man/et/man7/
-@man share/man/et/man7/kdeoptions.7
-@man share/man/et/man7/qtoptions.7
-share/man/et/man8/
-@man share/man/et/man8/kbuildsycoca4.8
-@man share/man/et/man8/kcookiejar4.8
-@man share/man/et/man8/kded4.8
-@man share/man/et/man8/kdeinit4.8
-@man share/man/et/man8/meinproc4.8
-@man share/man/et/man8/nepomukserver.8
-@man share/man/et/man8/nepomukservicestub.8
