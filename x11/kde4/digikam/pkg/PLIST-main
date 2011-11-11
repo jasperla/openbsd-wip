@@ -47,7 +47,6 @@ lib/kde4/kio_digikammapimages.so
 lib/kde4/kio_digikamsearch.so
 lib/kde4/kio_digikamtags.so
 lib/kde4/kipiplugin_photolayoutseditor.so
-@bin lib/kde4/libexec/digikamdatabaseserver
 lib/libPropertyBrowser.a
 @lib lib/libdigikamcore.so.${LIBdigikamcore_VERSION}
 @lib lib/libdigikamdatabase.so.${LIBdigikamdatabase_VERSION}
