@@ -2,6 +2,7 @@
 
 COMMENT =	KDE 4 bindings for Perl
 DISTNAME =	perlkde-${MODKDE_VERSION}
+PKGNAME =	p5-kde-${MODKDE_VERSION}
 
 WANTLIB =  c m perl stdc++ util
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
@@ -16,7 +17,7 @@ WANTLIB += smokesopranoclient smokesopranoserver
 MODKDE4_USE =	libs
 
 LIB_DEPENDS = 	x11/kde4/kate \
-		x11/kde4/perlqt \
+		x11/kde4/p5-qt \
 		x11/kde4/smokekde
 
 # Disable until KDE Smoke bug 283677 gets fixed,

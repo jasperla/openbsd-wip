@@ -2,6 +2,7 @@
 
 COMMENT =	Qt 4 bindings for Perl
 DISTNAME =	perlqt-${MODKDE_VERSION}
+PKGNAME =	p5-qt-${MODKDE_VERSION}
 
 WANTLIB =  c m perl pthread stdc++ util
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtXml

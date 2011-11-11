@@ -37,14 +37,14 @@
      SUBDIR += baseapps			# test
 
 # bindings and wrappers
-     SUBDIR += kimono			# test
-     SUBDIR += korundum			# test					i386
      SUBDIR += kross-interpreters	# test					i386
-     SUBDIR += perlkde			# test					i386
-     SUBDIR += perlqt			# test
-     SUBDIR += pykde4			# test
-     SUBDIR += qtruby			# test					i386
+     SUBDIR += p5-kde			# test					i386
+     SUBDIR += p5-qt			# test
+     SUBDIR += py-kde4			# test
+     SUBDIR += ruby-qt			# test					i386
+     SUBDIR += korundum			# test					i386
      SUBDIR += qyoto			# test
+     SUBDIR += kimono			# test
      SUBDIR += smokegen			# no Akonadi	i386 amd64
      SUBDIR += smokekde			# test
      SUBDIR += smokeqt			# test
@@ -113,6 +113,8 @@
      SUBDIR += yakuake			# minor issues
      SUBDIR += kwebkitpart		# OK
      SUBDIR += office			# untested
+     SUBDIR += libktorrent		# untested
+     SUBDIR += ktorrent			# untested
 
 # additional resources
      SUBDIR += plasma-addons		# test		i386
