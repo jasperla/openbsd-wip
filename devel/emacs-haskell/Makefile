@@ -1,4 +1,4 @@
-# $OpenBSD: $
+# $OpenBSD$
 
 COMMENT =		Emacs mode for editing Haskell code
 
