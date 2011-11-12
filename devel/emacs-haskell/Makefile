@@ -10,7 +10,7 @@ CATEGORIES =		devel editors lang
 
 HOMEPAGE =		http://projects.haskell.org/haskellmode-emacs/
 
-# GPLv3
+# GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
