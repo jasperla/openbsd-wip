@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+bin/mincemeat.py
+share/doc/py-mincemeat/
+share/doc/py-mincemeat/README
+share/examples/py-mincemeat/
+share/examples/py-mincemeat/example.py

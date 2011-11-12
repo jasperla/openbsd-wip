@@ -1,0 +1,2 @@
+- Fix argument parsing so one can actually start the server.
+- Perhaps install it as a module so example.py works out of the box?
