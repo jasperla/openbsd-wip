@@ -1,0 +1,19 @@
+$OpenBSD$
+--- libsrc/Wi/sql_to_c.awk.orig	Sat Nov 12 04:00:50 2011
++++ libsrc/Wi/sql_to_c.awk	Sat Nov 12 04:02:21 2011
+@@ -344,9 +344,12 @@ BEGIN   {
+                 # does escape the symbols
+ 		fun = $0
+ 		q = "\\\\"
+-		if (PROCINFO["version"] ~ /^4/)
+-		    gsub ( q, q q, fun)
+-		else
++		if (PROCINFO["version"] ~ /^4/) {
++		    if (in_xsl_mode == 1)
++			gsub ( q, q q q q, fun)
++		    else
++			gsub ( q, q q, fun)
++		} else
+ 		    gsub ( q, q, fun)
+ 
+ 	        #WAS: gsub ( /\\/, "\\\\", fun)

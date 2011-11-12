@@ -37,6 +37,9 @@ lib/virtuoso/
 lib/virtuoso/hosting/
 lib/virtuoso/hosting/im.a
 lib/virtuoso/hosting/im.la
+lib/virtuoso/hosting/wbxml2.a
+lib/virtuoso/hosting/wbxml2.la
+lib/virtuoso/hosting/wbxml2.so
 share/virtuoso/
 @sample /var/lib/virtuoso/db/
 share/virtuoso/db/
