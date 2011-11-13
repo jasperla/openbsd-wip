@@ -1,0 +1,14 @@
+$OpenBSD$
+--- backends/Makefile.am.orig	Sun Nov 13 18:50:11 2011
++++ backends/Makefile.am	Sun Nov 13 18:50:23 2011
+@@ -68,6 +68,10 @@ if BACKEND_TYPE_PORTS
+ SUBDIRS += ports
+ endif
+ 
++if BACKEND_TYPE_OPENBSD_PORTS
++SUBDIRS += openbsd-ports
++endif
++
+ clean-local :
+ 	rm -f *~
+ 

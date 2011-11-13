@@ -38,7 +38,9 @@ MODULES =		devel/gettext \
 			lang/python \
 			x11/qt4
 
-BUILD_DEPENDS =		devel/gobject-introspection \
+BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/gobject-introspection \
 			misc/shared-mime-info \
 			sysutils/ggrep \
 			textproc/docbook-xsl \
@@ -59,7 +61,10 @@ USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu autoconf
 
-AUTOCONF_VERSION =	2.68
+AUTOCONF_VERSION=	2.65
+AUTOMAKE_VERSION=	1.11
+
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--localstatedir=/var \
 			--disable-gtk-doc \
 			--disable-device-rebind \
@@ -73,12 +78,11 @@ CONFIGURE_ARGS+=	--localstatedir=/var \
 			--disable-pm-utils \
 			--enable-qt \
 			--enable-introspection \
-			--enable-dummy \
-			--with-default-backend=dummy \
+			--with-default-backend=openbsd-ports \
 			--with-security-framework=polkit \
 			--with-packagekit-user=root \
 			--with-dbus-sys="${SYSCONFDIR}/dbus-1/"
-#CONFIGURE_ARGS+=	--enable-openbsd-ports
+CONFIGURE_ARGS+=	--enable-openbsd-ports
 
 COPTS +=		-I${LOCALBASE}/include \
 			-L${LOCALBASE}/lib
@@ -88,6 +92,12 @@ FAKE_FLAGS =	DBUS_SYS_DIR=${TRUEPREFIX}/share/examples/packagekit/dbus-1 \
 		PK_DB_DIR=${TRUEPREFIX}/share/examples/packagekit/db \
 		sysconfdir=${TRUEPREFIX}/share/examples/packagekit \
 		SYSCONFDIR=${TRUEPREFIX}/share/examples/packagekit
+
+BACKENDS_DIR=		${WRKSRC}/backends/openbsd-ports/
+
+post-extract:
+	mkdir ${BACKENDS_DIR}
+	cp -r ${FILESDIR}/* ${BACKENDS_DIR}
 
 post-patch:
 	@echo "====> Regenerating MOC files"
@@ -100,5 +110,13 @@ post-patch:
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/plugins/pk-lsof.c
+	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} aclocal -I m4
+	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoconf
+	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoheader
+	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} automake
 
 .include <bsd.port.mk>

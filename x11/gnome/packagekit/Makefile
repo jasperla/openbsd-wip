@@ -3,7 +3,7 @@
 COMMENT=		PackageKit GNOME Client Tools
 
 GNOME_PROJECT=		gnome-packagekit
-GNOME_VERSION=		3.0.3
+GNOME_VERSION=		3.2.1
 
 CATEGORIES=		sysutils
 
@@ -15,28 +15,25 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-EXTRACT_SUFX=		.tar.xz
-
 MODULES=		devel/dconf \
 			devel/gettext \
 			lang/python \
 			x11/gnome
-
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
 WANTLIB += cairo-gobject canberra canberra-gtk3 dbus-1 dbus-glib-1
-WANTLIB += drm expat fontconfig freetype gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-menu gobject-2.0
-WANTLIB += gthread-2.0 gtk-3 iconv intl ltdl m notify ogg #packagekit-glib2
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs sqlite3 upower-glib vorbis
-WANTLIB += vorbisfile xcb xcb-render xcb-shm z
+WANTLIB += drm expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += gtk-3 ltdl m notify ogg packagekit-glib2 pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += pthread-stubs sqlite3 stdc++ upower-glib vorbis vorbisfile
+WANTLIB += xcb xcb-render xcb-shm z
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			devel/libnotify \
 			sysutils/upower \
 			x11/gnome/menus
-#LIB_DEPENDS=		sysutils/packagekit
+LIB_DEPENDS=		sysutils/packagekit
 RUN_DEPENDS=		x11/gnome/settings-daemon
 
 MODGNOME_HELP_FILES=	Yes
@@ -46,10 +43,5 @@ CONFIGURE_ARGS+=	--disable-gudev \
 			--disable-gtk-doc
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-pre-extract:
-	echo "XXXXXXXXXXXXXXXXXXX"
-	echo "add back packagekit dependency"
-	echo "XXXXXXXXXXXXXXXXXXX"
 
 .include <bsd.port.mk>

@@ -1,7 +1,41 @@
 $OpenBSD$
---- configure.ac.orig	Tue Oct  4 04:02:11 2011
-+++ configure.ac	Tue Oct  4 04:02:48 2011
-@@ -707,7 +707,7 @@ fi
+--- configure.ac.orig	Mon Sep  5 17:21:00 2011
++++ configure.ac	Sun Nov 13 18:53:35 2011
+@@ -471,6 +471,7 @@ AC_ARG_ENABLE(box, AS_HELP_STRING([--enable-box],[use 
+ AC_ARG_ENABLE(conary, AS_HELP_STRING([--enable-conary],[use the CONARY backend]),enable_conary=$enableval,enable_conary=no)
+ AC_ARG_ENABLE(dummy, AS_HELP_STRING([--enable-dummy],[use the dummy backend]),enable_dummy=$enableval,enable_dummy=yes)
+ AC_ARG_ENABLE(entropy, AS_HELP_STRING([--enable-entropy],[use the entropy backend]),enable_entropy=$enableval,enable_entropy=no)
++AC_ARG_ENABLE(openbsd-ports, AS_HELP_STRING([--enable-ports],[use the OpenBSD ports backend]),enable_openbsd_ports=$enableval,enable_openbsd_ports=no)
+ AC_ARG_ENABLE(opkg, AS_HELP_STRING([--enable-opkg],[use the OPKG backend]),enable_opkg=$enableval,enable_opkg=no)
+ AC_ARG_ENABLE(pisi, AS_HELP_STRING([--enable-pisi],[use the PiSi backend]),enable_pisi=$enableval,enable_pisi=no)
+ AC_ARG_ENABLE(poldek, AS_HELP_STRING([--enable-poldek],[use the poldek backend]),enable_poldek=$enableval,enable_poldek=no)
+@@ -490,6 +491,7 @@ AM_CONDITIONAL(BACKEND_TYPE_BOX, [test x$enable_box = 
+ AM_CONDITIONAL(BACKEND_TYPE_CONARY, [test x$enable_conary = xyes])
+ AM_CONDITIONAL(BACKEND_TYPE_DUMMY, [test x$enable_dummy = xyes])
+ AM_CONDITIONAL(BACKEND_TYPE_ENTROPY, [test x$enable_entropy = xyes])
++AM_CONDITIONAL(BACKEND_TYPE_OPENBSD_PORTS, [test x$enable_openbsd_ports = xyes])
+ AM_CONDITIONAL(BACKEND_TYPE_OPKG, [test x$enable_opkg = xyes])
+ AM_CONDITIONAL(BACKEND_TYPE_PISI, [test x$enable_pisi = xyes])
+ AM_CONDITIONAL(BACKEND_TYPE_POLDEK, [test x$enable_poldek = xyes])
+@@ -560,7 +562,7 @@ dnl --------------------------------------------------
+ AC_ARG_WITH([default_backend],
+ 	    AS_HELP_STRING([--with-default-backend=<option>],
+ 			   [Default backend to use
+-                           auto,alpm,aptcc,box,conary,dummy,entropy,opkg,pisi,portage,ports,slapt,smart,urpmi,yum,zif,zypp (dummy)]))
++                           auto,alpm,aptcc,box,conary,dummy,entropy,openbsd-ports,opkg,pisi,portage,ports,slapt,smart,urpmi,yum,zif,zypp (dummy)]))
+ # default to a sane option for the installed tool
+ if test x$with_default_backend = x; then
+ 	if test -f /usr/bin/yum ; then
+@@ -593,6 +595,8 @@ if test x$with_default_backend = x; then
+ 		with_default_backend=portage
+ 	elif test -f /usr/local/sbin/portupgrade ; then
+ 		with_default_backend=ports
++	elif test -f /usr/sbin/pkg ; then
++		with_default_backend=openbsd-ports
+ 	else
+ 		with_default_backend=dummy
+ 	fi
+@@ -707,7 +711,7 @@ fi
  
  AC_SUBST(PK_CONF_DIR, "\$(sysconfdir)/PackageKit")
  AC_SUBST(PK_YUM_PLUGIN_DIR, "\$(prefix)/lib/yum-plugins")
@@ -10,3 +44,19 @@ $OpenBSD$
  AC_SUBST(PK_LOG_DIR, "\$(localstatedir)/log")
  AC_SUBST(PK_PLUGIN_DIR, "\$(libdir)/packagekit-backend")
  AC_SUBST(PK_PLUGIN_CFLAGS, "-I\$(top_srcdir)/src -I\$(top_srcdir)/lib -DPK_COMPILATION $GLIB_CFLAGS $GMODULE_CFLAGS $GIO_CFLAGS")
+@@ -755,6 +759,7 @@ backends/urpmi/helpers/perl_packagekit/Makefile
+ backends/urpmi/helpers/urpmi_backend/Makefile
+ backends/yum/Makefile
+ backends/zif/Makefile
++backends/openbsd-ports/Makefile
+ backends/pisi/Makefile
+ backends/poldek/Makefile
+ backends/portage/Makefile
+@@ -822,6 +827,7 @@ echo "
+         CONARY backend:            ${enable_conary}
+         dummy backend:             ${enable_dummy}
+         Entropy backend:           ${enable_entropy}
++	OpenBSD ports backend:     ${enable_openbsd_ports}
+         OPKG backend:              ${enable_opkg}
+         PiSi backend:              ${enable_pisi}
+         poldek backend:            ${enable_poldek}
