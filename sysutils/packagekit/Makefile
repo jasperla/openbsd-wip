@@ -38,8 +38,9 @@ MODULES =		devel/gettext \
 			lang/python \
 			x11/qt4
 
-BUILD_DEPENDS =		textproc/p5-XML-Parser \
-			sysutils/ggrep
+BUILD_DEPENDS =		misc/shared-mime-info \
+			sysutils/ggrep \
+			textproc/p5-XML-Parser
 
 LIB_DEPENDS =		devel/atk \
 			devel/glib \
@@ -49,7 +50,8 @@ LIB_DEPENDS =		devel/atk \
 			x11/qt4,-main \
 			x11/qt4,-sqlite
 
-RUN_DEPENDS =		sysutils/consolekit \
+RUN_DEPENDS =		misc/shared-mime-info \
+			sysutils/consolekit \
 			sysutils/polkit
 
 USE_GMAKE =		Yes

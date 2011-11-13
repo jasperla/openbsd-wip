@@ -501,6 +501,8 @@ share/mime/packages/packagekit-catalog.xml
 share/mime/packages/packagekit-package-list.xml
 share/mime/packages/packagekit-servicepack.xml
 share/polkit-1/actions/org.freedesktop.packagekit.policy
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
 @sample /var/cache/
 @sample /var/cache/PackageKit/
 @sample /var/cache/PackageKit/downloads/
