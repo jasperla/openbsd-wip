@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS=		i386 amd64
 
 COMMENT=		Chromium browser
 
-V=			17.0.933.1
+V=			17.0.937.0
 DISTNAME=		chromium-${V}
 PKGNAME=		chromium-devel-${V}
 
@@ -34,7 +34,7 @@ WANTLIB += Xtst event xslt vpx kvm>=10.0 sndio speex
 WANTLIB += cups gcrypt
 
 MASTER_SITES=	http://blade2k.humppa.hu/distfiles/ \
-		http://build.chromium.org/buildbot/official/
+		http://commondatastorage.googleapis.com/chromium-browser-official/
 
 MODULES=	devel/gettext \
 		lang/python

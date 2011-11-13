@@ -1,11 +1,16 @@
 $OpenBSD$
---- media/audio/openbsd/audio_manager_openbsd.cc.orig	Wed Nov  9 11:40:00 2011
-+++ media/audio/openbsd/audio_manager_openbsd.cc	Wed Nov  9 21:26:24 2011
-@@ -4,21 +4,74 @@
+--- media/audio/openbsd/audio_manager_openbsd.cc.orig	Sat Nov 12 15:01:04 2011
++++ media/audio/openbsd/audio_manager_openbsd.cc	Sun Nov 13 19:46:57 2011
+@@ -4,21 +4,79 @@
  
  #include "media/audio/openbsd/audio_manager_openbsd.h"
  
 +#include "base/command_line.h"
++#include "base/environment.h"
++#include "base/logging.h"
++#include "base/nix/xdg_util.h"
++#include "base/process_util.h"
++#include "base/stl_util.h"
 +#include "media/audio/audio_output_dispatcher.h"
 +#include "media/audio/fake_audio_input_stream.h"
 +#include "media/audio/fake_audio_output_stream.h"
@@ -26,7 +31,7 @@ $OpenBSD$
 +  const char *file;
 +
 +  if ((file = getenv("AUDIOCTLDEVICE")) == 0 || *file == '\0')
-+    file = "/dev/audioctl";
++   file = "/dev/audioctl";
 +
 +  if ((fd = open(file, O_RDONLY)) < 0)
 +    return false;
@@ -73,21 +78,48 @@ $OpenBSD$
 +    active_streams_.insert(stream);
 +    return stream;
 +  } else {
-+#endif
 +    NOTIMPLEMENTED();
 +    return NULL;
++#endif
 +#if defined(USE_PULSEAUDIO)
 +  }
 +#endif
  }
  
  AudioInputStream* AudioManagerOpenBSD::MakeAudioInputStream(
-@@ -39,6 +92,13 @@ void AudioManagerOpenBSD::MuteAll() {
+@@ -31,8 +89,25 @@ AudioManagerOpenBSD::AudioManagerOpenBSD() {
+ }
  
- void AudioManagerOpenBSD::UnMuteAll() {
-   NOTIMPLEMENTED();
+ AudioManagerOpenBSD::~AudioManagerOpenBSD() {
++  // Make sure we stop the thread first. If we allow the default destructor to
++  // destroy the members, we may destroy audio streams before stopping the
++  // thread, resulting an unexpected behavior.
++  // This way we make sure activities of the audio streams are all stopped
++  // before we destroy them.
++  audio_thread_.Stop();
++
++  // Free output dispatchers, closing all remaining open streams.
++  output_dispatchers_.clear();
++
++  // Delete all the streams. Have to do it manually, we don't have ScopedSet<>,
++  // and we are not using ScopedVector<> because search there is slow.
++  STLDeleteElements(&active_streams_);
+ }
+ 
++void AudioManagerOpenBSD::Init() {
++  AudioManagerBase::Init();
 +}
 +
+ void AudioManagerOpenBSD::MuteAll() {
+   NOTIMPLEMENTED();
+ }
+@@ -41,9 +116,11 @@ void AudioManagerOpenBSD::UnMuteAll() {
+   NOTIMPLEMENTED();
+ }
+ 
+-bool AudioManagerOpenBSD::IsRecordingInProgress() {
+-  NOTIMPLEMENTED();
+-  return false;
 +void AudioManagerOpenBSD::ReleaseOutputStream(AudioOutputStream* stream) {
 +  if (stream) {
 +    active_streams_.erase(stream);
@@ -95,4 +127,4 @@ $OpenBSD$
 +  }
  }
  
- bool AudioManagerOpenBSD::IsRecordingInProgress() {
+ // static
