@@ -6,7 +6,7 @@ DISTNAME =		climm-0.7.1
 
 CATEGORIES =		net
 
-HOMEPAGE =		http://www.climm.org
+HOMEPAGE =		http://www.climm.org/
 
 MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
@@ -16,13 +16,13 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c gcrypt gnutls gpg-error iconv iksemel intl otr
-WANTLIB +=		${MODTCL_WANTLIB}
+WANTLIB += c gcrypt gnutls gpg-error iksemel otr pthread ${MODTCL_WANTLIB}
 
 MASTER_SITES =		${HOMEPAGE}/source/
 EXTRACT_SUFX =		.tgz
 
-MODULES =		lang/tcl
+MODULES =		devel/gettext \
+			lang/tcl
 LIB_DEPENDS =		security/libotr \
 			security/gnutls \
 			textproc/iksemel \
@@ -34,15 +34,15 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--enable-ssl=gnutls
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_FLAGS =		noinst_LIBRARIES=""
 
 pre-configure:
 	@perl -pi -e 's/tcl8\./tcl8/g if /ac_lib/' ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/climm
-	cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS COPYING ChangeLog FAQ NEWS \
-		README TODO ${PREFIX}/share/doc/climm
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} COPYING-GPLv2 README.NONLINUX \
+	${INSTALL_DATA} ${WRKSRC}/{README,FAQ} ${PREFIX}/share/doc/climm
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} README.NONLINUX \
 		README.i18n README.logformat README.ssl README.tcl \
 		example-climm-event-script icq091.txt icqv7.txt \
 		${PREFIX}/share/doc/climm
