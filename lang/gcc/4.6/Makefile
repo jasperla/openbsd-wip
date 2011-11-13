@@ -183,7 +183,7 @@ RUN_DEPENDS-java =
 RUN_DEPENDS-c++ =	${RUN_DEPENDS} libstdc++->=4.6,<4.7:${BUILD_PKGPATH},-estdc
 WANTLIB-main =		${WANTLIB} gmp mpc mpfr z
 WANTLIB-c++ =		${WANTLIB} gmp mpc mpfr z
-WANTLIB-estdc =		${WANTLIB} m
+WANTLIB-estdc =		m
 WANTLIB-f95 =		${WANTLIB} gmp m mpc mpfr z
 WANTLIB-java =		${WANTLIB} gmp m mpc mpfr pthread z
 WANTLIB-objc =		${WANTLIB} gmp mpc mpfr z
@@ -191,6 +191,7 @@ WANTLIB-objc =		${WANTLIB} gmp mpc mpfr z
 LIB_DEPENDS +=		devel/gmp>=4.2 \
 			devel/mpfr \
 			devel/libmpc
+LIB_DEPENDS-estdc =
 
 .if ${MACHINE_ARCH:Mamd64}
 CONFIG=x86_64-unknown-openbsd${OSREV}
