@@ -155,7 +155,6 @@ lib/python${MODPY_VERSION}/site-packages/packagekit/progress.py
 lib/python${MODPY_VERSION}/site-packages/packagekit/progress.pyc
 lib/python${MODPY_VERSION}/site-packages/packagekit/progress.pyo
 @bin libexec/packagekitd
-@bin libexec/pk-command-not-found
 @man man/man1/pk-debuginfo-install.1
 @man man/man1/pkcon.1
 @man man/man1/pkgenpack.1
@@ -321,8 +320,6 @@ share/dbus-1/system-services/org.freedesktop.PackageKit.service
 share/examples/packagekit/
 share/examples/packagekit/PackageKit/
 @sample ${SYSCONFDIR}/PackageKit/
-share/examples/packagekit/PackageKit/CommandNotFound.conf
-@sample ${SYSCONFDIR}/PackageKit/CommandNotFound.conf
 share/examples/packagekit/PackageKit/PackageKit.conf
 @sample ${SYSCONFDIR}/PackageKit/PackageKit.conf
 share/examples/packagekit/PackageKit/Vendor.conf
@@ -339,10 +336,7 @@ share/examples/packagekit/bash_completion.d/
 @sample ${SYSCONFDIR}/bash_completion.d/
 share/examples/packagekit/bash_completion.d/pk-completion.bash
 @sample ${SYSCONFDIR}/bash_completion.d/pk-completion.bash
-share/examples/packagekit/cron.daily/
 @sample ${SYSCONFDIR}/cron.daily/
-share/examples/packagekit/cron.daily/packagekit-background.cron
-@sample ${SYSCONFDIR}/cron.daily/packagekit-background.cron
 share/examples/packagekit/db/
 @sample /var/db/PackageKit/
 share/examples/packagekit/db/transactions.db
@@ -350,14 +344,6 @@ share/examples/packagekit/db/transactions.db
 share/examples/packagekit/dbus-1/
 share/examples/packagekit/dbus-1/org.freedesktop.PackageKit.conf
 @sample ${SYSCONFDIR}/dbus-1/org.freedesktop.PackageKit.conf
-share/examples/packagekit/profile.d/
-@sample ${SYSCONFDIR}/profile.d/
-share/examples/packagekit/profile.d/PackageKit.sh
-@sample ${SYSCONFDIR}/profile.d/PackageKit.sh
-share/examples/packagekit/sysconfig/
-@sample ${SYSCONFDIR}/sysconfig/
-share/examples/packagekit/sysconfig/packagekit-background
-@sample ${SYSCONFDIR}/sysconfig/packagekit-background
 share/gir-1.0/PackageKitGlib-1.0.gir
 share/gtk-doc/html/PackageKit/
 share/gtk-doc/html/PackageKit/PackageKit-pk-bitfield.html
@@ -438,8 +424,6 @@ share/gtk-doc/html/PackageKit/up.png
 share/locale/ar/LC_MESSAGES/PackageKit.mo
 share/locale/as/LC_MESSAGES/PackageKit.mo
 share/locale/bg/LC_MESSAGES/PackageKit.mo
-share/locale/bg_BG/
-share/locale/bg_BG/LC_MESSAGES/
 share/locale/bg_BG/LC_MESSAGES/PackageKit.mo
 share/locale/bn_IN/LC_MESSAGES/PackageKit.mo
 share/locale/ca/LC_MESSAGES/PackageKit.mo
@@ -451,8 +435,6 @@ share/locale/el/LC_MESSAGES/PackageKit.mo
 share/locale/en_GB/LC_MESSAGES/PackageKit.mo
 share/locale/es/LC_MESSAGES/PackageKit.mo
 share/locale/eu/LC_MESSAGES/PackageKit.mo
-share/locale/fa_IR/
-share/locale/fa_IR/LC_MESSAGES/
 share/locale/fa_IR/LC_MESSAGES/PackageKit.mo
 share/locale/fi/LC_MESSAGES/PackageKit.mo
 share/locale/fr/LC_MESSAGES/PackageKit.mo
