@@ -10,6 +10,7 @@ EXTRACT_SUFX ?=		.tar.bz2
 
 CATEGORIES +=		x11/kde4
 MODULES +=		devel/cmake
+CONFIGURE_STYLE ?=	cmake
 SEPARATE_BUILD ?=	flavored
 
 # MODKDE4_RESOURCES: Yes/No
@@ -109,6 +110,7 @@ MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/workspace
 .       endif
 .   endif    # ${MODKDE4_USE:L:Mlibs}
 
+.if ${CONFIGURE_STYLE:Mcmake}
 .   if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE:String=Debug
 MODKDE4_CMAKE_PREFIX =	-debug
@@ -128,6 +130,7 @@ CONFIGURE_ARGS +=	-DMAN_INSTALL_DIR=${PREFIX}/man \
 SUBST_VARS +=		MODKDE4_CMAKE_PREFIX
 
 FLAVORS +=	debug
+.endif
 
 # ${MODKDE4_RESOURCES:L} != "no"
 .endif
