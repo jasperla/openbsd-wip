@@ -41,6 +41,7 @@ MODULES =		devel/gettext \
 BUILD_DEPENDS =		devel/gobject-introspection \
 			misc/shared-mime-info \
 			sysutils/ggrep \
+			textproc/docbook-xsl \
 			textproc/p5-XML-Parser
 
 LIB_DEPENDS =		graphics/gdk-pixbuf2 \
