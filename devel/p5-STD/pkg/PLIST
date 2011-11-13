@@ -1,0 +1,25 @@
+@comment $OpenBSD$
+bin/viv
+${P5SITE}/CursorBase.pm
+${P5SITE}/DEBUG.pm
+${P5SITE}/NAME.pm
+${P5SITE}/RE_ast.pm
+${P5SITE}/STD/
+${P5SITE}/STD.pm
+${P5SITE}/STD/Actions.pm
+${P5SITE}/STD/Cursor.pm
+${P5SITE}/STD/LazyMap.pm
+${P5SITE}/STD_P5.pm
+${P5SITE}/Stash.pm
+${P5SITE}/auto/share/dist/STD/
+${P5SITE}/auto/share/dist/STD/syml/
+${P5SITE}/auto/share/dist/STD/syml/CORE.syml
+${P5SITE}/auto/share/dist/STD/syml/Cursor.syml
+${P5SITE}/auto/share/dist/STD/syml/CursorBase.syml
+${P5SITE}/auto/share/dist/STD/syml/DEBUG.syml
+${P5SITE}/auto/share/dist/STD/syml/NAME.syml
+${P5SITE}/auto/share/dist/STD/syml/STD.syml
+${P5SITE}/auto/share/dist/STD/syml/Stash.syml
+${P5SITE}/auto/share/dist/STD/uniprops
+${P5SITE}/mangle.pl
+@man man/man1/viv.1
