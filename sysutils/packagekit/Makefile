@@ -1,24 +1,27 @@
 # $OpenBSD$
 
-CATEGORIES =	sysutils
 COMMENT =	cross-platform package management framework
 DISTNAME =	PackageKit-0.7.0
 PKGNAME =	${DISTNAME:L}
-HOMEPAGE =	http://www.packagekit.org/
-MAINTAINER =	Vadim Zhukov <persgray@gmail.com>
-
-MASTER_SITES =	http://www.packagekit.org/releases/
-EXTRACT_SUFX =	.tar.xz
 
 SHARED_LIBS +=	packagekit-glib2	0.0 # 14.9
 SHARED_LIBS +=	packagekit-qt		0.0 # 14.9
 SHARED_LIBS +=	packagekit-qt2		0.0 # 2.0
+
+CATEGORIES =	sysutils
+
+HOMEPAGE =	http://www.packagekit.org/
+
+MAINTAINER =	Vadim Zhukov <persgray@gmail.com>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
+
+MASTER_SITES =	http://www.packagekit.org/releases/
+EXTRACT_SUFX =	.tar.xz
 
 WANTLIB += c expat kvm m pthread pthread-stubs stdc++ z
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
@@ -31,7 +34,9 @@ WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
 WANTLIB += polkit-backend-1 polkit-gobject-1
 WANTLIB += archive bz2 dbus-1 dbus-glib-1 ffi lzma pcre png sqlite3
 
-MODULES =		devel/gettext lang/python x11/qt4
+MODULES =		devel/gettext \
+			lang/python \
+			x11/qt4
 
 BUILD_DEPENDS =		textproc/p5-XML-Parser \
 			sysutils/ggrep
@@ -47,12 +52,9 @@ LIB_DEPENDS =		devel/atk \
 RUN_DEPENDS =		sysutils/consolekit \
 			sysutils/polkit
 
-#REGRESS_DEPENDS =	???
-
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu autoconf
-#USE_GROFF =		Yes
 
 AUTOCONF_VERSION =	2.68
 CONFIGURE_ARGS +=	--disable-browser-plugin \
