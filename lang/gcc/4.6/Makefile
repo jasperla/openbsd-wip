@@ -181,12 +181,12 @@ RUN_DEPENDS-estdc =
 RUN_DEPENDS-java =
 
 RUN_DEPENDS-c++ =	${RUN_DEPENDS} libstdc++->=4.6,<4.7:${BUILD_PKGPATH},-estdc
-WANTLIB-main +=		gmp mpc mpfr z
-WANTLIB-c++ +=		gmp mpc mpfr z
-WANTLIB-estdc +=	m
-WANTLIB-f95 +=		gmp m mpc mpfr z
-WANTLIB-java +=		gmp m mpc mpfr pthread z
-WANTLIB-objc +=		gmp mpc mpfr z
+WANTLIB-main =		${WANTLIB} gmp mpc mpfr z
+WANTLIB-c++ =		${WANTLIB} gmp mpc mpfr z
+WANTLIB-estdc =		${WANTLIB} m
+WANTLIB-f95 =		${WANTLIB} gmp m mpc mpfr z
+WANTLIB-java =		${WANTLIB} gmp m mpc mpfr pthread z
+WANTLIB-objc =		${WANTLIB} gmp mpc mpfr z
 
 LIB_DEPENDS +=		devel/gmp>=4.2 \
 			devel/mpfr \
