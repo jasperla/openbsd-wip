@@ -21,16 +21,11 @@ PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 
 SHARED_LIBS =	estdc++		11.0 \
 		gfortran	2.0 \
-		-org-w3c-dom	1.0 \
-		-org-xml-sax	1.0 \
 		gcj		0.0 \
-		ffi		0.0 \
 		gcj-tools	0.0 \
 		gij		0.0 \
 		objc		2.0 \
-		objc_gc		2.0 \
-		ssp		0.0 \
-		gomp		1.0
+		ssp		0.0
 
 PSEUDO_FLAVORS = no_c++ no_f95 no_objc no_java no_ada
 FLAVOR ?= 
@@ -51,8 +46,6 @@ BUILD_PACKAGES := ${BUILD_PACKAGES:N-estdc}
 DISTFILES =  ${DISTNAME}.tar.bz2
 SUPDISTFILES =	${ADASTRAP}:0
 
-#BUILD_DEPENDS += devel/autoconf/2.64
-#BUILD_DEPENDS += devel/metaauto
 USE_LIBTOOL =	Yes
 
 BUILD_DEPENDS += devel/bison
@@ -92,7 +85,7 @@ LANGS := ${LANGS},ada
 DISTFILES += ${ADASTRAP}:0
 CONFIGURE_ENV = ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 MAKE_ENV = ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
-CC = ${WRKDIR}/bin/egcc
+#CC = ${WRKDIR}/bin/egcc
 REGRESS_DEPENDS += ${BUILD_PKGPATH},-ada
 .endif
 #.if ${BUILD_PACKAGES:M-go}
@@ -181,20 +174,23 @@ PKG_ARGS += -DI386=0
 .endif
 
 RUN_DEPENDS =		gcc-${FULL_PKGVERSION}:${BUILD_PKGPATH}
-WANTLIB =		c
+#WANTLIB =		c
 
 RUN_DEPENDS-main =
 RUN_DEPENDS-estdc =
 RUN_DEPENDS-java =
 
 RUN_DEPENDS-c++ =	${RUN_DEPENDS} libstdc++->=4.6,<4.7:${BUILD_PKGPATH},-estdc
-WANTLIB-estdc =		c m
-WANTLIB-java =		c m pthread z
+WANTLIB-main =		gmp mpc mpfr z
+WANTLIB-c++ =		gmp mpc mpfr z
+WANTLIB-estdc =		m
+WANTLIB-f95 =		gmp mpc mpfr z
+WANTLIB-java =		gmp m mpc mpfr pthread z
+WANTLIB-objc =		gmp mpc mpfr z
 
-LIB_DEPENDS-f95 =	devel/gmp>=4.2 \
+LIB_DEPENDS +=		devel/gmp>=4.2 \
 			devel/mpfr \
 			devel/libmpc
-WANTLIB-f95 =		${WANTLIB} gmp mpc mpfr
 
 .if ${MACHINE_ARCH:Mamd64}
 CONFIG=x86_64-unknown-openbsd${OSREV}
