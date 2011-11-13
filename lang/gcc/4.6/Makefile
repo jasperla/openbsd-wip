@@ -32,7 +32,6 @@ SHARED_LIBS =	estdc++		11.0 \
 		ssp		0.0 \
 		gomp		1.0
 
-USE_GROFF =	Yes
 PSEUDO_FLAVORS = no_c++ no_f95 no_objc no_java no_ada
 FLAVOR ?= 
 
@@ -118,6 +117,7 @@ post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/*/$V/adalib
 .endif
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/*/$V/include
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/*/$V/include-fixed
 CONFIGURE_ENV += am_cv_func_iconv=no
 CONFIGURE_ENV += ac_cv_prog_CONFIGURED_M4=/usr/bin/m4
 
