@@ -1,0 +1,12 @@
+$OpenBSD$
+--- build/common.gypi.orig	Sun Nov 13 19:06:20 2011
++++ build/common.gypi	Sun Nov 13 19:06:34 2011
+@@ -1260,7 +1260,7 @@
+               ['exclude', '(^|/)gtk_[^/]*\\.(h|cc)$'],
+             ],
+           }],
+-          ['OS!="linux"', {
++          ['OS!="linux" and OS!="openbsd"', {
+             'sources/': [
+               ['exclude', '_xdg(_unittest)?\\.(h|cc)$'],
+             ],
