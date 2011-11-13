@@ -9,6 +9,7 @@ MODULES +=		x11/kde4
 MASTER_SITES ?=		${MASTER_SITE_KDE:=stable/${VERSION}/src/}
 DIST_SUBDIR =		kde
 HOMEPAGE ?=		https://projects.kde.org/projects
+MAINTAINER ?=		KDE porting team <openbsd-kde@googlegroups.com>
 
 # KDE SC is mostly GPL, or LGPL/BSDL for the central libraries
 PERMIT_DISTFILES_CDROM ?=	Yes
