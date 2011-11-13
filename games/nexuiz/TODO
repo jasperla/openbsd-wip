@@ -1,7 +1,2 @@
-- nexuiz-glx no workee: have to preload libGL.so.* (-gl_driver), hardcoded to
-  libGL.so.1. :/
-- no sound in nexuiz-glx
-- nexuiz-sdl works fine, so I'm inclined to just disable nexuiz-glx.
-- separate -server subpackage?
 - install server scripts like FreeBSD port
 - test with newer Mesa as soon as I upgrade Xenocara

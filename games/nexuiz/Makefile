@@ -2,11 +2,17 @@
 
 ONLY_FOR_ARCHS =	amd64 i386
 
-COMMENT =		first-person shooter
+COMMENT-main =		first-person shooter
+COMMENT-data =		first-person shooter, data files
+COMMENT-server =	first-person shooter, server
+
+MULTI_PACKAGES =	-main -data -server
 
 V =			2.5.2
 DISTNAME =		nexuiz-${V:S/.//g}
-PKGNAME =		nexuiz-${V}
+PKGNAME-main =		nexuiz-${V}
+PKGNAME-data =		nexuiz-data-${V}
+PKGNAME-server =	nexuiz-server-${V}
 
 CATEGORIES =		games
 
@@ -20,20 +26,24 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB  = SDL X11 Xext Xpm Xxf86dga Xxf86vm c curl jpeg m modplug
-WANTLIB += ogg png pthread theora util vorbis vorbisenc vorbisfile
-WANTLIB += z
+WANTLIB-main  = SDL c curl jpeg m modplug
+WANTLIB-main += ogg png pthread theora vorbis vorbisenc vorbisfile z
+
+WANTLIB-server = c curl jpeg m z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=nexuiz/}
 EXTRACT_SUFX =		.zip
 
-LIB_DEPENDS =		audio/libmodplug \
+LIB_DEPENDS-main =	audio/libmodplug \
 			net/curl \
 			audio/libvorbis \
 			multimedia/libtheora \
 			graphics/png \
 			graphics/jpeg \
 			devel/sdl
+LIB_DEPENDS-server =	net/curl \
+			graphics/jpeg
+RUN_DEPENDS-main =	${BASE_PKGPATH},-data
 
 MAKE_FLAGS =		CC="${CC}" CPUOPTIMIZATIONS="${CFLAGS}" \
 			DP_FS_BASEDIR="${PREFIX}/share/nexuiz" \
@@ -46,16 +56,14 @@ MAKE_FILE =		BSDmakefile
 WRKDIST =		${WRKDIR}/Nexuiz
 WRKSRC =		${WRKDIST}/sources/darkplaces
 
-ALL_TARGET =		nexuiz
+ALL_TARGET =		sdl-nexuiz sv-nexuiz
 
 post-extract:
 	cd ${WRKDIR}/Nexuiz/sources && unzip enginesource20091001.zip
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/nexuiz-glx ${PREFIX}/bin/nexuiz-glx
-	${INSTALL_PROGRAM} ${WRKSRC}/nexuiz-dedicated \
-		${PREFIX}/bin/nexuiz-dedicated
-	${INSTALL_PROGRAM} ${WRKSRC}/nexuiz-sdl ${PREFIX}/bin/nexuiz-sdl
+	${INSTALL_PROGRAM} ${WRKSRC}/nexuiz-dedicated ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/nexuiz-sdl ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/nexuiz
 	${INSTALL_DATA_DIR} ${PREFIX}/share/nexuiz/data
 	${INSTALL_DATA_DIR} ${PREFIX}/share/nexuiz/havoc

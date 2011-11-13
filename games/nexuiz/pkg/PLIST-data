@@ -1,0 +1,7 @@
+@comment $OpenBSD$
+share/nexuiz/
+share/nexuiz/data/
+share/nexuiz/data/common-spog.pk3
+share/nexuiz/data/data20091001.pk3
+share/nexuiz/havoc/
+share/nexuiz/havoc/data20091001havoc.pk3
