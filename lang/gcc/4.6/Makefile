@@ -174,7 +174,7 @@ PKG_ARGS += -DI386=0
 .endif
 
 RUN_DEPENDS =		gcc-${FULL_PKGVERSION}:${BUILD_PKGPATH}
-#WANTLIB =		c
+WANTLIB =		c
 
 RUN_DEPENDS-main =
 RUN_DEPENDS-estdc =
@@ -184,7 +184,7 @@ RUN_DEPENDS-c++ =	${RUN_DEPENDS} libstdc++->=4.6,<4.7:${BUILD_PKGPATH},-estdc
 WANTLIB-main =		gmp mpc mpfr z
 WANTLIB-c++ =		gmp mpc mpfr z
 WANTLIB-estdc =		m
-WANTLIB-f95 =		gmp mpc mpfr z
+WANTLIB-f95 =		gmp m mpc mpfr z
 WANTLIB-java =		gmp m mpc mpfr pthread z
 WANTLIB-objc =		gmp mpc mpfr z
 
