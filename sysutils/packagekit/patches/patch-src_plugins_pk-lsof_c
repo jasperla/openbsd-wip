@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/plugins/pk-lsof.c.orig	Sun Nov 13 18:18:19 2011
++++ src/plugins/pk-lsof.c	Sun Nov 13 18:18:42 2011
+@@ -181,7 +181,7 @@ pk_lsof_refresh (PkLsof *lsof)
+ 	g_return_val_if_fail (PK_IS_LSOF (lsof), FALSE);
+ 
+ 	/* try to find lsof */
+-	lsof_name = "/usr/sbin/lsof";
++	lsof_name = "${LOCALBASE}/sbin/lsof";
+ 	ret = g_file_test (lsof_name, G_FILE_TEST_EXISTS);
+ 	if (!ret) {
+ 		lsof_name = "/usr/bin/lsof";

@@ -38,13 +38,12 @@ MODULES =		devel/gettext \
 			lang/python \
 			x11/qt4
 
-BUILD_DEPENDS =		misc/shared-mime-info \
+BUILD_DEPENDS =		devel/gobject-introspection \
+			misc/shared-mime-info \
 			sysutils/ggrep \
 			textproc/p5-XML-Parser
 
-LIB_DEPENDS =		devel/atk \
-			devel/glib \
-			graphics/gdk-pixbuf2 \
+LIB_DEPENDS =		graphics/gdk-pixbuf2 \
 			sysutils/polkit \
 			x11/gtk+3 \
 			x11/qt4,-main \
@@ -52,6 +51,7 @@ LIB_DEPENDS =		devel/atk \
 
 RUN_DEPENDS =		misc/shared-mime-info \
 			sysutils/consolekit \
+			sysutils/lsof \
 			sysutils/polkit
 
 USE_GMAKE =		Yes
@@ -59,10 +59,25 @@ USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu autoconf
 
 AUTOCONF_VERSION =	2.68
-CONFIGURE_ARGS +=	--disable-browser-plugin \
+CONFIGURE_ARGS+=	--localstatedir=/var \
+			--disable-gtk-doc \
+			--disable-device-rebind \
+			--disable-cron \
+			--disable-command-not-found \
+			--disable-browser-plugin \
 			--disable-gstreamer-plugin \
+			--disable-networkmanager \
+			--disable-connman \
+			--disable-service-packs \
+			--disable-pm-utils \
+			--enable-qt \
+			--enable-introspection \
+			--enable-dummy \
+			--with-default-backend=dummy \
 			--with-security-framework=polkit \
-			--localstatedir=/var
+			--with-packagekit-user=root \
+			--with-dbus-sys="${SYSCONFDIR}/dbus-1/"
+#CONFIGURE_ARGS+=	--enable-openbsd-ports
 
 COPTS +=		-I${LOCALBASE}/include \
 			-L${LOCALBASE}/lib
@@ -81,5 +96,8 @@ post-patch:
 		echo moc4 -o "$$F" "$${F%.moc}.h" >&2 && \
 		moc4 -o "$$F" "$${F%.moc}.h"); \
 	done
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/src/plugins/pk-lsof.c
 
 .include <bsd.port.mk>
