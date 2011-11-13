@@ -28,7 +28,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	c curl m jpeg z
 
-WANTLIB-main  = SDL modplug
+WANTLIB-main  = ${WANTLIB} SDL modplug
 WANTLIB-main += ogg png pthread theora vorbis vorbisenc vorbisfile
 
 WANTLIB-data =	#empty
