@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+@lib lib/libobjc.so.${LIBobjc_VERSION}

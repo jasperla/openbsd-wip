@@ -1,0 +1,14 @@
+@comment $OpenBSD$
+@lib lib/fpic/libestdc++.so.${LIBestdc++_VERSION}
+@lib lib/fpic/libgfortran.so.${LIBgfortran_VERSION}
+@lib lib/fpic/libobjc.so.${LIBobjc_VERSION}
+@lib lib/fpic/libssp.so.${LIBssp_VERSION}
+lib/${FULLPKGNAME\-java}-12/libjvm.so
+@lib lib/libestdc++.so.${LIBestdc++_VERSION}
+@lib lib/libgcj-tools.so.${LIBgcj-tools_VERSION}
+@lib lib/libgcj.so.${LIBgcj_VERSION}
+@lib lib/libgfortran.so.${LIBgfortran_VERSION}
+@lib lib/libgij.so.${LIBgij_VERSION}
+@lib lib/libobjc.so.${LIBobjc_VERSION}
+@lib lib/libssp.so.${LIBssp_VERSION}
+@lib libexec/gcc/x86_64-unknown-openbsd5.0/${V}/liblto_plugin.so.${LIBlto_plugin_VERSION}

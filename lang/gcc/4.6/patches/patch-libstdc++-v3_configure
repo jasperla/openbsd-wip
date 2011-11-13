@@ -1,5 +1,5 @@
 $OpenBSD$
-
+PCH support needs mmap at a fixed location
 http://gcc.gnu.org/bugzilla/show_bug.cgi?id=39618
 
 --- libstdc++-v3/configure.orig	Tue Nov  1 19:02:33 2011

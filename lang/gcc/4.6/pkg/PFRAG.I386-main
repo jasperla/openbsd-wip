@@ -1,0 +1,7 @@
+@comment $OpenBSD$
+lib/gcc/${CONFIG}/${V}/include/emmintrin.h
+lib/gcc/${CONFIG}/${V}/include/mm3dnow.h
+lib/gcc/${CONFIG}/${V}/include/mm_malloc.h
+lib/gcc/${CONFIG}/${V}/include/mmintrin.h
+lib/gcc/${CONFIG}/${V}/include/pmmintrin.h
+lib/gcc/${CONFIG}/${V}/include/xmmintrin.h

@@ -195,6 +195,11 @@ LIB_DEPENDS-f95 =	devel/gmp>=4.2 \
 			devel/mpfr \
 			devel/libmpc
 WANTLIB-f95 =		${WANTLIB} gmp mpc mpfr
+
+.if ${MACHINE_ARCH:Mamd64}
+CONFIG=x86_64-unknown-openbsd${OSREV}
+.endif
+
 .include <bsd.port.mk>
 
 ADA_PACKAGE = ${PACKAGE_REPOSITORY}/i386/all/${PKGNAME-ada}${PKG_SUFX}

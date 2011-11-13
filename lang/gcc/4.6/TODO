@@ -1,4 +1,4 @@
-- PCH support (yeah right, mmap is broken ...)
+- PCH support (needs mmap at a fixed address)
 	http://gcc.gnu.org/bugzilla/show_bug.cgi?id=39618
 - test all arches (alpha will probably break, hppa didn't work for 4.2.4)
 - ada

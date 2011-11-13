@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+@lib lib/libestdc++.so.${LIBestdc++_VERSION}
