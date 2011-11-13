@@ -20,3 +20,5 @@ MODULES ?=		devel/cmake \
 USE_CMAKE ?=		Yes
 
 CONFIGURE_ARGS ?=	-D SYSCONFDIR=/etc -D LOCALSTATEDIR=/var
+
+SEPARATE_BUILD ?=	No
