@@ -16,7 +16,7 @@ PKGNAME-server =	nexuiz-server-${V}
 
 CATEGORIES =		games
 
-HOMEPAGE =		http://www.nexuiz.com
+HOMEPAGE =		http://www.nexuiz.com/
 
 MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
@@ -26,10 +26,12 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB-main  = SDL c curl jpeg m modplug
-WANTLIB-main += ogg png pthread theora vorbis vorbisenc vorbisfile z
+WANTLIB =	c curl m jpeg z
 
-WANTLIB-server = c curl jpeg m z
+WANTLIB-main  = SDL modplug
+WANTLIB-main += ogg png pthread theora vorbis vorbisenc vorbisfile
+
+WANTLIB-data =	#empty
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=nexuiz/}
 EXTRACT_SUFX =		.zip
