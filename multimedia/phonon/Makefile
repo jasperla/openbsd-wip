@@ -4,7 +4,7 @@ COMMENT =	multimedia layer for Qt4/KDE4
 CATEGORIES =	multimedia devel x11/kde4
 VERSION =	4.5.0
 DISTNAME =	phonon-${VERSION}
-REVISION =	1
+REVISION =	2
 
 # Higher than one in Qt4 to avoid issues
 SHARED_LIBS +=	phonon			6.0
@@ -25,14 +25,16 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/phonon/${VERSION}/src/}
 MODULES =	devel/cmake \
 		x11/qt4
 
-WANTLIB =	lib/qt4/QtDBus lib/qt4/QtGui m stdc++
+WANTLIB =	lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtTest lib/qt4/QtXml
+WANTLIB +=	m qzeitgeist stdc++
 
 BUILD_DEPENDS =	x11/kde4/automoc
 
+LIB_DEPENDS =	productivity/qzeitgeist
+
 SEPARATE_BUILD =	flavored
 
-CONFIGURE_ARGS =	-DUSE_PULSEAUDIO:Bool=No \
-			-DWITH_QZeitgeist:Bool=No
+CONFIGURE_ARGS =	-DUSE_PULSEAUDIO:Bool=No
 
 .if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS +=       -DCMAKE_BUILD_TYPE:String=Debug
