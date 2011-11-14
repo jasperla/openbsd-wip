@@ -23,13 +23,13 @@ EXTRACT_SUFX =	.tar.bz2
 EXTRACT_ONLY =	${DISTNAME}${EXTRACT_SUFX}
 
 SCRIPT_MASTER = files/Other/Cross-Hosted%20MinGW%20Build%20Tool/${BASENAME}-${V}
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mingw/}{SCRIPT_MASTER}-rc1
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mingw/}${SCRIPT_MASTER}-rc1
 
 TOOL_SUFX =	.tar.gz
 TOOL_MASTER = ${MASTER_SITE_SOURCEFORGE:=mingw/}files/MinGW/Base/
 
 TOOL_GCC =	gcc-core-3.4.5-20060117-2
-MASTER_SITES0 = ${TOOL_MASTER}gcc/Version3/Previous%20Release_%20{TOOL_GCC}
+MASTER_SITES0 = ${TOOL_MASTER}gcc/Version3/Previous%20Release_%20${TOOL_GCC}
 
 TOOL_BINUTILS =	binutils-2.20.1
 MASTER_SITES1 = ${TOOL_MASTER}binutils/${TOOL_BINUTILS}
@@ -40,10 +40,14 @@ MASTER_SITES2 = ${TOOL_MASTER}mingw-rt/${TOOL_WRT}
 TOOL_W32API =	w32api-3.14
 MASTER_SITES3 = ${TOOL_MASTER}w32api/${TOOL_W32API}
 
+TOOL_G++ =	gcc-g++-3.4.5-20060117-2
+MASTER_SITES4 =	${TOOL_MASTER}g++/Version3/Previous%20Release_%20${TOOL_G++}
+
 TOOLCHAIN =	${TOOL_BINUTILS}-src${TOOL_SUFX}:0			\
 		${TOOL_GCC}-src${TOOL_SUFX}:1				\
 		${TOOL_WRT}-mingw32-src${TOOL_SUFX}:2			\
-		${TOOL_W32API}-mingw32-src${TOOL_SUFX}:3
+		${TOOL_W32API}-mingw32-src${TOOL_SUFX}:3		\
+		${TOOL_G++}-src${TOOL_SUFX}:4
 
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} ${TOOLCHAIN}
 
@@ -51,7 +55,8 @@ USE_GMAKE =	Yes
 do-build:
 	env WRKDIST=${WRKDIST} FULLDISTDIR=${FULLDISTDIR} WRKINST=${WRKINST} \
 	    LOCALBASE=${LOCALBASE}					     \
-	    sh ${WRKBUILD}/${BASENAME}.sh --no-pre-clean --no-post-clean
+	    sh ${WRKBUILD}/${BASENAME}.sh --no-pre-clean --no-post-clean     \
+	    --unattended
 
 do-install:
 	@echo "Taken care of by the build script."

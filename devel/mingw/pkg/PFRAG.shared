@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+x86_64-unknown-openbsd5.0/i386-mingw32/lib/libbfd-2.20.1.20100303.so
+x86_64-unknown-openbsd5.0/i386-mingw32/lib/libbfd.so
+x86_64-unknown-openbsd5.0/i386-mingw32/lib/libopcodes-2.20.1.20100303.so
+x86_64-unknown-openbsd5.0/i386-mingw32/lib/libopcodes.so
