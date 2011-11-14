@@ -50,6 +50,10 @@ DISTFILES =	${DISTNAME}${EXTRACT_SUFX} ${TOOLCHAIN}
 USE_GMAKE =	Yes
 do-build:
 	env WRKDIST=${WRKDIST} FULLDISTDIR=${FULLDISTDIR} WRKINST=${WRKINST} \
-	    sh ${WRKBUILD}/${BASENAME}.sh
+	    LOCALBASE=${LOCALBASE}					     \
+	    sh ${WRKBUILD}/${BASENAME}.sh --no-pre-clean --no-post-clean
+
+do-install:
+	@echo "Taken care of by the build script."
 
 .include <bsd.port.mk>

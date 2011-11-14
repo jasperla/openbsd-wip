@@ -1,6 +1,6 @@
 $OpenBSD$
 --- x86-mingw32-build.sh.orig	Thu Mar 11 00:16:55 2010
-+++ x86-mingw32-build.sh	Sat Nov 12 02:24:12 2011
++++ x86-mingw32-build.sh	Mon Nov 14 16:26:30 2011
 @@ -68,7 +68,7 @@ do
      # name, bearing no resemblance to the file requested.
      #
@@ -10,6 +10,15 @@ $OpenBSD$
        { test -f $FILE || \
  	{ for file in `echo *`
  	  do
+@@ -95,7 +95,7 @@ eval $RUN $CLEAN_SLATE_AT_START
+ setbuilddir "$WORKING_DIR" .
+ echo "done."
+ 
+-MAKE=${MAKE-"make"}
++MAKE=gmake
+ PATH=$INSTALL_DIR/bin:$PATH
+ unrecoverable="$script: unrecoverable error"
+ 
 @@ -124,7 +124,7 @@ $script: stage $STAGE: build $COMPONENT ..."
  	$RUN setbuilddir binutils*
  	$RUN ../configure --prefix="$INSTALL_DIR" --target="$TARGET" \
