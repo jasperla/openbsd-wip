@@ -4048,6 +4048,7 @@ lib/security/classpath.security
 @man man/man1/egjdoc.1
 @man man/man1/egkeytool.1
 @man man/man1/egnative2ascii.1
+@man man/man1/egorbd.1
 @man man/man1/egrmic.1
 @man man/man1/egrmid.1
 @man man/man1/egrmiregistry.1
