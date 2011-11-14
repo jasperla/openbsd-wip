@@ -8,7 +8,7 @@ FULL_VERSION = $V
 FULL_PKGVERSION = $V
 BOOTSTRAP_GEN = 3
 # XXX this needs libc.so.53.0 to build on i386
-#ADASTRAP = adastrap-i386-$V-${BOOTSTRAP_GEN}.tgz
+ADASTRAP = adastrap-i386-$V-${BOOTSTRAP_GEN}.tar.xz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}
 PKGNAME-c++ =   g++-${FULL_PKGVERSION}
@@ -209,5 +209,5 @@ adastrap: ${ADA_PACKAGE} ${GCC_PACKAGE}
 	cd ${WRKDIR}/prepare/bootstrap && tar zxf ${ADA_PACKAGE}
 	cd ${WRKDIR}/prepare/bootstrap && tar zxf ${GCC_PACKAGE}
 	rm -rf ${WRKDIR}/prepare/bootstrap/{+*,info,man}
-	cd ${WRKDIR}/prepare && tar zcf ${FULLDISTDIR}/${ADASTRAP} bootstrap
+	cd ${WRKDIR}/prepare && tar cf - bootstrap | xz > ${FULLDISTDIR}/${ADASTRAP}
 
