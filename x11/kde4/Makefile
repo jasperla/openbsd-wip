@@ -40,7 +40,7 @@
      SUBDIR += kross-interpreters	# test					i386
      SUBDIR += p5-kde			# test					i386
      SUBDIR += p5-qt			# test
-     SUBDIR += py-kde4			# test
+     SUBDIR += py-kde			# test
      SUBDIR += ruby-qt			# test					i386
      SUBDIR += korundum			# test					i386
      SUBDIR += qyoto			# test
