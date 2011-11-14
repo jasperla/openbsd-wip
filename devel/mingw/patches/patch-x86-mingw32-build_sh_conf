@@ -1,6 +1,6 @@
 $OpenBSD$
 --- x86-mingw32-build.sh.conf.orig	Thu Mar 11 00:16:55 2010
-+++ x86-mingw32-build.sh.conf	Sat Nov 12 02:15:45 2011
++++ x86-mingw32-build.sh.conf	Mon Nov 14 16:41:08 2011
 @@ -27,7 +27,7 @@
  #    operation; it may be overridden on a per-invocation basis, by
  #    invoking the script with the `--unattended' option.
@@ -29,7 +29,7 @@ $OpenBSD$
 -     assume INSTALL_DIR                   $HOME/mingw32
 +     assume WORKING_DIR                   ${WRKDIST}/build
 +     assume PACKAGE_DIR                   ${FULLDISTDIR}
-+     assume INSTALL_DIR                   ${WRKINST}
++     assume INSTALL_DIR                   ${WRKINST}/${LOCALBASE}
  #
  # 4) Package versions, from which the compiler will be built.
  #

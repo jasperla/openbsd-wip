@@ -1,1 +1,2 @@
-Fix Makefile error in libiberty.
+Fix packaging.
+Add g++ support.

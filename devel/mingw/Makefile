@@ -52,4 +52,7 @@ do-build:
 	env WRKDIST=${WRKDIST} FULLDISTDIR=${FULLDISTDIR} WRKINST=${WRKINST} \
 	    sh ${WRKBUILD}/${BASENAME}.sh
 
+do-install:
+	@echo "Taken care of by the build script."
+
 .include <bsd.port.mk>
