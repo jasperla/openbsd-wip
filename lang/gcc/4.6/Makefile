@@ -7,7 +7,7 @@ V = 4.6.2
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 BOOTSTRAP_GEN = 3
-# XXX this needs libc.so.53.0 to build on i386
+# XXX this needs libc.so.61.0 to build on i386
 ADASTRAP = adastrap-i386-$V-${BOOTSTRAP_GEN}.tar.xz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}
@@ -144,9 +144,6 @@ CONFIGURE_ARGS += --enable-cpp
 
 CONFIGURE_ARGS += ${CONFIGURE_SHARED}
 
-#post-patch:
-#	cd ${WRKDIST}/libstdc++-v3 && AUTOCONF_VERSION=2.64 autoconf
-
 SEPARATE_BUILD = flavored
 
 USE_GMAKE = yes
@@ -169,6 +166,7 @@ PKG_ARGS += -DPPC=1
 .else
 PKG_ARGS += -DPPC=0
 .endif
+
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
 PKG_ARGS += -DI386=1
 .else
