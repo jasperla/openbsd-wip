@@ -59,6 +59,15 @@ do-build:
 	    --unattended
 
 do-install:
-	@echo "Taken care of by the build script."
+	# Fix the autoconf mess
+	cd ${WRKINST}/${LOCALBASE}/mingw32 && \
+	mv i386-mingw32/bin/* bin && \
+	mv i386-mingw32/lib/* lib && \
+	mv x86_64-unknown-openbsd5.0/i386-mingw32/include/* include && \
+	mv x86_64-unknown-openbsd5.0/i386-mingw32/lib/* lib && \
+	mv share/man/man1/* man/man1 && \
+	mv share/man/man3 man && \
+	rm usr local && \
+	rm -r share info i386-mingw32 x86_64-unknown-openbsd5.0
 
 .include <bsd.port.mk>

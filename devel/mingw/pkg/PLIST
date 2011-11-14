@@ -2,6 +2,12 @@
 %%SHARED%%
 mingw32/
 mingw32/bin/
+@bin mingw32/bin/ar
+@bin mingw32/bin/as
+@bin mingw32/bin/c++
+@bin mingw32/bin/dlltool
+@bin mingw32/bin/g++
+@bin mingw32/bin/gcc
 @bin mingw32/bin/i386-mingw32-addr2line
 @bin mingw32/bin/i386-mingw32-ar
 @bin mingw32/bin/i386-mingw32-as
@@ -27,39 +33,18 @@ mingw32/bin/i386-mingw32-gccbug
 @bin mingw32/bin/i386-mingw32-strip
 @bin mingw32/bin/i386-mingw32-windmc
 @bin mingw32/bin/i386-mingw32-windres
+@bin mingw32/bin/ld
 mingw32/bin/mingwm10.dll
+@bin mingw32/bin/nm
+@bin mingw32/bin/objcopy
+@bin mingw32/bin/objdump
+@bin mingw32/bin/ranlib
+@bin mingw32/bin/strip
 mingw32/doc/
 mingw32/doc/runtime/
 mingw32/doc/runtime/CONTRIBUTORS
 mingw32/doc/runtime/DISCLAIMER
 mingw32/doc/runtime/README
-mingw32/i386-mingw32/
-mingw32/i386-mingw32/bin/
-@bin mingw32/i386-mingw32/bin/ar
-@bin mingw32/i386-mingw32/bin/as
-@bin mingw32/i386-mingw32/bin/c++
-@bin mingw32/i386-mingw32/bin/dlltool
-@bin mingw32/i386-mingw32/bin/g++
-@bin mingw32/i386-mingw32/bin/gcc
-@bin mingw32/i386-mingw32/bin/ld
-@bin mingw32/i386-mingw32/bin/nm
-@bin mingw32/i386-mingw32/bin/objcopy
-@bin mingw32/i386-mingw32/bin/objdump
-@bin mingw32/i386-mingw32/bin/ranlib
-@bin mingw32/i386-mingw32/bin/strip
-mingw32/i386-mingw32/lib/
-mingw32/i386-mingw32/lib/ldscripts/
-mingw32/i386-mingw32/lib/ldscripts/i386pe.x
-mingw32/i386-mingw32/lib/ldscripts/i386pe.xa
-mingw32/i386-mingw32/lib/ldscripts/i386pe.xbn
-mingw32/i386-mingw32/lib/ldscripts/i386pe.xn
-mingw32/i386-mingw32/lib/ldscripts/i386pe.xr
-mingw32/i386-mingw32/lib/ldscripts/i386pe.xu
-mingw32/i386-mingw32/lib/libiberty.a
-mingw32/i386-mingw32/lib/libstdc++.a
-mingw32/i386-mingw32/lib/libstdc++.la
-mingw32/i386-mingw32/lib/libsupc++.a
-mingw32/i386-mingw32/lib/libsupc++.la
 mingw32/include/
 mingw32/include/GL/
 mingw32/include/GL/gl.h
@@ -73,6 +58,7 @@ mingw32/include/adsprop.h
 mingw32/include/afxres.h
 mingw32/include/amaudio.h
 mingw32/include/amvideo.h
+mingw32/include/ansidecl.h
 mingw32/include/assert.h
 mingw32/include/audevcod.h
 mingw32/include/aviriff.h
@@ -80,6 +66,8 @@ mingw32/include/aygshell.h
 mingw32/include/basetsd.h
 mingw32/include/basetyps.h
 mingw32/include/bdatypes.h
+mingw32/include/bfd.h
+mingw32/include/bfdlink.h
 mingw32/include/c++/
 mingw32/include/c++/3.4.5/
 mingw32/include/c++/3.4.5/algorithm
@@ -280,9 +268,6 @@ mingw32/include/c++/3.4.5/i386-mingw32/bits/gthr-single.h
 mingw32/include/c++/3.4.5/i386-mingw32/bits/gthr.h
 mingw32/include/c++/3.4.5/i386-mingw32/bits/messages_members.h
 mingw32/include/c++/3.4.5/i386-mingw32/bits/os_defines.h
-mingw32/include/c++/3.4.5/i386-mingw32/bits/stdc++.h.gch/
-mingw32/include/c++/3.4.5/i386-mingw32/bits/stdc++.h.gch/O0g.gch
-mingw32/include/c++/3.4.5/i386-mingw32/bits/stdc++.h.gch/O2g.gch
 mingw32/include/c++/3.4.5/i386-mingw32/bits/time_members.h
 mingw32/include/c++/3.4.5/iomanip
 mingw32/include/c++/3.4.5/ios
@@ -419,6 +404,7 @@ mingw32/include/directx/d3d9types.h
 mingw32/include/directx/dxerr8.h
 mingw32/include/directx/dxerr9.h
 mingw32/include/dirent.h
+mingw32/include/dis-asm.h
 mingw32/include/dlgs.h
 mingw32/include/docobj.h
 mingw32/include/dos.h
@@ -609,6 +595,7 @@ mingw32/include/strings.h
 mingw32/include/strmif.h
 mingw32/include/subauth.h
 mingw32/include/svcguid.h
+mingw32/include/symcat.h
 mingw32/include/sys/
 mingw32/include/sys/fcntl.h
 mingw32/include/sys/file.h
@@ -675,12 +662,6 @@ mingw32/include/wtsapi32.h
 mingw32/include/wtypes.h
 mingw32/include/xprtdefs.h
 mingw32/include/zmouse.h
-mingw32/info/
-@info mingw32/info/cpp.info
-@info mingw32/info/cppinternals.info
-@info mingw32/info/gcc.info
-@info mingw32/info/gccinstall.info
-@info mingw32/info/gccint.info
 mingw32/lib/
 mingw32/lib/CRT_fp10.o
 mingw32/lib/CRT_fp8.o
@@ -736,11 +717,20 @@ mingw32/lib/gcc/i386-mingw32/3.4.5/libgcov.a
 mingw32/lib/gcc/i386-mingw32/3.4.5/specs
 mingw32/lib/gcrt1.o
 mingw32/lib/gcrt2.o
+mingw32/lib/ldscripts/
+mingw32/lib/ldscripts/i386pe.x
+mingw32/lib/ldscripts/i386pe.xa
+mingw32/lib/ldscripts/i386pe.xbn
+mingw32/lib/ldscripts/i386pe.xn
+mingw32/lib/ldscripts/i386pe.xr
+mingw32/lib/ldscripts/i386pe.xu
 mingw32/lib/libaclui.a
 mingw32/lib/libadvapi32.a
 mingw32/lib/libapcups.a
 mingw32/lib/libavicap32.a
 mingw32/lib/libavifil32.a
+mingw32/lib/libbfd.a
+mingw32/lib/libbfd.la
 mingw32/lib/libbthprops.a
 mingw32/lib/libcap.a
 mingw32/lib/libcfgmgr32.a
@@ -848,6 +838,8 @@ mingw32/lib/libolecli32.a
 mingw32/lib/liboledlg.a
 mingw32/lib/libolepro32.a
 mingw32/lib/libolesvr32.a
+mingw32/lib/libopcodes.a
+mingw32/lib/libopcodes.la
 mingw32/lib/libopengl32.a
 mingw32/lib/libpenwin32.a
 mingw32/lib/libpkpd32.a
@@ -871,7 +863,11 @@ mingw32/lib/libshell32.a
 mingw32/lib/libshfolder.a
 mingw32/lib/libshlwapi.a
 mingw32/lib/libsnmpapi.a
+mingw32/lib/libstdc++.a
+mingw32/lib/libstdc++.la
 mingw32/lib/libstrmiids.a
+mingw32/lib/libsupc++.a
+mingw32/lib/libsupc++.la
 mingw32/lib/libsvrapi.a
 mingw32/lib/libtapi32.a
 mingw32/lib/libtdi.a
@@ -915,56 +911,32 @@ mingw32/libexec/gcc/i386-mingw32/3.4.5/install-tools/fixinc.sh
 mingw32/libexec/gcc/i386-mingw32/3.4.5/install-tools/mkheaders
 mingw32/man/
 mingw32/man/man1/
+@man mingw32/man/man1/i386-mingw32-addr2line.1
+@man mingw32/man/man1/i386-mingw32-ar.1
+@man mingw32/man/man1/i386-mingw32-as.1
+@man mingw32/man/man1/i386-mingw32-c++filt.1
 @man mingw32/man/man1/i386-mingw32-cpp.1
+@man mingw32/man/man1/i386-mingw32-dlltool.1
 @man mingw32/man/man1/i386-mingw32-g++.1
 @man mingw32/man/man1/i386-mingw32-gcc.1
 @man mingw32/man/man1/i386-mingw32-gcov.1
+@man mingw32/man/man1/i386-mingw32-gprof.1
+@man mingw32/man/man1/i386-mingw32-ld.1
+@man mingw32/man/man1/i386-mingw32-nlmconv.1
+@man mingw32/man/man1/i386-mingw32-nm.1
+@man mingw32/man/man1/i386-mingw32-objcopy.1
+@man mingw32/man/man1/i386-mingw32-objdump.1
+@man mingw32/man/man1/i386-mingw32-ranlib.1
+@man mingw32/man/man1/i386-mingw32-readelf.1
+@man mingw32/man/man1/i386-mingw32-size.1
+@man mingw32/man/man1/i386-mingw32-strings.1
+@man mingw32/man/man1/i386-mingw32-strip.1
+@man mingw32/man/man1/i386-mingw32-windmc.1
+@man mingw32/man/man1/i386-mingw32-windres.1
+mingw32/man/man3/
+@man mingw32/man/man3/basename.3
+@man mingw32/man/man3/dirname.3
 mingw32/man/man7/
 @man mingw32/man/man7/fsf-funding.7
 @man mingw32/man/man7/gfdl.7
 @man mingw32/man/man7/gpl.7
-mingw32/share/
-mingw32/share/info/
-@info mingw32/share/info/as.info
-@info mingw32/share/info/bfd.info
-@info mingw32/share/info/binutils.info
-@info mingw32/share/info/configure.info
-@info mingw32/share/info/gprof.info
-@info mingw32/share/info/ld.info
-@info mingw32/share/info/standards.info
-mingw32/share/man/
-mingw32/share/man/man1/
-@man mingw32/share/man/man1/i386-mingw32-addr2line.1
-@man mingw32/share/man/man1/i386-mingw32-ar.1
-@man mingw32/share/man/man1/i386-mingw32-as.1
-@man mingw32/share/man/man1/i386-mingw32-c++filt.1
-@man mingw32/share/man/man1/i386-mingw32-dlltool.1
-@man mingw32/share/man/man1/i386-mingw32-gprof.1
-@man mingw32/share/man/man1/i386-mingw32-ld.1
-@man mingw32/share/man/man1/i386-mingw32-nlmconv.1
-@man mingw32/share/man/man1/i386-mingw32-nm.1
-@man mingw32/share/man/man1/i386-mingw32-objcopy.1
-@man mingw32/share/man/man1/i386-mingw32-objdump.1
-@man mingw32/share/man/man1/i386-mingw32-ranlib.1
-@man mingw32/share/man/man1/i386-mingw32-readelf.1
-@man mingw32/share/man/man1/i386-mingw32-size.1
-@man mingw32/share/man/man1/i386-mingw32-strings.1
-@man mingw32/share/man/man1/i386-mingw32-strip.1
-@man mingw32/share/man/man1/i386-mingw32-windmc.1
-@man mingw32/share/man/man1/i386-mingw32-windres.1
-mingw32/share/man/man3/
-@man mingw32/share/man/man3/basename.3
-@man mingw32/share/man/man3/dirname.3
-mingw32/x86_64-unknown-openbsd5.0/
-mingw32/x86_64-unknown-openbsd5.0/i386-mingw32/
-mingw32/x86_64-unknown-openbsd5.0/i386-mingw32/include/
-mingw32/x86_64-unknown-openbsd5.0/i386-mingw32/include/ansidecl.h
-mingw32/x86_64-unknown-openbsd5.0/i386-mingw32/include/bfd.h
-mingw32/x86_64-unknown-openbsd5.0/i386-mingw32/include/bfdlink.h
-mingw32/x86_64-unknown-openbsd5.0/i386-mingw32/include/dis-asm.h
-mingw32/x86_64-unknown-openbsd5.0/i386-mingw32/include/symcat.h
-mingw32/x86_64-unknown-openbsd5.0/i386-mingw32/lib/
-mingw32/x86_64-unknown-openbsd5.0/i386-mingw32/lib/libbfd.a
-mingw32/x86_64-unknown-openbsd5.0/i386-mingw32/lib/libbfd.la
-mingw32/x86_64-unknown-openbsd5.0/i386-mingw32/lib/libopcodes.a
-mingw32/x86_64-unknown-openbsd5.0/i386-mingw32/lib/libopcodes.la
