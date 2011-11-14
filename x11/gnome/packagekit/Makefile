@@ -19,6 +19,7 @@ MODULES=		devel/dconf \
 			devel/gettext \
 			lang/python \
 			x11/gnome
+
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
 WANTLIB += cairo-gobject canberra canberra-gtk3 dbus-1 dbus-glib-1

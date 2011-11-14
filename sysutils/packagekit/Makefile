@@ -1,6 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	cross-platform package management framework
+
 DISTNAME =	PackageKit-0.7.0
 PKGNAME =	${DISTNAME:L}
 
