@@ -84,6 +84,9 @@ libexec/gcc/${CONFIG}/${V}/install-tools/mkinstalldirs
 libexec/gcc/${CONFIG}/${V}/liblto_plugin.la
 @bin libexec/gcc/${CONFIG}/${V}/lto-wrapper
 @bin libexec/gcc/${CONFIG}/${V}/lto1
+%%I386%%
+%%PPC%%
+%%PIC%%
 @man man/man1/ecpp.1
 @man man/man1/egcc.1
 @man man/man1/egcov.1

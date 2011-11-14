@@ -25,7 +25,9 @@ SHARED_LIBS =	estdc++		11.0 \
 		gcj-tools	0.0 \
 		gij		0.0 \
 		objc		2.0 \
-		ssp		0.0
+		ssp		0.0 \
+		lto_plugin      0.0
+
 
 PSEUDO_FLAVORS = no_c++ no_f95 no_objc no_java no_ada
 FLAVOR ?= 
@@ -85,7 +87,7 @@ LANGS := ${LANGS},ada
 DISTFILES += ${ADASTRAP}:0
 CONFIGURE_ENV = ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 MAKE_ENV = ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
-#CC = ${WRKDIR}/bin/egcc
+CC = ${WRKDIR}/bin/egcc
 REGRESS_DEPENDS += ${BUILD_PKGPATH},-ada
 .endif
 #.if ${BUILD_PACKAGES:M-go}
