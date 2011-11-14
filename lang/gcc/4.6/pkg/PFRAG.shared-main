@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@lib lib/libssp.so.${LIBssp_VERSION}
-@comment @lib libexec/gcc/${CONFIG}/${V}/liblto_plugin.so.${LIBlto_plugin_VERSION}

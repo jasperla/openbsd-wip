@@ -1,7 +1,0 @@
-@comment $OpenBSD$
-lib/fpic/libgfortran.a
-lib/fpic/libgfortran.la
-lib/fpic/libgfortran.spec
-@lib lib/fpic/libgfortran.so.${LIBgfortran_VERSION}
-lib/gcc/${CONFIG}/${V}/fpic/libgfortranbegin.a
-lib/gcc/${CONFIG}/${V}/fpic/libgfortranbegin.la

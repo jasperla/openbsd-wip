@@ -1,2 +1,0 @@
-@comment $OpenBSD$
-@lib lib/libgfortran.so.${LIBgfortran_VERSION}

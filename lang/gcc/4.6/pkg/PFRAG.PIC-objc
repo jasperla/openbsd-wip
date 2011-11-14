@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-lib/fpic/libobjc.a
-lib/fpic/libobjc.la
-@comment @lib lib/fpic/libobjc.so.${LIBobjc_VERSION}
