@@ -13,7 +13,7 @@ HOMEPAGE =	http://www.mingw.org
 
 MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 
-# Public Domain
+# GPL at the very least
 PERMIT_PACKAGE_CDROM =		Yes
 PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
@@ -80,13 +80,15 @@ do-install:
 	${INSTALL_DATA} ${MINGW32_OUT}/lib/*.a \
 	    ${MINGW32_OUT}/i386-mingw32/lib/*.*a \
 	    ${MINGW32_OUT}/x86_64-unknown-openbsd5.0/i386-mingw32/lib/* \
-	    ${MINGW32_DIR}/bin
-
-	# Includes
+	    ${MINGW32_DIR}/lib
 	cp -r ${MINGW32_OUT}/lib/* ${MINGW32_DIR}/lib && \
 	    chown -R root:bin ${MINGW32_DIR}/lib && \
 	    chmod -R 444 ${MINGW32_DIR}/lib
 
+	# Includes
+	cp -r ${MINGW32_OUT}/include/* ${MINGW32_DIR}/include && \
+	    chown -R root:bin ${MINGW32_DIR}/include && \
+	    chmod -R 444 ${MINGW32_DIR}/include
 	${INSTALL_DATA} \
 	    ${MINGW32_OUT}/x86_64-unknown-openbsd5.0/i386-mingw32/include/* \
 	    ${MINGW32_DIR}/include
