@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	cross hosted tool chain for Windows
+COMMENT =	development environment for native Windows applications
 
 V = 		1.0.1
 BASENAME =	x86-mingw32-build
@@ -9,11 +9,12 @@ PKGNAME =	mingw-${V}
 WRKDIST =	${WRKDIR}/${BASENAME}-${V}
 CATEGORIES =	devel
 
-HOMEPAGE =	http://www.mingw.org
+HOMEPAGE =	http://www.mingw.org/
 
 MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 
-# GPL at the very least
+# Headers: public domain
+# Compiler/toolchain: GPL
 PERMIT_PACKAGE_CDROM =		Yes
 PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
