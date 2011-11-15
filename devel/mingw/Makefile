@@ -82,11 +82,15 @@ do-install:
 	    ${MINGW32_OUT}/x86_64-unknown-openbsd5.0/i386-mingw32/lib/* \
 	    ${MINGW32_DIR}/lib
 	cp -r ${MINGW32_OUT}/lib/* ${MINGW32_DIR}/lib && \
-	    chown -R root:bin ${MINGW32_DIR}/lib
+	    chown -R root:bin ${MINGW32_DIR}/lib && \
+	    chmod -R 644 ${MINGW32_DIR}/lib/* && \
+	    find ${MINGW32_DIR}/lib -type d -exec chmod a+x {} \;
 
 	# Includes
 	cp -r ${MINGW32_OUT}/include/* ${MINGW32_DIR}/include && \
-	    chown -R root:bin ${MINGW32_DIR}/include
+	    chown -R root:bin ${MINGW32_DIR}/include && \
+	    chmod -R 644 ${MINGW32_DIR}/include/* && \
+	    find ${MINGW32_DIR}/include -type d -exec chmod a+x {} \;
 	${INSTALL_DATA} \
 	    ${MINGW32_OUT}/x86_64-unknown-openbsd5.0/i386-mingw32/include/* \
 	    ${MINGW32_DIR}/include
