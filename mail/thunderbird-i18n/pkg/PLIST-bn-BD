@@ -1,0 +1,2 @@
+@comment $OpenBSD:$
+lib/thunderbird-${V}/extensions/langpack-bn-BD@thunderbird.mozilla.org.xpi

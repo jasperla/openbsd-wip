@@ -1,0 +1,2 @@
+@comment $OpenBSD:$
+lib/thunderbird-${V}/extensions/langpack-ro@thunderbird.mozilla.org.xpi
