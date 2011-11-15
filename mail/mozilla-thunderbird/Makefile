@@ -15,10 +15,9 @@ MOZILLA_CODENAME =	mail
 
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-1.0beta6
+PKGNAME-lightning =	lightning-1.0
 ENIG_V =		1.3.3
 PKGNAME-enigmail =	enigmail-${ENIG_V}
-REVISION-lightning = 	0
 EPOCH-lightning =	0
 
 #MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/

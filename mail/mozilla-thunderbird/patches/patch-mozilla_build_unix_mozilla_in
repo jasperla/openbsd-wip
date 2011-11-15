@@ -18,7 +18,7 @@ $OpenBSD: patch-mozilla_build_unix_mozilla_in,v 1.2 2010/07/27 17:01:16 landry E
    esac
  done
 +
-+if [ `/usr/X11R6/bin/fc-list | wc -l` -eq 0 ]; then
++if [ `${X11BASE}/bin/fc-list | wc -l` -eq 0 ]; then
 +	export GDK_USE_XFT=0
 +fi
 +
