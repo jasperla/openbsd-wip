@@ -51,23 +51,51 @@ TOOLCHAIN =	${TOOL_BINUTILS}-src${TOOL_SUFX}:0			\
 
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} ${TOOLCHAIN}
 
+MINGW32_TMP =	${WRKBUILD}/tmp
+MINGW32_OUT =	${WRKBUILD}/out
+MINGW32_DIR =	${WRKINST}/${LOCALBASE}/mingw32
 USE_GMAKE =	Yes
 do-build:
-	env WRKDIST=${WRKDIST} FULLDISTDIR=${FULLDISTDIR} WRKINST=${WRKINST} \
-	    LOCALBASE=${LOCALBASE}					     \
-	    sh ${WRKBUILD}/${BASENAME}.sh --no-pre-clean --no-post-clean     \
+	env MINGW32_TMP=${MINGW32_TMP} FULLDISTDIR=${FULLDISTDIR} \
+	    MINGW32_OUT=${MINGW32_OUT} MAKE=${MAKE_PROGRAM} \
+	    sh ${WRKBUILD}/${BASENAME}.sh --no-pre-clean --no-post-clean \
 	    --unattended
 
 do-install:
 	# Fix the autoconf mess
-	cd ${WRKINST}/${LOCALBASE}/mingw32 && \
-	mv i386-mingw32/bin/* bin && \
-	mv i386-mingw32/lib/* lib && \
-	mv x86_64-unknown-openbsd5.0/i386-mingw32/include/* include && \
-	mv x86_64-unknown-openbsd5.0/i386-mingw32/lib/* lib && \
-	mv share/man/man1/* man/man1 && \
-	mv share/man/man3 man && \
-	rm usr local && \
-	rm -r share info i386-mingw32 x86_64-unknown-openbsd5.0
+	${INSTALL_PROGRAM_DIR} ${MINGW32_DIR}/bin 
+	${INSTALL_DATA_DIR} ${MINGW32_DIR}/lib/ldscripts \
+	    ${MINGW32_DIR}/include \
+	    ${MINGW32_DIR}/lib/gcc/i386-mingw32/3.4.5/include
+	${INSTALL_MAN_DIR} ${MINGW32_DIR}/man/man1 ${MINGW32_DIR}/man/man3 \
+	    ${MINGW32_DIR}/man/man7
+
+	# Binaries
+	${INSTALL_PROGRAM} ${MINGW32_OUT}/bin/* \
+	    ${MINGW32_OUT}/i386-mingw32/bin/* ${MINGW32_DIR}/bin
+	${INSTALL_DATA} ${MINGW32_OUT}/i386-mingw32/lib/ldscripts/* \
+	    ${MINGW32_DIR}/lib/ldscripts
+
+	# Libraries
+	${INSTALL_DATA} ${MINGW32_OUT}/lib/*.a \
+	    ${MINGW32_OUT}/i386-mingw32/lib/*.*a \
+	    ${MINGW32_OUT}/x86_64-unknown-openbsd5.0/i386-mingw32/lib/* \
+	    ${MINGW32_DIR}/bin
+
+	# Includes
+	cp -r ${MINGW32_OUT}/lib/* ${MINGW32_DIR}/lib && \
+	    chown -R root:bin ${MINGW32_DIR}/lib && \
+	    chmod -R 444 ${MINGW32_DIR}/lib
+
+	${INSTALL_DATA} \
+	    ${MINGW32_OUT}/x86_64-unknown-openbsd5.0/i386-mingw32/include/* \
+	    ${MINGW32_DIR}/include
+
+	# Documentation
+	${INSTALL_MAN} ${MINGW32_OUT}/share/man/man1/* \
+	    ${MINGW32_OUT}/man/man1/* \
+	    ${MINGW32_DIR}/man/man1
+	${INSTALL_MAN} ${MINGW32_OUT}/share/man/man3/* ${MINGW32_DIR}/man/man3
+	${INSTALL_MAN} ${MINGW32_OUT}/man/man7/* ${MINGW32_DIR}/man/man7
 
 .include <bsd.port.mk>

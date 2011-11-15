@@ -1,6 +1,6 @@
 $OpenBSD$
 --- x86-mingw32-build.sh.conf.orig	Thu Mar 11 00:16:55 2010
-+++ x86-mingw32-build.sh.conf	Mon Nov 14 21:08:42 2011
++++ x86-mingw32-build.sh.conf	Tue Nov 15 02:01:16 2011
 @@ -35,17 +35,17 @@
  #    the `x86-mingw32-build.sh.hosts' file for the `mirror' field
  #    in the following URL, to establish a default download host.
@@ -18,9 +18,9 @@ $OpenBSD$
 -     assume WORKING_DIR                   $HOME/tmp/mingw-3.4.5
 -     assume PACKAGE_DIR                   $HOME/packages/mingw-3.4.5
 -     assume INSTALL_DIR                   $HOME/mingw32
-+     assume WORKING_DIR                   ${WRKDIST}/build
++     assume WORKING_DIR                   ${MINGW32_TMP}
 +     assume PACKAGE_DIR                   ${FULLDISTDIR}
-+     assume INSTALL_DIR                   ${WRKINST}/${LOCALBASE}/mingw32
++     assume INSTALL_DIR                   ${MINGW32_OUT}
  #
  # 4) Package versions, from which the compiler will be built.
  #
