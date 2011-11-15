@@ -15,7 +15,7 @@ MOZILLA_CODENAME =	mail
 
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-1.0
+PKGNAME-lightning =	lightning-1.0beta8
 ENIG_V =		1.3.3
 PKGNAME-enigmail =	enigmail-${ENIG_V}
 EPOCH-lightning =	0
