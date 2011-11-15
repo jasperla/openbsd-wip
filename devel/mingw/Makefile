@@ -21,6 +21,7 @@ PERMIT_DISTFILES_FTP =		Yes
 
 EXTRACT_SUFX =	.tar.bz2
 EXTRACT_ONLY =	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX} ${TOOLCHAIN}
 
 SCRIPT_MASTER = files/Other/Cross-Hosted%20MinGW%20Build%20Tool/${BASENAME}-${V}
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mingw/}${SCRIPT_MASTER}-rc1
@@ -49,8 +50,6 @@ TOOLCHAIN =	${TOOL_BINUTILS}-src${TOOL_SUFX}:0			\
 		${TOOL_W32API}-mingw32-src${TOOL_SUFX}:3		\
 		${TOOL_G++}-src${TOOL_SUFX}:4
 
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX} ${TOOLCHAIN}
-
 MINGW32_TMP =	${WRKBUILD}/tmp
 MINGW32_OUT =	${WRKBUILD}/out
 MINGW32_DIR =	${WRKINST}/${LOCALBASE}/mingw32
@@ -58,7 +57,7 @@ USE_GMAKE =	Yes
 do-build:
 	env MINGW32_TMP=${MINGW32_TMP} FULLDISTDIR=${FULLDISTDIR} \
 	    MINGW32_OUT=${MINGW32_OUT} MAKE=${MAKE_PROGRAM} \
-	    sh ${WRKBUILD}/${BASENAME}.sh --no-pre-clean --no-post-clean \
+	    /bin/sh ${WRKBUILD}/${BASENAME}.sh --no-pre-clean --no-post-clean \
 	    --unattended
 
 do-install:
