@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, libraries
 DISTNAME =	kdelibs-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kde3support          0.0      # .4.0
 SHARED_LIBS +=	kdecore              8.0      # .5.0
@@ -105,7 +106,7 @@ CONFIGURE_ARGS +=	-DACL_FOUND:Bool=FALSE \
 			-DUDEV_FOUND:Bool=FALSE
 
 # some basic defines
-CONFIGURE_ARGS +=	-DKDE_DEFAULT_HOME=.kde4 \
+CONFIGURE_ARGS +=	-D_KDE_DEFAULT_HOME_POSTFIX:STRING="4" \
 			-DKDE4_INCLUDE_INSTALL_DIR:String=${LOCALBASE}/include \
 			-DKDE4_LIB_INSTALL_DIR:String=${LOCALBASE}/lib \
 			-DKDESU_USE_SUDO_DEFAULT:Bool=TRUE \
