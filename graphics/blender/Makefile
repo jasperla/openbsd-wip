@@ -22,6 +22,7 @@ MODULES =	devel/cmake \
 		lang/python \
 		devel/gettext
 MODPY_VERSION =	3.2
+#IS_PY3 = Only
 
 CONFIGURE_ARGS =	-DPYTHON_LIBRARY="${LOCALBASE}/lib/libpython${MODPY_VERSION}m.so" \
 			-DPYTHON_INCLUDE_DIR="${LOCALBASE}/include/python${MODPY_VERSION}m" \
