@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, network
 DISTNAME =	kdenetwork-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kgetcore		0.0 # 4.0
 SHARED_LIBS +=	kopete			3.0 # 4.0
@@ -46,7 +47,8 @@ LIB_DEPENDS =	audio/xmms \
 		security/libotr \
 		security/qca2 \
 		x11/kde4/baseapps \
-		x11/kde4/qimageblitz
+		x11/kde4/qimageblitz \
+		x11/kde4/workspace
 
 CONFIGURE_ARGS =	-DQCA2_INCLUDE_DIR:PATH=${LOCALBASE}/include/QtCrypto \
 			-DQCA2_DEFINITIONS:STRING=-DQT_SHARED \
