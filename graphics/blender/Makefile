@@ -28,8 +28,6 @@ CONFIGURE_ARGS =	-DPYTHON_LIBRARY="${LOCALBASE}/lib/libpython${MODPY_VERSION}m.s
 			-DPYTHON_VERSION=${MODPY_VERSION} \
 			-DWITH_BUILTIN_GLEW=OFF
 
-#RUN_DEPENDS =	graphics/tiff
-#BUILD_DEPENDS =	graphics/tiff
 LIB_DEPENDS =	graphics/png \
 		graphics/jpeg \
 		graphics/glew \
