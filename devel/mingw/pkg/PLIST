@@ -894,7 +894,7 @@ mingw32/lib/libwsock32.a
 mingw32/lib/libwst.a
 mingw32/lib/libwtsapi32.a
 mingw32/lib/txtmode.o
-mingw32/man/
+@mandir mingw32/man/
 mingw32/man/man1/
 @man mingw32/man/man1/i386-mingw32-addr2line.1
 @man mingw32/man/man1/i386-mingw32-ar.1
