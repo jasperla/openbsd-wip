@@ -1,0 +1,19 @@
+$OpenBSD$
+--- source/gameengine/Ketsji/CMakeLists.txt.orig	Mon Oct 24 20:16:02 2011
++++ source/gameengine/Ketsji/CMakeLists.txt	Wed Nov 16 17:42:36 2011
+@@ -53,12 +53,12 @@ set(INC
+ 	../../../intern/guardedalloc
+ 	../../../intern/moto/include
+ 	../../../intern/string
++	../../../extern/recastnavigation/Recast/Include
++	../../../extern/recastnavigation/Detour/Include
++	${GLEW_INCLUDE_PATH}
+ )
+ 
+ set(INC_SYS
+-	${GLEW_INCLUDE_PATH}
+-	../../../extern/recastnavigation/Recast/Include
+-	../../../extern/recastnavigation/Detour/Include
+ )
+ 
+ set(SRC
