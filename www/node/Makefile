@@ -10,14 +10,11 @@ COMMENT=	V8 JavaScript for clients and servers
 
 NODE_VERSION=	v0.6.1
 DISTNAME=	node-${NODE_VERSION}
-REVISION=	0
 PKGNAME=	${DISTNAME:S/v//g}
 
 CATEGORIES=	www devel
 
 HOMEPAGE=	http://nodejs.org/
-
-USE_GMAKE=	Yes
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
@@ -35,7 +32,14 @@ WANTLIB +=	c crypto execinfo kvm m pthread ssl stdc++ util
 
 LIB_DEPENDS=	devel/libexecinfo
 
-CONFIGURE_STYLE=	simple
+USE_GMAKE=	Yes
+
+MODPY_ADJ_FILES=wscript \
+		tools/node-waf \
+		tools/waf-light
+
+REGRESS_TARGET= test
+CONFIGURE_STYLE= simple
 
 SUBST_VARS+=	CFLAGS
 
