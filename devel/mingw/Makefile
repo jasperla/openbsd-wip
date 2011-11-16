@@ -29,6 +29,9 @@ EXTRACT_SUFX =	.tar.bz2
 EXTRACT_ONLY =	${DISTNAME}${EXTRACT_SUFX}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} ${TOOLCHAIN}
 
+# In binutils, ld/scripttempl/pe.sc requires bash to do string replacement.
+BUILD_DEPENDS =	shells/bash
+
 SCRIPT_MASTER = files/Other/Cross-Hosted%20MinGW%20Build%20Tool/${BASENAME}-${V}
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mingw/}${SCRIPT_MASTER}-rc1
 
@@ -63,6 +66,7 @@ MINGW32_DIR =	${WRKINST}/${LOCALBASE}/mingw32
 do-build:
 	env MINGW32_TMP=${MINGW32_TMP} FULLDISTDIR=${FULLDISTDIR} \
 	    MINGW32_OUT=${MINGW32_OUT} MAKE=${MAKE_PROGRAM} \
+	    CONFIG_SHELL=${LOCALBASE}/bin/bash \
 	    /bin/sh ${WRKBUILD}/${BASENAME}.sh --no-pre-clean --no-post-clean \
 	    --unattended
 
