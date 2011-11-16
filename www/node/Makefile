@@ -8,7 +8,8 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	V8 JavaScript for clients and servers
 
-DISTNAME=	node-v0.4.9
+NODE_VERSION=	v0.6.1
+DISTNAME=	node-${NODE_VERSION}
 REVISION=	0
 PKGNAME=	${DISTNAME:S/v//g}
 
@@ -16,33 +17,25 @@ CATEGORIES=	www devel
 
 HOMEPAGE=	http://nodejs.org/
 
+USE_GMAKE=	Yes
+
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/dist/
+MASTER_SITES=	${HOMEPAGE}/dist/${NODE_VERSION}/
 
 MODULES=	lang/python
 
 VMEM_WARNING=	Yes
 
-WANTLIB +=	c crypto execinfo ev kvm m pthread ssl stdc++ util
+WANTLIB +=	c crypto execinfo kvm m pthread ssl stdc++ util
 
-LIB_DEPENDS=	devel/libev \
-		devel/libexecinfo
+LIB_DEPENDS=	devel/libexecinfo
 
 CONFIGURE_STYLE=	simple
-CONFIGURE_ARGS+=	--shared-libev-libpath="${LOCALBASE}/lib" \
-			--shared-libev-include="${LOCALBASE}/include"
-
-MODPY_ADJ_FILES=wscript \
-		tools/node-waf \
-		tools/waf-light
-
-# These don't require complete rebuilds of the tree
-REGRESS_TARGET= test-message test-simple test-pummel test-internet
 
 SUBST_VARS+=	CFLAGS
 
@@ -51,9 +44,6 @@ MAKE_ENV+=	CXX=c++ CCFLAGS+="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 NO_CCACHE=	Yes
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/wscript \
-			${WRKSRC}/Makefile \
-			${WRKSRC}/tools/wafadmin/Tools/python.py
 	# Bad practice, but prevents a whole stack of patches.
 	ln -sf ${LOCALBASE}/bin/python${MODPY_VERSION} ${WRKDIR}/bin/python
 
