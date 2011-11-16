@@ -11,7 +11,7 @@ PKGNAME-main =		${PKGNAME}
 PKGNAME-kipi =		kipi-plugins4-${VERSION}
 PKGNAME-geomap =	libkgeomap-${VERSION}
 PKGNAME-vkontakte =	libkvkontakte-1.0.0
-REVISION-main =		1
+REVISION-main =		2
 
 SHARED_LIBS =	kipiplugins		0.0
 SHARED_LIBS +=  digikamcore		0.0 # 2.0
