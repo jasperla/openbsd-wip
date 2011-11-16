@@ -925,3 +925,4 @@ mingw32/man/man7/
 @man mingw32/man/man7/fsf-funding.7
 @man mingw32/man/man7/gfdl.7
 @man mingw32/man/man7/gpl.7
+share/doc/pkg-readmes/${FULLPKGNAME}
