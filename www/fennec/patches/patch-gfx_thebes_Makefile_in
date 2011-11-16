@@ -1,0 +1,14 @@
+$OpenBSD: patch-gfx_thebes_Makefile_in,v 1.2 2011/08/23 20:55:53 landry Exp $
+--- gfx/thebes/Makefile.in.orig	Fri Aug 12 01:29:04 2011
++++ gfx/thebes/Makefile.in	Tue Aug 23 22:47:31 2011
+@@ -436,6 +436,10 @@ ifeq ($(MOZ_WIDGET_TOOLKIT),gtk2)
+ CXXFLAGS += $(MOZ_PANGO_CFLAGS)
+ endif
+ 
++ifdef MOZ_ENABLE_COREXFONTS
++EXTRA_DSO_LDOPTS += -lpangox-1.0
++endif
++
+ ifeq ($(MOZ_WIDGET_TOOLKIT),os2)
+ CXXFLAGS += $(CAIRO_FT_CFLAGS)
+ endif

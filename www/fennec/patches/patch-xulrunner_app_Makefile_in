@@ -1,0 +1,17 @@
+$OpenBSD: patch-xulrunner_app_Makefile_in,v 1.4 2011/08/23 20:55:53 landry Exp $
+https://bugzilla.mozilla.org/show_bug.cgi?id=648726
+--- xulrunner/app/Makefile.in.orig	Fri Aug 12 01:29:29 2011
++++ xulrunner/app/Makefile.in	Tue Aug 23 22:47:24 2011
+@@ -79,6 +79,12 @@ ifeq (cocoa,$(MOZ_WIDGET_TOOLKIT))
+ TK_LIBS := -framework Cocoa $(TK_LIBS)
+ endif
+ 
++ifeq ($(OS_ARCH),OpenBSD)
++ifdef MOZ_SYDNEYAUDIO
++LIBS += -lsndio
++endif
++endif
++
+ LIBS += \
+   $(EXTRA_DSO_LIBS) \
+   $(DIST)/lib/$(LIB_PREFIX)xpcomglue_s.$(LIB_SUFFIX) \

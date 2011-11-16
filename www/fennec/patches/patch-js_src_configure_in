@@ -1,0 +1,46 @@
+$OpenBSD: patch-js_src_configure_in,v 1.4 2011/08/23 20:55:53 landry Exp $
+https://bugzilla.mozilla.org/show_bug.cgi?id=648721
+https://bugzilla.mozilla.org/show_bug.cgi?id=650742
+https://bugzilla.mozilla.org/show_bug.cgi?id=589754
+--- js/src/configure.in.orig	Fri Aug 12 01:29:07 2011
++++ js/src/configure.in	Tue Aug 23 22:46:50 2011
+@@ -2382,7 +2382,8 @@ ia64*-hpux*)
+ 	;;
+ 
+ *-openbsd*)
+-    DLL_SUFFIX=".so.1.0"
++    DLL_SUFFIX='.so.$(if $(SO_VERSION),$(SO_VERSION),1.0)'
++    MOZ_FIX_LINK_PATHS='-Wl,-rpath-link,$(LIBXUL_DIST)/bin -Wl,-rpath-link,$(prefix)/lib -Wl,-rpath-link,$(if $(X11BASE),$(X11BASE),/usr/X11R6)/lib'
+     DSO_CFLAGS=''
+     DSO_PIC_CFLAGS='-fPIC'
+     DSO_LDOPTS='-shared -fPIC'
+@@ -2734,7 +2735,7 @@ arm*-*)
+     AC_DEFINE(JS_CPU_ARM)
+     AC_DEFINE(JS_NUNBOX32)
+     ;;
+-sparc*-*)
++sparc-*)
+     ENABLE_TRACEJIT=1
+     NANOJIT_ARCH=Sparc
+     ENABLE_METHODJIT=1
+@@ -2808,6 +2809,10 @@ arm*-*)
+ sparc-*)
+     AC_DEFINE(AVMPLUS_SPARC)
+     ;;
++sparc64-*)
++    AC_DEFINE(AVMPLUS_SPARC)
++    AC_DEFINE(AVMPLUS_64BIT)
++    ;;
+ esac
+ 
+ case "$target" in
+@@ -2822,6 +2827,9 @@ case "$target" in
+     AC_DEFINE(AVMPLUS_UNIX)
+     ;;
+ *-freebsd*|*-kfreebsd*)
++    AC_DEFINE(AVMPLUS_UNIX)
++    ;;
++*-openbsd*)
+     AC_DEFINE(AVMPLUS_UNIX)
+     ;;
+ *-openbsd*)
