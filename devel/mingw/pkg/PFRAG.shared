@@ -1,5 +1,0 @@
-@comment $OpenBSD$
-mingw32/lib/libbfd-2.20.1.20100303.so
-mingw32/lib/libbfd.so
-mingw32/lib/libopcodes-2.20.1.20100303.so
-mingw32/lib/libopcodes.so
