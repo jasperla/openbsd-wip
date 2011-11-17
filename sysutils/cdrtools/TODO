@@ -1,0 +1,4 @@
+- test, especially BD
+- verbose build? Does it respect CC and CFLAGS?
+- cdda2wav.1 looks bad (too wide tbls, both with groff and mandoc)
+- test all depending ports

@@ -1,0 +1,32 @@
+$OpenBSD$
+--- RULES/cc-gcc.rul.orig	Tue Oct 18 15:02:33 2011
++++ RULES/cc-gcc.rul	Tue Oct 18 15:04:47 2011
+@@ -20,8 +20,8 @@
+ ###########################################################################
+ 
+ CPPFLAGS=	-DSCHILY_BUILD $(CPPOPTS) $(CPPOPTX)
+-CFLAGS=		$(COPTS) $(CWARNOPTS) $(COPTOPT) $(GCCOPTOPT) $(COPTX)
+-C++FLAGS=	$(C++OPTS) $(C++WARNOPTS) $(C++OPTOPT) $(G++OPTOPT) $(C++OPTX)
++CFLAGS+=		$(COPTS) $(CWARNOPTS) $(COPTOPT) $(GCCOPTOPT) $(COPTX)
++C++FLAGS+=	$(C++OPTS) $(C++WARNOPTS) $(C++OPTOPT) $(G++OPTOPT) $(C++OPTX)
+ 
+ CPPOPTS=	-I$(ARCHDIR) -I$(OINCSDIR) $(INCDIRS:%=-I%) $(INCDIRSX:%=-I%) $(OSDEFS)
+ COPTS=
+@@ -29,7 +29,7 @@ COPTS=
+ CWOPTS=		-Wall -Wtraditional
+ CWOPTS=		-Wall -Wno-unknown-pragmas \
+ 		-Wshadow -Wmissing-prototypes -Wstrict-prototypes
+-COPTOPT=	-O
++COPTOPT=	
+ COPTDYN=	-fpic
+ COPTGPROF=	-pg
+ C++OPTS=
+@@ -45,7 +45,7 @@ SHL_SUFFIX=	.so.1
+ LIBS_PATH=	-L$(OLIBSDIR)
+ LIBS_PATH_STATIC= -L$(OLIBSDIR_STATIC) 
+ 
+-LDFLAGS=	$(LDOPTS) $(LDOPTX)
++LDFLAGS+=	$(LDOPTS) $(LDOPTX)
+ LDLIBS=		$(LIBS) $(LIBX)
+ 
+ LDOPTS=		$(LIBS_PATH) $(LDPATH) $(RUNPATH:-R%=-Wl,-R%)
