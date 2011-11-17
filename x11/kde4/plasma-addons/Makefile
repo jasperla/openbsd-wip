@@ -38,7 +38,6 @@ LIB_DEPENDS =	eigen2->=2.0.3:math/eigen2 \
 		x11/kde4/libkexiv2 \
 		x11/kde4/marble \
 		x11/kde4/qimageblitz \
-		x11/kde4/workspace \
 		x11/qwt
 
 .include <bsd.port.mk>
