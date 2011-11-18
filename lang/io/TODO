@@ -1,0 +1,3 @@
+- Only build addons that are included in the PLIST
+- Send pull request to stevedekorte/io and use a snapshot from the
+  upstream/master
