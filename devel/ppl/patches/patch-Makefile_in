@@ -1,0 +1,12 @@
+$OpenBSD$
+--- Makefile.in.orig	Fri Nov 18 14:11:28 2011
++++ Makefile.in	Fri Nov 18 14:11:47 2011
+@@ -364,7 +364,7 @@ yap_prolog = @yap_prolog@
+ 
+ # Tell aclocal where to find `.m4' files.
+ ACLOCAL_AMFLAGS = -I m4
+-SUBDIRS = . utils src Watchdog tests interfaces demos doc m4
++SUBDIRS = . utils src Watchdog tests interfaces demos
+ dist_noinst_SCRIPTS = \
+ configure
+ 

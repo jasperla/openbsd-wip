@@ -1,0 +1,12 @@
+$OpenBSD$
+--- configure.orig	Fri Nov 18 14:26:14 2011
++++ configure	Fri Nov 18 14:26:36 2011
+@@ -11587,7 +11587,7 @@ fi
+ 
+ 
+ # Define lists of available interfaces: lowercase and blank-separated.
+-non_prolog_interfaces="cxx c ocaml java"
++non_prolog_interfaces="cxx c ocaml"
+ prolog_interfaces="ciao_prolog gnu_prolog sicstus_prolog swi_prolog xsb_prolog yap_prolog"
+ available_interfaces="${non_prolog_interfaces} ${prolog_interfaces}"
+ 
