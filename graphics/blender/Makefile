@@ -39,6 +39,8 @@ LIB_DEPENDS =	graphics/png \
 		graphics/openjpeg \
 		math/fftw3 \
 		${MODPY_LIB_DEPENDS}
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gnome/librsvg
 
 WANTLIB  = GL GLEW GLU Half Iex IlmImf IlmThread Imath SDL X11
 WANTLIB += Xi c freetype jpeg m openal openjpeg png pthread
