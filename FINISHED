@@ -19,14 +19,13 @@ games/dungeon:		ready, sent to ports some time ago (pstumpf)
 
 Mozilla Updates
 
-security/nss		update sent to ports@
 www/firefox36		update sent to ports@
-www/firefox-i18n	To send to ports@ for wider testing
-www/mozilla-firefox	To send to ports@ for wider testing
-mail/mozilla-thunderbird To send to ports@
-mail/thunderbird-i18n	To send to ports@
-devel/xulrunner		To send to ports@
-www/fennec		To send to ports@
+www/firefox-i18n	update sent to ports@ 
+www/mozilla-firefox	update sent to ports@
+mail/mozilla-thunderbird update sent to ports@
+mail/thunderbird-i18n	update sent to ports@
+devel/xulrunner		update sent to ports@
+www/fennec		update sent to ports@
 
 KDE 4.7.2 related
 
