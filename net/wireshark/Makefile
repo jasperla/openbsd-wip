@@ -3,7 +3,7 @@
 COMMENT-main=	graphical network protocol analyzer
 COMMENT-text=	network protocol analyzer
 
-WVER=		1.6.3
+WVER=		1.6.4
 DISTNAME=	wireshark-${WVER}
 PKGNAME-main=	wireshark-${WVER}
 PKGNAME-text=	tshark-${WVER}
@@ -39,7 +39,7 @@ WANTLIB-text += gpg-error gthread-2.0 krb5 lua smi
 
 WANTLIB-main += ${WANTLIB} wireshark wiretap wsutil
 WANTLIB-main += gdk-x11-2.0 gdk_pixbuf-2.0 gobject-2.0 gtk-x11-2.0
-WANTLIB-main += pango-1.0 portaudio
+WANTLIB-main += gthread-2.0 pango-1.0 portaudio
 
 MULTI_PACKAGES= -main -text
 
