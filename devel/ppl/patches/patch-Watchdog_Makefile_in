@@ -1,0 +1,21 @@
+$OpenBSD$
+--- Watchdog/Makefile.in.orig	Sun Feb 27 10:08:16 2011
++++ Watchdog/Makefile.in	Fri Nov 18 15:50:41 2011
+@@ -102,7 +102,7 @@ AM_RECURSIVE_TARGETS = $(RECURSIVE_TARGETS:-recursive=
+ 	distdir dist dist-all distcheck
+ ETAGS = etags
+ CTAGS = ctags
+-DIST_SUBDIRS = . m4 utils src tests doc
++DIST_SUBDIRS = . utils src tests
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+ distdir = $(PACKAGE)-$(VERSION)
+ top_distdir = $(distdir)
+@@ -265,7 +265,7 @@ ACLOCAL_AMFLAGS = -I m4
+ dist_noinst_SCRIPTS = \
+ configure
+ 
+-@BUILD_WATCHDOG_LIBRARY_TRUE@SUBDIRS = . m4 utils src tests doc
++@BUILD_WATCHDOG_LIBRARY_TRUE@SUBDIRS = . utils src tests
+ @BUILD_WATCHDOG_LIBRARY_TRUE@nodist_noinst_HEADERS = \
+ @BUILD_WATCHDOG_LIBRARY_TRUE@pwl-config.h
+ 
