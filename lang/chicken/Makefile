@@ -7,7 +7,7 @@ COMMENT=	practical and portable Scheme system
 V=		4.7.0
 DISTNAME=	chicken-$V
 
-SHARED_LIBS=	chicken	0.0
+SHARED_LIBS=	chicken	2.0
 
 CATEGORIES=	lang
 
