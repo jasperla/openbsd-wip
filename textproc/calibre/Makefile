@@ -2,7 +2,7 @@
 
 COMMENT =		ebook management application
 
-DISTNAME =		calibre-0.8.21
+DISTNAME =		calibre-0.8.27
 CATEGORIES =		textproc
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calibre/}
 
@@ -19,6 +19,7 @@ MODULES =		lang/python \
 
 WANTLIB +=		MagickCore MagickWand QtGui X11 Xext c fontconfig m
 WANTLIB +=		stdc++ chm icudata icui18n icuio icuuc poppler png
+WANTLIB +=		ICE SM Xi Xinerama Xrender freetype
 WANTLIB +=		${MODPY_WANTLIB}
 
 LIB_DEPENDS=		devel/chmlib \
@@ -74,7 +75,6 @@ pre-configure:
 
 do-install:
 	${_MODPY_CMD} ${MODPY_DISTUTILS_INSTALL} ${MODPY_DISTUTILS_INSTALLARGS}
-	${CHMOD} 755 ${PREFIX}/bin/calibre-mount-helper
 	${INSTALL_DATA_DIR} ${PREFIX}/share/calibre/recipes
 	cd ${WRKSRC}/recipes && find . -type f -exec \
 	    ${INSTALL_DATA} {} ${PREFIX}/share/calibre/recipes/ \;
