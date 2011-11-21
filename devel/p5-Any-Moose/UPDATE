@@ -1,0 +1,57 @@
+Update devel/p5-Any-Moose to version 0.18 and devel/p5-Mouse to version
+0.97.  p5-Mouse now provides Mouse::XS, which is about 2 times faster
+than Mouse::PurePerl.  Remove USE_GROFF.
+
+Changes since version 0.09 of Any::Moose:
+
+0.18 2011-11-07
+  * Try to cope with broken smokers better by recording a Moose
+    prereq when it is used. (Chris Williams)
+    - see https://rt.cpan.org/Public/Bug/Display.html?id=72043
+
+0.17 2011-09-16
+  * Better indicate that this module is dynamically configured.
+    - fixes [rt.cpan.org #70996]
+
+0.16 2011-09-15
+  * If you have Moose installed you no longer get the Mouse dependency (rjbs, reported by andk)
+     Any::Moose has long had both runtime and test support for Moose
+     without Mouse, but the toolchain has not, until recently, been
+     good enough to handle alternatives. This change is designed
+     to affect very few people.
+    - fixes [rt.cpan.org #70597]
+
+0.15 2011-06-07
+  * Standardize the tests' Mouse/Moose loading eval/skip code
+    (Sartak, reported by Daniel Macks)
+    - fixes [rt.cpan.org #68657]
+
+0.14 2011-04-29
+  * Skip t/004-x-modules-mouse.t if you don't have MouseX::Types 0.03 since
+    older versions do not work with modern Mouse (Sartak, reported by ewilhelm)
+
+0.13  Wed 19 May 2010
+  * Add load_first_existing_class (gfx)
+
+0.12  Fri 02 Apr 2010
+  * t/000-version.t for better diagnostics (tokuhirom)
+  * Slight performance improvements for is_class_loaded,
+      lazily loading Carp, etc (Sartak)
+  * Start some real documentation (Sartak)
+  * Document $ENV{ANY_MOOSE} (Sartak)
+    - fixes [rt.cpan.org #52339]
+  * Test that Moose is loaded, not CMOP (Sartak)
+    - fixes [rt.cpan.org #56093]
+  * Alias class_of and more functions (Sartak)
+    - requested by [rt.cpan.org #52275]
+
+0.11  Sun 19 Dec 2009
+  * Support "use Any::Moose '::Util::TypeConstraints'" (gfx)
+  * Support "no Any::Moose '::Util::TypeConstraints'" (gfx)
+  * $@ related fixes (gfx)
+  * Documentation and other minor improvements (gfx)
+  * Any::Moose should now work when you have Moose but not Mouse. Still need to
+    work out how to encode this in the installation system (Sartak)
+
+0.10  Fri 19 Jun 2009
+  * Fix META.yml

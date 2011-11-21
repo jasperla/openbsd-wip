@@ -3,10 +3,8 @@
 COMMENT=		routines for manipulating stashes
 
 MODULES=		cpan
-DISTNAME=		Package-Stash-0.05
-REVISION=		0
+DISTNAME=		Package-Stash-0.33
 CATEGORIES=		devel
-USE_GROFF =		Yes
 
 MAINTAINER=		Jim Razmus II <jim@openbsd.org>
 
@@ -16,6 +14,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-REGRESS_DEPENDS=	devel/p5-Test-Exception
+RUN_DEPENDS =		devel/p5-Dist-CheckConflicts \
+			devel/p5-Package-DeprecationManager
+
+REGRESS_DEPENDS =	devel/p5-Test-Fatal \
+			devel/p5-Test-Requires
 
 .include <bsd.port.mk>

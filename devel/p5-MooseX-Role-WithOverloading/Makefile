@@ -5,10 +5,8 @@ SHARED_ONLY=		Yes
 COMMENT=		roles which support overloading
 
 MODULES=		cpan
-DISTNAME=		MooseX-Role-WithOverloading-0.06
-REVISION=		2
+DISTNAME=		MooseX-Role-WithOverloading-0.09
 CATEGORIES=		devel
-USE_GROFF =		Yes
 
 MAINTAINER=		Jim Razmus II <jim@openbsd.org>
 
@@ -23,6 +21,5 @@ RUN_DEPENDS=		devel/p5-Moose>=0.94 \
 			devel/p5-aliased \
 			devel/p5-namespace-autoclean \
 			devel/p5-namespace-clean
-BUILD_DEPENDS=		${RUN_DEPENDS}
 
 .include <bsd.port.mk>

@@ -3,10 +3,8 @@
 COMMENT =	code attribute introspection
 
 MODULES =	cpan
-DISTNAME =	MooseX-MethodAttributes-0.23
-REVISION =	0
+DISTNAME =	MooseX-MethodAttributes-0.25
 CATEGORIES =	devel
-USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes

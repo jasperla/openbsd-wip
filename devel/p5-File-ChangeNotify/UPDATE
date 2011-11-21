@@ -1,0 +1,49 @@
+Update devel/p5-File-ChangeNotify to version 0.20.  Required by the update to
+Moose 1.25.  License change from "same as perl" to Artistic 2.0.  Remove
+USE_GROFF.
+
+Changes since version 0.13:
+
+0.20     2011-04-19
+
+- The KQueue watcher checks that a file has a file descriptor to avoid
+  watching closed files. Patch by Andreas Voegele.
+
+
+0.19   2010-10-17
+
+- The all.t test didn't run any tests at all if neither the Inotify nor KQueue
+  watchers could be loaded. This was treated as a failure by test
+  harnesses. Now we always test the Default class.
+
+
+0.18   2010-10-15
+
+- Always make a Default watcher object if we cannot load an OS-specific class.
+
+- Add Test::Exception as a test prereq.
+
+
+0.17   2010-10-04
+
+- Loading File::ChangeNotify always loads the Default watcher class. This will
+  give a useful error message if this module's prereqs are not loaded.
+
+
+0.16   2010-07-12
+
+- Changes to avoid a warning about a useless coercion from future versions of
+  Moose.
+
+
+0.15   2010-07-09
+
+- Add a missing prereq, namespace::autoclean.
+
+
+0.14   2010-07-08
+
+- Running the tests left behind a lot of temp directories that should have
+  been cleaned up, but weren't. Reported by Peter Edwards. RT #59125.
+
+- License is now Artistic 2.0

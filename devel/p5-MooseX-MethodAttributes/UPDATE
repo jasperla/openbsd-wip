@@ -1,0 +1,10 @@
+Update devel/p5-MooseX-MethodAttributes to version 0.25.  Required by
+recent Catalyst versions.  Remove USE_GROFF.
+
+Changes since version 0.23:
+
+0.25  Mon, 20 June 2011 11:53:00 +0100
+ * Updated to avoid test issues from Moose 2.0007 (spotted by ilmari)
+
+0.24  Mon, 19 Jul 2010 05:23:57 +0200
+ * Updated to avoid warnings from Moose 1.09 (Dave Rolsky).

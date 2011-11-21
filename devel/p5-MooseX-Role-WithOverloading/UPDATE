@@ -1,0 +1,14 @@
+Update devel/p5-MooseX-Role-WithOverloading to version 0.09.  Required
+by Moose 1.25 and recent Catalyst versions.  Remove USE_GROFF.
+
+Changes since version 0.06:
+
+0.09  Mon, 03 Jan 2011 17:37:34 +0100
+  * get_package_symbol no longer autovififies - use get_or_add_package_symbol
+    instead (doy).
+
+0.08  Mon, 19 Jul 2010 22:04:22 +0200
+  * Really avoid warnings from Moose 1.09 (Dave Rolsky).
+
+0.07  Mon, 19 Jul 2010 05:56:05 +0200
+  * Avoid warnings from Moose 1.09 (Dave Rolsky).
