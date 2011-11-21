@@ -4,7 +4,7 @@ COMMENT =	faster and more correct implementation of Package::Stash
 SHARED_ONLY =	Yes
 
 MODULES =	cpan
-DISTNAME =	Package-Stash-XS-0.22
+DISTNAME =	Package-Stash-XS-0.25
 CATEGORIES =	devel
 
 # Perl

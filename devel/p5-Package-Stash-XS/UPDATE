@@ -1,0 +1,15 @@
+Update devel/p5-Package-Stash-XS to version 0.25.
+
+Changes since version 0.22:
+
+0.25  2011-09-06
+      - fix compilation on perl 5.8 (RT#70762)
+
+0.24  2011-09-05
+      - invalid package names (for instance, Foo:Bar) are not allowed
+      - invalid stash entry names (anything containing ::) are not allowed
+
+0.23  2011-08-08
+      - fix the test for scalar values, again (t0m, rafl)
+      - disallow assigning globrefs to scalar glob slots (this doesn't actually
+        make any sense)
