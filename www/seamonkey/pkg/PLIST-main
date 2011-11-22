@@ -1,0 +1,171 @@
+@comment $OpenBSD: PLIST-main,v 1.17 2011/10/03 21:07:40 landry Exp $
+@conflict seamonkey-<=2.0.6
+@pkgpath www/seamonkey
+bin/${MOZILLA_PROJECT}
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/README
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/application.ini
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/blocklist.xml
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome.manifest
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/JSConsoleWindow.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/JSConsoleWindow16.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/JSConsoleWindow48.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/abcardWindow.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/abcardWindow16.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/abcardWindow48.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/ablistWindow.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/ablistWindow16.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/ablistWindow48.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/addressbookWindow.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/addressbookWindow16.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/addressbookWindow48.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/bmPropsWindow.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/bmPropsWindow16.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/bmPropsWindow48.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/bookmark-window.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/bookmark-window16.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/bookmark-window48.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/default.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/default16.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/default48.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/downloadManager.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/downloadManager16.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/downloadManager48.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/editorWindow.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/editorWindow16.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/editorWindow48.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/findBookmarkWindow.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/findBookmarkWindow16.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/findBookmarkWindow48.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/findHistoryWindow.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/findHistoryWindow16.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/findHistoryWindow48.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/history-window.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/history-window16.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/history-window48.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/main-window.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/main-window16.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/main-window48.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/messengerWindow.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/messengerWindow16.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/messengerWindow48.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/msgcomposeWindow.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/msgcomposeWindow16.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/msgcomposeWindow48.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/${MOZILLA_PROJECT}.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/venkman-window.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/venkman-window16.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/venkman-window48.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/binary.manifest
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/libsuite.so.${LIBsuite_VERSION}
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/defaults/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/defaults/messenger/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/defaults/messenger/mailViews.dat
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/defaults/pref/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/defaults/pref/channel-prefs.js
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/defaults/profile/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/defaults/profile/localstore.rdf
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/defaults/profile/panels.rdf
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/dependentlibs.list
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/dictionaries/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/dictionaries/en-US.aff
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/dictionaries/en-US.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/distribution/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/distribution/extensions/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/distribution/extensions/inspector@mozilla.org.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/distribution/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/distribution/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-be@${MOZILLA_PROJECT}.mozilla.org.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-ca@${MOZILLA_PROJECT}.mozilla.org.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-cs@${MOZILLA_PROJECT}.mozilla.org.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-de@${MOZILLA_PROJECT}.mozilla.org.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-en-GB@${MOZILLA_PROJECT}.mozilla.org.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-en-US@${MOZILLA_PROJECT}.mozilla.org.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-es-AR@${MOZILLA_PROJECT}.mozilla.org.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-es-ES@${MOZILLA_PROJECT}.mozilla.org.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-fi@${MOZILLA_PROJECT}.mozilla.org.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-fr@${MOZILLA_PROJECT}.mozilla.org.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-gl@${MOZILLA_PROJECT}.mozilla.org.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-hu@${MOZILLA_PROJECT}.mozilla.org.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-it@${MOZILLA_PROJECT}.mozilla.org.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-ja@${MOZILLA_PROJECT}.mozilla.org.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-lt@${MOZILLA_PROJECT}.mozilla.org.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-nb-NO@${MOZILLA_PROJECT}.mozilla.org.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-nl@${MOZILLA_PROJECT}.mozilla.org.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-pl@${MOZILLA_PROJECT}.mozilla.org.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-pt-PT@${MOZILLA_PROJECT}.mozilla.org.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-ru@${MOZILLA_PROJECT}.mozilla.org.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-sk@${MOZILLA_PROJECT}.mozilla.org.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-sv-SE@${MOZILLA_PROJECT}.mozilla.org.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-tr@${MOZILLA_PROJECT}.mozilla.org.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-zh-CN@${MOZILLA_PROJECT}.mozilla.org.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/modern@themes.mozilla.org.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_af.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_bg.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_ca.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_cy.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_da.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_de-1901.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_de-1996.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_de-CH.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_en_US.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_eo.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_es.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_et.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_fi.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_fr.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_gl.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_hr.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_hsb.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_ia.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_is.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_kmr.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_la.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_lt.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_mn.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_nb.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_nl.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_nn.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_pt.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_ru.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_sh.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_sl.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_sv.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_uk.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/isp/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/isp/SpamAssassin.sfd
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/isp/SpamPal.sfd
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/isp/movemail.rdf
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/isp/rss.rdf
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libldap60.so.${LIBldap60_VERSION}
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libldif60.so.${LIBldif60_VERSION}
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libmozalloc.so.${LIBmozalloc_VERSION}
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libprldap60.so.${LIBprldap60_VERSION}
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libxpcom.so.${LIBxpcom_VERSION}
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libxul.so.${LIBxul_VERSION}
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/license.txt
+@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/mozilla-xremote-client
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/omni.jar
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/platform.ini
+@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/plugin-container
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/removed-files
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/run-mozilla.sh
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/${MOZILLA_PROJECT}
+@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/${MOZILLA_PROJECT}-bin
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/searchplugins/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/searchplugins/creativecommons.xml
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/searchplugins/google.xml
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/searchplugins/wikipedia.xml
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/searchplugins/yahoo.xml
+@man man/man1/${MOZILLA_PROJECT}.1
+share/applications/${MOZILLA_PROJECT}.desktop
+share/doc/pkg-readmes/${FULLPKGNAME}
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
