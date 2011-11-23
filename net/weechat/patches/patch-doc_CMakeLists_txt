@@ -1,0 +1,9 @@
+$OpenBSD$
+--- doc/CMakeLists.txt.orig	Sat Jan  1 14:48:38 2011
++++ doc/CMakeLists.txt	Sun Jun 12 18:53:27 2011
+@@ -34,4 +34,4 @@ IF(ENABLE_DOC)
+ 
+ ENDIF(ENABLE_DOC)
+ 
+-INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/weechat-curses.1 DESTINATION ${SHAREDIR}/man/man1)
++INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/weechat-curses.1 DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man1)
