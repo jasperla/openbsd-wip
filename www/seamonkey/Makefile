@@ -15,6 +15,7 @@ PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-seamonkey-1.0beta8
 ENIG_V =		1.3.3
 PKGNAME-enigmail =	enigmail-seamonkey-${ENIG_V}
+REVISION-enigmail =	0
 EPOCH-lightning =	0
 
 SO_VERSION=	21.0
