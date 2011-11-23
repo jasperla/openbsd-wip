@@ -1,0 +1,5 @@
+- Works so far on amd64 and sparc64
+- somebody needs to check if the MULTI_PACKAGES stuff is correct
+
+- in weechat-0.3.7 most of the patches in patches/ can go away,
+  as they're in the upstream repo already

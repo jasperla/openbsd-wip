@@ -1,0 +1,3 @@
+@comment $OpenBSD$
+lib/pkgconfig/
+lib/weechat/plugins/lua.so

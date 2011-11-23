@@ -1,0 +1,10 @@
+@comment $OpenBSD$
+lib/weechat/plugins/alias.so
+lib/weechat/plugins/charset.so
+lib/weechat/plugins/fifo.so
+lib/weechat/plugins/irc.so
+lib/weechat/plugins/logger.so
+lib/weechat/plugins/perl.so
+lib/weechat/plugins/relay.so
+lib/weechat/plugins/rmodifier.so
+lib/weechat/plugins/xfer.so
