@@ -1,0 +1,25 @@
+@comment $OpenBSD$
+%%SHARED%%
+@bin bin/weechat-curses
+include/weechat/
+include/weechat/weechat-plugin.h
+lib/pkgconfig/
+lib/pkgconfig/weechat.pc
+lib/weechat/
+lib/weechat/plugins/
+@man man/man1/weechat-curses.1
+share/doc/weechat/
+share/doc/weechat/faq.txt
+share/doc/weechat/plugin_api.txt
+share/doc/weechat/quickstart.txt
+share/doc/weechat/scripting.txt
+share/doc/weechat/user_guide.txtt
+share/locale/cs/LC_MESSAGES/weechat.mo
+share/locale/de/LC_MESSAGES/weechat.mo
+share/locale/es/LC_MESSAGES/weechat.mo
+share/locale/fr/LC_MESSAGES/weechat.mo
+share/locale/hu/LC_MESSAGES/weechat.mo
+share/locale/it/LC_MESSAGES/weechat.mo
+share/locale/pl/LC_MESSAGES/weechat.mo
+share/locale/pt_BR/LC_MESSAGES/weechat.mo
+share/locale/ru/LC_MESSAGES/weechat.mo
