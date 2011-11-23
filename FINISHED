@@ -37,3 +37,18 @@ textproc/redland:	Ready for import. Sent to ports@ October 10, 2011 (grayed)
 math/qhull:		Ready for import. Sent to ports@ October 14, 2011 (wen heping, amitkulz, nigel)
 math/libqalculate	Ready for import. Sent to ports@ October 24, 2011 (grayed, amitkulz)
 multimedia/libmms	Ready for import. Sent to ports@ October 27, 2011 (amitkulz, grayed)
+
+Moose related
+
+devel/p5-Any-Moose:			ready for import, sent to ports@ 2011-11-22 (voegelas)
+devel/p5-Mouse:				ready for import, sent to ports@ 2011-11-22 (voegelas)
+devel/p5-Moose:				ready for import, sent to ports@ 2011-11-22 (voegelas)
+devel/p5-MooseX-Getopt:			ready for import, sent to ports@ 2011-11-22 (voegelas)
+devel/p5-MooseX-MethodAttributes:	ready for import, sent to ports@ 2011-11-22 (voegelas)
+devel/p5-MooseX-Role-WithOverloading:	ready for import, sent to ports@ 2011-11-22 (voegelas)
+devel/p5-File-ChangeNotify:		ready for import, sent to ports@ 2011-11-22 (voegelas)
+devel/p5-Class-MOP:			ready for import, sent to ports@ 2011-11-22 (voegelas)
+devel/p5-Package-Stash:			ready for import, sent to ports@ 2011-11-22 (voegelas)
+devel/p5-Package-Stash-XS:		ready for import, sent to ports@ 2011-11-22 (voegelas)
+devel/p5-namespace-clean:		ready for import, sent to ports@ 2011-11-22 (voegelas)
+devel/p5-namespace-autoclean:		ready for import, sent to ports@ 2011-11-22 (voegelas)
