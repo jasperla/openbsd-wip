@@ -18,6 +18,7 @@ PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-1.0beta8
 ENIG_V =		1.3.3
 PKGNAME-enigmail =	enigmail-${ENIG_V}
+REVISION-enigmail =	0
 EPOCH-lightning =	0
 
 #MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/

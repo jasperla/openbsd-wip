@@ -1,0 +1,28 @@
+$OpenBSD$
+upstream fixes from enigmail CVS
+https://www.mozdev.org/bugs/show_bug.cgi?id=24577
+https://www.mozdev.org/bugs/show_bug.cgi?id=24568
+https://www.mozdev.org/bugs/show_bug.cgi?id=24557
+
+--- mailnews/extensions/enigmail/ui/content/enigmailSearchKey.js.orig	Wed Feb 16 19:40:14 2011
++++ mailnews/extensions/enigmail/ui/content/enigmailSearchKey.js	Tue Nov 22 17:55:29 2011
+@@ -34,6 +34,10 @@
+ 
+ // Uses: chrome://enigmail/content/enigmailCommon.js
+ 
++Components.utils.import("resource://enigmail/enigmailCommon.jsm");
++
++const Ec = EnigmailCommon;
++
+ // Initialize enigmailCommon
+ EnigInitCommon("enigmailSearchKey");
+ 
+@@ -520,7 +524,7 @@ function enigNewGpgKeysRequest(requestType, callbackFu
+   }
+ 
+   window.enigRequest.callbackFunction = callbackFunction;
+-  var requestObserver = new EnigRequestObserver(enigmailGpgkeysTerminate, null);
++  var requestObserver = Ec.newRequestObserver(enigmailGpgkeysTerminate, null);
+   var errorMsgObj = new Object();
+   var ipcRequest = null;
+   window.enigRequest.gpgkeysRequest = null;

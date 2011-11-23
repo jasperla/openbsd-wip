@@ -1,0 +1,17 @@
+$OpenBSD$
+upstream fixes from enigmail CVS
+https://www.mozdev.org/bugs/show_bug.cgi?id=24577
+https://www.mozdev.org/bugs/show_bug.cgi?id=24568
+https://www.mozdev.org/bugs/show_bug.cgi?id=24557
+
+--- mailnews/extensions/enigmail/package/nsIEnigmail.idl.orig	Mon Sep 12 16:49:17 2011
++++ mailnews/extensions/enigmail/package/nsIEnigmail.idl	Tue Nov 22 17:55:29 2011
+@@ -222,7 +222,7 @@ interface nsIEnigmail : nsISupports
+   const long SC_OP_FAILURE        = 0x10000000;
+   const long UNKNOWN_ALGO         = 0x20000000;
+   const long SIG_CREATED          = 0x40000000;
+-  const long END_ENCRYPTION       = 0x80000000;
++  const unsigned long END_ENCRYPTION       = 0x80000000;
+ 
+   wstring decryptMessage(in nsIDOMWindow parent,
+                         in unsigned long uiFlags,
