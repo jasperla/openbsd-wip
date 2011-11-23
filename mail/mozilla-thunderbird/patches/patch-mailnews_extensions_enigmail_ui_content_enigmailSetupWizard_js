@@ -1,0 +1,53 @@
+$OpenBSD$
+upstream fixes from enigmail CVS
+https://www.mozdev.org/bugs/show_bug.cgi?id=24577
+https://www.mozdev.org/bugs/show_bug.cgi?id=24568
+https://www.mozdev.org/bugs/show_bug.cgi?id=24557
+
+--- mailnews/extensions/enigmail/ui/content/enigmailSetupWizard.js.orig	Tue Aug  9 12:15:06 2011
++++ mailnews/extensions/enigmail/ui/content/enigmailSetupWizard.js	Tue Nov 22 17:55:29 2011
+@@ -34,6 +34,8 @@
+ 
+ Components.utils.import("resource://enigmail/enigmailCommon.jsm");
+ 
++// const Ec is already defined in enigmailKeygen.js
++
+ var gEnigModifySettings;
+ var gLastDirection=0;
+ var gEnigAccountMgr;
+@@ -405,8 +407,9 @@ function wizardGenKey() {
+   var userEmail = curId.email;
+ 
+   var ipcRequest = null;
+-  var requestObserver = new EnigRequestObserver(wizardKeygenTerminate,null);
++  var requestObserver = Ec.newRequestObserver(wizardKeygenTerminate,null);
+   wizard.getButton("next").disabled = true
++  wizard.getButton("back").disabled = true;
+ 
+   try {
+     ipcRequest = enigmailSvc.generateKey(window,
+@@ -422,10 +425,11 @@ function wizardGenKey() {
+ 
+   if (!ipcRequest) {
+     EnigAlert(EnigGetString("keyGenFailed"));
++    wizard.getButton("back").disabled = false;
+     return false;
+   }
+-  wizard.getButton("back").disabled = true;
+ 
++  requestObserver._terminateArg = ipcRequest;
+   gKeygenRequest = ipcRequest;
+ 
+   WRITE_LOG("enigmailKeygen.js: Start: gKeygenRequest = "+gKeygenRequest+"\n");
+@@ -669,9 +673,10 @@ function wizardApplyId(identity, keyId) {
+ }
+ 
+ 
+-function wizardKeygenTerminate(terminateArg, ipcRequest) {
++function wizardKeygenTerminate(ipcRequest) {
+   DEBUG_LOG("enigmailSetupWizard.js: Terminate: "+ipcRequest+"\n");
+ 
++  ipcRequest = ipcRequest[0];
+   // Give focus to this window
+   window.focus();
+ 

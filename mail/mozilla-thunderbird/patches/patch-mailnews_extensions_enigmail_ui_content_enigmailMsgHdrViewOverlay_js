@@ -1,0 +1,78 @@
+$OpenBSD$
+upstream fixes from enigmail CVS
+https://www.mozdev.org/bugs/show_bug.cgi?id=24577
+https://www.mozdev.org/bugs/show_bug.cgi?id=24568
+https://www.mozdev.org/bugs/show_bug.cgi?id=24557
+
+--- mailnews/extensions/enigmail/ui/content/enigmailMsgHdrViewOverlay.js.orig	Sat Aug 27 18:48:50 2011
++++ mailnews/extensions/enigmail/ui/content/enigmailMsgHdrViewOverlay.js	Tue Nov 22 17:55:29 2011
+@@ -412,11 +412,7 @@ Enigmail.hdrView = {
+       }
+ 
+       if (statusFlags & nsIEnigmail.DECRYPTION_OKAY) {
+-        var enigMimeService = Components.classes[EnigmailCommon.ENIGMIMESERVICE_CONTRACTID].getService(Components.interfaces.nsIEnigMimeService);
+-        if (enigMimeService)
+-        {
+-          enigMimeService.rememberEncrypted(this.lastEncryptedMsgKey);
+-        }
++        EnigmailCommon.rememberEncryptedUri(this.lastEncryptedMsgKey);
+ 
+         // Display encrypted icon
+         gEncryptedUINode.setAttribute("encrypted", "ok");
+@@ -635,12 +631,8 @@ Enigmail.hdrView = {
+   {
+     if (Enigmail.hdrView.lastEncryptedMsgKey)
+     {
+-      var enigMimeService = Components.classes[EnigmailCommon.ENIGMIMESERVICE_CONTRACTID].
+-                              getService(Components.interfaces.nsIEnigMimeService);
+-      if (enigMimeService) {
+-        enigMimeService.forgetEncrypted(Enigmail.hdrView.lastEncryptedMsgKey);
+-        Enigmail.hdrView.lastEncryptedMsgKey = null;
+-      }
++      EnigmailCommon.forgetEncryptedUri(Enigmail.hdrView.lastEncryptedMsgKey);
++      Enigmail.hdrView.lastEncryptedMsgKey = null;
+     }
+   },
+ 
+@@ -707,12 +699,28 @@ Enigmail.hdrView = {
+   {
+     EnigmailCommon.DEBUG_LOG("enigmailMsgHdrViewOverlay.js: this.enigOnShowAttachmentContextMenu\n");
+     // first, call the original function ...
+-    onShowAttachmentContextMenu();
+ 
++    try {
++      // Thunderbird
++      onShowAttachmentItemContextMenu();
++    }
++    catch (ex) {
++      // SeaMonkey
++      onShowAttachmentContextMenu();
++    }
++
+     // then, do our own additional stuff ...
+-    var contextMenu = document.getElementById('attachmentListContext');
++
++    // Thunderbird
++    var contextMenu = document.getElementById('attachmentItemContext');
+     var selectedAttachments = contextMenu.attachments;
+ 
++    if (! contextMenu) {
++      // SeaMonkey
++      contextMenu = document.getElementById('attachmentListContext');
++      selectedAttachments = attachmentList.selectedItems;
++    }
++
+     var decryptOpenMenu = document.getElementById('enigmail_ctxDecryptOpen');
+     var decryptSaveMenu = document.getElementById('enigmail_ctxDecryptSave');
+     var importMenu = document.getElementById('enigmail_ctxImportKey');
+@@ -890,8 +898,9 @@ if (messageHeaderSink) {
+         throw Components.results.NS_NOINTERFACE;
+       },
+ 
+-      updateSecurityStatus: function (uriSpec, exitCode, statusFlags, keyId, userId, sigDetails, errorMsg, blockSeparation)
++      updateSecurityStatus: function (uriSpec, exitCode, statusFlags, keyId, userId, sigDetails, errorMsg, blockSeparation, uri)
+       {
++        // uri is not used here; added for compatibility to other addons
+         EnigmailCommon.DEBUG_LOG("enigmailMsgHdrViewOverlay.js: EnigMimeHeaderSink.updateSecurityStatus: uriSpec="+uriSpec+"\n");
+ 
+         var msgUriSpec = Enigmail.msg.getCurrentMsgUriSpec();

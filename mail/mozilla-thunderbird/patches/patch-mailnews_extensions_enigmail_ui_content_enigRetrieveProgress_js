@@ -1,0 +1,30 @@
+$OpenBSD$
+upstream fixes from enigmail CVS
+https://www.mozdev.org/bugs/show_bug.cgi?id=24577
+https://www.mozdev.org/bugs/show_bug.cgi?id=24568
+https://www.mozdev.org/bugs/show_bug.cgi?id=24557
+
+--- mailnews/extensions/enigmail/ui/content/enigRetrieveProgress.js.orig	Fri Jan 21 15:17:52 2011
++++ mailnews/extensions/enigmail/ui/content/enigRetrieveProgress.js	Tue Nov 22 17:55:29 2011
+@@ -139,7 +139,7 @@ function onLoad() {
+   }
+ 
+   msgProgress = Components.classes["@mozilla.org/messenger/progress;1"].createInstance(Components.interfaces.nsIMsgProgress);
+-  var requestObserver = new EnigRequestObserver(enigSendKeyTerminate, {'progressBar': msgProgress, 'callType': 1});
++  var requestObserver = Ec.newRequestObserver(enigSendKeyTerminate, {'progressBar': msgProgress, 'callType': 1});
+ 
+   msgProgress.registerListener(progressListener);
+   msgProgress.onStateChange(null, null, Components.interfaces.nsIWebProgressListener.STATE_START, 0)
+@@ -182,8 +182,11 @@ function onCancel ()
+   return false;
+ }
+ 
+-function enigSendKeyTerminate (terminateArg, ipcRequest) {
++function enigSendKeyTerminate (cbArr) {
+   Ec.DEBUG_LOG("enigmailRetrieveProgress.js: enigSendKeyTerminate\n");
++
++  var terminateArg = cbArr[0];
++  var ipcRequest = cbArr[1];
+ 
+   if (gEnigIpcRequest) {
+     var cbFunc = gEnigCallbackFunc;
