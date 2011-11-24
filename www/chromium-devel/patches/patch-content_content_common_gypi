@@ -1,0 +1,31 @@
+$OpenBSD$
+--- content/content_common.gypi.orig	Wed Nov 23 15:29:45 2011
++++ content/content_common.gypi	Thu Nov 24 11:23:46 2011
+@@ -294,14 +294,6 @@
+       'dependencies': [
+         '../build/linux/system.gyp:pangocairo',
+       ],
+-    }],
+-    ['use_x11 == 1 and target_arch != "arm"', {
+-      'sources': [
+-        'common/gpu/x_util.cc',
+-        'common/gpu/x_util.h',
+-      ],
+-    }],
+-    ['OS=="linux"', {
+       'include_dirs': [
+         '<(DEPTH)/third_party/angle/include',
+       ],
+@@ -310,6 +302,12 @@
+           '-lXcomposite',
+         ],
+       },
++    }],
++    ['use_x11 == 1 and target_arch != "arm"', {
++      'sources': [
++        'common/gpu/x_util.cc',
++        'common/gpu/x_util.h',
++      ],
+     }],
+     ['enable_gpu==1', {
+       'dependencies': [
