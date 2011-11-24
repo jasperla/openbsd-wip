@@ -1,9 +1,0 @@
-@comment $OpenBSD$
-@bin bin/checkrom
-@bin bin/dump2rom
-@bin bin/mkcard
-@bin bin/x48
-lib/X11/app-defaults/X48
-@man man/man1/x48.1
-share/x48/
-share/x48/README-x48
