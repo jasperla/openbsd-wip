@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS=		i386 amd64
 
 COMMENT=		Chromium browser
 
-V=			17.0.942.0
+V=			17.0.948.0
 DISTNAME=		chromium-${V}
 PKGNAME=		chromium-devel-${V}
 
@@ -107,11 +107,6 @@ GYP_DEFS+=	-Duse_openssl=1 \
 LIB_DEPENDS+=	security/nss
 WANTLIB+=	nss3 nssutil3
 .endif
-
-pre-patch:
-	mkdir -p ${WRKSRC}/media/audio/pulse
-	cp ${WRKSRC}/media/audio/linux/pulse_output.* \
-		${WRKSRC}/media/audio/pulse/
 
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
