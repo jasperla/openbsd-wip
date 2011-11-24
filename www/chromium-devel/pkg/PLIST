@@ -230,6 +230,7 @@ chrome/resources/inspector/profilesPanel.css
 chrome/resources/inspector/resourceView.css
 chrome/resources/inspector/resourcesPanel.css
 chrome/resources/inspector/scriptsPanel.css
+chrome/resources/inspector/splitView.css
 chrome/resources/inspector/textPrompt.css
 chrome/resources/inspector/textViewer.css
 chrome/resources/inspector/timelinePanel.css
