@@ -1,0 +1,39 @@
+$OpenBSD$
+--- third_party/WebKit/Source/WebCore/WebCore.gyp/WebCore.gyp.orig	Wed Nov 23 15:34:45 2011
++++ third_party/WebKit/Source/WebCore/WebCore.gyp/WebCore.gyp	Thu Nov 24 11:55:24 2011
+@@ -1092,7 +1092,7 @@
+             'include_dirs+++': ['../dom'],
+           },
+         }],
+-        ['(OS=="linux" or OS=="win") and "WTF_USE_WEBAUDIO_FFTW=1" in feature_defines', {
++        ['(OS=="linux" or OS=="win" or os_bsd==1) and "WTF_USE_WEBAUDIO_FFTW=1" in feature_defines', {
+           'include_dirs': [
+             '<(chromium_src_dir)/third_party/fftw/api',
+           ],
+@@ -1305,7 +1305,7 @@
+             'include_dirs++': ['../dom'],
+           },
+         }],
+-        ['(OS=="linux" or OS=="win") and "WTF_USE_WEBAUDIO_FFTW=1" in feature_defines', {
++        ['(OS=="linux" or OS=="win" or os_bsd==1) and "WTF_USE_WEBAUDIO_FFTW=1" in feature_defines', {
+           # This directory needs to be on the include path for multiple sub-targets of webcore.
+           'direct_dependent_settings': {
+             'include_dirs': [
+@@ -1313,7 +1313,7 @@
+             ],
+           },
+         }],
+-        ['(OS=="mac" or OS=="linux" or OS=="win") and "WTF_USE_WEBAUDIO_FFMPEG=1" in feature_defines', {
++        ['((os_posix==1 and OS!="android") or OS=="win") and "WTF_USE_WEBAUDIO_FFMPEG=1" in feature_defines', {
+           # This directory needs to be on the include path for multiple sub-targets of webcore.
+           'direct_dependent_settings': {
+             'include_dirs': [
+@@ -1919,7 +1919,7 @@
+             'include_dirs+++': ['../dom'],
+           },
+         }],
+-        ['OS=="linux" and "WTF_USE_WEBAUDIO_FFTW=1" in feature_defines', {
++        ['OS=="linux" or os_bsd==1 and "WTF_USE_WEBAUDIO_FFTW=1" in feature_defines', {
+           # FIXME: (kbr) figure out how to make these dependencies
+           # work in a cross-platform way. Attempts to use
+           # "link_settings" and "libraries" in conjunction with the
