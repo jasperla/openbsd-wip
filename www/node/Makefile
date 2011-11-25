@@ -8,7 +8,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	V8 JavaScript for clients and servers
 
-NODE_VERSION=	v0.6.1
+NODE_VERSION=	v0.6.3
 DISTNAME=	node-${NODE_VERSION}
 PKGNAME=	${DISTNAME:S/v//g}
 
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/dist/${NODE_VERSION}/
+MASTER_SITES=	${HOMEPAGE}dist/${NODE_VERSION}/
 
 MODULES=	lang/python
 
@@ -48,7 +48,7 @@ MAKE_ENV+=	CXX=c++ CCFLAGS+="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 NO_CCACHE=	Yes
 
 pre-configure:
-	# Bad practice, but prevents a whole stack of patches.
+	@# Bad practice, but prevents a whole stack of patches.
 	ln -sf ${LOCALBASE}/bin/python${MODPY_VERSION} ${WRKDIR}/bin/python
 
 .include <bsd.port.mk>
