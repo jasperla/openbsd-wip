@@ -1,6 +1,6 @@
 $OpenBSD$
---- wscript.orig	Tue Nov 15 09:23:31 2011
-+++ wscript	Tue Nov 15 09:26:12 2011
+--- wscript.orig	Fri Nov 25 10:23:28 2011
++++ wscript	Fri Nov 25 13:45:49 2011
 @@ -301,7 +301,7 @@ def configure(conf):
    if Options.options.efence:
      conf.check(lib='efence', libpath=['/usr/lib', '/usr/local/lib'], uselib_store='EFENCE')
@@ -10,7 +10,7 @@ $OpenBSD$
       if not conf.check(lib="execinfo",
                         includes=['/usr/include', '/usr/local/include'],
                         libpath=['/usr/lib', '/usr/local/lib'],
-@@ -529,7 +529,7 @@ def configure(conf):
+@@ -534,7 +534,7 @@ def configure(conf):
  
    # Configure default variant
    conf.setenv('Release')
