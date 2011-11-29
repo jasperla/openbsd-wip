@@ -30,8 +30,7 @@ CONFIGURE_STYLE =	gnu
 
 NO_REGRESS =		Yes
 
-post-install:
-	cd ${PREFIX}/lib/torsocks && ln -s \
-		libtorsocks.so.${LIBtorsocks_VERSION} libtorsocks.so
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/src/torsocks.in
 
 .include <bsd.port.mk>

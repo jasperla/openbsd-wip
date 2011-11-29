@@ -1,3 +1,2 @@
 @comment $OpenBSD$
-lib/torsocks/libtorsocks.so
 @lib lib/torsocks/libtorsocks.so.${LIBtorsocks_VERSION}
