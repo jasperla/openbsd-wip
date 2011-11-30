@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	some fucking learning tool for KDE
+COMMENT =	learning tool for KDE
 DISTNAME =	ktouch-${MODKDE_VERSION}
 
 WANTLIB =  c m pthread stdc++
