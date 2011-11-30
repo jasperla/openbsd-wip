@@ -4,7 +4,6 @@ lib/io/addons/Blowfish/_build/dll/libIoBlowfish.so
 lib/io/addons/Box/_build/dll/libIoBox.so
 lib/io/addons/CGI/_build/dll/libIoCGI.so
 lib/io/addons/ContinuedFraction/_build/dll/libIoContinuedFraction.so
-lib/io/addons/Curses/_build/dll/libIoCurses.so
 lib/io/addons/DistributedObjects/_build/dll/libIoDistributedObjects.so
 lib/io/addons/EditLine/_build/dll/libIoEditLine.so
 lib/io/addons/Facebook/_build/dll/libIoFacebook.so
@@ -13,11 +12,13 @@ lib/io/addons/Fnmatch/_build/dll/libIoFnmatch.so
 lib/io/addons/GoogleSearch/_build/dll/libIoGoogleSearch.so
 lib/io/addons/HttpClient/_build/dll/libIoHttpClient.so
 lib/io/addons/LZO/_build/dll/libIoLZO.so
+lib/io/addons/Libxml2/_build/dll/libIoLibxml2.so
 lib/io/addons/Loki/_build/dll/libIoLoki.so
 lib/io/addons/MD5/_build/dll/libIoMD5.so
 lib/io/addons/NotificationCenter/_build/dll/libIoNotificationCenter.so
 lib/io/addons/Obsidian/_build/dll/libIoObsidian.so
 lib/io/addons/PostgreSQL/_build/dll/libIoPostgreSQL.so
+lib/io/addons/Python/_build/dll/libIoPython.so
 lib/io/addons/Random/_build/dll/libIoRandom.so
 lib/io/addons/Range/_build/dll/libIoRange.so
 lib/io/addons/Rational/_build/dll/libIoRational.so
@@ -25,6 +26,7 @@ lib/io/addons/ReadLine/_build/dll/libIoReadLine.so
 lib/io/addons/Regex/_build/dll/libIoRegex.so
 lib/io/addons/SGML/_build/dll/libIoSGML.so
 lib/io/addons/SHA1/_build/dll/libIoSHA1.so
+lib/io/addons/SQLite3/_build/dll/libIoSQLite3.so
 lib/io/addons/Socket/_build/dll/libIoSocket.so
 lib/io/addons/SqlDatabase/_build/dll/libIoSqlDatabase.so
 lib/io/addons/Syslog/_build/dll/libIoSyslog.so
