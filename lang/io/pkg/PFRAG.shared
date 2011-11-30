@@ -18,7 +18,6 @@ lib/io/addons/MD5/_build/dll/libIoMD5.so
 lib/io/addons/NotificationCenter/_build/dll/libIoNotificationCenter.so
 lib/io/addons/Obsidian/_build/dll/libIoObsidian.so
 lib/io/addons/PostgreSQL/_build/dll/libIoPostgreSQL.so
-lib/io/addons/Python/_build/dll/libIoPython.so
 lib/io/addons/Random/_build/dll/libIoRandom.so
 lib/io/addons/Range/_build/dll/libIoRange.so
 lib/io/addons/Rational/_build/dll/libIoRational.so
@@ -26,7 +25,6 @@ lib/io/addons/ReadLine/_build/dll/libIoReadLine.so
 lib/io/addons/Regex/_build/dll/libIoRegex.so
 lib/io/addons/SGML/_build/dll/libIoSGML.so
 lib/io/addons/SHA1/_build/dll/libIoSHA1.so
-lib/io/addons/SQLite3/_build/dll/libIoSQLite3.so
 lib/io/addons/Socket/_build/dll/libIoSocket.so
 lib/io/addons/SqlDatabase/_build/dll/libIoSqlDatabase.so
 lib/io/addons/Syslog/_build/dll/libIoSyslog.so

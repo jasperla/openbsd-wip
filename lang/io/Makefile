@@ -16,11 +16,9 @@ PERMIT_PACKAGE_FTP = Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP = Yes
 
-WANTLIB += GL Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm drm
-WANTLIB += edit event expat fontconfig freetype m pixman-1 pthread
-WANTLIB += pthread-stubs readline xcb xcb-render xcb-shm z
+WANTLIB = edit event expat m pthread readline z
 
-LIB_DEPENDS = devel/libeventextra devel/pcre devel/libyajl
+LIB_DEPENDS = devel/libeventextra devel/pcre devel/libyajl textproc/libxml
 
 MODULES = devel/cmake
 
