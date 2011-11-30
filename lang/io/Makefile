@@ -2,7 +2,7 @@ COMMENT = Embeddable prototype-based language
 
 BASENAME = Io-20111130
 PKGNAME = io-20111130
-DISTNAME = eradman-io-2011.11.30-40-gd1d8bac
+DISTNAME = eradman-io-d1d8bac
 CATEGORIES = lang
 MASTER_SITES =  http://static.eradman.com/code/
 DISTFILES = ${DISTNAME}.tar.gz
@@ -24,7 +24,7 @@ LIB_DEPENDS = devel/libeventextra devel/pcre devel/libyajl
 
 MODULES = devel/cmake
 
-WRKSRC = ${WRKDIR}/eradman-io-d1d8bac
+WRKSRC = ${WRKDIR}/${DISTNAME}
 WRKBUILD = ${WRKSRC}/build
 
 MODCMAKE_VERBOSE = No
