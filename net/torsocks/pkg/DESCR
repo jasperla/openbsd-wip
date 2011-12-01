@@ -1,3 +1,0 @@
-Torsocks allows you to use most socks-friendly applications in a safe
-way with Tor. It ensures that DNS requests are handled safely and
-explicitly rejects UDP traffic from the application you're using.
