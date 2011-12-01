@@ -1,2 +1,19 @@
 @comment $OpenBSD$
 @bin bin/nexuiz-dedicated
+share/nexuiz/server/
+share/nexuiz/server/help.cfg
+share/nexuiz/server/rcon.pl
+share/nexuiz/server/rcon2irc/
+share/nexuiz/server/rcon2irc/echo-rcon.pl
+share/nexuiz/server/rcon2irc/fastest_lap.pl
+share/nexuiz/server/rcon2irc/irc_nick_change.pl
+share/nexuiz/server/rcon2irc/joinmessage.pl
+share/nexuiz/server/rcon2irc/joinsparts.pl
+share/nexuiz/server/rcon2irc/ping-pl.pl
+share/nexuiz/server/rcon2irc/raw.pl
+share/nexuiz/server/rcon2irc/rbiserver.pl
+share/nexuiz/server/rcon2irc/rcon2irc-example.conf
+share/nexuiz/server/rcon2irc/rcon2irc.pl
+share/nexuiz/server/rcon2irc/rcon2irc.txt
+share/nexuiz/server/rcon2irc/suggestmap.pl
+share/nexuiz/server/server.cfg
