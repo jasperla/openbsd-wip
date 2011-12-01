@@ -1,0 +1,11 @@
+Example configuration files have been installed in:
+
+	${TRUEPREFIX}/share/nexuiz/server
+
+To start a nexuiz server, use:
+
+	nexuiz-dedicated +serverconfig server.cfg
+
+To start a nexuiz 'Havoc' server:
+
+	nexuiz-dedicated -game havoc +serverconfig server.cfg
