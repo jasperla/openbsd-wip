@@ -1,6 +1,6 @@
 $OpenBSD$
---- Makefile.orig	Thu Feb 17 23:06:58 2011
-+++ Makefile	Thu Feb 17 23:07:26 2011
+--- Makefile.orig	Thu Dec  1 20:01:45 2011
++++ Makefile	Thu Dec  1 20:07:14 2011
 @@ -1,10 +1,10 @@
  # Makefile for dungeon
  
@@ -14,3 +14,12 @@ $OpenBSD$
  
  # The dungeon program provides a ``more'' facility which tries to
  # figure out how many rows the terminal has.  Several mechanisms are
+@@ -42,7 +42,7 @@ TERMFLAG =
+ # GDTFLAG = -DALLOW_GDT
+ 
+ # Compilation flags
+-CFLAGS = -O
++#CFLAGS = -O
+ # On SCO Unix Development System 3.2.2a, the const type qualifier does
+ # not work correctly when using cc.  The following line will cause it
+ # to not be used and should be uncommented.

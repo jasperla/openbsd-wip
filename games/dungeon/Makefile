@@ -27,17 +27,12 @@ BUILD_DEPENDS =		archivers/unzip
 
 ALL_TARGET =		dungeon
 
-do-extract:
-	mkdir -p ${WRKSRC}
-	unzip ${DISTDIR}/${DISTFILES} -d ${WRKSRC}
-	(cd ${WRKSRC}; for _f in *; do mv $${_f} `echo $${_f} | \
-		tr A-Z a-z`; done)
-	mv ${WRKSRC}/makefile ${WRKSRC}/Makefile
-	mv ${WRKSRC}/history ${WRKSRC}/History
-	mv ${WRKSRC}/readme ${WRKSRC}/README
-	mv ${WRKSRC}/manifest ${WRKSRC}/MANIFEST
-	perl -pi -e 's/\015//g' ${WRKSRC}/*
-	perl -pi -e 's/\032//g' ${WRKSRC}/*
+WRKDIST =		${WRKDIR}
+
+post-extract:
+	find ${WRKSRC} -type f | xargs perl -pi -e 's/\015//g; s/\032//g' 
+	(cd ${WRKSRC}; for f in `awk '{ print $$1 }' MANIFEST | tail +3`; do \
+		mv `echo $$f | tr a-z A-Z` $$f; done)
 
 pre-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/dungeon
@@ -45,8 +40,6 @@ pre-install:
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/dungeon.6 ${PREFIX}/man/man6
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dungeon
-.	for _f in History MANIFEST README
-	${INSTALL_DATA} ${WRKSRC}/${_f} ${PREFIX}/share/doc/dungeon
-.	endfor
+	${INSTALL_DATA} ${WRKSRC}/History ${PREFIX}/share/doc/dungeon
 
 .include <bsd.port.mk>

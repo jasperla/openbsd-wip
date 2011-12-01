@@ -3,7 +3,5 @@
 @man man/man6/dungeon.6
 share/doc/dungeon/
 share/doc/dungeon/History
-share/doc/dungeon/MANIFEST
-share/doc/dungeon/README
 share/dungeon/
 share/dungeon/dtextc.dat
