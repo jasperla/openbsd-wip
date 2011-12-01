@@ -16,6 +16,7 @@ games/violetland:	Ready for import. Sent to ports@ 05.07.2011 and 09.09.2011 (ya
 devel/liblastfm:	sent to ports@ Sep 06 2011. Ready for import. (grayed)
 audio/clementine:	sent to ports@ Sep 06 2011. Ready for import. (grayed)
 games/dungeon:		ready, sent to ports some time ago (pstumpf)
+graphics/zint:		Ready. Sent to ports@ 07.04, 14.11 and 28.11 (yason)
 
 Mozilla Updates
 
@@ -36,7 +37,6 @@ textproc/rasqal:	Ready for import. Sent to ports@ October 10, 2011 (grayed)
 textproc/redland:	Ready for import. Sent to ports@ October 10, 2011 (grayed)
 math/qhull:		Ready for import. Sent to ports@ October 14, 2011 (wen heping, amitkulz, nigel)
 math/libqalculate	Ready for import. Sent to ports@ October 24, 2011 (grayed, amitkulz)
-multimedia/libmms	Ready for import. Sent to ports@ October 27, 2011 (amitkulz, grayed)
 
 Moose related
 
