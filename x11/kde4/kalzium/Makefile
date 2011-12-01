@@ -12,7 +12,7 @@ WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtOpenGL lib/qt4/QtScript lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += kdeui khtml kio kjs knewstuff3 kparts
 WANTLIB += kunitconversion nepomuk nepomukutils phonon plasma
-WANTLIB += avogadro boost_python-mt openbabel python2.7
+WANTLIB += avogadro boost_python-mt openbabel ${MODPY_WANTLIB}
 
 LIB_DEPENDS = 	education/avogadro \
 		math/eigen2 \

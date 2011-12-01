@@ -14,7 +14,7 @@ WANTLIB += kcmutils kdeui kdnssd kemoticons kfile khtml
 WANTLIB += kidletime kio kjs knewstuff2 knewstuff3 kparts kprintutils
 WANTLIB += kpty ktexteditor kutils nepomuk nepomukquery nepomukutils
 WANTLIB += phonon plasma solid soprano sopranoclient sopranoserver
-WANTLIB += python2.7
+WANTLIB += ${MODPY_WANTLIB}
 
 MODKDE4_USE =	libs pim
 

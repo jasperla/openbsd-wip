@@ -5,7 +5,7 @@ $OpenBSD$
  if (POPPLER_FOUND)
    include(CheckCXXSourceCompiles)
  
-+  # Unfuck Qt4 linking after QT_USE_IMPORTED_TARGETS set in KDE config
++  # Unbreak Qt4 linking after QT_USE_IMPORTED_TARGETS set in KDE config
 +  set(QT_USE_IMPORTED_TARGETS FALSE)
 +  find_package(Qt4)
 +
