@@ -1,8 +1,8 @@
 @comment $OpenBSD: PLIST-tcl,v 1.3 2011/01/05 16:39:44 stu Exp $
 %%SHARED%%
 lib/tcl/
-lib/tcl/sqlite3.7.8/
-lib/tcl/sqlite3.7.8/pkgIndex.tcl
+lib/tcl/sqlite3.7.9/
+lib/tcl/sqlite3.7.9/pkgIndex.tcl
 share/man/
 share/man/mann/
 @man share/man/mann/sqlite3.n
