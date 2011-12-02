@@ -21,12 +21,12 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		X11 Xext c kvm m pthread util
 
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX}:0 pgw.tar.bz2:1 \
-				roget.tar.bz2:1 scat.tgz:2
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX} pgw.tar.bz2:0 \
+				roget.tar.bz2:0 scat.tgz:1
 DIST_SUBDIR =		plan9port
-MASTER_SITES0 =		${HOMEPAGE}
-MASTER_SITES1 =		http://pdos.lcs.mit.edu/~rsc/software/plan9/
-MASTER_SITES2 =		http://pdos.lcs.mit.edu/~rsc/
+MASTER_SITES =		${HOMEPAGE}
+MASTER_SITES0 =		http://pdos.lcs.mit.edu/~rsc/software/plan9/
+MASTER_SITES1 =		http://pdos.lcs.mit.edu/~rsc/
 EXTRACT_SUFX =		.tgz
 
 BUILD_DEPENDS =		archivers/bzip2
@@ -72,6 +72,7 @@ post-extract:
 
 post-patch:
 	cp ${FILESDIR}/OpenBSD-x86_64-asm.S ${WRKSRC}/src/libthread
+	chmod 644 ${WRKSRC}/src/libthread/OpenBSD-x86_64-asm.S
 	cd ${WRKSRC}/src/libthread && cp Darwin-x86_64-swapcontext.c \
 		OpenBSD-x86_64.c
 	find ${WRKSRC} -name .cvsignore -exec rm -f {} \;
