@@ -3,7 +3,7 @@
 COMMENT-main =	embedded SQL implementation
 COMMENT-tcl =	TCL bindings to Sqlite3
 
-SQLITE_VER =	3.7.8.0
+SQLITE_VER =	3.7.9.0
 DISTNAME=	sqlite-autoconf-${SQLITE_VER:S/./0/g}
 DISTFILES=	sqlite-autoconf-${SQLITE_VER:S/./0/g}.tar.gz 
 
