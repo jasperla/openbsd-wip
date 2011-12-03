@@ -1,0 +1,12 @@
+$OpenBSD$
+--- libs/iovm/tests/correctness/NumberTest.io.orig	Tue Nov 29 20:53:59 2011
++++ libs/iovm/tests/correctness/NumberTest.io	Sat Dec  3 02:13:07 2011
+@@ -31,7 +31,7 @@ NumberTest := UnitTest clone do(
+ 		assertEqualsWithinDelta(31.6227766, 1000 sqrt, 0.00000001)
+ 		n := -10
+ 		assertEquals(10, n abs)
+-		knownBug(assertEquals(10, -10 abs))
++		#knownBug(assertEquals(10, -10 abs))
+ 		assertEquals(10, (-10) abs)
+ 		assertTrue(10 between(9.9999, 10.0001))
+ 		assertEquals(1, 10 log10)
