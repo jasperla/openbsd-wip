@@ -1,13 +1,7 @@
 $OpenBSD$
-Bug 670719 - Only add -DENABLE_JIT=1 to CXXFLAGS if any of trace/method/yarr jit is enabled.
---- js/src/Makefile.in
-+++ js/src/Makefile.in
-@@ -433,16 +433,19 @@ CPPSRCS += \
- 		YarrPattern.cpp \
- 		YarrSyntaxChecker.cpp \
- 		$(NULL)
- else
- 
+--- js/src/Makefile.in.orig	Sun Nov 20 19:44:34 2011
++++ js/src/Makefile.in	Mon Dec  5 10:53:54 2011
+@@ -438,6 +438,9 @@ else
  ###############################################
  # BEGIN include sources for the Nitro assembler
  #
@@ -17,17 +11,7 @@ Bug 670719 - Only add -DENABLE_JIT=1 to CXXFLAGS if any of trace/method/yarr jit
  VPATH += 	$(srcdir)/assembler \
  		$(srcdir)/assembler/wtf \
  		$(srcdir)/assembler/jit \
- 		$(srcdir)/assembler/assembler \
- 		$(srcdir)/methodjit \
- 		$(srcdir)/yarr \
- 		$(NONE)
- 
-@@ -1070,17 +1073,21 @@ endif
- 
- ###############################################
- # BEGIN kludges for the Nitro assembler
- #
- 
+@@ -1081,7 +1084,11 @@ endif
  # Needed to "configure" it correctly.  Unfortunately these
  # flags wind up being applied to all code in js/src, not just
  # the code in js/src/assembler.
@@ -40,8 +24,3 @@ Bug 670719 - Only add -DENABLE_JIT=1 to CXXFLAGS if any of trace/method/yarr jit
  
  INCLUDES +=	-I$(srcdir)/assembler -I$(srcdir)/yarr
  
- ifdef ENABLE_METHODJIT
- # Build a standalone test program that exercises the assembler
- # sources a bit.
- TESTMAIN_OBJS = \
- 		Assertions.$(OBJ_SUFFIX) \
