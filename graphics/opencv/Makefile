@@ -50,7 +50,7 @@ WANTLIB += gtk-x11-2.0 jasper jpeg m mp3lame ogg orc-0.4 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread pthread-stubs
 WANTLIB += schroedinger-1.0 speex stdc++ swscale theoradec theoraenc
 WANTLIB += tiff vorbis vorbisenc vpx x264 xcb xcb-render xcb-shm
-WANTLIB += xml2 z ${MODPY_WANTLIB}
+WANTLIB += xml2 z
 
 MODULES=		devel/cmake \
 			devel/gettext
@@ -64,9 +64,11 @@ FLAVOR?=
 CONFIGURE_ARGS+=	-DBUILD_NEW_PYTHON_SUPPORT:Bool=On \
 			-DINSTALL_PYTHON_EXAMPLES:Bool=On
 
-MODULES=		devel/python
-RUN_DEPENDS-main=	math/py-numpy
+MODULES +=		lang/python
+RUN_DEPENDS +=		math/py-numpy
+BUILD_DEPENDS +=	math/py-numpy
 WANTLIB +=		${MODPY_WANTLIB}
+LIB_DEPENDS +=		${MODPY_LIB_DEPENDS}
 .else
 CONFIGURE_ARGS+=	-DBUILD_NEW_PYTHON_SUPPORT:Bool=Off \
 			-DINSTALL_PYTHON_EXAMPLES:Bool=Off
@@ -103,11 +105,8 @@ CONFIGURE_ARGS+=	-DBUILD_EXAMPLES:Bool=On \
 			-DWITH_1394:Bool=Off \
 			-DWITH_FFMPEG:Bool=On
 
-post-extract:
-	cd ${WRKDIR} && pax -rj -s '/\/\.//g' <${DISTDIR}/${DISTFILES}
-
 post-configure:
-	find ${WRKSRC} -type f -iname "*.make" -exec \
+	@find ${WRKSRC} -type f -iname "*.make" -exec \
 		perl -pi -e 's/(CXX_DEFINES =).*/$1/' {} \;
 
 .include <bsd.port.mk>
