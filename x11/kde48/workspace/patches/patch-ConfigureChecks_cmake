@@ -1,0 +1,11 @@
+$OpenBSD: patch-ConfigureChecks_cmake,v 1.1 2010/06/23 13:11:34 espie Exp $
+--- ConfigureChecks.cmake.orig	Sat May 21 00:32:06 2011
++++ ConfigureChecks.cmake	Mon Sep  5 05:10:28 2011
+@@ -49,6 +49,7 @@ get_filename_component(xrootdir "${XBINDIR}" PATH)
+ set(XLIBDIR "${xrootdir}/lib/X11")
+ 
+ check_function_exists(getpassphrase HAVE_GETPASSPHRASE)
++check_function_exists(readpassphrase HAVE_READPASSPHRASE)
+ check_function_exists(vsyslog HAVE_VSYSLOG)
+ check_function_exists(statvfs HAVE_STATVFS)
+ 

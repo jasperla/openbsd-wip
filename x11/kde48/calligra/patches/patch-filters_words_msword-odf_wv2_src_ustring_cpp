@@ -1,0 +1,12 @@
+$OpenBSD$
+--- filters/words/msword-odf/wv2/src/ustring.cpp.orig	Fri Dec  2 17:23:44 2011
++++ filters/words/msword-odf/wv2/src/ustring.cpp	Fri Dec  2 17:36:05 2011
+@@ -64,7 +64,7 @@ using namespace wvWare;
+ bool wvWare::isNaN(double d)
+ {
+ #ifdef HAVE_FUNC_ISNAN
+-  return isnan(d);
++  return std::isnan(d);
+ #elif defined HAVE_FLOAT_H
+   return _isnan(d) != 0;
+ #else
