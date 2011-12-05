@@ -1,0 +1,20 @@
+$OpenBSD$
+--- core/libs/3rdparty/kmemoryinfo/kmemoryinfo_backend.cpp.orig	Mon Oct  3 14:34:16 2011
++++ core/libs/3rdparty/kmemoryinfo/kmemoryinfo_backend.cpp	Sun Oct 23 06:22:30 2011
+@@ -21,6 +21,8 @@
+  * $Id: memory_stats.c,v 1.36 2010/02/21 10:04:26 tdb Exp $
+  */
+ 
++#include <unistd.h>
++
+ static bool get_mem_stats(Digikam::KMemoryInfo::KMemoryInfoData* data);
+ static bool get_swap_stats(Digikam::KMemoryInfo::KMemoryInfoData* data);
+ 
+@@ -128,7 +130,6 @@ struct uvmexp *sg_get_uvmexp() {
+     int mib[2];
+     size_t size = sizeof(struct uvmexp);
+     static struct uvmexp uvm;
+-    struct uvmexp *new;
+ 
+     mib[0] = CTL_VM;
+     mib[1] = VM_UVMEXP;

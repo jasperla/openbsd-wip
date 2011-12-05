@@ -1,0 +1,22 @@
+$OpenBSD$
+--- CMakeLists.txt.orig	Mon Oct 10 22:34:04 2011
++++ CMakeLists.txt	Mon Oct 10 22:34:34 2011
+@@ -92,11 +92,13 @@ macro_optional_add_bindings(Soprano_FOUND "Soprano" so
+ 
+ macro_optional_add_bindings(Nepomuk_FOUND "Nepomuk" nepomuk)
+ 
+-if(KDEPIMLIBS_FOUND AND Akonadi_FOUND)
+-    set(BUILD_Akonadi TRUE)
+-else(KDEPIMLIBS_FOUND AND Akonadi_FOUND)
+-    set(BUILD_Akonadi FALSE)
+-endif(KDEPIMLIBS_FOUND AND Akonadi_FOUND)
++if(NOT DEFINED BUILD_Akonadi)
++    if(KDEPIMLIBS_FOUND AND Akonadi_FOUND)
++        set(BUILD_Akonadi TRUE)
++    else(KDEPIMLIBS_FOUND AND Akonadi_FOUND)
++        set(BUILD_Akonadi FALSE)
++    endif(KDEPIMLIBS_FOUND AND Akonadi_FOUND)
++endif(NOT DEFINED BUILD_Akonadi)
+ macro_optional_add_bindings(BUILD_Akonadi "Akonadi" akonadi)
+ 
+ macro_display_bindings_log()

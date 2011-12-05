@@ -1,0 +1,29 @@
+$OpenBSD$
+--- krfb/libvncserver/rfbserver.c.orig	Tue Oct 11 14:55:52 2011
++++ krfb/libvncserver/rfbserver.c	Fri Dec  2 15:56:08 2011
+@@ -28,11 +28,9 @@
+ #ifdef __STRICT_ANSI__
+ #define _BSD_SOURCE
+ #endif
+-#include <string.h>
+-#include "rfb/rfb.h"
+-#include "rfb/rfbregion.h"
+-#include "private.h"
+ 
++#include <libvncserver-config.h>
++
+ #ifdef LIBVNCSERVER_HAVE_FCNTL_H
+ #include <fcntl.h>
+ #endif
+@@ -53,6 +51,11 @@
+ #include <arpa/inet.h>
+ #endif
+ #endif
++
++#include <string.h>
++#include "rfb/rfb.h"
++#include "rfb/rfbregion.h"
++#include "private.h"
+ 
+ #ifdef DEBUGPROTO
+ #undef DEBUGPROTO

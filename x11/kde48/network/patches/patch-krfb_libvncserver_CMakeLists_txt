@@ -1,0 +1,26 @@
+$OpenBSD$
+--- krfb/libvncserver/CMakeLists.txt.orig	Tue Oct 11 14:55:52 2011
++++ krfb/libvncserver/CMakeLists.txt	Fri Dec  2 16:48:09 2011
+@@ -30,14 +30,14 @@ option(LIBVNCSERVER_ALLOW24BPP "Allow 24 bpp" ON)
+ # endif(LIBGCRYPT_LIBRARIES)
+ 
+ 
+-check_include_file("fcntl.h"       LIBVNCSERVER_HAVE_FCNTL_H)
+-check_include_file("netinet/in.h"  LIBVNCSERVER_HAVE_NETINET_IN_H)
+-check_include_file("sys/socket.h"  LIBVNCSERVER_HAVE_SYS_SOCKET_H)
+-check_include_file("sys/stat.h"    LIBVNCSERVER_HAVE_SYS_STAT_H)
+-check_include_file("sys/time.h"    LIBVNCSERVER_HAVE_SYS_TIME_H)
+-check_include_file("sys/types.h"   LIBVNCSERVER_HAVE_SYS_TYPES_H)
+-check_include_file("sys/wait.h"    LIBVNCSERVER_HAVE_SYS_WAIT_H)
+-check_include_file("unistd.h"      LIBVNCSERVER_HAVE_UNISTD_H)
++check_include_file("sys/types.h"		LIBVNCSERVER_HAVE_SYS_TYPES_H)
++check_include_file("sys/types.h;fcntl.h"	LIBVNCSERVER_HAVE_FCNTL_H)
++check_include_file("sys/types.h;netinet/in.h"	LIBVNCSERVER_HAVE_NETINET_IN_H)
++check_include_file("sys/types.h;sys/socket.h"	LIBVNCSERVER_HAVE_SYS_SOCKET_H)
++check_include_file("sys/types.h;sys/stat.h"	LIBVNCSERVER_HAVE_SYS_STAT_H)
++check_include_file("sys/types.h;sys/time.h"	LIBVNCSERVER_HAVE_SYS_TIME_H)
++check_include_file("sys/types.h;sys/wait.h"	LIBVNCSERVER_HAVE_SYS_WAIT_H)
++check_include_file("sys/types;unistd.h"		LIBVNCSERVER_HAVE_UNISTD_H)
+ 
+ # headers needed for check_type_size()
+ check_include_file("arpa/inet.h"   HAVE_ARPA_INET_H)

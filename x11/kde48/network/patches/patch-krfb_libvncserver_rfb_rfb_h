@@ -1,0 +1,14 @@
+$OpenBSD$
+--- krfb/libvncserver/rfb/rfb.h.orig	Fri Dec  2 18:15:32 2011
++++ krfb/libvncserver/rfb/rfb.h	Fri Dec  2 18:17:12 2011
+@@ -43,9 +43,8 @@ extern "C"
+ #include <string.h>
+ #include "rfbproto.h"
+ 
+-#ifdef LIBVNCSERVER_HAVE_SYS_TYPES_H
+ #include <sys/types.h>
+-#endif
++#include <netinet/in.h>
+ 
+ #ifdef __MINGW32__
+ #undef SOCKET

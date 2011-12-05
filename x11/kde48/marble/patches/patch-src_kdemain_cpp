@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/kdemain.cpp.ports.orig	Sun Oct 23 18:24:56 2011
++++ src/kdemain.cpp	Sun Oct 23 18:25:30 2011
+@@ -44,7 +44,7 @@ QString readGraphicsSystem( int argc, char *argv[], co
+     KComponentData componentData( aboutData, KComponentData::SkipMainComponentRegistration );
+ 
+     KConfigGroup viewGroup( componentData.config(), "View" );
+-    QString graphicsSystem = viewGroup.readEntry( "graphicsSystem", "RasterGraphics" );
++    QString graphicsSystem = viewGroup.readEntry( "graphicsSystem", "OpenGLGraphics" );
+ 
+     QString graphicsString( "native" );
+     if ( graphicsSystem == QString( "RasterGraphics" ) ) {

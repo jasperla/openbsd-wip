@@ -1,0 +1,34 @@
+$OpenBSD$
+--- libs/lancelot-datamodels/OpenDocuments_p.h.orig	Sun Dec  4 17:15:39 2011
++++ libs/lancelot-datamodels/OpenDocuments_p.h	Sun Dec  4 17:18:18 2011
+@@ -24,8 +24,6 @@
+ #include <taskmanager/taskmanager.h>
+ #include <QSet>
+ 
+-using TaskManager::TaskPtr;
+-
+ namespace Lancelot {
+ namespace Models {
+ 
+@@ -44,16 +42,16 @@ class OpenDocuments::Private : public QObject { (publi
+ 
+ public Q_SLOTS:
+     void taskChanged();
+-    void taskAdded(TaskPtr task);
+-    void taskRemoved(TaskPtr task);
++    void taskAdded(::TaskManager::Task *task);
++    void taskRemoved(::TaskManager::Task *task);
+ 
+-    void connectTask(TaskPtr task);
+-    bool setDataForTask(TaskPtr task);
++    void connectTask(::TaskManager::Task *task);
++    bool setDataForTask(::TaskManager::Task *task);
+ 
+     int indexOf(WId wid);
+ 
+ public:
+-    QMap <WId, TaskPtr > tasks;
++    QMap <WId, TaskManager::Task *> tasks;
+     QList <SupportedTask> supportedTasks;
+ 
+ private:
