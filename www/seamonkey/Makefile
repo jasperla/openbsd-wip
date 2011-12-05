@@ -13,9 +13,8 @@ MOZILLA_CODENAME =	suite
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-seamonkey-1.0beta8
-ENIG_V =		1.3.3
+ENIG_V =		1.3.4
 PKGNAME-enigmail =	enigmail-seamonkey-${ENIG_V}
-REVISION-enigmail =	0
 EPOCH-lightning =	0
 
 SO_VERSION=	21.0

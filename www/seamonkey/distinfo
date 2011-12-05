@@ -1,4 +1,4 @@
-MD5 (mozilla/enigmail-1.3.3.tar.gz) = 9iz2tXTtNKVQBpqzOdFcWQ==
+MD5 (mozilla/enigmail-1.3.4.tar.gz) = K18Yh5GBHSSLb/H8UaWAag==
 MD5 (mozilla/seamonkey-2.5.be.langpack.xpi) = hl9PEspBW+WXgazlIg1VHg==
 MD5 (mozilla/seamonkey-2.5.ca.langpack.xpi) = gXiB4XwfH1nmV6GtnBT8OQ==
 MD5 (mozilla/seamonkey-2.5.cs.langpack.xpi) = Ujl/nI2iz0NlvFJxGBZ0mw==
@@ -24,7 +24,7 @@ MD5 (mozilla/seamonkey-2.5.source.tar.bz2) = 8PDdZSrV7pRY2GrrYmYVvQ==
 MD5 (mozilla/seamonkey-2.5.sv-SE.langpack.xpi) = af+Fa+JJuxiZGpkmU8qORA==
 MD5 (mozilla/seamonkey-2.5.tr.langpack.xpi) = wKOC9U27dcbC2ZDMzCyIzw==
 MD5 (mozilla/seamonkey-2.5.zh-CN.langpack.xpi) = D/05LeUnnFwke/hb2/MOtg==
-RMD160 (mozilla/enigmail-1.3.3.tar.gz) = THq3JgUrVm+RNhLPvddncUSGv5w=
+RMD160 (mozilla/enigmail-1.3.4.tar.gz) = VpGmRDaJggODUsnaRaYzynLoXDY=
 RMD160 (mozilla/seamonkey-2.5.be.langpack.xpi) = 718U/nU5sbxvBq14vq181+4rxwc=
 RMD160 (mozilla/seamonkey-2.5.ca.langpack.xpi) = DrTFVcZh61zBxo8EJWLVhsCpMKg=
 RMD160 (mozilla/seamonkey-2.5.cs.langpack.xpi) = o/PVaYx2Fyh9JwAbVMOK6lTYVFY=
@@ -50,7 +50,7 @@ RMD160 (mozilla/seamonkey-2.5.source.tar.bz2) = geDy2OOkJQRJKqp1GMa3hlJ+MEY=
 RMD160 (mozilla/seamonkey-2.5.sv-SE.langpack.xpi) = lDAvXhD3kohOC1Du6BTQkwrZOZU=
 RMD160 (mozilla/seamonkey-2.5.tr.langpack.xpi) = bVUCcZMNweqA0fecdx3EMsOa0gQ=
 RMD160 (mozilla/seamonkey-2.5.zh-CN.langpack.xpi) = zvZZihNMXTrUttxIaJTyL3krREw=
-SHA1 (mozilla/enigmail-1.3.3.tar.gz) = ptYbbb3P2w3E6qiqwbYnf+1lyMU=
+SHA1 (mozilla/enigmail-1.3.4.tar.gz) = YB7H5OjrGnMtJtZQOSaAtEFbVrk=
 SHA1 (mozilla/seamonkey-2.5.be.langpack.xpi) = ApkdGjLsfCEfG7BpBljraRJlIgc=
 SHA1 (mozilla/seamonkey-2.5.ca.langpack.xpi) = Iv4HpY4NO7Kz18rKVILZ+BGWXpA=
 SHA1 (mozilla/seamonkey-2.5.cs.langpack.xpi) = uiQvEhmhItetA6tCRXAaNIHBnkg=
@@ -76,7 +76,7 @@ SHA1 (mozilla/seamonkey-2.5.source.tar.bz2) = dWp/V3tdHCS8W1zq0KYm/aZSzg4=
 SHA1 (mozilla/seamonkey-2.5.sv-SE.langpack.xpi) = 3lEieMvJqJ9WivN7WGV0iFPeZ04=
 SHA1 (mozilla/seamonkey-2.5.tr.langpack.xpi) = CHBcD2AGx0JRVFqrSbgF+exg+hI=
 SHA1 (mozilla/seamonkey-2.5.zh-CN.langpack.xpi) = 7a9Ue90IM+QDS6rvR/OfSLnUC6A=
-SHA256 (mozilla/enigmail-1.3.3.tar.gz) = cRDS8O6oqadYDdwTq1bCYrvTN3br3DSrGeyQFD8BC+Y=
+SHA256 (mozilla/enigmail-1.3.4.tar.gz) = lnscP/JNh6sFIHr/b0CtqgazAvnnU8ABKJbkf373XDk=
 SHA256 (mozilla/seamonkey-2.5.be.langpack.xpi) = tYz4jQJk7jqiBExZb5ruhu51GR0z/T6sUhk2TRyAgOI=
 SHA256 (mozilla/seamonkey-2.5.ca.langpack.xpi) = /jnWN0QjAego4SU/J64FC5lcZz5dIK3xMuBtvGFJZOE=
 SHA256 (mozilla/seamonkey-2.5.cs.langpack.xpi) = Lga0ZUP83b+aO/grtxgKmVYZBsJ4WYsm4cjnRhs31SA=
@@ -102,7 +102,7 @@ SHA256 (mozilla/seamonkey-2.5.source.tar.bz2) = UNYUbyDTIh+sA2b2ZHlW4UJ0mJHb1BH4
 SHA256 (mozilla/seamonkey-2.5.sv-SE.langpack.xpi) = 2zqOk59L7qEK9s18guXT6XYUWprBlqeaDM/uPx4XR+o=
 SHA256 (mozilla/seamonkey-2.5.tr.langpack.xpi) = E+pfPoUjr3S4OM4ycVCfB9YZgczrvPGss4v5Ctz0RKY=
 SHA256 (mozilla/seamonkey-2.5.zh-CN.langpack.xpi) = S4x6t7sI0N1CnC9EHs+lzDozvNJJQvFQGiXKcn9G+Tc=
-SIZE (mozilla/enigmail-1.3.3.tar.gz) = 1367995
+SIZE (mozilla/enigmail-1.3.4.tar.gz) = 1369381
 SIZE (mozilla/seamonkey-2.5.be.langpack.xpi) = 795233
 SIZE (mozilla/seamonkey-2.5.ca.langpack.xpi) = 813814
 SIZE (mozilla/seamonkey-2.5.cs.langpack.xpi) = 819090
