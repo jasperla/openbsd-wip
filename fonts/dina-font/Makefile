@@ -1,0 +1,39 @@
+# $OpenBSD: $
+
+COMMENT =		A monospace bitmap font, primarily aimed at programmers
+
+V =			2.89
+PKGNAME =		dina-font-$V
+DISTNAME =		dina-pcf-$V
+CATEGORIES =		fonts
+
+HOMEPAGE =		http://www.donationcoder.com/Software/Jibz/Dina/index.html
+
+MAINTAINER =		Rafael Sadowski <rafael@sizeofvoid.org>
+
+# FREE (c) Jorgen Ibsen
+PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE_FTP =		Yes
+PERMIT_DISTFILES_CDROM =	Yes
+PERMIT_DISTFILES_FTP =		Yes
+
+MASTER_SITES =		http://ftp.fi.debian.org/gentoo/distfiles/
+EXTRACT_SUFX =		.tar.gz
+
+NO_BUILD =		Yes
+NO_REGRESS =		Yes
+
+FONTDIR=	${PREFIX}/lib/X11/fonts/dina
+
+WRKSRC =	${WRKDIR}/Dina-PCF
+
+do-install:
+	${GZIP_CMD} ${WRKSRC}/*.pcf
+	${X11BASE}/bin/mkfontdir ${WRKSRC}
+	egrep '\.pcf\.gz' ${WRKSRC}/fonts.dir | \
+		sed 's/\.pcf\.gz//g' > ${WRKSRC}/fonts.alias
+	${INSTALL_DATA_DIR} ${FONTDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.pcf.gz ${FONTDIR}
+	${INSTALL_DATA} ${WRKSRC}/fonts.alias ${FONTDIR}/fonts.alias-dina
+
+.include <bsd.port.mk>
