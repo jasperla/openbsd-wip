@@ -1,6 +1,1 @@
-- test on other arch. Just tested on amd64
-- SHARED_LIBS is incremented to 1.0
-
-- IMPORTANT:
-Extraction fails:
-Vadim Zhukov fixed the extraction failure and the build failure on amd64
+- check python FLAVOR
