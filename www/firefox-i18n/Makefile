@@ -5,7 +5,7 @@ ONLY_FOR_ARCHS=	amd64 i386 powerpc
 
 PKG_ARCH=	*
 
-V=		8.0
+V=		8.0.1
 NAME=		firefox-i18n
 PKGNAME=	${NAME}-${V}
 
