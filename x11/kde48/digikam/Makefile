@@ -84,13 +84,15 @@ BUILD_DEPENDS =		devel/boost \
 
 RUN_DEPENDS-main =	devel/desktop-file-utils \
 			databases/mysql,-server \
-			misc/shared-desktop-ontologies
+			misc/shared-desktop-ontologies \
+			x11/gtk+2,-guic
 
 RUN_DEPENDS-kipi =	${MODGETTEXT_RUN_DEPENDS} \
 			devel/desktop-file-utils \
-			misc/shared-desktop-ontologies
+			misc/shared-desktop-ontologies \
+			x11/gtk+2,-guic
 
-RUN_DEPENDS-geomap =		
+RUN_DEPENDS-geomap =	x11/gtk+2,-guic
 
 RUN_DEPENDS-vkontakte =	x11/kde48/runtime
 
