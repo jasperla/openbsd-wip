@@ -1,7 +1,0 @@
-@comment $OpenBSD$
-@bin bin/dungeon
-@man man/man6/dungeon.6
-share/doc/dungeon/
-share/doc/dungeon/History
-share/dungeon/
-share/dungeon/dtextc.dat
