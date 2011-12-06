@@ -11,5 +11,6 @@ WANTLIB += lib/qt4/QtXml
 WANTLIB += kdeui kio
 
 MODKDE4_USE =	libs
+RUN_DEPENDS =	x11/gtk+2,-guic
 
 .include <bsd.port.mk>
