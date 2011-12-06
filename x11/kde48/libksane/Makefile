@@ -13,5 +13,6 @@ WANTLIB += sane
 MODKDE4_USE =	libs
 
 LIB_DEPENDS = 	graphics/sane-backends
+RUN_DEPENDS = 	x11/gtk+2,-guic
 
 .include <bsd.port.mk>
