@@ -71,7 +71,8 @@ RUN_DEPENDS =	misc/shared-mime-info \
 		misc/shared-desktop-ontologies \
 		sysutils/gamin,-server \
 		STEM->=${MODKDE4_VERSION}:x11/kde48/oxygen-icons \
-		x11/dbus
+		x11/dbus \
+		x11/gtk+2,-guic
 
 LIB_DEPENDS =	archivers/bzip2 \
 		archivers/xz \

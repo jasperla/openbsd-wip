@@ -3468,17 +3468,14 @@ share/examples/xdg/
 share/examples/xdg/menus/
 share/examples/xdg/menus/applications.menu
 @sample ${SYSCONFDIR}/xdg/menus/applications.menu
-share/icons/hicolor/16x16/actions/
 share/icons/hicolor/16x16/actions/presence_away.png
 share/icons/hicolor/16x16/actions/presence_offline.png
 share/icons/hicolor/16x16/actions/presence_online.png
 share/icons/hicolor/16x16/actions/presence_unknown.png
-share/icons/hicolor/32x32/actions/
 share/icons/hicolor/32x32/actions/presence_away.png
 share/icons/hicolor/32x32/actions/presence_offline.png
 share/icons/hicolor/32x32/actions/presence_online.png
 share/icons/hicolor/32x32/actions/presence_unknown.png
-share/icons/hicolor/48x48/actions/
 share/icons/hicolor/48x48/actions/presence_away.png
 share/icons/hicolor/48x48/actions/presence_offline.png
 share/icons/hicolor/48x48/actions/presence_online.png
@@ -3600,3 +3597,5 @@ share/mime/packages/kde.xml
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true

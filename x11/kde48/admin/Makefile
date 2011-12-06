@@ -15,6 +15,7 @@ BUILD_DEPENDS =	x11/kde48/py-kde \
 		print/system-config-printer
 
 RUN_DEPENDS =	x11/kde48/py-kde \
+		x11/gtk+2,-guic \
 		print/py-cups \
 		print/system-config-printer
 
