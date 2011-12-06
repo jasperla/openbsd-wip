@@ -64,6 +64,7 @@ BUILD_DEPENDS =	devel/boost \
 		x11/kde48/akonadi \
 
 LIB_DEPENDS =	x11/grantlee
+RUN_DEPENDS +=	x11/gtk+2,-guic
 
 WANTLIB =  c m pthread stdc++ z
 WANTLIB += X11 Xss
