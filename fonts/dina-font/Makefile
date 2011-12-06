@@ -1,24 +1,23 @@
-# $OpenBSD: $
+# $OpenBSD$
 
-COMMENT =		A monospace bitmap font, primarily aimed at programmers
+COMMENT =		monospace bitmap font, primarily aimed at programmers
 
 V =			2.89
 PKGNAME =		dina-font-$V
 DISTNAME =		dina-pcf-$V
 CATEGORIES =		fonts
 
-HOMEPAGE =		http://www.donationcoder.com/Software/Jibz/Dina/index.html
+HOMEPAGE =		http://www.donationcoder.com/Software/Jibz/Dina/
 
 MAINTAINER =		Rafael Sadowski <rafael@sizeofvoid.org>
 
-# FREE (c) Jorgen Ibsen
-PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
+# FREE (c) Jorgen Ibsen (Though no license included in distribution)
+PERMIT_PACKAGE_CDROM =		No
+PERMIT_PACKAGE_FTP =		No
+PERMIT_DISTFILES_CDROM =	No
+PERMIT_DISTFILES_FTP =		No
 
 MASTER_SITES =		http://ftp.fi.debian.org/gentoo/distfiles/
-EXTRACT_SUFX =		.tar.gz
 
 NO_BUILD =		Yes
 NO_REGRESS =		Yes
