@@ -1,0 +1,63 @@
+$deck: patch-mountfunc_sh,v 1.2 2010/09/30 06:45:23 dukzcry Exp $
+--- mountfunc.sh.orig	Thu Sep 23 15:33:30 2010
++++ func/mountfunc.sh	Thu Sep 23 15:39:25 2010
+@@ -1,8 +1,6 @@
+ mount_device()
+ {
+     typeset bbdevice
+-    echo "$(grep '\(cdrom\|dvd\|cdrw\|cdwriter\)' /etc/fstab)"
+-    #grep cdrom /etc/fstab | sort && grep dvd /etc/fstab | sort
+     echo; echo $bb_mnt_ch1_1
+     echo $bb_mnt_ch1_2
+     echo $bb_mnt_ch1_3
+@@ -14,7 +12,7 @@ mount_device()
+ 	message "$bb_mnt_ch1_5"
+     else
+ 	echo "$bb_mnt_ch1_6${bbdevice}..."
+-	if mount ${bbdevice} &> /dev/null	# FIXME:
++	if sudo mount ${BBCDROM} ${bbdevice} &> /dev/null	# FIXME:
+ 	then
+ 	    message "${bbdevice}$bb_mnt_ch1_7"
+ 	else
+@@ -25,22 +23,15 @@ mount_device()
+ 
+ umount_device()
+ {
+-    typeset bbdevice
+-    if (( $(grep -c '\(cdrom\|dvd\|cdrw\|cdwriter\)' /etc/mtab) == 0 ))
+-    then
+-	echo $bb_mnt_ch2_1
+-    else
+-	echo "$(grep '\(cdrom\|dvd\|cdrw\|cdwriter\)' /etc/mtab)"
+-	echo -e "\n$bb_mnt_ch2_2"
+-	echo -n "|> "
+-	read -e bbdevice
+-	if umount ${bbdevice} &> /dev/null
++    echo -e "\n$bb_mnt_ch2_2"
++    echo -n "|> "
++    read -e bbdevice
++    if sudo umount -f ${bbdevice} &> /dev/null
+ 	then
+ 	    echo "${bbdevice}$bb_mnt_ch2_3"
+ 	else
+ 	    echo $bb_mnt_ch2_4
+ 	    echo $bb_mnt_ch2_5
+-	fi
+     fi
+     wait_for_enter
+ }
+@@ -48,12 +39,9 @@ umount_device()
+ eject_device()
+ {
+     typeset bbdevice
+-    echo "$(grep '\(cdrom\|dvd\|cdrw\|cdwriter\)' /etc/fstab)"
+-    #grep cdrom /etc/fstab | sort && grep dvd /etc/fstab | sort
+-    echo $bb_mnt_ch3_1
+-    echo $bb_mnt_ch3_1b
+-    echo -n "|> "
++    echo -n "Press any key to continue... "
+     read -e bbdevice
++    bbdevice=${BBCDROM}
+     if [[ -z "$bbdevice" ]]
+     then
+ 	echo $bb_mnt_ch3_1c

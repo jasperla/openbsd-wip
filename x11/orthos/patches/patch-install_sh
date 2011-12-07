@@ -1,0 +1,20 @@
+$deck: patch-install_sh,v 1.1 2010/09/30 16:20:49 dukzcry Exp $
+--- install.sh.orig	Thu Sep 30 11:51:41 2010
++++ install.sh	Thu Sep 30 11:52:06 2010
+@@ -1,16 +1,7 @@
+ #!/bin/sh
+-CP='cp -v'
++CP='cp'
+ pfx=${PREFIX:-/usr/local}
+ dest=${DEST:-}
+ scons
+ $CP ./orthos ${dest}${pfx}/bin/orthos
+-$CP ./oskintest ${dest}${pfx}/bin/oskintest
+-mkdir -p ${dest}${pfx}/lib/orthos
+-$CP ./skins/*.so ${dest}${pfx}/lib/orthos/
+-
+-conffile="${dest}/etc/orthos.conf"
+-echo > ${conffile}
+-echo -e "sessions\tfailsafe:/usr/bin/xterm:clock:/usr/bin/xclock" >> ${conffile}
+-echo -e "Xserver\t/usr/bin/Xorg" >> ${conffile}
+-echo -e "skin\t$pfx/lib/orthos/libdefault.so" >> ${conffile}

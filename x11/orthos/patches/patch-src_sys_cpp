@@ -1,0 +1,197 @@
+$deck: patch-src_sys_cpp,v 1.2 2010/10/06 16:00:58 dukzcry Exp $
+--- src/sys.cpp.orig	Wed Oct  6 11:53:24 2010
++++ src/sys.cpp	Wed Oct  6 18:22:30 2010
+@@ -6,7 +6,20 @@
+  * [exa]
+  */
+ 
++/* Securing orthos by feeding data into xauth via pipe, not via shell args.
++ * Comes from http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=529306
++ * rework for slim DM. Original code of xauth rework and new, more
++ * secure MIT magic cookie generation that uses random()/srandom() calls
++ * by Eugene Ryabinkin <rea@shadow.codelabs.ru> */
++ 
++/* Do setlogin(). Some software use getlogin() to decide the user name, so
++ * when user is using orthos as the login manager, those software would get
++ * wrong results, and some programs refuse to start. Seen with OpenCVS. 
++ * Hint by the guenter@cvs, implementation for slim DM by Jonathan Armani.
++ */
++
+ #include "sys.h"
++#include "signal.h"
+ #include "settings.h"
+ #include "orthos.h"
+ //#define _GNU_SOURCE
+@@ -17,7 +30,6 @@
+ #include <errno.h>
+ 
+ #include <unistd.h>
+-#include <shadow.h>
+ #include <pwd.h>
+ #include <grp.h>
+ 
+@@ -47,22 +59,32 @@ using namespace std;
+ 
+ static Display* active_display;
+ static pid_t server_pid = 0;
+-static char magic_cookie[] = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
++static string magic_cookie = string(32, 'a'); // Must be divisible by 4
+ 
+ static void generate_magic_cookie()
+ {
+-	static bool random_initd = 0;
+-
+-	if (!random_initd) {
+-		struct timeval tv;
+-		struct timezone tz;
+-		gettimeofday (&tv, &tz);
+-		srand (tv.tv_sec ^ tv.tv_usec);
+-		random_initd = 1;
++	uint16_t word;
++	uint8_t hi, lo;
++	const char *p = "0123456789abcdef";
++	
++	struct timespec ts;
++	long pid = getpid();
++	long tm = time(NULL);
++	
++	if (clock_gettime(CLOCK_MONOTONIC, &ts) != 0) {
++		ts.tv_sec = ts.tv_nsec = 0;
+ 	}
+-
+-	char p[] = "0123456789abcdef";
+-	for (int i = 0; i < 32;++i) magic_cookie[i] = p[rand() %16];
++	
++	srandom(pid + tm + (ts.tv_sec & ts.tv_nsec));
++	for (int i = 0; i < 32; i += 4) {
++		word = random() & 0xffff;
++		lo = word & 0xff;
++		hi = word >> 8;
++		magic_cookie[i] = p[lo & 0x0f];
++		magic_cookie[i+1] = p[lo >> 4];
++		magic_cookie[i+2] = p[hi & 0x0f];
++		magic_cookie[i+3] = p[hi >> 4];
++	}
+ }
+ 
+ static int server_timeout (int time)
+@@ -101,24 +123,22 @@ static int wait_for_server()
+ 	return 1; //timeout
+ }
+ 
+-static int add_xauth (const char*fn)
++static bool add_xauth (const char*fn)
+ {
+ 	unlink (fn);
+-	string cmd =
+-	    string (XAUTH_PATH) + " -q -f " + fn +
+-	    " add " + SERVER_DISPLAY +
+-	    " . " + magic_cookie;
+-
+-	/*
+-	 * note: system() may possibly fail to set xauth.
+-	 * but then the process might get ressurected somehow
+-	 * by some client scripts, so we don't suppose that
+-	 * it's all doomed.
+-	 *
+-	 * Also, auth number could be possibly seen in ps ax.
+-	 * too bad. lol.
+-	 */
+-	return system (cmd.c_str() );
++	
++	FILE *fp;
++	string cmd = string(XAUTH_PATH) + " -f " + fn + " -q";
++	
++	fp = popen(cmd.c_str(), "w");
++	if (!fp)
++		return false;
++	fprintf(fp, "remove %s\n", SERVER_DISPLAY);
++	fprintf(fp, "add %s %s %s\n", SERVER_DISPLAY, ".", magic_cookie.c_str());
++	fprintf(fp, "exit\n");
++		
++	pclose(fp);
++	return true;
+ }
+ 
+ static void signal_handler (int n)
+@@ -171,7 +191,7 @@ int x_server_start ()
+ 
+ 	pid_t p = fork();
+ 	if (!p) { //spawned process
+-		if (add_xauth (SERVER_AUTH) ) exit (-2);
++		if (!add_xauth (SERVER_AUTH) ) exit (-2);
+ 		//close(0);
+ 		//close(1);
+ 		//close(2);
+@@ -273,31 +293,17 @@ int x_get_resolution (int*x, int*y)
+ int sys_auth_user (const char*username, const char*password)
+ {
+ 	struct passwd*pw;
+-	struct spwd*sp;
+-	char*encrypted, *correct;
+-
++	
+ 	pw = getpwnam (username);
+-	endpwent();
+-
+ 	if (!pw) return 1; //user doesn't really exist
+-
+-	sp = getspnam (pw->pw_name);
+-	endspent();
+-	if (sp)
+-		correct = sp->sp_pwdp;
+-	else
+-		correct = pw->pw_passwd;
+-
+-	encrypted = crypt (password, correct);
+-	return strcmp (encrypted, correct) ? 2 : 0;  // bad pw=2, success=0
++	
++	return strcmp(pw->pw_passwd, crypt(password, pw->pw_passwd)) ? 2 : 0; // bad pw=2, success=0
+ }
+ 
+ int sys_do_login_user (const char*username, const char*session)
+ {
+ 	if (!server_pid) return -2; //server lack lol.
+ 	x_server_blank();
+-	XCloseDisplay (active_display); //server killing protection
+-	active_display = 0;
+ 
+ 	struct passwd*pw;
+ 
+@@ -308,7 +314,7 @@ int sys_do_login_user (const char*username, const char
+ 	//check against empty shells
+ 	if (pw->pw_shell[0] == 0) {
+ 		setusershell();
+-		strcpy (pw->pw_shell, getusershell() );
++		strlcpy (pw->pw_shell, getusershell(), strlen(pw->pw_shell));
+ 		endusershell();
+ 	}
+ 
+@@ -333,7 +339,9 @@ int sys_do_login_user (const char*username, const char
+ 
+ 		//switch UID and stuff
+ 
+-		if	(initgroups (pw->pw_name, pw->pw_gid) ||
++		if	( (setsid() == -1) ||
++			(setlogin(pw->pw_name)) ||
++			(initgroups (pw->pw_name, pw->pw_gid)) ||
+ 		        setgid (pw->pw_gid) ||
+ 		        setuid (pw->pw_uid) )
+ 
+@@ -360,7 +368,7 @@ int sys_do_login_user (const char*username, const char
+ 	killpg (server_pid, SIGHUP);
+ 
+ 	sleep (1); //so we dont get killed along
+-
++	
+ 	active_display = XOpenDisplay (SERVER_DISPLAY);
+ 	if (!active_display) return -3;
+ 
+@@ -374,6 +382,7 @@ int sys_exec (const char*cmd, const char*shell, bool l
+ 	 * it's not the fastest, but surely the cleanest way.
+ 	 */
+ 
++	extern char **environ;
+ 	string a = "exec ";
+ 	a += cmd;
+ 	char*args[] = {login ? (char*) ( (string ("-") + shell).c_str() ) : (char*) shell, (char*) "-c", (char*) (a.c_str() ), 0};
