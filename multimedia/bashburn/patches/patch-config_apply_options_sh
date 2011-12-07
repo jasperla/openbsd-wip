@@ -1,0 +1,20 @@
+--- apply_options.sh.orig	Mon Oct  4 14:18:00 2010
++++ config/apply_options.sh	Mon Oct  4 14:19:22 2010
+@@ -1,7 +1,7 @@
+ apply_options()
+ {
+     # Write all the options out to replace the bashburnrc.
+-    typeset bbtempfile=$(mktemp bashburn_apply_opts.XXXXXX)
++    typeset bbtempfile=$(mktemp /tmp/bashburn_apply_opts.XXXXXX)
+     typeset trimval
+     typeset ii
+     #Apply changes
+@@ -23,7 +23,7 @@ conf_set_aval()
+     typeset line
+     typeset oldIFS="$IFS"
+     typeset IFS="$oldIFS"
+-    typeset -r tmpfile=$(mktemp 'bbcfg.XXXXXX')
++    typeset -r tmpfile=$(mktemp '/tmp/bbcfg.XXXXXX')
+     typeset varname
+     typeset -i found	# Set if the option was found in the changed descriptors.
+     typeset -i didsomething=0	# Set if there were any mods at all.

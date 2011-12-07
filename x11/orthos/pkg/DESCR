@@ -1,0 +1,6 @@
+Orthos is a lightweight-but-cool display manager for X11. It provides
+workstations with an accelerated graphical login, which doesn't depend on big
+libraries (gtk/qt), and is not connected with any specific window manager.
+
+Orthos is meant to be OpenGL-accelerated, and supports skins in the form of
+dynamically loaded libraries.
