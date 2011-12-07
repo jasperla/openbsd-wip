@@ -1,0 +1,8 @@
+BashBurn is a cd burning shell script-wrapper capable of doing various things
+with tools like growisofs, cdrecord to make recording process easier. It looks
+CLI app like cdrecord and similar utils but has easy-to-go dialog interface and
+save your time, because you don't need to look any new option for your recording
+tool in manuals.
+
+Available flavors:
+	audio - install audio burning/ripping dependencies

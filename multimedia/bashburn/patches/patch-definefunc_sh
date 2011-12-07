@@ -1,0 +1,21 @@
+$deck: patch-definefunc_sh,v 1.2 2010/09/30 06:45:23 dukzcry Exp $
+--- definefunc.sh.orig	Thu Sep 23 14:43:54 2010
++++ func/definefunc.sh	Thu Sep 23 15:00:13 2010
+@@ -22,7 +22,7 @@ view_contents()
+     else
+ #	ls -lhgG --color ${BBBURNDIR} # Nick - I prefer this so symlinks show... comments?
+ #	ls -lhgGL --color ${BBBURNDIR} 
+-	ls -L --color ${BBBURNDIR} # Just list files without extra info - Anders
++	ls -aL ${BBBURNDIR} # Just list files without extra info - Anders
+ 	display_burndir_size
+     fi
+ }
+@@ -34,7 +34,7 @@ delete_data()
+     then
+ 	echo "$bb_dc_ch3_4 ${BBBURNDIR}"
+     else
+-	ls -lhgGL --color ${BBBURNDIR}
++	ls -alhgL ${BBBURNDIR}
+ 	echo -en "\n$bb_dc_ch3_1"
+ 	read -e choice
+ 	if [[ "$choice" = y ]]

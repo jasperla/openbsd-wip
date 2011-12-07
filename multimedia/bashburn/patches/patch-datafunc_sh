@@ -1,0 +1,27 @@
+$deck: patch-datafunc_sh,v 1.2 2010/09/30 06:45:23 dukzcry Exp $
+--- datafunc.sh.orig	Mon Sep 20 21:10:02 2010
++++ func/datafunc.sh	Tue Sep 21 22:12:25 2010
+@@ -21,8 +21,11 @@ insert_new_CD()
+ copy_data_cd()
+ {
+     typeset -i doit=0
++    mountpipe=`find ${BBCDMNT} | wc -l`
+ 
+-    if ( grep -q $BBCDMNT /etc/mtab )
++    # Looks like OpenBSD doesn't have mtab, so we check by counting
++    # files in mount dir
++    if (( ${mountpipe} > 1 ))
+     then
+         # Data appears to be mounted, so start here.
+ 	if (( ${BBNUMDEV} == 2 ))
+@@ -40,8 +43,8 @@ copy_data_cd()
+ 	    if ${BB_READCD} ${BB_READCD_OPTS} \
+ 		    -o ${BBBURNDIR}/BashBurn.iso ${BBCDMNT}
+ 	    then
+-		umount $BBCDMNT
+-		eject
++		sudo umount $BBCDMNT
++		eject ${BBCDWRITER}
+ 		insert_new_CD
+ 		if check_cd_status
+ 		then

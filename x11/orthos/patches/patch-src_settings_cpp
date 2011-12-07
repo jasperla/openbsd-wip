@@ -1,0 +1,21 @@
+--- settings.cpp.orig	Mon Oct  4 16:52:38 2010
++++ src/settings.cpp	Mon Oct  4 16:53:17 2010
+@@ -19,14 +19,14 @@ static int load_defaults()
+ {
+ 	config["autologin"] = "no";
+ 	config["display"] = ":0";
+-	config["Xserver"] = "/usr/bin/X";
++	config["Xserver"] = "/usr/X11R6/bin/X";
+ 	config["server_args"] = "";
+-	config["Xauth"] = "/usr/bin/xauth";
++	config["Xauth"] = "/usr/X11R6/bin/xauth";
+ 	config["server_auth"] = "/var/run/orthos.auth";
+ 	config["default_path"] = "/usr/local/bin:/usr/bin:/bin";
+ 	config["sessions"] =
+-	    "failsafe:/usr/bin/xterm";
+-	config["skin"] = "/etc/orthos.skin";
++	    "failsafe:/usr/X11R6/bin/xterm";
++	config["skin"] = "/usr/local/share/orthos/skins/libdefault.so";
+ 
+ 	return 0;
+ }
