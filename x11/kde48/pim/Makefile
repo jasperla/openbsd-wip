@@ -73,16 +73,16 @@ WANTLIB += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtOpenGL
 WANTLIB += lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml
 WANTLIB += akonadi-calendar akonadi-contact akonadi-kde akonadi-kmime
-WANTLIB += akonadiprotocolinternals kabc>=5 kblog kcal kcalcore
+WANTLIB += akonadiprotocolinternals kabc>=5 kalarmcal kblog kcal kcalcore
 WANTLIB += kcalutils kcmutils kde3support kdeui kdewebkit
-WANTLIB += kdnssd kfile kholidays khtml kidletime kimap kio kjs kldap
+WANTLIB += kdnssd kfile kholidays khtml kimap kio kjs kldap
 WANTLIB += kmbox kmime knewstuff3 knotifyconfig kontactinterface kparts
 WANTLIB += kpimidentities kpimtextedit kpimutils kprintutils kresources
 WANTLIB += ktexteditor ktnef mailtransport nepomuk nepomukquery
-WANTLIB += nepomukutils phonon plasma solid soprano sopranoclient
+WANTLIB += nepomukutils phonon plasma solid soprano
 WANTLIB += streamanalyzer streams syndication
 WANTLIB += assuan gpg-error gpgme++ gpgme++-pthread gpgme-pthread
-WANTLIB += grantlee_core grantlee_gui qgpgme sasl2
+WANTLIB += grantlee_core grantlee_gui qgpgme sasl2 prison
 
 WRONG_SYSCONF_FILES =	dbus-1	share/examples
 
