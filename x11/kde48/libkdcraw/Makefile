@@ -17,4 +17,6 @@ LIB_DEPENDS = 	x11/kde48/libkipi \
 		graphics/lcms \
 		graphics/jpeg
 
+RUN_DEPENDS = 	x11/gtk+2,-guic
+
 .include <bsd.port.mk>
