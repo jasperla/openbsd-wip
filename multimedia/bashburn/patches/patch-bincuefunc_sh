@@ -1,0 +1,19 @@
+$deck: patch-bincuefunc_sh,v 1.2 2010/09/30 06:45:23 dukzcry Exp $
+--- bincuefunc.sh.orig	Thu Sep 23 12:03:53 2010
++++ func/bincuefunc.sh	Thu Sep 23 12:40:58 2010
+@@ -5,10 +5,11 @@ burn_bincue()
+     (( "${BBSPEED}" -eq -1 )) && bbspeed=8 || bbspeed=$BBSPEED
+ 
+     shopt -s nocaseglob
+-    if ${BB_CDIMAGECMD} write --device \"${BBCDWRITER}\" \
+-	    --driver generic-mmc --speed \"${bbspeed}\" \
+-	    -v 2 --eject \
+-	    "${BBBURNDIR}"/$(ls \"${BBBURNDIR}\" | grep cue)
++    
++    burnfile=`ls ${BBBURNDIR}/*.cue`
++    if ${BB_CDIMAGECMD} write --device ${BBCDWRITER} \
++	    --driver generic-mmc --speed ${bbspeed} \
++	    -v 2 --eject ${burnfile}
+     then
+ 	echo $bb_bincue_burn_1
+     else

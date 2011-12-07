@@ -1,0 +1,37 @@
+$deck: patch-loopback_sh,v 1.2 2010/09/30 06:45:23 dukzcry Exp $
+--- loopback.sh.orig	Mon Sep 20 21:10:03 2010
++++ misc/loopback.sh	Thu Sep 23 09:42:13 2010
+@@ -12,13 +12,13 @@ typeset -r bb_im_copy_dir="/tmp/imagecopy"
+ # Remove temporary directories
+ loopback_cleanup()
+ {
+-    sudo umount "$bb_lb_dir"
++    sudo umount -f "$bb_lb_dir"
++    sudo vnconfig -u svnd0
+     rm -rf "$bb_im_copy_dir"/*
+ }
+ 
+ loopback()
+ {
+-    typeset -r mntcmd="mount -t iso9660 -o loop $1 $bb_lb_dir"
+     typeset answer
+     # Bad filename?
+     if [[ ! -r "$1" ]]
+@@ -56,13 +56,14 @@ loopback()
+ 	echo "$bb_lb_sudo1"
+ 	echo "$bb_lb_sudo2"
+ 	echo "$bb_lb_sudo3"
+-	echo "$bb_lb_sudo4"
+ 	echo "$bb_lb_sudo5"
+ 	echo "$bb_lb_sudo6"
+-	sudo $mntcmd || { echo "$bb_lb_mount_fail"; return 5; }
++	sudo vnconfig svnd0 $1 && sudo mount -t cd9660 /dev/svnd0c $bb_lb_dir \
++		|| { echo "$bb_lb_mount_fail"; return 5; }
+ 	echo "$bb_lb_mount"
+     else
+-	$mntcmd || { echo "$bb_lb_mount_fail"; 	return 6; }
++	vnconfig svnd0 $1 && mount -t cd9660 /dev/svnd0c $bb_lb_dir \
++		|| { echo "$bb_lb_mount_fail"; 	return 6; }
+     fi
+     echo "$bb_lb_mount"
+ 
