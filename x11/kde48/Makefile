@@ -51,7 +51,7 @@
      SUBDIR += smokeqt			
 
 # former accessibility, changed in KDE 4.8 beta/rc, all untested
-#     SUBDIR += jovie			# speechd will be tough to port...
+     SUBDIR += jovie
      SUBDIR += kaccessible		
      SUBDIR += kmousetool		
      SUBDIR += kmag			
