@@ -1,11 +1,11 @@
 $OpenBSD$
---- third_party/libjingle/source/talk/base/socketaddress.cc.orig	Mon Nov  7 13:04:00 2011
-+++ third_party/libjingle/source/talk/base/socketaddress.cc	Tue Nov  8 19:19:53 2011
+--- third_party/libjingle/source/talk/base/ipaddress.cc.orig	Tue Dec  6 15:03:51 2011
++++ third_party/libjingle/source/talk/base/ipaddress.cc	Wed Dec  7 00:09:10 2011
 @@ -29,6 +29,9 @@
  #include <sys/types.h>
  #include <sys/socket.h>
  #include <netinet/in.h>
-+#if defined(__OpenBSD__)
++#ifdef OPENBSD
 +#include <netinet/in_systm.h>
 +#endif
  #include <netinet/ip.h>

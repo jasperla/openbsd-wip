@@ -1,0 +1,37 @@
+$OpenBSD$
+--- third_party/libjingle/libjingle.gyp.orig	Tue Dec  6 23:44:24 2011
++++ third_party/libjingle/libjingle.gyp	Tue Dec  6 23:44:35 2011
+@@ -94,6 +94,16 @@
+             'BSD',
+           ],
+         }],
++        ['OS=="openbsd"', {
++          'defines': [
++            'OPENBSD',
++          ],
++        }],
++        ['OS=="freebsd"', {
++          'defines': [
++            'FREEBSD',
++          ],
++        }],
+         ['no_libjingle_logging==1', {
+           'defines': [
+             'NO_LIBJINGLE_LOGGING',
+@@ -136,6 +146,16 @@
+       ['os_bsd==1', {
+         'defines': [
+           'BSD',
++        ],
++      }],
++      ['OS=="openbsd"', {
++        'defines': [
++          'OPENBSD',
++        ],
++      }],
++      ['OS=="freebsd"', {
++        'defines': [
++          'FREEBSD',
+         ],
+       }],
+     ],
