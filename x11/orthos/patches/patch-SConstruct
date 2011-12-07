@@ -1,0 +1,21 @@
+$deck: patch-SConstruct,v 1.1 2010/09/30 16:20:49 dukzcry Exp $
+--- SConstruct.orig	Tue Sep 28 23:16:11 2010
++++ SConstruct	Wed Sep 29 12:41:12 2010
+@@ -4,12 +4,16 @@ env=Environment(ENV=os.environ)
+ env['CC']='g++'
+ env['CCFLAGS']='-O2 -Wall'
+ env['CPPPATH']=['#include/']
++env.Append(CPPPATH = ['/usr/local/include',
++			'/usr/X11R6/include',
++			'/usr/X11R6/include/pixman-1'])
+ env.SetOption("num_jobs",2);
+ 
+ # debug
+ # env['CCFLAGS']+=' -DDEBUG=1 -g '
+ 
+-env['LIBS']=['crypt','Xmu']
++env['LIBPATH']=['/usr/local/lib']
++env['LIBS']=['Xmu', 'z', 'pthread']
+ 
+ Export('env')
+ 

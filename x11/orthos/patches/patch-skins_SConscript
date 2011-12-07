@@ -1,0 +1,13 @@
+$deck: patch-skins_SConscript,v 1.1 2010/09/30 16:20:49 dukzcry Exp $
+--- skins/SConscript.orig	Tue Sep 28 23:58:23 2010
++++ skins/SConscript	Wed Sep 29 00:00:29 2010
+@@ -2,7 +2,8 @@
+ Import('env')
+ myenv=env
+ from os import listdir;
+-myenv["CPPPATH"]+=["#skins/","/usr/include/freetype2"]
++myenv["CPPPATH"]+=["#skins/","/usr/X11R6/include/freetype2"]
++myenv["LIBPATH"]+=["/usr/X11R6/lib"]
+ myenv["LIBS"]+=["GL","GLU","SDL","freetype"]
+ for i in ['default','shards']:
+ 	env.SharedLibrary(i,[i+'.cpp','exa-base.cpp','exa-font.cpp'])

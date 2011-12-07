@@ -1,0 +1,48 @@
+@comment $deck: PLIST,v 1.3 2010/10/06 18:19:11 dukzcry Exp $
+share/orthos/Attic/orthos
+@sample ${PREFIX}/bin/orthos
+bin/oskintest
+@exec chmod 755 ${PREFIX}/bin/orthos
+share/doc/orthos/
+share/doc/orthos/COPYING
+share/doc/orthos/LICENSE
+share/doc/orthos/README
+share/doc/orthos/README.OpenBSD
+share/orthos/
+share/orthos/SConstruct
+share/orthos/include/
+share/orthos/include/orthos.h
+share/orthos/include/settings.h
+share/orthos/include/skin.h
+share/orthos/include/skinload.h
+share/orthos/include/sys.h
+share/orthos/include/ui.h
+share/orthos/install.sh
+share/orthos/examples/orthos.conf
+@sample ${SYSCONFDIR}/orthos.conf
+share/orthos/skins/
+share/orthos/skins/SConscript
+share/orthos/Attic/default.cpp
+@sample ${PREFIX}/share/orthos/skins/default.cpp
+share/orthos/Attic/libdefault.so
+@sample ${PREFIX}/share/orthos/skins/libdefault.so
+share/orthos/skins/exa-base.cpp
+share/orthos/skins/exa-base.h
+share/orthos/skins/exa-font.cpp
+share/orthos/skins/exa-font.h
+share/orthos/Attic/shards.cpp
+@sample ${PREFIX}/share/orthos/skins/shards.cpp
+share/orthos/Attic/libshards.so
+@sample ${PREFIX}/share/orthos/skins/libshards.so
+@exec chmod 755 ${PREFIX}/share/orthos/skins/libdefault.so ${PREFIX}/share/orthos/skins/libshards.so
+share/orthos/skins/simple-loginbox.h
+share/orthos/skins/vector.h
+share/orthos/src/
+share/orthos/src/SConscript
+share/orthos/src/main.cpp
+share/orthos/src/orthos.cpp
+share/orthos/Attic/settings.cpp
+@sample ${PREFIX}/share/orthos/src/settings.cpp
+share/orthos/src/skinload.cpp
+share/orthos/src/sys.cpp
+share/orthos/src/ui.cpp
