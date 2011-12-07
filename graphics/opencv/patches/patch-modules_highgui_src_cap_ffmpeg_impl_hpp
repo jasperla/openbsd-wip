@@ -1,0 +1,11 @@
+$OpenBSD$
+--- modules/highgui/src/cap_ffmpeg_impl.hpp.orig	Wed Dec  7 12:43:35 2011
++++ modules/highgui/src/cap_ffmpeg_impl.hpp	Wed Dec  7 12:43:48 2011
+@@ -58,6 +58,7 @@ extern "C" {
+ #define __STDC_CONSTANT_MACROS
+ // force re-inclusion of stdint.h to get INT64_C macro
+ #undef _STDINT_H
++#undef _SYS_STDINT_H
+ #include <stdint.h>
+ #endif
+ #include <errno.h>
