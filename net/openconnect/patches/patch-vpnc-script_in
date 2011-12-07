@@ -1,6 +1,15 @@
 $OpenBSD$
---- vpnc-script.orig	Tue Dec  6 16:45:36 2011
-+++ vpnc-script	Tue Dec  6 16:47:51 2011
+--- vpnc-script.orig	Wed Dec  7 21:22:30 2011
++++ vpnc-script	Wed Dec  7 22:48:26 2011
+@@ -59,7 +59,7 @@ if [ ! -d "/var/run/vpnc" ]; then
+ fi
+ 
+ # stupid SunOS: no blubber in /usr/local/bin ... (on stdout)
+-IPROUTE="`which ip | grep '^/' 2> /dev/null`"
++IPROUTE="`which ip 2> /dev/null | grep '^/'`"
+ 
+ if [ "$OS" = "Linux" ]; then
+ 	ifconfig_syntax_ptp="pointopoint"
 @@ -265,6 +265,14 @@ else # use route command
  			# routes are deleted automatically on device shutdown
  			return
