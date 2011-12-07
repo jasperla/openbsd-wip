@@ -1,0 +1,18 @@
+$OpenBSD$
+--- vpnc-script.orig	Tue Dec  6 16:45:36 2011
++++ vpnc-script	Tue Dec  6 16:47:51 2011
+@@ -265,6 +265,14 @@ else # use route command
+ 			# routes are deleted automatically on device shutdown
+ 			return
+ 			;;
++		OpenBSD)
++			# delete only routes that are present
++			# XXX why?
++			if route -n get $1 -netmask $2 | grep destination; then
++				route $route_syntax_del -net "$NETWORK" $route_syntax_netmask "$NETMASK" $route_syntax_gw "$INTERNAL_IP4_ADDRESS"
++			fi
++                        return
++                        ;;
+ 		esac
+ 		NETWORK="$1"
+ 		NETMASK="$2"
