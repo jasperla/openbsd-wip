@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile,v 1.3 2011/07/16 22:43:57 espie Exp $
 
-ONLY_FOR_ARCH=		${GCC4_ARCHS}
+ONLY_FOR_ARCHS=		${GCC4_ARCHS}
 
 SHARED_ONLY=		Yes
 
@@ -55,7 +55,7 @@ WANTLIB += xml2 z
 MODULES=		devel/cmake \
 			devel/gettext
 
-MULTI_PACKAGES= 	-main -docs
+MULTI_PACKAGES=		-main -docs
 
 FLAVORS=		python
 FLAVOR?=
