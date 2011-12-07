@@ -66,7 +66,7 @@ CONFIGURE_ARGS+=	-DBUILD_NEW_PYTHON_SUPPORT:Bool=On \
 
 MODULES +=		lang/python
 RUN_DEPENDS +=		math/py-numpy
-BUILD_DEPENDS +=	math/py-numpy
+#BUILD_DEPENDS +=	math/py-numpy
 WANTLIB +=		${MODPY_WANTLIB}
 LIB_DEPENDS +=		${MODPY_LIB_DEPENDS}
 .else
