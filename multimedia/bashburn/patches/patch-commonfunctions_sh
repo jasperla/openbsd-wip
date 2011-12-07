@@ -1,0 +1,14 @@
+$deck: patch-commonfunctions_sh,v 1.2 2010/09/30 06:45:23 dukzcry Exp $
+--- misc/commonfunctions.sh.orig Tue Sep 21 20:12:16 2010
++++ misc/commonfunctions.sh	 Tue Sep 21 20:13:10 2010
+@@ -54,8 +54,8 @@ message()
+ # Function to check whether CD is blank or not
+ check_cd_status()
+ {
+-    # Returns 0 if USED, otherwise (BLANK) return 1 
+-    dd if=${BBCDWRITER} of=/dev/null bs=1 count=1 > /dev/null 2>&1
++    # Original function usually lies, so we ignore it
++    return 0
+ }
+ 
+ # Function to blank CD
