@@ -1,0 +1,48 @@
+$deck: patch-burning_sh,v 1.2 2010/09/30 06:45:23 dukzcry Exp $
+--- burning.sh.orig	Wed Sep 22 13:23:18 2010
++++ burning/burning.sh	Wed Sep 22 13:23:46 2010
+@@ -283,7 +283,7 @@ $bb_dvd_blank4
+ $bb_dvd_blank5
+ 
+ EOF
+-    read -e -p '(yes/no):' blanking_answer
++    read -e -p '(yes/no/force):' blanking_answer
+     case "$blanking_answer" in
+     yes)
+ 	return 0
+@@ -291,9 +291,12 @@ EOF
+     no)
+ 	return 1
+ 	;;
+-    *)
++    force)
+ 	return 2
+ 	;;
++    *)
++	return 3
++	;;
+     esac
+ }
+ 
+@@ -305,16 +308,19 @@ dvd_blanking()
+     status=$?
+     case $status in
+     0)
+-	blank=-blank
++	blank=
+ 	;;
+     1)
+ 	blank=-blank=full
+ 	;;
+     2)
++	blank=-force
++	;;
++    3)
+ 	return
+ 	;;
+     esac
+-    if ${BB_DVDBLANK} $blank} ${BBCDWRITER}
++    if ${BB_DVDBLANK} ${BBCDWRITER} ${blank}
+     then
+ 	echo $bb_cdrw_blank2
+     else
