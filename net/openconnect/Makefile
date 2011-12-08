@@ -22,14 +22,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c crypto iconv m modman proxy pthread ssl stdc++ xml2 z
+WANTLIB += c crypto m modman proxy pthread ssl stdc++ xml2 z
 
 MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/
 MASTER_SITES0=	http://git.infradead.org/users/dwmw2/vpnc-scripts.git/blob_plain/b4e61c979bc33252db0fd6d330d7bafa2034bd66:/
 
 # used to format html during build, USE_GROFF not needed
 BUILD_DEPENDS=		textproc/groff
-MODULES=		lang/python
+MODULES=		converters/libiconv \
+			lang/python
 MODPY_RUNDEP=		No
 
 LIB_DEPENDS=		textproc/libxml \
