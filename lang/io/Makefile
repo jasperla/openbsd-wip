@@ -18,7 +18,13 @@ PERMIT_DISTFILES_FTP = Yes
 
 WANTLIB = edit event expat m pthread readline z
 
-LIB_DEPENDS = devel/libeventextra devel/pcre devel/libyajl textproc/libxml
+LIB_DEPENDS += devel/libeventextra
+LIB_DEPENDS += devel/pcre
+LIB_DEPENDS += devel/libyajl
+LIB_DEPENDS += textproc/libxml,no_python
+
+BUILD_DEPENDS += devel/cmake
+BUILD_DEPENDS += ${LIB_DEPENDS}
 
 MODULES = devel/cmake
 
