@@ -19,17 +19,6 @@ graphics/zint:		Ready. Sent to ports@ 07.04, 14.11 and 28.11 (yason)
 multimedia/bashburn:	Ready for import. Sent to ports@ 05.10.2010 (druga)
 x11/orthos:		Ready for import. Sent to ports@ 07.10.2010 (druga)
 
-Mozilla Updates
-
-www/firefox36		update sent to ports@
-www/firefox-i18n	update sent to ports@ 
-www/mozilla-firefox	update sent to ports@
-mail/mozilla-thunderbird update sent to ports@
-mail/thunderbird-i18n	update sent to ports@
-devel/xulrunner		update sent to ports@
-www/fennec		update sent to ports@
-www/seamonkey		update to send to ports@
-
 KDE 4.7.2 related
 
 textproc/liblrdf:	Ready for import. Sent to ports@ October 10, 2011 (grayed)
