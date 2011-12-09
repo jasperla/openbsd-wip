@@ -1,15 +1,15 @@
 @comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/18 19:07:05 robert Exp $
 %%SHARED%%
 @bin bin/rapper
-include/raptor2/
-include/raptor2/raptor.h
-include/raptor2/raptor2.h
-lib/libraptor2.a
-lib/libraptor2.la
+bin/raptor-config
+include/raptor.h
+lib/libraptor.a
+lib/libraptor.la
 lib/pkgconfig/
-lib/pkgconfig/raptor2.pc
+lib/pkgconfig/raptor.pc
 @man man/man1/rapper.1
-@man man/man3/libraptor2.3
+@man man/man1/raptor-config.1
+@man man/man3/libraptor.3
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/raptor/
@@ -21,25 +21,19 @@ share/gtk-doc/html/raptor/ix01.html
 share/gtk-doc/html/raptor/left.png
 share/gtk-doc/html/raptor/parser-grddl.html
 share/gtk-doc/html/raptor/parser-guess.html
-share/gtk-doc/html/raptor/parser-json.html
 share/gtk-doc/html/raptor/parser-ntriples.html
 share/gtk-doc/html/raptor/parser-rdfa.html
 share/gtk-doc/html/raptor/parser-rdfxml.html
 share/gtk-doc/html/raptor/parser-rss-tag-soup.html
 share/gtk-doc/html/raptor/parser-trig.html
 share/gtk-doc/html/raptor/parser-turtle.html
-share/gtk-doc/html/raptor/raptor-formats-types-by-parser.html
-share/gtk-doc/html/raptor/raptor-formats-types-by-serializer.html
-share/gtk-doc/html/raptor/raptor-formats-types-index.html
-share/gtk-doc/html/raptor/raptor-formats.html
 share/gtk-doc/html/raptor/raptor-parsers.html
-share/gtk-doc/html/raptor/raptor-section-avltree.html
 share/gtk-doc/html/raptor/raptor-section-constants.html
+share/gtk-doc/html/raptor/raptor-section-feature.html
 share/gtk-doc/html/raptor/raptor-section-general.html
 share/gtk-doc/html/raptor/raptor-section-iostream.html
 share/gtk-doc/html/raptor/raptor-section-locator.html
 share/gtk-doc/html/raptor/raptor-section-memory.html
-share/gtk-doc/html/raptor/raptor-section-option.html
 share/gtk-doc/html/raptor/raptor-section-parser.html
 share/gtk-doc/html/raptor/raptor-section-sax2.html
 share/gtk-doc/html/raptor/raptor-section-sequence.html
@@ -47,6 +41,7 @@ share/gtk-doc/html/raptor/raptor-section-serializer.html
 share/gtk-doc/html/raptor/raptor-section-stringbuffer.html
 share/gtk-doc/html/raptor/raptor-section-triples.html
 share/gtk-doc/html/raptor/raptor-section-unicode.html
+share/gtk-doc/html/raptor/raptor-section-uri-factory.html
 share/gtk-doc/html/raptor/raptor-section-uri.html
 share/gtk-doc/html/raptor/raptor-section-world.html
 share/gtk-doc/html/raptor/raptor-section-www.html
@@ -56,16 +51,12 @@ share/gtk-doc/html/raptor/raptor-section-xml.html
 share/gtk-doc/html/raptor/raptor-serializers.html
 share/gtk-doc/html/raptor/raptor.devhelp
 share/gtk-doc/html/raptor/raptor.devhelp2
-share/gtk-doc/html/raptor/raptor2-changes-1-4-21-to-2-0-0.html
-share/gtk-doc/html/raptor/raptor2-changes-2-0-3-to-2-0-4.html
-share/gtk-doc/html/raptor/raptor2-changes.html
 share/gtk-doc/html/raptor/reference-manual.html
 share/gtk-doc/html/raptor/restrict-parser-network-access.html
 share/gtk-doc/html/raptor/right.png
 share/gtk-doc/html/raptor/serializer-atom.html
 share/gtk-doc/html/raptor/serializer-dot.html
 share/gtk-doc/html/raptor/serializer-json.html
-share/gtk-doc/html/raptor/serializer-nquads.html
 share/gtk-doc/html/raptor/serializer-ntriples.html
 share/gtk-doc/html/raptor/serializer-rdfxml-abbrev.html
 share/gtk-doc/html/raptor/serializer-rdfxml-xmp.html
