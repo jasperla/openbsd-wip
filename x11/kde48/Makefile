@@ -61,7 +61,7 @@
      SUBDIR += admin			
      SUBDIR += games			
      SUBDIR += multimedia		
-     SUBDIR += network			# marked BROKEN
+     SUBDIR += network			
      SUBDIR += pim			
      SUBDIR += sdk			# marked BROKEN
      SUBDIR += toys			
@@ -139,7 +139,7 @@
      SUBDIR += ktorrent			
 
 # additional resources
-     SUBDIR += plasma-addons		# worst package of 4.8 beta 1, couldn't even compile 
+     SUBDIR += plasma-addons		# worst package of 4.8 beta 1, can't even compile 
      SUBDIR += l10n			
      SUBDIR += wallpapers		
 

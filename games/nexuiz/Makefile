@@ -72,10 +72,11 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/nexuiz/havoc
 	${INSTALL_DATA_DIR} ${PREFIX}/share/nexuiz/server
 	${INSTALL_DATA_DIR} ${PREFIX}/share/nexuiz/server/rcon2irc
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nexuiz/
 	${INSTALL_DATA} ${WRKDIST}/data/*.pk3 ${PREFIX}/share/nexuiz/data
 	${INSTALL_DATA} ${WRKDIST}/havoc/*.pk3 ${PREFIX}/share/nexuiz/havoc
 	${INSTALL_DATA} ${WRKDIST}/server/{server,help}.cfg \
-		${PREFIX}/share/nexuiz/server
+		${PREFIX}/share/examples/nexuiz/
 	${INSTALL_DATA} ${WRKDIST}/server/rcon.pl ${PREFIX}/share/nexuiz/server
 	${INSTALL_DATA} ${WRKDIST}/server/rcon2irc/* \
 		${PREFIX}/share/nexuiz/server/rcon2irc

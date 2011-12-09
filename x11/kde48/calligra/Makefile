@@ -27,39 +27,44 @@ SHARED_LIBS +=  kexirelationsview	0.0 # 8.0
 SHARED_LIBS +=  kexiutils		0.0 # 8.0
 SHARED_LIBS +=  kformdesigner		0.0 # 8.0
 SHARED_LIBS +=  kformulalib		0.0 # 8.0
-SHARED_LIBS +=  kformulaprivate		0.0 # 8.0
 SHARED_LIBS +=  kochart			0.0 # 8.0
 SHARED_LIBS +=  komain			0.0 # 8.0
 SHARED_LIBS +=  koodf			0.0 # 8.0
 SHARED_LIBS +=  koreport		0.0 # 8.0
 SHARED_LIBS +=  kowidgets		0.0 # 8.0
-SHARED_LIBS +=  kowmf			0.0 # 8.0
 SHARED_LIBS +=  kplatokernel		0.0 # 8.0
 SHARED_LIBS +=  kplatomodels		0.0 # 8.0
-SHARED_LIBS +=  kplatoprivate		0.0 # 8.0
 SHARED_LIBS +=  kplatoui		0.0 # 8.0
-SHARED_LIBS +=  kplatoworkapp		0.0 # 8.0
-SHARED_LIBS +=  kplatoworkfactory	0.0 # 8.0
-SHARED_LIBS +=  kpresenterprivate	0.0 # 8.0
 SHARED_LIBS +=  kritaimage		0.0 # 8.0
 SHARED_LIBS +=  kritalibbrush		0.0 # 8.0
 SHARED_LIBS +=  kritalibpaintop		0.0 # 8.0
 SHARED_LIBS +=  kritaui			0.0 # 8.0
-SHARED_LIBS +=  kspreadcommon		0.0 # 8.0
-SHARED_LIBS +=  kspreadodf		0.0 # 8.0
-SHARED_LIBS +=  kwmf			0.0 # 8.0
-SHARED_LIBS +=  kwordexportfilters	0.0 # 8.0
-SHARED_LIBS +=  kwordprivate		0.0 # 8.0
 SHARED_LIBS +=  msooxml			0.0 # 8.0
 SHARED_LIBS +=  pigmentcms		0.0 # 8.0
-
+SHARED_LIBS +=  RtfReader                 0.0 # 9.0
+SHARED_LIBS +=  calligrastageprivate      0.0 # 9.0
+SHARED_LIBS +=  calligratablescommon      0.0 # 9.0
+SHARED_LIBS +=  calligratablesodf         0.0 # 9.0
+SHARED_LIBS +=  flowprivate               0.0 # 9.0
+SHARED_LIBS +=  kexidataviewcommon        0.0 # 9.0
+SHARED_LIBS +=  koabstraction             0.0 # 9.0
+SHARED_LIBS +=  kowv2                     0.0 # 9.0
+SHARED_LIBS +=  kundo2                    0.0 # 9.0
+SHARED_LIBS +=  libwmf                    0.0 # 9.0
+SHARED_LIBS +=  planprivate               0.0 # 9.0
+SHARED_LIBS +=  planworkapp               0.0 # 9.0
+SHARED_LIBS +=  planworkfactory           0.0 # 9.0
+SHARED_LIBS +=  rcps_plan                 0.0 # 9.0
+SHARED_LIBS +=  textlayout                0.0 # 9.0
+SHARED_LIBS +=  wordsexportfilters        0.0 # 9.0
+SHARED_LIBS +=  wordsprivate              0.0 # 9.0
 
 VMEM_WARNING =	Yes
 
 MASTER_SITES =	${MASTER_SITE_KDE:=unstable/${DISTNAME}/}
 
 WANTLIB =  c m pthread stdc++
-WANTLIB += X11
+WANTLIB += X11 lib/qt4/QtDeclarative
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml lib/qt4/Qt3Support dcmdata dcmsr
 WANTLIB += kdeui kio kparts nepomuk nepomukutils soprano png
@@ -73,6 +78,8 @@ WANTLIB += xml2 xslt z
 WANTLIB += GLEW QtSql QtWebKit fftw3 kabc kcmutils kemoticons
 WANTLIB += kidletime knewstuff3 knotifyconfig kpimutils kprintutils
 WANTLIB += kresources ktexteditor kutils threadweaver
+WANTLIB += akonadi-contact akonadi-kde fontconfig freetype kcalcore
+WANTLIB += kmime crypto marblewidget ssl
 
 BUILD_DEPENDS =	devel/boost
 
