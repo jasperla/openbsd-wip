@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-VERSION =		2.3.0
+VERSION =		2.4.0
 COMMENT-main =		K Desktop Environment, photo management utility
 COMMENT-kipi =		collection of image plugins for KDE
 COMMENT-geomap =	KIPI interface library for Marble
@@ -11,7 +11,6 @@ PKGNAME-main =		${PKGNAME}
 PKGNAME-kipi =		kipi-plugins4-${VERSION}
 PKGNAME-geomap =	libkgeomap-${VERSION}
 PKGNAME-vkontakte =	libkvkontakte-1.0.0
-REVISION-main =		2
 
 SHARED_LIBS =	kipiplugins		0.0
 SHARED_LIBS +=  digikamcore		0.0 # 2.0
@@ -37,9 +36,9 @@ WANTLIB-common += kdecore kdeui kio kparts nepomuk nepomukutils soprano
 
 WANTLIB-main =  ${WANTLIB-common}
 WANTLIB-main += ICE SM X11 Xext pthread z
-WANTLIB-main += lib/qt4/Qt3Support lib/qt4/QtSql
+WANTLIB-main += lib/qt4/Qt3Support lib/qt4/QtSql lib/qt4/QtWebKit
 WANTLIB-main += kabc kcmutils kdcraw kde3support kemoticons kexiv2
-WANTLIB-main += kfile kgeomap khtml kidletime kipi kipiplugins kjs
+WANTLIB-main += kfile khtml kidletime kipi kjs
 WANTLIB-main += knotifyconfig kprintutils kresources kutils phonon solid
 WANTLIB-main += sopranoclient
 WANTLIB-main += opencv_calib3d opencv_contrib opencv_core
@@ -48,30 +47,31 @@ WANTLIB-main += opencv_highgui opencv_imgproc opencv_legacy opencv_ml
 WANTLIB-main += opencv_objdetect opencv_video
 WANTLIB-main += glib-2.0 gphoto2 gphoto2_port jasper jpeg lcms lqr-1
 WANTLIB-main += png tiff usb
+WANTLIB-main += kdewebkit marblewidget qjson
 
 WANTLIB-kipi =  ${WANTLIB-common} ${MODGETTEXT_WANTLIB}
-WANTLIB-kipi += ICE SM X11 Xext expat pthread z
+WANTLIB-kipi += ICE SM X11 Xext expat pthread
 WANTLIB-kipi += GL GLU Xrandr
 WANTLIB-kipi += lib/qt4/QtOpenGL lib/qt4/QtXmlPatterns qca
-WANTLIB-kipi += kcalcore kdcraw kexiv2 kfile kgeomap khtml kjs kipi
-WANTLIB-kipi += ksane kvkontakte phonon
+WANTLIB-kipi += kcalcore kdcraw kexiv2 khtml kjs kipi
+WANTLIB-kipi += ksane phonon
 WANTLIB-kipi += gdk_pixbuf-2.0 gmodule-2.0 gobject-2.0
 WANTLIB-kipi += gthread-2.0
 WANTLIB-kipi += opencv_calib3d opencv_contrib opencv_core
 WANTLIB-kipi += opencv_features2d opencv_flann opencv_gpu
 WANTLIB-kipi += opencv_highgui opencv_imgproc opencv_legacy opencv_ml
 WANTLIB-kipi += opencv_objdetect opencv_video
-WANTLIB-kipi += glib-2.0 gpod iconv intl jpeg png qjson tiff xml2 xslt
+WANTLIB-kipi += glib-2.0 gpod iconv intl jpeg qjson xml2 xslt
 WANTLIB-kipi += exslt
 
 WANTLIB-geomap =  ${WANTLIB-common}
 WANTLIB-geomap += pthread
-WANTLIB-geomap += kexiv2 khtml kjs marblewidget phonon
+WANTLIB-geomap += kexiv2 khtml kjs phonon
 
 WANTLIB-vkontakte =  ${WANTLIB-common}
-WANTLIB-vkontakte += lib/qt4/QtWebKit
-WANTLIB-vkontakte += kdewebkit
-WANTLIB-vkontakte += qjson
+#WANTLIB-vkontakte += lib/qt4/QtWebKit
+#WANTLIB-vkontakte += kdewebkit
+#WANTLIB-vkontakte += qjson
 
 # Define dependencies manually per subpackage
 # TODO: fix kde48.port.mk to allow such grained tuning
@@ -101,6 +101,7 @@ LIBS_DEPENDS-common =	${MODQT_LIB_DEPENDS}
 LIB_DEPENDS-main =	${LIB_DEPENDS-common} \
 			${BUILD_PKGPATH},-geomap \
 			${BUILD_PKGPATH},-kipi \
+			${BUILD_PKGPATH},-vkontakte \
 			devel/glib2 \
 			graphics/jasper \
 			graphics/lcms \
@@ -112,10 +113,13 @@ LIB_DEPENDS-main =	${LIB_DEPENDS-common} \
 			x11/kde48/libkdcraw \
 			x11/kde48/libkexiv2 \
 			x11/kde48/libkipi \
+			x11/kde48/libs \
+			x11/kde48/marble \
 			x11/kde48/pimlibs \
 
 LIB_DEPENDS-kipi =	${LIB_DEPENDS-common} \
 			${BUILD_PKGPATH},-geomap \
+			${BUILD_PKGPATH},-kipi \
 			${BUILD_PKGPATH},-vkontakte \
 			${MODGETTEXT_LIB_DEPENDS} \
 			audio/libgpod \
@@ -136,6 +140,7 @@ LIB_DEPENDS-kipi =	${LIB_DEPENDS-common} \
 			x11/kde48/pimlibs \
 
 LIB_DEPENDS-geomap =	${LIB_DEPENDS-common} \
+			${BUILD_PKGPATH},-geomap \
 			x11/kde48/libkexiv2 \
 			x11/kde48/libs \
 			x11/kde48/marble
