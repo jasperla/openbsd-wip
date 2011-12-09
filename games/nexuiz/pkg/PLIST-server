@@ -1,7 +1,9 @@
 @comment $OpenBSD$
 @bin bin/nexuiz-dedicated
+share/examples/nexuiz/
+share/examples/nexuiz/help.cfg
+share/examples/nexuiz/server.cfg
 share/nexuiz/server/
-share/nexuiz/server/help.cfg
 share/nexuiz/server/rcon.pl
 share/nexuiz/server/rcon2irc/
 share/nexuiz/server/rcon2irc/echo-rcon.pl
@@ -16,4 +18,3 @@ share/nexuiz/server/rcon2irc/rcon2irc-example.conf
 share/nexuiz/server/rcon2irc/rcon2irc.pl
 share/nexuiz/server/rcon2irc/rcon2irc.txt
 share/nexuiz/server/rcon2irc/suggestmap.pl
-share/nexuiz/server/server.cfg

@@ -1,6 +1,6 @@
-Example configuration files have been installed in:
+Example configuration files have been installed to:
 
-	${TRUEPREFIX}/share/nexuiz/server
+	${TRUEPREFIX}/share/examples/nexuiz/
 
 To start a nexuiz server, use:
 
