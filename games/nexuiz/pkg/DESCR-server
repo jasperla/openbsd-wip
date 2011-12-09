@@ -1,1 +1,7 @@
-Dedicated server for Nexuiz.
+Nexuiz is a fast paced 3d deathmatch game project created online
+by a team of developers called Alientrap.  With an advanced UI the
+user can select between over a dozen different player models with
+an average of two skins for each and can connect to our master
+server to play people from all over the world.
+
+This package contains the server.
