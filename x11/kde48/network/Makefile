@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, network
 DISTNAME =	kdenetwork-${MODKDE_VERSION}
-BROKEN =	compile issues, solvable
 
 SHARED_LIBS =	kgetcore		0.0 # 4.0
 SHARED_LIBS +=	kopete			3.0 # 4.0
@@ -32,7 +31,7 @@ WANTLIB += knotifyconfig konq kparts kpimidentities kprintutils
 WANTLIB += kresources ktexteditor kutils meanwhile
 WANTLIB += nepomuk nepomukutils phonon>=5 plasma qca>=3 qgpgme
 WANTLIB += qimageblitz solid soprano mms kworkspace
-WANTLIB += assuan jasper jpeg otr xml2 xmms xslt
+WANTLIB += assuan jasper jpeg otr xml2 xmms xslt ktorrent
 
 MODULES =	devel/gettext
 
@@ -47,6 +46,7 @@ LIB_DEPENDS =	audio/xmms \
 		security/libotr \
 		security/qca2 \
 		x11/kde48/baseapps \
+		x11/kde48/libktorrent \
 		x11/kde48/qimageblitz
 
 CONFIGURE_ARGS =	-DQCA2_INCLUDE_DIR:PATH=${LOCALBASE}/include/QtCrypto \
