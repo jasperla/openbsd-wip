@@ -1,10 +1,11 @@
 # $OpenBSD: Makefile,v 1.6 2011/09/16 11:41:41 espie Exp $
 
 COMMENT=		RDF Parser Toolkit for Redland
-DISTNAME=		raptor-1.4.20
+DISTNAME=		raptor2-2.0.4
+PKGNAME=		${DISTNAME:C/raptor2/raptor/}
 CATEGORIES=		textproc
 
-SHARED_LIBS=		raptor	2.0 # .2.0
+SHARED_LIBS=		raptor2	0.0 # 0.0
 
 HOMEPAGE=		http://librdf.org/
 
