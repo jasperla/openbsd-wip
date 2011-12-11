@@ -18,6 +18,8 @@ audio/clementine:	sent to ports@ Sep 06 2011. Ready for import. (grayed)
 graphics/zint:		Ready. Sent to ports@ 07.04, 14.11 and 28.11 (yason)
 multimedia/bashburn:	Ready for import. Sent to ports@ 05.10.2010 (druga)
 x11/orthos:		Ready for import. Sent to ports@ 07.10.2010 (druga)
+devel/libgeier:		Ready for import. Sent to ports@ 11.12.2011 (sizeofvoid)
+productivity/taxbird:	Ready for import. Sent to ports@ 11.12.2011 (sizeofvoid)
 
 KDE 4.7.2 related
 
