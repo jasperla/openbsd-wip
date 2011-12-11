@@ -37,9 +37,9 @@ CONFIGURE_STYLE =	autoconf
 
 pre-configure:
 	@cd ${WRKSRC} && \
-		gtkdocize && \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		autoreconf -i
+	gtkdocize && \
+	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+	autoreconf -i
 
 .include <bsd.port.mk>

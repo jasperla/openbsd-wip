@@ -41,8 +41,8 @@ CONFIGURE_STYLE = 	autoconf
 
 pre-configure:
 	@cd ${WRKSRC} && \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		autoreconf -i
+	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+	autoreconf -i
 
 .include <bsd.port.mk>
