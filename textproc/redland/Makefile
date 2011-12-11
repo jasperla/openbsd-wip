@@ -1,8 +1,7 @@
 # $OpenBSD: Makefile,v 1.5 2010/11/20 19:56:51 espie Exp $
 
 COMMENT =		high-level interface for RDF
-DISTNAME =		redland-1.0.14
-REVISION =		0
+DISTNAME =		redland-1.0.15
 CATEGORIES =		textproc
 
 SHARED_LIBS =		rdf	1.1 # 0.0

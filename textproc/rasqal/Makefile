@@ -1,8 +1,7 @@
 # $OpenBSD: Makefile,v 1.5 2010/11/20 19:56:51 espie Exp $
 
 COMMENT =		RDF Query Library for Redland
-DISTNAME =		rasqal-0.9.27
-REVISION =		0
+DISTNAME =		rasqal-0.9.28
 CATEGORIES =		textproc
 
 SHARED_LIBS =		rasqal	2.0 # 3.0
