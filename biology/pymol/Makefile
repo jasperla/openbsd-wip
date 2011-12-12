@@ -1,5 +1,5 @@
 # $OpenBSD $
-COMMENT=	Free and Open-Source molecular modeling system	
+COMMENT=	Free and Open-Source molecular modeling system
 
 V=		1.4.1
 DISTNAME=	pymol-$V
@@ -10,13 +10,13 @@ HOMEPAGE=	http://pymol.org
 
 MAINTAINER=	Rafael Sadowski <rafael@sizeofvoid.org>
 
-# OSS (C) Schrodinger, LLC. 
+# OSS (C) Schrodinger, LLC.
 PERMIT_PACKAGE_CDROM=	NO
 PERMIT_PACKAGE_FTP=	NO
 PERMIT_DISTFILES_CDROM=	NO
 PERMIT_DISTFILES_FTP=	NO
 
-# build tarball from svn-repo rev. 3946 
+# build tarball from svn-repo rev. 3946
 MASTER_SITES=	http://www.sizeofvoid.org/pub/OpenBSD/distfiles/
 EXTRACT_SUFX=	.tar.bz2
 
@@ -24,6 +24,7 @@ WANTLIB= GL GLU glut png z freetype GLEW
 
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes
+VMEM_WARNING=	Yes
 
 BUILD_DEPENDS=	math/py-Numeric \
 		devel/gmake \
