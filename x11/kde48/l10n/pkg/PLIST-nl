@@ -336,6 +336,7 @@ share/doc/HTML/nl/kapptemplate/index.docbook
 share/doc/HTML/nl/kate/
 share/doc/HTML/nl/kate/advanced.docbook
 share/doc/HTML/nl/kate/common
+share/doc/HTML/nl/kate/configuring-part.docbook
 share/doc/HTML/nl/kate/configuring.docbook
 share/doc/HTML/nl/kate/fundamentals.docbook
 share/doc/HTML/nl/kate/highlighting.docbook
@@ -1108,6 +1109,7 @@ share/doc/HTML/nl/kollision/common
 share/doc/HTML/nl/kollision/index.cache.bz2
 share/doc/HTML/nl/kollision/index.docbook
 share/doc/HTML/nl/kolourpaint/
+share/doc/HTML/nl/kolourpaint/KolourPaint.png
 share/doc/HTML/nl/kolourpaint/common
 share/doc/HTML/nl/kolourpaint/index.cache.bz2
 share/doc/HTML/nl/kolourpaint/index.docbook
@@ -1420,8 +1422,11 @@ share/doc/HTML/nl/kwordquiz/index.cache.bz2
 share/doc/HTML/nl/kwordquiz/index.docbook
 share/doc/HTML/nl/kwrite/
 share/doc/HTML/nl/kwrite/common
+share/doc/HTML/nl/kwrite/configuring.docbook
+share/doc/HTML/nl/kwrite/fundamentals.docbook
 share/doc/HTML/nl/kwrite/index.cache.bz2
 share/doc/HTML/nl/kwrite/index.docbook
+share/doc/HTML/nl/kwrite/menus.docbook
 share/doc/HTML/nl/lokalize/
 share/doc/HTML/nl/lokalize/common
 share/doc/HTML/nl/lokalize/index.cache.bz2

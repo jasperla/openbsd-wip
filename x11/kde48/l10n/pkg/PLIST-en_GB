@@ -186,8 +186,6 @@ share/doc/HTML/en_GB/ksysguard/
 share/doc/HTML/en_GB/ksysguard/common
 share/doc/HTML/en_GB/ksysguard/index.cache.bz2
 share/doc/HTML/en_GB/ksysguard/index.docbook
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/accountwizard.mo
 share/locale/en_GB/LC_MESSAGES/accountwizard_ical.mo
 share/locale/en_GB/LC_MESSAGES/accountwizard_imap.mo

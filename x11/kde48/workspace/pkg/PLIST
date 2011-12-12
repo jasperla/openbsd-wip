@@ -533,6 +533,8 @@ share/apps/kconf_update/kwin_focus2.sh
 share/apps/kconf_update/kwin_focus2.upd
 share/apps/kconf_update/kwin_fsp_workarounds_1.upd
 share/apps/kconf_update/kwin_on_off.upd
+share/apps/kconf_update/kwin_remove_delay_focus.sh
+share/apps/kconf_update/kwin_remove_delay_focus.upd
 share/apps/kconf_update/kwin_remove_effects.upd
 share/apps/kconf_update/kwin_update_tabbox_qml_settings.upd
 share/apps/kconf_update/kwin_update_tabbox_settings.upd

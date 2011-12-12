@@ -322,6 +322,7 @@ share/doc/HTML/ca/kate/
 share/doc/HTML/ca/kate/advanced.docbook
 share/doc/HTML/ca/kate/common
 share/doc/HTML/ca/kate/configdialog01.png
+share/doc/HTML/ca/kate/configuring-part.docbook
 share/doc/HTML/ca/kate/configuring.docbook
 share/doc/HTML/ca/kate/fundamentals.docbook
 share/doc/HTML/ca/kate/highlighting.docbook
@@ -1188,8 +1189,11 @@ share/doc/HTML/ca/kwordquiz/index.cache.bz2
 share/doc/HTML/ca/kwordquiz/index.docbook
 share/doc/HTML/ca/kwrite/
 share/doc/HTML/ca/kwrite/common
+share/doc/HTML/ca/kwrite/configuring.docbook
+share/doc/HTML/ca/kwrite/fundamentals.docbook
 share/doc/HTML/ca/kwrite/index.cache.bz2
 share/doc/HTML/ca/kwrite/index.docbook
+share/doc/HTML/ca/kwrite/menus.docbook
 share/doc/HTML/ca/lokalize/
 share/doc/HTML/ca/lokalize/common
 share/doc/HTML/ca/lokalize/index.cache.bz2

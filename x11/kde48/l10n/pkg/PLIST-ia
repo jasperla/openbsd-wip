@@ -1,6 +1,4 @@
 @comment $OpenBSD$
-share/locale/ia/
-share/locale/ia/LC_MESSAGES/
 share/locale/ia/LC_MESSAGES/accountwizard.mo
 share/locale/ia/LC_MESSAGES/accountwizard_ical.mo
 share/locale/ia/LC_MESSAGES/accountwizard_imap.mo
@@ -47,6 +45,8 @@ share/locale/ia/LC_MESSAGES/akonaditray.mo
 share/locale/ia/LC_MESSAGES/akregator.mo
 share/locale/ia/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/ia/LC_MESSAGES/attica_kde.mo
+share/locale/ia/LC_MESSAGES/audiocd_encoder_lame.mo
+share/locale/ia/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/ia/LC_MESSAGES/audiorename_plugin.mo
 share/locale/ia/LC_MESSAGES/autorefresh.mo
 share/locale/ia/LC_MESSAGES/babelfish.mo
@@ -57,6 +57,7 @@ share/locale/ia/LC_MESSAGES/dirfilterplugin.mo
 share/locale/ia/LC_MESSAGES/display.mo
 share/locale/ia/LC_MESSAGES/dolphin.mo
 share/locale/ia/LC_MESSAGES/domtreeviewer.mo
+share/locale/ia/LC_MESSAGES/dragonplayer.mo
 share/locale/ia/LC_MESSAGES/drkonqi.mo
 share/locale/ia/LC_MESSAGES/filetypes.mo
 share/locale/ia/LC_MESSAGES/freespacenotifier.mo
@@ -65,6 +66,7 @@ share/locale/ia/LC_MESSAGES/htmlsearch.mo
 share/locale/ia/LC_MESSAGES/imagerename_plugin.mo
 share/locale/ia/LC_MESSAGES/imgalleryplugin.mo
 share/locale/ia/LC_MESSAGES/joystick.mo
+share/locale/ia/LC_MESSAGES/juk.mo
 share/locale/ia/LC_MESSAGES/kabc.mo
 share/locale/ia/LC_MESSAGES/kabc_akonadi.mo
 share/locale/ia/LC_MESSAGES/kabc_dir.mo
@@ -129,8 +131,10 @@ share/locale/ia/LC_MESSAGES/kcm_solid.mo
 share/locale/ia/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/ia/LC_MESSAGES/kcm_standard_actions.mo
 share/locale/ia/LC_MESSAGES/kcmaccess.mo
+share/locale/ia/LC_MESSAGES/kcmaudiocd.mo
 share/locale/ia/LC_MESSAGES/kcmbackground.mo
 share/locale/ia/LC_MESSAGES/kcmbell.mo
+share/locale/ia/LC_MESSAGES/kcmcddb.mo
 share/locale/ia/LC_MESSAGES/kcmcgi.mo
 share/locale/ia/LC_MESSAGES/kcmcolors.mo
 share/locale/ia/LC_MESSAGES/kcmcomponentchooser.mo
@@ -190,8 +194,16 @@ share/locale/ia/LC_MESSAGES/kdmgreet.mo
 share/locale/ia/LC_MESSAGES/kdontchangethehostname.mo
 share/locale/ia/LC_MESSAGES/keditbookmarks.mo
 share/locale/ia/LC_MESSAGES/kfile.mo
+share/locale/ia/LC_MESSAGES/kfile_avi.mo
+share/locale/ia/LC_MESSAGES/kfile_flac.mo
 share/locale/ia/LC_MESSAGES/kfile_mail.mo
+share/locale/ia/LC_MESSAGES/kfile_mp3.mo
+share/locale/ia/LC_MESSAGES/kfile_mpc.mo
+share/locale/ia/LC_MESSAGES/kfile_ogg.mo
 share/locale/ia/LC_MESSAGES/kfile_rpm.mo
+share/locale/ia/LC_MESSAGES/kfile_sid.mo
+share/locale/ia/LC_MESSAGES/kfile_theora.mo
+share/locale/ia/LC_MESSAGES/kfile_wav.mo
 share/locale/ia/LC_MESSAGES/kfileaudiopreview4.mo
 share/locale/ia/LC_MESSAGES/kfileshare.mo
 share/locale/ia/LC_MESSAGES/kfindpart.mo
@@ -215,6 +227,7 @@ share/locale/ia/LC_MESSAGES/kio4.mo
 share/locale/ia/LC_MESSAGES/kio_akonadi.mo
 share/locale/ia/LC_MESSAGES/kio_applications.mo
 share/locale/ia/LC_MESSAGES/kio_archive.mo
+share/locale/ia/LC_MESSAGES/kio_audiocd.mo
 share/locale/ia/LC_MESSAGES/kio_bookmarks.mo
 share/locale/ia/LC_MESSAGES/kio_finger.mo
 share/locale/ia/LC_MESSAGES/kio_fish.mo
@@ -253,6 +266,7 @@ share/locale/ia/LC_MESSAGES/kmail.mo
 share/locale/ia/LC_MESSAGES/kmailcvt.mo
 share/locale/ia/LC_MESSAGES/kmenuedit.mo
 share/locale/ia/LC_MESSAGES/kmimetypefinder.mo
+share/locale/ia/LC_MESSAGES/kmix.mo
 share/locale/ia/LC_MESSAGES/knetattach.mo
 share/locale/ia/LC_MESSAGES/knode.mo
 share/locale/ia/LC_MESSAGES/knotes.mo
@@ -280,8 +294,13 @@ share/locale/ia/LC_MESSAGES/kres_remote.mo
 share/locale/ia/LC_MESSAGES/kresources_shared_akonadi.mo
 share/locale/ia/LC_MESSAGES/krfb.mo
 share/locale/ia/LC_MESSAGES/krunner.mo
+share/locale/ia/LC_MESSAGES/kscd.mo
 share/locale/ia/LC_MESSAGES/kscreensaver.mo
-share/locale/ia/LC_MESSAGES/ksecretservice.mo
+share/locale/ia/LC_MESSAGES/ksecrets_kio.mo
+share/locale/ia/LC_MESSAGES/ksecrets_ksecrets.mo
+share/locale/ia/LC_MESSAGES/ksecretsservice_api.mo
+share/locale/ia/LC_MESSAGES/ksecretsserviced.mo
+share/locale/ia/LC_MESSAGES/ksecretsync.mo
 share/locale/ia/LC_MESSAGES/ksendemail.mo
 share/locale/ia/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ia/LC_MESSAGES/kshorturifilter.mo
@@ -310,6 +329,7 @@ share/locale/ia/LC_MESSAGES/kwin_clients.mo
 share/locale/ia/LC_MESSAGES/kwin_effects.mo
 share/locale/ia/LC_MESSAGES/kwinshutdown.mo
 share/locale/ia/LC_MESSAGES/kwinstartmenu.mo
+share/locale/ia/LC_MESSAGES/kwl2kss.mo
 share/locale/ia/LC_MESSAGES/kwrite.mo
 share/locale/ia/LC_MESSAGES/kwriteconfig.mo
 share/locale/ia/LC_MESSAGES/kxkb.mo
@@ -322,6 +342,8 @@ share/locale/ia/LC_MESSAGES/libkalarmcal.mo
 share/locale/ia/LC_MESSAGES/libkblog.mo
 share/locale/ia/LC_MESSAGES/libkcal.mo
 share/locale/ia/LC_MESSAGES/libkcalutils.mo
+share/locale/ia/LC_MESSAGES/libkcddb.mo
+share/locale/ia/LC_MESSAGES/libkcompactdisc.mo
 share/locale/ia/LC_MESSAGES/libkdecorations.mo
 share/locale/ia/LC_MESSAGES/libkdepim.mo
 share/locale/ia/LC_MESSAGES/libkdepimmobileui.mo
@@ -359,6 +381,8 @@ share/locale/ia/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/ia/LC_MESSAGES/messageviewer_text_xdiff_plugin.mo
 share/locale/ia/LC_MESSAGES/mf_konqplugin.mo
 share/locale/ia/LC_MESSAGES/minitoolsplugin.mo
+share/locale/ia/LC_MESSAGES/mplayerthumbs.mo
+share/locale/ia/LC_MESSAGES/mplayerthumbsconfig.mo
 share/locale/ia/LC_MESSAGES/nepomukbackup.mo
 share/locale/ia/LC_MESSAGES/nepomukcontroller.mo
 share/locale/ia/LC_MESSAGES/nepomukfileindexer.mo

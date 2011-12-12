@@ -63,7 +63,7 @@
      SUBDIR += multimedia		
      SUBDIR += network			
      SUBDIR += pim			
-     SUBDIR += sdk			# marked BROKEN
+     SUBDIR += sdk			
      SUBDIR += toys			
      SUBDIR += webdev			
 
@@ -131,15 +131,15 @@
      SUBDIR += konsole			
      SUBDIR += akonadi-googledata	
      SUBDIR += kdevplatform		
-     SUBDIR += kdevelop			# marked BROKEN, depends on sdk
+     SUBDIR += kdevelop
      SUBDIR += yakuake			
      SUBDIR += kwebkitpart		
-     SUBDIR += calligra			
+#     SUBDIR += calligra		# marked BROKEN to fix compile issues...	
      SUBDIR += libktorrent		
      SUBDIR += ktorrent			
 
 # additional resources
-     SUBDIR += plasma-addons		# worst package of 4.8 beta 1, can't even compile 
+     SUBDIR += plasma-addons
      SUBDIR += l10n			
      SUBDIR += wallpapers		
 

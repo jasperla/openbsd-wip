@@ -1,0 +1,12 @@
+$OpenBSD$
+--- okteta/kasten/controllers/view/structures/datatypes/primitive/uintdatainformation.cpp.orig	Sat Dec 10 15:49:43 2011
++++ okteta/kasten/controllers/view/structures/datatypes/primitive/uintdatainformation.cpp	Sat Dec 10 15:50:02 2011
+@@ -51,7 +51,7 @@ QScriptValue UIntDataInformation<T, typeValue>::valueA
+ template<typename T, PrimitiveDataType typeValue>
+ QString UIntDataInformation<T, typeValue>::valueString() const
+ {
+-    if (!DataInformation::mWasAbleToRead)
++    if (!DataInformation::wasAbleToRead())
+         return i18nc("invalid value (out of range)", "&lt;invalid&gt;");
+     return UIntDataInformation<T, typeValue>::valueString(UnsignedDataInformation<T>::mValue);
+ }
