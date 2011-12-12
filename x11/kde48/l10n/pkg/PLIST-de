@@ -457,6 +457,7 @@ share/doc/HTML/de/kate/
 share/doc/HTML/de/kate/advanced.docbook
 share/doc/HTML/de/kate/common
 share/doc/HTML/de/kate/configdialog01.png
+share/doc/HTML/de/kate/configuring-part.docbook
 share/doc/HTML/de/kate/configuring.docbook
 share/doc/HTML/de/kate/fundamentals.docbook
 share/doc/HTML/de/kate/highlighting.docbook
@@ -1804,8 +1805,11 @@ share/doc/HTML/de/kwordquiz/kwq-multiple.png
 share/doc/HTML/de/kwordquiz/kwq-qanda.png
 share/doc/HTML/de/kwrite/
 share/doc/HTML/de/kwrite/common
+share/doc/HTML/de/kwrite/configuring.docbook
+share/doc/HTML/de/kwrite/fundamentals.docbook
 share/doc/HTML/de/kwrite/index.cache.bz2
 share/doc/HTML/de/kwrite/index.docbook
+share/doc/HTML/de/kwrite/menus.docbook
 share/doc/HTML/de/lokalize/
 share/doc/HTML/de/lokalize/common
 share/doc/HTML/de/lokalize/index.cache.bz2
@@ -1927,6 +1931,8 @@ share/doc/HTML/de/plasma-desktop/
 share/doc/HTML/de/plasma-desktop/add-widgets.png
 share/doc/HTML/de/plasma-desktop/common
 share/doc/HTML/de/plasma-desktop/desktop-settings.png
+share/doc/HTML/de/plasma-desktop/device_notifier_widget.png
+share/doc/HTML/de/plasma-desktop/device_notifier_widget_actions.png
 share/doc/HTML/de/plasma-desktop/index.cache.bz2
 share/doc/HTML/de/plasma-desktop/index.docbook
 share/doc/HTML/de/plasma-desktop/panel-settings.png

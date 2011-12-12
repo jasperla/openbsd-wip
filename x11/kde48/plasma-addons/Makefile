@@ -2,11 +2,9 @@
 
 COMMENT =	K Desktop Environment, extra plasmoids
 DISTNAME =	kdeplasma-addons-${MODKDE_VERSION}
-BROKEN =	too many compile issues
 
 SHARED_LIBS =	lancelot-datamodels		0.0 # 1.7
 SHARED_LIBS +=	lancelot			0.0 # 1.9
-SHARED_LIBS +=	kimpanelruntime			0.0 # 1.9
 SHARED_LIBS +=	plasma_groupingcontainment	0.0 # 4.7
 SHARED_LIBS +=	plasmacomicprovidercore		0.0 # 1.0
 SHARED_LIBS +=	plasmapotdprovidercore		0.0 # 1.0
@@ -19,12 +17,12 @@ WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtScript lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += lib/qt4/QtWebKit lib/qt4/QtSql qwt
 WANTLIB += akonadi-contact akonadi-kde attica kabc kcalcore kcmutils
-WANTLIB += kdeui kdewebkit kexiv2 kio kfile kmime knewstuff2
+WANTLIB += kdeui kdewebkit kexiv2 kio kfile kmime
 WANTLIB += knewstuff3 kparts kpimutils kresources krosscore
 WANTLIB += kunitconversion kworkspace marblewidget nepomuk nepomukutils
 WANTLIB += phonon plasma plasmaclock qca qimageblitz solid solidcontrol
 WANTLIB += soprano taskmanager threadweaver weather_ion
-WANTLIB += cln glib-2.0 qalculate scim-1.0 xml2
+WANTLIB += cln glib-2.0 qalculate scim-1.0 xml2 dbusmenu-qt
 
 MODULES =	devel/gettext
 

@@ -3,7 +3,7 @@
 COMMENT =	KDE development enviornment
 VERSION =	4.2.3
 DISTNAME =	kdevelop-${VERSION}
-BROKEN =	depends on sdk
+#BROKEN =	depends on sdk
 
 SHARED_LIBS +=	kdev4cmakecommon	0.0
 SHARED_LIBS +=	kdev4cppduchain		0.0
@@ -16,14 +16,14 @@ WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDesigner lib/qt4/QtGui
 WANTLIB += lib/qt4/QtHelp lib/qt4/QtNetwork lib/qt4/QtScript
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtWebKit lib/qt4/QtXml
-WANTLIB += kastencontrollers kastencore kastengui kcmutils kdeui
+WANTLIB += kcmutils kdeui
 WANTLIB += kdevplatformdebugger kdevplatformdocumentation
 WANTLIB += kdevplatforminterfaces kdevplatformlanguage
 WANTLIB += kdevplatformoutputview kdevplatformproject kdevplatformshell
 WANTLIB += kdevplatformutil kdevplatformvcs kemoticons kidletime kio
 WANTLIB += knotifyconfig kparts kprintutils ktexteditor kutils nepomuk
-WANTLIB += nepomukutils oktetacore oktetagui oktetakastencontrollers
-WANTLIB += oktetakastencore oktetakastengui processcore processui
+WANTLIB += nepomukutils
+WANTLIB += processcore processui
 WANTLIB += soprano sublime threadweaver
 
 MODKDE4_USE =	workspace

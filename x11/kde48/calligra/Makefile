@@ -4,6 +4,7 @@ COMMENT =	KDE office suite
 VERSION =	2.3.84
 DISTNAME =	calligra-${VERSION}
 PKGNAME =	${DISTNAME:C/-/4-/1}
+BROKEN =	compile issues, fixed soon
 
 SHARED_LIBS =	flake			0.0 # 8.0
 SHARED_LIBS +=	kokross			0.0 # 8.0
