@@ -40,8 +40,8 @@ RUN_DEPENDS =		devel/py-dateutil \
 			www/py-beautifulsoup \
 			www/py-CherryPy \
 			www/py-mechanize \
-			x11/py-qt4>=4.8.2p1 \
-			www/py-mechanize
+			x11/gtk+2,-guic \
+			x11/py-qt4>=4.8.2p1
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
 CFLAGS +=		"-I${LOCALBASE}/include"
