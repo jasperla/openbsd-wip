@@ -1445,6 +1445,8 @@ lib/calibre/calibre/gui2/dialogs/user_profiles_ui.py
 lib/calibre/calibre/gui2/dialogs/user_profiles_ui.pyc
 lib/calibre/calibre/gui2/dnd.py
 lib/calibre/calibre/gui2/dnd.pyc
+lib/calibre/calibre/gui2/duplicates.py
+lib/calibre/calibre/gui2/duplicates.pyc
 lib/calibre/calibre/gui2/ebook_download.py
 lib/calibre/calibre/gui2/ebook_download.pyc
 lib/calibre/calibre/gui2/email.py
@@ -1676,8 +1678,12 @@ lib/calibre/calibre/gui2/store/stores/__init__.py
 lib/calibre/calibre/gui2/store/stores/__init__.pyc
 lib/calibre/calibre/gui2/store/stores/amazon_de_plugin.py
 lib/calibre/calibre/gui2/store/stores/amazon_de_plugin.pyc
+lib/calibre/calibre/gui2/store/stores/amazon_es_plugin.py
+lib/calibre/calibre/gui2/store/stores/amazon_es_plugin.pyc
 lib/calibre/calibre/gui2/store/stores/amazon_fr_plugin.py
 lib/calibre/calibre/gui2/store/stores/amazon_fr_plugin.pyc
+lib/calibre/calibre/gui2/store/stores/amazon_it_plugin.py
+lib/calibre/calibre/gui2/store/stores/amazon_it_plugin.pyc
 lib/calibre/calibre/gui2/store/stores/amazon_plugin.py
 lib/calibre/calibre/gui2/store/stores/amazon_plugin.pyc
 lib/calibre/calibre/gui2/store/stores/amazon_uk_plugin.py
@@ -1728,6 +1734,8 @@ lib/calibre/calibre/gui2/store/stores/legimi_plugin.py
 lib/calibre/calibre/gui2/store/stores/legimi_plugin.pyc
 lib/calibre/calibre/gui2/store/stores/libri_de_plugin.py
 lib/calibre/calibre/gui2/store/stores/libri_de_plugin.pyc
+lib/calibre/calibre/gui2/store/stores/litres_plugin.py
+lib/calibre/calibre/gui2/store/stores/litres_plugin.pyc
 lib/calibre/calibre/gui2/store/stores/manybooks_plugin.py
 lib/calibre/calibre/gui2/store/stores/manybooks_plugin.pyc
 lib/calibre/calibre/gui2/store/stores/mobileread/
@@ -2699,6 +2707,8 @@ share/calibre/recipes/biz_portal.recipe
 share/calibre/recipes/blic.png
 share/calibre/recipes/blic.recipe
 share/calibre/recipes/blog_da_cidadania.recipe
+share/calibre/recipes/blues.png
+share/calibre/recipes/blues.recipe
 share/calibre/recipes/boortz.png
 share/calibre/recipes/boortz.recipe
 share/calibre/recipes/borba.png
@@ -2809,6 +2819,7 @@ share/calibre/recipes/corriere_della_sera_it.recipe
 share/calibre/recipes/corriere_dello_sport.recipe
 share/calibre/recipes/cosmopolitan.recipe
 share/calibre/recipes/cosmopolitan_de.recipe
+share/calibre/recipes/cosmopolitan_uk.recipe
 share/calibre/recipes/cotidianul.png
 share/calibre/recipes/cotidianul.recipe
 share/calibre/recipes/counterpunch.recipe
@@ -2833,6 +2844,7 @@ share/calibre/recipes/dagens_industri.recipe
 share/calibre/recipes/daily_mail.recipe
 share/calibre/recipes/daily_mirror.recipe
 share/calibre/recipes/daily_telegraph.recipe
+share/calibre/recipes/daily_writing_tips.recipe
 share/calibre/recipes/dailyreckoning.png
 share/calibre/recipes/dailyreckoning.recipe
 share/calibre/recipes/dailytportal.png
@@ -3112,6 +3124,7 @@ share/calibre/recipes/gandul.recipe
 share/calibre/recipes/gawker.png
 share/calibre/recipes/gawker.recipe
 share/calibre/recipes/gazeta-prawna-calibre-v1.recipe
+share/calibre/recipes/gazeta_pl_szczecin.recipe
 share/calibre/recipes/gazeta_pomorska.png
 share/calibre/recipes/gazeta_pomorska.recipe
 share/calibre/recipes/gazeta_wyborcza.png
@@ -3119,6 +3132,7 @@ share/calibre/recipes/gazeta_wyborcza.recipe
 share/calibre/recipes/geek_poke.recipe
 share/calibre/recipes/german_gov.recipe
 share/calibre/recipes/gildia_pl.recipe
+share/calibre/recipes/givemesomethingtoread.recipe
 share/calibre/recipes/gizmodo.png
 share/calibre/recipes/gizmodo.recipe
 share/calibre/recipes/glamour.recipe
@@ -3152,6 +3166,7 @@ share/calibre/recipes/greensboro_news_and_record.recipe
 share/calibre/recipes/grrm.recipe
 share/calibre/recipes/gry_online_pl.png
 share/calibre/recipes/gry_online_pl.recipe
+share/calibre/recipes/gs24_pl.recipe
 share/calibre/recipes/gsp.png
 share/calibre/recipes/gsp.recipe
 share/calibre/recipes/guardian.png
@@ -3408,6 +3423,7 @@ share/calibre/recipes/lenta_ru.recipe
 share/calibre/recipes/lepoint.recipe
 share/calibre/recipes/lescienze.recipe
 share/calibre/recipes/lesoir_be.recipe
+share/calibre/recipes/letsgetcritical.recipe
 share/calibre/recipes/levante.recipe
 share/calibre/recipes/lexpress.recipe
 share/calibre/recipes/liberation.png
@@ -3841,6 +3857,8 @@ share/calibre/recipes/sizinti_derigisi.recipe
 share/calibre/recipes/skai.recipe
 share/calibre/recipes/skeptic.recipe
 share/calibre/recipes/skeptical_enquirer.recipe
+share/calibre/recipes/skylife.png
+share/calibre/recipes/skylife.recipe
 share/calibre/recipes/slashdot.recipe
 share/calibre/recipes/slate.recipe
 share/calibre/recipes/slovo.recipe
@@ -3912,6 +3930,7 @@ share/calibre/recipes/taz_rss.recipe
 share/calibre/recipes/tech_world.recipe
 share/calibre/recipes/techcrunch.png
 share/calibre/recipes/techcrunch.recipe
+share/calibre/recipes/techdirt.recipe
 share/calibre/recipes/technology_review.recipe
 share/calibre/recipes/technology_review_de.recipe
 share/calibre/recipes/techtarget.recipe
@@ -4005,6 +4024,7 @@ share/calibre/recipes/tulsaworld.recipe
 share/calibre/recipes/tuttosport.recipe
 share/calibre/recipes/tvmania.png
 share/calibre/recipes/tvmania.recipe
+share/calibre/recipes/tvxs.recipe
 share/calibre/recipes/tweakers.recipe
 share/calibre/recipes/twitchfilms.png
 share/calibre/recipes/twitchfilms.recipe
@@ -4029,6 +4049,7 @@ share/calibre/recipes/utne.recipe
 share/calibre/recipes/utrinski.recipe
 share/calibre/recipes/vancouver_provice.recipe
 share/calibre/recipes/vancouver_sun.recipe
+share/calibre/recipes/vanityfair.recipe
 share/calibre/recipes/variety.png
 share/calibre/recipes/variety.recipe
 share/calibre/recipes/vecernji_list.png
@@ -4086,6 +4107,7 @@ share/calibre/recipes/wnp.png
 share/calibre/recipes/wnp.recipe
 share/calibre/recipes/words_without_borders.recipe
 share/calibre/recipes/workers_world.recipe
+share/calibre/recipes/worldcrunch.recipe
 share/calibre/recipes/wow.recipe
 share/calibre/recipes/woz_die.recipe
 share/calibre/recipes/wprost.recipe
@@ -4184,7 +4206,7 @@ share/pixmaps/calibre-lrf.png
 share/pixmaps/calibre-viewer.png
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
