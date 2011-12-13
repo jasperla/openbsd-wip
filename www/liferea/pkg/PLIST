@@ -69,6 +69,7 @@ share/liferea/auth.ui
 share/liferea/css/
 share/liferea/css/adblock.css
 share/liferea/css/liferea.css
+share/liferea/css/user.css
 share/liferea/dtd/
 share/liferea/dtd/html.ent
 share/liferea/google_source.ui
@@ -85,6 +86,7 @@ share/liferea/opml/feedlist_eu.opml
 share/liferea/opml/feedlist_fr.opml
 share/liferea/opml/feedlist_gl.opml
 share/liferea/opml/feedlist_he.opml
+share/liferea/opml/feedlist_hu.opml
 share/liferea/opml/feedlist_it.opml
 share/liferea/opml/feedlist_nl.opml
 share/liferea/opml/feedlist_pl.opml
@@ -121,10 +123,10 @@ share/liferea/xslt/newsbin.xml
 share/liferea/xslt/source.xml
 share/liferea/xslt/vfolder.xml
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-${SCHEMAS_INSTDIR}/
-${SCHEMAS_INSTDIR}/liferea.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/liferea.schemas
