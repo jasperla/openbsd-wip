@@ -1,0 +1,13 @@
+$OpenBSD$
+--- build/common.gypi.orig	Wed Dec 14 21:52:00 2011
++++ build/common.gypi	Wed Dec 14 21:52:10 2011
+@@ -1863,6 +1863,9 @@
+             'cflags': [
+               '-fPIC',
+             ],
++            'ldflags': [
++              '-fPIC',
++            ],
+           }],
+           # TODO(rkc): Currently building Chrome with the PIE flag causes
+           # remote debugging to break (remote debugger does not get correct
