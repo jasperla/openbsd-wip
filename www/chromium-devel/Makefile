@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS=		i386 amd64
 
 COMMENT=		Chromium browser
 
-V=			17.0.963.2
+V=			18.0.971.0
 DISTNAME=		chromium-${V}
 PKGNAME=		chromium-devel-${V}
 
@@ -26,14 +26,18 @@ WANTLIB += X11 Xext Xfixes Xrender Xss bz2 c cairo cups dbus-1
 WANTLIB += event execinfo expat fontconfig freetype gconf-2 gcrypt
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 jpeg m nspr4 pango-1.0 pangocairo-1.0 plc4
-WANTLIB += pthread pthread-stubs pulse speex stdc++ xml2 xslt
+WANTLIB += pthread pthread-stubs pulse speex xml2 xslt
 WANTLIB += nss3 nssutil3 smime3 png
 
 MASTER_SITES=	http://blade2k.humppa.hu/distfiles/ \
 		http://commondatastorage.googleapis.com/chromium-browser-official/
 
-MODULES=	devel/gettext \
-		lang/python
+MODULES=	lang/python \
+		gcc4
+
+MODGCC4_ARCHS=	*
+MODGCC4_LANGS=	c++
+MODGCC4_VERSION=4.6
 
 MODPY_RUNDEP=	No
 
