@@ -87,8 +87,6 @@ share/doc/HTML/wa/common/fdl-translated.html
 share/doc/HTML/wa/common/gpl-translated.html
 share/doc/HTML/wa/common/kde-localised.css
 share/doc/HTML/wa/common/lgpl-translated.html
-share/locale/wa/
-share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/adblock.mo
 share/locale/wa/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/wa/LC_MESSAGES/attica_kde.mo

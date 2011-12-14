@@ -6,8 +6,6 @@ share/apps/ktuberling/
 share/apps/ktuberling/sounds/
 share/apps/ktuberling/sounds/ga/
 share/apps/ktuberling/sounds/ga.soundtheme
-share/apps/ktuberling/sounds/ga/adharc.wav
-share/apps/ktuberling/sounds/ga/an-tuasal-prata.wav
 share/apps/ktuberling/sounds/ga/beal.wav
 share/apps/ktuberling/sounds/ga/carbhat.wav
 share/apps/ktuberling/sounds/ga/cluas.wav
@@ -17,16 +15,10 @@ share/apps/ktuberling/sounds/ga/fainne-cluaise.wav
 share/apps/ktuberling/sounds/ga/gruaig.wav
 share/apps/ktuberling/sounds/ga/hata.wav
 share/apps/ktuberling/sounds/ga/mala.wav
-share/apps/ktuberling/sounds/ga/muince.wav
-share/apps/ktuberling/sounds/ga/piongain.wav
-share/apps/ktuberling/sounds/ga/scaif.wav
 share/apps/ktuberling/sounds/ga/speaclai-greine.wav
 share/apps/ktuberling/sounds/ga/speaclai.wav
 share/apps/ktuberling/sounds/ga/sron.wav
-share/apps/ktuberling/sounds/ga/suaitheantas.wav
 share/apps/ktuberling/sounds/ga/suil.wav
-share/apps/ktuberling/sounds/ga/todog.wav
-share/apps/ktuberling/sounds/ga/uaireadoir.wav
 share/apps/kvtml/
 share/apps/kvtml/ga/
 share/apps/kvtml/ga/animals.kvtml

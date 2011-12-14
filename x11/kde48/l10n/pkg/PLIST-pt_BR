@@ -392,6 +392,7 @@ share/doc/HTML/pt_BR/kapptemplate/index.docbook
 share/doc/HTML/pt_BR/kate/
 share/doc/HTML/pt_BR/kate/advanced.docbook
 share/doc/HTML/pt_BR/kate/common
+share/doc/HTML/pt_BR/kate/configuring-part.docbook
 share/doc/HTML/pt_BR/kate/configuring.docbook
 share/doc/HTML/pt_BR/kate/fundamentals.docbook
 share/doc/HTML/pt_BR/kate/highlighting.docbook
@@ -1625,8 +1626,11 @@ share/doc/HTML/pt_BR/kwordquiz/index.cache.bz2
 share/doc/HTML/pt_BR/kwordquiz/index.docbook
 share/doc/HTML/pt_BR/kwrite/
 share/doc/HTML/pt_BR/kwrite/common
+share/doc/HTML/pt_BR/kwrite/configuring.docbook
+share/doc/HTML/pt_BR/kwrite/fundamentals.docbook
 share/doc/HTML/pt_BR/kwrite/index.cache.bz2
 share/doc/HTML/pt_BR/kwrite/index.docbook
+share/doc/HTML/pt_BR/kwrite/menus.docbook
 share/doc/HTML/pt_BR/lokalize/
 share/doc/HTML/pt_BR/lokalize/common
 share/doc/HTML/pt_BR/lokalize/index.cache.bz2

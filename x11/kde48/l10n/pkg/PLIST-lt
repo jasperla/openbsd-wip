@@ -130,8 +130,6 @@ share/doc/HTML/lt/marble/routing-2.png
 share/doc/HTML/lt/marble/routing-6.png
 share/doc/HTML/lt/marble/search-1.png
 share/doc/HTML/lt/marble/search-2.png
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/accountwizard.mo
 share/locale/lt/LC_MESSAGES/accountwizard_ical.mo
 share/locale/lt/LC_MESSAGES/accountwizard_imap.mo
@@ -524,8 +522,11 @@ share/locale/lt/LC_MESSAGES/krunner.mo
 share/locale/lt/LC_MESSAGES/ksaneplugin.mo
 share/locale/lt/LC_MESSAGES/kscd.mo
 share/locale/lt/LC_MESSAGES/kscreensaver.mo
-share/locale/lt/LC_MESSAGES/ksecrets.mo
-share/locale/lt/LC_MESSAGES/ksecretservice.mo
+share/locale/lt/LC_MESSAGES/ksecrets_kio.mo
+share/locale/lt/LC_MESSAGES/ksecrets_ksecrets.mo
+share/locale/lt/LC_MESSAGES/ksecretsservice_api.mo
+share/locale/lt/LC_MESSAGES/ksecretsserviced.mo
+share/locale/lt/LC_MESSAGES/ksecretsync.mo
 share/locale/lt/LC_MESSAGES/ksendemail.mo
 share/locale/lt/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/lt/LC_MESSAGES/kshisen.mo
@@ -575,6 +576,7 @@ share/locale/lt/LC_MESSAGES/kwin_clients.mo
 share/locale/lt/LC_MESSAGES/kwin_effects.mo
 share/locale/lt/LC_MESSAGES/kwinshutdown.mo
 share/locale/lt/LC_MESSAGES/kwinstartmenu.mo
+share/locale/lt/LC_MESSAGES/kwl2kss.mo
 share/locale/lt/LC_MESSAGES/kwordquiz.mo
 share/locale/lt/LC_MESSAGES/kwrite.mo
 share/locale/lt/LC_MESSAGES/kwriteconfig.mo

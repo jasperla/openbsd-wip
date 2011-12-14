@@ -1,6 +1,4 @@
 @comment $OpenBSD$
-share/locale/is/
-share/locale/is/LC_MESSAGES/
 share/locale/is/LC_MESSAGES/adblock.mo
 share/locale/is/LC_MESSAGES/akregator.mo
 share/locale/is/LC_MESSAGES/akregator_konqplugin.mo
@@ -297,7 +295,11 @@ share/locale/is/LC_MESSAGES/krunner.mo
 share/locale/is/LC_MESSAGES/ksaneplugin.mo
 share/locale/is/LC_MESSAGES/kscd.mo
 share/locale/is/LC_MESSAGES/kscreensaver.mo
-share/locale/is/LC_MESSAGES/ksecretservice.mo
+share/locale/is/LC_MESSAGES/ksecrets_kio.mo
+share/locale/is/LC_MESSAGES/ksecrets_ksecrets.mo
+share/locale/is/LC_MESSAGES/ksecretsservice_api.mo
+share/locale/is/LC_MESSAGES/ksecretsserviced.mo
+share/locale/is/LC_MESSAGES/ksecretsync.mo
 share/locale/is/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/is/LC_MESSAGES/kshisen.mo
 share/locale/is/LC_MESSAGES/kshorturifilter.mo
@@ -341,6 +343,7 @@ share/locale/is/LC_MESSAGES/kwin_clients.mo
 share/locale/is/LC_MESSAGES/kwin_effects.mo
 share/locale/is/LC_MESSAGES/kwinshutdown.mo
 share/locale/is/LC_MESSAGES/kwinstartmenu.mo
+share/locale/is/LC_MESSAGES/kwl2kss.mo
 share/locale/is/LC_MESSAGES/kwrite.mo
 share/locale/is/LC_MESSAGES/kwriteconfig.mo
 share/locale/is/LC_MESSAGES/kxkb.mo

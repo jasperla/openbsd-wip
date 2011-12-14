@@ -2,9 +2,10 @@
 
 COMMENT =		ebook management application
 
-DISTNAME =		calibre-0.8.27
+DISTNAME =		calibre-0.8.30
 CATEGORIES =		textproc
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calibre/}
+EXTRACT_SUFX =		.tar.xz
 
 HOMEPAGE =		http://calibre-ebook.com/
 
@@ -40,8 +41,8 @@ RUN_DEPENDS =		devel/py-dateutil \
 			www/py-beautifulsoup \
 			www/py-CherryPy \
 			www/py-mechanize \
-			x11/py-qt4>=4.8.2p1 \
-			www/py-mechanize
+			x11/gtk+2,-guic \
+			x11/py-qt4>=4.8.2p1
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
 CFLAGS +=		"-I${LOCALBASE}/include"

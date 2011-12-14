@@ -71,16 +71,10 @@ share/apps/ktuberling/
 share/apps/ktuberling/sounds/
 share/apps/ktuberling/sounds/sv/
 share/apps/ktuberling/sounds/sv.soundtheme
-share/apps/ktuberling/sounds/sv/brosch.wav
-share/apps/ktuberling/sounds/sv/cigarr.wav
 share/apps/ktuberling/sounds/sv/fluga.wav
 share/apps/ktuberling/sounds/sv/glasogon.wav
-share/apps/ktuberling/sounds/sv/halsband.wav
-share/apps/ktuberling/sounds/sv/halsduk.wav
 share/apps/ktuberling/sounds/sv/har.wav
 share/apps/ktuberling/sounds/sv/hatt.wav
-share/apps/ktuberling/sounds/sv/horn.wav
-share/apps/ktuberling/sounds/sv/klocka.wav
 share/apps/ktuberling/sounds/sv/mun.wav
 share/apps/ktuberling/sounds/sv/mustasch.wav
 share/apps/ktuberling/sounds/sv/nasa.wav
@@ -88,8 +82,6 @@ share/apps/ktuberling/sounds/sv/oga.wav
 share/apps/ktuberling/sounds/sv/ogonbryn.wav
 share/apps/ktuberling/sounds/sv/ora.wav
 share/apps/ktuberling/sounds/sv/orhange.wav
-share/apps/ktuberling/sounds/sv/pingvin.wav
-share/apps/ktuberling/sounds/sv/potatismannen.wav
 share/apps/ktuberling/sounds/sv/rosett.wav
 share/apps/ktuberling/sounds/sv/slips.wav
 share/apps/ktuberling/sounds/sv/solglasogon.wav

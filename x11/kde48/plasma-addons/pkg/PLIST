@@ -1,5 +1,4 @@
 @comment $OpenBSD: PLIST,v 1.2 2008/02/09 13:18:16 espie Exp $
-@bin bin/kimpanel
 @bin bin/lancelot
 include/KDE/Lancelot/
 include/KDE/Lancelot/ActionListModel
@@ -133,6 +132,7 @@ lib/kde4/plasma_applet_fifteenPuzzle.so
 lib/kde4/plasma_applet_fileWatcher.so
 lib/kde4/plasma_applet_frame.so
 lib/kde4/plasma_applet_fuzzy_clock.so
+lib/kde4/plasma_applet_icontasks.so
 lib/kde4/plasma_applet_incomingmsg.so
 lib/kde4/plasma_applet_kdeobservatory.so
 lib/kde4/plasma_applet_kimpanel.so
@@ -174,6 +174,7 @@ lib/kde4/plasma_containment_groupingdesktop.so
 lib/kde4/plasma_containment_groupingpanel.so
 lib/kde4/plasma_engine_comic.so
 lib/kde4/plasma_engine_kdeobservatory.so
+lib/kde4/plasma_engine_kimpanel.so
 lib/kde4/plasma_engine_microblog.so
 lib/kde4/plasma_engine_ocs.so
 lib/kde4/plasma_engine_potd.so
@@ -189,9 +190,9 @@ lib/kde4/plasma_runner_events.so
 lib/kde4/plasma_wallpaper_mandelbrot.so
 lib/kde4/plasma_wallpaper_marble.so
 lib/kde4/plasma_wallpaper_pattern.so
+lib/kde4/plasma_wallpaper_potd.so
 lib/kde4/plasma_wallpaper_virus.so
 lib/kde4/plasma_wallpaper_weather.so
-@lib lib/libkimpanelruntime.so.${LIBkimpanelruntime_VERSION}
 @lib lib/liblancelot-datamodels.so.${LIBlancelot-datamodels_VERSION}
 @lib lib/liblancelot.so.${LIBlancelot_VERSION}
 @lib lib/libplasma_groupingcontainment.so.${LIBplasma_groupingcontainment_VERSION}
@@ -199,7 +200,7 @@ lib/kde4/plasma_wallpaper_weather.so
 @lib lib/libplasmapotdprovidercore.so.${LIBplasmapotdprovidercore_VERSION}
 @lib lib/libplasmaweather.so.${LIBplasmaweather_VERSION}
 @lib lib/librtm.so.${LIBrtm_VERSION}
-@bin lib/scim-1.0/scim-panel-dbus
+@bin libexec/kimpanel-scim-panel
 share/apps/bball/
 share/apps/bball/bball.svgz
 share/apps/bball/bounce.ogg
@@ -268,6 +269,12 @@ share/apps/desktoptheme/default/bubblemon/
 share/apps/desktoptheme/default/bubblemon/bubble.svg
 share/apps/desktoptheme/default/fifteenPuzzle/
 share/apps/desktoptheme/default/fifteenPuzzle/blanksquare.svg
+share/apps/desktoptheme/default/icontasks/
+share/apps/desktoptheme/default/icontasks/badge.svgz
+share/apps/desktoptheme/default/icontasks/dropindicators.svgz
+share/apps/desktoptheme/default/icontasks/indicators.svgz
+share/apps/desktoptheme/default/icontasks/launcherseparator.svgz
+share/apps/desktoptheme/default/icontasks/progress.svgz
 share/apps/desktoptheme/default/lancelot/
 share/apps/desktoptheme/default/lancelot/action-list-view-drop-indicator.svgz
 share/apps/desktoptheme/default/lancelot/action-list-view-headers.svgz
@@ -332,6 +339,8 @@ share/apps/desktoptheme/slim-glow/lancelot/section-buttons.svgz
 share/apps/desktoptheme/slim-glow/lancelot/system-buttons-extender.svgz
 share/apps/desktoptheme/slim-glow/lancelot/system-buttons.svgz
 share/apps/desktoptheme/slim-glow/lancelot/theme.config
+share/apps/kdeplasma-addons/
+share/apps/kdeplasma-addons/mediabuttonsrc
 share/apps/lancelot/
 share/apps/lancelot/lancelot.notifyrc
 share/apps/plasma-applet-frame/
@@ -341,6 +350,7 @@ share/apps/plasma-applet-opendesktop-activities/
 share/apps/plasma-applet-opendesktop-activities/plasma-applet-opendesktop-activities.notifyrc
 share/apps/plasma-applet-opendesktop/user.css
 share/apps/plasma/services/kdeobservatory.operations
+share/apps/plasma/services/kimpanel.operations
 share/apps/plasma/services/ocsPerson.operations
 share/apps/plasma/services/rtmauth.operations
 share/apps/plasma/services/rtmtask.operations
@@ -395,7 +405,6 @@ share/config/comic.knsrc
 share/config/pastebin.knsrc
 share/config/plasmaweather.knsrc
 share/config/virus_wallpaper.knsrc
-share/dbus-1/interfaces/org.kde.impanel.xml
 share/icons/hicolor/128x128/apps/bball.png
 share/icons/hicolor/128x128/apps/eyes.png
 share/icons/hicolor/128x128/apps/kdeobservatory.png
@@ -478,6 +487,7 @@ share/kde4/services/plasma-applet-calculator.desktop
 share/kde4/services/plasma-applet-charselect.desktop
 share/kde4/services/plasma-applet-eyes.desktop
 share/kde4/services/plasma-applet-fifteenPuzzle.desktop
+share/kde4/services/plasma-applet-icontasks.desktop
 share/kde4/services/plasma-applet-incomingmsg.desktop
 share/kde4/services/plasma-applet-kdeobservatory.desktop
 share/kde4/services/plasma-applet-kimpanel.desktop
@@ -517,6 +527,7 @@ share/kde4/services/plasma-containment-griddesktop.desktop
 share/kde4/services/plasma-containment-groupingdesktop.desktop
 share/kde4/services/plasma-containment-groupingpanel.desktop
 share/kde4/services/plasma-dataengine-comic.desktop
+share/kde4/services/plasma-dataengine-kimpanel.desktop
 share/kde4/services/plasma-dataengine-microblog.desktop
 share/kde4/services/plasma-dataengine-ocs.desktop
 share/kde4/services/plasma-dataengine-potd.desktop
@@ -544,6 +555,7 @@ share/kde4/services/plasma-runner-wikitravel.desktop
 share/kde4/services/plasma-wallpaper-mandelbrot.desktop
 share/kde4/services/plasma-wallpaper-marble.desktop
 share/kde4/services/plasma-wallpaper-pattern.desktop
+share/kde4/services/plasma-wallpaper-potd.desktop
 share/kde4/services/plasma-wallpaper-virus.desktop
 share/kde4/services/plasma-wallpaper-weather.desktop
 share/kde4/services/plasma_applet_plasmaboard.desktop

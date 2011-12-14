@@ -18,6 +18,8 @@ audio/clementine:	sent to ports@ Sep 06 2011. Ready for import. (grayed)
 graphics/zint:		Ready. Sent to ports@ 07.04, 14.11 and 28.11 (yason)
 multimedia/bashburn:	Ready for import. Sent to ports@ 05.10.2010 (druga)
 x11/orthos:		Ready for import. Sent to ports@ 07.10.2010 (druga)
+devel/libgeier:		Ready for import. Sent to ports@ 11.12.2011 (sizeofvoid)
+productivity/taxbird:	Ready for import. Sent to ports@ 11.12.2011 (sizeofvoid)
 
 KDE 4.7.2 related
 
@@ -27,18 +29,3 @@ textproc/rasqal:	Ready for import. Sent to ports@ October 10, 2011 (grayed)
 textproc/redland:	Ready for import. Sent to ports@ October 10, 2011 (grayed)
 math/qhull:		Ready for import. Sent to ports@ October 14, 2011 (wen heping, amitkulz, nigel)
 math/libqalculate	Ready for import. Sent to ports@ October 24, 2011 (grayed, amitkulz)
-
-Moose related
-
-devel/p5-Any-Moose:			ready for import, sent to ports@ 2011-11-22 (voegelas)
-devel/p5-Mouse:				ready for import, sent to ports@ 2011-11-22 (voegelas)
-devel/p5-Moose:				ready for import, sent to ports@ 2011-11-22 (voegelas)
-devel/p5-MooseX-Getopt:			ready for import, sent to ports@ 2011-11-22 (voegelas)
-devel/p5-MooseX-MethodAttributes:	ready for import, sent to ports@ 2011-11-22 (voegelas)
-devel/p5-MooseX-Role-WithOverloading:	ready for import, sent to ports@ 2011-11-22 (voegelas)
-devel/p5-File-ChangeNotify:		ready for import, sent to ports@ 2011-11-22 (voegelas)
-devel/p5-Class-MOP:			ready for import, sent to ports@ 2011-11-22 (voegelas)
-devel/p5-Package-Stash:			ready for import, sent to ports@ 2011-11-22 (voegelas)
-devel/p5-Package-Stash-XS:		ready for import, sent to ports@ 2011-11-22 (voegelas)
-devel/p5-namespace-clean:		ready for import, sent to ports@ 2011-11-22 (voegelas)
-devel/p5-namespace-autoclean:		ready for import, sent to ports@ 2011-11-22 (voegelas)
