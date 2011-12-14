@@ -6,6 +6,7 @@ COMMENT=	Lua library for RS232 communication
 
 # ynezz/librs232 1.0.2 with additional fixes from jasperla/librs232
 DISTNAME=	librs232-1.0.2.1
+PKGNAME=	lua-${DISTNAME}
 
 SHARED_LIBS +=  rs232                     0.0 # 0.0
 
