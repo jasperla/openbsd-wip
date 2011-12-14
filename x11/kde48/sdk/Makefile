@@ -2,19 +2,19 @@
 
 COMMENT =	KDE SDK
 DISTNAME =	kdesdk-${MODKDE_VERSION}
-BROKEN =	compile issues, solvable
 
-SHARED_LIBS =	kastencontrollers	0.0 # 4.7
-SHARED_LIBS +=	kastencore		0.0 # 4.7
-SHARED_LIBS +=	kastengui		0.0 # 4.7
 SHARED_LIBS +=	komparedialogpages	0.0 # 4.7
 SHARED_LIBS +=	komparediff2		0.0 # 4.7
 SHARED_LIBS +=	kompareinterface	0.0 # 4.7
-SHARED_LIBS +=	oktetacore		0.0 # 4.7
-SHARED_LIBS +=	oktetagui		0.0 # 4.7
-SHARED_LIBS +=	oktetakastencontrollers	0.0 # 4.7
-SHARED_LIBS +=	oktetakastencore	0.0 # 4.7
-SHARED_LIBS +=	oktetakastengui		0.0 # 4.7
+SHARED_LIBS +=  kasten1controllers        0.0 # 0.2
+SHARED_LIBS +=  kasten1core               0.0 # 0.2
+SHARED_LIBS +=  kasten1gui                0.0 # 0.2
+SHARED_LIBS +=  kasten1okteta1controllers 0.0 # 0.2
+SHARED_LIBS +=  kasten1okteta1core        0.0 # 0.2
+SHARED_LIBS +=  kasten1okteta1gui         0.0 # 0.2
+SHARED_LIBS +=  okteta1core               0.0 # 0.8
+SHARED_LIBS +=  okteta1gui                0.0 # 0.8
+
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDesigner

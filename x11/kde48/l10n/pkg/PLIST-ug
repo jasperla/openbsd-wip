@@ -1,6 +1,4 @@
 @comment $OpenBSD$
-share/locale/ug/
-share/locale/ug/LC_MESSAGES/
 share/locale/ug/LC_MESSAGES/accountwizard.mo
 share/locale/ug/LC_MESSAGES/accountwizard_ical.mo
 share/locale/ug/LC_MESSAGES/accountwizard_imap.mo
@@ -388,7 +386,11 @@ share/locale/ug/LC_MESSAGES/krunner.mo
 share/locale/ug/LC_MESSAGES/ksaneplugin.mo
 share/locale/ug/LC_MESSAGES/kscd.mo
 share/locale/ug/LC_MESSAGES/kscreensaver.mo
-share/locale/ug/LC_MESSAGES/ksecretservice.mo
+share/locale/ug/LC_MESSAGES/ksecrets_kio.mo
+share/locale/ug/LC_MESSAGES/ksecrets_ksecrets.mo
+share/locale/ug/LC_MESSAGES/ksecretsservice_api.mo
+share/locale/ug/LC_MESSAGES/ksecretsserviced.mo
+share/locale/ug/LC_MESSAGES/ksecretsync.mo
 share/locale/ug/LC_MESSAGES/ksendemail.mo
 share/locale/ug/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ug/LC_MESSAGES/kshisen.mo
@@ -437,6 +439,7 @@ share/locale/ug/LC_MESSAGES/kwin_clients.mo
 share/locale/ug/LC_MESSAGES/kwin_effects.mo
 share/locale/ug/LC_MESSAGES/kwinshutdown.mo
 share/locale/ug/LC_MESSAGES/kwinstartmenu.mo
+share/locale/ug/LC_MESSAGES/kwl2kss.mo
 share/locale/ug/LC_MESSAGES/kwordquiz.mo
 share/locale/ug/LC_MESSAGES/kwrite.mo
 share/locale/ug/LC_MESSAGES/kwriteconfig.mo

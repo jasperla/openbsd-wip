@@ -1,12 +1,12 @@
 $OpenBSD$
---- src/Makefile.in.orig	Wed Sep  7 02:01:51 2011
-+++ src/Makefile.in	Wed Sep  7 02:02:05 2011
-@@ -600,8 +600,7 @@ librdf_la_LIBADD = \
+--- src/Makefile.in.orig	Sat Dec  3 20:43:28 2011
++++ src/Makefile.in	Sat Dec 10 18:21:26 2011
+@@ -603,8 +603,7 @@ librdf_la_LIBADD = \
  @LIBRDF_INTERNAL_LIBS@
  
  librdf_la_DEPENDENCIES = \
 -@DIGEST_OBJS@ @HASH_OBJS@ \
--@LIBRDF_INTERNAL_LIBS@
+-@LIBRDF_INTERNAL_DEPS@
 +@DIGEST_OBJS@ @HASH_OBJS@
  
  EXTRA_librdf_la_SOURCES = rdf_hash_bdb.c \
