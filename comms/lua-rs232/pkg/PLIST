@@ -5,7 +5,7 @@ include/librs232/rs232_posix.h
 lib/librs232.a
 lib/librs232.la
 @lib lib/librs232.so.${LIBrs232_VERSION}
+lib/lua/5.1/luars232.so
 lib/luars232.a
 lib/luars232.la
-lib/luars232.so.0.1
 lib/pkgconfig/librs232.pc

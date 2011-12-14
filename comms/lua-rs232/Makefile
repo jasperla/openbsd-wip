@@ -33,4 +33,9 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}
 
+# Shuffle things around so lua can find it.
+post-install:
+	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR}
+	mv ${PREFIX}/lib/luars232.so.0.1 ${MODLUA_LIBDIR}/luars232.so
+
 .include <bsd.port.mk>
