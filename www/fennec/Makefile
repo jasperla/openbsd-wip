@@ -37,7 +37,7 @@ NO_REGRESS =	Yes
 
 CONFIGURE_STYLE =	autoconf no-autoheader
 CONFIGURE_ARGS +=	--enable-official-branding
-CONFIGURE_ARGS +=	--disbale-gconf
+CONFIGURE_ARGS +=	--disable-gconf
 CONFIGURE_ARGS +=	--with-system-libevent=/usr/
 CONFIGURE_ARGS +=	--with-system-zlib=/usr/ --with-system-bz2=${LOCALBASE}
 WANTLIB +=	event
