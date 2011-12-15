@@ -4,13 +4,13 @@ SHARED_ONLY=	Yes
 
 COMMENT=	Lua library for RS232 communication
 
-# ynezz/librs232 1.0.2 with additional fixes from jasperla/librs232
+# ynezz/librs232 1.0.2 with additional fixes
 DISTNAME=	librs232-1.0.2.1
 PKGNAME=	lua-${DISTNAME}
 
 SHARED_LIBS +=  rs232                     0.0 # 0.0
 
-HOMEPAGE=	https://github.com/jasperla/librs232
+HOMEPAGE=	https://github.com/ynezz/librs232
 
 CATEGORIES=	comms
 
