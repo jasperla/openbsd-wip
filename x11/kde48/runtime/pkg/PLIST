@@ -224,6 +224,7 @@ lib/kde4/platformimports/touch/org/kde/plasma/components/ScrollBar.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/ScrollBarDelegate.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/ScrollDecorator.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/ScrollDecoratorDelegate.qml
+lib/kde4/platformimports/touch/org/kde/plasma/components/SectionScroller.js
 lib/kde4/platformimports/touch/org/kde/plasma/components/SectionScroller.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/SelectionDialog.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/Slider.qml
@@ -232,6 +233,7 @@ lib/kde4/platformimports/touch/org/kde/plasma/components/TabBar.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/TabBarLayout.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/TabButton.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/TabGroup.js
+lib/kde4/platformimports/touch/org/kde/plasma/components/TabGroup.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/TextArea.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/TextField.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/TextFieldFocus.qml
@@ -362,6 +364,7 @@ share/apps/desktoptheme/default/widgets/scrollwidget.svgz
 share/apps/desktoptheme/default/widgets/slider.svgz
 share/apps/desktoptheme/default/widgets/systemtray.svgz
 share/apps/desktoptheme/default/widgets/tasks.svgz
+share/apps/desktoptheme/default/widgets/toolbar.svgz
 share/apps/desktoptheme/default/widgets/toolbox.svgz
 share/apps/desktoptheme/default/widgets/tooltip.svgz
 share/apps/desktoptheme/default/widgets/translucentbackground.svgz
