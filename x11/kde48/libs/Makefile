@@ -78,6 +78,7 @@ LIB_DEPENDS =	archivers/bzip2 \
 		archivers/xz \
 		attica->=0.1.9:x11/kde48/attica \
 		databases/strigi \
+		devel/bison \
 		devel/pcre \
 		graphics/jasper \
 		graphics/libungif \
