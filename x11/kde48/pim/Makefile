@@ -46,24 +46,6 @@ MODULES =	devel/gettext
 
 MODKDE4_USE =	pim
 
-# textproc/dblatex adds all of texlive, make it optional?
-BUILD_DEPENDS =	devel/boost \
-		databases/soprano \
-		databases/strigi \
-		misc/shared-desktop-ontologies \
-		security/cyrus-sasl2 \
-		security/gpgme \
-		security/libassuan \
-		textproc/dblatex \
-		textproc/docbook \
-		textproc/docbook-xsl \
-		textproc/libxslt \
-		x11/grantlee \
-		x11/kde48/akonadi \
-
-LIB_DEPENDS =	x11/grantlee
-RUN_DEPENDS +=	x11/gtk+2,-guic
-
 WANTLIB =  c m pthread stdc++ z
 WANTLIB += X11 Xss
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDeclarative
@@ -81,6 +63,24 @@ WANTLIB += nepomukutils phonon plasma solid soprano
 WANTLIB += streamanalyzer streams syndication
 WANTLIB += assuan gpg-error gpgme++ gpgme++-pthread gpgme-pthread
 WANTLIB += grantlee_core grantlee_gui qgpgme sasl2 prison
+
+# textproc/dblatex adds all of texlive, make it optional?
+BUILD_DEPENDS =	devel/boost \
+		databases/soprano \
+		databases/strigi \
+		misc/shared-desktop-ontologies \
+		security/cyrus-sasl2 \
+		security/gpgme \
+		security/libassuan \
+		textproc/dblatex \
+		textproc/docbook \
+		textproc/docbook-xsl \
+		textproc/libxslt \
+		x11/grantlee \
+		x11/kde48/akonadi \
+
+LIB_DEPENDS =	x11/grantlee
+RUN_DEPENDS +=	x11/gtk+2,-guic
 
 WRONG_SYSCONF_FILES =	dbus-1	share/examples
 
