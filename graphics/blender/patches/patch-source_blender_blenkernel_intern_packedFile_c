@@ -1,7 +1,7 @@
 $OpenBSD$
---- source/blender/blenkernel/intern/packedFile.c.orig	Tue Nov 15 22:08:48 2011
-+++ source/blender/blenkernel/intern/packedFile.c	Tue Nov 15 22:09:17 2011
-@@ -295,7 +295,7 @@ int writePackedFile(ReportList *reports, const char *f
+--- source/blender/blenkernel/intern/packedFile.c.orig	Tue Dec 13 20:49:12 2011
++++ source/blender/blenkernel/intern/packedFile.c	Thu Dec 15 11:37:07 2011
+@@ -292,7 +292,7 @@ int writePackedFile(ReportList *reports, const char *f
  	// make sure the path to the file exists...
  	BLI_make_existing_file(name);
  	
