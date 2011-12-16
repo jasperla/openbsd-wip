@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS=		i386 amd64
 
 COMMENT=		Chromium browser
 
-V=			18.0.971.0
+V=			18.0.972.2
 DISTNAME=		chromium-${V}
 PKGNAME=		chromium-devel-${V}
 
