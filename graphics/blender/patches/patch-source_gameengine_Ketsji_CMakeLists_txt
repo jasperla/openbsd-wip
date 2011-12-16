@@ -1,7 +1,7 @@
 $OpenBSD$
---- source/gameengine/Ketsji/CMakeLists.txt.orig	Mon Oct 24 20:16:02 2011
-+++ source/gameengine/Ketsji/CMakeLists.txt	Wed Nov 16 17:42:36 2011
-@@ -53,12 +53,12 @@ set(INC
+--- source/gameengine/Ketsji/CMakeLists.txt.orig	Tue Dec 13 20:47:26 2011
++++ source/gameengine/Ketsji/CMakeLists.txt	Thu Dec 15 11:37:07 2011
+@@ -52,12 +52,12 @@ set(INC
  	../../../intern/guardedalloc
  	../../../intern/moto/include
  	../../../intern/string

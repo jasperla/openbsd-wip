@@ -1,0 +1,12 @@
+$OpenBSD$
+--- extern/libmv/third_party/glog/src/config.h.orig	Thu Dec 15 12:26:55 2011
++++ extern/libmv/third_party/glog/src/config.h	Thu Dec 15 12:27:19 2011
+@@ -6,6 +6,8 @@
+  #include "config_mac.h"
+ #elif __FreeBSD__
+  #include "config_freebsd.h"
++#elif __OpenBSD__
++ #include "config_openbsd.h"
+ #elif __MINGW32__
+  #include "windows/config.h"
+ #elif __GNUC__

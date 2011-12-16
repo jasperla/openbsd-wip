@@ -2,16 +2,20 @@
 
 COMMENT =	3D creation software
 
-DISTNAME =	blender-2.60a
+DISTNAME =	blender-2.61
 
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://www.blender.org/
 
+MAINTAINER =	Pascal Stumpf <Pascal.Stumpf@cubes.de>
+
+VMEM_WARNING =	Yes
+
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
+PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	http://download.blender.org/source/ \
@@ -21,30 +25,31 @@ MASTER_SITES =	http://download.blender.org/source/ \
 MODULES =	devel/cmake \
 		lang/python \
 		devel/gettext
-MODPY_VERSION =	3.2
-#MODPY_VERSION = ${MODPY_DEFAULT_VERSION3}
+MODPY_VERSION = ${MODPY_DEFAULT_VERSION_3}
 
 CONFIGURE_ARGS =	-DPYTHON_LIBRARY="${LOCALBASE}/lib/libpython${MODPY_VERSION}m.so" \
 			-DPYTHON_INCLUDE_DIR="${MODPY_INCDIR}" \
 			-DPYTHON_VERSION=${MODPY_VERSION} \
 			-DWITH_BUILTIN_GLEW=OFF
 
+BUILD_DEPENDS =	devel/gflags
 LIB_DEPENDS =	graphics/png \
 		graphics/jpeg \
 		graphics/glew \
 		graphics/openexr \
 		graphics/tiff \
+		devel/boost \
 		devel/sdl \
 		audio/openal \
 		graphics/openjpeg \
-		math/fftw3 \
 		${MODPY_LIB_DEPENDS}
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gnome/librsvg
 
-WANTLIB  = GL GLEW GLU Half Iex IlmImf IlmThread Imath SDL X11
-WANTLIB += Xi c freetype jpeg m openal openjpeg png pthread
-WANTLIB += stdc++ tiff util z ${MODPY_WANTLIB}
+WANTLIB += GL GLEW GLU Half Iex IlmImf IlmThread Imath SDL X11
+WANTLIB += Xi boost_filesystem-mt boost_regex-mt boost_system-mt
+WANTLIB += boost_thread-mt c freetype jpeg m openal openjpeg png
+WANTLIB += pthread python3.2m stdc++ tiff util z
 
 NO_REGRESS =	Yes
 
@@ -63,7 +68,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/blender/datafiles
 	cd ${WRKSRC}/release/scripts && pax -rw . \
 		${PREFIX}/share/blender/scripts
-	cd ${WRKSRC}/release/scripts && pax -rw . \
+	cd ${WRKSRC}/release/datafiles && pax -rw . \
 		${PREFIX}/share/blender/datafiles
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/blender
 	${INSTALL_DATA} ${WRKSRC}/release/text/*license* \
