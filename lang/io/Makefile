@@ -10,6 +10,9 @@ DISTFILES = ${DISTNAME}.tar.gz
 HOMEPAGE = http://www.iolanguage.org/
 MAINTAINER = Eric Radman <ericshane@eradman.com>
 
+# fails regression tests
+NOT_FOR_ARCHS = powerpc
+
 # BSD
 PERMIT_PACKAGE_CDROM = Yes
 PERMIT_PACKAGE_FTP = Yes
