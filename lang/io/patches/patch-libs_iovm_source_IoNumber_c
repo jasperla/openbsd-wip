@@ -1,6 +1,6 @@
 $OpenBSD$
 --- libs/iovm/source/IoNumber.c.orig	Tue Nov 29 20:53:59 2011
-+++ libs/iovm/source/IoNumber.c	Fri Dec 16 22:32:03 2011
++++ libs/iovm/source/IoNumber.c	Sat Dec 17 19:50:47 2011
 @@ -22,6 +22,8 @@ A container for a double (a 64bit floating point numbe
  #include <math.h>
  #include <ctype.h>
@@ -10,7 +10,7 @@ $OpenBSD$
  
  #include <setjmp.h>
  #if defined(_BSD_PPC_SETJMP_H_)
-@@ -57,6 +59,106 @@ double log2(double n)
+@@ -57,6 +59,111 @@ double log2(double n)
  
  static const char *protoId = "Number";
  
@@ -42,6 +42,11 @@ $OpenBSD$
 +/* Double to ASCII */
 +static char * dtoa(char *s, double n, unsigned places) {
 +	if (--places > 15) places = 15;
++	// crude attempt to bias number so that the string result is rounded up
++	double bias = PRECISION[places] / 2;
++	if (abs(n) > bias)
++		if (n < 0) n -= bias;
++		else       n += bias;
 +	// handle special cases
 +	if (isnan(n)) {
 +		strcpy(s, "nan");
@@ -79,7 +84,7 @@ $OpenBSD$
 +				n -= (digit * weight);
 +				*(c++) = '0' + digit;
 +			}
-+			if (m == 0 && n > 0)
++			if (m == 0 && n - bias > 0)
 +				*(c++) = '.';
 +			m--;
 +		}
@@ -117,7 +122,7 @@ $OpenBSD$
  IoNumber *IoNumber_numberForDouble_canUse_(IoNumber *self, double n, IoNumber *other)
  {
  	if (DATA(self)  == n) return self;
-@@ -292,31 +394,7 @@ int IoNumber_compare(IoNumber *self, IoNumber *v)
+@@ -292,31 +399,7 @@ int IoNumber_compare(IoNumber *self, IoNumber *v)
  
  void IoNumber_Double_intoCString_(double n, char *s, size_t maxSize)
  {
@@ -150,7 +155,7 @@ $OpenBSD$
  }
  
  void IoNumber_print(IoNumber *self)
-@@ -576,7 +654,8 @@ would return:
+@@ -576,7 +659,8 @@ would return:
  		length = 1024;
  		s = io_calloc(1, length);
  
