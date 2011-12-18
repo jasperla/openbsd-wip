@@ -1,0 +1,14 @@
+@comment $OpenBSD$
+@bin bin/dunelegacy
+share/doc/dunelegacy/
+share/doc/dunelegacy/COPYING
+share/doc/dunelegacy/README
+share/dunelegacy/
+share/dunelegacy/Dune2-Versions.txt
+share/dunelegacy/LEGACY.PAK
+share/dunelegacy/maps/
+share/dunelegacy/maps/multiplayer/
+share/dunelegacy/maps/multiplayer/2P - 32x32 - X-Factor.ini
+share/dunelegacy/maps/singleplayer/
+share/dunelegacy/maps/singleplayer/2P - 32x128 - Canyon.ini
+share/dunelegacy/maps/singleplayer/2P - 64x64 - North vs. South.ini
