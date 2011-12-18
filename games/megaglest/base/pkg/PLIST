@@ -3,6 +3,10 @@
 @man man/man6/megaglest.6
 share/applications/megaglest.desktop
 share/pixmaps/
+@comment share/pixmaps/editor.ico
+@comment share/pixmaps/g3dviewer.ico
+@comment share/pixmaps/glest.ico
+@comment share/pixmaps/megaglest.bmp
 share/pixmaps/megaglest.png
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
