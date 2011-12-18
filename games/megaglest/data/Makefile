@@ -2,7 +2,7 @@
 
 COMMENT =		megaglest data
 
-DISTNAME =		megaglest-data-3.5.2.4
+DISTNAME =		megaglest-data-3.6.0
 
 # CC-BY-SA
 PERMIT_PACKAGE_CDROM =  Yes
