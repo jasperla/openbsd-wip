@@ -4,13 +4,10 @@ SHARED_ONLY=	Yes
 
 COMMENT=	communications server for Jabber/XMPP written in Lua
 DISTNAME=	prosody-0.8.2
-#REVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://prosody.im/downloads/source/
 
 HOMEPAGE=	http://prosody.im/
-
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # MIT
 PERMIT_DISTFILES_CDROM=	Yes
@@ -29,7 +26,6 @@ RUN_DEPENDS+=	archivers/luazlib \
 		security/luasec \
 		textproc/luaexpat
 WANTLIB+=	crypto idn lua
-
 
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS+=--prefix="${PREFIX}" \
