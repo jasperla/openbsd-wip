@@ -1,0 +1,12 @@
+$OpenBSD$
+--- source/glest_game/facilities/game_util.cpp.orig	Tue Dec  6 01:40:35 2011
++++ source/glest_game/facilities/game_util.cpp	Tue Dec  6 01:41:06 2011
+@@ -27,7 +27,7 @@ using namespace Shared::Platform;
+ namespace Glest { namespace Game {
+ 
+ const char *mailString				= " http://bugs.megaglest.org";
+-const string glestVersionString 	= "v3.5.3-beta2";
++const string glestVersionString 	= "v3.6.0";
+ #if defined(SVNVERSION)
+ const string SVN_Rev 			= string("Rev: ") + string(SVNVERSION);
+ #elif defined(SVNVERSIONHEADER)

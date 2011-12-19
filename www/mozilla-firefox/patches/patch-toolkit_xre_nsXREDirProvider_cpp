@@ -1,4 +1,4 @@
-$OpenBSD: patch-toolkit_xre_nsXREDirProvider_cpp,v 1.8 2011/10/03 21:06:09 landry Exp $
+$OpenBSD: patch-toolkit_xre_nsXREDirProvider_cpp,v 1.9 2011/12/08 01:47:02 nigel Exp $
 Look for extensions in LOCALBASE
 --- toolkit/xre/nsXREDirProvider.cpp.orig	Fri Nov  4 21:34:19 2011
 +++ toolkit/xre/nsXREDirProvider.cpp	Thu Nov 10 00:21:27 2011

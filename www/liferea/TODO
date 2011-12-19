@@ -1,7 +1,7 @@
-"Hey, it compiles and runs!" - no tests besides that done yet.
-Menu works, feeds seem to fetch.
+"Hey, it compiles and runs!" - but not heavily tested.
+Menu works, feeds seem to fetch, adding feeds and directories works.
 
-Check whether adding feeds work, and normal operation.
+Check more of normal operation.
 
-Get rid of:
-** (liferea:24743): WARNING **: Unrecognized image file format
+Is this something to be worried about?
+(liferea:11803): GLib-GIO-CRITICAL **: g_socket_get_fd: assertion `G_IS_SOCKET (socket)' failed

@@ -1,6 +1,6 @@
 $OpenBSD$
---- source/shared_lib/sources/feathery_ftp/ftpTargetPosix.c.orig	Thu Jun 30 10:29:18 2011
-+++ source/shared_lib/sources/feathery_ftp/ftpTargetPosix.c	Thu Jun 30 10:31:34 2011
+--- source/shared_lib/sources/feathery_ftp/ftpTargetPosix.c.orig	Fri Oct 14 00:05:39 2011
++++ source/shared_lib/sources/feathery_ftp/ftpTargetPosix.c	Mon Dec  5 22:46:02 2011
 @@ -27,7 +27,11 @@
  #include <sys/stat.h>
  #include <unistd.h>
@@ -13,4 +13,4 @@ $OpenBSD$
 +#if defined(__FreeBSD__) || defined(__OpenBSD__)
      #include <sys/uio.h>
  #else
-     #include <sys/sendfile.h>
+     //#include <sys/sendfile.h>

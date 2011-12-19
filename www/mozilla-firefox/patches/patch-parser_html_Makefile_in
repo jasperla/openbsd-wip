@@ -1,4 +1,4 @@
-$OpenBSD: patch-parser_html_Makefile_in,v 1.4 2011/10/03 21:06:09 landry Exp $
+$OpenBSD: patch-parser_html_Makefile_in,v 1.5 2011/12/08 01:47:02 nigel Exp $
 
 gcc runs out of memory with optimization.
 
