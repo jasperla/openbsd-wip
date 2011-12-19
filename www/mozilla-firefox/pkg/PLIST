@@ -96,5 +96,5 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/searchplugins/yahoo.xml
 @man man/man1/mozilla-${MOZILLA_PROJECT}.1
 share/applications/${MOZILLA_PROJECT}.desktop
 share/doc/pkg-readmes/${FULLPKGNAME}
-@exec %D:C/bin/update-desktop-database
-@unexec-delete %D:C/bin/update-desktop-database
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
