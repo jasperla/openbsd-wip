@@ -1,0 +1,2 @@
+@comment $OpenBSD:$
+lib/firefox-${V}/extensions/langpack-sw@firefox.mozilla.org.xpi
