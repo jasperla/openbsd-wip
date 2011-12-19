@@ -57,8 +57,7 @@ LIB_DEPENDS =	graphics/cairo>=1.10.2p0
 MOZILLA_AUTOCONF_DIRS +=	js/src
 MOZILLA_SUBST_FILES +=		config/autoconf.mk.in services/crypto/modules/WeaveCrypto.js
 
-MOZILLA_VER =	${MOZILLA_VERSION:C/b.$//}
-SUBST_VARS +=	MOZILLA_VER NSS_SO_VERSION
+SUBST_VARS +=	NSS_SO_VERSION
 
 post-install:
 	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/mozilla-firefox.1 \
