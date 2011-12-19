@@ -3461,11 +3461,16 @@ share/doc/HTML/en/sonnet/
 share/doc/HTML/en/sonnet/common
 share/doc/HTML/en/sonnet/index.cache.bz2
 share/doc/HTML/en/sonnet/index.docbook
+share/examples/dbus-1/
+@sample ${SYSCONFDIR}/dbus-1/
 share/examples/dbus-1/system.d/
+@sample ${SYSCONFDIR}/dbus-1/system.d/
 share/examples/dbus-1/system.d/org.kde.auth.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.auth.conf
 share/examples/xdg/
+@sample ${SYSCONFDIR}/xdg/
 share/examples/xdg/menus/
+@sample ${SYSCONFDIR}/xdg/menus/
 share/examples/xdg/menus/applications.menu
 @sample ${SYSCONFDIR}/xdg/menus/applications.menu
 share/icons/hicolor/16x16/actions/presence_away.png
