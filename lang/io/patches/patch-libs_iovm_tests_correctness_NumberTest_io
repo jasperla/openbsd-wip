@@ -10,12 +10,3 @@ $OpenBSD$
  		assertEquals(10, (-10) abs)
  		assertTrue(10 between(9.9999, 10.0001))
  		assertEquals(1, 10 log10)
-@@ -79,7 +79,7 @@ NumberTest := UnitTest clone do(
- 		# Test the no-argument form (try all the IoNumber_Double_intoCString_() paths)
- 		assertEquals("1", 1 asString)
- 		assertEquals("2147483647", 2147483647 asString)
--		assertEquals("1.1000000000000001", 1.1 asString)
-+		assertEquals("1.1", 1.1 asString)
- 		assertEquals("1.2", 1.2 asString)
- 
- 		# Windows formats exponents to 3 digits

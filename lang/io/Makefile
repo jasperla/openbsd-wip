@@ -10,8 +10,8 @@ DISTFILES = ${DISTNAME}.tar.gz
 HOMEPAGE = http://www.iolanguage.org/
 MAINTAINER = Eric Radman <ericshane@eradman.com>
 
-# fails regression tests
-NOT_FOR_ARCHS = powerpc
+# Coroutine implementation not portable
+ONLY_FOR_ARCHS = i386
 
 # BSD
 PERMIT_PACKAGE_CDROM = Yes
