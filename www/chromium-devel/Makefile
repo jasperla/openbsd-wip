@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS=		i386 amd64
 
 COMMENT=		Chromium browser
 
-V=			18.0.972.2
+V=			18.0.974.0
 DISTNAME=		chromium-${V}
 PKGNAME=		chromium-devel-${V}
 
@@ -32,12 +32,13 @@ WANTLIB += nss3 nssutil3 smime3 png
 MASTER_SITES=	http://blade2k.humppa.hu/distfiles/ \
 		http://commondatastorage.googleapis.com/chromium-browser-official/
 
-MODULES=	lang/python \
-		gcc4
+MODULES=	lang/python
 
-MODGCC4_ARCHS=	*
-MODGCC4_LANGS=	c++
-MODGCC4_VERSION=4.6
+#Not needed at the moment
+#MODULES+=	gcc4
+#MODGCC4_ARCHS=	*
+#MODGCC4_LANGS=	c++
+#MODGCC4_VERSION=4.6
 
 MODPY_RUNDEP=	No
 
