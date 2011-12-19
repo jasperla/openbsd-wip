@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/04/07 12:07:02 pea Exp $
+@comment $OpenBSD: PLIST,v 1.14 2011/12/03 18:35:11 ajacoutot Exp $
 @bin bin/liferea
 bin/liferea-add-feed
 @man man/man1/liferea.1

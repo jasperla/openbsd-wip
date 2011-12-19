@@ -11,7 +11,7 @@ HOMEPAGE=		http://www.ejabberd.im/
 
 MAINTAINER=		Wiktor Izdebski <vicviq@gmail.com>
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -22,8 +22,8 @@ WANTLIB=		expat crypto ssl z
 MASTER_SITES=		http://www.process-one.net/downloads/ejabberd/$V/
 
 MODULES=		converters/libiconv
-BUILD_DEPENDS=		lang/erlang>=12b.0
-RUN_DEPENDS=		lang/erlang>=12b.0
+BUILD_DEPENDS=		lang/erlang
+RUN_DEPENDS=		lang/erlang
 
 MAKE_FLAGS+=		EJABBERDDIR=${PREFIX}/lib/ejabberd \
 			LOGDIR=${EJLOGDIR} \

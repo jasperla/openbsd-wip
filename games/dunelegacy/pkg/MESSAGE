@@ -1,0 +1,3 @@
+PAK-files from the original Dune 2 are needed to play Dune Legacy.  Data
+files and music files should be placed in ${PREFIX}/share/dunelegacy/ or
+~/.config/dunelegacy/data/.

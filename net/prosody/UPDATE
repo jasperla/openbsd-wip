@@ -1,2 +1,2 @@
-This is an attempt at updating prosody to the new 0.8 tree.
-Still work in progress, not tested, needs rc script.
+Update prosody to the 0.8 tree.
+Add rc script.
