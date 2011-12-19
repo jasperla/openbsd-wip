@@ -1,0 +1,13 @@
+$OpenBSD$
+--- net/http/http_proxy_client_socket.cc.orig	Sat Dec 17 20:17:53 2011
++++ net/http/http_proxy_client_socket.cc	Sat Dec 17 20:18:07 2011
+@@ -73,8 +73,7 @@ int HttpProxyClientSocket::RestartWithAuth(OldCompleti
+   rv = DoLoop(OK);
+   if (rv == ERR_IO_PENDING)
+     if (callback) {
+-      user_callback_ = base::Bind(&OldCompletionCallback::Run<int>,
+-                                  base::Unretained(callback));
++      user_callback_ = base::Bind(&OldCompletionCallbackAdapter, callback);
+     }
+   return rv;
+ }
