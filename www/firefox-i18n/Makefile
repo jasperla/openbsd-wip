@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.71 2011/10/03 21:29:53 landry Exp $
+# $OpenBSD: Makefile,v 1.72 2011/12/08 00:30:49 nigel Exp $
 
 # keep in sync with working archs.. sigh
 ONLY_FOR_ARCHS=	amd64 i386 powerpc
 
 PKG_ARCH=	*
 
-V=		8.0.1
+V=		9.0b6
 NAME=		firefox-i18n
 PKGNAME=	${NAME}-${V}
 
@@ -22,13 +22,14 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${V}/linux-i686/xpi/ \
+		https://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${V}/linux-i686/xpi/ \
 		ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${V}/linux-i686/xpi/
 
-LANGUAGES=	af ak ar ast be bg bn-BD bn-IN br bs ca cs cy da de el en-GB en-US en-ZA eo \
+LANGUAGES=	af ak ar ast be bg bn-BD bn-IN br bs ca cs csb cy da de el en-GB en-US en-ZA eo \
 		es-AR es-CL es-ES es-MX et eu fa fi fr fy-NL ga-IE gd gl gu-IN he \
 		hi-IN hr hu hy-AM id \
-		is it ja kk kn ko ku lg lt lv mai mk ml mr nb-NO nl nn-NO nso \
-		or pa-IN pl pt-BR pt-PT rm ro ru si sk sl son sq sr sv-SE \
+		is it ja kk kn ko ku lg lt lv mai mk ml mn mr nb-NO nl nn-NO nso \
+		or pa-IN pl pt-BR pt-PT rm ro ru si sk sl son sq sr sv-SE sw \
 		ta-LK ta te th tr uk vi zh-CN zh-TW zu
 
 BUILD_DEPENDS=	archivers/unzip
