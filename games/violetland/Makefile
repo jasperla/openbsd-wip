@@ -40,5 +40,7 @@ WRKDIST =		${WRKDIR}/${DISTNAME:S/-src//}
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/violetland.desktop ${PREFIX}/share/applications
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${WRKSRC}/icon-light.png ${PREFIX}/share/pixmaps/violetland.png
 
 .include <bsd.port.mk>
