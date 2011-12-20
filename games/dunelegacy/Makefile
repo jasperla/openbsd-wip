@@ -23,6 +23,7 @@ MASTER_SITES =		http://www.myway.de/richieland/
 EXTRACT_SUFX =		.tar.bz2
 
 LIB_DEPENDS =		devel/sdl-mixer
+RUN_DEPENDS = 		devel/desktop-file-utils
 
 MAKE_FLAGS +=		CXXFLAGS="${CXXFLAGS} -DXTHREADS"
 
@@ -36,9 +37,13 @@ NO_REGRESS =		Yes
 WRKDIST =		${WRKDIR}/${PKGNAME}
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dunelegacy
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dunelegacy/
 .for f in COPYING README
 	${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/share/doc/dunelegacy/
 .endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/dunelegacy.desktop ${PREFIX}/share/applications/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${WRKSRC}/dunelegacy.png ${PREFIX}/share/pixmaps/dunelegacy.png
 
 .include <bsd.port.mk>
