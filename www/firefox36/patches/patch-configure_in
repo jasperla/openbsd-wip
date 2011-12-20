@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in,v 1.3 2011/03/26 10:58:36 landry Exp $
+$OpenBSD: patch-configure_in,v 1.4 2011/12/15 23:06:32 nigel Exp $
 --- configure.in.orig	Thu Nov  3 13:12:39 2011
 +++ configure.in	Wed Dec 14 14:31:15 2011
 @@ -1059,7 +1059,7 @@ MOZ_PNG_LIBS='$(call EXPAND_LIBNAME_PATH,mozpng,$(DEPT

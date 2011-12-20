@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.16 2011/12/08 00:24:54 nigel Exp $
+# $OpenBSD: Makefile,v 1.17 2011/12/15 23:06:32 nigel Exp $
 
 COMMENT =	Mozilla web browser
 
 # Don't forget to update devel/xulrunner/1.9 if patches changes.
 
-MOZILLA_VERSION =	3.6.24
+MOZILLA_VERSION =	3.6.25
 MOZILLA_BRANCH =	1.9.2
 MOZILLA_PROJECT =	firefox36
 MOZILLA_DIST =		firefox
 MOZILLA_CODENAME =	browser
-REVISION =		0
 
-SO_VERSION =	22.3
+SO_VERSION =	22.4
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	browsercomps browserdirprovider imgicon mozjs \

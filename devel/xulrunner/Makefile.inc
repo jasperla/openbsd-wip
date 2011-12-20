@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.21 2011/06/15 16:16:10 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.22 2011/12/08 00:19:07 nigel Exp $
 
 COMMENT-main =		standalone XUL/XPCOM runtime environment
 COMMENT-devel =		devel files for Gecko
