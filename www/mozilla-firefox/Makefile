@@ -6,8 +6,8 @@ BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 # Don't forget to bump www/firefox-i18n after updates.
 # Don't forget to update devel/xulrunner/2.0 if patches changes.
 
-MOZILLA_VERSION =	9.0b6
-MOZILLA_BRANCH =	beta
+MOZILLA_VERSION =	9.0
+MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
