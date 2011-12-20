@@ -3,6 +3,7 @@
 COMMENT =		ebook management application
 
 DISTNAME =		calibre-0.8.31
+REVISION =		0
 CATEGORIES =		textproc
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calibre/}
 EXTRACT_SUFX =		.tar.xz
@@ -33,7 +34,7 @@ LIB_DEPENDS=		devel/chmlib \
 RUN_DEPENDS =		devel/py-dateutil \
 			devel/xdg-utils \
 			graphics/ImageMagick \
-			py-Imaging-*-python${MODPY_VERSION}:graphics/py-Imaging,python${MODPY_VERSION} \
+			graphics/py-Imaging \
 			net/py-dnspython \
 			textproc/py-cssutils>=0.9.7 \
 			textproc/py-lxml>=2.2.8 \
@@ -59,11 +60,11 @@ MAKE_ENV +=		WITH_USB=no
 
 WRKDIST =		${WRKDIR}/calibre
 PORTHOME =		${WRKDIR}
-NO_REGRESS = 		Yes
+NO_REGRESS =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 ## setup.py doesn't like the options in our python module
-MODPY_DISTUTILS_BUILD = 	build
+MODPY_DISTUTILS_BUILD =		build
 MODPY_DISTUTILS_INSTALL =	install --prefix=${LOCALBASE} \
 				--root=${PREFIX}
 
@@ -85,6 +86,5 @@ post-install:
 		${PREFIX}/lib/calibre
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/share/calibre
-
 
 .include <bsd.port.mk>
