@@ -17,7 +17,7 @@ MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-1.0beta9
 ENIG_V =		1.3.4
-REVISION =		0
+REVISION-enigmail =	0
 PKGNAME-enigmail =	enigmail-${ENIG_V}
 EPOCH-lightning =	0
 
