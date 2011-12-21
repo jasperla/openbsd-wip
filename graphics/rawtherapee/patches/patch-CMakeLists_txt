@@ -1,0 +1,16 @@
+$OpenBSD$
+--- CMakeLists.txt.orig	Sun Sep 11 23:40:16 2011
++++ CMakeLists.txt	Sun Sep 11 23:40:45 2011
+@@ -271,12 +271,6 @@ else (AUTOMATED_BUILD_SYSTEM)
+  
+   add_dependencies(AboutFile Debug Release MinSizeRel RelWithDebInfo)
+ 
+-  if (HG_CMD STREQUAL HG_CMD-NOTFOUND)
+-    message(FATAL_ERROR "hg command not found!")
+-  else (HG_CMD STREQUAL HG_CMD-NOTFOUND)
+-    message(STATUS "hg command found: ${HG_CMD}")
+-  endif (HG_CMD STREQUAL HG_CMD-NOTFOUND)
+-
+ endif (AUTOMATED_BUILD_SYSTEM)
+ 
+ 

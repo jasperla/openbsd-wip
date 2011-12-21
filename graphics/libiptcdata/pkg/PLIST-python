@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+lib/python${MODPY_VERSION}/site-packages/iptcdata.a
+lib/python${MODPY_VERSION}/site-packages/iptcdata.la
+lib/python${MODPY_VERSION}/site-packages/iptcdata.so
