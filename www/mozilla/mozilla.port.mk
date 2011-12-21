@@ -17,6 +17,7 @@ MOZILLA_DIST_VERSION ?=	${MOZILLA_VERSION}
 HOMEPAGE ?=	http://www.mozilla.org/projects/${MOZILLA_DIST}
 
 MASTER_SITES ?=	http://releases.mozilla.org/pub/mozilla.org/${MOZILLA_DIST}/releases/${MOZILLA_DIST_VERSION}/source/ \
+		https://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_DIST}/releases/${MOZILLA_DIST_VERSION}/source/ \
 		ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_DIST}/releases/${MOZILLA_DIST_VERSION}/source/
 DISTNAME ?=	${MOZILLA_DIST}-${MOZILLA_DIST_VERSION}.source
 EXTRACT_SUFX ?=	.tar.bz2
@@ -122,7 +123,8 @@ MOZ =		${PREFIX}/${MOZILLA_PROJECT}
 MOB =		${WRKSRC}/${_MOZDIR}/dist/bin
 
 # needed for PLIST and config/autoconf.mk.in
-SUBST_VARS +=	MOZILLA_PROJECT MOZILLA_VERSION
+MOZILLA_VER =	${MOZILLA_VERSION:C/b.$//}
+SUBST_VARS +=	MOZILLA_PROJECT MOZILLA_VER MOZILLA_VERSION 
 
 MAKE_ENV +=	MOZ_CO_PROJECT=${MOZILLA_CODENAME} \
 		LD_LIBRARY_PATH=${MOB} \

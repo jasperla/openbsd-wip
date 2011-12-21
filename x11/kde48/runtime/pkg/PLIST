@@ -894,10 +894,14 @@ share/emoticons/kde4/unhappy.png
 share/emoticons/kde4/unlove.png
 share/emoticons/kde4/wilted_rose.png
 share/emoticons/kde4/wink.png
+@sample ${SYSCONFDIR}/dbus-1/
+@sample ${SYSCONFDIR}/dbus-1/system.d/
 share/examples/dbus-1/system.d/org.kde.kcontrol.kcmremotewidgets.conf
 @group
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.kcontrol.kcmremotewidgets.conf
 @group wheel
+@sample ${SYSCONFDIR}/xdg/
+@sample ${SYSCONFDIR}/xdg/menus/
 share/examples/xdg/menus/kde-information.menu
 @group
 @sample ${SYSCONFDIR}/xdg/menus/kde-information.menu
