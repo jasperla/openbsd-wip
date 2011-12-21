@@ -1,6 +1,8 @@
 @comment $OpenBSD$
 @bin bin/violetland
 share/applications/violetland.desktop
+share/pixmaps/
+share/pixmaps/violetland.png
 share/violetland/
 share/violetland/README_EN.TXT
 share/violetland/README_RU.TXT

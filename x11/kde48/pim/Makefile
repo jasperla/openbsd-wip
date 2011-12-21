@@ -47,7 +47,7 @@ MODULES =	devel/gettext
 MODKDE4_USE =	pim
 
 WANTLIB =  c m pthread stdc++ z
-WANTLIB += X11 Xss
+WANTLIB += ICE SM X11 Xss Xext
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDeclarative
 WANTLIB += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtOpenGL
 WANTLIB += lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg

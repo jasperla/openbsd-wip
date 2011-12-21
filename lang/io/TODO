@@ -1,0 +1,3 @@
+Runs on i386, but coroutines on other platforms depend on ucontext(2), which
+OpenBSD doesn't support. Hard-coding jmp_buf mechanisms for each platform would
+be hard, so it's not clear how to proceed.

@@ -960,7 +960,10 @@ share/doc/HTML/en/kwatchgnupg/
 share/doc/HTML/en/kwatchgnupg/common
 share/doc/HTML/en/kwatchgnupg/index.cache.bz2
 share/doc/HTML/en/kwatchgnupg/index.docbook
+@sample ${SYSCONFDIR}/dbus-1/
+@sample ${SYSCONFDIR}/dbus-1/system.d/
 share/examples/dbus-1/system.d/org.kde.kalarmrtcwake.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.kalarmrtcwake.conf
 share/icons/hicolor/128x128/actions/upload-media.png
 share/icons/hicolor/128x128/apps/akonadiconsole.png
 share/icons/hicolor/128x128/apps/akregator.png
