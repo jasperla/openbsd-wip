@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS=		i386 amd64
 
 COMMENT=		Chromium browser
 
-V=			18.0.974.0
+V=			18.0.976.0
 DISTNAME=		chromium-${V}
 PKGNAME=		chromium-devel-${V}
 
@@ -35,10 +35,10 @@ MASTER_SITES=	http://blade2k.humppa.hu/distfiles/ \
 MODULES=	lang/python
 
 #Not needed at the moment
-#MODULES+=	gcc4
-#MODGCC4_ARCHS=	*
-#MODGCC4_LANGS=	c++
-#MODGCC4_VERSION=4.6
+MODULES+=	gcc4
+MODGCC4_ARCHS=	*
+MODGCC4_LANGS=	c++
+MODGCC4_VERSION=4.6
 
 MODPY_RUNDEP=	No
 
