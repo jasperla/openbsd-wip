@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-lightning,v 1.4 2011/10/03 21:07:39 landry Exp $
+@comment $OpenBSD: PLIST-lightning,v 1.5 2011/12/08 00:39:18 nigel Exp $
 @conflict lightning-seamonkey-<=1.0b1
 @pkgpath productivity/sunbird,-seamonkey
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/calendar-timezones@mozilla.org/

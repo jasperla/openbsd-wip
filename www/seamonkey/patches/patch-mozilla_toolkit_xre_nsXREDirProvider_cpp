@@ -1,4 +1,4 @@
-$OpenBSD: patch-mozilla_toolkit_xre_nsXREDirProvider_cpp,v 1.5 2011/10/03 21:07:39 landry Exp $
+$OpenBSD: patch-mozilla_toolkit_xre_nsXREDirProvider_cpp,v 1.6 2011/12/08 00:39:18 nigel Exp $
 --- mozilla/toolkit/xre/nsXREDirProvider.cpp.orig	Mon Nov  7 21:08:30 2011
 +++ mozilla/toolkit/xre/nsXREDirProvider.cpp	Mon Nov 21 23:10:24 2011
 @@ -1116,11 +1116,7 @@ nsXREDirProvider::GetSystemExtensionsDirectory(nsILoca
