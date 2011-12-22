@@ -19,13 +19,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		ssl json xml2 pthread crypto z iconv m c
+WANTLIB=		crypto json m ssl xml2 z
 
 MASTER_SITES=		http://www.sizeofvoid.org/pub/OpenBSD/distfiles/
 
-WRKSRC=			${WRKDIR}/scality-Droplet-e6692cc
-WRKDIST=		${WRKSRC}
-MODULES=		devel/gettext
+WRKDIST=		${WRKDIR}/scality-Droplet-e6692cc
+MODULES=		converters/libiconv
 BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
 			devel/json-c
@@ -36,11 +35,11 @@ LIB_DEPENDS=		textproc/libxml \
 USE_LIBTOOL=		Yes
 AUTOCONF_VERSION= 	2.68
 AUTOMAKE_VERSION=	1.11
-CONFIGURE_STYLE=	autoconf automake gnu
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 post-patch:
 	@cd ${WRKBUILD} && env AUTOCONF_VERSION=2.68 AUTOMAKE_VERSION=1.11 \
-		./autogen.sh
+		/bin/sh ./autogen.sh
 
 .include <bsd.port.mk>
