@@ -1,4 +1,4 @@
-$OpenBSD: patch-mozilla_toolkit_library_Makefile_in,v 1.4 2011/10/03 21:07:39 landry Exp $
+$OpenBSD: patch-mozilla_toolkit_library_Makefile_in,v 1.5 2011/12/08 00:39:18 nigel Exp $
 --- mozilla/toolkit/library/Makefile.in.orig	Mon Nov  7 21:08:28 2011
 +++ mozilla/toolkit/library/Makefile.in	Mon Nov 21 23:10:26 2011
 @@ -171,12 +171,6 @@ EXTRA_DSO_LDOPTS += \
