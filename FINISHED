@@ -21,6 +21,16 @@ x11/orthos:		Ready for import. Sent to ports@ 07.10.2010 (druga)
 devel/libgeier:		Ready for import. Sent to ports@ 11.12.2011 (sizeofvoid)
 productivity/taxbird:	Ready for import. Sent to ports@ 11.12.2011 (sizeofvoid)
 
+Mozila updates gecko 9
+mail/mozilla-thunderbird	Ready for import. Sent to ports (nigel)
+mail/thunderbird-i18n		Ready for import. Sent to ports (nigel)
+www/fennec			Ready for import. Sent to ports (nigel)
+www/firefox36			Ready for import. Sent to ports (nigel)
+www/firefox-i18n		Ready for import. Sent to ports (nigel)
+www/mozilla			Ready for import. Sent to ports (nigel)
+www/mozilla-firefox		Ready for import. Sent to ports (nigel)
+www/seamonkey			Ready for import. Sent to ports (nigel)
+
 KDE 4.7.2 related
 
 textproc/liblrdf:	Ready for import. Sent to ports@ October 10, 2011 (grayed)
