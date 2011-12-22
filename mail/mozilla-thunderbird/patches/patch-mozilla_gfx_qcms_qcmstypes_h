@@ -1,4 +1,7 @@
 $OpenBSD$
+
+https://bugzilla.mozilla.org/show_bug.cgi?id=651444
+
 --- mozilla/gfx/qcms/qcmstypes.h.orig	Thu Dec 15 01:22:31 2011
 +++ mozilla/gfx/qcms/qcmstypes.h	Mon Dec 19 22:42:56 2011
 @@ -12,7 +12,7 @@

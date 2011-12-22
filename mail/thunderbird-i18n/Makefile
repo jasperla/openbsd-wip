@@ -5,7 +5,7 @@ ONLY_FOR_ARCHS=	amd64 i386 powerpc
 
 PKG_ARCH=	*
 
-FV=		9.0b5
+FV=		9.0
 V=		${FV:C/b.$//}
 NAME=		thunderbird-i18n
 PKGNAME=	${NAME}-${FV}
