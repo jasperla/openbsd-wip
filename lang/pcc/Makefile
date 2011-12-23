@@ -2,7 +2,8 @@
 
 COMMENT =	Portable C compiler
 
-DISTNAME =	pcc-1.0.0
+PCCVER =	1.0.0
+DISTNAME =	pcc-${PCCVER}
 EXTRACT_SUFX =	.tgz
 
 CATEGORIES =	lang
@@ -22,6 +23,9 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB += c
 
 CONFIGURE_STYLE = gnu
+
+CONFIG =	${MACHINE_ARCH:S/amd64/x86_64/}-unknown-openbsd${OSREV}
+SUBST_VARS =	PCCVER CONFIG
 
 do-regress:
 	cd ${WRKBUILD} && ./cc/cc/pcc --version
