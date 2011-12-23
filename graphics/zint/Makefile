@@ -17,15 +17,15 @@ CATEGORIES =		graphics
 
 MAINTAINER =		Kirill Bychkov <yason@linklevel.net>
 
-# GPLv3
+# GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB = 		c m png z
-WANTLIB-main = 		${WANTLIB}
-WANTLIB-x11 = 		${WANTLIB} QtCore QtGui QtXml pthread stdc++ zint
+cWANTLIB = 		c m png z
+WANTLIB-main = 		${cWANTLIB}
+WANTLIB-x11 = 		${cWANTLIB} QtCore QtGui QtXml pthread stdc++ zint
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=zint/}
 
