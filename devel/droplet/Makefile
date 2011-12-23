@@ -27,7 +27,9 @@ WRKDIST=		${WRKDIR}/scality-Droplet-e6692cc
 MODULES=		converters/libiconv
 BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/json-c
+			devel/json-c \
+			devel/libtool
+# XXX Depends on libtool macros
 
 LIB_DEPENDS=		textproc/libxml \
 			devel/json-c
