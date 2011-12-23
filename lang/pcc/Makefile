@@ -4,8 +4,8 @@ COMMENT = Portable C compiler
 
 DISTNAME = pcc-1.0.0
 CATEGORIES = lang
-MASTER_SITES = ftp://pcc.ludd.ltu.se/pub/pcc-releases/ \
-	http://pcc.ludd.ltu.se/ftp/pub/pcc-releases/
+MASTER_SITES = http://pcc.ludd.ltu.se/ftp/pub/pcc-releases/ \
+	ftp://pcc.ludd.ltu.se/pub/pcc-releases/
 EXTRACT_SUFX = .tgz
 
 HOMEPAGE = http://pcc.ludd.ltu.se/
