@@ -3,13 +3,10 @@
 V =			0.2.1
 COMMENT =		accessing and converting various ebook file formats
 DISTNAME =		ebook-tools-${V}
-REVISION =		0
 
 SHARED_LIBS +=		epub		0.0	# 0.2
 
 CATEGORIES =		devel textproc x11
-
-HOMEPAGE =		http://ebook-tools.sourceforge.net/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
@@ -28,6 +25,8 @@ LIB_DEPENDS =		textproc/libxml \
 
 SEPARATE_BUILD =	simple
 NO_REGRESS =		Yes
+
+MAKE_ENV=		DOXYGEN_ENCODE_PATH_STRIP=${WRKSRC}
 
 # For libzip
 COPTS =			-I${LOCALBASE}/lib/libzip/include
