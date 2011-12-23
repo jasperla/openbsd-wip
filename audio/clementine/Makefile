@@ -29,7 +29,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 LIB_DEPENDS +=	audio/taglib>=1.4 \
 		audio/libnjb \
-		devel/liblastfm \
+		audio/liblastfm \
 		devel/libmtp \
 		graphics/glew
 
