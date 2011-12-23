@@ -2,8 +2,7 @@
 
 COMMENT=		daemon implementing NAT-PMP protocol for pf(4)
 
-VERSION=		1.4
-DISTNAME=		natpmpd-${VERSION}
+DISTNAME=		natpmpd-1.4
 CATEGORIES=		net
 
 HOMEPAGE=		http://bodgitandscarper.co.uk/natpmpd/
