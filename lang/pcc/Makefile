@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	Portable C compiler
+COMMENT =	portable C compiler
 
 PCCVER =	1.0.0
 DISTNAME =	pcc-${PCCVER}
@@ -8,10 +8,8 @@ EXTRACT_SUFX =	.tgz
 
 CATEGORIES =	lang
 
-MASTER_SITES =	http://pcc.ludd.ltu.se/ftp/pub/pcc-releases/ \
-		ftp://pcc.ludd.ltu.se/pub/pcc-releases/
-
 HOMEPAGE =	http://pcc.ludd.ltu.se/
+
 MAINTAINER =	Eric Radman <ericshane@eradman.com>
 
 # BSD
@@ -21,6 +19,9 @@ PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += c
+
+MASTER_SITES =	http://pcc.ludd.ltu.se/ftp/pub/pcc-releases/ \
+		ftp://pcc.ludd.ltu.se/pub/pcc-releases/
 
 CONFIGURE_STYLE = gnu
 
