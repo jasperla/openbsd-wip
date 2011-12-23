@@ -1,0 +1,12 @@
+@comment $OpenBSD$
+@bin bin/pcc
+lib/pcc/
+lib/pcc/x86_64-unknown-openbsd5.0/
+lib/pcc/x86_64-unknown-openbsd5.0/1.0.0.RELEASE/
+lib/pcc/x86_64-unknown-openbsd5.0/1.0.0.RELEASE/include/
+lib/pcc/x86_64-unknown-openbsd5.0/1.0.0.RELEASE/lib/
+@bin libexec/ccom
+@bin libexec/cpp
+@man man/man1/ccom.1
+@man man/man1/cpp.1
+@man man/man1/pcc.1
