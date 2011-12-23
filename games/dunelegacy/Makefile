@@ -2,16 +2,16 @@
 
 COMMENT =		first-ever real-time strategy game
 
-DISTNAME =		dunelegacy-0.96.1-src
+DISTNAME =		dunelegacy-0.96.2-src
 PKGNAME =		${DISTNAME:S/-src//}
 
 CATEGORIES =		games x11
 
-HOMEPAGE =		http://dunelegacy.sourceforge.net/wiki/index.php/Richie's_Branch
+HOMEPAGE =		http://sourceforge.net/apps/mediawiki/dunelegacy/index.php
 
-#MAINTAINER =		???
+MAINTAINER =		Kirill Bychkov <yason@linklevel.net>
 
-# GPLv2
+# GPLv2/CC-BY-SA
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
@@ -19,7 +19,8 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		SDL SDL_mixer c m pthread stdc++
 
-MASTER_SITES =		http://www.myway.de/richieland/
+MASTER_SITES = 		${MASTER_SITE_SOURCEFORGE:=dunelegacy/}
+MASTER_SITES0 =		http://www.myway.de/richieland/
 EXTRACT_SUFX =		.tar.bz2
 
 LIB_DEPENDS =		devel/sdl-mixer
