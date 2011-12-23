@@ -1,11 +1,13 @@
+# $OpenBSD$
+
 COMMENT=		CIM operations over HTTP in Python
 
 MODPY_EGG_VERSION=	0.7.0
 DISTNAME=		pywbem-${MODPY_EGG_VERSION}
 PKGNAME=		py-wbem-${MODPY_EGG_VERSION}
-CATEGORIES=     	devel
+CATEGORIES=		devel
 
-HOMEPAGE=		http://http://sourceforge.net/apps/mediawiki/pywbem/index.php?title=Main_Page
+HOMEPAGE=		http://sourceforge.net/apps/mediawiki/pywbem/
 
 MAINTAINER=		Mark Peoples <marco@azbsd.org>
 
