@@ -13,7 +13,7 @@ www/p5-HTTP-Server-Simple-PSGI:	ready for import, has been sent to ports@ some t
 games/megaglest:	Ready for import. Sent to ports@ 09.09.2011 (yason)
 games/naev:		Ready for import. Sent to ports@ 09.09.2011 (yason)
 games/violetland:	Ready for import. Sent to ports@ 05.07.2011 and 09.09.2011 (yason)
-devel/liblastfm:	sent to ports@ Sep 06 2011. Ready for import. (grayed)
+audio/liblastfm:	sent to ports@ Sep 06 2011. Ready for import. (grayed)
 audio/clementine:	sent to ports@ Sep 06 2011. Ready for import. (grayed)
 multimedia/bashburn:	Ready for import. Sent to ports@ 05.10.2010 (druga)
 x11/orthos:		Ready for import. Sent to ports@ 07.10.2010 (druga)
