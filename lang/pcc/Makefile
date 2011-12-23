@@ -1,8 +1,8 @@
+# $OpenBSD$
+
 COMMENT = Portable C compiler
 
-BASENAME = pcc-1.0.0
-PKGNAME = ${BASENAME}
-DISTNAME = ${PKGNAME}
+DISTNAME = pcc-1.0.0
 CATEGORIES = lang
 MASTER_SITES = ftp://pcc.ludd.ltu.se/pub/pcc-releases/ \
 	http://pcc.ludd.ltu.se/ftp/pub/pcc-releases/
