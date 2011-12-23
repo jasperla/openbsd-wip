@@ -3,7 +3,7 @@
 SHARED_ONLY=		Yes
 
 CATEGORIES=		devel
-COMMENT=		high perfomance Cloud Storage client library	
+COMMENT=		high perfomance Cloud Storage client library
 
 VERSION=		1.1
 DISTNAME=		droplet-${VERSION}
@@ -33,7 +33,7 @@ LIB_DEPENDS=		textproc/libxml \
 			devel/json-c
 
 USE_LIBTOOL=		Yes
-AUTOCONF_VERSION= 	2.68
+AUTOCONF_VERSION=	2.68
 AUTOMAKE_VERSION=	1.11
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
