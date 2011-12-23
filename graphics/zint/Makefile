@@ -1,12 +1,12 @@
 # $OpenBSD$
 
-COMMENT-main =		barcode generator
-COMMENT-x11 = 		barcode generator GUI
+COMMENT-main =		library for encoding data in several barcode variants
+COMMENT-x11 = 		graphical interface for the zint barcode generator
 
 V = 			2.4.3
 DISTNAME =		zint-${V}
 PKGNAME-main = 		${DISTNAME}
-PKGNAME-x11 = 		zint-x11-${V}
+PKGNAME-x11 = 		zint-gui-${V}
 
 SHARED_ONLY = 		Yes
 
@@ -14,8 +14,6 @@ SHARED_LIBS += 		QZint	0.0 # 2.4
 SHARED_LIBS += 		zint	0.0 # 2.4
 
 CATEGORIES =		graphics
-
-HOMEPAGE =		http://sourceforge.net/projects/zint/
 
 MAINTAINER =		Kirill Bychkov <yason@linklevel.net>
 
@@ -33,21 +31,22 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=zint/}
 
 MODULES =		devel/cmake
 
-LIB_DEPENDS = 		graphics/png
-
 CONFIGURE_ARGS =	-DCMAKE_BUILD_TYPE=RELEASE
+
+LIB_DEPENDS = 		graphics/png
 
 MULTI_PACKAGES = 	-main
 
 PSEUDO_FLAVORS = 	no_x11
 FLAVOR ?=
 
-REGRESS_DEPENDS = 	graphics/zint,-main
+REGRESS_DEPENDS = 	${BASE_PKGPATH},-main
 
 .if !${FLAVOR:Mno_x11}
 MULTI_PACKAGES +=       -x11
-LIB_DEPENDS-x11 += 	graphics/zint,-main \
-			x11/qt4
+MODULES +=		x11/qt4
+LIB_DEPENDS-x11 += 	${BASE_PKGPATH},-main \
+			${MODQT4_LIB_DEPENDS}
 RUN_DEPENDS-x11 += 	devel/desktop-file-utils
 
 post-install:
@@ -58,6 +57,6 @@ post-install:
 .endif
 
 do-regress:
-	cd ${WRKSRC}/frontend/ && LD_LIBRARY_PATH=${WRKSRC}/backend/ ./test.sh
+	cd ${WRKSRC}/frontend/ && /bin/sh ./test.sh
 
 .include <bsd.port.mk>

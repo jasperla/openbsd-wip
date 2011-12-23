@@ -2,7 +2,4 @@
 @bin bin/zint
 include/zint.h
 @lib lib/libzint.so.${LIBzint_VERSION}
-@comment share/applications/
-share/cmake/
-share/cmake/Modules/
 share/cmake/Modules/FindZint.cmake
