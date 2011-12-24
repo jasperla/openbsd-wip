@@ -12,6 +12,9 @@ HOMEPAGE =	http://pcc.ludd.ltu.se/
 
 MAINTAINER =	Eric Radman <ericshane@eradman.com>
 
+# Other architectures not fully supported yet
+ONLY_FOR_ARCHS = i386 amd64
+
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
