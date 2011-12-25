@@ -1,0 +1,17 @@
+$OpenBSD$
+--- src/map_handler.c.orig	Sat Sep 15 09:32:42 2007
++++ src/map_handler.c	Sun Oct  7 15:44:59 2007
+@@ -660,9 +660,12 @@ loadmap (char *filename)
+   if (maploaded)
+     gdk_pixbuf_unref (image);
+ 
++#ifdef MAPNIK
+   if ( !strcmp (filename,"mapnik") ) {
+ 	  limage = gdk_pixbuf_new_from_data(get_mapnik_imagedata(), GDK_COLORSPACE_RGB, FALSE, 8, 1280, 1024, 1280 * 3, NULL, NULL);
+-  } else {
++  } else
++#endif
++  {
+ 	  limage = gdk_pixbuf_new_from_file (filename, NULL);
+ 	  if (limage == NULL)
+ 	    {

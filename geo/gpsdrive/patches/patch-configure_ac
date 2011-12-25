@@ -1,0 +1,38 @@
+$OpenBSD$
+--- configure.ac.orig	Sat Sep 15 19:05:51 2007
++++ configure.ac	Sun Dec 23 17:37:25 2007
+@@ -448,9 +448,9 @@ else
+ fi
+ 
+ #  ---------------------------
+-echo -n checking for package libpng12-0...
++echo -n checking for package libpng...
+ #  ---------------------------
+-if $PKG_CONFIG libpng12 --atleast-version=1.2.8
++if $PKG_CONFIG libpng --atleast-version=1.2.8
+ then
+     AC_MSG_RESULT([yes])
+     dnl AC_CHECK_LIB(libpng12, main, [], [   dnl  TODO Need to find a suitable function name to check for
+@@ -458,7 +458,7 @@ then
+     dnl exit -1
+     dnl ])
+ else
+-    AC_MSG_ERROR([libpng12 is missing or your version is to old. Min Version 1.2.8])
++    AC_MSG_ERROR([libpng is missing or your version is to old. Min Version 1.2.8])
+ fi
+ 
+ #  ---------------------------
+@@ -660,11 +660,11 @@ AM_CONDITIONAL([HAVE_DBUS], [test x"$ac_dbus" = x"yes"
+ #  Perl Path
+ #  Setup install path root for perl.
+ #  Yep, its ebil, but I does not know better...
+-#PERL_PACKAGE_DIR=`perl -V:installsitearch | sed "s/installsitearch='//" | sed "s/';//"`
++PERL_PACKAGE_DIR=`perl -V:installsitearch | sed "s/installsitearch='//" | sed "s/';//"`
+ # default on debian should be: /usr/share/perl5/
+ PERL_VENDORLIB=`perl -V:vendorlib | sed "s,vendorlib=',," | sed "s/';//"`
+ #PERL_PACKAGE_DIR=`echo ${PERL_VENDORLIB} | sed "s,/usr,-${prefix}-,"`
+-PERL_PACKAGE_DIR=`echo ${PERL_VENDORLIB} | sed "s,/usr/share,${datadir},"`
++#PERL_PACKAGE_DIR=`echo ${PERL_VENDORLIB} | sed "s,/usr/share,${datadir},"`
+ AC_SUBST(PERL_PACKAGE_DIR)
+ 
+ AC_PROG_PERL_MODULES(File::Basename , ,  AC_MSG_ERROR(Need Perl module File::Basename))

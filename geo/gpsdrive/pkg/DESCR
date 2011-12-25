@@ -1,0 +1,6 @@
+GpsDrive is a car (bike, ship, plane) navigation system. GpsDrive
+displays your position provided from your GPS receiver on a zoomable
+map. The maps are autoselected for best resolution depending of
+your position and can be downloaded from the Internet. Speech output
+is supported if the "festival" software is running. All GPS receivers
+supported by gpsd should be usable.

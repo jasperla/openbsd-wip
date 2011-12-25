@@ -1,0 +1,11 @@
+$OpenBSD$
+--- src/nmea_handler.c.orig	Fri Sep 14 23:47:13 2007
++++ src/nmea_handler.c	Sun Oct  7 15:26:14 2007
+@@ -36,6 +36,7 @@
+ #include <config.h>
+ #include <math.h>
+ #include <termios.h>
++#include <pthread.h>
+ #include "gps_handler.h"
+ #include "gpsdrive_config.h"
+ #include "gui.h"
