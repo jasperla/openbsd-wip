@@ -17,13 +17,13 @@ WANTLIB += jpeg tiff
 MODKDE4_USE =	pim
 
 LIB_DEPENDS = 	devel/chmlib \
-		devel/ebook-tools \
 		graphics/djvulibre \
 		graphics/tiff \
 		print/freetype \
 		print/libspectre \
 		print/poppler,-qt4 \
 		security/qca2 \
+		textproc/ebook-tools \
 		x11/kde48/qimageblitz
 
 .include <bsd.port.mk>
