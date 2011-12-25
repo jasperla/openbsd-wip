@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+@man man/man8/dhcdrop.8
+man/ru/
+man/ru/man8/
+@man man/ru/man8/dhcdrop.8
+@bin sbin/dhcdrop
