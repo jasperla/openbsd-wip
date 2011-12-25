@@ -1,0 +1,11 @@
+"barry" is NOT a production sync tool for Blackberry, yet.
+
+"Barry" is primarily intended to be a library, though there is also a 
+GUI which lets you do backups (not yet built by this port) and an 
+"opensync" plugin (ditto).
+
+People are doing the reverse engineering using this tool
+and some windows USB gunk.
+
+The "barry" project team wants help, and having this in ports
+will make it easier for people to help.

@@ -1,0 +1,61 @@
+@comment $OpenBSD$
+%%SHARED%%
+@bin bin/bidentify
+@bin bin/bktrans
+@bin bin/brecsum
+@bin bin/btool
+@bin bin/btranslate
+@bin bin/upldif
+include/barry/
+include/barry/barry.h
+include/barry/builder.h
+include/barry/common.h
+include/barry/controller.h
+include/barry/data.h
+include/barry/dataqueue.h
+include/barry/dll.h
+include/barry/error.h
+include/barry/ldif.h
+include/barry/log.h
+include/barry/m_desktop.h
+include/barry/m_desktoptmpl.h
+include/barry/m_ipmodem.h
+include/barry/m_serial.h
+include/barry/modem.h
+include/barry/parser.h
+include/barry/pppfilter.h
+include/barry/probe.h
+include/barry/protocol.h
+include/barry/r_calendar.h
+include/barry/r_contact.h
+include/barry/r_folder.h
+include/barry/r_memo.h
+include/barry/r_message.h
+include/barry/r_pin_message.h
+include/barry/r_saved_message.h
+include/barry/r_servicebook.h
+include/barry/r_task.h
+include/barry/r_timezone.h
+include/barry/record.h
+include/barry/router.h
+include/barry/s11n-boost.h
+include/barry/sha1.h
+include/barry/socket.h
+include/barry/time.h
+include/barry/usbwrap.h
+include/barry/version.h
+lib/libbarry.a
+lib/libbarry.la
+lib/pkgconfig/
+lib/pkgconfig/libbarry-0.pc
+@man man/man1/bcharge.1
+@man man/man1/bidentify.1
+@man man/man1/brecsum.1
+@man man/man1/breset.1
+@man man/man1/bs11nread.1
+@man man/man1/btool.1
+@man man/man1/pppob.1
+@man man/man1/upldif.1
+@bin sbin/bcharge
+@bin sbin/breset
+@bin sbin/pppob

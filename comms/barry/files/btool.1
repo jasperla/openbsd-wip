@@ -1,0 +1,53 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH BTOOL 1 "February 1, 2007"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+.B btool
+\- Barry Project's program to interface with BlackBerry handheld
+.SH SYNOPSIS
+.B btool 
+[-c dn][-d db[-r#][-R#]-D#]][-h][-l][-p pin][-s db -f file][-t][-v][-X]
+.SH DESCRIPTION
+.PP
+.B btool
+is a very early version of a program that communicates with a
+BlackBerry device over USB; there is no intention to support ancient
+serial-port BlackBerries.
+Since the protocols used by BlackBerry are not documented 
+by the manufacturer Research In Motion, this program is 
+experimental and you \fBuse at own risk\fP. 
+Be sure your device is backed up by another program
+if it contains important data.
+.PP
+The -l option lists attached devices.
+.PP
+The -d option loads a database from the device and displays it to the screen.
+.PP
+The -s option saves a database to the device from the named file.
+.PP
+Use -h for description of the other options.
+
+.SH AUTHOR
+.B btool 
+is part of the Barry project.
+This manual page was written by Ian Darwin.
+.SH SEE ALSO
+.PP
+http://www.netdirect.ca/software/packages/barry/index.php
+.br
+Especially the caveats, and the call for developers and others
+to help with the project.

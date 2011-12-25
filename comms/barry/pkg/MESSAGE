@@ -1,0 +1,28 @@
+To check that the program is working, take a *BACKED UP* blackberry, 
+and try this:
+
+- boot -c, disable uberry*
+- when it boots up, make sure your device appears as ugen, then do:
+     btool -l # dash-ell for list, make sure it sees dev
+     btool -v -t
+This should list about 64 lines of databases:
+
+Blackberry devices found:
+Device ID: 0x7fdXXXXX. PIN: 23cXXXXX
+Database database:
+    Database: 0x0 'Content Store' (records: 21)
+    Database: 0x1 'AutoText' (records: 109)
+    ...
+    Database: 0x3e 'PasswordKeeper' (records: 36)
+    Database: 0x3f 'PasswordKeeper Options' (records: 1)
+    Database: 0x40 'Quick Contacts' (records: 4)
+
+usb_os_close: closing endpoint 7
+usb_os_close: closing endpoint 6
+
+If you get errors about "Bad Packet Size", please note that this
+version does not support device passwords yet. Disable your device
+password (in the Configuration Tool -> Security Settings) while
+working with "barry".  If security matters, then (a) remember to
+re-enable the password, and (b) try helping the Barry project to
+support device passwords.

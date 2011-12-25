@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+@lib lib/libbarry.so.${LIBbarry_VERSION}
