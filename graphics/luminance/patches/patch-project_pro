@@ -1,0 +1,14 @@
+$OpenBSD$
+--- project.pro.orig	Sat May 29 14:47:38 2010
++++ project.pro	Sat May 29 14:48:16 2010
+@@ -5,8 +5,8 @@ QT += xml
+ QT += webkit
+ 
+ # Assume openmp-capable g++ (>=4.2)
+-QMAKE_CXXFLAGS += -funroll-loops -fstrength-reduce -fschedule-insns2 -felide-constructors -frerun-loop-opt -fexceptions -fno-strict-aliasing -fexpensive-optimizations -ffast-math -pipe -fopenmp -msse2
+-QMAKE_LFLAGS += -fopenmp
++QMAKE_CXXFLAGS += -funroll-loops -fstrength-reduce -fschedule-insns2 -felide-constructors -frerun-loop-opt -fexceptions -fno-strict-aliasing -fexpensive-optimizations -ffast-math -pipe -msse2
++#QMAKE_LFLAGS += -fopenmp
+ 
+ TARGET = luminance
+ 
