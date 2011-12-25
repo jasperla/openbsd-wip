@@ -1,0 +1,90 @@
+$OpenBSD$
+--- src/chilli.c.orig	Mon Sep 19 23:54:23 2005
++++ src/chilli.c	Sun Oct 22 05:46:31 2006
+@@ -14,7 +14,6 @@
+ #include <stdio.h>
+ #include <string.h>
+ #include <stdlib.h>
+-#include <arpa/inet.h>
+ #include <sys/stat.h>
+ #include <unistd.h>
+ #include <sys/socket.h>
+@@ -31,6 +30,22 @@
+ #include <netinet/in.h>
+ #endif
+ 
++#if defined (__OpenBSD__)
++#include <netinet/in.h>
++#include <net/if_tun.h>
++#ifndef EIDRM
++#define EIDRM   EINVAL
++#endif
++#ifndef ENOMSG
++#define ENOMSG  EAGAIN
++#endif
++#endif
++
++#if defined (__NetBSD__)
++#include <netinet/in.h>
++#include <net/if_tun.h>
++#endif
++
+ #include <time.h>
+ #include <sys/time.h>
+ 
+@@ -460,13 +475,13 @@ int static process_options(int argc, cha
+   memset(options.uamokmask, 0, sizeof(options.uamokmask));
+   options.uamoknetlen = 0;
+   for (numargs = 0; numargs < args_info.uamallowed_given; ++numargs) {
++	char *p1 = NULL;
++	char *p2 = NULL;
++	char *p3 = malloc(strlen(args_info.uamallowed_arg[numargs])+1);
+     if (options.debug & DEBUG_CONF) {
+       printf ("Uamallowed #%d: %s\n", 
+ 	      numargs, args_info.uamallowed_arg[numargs]);
+     }
+-    char *p1 = NULL;
+-    char *p2 = NULL;
+-    char *p3 = malloc(strlen(args_info.uamallowed_arg[numargs])+1);
+     strcpy(p3, args_info.uamallowed_arg[numargs]);
+     p1 = p3;
+     if ((p2 = strchr(p1, ','))) {
+@@ -766,15 +781,15 @@ int static process_options(int argc, cha
+   memset(options.macok, 0, sizeof(options.macok));
+   options.macoklen = 0;
+   for (numargs = 0; numargs < args_info.macallowed_given; ++numargs) {
+-    if (options.debug & DEBUG_CONF) {
+-      printf ("Macallowed #%d: %s\n", numargs, 
+-	      args_info.macallowed_arg[numargs]);
+-    }
+     char *p1 = NULL;
+     char *p2 = NULL;
+     char *p3 = malloc(strlen(args_info.macallowed_arg[numargs])+1);
+     int i;
+-    strcpy(p3, args_info.macallowed_arg[numargs]);
++	if (options.debug & DEBUG_CONF) {
++	printf ("Macallowed #%d: %s\n", numargs,
++	args_info.macallowed_arg[numargs]);
++	}   
++	strcpy(p3, args_info.macallowed_arg[numargs]);
+     p1 = p3;
+     if ((p2 = strchr(p1, ','))) {
+       *p2 = '\0';
+@@ -3625,7 +3640,7 @@ int main(int argc, char **argv)
+     if (dhcp) FD_SET(dhcp->fd, &fds);
+     if ((dhcp) && (dhcp->arp_fd)) FD_SET(dhcp->arp_fd, &fds);
+     if ((dhcp) && (dhcp->eapol_fd)) FD_SET(dhcp->eapol_fd, &fds);
+-#elif defined (__FreeBSD__)  || defined (__APPLE__)
++#elif defined (__FreeBSD__)  || defined (__APPLE__) || defined (__OpenBSD__) || defined (__NetBSD__)
+     if (dhcp) FD_SET(dhcp->fd, &fds);
+ #endif
+     if (radius->fd != -1) FD_SET(radius->fd, &fds);
+@@ -3683,7 +3698,7 @@ int main(int argc, char **argv)
+ 	sys_err(LOG_ERR, __FILE__, __LINE__, 0,
+ 		"dhcp_eapol_ind() failed!");
+       }
+-#elif defined (__FreeBSD__)  || defined (__APPLE__)
++#elif defined (__FreeBSD__)  || defined (__APPLE__) || defined (__OpenBSD__)
+       if ((dhcp) && FD_ISSET(dhcp->fd, &fds) && 
+ 	  dhcp_receive(dhcp) < 0) {
+ 	sys_err(LOG_ERR, __FILE__, __LINE__, 0,

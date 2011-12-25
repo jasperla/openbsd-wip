@@ -1,0 +1,11 @@
+@comment $OpenBSD$
+@man man/man8/chilli.8
+sbin/chilli
+share/doc/chillispot/
+share/doc/chillispot/chilli.conf
+share/doc/chillispot/chilli.ipup
+share/doc/chillispot/chillispot-pf.conf
+share/doc/chillispot/dictionary.chillispot
+share/doc/chillispot/freeradius.users
+share/doc/chillispot/hotspotlogin.cgi
+share/doc/chillispot/openbsd_chillispot_installguide.txt
