@@ -1,0 +1,94 @@
+$OpenBSD$
+--- Makefile.orig	Mon Dec 22 15:03:15 2008
++++ Makefile	Fri May  8 08:02:50 2009
+@@ -1,9 +1,6 @@
+-DESTDIR = /
+-PREFIX = /usr
+-
+ ##########
+ # Comment this out if you dont want SSL
+-SSL = yes
++#SSL = yes
+ 
+ ##########
+ # Location of openssl installation
+@@ -11,21 +8,21 @@ SSL_DIR = /usr
+ 
+ ##########
+ # If using FreeBSD or OpenBSD COMMENT the below lines
+-LIBS = -ldl
++LIBS = -L$(PREFIX)/lib -liconv
+ 
+ # For any distro
+ #ADD_PLUGINS = mysqlloggingplugin.so sqliteloggingplugin.so postgresqlloggingplugin.so dbfilterplugin.so dbresponderplugin.so
+ ##########
+ 
+-ifdef SSL
++.ifdef SSL
+ SSL_LIBS = -L$(SSL_DIR)/lib -lssl
+ SSL_FLAGS = -I$(SSL_DIR)/include -DHAVE_SSL
+ SSL_OBJS = sslstate.o
+-endif
++.endif
+ 
+ CXX = g++
+ 
+-CXXFLAGS = -Wall -O2 -fPIC $(SSL_FLAGS)
++CXXFLAGS = -Wall -O2 -fPIC $(SSL_FLAGS) -I$(PREFIX)/include
+ 
+ PLUGIN_FLAGS = $(LIBS) -fPIC -shared -Wl,-soname,$@ -o $@
+ 
+@@ -160,33 +157,33 @@ dbresponderplugin.o: dbresponderplugin.cpp
+ 	$(CXX) $(CXXFLAGS) dbresponderplugin.cpp -c -I$(PREFIX)/include
+ 	
+ install: imspector libimspector.so $(PLUGINS)
+-	-mkdir -p $(DESTDIR)/$(PREFIX)/sbin
+-	-mkdir -p $(DESTDIR)/$(PREFIX)/lib/imspector
+-	-install imspector $(DESTDIR)/$(PREFIX)/sbin/imspector
+-	-install libimspector.so $(DESTDIR)/$(PREFIX)/lib/libimspector.so
++	-mkdir -p $(PREFIX)/sbin
++	-mkdir -p $(PREFIX)/lib/imspector
++	-install imspector $(PREFIX)/sbin/imspector
++	-install libimspector.so $(PREFIX)/lib/libimspector.so
+ 	-(for PLUGIN in $(PLUGINS) $(ADD_PLUGINS); do \
+-		install $$PLUGIN $(DESTDIR)/$(PREFIX)/lib/imspector/$$PLUGIN; \
++		install $$PLUGIN $(PREFIX)/lib/imspector/$$PLUGIN; \
+ 	done);
+-	-mkdir -p $(DESTDIR)/$(PREFIX)/etc/imspector
+-	-install imspector.conf $(DESTDIR)/$(PREFIX)/etc/imspector/imspector.conf
+-	-install badwords.txt $(DESTDIR)/$(PREFIX)/etc/imspector/badwords.txt
+-	-install acl.txt $(DESTDIR)/$(PREFIX)/etc/imspector/acl.txt
+-	-mkdir -p /var/log/imspector
+-	-mkdir -p /var/lib/imspector
++	-mkdir -p $(PREFIX)/share/imspector
++	-install imspector.conf $(PREFIX)/share/imspector/imspector.conf
++	-install badwords.txt $(PREFIX)/share/imspector/badwords.txt
++	-install acl.txt $(PREFIX)/share/imspector/acl.txt
++#	-mkdir -p /var/log/imspector
++#	-mkdir -p /var/lib/imspector
+ 
+ install-cert:
+-	-mkdir -p $(DESTDIR)/$(PREFIX)/etc/imspector
++	-mkdir -p $(PREFIX)/share/imspector
+ 	-openssl req -new -newkey rsa:1024 -days 365 -nodes -x509 \
+-		-keyout $(DESTDIR)/$(PREFIX)/etc/imspector/serverkey.pem \
+-		-out $(DESTDIR)/$(PREFIX)/etc/imspector/servercert.pem
++		-keyout $(PREFIX)/share/imspector/serverkey.pem \
++		-out $(PREFIX)/share/imspector/servercert.pem
+ 
+ install-ca-cert: install-cert
+ 	-openssl req -new -newkey rsa:1024 -days 365 -nodes -x509 \
+-		-keyout $(DESTDIR)/$(PREFIX)/etc/imspector/cakey.pem \
+-		-out $(DESTDIR)/$(PREFIX)/etc/imspector/cacert.pem
++		-keyout $(PREFIX)/share/imspector/cakey.pem \
++		-out $(PREFIX)/share/imspector/cacert.pem
+ 
+ uninstall:
+-	-rm -f $(DESTDIR)/$(PREFIX)/sbin/imspector
+-	-rm -f $(DESTDIR)/$(PREFIX)/lib/libimspector.so
+-	-rm -rf $(DESTDIR)/$(PREFIX)/usr/lib/imspector
+-	-rm -rf $(DESTDIR)/$(PREFIX)/etc/imspector
++	-rm -f $(PREFIX)/sbin/imspector
++	-rm -f $(PREFIX)/lib/libimspector.so
++	-rm -rf $(PREFIX)/usr/lib/imspector
++	-rm -rf /etc/imspector
