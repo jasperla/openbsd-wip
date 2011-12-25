@@ -1,0 +1,9 @@
+The project aims to create a feature-rich dictionary lookup program.
+It supports multiple dictionary file formats, namely:
+    * Babylon .BGL files, complete with images and resources
+    * StarDict .ifo/.dict./.idx/.syn dictionaries
+    * Dictd .index/.dict(.dz) dictionary files
+    * ABBYY Lingvo .dsl source files
+    * ABBYY Lingvo .lsa/.dat audio archives
+Support for Wikipedia, Wiktionary, or any other MediaWiki-based sites to
+perform lookups in.
