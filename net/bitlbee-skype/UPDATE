@@ -1,0 +1,2 @@
+Builds on amd64.
+Need to add 'sudo gmake install install-dev' for bitlbee port.
