@@ -1,0 +1,43 @@
+$OpenBSD$
+--- imspector.conf.orig	Fri May  8 08:24:23 2009
++++ imspector.conf	Fri May  8 08:25:59 2009
+@@ -4,7 +4,7 @@
+ #http_port=18080
+ 
+ # This is the default location of protocol and logging plugins.
+-#plugin_dir=/usr/lib/imspector
++#plugin_dir=/usr/local/lib/imspector
+ 
+ # For dropping privs - you probably want to do this.
+ #user=imspector
+@@ -12,16 +12,16 @@
+ 
+ # SSL support?
+ #ssl=on
+-#ssl_key=/usr/etc/imspector/serverkey.pem
++#ssl_key=/etc/imspector/serverkey.pem
+ 
+ # Fixed cert?
+-#ssl_cert=/usr/etc/imspector/servercert.pem
++#ssl_cert=/etc/imspector/servercert.pem
+ 
+ # Or certs created on-the-fly and signed against a CA
+-#ssl_ca_key=/usr/etc/imspector/cakey.pem
+-#ssl_ca_cert=/usr/etc/imspector/cacert.pem
++#ssl_ca_key=/etc/imspector/cakey.pem
++#ssl_ca_cert=/etc/imspector/cacert.pem
+ # And finally a directory to store the created certs
+-#ssl_cert_dir=/var/lib/imspector
++#ssl_cert_dir=/var/imspector
+ 
+ # Directory of CA certs for IM server cert validation
+ #ssl_verify_dir=/usr/lib/ssl/certs
+@@ -75,7 +75,7 @@ file_logging_dir=/var/log/imspector
+ #badwords_block_count=1
+ 
+ # ACL
+-#acl_filename=/usr/etc/imspector/acl.txt
++#acl_filename=/etc/imspector/acl.txt
+ 
+ # SQLite-backed filter
+ #db_filter_filename=/path/to/file

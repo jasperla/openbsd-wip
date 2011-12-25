@@ -1,0 +1,15 @@
+$OpenBSD$
+--- main.cpp.orig	Fri May  8 08:18:31 2009
++++ main.cpp	Fri May  8 08:19:21 2009
+@@ -9,9 +9,9 @@
+ 
+ #include "imspector.h"
+ 
+-#define DEFAULT_CONFIG "/usr/etc/imspector/imspector.conf"
++#define DEFAULT_CONFIG "/etc/imspector/imspector.conf"
+ #define LOGGING_SOCKET "/tmp/.imspectorlog"
+-#define DEFAULT_PLUGIN_DIR "/usr/lib/imspector"
++#define DEFAULT_PLUGIN_DIR "/usr/local/lib/imspector"
+ 
+ #define DEFAULT_RESPONSE_PREFIX "Message from IMSpector: -="
+ #define DEFAULT_RESPONSE_POSTFIX "=-"
