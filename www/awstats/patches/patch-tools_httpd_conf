@@ -1,0 +1,24 @@
+$OpenBSD$
+--- tools/httpd_conf.orig	Thu Feb 18 17:59:16 2010
++++ tools/httpd_conf	Thu Feb 18 18:00:25 2010
+@@ -7,15 +7,15 @@
+ # Directives to add to your Apache conf file to allow use of AWStats as a CGI.
+ # Note that path "/usr/local/awstats/" must reflect your AWStats install path.
+ #
+-Alias /awstatsclasses "/usr/local/awstats/wwwroot/classes/"
+-Alias /awstatscss "/usr/local/awstats/wwwroot/css/"
+-Alias /awstatsicons "/usr/local/awstats/wwwroot/icon/"
+-ScriptAlias /awstats/ "/usr/local/awstats/wwwroot/cgi-bin/"
++Alias /awstatsclasses "__INSTDIR__/wwwroot/classes/"
++Alias /awstatscss "__INSTDIR__/wwwroot/css/"
++Alias /awstatsicons "__INSTDIR__/wwwroot/icon/"
++ScriptAlias /awstats/ "__INSTDIR__/wwwroot/cgi-bin/"
+ 
+ #
+ # This is to permit URL access to scripts/files in AWStats directory.
+ #
+-<Directory "/usr/local/awstats/wwwroot">
++<Directory "__INSTDIR__/wwwroot">
+     Options None
+     AllowOverride None
+     Order allow,deny
