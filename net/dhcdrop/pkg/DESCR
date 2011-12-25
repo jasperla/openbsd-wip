@@ -1,0 +1,4 @@
+Suppress DHCP server with a help  of an  attack DHCP starvation or
+with a help of flooding with DHCPDISCOVER messages.  Besides dhcdrop
+can  be  used  as a diagnostical tool and stress- testing when setting
+and developing DHCP servers.
