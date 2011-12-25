@@ -1,0 +1,94 @@
+$OpenBSD$
+--- Makefile.in.orig	Mon Feb 23 08:17:04 2004
++++ Makefile.in	Mon Nov 10 19:42:29 2008
+@@ -22,11 +22,11 @@
+ 
+ srcdir = .
+ 
+-prefix = /usr/local
++prefix = ${PREFIX}
+ exec_prefix = ${prefix}
+ 
+ bindir = $(exec_prefix)/bin
+-datadir = $(prefix)/tkdgen
++datadir = $(prefix)/share/tkdgen
+ libdir = $(prefix)/lib
+ infodir = $(prefix)/info
+ 
+@@ -100,41 +100,41 @@ Makefile: Makefile.in config.status
+ 	./config.status
+ 
+ install: installdirs
+-	$(INSTALL_PROGRAM) -m 0755 -o root -g root tkdgen $(bindir)
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root tkdgen_cods.tcl $(datadir)
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root tkdgen_controles.tcl $(datadir)
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root tkdgen_cores.tcl $(datadir)
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root tkdgen_editor.tcl $(datadir)
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root tkdgen_escala.tcl $(datadir)
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root tkdgen_opav.tcl $(datadir)
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root tkdgen_slots.tcl $(datadir)
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root tkdgen_sobre.tcl $(datadir)
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root tkdgen_tobin.tcl $(datadir)
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root ajuda/en/tkdgen_ajuda $(datadir)/ajuda/en
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root ajuda/en/tkdgen_ajudaed $(datadir)/ajuda/en
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root ajuda/en/tkdgen_ajudaop $(datadir)/ajuda/en
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root ajuda/pt/tkdgen_ajuda $(datadir)/ajuda/pt
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root ajuda/pt/tkdgen_ajudaed $(datadir)/ajuda/pt
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root ajuda/pt/tkdgen_ajudaop $(datadir)/ajuda/pt
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root ajuda/pt_br/tkdgen_ajuda $(datadir)/ajuda/pt_br
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root ajuda/pt_br/tkdgen_ajudaed $(datadir)/ajuda/pt_br
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root ajuda/pt_br/tkdgen_ajudaop $(datadir)/ajuda/pt_br
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root imgs/im_prob.gif $(datadir)/imgs
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root imgs/im_sem.gif $(datadir)/imgs
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root imgs/im_tkdgen.gif $(datadir)/imgs
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root locales/en.msg $(datadir)/locales
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root locales/pt.msg $(datadir)/locales
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root locales/pt_br.msg $(datadir)/locales
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root COPYING $(datadir)
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root AUTHORS $(datadir)
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root ChangeLog $(datadir)
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root NEWS $(datadir)
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root README $(datadir)
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root README.LOCALES $(datadir)
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root README.LOCALES-PT_BR $(datadir)
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root README-PT_BR $(datadir)
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root TODO $(datadir)
+-	$(INSTALL_PROGRAM) -m 0644 -o root -g root TODO-PT_BR $(datadir)
++	$(INSTALL_PROGRAM) -m 0755 -o root tkdgen $(bindir)
++	$(INSTALL_PROGRAM) -m 0644 -o root tkdgen_cods.tcl $(datadir)
++	$(INSTALL_PROGRAM) -m 0644 -o root tkdgen_controles.tcl $(datadir)
++	$(INSTALL_PROGRAM) -m 0644 -o root tkdgen_cores.tcl $(datadir)
++	$(INSTALL_PROGRAM) -m 0644 -o root tkdgen_editor.tcl $(datadir)
++	$(INSTALL_PROGRAM) -m 0644 -o root tkdgen_escala.tcl $(datadir)
++	$(INSTALL_PROGRAM) -m 0644 -o root tkdgen_opav.tcl $(datadir)
++	$(INSTALL_PROGRAM) -m 0644 -o root tkdgen_slots.tcl $(datadir)
++	$(INSTALL_PROGRAM) -m 0644 -o root tkdgen_sobre.tcl $(datadir)
++	$(INSTALL_PROGRAM) -m 0644 -o root tkdgen_tobin.tcl $(datadir)
++	$(INSTALL_PROGRAM) -m 0644 -o root ajuda/en/tkdgen_ajuda $(datadir)/ajuda/en
++	$(INSTALL_PROGRAM) -m 0644 -o root ajuda/en/tkdgen_ajudaed $(datadir)/ajuda/en
++	$(INSTALL_PROGRAM) -m 0644 -o root ajuda/en/tkdgen_ajudaop $(datadir)/ajuda/en
++	$(INSTALL_PROGRAM) -m 0644 -o root ajuda/pt/tkdgen_ajuda $(datadir)/ajuda/pt
++	$(INSTALL_PROGRAM) -m 0644 -o root ajuda/pt/tkdgen_ajudaed $(datadir)/ajuda/pt
++	$(INSTALL_PROGRAM) -m 0644 -o root ajuda/pt/tkdgen_ajudaop $(datadir)/ajuda/pt
++	$(INSTALL_PROGRAM) -m 0644 -o root ajuda/pt_br/tkdgen_ajuda $(datadir)/ajuda/pt_br
++	$(INSTALL_PROGRAM) -m 0644 -o root ajuda/pt_br/tkdgen_ajudaed $(datadir)/ajuda/pt_br
++	$(INSTALL_PROGRAM) -m 0644 -o root ajuda/pt_br/tkdgen_ajudaop $(datadir)/ajuda/pt_br
++	$(INSTALL_PROGRAM) -m 0644 -o root imgs/im_prob.gif $(datadir)/imgs
++	$(INSTALL_PROGRAM) -m 0644 -o root imgs/im_sem.gif $(datadir)/imgs
++	$(INSTALL_PROGRAM) -m 0644 -o root imgs/im_tkdgen.gif $(datadir)/imgs
++	$(INSTALL_PROGRAM) -m 0644 -o root locales/en.msg $(datadir)/locales
++	$(INSTALL_PROGRAM) -m 0644 -o root locales/pt.msg $(datadir)/locales
++	$(INSTALL_PROGRAM) -m 0644 -o root locales/pt_br.msg $(datadir)/locales
++	$(INSTALL_PROGRAM) -m 0644 -o root COPYING $(datadir)
++	$(INSTALL_PROGRAM) -m 0644 -o root AUTHORS $(datadir)
++	$(INSTALL_PROGRAM) -m 0644 -o root ChangeLog $(datadir)
++	$(INSTALL_PROGRAM) -m 0644 -o root NEWS $(datadir)
++	$(INSTALL_PROGRAM) -m 0644 -o root README $(datadir)
++	$(INSTALL_PROGRAM) -m 0644 -o root README.LOCALES $(datadir)
++	$(INSTALL_PROGRAM) -m 0644 -o root README.LOCALES-PT_BR $(datadir)
++	$(INSTALL_PROGRAM) -m 0644 -o root README-PT_BR $(datadir)
++	$(INSTALL_PROGRAM) -m 0644 -o root TODO $(datadir)
++	$(INSTALL_PROGRAM) -m 0644 -o root TODO-PT_BR $(datadir)
+ 
+ 
+ installdirs:

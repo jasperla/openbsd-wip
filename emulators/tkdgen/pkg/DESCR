@@ -1,0 +1,5 @@
+TkDgen is a Tcl/Tk GUI front-end for DGen, an emulator of the Genesis
+video game console. It displays a list of available ROMs, and it can
+display a game screenshot when a ROM is selected in the list. It also
+helps you manage tips, graphic files, and hex codes for individual ROMs.
+
