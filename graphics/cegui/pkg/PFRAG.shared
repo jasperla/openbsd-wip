@@ -1,0 +1,8 @@
+@comment $OpenBSD$
+@lib lib/libCEGUIBase.so.${LIBCEGUIBase_VERSION}
+@lib lib/libCEGUIFalagardWRBase.so.${LIBCEGUIFalagardWRBase_VERSION}
+@lib lib/libCEGUILuaScriptModule.so.${LIBCEGUILuaScriptModule_VERSION}
+@lib lib/libCEGUIOpenGLRenderer.so.${LIBCEGUIOpenGLRenderer_VERSION}
+@lib lib/libCEGUITGAImageCodec.so.${LIBCEGUITGAImageCodec_VERSION}
+@lib lib/libCEGUITinyXMLParser.so.${LIBCEGUITinyXMLParser_VERSION}
+@lib lib/libCEGUItoluapp.so.${LIBCEGUItoluapp_VERSION}
