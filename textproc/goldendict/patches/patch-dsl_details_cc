@@ -1,0 +1,12 @@
+$OpenBSD$
+--- dsl_details.cc.orig	Fri Jun  4 03:34:00 2010
++++ dsl_details.cc	Fri Jun  4 03:34:18 2010
+@@ -13,7 +13,7 @@ namespace Details {
+ using gd::wstring;
+ using std::list;
+ 
+-#ifdef __WIN32
++#ifdef __OpenBSD__
+ 
+ // wcscasecmp() function is a GNU extension, we need to reimplement it
+ // for non-GNU systems.
