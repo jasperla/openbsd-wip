@@ -1,0 +1,12 @@
+$OpenBSD$
+--- navit/graphics/sdl/graphics_sdl.c.orig	Thu Sep 17 04:59:08 2009
++++ navit/graphics/sdl/graphics_sdl.c	Thu Sep 17 04:59:42 2009
+@@ -86,7 +86,7 @@
+ #include <linux/input.h>
+ #endif
+ 
+-#include <alloca.h>
++#include <stdlib.h>
+ 
+ #ifdef PROFILE
+ #include <sys/time.h>
