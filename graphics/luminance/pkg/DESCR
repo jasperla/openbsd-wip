@@ -1,0 +1,7 @@
+Luminance HDR is an open source graphical user interface application
+that aims to provide a workflow for HDR imaging. It supports different
+HDR formats: OpenEXR, Radiance RGBE, Tiff formats, Raw image formats,
+PFS native format and LDR formats: JPEG, PNG, PPM, PBM, TIFF. You can
+create an HDR file from a set of images; save load HDR images; rotate,
+resize and crop HDR images; tonemap HDR images and copy exif data
+between sets of images.
