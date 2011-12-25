@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+%%SHARED%%
+libexec/chroot_safe/
+@man man/man1/chroot_safe.1
+sbin/chroot_safe
