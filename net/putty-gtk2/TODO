@@ -1,0 +1,4 @@
+- This port is done by Stuart Henderson
+- There is an issue with pauses in plink when sending large amounts of text with
+	futher interrupting of them via ^C. Maybe bumping of version will be enough
+	to fix it, since much time passed from creation of this port.
