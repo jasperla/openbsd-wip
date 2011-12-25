@@ -1,0 +1,8 @@
+@comment $OpenBSD $
+bin/anita
+lib/python${MODPY_VERSION}/site-packages/anita/
+lib/python${MODPY_VERSION}/site-packages/anita/anita.py
+share/doc/anita/
+share/doc/anita/CHANGES
+share/doc/anita/COPYRIGHT
+share/doc/anita/PKG-INFO
