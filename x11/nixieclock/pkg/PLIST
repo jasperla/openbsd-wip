@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+@bin bin/nixie-text-viewer
+@bin bin/nixieclock
+@man man/man6/nixieclock.6
