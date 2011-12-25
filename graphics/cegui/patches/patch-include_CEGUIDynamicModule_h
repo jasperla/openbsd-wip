@@ -1,0 +1,12 @@
+$OpenBSD$
+--- include/CEGUIDynamicModule.h.orig	Sun Jan 25 17:52:09 2009
++++ include/CEGUIDynamicModule.h	Sun Jan 25 17:53:48 2009
+@@ -42,7 +42,7 @@
+     struct HINSTANCE__;
+     typedef struct HINSTANCE__* hInstance;
+ 
+-#elif defined(__linux__)
++#elif defined(__linux__) || defined(__OpenBSD__)
+ #    define DYNLIB_HANDLE void*
+ #    define DYNLIB_LOAD( a ) dlopen( a, RTLD_LAZY )
+ #    define DYNLIB_GETSYM( a, b ) dlsym( a, b )
