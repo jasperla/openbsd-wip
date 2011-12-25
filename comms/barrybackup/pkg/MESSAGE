@@ -1,0 +1,8 @@
+The program "barrybackup" backs up and restores device databases.
+
+BE SURE you have disabled "uberry" in your kernel.
+If "btool -l" finds your BlackBerry, barrybackup should be able
+to back it up (though just now there's a "hang" issue that is being
+investigated).
+
+Backups are saved in ~/.barry/backup/PIN/PIN-YYYYMMDD-HHMMSS.tar.gz

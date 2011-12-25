@@ -1,0 +1,5 @@
+"barry" is NOT a production sync tool for Blackberry, yet.
+However, barrybackup - the main program of this port - does allow
+backup and restore of individual databases on your device.
+(Backup is copying your entire Address Book, Synch will be merging
+changes from your desktop PIM program and from your device. Someday).
