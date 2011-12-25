@@ -1,0 +1,11 @@
+$OpenBSD$
+--- src/syserr.c.orig	Fri Apr  2 19:55:11 2004
++++ src/syserr.c	Thu Sep  7 13:53:23 2006
+@@ -10,6 +10,7 @@
+  */
+ 
+ #include <stdarg.h>
++#include <sys/types.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <stdio.h>

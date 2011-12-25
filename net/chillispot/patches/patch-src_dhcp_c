@@ -1,0 +1,98 @@
+$OpenBSD$
+--- src/dhcp.c.orig	Mon Sep 19 22:49:28 2005
++++ src/dhcp.c	Sun Oct 22 05:45:52 2006
+@@ -38,7 +38,7 @@
+ #include <errno.h>
+ #include <fcntl.h>
+ #include <stdint.h> /* ISO C99 types */
+-#include <arpa/inet.h>
++#include <sys/types.h>
+ #include <sys/socket.h>
+ 
+ #if defined(__linux__)
+@@ -46,12 +46,13 @@
+ #include <linux/if_packet.h>
+ #include <linux/if_ether.h>
+ 
+-#elif defined (__FreeBSD__)  || defined (__APPLE__)
++#elif defined (__FreeBSD__)  || defined (__APPLE__) || defined (__OpenBSD__) || defined (__NetBSD__)
+ #include <net/if.h>
+ #include <net/bpf.h>
+ #include <net/if_dl.h>
+ #include <net/if_types.h>
+ #include <ifaddrs.h>
++#include <netinet/in.h>
+ #endif
+ 
+ #ifdef HAVE_NET_ETHERNET_H
+@@ -254,7 +255,7 @@ int dhcp_setaddr(char const *devname,
+ #if defined(__linux__)
+   ifr.ifr_netmask.sa_family = AF_INET;
+ 
+-#elif defined(__FreeBSD__) || defined (__APPLE__)
++#elif defined(__FreeBSD__) || defined (__APPLE__) || defined (__OpenBSD__) || defined (__NetBSD__)
+   ((struct sockaddr_in *) &ifr.ifr_addr)->sin_len = 
+     sizeof (struct sockaddr_in);
+   ((struct sockaddr_in *) &ifr.ifr_dstaddr)->sin_len = 
+@@ -303,7 +304,7 @@ int dhcp_setaddr(char const *devname,
+     ((struct sockaddr_in *) &ifr.ifr_netmask)->sin_addr.s_addr = 
+       netmask->s_addr;
+ 
+-#elif defined(__FreeBSD__) || defined (__APPLE__)
++#elif defined(__FreeBSD__) || defined (__APPLE__) || defined (__OpenBSD__) || defined (__NetBSD__)
+     ((struct sockaddr_in *) &ifr.ifr_addr)->sin_addr.s_addr = 
+       netmask->s_addr;
+ 
+@@ -329,7 +330,7 @@ int dhcp_setaddr(char const *devname,
+ 
+   /* TODO: How does it work on Solaris? */
+ 
+-#if defined(__FreeBSD__) || defined (__APPLE__)
++#if defined(__FreeBSD__) || defined (__APPLE__) || defined (__OpenBSD__) || defined (__NetBSD__)
+   (void)dhcp_sifflags(devname, IFF_UP | IFF_RUNNING);  /* TODO */
+   /*return tun_addroute(this, addr, addr, netmask);*/
+ #else
+@@ -447,7 +448,7 @@ int dhcp_open_eth(char const *ifname, ui
+   return fd;
+ }
+ 
+-#elif defined (__FreeBSD__) || defined (__APPLE__)
++#elif defined (__FreeBSD__) || defined (__APPLE__) || defined (__OpenBSD__) || defined (__NetBSD__)
+ 
+ 
+ int dhcp_getmac(const char *ifname, char *macaddr) {
+@@ -630,7 +631,7 @@ int dhcp_send(int fd, uint16_t protocol,
+ 	    fd, length);
+     return -1;
+   }
+-#elif defined(__FreeBSD__) || defined (__APPLE__)
++#elif defined(__FreeBSD__) || defined (__APPLE__) || defined (__OpenBSD__) || defined (__NetBSD__)
+   if (write(fd, packet, length) < 0) {
+     sys_err(LOG_ERR, __FILE__, __LINE__, errno, "write() failed");
+     return -1;
+@@ -1061,7 +1062,7 @@ dhcp_new(struct dhcp_t **dhcp, int numco
+       return -1; /* Error reporting done in dhcp_open_eth */
+     }
+ 
+-#if defined(__FreeBSD__) || defined (__APPLE__)
++#if defined(__FreeBSD__) || defined (__APPLE__) || defined(__OpenBSD__)
+   if (ioctl((*dhcp)->fd, BIOCGBLEN, &blen) < 0) {
+     sys_err(LOG_ERR, __FILE__, __LINE__, errno,"ioctl() failed!");
+   }
+@@ -2153,7 +2154,6 @@ int dhcp_data_req(struct dhcp_conn_t *co
+   
+   struct dhcp_ippacket_t packet;
+ 
+-
+   /* Ethernet header */
+   memcpy(packet.ethh.dst, conn->hismac, DHCP_ETH_ALEN);
+   memcpy(packet.ethh.src, this->hwaddr, DHCP_ETH_ALEN);
+@@ -2541,7 +2541,7 @@ extern int dhcp_set_cb_disconnect(struct
+ 
+ 
+ 
+-#if defined(__FreeBSD__) || defined (__APPLE__)
++#if defined(__FreeBSD__) || defined (__APPLE__) || defined (__OpenBSD__)
+ 
+ int dhcp_receive(struct dhcp_t *this) {
+   /*

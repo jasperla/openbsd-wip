@@ -1,0 +1,29 @@
+You'll need a minimum of 2 interfaces to get up & running.
+The external interface needs to be setup with the relevant info (ip address, etc etc)
+The internal interface (or the interface chillispot is running on) doesn't need any setting applied 
+apart from that it needs to be marked up & if its a wireless card it needs to be set to hostap mode & 
+have a ssid assigned.
+
+PF needs to be enabled aswell as the net.inet.ip.forwarding sysctl.
+You'll also need to setup a SSL certificate for Apache to use & start it without chroot.
+
+Everything you need to get started is in {PREFIX}/share/doc/chillispot
+You'll need to install a RADIUS server if you don't have one setup already.
+
+Copy hotspotlogin.cgi from {PREFIX}/share/chillispot to your cgi-bin directory
+Copy chillispot-pf.conf to /etc/pf.conf & edit the int & ext_if macros 
+if you're using freeRADIUS  there is a sample dictionary file included which needs to be added 
+to your master dictionary file.
+Copy chilli.conf & chilli.ipup from {PREFIX}/share/chillispot to /etc
+& edit the dns, dhcpif, uamsecret & radiussecret options in chilli.conf & make chilli.ip executable.
+
+Now edit the hotspotlogin.cgi file you copied to your cgi-bin directory earlier & uncomment and change
+uamsecret so that its the same as the entry in your /etc/chilli.conf, then make it executable.
+
+Now start chillispot in debug mode & make sure your clients are able to connect & chillispot is responding by issuing
+chilli -fd 
+
+If everything is working as it should add the following to your /etc/rc.local
+if [ -x /usr/local/sbin/chilli ]; then
+/usr/local/bin/chilli > /dev/null & echo -n ' chillispot'
+fi 

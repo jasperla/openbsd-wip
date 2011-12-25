@@ -1,0 +1,4 @@
+#!/bin/sh
+
+/sbin/ifconfig $1 mtu 1460
+

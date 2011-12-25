@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/dhcp.h.orig	Mon Sep 19 22:49:28 2005
++++ src/dhcp.h	Thu Sep  7 13:52:19 2006
+@@ -342,7 +342,7 @@ struct dhcp_t {
+   int devflags;         /* Original flags of network interface */
+   unsigned char hwaddr[DHCP_ETH_ALEN]; /* Hardware address of interface */
+   int ifindex;  /* Hardware address of interface */
+-#if defined(__FreeBSD__) || defined (__APPLE__)
++#if defined(__FreeBSD__) || defined (__APPLE__) || defined (__OpenBSD__)
+   char *rbuf;
+   int rbuf_max;
+   int rbuf_offset;
