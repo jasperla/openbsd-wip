@@ -1,0 +1,29 @@
+$OpenBSD$
+--- tests/gpsdrive_test.sh.orig	Sat Sep 15 17:12:04 2007
++++ tests/gpsdrive_test.sh	Sun Oct  7 17:47:24 2007
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ # ============================================ 
+ # Run some tests on Gpsdrive
+ 
+@@ -6,15 +6,15 @@
+ mkdir -p logs
+ 
+ (
+-    if  [ ! -d scripts ] ; then 
++    if  [ ! -d ../scripts ] ; then 
+ 	echo ""
+-	echo "!!!!!!!!! WARNING: Directory scripts not found."
+-	echo "                   Please run from Top Level Directory"
++	echo "!!!!!!!!! WARNING: Directory ../scripts not found."
++	echo "                   Please run from tests directory."
+ 	echo ""
+ 	exit -1 
+     fi
+ 
+-    cd ./scripts
++    cd ../scripts
+ 
+     # ------------------------------------------------------------------ geoinfo
+     echo "------------------> check geoinfo.pl -h"

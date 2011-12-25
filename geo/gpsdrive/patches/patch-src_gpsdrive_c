@@ -1,0 +1,25 @@
+$OpenBSD$
+--- src/gpsdrive.c.orig	Sat Sep 15 03:24:15 2007
++++ src/gpsdrive.c	Sun Oct  7 15:25:15 2007
+@@ -2976,6 +2976,10 @@ parse_cmd_args(int argc, char *argv[], gint *screen_he
+ }
+ 
+ 
++void termhandler (int sig) {
++	gtk_main_quit ();
++}
++
+ /*******************************************************************************
+  *                                                                             *
+  *                             Main program                                    *
+@@ -3390,10 +3394,6 @@ main (int argc, char *argv[])
+      * setup TERM signal handler so that we can save evrything nicely when the
+      * machine is shutdown.
+      */
+-    void termhandler (int sig)
+-	{
+-	    gtk_main_quit ();
+-	}
+     signal (SIGTERM, termhandler);
+ 
+ 
