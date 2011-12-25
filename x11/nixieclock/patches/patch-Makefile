@@ -1,0 +1,12 @@
+$OpenBSD$
+--- Makefile.orig	Mon Nov 16 07:54:18 2009
++++ Makefile	Thu Jun  3 12:57:32 2010
+@@ -10,7 +10,7 @@ CXX      = $(shell fltk-config --cxx)
+ CC       = $(shell fltk-config --cxx)
+ DEBUG    = -g
+ CXXFLAGS = $(shell fltk-config --use-images --cxxflags ) -I. -DVERSION=\"$(VERSION)\"
+-LDLIBS   = $(shell fltk-config --use-images --ldstaticflags )
++LDLIBS   = $(shell fltk-config --use-images --cxxflags --ldflags )
+ LINK     = $(CXX)
+ 
+ # DEFAULT BUILD
