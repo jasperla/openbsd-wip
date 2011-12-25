@@ -1,0 +1,5 @@
+weplab  is a tool to review the security of WEP encryption
+in wireless networks from an educational  point  of  view.
+Several  attacks are available (including advanced statis-
+ical attacks) so it can be measured the efectiveness  and
+minimun requirements of each one.
