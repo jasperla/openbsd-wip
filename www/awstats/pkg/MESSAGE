@@ -1,0 +1,6 @@
+To enable the awstats module please create a symbolic
+link from ${PREFIX}/conf/modules.sample/awstats.conf
+to ${PREFIX}/conf/modules/awstats.conf.
+
+ln -s ${PREFIX}/conf/modules.sample/awstats.conf \
+        ${PREFIX}/conf/modules
