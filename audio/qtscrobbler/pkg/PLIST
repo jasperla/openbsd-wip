@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+@bin bin/qtscrob
+@bin bin/scrobble-cli
+@man man/man1/scrobble-cli.1
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
