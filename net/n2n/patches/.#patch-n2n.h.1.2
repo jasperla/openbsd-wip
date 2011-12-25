@@ -1,0 +1,20 @@
+$gate: patch-n2n.h,v 1.2 2010/02/14 00:53:18 dukzcry Exp $
+
+--- n2n.h.orig	Sun Feb 14 03:50:19 2010
++++ n2n.h	Sun Feb 14 03:50:55 2010
+@@ -67,13 +67,14 @@
+ #include <linux/if_tun.h>
+ #endif
+ 
++#define __FreeBSD__
++
+ #ifdef __FreeBSD__
+ #include <netinet/in_systm.h>
+ #endif
+ 
+ #include <syslog.h>
+ #include <sys/wait.h>
+-#include <net/ethernet.h>
+ #include <netinet/in.h>
+ #include <netinet/ip.h>
+ #include <netinet/udp.h>

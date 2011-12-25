@@ -1,0 +1,5 @@
+Attention! This package install only server side, as it has been tested. 
+I don't know anything about TAP devices on OpenBSD, so edge-client uses 
+FreeBSD TAP workaround now. If you want use client, just grab it with your
+hands.
+ 
