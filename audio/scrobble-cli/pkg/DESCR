@@ -1,0 +1,6 @@
+QTScrobbler is a tool for submitting .scrobbler.log files from 
+portable players to Last.fm. It currently supports players that
+write .scrobbler.log and iPods. It is written in C++.
+
+scrobble-cli is a command-line frontend, that doesn't depend on
+Qt library.
