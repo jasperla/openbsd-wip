@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# $OpenBSD: davmail.rc,v 1.1.1.1 2011/11/20 15:47:17  Exp $
+
+daemon="${TRUEPREFIX}/bin/davmail"
+daemon_user="_davmail"
+
+. /etc/rc.d/rc.subr
+
+for i in "/usr/local/lib/*"; do export CLASSPATH=$CLASSPATH:$i; done
+java -cp "/usr/local/davmail.jar":$CLASSPATH davmail.DavGateway 
+
+pexp="${MODPY_BIN} ${daemon} ${daemon_flags}"
+rc_reload=NO
+
+rc_cmd $1
