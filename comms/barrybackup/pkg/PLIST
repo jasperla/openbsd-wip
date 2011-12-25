@@ -1,0 +1,8 @@
+@comment $OpenBSD$
+bin/barrybackup
+share/barry/
+share/barry/glade/
+share/barry/glade/BackupWindow.glade
+share/barry/glade/ConfigDlg.glade
+share/barry/glade/DatabaseSelectDlg.glade
+share/barry/glade/DeviceSelectDlg.glade
