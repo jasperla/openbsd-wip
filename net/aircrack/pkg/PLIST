@@ -1,0 +1,9 @@
+@comment $OpenBSD$
+bin/aircrack-ng
+bin/airdecap-ng
+bin/ivstools
+bin/kstats
+@man man/man1/aircrack-ng.1
+@man man/man1/airdecap-ng.1
+@man man/man1/ivstools.1
+@man man/man1/kstats.1
