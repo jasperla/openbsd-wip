@@ -1,0 +1,5 @@
+@comment $OpenBSD:$
+bin/rebuild_db.py
+share/doc/rebuild_db/
+share/doc/rebuild_db/License.txt
+share/doc/rebuild_db/Readme.txt
