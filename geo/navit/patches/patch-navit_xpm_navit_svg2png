@@ -1,0 +1,9 @@
+$OpenBSD$
+--- navit/xpm/navit_svg2png.orig	Thu Sep 17 00:37:00 2009
++++ navit/xpm/navit_svg2png	Thu Sep 17 00:37:07 2009
+@@ -1,4 +1,4 @@
+-#! /bin/bash
++#! /bin/sh
+ 
+ function svgtopng
+ {
