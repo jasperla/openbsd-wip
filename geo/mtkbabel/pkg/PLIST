@@ -1,0 +1,8 @@
+@comment $OpenBSD$
+bin/mtkbabel
+@man man/man1/mtkbabel.1
+share/doc/mtkbabel/
+share/doc/mtkbabel/MtkExtensionsv1.xsd
+share/doc/mtkbabel/README
+share/doc/mtkbabel/changelog
+share/doc/mtkbabel/copyright

@@ -1,0 +1,14 @@
+MTKBabel is a Perl program to operate the i-Blue 747 GPS data logger.
+It should work also with other GPS devices based on the MediaTek MTK
+chipset.  Starting with version 0.7 it offers also support for the Holux
+M-241 data logger.
+
+The main capabilities are:
+* Command line interface
+* Save data log in GPX and raw binary format
+* If required retrieve all the data, also the old one being overlapped
+* Change logging criteria: time, distance, speed
+* Change log format
+* START/STOP logging
+* Set OVERLAP or STOP method on memory full
+* Erase the internal memory
