@@ -1,0 +1,4 @@
+#!/bin/ksh
+
+DIR=/usr/local/share/gpsprune
+java -jar ${DIR}/gpsprune.jar --lang=EN
