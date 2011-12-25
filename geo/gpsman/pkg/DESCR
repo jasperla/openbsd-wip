@@ -1,0 +1,6 @@
+GPSMan is a graphical manager of GPS data that makes possible the
+preparation, inspection and edition of GPS data in a friendly
+environment. GPSMan supports communication and real-time logging with
+both Garmin, Lowrance and Magellan receivers and accepts real-time
+logging information in NMEA 0183 from any GPS receiver. GPSMan can also
+be used in command mode (with no graphical interface).

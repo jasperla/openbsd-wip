@@ -1,0 +1,18 @@
+$OpenBSD$
+--- util/exerciser.tcl.orig	Sun Mar  8 09:59:47 2009
++++ util/exerciser.tcl	Sun Mar  8 10:00:16 2009
+@@ -1,6 +1,6 @@
+ #!/bin/bash
+ #\
+-exec wish8.2 "$0" ${1+"$@"}
++exec wish "$0" ${1+"$@"}
+ 
+ set SRLPORT /dev/ttyS0
+ set BaudRate 4800
+@@ -199,4 +199,4 @@ proc Dec2Hex {dec} {
+     return $hex
+ }
+ 
+-SetSerial
+\ No newline at end of file
++SetSerial
