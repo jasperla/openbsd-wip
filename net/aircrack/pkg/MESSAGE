@@ -1,0 +1,16 @@
+PLEASE NOTE !!!
+
+Some tools from aircrack-ng suite is strongly linux-specific.
+Thus, some of them (like aireplay-ng and airodump-ng) cannot 
+be compiled under OpenBSD without a lot of heavy modifications. 
+So for now, this port installs only the following tools from
+aircrack-ng suite:
+
+* aircrack-ng
+* airdecap-ng
+* ivstools
+* kstats
+
+Feel free to port the rest of suite (aireplay-ng and 
+airodump-ng is the most noticeable) and provide patches.
+

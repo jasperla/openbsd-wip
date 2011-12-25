@@ -1,0 +1,12 @@
+aircrack-ng  itself is  a  802.11  WEP  / WPA-PSK key cracker. 
+It implements the so-called Fluhrer - Mantin -  Shamir  (FMS)
+attack,  along  with some new attacks by a talented hacker na-
+med KoreK. 
+
+aircrack-ng suite also includes the following tools:
+
+* airdecap-ng decrypts a WEP/WPA crypted pcap file.
+* ivstools  extract  ivs  from a pcap file or merges several
+  ivs files into one.
+* kstats  shows  statistical  FMS algorithm votes for an ivs
+  dump and a specified WEP key.
