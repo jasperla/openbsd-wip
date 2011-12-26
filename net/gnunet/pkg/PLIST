@@ -1,0 +1,229 @@
+@comment $OpenBSD$
+%%SHARED%%
+@bin bin/gnunet-arm
+@bin bin/gnunet-core-list-connections
+@bin bin/gnunet-daemon-exit
+@bin bin/gnunet-daemon-hostlist
+@bin bin/gnunet-daemon-topology
+@bin bin/gnunet-daemon-vpn
+@bin bin/gnunet-dht-get
+@bin bin/gnunet-dht-put
+@bin bin/gnunet-directory
+@bin bin/gnunet-download
+@bin bin/gnunet-fs
+@bin bin/gnunet-nat-server
+@bin bin/gnunet-peerinfo
+@bin bin/gnunet-pseudonym
+@bin bin/gnunet-publish
+@bin bin/gnunet-resolver
+@bin bin/gnunet-search
+@bin bin/gnunet-service-arm
+@bin bin/gnunet-service-ats
+@bin bin/gnunet-service-core
+@bin bin/gnunet-service-datastore
+@bin bin/gnunet-service-dht
+@bin bin/gnunet-service-dns
+@bin bin/gnunet-service-fs
+@bin bin/gnunet-service-mesh
+@bin bin/gnunet-service-nse
+@bin bin/gnunet-service-peerinfo
+@bin bin/gnunet-service-resolver
+@bin bin/gnunet-service-statistics
+@bin bin/gnunet-service-template
+@bin bin/gnunet-service-transport
+@bin bin/gnunet-statistics
+@bin bin/gnunet-template
+@bin bin/gnunet-transport
+@bin bin/gnunet-transport-certificate-creation
+@bin bin/gnunet-unindex
+@bin bin/mockup-service
+include/gnunet/
+include/gnunet/block_dns.h
+include/gnunet/block_fs.h
+include/gnunet/gauger.h
+include/gnunet/gettext.h
+include/gnunet/gnunet_applications.h
+include/gnunet/gnunet_arm_service.h
+include/gnunet/gnunet_ats_service.h
+include/gnunet/gnunet_bandwidth_lib.h
+include/gnunet/gnunet_bio_lib.h
+include/gnunet/gnunet_block_lib.h
+include/gnunet/gnunet_block_plugin.h
+include/gnunet/gnunet_chat_service.h
+include/gnunet/gnunet_client_lib.h
+include/gnunet/gnunet_common.h
+include/gnunet/gnunet_config.h
+include/gnunet/gnunet_configuration_lib.h
+include/gnunet/gnunet_connection_lib.h
+include/gnunet/gnunet_constants.h
+include/gnunet/gnunet_container_lib.h
+include/gnunet/gnunet_core_service.h
+include/gnunet/gnunet_crypto_lib.h
+include/gnunet/gnunet_datacache_lib.h
+include/gnunet/gnunet_datacache_plugin.h
+include/gnunet/gnunet_datastore_plugin.h
+include/gnunet/gnunet_datastore_service.h
+include/gnunet/gnunet_dht_service.h
+include/gnunet/gnunet_directories.h
+include/gnunet/gnunet_disk_lib.h
+include/gnunet/gnunet_dv_service.h
+include/gnunet/gnunet_fragmentation_lib.h
+include/gnunet/gnunet_fs_service.h
+include/gnunet/gnunet_getopt_lib.h
+include/gnunet/gnunet_hello_lib.h
+include/gnunet/gnunet_load_lib.h
+include/gnunet/gnunet_mesh_service.h
+include/gnunet/gnunet_nat_lib.h
+include/gnunet/gnunet_network_lib.h
+include/gnunet/gnunet_nse_service.h
+include/gnunet/gnunet_os_lib.h
+include/gnunet/gnunet_peer_lib.h
+include/gnunet/gnunet_peerinfo_service.h
+include/gnunet/gnunet_plugin_lib.h
+include/gnunet/gnunet_program_lib.h
+include/gnunet/gnunet_protocols.h
+include/gnunet/gnunet_pseudonym_lib.h
+include/gnunet/gnunet_resolver_service.h
+include/gnunet/gnunet_scheduler_lib.h
+include/gnunet/gnunet_server_lib.h
+include/gnunet/gnunet_service_lib.h
+include/gnunet/gnunet_signal_lib.h
+include/gnunet/gnunet_signatures.h
+include/gnunet/gnunet_statistics_service.h
+include/gnunet/gnunet_strings_lib.h
+include/gnunet/gnunet_testing_lib.h
+include/gnunet/gnunet_time_lib.h
+include/gnunet/gnunet_transport_plugin.h
+include/gnunet/gnunet_transport_service.h
+include/gnunet/gnunet_upnp_service.h
+include/gnunet/gnunet_util_lib.h
+include/gnunet/platform.h
+include/gnunet/plibc.h
+lib/gnunet/
+lib/gnunet/libgnunet_plugin_block_dht.a
+lib/gnunet/libgnunet_plugin_block_dht.la
+lib/gnunet/libgnunet_plugin_block_dns.a
+lib/gnunet/libgnunet_plugin_block_dns.la
+lib/gnunet/libgnunet_plugin_block_fs.a
+lib/gnunet/libgnunet_plugin_block_fs.la
+lib/gnunet/libgnunet_plugin_block_template.a
+lib/gnunet/libgnunet_plugin_block_template.la
+lib/gnunet/libgnunet_plugin_block_test.a
+lib/gnunet/libgnunet_plugin_block_test.la
+lib/gnunet/libgnunet_plugin_datacache_sqlite.a
+lib/gnunet/libgnunet_plugin_datacache_sqlite.la
+lib/gnunet/libgnunet_plugin_datacache_template.a
+lib/gnunet/libgnunet_plugin_datacache_template.la
+lib/gnunet/libgnunet_plugin_datastore_sqlite.a
+lib/gnunet/libgnunet_plugin_datastore_sqlite.la
+lib/gnunet/libgnunet_plugin_datastore_template.a
+lib/gnunet/libgnunet_plugin_datastore_template.la
+lib/gnunet/libgnunet_plugin_test.a
+lib/gnunet/libgnunet_plugin_test.la
+lib/gnunet/libgnunet_plugin_transport_tcp.a
+lib/gnunet/libgnunet_plugin_transport_tcp.la
+lib/gnunet/libgnunet_plugin_transport_template.a
+lib/gnunet/libgnunet_plugin_transport_template.la
+lib/gnunet/libgnunet_plugin_transport_udp.a
+lib/gnunet/libgnunet_plugin_transport_udp.la
+lib/gnunet/libgnunet_plugin_transport_unix.a
+lib/gnunet/libgnunet_plugin_transport_unix.la
+lib/libgnunetarm.a
+lib/libgnunetarm.la
+lib/libgnunetats.a
+lib/libgnunetats.la
+lib/libgnunetblock.a
+lib/libgnunetblock.la
+lib/libgnunetcore.a
+lib/libgnunetcore.la
+lib/libgnunetdatacache.a
+lib/libgnunetdatacache.la
+lib/libgnunetdatastore.a
+lib/libgnunetdatastore.la
+lib/libgnunetdht.a
+lib/libgnunetdht.la
+lib/libgnunetfragmentation.a
+lib/libgnunetfragmentation.la
+lib/libgnunetfs.a
+lib/libgnunetfs.la
+lib/libgnunethello.a
+lib/libgnunethello.la
+lib/libgnunetmesh.a
+lib/libgnunetmesh.la
+lib/libgnunetnat.a
+lib/libgnunetnat.la
+lib/libgnunetnse.a
+lib/libgnunetnse.la
+lib/libgnunetpeerinfo.a
+lib/libgnunetpeerinfo.la
+lib/libgnunetstatistics.a
+lib/libgnunetstatistics.la
+lib/libgnunettesting.a
+lib/libgnunettesting.la
+lib/libgnunettransport.a
+lib/libgnunettransport.la
+lib/libgnunettransporttesting.a
+lib/libgnunettransporttesting.la
+lib/libgnunetutil.a
+lib/libgnunetutil.la
+lib/pkgconfig/
+lib/pkgconfig/gnunetarm.pc
+lib/pkgconfig/gnunetblock.pc
+lib/pkgconfig/gnunetcore.pc
+lib/pkgconfig/gnunetdatacache.pc
+lib/pkgconfig/gnunetdatastore.pc
+lib/pkgconfig/gnunetdht.pc
+lib/pkgconfig/gnunetdhtlog.pc
+lib/pkgconfig/gnunetdv.pc
+lib/pkgconfig/gnunetfragmentation.pc
+lib/pkgconfig/gnunetfs.pc
+lib/pkgconfig/gnunethello.pc
+lib/pkgconfig/gnunetnat.pc
+lib/pkgconfig/gnunetnse.pc
+lib/pkgconfig/gnunetpeerinfo.pc
+lib/pkgconfig/gnunetstatistics.pc
+lib/pkgconfig/gnunettesting.pc
+lib/pkgconfig/gnunettransport.pc
+lib/pkgconfig/gnunetutil.pc
+@man man/man1/gnunet-arm.1
+@man man/man1/gnunet-directory.1
+@man man/man1/gnunet-download.1
+@man man/man1/gnunet-fs.1
+@man man/man1/gnunet-monkey.1
+@man man/man1/gnunet-nat-server.1
+@man man/man1/gnunet-peerinfo.1
+@man man/man1/gnunet-pseudonym.1
+@man man/man1/gnunet-publish.1
+@man man/man1/gnunet-search.1
+@man man/man1/gnunet-statistics.1
+@man man/man1/gnunet-transport.1
+@man man/man1/gnunet-unindex.1
+share/gnunet/
+share/gnunet/config.d/
+share/gnunet/config.d/arm.conf
+share/gnunet/config.d/ats.conf
+share/gnunet/config.d/core.conf
+share/gnunet/config.d/datacache.conf
+share/gnunet/config.d/datastore.conf
+share/gnunet/config.d/dht.conf
+share/gnunet/config.d/fs.conf
+share/gnunet/config.d/hostlist.conf
+share/gnunet/config.d/mesh.conf
+share/gnunet/config.d/nat.conf
+share/gnunet/config.d/nse.conf
+share/gnunet/config.d/peerinfo.conf
+share/gnunet/config.d/resolver.conf
+share/gnunet/config.d/statistics.conf
+share/gnunet/config.d/template.conf
+share/gnunet/config.d/testing.conf
+share/gnunet/config.d/topology.conf
+share/gnunet/config.d/transport.conf
+share/gnunet/config.d/util.conf
+share/gnunet/config.d/vpn.conf
+share/gnunet/gnunet-logo-color.png
+share/locale/de/LC_MESSAGES/gnunet.mo
+share/locale/es/LC_MESSAGES/gnunet.mo
+share/locale/sv/LC_MESSAGES/gnunet.mo
+share/locale/vi/LC_MESSAGES/gnunet.mo
+share/locale/zh_CN/LC_MESSAGES/gnunet.mo
+@sample /var/gnunet/
