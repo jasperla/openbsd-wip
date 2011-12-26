@@ -1,0 +1,74 @@
+$OpenBSD$
+--- configure.orig	Fri Nov 19 12:23:54 2010
++++ configure	Mon Dec 26 17:12:14 2011
+@@ -15173,13 +15173,13 @@ _ACEOF
+ 
+ fi
+ 
+-    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -lpthread" >&5
+-$as_echo_n "checking for pthread_create in -lpthread... " >&6; }
++    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -pthread" >&5
++$as_echo_n "checking for pthread_create in -pthread... " >&6; }
+ if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -15214,7 +15214,7 @@ if test "x$ac_cv_lib_pthread_pthread_create" = x""yes;
+ #define HAVE_LIBPTHREAD 1
+ _ACEOF
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="-pthread $LIBS"
+ 
+ else
+   as_fn_error "cannot find pthread library" "$LINENO" 5
+@@ -15555,7 +15555,7 @@ if test "${ac_cv_lib_xerces_c_main+set}" = set; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lxerces-c -lpthread $LIBS"
++LIBS="-lxerces-c -pthread $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -18694,7 +18694,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+     cegui_glew_saved_LIBS="$LIBS"
+ 
+     for cegui_path in $cegui_inc_paths; do
+-        CPPFLAGS="-I$cegui_path $cegui_saved_CFLAGS"
++        CPPFLAGS="-I$cegui_path $cegui_saved_CFLAGS $cegui_glew_saved_CFLAGS"
+         cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ #include <GL/glew.h>
+@@ -20171,7 +20171,7 @@ $as_echo "$am_cv_python_pyexecdir" >&6; }
+ $as_echo_n "checking for python build information... " >&6; }
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: " >&5
+ $as_echo "" >&6; }
+-for python in python2.6 python2.5 python2.4 python2.3 python2.2 python2.1 python; do
++for python in python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 python2.1 python; do
+ for ac_prog in $python
+ do
+   # Extract the first word of "$ac_prog", so it can be a program name with args.
+@@ -20223,7 +20223,7 @@ if { as_var=$as_ac_Lib; eval "test \"\${$as_var+set}\"
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-l$ax_python_bin  $LIBS"
++LIBS="-lutil -lm -l$ax_python_bin  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -20770,8 +20770,6 @@ _ACEOF
+ 
+ 
+         CEGUI_LIB_LINK_FLAGS="-release $cegui_lib_version_suffix"
+-    else
+-        CEGUI_LIB_LINK_FLAGS="-avoid-version"
+     fi
+ 
+     if test x$MINGW32 = xyes; then
