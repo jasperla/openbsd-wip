@@ -1,0 +1,5 @@
+GNUnet is a framework for secure peer-to-peer networking. GNUnet's
+primary design goals are to protect the privacy of its users and
+to guard itself against attacks or abuse.
+
+This is the GTK frontend to GNUnet.
