@@ -1,0 +1,15 @@
+$OpenBSD$
+--- mkinstalldirs.orig	Thu Dec  1 13:42:22 2011
++++ mkinstalldirs	Thu Dec  1 13:42:44 2011
+@@ -126,9 +126,9 @@ do
+     esac
+ 
+     if test ! -d "$pathcomp"; then
+-      echo "mkdir $pathcomp"
++      echo "mkdir -p $pathcomp"
+ 
+-      mkdir "$pathcomp" || lasterr=$?
++      mkdir -p "$pathcomp" || lasterr=$?
+ 
+       if test ! -d "$pathcomp"; then
+ 	errstatus=$lasterr

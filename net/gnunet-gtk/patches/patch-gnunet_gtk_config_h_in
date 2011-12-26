@@ -1,0 +1,13 @@
+$OpenBSD$
+--- gnunet_gtk_config.h.in.orig	Thu Dec  1 13:09:41 2011
++++ gnunet_gtk_config.h.in	Thu Dec  1 13:10:13 2011
+@@ -119,6 +119,9 @@
+ /* Define to 1 if you have the <memory.h> header file. */
+ #undef HAVE_MEMORY_H
+ 
++/* Define to 1 if you have the <netinet/in_systm.h> header file. */
++#undef HAVE_NETINET_IN_SYSTM_H
++
+ /* Define to 1 if you have the <netinet/in.h> header file. */
+ #undef HAVE_NETINET_IN_H
+ 
