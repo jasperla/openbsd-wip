@@ -1,0 +1,11 @@
+$OpenBSD$
+--- daemon/client.c.orig	Wed Dec  7 13:38:51 2011
++++ daemon/client.c	Wed Dec  7 13:39:04 2011
+@@ -30,6 +30,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Bos
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <sys/un.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ 
+ #ifdef HAVE_PLIST

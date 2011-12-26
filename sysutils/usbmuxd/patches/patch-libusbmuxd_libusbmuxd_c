@@ -1,0 +1,23 @@
+$OpenBSD$
+--- libusbmuxd/libusbmuxd.c.orig	Wed Dec  7 13:36:29 2011
++++ libusbmuxd/libusbmuxd.c	Wed Dec  7 13:38:07 2011
+@@ -30,12 +30,17 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Bos
+ #include <windows.h>
+ #include <winsock2.h>
+ #define sleep(x) Sleep(x*1000)
+-#define EPROTO 71
+-#define EBADMSG 77
+ #else
+ #include <sys/socket.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <pthread.h>
++#endif
++#ifndef EPROTO
++#define EPROTO 71
++#endif
++#ifndef EBADMSG
++#define EBADMSG 77
+ #endif
+ 
+ #ifdef HAVE_INOTIFY
