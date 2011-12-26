@@ -1,0 +1,21 @@
+$deck: patch-unix_dtkdlg_c,v 1.1 2010/10/14 07:58:02 dukzcry Exp $
+--- gtkdlg.c.orig	Thu Oct 14 01:21:57 2010
++++ unix/gtkdlg.c	Thu Oct 14 01:23:00 2010
+@@ -2151,7 +2151,7 @@ GtkWidget *layout_ctrls(struct dlgparam *dp, struct Sh
+ 		cr = gtk_cell_renderer_text_new();
+ 		gtk_cell_layout_pack_start(GTK_CELL_LAYOUT(w), cr, TRUE);
+ 		gtk_cell_layout_set_attributes(GTK_CELL_LAYOUT(w), cr,
+-					       "text", 1, NULL);
++					       "text", 1, (char *) NULL);
+ 
+ 		/*
+ 		 * And tell it to notify us when the selection
+@@ -2886,7 +2886,7 @@ int do_config_box(const char *title, Config *cfg, int 
+     gtk_tree_view_set_headers_visible(GTK_TREE_VIEW(tree), FALSE);
+     treerenderer = gtk_cell_renderer_text_new();
+     treecolumn = gtk_tree_view_column_new_with_attributes
+-	("Label", treerenderer, "text", 0, NULL);
++	("Label", treerenderer, "text", 0, (char *) NULL);
+     gtk_tree_view_append_column(GTK_TREE_VIEW(tree), treecolumn);
+     treeselection = gtk_tree_view_get_selection(GTK_TREE_VIEW(tree));
+     gtk_tree_selection_set_mode(treeselection, GTK_SELECTION_BROWSE);
