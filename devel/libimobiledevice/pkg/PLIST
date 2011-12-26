@@ -1,0 +1,45 @@
+@comment $OpenBSD$
+@bin bin/idevice_id
+@bin bin/idevicebackup
+@bin bin/ideviceenterrecovery
+@bin bin/ideviceimagemounter
+@bin bin/ideviceinfo
+@bin bin/idevicepair
+@bin bin/idevicescreenshot
+@bin bin/idevicesyslog
+include/libimobiledevice/
+include/libimobiledevice/afc.h
+include/libimobiledevice/file_relay.h
+include/libimobiledevice/installation_proxy.h
+include/libimobiledevice/libimobiledevice.h
+include/libimobiledevice/lockdown.h
+include/libimobiledevice/mobile_image_mounter.h
+include/libimobiledevice/mobilebackup.h
+include/libimobiledevice/mobilesync.h
+include/libimobiledevice/notification_proxy.h
+include/libimobiledevice/sbservices.h
+include/libimobiledevice/screenshotr.h
+include/libimobiledevice/swig/
+include/libimobiledevice/swig/imobiledevice.i
+lib/libimobiledevice.a
+lib/libimobiledevice.la
+@lib lib/libimobiledevice.so.${LIBimobiledevice_VERSION}
+lib/pkgconfig/libimobiledevice-1.0.pc
+lib/python${MODPY_VERSION}/site-packages/imobiledevice/
+lib/python${MODPY_VERSION}/site-packages/imobiledevice/__init__.py
+lib/python${MODPY_VERSION}/site-packages/imobiledevice/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/imobiledevice/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/imobiledevice/_imobiledevice.a
+lib/python${MODPY_VERSION}/site-packages/imobiledevice/_imobiledevice.la
+lib/python${MODPY_VERSION}/site-packages/imobiledevice/_imobiledevice.so
+lib/python${MODPY_VERSION}/site-packages/imobiledevice/imobiledevice.py
+lib/python${MODPY_VERSION}/site-packages/imobiledevice/imobiledevice.pyc
+lib/python${MODPY_VERSION}/site-packages/imobiledevice/imobiledevice.pyo
+@man man/man1/idevice_id.1
+@man man/man1/idevicebackup.1
+@man man/man1/ideviceenterrecovery.1
+@man man/man1/ideviceimagemounter.1
+@man man/man1/ideviceinfo.1
+@man man/man1/idevicepair.1
+@man man/man1/idevicescreenshot.1
+@man man/man1/idevicesyslog.1
