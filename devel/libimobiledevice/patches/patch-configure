@@ -1,0 +1,12 @@
+$OpenBSD$
+--- configure.orig	Wed Dec  7 14:01:48 2011
++++ configure	Wed Dec  7 14:19:27 2011
+@@ -16432,7 +16432,7 @@ $as_echo_n "checking consistency of all components of 
+ 	ac_ext=c
+ ac_cpp='$CPP $CPPFLAGS'
+ ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
+-ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
++ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS -lm $PYTHON_EXTRA_LIBS conftest.$ac_ext $LIBS >&5'
+ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ 
+ 	# save current global flags
