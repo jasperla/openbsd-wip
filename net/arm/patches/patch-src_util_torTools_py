@@ -1,0 +1,19 @@
+$OpenBSD$
+git commit b1fce355c3661324f477e2698a08214035d09c10
+--- src/util/torTools.py.orig	Fri Oct 21 14:27:14 2011
++++ src/util/torTools.py	Fri Oct 21 14:31:45 2011
+@@ -350,8 +350,12 @@ def isTorRunning():
+   then this returns False.
+   """
+   
+-  # suggestions welcome for making this more reliable
+-  commandResults = sysTools.call("ps -A co command")
++  primaryResolver, secondaryResolver = "ps -A co command", "ps -ao ucomm="
++  if os.uname()[0] in ("Darwin", "FreeBSD", "OpenBSD"):
++    primaryResolver, secondaryResolver = secondaryResolver, primaryResolver
++  commandResults = sysTools.call(primaryResolver)
++  if not commandResults:
++    commandResults = sysTools.call(secondaryResolver)
+   if commandResults:
+     for cmd in commandResults:
+       if cmd.strip() == "tor": return True
