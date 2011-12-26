@@ -1,0 +1,13 @@
+$OpenBSD$
+--- gnunet_config.h.in.orig	Wed Nov 30 22:27:53 2011
++++ gnunet_config.h.in	Wed Nov 30 22:28:24 2011
+@@ -548,6 +548,9 @@
+ /* Define to 1 if you have the <ucred.h> header file. */
+ #undef HAVE_UCRED_H
+ 
++/* Define to 1 if you have the <sys/ucred.h> header file. */
++#undef HAVE_SYS_UCRED_H
++
+ /* We can access-64 bit values that are only 32-bit aligned */
+ #undef HAVE_UNALIGNED_64_ACCESS
+ 

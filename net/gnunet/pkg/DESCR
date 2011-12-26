@@ -1,0 +1,19 @@
+GNUnet is a framework for secure peer-to-peer networking. GNUnet's
+primary design goals are to protect the privacy of its users and
+to guard itself against attacks or abuse. At this point, GNUnet
+offers two primary applications on top of the framework:
+
+* The file-sharing service allows anonymous censorship-resistant
+file-sharing. Files, searches and search results are encrypted to
+make it hard to control, track or censor users. GNUnet's anonymity
+protocol (gap) is designed to make it difficult to link users to
+their file-sharing activities. Users can also individually trade-off
+between performance and anonymity. Despite providing anonymity,
+GNUnet's excess-based economy rewards contributing users with better
+performance.  
+
+* The VPN service allows offering of hidden services
+within GNUnet (using a .gnunet TLD) and can be used to tunnel IPv4
+and IPv6 traffic over the P2P network. The VPN can also be used for
+IP protocol translation (6-to-4, 4-to-6) and it is possible to
+tunnel IP traffic over GNUnet (6-over-4, 4-over-6).

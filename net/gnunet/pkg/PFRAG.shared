@@ -1,0 +1,34 @@
+@comment $OpenBSD$
+lib/gnunet/libgnunet_plugin_block_dht.so
+lib/gnunet/libgnunet_plugin_block_dns.so
+lib/gnunet/libgnunet_plugin_block_fs.so
+lib/gnunet/libgnunet_plugin_block_template.so
+lib/gnunet/libgnunet_plugin_block_test.so
+lib/gnunet/libgnunet_plugin_datacache_sqlite.so
+lib/gnunet/libgnunet_plugin_datacache_template.so
+lib/gnunet/libgnunet_plugin_datastore_sqlite.so
+lib/gnunet/libgnunet_plugin_datastore_template.so
+lib/gnunet/libgnunet_plugin_test.so
+lib/gnunet/libgnunet_plugin_transport_tcp.so
+lib/gnunet/libgnunet_plugin_transport_template.so
+lib/gnunet/libgnunet_plugin_transport_udp.so
+lib/gnunet/libgnunet_plugin_transport_unix.so
+@lib lib/libgnunetarm.so.${LIBgnunetarm_VERSION}
+@lib lib/libgnunetats.so.${LIBgnunetats_VERSION}
+@lib lib/libgnunetblock.so.${LIBgnunetblock_VERSION}
+@lib lib/libgnunetcore.so.${LIBgnunetcore_VERSION}
+@lib lib/libgnunetdatacache.so.${LIBgnunetdatacache_VERSION}
+@lib lib/libgnunetdatastore.so.${LIBgnunetdatastore_VERSION}
+@lib lib/libgnunetdht.so.${LIBgnunetdht_VERSION}
+@lib lib/libgnunetfragmentation.so.${LIBgnunetfragmentation_VERSION}
+@lib lib/libgnunetfs.so.${LIBgnunetfs_VERSION}
+@lib lib/libgnunethello.so.${LIBgnunethello_VERSION}
+@lib lib/libgnunetmesh.so.${LIBgnunetmesh_VERSION}
+@lib lib/libgnunetnat.so.${LIBgnunetnat_VERSION}
+@lib lib/libgnunetnse.so.${LIBgnunetnse_VERSION}
+@lib lib/libgnunetpeerinfo.so.${LIBgnunetpeerinfo_VERSION}
+@lib lib/libgnunetstatistics.so.${LIBgnunetstatistics_VERSION}
+@lib lib/libgnunettesting.so.${LIBgnunettesting_VERSION}
+@lib lib/libgnunettransport.so.${LIBgnunettransport_VERSION}
+@lib lib/libgnunettransporttesting.so.${LIBgnunettransporttesting_VERSION}
+@lib lib/libgnunetutil.so.${LIBgnunetutil_VERSION}
