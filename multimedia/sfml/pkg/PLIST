@@ -83,13 +83,13 @@ include/SFML/Window/WindowHandle.hpp
 include/SFML/Window/WindowListener.hpp
 include/SFML/Window/WindowSettings.hpp
 include/SFML/Window/WindowStyle.hpp
-lib/libsfml-audio.so
+@comment lib/libsfml-audio.so
 @lib lib/libsfml-audio.so.${LIBsfml-audio_VERSION}
-lib/libsfml-graphics.so
+@comment lib/libsfml-graphics.so
 @lib lib/libsfml-graphics.so.${LIBsfml-graphics_VERSION}
-lib/libsfml-network.so
+@comment lib/libsfml-network.so
 @lib lib/libsfml-network.so.${LIBsfml-network_VERSION}
-lib/libsfml-system.so
+@comment lib/libsfml-system.so
 @lib lib/libsfml-system.so.${LIBsfml-system_VERSION}
-lib/libsfml-window.so
+@comment lib/libsfml-window.so
 @lib lib/libsfml-window.so.${LIBsfml-window_VERSION}
