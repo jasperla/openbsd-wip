@@ -1,0 +1,1 @@
+needs shm_open() to not accumulate files in /tmp

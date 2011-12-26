@@ -1,0 +1,37 @@
+@comment $OpenBSD$
+@lib lib/libextractor.so.${LIBextractor_VERSION}
+lib/libextractor/libextractor_applefile.so
+lib/libextractor/libextractor_asf.so
+lib/libextractor/libextractor_deb.so
+lib/libextractor/libextractor_dvi.so
+lib/libextractor/libextractor_elf.so
+lib/libextractor/libextractor_flv.so
+lib/libextractor/libextractor_gif.so
+lib/libextractor/libextractor_html.so
+lib/libextractor/libextractor_id3.so
+lib/libextractor/libextractor_id3v2.so
+lib/libextractor/libextractor_id3v23.so
+lib/libextractor/libextractor_id3v24.so
+lib/libextractor/libextractor_it.so
+lib/libextractor/libextractor_jpeg.so
+lib/libextractor/libextractor_man.so
+lib/libextractor/libextractor_mime.so
+lib/libextractor/libextractor_mp3.so
+lib/libextractor/libextractor_mpeg.so
+lib/libextractor/libextractor_nsf.so
+lib/libextractor/libextractor_nsfe.so
+lib/libextractor/libextractor_odf.so
+lib/libextractor/libextractor_pdf.so
+lib/libextractor/libextractor_png.so
+lib/libextractor/libextractor_ps.so
+lib/libextractor/libextractor_qt.so
+lib/libextractor/libextractor_real.so
+lib/libextractor/libextractor_riff.so
+lib/libextractor/libextractor_s3m.so
+lib/libextractor/libextractor_sid.so
+lib/libextractor/libextractor_tar.so
+lib/libextractor/libextractor_tiff.so
+lib/libextractor/libextractor_wav.so
+lib/libextractor/libextractor_xm.so
+lib/libextractor/libextractor_zip.so
+@lib lib/libextractor_common.so.${LIBextractor_common_VERSION}
