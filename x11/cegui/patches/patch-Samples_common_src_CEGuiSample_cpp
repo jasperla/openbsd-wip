@@ -1,0 +1,21 @@
+$OpenBSD$
+--- Samples/common/src/CEGuiSample.cpp.orig	Mon Dec 26 14:51:05 2011
++++ Samples/common/src/CEGuiSample.cpp	Mon Dec 26 14:51:38 2011
+@@ -25,6 +25,8 @@
+  *   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+  *   OTHER DEALINGS IN THE SOFTWARE.
+  ***************************************************************************/
++#include <sys/param.h>
++
+ #include "CEGuiSample.h"
+ 
+ #ifdef HAVE_CONFIG_H
+@@ -35,7 +37,7 @@
+ // includes for renderer selector classes
+ #if defined( __WIN32__ ) || defined( _WIN32 )
+ #   include "Win32CEGuiRendererSelector.h"
+-#elif defined(__linux__) || defined(__FreeBSD__) || defined(__NetBSD__)
++#elif defined(__linux__) || defined(BSD)
+ #   ifdef CEGUI_SAMPLES_USE_GTK2
+ #       include "GTK2CEGuiRendererSelector.h"
+ #   else

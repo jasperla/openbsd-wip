@@ -1,0 +1,21 @@
+$OpenBSD$
+--- cegui/include/CEGUIDynamicModule.h.orig	Mon Dec 26 12:29:38 2011
++++ cegui/include/CEGUIDynamicModule.h	Mon Dec 26 12:30:54 2011
+@@ -28,6 +28,8 @@
+ #ifndef _CEGUIDynamicModule_h_
+ #define _CEGUIDynamicModule_h_
+ 
++#include <sys/param.h>
++
+ #include "CEGUIString.h"
+ 
+ /*************************************************************************
+@@ -43,7 +45,7 @@
+     struct HINSTANCE__;
+     typedef struct HINSTANCE__* hInstance;
+ 
+-#elif defined(__linux__) || defined(__FreeBSD__) || defined(__NetBSD__)
++#elif defined(__linux__) || defined(BSD)
+ #    define DYNLIB_HANDLE void*
+ #    define DYNLIB_LOAD( a ) dlopen( a, RTLD_LAZY )
+ #    define DYNLIB_GETSYM( a, b ) dlsym( a, b )
