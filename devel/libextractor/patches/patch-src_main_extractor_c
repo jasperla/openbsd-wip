@@ -1,0 +1,33 @@
+$OpenBSD$
+--- src/main/extractor.c.orig	Wed Nov 30 20:28:39 2011
++++ src/main/extractor.c	Wed Nov 30 20:53:53 2011
+@@ -1248,7 +1248,7 @@ process_requests (struct EXTRACTOR_PluginList *plugin,
+ 	}
+ 
+ #ifndef WINDOWS
+-      if ( (-1 != (shmid = shm_open (fn, O_RDONLY, 0))) &&
++      if ( (-1 != (shmid = open (fn, O_RDONLY, 0))) &&
+ 	   (SIZE_MAX != (size = lseek (shmid, 0, SEEK_END))) &&
+ 	   (NULL != (ptr = mmap (NULL, size, PROT_READ, MAP_SHARED, shmid, 0))) &&
+ 	   (ptr != (void*) -1) )
+@@ -1624,7 +1624,7 @@ make_shm (int is_tail,
+ 	    getpid(),
+ 	    (unsigned int) RANDOM());
+ #ifndef WINDOWS
+-  *shmid = shm_open (fn, O_RDWR | O_CREAT, S_IRUSR | S_IWUSR);
++  *shmid = open (fn, O_RDWR | O_CREAT, S_IRUSR | S_IWUSR);
+   *ptr = NULL;
+   if (-1 == (*shmid))
+     return 1;    
+@@ -1830,11 +1830,9 @@ extract (struct EXTRACTOR_PluginList *plugins,
+ 	munmap (ptr, size);
+       if (shmid != -1)
+ 	close (shmid);
+-      shm_unlink (fn);
+       if (NULL != tptr)
+ 	{
+ 	  munmap (tptr, tsize);
+-	  shm_unlink (tfn);
+ 	  if (tshmid != -1)
+ 	    close (tshmid);
+ 	}

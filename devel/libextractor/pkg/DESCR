@@ -1,0 +1,11 @@
+GNU libextractor is a library used to extract meta data from files
+of arbitrary type. It is designed to use helper-libraries to perform
+the actual extraction, and to be trivially extendable by linking
+against external extractors for additional file types.
+
+The goal is to provide developers of file-sharing networks, browsers
+or WWW-indexing bots with a universal library to obtain simple
+keywords and meta data to match against queries and to show to users
+instead of only relying on filenames. libextractor contains a shell
+command extract that, similar to the well-known file command, can
+extract meta data from a file an print the results to stdout.
