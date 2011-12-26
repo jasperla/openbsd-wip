@@ -1,0 +1,8 @@
+@comment $OpenBSD$
+@bin bin/iproxy
+include/usbmuxd-proto.h
+include/usbmuxd.h
+@lib lib/libusbmuxd.so.${LIBusbmuxd_VERSION}
+lib/pkgconfig/libusbmuxd.pc
+@bin sbin/usbmuxd
+@rcscript ${RCDIR}/usbmuxd

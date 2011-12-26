@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $OpenBSD$
+
+daemon="${TRUEPREFIX}/sbin/usbmuxd"
+daemon_flags="-U _usbmuxd"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1

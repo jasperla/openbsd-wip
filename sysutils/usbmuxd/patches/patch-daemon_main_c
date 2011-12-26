@@ -1,0 +1,20 @@
+$OpenBSD$
+--- daemon/main.c.orig	Wed Dec  7 13:43:36 2011
++++ daemon/main.c	Wed Dec  7 13:44:26 2011
+@@ -27,6 +27,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Bos
+ #include <config.h>
+ #endif
+ 
++#include <sys/param.h>
+ #include <stdio.h>
+ #include <errno.h>
+ #include <string.h>
+@@ -147,7 +148,7 @@ void set_signal_handlers(void)
+ 	sigaction(SIGUSR2, &sa, NULL);
+ }
+ 
+-#if defined(__FreeBSD__) || defined(__APPLE__)
++#if defined(BSD) || defined(__APPLE__)
+ static int ppoll(struct pollfd *fds, nfds_t nfds, const struct timespec *timeout, const sigset_t *sigmask)
+ {
+ 	int ready;

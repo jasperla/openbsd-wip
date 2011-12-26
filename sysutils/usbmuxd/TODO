@@ -1,0 +1,3 @@
+- hotplug requires udev - emulate using hotplugd(8)?
+- add _usbmuxd user
+- test
