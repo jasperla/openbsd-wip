@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+@lib lib/libOIS.so.${LIBOIS_VERSION}
