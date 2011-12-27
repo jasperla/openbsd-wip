@@ -1,5 +1,6 @@
---- src/include/switch.h	Tue Apr  6 22:05:28 2010
-+++ src/include/switch.h	Wed Dec  8 14:16:54 2010
+$OpenBSD$
+--- src/include/switch.h.orig	Sun Feb 13 10:27:17 2011
++++ src/include/switch.h	Sun Feb 13 10:28:50 2011
 @@ -73,6 +73,12 @@
  #endif
  #endif
