@@ -1,0 +1,14 @@
+@comment $OpenBSD$
+%%SHARED%%
+bin/external-ip
+@bin bin/upnpc
+include/miniupnpc/
+include/miniupnpc/declspec.h
+include/miniupnpc/igd_desc_parse.h
+include/miniupnpc/miniupnpc.h
+include/miniupnpc/miniwget.h
+include/miniupnpc/upnpcommands.h
+include/miniupnpc/upnperrors.h
+include/miniupnpc/upnpreplyparse.h
+lib/libminiupnpc.a
+@man man/man3/miniupnpc.3

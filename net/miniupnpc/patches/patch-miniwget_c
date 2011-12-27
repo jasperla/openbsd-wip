@@ -1,0 +1,11 @@
+$OpenBSD$
+--- miniwget.c.orig	Mon May 23 13:58:38 2011
++++ miniwget.c	Mon May 23 13:59:11 2011
+@@ -32,6 +32,7 @@
+ #include <sys/select.h>
+ #endif /* #else defined(__amigaos__) && !defined(__amigaos4__) */
+ #include <sys/socket.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <netdb.h>
+ #define closesocket close
