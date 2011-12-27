@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/protocol.cpp.orig	Tue Dec 27 03:06:22 2011
++++ src/protocol.cpp	Tue Dec 27 03:08:04 2011
+@@ -7,6 +7,8 @@
+ #include "util.h"
+ 
+ #ifndef WIN32
++# include <sys/socket.h>
++# include <netinet/in.h>
+ # include <arpa/inet.h>
+ #endif
+ 
