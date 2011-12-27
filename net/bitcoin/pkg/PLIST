@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+@bin bin/bitcoind
+@man man/man1/bitcoind.1
+@man man/man5/bitcoin.conf.5

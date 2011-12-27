@@ -1,0 +1,33 @@
+$OpenBSD$
+--- src/headers.h.orig	Sun Nov 20 17:17:41 2011
++++ src/headers.h	Tue Dec 27 12:35:40 2011
+@@ -20,7 +20,7 @@
+ #define WIN32_LEAN_AND_MEAN 1
+ 
+ // Include boost/foreach here as it defines __STDC_LIMIT_MACROS on some systems.
+-#include <boost/foreach.hpp>
++//#include <boost/foreach.hpp>
+ #ifndef __STDC_LIMIT_MACROS
+ #define __STDC_LIMIT_MACROS // to enable UINT64_MAX from stdint.h
+ #endif
+@@ -69,6 +69,9 @@
+ #include <sys/resource.h>
+ #include <sys/socket.h>
+ #include <sys/stat.h>
++#ifdef BSD
++#include <netinet/in.h>
++#endif
+ #include <arpa/inet.h>
+ #include <netdb.h>
+ #include <unistd.h>
+@@ -78,10 +81,6 @@
+ #include <fcntl.h>
+ #include <signal.h>
+ #endif
+-#ifdef BSD
+-#include <netinet/in.h>
+-#endif
+-
+ 
+ #pragma hdrstop
+ 
