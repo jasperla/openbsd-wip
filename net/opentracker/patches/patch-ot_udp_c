@@ -1,0 +1,12 @@
+$OpenBSD$
+--- ot_udp.c.orig	Fri Apr 23 00:08:42 2010
++++ ot_udp.c	Fri Apr  1 17:47:43 2011
+@@ -5,6 +5,8 @@
+ 
+ /* System */
+ #include <string.h>
++#include <sys/types.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <stdio.h>
+ 

@@ -1,0 +1,11 @@
+$OpenBSD$
+--- ot_http.c.orig	Fri Apr  1 17:36:29 2011
++++ ot_http.c	Fri Apr  1 17:36:44 2011
+@@ -5,6 +5,7 @@
+ 
+ /* System */
+ #include <sys/types.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <stdlib.h>
+ #include <stdio.h>

@@ -1,0 +1,9 @@
+@comment $OpenBSD$
+@bin bin/opentracker
+share/doc/opentracker/
+share/doc/opentracker/README
+share/doc/opentracker/README_v6
+share/examples/opentracker/
+share/examples/opentracker/opentracker.conf
+@sample ${SYSCONFDIR}/opentracker.conf
+@rcscript ${RCDIR}/opentracker
