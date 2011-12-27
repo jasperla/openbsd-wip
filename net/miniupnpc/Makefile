@@ -2,7 +2,7 @@
 
 COMMENT =		UPnP client
 
-V =			1.5
+V =			1.6
 DISTNAME =		miniupnpc-${V}
 
 SHARED_LIBS =		miniupnpc 0.0

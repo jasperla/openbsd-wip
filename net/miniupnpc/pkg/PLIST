@@ -6,7 +6,9 @@ include/miniupnpc/
 include/miniupnpc/declspec.h
 include/miniupnpc/igd_desc_parse.h
 include/miniupnpc/miniupnpc.h
+include/miniupnpc/miniupnpctypes.h
 include/miniupnpc/miniwget.h
+include/miniupnpc/portlistingparse.h
 include/miniupnpc/upnpcommands.h
 include/miniupnpc/upnperrors.h
 include/miniupnpc/upnpreplyparse.h
