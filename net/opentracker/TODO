@@ -1,0 +1,3 @@
+- host tarball somewhere
+- sane default options? black-/whitelist? maybe different flavours?
+- linking exception should be explicitly stated in libowfat COPYING file.

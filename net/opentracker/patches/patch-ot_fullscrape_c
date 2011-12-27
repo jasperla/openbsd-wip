@@ -1,0 +1,11 @@
+$OpenBSD$
+--- ot_fullscrape.c.orig	Fri Apr  1 17:35:48 2011
++++ ot_fullscrape.c	Fri Apr  1 17:36:06 2011
+@@ -10,6 +10,7 @@
+ #include <stdio.h>
+ #include <string.h>
+ #include <pthread.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #ifdef WANT_COMPRESSION_GZIP
+ #include <zlib.h>

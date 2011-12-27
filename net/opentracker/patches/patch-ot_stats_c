@@ -1,0 +1,11 @@
+$OpenBSD$
+--- ot_stats.c.orig	Fri Apr  1 17:35:14 2011
++++ ot_stats.c	Fri Apr  1 17:35:32 2011
+@@ -5,6 +5,7 @@
+ 
+ /* System */
+ #include <stdlib.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <sys/types.h>
+ #include <sys/uio.h>

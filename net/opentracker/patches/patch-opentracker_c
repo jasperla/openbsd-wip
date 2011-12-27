@@ -1,0 +1,11 @@
+$OpenBSD$
+--- opentracker.c.orig	Sat Dec 11 16:50:56 2010
++++ opentracker.c	Fri Apr  1 17:34:05 2011
+@@ -7,6 +7,7 @@
+ /* System */
+ #include <stdlib.h>
+ #include <string.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <sys/socket.h>
+ #include <unistd.h>
