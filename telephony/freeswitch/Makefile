@@ -1,40 +1,50 @@
-COMMENT=		an open source communications platform written in C
+# $OpenBSD$
 
-SHARED_ONLY=   	Yes 
-VER=			1.0.6
-DISTNAME=		freeswitch-${VER}
-PKGNAME=		freeswitch-${VER}
+COMMENT =	an open source communications platform written in C
 
-CATEGORIES=		telephony
+SHARED_ONLY =	Yes
 
-HOMEPAGE=		http://www.freeswitch.org
+DISTNAME =	freeswitch-1.0.6
+CATEGORIES =	telephony
 
-MAINTAINER=		Sergey Bronnikov <estetus@gmail.com>
+SHARED_LIBS =	freeswitch	1.0
 
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
-
-WANTLIB+=	c crypto m ncurses pthread ssl 
-
+HOMEPAGE =	http://www.freeswitch.org
 MASTER_SITES=	http://files.freeswitch.org/
 
-USE_GMAKE=		Yes
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
+
+# MPL
+PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE_FTP =		Yes
+PERMIT_DISTFILES_CDROM =	Yes
+PERMIT_DISTFILES_FTP =		Yes
+
+MODULES =	lang/python
+WANTLIB =	c crypto m ncurses pthread ssl stdc++
+
+BUILD_DEPENDS =	lang/erlang
+RUN_DEPENDS =	lang/erlang
+
+USE_GMAKE =	Yes
+#USE_LIBTOOL =	Yes
 
 CONFIGURE_STYLE=	gnu
-SHARED_LIBS +=  freeswitch                1.0
+CONFIGURE_ENV =		CPPFLAGS+="-I${LOCALBASE}/include" \
+			LDFLAGS+="-L${LOCALBASE}/lib -L${MODPY_LIBDIR}"
+CONFIGURE_ARGS =	--with-modinstdir=${LOCALBASE}/lib/freeswitch \
+			--with-rundir=/var/run \
+			--with-logfiledir=/var/log \
+			--localstatedir=/var \
+			--with-lib-subdir=NO \
+			--with-erlang \
+#			--with-python \
+			--with-openssl=/usr
 
-#CPPFLAGS+=		-I${X11BASE}/include -I${LOCALBASE}/include
-#LDFLAGS+= 		-L${X11BASE}/lib -L${LOCALBASE}/lib
-CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" \
-			CFLAGS="${CFLAGS}" \
-			LDFLAGS="${LDFLAGS}"
+# The 'erl -version' test in configure needs HOME to be set.
+CONFIGURE_ENV +=	HOME=${PORTHOME}
 
-CONFIGURE_ARGS+=	--localstatedir=/var 
-
-NO_REGRESS=		Yes
-INSTALL_TARGET=	install
+#NO_REGRESS=		Yes
 #EXAMPLEDIR=		${PREFIX}/share/examples/asterisk
 #EXAMPLEFILES=		extensions.ael extensions.conf logger.conf modules.conf musiconhold.conf sip.conf voicemail.conf
 
