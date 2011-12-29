@@ -1,8 +1,0 @@
-Instant Messenger proxy with monitoring, blocking and content-filtering
-capabilities. Currently it supports MSN, Jabber/XMPP, AIM, ICQ, Yahoo,
-IRC and Gadu-Gadu to different degrees. MSN is the principle protocol,
-as it's the most popular these days, at least in the UK where I'm based.
-The supported platforms are at present Linux and BSD when using the pf
-firewall, but porting to other UNIXs should be trivial. It is able to
-log to plain files, as well as several types of SQL database including
-MySQL, SQLite and PostreSQL.
