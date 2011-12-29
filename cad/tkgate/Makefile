@@ -9,8 +9,6 @@ HOMEPAGE = 		http://www.tkgate.org/
 MASTER_SITES = 		ftp://gadoid.ices.cmu.edu/pub/tkgate/
 EXTRACT_SUFX = 		.tgz
 
-MAINTAINER = 		Nickolay Burkov <nbrk@linklevel.net>
-
 # GPLv2
 PERMIT_PACKAGE_CDROM = 	Yes
 PERMIT_PACKAGE_FTP = 	Yes
@@ -21,7 +19,6 @@ WANTLIB = 		X11 c m
 
 MODULES = 		x11/tk
 LIB_DEPENDS = 		${MODTK_LIB_DEPENDS}
-USE_X11 = 		Yes
 
 CONFIGURE_STYLE = 	gnu
 
