@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD$
+
+daemon="${TRUEPREFIX}/bin/spawn-fcgi"
+daemon_flags="-u_nginx -s /var/run/fcgiwrap.sock -- ${TRUEPREFIX}/sbin/fcgiwrap"
+
+. /etc/rc.d/rc.subr
+
+pexp="${TRUEPREFIX}/sbin/fcgiwrap"
+rc_reload=NO
+
+rc_cmd $1
