@@ -1,9 +1,0 @@
-@comment $OpenBSD$
-lib/python${MODPY_VERSION}/site-packages/sk1libs/
-lib/python${MODPY_VERSION}/site-packages/sk1libs-0.9.1-py${MODPY_VERSION}.egg-info
-lib/python${MODPY_VERSION}/site-packages/sk1libs/__init__.py
-lib/python${MODPY_VERSION}/site-packages/sk1libs/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/sk1libs/pycms/
-lib/python${MODPY_VERSION}/site-packages/sk1libs/pycms/__init__.py
-lib/python${MODPY_VERSION}/site-packages/sk1libs/pycms/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/sk1libs/pycms/_pycms.so
