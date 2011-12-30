@@ -1,0 +1,3 @@
+@comment $OpenBSD$
+bin/maclookup
+@man man/man1/maclookup.1
