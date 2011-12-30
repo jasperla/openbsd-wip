@@ -2,7 +2,7 @@
 
 COMMENT=	simple filter to look up MAC address vendors
 
-DISTNAME=	maclookup-1.1
+DISTNAME=	maclookup-1.2
 
 CATEGORIES=	net textproc
 
