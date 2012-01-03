@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS=		i386 amd64
 
 COMMENT=		Chromium browser
 
-V=			18.0.976.0
+V=			18.0.994.0
 DISTNAME=		chromium-${V}
 PKGNAME=		chromium-devel-${V}
 
@@ -34,7 +34,6 @@ MASTER_SITES=	http://blade2k.humppa.hu/distfiles/ \
 
 MODULES=	lang/python
 
-#Not needed at the moment
 MODULES+=	gcc4
 MODGCC4_ARCHS=	*
 MODGCC4_LANGS=	c++
@@ -42,8 +41,7 @@ MODGCC4_VERSION=4.6
 
 MODPY_RUNDEP=	No
 
-RUN_DEPENDS=	sysutils/gamin,-server \
-		devel/xdg-utils \
+RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
 		x11/gtk+2,-cups \
 		x11/gnome/icon-theme
