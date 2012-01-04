@@ -2,16 +2,16 @@
 
 COMMENT = 		simple tool for submitting .scrobbler.log to last.fm
 
-DISTNAME=       qtscrob-0.10
+DISTNAME = 		qtscrob-0.10
 
-CATEGORIES=		audio
+CATEGORIES = 		audio
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=qtscrob/}
-EXTRACT_SUFX =		.tar.bz2
+MASTER_SITES = 		${MASTER_SITE_SOURCEFORGE:=qtscrob/}
+EXTRACT_SUFX = 		.tar.bz2
 
-HOMEPAGE=		http://qtscrob.sourceforge.net/
+HOMEPAGE = 		http://qtscrob.sourceforge.net/
 
-MAINTAINER=		 dukzcry <lomka@gero.in>
+MAINTAINER = 		dukzcry <lomka@gero.in>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=   Yes
@@ -19,16 +19,15 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes 
 
-WANTLIB=		QtCore QtGui X11 Xext c crypto curl idn m mtp pthread ssl stdc++ usb z
+WANTLIB += QtCore QtGui X11 Xext c crypto curl idn m mtp pthread ssl stdc++ usb z
 
+MODLES = 		x11/qt4
 BUILD_DEPENDS = 	devel/ccache
-LIB_DEPENDS=		net/curl \
-					devel/libidn \
-					devel/libmtp \
-					x11/qt4
-#RUN_DEPENDS = 		:desktop-file-utils-*:devel/desktop-file-utils
-USE_X11 = 		Yes
-USE_GMAKE=		Yes
+LIB_DEPENDS = 		net/curl \
+			devel/libidn \
+			devel/libmtp
+RUN_DEPENDS = 		devel/desktop-file-utils
+USE_GMAKE = 		Yes
 WRKSRC = 		${WRKDIST}/src/cli
 
 NO_REGRESS = 		Yes
