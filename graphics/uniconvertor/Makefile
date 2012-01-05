@@ -9,7 +9,7 @@ CATEGORIES =		graphics
 
 HOMEPAGE =		http://sk1project.org/
 
-#MAINTAINER =		???
+MAINTAINER =		Kirill Bychkov <yason@linklevel.net>
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -23,10 +23,9 @@ MODULES =		lang/python
 
 NO_REGRESS =		Yes
 
-SUBST_VARS = 		V
+SEPARATE_BUILD = 	concurrent
 
-post-patch:
-	perl -pi -e 's,python,${MODPY_BIN},g' ${WRKSRC}/src/uniconv
-	perl -pi -e 's,/usr/bin/python,${MODPY_BIN},g' ${WRKSRC}/src/__init__.py
+SUBST_VARS = 		V
+MODPY_ADJ_FILES = 	setup.py src/uniconv src/__init__.py
 
 .include <bsd.port.mk>
