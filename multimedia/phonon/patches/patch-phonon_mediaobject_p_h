@@ -1,0 +1,32 @@
+$OpenBSD$
+--- phonon/mediaobject_p.h.orig	Mon Dec 19 14:30:45 2011
++++ phonon/mediaobject_p.h	Sat Jan  7 17:18:27 2012
+@@ -26,8 +26,8 @@
+ #include <QtCore/QString>
+ #include <QtCore/QQueue>
+ #ifdef HAVE_QZEITGEIST
+-#include <QZeitgeist/Log>
+-#include <QZeitgeist/QZeitgeist>
++#include <QtZeitgeist/Log>
++#include <QtZeitgeist/QtZeitgeist>
+ #endif
+ 
+ #include "medianode_p.h"
+@@ -116,7 +116,7 @@ class MediaObjectPrivate : public MediaNodePrivate, pr
+ #endif //QT_NO_PHONON_ABSTRACTMEDIASTREAM
+         {
+ #ifdef HAVE_QZEITGEIST
+-            log = new QZeitgeist::Log();
++            log = new QtZeitgeist::Log();
+ #endif
+         }
+ 
+@@ -150,7 +150,7 @@ class MediaObjectPrivate : public MediaNodePrivate, pr
+         MediaSource mediaSource;
+         QQueue<MediaSource> sourceQueue;
+ #ifdef HAVE_QZEITGEIST
+-        QZeitgeist::Log *log;
++        QtZeitgeist::Log *log;
+ #endif
+ };
+ }
