@@ -69,7 +69,7 @@ BUILD_DEPENDS =	misc/shared-desktop-ontologies \
 
 RUN_DEPENDS =	misc/shared-mime-info \
 		misc/shared-desktop-ontologies \
-		sysutils/gamin,-server \
+		sysutils/gamin \
 		STEM->=${MODKDE4_VERSION}:x11/kde48/oxygen-icons \
 		x11/dbus \
 		x11/gtk+2,-guic
