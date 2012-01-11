@@ -1,6 +1,6 @@
 $OpenBSD$
---- cmake/CMakeLists.txt.orig	Sat Oct 29 02:12:40 2011
-+++ cmake/CMakeLists.txt	Sat Oct 29 02:13:43 2011
+--- cmake/CMakeLists.txt.orig	Tue Jan 10 18:17:08 2012
++++ cmake/CMakeLists.txt	Tue Jan 10 18:17:34 2012
 @@ -1,13 +1,9 @@
  install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in
                ${CMAKE_CURRENT_SOURCE_DIR}/COPYING-CMAKE-SCRIPTS

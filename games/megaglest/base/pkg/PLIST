@@ -2,6 +2,7 @@
 @bin bin/megaglest
 @man man/man6/megaglest.6
 share/applications/megaglest.desktop
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/pixmaps/
 @comment share/pixmaps/editor.ico
 @comment share/pixmaps/g3dviewer.ico

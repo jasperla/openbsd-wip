@@ -19,16 +19,6 @@ devel/libgeier:		Ready for import. Sent to ports@ 11.12.2011 (sizeofvoid)
 productivity/taxbird:	Ready for import. Sent to ports@ 11.12.2011 (sizeofvoid)
 cad/tkgate:		Ready for import. Sent to ports@ 2008-01-13 and still works (yason)
 
-Mozila updates gecko 9
-mail/mozilla-thunderbird	Ready for import. Sent to ports (nigel)
-mail/thunderbird-i18n		Ready for import. Sent to ports (nigel)
-www/fennec			Ready for import. Sent to ports (nigel)
-www/firefox36			Ready for import. Sent to ports (nigel)
-www/firefox-i18n		Ready for import. Sent to ports (nigel)
-www/mozilla			Ready for import. Sent to ports (nigel)
-www/mozilla-firefox		Ready for import. Sent to ports (nigel)
-www/seamonkey			Ready for import. Sent to ports (nigel)
-
 KDE 4.7/4.8 related
 
 textproc/liblrdf:	Ready for import. Sent to ports@ October 10, 2011 (grayed)
