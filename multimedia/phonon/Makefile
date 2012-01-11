@@ -2,7 +2,7 @@
 
 COMMENT =	multimedia layer for Qt4/KDE4
 CATEGORIES =	multimedia devel x11/kde4
-VERSION =	4.6.0
+VERSION =	4.5.1
 DISTNAME =	phonon-${VERSION}
 
 # Higher than one in Qt4 to avoid issues
@@ -25,7 +25,7 @@ MODULES =	devel/cmake \
 		x11/qt4
 
 WANTLIB =	lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtTest lib/qt4/QtXml
-WANTLIB +=	m qzeitgeist stdc++ pulse pulse-mainloop-glib
+WANTLIB +=	glib-2.0 m qzeitgeist stdc++ pulse pulse-mainloop-glib
 
 BUILD_DEPENDS =	x11/kde4/automoc
 
