@@ -29,6 +29,7 @@ LIB_DEPENDS =
 SEPARATE_BUILD =	Yes
 
 CONFIGURE_STYLE =	gnu
+NO_REGRESS =		Yes
 
 MODPY_ADJ_FILES =	zeitgeist-daemon \
 			zeitgeist-daemon.py \

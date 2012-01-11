@@ -1,0 +1,5 @@
+If you have the mouse speed problem, please try to include this in your
+start script, or call it in a console before starting glest ( from this
+console of course ):
+
+export SDL_VIDEO_X11_DGAMOUSE=0
