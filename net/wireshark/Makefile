@@ -3,7 +3,7 @@
 COMMENT-main=	graphical network protocol analyzer
 COMMENT-text=	network protocol analyzer
 
-WVER=		1.6.4
+WVER=		1.6.5
 DISTNAME=	wireshark-${WVER}
 PKGNAME-main=	wireshark-${WVER}
 PKGNAME-text=	tshark-${WVER}
@@ -19,8 +19,8 @@ HOMEPAGE=	http://www.wireshark.org/
 
 EXTRACT_SUFX=	.tar.bz2
 
-FLAVORS =	gtk3 no_python
-FLAVOR?=	
+FLAVORS=	gtk3 no_python
+FLAVOR?=
 
 USE_GMAKE=	Yes
 USE_GROFF=	Yes
@@ -47,7 +47,7 @@ MASTER_SITES=	http://www.wireshark.org/download/src/all-versions/
 
 SUBST_VARS=	WVER
 
-LIB_DEPENDS=	
+LIB_DEPENDS=
 
 LIB_DEPENDS-text= ${LIB_DEPENDS} \
 		devel/glib2 \
@@ -75,7 +75,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 
 .if !${FLAVOR:L:Mno_python}
 MODULES =		lang/python
-WANTLIB-text += 	${MODPY_WANTLIB}
+WANTLIB-text +=		${MODPY_WANTLIB}
 LIB_DEPENDS-text +=	${MODPY_LIB_DEPENDS}
 CONFIGURE_ARGS +=	--with-python
 .endif
