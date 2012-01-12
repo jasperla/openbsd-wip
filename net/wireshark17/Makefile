@@ -20,7 +20,7 @@ HOMEPAGE=	http://www.wireshark.org/
 
 EXTRACT_SUFX=	.tar.bz2
 
-FLAVORS=	gtk3 no_python
+FLAVORS=	gtk2 no_python
 FLAVOR?=
 
 USE_GMAKE=	Yes
@@ -39,8 +39,8 @@ WANTLIB-text += ${WANTLIB} GeoIP cares gcrypt gmodule-2.0 gnutls
 WANTLIB-text += gpg-error gthread-2.0 krb5 lua smi
 
 WANTLIB-main += ${WANTLIB} wireshark wiretap wsutil
-WANTLIB-main += gdk-x11-2.0 gdk_pixbuf-2.0 gobject-2.0 gtk-x11-2.0
-WANTLIB-main += gthread-2.0 pango-1.0 portaudio
+WANTLIB-main += cairo gdk_pixbuf-2.0 gmodule-2.0 gobject-2.0 
+WANTLIB-main += gthread-2.0 pango-1.0 pangocairo-1.0 portaudio stdc++
 
 MULTI_PACKAGES= -main -text
 
@@ -63,7 +63,8 @@ LIB_DEPENDS-text= ${LIB_DEPENDS} \
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		tshark-${WVER}:${PKGPATH},${FLAVOR},-text \
 		audio/portaudio-svn \
-		x11/gtk+2 \
+		devel/pango \
+		graphics/cairo
 
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+= --tag=disable-static
@@ -82,11 +83,13 @@ LIB_DEPENDS-text +=	${MODPY_LIB_DEPENDS}
 CONFIGURE_ARGS +=	--with-python
 .endif
 
-.if ${FLAVOR:L:Mgtk3}
-#BROKEN =	Yes
+.if !${FLAVOR:L:Mgtk2}
 CONFIGURE_ARGS +=	--with-gtk3=yes
 WANTLIB-main +=		gtk-3
 LIB_DEPENDS-main +=		x11/gtk+3
+.else
+WANTLIB-main +=		gdk-x11-2.0 gtk-x11-2.0
+LIB_DEPENDS-main +=		x11/gtk+2
 .endif
 
 NO_REGRESS=	Yes
