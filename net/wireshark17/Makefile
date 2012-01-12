@@ -3,11 +3,11 @@
 COMMENT-main=	graphical network protocol analyzer
 COMMENT-text=	network protocol analyzer
 
-WVER=		1.7.1
-SVNVER=		${WVER}-SVN-40442
-DISTNAME=	wireshark-${SVNVER}
-PKGNAME-main=	wireshark17-${WVER}
-PKGNAME-text=	tshark17-${WVER}
+VER=		1.7.1
+WVER=		${VER}-SVN-40442
+DISTNAME=	wireshark-${WVER}
+PKGNAME-main=	wireshark17-${VER}
+PKGNAME-text=	tshark17-${VER}
 SHARED_ONLY=	Yes
 
 SHARED_LIBS +=  wsutil               0.0      # 1.0
@@ -61,7 +61,7 @@ LIB_DEPENDS-text= ${LIB_DEPENDS} \
 		security/gnutls
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
-		tshark-${WVER}:${PKGPATH},${FLAVOR},-text \
+		tshark17-${VER}:${PKGPATH},${FLAVOR},-text \
 		audio/portaudio-svn \
 		devel/pango \
 		graphics/cairo
@@ -85,7 +85,7 @@ CONFIGURE_ARGS +=	--with-python
 
 .if !${FLAVOR:L:Mgtk2}
 CONFIGURE_ARGS +=	--with-gtk3=yes
-WANTLIB-main +=		gtk-3
+WANTLIB-main +=		gdk-3 gtk-3
 LIB_DEPENDS-main +=		x11/gtk+3
 .else
 WANTLIB-main +=		gdk-x11-2.0 gtk-x11-2.0

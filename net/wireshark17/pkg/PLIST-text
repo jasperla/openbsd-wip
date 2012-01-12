@@ -30,14 +30,12 @@ lib/wireshark/plugins/${WVER}/cosnaming.so
 lib/wireshark/plugins/${WVER}/docsis.so
 lib/wireshark/plugins/${WVER}/ethercat.so
 lib/wireshark/plugins/${WVER}/gryphon.so
-lib/wireshark/plugins/${WVER}/interlink.so
 lib/wireshark/plugins/${WVER}/irda.so
 lib/wireshark/plugins/${WVER}/m2m.so
 lib/wireshark/plugins/${WVER}/mate.so
 lib/wireshark/plugins/${WVER}/opcua.so
 lib/wireshark/plugins/${WVER}/parlay.so
 lib/wireshark/plugins/${WVER}/profinet.so
-lib/wireshark/plugins/${WVER}/sercosiii.so
 lib/wireshark/plugins/${WVER}/stats_tree.so
 lib/wireshark/plugins/${WVER}/tango.so
 lib/wireshark/plugins/${WVER}/unistim.so
@@ -262,6 +260,8 @@ share/wireshark/text2pcap.html
 share/wireshark/tpncp/
 share/wireshark/tpncp/tpncp.dat
 share/wireshark/tshark.html
+share/wireshark/ui/
+share/wireshark/ui/main-menubar-ui.xml
 share/wireshark/wimaxasncp/
 share/wireshark/wimaxasncp/dictionary.dtd
 share/wireshark/wimaxasncp/dictionary.xml
