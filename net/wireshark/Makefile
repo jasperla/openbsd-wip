@@ -84,7 +84,7 @@ CONFIGURE_ARGS +=	--with-python
 BROKEN =	Yes
 CONFIGURE_ARGS +=	--with-gtk3=yes
 WANTLIB-main +=		gtk-3
-LIB_DEPENDS +=		x11/gtk+3
+LIB_DEPENDS-main +=		x11/gtk+3
 .endif
 
 NO_REGRESS=	Yes
