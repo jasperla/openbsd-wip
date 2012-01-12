@@ -1,0 +1,31 @@
+$OpenBSD$
+
+correct order and add missing headers
+
+--- tap-hosts.c.orig	Thu Jan 12 15:11:54 2012
++++ tap-hosts.c	Thu Jan 12 18:11:21 2012
+@@ -45,20 +45,17 @@
+ #include <epan/addr_resolv.h>
+ 
+ /* Needed for addrinfo */
+-#ifdef HAVE_SYS_TYPES_H
+-# include <sys/types.h>
+-#endif
+ 
+ #ifdef HAVE_SYS_SOCKET_H
+ #include <sys/socket.h>
+ #endif
+ 
+-#ifdef HAVE_ARPA_INET_H
+-#include <arpa/inet.h>
+-#endif
+-
+ #ifdef HAVE_NETINET_IN_H
+ # include <netinet/in.h>
++#endif
++
++#ifdef HAVE_ARPA_INET_H
++#include <arpa/inet.h>
+ #endif
+ 
+ #ifdef HAVE_NETDB_H
