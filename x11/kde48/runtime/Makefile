@@ -28,7 +28,8 @@ RUN_DEPENDS =	archivers/bzip2 \
 		devel/desktop-file-utils \
 		x11/gtk+2,-guic
 
-LIB_DEPENDS =	databases/soprano \
+LIB_DEPENDS =	audio/pulseaudio \
+		databases/soprano \
 		graphics/exiv2 \
 		multimedia/phonon \
 		multimedia/xine-lib \
@@ -37,10 +38,10 @@ LIB_DEPENDS =	databases/soprano \
 		security/libssh \
 		x11/kde48/attica
 
-# PulseAudio is not fully workable yet.
+# PulseAudio is fully workable according to robert@, test it out.
 # QNtrack depends on libnl, Linux-specific library.
 
-CONFIGURE_ARGS =	-DPULSEAUDIO_FOUND:Bool=FALSE \
+CONFIGURE_ARGS =	-DPULSEAUDIO_FOUND:Bool=TRUE \
 			-DSLP_FOUND:Bool=FALSE \
 			-DQNTRACK_FOUND:Bool=FALSE
 

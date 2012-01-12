@@ -462,6 +462,7 @@ include/akonadi/collectionstatistics.h
 include/akonadi/collectionstatisticsdelegate.h
 include/akonadi/collectionstatisticsjob.h
 include/akonadi/collectionstatisticsmodel.h
+include/akonadi/collectionutils_p.h
 include/akonadi/collectionview.h
 include/akonadi/contact/
 include/akonadi/contact/abstractcontactformatter.h

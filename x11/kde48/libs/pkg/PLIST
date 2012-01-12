@@ -318,6 +318,7 @@ include/KDE/KDateTimeWidget
 include/KDE/KDateValidator
 include/KDE/KDateWidget
 include/KDE/KDebug
+include/KDE/KDescendantsProxyModel
 include/KDE/KDesktopFile
 include/KDE/KDialog
 include/KDE/KDialogButtonBox
@@ -2250,8 +2251,6 @@ share/apps/kconf_update/kioslave.upd
 share/apps/kconf_update/ksslcertificatemanager.upd
 share/apps/kconf_update/ksslcertificatemanager.upd.sh
 share/apps/kconf_update/move_kio_help_cache.sh
-share/apps/kconf_update/plasma_popupapplet_fix_groups.pl
-share/apps/kconf_update/plasma_popupapplet_fix_groups.upd
 share/apps/kconf_update/proxytype.pl
 share/apps/kconf_update/useragent.pl
 share/apps/kdeui/
@@ -2997,6 +2996,7 @@ share/apps/ksgmltools2/customization/ru/entities/underArtisticLicense.docbook
 share/apps/ksgmltools2/customization/ru/entities/underBSDLicense.docbook
 share/apps/ksgmltools2/customization/ru/entities/underFDL.docbook
 share/apps/ksgmltools2/customization/ru/entities/underGPL.docbook
+share/apps/ksgmltools2/customization/ru/entities/underLGPL.docbook
 share/apps/ksgmltools2/customization/ru/entities/underX11License.docbook
 share/apps/ksgmltools2/customization/ru/entities/update-doc.docbook
 share/apps/ksgmltools2/customization/ru/lang.entities
@@ -3461,7 +3461,6 @@ share/doc/HTML/en/sonnet/
 share/doc/HTML/en/sonnet/common
 share/doc/HTML/en/sonnet/index.cache.bz2
 share/doc/HTML/en/sonnet/index.docbook
-share/examples/dbus-1/
 @sample ${SYSCONFDIR}/dbus-1/
 share/examples/dbus-1/system.d/
 @sample ${SYSCONFDIR}/dbus-1/system.d/

@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-VERSION =		2.4.0
+VERSION =		2.5.0
 COMMENT-main =		K Desktop Environment, photo management utility
 COMMENT-kipi =		collection of image plugins for KDE
 COMMENT-geomap =	KIPI interface library for Marble
