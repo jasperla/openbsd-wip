@@ -1,0 +1,16 @@
+$OpenBSD$
+ 
+initialize this variable earlier to avoid gcc warning (the code
+is built with -Werror so otherwise the build fails).
+ 
+--- gtk/rtp_player.c.orig	Tue Nov  8 21:11:43 2011
++++ gtk/rtp_player.c	Wed Jan 11 23:23:27 2012
+@@ -606,7 +606,7 @@ decode_rtp_stream(rtp_stream_info_t *rsi, gpointer ptr
+ 	gint32 silence_frames;
+ 	int seq;
+ 	double delay;
+-	double prev_diff;
++	double prev_diff = 0;
+ #ifdef DEBUG /* ?? */
+ 	double mean_delay;
+ 	double variation;
