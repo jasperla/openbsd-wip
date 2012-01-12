@@ -6,11 +6,8 @@ HOMEPAGE =	http://pim.kde.org/
 
 SHARED_LIBS =	akonadi_next 0.0
 SHARED_LIBS +=	akregatorinterfaces 0.0
-SHARED_LIBS +=	gwsoap 0.0
-SHARED_LIBS +=	kabcgroupwise 0.0
 SHARED_LIBS +=	kaddressbookprivate 0.0
 SHARED_LIBS +=	kcal_resourceblog 0.0
-SHARED_LIBS +=	kcalgroupwise 0.0
 SHARED_LIBS +=	kleo 0.0
 SHARED_LIBS +=	kontactprivate 0.0
 SHARED_LIBS +=	korganizer_core 0.0
