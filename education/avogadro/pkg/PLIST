@@ -61,8 +61,6 @@ lib/avogadro/1_0/extensions/
 lib/avogadro/1_0/tools/
 lib/avogadro/AvogadroConfig.cmake
 lib/avogadro/AvogadroConfigVersion.cmake
-lib/python2.7/
-lib/python2.7/site-packages/
 share/avogadro/
 share/avogadro/builder/
 share/avogadro/builder/amino/
