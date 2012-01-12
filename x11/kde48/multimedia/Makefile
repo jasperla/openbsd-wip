@@ -13,6 +13,7 @@ LIB_DEPENDS =	audio/cdparanoia \
 		audio/libmusicbrainz \
 		audio/libvorbis \
 		audio/taglib \
+		audio/pulseaudio \
 		graphics/ffmpeg
 
 # Looks like Xine doesn't work
@@ -29,8 +30,8 @@ WANTLIB += musicbrainz3 ogg swscale tag vorbis vorbisenc vorbisfile
 # See above
 # WANTLIB += xine
 
-# PulseAudio is not ready yet
-CONFIGURE_ARGS =	-DPULSEAUDIO_FOUND:Bool=FALSE
+# PulseAudio is ready, testing remains
+CONFIGURE_ARGS =	-DPULSEAUDIO_FOUND:Bool=TRUE
 
 # Doesn't worth to port, RDF WebService in MusicBrainz is deprecated
 CONFIGURE_ARGS +=	-DTUNEPIMP_FOUND:Bool=FALSE

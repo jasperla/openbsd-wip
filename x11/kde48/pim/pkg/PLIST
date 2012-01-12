@@ -4,8 +4,6 @@
 @bin bin/akregator
 @bin bin/akregatorstorageexporter
 @bin bin/blogilo
-@bin bin/groupwarewizard
-@bin bin/groupwisewizard
 bin/ical2vcal
 @bin bin/kabc2mutt
 @bin bin/kabcclient
@@ -164,10 +162,8 @@ lib/kde4/imports/org/kde/pim/mobileui/images/status/receiving.png
 lib/kde4/imports/org/kde/pim/mobileui/images/status/sending-receiving.png
 lib/kde4/imports/org/kde/pim/mobileui/images/status/sending.png
 lib/kde4/imports/org/kde/pim/mobileui/qmldir
-lib/kde4/kabc_groupwise.so
 lib/kde4/kaddressbookpart.so
 lib/kde4/kcal_blog.so
-lib/kde4/kcal_groupwise.so
 lib/kde4/kcal_remote.so
 lib/kde4/kcm_apptsummary.so
 lib/kde4/kcm_kjots.so
@@ -184,7 +180,6 @@ lib/kde4/kcm_ktimetracker.so
 lib/kde4/kcm_ldap.so
 lib/kde4/kcm_sdsummary.so
 lib/kde4/kcm_todosummary.so
-lib/kde4/kio_groupwise.so
 lib/kde4/kjotspart.so
 lib/kde4/kmailpart.so
 lib/kde4/knodepart.so
@@ -224,14 +219,11 @@ lib/kde4/plugins/designer/kdepimwidgets.so
 @lib lib/libakregatorprivate.so.${LIBakregatorprivate_VERSION}
 @lib lib/libcalendarsupport.so.${LIBcalendarsupport_VERSION}
 @lib lib/libeventviews.so.${LIBeventviews_VERSION}
-@lib lib/libgwsoap.so.${LIBgwsoap_VERSION}
 @lib lib/libincidenceeditorsng.so.${LIBincidenceeditorsng_VERSION}
 @lib lib/libincidenceeditorsngmobile.so.${LIBincidenceeditorsngmobile_VERSION}
-@lib lib/libkabcgroupwise.so.${LIBkabcgroupwise_VERSION}
 @lib lib/libkaddressbookprivate.so.${LIBkaddressbookprivate_VERSION}
 @lib lib/libkcal_resourceblog.so.${LIBkcal_resourceblog_VERSION}
 @lib lib/libkcal_resourceremote.so.${LIBkcal_resourceremote_VERSION}
-@lib lib/libkcalgroupwise.so.${LIBkcalgroupwise_VERSION}
 @lib lib/libkdepim.so.${LIBkdepim_VERSION}
 @lib lib/libkdepimdbusinterfaces.so.${LIBkdepimdbusinterfaces_VERSION}
 @lib lib/libkdepimmobileui.so.${LIBkdepimmobileui_VERSION}
@@ -269,7 +261,6 @@ share/applications/kde4/Kontact.desktop
 share/applications/kde4/akonadiconsole.desktop
 share/applications/kde4/akregator.desktop
 share/applications/kde4/blogilo.desktop
-share/applications/kde4/groupwarewizard.desktop
 share/applications/kde4/kaddressbook-mobile.desktop
 share/applications/kde4/kaddressbook.desktop
 share/applications/kde4/kalarm.desktop
@@ -725,7 +716,6 @@ share/autostart/korgac.desktop
 share/config.kcfg/akregator.kcfg
 share/config.kcfg/blogilo.kcfg
 share/config.kcfg/customtemplates_kfg.kcfg
-share/config.kcfg/groupwise.kcfg
 share/config.kcfg/kalarmconfig.kcfg
 share/config.kcfg/kjots.kcfg
 share/config.kcfg/kmail.kcfg
@@ -1145,8 +1135,6 @@ share/kde4/services/akregator_mk4storage_plugin.desktop
 share/kde4/services/akregator_part.desktop
 share/kde4/services/akregator_sharemicroblog_plugin.desktop
 share/kde4/services/feed.protocol
-share/kde4/services/groupwise.protocol
-share/kde4/services/groupwises.protocol
 share/kde4/services/kaddressbookpart.desktop
 share/kde4/services/kcm_kpimidentities.desktop
 share/kde4/services/kcmapptsummary.desktop
@@ -1215,9 +1203,7 @@ share/kde4/services/korganizer_configplugins.desktop
 share/kde4/services/korganizer_configtime.desktop
 share/kde4/services/korganizer_configviews.desktop
 share/kde4/services/korganizer_part.desktop
-share/kde4/services/kresources/kabc/kabc_groupwise.desktop
 share/kde4/services/kresources/kcal/blog.desktop
-share/kde4/services/kresources/kcal/kcal_groupwise.desktop
 share/kde4/services/kresources/kcal/remote.desktop
 share/kde4/services/kresources/knotes/
 share/kde4/services/kresources/knotes/local.desktop
