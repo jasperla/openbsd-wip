@@ -2,7 +2,7 @@
 
 COMMENT=	Berkeley Internet Name Daemon
 
-V=		9.8.1
+V=		9.8.1-P1
 DISTNAME=	bind-$V
 PKGNAME=	bind-${V:S/-P/pl/}
 
