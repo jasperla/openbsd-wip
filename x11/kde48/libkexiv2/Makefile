@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	image plugins infrastructure for KDE
+COMMENT =	exiv2 wrapper for KDE
 DISTNAME =	libkexiv2-${MODKDE_VERSION}
 
 SHARED_LIBS =	kexiv2			0.0	# 10.0
@@ -12,6 +12,6 @@ WANTLIB += exiv2
 
 MODKDE4_USE =	libs
 
-LIB_DEPENDS = 	exiv2->=0.20:graphics/exiv2
+LIB_DEPENDS = 	exiv2->=0.22:graphics/exiv2
 
 .include <bsd.port.mk>
