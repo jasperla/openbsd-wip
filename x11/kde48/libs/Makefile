@@ -76,7 +76,7 @@ RUN_DEPENDS =	misc/shared-mime-info \
 
 LIB_DEPENDS =	archivers/bzip2 \
 		archivers/xz \
-		attica->=0.1.9:x11/kde48/attica \
+		attica->=0.2.9:x11/kde48/attica \
 		databases/strigi \
 		devel/bison \
 		devel/pcre \
@@ -84,7 +84,7 @@ LIB_DEPENDS =	archivers/bzip2 \
 		graphics/libungif \
 		graphics/openexr \
 		security/qca2 \
-		soprano->=2.5.60:databases/soprano \
+		soprano->=2.7.3:databases/soprano \
 		sysutils/gamin \
 		textproc/aspell/core \
 		textproc/enchant \
