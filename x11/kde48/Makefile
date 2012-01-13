@@ -20,7 +20,7 @@
 # releases of KDE SC).
 
 # sequence for building is libs, runtime, pimlibs, pim, pim-runtime,
-	workspace, baseapps and then the rest of KDE
+#	workspace, baseapps and then the rest of KDE
 
 # basic bricks
      SUBDIR += akonadi			
