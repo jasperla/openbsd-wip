@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	K Desktop Environment
+COMMENT =	KDE, mouse clicker for accessibility users
 DISTNAME =	kmousetool-${MODKDE_VERSION}
 
 WANTLIB =  c m pthread stdc++
