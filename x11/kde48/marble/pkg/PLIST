@@ -11,6 +11,7 @@ include/marble/AbstractFloatItem.h
 include/marble/AbstractMarbleGraphicsLayout.h
 include/marble/AbstractProjection.h
 include/marble/AbstractWorkerThread.h
+include/marble/AlternativeRoutesModel.h
 include/marble/BookmarkManager.h
 include/marble/ClipPainter.h
 include/marble/CurrentLocationWidget.h
@@ -57,6 +58,7 @@ include/marble/LatLonBoxWidget.h
 include/marble/LatLonEdit.h
 include/marble/LayerInterface.h
 include/marble/LegendWidget.h
+include/marble/Maneuver.h
 include/marble/MapThemeManager.h
 include/marble/MapViewWidget.h
 include/marble/MapWizard.h
@@ -82,7 +84,12 @@ include/marble/QtMarbleConfigDialog.h
 include/marble/Quaternion.h
 include/marble/RenderPlugin.h
 include/marble/RenderPluginInterface.h
+include/marble/Route.h
+include/marble/RouteRequest.h
+include/marble/RouteSegment.h
 include/marble/RoutingManager.h
+include/marble/RoutingModel.h
+include/marble/RoutingProfile.h
 include/marble/RoutingWidget.h
 include/marble/RunnerPlugin.h
 include/marble/ScreenGraphicsItem.h
@@ -112,6 +119,7 @@ lib/kde4/imports/org/kde/edu/marble/qtcomponents/FileDialog.qml
 lib/kde4/imports/org/kde/edu/marble/qtcomponents/FileOpenDialog.qml
 lib/kde4/imports/org/kde/edu/marble/qtcomponents/FileSaveDialog.qml
 lib/kde4/imports/org/kde/edu/marble/qtcomponents/MenuItemSwitch.qml
+lib/kde4/imports/org/kde/edu/marble/qtcomponents/RouteEditor.qml
 lib/kde4/imports/org/kde/edu/marble/qtcomponents/RoutingDialog.qml
 lib/kde4/imports/org/kde/edu/marble/qtcomponents/SearchField.qml
 lib/kde4/imports/org/kde/edu/marble/qtcomponents/SearchResultSelectionDialog.qml
@@ -204,6 +212,7 @@ share/apps/marble/data/bitmaps/cursor_tl.xpm
 share/apps/marble/data/bitmaps/cursor_tr.xpm
 share/apps/marble/data/bitmaps/default_location.png
 share/apps/marble/data/bitmaps/earth_apollo.jpg
+share/apps/marble/data/bitmaps/flag.png
 share/apps/marble/data/bitmaps/folder.png
 share/apps/marble/data/bitmaps/hand.png
 share/apps/marble/data/bitmaps/lake.png
