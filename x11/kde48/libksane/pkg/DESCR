@@ -1,4 +1,4 @@
-A library for dealing with scannersLibKSane is a KDE interface for
+A library for dealing with scanners. LibKSane is a KDE interface for
 SANE library to control flat scanners.
 
 This library provides a widget to control a scanner, KSaneWidget.

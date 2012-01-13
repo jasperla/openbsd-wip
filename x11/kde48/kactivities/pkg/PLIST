@@ -12,6 +12,9 @@ include/kactivities/info.h
 include/kactivities/resourceinstance.h
 lib/cmake/KActivities/
 lib/cmake/KActivities/KActivitiesConfig.cmake
+lib/cmake/KActivities/KActivitiesConfigVersion.cmake
+lib/cmake/KActivities/KActivitiesLibraryTargets${MODKDE4_CMAKE_PREFIX}.cmake
+lib/cmake/KActivities/KActivitiesLibraryTargets.cmake
 lib/kde4/activitymanager_plugin_dummy.so
 lib/kde4/activitymanager_plugin_nepomuk.so
 lib/kde4/activitymanager_plugin_slc.so
