@@ -143,6 +143,7 @@ share/apps/katepart/syntax/ahdl.xml
 share/apps/katepart/syntax/alert.xml
 share/apps/katepart/syntax/alert_indent.xml
 share/apps/katepart/syntax/ample.xml
+share/apps/katepart/syntax/ansforth94.xml
 share/apps/katepart/syntax/ansic89.xml
 share/apps/katepart/syntax/ansys.xml
 share/apps/katepart/syntax/apache.xml
@@ -164,6 +165,7 @@ share/apps/katepart/syntax/cgis.xml
 share/apps/katepart/syntax/changelog.xml
 share/apps/katepart/syntax/cisco.xml
 share/apps/katepart/syntax/clipper.xml
+share/apps/katepart/syntax/clojure.xml
 share/apps/katepart/syntax/cmake.xml
 share/apps/katepart/syntax/coffee.xml
 share/apps/katepart/syntax/coldfusion.xml
@@ -389,6 +391,9 @@ share/doc/HTML/en/kate/menus.docbook
 share/doc/HTML/en/kate/part.docbook
 share/doc/HTML/en/kate/plugins.docbook
 share/doc/HTML/en/kate/regular-expressions.docbook
+share/doc/HTML/en/kate/snippets-config.png
+share/doc/HTML/en/kate/snippets-form.png
+share/doc/HTML/en/kate/snippets-usage.png
 share/doc/HTML/en/kate/unhighlighted.png
 share/doc/HTML/en/kate/vi.docbook
 share/doc/HTML/en/kwrite/
