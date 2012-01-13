@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	K Desktop Environment
+COMMENT =	KDE, printer status
 DISTNAME =	printer-applet-${MODKDE_VERSION}
 
 BUILD_DEPENDS +=	x11/kde48/py-kde \
