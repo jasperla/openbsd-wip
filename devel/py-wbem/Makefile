@@ -5,7 +5,7 @@ COMMENT=		CIM operations over HTTP in Python
 MODPY_EGG_VERSION=	0.7.0
 DISTNAME=		pywbem-${MODPY_EGG_VERSION}
 PKGNAME=		py-wbem-${MODPY_EGG_VERSION}
-CATEGORIES=		devel
+CATEGORIES=		sysutils
 
 HOMEPAGE=		http://sourceforge.net/apps/mediawiki/pywbem/
 
