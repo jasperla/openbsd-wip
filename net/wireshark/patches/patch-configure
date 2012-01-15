@@ -3,6 +3,8 @@ $OpenBSD$
 pkg-config --at-least_version 3.0.0 gtk+-3.0 gthread-2.0
 fails as gthread < 3.0.0 not compatible with pkg-config.
 
+https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=6737
+
 --- configure.orig	Tue Jan 10 19:09:53 2012
 +++ configure	Thu Jan 12 15:25:19 2012
 @@ -18925,14 +18925,6 @@ fi

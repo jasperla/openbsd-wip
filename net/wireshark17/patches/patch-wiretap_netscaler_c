@@ -2,9 +2,9 @@ $OpenBSD$
 
 Remove warning by defining a suitable size.
 
---- wiretap/netscaler.c.orig	Tue Nov  8 21:12:57 2011
-+++ wiretap/netscaler.c	Thu Jan 12 00:28:54 2012
-@@ -159,11 +159,14 @@ typedef	struct nspr_signature_v10
+--- wiretap/netscaler.c.orig	Thu Jan 12 15:11:53 2012
++++ wiretap/netscaler.c	Sat Jan 14 16:40:06 2012
+@@ -159,13 +159,16 @@ typedef	struct nspr_signature_v10
  #define	nspr_signature_v10_s	sizeof(nspr_signature_v10_t)
  
  /* NSPR_SIGNATURE_V20 structure */
@@ -18,5 +18,8 @@ Remove warning by defining a suitable size.
 -	gchar	sig_Signature[1]; /* Signature value */
 +	gchar	sig_Signature[NSPR_SIGSIZE_V20]; /* Signature value */
  } nspr_signature_v20_t;
- #define	nspr_signature_v20_s	(sizeof(nspr_signature_v20_t) -1)
+-#define	nspr_signature_v20_s	(sizeof(nspr_signature_v20_t) -1)
++#define	nspr_signature_v20_s	(sizeof(nspr_signature_v20_t) -NSPR_SIGSIZE_V20)
  
+ /* NSPR_ABSTIME_V10 and NSPR_SYSTARTIME_V10 structure */
+ typedef	struct nspr_abstime_v10

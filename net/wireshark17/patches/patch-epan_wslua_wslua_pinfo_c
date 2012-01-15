@@ -2,6 +2,8 @@ $OpenBSD$
 
 nstime->secs is int maybe should be defined as long?
 
+https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=6738
+
 --- epan/wslua/wslua_pinfo.c.orig	Thu Jan 12 15:10:42 2012
 +++ epan/wslua/wslua_pinfo.c	Thu Jan 12 17:43:47 2012
 @@ -95,7 +95,7 @@ WSLUA_METAMETHOD NSTime__tostring(lua_State* L) {
