@@ -31,7 +31,7 @@ SHARED_LIBS +=  osgWidget                 0.0 # 3.0
 
 CATEGORIES =		graphics
 
-HOMEPAGE =		http://www.openscenegraph.org/
+HOMEPAGE =		http://www.openscenegraph.org
 
 MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
