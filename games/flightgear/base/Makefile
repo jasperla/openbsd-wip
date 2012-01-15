@@ -2,7 +2,6 @@
 
 COMMENT =		flight simulator
 
-V =			2.4.0
 DISTNAME =		flightgear-${V}
 
 WANTLIB  = GL GLU ICE OpenThreads SM X11 Xext Xi Xmu Xt alut c

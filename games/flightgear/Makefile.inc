@@ -15,5 +15,3 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 EXTRACT_SUFX =		.tar.bz2
-
-.include <bsd.port.mk>
