@@ -74,7 +74,7 @@ BUILD_DEPENDS =	devel/boost \
 		textproc/docbook-xsl \
 		textproc/libxslt \
 		x11/grantlee \
-		x11/kde48/akonadi \
+		x11/kde4/akonadi \
 
 LIB_DEPENDS =	x11/grantlee
 RUN_DEPENDS +=	x11/gtk+2,-guic

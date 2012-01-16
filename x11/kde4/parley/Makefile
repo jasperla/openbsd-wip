@@ -14,7 +14,7 @@ WANTLIB += xml2 xslt
 
 LIB_DEPENDS = 	textproc/libxml \
 		textproc/libxslt \
-		x11/kde48/attica \
-		x11/kde48/libkdeedu
+		x11/kde4/attica \
+		x11/kde4/libkdeedu
 
 .include <bsd.port.mk>

@@ -36,7 +36,7 @@ LIB_DEPENDS =	audio/pulseaudio \
 		net/samba \
 		productivity/qzeitgeist \
 		security/libssh \
-		x11/kde48/attica
+		x11/kde4/attica
 
 # PulseAudio is fully workable according to robert@, test it out.
 # QNtrack depends on libnl, Linux-specific library.

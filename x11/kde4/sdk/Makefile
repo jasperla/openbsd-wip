@@ -43,7 +43,7 @@ LIB_DEPENDS =	databases/strigi \
 		textproc/libxslt \
 		textproc/libxml \
 		textproc/hunspell \
-		x11/kde48/baseapps
+		x11/kde4/baseapps
 
 # We have only pre-compiled Antlr3, and poxml wants
 # C runtime from Antlr2, which is not easy to port

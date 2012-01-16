@@ -27,7 +27,7 @@ WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtScript lib/qt4/QtWebKit lib/qt4/QtXml c m phonon pthread
 WANTLIB += ruby19 stdc++
 
-BUILD_DEPENDS =		x11/kde48/automoc \
+BUILD_DEPENDS =		x11/kde4/automoc \
 			lang/ruby/1.9
 
 LIB_DEPENDS =		x11/qt4

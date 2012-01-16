@@ -70,13 +70,13 @@ BUILD_DEPENDS =	misc/shared-desktop-ontologies \
 RUN_DEPENDS =	misc/shared-mime-info \
 		misc/shared-desktop-ontologies \
 		sysutils/gamin \
-		STEM->=${MODKDE4_VERSION}:x11/kde48/oxygen-icons \
+		STEM->=${MODKDE4_VERSION}:x11/kde4/oxygen-icons \
 		x11/dbus \
 		x11/gtk+2,-guic
 
 LIB_DEPENDS =	archivers/bzip2 \
 		archivers/xz \
-		attica->=0.2.9:x11/kde48/attica \
+		attica->=0.2.9:x11/kde4/attica \
 		databases/strigi \
 		devel/bison \
 		devel/pcre \

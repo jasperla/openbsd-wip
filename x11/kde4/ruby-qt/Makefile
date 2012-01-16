@@ -2,7 +2,7 @@
 
 SHARED_ONLY =	Yes
 
-CATEGORIES =	devel lang/ruby x11/kde48
+CATEGORIES =	devel lang/ruby x11/kde4
 COMMENT =	Qt 4 bindings for Ruby
 DISTNAME =	qtruby-${MODKDE_VERSION}
 PKGNAME =	ruby-qt-${MODKDE_VERSION}
@@ -23,7 +23,7 @@ MODULES =		devel/cmake lang/ruby x11/qt4
 
 MODKDE4_USE =
 
-LIB_DEPENDS =		x11/kde48/smokeqt
+LIB_DEPENDS =		x11/kde4/smokeqt
 
 PATCHORIG =		.ports.orig
 

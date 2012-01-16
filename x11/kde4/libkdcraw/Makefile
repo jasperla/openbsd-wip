@@ -13,7 +13,7 @@ WANTLIB += jpeg lcms
 
 MODKDE4_USE =	libs
 
-LIB_DEPENDS = 	x11/kde48/libkipi \
+LIB_DEPENDS = 	x11/kde4/libkipi \
 		graphics/lcms \
 		graphics/jpeg
 

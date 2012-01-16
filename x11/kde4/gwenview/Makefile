@@ -13,7 +13,7 @@ WANTLIB += kdeui kfile kio kipi konq kparts nepomuk
 WANTLIB += nepomukutils phonon soprano
 WANTLIB += exiv2 jpeg
 
-LIB_DEPENDS = 	x11/kde48/baseapps \
-		x11/kde48/libkipi
+LIB_DEPENDS = 	x11/kde4/baseapps \
+		x11/kde4/libkipi
 
 .include <bsd.port.mk>

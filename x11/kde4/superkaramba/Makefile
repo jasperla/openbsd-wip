@@ -10,6 +10,6 @@ WANTLIB += lib/qt4/Qt3Support lib/qt4/QtSvg lib/qt4/QtXml SM X11 Xext Xrender
 WANTLIB += c kde3support kdeui kio knewstuff2 kpty krosscore m plasma pthread
 WANTLIB += qimageblitz stdc++ util ${MODPY_WANTLIB}
 
-LIB_DEPENDS +=	x11/kde48/qimageblitz
+LIB_DEPENDS +=	x11/kde4/qimageblitz
 
 .include <bsd.port.mk>

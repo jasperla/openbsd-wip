@@ -29,7 +29,7 @@ BUILD_DEPENDS =	devel/boost
 LIB_DEPENDS =	databases/soprano \
 		databases/strigi \
 		multimedia/phonon \
-		x11/kde48/akonadi
+		x11/kde4/akonadi
 
 RUN_DEPENDS +=	x11/gtk+2,-guic
 

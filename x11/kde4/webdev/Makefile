@@ -19,7 +19,7 @@ MODULES =	lang/ruby
 
 MODKDE4_USE =	pim
 
-RUN_DEPENDS =	x11/kde48/korundum
+RUN_DEPENDS =	x11/kde4/korundum
 
 LIB_DEPENDS =	${MODRUBY_LIB_DEPENDS}
 

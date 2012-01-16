@@ -20,8 +20,8 @@ MODULES =	lang/mono
 MODKDE4_USE =
 
 LIB_DEPENDS =	editors/qscintilla \
-		x11/kde48/qimageblitz \
-		x11/kde48/smokeqt
+		x11/kde4/qimageblitz \
+		x11/kde4/smokeqt
 
 NO_REGRESS =	Yes
 

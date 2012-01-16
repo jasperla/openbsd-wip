@@ -114,9 +114,9 @@ LIB_DEPENDS =	databases/freetds \
 		textproc/libwpd \
 		textproc/libxml \
 		textproc/libxslt \
-		x11/kde48/libkdcraw \
-		x11/kde48/marble \
-		x11/kde48/okular
+		x11/kde4/libkdcraw \
+		x11/kde4/marble \
+		x11/kde4/okular
 
 # Stuff we don't have ATM. Do not bother about CreateResources, it's
 # pure optional run-time dependency.

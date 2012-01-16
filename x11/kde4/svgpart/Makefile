@@ -9,6 +9,6 @@ WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += kdeui kio kparts nepomuk nepomukutils
 WANTLIB += soprano
 
-RUN_DEPENDS =	x11/kde48/baseapps
+RUN_DEPENDS =	x11/kde4/baseapps
 
 .include <bsd.port.mk>

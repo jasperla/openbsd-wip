@@ -9,6 +9,6 @@ WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtScript
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml lib/qt4/QtXmlPatterns X11 Xtst
 WANTLIB += c kdeui kio m plasma pthread stdc++
 
-BUILD_DEPENDS +=	x11/kde48/workspace
+BUILD_DEPENDS +=	x11/kde4/workspace
 
 .include <bsd.port.mk>

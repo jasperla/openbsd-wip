@@ -56,6 +56,6 @@ LIB_DEPENDS +=	databases/openldap \
 		security/cyrus-sasl2 \
 		security/gpgme>=0.4.5 \
 		textproc/libical \
-		x11/kde48/akonadi
+		x11/kde4/akonadi
 
 .include <bsd.port.mk>
