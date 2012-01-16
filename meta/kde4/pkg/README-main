@@ -1,0 +1,34 @@
+$OpenBSD$
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+The KDE4 desktop is composed of 2 meta-packages:
+    * kde, for a base KDE4 installation
+    * kde-extras, for a full KDE4 installation
+They are focused on standard usage (i.e. development, and office type
+packages are left out on purpose).
+
+Starting KDE4 [REVIEW]
+==============
+Before running startkde(1), a system-wide D-Bus daemon needs to be
+running ("dbus_daemon" needs to be added to the "pkg_scripts" variable
+in rc.conf.local(8)).
+
+Then the following line needs to be added:
+    exec ${LOCALBASE}/bin/ck-launch-session ${TRUEPREFIX}/bin/startkde
+in ~/.xinitrc when using startx(1) (console login)
+in ~/.xsession when using xdm(1) (X Display Manager login)
+
+mDNS/DNS-SD support [REWRITE]
+===================
+The avahi-daemon(8) daemon provides Zeroconf support (aka. Bonjour /
+Rendezvous) in GNOME. Several applications can optionally benefit from
+it (e.g. the "Network" shortcut in nautilus(1)) while some others
+will not work at all without it (e.g. seahorse-sharing(1)).
+
+To make use of it, rc.conf.local(5) needs to contain the following line:
+    multicast_host=YES
+and "avahi_daemon" needs to be added to the "pkg_scripts" variable
+_after_ "dbus_daemon".
