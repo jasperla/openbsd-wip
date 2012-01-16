@@ -1,0 +1,11 @@
+$OpenBSD$
+--- CMakeLists.txt.orig	Mon Jan 16 20:44:24 2012
++++ CMakeLists.txt	Mon Jan 16 20:44:38 2012
+@@ -1,6 +1,7 @@
+ project(soprano)
+ 
+ cmake_minimum_required(VERSION 2.6.4)
++cmake_policy(SET CMP0017 NEW)                                                                                                                                                                                 
+ 
+ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules)
+ 
