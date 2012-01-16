@@ -1,0 +1,34 @@
+@comment $OpenBSD$
+include/analitza/
+include/analitza/abstractlexer.h
+include/analitza/analitzaexport.h
+include/analitza/analitzautils.h
+include/analitza/analyzer.h
+include/analitza/builtinmethods.h
+include/analitza/expression.h
+include/analitza/expressiontype.h
+include/analitza/importqobjectmetatype.h
+include/analitza/object.h
+include/analitza/operations.h
+include/analitza/operator.h
+include/analitza/value.h
+include/analitza/variable.h
+include/analitza/variables.h
+include/analitzagui/
+include/analitzagui/algebrahighlighter.h
+include/analitzagui/analitzaguiexport.h
+include/analitzagui/expressionedit.h
+include/analitzagui/function.h
+include/analitzagui/functionfactory.h
+include/analitzagui/functionsmodel.h
+include/analitzagui/functionspainter.h
+include/analitzagui/functionsview.h
+include/analitzagui/graph2d.h
+include/analitzagui/operatorsmodel.h
+include/analitzagui/variablesmodel.h
+lib/cmake/analitza/
+lib/cmake/analitza/AnalitzaConfig.cmake
+lib/cmake/analitza/AnalitzaTargets${MODKDE4_CMAKE_PREFIX}.cmake
+lib/cmake/analitza/AnalitzaTargets.cmake
+@lib lib/libanalitza.so.${LIBanalitza_VERSION}
+@lib lib/libanalitzagui.so.${LIBanalitzagui_VERSION}

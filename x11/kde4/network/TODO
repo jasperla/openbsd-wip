@@ -1,0 +1,35 @@
+   * libktorrent  <http://ktorrent.org>
+     Backend Library of KTorrent
+     Needed to build KGet bittorrent support.
+
+   * libkonq  <http://www.kde.org>
+     KDE4 Konqueror library
+     Needed to build actions and open with options in the context menu of a transfer
+
+   * libortp (0.13 or higher)  <http://www.linphone.org/index.php/eng/code_review/ortp>
+     oRTP provides an API to send rtp packets
+     Needed to build Jingle support, Google Talk libjingle audio call support and voice clips in WLM.
+
+   * Alsa  <>
+     Alsa is Advanced Linux Sound Architecture
+     Needed for Jingle Support in Kopete Jabber Plugin
+
+   * libmsn (0.4.0 or higher)  <http://sourceforge.net/projects/libmsn>
+     A library providing support for the msn protocol
+     Required for the Kopete wlm plugin
+
+   * mediastreamer (2.3.0 or higher)  <http://www.linphone.org/index.php/eng/code_review/mediastreamer2>
+     A streaming engine specialized for voice/video telephony applications
+     Required to enable voice clips support in WLM plugin and needed to build Google Talk libjingle audio call support in Kopete.
+
+   * libv4l  <http://hansdegoede.livejournal.com, http://linuxtv.org/hg/~hgoede/libv4l/>
+     Collection of video4linux support libraries
+     Required for better webcam support
+
+   * msiLBC  <http://download.savannah.gnu.org/releases/linphone/plugins/sources/>
+     iLBC is low bitrate audio codec - plugin for mediastreamer
+     Needed to build Google Talk libjingle voice call support with iLBC codec
+
+   * libvncserver (0.9 or higher)  <http://libvncserver.sourceforge.net/>
+     VNC Server library
+     Needed to build Krfb and VNC support in Krdc

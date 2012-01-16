@@ -1,0 +1,16 @@
+$OpenBSD$
+
+fixed as https://bugs.kde.org/show_bug.cgi?id=288085
+
+--- kexi/kexiutils/KexiContextMessage.cpp.orig	Fri Dec  2 16:17:08 2011
++++ kexi/kexiutils/KexiContextMessage.cpp	Fri Dec  2 16:18:48 2011
+@@ -150,7 +150,8 @@ KexiContextMessageWidget::KexiContextMessageWidget(
+  : KMessageWidget()
+  , d(new Private)
+ {
+-    init(0, layout, context, KexiContextMessage(message));
++    KexiContextMessage contextMessage(message);
++    init(0, layout, context, contextMessage);
+ }
+ 
+ void KexiContextMessageWidget::init(
