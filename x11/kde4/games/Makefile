@@ -30,7 +30,7 @@ LIB_DEPENDS =	multimedia/phonon \
 		games/ggz/ggz-client-libs \
 		math/qhull \
 		security/qca2 \
-		x11/kde48/py-kde
+		x11/kde4/py-kde
 
 # for Kajongg to avoid build-time dependency and for GGZ
 CONFIGURE_ARGS =	-DINSTALL_KAJONGG:Bool=True \

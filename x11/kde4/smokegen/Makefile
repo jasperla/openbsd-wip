@@ -2,7 +2,7 @@
 
 SHARED_ONLY =	Yes
 
-CATEGORIES =	devel x11/kde48
+CATEGORIES =	devel x11/kde4
 COMMENT =	generator for wrappers around the Qt and KDE
 DISTNAME =	smokegen-${MODKDE_VERSION}
 

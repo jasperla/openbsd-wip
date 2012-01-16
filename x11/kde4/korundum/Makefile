@@ -21,11 +21,11 @@ WANTLIB += smokeqtxml smokesolid smokesoprano solid soprano
 
 MODKDE4_USE =	libs pim
 
-RUN_DEPENDS =	x11/kde48/kross-interpreters
+RUN_DEPENDS =	x11/kde4/kross-interpreters
 
-LIB_DEPENDS = 	x11/kde48/kate \
-		x11/kde48/ruby-qt \
-		x11/kde48/smokekde
+LIB_DEPENDS = 	x11/kde4/kate \
+		x11/kde4/ruby-qt \
+		x11/kde4/smokekde
 
 # Disable until KDE Smoke bug 283677 gets fixed,
 # https://bugs.kde.org/show_bug.cgi?id=283677

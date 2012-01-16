@@ -32,10 +32,10 @@ LIB_DEPENDS =	eigen2->=2.0.3:math/eigen2 \
 		inputmethods/scim \
 		math/qalculate/libqalculate \
 		security/qca2 \
-		x11/kde48/attica \
-		x11/kde48/libkexiv2 \
-		x11/kde48/marble \
-		x11/kde48/qimageblitz \
+		x11/kde4/attica \
+		x11/kde4/libkexiv2 \
+		x11/kde4/marble \
+		x11/kde4/qimageblitz \
 		x11/qwt
 
 .include <bsd.port.mk>

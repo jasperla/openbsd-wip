@@ -15,7 +15,7 @@ WANTLIB += smokeqwt
 
 MODKDE4_USE =
 
-LIB_DEPENDS = 	x11/kde48/smokeqt
+LIB_DEPENDS = 	x11/kde4/smokeqt
 
 # Avoid clashing Perl do_open and do_close with GCC's locale_facets.h
 post-patch:

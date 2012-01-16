@@ -23,6 +23,6 @@ MODKDE4_USE =	workspace
 LIBVER =	${V:C/^4/1/}
 LIB_DEPENDS =	audio/taglib \
 		databases/sqlite3 \
-		STEM->=${LIBVER}:x11/kde48/libktorrent
+		STEM->=${LIBVER}:x11/kde4/libktorrent
 
 .include <bsd.port.mk>

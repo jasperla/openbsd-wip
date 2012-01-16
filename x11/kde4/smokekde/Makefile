@@ -41,12 +41,12 @@ WANTLIB += smokeqtxml solid soprano sopranoclient sopranoserver
 MODKDE4_USE =	libs pim
 
 LIB_DEPENDS =	databases/soprano \
-		x11/kde48/akonadi \
-		x11/kde48/attica \
-		x11/kde48/kate \
-		x11/kde48/okular \
-		x11/kde48/smokegen \
-		x11/kde48/smokeqt
+		x11/kde4/akonadi \
+		x11/kde4/attica \
+		x11/kde4/kate \
+		x11/kde4/okular \
+		x11/kde4/smokegen \
+		x11/kde4/smokeqt
 
 # smokegen segfaults, see upstream bug:
 # https://bugs.kde.org/show_bug.cgi?id=283677

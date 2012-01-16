@@ -10,11 +10,11 @@ WANTLIB += kdeui kio kldap kntlm
 
 MODKDE4_USE =	pim
 
-BUILD_DEPENDS =	x11/kde48/py-kde \
+BUILD_DEPENDS =	x11/kde4/py-kde \
 		print/py-cups \
 		print/system-config-printer
 
-RUN_DEPENDS =	x11/kde48/py-kde \
+RUN_DEPENDS =	x11/kde4/py-kde \
 		x11/gtk+2,-guic \
 		print/py-cups \
 		print/system-config-printer

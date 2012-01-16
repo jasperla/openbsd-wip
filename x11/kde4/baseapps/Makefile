@@ -21,7 +21,7 @@ WANTLIB += glib-2.0
 
 # KJS is broken, so allow KDE browsers to work out of the box
 # using QtWebKit.
-RUN_DEPENDS =	x11/kde48/kwebkitpart \
+RUN_DEPENDS =	x11/kde4/kwebkitpart \
 		x11/gtk+2,-guic
 
 LIB_DEPENDS =	multimedia/phonon

@@ -13,6 +13,6 @@ WANTLIB += lib/qt4/QtXml
 
 CONFIGURE_ARGS=	-DCMAKE_SHARED_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib"
 
-LIB_DEPENDS = 	x11/kde48/libkdeedu
+LIB_DEPENDS = 	x11/kde4/libkdeedu
 
 .include <bsd.port.mk>

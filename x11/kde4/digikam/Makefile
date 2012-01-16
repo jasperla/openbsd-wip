@@ -74,7 +74,7 @@ WANTLIB-vkontakte =  ${WANTLIB-common}
 #WANTLIB-vkontakte += qjson
 
 # Define dependencies manually per subpackage
-# TODO: fix kde48.port.mk to allow such grained tuning
+# TODO: fix kde4.port.mk to allow such grained tuning
 MODKDE4_USE =
 
 BUILD_DEPENDS =		devel/boost \
@@ -94,7 +94,7 @@ RUN_DEPENDS-kipi =	${MODGETTEXT_RUN_DEPENDS} \
 
 RUN_DEPENDS-geomap =	x11/gtk+2,-guic
 
-RUN_DEPENDS-vkontakte =	x11/kde48/runtime
+RUN_DEPENDS-vkontakte =	x11/kde4/runtime
 
 LIBS_DEPENDS-common =	${MODQT_LIB_DEPENDS}
 
@@ -110,12 +110,12 @@ LIB_DEPENDS-main =	${LIB_DEPENDS-common} \
 			graphics/opencv \
 			graphics/png \
 			graphics/tiff \
-			x11/kde48/libkdcraw \
-			x11/kde48/libkexiv2 \
-			x11/kde48/libkipi \
-			x11/kde48/libs \
-			x11/kde48/marble \
-			x11/kde48/pimlibs \
+			x11/kde4/libkdcraw \
+			x11/kde4/libkexiv2 \
+			x11/kde4/libkipi \
+			x11/kde4/libs \
+			x11/kde4/marble \
+			x11/kde4/pimlibs \
 
 LIB_DEPENDS-kipi =	${LIB_DEPENDS-common} \
 			${BUILD_PKGPATH},-geomap \
@@ -132,22 +132,22 @@ LIB_DEPENDS-kipi =	${LIB_DEPENDS-common} \
 			graphics/tiff \
 			multimedia/phonon \
 			security/qca2 \
-			x11/kde48/libkdcraw \
-			x11/kde48/libkexiv2 \
-			x11/kde48/libkipi \
-			x11/kde48/libksane \
-			x11/kde48/libs \
-			x11/kde48/pimlibs \
+			x11/kde4/libkdcraw \
+			x11/kde4/libkexiv2 \
+			x11/kde4/libkipi \
+			x11/kde4/libksane \
+			x11/kde4/libs \
+			x11/kde4/pimlibs \
 
 LIB_DEPENDS-geomap =	${LIB_DEPENDS-common} \
 			${BUILD_PKGPATH},-geomap \
-			x11/kde48/libkexiv2 \
-			x11/kde48/libs \
-			x11/kde48/marble
+			x11/kde4/libkexiv2 \
+			x11/kde4/libs \
+			x11/kde4/marble
 
 LIB_DEPENDS-vkontakte = ${LIB_DEPENDS-common} \
 			devel/qjson \
-			x11/kde48/libs
+			x11/kde4/libs
 
 CONFIGURE_ARGS =	-DENABLE_INTERNALMYSQL:Bool=No
 

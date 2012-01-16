@@ -20,6 +20,6 @@ MODKDE4_USE =	libs
 # Faster. Faster!
 RUN_DEPENDS =	devel/desktop-file-utils
 
-LIB_DEPENDS =	x11/kde48/baseapps
+LIB_DEPENDS =	x11/kde4/baseapps
 
 .include <bsd.port.mk>

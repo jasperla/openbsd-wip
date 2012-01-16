@@ -55,7 +55,7 @@ post-extract:
 	echo 'cmake_minimum_required(VERSION 2.8)' >${BOOTSTRAP_CMAKE_CONF}
 	echo 'cmake_policy(SET CMP0002 OLD)' >>${BOOTSTRAP_CMAKE_CONF}
 	echo 'cmake_policy(SET CMP0014 OLD)' >>${BOOTSTRAP_CMAKE_CONF}
-	echo 'project(kde48-l10n)' >>${BOOTSTRAP_CMAKE_CONF}
+	echo 'project(kde4-l10n)' >>${BOOTSTRAP_CMAKE_CONF}
 .for _L in ${LANGS}
 	echo 'message("====> building ${_L} language pack")' >>${BOOTSTRAP_CMAKE_CONF}
 	echo 'add_subdirectory(kde-l10n-${_L}-${MODKDE_VERSION})' >>${BOOTSTRAP_CMAKE_CONF}

@@ -8,7 +8,7 @@ SHARED_ONLY ?=		Yes
 ONLY_FOR_ARCHS ?=	${GCC4_ARCHS}
 EXTRACT_SUFX ?=		.tar.bz2
 
-CATEGORIES +=		x11/kde48
+CATEGORIES +=		x11/kde4
 MODULES +=		devel/cmake
 CONFIGURE_STYLE ?=	cmake
 SEPARATE_BUILD ?=	flavored
@@ -70,7 +70,7 @@ MODKDE4_WANTLIB =
 
 # Small hack, until automoc4 will be gone
 .if !${PKGNAME:Mautomoc4-*}
-MODKDE4_BUILD_DEPENDS +=	x11/kde48/automoc
+MODKDE4_BUILD_DEPENDS +=	x11/kde4/automoc
 .endif
 
 FLAVOR ?=
@@ -87,25 +87,25 @@ MODKDE4_USE +=		libs
 PKG_ARCH ?=		*
 MODKDE4_NO_QT ?=	Yes	# resources usually don't need Qt
 .   if ${MODKDE4_USE:L:Mlibs}
-MODKDE4_BUILD_DEPENDS +=	STEM->=${MODKDE4_VERSION}:x11/kde48/libs
+MODKDE4_BUILD_DEPENDS +=	STEM->=${MODKDE4_VERSION}:x11/kde4/libs
 .   endif
 .else
 MODKDE4_NO_QT ?=	No
 .   if ${MODKDE4_USE:L:Mlibs}
-MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde48/libs
+MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/libs
 MODKDE4_WANTLIB +=		kdecore>=8
 .       if ${MODKDE4_USE:L:Mpim}
-MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde48/pimlibs
+MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/pimlibs
 .       endif
 
 .       if ${MODKDE4_USE:L:Mruntime}
-MODKDE4_RUN_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde48/runtime
+MODKDE4_RUN_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/runtime
 .           if ${MODKDE4_USE:L:Mpim}
-MODKDE4_RUN_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde48/pim-runtime
+MODKDE4_RUN_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/pim-runtime
 .           endif
 
 .           if ${MODKDE4_USE:L:Mworkspace}
-MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde48/workspace
+MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/workspace
 .           endif
 .       endif
 .   endif    # ${MODKDE4_USE:L:Mlibs}

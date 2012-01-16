@@ -12,7 +12,7 @@ WANTLIB += kdeui khtml kio kjs kparts ncurses nepomuk
 WANTLIB += nepomukutils phonon plasma soprano
 WANTLIB += readline analitza analitzagui
 
-LIB_DEPENDS = 	x11/kde48/libkdeedu \
-		x11/kde48/analitza
+LIB_DEPENDS = 	x11/kde4/libkdeedu \
+		x11/kde4/analitza
 
 .include <bsd.port.mk>

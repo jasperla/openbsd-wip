@@ -47,8 +47,8 @@ MODKDE4_USE =
 #FLAVOR =		ruby19
 
 LIB_DEPENDS =	editors/qscintilla \
-		x11/kde48/qimageblitz \
-		x11/kde48/smokegen \
+		x11/kde4/qimageblitz \
+		x11/kde4/smokegen \
 		x11/qwt
 
 .include <bsd.port.mk>

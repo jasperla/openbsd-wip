@@ -25,11 +25,11 @@ MODKDE4_USE =	pim workspace
 BUILD_DEPENDS =	archivers/bzip2 \
 		archivers/xz \
 		x11/py-qt4 \
-		x11/kde48/py-kde
+		x11/kde4/py-kde
 
 LIB_DEPENDS = 	devel/gmp \
-		x11/kde48/qimageblitz \
-		x11/kde48/baseapps \
+		x11/kde4/qimageblitz \
+		x11/kde4/baseapps \
 		python->=2.7,<2.8:lang/python/2.7 \
 		archivers/libarchive \
 		print/system-config-printer \
@@ -38,7 +38,7 @@ LIB_DEPENDS = 	devel/gmp \
 RUN_DEPENDS =	archivers/bzip2 \
 		archivers/xz \
 		x11/py-qt4 \
-		x11/kde48/py-kde
+		x11/kde4/py-kde
 
 CONFIGURE_ARGS =	 -DINSTALL_PRINTER_APPLET=TRUE
 

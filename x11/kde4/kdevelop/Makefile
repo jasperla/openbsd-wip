@@ -33,7 +33,7 @@ USE_GMAKE =	Yes
 
 BUILD_DEPENDS =	misc/shared-mime-info
 
-LIB_DEPENDS = 	x11/kde48/kdevplatform \
-		x11/kde48/sdk \
+LIB_DEPENDS = 	x11/kde4/kdevplatform \
+		x11/kde4/sdk \
 
 .include <bsd.port.mk>

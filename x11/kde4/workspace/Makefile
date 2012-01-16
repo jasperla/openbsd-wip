@@ -73,10 +73,10 @@ LIB_DEPENDS =	audio/xmms \
 		multimedia/phonon \
 		sysutils/consolekit \
 		x11/dbusmenu-qt \
-		x11/kde48/akonadi \
-		x11/kde48/kactivities \
-		x11/kde48/py-kde \
-		x11/kde48/qimageblitz
+		x11/kde4/akonadi \
+		x11/kde4/kactivities \
+		x11/kde4/py-kde \
+		x11/kde4/qimageblitz
 
 CONFIGURE_ARGS =	-DWITH_Sensors:Bool=False \
 			-DWITH_NetworkManager:Bool=False \

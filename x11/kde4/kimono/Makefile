@@ -29,9 +29,9 @@ MODULES =		lang/mono
 
 MODKDE4_USE =
 
-LIB_DEPENDS =		x11/kde48/qimageblitz \
-			x11/kde48/qyoto \
-			x11/kde48/smokekde
+LIB_DEPENDS =		x11/kde4/qimageblitz \
+			x11/kde4/qyoto \
+			x11/kde4/smokekde
 
 # Disable until KDE Smoke bug 283677 gets fixed,
 # https://bugs.kde.org/show_bug.cgi?id=283677

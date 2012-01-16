@@ -45,9 +45,9 @@ LIB_DEPENDS =	audio/xmms \
 		net/meanwhile \
 		security/libotr \
 		security/qca2 \
-		x11/kde48/baseapps \
-		x11/kde48/libktorrent \
-		x11/kde48/qimageblitz
+		x11/kde4/baseapps \
+		x11/kde4/libktorrent \
+		x11/kde4/qimageblitz
 
 CONFIGURE_ARGS =	-DQCA2_INCLUDE_DIR:PATH=${LOCALBASE}/include/QtCrypto \
 			-DQCA2_DEFINITIONS:STRING=-DQT_SHARED \
