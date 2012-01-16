@@ -72,18 +72,18 @@
 
 # former kdeutils, changed in KDE 4.8 beta/rc, all untested
      SUBDIR += ark
-     SUBDIR += kdf
      SUBDIR += filelight
-     SUBDIR += kgpg
-     SUBDIR += kwallet
-     SUBDIR += sweeper
-     SUBDIR += printer-applet
-     SUBDIR += kremotecontrol
-     SUBDIR += kfloppy
      SUBDIR += kcalc
      SUBDIR += kcharselect
+     SUBDIR += kdf
+     SUBDIR += kfloppy
+     SUBDIR += kgpg
+     SUBDIR += kremotecontrol
      SUBDIR += ktimer
+     SUBDIR += kwallet
+     SUBDIR += printer-applet
      SUBDIR += superkaramba
+     SUBDIR += sweeper
 
 # former kdeedu
      SUBDIR += blinken			
