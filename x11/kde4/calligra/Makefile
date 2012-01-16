@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	KDE office suite
-VERSION =	2.3.85
+VERSION =	2.3.86
 DISTNAME =	calligra-${VERSION}
 PKGNAME =	${DISTNAME:C/-/4-/1}
 BROKEN =	compile issues, fixed soon
