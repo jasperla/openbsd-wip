@@ -1,0 +1,45 @@
+@comment $OpenBSD$
+@bin bin/kalgebra
+@bin bin/kalgebramobile
+lib/kde4/plasma_applet_kalgebra.so
+share/applications/kde4/kalgebra.desktop
+share/applications/kde4/kalgebramobile.desktop
+share/apps/kalgebra/
+share/apps/kalgebra/plugins/
+share/apps/kalgebra/plugins/Console.qml
+share/apps/kalgebra/plugins/Graph2D.qml
+share/apps/kalgebra/plugins/Plot2D.qml
+share/apps/kalgebra/plugins/Tables.qml
+share/apps/kalgebra/plugins/kalgebraconsole.desktop
+share/apps/kalgebra/plugins/kalgebraplot2d.desktop
+share/apps/kalgebra/plugins/kalgebratables.desktop
+share/apps/kalgebra/plugins/widgets/
+share/apps/kalgebra/plugins/widgets/Button.qml
+share/apps/kalgebra/plugins/widgets/CalcButton.qml
+share/apps/kalgebra/plugins/widgets/ExpressionInput.qml
+share/apps/kalgebra/plugins/widgets/KAlgebraMobile.qml
+share/apps/kalgebra/plugins/widgets/KAlgebraPage.qml
+share/apps/kalgebra/plugins/widgets/Keyboard.qml
+share/apps/kalgebra/plugins/widgets/Label.qml
+share/apps/kalgebra/plugins/widgets/RealInput.qml
+share/apps/kalgebra/plugins/widgets/SimpleListView.qml
+share/apps/kalgebra/plugins/widgets/ToolTip.qml
+share/apps/katepart/
+share/apps/katepart/syntax/
+share/apps/katepart/syntax/kalgebra.xml
+share/doc/HTML/en/kalgebra/
+share/doc/HTML/en/kalgebra/commands.docbook
+share/doc/HTML/en/kalgebra/common
+share/doc/HTML/en/kalgebra/index.cache.bz2
+share/doc/HTML/en/kalgebra/index.docbook
+share/doc/HTML/en/kalgebra/kalgebra-main-window.png
+share/icons/hicolor/128x128/apps/kalgebra.png
+share/icons/hicolor/16x16/apps/kalgebra.png
+share/icons/hicolor/32x32/apps/kalgebra.png
+share/icons/hicolor/48x48/apps/kalgebra.png
+share/icons/hicolor/64x64/apps/kalgebra.png
+share/icons/hicolor/scalable/apps/kalgebra.svgz
+share/kde4/services/kalgebraplasmoid.desktop
+share/kde4/servicetypes/kalgebrascript.desktop
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

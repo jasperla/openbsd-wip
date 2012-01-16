@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/marble_part.cpp.ports.orig	Sun Oct 23 18:28:50 2011
++++ src/marble_part.cpp	Sun Oct 23 18:30:33 2011
+@@ -1284,7 +1284,7 @@ void MarblePart::editSettings()
+ 
+     // It's experimental -- so we remove it for now.
+     // FIXME: Delete the following  line once OpenGL support is officially supported.
+-    ui_viewSettings.kcfg_graphicsSystem->removeItem( OpenGLGraphics );
++    // ui_viewSettings.kcfg_graphicsSystem->removeItem( OpenGLGraphics );
+ 
+     QString nativeString ( i18n("Native") );
+ 

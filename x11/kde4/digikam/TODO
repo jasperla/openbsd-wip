@@ -1,0 +1,15 @@
+Wants valgrind as optional (build-time?) dependency.
+
+Those are libraries that could be installed separately, but doesn't have ports:
+--  libpgf library found..................... NO  (optional - internal version used instead)
+--  libclapack library found................. NO  (optional - internal version used instead)
+
+By default, builts withoud Nepomuk support. May be enable with "-DENABLE_NEPOMUKSUPPORT=yes" in CONFIGURE_ARGS?
+
+MySQL server should be actually RUN_DEPENDS only, but it's a lot simplier to make CMake detect it, than to patch configuration files.
+
+Split libkface out?
+
+libkgeomap crashes when trying to use Google Maps. And Marble widget isn't usable (looks like, Marble bug).
+
+Crashed once when importing from directory with >7GB of different pictures.

@@ -1,0 +1,12 @@
+# $OpenBSD$
+
+COMMENT =	K Desktop Environment
+DISTNAME =	kgpg-${MODKDE_VERSION}
+
+WANTLIB =  c m pthread stdc++
+WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
+WANTLIB += lib/qt4/QtXml c kcmutils kdeui kemoticons kidletime kio
+WANTLIB += kprintutils kutils m pthread solid stdc++
+
+
+.include <bsd.port.mk>
