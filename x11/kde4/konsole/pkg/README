@@ -1,6 +1,0 @@
-Konsole on OpenBSD lacks support of getting current working directory
-due to limited system capabilities. Thus the following changes apply:
-
-  - "%D" and "%d" expangs to empty strings.
-
-  - Default local tab formatting changed from "%d : %n" to "%n (%u)".

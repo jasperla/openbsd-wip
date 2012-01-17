@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/ProcessInfo.cpp.orig	Thu Nov 17 14:57:16 2011
-+++ src/ProcessInfo.cpp	Sun Dec  4 14:29:17 2011
+--- src/ProcessInfo.cpp.orig	Fri Nov 18 00:57:16 2011
++++ src/ProcessInfo.cpp	Tue Jan 17 13:27:49 2012
 @@ -54,12 +54,14 @@
  #include <kde_file.h>
  #endif
@@ -145,7 +145,7 @@ $OpenBSD$
          managementInfoBase[1] = KERN_PROC;
          managementInfoBase[2] = KERN_PROC_PID;
          managementInfoBase[3] = pid;
-@@ -732,14 +782,58 @@ class FreeBSDProcessInfo : public UnixProcessInfo (pub
+@@ -732,30 +782,77 @@ class FreeBSDProcessInfo : public UnixProcessInfo (pub
          {
              addArgument(*it);
          }
@@ -204,58 +204,33 @@ $OpenBSD$
      }
  
      virtual bool readCurrentDir(int pid)
-@@ -761,7 +855,7 @@ class FreeBSDProcessInfo : public UnixProcessInfo (pub
-         setCurrentDir(buf);
+     {
+-#if defined(__DragonFly__)
++#if defined(__DragonFly__) || defined(Q_OS_OPENBSD)
+         char buf[PATH_MAX];
+-        int managementInfoBase[4];
++        int i, managementInfoBase[4];
+         size_t len;
  
-         return true;
--#else
-+#elif defined(Q_OS_FREEBSD)
-         int numrecords;
-         struct kinfo_file* info = 0;
- 
-@@ -783,7 +877,41 @@ class FreeBSDProcessInfo : public UnixProcessInfo (pub
- 
-         free(info);
-         return false;
-+#else
-+#if 0
-+        const int min_fds = 5;    // usually (always?): text, wd, stdin, stdout, stderr
-+        const int mib_cnt = 6;
-+
-+        struct kinfo_file2 buf[min_fds];
-+        int managementInfoBase[mib_cnt];
-+        size_t len;
-+
-+        managementInfoBase[0] = CTL_KERN;
-+        managementInfoBase[1] = KERN_PROC;
-+        managementInfoBase[2] = KERN_FILE_BYPID;
-+        managementInfoBase[3] = pid;
-+        managementInfoBase[4] = sizeof(struct kinfo_file2);
-+        managementInfoBase[5] = mib_cnt;
-+
-+        len = sizeof(buf);
-+        if (sysctl(managementInfoBase, mib_cnt, buf, &len, NULL, 0) == -1) {
-+            kWarning() << "sysctl in BSDProcessInfo::readCurrentDir() failed: " << strerror(errno);
-+            return false;
-+        }
-+
-+        for (int i = 0; i < min_fds; i++)
-+        {
-+            if (buf[i].fd_fd == KERN_FILE_CDIR)
-+            {
-+                // The best we could get: mount point
-+                setCurrentDir(buf[i].f_mntonname);
-+                return true;
-+            }
-+        }
- #endif
-+        // No simple support here
-+        return false;
+-        managementInfoBase[0] = CTL_KERN;
+-        managementInfoBase[1] = KERN_PROC;
+-        managementInfoBase[2] = KERN_PROC_CWD;
+-        managementInfoBase[3] = pid;
++        i = 0;
++        managementInfoBase[i++] = CTL_KERN;
++#if defined(__DragonFly__)
++        managementInfoBase[i++] = KERN_PROC;
 +#endif
-     }
- } ;
- #endif
-@@ -1146,8 +1274,8 @@ ProcessInfo* ProcessInfo::newInstance(int pid,bool ena
++        managementInfoBase[i++] = KERN_PROC_CWD;
++        managementInfoBase[i++] = pid;
+ 
+         len = sizeof(buf);
+-        if (sysctl(managementInfoBase, 4, buf, &len, NULL, 0) == -1)
++        if (sysctl(managementInfoBase, i, buf, &len, NULL, 0) == -1)
+             return false;
+ 
+         setCurrentDir(buf);
+@@ -1146,8 +1243,8 @@ ProcessInfo* ProcessInfo::newInstance(int pid,bool ena
      return new SolarisProcessInfo(pid,enableEnvironmentRead);
  #elif defined(Q_OS_MAC)
      return new MacProcessInfo(pid,enableEnvironmentRead);
