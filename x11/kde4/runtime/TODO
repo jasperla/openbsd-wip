@@ -8,9 +8,3 @@ Missing optional dependencies:
      Network status tracking library
      Provides data input for Solid network status
      [relies on libnl, which is hardwired to Linux kernel]
-
-   * PulseAudio (0.9.16 or higher)  <http://www.pulseaudio.org/>
-     PulseAudio Audio Server
-     libpulse is needed for audio setup GUI
-     [not usable enough for us yet]
-
