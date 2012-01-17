@@ -30,5 +30,5 @@ post-install:
 .for F D in ${WRONG_SYSCONF_FILES}
 	rm -Rf ${PREFIX}/$D/$F
 	${INSTALL_DATA_DIR} ${PREFIX}/$D
-	cp -R ${WRKINST}${SYSCONFDIR}/$F ${PREFIX}/$D/$F
+	mv ${WRKINST}${SYSCONFDIR}/$F ${PREFIX}/$D/$F
 .endfor

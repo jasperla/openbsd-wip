@@ -3461,7 +3461,6 @@ share/doc/HTML/en/sonnet/
 share/doc/HTML/en/sonnet/common
 share/doc/HTML/en/sonnet/index.cache.bz2
 share/doc/HTML/en/sonnet/index.docbook
-@sample ${SYSCONFDIR}/dbus-1/
 share/examples/dbus-1/system.d/
 @sample ${SYSCONFDIR}/dbus-1/system.d/
 share/examples/dbus-1/system.d/org.kde.auth.conf

@@ -1321,8 +1321,6 @@ share/doc/HTML/en/systemsettings/
 share/doc/HTML/en/systemsettings/common
 share/doc/HTML/en/systemsettings/index.cache.bz2
 share/doc/HTML/en/systemsettings/index.docbook
-@sample ${SYSCONFDIR}/dbus-1/
-@sample ${SYSCONFDIR}/dbus-1/system.d/
 share/examples/dbus-1/system.d/org.kde.fontinst.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.fontinst.conf
 share/examples/dbus-1/system.d/org.kde.kcontrol.kcmclock.conf
