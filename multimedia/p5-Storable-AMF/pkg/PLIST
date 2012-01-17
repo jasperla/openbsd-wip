@@ -1,5 +1,4 @@
 @comment $OpenBSD$
-%%SHARED%%
 ${P5ARCH}/
 ${P5ARCH}/Storable/
 ${P5ARCH}/Storable/AMF/
@@ -11,6 +10,7 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/Storable/
 ${P5ARCH}/auto/Storable/AMF/
 ${P5ARCH}/auto/Storable/AMF/AMF.bs
+${P5ARCH}/auto/Storable/AMF/AMF.so
 @man man/man3p/Storable::AMF.3p
 @man man/man3p/Storable::AMF0.3p
 @man man/man3p/Storable::AMF3.3p
