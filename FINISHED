@@ -18,6 +18,8 @@ audio/clementine:	sent to ports@ Sep 06 2011. Ready for import. (grayed)
 devel/libgeier:		Ready for import. Sent to ports@ 11.12.2011 (sizeofvoid)
 productivity/taxbird:	Ready for import. Sent to ports@ 11.12.2011 (sizeofvoid)
 cad/tkgate:		Ready for import. Sent to ports@ 2008-01-13 and still works (yason)
+multimedia/p5-Storable_AMD	Ready for import. (nigel)
+multimedia/p5-AMF-Connection	Ready for import. (nigel)
 
 KDE 4.7/4.8 related
 
