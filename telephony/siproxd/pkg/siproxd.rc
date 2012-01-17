@@ -1,9 +1,0 @@
-#!/bin/sh
-#
-# $OpenBSD$
-
-daemon="${TRUEPREFIX}/sbin/siproxd"
-
-. /etc/rc.d/rc.subr
-
-rc_cmd $1
