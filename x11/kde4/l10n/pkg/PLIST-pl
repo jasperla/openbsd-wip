@@ -1226,7 +1226,6 @@ share/locale/pl/LC_MESSAGES/kdelibs4.mo
 share/locale/pl/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/pl/LC_MESSAGES/kdepasswd.mo
 share/locale/pl/LC_MESSAGES/kdepim-runtime-qml.mo
-share/locale/pl/LC_MESSAGES/kdepimwizards.mo
 share/locale/pl/LC_MESSAGES/kdeqt.mo
 share/locale/pl/LC_MESSAGES/kdesu.mo
 share/locale/pl/LC_MESSAGES/kdesud.mo
@@ -1297,7 +1296,6 @@ share/locale/pl/LC_MESSAGES/kio_bookmarks.mo
 share/locale/pl/LC_MESSAGES/kio_finger.mo
 share/locale/pl/LC_MESSAGES/kio_fish.mo
 share/locale/pl/LC_MESSAGES/kio_floppy.mo
-share/locale/pl/LC_MESSAGES/kio_groupwise.mo
 share/locale/pl/LC_MESSAGES/kio_help4.mo
 share/locale/pl/LC_MESSAGES/kio_imap4.mo
 share/locale/pl/LC_MESSAGES/kio_info.mo
@@ -1382,7 +1380,6 @@ share/locale/pl/LC_MESSAGES/kreadconfig.mo
 share/locale/pl/LC_MESSAGES/kremotecontroldaemon.mo
 share/locale/pl/LC_MESSAGES/kres-migrator.mo
 share/locale/pl/LC_MESSAGES/kres_blog.mo
-share/locale/pl/LC_MESSAGES/kres_groupwise.mo
 share/locale/pl/LC_MESSAGES/kres_remote.mo
 share/locale/pl/LC_MESSAGES/kresources_shared_akonadi.mo
 share/locale/pl/LC_MESSAGES/kreversi.mo
@@ -1392,6 +1389,11 @@ share/locale/pl/LC_MESSAGES/krunner.mo
 share/locale/pl/LC_MESSAGES/ksaneplugin.mo
 share/locale/pl/LC_MESSAGES/kscd.mo
 share/locale/pl/LC_MESSAGES/kscreensaver.mo
+share/locale/pl/LC_MESSAGES/ksecrets_kio.mo
+share/locale/pl/LC_MESSAGES/ksecrets_ksecrets.mo
+share/locale/pl/LC_MESSAGES/ksecretsservice_api.mo
+share/locale/pl/LC_MESSAGES/ksecretsserviced.mo
+share/locale/pl/LC_MESSAGES/ksecretsync.mo
 share/locale/pl/LC_MESSAGES/ksendemail.mo
 share/locale/pl/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/pl/LC_MESSAGES/kshisen.mo
@@ -1413,6 +1415,7 @@ share/locale/pl/LC_MESSAGES/ksysguard.mo
 share/locale/pl/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/pl/LC_MESSAGES/ksystemlog.mo
 share/locale/pl/LC_MESSAGES/ksystraycmd.mo
+share/locale/pl/LC_MESSAGES/kte_acomment.mo
 share/locale/pl/LC_MESSAGES/kteatime.mo
 share/locale/pl/LC_MESSAGES/ktesnippets_editor.mo
 share/locale/pl/LC_MESSAGES/ktexteditor_codesnippets_core.mo
@@ -1440,6 +1443,7 @@ share/locale/pl/LC_MESSAGES/kwin_clients.mo
 share/locale/pl/LC_MESSAGES/kwin_effects.mo
 share/locale/pl/LC_MESSAGES/kwinshutdown.mo
 share/locale/pl/LC_MESSAGES/kwinstartmenu.mo
+share/locale/pl/LC_MESSAGES/kwl2kss.mo
 share/locale/pl/LC_MESSAGES/kwordquiz.mo
 share/locale/pl/LC_MESSAGES/kwrite.mo
 share/locale/pl/LC_MESSAGES/kwriteconfig.mo
@@ -1451,6 +1455,7 @@ share/locale/pl/LC_MESSAGES/libakonadi-kmime.mo
 share/locale/pl/LC_MESSAGES/libakonadi.mo
 share/locale/pl/LC_MESSAGES/libeventviews.mo
 share/locale/pl/LC_MESSAGES/libincidenceeditors.mo
+share/locale/pl/LC_MESSAGES/libkalarmcal.mo
 share/locale/pl/LC_MESSAGES/libkasten.mo
 share/locale/pl/LC_MESSAGES/libkblog.mo
 share/locale/pl/LC_MESSAGES/libkcal.mo
@@ -1516,6 +1521,7 @@ share/locale/pl/LC_MESSAGES/mplayerthumbs.mo
 share/locale/pl/LC_MESSAGES/mplayerthumbsconfig.mo
 share/locale/pl/LC_MESSAGES/nepomukbackup.mo
 share/locale/pl/LC_MESSAGES/nepomukcontroller.mo
+share/locale/pl/LC_MESSAGES/nepomukfileindexer.mo
 share/locale/pl/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/pl/LC_MESSAGES/nepomukserver.mo
 share/locale/pl/LC_MESSAGES/nepomukservicestub.mo
@@ -1544,6 +1550,7 @@ share/locale/pl/LC_MESSAGES/okular_tiff.mo
 share/locale/pl/LC_MESSAGES/okular_xps.mo
 share/locale/pl/LC_MESSAGES/palapeli.mo
 share/locale/pl/LC_MESSAGES/parley.mo
+share/locale/pl/LC_MESSAGES/phonon-xine.mo
 share/locale/pl/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/pl/LC_MESSAGES/phonon_kde.mo
 share/locale/pl/LC_MESSAGES/phonon_vlc.mo
@@ -1597,6 +1604,7 @@ share/locale/pl/LC_MESSAGES/plasma_applet_news.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_newspaper.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_notes.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_notifications.mo
+share/locale/pl/LC_MESSAGES/plasma_applet_notifier.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_nowplaying.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_opendesktop.mo

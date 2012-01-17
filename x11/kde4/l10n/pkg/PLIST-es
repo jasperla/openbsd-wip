@@ -36,6 +36,7 @@ man/es/man1/
 @man man/es/man1/kross.1
 @man man/es/man1/ktouch.1
 @man man/es/man1/makekdewidgets.1
+@man man/es/man1/plasmapkg.1
 @man man/es/man1/po2xml.1
 @man man/es/man1/preparetips.1
 @man man/es/man1/pruneemptydirs.1
@@ -217,72 +218,18 @@ share/apps/ktuberling/
 share/apps/ktuberling/sounds/
 share/apps/ktuberling/sounds/es/
 share/apps/ktuberling/sounds/es.soundtheme
-share/apps/ktuberling/sounds/es/acuario.wav
-share/apps/ktuberling/sounds/es/ambulancia.wav
 share/apps/ktuberling/sounds/es/anteojos.wav
-share/apps/ktuberling/sounds/es/arbol.wav
-share/apps/ktuberling/sounds/es/ardilla.wav
-share/apps/ktuberling/sounds/es/autobus.wav
-share/apps/ktuberling/sounds/es/avion.wav
-share/apps/ktuberling/sounds/es/barco.wav
-share/apps/ktuberling/sounds/es/bellota.wav
-share/apps/ktuberling/sounds/es/bicicleta.wav
 share/apps/ktuberling/sounds/es/bigote.wav
 share/apps/ktuberling/sounds/es/boca.wav
-share/apps/ktuberling/sounds/es/bufanda.wav
-share/apps/ktuberling/sounds/es/caballo-de-mar.wav
-share/apps/ktuberling/sounds/es/caballo.wav
-share/apps/ktuberling/sounds/es/calle.wav
-share/apps/ktuberling/sounds/es/casco.wav
-share/apps/ktuberling/sounds/es/castana.wav
 share/apps/ktuberling/sounds/es/ceja.wav
-share/apps/ktuberling/sounds/es/cerdo.wav
-share/apps/ktuberling/sounds/es/charco.wav
-share/apps/ktuberling/sounds/es/ciclista.wav
-share/apps/ktuberling/sounds/es/cigarro.wav
-share/apps/ktuberling/sounds/es/coche.wav
-share/apps/ktuberling/sounds/es/collar.wav
-share/apps/ktuberling/sounds/es/cuerno.wav
-share/apps/ktuberling/sounds/es/eltipodelapatata.wav
-share/apps/ktuberling/sounds/es/enfermera.wav
 share/apps/ktuberling/sounds/es/gafasdesol.wav
-share/apps/ktuberling/sounds/es/gallina.wav
-share/apps/ktuberling/sounds/es/gallo.wav
-share/apps/ktuberling/sounds/es/gato.wav
-share/apps/ktuberling/sounds/es/globo.wav
-share/apps/ktuberling/sounds/es/granja.wav
-share/apps/ktuberling/sounds/es/hoja.wav
-share/apps/ktuberling/sounds/es/hojas.wav
-share/apps/ktuberling/sounds/es/insignia.wav
 share/apps/ktuberling/sounds/es/lazo.wav
-share/apps/ktuberling/sounds/es/lechon.wav
-share/apps/ktuberling/sounds/es/lluvia.wav
-share/apps/ktuberling/sounds/es/medusa.wav
-share/apps/ktuberling/sounds/es/moto.wav
 share/apps/ktuberling/sounds/es/nariz.wav
 share/apps/ktuberling/sounds/es/ojo.wav
 share/apps/ktuberling/sounds/es/oreja.wav
-share/apps/ktuberling/sounds/es/paisaje-de-otono.wav
-share/apps/ktuberling/sounds/es/peaton.wav
 share/apps/ktuberling/sounds/es/pelo.wav
 share/apps/ktuberling/sounds/es/pendiente.wav
-share/apps/ktuberling/sounds/es/perro.wav
-share/apps/ktuberling/sounds/es/pez.wav
-share/apps/ktuberling/sounds/es/pinguino.wav
-share/apps/ktuberling/sounds/es/policia.wav
-share/apps/ktuberling/sounds/es/pollitos.wav
-share/apps/ktuberling/sounds/es/potro.wav
-share/apps/ktuberling/sounds/es/reloj.wav
-share/apps/ktuberling/sounds/es/senal.wav
-share/apps/ktuberling/sounds/es/seta.wav
-share/apps/ktuberling/sounds/es/sombras.wav
 share/apps/ktuberling/sounds/es/sombrero.wav
-share/apps/ktuberling/sounds/es/submarino.wav
-share/apps/ktuberling/sounds/es/ternero.wav
-share/apps/ktuberling/sounds/es/tesoro.wav
-share/apps/ktuberling/sounds/es/transportes.wav
-share/apps/ktuberling/sounds/es/tren.wav
-share/apps/ktuberling/sounds/es/vaca.wav
 share/apps/kvtml/
 share/apps/kvtml/es/
 share/apps/kvtml/es/animals.kvtml
@@ -1871,10 +1818,12 @@ share/locale/es/LC_MESSAGES/akonadi_strigi_feeder.mo
 share/locale/es/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/es/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/es/LC_MESSAGES/akonadicontact.mo
+share/locale/es/LC_MESSAGES/akonadinotes.mo
 share/locale/es/LC_MESSAGES/akonaditray.mo
 share/locale/es/LC_MESSAGES/akregator.mo
 share/locale/es/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/es/LC_MESSAGES/amor.mo
+share/locale/es/LC_MESSAGES/analitza.mo
 share/locale/es/LC_MESSAGES/ark.mo
 share/locale/es/LC_MESSAGES/attica_kde.mo
 share/locale/es/LC_MESSAGES/audiocd_encoder_lame.mo
@@ -1899,7 +1848,9 @@ share/locale/es/LC_MESSAGES/dragonplayer.mo
 share/locale/es/LC_MESSAGES/drkonqi.mo
 share/locale/es/LC_MESSAGES/filelight.mo
 share/locale/es/LC_MESSAGES/filetypes.mo
+share/locale/es/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/es/LC_MESSAGES/fileviewgitplugin.mo
+share/locale/es/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/es/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/es/LC_MESSAGES/freespacenotifier.mo
 share/locale/es/LC_MESSAGES/fsview.mo
@@ -2052,7 +2003,6 @@ share/locale/es/LC_MESSAGES/kdelibs4.mo
 share/locale/es/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/es/LC_MESSAGES/kdepasswd.mo
 share/locale/es/LC_MESSAGES/kdepim-runtime-qml.mo
-share/locale/es/LC_MESSAGES/kdepimwizards.mo
 share/locale/es/LC_MESSAGES/kdeqt.mo
 share/locale/es/LC_MESSAGES/kdesu.mo
 share/locale/es/LC_MESSAGES/kdesud.mo
@@ -2123,7 +2073,6 @@ share/locale/es/LC_MESSAGES/kio_bookmarks.mo
 share/locale/es/LC_MESSAGES/kio_finger.mo
 share/locale/es/LC_MESSAGES/kio_fish.mo
 share/locale/es/LC_MESSAGES/kio_floppy.mo
-share/locale/es/LC_MESSAGES/kio_groupwise.mo
 share/locale/es/LC_MESSAGES/kio_help4.mo
 share/locale/es/LC_MESSAGES/kio_imap4.mo
 share/locale/es/LC_MESSAGES/kio_info.mo
@@ -2208,7 +2157,6 @@ share/locale/es/LC_MESSAGES/kreadconfig.mo
 share/locale/es/LC_MESSAGES/kremotecontroldaemon.mo
 share/locale/es/LC_MESSAGES/kres-migrator.mo
 share/locale/es/LC_MESSAGES/kres_blog.mo
-share/locale/es/LC_MESSAGES/kres_groupwise.mo
 share/locale/es/LC_MESSAGES/kres_remote.mo
 share/locale/es/LC_MESSAGES/kresources_shared_akonadi.mo
 share/locale/es/LC_MESSAGES/kreversi.mo
@@ -2218,6 +2166,11 @@ share/locale/es/LC_MESSAGES/krunner.mo
 share/locale/es/LC_MESSAGES/ksaneplugin.mo
 share/locale/es/LC_MESSAGES/kscd.mo
 share/locale/es/LC_MESSAGES/kscreensaver.mo
+share/locale/es/LC_MESSAGES/ksecrets_kio.mo
+share/locale/es/LC_MESSAGES/ksecrets_ksecrets.mo
+share/locale/es/LC_MESSAGES/ksecretsservice_api.mo
+share/locale/es/LC_MESSAGES/ksecretsserviced.mo
+share/locale/es/LC_MESSAGES/ksecretsync.mo
 share/locale/es/LC_MESSAGES/ksendemail.mo
 share/locale/es/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/es/LC_MESSAGES/kshisen.mo
@@ -2239,6 +2192,7 @@ share/locale/es/LC_MESSAGES/ksysguard.mo
 share/locale/es/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/es/LC_MESSAGES/ksystemlog.mo
 share/locale/es/LC_MESSAGES/ksystraycmd.mo
+share/locale/es/LC_MESSAGES/kte_acomment.mo
 share/locale/es/LC_MESSAGES/kteatime.mo
 share/locale/es/LC_MESSAGES/ktesnippets_editor.mo
 share/locale/es/LC_MESSAGES/ktexteditor_codesnippets_core.mo
@@ -2266,6 +2220,7 @@ share/locale/es/LC_MESSAGES/kwin_clients.mo
 share/locale/es/LC_MESSAGES/kwin_effects.mo
 share/locale/es/LC_MESSAGES/kwinshutdown.mo
 share/locale/es/LC_MESSAGES/kwinstartmenu.mo
+share/locale/es/LC_MESSAGES/kwl2kss.mo
 share/locale/es/LC_MESSAGES/kwordquiz.mo
 share/locale/es/LC_MESSAGES/kwrite.mo
 share/locale/es/LC_MESSAGES/kwriteconfig.mo
@@ -2277,6 +2232,7 @@ share/locale/es/LC_MESSAGES/libakonadi-kmime.mo
 share/locale/es/LC_MESSAGES/libakonadi.mo
 share/locale/es/LC_MESSAGES/libeventviews.mo
 share/locale/es/LC_MESSAGES/libincidenceeditors.mo
+share/locale/es/LC_MESSAGES/libkalarmcal.mo
 share/locale/es/LC_MESSAGES/libkasten.mo
 share/locale/es/LC_MESSAGES/libkblog.mo
 share/locale/es/LC_MESSAGES/libkcal.mo
@@ -2330,9 +2286,11 @@ share/locale/es/LC_MESSAGES/libtaskmanager.mo
 share/locale/es/LC_MESSAGES/libtemplateparser.mo
 share/locale/es/LC_MESSAGES/lokalize.mo
 share/locale/es/LC_MESSAGES/lskat.mo
+share/locale/es/LC_MESSAGES/mailfilteragent.mo
 share/locale/es/LC_MESSAGES/mailreader.mo
 share/locale/es/LC_MESSAGES/marble.mo
 share/locale/es/LC_MESSAGES/marble_qt.mo
+share/locale/es/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/es/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/es/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/es/LC_MESSAGES/messageviewer_text_xdiff_plugin.mo
@@ -2341,6 +2299,7 @@ share/locale/es/LC_MESSAGES/minitoolsplugin.mo
 share/locale/es/LC_MESSAGES/mplayerthumbs.mo
 share/locale/es/LC_MESSAGES/mplayerthumbsconfig.mo
 share/locale/es/LC_MESSAGES/nepomukbackup.mo
+share/locale/es/LC_MESSAGES/nepomukfileindexer.mo
 share/locale/es/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/es/LC_MESSAGES/nepomukserver.mo
 share/locale/es/LC_MESSAGES/nepomukservicestub.mo
@@ -2369,6 +2328,7 @@ share/locale/es/LC_MESSAGES/okular_tiff.mo
 share/locale/es/LC_MESSAGES/okular_xps.mo
 share/locale/es/LC_MESSAGES/palapeli.mo
 share/locale/es/LC_MESSAGES/parley.mo
+share/locale/es/LC_MESSAGES/phonon-xine.mo
 share/locale/es/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/es/LC_MESSAGES/phonon_kde.mo
 share/locale/es/LC_MESSAGES/phonon_vlc.mo
@@ -2400,6 +2360,7 @@ share/locale/es/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
 share/locale/es/LC_MESSAGES/plasma_applet_gasCalculator.mo
 share/locale/es/LC_MESSAGES/plasma_applet_groupingpanel.mo
 share/locale/es/LC_MESSAGES/plasma_applet_icon.mo
+share/locale/es/LC_MESSAGES/plasma_applet_icontasks.mo
 share/locale/es/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/es/LC_MESSAGES/plasma_applet_kalgebra.mo
 share/locale/es/LC_MESSAGES/plasma_applet_kalzium.mo
@@ -2422,6 +2383,7 @@ share/locale/es/LC_MESSAGES/plasma_applet_news.mo
 share/locale/es/LC_MESSAGES/plasma_applet_newspaper.mo
 share/locale/es/LC_MESSAGES/plasma_applet_notes.mo
 share/locale/es/LC_MESSAGES/plasma_applet_notifications.mo
+share/locale/es/LC_MESSAGES/plasma_applet_notifier.mo
 share/locale/es/LC_MESSAGES/plasma_applet_nowplaying.mo
 share/locale/es/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
 share/locale/es/LC_MESSAGES/plasma_applet_opendesktop.mo
@@ -2494,6 +2456,7 @@ share/locale/es/LC_MESSAGES/plasma_runner_konquerorsessions.mo
 share/locale/es/LC_MESSAGES/plasma_runner_konsolesessions.mo
 share/locale/es/LC_MESSAGES/plasma_runner_kopete.mo
 share/locale/es/LC_MESSAGES/plasma_runner_locations.mo
+share/locale/es/LC_MESSAGES/plasma_runner_marblerunner.mo
 share/locale/es/LC_MESSAGES/plasma_runner_mediawiki.mo
 share/locale/es/LC_MESSAGES/plasma_runner_nepomuksearchrunner.mo
 share/locale/es/LC_MESSAGES/plasma_runner_placesrunner.mo
@@ -2516,6 +2479,7 @@ share/locale/es/LC_MESSAGES/plasma_wallpaper_image.mo
 share/locale/es/LC_MESSAGES/plasma_wallpaper_mandelbrot.mo
 share/locale/es/LC_MESSAGES/plasma_wallpaper_marble.mo
 share/locale/es/LC_MESSAGES/plasma_wallpaper_pattern.mo
+share/locale/es/LC_MESSAGES/plasma_wallpaper_potd.mo
 share/locale/es/LC_MESSAGES/plasma_wallpaper_virus.mo
 share/locale/es/LC_MESSAGES/plasma_wallpaper_weather.mo
 share/locale/es/LC_MESSAGES/plasmaengineexplorer.mo

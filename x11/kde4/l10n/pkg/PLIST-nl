@@ -125,23 +125,15 @@ share/apps/ktuberling/
 share/apps/ktuberling/sounds/
 share/apps/ktuberling/sounds/nl/
 share/apps/ktuberling/sounds/nl.soundtheme
-share/apps/ktuberling/sounds/nl/aardappelmannetje.wav
 share/apps/ktuberling/sounds/nl/bril.wav
 share/apps/ktuberling/sounds/nl/haar.wav
 share/apps/ktuberling/sounds/nl/hoed.wav
-share/apps/ktuberling/sounds/nl/horens.wav
-share/apps/ktuberling/sounds/nl/horloge.wav
-share/apps/ktuberling/sounds/nl/ketting.wav
 share/apps/ktuberling/sounds/nl/mond.wav
 share/apps/ktuberling/sounds/nl/neus.wav
 share/apps/ktuberling/sounds/nl/oog.wav
 share/apps/ktuberling/sounds/nl/oor.wav
 share/apps/ktuberling/sounds/nl/oorbel.wav
-share/apps/ktuberling/sounds/nl/pinguin.wav
-share/apps/ktuberling/sounds/nl/sigaar.wav
-share/apps/ktuberling/sounds/nl/sjaal.wav
 share/apps/ktuberling/sounds/nl/snor.wav
-share/apps/ktuberling/sounds/nl/ster.wav
 share/apps/ktuberling/sounds/nl/strik.wav
 share/apps/ktuberling/sounds/nl/stropdas.wav
 share/apps/ktuberling/sounds/nl/wenkbrauw.wav
@@ -1562,6 +1554,7 @@ share/locale/nl/LC_MESSAGES/akonaditray.mo
 share/locale/nl/LC_MESSAGES/akregator.mo
 share/locale/nl/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/nl/LC_MESSAGES/amor.mo
+share/locale/nl/LC_MESSAGES/analitza.mo
 share/locale/nl/LC_MESSAGES/ark.mo
 share/locale/nl/LC_MESSAGES/attica_kde.mo
 share/locale/nl/LC_MESSAGES/audiocd_encoder_lame.mo
@@ -1586,7 +1579,9 @@ share/locale/nl/LC_MESSAGES/dragonplayer.mo
 share/locale/nl/LC_MESSAGES/drkonqi.mo
 share/locale/nl/LC_MESSAGES/filelight.mo
 share/locale/nl/LC_MESSAGES/filetypes.mo
+share/locale/nl/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/nl/LC_MESSAGES/fileviewgitplugin.mo
+share/locale/nl/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/nl/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/nl/LC_MESSAGES/freespacenotifier.mo
 share/locale/nl/LC_MESSAGES/fsview.mo
@@ -1739,7 +1734,6 @@ share/locale/nl/LC_MESSAGES/kdelibs4.mo
 share/locale/nl/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/nl/LC_MESSAGES/kdepasswd.mo
 share/locale/nl/LC_MESSAGES/kdepim-runtime-qml.mo
-share/locale/nl/LC_MESSAGES/kdepimwizards.mo
 share/locale/nl/LC_MESSAGES/kdeqt.mo
 share/locale/nl/LC_MESSAGES/kdesu.mo
 share/locale/nl/LC_MESSAGES/kdesud.mo
@@ -1810,7 +1804,6 @@ share/locale/nl/LC_MESSAGES/kio_bookmarks.mo
 share/locale/nl/LC_MESSAGES/kio_finger.mo
 share/locale/nl/LC_MESSAGES/kio_fish.mo
 share/locale/nl/LC_MESSAGES/kio_floppy.mo
-share/locale/nl/LC_MESSAGES/kio_groupwise.mo
 share/locale/nl/LC_MESSAGES/kio_help4.mo
 share/locale/nl/LC_MESSAGES/kio_imap4.mo
 share/locale/nl/LC_MESSAGES/kio_info.mo
@@ -1895,7 +1888,6 @@ share/locale/nl/LC_MESSAGES/kreadconfig.mo
 share/locale/nl/LC_MESSAGES/kremotecontroldaemon.mo
 share/locale/nl/LC_MESSAGES/kres-migrator.mo
 share/locale/nl/LC_MESSAGES/kres_blog.mo
-share/locale/nl/LC_MESSAGES/kres_groupwise.mo
 share/locale/nl/LC_MESSAGES/kres_remote.mo
 share/locale/nl/LC_MESSAGES/kresources_shared_akonadi.mo
 share/locale/nl/LC_MESSAGES/kreversi.mo
@@ -1905,6 +1897,11 @@ share/locale/nl/LC_MESSAGES/krunner.mo
 share/locale/nl/LC_MESSAGES/ksaneplugin.mo
 share/locale/nl/LC_MESSAGES/kscd.mo
 share/locale/nl/LC_MESSAGES/kscreensaver.mo
+share/locale/nl/LC_MESSAGES/ksecrets_kio.mo
+share/locale/nl/LC_MESSAGES/ksecrets_ksecrets.mo
+share/locale/nl/LC_MESSAGES/ksecretsservice_api.mo
+share/locale/nl/LC_MESSAGES/ksecretsserviced.mo
+share/locale/nl/LC_MESSAGES/ksecretsync.mo
 share/locale/nl/LC_MESSAGES/ksendemail.mo
 share/locale/nl/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/nl/LC_MESSAGES/kshisen.mo
@@ -1926,6 +1923,7 @@ share/locale/nl/LC_MESSAGES/ksysguard.mo
 share/locale/nl/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/nl/LC_MESSAGES/ksystemlog.mo
 share/locale/nl/LC_MESSAGES/ksystraycmd.mo
+share/locale/nl/LC_MESSAGES/kte_acomment.mo
 share/locale/nl/LC_MESSAGES/kteatime.mo
 share/locale/nl/LC_MESSAGES/ktesnippets_editor.mo
 share/locale/nl/LC_MESSAGES/ktexteditor_codesnippets_core.mo
@@ -1953,6 +1951,7 @@ share/locale/nl/LC_MESSAGES/kwin_clients.mo
 share/locale/nl/LC_MESSAGES/kwin_effects.mo
 share/locale/nl/LC_MESSAGES/kwinshutdown.mo
 share/locale/nl/LC_MESSAGES/kwinstartmenu.mo
+share/locale/nl/LC_MESSAGES/kwl2kss.mo
 share/locale/nl/LC_MESSAGES/kwordquiz.mo
 share/locale/nl/LC_MESSAGES/kwrite.mo
 share/locale/nl/LC_MESSAGES/kwriteconfig.mo
@@ -1964,6 +1963,7 @@ share/locale/nl/LC_MESSAGES/libakonadi-kmime.mo
 share/locale/nl/LC_MESSAGES/libakonadi.mo
 share/locale/nl/LC_MESSAGES/libeventviews.mo
 share/locale/nl/LC_MESSAGES/libincidenceeditors.mo
+share/locale/nl/LC_MESSAGES/libkalarmcal.mo
 share/locale/nl/LC_MESSAGES/libkasten.mo
 share/locale/nl/LC_MESSAGES/libkblog.mo
 share/locale/nl/LC_MESSAGES/libkcal.mo
@@ -2017,9 +2017,11 @@ share/locale/nl/LC_MESSAGES/libtaskmanager.mo
 share/locale/nl/LC_MESSAGES/libtemplateparser.mo
 share/locale/nl/LC_MESSAGES/lokalize.mo
 share/locale/nl/LC_MESSAGES/lskat.mo
+share/locale/nl/LC_MESSAGES/mailfilteragent.mo
 share/locale/nl/LC_MESSAGES/mailreader.mo
 share/locale/nl/LC_MESSAGES/marble.mo
 share/locale/nl/LC_MESSAGES/marble_qt.mo
+share/locale/nl/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/nl/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/nl/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/nl/LC_MESSAGES/messageviewer_text_xdiff_plugin.mo
@@ -2029,6 +2031,7 @@ share/locale/nl/LC_MESSAGES/mplayerthumbs.mo
 share/locale/nl/LC_MESSAGES/mplayerthumbsconfig.mo
 share/locale/nl/LC_MESSAGES/nepomukbackup.mo
 share/locale/nl/LC_MESSAGES/nepomukcontroller.mo
+share/locale/nl/LC_MESSAGES/nepomukfileindexer.mo
 share/locale/nl/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/nl/LC_MESSAGES/nepomukserver.mo
 share/locale/nl/LC_MESSAGES/nepomukservicestub.mo
@@ -2057,6 +2060,7 @@ share/locale/nl/LC_MESSAGES/okular_tiff.mo
 share/locale/nl/LC_MESSAGES/okular_xps.mo
 share/locale/nl/LC_MESSAGES/palapeli.mo
 share/locale/nl/LC_MESSAGES/parley.mo
+share/locale/nl/LC_MESSAGES/phonon-xine.mo
 share/locale/nl/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/nl/LC_MESSAGES/phonon_kde.mo
 share/locale/nl/LC_MESSAGES/phonon_vlc.mo
@@ -2088,6 +2092,7 @@ share/locale/nl/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_gasCalculator.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_groupingpanel.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_icon.mo
+share/locale/nl/LC_MESSAGES/plasma_applet_icontasks.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_kalgebra.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_kalzium.mo
@@ -2110,6 +2115,7 @@ share/locale/nl/LC_MESSAGES/plasma_applet_news.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_newspaper.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_notes.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_notifications.mo
+share/locale/nl/LC_MESSAGES/plasma_applet_notifier.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_nowplaying.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_opendesktop.mo
@@ -2182,6 +2188,7 @@ share/locale/nl/LC_MESSAGES/plasma_runner_konquerorsessions.mo
 share/locale/nl/LC_MESSAGES/plasma_runner_konsolesessions.mo
 share/locale/nl/LC_MESSAGES/plasma_runner_kopete.mo
 share/locale/nl/LC_MESSAGES/plasma_runner_locations.mo
+share/locale/nl/LC_MESSAGES/plasma_runner_marblerunner.mo
 share/locale/nl/LC_MESSAGES/plasma_runner_mediawiki.mo
 share/locale/nl/LC_MESSAGES/plasma_runner_nepomuksearchrunner.mo
 share/locale/nl/LC_MESSAGES/plasma_runner_placesrunner.mo
@@ -2204,6 +2211,7 @@ share/locale/nl/LC_MESSAGES/plasma_wallpaper_image.mo
 share/locale/nl/LC_MESSAGES/plasma_wallpaper_mandelbrot.mo
 share/locale/nl/LC_MESSAGES/plasma_wallpaper_marble.mo
 share/locale/nl/LC_MESSAGES/plasma_wallpaper_pattern.mo
+share/locale/nl/LC_MESSAGES/plasma_wallpaper_potd.mo
 share/locale/nl/LC_MESSAGES/plasma_wallpaper_virus.mo
 share/locale/nl/LC_MESSAGES/plasma_wallpaper_weather.mo
 share/locale/nl/LC_MESSAGES/plasmaengineexplorer.mo
@@ -2212,6 +2220,7 @@ share/locale/nl/LC_MESSAGES/plasmapkg.mo
 share/locale/nl/LC_MESSAGES/plasmawallpaperviewer.mo
 share/locale/nl/LC_MESSAGES/plasmoidviewer.mo
 share/locale/nl/LC_MESSAGES/powerdevil.mo
+share/locale/nl/LC_MESSAGES/powerdevilactivitiesconfig.mo
 share/locale/nl/LC_MESSAGES/powerdevilglobalconfig.mo
 share/locale/nl/LC_MESSAGES/powerdevilprofilesconfig.mo
 share/locale/nl/LC_MESSAGES/printer-applet.mo

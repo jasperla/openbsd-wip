@@ -219,7 +219,6 @@ share/locale/ca@valencia/LC_MESSAGES/kdelibs4.mo
 share/locale/ca@valencia/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/ca@valencia/LC_MESSAGES/kdepasswd.mo
 share/locale/ca@valencia/LC_MESSAGES/kdepim-runtime-qml.mo
-share/locale/ca@valencia/LC_MESSAGES/kdepimwizards.mo
 share/locale/ca@valencia/LC_MESSAGES/kdeqt.mo
 share/locale/ca@valencia/LC_MESSAGES/kdesu.mo
 share/locale/ca@valencia/LC_MESSAGES/kdesud.mo
@@ -290,7 +289,6 @@ share/locale/ca@valencia/LC_MESSAGES/kio_bookmarks.mo
 share/locale/ca@valencia/LC_MESSAGES/kio_finger.mo
 share/locale/ca@valencia/LC_MESSAGES/kio_fish.mo
 share/locale/ca@valencia/LC_MESSAGES/kio_floppy.mo
-share/locale/ca@valencia/LC_MESSAGES/kio_groupwise.mo
 share/locale/ca@valencia/LC_MESSAGES/kio_help4.mo
 share/locale/ca@valencia/LC_MESSAGES/kio_imap4.mo
 share/locale/ca@valencia/LC_MESSAGES/kio_info.mo
@@ -375,7 +373,6 @@ share/locale/ca@valencia/LC_MESSAGES/kreadconfig.mo
 share/locale/ca@valencia/LC_MESSAGES/kremotecontroldaemon.mo
 share/locale/ca@valencia/LC_MESSAGES/kres-migrator.mo
 share/locale/ca@valencia/LC_MESSAGES/kres_blog.mo
-share/locale/ca@valencia/LC_MESSAGES/kres_groupwise.mo
 share/locale/ca@valencia/LC_MESSAGES/kres_remote.mo
 share/locale/ca@valencia/LC_MESSAGES/kresources_shared_akonadi.mo
 share/locale/ca@valencia/LC_MESSAGES/kreversi.mo
