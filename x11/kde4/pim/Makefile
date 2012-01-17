@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, pim
 DISTNAME =	kdepim-${MODKDE_VERSION}
+REVISION =	0
 HOMEPAGE =	http://pim.kde.org/
 
 SHARED_LIBS =	akonadi_next 0.0
