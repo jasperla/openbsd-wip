@@ -10,6 +10,7 @@ V =			${MODKDE4_VERSION}
 PKGNAME =		kde-${V}
 PKGNAME-main =		kde-${V}
 PKGNAME-extras =	kde-extras-${V}
+REVISION-extras =	0
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 
@@ -30,5 +31,6 @@ RUN_DEPENDS-extras = \
 		x11/kde4/kgpg           \
 		x11/kde4/kremotecontrol \
 		x11/kde4/ktimer         \
+		x11/kde4/wallpapers     \
 
 .include <bsd.port.mk>
