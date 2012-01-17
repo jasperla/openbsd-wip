@@ -1,8 +1,0 @@
-This diff updates libosip2 to 3.5.0, primarily to allow siproxd (the
-only port that uses libosip2 in the ports tree) to be updated.
-
-It is essentially the same as stephan@'s earlier diff from
-http://marc.info/?l=openbsd-ports&m=127409151026147&w=2 with minor
-tweaks.
-
-Passes regress on i386.
