@@ -207,7 +207,6 @@ share/locale/pa/LC_MESSAGES/kdecalendarsystems.mo
 share/locale/pa/LC_MESSAGES/kdelibs4.mo
 share/locale/pa/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/pa/LC_MESSAGES/kdepasswd.mo
-share/locale/pa/LC_MESSAGES/kdepimwizards.mo
 share/locale/pa/LC_MESSAGES/kdeqt.mo
 share/locale/pa/LC_MESSAGES/kdesu.mo
 share/locale/pa/LC_MESSAGES/kdesud.mo
@@ -274,7 +273,6 @@ share/locale/pa/LC_MESSAGES/kio_bookmarks.mo
 share/locale/pa/LC_MESSAGES/kio_finger.mo
 share/locale/pa/LC_MESSAGES/kio_fish.mo
 share/locale/pa/LC_MESSAGES/kio_floppy.mo
-share/locale/pa/LC_MESSAGES/kio_groupwise.mo
 share/locale/pa/LC_MESSAGES/kio_help4.mo
 share/locale/pa/LC_MESSAGES/kio_imap4.mo
 share/locale/pa/LC_MESSAGES/kio_info.mo
@@ -352,7 +350,6 @@ share/locale/pa/LC_MESSAGES/krdc.mo
 share/locale/pa/LC_MESSAGES/kreadconfig.mo
 share/locale/pa/LC_MESSAGES/kres-migrator.mo
 share/locale/pa/LC_MESSAGES/kres_blog.mo
-share/locale/pa/LC_MESSAGES/kres_groupwise.mo
 share/locale/pa/LC_MESSAGES/kres_remote.mo
 share/locale/pa/LC_MESSAGES/kresources_shared_akonadi.mo
 share/locale/pa/LC_MESSAGES/kreversi.mo
@@ -531,6 +528,7 @@ share/locale/pa/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/pa/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
 share/locale/pa/LC_MESSAGES/plasma_applet_gasCalculator.mo
 share/locale/pa/LC_MESSAGES/plasma_applet_icon.mo
+share/locale/pa/LC_MESSAGES/plasma_applet_icontasks.mo
 share/locale/pa/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/pa/LC_MESSAGES/plasma_applet_kalgebra.mo
 share/locale/pa/LC_MESSAGES/plasma_applet_kalzium.mo
@@ -643,6 +641,7 @@ share/locale/pa/LC_MESSAGES/plasma_wallpaper_image.mo
 share/locale/pa/LC_MESSAGES/plasma_wallpaper_mandelbrot.mo
 share/locale/pa/LC_MESSAGES/plasma_wallpaper_marble.mo
 share/locale/pa/LC_MESSAGES/plasma_wallpaper_pattern.mo
+share/locale/pa/LC_MESSAGES/plasma_wallpaper_potd.mo
 share/locale/pa/LC_MESSAGES/plasma_wallpaper_virus.mo
 share/locale/pa/LC_MESSAGES/plasma_wallpaper_weather.mo
 share/locale/pa/LC_MESSAGES/plasmaengineexplorer.mo

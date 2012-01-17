@@ -44,6 +44,7 @@ share/locale/ia/LC_MESSAGES/akonadinotes.mo
 share/locale/ia/LC_MESSAGES/akonaditray.mo
 share/locale/ia/LC_MESSAGES/akregator.mo
 share/locale/ia/LC_MESSAGES/akregator_konqplugin.mo
+share/locale/ia/LC_MESSAGES/ark.mo
 share/locale/ia/LC_MESSAGES/attica_kde.mo
 share/locale/ia/LC_MESSAGES/audiocd_encoder_lame.mo
 share/locale/ia/LC_MESSAGES/audiocd_encoder_vorbis.mo
@@ -108,6 +109,7 @@ share/locale/ia/LC_MESSAGES/katexmltools.mo
 share/locale/ia/LC_MESSAGES/kblankscrn.mo
 share/locale/ia/LC_MESSAGES/kcal_akonadi.mo
 share/locale/ia/LC_MESSAGES/kcertpart.mo
+share/locale/ia/LC_MESSAGES/kcharselect.mo
 share/locale/ia/LC_MESSAGES/kcm_akonadi.mo
 share/locale/ia/LC_MESSAGES/kcm_akonadicontact_actions.mo
 share/locale/ia/LC_MESSAGES/kcm_attica.mo
@@ -155,6 +157,7 @@ share/locale/ia/LC_MESSAGES/kcmkio.mo
 share/locale/ia/LC_MESSAGES/kcmkonq.mo
 share/locale/ia/LC_MESSAGES/kcmkonqhtml.mo
 share/locale/ia/LC_MESSAGES/kcmkurifilt.mo
+share/locale/ia/LC_MESSAGES/kcmkwallet.mo
 share/locale/ia/LC_MESSAGES/kcmkwincompositing.mo
 share/locale/ia/LC_MESSAGES/kcmkwindecoration.mo
 share/locale/ia/LC_MESSAGES/kcmkwinrules.mo
@@ -184,7 +187,6 @@ share/locale/ia/LC_MESSAGES/kdelibs4.mo
 share/locale/ia/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/ia/LC_MESSAGES/kdepasswd.mo
 share/locale/ia/LC_MESSAGES/kdepim-runtime-qml.mo
-share/locale/ia/LC_MESSAGES/kdepimwizards.mo
 share/locale/ia/LC_MESSAGES/kdesu.mo
 share/locale/ia/LC_MESSAGES/kdesud.mo
 share/locale/ia/LC_MESSAGES/kdgantt2.mo
@@ -232,7 +234,6 @@ share/locale/ia/LC_MESSAGES/kio_bookmarks.mo
 share/locale/ia/LC_MESSAGES/kio_finger.mo
 share/locale/ia/LC_MESSAGES/kio_fish.mo
 share/locale/ia/LC_MESSAGES/kio_floppy.mo
-share/locale/ia/LC_MESSAGES/kio_groupwise.mo
 share/locale/ia/LC_MESSAGES/kio_help4.mo
 share/locale/ia/LC_MESSAGES/kio_imap4.mo
 share/locale/ia/LC_MESSAGES/kio_info.mo
@@ -289,7 +290,6 @@ share/locale/ia/LC_MESSAGES/krdc.mo
 share/locale/ia/LC_MESSAGES/kreadconfig.mo
 share/locale/ia/LC_MESSAGES/kres-migrator.mo
 share/locale/ia/LC_MESSAGES/kres_blog.mo
-share/locale/ia/LC_MESSAGES/kres_groupwise.mo
 share/locale/ia/LC_MESSAGES/kres_remote.mo
 share/locale/ia/LC_MESSAGES/kresources_shared_akonadi.mo
 share/locale/ia/LC_MESSAGES/krfb.mo
@@ -323,6 +323,7 @@ share/locale/ia/LC_MESSAGES/kuiserver.mo
 share/locale/ia/LC_MESSAGES/kurifilter.mo
 share/locale/ia/LC_MESSAGES/kuser.mo
 share/locale/ia/LC_MESSAGES/kwalletd.mo
+share/locale/ia/LC_MESSAGES/kwalletmanager.mo
 share/locale/ia/LC_MESSAGES/kwatchgnupg.mo
 share/locale/ia/LC_MESSAGES/kwin.mo
 share/locale/ia/LC_MESSAGES/kwin_clients.mo
@@ -424,6 +425,7 @@ share/locale/ia/LC_MESSAGES/plasma_applet_sal.mo
 share/locale/ia/LC_MESSAGES/plasma_applet_saverdesktop.mo
 share/locale/ia/LC_MESSAGES/plasma_applet_searchbox.mo
 share/locale/ia/LC_MESSAGES/plasma_applet_showactivitymanager.mo
+share/locale/ia/LC_MESSAGES/plasma_applet_skapplet.mo
 share/locale/ia/LC_MESSAGES/plasma_applet_system-monitor.mo
 share/locale/ia/LC_MESSAGES/plasma_applet_systemtray.mo
 share/locale/ia/LC_MESSAGES/plasma_applet_tasks.mo
@@ -478,6 +480,7 @@ share/locale/ia/LC_MESSAGES/powerdevil.mo
 share/locale/ia/LC_MESSAGES/powerdevilactivitiesconfig.mo
 share/locale/ia/LC_MESSAGES/powerdevilglobalconfig.mo
 share/locale/ia/LC_MESSAGES/powerdevilprofilesconfig.mo
+share/locale/ia/LC_MESSAGES/printer-applet.mo
 share/locale/ia/LC_MESSAGES/processcore.mo
 share/locale/ia/LC_MESSAGES/processui.mo
 share/locale/ia/LC_MESSAGES/randrmonitor.mo

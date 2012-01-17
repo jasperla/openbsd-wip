@@ -153,7 +153,6 @@ share/locale/hr/LC_MESSAGES/kdecalendarsystems.mo
 share/locale/hr/LC_MESSAGES/kdelibs4.mo
 share/locale/hr/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/hr/LC_MESSAGES/kdepasswd.mo
-share/locale/hr/LC_MESSAGES/kdepimwizards.mo
 share/locale/hr/LC_MESSAGES/kdeqt.mo
 share/locale/hr/LC_MESSAGES/kdesu.mo
 share/locale/hr/LC_MESSAGES/kdesud.mo
@@ -345,6 +344,7 @@ share/locale/hr/LC_MESSAGES/kwriteconfig.mo
 share/locale/hr/LC_MESSAGES/kxkb.mo
 share/locale/hr/LC_MESSAGES/kxsconfig.mo
 share/locale/hr/LC_MESSAGES/lancelot.mo
+share/locale/hr/LC_MESSAGES/libkalarmcal.mo
 share/locale/hr/LC_MESSAGES/libkasten.mo
 share/locale/hr/LC_MESSAGES/libkcal.mo
 share/locale/hr/LC_MESSAGES/libkcalutils.mo
@@ -386,6 +386,7 @@ share/locale/hr/LC_MESSAGES/minitoolsplugin.mo
 share/locale/hr/LC_MESSAGES/mplayerthumbs.mo
 share/locale/hr/LC_MESSAGES/mplayerthumbsconfig.mo
 share/locale/hr/LC_MESSAGES/nepomukbackup.mo
+share/locale/hr/LC_MESSAGES/nepomukfileindexer.mo
 share/locale/hr/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/hr/LC_MESSAGES/nepomukserver.mo
 share/locale/hr/LC_MESSAGES/nepomukservicestub.mo
@@ -411,6 +412,7 @@ share/locale/hr/LC_MESSAGES/okular_tiff.mo
 share/locale/hr/LC_MESSAGES/okular_xps.mo
 share/locale/hr/LC_MESSAGES/palapeli.mo
 share/locale/hr/LC_MESSAGES/parley.mo
+share/locale/hr/LC_MESSAGES/phonon-xine.mo
 share/locale/hr/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/hr/LC_MESSAGES/phonon_kde.mo
 share/locale/hr/LC_MESSAGES/phononserver.mo
@@ -457,6 +459,7 @@ share/locale/hr/LC_MESSAGES/plasma_applet_news.mo
 share/locale/hr/LC_MESSAGES/plasma_applet_newspaper.mo
 share/locale/hr/LC_MESSAGES/plasma_applet_notes.mo
 share/locale/hr/LC_MESSAGES/plasma_applet_notifications.mo
+share/locale/hr/LC_MESSAGES/plasma_applet_notifier.mo
 share/locale/hr/LC_MESSAGES/plasma_applet_nowplaying.mo
 share/locale/hr/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
 share/locale/hr/LC_MESSAGES/plasma_applet_opendesktop.mo

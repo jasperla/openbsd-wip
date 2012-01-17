@@ -40,6 +40,7 @@ share/locale/kk/LC_MESSAGES/akonadi_strigi_feeder.mo
 share/locale/kk/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/kk/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/kk/LC_MESSAGES/akonadicontact.mo
+share/locale/kk/LC_MESSAGES/akonadinotes.mo
 share/locale/kk/LC_MESSAGES/akonaditray.mo
 share/locale/kk/LC_MESSAGES/akregator.mo
 share/locale/kk/LC_MESSAGES/akregator_konqplugin.mo
@@ -65,7 +66,9 @@ share/locale/kk/LC_MESSAGES/dragonplayer.mo
 share/locale/kk/LC_MESSAGES/drkonqi.mo
 share/locale/kk/LC_MESSAGES/filelight.mo
 share/locale/kk/LC_MESSAGES/filetypes.mo
+share/locale/kk/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/kk/LC_MESSAGES/fileviewgitplugin.mo
+share/locale/kk/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/kk/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/kk/LC_MESSAGES/freespacenotifier.mo
 share/locale/kk/LC_MESSAGES/fsview.mo
@@ -207,7 +210,6 @@ share/locale/kk/LC_MESSAGES/kdelibs4.mo
 share/locale/kk/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/kk/LC_MESSAGES/kdepasswd.mo
 share/locale/kk/LC_MESSAGES/kdepim-runtime-qml.mo
-share/locale/kk/LC_MESSAGES/kdepimwizards.mo
 share/locale/kk/LC_MESSAGES/kdeqt.mo
 share/locale/kk/LC_MESSAGES/kdesu.mo
 share/locale/kk/LC_MESSAGES/kdesud.mo
@@ -270,7 +272,6 @@ share/locale/kk/LC_MESSAGES/kio_bookmarks.mo
 share/locale/kk/LC_MESSAGES/kio_finger.mo
 share/locale/kk/LC_MESSAGES/kio_fish.mo
 share/locale/kk/LC_MESSAGES/kio_floppy.mo
-share/locale/kk/LC_MESSAGES/kio_groupwise.mo
 share/locale/kk/LC_MESSAGES/kio_help4.mo
 share/locale/kk/LC_MESSAGES/kio_imap4.mo
 share/locale/kk/LC_MESSAGES/kio_info.mo
@@ -296,6 +297,7 @@ share/locale/kk/LC_MESSAGES/kio_trash.mo
 share/locale/kk/LC_MESSAGES/kio_zeroconf.mo
 share/locale/kk/LC_MESSAGES/kioclient.mo
 share/locale/kk/LC_MESSAGES/kioexec.mo
+share/locale/kk/LC_MESSAGES/kiten.mo
 share/locale/kk/LC_MESSAGES/kjots.mo
 share/locale/kk/LC_MESSAGES/kjotsmigrator.mo
 share/locale/kk/LC_MESSAGES/kleopatra.mo
@@ -342,7 +344,6 @@ share/locale/kk/LC_MESSAGES/kreadconfig.mo
 share/locale/kk/LC_MESSAGES/kremotecontroldaemon.mo
 share/locale/kk/LC_MESSAGES/kres-migrator.mo
 share/locale/kk/LC_MESSAGES/kres_blog.mo
-share/locale/kk/LC_MESSAGES/kres_groupwise.mo
 share/locale/kk/LC_MESSAGES/kres_remote.mo
 share/locale/kk/LC_MESSAGES/kresources_shared_akonadi.mo
 share/locale/kk/LC_MESSAGES/krfb.mo
@@ -351,6 +352,11 @@ share/locale/kk/LC_MESSAGES/krunner.mo
 share/locale/kk/LC_MESSAGES/ksaneplugin.mo
 share/locale/kk/LC_MESSAGES/kscd.mo
 share/locale/kk/LC_MESSAGES/kscreensaver.mo
+share/locale/kk/LC_MESSAGES/ksecrets_kio.mo
+share/locale/kk/LC_MESSAGES/ksecrets_ksecrets.mo
+share/locale/kk/LC_MESSAGES/ksecretsservice_api.mo
+share/locale/kk/LC_MESSAGES/ksecretsserviced.mo
+share/locale/kk/LC_MESSAGES/ksecretsync.mo
 share/locale/kk/LC_MESSAGES/ksendemail.mo
 share/locale/kk/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/kk/LC_MESSAGES/kshorturifilter.mo
@@ -366,6 +372,7 @@ share/locale/kk/LC_MESSAGES/ksysguard.mo
 share/locale/kk/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/kk/LC_MESSAGES/ksystemlog.mo
 share/locale/kk/LC_MESSAGES/ksystraycmd.mo
+share/locale/kk/LC_MESSAGES/kte_acomment.mo
 share/locale/kk/LC_MESSAGES/kteatime.mo
 share/locale/kk/LC_MESSAGES/ktesnippets_editor.mo
 share/locale/kk/LC_MESSAGES/ktexteditor_codesnippets_core.mo
@@ -388,6 +395,7 @@ share/locale/kk/LC_MESSAGES/kwin_clients.mo
 share/locale/kk/LC_MESSAGES/kwin_effects.mo
 share/locale/kk/LC_MESSAGES/kwinshutdown.mo
 share/locale/kk/LC_MESSAGES/kwinstartmenu.mo
+share/locale/kk/LC_MESSAGES/kwl2kss.mo
 share/locale/kk/LC_MESSAGES/kwrite.mo
 share/locale/kk/LC_MESSAGES/kwriteconfig.mo
 share/locale/kk/LC_MESSAGES/kxkb.mo
@@ -449,9 +457,11 @@ share/locale/kk/LC_MESSAGES/librtm.mo
 share/locale/kk/LC_MESSAGES/libtaskmanager.mo
 share/locale/kk/LC_MESSAGES/libtemplateparser.mo
 share/locale/kk/LC_MESSAGES/lokalize.mo
+share/locale/kk/LC_MESSAGES/mailfilteragent.mo
 share/locale/kk/LC_MESSAGES/mailreader.mo
 share/locale/kk/LC_MESSAGES/marble.mo
 share/locale/kk/LC_MESSAGES/marble_qt.mo
+share/locale/kk/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/kk/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/kk/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/kk/LC_MESSAGES/messageviewer_text_xdiff_plugin.mo
@@ -488,6 +498,7 @@ share/locale/kk/LC_MESSAGES/okular_plucker.mo
 share/locale/kk/LC_MESSAGES/okular_poppler.mo
 share/locale/kk/LC_MESSAGES/okular_tiff.mo
 share/locale/kk/LC_MESSAGES/okular_xps.mo
+share/locale/kk/LC_MESSAGES/parley.mo
 share/locale/kk/LC_MESSAGES/phonon-xine.mo
 share/locale/kk/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/kk/LC_MESSAGES/phonon_kde.mo
@@ -517,6 +528,7 @@ share/locale/kk/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/kk/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
 share/locale/kk/LC_MESSAGES/plasma_applet_groupingpanel.mo
 share/locale/kk/LC_MESSAGES/plasma_applet_icon.mo
+share/locale/kk/LC_MESSAGES/plasma_applet_icontasks.mo
 share/locale/kk/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/kk/LC_MESSAGES/plasma_applet_katesession.mo
 share/locale/kk/LC_MESSAGES/plasma_applet_kdeobservatory.mo
@@ -630,6 +642,7 @@ share/locale/kk/LC_MESSAGES/plasma_wallpaper_image.mo
 share/locale/kk/LC_MESSAGES/plasma_wallpaper_mandelbrot.mo
 share/locale/kk/LC_MESSAGES/plasma_wallpaper_marble.mo
 share/locale/kk/LC_MESSAGES/plasma_wallpaper_pattern.mo
+share/locale/kk/LC_MESSAGES/plasma_wallpaper_potd.mo
 share/locale/kk/LC_MESSAGES/plasma_wallpaper_virus.mo
 share/locale/kk/LC_MESSAGES/plasma_wallpaper_weather.mo
 share/locale/kk/LC_MESSAGES/plasmaengineexplorer.mo
@@ -638,6 +651,7 @@ share/locale/kk/LC_MESSAGES/plasmapkg.mo
 share/locale/kk/LC_MESSAGES/plasmawallpaperviewer.mo
 share/locale/kk/LC_MESSAGES/plasmoidviewer.mo
 share/locale/kk/LC_MESSAGES/powerdevil.mo
+share/locale/kk/LC_MESSAGES/powerdevilactivitiesconfig.mo
 share/locale/kk/LC_MESSAGES/powerdevilglobalconfig.mo
 share/locale/kk/LC_MESSAGES/powerdevilprofilesconfig.mo
 share/locale/kk/LC_MESSAGES/printer-applet.mo
@@ -653,6 +667,7 @@ share/locale/kk/LC_MESSAGES/solid_qt.mo
 share/locale/kk/LC_MESSAGES/solidcontrol.mo
 share/locale/kk/LC_MESSAGES/soliduiserver.mo
 share/locale/kk/LC_MESSAGES/spy.mo
+share/locale/kk/LC_MESSAGES/step.mo
 share/locale/kk/LC_MESSAGES/strigila_diff.mo
 share/locale/kk/LC_MESSAGES/superkaramba.mo
 share/locale/kk/LC_MESSAGES/svgpart.mo

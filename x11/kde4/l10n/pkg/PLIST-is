@@ -149,7 +149,6 @@ share/locale/is/LC_MESSAGES/kdecalendarsystems.mo
 share/locale/is/LC_MESSAGES/kdelibs4.mo
 share/locale/is/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/is/LC_MESSAGES/kdepasswd.mo
-share/locale/is/LC_MESSAGES/kdepimwizards.mo
 share/locale/is/LC_MESSAGES/kdeqt.mo
 share/locale/is/LC_MESSAGES/kdesu.mo
 share/locale/is/LC_MESSAGES/kdesud.mo
@@ -215,7 +214,6 @@ share/locale/is/LC_MESSAGES/kio_bookmarks.mo
 share/locale/is/LC_MESSAGES/kio_finger.mo
 share/locale/is/LC_MESSAGES/kio_fish.mo
 share/locale/is/LC_MESSAGES/kio_floppy.mo
-share/locale/is/LC_MESSAGES/kio_groupwise.mo
 share/locale/is/LC_MESSAGES/kio_help4.mo
 share/locale/is/LC_MESSAGES/kio_imap4.mo
 share/locale/is/LC_MESSAGES/kio_info.mo
@@ -286,7 +284,6 @@ share/locale/is/LC_MESSAGES/krandr.mo
 share/locale/is/LC_MESSAGES/krdb.mo
 share/locale/is/LC_MESSAGES/krdc.mo
 share/locale/is/LC_MESSAGES/kreadconfig.mo
-share/locale/is/LC_MESSAGES/kres_groupwise.mo
 share/locale/is/LC_MESSAGES/kres_remote.mo
 share/locale/is/LC_MESSAGES/kreversi.mo
 share/locale/is/LC_MESSAGES/krfb.mo

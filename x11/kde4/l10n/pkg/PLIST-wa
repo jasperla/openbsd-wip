@@ -34,7 +34,6 @@ share/apps/ktuberling/sounds/wa/egypt_yebe.ogg
 share/apps/ktuberling/sounds/wa/fleur.ogg
 share/apps/ktuberling/sounds/wa/flo.ogg
 share/apps/ktuberling/sounds/wa/medaye.ogg
-share/apps/ktuberling/sounds/wa/monsieu-crompire.ogg
 share/apps/ktuberling/sounds/wa/monte.ogg
 share/apps/ktuberling/sounds/wa/moon_astronote.ogg
 share/apps/ktuberling/sounds/wa/moon_daegne.ogg
@@ -296,6 +295,7 @@ share/locale/wa/LC_MESSAGES/kwalletd.mo
 share/locale/wa/LC_MESSAGES/kwin.mo
 share/locale/wa/LC_MESSAGES/kwin_clients.mo
 share/locale/wa/LC_MESSAGES/kwin_effects.mo
+share/locale/wa/LC_MESSAGES/kwinshutdown.mo
 share/locale/wa/LC_MESSAGES/kwinstartmenu.mo
 share/locale/wa/LC_MESSAGES/kwrite.mo
 share/locale/wa/LC_MESSAGES/kwriteconfig.mo
@@ -324,6 +324,7 @@ share/locale/wa/LC_MESSAGES/lokalize.mo
 share/locale/wa/LC_MESSAGES/marble.mo
 share/locale/wa/LC_MESSAGES/marble_qt.mo
 share/locale/wa/LC_MESSAGES/nepomukbackup.mo
+share/locale/wa/LC_MESSAGES/nepomukcontroller.mo
 share/locale/wa/LC_MESSAGES/nepomukfileindexer.mo
 share/locale/wa/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/wa/LC_MESSAGES/nepomukserver.mo
@@ -351,6 +352,7 @@ share/locale/wa/LC_MESSAGES/phononserver.mo
 share/locale/wa/LC_MESSAGES/plasma-desktop.mo
 share/locale/wa/LC_MESSAGES/plasma-netbook.mo
 share/locale/wa/LC_MESSAGES/plasma-overlay.mo
+share/locale/wa/LC_MESSAGES/plasma-remote-helper.mo
 share/locale/wa/LC_MESSAGES/plasma-windowed.mo
 share/locale/wa/LC_MESSAGES/plasma_applet_BbalL.mo
 share/locale/wa/LC_MESSAGES/plasma_applet_CharSelectApplet.mo

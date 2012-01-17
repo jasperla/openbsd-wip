@@ -234,7 +234,6 @@ share/locale/tr/LC_MESSAGES/kdecalendarsystems.mo
 share/locale/tr/LC_MESSAGES/kdelibs4.mo
 share/locale/tr/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/tr/LC_MESSAGES/kdepasswd.mo
-share/locale/tr/LC_MESSAGES/kdepimwizards.mo
 share/locale/tr/LC_MESSAGES/kdeqt.mo
 share/locale/tr/LC_MESSAGES/kdesu.mo
 share/locale/tr/LC_MESSAGES/kdesud.mo
@@ -305,7 +304,6 @@ share/locale/tr/LC_MESSAGES/kio_bookmarks.mo
 share/locale/tr/LC_MESSAGES/kio_finger.mo
 share/locale/tr/LC_MESSAGES/kio_fish.mo
 share/locale/tr/LC_MESSAGES/kio_floppy.mo
-share/locale/tr/LC_MESSAGES/kio_groupwise.mo
 share/locale/tr/LC_MESSAGES/kio_help4.mo
 share/locale/tr/LC_MESSAGES/kio_imap4.mo
 share/locale/tr/LC_MESSAGES/kio_info.mo
@@ -390,7 +388,6 @@ share/locale/tr/LC_MESSAGES/kreadconfig.mo
 share/locale/tr/LC_MESSAGES/kremotecontroldaemon.mo
 share/locale/tr/LC_MESSAGES/kres-migrator.mo
 share/locale/tr/LC_MESSAGES/kres_blog.mo
-share/locale/tr/LC_MESSAGES/kres_groupwise.mo
 share/locale/tr/LC_MESSAGES/kres_remote.mo
 share/locale/tr/LC_MESSAGES/kresources_shared_akonadi.mo
 share/locale/tr/LC_MESSAGES/kreversi.mo
@@ -459,6 +456,7 @@ share/locale/tr/LC_MESSAGES/libakonadi-kmime.mo
 share/locale/tr/LC_MESSAGES/libakonadi.mo
 share/locale/tr/LC_MESSAGES/libeventviews.mo
 share/locale/tr/LC_MESSAGES/libincidenceeditors.mo
+share/locale/tr/LC_MESSAGES/libkalarmcal.mo
 share/locale/tr/LC_MESSAGES/libkasten.mo
 share/locale/tr/LC_MESSAGES/libkblog.mo
 share/locale/tr/LC_MESSAGES/libkcal.mo
@@ -523,6 +521,7 @@ share/locale/tr/LC_MESSAGES/minitoolsplugin.mo
 share/locale/tr/LC_MESSAGES/mplayerthumbs.mo
 share/locale/tr/LC_MESSAGES/mplayerthumbsconfig.mo
 share/locale/tr/LC_MESSAGES/nepomukbackup.mo
+share/locale/tr/LC_MESSAGES/nepomukfileindexer.mo
 share/locale/tr/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/tr/LC_MESSAGES/nepomukserver.mo
 share/locale/tr/LC_MESSAGES/nepomukservicestub.mo
@@ -551,6 +550,7 @@ share/locale/tr/LC_MESSAGES/okular_tiff.mo
 share/locale/tr/LC_MESSAGES/okular_xps.mo
 share/locale/tr/LC_MESSAGES/palapeli.mo
 share/locale/tr/LC_MESSAGES/parley.mo
+share/locale/tr/LC_MESSAGES/phonon-xine.mo
 share/locale/tr/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/tr/LC_MESSAGES/phonon_kde.mo
 share/locale/tr/LC_MESSAGES/phononserver.mo
@@ -602,6 +602,7 @@ share/locale/tr/LC_MESSAGES/plasma_applet_news.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_newspaper.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_notes.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_notifications.mo
+share/locale/tr/LC_MESSAGES/plasma_applet_notifier.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_nowplaying.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_opendesktop.mo

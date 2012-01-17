@@ -173,6 +173,7 @@ share/locale/id/LC_MESSAGES/liboktetacore.mo
 share/locale/id/LC_MESSAGES/libphonon.mo
 share/locale/id/LC_MESSAGES/libplasmaclock.mo
 share/locale/id/LC_MESSAGES/libtaskmanager.mo
+share/locale/id/LC_MESSAGES/nepomukfileindexer.mo
 share/locale/id/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/id/LC_MESSAGES/nepomukserver.mo
 share/locale/id/LC_MESSAGES/nepomukservicestub.mo
@@ -180,6 +181,7 @@ share/locale/id/LC_MESSAGES/nepomukstorage.mo
 share/locale/id/LC_MESSAGES/nsplugin.mo
 share/locale/id/LC_MESSAGES/okteta.mo
 share/locale/id/LC_MESSAGES/oktetapart.mo
+share/locale/id/LC_MESSAGES/phonon-xine.mo
 share/locale/id/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/id/LC_MESSAGES/phonon_kde.mo
 share/locale/id/LC_MESSAGES/phononserver.mo
@@ -198,6 +200,7 @@ share/locale/id/LC_MESSAGES/plasma_applet_lockout.mo
 share/locale/id/LC_MESSAGES/plasma_applet_netpanel.mo
 share/locale/id/LC_MESSAGES/plasma_applet_newspaper.mo
 share/locale/id/LC_MESSAGES/plasma_applet_notifications.mo
+share/locale/id/LC_MESSAGES/plasma_applet_notifier.mo
 share/locale/id/LC_MESSAGES/plasma_applet_pager.mo
 share/locale/id/LC_MESSAGES/plasma_applet_panel.mo
 share/locale/id/LC_MESSAGES/plasma_applet_panelspacer_internal.mo
