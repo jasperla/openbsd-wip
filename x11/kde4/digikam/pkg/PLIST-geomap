@@ -1,5 +1,6 @@
 @comment $OpenBSD$
 @bin bin/libkgeomap_demo
+include/libkgeomap/
 include/libkgeomap/abstractmarkertiler.h
 include/libkgeomap/dragdrophandler.h
 include/libkgeomap/geocoordinates.h
@@ -12,38 +13,14 @@ include/libkgeomap/lookup_factory.h
 include/libkgeomap/modelhelper.h
 include/libkgeomap/tileindex.h
 include/libkgeomap/version.h
+@lib lib/libkgeomap.so.${LIBkgeomap_VERSION}
 lib/pkgconfig/libkgeomap.pc
 share/apps/cmake/modules/FindKGeoMap.cmake
+share/apps/gpssync/
 share/apps/gpssync/bookmarks-marker.png
 share/apps/gpssync/searchmarker-normal.png
 share/apps/gpssync/searchmarker-selected.png
-share/apps/kipiplugin_expoblending/
-share/apps/kipiplugin_expoblending/pics/
-share/apps/kipiplugin_flashexport/
-share/apps/kipiplugin_flashexport/simpleviewer_html/
-share/apps/kipiplugin_galleryexport/
-share/apps/kipiplugin_galleryexport/pics/
-share/apps/kipiplugin_htmlexport/
-share/apps/kipiplugin_htmlexport/themes/
-share/apps/kipiplugin_htmlexport/themes/classic/
-share/apps/kipiplugin_htmlexport/themes/cleanframes/
-share/apps/kipiplugin_htmlexport/themes/dateframes/
-share/apps/kipiplugin_htmlexport/themes/details/
-share/apps/kipiplugin_htmlexport/themes/floating_cards/
-share/apps/kipiplugin_htmlexport/themes/frames/
-share/apps/kipiplugin_htmlexport/themes/matrix/
-share/apps/kipiplugin_htmlexport/themes/s0/
-share/apps/kipiplugin_htmlexport/themes/simple/
-share/apps/kipiplugin_htmlexport/themes/snow/
-share/apps/kipiplugin_imageviewer/
-share/apps/kipiplugin_imageviewer/pics/
-share/apps/kipiplugin_panorama/
-share/apps/kipiplugin_panorama/pics/
-share/apps/kipiplugin_piwigoexport/
-share/apps/kipiplugin_piwigoexport/pics/
-share/apps/kipiplugin_printimages/
-share/apps/kipiplugin_printimages/templates/
-share/apps/kipiplugin_removeredeyes/
+share/apps/libkgeomap/
 share/apps/libkgeomap/backend-googlemaps-js.js
 share/apps/libkgeomap/backend-googlemaps.html
 share/apps/libkgeomap/backend-osm-js.js
@@ -79,10 +56,33 @@ share/apps/libkgeomap/marker-ffff00-selected.png
 share/apps/libkgeomap/marker-ffff00-someselected.png
 share/apps/libkgeomap/marker-ffff00.png
 share/apps/libkgeomap/marker-icon-16x16.png
-share/doc/HTML/en/kipi-plugins/
 share/icons/hicolor/16x16/actions/gpsimagetag.png
 share/icons/hicolor/32x32/actions/gpsimagetag.png
+share/locale/bg/LC_MESSAGES/libkgeomap.mo
+share/locale/bs/LC_MESSAGES/libkgeomap.mo
+share/locale/cs/LC_MESSAGES/libkgeomap.mo
+share/locale/da/LC_MESSAGES/libkgeomap.mo
+share/locale/de/LC_MESSAGES/libkgeomap.mo
+share/locale/el/LC_MESSAGES/libkgeomap.mo
+share/locale/en_GB/LC_MESSAGES/libkgeomap.mo
+share/locale/es/LC_MESSAGES/libkgeomap.mo
+share/locale/et/LC_MESSAGES/libkgeomap.mo
+share/locale/fr/LC_MESSAGES/libkgeomap.mo
+share/locale/ga/LC_MESSAGES/libkgeomap.mo
+share/locale/it/LC_MESSAGES/libkgeomap.mo
+share/locale/ja/LC_MESSAGES/libkgeomap.mo
+share/locale/lt/LC_MESSAGES/libkgeomap.mo
+share/locale/nb/LC_MESSAGES/libkgeomap.mo
+share/locale/nds/LC_MESSAGES/libkgeomap.mo
+share/locale/nl/LC_MESSAGES/libkgeomap.mo
+share/locale/pl/LC_MESSAGES/libkgeomap.mo
+share/locale/pt/LC_MESSAGES/libkgeomap.mo
+share/locale/pt_BR/LC_MESSAGES/libkgeomap.mo
+share/locale/ro/LC_MESSAGES/libkgeomap.mo
+share/locale/sk/LC_MESSAGES/libkgeomap.mo
+share/locale/sv/LC_MESSAGES/libkgeomap.mo
+share/locale/uk/LC_MESSAGES/libkgeomap.mo
+share/locale/zh_CN/LC_MESSAGES/libkgeomap.mo
+share/locale/zh_TW/LC_MESSAGES/libkgeomap.mo
 @exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-share/icons/oxygen/scalable/
-share/icons/oxygen/scalable/apps/
