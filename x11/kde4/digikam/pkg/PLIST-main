@@ -2,7 +2,6 @@
 bin/cleanup_digikamdb
 @bin bin/digikam
 bin/digitaglinktree
-@bin bin/photolayoutseditor
 @bin bin/showfoto
 include/libkface/
 include/libkface/database.h
@@ -12,29 +11,6 @@ include/libkface/image.h
 include/libkface/libkface_export.h
 include/libkface/recognitiondatabase.h
 include/libkface/version.h
-include/libmediawiki/
-include/libmediawiki/edit.h
-include/libmediawiki/generalinfo.h
-include/libmediawiki/image.h
-include/libmediawiki/imageinfo.h
-include/libmediawiki/job.h
-include/libmediawiki/login.h
-include/libmediawiki/logout.h
-include/libmediawiki/mediawiki.h
-include/libmediawiki/mediawiki_export.h
-include/libmediawiki/page.h
-include/libmediawiki/parse.h
-include/libmediawiki/protection.h
-include/libmediawiki/queryimageinfo.h
-include/libmediawiki/queryimages.h
-include/libmediawiki/queryinfo.h
-include/libmediawiki/queryrevision.h
-include/libmediawiki/querysiteinfogeneral.h
-include/libmediawiki/querysiteinfousergroups.h
-include/libmediawiki/revision.h
-include/libmediawiki/upload.h
-include/libmediawiki/usergroup.h
-include/libmediawiki/version.h
 lib/kde4/digikamimageplugin_color.so
 lib/kde4/digikamimageplugin_decorate.so
 lib/kde4/digikamimageplugin_enhance.so
@@ -46,17 +22,11 @@ lib/kde4/kio_digikamdates.so
 lib/kde4/kio_digikammapimages.so
 lib/kde4/kio_digikamsearch.so
 lib/kde4/kio_digikamtags.so
-lib/kde4/kipiplugin_photolayoutseditor.so
 lib/libPropertyBrowser.a
 @lib lib/libdigikamcore.so.${LIBdigikamcore_VERSION}
 @lib lib/libdigikamdatabase.so.${LIBdigikamdatabase_VERSION}
 @lib lib/libkface.so.${LIBkface_VERSION}
-@lib lib/libkgeomap.so.${LIBkgeomap_VERSION}
-@lib lib/libkipiplugins.so.${LIBkipiplugins_VERSION}
-@lib lib/libkvkontakte.so.${LIBkvkontakte_VERSION}
-@lib lib/libmediawiki.so.${LIBmediawiki_VERSION}
 lib/pkgconfig/libkface.pc
-lib/pkgconfig/libmediawiki.pc
 @man man/man1/cleanup_digikamdb.1
 @man man/man1/digitaglinktree.1
 share/applications/kde4/digikam.desktop
@@ -921,6 +891,63 @@ share/kde4/services/kipiplugin_photolayoutseditor.desktop
 share/kde4/servicetypes/digikamimageplugin.desktop
 share/kde4/servicetypes/photolayoutseditorborderplugin.desktop
 share/kde4/servicetypes/photolayoutseditoreffectplugin.desktop
+share/locale/ar/LC_MESSAGES/digikam.mo
+share/locale/be/LC_MESSAGES/digikam.mo
+share/locale/bg/LC_MESSAGES/digikam.mo
+share/locale/bs/LC_MESSAGES/digikam.mo
+share/locale/ca/LC_MESSAGES/digikam.mo
+share/locale/cs/LC_MESSAGES/digikam.mo
+share/locale/da/LC_MESSAGES/digikam.mo
+share/locale/de/LC_MESSAGES/digikam.mo
+share/locale/el/LC_MESSAGES/digikam.mo
+share/locale/en_GB/LC_MESSAGES/digikam.mo
+share/locale/eo/LC_MESSAGES/digikam.mo
+share/locale/es/LC_MESSAGES/digikam.mo
+share/locale/et/LC_MESSAGES/digikam.mo
+share/locale/eu/LC_MESSAGES/digikam.mo
+share/locale/fa/LC_MESSAGES/digikam.mo
+share/locale/fi/LC_MESSAGES/digikam.mo
+share/locale/fr/LC_MESSAGES/digikam.mo
+share/locale/ga/LC_MESSAGES/digikam.mo
+share/locale/gl/LC_MESSAGES/digikam.mo
+share/locale/he/LC_MESSAGES/digikam.mo
+share/locale/hi/LC_MESSAGES/digikam.mo
+share/locale/hr/LC_MESSAGES/digikam.mo
+share/locale/hu/LC_MESSAGES/digikam.mo
+share/locale/is/LC_MESSAGES/digikam.mo
+share/locale/it/LC_MESSAGES/digikam.mo
+share/locale/ja/LC_MESSAGES/digikam.mo
+share/locale/km/
+share/locale/km/LC_MESSAGES/
+share/locale/km/LC_MESSAGES/digikam.mo
+share/locale/ko/LC_MESSAGES/digikam.mo
+share/locale/lt/LC_MESSAGES/digikam.mo
+share/locale/lv/LC_MESSAGES/digikam.mo
+share/locale/ms/LC_MESSAGES/digikam.mo
+share/locale/nb/LC_MESSAGES/digikam.mo
+share/locale/nds/LC_MESSAGES/digikam.mo
+share/locale/ne/LC_MESSAGES/digikam.mo
+share/locale/nl/LC_MESSAGES/digikam.mo
+share/locale/nn/LC_MESSAGES/digikam.mo
+share/locale/pa/LC_MESSAGES/digikam.mo
+share/locale/pl/LC_MESSAGES/digikam.mo
+share/locale/pt/LC_MESSAGES/digikam.mo
+share/locale/pt_BR/LC_MESSAGES/digikam.mo
+share/locale/ro/LC_MESSAGES/digikam.mo
+share/locale/ru/LC_MESSAGES/digikam.mo
+share/locale/se/
+share/locale/se/LC_MESSAGES/
+share/locale/se/LC_MESSAGES/digikam.mo
+share/locale/sk/LC_MESSAGES/digikam.mo
+share/locale/sl/LC_MESSAGES/digikam.mo
+share/locale/sq/LC_MESSAGES/digikam.mo
+share/locale/sv/LC_MESSAGES/digikam.mo
+share/locale/th/LC_MESSAGES/digikam.mo
+share/locale/tr/LC_MESSAGES/digikam.mo
+share/locale/uk/LC_MESSAGES/digikam.mo
+share/locale/vi/LC_MESSAGES/digikam.mo
+share/locale/zh_CN/LC_MESSAGES/digikam.mo
+share/locale/zh_TW/LC_MESSAGES/digikam.mo
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true

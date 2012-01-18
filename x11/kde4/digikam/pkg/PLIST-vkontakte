@@ -1,5 +1,4 @@
 @comment $OpenBSD$
-include/libkgeomap/
 include/libkvkontakte/
 include/libkvkontakte/albuminfo.h
 include/libkvkontakte/albumlistjob.h
@@ -39,5 +38,4 @@ lib/cmake/LibKVkontakte/LibKVkontakteConfig.cmake
 lib/cmake/LibKVkontakte/LibKVkontakteConfigVersion.cmake
 lib/cmake/LibKVkontakte/LibKVkontakteTargets${MODKDE4_CMAKE_PREFIX}.cmake
 lib/cmake/LibKVkontakte/LibKVkontakteTargets.cmake
-share/apps/gpssync/
-share/apps/libkgeomap/
+@lib lib/libkvkontakte.so.${LIBkvkontakte_VERSION}
