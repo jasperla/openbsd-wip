@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, workspace
 DISTNAME =	kde-workspace-${MODKDE_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	kdecorations			0.0 # 4.7
 SHARED_LIBS +=	kephal				0.0 # 4.7
@@ -63,6 +63,7 @@ MODKDE4_USE =	pim
 BUILD_DEPENDS =	misc/shared-desktop-ontologies
 
 RUN_DEPENDS =	misc/shared-desktop-ontologies \
+		sysutils/lsof \
 		x11/polkit-qt4
 
 LIB_DEPENDS =	audio/xmms \
