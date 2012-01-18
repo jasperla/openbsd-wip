@@ -1,4 +1,4 @@
-Port ksysguard to OpenBSD (sensors framework and others).
+Port ksysguard to OpenBSD (sensors framework, lsof(1) call replace and others).
 
 Use something else instead of pciutils.
 

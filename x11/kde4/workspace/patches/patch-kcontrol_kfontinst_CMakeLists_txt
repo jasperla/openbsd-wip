@@ -1,7 +1,7 @@
 $OpenBSD$
---- kcontrol/kfontinst/CMakeLists.txt.orig	Sun Oct 23 08:44:19 2011
-+++ kcontrol/kfontinst/CMakeLists.txt	Sun Oct 23 08:44:34 2011
-@@ -3,7 +3,7 @@ if (X11_Xft_FOUND)
+--- kcontrol/kfontinst/CMakeLists.txt.orig	Tue Jan  3 23:43:13 2012
++++ kcontrol/kfontinst/CMakeLists.txt	Wed Jan 18 03:31:03 2012
+@@ -14,7 +14,7 @@ if (X11_Xft_FOUND)
      configure_file(config-fontinst.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-fontinst.h)
      include_directories(
          ${KDE4_INCLUDES}
