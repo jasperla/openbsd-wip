@@ -1,0 +1,12 @@
+$OpenBSD$
+--- libkipi/pluginloader.h.orig	Wed Jan 18 15:02:17 2012
++++ libkipi/pluginloader.h	Wed Jan 18 15:02:48 2012
+@@ -148,6 +148,8 @@ class LIBKIPI_EXPORT ConfigWidget : public QListWidget
+ public Q_SLOTS:
+ 
+     void apply();
++    void slotClear();
++    void slotCheckAll();
+ 
+ private:
+ 
