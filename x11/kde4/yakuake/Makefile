@@ -3,7 +3,7 @@
 COMMENT =	drop-down KDE terminal emulator
 VERSION =	2.9.8
 DISTNAME =	yakuake-${VERSION}
-REVISION =	0
+REVISION =	1
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/yakuake/${VERSION}/src/}
 
