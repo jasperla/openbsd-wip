@@ -666,7 +666,6 @@ lib/osgPlugins-${V}/osgdb_txp.so
 lib/osgPlugins-${V}/osgdb_vtf.so
 lib/osgPlugins-${V}/osgdb_x.so
 lib/osgPlugins-${V}/osgdb_zip.so
-lib/pkgconfig/
 lib/pkgconfig/openscenegraph-osg.pc
 lib/pkgconfig/openscenegraph-osgAnimation.pc
 lib/pkgconfig/openscenegraph-osgDB.pc
