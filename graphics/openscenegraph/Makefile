@@ -41,14 +41,13 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB  = GL Half Iex IlmImf IlmThread QtGui QtOpenGL X11 Xcomposite
-WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB += avcodec avdevice avformat avutil c cairo curl expat
-WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gif
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += iconv intl jasper jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pixman-1 png poppler poppler-glib pthread pthread-stubs
-WANTLIB += rsvg-2 stdc++ swscale tiff xcb xcb-render xcb-shm z
+WANTLIB += GL Half Iex IlmImf IlmThread QtGui QtOpenGL X11 Xrandr
+WANTLIB += Xrender avcodec avdevice avformat avutil c cairo curl
+WANTLIB += expat fontconfig freetype gdk_pixbuf-2.0 gif gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 iconv
+WANTLIB += intl jasper jpeg m pixman-1 png poppler-glib pthread
+WANTLIB += pthread-stubs rsvg-2 stdc++ swscale tiff xcb xcb-render
+WANTLIB += xcb-shm z
 
 MASTER_SITES =		${HOMEPAGE}/downloads/stable_releases/OpenSceneGraph-${V}/source/
 EXTRACT_SUFX =		.zip
