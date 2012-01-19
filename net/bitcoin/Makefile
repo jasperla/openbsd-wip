@@ -30,9 +30,9 @@ MASTER_SITES =		https://github.com/bitcoin/bitcoin/tarball/v${V}/
 LIB_DEPENDS =		devel/glib2 \
 			devel/boost \
 			databases/db/v4 \
-			net/miniupnpc
+			net/miniupnp/miniupnpc
 
-MAKE_FLAGS =		USE_UPNP=0 PIE=1 CXX=${CXX} BOOST_LIB_SUFFIX=-mt\
+MAKE_FLAGS =		USE_UPNP=0 PIE=1 CXX="${CXX}" BOOST_LIB_SUFFIX=-mt \
 			LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/db4" \
 			CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/db4"
 
