@@ -4,7 +4,6 @@ COMMENT =	KDE office suite
 VERSION =	2.3.86
 DISTNAME =	calligra-${VERSION}
 PKGNAME =	${DISTNAME:C/-/4-/1}
-BROKEN =	compile issues, fixed soon
 
 SHARED_LIBS =	flake			0.0 # 8.0
 SHARED_LIBS +=	kokross			0.0 # 8.0
@@ -110,6 +109,7 @@ LIB_DEPENDS =	databases/freetds \
 		math/eigen2 \
 		math/fftw3,double \
 		print/poppler,-qt4 \
+		productivity/librcps \
 		security/qca2 \
 		textproc/libwpd \
 		textproc/libxml \
@@ -120,8 +120,7 @@ LIB_DEPENDS =	databases/freetds \
 
 # Stuff we don't have ATM. Do not bother about CreateResources, it's
 # pure optional run-time dependency.
-CONFIGURE_ARGS =	-DWITH_LibRCPS:BOOL=Off \
-			-DWITH_OpenCTL:BOOL=Off \
+CONFIGURE_ARGS =	-DWITH_OpenCTL:BOOL=Off \
 			-DWITH_Spnav:BOOL=Off \
 			-DWITH_WPG:BOOL=Off \
 			-DWITH_XBase:BOOL=Off
