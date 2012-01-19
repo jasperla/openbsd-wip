@@ -2,7 +2,7 @@
 
 COMMENT =	IDE creation toolkit for KDE
 VERSION =	1.2.3
-REVISION =	1
+REVISION =	2
 DISTNAME =	kdevplatform-${VERSION}
 
 SHARED_LIBS =	kdevplatformdebugger		0.0 # 3.0
