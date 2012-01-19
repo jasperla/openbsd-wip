@@ -1,5 +1,6 @@
 Updating MIME database produces:
-Unknown media type in type 'all/all'                                                                                                                                  
+Unknown media type in type 'all/all'
+
 Unknown media type in type 'all/allfiles'
 Unknown media type in type 'uri/mms'
 Unknown media type in type 'uri/mmst'
@@ -8,6 +9,29 @@ Unknown media type in type 'uri/pnm'
 Unknown media type in type 'uri/rtspt'
 Unknown media type in type 'uri/rtspu'
 Unknown media type in type 'interface/x-winamp-skin'
+
+
+The following error could not be fixed by adding cmake_policy() call to main
+CMakeLists.txt file:
+
+CMake Warning (dev) at /usr/local/share/cmake/Modules/Qt4ConfigDependentSettings
+.cmake:29 (INCLUDE):
+  File /usr/local/share/cmake/Modules/Qt4ConfigDependentSettings.cmake
+  includes
+  /usr/ports/pobj/calligra4-2.3.86/calligra-2.3.86/cmake/modules/FindIconv.cmake
+  (found via CMAKE_MODULE_PATH) which shadows
+  /usr/local/share/cmake/Modules/FindIconv.cmake.  This may cause errors
+  later on .
+
+  Policy CMP0017 is not set: Prefer files from the CMake module directory
+  when including from there.  Run "cmake --help-policy CMP0017" for policy
+  details.  Use the cmake_policy command to set the policy and suppress this
+  warning.
+Call Stack (most recent call first):
+  /usr/local/share/cmake/Modules/FindQt4.cmake:1052 (INCLUDE)
+  filters/words/rtf/import/rtf-qt/CMakeLists.txt:5 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
 
 -- Looking for sys/iconv.h
 -- Looking for sys/iconv.h - not found
@@ -22,10 +46,6 @@ Unknown media type in type 'interface/x-winamp-skin'
    * XBase  <http://linux.techass.com/projects/xdb/>
      XBase compatible C++ class library
      Required by Kexi XBase Migration driver
-
-   * LibRCPS (0.3 or higher)  <http://www.librcps.org>
-     Resource Conflict Project Scheduling Library
-     Required by KPlato RCPS Plugin
 
    * OpenCTL (0.9.10 or higher)  <http://www.opengtl.org>
      Free Color Transformation Language implementation (part of OpenGTL)
