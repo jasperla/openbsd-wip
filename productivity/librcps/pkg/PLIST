@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+%%SHARED%%
+include/librcps.h
+lib/librcps.a
+lib/librcps.la
