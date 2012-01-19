@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS =	amd64 i386 powerpc
 
 COMMENT =		Plan 9 from user space
 
-DISTNAME =		plan9port-20111026
+DISTNAME =		plan9port-20120117
 
 CATEGORIES =		plan9
 
@@ -28,6 +28,8 @@ MASTER_SITES =		${HOMEPAGE}
 MASTER_SITES0 =		http://pdos.lcs.mit.edu/~rsc/software/plan9/
 MASTER_SITES1 =		http://pdos.lcs.mit.edu/~rsc/
 EXTRACT_SUFX =		.tgz
+
+MAKE_ENV =		CC9="${CC}"
 
 BUILD_DEPENDS =		archivers/bzip2
 RUN_DEPENDS =		print/ghostscript/gnu \
@@ -108,8 +110,8 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/man${n}/* ${PLAN9}/man/man${n}
 .endfor
 
-	cd ${WRKSRC} && pax -rw acid dict dist face font include lib log lp \
-		mac mail ndb news plumb postscript proto sky src tmac troff \
+	cd ${WRKSRC} && pax -rw acid dict dist face font include lib lp \
+		mail ndb news plumb postscript proto sky src tmac troff \
 		unix ${PLAN9}
 	cd ${PREFIX} && ln -s ../plan9/bin/9 bin/9
 

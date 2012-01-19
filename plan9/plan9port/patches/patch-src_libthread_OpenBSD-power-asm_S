@@ -1,0 +1,28 @@
+$OpenBSD$
+--- src/libthread/OpenBSD-power-asm.S.orig	Thu Jan 19 20:15:45 2012
++++ src/libthread/OpenBSD-power-asm.S	Thu Jan 19 20:17:35 2012
+@@ -99,8 +99,8 @@ ENTRY(rfork_thread)
+ 	
+ 	mr	%r7,%r4
+ 	
+-	/* call rfork */
+-	li	%r0, SYS_rfork
++	/* call __tfork */
++	li	%r0, SYS___tfork
+ 	sc
+ 	cmpwi	%r0, 0
+ 	bne	2f
+@@ -112,11 +112,11 @@ ENTRY(rfork_thread)
+ 	/* child */
+ 	mtlr	%r5	/* fp */
+ 	mr	%r3, %r6	/* arg */
+-	mr	%r1, %r7	/* new sp */
++	subi	%r1, %r7, 16	/* fixup sp to get headroom*/
+ 	blrl
+ 	
+ 	/* child returned, call _exit */
+-	li	%r0, SYS_exit
++	li	%r0, SYS___threxit
+ 	sc
+ 1:
+ 	li	%r3, -1
