@@ -23,127 +23,127 @@
 #	workspace, baseapps and then the rest of KDE
 
 # basic bricks
-     SUBDIR += akonadi			
-     SUBDIR += attica			
-     SUBDIR += automoc			
-     SUBDIR += oxygen-icons		
+     SUBDIR += akonadi			# untested
+     SUBDIR += attica			# OK
+     SUBDIR += automoc			# OK
+     SUBDIR += oxygen-icons		# OK
 
 # libraries
-     SUBDIR += libs			
-     SUBDIR += pimlibs			
-     SUBDIR += qimageblitz		
+     SUBDIR += libs			# test
+     SUBDIR += pimlibs			# untested
+     SUBDIR += qimageblitz		# test
 
 # extra base
-     SUBDIR += kactivities		
-     SUBDIR += runtime			
-     SUBDIR += pim-runtime		
-     SUBDIR += workspace		
-     SUBDIR += baseapps			
+     SUBDIR += kactivities		# untested
+     SUBDIR += runtime			# test
+     SUBDIR += pim-runtime		# untested
+     SUBDIR += workspace		# untested
+     SUBDIR += baseapps			# test
 
 # bindings and wrappers
-     SUBDIR += kross-interpreters	
-     SUBDIR += p5-kde			
-     SUBDIR += p5-qt			
-     SUBDIR += py-kde			
-     SUBDIR += ruby-qt			
-     SUBDIR += korundum			
-     SUBDIR += qyoto			
-     SUBDIR += kimono			
-     SUBDIR += smokegen
-     SUBDIR += smokekde			
-     SUBDIR += smokeqt			
+     SUBDIR += kross-interpreters	# untested
+     SUBDIR += p5-kde			# untested
+     SUBDIR += p5-qt			# untested
+     SUBDIR += py-kde			# untested
+     SUBDIR += ruby-qt			# untested
+     SUBDIR += korundum			# untested
+     SUBDIR += qyoto			# untested
+     SUBDIR += kimono			# untested
+     SUBDIR += smokegen			# test
+     SUBDIR += smokekde			# untested
+     SUBDIR += smokeqt			# untested
 
 # former accessibility, changed in KDE 4.8 beta/rc, all untested
-     SUBDIR += jovie
-     SUBDIR += kaccessible		
-     SUBDIR += kmousetool		
-     SUBDIR += kmag			
-     SUBDIR += kmouth			
+     SUBDIR += jovie			# untested
+     SUBDIR += kaccessible		# untested
+     SUBDIR += kmousetool		# untested
+     SUBDIR += kmag			# untested
+     SUBDIR += kmouth			# untested
 
 # fat packages
-     SUBDIR += admin			
-     SUBDIR += games			
-     SUBDIR += multimedia		
-     SUBDIR += network			
-     SUBDIR += pim			
-     SUBDIR += sdk			
-     SUBDIR += toys			
-     SUBDIR += webdev			
+     SUBDIR += admin			# test
+     SUBDIR += games			# untested
+     SUBDIR += multimedia		# untested
+     SUBDIR += network			# untested
+     SUBDIR += pim			# untested
+     SUBDIR += sdk			# test
+     SUBDIR += toys			# untested
+     SUBDIR += webdev			# untested
 
 # former kdeutils, changed in KDE 4.8 beta/rc, all untested
-     SUBDIR += ark
-     SUBDIR += filelight
-     SUBDIR += kcalc
-     SUBDIR += kcharselect
-     SUBDIR += kdf
-     SUBDIR += kfloppy
-     SUBDIR += kgpg
-     SUBDIR += kremotecontrol
-     SUBDIR += ktimer
-     SUBDIR += kwallet
-     SUBDIR += printer-applet
-     SUBDIR += superkaramba
-     SUBDIR += sweeper
+     SUBDIR += ark			# test
+     SUBDIR += filelight		# OK
+     SUBDIR += kcalc			# untested
+     SUBDIR += kcharselect		# untested
+     SUBDIR += kdf			# untested
+     SUBDIR += kfloppy			# untested
+     SUBDIR += kgpg			# untested
+     SUBDIR += kremotecontrol		# untested
+     SUBDIR += ktimer			# untested
+     SUBDIR += kwallet			# OK
+     SUBDIR += printer-applet		# untested
+     SUBDIR += superkaramba		# untested
+     SUBDIR += sweeper			# untested
 
 # former kdeedu
-     SUBDIR += blinken			
-     SUBDIR += cantor			
-     SUBDIR += analitza			
-     SUBDIR += kalgebra			
-     SUBDIR += kalzium			
-     SUBDIR += kanagram			
-     SUBDIR += kbruch			
-     SUBDIR += kgeography		
-     SUBDIR += khangman			
-     SUBDIR += kig			
-     SUBDIR += kiten			
-     SUBDIR += klettres			
-     SUBDIR += kmplot			
-     SUBDIR += kstars			
-     SUBDIR += ktouch			
-     SUBDIR += kturtle			
-     SUBDIR += kwordquiz		
-     SUBDIR += libkdeedu		
-     SUBDIR += marble			
-     SUBDIR += parley			
+     SUBDIR += blinken			# untested
+     SUBDIR += cantor			# untested
+     SUBDIR += analitza			# untested
+     SUBDIR += kalgebra			# untested
+     SUBDIR += kalzium			# untested
+     SUBDIR += kanagram			# untested
+     SUBDIR += kbruch			# untested
+     SUBDIR += kgeography		# untested
+     SUBDIR += khangman			# untested
+     SUBDIR += kig			# untested
+     SUBDIR += kiten			# untested
+     SUBDIR += klettres			# untested
+     SUBDIR += kmplot			# untested
+     SUBDIR += kstars			# untested
+     SUBDIR += ktouch			# untested
+     SUBDIR += kturtle			# untested
+     SUBDIR += kwordquiz		# untested
+     SUBDIR += libkdeedu		# test
+     SUBDIR += marble			# test
+     SUBDIR += parley			# untested
      SUBDIR += rocs			# marked BROKEN, needs boost >1.43
-     SUBDIR += step			
+     SUBDIR += step			# untested
 
 # former kdegraphics
-     SUBDIR += digikam			
-     SUBDIR += graphics-strigi-analyzer	
-     SUBDIR += graphics-thumbnailers	
-     SUBDIR += gwenview			
-     SUBDIR += kamera			
-     SUBDIR += kcolorchooser		
-     SUBDIR += kgamma			
-     SUBDIR += kolourpaint		
-     SUBDIR += kruler			
-     SUBDIR += ksaneplugin		
-     SUBDIR += ksnapshot		
-     SUBDIR += libkdcraw		
-     SUBDIR += libkexiv2		
-     SUBDIR += libkipi			
-     SUBDIR += libksane			
-     SUBDIR += mobipocket		
-     SUBDIR += okular
-     SUBDIR += svgpart			
+     SUBDIR += digikam			# test
+     SUBDIR += graphics-strigi-analyzer	# untested
+     SUBDIR += graphics-thumbnailers	# untested
+     SUBDIR += gwenview			# untested
+     SUBDIR += kamera			# untested
+     SUBDIR += kcolorchooser		# untested
+     SUBDIR += kgamma			# untested
+     SUBDIR += kolourpaint		# untested
+     SUBDIR += kruler			# untested
+     SUBDIR += ksaneplugin		# untested
+     SUBDIR += ksnapshot		# untested
+     SUBDIR += libkdcraw		# untested
+     SUBDIR += libkexiv2		# test
+     SUBDIR += libkipi			# test
+     SUBDIR += libksane			# untested
+     SUBDIR += mobipocket		# untested
+     SUBDIR += okular			# test
+     SUBDIR += svgpart			# untested
 
 # other apps
-     SUBDIR += kate			
-     SUBDIR += konsole			
-     SUBDIR += akonadi-googledata	
-     SUBDIR += kdevplatform		
-     SUBDIR += kdevelop
-     SUBDIR += yakuake			
-     SUBDIR += kwebkitpart		
-#     SUBDIR += calligra		# marked BROKEN to fix compile issues...	
-     SUBDIR += libktorrent		
-     SUBDIR += ktorrent			
+     SUBDIR += kate			# test
+     SUBDIR += konsole			# OK
+     SUBDIR += akonadi-googledata	# test
+     SUBDIR += kdevplatform		# untested
+     SUBDIR += kdevelop			# untested
+     SUBDIR += yakuake			# untested
+     SUBDIR += kwebkitpart		# OK
+     SUBDIR += calligra			# untested
+     SUBDIR += libktorrent		# untested
+     SUBDIR += ktorrent			# untested
 
 # additional resources
-     SUBDIR += plasma-addons
-     SUBDIR += l10n			
-     SUBDIR += wallpapers		
+     SUBDIR += plasma-addons		# untested
+     SUBDIR += l10n			# OK
+     SUBDIR += wallpapers		# OK
 
 .include <bsd.port.subdir.mk>
