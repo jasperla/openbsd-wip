@@ -1,0 +1,12 @@
+$OpenBSD$
+--- configure.ac.orig	Fri Jan 20 02:12:36 2012
++++ configure.ac	Fri Jan 20 02:13:11 2012
+@@ -25,7 +25,7 @@ AM_CONFIG_HEADER(config.h)
+ AC_CHECK_LIB(pthread,pthread_create,have_pthread=yes)
+ if test "x$have_pthread" = xyes; then
+ 	AC_DEFINE(HAVE_PTHREAD, ,[Define if we have pthread.])
+-	PTHREAD_LIBS=-lpthread
++	PTHREAD_LIBS=-pthread
+ fi
+ AM_CONDITIONAL(HAVE_PTHREAD, test "$have_pthread" = "yes")
+ AC_SUBST(PTHREAD_LIBS)
