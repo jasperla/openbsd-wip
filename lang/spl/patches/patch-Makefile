@@ -1,0 +1,11 @@
+$OpenBSD$
+--- Makefile.orig	Wed Jan 11 20:34:59 2012
++++ Makefile	Wed Jan 11 20:35:13 2012
+@@ -42,7 +42,6 @@ MAKESCANNERINCLUDE = $(wildcard $(INCLUDEPATH)/*.{word
+ 
+ # compiler flags
+ YACCFLAGS = --verbose
+-CCFLAGS   = -O2 -Wall
+ LEXFLAGS  = -Cem
+ 
+ .PHONY: all clean examples install libspl tar

@@ -1,0 +1,12 @@
+@comment $OpenBSD$
+@bin bin/spl2c
+include/spl.h
+lib/libspl.a
+share/examples/spl/
+share/examples/spl/fibonacci.spl
+share/examples/spl/fibonacci2.spl
+share/examples/spl/guess.spl
+share/examples/spl/hello.spl
+share/examples/spl/primes.spl
+share/examples/spl/reverse.spl
+share/examples/spl/shakesbeer.spl
