@@ -1,14 +1,14 @@
 $OpenBSD$
 Can't use "$" matching here because (G)Make interprets it sooner or later.
---- cmake/modules/KDevPlatformMacros.cmake.orig	Thu Nov  3 01:04:31 2011
-+++ cmake/modules/KDevPlatformMacros.cmake	Thu Nov  3 01:04:37 2011
+--- cmake/modules/KDevPlatformMacros.cmake.orig	Fri Jun 24 22:57:52 2011
++++ cmake/modules/KDevPlatformMacros.cmake	Fri Jan 20 01:17:05 2012
 @@ -56,7 +56,8 @@ macro(kdevplatform_add_app_templates _templateNames)
          else(WIN32)
              add_custom_command(OUTPUT ${_template}
                  COMMAND tar ARGS -c -C ${CMAKE_CURRENT_SOURCE_DIR}/${_templateName}
 -                    --exclude .kdev_ignore --exclude .svn
-+                    -s "@^\(.*/\)*\.kdev_ignore@@"
-+                    -s "@^\(.*/\)*\.svn@@"
++                    -s "@^\\(.*/\\)*\\.kdev_ignore@@"
++                    -s "@^\\(.*/\\)*\\.svn@@"
                      -j -f ${_template} .
                  DEPENDS ${_deps}
              )
