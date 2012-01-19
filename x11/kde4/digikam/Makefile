@@ -1,18 +1,23 @@
 # $OpenBSD$
 
-VERSION =		2.5.0
 COMMENT-main =		K Desktop Environment, photo management utility
 COMMENT-kipi =		collection of image plugins for KDE
 COMMENT-geomap =	KIPI interface library for Marble
 COMMENT-mediawiki =	KIPI interface library for MediaWiki
 COMMENT-vkontakte =	KIPI interface library for VKontakte.Ru
+
+VERSION =		2.5.0
 DISTNAME =		digikam-${VERSION}
+
 PKGNAME =		digikam4-${VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-kipi =		kipi-plugins4-${VERSION}
 PKGNAME-geomap =	libkgeomap-${VERSION}
-PKGNAME-mediawiki =	libmediawiki-${VERSION}
+PKGNAME-mediawiki =	libmediawiki-1.0.0
 PKGNAME-vkontakte =	libkvkontakte-1.0.0
+
+REVISION-mediawiki =	0
+REVISION-vkontakte =	0
 
 SHARED_LIBS =	kipiplugins		0.0
 SHARED_LIBS +=  digikamcore		0.0 # 2.0
@@ -146,7 +151,8 @@ LIB_DEPENDS-geomap =	${LIB_DEPENDS-common} \
 			x11/kde4/libs \
 			x11/kde4/marble
 
-LIB_DEPENDS-mediawiki =	${LIB_DEPENDS-common}
+LIB_DEPENDS-mediawiki =	${LIB_DEPENDS-common} \
+			x11/kde4/libs
 
 LIB_DEPENDS-vkontakte = ${LIB_DEPENDS-common} \
 			devel/qjson \
