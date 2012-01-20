@@ -37,7 +37,7 @@
      SUBDIR += kactivities		# untested
      SUBDIR += runtime			# test
      SUBDIR += pim-runtime		# untested
-     SUBDIR += workspace		# untested
+     SUBDIR += workspace		# test
      SUBDIR += baseapps			# test
 
 # bindings and wrappers
@@ -76,7 +76,7 @@
      SUBDIR += kcalc			# untested
      SUBDIR += kcharselect		# untested
      SUBDIR += kdf			# untested
-     SUBDIR += kfloppy			# untested
+     SUBDIR += kfloppy			# test
      SUBDIR += kgpg			# untested
      SUBDIR += kremotecontrol		# untested
      SUBDIR += ktimer			# untested
@@ -120,7 +120,7 @@
      SUBDIR += kolourpaint		# untested
      SUBDIR += kruler			# untested
      SUBDIR += ksaneplugin		# untested
-     SUBDIR += ksnapshot		# untested
+     SUBDIR += ksnapshot		# test
      SUBDIR += libkdcraw		# untested
      SUBDIR += libkexiv2		# test
      SUBDIR += libkipi			# test
