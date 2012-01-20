@@ -1,9 +1,8 @@
 # $OpenBSD$
 
 COMMENT =	KDE development enviornment
-VERSION =	4.2.3
+VERSION =	4.2.81
 DISTNAME =	kdevelop-${VERSION}
-REVISION =	0
 HOMEPAGE =	http://www.kdevelop.org/
 
 SHARED_LIBS +=	kdev4cmakecommon	0.0
@@ -11,7 +10,7 @@ SHARED_LIBS +=	kdev4cppduchain		0.0
 SHARED_LIBS +=	kdev4cppparser		0.0
 SHARED_LIBS +=	kdev4cpprpp		0.0
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdevelop/${VERSION}/src/}
+MASTER_SITES =	${MASTER_SITE_KDE:=unstable/kdevelop/${VERSION}/src/}
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDesigner lib/qt4/QtGui
@@ -34,7 +33,7 @@ USE_GMAKE =	Yes
 
 BUILD_DEPENDS =	misc/shared-mime-info
 
-LIB_DEPENDS = 	x11/kde4/kdevplatform \
+LIB_DEPENDS = 	x11/kde4/kdevplatform>=${VERSION:C/^4/1/} \
 		x11/kde4/sdk \
 
 .include <bsd.port.mk>

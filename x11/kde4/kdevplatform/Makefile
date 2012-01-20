@@ -20,12 +20,12 @@ SHARED_LIBS +=	sublime				0.0 # 3.0
 MASTER_SITES =	${MASTER_SITE_KDE:=unstable/kdevelop/${VERSION:C/^1/4/}/src/}
 
 WANTLIB =  c m stdc++
-WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDesigner
-WANTLIB += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtScript
-WANTLIB += lib/qt4/QtSvg lib/qt4/QtWebKit lib/qt4/QtXml
-WANTLIB += kcmutils kde3support kdeui kfile kio knewstuff3
+WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
+WANTLIB += lib/qt4/QtScript lib/qt4/QtSvg lib/qt4/QtTest
+WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml
+WANTLIB += kcmutils kdeui kfile kio knewstuff3
 WANTLIB += knotifyconfig kparts krosscore ktexteditor nepomuk
-WANTLIB += nepomukutils soprano threadweaver
+WANTLIB += nepomukutils plasma soprano threadweaver
 WANTLIB += qjson 
 
 # Disable Subversion plugin until KDE bug #283980 get fixed
@@ -38,7 +38,5 @@ LIB_DEPENDS = 	devel/apr \
 #CONFIGURE_ARGS =	-DWITH_SubversionLibrary:BOOL=No
 
 BUILD_DEPENDS =	devel/boost
-
-LIB_DEPENDS =	devel/qjson
 
 .include <bsd.port.mk>
