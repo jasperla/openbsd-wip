@@ -1,4 +1,5 @@
 $OpenBSD$
+Filed as upstream bug 292007
 --- applets/kimpanel/backend/scim/CMakeLists.txt.orig	Thu Jan 19 19:41:33 2012
 +++ applets/kimpanel/backend/scim/CMakeLists.txt	Thu Jan 19 19:42:14 2012
 @@ -5,7 +5,7 @@ if(SCIM_FOUND)
