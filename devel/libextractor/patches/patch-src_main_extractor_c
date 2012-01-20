@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/main/extractor.c.orig	Wed Nov 30 20:28:39 2011
-+++ src/main/extractor.c	Wed Nov 30 20:53:53 2011
+--- src/main/extractor.c.orig	Sun Jun 13 11:27:09 2010
++++ src/main/extractor.c	Fri Jan 20 10:05:09 2012
 @@ -1248,7 +1248,7 @@ process_requests (struct EXTRACTOR_PluginList *plugin,
  	}
  
@@ -19,15 +19,17 @@ $OpenBSD$
    *ptr = NULL;
    if (-1 == (*shmid))
      return 1;    
-@@ -1830,11 +1830,9 @@ extract (struct EXTRACTOR_PluginList *plugins,
+@@ -1830,11 +1830,11 @@ extract (struct EXTRACTOR_PluginList *plugins,
  	munmap (ptr, size);
        if (shmid != -1)
  	close (shmid);
 -      shm_unlink (fn);
++      unlink (fn);
        if (NULL != tptr)
  	{
  	  munmap (tptr, tsize);
 -	  shm_unlink (tfn);
++	  unlink (tfn);
  	  if (tshmid != -1)
  	    close (tshmid);
  	}
