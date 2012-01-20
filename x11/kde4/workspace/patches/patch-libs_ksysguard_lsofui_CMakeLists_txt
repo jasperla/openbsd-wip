@@ -1,4 +1,5 @@
 $OpenBSD$
+Filed as upstream Bug 292008
 --- libs/ksysguard/lsofui/CMakeLists.txt.orig	Thu Jan 19 03:19:38 2012
 +++ libs/ksysguard/lsofui/CMakeLists.txt	Thu Jan 19 03:20:06 2012
 @@ -23,7 +23,7 @@ set(ksysguardlsofwidgets_PART_SRCS

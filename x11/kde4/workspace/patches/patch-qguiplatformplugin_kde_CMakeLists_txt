@@ -1,4 +1,5 @@
 $OpenBSD$
+Filed as upstream Bug 292008
 --- qguiplatformplugin_kde/CMakeLists.txt.orig	Thu Jan 19 03:49:58 2012
 +++ qguiplatformplugin_kde/CMakeLists.txt	Thu Jan 19 03:51:22 2012
 @@ -4,7 +4,7 @@ set(kde_SOURCES  qguiplatformplugin_kde.cpp)
