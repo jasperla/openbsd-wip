@@ -38,7 +38,7 @@
      SUBDIR += runtime			# test
      SUBDIR += pim-runtime		# untested
      SUBDIR += workspace		# test
-     SUBDIR += baseapps			# test
+     SUBDIR += baseapps			# OK
 
 # bindings and wrappers
      SUBDIR += kross-interpreters	# untested
@@ -62,16 +62,16 @@
 
 # fat packages
      SUBDIR += admin			# test
-     SUBDIR += games			# untested
-     SUBDIR += multimedia		# untested
-     SUBDIR += network			# untested
-     SUBDIR += pim			# untested
+     SUBDIR += games			# minor issues
+     SUBDIR += multimedia		# OK, but Kscd needs testing
+     SUBDIR += network			# test
+     SUBDIR += pim			# test
      SUBDIR += sdk			# test
      SUBDIR += toys			# untested
      SUBDIR += webdev			# untested
 
 # former kdeutils, changed in KDE 4.8 beta/rc, all untested
-     SUBDIR += ark			# test
+     SUBDIR += ark			# issues
      SUBDIR += filelight		# OK
      SUBDIR += kcalc			# untested
      SUBDIR += kcharselect		# untested
@@ -86,15 +86,15 @@
      SUBDIR += sweeper			# untested
 
 # former kdeedu
-     SUBDIR += blinken			# untested
-     SUBDIR += cantor			# untested
+     SUBDIR += blinken			# OK
+     SUBDIR += cantor			# issues
      SUBDIR += analitza			# untested
      SUBDIR += kalgebra			# untested
      SUBDIR += kalzium			# untested
      SUBDIR += kanagram			# untested
      SUBDIR += kbruch			# untested
      SUBDIR += kgeography		# untested
-     SUBDIR += khangman			# untested
+     SUBDIR += khangman			# OK
      SUBDIR += kig			# untested
      SUBDIR += kiten			# untested
      SUBDIR += klettres			# untested
@@ -135,7 +135,7 @@
      SUBDIR += akonadi-googledata	# test
      SUBDIR += kdevplatform		# untested
      SUBDIR += kdevelop			# untested
-     SUBDIR += yakuake			# untested
+     SUBDIR += yakuake			# OK
      SUBDIR += kwebkitpart		# OK
      SUBDIR += calligra			# untested
      SUBDIR += libktorrent		# untested
