@@ -1,35 +1,47 @@
 $OpenBSD$
 --- src/main/extractor.c.orig	Sun Jun 13 11:27:09 2010
-+++ src/main/extractor.c	Fri Jan 20 10:05:09 2012
-@@ -1248,7 +1248,7 @@ process_requests (struct EXTRACTOR_PluginList *plugin,
++++ src/main/extractor.c	Fri Jan 20 10:17:52 2012
+@@ -1248,7 +1248,11 @@ process_requests (struct EXTRACTOR_PluginList *plugin,
  	}
  
  #ifndef WINDOWS
--      if ( (-1 != (shmid = shm_open (fn, O_RDONLY, 0))) &&
++#ifdef HAVE_SHM_OPEN
+       if ( (-1 != (shmid = shm_open (fn, O_RDONLY, 0))) &&
++#else
 +      if ( (-1 != (shmid = open (fn, O_RDONLY, 0))) &&
++#endif
  	   (SIZE_MAX != (size = lseek (shmid, 0, SEEK_END))) &&
  	   (NULL != (ptr = mmap (NULL, size, PROT_READ, MAP_SHARED, shmid, 0))) &&
  	   (ptr != (void*) -1) )
-@@ -1624,7 +1624,7 @@ make_shm (int is_tail,
+@@ -1624,7 +1628,11 @@ make_shm (int is_tail,
  	    getpid(),
  	    (unsigned int) RANDOM());
  #ifndef WINDOWS
--  *shmid = shm_open (fn, O_RDWR | O_CREAT, S_IRUSR | S_IWUSR);
++#ifdef HAVE_SHM_OPEN
+   *shmid = shm_open (fn, O_RDWR | O_CREAT, S_IRUSR | S_IWUSR);
++#else
 +  *shmid = open (fn, O_RDWR | O_CREAT, S_IRUSR | S_IWUSR);
++#endif
    *ptr = NULL;
    if (-1 == (*shmid))
      return 1;    
-@@ -1830,11 +1830,11 @@ extract (struct EXTRACTOR_PluginList *plugins,
+@@ -1830,11 +1838,19 @@ extract (struct EXTRACTOR_PluginList *plugins,
  	munmap (ptr, size);
        if (shmid != -1)
  	close (shmid);
--      shm_unlink (fn);
++#ifdef HAVE_SHM_UNLINK
+       shm_unlink (fn);
++#else
 +      unlink (fn);
++#endif
        if (NULL != tptr)
  	{
  	  munmap (tptr, tsize);
--	  shm_unlink (tfn);
++#ifdef HAVE_SHM_UNLINK
+ 	  shm_unlink (tfn);
++#else
 +	  unlink (tfn);
++#endif
  	  if (tshmid != -1)
  	    close (tshmid);
  	}
