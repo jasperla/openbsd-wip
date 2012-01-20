@@ -1,0 +1,1 @@
+Doesn't unpack files with non-ASCII names in path; possibly, libarchive's bug?
