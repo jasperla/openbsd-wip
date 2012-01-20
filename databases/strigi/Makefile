@@ -6,7 +6,7 @@ CATEGORIES =	databases devel textproc sysutils
 
 HOMEPAGE =	http://strigi.sourceforge.net
 DISTNAME =	strigi-0.7.5
-REVISION =	1
+REVISION =	2
 
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	http://www.vandenoever.info/software/strigi/ \
@@ -26,7 +26,7 @@ SHARED_LIBS +=  strigiqtdbusclient 1.0 # .0.5
 
 BUILD_DEPENDS =	devel/cppunit
 
-LIB_DEPENDS =	clucene-core->=0.9.21:textproc/clucene \
+LIB_DEPENDS =	textproc/clucene>=0.9.21 \
 		archivers/bzip2 \
 		graphics/exiv2 \
 		graphics/ffmpeg \

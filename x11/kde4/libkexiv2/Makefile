@@ -2,6 +2,7 @@
 
 COMMENT =	exiv2 wrapper for KDE
 DISTNAME =	libkexiv2-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kexiv2			0.0	# 10.0
 
@@ -12,6 +13,6 @@ WANTLIB += exiv2
 
 MODKDE4_USE =	libs
 
-LIB_DEPENDS = 	exiv2->=0.22:graphics/exiv2
+LIB_DEPENDS = 	graphics/exiv2>=0.22
 
 .include <bsd.port.mk>

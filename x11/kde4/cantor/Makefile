@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, mathematical applications
 DISTNAME =	cantor-${MODKDE_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =  cantorlibs                0.0 # 0.0
 
@@ -15,7 +15,7 @@ WANTLIB += lib/R/lib/R gfortran
 
 LIB_DEPENDS = 	databases/soprano \
 		lang/gfortran,-lib \
-		R->=2.8.1p6:math/R \
+		math/R>=2.8.1p6 \
 		print/libspectre \
 		x11/kde4/analitza
 		

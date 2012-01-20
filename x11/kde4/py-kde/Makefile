@@ -3,6 +3,7 @@
 COMMENT =	KDE 4 bindings for Python
 DISTNAME =	pykde4-${MODKDE_VERSION}
 PKGNAME =	py-kde-${MODKDE_VERSION}
+REVISION =	0
 
 MODULES =	lang/python
 
@@ -24,7 +25,7 @@ BUILD_DEPENDS =	devel/py-sip \
 RUN_DEPENDS =	misc/shared-desktop-ontologies
 
 LIB_DEPENDS = 	databases/soprano \
-		py-qt4->=4.8.4p2:x11/py-qt4 \
+		x11/py-qt4>=4.8.4p2 \
 		x11/polkit-qt4
 
 # One who said that Polkit-Qt-1 is a drop-in replacement
