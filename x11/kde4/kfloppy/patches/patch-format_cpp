@@ -1,7 +1,14 @@
 $OpenBSD$
 --- format.cpp.orig	Fri Jan 20 13:52:03 2012
-+++ format.cpp	Fri Jan 20 14:03:46 2012
-@@ -805,16 +805,18 @@ Ext2Filesystem::Ext2Filesystem(QObject *parent) :
++++ format.cpp	Fri Jan 20 14:33:22 2012
+@@ -799,22 +799,28 @@ void UFSFilesystem::exec()
+ 
+ 
+ /* static */ QString Ext2Filesystem::newfs = QString();
++/* static */ bool Ext2Filesystem::native_mke2fs = true;
+ 
+ Ext2Filesystem::Ext2Filesystem(QObject *parent) :
+ 	FloppyAction(parent)
  {
  	DEBUGSETUP;
  	runtimeCheck();
@@ -18,25 +25,28 @@ $OpenBSD$
 -
 +	
 +	newfs = findExecutable( "newfs_ext2fs" );
-+	if (!newfs.isEmpty())
++	if (!newfs.isEmpty()) {
++		native_mke2fs = false;
 +		return true;
++	}
++	native_mke2fs = true;
 +	newfs = findExecutable( "mke2fs" );
  	return !newfs.isEmpty();
  }
  
-@@ -861,8 +863,14 @@ void Ext2Filesystem::exec()
+@@ -861,8 +867,14 @@ void Ext2Filesystem::exec()
  
  	*p << newfs;
  	*p << "-q";
 -	if (doVerify) *p << QLatin1String( "-c" ) ;
 -	if (doLabel) *p << QLatin1String( "-L" ) << label ;
-+	if (newfs == "newfs_ext2fs") {
-+		if (doVerify) *p << QLatin1String( "-N" ) ;
-+		if (doLabel) *p << QLatin1String( "-v" ) << label ;
-+	} else {
-+		// mke2fs
++	if (native_mke2fs)
 +		if (doVerify) *p << QLatin1String( "-c" ) ;
 +		if (doLabel) *p << QLatin1String( "-L" ) << label ;
++	} else {
++		// newfs_ext2fs
++		if (doVerify) *p << QLatin1String( "-N" ) ;
++		if (doLabel) *p << QLatin1String( "-v" ) << label ;
 +	}
  
  	*p << deviceName ;
