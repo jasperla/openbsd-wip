@@ -3,6 +3,7 @@
 COMMENT =	multimedia layer for Qt4/KDE4
 CATEGORIES =	multimedia devel x11/kde4
 VERSION =	4.5.1
+REVISION =	0
 DISTNAME =	phonon-${VERSION}
 
 # Higher than one in Qt4 to avoid issues
@@ -29,7 +30,7 @@ WANTLIB +=	glib-2.0 m qzeitgeist stdc++ pulse pulse-mainloop-glib
 
 BUILD_DEPENDS =	x11/kde4/automoc
 
-LIB_DEPENDS =	productivity/qzeitgeist \
+LIB_DEPENDS =	productivity/qzeitgeist>=0.7.0 \
 		audio/pulseaudio
 
 SEPARATE_BUILD =	flavored
