@@ -50,7 +50,6 @@ LIB_DEPENDS =	audio/xmms \
 		x11/kde4/qimageblitz
 
 CONFIGURE_ARGS =	-DQCA2_INCLUDE_DIR:PATH=${LOCALBASE}/include/QtCrypto \
-			-DQCA2_DEFINITIONS:STRING=-DQT_SHARED \
 			-DQCA2_LIBRARIES:FILEPATH=${LOCALBASE}/lib/libqca.so.3.0 \
 			-DQCA2_FOUND:BOOL=true
 
