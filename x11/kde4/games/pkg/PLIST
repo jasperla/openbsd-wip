@@ -790,6 +790,9 @@ share/apps/kigo/themes/
 share/apps/kigo/themes/default.desktop
 share/apps/kigo/themes/kigo_default.png
 share/apps/kigo/themes/kigo_default.svgz
+share/apps/kigo/themes/kigo_plain.png
+share/apps/kigo/themes/kigo_plain.svgz
+share/apps/kigo/themes/plain.desktop
 share/apps/killbots/
 share/apps/killbots/killbotsui.rc
 share/apps/killbots/rulesets/
@@ -1906,7 +1909,6 @@ share/icons/hicolor/128x128/apps/ktuberling.png
 share/icons/hicolor/128x128/apps/kubrick.png
 share/icons/hicolor/128x128/apps/lskat.png
 share/icons/hicolor/128x128/apps/palapeli.png
-share/icons/hicolor/128x128/mimetypes/
 share/icons/hicolor/128x128/mimetypes/application-x-palapeli.png
 share/icons/hicolor/128x128/mimetypes/application-x-tuberling.png
 share/icons/hicolor/16x16/apps/bovo.png
@@ -1948,7 +1950,6 @@ share/icons/hicolor/16x16/apps/ktuberling.png
 share/icons/hicolor/16x16/apps/kubrick.png
 share/icons/hicolor/16x16/apps/lskat.png
 share/icons/hicolor/16x16/apps/palapeli.png
-share/icons/hicolor/16x16/mimetypes/
 share/icons/hicolor/16x16/mimetypes/application-x-palapeli.png
 share/icons/hicolor/16x16/mimetypes/application-x-tuberling.png
 share/icons/hicolor/22x22/apps/bovo.png
@@ -1988,16 +1989,10 @@ share/icons/hicolor/22x22/apps/ktron.png
 share/icons/hicolor/22x22/apps/ktuberling.png
 share/icons/hicolor/22x22/apps/kubrick.png
 share/icons/hicolor/22x22/apps/lskat.png
-share/icons/hicolor/22x22/mimetypes/
 share/icons/hicolor/22x22/mimetypes/application-x-tuberling.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/kpat.png
 share/icons/hicolor/24x24/apps/palapeli.png
-share/icons/hicolor/24x24/mimetypes/
 share/icons/hicolor/24x24/mimetypes/application-x-palapeli.png
-share/icons/hicolor/256x256/
-share/icons/hicolor/256x256/apps/
 share/icons/hicolor/256x256/apps/kdesnake.png
 share/icons/hicolor/256x256/apps/kpat.png
 share/icons/hicolor/32x32/apps/bomber.png
@@ -2040,7 +2035,6 @@ share/icons/hicolor/32x32/apps/ktuberling.png
 share/icons/hicolor/32x32/apps/kubrick.png
 share/icons/hicolor/32x32/apps/lskat.png
 share/icons/hicolor/32x32/apps/palapeli.png
-share/icons/hicolor/32x32/mimetypes/
 share/icons/hicolor/32x32/mimetypes/application-x-palapeli.png
 share/icons/hicolor/32x32/mimetypes/application-x-tuberling.png
 share/icons/hicolor/48x48/apps/bomber.png
@@ -2082,7 +2076,6 @@ share/icons/hicolor/48x48/apps/ktuberling.png
 share/icons/hicolor/48x48/apps/kubrick.png
 share/icons/hicolor/48x48/apps/lskat.png
 share/icons/hicolor/48x48/apps/palapeli.png
-share/icons/hicolor/48x48/mimetypes/
 share/icons/hicolor/48x48/mimetypes/application-x-palapeli.png
 share/icons/hicolor/48x48/mimetypes/application-x-tuberling.png
 share/icons/hicolor/64x64/apps/bomber.png
@@ -2124,10 +2117,8 @@ share/icons/hicolor/64x64/apps/ktuberling.png
 share/icons/hicolor/64x64/apps/kubrick.png
 share/icons/hicolor/64x64/apps/lskat.png
 share/icons/hicolor/64x64/apps/palapeli.png
-share/icons/hicolor/64x64/mimetypes/
 share/icons/hicolor/64x64/mimetypes/application-x-palapeli.png
 share/icons/hicolor/64x64/mimetypes/application-x-tuberling.png
-share/icons/hicolor/scalable/actions/
 share/icons/hicolor/scalable/actions/games-kajongg-law.svgz
 share/icons/hicolor/scalable/apps/bomber.svgz
 share/icons/hicolor/scalable/apps/bovo.svgz
