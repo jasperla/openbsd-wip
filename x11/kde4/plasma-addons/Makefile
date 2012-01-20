@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, extra plasmoids
 DISTNAME =	kdeplasma-addons-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	lancelot-datamodels		0.0 # 1.7
 SHARED_LIBS +=	lancelot			0.0 # 1.9
@@ -28,7 +29,7 @@ MODULES =	devel/gettext
 
 MODKDE4_USE =	pim workspace
 
-LIB_DEPENDS =	eigen2->=2.0.3:math/eigen2 \
+LIB_DEPENDS =	math/eigen2>=2.0.3 \
 		inputmethods/scim \
 		math/qalculate/libqalculate \
 		security/qca2 \

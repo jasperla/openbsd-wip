@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, libraries
 DISTNAME =	kdelibs-${MODKDE_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	kde3support          0.0      # .4.0
 SHARED_LIBS +=	kdecore              8.0      # .5.0
@@ -77,7 +77,7 @@ RUN_DEPENDS =	misc/shared-mime-info \
 
 LIB_DEPENDS =	archivers/bzip2 \
 		archivers/xz \
-		attica->=0.2.9:x11/kde4/attica \
+		x11/kde4/attica>=0.2.9 \
 		databases/strigi \
 		devel/bison \
 		devel/pcre \
@@ -85,7 +85,7 @@ LIB_DEPENDS =	archivers/bzip2 \
 		graphics/libungif \
 		graphics/openexr \
 		security/qca2 \
-		soprano->=2.7.3:databases/soprano \
+		databases/soprano>=2.7.3 \
 		sysutils/gamin \
 		textproc/aspell/core \
 		textproc/enchant \

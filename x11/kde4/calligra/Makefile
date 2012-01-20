@@ -2,6 +2,7 @@
 
 COMMENT =	KDE office suite
 VERSION =	2.3.86
+REVISION =	0
 DISTNAME =	calligra-${VERSION}
 PKGNAME =	${DISTNAME:C/-/4-/1}
 
@@ -97,7 +98,7 @@ LIB_DEPENDS =	databases/freetds \
 		devel/glib \
 		devel/gsl \
 		devel/libgsf \
-		dcmtk->=3.5.4p2:graphics/dcmtk \
+		graphics/dcmtk>=3.5.4p2 \
 		graphics/exiv2 \
 		graphics/glew \
 		graphics/jpeg \
