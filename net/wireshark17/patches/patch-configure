@@ -5,9 +5,9 @@ fails as gthread < 3.0.0 not compatible with standard pkg-config.
 
 https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=6737
 
---- configure.orig	Thu Jan 12 15:12:19 2012
-+++ configure	Thu Jan 12 16:06:10 2012
-@@ -18957,14 +18957,6 @@ fi
+--- configure.orig	Sat Jan 21 04:08:11 2012
++++ configure	Sat Jan 21 18:03:38 2012
+@@ -18991,14 +18991,6 @@ fi
  
  
    pkg_config_args=gtk+-3.0
