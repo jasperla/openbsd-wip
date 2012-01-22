@@ -125,11 +125,13 @@ share/examples/prosody/
 share/examples/prosody/certs/
 @sample ${SYSCONFDIR}/prosody/certs/
 share/examples/prosody/certs/Makefile
+@sample ${SYSCONFDIR}/prosody/certs/Makefile
 share/examples/prosody/certs/localhost.cert
 @sample ${SYSCONFDIR}/prosody/certs/localhost.cert
 share/examples/prosody/certs/localhost.key
 @sample ${SYSCONFDIR}/prosody/certs/localhost.key
 share/examples/prosody/certs/openssl.cnf
+@sample ${SYSCONFDIR}/prosody/certs/openssl.cnf
 share/examples/prosody/prosody.cfg.lua
 @sample ${SYSCONFDIR}/prosody/prosody.cfg.lua
 @mode 770

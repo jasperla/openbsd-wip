@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/19 22:31:37 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/08/01 02:13:45 jolan Exp $
 
 SHARED_ONLY=	Yes
 
@@ -38,9 +38,6 @@ CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--cflags="${CFLAGS} -fPIC"
 
 FAKE_FLAGS+=	CONFIG=${DESTDIR}${PREFIX}/share/examples/prosody
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/prosody ${WRKSRC}/prosodyctl
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/prosody
