@@ -4,6 +4,7 @@
 
 daemon="${TRUEPREFIX}/sbin/ejabberdctl"
 daemon_user="_ejabberd"
+daemon_flags="start"
 
 . /etc/rc.d/rc.subr
 
@@ -12,10 +13,6 @@ rc_reload=NO
 rc_check() {
 	# return 1 is needed: ejabberdctl returns a higher error code on failure
 	${TRUEPREFIX}/sbin/ejabberdctl status || return 1
-}
-
-rc_start() {
-	${TRUEPREFIX}/sbin/ejabberdctl start
 }
 
 rc_stop() {
