@@ -1,0 +1,29 @@
+$OpenBSD$
+--- Makefile.orig	Wed Sep  8 13:51:02 2004
++++ Makefile	Sun Jan 22 08:14:54 2012
+@@ -3,10 +3,10 @@
+ include config_Makefile
+ 
+ compile:
+-	cd src; make
++	cd src; ${MAKE}
+ 
+ install:
+-	if test -d $(FACILEDIR); then : ; else mkdir $(FACILEDIR); fi
++	if test -d $(FACILEDIR); then : ; else install -d $(FACILEDIR); fi
+ 	cp src/facile.cmi src/facile.cma src/facile.cmxa src/facile.a $(FACILEDIR)
+ 	chmod a+r $(FACILEDIR)/facile.cmi
+ 	chmod a+r $(FACILEDIR)/facile.cma
+@@ -14,10 +14,10 @@ install:
+ 	chmod a+r $(FACILEDIR)/facile.a
+ 
+ clean:
+-	cd src; make clean
++	cd src; ${MAKE} clean
+ 
+ distclean uninstall:
+ 	rm -fr $(FACILEDIR)
+ 
+ check:
+-	cd examples; make FACILEDIR=../src queens.opt; ./queens.opt 8
++	cd examples; ${MAKE} FACILEDIR=../src queens.opt; ./queens.opt 8

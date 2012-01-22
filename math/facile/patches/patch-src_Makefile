@@ -1,0 +1,23 @@
+$OpenBSD$
+--- src/Makefile.orig	Sun Jan 22 08:02:59 2012
++++ src/Makefile	Sun Jan 22 08:03:11 2012
+@@ -28,7 +28,7 @@ facile.cmxa : $(CSTRCMX)
+ # Version of the library to be linked with the -p (profiler) option
+ facile.p.cmxa : $(CSTR)
+ 	rm -fr $(CSTRCMX)
+-	make facile.cmxa OPTOPT=-p
++	${MAKE} facile.cmxa OPTOPT=-p
+ 	rm -fr $(CSTRCMX)
+ 	mv facile.cmxa $@
+ 	mv facile.a facile.p.a
+@@ -41,8 +41,8 @@ facile : facile.cma
+ # Does not work with many modules (e.g. containing class expressions
+ facile.exp.cmxa : $(CSTR)
+ 	rm -fr $(CSTRCMX)
+-	make fcl_stak.cmx fcl_cstr.cmx fcl_inv.cmx fcl_reify.cmx fcl_arith.cmx fcl_goals.cmx fcl_fdArray.cmx fcl_gcc.cmx fcl_alldiff.cmx fcl_sorting.cmx fcl_interval.cmx facile.cmx
+-	make facile.cmxa OPTOPT="-pp inline_functors"
++	${MAKE} fcl_stak.cmx fcl_cstr.cmx fcl_inv.cmx fcl_reify.cmx fcl_arith.cmx fcl_goals.cmx fcl_fdArray.cmx fcl_gcc.cmx fcl_alldiff.cmx fcl_sorting.cmx fcl_interval.cmx facile.cmx
++	${MAKE} facile.cmxa OPTOPT="-pp inline_functors"
+ 	rm -fr $(CSTRCMX)
+ 	mv facile.cmxa $@
+ 	mv facile.a facile.exp.a
