@@ -39,6 +39,10 @@ CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 
 FAKE_FLAGS+=	CONFIG=${DESTDIR}${PREFIX}/share/examples/prosody
 
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/prosody ${WRKSRC}/prosodyctl
+
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/prosody
 	${INSTALL_DATA} ${WRKSRC}/README \
