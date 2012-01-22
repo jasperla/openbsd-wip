@@ -4,6 +4,7 @@
 
 daemon="${TRUEPREFIX}/sbin/prosodyctl"
 daemon_user="_prosody"
+daemon_flags="start"
 
 . /etc/rc.d/rc.subr
 
@@ -12,10 +13,6 @@ rc_reload=NO
 rc_check() {
 	# return 1 is needed: prosodyctl returns a higher error code on failure
 	${TRUEPREFIX}/sbin/prosodyctl status || return 1
-}
-
-rc_start() {
-	${TRUEPREFIX}/sbin/prosodyctl start
 }
 
 rc_stop() {
