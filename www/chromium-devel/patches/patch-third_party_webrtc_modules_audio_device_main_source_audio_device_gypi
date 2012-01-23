@@ -1,0 +1,12 @@
+$OpenBSD$
+--- third_party/webrtc/modules/audio_device/main/source/audio_device.gypi.orig	Sun Jan 22 15:04:51 2012
++++ third_party/webrtc/modules/audio_device/main/source/audio_device.gypi	Mon Jan 23 09:25:40 2012
+@@ -48,7 +48,7 @@
+         'dummy/audio_device_utility_dummy.h',
+       ],
+       'conditions': [
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="openbsd"', {
+           'include_dirs': [
+             'linux',
+           ],

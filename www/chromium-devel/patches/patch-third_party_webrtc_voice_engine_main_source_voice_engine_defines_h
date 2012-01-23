@@ -1,0 +1,26 @@
+$OpenBSD$
+--- third_party/webrtc/voice_engine/main/source/voice_engine_defines.h.orig	Sun Jan 22 15:05:03 2012
++++ third_party/webrtc/voice_engine/main/source/voice_engine_defines.h	Mon Jan 23 09:25:40 2012
+@@ -293,19 +293,21 @@ enum { kVoiceEngineMaxNumOfActiveChannels = 16 };
+ 
+ // *** LINUX ***
+ 
+-#ifdef WEBRTC_LINUX
++#if defined(WEBRTC_LINUX) || defined(WEBRTC_OPENBSD)
+ 
+ #include <pthread.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
++#if !defined(WEBRTC_OPENBSD)
+ #ifndef QNX
+   #include <linux/net.h>
+ #ifndef ANDROID
+   #include <sys/soundcard.h>
+ #endif // ANDROID
+ #endif // QNX
++#endif
+ #include <stdio.h>
+ #include <string.h>
+ #include <stdlib.h>

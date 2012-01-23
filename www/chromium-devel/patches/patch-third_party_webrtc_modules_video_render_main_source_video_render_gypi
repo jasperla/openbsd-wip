@@ -1,0 +1,30 @@
+$OpenBSD$
+--- third_party/webrtc/modules/video_render/main/source/video_render.gypi.orig	Sun Jan 22 15:04:56 2012
++++ third_party/webrtc/modules/video_render/main/source/video_render.gypi	Mon Jan 23 09:25:40 2012
+@@ -87,7 +87,7 @@
+             'WEBRTC_INCLUDE_INTERNAL_VIDEO_RENDER',
+           ],
+         }],
+-        ['OS!="linux" or include_internal_video_render==0', {
++        ['OS!="linux" or OS!="openbsd" or include_internal_video_render==0', {
+           'sources!': [
+             'linux/video_render_linux_impl.h',
+             'linux/video_x11_channel.h',
+@@ -152,7 +152,7 @@
+             '../test/testAPI/testAPI_mac.mm',
+           ],
+           'conditions': [
+-            ['OS=="mac" or OS=="linux"', {
++            ['OS=="mac" or OS=="linux" or OS=="openbsd"', {
+               'cflags': [
+                 '-Wno-write-strings',
+               ],
+@@ -160,7 +160,7 @@
+                 '-lpthread -lm',
+               ],
+             }],
+-            ['OS=="linux"', {
++            ['OS=="linux" or OS=="openbsd"', {
+               'libraries': [
+                 '-lrt',
+                 '-lXext',

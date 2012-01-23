@@ -1,0 +1,12 @@
+$OpenBSD$
+--- third_party/webrtc/system_wrappers/source/cpu_info.cc.orig	Sun Jan 22 15:04:42 2012
++++ third_party/webrtc/system_wrappers/source/cpu_info.cc	Mon Jan 23 09:25:40 2012
+@@ -17,7 +17,7 @@
+ #include <sys/sysctl.h>
+ #elif defined(WEBRTC_MAC_INTEL)
+ // Intentionally empty
+-#elif defined(WEBRTC_ANDROID)
++#elif defined(WEBRTC_ANDROID) || defined(WEBRTC_OPENBSD)
+ // Not implemented yet, might be possible to use Linux implementation
+ #else // defined(WEBRTC_LINUX)
+ #include <sys/sysinfo.h>

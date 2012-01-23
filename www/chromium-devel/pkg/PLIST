@@ -222,6 +222,7 @@ chrome/resources/inspector/devTools.css
 chrome/resources/inspector/devtools.html
 chrome/resources/inspector/devtools_extension_api.js
 chrome/resources/inspector/elementsPanel.css
+chrome/resources/inspector/filteredItemSelectionDialog.css
 chrome/resources/inspector/heapProfiler.css
 chrome/resources/inspector/inspectorCommon.css
 chrome/resources/inspector/networkLogView.css

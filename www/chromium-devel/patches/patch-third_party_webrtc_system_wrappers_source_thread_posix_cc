@@ -1,0 +1,31 @@
+$OpenBSD$
+--- third_party/webrtc/system_wrappers/source/thread_posix.cc.orig	Sun Jan 22 15:04:42 2012
++++ third_party/webrtc/system_wrappers/source/thread_posix.cc	Mon Jan 23 09:25:40 2012
+@@ -86,7 +86,7 @@ ThreadPosix::ThreadPosix(ThreadRunFunction func, Threa
+ int ThreadPosix::Construct()
+ {
+     int result = 0;
+-#if !defined(WEBRTC_ANDROID)
++#if !defined(WEBRTC_ANDROID) && !defined(WEBRTC_OPENBSD)
+     // Enable immediate cancellation if requested, see Shutdown()
+     result = pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, NULL);
+     if (result != 0)
+@@ -116,7 +116,8 @@ ThreadPosix::~ThreadPosix()
+ 
+ #define HAS_THREAD_ID !defined(MAC_IPHONE) && !defined(MAC_IPHONE_SIM)  &&  \
+                       !defined(WEBRTC_MAC) && !defined(WEBRTC_MAC_INTEL) && \
+-                      !defined(MAC_DYLIB)  && !defined(MAC_INTEL_DYLIB)
++                      !defined(MAC_DYLIB)  && !defined(MAC_INTEL_DYLIB) && \
++                      !defined(WEBRTC_OPENBSD)
+ #if HAS_THREAD_ID
+ bool ThreadPosix::Start(unsigned int& threadID)
+ #else
+@@ -235,7 +236,7 @@ void ThreadPosix::SetNotAlive()
+ 
+ bool ThreadPosix::Shutdown()
+ {
+-#if !defined(WEBRTC_ANDROID)
++#if !defined(WEBRTC_ANDROID) && !defined(WEBRTC_OPENBSD)
+     if (_thread && (0 != pthread_cancel(_thread)))
+     {
+         return false;
