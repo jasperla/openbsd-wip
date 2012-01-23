@@ -33,4 +33,6 @@ MASTER_SITES =		${MASTER_SITES_OPENVAS:=979/}
 
 CFLAGS = 		-I /usr/local/include
 
+SEPARATE_BUILD =	No
+
 .include <bsd.port.mk>

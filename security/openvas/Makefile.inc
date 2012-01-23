@@ -17,8 +17,5 @@ PERMIT_DISTFILES_FTP ?=	    Yes
 MODULES ?=		devel/cmake \
 			devel/gettext
 
-USE_CMAKE ?=		Yes
-
 CONFIGURE_ARGS ?=	-D SYSCONFDIR=/etc -D LOCALSTATEDIR=/var
 
-SEPARATE_BUILD ?=	No

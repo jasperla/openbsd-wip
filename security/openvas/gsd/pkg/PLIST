@@ -13,5 +13,6 @@ share/openvas/dash_vulnerabilities.html
 share/openvas/gsd_log.conf
 share/openvas/translations/
 share/openvas/translations/gsd_de.qm
+share/openvas/translations/gsd_es.qm
 share/openvas/translations/gsd_fr.qm
 share/openvas/translations/gsd_id.qm

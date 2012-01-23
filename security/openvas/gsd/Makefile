@@ -1,13 +1,13 @@
 # $OpenBSD$
 
 COMMENT =		greenbone security assistant desktop
-DISTNAME =		gsd-1.2.0
+DISTNAME =		gsd-1.2.1
 PKGNAME =		openvas-${DISTNAME}
 
-MASTER_SITES =		${MASTER_SITES_OPENVAS:=861/}
+MASTER_SITES =		${MASTER_SITES_OPENVAS:=1020/}
 
 WANTLIB +=		c m pthread stdc++ \
-			gcrypt glib-2.0 gthread-2.0 gnutls tasn1 \
+			assuan gcrypt glib-2.0 gthread-2.0 gnutls \
 			gpg-error gpgme \
 			openvas_base openvas_hg openvas_misc openvas_nasl \
 			openvas_omp \
@@ -19,6 +19,7 @@ LIB_DEPENDS +=		x11/qt4 \
 			security/gnutls \
 			security/libgpg-error \
 			security/gpgme \
+			security/libassuan \
 			security/openvas/libraries
 
 BUILD_DEPENDS +=	devel/doxygen

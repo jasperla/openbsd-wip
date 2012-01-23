@@ -18,6 +18,8 @@ LIB_DEPENDS =		security/openvas/libraries \
 			security/libgpg-error \
 			security/libtasn1
 
+SEPARATE_BUILD =	No
+
 post-install:
 		${INSTALL_DATA_DIR} ${PREFIX}/share/doc/openvas
 		@sed -e s#!!PREFIX!!#${TRUEPREFIX}#g ${FILESDIR}/README.OpenBSD > \
