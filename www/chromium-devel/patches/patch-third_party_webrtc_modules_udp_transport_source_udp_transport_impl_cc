@@ -1,0 +1,58 @@
+$OpenBSD$
+--- third_party/webrtc/modules/udp_transport/source/udp_transport_impl.cc.orig	Sun Jan 22 15:04:55 2012
++++ third_party/webrtc/modules/udp_transport/source/udp_transport_impl.cc	Mon Jan 23 09:25:40 2012
+@@ -20,16 +20,16 @@
+     #include <ws2tcpip.h>
+     // Disable warning for default initialized arrays on VS2005
+     #pragma warning(disable:4351)
+-#elif defined(WEBRTC_LINUX) || defined(WEBRTC_MAC)
++#elif defined(WEBRTC_LINUX) || defined(WEBRTC_MAC) || defined(WEBRTC_OPENBSD)
+     #include <arpa/inet.h>
+     #include <ctype.h>
+     #include <fcntl.h>
+     #include <netdb.h>
++    #include <sys/socket.h>
+     #include <net/if.h>
+     #include <netinet/in.h>
+     #include <stdlib.h>
+     #include <sys/ioctl.h>
+-    #include <sys/socket.h>
+     #include <sys/time.h>
+     #include <unistd.h>
+ #ifndef MAC_IPHONE
+@@ -53,7 +53,7 @@
+ #include "typedefs.h"
+ #include "udp_socket_manager_wrapper.h"
+ 
+-#if defined(WEBRTC_LINUX) || defined(WEBRTC_MAC)
++#if defined(WEBRTC_LINUX) || defined(WEBRTC_MAC) || defined(WEBRTC_OPENBSD)
+ #define GetLastError() errno
+ 
+ #define IFRSIZE ((int)(size * sizeof (struct ifreq)))
+@@ -2414,7 +2414,7 @@ WebRtc_Word32 UdpTransport::InetPresentationToNumeric(
+                                                       const WebRtc_Word8* src,
+                                                       void* dst)
+ {
+-#if defined(WEBRTC_LINUX) || defined(WEBRTC_MAC)
++#if defined(WEBRTC_LINUX) || defined(WEBRTC_MAC) || defined(WEBRTC_OPENBSD)
+     const WebRtc_Word32 result = inet_pton(af, src, dst);
+     return result > 0 ? 0 : -1;
+ 
+@@ -2564,7 +2564,7 @@ WebRtc_Word32 UdpTransport::LocalHostAddressIPV6(WebRt
+     }
+     freeifaddrs(ptrIfAddrsStart);
+     return -1;
+-#elif defined(WEBRTC_ANDROID)
++#elif defined(WEBRTC_ANDROID) || defined(WEBRTC_OPENBSD)
+     return -1;
+ #else // WEBRTC_LINUX
+     struct
+@@ -2861,7 +2861,7 @@ WebRtc_Word32 UdpTransport::IPAddress(const SocketAddr
+     sourcePort = htons(source_port);
+     return 0;
+ 
+- #elif defined(WEBRTC_LINUX) || defined(WEBRTC_MAC)
++ #elif defined(WEBRTC_LINUX) || defined(WEBRTC_MAC) || defined(WEBRTC_OPENBSD)
+     WebRtc_Word32 ipFamily = address._sockaddr_storage.sin_family;
+     const void* ptrNumericIP = NULL;
+ 

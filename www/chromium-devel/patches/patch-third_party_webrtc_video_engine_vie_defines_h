@@ -1,0 +1,12 @@
+$OpenBSD$
+--- third_party/webrtc/video_engine/vie_defines.h.orig	Sun Jan 22 15:05:05 2012
++++ third_party/webrtc/video_engine/vie_defines.h	Mon Jan 23 09:25:40 2012
+@@ -217,7 +217,7 @@ ODE TEXT("d")
+ //-------------------------------------
+ 
+ #ifndef WEBRTC_ANDROID
+-#ifdef WEBRTC_LINUX
++#if defined(WEBRTC_LINUX) || defined(WEBRTC_OPENBSD)
+ 
+ //  Build information macros
+ #if defined(_DEBUG)

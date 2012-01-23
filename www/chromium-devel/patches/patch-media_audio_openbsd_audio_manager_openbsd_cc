@@ -1,31 +1,47 @@
 $OpenBSD$
---- media/audio/openbsd/audio_manager_openbsd.cc.orig	Sat Dec 17 16:19:24 2011
-+++ media/audio/openbsd/audio_manager_openbsd.cc	Sat Dec 17 16:22:19 2011
-@@ -52,19 +52,20 @@ AudioOutputStream* AudioManagerOpenBSD::MakeAudioOutpu
-   }
+--- media/audio/openbsd/audio_manager_openbsd.cc.orig	Sun Jan 22 15:01:07 2012
++++ media/audio/openbsd/audio_manager_openbsd.cc	Mon Jan 23 10:07:38 2012
+@@ -1,4 +1,4 @@
+-// Copyright (c) 2011 The Chromium Authors. All rights reserved.
++// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+ // Use of this source code is governed by a BSD-style license that can be
+ // found in the LICENSE file.
  
-   if (!initialized()) {
-+    // We should never get here since this method is called on the audio thread.
-+    NOTREACHED();
-     return NULL;
-   }
+@@ -45,26 +45,21 @@ bool AudioManagerOpenBSD::HasAudioInputDevices() {
  
+ AudioOutputStream* AudioManagerOpenBSD::MakeAudioOutputStream(
+     const AudioParameters& params) {
+-  // Early return for testing hook.  Do this before checking for
+-  // |initialized_|.
+-  if (params.format == AudioParameters::AUDIO_MOCK) {
++  // Early return for testing hook.
++  if (params.format == AudioParameters::AUDIO_MOCK)
+     return FakeAudioOutputStream::MakeFakeStream(params);
+-  }
+ 
+-  if (!initialized()) {
+-    return NULL;
+-  }
+-
    // Don't allow opening more than |kMaxOutputStreams| streams.
 -  if (active_streams_.size() >= kMaxOutputStreams) {
 +  if (active_output_stream_count_ >= kMaxOutputStreams)
      return NULL;
 -  }
  
-   AudioOutputStream* stream;
+-  AudioOutputStream* stream;
++
++  AudioOutputStream* stream = NULL;
  #if defined(USE_PULSEAUDIO)
    if (CommandLine::ForCurrentProcess()->HasSwitch(switches::kUsePulseAudio)) {
      stream = new PulseAudioOutputStream(params, this);
 -    active_streams_.insert(stream);
 +    ++active_output_stream_count_;
++    DCHECK(stream);
      return stream;
    }
  #endif
-@@ -79,23 +80,12 @@ AudioInputStream* AudioManagerOpenBSD::MakeAudioInputS
+@@ -79,23 +74,12 @@ AudioInputStream* AudioManagerOpenBSD::MakeAudioInputS
    return NULL;
  }
  
@@ -53,7 +69,7 @@ $OpenBSD$
  }
  
  void AudioManagerOpenBSD::Init() {
-@@ -112,8 +102,9 @@ void AudioManagerOpenBSD::UnMuteAll() {
+@@ -112,8 +96,9 @@ void AudioManagerOpenBSD::UnMuteAll() {
  
  void AudioManagerOpenBSD::ReleaseOutputStream(AudioOutputStream* stream) {
    if (stream) {

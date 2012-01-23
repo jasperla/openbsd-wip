@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS=		i386 amd64
 
 COMMENT=		Chromium browser
 
-V=			18.0.1003.1
+V=			18.0.1016.0
 DISTNAME=		chromium-${V}
 PKGNAME=		chromium-devel-${V}
 
@@ -98,9 +98,9 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Ddisable_sse2=1 \
 		-Dlinux_use_tcmalloc=0 \
 		-Dpython_ver=2.7 \
-		-Denable_webrtc=0 \
+		-Denable_webrtc=1 \
 		-Duse_kerberos=0 \
-		-Duse_pulseaudio=1 \
+		-Duse_pulseaudio=0 \
 		-DOS=openbsd
 
 .if ${FLAVOR:L:Mno_nss}

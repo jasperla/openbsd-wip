@@ -1,17 +1,16 @@
 $OpenBSD$
---- media/audio/openbsd/audio_manager_openbsd.h.orig	Sat Dec 17 16:23:17 2011
-+++ media/audio/openbsd/audio_manager_openbsd.h	Sat Dec 17 16:23:38 2011
-@@ -5,8 +5,7 @@
+--- media/audio/openbsd/audio_manager_openbsd.h.orig	Sun Jan 22 15:01:07 2012
++++ media/audio/openbsd/audio_manager_openbsd.h	Mon Jan 23 10:07:38 2012
+@@ -5,7 +5,7 @@
  #ifndef MEDIA_AUDIO_OPENBSD_AUDIO_MANAGER_OPENBSD_H_
  #define MEDIA_AUDIO_OPENBSD_AUDIO_MANAGER_OPENBSD_H_
  
 -#include <set>
--
 +#include <string>
+ 
  #include "base/compiler_specific.h"
  #include "media/audio/audio_manager_base.h"
- 
-@@ -34,7 +33,7 @@ class MEDIA_EXPORT AudioManagerOpenBSD : public AudioM
+@@ -34,7 +34,7 @@ class MEDIA_EXPORT AudioManagerOpenBSD : public AudioM
    virtual ~AudioManagerOpenBSD();
  
   private:

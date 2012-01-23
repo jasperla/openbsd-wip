@@ -1,0 +1,21 @@
+$OpenBSD$
+--- third_party/webrtc/video_engine/test/auto_test/vie_auto_test.gypi.orig	Sun Jan 22 15:05:04 2012
++++ third_party/webrtc/video_engine/test/auto_test/vie_auto_test.gypi	Mon Jan 23 09:25:40 2012
+@@ -135,7 +135,7 @@
+             'source/vie_autotest_windows.cc',
+           ],
+         }],
+-        ['OS!="linux"', {
++        ['OS!="linux" or OS!="openbsd"', {
+           'sources!': [
+             'source/vie_window_manager_factory_linux.cc',
+           ],
+@@ -148,7 +148,7 @@
+             'vie_win_test',
+           ],
+         }],
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="openbsd"', {
+           # TODO(andrew): these should be provided directly by the projects
+           # which require them instead.
+           'libraries': [

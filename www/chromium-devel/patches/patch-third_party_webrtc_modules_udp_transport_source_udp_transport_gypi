@@ -1,0 +1,12 @@
+$OpenBSD$
+--- third_party/webrtc/modules/udp_transport/source/udp_transport.gypi.orig	Sun Jan 22 15:04:55 2012
++++ third_party/webrtc/modules/udp_transport/source/udp_transport.gypi	Mon Jan 23 09:25:40 2012
+@@ -75,7 +75,7 @@
+             'traffic_control_windows.h',
+           ],
+         }],
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="openbsd"', {
+           'cflags': [
+             '-fno-strict-aliasing',
+           ],
