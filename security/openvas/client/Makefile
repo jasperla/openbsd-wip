@@ -27,8 +27,7 @@ LIB_DEPENDS +=		x11/gtk+2 \
 			security/gpgme \
 			security/libgpg-error
 
-MODULES =		devel/gettext \
-			devel/cmake
+MODULES =		devel/gettext
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu

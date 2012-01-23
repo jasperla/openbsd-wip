@@ -22,4 +22,6 @@ LIB_DEPENDS +=		security/libgcrypt \
 			textproc/libxml \
 			textproc/libxslt
 
+SEPARATE_BUILD = 	No
+
 .include <bsd.port.mk>

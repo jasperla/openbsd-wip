@@ -1,10 +1,10 @@
 $OpenBSD$
---- CMakeLists.txt.orig	Wed Apr  6 11:43:59 2011
-+++ CMakeLists.txt	Tue Apr 12 15:03:58 2011
+--- CMakeLists.txt.orig	Fri Dec  9 14:31:24 2011
++++ CMakeLists.txt	Sun Jan 22 10:56:31 2012
 @@ -202,7 +202,7 @@ add_subdirectory (src)
  
  ## Install
- install (FILES src/gsd_log.conf
+ install (FILES ${CMAKE_BINARY_DIR}/src/gsd_log.conf
 -         DESTINATION ${OPENVAS_SYSCONF_DIR})
 +         DESTINATION ${OPENVAS_DATA_DIR})
  
