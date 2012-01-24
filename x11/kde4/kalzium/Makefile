@@ -14,6 +14,12 @@ WANTLIB += kdeui khtml kio kjs knewstuff3 kparts
 WANTLIB += kunitconversion nepomuk nepomukutils phonon plasma
 WANTLIB += avogadro boost_python-mt openbabel
 
+MODULES =	lang/python
+
+BUILD_DEPENDS =	math/facile
+
+RUN_DEPENDS =	math/facile
+
 LIB_DEPENDS = 	education/avogadro \
 		math/eigen2 \
 		misc/openbabel \
