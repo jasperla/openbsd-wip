@@ -1,0 +1,18 @@
+# $OpenBSD$
+
+CATEGORIES = 		games x11
+
+HOMEPAGE = 		http://7kfans.com/
+
+MAINTAINER = 		Kirill Bychkov <yason@linklevel.net>
+
+# GPLv2
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
+
+MASTER_SITES = 		${MASTER_SITE_SOURCEFORGE:=skfans/}
+EXTRACT_SUFX = 		.tar.bz2
+
+NO_REGRESS =		Yes
