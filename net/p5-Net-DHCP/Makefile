@@ -28,7 +28,4 @@ REGRESS_DEPENDS =	devel/p5-Test-Perl-Critic \
 
 MODCPAN_EXAMPLES = Yes
 
-#pre-regress:
-#	rm ${WRKDIST}/Makefile.PL.orig 
-
 .include <bsd.port.mk>
