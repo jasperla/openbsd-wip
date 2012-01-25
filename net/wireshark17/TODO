@@ -6,5 +6,3 @@ Testing libsmi SNMP decoding
 python disectors
 Which way on flavors python or no_python?
 default is with python, but considered experimental feature.
-
-Upstream issue raised are in SVN get later SVN version and check patches are ok

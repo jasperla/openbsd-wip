@@ -4,7 +4,7 @@ COMMENT-main=	graphical network protocol analyzer
 COMMENT-text=	network protocol analyzer
 
 VER=		1.7.1
-WVER=		${VER}-SVN-40622
+WVER=		${VER}-SVN-40715
 DISTNAME=	wireshark-${WVER}
 PKGNAME-main=	wireshark17-${VER}
 PKGNAME-text=	tshark17-${VER}
@@ -42,7 +42,7 @@ WANTLIB-main += ${WANTLIB} wireshark wiretap wsutil
 WANTLIB-main += cairo gdk_pixbuf-2.0 gmodule-2.0 gobject-2.0 
 WANTLIB-main += gthread-2.0 pango-1.0 pangocairo-1.0 portaudio stdc++
 
-MULTI_PACKAGES= -main -text
+MULTI_PACKAGES= -text -main
 
 MASTER_SITES=	http://www.wireshark.org/download/src/all-versions/ \
 		http://www.wireshark.org/download/automated/src/
