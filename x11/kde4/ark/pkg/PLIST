@@ -9,6 +9,7 @@ lib/kde4/kerfuffle_libarchive.so
 lib/kde4/kerfuffle_libbz2.so
 lib/kde4/kerfuffle_libgz.so
 lib/kde4/kerfuffle_libxz.so
+lib/kde4/libextracthere.so
 @lib lib/libkerfuffle.so.${LIBkerfuffle_VERSION}
 @man man/man1/ark.1
 share/applications/kde4/ark.desktop
@@ -25,6 +26,7 @@ share/doc/HTML/en/ark/man-ark.1.docbook
 share/kde4/services/ServiceMenus/
 share/kde4/services/ServiceMenus/ark_addtoservicemenu.desktop
 share/kde4/services/ServiceMenus/ark_servicemenu.desktop
+share/kde4/services/ark_dndextract.desktop
 share/kde4/services/ark_part.desktop
 share/kde4/services/kerfuffle_cli7z.desktop
 share/kde4/services/kerfuffle_clilha.desktop
