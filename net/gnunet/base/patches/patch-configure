@@ -1,7 +1,7 @@
 $OpenBSD$
---- configure.orig	Wed Nov 30 22:23:35 2011
-+++ configure	Wed Nov 30 22:23:58 2011
-@@ -21224,7 +21224,7 @@ done
+--- configure.orig	Mon Dec 26 22:00:00 2011
++++ configure	Wed Jan 25 12:25:39 2012
+@@ -20547,7 +20547,7 @@ done
  
  
  # Checks for headers that are only required on some systems or opional (and where we do NOT abort if they are not there)

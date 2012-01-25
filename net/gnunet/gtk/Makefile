@@ -2,21 +2,9 @@
 
 COMMENT =		GTK interface for GNUnet
 
-DISTNAME =		gnunet-gtk-0.9.0
+DISTNAME =		gnunet-gtk-${V}
 
 SHARED_LIBS +=		gnunetgtk	0.0 # 0.0
-
-CATEGORIES =		net
-
-HOMEPAGE =		http://gnunet.org
-
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
-
-# GPLv3+
-PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 bz2 c cairo
@@ -29,11 +17,9 @@ WANTLIB += ltdl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs stdc++ util xcb xcb-render
 WANTLIB += xcb-shm xml2 z
 
-MASTER_SITES =		${MASTER_SITE_GNU:=gnunet/}
-
 MODULES =		devel/gettext
 RUN_DEPENDS =		devel/desktop-file-utils
-LIB_DEPENDS =		net/gnunet \
+LIB_DEPENDS =		net/gnunet/base \
 			devel/glade
 
 USE_LIBTOOL =		Yes
