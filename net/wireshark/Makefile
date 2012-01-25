@@ -41,7 +41,7 @@ WANTLIB-main += ${WANTLIB} wireshark wiretap wsutil
 WANTLIB-main += gdk-x11-2.0 gdk_pixbuf-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB-main += gthread-2.0 pango-1.0 portaudio
 
-MULTI_PACKAGES= -main -text
+MULTI_PACKAGES= -text -main
 
 MASTER_SITES=	http://www.wireshark.org/download/src/all-versions/
 
