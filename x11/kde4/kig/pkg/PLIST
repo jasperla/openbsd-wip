@@ -320,25 +320,18 @@ share/doc/HTML/en/kig/text_label_attaching.png
 share/doc/HTML/en/kig/text_label_wizard.png
 share/doc/HTML/en/kig/text_label_wizard__select_property.png
 share/icons/hicolor/128x128/apps/kig.png
-share/icons/hicolor/128x128/mimetypes/
 share/icons/hicolor/128x128/mimetypes/application-x-kig.png
 share/icons/hicolor/16x16/apps/kig.png
-share/icons/hicolor/16x16/mimetypes/
 share/icons/hicolor/16x16/mimetypes/application-x-kig.png
 share/icons/hicolor/22x22/apps/kig.png
-share/icons/hicolor/22x22/mimetypes/
 share/icons/hicolor/22x22/mimetypes/application-x-kig.png
 share/icons/hicolor/32x32/apps/kig.png
-share/icons/hicolor/32x32/mimetypes/
 share/icons/hicolor/32x32/mimetypes/application-x-kig.png
 share/icons/hicolor/48x48/apps/kig.png
-share/icons/hicolor/48x48/mimetypes/
 share/icons/hicolor/48x48/mimetypes/application-x-kig.png
 share/icons/hicolor/64x64/apps/kig.png
-share/icons/hicolor/64x64/mimetypes/
 share/icons/hicolor/64x64/mimetypes/application-x-kig.png
 share/icons/hicolor/scalable/apps/kig.svgz
-share/icons/hicolor/scalable/mimetypes/
 share/icons/hicolor/scalable/mimetypes/application-x-kig.svgz
 share/kde4/services/kig_part.desktop
 @exec %D/bin/update-desktop-database
