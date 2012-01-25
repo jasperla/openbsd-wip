@@ -1,5 +1,4 @@
 @comment $OpenBSD: PLIST,v 1.2 2010/07/10 16:57:23 espie Exp $
-share/icons/
 share/icons/oxygen/
 share/icons/oxygen/128x128/
 share/icons/oxygen/128x128/actions/
@@ -20,6 +19,7 @@ share/icons/oxygen/128x128/actions/document-preview-archive.png
 share/icons/oxygen/128x128/actions/document-preview.png
 share/icons/oxygen/128x128/actions/edit-bomb.png
 share/icons/oxygen/128x128/actions/edit-find.png
+share/icons/oxygen/128x128/actions/edit-paste.png
 share/icons/oxygen/128x128/actions/folder-new.png
 share/icons/oxygen/128x128/actions/go-bottom.png
 share/icons/oxygen/128x128/actions/go-down.png
@@ -6155,6 +6155,7 @@ share/icons/oxygen/64x64/actions/document-preview-archive.png
 share/icons/oxygen/64x64/actions/document-preview.png
 share/icons/oxygen/64x64/actions/edit-bomb.png
 share/icons/oxygen/64x64/actions/edit-find.png
+share/icons/oxygen/64x64/actions/edit-paste.png
 share/icons/oxygen/64x64/actions/folder-new.png
 share/icons/oxygen/64x64/actions/go-bottom.png
 share/icons/oxygen/64x64/actions/go-down.png
