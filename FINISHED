@@ -11,7 +11,6 @@ math/p5-Math-GSL:	ready for import, did not sent to ports@, regress depends on d
 www/p5-Dancer:		ready for import, has been sent to ports@ some time ago; it depends on www/p5-HTTP-Server-Simple-PSGI
 www/p5-HTTP-Server-Simple-PSGI:	ready for import, has been sent to ports@ some time ago
 games/megaglest:	Ready for import. Sent to ports@ 09.09.2011 (yason)
-games/naev:		Ready for import. Sent to ports@ 09.09.2011 (yason)
 games/violetland:	Ready for import. Sent to ports@ 05.07.2011 and 09.09.2011 (yason)
 audio/liblastfm:	sent to ports@ Sep 06 2011. Ready for import. (grayed)
 audio/clementine:	sent to ports@ Sep 06 2011. Ready for import. (grayed)
