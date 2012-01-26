@@ -4,6 +4,9 @@ bin/pykig.py
 lib/kde4/kigpart.so
 @man man/man1/kig.1
 share/applications/kde4/kig.desktop
+share/apps/katepart/
+share/apps/katepart/syntax/
+share/apps/katepart/syntax/python-kig.xml
 share/apps/kig/
 share/apps/kig/builtin-macros/
 share/apps/kig/builtin-macros/circle_by_center_and_line.kigt
