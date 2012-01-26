@@ -4,7 +4,7 @@ SHARED_ONLY =		Yes
 
 COMMENT =		3D rendering engine
 
-V =			1.7.3
+V =			1.7.4
 DISTNAME =		ogre_src_v${V:S/./-/g}
 PKGNAME =		ogre-${V}
 
