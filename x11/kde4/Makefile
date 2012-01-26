@@ -57,7 +57,7 @@
      SUBDIR += jovie			# untested
      SUBDIR += kaccessible		# untested
      SUBDIR += kmousetool		# untested
-     SUBDIR += kmag			# untested
+     SUBDIR += kmag			# OK
      SUBDIR += kmouth			# untested
 
 # fat packages
@@ -73,11 +73,11 @@
 # former kdeutils, changed in KDE 4.8 beta/rc, all untested
      SUBDIR += ark			# issues
      SUBDIR += filelight		# OK
-     SUBDIR += kcalc			# untested
-     SUBDIR += kcharselect		# untested
-     SUBDIR += kdf			# untested
+     SUBDIR += kcalc			# OK
+     SUBDIR += kcharselect		# OK
+     SUBDIR += kdf			# test
      SUBDIR += kfloppy			# test
-     SUBDIR += kgpg			# untested
+     SUBDIR += kgpg			# OK
      SUBDIR += kremotecontrol		# untested
      SUBDIR += ktimer			# untested
      SUBDIR += kwallet			# OK
@@ -88,16 +88,16 @@
 # former kdeedu
      SUBDIR += blinken			# OK
      SUBDIR += cantor			# issues
-     SUBDIR += analitza			# untested
-     SUBDIR += kalgebra			# untested
+     SUBDIR += analitza			# test
+     SUBDIR += kalgebra			# OK
      SUBDIR += kalzium			# untested
-     SUBDIR += kanagram			# untested
-     SUBDIR += kbruch			# untested
-     SUBDIR += kgeography		# untested
+     SUBDIR += kanagram			# OK
+     SUBDIR += kbruch			# OK
+     SUBDIR += kgeography		# OK
      SUBDIR += khangman			# OK
      SUBDIR += kig			# untested
-     SUBDIR += kiten			# untested
-     SUBDIR += klettres			# untested
+     SUBDIR += kiten			# OK
+     SUBDIR += klettres			# OK
      SUBDIR += kmplot			# untested
      SUBDIR += kstars			# untested
      SUBDIR += ktouch			# untested
@@ -114,13 +114,13 @@
      SUBDIR += graphics-strigi-analyzer	# untested
      SUBDIR += graphics-thumbnailers	# untested
      SUBDIR += gwenview			# untested
-     SUBDIR += kamera			# untested
+     SUBDIR += kamera			# test
      SUBDIR += kcolorchooser		# untested
-     SUBDIR += kgamma			# untested
+     SUBDIR += kgamma			# OK
      SUBDIR += kolourpaint		# untested
      SUBDIR += kruler			# untested
      SUBDIR += ksaneplugin		# untested
-     SUBDIR += ksnapshot		# test
+     SUBDIR += ksnapshot		# OK
      SUBDIR += libkdcraw		# untested
      SUBDIR += libkexiv2		# test
      SUBDIR += libkipi			# test
