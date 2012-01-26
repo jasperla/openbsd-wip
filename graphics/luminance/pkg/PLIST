@@ -1,16 +1,14 @@
 @comment $OpenBSD$
-@bin bin/luminance
-share/applications/luminance.desktop
+@bin bin/luminance-hdr
+share/applications/luminance-hdr.desktop
 share/icons/
 share/icons/hicolor/
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
-share/icons/hicolor/32x32/apps/luminance.png
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/luminance-hdr.png
 share/luminance/
 share/luminance/AUTHORS
-share/luminance/BUGS
 share/luminance/Changelog
-share/luminance/INSTALL
 share/luminance/LICENSE
 share/luminance/README
 share/luminance/help/
@@ -25,6 +23,7 @@ share/luminance/help/en/contributing_testing.html
 share/luminance/help/en/contributing_translating.html
 share/luminance/help/en/copying_exif.html
 share/luminance/help/en/creating_hdr.html
+share/luminance/help/en/creating_hdr_batch.html
 share/luminance/help/en/creating_hdr_cli.html
 share/luminance/help/en/creating_hdr_interactive.html
 share/luminance/help/en/dcraw.html
@@ -34,13 +33,15 @@ share/luminance/help/en/faq.html
 share/luminance/help/en/features.html
 share/luminance/help/en/hints.html
 share/luminance/help/en/images/
+share/luminance/help/en/images/batch-hdr.png
 share/luminance/help/en/images/batch-tmo.png
 share/luminance/help/en/images/copy-exif.png
-share/luminance/help/en/images/mainwin.jpeg
+share/luminance/help/en/images/cropping_frame.png
+share/luminance/help/en/images/mainwin.png
 share/luminance/help/en/images/not-translated-menu-item.png
+share/luminance/help/en/images/preferences.png
 share/luminance/help/en/images/projectiveTransformationDialog.png
 share/luminance/help/en/images/resize.png
-share/luminance/help/en/images/tonemapdialog.jpg
 share/luminance/help/en/images/translated-menu-item.png
 share/luminance/help/en/index.html
 share/luminance/help/en/manual.html
@@ -48,6 +49,7 @@ share/luminance/help/en/menu.xml
 share/luminance/help/en/news.html
 share/luminance/help/en/prefs.html
 share/luminance/help/en/prefs_hdr.html
+share/luminance/help/en/prefs_rawconversion.html
 share/luminance/help/en/prefs_tonemapping.html
 share/luminance/help/en/prefs_tools.html
 share/luminance/help/en/prefs_ui.html
@@ -62,9 +64,23 @@ share/luminance/help/en/tonemapping_batch.html
 share/luminance/help/en/tonemapping_cli.html
 share/luminance/help/en/tonemapping_interactive.html
 share/luminance/help/en/workflow.html
-share/luminance/help/img/
 share/luminance/help/js/
 share/luminance/help/js/jquery.js
 share/luminance/help/js/jquery.jtabs.pack.js
+share/luminance/i18n/
+share/luminance/i18n/lang_cs.qm
+share/luminance/i18n/lang_de.qm
+share/luminance/i18n/lang_es.qm
+share/luminance/i18n/lang_fi.qm
+share/luminance/i18n/lang_fr.qm
+share/luminance/i18n/lang_hu.qm
+share/luminance/i18n/lang_id.qm
+share/luminance/i18n/lang_it.qm
+share/luminance/i18n/lang_pl.qm
+share/luminance/i18n/lang_ro.qm
+share/luminance/i18n/lang_ru.qm
+share/luminance/i18n/lang_tr.qm
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

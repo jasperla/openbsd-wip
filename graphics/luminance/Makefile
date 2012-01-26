@@ -1,8 +1,7 @@
 # $OpenBSD$
 COMMENT =		application that aims to provide a workflow for HDR imaging
 
-DISTNAME =		luminance-hdr_2.0.0
-PKGNAME = 		${DISTNAME:S/_/-/}
+DISTNAME =		luminance-hdr-2.2.0
 
 CATEGORIES =		graphics
 
@@ -16,26 +15,28 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		Half Iex IlmImf Imath QtDBus QtGui QtNetwork QtWebKit QtXml QtXmlPatterns \
-			c  exiv2 fftw3f gsl gslcblas m phonon pthread sqlite3 stdc++ tiff
-
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=qtpfsgui/}
+EXTRACT_SUFX = 		.tar.bz2
+EXTRACT_CASES += 	*.tar.bz2) \
+			${BZIP2} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf - -C ${WRKDIST};;
 
-MODULES =		x11/qt4
+WANTLIB += Half Iex IlmImf QtGui QtSql QtWebKit QtXml c exiv2
+WANTLIB += fftw3f gsl gslcblas m pthread stdc++ tiff
+
+MODULES =		devel/cmake x11/qt4
 RUN_DEPENDS =		devel/desktop-file-utils
 LIB_DEPENDS =		devel/gsl \
+			graphics/libraw \
 			graphics/openexr \
 			graphics/exiv2 \
 			graphics/tiff \
 			math/fftw3,float
 
-FAKE_FLAGS = 		INSTALL_ROOT=${WRKINST}
-
-USE_X11 =		Yes
+CONFIGURE_ARGS += 	-DCMAKE_BUILD_TYPE=Release
 
 NO_REGRESS =		Yes
 
-do-build:
-	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/qmake4 PREFIX=${PREFIX}
+pre-extract:
+	mkdir ${WRKDIST}
 
 .include <bsd.port.mk>

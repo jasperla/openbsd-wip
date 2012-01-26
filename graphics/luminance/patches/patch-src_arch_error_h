@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/arch/error.h.orig	Thu Jan 26 00:54:14 2012
++++ src/arch/error.h	Thu Jan 26 00:54:39 2012
+@@ -24,7 +24,7 @@
+  
+ #pragma once
+ 
+-#if defined(__FreeBSD__) || defined(WIN32) || defined(Q_WS_MAC) || defined(__APPLE__)
++#if defined(__FreeBSD__) || defined(WIN32) || defined(Q_WS_MAC) || defined(__APPLE__) || defined(__OpenBSD__)
+ 	#define error(Z) { fprintf(stderr,"%s", Z); exit(1); }
+ #else
+ 	#include <error.h>
