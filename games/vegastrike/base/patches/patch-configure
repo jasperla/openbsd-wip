@@ -1,0 +1,37 @@
+$OpenBSD$
+--- configure.orig	Thu Apr 24 14:17:08 2008
++++ configure	Fri Jan 27 13:30:43 2012
+@@ -11260,7 +11260,7 @@ fi
+ 
+ case "$with_python_version" in
+ "") with_python_version=2.4 ;;
+-"2" | "2.2" | "2.3" | "2.4" | "2.5") ;;
++"2" | "2.2" | "2.3" | "2.4" | "2.5" | "2.7") ;;
+ *) { { echo "$as_me:$LINENO: error: ${with_python_version} is not valid" >&5
+ echo "$as_me: error: ${with_python_version} is not valid" >&2;}
+    { (exit 1); exit 1; }; } ;;
+@@ -11337,14 +11337,14 @@ then
+         else
+           dylix=so
+         fi
+-        if test -f $i/libpython${PYTHON_SHORT}.$dylix;
++        if test -f $i/libpython${PYTHON_SHORT}.$dylix.*;
+         then
+ 	    echo "$i/libpython${PYTHON_SHORT}.so yes"
+ 	    PYTHON_CXXFLAGS="-I${PYTHON_incdir}"
+ 	    if test "x$is_macosx" = "xyes" ; then
+ 	    	    PYTHON_LIBS="-L$i -lpython${PYTHON_SHORT}"
+ 	    else
+-		    PYTHON_LIBS="-L$i -lpython${PYTHON_SHORT}"
++		    PYTHON_LIBS="-L$i -lutil -lpython${PYTHON_SHORT}"
+ 	    fi
+             FOUND_LIBPYTHON_SO=yes
+             break
+@@ -15970,7 +15970,6 @@ echo "$as_me: error: ${with_boost} is not a valid boos
+ esac
+ 
+ if (test "x${with_boost}" = "xsystem"); then
+-BOOST_CPPFLAGS='-I/usr/include'
+ with_boost_ver=$with_boost
+ { echo "$as_me:$LINENO: Using System Boost" >&5
+ echo "$as_me: Using System Boost" >&6;}

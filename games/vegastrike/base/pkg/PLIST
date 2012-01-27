@@ -1,0 +1,17 @@
+@comment $OpenBSD$
+@bin bin/asteroidgen
+@bin bin/base_maker
+@bin bin/mesh_xml
+@bin bin/mesher
+@bin bin/replace
+@bin bin/tempgen
+@bin bin/trisort
+@bin bin/vegaserver
+@bin bin/vegastrike
+@bin bin/vsrextract
+@bin bin/vsrmake
+@bin bin/vssetup
+objconv/
+objconv/3ds2xml
+objconv/obj2xml
+objconv/wcp2xml
