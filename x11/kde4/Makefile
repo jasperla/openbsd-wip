@@ -56,7 +56,7 @@
 # former accessibility, changed in KDE 4.8 beta/rc, all untested
      SUBDIR += jovie			# untested
      SUBDIR += kaccessible		# untested
-     SUBDIR += kmousetool		# untested
+     SUBDIR += kmousetool		# OK
      SUBDIR += kmag			# OK
      SUBDIR += kmouth			# untested
 
@@ -90,7 +90,7 @@
      SUBDIR += cantor			# issues
      SUBDIR += analitza			# test
      SUBDIR += kalgebra			# OK
-     SUBDIR += kalzium			# untested
+     SUBDIR += kalzium			# OK
      SUBDIR += kanagram			# OK
      SUBDIR += kbruch			# OK
      SUBDIR += kgeography		# OK
@@ -98,7 +98,7 @@
      SUBDIR += kig			# untested
      SUBDIR += kiten			# OK
      SUBDIR += klettres			# OK
-     SUBDIR += kmplot			# untested
+     SUBDIR += kmplot			# OK
      SUBDIR += kstars			# untested
      SUBDIR += ktouch			# untested
      SUBDIR += kturtle			# untested
@@ -113,12 +113,12 @@
      SUBDIR += digikam			# test
      SUBDIR += graphics-strigi-analyzer	# untested
      SUBDIR += graphics-thumbnailers	# untested
-     SUBDIR += gwenview			# untested
+     SUBDIR += gwenview			# OK
      SUBDIR += kamera			# test
      SUBDIR += kcolorchooser		# untested
      SUBDIR += kgamma			# OK
-     SUBDIR += kolourpaint		# untested
-     SUBDIR += kruler			# untested
+     SUBDIR += kolourpaint		# OK
+     SUBDIR += kruler			# OK
      SUBDIR += ksaneplugin		# untested
      SUBDIR += ksnapshot		# OK
      SUBDIR += libkdcraw		# untested
