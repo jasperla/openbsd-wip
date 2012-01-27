@@ -1,0 +1,20 @@
+$OpenBSD$
+--- src/cmd/collide2/opcodetypes.h.orig	Thu Jan 26 23:15:50 2012
++++ src/cmd/collide2/opcodetypes.h	Thu Jan 26 23:23:12 2012
+@@ -197,13 +197,14 @@ typedef uint64 uintmax_t;
+ #if defined(HAVE_WCTYPE_H)
+ #include <wctype.h>
+ #endif
+-#if !defined(CS_HAVE_WCHAR_T) && !defined(_WCHAR_T_DEFINED)
++#if !defined(CS_HAVE_WCHAR_T) && !defined(_WCHAR_T_DEFINED) && \
++	!defined(__cplusplus)
+ typedef uint16 wchar_t;
+ #define _WCHAR_T_DEFINED
+ #define CS_WCHAR_T_SIZE 2
+ #endif
+ #if !defined(CS_HAVE_WINT_T) && !defined(_WCTYPE_T_DEFINED) && \
+-    !defined(_WINT_T)
++    !defined(_WINT_T) && !defined(_WINT_T_DEFINED_)
+ typedef wchar_t wint_t;
+ #define _WCTYPE_T_DEFINED
+ #define _WINT_T

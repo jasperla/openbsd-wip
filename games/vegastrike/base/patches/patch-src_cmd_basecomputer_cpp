@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/cmd/basecomputer.cpp.orig	Thu Jan 26 22:27:55 2012
++++ src/cmd/basecomputer.cpp	Thu Jan 26 22:28:18 2012
+@@ -3099,7 +3099,7 @@ void BaseComputer::loadNewsControls(void) {
+     // Make the title right.
+     recalcTitle();
+ }
+-#if defined (__FreeBSD__) || defined(__APPLE__)
++#if defined (BSD) || defined(__APPLE__)
+ static int	nodirs( struct dirent * entry)
+ #else
+ static int	nodirs( const struct dirent * entry)

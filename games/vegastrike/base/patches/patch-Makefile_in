@@ -1,0 +1,21 @@
+$OpenBSD$
+--- Makefile.in.orig	Fri Jan 27 13:14:47 2012
++++ Makefile.in	Fri Jan 27 13:15:07 2012
+@@ -1398,7 +1398,7 @@ vegastrike_LDADD_1 = $(noinst_LIBRARIES) \
+ 
+ @BOOSTSYSTEM_FALSE@vegastrike_LDADD = $(vegastrike_LDADD_1)
+ @BOOSTSYSTEM_TRUE@vegastrike_LDADD = $(vegastrike_LDADD_1) \
+-@BOOSTSYSTEM_TRUE@    -lboost_python-st
++@BOOSTSYSTEM_TRUE@    -lboost_python-mt
+ 
+ vegastrike_DEPENDENCIES = $(noinst_LIBRARIES)
+ vegaserver_LDADD_1 = $(noinst_LIBRARIES) \
+@@ -1406,7 +1406,7 @@ vegaserver_LDADD_1 = $(noinst_LIBRARIES) \
+ 
+ @BOOSTSYSTEM_FALSE@vegaserver_LDADD = $(vegaserver_LDADD_1)
+ @BOOSTSYSTEM_TRUE@vegaserver_LDADD = $(vegaserver_LDADD_1) \
+-@BOOSTSYSTEM_TRUE@    -lboost_python-st
++@BOOSTSYSTEM_TRUE@    -lboost_python-mt
+ 
+ vegaserver_DEPENDENCIES = $(noinst_LIBRARIES)
+ librootclient = \
