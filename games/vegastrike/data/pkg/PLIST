@@ -886,19 +886,19 @@ share/vegastrike/bases/university_night.py
 share/vegastrike/bases/university_sunset.py
 share/vegastrike/bases/weapons_lib.py
 share/vegastrike/bases/weapons_lib.pyc
-share/vegastrike/bin/
-share/vegastrike/bin/mesher-32
-share/vegastrike/bin/mesher-64
-share/vegastrike/bin/mesher-compat32
-share/vegastrike/bin/vegaserver-32
-share/vegastrike/bin/vegaserver-64
-share/vegastrike/bin/vegaserver-compat32
-share/vegastrike/bin/vegastrike-32
-share/vegastrike/bin/vegastrike-64
-share/vegastrike/bin/vegastrike-compat32
-share/vegastrike/bin/vssetup-32
-share/vegastrike/bin/vssetup-64
-share/vegastrike/bin/vssetup-compat32
+@comment share/vegastrike/bin/
+@comment share/vegastrike/bin/mesher-32
+@comment share/vegastrike/bin/mesher-64
+@comment share/vegastrike/bin/mesher-compat32
+@comment share/vegastrike/bin/vegaserver-32
+@comment share/vegastrike/bin/vegaserver-64
+@comment share/vegastrike/bin/vegaserver-compat32
+@comment share/vegastrike/bin/vegastrike-32
+@comment share/vegastrike/bin/vegastrike-64
+@comment share/vegastrike/bin/vegastrike-compat32
+@comment share/vegastrike/bin/vssetup-32
+@comment share/vegastrike/bin/vssetup-64
+@comment share/vegastrike/bin/vssetup-compat32
 share/vegastrike/cgi-accountserver/
 share/vegastrike/cgi-accountserver/README.txt
 share/vegastrike/cgi-accountserver/accountserver.py
