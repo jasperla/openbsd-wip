@@ -13,8 +13,8 @@ WANTLIB += boost_python-mt c cairo expat fontconfig freetype gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glut gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 iconv intl jpeg m ogg openal
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB += pthread pthread-stubs python2.7 stdc++ util vorbis
-WANTLIB += vorbisfile xcb xcb-render xcb-shm z
+WANTLIB += pthread pthread-stubs stdc++ util vorbis
+WANTLIB += vorbisfile xcb xcb-render xcb-shm z ${MODPY_WANTLIB}
 
 MODULES =		lang/python
 #BUILD_DEPENDS =	???
