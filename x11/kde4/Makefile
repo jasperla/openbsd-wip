@@ -67,7 +67,7 @@
      SUBDIR += network			# test
      SUBDIR += pim			# test
      SUBDIR += sdk			# test
-     SUBDIR += toys			# untested
+     SUBDIR += toys			# test KTeaTime
      SUBDIR += webdev			# untested
 
 # former kdeutils, changed in KDE 4.8 beta/rc, all untested
@@ -83,7 +83,7 @@
      SUBDIR += kwallet			# OK
      SUBDIR += printer-applet		# untested
      SUBDIR += superkaramba		# untested
-     SUBDIR += sweeper			# untested
+     SUBDIR += sweeper			# OK
 
 # former kdeedu
      SUBDIR += blinken			# OK
@@ -95,19 +95,19 @@
      SUBDIR += kbruch			# OK
      SUBDIR += kgeography		# OK
      SUBDIR += khangman			# OK
-     SUBDIR += kig			# untested
+     SUBDIR += kig			# OK
      SUBDIR += kiten			# OK
      SUBDIR += klettres			# OK
      SUBDIR += kmplot			# OK
-     SUBDIR += kstars			# untested
-     SUBDIR += ktouch			# untested
-     SUBDIR += kturtle			# untested
-     SUBDIR += kwordquiz		# untested
+     SUBDIR += kstars			# OK
+     SUBDIR += ktouch			# OK
+     SUBDIR += kturtle			# OK
+     SUBDIR += kwordquiz		# test
      SUBDIR += libkdeedu		# test
      SUBDIR += marble			# test
-     SUBDIR += parley			# untested
-     SUBDIR += rocs			# marked BROKEN, needs boost >1.43
-     SUBDIR += step			# untested
+     SUBDIR += parley			# OK
+     SUBDIR += rocs			# OK
+     SUBDIR += step			# OK
 
 # former kdegraphics
      SUBDIR += digikam			# test
@@ -127,7 +127,7 @@
      SUBDIR += libksane			# untested
      SUBDIR += mobipocket		# untested
      SUBDIR += okular			# test
-     SUBDIR += svgpart			# untested
+     SUBDIR += svgpart			# OK
 
 # other apps
      SUBDIR += kate			# test
