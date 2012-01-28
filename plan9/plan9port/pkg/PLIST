@@ -299,8 +299,10 @@ plan9/bin/venti/
 @bin plan9/bin/venti/fmtisect
 @bin plan9/bin/venti/mirrorarenas
 @bin plan9/bin/venti/printarena
+@bin plan9/bin/venti/printarenapart
 @bin plan9/bin/venti/rdarena
 @bin plan9/bin/venti/read
+@bin plan9/bin/venti/ro
 @bin plan9/bin/venti/sync
 @bin plan9/bin/venti/syncindex
 @bin plan9/bin/venti/venti
@@ -5430,12 +5432,12 @@ plan9/src/cmd/dd.c
 plan9/src/cmd/delatex.lx
 plan9/src/cmd/deroff.c
 plan9/src/cmd/devdraw/
+plan9/src/cmd/devdraw/bigarrow.h
 plan9/src/cmd/devdraw/cocoa-screen.h
 plan9/src/cmd/devdraw/cocoa-screen.m
 plan9/src/cmd/devdraw/cocoa-srv.c
 plan9/src/cmd/devdraw/cocoa-thread.c
 plan9/src/cmd/devdraw/cocoa-thread.h
-plan9/src/cmd/devdraw/cursor.c
 plan9/src/cmd/devdraw/devdraw.c
 plan9/src/cmd/devdraw/devdraw.h
 plan9/src/cmd/devdraw/drawclient.c
@@ -5449,15 +5451,11 @@ plan9/src/cmd/devdraw/mkwsysrules.sh
 plan9/src/cmd/devdraw/mouseswap.c
 plan9/src/cmd/devdraw/nowsys.c
 @bin plan9/src/cmd/devdraw/o.devdraw
-plan9/src/cmd/devdraw/osx-delegate.h
-plan9/src/cmd/devdraw/osx-delegate.m
 plan9/src/cmd/devdraw/osx-draw.c
 plan9/src/cmd/devdraw/osx-keycodes.h
 plan9/src/cmd/devdraw/osx-screen-carbon.m
 plan9/src/cmd/devdraw/osx-screen.h
-plan9/src/cmd/devdraw/osx-screen.m
 plan9/src/cmd/devdraw/osx-srv.c
-plan9/src/cmd/devdraw/osx-srv.m
 plan9/src/cmd/devdraw/snarf.c
 plan9/src/cmd/devdraw/winsize.c
 plan9/src/cmd/devdraw/x11-alloc.c
@@ -7610,8 +7608,10 @@ plan9/src/libthread/NetBSD-386-asm.s
 plan9/src/libthread/NetBSD-power-asm.s
 plan9/src/libthread/NetBSD.c
 plan9/src/libthread/OpenBSD-386-asm.S
+@comment plan9/src/libthread/OpenBSD-386-asm.S.orig
 plan9/src/libthread/OpenBSD-386.c
 plan9/src/libthread/OpenBSD-power-asm.S
+@comment plan9/src/libthread/OpenBSD-power-asm.S.orig
 plan9/src/libthread/OpenBSD-power.c
 plan9/src/libthread/OpenBSD-x86_64-asm.S
 plan9/src/libthread/OpenBSD-x86_64.c
