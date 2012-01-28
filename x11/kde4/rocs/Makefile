@@ -2,7 +2,6 @@
 
 COMMENT =	Graph Theory IDE for KDE
 DISTNAME =	rocs-${MODKDE_VERSION}
-BROKEN =	needs boost 1.43 or newer
 
 SHARED_LIBS =	rocslib			0.0 # 4.7
 
@@ -15,5 +14,8 @@ WANTLIB += krossui ktexteditor nepomuk nepomukutils plasma
 WANTLIB += soprano
 
 BUILD_DEPENDS =	devel/boost
+
+# Requires Boost >= 1.43
+CONFIGURE_ARGS =	-DBUILD_DotFilePlugin:Bool=No
 
 .include <bsd.port.mk>
