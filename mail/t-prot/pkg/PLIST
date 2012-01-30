@@ -1,5 +1,4 @@
 @comment $OpenBSD$
-@comment $RedRiver: PLIST,v 1.3 2010/05/27 17:04:07 andrew Exp $
 bin/t-prot
 @man man/man1/t-prot.1
 share/doc/t-prot/

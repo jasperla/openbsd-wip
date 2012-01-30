@@ -1,5 +1,4 @@
 # $OpenBSD$
-# $RedRiver: Makefile,v 1.6 2010/05/27 17:07:05 andrew Exp $
 
 COMMENT=	filter which improves readability of email and Usenet posts
 

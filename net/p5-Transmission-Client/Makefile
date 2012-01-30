@@ -1,12 +1,11 @@
 # $OpenBSD$
-# $RedRiver: Makefile,v 1.3 2010/11/03 20:21:15 andrew Exp $
 
 COMMENT=	Perl interface to the Transmission BitTorrent client RPC
 
 DISTNAME=	Transmission-Client-0.0602
 CATEGORIES=	net
 
-MAINTAINER=	Andrew Fresh <andrew@afresh1.com>
+MAINTAINER=	Andrew Fresh <andrew@cpan.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=   Yes
