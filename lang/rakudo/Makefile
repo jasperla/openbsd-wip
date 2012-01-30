@@ -3,6 +3,8 @@
 # Memory hog, stuck for days on the same file during build.
 NOT_FOR_ARCHS =		sh
 
+SHARED_ONLY =		Yes
+
 COMMENT =		Rakudo Perl 6 compiler
 
 PORTNAME =		rakudo
