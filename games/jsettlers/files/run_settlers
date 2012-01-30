@@ -1,5 +1,4 @@
 #!/bin/sh
-# $RedRiver$
 
 # Start the server
 java -jar /usr/local/bin/JSettlersServer.jar 8880 10 dbUser dbPass &
