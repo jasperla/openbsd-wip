@@ -1,0 +1,4 @@
+"load_bytecode" couldn't find file 'Perl6/Grammar.pbc'
+
+Known problem upstream: perl6 has to be run from inside its working
+directory.
