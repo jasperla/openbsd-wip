@@ -39,7 +39,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--with-vorbis-libs="${LOCALBASE}/lib" \
 			--with-vorbis-inc="${LOCALBASE}/include/vorbis" \
 			--with-boost=system \
-			--with-data-dir="${LOCALBASE}/share/vegastrike"
+			--with-data-dir="${TRUEPREFIX}/share/vegastrike"
 CONFIGURE_ENV =		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 			BOOST_CPPFLAGS="-DBOOST_PYTHON_NO_PY_SIGNATURES=1"
