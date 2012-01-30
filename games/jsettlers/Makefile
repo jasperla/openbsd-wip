@@ -1,5 +1,4 @@
 # $OpenBSD$
-# $RedRiver: Makefile,v 1.11 2009/11/06 22:18:55 andrew Exp $
 
 COMMENT-main=	the board game Settlers of Catan written in Java
 COMMENT-web=	web pages to make it easy to connect to the jsettlers server
