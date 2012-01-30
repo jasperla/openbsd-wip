@@ -1,6 +1,6 @@
 $OpenBSD$
---- kdoctools/CMakeLists.txt.orig	Sun Sep  4 00:20:04 2011
-+++ kdoctools/CMakeLists.txt	Sun Sep  4 00:27:40 2011
+--- kdoctools/CMakeLists.txt.orig	Tue Oct 11 18:41:54 2011
++++ kdoctools/CMakeLists.txt	Tue Jan 17 11:40:11 2012
 @@ -108,7 +108,7 @@ if (NOT CMAKE_CROSSCOMPILING)
  
     kde4_add_executable(meinproc4_simple NOGUI ${meinproc_qt_SRCS})
@@ -10,7 +10,7 @@ $OpenBSD$
  
     add_dependencies(meinproc4_simple docbookl10nhelper) 
  
-@@ -212,7 +212,7 @@ endforeach(_currentcustomizedir ${customizedir}) 
+@@ -211,7 +211,7 @@ endforeach(_currentcustomizedir ${customizedir}) 
  
  set( docbookl10nhelper_SRCS docbookl10nhelper.cpp )
  kde4_add_executable( docbookl10nhelper NOGUI ${docbookl10nhelper_SRCS} )
