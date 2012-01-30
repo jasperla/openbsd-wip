@@ -1,7 +1,7 @@
 $OpenBSD$
 Do not install files that interfere with system ones.
---- cmake/modules/CMakeLists.txt.orig	Sat May 21 00:24:53 2011
-+++ cmake/modules/CMakeLists.txt	Sun Oct 16 04:24:04 2011
+--- cmake/modules/CMakeLists.txt.orig	Fri Nov  4 18:32:15 2011
++++ cmake/modules/CMakeLists.txt	Tue Jan 17 11:40:11 2012
 @@ -9,7 +9,6 @@ set(module_install_dir ${DATA_INSTALL_DIR}/cmake/modul
  set(cmakeFilesDontInstall
                 FindHUpnp.cmake
@@ -39,7 +39,7 @@ Do not install files that interfere with system ones.
                 FindGLIB2.cmake
                 FindGMP.cmake
                 FindGObject.cmake
-@@ -71,14 +64,11 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
+@@ -68,14 +61,11 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
                 FindKipi.cmake
                 FindKopete.cmake
                 FindKorundum.cmake
@@ -54,7 +54,7 @@ Do not install files that interfere with system ones.
                 FindLibraryWithDebug.cmake
                 FindLinuxWirelesstools.cmake
                 FindMsgfmt.cmake
-@@ -88,25 +78,17 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
+@@ -85,25 +75,17 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
                 FindNetworkManager.cmake
                 FindOggVorbis.cmake
                 FindOpenEXR.cmake
@@ -81,7 +81,7 @@ Do not install files that interfere with system ones.
                 FindSIP.cmake
                 FindSamba.cmake
                 FindSane.cmake
-@@ -119,7 +101,6 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
+@@ -116,7 +98,6 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
                 FindTaglib.cmake
                 FindUSB.cmake
                 FindWcecompat.cmake
