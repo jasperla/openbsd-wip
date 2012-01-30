@@ -68,7 +68,7 @@
      SUBDIR += pim			# test
      SUBDIR += sdk			# test
      SUBDIR += toys			# test KTeaTime
-     SUBDIR += webdev			# untested
+     SUBDIR += webdev			# minor issues
 
 # former kdeutils, changed in KDE 4.8 beta/rc, all untested
      SUBDIR += ark			# issues
