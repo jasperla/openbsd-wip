@@ -1,0 +1,5 @@
+- update to 4.0.0
+- put myself as maintainer
+- respect $CC, $CFLAGS etc.
+- fix detection of gmp in configure
+- old and broken threading implementation removed upstream
