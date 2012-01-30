@@ -1,8 +1,9 @@
 # $OpenBSD$
 
-COMMENT-main =		K Desktop Environment, photo management utility
-COMMENT-kipi =		collection of image plugins for KDE
+COMMENT-face =		Qt/C++ wrapper around LibFace
 COMMENT-geomap =	KIPI interface library for Marble
+COMMENT-kipi =		collection of image plugins for KDE
+COMMENT-main =		K Desktop Environment, photo management utility
 COMMENT-mediawiki =	KIPI interface library for MediaWiki
 COMMENT-vkontakte =	KIPI interface library for VKontakte.Ru
 
@@ -10,13 +11,15 @@ VERSION =		2.5.0
 DISTNAME =		digikam-${VERSION}
 
 PKGNAME =		digikam4-${VERSION}
-PKGNAME-main =		${PKGNAME}
-PKGNAME-kipi =		kipi-plugins4-${VERSION}
+PKGNAME-face =		libkface-2.0.0
 PKGNAME-geomap =	libkgeomap-${VERSION}
+PKGNAME-kipi =		kipi-plugins4-${VERSION}
+PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 PKGNAME-vkontakte =	libkvkontakte-1.0.0
 
-REVISION-mediawiki =	0
+REVISION-main =		0
+REVISION-mediawiki =	1
 REVISION-vkontakte =	0
 
 SHARED_LIBS =	kipiplugins		0.0
@@ -29,7 +32,7 @@ SHARED_LIBS +=  mediawiki		0.0 # 1.0
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=digikam/${VERSION}/}
 
-MULTI_PACKAGES =	-main -geomap -kipi -mediawiki -vkontakte
+MULTI_PACKAGES =	-main -face -geomap -kipi -mediawiki -vkontakte
 
 MODULES =		devel/gettext
 
@@ -37,29 +40,27 @@ MODULES =		devel/gettext
 
 WANTLIB-common =  ${MODQT_WANTLIB} ${MODKDE_WANTLIB}
 WANTLIB-common += c m stdc++
-WANTLIB-common += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
-WANTLIB-common += lib/qt4/QtSvg lib/qt4/QtXml
-WANTLIB-common += kdecore kdeui kio
+WANTLIB-common += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg
+WANTLIB-common +=
+WANTLIB-common += kdecore kdeui
 
-WANTLIB-main =  ${WANTLIB-common}
-WANTLIB-main += ICE SM X11 Xext pthread z
-WANTLIB-main += lib/qt4/Qt3Support lib/qt4/QtSql
-WANTLIB-main += kabc kcmutils kdcraw kde3support kemoticons kexiv2
-WANTLIB-main += kfile khtml kidletime kipi kjs knotifyconfig
-WANTLIB-main += kparts kprintutils kresources kutils nepomuk
-WANTLIB-main += nepomukutils phonon solid soprano sopranoclient
-WANTLIB-main += opencv_calib3d opencv_contrib opencv_core
-WANTLIB-main += opencv_features2d opencv_flann opencv_gpu
-WANTLIB-main += opencv_highgui opencv_imgproc opencv_legacy opencv_ml
-WANTLIB-main += opencv_objdetect opencv_video
-WANTLIB-main += glib-2.0 gphoto2 gphoto2_port jasper jpeg lcms lqr-1
-WANTLIB-main += png tiff usb
-WANTLIB-main += kgeomap
+WANTLIB-face =  ${WANTLIB-common}
+WANTLIB-face += opencv_calib3d opencv_contrib opencv_core
+WANTLIB-face += opencv_features2d opencv_flann opencv_gpu
+WANTLIB-face += opencv_highgui opencv_imgproc opencv_legacy opencv_ml
+WANTLIB-face += opencv_objdetect opencv_video
+
+WANTLIB-geomap =  ${WANTLIB-common}
+WANTLIB-geomap += pthread
+WANTLIB-geomap += lib/qt4/QtNetwork lib/qt4/QtXml
+WANTLIB-geomap += kexiv2 khtml kio kjs kparts nepomuk nepomukutils phonon soprano
+WANTLIB-geomap += marblewidget
 
 WANTLIB-kipi =  ${WANTLIB-common} ${MODGETTEXT_WANTLIB}
 WANTLIB-kipi += GL GLU ICE SM X11 Xext Xrandr expat pthread z
-WANTLIB-kipi += lib/qt4/QtOpenGL lib/qt4/QtXmlPatterns qca
-WANTLIB-kipi += kcalcore kdcraw kexiv2 khtml kjs kipi kparts
+WANTLIB-kipi += lib/qt4/QtNetwork lib/qt4/QtOpenGL lib/qt4/QtXmlPatterns qca
+WANTLIB-kipi += lib/qt4/QtXml
+WANTLIB-kipi += kcalcore kdcraw kexiv2 khtml kio kjs kipi kparts
 WANTLIB-kipi += ksane nepomuk nepomukutils phonon soprano threadweaver
 WANTLIB-kipi += gdk_pixbuf-2.0 gmodule-2.0 gobject-2.0
 WANTLIB-kipi += gthread-2.0
@@ -70,16 +71,25 @@ WANTLIB-kipi += opencv_objdetect opencv_video
 WANTLIB-kipi += exslt glib-2.0 gpod iconv intl jpeg png qjson tiff xml2 xslt
 WANTLIB-kipi += kfile kgeomap kvkontakte
 
-WANTLIB-geomap =  ${WANTLIB-common}
-WANTLIB-geomap += pthread
-WANTLIB-geomap += kexiv2 khtml kjs kparts nepomuk nepomukutils phonon soprano
-WANTLIB-geomap += marblewidget
+WANTLIB-main =  ${WANTLIB-common}
+WANTLIB-main += ICE SM X11 Xext pthread z
+WANTLIB-main += lib/qt4/Qt3Support lib/qt4/QtNetwork lib/qt4/QtSql
+WANTLIB-main += lib/qt4/QtXml
+WANTLIB-main += kabc kcmutils kdcraw kde3support kemoticons kexiv2
+WANTLIB-main += kfile khtml kidletime kio kipi kjs knotifyconfig
+WANTLIB-main += kparts kprintutils kresources kutils nepomuk
+WANTLIB-main += nepomukutils phonon solid soprano sopranoclient
+WANTLIB-main += glib-2.0 gphoto2 gphoto2_port jasper jpeg lcms lqr-1
+WANTLIB-main += png tiff usb
+WANTLIB-main += kface kgeomap
 
 WANTLIB-mediawiki =  ${WANTLIB-common}
+WANTLIB-mediawiki += lib/qt4/QtNetwork lib/qt4/QtXml
+WANTLIB-mediawiki += kio
 
 WANTLIB-vkontakte =  ${WANTLIB-common}
-WANTLIB-vkontakte += lib/qt4/QtWebKit
-WANTLIB-vkontakte += kdewebkit kparts nepomuk nepomukutils soprano
+WANTLIB-vkontakte += lib/qt4/QtNetwork lib/qt4/QtWebKit lib/qt4/QtXml
+WANTLIB-vkontakte += kdewebkit kio kparts nepomuk nepomukutils soprano
 WANTLIB-vkontakte += qjson
 
 # Define dependencies manually per subpackage
@@ -91,38 +101,32 @@ BUILD_DEPENDS =		devel/boost \
 			databases/mysql,-server \
 			misc/shared-desktop-ontologies
 
-RUN_DEPENDS-main =	devel/desktop-file-utils \
-			databases/mysql,-server \
-			misc/shared-desktop-ontologies \
-			x11/gtk+2,-guic
+RUN_DEPENDS-face =
+
+RUN_DEPENDS-geomap =	x11/gtk+2,-guic
 
 RUN_DEPENDS-kipi =	${MODGETTEXT_RUN_DEPENDS} \
 			devel/desktop-file-utils \
 			misc/shared-desktop-ontologies \
 			x11/gtk+2,-guic
 
-RUN_DEPENDS-geomap =	x11/gtk+2,-guic
+RUN_DEPENDS-main =	devel/desktop-file-utils \
+			databases/mysql,-server \
+			misc/shared-desktop-ontologies \
+			x11/gtk+2,-guic
 
 RUN_DEPENDS-vkontakte =	x11/kde4/runtime
 
 LIBS_DEPENDS-common =	${MODQT_LIB_DEPENDS}
 
-LIB_DEPENDS-main =	${LIB_DEPENDS-common} \
-			${BUILD_PKGPATH},-geomap \
-			devel/glib2 \
-			graphics/jasper \
-			graphics/lcms \
-			graphics/libgphoto2 \
-			graphics/liblqr \
+LIB_DEPENDS-face =	${LIB_DEPENDS-common} \
 			graphics/opencv \
-			graphics/png \
-			graphics/tiff \
-			x11/kde4/libkdcraw \
+			x11/kde4/libs
+
+LIB_DEPENDS-geomap =	${LIB_DEPENDS-common} \
 			x11/kde4/libkexiv2 \
-			x11/kde4/libkipi \
 			x11/kde4/libs \
-			x11/kde4/marble \
-			x11/kde4/pimlibs \
+			x11/kde4/marble
 
 LIB_DEPENDS-kipi =	${LIB_DEPENDS-common} \
 			${BUILD_PKGPATH},-geomap \
@@ -146,10 +150,22 @@ LIB_DEPENDS-kipi =	${LIB_DEPENDS-common} \
 			x11/kde4/libs \
 			x11/kde4/pimlibs \
 
-LIB_DEPENDS-geomap =	${LIB_DEPENDS-common} \
+LIB_DEPENDS-main =	${LIB_DEPENDS-common} \
+			${BUILD_PKGPATH},-face \
+			${BUILD_PKGPATH},-geomap \
+			devel/glib2 \
+			graphics/jasper \
+			graphics/lcms \
+			graphics/libgphoto2 \
+			graphics/liblqr \
+			graphics/png \
+			graphics/tiff \
+			x11/kde4/libkdcraw \
 			x11/kde4/libkexiv2 \
+			x11/kde4/libkipi \
 			x11/kde4/libs \
-			x11/kde4/marble
+			x11/kde4/marble \
+			x11/kde4/pimlibs \
 
 LIB_DEPENDS-mediawiki =	${LIB_DEPENDS-common} \
 			x11/kde4/libs

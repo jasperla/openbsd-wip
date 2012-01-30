@@ -3,14 +3,6 @@ bin/cleanup_digikamdb
 @bin bin/digikam
 bin/digitaglinktree
 @bin bin/showfoto
-include/libkface/
-include/libkface/database.h
-include/libkface/face.h
-include/libkface/facedetector.h
-include/libkface/image.h
-include/libkface/libkface_export.h
-include/libkface/recognitiondatabase.h
-include/libkface/version.h
 lib/kde4/digikamimageplugin_color.so
 lib/kde4/digikamimageplugin_decorate.so
 lib/kde4/digikamimageplugin_enhance.so
@@ -25,16 +17,12 @@ lib/kde4/kio_digikamtags.so
 lib/libPropertyBrowser.a
 @lib lib/libdigikamcore.so.${LIBdigikamcore_VERSION}
 @lib lib/libdigikamdatabase.so.${LIBdigikamdatabase_VERSION}
-@lib lib/libkface.so.${LIBkface_VERSION}
-lib/pkgconfig/libkface.pc
 @man man/man1/cleanup_digikamdb.1
 @man man/man1/digitaglinktree.1
 share/applications/kde4/digikam.desktop
 share/applications/kde4/photolayoutseditor.desktop
 share/applications/kde4/scangui.desktop
 share/applications/kde4/showfoto.desktop
-share/apps/cmake/modules/FindKface.cmake
-share/apps/cmake/modules/FindMediawiki.cmake
 share/apps/digikam/
 share/apps/digikam/about/
 share/apps/digikam/about/digikam.css
@@ -575,17 +563,6 @@ share/apps/digikam/queuemgrwindowui.rc
 share/apps/digikam/tips
 share/apps/digikam/utils/
 share/apps/digikam/utils/digikam-camera
-share/apps/libkface/
-share/apps/libkface/haarcascades/
-share/apps/libkface/haarcascades/haarcascade_frontalface_alt.xml
-share/apps/libkface/haarcascades/haarcascade_frontalface_alt2.xml
-share/apps/libkface/haarcascades/haarcascade_frontalface_alt_tree.xml
-share/apps/libkface/haarcascades/haarcascade_frontalface_default.xml
-share/apps/libkface/haarcascades/haarcascade_mcs_lefteye.xml
-share/apps/libkface/haarcascades/haarcascade_mcs_mouth.xml
-share/apps/libkface/haarcascades/haarcascade_mcs_nose.xml
-share/apps/libkface/haarcascades/haarcascade_mcs_righteye.xml
-share/apps/libkface/haarcascades/haarcascade_profileface.xml
 share/apps/photolayoutseditor/
 share/apps/photolayoutseditor/photolayoutseditorui.rc
 share/apps/showfoto/

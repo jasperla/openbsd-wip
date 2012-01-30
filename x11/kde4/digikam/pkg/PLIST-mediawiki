@@ -24,3 +24,4 @@ include/libmediawiki/usergroup.h
 include/libmediawiki/version.h
 @lib lib/libmediawiki.so.${LIBmediawiki_VERSION}
 lib/pkgconfig/libmediawiki.pc
+share/apps/cmake/modules/FindMediawiki.cmake
