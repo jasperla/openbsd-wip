@@ -1,5 +1,7 @@
 # $OpenBSD: Makefile,v 1.17 2011/10/19 13:30:59 ajacoutot Exp $
 
+SHARED_ONLY =	Yes
+
 COMMENT=	virtual machine designed for interpreted languages
 
 V=		4.0.0
