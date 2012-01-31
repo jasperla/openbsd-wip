@@ -26,7 +26,8 @@ WANTLIB += stdc++ util z
 
 LIB_DEPENDS=		textproc/icu4c \
 			devel/gmp
-REGRESS_DEPENDS=	devel/p5-TAP-Harness-Multiple
+REGRESS_DEPENDS=	devel/p5-TAP-Harness-Multiple \
+			devel/p5-Test-Perl-Critic
 
 CONFIGURE_SCRIPT=	/usr/bin/perl Configure.pl
 CONFIGURE_STYLE=	simple
