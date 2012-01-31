@@ -1,0 +1,12 @@
+$OpenBSD$
+--- libraw/libraw_types.h.orig	Thu Jan 26 08:28:17 2012
++++ libraw/libraw_types.h	Thu Jan 26 08:29:57 2012
+@@ -42,7 +42,7 @@ it under the terms of the one of three licenses as you
+ #  undef LIBRAW_USE_OPENMP
+ #endif
+ /* Not Win32 */
+-# elif (defined(__APPLE__) || defined(__MACOSX__)) && defined(_REENTRANT)
++# elif (defined(__APPLE__) || defined(__MACOSX__)) && defined(_REENTRANT) || defined(__OpenBSD__)
+ #   undef LIBRAW_USE_OPENMP
+ # else 
+ #   define LIBRAW_USE_OPENMP
