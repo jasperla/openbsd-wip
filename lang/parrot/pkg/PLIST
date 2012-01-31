@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2011/08/20 16:47:05 landry Exp $
-%%SHARED%%
+@comment $OpenBSD$
 @bin bin/ops2c
 @bin bin/parrot
 @bin bin/parrot-nqp
@@ -183,12 +182,26 @@ include/parrot/${V}/pmc/pmc_timer.h
 include/parrot/${V}/pmc/pmc_undef.h
 include/parrot/${V}/pmc/pmc_unmanagedstruct.h
 lib/libparrot.a
+@lib lib/libparrot.so.${LIBparrot_VERSION}
 lib/parrot/
 lib/parrot/${V}/
 lib/parrot/${V}/VERSION
 lib/parrot/${V}/bin/
 lib/parrot/${V}/bin/prove.pir
 lib/parrot/${V}/dynext/
+lib/parrot/${V}/dynext/bit_ops.so
+lib/parrot/${V}/dynext/debug_ops.so
+lib/parrot/${V}/dynext/dynlexpad.so
+lib/parrot/${V}/dynext/file.so
+lib/parrot/${V}/dynext/gziphandle.so
+lib/parrot/${V}/dynext/io_ops.so
+lib/parrot/${V}/dynext/math_ops.so
+lib/parrot/${V}/dynext/obscure_ops.so
+lib/parrot/${V}/dynext/os.so
+lib/parrot/${V}/dynext/rational.so
+lib/parrot/${V}/dynext/select.so
+lib/parrot/${V}/dynext/sys_ops.so
+lib/parrot/${V}/dynext/trans_ops.so
 lib/parrot/${V}/include/
 lib/parrot/${V}/include/call_bits.pasm
 lib/parrot/${V}/include/cclass.pasm
