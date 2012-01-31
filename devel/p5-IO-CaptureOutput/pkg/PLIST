@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+${P5SITE}/IO/
+${P5SITE}/IO/CaptureOutput.pm
+${P5SITE}/IO/CaptureOutput.pod
+@man man/man3p/IO::CaptureOutput.3p
