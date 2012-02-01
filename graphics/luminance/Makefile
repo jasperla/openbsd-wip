@@ -24,13 +24,14 @@ WANTLIB += Half Iex IlmImf QtGui QtSql QtWebKit QtXml c exiv2
 WANTLIB += fftw3f gsl gslcblas m pthread raw_r stdc++ tiff
 
 MODULES =		devel/cmake x11/qt4
-RUN_DEPENDS =		devel/desktop-file-utils
 LIB_DEPENDS =		devel/gsl \
 			graphics/libraw \
 			graphics/openexr \
 			graphics/exiv2 \
 			graphics/tiff \
 			math/fftw3,float
+RUN_DEPENDS =		devel/desktop-file-utils \
+			x11/qt4,-sqlite
 
 CONFIGURE_ARGS += 	-DCMAKE_BUILD_TYPE=Release
 
