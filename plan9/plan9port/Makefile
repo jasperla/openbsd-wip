@@ -29,8 +29,6 @@ MASTER_SITES0 =		http://pdos.lcs.mit.edu/~rsc/software/plan9/
 MASTER_SITES1 =		http://pdos.lcs.mit.edu/~rsc/
 EXTRACT_SUFX =		.tgz
 
-MAKE_ENV =		CC9="${CC}"
-
 BUILD_DEPENDS =		archivers/bzip2
 RUN_DEPENDS =		print/ghostscript/gnu \
 			print/gv
@@ -38,8 +36,6 @@ RUN_DEPENDS =		print/ghostscript/gnu \
 WRKDIST =		${WRKDIR}/plan9
 
 PLAN9 =			${PREFIX}/plan9
-
-SUBST_VARS +=		CFLAGS
 
 SCRIPTS = \" \"\" 9 9.rc 9a 9ar 9c 9fs 9l B E Getdir adict awd bundle \
 	codereview \
@@ -79,10 +75,9 @@ post-patch:
 		OpenBSD-x86_64.c
 	find ${WRKSRC} -name .cvsignore -exec rm -f {} \;
 	cd ${WRKSRC} && rm -rf .hg .hgignore .hgtags
-	${SUBST_CMD} ${WRKSRC}/src/mkhdr
 
 do-build:
-	cd ${WRKSRC} && ./INSTALL -b
+	cd ${WRKSRC} && env CC9="${CC}" CCFLAGS="${CFLAGS}" ./INSTALL -b
 
 do-install:
 	cd ${WRKSRC} && perl -pi -e 's#/usr/local#${TRUEPREFIX}#' \
