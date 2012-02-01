@@ -2,7 +2,7 @@
 
 COMMENT =		RAW image processing application
 
-DISTNAME =		rawtherapee-4.0.6
+DISTNAME =		rawtherapee-4.0.7
 
 CATEGORIES =		graphics
 

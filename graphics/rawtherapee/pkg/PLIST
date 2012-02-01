@@ -5,6 +5,7 @@ share/doc/rawtherapee/
 share/doc/rawtherapee/AUTHORS.txt
 share/doc/rawtherapee/AboutThisBuild.txt
 share/doc/rawtherapee/LICENSE.txt
+share/doc/rawtherapee/RELEASE_NOTES.txt
 share/icons/
 share/icons/hicolor/
 share/icons/hicolor/128x128/
@@ -31,10 +32,13 @@ share/rawtherapee/iccprofiles/input/
 share/rawtherapee/iccprofiles/input/Canon EOS 20D.icc
 share/rawtherapee/iccprofiles/input/Canon EOS 450D.icc
 share/rawtherapee/iccprofiles/input/Canon EOS 550D.icc
+share/rawtherapee/iccprofiles/input/Canon EOS 5D.icc
 share/rawtherapee/iccprofiles/input/Canon EOS Digital Rebel XSi.icc
 share/rawtherapee/iccprofiles/input/Canon EOS Rebel T2i.icc
 share/rawtherapee/iccprofiles/input/Canon EOS-1D Mark III.icc
+share/rawtherapee/iccprofiles/input/Canon PowerShot G10.icc
 share/rawtherapee/iccprofiles/input/Nikon D200.icc
+share/rawtherapee/iccprofiles/input/Nikon D3100.icc
 share/rawtherapee/iccprofiles/input/Nikon D3S.icc
 share/rawtherapee/iccprofiles/input/Nikon D700.icc
 share/rawtherapee/iccprofiles/input/Nikon D7000.icc
@@ -52,7 +56,7 @@ share/rawtherapee/iccprofiles/output/
 share/rawtherapee/iccprofiles/output/RT_Large_g10.icc
 share/rawtherapee/iccprofiles/output/RT_Large_gBT709.icc
 share/rawtherapee/iccprofiles/output/RT_Large_gsRGB.icc
-share/rawtherapee/iccprofiles/output/RT_Middle_gsRGB.icc
+share/rawtherapee/iccprofiles/output/RT_Medium_gsRGB.icc
 share/rawtherapee/iccprofiles/output/RT_sRGB.icm
 share/rawtherapee/iccprofiles/output/RT_sRGB_g10.icm
 share/rawtherapee/iccprofiles/output/RT_sRGB_gBT709.icm
@@ -124,12 +128,14 @@ share/rawtherapee/images/Dark/actions/gtk-close-small.png
 share/rawtherapee/images/Dark/actions/gtk-close.png
 share/rawtherapee/images/Dark/actions/gtk-color-picker-small.png
 share/rawtherapee/images/Dark/actions/gtk-color-picker.png
+share/rawtherapee/images/Dark/actions/gtk-copy.png
 share/rawtherapee/images/Dark/actions/gtk-edit.png
 share/rawtherapee/images/Dark/actions/gtk-find.png
 share/rawtherapee/images/Dark/actions/gtk-media-play.png
 share/rawtherapee/images/Dark/actions/gtk-media-stop.png
 share/rawtherapee/images/Dark/actions/gtk-ok.png
 share/rawtherapee/images/Dark/actions/gtk-open.png
+share/rawtherapee/images/Dark/actions/gtk-paste.png
 share/rawtherapee/images/Dark/actions/gtk-preferences.png
 share/rawtherapee/images/Dark/actions/gtk-remove.png
 share/rawtherapee/images/Dark/actions/gtk-save-large.png
@@ -173,6 +179,16 @@ share/rawtherapee/images/Dark/actions/panel-to-left.png
 share/rawtherapee/images/Dark/actions/panel-to-right.png
 share/rawtherapee/images/Dark/actions/panel-to-top.png
 share/rawtherapee/images/Dark/actions/popuparrow.png
+share/rawtherapee/images/Dark/actions/previewmodeB-off.png
+share/rawtherapee/images/Dark/actions/previewmodeB-on.png
+share/rawtherapee/images/Dark/actions/previewmodeF-off.png
+share/rawtherapee/images/Dark/actions/previewmodeF-on.png
+share/rawtherapee/images/Dark/actions/previewmodeG-off.png
+share/rawtherapee/images/Dark/actions/previewmodeG-on.png
+share/rawtherapee/images/Dark/actions/previewmodeL-off.png
+share/rawtherapee/images/Dark/actions/previewmodeL-on.png
+share/rawtherapee/images/Dark/actions/previewmodeR-off.png
+share/rawtherapee/images/Dark/actions/previewmodeR-on.png
 share/rawtherapee/images/Dark/actions/processing-pause.png
 share/rawtherapee/images/Dark/actions/processing-play.png
 share/rawtherapee/images/Dark/actions/processing-thumbnail.png
@@ -290,12 +306,14 @@ share/rawtherapee/images/Light/actions/gtk-close-small.png
 share/rawtherapee/images/Light/actions/gtk-close.png
 share/rawtherapee/images/Light/actions/gtk-color-picker-small.png
 share/rawtherapee/images/Light/actions/gtk-color-picker.png
+share/rawtherapee/images/Light/actions/gtk-copy.png
 share/rawtherapee/images/Light/actions/gtk-edit.png
 share/rawtherapee/images/Light/actions/gtk-find.png
 share/rawtherapee/images/Light/actions/gtk-media-play.png
 share/rawtherapee/images/Light/actions/gtk-media-stop.png
 share/rawtherapee/images/Light/actions/gtk-ok.png
 share/rawtherapee/images/Light/actions/gtk-open.png
+share/rawtherapee/images/Light/actions/gtk-paste.png
 share/rawtherapee/images/Light/actions/gtk-preferences.png
 share/rawtherapee/images/Light/actions/gtk-remove.png
 share/rawtherapee/images/Light/actions/gtk-save-large.png
@@ -339,6 +357,16 @@ share/rawtherapee/images/Light/actions/panel-to-left.png
 share/rawtherapee/images/Light/actions/panel-to-right.png
 share/rawtherapee/images/Light/actions/panel-to-top.png
 share/rawtherapee/images/Light/actions/popuparrow.png
+share/rawtherapee/images/Light/actions/previewmodeB-off.png
+share/rawtherapee/images/Light/actions/previewmodeB-on.png
+share/rawtherapee/images/Light/actions/previewmodeF-off.png
+share/rawtherapee/images/Light/actions/previewmodeF-on.png
+share/rawtherapee/images/Light/actions/previewmodeG-off.png
+share/rawtherapee/images/Light/actions/previewmodeG-on.png
+share/rawtherapee/images/Light/actions/previewmodeL-off.png
+share/rawtherapee/images/Light/actions/previewmodeL-on.png
+share/rawtherapee/images/Light/actions/previewmodeR-off.png
+share/rawtherapee/images/Light/actions/previewmodeR-on.png
 share/rawtherapee/images/Light/actions/processing-pause.png
 share/rawtherapee/images/Light/actions/processing-play.png
 share/rawtherapee/images/Light/actions/processing-thumbnail.png
@@ -559,11 +587,11 @@ share/rawtherapee/profiles/BW-1.pp3
 share/rawtherapee/profiles/BW-2.pp3
 share/rawtherapee/profiles/BW-3.pp3
 share/rawtherapee/profiles/BW-4.pp3
+share/rawtherapee/profiles/Highkey-1.pp3
 share/rawtherapee/profiles/Natural-1.pp3
 share/rawtherapee/profiles/Natural-2.pp3
 share/rawtherapee/profiles/Punchy-1.pp3
 share/rawtherapee/profiles/Punchy-2.pp3
-share/rawtherapee/profiles/Tuned-1.pp3
 share/rawtherapee/profiles/default-ISO-high.pp3
 share/rawtherapee/profiles/default-ISO-medium.pp3
 share/rawtherapee/profiles/default.pp3
