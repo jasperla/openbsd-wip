@@ -2,8 +2,7 @@
 
 COMMENT =		ebook management application
 
-DISTNAME =		calibre-0.8.31
-REVISION =		0
+DISTNAME =		calibre-0.8.37
 CATEGORIES =		textproc
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calibre/}
 EXTRACT_SUFX =		.tar.xz
