@@ -1,0 +1,14 @@
+$OpenBSD$
+--- CMakeLists.txt.orig	Wed Feb  1 12:55:44 2012
++++ CMakeLists.txt	Wed Feb  1 12:58:25 2012
+@@ -139,7 +139,9 @@ SET(LIBS ${LIBS} ${GSL_LIBRARIES} ${GSLCBLAS_LIBRARIES
+ 
+ SET(INCLUDE_DIRS ${INCLUDE_DIRS} ${EXIV2_INCLUDE_DIR} "${EXIV2_INCLUDE_DIR}/exiv2")
+ SET(LIBS ${LIBS} ${EXIV2_LIBRARIES})
+-
++
++SET(LIBS ${LIBS} -pthread)
++
+ #OpenMP Support under Linux, Windows with MSVC & MacOS X with GCC >= 4.3
+ IF(MSVC)
+ 
