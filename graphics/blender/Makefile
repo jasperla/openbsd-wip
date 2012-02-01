@@ -49,7 +49,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 WANTLIB += GL GLEW GLU Half Iex IlmImf IlmThread Imath SDL X11
 WANTLIB += Xi boost_filesystem-mt boost_regex-mt boost_system-mt
 WANTLIB += boost_thread-mt c freetype jpeg m openal openjpeg png
-WANTLIB += pthread python3.2m stdc++ tiff util z
+WANTLIB += pthread ${MODPY_WANTLIB} stdc++ tiff util z
 
 NO_REGRESS =	Yes
 
