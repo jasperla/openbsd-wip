@@ -7,7 +7,7 @@ CATEGORIES =		graphics
 
 HOMEPAGE =		http://qtpfsgui.sourceforge.net/
 
-#MAINTAINER =		???
+MAINTAINER =		Kirill Bychkov <yason@linklevel.net>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -21,7 +21,7 @@ EXTRACT_CASES += 	*.tar.bz2) \
 			${BZIP2} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf - -C ${WRKDIST};;
 
 WANTLIB += Half Iex IlmImf QtGui QtSql QtWebKit QtXml c exiv2
-WANTLIB += fftw3f gsl gslcblas m pthread stdc++ tiff
+WANTLIB += fftw3f gsl gslcblas m pthread raw_r stdc++ tiff
 
 MODULES =		devel/cmake x11/qt4
 RUN_DEPENDS =		devel/desktop-file-utils
