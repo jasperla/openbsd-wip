@@ -27,7 +27,7 @@ WANTLIB += readline stdc++ util
 
 MASTER_SITES =		http://cloud.github.com/downloads/perl6/nqp/
 
-LIB_DEPENDS =		lang/parrot
+LIB_DEPENDS =		lang/parrot>=${PARROT_VERSION}
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	simple
