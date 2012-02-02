@@ -27,7 +27,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB = 		c icudata icui18n icuuc m ncurses parrot pthread
+WANTLIB = 		c gmp icudata icui18n icuuc m ncurses parrot pthread
 WANTLIB += 		readline stdc++ util
 
 VMEM_WARNING =		Yes
