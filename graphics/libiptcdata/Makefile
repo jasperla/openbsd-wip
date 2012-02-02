@@ -21,14 +21,13 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		m util
-WANTLIB-main = 		${WANTLIB} c iconv intl pthread
-WANTLIB-python = 	${WANTLIB} iptcdata
+cWANTLIB =		m util
+WANTLIB-main = 		${cWANTLIB} ${MODGETTEXT_WANTLIB} c pthread
+WANTLIB-python = 	${cWANTLIB} iptcdata
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libiptcdata/}
 
-MODULES =		lang/python
-LIB_DEPENDS-main = 	devel/gettext
+MODULES =		devel/gettext lang/python
 LIB_DEPENDS-python = 	graphics/libiptcdata,-main
 
 USE_LIBTOOL =		Yes
