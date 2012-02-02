@@ -41,10 +41,6 @@ CONFIGURE_ARGS+=	--prefix="${PREFIX}" \
 			--parrot_is_shared \
 			--icuheaders="${LOCALBASE}/include" \
 			--icushared="`${LOCALBASE}/bin/icu-config --ldflags`"
-# There's a nasty bug in sleep() when compiled with threads, which uses
-# pthread_cond_timedwait(3). Without threads, it maps to an ordinary sleep(3)
-# call. Exposed by rakudo tests.
-#CONFIGURE_ARGS +=	--without-threads
 
 # XXX The default (gms) garbage collector has issues on powerpc. Until
 # XXX it's fixed, use the old one (ms2).
