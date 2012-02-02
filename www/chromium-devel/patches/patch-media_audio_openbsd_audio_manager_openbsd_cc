@@ -1,13 +1,13 @@
 $OpenBSD$
---- media/audio/openbsd/audio_manager_openbsd.cc.orig	Sun Jan 22 15:01:07 2012
-+++ media/audio/openbsd/audio_manager_openbsd.cc	Mon Jan 23 10:07:38 2012
+--- media/audio/openbsd/audio_manager_openbsd.cc.orig	Tue Jan 31 21:01:08 2012
++++ media/audio/openbsd/audio_manager_openbsd.cc	Thu Feb  2 14:02:29 2012
 @@ -1,4 +1,4 @@
 -// Copyright (c) 2011 The Chromium Authors. All rights reserved.
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
  // Use of this source code is governed by a BSD-style license that can be
  // found in the LICENSE file.
  
-@@ -45,26 +45,21 @@ bool AudioManagerOpenBSD::HasAudioInputDevices() {
+@@ -45,32 +45,27 @@ bool AudioManagerOpenBSD::HasAudioInputDevices() {
  
  AudioOutputStream* AudioManagerOpenBSD::MakeAudioOutputStream(
      const AudioParameters& params) {
@@ -40,7 +40,16 @@ $OpenBSD$
 +    DCHECK(stream);
      return stream;
    }
- #endif
+-#endif
+-
++#else
+   NOTIMPLEMENTED();
+-  return NULL;
++#endif
++  return stream;
+ }
+ 
+ AudioInputStream* AudioManagerOpenBSD::MakeAudioInputStream(
 @@ -79,23 +74,12 @@ AudioInputStream* AudioManagerOpenBSD::MakeAudioInputS
    return NULL;
  }
