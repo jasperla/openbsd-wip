@@ -1,6 +1,7 @@
 # $OpenBSD$
 
-ONLY_FOR_ARCHS =	amd64 i386
+# needs LOTS of memory
+ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		3D space simulator
 
