@@ -19,9 +19,11 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes 
 
-WANTLIB += QtCore QtGui X11 Xext c crypto curl idn m mtp pthread ssl stdc++ usb z
+WANTLIB += ICE QtGui SM X11 Xext Xi Xinerama Xrender c crypto
+WANTLIB += curl fontconfig freetype idn m mtp pthread ssl stdc++
+WANTLIB += usb z
 
-MODLES = 		x11/qt4
+MODULES = 		x11/qt4
 BUILD_DEPENDS = 	devel/ccache
 LIB_DEPENDS = 		net/curl \
 			devel/libidn \
@@ -39,5 +41,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/scrobble-cli ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/scrobble-cli.1 ${PREFIX}/man/man1
 	${INSTALL_PROGRAM} ${WRKDIST}/src/qt/qtscrob ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKDIST}/src/qt/qtscrob.desktop \
+		${PREFIX}/share/applications/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKDIST}/src/qt/resources/icons/qtscrob.png \
+		${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>
