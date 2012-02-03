@@ -38,7 +38,7 @@ BUILD_DEPENDS =		lang/nqp
 LIB_DEPENDS =		lang/parrot>=${PARROT_VERSION} \
 			textproc/icu4c
 
-FAKE_FLAGS =		PERL6LIB="${WRKINST}${PREFIX}/lib/parrot/${PARROT_VERSION}/languages/nqp/lib"
+FAKE_FLAGS =		PERL6LIB="${WRKINST}${PREFIX}/lib/parrot/${PARROT_VERSION}/languages/nqp/lib:${WRKINST}${PREFIX}/lib/parrot/${PARROT_VERSION}/languages/perl6/lib"
 FAKE_FLAGS +=		LD_LIBRARY_PATH="${WRKINST}${PREFIX}/lib/parrot/${PARROT_VERSION}/dynext"
 
 CONFIGURE_STYLE =	simple
