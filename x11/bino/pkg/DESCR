@@ -1,0 +1,5 @@
+Bino is a video player with two special features:
+ * Support for stereoscopic 3D videos, with a wide variety of input
+and output formats.
+ * Support for multi-display video, e.g. for powerwalls, Virtual Reality
+installations and other multi-projector setups.
