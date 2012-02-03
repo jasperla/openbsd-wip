@@ -58,7 +58,7 @@ WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml
 WANTLIB += attica soprano sopranoclient streamanalyzer streams
 WANTLIB += Half Iex IlmImf IlmThread Imath asn1 aspell bz2 com_err
 WANTLIB += dbusmenu-qt enchant exslt fam gif gssapi intl jasper jpeg
-WANTLIB += lzma pcre pcreposix png polkit-qt-core-1 qca>=3.0 xml2 xslt
+WANTLIB += lzma pcre pcreposix png polkit-qt-core-1 qca2>=0.0 xml2 xslt
 
 MODULES =	multimedia/phonon
 MODKDE4_USE =	
