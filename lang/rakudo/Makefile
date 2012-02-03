@@ -58,6 +58,6 @@ post-install:
 pre-regress:
 	#no need to check out git repository
 	perl -pi -e 's/spectest_checkout spectest_update// if /^testable/' \
-		${WRKSRC}/rakudo/Makefile
+		${WRKSRC}/rakudo-${VERSION}/Makefile
 
 .include <bsd.port.mk>
