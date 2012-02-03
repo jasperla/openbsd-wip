@@ -2,7 +2,6 @@
 
 COMMENT =	image plugins infrastructure for KDE
 DISTNAME =	libkipi-${MODKDE_VERSION}
-REVISION =	0
 
 SHARED_LIBS =	kipi		0.1 # 4.7
 

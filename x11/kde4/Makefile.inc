@@ -6,7 +6,7 @@ CATEGORIES ?=		x11
 CATEGORIES +=		x11/kde4
 MODULES +=		x11/kde4
 
-MASTER_SITES ?=		${MASTER_SITE_KDE:=unstable/${VERSION}/src/}
+MASTER_SITES ?=		${MASTER_SITE_KDE:=stable/${VERSION}/src/}
 DIST_SUBDIR =		kde
 HOMEPAGE ?=		https://projects.kde.org/projects
 MAINTAINER ?=		KDE porting team <openbsd-kde@googlegroups.com>

@@ -2,7 +2,6 @@
 
 COMMENT =	KDE, interface to GnuPG
 DISTNAME =	kgpg-${MODKDE_VERSION}
-REVISION =	0
 
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml c kabc kcmutils kdeui kemoticons kidletime kio

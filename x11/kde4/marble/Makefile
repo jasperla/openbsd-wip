@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, maps
 DISTNAME =	marble-${MODKDE_VERSION}
-REVISION =	0
 
 SHARED_LIBS =	marblewidget		0.0 # 0.12
 

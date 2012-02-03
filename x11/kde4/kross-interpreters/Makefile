@@ -2,7 +2,6 @@
 
 COMMENT =	KDE 4 bindings helpers, for running interpreters
 DISTNAME =	kross-interpreters-${MODKDE_VERSION}
-REVISION =	0
 
 FLAVORS =		no_java
 FLAVOR ?=

@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	collection of plugins to handle mobipocket files for KDE
-DISTNAME =	mobipocket-${MODKDE_VERSION}
+DISTNAME =	kdegraphics-mobipocket-${MODKDE_VERSION}
 
 WANTLIB =  c m stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork

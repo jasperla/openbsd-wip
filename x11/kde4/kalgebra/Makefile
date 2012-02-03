@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, calculator
 DISTNAME =	kalgebra-${MODKDE_VERSION}
-REVISION =	0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += GL GLU lib/qt4/QtDeclarative
