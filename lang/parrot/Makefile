@@ -21,26 +21,29 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c gmp icudata icui18n icuuc m ncurses pthread readline
-WANTLIB += stdc++ util z
+WANTLIB += GL GLU c glut gmp icudata icui18n icuuc m ncurses pthread
+WANTLIB += readline stdc++ util z
 
+BUILD_DEPENDS=		graphics/glew
 LIB_DEPENDS=		textproc/icu4c \
-			devel/gmp
+			devel/gmp \
+			graphics/freeglut
 REGRESS_DEPENDS=	devel/p5-TAP-Harness-Multiple \
 			devel/p5-Test-Perl-Critic
 
 CONFIGURE_SCRIPT=	/usr/bin/perl Configure.pl
 CONFIGURE_STYLE=	simple
-CONFIGURE_ARGS+=	--prefix="${PREFIX}" \
-			--cc="${CC}" \
-			--ccflags="${CFLAGS} -I${LOCALBASE}/include" \
-			--link="${CXX}" \
-			--linkflags="-L${LOCALBASE}/lib" \
-			--ld="${CXX}" \
-			--ldflags="-L${LOCALBASE}/lib" \
-			--parrot_is_shared \
-			--icuheaders="${LOCALBASE}/include" \
-			--icushared="`${LOCALBASE}/bin/icu-config --ldflags`"
+CONFIGURE_ARGS+= \
+	--prefix="${PREFIX}" \
+	--cc="${CC}" \
+	--ccflags="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
+	--link="${CXX}" \
+	--linkflags="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+	--ld="${CXX}" \
+	--ldflags="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+	--parrot_is_shared \
+	--icuheaders="${LOCALBASE}/include" \
+	--icushared="`${LOCALBASE}/bin/icu-config --ldflags`"
 
 # XXX The default (gms) garbage collector has issues on powerpc. Until
 # XXX it's fixed, use the old one (ms2).
