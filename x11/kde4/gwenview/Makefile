@@ -3,7 +3,6 @@
 COMMENT =	K Desktop Environment, image viewer
 DISTNAME =	gwenview-${MODKDE_VERSION}
 PKGNAME =	${DISTNAME:S/gwenview/gwenview4/}
-REVISION =	0
 
 SHARED_LIBS =	gwenviewlib               0.0 # 4.7
 

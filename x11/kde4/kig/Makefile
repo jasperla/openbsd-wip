@@ -2,7 +2,6 @@
 
 COMMENT =	geometric constructions explorer for KDE
 DISTNAME =	kig-${MODKDE_VERSION}
-REVISION =	0
 
 MODULES =	lang/python
 

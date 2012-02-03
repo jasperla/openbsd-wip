@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, mathematical applications
 DISTNAME =	cantor-${MODKDE_VERSION}
-REVISION =	2
 
 SHARED_LIBS =  cantorlibs                0.0 # 0.0
 

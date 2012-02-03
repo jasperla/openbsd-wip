@@ -2,7 +2,6 @@
 
 COMMENT =	KDE strigi analyzer for graphics files
 DISTNAME =	kdegraphics-strigi-analyzer-${MODKDE_VERSION}
-REVISION =	0
 
 WANTLIB =  c m stdc++
 WANTLIB += streamanalyzer streams tiff
