@@ -195,6 +195,7 @@ lib/parrot/${V}/dynext/dynlexpad.so
 lib/parrot/${V}/dynext/file.so
 lib/parrot/${V}/dynext/gziphandle.so
 lib/parrot/${V}/dynext/io_ops.so
+lib/parrot/${V}/dynext/libglutcb.so
 lib/parrot/${V}/dynext/math_ops.so
 lib/parrot/${V}/dynext/obscure_ops.so
 lib/parrot/${V}/dynext/os.so
@@ -224,6 +225,7 @@ lib/parrot/${V}/include/interptrace.pasm
 lib/parrot/${V}/include/iterator.pasm
 lib/parrot/${V}/include/libpaths.pasm
 lib/parrot/${V}/include/longopt.pasm
+lib/parrot/${V}/include/opengl_defines.pasm
 lib/parrot/${V}/include/parrot_version.pir
 lib/parrot/${V}/include/parrotlib.pbc
 lib/parrot/${V}/include/pmctypes.pasm
@@ -352,8 +354,11 @@ lib/parrot/${V}/library/Math/Rand.pir
 lib/parrot/${V}/library/NCI/
 lib/parrot/${V}/library/NCI/Utils.pir
 lib/parrot/${V}/library/OpenGL/
+lib/parrot/${V}/library/OpenGL.pbc
 lib/parrot/${V}/library/OpenGL.pir
 lib/parrot/${V}/library/OpenGL/Math.pir
+lib/parrot/${V}/library/OpenGL_funcs.pbc
+lib/parrot/${V}/library/OpenGL_funcs.pir
 lib/parrot/${V}/library/P6Regex.pbc
 lib/parrot/${V}/library/P6object.pbc
 lib/parrot/${V}/library/P6object.pir
