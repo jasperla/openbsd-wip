@@ -6,6 +6,7 @@ CATEGORIES =	devel lang/ruby x11/kde4
 COMMENT =	Qt 4 bindings for Ruby
 DISTNAME =	qtruby-${MODKDE_VERSION}
 PKGNAME =	ruby-qt-${MODKDE_VERSION}
+REVISION =	0
 HOMEPAGE =	http://techbase.kde.org/Development/Languages/Ruby
 
 SHARED_LIBS =	qtruby4shared		0.0 # 2.0
@@ -26,5 +27,13 @@ MODKDE4_USE =
 LIB_DEPENDS =		x11/kde4/smokeqt
 
 PATCHORIG =		.ports.orig
+
+post-patch:
+	@echo "====> Adjusting shebangs"
+	@cd ${WRKSRC} && find . -name '*.rb' | while read F; do \
+		echo -n "\t$$F"; \
+		${MODRUBY_RUBY_ADJ} "$$F"; \
+		echo; \
+	done
 
 .include <bsd.port.mk>
