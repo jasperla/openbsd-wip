@@ -1,8 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	KDE office suite
-VERSION =	2.3.86
-REVISION =	0
+VERSION =	2.3.87
 DISTNAME =	calligra-${VERSION}
 PKGNAME =	${DISTNAME:C/-/4-/1}
 
