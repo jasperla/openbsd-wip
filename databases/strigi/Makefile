@@ -5,12 +5,11 @@ COMMENT =	document indexer
 CATEGORIES =	databases devel textproc sysutils
 
 HOMEPAGE =	http://strigi.sourceforge.net
-DISTNAME =	strigi-0.7.5
-REVISION =	2
+DISTNAME =	strigi-0.7.7
 
-EXTRACT_SUFX =	.tar.bz2
-MASTER_SITES =	http://www.vandenoever.info/software/strigi/ \
-		http://spacehopper.org/mirrors/
+EXTRACT_SUFX =	.tar.gz
+MASTER_SITES =	http://spacehopper.org/mirrors/ \
+		http://www.ohvost.ru/dnl/kde/
 
 # LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
