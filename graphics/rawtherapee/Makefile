@@ -8,6 +8,8 @@ CATEGORIES =		graphics
 
 HOMEPAGE =		http://www.rawtherapee.com/
 
+MAINTAINER = 		Kirill Bychkov <yason@linklevel.net>
+
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
