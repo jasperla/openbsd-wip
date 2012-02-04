@@ -1,0 +1,30 @@
+$OpenBSD$
+--- server/src/nepomuk/queryserviceclient.h.orig	Sat Feb  4 11:22:02 2012
++++ server/src/nepomuk/queryserviceclient.h	Sat Feb  4 11:30:25 2012
+@@ -24,6 +24,8 @@
+ 
+ class QUrl;
+ 
++typedef QHash<QString, QString> QStrStrHash;
++
+ namespace Nepomuk {
+     namespace Query {
+ 
+@@ -78,7 +80,7 @@ namespace Nepomuk {
+              *
+              * \sa QueryParser
+              */
+-            bool query( const QString& query, const QHash<QString, QString> &encodedRps = QHash<QString, QString>() );
++            bool query( const QString& query, const QStrStrHash & = QStrStrHash() );
+ 
+             /**
+              * Start a query using the Nepomuk user query language.
+@@ -96,7 +98,7 @@ namespace Nepomuk {
+              * 
+              * \sa query(const QString&), close()
+              */
+-            bool blockingQuery( const QString& query, const QHash<QString, QString> &encodedRps = QHash<QString, QString>() );
++            bool blockingQuery( const QString& query, const QStrStrHash & = QStrStrHash() );
+ 
+             /**
+              * Close the client, thus stop to monitor the query
