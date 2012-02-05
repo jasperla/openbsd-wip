@@ -5,21 +5,13 @@ SHARED_ONLY =		Yes
 VERSION =		3.2.2
 DISTNAME =		kamailio-${VERSION}_src
 PKGNAME-main =		kamailio-${VERSION}
-REVISION-main =		0
 PKGNAME-mysql =		kamailio-mysql-${VERSION}
-REVISION-mysql =	0
 PKGNAME-postgresql =	kamailio-postgresql-${VERSION}
-REVISION-postgresql =	0
 PKGNAME-ldap =		kamailio-ldap-${VERSION}
-REVISION-ldap =		0
 PKGNAME-xmlrpc =	kamailio-xmlrpc-${VERSION}
-REVISION-xmlrpc =	0
 PKGNAME-carrierroute =	kamailio-carrierroute-${VERSION}
-REVISION-carrierroute =	0
 PKGNAME-snmpstats =	kamailio-snmpstats-${VERSION}
-REVISION-snmpstats =	0
 PKGNAME-perl =		kamailio-perl-${VERSION}
-REVISION-perl =		0
 
 CATEGORIES =		telephony
 MAINTAINER =		Roman Kravchuk <kravchuk.kp@gmail.com>
@@ -32,6 +24,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
+# XXX these are wrong - should all start from 0.0 and control the files which actually get built
 SHARED_LIBS =		kcore	1.0 \
 			kmi	1.0 \
 			ser_cds	0.1 \
@@ -39,18 +32,19 @@ SHARED_LIBS =		kcore	1.0 \
 			srdb2	1.0 \
 			trie	1.0
 
-MAKE_ENV =		CC=${CC} LDFLAGS="${LDFLAGS} -pthread"
+MAKE_ENV =		CC="${CC}" LDFLAGS="${LDFLAGS} -pthread" QUIET=verbose
 
 MASTER_SITES =		http://www.kamailio.org/pub/kamailio/${VERSION}/src/
 WRKDIST =		${WRKDIR}/kamailio-${VERSION}
 
 MODULES =		devel/gettext
 WANTLIB-main =		c crypto curl db expat pcre pthread ssl xml2 \
-			iconv idn intl ncurses readline z
+			idn ncurses readline z ${MODGETTEXT_WANTLIB}
 LIB_DEPENDS-main =	net/curl \
 			databases/db/v4 \
 			devel/pcre \
-			textproc/libxml,-main,no_python
+			textproc/libxml,-main,no_python \
+			${MODGETTEXT_LIB_DEPENDS}
 
 KAMAILIO_MODULES =	cpl-c db_berkeley dialplan jabber lcr \
 			presence presence_dialoginfo presence_mwi presence_xml \
@@ -125,9 +119,9 @@ PSEUDO_FLAVORS +=	no_carrierroute
 MULTI_PACKAGES +=	-carrierroute
 COMMENT-carrierroute =	kamailio carrierroute module
 KAMAILIO_MODULES +=	carrierroute
-WANTLIB-carrierroute =	confuse iconv intl
-LIB_DEPENDS-carrierroute = devel/libconfuse
-RUN_DEPENDS-carrierroute = ${MODGETTEXT_RUN_DEPENDS}
+WANTLIB-carrierroute =	confuse ${MODGETTEXT_WANTLIB}
+LIB_DEPENDS-carrierroute = devel/libconfuse \
+			${MODGETTEXT_LIB_DEPENDS}
 .endif
 
 PSEUDO_FLAVORS +=	no_perl
