@@ -1,12 +1,9 @@
 $OpenBSD$
 --- configure.in.orig	Sat Oct 29 03:28:08 2011
-+++ configure.in	Sat Jan 28 21:57:31 2012
-@@ -366,9 +366,9 @@ AC_PROG_YACC
- AC_PATH_PROG(HTMLDOC, htmldoc)
- AM_CONDITIONAL(WITH_HTMLDOC, test "x$HTMLDOC" != "x")
++++ configure.in	Sun Feb  5 17:47:04 2012
+@@ -368,7 +368,7 @@ AM_CONDITIONAL(WITH_HTMLDOC, test "x$HTMLDOC" != "x")
  
--AM_PROG_LEX
-+# AM_PROG_LEX
+ AM_PROG_LEX
  
 -AC_PATH_PROG(FLEX, flex, flex)
 +AC_PATH_PROG(FLEX, gflex, gflex)
