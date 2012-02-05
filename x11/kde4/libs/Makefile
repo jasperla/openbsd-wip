@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, libraries
 DISTNAME =	kdelibs-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kde3support          0.0      # .4.0
 SHARED_LIBS +=	kdecore              8.0      # .5.0
@@ -64,11 +65,13 @@ MODKDE4_USE =
 
 BUILD_DEPENDS =	misc/shared-desktop-ontologies \
 		misc/shared-mime-info \
+		net/avahi \
 		textproc/docbook \
 		textproc/docbook-xsl
 
 RUN_DEPENDS =	misc/shared-mime-info \
 		misc/shared-desktop-ontologies \
+		net/avahi \
 		sysutils/gamin \
 		STEM->=${MODKDE4_VERSION}:x11/kde4/oxygen-icons \
 		x11/dbus \
@@ -76,7 +79,7 @@ RUN_DEPENDS =	misc/shared-mime-info \
 
 LIB_DEPENDS =	archivers/bzip2 \
 		archivers/xz \
-		x11/kde4/attica>=0.2.9 \
+		databases/soprano>=2.7.3 \
 		databases/strigi \
 		devel/bison \
 		devel/pcre \
@@ -84,11 +87,11 @@ LIB_DEPENDS =	archivers/bzip2 \
 		graphics/libungif \
 		graphics/openexr \
 		security/qca2 \
-		databases/soprano>=2.7.3 \
 		sysutils/gamin \
 		textproc/aspell/core \
 		textproc/enchant \
 		textproc/libxslt \
+		x11/kde4/attica>=0.2.9 \
 		x11/dbusmenu-qt \
 		x11/grantlee \
 		x11/polkit-qt4

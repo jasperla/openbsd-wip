@@ -1,12 +1,12 @@
 $OpenBSD$
---- cmake/modules/FindQCA2.cmake.orig	Wed Jul 27 13:34:31 2011
-+++ cmake/modules/FindQCA2.cmake	Tue Jan 31 17:34:36 2012
-@@ -32,7 +33,7 @@ else (QCA2_INCLUDE_DIR AND QCA2_LIBRARIES)
+--- cmake/modules/FindQCA2.cmake.orig	Wed Jul 27 22:34:31 2011
++++ cmake/modules/FindQCA2.cmake	Mon Feb  6 02:11:03 2012
+@@ -32,7 +32,7 @@ else (QCA2_INCLUDE_DIR AND QCA2_LIBRARIES)
  
    find_library_with_debug(QCA2_LIBRARIES
                    WIN32_DEBUG_POSTFIX d
 -                  NAMES qca
-+                  NAMES qca qca2
++                  NAMES qca2 qca
                    HINTS ${PC_QCA2_LIBDIR} ${PC_QCA2_LIBRARY_DIRS}
                    )
  
