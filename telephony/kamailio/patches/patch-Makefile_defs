@@ -1,0 +1,21 @@
+$OpenBSD$
+--- Makefile.defs.orig	Fri Feb  3 15:03:24 2012
++++ Makefile.defs	Fri Feb  3 15:05:02 2012
+@@ -422,7 +422,7 @@ endif
+ endif
+ 
+ # dirs
+-cfg_dir = etc/$(MAIN_NAME)/
++cfg_dir = share/examples/$(MAIN_NAME)/
+ bin_dir = sbin/
+ share_dir = share/$(MAIN_NAME)/
+ # lib/$(MAIN_NAME)/modules , lib/$(MAIN_NAME)/modules-s, lib/$(MAIN_NAME)/modules-k
+@@ -504,7 +504,7 @@ data_prefix = $(basedir)$(prefix)
+ 
+ 
+ # target dirs for various stuff
+-cfg_target = $(prefix)/$(cfg_dir)
++cfg_target = /etc/$(MAIN_NAME)/
+ bin_target = $(prefix)/$(bin_dir)
+ #modules_target = $(prefix)/$(modules_dir)
+ lib_target = $(prefix)/$(lib_dir)
