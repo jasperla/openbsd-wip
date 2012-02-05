@@ -82,12 +82,15 @@ lib/libstreamanalyzer/LibStreamAnalyzerConfig.cmake
 lib/libstreams/
 @lib lib/libstreams.so.${LIBstreams_VERSION}
 lib/libstreams/LibStreamsConfig.cmake
+lib/libstreams/LibStreamsTargets-noconfig.cmake
+lib/libstreams/LibStreamsTargets.cmake
 @lib lib/libstrigihtmlgui.so.${LIBstrigihtmlgui_VERSION}
 @lib lib/libstrigiqtdbusclient.so.${LIBstrigiqtdbusclient_VERSION}
 lib/pkgconfig/libstreamanalyzer.pc
 lib/pkgconfig/libstreams.pc
 lib/strigi/
 lib/strigi/StrigiConfig.cmake
+lib/strigi/strigiea_digest.so
 lib/strigi/strigiea_ffmpeg.so
 lib/strigi/strigiea_jpeg.so
 lib/strigi/strigiea_riff.so

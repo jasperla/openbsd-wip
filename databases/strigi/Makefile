@@ -7,7 +7,6 @@ CATEGORIES =	databases devel textproc sysutils
 HOMEPAGE =	http://strigi.sourceforge.net
 DISTNAME =	strigi-0.7.7
 
-EXTRACT_SUFX =	.tar.gz
 MASTER_SITES =	http://spacehopper.org/mirrors/ \
 		http://www.ohvost.ru/dnl/kde/
 
@@ -17,11 +16,11 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-SHARED_LIBS +=  searchclient       1.0 # .0.5
-SHARED_LIBS +=  streamanalyzer     1.0 # .0.5
-SHARED_LIBS +=  streams            1.0 # .0.5
-SHARED_LIBS +=  strigihtmlgui      1.0 # .0.5
-SHARED_LIBS +=  strigiqtdbusclient 1.0 # .0.5
+SHARED_LIBS +=  searchclient       1.1 # .0.5
+SHARED_LIBS +=  streamanalyzer     1.1 # .0.5
+SHARED_LIBS +=  streams            1.1 # .0.5
+SHARED_LIBS +=  strigihtmlgui      1.1 # .0.5
+SHARED_LIBS +=  strigiqtdbusclient 1.1 # .0.5
 
 BUILD_DEPENDS =	devel/cppunit
 
