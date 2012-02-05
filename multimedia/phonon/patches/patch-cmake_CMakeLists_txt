@@ -1,17 +1,19 @@
 $OpenBSD$
---- cmake/CMakeLists.txt.orig	Tue Jan 10 18:17:08 2012
-+++ cmake/CMakeLists.txt	Tue Jan 10 18:17:34 2012
-@@ -1,13 +1,9 @@
- install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in
-               ${CMAKE_CURRENT_SOURCE_DIR}/COPYING-CMAKE-SCRIPTS
--              ${CMAKE_CURRENT_SOURCE_DIR}/FindAutomoc4.cmake
--              ${CMAKE_CURRENT_SOURCE_DIR}/FindPackageHandleStandardArgs.cmake
-               ${CMAKE_CURRENT_SOURCE_DIR}/FindPhononInternal.cmake
-               ${CMAKE_CURRENT_SOURCE_DIR}/PhononMacros.cmake
--              ${CMAKE_CURRENT_SOURCE_DIR}/FindQt4.cmake
-               ${CMAKE_CURRENT_SOURCE_DIR}/MacroEnsureVersion.cmake
-               ${CMAKE_CURRENT_SOURCE_DIR}/MacroLogFeature.cmake
-               ${CMAKE_CURRENT_SOURCE_DIR}/MacroOptionalFindPackage.cmake
--              ${CMAKE_CURRENT_SOURCE_DIR}/MacroPushRequiredVars.cmake
-               ${CMAKE_CURRENT_SOURCE_DIR}/PhononMacros.cmake
+--- cmake/CMakeLists.txt.orig	Sun Feb  5 21:07:55 2012
++++ cmake/CMakeLists.txt	Sun Feb  5 21:08:35 2012
+@@ -1,15 +1,9 @@
+ install(FILES cmake_uninstall.cmake.in
+               COPYING-CMAKE-SCRIPTS
+-              FindAutomoc4.cmake
+-              FindPackageHandleStandardArgs.cmake
+               FindPhononInternal.cmake
+               PhononMacros.cmake
+-              FindQt4.cmake
+               MacroEnsureVersion.cmake
+               MacroLogFeature.cmake
+               MacroOptionalFindPackage.cmake
+-              MacroPushRequiredVars.cmake
+               PhononMacros.cmake
+-              Qt4ConfigDependentSettings.cmake
+-              Qt4Macros.cmake
          DESTINATION ${BUILDSYSTEM_INSTALL_DIR})

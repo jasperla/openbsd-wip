@@ -1,0 +1,17 @@
+$OpenBSD$
+--- CMakeLists.txt.orig	Sat Jul 30 19:49:26 2011
++++ CMakeLists.txt	Mon Feb  6 02:00:22 2012
+@@ -1,10 +1,11 @@
+ project(PhononVLC)
+ 
+-cmake_minimum_required(VERSION 2.6.2 FATAL_ERROR)
++cmake_minimum_required(VERSION 2.8.7 FATAL_ERROR)
+ set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules")
+ 
+ # Phonon
+-find_package(Phonon REQUIRED)
++find_package(Phonon REQUIRED NO_MODULE)
++message("PHONON_INCLUDES: ${PHONON_INCLUDES}")
+ if(PHONON_PULSESUPPORT)
+   add_definitions(-DPHONON_PULSESUPPORT)
+ endif(PHONON_PULSESUPPORT)
