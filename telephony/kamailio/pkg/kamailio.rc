@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# $OpenBSD:
+
+daemon="${TRUEPREFIX}/sbin/kamailio"
+
+. /etc/rc.d/rc.subr
+
+rc_start() {
+	install -d -o _kamailio /var/run/kamailio
+	${rcexec} "${TRUEPREFIX}/sbin/kamctl start"
+}
+
+rc_stop() {
+	${rcexec} "${TRUEPREFIX}/sbin/kamctl stop"
+}
+
+rc_reload=NO
+
+rc_cmd $1
