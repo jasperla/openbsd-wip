@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, collection of wallpapers
 DISTNAME =	kde-wallpapers-${MODKDE_VERSION}
+REVISION =	0
 
 MODKDE4_RESOURCES =	Yes
 
