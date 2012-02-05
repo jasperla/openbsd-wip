@@ -1,0 +1,6 @@
+remove "-O9 -funroll-loops ... -mtune=opteron" crap 
+check for hardcoded /etc
+zap lib/kamailio/libkcore.so, lib/kamailio/libkcore.so.1 etc.
+readd TLS
+finish radius
+fix shared library building with version numbers
