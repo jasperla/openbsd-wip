@@ -24,7 +24,7 @@ BUILD_DEPENDS +=	x11/kde4/automoc
 
 SEPARATE_BUILD ?=	flavored
 
-CONFIGURE_ARGS +=	-DPHONON_BUILDSYSTEM_DIR:String=${LOCALBASE}/share/phonon-buildsystem
+CONFIGURE_ARGS =	-DPhonon_DIR:String=${LOCALBASE}/lib/cmake/phonon
 
 .if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS +=       -DCMAKE_BUILD_TYPE:String=Debug
