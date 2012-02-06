@@ -1,6 +1,6 @@
 $OpenBSD$
---- format.cpp.orig	Fri Jan 20 13:52:03 2012
-+++ format.cpp	Fri Jan 20 14:33:22 2012
+--- format.cpp.orig	Mon Aug 22 17:26:09 2011
++++ format.cpp	Mon Feb  6 20:16:21 2012
 @@ -799,22 +799,28 @@ void UFSFilesystem::exec()
  
  
@@ -40,7 +40,7 @@ $OpenBSD$
  	*p << "-q";
 -	if (doVerify) *p << QLatin1String( "-c" ) ;
 -	if (doLabel) *p << QLatin1String( "-L" ) << label ;
-+	if (native_mke2fs)
++	if (native_mke2fs) {
 +		if (doVerify) *p << QLatin1String( "-c" ) ;
 +		if (doLabel) *p << QLatin1String( "-L" ) << label ;
 +	} else {
