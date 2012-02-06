@@ -3,6 +3,7 @@
 COMMENT =	KDE 4 bindings for Perl
 DISTNAME =	perlkde-${MODKDE_VERSION}
 PKGNAME =	p5-kde-${MODKDE_VERSION}
+REVISION =	0
 
 WANTLIB =  c m perl stdc++ util
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
@@ -12,17 +13,13 @@ WANTLIB += smokekfile smokekhtml smokekio smokeknewstuff2 smokeknewstuff3
 WANTLIB += smokekparts smokektexteditor smokekutils smokenepomuk
 WANTLIB += smokenepomukquery smokeokular smokeplasma smokeqtcore
 WANTLIB += smokeqtdbus smokeqtgui smokeqtnetwork smokesolid smokesoprano
-WANTLIB += smokesopranoclient smokesopranoserver
+WANTLIB += smokesopranoclient smokesopranoserver smokeakonadi
 
 MODKDE4_USE =	libs
 
 LIB_DEPENDS = 	x11/kde4/kate \
 		x11/kde4/p5-qt \
 		x11/kde4/smokekde
-
-# Disable until KDE Smoke bug 283677 gets fixed,
-# https://bugs.kde.org/show_bug.cgi?id=283677
-CONFIGURE_ARGS =	-DBUILD_Akonadi:Bool=False
 
 # Avoid clashing Perl do_open and do_close with GCC's locale_facets.h
 post-patch:
