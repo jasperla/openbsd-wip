@@ -1,24 +1,24 @@
 @comment $OpenBSD$
-man/ru/
-man/ru/man1/
-@man man/ru/man1/checkXML.1
-@man man/ru/man1/kalzium.1
-@man man/ru/man1/kbookmarkmerger.1
-@man man/ru/man1/kbruch.1
-@man man/ru/man1/kdesu.1
-@man man/ru/man1/kfind.1
-@man man/ru/man1/kig.1
-@man man/ru/man1/kmag.1
-@man man/ru/man1/kmplot.1
-@man man/ru/man1/po2xml.1
-@man man/ru/man1/split2po.1
-@man man/ru/man1/swappo.1
-@man man/ru/man1/xml2pot.1
-man/ru/man6/
-@man man/ru/man6/khangman.6
-@man man/ru/man6/kpat.6
-man/ru/man7/
-@man man/ru/man7/qtoptions.7
+@comment man/ru/
+@comment man/ru/man1/
+@comment @man man/ru/man1/checkXML.1
+@comment @man man/ru/man1/kalzium.1
+@comment @man man/ru/man1/kbookmarkmerger.1
+@comment @man man/ru/man1/kbruch.1
+@comment @man man/ru/man1/kdesu.1
+@comment @man man/ru/man1/kfind.1
+@comment @man man/ru/man1/kig.1
+@comment @man man/ru/man1/kmag.1
+@comment @man man/ru/man1/kmplot.1
+@comment @man man/ru/man1/po2xml.1
+@comment @man man/ru/man1/split2po.1
+@comment @man man/ru/man1/swappo.1
+@comment @man man/ru/man1/xml2pot.1
+@comment man/ru/man6/
+@comment @man man/ru/man6/khangman.6
+@comment @man man/ru/man6/kpat.6
+@comment man/ru/man7/
+@comment @man man/ru/man7/qtoptions.7
 share/apps/
 share/apps/katepart/
 share/apps/katepart/syntax/

@@ -463,6 +463,7 @@ share/locale/sl/LC_MESSAGES/ksudoku.mo
 share/locale/sl/LC_MESSAGES/ksysguard.mo
 share/locale/sl/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/sl/LC_MESSAGES/ksystraycmd.mo
+share/locale/sl/LC_MESSAGES/kte_acomment.mo
 share/locale/sl/LC_MESSAGES/kteatime.mo
 share/locale/sl/LC_MESSAGES/ktesnippets_editor.mo
 share/locale/sl/LC_MESSAGES/ktexteditor_codesnippets_core.mo
@@ -726,6 +727,7 @@ share/locale/sl/LC_MESSAGES/plasmapkg.mo
 share/locale/sl/LC_MESSAGES/plasmawallpaperviewer.mo
 share/locale/sl/LC_MESSAGES/plasmoidviewer.mo
 share/locale/sl/LC_MESSAGES/powerdevil.mo
+share/locale/sl/LC_MESSAGES/powerdevilactivitiesconfig.mo
 share/locale/sl/LC_MESSAGES/powerdevilglobalconfig.mo
 share/locale/sl/LC_MESSAGES/powerdevilprofilesconfig.mo
 share/locale/sl/LC_MESSAGES/printer-applet.mo

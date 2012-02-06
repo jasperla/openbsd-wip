@@ -1,57 +1,6 @@
 # $OpenBSD$
 
-SUBDIR =
-SUBDIR +=	ar
-SUBDIR +=	bg
-SUBDIR +=	bs
-SUBDIR +=	ca
-SUBDIR +=	ca@valencia
-SUBDIR +=	cs
-SUBDIR +=	da
-SUBDIR +=	de
-SUBDIR +=	el
-SUBDIR +=	en_GB
-SUBDIR +=	es
-SUBDIR +=	et
-SUBDIR +=	eu
-SUBDIR +=	fi
-SUBDIR +=	fr
-SUBDIR +=	ga
-SUBDIR +=	gl
-#SUBDIR +=	he
-SUBDIR +=	hr
-SUBDIR +=	hu
-SUBDIR +=	ia
-#SUBDIR +=	id
-SUBDIR +=	is
-SUBDIR +=	it
-SUBDIR +=	ja
-SUBDIR +=	kk
-SUBDIR +=	km
-#SUBDIR +=	kn
-SUBDIR +=	ko
-SUBDIR +=	lt
-SUBDIR +=	lv
-SUBDIR +=	nb
-SUBDIR +=	nds
-SUBDIR +=	nl
-SUBDIR +=	nn
-SUBDIR +=	pa
-SUBDIR +=	pl
-SUBDIR +=	pt
-SUBDIR +=	pt_BR
-SUBDIR +=	ro
-SUBDIR +=	ru
-SUBDIR +=	sk
-SUBDIR +=	sl
-SUBDIR +=	sr
-SUBDIR +=	sv
-SUBDIR +=	th
-SUBDIR +=	tr
-#SUBDIR +=	ug
-SUBDIR +=	uk
-SUBDIR +=	wa
-SUBDIR +=	zh_CN
-SUBDIR +=	zh_TW
+.include "${.CURDIR}/Makefile.langs"
+SUBDIR =	${ALL_LANGS}
 
 .include <bsd.port.subdir.mk>

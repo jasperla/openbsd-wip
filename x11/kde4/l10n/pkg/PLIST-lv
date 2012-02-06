@@ -85,6 +85,7 @@ share/locale/lv/LC_MESSAGES/kapman.mo
 share/locale/lv/LC_MESSAGES/kapptemplate.mo
 share/locale/lv/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/lv/LC_MESSAGES/kate.mo
+share/locale/lv/LC_MESSAGES/kate_kttsd.mo
 share/locale/lv/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/lv/LC_MESSAGES/katebuild-plugin.mo
 share/locale/lv/LC_MESSAGES/kateexternaltoolsplugin.mo
@@ -371,6 +372,8 @@ share/locale/lv/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/lv/LC_MESSAGES/ksystemlog.mo
 share/locale/lv/LC_MESSAGES/ksystraycmd.mo
 share/locale/lv/LC_MESSAGES/kteatime.mo
+share/locale/lv/LC_MESSAGES/ktesnippets_editor.mo
+share/locale/lv/LC_MESSAGES/ktexteditor_codesnippets_core.mo
 share/locale/lv/LC_MESSAGES/ktexteditor_plugins.mo
 share/locale/lv/LC_MESSAGES/ktexteditorkabcbridge_plugin.mo
 share/locale/lv/LC_MESSAGES/ktimer.mo
@@ -492,6 +495,7 @@ share/locale/lv/LC_MESSAGES/phononserver.mo
 share/locale/lv/LC_MESSAGES/plasma-desktop.mo
 share/locale/lv/LC_MESSAGES/plasma-netbook.mo
 share/locale/lv/LC_MESSAGES/plasma-overlay.mo
+share/locale/lv/LC_MESSAGES/plasma-remote-helper.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_BbalL.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_CharSelectApplet.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_battery.mo
@@ -589,6 +593,7 @@ share/locale/lv/LC_MESSAGES/plasma_runner_calculatorrunner.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_contacts.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_datetime.mo
+share/locale/lv/LC_MESSAGES/plasma_runner_events.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_katesessions.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_kget.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_kill.mo

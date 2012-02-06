@@ -1,10 +1,10 @@
 @comment $OpenBSD$
-man/lt/
-man/lt/man1/
-@man man/lt/man1/checkXML.1
-@man man/lt/man1/kfind.1
-man/lt/man8/
-@man man/lt/man8/kbuildsycoca4.8
+@comment man/lt/
+@comment man/lt/man1/
+@comment @man man/lt/man1/checkXML.1
+@comment @man man/lt/man1/kfind.1
+@comment man/lt/man8/
+@comment @man man/lt/man8/kbuildsycoca4.8
 share/apps/
 share/apps/ktuberling/
 share/apps/ktuberling/sounds/

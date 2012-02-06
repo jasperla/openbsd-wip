@@ -64,6 +64,7 @@ share/locale/fi/LC_MESSAGES/akonadi_strigi_feeder.mo
 share/locale/fi/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/fi/LC_MESSAGES/akonadicontact.mo
+share/locale/fi/LC_MESSAGES/akonadinotes.mo
 share/locale/fi/LC_MESSAGES/akonaditray.mo
 share/locale/fi/LC_MESSAGES/akregator.mo
 share/locale/fi/LC_MESSAGES/akregator_konqplugin.mo
@@ -408,6 +409,7 @@ share/locale/fi/LC_MESSAGES/ksendemail.mo
 share/locale/fi/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/fi/LC_MESSAGES/kshisen.mo
 share/locale/fi/LC_MESSAGES/kshorturifilter.mo
+share/locale/fi/LC_MESSAGES/ksirk.mo
 share/locale/fi/LC_MESSAGES/ksmserver.mo
 share/locale/fi/LC_MESSAGES/ksnapshot.mo
 share/locale/fi/LC_MESSAGES/kspaceduel.mo
@@ -476,6 +478,7 @@ share/locale/fi/LC_MESSAGES/libkdepim.mo
 share/locale/fi/LC_MESSAGES/libkdepimmobileui.mo
 share/locale/fi/LC_MESSAGES/libkexiv2.mo
 share/locale/fi/LC_MESSAGES/libkholidays.mo
+share/locale/fi/LC_MESSAGES/libkimap.mo
 share/locale/fi/LC_MESSAGES/libkldap.mo
 share/locale/fi/LC_MESSAGES/libkleopatra.mo
 share/locale/fi/LC_MESSAGES/libkmahjongg.mo
@@ -514,9 +517,11 @@ share/locale/fi/LC_MESSAGES/libtaskmanager.mo
 share/locale/fi/LC_MESSAGES/libtemplateparser.mo
 share/locale/fi/LC_MESSAGES/lokalize.mo
 share/locale/fi/LC_MESSAGES/lskat.mo
+share/locale/fi/LC_MESSAGES/mailfilteragent.mo
 share/locale/fi/LC_MESSAGES/mailreader.mo
 share/locale/fi/LC_MESSAGES/marble.mo
 share/locale/fi/LC_MESSAGES/marble_qt.mo
+share/locale/fi/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/fi/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/fi/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/fi/LC_MESSAGES/messageviewer_text_xdiff_plugin.mo
@@ -562,6 +567,7 @@ share/locale/fi/LC_MESSAGES/phononserver.mo
 share/locale/fi/LC_MESSAGES/plasma-desktop.mo
 share/locale/fi/LC_MESSAGES/plasma-netbook.mo
 share/locale/fi/LC_MESSAGES/plasma-overlay.mo
+share/locale/fi/LC_MESSAGES/plasma-remote-helper.mo
 share/locale/fi/LC_MESSAGES/plasma-windowed.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_BbalL.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_CharSelectApplet.mo
@@ -585,6 +591,7 @@ share/locale/fi/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_gasCalculator.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_groupingpanel.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_icon.mo
+share/locale/fi/LC_MESSAGES/plasma_applet_icontasks.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_kalgebra.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_kalzium.mo
@@ -680,6 +687,7 @@ share/locale/fi/LC_MESSAGES/plasma_runner_konquerorsessions.mo
 share/locale/fi/LC_MESSAGES/plasma_runner_konsolesessions.mo
 share/locale/fi/LC_MESSAGES/plasma_runner_kopete.mo
 share/locale/fi/LC_MESSAGES/plasma_runner_locations.mo
+share/locale/fi/LC_MESSAGES/plasma_runner_marblerunner.mo
 share/locale/fi/LC_MESSAGES/plasma_runner_mediawiki.mo
 share/locale/fi/LC_MESSAGES/plasma_runner_nepomuksearchrunner.mo
 share/locale/fi/LC_MESSAGES/plasma_runner_placesrunner.mo
@@ -702,6 +710,7 @@ share/locale/fi/LC_MESSAGES/plasma_wallpaper_image.mo
 share/locale/fi/LC_MESSAGES/plasma_wallpaper_mandelbrot.mo
 share/locale/fi/LC_MESSAGES/plasma_wallpaper_marble.mo
 share/locale/fi/LC_MESSAGES/plasma_wallpaper_pattern.mo
+share/locale/fi/LC_MESSAGES/plasma_wallpaper_potd.mo
 share/locale/fi/LC_MESSAGES/plasma_wallpaper_virus.mo
 share/locale/fi/LC_MESSAGES/plasma_wallpaper_weather.mo
 share/locale/fi/LC_MESSAGES/plasmaengineexplorer.mo
@@ -718,6 +727,7 @@ share/locale/fi/LC_MESSAGES/processcore.mo
 share/locale/fi/LC_MESSAGES/processui.mo
 share/locale/fi/LC_MESSAGES/randrmonitor.mo
 share/locale/fi/LC_MESSAGES/rellinks.mo
+share/locale/fi/LC_MESSAGES/remote-widgets-browser.mo
 share/locale/fi/LC_MESSAGES/rocs.mo
 share/locale/fi/LC_MESSAGES/searchbarplugin.mo
 share/locale/fi/LC_MESSAGES/solid-hardware.mo
@@ -726,6 +736,7 @@ share/locale/fi/LC_MESSAGES/solid_qt.mo
 share/locale/fi/LC_MESSAGES/solidcontrol.mo
 share/locale/fi/LC_MESSAGES/soliduiserver.mo
 share/locale/fi/LC_MESSAGES/spy.mo
+share/locale/fi/LC_MESSAGES/step.mo
 share/locale/fi/LC_MESSAGES/strigila_diff.mo
 share/locale/fi/LC_MESSAGES/superkaramba.mo
 share/locale/fi/LC_MESSAGES/svgpart.mo
@@ -744,4 +755,7 @@ share/locale/fi/LC_SCRIPTS/
 share/locale/fi/LC_SCRIPTS/kdelibs4/
 share/locale/fi/LC_SCRIPTS/kdelibs4/general.pmap
 share/locale/fi/LC_SCRIPTS/kdelibs4/kdelibs4.js
+share/locale/fi/LC_SCRIPTS/kgeography/
+share/locale/fi/LC_SCRIPTS/kgeography/kgeography.js
+share/locale/fi/LC_SCRIPTS/kgeography/kgeography.pmap
 share/locale/fi/entry.desktop

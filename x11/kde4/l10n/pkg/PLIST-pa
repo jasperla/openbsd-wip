@@ -113,6 +113,7 @@ share/locale/pa/LC_MESSAGES/katesearch.mo
 share/locale/pa/LC_MESSAGES/katesnippets_tng.mo
 share/locale/pa/LC_MESSAGES/katesymbolviewer.mo
 share/locale/pa/LC_MESSAGES/katetabbarextension.mo
+share/locale/pa/LC_MESSAGES/katetabifyplugin.mo
 share/locale/pa/LC_MESSAGES/katetextfilter.mo
 share/locale/pa/LC_MESSAGES/katexmlcheck.mo
 share/locale/pa/LC_MESSAGES/katexmltools.mo
@@ -377,8 +378,10 @@ share/locale/pa/LC_MESSAGES/ksysguard.mo
 share/locale/pa/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/pa/LC_MESSAGES/ksystemlog.mo
 share/locale/pa/LC_MESSAGES/ksystraycmd.mo
+share/locale/pa/LC_MESSAGES/kte_acomment.mo
 share/locale/pa/LC_MESSAGES/kteatime.mo
 share/locale/pa/LC_MESSAGES/ktesnippets_editor.mo
+share/locale/pa/LC_MESSAGES/ktexteditor_codesnippets_core.mo
 share/locale/pa/LC_MESSAGES/ktexteditor_plugins.mo
 share/locale/pa/LC_MESSAGES/ktexteditorkabcbridge_plugin.mo
 share/locale/pa/LC_MESSAGES/ktimer.mo

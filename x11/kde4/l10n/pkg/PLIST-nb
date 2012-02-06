@@ -1,7 +1,7 @@
 @comment $OpenBSD$
-man/nb/
-man/nb/man1/
-@man man/nb/man1/kbookmarkmerger.1
+@comment man/nb/
+@comment man/nb/man1/
+@comment @man man/nb/man1/kbookmarkmerger.1
 share/apps/
 share/apps/katepart/
 share/apps/katepart/syntax/

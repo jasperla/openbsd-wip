@@ -1,10 +1,10 @@
 @comment $OpenBSD$
-man/el/
-man/el/man1/
-@man man/el/man1/kbookmarkmerger.1
-@man man/el/man1/plasmaengineexplorer.1
-@man man/el/man1/plasmapkg.1
-@man man/el/man1/plasmoidviewer.1
+@comment man/el/
+@comment man/el/man1/
+@comment @man man/el/man1/kbookmarkmerger.1
+@comment @man man/el/man1/plasmaengineexplorer.1
+@comment @man man/el/man1/plasmapkg.1
+@comment @man man/el/man1/plasmoidviewer.1
 share/apps/
 share/apps/ktuberling/
 share/apps/ktuberling/sounds/
@@ -802,6 +802,7 @@ share/locale/el/LC_MESSAGES/plasma_runner_konquerorsessions.mo
 share/locale/el/LC_MESSAGES/plasma_runner_konsolesessions.mo
 share/locale/el/LC_MESSAGES/plasma_runner_kopete.mo
 share/locale/el/LC_MESSAGES/plasma_runner_locations.mo
+share/locale/el/LC_MESSAGES/plasma_runner_marblerunner.mo
 share/locale/el/LC_MESSAGES/plasma_runner_mediawiki.mo
 share/locale/el/LC_MESSAGES/plasma_runner_nepomuksearchrunner.mo
 share/locale/el/LC_MESSAGES/plasma_runner_placesrunner.mo

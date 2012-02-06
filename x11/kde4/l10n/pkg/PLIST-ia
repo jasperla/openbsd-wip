@@ -60,6 +60,7 @@ share/locale/ia/LC_MESSAGES/dolphin.mo
 share/locale/ia/LC_MESSAGES/domtreeviewer.mo
 share/locale/ia/LC_MESSAGES/dragonplayer.mo
 share/locale/ia/LC_MESSAGES/drkonqi.mo
+share/locale/ia/LC_MESSAGES/filelight.mo
 share/locale/ia/LC_MESSAGES/filetypes.mo
 share/locale/ia/LC_MESSAGES/freespacenotifier.mo
 share/locale/ia/LC_MESSAGES/fsview.mo
@@ -129,6 +130,7 @@ share/locale/ia/LC_MESSAGES/kcm_pci.mo
 share/locale/ia/LC_MESSAGES/kcm_phonon.mo
 share/locale/ia/LC_MESSAGES/kcm_phononxine.mo
 share/locale/ia/LC_MESSAGES/kcm_platform.mo
+share/locale/ia/LC_MESSAGES/kcm_remotecontrol.mo
 share/locale/ia/LC_MESSAGES/kcm_solid.mo
 share/locale/ia/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/ia/LC_MESSAGES/kcm_standard_actions.mo
@@ -189,6 +191,7 @@ share/locale/ia/LC_MESSAGES/kdepasswd.mo
 share/locale/ia/LC_MESSAGES/kdepim-runtime-qml.mo
 share/locale/ia/LC_MESSAGES/kdesu.mo
 share/locale/ia/LC_MESSAGES/kdesud.mo
+share/locale/ia/LC_MESSAGES/kdf.mo
 share/locale/ia/LC_MESSAGES/kdgantt2.mo
 share/locale/ia/LC_MESSAGES/kdialog.mo
 share/locale/ia/LC_MESSAGES/kdmconfig.mo
@@ -285,9 +288,11 @@ share/locale/ia/LC_MESSAGES/kppp.mo
 share/locale/ia/LC_MESSAGES/kppplogview.mo
 share/locale/ia/LC_MESSAGES/kquitapp.mo
 share/locale/ia/LC_MESSAGES/krandr.mo
+share/locale/ia/LC_MESSAGES/krcdnotifieritem.mo
 share/locale/ia/LC_MESSAGES/krdb.mo
 share/locale/ia/LC_MESSAGES/krdc.mo
 share/locale/ia/LC_MESSAGES/kreadconfig.mo
+share/locale/ia/LC_MESSAGES/kremotecontroldaemon.mo
 share/locale/ia/LC_MESSAGES/kres-migrator.mo
 share/locale/ia/LC_MESSAGES/kres_blog.mo
 share/locale/ia/LC_MESSAGES/kres_remote.mo
@@ -317,6 +322,7 @@ share/locale/ia/LC_MESSAGES/ktesnippets_editor.mo
 share/locale/ia/LC_MESSAGES/ktexteditor_codesnippets_core.mo
 share/locale/ia/LC_MESSAGES/ktexteditor_plugins.mo
 share/locale/ia/LC_MESSAGES/ktexteditorkabcbridge_plugin.mo
+share/locale/ia/LC_MESSAGES/ktimer.mo
 share/locale/ia/LC_MESSAGES/ktimetracker.mo
 share/locale/ia/LC_MESSAGES/ktraderclient.mo
 share/locale/ia/LC_MESSAGES/kuiserver.mo
@@ -358,6 +364,7 @@ share/locale/ia/LC_MESSAGES/libkpgp.mo
 share/locale/ia/LC_MESSAGES/libkpimidentities.mo
 share/locale/ia/LC_MESSAGES/libkpimtextedit.mo
 share/locale/ia/LC_MESSAGES/libkpimutils.mo
+share/locale/ia/LC_MESSAGES/libkremotecontrol.mo
 share/locale/ia/LC_MESSAGES/libkresources.mo
 share/locale/ia/LC_MESSAGES/libkscreensaver.mo
 share/locale/ia/LC_MESSAGES/libksieve.mo
@@ -492,6 +499,8 @@ share/locale/ia/LC_MESSAGES/solid-network.mo
 share/locale/ia/LC_MESSAGES/solid_qt.mo
 share/locale/ia/LC_MESSAGES/solidcontrol.mo
 share/locale/ia/LC_MESSAGES/soliduiserver.mo
+share/locale/ia/LC_MESSAGES/superkaramba.mo
+share/locale/ia/LC_MESSAGES/sweeper.mo
 share/locale/ia/LC_MESSAGES/system-config-printer-kde.mo
 share/locale/ia/LC_MESSAGES/systemsettings.mo
 share/locale/ia/LC_MESSAGES/tasks-mobile.mo

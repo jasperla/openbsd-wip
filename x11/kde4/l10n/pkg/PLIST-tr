@@ -521,6 +521,7 @@ share/locale/tr/LC_MESSAGES/minitoolsplugin.mo
 share/locale/tr/LC_MESSAGES/mplayerthumbs.mo
 share/locale/tr/LC_MESSAGES/mplayerthumbsconfig.mo
 share/locale/tr/LC_MESSAGES/nepomukbackup.mo
+share/locale/tr/LC_MESSAGES/nepomukcontroller.mo
 share/locale/tr/LC_MESSAGES/nepomukfileindexer.mo
 share/locale/tr/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/tr/LC_MESSAGES/nepomukserver.mo
@@ -557,6 +558,7 @@ share/locale/tr/LC_MESSAGES/phononserver.mo
 share/locale/tr/LC_MESSAGES/plasma-desktop.mo
 share/locale/tr/LC_MESSAGES/plasma-netbook.mo
 share/locale/tr/LC_MESSAGES/plasma-overlay.mo
+share/locale/tr/LC_MESSAGES/plasma-remote-helper.mo
 share/locale/tr/LC_MESSAGES/plasma-windowed.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_BbalL.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_CharSelectApplet.mo
