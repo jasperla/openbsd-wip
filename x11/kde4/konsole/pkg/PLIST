@@ -27,7 +27,6 @@ share/doc/HTML/en/konsole/
 share/doc/HTML/en/konsole/common
 share/doc/HTML/en/konsole/index.cache.bz2
 share/doc/HTML/en/konsole/index.docbook
-share/doc/pkg-readmes/${FULLPKGNAME}
 share/kde4/services/ServiceMenus/konsolehere.desktop
 share/kde4/services/konsolepart.desktop
 share/kde4/servicetypes/terminalemulator.desktop
