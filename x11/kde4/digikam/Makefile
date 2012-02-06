@@ -18,7 +18,8 @@ PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 PKGNAME-vkontakte =	libkvkontakte-1.0.0
 
-REVISION-main =		0
+REVISION-kipi =		0
+REVISION-main =		1
 REVISION-mediawiki =	1
 REVISION-vkontakte =	0
 
@@ -58,7 +59,7 @@ WANTLIB-geomap += marblewidget
 
 WANTLIB-kipi =  ${WANTLIB-common} ${MODGETTEXT_WANTLIB}
 WANTLIB-kipi += GL GLU ICE SM X11 Xext Xrandr expat pthread z
-WANTLIB-kipi += lib/qt4/QtNetwork lib/qt4/QtOpenGL lib/qt4/QtXmlPatterns qca
+WANTLIB-kipi += lib/qt4/QtNetwork lib/qt4/QtOpenGL lib/qt4/QtXmlPatterns qca2
 WANTLIB-kipi += lib/qt4/QtXml
 WANTLIB-kipi += kcalcore kdcraw kexiv2 khtml kio kjs kipi kparts
 WANTLIB-kipi += ksane nepomuk nepomukutils phonon soprano threadweaver
@@ -174,7 +175,8 @@ LIB_DEPENDS-vkontakte = ${LIB_DEPENDS-common} \
 			devel/qjson \
 			x11/kde4/libs
 
-CONFIGURE_ARGS =	-DENABLE_INTERNALMYSQL:Bool=No
+CONFIGURE_ARGS =	-DENABLE_INTERNALMYSQL:Bool=No \
+			-DWITH_OpenMP:Bool=No
 
 FLAVOR ?=
 
