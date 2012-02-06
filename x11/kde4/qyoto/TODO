@@ -1,0 +1,66 @@
+"make clean" fails:
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/tmp_gac/mono/gac/qt-dotnet/4.5.0.0__194a23ba31c08164/qt-dotnet.dll: Permission denied
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/tmp_gac/mono/gac/qt-dotnet/4.5.0.0__194a23ba31c08164/qt-dotnet.dll.config: Permission denied
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/tmp_gac/mono/gac/qt-dotnet/4.5.0.0__194a23ba31c08164: Permission denied
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/tmp_gac/mono/gac/qt-dotnet: Permission denied
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/tmp_gac/mono/gac: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/tmp_gac/mono/qyoto/qt-dotnet.dll: Permission denied
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/tmp_gac/mono/qyoto: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/tmp_gac/mono: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/tmp_gac: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qtscript/tmp_gac/mono/gac/qtscript/2.2.0.0__194a23ba31c08164/qtscript.dll: Permission denied
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qtscript/tmp_gac/mono/gac/qtscript/2.2.0.0__194a23ba31c08164: Permission denied
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qtscript/tmp_gac/mono/gac/qtscript: Permission denied
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qtscript/tmp_gac/mono/gac: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qtscript/tmp_gac/mono/qyoto/qtscript.dll: Permission denied
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qtscript/tmp_gac/mono/qyoto: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qtscript/tmp_gac/mono: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qtscript/tmp_gac: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qtscript: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qttest/tmp_gac/mono/gac/qttest/2.2.0.0__194a23ba31c08164/qttest.dll: Permission denied
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qttest/tmp_gac/mono/gac/qttest/2.2.0.0__194a23ba31c08164: Permission denied
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qttest/tmp_gac/mono/gac/qttest: Permission denied
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qttest/tmp_gac/mono/gac: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qttest/tmp_gac/mono/qyoto/qttest.dll: Permission denied
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qttest/tmp_gac/mono/qyoto: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qttest/tmp_gac/mono: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qttest/tmp_gac: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qttest: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qtuitools/tmp_gac/mono/gac/qtuitools/2.2.0.0__194a23ba31c08164/qtuitools.dll: Permission denied
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qtuitools/tmp_gac/mono/gac/qtuitools/2.2.0.0__194a23ba31c08164: Permission denied
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qtuitools/tmp_gac/mono/gac/qtuitools: Permission denied
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qtuitools/tmp_gac/mono/gac: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qtuitools/tmp_gac/mono/qyoto/qtuitools.dll: Permission denied
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qtuitools/tmp_gac/mono/qyoto: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qtuitools/tmp_gac/mono: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qtuitools/tmp_gac: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qtuitools: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qtwebkit/tmp_gac/mono/gac/qtwebkit/2.2.0.0__194a23ba31c08164/qtwebkit.dll: Permission denied
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qtwebkit/tmp_gac/mono/gac/qtwebkit/2.2.0.0__194a23ba31c08164: Permission denied
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qtwebkit/tmp_gac/mono/gac/qtwebkit: Permission denied
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qtwebkit/tmp_gac/mono/gac: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qtwebkit/tmp_gac/mono/qyoto/qtwebkit.dll: Permission denied
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qtwebkit/tmp_gac/mono/qyoto: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qtwebkit/tmp_gac/mono: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qtwebkit/tmp_gac: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qtwebkit: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/phonon/tmp_gac/mono/gac/phonon/4.4.0.0__194a23ba31c08164/phonon.dll: Permission denied
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/phonon/tmp_gac/mono/gac/phonon/4.4.0.0__194a23ba31c08164: Permission denied
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/phonon/tmp_gac/mono/gac/phonon: Permission denied
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/phonon/tmp_gac/mono/gac: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/phonon/tmp_gac/mono/qyoto/phonon.dll: Permission denied
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/phonon/tmp_gac/mono/qyoto: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/phonon/tmp_gac/mono: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/phonon/tmp_gac: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/phonon: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qscintilla/tmp_gac/mono/gac/qscintilla/2.2.0.0__194a23ba31c08164/qscintilla.dll: Permission denied
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qscintilla/tmp_gac/mono/gac/qscintilla/2.2.0.0__194a23ba31c08164: Permission denied
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qscintilla/tmp_gac/mono/gac/qscintilla: Permission denied
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qscintilla/tmp_gac/mono/gac: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qscintilla/tmp_gac/mono/qyoto/qscintilla.dll: Permission denied
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qscintilla/tmp_gac/mono/qyoto: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qscintilla/tmp_gac/mono: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qscintilla/tmp_gac: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386/qscintilla: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0/build-i386: Directory not empty
+rm: /usr/ports/pobj/qyoto-4.8.0: Directory not empty
