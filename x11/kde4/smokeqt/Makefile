@@ -1,7 +1,5 @@
 # $OpenBSD$
 
-SHARED_ONLY =	Yes
-
 CATEGORIES =	devel
 COMMENT =	introspective wrappers around the Qt
 DISTNAME =	smokeqt-${MODKDE_VERSION}
