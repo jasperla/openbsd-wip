@@ -3,8 +3,10 @@
 CATEGORIES =	devel
 COMMENT =	introspective wrappers around the KDE
 DISTNAME =	smokekde-${MODKDE_VERSION}
+REVISION =	0
 
-SHARED_LIBS =	smokeattica		0.0 # 3.0
+SHARED_LIBS =	smokeakonadi		0.0 # 3.0
+SHARED_LIBS +=	smokeattica		0.0 # 3.0
 SHARED_LIBS +=	smokekate		0.0 # 3.0
 SHARED_LIBS +=	smokekdecore		0.0 # 3.0
 SHARED_LIBS +=	smokekdeui		0.0 # 3.0
@@ -45,9 +47,5 @@ LIB_DEPENDS =	databases/soprano \
 		x11/kde4/okular \
 		x11/kde4/smokegen \
 		x11/kde4/smokeqt
-
-# smokegen segfaults, see upstream bug:
-# https://bugs.kde.org/show_bug.cgi?id=283677
-CONFIGURE_ARGS =	-DBUILD_Akonadi:Bool=False
 
 .include <bsd.port.mk>
