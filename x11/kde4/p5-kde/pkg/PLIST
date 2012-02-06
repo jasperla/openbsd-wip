@@ -1,5 +1,6 @@
 @comment $OpenBSD$
 lib/kde4/kperlpluginfactory.so
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Akonadi.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Attica.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/KDECore4.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/KDEUi4.pm
@@ -20,6 +21,8 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Solid.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Soprano.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/SopranoClient.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/SopranoServer.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Akonadi/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Akonadi/Akonadi.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Attica/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Attica/Attica.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/KDECore4/
