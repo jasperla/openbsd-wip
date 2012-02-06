@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, workspace
 DISTNAME =	kde-workspace-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kdecorations			0.0 # 4.7
 SHARED_LIBS +=	kephal				0.0 # 4.7
@@ -86,5 +87,11 @@ CONFIGURE_ARGS =	-DWITH_Sensors:Bool=False \
 
 WRONG_SYSCONF_FILES =	dbus-1		share/examples \
 			ksysguarddrc	share/examples/kde
+
+post-extract:
+	cp ${FILESDIR}/checkpass_bsd.c ${WRKSRC}/kcheckpass/
+
+post-install:
+	rm -f ${PREFIX}/share/config/kdm/*.bak
 
 .include <bsd.port.mk>
