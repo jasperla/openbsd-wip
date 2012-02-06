@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+include/smoke/akonadi_smoke.h
 include/smoke/attica_smoke.h
 include/smoke/kate_smoke.h
 include/smoke/kdecore_smoke.h
@@ -19,6 +20,7 @@ include/smoke/solid_smoke.h
 include/smoke/soprano_smoke.h
 include/smoke/sopranoclient_smoke.h
 include/smoke/sopranoserver_smoke.h
+@lib lib/libsmokeakonadi.so.${LIBsmokeakonadi_VERSION}
 @lib lib/libsmokeattica.so.${LIBsmokeattica_VERSION}
 @lib lib/libsmokekate.so.${LIBsmokekate_VERSION}
 @lib lib/libsmokekdecore.so.${LIBsmokekdecore_VERSION}
