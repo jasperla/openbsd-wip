@@ -1,7 +1,5 @@
 # $OpenBSD$
 
-SHARED_ONLY =	Yes
-
 CATEGORIES =	devel lang/ruby x11/kde4
 COMMENT =	Qt 4 bindings for Ruby
 DISTNAME =	qtruby-${MODKDE_VERSION}
