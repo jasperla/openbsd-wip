@@ -2,8 +2,9 @@
 
 COMMENT =	KDE SDK
 DISTNAME =	kdesdk-${MODKDE_VERSION}
+REVISION =	0
 
-SHARED_LIBS +=	komparedialogpages	0.0 # 4.7
+SHARED_LIBS =	komparedialogpages	0.0 # 4.7
 SHARED_LIBS +=	komparediff2		0.0 # 4.7
 SHARED_LIBS +=	kompareinterface	0.0 # 4.7
 SHARED_LIBS +=  kasten1controllers        0.0 # 0.2
@@ -21,10 +22,10 @@ WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDesigner
 WANTLIB += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtScript
 WANTLIB += lib/qt4/QtScriptTools lib/qt4/QtSql lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
-WANTLIB += kabc kcmutils kde3support kdesu kdeui kemoticons
-WANTLIB += kfile kidletime kio knewstuff3 konq kparts kprintutils
-WANTLIB += kresources krosscore krossui ktexteditor kutils nepomuk
-WANTLIB += nepomukutils qca solid soprano streamanalyzer streams
+WANTLIB += kabc kcmutils kde3support kdesu kdeui
+WANTLIB += kfile kio knewstuff3 konq kparts
+WANTLIB += kresources krosscore krossui ktexteditor nepomuk
+WANTLIB += nepomukutils qca2 solid soprano streamanalyzer streams
 WANTLIB += threadweaver
 WANTLIB += apr-1 hunspell-1.2 svn_client-1 svn_delta-1 svn_fs-1
 WANTLIB += svn_ra-1 svn_subr-1 xml2 xslt
