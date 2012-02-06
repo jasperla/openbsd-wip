@@ -2107,7 +2107,6 @@ share/ontology/kde/kuvo.trig
 share/ontology/kde/nrio.ontology
 share/ontology/kde/nrio.trig
 share/polkit-1/actions/org.kde.kcontrol.kcmremotewidgets.policy
-share/sounds/
 share/sounds/KDE-Im-Cant-Connect.ogg
 share/sounds/KDE-Im-Connection-Lost.ogg
 share/sounds/KDE-Im-Contact-In.ogg
