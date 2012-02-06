@@ -2,6 +2,7 @@
 
 COMMENT =	digital cameras RAW images manipulation library for KDE
 DISTNAME =	libkdcraw-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kdcraw			0.0	# 20.0
 
@@ -18,5 +19,7 @@ LIB_DEPENDS = 	x11/kde4/libkipi \
 		graphics/jpeg
 
 RUN_DEPENDS = 	x11/gtk+2,-guic
+
+CONFIGURE_ARGS =	-DWITH_OpenMP:Bool=FALSE
 
 .include <bsd.port.mk>
