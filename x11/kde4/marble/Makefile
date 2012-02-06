@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, maps
 DISTNAME =	marble-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	marblewidget		0.0 # 0.12
 
@@ -18,5 +19,9 @@ MODKDE4_USE =	libs
 LIB_DEPENDS = 	misc/gpsd,-main
 
 PATCHORIG =	.ports.orig
+
+CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_QtLocation:Bool=TRUE \
+			-DCMAKE_DISABLE_FIND_PACKAGE_liblocation:Bool=TRUE \
+			-DEXPERIMENTAL_PYTHON_BINDINGS:Bool=FALSE
 
 .include <bsd.port.mk>
