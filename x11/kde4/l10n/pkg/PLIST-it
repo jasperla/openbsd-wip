@@ -1,68 +1,69 @@
 @comment $OpenBSD$
-man/it/
-man/it/man1/
-@man man/it/man1/adddebug.1
-@man man/it/man1/ark.1
-@man man/it/man1/cheatmake.1
-@man man/it/man1/checkXML.1
-@man man/it/man1/create_cvsignore.1
-@man man/it/man1/create_makefile.1
-@man man/it/man1/create_makefiles.1
-@man man/it/man1/cvscheck.1
-@man man/it/man1/cvslastchange.1
-@man man/it/man1/cvslastlog.1
-@man man/it/man1/cvsrevertlast.1
-@man man/it/man1/cxxmetric.1
-@man man/it/man1/demangle.1
-@man man/it/man1/extend_dmalloc.1
-@man man/it/man1/extractrc.1
-@man man/it/man1/fixincludes.1
-@man man/it/man1/kabcclient.1
-@man man/it/man1/kalzium.1
-@man man/it/man1/kate.1
-@man man/it/man1/kbookmarkmerger.1
-@man man/it/man1/kbruch.1
-@man man/it/man1/kconfig_compiler.1
-@man man/it/man1/kde4-config.1
-@man man/it/man1/kdesu.1
-@man man/it/man1/kfind.1
-@man man/it/man1/kig.1
-@man man/it/man1/kjs.1
-@man man/it/man1/kjscmd.1
-@man man/it/man1/kmag.1
-@man man/it/man1/kmousetool.1
-@man man/it/man1/kmouth.1
-@man man/it/man1/kmplot.1
-@man man/it/man1/kross.1
-@man man/it/man1/ktouch.1
-@man man/it/man1/makekdewidgets.1
-@man man/it/man1/plasmaengineexplorer.1
-@man man/it/man1/plasmapkg.1
-@man man/it/man1/plasmoidviewer.1
-@man man/it/man1/po2xml.1
-@man man/it/man1/preparetips.1
-@man man/it/man1/pruneemptydirs.1
-@man man/it/man1/qtdoc.1
-@man man/it/man1/reportview.1
-@man man/it/man1/split2po.1
-@man man/it/man1/swappo.1
-@man man/it/man1/transxx.1
-@man man/it/man1/xml2pot.1
-@man man/it/man1/zonetab2pot.py.1
-man/it/man6/
-@man man/it/man6/amor.6
-@man man/it/man6/khangman.6
-man/it/man7/
-@man man/it/man7/kdeoptions.7
-@man man/it/man7/qtoptions.7
-man/it/man8/
-@man man/it/man8/kbuildsycoca4.8
-@man man/it/man8/kcookiejar4.8
-@man man/it/man8/kded4.8
-@man man/it/man8/kdeinit4.8
-@man man/it/man8/meinproc4.8
-@man man/it/man8/nepomukserver.8
-@man man/it/man8/nepomukservicestub.8
+@comment man/it/
+@comment man/it/man1/
+@comment @man man/it/man1/adddebug.1
+@comment @man man/it/man1/ark.1
+@comment @man man/it/man1/cheatmake.1
+@comment @man man/it/man1/checkXML.1
+@comment @man man/it/man1/create_cvsignore.1
+@comment @man man/it/man1/create_makefile.1
+@comment @man man/it/man1/create_makefiles.1
+@comment @man man/it/man1/cvscheck.1
+@comment @man man/it/man1/cvslastchange.1
+@comment @man man/it/man1/cvslastlog.1
+@comment @man man/it/man1/cvsrevertlast.1
+@comment @man man/it/man1/cxxmetric.1
+@comment @man man/it/man1/demangle.1
+@comment @man man/it/man1/extend_dmalloc.1
+@comment @man man/it/man1/extractrc.1
+@comment @man man/it/man1/fixincludes.1
+@comment @man man/it/man1/kabcclient.1
+@comment @man man/it/man1/kalzium.1
+@comment @man man/it/man1/kate.1
+@comment @man man/it/man1/kbookmarkmerger.1
+@comment @man man/it/man1/kbruch.1
+@comment @man man/it/man1/kconfig_compiler.1
+@comment @man man/it/man1/kde4-config.1
+@comment @man man/it/man1/kdesu.1
+@comment @man man/it/man1/kfind.1
+@comment @man man/it/man1/kig.1
+@comment @man man/it/man1/kjs.1
+@comment @man man/it/man1/kjscmd.1
+@comment @man man/it/man1/kmag.1
+@comment @man man/it/man1/kmousetool.1
+@comment @man man/it/man1/kmouth.1
+@comment @man man/it/man1/kmplot.1
+@comment @man man/it/man1/kross.1
+@comment @man man/it/man1/ktouch.1
+@comment @man man/it/man1/makekdewidgets.1
+@comment @man man/it/man1/plasmaengineexplorer.1
+@comment @man man/it/man1/plasmapkg.1
+@comment @man man/it/man1/plasmoidviewer.1
+@comment @man man/it/man1/po2xml.1
+@comment @man man/it/man1/preparetips.1
+@comment @man man/it/man1/pruneemptydirs.1
+@comment @man man/it/man1/qtdoc.1
+@comment @man man/it/man1/reportview.1
+@comment @man man/it/man1/split2po.1
+@comment @man man/it/man1/swappo.1
+@comment @man man/it/man1/transxx.1
+@comment @man man/it/man1/xml2pot.1
+@comment @man man/it/man1/zonetab2pot.py.1
+@comment man/it/man6/
+@comment @man man/it/man6/amor.6
+@comment @man man/it/man6/khangman.6
+@comment @man man/it/man6/kpat.6
+@comment man/it/man7/
+@comment @man man/it/man7/kdeoptions.7
+@comment @man man/it/man7/qtoptions.7
+@comment man/it/man8/
+@comment @man man/it/man8/kbuildsycoca4.8
+@comment @man man/it/man8/kcookiejar4.8
+@comment @man man/it/man8/kded4.8
+@comment @man man/it/man8/kdeinit4.8
+@comment @man man/it/man8/meinproc4.8
+@comment @man man/it/man8/nepomukserver.8
+@comment @man man/it/man8/nepomukservicestub.8
 share/apps/
 share/apps/klettres/
 share/apps/klettres/it/
@@ -306,6 +307,10 @@ share/doc/HTML/it/kabcclient/common
 share/doc/HTML/it/kabcclient/index.cache.bz2
 share/doc/HTML/it/kabcclient/index.docbook
 share/doc/HTML/it/kabcclient/man-kabcclient.1.docbook
+share/doc/HTML/it/kajongg/
+share/doc/HTML/it/kajongg/common
+share/doc/HTML/it/kajongg/index.cache.bz2
+share/doc/HTML/it/kajongg/index.docbook
 share/doc/HTML/it/kalarm/
 share/doc/HTML/it/kalarm/common
 share/doc/HTML/it/kalarm/index.cache.bz2
@@ -969,18 +974,6 @@ share/doc/HTML/it/kmahjongg/
 share/doc/HTML/it/kmahjongg/common
 share/doc/HTML/it/kmahjongg/index.cache.bz2
 share/doc/HTML/it/kmahjongg/index.docbook
-share/doc/HTML/it/kmail/
-share/doc/HTML/it/kmail/common
-share/doc/HTML/it/kmail/configure.docbook
-share/doc/HTML/it/kmail/credits-and-licenses.docbook
-share/doc/HTML/it/kmail/faq.docbook
-share/doc/HTML/it/kmail/getting-started.docbook
-share/doc/HTML/it/kmail/importing.docbook
-share/doc/HTML/it/kmail/index.cache.bz2
-share/doc/HTML/it/kmail/index.docbook
-share/doc/HTML/it/kmail/intro.docbook
-share/doc/HTML/it/kmail/menus.docbook
-share/doc/HTML/it/kmail/using-kmail.docbook
 share/doc/HTML/it/kmenuedit/
 share/doc/HTML/it/kmenuedit/common
 share/doc/HTML/it/kmenuedit/index.cache.bz2
@@ -1099,6 +1092,7 @@ share/doc/HTML/it/konqueror/path-complete.docbook
 share/doc/HTML/it/konqueror/plugins.docbook
 share/doc/HTML/it/konqueror/save-settings.docbook
 share/doc/HTML/it/konqueror/sidebar.docbook
+share/doc/HTML/it/konqueror/view-extensions.docbook
 share/doc/HTML/it/konquest/
 share/doc/HTML/it/konquest/common
 share/doc/HTML/it/konquest/index.cache.bz2
@@ -1138,6 +1132,7 @@ share/doc/HTML/it/kpat/
 share/doc/HTML/it/kpat/common
 share/doc/HTML/it/kpat/index.cache.bz2
 share/doc/HTML/it/kpat/index.docbook
+share/doc/HTML/it/kpat/man-kpat.6.docbook
 share/doc/HTML/it/kppp/
 share/doc/HTML/it/kppp/accounting.docbook
 share/doc/HTML/it/kppp/callback.docbook
@@ -1495,6 +1490,7 @@ share/locale/it/LC_MESSAGES/akonadi_strigi_feeder.mo
 share/locale/it/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/it/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/it/LC_MESSAGES/akonadicontact.mo
+share/locale/it/LC_MESSAGES/akonadinotes.mo
 share/locale/it/LC_MESSAGES/akonaditray.mo
 share/locale/it/LC_MESSAGES/akregator.mo
 share/locale/it/LC_MESSAGES/akregator_konqplugin.mo
@@ -1842,6 +1838,11 @@ share/locale/it/LC_MESSAGES/krunner.mo
 share/locale/it/LC_MESSAGES/ksaneplugin.mo
 share/locale/it/LC_MESSAGES/kscd.mo
 share/locale/it/LC_MESSAGES/kscreensaver.mo
+share/locale/it/LC_MESSAGES/ksecrets_kio.mo
+share/locale/it/LC_MESSAGES/ksecrets_ksecrets.mo
+share/locale/it/LC_MESSAGES/ksecretsservice_api.mo
+share/locale/it/LC_MESSAGES/ksecretsserviced.mo
+share/locale/it/LC_MESSAGES/ksecretsync.mo
 share/locale/it/LC_MESSAGES/ksendemail.mo
 share/locale/it/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/it/LC_MESSAGES/kshisen.mo
@@ -1863,6 +1864,7 @@ share/locale/it/LC_MESSAGES/ksysguard.mo
 share/locale/it/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/it/LC_MESSAGES/ksystemlog.mo
 share/locale/it/LC_MESSAGES/ksystraycmd.mo
+share/locale/it/LC_MESSAGES/kte_acomment.mo
 share/locale/it/LC_MESSAGES/kteatime.mo
 share/locale/it/LC_MESSAGES/ktesnippets_editor.mo
 share/locale/it/LC_MESSAGES/ktexteditor_codesnippets_core.mo
@@ -1890,6 +1892,7 @@ share/locale/it/LC_MESSAGES/kwin_clients.mo
 share/locale/it/LC_MESSAGES/kwin_effects.mo
 share/locale/it/LC_MESSAGES/kwinshutdown.mo
 share/locale/it/LC_MESSAGES/kwinstartmenu.mo
+share/locale/it/LC_MESSAGES/kwl2kss.mo
 share/locale/it/LC_MESSAGES/kwordquiz.mo
 share/locale/it/LC_MESSAGES/kwrite.mo
 share/locale/it/LC_MESSAGES/kwriteconfig.mo

@@ -1,33 +1,33 @@
 @comment $OpenBSD$
-man/da/
-man/da/man1/
-@man man/da/man1/adddebug.1
-@man man/da/man1/cheatmake.1
-@man man/da/man1/create_cvsignore.1
-@man man/da/man1/create_makefiles.1
-@man man/da/man1/cvscheck.1
-@man man/da/man1/cvslastchange.1
-@man man/da/man1/cvslastlog.1
-@man man/da/man1/cvsrevertlast.1
-@man man/da/man1/cxxmetric.1
-@man man/da/man1/demangle.1
-@man man/da/man1/extend_dmalloc.1
-@man man/da/man1/extractrc.1
-@man man/da/man1/fixincludes.1
-@man man/da/man1/kalzium.1
-@man man/da/man1/kbookmarkmerger.1
-@man man/da/man1/kdesu.1
-@man man/da/man1/kmouth.1
-@man man/da/man1/po2xml.1
-@man man/da/man1/pruneemptydirs.1
-@man man/da/man1/qtdoc.1
-@man man/da/man1/reportview.1
-@man man/da/man1/split2po.1
-@man man/da/man1/swappo.1
-@man man/da/man1/xml2pot.1
-@man man/da/man1/zonetab2pot.py.1
-man/da/man6/
-@man man/da/man6/amor.6
+@comment man/da/
+@comment man/da/man1/
+@comment @man man/da/man1/adddebug.1
+@comment @man man/da/man1/cheatmake.1
+@comment @man man/da/man1/create_cvsignore.1
+@comment @man man/da/man1/create_makefiles.1
+@comment @man man/da/man1/cvscheck.1
+@comment @man man/da/man1/cvslastchange.1
+@comment @man man/da/man1/cvslastlog.1
+@comment @man man/da/man1/cvsrevertlast.1
+@comment @man man/da/man1/cxxmetric.1
+@comment @man man/da/man1/demangle.1
+@comment @man man/da/man1/extend_dmalloc.1
+@comment @man man/da/man1/extractrc.1
+@comment @man man/da/man1/fixincludes.1
+@comment @man man/da/man1/kalzium.1
+@comment @man man/da/man1/kbookmarkmerger.1
+@comment @man man/da/man1/kdesu.1
+@comment @man man/da/man1/kmouth.1
+@comment @man man/da/man1/po2xml.1
+@comment @man man/da/man1/pruneemptydirs.1
+@comment @man man/da/man1/qtdoc.1
+@comment @man man/da/man1/reportview.1
+@comment @man man/da/man1/split2po.1
+@comment @man man/da/man1/swappo.1
+@comment @man man/da/man1/xml2pot.1
+@comment @man man/da/man1/zonetab2pot.py.1
+@comment man/da/man6/
+@comment @man man/da/man6/amor.6
 share/apps/
 share/apps/khangman/
 share/apps/khangman/da.txt
@@ -515,6 +515,7 @@ share/locale/da/LC_MESSAGES/akonaditray.mo
 share/locale/da/LC_MESSAGES/akregator.mo
 share/locale/da/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/da/LC_MESSAGES/amor.mo
+share/locale/da/LC_MESSAGES/analitza.mo
 share/locale/da/LC_MESSAGES/ark.mo
 share/locale/da/LC_MESSAGES/attica_kde.mo
 share/locale/da/LC_MESSAGES/audiocd_encoder_lame.mo
@@ -539,7 +540,9 @@ share/locale/da/LC_MESSAGES/dragonplayer.mo
 share/locale/da/LC_MESSAGES/drkonqi.mo
 share/locale/da/LC_MESSAGES/filelight.mo
 share/locale/da/LC_MESSAGES/filetypes.mo
+share/locale/da/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/da/LC_MESSAGES/fileviewgitplugin.mo
+share/locale/da/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/da/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/da/LC_MESSAGES/freespacenotifier.mo
 share/locale/da/LC_MESSAGES/fsview.mo

@@ -632,6 +632,7 @@ share/locale/zh_CN/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_applet_gasCalculator.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_applet_groupingpanel.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_applet_icon.mo
+share/locale/zh_CN/LC_MESSAGES/plasma_applet_icontasks.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_applet_kalgebra.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_applet_kalzium.mo

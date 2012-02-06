@@ -1,22 +1,22 @@
 @comment $OpenBSD$
-man/pl/
-man/pl/man1/
-@man man/pl/man1/kalzium.1
-@man man/pl/man1/kbookmarkmerger.1
-@man man/pl/man1/kbruch.1
-@man man/pl/man1/kde4-config.1
-@man man/pl/man1/kdesu.1
-@man man/pl/man1/kfind.1
-@man man/pl/man1/kig.1
-@man man/pl/man1/kmplot.1
-@man man/pl/man1/ktouch.1
-@man man/pl/man1/plasmaengineexplorer.1
-man/pl/man6/
-@man man/pl/man6/amor.6
-@man man/pl/man6/khangman.6
-man/pl/man8/
-@man man/pl/man8/nepomukserver.8
-@man man/pl/man8/nepomukservicestub.8
+@comment man/pl/
+@comment man/pl/man1/
+@comment @man man/pl/man1/kalzium.1
+@comment @man man/pl/man1/kbookmarkmerger.1
+@comment @man man/pl/man1/kbruch.1
+@comment @man man/pl/man1/kde4-config.1
+@comment @man man/pl/man1/kdesu.1
+@comment @man man/pl/man1/kfind.1
+@comment @man man/pl/man1/kig.1
+@comment @man man/pl/man1/kmplot.1
+@comment @man man/pl/man1/ktouch.1
+@comment @man man/pl/man1/plasmaengineexplorer.1
+@comment man/pl/man6/
+@comment @man man/pl/man6/amor.6
+@comment @man man/pl/man6/khangman.6
+@comment man/pl/man8/
+@comment @man man/pl/man8/nepomukserver.8
+@comment @man man/pl/man8/nepomukservicestub.8
 share/apps/
 share/apps/khangman/
 share/apps/khangman/pl.txt
@@ -1045,10 +1045,12 @@ share/locale/pl/LC_MESSAGES/akonadi_strigi_feeder.mo
 share/locale/pl/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/pl/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/pl/LC_MESSAGES/akonadicontact.mo
+share/locale/pl/LC_MESSAGES/akonadinotes.mo
 share/locale/pl/LC_MESSAGES/akonaditray.mo
 share/locale/pl/LC_MESSAGES/akregator.mo
 share/locale/pl/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/pl/LC_MESSAGES/amor.mo
+share/locale/pl/LC_MESSAGES/analitza.mo
 share/locale/pl/LC_MESSAGES/ark.mo
 share/locale/pl/LC_MESSAGES/attica_kde.mo
 share/locale/pl/LC_MESSAGES/audiocd_encoder_lame.mo
@@ -1073,7 +1075,9 @@ share/locale/pl/LC_MESSAGES/dragonplayer.mo
 share/locale/pl/LC_MESSAGES/drkonqi.mo
 share/locale/pl/LC_MESSAGES/filelight.mo
 share/locale/pl/LC_MESSAGES/filetypes.mo
+share/locale/pl/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/pl/LC_MESSAGES/fileviewgitplugin.mo
+share/locale/pl/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/pl/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/pl/LC_MESSAGES/freespacenotifier.mo
 share/locale/pl/LC_MESSAGES/fsview.mo
@@ -1509,9 +1513,11 @@ share/locale/pl/LC_MESSAGES/libtaskmanager.mo
 share/locale/pl/LC_MESSAGES/libtemplateparser.mo
 share/locale/pl/LC_MESSAGES/lokalize.mo
 share/locale/pl/LC_MESSAGES/lskat.mo
+share/locale/pl/LC_MESSAGES/mailfilteragent.mo
 share/locale/pl/LC_MESSAGES/mailreader.mo
 share/locale/pl/LC_MESSAGES/marble.mo
 share/locale/pl/LC_MESSAGES/marble_qt.mo
+share/locale/pl/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/pl/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/pl/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/pl/LC_MESSAGES/messageviewer_text_xdiff_plugin.mo
@@ -1671,11 +1677,13 @@ share/locale/pl/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_events.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_katesessions.mo
+share/locale/pl/LC_MESSAGES/plasma_runner_kget.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_kill.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_konquerorsessions.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_konsolesessions.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_kopete.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_locations.mo
+share/locale/pl/LC_MESSAGES/plasma_runner_marblerunner.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_mediawiki.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_nepomuksearchrunner.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_placesrunner.mo
@@ -1706,6 +1714,7 @@ share/locale/pl/LC_MESSAGES/plasmapkg.mo
 share/locale/pl/LC_MESSAGES/plasmawallpaperviewer.mo
 share/locale/pl/LC_MESSAGES/plasmoidviewer.mo
 share/locale/pl/LC_MESSAGES/powerdevil.mo
+share/locale/pl/LC_MESSAGES/powerdevilactivitiesconfig.mo
 share/locale/pl/LC_MESSAGES/powerdevilglobalconfig.mo
 share/locale/pl/LC_MESSAGES/powerdevilprofilesconfig.mo
 share/locale/pl/LC_MESSAGES/printer-applet.mo

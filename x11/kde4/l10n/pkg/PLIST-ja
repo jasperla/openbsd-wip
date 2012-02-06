@@ -546,6 +546,7 @@ share/locale/ja/LC_MESSAGES/mailfilteragent.mo
 share/locale/ja/LC_MESSAGES/mailreader.mo
 share/locale/ja/LC_MESSAGES/marble.mo
 share/locale/ja/LC_MESSAGES/marble_qt.mo
+share/locale/ja/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/ja/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/ja/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/ja/LC_MESSAGES/messageviewer_text_xdiff_plugin.mo
@@ -616,6 +617,7 @@ share/locale/ja/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_gasCalculator.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_groupingpanel.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_icon.mo
+share/locale/ja/LC_MESSAGES/plasma_applet_icontasks.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_kalgebra.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_kalzium.mo

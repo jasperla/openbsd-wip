@@ -1,67 +1,67 @@
 @comment $OpenBSD$
-man/es/
-man/es/man1/
-@man man/es/man1/adddebug.1
-@man man/es/man1/ark.1
-@man man/es/man1/cheatmake.1
-@man man/es/man1/checkXML.1
-@man man/es/man1/create_cvsignore.1
-@man man/es/man1/create_makefile.1
-@man man/es/man1/create_makefiles.1
-@man man/es/man1/cvscheck.1
-@man man/es/man1/cvslastchange.1
-@man man/es/man1/cvslastlog.1
-@man man/es/man1/cvsrevertlast.1
-@man man/es/man1/cxxmetric.1
-@man man/es/man1/demangle.1
-@man man/es/man1/extend_dmalloc.1
-@man man/es/man1/extractrc.1
-@man man/es/man1/fixincludes.1
-@man man/es/man1/kabcclient.1
-@man man/es/man1/kalzium.1
-@man man/es/man1/kate.1
-@man man/es/man1/kbookmarkmerger.1
-@man man/es/man1/kbruch.1
-@man man/es/man1/kconfig_compiler.1
-@man man/es/man1/kde4-config.1
-@man man/es/man1/kdesu.1
-@man man/es/man1/kfind.1
-@man man/es/man1/kig.1
-@man man/es/man1/kjs.1
-@man man/es/man1/kjscmd.1
-@man man/es/man1/kmag.1
-@man man/es/man1/kmousetool.1
-@man man/es/man1/kmouth.1
-@man man/es/man1/kmplot.1
-@man man/es/man1/kross.1
-@man man/es/man1/ktouch.1
-@man man/es/man1/makekdewidgets.1
-@man man/es/man1/plasmapkg.1
-@man man/es/man1/po2xml.1
-@man man/es/man1/preparetips.1
-@man man/es/man1/pruneemptydirs.1
-@man man/es/man1/qtdoc.1
-@man man/es/man1/reportview.1
-@man man/es/man1/split2po.1
-@man man/es/man1/swappo.1
-@man man/es/man1/transxx.1
-@man man/es/man1/xml2pot.1
-@man man/es/man1/zonetab2pot.py.1
-man/es/man6/
-@man man/es/man6/amor.6
-@man man/es/man6/khangman.6
-@man man/es/man6/kpat.6
-man/es/man7/
-@man man/es/man7/kdeoptions.7
-@man man/es/man7/qtoptions.7
-man/es/man8/
-@man man/es/man8/kbuildsycoca4.8
-@man man/es/man8/kcookiejar4.8
-@man man/es/man8/kded4.8
-@man man/es/man8/kdeinit4.8
-@man man/es/man8/meinproc4.8
-@man man/es/man8/nepomukserver.8
-@man man/es/man8/nepomukservicestub.8
+@comment man/es/
+@comment man/es/man1/
+@comment @man man/es/man1/adddebug.1
+@comment @man man/es/man1/ark.1
+@comment @man man/es/man1/cheatmake.1
+@comment @man man/es/man1/checkXML.1
+@comment @man man/es/man1/create_cvsignore.1
+@comment @man man/es/man1/create_makefile.1
+@comment @man man/es/man1/create_makefiles.1
+@comment @man man/es/man1/cvscheck.1
+@comment @man man/es/man1/cvslastchange.1
+@comment @man man/es/man1/cvslastlog.1
+@comment @man man/es/man1/cvsrevertlast.1
+@comment @man man/es/man1/cxxmetric.1
+@comment @man man/es/man1/demangle.1
+@comment @man man/es/man1/extend_dmalloc.1
+@comment @man man/es/man1/extractrc.1
+@comment @man man/es/man1/fixincludes.1
+@comment @man man/es/man1/kabcclient.1
+@comment @man man/es/man1/kalzium.1
+@comment @man man/es/man1/kate.1
+@comment @man man/es/man1/kbookmarkmerger.1
+@comment @man man/es/man1/kbruch.1
+@comment @man man/es/man1/kconfig_compiler.1
+@comment @man man/es/man1/kde4-config.1
+@comment @man man/es/man1/kdesu.1
+@comment @man man/es/man1/kfind.1
+@comment @man man/es/man1/kig.1
+@comment @man man/es/man1/kjs.1
+@comment @man man/es/man1/kjscmd.1
+@comment @man man/es/man1/kmag.1
+@comment @man man/es/man1/kmousetool.1
+@comment @man man/es/man1/kmouth.1
+@comment @man man/es/man1/kmplot.1
+@comment @man man/es/man1/kross.1
+@comment @man man/es/man1/ktouch.1
+@comment @man man/es/man1/makekdewidgets.1
+@comment @man man/es/man1/plasmapkg.1
+@comment @man man/es/man1/po2xml.1
+@comment @man man/es/man1/preparetips.1
+@comment @man man/es/man1/pruneemptydirs.1
+@comment @man man/es/man1/qtdoc.1
+@comment @man man/es/man1/reportview.1
+@comment @man man/es/man1/split2po.1
+@comment @man man/es/man1/swappo.1
+@comment @man man/es/man1/transxx.1
+@comment @man man/es/man1/xml2pot.1
+@comment @man man/es/man1/zonetab2pot.py.1
+@comment man/es/man6/
+@comment @man man/es/man6/amor.6
+@comment @man man/es/man6/khangman.6
+@comment @man man/es/man6/kpat.6
+@comment man/es/man7/
+@comment @man man/es/man7/kdeoptions.7
+@comment @man man/es/man7/qtoptions.7
+@comment man/es/man8/
+@comment @man man/es/man8/kbuildsycoca4.8
+@comment @man man/es/man8/kcookiejar4.8
+@comment @man man/es/man8/kded4.8
+@comment @man man/es/man8/kdeinit4.8
+@comment @man man/es/man8/meinproc4.8
+@comment @man man/es/man8/nepomukserver.8
+@comment @man man/es/man8/nepomukservicestub.8
 share/apps/
 share/apps/khangman/
 share/apps/khangman/es.txt
@@ -2299,6 +2299,7 @@ share/locale/es/LC_MESSAGES/minitoolsplugin.mo
 share/locale/es/LC_MESSAGES/mplayerthumbs.mo
 share/locale/es/LC_MESSAGES/mplayerthumbsconfig.mo
 share/locale/es/LC_MESSAGES/nepomukbackup.mo
+share/locale/es/LC_MESSAGES/nepomukcontroller.mo
 share/locale/es/LC_MESSAGES/nepomukfileindexer.mo
 share/locale/es/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/es/LC_MESSAGES/nepomukserver.mo
@@ -2488,6 +2489,7 @@ share/locale/es/LC_MESSAGES/plasmapkg.mo
 share/locale/es/LC_MESSAGES/plasmawallpaperviewer.mo
 share/locale/es/LC_MESSAGES/plasmoidviewer.mo
 share/locale/es/LC_MESSAGES/powerdevil.mo
+share/locale/es/LC_MESSAGES/powerdevilactivitiesconfig.mo
 share/locale/es/LC_MESSAGES/powerdevilglobalconfig.mo
 share/locale/es/LC_MESSAGES/powerdevilprofilesconfig.mo
 share/locale/es/LC_MESSAGES/printer-applet.mo
@@ -2495,6 +2497,7 @@ share/locale/es/LC_MESSAGES/processcore.mo
 share/locale/es/LC_MESSAGES/processui.mo
 share/locale/es/LC_MESSAGES/randrmonitor.mo
 share/locale/es/LC_MESSAGES/rellinks.mo
+share/locale/es/LC_MESSAGES/remote-widgets-browser.mo
 share/locale/es/LC_MESSAGES/rocs.mo
 share/locale/es/LC_MESSAGES/searchbarplugin.mo
 share/locale/es/LC_MESSAGES/solid-hardware.mo
