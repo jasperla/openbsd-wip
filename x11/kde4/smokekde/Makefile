@@ -3,7 +3,7 @@
 CATEGORIES =	devel
 COMMENT =	introspective wrappers around the KDE
 DISTNAME =	smokekde-${MODKDE_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	smokeakonadi		0.0 # 3.0
 SHARED_LIBS +=	smokeattica		0.0 # 3.0
@@ -37,6 +37,8 @@ WANTLIB += knewstuff3 kparts kprintutils ktexteditor nepomuk
 WANTLIB += nepomukquery nepomukutils okularcore phonon plasma smokebase
 WANTLIB += smokeqtcore smokeqtdbus smokeqtgui smokeqtnetwork smokeqtsvg
 WANTLIB += smokeqtxml solid soprano sopranoclient sopranoserver
+WANTLIB += akonadi-contact akonadi-kabc akonadi-kde akonadi-kmime
+WANTLIB += kabc kcalcore kmime kpimutils kresources
 
 MODKDE4_USE =	libs pim
 
