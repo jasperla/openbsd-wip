@@ -4,10 +4,10 @@ SHARED_ONLY =	Yes
 COMMENT =	RDF framework
 CATEGORIES =	databases devel textproc sysutils
 
-SHARED_LIBS +=  soprano                   1.0 # 1.0
-SHARED_LIBS +=  sopranoclient             1.0 # 1.0
-SHARED_LIBS +=  sopranoindex              1.0 # 1.0
-SHARED_LIBS +=  sopranoserver             1.0 # 1.0
+SHARED_LIBS =	soprano                   1.0 # 1.0
+SHARED_LIBS +=	sopranoclient             1.0 # 1.0
+SHARED_LIBS +=	sopranoindex              1.0 # 1.0
+SHARED_LIBS +=	sopranoserver             1.0 # 1.0
 
 HOMEPAGE =	http://soprano.sourceforge.net/
 DISTNAME =	soprano-2.7.3
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MODULES +=		devel/cmake x11/qt4
+MODULES =		devel/cmake x11/qt4
 CONFIGURE_STYLE =	cmake
 
 RUN_DEPENDS =	devel/desktop-file-utils
@@ -31,12 +31,12 @@ LIB_DEPENDS = 	textproc/clucene \
 		textproc/raptor \
 		textproc/redland
 
-WANTLIB += c m pthread stdc++
+WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtCore lib/qt4/QtDBus lib/qt4/QtNetwork lib/qt4/QtXml
 WANTLIB += clucene iodbc raptor2 rdf
 
 # No Java, thanks
-CONFIGURE_ARGS +=	-DSOPRANO_DISABLE_SESAME2_BACKEND:Bool=Yes \
+CONFIGURE_ARGS =	-DSOPRANO_DISABLE_SESAME2_BACKEND:Bool=Yes \
 			-DSOPRANO_BUILD_TESTS:Bool=Yes
 
 post-extract:
