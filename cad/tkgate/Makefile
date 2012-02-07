@@ -28,12 +28,11 @@ pre-patch:
 	@find ${WRKSRC} -name *.orig -exec rm {} \;
 
 pre-configure:
-	@perl -pi -e 's,!!PREFIX!!,${PREFIX},g' ${WRKSRC}/Imakefile
+	@perl -pi -e 's,!!PREFIX!!,${PREFIX},g' ${WRKSRC}/Imakefile \
+		${WRKSRC}/src/gsim/Imakefile ${WRKSRC}/scripts/parms.tcl
 	@perl -pi -e 's,!!CFLAGS!!,${CFLAGS},g;' \
 		-e 's,!!LOCALBASE!!,${LOCALBASE},g;' \
 		-e 's,!!PREFIX!!,${PREFIX},g;' ${WRKSRC}/config.h
-	@perl -pi -e 's,!!PREFIX!!,${PREFIX},g' ${WRKSRC}/src/gsim/Imakefile
-	@perl -pi -e 's,!!PREFIX!!,${PREFIX},g' ${WRKSRC}/scripts/parms.tcl
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/tkgate.man ${PREFIX}/man/man1/tkgate.1
