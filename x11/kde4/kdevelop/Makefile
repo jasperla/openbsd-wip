@@ -6,7 +6,7 @@ DISTNAME =	kdevelop-${VERSION}
 HOMEPAGE =	http://www.kdevelop.org/
 REVISION =	0
 
-SHARED_LIBS +=	kdev4cmakecommon	0.0
+SHARED_LIBS =	kdev4cmakecommon	0.0
 SHARED_LIBS +=	kdev4cppduchain		0.0
 SHARED_LIBS +=	kdev4cppparser		0.0
 SHARED_LIBS +=	kdev4cpprpp		0.0
