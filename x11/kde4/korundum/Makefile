@@ -2,6 +2,7 @@
 
 COMMENT =	KDE 4 bindings for Ruby
 DISTNAME =	korundum-${MODKDE_VERSION}
+REVISION =	0
 
 MODULES =	devel/cmake lang/ruby
 
@@ -17,7 +18,7 @@ WANTLIB += smokekparts smokektexteditor smokekutils smokenepomuk
 WANTLIB += smokeokular smokeplasma smokeqtcore smokeqtdbus smokeqtgui
 WANTLIB += smokeqtnetwork smokeqtopengl smokeqtsql smokeqtsvg
 WANTLIB += smokeqtxml smokesolid smokesoprano solid soprano
-
+WANTLIB += akonadi-kde akonadi-kmime smokeakonadi
 
 MODKDE4_USE =	libs pim
 
@@ -26,10 +27,6 @@ RUN_DEPENDS =	x11/kde4/kross-interpreters
 LIB_DEPENDS = 	x11/kde4/kate \
 		x11/kde4/ruby-qt \
 		x11/kde4/smokekde
-
-# Disable until KDE Smoke bug 283677 gets fixed,
-# https://bugs.kde.org/show_bug.cgi?id=283677
-CONFIGURE_ARGS =	-DBUILD_Akonadi:Bool=False
 
 # copy aja@ trick from audio/speech-dispatcher and allow it to FindRuby.cmake
 pre-configure:
