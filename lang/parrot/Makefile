@@ -36,14 +36,14 @@ CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+= \
 	--prefix="${PREFIX}" \
 	--cc="${CC}" \
-	--ccflags="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
+	--ccflags="-I${LOCALBASE}/include -I${X11BASE}/include" \
+	--optimize="${CFLAGS}" \
 	--link="${CXX}" \
 	--linkflags="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 	--ld="${CXX}" \
 	--ldflags="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 	--parrot_is_shared \
-	--icuheaders="${LOCALBASE}/include" \
-	--icushared="`${LOCALBASE}/bin/icu-config --ldflags`"
+	--icu-config="${LOCALBASE}/bin/icu-config"
 
 # XXX The default (gms) garbage collector has issues on powerpc. Until
 # XXX it's fixed, use the old one (ms2).
