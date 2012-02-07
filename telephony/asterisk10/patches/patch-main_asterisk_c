@@ -1,0 +1,12 @@
+$OpenBSD: patch-main_asterisk_c,v 1.20 2011/09/09 15:29:21 sthen Exp $
+--- main/asterisk.c.orig	Wed Dec  7 20:12:53 2011
++++ main/asterisk.c	Thu Jan  5 19:41:24 2012
+@@ -1200,7 +1200,7 @@ static pthread_t lthread;
+ static int read_credentials(int fd, char *buffer, size_t size, struct console *con)
+ {
+ #if defined(SO_PEERCRED)
+-	struct ucred cred;
++	struct sockpeercred cred;
+ 	socklen_t len = sizeof(cred);
+ #endif
+ #if defined(HAVE_GETPEEREID)

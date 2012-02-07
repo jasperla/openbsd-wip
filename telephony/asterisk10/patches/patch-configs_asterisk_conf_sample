@@ -1,0 +1,31 @@
+$OpenBSD: patch-configs_asterisk_conf_sample,v 1.2 2011/05/11 15:07:15 sthen Exp $
+--- configs/asterisk.conf.sample.orig	Wed Dec  7 20:12:53 2011
++++ configs/asterisk.conf.sample	Thu Jan  5 19:41:24 2012
+@@ -58,8 +58,8 @@ astsbindir => /usr/sbin
+ 				; not otherwise require one.
+ ;transcode_via_sln = yes	; Build transcode paths via SLINEAR, instead of
+ 				; directly.
+-;runuser = asterisk		; The user to run as.
+-;rungroup = asterisk		; The group to run as.
++runuser = _asterisk		; The user to run as.
++rungroup = _asterisk		; The group to run as.
+ ;lightbackground = yes		; If your terminal is set for a light-colored
+ 				; background.
+ ;forceblackbackground = yes     ; Force the background of the terminal to be 
+@@ -76,11 +76,11 @@ documentation_language = en_US	; Set the language you 
+ 				; lock.
+ 
+ ; Changing the following lines may compromise your security.
+-;[files]
+-;astctlpermissions = 0660
+-;astctlowner = root
+-;astctlgroup = apache
+-;astctl = asterisk.ctl
++[files]
++astctlpermissions = 0660
++astctlowner = _asterisk
++astctlgroup = wheel
++astctl = asterisk.ctl
+ 
+ [compat]
+ pbx_realtime=1.6
