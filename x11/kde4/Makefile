@@ -19,24 +19,46 @@
 # leaving only "basic" KDE packages here (those who get in actual
 # releases of KDE SC).
 
-# sequence for building is libs, runtime, pimlibs, pim, pim-runtime,
-#	workspace, baseapps and then the rest of KDE
+# Build dependency tree of main building blocks:
+# akonadi, attica, automoc, oxygen-icons, qimageblitz
+# |
+#  - libs
+#   |
+#   |- l10n, wallpapers
+#   |- runtime
+#   |- baseapps
+#   |- pimlibs
+#   | |
+#   | |- pim-runtime
+#   |  - pim
+#   |   |
+#   |----- workspace
+#   |
+#   |- smokegen
+#   | |
+#   | |- smokeqt
+#   | | |
+#   | | |- p5-qt, qyoto, ruby-qt
+#   |  --- smokekde             |
+#   |     |                     |
+#   |      - p5-kde, kimono, korundum
+#   ...
 
 # basic bricks
-     SUBDIR += akonadi			# untested
+     SUBDIR += akonadi			# minor issues
      SUBDIR += attica			# OK
      SUBDIR += automoc			# OK
      SUBDIR += oxygen-icons		# OK
 
 # libraries
-     SUBDIR += libs			# test
-     SUBDIR += pimlibs			# untested
-     SUBDIR += qimageblitz		# test
+     SUBDIR += libs			# OK
+     SUBDIR += pimlibs			# OK
+     SUBDIR += qimageblitz		# OK
 
 # extra base
      SUBDIR += kactivities		# untested
      SUBDIR += runtime			# test
-     SUBDIR += pim-runtime		# untested
+     SUBDIR += pim-runtime		# OK
      SUBDIR += workspace		# test
      SUBDIR += baseapps			# OK
 
@@ -49,12 +71,12 @@
      SUBDIR += korundum			# untested
      SUBDIR += qyoto			# untested
      SUBDIR += kimono			# untested
-     SUBDIR += smokegen			# test
+     SUBDIR += smokegen			# OK
      SUBDIR += smokekde			# untested
      SUBDIR += smokeqt			# untested
 
 # former accessibility, changed in KDE 4.8 beta/rc, all untested
-     SUBDIR += jovie			# untested
+     SUBDIR += jovie			# issues
      SUBDIR += kaccessible		# untested
      SUBDIR += kmousetool		# OK
      SUBDIR += kmag			# OK
@@ -65,13 +87,13 @@
      SUBDIR += games			# minor issues
      SUBDIR += multimedia		# OK, but Kscd needs testing
      SUBDIR += network			# test
-     SUBDIR += pim			# test
+     SUBDIR += pim			# OK
      SUBDIR += sdk			# test
      SUBDIR += toys			# test KTeaTime
      SUBDIR += webdev			# minor issues
 
 # former kdeutils, changed in KDE 4.8 beta/rc, all untested
-     SUBDIR += ark			# issues
+     SUBDIR += ark			# OK
      SUBDIR += filelight		# OK
      SUBDIR += kcalc			# OK
      SUBDIR += kcharselect		# OK
@@ -79,10 +101,10 @@
      SUBDIR += kfloppy			# test
      SUBDIR += kgpg			# OK
      SUBDIR += kremotecontrol		# untested
-     SUBDIR += ktimer			# untested
+     SUBDIR += ktimer			# OK
      SUBDIR += kwallet			# OK
-     SUBDIR += printer-applet		# untested
-     SUBDIR += superkaramba		# untested
+     SUBDIR += printer-applet		# issues
+     SUBDIR += superkaramba		# test
      SUBDIR += sweeper			# OK
 
 # former kdeedu
@@ -102,11 +124,11 @@
      SUBDIR += kstars			# OK
      SUBDIR += ktouch			# OK
      SUBDIR += kturtle			# OK
-     SUBDIR += kwordquiz		# test
-     SUBDIR += libkdeedu		# test
+     SUBDIR += kwordquiz		# OK
+     SUBDIR += libkdeedu		# OK
      SUBDIR += marble			# test
      SUBDIR += parley			# OK
-     SUBDIR += rocs			# OK
+     SUBDIR += rocs			# minor issues
      SUBDIR += step			# OK
 
 # former kdegraphics
@@ -115,7 +137,7 @@
      SUBDIR += graphics-thumbnailers	# untested
      SUBDIR += gwenview			# OK
      SUBDIR += kamera			# test
-     SUBDIR += kcolorchooser		# untested
+     SUBDIR += kcolorchooser		# OK
      SUBDIR += kgamma			# OK
      SUBDIR += kolourpaint		# OK
      SUBDIR += kruler			# OK
@@ -123,14 +145,14 @@
      SUBDIR += ksnapshot		# OK
      SUBDIR += libkdcraw		# untested
      SUBDIR += libkexiv2		# test
-     SUBDIR += libkipi			# test
+     SUBDIR += libkipi			# OK
      SUBDIR += libksane			# untested
      SUBDIR += mobipocket		# untested
      SUBDIR += okular			# test
      SUBDIR += svgpart			# OK
 
 # other apps
-     SUBDIR += kate			# test
+     SUBDIR += kate			# OK
      SUBDIR += konsole			# OK
      SUBDIR += akonadi-googledata	# test
      SUBDIR += kdevplatform		# untested
@@ -138,8 +160,8 @@
      SUBDIR += yakuake			# OK
      SUBDIR += kwebkitpart		# OK
      SUBDIR += calligra			# untested
-     SUBDIR += libktorrent		# untested
-     SUBDIR += ktorrent			# untested
+     SUBDIR += libktorrent		# test
+     SUBDIR += ktorrent			# test
 
 # additional resources
      SUBDIR += plasma-addons		# untested
