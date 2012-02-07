@@ -25,5 +25,7 @@ Ready-to-use packages for l10n, oxygen-icons and wallpapers are available at htt
 
 For more information see main Makefile and TODOs and Makefiles in subdirectories.
 
+Tests for ALSA dependency should be disabled. Currently we could not use -DCMAKE_DISABLE_FIND_PACKAGE_ALSA:Bool=TRUE everywhere (e.g.: kdenetwork) because CMakeLists.txt there use alsa_configure_file() macro.
+
 ---
  * - Last one is a joke. (Captain)
