@@ -17,23 +17,23 @@ lib/kamailio/kamctl/kamctl.unixsock
 lib/kamailio/kamctl/kamdbctl.base
 lib/kamailio/kamctl/kamdbctl.db_berkeley
 lib/kamailio/kamctl/kamdbctl.dbtext
-lib/kamailio/libkcore.so
-lib/kamailio/libkcore.so.1
+@comment lib/kamailio/libkcore.so
+@comment lib/kamailio/libkcore.so.1
 @lib lib/kamailio/libkcore.so.${LIBkcore_VERSION}
-lib/kamailio/libkmi.so
-lib/kamailio/libkmi.so.1
+@comment lib/kamailio/libkmi.so
+@comment lib/kamailio/libkmi.so.1
 @lib lib/kamailio/libkmi.so.${LIBkmi_VERSION}
-lib/kamailio/libser_cds.so
-lib/kamailio/libser_cds.so.0
+@comment lib/kamailio/libser_cds.so
+@comment lib/kamailio/libser_cds.so.0
 @lib lib/kamailio/libser_cds.so.${LIBser_cds_VERSION}
-lib/kamailio/libsrdb1.so
-lib/kamailio/libsrdb1.so.1
+@comment lib/kamailio/libsrdb1.so
+@comment lib/kamailio/libsrdb1.so.1
 @lib lib/kamailio/libsrdb1.so.${LIBsrdb1_VERSION}
-lib/kamailio/libsrdb2.so
-lib/kamailio/libsrdb2.so.1
+@comment lib/kamailio/libsrdb2.so
+@comment lib/kamailio/libsrdb2.so.1
 @lib lib/kamailio/libsrdb2.so.${LIBsrdb2_VERSION}
-lib/kamailio/libtrie.so
-lib/kamailio/libtrie.so.1
+@comment lib/kamailio/libtrie.so
+@comment lib/kamailio/libtrie.so.1
 @lib lib/kamailio/libtrie.so.${LIBtrie_VERSION}
 lib/kamailio/modules/
 lib/kamailio/modules/async.so
