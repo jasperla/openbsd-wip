@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, network
 DISTNAME =	kdenetwork-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kgetcore		0.0 # 4.0
 SHARED_LIBS +=	kopete			3.0 # 4.0
@@ -29,11 +30,11 @@ WANTLIB += gadu glib-2.0 gpg-error gpgme++-pthread gpgme-pthread idn
 WANTLIB += kemoticons kfile khtml kidletime kio kjs knewstuff2
 WANTLIB += knotifyconfig konq kparts kpimidentities kprintutils
 WANTLIB += kresources ktexteditor kutils meanwhile
-WANTLIB += nepomuk nepomukutils phonon>=5 plasma qca>=3 qgpgme
+WANTLIB += nepomuk nepomukutils plasma qca2 qgpgme
 WANTLIB += qimageblitz solid soprano mms kworkspace
 WANTLIB += assuan jasper jpeg otr xml2 xmms xslt ktorrent
 
-MODULES =	devel/gettext
+MODULES =	devel/gettext multimedia/phonon
 
 MODKDE4_USE =	pim workspace
 
@@ -48,9 +49,5 @@ LIB_DEPENDS =	audio/xmms \
 		x11/kde4/baseapps \
 		x11/kde4/libktorrent \
 		x11/kde4/qimageblitz
-
-CONFIGURE_ARGS =	-DQCA2_INCLUDE_DIR:PATH=${LOCALBASE}/include/QtCrypto \
-			-DQCA2_LIBRARIES:FILEPATH=${LOCALBASE}/lib/libqca.so.3.0 \
-			-DQCA2_FOUND:BOOL=true
 
 .include <bsd.port.mk>
