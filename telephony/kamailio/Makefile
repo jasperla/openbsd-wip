@@ -1,3 +1,5 @@
+# $OpenBSD:
+
 COMMENT-main =		mature and flexible open source SIP server
 
 SHARED_ONLY =		Yes
@@ -12,6 +14,7 @@ PKGNAME-xmlrpc =	kamailio-xmlrpc-${VERSION}
 PKGNAME-carrierroute =	kamailio-carrierroute-${VERSION}
 PKGNAME-snmpstats =	kamailio-snmpstats-${VERSION}
 PKGNAME-perl =		kamailio-perl-${VERSION}
+#PKGNAME-radius =	kamailio-radius-${VERSION}	TODO
 
 CATEGORIES =		telephony
 MAINTAINER =		Roman Kravchuk <kravchuk.kp@gmail.com>
@@ -24,13 +27,12 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-# XXX these are wrong - should all start from 0.0 and control the files which actually get built
-SHARED_LIBS =		kcore	1.0 \
-			kmi	1.0 \
-			ser_cds	0.1 \
-			srdb1	1.0 \
-			srdb2	1.0 \
-			trie	1.0
+SHARED_LIBS =		kcore	0.0	# 1.0
+SHARED_LIBS +=		kmi	0.0	# 1.0
+SHARED_LIBS +=		ser_cds	0.0	# 0.1
+SHARED_LIBS +=		srdb1	0.0	# 1.0
+SHARED_LIBS +=		srdb2	0.0	# 1.0
+SHARED_LIBS +=		trie	0.0	# 1.0
 
 MAKE_ENV =		CC="${CC}" LDFLAGS="${LDFLAGS} -pthread" QUIET=verbose
 
@@ -64,8 +66,15 @@ MAKE_FLAGS =	FLAVOUR=kamailio \
 		PREFIX=${TRUEPREFIX} \
 		BASEDIR=${WRKINST} \
 		cfg-prefix=${WRKINST} \
+		SYSCONFDIR=${SYSCONFDIR} \
 		C_INCLUDES="-I${LOCALBASE}/include" \
-		include_modules="${KAMAILIO_MODULES}"
+		include_modules="${KAMAILIO_MODULES}" \
+		LIBkcore_VERSION=${LIBkcore_VERSION} \
+		LIBkmi_VERSION=${LIBkmi_VERSION} \
+		LIBser_cds_VERSION=${LIBser_cds_VERSION} \
+		LIBsrdb1_VERSION=${LIBsrdb1_VERSION} \
+		LIBsrdb2_VERSION=${LIBsrdb2_VERSION} \
+		LIBtrie_VERSION=${LIBtrie_VERSION}
 
 PSEUDO_FLAVORS +=	no_postgresql
 .if !${FLAVOR:L:Mno_postgresql}
@@ -133,6 +142,16 @@ WANTLIB-perl =		c m perl util
 LIB_DEPENDS-perl =
 RUN_DEPENDS-perl =	databases/p5-ldap
 .endif
+
+# TODO
+#PSEUDO_FLAVORS +=	no_radius
+#.if !${FLAVOR:L:Mno_radius}
+#MULTI_PACKAGES +=	-radius
+#COMMENT-radius =	kamailio RADIUS modules
+#KAMAILIO_MODULES +=	auth_radius misc_radius peering
+#WANTLIB-radius =	freeradius-client
+#LIB_DEPENDS-radius =	net/freeradius-client
+#.endif
 
 .for i in ${MULTI_PACKAGES:S/-main//}
 FULLPKGNAME$i ?=	kamailio$i-${VERSION}
