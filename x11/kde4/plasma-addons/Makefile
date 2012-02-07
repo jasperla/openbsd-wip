@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, extra plasmoids
 DISTNAME =	kdeplasma-addons-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	lancelot-datamodels		0.0 # 1.7
 SHARED_LIBS +=	lancelot			0.0 # 1.9
@@ -20,18 +21,22 @@ WANTLIB += akonadi-contact akonadi-kde attica kabc kcalcore kcmutils
 WANTLIB += kdeui kdewebkit kexiv2 kio kfile kmime
 WANTLIB += knewstuff3 kparts kpimutils kresources krosscore
 WANTLIB += kunitconversion kworkspace marblewidget nepomuk nepomukutils
-WANTLIB += phonon plasma plasmaclock qca qimageblitz solid solidcontrol
+WANTLIB += phonon plasma plasmaclock qca2 qimageblitz solid solidcontrol
 WANTLIB += soprano taskmanager threadweaver weather_ion
 WANTLIB += cln glib-2.0 qalculate scim-1.0 xml2 dbusmenu-qt
+WANTLIB += gio-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 ibus-1.0
 
 MODULES =	devel/gettext
 
 MODKDE4_USE =	pim workspace
 
 LIB_DEPENDS =	math/eigen2>=2.0.3 \
+		inputmethods/ibus \
 		inputmethods/scim \
+		math/eigen2 \
 		math/qalculate/libqalculate \
 		security/qca2 \
+		x11/dbusmenu-qt \
 		x11/kde4/attica \
 		x11/kde4/libkexiv2 \
 		x11/kde4/marble \

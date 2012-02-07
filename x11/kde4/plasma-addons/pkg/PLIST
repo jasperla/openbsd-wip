@@ -200,6 +200,7 @@ lib/kde4/plasma_wallpaper_weather.so
 @lib lib/libplasmapotdprovidercore.so.${LIBplasmapotdprovidercore_VERSION}
 @lib lib/libplasmaweather.so.${LIBplasmaweather_VERSION}
 @lib lib/librtm.so.${LIBrtm_VERSION}
+@bin libexec/kimpanel-ibus-panel
 @bin libexec/kimpanel-scim-panel
 share/apps/bball/
 share/apps/bball/bball.svgz
