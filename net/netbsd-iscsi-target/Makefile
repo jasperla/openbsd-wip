@@ -25,7 +25,6 @@ MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/
 
 CONFIGURE_STYLE=gnu
 USE_LIBTOOL=	Yes
-USE_GROFF =	Yes
 
 SRC_TARGET=	${WRKDIST}/src/target
 
