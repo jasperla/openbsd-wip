@@ -30,4 +30,13 @@ pre-configure:
 	cd ${WRKSRC}/src/target; perl -pi -e \
 	    's,/etc/iscsi,${SYSCONFDIR}/iscsi,g' targets.5 iscsi-target.8
 
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/netbsd-iscsi-target \
+	    ${PREFIX}/share/examples/netbsd-iscsi-target
+	cd ${WRKSRC}/doc; \
+	${INSTALL_DATA} * ${PREFIX}/share/doc/netbsd-iscsi-target; \
+	cd ../src; \
+	${INSTALL_DATA} etc/auths etc/targets examples/* \
+	    ${PREFIX}/share/examples/netbsd-iscsi-target
+
 .include <bsd.port.mk>
