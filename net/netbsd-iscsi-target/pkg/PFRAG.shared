@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+@lib lib/libiscsi.so.${LIBiscsi_VERSION}
