@@ -26,10 +26,8 @@ MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/
 CONFIGURE_STYLE=gnu
 USE_LIBTOOL=	Yes
 
-SRC_TARGET=	${WRKDIST}/src/target
-
 pre-configure:
-	@perl -pi -e 's,/etc/iscsi,${SYSCONFDIR}/iscsi,g' \
-	    ${SRC_TARGET}/targets.5 ${SRC_TARGET}/iscsi-target.8
+	cd ${WRKSRC}/src/target; perl -pi -e \
+	    's,/etc/iscsi,${SYSCONFDIR}/iscsi,g' targets.5 iscsi-target.8
 
 .include <bsd.port.mk>
