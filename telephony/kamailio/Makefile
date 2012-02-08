@@ -51,7 +51,7 @@ LIB_DEPENDS-main =	net/curl \
 KAMAILIO_MODULES =	cpl-c db_berkeley dialplan jabber lcr \
 			presence presence_dialoginfo presence_mwi presence_xml \
 			pua pua_bla pua_dialoginfo pua_mi pua_usrloc pua_xmpp \
-			regex rls seas utils xcap_client xmpp
+			regex rls seas utils xcap_client xmpp tls
 
 FLAVOR ?=
 MULTI_PACKAGES =	-main
@@ -61,7 +61,6 @@ USE_GROFF =		Yes
 NO_REGRESS =		Yes
 
 MAKE_FLAGS =	FLAVOUR=kamailio \
-		TLS_HOOKS=1 \
 		LIBDIR=lib \
 		PREFIX=${TRUEPREFIX} \
 		BASEDIR=${WRKINST} \
