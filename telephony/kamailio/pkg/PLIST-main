@@ -17,23 +17,11 @@ lib/kamailio/kamctl/kamctl.unixsock
 lib/kamailio/kamctl/kamdbctl.base
 lib/kamailio/kamctl/kamdbctl.db_berkeley
 lib/kamailio/kamctl/kamdbctl.dbtext
-@comment lib/kamailio/libkcore.so
-@comment lib/kamailio/libkcore.so.1
 @lib lib/kamailio/libkcore.so.${LIBkcore_VERSION}
-@comment lib/kamailio/libkmi.so
-@comment lib/kamailio/libkmi.so.1
 @lib lib/kamailio/libkmi.so.${LIBkmi_VERSION}
-@comment lib/kamailio/libser_cds.so
-@comment lib/kamailio/libser_cds.so.0
 @lib lib/kamailio/libser_cds.so.${LIBser_cds_VERSION}
-@comment lib/kamailio/libsrdb1.so
-@comment lib/kamailio/libsrdb1.so.1
 @lib lib/kamailio/libsrdb1.so.${LIBsrdb1_VERSION}
-@comment lib/kamailio/libsrdb2.so
-@comment lib/kamailio/libsrdb2.so.1
 @lib lib/kamailio/libsrdb2.so.${LIBsrdb2_VERSION}
-@comment lib/kamailio/libtrie.so
-@comment lib/kamailio/libtrie.so.1
 @lib lib/kamailio/libtrie.so.${LIBtrie_VERSION}
 lib/kamailio/modules/
 lib/kamailio/modules/async.so
@@ -68,6 +56,7 @@ lib/kamailio/modules/sipcapture.so
 lib/kamailio/modules/sl.so
 lib/kamailio/modules/sms.so
 lib/kamailio/modules/textopsx.so
+lib/kamailio/modules/tls.so
 lib/kamailio/modules/tm.so
 lib/kamailio/modules/topoh.so
 lib/kamailio/modules/utils.so
@@ -221,6 +210,7 @@ share/doc/kamailio/modules/README.sipcapture
 share/doc/kamailio/modules/README.sl
 share/doc/kamailio/modules/README.sms
 share/doc/kamailio/modules/README.textopsx
+share/doc/kamailio/modules/README.tls
 share/doc/kamailio/modules/README.tm
 share/doc/kamailio/modules/README.topoh
 share/doc/kamailio/modules/README.utils
@@ -327,10 +317,16 @@ share/doc/kamailio/modules_s/README.xlog
 share/examples/kamailio/
 @sample ${SYSCONFDIR}/kamailio/
 @comment share/examples/kamailio/dictionary.kamailio
+share/examples/kamailio/kamailio-selfsigned.key
+@sample ${SYSCONFDIR}/kamailio/kamailio-selfsigned.key
+share/examples/kamailio/kamailio-selfsigned.pem
+@sample ${SYSCONFDIR}/kamailio/kamailio-selfsigned.pem
 share/examples/kamailio/kamailio.cfg
 @sample ${SYSCONFDIR}/kamailio/kamailio.cfg
 share/examples/kamailio/kamctlrc
 @sample ${SYSCONFDIR}/kamailio/kamctlrc
+share/examples/kamailio/tls.cfg
+@sample ${SYSCONFDIR}/kamailio/tls.cfg
 share/kamailio/
 share/kamailio/db_berkeley/
 share/kamailio/db_berkeley/kamailio/
