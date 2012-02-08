@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT=	NetBSD's iSCSI (RFC 3720) target
+COMMENT=	iSCSI (RFC 3720) target from NetBSD
 
 DISTNAME=	netbsd-iscsi-20111006
 PKGNAME=	${DISTNAME:S/-iscsi/-iscsi-target/}
