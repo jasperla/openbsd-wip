@@ -1,4 +1,4 @@
-# $OpenBSD:
+# $OpenBSD$
 
 COMMENT=	NetBSD's iSCSI (RFC 3720) target
 
@@ -17,9 +17,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c pthread
+WANTLIB += c pthread
 
-SHARED_LIBS=	iscsi	0.0	# 0.2
+SHARED_LIBS +=	iscsi                0.0      # 0.2
 
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/
 
