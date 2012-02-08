@@ -1,0 +1,9 @@
+@comment $OpenBSD$
+@bin bin/iscsi-target
+lib/libiscsi.a
+lib/libiscsi.la
+@lib lib/libiscsi.so.${LIBiscsi_VERSION}
+@man man/man3/libiscsi.3
+@man man/man5/targets.5
+@man man/man8/iscsi-target.8
+@rcscript ${RCDIR}/iscsi_target
