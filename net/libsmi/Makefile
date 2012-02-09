@@ -26,8 +26,9 @@ USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--mandir=${PREFIX}/man \
 			--with-data-dir=${PREFIX}/share/smi \
-			--with-pibdir=${PREFIX}/share/smi/pibs \
-			--with-mibdir=${PREFIX}/share/smi/mibs
+			--with-mibdir=${PREFIX}/share/smi/mibs \
+			--with-pibdir=${PREFIX}/share/smi/pibs
 
 .include <bsd.port.mk>
