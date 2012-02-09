@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, workspace
 DISTNAME =	kde-workspace-${MODKDE_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	kdecorations			0.0 # 4.7
 SHARED_LIBS +=	kephal				0.0 # 4.7
@@ -91,7 +91,7 @@ WRONG_SYSCONF_FILES =	dbus-1		share/examples \
 post-extract:
 	cp ${FILESDIR}/checkpass_bsd.c ${WRKSRC}/kcheckpass/
 
-post-install:
+post-install: kde4-post-install
 	rm -f ${PREFIX}/share/config/kdm/*.bak
 
 .include <bsd.port.mk>
