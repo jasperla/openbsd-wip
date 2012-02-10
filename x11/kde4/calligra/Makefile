@@ -4,6 +4,7 @@ COMMENT =	KDE office suite
 VERSION =	2.3.87
 DISTNAME =	calligra-${VERSION}
 PKGNAME =	${DISTNAME:C/-/4-/1}
+BROKEN =	wait for RC1
 
 SHARED_LIBS =	flake			0.0 # 8.0
 SHARED_LIBS +=	kokross			0.0 # 8.0
@@ -73,7 +74,7 @@ WANTLIB += lib/qt4/QtOpenGL lib/qt4/QtScript lib/qt4/QtXmlPatterns
 WANTLIB += exiv2 gif glib-2.0 gsl gslcblas iconv jpeg kcal kdcraw
 WANTLIB += kde3support kfile khtml kjs krosscore krossui lcms
 WANTLIB += lcms2 mysqlclient ofstd okularcore openjpeg phonon
-WANTLIB += poppler poppler-qt4 qca sqlite3 sybdb tiff wpd-0.8
+WANTLIB += poppler poppler-qt4 qca2 sqlite3 sybdb tiff wpd-0.8
 WANTLIB += xml2 xslt z
 WANTLIB += GLEW QtSql QtWebKit fftw3 kabc kcmutils kemoticons
 WANTLIB += kidletime knewstuff3 knotifyconfig kpimutils kprintutils
