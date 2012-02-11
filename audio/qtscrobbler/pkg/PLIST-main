@@ -1,0 +1,3 @@
+@comment $OpenBSD$
+@bin bin/scrobble-cli
+@man man/man1/scrobble-cli.1
