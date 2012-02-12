@@ -35,12 +35,6 @@ WANTLIB-main +=	gsttag-0.10
 WANTLIB-main +=	avcodec avutil cdio lastfm mtp protobuf-lite qca2
 WANTLIB-main +=	qjson tag>=5.0 usb xml2
 
-# Missing lib: avcodec.16 (/usr/local/bin/clementine) (NOT REACHABLE)
-# Missing lib: avutil.8 (/usr/local/bin/clementine) (NOT REACHABLE)
-# Missing lib: cdio.0 (/usr/local/bin/clementine) (NOT REACHABLE)
-# Missing lib: qca2.0 (/usr/local/bin/clementine) (NOT REACHABLE)
-# Missing lib: qjson.0 (/usr/local/bin/clementine) (NOT REACHABLE)
-
 WANTLIB-kde4 =	${WANTLIB-common} ${MODKDE4_WANTLIB}
 WANTLIB-kde4 +=	lib/qt4/QtSvg kdeui plasma
 
