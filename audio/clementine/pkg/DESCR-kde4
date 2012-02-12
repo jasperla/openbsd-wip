@@ -1,0 +1,5 @@
+Clementine is a multiplatform music player. It is inspired by
+Amarok 1.4, focusing on a fast and easy-to-use interface for searching
+and playing your music.
+
+This package integrates Clementine in KDE4 via Plasma runner.
