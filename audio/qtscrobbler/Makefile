@@ -1,8 +1,13 @@
 # $OpenBSD$
 
-COMMENT = 		simple tool for submitting .scrobbler.log to last.fm
+COMMENT-main = 		simple CLI tool for submitting .scrobbler.log to last.fm
+COMMENT-gui = 		Qt GUI for submitting .scrobbler.log to last.fm
 
-DISTNAME = 		qtscrob-0.10
+MULTI_PACKAGES = 	-main -gui
+V = 			0.10
+DISTNAME = 		qtscrob-${V}
+PKGNAME-main = 		scrobbler-cli-${V}
+PKGNAME-gui = 		qtscrobbler-${V}
 
 CATEGORIES = 		audio
 
@@ -19,16 +24,18 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes 
 
-WANTLIB += ICE QtGui SM X11 Xext Xi Xinerama Xrender c crypto
-WANTLIB += curl fontconfig freetype idn m mtp pthread ssl stdc++
-WANTLIB += usb z
+WANTLIB-main += c crypto curl idn m mtp pthread ssl stdc++ usb z
+WANTLIB-main += ${MODGETTEXT_WANTLIB}
 
-MODULES = 		x11/qt4
+WANTLIB-gui += ICE QtCore QtGui SM X11 Xext Xi Xinerama Xrender
+WANTLIB-gui += fontconfig freetype  ${WANTLIB-main}
+
+MODULES = 		devel/gettext x11/qt4
 BUILD_DEPENDS = 	devel/ccache
 LIB_DEPENDS = 		net/curl \
 			devel/libidn \
 			devel/libmtp
-RUN_DEPENDS = 		devel/desktop-file-utils
+RUN_DEPENDS-gui = 	devel/desktop-file-utils
 USE_GMAKE = 		Yes
 WRKSRC = 		${WRKDIST}/src/cli
 

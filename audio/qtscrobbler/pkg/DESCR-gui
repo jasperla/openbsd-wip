@@ -1,0 +1,3 @@
+QTScrobbler is a tool for submitting .scrobbler.log files from 
+portable players to Last.fm. It currently supports players that
+write .scrobbler.log and iPods.
