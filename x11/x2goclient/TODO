@@ -1,0 +1,29 @@
+Hello ports-hackers,
+
+I need help with this port. It builds find and x2goclient starts well
+but it breaks on SSH connection with x2goserver (gdb output):
+
+
+Program received signal SIGSEGV, Segmentation fault.
+[Switching to process 27362, thread 0x203c5a000]
+0x00000000004bda31 in SshMasterConnection::channelLoop (this=0x20c22a800)
+    at sshmasterconnection.cpp:590
+590             inet_aton ( reverseTunnelLocalHost.toAscii(), &address.sin_addr );
+
+
+GDB bt:
+
+#0  0x00000000004bda31 in SshMasterConnection::channelLoop (this=0x20c22a800)
+    at sshmasterconnection.cpp:590
+#1  0x00000000004c1e6c in SshMasterConnection::run (this=0x20c22a800)
+    at sshmasterconnection.cpp:223
+#2  0x000000020b7025b5 in QThreadPrivate::start () from /usr/local/lib/libQtCore.so.9.0
+#3  0x0000000210323a6d in _thread_start ()
+    at /usr/src/lib/libpthread/uthread/uthread_create.c:242
+#4  0x000000000000002b in ?? ()
+Cannot access memory at address 0x20e986008
+
+
+It's crashing in channelLoop() -> sshmasterconnection.cpp
+
+Maybe anybody could check it! x2goclient is for me really important! 
