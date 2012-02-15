@@ -2,7 +2,7 @@
 
 COMMENT =		GUI controller for Tor
 
-DISTNAME =		vidalia-0.2.15
+DISTNAME =		vidalia-0.2.17
 
 CATEGORIES =		net
 
