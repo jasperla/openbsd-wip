@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+lib/kde4/
+lib/kde4/plasma_runner_clementine.so
+share/kde4/
+share/kde4/services/
+share/kde4/services/plasma-runner-clementine.desktop

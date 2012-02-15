@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, games
 DISTNAME =	kdegames-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kdegames             5.0      # .4.0
 SHARED_LIBS +=	kmahjongglib         0.0      # .1.0
@@ -19,7 +20,7 @@ WANTLIB += lib/qt4/QtNetwork lib/qt4/QtOpenGL
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml 
 WANTLIB += kdeui kdnssd kfile kio knewstuff2 knewstuff3
 WANTLIB += knotifyconfig phonon>=6
-WANTLIB += openal qca sndfile
+WANTLIB += openal qca2 sndfile
 
 MODULES =	devel/cmake lang/python
 

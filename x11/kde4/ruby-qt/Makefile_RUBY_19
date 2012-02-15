@@ -52,7 +52,7 @@ CONFIGURE_ARGS =	-DCMAKE_INSTALL_PREFIX=${LOCALBASE} \
 
 MAKE_FLAGS =		VERBOSE=1
 
-post-install:
+post-install: kde4-post-install
 	mv ${PREFIX}/bin/rbqt{,4}api
 	mv ${PREFIX}/include/qtruby/smoke{,qt4}ruby.h
 	rm ${PREFIX}/lib/ruby/site_ruby/${MODRUBY_LIBREV}/Qt.rb
