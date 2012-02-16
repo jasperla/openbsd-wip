@@ -1,0 +1,10 @@
+$OpenBSD$
+--- pypy/tool/udir.py.orig	Wed Nov 30 11:28:30 2011
++++ pypy/tool/udir.py	Wed Nov 30 11:28:40 2011
+@@ -49,5 +49,4 @@ def make_udir(dir=None, basename=None):
+                                    prefix = 'usession' + basename,
+                                    keep = PYPY_KEEP)
+ 
+-udir = make_udir(dir      = os.environ.get('PYPY_USESSION_DIR'),
+-                 basename = os.environ.get('PYPY_USESSION_BASENAME'))
++udir = local("/").mkdir(os.environ.get('PYPY_USESSION_DIR'))
