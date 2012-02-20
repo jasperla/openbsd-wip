@@ -17,6 +17,12 @@ audio/clementine:	sent to ports@ Sep 06 2011. Ready for import. (grayed)
 devel/libgeier:		Ready for import. Sent to ports@ 11.12.2011 (sizeofvoid)
 productivity/taxbird:	Ready for import. Sent to ports@ 11.12.2011 (sizeofvoid)
 cad/tkgate:		Ready for import. Sent to ports@ 2008-01-13 and still works (yason)
+devel/p5-IO-CaptureOutput	sent to ports@ Feb 16 2012 (pstumpf)
+devel/p5-TAP-Harness-Archive	sent to ports@ Feb 16 2012 (pstumpf)
+devel/p5-TAP-Harness-Multiple	sent to ports@ Feb 16 2012 (pstumpf)
+lang/parrot			sent to ports@ Feb 16 2012 (pstumpf)
+lang/nqp			sent to ports@ Feb 16 2012 (pstumpf)
+lang/rakudo			sent to ports@ Feb 16 2012 (pstumpf)
 
 KDE 4.7/4.8 related
 
