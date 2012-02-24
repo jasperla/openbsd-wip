@@ -1,0 +1,11 @@
+$OpenBSD$
+--- src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/OpenCLC10/SolveCollisionsAndUpdateVelocities.cl.orig	Fri Feb 24 16:29:07 2012
++++ src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/OpenCLC10/SolveCollisionsAndUpdateVelocities.cl	Fri Feb 24 16:29:12 2012
+@@ -1,7 +1,5 @@
+ MSTRINGIFY(
+ 
+-#pragma OPENCL EXTENSION cl_amd_printf : enable\n
+-
+ float mydot3(float4 a, float4 b)
+ {
+    return a.x*b.x + a.y*b.y + a.z*b.z;
