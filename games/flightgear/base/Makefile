@@ -21,7 +21,8 @@ LIB_DEPENDS =	graphics/openscenegraph \
 		devel/subversion,-main
 RUN_DEPENDS =	games/flightgear/data>=${V}
 
-CONFIGURE_ARGS +=	-DCMAKE_INSTALL_MANDIR="${PREFIX}/man"
+CONFIGURE_ARGS +=	-DCMAKE_INSTALL_MANDIR="${PREFIX}/man" \
+			-DFG_DATA_DIR="${TRUEPREFIX}/share/flightgear"
 
 NO_REGRESS =	Yes
 

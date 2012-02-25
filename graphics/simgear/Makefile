@@ -23,8 +23,6 @@ BUILD_DEPENDS =		graphics/openscenegraph \
 			devel/boost \
 			audio/freealut
 
-#CONFIGURE_ENV =		CFLAGS="-pthread" LDFLAGS="-pthread"
-
 CFLAGS +=		-I${X11BASE}/include
 
 NO_REGRESS =		Yes
