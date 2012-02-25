@@ -2,7 +2,7 @@
 
 COMMENT =		simulations library
 
-DISTNAME =		simgear-2.4.0
+DISTNAME =		simgear-2.6.0
 
 CATEGORIES =		graphics
 
@@ -17,14 +17,15 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		http://mirrors.ibiblio.org/pub/mirrors/simgear/ftp/Source/
 EXTRACT_SUFX =		.tar.bz2
 
+MODULES =		devel/cmake
 BUILD_DEPENDS =		graphics/openscenegraph \
 			devel/plib \
 			devel/boost \
 			audio/freealut
 
-CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
-CONFIGURE_ENV =		CFLAGS="-pthread" LDFLAGS="-pthread"
+#CONFIGURE_ENV =		CFLAGS="-pthread" LDFLAGS="-pthread"
+
+CFLAGS +=		-I${X11BASE}/include
 
 NO_REGRESS =		Yes
 
