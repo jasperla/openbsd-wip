@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/OpenCLC10/SolveCollisionsAndUpdateVelocities.cl.orig	Fri Feb 24 16:29:07 2012
-+++ src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/OpenCLC10/SolveCollisionsAndUpdateVelocities.cl	Fri Feb 24 16:29:12 2012
+--- src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/OpenCLC10/SolveCollisionsAndUpdateVelocities.cl.orig	Sun Feb 26 18:08:29 2012
++++ src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/OpenCLC10/SolveCollisionsAndUpdateVelocities.cl	Sun Feb 26 18:08:33 2012
 @@ -1,7 +1,5 @@
  MSTRINGIFY(
  

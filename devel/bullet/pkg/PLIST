@@ -287,13 +287,13 @@ include/bullet/MiniCL/cl_gl.h
 include/bullet/MiniCL/cl_platform.h
 include/bullet/btBulletCollisionCommon.h
 include/bullet/btBulletDynamicsCommon.h
-lib/libBulletCollision.a
-lib/libBulletDynamics.a
-lib/libBulletMultiThreaded.a
-lib/libBulletSoftBody.a
-lib/libBulletSoftBodySolvers_CPU.a
-lib/libBulletSoftBodySolvers_OpenCL_Mini.a
-lib/libLinearMath.a
-lib/libMiniCL.a
+@lib lib/libBulletCollision.so.${LIBBulletCollision_VERSION}
+@lib lib/libBulletDynamics.so.${LIBBulletDynamics_VERSION}
+@lib lib/libBulletMultiThreaded.so.${LIBBulletMultiThreaded_VERSION}
+@lib lib/libBulletSoftBody.so.${LIBBulletSoftBody_VERSION}
+@lib lib/libBulletSoftBodySolvers_CPU.so.${LIBBulletSoftBodySolvers_CPU_VERSION}
+@lib lib/libBulletSoftBodySolvers_OpenCL_Mini.so.${LIBBulletSoftBodySolvers_OpenCL_Mini_VERSION}
+@lib lib/libLinearMath.so.${LIBLinearMath_VERSION}
+@lib lib/libMiniCL.so.${LIBMiniCL_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/bullet.pc
