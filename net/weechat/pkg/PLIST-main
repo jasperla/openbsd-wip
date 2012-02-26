@@ -3,11 +3,18 @@
 @bin bin/weechat-curses
 include/weechat/
 include/weechat/weechat-plugin.h
-lib/pkgconfig/
 lib/pkgconfig/weechat.pc
 lib/weechat/
 lib/weechat/plugins/
-@man man/man1/weechat-curses.1
+lib/weechat/plugins/alias.so
+lib/weechat/plugins/charset.so
+lib/weechat/plugins/fifo.so
+lib/weechat/plugins/irc.so
+lib/weechat/plugins/logger.so
+lib/weechat/plugins/perl.so
+lib/weechat/plugins/relay.so
+lib/weechat/plugins/rmodifier.so
+lib/weechat/plugins/xfer.so
 share/doc/weechat/
 share/doc/weechat/faq.txt
 share/doc/weechat/plugin_api.txt
@@ -23,3 +30,4 @@ share/locale/it/LC_MESSAGES/weechat.mo
 share/locale/pl/LC_MESSAGES/weechat.mo
 share/locale/pt_BR/LC_MESSAGES/weechat.mo
 share/locale/ru/LC_MESSAGES/weechat.mo
+@man share/man/man1/weechat-curses.1
