@@ -10,7 +10,6 @@ include/simgear/debug/logstream.hxx
 include/simgear/environment/
 include/simgear/environment/metar.hxx
 include/simgear/environment/precipitation.hxx
-include/simgear/environment/visual_enviro.hxx
 include/simgear/ephemeris/
 include/simgear/ephemeris/celestialBody.hxx
 include/simgear/ephemeris/ephemeris.hxx
@@ -19,12 +18,15 @@ include/simgear/ephemeris/mars.hxx
 include/simgear/ephemeris/mercury.hxx
 include/simgear/ephemeris/moonpos.hxx
 include/simgear/ephemeris/neptune.hxx
+include/simgear/ephemeris/pluto.hxx
 include/simgear/ephemeris/saturn.hxx
 include/simgear/ephemeris/star.hxx
 include/simgear/ephemeris/stardata.hxx
 include/simgear/ephemeris/uranus.hxx
 include/simgear/ephemeris/venus.hxx
 include/simgear/io/
+include/simgear/io/HTTPClient.hxx
+include/simgear/io/HTTPRequest.hxx
 include/simgear/io/iochannel.hxx
 include/simgear/io/lowlevel.hxx
 include/simgear/io/raw_socket.hxx
@@ -66,17 +68,14 @@ include/simgear/math/SGVec4.hxx
 include/simgear/math/beziercurve.hxx
 include/simgear/math/interpolater.hxx
 include/simgear/math/leastsqs.hxx
-include/simgear/math/project.hxx
 include/simgear/math/sg_geodesy.hxx
 include/simgear/math/sg_random.h
 include/simgear/math/sg_types.hxx
 include/simgear/misc/
-include/simgear/misc/PathOptions.hxx
 include/simgear/misc/ResourceManager.hxx
 include/simgear/misc/interpolator.hxx
 include/simgear/misc/sg_dir.hxx
 include/simgear/misc/sg_path.hxx
-include/simgear/misc/sg_sleep.hxx
 include/simgear/misc/sgstream.hxx
 include/simgear/misc/stdint.hxx
 include/simgear/misc/stopwatch.hxx
@@ -94,6 +93,7 @@ include/simgear/props/condition.hxx
 include/simgear/props/propertyObject.hxx
 include/simgear/props/props.hxx
 include/simgear/props/props_io.hxx
+include/simgear/props/propsfwd.hxx
 include/simgear/props/tiedpropertylist.hxx
 include/simgear/route/
 include/simgear/route/route.hxx
@@ -124,6 +124,7 @@ include/simgear/scene/material/EffectBuilder.hxx
 include/simgear/scene/material/EffectCullVisitor.hxx
 include/simgear/scene/material/EffectGeode.hxx
 include/simgear/scene/material/GLPredicate.hxx
+include/simgear/scene/material/Noise.hxx
 include/simgear/scene/material/Pass.hxx
 include/simgear/scene/material/Technique.hxx
 include/simgear/scene/material/TextureBuilder.hxx
@@ -132,6 +133,7 @@ include/simgear/scene/material/matlib.hxx
 include/simgear/scene/material/matmodel.hxx
 include/simgear/scene/material/mipmap.hxx
 include/simgear/scene/model/
+include/simgear/scene/model/BoundingVolumeBuildVisitor.hxx
 include/simgear/scene/model/CheckSceneryVisitor.hxx
 include/simgear/scene/model/ConditionNode.hxx
 include/simgear/scene/model/ModelRegistry.hxx
@@ -139,9 +141,7 @@ include/simgear/scene/model/SGClipGroup.hxx
 include/simgear/scene/model/SGInteractionAnimation.hxx
 include/simgear/scene/model/SGMaterialAnimation.hxx
 include/simgear/scene/model/SGOffsetTransform.hxx
-include/simgear/scene/model/SGPagedLOD.hxx
 include/simgear/scene/model/SGReaderWriterXML.hxx
-include/simgear/scene/model/SGReaderWriterXMLOptions.hxx
 include/simgear/scene/model/SGRotateTransform.hxx
 include/simgear/scene/model/SGScaleTransform.hxx
 include/simgear/scene/model/SGText.hxx
@@ -165,12 +165,13 @@ include/simgear/scene/sky/sphere.hxx
 include/simgear/scene/sky/stars.hxx
 include/simgear/scene/tgdb/
 include/simgear/scene/tgdb/GroundLightManager.hxx
+include/simgear/scene/tgdb/ReaderWriterSPT.hxx
 include/simgear/scene/tgdb/ReaderWriterSTG.hxx
 include/simgear/scene/tgdb/SGDirectionalLightBin.hxx
 include/simgear/scene/tgdb/SGLightBin.hxx
+include/simgear/scene/tgdb/SGModelBin.hxx
 include/simgear/scene/tgdb/SGOceanTile.hxx
 include/simgear/scene/tgdb/SGReaderWriterBTG.hxx
-include/simgear/scene/tgdb/SGReaderWriterBTGOptions.hxx
 include/simgear/scene/tgdb/SGTexturedTriangleBin.hxx
 include/simgear/scene/tgdb/SGTriangleBin.hxx
 include/simgear/scene/tgdb/SGVasiDrawable.hxx
@@ -178,6 +179,7 @@ include/simgear/scene/tgdb/SGVertexArrayBin.hxx
 include/simgear/scene/tgdb/ShaderGeometry.hxx
 include/simgear/scene/tgdb/TileCache.hxx
 include/simgear/scene/tgdb/TileEntry.hxx
+include/simgear/scene/tgdb/TreeBin.hxx
 include/simgear/scene/tgdb/apt_signs.hxx
 include/simgear/scene/tgdb/obj.hxx
 include/simgear/scene/tgdb/pt_lights.hxx
@@ -187,6 +189,7 @@ include/simgear/scene/tsync/terrasync.hxx
 include/simgear/scene/util/
 include/simgear/scene/util/CopyOp.hxx
 include/simgear/scene/util/NodeAndDrawableVisitor.hxx
+include/simgear/scene/util/PathOptions.hxx
 include/simgear/scene/util/PrimitiveUtils.hxx
 include/simgear/scene/util/QuadTreeBuilder.hxx
 include/simgear/scene/util/RenderConstants.hxx
@@ -194,6 +197,7 @@ include/simgear/scene/util/SGDebugDrawCallback.hxx
 include/simgear/scene/util/SGEnlargeBoundingBox.hxx
 include/simgear/scene/util/SGNodeMasks.hxx
 include/simgear/scene/util/SGPickCallback.hxx
+include/simgear/scene/util/SGReaderWriterOptions.hxx
 include/simgear/scene/util/SGSceneFeatures.hxx
 include/simgear/scene/util/SGSceneUserData.hxx
 include/simgear/scene/util/SGStateAttributeVisitor.hxx
@@ -203,6 +207,7 @@ include/simgear/scene/util/SplicingVisitor.hxx
 include/simgear/scene/util/StateAttributeFactory.hxx
 include/simgear/scene/util/UpdateOnceCallback.hxx
 include/simgear/scene/util/VectorArrayAdapter.hxx
+include/simgear/scene/util/project.hxx
 include/simgear/screen/
 include/simgear/screen/colors.hxx
 include/simgear/screen/extensions.hxx
@@ -211,6 +216,7 @@ include/simgear/screen/tr.h
 include/simgear/serial/
 include/simgear/serial/serial.hxx
 include/simgear/sg_inlines.h
+include/simgear/simgear_config.h
 include/simgear/sound/
 include/simgear/sound/sample_group.hxx
 include/simgear/sound/sample_openal.hxx
@@ -223,6 +229,7 @@ include/simgear/structure/OSGVersion.hxx
 include/simgear/structure/SGAtomic.hxx
 include/simgear/structure/SGBinding.hxx
 include/simgear/structure/SGExpression.hxx
+include/simgear/structure/SGPerfMon.hxx
 include/simgear/structure/SGReferenced.hxx
 include/simgear/structure/SGSharedPtr.hxx
 include/simgear/structure/SGSmplhist.hxx
@@ -236,6 +243,7 @@ include/simgear/structure/commands.hxx
 include/simgear/structure/event_mgr.hxx
 include/simgear/structure/exception.hxx
 include/simgear/structure/intern.hxx
+include/simgear/structure/singleton.hpp
 include/simgear/structure/subsystem_mgr.hxx
 include/simgear/threads/
 include/simgear/threads/SGGuard.hxx

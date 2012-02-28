@@ -1,0 +1,12 @@
+$OpenBSD$
+--- extern/mygui_3.0.1/MyGUIEngine/CMakeLists.txt.orig	Fri Feb 24 18:39:05 2012
++++ extern/mygui_3.0.1/MyGUIEngine/CMakeLists.txt	Fri Feb 24 18:39:35 2012
+@@ -27,7 +27,7 @@ endif()
+ 
+ # We don't need this lib in OS X. uuid functions is in libc here.
+ if (NOT APPLE)
+-	target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS} uuid)
++	target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS} e2fs-uuid)
+ endif(NOT APPLE)
+ 
+ if (MINGW)
