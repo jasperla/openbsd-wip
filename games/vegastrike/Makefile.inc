@@ -2,6 +2,8 @@
 
 V =			0.5.0
 
+SUBST_VARS +=		V
+
 CATEGORIES =		games
 
 HOMEPAGE =		http://vegastrike.sourceforge.net/
