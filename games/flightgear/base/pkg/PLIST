@@ -1,17 +1,24 @@
 @comment $OpenBSD$
-@bin bin/alcinfo
-@bin bin/est-epsilon
+@bin bin/GPSsmooth
+@bin bin/MIDGsmooth
+@bin bin/UGsmooth
 @bin bin/fgfs
 @bin bin/fgjs
+@bin bin/fgpanel
 @bin bin/fgviewer
-@bin bin/gl-info
 @bin bin/js_demo
 @bin bin/metar
 @bin bin/terrasync
 @bin bin/yasim
-@man man/man1/est-epsilon.1
 @man man/man1/fgfs.1
 @man man/man1/fgjs.1
+@man man/man1/fgpanel.1
 @man man/man1/gl-info.1
 @man man/man1/js_demo.1
-@man man/man1/pstest.1
+@man man/man1/terrasync.1
+share/doc/FlightGear/
+share/doc/FlightGear/README
+share/doc/FlightGear/README.OSG
+share/doc/FlightGear/README.OpenAL
+share/doc/FlightGear/README.SimGear
+share/doc/FlightGear/README.plib

@@ -23,6 +23,8 @@ devel/p5-TAP-Harness-Multiple	sent to ports@ Feb 16 2012 (pstumpf)
 lang/parrot			sent to ports@ Feb 16 2012 (pstumpf)
 lang/nqp			sent to ports@ Feb 16 2012 (pstumpf)
 lang/rakudo			sent to ports@ Feb 16 2012 (pstumpf)
+devel/ois			sent to ports@ Feb 26 2012 (pstumpf)
+x11/ogre			sent to ports@ Feb 26 2012 (pstumpf)
 
 KDE 4.7/4.8 related
 
