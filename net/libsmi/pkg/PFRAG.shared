@@ -1,2 +1,0 @@
-@comment $OpenBSD$
-@lib lib/libsmi.so.${LIBsmi_VERSION}
