@@ -4,7 +4,7 @@ COMMENT =		manipulate Unicode strings
 
 DISTNAME =		libunistring-0.9.3
 
-SHARED_LIBS +=  unistring                 0.0 # 1.2
+SHARED_LIBS +=		unistring                 0.0 # 1.2
 
 CATEGORIES =		converters
 
