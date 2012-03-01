@@ -2,15 +2,15 @@
 %%SHARED%%
 @bin bin/gnunet-arm
 @bin bin/gnunet-core-list-connections
-@bin bin/gnunet-daemon-exit
 @bin bin/gnunet-daemon-hostlist
 @bin bin/gnunet-daemon-topology
-@bin bin/gnunet-daemon-vpn
 @bin bin/gnunet-dht-get
 @bin bin/gnunet-dht-put
 @bin bin/gnunet-directory
 @bin bin/gnunet-download
+bin/gnunet-download-manager.scm
 @bin bin/gnunet-fs
+@bin bin/gnunet-helper-fs-publish
 @bin bin/gnunet-nat-server
 @bin bin/gnunet-peerinfo
 @bin bin/gnunet-pseudonym
@@ -22,9 +22,9 @@
 @bin bin/gnunet-service-core
 @bin bin/gnunet-service-datastore
 @bin bin/gnunet-service-dht
-@bin bin/gnunet-service-dns
 @bin bin/gnunet-service-fs
 @bin bin/gnunet-service-mesh
+@bin bin/gnunet-service-namestore
 @bin bin/gnunet-service-nse
 @bin bin/gnunet-service-peerinfo
 @bin bin/gnunet-service-resolver
@@ -33,6 +33,7 @@
 @bin bin/gnunet-service-transport
 @bin bin/gnunet-statistics
 @bin bin/gnunet-template
+@bin bin/gnunet-testing
 @bin bin/gnunet-transport
 @bin bin/gnunet-transport-certificate-creation
 @bin bin/gnunet-unindex
@@ -40,6 +41,7 @@
 include/gnunet/
 include/gnunet/block_dns.h
 include/gnunet/block_fs.h
+include/gnunet/block_gns.h
 include/gnunet/gauger.h
 include/gnunet/gettext.h
 include/gnunet/gnunet_applications.h
@@ -66,13 +68,19 @@ include/gnunet/gnunet_datastore_service.h
 include/gnunet/gnunet_dht_service.h
 include/gnunet/gnunet_directories.h
 include/gnunet/gnunet_disk_lib.h
+include/gnunet/gnunet_dns_service.h
+include/gnunet/gnunet_dnsparser_lib.h
 include/gnunet/gnunet_dv_service.h
 include/gnunet/gnunet_fragmentation_lib.h
 include/gnunet/gnunet_fs_service.h
 include/gnunet/gnunet_getopt_lib.h
+include/gnunet/gnunet_gns_service.h
 include/gnunet/gnunet_hello_lib.h
+include/gnunet/gnunet_helper_lib.h
 include/gnunet/gnunet_load_lib.h
 include/gnunet/gnunet_mesh_service.h
+include/gnunet/gnunet_namestore_plugin.h
+include/gnunet/gnunet_namestore_service.h
 include/gnunet/gnunet_nat_lib.h
 include/gnunet/gnunet_network_lib.h
 include/gnunet/gnunet_nse_service.h
@@ -90,20 +98,20 @@ include/gnunet/gnunet_service_lib.h
 include/gnunet/gnunet_signal_lib.h
 include/gnunet/gnunet_signatures.h
 include/gnunet/gnunet_statistics_service.h
+include/gnunet/gnunet_stream_lib.h
 include/gnunet/gnunet_strings_lib.h
 include/gnunet/gnunet_testing_lib.h
 include/gnunet/gnunet_time_lib.h
 include/gnunet/gnunet_transport_plugin.h
 include/gnunet/gnunet_transport_service.h
-include/gnunet/gnunet_upnp_service.h
+include/gnunet/gnunet_tun_lib.h
 include/gnunet/gnunet_util_lib.h
+include/gnunet/gnunet_vpn_service.h
 include/gnunet/platform.h
 include/gnunet/plibc.h
 lib/gnunet/
 lib/gnunet/libgnunet_plugin_block_dht.a
 lib/gnunet/libgnunet_plugin_block_dht.la
-lib/gnunet/libgnunet_plugin_block_dns.a
-lib/gnunet/libgnunet_plugin_block_dns.la
 lib/gnunet/libgnunet_plugin_block_fs.a
 lib/gnunet/libgnunet_plugin_block_fs.la
 lib/gnunet/libgnunet_plugin_block_template.a
@@ -118,6 +126,8 @@ lib/gnunet/libgnunet_plugin_datastore_sqlite.a
 lib/gnunet/libgnunet_plugin_datastore_sqlite.la
 lib/gnunet/libgnunet_plugin_datastore_template.a
 lib/gnunet/libgnunet_plugin_datastore_template.la
+lib/gnunet/libgnunet_plugin_namestore_sqlite.a
+lib/gnunet/libgnunet_plugin_namestore_sqlite.la
 lib/gnunet/libgnunet_plugin_test.a
 lib/gnunet/libgnunet_plugin_test.la
 lib/gnunet/libgnunet_plugin_transport_tcp.a
@@ -150,6 +160,8 @@ lib/libgnunethello.a
 lib/libgnunethello.la
 lib/libgnunetmesh.a
 lib/libgnunetmesh.la
+lib/libgnunetnamestore.a
+lib/libgnunetnamestore.la
 lib/libgnunetnat.a
 lib/libgnunetnat.la
 lib/libgnunetnse.a
@@ -164,6 +176,8 @@ lib/libgnunettransport.a
 lib/libgnunettransport.la
 lib/libgnunettransporttesting.a
 lib/libgnunettransporttesting.la
+lib/libgnunettun.a
+lib/libgnunettun.la
 lib/libgnunetutil.a
 lib/libgnunetutil.la
 lib/pkgconfig/
@@ -187,9 +201,9 @@ lib/pkgconfig/gnunettransport.pc
 lib/pkgconfig/gnunetutil.pc
 @man man/man1/gnunet-arm.1
 @man man/man1/gnunet-directory.1
+@man man/man1/gnunet-download-manager.1
 @man man/man1/gnunet-download.1
 @man man/man1/gnunet-fs.1
-@man man/man1/gnunet-monkey.1
 @man man/man1/gnunet-nat-server.1
 @man man/man1/gnunet-peerinfo.1
 @man man/man1/gnunet-pseudonym.1
@@ -198,6 +212,9 @@ lib/pkgconfig/gnunetutil.pc
 @man man/man1/gnunet-statistics.1
 @man man/man1/gnunet-transport.1
 @man man/man1/gnunet-unindex.1
+@man man/man1/gnunet-vpn.1
+share/doc/gnunet/
+share/doc/gnunet/COPYING
 share/gnunet/
 share/gnunet/config.d/
 share/gnunet/config.d/arm.conf
@@ -219,11 +236,9 @@ share/gnunet/config.d/testing.conf
 share/gnunet/config.d/topology.conf
 share/gnunet/config.d/transport.conf
 share/gnunet/config.d/util.conf
-share/gnunet/config.d/vpn.conf
 share/gnunet/gnunet-logo-color.png
 share/locale/de/LC_MESSAGES/gnunet.mo
 share/locale/es/LC_MESSAGES/gnunet.mo
 share/locale/sv/LC_MESSAGES/gnunet.mo
 share/locale/vi/LC_MESSAGES/gnunet.mo
 share/locale/zh_CN/LC_MESSAGES/gnunet.mo
-@sample /var/gnunet/
