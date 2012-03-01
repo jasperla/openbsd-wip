@@ -15,6 +15,7 @@ SHARED_LIBS +=  gnunetfragmentation       0.0 # 0.0
 SHARED_LIBS +=  gnunetfs                  0.0 # 0.0
 SHARED_LIBS +=  gnunethello               0.0 # 0.0
 SHARED_LIBS +=  gnunetmesh                0.0 # 0.0
+SHARED_LIBS +=  gnunetnamestore           0.0 # 0.0
 SHARED_LIBS +=  gnunetnat                 0.0 # 0.0
 SHARED_LIBS +=  gnunetnse                 0.0 # 0.0
 SHARED_LIBS +=  gnunetpeerinfo            0.0 # 0.0
@@ -22,17 +23,20 @@ SHARED_LIBS +=  gnunetstatistics          0.0 # 0.0
 SHARED_LIBS +=  gnunettesting             0.0 # 0.0
 SHARED_LIBS +=  gnunettransport           0.0 # 0.0
 SHARED_LIBS +=  gnunettransporttesting    0.0 # 0.0
+SHARED_LIBS +=  gnunettun                 0.0 # 0.0
 SHARED_LIBS +=  gnunetutil                0.0 # 5.0
 
-WANTLIB += bz2 c crypto curl extractor gcrypt gpg-error idn ltdl
-WANTLIB += m sqlite3 ssl z
+WANTLIB += bz2 c crypto curl expat extractor fontconfig freetype
+WANTLIB += gcrypt gpg-error idn ltdl m pthread sqlite3 ssl unistring
+WANTLIB += z
 
 MODULES =		devel/gettext
 LIB_DEPENDS =		devel/libextractor \
 			net/curl \
 			devel/libidn \
 			security/libgcrypt \
-			databases/sqlite3
+			databases/sqlite3 \
+			converters/libunistring
 #REGRESS_DEPENDS =	???
 
 USE_GMAKE =		Yes
