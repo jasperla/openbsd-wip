@@ -3,8 +3,6 @@ bin/9
 plan9/
 plan9/CONTRIBUTORS
 plan9/LICENSE
-@comment plan9/README
-@comment plan9/TODO
 plan9/bin/
 plan9/bin/"
 plan9/bin/""
