@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+lib/${MODAPACHE_MODULE}
+sbin/${MODAPACHE_ENABLE}
+share/doc/mod_rpaf/
+share/doc/mod_rpaf/README

@@ -1,0 +1,21 @@
+$OpenBSD$
+--- mod_rpaf.c.orig	Fri Mar  2 17:48:17 2012
++++ mod_rpaf.c	Fri Mar  2 02:08:02 2012
+@@ -148,7 +148,7 @@ static int is_in_array(const char *remote_ip, array_he
+ static void rpaf_cleanup(void *data) {
+     rpaf_cleanup_rec *rcr = (rpaf_cleanup_rec *)data;
+     rcr->r->connection->remote_ip   = ap_pstrdup(rcr->r->connection->pool, rcr->old_ip);
+-    rcr->r->connection->remote_addr.sin_addr.s_addr = inet_addr(rcr->r->connection->remote_ip);
++    ((struct sockaddr_in*)&rcr->r->connection->remote_addr)->sin_addr.s_addr = inet_addr(rcr->r->connection->remote_ip);
+ }
+ 
+ static int change_remote_ip(request_rec *r) {
+@@ -183,7 +183,7 @@ static int change_remote_ip(request_rec *r) {
+             rcr->r = r;
+             ap_register_cleanup(r->pool, (void *)rcr, rpaf_cleanup, ap_null_cleanup);
+             r->connection->remote_ip = ap_pstrdup(r->connection->pool, ((char **)arr->elts)[((arr->nelts)-1)]);
+-            r->connection->remote_addr.sin_addr.s_addr = inet_addr(r->connection->remote_ip);
++            ((struct sockaddr_in*)&r->connection->remote_addr)->sin_addr.s_addr = inet_addr(r->connection->remote_ip);
+             if (cfg->sethostname) {
+                 const char *hostvalue;
+                 if (hostvalue = ap_table_get(r->headers_in, "X-Forwarded-Host")) {
