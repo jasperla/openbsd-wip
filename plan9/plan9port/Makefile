@@ -83,8 +83,7 @@ do-install:
 		`cat lib/moveplan9.files`
 
 	${INSTALL_DATA_DIR} ${PLAN9}
-	cd ${WRKSRC} && ${INSTALL_DATA} CONTRIBUTORS LICENSE README TODO \
-		rcmain ${PLAN9}
+	cd ${WRKSRC} && ${INSTALL_DATA} CONTRIBUTORS LICENSE rcmain ${PLAN9}
 	${INSTALL_PROGRAM_DIR} ${PLAN9}/bin
 	cd ${WRKSRC}/bin && ${INSTALL_SCRIPT} ${SCRIPTS} ${PLAN9}/bin
 	cd ${WRKSRC}/bin && ${INSTALL_PROGRAM} ${BINS} ${PLAN9}/bin
