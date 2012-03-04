@@ -3,6 +3,31 @@ bin/9
 plan9/
 plan9/CONTRIBUTORS
 plan9/LICENSE
+plan9/acid/
+plan9/acid/386
+plan9/acid/68020
+plan9/acid/acme
+plan9/acid/alef
+plan9/acid/alpha
+plan9/acid/${MACHINE_ARCH}
+plan9/acid/arm
+plan9/acid/coverage
+plan9/acid/kernel
+plan9/acid/leak
+plan9/acid/mips
+plan9/acid/network
+plan9/acid/pool
+plan9/acid/port
+plan9/acid/power
+plan9/acid/pthread-linux-386
+plan9/acid/sparc
+plan9/acid/syscall
+plan9/acid/thread
+plan9/acid/transcript
+plan9/acid/trump
+plan9/acid/truss
+plan9/acid/venti
+plan9/acid/window
 plan9/bin/
 plan9/bin/"
 plan9/bin/""
@@ -23,8 +48,8 @@ plan9/bin/E
 plan9/bin/Getdir
 @bin plan9/bin/Mail
 @bin plan9/bin/Netfiles
-@comment @bin plan9/bin/acid
-@comment @bin plan9/bin/acidtypes
+@bin plan9/bin/acid
+@bin plan9/bin/acidtypes
 @bin plan9/bin/acme
 @bin plan9/bin/acmeevent
 plan9/bin/adict
@@ -57,7 +82,7 @@ plan9/bin/codereview.py
 @bin plan9/bin/core
 @bin plan9/bin/crop
 @bin plan9/bin/date
-@comment @bin plan9/bin/db
+@bin plan9/bin/db
 @bin plan9/bin/dc
 @bin plan9/bin/dd
 @bin plan9/bin/delatex
@@ -263,6 +288,7 @@ plan9/bin/venti/
 @bin plan9/bin/venti/checkarenas
 @bin plan9/bin/venti/checkindex
 @bin plan9/bin/venti/clumpstats
+plan9/bin/venti/conf
 @bin plan9/bin/venti/copy
 @bin plan9/bin/venti/dump
 @bin plan9/bin/venti/findscore
@@ -4099,7 +4125,7 @@ plan9/man/man1/
 @man plan9/man/man1/9p.1
 @man plan9/man/man1/9term.1
 plan9/man/man1/INDEX
-@comment @man plan9/man/man1/acid.1
+@man plan9/man/man1/acid.1
 @man plan9/man/man1/acme.1
 @man plan9/man/man1/acmeevent.1
 @man plan9/man/man1/ascii.1
@@ -4120,7 +4146,7 @@ plan9/man/man1/INDEX
 @man plan9/man/man1/core.1
 @man plan9/man/man1/crop.1
 @man plan9/man/man1/date.1
-@comment @man plan9/man/man1/db.1
+@man plan9/man/man1/db.1
 @man plan9/man/man1/dc.1
 @man plan9/man/man1/dd.1
 @man plan9/man/man1/deroff.1
@@ -5026,29 +5052,29 @@ plan9/src/cmd/9term/util.c
 plan9/src/cmd/9term/win.c
 plan9/src/cmd/9term/wind.c
 plan9/src/cmd/acid/
-@comment plan9/src/cmd/acid/Notes
-@comment plan9/src/cmd/acid/acid.h
-@comment plan9/src/cmd/acid/builtin.c
-@comment plan9/src/cmd/acid/dbg.y
-@comment plan9/src/cmd/acid/dot.c
-@comment plan9/src/cmd/acid/exec.c
-@comment plan9/src/cmd/acid/expr.c
-@comment plan9/src/cmd/acid/lex.c
-@comment plan9/src/cmd/acid/list.c
-@comment plan9/src/cmd/acid/main.c
-@comment plan9/src/cmd/acid/mkfile
-@comment plan9/src/cmd/acid/print.c
-@comment plan9/src/cmd/acid/proc.c
-@comment plan9/src/cmd/acid/util.c
-@comment plan9/src/cmd/acidtypes/
-@comment plan9/src/cmd/acidtypes/dat.h
-@comment plan9/src/cmd/acidtypes/dwarf.c
-@comment plan9/src/cmd/acidtypes/main.c
-@comment plan9/src/cmd/acidtypes/mkfile
-@comment plan9/src/cmd/acidtypes/stabs.c
-@comment plan9/src/cmd/acidtypes/sym.c
-@comment plan9/src/cmd/acidtypes/type.c
-@comment plan9/src/cmd/acidtypes/util.c
+plan9/src/cmd/acid/Notes
+plan9/src/cmd/acid/acid.h
+plan9/src/cmd/acid/builtin.c
+plan9/src/cmd/acid/dbg.y
+plan9/src/cmd/acid/dot.c
+plan9/src/cmd/acid/exec.c
+plan9/src/cmd/acid/expr.c
+plan9/src/cmd/acid/lex.c
+plan9/src/cmd/acid/list.c
+plan9/src/cmd/acid/main.c
+plan9/src/cmd/acid/mkfile
+plan9/src/cmd/acid/print.c
+plan9/src/cmd/acid/proc.c
+plan9/src/cmd/acid/util.c
+plan9/src/cmd/acidtypes/
+plan9/src/cmd/acidtypes/dat.h
+plan9/src/cmd/acidtypes/dwarf.c
+plan9/src/cmd/acidtypes/main.c
+plan9/src/cmd/acidtypes/mkfile
+plan9/src/cmd/acidtypes/stabs.c
+plan9/src/cmd/acidtypes/sym.c
+plan9/src/cmd/acidtypes/type.c
+plan9/src/cmd/acidtypes/util.c
 plan9/src/cmd/acme/
 plan9/src/cmd/acme/acme.c
 plan9/src/cmd/acme/addr.c
@@ -5271,22 +5297,22 @@ plan9/src/cmd/cmp.c
 plan9/src/cmd/comm.c
 plan9/src/cmd/core.c
 plan9/src/cmd/date.c
-@comment plan9/src/cmd/db/
-@comment plan9/src/cmd/db/command.c
-@comment plan9/src/cmd/db/defs.h
-@comment plan9/src/cmd/db/expr.c
-@comment plan9/src/cmd/db/fns.h
-@comment plan9/src/cmd/db/format.c
-@comment plan9/src/cmd/db/input.c
-@comment plan9/src/cmd/db/main.c
-@comment plan9/src/cmd/db/mkfile
-@comment plan9/src/cmd/db/output.c
-@comment plan9/src/cmd/db/pcs.c
-@comment plan9/src/cmd/db/print.c
-@comment plan9/src/cmd/db/regs.c
-@comment plan9/src/cmd/db/runpcs.c
-@comment plan9/src/cmd/db/setup.c
-@comment plan9/src/cmd/db/trcrun.c
+plan9/src/cmd/db/
+plan9/src/cmd/db/command.c
+plan9/src/cmd/db/defs.h
+plan9/src/cmd/db/expr.c
+plan9/src/cmd/db/fns.h
+plan9/src/cmd/db/format.c
+plan9/src/cmd/db/input.c
+plan9/src/cmd/db/main.c
+plan9/src/cmd/db/mkfile
+plan9/src/cmd/db/output.c
+plan9/src/cmd/db/pcs.c
+plan9/src/cmd/db/print.c
+plan9/src/cmd/db/regs.c
+plan9/src/cmd/db/runpcs.c
+plan9/src/cmd/db/setup.c
+plan9/src/cmd/db/trcrun.c
 plan9/src/cmd/dc.c
 plan9/src/cmd/dd.c
 plan9/src/cmd/delatex.lx
@@ -6531,6 +6557,7 @@ plan9/src/cmd/venti/srv/checkindex.c
 plan9/src/cmd/venti/srv/clump.c
 plan9/src/cmd/venti/srv/clumpstats.c
 plan9/src/cmd/venti/srv/cmparenas.c
+plan9/src/cmd/venti/srv/conf.rc
 plan9/src/cmd/venti/srv/config.c
 plan9/src/cmd/venti/srv/conv.c
 plan9/src/cmd/venti/srv/dat.h
@@ -7142,6 +7169,7 @@ plan9/src/libmach/elf.c
 plan9/src/libmach/elf.h
 plan9/src/libmach/elfcore.h
 plan9/src/libmach/elfcorefreebsd386.c
+plan9/src/libmach/elfcorefreebsd${MACHINE_ARCH}.c
 plan9/src/libmach/elfcorelinux386.c
 plan9/src/libmach/elfdl386.c
 plan9/src/libmach/elfdump.c
@@ -7156,6 +7184,7 @@ plan9/src/libmach/ieee.c
 plan9/src/libmach/loc.c
 plan9/src/libmach/localaddr.c
 plan9/src/libmach/mach386.c
+plan9/src/libmach/mach${MACHINE_ARCH}.c
 plan9/src/libmach/macho.c
 plan9/src/libmach/macho.h
 plan9/src/libmach/machocorepower.c
@@ -7180,6 +7209,7 @@ plan9/src/libmach/symstabs.c
 plan9/src/libmach/t.c
 plan9/src/libmach/ureg386.c
 plan9/src/libmach/ureg386.h
+plan9/src/libmach/ureg${MACHINE_ARCH}.h
 plan9/src/libmach/uregpower.h
 plan9/src/libmemdraw/
 plan9/src/libmemdraw/alloc-stub.c
@@ -7534,6 +7564,7 @@ plan9/src/libventi/rpc.c
 plan9/src/libventi/scorefmt.c
 plan9/src/libventi/send.c
 plan9/src/libventi/server.c
+plan9/src/libventi/sha1.c
 plan9/src/libventi/srvhello.c
 plan9/src/libventi/strdup.c
 plan9/src/libventi/string.c

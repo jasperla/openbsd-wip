@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS =	amd64 i386 powerpc
 
 COMMENT =		Plan 9 from user space
 
-DISTNAME =		plan9port-20120117
+DISTNAME =		plan9port-20120220
 
 CATEGORIES =		plan9
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		X11 Xext c kvm m pthread util
 
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX} pgw.tar.bz2:0 \
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX} pgw.tar.bz2 \
 				roget.tar.bz2:0 scat.tgz:1
 DIST_SUBDIR =		plan9port
 MASTER_SITES =		${HOMEPAGE}
@@ -103,8 +103,8 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/man${n}/* ${PLAN9}/man/man${n}
 .endfor
 
-	cd ${WRKSRC} && pax -rw dict face font include lib \
-		ndb plumb postscript proto sky src tmac troff ${PLAN9}
+	cd ${WRKSRC} && pax -rw acid dict face font include lib \
+		ndb news plumb postscript proto sky src tmac troff ${PLAN9}
 	cd ${PREFIX} && ln -s ../plan9/bin/9 bin/9
 
 .include <bsd.port.mk>
