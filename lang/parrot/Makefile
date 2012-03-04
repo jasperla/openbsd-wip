@@ -4,7 +4,7 @@ SHARED_ONLY =	Yes
 
 COMMENT=	virtual machine designed for interpreted languages
 
-V=		4.0.0
+V=		4.1.0
 DISTNAME=	parrot-$V
 CATEGORIES=	lang perl6
 SHARED_LIBS=	parrot	4.0
@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.parrot.org/
 
 MAINTAINER =	Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
-MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/stable/$V/
+MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/devel/$V/
 
 # Artistic2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL GLU c glut gmp icudata icui18n icuuc m ncurses pthread
+WANTLIB += GL GLU c glut gmp icudata icuuc m ncurses pthread
 WANTLIB += readline stdc++ util z
 
 BUILD_DEPENDS=		graphics/glew
