@@ -20,7 +20,6 @@ lib/parrot/${PARROT_VERSION}/languages/nqp/lib/Perl6/World.pbc
 lib/parrot/${PARROT_VERSION}/languages/perl6/
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Bailador/
-lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Bailador.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Bailador.pm
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Bailador/Request.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Bailador/Request.pm
@@ -49,9 +48,7 @@ lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Grammar/Tracer.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Grammar/Tracer.pm
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/HTTP/
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/HTTP/Easy/
-lib/parrot/${PARROT_VERSION}/languages/perl6/lib/HTTP/Easy.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/HTTP/Easy.pm6
-lib/parrot/${PARROT_VERSION}/languages/perl6/lib/HTTP/Easy/PSGI.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/HTTP/Easy/PSGI.pm6
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/HTTP/Status.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/HTTP/Status.pm6
@@ -67,7 +64,6 @@ lib/parrot/${PARROT_VERSION}/languages/perl6/lib/MIME/
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/MIME/Base64.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/MIME/Base64.pm6
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Math/
-lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Math/Model.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Math/Model.pm
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Math/RungeKutta.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Math/RungeKutta.pm
@@ -163,6 +159,7 @@ share/doc/rakudo/announce/2011.01
 share/doc/rakudo/announce/2011.04
 share/doc/rakudo/announce/2011.07
 share/doc/rakudo/announce/2012.01
+share/doc/rakudo/announce/2012.02
 share/doc/rakudo/announce/CREDITS
 share/doc/rakudo/announce/LICENSE
 share/doc/rakudo/announce/README
