@@ -741,6 +741,7 @@ share/doc/parrot/${V}/examples/compilers/japhc.c
 share/doc/parrot/${V}/examples/config/
 share/doc/parrot/${V}/examples/config/file/
 share/doc/parrot/${V}/examples/config/file/configcompiler
+share/doc/parrot/${V}/examples/config/file/configverbose
 share/doc/parrot/${V}/examples/config/file/configwithfatalstep
 share/doc/parrot/${V}/examples/embed/
 share/doc/parrot/${V}/examples/embed/Makefile
