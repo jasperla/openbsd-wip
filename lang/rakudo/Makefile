@@ -8,11 +8,11 @@ SHARED_ONLY =		Yes
 COMMENT =		Rakudo Perl 6 compiler
 
 PORTNAME =		rakudo
-VERSION =		2012.01
+VERSION =		2012.02
 DISTNAME =		${PORTNAME}-star-${VERSION}
 PKGNAME =		${PORTNAME}-${VERSION}
 
-PARROT_VERSION =	4.0.0
+PARROT_VERSION =	4.1.0
 SUBST_VARS +=		PARROT_VERSION
 
 CATEGORIES =		lang perl6
@@ -27,7 +27,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB = 		c gmp icudata icui18n icuuc m ncurses parrot pthread
+WANTLIB = 		c gmp icudata icuuc m ncurses parrot pthread
 WANTLIB += 		readline stdc++ util
 
 VMEM_WARNING =		Yes
