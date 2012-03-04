@@ -4,10 +4,10 @@ SHARED_ONLY =		Yes
 
 COMMENT =		Not Quite Perl
 
-V =			2012.01
+V =			2012.02
 DISTNAME =		nqp-${V}
 
-PARROT_VERSION =	4.0.0
+PARROT_VERSION =	4.1.0
 SUBST_VARS +=		PARROT_VERSION
 
 CATEGORIES =		lang
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += c gmp icudata icui18n icuuc m ncurses parrot pthread
+WANTLIB += c gmp icudata icuuc m ncurses parrot pthread
 WANTLIB += readline stdc++ util
 
 MASTER_SITES =		http://cloud.github.com/downloads/perl6/nqp/
