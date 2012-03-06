@@ -11,6 +11,8 @@ MASTER_SITES =	http://ftp.linux.kiev.ua/pub/fgfs/Shared/ \
 NO_BUILD =		Yes
 NO_REGRESS =		Yes
 
+PKG_ARCH =		*
+
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/flightgear
 	cd ${WRKDIR}/data && pax -rw . ${PREFIX}/share/flightgear
