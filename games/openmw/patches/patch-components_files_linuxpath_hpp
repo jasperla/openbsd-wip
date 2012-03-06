@@ -1,0 +1,12 @@
+$OpenBSD$
+--- components/files/linuxpath.hpp.orig	Tue Mar  6 00:41:13 2012
++++ components/files/linuxpath.hpp	Tue Mar  6 00:41:26 2012
+@@ -23,7 +23,7 @@
+ #ifndef COMPONENTS_FILES_LINUXPATH_H
+ #define COMPONENTS_FILES_LINUXPATH_H
+ 
+-#if defined(__linux__) || defined(__FreeBSD__)
++#if defined(__linux__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ 
+ #include <boost/filesystem.hpp>
+ 
