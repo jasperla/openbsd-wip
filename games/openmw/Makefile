@@ -36,7 +36,6 @@ LIB_DEPENDS =		x11/ogre \
 			audio/mpg123 \
 			audio/libsndfile \
 			sysutils/e2fsprogs \
-			devel/libtool,-ltdl \
 			devel/bullet \
 			graphics/png \
 			devel/ois
