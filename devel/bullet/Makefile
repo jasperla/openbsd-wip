@@ -32,6 +32,8 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		http://bullet.googlecode.com/files/
 EXTRACT_SUFX =		.tgz
 
+WANTLIB += m pthread stdc++
+
 MODULES =		devel/cmake
 BUILD_DEPENDS =		graphics/freeglut
 
