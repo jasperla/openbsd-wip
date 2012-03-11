@@ -1,0 +1,12 @@
+$OpenBSD$
+--- components/files/linuxpath.cpp.orig	Tue Mar  6 01:05:16 2012
++++ components/files/linuxpath.cpp	Tue Mar  6 01:05:39 2012
+@@ -22,7 +22,7 @@
+ 
+ #include "linuxpath.hpp"
+ 
+-#if defined(__linux__) || defined(__FreeBSD__)
++#if defined(__linux__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ 
+ #include <cstdlib>
+ #include <cstring>

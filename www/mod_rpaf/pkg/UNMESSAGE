@@ -1,0 +1,10 @@
+To completely deinstall the mod_rpaf package you should edit
+
+/var/www/conf/httpd.conf
+
+and remove the line that starts with:
+
+LoadModule rpaf_module
+
+Do not do this if you plan on re-installing the mod_rpaf
+package at some future time.

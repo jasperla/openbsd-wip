@@ -11,7 +11,7 @@
 @bin bin/vsrextract
 @bin bin/vsrmake
 @bin bin/vssetup
-objconv/
-objconv/3ds2xml
-objconv/obj2xml
-objconv/wcp2xml
+@comment objconv/
+@comment objconv/3ds2xml
+@comment objconv/obj2xml
+@comment objconv/wcp2xml

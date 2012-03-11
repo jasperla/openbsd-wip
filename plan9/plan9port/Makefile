@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS =	amd64 i386 powerpc
 
 COMMENT =		Plan 9 from user space
 
-DISTNAME =		plan9port-20120117
+DISTNAME =		plan9port-20120220
 
 CATEGORIES =		plan9
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		X11 Xext c kvm m pthread util
 
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX} pgw.tar.bz2:0 \
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX} pgw.tar.bz2 \
 				roget.tar.bz2:0 scat.tgz:1
 DIST_SUBDIR =		plan9port
 MASTER_SITES =		${HOMEPAGE}
@@ -69,10 +69,9 @@ post-extract:
 	cd ${WRKSRC}/sky && tar xzf ${FULLDISTDIR}/scat.tgz
 
 post-patch:
-	cp ${FILESDIR}/OpenBSD-x86_64-asm.S ${WRKSRC}/src/libthread
-	chmod 644 ${WRKSRC}/src/libthread/OpenBSD-x86_64-asm.S
 	cd ${WRKSRC}/src/libthread && cp Darwin-x86_64-swapcontext.c \
-		OpenBSD-x86_64.c
+		OpenBSD-x86_64.c && cp Darwin-x86_64-asm.s \
+		OpenBSD-x86_64-asm.S
 	find ${WRKSRC} -name .cvsignore -exec rm -f {} \;
 	cd ${WRKSRC} && rm -rf .hg .hgignore .hgtags
 
@@ -84,8 +83,7 @@ do-install:
 		`cat lib/moveplan9.files`
 
 	${INSTALL_DATA_DIR} ${PLAN9}
-	cd ${WRKSRC} && ${INSTALL_DATA} CONTRIBUTORS LICENSE README TODO \
-		rcmain ${PLAN9}
+	cd ${WRKSRC} && ${INSTALL_DATA} CONTRIBUTORS LICENSE rcmain ${PLAN9}
 	${INSTALL_PROGRAM_DIR} ${PLAN9}/bin
 	cd ${WRKSRC}/bin && ${INSTALL_SCRIPT} ${SCRIPTS} ${PLAN9}/bin
 	cd ${WRKSRC}/bin && ${INSTALL_PROGRAM} ${BINS} ${PLAN9}/bin
@@ -105,9 +103,8 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/man${n}/* ${PLAN9}/man/man${n}
 .endfor
 
-	cd ${WRKSRC} && pax -rw acid dict dist face font include lib lp \
-		mail ndb news plumb postscript proto sky src tmac troff \
-		unix ${PLAN9}
+	cd ${WRKSRC} && pax -rw acid dict face font include lib \
+		ndb news plumb postscript proto sky src tmac troff ${PLAN9}
 	cd ${PREFIX} && ln -s ../plan9/bin/9 bin/9
 
 .include <bsd.port.mk>
