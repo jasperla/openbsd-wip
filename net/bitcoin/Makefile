@@ -4,8 +4,8 @@ VMEM_WARNING =		Yes
 
 COMMENT =		P2P payment system
 
-V =			0.5.1
-REV =			gb12fc3e
+V =			0.5.2
+REV =			g7de7913
 DISTNAME =		bitcoin-bitcoin-v${V}-0-${REV}
 PKGNAME =		bitcoin-${V}
 
@@ -41,7 +41,7 @@ USE_GMAKE =		Yes
 NO_REGRESS =		Yes
 
 MAKE_FILE =		makefile.unix
-WRKDIST =		${WRKDIR}/bitcoin-bitcoin-5623ee7
+WRKDIST =		${WRKDIR}/bitcoin-bitcoin-fb24b05
 WRKSRC =		${WRKDIST}/src
 
 ALL_TARGET =		bitcoind

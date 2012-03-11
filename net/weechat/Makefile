@@ -6,7 +6,7 @@ COMMENT-python=	Python bindings for weechat
 COMMENT-ruby=	Ruby bindings for weechat
 COMMENT-tcl=	Tcl bindings for weechat
 
-V=		0.3.6
+V=		0.3.7
 DISTNAME=	weechat-${V}
 
 PKGNAME-main=	weechat-${V}
@@ -66,6 +66,7 @@ LIB_DEPENDS-tcl=	${MODTCL_LIB_DEPENDS}
 RUN_DEPENDS-tcl=	${MODTCL_RUN_DEPENDS}
 
 CONFIGURE_ARGS+=-DENABLE_ASPELL=no \
+		-DENABLE_GUILE=no \
 		-DENABLE_RUBY=yes \
 		-DENABLE_LUA=yes \
 		-DENABLE_TCL=yes \

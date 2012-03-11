@@ -61,6 +61,8 @@ WRKSRC =		${WRKDIST}/sources/darkplaces
 
 ALL_TARGET =		sdl-nexuiz sv-nexuiz
 
+PKG_ARCH-data =		*
+
 post-extract:
 	cd ${WRKDIR}/Nexuiz/sources && unzip enginesource20091001.zip
 

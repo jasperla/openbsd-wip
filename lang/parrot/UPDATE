@@ -1,5 +1,0 @@
-- update to 4.0.0
-- put myself as maintainer
-- respect $CC, $CFLAGS etc.
-- fix detection of gmp, opengl, readline in configure
-- old and broken threading implementation removed upstream

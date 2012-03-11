@@ -3,32 +3,31 @@ bin/9
 plan9/
 plan9/CONTRIBUTORS
 plan9/LICENSE
-plan9/README
-plan9/TODO
-@comment plan9/acid/
-@comment plan9/acid/386
-@comment plan9/acid/68020
-@comment plan9/acid/acme
-@comment plan9/acid/alef
-@comment plan9/acid/alpha
-@comment plan9/acid/arm
-@comment plan9/acid/coverage
-@comment plan9/acid/kernel
-@comment plan9/acid/leak
-@comment plan9/acid/mips
-@comment plan9/acid/network
-@comment plan9/acid/pool
-@comment plan9/acid/port
-@comment plan9/acid/power
-@comment plan9/acid/pthread-linux-386
-@comment plan9/acid/sparc
-@comment plan9/acid/syscall
-@comment plan9/acid/thread
-@comment plan9/acid/transcript
-@comment plan9/acid/trump
-@comment plan9/acid/truss
-@comment plan9/acid/venti
-@comment plan9/acid/window
+plan9/acid/
+plan9/acid/386
+plan9/acid/68020
+plan9/acid/acme
+plan9/acid/alef
+plan9/acid/alpha
+plan9/acid/${MACHINE_ARCH}
+plan9/acid/arm
+plan9/acid/coverage
+plan9/acid/kernel
+plan9/acid/leak
+plan9/acid/mips
+plan9/acid/network
+plan9/acid/pool
+plan9/acid/port
+plan9/acid/power
+plan9/acid/pthread-linux-386
+plan9/acid/sparc
+plan9/acid/syscall
+plan9/acid/thread
+plan9/acid/transcript
+plan9/acid/trump
+plan9/acid/truss
+plan9/acid/venti
+plan9/acid/window
 plan9/bin/
 plan9/bin/"
 plan9/bin/""
@@ -49,8 +48,8 @@ plan9/bin/E
 plan9/bin/Getdir
 @bin plan9/bin/Mail
 @bin plan9/bin/Netfiles
-@comment @bin plan9/bin/acid
-@comment @bin plan9/bin/acidtypes
+@bin plan9/bin/acid
+@bin plan9/bin/acidtypes
 @bin plan9/bin/acme
 @bin plan9/bin/acmeevent
 plan9/bin/adict
@@ -83,7 +82,7 @@ plan9/bin/codereview.py
 @bin plan9/bin/core
 @bin plan9/bin/crop
 @bin plan9/bin/date
-@comment @bin plan9/bin/db
+@bin plan9/bin/db
 @bin plan9/bin/dc
 @bin plan9/bin/dd
 @bin plan9/bin/delatex
@@ -289,6 +288,7 @@ plan9/bin/venti/
 @bin plan9/bin/venti/checkarenas
 @bin plan9/bin/venti/checkindex
 @bin plan9/bin/venti/clumpstats
+plan9/bin/venti/conf
 @bin plan9/bin/venti/copy
 @bin plan9/bin/venti/dump
 @bin plan9/bin/venti/findscore
@@ -331,63 +331,6 @@ plan9/dict/pgw
 plan9/dict/pgwindex
 plan9/dict/roget
 plan9/dict/rogetindex
-plan9/dist/
-plan9/dist/README
-plan9/dist/addsrclinks
-plan9/dist/buildmk
-plan9/dist/checkman.awk
-plan9/dist/deb.html
-plan9/dist/debian/
-plan9/dist/debian/Release.testing
-plan9/dist/debian/Release.top
-plan9/dist/debian/mkpkg
-plan9/dist/debian/mkrep
-plan9/dist/fixurls
-plan9/dist/glendacircle.png
-plan9/dist/isum
-plan9/dist/isum.awk
-@comment plan9/dist/isum.awk.orig
-plan9/dist/main.html
-plan9/dist/maketarball
-plan9/dist/manindexbottom.html
-plan9/dist/manindextop.html
-plan9/dist/mantrailer.html
-plan9/dist/manweb
-plan9/dist/mkfile
-plan9/dist/mkfilelist
-plan9/dist/pkg/
-plan9/dist/pkg/base
-plan9/dist/pkg/bin
-plan9/dist/pkg/bin24
-plan9/dist/pkg/bin26
-plan9/dist/pkg/devel
-plan9/dist/pkg/dict
-plan9/dist/pkg/dist
-plan9/dist/pkg/faces
-plan9/dist/pkg/font-asian
-plan9/dist/pkg/font-bh
-plan9/dist/pkg/font-core
-plan9/dist/pkg/font-proof
-plan9/dist/pkg/lib
-plan9/dist/pkg/lp
-plan9/dist/pkg/main
-plan9/dist/pkg/minimal
-plan9/dist/pkg/postscript
-plan9/dist/pkg/postscript-bh
-plan9/dist/pkg/sky
-plan9/dist/pkg/sky-data
-plan9/dist/pkg/src
-plan9/dist/pkg/troff
-plan9/dist/pkg/unixdist
-plan9/dist/spaceglenda100.png
-plan9/dist/ss.html
-plan9/dist/troff/
-plan9/dist/troff/README
-plan9/dist/troff/afm2troff.c
-plan9/dist/troff/devutf.sam
-plan9/dist/troff/mono.sam
-plan9/dist/troff/tfont
-plan9/dist/unix.html
 plan9/face/
 plan9/face/.machinelist
 plan9/face/48x48x1/
@@ -4170,61 +4113,6 @@ plan9/lib/units
 plan9/lib/words
 plan9/lib/yaccpar
 plan9/lib/yaccpars
-plan9/lp/
-plan9/lp/bin/
-plan9/lp/bin/UNLOCK
-plan9/lp/bin/lpsend.rc
-plan9/lp/daemon/
-plan9/lp/daemon/generic
-plan9/lp/daemon/gsdev
-plan9/lp/daemon/psdev
-plan9/lp/devices.sample
-plan9/lp/kill/
-plan9/lp/kill/generic
-plan9/lp/log/
-plan9/lp/log/.placeholder
-plan9/lp/log/lpdaemonl
-plan9/lp/perm/
-plan9/lp/perm/.placeholder
-plan9/lp/prob/
-plan9/lp/prob/.placeholder
-plan9/lp/process/
-plan9/lp/process/dvipost
-plan9/lp/process/g3post
-plan9/lp/process/generic
-plan9/lp/process/gifpost
-plan9/lp/process/hpost
-plan9/lp/process/jpgpost
-plan9/lp/process/noproc
-plan9/lp/process/p9bitpost
-plan9/lp/process/pdfgs
-plan9/lp/process/pdfpost
-plan9/lp/process/post
-plan9/lp/process/ppost
-plan9/lp/process/psextract
-plan9/lp/process/tr2post
-plan9/lp/queue/
-plan9/lp/queue/.placeholder
-plan9/lp/sched/
-plan9/lp/sched/FIFO
-plan9/lp/spooler/
-plan9/lp/spooler/generic
-plan9/lp/spooler/lpdspool
-plan9/lp/spooler/nospool
-plan9/lp/stat/
-plan9/lp/stat/generic
-plan9/lp/stat/lpd
-plan9/mail/
-plan9/mail/README
-plan9/mail/lib/
-plan9/mail/lib/ignore
-plan9/mail/lib/namefiles
-plan9/mail/lib/names.local
-plan9/mail/lib/qmail
-plan9/mail/lib/remotemail
-plan9/mail/lib/rewrite
-plan9/mail/lib/validateattachment
-plan9/mail/queue/
 plan9/man/
 plan9/man/fonts
 plan9/man/index.html
@@ -4237,7 +4125,7 @@ plan9/man/man1/
 @man plan9/man/man1/9p.1
 @man plan9/man/man1/9term.1
 plan9/man/man1/INDEX
-@comment @man plan9/man/man1/acid.1
+@man plan9/man/man1/acid.1
 @man plan9/man/man1/acme.1
 @man plan9/man/man1/acmeevent.1
 @man plan9/man/man1/ascii.1
@@ -4258,7 +4146,7 @@ plan9/man/man1/INDEX
 @man plan9/man/man1/core.1
 @man plan9/man/man1/crop.1
 @man plan9/man/man1/date.1
-@comment @man plan9/man/man1/db.1
+@man plan9/man/man1/db.1
 @man plan9/man/man1/dc.1
 @man plan9/man/man1/dd.1
 @man plan9/man/man1/deroff.1
@@ -4567,8 +4455,6 @@ plan9/man/secindex
 plan9/ndb/
 plan9/ndb/local
 plan9/ndb/root-servers
-plan9/news/
-plan9/news/news
 plan9/plumb/
 plan9/plumb/basic
 plan9/plumb/fileaddr
@@ -5166,29 +5052,29 @@ plan9/src/cmd/9term/util.c
 plan9/src/cmd/9term/win.c
 plan9/src/cmd/9term/wind.c
 plan9/src/cmd/acid/
-@comment plan9/src/cmd/acid/Notes
-@comment plan9/src/cmd/acid/acid.h
-@comment plan9/src/cmd/acid/builtin.c
-@comment plan9/src/cmd/acid/dbg.y
-@comment plan9/src/cmd/acid/dot.c
-@comment plan9/src/cmd/acid/exec.c
-@comment plan9/src/cmd/acid/expr.c
-@comment plan9/src/cmd/acid/lex.c
-@comment plan9/src/cmd/acid/list.c
-@comment plan9/src/cmd/acid/main.c
-@comment plan9/src/cmd/acid/mkfile
-@comment plan9/src/cmd/acid/print.c
-@comment plan9/src/cmd/acid/proc.c
-@comment plan9/src/cmd/acid/util.c
-@comment plan9/src/cmd/acidtypes/
-@comment plan9/src/cmd/acidtypes/dat.h
-@comment plan9/src/cmd/acidtypes/dwarf.c
-@comment plan9/src/cmd/acidtypes/main.c
-@comment plan9/src/cmd/acidtypes/mkfile
-@comment plan9/src/cmd/acidtypes/stabs.c
-@comment plan9/src/cmd/acidtypes/sym.c
-@comment plan9/src/cmd/acidtypes/type.c
-@comment plan9/src/cmd/acidtypes/util.c
+plan9/src/cmd/acid/Notes
+plan9/src/cmd/acid/acid.h
+plan9/src/cmd/acid/builtin.c
+plan9/src/cmd/acid/dbg.y
+plan9/src/cmd/acid/dot.c
+plan9/src/cmd/acid/exec.c
+plan9/src/cmd/acid/expr.c
+plan9/src/cmd/acid/lex.c
+plan9/src/cmd/acid/list.c
+plan9/src/cmd/acid/main.c
+plan9/src/cmd/acid/mkfile
+plan9/src/cmd/acid/print.c
+plan9/src/cmd/acid/proc.c
+plan9/src/cmd/acid/util.c
+plan9/src/cmd/acidtypes/
+plan9/src/cmd/acidtypes/dat.h
+plan9/src/cmd/acidtypes/dwarf.c
+plan9/src/cmd/acidtypes/main.c
+plan9/src/cmd/acidtypes/mkfile
+plan9/src/cmd/acidtypes/stabs.c
+plan9/src/cmd/acidtypes/sym.c
+plan9/src/cmd/acidtypes/type.c
+plan9/src/cmd/acidtypes/util.c
 plan9/src/cmd/acme/
 plan9/src/cmd/acme/acme.c
 plan9/src/cmd/acme/addr.c
@@ -5411,22 +5297,22 @@ plan9/src/cmd/cmp.c
 plan9/src/cmd/comm.c
 plan9/src/cmd/core.c
 plan9/src/cmd/date.c
-@comment plan9/src/cmd/db/
-@comment plan9/src/cmd/db/command.c
-@comment plan9/src/cmd/db/defs.h
-@comment plan9/src/cmd/db/expr.c
-@comment plan9/src/cmd/db/fns.h
-@comment plan9/src/cmd/db/format.c
-@comment plan9/src/cmd/db/input.c
-@comment plan9/src/cmd/db/main.c
-@comment plan9/src/cmd/db/mkfile
-@comment plan9/src/cmd/db/output.c
-@comment plan9/src/cmd/db/pcs.c
-@comment plan9/src/cmd/db/print.c
-@comment plan9/src/cmd/db/regs.c
-@comment plan9/src/cmd/db/runpcs.c
-@comment plan9/src/cmd/db/setup.c
-@comment plan9/src/cmd/db/trcrun.c
+plan9/src/cmd/db/
+plan9/src/cmd/db/command.c
+plan9/src/cmd/db/defs.h
+plan9/src/cmd/db/expr.c
+plan9/src/cmd/db/fns.h
+plan9/src/cmd/db/format.c
+plan9/src/cmd/db/input.c
+plan9/src/cmd/db/main.c
+plan9/src/cmd/db/mkfile
+plan9/src/cmd/db/output.c
+plan9/src/cmd/db/pcs.c
+plan9/src/cmd/db/print.c
+plan9/src/cmd/db/regs.c
+plan9/src/cmd/db/runpcs.c
+plan9/src/cmd/db/setup.c
+plan9/src/cmd/db/trcrun.c
 plan9/src/cmd/dc.c
 plan9/src/cmd/dd.c
 plan9/src/cmd/delatex.lx
@@ -6671,6 +6557,7 @@ plan9/src/cmd/venti/srv/checkindex.c
 plan9/src/cmd/venti/srv/clump.c
 plan9/src/cmd/venti/srv/clumpstats.c
 plan9/src/cmd/venti/srv/cmparenas.c
+plan9/src/cmd/venti/srv/conf.rc
 plan9/src/cmd/venti/srv/config.c
 plan9/src/cmd/venti/srv/conv.c
 plan9/src/cmd/venti/srv/dat.h
@@ -7282,6 +7169,7 @@ plan9/src/libmach/elf.c
 plan9/src/libmach/elf.h
 plan9/src/libmach/elfcore.h
 plan9/src/libmach/elfcorefreebsd386.c
+plan9/src/libmach/elfcorefreebsd${MACHINE_ARCH}.c
 plan9/src/libmach/elfcorelinux386.c
 plan9/src/libmach/elfdl386.c
 plan9/src/libmach/elfdump.c
@@ -7296,6 +7184,7 @@ plan9/src/libmach/ieee.c
 plan9/src/libmach/loc.c
 plan9/src/libmach/localaddr.c
 plan9/src/libmach/mach386.c
+plan9/src/libmach/mach${MACHINE_ARCH}.c
 plan9/src/libmach/macho.c
 plan9/src/libmach/macho.h
 plan9/src/libmach/machocorepower.c
@@ -7320,6 +7209,7 @@ plan9/src/libmach/symstabs.c
 plan9/src/libmach/t.c
 plan9/src/libmach/ureg386.c
 plan9/src/libmach/ureg386.h
+plan9/src/libmach/ureg${MACHINE_ARCH}.h
 plan9/src/libmach/uregpower.h
 plan9/src/libmemdraw/
 plan9/src/libmemdraw/alloc-stub.c
@@ -7674,6 +7564,7 @@ plan9/src/libventi/rpc.c
 plan9/src/libventi/scorefmt.c
 plan9/src/libventi/send.c
 plan9/src/libventi/server.c
+plan9/src/libventi/sha1.c
 plan9/src/libventi/srvhello.c
 plan9/src/libventi/strdup.c
 plan9/src/libventi/string.c
@@ -7687,7 +7578,6 @@ plan9/src/mkcommon
 plan9/src/mkdirs
 plan9/src/mkfile
 plan9/src/mkhdr
-plan9/src/mkhdr.beforesubst
 @comment plan9/src/mkhdr.orig
 plan9/src/mklib
 plan9/src/mkmany
@@ -7889,63 +7779,4 @@ plan9/troff/term/tab.think
 plan9/troff/term/tab.thinkbold
 plan9/troff/term/tab.thinksmall
 plan9/troff/term/tab.utf
-plan9/unix/
-plan9/unix/NOTICE.bio
-plan9/unix/NOTICE.fmt
-plan9/unix/NOTICE.mk
-plan9/unix/NOTICE.regexp
-plan9/unix/NOTICE.utf
-plan9/unix/README
-plan9/unix/README.dot
-plan9/unix/fmt.h
-plan9/unix/make/
-plan9/unix/make/Make.Darwin-386
-plan9/unix/make/Make.Darwin-PowerMacintosh
-plan9/unix/make/Make.FreeBSD-386
-plan9/unix/make/Make.HP-UX-9000
-plan9/unix/make/Make.Linux-386
-plan9/unix/make/Make.Linux-power
-plan9/unix/make/Make.Linux-x86_64
-plan9/unix/make/Make.NetBSD-386
-plan9/unix/make/Make.OSF1-alpha
-plan9/unix/make/Make.OpenBSD-386
-plan9/unix/make/Make.SunOS-sun4u
-plan9/unix/make/Make.SunOS-sun4u-cc
-plan9/unix/make/Make.SunOS-sun4u-gcc
-plan9/unix/make/Makefile.BOT
-plan9/unix/make/Makefile.CMD
-plan9/unix/make/Makefile.LIB
-plan9/unix/make/Makefile.MID
-plan9/unix/make/Makefile.TOP
-plan9/unix/make/Makefile.all
-plan9/unix/make/Makefile.bio
-plan9/unix/make/Makefile.fmt
-plan9/unix/make/Makefile.mk
-plan9/unix/make/Makefile.regexp
-plan9/unix/make/Makefile.utf
-plan9/unix/man/
-plan9/unix/man/bio.3
-plan9/unix/man/ex.man
-plan9/unix/man/fixurls
-plan9/unix/man/fmtinstall.3
-plan9/unix/man/fmtstrtod.3
-plan9/unix/man/index.html
-plan9/unix/man/isalpharune.3
-plan9/unix/man/mk.1
-plan9/unix/man/mkfile
-plan9/unix/man/print.3
-plan9/unix/man/quote.3
-plan9/unix/man/regexp9.3
-plan9/unix/man/regexp9.7
-plan9/unix/man/rune.3
-plan9/unix/man/runestrcat.3
-plan9/unix/man/utf.7
-plan9/unix/mkfile
-plan9/unix/mkfile.bio
-plan9/unix/mkfile.fmt
-plan9/unix/mkfile.mk
-plan9/unix/mkfile.regexp
-plan9/unix/mkfile.utf
-plan9/unix/mkfile.what
-plan9/unix/utf.h
 @unexec rm -f ${PREFIX}/plan9/man/whatis.db
