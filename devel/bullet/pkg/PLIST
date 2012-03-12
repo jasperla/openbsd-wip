@@ -166,9 +166,6 @@ include/bullet/BulletDynamics/btBulletDynamicsCommon.h
 include/bullet/BulletDynamics/ibmsdk/
 include/bullet/BulletMultiThreaded/
 include/bullet/BulletMultiThreaded/GpuSoftBodySolvers/
-include/bullet/BulletMultiThreaded/GpuSoftBodySolvers/CPU/
-include/bullet/BulletMultiThreaded/GpuSoftBodySolvers/CPU/btSoftBodySolverData.h
-include/bullet/BulletMultiThreaded/GpuSoftBodySolvers/CPU/btSoftBodySolver_CPU.h
 include/bullet/BulletMultiThreaded/GpuSoftBodySolvers/DX11/
 include/bullet/BulletMultiThreaded/GpuSoftBodySolvers/DX11/HLSL/
 include/bullet/BulletMultiThreaded/GpuSoftBodySolvers/DX11/btSoftBodySolverBuffer_DX11.h
@@ -185,7 +182,6 @@ include/bullet/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Apple/
 include/bullet/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/Intel/
 include/bullet/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/
 include/bullet/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/NVidia/
-include/bullet/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/OpenCLC/
 include/bullet/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/OpenCLC10/
 include/bullet/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolverBuffer_OpenCL.h
 include/bullet/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolverLinkData_OpenCL.h
@@ -196,6 +192,8 @@ include/bullet/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolverVer
 include/bullet/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolverVertexData_OpenCL.h
 include/bullet/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolver_OpenCL.h
 include/bullet/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolver_OpenCLSIMDAware.h
+include/bullet/BulletMultiThreaded/GpuSoftBodySolvers/Shared/
+include/bullet/BulletMultiThreaded/GpuSoftBodySolvers/Shared/btSoftBodySolverData.h
 include/bullet/BulletMultiThreaded/HeapManager.h
 include/bullet/BulletMultiThreaded/PlatformDefinitions.h
 include/bullet/BulletMultiThreaded/PosixThreadSupport.h
@@ -287,11 +285,27 @@ include/bullet/MiniCL/cl_gl.h
 include/bullet/MiniCL/cl_platform.h
 include/bullet/btBulletCollisionCommon.h
 include/bullet/btBulletDynamicsCommon.h
+include/bullet/vectormath/
+include/bullet/vectormath/scalar/
+include/bullet/vectormath/scalar/boolInVec.h
+include/bullet/vectormath/scalar/floatInVec.h
+include/bullet/vectormath/scalar/mat_aos.h
+include/bullet/vectormath/scalar/quat_aos.h
+include/bullet/vectormath/scalar/vec_aos.h
+include/bullet/vectormath/scalar/vectormath_aos.h
+include/bullet/vectormath/sse/
+include/bullet/vectormath/sse/boolInVec.h
+include/bullet/vectormath/sse/floatInVec.h
+include/bullet/vectormath/sse/mat_aos.h
+include/bullet/vectormath/sse/quat_aos.h
+include/bullet/vectormath/sse/vec_aos.h
+include/bullet/vectormath/sse/vecidx_aos.h
+include/bullet/vectormath/sse/vectormath_aos.h
+include/bullet/vectormath/vmInclude.h
 @lib lib/libBulletCollision.so.${LIBBulletCollision_VERSION}
 @lib lib/libBulletDynamics.so.${LIBBulletDynamics_VERSION}
 @lib lib/libBulletMultiThreaded.so.${LIBBulletMultiThreaded_VERSION}
 @lib lib/libBulletSoftBody.so.${LIBBulletSoftBody_VERSION}
-@lib lib/libBulletSoftBodySolvers_CPU.so.${LIBBulletSoftBodySolvers_CPU_VERSION}
 @lib lib/libBulletSoftBodySolvers_OpenCL_Mini.so.${LIBBulletSoftBodySolvers_OpenCL_Mini_VERSION}
 @lib lib/libLinearMath.so.${LIBLinearMath_VERSION}
 @lib lib/libMiniCL.so.${LIBMiniCL_VERSION}
