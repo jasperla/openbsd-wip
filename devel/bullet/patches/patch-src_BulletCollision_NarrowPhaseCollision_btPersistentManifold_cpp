@@ -1,0 +1,9 @@
+$OpenBSD$
+--- src/BulletCollision/NarrowPhaseCollision/btPersistentManifold.cpp.orig	Mon Mar 12 22:40:46 2012
++++ src/BulletCollision/NarrowPhaseCollision/btPersistentManifold.cpp	Mon Mar 12 22:40:50 2012
+@@ -1,4 +1,4 @@
+-﻿/*
++/*
+ Bullet Continuous Collision Detection and Physics Library
+ Copyright (c) 2003-2006 Erwin Coumans  http://continuousphysics.com/Bullet/
+ 
