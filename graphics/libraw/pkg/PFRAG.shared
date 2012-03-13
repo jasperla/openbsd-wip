@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@lib lib/libraw.so.${LIBraw_VERSION}
-@lib lib/libraw_r.so.${LIBraw_r_VERSION}
