@@ -1,7 +1,7 @@
 # $OpenBSD$
 COMMENT =		application that aims to provide a workflow for HDR imaging
 
-DISTNAME =		luminance-hdr-2.2.0
+DISTNAME =		luminance-hdr-2.2.1
 
 CATEGORIES =		graphics
 
@@ -17,8 +17,6 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=qtpfsgui/}
 EXTRACT_SUFX = 		.tar.bz2
-EXTRACT_CASES += 	*.tar.bz2) \
-			${BZIP2} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf - -C ${WRKDIST};;
 
 WANTLIB += Half Iex IlmImf QtGui QtSql QtWebKit QtXml c exiv2
 WANTLIB += fftw3f gsl gslcblas m pthread raw_r stdc++ tiff
