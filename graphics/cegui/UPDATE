@@ -1,3 +1,0 @@
-Needed by Secret Mario Clone. Move patch stuff 
-into Makefile (reinplace) as in FreeBSD port,
-handle documentation and go to SMC building.
