@@ -4,14 +4,15 @@ SHARED_ONLY =		Yes
 
 COMMENT =		physics library
 
-V =			2.80
-DISTNAME =		bullet-${V}-rev2527
+V =			2.79
+DISTNAME =		bullet-${V}-rev2440
 PKGNAME =		bullet-${V}
 
 SHARED_LIBS +=  BulletCollision           0.0 # 2.79
 SHARED_LIBS +=  BulletDynamics            0.0 # 2.79
 SHARED_LIBS +=  BulletMultiThreaded       0.0 # 2.79
 SHARED_LIBS +=  BulletSoftBody            0.0 # 2.79
+SHARED_LIBS +=  BulletSoftBodySolvers_CPU 0.0 # 2.79
 SHARED_LIBS +=  BulletSoftBodySolvers_OpenCL_Mini 0.0 # 2.79
 SHARED_LIBS +=  LinearMath                0.0 # 2.79
 SHARED_LIBS +=  MiniCL                    0.0 # 2.79
@@ -47,5 +48,10 @@ CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=Release \
 NO_REGRESS =		Yes
 
 CFLAGS +=		-I${X11BASE}/include
+WRKDIST =		${WRKDIR}/bullet-${V}
+
+post-extract:
+	perl -pi -e 's/\015//g' \
+	${WRKSRC}/src/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/OpenCLC10/*
 
 .include <bsd.port.mk>
