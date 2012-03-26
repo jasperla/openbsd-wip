@@ -4,9 +4,14 @@ pkg-config --at-least_version 3.0.0 gtk+-3.0 gthread-2.0
 fails as gthread < 3.0.0 not compatible with pkg-config.
 
 https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=6737
+bug fixed in 1.7.1 SVN
+
+Test for GLib loadable modules as of 2.32.0 requires threads
+the --as-needed cannot be used with pthreads as not
+recorded as a NEEDED library on OpenBSD.
 
 --- configure.orig	Tue Jan 10 19:09:53 2012
-+++ configure	Thu Jan 12 15:25:19 2012
++++ configure	Sun Mar 25 22:46:00 2012
 @@ -18925,14 +18925,6 @@ fi
  
  
@@ -22,3 +27,12 @@ https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=6737
  
    no_gtk=""
  
+@@ -20077,7 +20069,7 @@ $as_echo_n "checking whether GLib supports loadable mo
+ ac_save_CFLAGS="$CFLAGS"
+ ac_save_LIBS="$LIBS"
+ CFLAGS="$CFLAGS $GLIB_CFLAGS"
+-LIBS="$GLIB_LIBS $LIBS"
++LIBS="$GLIB_LIBS $LIBS -Wl,--no-as-needed -pthread" 
+ if test "$cross_compiling" = yes; then :
+   echo $ac_n "cross compiling; assumed OK... $ac_c"
+     ac_cv_glib_supports_modules=yes
