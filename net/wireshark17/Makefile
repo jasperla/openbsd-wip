@@ -4,7 +4,7 @@ COMMENT-main=	graphical network protocol analyzer
 COMMENT-text=	network protocol analyzer
 
 VER=		1.7.1
-WVER=		${VER}-SVN-40715
+WVER=		${VER}-SVN-41761
 DISTNAME=	wireshark-${WVER}
 PKGNAME-main=	wireshark17-${VER}
 PKGNAME-text=	tshark17-${VER}
@@ -73,7 +73,6 @@ CONFIGURE_STYLE=gnu
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-dumpcap-group=_wireshark \
-		--enable-threads \
 		--with-ssl
 
 .if !${FLAVOR:L:Mno_python}
