@@ -1,19 +1,20 @@
 # $OpenBSD$
 
 COMMENT =		libraries for OpenVAS security scanner
-DISTNAME =		openvas-libraries-4.0.6
+DISTNAME =		openvas-libraries-5.0.0
 
-SHARED_LIBS =		openvas_base    0.13 \
-			openvas_hg	0.13 \
-                        openvas_misc    0.13 \
-                        openvas_nasl    0.13 \
-                        openvas_omp     0.13
+SHARED_LIBS =		openvas_base    0.14 \
+			openvas_hg	0.14 \
+                        openvas_misc    0.14 \
+                        openvas_nasl    0.14 \
+                        openvas_omp     0.14
 
-WANTLIB =		c gcrypt gpg-error m pcap pthread \
-			glib-2.0 gnutls gpgme e2fs-uuid tasn1
+WANTLIB +=		assuan c e2fs-uuid gcrypt glib-2.0 gnutls gpg-error
+WANTLIB +=		gpgme ldap m pcap pthread
 
 LIB_DEPENDS +=		security/libgcrypt \
 			devel/glib2 \
+			databases/openldap,-main \
 			security/gnutls \
                         security/gpgme \
 			sysutils/e2fsprogs \
@@ -21,7 +22,7 @@ LIB_DEPENDS +=		security/libgcrypt \
 
 BUILD_DEPENDS +=	devel/bison
 
-MASTER_SITES =		${MASTER_SITES_OPENVAS:=979/}
+MASTER_SITES =		${MASTER_SITES_OPENVAS:=1051/}
 
 #CONFIGURE_STYLE =	gnu
 #CONFIGURE_ARGS +=	--localstatedir="/var" \

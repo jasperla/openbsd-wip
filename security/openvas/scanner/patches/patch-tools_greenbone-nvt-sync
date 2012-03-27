@@ -1,7 +1,7 @@
 $OpenBSD$
---- tools/greenbone-nvt-sync.orig	Mon Apr 11 08:29:40 2011
-+++ tools/greenbone-nvt-sync	Mon Apr 11 15:13:29 2011
-@@ -69,9 +69,9 @@ fi
+--- tools/greenbone-nvt-sync.orig	Sun Mar 25 20:08:05 2012
++++ tools/greenbone-nvt-sync	Tue Mar 27 01:06:07 2012
+@@ -72,9 +72,9 @@ fi
  log_write(){
    if [ -n "$NOLOG" ]
    then
@@ -13,16 +13,16 @@ $OpenBSD$
    fi
  }
  
-@@ -87,7 +87,7 @@ init_sync ()
+@@ -90,7 +90,7 @@ init_sync ()
      exit $SELFTEST_FAIL
    fi
  
 -  SCANNER_BINARY=`command -v openvassd`
 +  SCANNER_BINARY=`which openvassd`
-   if [ -z $SCANNER_BINARY ]
+   if [ -z "$SCANNER_BINARY" ]
    then
      stderr_write "== greenbone-nvt-sync $VERSION ================================================"
-@@ -209,7 +209,7 @@ sync_nvts(){
+@@ -213,7 +213,7 @@ sync_nvts(){
        log_write "rsync failed, aborting synchronization."
        exit 1
      fi
@@ -31,7 +31,7 @@ $OpenBSD$
      if [ $? -ne 0 ]  ; then
        if [ -n "$retried" ]
        then
-@@ -223,7 +223,7 @@ sync_nvts(){
+@@ -227,7 +227,7 @@ sync_nvts(){
          stderr_write "  $custid"
          stderr_write "If possible, please execute the following commands:"
          stderr_write "  cd \"$NVT_DIR\""
@@ -40,16 +40,7 @@ $OpenBSD$
          stderr_write "and include the output of the last command in your mail."
          stderr_write "==============================================================================="
          log_write "Feed integrity check failed twice, aborting synchronization."
-@@ -265,7 +265,7 @@ update_openvasmd (){
-     return
-   fi
-   log_write "Updating OpenVAS Manager"
--  OPENVASMD=`command -v openvasmd`
-+  OPENVASMD=`which openvasmd`
-   if [ -z $OPENVASMD ]
-   then
-     stderr_write "== greenbone-nvt-sync $VERSION ================================================"
-@@ -300,18 +300,18 @@ update_openvasmd (){
+@@ -288,18 +288,18 @@ update_openvasmd (){
  
  do_self_test ()
  {

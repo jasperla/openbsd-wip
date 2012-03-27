@@ -1,8 +1,8 @@
 $OpenBSD$
---- hg/hg_add_hosts.c.orig	Tue Nov 16 11:43:46 2010
-+++ hg/hg_add_hosts.c	Tue Nov 30 23:26:45 2010
+--- hg/hg_add_hosts.c.orig	Sun Mar 25 18:23:00 2012
++++ hg/hg_add_hosts.c	Mon Mar 26 22:28:26 2012
 @@ -16,11 +16,14 @@
-  * Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+  * Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
   */
  
 -#include <arpa/inet.h>          /* for inet_aton */
@@ -16,4 +16,4 @@ $OpenBSD$
 +#include <arpa/inet.h>          /* for inet_aton */
  
  #include "network.h"            /* for convipv4toipv4mappedaddr */
- 
+ #include "support.h"

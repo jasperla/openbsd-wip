@@ -1,7 +1,7 @@
 $OpenBSD$
---- misc/plugutils.c.orig	Wed Jun  1 14:38:37 2011
-+++ misc/plugutils.c	Wed Jun  1 16:17:17 2011
-@@ -1260,7 +1260,7 @@ get_plugin_preference_file_content (struct arglist *de
+--- misc/plugutils.c.orig	Sun Mar 25 18:23:00 2012
++++ misc/plugutils.c	Mon Mar 26 22:28:26 2012
+@@ -969,7 +969,7 @@ get_plugin_preference_file_content (struct arglist *de
   * @return Size of the file identified by \ref identifier, -1 if not found or
   *         setup broken.
   */

@@ -1,8 +1,8 @@
 $OpenBSD$
---- misc/pcap.c.orig	Thu Mar  3 08:44:22 2011
-+++ misc/pcap.c	Sat Mar  5 23:36:29 2011
+--- misc/pcap.c.orig	Sun Mar 25 18:23:00 2012
++++ misc/pcap.c	Mon Mar 26 22:28:26 2012
 @@ -16,9 +16,11 @@
-  * Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+  * Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
   */
  
 +#include <stdlib.h>
@@ -15,7 +15,7 @@ $OpenBSD$
  #include <net/if.h>
  #include <arpa/inet.h>
  #include <sys/ioctl.h>
-@@ -769,10 +771,10 @@ getinterfaces (int *howmany)
+@@ -770,10 +772,10 @@ getinterfaces (int *howmany)
      printf
        ("getinterfaces: SIOCGIFCONF claims you have no network interfaces!\n");
  

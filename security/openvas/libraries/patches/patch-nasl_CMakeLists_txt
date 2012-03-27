@@ -1,6 +1,6 @@
 $OpenBSD$
---- nasl/CMakeLists.txt.orig	Wed May  4 07:22:37 2011
-+++ nasl/CMakeLists.txt	Sun May 15 16:29:24 2011
+--- nasl/CMakeLists.txt.orig	Sun Mar 25 18:23:00 2012
++++ nasl/CMakeLists.txt	Mon Mar 26 22:28:26 2012
 @@ -33,13 +33,13 @@ endif (POLICY CMP0015)
  
  ## Library
@@ -15,24 +15,8 @@ $OpenBSD$
 -set (CMAKE_C_FLAGS              "${CMAKE_C_FLAGS} ${HARDENING_FLAGS} -Wall -Werror -D_FILE_OFFSET_BITS=64 -DLARGEFILE_SOURCE=1 -fno-strict-aliasing")
 +set (CMAKE_C_FLAGS              "${CMAKE_C_FLAGS} ${HARDENING_FLAGS} -Wall -D_FILE_OFFSET_BITS=64 -DLARGEFILE_SOURCE=1 -fno-strict-aliasing")
  
- # The "-Wno-error=unprototyped-calls" silences warnings produced by an
- # openSUSE-patched gcc caused by code in regex.c.
-@@ -94,13 +94,13 @@ link_directories (${LIBDIR} ../base ../hg ../misc)
- 
- add_library (openvas_nasl_static STATIC ${FILES})
- 
--set_target_properties (openvas_nasl_static PROPERTIES COMPILE_FLAGS "${GLIB_CFLAGS} ${WMI_LIBS} ${GPGME_CFLAGS}")
-+set_target_properties (openvas_nasl_static PROPERTIES COMPILE_FLAGS "${GLIB_CFLAGS} ${WMI_LIBS} ${GPGME_CFLAGS} ")
- set_target_properties (openvas_nasl_static PROPERTIES OUTPUT_NAME "openvas_nasl")
- set_target_properties (openvas_nasl_static PROPERTIES CLEAN_DIRECT_OUTPUT 1)
- set_target_properties (openvas_nasl_static PROPERTIES PUBLIC_HEADER "${HEADERS}")
- target_link_libraries (openvas_nasl_static openvas_base_static openvas_misc_static
- 			openvas_hg_static glib-2.0 gcrypt gpgme
--			gpg-error gnutls pcap ${WMI})
-+			gpg-error ${GNUTLS_LDFLAGS} pcap ${WMI})
- 
- add_library (openvas_nasl_shared SHARED ${FILES})
- set_target_properties (openvas_nasl_shared PROPERTIES COMPILE_FLAGS "${GLIB_CFLAGS} ${WMI_LIBS} ${GPGME_CFLAGS}")
+ ## Compile the parser - note that there are (better) CMake macros to achieve
+ ## that and that the user is not warned if bison is not installed
 @@ -112,13 +112,13 @@ set_target_properties (openvas_nasl_shared PROPERTIES 
  # line bellow is needed so it also works with no-undefined which is e.g. used by Mandriva
  target_link_libraries (openvas_nasl_shared openvas_base_shared openvas_misc_shared
@@ -47,5 +31,5 @@ $OpenBSD$
 -                       -lgpgme -lgpg-error -lgnutls -lpcap -lresolv -lm ${WMI_LIBS})
 +                       -lgpgme -lgpg-error ${GNUTLS_LDFLAGS} -lpcap -lm ${WMI_LIBS})
  set_target_properties (openvas-nasl PROPERTIES COMPILE_FLAGS
-                        "${GLIB_CFLAGS} ${GPGME_CFLAGS}")
+                        "${GLIB_CFLAGS} ${GPGME_CFLAGS} ${LIBSSH_CFLAGS}")
  set_target_properties (openvas-nasl PROPERTIES LINK_FLAGS

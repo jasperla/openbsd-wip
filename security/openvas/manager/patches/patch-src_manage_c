@@ -1,0 +1,30 @@
+$OpenBSD$
+--- src/manage.c.orig	Mon Mar 26 10:08:16 2012
++++ src/manage.c	Tue Mar 27 01:37:01 2012
+@@ -4276,7 +4276,7 @@ manage_read_info (gchar *type, gchar *name, gchar **re
+   assert (result != NULL);
+   *result = NULL;
+ 
+-  if (g_strcasecmp ("CPE", type) == 0)
++  if (g_ascii_strcasecmp ("CPE", type) == 0)
+     {
+       fname = get_cpe_filename ();
+       if (fname)
+@@ -4330,7 +4330,7 @@ manage_read_info (gchar *type, gchar *name, gchar **re
+           g_free (cpe);
+         }
+     }
+-  else if (g_strcasecmp ("CVE", type) == 0)
++  else if (g_ascii_strcasecmp ("CVE", type) == 0)
+     {
+       fname = get_cve_filename (name);
+       if (fname)
+@@ -4370,7 +4370,7 @@ manage_read_info (gchar *type, gchar *name, gchar **re
+           g_free (cve);
+         }
+     }
+-  else if (g_strcasecmp ("NVT", type) == 0)
++  else if (g_ascii_strcasecmp ("NVT", type) == 0)
+     {
+       iterator_t nvts;
+       nvt_t nvt;
