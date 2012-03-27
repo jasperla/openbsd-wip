@@ -10,9 +10,9 @@ Test for GLib loadable modules as of 2.32.0 requires threads
 the --as-needed cannot be used with pthreads as not
 recorded as a NEEDED library on OpenBSD.
 
---- configure.orig	Tue Jan 10 19:09:53 2012
-+++ configure	Sun Mar 25 22:46:00 2012
-@@ -18925,14 +18925,6 @@ fi
+--- configure.orig	Tue Mar 27 17:11:08 2012
++++ configure	Tue Mar 27 22:22:25 2012
+@@ -18926,14 +18926,6 @@ fi
  
  
    pkg_config_args=gtk+-3.0
@@ -27,7 +27,7 @@ recorded as a NEEDED library on OpenBSD.
  
    no_gtk=""
  
-@@ -20077,7 +20069,7 @@ $as_echo_n "checking whether GLib supports loadable mo
+@@ -20078,7 +20070,7 @@ $as_echo_n "checking whether GLib supports loadable mo
  ac_save_CFLAGS="$CFLAGS"
  ac_save_LIBS="$LIBS"
  CFLAGS="$CFLAGS $GLIB_CFLAGS"
