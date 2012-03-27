@@ -36,11 +36,11 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += c glib-2.0 m pcap pthread z
 
 WANTLIB-text += ${WANTLIB} GeoIP cares gcrypt gmodule-2.0 gnutls
-WANTLIB-text += gpg-error gthread-2.0 krb5 lua smi
+WANTLIB-text += gpg-error krb5 lua smi
 
 WANTLIB-main += ${WANTLIB} wireshark wiretap wsutil
 WANTLIB-main += cairo gdk_pixbuf-2.0 gmodule-2.0 gobject-2.0 
-WANTLIB-main += gthread-2.0 pango-1.0 pangocairo-1.0 portaudio stdc++
+WANTLIB-main += pango-1.0 pangocairo-1.0 portaudio stdc++
 
 MULTI_PACKAGES= -text -main
 
@@ -83,7 +83,8 @@ CONFIGURE_ARGS +=	--with-python
 .endif
 
 .if !${FLAVOR:L:Mgtk2}
-CONFIGURE_ARGS +=	--with-gtk3=yes
+CONFIGURE_ARGS +=	--with-gtk3=yes \
+			CPPFLAGS="-DGDK_VERSION_MIN_REQUIRED=GDK_VERSION_3_0"
 WANTLIB-main +=		gdk-3 gtk-3
 LIB_DEPENDS-main +=		x11/gtk+3
 .else
