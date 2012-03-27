@@ -1,0 +1,11 @@
+$OpenBSD$
+--- ui/gtk/edit_packet_comment_dlg.c.orig	Sun Mar 25 20:07:41 2012
++++ ui/gtk/edit_packet_comment_dlg.c	Tue Mar 27 13:13:14 2012
+@@ -253,4 +253,5 @@ edit_capture_dlg_launch (void)
+ 
+   gtk_widget_show (edit_or_add_capture_comment_dlg);
+ 
+-}
+\ No newline at end of file
++}
++
