@@ -1,7 +1,7 @@
 $OpenBSD$
---- src/omp.c.orig	Wed Mar  2 14:21:27 2011
-+++ src/omp.c	Sun Mar  6 18:27:02 2011
-@@ -95,18 +95,18 @@
+--- src/omp.c.orig	Mon Mar 26 10:08:16 2012
++++ src/omp.c	Tue Mar 27 01:25:18 2012
+@@ -96,18 +96,18 @@
  #include "otp.h"
  #include "tracef.h"
  

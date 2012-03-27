@@ -1,6 +1,6 @@
 $OpenBSD$
---- misc/resolve.c.orig	Wed May 19 09:56:20 2010
-+++ misc/resolve.c	Mon Sep 20 22:18:52 2010
+--- misc/resolve.c.orig	Sun Mar 25 18:23:00 2012
++++ misc/resolve.c	Mon Mar 26 22:28:26 2012
 @@ -20,7 +20,9 @@
  
  #include <string.h>
@@ -9,9 +9,9 @@ $OpenBSD$
  
 +#include "network.h"
  #include "resolve.h"
+ #include "support.h"
  
- #ifndef INADDR_NONE
-@@ -60,7 +62,7 @@ nn_resolve (const char *hostname, struct in6_addr *in6
+@@ -61,7 +63,7 @@ nn_resolve (const char *hostname, struct in6_addr *in6
    /* first check whether it is a numeric host */
    memset (&hints, 0, sizeof (hints));
    hints.ai_family = AF_INET6;

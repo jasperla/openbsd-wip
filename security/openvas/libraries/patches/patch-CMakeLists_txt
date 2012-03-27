@@ -1,7 +1,7 @@
 $OpenBSD$
---- CMakeLists.txt.orig	Thu Mar  3 08:44:22 2011
-+++ CMakeLists.txt	Mon Apr 18 18:04:56 2011
-@@ -157,7 +157,7 @@ endif (NOT DATADIR)
+--- CMakeLists.txt.orig	Sun Mar 25 18:23:00 2012
++++ CMakeLists.txt	Mon Mar 26 22:28:26 2012
+@@ -161,7 +161,7 @@ endif (NOT DATADIR)
  #endif (NOT SYSCONFDIR)
  
  set (OPENVAS_DATA_DIR    "${DATADIR}/openvas")
@@ -10,7 +10,7 @@ $OpenBSD$
  set (OPENVAS_LOG_DIR     "${LOCALSTATEDIR}/log/openvas")
  set (OPENVAS_CACHE_DIR   "${LOCALSTATEDIR}/cache/openvas")
  set (OPENVAS_PID_DIR     "${LOCALSTATEDIR}/run")
-@@ -237,10 +237,10 @@ configure_file (libopenvas.pc.in libopenvas.pc @ONLY)
+@@ -362,10 +362,10 @@ configure_file (libopenvas.pc.in ${CMAKE_CURRENT_BINAR
  
  ## Program
  

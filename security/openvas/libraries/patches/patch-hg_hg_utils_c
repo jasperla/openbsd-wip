@@ -1,8 +1,8 @@
 $OpenBSD$
---- hg/hg_utils.c.orig	Wed May 19 08:51:36 2010
-+++ hg/hg_utils.c	Tue Nov 30 23:29:10 2010
+--- hg/hg_utils.c.orig	Sun Mar 25 18:23:00 2012
++++ hg/hg_utils.c	Mon Mar 26 22:28:26 2012
 @@ -16,13 +16,18 @@
-  * Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+  * Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
   */
  
 -#include <arpa/inet.h>          /* for inet_addr */

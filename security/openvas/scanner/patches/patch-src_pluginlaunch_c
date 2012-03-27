@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/pluginlaunch.c.orig	Mon Feb 21 09:40:34 2011
-+++ src/pluginlaunch.c	Sun Mar  6 17:54:34 2011
+--- src/pluginlaunch.c.orig	Sun Mar 25 20:08:05 2012
++++ src/pluginlaunch.c	Tue Mar 27 00:53:58 2012
 @@ -32,6 +32,10 @@
  #include <errno.h>    /* for errno() */
  #include <sys/time.h> /* for gettimeofday() */
@@ -11,4 +11,4 @@ $OpenBSD$
 +
  #include <openvas/misc/network.h>    /* for internal_send */
  #include <openvas/misc/nvt_categories.h>  /* for ACT_SCANNER */
- #include <openvas/misc/plugutils.h>  /* for INTERNAL_COMM_MSG_SHARED_SOCKET */
+ #include <openvas/misc/plugutils.h>  /* for rmslashes */

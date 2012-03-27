@@ -1,16 +1,16 @@
 $OpenBSD$
---- CMakeLists.txt.orig	Mon May 30 14:59:05 2011
-+++ CMakeLists.txt	Wed Jun  1 14:11:50 2011
-@@ -147,7 +147,7 @@ endif (NOT INCLUDEDIR)
+--- CMakeLists.txt.orig	Mon Mar 26 10:08:16 2012
++++ CMakeLists.txt	Tue Mar 27 01:28:38 2012
+@@ -149,7 +149,7 @@ endif (NOT INCLUDEDIR)
  #endif (NOT SYSCONFDIR)
  
- set (OPENVAS_DATA_DIR    "${DATADIR}/openvas")
--set (OPENVAS_STATE_DIR   "${LOCALSTATEDIR}/lib/openvas")
-+set (OPENVAS_STATE_DIR   "${LOCALSTATEDIR}/openvas")
- set (OPENVAS_LOG_DIR     "${LOCALSTATEDIR}/log/openvas")
- set (OPENVAS_PID_DIR     "${LOCALSTATEDIR}/run")
- set (OPENVAS_SYSCONF_DIR "${SYSCONFDIR}/openvas")
-@@ -240,7 +240,7 @@ configure_file (src/openvasmd_log_conf.cmake_in src/op
+ set (OPENVAS_DATA_DIR     "${DATADIR}/openvas")
+-set (OPENVAS_STATE_DIR    "${LOCALSTATEDIR}/lib/openvas")
++set (OPENVAS_STATE_DIR    "${LOCALSTATEDIR}/openvas")
+ set (OPENVAS_LOG_DIR      "${LOCALSTATEDIR}/log/openvas")
+ set (OPENVAS_PID_DIR      "${LOCALSTATEDIR}/run")
+ set (OPENVAS_SYSCONF_DIR  "${SYSCONFDIR}/openvas")
+@@ -243,7 +243,7 @@ configure_file (tools/openvas-scapdata-sync.in tools/o
  
  ## Program
  
@@ -18,8 +18,8 @@ $OpenBSD$
 +set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2 -fstack-protector")
  
  set (CMAKE_C_FLAGS_DEBUG        "${CMAKE_C_FLAGS_DEBUG}")
- set (CMAKE_C_FLAGS              "${CMAKE_C_FLAGS} ${HARDENING_FLAGS} -Wall -Werror -D_BSD_SOURCE -D_ISOC99_SOURCE -D_SVID_SOURCE")
-@@ -260,7 +260,7 @@ enable_testing ()
+ set (CMAKE_C_FLAGS              "${CMAKE_C_FLAGS} ${HARDENING_FLAGS} -Wall -Werror -D_BSD_SOURCE -D_ISOC99_SOURCE -D_SVID_SOURCE -D_FILE_OFFSET_BITS=64")
+@@ -263,7 +263,7 @@ enable_testing ()
  install (CODE "file (MAKE_DIRECTORY \$ENV{DESTDIR}${OPENVAS_STATE_DIR}/openvasmd/report_formats)")
  
  install (FILES ${CMAKE_BINARY_DIR}/src/openvasmd_log.conf

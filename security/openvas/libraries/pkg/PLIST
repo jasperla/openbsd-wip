@@ -23,6 +23,7 @@ include/openvas/misc/arglists.h
 include/openvas/misc/bpf_share.h
 include/openvas/misc/ftp_funcs.h
 include/openvas/misc/hash_table_file.h
+include/openvas/misc/internal_com.h
 include/openvas/misc/kb.h
 include/openvas/misc/network.h
 include/openvas/misc/nvt_categories.h
