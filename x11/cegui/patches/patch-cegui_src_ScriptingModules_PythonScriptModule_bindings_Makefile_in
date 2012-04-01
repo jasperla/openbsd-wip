@@ -1,0 +1,13 @@
+$OpenBSD$
+--- cegui/src/ScriptingModules/PythonScriptModule/bindings/Makefile.in.orig	Sun Apr  1 16:38:41 2012
++++ cegui/src/ScriptingModules/PythonScriptModule/bindings/Makefile.in	Sun Apr  1 16:39:14 2012
+@@ -701,8 +701,7 @@ PyCEGUI_la_LIBADD = $(top_builddir)/cegui/src/libCEGUI
+ # NB: No '@CEGUI_LIB_LINK_FLAGS@' here
+ @BUILD_OPENGL_RENDERER_TRUE@PyCEGUIOpenGLRenderer_la_LDFLAGS = -module -avoid-version
+ @BUILD_OPENGL_RENDERER_TRUE@PyCEGUIOpenGLRenderer_la_CXXFLAGS = -fvisibility=hidden
+-@BUILD_OPENGL_RENDERER_TRUE@PyCEGUIOpenGLRenderer_la_CPPFLAGS =  \
+-@BUILD_OPENGL_RENDERER_TRUE@	$(am__append_3)
++@BUILD_OPENGL_RENDERER_TRUE@PyCEGUIOpenGLRenderer_la_CPPFLAGS = $(CPPFLAGS)
+ @BUILD_OPENGL_RENDERER_TRUE@PyCEGUIOpenGLRenderer_la_SOURCES = \
+ @BUILD_OPENGL_RENDERER_TRUE@output/CEGUIOpenGLRenderer/PyCEGUIOpenGLRenderer.main.cpp \
+ @BUILD_OPENGL_RENDERER_TRUE@output/CEGUIOpenGLRenderer/OpenGLRenderer.pypp.cpp
