@@ -1,7 +1,7 @@
 $OpenBSD$
---- src/makefile.unix.orig	Sun Nov 20 17:17:41 2011
-+++ src/makefile.unix	Tue Dec 27 03:14:38 2011
-@@ -44,8 +44,7 @@ endif
+--- src/makefile.unix.orig	Thu Mar 29 21:11:04 2012
++++ src/makefile.unix	Thu Apr  5 19:32:40 2012
+@@ -46,8 +46,7 @@ endif
  LIBS+= \
   -Wl,-B$(LMODE2) \
     -l z \
@@ -11,7 +11,7 @@ $OpenBSD$
  
  
  # Hardening
-@@ -66,7 +65,7 @@ LIBS+= \
+@@ -68,7 +67,7 @@ LIBS+= \
      # Make some important things such as the global offset table read only as soon as
      # the dynamic linker is finished building it. This will prevent overwriting of addresses
      # which would later be jumped to.
@@ -20,12 +20,12 @@ $OpenBSD$
  
      # Build position independent code to take advantage of Address Space Layout Randomization
      # offered by some kernels.
-@@ -82,7 +81,7 @@ LIBS+= \
+@@ -84,7 +83,7 @@ LIBS+= \
  
  
  DEBUGFLAGS=-g
 -CXXFLAGS=-O2
 +CXXFLAGS?=-O2
- xCXXFLAGS=-pthread -Wno-invalid-offsetof -Wformat $(DEBUGFLAGS) $(DEFS) $(HARDENING) $(CXXFLAGS)
- HEADERS = \
-     base58.h \
+ xCXXFLAGS=-pthread -Wextra -Wno-sign-compare -Wno-char-subscripts -Wno-invalid-offsetof -Wformat -Wformat-security \
+     $(DEBUGFLAGS) $(DEFS) $(HARDENING) $(CXXFLAGS)
+ 

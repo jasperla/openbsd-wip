@@ -4,9 +4,9 @@ VMEM_WARNING =		Yes
 
 COMMENT =		P2P payment system
 
-V =			0.5.2
-REV =			g7de7913
-DISTNAME =		bitcoin-bitcoin-v${V}-0-${REV}
+V =			0.6.0
+REV =			a1c3d8f
+DISTNAME =		bitcoin-bitcoin-v${V}-0-g${REV}
 PKGNAME =		bitcoin-${V}
 
 CATEGORIES =		net
@@ -27,8 +27,7 @@ WANTLIB += ssl stdc++ z
 
 MASTER_SITES =		https://github.com/bitcoin/bitcoin/tarball/v${V}/
 
-LIB_DEPENDS =		devel/glib2 \
-			devel/boost \
+LIB_DEPENDS =		devel/boost \
 			databases/db/v4 \
 			net/miniupnp/miniupnpc
 
@@ -41,7 +40,7 @@ USE_GMAKE =		Yes
 NO_REGRESS =		Yes
 
 MAKE_FILE =		makefile.unix
-WRKDIST =		${WRKDIR}/bitcoin-bitcoin-fb24b05
+WRKDIST =		${WRKDIR}/bitcoin-bitcoin-b3b5ab1
 WRKSRC =		${WRKDIST}/src
 
 ALL_TARGET =		bitcoind
