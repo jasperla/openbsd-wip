@@ -1,7 +1,0 @@
-"Hey, it compiles and runs!" - but not heavily tested.
-Menu works, feeds seem to fetch, adding feeds and directories works.
-
-Check more of normal operation.
-
-Is this something to be worried about?
-(liferea:11803): GLib-GIO-CRITICAL **: g_socket_get_fd: assertion `G_IS_SOCKET (socket)' failed
