@@ -3,7 +3,7 @@
 COMMENT-main=	graphical network protocol analyzer
 COMMENT-text=	network protocol analyzer
 
-WVER=		1.6.5
+WVER=		1.6.6
 DISTNAME=	wireshark-${WVER}
 PKGNAME-main=	wireshark-${WVER}
 PKGNAME-text=	tshark-${WVER}
@@ -35,7 +35,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += c glib-2.0 m pcap pthread z
 
 WANTLIB-text += ${WANTLIB} GeoIP cares gcrypt gmodule-2.0 gnutls
-WANTLIB-text += gpg-error gthread-2.0 krb5 lua smi
+WANTLIB-text += gpg-error krb5 lua smi
 
 WANTLIB-main += ${WANTLIB} wireshark wiretap wsutil
 WANTLIB-main += gdk-x11-2.0 gdk_pixbuf-2.0 gobject-2.0 gtk-x11-2.0

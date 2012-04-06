@@ -1,9 +1,0 @@
-$OpenBSD$
---- prosodyctl.orig	Sun Nov  6 13:34:05 2011
-+++ prosodyctl	Sun Nov  6 13:37:23 2011
-@@ -1,4 +1,4 @@
--#!/usr/bin/env lua
-+#!${TRUEPREFIX}/bin/lua
- -- Prosody IM
- -- Copyright (C) 2008-2010 Matthew Wild
- -- Copyright (C) 2008-2010 Waqas Hussain
