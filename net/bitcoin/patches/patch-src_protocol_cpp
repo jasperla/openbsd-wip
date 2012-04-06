@@ -1,8 +1,8 @@
 $OpenBSD$
---- src/protocol.cpp.orig	Tue Dec 27 03:06:22 2011
-+++ src/protocol.cpp	Tue Dec 27 03:08:04 2011
-@@ -7,6 +7,8 @@
- #include "util.h"
+--- src/protocol.cpp.orig	Thu Mar 29 21:11:04 2012
++++ src/protocol.cpp	Thu Apr  5 19:31:25 2012
+@@ -8,6 +8,8 @@
+ #include "netbase.h"
  
  #ifndef WIN32
 +# include <sys/socket.h>

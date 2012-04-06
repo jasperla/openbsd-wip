@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/netbase.cpp.orig	Thu Apr  5 19:36:59 2012
++++ src/netbase.cpp	Thu Apr  5 19:37:27 2012
+@@ -30,7 +30,7 @@ bool static LookupIntern(const char *pszName, std::vec
+ 
+     aiHint.ai_socktype = SOCK_STREAM;
+     aiHint.ai_protocol = IPPROTO_TCP;
+-#ifdef WIN32
++#ifndef __linux__
+ #  ifdef USE_IPV6
+     aiHint.ai_family = AF_UNSPEC;
+     aiHint.ai_flags = fAllowLookup ? 0 : AI_NUMERICHOST;
