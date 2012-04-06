@@ -1,13 +1,13 @@
 $OpenBSD$
---- x2goclient.pro.orig	Tue Feb 14 17:54:10 2012
-+++ x2goclient.pro	Tue Feb 14 17:55:24 2012
-@@ -89,7 +89,8 @@ SOURCES += sharewidget.cpp \
-  contest.cpp \
-  xsettingswidget.cpp
+--- x2goclient.pro.orig	Wed Apr  4 11:55:02 2012
++++ x2goclient.pro	Thu Apr  5 15:24:17 2012
+@@ -103,7 +103,8 @@ SOURCES += sharewidget.cpp \
+            xsettingswidget.cpp \
+            appdialog.cpp
  
 -LIBS += -lssh
 +LIBS += -lssh -lldap -lcups -lX11 -lXpm
 +INCPATH += /usr/X11R6/include
  
  plugin {
- TARGET = x2goplugin
+ 	TARGET = x2goplugin

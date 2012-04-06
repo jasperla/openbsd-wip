@@ -1,0 +1,17 @@
+$OpenBSD$
+--- resources.rcc.orig	Thu Apr  5 15:26:46 2012
++++ resources.rcc	Thu Apr  5 15:26:59 2012
+@@ -78,13 +78,6 @@
+        <file>icons/22x22/preferences-system.png</file>
+        <file>txt/packs</file>
+        <file>txt/encodings</file>
+-       <file>x2goclient_en.qm</file>
+-       <file>x2goclient_de.qm</file>
+-       <file>x2goclient_fr.qm</file>
+-       <file>x2goclient_nb_no.qm</file>
+-       <file>x2goclient_sv.qm</file>
+-       <file>x2goclient_ru.qm</file>
+-       <file>x2goclient_zh_tw.qm</file>
+        <file>qt_de.qm</file>
+        <file>qt_ru.qm</file>
+        <file>qt_fr.qm</file>
