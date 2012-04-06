@@ -1,6 +1,6 @@
 $OpenBSD$
---- sshprocess.h.orig	Tue Feb 14 18:08:27 2012
-+++ sshprocess.h	Tue Feb 14 18:09:05 2012
+--- sshprocess.h.orig	Wed Apr  4 11:55:02 2012
++++ sshprocess.h	Thu Apr  5 15:25:13 2012
 @@ -24,6 +24,9 @@
  
  #include <libssh/libssh.h>
@@ -9,5 +9,5 @@ $OpenBSD$
 +#include <sys/socket.h>
 +#include <netinet/in.h>
  
- class SshMasterConnection;
- 
+ #ifndef Q_OS_WIN
+ #include <netinet/in.h>
