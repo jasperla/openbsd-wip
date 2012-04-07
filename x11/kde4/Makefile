@@ -75,7 +75,7 @@
      SUBDIR += smokekde			# untested
      SUBDIR += smokeqt			# untested
 
-# former accessibility, changed in KDE 4.8 beta/rc, all untested
+# former accessibility, changed in KDE 4.8
      SUBDIR += jovie			# issues
      SUBDIR += kaccessible		# untested
      SUBDIR += kmousetool		# OK
@@ -92,7 +92,7 @@
      SUBDIR += toys			# test KTeaTime
      SUBDIR += webdev			# minor issues
 
-# former kdeutils, changed in KDE 4.8 beta/rc, all untested
+# former kdeutils, changed in KDE 4.8
      SUBDIR += ark			# OK
      SUBDIR += filelight		# OK
      SUBDIR += kcalc			# OK
