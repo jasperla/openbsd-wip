@@ -22,7 +22,8 @@ SHARED_LIBS +=  streams            1.1 # .0.5
 SHARED_LIBS +=  strigihtmlgui      1.1 # .0.5
 SHARED_LIBS +=  strigiqtdbusclient 1.1 # .0.5
 
-BUILD_DEPENDS =	devel/cppunit
+BUILD_DEPENDS =	devel/cppunit \
+		devel\boost
 
 LIB_DEPENDS =	textproc/clucene>=0.9.21 \
 		archivers/bzip2 \
@@ -31,13 +32,14 @@ LIB_DEPENDS =	textproc/clucene>=0.9.21 \
 		sysutils/gamin \
 		textproc/libxml \
 		x11/qt4 \
-		x11/dbus \
+		x11/dbus
 
 WANTLIB += bz2 c clucene>=1 dbus-1 exiv2 \
 	lib/qt4/QtCore lib/qt4/QtDBus lib/qt4/QtGui \
 	fam m pthread stdc++ xml2 z avcodec avformat avutil swscale
 
-MODULES +=		devel/cmake converters/libiconv
+MODULES +=		devel/cmake \
+			converters/libiconv
 CONFIGURE_STYLE =	cmake
 
 # Not ported
