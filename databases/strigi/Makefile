@@ -6,6 +6,7 @@ CATEGORIES =	databases devel textproc sysutils
 
 HOMEPAGE =	http://strigi.sourceforge.net
 DISTNAME =	strigi-0.7.7
+REVISION =	0
 
 MASTER_SITES =	http://spacehopper.org/mirrors/ \
 		http://www.ohvost.ru/dnl/kde/src/
@@ -24,14 +25,15 @@ SHARED_LIBS +=  strigiqtdbusclient 1.1 # .0.5
 
 BUILD_DEPENDS =	devel/cppunit
 
-LIB_DEPENDS =	textproc/clucene>=0.9.21 \
-		archivers/bzip2 \
+LIB_DEPENDS =	archivers/bzip2 \
+		devel/boost \
 		graphics/exiv2 \
 		graphics/ffmpeg \
 		sysutils/gamin \
+		textproc/clucene>=0.9.21 \
 		textproc/libxml \
 		x11/qt4 \
-		x11/dbus \
+		x11/dbus
 
 WANTLIB += bz2 c clucene>=1 dbus-1 exiv2 \
 	lib/qt4/QtCore lib/qt4/QtDBus lib/qt4/QtGui \
