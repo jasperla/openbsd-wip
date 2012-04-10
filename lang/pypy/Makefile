@@ -37,7 +37,7 @@ WRKDIST=		${WRKDIR}/pypy-pypy-*
 do-build:
 	cd ${WRKSRC}/pypy/translator/goal/ && \
 	  PYPY_USESSION_DIR=${WRKDIR}/usession ${MODPY_BIN} translate.py --source -Ojit
-	cd ${WRKDIR}/usession/testing_1 && gmake
+	cd ${WRKDIR}/usession/testing_1 && ${MAKE_PROGRAM}
 
 do-install:
 	mkdir -p ${PREFIX}/pypy-${V}/bin
