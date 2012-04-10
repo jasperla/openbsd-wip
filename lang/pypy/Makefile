@@ -6,9 +6,7 @@ COMMENT =		Fast implementation of the Python language
 COMMENT-rpython =	RPython translation
 
 V=1.8
-DISTNAME =		release-${V}
-PKGNAME =		pypy-${V}
-PKGNAME-foo =		pypy_rpython-${V}
+DISTNAME =		pypy-${V}
 
 CATEGORIES =		lang
 
@@ -26,20 +24,19 @@ PERMIT_DISTFILES_FTP =	Yes
 # "make port-lib-depends-check" can help
 #WANTLIB =		???
 
-MASTER_SITES =		https://bitbucket.org/pypy/pypy/get/
+MASTER_SITES =		http://tratt.net/laurie/src/obsd/ports/
 EXTRACT_SUFX =		.tar.bz2
 
+MODULES =		lang/python
+MODPY_VERSION=		2.7
 VMEM_WARNING =		Yes
-BUILD_DEPENDS =		devel/gmake \
-			lang/python/2.7 \
-			textproc/py-sphinx
-LIB_DEPENDS-main =	archivers/bzip2
-LIB_DEPENDS-rpython =	devel/boehm-gc
+USE_GMAKE =		Yes
+BUILD_DEPENDS =		textproc/py-sphinx
 
 WRKDIST=		${WRKDIR}/pypy-pypy-*
 do-build:
 	cd ${WRKSRC}/pypy/translator/goal/ && \
-	  PYPY_USESSION_DIR=${WRKDIR}/usession python2.7 translate.py --source -Ojit
+	  PYPY_USESSION_DIR=${WRKDIR}/usession ${MODPY_BIN} translate.py --source -Ojit
 	cd ${WRKDIR}/usession/testing_1 && gmake
 
 do-install:
