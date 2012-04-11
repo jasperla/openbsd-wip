@@ -6,7 +6,7 @@ CATEGORIES =	databases devel textproc sysutils
 
 HOMEPAGE =	http://strigi.sourceforge.net
 DISTNAME =	strigi-0.7.7
-REVISION =	0
+REVISION =	1
 
 MASTER_SITES =	http://spacehopper.org/mirrors/ \
 		http://www.ohvost.ru/dnl/kde/src/
@@ -23,8 +23,7 @@ SHARED_LIBS +=  streams            1.1 # .0.5
 SHARED_LIBS +=  strigihtmlgui      1.1 # .0.5
 SHARED_LIBS +=  strigiqtdbusclient 1.1 # .0.5
 
-BUILD_DEPENDS =	devel/cppunit \
-		devel\boost
+BUILD_DEPENDS =	devel/cppunit
 
 LIB_DEPENDS =	archivers/bzip2 \
 		devel/boost \
