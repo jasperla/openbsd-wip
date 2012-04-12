@@ -1,7 +1,9 @@
+# $OpenBSD$
+
 COMMENT = run arbitrary commands when files change
 
 DISTNAME = entr-1.0
-REV = ed33bb691738
+REV = d0f7f616c4b1
 
 CATEGORIES = sysutils
 
@@ -20,7 +22,6 @@ MASTER_SITES = http://static.eradman.com/code/ \
 
 WRKDIST = ${WRKDIR}/eradman-entr-${REV}
 
-do-regress:
-	cd ${WRKBUILD} && make test
+REGRESS_TARGET = test
 
 .include <bsd.port.mk>
