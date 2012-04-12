@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-ONLY_FOR_ARCHS =	amd64 i386
+ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		Fast implementation of the Python language
 COMMENT-rpython =	RPython translation
