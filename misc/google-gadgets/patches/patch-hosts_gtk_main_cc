@@ -1,0 +1,12 @@
+$OpenBSD$
+--- hosts/gtk/main.cc.ports.orig	Fri Apr  6 13:30:34 2012
++++ hosts/gtk/main.cc	Fri Apr  6 13:30:52 2012
+@@ -15,7 +15,7 @@
+ */
+ 
+ #include <gtk/gtk.h>
+-#include <glib/gthread.h>
++#include <glib.h>
+ #include <locale.h>
+ #include <signal.h>
+ #include <unistd.h>

@@ -14,7 +14,7 @@ PKGNAME-main =		${PKGNAME}
 PKGNAME-gtk =		${PKGNAME:S/-gadgets/-gadgets-gtk/}
 PKGNAME-qt =		${PKGNAME:S/-gadgets/-gadgets-qt/}
 
-REVISION-main =		0
+REVISION-main =		1
 
 SHARED_LIBS +=  ggadget-1.0               0.0 # 0.0
 SHARED_LIBS +=  ggadget-dbus-1.0          0.0 # 0.0
