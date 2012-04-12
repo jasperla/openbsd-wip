@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP = Yes
 MASTER_SITES = http://static.eradman.com/code/ \
 	https://bitbucket.org/eradman/entr/get/
 
+MAKE_FLAGS = CC="${CC}"
 WRKDIST = ${WRKDIR}/eradman-entr-${REV}
 
 REGRESS_TARGET = test
