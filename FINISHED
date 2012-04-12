@@ -5,6 +5,7 @@
 #
 # For example:
 # net/gnaughty:	ready for import, sent to ports@ (jasperla)
+sysutils/entr:	ready for import, sent to ports@ 12.04.2012 (eradman)
 database/tinycdb:	ready for import, sent to ports@ 2005/8 and 01.04.2012 (chrueger)
 devel/p5-Test-Most:	ready for import, depends on the update of p5-Test-Warn, did not sent to ports@(wenheping)
 math/p5-Math-GSL:	ready for import, did not sent to ports@, regress depends on devel/p5-Test-Most (wenheping)
