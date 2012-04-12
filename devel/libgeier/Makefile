@@ -25,9 +25,6 @@ LIB_DEPENDS =		security/xmlsec \
 USE_GMAKE =	Yes
 USE_LIBTOOL =	Yes
 
-BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
-
 BUILD_DEPENDS +=	devel/libtool \
 			textproc/gtk-doc
 
