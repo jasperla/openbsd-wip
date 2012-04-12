@@ -24,7 +24,7 @@ WANTLIB += 	c crypto m pthread stdc++
 
 LIB_DEPENDS =	devel/boost
 
-MAKE_FLAGS =	BOOST_INCLUDE='-I/usr/local/include'
+MAKE_FLAGS =	BOOST_INCLUDE='-I/usr/local/include' FLAVOR_FLAGS='${CFLAGS}'
 
 USE_GMAKE =	Yes
 
