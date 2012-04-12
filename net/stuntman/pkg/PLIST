@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+@bin sbin/stunclient
+@bin sbin/stunserver
+@bin sbin/stuntestcode
