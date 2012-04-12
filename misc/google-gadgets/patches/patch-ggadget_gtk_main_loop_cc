@@ -1,0 +1,14 @@
+$OpenBSD$
+--- ggadget/gtk/main_loop.cc.ports.orig	Fri Apr  6 13:23:13 2012
++++ ggadget/gtk/main_loop.cc	Fri Apr  6 13:24:16 2012
+@@ -16,9 +16,8 @@
+ 
+ #include <fcntl.h>
+ #include <stdint.h>
+-#include <glib/ghash.h>
++#include <glib.h>
+ #include <gtk/gtk.h>
+-#include <glib/gthread.h>
+ #include <ggadget/common.h>
+ #include "main_loop.h"
+ #include "utilities.h"
