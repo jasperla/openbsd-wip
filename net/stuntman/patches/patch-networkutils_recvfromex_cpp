@@ -1,0 +1,12 @@
+$OpenBSD$
+--- networkutils/recvfromex.cpp.orig	Thu Apr 12 10:50:43 2012
++++ networkutils/recvfromex.cpp	Thu Apr 12 10:51:05 2012
+@@ -18,7 +18,7 @@
+ 
+ #include "commonincludes.h"
+ #include "socketaddress.h"
+-
++#include <sys/uio.h>
+ 
+ static void GetLocalPortNumberFromSocket(int sockfd, CSocketAddress* pAddr)
+ {
