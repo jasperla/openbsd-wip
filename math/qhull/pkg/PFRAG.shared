@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/11/19 09:01:12 shadchin Exp $
-@lib lib/libqhull6.so.${LIBqhull6_VERSION}
