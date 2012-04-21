@@ -10,8 +10,7 @@ SHARED_LIBS +=	sopranoindex              1.0 # 1.0
 SHARED_LIBS +=	sopranoserver             1.0 # 1.0
 
 HOMEPAGE =	http://soprano.sourceforge.net/
-DISTNAME =	soprano-2.7.3
-REVISION =	1
+DISTNAME =	soprano-2.7.5
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=soprano/}
 
