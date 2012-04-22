@@ -1,6 +1,6 @@
 $OpenBSD$
---- utils/kamctl/kamdbctl.base.orig	Fri Feb  3 16:48:05 2012
-+++ utils/kamctl/kamdbctl.base	Fri Feb  3 16:49:10 2012
+--- utils/kamctl/kamdbctl.base.orig	Sat Apr 21 16:59:04 2012
++++ utils/kamctl/kamdbctl.base	Sat Apr 21 18:45:41 2012
 @@ -136,7 +136,7 @@ credentials()
  mdbg() {
  	if [ "0$VERBOSE" -ne 0 ] ; then
@@ -46,3 +46,15 @@ $OpenBSD$
  	else
  		echo "** ERROR: $1"
  	fi
+@@ -195,8 +195,8 @@ get_answer ()
+     else
+         ANSWER=${value}
+     fi
+-    ANSWER=${ANSWER:0:1}
+-    ANSWER=${ANSWER/Y/y}
+-    ANSWER=${ANSWER/N/n}
++    ANSWER=`echo ${ANSWER} | cut -c1`
++    ANSWER=`echo ${ANSWER} | sed 's/Y/y/'`
++    ANSWER=`echo ${ANSWER} | sed 's/N/n/'`
+ }
+ 
