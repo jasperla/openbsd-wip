@@ -1,0 +1,11 @@
+$OpenBSD$
+--- modules/db_mysql/my_cmd.c.orig	Sun Apr 22 22:25:29 2012
++++ modules/db_mysql/my_cmd.c	Sun Apr 22 22:25:57 2012
+@@ -47,6 +47,7 @@
+ #include "../../ut.h"
+ #include "../../dprint.h"
+ 
++#include <sys/types.h>
+ #include <strings.h>
+ #include <stdio.h>
+ #include <time.h>  /*strptime, XOPEN issue must be >=4 */

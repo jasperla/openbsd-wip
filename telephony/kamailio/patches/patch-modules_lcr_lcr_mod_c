@@ -1,0 +1,13 @@
+$OpenBSD$
+--- modules/lcr/lcr_mod.c.orig	Sun Apr 22 22:24:08 2012
++++ modules/lcr/lcr_mod.c	Sun Apr 22 22:24:28 2012
+@@ -55,6 +55,9 @@
+  * least cost rules). Each such instance has its own LCR identifier.
+  */
+ 
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
