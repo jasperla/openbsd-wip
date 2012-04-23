@@ -2,8 +2,9 @@
 
 COMMENT =	creating and reading constant databases
 
-DISTNAME =	tinycdb_0.77
-PKGNAME =	${DISTNAME:S/_/-/}
+V =		0.77
+DISTNAME =	tinycdb_${V}
+PKGNAME =	tinycdb-${V}
 CATEGORIES =	databases
 SHARED_LIBS =	cdb	0.0
 
@@ -20,17 +21,19 @@ PERMIT_DISTFILES_FTP =		Yes
 
 WANTLIB =	c
 
-WRKDIST =	${WRKDIR}/${PKGNAME}
+WRKDIST =	${WRKDIR}/tinycdb-${V}
 MAKE_FLAGS +=	sysconfdir="${SYSCONFDIR}" LIBcdb_VERSION="${LIBcdb_VERSION}"
 FAKE_FLAGS +=	${MAKE_FLAGS} prefix="${PREFIX}"
 
-.include <bsd.port.mk>
+.include <bsd.port.arch.mk>
 
-.if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:L} != "yes"
+.if ${PROPERTIES:Mno_shared}
+REGRESS_TARGET =	tests
+else
 MAKE_FLAGS +=		INSTALLPROG="cdb-shared"
 ALL_TARGET +=		shared
 INSTALL_TARGET +=	install-sharedlib
 REGRESS_TARGET =	tests-shared
-.else
-REGRESS_TARGET =	tests
 .endif
+
+.include <bsd.port.mk>
