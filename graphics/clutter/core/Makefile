@@ -2,10 +2,10 @@
 
 COMMENT=		OpenGL-based interactive canvas library
 
-DISTNAME=		clutter-${MAJOR}.0
-SHARED_LIBS+=		clutter-glx-1.0      1.0      # 600.14
+DISTNAME=		clutter-1.8.4
+SHARED_LIBS+=		clutter-glx-1.0      1.0      # 800.4
 
-MASTER_SITES=		${MASTER_SITES_CLUTTER:=clutter/${MAJOR}/}
+MASTER_SITES=		${MASTER_SITES_CLUTTER:=clutter/1.8/}
 
 MODULES=		devel/gettext
 
@@ -20,7 +20,7 @@ BUILD_DEPENDS=          devel/gobject-introspection
 LIB_DEPENDS+=		devel/atk \
 			devel/json-glib \
 			devel/pango \
-			graphics/cogl \
+			graphics/clutter/cogl \
 			graphics/gdk-pixbuf2
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
