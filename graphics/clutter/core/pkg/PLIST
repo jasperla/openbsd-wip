@@ -307,7 +307,9 @@ share/gtk-doc/html/clutter/running-clutter.html
 share/gtk-doc/html/clutter/style.css
 share/gtk-doc/html/clutter/up.png
 share/gtk-doc/html/clutter/using-cairo.html
+share/locale/as/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/ast/LC_MESSAGES/clutter-${API_VERSION}.mo
+share/locale/bg/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/ca/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/ca@valencia/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/cs/LC_MESSAGES/clutter-${API_VERSION}.mo
@@ -329,9 +331,12 @@ share/locale/nl/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/or/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/pa/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/pl/LC_MESSAGES/clutter-${API_VERSION}.mo
+share/locale/pt/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/pt_BR/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/ru/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/sl/LC_MESSAGES/clutter-${API_VERSION}.mo
+share/locale/sr/LC_MESSAGES/clutter-${API_VERSION}.mo
+share/locale/sr@latin/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/sv/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/ta/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/te/LC_MESSAGES/clutter-${API_VERSION}.mo
