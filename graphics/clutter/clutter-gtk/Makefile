@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile,v 1.10 2011/04/07 11:22:04 jasper Exp $
 
-COMMENT=		GTK+2 widget for clutter
+COMMENT=		GTK+3 widget for clutter
 
 DISTNAME=		clutter-gtk-1.0.2
 SHARED_LIBS +=  clutter-gtk-1.0      1.0      # .0.0
