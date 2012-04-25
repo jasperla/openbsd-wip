@@ -24,7 +24,7 @@ USE_LIBTOOL?=		Yes
 LIBTOOL_FLAGS?=		--tag=disable-static
 
 CONFIGURE_STYLE?=	gnu
-CONFIGURE_ARGS+=	--disable-silent-rules
+CONFIGURE_ARGS+=	--disable-shave
 
 API_VERSION?=		1.0
 MAJOR?=			1.8

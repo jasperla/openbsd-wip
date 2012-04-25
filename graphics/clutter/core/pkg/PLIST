@@ -1,4 +1,5 @@
 @comment $OpenBSD: PLIST,v 1.4 2011/04/07 07:44:46 jasper Exp $
+@conflict cogl->=1.8.0
 include/clutter-${API_VERSION}/
 include/clutter-${API_VERSION}/cally/
 include/clutter-${API_VERSION}/cally/cally-actor.h
