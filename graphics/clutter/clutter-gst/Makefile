@@ -2,10 +2,10 @@
 
 COMMENT=		clutter GStreamer integration library
 
-DISTNAME=		clutter-gst-1.3.14
-SHARED_LIBS +=  clutter-gst-1.0    0.0      # 308.0
+DISTNAME=		clutter-gst-1.4.6
+SHARED_LIBS +=  clutter-gst-1.0    0.0      # 406.0
 
-MASTER_SITES=		${MASTER_SITES_CLUTTER:=clutter-gst/1.3/}
+MASTER_SITES=		${MASTER_SITES_CLUTTER:=clutter-gst/1.4/}
 
 MODULES=		devel/gettext
 
@@ -16,14 +16,9 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gstaudio-0.10 gstbase-0.10
 WANTLIB += gstinterfaces-0.10 gstreamer-0.10 gstvideo-0.10 gthread-2.0
 WANTLIB += json-glib-1.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread-stubs xcb xcb-render xcb-shm
-WANTLIB += xml2 z
-WANTLIB += cogl cogl-pango ffi gsttag-0.10
+WANTLIB += xml2 z cogl cogl-pango ffi gsttag-0.10 gstpbutils-0.10 orc-0.4
 
-# XXX: the libtool wrapper script is passed as argument to g-ir-scanner,
-# instead of the actual library
-USE_LIBTOOL=		gnu
-
-LIB_DEPENDS=		graphics/clutter/core \
+LIB_DEPENDS=		graphics/clutter/core>=1.8.4 \
 			multimedia/gstreamer-0.10/plugins-base
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
