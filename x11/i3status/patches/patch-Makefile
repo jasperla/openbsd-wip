@@ -2,10 +2,11 @@ $OpenBSD$
 
 - Remove git dependency.
 - Add some extra paths if we're compiling on OpenBSD.
+- Print volume on OpenBSD and add missing library accordingly.
 - Don't do a silent build.
 
 --- Makefile.orig	Fri Apr 27 16:00:41 2012
-+++ Makefile	Fri Apr 27 16:26:56 2012
++++ Makefile	Fri Apr 27 19:05:23 2012
 @@ -9,17 +9,19 @@ ifndef SYSCONFDIR
    endif
  endif
@@ -28,19 +29,20 @@ $OpenBSD$
  GIT_VERSION:="$(shell git describe --tags --always) ($(shell git log --pretty=format:%cd --date=short -n1))"
  
  ifeq ($(shell uname),Linux)
-@@ -33,6 +35,11 @@ ifeq ($(shell uname),GNU/kFreeBSD)
+@@ -33,6 +35,12 @@ ifeq ($(shell uname),GNU/kFreeBSD)
  LIBS+=-lbsd
  endif
  
 +ifeq ($(shell uname),OpenBSD)
 +CFLAGS+=-I${LOCALBASE}/include/
 +LDFLAGS+=-L${LOCALBASE}/lib/
++LIBS+=-lossaudio
 +endif
 +
  CFLAGS+=$(EXTRA_CFLAGS)
  
  # Fallback for libyajl 1 which did not include yajl_version.h. We need
-@@ -43,17 +50,17 @@ OBJS:=$(wildcard src/*.c *.c)
+@@ -43,17 +51,17 @@ OBJS:=$(wildcard src/*.c *.c)
  OBJS:=$(OBJS:.c=.o)
  
  src/%.o: src/%.c

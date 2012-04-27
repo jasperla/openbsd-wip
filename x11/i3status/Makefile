@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://distfiles.nl/
 
-WANTLIB += c confuse yajl
+WANTLIB += c confuse ossaudio yajl
 
 USE_GMAKE=		Yes
 
