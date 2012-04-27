@@ -5,13 +5,19 @@ $OpenBSD$
 - Don't do a silent build.
 
 --- Makefile.orig	Fri Apr 27 16:00:41 2012
-+++ Makefile	Fri Apr 27 16:07:57 2012
-@@ -19,7 +19,7 @@ CFLAGS+=-Iinclude
++++ Makefile	Fri Apr 27 16:23:35 2012
+@@ -14,12 +14,12 @@ CFLAGS+=-g
+ CFLAGS+=-std=gnu99
+ CFLAGS+=-pedantic
+ CPPFLAGS+=-DSYSCONFDIR=\"$(SYSCONFDIR)\"
+-CPPFLAGS+=-DVERSION=\"${GIT_VERSION}\"
++CPPFLAGS+=-DVERSION=\"${VERSION}\"
+ CFLAGS+=-Iinclude
  LIBS+=-lconfuse
  LIBS+=-lyajl
  
 -VERSION:=$(shell git describe --tags --abbrev=0)
-+VERSION:="2.4.0.1"
++VERSION="2.4.0.1"
  GIT_VERSION:="$(shell git describe --tags --always) ($(shell git log --pretty=format:%cd --date=short -n1))"
  
  ifeq ($(shell uname),Linux)
