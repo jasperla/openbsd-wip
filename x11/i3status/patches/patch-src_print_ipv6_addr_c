@@ -1,6 +1,6 @@
 $OpenBSD$
 
-Fix include order; fixes build on OpenBSD.
+Fix include order; fixes build on OpenBSD (committed upstream).
 
 --- src/print_ipv6_addr.c.orig	Fri Apr 27 16:00:41 2012
 +++ src/print_ipv6_addr.c	Fri Apr 27 16:03:29 2012
