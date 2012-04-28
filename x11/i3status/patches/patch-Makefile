@@ -1,7 +1,7 @@
 $OpenBSD$
 
 - Remove git dependency.
-- Add some extra paths if we're compiling on OpenBSD.
+- Add some extra paths if we're compiling on OpenBSD (committed upstream).
 - Print volume on OpenBSD and add missing library accordingly.
 - Don't do a silent build.
 
