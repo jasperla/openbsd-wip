@@ -1,4 +1,8 @@
 $OpenBSD$
+
+Fix CPU usage on OpenBSD. Currently only takes the first cpu into account,
+but works fine otherwise (committed upstream).
+
 --- src/print_cpu_usage.c.orig	Fri Apr 27 16:00:41 2012
 +++ src/print_cpu_usage.c	Fri Apr 27 17:31:08 2012
 @@ -6,7 +6,8 @@

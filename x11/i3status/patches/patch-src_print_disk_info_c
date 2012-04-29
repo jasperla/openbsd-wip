@@ -1,6 +1,6 @@
 $OpenBSD$
 
-Fix disk usage printing on OpenBSD.
+Fix disk usage printing on OpenBSD (committed upstream).
 
 --- src/print_disk_info.c.orig	Fri Apr 27 18:35:05 2012
 +++ src/print_disk_info.c	Fri Apr 27 18:35:08 2012
