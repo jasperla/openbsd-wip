@@ -1,5 +1,7 @@
 # $OpenBSD$
 
+ONLY_FOR_ARCHS=		${APM_ARCHS}
+
 COMMENT=		generate a statusbar for use with i3/xmobar/dzen2
 
 # git snapshot as of 2011-04-08
