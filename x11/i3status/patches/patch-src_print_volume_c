@@ -1,6 +1,6 @@
 $OpenBSD$
 
-Print volume on OpenBSD and add missing library accordingly.
+Print volume on OpenBSD and add missing library accordingly (committed upstream).
 
 --- src/print_volume.c.orig	Fri Apr 27 19:04:24 2012
 +++ src/print_volume.c	Fri Apr 27 19:04:30 2012

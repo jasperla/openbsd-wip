@@ -29,6 +29,8 @@ NO_REGRESS=		Yes
 # XXX: Optimizing results in seg. faults on at least amd64.
 CFLAGS+=		-O0
 
+MAKE_ENV+=		A2X=a2x.py
+
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Makefile
 
