@@ -10,6 +10,8 @@ CATEGORIES=		x11 sysutils
 
 HOMEPAGE=		http://i3wm.org/i3status
 
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
