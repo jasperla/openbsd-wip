@@ -1,7 +1,5 @@
 - some basic functionality works, but a lot still needs to be ported
   to OpenBSD, at least there is some FreeBSD to work with already:
-  - print_battery_info.c and i3status.h
-  - print_cpu_temperature and i3status.h
   - print_eth_info.c
   - print_wireless_info.c
 
