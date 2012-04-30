@@ -1,6 +1,6 @@
 $OpenBSD$
 
-Implement basic fetching of cpu temperature on OpenBSD.
+Implement basic fetching of cpu temperature on OpenBSD (committed upstream).
 
 --- src/print_cpu_temperature.c.orig	Sun Apr 29 16:54:46 2012
 +++ src/print_cpu_temperature.c	Sun Apr 29 16:54:56 2012
