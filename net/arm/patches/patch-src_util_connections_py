@@ -1,7 +1,7 @@
 $OpenBSD$
 upstream git b9446bdbb6df24fb0f042852a42e4d548c993263
---- src/util/connections.py.orig	Thu Sep 29 17:46:08 2011
-+++ src/util/connections.py	Fri Oct 21 16:07:23 2011
+--- src/util/connections.py.orig	Sun Apr 29 05:59:24 2012
++++ src/util/connections.py	Mon Apr 30 23:41:11 2012
 @@ -203,7 +203,7 @@ def getResolverCommand(resolutionCmd, processName, pro
    if resolutionCmd == Resolver.PROC: return ""
    elif resolutionCmd == Resolver.NETSTAT: return RUN_NETSTAT % (processPid, processName)
@@ -11,12 +11,3 @@ upstream git b9446bdbb6df24fb0f042852a42e4d548c993263
    elif resolutionCmd == Resolver.SOCKSTAT: return RUN_SOCKSTAT % (processName, processPid)
    elif resolutionCmd == Resolver.BSD_SOCKSTAT: return RUN_BSD_SOCKSTAT % (processName, processPid)
    elif resolutionCmd == Resolver.BSD_PROCSTAT: return RUN_BSD_PROCSTAT % processPid
-@@ -337,7 +337,7 @@ def getSystemResolvers(osType = None):
-   
-   if osType == "FreeBSD":
-     resolvers = [Resolver.BSD_SOCKSTAT, Resolver.BSD_PROCSTAT, Resolver.LSOF]
--  elif osType == "Darwin":
-+  elif osType in ("OpenBSD", "Darwin"):
-     resolvers = [Resolver.LSOF]
-   else:
-     resolvers = [Resolver.NETSTAT, Resolver.SOCKSTAT, Resolver.LSOF, Resolver.SS]
