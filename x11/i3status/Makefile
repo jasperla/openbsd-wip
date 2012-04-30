@@ -33,7 +33,8 @@ NO_REGRESS=		Yes
 # XXX: Optimizing results in seg. faults on at least amd64.
 CFLAGS+=		-O0
 
-MAKE_ENV+=		A2X=a2x.py
+MAKE_ENV+=		A2X=a2x.py \
+			SYSCONFDIR=${PREFIX}/share/examples/i3status/
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Makefile
