@@ -116,6 +116,8 @@ share/arm/resources/exitNotice/
 share/arm/resources/exitNotice/how_tor_works_thumb.png
 share/arm/resources/exitNotice/index.html
 share/arm/resources/startTor
+share/arm/resources/tor-arm.desktop
+share/arm/resources/tor-arm.svg
 share/arm/resources/torConfigDesc.txt
 share/arm/resources/torrcOverride/
 share/arm/resources/torrcOverride/override.c
@@ -165,3 +167,5 @@ share/arm/version.py
 share/arm/version.pyc
 share/doc/arm/
 share/doc/arm/armrc.sample
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

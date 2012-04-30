@@ -2,7 +2,7 @@
 
 COMMENT =		terminal status monitor for Tor
 
-DISTNAME =		arm-1.4.4.1
+DISTNAME =		arm-1.4.5.0
 
 CATEGORIES =		net
 
@@ -21,7 +21,9 @@ EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		lang/python
 RUN_DEPENDS =		net/tor \
-			sysutils/lsof
+			sysutils/lsof \
+			devel/desktop-file-utils \
+			x11/gnome/librsvg
 
 NO_REGRESS =		Yes
 
