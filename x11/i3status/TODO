@@ -3,8 +3,6 @@
   - print_eth_info.c
   - print_wireless_info.c
 
-* disk usage calculation doesn't work correctly, the numbers are off by quite a bit
-
 * cpu usage only deals with first cpu right now, fix this for MP systems
 
 * test all the various modules and see what functionality is missing.
