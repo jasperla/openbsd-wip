@@ -1,6 +1,6 @@
 $OpenBSD$
 
-Implement basic fetching of cpu temperature on OpenBSD.
+Implement basic fetching of cpu temperature on OpenBSD (committed upstream).
 
 --- include/i3status.h.orig	Sun Apr 29 16:55:04 2012
 +++ include/i3status.h	Sun Apr 29 16:55:09 2012

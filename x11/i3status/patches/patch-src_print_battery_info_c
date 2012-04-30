@@ -1,6 +1,6 @@
 $OpenBSD$
 
-Implement displaying battery status on OpenBSD.
+Implement displaying battery status on OpenBSD (committed upstream).
 
 --- src/print_battery_info.c.orig	Sun Apr 29 20:22:33 2012
 +++ src/print_battery_info.c	Sun Apr 29 20:22:39 2012
