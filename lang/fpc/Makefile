@@ -68,6 +68,8 @@ post-install:
 	chmod ${DIRMODE} ${PREFIX}/share/doc/fpc-${V}/fpc/
 	chmod ${SHAREMODE} ${PREFIX}/share/doc/fpc-${V}/fpc/*
 	cd ${PREFIX}/bin && ln -s ../lib/fpc/${V}/${COMPNAME} .
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/fpc
+	${INSTALL_DATA} ${FILESDIR}/fpc.cfg.sample ${PREFIX}/share/examples/fpc
 
 do-regress:
 	cd ${WRKSRC}/fpcsrc/tests && env -i ${MAKE_ENV} ${MAKE_PROGRAM} \
