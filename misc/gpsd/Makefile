@@ -9,6 +9,9 @@ DISTNAME=		gpsd-${VERSION}
 PKGNAME-main=		gpsd-${VERSION}
 PKGNAME-x11=		gpsd-x11-${VERSION}
 PKGNAME-php=		gpsd-php-${VERSION}
+# explain shlib versions to scons
+SHARED_LIBS += 		gps	20.0 # 20.0
+SHARED_LIBS += 		gpsd	1.0 # 20.0
 CATEGORIES=		misc geo
 
 HOMEPAGE = 		http://www.catb.org/gpsd/
