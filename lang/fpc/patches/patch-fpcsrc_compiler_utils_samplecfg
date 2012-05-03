@@ -1,0 +1,18 @@
+$OpenBSD$
+--- fpcsrc/compiler/utils/samplecfg.orig	Fri May  4 14:25:16 2012
++++ fpcsrc/compiler/utils/samplecfg	Fri May  4 14:25:36 2012
+@@ -21,10 +21,10 @@ if [ "$2" ]; then
+ else
+   sysdir=/etc
+ fi
+-FPCBIN=`dirname "$1"`/../../bin/fpc
+-FPBIN=`dirname "$1"`/../../bin/fp
+-FPPKGBIN=`dirname "$1"`/../../bin/fppkg
+-FPCMKCFGBIN=`dirname "$1"`/../../bin/fpcmkcfg
++FPCBIN=`dirname "$1"`/../bin/fpc
++FPBIN=`dirname "$1"`/../bin/fp
++FPPKGBIN=`dirname "$1"`/../bin/fppkg
++FPCMKCFGBIN=`dirname "$1"`/../bin/fpcmkcfg
+ # Look for one in the PATH, if no new one was installed.
+ if [ ! -f $FPCMKCFGBIN ]; then
+   FPCMKCFGBIN=fpcmkcfg
