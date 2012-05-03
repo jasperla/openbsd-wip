@@ -27,6 +27,7 @@ EXTRACT_SUFX =		.tar.bz2
 MODULES =		devel/cmake \
 			x11/qt4 \
 			lang/lua
+BUILD_DEPENDS =		lang/fpc
 LIB_DEPENDS =		devel/sdl-image \
 			devel/sdl-ttf \
 			devel/sdl-net \
