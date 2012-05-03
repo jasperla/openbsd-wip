@@ -1,0 +1,30 @@
+$OpenBSD$
+--- SConstruct.orig	Sat Apr 14 17:36:18 2012
++++ SConstruct	Thu May  3 12:46:37 2012
+@@ -429,7 +429,7 @@ if env['ncurses']:
+     elif sys.platform.startswith('freebsd'):
+         ncurseslibs= [ '-lncurses' ]
+     elif sys.platform.startswith('openbsd'):
+-        ncurseslibs= [ '-lcurses' ]
++        ncurseslibs= [ '-lncurses' ]
+ 
+ if env['usb']:
+     # In FreeBSD except version 7, USB libraries are in the base system
+@@ -959,7 +959,7 @@ else:
+             python_objects[ext].append(
+                 python_env.NoCache(
+                     python_env.SharedObject(
+-                        src.split(".")[0] + '-py_' + '_'.join(['%s' %(x) for x in sys.version_info]) + so_ext, src
++                        src.split(".")[0] + so_ext, src
+                     )
+                 )
+             )
+@@ -1157,7 +1157,7 @@ if not env['debug'] and not env['profiling'] and env['
+ if not env['python']:
+     python_install = []
+ else:
+-    python_lib_dir = sysconfig.get_python_lib(plat_specific=1)
++    python_lib_dir = sysconfig.get_python_lib(plat_specific=1, prefix = env['prefix'])
+     python_module_dir = python_lib_dir + os.sep + 'gps'
+     python_extensions_install = python_env.Install( DESTDIR + python_module_dir,
+                                                     python_built_extensions)
