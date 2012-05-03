@@ -2124,4 +2124,5 @@ share/doc/fpc-xforms-${V}/examples/xyplotover.pp
 share/doc/fpc-xforms-${V}/examples/yesno.pp
 share/examples/fpc/
 share/examples/fpc/fpc.cfg.sample
+@comment share/examples/fpc/fpc.cfg.sample.beforesubst
 @sample ${SYSCONFDIR}/fpc.cfg
