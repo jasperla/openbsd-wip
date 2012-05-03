@@ -1,40 +1,52 @@
 @comment $OpenBSD$
 %%amd64%%
 %%i386%%
-@bin bin/bin2obj
-@bin bin/chmcmd
-@bin bin/chmls
-@bin bin/data2inc
-@bin bin/delp
-@bin bin/fd2pascal
-@bin bin/fpc
-@bin bin/fpclasschart
-@bin bin/fpcmake
-@bin bin/fpcmkcfg
-@bin bin/fpcres
-@bin bin/fpcsubst
-@bin bin/fpdoc
-@bin bin/fppkg
-@bin bin/fprcp
-@bin bin/h2pas
-@bin bin/h2paspp
-@bin bin/instantfpc
-@bin bin/makeskel
-@bin bin/mkarmins
-@bin bin/mkx86ins
-@bin bin/plex
-@bin bin/postw32
-@bin bin/ppdep
-@bin bin/ppudump
-@bin bin/ppufiles
-@bin bin/ppumove
-@bin bin/ptop
-@bin bin/pyacc
-@bin bin/rmcvsdir
-@bin bin/rstconv
-@bin bin/unitdiff
+bin/bin2obj
+bin/chmcmd
+bin/chmls
+bin/data2inc
+bin/delp
+bin/fd2pascal
+bin/fp
+bin/fpc
+bin/fpclasschart
+bin/fpcmake
+bin/fpcmkcfg
+bin/fpcres
+bin/fpcsubst
+bin/fpdoc
+bin/fppkg
+bin/fprcp
+bin/h2pas
+bin/h2paspp
+bin/instantfpc
+bin/makeskel
+bin/mkarmins
+bin/mkx86ins
+bin/plex
+bin/postw32
+bin/ppdep
+bin/ppudump
+bin/ppufiles
+bin/ppumove
+bin/ptop
+bin/pyacc
+bin/rmcvsdir
+bin/rstconv
+bin/unitdiff
 lib/fpc/
 lib/fpc/${V}/
+lib/fpc/${V}/ide/
+lib/fpc/${V}/ide/cvsco.tdf
+lib/fpc/${V}/ide/cvsdiff.tdf
+lib/fpc/${V}/ide/cvsup.tdf
+lib/fpc/${V}/ide/fp.ans
+lib/fpc/${V}/ide/gplprog.pt
+lib/fpc/${V}/ide/gplunit.pt
+lib/fpc/${V}/ide/grep.tdf
+lib/fpc/${V}/ide/program.pt
+lib/fpc/${V}/ide/tpgrep.tdf
+lib/fpc/${V}/ide/unit.pt
 lib/fpc/${V}/msg/
 lib/fpc/${V}/msg/errorct.msg
 lib/fpc/${V}/msg/errord.msg
@@ -1696,6 +1708,8 @@ share/doc/fpc-${V}/fpc/faq.txt
 share/doc/fpc-${V}/fpc/licensez.ip
 share/doc/fpc-${V}/fpc/readme.txt
 share/doc/fpc-${V}/fpc/whatsnew.txt
+share/doc/fpc-${V}/ide/
+share/doc/fpc-${V}/ide/readme.ide
 share/doc/fpc-aspell-${V}/
 share/doc/fpc-aspell-${V}/examples/
 share/doc/fpc-aspell-${V}/examples/example.pas
@@ -2124,5 +2138,5 @@ share/doc/fpc-xforms-${V}/examples/xyplotover.pp
 share/doc/fpc-xforms-${V}/examples/yesno.pp
 share/examples/fpc/
 share/examples/fpc/fpc.cfg.sample
-@comment share/examples/fpc/fpc.cfg.sample.beforesubst
 @sample ${SYSCONFDIR}/fpc.cfg
+@comment share/examples/fpc/fpc.cfg.sample.beforesubst
