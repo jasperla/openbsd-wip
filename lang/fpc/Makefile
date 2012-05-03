@@ -70,6 +70,7 @@ post-install:
 	cd ${PREFIX}/bin && ln -s ../lib/fpc/${V}/${COMPNAME} .
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/fpc
 	${INSTALL_DATA} ${FILESDIR}/fpc.cfg.sample ${PREFIX}/share/examples/fpc
+	${SUBST_CMD} ${PREFIX}/share/examples/fpc/fpc.cfg.sample
 
 do-regress:
 	cd ${WRKSRC}/fpcsrc/tests && env -i ${MAKE_ENV} ${MAKE_PROGRAM} \
