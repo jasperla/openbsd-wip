@@ -2122,3 +2122,6 @@ share/doc/fpc-xforms-${V}/examples/sliderall.pp
 share/doc/fpc-xforms-${V}/examples/touchbutton.pp
 share/doc/fpc-xforms-${V}/examples/xyplotover.pp
 share/doc/fpc-xforms-${V}/examples/yesno.pp
+share/examples/fpc/
+share/examples/fpc/fpc.cfg.sample
+@sample ${SYSCONFDIR}/fpc.cfg
