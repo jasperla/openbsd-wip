@@ -9,7 +9,7 @@ plan9/acid/68020
 plan9/acid/acme
 plan9/acid/alef
 plan9/acid/alpha
-plan9/acid/${MACHINE_ARCH}
+plan9/acid/amd64
 plan9/acid/arm
 plan9/acid/coverage
 plan9/acid/kernel
@@ -7498,10 +7498,8 @@ plan9/src/libthread/NetBSD-386-asm.s
 plan9/src/libthread/NetBSD-power-asm.s
 plan9/src/libthread/NetBSD.c
 plan9/src/libthread/OpenBSD-386-asm.S
-@comment plan9/src/libthread/OpenBSD-386-asm.S.orig
 plan9/src/libthread/OpenBSD-386.c
 plan9/src/libthread/OpenBSD-power-asm.S
-@comment plan9/src/libthread/OpenBSD-power-asm.S.orig
 plan9/src/libthread/OpenBSD-power.c
 plan9/src/libthread/OpenBSD-x86_64-asm.S
 plan9/src/libthread/OpenBSD-x86_64.c
