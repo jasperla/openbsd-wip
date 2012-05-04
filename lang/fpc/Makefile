@@ -73,6 +73,7 @@ post-install:
 	${SUBST_CMD} ${PREFIX}/share/examples/fpc/fpc.cfg.sample
 
 do-regress:
+	find ${WRKSRC} -name Package.fpc | xargs ${SUDO} rm -f
 	cd ${WRKSRC}/fpcsrc/tests && env -i ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${ALL_REGRESS_FLAGS}
 
