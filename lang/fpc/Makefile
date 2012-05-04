@@ -46,6 +46,9 @@ MAKE_FLAGS =		PP=${COMPNAME} NOGDB=1
 MAKE_ENV =		MKDIRPROG=/bin/mkdir ECHO=/bin/echo \
 			GINSTALL=/usr/bin/install DATE=/bin/date \
 			TARPROG=/bin/tar
+FAKE_FLAGS =		INSTALLEXE="${INSTALL_PROGRAM}" \
+			MKDIR="${INSTALL_DATA_DIR}" \
+			INSTALL="${INSTALL_DATA}"
 REGRESS_FLAGS =		TEST_FPC=${WRKSRC}/fpcsrc/compiler/${COMPNAME} \
 			FPC=${WRKSRC}/fpcsrc/compiler/${COMPNAME} \
 			FPCMAKE=${WRKSRC}/fpcsrc/utils/fpcm/fpcmake
@@ -59,11 +62,11 @@ pre-build:
 
 post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/fpc/lexyacc
+	chmod ${DIRMODE} ${PREFIX}/lib/fpc/lexyacc/
+	chmod ${SHAREMODE} ${PREFIX}/lib/fpc/lexyacc/*
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/fpc-${V}/fpc
-	chown ${BINOWN}:${BINGRP} ${PREFIX}/bin/* \
-		${PREFIX}/lib/fpc/${V}/${COMPNAME}
-	chmod ${BINMODE} ${PREFIX}/bin/* \
-		${PREFIX}/lib/fpc/${V}/${COMPNAME}
+	chmod ${DIRMODE} ${PREFIX}/share/doc/fpc-${V}/fpc/
+	chmod ${SHAREMODE} ${PREFIX}/share/doc/fpc-${V}/fpc/*
 	cd ${PREFIX}/bin && ln -s ../lib/fpc/${V}/${COMPNAME} .
 
 do-regress:
