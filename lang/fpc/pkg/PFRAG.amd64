@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+lib/fpc/${V}/ppcx64
