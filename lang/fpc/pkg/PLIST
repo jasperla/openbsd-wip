@@ -1,38 +1,38 @@
 @comment $OpenBSD$
 %%amd64%%
 %%i386%%
-bin/bin2obj
-bin/chmcmd
-bin/chmls
-bin/data2inc
-bin/delp
-bin/fd2pascal
-bin/fpc
-bin/fpclasschart
-bin/fpcmake
-bin/fpcmkcfg
-bin/fpcres
-bin/fpcsubst
-bin/fpdoc
-bin/fppkg
-bin/fprcp
-bin/h2pas
-bin/h2paspp
-bin/instantfpc
-bin/makeskel
-bin/mkarmins
-bin/mkx86ins
-bin/plex
-bin/postw32
-bin/ppdep
-bin/ppudump
-bin/ppufiles
-bin/ppumove
-bin/ptop
-bin/pyacc
-bin/rmcvsdir
-bin/rstconv
-bin/unitdiff
+@bin bin/bin2obj
+@bin bin/chmcmd
+@bin bin/chmls
+@bin bin/data2inc
+@bin bin/delp
+@bin bin/fd2pascal
+@bin bin/fpc
+@bin bin/fpclasschart
+@bin bin/fpcmake
+@bin bin/fpcmkcfg
+@bin bin/fpcres
+@bin bin/fpcsubst
+@bin bin/fpdoc
+@bin bin/fppkg
+@bin bin/fprcp
+@bin bin/h2pas
+@bin bin/h2paspp
+@bin bin/instantfpc
+@bin bin/makeskel
+@bin bin/mkarmins
+@bin bin/mkx86ins
+@bin bin/plex
+@bin bin/postw32
+@bin bin/ppdep
+@bin bin/ppudump
+@bin bin/ppufiles
+@bin bin/ppumove
+@bin bin/ptop
+@bin bin/pyacc
+@bin bin/rmcvsdir
+@bin bin/rstconv
+@bin bin/unitdiff
 lib/fpc/
 lib/fpc/${V}/
 lib/fpc/${V}/msg/
