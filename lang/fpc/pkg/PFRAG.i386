@@ -1,0 +1,8 @@
+@comment $OpenBSD$
+lib/fpc/${V}/ppc386
+lib/fpc/${V}/units/${CONFIG}/rtl/mmx.o
+lib/fpc/${V}/units/${CONFIG}/rtl/mmx.ppu
+lib/fpc/${V}/units/${CONFIG}/rtl/ports.o
+lib/fpc/${V}/units/${CONFIG}/rtl/ports.ppu
+lib/fpc/${V}/units/${CONFIG}/rtl/x86.o
+lib/fpc/${V}/units/${CONFIG}/rtl/x86.ppu
