@@ -60,6 +60,10 @@ pre-build:
 post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/fpc/lexyacc
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/fpc-${V}/fpc
+	chown ${BINOWN}:${BINGRP} ${PREFIX}/bin/* \
+		${PREFIX}/lib/fpc/${V}/${COMPNAME}
+	chmod ${BINMODE} ${PREFIX}/bin/* \
+		${PREFIX}/lib/fpc/${V}/${COMPNAME}
 	cd ${PREFIX}/bin && ln -s ../lib/fpc/${V}/${COMPNAME} .
 
 do-regress:
