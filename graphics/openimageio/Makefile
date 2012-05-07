@@ -12,7 +12,7 @@ PKGNAME =		openimageio-${V}
 
 SHARED_LIBS +=		OpenImageIO	0.0 # 1.0
 
-CATEGORIES =		graphics
+CATEGORIES =		graphics devel
 
 HOMEPAGE =		http://sites.google.com/site/openimageio/
 
@@ -35,11 +35,9 @@ MODULES =		devel/cmake \
 			lang/python \
 			x11/qt4
 LIB_DEPENDS =		devel/boost \
-			graphics/png \
 			graphics/openjpeg \
 			graphics/tiff \
 			graphics/libwebp \
-			graphics/jpeg \
 			graphics/glew \
 			graphics/ilmbase \
 			graphics/openexr
