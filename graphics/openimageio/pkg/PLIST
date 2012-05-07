@@ -1,5 +1,4 @@
 @comment $OpenBSD$
-%%SHARED%%
 @bin bin/iconvert
 @bin bin/idiff
 @bin bin/igrep
