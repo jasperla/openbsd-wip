@@ -64,7 +64,7 @@ include/OpenImageIO/ustring.h
 include/OpenImageIO/varyingref.h
 include/OpenImageIO/version.h
 @lib lib/libOpenImageIO.so.${LIBOpenImageIO_VERSION}
-lib/python${MODPY_VERSION}/site-packages/OpenImageIO.so.0.0
+lib/python${MODPY_VERSION}/site-packages/OpenImageIO.so.${LIBOpenImageIO_VERSION}
 share/doc/openimageio/
 share/doc/openimageio/CHANGES
 share/doc/openimageio/LICENSE
