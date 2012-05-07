@@ -4,9 +4,10 @@ SHARED_ONLY =		Yes
 
 COMMENT =		library for reading and writing images
 
-V =			1.0.3
-REV =			1c4cd2c
-DISTNAME =		OpenImageIO-oiio-Release-${V}-2-g${REV}
+MAJ =			1.0
+V =			${MAJ}.4
+REV =			513d0dd
+DISTNAME =		OpenImageIO-oiio-Release-${V}-0-g${REV}
 PKGNAME =		openimageio-${V}
 
 SHARED_LIBS +=		OpenImageIO	0.0 # 1.0
@@ -24,9 +25,9 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += GL GLEW GLU Half ICE Iex IlmImf IlmThread Imath QtGui
-WANTLIB += QtOpenGL SM X11 Xext boost_filesystem-mt boost_regex-mt
-WANTLIB += boost_system-mt boost_thread-mt c jpeg m openjpeg png
-WANTLIB += pthread stdc++ tiff webp z
+WANTLIB += QtOpenGL SM X11 Xext boost_filesystem-mt boost_python-mt
+WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c jpeg
+WANTLIB += m openjpeg png pthread ${MODPY_WANTLIB} stdc++ tiff webp z
 
 MASTER_SITES =		https://github.com/OpenImageIO/oiio/tarball/RB-${MAJ}/
 
