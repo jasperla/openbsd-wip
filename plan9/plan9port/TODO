@@ -3,5 +3,5 @@
 - test ALL the programs! (and @comment those not working)
 
 working: acme, sam, troff, rc, page, most smaller utilities, 9term
-disabled: mount, 9pfuse, fs/*, acid, db
+disabled: mount, 9pfuse, fs/*
 left to test: venti-related stuff, rio ...
