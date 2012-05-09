@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS =	amd64 i386 powerpc
 
 COMMENT =		Plan 9 from user space
 
-DISTNAME =		plan9port-20120220
+DISTNAME =		plan9port-20120508
 
 CATEGORIES =		plan9
 

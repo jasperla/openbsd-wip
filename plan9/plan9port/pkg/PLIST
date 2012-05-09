@@ -4455,6 +4455,8 @@ plan9/man/secindex
 plan9/ndb/
 plan9/ndb/local
 plan9/ndb/root-servers
+plan9/news/
+plan9/news/news
 plan9/plumb/
 plan9/plumb/basic
 plan9/plumb/fileaddr
