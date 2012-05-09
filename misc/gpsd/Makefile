@@ -9,6 +9,8 @@ DISTNAME=		gpsd-${VERSION}
 PKGNAME-main=		gpsd-${VERSION}
 PKGNAME-x11=		gpsd-x11-${VERSION}
 PKGNAME-php=		gpsd-php-${VERSION}
+REVISION-main=		0
+
 # explain shlib versions to scons
 SHARED_LIBS += 		gps	20.0 # 20.0
 SHARED_LIBS += 		gpsd	20.0 # 20.0
