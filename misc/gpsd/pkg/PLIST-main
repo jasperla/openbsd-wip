@@ -17,23 +17,15 @@ bin/gpsprof
 include/gps.h
 include/gpsd_config.h
 include/libgpsmm.h
-lib/libgps.so
-lib/libgps.so.20
-@bin lib/libgps.so.20.0.0
-lib/libgpsd.so
-lib/libgpsd.so.20
-@bin lib/libgpsd.so.20.0.0
 lib/pkgconfig/libgps.pc
 lib/pkgconfig/libgpsd.pc
 lib/python${MODPY_VERSION}/site-packages/gps/
 lib/python${MODPY_VERSION}/site-packages/gps-3.5.egg-info
 lib/python${MODPY_VERSION}/site-packages/gps/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gps/client.py
-lib/python${MODPY_VERSION}/site-packages/gps/clienthelpers.so
 lib/python${MODPY_VERSION}/site-packages/gps/fake.py
 lib/python${MODPY_VERSION}/site-packages/gps/gps.py
 lib/python${MODPY_VERSION}/site-packages/gps/misc.py
-lib/python${MODPY_VERSION}/site-packages/gps/packet.so
 @man man/man1/cgps.1
 @man man/man1/gegps.1
 @man man/man1/gps.1
