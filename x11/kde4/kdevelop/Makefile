@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	KDE development enviornment
+COMMENT =	K Desktop Environment, integrated development environment
 VERSION =	4.2.81
 DISTNAME =	kdevelop-${VERSION}
 HOMEPAGE =	http://www.kdevelop.org/

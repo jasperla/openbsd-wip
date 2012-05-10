@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	KDE 4 bindings for Ruby
+COMMENT =	K Desktop Environment, KDE4 bindings for Ruby
 DISTNAME =	korundum-${MODKDE_VERSION}
 REVISION =	0
 

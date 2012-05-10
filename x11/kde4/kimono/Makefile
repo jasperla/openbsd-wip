@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 CATEGORIES =	devel
-COMMENT =	KDE 4 bindings for .NET
+COMMENT =	K Desktop Environment, KDE4 bindings for .NET
 DISTNAME =	kimono-${MODKDE_VERSION}
 
 SHARED_LIBS =	kimono			0.0 # 2.0

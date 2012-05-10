@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 CATEGORIES =	devel
-COMMENT =	introspective wrappers around the KDE
+COMMENT =	K Desktop Environment, introspective wrappers around KDE
 DISTNAME =	smokekde-${MODKDE_VERSION}
 REVISION =	1
 

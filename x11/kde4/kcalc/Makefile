@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	KDE, versatile math calculator
+COMMENT =	K Desktop Environment, versatile math calculator
 DISTNAME =	kcalc-${MODKDE_VERSION}
 REVISION =	0
 

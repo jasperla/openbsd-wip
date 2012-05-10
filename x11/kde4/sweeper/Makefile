@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	KDE, sweeps unwanted traces from system
+COMMENT =	K Desktop Environment, sweeps unwanted traces from system
 DISTNAME =	sweeper-${MODKDE_VERSION}
 
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg

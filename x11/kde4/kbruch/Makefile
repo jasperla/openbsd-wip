@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	small program to practice calculating for KDE
+COMMENT =	K Desktop Environment, practice how to calculate fractions
 DISTNAME =	kbruch-${MODKDE_VERSION}
 
 WANTLIB =  c m pthread stdc++

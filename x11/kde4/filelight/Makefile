@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	KDE, graphical equivalent of du
+COMMENT =	K Desktop Environment, graphical equivalent of du
 DISTNAME =	filelight-${MODKDE_VERSION}
 REVISION =	0
 

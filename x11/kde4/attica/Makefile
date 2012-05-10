@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile,v 1.2 2010/07/10 16:57:22 espie Exp $
 
-COMMENT =	collaboration services library
+COMMENT =	K Desktop Environment, collaboration services library
 DISTNAME =	attica-0.3.0
 
 SHARED_LIBS =	attica		1.0

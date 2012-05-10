@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	geography learning tool for KDE
+COMMENT =	K Desktop Environment, geography learning tool
 DISTNAME =	kgeography-${MODKDE_VERSION}
 
 WANTLIB =  c m pthread stdc++
