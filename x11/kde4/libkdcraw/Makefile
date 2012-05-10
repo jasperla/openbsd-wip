@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	digital cameras RAW images manipulation library for KDE
+COMMENT =	K Desktop Environment, interface to LibRaw to decode RAW images
 DISTNAME =	libkdcraw-${MODKDE_VERSION}
 REVISION =	0
 

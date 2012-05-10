@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	drop-down KDE terminal emulator
+COMMENT =	K Desktop Environment, quake-style terminal emulator
 VERSION =	2.9.8
 DISTNAME =	yakuake-${VERSION}
 REVISION =	1

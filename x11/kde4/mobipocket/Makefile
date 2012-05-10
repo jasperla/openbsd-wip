@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	collection of plugins to handle mobipocket files for KDE
+COMMENT =	K Desktop Environment, plugins to handle mobipocket files
 DISTNAME =	kdegraphics-mobipocket-${MODKDE_VERSION}
 
 WANTLIB =  c m stdc++

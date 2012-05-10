@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	KPart module for WebKit
+COMMENT =	K Desktop Environment, web browser based on WebKit
 DISTNAME =	kwebkitpart-1.2
 REVISION =	0
 

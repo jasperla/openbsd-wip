@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	educational programming environment for KDE
+COMMENT =	K Desktop Environment, educational programming environment
 DISTNAME =	kturtle-${MODKDE_VERSION}
 
 WANTLIB =  c m pthread stdc++
