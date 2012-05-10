@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	hangman game for KDE
+COMMENT =	K Desktop Environment, hangman game
 DISTNAME =	khangman-${MODKDE_VERSION}
 
 WANTLIB =  c m pthread stdc++

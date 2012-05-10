@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 CATEGORIES =	devel
-COMMENT =	introspective wrappers around the Qt
+COMMENT =	K Desktop Environment, introspective wrappers around Qt
 DISTNAME =	smokeqt-${MODKDE_VERSION}
 
 WANTLIB = m stdc++

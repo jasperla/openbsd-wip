@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	simple application to select the color for KDE
+COMMENT =	K Desktop Environment, simple application to select color
 DISTNAME =	kcolorchooser-${MODKDE_VERSION}
 
 WANTLIB =  c m pthread stdc++

@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 CATEGORIES =	devel lang/ruby x11/kde4
-COMMENT =	Qt 4 bindings for Ruby
+COMMENT =	K Desktop Environment, Qt 4 bindings for Ruby
 DISTNAME =	qtruby-${MODKDE_VERSION}
 PKGNAME =	ruby-qt-${MODKDE_VERSION}
 REVISION =	0

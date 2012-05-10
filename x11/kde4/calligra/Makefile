@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	KDE office suite
+COMMENT =	K Desktop Environment, office suite
 VERSION =	2.3.87
 DISTNAME =	calligra-${VERSION}
 PKGNAME =	${DISTNAME:C/-/4-/1}

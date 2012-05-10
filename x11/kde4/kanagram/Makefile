@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	letter order game for KDE
+COMMENT =	K Desktop Environment, letter order game
 DISTNAME =	kanagram-${MODKDE_VERSION}
 
 WANTLIB =  c m pthread stdc++

@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	IDE creation toolkit for KDE
+COMMENT =	K Desktop Environment, IDE creation toolkit
 VERSION =	1.2.81
 DISTNAME =	kdevplatform-${VERSION}
 HOMEPAGE =	http://www.kdevelop.org/

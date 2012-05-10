@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	KDE strigi analyzer for graphics files
+COMMENT =	K Desktop Environment, strigi analyzer for graphics files
 DISTNAME =	kdegraphics-strigi-analyzer-${MODKDE_VERSION}
 
 WANTLIB =  c m stdc++

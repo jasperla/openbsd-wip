@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	KDE, provides screenreader + focus tracking
+COMMENT =	K Desktop Environment, screenreader and focus tracking
 DISTNAME =	kaccessible-${MODKDE_VERSION}
 REVISION =	0
 

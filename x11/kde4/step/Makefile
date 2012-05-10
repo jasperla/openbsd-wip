@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	interactive physics simulator for KDE
+COMMENT =	K Desktop Environment, interactive physics simulator
 DISTNAME =	step-${MODKDE_VERSION}
 
 WANTLIB =  c m pthread stdc++

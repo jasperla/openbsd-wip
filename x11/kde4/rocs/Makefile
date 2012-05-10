@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	Graph Theory IDE for KDE
+COMMENT =	K Desktop Environment, Graph Theory IDE
 DISTNAME =	rocs-${MODKDE_VERSION}
 
 SHARED_LIBS =	rocslib			0.0 # 4.7

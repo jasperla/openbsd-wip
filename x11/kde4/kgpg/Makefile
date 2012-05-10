@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	KDE, interface to GnuPG
+COMMENT =	K Desktop Environment, interface to GnuPG
 DISTNAME =	kgpg-${MODKDE_VERSION}
 
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg

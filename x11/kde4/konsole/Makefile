@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	KDE terminal emulator
+COMMENT =	K Desktop Environment, terminal emulator
 DISTNAME =	konsole-${MODKDE_VERSION}
 REVISION =	0
 
