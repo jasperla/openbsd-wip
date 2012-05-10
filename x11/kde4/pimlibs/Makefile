@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile,v 1.12 2011/07/06 21:25:23 ajacoutot Exp $
 
-COMMENT =	K Desktop Environment, pimlibs
+COMMENT =	K Desktop Environment, libraries for PIM
 DISTNAME =	kdepimlibs-${MODKDE_VERSION}
 REVISION =	0
 

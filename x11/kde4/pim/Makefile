@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile,v 1.8 2011/07/06 21:25:23 ajacoutot Exp $
 
-COMMENT =	K Desktop Environment, pim
+COMMENT =	K Desktop Environment, personal information management
 DISTNAME =	kdepim-${MODKDE_VERSION}
 HOMEPAGE =	http://pim.kde.org/
 

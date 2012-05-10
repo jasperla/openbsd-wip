@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	vocabulary trainer for KDE
+COMMENT =	K Desktop Environment, vocabulary trainer
 DISTNAME =	parley-${MODKDE_VERSION}
 
 WANTLIB =  c m pthread stdc++
