@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	torrent client for KDE 4
+COMMENT =	K Desktop Environment, torrent client
 V =		4.1.3
 DISTNAME =	ktorrent-${V}
 HOMEPAGE =	http://ktorrent.org/

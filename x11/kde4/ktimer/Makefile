@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	KDE, graphical timer based task execution utility
+COMMENT =	K Desktop Environment, graphical timer based task execution
 DISTNAME =	ktimer-${MODKDE_VERSION}
 
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg

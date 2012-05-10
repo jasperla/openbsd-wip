@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 IGNORE_SILENT =		Yes
-COMMENT =		KDE4 localization pack for ${KDE_L10N_LANG} language
+COMMENT =		K Desktop Environment, language localization pack
 DISTNAME =		kde-l10n-${KDE_L10N_LANG}-${MODKDE_VERSION}
 
 MODKDE4_RESOURCES =	Yes

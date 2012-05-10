@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	general purpose flash card program for KDE
+COMMENT =	K Desktop Environment, general purpose flash card program
 DISTNAME =	kwordquiz-${MODKDE_VERSION}
 
 WANTLIB =  c m pthread stdc++

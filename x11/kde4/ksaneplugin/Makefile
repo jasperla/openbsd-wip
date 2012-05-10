@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	scanning in KDE through libksane
+COMMENT =	K Desktop Environment, scanner interface through libksane
 DISTNAME =	ksaneplugin-${MODKDE_VERSION}
 
 WANTLIB =  c m stdc++
