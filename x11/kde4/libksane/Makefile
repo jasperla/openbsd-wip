@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	SANE (scanners) wrapper library for KDE
+COMMENT =	K Desktop Environment, SANE (scanner) wrapper library
 DISTNAME =	libksane-${MODKDE_VERSION}
 
 SHARED_LIBS =	ksane			0.0	# 0.2

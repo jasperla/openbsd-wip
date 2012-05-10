@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile,v 1.5 2010/08/31 08:22:05 jasper Exp $
 
-COMMENT =	image effects for kde
+COMMENT =	K Desktop Environment, image effects
 DISTNAME =	qimageblitz-0.0.6
 EXTRACT_SUFX =	.tar.bz2
 

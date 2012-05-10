@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	K Desktop Environment, SDK
+COMMENT =	K Desktop Environment, software development kit
 DISTNAME =	kdesdk-${MODKDE_VERSION}
 REVISION =	0
 

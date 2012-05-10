@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	Google contacts and calendar Akonadi resource
+COMMENT =	K Desktop Environment, Google contacts/calendar Akonadi resource
 DISTNAME =	akonadi-googledata-1.2.0
 REVISION =	0
 

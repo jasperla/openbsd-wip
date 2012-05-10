@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	KDE 4 bindings for Perl
+COMMENT =	K Desktop Environment, KDE4 bindings for Perl
 DISTNAME =	perlkde-${MODKDE_VERSION}
 PKGNAME =	p5-kde-${MODKDE_VERSION}
 REVISION =	0

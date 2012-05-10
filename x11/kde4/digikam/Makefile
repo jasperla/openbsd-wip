@@ -1,11 +1,11 @@
 # $OpenBSD$
 
-COMMENT-face =		KDE, Qt/C++ wrapper around LibFace
-COMMENT-geomap =	KDE, KIPI interface library for Marble
-COMMENT-kipi =		KDE, collection of image plugins for KDE
+COMMENT-face =		K Desktop Environment, Qt/C++ wrapper around LibFace
+COMMENT-geomap =	K Desktop Environment, KIPI interface library for Marble
+COMMENT-kipi =		K Desktop Environment, image plugins infrastructure
 COMMENT-main =		K Desktop Environment, photo management utility
-COMMENT-mediawiki =	KDE, KIPI interface library for MediaWiki
-COMMENT-vkontakte =	KDE, KIPI interface library for VKontakte.Ru
+COMMENT-mediawiki =	K Desktop Environment, KIPI interface for MediaWiki
+COMMENT-vkontakte =	K Desktop Environment, KIPI interface for VKontakte.Ru
 
 VERSION =		2.5.0
 DISTNAME =		digikam-${VERSION}
