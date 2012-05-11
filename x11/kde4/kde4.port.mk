@@ -1,13 +1,13 @@
 # $OpenBSD$
 
 BROKEN =		rafael,amit with guidance from vadim working on 4.8.3
-MODKDE4_VERSION =	4.8.0
+MODKDE4_VERSION =	4.8.3
 MODKDE_VERSION =	${MODKDE4_VERSION}
 
 # General options set by module
 SHARED_ONLY ?=		Yes
 ONLY_FOR_ARCHS ?=	${GCC4_ARCHS}
-EXTRACT_SUFX ?=		.tar.bz2
+EXTRACT_SUFX ?=		.tar.xz
 
 CATEGORIES +=		x11/kde4
 MODULES +=		devel/cmake
