@@ -1,17 +1,18 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, integrated development environment
-VERSION =	4.2.81
+VERSION =	4.3.1
 DISTNAME =	kdevelop-${VERSION}
 HOMEPAGE =	http://www.kdevelop.org/
 
+EXTRACT_SUFX ?=	.tar.bz2
 
 SHARED_LIBS =	kdev4cmakecommon	0.0
 SHARED_LIBS +=	kdev4cppduchain		0.0
 SHARED_LIBS +=	kdev4cppparser		0.0
 SHARED_LIBS +=	kdev4cpprpp		0.0
 
-MASTER_SITES =	${MASTER_SITE_KDE:=unstable/kdevelop/${VERSION}/src/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdevelop/${VERSION}/src/}
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui
