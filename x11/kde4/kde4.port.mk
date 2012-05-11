@@ -64,7 +64,7 @@ MODKDE4_USE +=		runtime
 PKGNAME ?= ${DISTNAME}
 
 # Force CMake which has merged KDE modules
-MODKDE4_BUILD_DEPENDS =	STEM->=2.8.6:devel/cmake
+MODKDE4_BUILD_DEPENDS =	STEM->=2.8.8:devel/cmake
 MODKDE4_LIB_DEPENDS =
 MODKDE4_RUN_DEPENDS =
 MODKDE4_WANTLIB =
