@@ -4,7 +4,7 @@ COMMENT =	K Desktop Environment, integrated development environment
 VERSION =	4.2.81
 DISTNAME =	kdevelop-${VERSION}
 HOMEPAGE =	http://www.kdevelop.org/
-REVISION =	0
+
 
 SHARED_LIBS =	kdev4cmakecommon	0.0
 SHARED_LIBS +=	kdev4cppduchain		0.0
