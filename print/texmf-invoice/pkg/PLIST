@@ -1,0 +1,10 @@
+@comment $OpenBSD$
+share/doc/latex/
+share/doc/latex/texmf-invoice/
+share/doc/latex/texmf-invoice/invoice.dvi
+share/doc/latex/texmf-invoice/invoice.pdf
+share/doc/latex/texmf-invoice/invoice.tex
+share/texmf/tex/latex/invoice/
+share/texmf/tex/latex/invoice/invoice.def
+share/texmf/tex/latex/invoice/invoice.sty
+@exec cd %D/share/texmf/tex/ && \ls -1LAR ./ >ls-R
