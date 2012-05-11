@@ -18,10 +18,10 @@ PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 PKGNAME-vkontakte =	libkvkontakte-1.0.0
 
-REVISION-kipi =		0
-REVISION-main =		1
-REVISION-mediawiki =	1
-REVISION-vkontakte =	0
+
+
+
+
 
 SHARED_LIBS =	kipiplugins		0.0
 SHARED_LIBS +=  digikamcore		0.0 # 2.0
