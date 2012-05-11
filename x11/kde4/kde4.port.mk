@@ -1,5 +1,6 @@
 # $OpenBSD$
 
+BROKEN =		rafael,amit with guidance from vadim working on 4.8.3
 MODKDE4_VERSION =	4.8.0
 MODKDE_VERSION =	${MODKDE4_VERSION}
 
