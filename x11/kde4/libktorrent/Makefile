@@ -3,7 +3,7 @@
 COMMENT =	K Desktop Environment, KTorrent engine
 DISTNAME =	libktorrent-1.1.3
 HOMEPAGE =	http://ktorrent.org/
-REVISION =	0
+
 
 SHARED_LIBS =	ktorrent	0.0
 
