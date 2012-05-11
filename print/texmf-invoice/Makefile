@@ -3,7 +3,7 @@
 COMMENT=	Package for Writing Invoices
 
 DISTNAME=	invoice
-PKGNAME=	texmf-${DISTNAME}-0.8
+PKGNAME=	texmf-${DISTNAME}-0.9
 EXTRACT_SUFX=	.zip
 CATEGORIES=	print
 
@@ -21,7 +21,7 @@ NO_REGRESS=		Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/texmf/tex/latex/invoice
-	${INSTALL_DATA} ${WRKSRC}/texput/* ${PREFIX}/share/texmf/tex/latex/invoice/
+	${INSTALL_DATA} ${WRKSRC}/texinput/* ${PREFIX}/share/texmf/tex/latex/invoice/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/latex/texmf-invoice
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/latex/texmf-invoice/
 
