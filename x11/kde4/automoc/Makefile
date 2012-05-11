@@ -3,6 +3,7 @@
 VERSION =	0.9.88
 COMMENT =	K Desktop Environment, frontend to moc
 DISTNAME =	automoc4-${VERSION}
+EXTRACT_SUFX ?=	.tar.bz2
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/automoc4/${VERSION}/}
 

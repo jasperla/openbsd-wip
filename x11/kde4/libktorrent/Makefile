@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, KTorrent engine
-DISTNAME =	libktorrent-1.1.3
+DISTNAME =	libktorrent-1.2.0
 HOMEPAGE =	http://ktorrent.org/
 
 

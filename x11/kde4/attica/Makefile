@@ -4,6 +4,7 @@ COMMENT =	K Desktop Environment, collaboration services library
 DISTNAME =	attica-0.3.0
 
 SHARED_LIBS =	attica		1.0
+EXTRACT_SUFX ?=	.tar.bz2
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/attica/}
 

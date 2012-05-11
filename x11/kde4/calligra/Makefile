@@ -1,10 +1,10 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, office suite
-VERSION =	2.3.87
+VERSION =	2.4.1
 DISTNAME =	calligra-${VERSION}
 PKGNAME =	${DISTNAME:C/-/4-/1}
-BROKEN =	wait for RC1
+EXTRACT_SUFX ?=	.tar.bz2
 
 SHARED_LIBS =	flake			0.0 # 8.0
 SHARED_LIBS +=	kokross			0.0 # 8.0
@@ -62,7 +62,7 @@ SHARED_LIBS +=  wordsprivate              0.0 # 9.0
 
 VMEM_WARNING =	Yes
 
-MASTER_SITES =	${MASTER_SITE_KDE:=unstable/${DISTNAME}/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/${DISTNAME}/}
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += X11 lib/qt4/QtDeclarative
