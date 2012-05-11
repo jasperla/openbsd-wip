@@ -84,7 +84,8 @@ WANTLIB += kmime crypto marblewidget ssl
 
 BUILD_DEPENDS =	devel/boost
 
-RUN_DEPENDS =	misc/shared-mime-info
+RUN_DEPENDS =	misc/shared-mime-info \
+		x11/gtk+2,-guic
 
 # Optional run-time dependency, does not affect build
 #RUN_DEPENDS +=	graphics/create-resources
