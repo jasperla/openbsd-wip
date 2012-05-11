@@ -36,7 +36,6 @@ LIB_DEPENDS =		devel/libextractor \
 			devel/libidn \
 			security/libgcrypt \
 			converters/libunistring
-#REGRESS_DEPENDS =	???
 
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes
@@ -47,8 +46,5 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--without-postgres \
 			--with-daemon-home-dir=/var/gnunet \
 			--with-sudo=/usr/bin/sudo
-#CONFIGURE_ENV =	???
-
-#NO_REGRESS =		Yes
 
 .include <bsd.port.mk>
