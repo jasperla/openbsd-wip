@@ -3,7 +3,7 @@
 BROKEN =	crashes and other bugs here and there
 COMMENT =	K Desktop Environment, mathematical applications
 DISTNAME =	cantor-${MODKDE_VERSION}
-REVISION =	0
+
 
 SHARED_LIBS =  cantorlibs                0.0 # 0.0
 

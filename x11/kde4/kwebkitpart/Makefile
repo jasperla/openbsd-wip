@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, web browser based on WebKit
 DISTNAME =	kwebkitpart-1.2
-REVISION =	0
+EXTRACT_SUFX ?=	.tar.bz2
 
 MASTER_SITES =	http://www.ohvost.ru/dnl/kde/src/
 

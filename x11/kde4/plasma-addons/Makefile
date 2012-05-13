@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, extra plasmoids
 DISTNAME =	kdeplasma-addons-${MODKDE_VERSION}
-REVISION =	0
+
 
 SHARED_LIBS =	lancelot-datamodels		0.0 # 1.7
 SHARED_LIBS +=	lancelot			0.0 # 1.9
