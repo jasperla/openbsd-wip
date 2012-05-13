@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, interface to LibRaw to decode RAW images
 DISTNAME =	libkdcraw-${MODKDE_VERSION}
-REVISION =	0
+
 
 SHARED_LIBS =	kdcraw			0.0	# 20.0
 
