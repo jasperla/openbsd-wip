@@ -1,0 +1,12 @@
+$OpenBSD$
+--- texinput/invoice.sty.orig	Sun May 13 11:18:21 2012
++++ texinput/invoice.sty	Sun May 13 11:18:35 2012
+@@ -149,7 +149,7 @@
+ \RequirePackage{ifthen}
+ \RequirePackage{longtable}
+ \RequirePackage{calc}
+-\input{fp}
++\RequirePackage{fp}
+ \input{invoice.def}
+ %
+ \newcommand{\InvoiceVersion}{0.9}%
