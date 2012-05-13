@@ -3,12 +3,12 @@
 @bin bin/gnunet-fs-gtk
 @bin bin/gnunet-peerinfo-gtk
 @bin bin/gnunet-setup
+@bin bin/gnunet-statistics-gtk
 include/gnunet-gtk/
 include/gnunet-gtk/gnunet_gtk.h
 lib/libgnunetgtk.a
 lib/libgnunetgtk.la
-@man man/man1/gnunet-gtk.1
-share/applications/
+@man man/man1/gnunet-fs-gtk.1
 share/applications/gnunet-fs-gtk.desktop
 share/applications/gnunet-setup.desktop
 share/gnunet-gtk/
@@ -254,43 +254,43 @@ share/gnunet-gtk/flags/zm.png
 share/gnunet-gtk/flags/zw.png
 share/gnunet-gtk/gnunet-setup-oxygen-cancel.png
 share/gnunet-gtk/gnunet-setup-oxygen-ok.png
-share/gnunet-gtk/gnunet_fs_gtk_about_dialog.glade
-share/gnunet-gtk/gnunet_fs_gtk_advertise_pseudonym_dialog.glade
+share/gnunet-gtk/gnunet_fs_gtk_about_window.glade
 share/gnunet-gtk/gnunet_fs_gtk_create_namespace_dialog.glade
 share/gnunet-gtk/gnunet_fs_gtk_download_as_dialog.glade
-share/gnunet-gtk/gnunet_fs_gtk_main_tab_new_frame.glade
+share/gnunet-gtk/gnunet_fs_gtk_edit_publication.glade
 share/gnunet-gtk/gnunet_fs_gtk_main_window.glade
 share/gnunet-gtk/gnunet_fs_gtk_open_directory_dialog.glade
 share/gnunet-gtk/gnunet_fs_gtk_open_url_dialog.glade
+share/gnunet-gtk/gnunet_fs_gtk_progress_dialog.glade
 share/gnunet-gtk/gnunet_fs_gtk_publish_dialog.glade
 share/gnunet-gtk/gnunet_fs_gtk_publish_directory_dialog.glade
-share/gnunet-gtk/gnunet_fs_gtk_publish_edit_dialog.glade
 share/gnunet-gtk/gnunet_fs_gtk_publish_file_dialog.glade
 share/gnunet-gtk/gnunet_fs_gtk_publish_tab.glade
-share/gnunet-gtk/gnunet_fs_gtk_search_dialog.glade
 share/gnunet-gtk/gnunet_fs_gtk_search_tab.glade
 share/gnunet-gtk/gnunet_fs_gtk_select_pseudonym_dialog.glade
 share/gnunet-gtk/gnunet_gtk_status_bar_menu.glade
 share/gnunet-gtk/gnunet_logo.png
-share/gnunet-gtk/gnunet_peerinfo_gtk_about_dialog.glade
+share/gnunet-gtk/gnunet_peerinfo_gtk_about_window.glade
 share/gnunet-gtk/gnunet_peerinfo_gtk_main_window.glade
 share/gnunet-gtk/gnunet_setup_gtk_main_window.glade
+share/gnunet-gtk/gnunet_statistics_gtk_about_window.glade
+share/gnunet-gtk/gnunet_statistics_gtk_main_window.glade
 share/icons/
 share/icons/hicolor/
 share/icons/hicolor/16x16/
 share/icons/hicolor/16x16/apps/
-share/icons/hicolor/16x16/apps/gnunet-gtk.png
+share/icons/hicolor/16x16/apps/gnunet-fs-gtk.png
 share/icons/hicolor/22x22/
 share/icons/hicolor/22x22/apps/
-share/icons/hicolor/22x22/apps/gnunet-gtk.png
+share/icons/hicolor/22x22/apps/gnunet-fs-gtk.png
 share/icons/hicolor/24x24/
 share/icons/hicolor/24x24/apps/
-share/icons/hicolor/24x24/apps/gnunet-gtk.png
+share/icons/hicolor/24x24/apps/gnunet-fs-gtk.png
 share/icons/hicolor/32x32/
 share/icons/hicolor/32x32/apps/
-share/icons/hicolor/32x32/apps/gnunet-gtk.png
+share/icons/hicolor/32x32/apps/gnunet-fs-gtk.png
 share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
-share/icons/hicolor/scalable/apps/gnunet-gtk.svg
+share/icons/hicolor/scalable/apps/gnunet-fs-gtk.svg
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

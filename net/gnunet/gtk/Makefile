@@ -14,8 +14,8 @@ WANTLIB += gmodule-2.0 gnunetcore gnunetdatastore gnunetfs gnunethello
 WANTLIB += gnunetnat gnunetpeerinfo gnunetstatistics gnunettransport
 WANTLIB += gnunetutil gobject-2.0 gpg-error gthread-2.0 gtk-3
 WANTLIB += ltdl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs stdc++ util xcb xcb-render
-WANTLIB += xcb-shm xml2 z
+WANTLIB += png pthread pthread-stubs stdc++ unistring util xcb
+WANTLIB += xcb-render xcb-shm xml2 z
 
 MODULES =		devel/gettext
 RUN_DEPENDS =		devel/desktop-file-utils
