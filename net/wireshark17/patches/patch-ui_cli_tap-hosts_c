@@ -2,9 +2,9 @@ $OpenBSD$
 
 correct order and add missing headers
 
---- ui/cli/tap-hosts.c.orig	Thu Jan 12 15:11:54 2012
-+++ ui/cli/tap-hosts.c	Thu Jan 12 18:11:21 2012
-@@ -45,20 +45,17 @@
+--- ui/cli/tap-hosts.c.orig	Sat May  5 21:58:49 2012
++++ ui/cli/tap-hosts.c	Tue May 15 16:33:35 2012
+@@ -41,20 +41,17 @@
  #include <epan/addr_resolv.h>
  
  /* Needed for addrinfo */
