@@ -1,10 +1,10 @@
 # $OpenBSD$
 
 COMMENT =		greenbone security assistant desktop
-DISTNAME =		gsd-1.2.1
+DISTNAME =		gsd-1.2.2
 PKGNAME =		openvas-${DISTNAME}
 
-MASTER_SITES =		${MASTER_SITES_OPENVAS:=1020/}
+MASTER_SITES =		${MASTER_SITES_OPENVAS:=1084/}
 
 WANTLIB +=		c m pthread stdc++ \
 			assuan gcrypt glib-2.0 gthread-2.0 gnutls \
