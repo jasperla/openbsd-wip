@@ -1,6 +1,6 @@
 $OpenBSD$
---- CMakeLists.txt.orig	Mon Mar 26 13:09:46 2012
-+++ CMakeLists.txt	Tue Mar 27 02:02:00 2012
+--- CMakeLists.txt.orig	Wed Apr 25 09:16:39 2012
++++ CMakeLists.txt	Tue May 15 11:36:37 2012
 @@ -256,7 +256,7 @@ if (NOT DATADIR)
    set (DATADIR "${CMAKE_INSTALL_PREFIX}/share")
  endif (NOT DATADIR)
@@ -10,7 +10,7 @@ $OpenBSD$
  set (OPENVAS_LOG_DIR   "${LOCALSTATEDIR}/log/openvas")
  set (GSAD_PID_DIR   "${LOCALSTATEDIR}/run")
  set (GSA_DATA_DIR "${DATADIR}/openvas/gsa")
-@@ -392,7 +392,7 @@ install (FILES  src/html/img/os_aix.png
+@@ -390,7 +390,7 @@ install (FILES  src/html/img/os_aix.png
           DESTINATION ${GSA_DATA_DIR}/img)
  
  install (FILES ${CMAKE_BINARY_DIR}/src/gsad_log.conf
