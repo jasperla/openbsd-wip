@@ -1,2 +1,0 @@
-@comment $OpenBSD$
-@lib lib/libcdb.so.${LIBcdb_VERSION}
