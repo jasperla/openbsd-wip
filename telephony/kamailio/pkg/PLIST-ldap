@@ -1,7 +1,0 @@
-@comment $OpenBSD$
-lib/kamailio/modules_k/h350.so
-lib/kamailio/modules_k/ldap.so
-lib/kamailio/modules_s/ldap.so
-share/doc/kamailio/modules_k/README.h350
-share/doc/kamailio/modules_k/README.ldap
-share/doc/kamailio/modules_s/README.ldap
