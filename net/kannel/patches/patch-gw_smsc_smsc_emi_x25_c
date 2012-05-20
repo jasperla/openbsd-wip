@@ -1,0 +1,220 @@
+$OpenBSD$
+--- gw/smsc/smsc_emi_x25.c.orig	Sun May 13 03:43:14 2012
++++ gw/smsc/smsc_emi_x25.c	Sun May 13 03:52:14 2012
+@@ -139,7 +139,7 @@ static int emi_open_connection(SMSCenter *smsc)
+ {
+     char tmpbuff[1024];
+ 
+-    sprintf(tmpbuff, "/dev/%s", smsc->emi_serialdevice);
++    snprintf(tmpbuff, sizeof(tmpbuff), "/dev/%s", smsc->emi_serialdevice);
+     smsc->emi_fd = at_dial(tmpbuff, smsc->emi_phonenum, "ATD", 30);
+ 
+     if (smsc->emi_fd <= 0)
+@@ -170,7 +170,7 @@ SMSCenter *emi_open(char *phonenum, char *serialdevice
+     if (emi_open_connection(smsc) < 0)
+         goto error;
+ 
+-    sprintf(smsc->name, "EMI:%s:%s", smsc->emi_phonenum,
++    snprintf(smsc->name, sizeof(smsc->name), "EMI:%s:%s", smsc->emi_phonenum,
+             smsc->emi_username);
+     return smsc;
+ 
+@@ -209,7 +209,7 @@ static int emi_fill_ucp60_login(char *buf, char *OAdC,
+         return -1;
+     }
+ 
+-    sprintf(buf, "%s/%c/%c/%c/%s//%s/////",
++    snprintf(buf, sizeof(buf), "%s/%c/%c/%c/%s//%s/////",
+ 	    OAdC,      /* OAdC: Address code originator */
+ 	    '6',       /* OTON: 6 = Abbreviated number (short number alias) */
+ 	    '5',       /* ONPI: 5 = Private (TCP/IP address/abbreviated number address) */
+@@ -246,15 +246,15 @@ static int emi_open_session(SMSCenter *smsc)
+     length += 2;   /* footer (fixed) */
+     length += 2;   /* slashes between header, body, footer */
+ 
+-    sprintf(message_header, "%02i/%05i/O/60",
++    snprintf(message_header, sizeof(message_header), "%02i/%05i/O/60",
+             (smsc->emi_current_msg_number++ % 100), length);
+     
+     /* FOOTER */
+ 
+-    sprintf(my_buffer, "%s/%s/", message_header, message_body);
++    snprintf(my_buffer, sizeof(my_buffer), "%s/%s/", message_header, message_body);
+     generate_checksum((unsigned char *)my_buffer, (unsigned char *)message_footer);
+ 
+-    sprintf(message_whole, "\x02%s/%s/%s\x03", message_header,
++    snprintf(message_whole, sizeof(message_whole), "\x02%s/%s/%s\x03", message_header,
+             message_body, message_footer);
+ 
+     debug("bb.sms.emi", 0, "final UCP60 msg: <%s>", message_whole);
+@@ -530,7 +530,7 @@ static int at_dial(char *device, char *phonenum, char 
+ 
+         /* Send AT dial request. */
+         howmanyread = 0;
+-        sprintf(tmpbuff, "%s%s\r\n", at_prefix, phonenum);
++        snprintf(tmpbuff, sizeof(tmpbuff), "%s%s\r\n", at_prefix, phonenum);
+         ret = write(fd, tmpbuff, strlen(tmpbuff));  /* errors... -mg */
+         memset(&tmpbuff, 0, sizeof(tmpbuff));
+ 
+@@ -837,9 +837,9 @@ static int memorybuffer_has_rawmessage(SMSCenter *smsc
+         strncpy(tmpbuff, stx, etx - stx + 1);
+         tmpbuff[etx - stx + 1] = '\0';
+         if (auth)
+-            sprintf(tmpbuff2, "/%c/%02i/", auth, type);
++            snprintf(tmpbuff2, sizeof(tmpbuff2), "/%c/%02i/", auth, type);
+         else
+-            sprintf(tmpbuff2, "/%02i/", type);
++            snprintf(tmpbuff2, sizeof(tmpbuff2), "/%02i/", type);
+ 
+         if (strstr(tmpbuff, tmpbuff2) != NULL) {
+             debug("bb.sms.emi", 0, "found message <%c/%02i>...msg <%s>", auth, type, tmpbuff);
+@@ -921,19 +921,19 @@ static int parse_rawmessage_to_msg(SMSCenter *smsc, Ms
+             break;
+ 
+         *rightslash = '\0';
+-        strcpy(emivars[tmpint], leftslash + 1);
++        strlcpy(emivars[tmpint], leftslash + 1, sizeof(emivars[tmpint]));
+         leftslash = rightslash;
+     }
+ 
+     if (strcmp(emivars[3], "01") == 0) {
+         if (strcmp(emivars[7], "2") == 0) {
+-            strcpy(isotext, emivars[8]);
++            strlcpy(isotext, emivars[8], sizeof(isotext));
+         } else if (strcmp(emivars[7], "3") == 0) {
+             parse_emi_to_iso88591(emivars[8], isotext, sizeof(isotext),
+                                   smsc->alt_charset);
+         } else {
+             error(0, "Unknown 01-type EMI SMS (%s)", emivars[7]);
+-            strcpy(isotext, "");
++            strlcpy(isotext, "", sizeof(isotext));
+         }
+     } else if (strcmp(emivars[3], "51") == 0) {
+         parse_emi_to_iso88591(emivars[24], isotext, sizeof(isotext),
+@@ -943,7 +943,7 @@ static int parse_rawmessage_to_msg(SMSCenter *smsc, Ms
+                               smsc->alt_charset);
+     } else {
+         error(0, "HEY WE SHOULD NOT BE HERE!! Type = %s", emivars[3]);
+-        strcpy(isotext, "");
++        strlcpy(isotext, "", sizeof(isotext));
+     }
+ 
+     *msg = msg_create(sms);
+@@ -998,29 +998,29 @@ static int acknowledge_from_rawmessage(SMSCenter *smsc
+             break;
+ 
+         *rightslash = '\0';
+-        strcpy(emivars[tmpint], leftslash + 1);
++        strlcpy(emivars[tmpint], leftslash + 1, sizeof(emivars[tmpint]));
+         leftslash = rightslash;
+     }
+ 
+     /* BODY */
+-    sprintf(isotext, "A//%s:%s", emivars[4], emivars[18]);
+-    sprintf(isotext, "A//%s:", emivars[5]);
++    snprintf(isotext, sizeof(isotext), "A//%s:%s", emivars[4], emivars[18]);
++    snprintf(isotext, sizeof(isotext), "A//%s:", emivars[5]);
+     is_backup = 0;
+ 
+     /* HEADER */
+ 
+     debug("bb.sms.emi", 0, "acknowledge: type = '%s'", emivars[3]);
+ 
+-    sprintf(emitext, "%s/%05i/%s/%s", emivars[0], (int) strlen(isotext) + 17,
++    snprintf(emitext, sizeof(emitext), "%s/%05i/%s/%s", emivars[0], (int) strlen(isotext) + 17,
+             "R", emivars[3]);
+ 
+     smsc->emi_current_msg_number = atoi(emivars[0]) + 1;
+ 
+     /* FOOTER */
+-    sprintf(timestamp, "%s/%s/", emitext, isotext);
++    snprintf(timestamp, sizeof(timestamp), "%s/%s/", emitext, isotext);
+     generate_checksum((unsigned char *)timestamp, (unsigned char *)receiver);
+ 
+-    sprintf(sender, "%c%s/%s/%s%c", 0x02, emitext, isotext, receiver, 0x03);
++    snprintf(sender, sizeof(sender), "%c%s/%s/%s%c", 0x02, emitext, isotext, receiver, 0x03);
+     put_data(smsc, sender, strlen(sender), is_backup);
+ 
+     return msgnbr;
+@@ -1082,24 +1082,24 @@ static int parse_msg_to_rawmessage(SMSCenter *smsc, Ms
+                                            octstr_len(msg->sms.msgdata),
+                                            smsc->alt_charset);
+ 
+-        strcpy(snumbits, "");
++        strlcpy(snumbits, "", sizeof(snumbits));
+         mt = '3';
+-        strcpy(mcl, "");
++        strlcpy(mcl, "", sizeof(mcl));
+     } else {
+         octstr_get_many_chars(msgtext, msg->sms.msgdata, 0, octstr_len(msg->sms.msgdata));
+ 
+         parse_binary_to_emi(msgtext, my_buffer2, octstr_len(msg->sms.msgdata));
+ 
+-        sprintf(snumbits, "%04ld", octstr_len(msg->sms.msgdata)*8);
++        snprintf(snumbits, sizeof(snumbits), "%04ld", octstr_len(msg->sms.msgdata)*8);
+         mt = '4';
+-        strcpy(mcl, "1");
++        strlcpy(mcl, "1", sizeof(mcl));
+     }
+ 
+     /* XXX Where is DCS ? Is it in XSER like in emi2 ? 
+      * Please someone encode it with fields_to_dcs 
+      */
+ 
+-    sprintf(message_body,
++    snprintf(message_body, sizeof(message_body),
+             "%s/%s/%s/%s/%s//%s////////////%c/%s/%s////%s//////%s//",
+             octstr_get_cstr(msg->sms.receiver),
+             msg->sms.sender ? octstr_get_cstr(msg->sms.sender) : "",
+@@ -1120,20 +1120,20 @@ static int parse_msg_to_rawmessage(SMSCenter *smsc, Ms
+     length += 2;  /* footer (fixed) */
+     length += 2;  /* slashes between header, body, footer */
+ 
+-    sprintf(message_header, "%02i/%05i/%s/%s", (smsc->emi_current_msg_number++ % 100), length, "O", "51");
++    snprintf(message_header, sizeof(message_header), "%02i/%05i/%s/%s", (smsc->emi_current_msg_number++ % 100), length, "O", "51");
+ 
+     /* FOOTER */
+ 
+-    sprintf(my_buffer, "%s/%s/", message_header, message_body);
++    snprintf(my_buffer, sizeof(my_buffer), "%s/%s/", message_header, message_body);
+     generate_checksum((unsigned char *)my_buffer, (unsigned char *)message_footer);
+ 
+-    sprintf(message_whole, "%c%s/%s/%s%c", 0x02, message_header, message_body, message_footer, 0x03);
++    snprintf(message_whole, sizeof(message_whole), "%c%s/%s/%s%c", 0x02, message_header, message_body, message_footer, 0x03);
+ 
+     strncpy(rawmessage, message_whole, rawmessage_length);
+ 
+     if (smsc->type == SMSC_TYPE_EMI_X25) {
+         /* IC3S braindead EMI stack chokes on this... must fix it at the next time... */
+-        strcat(rawmessage, "\r");
++        strlcat(rawmessage, "\r", sizeof(rawmessage));
+     }
+     debug("bb.sms.emi", 0, "emi %d message %s",
+           smsc->emi_current_msg_number, rawmessage);
+@@ -1181,7 +1181,7 @@ static int parse_iso88591_to_emi(char *from, char *to,
+ 
+     for (ptr = from; length > 0; ptr++, length--) {
+         tmpchar = char_iso_to_sms(*ptr, alt_charset);
+-        sprintf(buf, "%02X", tmpchar);
++        snprintf(buf, sizeof(buf), "%02X", tmpchar);
+         strncat(to, buf, 2);
+     }
+     return 0;
+@@ -1201,7 +1201,7 @@ static int parse_binary_to_emi(char *from, char *to, i
+     *to = '\0';
+ 
+     for (ptr = from; length > 0; ptr++, length--) {
+-        sprintf(buf, "%02X", (unsigned char)*ptr);
++        snprintf(buf, sizeof(buf), "%02X", (unsigned char)*ptr);
+         strncat(to, buf, 2);
+     }
+ 
+@@ -1225,7 +1225,7 @@ static void generate_checksum(const unsigned char *buf
+             j -= 256;
+     }
+ 
+-    sprintf((char *)out, "%02X", j);
++    snprintf((char *)out, sizeof((char *)out), "%02X", j);
+ }
+ 
+ 

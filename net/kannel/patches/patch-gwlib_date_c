@@ -1,0 +1,12 @@
+$OpenBSD$
+--- gwlib/date.c.orig	Sun May 13 11:18:03 2012
++++ gwlib/date.c	Sun May 13 11:18:23 2012
+@@ -108,7 +108,7 @@ Octstr *date_format_http(unsigned long unixtime)
+         return NULL;
+     }
+ 
+-    sprintf(buffer, "%s, %02d %s %04d %02d:%02d:%02d GMT",
++    snprintf(buffer, sizeof(buffer), "%s, %02d %s %04d %02d:%02d:%02d GMT",
+             wkday[tm.tm_wday], tm.tm_mday, monthname[tm.tm_mon],
+             tm.tm_year + 1900, tm.tm_hour, tm.tm_min, tm.tm_sec);
+ 

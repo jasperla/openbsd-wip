@@ -1,0 +1,417 @@
+$OpenBSD$
+--- wap/wtls_statesupport.c.orig	Sun May 13 03:28:21 2012
++++ wap/wtls_statesupport.c	Sun May 13 03:37:21 2012
+@@ -328,63 +328,63 @@ void keyName(char *name, int key)
+ {
+    switch (key) {
+    case null_k:
+-      strcpy(name, "null_k");
++      strlcpy(name, "null_k", sizeof(name));
+       break;
+ 
+    case shared_secret:
+-      strcpy(name, "shared_secret");
++      strlcpy(name, "shared_secret", sizeof(name));
+       break;
+ 
+    case dh_anon:
+-      strcpy(name, "dh_anon");
++      strlcpy(name, "dh_anon", sizeof(name));
+       break;
+ 
+    case dh_anon_512:
+-      strcpy(name, "dh_anon_512");
++      strlcpy(name, "dh_anon_512", sizeof(name));
+       break;
+ 
+    case dh_anon_768:
+-      strcpy(name, "dh_anon_768");
++      strlcpy(name, "dh_anon_768", sizeof(name));
+       break;
+ 
+    case rsa_anon:
+-      strcpy(name, "rsa_anon");
++      strlcpy(name, "rsa_anon", sizeof(name));
+       break;
+ 
+    case rsa_anon_512:
+-      strcpy(name, "rsa_anon_512");
++      strlcpy(name, "rsa_anon_512", sizeof(name));
+       break;
+ 
+    case rsa_anon_768:
+-      strcpy(name, "rsa_anon_768");
++      strlcpy(name, "rsa_anon_768", sizeof(name));
+       break;
+ 
+    case rsa:
+-      strcpy(name, "rsa");
++      strlcpy(name, "rsa", sizeof(name));
+       break;
+ 
+    case rsa_512:
+-      strcpy(name, "rsa_512");
++      strlcpy(name, "rsa_512", sizeof(name));
+       break;
+ 
+    case rsa_768:
+-      strcpy(name, "rsa_768");
++      strlcpy(name, "rsa_768", sizeof(name));
+       break;
+ 
+    case ecdh_anon:
+-      strcpy(name, "ecdh_anon");
++      strlcpy(name, "ecdh_anon", sizeof(name));
+       break;
+ 
+    case ecdh_anon_113:
+-      strcpy(name, "ecdh_anon_113");
++      strlcpy(name, "ecdh_anon_113", sizeof(name));
+       break;
+ 
+    case ecdh_anon_131:
+-      strcpy(name, "ecdh_anon_131");
++      strlcpy(name, "ecdh_anon_131", sizeof(name));
+       break;
+ 
+    case ecdh_ecdsa:
+-      strcpy(name, "ecdh_ecdsa");
++      strlcpy(name, "ecdh_ecdsa", sizeof(name));
+       break;
+    }
+ }
+@@ -393,43 +393,43 @@ void cipherName(char *name, int cipher)
+ {
+    switch (cipher) {
+    case NULL_bulk:
+-      strcpy(name, "NULL_bulk");
++      strlcpy(name, "NULL_bulk", sizeof(name));
+       break;
+ 
+    case RC5_CBC_40:
+-      strcpy(name, "RC5_CBC_40");
++      strlcpy(name, "RC5_CBC_40", sizeof(name));
+       break;
+ 
+    case RC5_CBC_56:
+-      strcpy(name, "RC5_CBC_56");
++      strlcpy(name, "RC5_CBC_56", sizeof(name));
+       break;
+ 
+    case RC5_CBC:
+-      strcpy(name, "RC5_CBC");
++      strlcpy(name, "RC5_CBC", sizeof(name));
+       break;
+ 
+    case DES_CBC_40:
+-      strcpy(name, "DES_CBC_40");
++      strlcpy(name, "DES_CBC_40", sizeof(name));
+       break;
+ 
+    case DES_CBC:
+-      strcpy(name, "DES_CBC");
++      strlcpy(name, "DES_CBC", sizeof(name));
+       break;
+ 
+    case TRIPLE_DES_CBC_EDE:
+-      strcpy(name, "TRIPLE_DES_CBC_EDE");
++      strlcpy(name, "TRIPLE_DES_CBC_EDE", sizeof(name));
+       break;
+ 
+    case IDEA_CBC_40:
+-      strcpy(name, "IDEA_CBC_40");
++      strlcpy(name, "IDEA_CBC_40", sizeof(name));
+       break;
+ 
+    case IDEA_CBC_56:
+-      strcpy(name, "IDEA_CBC_56");
++      strlcpy(name, "IDEA_CBC_56", sizeof(name));
+       break;
+ 
+    case IDEA_CBC:
+-      strcpy(name, "IDEA_CBC");
++      strlcpy(name, "IDEA_CBC", sizeof(name));
+       break;
+    }
+ }
+@@ -438,35 +438,35 @@ void macName(char *name, int mac)
+ {
+    switch (mac) {
+    case SHA_0:
+-      strcpy(name, "SHA_0");
++      strlcpy(name, "SHA_0", sizeof(name));
+       break;
+ 
+    case SHA_40:
+-      strcpy(name, "SHA_40");
++      strlcpy(name, "SHA_40", sizeof(name));
+       break;
+ 
+    case SHA_80:
+-      strcpy(name, "SHA_80");
++      strlcpy(name, "SHA_80", sizeof(name));
+       break;
+ 
+    case SHA_NOLIMIT:
+-      strcpy(name, "SHA_NOLIMIT");
++      strlcpy(name, "SHA_NOLIMIT", sizeof(name));
+       break;
+ 
+    case SHA_XOR_40:
+-      strcpy(name, "SHA_XOR_40");
++      strlcpy(name, "SHA_XOR_40", sizeof(name));
+       break;
+ 
+    case MD5_40:
+-      strcpy(name, "MD5_80");
++      strlcpy(name, "MD5_80", sizeof(name));
+       break;
+ 
+    case MD5_80:
+-      strcpy(name, "MD5_80");
++      strlcpy(name, "MD5_80", sizeof(name));
+       break;
+ 
+    case MD5_NOLIMIT:
+-      strcpy(name, "MD5_NOLIMIT");
++      strlcpy(name, "MD5_NOLIMIT", sizeof(name));
+       break;
+    }
+ }
+@@ -475,127 +475,127 @@ void alertName(char *name, int alert)
+ {
+    switch (alert) {
+    case connection_close_notify:
+-      strcpy(name, "connection_close_notify");
++      strlcpy(name, "connection_close_notify", sizeof(name));
+       break;
+ 
+    case session_close_notify:
+-      strcpy(name, "session_close_notify");
++      strlcpy(name, "session_close_notify", sizeof(name));
+       break;
+ 
+    case no_connection:
+-      strcpy(name, "no_connection");
++      strlcpy(name, "no_connection", sizeof(name));
+       break;
+ 
+    case unexpected_message:
+-      strcpy(name, "unexpected_message");
++      strlcpy(name, "unexpected_message", sizeof(name));
+       break;
+ 
+    case time_required:
+-      strcpy(name, "time_required");
++      strlcpy(name, "time_required", sizeof(name));
+       break;
+ 
+    case bad_record_mac:
+-      strcpy(name, "bad_record_mac");
++      strlcpy(name, "bad_record_mac", sizeof(name));
+       break;
+ 
+    case decryption_failed:
+-      strcpy(name, "decryption_failed");
++      strlcpy(name, "decryption_failed", sizeof(name));
+       break;
+ 
+    case record_overflow:
+-      strcpy(name, "record_overflow");
++      strlcpy(name, "record_overflow", sizeof(name));
+       break;
+ 
+    case decompression_failure:
+-      strcpy(name, "decompression_failure");
++      strlcpy(name, "decompression_failure", sizeof(name));
+       break;
+ 
+    case handshake_failure:
+-      strcpy(name, "handshake_failure");
++      strlcpy(name, "handshake_failure", sizeof(name));
+       break;
+ 
+    case bad_certificate:
+-      strcpy(name, "unsupported_certificate");
++      strlcpy(name, "unsupported_certificate", sizeof(name));
+       break;
+ 
+    case certificate_revoked:
+-      strcpy(name, "certificate_revoked");
++      strlcpy(name, "certificate_revoked", sizeof(name));
+       break;
+ 
+    case certificate_expired:
+-      strcpy(name, "certificate_expired");
++      strlcpy(name, "certificate_expired", sizeof(name));
+       break;
+ 
+    case certificate_unknown:
+-      strcpy(name, "certificate_unknown");
++      strlcpy(name, "certificate_unknown", sizeof(name));
+       break;
+ 
+    case illegal_parameter:
+-      strcpy(name, "illegal_parameter");
++      strlcpy(name, "illegal_parameter", sizeof(name));
+       break;
+ 
+    case unknown_ca:
+-      strcpy(name, "unknown_ca");
++      strlcpy(name, "unknown_ca", sizeof(name));
+       break;
+ 
+    case access_denied:
+-      strcpy(name, "access_denied");
++      strlcpy(name, "access_denied", sizeof(name));
+       break;
+ 
+    case decode_error:
+-      strcpy(name, "decode_error");
++      strlcpy(name, "decode_error", sizeof(name));
+       break;
+ 
+    case decrypt_error:
+-      strcpy(name, "decrypt_error");
++      strlcpy(name, "decrypt_error", sizeof(name));
+       break;
+ 
+    case unknown_key_id:
+-      strcpy(name, "unknown_key_id");
++      strlcpy(name, "unknown_key_id", sizeof(name));
+       break;
+ 
+    case disabled_key_id:
+-      strcpy(name, "disabled_key_id");
++      strlcpy(name, "disabled_key_id", sizeof(name));
+       break;
+ 
+    case key_exchange_disabled:
+-      strcpy(name, "key_exchange_disabled");
++      strlcpy(name, "key_exchange_disabled", sizeof(name));
+       break;
+ 
+    case session_not_ready:
+-      strcpy(name, "session_not_ready");
++      strlcpy(name, "session_not_ready", sizeof(name));
+       break;
+ 
+    case unknown_parameter_index:
+-      strcpy(name, "unknown_parameter_index");
++      strlcpy(name, "unknown_parameter_index", sizeof(name));
+       break;
+ 
+    case duplicate_finished_received:
+-      strcpy(name, "duplicate_finished_received");
++      strlcpy(name, "duplicate_finished_received", sizeof(name));
+       break;
+ 
+    case export_restriction:
+-      strcpy(name, "export_restriction");
++      strlcpy(name, "export_restriction", sizeof(name));
+       break;
+ 
+    case protocol_version:
+-      strcpy(name, "protocol_version");
++      strlcpy(name, "protocol_version", sizeof(name));
+       break;
+ 
+    case insufficient_security:
+-      strcpy(name, "insufficient_security");
++      strlcpy(name, "insufficient_security", sizeof(name));
+       break;
+ 
+    case internal_error:
+-      strcpy(name, "internal_error");
++      strlcpy(name, "internal_error", sizeof(name));
+       break;
+ 
+    case user_canceled:
+-      strcpy(name, "user_canceled");
++      strlcpy(name, "user_canceled", sizeof(name));
+       break;
+ 
+    case no_renegotiation:
+-      strcpy(name, "no_renegotiation");
++      strlcpy(name, "no_renegotiation", sizeof(name));
+       break;
+    }
+ }
+@@ -604,19 +604,19 @@ void pduName(char *name, int pdu)
+ {
+    switch (pdu) {
+    case ChangeCipher_PDU:
+-      strcpy(name, "Change Cipher");
++      strlcpy(name, "Change Cipher", sizeof(name));
+       break;
+ 
+    case Alert_PDU:
+-      strcpy(name, "Alert");
++      strlcpy(name, "Alert", sizeof(name));
+       break;
+ 
+    case Handshake_PDU:
+-      strcpy(name, "Handshake");
++      strlcpy(name, "Handshake", sizeof(name));
+       break;
+ 
+    case Application_PDU:
+-      strcpy(name, "Application");
++      strlcpy(name, "Application", sizeof(name));
+       break;
+    }
+ }
+@@ -625,43 +625,43 @@ void hsName(char *name, int handshake)
+ {
+    switch (handshake) {
+    case hello_request:
+-      strcpy(name, "Hello Request");
++      strlcpy(name, "Hello Request", sizeof(name));
+       break;
+ 
+    case client_hello:
+-      strcpy(name, "Client Hello");
++      strlcpy(name, "Client Hello", sizeof(name));
+       break;
+ 
+    case server_hello:
+-      strcpy(name, "Server Hello");
++      strlcpy(name, "Server Hello", sizeof(name));
+       break;
+ 
+    case certificate:
+-      strcpy(name, "Certificate");
++      strlcpy(name, "Certificate", sizeof(name));
+       break;
+ 
+    case server_key_exchange:
+-      strcpy(name, "Server Key Exchange");
++      strlcpy(name, "Server Key Exchange", sizeof(name));
+       break;
+ 
+    case certificate_request:
+-      strcpy(name, "Certificate Request");
++      strlcpy(name, "Certificate Request", sizeof(name));
+       break;
+ 
+    case server_hello_done:
+-      strcpy(name, "Server Hello Done");
++      strlcpy(name, "Server Hello Done", sizeof(name));
+       break;
+ 
+    case certificate_verify:
+-      strcpy(name, "Certificate Vaerify");
++      strlcpy(name, "Certificate Vaerify", sizeof(name));
+       break;
+ 
+    case client_key_exchange:
+-      strcpy(name, "Client Key Exchange");
++      strlcpy(name, "Client Key Exchange", sizeof(name));
+       break;
+ 
+    case finished:
+-      strcpy(name, "Finished");
++      strlcpy(name, "Finished", sizeof(name));
+       break;
+    }
+ }

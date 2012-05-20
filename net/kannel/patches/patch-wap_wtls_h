@@ -1,0 +1,12 @@
+$OpenBSD$
+--- wap/wtls.h.orig	Sat May 12 16:39:34 2012
++++ wap/wtls.h	Sat May 12 16:39:51 2012
+@@ -95,7 +95,7 @@ struct WTLSMachine {
+ #define ADDRTUPLE(name) WAPAddrTuple *name;
+ #define INTEGER(name) int name;
+ #define OCTSTR(name) Octstr *name;
+-#define MACHINE(field) field
++#define MACHINEWSP(field) field
+ #define PDULIST(name) List *name;
+ #include "wtls_machine-decl.h"
+ };

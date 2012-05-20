@@ -1,0 +1,21 @@
+$OpenBSD$
+--- gw/wap_push_ppg.h.orig	Sat May 12 16:52:10 2012
++++ gw/wap_push_ppg.h	Sat May 12 16:52:47 2012
+@@ -178,7 +178,7 @@ struct PPGSessionMachine {
+     #define INTEGER(name) long name;
+     #define PUSHMACHINES(name) List *name;
+     #define CAPABILITIES(name) List *name;
+-    #define MACHINE(fields) fields
++    #define MACHINEWSP(fields) fields
+     #include "wap_ppg_session_machine.def"
+ };
+ 
+@@ -189,7 +189,7 @@ struct PPGPushMachine {
+     #define ADDRTUPLE(name) WAPAddrTuple *name;
+     #define HTTPHEADER(name) List *name;
+     #define CAPABILITIES(name) List *name;
+-    #define MACHINE(fields) fields
++    #define MACHINEWSP(fields) fields
+     #include "wap_ppg_push_machine.def"
+ };
+ 

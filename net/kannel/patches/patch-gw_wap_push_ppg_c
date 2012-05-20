@@ -1,0 +1,39 @@
+$OpenBSD$
+--- gw/wap_push_ppg.c.orig	Sat May 12 16:56:22 2012
++++ gw/wap_push_ppg.c	Sat May 12 16:58:31 2012
+@@ -1320,7 +1320,7 @@ static PPGSessionMachine *session_machine_create(WAPAd
+     #define ADDRTUPLE(name) m->name = NULL;
+     #define PUSHMACHINES(name) m->name = gwlist_create();
+     #define CAPABILITIES(name) m->name = NULL;
+-    #define MACHINE(fields) fields
++    #define MACHINEWSP(fields) fields
+     #include "wap_ppg_session_machine.def"
+ 
+     m->pi_client_address = octstr_duplicate(e->u.Push_Message.address_value);
+@@ -1352,7 +1352,7 @@ static void session_machine_destroy(void *p)
+     #define INTEGER(name) sm->name = 0;
+     #define PUSHMACHINES(name) push_machines_list_destroy(sm->name);
+     #define CAPABILITIES(name) wsp_cap_destroy_list(sm->name);
+-    #define MACHINE(fields) fields
++    #define MACHINEWSP(fields) fields
+     #include "wap_ppg_session_machine.def"
+     gw_free(sm);
+ }
+@@ -1373,7 +1373,7 @@ static PPGPushMachine *push_machine_create(WAPEvent *e
+     #define ADDRTUPLE(name) m->name = NULL;
+     #define CAPABILITIES m->name = NULL;
+     #define HTTPHEADER(name) m->name = NULL;
+-    #define MACHINE(fields) fields
++    #define MACHINEWSP(fields) fields
+     #include "wap_ppg_push_machine.def"
+ 
+     m->addr_tuple = wap_addr_tuple_duplicate(tuple);
+@@ -1433,7 +1433,7 @@ static void push_machine_destroy(void *p)
+     #define ADDRTUPLE(name) wap_addr_tuple_destroy(pm->name);
+     #define CAPABILITIES(name) wap_cap_destroy_list(pm->name);
+     #define HTTPHEADER(name) http_destroy_headers(pm->name);
+-    #define MACHINE(fields) fields
++    #define MACHINEWSP(fields) fields
+     #include "wap_ppg_push_machine.def"
+ 
+     gw_free(p);

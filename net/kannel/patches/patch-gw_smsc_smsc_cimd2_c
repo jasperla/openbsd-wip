@@ -1,0 +1,48 @@
+$OpenBSD$
+--- gw/smsc/smsc_cimd2.c.orig	Sun May 13 11:00:33 2012
++++ gw/smsc/smsc_cimd2.c	Sun May 13 11:01:46 2012
+@@ -1182,7 +1182,7 @@ static struct packet *packet_create(int operation, int
+     packet = gw_malloc(sizeof(*packet));
+     packet->operation = operation;
+     packet->seq = seq;
+-    sprintf(minpacket, STX_str "%02d:%03d" TAB_str ETX_str, operation, seq);
++    snprintf(minpacket, sizeof(minpacket), STX_str "%02d:%03d" TAB_str ETX_str, operation, seq);
+     packet->data = octstr_create(minpacket);
+ 
+     return packet;
+@@ -1217,7 +1217,7 @@ static void packet_add_parm(struct packet *packet, int
+      * The new parameter will come with a new starting TAB. */
+     position = octstr_len(packet->data) - 2;
+ 
+-    sprintf(parmh, TAB_str "%03d:", parmno);
++    snprintf(parmh, sizeof(parmh), TAB_str "%03d:", parmno);
+     octstr_insert_data(packet->data, position, parmh, strlen(parmh));
+     octstr_insert(packet->data, value, position + strlen(parmh));
+     if (copied)
+@@ -1266,7 +1266,7 @@ static void packet_add_int_parm(struct packet *packet,
+ 
+     gw_assert(parm_in_range(parmno, value));
+ 
+-    sprintf(buf, "%ld", value);
++    snprintf(buf, sizeof(buf), "%ld", value);
+     valuestr = octstr_create(buf);
+     packet_add_parm(packet, P_INT, parmno, valuestr, conn);
+     octstr_destroy(valuestr);
+@@ -1296,7 +1296,7 @@ static void packet_set_checksum(struct packet *packet)
+         checksum &= 0xff;
+     }
+ 
+-    sprintf(buf, "%02X", checksum);
++    snprintf(buf, sizeof(buf), "%02X", checksum);
+     octstr_insert_data(data, len - 1, buf, 2);
+ }
+ 
+@@ -1308,7 +1308,7 @@ static void packet_set_sequence(struct packet *packet,
+     gw_assert(seq >= 0);
+     gw_assert(seq < 256);
+ 
+-    sprintf(buf, "%03d", seq);
++    snprintf(buf, sizeof(buf), "%03d", seq);
+ 
+     /* Start at 4 to skip the <STX> ZZ: part of the header. */
+     octstr_set_char(packet->data, 4, buf[0]);

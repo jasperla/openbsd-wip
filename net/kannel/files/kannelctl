@@ -1,0 +1,112 @@
+#!/bin/sh
+
+CONF="/etc/kannel/kannel.conf"
+RUN="/usr/local/sbin/run_kannel_box"
+BEARERBOX="/usr/local/sbin/bearerbox"
+SMSBOX="/usr/local/sbin/smsbox"
+WAPBOX="/usr/local/sbin/wapbox"
+PID_DIR="/var/run/kannel"
+USER="_kannel"
+
+if [ -f "/usr/local/share/kannel/enabled_kannel_box" ]; then
+    . "/usr/local/share/kannel/enabled_kannel_box"
+fi
+
+if [[ ${SMSBOX_ENABLED} != "yes" && ${WAPBOX_ENABLED} != "yes" ]]; then
+    printf "You do not have enabled kannel box ...\n"
+    exit 1
+fi
+
+kannel_start() {
+    PID=`pgrep -f "${BEARERBOX}"`
+    if [ $? = 0 ]; then
+	printf "Kannel is already running...\n"
+	exit 1
+    else
+	rm -rf ${PID_DIR}/*
+
+        printf "Starting kannel bearer box ...\n"
+        ${RUN} --pidfile ${PID_DIR}/kannel_bearerbox.pid ${BEARERBOX} -u ${USER} -p ${PID_DIR}/bearerbox.pid ${CONF}
+        sleep 10
+        if [ ! -f ${PID_DIR}/bearerbox.pid ] ; then
+	    if [ ! -f ${PID_DIR}/kannel_bearerbox.pid ] ; then
+		kill `cat ${PID_DIR}/kannel_bearerbox.pid`
+	    fi
+	    printf "PID file ${PID_DIR}/bearerbox.pid does not exist -- bearer box start failed\n"
+	    exit 1
+	fi
+	printf "Kannel bearer box started (pid: `cat ${PID_DIR}/bearerbox.pid`)\n"
+
+	if  [[ ${SMSBOX_ENABLED} = "yes" ]]; then
+	    printf "Starting kannel SMS box ...\n"
+	    ${RUN} --pidfile ${PID_DIR}/kannel_smsbox.pid ${SMSBOX} -u ${USER} -p ${PID_DIR}/smsbox.pid ${CONF}
+	    sleep 3
+	    if [ ! -f ${PID_DIR}/smsbox.pid ] ; then
+		printf "PID file ${PID_DIR}/smsbox.pid does not exist -- SMS box start failed\n"
+	    else
+		printf "Kannel SMS box started (pid: `cat ${PID_DIR}/smsbox.pid`)\n"
+	    fi
+	fi
+
+	if  [[ ${WAPBOX_ENABLED} = "yes" ]]; then
+	    printf "Starting kannel WAP box ...\n"
+	    ${RUN} --pidfile ${PID_DIR}/kannel_wapbox.pid ${WAPBOX} -u ${USER} -p ${PID_DIR}/wapbox.pid ${CONF}
+	    sleep 3
+	    if [ ! -f ${PID_DIR}/wapbox.pid ] ; then
+		printf "PID file ${PID_DIR}/wapbox.pid does not exist -- WAP box start failed\n"
+	    else
+		printf "Kannel WAP box started (pid: `cat ${PID_DIR}/wapbox.pid`)\n"
+	    fi
+	fi
+
+	exit 0
+    fi
+}
+
+kannel_stop() {
+    PID=`pgrep -f "${BEARERBOX}"`
+    if [ $? = 1 ]; then
+	printf "Kannel is not running\n"
+	exit 1
+    else
+	printf "Stopping Kannel ...\n"
+	pkill -f ${RUN}
+	pkill -f ${SMSBOX}
+	pkill -f ${WAPBOX}
+	pkill -f ${BEARERBOX}
+	sleep 5
+	PID=`pgrep -f "${BEARERBOX}"`
+	if [ $? = 0 ]; then
+	    printf "Stop Kannel failed...\n"
+	    exit 1
+	else
+	    printf "Kannel is stoped\n"
+	    exit 0
+	fi
+    fi
+}
+
+kannel_restart() {
+    kannel_stop
+    sleep 5
+    kannel_start
+}
+
+case "$1" in
+    start)
+        kannel_start
+        ;;
+
+    stop)
+        kannel_stop
+        ;;
+
+    restart)
+        kannel_restart
+        ;;
+
+    *)
+        printf $"Usage: $0 {start|stop|restart}"
+        exit 1
+        ;;
+esac

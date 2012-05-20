@@ -1,0 +1,37 @@
+$OpenBSD$
+--- doc/examples/kannel.conf.orig	Sat May 12 13:43:56 2012
++++ doc/examples/kannel.conf	Fri May 18 23:22:18 2012
+@@ -11,15 +11,17 @@ admin-password = bar
+ #status-password = foo
+ #admin-deny-ip = ""
+ #admin-allow-ip = ""
+-#log-file = "/tmp/kannel.log"
+-#log-level = 0
+-#access-log = "access.log"
++log-file = "/var/log/kannel/bearerbox.log"
++log-level = 3
++access-log = "/var/log/kannel/bearerbox-access.log"
+ #http-proxy-host = "127.0.0.1"
+ #http-proxy-port = 8080
+ #http-proxy-exceptions = "127.0.0.1"
+ #http-proxy-username = "user"
+ #http-proxy-password = "password"
+ #ssl-certkey-file = "mycertandprivkeyfile.pem"
++store-type = spool
++store-location = /var/spool/kannel
+ 
+ # Smsbox related
+ #smsbox-port = 13001
+@@ -142,9 +144,9 @@ bearerbox-host = localhost
+ sendsms-port = 13013
+ #sendsms-chars = "0123456789 +-"
+ #global-sender = 12345
+-#log-file = "/tmp/smsbox.log"
+-#log-level = 0
+-#access-log = "access.log"
++#log-file = "/var/log/kannel/smsbox.log"
++#log-level = 3
++#access-log = "/var/log/kannel/smsbox-access.log"
+ #white-list =
+ #black-list =
+ #reply-couldnotfetch = 

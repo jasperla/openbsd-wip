@@ -1,0 +1,48 @@
+$OpenBSD$
+--- gw/smsc/smsc_ois.c.orig	Sun May 13 11:04:02 2012
++++ gw/smsc/smsc_ois.c	Sun May 13 11:05:16 2012
+@@ -244,7 +244,7 @@ SMSCenter *ois_open(int receiveport, const char *hostn
+     if (ret < 0) {
+ 	goto error;
+     }
+-    sprintf(smsc->name, "OIS:TCP/X.25-Translator:localhost:%d:TCP:%.512s:%d",
++    snprintf(smsc->name, sizeof(smsc->name), "OIS:TCP/X.25-Translator:localhost:%d:TCP:%.512s:%d",
+ 	    smsc->receive_port, smsc->hostname, smsc->port);
+ 
+     return smsc;
+@@ -828,7 +828,7 @@ static int ois_submit_sm_invoke(SMSCenter *smsc, const
+ 
+     /* first part */
+ 
+-    sprintf(buffer, "%c%c%04d%.121s%c",
++    snprintf(buffer, sizeof(buffer), "%c%c%04d%.121s%c",
+ 	    'S',                              /* submit sm invoke */
+ 	    (char)(0x50|count),               /* ia5 encoding, first part */
+ 	    ois_counter,
+@@ -843,7 +843,7 @@ static int ois_submit_sm_invoke(SMSCenter *smsc, const
+     /* additional parts */
+ 
+     for (i = 1; i <= count; ++i) {
+-	sprintf(buffer, "%c%c%04d%.121s%c",
++	snprintf(buffer, sizeof(buffer), "%c%c%04d%.121s%c",
+ 		'S',                          /* submit sm invoke */
+ 		(char)(0x60|(count-i)),       /* ia5, additional part */
+ 		ois_counter,
+@@ -1171,7 +1171,7 @@ static int ois_check_deliver_sm_invoke(const char *str
+     {
+ 	/* check the additional header */
+ 
+-	sprintf(buffer, "%c%c%c%.4s",
++	snprintf(buffer, sizeof(buffer), "%c%c%c%.4s",
+ 		EOL,
+ 		'M',                      /* deliver sm invoke */
+ 		(char)(0x60|count),       /* ia5 encoding, additional part */
+@@ -1355,7 +1355,7 @@ static int ois_deliver_sm_result(SMSCenter *smsc, int 
+ 
+     /* first and only part */
+ 
+-    sprintf(buffer, "%c%c%.4s%.121s%c",
++    snprintf(buffer, sizeof(buffer), "%c%c%.4s%.121s%c",
+ 	    'm',                              /* deliver sm result */
+ 	    (char)(0x50),                     /* ia5 encoding, the only part */
+ 	    &str[2],

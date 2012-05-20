@@ -1,0 +1,12 @@
+$OpenBSD$
+--- gwlib/gwmem-check.c.orig	Sat May 19 01:04:29 2012
++++ gwlib/gwmem-check.c	Sat May 19 01:06:10 2012
+@@ -334,7 +334,7 @@ static void dump_area(struct area *area)
+         p = area->area;
+         buf[0] = '\0';
+         for (i = 0; i < area->area_size && i < MAX_DUMP; ++i)
+-            sprintf(strchr(buf, '\0'), "%02x ", p[i]);
++            snprintf(strchr(buf, '\0'), sizeof(buf), "%02x ", p[i]);
+ 
+         debug("gwlib.gwmem", 0, "Contents of area (first %d bytes):", MAX_DUMP);
+         debug("gwlib.gwmem", 0, "  %s", buf);

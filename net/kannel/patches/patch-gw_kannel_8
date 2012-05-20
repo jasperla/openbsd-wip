@@ -1,0 +1,14 @@
+$OpenBSD$
+--- gw/kannel.8.orig	Mon May 14 00:50:02 2012
++++ gw/kannel.8	Mon May 14 00:50:20 2012
+@@ -35,9 +35,7 @@ and the SMS based services, respectively.
+ .PP
+ For more information,
+ see 
+-.B http://www.kannel.org
+-or
+-.BR file://usr/doc/kannel/ .
++.B http://www.kannel.org.
+ .SH "SEE ALSO"
+ .BR run_kannel_box (8),
+ .BR seewbmp (1).

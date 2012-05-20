@@ -1,0 +1,107 @@
+$OpenBSD$
+--- gw/msg.c.orig	Sat May 12 13:44:06 2012
++++ gw/msg.c	Sun May 13 11:44:17 2012
+@@ -80,12 +80,12 @@ static void append_string(Octstr *os, Octstr *field);
+ static void append_uuid(Octstr *os, uuid_t id);
+ 
+ static int parse_integer(long *i, Octstr *packed, int *off);
++static int parse_time_t(time_t *i, Octstr *packed, int *off);
+ static int parse_string(Octstr **os, Octstr *packed, int *off);
+ static int parse_uuid(uuid_t id, Octstr *packed, int *off);
+ 
+ static char *type_as_str(Msg *msg);
+ 
+-
+ /**********************************************************************
+  * Implementations of the exported functions.
+  */
+@@ -99,6 +99,7 @@ Msg *msg_create_real(enum msg_type type, const char *f
+ 
+     msg->type = type;
+ #define INTEGER(name) p->name = MSG_PARAM_UNDEFINED;
++#define TIME_T(name) p->name = MSG_PARAM_UNDEFINED;
+ #define OCTSTR(name) p->name = NULL;
+ #define UUID(name) uuid_generate(p->name);
+ #define VOID(name) p->name = NULL;
+@@ -115,6 +116,7 @@ Msg *msg_duplicate(Msg *msg)
+     new = msg_create(msg->type);
+ 
+ #define INTEGER(name) p->name = q->name;
++#define TIME_T(name) p->name = q->name;
+ #define OCTSTR(name) \
+     if (q->name == NULL) p->name = NULL; \
+     else p->name = octstr_duplicate(q->name);
+@@ -135,6 +137,7 @@ void msg_destroy(Msg *msg)
+         return;
+ 
+ #define INTEGER(name) p->name = 0;
++#define TIME_T(name) p->name = 0;
+ #define OCTSTR(name) octstr_destroy(p->name);
+ #define UUID(name) uuid_clear(p->name);
+ #define VOID(name)
+@@ -157,6 +160,8 @@ void msg_dump(Msg *msg, int level)
+     debug("gw.msg", 0, "%*s type: %s", level, "", type_as_str(msg));
+ #define INTEGER(name) \
+     debug("gw.msg", 0, "%*s %s.%s: %ld", level, "", t, #name, (long) p->name);
++#define TIME_T(name) \
++    debug("gw.msg", 0, "%*s %s.%s: %ld", level, "", t, #name, (long) p->name);
+ #define OCTSTR(name) \
+     debug("gw.msg", 0, "%*s %s.%s:", level, "", t, #name); \
+     octstr_dump(p->name, level + 1);
+@@ -186,6 +191,7 @@ Octstr *msg_pack(Msg *msg)
+     append_integer(os, msg->type);
+ 
+ #define INTEGER(name) append_integer(os, p->name);
++#define TIME_T(name) append_integer(os, p->name);
+ #define OCTSTR(name) append_string(os, p->name);
+ #define UUID(name) append_uuid(os, p->name);
+ #define VOID(name)
+@@ -221,6 +227,8 @@ Msg *msg_unpack_real(Octstr *os, const char *file, lon
+ 
+ #define INTEGER(name) \
+     if (parse_integer(&(p->name), os, &off) == -1) goto error;
++#define TIME_T(name) \
++    if (parse_time_t(&(p->name), os, &off) == -1) goto error;
+ #define OCTSTR(name) \
+     if (parse_string(&(p->name), os, &off) == -1) goto error;
+ #define UUID(name) \
+@@ -248,17 +256,6 @@ error:
+ }
+ 
+ 
+-/*
+- * Wrapper function needed for function pointer forwarding to storage
+- * subsystem. We can't pass the msg_unpack() pre-processor macro, so we
+- * need to wrapp a function arround it.
+- */
+-inline Msg *msg_unpack_wrapper(Octstr *os)
+-{
+-    return msg_unpack(os);
+-}
+-
+-
+ /**********************************************************************
+  * Implementations of private functions.
+  */
+@@ -307,6 +304,21 @@ static int parse_integer(long *i, Octstr *packed, int 
+     return 0;
+ }
+ 
++static int parse_time_t(time_t *i, Octstr *packed, int *off)
++{
++    unsigned char buf[sizeof(time_t)];
++
++    gw_assert(*off >= 0);
++    if (*off + sizeof(time_t) > octstr_len(packed)) {
++	error(0, "Packet too short while unpacking Msg.");
++	return -1;
++    }
++
++    octstr_get_many_chars((char *)buf, packed, *off, sizeof(time_t));
++    *i = decode_network_long(buf);
++    *off += sizeof(time_t);
++    return 0;
++}
+ 
+ static int parse_string(Octstr **os, Octstr *packed, int *off)
+ {

@@ -1,0 +1,57 @@
+$OpenBSD$
+--- wap/wsp_session.c.orig	Sat May 12 16:37:59 2012
++++ wap/wsp_session.c	Sat May 12 16:38:34 2012
+@@ -494,7 +494,7 @@ static WSPMachine *machine_create(void) {
+ 	#define CAPABILITIES(name) p->name = NULL;
+ 	#define COOKIES(name) p->name = gwlist_create();
+ 	#define REFERER(name) p->name = NULL;
+-	#define MACHINE(fields) fields
++	#define MACHINEWSP(fields) fields
+ 	#include "wsp_server_session_machine.def"
+ 	
+ 	p->state = NULL_SESSION;
+@@ -547,7 +547,7 @@ static void machine_destroy(void *pp) {
+ 	#define CAPABILITIES(name) wsp_cap_destroy_list(p->name);
+ 	#define COOKIES(name) cookies_destroy(p->name);
+ 	#define REFERER(name) octstr_destroy(p->name);
+-	#define MACHINE(fields) fields
++	#define MACHINEWSP(fields) fields
+ 	#include "wsp_server_session_machine.def"
+ 	gw_free(p);
+ }
+@@ -612,7 +612,7 @@ static WSPMethodMachine *method_machine_create(WSPMach
+ 	#define INTEGER(name) msm->name = 0;
+ 	#define ADDRTUPLE(name) msm->name = NULL;
+ 	#define EVENT(name) msm->name = NULL;
+-	#define MACHINE(fields) fields
++	#define MACHINEWSP(fields) fields
+ 	#include "wsp_server_method_machine.def"
+ 	
+ 	msm->transaction_id = wtp_handle;
+@@ -641,7 +641,7 @@ static void method_machine_destroy(void *p) {
+ 	#define INTEGER(name)
+ 	#define ADDRTUPLE(name) wap_addr_tuple_destroy(msm->name);
+ 	#define EVENT(name) wap_event_destroy(msm->name);
+-	#define MACHINE(fields) fields
++	#define MACHINEWSP(fields) fields
+ 	#include "wsp_server_method_machine.def"
+ 
+ 	gw_free(msm);
+@@ -694,7 +694,7 @@ static WSPPushMachine *push_machine_create(WSPMachine 
+         #define INTEGER(name) m->name = 0;
+         #define ADDRTUPLE(name) m->name = NULL;
+         #define HTTPHEADER(name) m->name = http_create_empty_headers();
+-        #define MACHINE(fields) fields
++        #define MACHINEWSP(fields) fields
+         #include "wsp_server_push_machine.def"
+ 
+         m->server_push_id = pid;
+@@ -720,7 +720,7 @@ static void push_machine_destroy(void *p)
+         #define INTEGER(name) 
+         #define ADDRTUPLE(name) wap_addr_tuple_destroy(m->name);
+         #define HTTPHEADER(name) http_destroy_headers(m->name);
+-        #define MACHINE(fields) fields
++        #define MACHINEWSP(fields) fields
+         #include "wsp_server_push_machine.def"
+ 
+         gw_free(m);

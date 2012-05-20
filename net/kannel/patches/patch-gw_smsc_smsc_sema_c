@@ -1,0 +1,32 @@
+$OpenBSD$
+--- gw/smsc/smsc_sema.c.orig	Sun May 13 11:02:14 2012
++++ gw/smsc/smsc_sema.c	Sun May 13 11:03:33 2012
+@@ -120,7 +120,7 @@ SMSCenter * sema_open(char* smscnua, char* homenua, 
+ 	if(smsc == NULL)
+ 	  goto error;
+ 
+-	sprintf(smsc->name, "SEMA:X28:"); 
++	snprintf(smsc->name, sizeof(smsc->name), "SEMA:X28:"); 
+ 
+ 	smsc->type = SMSC_TYPE_SEMA_X28;
+ 	smsc->sema_smscnua = gw_strdup(smscnua);
+@@ -570,7 +570,7 @@ static int X28_close_send_link(int padfd)
+     time_t tstart;
+     time(&tstart);
+ 
+-    sprintf(discnntbuff,"%cCLR\r",0x10);
++    snprintf(discnntbuff,sizeof(discnntbuff),"%cCLR\r",0x10);
+     memset(readbuff,0,sizeof(readbuff));
+ 
+     /* what ever is the close return, data mode is unreliable now*/
+@@ -654,8 +654,8 @@ static int X28_open_send_link(int padfd, char *nua) {
+     memset(writebuff,0,sizeof(writebuff));
+     memset(readbuff,0,sizeof(readbuff));  
+     writeall = readall = 0;
+-    sprintf(writebuff, "%s\r", nua);
+-    sprintf(smscbuff, "%s COM",nua);
++    snprintf(writebuff, sizeof(writebuff), "%s\r", nua);
++    snprintf(smscbuff, sizeof(smscbuff), "%s COM",nua);
+   
+     while((size_t) writeall < strlen(writebuff)){
+ 	writeonce = -1;

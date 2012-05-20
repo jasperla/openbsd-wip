@@ -1,0 +1,23 @@
+$OpenBSD$
+--- wap/wsp_server_method_machine.def.orig	Sat May 12 16:24:36 2012
++++ wap/wsp_server_method_machine.def	Sat May 12 16:25:06 2012
+@@ -63,11 +63,11 @@
+ #if 	!defined(INTEGER) || \
+ 	!defined(ADDRTUPLE) || \
+ 	!defined(EVENT) || \
+-	!defined(MACHINE)
++	!defined(MACHINEWSP)
+ #error "Some required macro is missing."
+ #endif
+ 
+-MACHINE(
++MACHINEWSP(
+ 	INTEGER(transaction_id)
+ 	INTEGER(state)
+ 	ADDRTUPLE(addr_tuple)
+@@ -79,4 +79,4 @@ MACHINE(
+ #undef INTEGER
+ #undef ADDRTUPLE
+ #undef EVENT
+-#undef MACHINE
++#undef MACHINEWSP
