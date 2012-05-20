@@ -1,0 +1,12 @@
+$OpenBSD$
+--- wap/wtp_resp.h.orig	Sat May 12 16:42:18 2012
++++ wap/wtp_resp.h	Sat May 12 16:42:25 2012
+@@ -121,7 +121,7 @@ struct WTPRespMachine {
+        #define EVENT(name) WAPEvent *name;
+        #define LIST(name) List *name;
+        #define SARDATA(name) WTPSARData *name;
+-       #define MACHINE(field) field
++       #define MACHINEWSP(field) field
+        #include "wtp_resp_machine.def"
+ };
+ 

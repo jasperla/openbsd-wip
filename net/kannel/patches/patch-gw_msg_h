@@ -1,0 +1,27 @@
+$OpenBSD$
+--- gw/msg.h.orig	Sat May 12 13:44:06 2012
++++ gw/msg.h	Sun May 13 02:37:38 2012
+@@ -80,6 +80,7 @@ typedef struct {
+ 	enum msg_type type;
+ 
+ 	#define INTEGER(name) long name;
++	#define TIME_T(name) time_t name;
+ 	#define OCTSTR(name) Octstr *name;
+ 	#define UUID(name) uuid_t name;
+ 	#define VOID(name) void *name;
+@@ -181,6 +182,14 @@ Octstr *msg_pack(Msg *msg);
+ Msg *msg_unpack_real(Octstr *os, const char *file, long line, const char *func);
+ #define msg_unpack(os) \
+     gw_claim_area(msg_unpack_real((os), __FILE__, __LINE__, __func__))
+-Msg *msg_unpack_wrapper(Octstr *os);
++/*
++ * Wrapper function needed for function pointer forwarding to storage
++ * subsystem. We can't pass the msg_unpack() pre-processor macro, so we
++ * need to wrapp a function arround it.
++*/
++static inline Msg *msg_unpack_wrapper(Octstr *os)
++{
++    return msg_unpack(os);
++}
+ 
+ #endif

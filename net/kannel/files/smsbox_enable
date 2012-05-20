@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [ -f "/usr/local/share/kannel/enabled_kannel_box" ]; then
+    . /usr/local/share/kannel/enabled_kannel_box
+    if [[ ${SMSBOX_ENABLED} != "yes" ]]; then
+	echo "SMSBOX_ENABLED=\"yes\"" >> /usr/local/share/kannel/enabled_kannel_box
+	print -n "Kannel SMS box enable ...\n"
+	exit 0
+    fi
+    print -n "Kannel SMS box is enabled ...\n"
+    exit 0
+else
+    mkdir -p /usr/local/share/kannel
+    echo "SMSBOX_ENABLED=\"yes\"" >> /usr/local/share/kannel/enabled_kannel_box
+    print -n "Kannel SMS box enable ...\n"
+    exit 0
+fi

@@ -1,0 +1,12 @@
+$OpenBSD$
+--- gwlib/md5.c.orig	Sun May 13 11:17:16 2012
++++ gwlib/md5.c	Sun May 13 11:17:33 2012
+@@ -104,7 +104,7 @@ static void md5_digest(char *md5str, unsigned char *di
+     int i;
+ 
+     for (i = 0; i < 16; i++) {
+-        sprintf(md5str, "%02x", digest[i]);
++        snprintf(md5str, sizeof(md5str), "%02x", digest[i]);
+         md5str += 2;
+     }
+ 

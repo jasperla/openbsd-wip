@@ -1,0 +1,30 @@
+$OpenBSD$
+--- wap/wsp.h.orig	Sat May 12 16:20:16 2012
++++ wap/wsp.h	Sat May 12 16:25:25 2012
+@@ -112,7 +112,7 @@ struct WSPMachine {
+ 	#define REFERER(name) Octstr *name;
+ 	#define MACHINESLIST(name) List *name;
+ 	#define CAPABILITIES(name) List *name;
+-	#define MACHINE(fields) fields
++	#define MACHINEWSP(fields) fields
+ 	#include "wsp_server_session_machine.def"
+ };
+ 
+@@ -121,7 +121,7 @@ struct WSPMethodMachine {
+ 	#define INTEGER(name) long name;
+ 	#define ADDRTUPLE(name) WAPAddrTuple *name;
+ 	#define EVENT(name) WAPEvent *name;
+-	#define MACHINE(fields) fields
++	#define MACHINEWSP(fields) fields
+ 	#include "wsp_server_method_machine.def"
+ };
+ 
+@@ -129,7 +129,7 @@ struct WSPPushMachine {
+        #define INTEGER(name) long name;
+        #define ADDRTUPLE(name) WAPAddrTuple *name;
+        #define HTTPHEADER(name) List *name;
+-       #define MACHINE(fields) fields
++       #define MACHINEWSP(fields) fields
+        #include "wsp_server_push_machine.def"
+ };
+ 

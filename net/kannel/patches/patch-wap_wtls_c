@@ -1,0 +1,21 @@
+$OpenBSD$
+--- wap/wtls.c.orig	Sat May 12 16:39:08 2012
++++ wap/wtls.c	Sat May 12 16:39:20 2012
+@@ -977,7 +977,7 @@ static WTLSMachine *wtls_machine_create(WAPAddrTuple *
+         WTLSMachine *wtls_machine;
+         wtls_machine = gw_malloc(sizeof(WTLSMachine)); 
+         
+-#define MACHINE(field) field
++#define MACHINEWSP(field) field
+ #define ENUM(name) wtls_machine->name = NULL_STATE;
+ #define ADDRTUPLE(name) wtls_machine->name = NULL;
+ #define INTEGER(name) wtls_machine->name = 0;
+@@ -1011,7 +1011,7 @@ static void wtls_machine_destroy(void *p)
+          wtls_machine->mid, (void *)wtls_machine);
+        gwlist_delete_equal(wtls_machines, wtls_machine);        
+         
+-#define MACHINE(field) field
++#define MACHINEWSP(field) field
+ #define ENUM(name) wtls_machine->name = NULL_STATE;
+ #define ADDRTUPLE(name) wap_addr_tuple_destroy(wtls_machine->name);
+ #define INTEGER(name) wtls_machine->name = 0;

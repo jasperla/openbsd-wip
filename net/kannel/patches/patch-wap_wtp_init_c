@@ -1,0 +1,21 @@
+$OpenBSD$
+--- wap/wtp_init.c.orig	Sat May 12 16:40:36 2012
++++ wap/wtp_init.c	Sat May 12 16:40:55 2012
+@@ -238,7 +238,7 @@ static WTPInitMachine *init_machine_create(WAPAddrTupl
+      #define EVENT(name) init_machine->name = NULL;
+      #define TIMER(name) init_machine->name = gwtimer_create(queue); 
+      #define ADDRTUPLE(name) init_machine->name = NULL; 
+-     #define MACHINE(field) field
++     #define MACHINEWSP(field) field
+      #include "wtp_init_machine.def"
+ 
+      gwlist_append(init_machines, init_machine);
+@@ -273,7 +273,7 @@ static void init_machine_destroy(void *p)
+      #define EVENT(name) wap_event_destroy(init_machine->name); 
+      #define TIMER(name) gwtimer_destroy(init_machine->name); 
+      #define ADDRTUPLE(name) wap_addr_tuple_destroy(init_machine->name); 
+-     #define MACHINE(field) field
++     #define MACHINEWSP(field) field
+      #include "wtp_init_machine.def"
+      gw_free(init_machine);
+ }

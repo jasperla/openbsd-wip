@@ -1,0 +1,12 @@
+$OpenBSD$
+--- gw/smsc/smsc.c.orig	Sun May 13 11:06:28 2012
++++ gw/smsc/smsc.c	Sun May 13 11:06:46 2012
+@@ -115,7 +115,7 @@ SMSCenter *smscenter_construct(void)
+ 
+     smsc->mutex = mutex_create();
+ 
+-    sprintf(smsc->name, "Unknown SMSC");
++    snprintf(smsc->name, sizeof(smsc->name), "Unknown SMSC");
+     smsc->id = next_id++;
+ 
+     /* FAKE */

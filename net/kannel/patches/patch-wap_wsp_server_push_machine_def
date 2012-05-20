@@ -1,0 +1,32 @@
+$OpenBSD$
+--- wap/wsp_server_push_machine.def.orig	Sat May 12 13:44:08 2012
++++ wap/wsp_server_push_machine.def	Sat May 19 01:46:22 2012
+@@ -61,8 +61,8 @@
+  * By Aarno Syvänen for Wapit Ltd
+  */
+ 
+-#if !defined(MACHINE)
+-    #error "Definition of macro MACHINE is missing"
++#if !defined(MACHINEWSP)
++    #error "Definition of macro MACHINEWSP is missing"
+ #elif !defined(INTEGER)
+     #error "Definition of macro INTEGER is missing"
+ #elif !defined(ADDRTUPLE)
+@@ -71,7 +71,7 @@
+     #error "Definition of macro HTTPHEADER is missing" 
+ #endif
+ 
+-MACHINE(
++MACHINEWSP(
+        INTEGER(state)
+        INTEGER(server_push_id)
+        INTEGER(session_id)
+@@ -80,7 +80,7 @@ MACHINE(
+        HTTPHEADER(push_header) 
+ )
+ 
+-#undef MACHINE
++#undef MACHINEWSP
+ #undef INTEGER
+ #undef ADDRTUPLE
+ #undef HTTPHEADER

@@ -1,0 +1,54 @@
+$OpenBSD$
+--- gw/smsc/smsc_at.c.orig	Sun May 13 03:54:38 2012
++++ gw/smsc/smsc_at.c	Sun May 13 03:56:14 2012
+@@ -930,7 +930,7 @@ static int at2_read_delete_message(PrivAT2data* privda
+     char cmd[20];
+     int message_count = 0;
+ 
+-    sprintf(cmd, "AT+CMGR=%d", message_number);
++    snprintf(cmd, sizeof(cmd), "AT+CMGR=%d", message_number);
+     /* read one message from memory */
+     at2_write_line(privdata, cmd);
+     if (at2_wait_modem_command(privdata, 0, 0, &message_count) != 0) {
+@@ -946,7 +946,7 @@ static int at2_read_delete_message(PrivAT2data* privda
+         return 0;
+     }
+ 
+-    sprintf(cmd, "AT+CMGD=%d", message_number); /* delete the message we just read */
++    snprintf(cmd, sizeof(cmd), "AT+CMGD=%d", message_number); /* delete the message we just read */
+     /* 
+      * 3 seconds (default timeout of send_modem_command()) is not enough with some
+      * modems if the message is large, so we'll give it 7 seconds
+@@ -2242,7 +2242,7 @@ static void at2_send_one_message(PrivAT2data *privdata
+     sc[0] = '\0';
+ 
+     if (!privdata->modem->no_smsc)
+-        strcpy(sc, "00");
++        strlcpy(sc, "00", sizeof(sc));
+ 
+     if (msg_type(msg) == sms) {
+         Octstr *pdu;
+@@ -2256,7 +2256,7 @@ static void at2_send_one_message(PrivAT2data *privdata
+         /* 
+          * send the initial command and then wait for > 
+          */
+-        sprintf(command, "AT+CMGS=%ld", octstr_len(pdu) / 2);
++        snprintf(command, sizeof(command), "AT+CMGS=%ld", octstr_len(pdu) / 2);
+ 
+         ret = at2_send_modem_command(privdata, command, 5, 1);
+         debug("bb.smsc.at2", 0, "AT2[%s]: send command status: %d",
+@@ -2276,12 +2276,12 @@ static void at2_send_one_message(PrivAT2data *privdata
+              */
+ 
+             if (octstr_compare(privdata->modem->id, octstr_imm("nokiaphone")) != 0) { 
+-                sprintf(command, "%s%s", sc, octstr_get_cstr(pdu));
++                snprintf(command, sizeof(command), "%s%s", sc, octstr_get_cstr(pdu));
+                 at2_write(privdata, command);
+                 at2_write_ctrlz(privdata);
+             } else {
+                 /* include the CTRL-Z in the PDU string */
+-                sprintf(command, "%s%s%c", sc, octstr_get_cstr(pdu), 0x1A);
++                snprintf(command, sizeof(command), "%s%s%c", sc, octstr_get_cstr(pdu), 0x1A);
+ 
+                 /* chop PDU into 18-byte-at-a-time pieces to prevent choking 
+                  * of certain GSM Phones (e.g. Nokia 6310, 6230 etc.) */

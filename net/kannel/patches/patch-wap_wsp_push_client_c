@@ -1,0 +1,21 @@
+$OpenBSD$
+--- wap/wsp_push_client.c.orig	Sat May 12 16:37:15 2012
++++ wap/wsp_push_client.c	Sat May 12 16:37:34 2012
+@@ -384,7 +384,7 @@ static WSPPushClientMachine *push_client_machine_creat
+ 
+     #define INTEGER(name) m->name = 0;
+     #define HTTPHEADERS(name) m->name = NULL;
+-    #define MACHINE(fields) fields
++    #define MACHINEWSP(fields) fields
+     #include "wsp_push_client_machine.def"
+ 
+     m->state = PUSH_CLIENT_NULL_STATE;
+@@ -406,7 +406,7 @@ static void push_client_machine_destroy(void *a) 
+ 
+     #define INTEGER(name) m->name = 0;
+     #define HTTPHEADERS(name) http_destroy_headers(m->name);  
+-    #define MACHINE(fields) fields;
++    #define MACHINEWSP(fields) fields;
+     #include "wsp_push_client_machine.def"
+ 
+     gw_free(m);

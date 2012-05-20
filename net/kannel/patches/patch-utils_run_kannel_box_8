@@ -1,0 +1,11 @@
+$OpenBSD$
+--- utils/run_kannel_box.8.orig	Mon May 14 00:49:06 2012
++++ utils/run_kannel_box.8	Mon May 14 00:50:30 2012
+@@ -26,6 +26,4 @@ phones.
+ .PP
+ For more information,
+ see 
+-.B http://www.kannel.org
+-or
+-.BR file://usr/doc/kannel/ .
++.B http://www.kannel.org.

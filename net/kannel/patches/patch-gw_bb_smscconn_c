@@ -1,0 +1,37 @@
+$OpenBSD$
+--- gw/bb_smscconn.c.orig	Fri May 18 23:18:25 2012
++++ gw/bb_smscconn.c	Fri May 18 23:19:55 2012
+@@ -1198,7 +1198,7 @@ Octstr *smsc2_status(int status_type)
+         switch (info.status) {
+             case SMSCCONN_ACTIVE:
+             case SMSCCONN_ACTIVE_RECV:
+-                sprintf(tmp3, "online %lds", info.online);
++                snprintf(tmp3, sizeof(tmp3), "online %lds", info.online);
+                 incoming_sms_load_0 = load_get(conn->incoming_sms_load,0);
+                 incoming_sms_load_1 = load_get(conn->incoming_sms_load,1);
+                 incoming_sms_load_2 = load_get(conn->incoming_sms_load,2);
+@@ -1213,19 +1213,19 @@ Octstr *smsc2_status(int status_type)
+                 outgoing_dlr_load_2 = load_get(conn->outgoing_dlr_load,2);
+                 break;
+             case SMSCCONN_DISCONNECTED:
+-                sprintf(tmp3, "disconnected");
++                snprintf(tmp3, sizeof(tmp3), "disconnected");
+                 break;
+             case SMSCCONN_CONNECTING:
+-                sprintf(tmp3, "connecting");
++                snprintf(tmp3, sizeof(tmp3), "connecting");
+                 break;
+             case SMSCCONN_RECONNECTING:
+-                sprintf(tmp3, "re-connecting");
++                snprintf(tmp3, sizeof(tmp3), "re-connecting");
+                 break;
+             case SMSCCONN_DEAD:
+-                sprintf(tmp3, "dead");
++                snprintf(tmp3, sizeof(tmp3), "dead");
+                 break;
+             default:
+-                sprintf(tmp3, "unknown");
++                snprintf(tmp3, sizeof(tmp3), "unknown");
+         }
+ 
+         if (status_type == BBSTATUS_XML)

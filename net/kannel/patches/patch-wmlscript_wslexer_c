@@ -1,0 +1,12 @@
+$OpenBSD$
+--- wmlscript/wslexer.c.orig	Sun May 13 11:58:40 2012
++++ wmlscript/wslexer.c	Sun May 13 12:16:17 2012
+@@ -112,6 +112,8 @@
+ 
+ /********************* Prototypes for static functions ******************/
+ 
++int ws_yy_lex(YYSTYPE *yylval, YYLTYPE *yylloc, void *context);
++
+ /* Check whether the identifier `id', `len' is a keyword.  If the
+    identifier is a keyword, the function returns WS_TRUE and sets the
+    keywords token ID to `token_return'.  Otherwise the function

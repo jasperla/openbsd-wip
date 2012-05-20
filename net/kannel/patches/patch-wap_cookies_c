@@ -1,0 +1,21 @@
+$OpenBSD$
+--- wap/cookies.c.orig	Sat May 12 13:44:08 2012
++++ wap/cookies.c	Sun May 13 11:46:12 2012
+@@ -569,7 +569,7 @@ static int parse_http_date(const char *expires)
+ 		ti.tm_mday = atoi(buf);
+ 		buf[6] = '\0';
+ 
+-		strcpy(month, &buf[3]);
++		strlcpy(month, &buf[3], sizeof(month));
+ 		ti.tm_year = atoi(&buf[7]);
+ 
+ 		/* Prevent wraparound from ambiguity */
+@@ -620,7 +620,7 @@ static int parse_http_date(const char *expires)
+ 	if (rv - now < 0) {
+ 		/* This is bad - set the delta to 0 so we expire next time around */
+ 		error(0, "parse_http_date () Expiry time (%s) (delta=%ld) is in the past !", 
+-			  asctime(&ti), rv-now);
++			  asctime(&ti), (long)rv-now);
+ 		return 0;
+ 	}
+ 

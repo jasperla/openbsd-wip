@@ -1,0 +1,62 @@
+$OpenBSD$
+--- gwlib/log.c.orig	Sat May 12 13:43:54 2012
++++ gwlib/log.c	Mon May 14 00:26:04 2012
+@@ -379,7 +379,7 @@ int log_open(char *filename, int level, enum excl_stat
+     logfiles[num_logfiles].file = f;
+     logfiles[num_logfiles].minimum_output_level = level;
+     logfiles[num_logfiles].exclusive = excl;
+-    strcpy(logfiles[num_logfiles].filename, filename);
++    strlcpy(logfiles[num_logfiles].filename, filename, sizeof(logfiles[num_logfiles].filename));
+     ++num_logfiles;
+     i = num_logfiles - 1;
+     gw_rwlock_unlock(&rwlock);
+@@ -417,7 +417,7 @@ static void format(char *buf, int level, const char *p
+ #else
+         tm = gw_gmtime(t);
+ #endif
+-        sprintf(p, "%04d-%02d-%02d %02d:%02d:%02d ",
++        snprintf(p, sizeof(prefix), "%04d-%02d-%02d %02d:%02d:%02d ",
+         tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday,
+         tm.tm_hour, tm.tm_min, tm.tm_sec);
+ 
+@@ -425,32 +425,32 @@ static void format(char *buf, int level, const char *p
+ 
+         /* print PID and thread ID */
+         gwthread_self_ids(&tid, &pid);
+-        sprintf(p, "[%ld] [%ld] ", pid, tid);
++        snprintf(p, sizeof(prefix), "[%ld] [%ld] ", pid, tid);
+     } else {
+         /* thread ID only */
+         tid = gwthread_self();
+-        sprintf(p, "[%ld] ", tid);
++        snprintf(p, sizeof(prefix), "[%ld] ", tid);
+     }
+ 
+     p = strchr(p, '\0');
+     if (level < 0 || level >= tab_size)
+-        sprintf(p, "UNKNOWN: ");
++        snprintf(p, sizeof(prefix), "UNKNOWN: ");
+     else
+-        sprintf(p, "%s", tab[level]);
++        snprintf(p, sizeof(prefix), "%s", tab[level]);
+ 
+     p = strchr(p, '\0');
+     if (place != NULL && *place != '\0')
+-        sprintf(p, "%s: ", place);
++        snprintf(p, sizeof(prefix), "%s: ", place);
+     
+     if (strlen(prefix) + strlen(fmt) > FORMAT_SIZE / 2) {
+-        sprintf(buf, "%s <OUTPUT message too long>\n", prefix);
++        snprintf(buf, sizeof(prefix), "%s <OUTPUT message too long>\n", prefix);
+         return;
+     }
+     
+     if (e == 0)
+-        sprintf(buf, "%s%s\n", prefix, fmt);
++        snprintf(buf, sizeof(prefix), "%s%s\n", prefix, fmt);
+     else
+-        sprintf(buf, "%s%s\n%sSystem error %d: %s\n",
++        snprintf(buf, sizeof(prefix), "%s%s\n%sSystem error %d: %s\n",
+                 prefix, fmt, prefix, e, strerror(e));
+ }
+ 
