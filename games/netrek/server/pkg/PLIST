@@ -1,4 +1,6 @@
 @comment $OpenBSD$
+@newgroup _netrekd:698
+@newuser _netrekd:698:698:daemon:netrekd:/nonexistent:/sbin/nologin
 bin/netrekd
 libexec/auto-archive.pl
 @bin libexec/basep
@@ -119,6 +121,8 @@ share/examples/netrek-server/time
 @sample ${SYSCONFDIR}/time
 share/examples/netrek-server/tourn.map
 @sample ${SYSCONFDIR}/tourn.map
+@owner _netrekd
+@group _netrekd
 @sample ${LOCALSTATEDIR}/
 @sample ${LOCALSTATEDIR}/blog/
 @sample ${LOCALSTATEDIR}/blog/bans/
@@ -134,3 +138,6 @@ share/examples/netrek-server/tourn.map
 @sample ${LOCALSTATEDIR}/www/
 @sample ${LOCALSTATEDIR}/www/blog/
 @sample ${LOCALSTATEDIR}/www/stats/
+@owner
+@group
+@rcscript ${RCDIR}/netrekd

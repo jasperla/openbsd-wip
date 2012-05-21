@@ -20,4 +20,6 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 LOCALSTATEDIR =		/var/netrekd
 SYSCONFDIR =		/etc/netrekd
 
+SUBST_VARS +=		LOCALSTATEDIR
+
 .include <bsd.port.mk>
