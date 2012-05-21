@@ -14,7 +14,8 @@ LIB_DEPENDS =		databases/gdbm
 
 FAKE_FLAGS =		SYSCONFDIR="${PREFIX}/share/examples/netrek-server"
 
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
+			--libdir="${TRUEPREFIX}/libexec"
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 LOCALSTATEDIR =		/var/netrekd
