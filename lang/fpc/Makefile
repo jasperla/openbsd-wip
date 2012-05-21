@@ -42,6 +42,8 @@ DISTFILES +=		${COMPNAME}
 
 SUBST_VARS +=		V CONFIG
 
+REGRESS_DEPENDS =	${BUILD_PKGPATH}
+
 MAKE_FLAGS =		PP=${COMPNAME} NOGDB=1
 MAKE_ENV =		MKDIRPROG=/bin/mkdir ECHO=/bin/echo \
 			GINSTALL=/usr/bin/install DATE=/bin/date \
