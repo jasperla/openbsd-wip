@@ -1,0 +1,12 @@
+$OpenBSD$
+--- system.mk.in.orig	Sat Jun 18 13:29:23 2011
++++ system.mk.in	Mon May 21 10:30:35 2012
+@@ -10,7 +10,7 @@
+ XTREKDIR=@srcdir@
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+-LIBDIR=@libdir@
++LIBDIR=@libexecdir@
+ BINDIR=@bindir@
+ SYSCONFDIR=@sysconfdir@
+ LOCALSTATEDIR=@localstatedir@
