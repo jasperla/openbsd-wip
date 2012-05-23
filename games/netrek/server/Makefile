@@ -10,6 +10,11 @@ WANTLIB +=		c gdbm m
 
 MASTER_SITES =		${HOMEPAGE}/files/Vanilla/
 
+PERMIT_PACKAGE_CDROM =  unclear
+PERMIT_PACKAGE_FTP =    unclear
+PERMIT_DISTFILES_CDROM =unclear
+PERMIT_DISTFILES_FTP =  unclear
+
 LIB_DEPENDS =		databases/gdbm
 
 FAKE_FLAGS =		SYSCONFDIR="${PREFIX}/share/examples/netrek-server"
