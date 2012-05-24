@@ -78,14 +78,14 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/packaging/X11/gpsd-logo.png \
 		${PREFIX}/share/pixmaps/
 
-# generates .py[co] files for installed modules
+# Generate .py[co] files for installed modules
 # if that's not done, ${MODPY_SITEPKG}/gps will be polluted
 # with these files when module is imported from root user.
 # Taken from FreeBSD.
-#	@find ${DESTDIR}/${MODPY_SITEPKG}/gps -name "*.py" -exec \
-#		${MODPY_BIN} ${MODPY_LIBDIR}/py_compile.py {} \;
-#	find ${DESTDIR}/${MODPY_SITEPKG}/gps -name "*.py" -exec \
-#		${MODPY_BIN} -O ${MODPY_LIBDIR}/py_compile.py {} \;
+	@find ${DESTDIR}/${MODPY_SITEPKG}/gps -name "*.py" -exec \
+		${MODPY_BIN} ${MODPY_LIBDIR}/py_compile.py {} \;
+	@find ${DESTDIR}/${MODPY_SITEPKG}/gps -name "*.py" -exec \
+		${MODPY_BIN} -O ${MODPY_LIBDIR}/py_compile.py {} \;
 
 # Disable regression test until they are fixed.
 NO_REGRESS = 	Yes

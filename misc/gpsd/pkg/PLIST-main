@@ -22,12 +22,21 @@ lib/pkgconfig/libgpsd.pc
 lib/python${MODPY_VERSION}/site-packages/gps/
 lib/python${MODPY_VERSION}/site-packages/gps-3.5.egg-info
 lib/python${MODPY_VERSION}/site-packages/gps/__init__.py
+lib/python${MODPY_VERSION}/site-packages/gps/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/gps/__init__.pyo
 lib/python${MODPY_VERSION}/site-packages/gps/client.py
+lib/python${MODPY_VERSION}/site-packages/gps/client.pyc
+lib/python${MODPY_VERSION}/site-packages/gps/client.pyo
 lib/python${MODPY_VERSION}/site-packages/gps/fake.py
+lib/python${MODPY_VERSION}/site-packages/gps/fake.pyc
+lib/python${MODPY_VERSION}/site-packages/gps/fake.pyo
 lib/python${MODPY_VERSION}/site-packages/gps/gps.py
+lib/python${MODPY_VERSION}/site-packages/gps/gps.pyc
+lib/python${MODPY_VERSION}/site-packages/gps/gps.pyo
 lib/python${MODPY_VERSION}/site-packages/gps/misc.py
+lib/python${MODPY_VERSION}/site-packages/gps/misc.pyc
+lib/python${MODPY_VERSION}/site-packages/gps/misc.pyo
 @man man/man1/cgps.1
-@man man/man1/gegps.1
 @man man/man1/gps.1
 @man man/man1/gpscat.1
 @man man/man1/gpsctl.1
