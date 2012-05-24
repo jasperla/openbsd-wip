@@ -1,6 +1,6 @@
 $OpenBSD$
 --- SConstruct.orig	Sat Apr 14 17:36:18 2012
-+++ SConstruct	Thu May  3 18:44:07 2012
++++ SConstruct	Thu May 10 14:34:06 2012
 @@ -220,21 +220,7 @@ env['PYTHON'] = sys.executable
  # settings.
  env['STRIP'] = "strip"
@@ -59,7 +59,15 @@ $OpenBSD$
                      )
                  )
              )
-@@ -1157,7 +1132,7 @@ if not env['debug'] and not env['profiling'] and env['
+@@ -1102,7 +1077,6 @@ python_manpages = {
+     "gpscat.1" : "gpscat.xml",
+     "xgpsspeed.1" : "gps.xml",
+     "xgps.1" : "gps.xml",
+-    "gegps.1" : "gps.xml",
+     }
+ 
+ manpage_targets = []
+@@ -1157,7 +1131,7 @@ if not env['debug'] and not env['profiling'] and env['
  if not env['python']:
      python_install = []
  else:
