@@ -1,0 +1,7 @@
+@comment $OpenBSD$
+@comment lib/libedelib.so
+@lib lib/libedelib.so.${LIBedelib_VERSION}
+@comment lib/libedelib_dbus.so
+@lib lib/libedelib_dbus.so.${LIBedelib_dbus_VERSION}
+@comment lib/libedelib_gui.so
+@lib lib/libedelib_gui.so.${LIBedelib_gui_VERSION}
