@@ -1,0 +1,4 @@
+Event Notify Test Runner - a utility for running arbitrary commands
+when files change. Uses kqueue(2) to avoid polling. `entr` responds
+to file system events by executing command line arguments or by
+writing to a FIFO.
