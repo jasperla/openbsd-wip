@@ -4,12 +4,11 @@ COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-x11=		GUI test apps using gpsd
 COMMENT-php=		web-based gpsd monitor in php
 
-VERSION=		3.5
+VERSION=		3.6
 DISTNAME=		gpsd-${VERSION}
 PKGNAME-main=		gpsd-${VERSION}
 PKGNAME-x11=		gpsd-x11-${VERSION}
 PKGNAME-php=		gpsd-php-${VERSION}
-REVISION-main=		0
 
 # explain shlib versions to scons
 SHARED_LIBS += 		gps	20.0 # 20.0
@@ -34,7 +33,8 @@ MODSCONS_FLAGS += 	gpsd_user=_gpsd \
 			libQgpsmm=no \
 			mandir=man \
 			pps=no \
-			prefix=${PREFIX}
+			prefix=${PREFIX} \
+			chrpath=no
 
 MULTI_PACKAGES = 	-main -php -x11
 
@@ -58,6 +58,8 @@ WANTLIB-main = 		m ncurses c pthread stdc++ util usb-1.0
 PKG_ARCH-php=		*
 RUN_DEPENDS-php=	lang/php/${MODPHP_VERSION},-gd
 PREFIX-php=		/var/www/
+
+SUBST_VARS += 		VERSION
 
 MODPY_ADJ_FILES = 	gegps gpsprof gps/gps.py gpsfake gpscat xgps xgpsspeed \
 			leapsecond.py test_maidenhead.py
