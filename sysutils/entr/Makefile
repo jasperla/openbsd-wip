@@ -1,4 +1,4 @@
-# $OpenBSD: $
+# $OpenBSD$
 
 COMMENT = run arbitrary commands when files change
 
