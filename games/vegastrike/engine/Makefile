@@ -5,17 +5,19 @@ ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		3D space simulator
 
-DISTNAME =		vegastrike-source-${V}
+DISTNAME =		vegastrike-src-${V}
 PKGNAME =		vegastrike-${V}
 
 WANTLIB += GL GLU OgreMain SDL X11 Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xmu Xrandr Xrender atk-1.0
-WANTLIB += boost_python-mt c cairo expat fontconfig freetype gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 glut gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 gtk-x11-2.0 iconv intl jpeg m ogg openal
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB += pthread pthread-stubs stdc++ util vorbis
-WANTLIB += vorbisfile xcb xcb-render xcb-shm z ${MODPY_WANTLIB}
+WANTLIB += boost_python boost_thread-mt c cairo expat fontconfig
+WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += glut gobject-2.0 gtk-x11-2.0 iconv intl jpeg m ogg
+WANTLIB += openal pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
+WANTLIB += png pthread pthread-stubs stdc++ util vorbis vorbisfile
+WANTLIB += xcb xcb-render xcb-shm z
+
+PATCHORIG =		.orig.port
 
 MODULES =		lang/python
 #BUILD_DEPENDS =	???
@@ -41,8 +43,8 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--with-vorbis-inc="${LOCALBASE}/include/vorbis" \
 			--with-boost=system \
 			--with-data-dir="${TRUEPREFIX}/share/vegastrike"
-CONFIGURE_ENV =		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
-			BOOST_CPPFLAGS="-DBOOST_PYTHON_NO_PY_SIGNATURES=1"
+CONFIGURE_ENV =	\
+	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+	LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

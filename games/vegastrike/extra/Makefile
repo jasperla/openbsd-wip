@@ -1,8 +1,10 @@
 # $OpenBSD$
 
-COMMENT =	data files for vegastrike
+COMMENT =	extra data files for vegastrike
 
-DISTNAME =	vegastrike-data-${V}
+DISTNAME =	vegastrike-extra-${V}
+
+RUN_DEPENDS =	games/vegastrike/data>=${V}
 
 NO_BUILD =	Yes
 NO_REGRESS =	Yes
