@@ -1,8 +1,12 @@
 # $OpenBSD$
 
-COMMENT =	data files for vegastrike
+COMMENT =	speech files for vegastrike
 
-DISTNAME =	vegastrike-data-${V}
+DISTNAME =	vegastrike-speech-${V}
+
+RUN_DEPENDS =	games/vegastrike/data>=${V}
+
+EXTRACT_SUFX =	.tar
 
 NO_BUILD =	Yes
 NO_REGRESS =	Yes
