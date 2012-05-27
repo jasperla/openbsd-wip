@@ -2,7 +2,7 @@
 
 COMMENT=	Berkeley Internet Name Daemon
 
-V=		9.8.1-P1
+V=		9.9.1
 DISTNAME=	bind-$V
 PKGNAME=	bind-${V:S/-P/pl/}
 
@@ -34,7 +34,6 @@ SEPARATE_BUILD=	simple
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-threads \
 		--localstatedir=/var \
 		--with-libtool \
 		--with-openssl \
