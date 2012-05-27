@@ -1,0 +1,16 @@
+$OpenBSD$
+--- gwlib/gw_uuid.c.orig	Sat May 19 01:55:36 2012
++++ gwlib/gw_uuid.c	Sat May 19 01:56:19 2012
+@@ -561,9 +561,10 @@ void uuid_unpack(const uuid_t in, struct uuid *uu)
+ void uuid_unparse(const uuid_t uu, char *out)
+ {
+ 	struct uuid uuid;
+-
++	char buf[UUID_STR_LEN + 1];
++	
+ 	uuid_unpack(uu, &uuid);
+-	sprintf(out,
++	snprintf(out, sizeof(buf),
+ 		"%08x-%04x-%04x-%02x%02x-%02x%02x%02x%02x%02x%02x",
+ 		uuid.time_low, uuid.time_mid, uuid.time_hi_and_version,
+ 		uuid.clock_seq >> 8, uuid.clock_seq & 0xFF,

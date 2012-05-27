@@ -1,0 +1,14 @@
+$OpenBSD$
+--- wmlscript/wmlsc.c.orig	Sun May 13 03:16:02 2012
++++ wmlscript/wmlsc.c	Sun May 13 03:17:23 2012
+@@ -198,8 +198,8 @@ int main(int argc, char *argv[])
+                     strerror(errno));
+             exit(1);
+         }
+-        strcpy(outname, argv[i]);
+-        strcat(outname, "c");
++        strlcpy(outname, argv[i], sizeof(outname));
++        strlcat(outname, "c", sizeof(outname));
+ 
+         ofp = fopen(outname, "wb");
+         if (ofp == NULL) {

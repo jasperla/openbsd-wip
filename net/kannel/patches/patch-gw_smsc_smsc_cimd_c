@@ -1,0 +1,66 @@
+$OpenBSD$
+--- gw/smsc/smsc_cimd.c.orig	Sun May 13 11:07:22 2012
++++ gw/smsc/smsc_cimd.c	Sun May 13 11:13:03 2012
+@@ -134,7 +134,7 @@ static int cimd_open_connection(SMSCenter *smsc)
+     smscenter_remove_from_buffer(smsc, smsc->buflen);
+ 
+     /* send login string */
+-    sprintf(tmpbuff, "%c%s%c%s%c%s%c%s%c%c",
++    snprintf(tmpbuff, sizeof(tmpbuff), "%c%s%c%s%c%s%c%s%c%c",
+             0x02,
+             "01", 0x09,
+             smsc->cimd_username, 0x09,
+@@ -191,7 +191,7 @@ SMSCenter *cimd_open(char *hostname, int port, char *u
+     if (ret < 0)
+         goto error;
+ 
+-    sprintf(smsc->name, "CIMD:%s:%d:%s", smsc->cimd_hostname,
++    snprintf(smsc->name, sizeof(smsc->name), "CIMD:%s:%d:%s", smsc->cimd_hostname,
+             smsc->cimd_port, smsc->cimd_username);
+     return smsc;
+ 
+@@ -238,7 +238,7 @@ int cimd_close(SMSCenter *smsc)
+     }
+     cbuff = gw_malloc(2 * 1024);
+ 
+-    sprintf(cbuff, "%c%s%c%s%c%c", 0x02, "02", 0x09, "11", 0x03, 0x0A);
++    snprintf(cbuff, sizeof(cbuff), "%c%s%c%s%c%c", 0x02, "02", 0x09, "11", 0x03, 0x0A);
+ 
+     sum = write_to_socket(smsc->socket, cbuff);
+     if (sum < 0) goto error;
+@@ -281,7 +281,7 @@ int cimd_pending_smsmessage(SMSCenter *smsc)
+     tmpbuff = gw_malloc(10 * 1024);
+     memset(tmpbuff, 0, 10*1024);
+ 
+-    sprintf(tmpbuff, "%c%s%c%s%c%c",
++    snprintf(tmpbuff, sizeof(tmpbuff), "%c%s%c%s%c%c",
+             0x02,         /* stx */
+             "05", 0x09,   /* request for message, tab */
+             "11",         /* dummy chksum */
+@@ -403,7 +403,7 @@ int cimd_submit_msg(SMSCenter *smsc, Msg *msg)
+     parse_iso88591_to_cimd(msgtext, tmptext, 10*1024, smsc->alt_charset);
+ 
+     /* If messages has UDHs, add the magic number 31 to the right spot */
+-    sprintf(tmpbuff, "%c%s%c%s%c%s%c%s%c%s%c%s%c%s%c%c",
++    snprintf(tmpbuff, sizeof(tmpbuff), "%c%s%c%s%c%s%c%s%c%s%c%s%c%s%c%c",
+             0x02,
+             "03", 0x09,
+             octstr_get_cstr(msg->sms.receiver), 0x09,
+@@ -604,7 +604,7 @@ static int connect_tcpip(SMSCenter *smsc)
+     smscenter_remove_from_buffer(smsc, smsc->buflen);
+ 
+     /* send login string */
+-    sprintf(tmpbuff, "%c%s%c%s%c%s%c%s%c%c",
++    snprintf(tmpbuff, sizeof(tmpbuff), "%c%s%c%s%c%s%c%s%c%c",
+             0x02,
+             "01", 0x09,
+             smsc->cimd_username, 0x09,
+@@ -650,7 +650,7 @@ static int send_acknowledge(SMSCenter *smsc)
+ 
+     memset(tmpbuff, 0, sizeof(tmpbuff));
+ 
+-    sprintf(tmpbuff, "\2\6\t11\3\n");
++    snprintf(tmpbuff, sizeof(tmpbuff), "\2\6\t11\3\n");
+ 
+     tmpint = write_to_socket(smsc->socket, tmpbuff);
+     if (tmpint == -1) {

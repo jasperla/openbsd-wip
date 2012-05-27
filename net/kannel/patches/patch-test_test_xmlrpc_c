@@ -1,0 +1,12 @@
+$OpenBSD$
+--- test/test_xmlrpc.c.orig	Sun May 13 11:25:46 2012
++++ test/test_xmlrpc.c	Sun May 13 11:26:03 2012
+@@ -199,7 +199,7 @@ static void client_thread(void *arg) 
+     failed = 0;
+     reqh = gwlist_create();
+ 
+-    sprintf(buf, "%ld", (long) gwthread_self());
++    snprintf(buf, sizeof(buf), "%ld", (long) gwthread_self());
+     http_header_add(reqh, "X-Thread", buf);
+     if (auth_username != NULL && auth_password != NULL)
+         http_add_basic_auth(reqh, auth_username, auth_password);

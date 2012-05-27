@@ -1,0 +1,32 @@
+$OpenBSD$
+--- wap/wtp_resp_machine.def.orig	Sat May 12 16:44:34 2012
++++ wap/wtp_resp_machine.def	Sat May 12 16:45:05 2012
+@@ -88,8 +88,8 @@
+  *               e) packed result message, for greater effectivity
+  */
+ 
+-#if !defined(MACHINE) 
+-    #error "Macro MACHINE is missing."
++#if !defined(MACHINEWSP) 
++    #error "Macro MACHINEWSP is missing."
+ #elif !defined(INTEGER) 
+     #error "Macro INTEGER is missing."
+ #elif !defined(ENUM) 
+@@ -106,7 +106,7 @@
+     #error "Macro ADDRTUPLE is missing."
+ #endif
+ 
+-MACHINE(ENUM(state)
++MACHINEWSP(ENUM(state)
+ 		INTEGER(tid)              /* transaction identifier */
+ 		ADDRTUPLE(addr_tuple)
+ 		INTEGER(tcl)              /* transaction class */
+@@ -128,7 +128,7 @@ MACHINE(ENUM(state)
+ 		SARDATA(sar)              /* ! NULL if were we asked for SAR */
+ 	)
+ 
+-#undef MACHINE
++#undef MACHINEWSP
+ #undef INTEGER
+ #undef ENUM
+ #undef TIMER

@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-lib/kamailio/modules/carrierroute.so
-share/doc/kamailio/modules/README.carrierroute

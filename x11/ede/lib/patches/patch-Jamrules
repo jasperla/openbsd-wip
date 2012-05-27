@@ -1,0 +1,12 @@
+$OpenBSD$
+--- Jamrules.orig	Fri May 25 17:48:32 2012
++++ Jamrules	Fri May 25 17:49:02 2012
+@@ -69,7 +69,7 @@ EDELIB_DBUS      = edelib_dbus ;
+ EDELIB_DBUS_NAME = libedelib_dbus ;
+ 
+ # directory name for installed documentation
+-EDELIB_DOCDIR = "$(EDELIB)-$(EDELIB_VERSION)" ;
++EDELIB_DOCDIR = "$(EDELIB)-$(EDE_VERSION)" ;
+ 
+ # Haiku jam have builtin LocalClean and LocalDepends
+ if ! $(INVOCATION_SUBDIR_SET) {

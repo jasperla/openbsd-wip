@@ -1,0 +1,34 @@
+$OpenBSD$
+--- gwlib/accesslog.c.orig	Sat May 12 13:43:54 2012
++++ gwlib/accesslog.c	Mon May 14 00:24:52 2012
+@@ -151,7 +151,7 @@ void alog_open(char *fname, int use_localtm, int use_m
+         return;
+     }
+     file = f;
+-    strcpy(filename, fname);
++    strlcpy(filename, fname, sizeof(filename));
+     info(0, "Started access logfile `%s'.", filename);
+     if (markers)
+         alog("Log begins");
+@@ -186,7 +186,7 @@ static void format(char *buf, const char *fmt)
+         else
+             tm = gw_gmtime(t);
+ 
+-        sprintf(p, "%04d-%02d-%02d %02d:%02d:%02d ",
++        snprintf(p, sizeof(prefix), "%04d-%02d-%02d %02d:%02d:%02d ",
+                 tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday,
+                 tm.tm_hour, tm.tm_min, tm.tm_sec);
+     } else {
+@@ -194,10 +194,10 @@ static void format(char *buf, const char *fmt)
+     }
+ 
+     if (strlen(prefix) + strlen(fmt) > FORMAT_SIZE / 2) {
+-        sprintf(buf, "%s <OUTPUT message too long>\n", prefix);
++        snprintf(buf, sizeof(prefix), "%s <OUTPUT message too long>\n", prefix);
+         return;
+     }
+-    sprintf(buf, "%s%s\n", prefix, fmt);
++    snprintf(buf, sizeof(prefix), "%s%s\n", prefix, fmt);
+ }
+ 
+ 

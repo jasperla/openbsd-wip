@@ -1,0 +1,12 @@
+$OpenBSD$
+--- test/test_cimd2.c.orig	Sun May 13 11:26:36 2012
++++ test/test_cimd2.c	Sun May 13 11:26:54 2012
+@@ -321,7 +321,7 @@ static void make_timestamp(unsigned char *buf, time_t 
+ 	/* Is there a thread-safe version of gmtime? */
+ 	struct tm tm = gw_gmtime(fortime);
+ 
+-	sprintf(buf, "%02d%02d%02d%02d%02d%02d",
++	snprintf(buf, sizeof(buf), "%02d%02d%02d%02d%02d%02d",
+ 		tm.tm_year % 100, tm.tm_mon + 1, tm.tm_mday,
+ 		tm.tm_hour, tm.tm_min, tm.tm_sec);
+ }

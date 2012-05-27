@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-V =			0.5.0
+V =			0.5.1.r1
 
 SUBST_VARS +=		V
 
@@ -17,8 +17,6 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=vegastrike/}
-EXTRACT_SUFX =		.tar.bz2
-
-WRKDIST =		${WRKDIR}/vegastrike-${V}
+EXTRACT_SUFX ?=		.tar.bz2
 
 NO_REGRESS =		Yes

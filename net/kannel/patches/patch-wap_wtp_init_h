@@ -1,0 +1,12 @@
+$OpenBSD$
+--- wap/wtp_init.h.orig	Sat May 12 16:41:08 2012
++++ wap/wtp_init.h	Sat May 12 16:41:22 2012
+@@ -93,7 +93,7 @@ typedef struct WTPInitMachine {
+     #define TIMER(name) Timer *name; 
+     #define ADDRTUPLE(name) WAPAddrTuple *name;
+     #define ENUM(name) init_states name;
+-    #define MACHINE(field) field
++    #define MACHINEWSP(field) field
+     #include "wtp_init_machine.def"
+ } WTPInitMachine;
+ 

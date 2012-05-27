@@ -1,0 +1,21 @@
+$OpenBSD$
+--- wap/wtp_resp.c.orig	Sat May 12 16:41:54 2012
++++ wap/wtp_resp.c	Sat May 12 16:42:05 2012
+@@ -600,7 +600,7 @@ static WTPRespMachine *resp_machine_create(WAPAddrTupl
+     #define ADDRTUPLE(name) resp_machine->name = NULL; 
+     #define LIST(name) resp_machine->name = NULL;
+     #define SARDATA(name) resp_machine->name = NULL;
+-    #define MACHINE(field) field
++    #define MACHINEWSP(field) field
+     #include "wtp_resp_machine.def"
+ 
+     gwlist_append(resp_machines, resp_machine);
+@@ -638,7 +638,7 @@ static void resp_machine_destroy(void * p)
+     #define ADDRTUPLE(name) wap_addr_tuple_destroy(resp_machine->name); 
+     #define LIST(name) gwlist_destroy(resp_machine->name,sar_info_destroy);
+     #define SARDATA(name) sardata_destroy(resp_machine->name);
+-    #define MACHINE(field) field
++    #define MACHINEWSP(field) field
+     #include "wtp_resp_machine.def"
+     gw_free(resp_machine);
+ }

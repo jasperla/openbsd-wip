@@ -1,0 +1,20 @@
+$OpenBSD: 
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Post-installation steps
+=======================
+1. Carefully edit ${SYSCONFDIR}/kannel/kannel.conf.
+
+2. Enable SMS or/and WAP box
+
+   # ${PREFIX}/sbin/smsbox_enable
+   # ${PREFIX}/sbin/wapbox_enable
+
+3. Launch kannel with /etc/rc.d/kannel start
+
+Random hints
+============
+Check /var/log/kannel/*.log if something goes wrong.
