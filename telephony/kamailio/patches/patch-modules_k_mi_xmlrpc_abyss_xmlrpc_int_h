@@ -1,0 +1,20 @@
+$OpenBSD$
+--- modules_k/mi_xmlrpc/abyss_xmlrpc_int.h.orig	Mon Apr 23 23:19:56 2012
++++ modules_k/mi_xmlrpc/abyss_xmlrpc_int.h	Mon Apr 23 23:20:24 2012
+@@ -2,6 +2,7 @@
+ #define SLEEP_INT_H_INCLUDED
+ 
+ #include <string.h>
++#include <sys/param.h>
+ 
+ extern const char * const xmlrpc_strsol;
+ 
+@@ -48,8 +49,6 @@ typedef enum {
+ 	true = 1
+ } bool;
+ 
+-#define MIN(a,b) ((a) < (b) ? (a) : (b))
+-#define MAX(a,b) ((a) > (b) ? (a) : (b))
+ 
+ /* When we deallocate a pointer in a struct, we often replace it with
+ ** this and throw in a few assertions here and there. */

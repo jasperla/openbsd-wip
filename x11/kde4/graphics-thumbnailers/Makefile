@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	KDE thumbnail creation plugins
+COMMENT =	K Desktop Environment, thumbnail creation plugins
 DISTNAME =	kdegraphics-thumbnailers-${MODKDE_VERSION}
 
 WANTLIB =  c m stdc++

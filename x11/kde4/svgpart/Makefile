@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	KDE 4 KPart for SVG
+COMMENT =	K Desktop Environment, KPart for SVG
 DISTNAME =	svgpart-${MODKDE_VERSION}
 
 WANTLIB =  c m stdc++

@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	KDE advanced text editor
+COMMENT =	K Desktop Environment, advanced text editor
 DISTNAME =	kate-${MODKDE_VERSION}
 
 SHARED_LIBS =	kateinterfaces			0.0 # 4.7

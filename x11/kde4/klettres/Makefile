@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	alphabet learning app for KDE
+COMMENT =	K Desktop Environment, alphabet learning application
 DISTNAME =	klettres-${MODKDE_VERSION}
 
 WANTLIB =  c m pthread stdc++

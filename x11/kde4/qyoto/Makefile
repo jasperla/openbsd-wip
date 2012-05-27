@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 CATEGORIES =	devel
-COMMENT =	Qt 4 bindings for .NET/Mono
+COMMENT =	K Desktop Environment, Qt4 bindings for .NET/Mono
 DISTNAME =	qyoto-${MODKDE_VERSION}
 
 SHARED_LIBS =	qyoto			0.0 # 2.0

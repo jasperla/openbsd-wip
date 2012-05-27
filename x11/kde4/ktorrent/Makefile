@@ -1,9 +1,10 @@
 # $OpenBSD$
 
-COMMENT =	torrent client for KDE 4
-V =		4.1.3
+COMMENT =	K Desktop Environment, torrent client
+V =		4.2.0
 DISTNAME =	ktorrent-${V}
 HOMEPAGE =	http://ktorrent.org/
+EXTRACT_SUFX ?=	.tar.bz2
 
 SHARED_LIBS =	ktcore		0.0
 

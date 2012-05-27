@@ -1,8 +1,8 @@
 # $OpenBSD$
 
-COMMENT =	KDE terminal emulator
+COMMENT =	K Desktop Environment, terminal emulator
 DISTNAME =	konsole-${MODKDE_VERSION}
-REVISION =	0
+
 
 SHARED_LIBS =	kdeinit4_konsole	0.0
 SHARED_LIBS +=	konsoleprivate		0.0

@@ -1,8 +1,8 @@
 # $OpenBSD$
 
-COMMENT =	KDE, file archiver 
+COMMENT =	K Desktop Environment, file archiver 
 DISTNAME =	ark-${MODKDE_VERSION}
-REVISION =	0
+
 
 SHARED_LIBS =	kerfuffle	0.0 # 4.7
 

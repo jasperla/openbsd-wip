@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	KDE 4 bindings for Python
+COMMENT =	K Desktop Environment, KDE4 bindings for Python
 DISTNAME =	pykde4-${MODKDE_VERSION}
 PKGNAME =	py-kde-${MODKDE_VERSION}
 

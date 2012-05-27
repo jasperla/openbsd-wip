@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	learning tool for KDE
+COMMENT =	K Desktop Environment, learning tool for touch typing
 DISTNAME =	ktouch-${MODKDE_VERSION}
 
 WANTLIB =  c m pthread stdc++

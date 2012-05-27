@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	screen gamma management for KDE
+COMMENT =	K Desktop Environment, screen gamma management
 DISTNAME =	kgamma-${MODKDE_VERSION}
 
 WANTLIB =  c m stdc++

@@ -45,6 +45,8 @@ NO_REGRESS =		Yes
 
 WRKDIST =		${WRKDIR}/sumwars-${V}
 
+CFLAGS +=		-pthread
+
 #pre-configure:
 #	${SUBST_CMD} ${WRKSRC}/CMakeModules/FindOGRE.cmake
 

@@ -1,0 +1,12 @@
+$OpenBSD$
+--- contrib/Makefile.in.orig	Sat May 12 01:27:15 2012
++++ contrib/Makefile.in	Sat May 12 01:27:46 2012
+@@ -410,7 +410,7 @@ clean-noinstPROGRAMS:
+ 	rm -f $$list
+ test_gnunet_prefix$(EXEEXT): $(test_gnunet_prefix_OBJECTS) $(test_gnunet_prefix_DEPENDENCIES) 
+ 	@rm -f test_gnunet_prefix$(EXEEXT)
+-	$(AM_V_CCLD)$(LINK) $(test_gnunet_prefix_OBJECTS) $(test_gnunet_prefix_LDADD) $(LIBS)
++	$(AM_V_CCLD)$(LINK) $(test_gnunet_prefix_OBJECTS) $(test_gnunet_prefix_LDADD) $(LIBS) $(INTLLIBS)
+ timeout_watchdog$(EXEEXT): $(timeout_watchdog_OBJECTS) $(timeout_watchdog_DEPENDENCIES) 
+ 	@rm -f timeout_watchdog$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(timeout_watchdog_OBJECTS) $(timeout_watchdog_LDADD) $(LIBS)

@@ -1,0 +1,21 @@
+The invoice package was conceived in late 2000 when the author had
+to dig through a truly aweful pile of expense bills without having
+a spreadsheet featuring LTEX 2 -compliant output (or any spreadsheet,
+for that purpose) available. After several miscalculations with a
+pocket calculator due to forgotten or double entries the idea came
+up to have LTEX 2 do the calculation work. As such, the package in
+its present stage is highly specialized with regard to the documents
+it generates.  The invoice package is basically a tailor-made
+solution for a consultant who charges fees and claims all sorts of
+expenses, sometimes working on different assignments for the same
+client.
+
+The author expresses his gratitude to Robert Inder, Thilo Barth,
+Jacco Kok, Fred Donck, Jacopo, Johann Spies, Ian Wormsbecker, Vincent
+Tougait and Robin Fairbairns who contributed ideas, corrections,
+bugfixes and caption translations after the first discussions on
+comp.text.tex and the initial release of invoice.
+
+Given the current capabilities of invoice, it should well be possible
+to extend the capabilities of this package in the future or to
+rewrite it in a generalized fashion.
