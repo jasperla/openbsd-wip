@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: named,v 1.1 2011/07/06 18:55:36 robert Exp $
+
+daemon="${TRUEPREFIX}/sbin/named"
+
+. /etc/rc.d/rc.subr
+
+pexp="${TRUEPREFIX}/sbin/named"
+
+rc_cmd $1

@@ -348,3 +348,4 @@ sbin/named-compilezone
 share/examples/bind9/
 share/examples/bind9/bind.keys
 @sample ${SYSCONFDIR}/bind.keys
+@rcscript ${RCDIR}/bind9
