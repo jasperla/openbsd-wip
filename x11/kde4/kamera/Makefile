@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	digital camera support for KDE
+COMMENT =	K Desktop Environment, digital camera support
 DISTNAME =	kamera-${MODKDE_VERSION}
 
 WANTLIB =  c m stdc++

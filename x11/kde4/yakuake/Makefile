@@ -1,9 +1,9 @@
 # $OpenBSD$
 
-COMMENT =	drop-down KDE terminal emulator
+COMMENT =	K Desktop Environment, quake-style terminal emulator
 VERSION =	2.9.8
 DISTNAME =	yakuake-${VERSION}
-REVISION =	1
+EXTRACT_SUFX ?=	.tar.bz2
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/yakuake/${VERSION}/src/}
 

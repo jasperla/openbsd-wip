@@ -35,12 +35,10 @@ LIB_DEPENDS =		devel/libextractor \
 			net/curl \
 			devel/libidn \
 			security/libgcrypt \
-			databases/sqlite3 \
 			converters/libunistring
-#REGRESS_DEPENDS =	???
 
 USE_GMAKE =		Yes
-USE_LIBTOOL =		gnu
+USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--with-extractor="${LOCALBASE}" \
@@ -48,8 +46,5 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--without-postgres \
 			--with-daemon-home-dir=/var/gnunet \
 			--with-sudo=/usr/bin/sudo
-#CONFIGURE_ENV =	???
-
-#NO_REGRESS =		Yes
 
 .include <bsd.port.mk>

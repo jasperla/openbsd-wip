@@ -2,9 +2,9 @@ $OpenBSD$
 
 - Don't do bash pattern substitutions.
 
---- configure.orig	Tue Sep 20 16:23:08 2011
-+++ configure	Tue Sep 20 16:23:34 2011
-@@ -14156,11 +14156,11 @@ $as_echo "$as_me: WARNING: unsupported compiler flags:
+--- configure.orig	Mon Jan 30 13:25:30 2012
++++ configure	Wed Apr 25 20:00:26 2012
+@@ -14164,11 +14164,11 @@ $as_echo "$as_me: WARNING: unsupported compiler flags:
  esac
  
  # strip leading spaces

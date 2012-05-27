@@ -1,9 +1,9 @@
 # $OpenBSD$
 
 COMMENT =		OpenVAS security scanner manager
-DISTNAME =		openvas-manager-3.0.0
+DISTNAME =		openvas-manager-3.0.1
 
-MASTER_SITES =		${MASTER_SITES_OPENVAS:=1057/}
+MASTER_SITES =		${MASTER_SITES_OPENVAS:=1104/}
 
 WANTLIB +=		c pthread \
 			assuan e2fs-uuid glib-2.0 gnutls gpg-error gpgme sqlite3 \
@@ -17,7 +17,6 @@ LIB_DEPENDS +=		security/openvas/libraries \
 			security/gnutls \
 			security/libassuan \
 			security/libgpg-error \
-			security/gpgme \
-			databases/sqlite3
+			security/gpgme
 
 .include <bsd.port.mk>

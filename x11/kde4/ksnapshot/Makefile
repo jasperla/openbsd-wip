@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	shaphot capturing utility for KDE
+COMMENT =	K Desktop Environment, screen capture program
 DISTNAME =	ksnapshot-${MODKDE_VERSION}
 
 WANTLIB =  c m pthread stdc++

@@ -1,8 +1,8 @@
 # $OpenBSD$
 
-COMMENT =	KDE, provides screenreader + focus tracking
+COMMENT =	K Desktop Environment, screenreader and focus tracking
 DISTNAME =	kaccessible-${MODKDE_VERSION}
-REVISION =	0
+
 
 WANTLIB =  c kdeui m pthread stdc++
 WANTLIB += ICE SM X11 Xext

@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	KDE frontend for remote controls
+COMMENT =	K Desktop Environment, frontend for remote controls
 DISTNAME =	kremotecontrol-${MODKDE_VERSION}
 
 SHARED_LIBS +=	libkremotecontrol	0.0 # 1.0

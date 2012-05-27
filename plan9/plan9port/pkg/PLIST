@@ -9,7 +9,7 @@ plan9/acid/68020
 plan9/acid/acme
 plan9/acid/alef
 plan9/acid/alpha
-plan9/acid/${MACHINE_ARCH}
+plan9/acid/amd64
 plan9/acid/arm
 plan9/acid/coverage
 plan9/acid/kernel
@@ -113,15 +113,15 @@ plan9/bin/doctype
 @bin plan9/bin/fontsrv
 @bin plan9/bin/fortune
 @bin plan9/bin/freq
-@comment plan9/bin/fs/
-@comment @bin plan9/bin/fs/32vfs
-@comment @bin plan9/bin/fs/cpiofs
-@comment @bin plan9/bin/fs/tapfs
-@comment @bin plan9/bin/fs/tarfs
-@comment @bin plan9/bin/fs/tpfs
-@comment @bin plan9/bin/fs/v10fs
-@comment @bin plan9/bin/fs/v6fs
-@comment @bin plan9/bin/fs/zipfs
+plan9/bin/fs/
+@bin plan9/bin/fs/32vfs
+@bin plan9/bin/fs/cpiofs
+@bin plan9/bin/fs/tapfs
+@bin plan9/bin/fs/tarfs
+@bin plan9/bin/fs/tpfs
+@bin plan9/bin/fs/v10fs
+@bin plan9/bin/fs/v6fs
+@bin plan9/bin/fs/zipfs
 @bin plan9/bin/fsize
 plan9/bin/g
 @bin plan9/bin/getflags
@@ -4455,6 +4455,8 @@ plan9/man/secindex
 plan9/ndb/
 plan9/ndb/local
 plan9/ndb/root-servers
+plan9/news/
+plan9/news/news
 plan9/plumb/
 plan9/plumb/basic
 plan9/plumb/fileaddr
@@ -7498,10 +7500,8 @@ plan9/src/libthread/NetBSD-386-asm.s
 plan9/src/libthread/NetBSD-power-asm.s
 plan9/src/libthread/NetBSD.c
 plan9/src/libthread/OpenBSD-386-asm.S
-@comment plan9/src/libthread/OpenBSD-386-asm.S.orig
 plan9/src/libthread/OpenBSD-386.c
 plan9/src/libthread/OpenBSD-power-asm.S
-@comment plan9/src/libthread/OpenBSD-power-asm.S.orig
 plan9/src/libthread/OpenBSD-power.c
 plan9/src/libthread/OpenBSD-x86_64-asm.S
 plan9/src/libthread/OpenBSD-x86_64.c

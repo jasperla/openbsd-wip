@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	Qt 4 bindings for Perl
+COMMENT =	K Desktop Environment, Qt4 bindings for Perl
 DISTNAME =	perlqt-${MODKDE_VERSION}
 PKGNAME =	p5-qt-${MODKDE_VERSION}
 

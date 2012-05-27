@@ -1,0 +1,31 @@
+@comment $OpenBSD$
+bin/csv2pdf
+bin/ltpretty
+${P5SITE}/LaTeX/
+${P5SITE}/LaTeX/Table/
+${P5SITE}/LaTeX/Table.pm
+${P5SITE}/LaTeX/Table/Themes/
+${P5SITE}/LaTeX/Table/Themes/Beamer.pm
+${P5SITE}/LaTeX/Table/Themes/Booktabs.pm
+${P5SITE}/LaTeX/Table/Themes/Classic.pm
+${P5SITE}/LaTeX/Table/Themes/Modern.pm
+${P5SITE}/LaTeX/Table/Themes/ThemeI.pm
+${P5SITE}/LaTeX/Table/Types/
+${P5SITE}/LaTeX/Table/Types/Ctable.pm
+${P5SITE}/LaTeX/Table/Types/Longtable.pm
+${P5SITE}/LaTeX/Table/Types/Std.pm
+${P5SITE}/LaTeX/Table/Types/TypeI.pm
+${P5SITE}/LaTeX/Table/Types/Xtab.pm
+@man man/man1/csv2pdf.1
+@man man/man1/ltpretty.1
+@man man/man3p/LaTeX::Table.3p
+@man man/man3p/LaTeX::Table::Themes::Beamer.3p
+@man man/man3p/LaTeX::Table::Themes::Booktabs.3p
+@man man/man3p/LaTeX::Table::Themes::Classic.3p
+@man man/man3p/LaTeX::Table::Themes::Modern.3p
+@man man/man3p/LaTeX::Table::Themes::ThemeI.3p
+@man man/man3p/LaTeX::Table::Types::Ctable.3p
+@man man/man3p/LaTeX::Table::Types::Longtable.3p
+@man man/man3p/LaTeX::Table::Types::Std.3p
+@man man/man3p/LaTeX::Table::Types::TypeI.3p
+@man man/man3p/LaTeX::Table::Types::Xtab.3p

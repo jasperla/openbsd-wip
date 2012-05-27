@@ -1,12 +1,13 @@
 # $OpenBSD$
 
-MODKDE4_VERSION =	4.8.0
+BROKEN =		rafael,amit with guidance from vadim working on 4.8.3
+MODKDE4_VERSION =	4.8.3
 MODKDE_VERSION =	${MODKDE4_VERSION}
 
 # General options set by module
 SHARED_ONLY ?=		Yes
 ONLY_FOR_ARCHS ?=	${GCC4_ARCHS}
-EXTRACT_SUFX ?=		.tar.bz2
+EXTRACT_SUFX ?=		.tar.xz
 
 CATEGORIES +=		x11/kde4
 MODULES +=		devel/cmake
@@ -63,7 +64,7 @@ MODKDE4_USE +=		runtime
 PKGNAME ?= ${DISTNAME}
 
 # Force CMake which has merged KDE modules
-MODKDE4_BUILD_DEPENDS =	STEM->=2.8.6:devel/cmake
+MODKDE4_BUILD_DEPENDS =	STEM->=2.8.8:devel/cmake
 MODKDE4_LIB_DEPENDS =
 MODKDE4_RUN_DEPENDS =
 MODKDE4_WANTLIB =

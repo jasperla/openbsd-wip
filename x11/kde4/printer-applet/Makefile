@@ -1,8 +1,8 @@
 # $OpenBSD$
 
-COMMENT =	KDE, printer status
+COMMENT =	K Desktop Environment, printer status applet
 DISTNAME =	printer-applet-${MODKDE_VERSION}
-REVISION =	0
+
 
 MODULES =	lang/python
 

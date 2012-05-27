@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	screen ruler for KDE
+COMMENT =	K Desktop Environment, screen ruler
 DISTNAME =	kruler-${MODKDE_VERSION}
 
 WANTLIB =  c m pthread stdc++

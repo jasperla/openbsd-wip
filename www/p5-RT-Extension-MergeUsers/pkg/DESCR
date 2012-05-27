@@ -1,0 +1,11 @@
+This RT extension adds a "Merge Users" box to the User Administration
+page, which allows you to merge the user you are currently viewing
+with another user on your RT instance.
+
+It also adds "MergeInto" and "UnMerge" functions to the RT::User
+class, which allow you to programmatically accomplish the same thing
+from your code.
+
+It also provides a version of CanonicalizeEmailAddress, which means
+that all e-mail sent from secondary users is displayed as coming
+from the primary user.

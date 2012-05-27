@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	planetarium for KDE
+COMMENT =	K Desktop Environment, simulate planetarium
 DISTNAME =	kstars-${MODKDE_VERSION}
 
 WANTLIB =  c m pthread stdc++ z

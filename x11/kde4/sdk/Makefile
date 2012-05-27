@@ -1,8 +1,8 @@
 # $OpenBSD$
 
-COMMENT =	KDE SDK
+COMMENT =	K Desktop Environment, software development kit
 DISTNAME =	kdesdk-${MODKDE_VERSION}
-REVISION =	0
+
 
 SHARED_LIBS =	komparedialogpages	0.0 # 4.7
 SHARED_LIBS +=	komparediff2		0.0 # 4.7

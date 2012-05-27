@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	KDE, screen magnifier
+COMMENT =	K Desktop Environment, screen magnifier
 DISTNAME =	kmag-${MODKDE_VERSION}
 
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
