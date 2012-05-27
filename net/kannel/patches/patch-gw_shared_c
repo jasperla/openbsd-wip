@@ -1,0 +1,12 @@
+$OpenBSD$
+--- gw/shared.c.orig	Sat May 12 15:12:15 2012
++++ gw/shared.c	Sat May 12 15:12:21 2012
+@@ -61,7 +61,7 @@
+  */
+ 
+ #include <errno.h>
+-#include <sys/unistd.h>
++#include <unistd.h>
+ #include <libxml/xmlversion.h>
+ 
+ #include "gwlib/gwlib.h"

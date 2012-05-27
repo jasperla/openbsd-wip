@@ -1,0 +1,32 @@
+$OpenBSD$
+--- gw/wap_ppg_session_machine.def.orig	Sat May 12 13:44:06 2012
++++ gw/wap_ppg_session_machine.def	Sat May 19 01:46:22 2012
+@@ -61,8 +61,8 @@
+  * By Aarno Syvänen for Wapit Ltd
+  */
+ 
+-#if !defined(MACHINE)
+-    #error "Macro MACHINE is missing"
++#if !defined(MACHINEWSP)
++    #error "Macro MACHINEWSP is missing"
+ #elif !defined(ADDRTUPLE)
+     #error "Macro ADDRTUPLE is missing"
+ #elif !defined(INTEGER)
+@@ -73,7 +73,7 @@
+     #error "Macro CAPABILITIES not defined"
+ #endif
+ 
+-MACHINE(
++MACHINEWSP(
+         OCTSTR(pi_client_address)    /* client address in PAP format */
+         OCTSTR(sender_address)       /* PPG's address */
+         ADDRTUPLE(addr_tuple)        /* addresses using gw format */
+@@ -86,7 +86,7 @@ MACHINE(
+                                            delivery method attribute */
+ )
+ 
+-#undef MACHINE
++#undef MACHINEWSP
+ #undef ADDRTUPLE
+ #undef INTEGER
+ #undef PUSHMACHINES

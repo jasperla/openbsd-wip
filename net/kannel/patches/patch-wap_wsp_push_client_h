@@ -1,0 +1,12 @@
+$OpenBSD$
+--- wap/wsp_push_client.h.orig	Sat May 12 16:30:31 2012
++++ wap/wsp_push_client.h	Sat May 12 16:30:45 2012
+@@ -91,7 +91,7 @@ struct WSPPushClientMachine {
+     #define INTEGER(name) long name;
+     #define HTTPHEADERS(name) List *name;
+     #define OCTSTR(name) Octstr *name;
+-    #define MACHINE(fields) fields
++    #define MACHINEWSP(fields) fields
+     #include "wsp_push_client_machine.def"
+ };
+ 

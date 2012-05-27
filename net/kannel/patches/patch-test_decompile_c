@@ -1,0 +1,21 @@
+$OpenBSD$
+--- test/decompile.c.orig	Sun May 13 11:27:56 2012
++++ test/decompile.c	Sun May 13 11:28:45 2012
+@@ -1626,7 +1626,7 @@ static void CodepageAttrvalueName(WBXML_CODEPAGE page,
+ 		if (*value)
+ 		{
+ 			*value = realloc(*value, strlen(*value) + strlen(CodepageAttrvalueNames[i].m_name) + 1);
+-			strcat(*value, CodepageAttrvalueNames[i].m_name);
++			strlcat(*value, CodepageAttrvalueNames[i].m_name, sizeof(*value));
+ 		}
+ 		else
+ 		{
+@@ -1779,7 +1779,7 @@ static void DumpNode(P_WBXML_NODE node, int indent, BO
+ 					if (node->m_data)
+ 					{
+ 						*value = realloc(*value, strlen(*value) + strlen((char*) node->m_data) + 1);
+-						strcat(*value, (char*) node->m_data);
++						strlcat(*value, (char*) node->m_data, sizeof(*value));
+ 					}
+ 				}
+ 				else

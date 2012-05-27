@@ -1,0 +1,28 @@
+$OpenBSD$
+--- wap/wsp_server_session_machine.def.orig	Sat May 12 16:20:49 2012
++++ wap/wsp_server_session_machine.def	Sat May 12 16:21:16 2012
+@@ -68,13 +68,13 @@
+ 	!defined(COOKIES) || \
+ 	!defined(MACHINESLIST) || \
+ 	!defined(CAPABILITIES) || \
+-	!defined(MACHINE) || \
++	!defined(MACHINEWSP) || \
+         !defined(REFERER)
+ #error "Some required macro is missing."
+ #endif
+ 
+ 
+-MACHINE(
++MACHINEWSP(
+     INTEGER(state)
+     INTEGER(connect_handle)
+     INTEGER(resume_handle)
+@@ -100,7 +100,7 @@ MACHINE(
+ #undef HTTPHEADERS
+ #undef ADDRTUPLE
+ #undef MACHINESLIST
+-#undef MACHINE
++#undef MACHINEWSP
+ #undef COOKIES
+ #undef CAPABILITIES
+ #undef REFERER

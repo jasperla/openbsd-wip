@@ -2,8 +2,7 @@
 
 COMMENT =	data files for vegastrike
 
-DISTNAME =	vegastrike-linux-${V}
-PKGNAME =	vegastrike-data-${V}
+DISTNAME =	vegastrike-data-${V}
 
 NO_BUILD =	Yes
 NO_REGRESS =	Yes

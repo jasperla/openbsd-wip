@@ -1,0 +1,18 @@
+$OpenBSD$
+--- gw/bearerbox.c.orig	Sun May 20 00:11:58 2012
++++ gw/bearerbox.c	Sun May 20 00:13:05 2012
+@@ -941,12 +941,12 @@ Octstr *bb_print_status(int status_type)
+     char *s, *lb;
+     char *frmt, *footer;
+     Octstr *ret, *str, *version;
+-    time_t t;
++    long t;
+ 
+     if ((lb = bb_status_linebreak(status_type)) == NULL)
+         return octstr_create("Un-supported format");
+ 
+-    t = time(NULL) - start_time;
++    t = (long)difftime(time(NULL), start_time);
+     
+     if (bb_status == BB_RUNNING)
+         s = "running";

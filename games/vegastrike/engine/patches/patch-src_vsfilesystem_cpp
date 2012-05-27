@@ -1,0 +1,30 @@
+$OpenBSD$
+--- src/vsfilesystem.cpp.orig.port	Mon Mar 19 09:20:14 2012
++++ src/vsfilesystem.cpp	Sat May 26 16:48:35 2012
+@@ -85,7 +85,7 @@ extern string GetUnitDir( string filename );
+ 
+ string selectcurrentdir;
+ 
+-#if defined (__APPLE__)
++#if defined (__APPLE__) || defined (__OpenBSD__)
+ int selectdirs( struct dirent *entry )
+ #else
+ int selectdirs( const struct dirent * entry )
+@@ -104,7 +104,7 @@ int selectdirs( const struct dirent * entry )
+     return 0;
+ }
+ 
+-#if defined (__FreeBSD__) || defined (__APPLE__)
++#if defined (BSD) || defined (__APPLE__)
+ int selectpk3s( struct dirent *entry )
+ #else
+ int selectpk3s( const struct dirent * entry )
+@@ -117,7 +117,7 @@ int selectpk3s( const struct dirent * entry )
+     return 0;
+ }
+ 
+-#if defined (__FreeBSD__) || defined (__APPLE__)
++#if defined (BSD) || defined (__APPLE__)
+ int selectbigpk3s( struct dirent *entry )
+ #else
+ int selectbigpk3s( const struct dirent * entry )

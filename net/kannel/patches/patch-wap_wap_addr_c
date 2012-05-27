@@ -1,0 +1,13 @@
+$OpenBSD$
+--- wap/wap_addr.c.orig	Sun May 13 02:42:26 2012
++++ wap/wap_addr.c	Sun May 13 02:43:27 2012
+@@ -59,6 +59,9 @@
+  */
+ 
+ #include <stdlib.h>
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ 
+ #include "gwlib/gwlib.h"

@@ -1,0 +1,28 @@
+$OpenBSD$
+--- gw/smsbox.c.orig	Sat May 19 00:18:49 2012
++++ gw/smsbox.c	Sat May 19 00:20:15 2012
+@@ -1294,13 +1294,13 @@ static int obey_request(Octstr **result, URLTranslatio
+ 			octstr_get_cstr(msg->sms.sender));
+ 
+ 	tm = gw_gmtime(msg->sms.time);
+-	sprintf(p, "%04d-%02d-%02d %02d:%02d:%02d",
++	snprintf(p, sizeof(p), "%04d-%02d-%02d %02d:%02d:%02d",
+ 		tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday,
+ 		tm.tm_hour, tm.tm_min, tm.tm_sec);
+ 	http_header_add(request_headers, "X-Kannel-Time", p);
+ 
+ 	tm = gw_gmtime(time(NULL));
+-	sprintf(p, "%04d-%02d-%02d %02d:%02d:%02d",
++	snprintf(p, sizeof(p), "%04d-%02d-%02d %02d:%02d:%02d",
+ 		tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday,
+ 		tm.tm_hour, tm.tm_min, tm.tm_sec);
+ 	http_header_add(request_headers, "Date", p); /* HTTP RFC 14.18 */
+@@ -1447,7 +1447,7 @@ static int obey_request(Octstr **result, URLTranslatio
+ 	}
+ 
+ 	tm = gw_gmtime(time(NULL));
+-	sprintf(p, "%04d-%02d-%02d %02d:%02d:%02d",
++	snprintf(p, sizeof(p), "%04d-%02d-%02d %02d:%02d:%02d",
+ 		tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday,
+ 		tm.tm_hour, tm.tm_min, tm.tm_sec);
+ 	http_header_add(request_headers, "Date", p); /* HTTP RFC 14.18 */

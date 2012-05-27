@@ -1,0 +1,21 @@
+$OpenBSD$
+--- gw/smsc/smsc_emi.c.orig	Sun May 13 11:05:50 2012
++++ gw/smsc/smsc_emi.c	Sun May 13 11:06:14 2012
+@@ -539,7 +539,7 @@ static struct emimsg *msg_to_emimsg(Msg *msg, int trn,
+ 
+     if (msg->sms.validity >= 0) {
+ 	tm = gw_localtime(time(NULL) + msg->sms.validity * 60);
+-	sprintf(p, "%02d%02d%02d%02d%02d",
++	snprintf(p, sizeof(p), "%02d%02d%02d%02d%02d",
+ 	    tm.tm_mday, tm.tm_mon + 1, tm.tm_year % 100, 
+ 	    tm.tm_hour, tm.tm_min);
+ 	str = octstr_create(p);
+@@ -549,7 +549,7 @@ static struct emimsg *msg_to_emimsg(Msg *msg, int trn,
+ 	str = octstr_create("1");
+ 	emimsg->fields[E50_DD] = str;
+ 	tm = gw_localtime(time(NULL) + msg->sms.deferred * 60);
+-	sprintf(p, "%02d%02d%02d%02d%02d",
++	snprintf(p, sizeof(p), "%02d%02d%02d%02d%02d",
+ 	    tm.tm_mday, tm.tm_mon + 1, tm.tm_year % 100, 
+ 	    tm.tm_hour, tm.tm_min);
+ 	str = octstr_create(p);

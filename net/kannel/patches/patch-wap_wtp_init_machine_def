@@ -1,0 +1,32 @@
+$OpenBSD$
+--- wap/wtp_init_machine.def.orig	Sat May 12 16:45:32 2012
++++ wap/wtp_init_machine.def	Sat May 12 16:45:54 2012
+@@ -85,8 +85,8 @@
+  */
+ 
+ 
+-#if !defined(MACHINE) 
+-    #error "Macro MACHINE is missing."
++#if !defined(MACHINEWSP) 
++    #error "Macro MACHINEWSP is missing."
+ #elif !defined(INTEGER) 
+     #error "Macro INTEGER is missing."
+ #elif !defined(ENUM)  
+@@ -99,7 +99,7 @@
+     #error "Macro ADDRTUPLE is missing."
+ #endif
+ 
+-MACHINE(ENUM(state)
++MACHINEWSP(ENUM(state)
+         INTEGER(tid)             /* transaction identifier */
+         ADDRTUPLE(addr_tuple)
+         INTEGER(tidnew)          /* tidnew flag */
+@@ -111,7 +111,7 @@ MACHINE(ENUM(state)
+         INTEGER(rid)             /* are we resending invoke */
+        )
+ 
+-#undef MACHINE
++#undef MACHINEWSP
+ #undef ENUM
+ #undef EVENT
+ #undef INTEGER

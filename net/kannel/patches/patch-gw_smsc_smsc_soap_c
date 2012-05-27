@@ -1,0 +1,41 @@
+$OpenBSD$
+--- gw/smsc/smsc_soap.c.orig	Sat May 12 13:44:05 2012
++++ gw/smsc/smsc_soap.c	Sun May 13 03:54:19 2012
+@@ -1170,7 +1170,7 @@ static void soap_read_response(SMSCConn *conn)
+             msgID = msg->sms.id;
+         */
+ 
+-        sprintf(tmpid,"%lld",msgID);
++        snprintf(tmpid,sizeof(tmpid),"%lld",msgID);
+         debug("bb.soap.read_response",0,"SOAP[%s]: ACK - id: %lld", octstr_get_cstr(privdata->name), msgID);
+ 
+         dlr_add(conn->id, octstr_imm(tmpid), msg);
+@@ -2049,12 +2049,17 @@ static Octstr* soap_convert_token(Msg* msg, Octstr* na
+ 
+ #define INTEGER(fieldname) \
+         if (!octstr_str_compare(name, #fieldname)) { \
+-                sprintf(buf,"%ld", p->fieldname); \
++                snprintf(buf,sizeof(buf),"%ld", p->fieldname); \
+                 return octstr_create(buf); \
+         }
++#define TIME_T(fieldname) \
++	if (!octstr_str_compare(name, #fieldname)) { \
++		snprintf(buf,sizeof(buf),"%d", p->fieldname); \
++		return octstr_create(buf); \
++	}
+ #define INT64(fieldname) \
+         if (!octstr_str_compare(name, #fieldname)) { \
+-                sprintf(buf,"%lld", p->fieldname); \
++                snprintf(buf,sizeof(buf),"%lld", p->fieldname); \
+                 return octstr_create(buf); \
+         }
+ #define OCTSTR(fieldname) \
+@@ -2374,7 +2379,7 @@ int soap_map_xml_data(xmlNodePtr xml, List* maps)
+         octstr_strip_blanks(temp);
+         if (!octstr_str_compare(map->sscan_type,"%s")) {
+             /* special processing of %s - this means the whole string, while sscanf stops at spaces */
+-            strcpy(map->store,octstr_get_cstr(temp));
++            strlcpy(map->store,octstr_get_cstr(temp),sizeof(map->store));
+ 
+             ++args;
+         } else {

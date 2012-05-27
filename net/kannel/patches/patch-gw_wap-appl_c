@@ -1,0 +1,12 @@
+$OpenBSD$
+--- gw/wap-appl.c.orig	Sun May 13 11:15:24 2012
++++ gw/wap-appl.c	Sun May 13 11:15:52 2012
+@@ -549,7 +549,7 @@ static void add_session_id(List *headers, long session
+ {
+     if (session_id != -1) {
+         char buf[40];
+-        sprintf(buf, "%ld", session_id);
++        snprintf(buf, sizeof(buf), "%ld", session_id);
+         http_header_add(headers, "X-WAP-Session-ID", buf);
+     }
+ }

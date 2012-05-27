@@ -1,0 +1,37 @@
+$OpenBSD$
+--- gw/msg-decl.h.orig	Sat May 12 13:44:06 2012
++++ gw/msg-decl.h	Sun May 13 01:49:28 2012
+@@ -83,7 +83,7 @@ MSG(sms,
+         OCTSTR(receiver)
+         OCTSTR(udhdata)
+         OCTSTR(msgdata)
+-        INTEGER(time)
++        TIME_T(time)
+         OCTSTR(smsc_id)
+         OCTSTR(smsc_number)
+         OCTSTR(foreign_id)
+@@ -109,14 +109,14 @@ MSG(sms,
+         VOID(split_parts)
+         INTEGER(priority)
+         INTEGER(resend_try)
+-        INTEGER(resend_time)
++        TIME_T(resend_time)
+         OCTSTR(meta_data)
+     })
+ 
+ MSG(ack,
+     {
+         INTEGER(nack)
+-        INTEGER(time)
++        TIME_T(time)
+         UUID(id)
+     })
+     
+@@ -131,6 +131,7 @@ MSG(wdp_datagram,
+ 
+ #undef MSG
+ #undef INTEGER
++#undef TIME_T
+ #undef OCTSTR
+ #undef UUID
+ #undef VOID

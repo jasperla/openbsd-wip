@@ -1,0 +1,31 @@
+$OpenBSD$
+--- gw/bb_boxc.c.orig	Sun May 20 00:13:18 2012
++++ gw/bb_boxc.c	Sun May 20 00:18:12 2012
+@@ -1327,7 +1327,8 @@ Octstr *boxc_status(int status_type)
+     Octstr *tmp;
+     char *lb, *ws;
+     int i, boxes, para = 0;
+-    time_t orig, t;
++    time_t orig;
++    long t;
+     Boxc *bi;
+ 
+     orig = time(NULL);
+@@ -1365,7 +1366,7 @@ Octstr *boxc_status(int status_type)
+ 	        bi = gwlist_get(wapbox_list, i);
+ 	        if (bi->alive == 0)
+ 		        continue;
+-	        t = orig - bi->connect_time;
++	        t = (long)difftime(orig, bi->connect_time);
+             if (status_type == BBSTATUS_XML)
+ 	            octstr_format_append(tmp,
+ 		        "<box>\n\t\t<type>wapbox</type>\n\t\t<IP>%s</IP>\n"
+@@ -1400,7 +1401,7 @@ Octstr *boxc_status(int status_type)
+ 	        bi = gwlist_get(smsbox_list, i);
+ 	        if (bi->alive == 0)
+ 		        continue;
+-	        t = orig - bi->connect_time;
++	        t = (long)difftime(orig,bi->connect_time);
+             if (status_type == BBSTATUS_XML)
+ 	            octstr_format_append(tmp, "<box>\n\t\t<type>smsbox</type>\n"
+                     "\t\t<id>%s</id>\n\t\t<IP>%s</IP>\n"

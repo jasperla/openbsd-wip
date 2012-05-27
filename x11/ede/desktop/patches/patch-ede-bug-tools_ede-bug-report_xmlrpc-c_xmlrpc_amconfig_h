@@ -1,0 +1,12 @@
+$OpenBSD$
+--- ede-bug-tools/ede-bug-report/xmlrpc-c/xmlrpc_amconfig.h.orig	Fri May 25 18:19:50 2012
++++ ede-bug-tools/ede-bug-report/xmlrpc-c/xmlrpc_amconfig.h	Fri May 25 18:20:05 2012
+@@ -15,7 +15,7 @@
+ #define HAVE_SETGROUPS 1
+ #define HAVE_ASPRINTF 1
+ #define HAVE_SETENV 1
+-#define HAVE_PSELECT 1
++/* #define HAVE_PSELECT 1 */
+ #define HAVE_WCSNCMP 1
+ #define HAVE_GETTIMEOFDAY 1
+ #define HAVE_LOCALTIME_R 1

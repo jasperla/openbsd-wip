@@ -1,0 +1,25 @@
+$OpenBSD$
+--- wap/wsp_push_client_machine.def.orig	Sat May 12 16:27:27 2012
++++ wap/wsp_push_client_machine.def	Sat May 12 16:27:52 2012
+@@ -64,11 +64,11 @@
+     #error "Macro INTEGER not defined."
+ #elif !defined(HTTPHEADERS)
+     #error "Macro HTTPHEADERS not defined."
+-#elif !defined(MACHINE)
+-    #error "Macro MACHINE is not defined."
++#elif !defined(MACHINEWSP)
++    #error "Macro MACHINEWSP is not defined."
+ #endif
+ 
+-MACHINE(
++MACHINEWSP(
+ 	INTEGER(state)
+         INTEGER(client_push_id)
+         INTEGER(transaction_id)
+@@ -78,5 +78,5 @@ MACHINE(
+ 
+ #undef INTEGER
+ #undef HTTPHEADERS
+-#undef MACHINE
++#undef MACHINEWSP
+ 

@@ -1,0 +1,83 @@
+$OpenBSD$
+--- gwlib/octstr.c.orig	Fri May 18 23:09:55 2012
++++ gwlib/octstr.c	Fri May 18 23:17:40 2012
+@@ -81,7 +81,7 @@
+  */
+ #if (defined(__linux__) && (defined(__powerpc__) || defined(__s390__) || defined(__x86_64))) || \
+     (defined(__FreeBSD__) && defined(__amd64__)) || \
+-    (defined(DARWIN) && defined(__x86_64__))
++    (defined(DARWIN) && defined(__x86_64__)) || (defined(OpenBSD) && defined(__amd64__))
+ #define VARGS(x)   (x)
+ #define VALPARM(y) va_list y
+ #define VALST(z)   (z)
+@@ -1921,7 +1921,7 @@ void octstr_append_decimal(Octstr *ostr, long value)
+ {
+     char tmp[128];
+ 
+-    sprintf(tmp, "%ld", value);
++    snprintf(tmp, sizeof(tmp), "%ld", value);
+     octstr_append_cstr(ostr, tmp);
+ }
+ 
+@@ -1958,7 +1958,7 @@ static void octstr_dump_debug(const Octstr *ostr, int 
+     this_line_begins_at = 0;
+     for (pos = 0; pos < octstr_len(ostr); ) {
+         c = octstr_get_char(ostr, pos);
+-        sprintf(p, "%02x ", c);
++        snprintf(p, sizeof(buf), "%02x ", c);
+         p = strchr(p, '\0');
+         if (isprint(c))
+             *d++ = c;
+@@ -2027,7 +2027,7 @@ do { \
+     this_line_begins_at = 0; \
+     for (pos = 0; pos < octstr_len(ostr); ) { \
+         c = octstr_get_char(ostr, pos); \
+-        sprintf(p, "%02x ", c); \
++        snprintf(p, sizeof(buf), "%02x ", c); \
+         p = strchr(p, '\0'); \
+         if (isprint(c)) \
+             *d++ = c; \
+@@ -2304,28 +2304,28 @@ static void convert(Octstr *os, struct format *format,
+ 	tmpfmt[1] = 'l';
+ 	tmpfmt[2] = **fmt;
+ 	tmpfmt[3] = '\0';
+-	sprintf(tmpbuf, tmpfmt, u);
++	snprintf(tmpbuf, sizeof(tmpbuf), tmpfmt, u);
+         new = octstr_create(tmpbuf);
+         break;
+ 
+     case 'e':
+     case 'f':
+     case 'g':
+-        sprintf(tmpfmt, "%%");
++        snprintf(tmpfmt, sizeof(tmpfmt), "%%");
+         if (format->minus)
+             strcat(tmpfmt, "-");
+         if (format->zero)
+             strcat(tmpfmt, "0");
+         if (format->min_width > 0)
+-            sprintf(strchr(tmpfmt, '\0'),
++            snprintf(strchr(tmpfmt, '\0'), sizeof(tmpfmt),
+                     "%ld", format->min_width);
+         if (format->has_prec)
+-            sprintf(strchr(tmpfmt, '\0'),
++            snprintf(strchr(tmpfmt, '\0'), sizeof(tmpfmt),
+                     ".%ld", format->prec);
+         if (format->type != '\0')
+-            sprintf(strchr(tmpfmt, '\0'),
++            snprintf(strchr(tmpfmt, '\0'), sizeof(tmpfmt),
+                     "%c", (int) format->type);
+-        sprintf(strchr(tmpfmt, '\0'), "%c", **fmt);
++        snprintf(strchr(tmpfmt, '\0'), sizeof(tmpfmt), "%c", **fmt);
+         snprintf(tmpbuf, sizeof(tmpbuf),
+                  tmpfmt, va_arg(VALST(args), double));
+         new = octstr_create(tmpbuf);
+@@ -2342,7 +2342,7 @@ static void convert(Octstr *os, struct format *format,
+ 
+     case 'p':
+     	p = va_arg(VALST(args), void *);
+-	sprintf(tmpfmt, "%p", p);
++	snprintf(tmpfmt, sizeof(tmpfmt), "%p", p);
+ 	new = octstr_create(tmpfmt);
+ 	break;
+ 
