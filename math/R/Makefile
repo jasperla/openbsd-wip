@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB= 	GL ICE SM X11 Xext Xmu Xrender Xss Xt \
 		bz2 c cairo expat fontconfig freetype glib-2.0 \
-		gmodule-2.0 gobject-2.0 gthread-2.0 jpeg m ncurses pango-1.0 \
+		gobject-2.0 jpeg lzma m ncurses pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread \
 		pthread-stubs readline tiff xcb xcb-render xcb-shm z \
 		${MODFORTRAN_WANTLIB} ${MODTK_WANTLIB}
@@ -49,6 +49,7 @@ BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS}
 LIB_DEPENDS=	${MODFORTRAN_LIB_DEPENDS} \
 		${MODTK_LIB_DEPENDS} \
 		archivers/bzip2 \
+		archivers/xz \
 		graphics/cairo \
 		graphics/jpeg \
 		devel/glib2 \
