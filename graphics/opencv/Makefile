@@ -7,7 +7,7 @@ SHARED_ONLY=		Yes
 COMMENT-main=		library of programming functions for real time cv
 COMMENT-docs=		documentation for OpenCV
 
-V=			2.3.1a
+V=			2.4.0
 DISTNAME=		OpenCV-$V
 PKGNAME-main=		opencv-$V
 PKGNAME-docs=		opencv-docs-$V
