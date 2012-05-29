@@ -4,7 +4,7 @@ COMMENT =		molecule editor and visualizer
 V =			1.0.3
 DISTNAME =		avogadro-${V}
 CATEGORIES =		education biology
-REVISION =		2
+REVISION =		3
 HOMEPAGE =		http://avogadro.openmolecules.net/
 
 SHARED_LIBS +=		avogadro	0.0	# 1.0
@@ -33,7 +33,7 @@ LIB_DEPENDS =		devel/boost \
 			graphics/glew \
 			math/eigen2 \
 			misc/openbabel \
-			x11/py-qt4 \
+			x11/py-qt4
 
 SEPARATE_BUILD =	simple
 USE_GROFF =		Yes
