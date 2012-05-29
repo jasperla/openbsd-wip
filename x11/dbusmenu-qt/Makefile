@@ -1,11 +1,14 @@
 # $OpenBSD$
 
 COMMENT =		D-Bus menu implementation for Qt
-DISTNAME =		dbusmenu-qt-0.9.0
+V =			0.9.2
+DISTNAME =		libdbusmenu-qt-${V}
+PKGNAME =		dbusmenu-qt-${V}
 CATEGORIES =		x11 devel
-HOMEPAGE =		http://people.canonical.com/~agateau/dbusmenu/
+HOMEPAGE =		https://launchpad.net/libdbusmenu-qt/
 
-SHARED_LIBS +=	dbusmenu-qt               0.0 # 2.6
+SHARED_LIBS +=		dbusmenu-qt	0.0 # 2.6
+EXTRACT_SUFX =		.tar.bz2
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -13,7 +16,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =		http://www.ohvost.ru/dnl/
+MASTER_SITES =		${HOMEPAGE}trunk/${V}/+download/
 
 MODULES =		devel/cmake devel/gettext x11/qt4
 WANTLIB +=		QtDBus QtGui m stdc++
