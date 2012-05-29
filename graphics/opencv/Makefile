@@ -26,6 +26,10 @@ SHARED_LIBS +=		opencv_ml			1.0
 SHARED_LIBS +=		opencv_objdetect		1.0
 SHARED_LIBS +=		opencv_ts			0.0
 SHARED_LIBS +=		opencv_video			1.0
+SHARED_LIBS +=		opencv_nonfree			0.0
+SHARED_LIBS +=		opencv_photo			0.0
+SHARED_LIBS +=		opencv_stitching		0.0
+SHARED_LIBS +=		opencv_videostab		0.0
 
 HOMEPAGE=		http://code.opencv.org
 
@@ -40,17 +44,16 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://www.sizeofvoid.org/pub/OpenBSD/distfiles/
 EXTRACT_SUFX=		.tar.bz2
 
-WANTLIB += GL Half Iex IlmImf Imath X11 Xau Xcomposite Xcursor
-WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB += Xxf86vm atk-1.0 avcodec avformat avutil bz2 c cairo
-WANTLIB += drm expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gsm gstapp-0.10
-WANTLIB += gstbase-0.10 gstreamer-0.10 gstvideo-0.10 gthread-2.0
-WANTLIB += gtk-x11-2.0 jasper jpeg m mp3lame ogg orc-0.4 pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread pthread-stubs
-WANTLIB += schroedinger-1.0 speex stdc++ swscale theoradec theoraenc
-WANTLIB += tiff vorbis vorbisenc vpx x264 xcb xcb-render xcb-shm
-WANTLIB += xml2 z
+WANTLIB += GL Half Iex IlmImf IlmThread Imath X11 Xcomposite Xcursor
+WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
+WANTLIB += avcodec avformat avutil bz2 c cairo expat fontconfig
+WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gsm gstapp-0.10 gstbase-0.10
+WANTLIB += gstreamer-0.10 gstvideo-0.10 gthread-2.0 gtk-x11-2.0
+WANTLIB += jasper jpeg m mp3lame ogg orc-0.4 pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pixman-1 png pthread pthread-stubs schroedinger-1.0
+WANTLIB += speex stdc++ swscale theoradec theoraenc tiff vorbis
+WANTLIB += vorbisenc vpx x264 xcb xcb-render xcb-shm xml2 xvidcore z
 
 MODULES=		devel/cmake \
 			devel/gettext
