@@ -6,12 +6,14 @@ SHARED_ONLY=		Yes
 
 COMMENT-main=		library of programming functions for real time cv
 COMMENT-docs=		documentation for OpenCV
+COMMENT-python=		python bindings for OpenCV
 
 V=			2.4.0
 REVISION=		0
 DISTNAME=		OpenCV-$V
 PKGNAME-main=		opencv-$V
 PKGNAME-docs=		opencv-docs-$V
+PKGNAME-python=		opencv-python-$V
 CATEGORIES=		graphics devel
 
 SHARED_LIBS +=		opencv_calib3d			1.0
@@ -45,46 +47,52 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://www.sizeofvoid.org/pub/OpenBSD/distfiles/
 EXTRACT_SUFX=		.tar.bz2
 
-WANTLIB += GL Half Iex IlmImf IlmThread Imath X11 Xcomposite Xcursor
-WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
-WANTLIB += avcodec avformat avutil bz2 c cairo expat fontconfig
-WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gsm gstapp-0.10 gstbase-0.10
-WANTLIB += gstreamer-0.10 gstvideo-0.10 gthread-2.0 gtk-x11-2.0
-WANTLIB += jasper jpeg m mp3lame ogg orc-0.4 pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pixman-1 png pthread pthread-stubs schroedinger-1.0
-WANTLIB += speex stdc++ swscale theoradec theoraenc tiff vorbis
-WANTLIB += vorbisenc vpx x264 xcb xcb-render xcb-shm xml2 xvidcore z
+WANTLIB-main += GL Half Iex IlmImf IlmThread Imath X11 Xcomposite Xcursor
+WANTLIB-main += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
+WANTLIB-main += avcodec avformat avutil bz2 c cairo expat fontconfig
+WANTLIB-main += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB-main += gmodule-2.0 gobject-2.0 gsm gstapp-0.10 gstbase-0.10
+WANTLIB-main += gstreamer-0.10 gstvideo-0.10 gthread-2.0 gtk-x11-2.0
+WANTLIB-main += jasper jpeg m mp3lame ogg orc-0.4 pango-1.0 pangocairo-1.0
+WANTLIB-main += pangoft2-1.0 pixman-1 png pthread pthread-stubs schroedinger-1.0
+WANTLIB-main += speex stdc++ swscale theoradec theoraenc tiff vorbis
+WANTLIB-main += vorbisenc vpx x264 xcb xcb-render xcb-shm xml2 xvidcore z
 
 MODULES=		devel/cmake \
 			devel/gettext
 
-MULTI_PACKAGES=		-main -docs
+MULTI_PACKAGES=		-main -docs -python
 
-FLAVORS=		python
-FLAVOR?=
+PSEUDO_FLAVORS =	no_python
+FLAVOR ?=
 
-.if ${FLAVOR:L:Mpython}
+.include <bsd.port.arch.mk>
+.if ${BUILD_PACKAGES:M-python}
 CONFIGURE_ARGS+=	-DBUILD_NEW_PYTHON_SUPPORT:Bool=On \
 			-DINSTALL_PYTHON_EXAMPLES:Bool=On
-
-MODULES +=		lang/python
-RUN_DEPENDS +=		math/py-numpy
-#BUILD_DEPENDS +=	math/py-numpy
-WANTLIB +=		${MODPY_WANTLIB}
-LIB_DEPENDS +=		${MODPY_LIB_DEPENDS}
 .else
 CONFIGURE_ARGS+=	-DBUILD_NEW_PYTHON_SUPPORT:Bool=Off \
 			-DINSTALL_PYTHON_EXAMPLES:Bool=Off
 .endif
 
 CONFIGURE_STYLE=	cmake
+
 LIB_DEPENDS-main=	multimedia/gstreamer-0.10/plugins-base \
 			x11/gtk+2 \
 			graphics/ilmbase \
 			graphics/openexr \
 			graphics/png \
 			graphics/ffmpeg
+
+LIB_DEPENDS-python=	${LIB_DEPENDS} \
+			${MODPY_LIB_DEPENDS}
+
+WANTLIB-python=		${WANTLIB} \
+			${MODPY_WANTLIB}
+
+RUN_DEPENDS-python=	math/py-numpy
+MODULES-python=		${MODULES} \
+			lang/python
 
 WANTLIB-docs=		# empty
 LIB_DEPENDS-docs=	# empty

@@ -1,3 +1,2 @@
-- check python FLAVOR
-- Do fix -docs in 2.4.0
+- check -python
 - 2.4.0 need tests

@@ -1,2 +1,21 @@
-@comment $OpenBSD: PLIST-docs,v 1.1.1.1 2011/06/24 09:30:22 jasper Exp $
-lib/pkgconfig/
+@comment $OpenBSD$
+share/OpenCV/doc/
+share/OpenCV/doc/CMakeLists.txt
+share/OpenCV/doc/acircles_pattern.png
+share/OpenCV/doc/check_docs_whitelist.txt
+share/OpenCV/doc/haartraining.htm
+share/OpenCV/doc/license.txt
+share/OpenCV/doc/opencv-logo-white.png
+share/OpenCV/doc/opencv-logo.png
+share/OpenCV/doc/opencv-logo2.png
+share/OpenCV/doc/opencv.jpg
+share/OpenCV/doc/opencv2refman.pdf
+share/OpenCV/doc/opencv_cheatsheet.pdf
+share/OpenCV/doc/opencv_tutorials.pdf
+share/OpenCV/doc/opencv_user.pdf
+share/OpenCV/doc/packaging.txt
+share/OpenCV/doc/pattern.png
+share/OpenCV/doc/vidsurv/
+share/OpenCV/doc/vidsurv/Blob_Tracking_Modules.doc
+share/OpenCV/doc/vidsurv/Blob_Tracking_Tests.doc
+share/OpenCV/doc/vidsurv/TestSeq.doc
