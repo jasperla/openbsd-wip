@@ -49,6 +49,7 @@ MODULES =	devel/gettext
 MODKDE4_USE =	libs
 
 BUILD_DEPENDS =	devel/boost \
+		archivers/gtar \
 		textproc/docbook \
 		textproc/docbook-xsl
 
@@ -59,6 +60,6 @@ LIB_DEPENDS +=	databases/openldap \
 		textproc/libical \
 		x11/kde4/akonadi
 
-TAR=gtar
+TAR=		${LOCALBASE}/bin/gtar
 
 .include <bsd.port.mk>
