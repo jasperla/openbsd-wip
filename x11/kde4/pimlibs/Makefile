@@ -59,4 +59,6 @@ LIB_DEPENDS +=	databases/openldap \
 		textproc/libical \
 		x11/kde4/akonadi
 
+TAR=gtar
+
 .include <bsd.port.mk>
