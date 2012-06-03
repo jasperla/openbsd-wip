@@ -23,6 +23,7 @@ WANTLIB += glib-2.0 pulse pulse-mainloop-glib
 MODKDE4_USE =	libs
 
 BUILD_DEPENDS =	archivers/bzip2 \
+		archivers/gtar \
 		archivers/xz
 
 RUN_DEPENDS =	archivers/bzip2 \
@@ -50,5 +51,7 @@ CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_ALSA:Bool=TRUE \
 
 WRONG_SYSCONF_FILES =	dbus-1	share/examples \
 			xdg	share/examples
+
+TAR=			${LOCALBASE}/bin/gtar
 
 .include <bsd.port.mk>
