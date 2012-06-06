@@ -1,7 +1,6 @@
-$OpenBSD$
---- SConstruct.orig	Wed May 23 10:13:02 2012
-+++ SConstruct	Fri May 25 14:25:45 2012
-@@ -454,7 +444,7 @@ if env['ncurses']:
+--- /usr/ports/pobj/amd64/gpsd-3.6/gpsd-3.6/SConstruct.orig	Wed May 23 10:13:02 2012
++++ /usr/ports/pobj/amd64/gpsd-3.6/gpsd-3.6/SConstruct	Sun May 27 21:59:56 2012
+@@ -454,7 +454,7 @@
      elif sys.platform.startswith('freebsd'):
          ncurseslibs= [ '-lncurses' ]
      elif sys.platform.startswith('openbsd'):
@@ -10,7 +9,41 @@ $OpenBSD$
  
  if env['usb']:
      # In FreeBSD except version 7, USB libraries are in the base system
-@@ -993,7 +983,7 @@ else:
+@@ -727,8 +728,10 @@
+     if platform == 'posix':
+         ilib_suffix = shlib_suffix + '.' + libgps_version
+         (major, age, revision) = libgps_version.split(".")
++	# XXXHACK
+         soname = "lib" + libname + shlib_suffix + "." + major
+-        shlink_flags += [ '-Wl,-Bsymbolic', '-Wl,-soname=%s' % soname ]
++#        soname = "lib" + libname + shlib_suffix
++	shlink_flags += [ '-Wl,-Bsymbolic', '-Wl,-soname=%s' % soname ]
+     elif platform == 'cygwin':
+         ilib_suffix = shlib_suffix
+         shlink_flags += [ '-Wl,-Bsymbolic',
+@@ -761,7 +764,10 @@
+         suffix_re = '%s\\.[0-9\\.]*$' % re.escape(shlib_suffix)
+         # For libfoo.so.x.y.z, links libfoo.so libfoo.so.x.y libfoo.so.x
+         major_name = shlib_suffix + "." + lib.split(".")[2]
+-        minor_name = major_name + "." + lib.split(".")[3]
++	# XXXHACK
++        #minor_name = major_name + "." + lib.split(".")[3]
++	minor_name = major_name + ".0"
++	print "ABABA minor_name=%s" % (minor_name)
+         for linksuffix in [shlib_suffix, major_name, minor_name]:
+             linkname = re.sub(suffix_re, linksuffix, lib)
+             env.AddPostAction(ilib, 'rm -f %s; ln -s %s %s' % (
+@@ -785,7 +791,8 @@
+             minor_name = major_name + "." + lib.split(".")[3]
+             for linksuffix in [shlib_suffix, major_name, minor_name]:
+                 linkname = re.sub(suffix_re, linksuffix, lib)
+-                env.AddPostAction(ilibs, 'cd %s; rm -f %s; ln -s %s %s' % (destination, linkname, lib, linkname))
++		# XXX disable installation of symlinks
++                #env.AddPostAction(ilibs, 'cd %s; rm -f %s; ln -s %s %s' % (destination, linkname, lib, linkname))
+             env.Clean(lib, linkname)
+     return ilibs
+ 
+@@ -993,7 +1000,7 @@
              python_objects[ext].append(
                  python_env.NoCache(
                      python_env.SharedObject(
@@ -19,7 +52,7 @@ $OpenBSD$
                      )
                  )
              )
-@@ -1136,7 +1126,6 @@ python_manpages = {
+@@ -1136,7 +1143,6 @@
      "gpscat.1" : "gpscat.xml",
      "xgpsspeed.1" : "gps.xml",
      "xgps.1" : "gps.xml",
@@ -27,7 +60,7 @@ $OpenBSD$
      }
  
  manpage_targets = []
-@@ -1191,7 +1180,7 @@ if not env['debug'] and not env['profiling'] and env['
+@@ -1191,7 +1197,7 @@
  if not env['python']:
      python_install = []
  else:

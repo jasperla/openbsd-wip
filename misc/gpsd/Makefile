@@ -11,8 +11,8 @@ PKGNAME-x11=		gpsd-x11-${VERSION}
 PKGNAME-php=		gpsd-php-${VERSION}
 
 # explain shlib versions to scons
-SHARED_LIBS += 		gps	20.0 # 20.0
-SHARED_LIBS += 		gpsd	20.0 # 20.0
+#SHARED_LIBS += 		gps	20.0 # 20.0
+#SHARED_LIBS += 		gpsd	20.0 # 20.0
 CATEGORIES=		misc geo
 
 HOMEPAGE = 		http://www.catb.org/gpsd/
@@ -34,7 +34,8 @@ MODSCONS_FLAGS += 	gpsd_user=_gpsd \
 			mandir=man \
 			pps=no \
 			prefix=${PREFIX} \
-			chrpath=no
+			chrpath=no \
+			shared=no
 
 MULTI_PACKAGES = 	-main -php -x11
 
@@ -94,6 +95,5 @@ NO_REGRESS = 	Yes
 #do-regress:
 #	@${SETENV} ${MAKE_ENV} ${MODSCONS_BIN} -C ${WRKSRC} \
 #		${MODSCONS_ENV} ${MODSCONS_FLAGS} check
-
 
 .include <bsd.port.mk>
