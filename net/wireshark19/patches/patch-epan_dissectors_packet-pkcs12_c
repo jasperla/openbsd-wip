@@ -1,0 +1,13 @@
+$OpenBSD$
+--- epan/dissectors/packet-pkcs12.c.orig	Fri Apr  6 18:43:15 2012
++++ epan/dissectors/packet-pkcs12.c	Tue May 15 15:25:35 2012
+@@ -56,7 +56,9 @@
+ #endif
+ 
+ #ifdef HAVE_LIBGCRYPT
++#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+ #include <gcrypt.h>
++#pragma GCC diagnostic error "-Wdeprecated-declarations"
+ #endif
+ 
+ #define PNAME  "PKCS#12: Personal Information Exchange"
