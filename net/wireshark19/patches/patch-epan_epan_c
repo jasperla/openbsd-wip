@@ -1,0 +1,13 @@
+$OpenBSD$
+--- epan/epan.c.orig	Fri Apr  6 18:43:17 2012
++++ epan/epan.c	Tue May 15 15:49:19 2012
+@@ -30,7 +30,9 @@
+ #endif
+ 
+ #ifdef HAVE_LIBGCRYPT
++#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+ #include <gcrypt.h>
++#pragma GCC diagnostic error "-Wdeprecated-declarations"
+ #endif /* HAVE_LIBGCRYPT */
+ 
+ #ifdef HAVE_LIBGNUTLS

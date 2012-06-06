@@ -1,0 +1,13 @@
+$OpenBSD$
+--- epan/dissectors/packet-ipsec.c.orig	Tue May 15 20:57:42 2012
++++ epan/dissectors/packet-ipsec.c	Sun Jun  3 13:17:38 2012
+@@ -90,7 +90,9 @@ ADD: Additional generic (non-checked) ICV length of 12
+ /* If you want to be able to decrypt or Check Authentication of ESP packets you MUST define this : */
+ #ifdef HAVE_LIBGCRYPT
+ #include <epan/uat.h>
++#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+ #include <gcrypt.h>
++#pragma GCC diagnostic error "-Wdeprecated-declarations"
+ #endif /* HAVE_LIBGCRYPT */
+ 
+ 
