@@ -1,0 +1,13 @@
+$OpenBSD$
+--- epan/dissectors/packet-snmp.c.orig	Fri Apr  6 18:43:16 2012
++++ epan/dissectors/packet-snmp.c	Tue May 15 15:26:18 2012
+@@ -89,7 +89,9 @@
+ 
+ 
+ #ifdef HAVE_LIBGCRYPT
++#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+ #include <gcrypt.h>
++#pragma GCC diagnostic error "-Wdeprecated-declarations"
+ #endif
+ 
+ /* Take a pointer that may be null and return a pointer that's not null
