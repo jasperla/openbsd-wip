@@ -1,0 +1,20 @@
+$OpenBSD$
+
+correct order and add missing headers
+--- dumpcap.c.orig	Thu Jan 12 15:11:54 2012
++++ dumpcap.c	Thu Jan 12 18:14:46 2012
+@@ -48,6 +48,14 @@
+ #include <unistd.h>
+ #endif
+ 
++#ifdef HAVE_SYS_SOCKET_H
++#include <sys/socket.h>
++#endif
++
++#ifdef HAVE_NETINET_IN_H
++#include <netinet/in.h>
++#endif
++
+ #ifdef HAVE_ARPA_INET_H
+ #include <arpa/inet.h>
+ #endif
