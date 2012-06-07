@@ -79,7 +79,7 @@ RUN_DEPENDS =	misc/shared-mime-info \
 
 LIB_DEPENDS =	archivers/bzip2 \
 		archivers/xz \
-		databases/soprano>=2.7.3 \
+		databases/soprano>=2.7.6 \
 		databases/strigi \
 		devel/bison \
 		devel/pcre \
@@ -100,7 +100,7 @@ LIB_DEPENDS =	archivers/bzip2 \
 CONFIGURE_ARGS =	-DGSSAPI_LIBS:STRING="-lgssapi -lkrb5 -lasn1 -lcom_err" \
 			-DGSSAPI_INCS:STRING="/usr/include/kerberosV" \
 			-DGSSAPI_FLAVOR:STRING="HEIMDAL" \
-			-DGSSAPI_FOUND:BOOL=TRUE \
+			-DGSSAPI_FOUND:BOOL=TRUE
 
 # and do not have this stuff at all
 CONFIGURE_ARGS +=	-DACL_FOUND:Bool=FALSE \
