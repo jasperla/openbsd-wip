@@ -81,7 +81,6 @@ LIB_DEPENDS =	archivers/bzip2 \
 		archivers/xz \
 		databases/soprano>=2.7.6 \
 		databases/strigi \
-		devel/bison \
 		devel/pcre \
 		graphics/jasper \
 		graphics/libungif \
@@ -93,7 +92,6 @@ LIB_DEPENDS =	archivers/bzip2 \
 		textproc/libxslt \
 		x11/kde4/attica>=0.2.9 \
 		x11/dbusmenu-qt \
-		x11/grantlee \
 		x11/polkit-qt4
 
 # we don't have krb5-config
@@ -113,7 +111,9 @@ CONFIGURE_ARGS +=	-D_KDE_DEFAULT_HOME_POSTFIX:STRING="4" \
 			-DKDE4_INCLUDE_INSTALL_DIR:String=${LOCALBASE}/include \
 			-DKDE4_LIB_INSTALL_DIR:String=${LOCALBASE}/lib \
 			-DKDESU_USE_SUDO_DEFAULT:Bool=TRUE \
-			-DSYSCONF_INSTALL_DIR:String=${SYSCONFDIR}
+			-DSYSCONF_INSTALL_DIR:String=${SYSCONFDIR} \
+			-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include -pthread" \
+			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -pthread"
 
 # Reimplemented CMake modules, because previous were totally broken
 REWR_CMAKE_MODULES =	FindXine FindXKB FindPolkitQt
