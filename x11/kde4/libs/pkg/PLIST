@@ -227,6 +227,7 @@ include/KDE/KArchiveDirectory
 include/KDE/KArchiveEntry
 include/KDE/KArchiveFile
 include/KDE/KArrowButton
+include/KDE/KAscii
 include/KDE/KAssistantDialog
 include/KDE/KAuth/
 include/KDE/KAuth/Action
@@ -616,6 +617,7 @@ include/KDE/KRandomSequence
 include/KDE/KRatingWidget
 include/KDE/KRecentDocument
 include/KDE/KRecentFilesAction
+include/KDE/KRecursiveFilterProxyModel
 include/KDE/KRemoteEncoding
 include/KDE/KReplace
 include/KDE/KReplaceDialog
@@ -1961,6 +1963,11 @@ include/threadweaver/ThreadWeaver.h
 include/threadweaver/WeaverInterface.h
 include/threadweaver/WeaverObserver.h
 include/threadweaver/threadweaver_export.h
+lib/cmake/KDeclarative/
+lib/cmake/KDeclarative/KDeclarativeConfig.cmake
+lib/cmake/KDeclarative/KDeclarativeConfigVersion.cmake
+lib/cmake/KDeclarative/KDeclarativeLibraryTargets${MODKDE4_CMAKE_PREFIX}.cmake
+lib/cmake/KDeclarative/KDeclarativeLibraryTargets.cmake
 lib/kde4/emoticonstheme_adium.so
 lib/kde4/emoticonstheme_kde.so
 lib/kde4/emoticonstheme_pidgin.so
@@ -2079,12 +2086,14 @@ libexec/fileshareset
 @bin libexec/start_kdeinit
 @bin libexec/start_kdeinit_wrapper
 @man man/man1/checkXML.1
+@man man/man1/kconfig_compiler.1
 @man man/man1/kde4-config.1
 @man man/man1/kdecmake.1
 @man man/man1/kjs.1
 @man man/man1/kjscmd.1
 @man man/man1/kross.1
 @man man/man1/makekdewidgets.1
+@man man/man1/preparetips.1
 @man man/man7/kdeoptions.7
 @man man/man7/qtoptions.7
 @man man/man8/kbuildsycoca4.8
