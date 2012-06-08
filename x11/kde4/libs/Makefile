@@ -90,7 +90,7 @@ LIB_DEPENDS =	archivers/bzip2 \
 		textproc/aspell/core \
 		textproc/enchant \
 		textproc/libxslt \
-		x11/kde4/attica>=0.2.9 \
+		x11/kde4/attica>=0.4.0 \
 		x11/dbusmenu-qt \
 		x11/polkit-qt4
 
