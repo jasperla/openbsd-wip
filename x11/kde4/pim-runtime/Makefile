@@ -3,11 +3,11 @@
 COMMENT =	K Desktop Environment, PIM runtime support
 DISTNAME =	kdepim-runtime-${MODKDE_VERSION}
 
-SHARED_LIBS =	akonadi-filestore	0.0 # 4.7
-SHARED_LIBS +=	akonadi-xml		0.0 # 4.7
-SHARED_LIBS +=	kdepim-copy		0.0 # 4.7
-SHARED_LIBS +=	kmindexreader		0.0 # 4.7
-SHARED_LIBS +=	maildir			0.0 # 4.7
+SHARED_LIBS =		akonadi-filestore	0.0 # 4.7
+SHARED_LIBS +=		akonadi-xml		0.0 # 4.7
+SHARED_LIBS +=		kdepim-copy		0.0 # 4.7
+SHARED_LIBS +=		kmindexreader		0.0 # 4.7
+SHARED_LIBS +=		maildir			0.0 # 4.7
 
 WANTLIB =  c m pthread stdc++ xml2
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
@@ -24,16 +24,19 @@ WANTLIB += streamanalyzer streams
 
 MODKDE4_USE =	libs pim
 
-BUILD_DEPENDS =	archivers/gtar \
-		devel/boost
+BUILD_DEPENDS =		archivers/gtar \
+			devel/boost
 
-LIB_DEPENDS =	audio/pulseaudio \
-		databases/soprano \
-		databases/strigi \
-		multimedia/phonon \
-		x11/kde4/akonadi
+LIB_DEPENDS =		audio/pulseaudio \
+			databases/soprano \
+			databases/strigi \
+			multimedia/phonon \
+			x11/kde4/akonadi
 
-RUN_DEPENDS +=	x11/gtk+2,-guic
+RUN_DEPENDS +=		x11/gtk+2,-guic
+
+# DCMAKE_C(XX)FLAGS & DCMAKE_EXE_LINKER_FLAGS needed to fix undefined symbols
+# for pthread & pulseaudio related functions
 
 CONFIGURE_ARGS =	-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include \
 				-pthread" \

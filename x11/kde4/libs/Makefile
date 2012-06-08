@@ -108,6 +108,10 @@ CONFIGURE_ARGS +=	-DACL_FOUND:Bool=FALSE \
 			-DUDEV_FOUND:Bool=FALSE
 
 # some basic defines
+
+# DCMAKE_C(XX)FLAGS & DCMAKE_EXE_LINKER_FLAGS needed to fix undefined symbols
+# for pthread & pulseaudio related functions
+
 CONFIGURE_ARGS +=	-D_KDE_DEFAULT_HOME_POSTFIX:STRING="4" \
 			-DKDE4_INCLUDE_INSTALL_DIR:String=${LOCALBASE}/include \
 			-DKDE4_LIB_INSTALL_DIR:String=${LOCALBASE}/lib \
