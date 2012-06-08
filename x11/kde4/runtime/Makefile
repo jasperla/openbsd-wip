@@ -47,6 +47,9 @@ LIB_DEPENDS =	audio/libcanberra \
 # PulseAudio is fully workable according to robert@, test it out.
 # QNtrack depends on libnl, Linux-specific library.
 
+# DCMAKE_C(XX)FLAGS & DCMAKE_EXE_LINKER_FLAGS needed to fix undefined symbols
+# for pthread & pulseaudio related functions
+
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_ALSA:Bool=TRUE \
 			-DCMAKE_DISABLE_FIND_PACKAGE_OpenSLP:Bool=TRUE \
 			-DCMAKE_DISABLE_FIND_PACKAGE_QNtrack:Bool=TRUE \
