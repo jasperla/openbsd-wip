@@ -7,7 +7,7 @@ COMMENT-main =		K Desktop Environment, photo management utility
 COMMENT-mediawiki =	K Desktop Environment, KIPI interface for MediaWiki
 COMMENT-vkontakte =	K Desktop Environment, KIPI interface for VKontakte.Ru
 
-VERSION =		2.5.0
+VERSION =		2.6.0
 DISTNAME =		digikam-${VERSION}
 
 PKGNAME =		digikam4-${VERSION}
