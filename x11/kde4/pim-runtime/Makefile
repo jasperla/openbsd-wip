@@ -24,13 +24,23 @@ WANTLIB += streamanalyzer streams
 
 MODKDE4_USE =	libs pim
 
-BUILD_DEPENDS =	devel/boost
+BUILD_DEPENDS =	archivers/gtar \
+		devel/boost
 
-LIB_DEPENDS =	databases/soprano \
+LIB_DEPENDS =	audio/pulseaudio \
+		databases/soprano \
 		databases/strigi \
 		multimedia/phonon \
 		x11/kde4/akonadi
 
 RUN_DEPENDS +=	x11/gtk+2,-guic
+
+CONFIGURE_ARGS =	-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include \
+				-pthread" \
+			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -pthread" \
+			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib \
+				-Wl,-rpath,${LOCALBASE}/lib/pulseaudio"
+
+TAR=			${LOCALBASE}/bin/gtar
 
 .include <bsd.port.mk>

@@ -89,9 +89,9 @@ lib/kde4/kio_akonadi.so
 @lib lib/libakonadi-filestore.so.${LIBakonadi-filestore_VERSION}
 @lib lib/libakonadi-xml.so.${LIBakonadi-xml_VERSION}
 @lib lib/libkdepim-copy.so.${LIBkdepim-copy_VERSION}
+lib/libkdepim-runtime-dms-copy.so
 @lib lib/libkmindexreader.so.${LIBkmindexreader_VERSION}
 @lib lib/libmaildir.so.${LIBmaildir_VERSION}
-lib/libnepomukdatamanagement-copy.so
 lib/libnepomukfeederpluginlib.a
 share/akonadi/
 share/akonadi/agents/
