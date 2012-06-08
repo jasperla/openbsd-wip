@@ -2,11 +2,13 @@
 
 COMMENT =	K Desktop Environment, base runtime
 DISTNAME =	kde-runtime-${MODKDE_VERSION}
+REVISION =	0
 
 
 SHARED_LIBS =	kwalletbackend 		0.0	# 4.7
 SHARED_LIBS +=	molletnetwork 		0.0	# 4.7
 SHARED_LIBS +=	nepomuksync 		4.7	# 4.7
+SHARED_LIBS +=	nepomukdatamanagement 	0.0	# 4.8
 
 WANTLIB += Half ICE Iex IlmImf IlmThread Imath
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
@@ -47,7 +49,12 @@ LIB_DEPENDS =	audio/libcanberra \
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_ALSA:Bool=TRUE \
 			-DCMAKE_DISABLE_FIND_PACKAGE_OpenSLP:Bool=TRUE \
-			-DCMAKE_DISABLE_FIND_PACKAGE_QNtrack:Bool=TRUE
+			-DCMAKE_DISABLE_FIND_PACKAGE_QNtrack:Bool=TRUE \
+			-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include \
+				-pthread" \
+			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -pthread" \
+			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib \
+				-Wl,-rpath,${LOCALBASE}/lib/pulseaudio"
 
 WRONG_SYSCONF_FILES =	dbus-1	share/examples \
 			xdg	share/examples
