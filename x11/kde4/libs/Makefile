@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, libraries
 DISTNAME =	kdelibs-${MODKDE_VERSION}
-
+REVISION =	0
 
 SHARED_LIBS =	kde3support          0.0      # .4.0
 SHARED_LIBS +=	kdecore              8.0      # .5.0
@@ -77,7 +77,8 @@ RUN_DEPENDS =	misc/shared-mime-info \
 		x11/dbus \
 		x11/gtk+2,-guic
 
-LIB_DEPENDS =	archivers/bzip2 \
+LIB_DEPENDS =	audio/pulseaudio \
+		archivers/bzip2 \
 		archivers/xz \
 		databases/soprano>=2.7.6 \
 		databases/strigi \
@@ -112,8 +113,11 @@ CONFIGURE_ARGS +=	-D_KDE_DEFAULT_HOME_POSTFIX:STRING="4" \
 			-DKDE4_LIB_INSTALL_DIR:String=${LOCALBASE}/lib \
 			-DKDESU_USE_SUDO_DEFAULT:Bool=TRUE \
 			-DSYSCONF_INSTALL_DIR:String=${SYSCONFDIR} \
-			-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include -pthread" \
-			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -pthread"
+			-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include \
+				-pthread" \
+			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -pthread" \
+			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib \
+				-Wl,-rpath,${LOCALBASE}/lib/pulseaudio"
 
 # Reimplemented CMake modules, because previous were totally broken
 REWR_CMAKE_MODULES =	FindXine FindXKB FindPolkitQt
