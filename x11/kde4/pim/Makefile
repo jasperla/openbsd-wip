@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, personal information management
 DISTNAME =	kdepim-${MODKDE_VERSION}
-HOMEPAGE =	http://pim.kde.org/
+REVISION =	0
 
 SHARED_LIBS =	akonadi_next 0.0
 SHARED_LIBS +=	akregatorinterfaces 0.0
@@ -78,6 +78,12 @@ BUILD_DEPENDS =	devel/boost \
 
 LIB_DEPENDS =	x11/grantlee
 RUN_DEPENDS +=	x11/gtk+2,-guic
+
+# DCMAKE_EXE_LINKER_FLAGS fixes undefined symbols for pulseaudio
+
+CONFIGURE_ARGS +=	-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib \
+                                -Wl,-rpath,${LOCALBASE}/lib/pulseaudio"
+
 
 WRONG_SYSCONF_FILES =	dbus-1	share/examples
 

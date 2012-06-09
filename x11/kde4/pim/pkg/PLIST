@@ -814,6 +814,7 @@ share/doc/HTML/en/kmail/index.cache.bz2
 share/doc/HTML/en/kmail/index.docbook
 share/doc/HTML/en/kmail/intro.docbook
 share/doc/HTML/en/kmail/menus.docbook
+share/doc/HTML/en/kmail/troubleshooting.docbook
 share/doc/HTML/en/kmail/using-kmail.docbook
 share/doc/HTML/en/knode/
 share/doc/HTML/en/knode/commands.docbook
@@ -1218,6 +1219,8 @@ share/kde4/servicetypes/dbuscalendar.desktop
 share/kde4/servicetypes/dbusmail.desktop
 share/kde4/servicetypes/korganizerpart.desktop
 share/kde4/servicetypes/korgprintplugin.desktop
+share/ontology/kde/messagetag.ontology
+share/ontology/kde/messagetag.trig
 share/polkit-1/actions/org.kde.kalarmrtcwake.policy
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

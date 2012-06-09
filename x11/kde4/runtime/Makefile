@@ -2,11 +2,13 @@
 
 COMMENT =	K Desktop Environment, base runtime
 DISTNAME =	kde-runtime-${MODKDE_VERSION}
+REVISION =	0
 
 
 SHARED_LIBS =	kwalletbackend 		0.0	# 4.7
 SHARED_LIBS +=	molletnetwork 		0.0	# 4.7
 SHARED_LIBS +=	nepomuksync 		4.7	# 4.7
+SHARED_LIBS +=	nepomukdatamanagement 	0.0	# 4.8
 
 WANTLIB += Half ICE Iex IlmImf IlmThread Imath
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
@@ -23,6 +25,7 @@ WANTLIB += glib-2.0 pulse pulse-mainloop-glib
 MODKDE4_USE =	libs
 
 BUILD_DEPENDS =	archivers/bzip2 \
+		archivers/gtar \
 		archivers/xz
 
 RUN_DEPENDS =	archivers/bzip2 \
@@ -44,11 +47,21 @@ LIB_DEPENDS =	audio/libcanberra \
 # PulseAudio is fully workable according to robert@, test it out.
 # QNtrack depends on libnl, Linux-specific library.
 
+# DCMAKE_C(XX)FLAGS & DCMAKE_EXE_LINKER_FLAGS needed to fix undefined symbols
+# for pthread & pulseaudio related functions
+
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_ALSA:Bool=TRUE \
 			-DCMAKE_DISABLE_FIND_PACKAGE_OpenSLP:Bool=TRUE \
-			-DCMAKE_DISABLE_FIND_PACKAGE_QNtrack:Bool=TRUE
+			-DCMAKE_DISABLE_FIND_PACKAGE_QNtrack:Bool=TRUE \
+			-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include \
+				-pthread" \
+			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -pthread" \
+			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib \
+				-Wl,-rpath,${LOCALBASE}/lib/pulseaudio"
 
 WRONG_SYSCONF_FILES =	dbus-1	share/examples \
 			xdg	share/examples
+
+TAR=			${LOCALBASE}/bin/gtar
 
 .include <bsd.port.mk>

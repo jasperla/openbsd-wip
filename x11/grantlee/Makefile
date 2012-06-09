@@ -5,8 +5,8 @@ DISTNAME =		grantlee-0.2.0
 CATEGORIES =		devel x11 x11/qt4
 HOMEPAGE =		http://www.gitorious.org/grantlee/
 
-SHARED_LIBS +=	grantlee_core		0.0	# 0.1
-SHARED_LIBS +=	grantlee_gui		0.0	# 0.1
+SHARED_LIBS +=		grantlee_core		0.0	# 0.1
+SHARED_LIBS +=		grantlee_gui		0.0	# 0.1
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes

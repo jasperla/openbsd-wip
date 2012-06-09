@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	K Desktop Environment, KDE4 libraries for other education apps
+COMMENT =	K Desktop Environment, KDE4 libraries for education apps
 DISTNAME =	libkdeedu-${MODKDE_VERSION}
 
 SHARED_LIBS =	keduvocdocument		0.0 # 4.7

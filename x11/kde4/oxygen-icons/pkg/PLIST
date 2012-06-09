@@ -140,6 +140,7 @@ share/icons/oxygen/128x128/apps/knewsticker.png
 share/icons/oxygen/128x128/apps/knotes.png
 share/icons/oxygen/128x128/apps/kolf.png
 share/icons/oxygen/128x128/apps/konqueror.png
+share/icons/oxygen/128x128/apps/kontact-import-wizard.png
 share/icons/oxygen/128x128/apps/kontact.png
 share/icons/oxygen/128x128/apps/konversation.png
 share/icons/oxygen/128x128/apps/korgac.png
@@ -367,7 +368,7 @@ share/icons/oxygen/128x128/mimetypes/application-vnd.oasis.opendocument.spreadsh
 share/icons/oxygen/128x128/mimetypes/application-vnd.oasis.opendocument.text-master.png
 share/icons/oxygen/128x128/mimetypes/application-vnd.oasis.opendocument.text-template.png
 share/icons/oxygen/128x128/mimetypes/application-vnd.oasis.opendocument.text.png
-share/icons/oxygen/128x128/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
+share/icons/oxygen/128x128/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.
 share/icons/oxygen/128x128/mimetypes/application-vnd.rn-realmedia.png
 share/icons/oxygen/128x128/mimetypes/application-vnd.scribus.png
 share/icons/oxygen/128x128/mimetypes/application-vnd.stardivision.calc.png
@@ -617,6 +618,7 @@ share/icons/oxygen/128x128/places/folder-red.png
 share/icons/oxygen/128x128/places/folder-remote.png
 share/icons/oxygen/128x128/places/folder-sound.png
 share/icons/oxygen/128x128/places/folder-tar.png
+share/icons/oxygen/128x128/places/folder-temp.png
 share/icons/oxygen/128x128/places/folder-txt.png
 share/icons/oxygen/128x128/places/folder-video.png
 share/icons/oxygen/128x128/places/folder-violet.png
@@ -952,6 +954,7 @@ share/icons/oxygen/16x16/actions/help-contextual.png
 share/icons/oxygen/16x16/actions/help-donate.png
 share/icons/oxygen/16x16/actions/help-feedback.png
 share/icons/oxygen/16x16/actions/help-hint.png
+share/icons/oxygen/16x16/actions/im-aim.png
 share/icons/oxygen/16x16/actions/im-ban-kick-user.png
 share/icons/oxygen/16x16/actions/im-ban-user.png
 share/icons/oxygen/16x16/actions/im-facebook.png
@@ -960,6 +963,8 @@ share/icons/oxygen/16x16/actions/im-identi.ca.png
 share/icons/oxygen/16x16/actions/im-invisible-user.png
 share/icons/oxygen/16x16/actions/im-jabber.png
 share/icons/oxygen/16x16/actions/im-kick-user.png
+share/icons/oxygen/16x16/actions/im-msn.png
+share/icons/oxygen/16x16/actions/im-qq.png
 share/icons/oxygen/16x16/actions/im-skype.png
 share/icons/oxygen/16x16/actions/im-twitter.png
 share/icons/oxygen/16x16/actions/im-user-away.png
@@ -1052,6 +1057,7 @@ share/icons/oxygen/16x16/actions/object-order-raise.png
 share/icons/oxygen/16x16/actions/object-rotate-left.png
 share/icons/oxygen/16x16/actions/object-rotate-right.png
 share/icons/oxygen/16x16/actions/object-ungroup.png
+share/icons/oxygen/16x16/actions/office-chart-area-focus-peak-node.png
 share/icons/oxygen/16x16/actions/office-chart-area-precentage.png
 share/icons/oxygen/16x16/actions/office-chart-area-stacked.png
 share/icons/oxygen/16x16/actions/office-chart-area.png
@@ -1571,7 +1577,7 @@ share/icons/oxygen/16x16/mimetypes/application-vnd.oasis.opendocument.spreadshee
 share/icons/oxygen/16x16/mimetypes/application-vnd.oasis.opendocument.text-master.png
 share/icons/oxygen/16x16/mimetypes/application-vnd.oasis.opendocument.text-template.png
 share/icons/oxygen/16x16/mimetypes/application-vnd.oasis.opendocument.text.png
-share/icons/oxygen/16x16/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
+share/icons/oxygen/16x16/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.do
 share/icons/oxygen/16x16/mimetypes/application-vnd.rn-realmedia.png
 share/icons/oxygen/16x16/mimetypes/application-vnd.scribus.png
 share/icons/oxygen/16x16/mimetypes/application-vnd.stardivision.calc.png
@@ -1821,6 +1827,7 @@ share/icons/oxygen/16x16/places/folder-red.png
 share/icons/oxygen/16x16/places/folder-remote.png
 share/icons/oxygen/16x16/places/folder-sound.png
 share/icons/oxygen/16x16/places/folder-tar.png
+share/icons/oxygen/16x16/places/folder-temp.png
 share/icons/oxygen/16x16/places/folder-txt.png
 share/icons/oxygen/16x16/places/folder-video.png
 share/icons/oxygen/16x16/places/folder-violet.png
@@ -2887,7 +2894,7 @@ share/icons/oxygen/22x22/mimetypes/application-vnd.oasis.opendocument.presentati
 share/icons/oxygen/22x22/mimetypes/application-vnd.oasis.opendocument.spreadsheet-template.png
 share/icons/oxygen/22x22/mimetypes/application-vnd.oasis.opendocument.spreadsheet.png
 share/icons/oxygen/22x22/mimetypes/application-vnd.oasis.opendocument.text.png
-share/icons/oxygen/22x22/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
+share/icons/oxygen/22x22/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.do
 share/icons/oxygen/22x22/mimetypes/application-vnd.rn-realmedia.png
 share/icons/oxygen/22x22/mimetypes/application-vnd.scribus.png
 share/icons/oxygen/22x22/mimetypes/application-vnd.stardivision.calc.png
@@ -3134,6 +3141,7 @@ share/icons/oxygen/22x22/places/folder-red.png
 share/icons/oxygen/22x22/places/folder-remote.png
 share/icons/oxygen/22x22/places/folder-sound.png
 share/icons/oxygen/22x22/places/folder-tar.png
+share/icons/oxygen/22x22/places/folder-temp.png
 share/icons/oxygen/22x22/places/folder-txt.png
 share/icons/oxygen/22x22/places/folder-video.png
 share/icons/oxygen/22x22/places/folder-violet.png
@@ -3284,6 +3292,7 @@ share/icons/oxygen/256x256/apps/kig.png
 share/icons/oxygen/256x256/apps/kivio.png
 share/icons/oxygen/256x256/apps/kmail2.png
 share/icons/oxygen/256x256/apps/konqueror.png
+share/icons/oxygen/256x256/apps/kontact-import-wizard.png
 share/icons/oxygen/256x256/apps/korgac.png
 share/icons/oxygen/256x256/apps/kplato.png
 share/icons/oxygen/256x256/apps/kpresenter.png
@@ -3303,6 +3312,7 @@ share/icons/oxygen/256x256/apps/preferences-system-bluetooth-inactive.png
 share/icons/oxygen/256x256/apps/preferences-system-bluetooth.png
 share/icons/oxygen/256x256/apps/qelectrotech.png
 share/icons/oxygen/256x256/apps/quassel.png
+share/icons/oxygen/256x256/apps/showfoto.png
 share/icons/oxygen/256x256/apps/strigi.png
 share/icons/oxygen/256x256/apps/system-diagnosis.png
 share/icons/oxygen/256x256/apps/telepathy-kde.png
@@ -3394,7 +3404,7 @@ share/icons/oxygen/256x256/mimetypes/application-vnd.oasis.opendocument.spreadsh
 share/icons/oxygen/256x256/mimetypes/application-vnd.oasis.opendocument.spreadsheet.png
 share/icons/oxygen/256x256/mimetypes/application-vnd.oasis.opendocument.text-master.png
 share/icons/oxygen/256x256/mimetypes/application-vnd.oasis.opendocument.text.png
-share/icons/oxygen/256x256/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
+share/icons/oxygen/256x256/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.
 share/icons/oxygen/256x256/mimetypes/application-vnd.rn-realmedia.png
 share/icons/oxygen/256x256/mimetypes/application-vnd.scribus.png
 share/icons/oxygen/256x256/mimetypes/application-vnd.stardivision.calc.png
@@ -3638,6 +3648,7 @@ share/icons/oxygen/256x256/places/folder-red.png
 share/icons/oxygen/256x256/places/folder-remote.png
 share/icons/oxygen/256x256/places/folder-sound.png
 share/icons/oxygen/256x256/places/folder-tar.png
+share/icons/oxygen/256x256/places/folder-temp.png
 share/icons/oxygen/256x256/places/folder-txt.png
 share/icons/oxygen/256x256/places/folder-video.png
 share/icons/oxygen/256x256/places/folder-violet.png
@@ -4576,7 +4587,7 @@ share/icons/oxygen/32x32/mimetypes/application-vnd.oasis.opendocument.spreadshee
 share/icons/oxygen/32x32/mimetypes/application-vnd.oasis.opendocument.text-master.png
 share/icons/oxygen/32x32/mimetypes/application-vnd.oasis.opendocument.text-template.png
 share/icons/oxygen/32x32/mimetypes/application-vnd.oasis.opendocument.text.png
-share/icons/oxygen/32x32/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
+share/icons/oxygen/32x32/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.do
 share/icons/oxygen/32x32/mimetypes/application-vnd.rn-realmedia.png
 share/icons/oxygen/32x32/mimetypes/application-vnd.scribus.png
 share/icons/oxygen/32x32/mimetypes/application-vnd.stardivision.calc.png
@@ -4827,6 +4838,7 @@ share/icons/oxygen/32x32/places/folder-red.png
 share/icons/oxygen/32x32/places/folder-remote.png
 share/icons/oxygen/32x32/places/folder-sound.png
 share/icons/oxygen/32x32/places/folder-tar.png
+share/icons/oxygen/32x32/places/folder-temp.png
 share/icons/oxygen/32x32/places/folder-txt.png
 share/icons/oxygen/32x32/places/folder-video.png
 share/icons/oxygen/32x32/places/folder-violet.png
@@ -5801,7 +5813,7 @@ share/icons/oxygen/48x48/mimetypes/application-vnd.oasis.opendocument.spreadshee
 share/icons/oxygen/48x48/mimetypes/application-vnd.oasis.opendocument.text-master.png
 share/icons/oxygen/48x48/mimetypes/application-vnd.oasis.opendocument.text-template.png
 share/icons/oxygen/48x48/mimetypes/application-vnd.oasis.opendocument.text.png
-share/icons/oxygen/48x48/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
+share/icons/oxygen/48x48/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.do
 share/icons/oxygen/48x48/mimetypes/application-vnd.rn-realmedia.png
 share/icons/oxygen/48x48/mimetypes/application-vnd.scribus.png
 share/icons/oxygen/48x48/mimetypes/application-vnd.stardivision.calc.png
@@ -6053,6 +6065,7 @@ share/icons/oxygen/48x48/places/folder-red.png
 share/icons/oxygen/48x48/places/folder-remote.png
 share/icons/oxygen/48x48/places/folder-sound.png
 share/icons/oxygen/48x48/places/folder-tar.png
+share/icons/oxygen/48x48/places/folder-temp.png
 share/icons/oxygen/48x48/places/folder-txt.png
 share/icons/oxygen/48x48/places/folder-video.png
 share/icons/oxygen/48x48/places/folder-violet.png
@@ -6289,6 +6302,7 @@ share/icons/oxygen/64x64/apps/knewsticker.png
 share/icons/oxygen/64x64/apps/knotes.png
 share/icons/oxygen/64x64/apps/kolf.png
 share/icons/oxygen/64x64/apps/konqueror.png
+share/icons/oxygen/64x64/apps/kontact-import-wizard.png
 share/icons/oxygen/64x64/apps/kontact.png
 share/icons/oxygen/64x64/apps/konversation.png
 share/icons/oxygen/64x64/apps/korgac.png
@@ -6512,7 +6526,7 @@ share/icons/oxygen/64x64/mimetypes/application-vnd.oasis.opendocument.spreadshee
 share/icons/oxygen/64x64/mimetypes/application-vnd.oasis.opendocument.text-master.png
 share/icons/oxygen/64x64/mimetypes/application-vnd.oasis.opendocument.text-template.png
 share/icons/oxygen/64x64/mimetypes/application-vnd.oasis.opendocument.text.png
-share/icons/oxygen/64x64/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
+share/icons/oxygen/64x64/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.do
 share/icons/oxygen/64x64/mimetypes/application-vnd.rn-realmedia.png
 share/icons/oxygen/64x64/mimetypes/application-vnd.scribus.png
 share/icons/oxygen/64x64/mimetypes/application-vnd.stardivision.calc.png
@@ -6762,6 +6776,7 @@ share/icons/oxygen/64x64/places/folder-red.png
 share/icons/oxygen/64x64/places/folder-remote.png
 share/icons/oxygen/64x64/places/folder-sound.png
 share/icons/oxygen/64x64/places/folder-tar.png
+share/icons/oxygen/64x64/places/folder-temp.png
 share/icons/oxygen/64x64/places/folder-txt.png
 share/icons/oxygen/64x64/places/folder-video.png
 share/icons/oxygen/64x64/places/folder-violet.png

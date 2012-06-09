@@ -1,0 +1,17 @@
+$OpenBSD$
+
+Grab this fix from git, works only for QT > 4.8
+
+--- messageviewer/viewer_p.cpp.orig	Fri Jun  8 18:20:06 2012
++++ messageviewer/viewer_p.cpp	Fri Jun  8 18:20:38 2012
+@@ -1930,8 +1930,10 @@ void ViewerPrivate::slotToggleHtmlMode()
+ 
+ void ViewerPrivate::slotFind()
+ {
++#if QT_VERSION >= 0x040800
+   if ( mViewer->hasSelection() )
+     mFindBar->setText( mViewer->selectedText() );
++#endif
+   mFindBar->show();
+   mFindBar->focusAndSetCursor();
+ }

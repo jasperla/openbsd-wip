@@ -17,11 +17,13 @@ lib/cmake/KActivities/KActivitiesConfigVersion.cmake
 lib/cmake/KActivities/KActivitiesLibraryTargets${MODKDE4_CMAKE_PREFIX}.cmake
 lib/cmake/KActivities/KActivitiesLibraryTargets.cmake
 lib/kde4/activitymanager_plugin_dummy.so
+lib/kde4/activitymanager_plugin_globalshortcuts.so
 lib/kde4/activitymanager_plugin_nepomuk.so
 lib/kde4/activitymanager_plugin_slc.so
 @lib lib/libkactivities.so.${LIBkactivities_VERSION}
 lib/pkgconfig/libkactivities.pc
 share/kde4/services/activitymanager-plugin-dummy.desktop
+share/kde4/services/activitymanager-plugin-globalshortcuts.desktop
 share/kde4/services/activitymanager-plugin-nepomuk.desktop
 share/kde4/services/activitymanager-plugin-slc.desktop
 share/kde4/services/kactivitymanagerd.desktop
