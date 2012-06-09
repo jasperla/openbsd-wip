@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-BROKEN =		rafael,amit with guidance from vadim working on 4.8.3
+#BROKEN =		rafael,amit with guidance from vadim working on 4.8.3
 MODKDE4_VERSION =	4.8.3
 MODKDE_VERSION =	${MODKDE4_VERSION}
 
@@ -125,6 +125,14 @@ CONFIGURE_ARGS +=	-DMAN_INSTALL_DIR=${PREFIX}/man \
 			-DINFO_INSTALL_DIR=${PREFIX}/info \
 			-DLIBEXEC_INSTALL_DIR=${PREFIX}/libexec
 
+# DCMAKE_C(XX)FLAGS & DCMAKE_EXE_LINKER_FLAGS needed to fix undefined symbols
+# for pthread & pulseaudio related functions, fixing globally here
+CONFIGURE_ARGS +=	-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include \
+				-pthread" \
+			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -pthread" \
+			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib \
+				-Wl,-rpath,${LOCALBASE}/lib/pulseaudio"
+
 # NOTE: due to bugs in make-plist, plist may contain
 # ${FLAVORS} instead of ${MODKDE4_CMAKE_PREFIX}.
 # You've been warned.
@@ -154,8 +162,18 @@ MODKDE_RUN_DEPENDS =	${MODKDE4_RUN_DEPENDS}
 MODKDE_WANTLIB =	${MODKDE4_WANTLIB}
 MODKDE_CONFIGURE_ENV =	${MODKDE4_CONFIGURE_ENV}
 
-BUILD_DEPENDS +=	${MODKDE_BUILD_DEPENDS}
-LIB_DEPENDS +=		${MODKDE_LIB_DEPENDS}
+# make extract causes problems, as found by Rafael.
+# GNU creep has started in KDE
+BUILD_DEPENDS +=	${MODKDE_BUILD_DEPENDS} \
+			archivers/gtar
+
+# all sorts of packages require linking with pulseaudio, 
+# instead of patching them locally, patch globally
+LIB_DEPENDS +=		${MODKDE_LIB_DEPENDS} \
+			audio/pulseaudio
+
 RUN_DEPENDS +=		${MODKDE_RUN_DEPENDS}
 WANTLIB +=		${MODKDE_WANTLIB}
 CONFIGURE_ENV +=	${MODKDE_CONFIGURE_ENV}
+
+TAR =			${LOCALBASE}/bin/gtar

@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, libraries for PIM
 DISTNAME =	kdepimlibs-${MODKDE_VERSION}
-
+REVISION =	0
 
 SHARED_LIBS =	kabc                 5.0      # .4.0
 SHARED_LIBS +=	kabc_file_core       0.0      # .4.0
@@ -49,7 +49,6 @@ MODULES =	devel/gettext
 MODKDE4_USE =	libs
 
 BUILD_DEPENDS =	devel/boost \
-		archivers/gtar \
 		textproc/docbook \
 		textproc/docbook-xsl
 
@@ -59,7 +58,5 @@ LIB_DEPENDS +=	databases/openldap \
 		security/gpgme>=0.4.5 \
 		textproc/libical \
 		x11/kde4/akonadi
-
-TAR=		${LOCALBASE}/bin/gtar
 
 .include <bsd.port.mk>
