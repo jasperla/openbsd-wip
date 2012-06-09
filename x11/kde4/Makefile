@@ -12,9 +12,6 @@
 # Other marks describe actual problems, meaning "this should be fixed".
 # Lack of mark means "port is on its way to import, please wait".
 #
-# Architecture at end denotes that configure, fake, plist, 
-# port-lib-depends-check and lib-depends-check ALL work on this arch.
-#
 # Eventually this stuff will be partly moved to corresponding directories,
 # leaving only "basic" KDE packages here (those who get in actual
 # releases of KDE SC).
@@ -31,8 +28,11 @@
 #   | |
 #   | |- pim-runtime
 #   |  - pim
-#   |   |
-#   |----- workspace
+#   |-
+    |  |
+    |   -kactivities
+    |    |
+    |     - workspace
 #   |
 #   |- smokegen
 #   | |
