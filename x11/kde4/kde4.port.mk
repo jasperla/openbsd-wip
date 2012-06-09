@@ -162,8 +162,8 @@ MODKDE_RUN_DEPENDS =	${MODKDE4_RUN_DEPENDS}
 MODKDE_WANTLIB =	${MODKDE4_WANTLIB}
 MODKDE_CONFIGURE_ENV =	${MODKDE4_CONFIGURE_ENV}
 
-# make extract causes problems, as found by Rafael.
-# GNU creep has started in KDE
+# various distfiles contain long paths, necessitating an archiver
+# compliant with POSIX.1-2001 extended headers.
 BUILD_DEPENDS +=	${MODKDE_BUILD_DEPENDS} \
 			archivers/gtar
 
