@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, libraries
 DISTNAME =	kdelibs-${MODKDE_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	kde3support          0.0      # .4.0
 SHARED_LIBS +=	kdecore              8.0      # .5.0
@@ -108,20 +108,11 @@ CONFIGURE_ARGS +=	-DACL_FOUND:Bool=FALSE \
 			-DUDEV_FOUND:Bool=FALSE
 
 # some basic defines
-
-# DCMAKE_C(XX)FLAGS & DCMAKE_EXE_LINKER_FLAGS needed to fix undefined symbols
-# for pthread & pulseaudio related functions
-
 CONFIGURE_ARGS +=	-D_KDE_DEFAULT_HOME_POSTFIX:STRING="4" \
 			-DKDE4_INCLUDE_INSTALL_DIR:String=${LOCALBASE}/include \
 			-DKDE4_LIB_INSTALL_DIR:String=${LOCALBASE}/lib \
 			-DKDESU_USE_SUDO_DEFAULT:Bool=TRUE \
-			-DSYSCONF_INSTALL_DIR:String=${SYSCONFDIR} \
-			-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include \
-				-pthread" \
-			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -pthread" \
-			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib \
-				-Wl,-rpath,${LOCALBASE}/lib/pulseaudio"
+			-DSYSCONF_INSTALL_DIR:String=${SYSCONFDIR}
 
 # Reimplemented CMake modules, because previous were totally broken
 REWR_CMAKE_MODULES =	FindXine FindXKB FindPolkitQt
