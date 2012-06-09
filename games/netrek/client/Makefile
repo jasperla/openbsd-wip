@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP =  Yes
 LIB_DEPENDS =		devel/gmp \
 			devel/sdl-mixer \
 			graphics/imlib2
+RUN_DEPENDS =		devel/desktop-file-utils
 
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 CONFIGURE_ENV =		CFLAGS=-pthread LDFLAGS="-L${LOCALBASE}/lib" \

@@ -1,0 +1,13 @@
+$OpenBSD$
+--- capinfos.c.orig	Fri Apr  6 18:43:24 2012
++++ capinfos.c	Tue May 15 15:59:02 2012
+@@ -84,7 +84,9 @@
+ #include <wsutil/privileges.h>
+ 
+ #ifdef HAVE_LIBGCRYPT
++#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+ #include <gcrypt.h>
++#pragma GCC diagnostic error "-Wdeprecated-declarations"
+ #include <wsutil/file_util.h>
+ #endif
+ 

@@ -1,0 +1,30 @@
+$OpenBSD$
+--- nepomuk/services/storage/datamanagementmodel.h.orig	Sat Jun  2 20:29:35 2012
++++ nepomuk/services/storage/datamanagementmodel.h	Sat Jun  2 20:29:33 2012
+@@ -156,7 +156,7 @@ public Q_SLOTS:
+                         const QString& app,
+                         Nepomuk::StoreIdentificationMode identificationMode = Nepomuk::IdentifyNew,
+                         Nepomuk::StoreResourcesFlags flags = Nepomuk::NoStoreResourcesFlags,
+-                        const QHash<QUrl, QVariant>& additionalMetadata = QHash<QUrl, QVariant>() );
++                        const QHash<QUrl, QVariant>& additionalMetadata = (QHash<QUrl, QVariant>()));
+ 
+     /**
+      * Merges two resources into one. Properties from \p resource1
+@@ -188,7 +188,7 @@ public Q_SLOTS:
+                          const QString& userSerialization = QString(),
+                          Nepomuk::StoreIdentificationMode identificationMode = Nepomuk::IdentifyNew,
+                          Nepomuk::StoreResourcesFlags flags = Nepomuk::NoStoreResourcesFlags,
+-                         const QHash<QUrl, QVariant>& additionalMetadata = QHash<QUrl, QVariant>());
++                         const QHash<QUrl, QVariant>& additionalMetadata = (QHash<QUrl, QVariant>()));
+ 
+     /**
+      * Describe a set of resources, i.e. retrieve all their properties.
+@@ -204,7 +204,7 @@ public Q_SLOTS:
+     //@}
+ 
+ private:
+-    QUrl createGraph(const QString& app = QString(), const QHash<QUrl, QVariant>& additionalMetadata = QHash<QUrl, QVariant>());
++    QUrl createGraph(const QString& app = QString(), const QHash<QUrl, QVariant>& additionalMetadata = (QHash<QUrl, QVariant>()));
+     QUrl createGraph(const QString& app, const QMultiHash<QUrl, Soprano::Node>& additionalMetadata);
+ 
+     /**

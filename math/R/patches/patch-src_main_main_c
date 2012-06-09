@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_main_main_c,v 1.4 2012/01/23 10:34:27 dcoppa Exp $
+
+OpenBSD always returns EINVAL when trying to disable an active stack
+
+--- src/main/main.c.orig	Fri Mar  2 00:02:25 2012
++++ src/main/main.c	Thu May 24 17:38:12 2012
+@@ -28,6 +28,8 @@
+ #include <ctype.h>
+ #include <stdlib.h>
+ #include <string.h>
++#include <errno.h>
++#include <sys/errno.h>
+ 
+ #define __MAIN__
+ #define R_USE_SIGNALS 1
+@@ -618,7 +620,8 @@ static void init_signal_handlers(void)
+ 	sigstk.ss_size = SIGSTKSZ + R_USAGE;
+ 	sigstk.ss_flags = 0;
+ 	if(sigaltstack(&sigstk, NULL) < 0)
+-	    warning("failed to set alternate signal stack");
++	    if (errno != EINVAL) /* OpenBSD always returns EINVAL */
++	    	warning("failed to set alternate signal stack");
+     } else
+ 	warning("failed to allocate alternate signal stack");
+     sa.sa_sigaction = sigactionSegv;

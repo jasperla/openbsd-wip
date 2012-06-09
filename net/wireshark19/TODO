@@ -1,0 +1,9 @@
+v1.9.x is the development version will become v2.0.0
+This is not intended to be added to the ports tree
+prep work for v2.0.0 only.
+
+python disectors
+Which way on flavors python or no_python?
+default is with python, but considered experimental feature.
+gtk+3 - depreciated routines - THIS NO LONGER BUILDS!!
+

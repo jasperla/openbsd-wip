@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	K Desktop Environment, interface to LibRaw to decode RAW images
+COMMENT =	K Desktop Environment, RAW picture decoding C++ library
 DISTNAME =	libkdcraw-${MODKDE_VERSION}
 
 
