@@ -32,6 +32,8 @@
     |  |
     |   -kactivities
     |    |
+	  -py-kde
+	   |
     |     - workspace
 #   |
 #   |- smokegen
