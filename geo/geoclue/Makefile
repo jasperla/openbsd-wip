@@ -6,7 +6,7 @@ DISTNAME=		geoclue-0.12.0
 SHARED_LIBS +=		geoclue              1.0      # .0.0
 CATEGORIES=		geo devel
 
-REVISION=		6
+REVISION=		7
 
 HOMEPAGE=		http://geoclue.freedesktop.org/
 
@@ -27,7 +27,7 @@ MASTER_SITES=		http://folks.o-hand.com/jku/geoclue-releases/ \
 MODULES=		devel/gettext
 
 LIB_DEPENDS =		devel/libsoup,-gnome \
-			misc/gpsd>=3.5 \
+			misc/gpsd>=2.95 \
 			x11/dbus-glib \
 			devel/gconf2
 
