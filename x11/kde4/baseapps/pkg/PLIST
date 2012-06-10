@@ -252,6 +252,8 @@ share/apps/kwebkitpart/kpartplugins/autorefresh.desktop
 share/apps/kwebkitpart/kpartplugins/autorefresh.rc
 share/apps/kwebkitpart/kpartplugins/khtmlkttsd.desktop
 share/apps/kwebkitpart/kpartplugins/khtmlkttsd.rc
+share/apps/kwebkitpart/kpartplugins/khtmlsettingsplugin.desktop
+share/apps/kwebkitpart/kpartplugins/khtmlsettingsplugin.rc
 share/apps/kwebkitpart/kpartplugins/plugin_babelfish.desktop
 share/apps/kwebkitpart/kpartplugins/plugin_babelfish.rc
 share/apps/kwebkitpart/kpartplugins/plugin_validators.desktop
@@ -290,7 +292,9 @@ share/doc/HTML/en/dolphin/default-ui.png
 share/doc/HTML/en/dolphin/index.cache.bz2
 share/doc/HTML/en/dolphin/index.docbook
 share/doc/HTML/en/dolphin/locationbar-breadcrumb.png
+share/doc/HTML/en/dolphin/locationbar-context-menu.png
 share/doc/HTML/en/dolphin/locationbar-editable.png
+share/doc/HTML/en/dolphin/locationbar-places-icon.png
 share/doc/HTML/en/dolphin/nepomuk-search.png
 share/doc/HTML/en/dolphin/preferences-general-behavior.png
 share/doc/HTML/en/dolphin/preferences-navigation.png
