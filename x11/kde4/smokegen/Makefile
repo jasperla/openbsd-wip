@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 CATEGORIES =	devel x11/kde4
-COMMENT =	K Desktop Environment, generator for wrappers around Qt and KDE
+COMMENT =	K Desktop Environment, wrapper generator around Qt and KDE
 DISTNAME =	smokegen-${MODKDE_VERSION}
 
 SHARED_LIBS =	smokebase		0.0 # 3.0
