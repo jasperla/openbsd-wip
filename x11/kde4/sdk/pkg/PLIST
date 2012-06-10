@@ -24,7 +24,6 @@ bin/cxxmetric
 bin/dprof2calltree
 bin/extend_dmalloc
 bin/extractattr
-bin/extractqml
 bin/extractrc
 bin/findmissingcrystal
 bin/fix-include.sh
@@ -44,6 +43,7 @@ bin/kdemangen.pl
 @bin bin/kompare
 @bin bin/kpartloader
 bin/krazy-licensecheck
+@bin bin/kstartperf
 @bin bin/kuiviewer
 @bin bin/lokalize
 bin/makeobj
@@ -472,6 +472,7 @@ lib/kde4/kio_perldoc.so
 lib/kde4/kio_svn.so
 lib/kde4/komparenavtreepart.so
 lib/kde4/komparepart.so
+lib/kde4/kstartperf.so
 lib/kde4/kuiviewerpart.so
 lib/kde4/libkbytearrayedit.so
 lib/kde4/oktetapart.so
@@ -604,10 +605,6 @@ share/apps/lokalize/lokalizemainwindowui.rc
 share/apps/lokalize/projectmanagerui.rc
 share/apps/lokalize/scripts/
 share/apps/lokalize/scripts/find-gui-text.sh
-share/apps/lokalize/scripts/kde/
-share/apps/lokalize/scripts/kde/widget-text-capture.py
-share/apps/lokalize/scripts/kde/widget-text-capture.rc
-share/apps/lokalize/scripts/kde/widget-text-capture.ui
 share/apps/lokalize/scripts/msgmerge.py
 share/apps/lokalize/scripts/msgmerge.rc
 share/apps/lokalize/scripts/newprojectwizard.py
