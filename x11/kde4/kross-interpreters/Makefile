@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT-main =	K Desktop Environment, KDE4 bindings for running interpreters
+COMMENT-main =	K Desktop Environment, bindings for running interpreters
 COMMENT-java =	K Desktop Environment, KDE4 Java bindings
 DISTNAME =	kross-interpreters-${MODKDE_VERSION}
 PKGNAME-main =	${PKGNAME}
