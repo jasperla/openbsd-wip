@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	K Desktop Environment, interactive desktop widget creation utility
+COMMENT =	K Desktop Environment, interactive desktop widget creation
 DISTNAME =	superkaramba-${MODKDE_VERSION}
 
 
