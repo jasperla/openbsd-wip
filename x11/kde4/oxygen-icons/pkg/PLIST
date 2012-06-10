@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/07/10 16:57:23 espie Exp $
+@comment $OpenBSD$
 share/icons/oxygen/
 share/icons/oxygen/128x128/
 share/icons/oxygen/128x128/actions/
@@ -105,7 +105,7 @@ share/icons/oxygen/128x128/apps/akregator.png
 share/icons/oxygen/128x128/apps/basket.png
 share/icons/oxygen/128x128/apps/clock.png
 share/icons/oxygen/128x128/apps/device-notifier.png
-@comment share/icons/oxygen/128x128/apps/digikam.png
+share/icons/oxygen/128x128/apps/digikam.png
 share/icons/oxygen/128x128/apps/esd.png
 share/icons/oxygen/128x128/apps/fontforge.png
 share/icons/oxygen/128x128/apps/graphics-viewer-document.png
@@ -210,7 +210,7 @@ share/icons/oxygen/128x128/apps/qelectrotech.png
 share/icons/oxygen/128x128/apps/quassel.png
 share/icons/oxygen/128x128/apps/scribus.png
 share/icons/oxygen/128x128/apps/semn.png
-@comment share/icons/oxygen/128x128/apps/showfoto.png
+share/icons/oxygen/128x128/apps/showfoto.png
 share/icons/oxygen/128x128/apps/step.png
 share/icons/oxygen/128x128/apps/strigi.png
 share/icons/oxygen/128x128/apps/system-diagnosis.png
@@ -368,7 +368,7 @@ share/icons/oxygen/128x128/mimetypes/application-vnd.oasis.opendocument.spreadsh
 share/icons/oxygen/128x128/mimetypes/application-vnd.oasis.opendocument.text-master.png
 share/icons/oxygen/128x128/mimetypes/application-vnd.oasis.opendocument.text-template.png
 share/icons/oxygen/128x128/mimetypes/application-vnd.oasis.opendocument.text.png
-share/icons/oxygen/128x128/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.
+share/icons/oxygen/128x128/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
 share/icons/oxygen/128x128/mimetypes/application-vnd.rn-realmedia.png
 share/icons/oxygen/128x128/mimetypes/application-vnd.scribus.png
 share/icons/oxygen/128x128/mimetypes/application-vnd.stardivision.calc.png
@@ -1295,7 +1295,7 @@ share/icons/oxygen/16x16/apps/akonadi.png
 share/icons/oxygen/16x16/apps/akregator.png
 share/icons/oxygen/16x16/apps/basket.png
 share/icons/oxygen/16x16/apps/clock.png
-@comment share/icons/oxygen/16x16/apps/digikam.png
+share/icons/oxygen/16x16/apps/digikam.png
 share/icons/oxygen/16x16/apps/esd.png
 share/icons/oxygen/16x16/apps/fontforge.png
 share/icons/oxygen/16x16/apps/graphics-viewer-document.png
@@ -1408,7 +1408,7 @@ share/icons/oxygen/16x16/apps/qelectrotech.png
 share/icons/oxygen/16x16/apps/quassel.png
 share/icons/oxygen/16x16/apps/scribus.png
 share/icons/oxygen/16x16/apps/semn.png
-@comment share/icons/oxygen/16x16/apps/showfoto.png
+share/icons/oxygen/16x16/apps/showfoto.png
 share/icons/oxygen/16x16/apps/step.png
 share/icons/oxygen/16x16/apps/strigi.png
 share/icons/oxygen/16x16/apps/system-file-manager.png
@@ -1577,7 +1577,7 @@ share/icons/oxygen/16x16/mimetypes/application-vnd.oasis.opendocument.spreadshee
 share/icons/oxygen/16x16/mimetypes/application-vnd.oasis.opendocument.text-master.png
 share/icons/oxygen/16x16/mimetypes/application-vnd.oasis.opendocument.text-template.png
 share/icons/oxygen/16x16/mimetypes/application-vnd.oasis.opendocument.text.png
-share/icons/oxygen/16x16/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.do
+share/icons/oxygen/16x16/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
 share/icons/oxygen/16x16/mimetypes/application-vnd.rn-realmedia.png
 share/icons/oxygen/16x16/mimetypes/application-vnd.scribus.png
 share/icons/oxygen/16x16/mimetypes/application-vnd.stardivision.calc.png
@@ -2573,7 +2573,7 @@ share/icons/oxygen/22x22/apps/akregator.png
 share/icons/oxygen/22x22/apps/basket.png
 share/icons/oxygen/22x22/apps/clock.png
 share/icons/oxygen/22x22/apps/device-notifier.png
-@comment share/icons/oxygen/22x22/apps/digikam.png
+share/icons/oxygen/22x22/apps/digikam.png
 share/icons/oxygen/22x22/apps/esd.png
 share/icons/oxygen/22x22/apps/fontforge.png
 share/icons/oxygen/22x22/apps/graphics-viewer-document.png
@@ -2682,7 +2682,7 @@ share/icons/oxygen/22x22/apps/qelectrotech.png
 share/icons/oxygen/22x22/apps/quassel.png
 share/icons/oxygen/22x22/apps/scribus.png
 share/icons/oxygen/22x22/apps/semn.png
-@comment share/icons/oxygen/22x22/apps/showfoto.png
+share/icons/oxygen/22x22/apps/showfoto.png
 share/icons/oxygen/22x22/apps/step.png
 share/icons/oxygen/22x22/apps/strigi.png
 share/icons/oxygen/22x22/apps/system-file-manager.png
@@ -2894,7 +2894,7 @@ share/icons/oxygen/22x22/mimetypes/application-vnd.oasis.opendocument.presentati
 share/icons/oxygen/22x22/mimetypes/application-vnd.oasis.opendocument.spreadsheet-template.png
 share/icons/oxygen/22x22/mimetypes/application-vnd.oasis.opendocument.spreadsheet.png
 share/icons/oxygen/22x22/mimetypes/application-vnd.oasis.opendocument.text.png
-share/icons/oxygen/22x22/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.do
+share/icons/oxygen/22x22/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
 share/icons/oxygen/22x22/mimetypes/application-vnd.rn-realmedia.png
 share/icons/oxygen/22x22/mimetypes/application-vnd.scribus.png
 share/icons/oxygen/22x22/mimetypes/application-vnd.stardivision.calc.png
@@ -3276,7 +3276,7 @@ share/icons/oxygen/256x256/apps/accessories-dictionary.png
 share/icons/oxygen/256x256/apps/akonadi.png
 share/icons/oxygen/256x256/apps/akregator.png
 share/icons/oxygen/256x256/apps/clock.png
-@comment share/icons/oxygen/256x256/apps/digikam.png
+share/icons/oxygen/256x256/apps/digikam.png
 share/icons/oxygen/256x256/apps/internet-web-browser.png
 share/icons/oxygen/256x256/apps/k3b.png
 share/icons/oxygen/256x256/apps/karbon.png
@@ -3404,7 +3404,7 @@ share/icons/oxygen/256x256/mimetypes/application-vnd.oasis.opendocument.spreadsh
 share/icons/oxygen/256x256/mimetypes/application-vnd.oasis.opendocument.spreadsheet.png
 share/icons/oxygen/256x256/mimetypes/application-vnd.oasis.opendocument.text-master.png
 share/icons/oxygen/256x256/mimetypes/application-vnd.oasis.opendocument.text.png
-share/icons/oxygen/256x256/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.
+share/icons/oxygen/256x256/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
 share/icons/oxygen/256x256/mimetypes/application-vnd.rn-realmedia.png
 share/icons/oxygen/256x256/mimetypes/application-vnd.scribus.png
 share/icons/oxygen/256x256/mimetypes/application-vnd.stardivision.calc.png
@@ -4296,7 +4296,7 @@ share/icons/oxygen/32x32/apps/application-sxw.png
 share/icons/oxygen/32x32/apps/basket.png
 share/icons/oxygen/32x32/apps/clock.png
 share/icons/oxygen/32x32/apps/device-notifier.png
-@comment share/icons/oxygen/32x32/apps/digikam.png
+share/icons/oxygen/32x32/apps/digikam.png
 share/icons/oxygen/32x32/apps/esd.png
 share/icons/oxygen/32x32/apps/fontforge.png
 share/icons/oxygen/32x32/apps/graphics-viewer-document.png
@@ -4409,7 +4409,7 @@ share/icons/oxygen/32x32/apps/qelectrotech.png
 share/icons/oxygen/32x32/apps/quassel.png
 share/icons/oxygen/32x32/apps/scribus.png
 share/icons/oxygen/32x32/apps/semn.png
-@comment share/icons/oxygen/32x32/apps/showfoto.png
+share/icons/oxygen/32x32/apps/showfoto.png
 share/icons/oxygen/32x32/apps/step.png
 share/icons/oxygen/32x32/apps/strigi.png
 share/icons/oxygen/32x32/apps/system-file-manager.png
@@ -4587,7 +4587,7 @@ share/icons/oxygen/32x32/mimetypes/application-vnd.oasis.opendocument.spreadshee
 share/icons/oxygen/32x32/mimetypes/application-vnd.oasis.opendocument.text-master.png
 share/icons/oxygen/32x32/mimetypes/application-vnd.oasis.opendocument.text-template.png
 share/icons/oxygen/32x32/mimetypes/application-vnd.oasis.opendocument.text.png
-share/icons/oxygen/32x32/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.do
+share/icons/oxygen/32x32/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
 share/icons/oxygen/32x32/mimetypes/application-vnd.rn-realmedia.png
 share/icons/oxygen/32x32/mimetypes/application-vnd.scribus.png
 share/icons/oxygen/32x32/mimetypes/application-vnd.stardivision.calc.png
@@ -5539,7 +5539,7 @@ share/icons/oxygen/48x48/apps/akonadi.png
 share/icons/oxygen/48x48/apps/akregator.png
 share/icons/oxygen/48x48/apps/basket.png
 share/icons/oxygen/48x48/apps/clock.png
-@comment share/icons/oxygen/48x48/apps/digikam.png
+share/icons/oxygen/48x48/apps/digikam.png
 share/icons/oxygen/48x48/apps/esd.png
 share/icons/oxygen/48x48/apps/fontforge.png
 share/icons/oxygen/48x48/apps/graphics-viewer-document.png
@@ -5652,7 +5652,7 @@ share/icons/oxygen/48x48/apps/qelectrotech.png
 share/icons/oxygen/48x48/apps/quassel.png
 share/icons/oxygen/48x48/apps/scribus.png
 share/icons/oxygen/48x48/apps/semn.png
-@comment share/icons/oxygen/48x48/apps/showfoto.png
+share/icons/oxygen/48x48/apps/showfoto.png
 share/icons/oxygen/48x48/apps/step.png
 share/icons/oxygen/48x48/apps/strigi.png
 share/icons/oxygen/48x48/apps/system-file-manager.png
@@ -5813,7 +5813,7 @@ share/icons/oxygen/48x48/mimetypes/application-vnd.oasis.opendocument.spreadshee
 share/icons/oxygen/48x48/mimetypes/application-vnd.oasis.opendocument.text-master.png
 share/icons/oxygen/48x48/mimetypes/application-vnd.oasis.opendocument.text-template.png
 share/icons/oxygen/48x48/mimetypes/application-vnd.oasis.opendocument.text.png
-share/icons/oxygen/48x48/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.do
+share/icons/oxygen/48x48/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
 share/icons/oxygen/48x48/mimetypes/application-vnd.rn-realmedia.png
 share/icons/oxygen/48x48/mimetypes/application-vnd.scribus.png
 share/icons/oxygen/48x48/mimetypes/application-vnd.stardivision.calc.png
@@ -6268,7 +6268,7 @@ share/icons/oxygen/64x64/apps/akonadi.png
 share/icons/oxygen/64x64/apps/akregator.png
 share/icons/oxygen/64x64/apps/basket.png
 share/icons/oxygen/64x64/apps/clock.png
-@comment share/icons/oxygen/64x64/apps/digikam.png
+share/icons/oxygen/64x64/apps/digikam.png
 share/icons/oxygen/64x64/apps/esd.png
 share/icons/oxygen/64x64/apps/fontforge.png
 share/icons/oxygen/64x64/apps/graphics-viewer-document.png
@@ -6369,7 +6369,7 @@ share/icons/oxygen/64x64/apps/qelectrotech.png
 share/icons/oxygen/64x64/apps/quassel.png
 share/icons/oxygen/64x64/apps/scribus.png
 share/icons/oxygen/64x64/apps/semn.png
-@comment share/icons/oxygen/64x64/apps/showfoto.png
+share/icons/oxygen/64x64/apps/showfoto.png
 share/icons/oxygen/64x64/apps/step.png
 share/icons/oxygen/64x64/apps/strigi.png
 share/icons/oxygen/64x64/apps/system-file-manager.png
@@ -6526,7 +6526,7 @@ share/icons/oxygen/64x64/mimetypes/application-vnd.oasis.opendocument.spreadshee
 share/icons/oxygen/64x64/mimetypes/application-vnd.oasis.opendocument.text-master.png
 share/icons/oxygen/64x64/mimetypes/application-vnd.oasis.opendocument.text-template.png
 share/icons/oxygen/64x64/mimetypes/application-vnd.oasis.opendocument.text.png
-share/icons/oxygen/64x64/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.do
+share/icons/oxygen/64x64/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
 share/icons/oxygen/64x64/mimetypes/application-vnd.rn-realmedia.png
 share/icons/oxygen/64x64/mimetypes/application-vnd.scribus.png
 share/icons/oxygen/64x64/mimetypes/application-vnd.stardivision.calc.png
