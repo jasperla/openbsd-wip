@@ -40,11 +40,20 @@
 #   | |
 #   | |- smokeqt
 #   | | |
-#   | | |- p5-qt, qyoto, ruby-qt
+#   | | |- p5-qt, qyoto,  ruby-qt
+#     -- kate/okular		|
+#      |			|
 #   |  --- smokekde             |
 #   |     |                     |
 #   |      - p5-kde, kimono, korundum
-#   ...
+#
+#   | -- kwebkitpart, libktorrent
+#      |
+#       -- network
+#   | -- former accessibility
+#   | -- former kdeedu
+#   | -- former kdeutils
+#   | -- former kdegraphics
 
 # basic bricks
      SUBDIR += akonadi			# minor issues
