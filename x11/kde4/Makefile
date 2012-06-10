@@ -29,12 +29,12 @@
 #   | |- pim-runtime
 #   |  - pim
 #   |-
-    |  |
-    |   -kactivities
-    |    |
-	  -py-kde
-	   |
-    |     - workspace
+#   |  |
+#   |   -kactivities
+#   |    |
+#   |    |- py-kde
+#   |      |
+#   |      |- workspace
 #   |
 #   |- smokegen
 #   | |
