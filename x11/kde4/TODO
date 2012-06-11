@@ -1,4 +1,4 @@
-KDE 4.8 beta/RC notes:
+KDE 4.8 notes:
 1) Have to merge Antoine's guic changes, see mail to ports@ on Dec 3, 2011
 titled "gtk-update-icon-cache". This is partly done...
 
@@ -20,8 +20,6 @@ Many programs produce such warnings:
 	ark(28160)/KSharedDataCache: Unable to perform initial setup, this system probably does not really support process-shared pthreads or semaphores, even though it claims otherwise. 
 
 We should review patches other *BSDs have, and also OpenSUSE ones (this Linux distro still supports KDE3 and KDE4).
-
-Ready-to-use packages for l10n, oxygen-icons and wallpapers are available at http://www.ohvost.ru/dnl/kde/ .
 
 For more information see main Makefile and TODOs and Makefiles in subdirectories.
 
