@@ -2,31 +2,26 @@
 
 COMMENT=		OpenGL-based interactive canvas library
 
-DISTNAME=		clutter-1.8.4
-SHARED_LIBS+=		clutter-glx-1.0      1.0      # 800.4
+GNOME_PROJECT=		clutter
+GNOME_VERSION=		${MAJOR}.6
 
-MASTER_SITES=		${MASTER_SITES_CLUTTER:=clutter/1.8/}
+SHARED_LIBS +=  clutter-1.0          1000.6   # 1000.6
+
+WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo cairo-gobject
+WANTLIB += cogl cogl-pango drm expat ffi fontconfig freetype gdk-3
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0 json-glib-1.0 m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs stdc++
+WANTLIB += xcb xcb-render xcb-shm z
 
 MODULES=		devel/gettext
 
-WANTLIB += GL X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes Xi
-WANTLIB += Xrender Xxf86vm atk-1.0 cairo cairo-gobject cogl cogl-pango
-WANTLIB += drm expat fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 ffi json-glib-1.0 m
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread-stubs stdc++ xcb xcb-render xcb-shm z
+MODGNOME_TOOLS=		goi
 
-BUILD_DEPENDS=          devel/gobject-introspection
-LIB_DEPENDS+=		devel/atk \
-			devel/json-glib \
-			devel/pango \
-			graphics/clutter/cogl \
-			graphics/gdk-pixbuf2
-
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-introspection \
-			--with-imagebackend=gdk-pixbuf \
-			--with-flavour=glx
+LIB_DEPENDS=		devel/json-glib \
+			graphics/clutter/cogl>=${MAJOR} \
+			x11/gtk+3
 
 CONFIGURE_ENV=          CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
                         LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
