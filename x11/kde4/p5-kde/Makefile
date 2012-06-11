@@ -12,7 +12,7 @@ WANTLIB += smokeattica smokebase smokekate smokekdecore smokekdeui
 WANTLIB += smokekfile smokekhtml smokekio smokeknewstuff2 smokeknewstuff3
 WANTLIB += smokekparts smokektexteditor smokekutils smokenepomuk
 WANTLIB += smokenepomukquery smokeokular smokeplasma smokeqtcore
-WANTLIB += smokeqtdbus smokeqtgui smokeqtnetwork smokesolid smokesoprano
+WANTLIB += smokeqtgui smokeqtnetwork smokesolid smokesoprano
 WANTLIB += smokesopranoclient smokesopranoserver smokeakonadi
 
 MODKDE4_USE =	libs
