@@ -12,20 +12,13 @@ PERMIT_PACKAGE_FTP?=    Yes
 PERMIT_DISTFILES_CDROM?=Yes
 PERMIT_DISTFILES_FTP?=  Yes
 
-MASTER_SITES_CLUTTER?=	${HOMEPAGE}/sources/
-MASTER_SITES+=		http://distfiles.nl/clutter/
-DIST_SUBDIR=		clutter
+MODULES +=		x11/gnome
 
-EXTRACT_SUFX=		.tar.xz
-
-USE_GMAKE?=		Yes
-
-USE_LIBTOOL?=		Yes
 LIBTOOL_FLAGS?=		--tag=disable-static
 
 CONFIGURE_STYLE?=	gnu
-CONFIGURE_ARGS+=	--disable-shave
+CONFIGURE_ARGS +=	--disable-static
 
 API_VERSION?=		1.0
-MAJOR?=			1.8
+MAJOR?=			1.10
 SUBST_VARS?=		MAJOR API_VERSION
