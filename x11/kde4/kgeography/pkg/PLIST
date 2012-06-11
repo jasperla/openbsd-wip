@@ -10,6 +10,8 @@ share/apps/kgeography/albania_districts.kgm
 share/apps/kgeography/albania_districts.png
 share/apps/kgeography/albania_prefectures.kgm
 share/apps/kgeography/albania_prefectures.png
+share/apps/kgeography/algeria.kgm
+share/apps/kgeography/algeria.png
 share/apps/kgeography/andhrapradesh.kgm
 share/apps/kgeography/andhrapradesh.png
 share/apps/kgeography/andorra.kgm
@@ -24,10 +26,16 @@ share/apps/kgeography/arunachalpradesh.kgm
 share/apps/kgeography/arunachalpradesh.png
 share/apps/kgeography/asia.kgm
 share/apps/kgeography/asia.png
+share/apps/kgeography/assam-district-map.png
+share/apps/kgeography/assam.kgm
 share/apps/kgeography/australia.kgm
 share/apps/kgeography/australia.png
 share/apps/kgeography/austria.kgm
 share/apps/kgeography/austria.png
+share/apps/kgeography/azerbaijan.kgm
+share/apps/kgeography/azerbaijan.png
+share/apps/kgeography/bangladesh.kgm
+share/apps/kgeography/bangladesh.png
 share/apps/kgeography/belarus.kgm
 share/apps/kgeography/belarus.png
 share/apps/kgeography/belgium.kgm
@@ -790,6 +798,8 @@ share/apps/kgeography/georgia.kgm
 share/apps/kgeography/georgia.png
 share/apps/kgeography/germany.kgm
 share/apps/kgeography/germany.png
+share/apps/kgeography/goa.kgm
+share/apps/kgeography/goa.png
 share/apps/kgeography/great-britain_counties.kgm
 share/apps/kgeography/great-britain_counties.png
 share/apps/kgeography/greece.kgm
@@ -808,6 +818,8 @@ share/apps/kgeography/haiti.kgm
 share/apps/kgeography/haiti.png
 share/apps/kgeography/haryana.kgm
 share/apps/kgeography/haryana.png
+share/apps/kgeography/himachal_pradesh.kgm
+share/apps/kgeography/himachal_pradesh.png
 share/apps/kgeography/honduras.kgm
 share/apps/kgeography/honduras.png
 share/apps/kgeography/hungary.kgm
@@ -836,6 +848,8 @@ share/apps/kgeography/jamaica.kgm
 share/apps/kgeography/jamaica.png
 share/apps/kgeography/japan.kgm
 share/apps/kgeography/japan.png
+share/apps/kgeography/jharkhand-map.png
+share/apps/kgeography/jharkhand.kgm
 share/apps/kgeography/kazakhstan.kgm
 share/apps/kgeography/kazakhstan.png
 share/apps/kgeography/kgeographyui.rc
