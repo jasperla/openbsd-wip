@@ -9,6 +9,7 @@ COMMENT-vkontakte =	K Desktop Environment, KIPI interface for VKontakte.Ru
 
 VERSION =		2.6.0
 DISTNAME =		digikam-${VERSION}
+BROKEN =		confused with this multi-package, see digikam.diff
 
 PKGNAME =		digikam4-${VERSION}
 PKGNAME-face =		libkface-2.0.0

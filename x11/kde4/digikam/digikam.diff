@@ -1,0 +1,384 @@
+diff --git a/x11/kde4/digikam/Makefile b/x11/kde4/digikam/Makefile
+index 45f08fe..51bdf2e 100644
+--- a/x11/kde4/digikam/Makefile
++++ b/x11/kde4/digikam/Makefile
+@@ -39,7 +39,6 @@ MODULES =		devel/gettext
+ WANTLIB-common =  ${MODQT_WANTLIB} ${MODKDE_WANTLIB}
+ WANTLIB-common += c m stdc++
+ WANTLIB-common += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg
+-WANTLIB-common +=
+ WANTLIB-common += kdecore kdeui
+ 
+ WANTLIB-face =  ${WANTLIB-common}
+@@ -49,46 +48,41 @@ WANTLIB-face += opencv_highgui opencv_imgproc opencv_legacy opencv_ml
+ WANTLIB-face += opencv_objdetect opencv_video
+ 
+ WANTLIB-geomap =  ${WANTLIB-common}
+-WANTLIB-geomap += pthread
+ WANTLIB-geomap += lib/qt4/QtNetwork lib/qt4/QtXml
+-WANTLIB-geomap += kexiv2 khtml kio kjs kparts nepomuk nepomukutils phonon soprano
+-WANTLIB-geomap += marblewidget
++WANTLIB-geomap += khtml kio kjs kparts marblewidget nepomuk nepomukutils
++WANTLIB-geomap += phonon soprano
+ 
+ WANTLIB-kipi =  ${WANTLIB-common} ${MODGETTEXT_WANTLIB}
+-WANTLIB-kipi += GL GLU ICE SM X11 Xext Xrandr expat pthread z
+-WANTLIB-kipi += lib/qt4/QtNetwork lib/qt4/QtOpenGL lib/qt4/QtXmlPatterns qca2
+-WANTLIB-kipi += lib/qt4/QtXml
+-WANTLIB-kipi += kcalcore kdcraw kexiv2 khtml kio kjs kipi kparts
+-WANTLIB-kipi += ksane nepomuk nepomukutils phonon soprano threadweaver
+-WANTLIB-kipi += gdk_pixbuf-2.0 gmodule-2.0 gobject-2.0
+-WANTLIB-kipi += gthread-2.0
+-WANTLIB-kipi += opencv_calib3d opencv_contrib opencv_core
+-WANTLIB-kipi += opencv_features2d opencv_flann opencv_gpu
+-WANTLIB-kipi += opencv_highgui opencv_imgproc opencv_legacy opencv_ml
+-WANTLIB-kipi += opencv_objdetect opencv_video
+-WANTLIB-kipi += exslt glib-2.0 gpod iconv intl jpeg png qjson tiff xml2 xslt
+-WANTLIB-kipi += kfile kgeomap kvkontakte
++WANTLIB-kipi += GL GLU ICE lib/qt4/QtNetwork lib/qt4/QtOpenGL
++WANTLIB-kipi += lib/qt4/QtXml lib/qt4/QtXmlPatterns SM
++WANTLIB-kipi += X11 Xext Xrandr expat exslt gdk_pixbuf-2.0 glib-2.0
++WANTLIB-kipi += gmodule-2.0 gobject-2.0 gpod gthread-2.0 jpeg kcalcore
++WANTLIB-kipi += kdcraw kexiv2 kfile kgeomap khtml kio kipi kjs kparts
++WANTLIB-kipi += ksane kvkontakte mediawiki nepomuk nepomukutils opencv_calib3d
++WANTLIB-kipi += opencv_contrib opencv_core opencv_features2d opencv_flann
++WANTLIB-kipi += opencv_gpu opencv_highgui opencv_imgproc opencv_legacy
++WANTLIB-kipi += opencv_ml opencv_objdetect opencv_video phonon png
++WANTLIB-kipi += pthread qca2 qjson solid soprano threadweaver tiff
++WANTLIB-kipi += xml2 xslt z
+ 
+ WANTLIB-main =  ${WANTLIB-common}
+ WANTLIB-main += ICE SM X11 Xext pthread z
+ WANTLIB-main += lib/qt4/Qt3Support lib/qt4/QtNetwork lib/qt4/QtSql
+ WANTLIB-main += lib/qt4/QtXml
+-WANTLIB-main += kabc kcmutils kdcraw kde3support kemoticons kexiv2
+-WANTLIB-main += kfile khtml kidletime kio kipi kjs knotifyconfig
+-WANTLIB-main += kparts kprintutils kresources kutils nepomuk
+-WANTLIB-main += nepomukutils phonon solid soprano sopranoclient
+-WANTLIB-main += glib-2.0 gphoto2 gphoto2_port jasper jpeg lcms lqr-1
+-WANTLIB-main += png tiff usb
+-WANTLIB-main += kface kgeomap
++WANTLIB-main += glib-2.0 gphoto2 gphoto2_port jasper jpeg kabc kcmutils
++WANTLIB-main += kdcraw kemoticons kexiv2 kface kfile kgeomap khtml
++WANTLIB-main += kidletime kio kipi kjs knotifyconfig kparts
++WANTLIB-main += kprintutils kresources kutils lcms lqr-1
++WANTLIB-main += nepomuk nepomukutils phonon png solid soprano
++WANTLIB-main += sopranoclient tiff usb
++
+ 
+ WANTLIB-mediawiki =  ${WANTLIB-common}
+-WANTLIB-mediawiki += lib/qt4/QtNetwork lib/qt4/QtXml
+-WANTLIB-mediawiki += kio
++WANTLIB-mediawiki += lib/qt4/QtNetwork lib/qt4/QtXml kio
+ 
+ WANTLIB-vkontakte =  ${WANTLIB-common}
+ WANTLIB-vkontakte += lib/qt4/QtNetwork lib/qt4/QtWebKit lib/qt4/QtXml
+-WANTLIB-vkontakte += kdewebkit kio kparts nepomuk nepomukutils soprano
+-WANTLIB-vkontakte += qjson
++WANTLIB-vkontakte += kdewebkit kio kparts nepomuk nepomukutils qjson soprano
+ 
+ # Define dependencies manually per subpackage
+ # TODO: fix kde4.port.mk to allow such grained tuning
+@@ -151,7 +145,9 @@ LIB_DEPENDS-kipi =	${LIB_DEPENDS-common} \
+ LIB_DEPENDS-main =	${LIB_DEPENDS-common} \
+ 			${BUILD_PKGPATH},-face \
+ 			${BUILD_PKGPATH},-geomap \
++			${BUILD_PKGPATH},-mediawiki \
+ 			devel/glib2 \
++			devel/qjson \
+ 			graphics/jasper \
+ 			graphics/lcms \
+ 			graphics/libgphoto2 \
+diff --git a/x11/kde4/digikam/pkg/PLIST-geomap b/x11/kde4/digikam/pkg/PLIST-geomap
+index cf6b3fc..671bdca 100644
+--- a/x11/kde4/digikam/pkg/PLIST-geomap
++++ b/x11/kde4/digikam/pkg/PLIST-geomap
+@@ -1,5 +1,4 @@
+ @comment $OpenBSD$
+-@bin bin/libkgeomap_demo
+ include/libkgeomap/
+ include/libkgeomap/abstractmarkertiler.h
+ include/libkgeomap/dragdrophandler.h
+diff --git a/x11/kde4/digikam/pkg/PLIST-kipi b/x11/kde4/digikam/pkg/PLIST-kipi
+index f902b7d..e698092 100644
+--- a/x11/kde4/digikam/pkg/PLIST-kipi
++++ b/x11/kde4/digikam/pkg/PLIST-kipi
+@@ -2,7 +2,6 @@
+ @bin bin/dngconverter
+ @bin bin/dnginfo
+ @bin bin/expoblending
+-@bin bin/multithread
+ @bin bin/panoramagui
+ @bin bin/photolayoutseditor
+ @bin bin/scangui
+@@ -20,12 +19,15 @@ lib/kde4/kipiplugin_galleryexport.so
+ lib/kde4/kipiplugin_gpssync.so
+ lib/kde4/kipiplugin_htmlexport.so
+ lib/kde4/kipiplugin_imageviewer.so
++lib/kde4/kipiplugin_imageshackexport.so
++lib/kde4/kipiplugin_imgurexport.so
+ lib/kde4/kipiplugin_ipodexport.so
+ lib/kde4/kipiplugin_jpeglossless.so
+ lib/kde4/kipiplugin_kioexportimport.so
+ lib/kde4/kipiplugin_kmlexport.so
+ lib/kde4/kipiplugin_kopete.so
+ lib/kde4/kipiplugin_metadataedit.so
++lib/kde4/kipiplugin_wikimedia.so
+ lib/kde4/kipiplugin_panorama.so
+ lib/kde4/kipiplugin_photolayoutseditor.so
+ lib/kde4/kipiplugin_picasawebexport.so
+@@ -45,15 +47,6 @@ share/applications/kde4/dngconverter.desktop
+ share/applications/kde4/expoblending.desktop
+ share/applications/kde4/kipiplugins.desktop
+ share/applications/kde4/panoramagui.desktop
+-share/apps/kipiplugin_imageviewer/
+-share/apps/kipiplugin_imageviewer/pics/
+-share/apps/kipiplugin_panorama/
+-share/apps/kipiplugin_panorama/pics/
+-share/apps/kipiplugin_piwigoexport/
+-share/apps/kipiplugin_piwigoexport/pics/
+-share/apps/kipiplugin_printimages/
+-share/apps/kipiplugin_printimages/templates/
+-share/apps/kipiplugin_removeredeyes/
+ share/apps/kipiplugin_expoblending/
+ share/apps/kipiplugin_expoblending/pics/
+ share/apps/kipiplugin_expoblending/pics/assistant-enfuse.png
+@@ -61,11 +54,11 @@ share/apps/kipiplugin_expoblending/pics/assistant-preprocessing.png
+ share/apps/kipiplugin_expoblending/pics/assistant-stack.png
+ share/apps/kipiplugin_expoblending/pics/assistant-tripod.png
+ share/apps/kipiplugin_flashexport/
+-share/apps/kipiplugin_flashexport/simpleviewer_html/
+ share/apps/kipiplugin_flashexport/index.template
+ share/apps/kipiplugin_flashexport/index2.template
+ share/apps/kipiplugin_flashexport/index3.template
+ share/apps/kipiplugin_flashexport/index4.template
++share/apps/kipiplugin_flashexport/simpleviewer_html/
+ share/apps/kipiplugin_flashexport/simpleviewer_html/space.png
+ share/apps/kipiplugin_galleryexport/
+ share/apps/kipiplugin_galleryexport/pics/
+@@ -110,6 +103,7 @@ share/apps/kipiplugin_htmlexport/themes/floating_cards/
+ share/apps/kipiplugin_htmlexport/themes/floating_cards/back.png
+ share/apps/kipiplugin_htmlexport/themes/floating_cards/floating_cards.desktop
+ share/apps/kipiplugin_htmlexport/themes/floating_cards/forward.png
++share/apps/kipiplugin_htmlexport/themes/floating_cards/image_nav.js
+ share/apps/kipiplugin_htmlexport/themes/floating_cards/next.png
+ share/apps/kipiplugin_htmlexport/themes/floating_cards/prev.png
+ share/apps/kipiplugin_htmlexport/themes/floating_cards/preview.png
+@@ -154,15 +148,23 @@ share/apps/kipiplugin_htmlexport/themes/snow/previous_disabled.png
+ share/apps/kipiplugin_htmlexport/themes/snow/snow.desktop
+ share/apps/kipiplugin_htmlexport/themes/snow/style.css
+ share/apps/kipiplugin_htmlexport/themes/snow/template.xsl
++share/apps/kipiplugin_imageviewer/
++share/apps/kipiplugin_imageviewer/pics/
+ share/apps/kipiplugin_imageviewer/pics/hand.png
+ share/apps/kipiplugin_imageviewer/pics/nullImage.png
+ share/apps/kipiplugin_imageviewer/pics/zoom.png
++share/apps/kipiplugin_panorama/
++share/apps/kipiplugin_panorama/pics/
+ share/apps/kipiplugin_panorama/pics/assistant-hugin.png
+ share/apps/kipiplugin_panorama/pics/assistant-preprocessing.png
+ share/apps/kipiplugin_panorama/pics/assistant-stack.png
+ share/apps/kipiplugin_panorama/pics/assistant-tripod.png
++share/apps/kipiplugin_piwigoexport/
++share/apps/kipiplugin_piwigoexport/pics/
+ share/apps/kipiplugin_piwigoexport/pics/piwigo_logo.png
++share/apps/kipiplugin_printimages/
+ share/apps/kipiplugin_printimages/TEMPLATE_HOWTO
++share/apps/kipiplugin_printimages/templates/
+ share/apps/kipiplugin_printimages/templates/1_photo_10.5x14.8cm.desktop
+ share/apps/kipiplugin_printimages/templates/1_photo_10x15cm.desktop
+ share/apps/kipiplugin_printimages/templates/1_photo_20x25cm.desktop
+@@ -177,6 +179,7 @@ share/apps/kipiplugin_printimages/templates/4_photos_3.5x5.desktop
+ share/apps/kipiplugin_printimages/templates/4_photos_4.5x5cm.desktop
+ share/apps/kipiplugin_printimages/templates/4_photos_9x13cm.desktop
+ share/apps/kipiplugin_printimages/templates/4x6Album.desktop
++share/apps/kipiplugin_printimages/templates/6_photos_3.5x4.5cm.desktop
+ share/apps/kipiplugin_printimages/templates/6_photos_3.5x4cm.desktop
+ share/apps/kipiplugin_printimages/templates/8_photos_6x9cm.desktop
+ share/apps/kipiplugin_printimages/templates/Album-Collage.desktop
+@@ -188,6 +191,7 @@ share/apps/kipiplugin_printimages/templates/Photoframe.desktop
+ share/apps/kipiplugin_printimages/templates/Thumbnails_5x4.desktop
+ share/apps/kipiplugin_printimages/templates/Thumbnails_6x5.desktop
+ share/apps/kipiplugin_printimages/templates/templates.xml
++share/apps/kipiplugin_removeredeyes/
+ share/apps/kipiplugin_removeredeyes/controlwidget.svg
+ share/apps/kipiplugin_removeredeyes/removeredeyes_classifier_eye_20_20.xml
+ share/doc/HTML/en/kipi-plugins/
+@@ -233,7 +237,6 @@ share/doc/HTML/en/kipi-plugins/recompressimages.docbook
+ share/doc/HTML/en/kipi-plugins/renameimages.docbook
+ share/doc/HTML/en/kipi-plugins/resizeimages.docbook
+ share/doc/HTML/en/kipi-plugins/sendimages.docbook
+-share/doc/HTML/en/kipi-plugins/sendimages_imageselection.png
+ share/doc/HTML/en/kipi-plugins/sendimages_mail.png
+ share/doc/HTML/en/kipi-plugins/sendimages_progress.png
+ share/doc/HTML/en/kipi-plugins/slideshow.docbook
+@@ -318,21 +321,14 @@ share/icons/hicolor/scalable/actions/picasa.svgz
+ share/icons/hicolor/scalable/actions/piwigo.svgz
+ share/icons/hicolor/scalable/actions/smugmug.svgz
+ share/icons/hicolor/scalable/actions/zooomr.svgz
+-share/icons/oxygen/128x128/apps/dngconverter.png
+ share/icons/oxygen/128x128/apps/rawconverter.png
+-share/icons/oxygen/16x16/apps/dngconverter.png
+ share/icons/oxygen/16x16/apps/rawconverter.png
+-share/icons/oxygen/22x22/apps/dngconverter.png
+ share/icons/oxygen/22x22/apps/rawconverter.png
+-share/icons/oxygen/32x32/apps/dngconverter.png
+ share/icons/oxygen/32x32/apps/rawconverter.png
+-share/icons/oxygen/48x48/apps/dngconverter.png
+ share/icons/oxygen/48x48/apps/rawconverter.png
+-share/icons/oxygen/64x64/apps/dngconverter.png
+ share/icons/oxygen/64x64/apps/rawconverter.png
+ share/icons/oxygen/scalable/
+ share/icons/oxygen/scalable/apps/
+-share/icons/oxygen/scalable/apps/dngconverter.svgz
+ share/icons/oxygen/scalable/apps/rawconverter.svgz
+ share/kde4/services/kipiplugin_acquireimages.desktop
+ share/kde4/services/kipiplugin_advancedslideshow.desktop
+@@ -878,8 +874,6 @@ share/locale/ja/LC_MESSAGES/kipiplugin_shwup.mo
+ share/locale/ja/LC_MESSAGES/kipiplugin_smug.mo
+ share/locale/ja/LC_MESSAGES/kipiplugin_timeadjust.mo
+ share/locale/ja/LC_MESSAGES/kipiplugins.mo
+-share/locale/km/
+-share/locale/km/LC_MESSAGES/
+ share/locale/km/LC_MESSAGES/kipiplugin_acquireimages.mo
+ share/locale/km/LC_MESSAGES/kipiplugin_advancedslideshow.mo
+ share/locale/km/LC_MESSAGES/kipiplugin_batchprocessimages.mo
+diff --git a/x11/kde4/digikam/pkg/PLIST-main b/x11/kde4/digikam/pkg/PLIST-main
+index 889a833..58d0031 100644
+--- a/x11/kde4/digikam/pkg/PLIST-main
++++ b/x11/kde4/digikam/pkg/PLIST-main
+@@ -500,6 +500,7 @@ share/apps/digikam/icons/hicolor/scalable/actions/bqm-update.svgz
+ share/apps/digikam/icons/hicolor/scalable/actions/bwtonal.svgz
+ share/apps/digikam/icons/hicolor/scalable/actions/channelmixer.svgz
+ share/apps/digikam/icons/hicolor/scalable/actions/colormanagement.svgz
++share/apps/digikam/icons/hicolor/scalable/actions/colorneg.svgz
+ share/apps/digikam/icons/hicolor/scalable/actions/contrast.svgz
+ share/apps/digikam/icons/hicolor/scalable/actions/depth16to8.svgz
+ share/apps/digikam/icons/hicolor/scalable/actions/depth8to16.svgz
+@@ -563,6 +564,7 @@ share/apps/digikam/queuemgrwindowui.rc
+ share/apps/digikam/tips
+ share/apps/digikam/utils/
+ share/apps/digikam/utils/digikam-camera
++share/apps/kconf_update/adjustlevelstool.upd
+ share/apps/photolayoutseditor/
+ share/apps/photolayoutseditor/photolayoutseditorui.rc
+ share/apps/showfoto/
+@@ -832,26 +834,46 @@ share/doc/HTML/en/showfoto/setupplugins.png
+ share/doc/HTML/en/showfoto/setupslideshow.png
+ share/icons/hicolor/128x128/actions/flash.png
+ share/icons/hicolor/128x128/apps/digikam.png
++share/icons/hicolor/128x128/apps/dngconverter.png
+ share/icons/hicolor/128x128/apps/photolayoutseditor.png
+ share/icons/hicolor/128x128/apps/showfoto.png
++share/icons/hicolor/16x16/actions/imgur.png
++share/icons/hicolor/16x16/actions/wikimedia.png
+ share/icons/hicolor/16x16/apps/digikam.png
++share/icons/hicolor/16x16/apps/dngconverter.png
+ share/icons/hicolor/16x16/apps/photolayoutseditor.png
+ share/icons/hicolor/16x16/apps/showfoto.png
++share/icons/hicolor/22x22/actions/imgur.png
++share/icons/hicolor/22x22/actions/wikimedia.png
+ share/icons/hicolor/22x22/apps/digikam.png
++share/icons/hicolor/22x22/apps/dngconverter.png
+ share/icons/hicolor/22x22/apps/photolayoutseditor.png
+ share/icons/hicolor/22x22/apps/showfoto.png
+ share/icons/hicolor/256x256/apps/digikam.png
+ share/icons/hicolor/256x256/apps/showfoto.png
++share/icons/hicolor/32x32/actions/imageshack.png
++share/icons/hicolor/32x32/actions/imgur.png
++share/icons/hicolor/32x32/actions/wikimedia.png
+ share/icons/hicolor/32x32/apps/digikam.png
++share/icons/hicolor/32x32/apps/dngconverter.png
+ share/icons/hicolor/32x32/apps/photolayoutseditor.png
+ share/icons/hicolor/32x32/apps/showfoto.png
++share/icons/hicolor/48x48/actions/imageshack.png
++share/icons/hicolor/48x48/actions/imgur.png
++share/icons/hicolor/48x48/actions/wikimedia.png
+ share/icons/hicolor/48x48/apps/digikam.png
++share/icons/hicolor/48x48/apps/dngconverter.png
+ share/icons/hicolor/48x48/apps/photolayoutseditor.png
+ share/icons/hicolor/48x48/apps/showfoto.png
++share/icons/hicolor/64x64/actions/imageshack.png
+ share/icons/hicolor/64x64/apps/digikam.png
++share/icons/hicolor/64x64/apps/dngconverter.png
+ share/icons/hicolor/64x64/apps/photolayoutseditor.png
+ share/icons/hicolor/64x64/apps/showfoto.png
++share/icons/hicolor/scalable/actions/imgur.svgz
++share/icons/hicolor/scalable/actions/wikimedia.svgz
+ share/icons/hicolor/scalable/apps/digikam.svgz
++share/icons/hicolor/scalable/apps/dngconverter.svgz
+ share/icons/hicolor/scalable/apps/showfoto.svgz
+ share/kde4/services/digikamalbums.protocol
+ share/kde4/services/digikamdates.protocol
+@@ -864,7 +886,10 @@ share/kde4/services/digikammapimages.protocol
+ share/kde4/services/digikamnepomukservice.desktop
+ share/kde4/services/digikamsearch.protocol
+ share/kde4/services/digikamtags.protocol
++share/kde4/services/kipiplugin_imageshackexport.desktop
++share/kde4/services/kipiplugin_imgurexport.desktop
+ share/kde4/services/kipiplugin_photolayoutseditor.desktop
++share/kde4/services/kipiplugin_wikimedia.desktop
+ share/kde4/servicetypes/digikamimageplugin.desktop
+ share/kde4/servicetypes/photolayoutseditorborderplugin.desktop
+ share/kde4/servicetypes/photolayoutseditoreffectplugin.desktop
+@@ -873,6 +898,7 @@ share/locale/be/LC_MESSAGES/digikam.mo
+ share/locale/bg/LC_MESSAGES/digikam.mo
+ share/locale/bs/LC_MESSAGES/digikam.mo
+ share/locale/ca/LC_MESSAGES/digikam.mo
++share/locale/ca/LC_MESSAGES/libkgeomap.mo
+ share/locale/cs/LC_MESSAGES/digikam.mo
+ share/locale/da/LC_MESSAGES/digikam.mo
+ share/locale/de/LC_MESSAGES/digikam.mo
+@@ -880,10 +906,15 @@ share/locale/el/LC_MESSAGES/digikam.mo
+ share/locale/en_GB/LC_MESSAGES/digikam.mo
+ share/locale/eo/LC_MESSAGES/digikam.mo
+ share/locale/es/LC_MESSAGES/digikam.mo
++share/locale/es/LC_MESSAGES/kipiplugin_expoblending.mo
++share/locale/es/LC_MESSAGES/kipiplugin_kioexportimport.mo
++share/locale/es/LC_MESSAGES/kipiplugin_piwigoexport.mo
++share/locale/es/LC_MESSAGES/kipiplugin_shwup.mo
+ share/locale/et/LC_MESSAGES/digikam.mo
+ share/locale/eu/LC_MESSAGES/digikam.mo
+ share/locale/fa/LC_MESSAGES/digikam.mo
+ share/locale/fi/LC_MESSAGES/digikam.mo
++share/locale/fi/LC_MESSAGES/libkgeomap.mo
+ share/locale/fr/LC_MESSAGES/digikam.mo
+ share/locale/ga/LC_MESSAGES/digikam.mo
+ share/locale/gl/LC_MESSAGES/digikam.mo
+@@ -894,8 +925,6 @@ share/locale/hu/LC_MESSAGES/digikam.mo
+ share/locale/is/LC_MESSAGES/digikam.mo
+ share/locale/it/LC_MESSAGES/digikam.mo
+ share/locale/ja/LC_MESSAGES/digikam.mo
+-share/locale/km/
+-share/locale/km/LC_MESSAGES/
+ share/locale/km/LC_MESSAGES/digikam.mo
+ share/locale/ko/LC_MESSAGES/digikam.mo
+ share/locale/lt/LC_MESSAGES/digikam.mo
+@@ -906,6 +935,7 @@ share/locale/nds/LC_MESSAGES/digikam.mo
+ share/locale/ne/LC_MESSAGES/digikam.mo
+ share/locale/nl/LC_MESSAGES/digikam.mo
+ share/locale/nn/LC_MESSAGES/digikam.mo
++share/locale/nn/LC_MESSAGES/libkgeomap.mo
+ share/locale/pa/LC_MESSAGES/digikam.mo
+ share/locale/pl/LC_MESSAGES/digikam.mo
+ share/locale/pt/LC_MESSAGES/digikam.mo
+@@ -925,6 +955,19 @@ share/locale/uk/LC_MESSAGES/digikam.mo
+ share/locale/vi/LC_MESSAGES/digikam.mo
+ share/locale/zh_CN/LC_MESSAGES/digikam.mo
+ share/locale/zh_TW/LC_MESSAGES/digikam.mo
++share/templates/
++share/templates/kipiplugins_photolayoutseditor/
++share/templates/kipiplugins_photolayoutseditor/data/
++share/templates/kipiplugins_photolayoutseditor/data/templates/
++share/templates/kipiplugins_photolayoutseditor/data/templates/a4/
++share/templates/kipiplugins_photolayoutseditor/data/templates/a4/h/
++share/templates/kipiplugins_photolayoutseditor/data/templates/a4/h/Bear boy.ple
++share/templates/kipiplugins_photolayoutseditor/data/templates/a4/h/Bear girl.ple
++share/templates/kipiplugins_photolayoutseditor/data/templates/a4/h/Flipping Tux Black.ple
++share/templates/kipiplugins_photolayoutseditor/data/templates/a4/h/Flipping Tux White.ple
++share/templates/kipiplugins_photolayoutseditor/data/templates/a4/h/Its a boy.ple
++share/templates/kipiplugins_photolayoutseditor/data/templates/a4/h/Its a girl.ple
++share/templates/kipiplugins_photolayoutseditor/data/templates/a4/h/Tux Rider.ple
+ @exec %D/bin/update-desktop-database
+ @unexec-delete %D/bin/update-desktop-database
+ @exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
