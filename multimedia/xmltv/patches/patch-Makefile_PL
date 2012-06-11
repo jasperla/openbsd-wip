@@ -1,7 +1,20 @@
 $OpenBSD$
---- Makefile.PL.orig	Wed Jun 22 07:08:48 2011
-+++ Makefile.PL	Sun Jul  3 13:32:14 2011
-@@ -418,22 +418,22 @@ my @opt_components
+
+Use xmltv rather than xmltv-version for docs.
+Remove dvb linux specific.
+
+--- Makefile.PL.orig	Sun Jun 10 18:10:48 2012
++++ Makefile.PL	Mon Jun 11 18:46:08 2012
+@@ -79,7 +79,7 @@ my $location = '$(DESTDIR)/./$(PREFIX)';
+ our %extra_constants;
+ %extra_constants
+   = (INST_PLAINDOC   => 'blib/doc',
+-     INSTALLPLAINDOC => "$location/share/doc/xmltv-$::VERSION",
++     INSTALLPLAINDOC => "$location/share/doc/xmltv",
+      INST_SHARE      => 'blib/share',
+      INSTALLSHARE    => "$location/share/xmltv",
+ 
+@@ -452,22 +452,22 @@ my @opt_components
         grab_need_share => [ 'it' ],
       },
  
@@ -10,7 +23,7 @@ $OpenBSD$
 -       exes => [ 'grab/it_dvb/tv_grab_it_dvb' ],
 -       pl_files => { 'grab/it_dvb/tv_grab_it_dvb.PL' => 'grab/it_dvb/tv_grab_it_dvb' },
 -       share_files => { 'grab/it_dvb/channel_ids' => 'tv_grab_it_dvb/channel_ids',
--		                'grab/it_dvb/sky_it.dict' => 'tv_grab_it_dvb/sky_it.dict',
+-                        'grab/it_dvb/sky_it.dict' => 'tv_grab_it_dvb/sky_it.dict',
 -                        'grab/it_dvb/sky_it.themes' => 'tv_grab_it_dvb/sky_it.themes',
 -                   },
 -       to_clean => [ 'grab/it_dvb/tv_grab_it_dvb' ],
@@ -18,7 +31,7 @@ $OpenBSD$
 -       grab_need_share => [ 'it_dvb' ],
 -       prereqs => { 'Data::Dump' => 0,
 -                    'IO::Select' => 0,
--                    'Linux::DVB' => 0, 
+-                    'Linux::DVB' => 0,
 -                    'Time::HiRes' => 0 } ,
 -     },
 +#     { name => 'tv_grab_it_dvb',
@@ -26,7 +39,7 @@ $OpenBSD$
 +#       exes => [ 'grab/it_dvb/tv_grab_it_dvb' ],
 +#       pl_files => { 'grab/it_dvb/tv_grab_it_dvb.PL' => 'grab/it_dvb/tv_grab_it_dvb' },
 +#       share_files => { 'grab/it_dvb/channel_ids' => 'tv_grab_it_dvb/channel_ids',
-+#		                'grab/it_dvb/sky_it.dict' => 'tv_grab_it_dvb/sky_it.dict',
++#                        'grab/it_dvb/sky_it.dict' => 'tv_grab_it_dvb/sky_it.dict',
 +#                        'grab/it_dvb/sky_it.themes' => 'tv_grab_it_dvb/sky_it.themes',
 +#                   },
 +#       to_clean => [ 'grab/it_dvb/tv_grab_it_dvb' ],
@@ -34,7 +47,7 @@ $OpenBSD$
 +#       grab_need_share => [ 'it_dvb' ],
 +#       prereqs => { 'Data::Dump' => 0,
 +#                    'IO::Select' => 0,
-+#                    'Linux::DVB' => 0, 
++#                    'Linux::DVB' => 0,
 +#                    'Time::HiRes' => 0 } ,
 +#     },
  
