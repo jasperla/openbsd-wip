@@ -2,7 +2,8 @@
 
 COMMENT =		Grab TV Listings in XML format
 
-DISTNAME =		xmltv-0.5.61
+VER=0.5.62
+DISTNAME =		xmltv-${VER}
 CATEGORIES =		multimedia
 
 HOMEPAGE =		http://wiki.xmltv.org/index.php/Main_Page
@@ -18,6 +19,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=xmltv/}
 EXTRACT_SUFX =		.tar.bz2
 
+SUBST_VARS +=	VER
 RUN_DEPENDS =	archivers/p5-Archive-Zip \
 		archivers/p5-PerlIO-gzip \
 		p5-DateManip->=5.42:converters/p5-DateManip \
@@ -27,6 +29,7 @@ RUN_DEPENDS =	archivers/p5-Archive-Zip \
 		devel/p5-IO-stringy \
 		devel/p5-Term-ReadKey \
 		devel/p5-Term-ProgressBar \
+		devel/p5-DateTime-Format-ISO8601 \
 		devel/p5-DateTime-Format-Strptime \
 		devel/p5-File-Slurp \
 		devel/p5-Parse-RecDescent \
@@ -50,7 +53,6 @@ RUN_DEPENDS =	archivers/p5-Archive-Zip \
 		x11/p5-Tk-TableMatrix
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
-USE_GROFF = Yes
 CONFIGURE_STYLE = perl	
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} --yes
 

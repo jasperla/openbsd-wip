@@ -12,9 +12,9 @@ bin/tv_grab_dtv_la
 bin/tv_grab_ee
 bin/tv_grab_es_laguiatv
 bin/tv_grab_es_miguiatv
+bin/tv_grab_eu_egon
 bin/tv_grab_eu_epgdata
 bin/tv_grab_fi
-bin/tv_grab_fi_sv
 bin/tv_grab_fr
 bin/tv_grab_fr_kazer
 bin/tv_grab_hr
@@ -24,12 +24,14 @@ bin/tv_grab_in
 bin/tv_grab_is
 bin/tv_grab_it
 bin/tv_grab_na_dd
+bin/tv_grab_na_dtv
 bin/tv_grab_na_icons
 bin/tv_grab_nl
 bin/tv_grab_no_gfeed
 bin/tv_grab_pt
 bin/tv_grab_pt_meo
 bin/tv_grab_se_swedb
+bin/tv_grab_se_tvzon
 bin/tv_grab_uk_bleb
 bin/tv_grab_uk_rt
 bin/tv_grab_za
@@ -64,7 +66,6 @@ ${P5SITE}/XMLTV/Grab_XML.pm
 ${P5SITE}/XMLTV/Grep.pm
 ${P5SITE}/XMLTV/Gunzip.pm
 ${P5SITE}/XMLTV/IMDB.pm
-${P5SITE}/XMLTV/Lineup.pm
 ${P5SITE}/XMLTV/Memoize.pm
 ${P5SITE}/XMLTV/Mode.pm
 ${P5SITE}/XMLTV/Options.pm
@@ -94,9 +95,9 @@ ${P5SITE}/XMLTV/Version.pm
 @man man/man1/tv_grab_ee.1
 @man man/man1/tv_grab_es_laguiatv.1
 @man man/man1/tv_grab_es_miguiatv.1
+@man man/man1/tv_grab_eu_egon.1
 @man man/man1/tv_grab_eu_epgdata.1
 @man man/man1/tv_grab_fi.1
-@man man/man1/tv_grab_fi_sv.1
 @man man/man1/tv_grab_fr.1
 @man man/man1/tv_grab_fr_kazer.1
 @man man/man1/tv_grab_hr.1
@@ -106,12 +107,14 @@ ${P5SITE}/XMLTV/Version.pm
 @man man/man1/tv_grab_is.1
 @man man/man1/tv_grab_it.1
 @man man/man1/tv_grab_na_dd.1
+@man man/man1/tv_grab_na_dtv.1
 @man man/man1/tv_grab_na_icons.1
 @man man/man1/tv_grab_nl.1
 @man man/man1/tv_grab_no_gfeed.1
 @man man/man1/tv_grab_pt.1
 @man man/man1/tv_grab_pt_meo.1
 @man man/man1/tv_grab_se_swedb.1
+@man man/man1/tv_grab_se_tvzon.1
 @man man/man1/tv_grab_uk_bleb.1
 @man man/man1/tv_grab_uk_rt.1
 @man man/man1/tv_grab_za.1
@@ -127,7 +130,6 @@ ${P5SITE}/XMLTV/Version.pm
 @man man/man1/tv_validate_grabber.1
 @man man/man3p/Configure.3
 @man man/man3p/Configure::Writer.3
-@man man/man3p/Lineup.3
 @man man/man3p/Options.3
 @man man/man3p/PreferredMethod.3
 @man man/man3p/ValidateFile.3
@@ -141,14 +143,14 @@ ${P5SITE}/XMLTV/Version.pm
 @man man/man3p/XMLTV::Summarize.3
 @man man/man3p/XMLTV::Supplement.3
 share/doc/pkg-readmes/${FULLPKGNAME}
-share/doc/xmltv-0.5.61/
-share/doc/xmltv-0.5.61/COPYING
-share/doc/xmltv-0.5.61/QuickStart
-share/doc/xmltv-0.5.61/README
-share/doc/xmltv-0.5.61/README.tv_check
-share/doc/xmltv-0.5.61/README.win32
-share/doc/xmltv-0.5.61/tv_check_doc.html
-share/doc/xmltv-0.5.61/tv_check_doc.jpg
+share/doc/xmltv/
+share/doc/xmltv/COPYING
+share/doc/xmltv/QuickStart
+share/doc/xmltv/README
+share/doc/xmltv/README.tv_check
+share/doc/xmltv/README.win32
+share/doc/xmltv/tv_check_doc.html
+share/doc/xmltv/tv_check_doc.jpg
 share/xmltv/
 share/xmltv/tv_grab_eu_epgdata/
 share/xmltv/tv_grab_eu_epgdata/channel_ids
@@ -163,13 +165,29 @@ share/xmltv/tv_grab_it/channel_ids
 share/xmltv/tv_grab_uk_bleb/
 share/xmltv/tv_grab_uk_bleb/icon_urls
 share/xmltv/tv_grab_uk_rt/
+share/xmltv/tv_grab_uk_rt/channel_icons
 share/xmltv/tv_grab_uk_rt/channel_ids
 share/xmltv/tv_grab_uk_rt/channels_platforms
 share/xmltv/tv_grab_uk_rt/lineups/
 share/xmltv/tv_grab_uk_rt/lineups/freesat.map
+share/xmltv/tv_grab_uk_rt/lineups/freesat.xml
+share/xmltv/tv_grab_uk_rt/lineups/freesatfromsky.xml
+share/xmltv/tv_grab_uk_rt/lineups/freesathd.xml
 share/xmltv/tv_grab_uk_rt/lineups/freeview.map
+share/xmltv/tv_grab_uk_rt/lineups/freeview.xml
+share/xmltv/tv_grab_uk_rt/lineups/freeviewhd.xml
+share/xmltv/tv_grab_uk_rt/lineups/lineups.xml
+share/xmltv/tv_grab_uk_rt/lineups/saorview.map
+share/xmltv/tv_grab_uk_rt/lineups/saorview.xml
+share/xmltv/tv_grab_uk_rt/lineups/sky.xml
+share/xmltv/tv_grab_uk_rt/lineups/skyhd.xml
+share/xmltv/tv_grab_uk_rt/lineups/upcireland.xml
+share/xmltv/tv_grab_uk_rt/lineups/upcirelandhd.xml
+share/xmltv/tv_grab_uk_rt/lineups/virgin.xml
+share/xmltv/tv_grab_uk_rt/lineups/virginhd.xml
+share/xmltv/tv_grab_uk_rt/lineups/xmltv-lineups.xsl
 share/xmltv/tv_grab_uk_rt/prog_titles_to_process
 share/xmltv/tv_grab_uk_rt/regional_channels_by_postcode
 share/xmltv/tv_grab_uk_rt/utf8_fixups
-share/xmltv/xmltv-lineup.dtd
+share/xmltv/xmltv-lineups.xsd
 share/xmltv/xmltv.dtd
