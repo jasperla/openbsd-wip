@@ -20,7 +20,7 @@ SHARED_LIBS +=	sublime				0.0 # 3.0
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdevelop/${VERSION:C/^1/4/}/src/}
 
-WANTLIB =  c m stdc++
+WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtScript lib/qt4/QtSvg lib/qt4/QtTest
 WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml
