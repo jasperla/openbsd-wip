@@ -1,6 +1,4 @@
 @comment $OpenBSD$
-share/locale/km/
-share/locale/km/LC_MESSAGES/
 share/locale/km/LC_MESSAGES/accountwizard.mo
 share/locale/km/LC_MESSAGES/accountwizard_ical.mo
 share/locale/km/LC_MESSAGES/accountwizard_imap.mo
@@ -512,7 +510,6 @@ share/locale/km/LC_MESSAGES/okular_tiff.mo
 share/locale/km/LC_MESSAGES/okular_xps.mo
 share/locale/km/LC_MESSAGES/palapeli.mo
 share/locale/km/LC_MESSAGES/parley.mo
-share/locale/km/LC_MESSAGES/phonon-xine.mo
 share/locale/km/LC_MESSAGES/phonon_kde.mo
 share/locale/km/LC_MESSAGES/phononserver.mo
 share/locale/km/LC_MESSAGES/plasma-desktop.mo
