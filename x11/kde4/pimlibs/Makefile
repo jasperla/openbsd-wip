@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, libraries for PIM
 DISTNAME =	kdepimlibs-${MODKDE_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	kabc                 5.0      # .4.0
 SHARED_LIBS +=	kabc_file_core       0.0      # .4.0
@@ -40,7 +40,7 @@ SHARED_LIBS +=  kmbox			0.0 # 4.7
 
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSql
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml akonadiprotocolinternals
-WANTLIB += assuan c gpg-error gpgme gpgme-pthread ical icalss
+WANTLIB += assuan c e2fs-uuid gpg-error gpgme gpgme-pthread ical icalss
 WANTLIB += kcmutils kdeui kemoticons kio kparts lber ldap m nepomuk
 WANTLIB += nepomukutils phonon prison sasl2 solid soprano stdc++
 
@@ -56,6 +56,7 @@ LIB_DEPENDS +=	databases/openldap \
 		graphics/prison \
 		security/cyrus-sasl2 \
 		security/gpgme>=0.4.5 \
+		sysutils/e2fsprogs \
 		textproc/libical \
 		x11/kde4/akonadi
 
