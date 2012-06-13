@@ -109,6 +109,7 @@ share/locale/ia/LC_MESSAGES/katexmlcheck.mo
 share/locale/ia/LC_MESSAGES/katexmltools.mo
 share/locale/ia/LC_MESSAGES/kblankscrn.mo
 share/locale/ia/LC_MESSAGES/kcal_akonadi.mo
+share/locale/ia/LC_MESSAGES/kcalc.mo
 share/locale/ia/LC_MESSAGES/kcertpart.mo
 share/locale/ia/LC_MESSAGES/kcharselect.mo
 share/locale/ia/LC_MESSAGES/kcm_akonadi.mo
@@ -217,6 +218,7 @@ share/locale/ia/LC_MESSAGES/kfontinst.mo
 share/locale/ia/LC_MESSAGES/kget.mo
 share/locale/ia/LC_MESSAGES/kgetplugin.mo
 share/locale/ia/LC_MESSAGES/kglobalaccel.mo
+share/locale/ia/LC_MESSAGES/kgpg.mo
 share/locale/ia/LC_MESSAGES/kgreet_classic.mo
 share/locale/ia/LC_MESSAGES/kgreet_generic.mo
 share/locale/ia/LC_MESSAGES/kgreet_winbind.mo
@@ -384,6 +386,7 @@ share/locale/ia/LC_MESSAGES/libtaskmanager.mo
 share/locale/ia/LC_MESSAGES/libtemplateparser.mo
 share/locale/ia/LC_MESSAGES/mailfilteragent.mo
 share/locale/ia/LC_MESSAGES/mailreader.mo
+share/locale/ia/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/ia/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/ia/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/ia/LC_MESSAGES/messageviewer_text_xdiff_plugin.mo

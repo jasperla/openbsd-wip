@@ -201,6 +201,7 @@ share/locale/he/LC_MESSAGES/kdf.mo
 share/locale/he/LC_MESSAGES/kdialog.mo
 share/locale/he/LC_MESSAGES/kdmconfig.mo
 share/locale/he/LC_MESSAGES/kdmgreet.mo
+share/locale/he/LC_MESSAGES/kdontchangethehostname.mo
 share/locale/he/LC_MESSAGES/keditbookmarks.mo
 share/locale/he/LC_MESSAGES/kfile_avi.mo
 share/locale/he/LC_MESSAGES/kfile_dds.mo
@@ -338,6 +339,7 @@ share/locale/he/LC_MESSAGES/ktexteditor_plugins.mo
 share/locale/he/LC_MESSAGES/ktimer.mo
 share/locale/he/LC_MESSAGES/ktimetracker.mo
 share/locale/he/LC_MESSAGES/ktouch.mo
+share/locale/he/LC_MESSAGES/ktraderclient.mo
 share/locale/he/LC_MESSAGES/ktuberling.mo
 share/locale/he/LC_MESSAGES/kturtle.mo
 share/locale/he/LC_MESSAGES/ktux.mo
@@ -382,6 +384,8 @@ share/locale/he/LC_MESSAGES/marble_qt.mo
 share/locale/he/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/he/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/he/LC_MESSAGES/minitoolsplugin.mo
+share/locale/he/LC_MESSAGES/nepomukbackup.mo
+share/locale/he/LC_MESSAGES/nepomukcontroller.mo
 share/locale/he/LC_MESSAGES/nepomukfileindexer.mo
 share/locale/he/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/he/LC_MESSAGES/nepomukserver.mo
@@ -396,6 +400,7 @@ share/locale/he/LC_MESSAGES/phononserver.mo
 share/locale/he/LC_MESSAGES/plasma-desktop.mo
 share/locale/he/LC_MESSAGES/plasma-netbook.mo
 share/locale/he/LC_MESSAGES/plasma-overlay.mo
+share/locale/he/LC_MESSAGES/plasma-remote-helper.mo
 share/locale/he/LC_MESSAGES/plasma-windowed.mo
 share/locale/he/LC_MESSAGES/plasma_applet_BbalL.mo
 share/locale/he/LC_MESSAGES/plasma_applet_CharSelectApplet.mo
@@ -465,9 +470,11 @@ share/locale/he/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/he/LC_MESSAGES/plasma_runner_shell.mo
 share/locale/he/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
 share/locale/he/LC_MESSAGES/plasma_runner_webshortcuts.mo
+share/locale/he/LC_MESSAGES/plasma_scriptengine_qscript.mo
 share/locale/he/LC_MESSAGES/plasma_wallpaper_color.mo
 share/locale/he/LC_MESSAGES/plasma_wallpaper_image.mo
 share/locale/he/LC_MESSAGES/plasmaengineexplorer.mo
+share/locale/he/LC_MESSAGES/plasmapkg.mo
 share/locale/he/LC_MESSAGES/plasmoidviewer.mo
 share/locale/he/LC_MESSAGES/powerdevil.mo
 share/locale/he/LC_MESSAGES/processcore.mo
