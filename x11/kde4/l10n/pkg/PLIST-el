@@ -193,6 +193,7 @@ share/locale/el/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/el/LC_MESSAGES/akonadi_imap_resource.mo
 share/locale/el/LC_MESSAGES/akonadi_invitations_agent.mo
 share/locale/el/LC_MESSAGES/akonadi_kabc_resource.mo
+share/locale/el/LC_MESSAGES/akonadi_kalarm_resource.mo
 share/locale/el/LC_MESSAGES/akonadi_kcal_resource.mo
 share/locale/el/LC_MESSAGES/akonadi_kdeaccounts_resource.mo
 share/locale/el/LC_MESSAGES/akonadi_knut_resource.mo
@@ -220,6 +221,7 @@ share/locale/el/LC_MESSAGES/akonaditray.mo
 share/locale/el/LC_MESSAGES/akregator.mo
 share/locale/el/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/el/LC_MESSAGES/amor.mo
+share/locale/el/LC_MESSAGES/analitza.mo
 share/locale/el/LC_MESSAGES/ark.mo
 share/locale/el/LC_MESSAGES/attica_kde.mo
 share/locale/el/LC_MESSAGES/audiocd_encoder_lame.mo
@@ -262,6 +264,7 @@ share/locale/el/LC_MESSAGES/kabcclient.mo
 share/locale/el/LC_MESSAGES/kabcformat_binary.mo
 share/locale/el/LC_MESSAGES/kaccess.mo
 share/locale/el/LC_MESSAGES/kaccessibleapp.mo
+share/locale/el/LC_MESSAGES/kactivitymanagerd.mo
 share/locale/el/LC_MESSAGES/kaddressbook.mo
 share/locale/el/LC_MESSAGES/kaddressbookmigrator.mo
 share/locale/el/LC_MESSAGES/kajongg.mo
@@ -273,19 +276,25 @@ share/locale/el/LC_MESSAGES/kapman.mo
 share/locale/el/LC_MESSAGES/kapptemplate.mo
 share/locale/el/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/el/LC_MESSAGES/kate.mo
+share/locale/el/LC_MESSAGES/kate_kttsd.mo
+share/locale/el/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/el/LC_MESSAGES/katebuild-plugin.mo
 share/locale/el/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/el/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/el/LC_MESSAGES/katefiletemplates.mo
+share/locale/el/LC_MESSAGES/kategdbplugin.mo
 share/locale/el/LC_MESSAGES/katehelloworld.mo
 share/locale/el/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/el/LC_MESSAGES/katemailfilesplugin.mo
 share/locale/el/LC_MESSAGES/kateopenheader.mo
 share/locale/el/LC_MESSAGES/katepart4.mo
 share/locale/el/LC_MESSAGES/katequickdocumentswitcherplugin.mo
+share/locale/el/LC_MESSAGES/katesearch.mo
+share/locale/el/LC_MESSAGES/katesnippets_tng.mo
 share/locale/el/LC_MESSAGES/katesql.mo
 share/locale/el/LC_MESSAGES/katesymbolviewer.mo
 share/locale/el/LC_MESSAGES/katetabbarextension.mo
+share/locale/el/LC_MESSAGES/katetabifyplugin.mo
 share/locale/el/LC_MESSAGES/katetextfilter.mo
 share/locale/el/LC_MESSAGES/katexmlcheck.mo
 share/locale/el/LC_MESSAGES/katexmltools.mo
@@ -561,7 +570,10 @@ share/locale/el/LC_MESSAGES/ksysguard.mo
 share/locale/el/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/el/LC_MESSAGES/ksystemlog.mo
 share/locale/el/LC_MESSAGES/ksystraycmd.mo
+share/locale/el/LC_MESSAGES/kte_acomment.mo
 share/locale/el/LC_MESSAGES/kteatime.mo
+share/locale/el/LC_MESSAGES/ktesnippets_editor.mo
+share/locale/el/LC_MESSAGES/ktexteditor_codesnippets_core.mo
 share/locale/el/LC_MESSAGES/ktexteditor_plugins.mo
 share/locale/el/LC_MESSAGES/ktexteditorkabcbridge_plugin.mo
 share/locale/el/LC_MESSAGES/ktimer.mo
@@ -681,7 +693,6 @@ share/locale/el/LC_MESSAGES/okular_tiff.mo
 share/locale/el/LC_MESSAGES/okular_xps.mo
 share/locale/el/LC_MESSAGES/palapeli.mo
 share/locale/el/LC_MESSAGES/parley.mo
-share/locale/el/LC_MESSAGES/phonon-xine.mo
 share/locale/el/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/el/LC_MESSAGES/phonon_kde.mo
 share/locale/el/LC_MESSAGES/phonon_vlc.mo
@@ -710,6 +721,7 @@ share/locale/el/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/el/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
 share/locale/el/LC_MESSAGES/plasma_applet_groupingpanel.mo
 share/locale/el/LC_MESSAGES/plasma_applet_icon.mo
+share/locale/el/LC_MESSAGES/plasma_applet_icontasks.mo
 share/locale/el/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/el/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/el/LC_MESSAGES/plasma_applet_katesession.mo
@@ -797,6 +809,7 @@ share/locale/el/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/el/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/el/LC_MESSAGES/plasma_runner_events.mo
 share/locale/el/LC_MESSAGES/plasma_runner_katesessions.mo
+share/locale/el/LC_MESSAGES/plasma_runner_kget.mo
 share/locale/el/LC_MESSAGES/plasma_runner_kill.mo
 share/locale/el/LC_MESSAGES/plasma_runner_konquerorsessions.mo
 share/locale/el/LC_MESSAGES/plasma_runner_konsolesessions.mo
@@ -833,6 +846,9 @@ share/locale/el/LC_MESSAGES/plasmapkg.mo
 share/locale/el/LC_MESSAGES/plasmawallpaperviewer.mo
 share/locale/el/LC_MESSAGES/plasmoidviewer.mo
 share/locale/el/LC_MESSAGES/powerdevil.mo
+share/locale/el/LC_MESSAGES/powerdevilactivitiesconfig.mo
+share/locale/el/LC_MESSAGES/powerdevilglobalconfig.mo
+share/locale/el/LC_MESSAGES/powerdevilprofilesconfig.mo
 share/locale/el/LC_MESSAGES/printer-applet.mo
 share/locale/el/LC_MESSAGES/processcore.mo
 share/locale/el/LC_MESSAGES/processui.mo
