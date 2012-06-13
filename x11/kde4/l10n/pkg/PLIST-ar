@@ -50,6 +50,7 @@ share/locale/ar/LC_MESSAGES/akonaditray.mo
 share/locale/ar/LC_MESSAGES/akregator.mo
 share/locale/ar/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/ar/LC_MESSAGES/amor.mo
+share/locale/ar/LC_MESSAGES/analitza.mo
 share/locale/ar/LC_MESSAGES/ark.mo
 share/locale/ar/LC_MESSAGES/attica_kde.mo
 share/locale/ar/LC_MESSAGES/audiocd_encoder_lame.mo
@@ -397,6 +398,7 @@ share/locale/ar/LC_MESSAGES/libkalarmcal.mo
 share/locale/ar/LC_MESSAGES/libkasten.mo
 share/locale/ar/LC_MESSAGES/libkblog.mo
 share/locale/ar/LC_MESSAGES/libkcal.mo
+share/locale/ar/LC_MESSAGES/libkcalutils.mo
 share/locale/ar/LC_MESSAGES/libkcddb.mo
 share/locale/ar/LC_MESSAGES/libkcompactdisc.mo
 share/locale/ar/LC_MESSAGES/libkdcraw.mo
@@ -470,7 +472,6 @@ share/locale/ar/LC_MESSAGES/okular_poppler.mo
 share/locale/ar/LC_MESSAGES/okular_tiff.mo
 share/locale/ar/LC_MESSAGES/okular_xps.mo
 share/locale/ar/LC_MESSAGES/parley.mo
-share/locale/ar/LC_MESSAGES/phonon-xine.mo
 share/locale/ar/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/ar/LC_MESSAGES/phonon_kde.mo
 share/locale/ar/LC_MESSAGES/phononserver.mo

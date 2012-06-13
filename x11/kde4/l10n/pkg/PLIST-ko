@@ -339,6 +339,11 @@ share/locale/ko/LC_MESSAGES/krunner.mo
 share/locale/ko/LC_MESSAGES/ksaneplugin.mo
 share/locale/ko/LC_MESSAGES/kscd.mo
 share/locale/ko/LC_MESSAGES/kscreensaver.mo
+share/locale/ko/LC_MESSAGES/ksecrets_kio.mo
+share/locale/ko/LC_MESSAGES/ksecrets_ksecrets.mo
+share/locale/ko/LC_MESSAGES/ksecretsservice_api.mo
+share/locale/ko/LC_MESSAGES/ksecretsserviced.mo
+share/locale/ko/LC_MESSAGES/ksecretsync.mo
 share/locale/ko/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ko/LC_MESSAGES/kshisen.mo
 share/locale/ko/LC_MESSAGES/kshorturifilter.mo
@@ -378,6 +383,7 @@ share/locale/ko/LC_MESSAGES/kwin_clients.mo
 share/locale/ko/LC_MESSAGES/kwin_effects.mo
 share/locale/ko/LC_MESSAGES/kwinshutdown.mo
 share/locale/ko/LC_MESSAGES/kwinstartmenu.mo
+share/locale/ko/LC_MESSAGES/kwl2kss.mo
 share/locale/ko/LC_MESSAGES/kwordquiz.mo
 share/locale/ko/LC_MESSAGES/kwrite.mo
 share/locale/ko/LC_MESSAGES/kwriteconfig.mo
@@ -446,7 +452,6 @@ share/locale/ko/LC_MESSAGES/okular_plucker.mo
 share/locale/ko/LC_MESSAGES/okular_poppler.mo
 share/locale/ko/LC_MESSAGES/okular_tiff.mo
 share/locale/ko/LC_MESSAGES/okular_xps.mo
-share/locale/ko/LC_MESSAGES/phonon-xine.mo
 share/locale/ko/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/ko/LC_MESSAGES/phonon_kde.mo
 share/locale/ko/LC_MESSAGES/phonon_vlc.mo
