@@ -745,6 +745,7 @@ share/locale/gl/LC_MESSAGES/kjotsmigrator.mo
 share/locale/gl/LC_MESSAGES/kjumpingcube.mo
 share/locale/gl/LC_MESSAGES/kleopatra.mo
 share/locale/gl/LC_MESSAGES/klettres.mo
+share/locale/gl/LC_MESSAGES/klickety.mo
 share/locale/gl/LC_MESSAGES/klines.mo
 share/locale/gl/LC_MESSAGES/klinkstatus.mo
 share/locale/gl/LC_MESSAGES/klipper.mo
@@ -808,6 +809,7 @@ share/locale/gl/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/gl/LC_MESSAGES/kshisen.mo
 share/locale/gl/LC_MESSAGES/kshorturifilter.mo
 share/locale/gl/LC_MESSAGES/ksirk.mo
+share/locale/gl/LC_MESSAGES/ksirkskineditor.mo
 share/locale/gl/LC_MESSAGES/ksmserver.mo
 share/locale/gl/LC_MESSAGES/ksnapshot.mo
 share/locale/gl/LC_MESSAGES/kspaceduel.mo
@@ -951,7 +953,6 @@ share/locale/gl/LC_MESSAGES/okular_tiff.mo
 share/locale/gl/LC_MESSAGES/okular_xps.mo
 share/locale/gl/LC_MESSAGES/palapeli.mo
 share/locale/gl/LC_MESSAGES/parley.mo
-share/locale/gl/LC_MESSAGES/phonon-xine.mo
 share/locale/gl/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/gl/LC_MESSAGES/phonon_kde.mo
 share/locale/gl/LC_MESSAGES/phonon_vlc.mo

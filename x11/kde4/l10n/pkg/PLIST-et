@@ -1219,10 +1219,6 @@ share/doc/HTML/et/lskat/
 share/doc/HTML/et/lskat/common
 share/doc/HTML/et/lskat/index.cache.bz2
 share/doc/HTML/et/lskat/index.docbook
-share/doc/HTML/et/mancala/
-share/doc/HTML/et/mancala/common
-share/doc/HTML/et/mancala/index.cache.bz2
-share/doc/HTML/et/mancala/index.docbook
 share/doc/HTML/et/marble/
 share/doc/HTML/et/marble/common
 share/doc/HTML/et/marble/index.cache.bz2
@@ -1840,7 +1836,6 @@ share/locale/et/LC_MESSAGES/okular_tiff.mo
 share/locale/et/LC_MESSAGES/okular_xps.mo
 share/locale/et/LC_MESSAGES/palapeli.mo
 share/locale/et/LC_MESSAGES/parley.mo
-share/locale/et/LC_MESSAGES/phonon-xine.mo
 share/locale/et/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/et/LC_MESSAGES/phonon_kde.mo
 share/locale/et/LC_MESSAGES/phonon_vlc.mo

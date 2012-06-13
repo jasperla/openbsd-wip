@@ -425,6 +425,7 @@ share/locale/fi/LC_MESSAGES/ksysguard.mo
 share/locale/fi/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/fi/LC_MESSAGES/ksystemlog.mo
 share/locale/fi/LC_MESSAGES/ksystraycmd.mo
+share/locale/fi/LC_MESSAGES/kte_acomment.mo
 share/locale/fi/LC_MESSAGES/kteatime.mo
 share/locale/fi/LC_MESSAGES/ktesnippets_editor.mo
 share/locale/fi/LC_MESSAGES/ktexteditor_codesnippets_core.mo
@@ -559,7 +560,6 @@ share/locale/fi/LC_MESSAGES/okular_tiff.mo
 share/locale/fi/LC_MESSAGES/okular_xps.mo
 share/locale/fi/LC_MESSAGES/palapeli.mo
 share/locale/fi/LC_MESSAGES/parley.mo
-share/locale/fi/LC_MESSAGES/phonon-xine.mo
 share/locale/fi/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/fi/LC_MESSAGES/phonon_kde.mo
 share/locale/fi/LC_MESSAGES/phonon_vlc.mo
@@ -737,6 +737,7 @@ share/locale/fi/LC_MESSAGES/solidcontrol.mo
 share/locale/fi/LC_MESSAGES/soliduiserver.mo
 share/locale/fi/LC_MESSAGES/spy.mo
 share/locale/fi/LC_MESSAGES/step.mo
+share/locale/fi/LC_MESSAGES/step_qt.mo
 share/locale/fi/LC_MESSAGES/strigila_diff.mo
 share/locale/fi/LC_MESSAGES/superkaramba.mo
 share/locale/fi/LC_MESSAGES/svgpart.mo
@@ -758,4 +759,7 @@ share/locale/fi/LC_SCRIPTS/kdelibs4/kdelibs4.js
 share/locale/fi/LC_SCRIPTS/kgeography/
 share/locale/fi/LC_SCRIPTS/kgeography/kgeography.js
 share/locale/fi/LC_SCRIPTS/kgeography/kgeography.pmap
+share/locale/fi/LC_SCRIPTS/step_qt/
+share/locale/fi/LC_SCRIPTS/step_qt/step_qt.js
+share/locale/fi/LC_SCRIPTS/step_qt/step_qt.pmap
 share/locale/fi/entry.desktop
