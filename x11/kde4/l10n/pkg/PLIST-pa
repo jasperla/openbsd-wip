@@ -1,4 +1,25 @@
 @comment $OpenBSD$
+share/apps/
+share/apps/kvtml/
+share/apps/kvtml/pa/
+share/apps/kvtml/pa/animals.kvtml
+share/apps/kvtml/pa/clothing.kvtml
+share/apps/kvtml/pa/computers.kvtml
+share/apps/kvtml/pa/currencies.kvtml
+share/apps/kvtml/pa/easy.kvtml
+share/apps/kvtml/pa/fruits.kvtml
+share/apps/kvtml/pa/hard.kvtml
+share/apps/kvtml/pa/inventions.kvtml
+share/apps/kvtml/pa/medium.kvtml
+share/apps/kvtml/pa/numbers.kvtml
+share/apps/kvtml/pa/objects.kvtml
+share/apps/kvtml/pa/people.kvtml
+share/apps/kvtml/pa/professions.kvtml
+share/apps/kvtml/pa/space.kvtml
+share/apps/kvtml/pa/sports.kvtml
+share/apps/kvtml/pa/transportation.kvtml
+share/apps/kvtml/pa/vegetables.kvtml
+share/apps/kvtml/pa/worldcapitals.kvtml
 share/locale/pa/LC_MESSAGES/accountwizard.mo
 share/locale/pa/LC_MESSAGES/accountwizard_ical.mo
 share/locale/pa/LC_MESSAGES/accountwizard_imap.mo
@@ -501,7 +522,6 @@ share/locale/pa/LC_MESSAGES/okular_poppler.mo
 share/locale/pa/LC_MESSAGES/okular_tiff.mo
 share/locale/pa/LC_MESSAGES/okular_xps.mo
 share/locale/pa/LC_MESSAGES/parley.mo
-share/locale/pa/LC_MESSAGES/phonon-xine.mo
 share/locale/pa/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/pa/LC_MESSAGES/phonon_kde.mo
 share/locale/pa/LC_MESSAGES/phonon_vlc.mo
