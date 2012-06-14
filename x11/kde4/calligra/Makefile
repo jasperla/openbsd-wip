@@ -12,53 +12,42 @@ SHARED_LIBS +=	kopageapp		0.0 # 8.0
 SHARED_LIBS +=	koplugin		0.0 # 8.0
 SHARED_LIBS +=	koproperty		0.0 # 8.0
 SHARED_LIBS +=	kotext			0.0 # 8.0
-SHARED_LIBS +=  chartshapelib		0.0 # 8.0
-SHARED_LIBS +=  karboncommon		0.0 # 8.0
-SHARED_LIBS +=  karbonui		0.0 # 8.0
-SHARED_LIBS +=  kdchart			0.0 # 8.0
-SHARED_LIBS +=  kexicore		0.0 # 8.0
-SHARED_LIBS +=  kexidatatable		0.0 # 8.0
-SHARED_LIBS +=  kexidb			0.0 # 8.0
-SHARED_LIBS +=  kexiextendedwidgets	0.0 # 8.0
-SHARED_LIBS +=  kexiformutils		0.0 # 8.0
-SHARED_LIBS +=  kexiguiutils		0.0 # 8.0
-SHARED_LIBS +=  keximain		0.0 # 8.0
-SHARED_LIBS +=  keximigrate		0.0 # 8.0
-SHARED_LIBS +=  kexirelationsview	0.0 # 8.0
-SHARED_LIBS +=  kexiutils		0.0 # 8.0
-SHARED_LIBS +=  kformdesigner		0.0 # 8.0
-SHARED_LIBS +=  kformulalib		0.0 # 8.0
-SHARED_LIBS +=  kochart			0.0 # 8.0
-SHARED_LIBS +=  komain			0.0 # 8.0
-SHARED_LIBS +=  koodf			0.0 # 8.0
-SHARED_LIBS +=  koreport		0.0 # 8.0
-SHARED_LIBS +=  kowidgets		0.0 # 8.0
-SHARED_LIBS +=  kplatokernel		0.0 # 8.0
-SHARED_LIBS +=  kplatomodels		0.0 # 8.0
-SHARED_LIBS +=  kplatoui		0.0 # 8.0
-SHARED_LIBS +=  kritaimage		0.0 # 8.0
-SHARED_LIBS +=  kritalibbrush		0.0 # 8.0
-SHARED_LIBS +=  kritalibpaintop		0.0 # 8.0
-SHARED_LIBS +=  kritaui			0.0 # 8.0
-SHARED_LIBS +=  msooxml			0.0 # 8.0
-SHARED_LIBS +=  pigmentcms		0.0 # 8.0
-SHARED_LIBS +=  RtfReader                 0.0 # 9.0
-SHARED_LIBS +=  calligrastageprivate      0.0 # 9.0
-SHARED_LIBS +=  calligratablescommon      0.0 # 9.0
-SHARED_LIBS +=  calligratablesodf         0.0 # 9.0
-SHARED_LIBS +=  flowprivate               0.0 # 9.0
-SHARED_LIBS +=  kexidataviewcommon        0.0 # 9.0
-SHARED_LIBS +=  koabstraction             0.0 # 9.0
-SHARED_LIBS +=  kowv2                     0.0 # 9.0
-SHARED_LIBS +=  kundo2                    0.0 # 9.0
-SHARED_LIBS +=  libwmf                    0.0 # 9.0
-SHARED_LIBS +=  planprivate               0.0 # 9.0
-SHARED_LIBS +=  planworkapp               0.0 # 9.0
-SHARED_LIBS +=  planworkfactory           0.0 # 9.0
-SHARED_LIBS +=  rcps_plan                 0.0 # 9.0
-SHARED_LIBS +=  textlayout                0.0 # 9.0
-SHARED_LIBS +=  wordsexportfilters        0.0 # 9.0
-SHARED_LIBS +=  wordsprivate              0.0 # 9.0
+SHARED_LIBS +=	chartshapelib		0.0 # 8.0
+SHARED_LIBS +=	karboncommon		0.0 # 8.0
+SHARED_LIBS +=	karbonui		0.0 # 8.0
+SHARED_LIBS +=	kdchart			0.0 # 8.0
+SHARED_LIBS +=	kformulalib		0.0 # 8.0
+SHARED_LIBS +=	kochart			0.0 # 8.0
+SHARED_LIBS +=	komain			0.0 # 8.0
+SHARED_LIBS +=	koodf			0.0 # 8.0
+SHARED_LIBS +=	koreport		0.0 # 8.0
+SHARED_LIBS +=	kowidgets		0.0 # 8.0
+SHARED_LIBS +=	kplatokernel		0.0 # 8.0
+SHARED_LIBS +=	kplatomodels		0.0 # 8.0
+SHARED_LIBS +=	kplatoui		0.0 # 8.0
+SHARED_LIBS +=	kritaimage		0.0 # 8.0
+SHARED_LIBS +=	kritalibbrush		0.0 # 8.0
+SHARED_LIBS +=	kritalibpaintop		0.0 # 8.0
+SHARED_LIBS +=	kritaui			0.0 # 8.0
+SHARED_LIBS +=	msooxml			0.0 # 8.0
+SHARED_LIBS +=	pigmentcms		0.0 # 8.0
+SHARED_LIBS +=	RtfReader		0.0 # 9.0
+SHARED_LIBS +=	calligrastageprivate	0.0 # 9.0
+SHARED_LIBS +=	flowprivate		0.0 # 9.0
+SHARED_LIBS +=	koabstraction		0.0 # 9.0
+SHARED_LIBS +=	kowv2			0.0 # 9.0
+SHARED_LIBS +=	kundo2			0.0 # 9.0
+SHARED_LIBS +=	libwmf			0.0 # 9.0
+SHARED_LIBS +=	planprivate		0.0 # 9.0
+SHARED_LIBS +=	planworkapp		0.0 # 9.0
+SHARED_LIBS +=	planworkfactory		0.0 # 9.0
+SHARED_LIBS +=	rcps_plan		0.0 # 9.0
+SHARED_LIBS +=	textlayout		0.0 # 9.0
+SHARED_LIBS +=	wordsexportfilters	0.0 # 9.0
+SHARED_LIBS +=	wordsprivate		0.0 # 9.0
+SHARED_LIBS +=	braindumpcore		9.0 # 9.0
+SHARED_LIBS +=	calligrasheetscommon	9.0 # 9.0
+SHARED_LIBS +=	calligrasheetsodf	9.0 # 9.0
 
 VMEM_WARNING =	Yes
 
@@ -67,7 +56,7 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/${DISTNAME}/}
 WANTLIB =  c m pthread stdc++
 WANTLIB += X11 lib/qt4/QtDeclarative
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
-WANTLIB += lib/qt4/QtXml lib/qt4/Qt3Support dcmdata dcmsr
+WANTLIB += lib/qt4/QtXml lib/qt4/Qt3Support lib/qt4/QtTest dcmdata dcmsr
 WANTLIB += kdeui kio kparts nepomuk nepomukutils soprano png
 WANTLIB += GL GLU Half ICE Iex IlmImf IlmThread Imath SM Xext
 WANTLIB += lib/qt4/QtOpenGL lib/qt4/QtScript lib/qt4/QtXmlPatterns
@@ -80,7 +69,8 @@ WANTLIB += GLEW QtSql QtWebKit fftw3 kabc kcmutils kemoticons
 WANTLIB += kidletime knewstuff3 knotifyconfig kpimutils kprintutils
 WANTLIB += kresources ktexteditor kutils threadweaver
 WANTLIB += akonadi-contact akonadi-kde fontconfig freetype kcalcore
-WANTLIB += kmime crypto marblewidget ssl
+WANTLIB += kmime crypto marblewidget ssl kdeclarative
+
 
 BUILD_DEPENDS =	devel/boost
 
@@ -131,6 +121,8 @@ CONFIGURE_ARGS =	-DWITH_OpenCTL:BOOL=Off \
 CONFIGURE_ARGS +=	-DWITH_Pstoedit:BOOL=Off
 
 # Help bundled CMake modules
-CONFIGURE_ARGS +=	-DWPD_INCLUDE_DIR=${LOCALBASE}/include/libwpd-0.8
+# Select sqlite3 from ports
+CONFIGURE_ARGS +=	-DWPD_INCLUDE_DIR=${LOCALBASE}/include/libwpd-0.8 \
+			-DSQLITE_INCLUDE_DIR=${LOCALBASE}/include
 
 .include <bsd.port.mk>
