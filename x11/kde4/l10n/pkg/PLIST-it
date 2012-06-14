@@ -1346,8 +1346,11 @@ share/doc/HTML/it/kwordquiz/index.cache.bz2
 share/doc/HTML/it/kwordquiz/index.docbook
 share/doc/HTML/it/kwrite/
 share/doc/HTML/it/kwrite/common
+share/doc/HTML/it/kwrite/configuring.docbook
+share/doc/HTML/it/kwrite/fundamentals.docbook
 share/doc/HTML/it/kwrite/index.cache.bz2
 share/doc/HTML/it/kwrite/index.docbook
+share/doc/HTML/it/kwrite/menus.docbook
 share/doc/HTML/it/lokalize/
 share/doc/HTML/it/lokalize/common
 share/doc/HTML/it/lokalize/index.cache.bz2
@@ -2001,7 +2004,6 @@ share/locale/it/LC_MESSAGES/okular_tiff.mo
 share/locale/it/LC_MESSAGES/okular_xps.mo
 share/locale/it/LC_MESSAGES/palapeli.mo
 share/locale/it/LC_MESSAGES/parley.mo
-share/locale/it/LC_MESSAGES/phonon-xine.mo
 share/locale/it/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/it/LC_MESSAGES/phonon_kde.mo
 share/locale/it/LC_MESSAGES/phonon_vlc.mo
