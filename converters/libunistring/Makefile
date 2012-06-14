@@ -22,8 +22,12 @@ MASTER_SITES =		${MASTER_SITE_GNU:=libunistring/}
 
 MODULES =		converters/libiconv
 
+# needs --preserve-dup-deps
 USE_LIBTOOL =		gnu
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
+
+# XXX: One regression test fails:
+# test-wcwidth fails on: ASSERT (wcwidth (0x05B0) == 0);
 
 .include <bsd.port.mk>
