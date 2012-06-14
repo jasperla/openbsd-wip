@@ -18,6 +18,7 @@ share/locale/fa/LC_MESSAGES/dolphin.mo
 share/locale/fa/LC_MESSAGES/domtreeviewer.mo
 share/locale/fa/LC_MESSAGES/drkonqi.mo
 share/locale/fa/LC_MESSAGES/filetypes.mo
+share/locale/fa/LC_MESSAGES/freespacenotifier.mo
 share/locale/fa/LC_MESSAGES/fsview.mo
 share/locale/fa/LC_MESSAGES/htmlsearch.mo
 share/locale/fa/LC_MESSAGES/imagerename_plugin.mo
@@ -56,10 +57,14 @@ share/locale/fa/LC_MESSAGES/kcharselect.mo
 share/locale/fa/LC_MESSAGES/kcm_attica.mo
 share/locale/fa/LC_MESSAGES/kcm_autostart.mo
 share/locale/fa/LC_MESSAGES/kcm_desktoppaths.mo
+share/locale/fa/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/fa/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/fa/LC_MESSAGES/kcm_emoticons.mo
+share/locale/fa/LC_MESSAGES/kcm_infobase.mo
+share/locale/fa/LC_MESSAGES/kcm_infosummary.mo
 share/locale/fa/LC_MESSAGES/kcm_krfb.mo
 share/locale/fa/LC_MESSAGES/kcm_kwindesktop.mo
+share/locale/fa/LC_MESSAGES/kcm_kwintabbox.mo
 share/locale/fa/LC_MESSAGES/kcm_memory.mo
 share/locale/fa/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/fa/LC_MESSAGES/kcm_pci.mo
@@ -67,6 +72,8 @@ share/locale/fa/LC_MESSAGES/kcm_phonon.mo
 share/locale/fa/LC_MESSAGES/kcm_phononxine.mo
 share/locale/fa/LC_MESSAGES/kcm_platform.mo
 share/locale/fa/LC_MESSAGES/kcm_solid.mo
+share/locale/fa/LC_MESSAGES/kcm_solid_actions.mo
+share/locale/fa/LC_MESSAGES/kcm_standard_actions.mo
 share/locale/fa/LC_MESSAGES/kcmaccess.mo
 share/locale/fa/LC_MESSAGES/kcmaudiocd.mo
 share/locale/fa/LC_MESSAGES/kcmbackground.mo
@@ -76,6 +83,7 @@ share/locale/fa/LC_MESSAGES/kcmcgi.mo
 share/locale/fa/LC_MESSAGES/kcmcolors.mo
 share/locale/fa/LC_MESSAGES/kcmcomponentchooser.mo
 share/locale/fa/LC_MESSAGES/kcmcrypto.mo
+share/locale/fa/LC_MESSAGES/kcmdevinfo.mo
 share/locale/fa/LC_MESSAGES/kcmfonts.mo
 share/locale/fa/LC_MESSAGES/kcmhtmlsearch.mo
 share/locale/fa/LC_MESSAGES/kcmicons.mo
@@ -97,6 +105,7 @@ share/locale/fa/LC_MESSAGES/kcmkwallet.mo
 share/locale/fa/LC_MESSAGES/kcmkwincompositing.mo
 share/locale/fa/LC_MESSAGES/kcmkwindecoration.mo
 share/locale/fa/LC_MESSAGES/kcmkwinrules.mo
+share/locale/fa/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/fa/LC_MESSAGES/kcmkwm.mo
 share/locale/fa/LC_MESSAGES/kcmlaunch.mo
 share/locale/fa/LC_MESSAGES/kcmlocale.mo
@@ -111,6 +120,7 @@ share/locale/fa/LC_MESSAGES/kcmsmserver.mo
 share/locale/fa/LC_MESSAGES/kcmstyle.mo
 share/locale/fa/LC_MESSAGES/kcmusb.mo
 share/locale/fa/LC_MESSAGES/kcmview1394.mo
+share/locale/fa/LC_MESSAGES/kcmworkspaceoptions.mo
 share/locale/fa/LC_MESSAGES/kcmxinerama.mo
 share/locale/fa/LC_MESSAGES/kcron.mo
 share/locale/fa/LC_MESSAGES/kde-menu.mo
@@ -160,6 +170,7 @@ share/locale/fa/LC_MESSAGES/kglobalaccel.mo
 share/locale/fa/LC_MESSAGES/kgoldrunner.mo
 share/locale/fa/LC_MESSAGES/kgpg.mo
 share/locale/fa/LC_MESSAGES/kgreet_classic.mo
+share/locale/fa/LC_MESSAGES/kgreet_generic.mo
 share/locale/fa/LC_MESSAGES/kgreet_winbind.mo
 share/locale/fa/LC_MESSAGES/khangman.mo
 share/locale/fa/LC_MESSAGES/khelpcenter.mo
@@ -317,6 +328,7 @@ share/locale/fa/LC_MESSAGES/libmessagelist.mo
 share/locale/fa/LC_MESSAGES/libmessageviewer.mo
 share/locale/fa/LC_MESSAGES/libphonon.mo
 share/locale/fa/LC_MESSAGES/libplasma.mo
+share/locale/fa/LC_MESSAGES/libplasmaclock.mo
 share/locale/fa/LC_MESSAGES/libtaskmanager.mo
 share/locale/fa/LC_MESSAGES/lskat.mo
 share/locale/fa/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
@@ -334,11 +346,13 @@ share/locale/fa/LC_MESSAGES/nsplugin.mo
 share/locale/fa/LC_MESSAGES/oktetapart.mo
 share/locale/fa/LC_MESSAGES/okular.mo
 share/locale/fa/LC_MESSAGES/parley.mo
-share/locale/fa/LC_MESSAGES/phonon-xine.mo
 share/locale/fa/LC_MESSAGES/phonon_kde.mo
 share/locale/fa/LC_MESSAGES/phononserver.mo
 share/locale/fa/LC_MESSAGES/plasma-desktop.mo
+share/locale/fa/LC_MESSAGES/plasma-netbook.mo
+share/locale/fa/LC_MESSAGES/plasma-overlay.mo
 share/locale/fa/LC_MESSAGES/plasma-remote-helper.mo
+share/locale/fa/LC_MESSAGES/plasma-windowed.mo
 share/locale/fa/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/fa/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/fa/LC_MESSAGES/plasma_applet_dig_clock.mo
@@ -352,6 +366,7 @@ share/locale/fa/LC_MESSAGES/plasma_runner_locations.mo
 share/locale/fa/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/fa/LC_MESSAGES/plasma_scriptengine_qscript.mo
 share/locale/fa/LC_MESSAGES/plasmaengineexplorer.mo
+share/locale/fa/LC_MESSAGES/plasmagenericshell.mo
 share/locale/fa/LC_MESSAGES/plasmapkg.mo
 share/locale/fa/LC_MESSAGES/processcore.mo
 share/locale/fa/LC_MESSAGES/processui.mo

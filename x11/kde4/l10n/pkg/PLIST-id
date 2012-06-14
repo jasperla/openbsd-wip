@@ -160,6 +160,7 @@ share/locale/id/LC_MESSAGES/kwalletd.mo
 share/locale/id/LC_MESSAGES/kwin.mo
 share/locale/id/LC_MESSAGES/kwin_clients.mo
 share/locale/id/LC_MESSAGES/kwin_effects.mo
+share/locale/id/LC_MESSAGES/kwinshutdown.mo
 share/locale/id/LC_MESSAGES/kwinstartmenu.mo
 share/locale/id/LC_MESSAGES/kwrite.mo
 share/locale/id/LC_MESSAGES/kwriteconfig.mo
@@ -173,6 +174,8 @@ share/locale/id/LC_MESSAGES/liboktetacore.mo
 share/locale/id/LC_MESSAGES/libphonon.mo
 share/locale/id/LC_MESSAGES/libplasmaclock.mo
 share/locale/id/LC_MESSAGES/libtaskmanager.mo
+share/locale/id/LC_MESSAGES/nepomukbackup.mo
+share/locale/id/LC_MESSAGES/nepomukcontroller.mo
 share/locale/id/LC_MESSAGES/nepomukfileindexer.mo
 share/locale/id/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/id/LC_MESSAGES/nepomukserver.mo
@@ -181,13 +184,13 @@ share/locale/id/LC_MESSAGES/nepomukstorage.mo
 share/locale/id/LC_MESSAGES/nsplugin.mo
 share/locale/id/LC_MESSAGES/okteta.mo
 share/locale/id/LC_MESSAGES/oktetapart.mo
-share/locale/id/LC_MESSAGES/phonon-xine.mo
 share/locale/id/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/id/LC_MESSAGES/phonon_kde.mo
 share/locale/id/LC_MESSAGES/phononserver.mo
 share/locale/id/LC_MESSAGES/plasma-desktop.mo
 share/locale/id/LC_MESSAGES/plasma-netbook.mo
 share/locale/id/LC_MESSAGES/plasma-overlay.mo
+share/locale/id/LC_MESSAGES/plasma-remote-helper.mo
 share/locale/id/LC_MESSAGES/plasma-windowed.mo
 share/locale/id/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/id/LC_MESSAGES/plasma_applet_clock.mo
