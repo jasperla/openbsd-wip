@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+bin/tv_augment_tz
 bin/tv_cat
 bin/tv_check
 bin/tv_extractinfo_ar
@@ -8,10 +9,7 @@ bin/tv_grab_ar
 bin/tv_grab_ch_search
 bin/tv_grab_combiner
 bin/tv_grab_dk_dr
-bin/tv_grab_dtv_la
-bin/tv_grab_ee
 bin/tv_grab_es_laguiatv
-bin/tv_grab_es_miguiatv
 bin/tv_grab_eu_egon
 bin/tv_grab_eu_epgdata
 bin/tv_grab_fi
@@ -26,9 +24,7 @@ bin/tv_grab_it
 bin/tv_grab_na_dd
 bin/tv_grab_na_dtv
 bin/tv_grab_na_icons
-bin/tv_grab_nl
 bin/tv_grab_no_gfeed
-bin/tv_grab_pt
 bin/tv_grab_pt_meo
 bin/tv_grab_se_swedb
 bin/tv_grab_se_tvzon
@@ -82,6 +78,7 @@ ${P5SITE}/XMLTV/Usage.pm
 ${P5SITE}/XMLTV/ValidateFile.pm
 ${P5SITE}/XMLTV/ValidateGrabber.pm
 ${P5SITE}/XMLTV/Version.pm
+@man man/man1/tv_augment_tz.1
 @man man/man1/tv_cat.1
 @man man/man1/tv_check.1
 @man man/man1/tv_extractinfo_ar.1
@@ -91,10 +88,7 @@ ${P5SITE}/XMLTV/Version.pm
 @man man/man1/tv_grab_ch_search.1
 @man man/man1/tv_grab_combiner.1
 @man man/man1/tv_grab_dk_dr.1
-@man man/man1/tv_grab_dtv_la.1
-@man man/man1/tv_grab_ee.1
 @man man/man1/tv_grab_es_laguiatv.1
-@man man/man1/tv_grab_es_miguiatv.1
 @man man/man1/tv_grab_eu_egon.1
 @man man/man1/tv_grab_eu_epgdata.1
 @man man/man1/tv_grab_fi.1
@@ -109,9 +103,7 @@ ${P5SITE}/XMLTV/Version.pm
 @man man/man1/tv_grab_na_dd.1
 @man man/man1/tv_grab_na_dtv.1
 @man man/man1/tv_grab_na_icons.1
-@man man/man1/tv_grab_nl.1
 @man man/man1/tv_grab_no_gfeed.1
-@man man/man1/tv_grab_pt.1
 @man man/man1/tv_grab_pt_meo.1
 @man man/man1/tv_grab_se_swedb.1
 @man man/man1/tv_grab_se_tvzon.1
