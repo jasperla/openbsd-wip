@@ -3,8 +3,8 @@ $OpenBSD$
 Use xmltv rather than xmltv-version for docs.
 Remove dvb linux specific.
 
---- Makefile.PL.orig	Sun Jun 10 18:10:48 2012
-+++ Makefile.PL	Mon Jun 11 18:46:08 2012
+--- Makefile.PL.orig	Thu Jun 14 07:59:46 2012
++++ Makefile.PL	Fri Jun 15 00:28:43 2012
 @@ -79,7 +79,7 @@ my $location = '$(DESTDIR)/./$(PREFIX)';
  our %extra_constants;
  %extra_constants
@@ -14,7 +14,7 @@ Remove dvb linux specific.
       INST_SHARE      => 'blib/share',
       INSTALLSHARE    => "$location/share/xmltv",
  
-@@ -452,22 +452,22 @@ my @opt_components
+@@ -454,22 +454,22 @@ my @opt_components
         grab_need_share => [ 'it' ],
       },
  
