@@ -3,6 +3,7 @@
 COMMENT =	K Desktop Environment, office suite
 VERSION =	2.4.2
 DISTNAME =	calligra-${VERSION}
+REVISION =	0
 PKGNAME =	${DISTNAME:C/-/4-/1}
 EXTRACT_SUFX ?=	.tar.bz2
 
