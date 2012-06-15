@@ -2,8 +2,7 @@
 
 COMMENT =		Grab TV Listings in XML format
 
-VER=0.5.62
-DISTNAME =		xmltv-${VER}
+DISTNAME =		xmltv-0.5.63
 CATEGORIES =		multimedia
 
 HOMEPAGE =		http://wiki.xmltv.org/index.php/Main_Page
@@ -19,7 +18,6 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=xmltv/}
 EXTRACT_SUFX =		.tar.bz2
 
-SUBST_VARS +=	VER
 RUN_DEPENDS =	archivers/p5-Archive-Zip \
 		archivers/p5-PerlIO-gzip \
 		p5-DateManip->=5.42:converters/p5-DateManip \
