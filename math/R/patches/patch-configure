@@ -1,6 +1,6 @@
 $OpenBSD$
---- configure.orig	Thu May 24 17:31:24 2012
-+++ configure	Thu May 24 17:31:21 2012
+--- configure.orig	Fri Jun 15 11:02:06 2012
++++ configure	Fri Jun 15 11:02:04 2012
 @@ -24283,7 +24283,7 @@ ac_compiler_gnu=$ac_cv_objc_compiler_gnu
    #  AC_MSG_FAILURE([Objective C runtime headers were not found])
    #])
@@ -93,3 +93,23 @@ $OpenBSD$
  fi
  
            if test -z "$gl_have_pthread"; then
+@@ -42048,7 +42048,7 @@ fi
+   rpathdirs=
+   ltrpathdirs=
+   names_already_handled=
+-  names_next_round='intl '
++  names_next_round=''
+   while test -n "$names_next_round"; do
+     names_this_round="$names_next_round"
+     names_next_round=
+@@ -42487,8 +42487,8 @@ $as_echo "$ac_res" >&6; }
+                 BUILD_INCLUDED_LIBINTL=yes
+         USE_INCLUDED_LIBINTL=yes
+ 		LIBINTL="$LIBICONV $LIBTHREAD"
+-                LTLIBINTL="../extra/intl/libintl.a $LTLIBICONV $LTLIBTHREAD"
+-        LIBS=`echo " $LIBS " | sed -e 's/ -lintl / /' -e 's/^ //' -e 's/ $//'`
++                LTLIBINTL="$LTLIBICONV $LTLIBTHREAD"
++        LIBS="$LIBS -lintl"
+       fi
+ 
+       CATOBJEXT=
