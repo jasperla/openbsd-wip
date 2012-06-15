@@ -116,7 +116,9 @@ lib/R/include/Rinternals.h
 lib/R/include/Rmath.h
 lib/R/include/Rversion.h
 lib/R/include/S.h
+lib/R/include/libintl.h
 lib/R/lib/
+@lib lib/R/lib/libR.so.${LIBR_VERSION}
 @lib lib/R/lib/libRblas.so.${LIBRblas_VERSION}
 @lib lib/R/lib/libRlapack.so.${LIBRlapack_VERSION}
 lib/R/library/
@@ -1908,5 +1910,6 @@ lib/R/share/texmf/tex/latex/omscmtt.fd
 lib/R/share/texmf/tex/latex/ts1aer.fd
 lib/R/share/texmf/tex/latex/ts1aett.fd
 lib/R/share/texmf/tex/latex/upquote.sty
+lib/pkgconfig/libR.pc
 @man man/man1/R.1
 @man man/man1/Rscript.1

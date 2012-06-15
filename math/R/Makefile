@@ -4,8 +4,10 @@ SHARED_ONLY=	Yes
 
 COMMENT=	clone of S, a powerful math/statistics/graphics language
 DISTNAME=	R-2.15.0
+REVISION=	0
 SHARED_LIBS=	Rlapack 215.0 \
 		Rblas	215.0 \
+		R	215.0
 
 CATEGORIES=	math
 HOMEPAGE=	http://www.r-project.org/
@@ -60,6 +62,8 @@ LIB_DEPENDS=	${MODFORTRAN_LIB_DEPENDS} \
 CONFIGURE_STYLE=gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/tools
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--enable-R-shlib \
+		--enable-BLAS-shlib \
 		--with-readline \
 		--with-tcltk \
 		--with-cairo \
@@ -78,12 +82,14 @@ MAKE_FLAGS=	INSTALL='install -c' \
 		INSTALL_DATA='install -c -m 644' \
 		INSTALL_PROGRAM='install -c -s -m 555' \
 		INSTALL_SCRIPT='install -c -m 555' \
+		LIBR_VERSION=${LIBR_VERSION} \
 		LIBRlapack_VERSION=${LIBRlapack_VERSION} \
 		LIBRblas_VERSION=${LIBRblas_VERSION}
 
 DESTDIRNAME=	DESTDIR
 
 FAKE_FLAGS=	PREFIX=${PREFIX} \
+		LIBR_VERSION=${LIBR_VERSION} \
 		LIBRlapack_VERSION=${LIBRlapack_VERSION} \
 		LIBRblas_VERSION=${LIBRblas_VERSION}
 
