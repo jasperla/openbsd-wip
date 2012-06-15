@@ -1,6 +1,6 @@
 $OpenBSD$
---- Makefile.orig	Sun Jan 15 00:00:36 2012
-+++ Makefile	Sun Jan 15 00:05:37 2012
+--- Makefile.orig	Tue Jun  5 01:53:10 2012
++++ Makefile	Fri Jun 15 20:37:23 2012
 @@ -15,12 +15,12 @@ PREFIX?=	/usr/local
  BINDIR?=	$(PREFIX)/bin
  DOCDIR?=	$(PREFIX)/share/doc/$(OSH_VERSION)
@@ -17,7 +17,16 @@ $OpenBSD$
  
  #
  # Build utilities (SHELL must be POSIX-compliant)
-@@ -174,24 +174,24 @@ install-sh6all: sh6all install-sh6 install-utils
+@@ -45,7 +45,7 @@ WARNINGS=	-Wall -W
+ #WARNINGS+=	-Wstack-protector
+ #WARNINGS+=	-Wshorten-64-to-32
+ #CFLAGS+=	-g
+-CFLAGS+=	-Os $(OPTIONS) $(WARNINGS)
++CFLAGS+=	$(OPTIONS) $(WARNINGS)
+ #LDFLAGS+=	-static
+ 
+ #
+@@ -179,24 +179,24 @@ install-sh6all: sh6all install-sh6 install-utils
  install-utils: install-ubin install-uman
  
  install-osh: $(OSH) $(OSHMAN) install-dest
@@ -54,7 +63,7 @@ $OpenBSD$
  
  install-dest:
  	test -d $(DESTBINDIR) || { umask 0022 && mkdir -p $(DESTBINDIR) ; }
-@@ -199,11 +199,11 @@ install-dest:
+@@ -204,11 +204,11 @@ install-dest:
  
  install-doc:
  	test -d $(DESTDOCDIR) || { umask 0022 && mkdir -p $(DESTDOCDIR) ; }

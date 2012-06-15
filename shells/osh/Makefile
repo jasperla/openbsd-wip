@@ -2,7 +2,7 @@
 
 COMMENT =		Sixth Edition UNIX Shell
 
-DISTNAME =		osh-20120102
+DISTNAME =		osh-20120604
 
 CATEGORIES =		shells
 
