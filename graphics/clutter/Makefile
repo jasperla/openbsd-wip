@@ -2,7 +2,6 @@
 
     SUBDIR =
     SUBDIR += core
-#    SUBDIR += clutter-box2d	Unused, dead upstream
     SUBDIR += clutter-gst
     SUBDIR += clutter-gtk
 #    SUBDIR += clutter-vala	Not ported yet
