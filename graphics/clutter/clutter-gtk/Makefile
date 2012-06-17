@@ -2,10 +2,8 @@
 
 COMMENT=		GTK+3 widget for clutter
 
-DISTNAME=		clutter-gtk-1.0.2
+DISTNAME=		clutter-gtk-1.2.0
 SHARED_LIBS +=  clutter-gtk-1.0      1.0      # .0.0
-
-MASTER_SITES=		${MASTER_SITES_CLUTTER:=clutter-gtk/1.0/}
 
 MODULES=		devel/gettext
 
@@ -22,10 +20,7 @@ WANTLIB += cogl cogl-pango ffi xcb-shm z
 USE_LIBTOOL=	gnu
 
 BUILD_DEPENDS=		devel/gobject-introspection
-LIB_DEPENDS=		graphics/clutter/core>=1.8.4 \
+LIB_DEPENDS=		graphics/clutter/core>=${MAJOR} \
 			x11/gtk+3
-
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-introspection
 
 .include <bsd.port.mk>

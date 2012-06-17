@@ -340,8 +340,6 @@ share/gtk-doc/html/clutter/using-cairo.html
 share/locale/ar/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/as/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/ast/LC_MESSAGES/clutter-${API_VERSION}.mo
-share/locale/az_IR/
-share/locale/az_IR/LC_MESSAGES/
 share/locale/az_IR/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/be/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/bg/LC_MESSAGES/clutter-${API_VERSION}.mo
@@ -385,8 +383,6 @@ share/locale/te/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/tr/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/ug/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/uk/LC_MESSAGES/clutter-${API_VERSION}.mo
-share/locale/ur/
-share/locale/ur/LC_MESSAGES/
 share/locale/ur/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/yi/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/zh_CN/LC_MESSAGES/clutter-${API_VERSION}.mo
