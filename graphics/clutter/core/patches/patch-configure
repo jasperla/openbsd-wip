@@ -2,9 +2,9 @@ $OpenBSD$
 
 - Don't do bash pattern substitutions.
 
---- configure.orig	Mon Jan 30 13:25:30 2012
-+++ configure	Wed Apr 25 20:00:26 2012
-@@ -14164,11 +14164,11 @@ $as_echo "$as_me: WARNING: unsupported compiler flags:
+--- configure.orig	Mon May 28 17:45:31 2012
++++ configure	Sun Jun 17 09:42:10 2012
+@@ -14932,11 +14932,11 @@ $as_echo "$as_me: WARNING: unsupported compiler flags:
  esac
  
  # strip leading spaces
@@ -16,5 +16,5 @@ $OpenBSD$
 -BACKEND_PC_FILES=${BACKEND_PC_FILES#* }
 +BACKEND_PC_FILES=`echo ${BACKEND_PC_FILES} | sed 's,^[ \t]*,,g'`
  
- CLUTTER_REQUIRES="$CLUTTER_BASE_PC_FILES $IMAGE_PC_FILES $BACKEND_PC_FILES"
- 
+ # public dependencies, will fill the Requires: field of clutter.pc
+ CLUTTER_REQUIRES="$CLUTTER_BASE_PC_FILES $BACKEND_PC_FILES"

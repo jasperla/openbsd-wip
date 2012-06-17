@@ -2,26 +2,16 @@
 
 COMMENT=		clutter GStreamer integration library
 
-DISTNAME=		clutter-gst-1.4.6
-SHARED_LIBS +=  clutter-gst-1.0    0.0      # 406.0
+GNOME_PROJECT=		clutter-gst
+GNOME_VERSION=		1.4.6
 
-MASTER_SITES=		${MASTER_SITES_CLUTTER:=clutter-gst/1.4/}
+SHARED_LIBS +=  clutter-gst-1.0    0.0      # 406.0
 
 MODULES=		devel/gettext
 
-WANTLIB += GL X11 Xcomposite Xdamage Xext Xfixes Xi
-WANTLIB += Xrender atk-1.0 cairo cairo-gobject clutter-glx-1.0
-WANTLIB += drm expat fontconfig freetype gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gstaudio-0.10 gstbase-0.10
-WANTLIB += gstinterfaces-0.10 gstreamer-0.10 gstvideo-0.10 gthread-2.0
-WANTLIB += json-glib-1.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread-stubs xcb xcb-render xcb-shm
-WANTLIB += xml2 z cogl cogl-pango ffi gsttag-0.10 gstpbutils-0.10 orc-0.4
+MODGNOME_TOOLS=		goi
 
-LIB_DEPENDS=		graphics/clutter/core>=1.8.4 \
+LIB_DEPENDS=		graphics/clutter/core>=${MAJOR} \
 			multimedia/gstreamer-0.10/plugins-base
-
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-introspection
 
 .include <bsd.port.mk>
