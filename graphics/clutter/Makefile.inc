@@ -2,6 +2,8 @@
 
 SHARED_ONLY?=		Yes
 
+DIST_SUBDIR=		clutter
+
 CATEGORIES+=		graphics/clutter x11
 
 HOMEPAGE?=		http://www.clutter-project.org/
