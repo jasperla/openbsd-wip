@@ -1,6 +1,5 @@
 # $OpenBSD$
 
-BROKEN =	crashes and other bugs here and there
 COMMENT =	K Desktop Environment, mathematical applications
 DISTNAME =	cantor-${MODKDE_VERSION}
 
