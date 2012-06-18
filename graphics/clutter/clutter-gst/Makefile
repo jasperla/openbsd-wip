@@ -17,8 +17,6 @@ WANTLIB += gstvideo-0.10 gthread-2.0 json-glib-1.0 m orc-0.4 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
 WANTLIB += stdc++ xcb xcb-render xcb-shm xml2 z
 
-MODULES=		devel/gettext
-
 # XXX breaks the build
 #MODGNOME_TOOLS=		goi
 

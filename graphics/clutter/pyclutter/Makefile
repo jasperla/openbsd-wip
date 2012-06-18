@@ -8,8 +8,7 @@ REVISION=		1
 
 MASTER_SITES=		${MASTER_SITES_CLUTTER:=pyclutter/${MAJOR}/}
 
-MODULES=		devel/gettext \
-			lang/python
+MODULES=		lang/python
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo clutter-glx-0.8

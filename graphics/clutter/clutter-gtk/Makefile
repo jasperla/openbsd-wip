@@ -7,8 +7,6 @@ GNOME_VERSION=		1.2.0
 
 SHARED_LIBS +=  clutter-gtk-1.0      1.0      # .0.0
 
-MODULES=		devel/gettext
-
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo cairo-gobject
 WANTLIB += clutter-1.0 cogl cogl-pango drm expat ffi fontconfig
