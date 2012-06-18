@@ -14,7 +14,8 @@ PERMIT_PACKAGE_FTP?=    Yes
 PERMIT_DISTFILES_CDROM?=Yes
 PERMIT_DISTFILES_FTP?=  Yes
 
-MODULES +=		x11/gnome
+MODULES +=		devel/gettext \
+			x11/gnome
 
 LIBTOOL_FLAGS?=		--tag=disable-static
 

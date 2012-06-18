@@ -15,8 +15,6 @@ WANTLIB += gthread-2.0 json-glib-1.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs stdc++
 WANTLIB += xcb xcb-render xcb-shm z
 
-MODULES=		devel/gettext
-
 MODGNOME_TOOLS=		goi
 
 LIB_DEPENDS=		devel/json-glib \
