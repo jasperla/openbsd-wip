@@ -4,7 +4,7 @@ SHARED_ONLY=	Yes
 
 COMMENT=	clone of S, a powerful math/statistics/graphics language
 DISTNAME=	R-2.15.0
-REVISION=	0
+REVISION=	1
 SHARED_LIBS=	Rlapack 215.0 \
 		Rblas	215.0 \
 		R	215.0
@@ -63,6 +63,7 @@ CONFIGURE_STYLE=gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/tools
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-R-shlib \
+		--enable-shlib \
 		--enable-BLAS-shlib \
 		--with-readline \
 		--with-tcltk \
