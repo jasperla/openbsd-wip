@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@lib lib/libcogl-pango.so.${LIBcogl-pango_VERSION}
-@lib lib/libcogl.so.${LIBcogl_VERSION}
