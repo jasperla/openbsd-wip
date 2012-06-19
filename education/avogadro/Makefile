@@ -4,7 +4,7 @@ COMMENT =		molecule editor and visualizer
 V =			1.0.3
 DISTNAME =		avogadro-${V}
 CATEGORIES =		education biology
-REVISION =		3
+REVISION =		4
 HOMEPAGE =		http://avogadro.openmolecules.net/
 
 SHARED_LIBS +=		avogadro	0.0	# 1.0
