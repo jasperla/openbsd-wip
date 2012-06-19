@@ -5,7 +5,7 @@ COMMENT=		GTK+ widget for clutter
 GNOME_PROJECT=		clutter-gtk
 GNOME_VERSION=		1.2.0
 
-SHARED_LIBS +=  clutter-gtk-1.0      1.0      # .0.0
+SHARED_LIBS +=  clutter-gtk-1.0      0.0      # .0.0
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo cairo-gobject

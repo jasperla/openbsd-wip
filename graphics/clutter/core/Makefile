@@ -5,7 +5,7 @@ COMMENT=		OpenGL-based interactive canvas library
 GNOME_PROJECT=		clutter
 GNOME_VERSION=		${MAJOR}.6
 
-SHARED_LIBS +=  clutter-1.0          1000.6   # 1000.6
+SHARED_LIBS +=  clutter-1.0          0.0   # 1000.8
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo cairo-gobject
