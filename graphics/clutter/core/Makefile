@@ -3,7 +3,7 @@
 COMMENT=		OpenGL-based interactive canvas library
 
 GNOME_PROJECT=		clutter
-GNOME_VERSION=		${MAJOR}.6
+GNOME_VERSION=		${MAJOR}.8
 
 SHARED_LIBS +=  clutter-1.0          0.0   # 1000.8
 
@@ -21,7 +21,15 @@ LIB_DEPENDS=		devel/json-glib \
 			graphics/clutter/cogl>=${MAJOR} \
 			x11/gtk+3
 
+MODGNOME_CPPFLAGS=	-I${X11BASE}/include
+MODGNOME_LDFLAGS=	-L${X11BASE}/lib
+
 CONFIGURE_ENV=          CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
                         LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+CONFIGURE_ARGS=		--enable-x11-backend
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/clutter/Makefile.in
 
 .include <bsd.port.mk>
