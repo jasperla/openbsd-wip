@@ -5,7 +5,7 @@ $OpenBSD$
  
  #include <avogadro/global.h>
  
-+#include <GL/gl.h>
++#include <GL/glu.h>
  #ifdef ENABLE_GLSL
    #include <GL/glew.h>
  #endif
