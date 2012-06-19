@@ -1,5 +1,4 @@
 @comment $OpenBSD$
-%%SHARED%%
 @bin bin/avibox
 @bin bin/dvdcpy
 @bin bin/ogmrip
@@ -77,66 +76,91 @@ include/ogmrip/ogmrip-video-codec.h
 include/ogmrip/ogmrip.h
 lib/libogmdvd-gtk.a
 lib/libogmdvd-gtk.la
+@lib lib/libogmdvd-gtk.so.${LIBogmdvd-gtk_VERSION}
 lib/libogmdvd.a
 lib/libogmdvd.la
+@lib lib/libogmdvd.so.${LIBogmdvd_VERSION}
 lib/libogmjob.a
 lib/libogmjob.la
+@lib lib/libogmjob.so.${LIBogmjob_VERSION}
 lib/libogmrip-gtk.a
 lib/libogmrip-gtk.la
+@lib lib/libogmrip-gtk.so.${LIBogmrip-gtk_VERSION}
 lib/libogmrip-lavc.a
 lib/libogmrip-lavc.la
+@lib lib/libogmrip-lavc.so.${LIBogmrip-lavc_VERSION}
 lib/libogmrip-mplayer.a
 lib/libogmrip-mplayer.la
+@lib lib/libogmrip-mplayer.so.${LIBogmrip-mplayer_VERSION}
 lib/libogmrip.a
 lib/libogmrip.la
+@lib lib/libogmrip.so.${LIBogmrip_VERSION}
 lib/ogmrip/
 lib/ogmrip/audio-plugins/
 lib/ogmrip/audio-plugins/libogmrip-aac.a
 lib/ogmrip/audio-plugins/libogmrip-aac.la
+lib/ogmrip/audio-plugins/libogmrip-aac.so
 lib/ogmrip/audio-plugins/libogmrip-acopy.a
 lib/ogmrip/audio-plugins/libogmrip-acopy.la
+lib/ogmrip/audio-plugins/libogmrip-acopy.so
 lib/ogmrip/audio-plugins/libogmrip-mp3.a
 lib/ogmrip/audio-plugins/libogmrip-mp3.la
+lib/ogmrip/audio-plugins/libogmrip-mp3.so
 lib/ogmrip/audio-plugins/libogmrip-vorbis.a
 lib/ogmrip/audio-plugins/libogmrip-vorbis.la
+lib/ogmrip/audio-plugins/libogmrip-vorbis.so
 lib/ogmrip/audio-plugins/libogmrip-wav.a
 lib/ogmrip/audio-plugins/libogmrip-wav.la
+lib/ogmrip/audio-plugins/libogmrip-wav.so
 lib/ogmrip/container-plugins/
 lib/ogmrip/container-plugins/libogmrip-avi.a
 lib/ogmrip/container-plugins/libogmrip-avi.la
+lib/ogmrip/container-plugins/libogmrip-avi.so
 lib/ogmrip/container-plugins/libogmrip-mkv.a
 lib/ogmrip/container-plugins/libogmrip-mkv.la
+lib/ogmrip/container-plugins/libogmrip-mkv.so
 lib/ogmrip/container-plugins/libogmrip-mov.a
 lib/ogmrip/container-plugins/libogmrip-mov.la
+lib/ogmrip/container-plugins/libogmrip-mov.so
 lib/ogmrip/container-plugins/libogmrip-mp4.a
 lib/ogmrip/container-plugins/libogmrip-mp4.la
+lib/ogmrip/container-plugins/libogmrip-mp4.so
 lib/ogmrip/container-plugins/libogmrip-ogg.a
 lib/ogmrip/container-plugins/libogmrip-ogg.la
+lib/ogmrip/container-plugins/libogmrip-ogg.so
 lib/ogmrip/options-plugins/
 lib/ogmrip/options-plugins/libogmrip-lavc-options.a
 lib/ogmrip/options-plugins/libogmrip-lavc-options.la
+lib/ogmrip/options-plugins/libogmrip-lavc-options.so
 lib/ogmrip/options-plugins/libogmrip-x264-options.a
 lib/ogmrip/options-plugins/libogmrip-x264-options.la
+lib/ogmrip/options-plugins/libogmrip-x264-options.so
 lib/ogmrip/options-plugins/libogmrip-xvid-options.a
 lib/ogmrip/options-plugins/libogmrip-xvid-options.la
+lib/ogmrip/options-plugins/libogmrip-xvid-options.so
 lib/ogmrip/subp-plugins/
 lib/ogmrip/subp-plugins/libogmrip-srt.a
 lib/ogmrip/subp-plugins/libogmrip-srt.la
+lib/ogmrip/subp-plugins/libogmrip-srt.so
 lib/ogmrip/subp-plugins/libogmrip-vobsub.a
 lib/ogmrip/subp-plugins/libogmrip-vobsub.la
+lib/ogmrip/subp-plugins/libogmrip-vobsub.so
 lib/ogmrip/video-plugins/
 lib/ogmrip/video-plugins/libogmrip-lavc-mpeg4.a
 lib/ogmrip/video-plugins/libogmrip-lavc-mpeg4.la
+lib/ogmrip/video-plugins/libogmrip-lavc-mpeg4.so
 lib/ogmrip/video-plugins/libogmrip-theora.a
 lib/ogmrip/video-plugins/libogmrip-theora.la
+lib/ogmrip/video-plugins/libogmrip-theora.so
 lib/ogmrip/video-plugins/libogmrip-x264.a
 lib/ogmrip/video-plugins/libogmrip-x264.la
+lib/ogmrip/video-plugins/libogmrip-x264.so
 lib/ogmrip/video-plugins/libogmrip-xvid.a
 lib/ogmrip/video-plugins/libogmrip-xvid.la
+lib/ogmrip/video-plugins/libogmrip-xvid.so
 lib/ogmrip/video-plugins/ogmrip-lavc-mpeg4.h
 lib/ogmrip/video-plugins/ogmrip-x264.h
 lib/ogmrip/video-plugins/ogmrip-xvid.h
-lib/pkgconfig/
 lib/pkgconfig/ogmdvd-gtk.pc
 lib/pkgconfig/ogmdvd.pc
 lib/pkgconfig/ogmjob.pc
@@ -146,7 +170,6 @@ lib/pkgconfig/ogmrip.pc
 @man man/man1/dvdcpy.1
 @man man/man1/subp2pgm.1
 @man man/man1/subptools.1
-share/applications/
 share/applications/ogmrip.desktop
 share/examples/ogmrip/
 share/examples/ogmrip/gconf/
@@ -155,8 +178,6 @@ share/examples/ogmrip/gconf/schemas/
 @sample ${SYSCONFDIR}/gconf/schemas/
 share/examples/ogmrip/gconf/schemas/ogmrip.schemas
 @sample ${SYSCONFDIR}/gconf/schemas/ogmrip.schemas
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/ogmdvd/
 share/gtk-doc/html/ogmdvd-gtk/
 share/gtk-doc/html/ogmdvd-gtk/OGMDvdCellRendererLanguage.html

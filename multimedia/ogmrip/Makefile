@@ -1,5 +1,7 @@
 # $OpenBSD$
 
+SHARED_ONLY =		Yes
+
 COMMENT =		DVD ripper/converter
 
 DISTNAME =		ogmrip-0.13.8
@@ -43,7 +45,10 @@ RUN_DEPENDS =		x11/mplayer \
 			multimedia/ogmtools \
 			audio/vorbis-tools \
 			audio/faac \
-			devel/desktop-file-utils
+			devel/desktop-file-utils \
+			graphics/gocr \
+			graphics/ocrad \
+			graphics/tesseract
 LIB_DEPENDS =		x11/gtk+2 \
 			devel/glib2 \
 			multimedia/libtheora \
