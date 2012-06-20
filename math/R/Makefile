@@ -4,7 +4,7 @@ SHARED_ONLY=	Yes
 
 COMMENT=	clone of S, a powerful math/statistics/graphics language
 DISTNAME=	R-2.15.0
-REVISION=	1
+REVISION=	2
 SHARED_LIBS=	Rlapack 215.0 \
 		Rblas	215.0 \
 		R	215.0
