@@ -1,2 +1,0 @@
-@comment $OpenBSD$
-@lib lib/libdmtx.so.${LIBdmtx_VERSION}
