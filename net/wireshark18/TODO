@@ -1,9 +1,0 @@
-v1.8.0rc1 will become v1.8.0
-This is not intended to be added to the ports tree
-prep work for v1.8.0 only.
-
-python disectors
-Which way on flavors python or no_python?
-default is with python, but considered experimental feature.
-gtk+3 - depreciated routines - THIS NO LONGER BUILDS!!
-
