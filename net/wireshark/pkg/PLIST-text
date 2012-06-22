@@ -8,7 +8,6 @@
 @mode
 @group
 @bin bin/editcap
-bin/idl2wrs
 @bin bin/mergecap
 @bin bin/randpkt
 @bin bin/rawshark
@@ -25,21 +24,15 @@ lib/wireshark/plugins/
 !%%no_python%%
 lib/wireshark/plugins/${WVER}/
 lib/wireshark/plugins/${WVER}/asn1.so
-lib/wireshark/plugins/${WVER}/coseventcomm.so
-lib/wireshark/plugins/${WVER}/cosnaming.so
 lib/wireshark/plugins/${WVER}/docsis.so
 lib/wireshark/plugins/${WVER}/ethercat.so
 lib/wireshark/plugins/${WVER}/gryphon.so
-lib/wireshark/plugins/${WVER}/interlink.so
 lib/wireshark/plugins/${WVER}/irda.so
 lib/wireshark/plugins/${WVER}/m2m.so
 lib/wireshark/plugins/${WVER}/mate.so
 lib/wireshark/plugins/${WVER}/opcua.so
-lib/wireshark/plugins/${WVER}/parlay.so
 lib/wireshark/plugins/${WVER}/profinet.so
-lib/wireshark/plugins/${WVER}/sercosiii.so
 lib/wireshark/plugins/${WVER}/stats_tree.so
-lib/wireshark/plugins/${WVER}/tango.so
 lib/wireshark/plugins/${WVER}/unistim.so
 lib/wireshark/plugins/${WVER}/wimax.so
 lib/wireshark/plugins/${WVER}/wimaxasncp.so
@@ -47,7 +40,6 @@ lib/wireshark/plugins/${WVER}/wimaxasncp.so
 @man man/man1/dftest.1
 @man man/man1/dumpcap.1
 @man man/man1/editcap.1
-@man man/man1/idl2wrs.1
 @man man/man1/mergecap.1
 @man man/man1/randpkt.1
 @man man/man1/rawshark.1
@@ -68,6 +60,7 @@ share/wireshark/diameter/Cisco.xml
 share/wireshark/diameter/Ericsson.xml
 share/wireshark/diameter/TGPPGmb.xml
 share/wireshark/diameter/TGPPRx.xml
+share/wireshark/diameter/TGPPS9.xml
 share/wireshark/diameter/TGPPSh.xml
 share/wireshark/diameter/Vodafone.xml
 share/wireshark/diameter/chargecontrol.xml
@@ -106,7 +99,6 @@ share/wireshark/help/faq.txt
 share/wireshark/help/getting_started.txt
 share/wireshark/help/overview.txt
 share/wireshark/help/toc
-share/wireshark/idl2wrs.html
 share/wireshark/init.lua
 share/wireshark/ipmap.html
 share/wireshark/manuf
@@ -122,6 +114,7 @@ share/wireshark/radius/dictionary.acc
 share/wireshark/radius/dictionary.acme
 share/wireshark/radius/dictionary.airespace
 share/wireshark/radius/dictionary.alcatel
+share/wireshark/radius/dictionary.alcatel-lucent.xylan
 share/wireshark/radius/dictionary.alcatel.esam
 share/wireshark/radius/dictionary.alcatel.sr
 share/wireshark/radius/dictionary.alteon
@@ -252,7 +245,6 @@ share/wireshark/radius/dictionary.wimax
 share/wireshark/radius/dictionary.wimax.wichorus
 share/wireshark/radius/dictionary.wispr
 share/wireshark/radius/dictionary.xedia
-share/wireshark/radius/dictionary.xylan
 share/wireshark/radius/dictionary.zyxel
 share/wireshark/randpkt.html
 share/wireshark/rawshark.html
