@@ -83,6 +83,7 @@ RUN_DEPENDS-docs=	# empty
 PKG_ARCH-docs=		*
 
 VMEM_WARNING=		Yes
+NO_REGRESS=		Yes
 
 BUILD_DEPENDS=		devel/doxygen
 
