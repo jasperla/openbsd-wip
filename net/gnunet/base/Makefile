@@ -25,6 +25,9 @@ SHARED_LIBS +=  gnunettransport           0.0 # 0.0
 SHARED_LIBS +=  gnunettransporttesting    0.0 # 0.0
 SHARED_LIBS +=  gnunettun                 0.0 # 0.0
 SHARED_LIBS +=  gnunetutil                0.0 # 5.0
+SHARED_LIBS +=  gnunetlockmanager         0.0 # 0.0
+SHARED_LIBS +=  gnunettestbed             0.0 # 0.0
+SHARED_LIBS +=  gnunettesting_new         0.0 # 0.1
 
 WANTLIB += bz2 c crypto curl expat extractor fontconfig freetype
 WANTLIB += gcrypt gpg-error idn ltdl m pthread sqlite3 ssl unistring

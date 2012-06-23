@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-V =		0.9.2
+V =		0.9.3
 
 CATEGORIES =	net
 

@@ -1,7 +1,7 @@
 $OpenBSD$
---- gnunet_config.h.in.orig	Tue Feb 28 10:32:22 2012
-+++ gnunet_config.h.in	Thu Mar  1 15:20:55 2012
-@@ -554,6 +554,9 @@
+--- gnunet_config.h.in.orig	Fri Jun  1 21:56:55 2012
++++ gnunet_config.h.in	Sat Jun 23 23:13:14 2012
+@@ -557,6 +557,9 @@
  /* Define to 1 if you have the <ucred.h> header file. */
  #undef HAVE_UCRED_H
  

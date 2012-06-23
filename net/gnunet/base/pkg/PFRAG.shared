@@ -23,13 +23,16 @@ lib/gnunet/libgnunet_plugin_transport_unix.so
 @lib lib/libgnunetfragmentation.so.${LIBgnunetfragmentation_VERSION}
 @lib lib/libgnunetfs.so.${LIBgnunetfs_VERSION}
 @lib lib/libgnunethello.so.${LIBgnunethello_VERSION}
+@lib lib/libgnunetlockmanager.so.${LIBgnunetlockmanager_VERSION}
 @lib lib/libgnunetmesh.so.${LIBgnunetmesh_VERSION}
 @lib lib/libgnunetnamestore.so.${LIBgnunetnamestore_VERSION}
 @lib lib/libgnunetnat.so.${LIBgnunetnat_VERSION}
 @lib lib/libgnunetnse.so.${LIBgnunetnse_VERSION}
 @lib lib/libgnunetpeerinfo.so.${LIBgnunetpeerinfo_VERSION}
 @lib lib/libgnunetstatistics.so.${LIBgnunetstatistics_VERSION}
+@lib lib/libgnunettestbed.so.${LIBgnunettestbed_VERSION}
 @lib lib/libgnunettesting.so.${LIBgnunettesting_VERSION}
+@lib lib/libgnunettesting_new.so.${LIBgnunettesting_new_VERSION}
 @lib lib/libgnunettransport.so.${LIBgnunettransport_VERSION}
 @lib lib/libgnunettransporttesting.so.${LIBgnunettransporttesting_VERSION}
 @lib lib/libgnunettun.so.${LIBgnunettun_VERSION}
