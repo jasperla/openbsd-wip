@@ -1,0 +1,15 @@
+$OpenBSD$
+--- modules/highgui/src/ffmpeg_codecs.hpp.orig	Sat Jun  2 16:30:34 2012
++++ modules/highgui/src/ffmpeg_codecs.hpp	Sat Jun  2 16:31:45 2012
+@@ -49,9 +49,9 @@ extern "C" {
+ #if !defined INT64_C || !defined UINT64_C
+ #define INT64_C
+ #define UINT64_C
+- #define __STDC_CONSTANT_MACROS
++#define __STDC_CONSTANT_MACROS
+ // force re-inclusion of stdint.h to get INT64_C macro
+-#undef _STDINT_H
++#undef _SYS_STDINT_H
+ #include <stdint.h>
+ #endif
+ #include <errno.h>
