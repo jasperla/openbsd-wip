@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/07/16 22:43:57 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2012/05/03 06:35:31 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=		${GCC4_ARCHS}
 
@@ -6,14 +6,12 @@ SHARED_ONLY=		Yes
 
 COMMENT-main=		library of programming functions for real time cv
 COMMENT-docs=		documentation for OpenCV
-COMMENT-python=		python bindings for OpenCV
 
 V=			2.4.0
-REVISION=		0
+REVISION=		1
 DISTNAME=		OpenCV-$V
 PKGNAME-main=		opencv-$V
 PKGNAME-docs=		opencv-docs-$V
-PKGNAME-python=		opencv-python-$V
 CATEGORIES=		graphics devel
 
 SHARED_LIBS +=		opencv_calib3d			1.0
@@ -57,68 +55,56 @@ WANTLIB-main += jasper jpeg m mp3lame ogg orc-0.4 pango-1.0 pangocairo-1.0
 WANTLIB-main += pangoft2-1.0 pixman-1 png pthread pthread-stubs schroedinger-1.0
 WANTLIB-main += speex stdc++ swscale theoradec theoraenc tiff vorbis
 WANTLIB-main += vorbisenc vpx x264 xcb xcb-render xcb-shm xml2 xvidcore z
+WANTLIB-main += ${MODGETTEXT_WANTLIB} ${MODPY_WANTLIB}
 
 MODULES=		devel/cmake \
-			devel/gettext
+			devel/gettext \
+			lang/python
 
-MULTI_PACKAGES=		-main -docs -python
+MULTI_PACKAGES=		-main -docs
 
-PSEUDO_FLAVORS =	no_python
-FLAVOR ?=
-
-.include <bsd.port.arch.mk>
-.if ${BUILD_PACKAGES:M-python}
-CONFIGURE_ARGS+=	-DBUILD_NEW_PYTHON_SUPPORT:Bool=On \
-			-DINSTALL_PYTHON_EXAMPLES:Bool=On
-.else
-CONFIGURE_ARGS+=	-DBUILD_NEW_PYTHON_SUPPORT:Bool=Off \
-			-DINSTALL_PYTHON_EXAMPLES:Bool=Off
-.endif
-
+SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	cmake
-
 LIB_DEPENDS-main=	multimedia/gstreamer-0.10/plugins-base \
 			x11/gtk+2 \
+			graphics/ffmpeg \
 			graphics/ilmbase \
+			graphics/jpeg \
 			graphics/openexr \
 			graphics/png \
-			graphics/ffmpeg
-
-LIB_DEPENDS-python=	${LIB_DEPENDS} \
+			graphics/tiff \
 			${MODPY_LIB_DEPENDS}
 
-WANTLIB-python=		${WANTLIB} \
-			${MODPY_WANTLIB}
-
-RUN_DEPENDS-python=	math/py-numpy
-MODULES-python=		${MODULES} \
-			lang/python
+RUN_DEPENDS-main=	math/py-numpy
 
 WANTLIB-docs=		# empty
 LIB_DEPENDS-docs=	# empty
 RUN_DEPENDS-docs=	# empty
 PKG_ARCH-docs=		*
 
-USE_LIBTOOL=		Yes
-SEPARATE_BUILD=		flavored
-
 VMEM_WARNING=		Yes
 
 BUILD_DEPENDS=		devel/doxygen
 
 # ATM opencv requires V4L1 compat, ask them to change it,
-# then see WITH_V4L below.:
+# then see WITH_V4L below.
 CONFIGURE_ARGS+=	-DBUILD_EXAMPLES:Bool=On \
 			-DINSTALL_C_EXAMPLES:Bool=On \
+			-DINSTALL_PYTHON_EXAMPLES:Bool=On \
 			-DWITH_GTK:Bool=On \
 			-DWITH_V4L:Bool=Off \
 			-DWITH_GSTREAMER:Bool=On \
+			-DWITH_JPEG:Bool=On \
 			-DWITH_PNG:Bool=On \
+			-DWITH_TIFF:Bool=On \
 			-DWITH_1394:Bool=Off \
 			-DWITH_FFMPEG:Bool=On
 
 post-configure:
 	@find ${WRKSRC} -type f -iname "*.make" -exec \
 		perl -pi -e 's/(CXX_DEFINES =).*/$1/' {} \;
+
+post-install:
+	@cd ${PREFIX} && mv share/OpenCV/* share/opencv
 
 .include <bsd.port.mk>

@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-lib/python${MODPY_VERSION}/site-packages/cv.py
-lib/python${MODPY_VERSION}/site-packages/cv2.so
