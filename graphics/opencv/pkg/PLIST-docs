@@ -1,7 +1,4 @@
 @comment $OpenBSD$
-lib/pkgconfig/
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
 share/opencv/doc/
 share/opencv/doc/CMakeLists.txt
 share/opencv/doc/acircles_pattern.png
