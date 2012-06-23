@@ -1,21 +1,25 @@
 @comment $OpenBSD$
 %%SHARED%%
 @bin bin/gnunet-arm
-@bin bin/gnunet-core-list-connections
+@bin bin/gnunet-core
 @bin bin/gnunet-daemon-hostlist
 @bin bin/gnunet-daemon-topology
 @bin bin/gnunet-dht-get
+@bin bin/gnunet-dht-monitor
 @bin bin/gnunet-dht-put
 @bin bin/gnunet-directory
 @bin bin/gnunet-download
 bin/gnunet-download-manager.scm
 @bin bin/gnunet-fs
+bin/gnunet-gns-import.sh
 @bin bin/gnunet-helper-fs-publish
+@bin bin/gnunet-namestore
 @bin bin/gnunet-nat-server
 @bin bin/gnunet-peerinfo
 @bin bin/gnunet-pseudonym
 @bin bin/gnunet-publish
 @bin bin/gnunet-resolver
+@bin bin/gnunet-rsa
 @bin bin/gnunet-search
 @bin bin/gnunet-service-arm
 @bin bin/gnunet-service-ats
@@ -23,6 +27,7 @@ bin/gnunet-download-manager.scm
 @bin bin/gnunet-service-datastore
 @bin bin/gnunet-service-dht
 @bin bin/gnunet-service-fs
+@bin bin/gnunet-service-lockmanager
 @bin bin/gnunet-service-mesh
 @bin bin/gnunet-service-namestore
 @bin bin/gnunet-service-nse
@@ -78,7 +83,9 @@ include/gnunet/gnunet_gns_service.h
 include/gnunet/gnunet_hello_lib.h
 include/gnunet/gnunet_helper_lib.h
 include/gnunet/gnunet_load_lib.h
+include/gnunet/gnunet_lockmanager_service.h
 include/gnunet/gnunet_mesh_service.h
+include/gnunet/gnunet_mysql_lib.h
 include/gnunet/gnunet_namestore_plugin.h
 include/gnunet/gnunet_namestore_service.h
 include/gnunet/gnunet_nat_lib.h
@@ -88,9 +95,11 @@ include/gnunet/gnunet_os_lib.h
 include/gnunet/gnunet_peer_lib.h
 include/gnunet/gnunet_peerinfo_service.h
 include/gnunet/gnunet_plugin_lib.h
+include/gnunet/gnunet_postgres_lib.h
 include/gnunet/gnunet_program_lib.h
 include/gnunet/gnunet_protocols.h
 include/gnunet/gnunet_pseudonym_lib.h
+include/gnunet/gnunet_regex_lib.h
 include/gnunet/gnunet_resolver_service.h
 include/gnunet/gnunet_scheduler_lib.h
 include/gnunet/gnunet_server_lib.h
@@ -100,6 +109,8 @@ include/gnunet/gnunet_signatures.h
 include/gnunet/gnunet_statistics_service.h
 include/gnunet/gnunet_stream_lib.h
 include/gnunet/gnunet_strings_lib.h
+include/gnunet/gnunet_testbed_service.h
+include/gnunet/gnunet_testing_lib-new.h
 include/gnunet/gnunet_testing_lib.h
 include/gnunet/gnunet_time_lib.h
 include/gnunet/gnunet_transport_plugin.h
@@ -158,6 +169,8 @@ lib/libgnunetfs.a
 lib/libgnunetfs.la
 lib/libgnunethello.a
 lib/libgnunethello.la
+lib/libgnunetlockmanager.a
+lib/libgnunetlockmanager.la
 lib/libgnunetmesh.a
 lib/libgnunetmesh.la
 lib/libgnunetnamestore.a
@@ -170,8 +183,12 @@ lib/libgnunetpeerinfo.a
 lib/libgnunetpeerinfo.la
 lib/libgnunetstatistics.a
 lib/libgnunetstatistics.la
+lib/libgnunettestbed.a
+lib/libgnunettestbed.la
 lib/libgnunettesting.a
 lib/libgnunettesting.la
+lib/libgnunettesting_new.a
+lib/libgnunettesting_new.la
 lib/libgnunettransport.a
 lib/libgnunettransport.la
 lib/libgnunettransporttesting.a
@@ -200,14 +217,18 @@ lib/pkgconfig/gnunettesting.pc
 lib/pkgconfig/gnunettransport.pc
 lib/pkgconfig/gnunetutil.pc
 @man man/man1/gnunet-arm.1
+@man man/man1/gnunet-core.1
 @man man/man1/gnunet-directory.1
 @man man/man1/gnunet-download-manager.1
 @man man/man1/gnunet-download.1
 @man man/man1/gnunet-fs.1
+@man man/man1/gnunet-gns.1
+@man man/man1/gnunet-namestore.1
 @man man/man1/gnunet-nat-server.1
 @man man/man1/gnunet-peerinfo.1
 @man man/man1/gnunet-pseudonym.1
 @man man/man1/gnunet-publish.1
+@man man/man1/gnunet-rsa.1
 @man man/man1/gnunet-search.1
 @man man/man1/gnunet-statistics.1
 @man man/man1/gnunet-transport.1
@@ -225,18 +246,36 @@ share/gnunet/config.d/datastore.conf
 share/gnunet/config.d/dht.conf
 share/gnunet/config.d/fs.conf
 share/gnunet/config.d/hostlist.conf
+share/gnunet/config.d/lockmanager.conf
 share/gnunet/config.d/mesh.conf
+share/gnunet/config.d/namestore.conf
 share/gnunet/config.d/nat.conf
 share/gnunet/config.d/nse.conf
 share/gnunet/config.d/peerinfo.conf
 share/gnunet/config.d/resolver.conf
 share/gnunet/config.d/statistics.conf
 share/gnunet/config.d/template.conf
+share/gnunet/config.d/testbed.conf
 share/gnunet/config.d/testing.conf
 share/gnunet/config.d/topology.conf
 share/gnunet/config.d/transport.conf
 share/gnunet/config.d/util.conf
 share/gnunet/gnunet-logo-color.png
+share/gnunet/hellos/
+share/gnunet/hellos/02UK
+share/gnunet/hellos/1G1M
+share/gnunet/hellos/7RAV
+share/gnunet/hellos/8B4T
+share/gnunet/hellos/94CH
+share/gnunet/hellos/ATF4
+share/gnunet/hellos/F1GT
+share/gnunet/hellos/KD9V
+share/gnunet/hellos/KUPL
+share/gnunet/hellos/LJR8
+share/gnunet/hellos/R69Q
+share/gnunet/hellos/R6OV
+share/gnunet/hellos/RL7P
+share/gnunet/testing_hostkeys.dat
 share/locale/de/LC_MESSAGES/gnunet.mo
 share/locale/es/LC_MESSAGES/gnunet.mo
 share/locale/sv/LC_MESSAGES/gnunet.mo
