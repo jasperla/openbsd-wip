@@ -1,0 +1,20 @@
+$OpenBSD$
+--- modules/highgui/src/cap_ffmpeg_impl.hpp.orig	Mon Apr 30 15:40:29 2012
++++ modules/highgui/src/cap_ffmpeg_impl.hpp	Sat Jun  2 17:10:06 2012
+@@ -44,6 +44,7 @@
+ #include <assert.h>
+ #include <algorithm>
+ #include <limits>
++#include <sys/param.h>
+ 
+ #if defined _MSC_VER && _MSC_VER >= 1200
+ #pragma warning( disable: 4244 4510 4512 4610 )
+@@ -149,7 +150,7 @@ int get_number_of_cpus(void)
+     GetSystemInfo( &sysinfo );
+ 
+     return (int)sysinfo.dwNumberOfProcessors;
+-#elif defined __linux__
++#elif defined __linux__ || defined BSD
+     return (int)sysconf( _SC_NPROCESSORS_ONLN );
+ #elif defined __APPLE__
+     int numCPU=0;
