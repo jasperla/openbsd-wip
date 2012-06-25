@@ -7779,4 +7779,4 @@ plan9/troff/term/tab.think
 plan9/troff/term/tab.thinkbold
 plan9/troff/term/tab.thinksmall
 plan9/troff/term/tab.utf
-@unexec rm -f ${PREFIX}/plan9/man/whatis.db
+@unexec rm -f ${TRUEPREFIX}/plan9/man/whatis.db
