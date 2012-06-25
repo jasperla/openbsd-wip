@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+@conflict devel/omake
 @bin bin/fd2
 @bin bin/glob6
 @bin bin/goto
