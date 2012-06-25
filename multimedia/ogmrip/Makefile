@@ -59,11 +59,11 @@ LIB_DEPENDS =		x11/gtk+2 \
 			converters/enca \
 			devel/libdvdread
 
-FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/ogmrip
-
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS = \
+	--with-gconf-schema-file-dir="${PREFIX}/share/glib-2.0/schemas"
 
 NO_REGRESS =		Yes
 

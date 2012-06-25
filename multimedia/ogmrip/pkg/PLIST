@@ -171,13 +171,7 @@ lib/pkgconfig/ogmrip.pc
 @man man/man1/subp2pgm.1
 @man man/man1/subptools.1
 share/applications/ogmrip.desktop
-share/examples/ogmrip/
-share/examples/ogmrip/gconf/
-@sample ${SYSCONFDIR}/gconf/
-share/examples/ogmrip/gconf/schemas/
-@sample ${SYSCONFDIR}/gconf/schemas/
-share/examples/ogmrip/gconf/schemas/ogmrip.schemas
-@sample ${SYSCONFDIR}/gconf/schemas/ogmrip.schemas
+share/glib-2.0/schemas/ogmrip.schemas
 share/gtk-doc/html/ogmdvd/
 share/gtk-doc/html/ogmdvd-gtk/
 share/gtk-doc/html/ogmdvd-gtk/OGMDvdCellRendererLanguage.html
@@ -323,3 +317,5 @@ share/pixmaps/
 share/pixmaps/ogmrip.png
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
