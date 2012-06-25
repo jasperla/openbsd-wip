@@ -1,6 +1,0 @@
-@comment $OpenBSD$
-@bin bin/ged
-bin/gred
-@info info/ged.info
-@man man/man1/ged.1
-@man man/man1/gred.1
