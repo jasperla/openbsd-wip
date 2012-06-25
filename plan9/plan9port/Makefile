@@ -37,6 +37,8 @@ WRKDIST =		${WRKDIR}/plan9
 
 PLAN9 =			${PREFIX}/plan9
 
+NO_REGRESS =		Yes
+
 SCRIPTS = \" \"\" 9 9.rc 9a 9ar 9c 9fs 9l B E Getdir adict awd bundle \
 	codereview \
 	codereview.py doctype g ipso kill label lc lookman man mk9660 mount \
