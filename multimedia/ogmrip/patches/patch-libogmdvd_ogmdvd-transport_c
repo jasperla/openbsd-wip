@@ -1,4 +1,8 @@
 $OpenBSD$
+
+seems like the code for HAVE_SCSIREQ_T has not been tested/updated for a long
+time ...
+
 --- libogmdvd/ogmdvd-transport.c.orig	Mon Jun 18 22:18:17 2012
 +++ libogmdvd/ogmdvd-transport.c	Mon Jun 18 22:32:49 2012
 @@ -23,12 +23,14 @@
