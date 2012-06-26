@@ -1,6 +1,4 @@
 Works so far on amd64 and sparc64 but:
 
-- cmake won't let me change MANDIR at the moment, that's why the man page gets
-  installed to $PREFIX/share/man instead of $PREFIX/man
 - guile support is not enabled at the moment
   (there aren't any scripts written for that plugin yet anyway)

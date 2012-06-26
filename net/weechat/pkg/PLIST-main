@@ -14,12 +14,16 @@ lib/weechat/plugins/perl.so
 lib/weechat/plugins/relay.so
 lib/weechat/plugins/rmodifier.so
 lib/weechat/plugins/xfer.so
+@man man/man1/weechat-curses.1
 share/doc/weechat/
-share/doc/weechat/faq.txt
-share/doc/weechat/plugin_api.txt
-share/doc/weechat/quickstart.txt
-share/doc/weechat/scripting.txt
-share/doc/weechat/user_guide.txtt
+share/doc/weechat/weechat_dev.en.txt
+share/doc/weechat/weechat_faq.en.txt
+share/doc/weechat/weechat_plugin_api.en.txt
+share/doc/weechat/weechat_quickstart.en.txt
+share/doc/weechat/weechat_relay_protocol.en.txt
+share/doc/weechat/weechat_scripting.en.txt
+share/doc/weechat/weechat_tester.en.txt
+share/doc/weechat/weechat_user.en.txt
 share/locale/cs/LC_MESSAGES/weechat.mo
 share/locale/de/LC_MESSAGES/weechat.mo
 share/locale/es/LC_MESSAGES/weechat.mo
@@ -30,6 +34,3 @@ share/locale/ja/LC_MESSAGES/weechat.mo
 share/locale/pl/LC_MESSAGES/weechat.mo
 share/locale/pt_BR/LC_MESSAGES/weechat.mo
 share/locale/ru/LC_MESSAGES/weechat.mo
-share/man/
-share/man/man1/
-@man share/man/man1/weechat-curses.1
