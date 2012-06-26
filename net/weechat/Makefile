@@ -74,12 +74,8 @@ CONFIGURE_ARGS+=-DENABLE_ASPELL=no \
 		-DHAVE_BACKTRACE=no
 
 post-install:
-		$(INSTALL_DATA_DIR) ${PREFIX}/share/doc/weechat
-		$(INSTALL_DATA) $(WRKSRC)/doc/en/weechat_faq.en.txt ${PREFIX}/share/doc/weechat/faq.txt
-		$(INSTALL_DATA) $(WRKSRC)/doc/en/weechat_plugin_api.en.txt ${PREFIX}/share/doc/weechat/plugin_api.txt
-		$(INSTALL_DATA) $(WRKSRC)/doc/en/weechat_quickstart.en.txt ${PREFIX}/share/doc/weechat/quickstart.txt
-		$(INSTALL_DATA) $(WRKSRC)/doc/en/weechat_scripting.en.txt ${PREFIX}/share/doc/weechat/scripting.txt
-		$(INSTALL_DATA) $(WRKSRC)/doc/en/weechat_user.en.txt ${PREFIX}/share/doc/weechat/user_guide.txtt
+	$(INSTALL_DATA_DIR) ${PREFIX}/share/doc/weechat
+	$(INSTALL_DATA) $(WRKSRC)/doc/en/*.en.txt ${PREFIX}/share/doc/weechat/
 
 NO_REGRESS=	Yes
 
