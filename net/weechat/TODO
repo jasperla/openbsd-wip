@@ -1,4 +1,0 @@
-Works so far on amd64 and sparc64 but:
-
-- guile support is not enabled at the moment
-  (there aren't any scripts written for that plugin yet anyway)
