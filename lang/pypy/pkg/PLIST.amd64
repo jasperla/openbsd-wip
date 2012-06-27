@@ -1,5 +1,4 @@
 @comment $OpenBSD$
 ${FULLPKGNAME}/lib_pypy/ctypes_config_cache/_locale_x86_64_.py
-${FULLPKGNAME}/lib_pypy/ctypes_config_cache/_pyexpat_x86_64_.py
 ${FULLPKGNAME}/lib_pypy/ctypes_config_cache/_resource_x86_64_.py
 ${FULLPKGNAME}/lib_pypy/ctypes_config_cache/_syslog_x86_64_.py

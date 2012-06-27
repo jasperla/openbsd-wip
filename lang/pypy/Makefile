@@ -5,8 +5,9 @@ ONLY_FOR_ARCHS =	amd64
 COMMENT =		Fast implementation of the Python language
 COMMENT-rpython =	RPython translation
 
-V=1.8
-DISTNAME =		pypy-${V}
+V=1.9
+DISTNAME =		release-${V}
+PKGNAME =		pypy-${V}
 
 CATEGORIES =		lang
 
@@ -24,7 +25,7 @@ PERMIT_DISTFILES_FTP =	Yes
 # "make port-lib-depends-check" can help
 #WANTLIB =		???
 
-MASTER_SITES =		http://tratt.net/laurie/src/obsd/ports/
+MASTER_SITES =		https://bitbucket.org/pypy/pypy/get/
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		lang/python
@@ -51,8 +52,5 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/pypy-${V}/lib-python/2.7
 	cp -rp ${WRKSRC}/lib-python/2.7/* ${PREFIX}/pypy-${V}/lib-python/2.7
 	chown -R ${SHAREOWN}:${SHAREGRP}  ${PREFIX}/pypy-${V}/lib-python/2.7
-	${INSTALL_DATA_DIR} ${PREFIX}/pypy-${V}/lib-python/modified-2.7
-	cp -rp ${WRKSRC}/lib-python/modified-2.7/* ${PREFIX}/pypy-${V}/lib-python/modified-2.7
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/pypy-${V}/lib-python/modified-2.7
 
 .include <bsd.port.mk>
