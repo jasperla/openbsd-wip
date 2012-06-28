@@ -2069,9 +2069,6 @@ ${FULLPKGNAME}/lib_pypy/conftest.py
 ${FULLPKGNAME}/lib_pypy/ctypes_config_cache/
 ${FULLPKGNAME}/lib_pypy/ctypes_config_cache/__init__.py
 ${FULLPKGNAME}/lib_pypy/ctypes_config_cache/__init__.pyc
-${FULLPKGNAME}/lib_pypy/ctypes_config_cache/_locale_cache.py
-${FULLPKGNAME}/lib_pypy/ctypes_config_cache/_resource_cache.py
-${FULLPKGNAME}/lib_pypy/ctypes_config_cache/_syslog_cache.py
 ${FULLPKGNAME}/lib_pypy/ctypes_config_cache/autopath.py
 ${FULLPKGNAME}/lib_pypy/ctypes_config_cache/dumpcache.py
 ${FULLPKGNAME}/lib_pypy/ctypes_config_cache/dumpcache.pyc

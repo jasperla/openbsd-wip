@@ -37,7 +37,8 @@ BUILD_DEPENDS =		textproc/py-sphinx
 WRKDIST=		${WRKDIR}/pypy-pypy-*
 do-build:
 	cd ${WRKSRC}/pypy/translator/goal/ && \
-	  PYPY_USESSION_DIR=${WRKDIR}/usession ${MODPY_BIN} translate.py --source -Ojit
+	  PYPY_USESSION_DIR=${WRKDIR}/usession PYPY_CTYPES_DIR=${WRKDIR}/ctypes \
+	  ${MODPY_BIN} translate.py --source -Ojit
 	cd ${WRKDIR}/usession/testing_1 && ${MAKE_PROGRAM}
 
 do-install:
