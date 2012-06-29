@@ -34,6 +34,9 @@ VMEM_WARNING =		Yes
 USE_GMAKE =		Yes
 BUILD_DEPENDS =		textproc/py-sphinx
 
+MODULES +=		devel/gettext
+WANTLIB +=		bz2 c crypto curses expat ffi m pthread ssl util z
+
 WRKDIST=		${WRKDIR}/pypy-pypy-*
 do-build:
 	cd ${WRKSRC}/pypy/translator/goal/ && \
