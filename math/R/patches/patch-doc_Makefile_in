@@ -1,4 +1,7 @@
 $OpenBSD$
+
+Do not build PDF versions of the R manuals
+
 --- doc/Makefile.in.orig	Mon May 21 22:42:40 2012
 +++ doc/Makefile.in	Mon May 21 22:42:36 2012
 @@ -34,7 +34,7 @@ R: Makefile svnonly

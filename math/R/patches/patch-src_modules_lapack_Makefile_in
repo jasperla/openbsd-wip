@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_modules_lapack_Makefile_in,v 1.2 2006/11/11 18:52:12 mbalmer Exp $
+--- src/modules/lapack/Makefile.in.orig	Fri Jun 22 09:56:42 2012
++++ src/modules/lapack/Makefile.in	Fri Jun 22 09:57:47 2012
+@@ -10,6 +10,7 @@ subdir = src/modules/lapack
+ R_HOME = $(top_builddir)
+ 
+ include $(top_builddir)/Makeconf
++DYLIB_EXT=.so.$(LIBRlapack_VERSION)
+ 
+ SOURCES_C = Lapack.c @USE_VECLIB_G95FIX_TRUE@ vecLibg95c.c
+ SOURCES_F = @USE_VECLIB_G95FIX_TRUE@ vecLibg95f.f

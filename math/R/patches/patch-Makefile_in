@@ -1,6 +1,9 @@
 $OpenBSD$
---- Makefile.in.orig	Mon May 21 22:41:51 2012
-+++ Makefile.in	Mon May 21 22:41:46 2012
+
+Do not build PDF versions of the R manuals
+
+--- Makefile.in.orig	Mon Oct  3 00:02:39 2011
++++ Makefile.in	Thu Jun 28 12:57:12 2012
 @@ -90,7 +90,7 @@ install install-strip: installdirs svnonly
  	@for f in $(INSTFILES); do \
  	  $(INSTALL_DATA) $(srcdir)/$${f} "$(DESTDIR)$(rhome)"; \
@@ -10,7 +13,16 @@ $OpenBSD$
  	  $(INSTALL_DATA) $${f} "$(DESTDIR)$(rhome)"; \
  	done
  @WANT_R_FRAMEWORK_TRUE@		$(MAKE) -f $(srcdir)/Makefile.fw top_srcdir=$(top_srcdir) $@
-@@ -124,7 +124,7 @@ installdirs:
+@@ -112,7 +112,7 @@ svnonly:
+ 	  fi \
+ 	fi
+ 
+-libR_la = lib/libR$(DYLIB_EXT)
++libR_la = lib/libR.so.$(LIBR_VERSION)
+ install-libR:
+ 	@if test -f $(libR_la); then $(MAKE) install-libR-exists; fi
+ install-libR-exists:
+@@ -124,13 +124,13 @@ installdirs:
  uninstall:
  	@(for d in $(SUBDIRS); do rsd="$${d} $${rsd}"; done; \
  	  for d in $${rsd}; do (cd $${d} && $(MAKE) $@); done)
@@ -19,6 +31,13 @@ $OpenBSD$
  	  rm -f "$(DESTDIR)$(rhome)/$${f}"; \
  	done
  	@rm -rf "$(DESTDIR)$(Rexecbindir)" "$(DESTDIR)$(rhome)/lib"
+ 	@rmdir "$(DESTDIR)$(rhome)" 2>/dev/null \
+           || $(ECHO) "  dir $(DESTDIR)$(rhome) not removed"
+-	@rm -f "$(DESTDIR)${libdir}/libR$(DYLIB_EXT)"
++	@rm -f "$(DESTDIR)${libdir}/libR.so.$(LIBR_VERSION)"
+ 
+ mostlyclean: clean
+ clean:
 @@ -144,7 +144,7 @@ distclean: clean
  	  for d in $${rsd}; do (cd $${d} && $(MAKE) $@); done)
  	-@rm -rf bin include lib library modules gnome
