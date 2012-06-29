@@ -8,7 +8,7 @@ COMMENT-main=		library of programming functions for real time cv
 COMMENT-docs=		documentation for OpenCV
 
 V=			2.4.1
-REVISION=		1
+REVISION=		2
 DISTNAME=		OpenCV-$V
 PKGNAME-main=		opencv-$V
 PKGNAME-docs=		opencv-docs-$V
@@ -63,8 +63,6 @@ MODULES=		devel/cmake \
 
 MULTI_PACKAGES=		-main -docs
 
-SEPARATE_BUILD=		Yes
-CONFIGURE_STYLE=	cmake
 LIB_DEPENDS-main=	multimedia/gstreamer-0.10/plugins-base \
 			x11/gtk+2 \
 			graphics/ffmpeg \
