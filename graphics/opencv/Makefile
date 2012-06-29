@@ -8,6 +8,7 @@ COMMENT-main=		library of programming functions for real time cv
 COMMENT-docs=		documentation for OpenCV
 
 V=			2.4.1
+REVISION=		0
 DISTNAME=		OpenCV-$V
 PKGNAME-main=		opencv-$V
 PKGNAME-docs=		opencv-docs-$V
@@ -105,6 +106,24 @@ post-configure:
 		perl -pi -e 's/(CXX_DEFINES =).*/$1/' {} \;
 
 post-install:
-	@cd ${PREFIX} && mv share/OpenCV/* share/opencv
+	@cd ${PREFIX} && mv -f share/OpenCV/* share/opencv
+	@perl -pi -e 's,libopencv_calib3d.so,libopencv_calib3d.so.1.0,g;' \
+		-e 's,libopencv_contrib.so,libopencv_contrib.so.1.0,g;' \
+		-e 's,libopencv_core.so,libopencv_core.so.1.0,g;' \
+		-e 's,libopencv_features2d.so,libopencv_features2d.so.1.0,g;' \
+		-e 's,libopencv_flann.so,libopencv_flann.so.1.0,g;' \
+		-e 's,libopencv_gpu.so,libopencv_gpu.so.1.0,g;' \
+		-e 's,libopencv_highgui.so,libopencv_highgui.so.1.0,g;' \
+		-e 's,libopencv_imgproc.so,libopencv_imgproc.so.1.0,g;' \
+		-e 's,libopencv_legacy.so,libopencv_legacy.so.1.0,g;' \
+		-e 's,libopencv_ml.so,libopencv_ml.so.1.0,g;' \
+		-e 's,libopencv_objdetect.so,libopencv_objdetect.so.1.0,g;' \
+		-e 's,libopencv_ts.so,libopencv_ts.so.0.0,g;' \
+		-e 's,libopencv_video.so,libopencv_video.so.1.0,g;' \
+		-e 's,libopencv_nonfree.so,libopencv_nonfree.so.0.0,g;' \
+		-e 's,libopencv_photo.so,libopencv_photo.so.0.0,g;' \
+		-e 's,libopencv_stitching.so,libopencv_stitching.so.0.0,g;' \
+		-e 's,libopencv_videostab.so,libopencv_videostab.so.0.0,g;' \
+		${PREFIX}/share/opencv/OpenCVConfig.cmake
 
 .include <bsd.port.mk>
