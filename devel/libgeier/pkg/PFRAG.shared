@@ -1,2 +1,0 @@
-@comment $OpenBSD$
-@lib lib/libgeier.so.${LIBgeier_VERSION}
