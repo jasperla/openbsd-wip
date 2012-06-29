@@ -1,16 +1,37 @@
-$OpenBSD$
---- configure.orig	Fri Jun 15 11:02:06 2012
-+++ configure	Fri Jun 15 11:02:04 2012
-@@ -24283,7 +24283,7 @@ ac_compiler_gnu=$ac_cv_objc_compiler_gnu
-   #  AC_MSG_FAILURE([Objective C runtime headers were not found])
-   #])
+$OpenBSD: patch-configure,v 1.11 2012/01/23 10:34:27 dcoppa Exp $
+
+Fix libpthread linking (-lpthread -> -pthread)
+
+Fix "--export-dynamic" linker flag
+
+Fix linking with external libintl
+
+--- configure.orig	Fri Jun 15 00:05:51 2012
++++ configure	Fri Jun 29 12:39:52 2012
+@@ -26322,7 +26322,7 @@ $as_echo "$as_me: WARNING: Use of flat namespace is re
+   openbsd*)
+     ## looks like ${wl} is not defined here.  Perhaps in libtool code?
+     if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`"; then
+-      main_ldflags="${wl}-export-dynamic"
++      main_ldflags="${wl}--export-dynamic"
+       shlib_ldflags="-shared -fPIC"
+     fi
+     ;;
+@@ -26513,13 +26513,6 @@ case "${host_os}" in
+       LAPACK_LDFLAGS="+s"
+     fi
+     ;;
+-  openbsd*)
+-    PACKAGE_VERSION_MAJOR=`echo "${PACKAGE_VERSION}" | \
+-      sed -e "s/\.//" -e "s/\..*$//"`
+-    PACKAGE_VERSION_MINOR=`echo "${PACKAGE_VERSION}" | \
+-      sed -e "s/.*\.\([^.][^.]*$\)/\1/"`
+-    DYLIB_EXT=".so.${PACKAGE_VERSION_MAJOR}.${PACKAGE_VERSION_MINOR}"
+-    ;;
+ esac
  
--  # FIXME: we don't check whether the runtime needs -lpthread which is possible
-+  # FIXME: we don't check whether the runtime needs -pthread which is possible
-   #        (empirically Linux GNU and Apple runtime don't)
-   { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ObjC runtime library" >&5
- $as_echo_n "checking for ObjC runtime library... " >&6; }
-@@ -34980,8 +34980,8 @@ See config.log for details.
+ if test -z "${DYLIB_LD}"; then
+@@ -35051,8 +35044,8 @@ See config.log for details.
  Do NOT set JAVA_LIBS/JAVA_CPPFLAGS unless you are sure they are correct!
  Java/JNI support is optional unless you set either JAVA_LIBS or JAVA_CPPFLAGS." "$LINENO" 5
      fi
@@ -21,7 +42,7 @@ $OpenBSD$
      cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -35010,7 +35010,7 @@ fi
+@@ -35081,7 +35074,7 @@ fi
  $as_echo "$r_cv_jni" >&6; }
      ##AC_MSG_RESULT([$r_cv_jni])
      if test "${r_cv_jni}" = "yes (with pthreads)"; then
@@ -30,16 +51,7 @@ $OpenBSD$
      fi
  
      # cache all detected flags
-@@ -39655,7 +39655,7 @@ fi
- 
-       if test "$gl_have_pthread_h" = yes; then
-         # Other possible tests:
--        #   -lpthreads (FSU threads, PCthreads)
-+        #   -pthreads (FSU threads, PCthreads)
-         #   -lgthreads
-         gl_have_pthread=
-         # Test whether both pthread_mutex_lock and pthread_mutexattr_init exist
-@@ -39691,13 +39691,13 @@ rm -f core conftest.err conftest.$ac_objext \
+@@ -39791,13 +39784,13 @@ rm -f core conftest.err conftest.$ac_objext \
          if test -n "$gl_have_pthread"; then
            # The program links fine without libpthread. But it may actually
            # need to link with libpthread in order to create multiple threads.
@@ -52,11 +64,11 @@ $OpenBSD$
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpthread  $LIBS"
-+LIBS="-pthread  $LIBS"
++LIBS="-pthread $LIBS"
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -39736,7 +39736,7 @@ fi
+@@ -39836,7 +39829,7 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_kill" >&5
  $as_echo "$ac_cv_lib_pthread_pthread_kill" >&6; }
  if test "x$ac_cv_lib_pthread_pthread_kill" = xyes; then :
@@ -65,7 +77,7 @@ $OpenBSD$
               # On Solaris and HP-UX, most pthread functions exist also in libc.
               # Therefore pthread_in_use() needs to actually try to create a
               # thread: pthread_create from libc will fail, whereas
-@@ -39752,13 +39752,13 @@ fi
+@@ -39852,13 +39845,13 @@ fi
  
          else
            # Some library is needed. Try libpthread and libc_r.
@@ -78,11 +90,11 @@ $OpenBSD$
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpthread  $LIBS"
-+LIBS="-pthread  $LIBS"
++LIBS="-pthread $LIBS"
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -39798,8 +39798,8 @@ fi
+@@ -39898,8 +39891,8 @@ fi
  $as_echo "$ac_cv_lib_pthread_pthread_kill" >&6; }
  if test "x$ac_cv_lib_pthread_pthread_kill" = xyes; then :
    gl_have_pthread=yes
@@ -93,23 +105,23 @@ $OpenBSD$
  fi
  
            if test -z "$gl_have_pthread"; then
-@@ -42048,7 +42048,7 @@ fi
-   rpathdirs=
-   ltrpathdirs=
-   names_already_handled=
--  names_next_round='intl '
-+  names_next_round=''
-   while test -n "$names_next_round"; do
-     names_this_round="$names_next_round"
-     names_next_round=
-@@ -42487,8 +42487,8 @@ $as_echo "$ac_res" >&6; }
-                 BUILD_INCLUDED_LIBINTL=yes
-         USE_INCLUDED_LIBINTL=yes
- 		LIBINTL="$LIBICONV $LIBTHREAD"
--                LTLIBINTL="../extra/intl/libintl.a $LTLIBICONV $LTLIBTHREAD"
--        LIBS=`echo " $LIBS " | sed -e 's/ -lintl / /' -e 's/^ //' -e 's/ $//'`
-+                LTLIBINTL="$LTLIBICONV $LTLIBTHREAD"
-+        LIBS="$LIBS -lintl"
-       fi
+@@ -42485,7 +42478,7 @@ else
+   gt_save_CPPFLAGS="$CPPFLAGS"
+             CPPFLAGS="$CPPFLAGS $INCINTL"
+             gt_save_LIBS="$LIBS"
+-            LIBS="$LIBS $LIBINTL"
++            LIBS="$LIBS $LTLIBINTL"
+                         cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ #include <libintl.h>
+@@ -42642,8 +42635,8 @@ $as_echo "$gt_source" >&6; }
+       if { eval "gt_val=\$$gt_func_gnugettext_libintl"; test "$gt_val" = "yes"; }; then
+         { $as_echo "$as_me:${as_lineno-$LINENO}: checking how to link with libintl" >&5
+ $as_echo_n "checking how to link with libintl... " >&6; }
+-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: $LIBINTL" >&5
+-$as_echo "$LIBINTL" >&6; }
++        { $as_echo "$as_me:${as_lineno-$LINENO}: result: $LTLIBINTL" >&5
++$as_echo "$LTLIBINTL" >&6; }
  
-       CATOBJEXT=
+   for element in $INCINTL; do
+     haveit=

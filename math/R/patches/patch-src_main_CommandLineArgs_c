@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_main_CommandLineArgs_c,v 1.5 2008/10/26 23:04:00 mbalmer Exp $
+--- src/main/CommandLineArgs.c.orig	Fri Mar  2 00:02:25 2012
++++ src/main/CommandLineArgs.c	Thu Jun 28 16:33:17 2012
+@@ -191,7 +191,7 @@ R_common_command_line(int *pac, char **argv, Rstart Rp
+ 		     !strcmp(*av, "-V") ||
+ 		     !strcmp(*av, "-n") ||
+ 		     !strcmp(*av, "-v")) {
+-		snprintf(msg, 1024,
++		snprintf(msg, sizeof(msg),
+ 			 _("WARNING: option '%s' no longer supported"), *av);
+ 		R_ShowMessage(msg);
+ 	    }
+@@ -204,7 +204,7 @@ R_common_command_line(int *pac, char **argv, Rstart Rp
+ 		}
+ 		else p = &(*av)[12];
+ 		if (p == NULL) {
+-		    snprintf(msg, 1024,
++		    snprintf(msg, sizeof(msg),
+ 			     _("WARNING: no value given for '%s'"), *av);
+ 		    R_ShowMessage(msg);
+ 		    break;
+@@ -214,7 +214,7 @@ R_common_command_line(int *pac, char **argv, Rstart Rp
+ 		value = R_Decode2Long(p, &ierr);
+ 		if(ierr) {
+ 		    if(ierr < 0)
+-			snprintf(msg, 1024,
++			snprintf(msg, sizeof(msg),
+ 				 _("WARNING: '%s' value is invalid: ignored"),
+ 				 *av);
+ 		    else
