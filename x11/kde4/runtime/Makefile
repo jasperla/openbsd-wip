@@ -45,7 +45,6 @@ LIB_DEPENDS =	audio/libcanberra \
 		security/libssh \
 		x11/kde4/attica
 
-# PulseAudio is fully workable according to robert@, test it out.
 # QNtrack depends on libnl, Linux-specific library.
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_ALSA:Bool=TRUE \
 			-DCMAKE_DISABLE_FIND_PACKAGE_OpenSLP:Bool=TRUE \
