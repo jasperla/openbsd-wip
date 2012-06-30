@@ -79,12 +79,6 @@ BUILD_DEPENDS =	devel/boost \
 LIB_DEPENDS =	x11/grantlee
 RUN_DEPENDS +=	x11/gtk+2,-guic
 
-# DCMAKE_EXE_LINKER_FLAGS fixes undefined symbols for pulseaudio
-
-CONFIGURE_ARGS +=	-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib \
-                                -Wl,-rpath,${LOCALBASE}/lib/pulseaudio"
-
-
 WRONG_SYSCONF_FILES =	dbus-1	share/examples
 
 .include <bsd.port.mk>
