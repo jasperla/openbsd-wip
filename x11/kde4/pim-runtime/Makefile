@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, PIM runtime support
 DISTNAME =	kdepim-runtime-${MODKDE_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =		akonadi-filestore	0.0 # 4.7
 SHARED_LIBS +=		akonadi-xml		0.0 # 4.7
@@ -25,7 +25,8 @@ WANTLIB += streamanalyzer streams
 
 MODKDE4_USE =	libs pim
 
-BUILD_DEPENDS =		devel/boost
+BUILD_DEPENDS =		devel/boost \
+			textproc/raptor
 
 LIB_DEPENDS =		databases/soprano \
 			databases/strigi \
