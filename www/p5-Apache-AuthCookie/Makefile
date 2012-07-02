@@ -3,7 +3,8 @@
 COMMENT=		authentication and authorization via cookies
 
 MODULES=		cpan
-DISTNAME=		Apache-AuthCookie-3.14
+DISTNAME=		Apache-AuthCookie-3.15
+#			ftp://202.232.140.138/pub/FreeBSD/ports/distfiles/
 CATEGORIES=		www
 
 # Perl
