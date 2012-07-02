@@ -2,7 +2,7 @@
 
 COMMENT =		Mechanized Assault & eXploration Reloaded
 
-DISTNAME =		maxr-0.2.7
+DISTNAME =		maxr-0.2.8
 
 CATEGORIES =		games x11
 
