@@ -1,0 +1,16 @@
+After make regress.
+
+# cat t/logs/error_log                                                                      
+[Mon Jul  2 10:39:21 2012] [notice] Initializing etag from /usr/ports/pobj/p5-Apache-AuthCookie-3.14/Apache-AuthCookie-3.14/t/logs/etag-state
+[Mon Jul  2 10:39:21 2012] [crit] (1)Operation not permitted: could not chown /usr/ports/pobj/p5-Apache-AuthCookie-3.14/Apache-AuthCookie-3.14/t/logs/etag-state
+
+Empty etag-state file (nobody:nobody) causes httpd -u to fail to start.
+
+If I run as root:
+
+/usr/sbin/httpd -u  -d /usr/ports/pobj/p5-Apache-AuthCookie-3.14/Apache-AuthCookie-3.14/t -f /usr/ports/pobj/p5-Apache-AuthCookie-3.14/Apache-AuthCookie-3.14/t/conf/httpd.conf -D APACHE1 
+
+after using make regress (or make test in pobj), httpd starts and etag-state gets values.
+make regress then passes all tests.
+
+How should I get this to happen in first place without manually stepping into regress process?
