@@ -1,0 +1,7 @@
+Apache::AuthCookie intercepts first unauthenticated access to a
+protected document. The user is presented with a custom form to
+enter authentication credentials. The credentials are posted to
+the server where AuthCookie verifies them and returns a session key
+to the user's browser as a cookie. As a cookie, the browser will
+pass the session key on every subsequent access. AuthCookie will
+verify the session key and re-authenticate the user.
