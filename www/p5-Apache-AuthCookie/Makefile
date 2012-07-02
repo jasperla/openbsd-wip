@@ -4,8 +4,9 @@ COMMENT=		authentication and authorization via cookies
 
 MODULES=		cpan
 DISTNAME=		Apache-AuthCookie-3.15
-#			ftp://202.232.140.138/pub/FreeBSD/ports/distfiles/
+
 CATEGORIES=		www
+MASTER_SITES=		ftp://202.232.140.138/pub/FreeBSD/ports/distfiles/
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
