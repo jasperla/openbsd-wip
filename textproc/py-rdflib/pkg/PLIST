@@ -84,6 +84,6 @@ lib/python${MODPY_VERSION}/site-packages/rdflib/term.py
 lib/python${MODPY_VERSION}/site-packages/rdflib/term.pyc
 lib/python${MODPY_VERSION}/site-packages/rdflib/util.py
 lib/python${MODPY_VERSION}/site-packages/rdflib/util.pyc
-share/examples/py-rdflib/
-share/examples/py-rdflib/example.py
-share/examples/py-rdflib/swap_primer.py
+share/examples/${MODPY_PY_PREFIX}rdflib/
+share/examples/${MODPY_PY_PREFIX}rdflib/example.py
+share/examples/${MODPY_PY_PREFIX}rdflib/swap_primer.py
