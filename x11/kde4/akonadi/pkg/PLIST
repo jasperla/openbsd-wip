@@ -14,6 +14,7 @@ include/akonadi/private/imapset_p.h
 include/akonadi/private/notificationmessage_p.h
 include/akonadi/private/protocol_p.h
 include/akonadi/private/xdgbasedirs_p.h
+lib/cmake/
 lib/cmake/Akonadi/
 lib/cmake/Akonadi/AkonadiConfig.cmake
 lib/cmake/Akonadi/AkonadiConfigVersion.cmake
