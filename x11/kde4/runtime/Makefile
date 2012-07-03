@@ -9,7 +9,7 @@ SHARED_LIBS +=	molletnetwork 		0.0	# 4.7
 SHARED_LIBS +=	nepomuksync 		4.7	# 4.7
 SHARED_LIBS +=	nepomukdatamanagement 	0.0	# 4.8
 
-WANTLIB += Half ICE Iex IlmImf IlmThread Imath
+WANTLIB =  Half ICE Iex IlmImf IlmThread Imath
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml SM X11 Xcursor

@@ -3,7 +3,6 @@
 COMMENT =	K Desktop Environment, RAW picture decoding C++ library
 DISTNAME =	libkdcraw-${MODKDE_VERSION}
 
-
 SHARED_LIBS =	kdcraw			0.0	# 20.0
 
 WANTLIB =  c m stdc++

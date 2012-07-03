@@ -4,7 +4,7 @@ COMMENT =	K Desktop Environment, office suite
 VERSION =	2.4.3
 DISTNAME =	calligra-${VERSION}
 PKGNAME =	${DISTNAME:C/-/4-/1}
-EXTRACT_SUFX ?=	.tar.bz2
+EXTRACT_SUFX =	.tar.bz2
 
 SHARED_LIBS =	flake			0.0 # 8.0
 SHARED_LIBS +=	kokross			0.0 # 8.0

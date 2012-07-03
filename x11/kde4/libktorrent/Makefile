@@ -3,7 +3,7 @@
 COMMENT =	K Desktop Environment, KTorrent engine
 DISTNAME =	libktorrent-1.2.0
 HOMEPAGE =	http://ktorrent.org/
-EXTRACT_SUFX ?=	.tar.bz2
+EXTRACT_SUFX =	.tar.bz2
 
 SHARED_LIBS =	ktorrent	0.0
 

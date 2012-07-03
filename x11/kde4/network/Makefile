@@ -3,7 +3,6 @@
 COMMENT =	K Desktop Environment, network
 DISTNAME =	kdenetwork-${MODKDE_VERSION}
 
-
 SHARED_LIBS =	kgetcore		0.0 # 4.0
 SHARED_LIBS +=	kopete			3.0 # 4.0
 SHARED_LIBS +=	kopete_videodevice	2.0 # 4.0
