@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, libraries for PIM
 DISTNAME =	kdepimlibs-${MODKDE_VERSION}
-REVISION =	1
 
 SHARED_LIBS =	kabc                 5.0      # .4.0
 SHARED_LIBS +=	kabc_file_core       0.0      # .4.0
