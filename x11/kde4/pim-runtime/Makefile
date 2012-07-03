@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, PIM runtime support
 DISTNAME =	kdepim-runtime-${MODKDE_VERSION}
-REVISION =	1
 
 SHARED_LIBS =		akonadi-filestore	0.0 # 4.7
 SHARED_LIBS +=		akonadi-xml		0.0 # 4.7
