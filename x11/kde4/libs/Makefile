@@ -108,11 +108,10 @@ CONFIGURE_ARGS +=	-DACL_FOUND:Bool=FALSE \
 			-DUDEV_FOUND:Bool=FALSE
 
 # some basic defines
-CONFIGURE_ARGS +=	-D_KDE_DEFAULT_HOME_POSTFIX:STRING="4" \
-			-DKDE4_INCLUDE_INSTALL_DIR:String=${LOCALBASE}/include \
-			-DKDE4_LIB_INSTALL_DIR:String=${LOCALBASE}/lib \
-			-DKDESU_USE_SUDO_DEFAULT:Bool=TRUE \
-			-DSYSCONF_INSTALL_DIR:String=${SYSCONFDIR}
+CONFIGURE_ARGS +=	-D_KDE_DEFAULT_HOME_POSTFIX:String="4" \
+			-DKDE_DISTRIBUTION_TEXT:String="OpenBSD WIP ports tree" \
+			-DKDE4_AUTH_BACKEND_NAME:String="PolkitQt-1" \
+			-DKDESU_USE_SUDO_DEFAULT:Bool=TRUE
 
 # Reimplemented CMake modules, because previous were totally broken
 REWR_CMAKE_MODULES =	FindXine FindXKB FindPolkitQt

@@ -3,7 +3,6 @@
 COMMENT =	K Desktop Environment, KDE4 bindings for Ruby
 DISTNAME =	korundum-${MODKDE_VERSION}
 
-
 MODULES =	devel/cmake lang/ruby
 
 WANTLIB =  c m stdc++
