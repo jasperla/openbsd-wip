@@ -99,7 +99,7 @@ MODKDE4_BUILD_DEPENDS +=	STEM->=${MODKDE4_VERSION}:x11/kde4/libs
 .else
 MODKDE4_NO_QT ?=	No
 .   if ${MODKDE4_USE:L:Mlibs}
-.       if ${MODKDE4_NO_QT:L} = "yes"
+.       if ${MODKDE4_NO_QT:L} == "yes"
 ERRORS +=	"Fatal: KDE libraries require Qt."
 .       endif
 
