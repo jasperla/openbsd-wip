@@ -73,12 +73,6 @@ MODKDE4_CONF_ARGS =
 
 TAR =			${LOCALBASE}/bin/gtar
 
-# Small hack, until automoc4 will be gone
-#PKGNAME ?= ${DISTNAME}
-#.if !${PKGNAME:Mautomoc4-*}
-#MODKDE4_BUILD_DEPENDS +=	x11/kde4/automoc
-#.endif
-
 FLAVOR ?=
 
 .ifdef MODKDE_NO_QT
@@ -96,6 +90,12 @@ MODKDE4_NO_QT ?=	Yes	# resources usually don't need Qt
 MODKDE4_BUILD_DEPENDS +=	STEM->=${MODKDE4_VERSION}:x11/kde4/libs
 .   endif
 .else
+# Small hack, until automoc4 will be gone
+PKGNAME ?= ${DISTNAME}
+.   if !${PKGNAME:Mautomoc4-*}
+MODKDE4_BUILD_DEPENDS +=	x11/kde4/automoc
+.   endif
+
 MODKDE4_NO_QT ?=	No
 .   if ${MODKDE4_USE:L:Mlibs}
 .       if ${MODKDE4_NO_QT:L} == "yes"
