@@ -1,1 +1,60 @@
-See intl in configure.
+Regression tests fail (i386 2012-07-03):
+
+1: Test command: /usr/ports/pobj/dbusmenu-qt-0.9.2/build-i386/tests/dbusmenuexportertest                                           [94/2504]
+1: Test timeout computed to be: 9.99988e+06
+1: ********* Start testing of DBusMenuExporterTest *********
+1: Config: Using QTest library 4.8.2, Qt 4.8.2
+1: PASS   : DBusMenuExporterTest::initTestCase()
+1: FAIL!  : DBusMenuExporterTest::testGetSomeProperties(label only) 'QDBusConnection::sessionBus().registerService(TEST_SERVICE)' returned F
+ALSE. ()
+1:    Loc: [/usr/ports/pobj/dbusmenu-qt-0.9.2/libdbusmenu-qt-0.9.2/tests/dbusmenuexportertest.cpp(63)]
+1: FAIL!  : DBusMenuExporterTest::testGetSomeProperties(label only) 'iface.isValid()' returned FALSE. (Not connected to D-Bus server)
+1:    Loc: [/usr/ports/pobj/dbusmenu-qt-0.9.2/libdbusmenu-qt-0.9.2/tests/dbusmenuexportertest.cpp(104)]
+1: FAIL!  : DBusMenuExporterTest::testGetSomeProperties(label only) 'QDBusConnection::sessionBus().unregisterService(TEST_SERVICE)' returned
+ FALSE. ()
+1:    Loc: [/usr/ports/pobj/dbusmenu-qt-0.9.2/libdbusmenu-qt-0.9.2/tests/dbusmenuexportertest.cpp(69)]
+1: FAIL!  : DBusMenuExporterTest::testGetSomeProperties(disabled, label only) 'QDBusConnection::sessionBus().registerService(TEST_SERVICE)' 
+returned FALSE. ()
+1:    Loc: [/usr/ports/pobj/dbusmenu-qt-0.9.2/libdbusmenu-qt-0.9.2/tests/dbusmenuexportertest.cpp(63)]
+1: FAIL!  : DBusMenuExporterTest::testGetSomeProperties(disabled, label only) 'iface.isValid()' returned FALSE. (Not connected to D-Bus serv
+er)
+1:    Loc: [/usr/ports/pobj/dbusmenu-qt-0.9.2/libdbusmenu-qt-0.9.2/tests/dbusmenuexportertest.cpp(104)]
+1: FAIL!  : DBusMenuExporterTest::testGetSomeProperties(disabled, label only) 'QDBusConnection::sessionBus().unregisterService(TEST_SERVICE)
+' returned FALSE. ()
+1:    Loc: [/usr/ports/pobj/dbusmenu-qt-0.9.2/libdbusmenu-qt-0.9.2/tests/dbusmenuexportertest.cpp(69)]
+1: FAIL!  : DBusMenuExporterTest::testGetSomeProperties(icon name) 'QDBusConnection::sessionBus().registerService(TEST_SERVICE)' returned FA
+LSE. ()                                                                                                                            [78/2511]
+1:    Loc: [/usr/ports/pobj/dbusmenu-qt-0.9.2/libdbusmenu-qt-0.9.2/tests/dbusmenuexportertest.cpp(63)]
+1: FAIL!  : DBusMenuExporterTest::testGetSomeProperties(icon name) '!icon.isNull()' returned FALSE. ()
+1:    Loc: [/usr/ports/pobj/dbusmenu-qt-0.9.2/libdbusmenu-qt-0.9.2/tests/dbusmenuexportertest.cpp(96)]
+1: FAIL!  : DBusMenuExporterTest::testGetSomeProperties(icon name) 'QDBusConnection::sessionBus().unregisterService(TEST_SERVICE)' returned 
+FALSE. ()
+1:    Loc: [/usr/ports/pobj/dbusmenu-qt-0.9.2/libdbusmenu-qt-0.9.2/tests/dbusmenuexportertest.cpp(69)]
+1: FAIL!  : DBusMenuExporterTest::testGetAllProperties() 'QDBusConnection::sessionBus().registerService(TEST_SERVICE)' returned FALSE. ()
+1:    Loc: [/usr/ports/pobj/dbusmenu-qt-0.9.2/libdbusmenu-qt-0.9.2/tests/dbusmenuexportertest.cpp(63)]
+1: FAIL!  : DBusMenuExporterTest::testGetAllProperties() '!icon.isNull()' returned FALSE. ()
+1:    Loc: [/usr/ports/pobj/dbusmenu-qt-0.9.2/libdbusmenu-qt-0.9.2/tests/dbusmenuexportertest.cpp(155)]
+1: FAIL!  : DBusMenuExporterTest::testGetAllProperties() 'QDBusConnection::sessionBus().unregisterService(TEST_SERVICE)' returned FALSE. ()
+1:    Loc: [/usr/ports/pobj/dbusmenu-qt-0.9.2/libdbusmenu-qt-0.9.2/tests/dbusmenuexportertest.cpp(69)]
+1: FAIL!  : DBusMenuExporterTest::testGetNonExistentProperty() 'QDBusConnection::sessionBus().registerService(TEST_SERVICE)' returned FALSE.
+ ()
+1:    Loc: [/usr/ports/pobj/dbusmenu-qt-0.9.2/libdbusmenu-qt-0.9.2/tests/dbusmenuexportertest.cpp(63)]
+1: QFATAL : DBusMenuExporterTest::testGetNonExistentProperty() Not connected to D-Bus server
+1: FAIL!  : DBusMenuExporterTest::testGetNonExistentProperty() Received a fatal error.
+1:    Loc: [Unknown file(0)]
+1: Totals: 1 passed, 14 failed, 0 skipped
+1: ********* Finished testing of DBusMenuExporterTest *********
+1/3 Test #1: dbusmenuexportertest .............***Exception: Other  3.30 sec
+test 2
+    Start 2: dbusmenuimportertest
+
+2: Test command: /usr/ports/pobj/dbusmenu-qt-0.9.2/build-i386/tests/dbusmenuimportertest
+2: Test timeout computed to be: 9.99988e+06
+2: ********* Start testing of DBusMenuImporterTest *********
+2: Config: Using QTest library 4.8.2, Qt 4.8.2
+2: FAIL!  : DBusMenuImporterTest::initTestCase() 'QDBusConnection::sessionBus().registerService(TEST_SERVICE)' returned FALSE. ()
+2:    Loc: [/usr/ports/pobj/dbusmenu-qt-0.9.2/libdbusmenu-qt-0.9.2/tests/dbusmenuimportertest.cpp(50)]
+2: PASS   : DBusMenuImporterTest::cleanupTestCase()
+2: Totals: 1 passed, 1 failed, 0 skipped
+2: ********* Finished testing of DBusMenuImporterTest *********
+2/3 Test #2: dbusmenuimportertest .............***Failed    3.20 sec
