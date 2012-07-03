@@ -96,7 +96,7 @@
 # fat packages
      SUBDIR += admin			# test
      SUBDIR += games			# minor issues
-     SUBDIR += multimedia		# OK, but Kscd needs testing
+#RC1     SUBDIR += multimedia		# OK, but Kscd needs testing
      SUBDIR += network			# test
      SUBDIR += pim			# OK
      SUBDIR += sdk			# test
@@ -176,7 +176,7 @@
 
 # additional resources
      SUBDIR += plasma-addons		# untested
-     SUBDIR += l10n			# OK
+#RC1     SUBDIR += l10n			# OK
      SUBDIR += wallpapers		# OK
 
 .include <bsd.port.subdir.mk>
