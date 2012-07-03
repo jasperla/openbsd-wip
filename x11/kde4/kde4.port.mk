@@ -74,10 +74,10 @@ MODKDE4_CONF_ARGS =
 TAR =			${LOCALBASE}/bin/gtar
 
 # Small hack, until automoc4 will be gone
-PKGNAME ?= ${DISTNAME}
-.if !${PKGNAME:Mautomoc4-*}
-MODKDE4_BUILD_DEPENDS +=	x11/kde4/automoc
-.endif
+#PKGNAME ?= ${DISTNAME}
+#.if !${PKGNAME:Mautomoc4-*}
+#MODKDE4_BUILD_DEPENDS +=	x11/kde4/automoc
+#.endif
 
 FLAVOR ?=
 
