@@ -1,9 +1,9 @@
 $OpenBSD$
---- src/db.cpp.orig	Mon May  7 13:25:28 2012
-+++ src/db.cpp	Mon May  7 13:26:33 2012
-@@ -97,7 +97,9 @@ CDB::CDB(const char *pszFile, const char* pszMode) : p
-             dbenv.set_lk_max_objects(10000);
+--- src/db.cpp.orig	Tue Jun 19 22:44:55 2012
++++ src/db.cpp	Wed Jul  4 19:42:14 2012
+@@ -98,7 +98,9 @@ CDB::CDB(const char *pszFile, const char* pszMode) : p
              dbenv.set_errfile(fopen(pathErrorFile.string().c_str(), "a")); /// debug
+             dbenv.set_flags(DB_TXN_WRITE_NOSYNC, 1);
              dbenv.set_flags(DB_AUTO_COMMIT, 1);
 +#if DB_VERSION_MINOR > 7
              dbenv.log_set_config(DB_LOG_AUTO_REMOVE, 1);
