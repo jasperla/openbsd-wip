@@ -1,0 +1,115 @@
+$OpenBSD$
+--- os_dep.c.orig	Wed Jul  4 12:27:46 2012
++++ os_dep.c	Wed Jul  4 12:30:46 2012
+@@ -1295,22 +1295,6 @@ GC_INNER word GC_page_size = 0;
+ # define HAVE_GET_STACK_BASE
+ #endif /* GC_DARWIN_THREADS */
+ 
+-#ifdef GC_OPENBSD_THREADS
+-# include <sys/signal.h>
+-# include <pthread.h>
+-# include <pthread_np.h>
+-
+-  /* Find the stack using pthread_stackseg_np(). */
+-  GC_API int GC_CALL GC_get_stack_base(struct GC_stack_base *sb)
+-  {
+-    stack_t stack;
+-    pthread_stackseg_np(pthread_self(), &stack);
+-    sb->mem_base = stack.ss_sp;
+-    return GC_SUCCESS;
+-  }
+-# define HAVE_GET_STACK_BASE
+-#endif /* GC_OPENBSD_THREADS */
+-
+ #if defined(GC_SOLARIS_THREADS) && !defined(_STRICT_STDC)
+ 
+ # include <thread.h>
+@@ -1370,7 +1354,36 @@ GC_INNER word GC_page_size = 0;
+ # define HAVE_GET_STACK_BASE
+ #endif /* GC_RTEMS_PTHREADS */
+ 
+-#ifndef HAVE_GET_STACK_BASE
++#if defined(GC_OPENBSD_THREADS)
++
++/* Find the stack using pthread_stackseg_np() */
++
++# include <sys/signal.h>
++# include <pthread.h>
++# include <pthread_np.h>
++        
++#define HAVE_GET_STACK_BASE
++
++int GC_get_stack_base(struct GC_stack_base *sb)
++{
++    stack_t stack;
++    pthread_stackseg_np(pthread_self(), &stack);
++    sb->mem_base = stack.ss_sp;
++    return GC_SUCCESS;
++}
++
++/* This is always called from the main thread.	*/
++ptr_t GC_get_main_stack_base(void)
++{
++    struct GC_stack_base sb;
++
++    GC_get_stack_base(&sb);
++    return (ptr_t)sb.mem_base;
++}
++
++#endif /* GC_OPENBSD_THREADS */
++
++#if !defined(HAVE_GET_STACK_BASE) && !defined(GC_OPENBSD_THREADS)
+   /* Retrieve stack base.                                               */
+   /* Using the GC_find_limit version is risky.                          */
+   /* On IA64, for example, there is no guard page between the           */
+@@ -1404,7 +1417,7 @@ GC_INNER word GC_page_size = 0;
+   }
+ #endif /* !HAVE_GET_STACK_BASE */
+ 
+-#ifndef GET_MAIN_STACKBASE_SPECIAL
++#if !defined(GET_MAIN_STACKBASE_SPECIAL) && !defined(GC_OPENBSD_THREADS)
+   /* This is always called from the main thread.  Default implementation. */
+   ptr_t GC_get_main_stack_base(void)
+   {
+@@ -1932,8 +1945,33 @@ void GC_register_data_segments(void)
+ 
+ # else /* !OS2 && !Windows && !AMIGA && !OPENBSD */
+ 
++#if defined(OPENBSD)
++
++/*
++ * Depending on arch alignment there can be multiple holes
++ * between DATASTART & DATAEND. Scan from DATASTART - DATAEND
++ * and register each region.
++ */
+ void GC_register_data_segments(void)
+ {
++  ptr_t region_start, region_end;
++
++  region_start = DATASTART;
++
++  for(;;) {
++    region_end = GC_find_limit_openbsd(region_start, DATAEND);
++    GC_add_roots_inner(region_start, region_end, FALSE);
++    if (region_end < DATAEND)
++    	region_start = GC_skip_hole_openbsd(region_end, DATAEND);
++    else
++	break;
++  }
++}
++
++# else /* !OS2 && !Windows && !AMIGA && !OPENBSD */
++
++void GC_register_data_segments(void)
++{
+ #   if !defined(PCR) && !defined(MACOS)
+ #     if defined(REDIRECT_MALLOC) && defined(GC_SOLARIS_THREADS)
+         /* As of Solaris 2.3, the Solaris threads implementation        */
+@@ -1989,6 +2027,7 @@ void GC_register_data_segments(void)
+     /* change.                                                          */
+ }
+ 
++# endif  /* ! OPENBSD */
+ # endif  /* ! AMIGA */
+ # endif  /* ! MSWIN32 && ! MSWINCE*/
+ # endif  /* ! OS2 */

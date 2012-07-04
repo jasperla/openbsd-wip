@@ -1,0 +1,203 @@
+$OpenBSD$
+--- include/private/gcconfig.h.orig	Fri May 11 19:09:00 2012
++++ include/private/gcconfig.h	Wed Jul  4 13:01:52 2012
+@@ -84,11 +84,6 @@
+ # if defined(hp9000s300)
+ #    error M68K based HP machines no longer supported.
+ # endif
+-# if defined(OPENBSD) && defined(m68k)
+-     /* FIXME: Should we remove this case? */
+-#    define M68K
+-#    define mach_type_known
+-# endif
+ # if defined(OPENBSD) && defined(__sparc__)
+ #    define SPARC
+ #    define mach_type_known
+@@ -242,6 +237,10 @@
+ #    define I386
+ #    define mach_type_known
+ # endif
++# if defined(OPENBSD) && defined(__amd64__)
++#    define X86_64
++#    define mach_type_known
++# endif
+ # if defined(LINUX) && defined(__x86_64__)
+ #    define X86_64
+ #    define mach_type_known
+@@ -689,19 +688,6 @@
+ # ifdef M68K
+ #   define MACH_TYPE "M68K"
+ #   define ALIGNMENT 2
+-#   ifdef OPENBSD
+-        /* FIXME: Should we remove this case? */
+-#       define OS_TYPE "OPENBSD"
+-#       define HEURISTIC2
+-#       ifdef __ELF__
+-          extern ptr_t GC_data_start;
+-#         define DATASTART GC_data_start
+-#         define DYNAMIC_LOADING
+-#       else
+-          extern char etext[];
+-#         define DATASTART ((ptr_t)(etext))
+-#       endif
+-#   endif
+ #   ifdef NETBSD
+ #       define OS_TYPE "NETBSD"
+ #       define HEURISTIC2
+@@ -842,6 +828,8 @@
+ #   ifdef OPENBSD
+ #     define OS_TYPE "OPENBSD"
+ #     define ALIGNMENT 4
++#     define SIG_SUSPEND SIGXFSZ
++#     define SIG_THR_RESTART SIGXCPU
+ #     ifdef GC_OPENBSD_THREADS
+ #      define UTHREAD_SP_OFFSET 268
+ #     else
+@@ -1044,6 +1032,8 @@
+ #   endif
+ #   ifdef OPENBSD
+ #     define OS_TYPE "OPENBSD"
++#     define SIG_SUSPEND SIGXFSZ
++#     define SIG_THR_RESTART SIGXCPU
+ #     ifdef GC_OPENBSD_THREADS
+ #      define UTHREAD_SP_OFFSET 232
+ #     else
+@@ -1321,6 +1311,8 @@
+ #   endif
+ #   ifdef OPENBSD
+ #       define OS_TYPE "OPENBSD"
++#       define SIG_SUSPEND SIGXFSZ
++#       define SIG_THR_RESTART SIGXCPU
+ #       ifdef GC_OPENBSD_THREADS
+ #         define UTHREAD_SP_OFFSET 176
+ #       else
+@@ -1556,6 +1548,8 @@
+ #  ifdef OPENBSD
+ #    define OS_TYPE "OPENBSD"
+ #    define ALIGNMENT 4
++#     define SIG_SUSPEND SIGXFSZ
++#     define SIG_THR_RESTART SIGXCPU
+ #    ifdef GC_OPENBSD_THREADS
+ #      define UTHREAD_SP_OFFSET 808
+ #    else
+@@ -1569,6 +1563,22 @@
+ #    define DATAEND ((ptr_t)(&_end))
+ #    define DYNAMIC_LOADING
+ #  endif
++#  ifdef OPENBSD
++#	define OS_TYPE "OPENBSD"
++#       define ALIGNMENT 4
++#       define SIG_SUSPEND SIGXFSZ
++#       define SIG_THR_RESTART SIGXCPU
++#    ifndef GC_OPENBSD_THREADS
++#       include <sys/param.h>
++#       include <uvm/uvm_extern.h>
++#       define STACKBOTTOM USRSTACK
++#    endif
++        extern int _fdata[];
++#       define DATASTART ((ptr_t)(_fdata))
++        extern char _end[];
++#       define DATAEND ((ptr_t)(&_end))
++#       define DYNAMIC_LOADING
++#  endif
+ #  if defined(NONSTOP)
+ #    define CPP_WORDSZ 32
+ #    define OS_TYPE "NONSTOP"
+@@ -1634,6 +1644,8 @@
+ #   endif /* LINUX */
+ #  ifdef OPENBSD
+ #     define OS_TYPE "OPENBSD"
++#     define SIG_SUSPEND SIGXFSZ
++#     define SIG_THR_RESTART SIGXCPU
+ #     ifdef GC_OPENBSD_THREADS
+ #       define UTHREAD_SP_OFFSET 520
+ #     else
+@@ -1665,6 +1677,8 @@
+ #   endif
+ #   ifdef OPENBSD
+ #       define OS_TYPE "OPENBSD"
++#      define SIG_SUSPEND SIGXFSZ
++#      define SIG_THR_RESTART SIGXCPU
+ #       define ELF_CLASS ELFCLASS64
+ #       ifdef GC_OPENBSD_THREADS
+ #         define UTHREAD_SP_OFFSET 816
+@@ -1846,6 +1860,7 @@
+ #   ifdef CX_UX
+ #       define OS_TYPE "CX_UX"
+ #       define DATASTART ((((word)etext + 0x3fffff) & ~0x3fffff) + 0x10000)
++#       define STACKBOTTOM ((char*)0xf0000000) /* determined empirically */
+ #   endif
+ #   ifdef  DGUX
+ #       define OS_TYPE "DGUX"
+@@ -1973,6 +1988,8 @@
+ #   ifdef OPENBSD
+ #     define ALIGNMENT 4
+ #     define OS_TYPE "OPENBSD"
++#     define SIG_SUSPEND SIGXFSZ
++#     define SIG_THR_RESTART SIGXCPU
+ #     ifdef GC_OPENBSD_THREADS
+ #       define UTHREAD_SP_OFFSET 176
+ #     else
+@@ -1986,6 +2003,22 @@
+ #     define DATAEND ((ptr_t)(&_end))
+ #     define DYNAMIC_LOADING
+ #   endif
++#   ifdef OPENBSD
++#     define ALIGNMENT 4
++#     define OS_TYPE "OPENBSD"
++#     define SIG_SUSPEND SIGXFSZ
++#     define SIG_THR_RESTART SIGXCPU
++#    ifndef GC_OPENBSD_THREADS
++#       include <sys/param.h>
++#       include <uvm/uvm_extern.h>
++#       define STACKBOTTOM USRSTACK
++#    endif
++        extern int __data_start[];
++#       define DATASTART ((ptr_t)(__data_start))
++        extern char _end[];
++#       define DATAEND ((ptr_t)(&_end))
++#       define DYNAMIC_LOADING
++#   endif
+ #   ifdef NOSYS
+       /* __data_start is usually defined in the target linker script.  */
+       extern int __data_start[];
+@@ -2032,6 +2065,8 @@
+ #   endif
+ #   ifdef OPENBSD
+ #      define OS_TYPE "OPENBSD"
++#     define SIG_SUSPEND SIGXFSZ
++#     define SIG_THR_RESTART SIGXCPU
+ #      ifdef GC_OPENBSD_THREADS
+ #        define UTHREAD_SP_OFFSET 332
+ #      else
+@@ -2045,6 +2080,21 @@
+ #      define DATAEND ((ptr_t)(&_end))
+ #      define DYNAMIC_LOADING
+ #   endif
++#   ifdef OPENBSD
++#	define OS_TYPE "OPENBSD"
++#       define SIG_SUSPEND SIGXFSZ
++#       define SIG_THR_RESTART SIGXCPU
++#    ifndef GC_OPENBSD_THREADS
++#       include <sys/param.h>
++#       include <uvm/uvm_extern.h>
++#       define STACKBOTTOM USRSTACK
++#    endif
++        extern int __data_start[];
++#       define DATASTART ((ptr_t)(__data_start))
++        extern char _end[];
++#       define DATAEND ((ptr_t)(&_end))
++#       define DYNAMIC_LOADING
++#   endif
+ # endif
+ 
+ # ifdef SH4
+@@ -2098,6 +2148,8 @@
+ #   define CACHE_LINE_SIZE 64
+ #   ifdef OPENBSD
+ #       define OS_TYPE "OPENBSD"
++#       define SIG_SUSPEND SIGXFSZ
++#       define SIG_THR_RESTART SIGXCPU
+ #       define ELF_CLASS ELFCLASS64
+ #       ifdef GC_OPENBSD_THREADS
+ #         define UTHREAD_SP_OFFSET 400
