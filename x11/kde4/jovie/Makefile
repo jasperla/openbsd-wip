@@ -12,6 +12,5 @@ WANTLIB += kparts kprintutils kutils nepomuk nepomukutils soprano
 WANTLIB += speechd
 
 LIB_DEPENDS =	audio/speech-dispatcher
-RUN_DEPENDS =	x11/gtk+2,-guic
 
 .include <bsd.port.mk>

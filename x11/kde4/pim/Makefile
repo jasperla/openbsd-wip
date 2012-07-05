@@ -77,7 +77,6 @@ BUILD_DEPENDS =	devel/boost \
 		x11/kde4/akonadi \
 
 LIB_DEPENDS =	x11/grantlee
-RUN_DEPENDS +=	x11/gtk+2,-guic
 
 WRONG_SYSCONF_FILES =	dbus-1	share/examples
 

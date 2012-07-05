@@ -17,8 +17,6 @@ LIB_DEPENDS = 	x11/kde4/libkipi \
 		graphics/lcms \
 		graphics/jpeg
 
-RUN_DEPENDS = 	x11/gtk+2,-guic
-
 CONFIGURE_ARGS =	-DWITH_OpenMP:Bool=FALSE
 
 .include <bsd.port.mk>

@@ -10,5 +10,3 @@ lib/pkgconfig/libksane.pc
 share/icons/hicolor/16x16/actions/black-white.png
 share/icons/hicolor/16x16/actions/color.png
 share/icons/hicolor/16x16/actions/gray-scale.png
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true

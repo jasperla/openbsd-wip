@@ -31,8 +31,7 @@ BUILD_DEPENDS =	archivers/bzip2 \
 
 RUN_DEPENDS =	archivers/bzip2 \
 		archivers/xz \
-		devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		devel/desktop-file-utils
 
 LIB_DEPENDS =	audio/libcanberra \
 		audio/pulseaudio \

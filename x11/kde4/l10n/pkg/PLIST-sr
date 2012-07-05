@@ -1852,8 +1852,6 @@ share/locale/sr/LC_SCRIPTS/kdelibs4/trapnakron.pmapc
 share/locale/sr/LC_SCRIPTS/kfontinst/
 share/locale/sr/LC_SCRIPTS/kfontinst/kfontinst.js
 share/locale/sr/entry.desktop
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/oxygen 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/oxygen 2>/dev/null || true
 share/locale/sr@ijekavian/
 share/locale/sr@ijekavian/LC_MESSAGES/
 share/locale/sr@ijekavian/LC_MESSAGES/accountwizard.mo

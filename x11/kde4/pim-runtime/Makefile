@@ -33,6 +33,4 @@ LIB_DEPENDS =		databases/soprano \
 			multimedia/phonon \
 			x11/kde4/akonadi
 
-RUN_DEPENDS +=		x11/gtk+2,-guic
-
 .include <bsd.port.mk>

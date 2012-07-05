@@ -74,8 +74,7 @@ RUN_DEPENDS =	misc/shared-mime-info \
 		net/avahi \
 		sysutils/gamin \
 		STEM->=${MODKDE4_VERSION}:x11/kde4/oxygen-icons \
-		x11/dbus \
-		x11/gtk+2,-guic
+		x11/dbus
 
 LIB_DEPENDS =	audio/pulseaudio \
 		archivers/bzip2 \
