@@ -1224,3 +1224,13 @@ share/ontology/kde/messagetag.trig
 share/polkit-1/actions/org.kde.kalarmrtcwake.policy
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q %D/share/apps/kalarm/icons/oxygen 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/apps/kalarm/icons/oxygen 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/apps/korgac/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/apps/korgac/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/apps/ktimetracker/icons/oxygen 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/apps/ktimetracker/icons/oxygen 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/oxygen 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/oxygen 2>/dev/null || true

@@ -6864,3 +6864,5 @@ share/icons/oxygen/8x8/emblems/vcs-normal.png
 share/icons/oxygen/8x8/emblems/vcs-removed.png
 share/icons/oxygen/8x8/emblems/vcs-update-required.png
 share/icons/oxygen/index.theme
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/oxygen 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/oxygen 2>/dev/null || true

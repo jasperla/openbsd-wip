@@ -2123,3 +2123,31 @@ share/wallpapers/stripes.png
 share/wallpapers/stripes.png.desktop
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q %D/share/apps/kfontinst/icons/oxygen 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/apps/kfontinst/icons/oxygen 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/apps/kmenuedit/icons/oxygen 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/apps/kmenuedit/icons/oxygen 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/Oxygen_Black 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/Oxygen_Black 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/Oxygen_Black/cursors 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/Oxygen_Black/cursors 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/Oxygen_Blue 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/Oxygen_Blue 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/Oxygen_Blue/cursors 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/Oxygen_Blue/cursors 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/Oxygen_White 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/Oxygen_White 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/Oxygen_White/cursors 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/Oxygen_White/cursors 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/Oxygen_Yellow 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/Oxygen_Yellow 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/Oxygen_Yellow/cursors 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/Oxygen_Yellow/cursors 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/Oxygen_Zion 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/Oxygen_Zion 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/Oxygen_Zion/cursors 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/Oxygen_Zion/cursors 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/oxygen 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/oxygen 2>/dev/null || true

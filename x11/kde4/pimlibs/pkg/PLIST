@@ -1288,3 +1288,5 @@ share/mime/packages/kdepimlibs-mime.xml
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
+@exec %D/bin/gtk-update-icon-cache -q %D/share/apps/akonadi/contact/icons/oxygen 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/apps/akonadi/contact/icons/oxygen 2>/dev/null || true

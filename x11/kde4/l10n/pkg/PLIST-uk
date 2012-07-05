@@ -2755,3 +2755,5 @@ share/locale/uk/LC_SCRIPTS/kgeography/
 share/locale/uk/LC_SCRIPTS/kgeography/general.pmap
 share/locale/uk/LC_SCRIPTS/kgeography/kgeography.js
 share/locale/uk/entry.desktop
+@exec %D/bin/gtk-update-icon-cache -q %D/share/doc/HTML/uk/kcontrol/icons 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/doc/HTML/uk/kcontrol/icons 2>/dev/null || true
