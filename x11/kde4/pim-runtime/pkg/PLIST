@@ -220,3 +220,5 @@ share/mime/packages/kdepim-mime.xml
 share/ontology/kde/
 share/ontology/kde/aneo.ontology
 share/ontology/kde/aneo.trig
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
