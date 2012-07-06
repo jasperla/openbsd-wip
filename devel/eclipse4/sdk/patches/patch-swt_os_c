@@ -1,0 +1,27 @@
+$OpenBSD$
+--- swt/os.c.orig	Tue Jun  5 19:51:16 2012
++++ swt/os.c	Fri Jul  6 13:33:29 2012
+@@ -17,6 +17,10 @@
+ #include "os_structs.h"
+ #include "os_stats.h"
+ 
++#include <fontconfig/fontconfig.h>
++#include <gtk/gtkunixprint.h>
++#include <gio/gdesktopappinfo.h>
++
+ #ifndef OS_NATIVE
+ #define OS_NATIVE(func) Java_org_eclipse_swt_internal_gtk_OS_##func
+ #endif
+@@ -18994,10 +18998,12 @@ JNIEXPORT jintLong JNICALL OS_NATIVE(_1ubuntu_1menu_1p
+ 	rc = (jintLong)ubuntu_menu_proxy_get();
+ */
+ 	{
++#ifndef __OpenBSD__
+ 		OS_LOAD_FUNCTION(fp, ubuntu_menu_proxy_get)
+ 		if (fp) {
+ 			rc = (jintLong)((jintLong (CALLING_CONVENTION*)())fp)();
+ 		}
++#endif
+ 	}
+ 	OS_NATIVE_EXIT(env, that, _1ubuntu_1menu_1proxy_1get_FUNC);
+ 	return rc;

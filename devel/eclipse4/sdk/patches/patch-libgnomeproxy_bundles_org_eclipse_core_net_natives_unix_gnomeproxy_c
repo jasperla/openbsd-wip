@@ -1,0 +1,11 @@
+$OpenBSD$
+--- libgnomeproxy/bundles/org.eclipse.core.net/natives/unix/gnomeproxy.c.orig	Fri May  4 10:45:07 2012
++++ libgnomeproxy/bundles/org.eclipse.core.net/natives/unix/gnomeproxy.c	Fri May  4 11:30:42 2012
+@@ -13,7 +13,6 @@
+ #include <jni.h>
+ 
+ #include <glib.h>
+-#include <glib/gslist.h>
+ #include <gconf/gconf-value.h>
+ #include <gconf/gconf-client.h>
+ 
