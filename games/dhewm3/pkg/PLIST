@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+%%SHARED%%
 @bin bin/dhewm3
-share/examples/dhewm3/
-share/examples/dhewm3/default.cfg
+share/dhewm3/
+share/dhewm3/base/
