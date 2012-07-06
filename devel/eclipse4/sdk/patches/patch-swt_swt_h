@@ -1,0 +1,14 @@
+$OpenBSD$
+--- swt/swt.h.orig	Wed Feb  1 15:39:40 2012
++++ swt/swt.h	Fri May  4 11:30:42 2012
+@@ -117,6 +117,10 @@ extern int IS_JNI_1_2;
+ 			if (hm) var = GetProcAddress(hm, #name); \
+ 			initialized = 1; \
+ 		}
++#elif defined(__OpenBSD__)
++#define CALLING_CONVENTION
++#define LOAD_FUNCTION(var, name) \
++		void (* const (var))() = (void (*)())&(name);
+ #else
+ #define CALLING_CONVENTION
+ #ifdef AIX

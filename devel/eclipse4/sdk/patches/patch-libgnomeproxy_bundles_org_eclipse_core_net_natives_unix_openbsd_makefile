@@ -1,0 +1,21 @@
+$OpenBSD$
+--- libgnomeproxy/bundles/org.eclipse.core.net/natives/unix/openbsd/makefile.orig	Fri May  4 11:30:42 2012
++++ libgnomeproxy/bundles/org.eclipse.core.net/natives/unix/openbsd/makefile	Fri May  4 11:30:42 2012
+@@ -18,13 +18,12 @@ GNOMEPROXY.O = gnomeproxy.o
+ LIB_NAME = gnomeproxy.so
+ LIB_NAME_FULL = libgnomeproxy-1.0.0.so
+ 
+-OS_TYPE = linux
++OS_TYPE = openbsd
+ JDK_INCLUDE = -I${JAVA_HOME}/include -I${JAVA_HOME}/include/${OS_TYPE}
+-INCLUDE = -I/usr/include/gconf/2/ -I/usr/include/orbit-2.0/ -I/usr/include/glib-2.0/ -I/usr/lib/glib-2.0/include/
+-COMPILER_FLAGS = -O0 -fPIC -g3 -Wall -c -fmessage-length=0 -m32
++INCLUDE = `pkg-config --cflags gconf-2.0`
++COMPILER_FLAGS = -O0 -fPIC -g3 -Wall -c -fmessage-length=0
+ 
+-LIBS := -lgconf-2 -lORBit-2 -lgthread-2.0 -lrt -lgobject-2.0 -lglib-2.0
+-LINKER_FLAGS= -m32
++LIBS := `pkg-config --libs gconf-2.0`
+ 
+ all: link
+ 
