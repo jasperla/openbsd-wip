@@ -1,13 +1,12 @@
 $OpenBSD$
---- sshprocess.h.orig	Wed Apr  4 11:55:02 2012
-+++ sshprocess.h	Thu Apr  5 15:25:13 2012
-@@ -24,6 +24,9 @@
+--- sshprocess.h.orig	Sat Jul  7 22:35:45 2012
++++ sshprocess.h	Sat Jul  7 22:35:42 2012
+@@ -23,6 +23,8 @@
+ #define SSHPROCESS_H
  
  #include <libssh/libssh.h>
- #include <QObject>
 +#include <sys/types.h>
 +#include <sys/socket.h>
-+#include <netinet/in.h>
+ #include <QObject>
  
  #ifndef Q_OS_WIN
- #include <netinet/in.h>
