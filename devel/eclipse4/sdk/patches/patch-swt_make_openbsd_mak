@@ -1,0 +1,111 @@
+$OpenBSD$
+--- swt/make_openbsd.mak.orig	Fri Jul  6 13:10:09 2012
++++ swt/make_openbsd.mak	Fri Jul  6 13:33:37 2012
+@@ -9,7 +9,7 @@
+ #     IBM Corporation - initial API and implementation
+ #*******************************************************************************
+ 
+-# Makefile for creating SWT libraries for Linux GTK
++# Makefile for creating SWT libraries for OpenBSD GTK
+ 
+ include make_common.mak
+ 
+@@ -44,24 +44,27 @@ WEBKIT_LIB = lib$(WEBKIT_PREFIX)-$(WS_PREFIX)-$(SWT_VE
+ GLX_LIB = lib$(GLX_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
+ 
+ CAIROCFLAGS = `pkg-config --cflags cairo`
+-CAIROLIBS = `pkg-config --libs-only-L cairo` -lcairo
++CAIROLIBS = `pkg-config --libs cairo`
+ 
+ # Do not use pkg-config to get libs because it includes unnecessary dependencies (i.e. pangoxft-1.0)
+-GTKCFLAGS = `pkg-config --cflags gtk+-2.0`
+-GTKLIBS = `pkg-config --libs-only-L gtk+-2.0 gthread-2.0` $(XLIB64) -L/usr/X11R6/lib -lgtk-x11-2.0 -lgthread-2.0 -lXtst
++GTK_PKGS = gtk+-2.0 gtk+-unix-print-2.0 xtst
++GTKCFLAGS = `pkg-config --cflags $(GTK_PKGS)`
++GTKLIBS = `pkg-config --libs $(GTK_PKGS)`
+ 
+ CDE_LIBS = -L$(CDE_HOME)/lib -R$(CDE_HOME)/lib -lXt -lX11 -lDtSvc
+ 
++AWT_LIB_PATH =	$(JAVA_HOME)/jre/lib/$(MACHINE_ARCH)
+ AWT_LFLAGS = -shared ${SWT_LFLAGS} 
+-AWT_LIBS = -L$(AWT_LIB_PATH) -ljawt
++AWT_LIBS = -L$(AWT_LIB_PATH) -R$(AWT_LIB_PATH) -ljawt `pkg-config --libs x11`
+ 
+ ATKCFLAGS = `pkg-config --cflags atk gtk+-2.0`
+-ATKLIBS = `pkg-config --libs-only-L atk gtk+-2.0` -latk-1.0 -lgtk-x11-2.0
++ATKLIBS = `pkg-config --libs atk gtk+-2.0`
+ 
+ GNOMECFLAGS = `pkg-config --cflags gnome-vfs-module-2.0 libgnome-2.0 libgnomeui-2.0`
+-GNOMELIBS = `pkg-config --libs-only-L gnome-vfs-module-2.0 libgnome-2.0 libgnomeui-2.0` -lgnomevfs-2 -lgnome-2 -lgnomeui-2
++GNOMELIBS = `pkg-config --libs gnome-vfs-module-2.0 libgnome-2.0 libgnomeui-2.0`
+ 
+-GLXLIBS = -lGL -lGLU -lm
++GLXCFLAGS = -I/usr/X11R6/include
++GLXLIBS = -L/usr/X11R6/lib -lGL -lGLU -lm
+ 
+ # Uncomment for Native Stats tool
+ #NATIVE_STATS = -DNATIVE_STATS
+@@ -77,7 +80,7 @@ MOZILLACFLAGS = -O \
+ 	-fPIC \
+ 	-I. \
+ 	-I$(JAVA_HOME)/include \
+-	-I$(JAVA_HOME)/include/linux \
++	-I$(JAVA_HOME)/include/openbsd \
+ 	${SWT_PTR_CFLAGS}
+ MOZILLALFLAGS = -shared -Wl,--version-script=mozilla_exports -Bsymbolic
+ MOZILLAEXCLUDES = -DNO__1XPCOMGlueShutdown \
+@@ -91,8 +94,15 @@ MOZILLAEXCLUDES = -DNO__1XPCOMGlueShutdown \
+ 	-DNO_nsDynamicFunctionLoad
+ XULRUNNEREXCLUDES = -DNO__1NS_1InitXPCOM2
+ 
+-WEBKITCFLAGS = `pkg-config --cflags glib-2.0`
++MOZILLA_INCLUDES = `pkg-config --cflags libxul19`
++MOZILLA_LIBS = `pkg-config --libs libxul19`
+ 
++XULRUNNER_INCLUDES = `pkg-config --cflags libxul19-embedding nspr`
++XULRUNNER_LIBS = `pkg-config --libs libxul19-embedding`
++
++WEBKITCFLAGS = `pkg-config --cflags webkit-1.0`
++WEBKIT_LIBS = `pkg-config --libs webkit-1.0`
++
+ SWT_OBJECTS = swt.o c.o c_stats.o callback.o
+ CDE_OBJECTS = swt.o cde.o cde_structs.o cde_stats.o
+ AWT_OBJECTS = swt_awt.o
+@@ -109,12 +119,16 @@ GLX_OBJECTS = swt.o glx.o glx_structs.o glx_stats.o
+ CFLAGS = -O -Wall \
+ 		-DSWT_VERSION=$(SWT_VERSION) \
+ 		$(NATIVE_STATS) \
+-		-DLINUX -DGTK \
++		-DOPENBSD -DGTK \
+ 		-I$(JAVA_HOME)/include \
+-		-I$(JAVA_HOME)/include/linux \
++		-I$(JAVA_HOME)/include/openbsd \
+ 		-fPIC \
+-		${SWT_PTR_CFLAGS}
+-LFLAGS = -shared -fPIC ${SWT_LFLAGS}
++		${SWT_PTR_CFLAGS} \
++		-I/usr/X11R6/include \
++		-I/usr/local/include
++LFLAGS = -shared -fPIC ${SWT_LFLAGS} \
++		-L/usr/X11R6/lib \
++		-L/usr/local/lib
+ 
+ ifndef NO_STRIP
+ 	AWT_LFLAGS := $(AWT_LFLAGS) -s
+@@ -241,7 +255,6 @@ xpcom_stats.o: xpcom_stats.cpp
+ make_xulrunner:$(XULRUNNER_LIB)
+ 
+ $(XULRUNNER_LIB): $(XULRUNNER_OBJECTS)
+-	echo -e "#include<stdlib.h>\nsize_t je_malloc_usable_size_in_advance(size_t n) {\nreturn n;\n}" | gcc --shared -xc - -o libswt-xulrunner-fix.so
+ 	$(CXX) -o $(XULRUNNER_LIB) $(XULRUNNER_OBJECTS) $(MOZILLALFLAGS) ${XULRUNNER_LIBS}
+ 
+ xpcomxul.o: xpcom.cpp
+@@ -279,7 +292,7 @@ xpcominit_stats.o: xpcominit_stats.cpp
+ make_webkit: $(WEBKIT_LIB)
+ 
+ $(WEBKIT_LIB): $(WEBKIT_OBJECTS)
+-	$(CC) $(LFLAGS) -o $(WEBKIT_LIB) $(WEBKIT_OBJECTS)
++	$(CC) $(LFLAGS) -o $(WEBKIT_LIB) $(WEBKIT_OBJECTS) ${WEBKIT_LIBS}
+ 
+ webkit.o: webkitgtk.c 
+ 	$(CC) $(CFLAGS) $(WEBKITCFLAGS) -c webkitgtk.c -o webkit.o

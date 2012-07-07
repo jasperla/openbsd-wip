@@ -8,6 +8,7 @@ COMMENT-main=		library of programming functions for real time cv
 COMMENT-docs=		documentation for OpenCV
 
 V=			2.4.1
+REVISION=		2
 DISTNAME=		OpenCV-$V
 PKGNAME-main=		opencv-$V
 PKGNAME-docs=		opencv-docs-$V
@@ -62,8 +63,6 @@ MODULES=		devel/cmake \
 
 MULTI_PACKAGES=		-main -docs
 
-SEPARATE_BUILD=		Yes
-CONFIGURE_STYLE=	cmake
 LIB_DEPENDS-main=	multimedia/gstreamer-0.10/plugins-base \
 			x11/gtk+2 \
 			graphics/ffmpeg \
@@ -105,6 +104,24 @@ post-configure:
 		perl -pi -e 's/(CXX_DEFINES =).*/$1/' {} \;
 
 post-install:
-	@cd ${PREFIX} && mv share/OpenCV/* share/opencv
+	@cd ${PREFIX} && mv -f share/OpenCV/* share/opencv
+	@perl -pi -e 's,libopencv_calib3d.so,libopencv_calib3d.so.${LIBopencv_calib3d_VERSION},g;' \
+		-e 's,libopencv_contrib.so,libopencv_contrib.so.${LIBopencv_contrib_VERSION},g;' \
+		-e 's,libopencv_core.so,libopencv_core.so.${LIBopencv_core_VERSION},g;' \
+		-e 's,libopencv_features2d.so,libopencv_features2d.so.${LIBopencv_features2d_VERSION},g;' \
+		-e 's,libopencv_flann.so,libopencv_flann.so.${LIBopencv_flann_VERSION},g;' \
+		-e 's,libopencv_gpu.so,libopencv_gpu.so.${LIBopencv_gpu_VERSION},g;' \
+		-e 's,libopencv_highgui.so,libopencv_highgui.so.${LIBopencv_highgui_VERSION},g;' \
+		-e 's,libopencv_imgproc.so,libopencv_imgproc.so.${LIBopencv_imgproc_VERSION},g;' \
+		-e 's,libopencv_legacy.so,libopencv_legacy.so.${LIBopencv_legacy_VERSION},g;' \
+		-e 's,libopencv_ml.so,libopencv_ml.so.${LIBopencv_ml_VERSION},g;' \
+		-e 's,libopencv_objdetect.so,libopencv_objdetect.so.${LIBopencv_objdetect_VERSION},g;' \
+		-e 's,libopencv_ts.so,libopencv_ts.so.${LIBopencv_ts_VERSION},g;' \
+		-e 's,libopencv_video.so,libopencv_video.so.${LIBopencv_video_VERSION},g;' \
+		-e 's,libopencv_nonfree.so,libopencv_nonfree.so.${LIBopencv_nonfree_VERSION},g;' \
+		-e 's,libopencv_photo.so,libopencv_photo.so.${LIBopencv_photo_VERSION},g;' \
+		-e 's,libopencv_stitching.so,libopencv_stitching.so.${LIBopencv_stitching_VERSION},g;' \
+		-e 's,libopencv_videostab.so,libopencv_videostab.so.${LIBopencv_videostab_VERSION},g;' \
+		${PREFIX}/share/opencv/OpenCVConfig.cmake
 
 .include <bsd.port.mk>

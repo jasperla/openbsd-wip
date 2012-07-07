@@ -4,7 +4,6 @@ COMMENT =	K Desktop Environment, KDE4 bindings for Perl
 DISTNAME =	perlkde-${MODKDE_VERSION}
 PKGNAME =	p5-kde-${MODKDE_VERSION}
 
-
 WANTLIB =  c m perl stdc++ util
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtOpenGL lib/qt4/QtSql lib/qt4/QtSvg lib/qt4/QtXml

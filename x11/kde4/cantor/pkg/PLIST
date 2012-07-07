@@ -129,3 +129,5 @@ share/kde4/servicetypes/cantor_backend.desktop
 share/kde4/servicetypes/cantor_panelplugin.desktop
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true

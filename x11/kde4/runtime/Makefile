@@ -2,14 +2,14 @@
 
 COMMENT =	K Desktop Environment, base runtime
 DISTNAME =	kde-runtime-${MODKDE_VERSION}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	kwalletbackend 		0.0	# 4.7
 SHARED_LIBS +=	molletnetwork 		0.0	# 4.7
 SHARED_LIBS +=	nepomuksync 		4.7	# 4.7
 SHARED_LIBS +=	nepomukdatamanagement 	0.0	# 4.8
 
-WANTLIB += Half ICE Iex IlmImf IlmThread Imath
+WANTLIB =  Half ICE Iex IlmImf IlmThread Imath
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml SM X11 Xcursor
@@ -24,12 +24,14 @@ WANTLIB += glib-2.0 pulse pulse-mainloop-glib
 MODKDE4_USE =	libs
 
 BUILD_DEPENDS =	archivers/bzip2 \
-		archivers/xz
+		archivers/xz \
+		devel/doxygen \
+		textproc/docbook \
+		textproc/docbook-xsl
 
 RUN_DEPENDS =	archivers/bzip2 \
 		archivers/xz \
-		devel/desktop-file-utils \
-		x11/gtk+2,-guic
+		devel/desktop-file-utils
 
 LIB_DEPENDS =	audio/libcanberra \
 		audio/pulseaudio \
@@ -42,7 +44,6 @@ LIB_DEPENDS =	audio/libcanberra \
 		security/libssh \
 		x11/kde4/attica
 
-# PulseAudio is fully workable according to robert@, test it out.
 # QNtrack depends on libnl, Linux-specific library.
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_ALSA:Bool=TRUE \
 			-DCMAKE_DISABLE_FIND_PACKAGE_OpenSLP:Bool=TRUE \

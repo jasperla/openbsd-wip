@@ -1,4 +1,0 @@
-libgeier is a library to send gathered tax declarations data to the
-German inland revenue offices (using the Elster2/Coala-approach). It
-is capable of validating, encrypting, digitally signing, and sending
-the data, which has to becsupplied as an XML tree. 

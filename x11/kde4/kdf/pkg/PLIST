@@ -32,3 +32,7 @@ share/icons/oxygen/16x16/apps/kcmdf.png
 share/icons/oxygen/22x22/apps/kcmdf.png
 share/icons/oxygen/32x32/apps/kcmdf.png
 share/kde4/services/kcmdf.desktop
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/oxygen 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/oxygen 2>/dev/null || true
