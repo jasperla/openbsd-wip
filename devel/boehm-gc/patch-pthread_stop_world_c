@@ -1,0 +1,177 @@
+$OpenBSD$
+--- pthread_stop_world.c.orig	Fri May 11 19:09:00 2012
++++ pthread_stop_world.c	Wed Jul  4 13:08:33 2012
+@@ -17,6 +17,10 @@
+ 
+ #include "private/pthread_support.h"
+ 
++#ifdef GC_OPENBSD_THREADS
++#include <sys/errno.h>
++#endif
++
+ #if defined(GC_PTHREADS) && !defined(GC_WIN32_THREADS) && \
+     !defined(GC_DARWIN_THREADS)
+ 
+@@ -35,7 +39,7 @@ GC_INNER __thread GC_thread GC_nacl_gc_thread_self = N
+ int GC_nacl_thread_parked[MAX_NACL_GC_THREADS];
+ int GC_nacl_thread_used[MAX_NACL_GC_THREADS];
+ 
+-#elif !defined(GC_OPENBSD_THREADS)
++#else
+ 
+ #include <signal.h>
+ #include <semaphore.h>
+@@ -218,6 +222,7 @@ STATIC void GC_suspend_handler_inner(ptr_t sig_arg, vo
+   /* of a thread which holds the allocation lock in order       */
+   /* to stop the world.  Thus concurrent modification of the    */
+   /* data structure is impossible.                              */
++#ifndef GC_OPENBSD_THREADS
+   if (me -> stop_info.last_stop_count == my_stop_count) {
+       /* Duplicate signal.  OK if we are retrying.      */
+       if (!GC_retry_signals) {
+@@ -226,6 +231,7 @@ STATIC void GC_suspend_handler_inner(ptr_t sig_arg, vo
+       RESTORE_CANCEL(cancel_state);
+       return;
+   }
++#endif
+ # ifdef SPARC
+       me -> stop_info.stack_ptr = GC_save_regs_in_stack();
+ # else
+@@ -239,8 +245,9 @@ STATIC void GC_suspend_handler_inner(ptr_t sig_arg, vo
+   /* thread has been stopped.  Note that sem_post() is          */
+   /* the only async-signal-safe primitive in LinuxThreads.      */
+   sem_post(&GC_suspend_ack_sem);
++#ifndef GC_OPENBSD_THREADS
+   me -> stop_info.last_stop_count = my_stop_count;
+-
++#endif
+   /* Wait until that thread tells us to restart by sending      */
+   /* this thread a SIG_THR_RESTART signal.                      */
+   /* SIG_THR_RESTART should be masked at this point.  Thus      */
+@@ -298,7 +305,7 @@ STATIC void GC_restart_handler(int sig)
+ # endif
+ }
+ 
+-#endif /* !GC_OPENBSD_THREADS && !NACL */
++#endif /* !NACL */
+ 
+ #ifdef IA64
+ # define IF_IA64(x) x
+@@ -422,9 +429,7 @@ STATIC int GC_suspend_all(void)
+ 
+ # ifndef NACL
+     GC_thread p;
+-#   ifndef GC_OPENBSD_THREADS
+-      int result;
+-#   endif
++    int result;
+     pthread_t self = pthread_self();
+ 
+ #   ifdef DEBUG_THREADS
+@@ -436,26 +441,15 @@ STATIC int GC_suspend_all(void)
+         if (!THREAD_EQUAL(p -> id, self)) {
+             if (p -> flags & FINISHED) continue;
+             if (p -> thread_blocked) /* Will wait */ continue;
+-#           ifndef GC_OPENBSD_THREADS
+-              if (p -> stop_info.last_stop_count == GC_stop_count) continue;
+-              n_live_threads++;
+-#           endif
++#ifndef GC_OPENBSD_THREADS
++            if (p -> stop_info.last_stop_count == GC_stop_count) continue;
++#endif
++            n_live_threads++;
+ #           ifdef DEBUG_THREADS
+               GC_log_printf("Sending suspend signal to 0x%x\n",
+                             (unsigned)(p -> id));
+ #           endif
+ 
+-#           ifdef GC_OPENBSD_THREADS
+-              if (pthread_suspend_np(p -> id) != 0)
+-                ABORT("pthread_suspend_np failed");
+-              /* This will only work for userland pthreads.  It will    */
+-              /* fail badly on rthreads.  Perhaps we should consider    */
+-              /* a pthread_sp_np() function that returns the stack      */
+-              /* pointer for a suspended thread and implement in both   */
+-              /* pthreads and rthreads.                                 */
+-              p -> stop_info.stack_ptr =
+-                        *(ptr_t *)((char *)p -> id + UTHREAD_SP_OFFSET);
+-#           else
+ #             ifndef PLATFORM_ANDROID
+                 result = pthread_kill(p -> id, SIG_SUSPEND);
+ #             else
+@@ -471,7 +465,6 @@ STATIC int GC_suspend_all(void)
+                 default:
+                     ABORT("pthread_kill failed");
+               }
+-#           endif
+         }
+       }
+     }
+@@ -524,7 +517,7 @@ STATIC int GC_suspend_all(void)
+ 
+ GC_INNER void GC_stop_world(void)
+ {
+-# if !defined(GC_OPENBSD_THREADS) && !defined(NACL)
++# if !defined(NACL)
+     int i;
+     int n_live_threads;
+     int code;
+@@ -546,7 +539,7 @@ GC_INNER void GC_stop_world(void)
+     }
+ # endif /* PARALLEL_MARK */
+ 
+-# if defined(GC_OPENBSD_THREADS) || defined(NACL)
++# if defined(NACL)
+     (void)GC_suspend_all();
+ # else
+     AO_store(&GC_stop_count, GC_stop_count+1);
+@@ -738,10 +731,8 @@ GC_INNER void GC_start_world(void)
+     pthread_t self = pthread_self();
+     register int i;
+     register GC_thread p;
+-#   ifndef GC_OPENBSD_THREADS
+-      register int n_live_threads = 0;
+-      register int result;
+-#   endif
++    register int n_live_threads = 0;
++    register int result;
+ #   ifdef GC_NETBSD_THREADS_WORKAROUND
+       int code;
+ #   endif
+@@ -750,26 +741,18 @@ GC_INNER void GC_start_world(void)
+       GC_log_printf("World starting\n");
+ #   endif
+ 
+-#   ifndef GC_OPENBSD_THREADS
+-      AO_store(&GC_world_is_stopped, FALSE);
+-#   endif
++    AO_store(&GC_world_is_stopped, FALSE);
+     for (i = 0; i < THREAD_TABLE_SZ; i++) {
+       for (p = GC_threads[i]; p != 0; p = p -> next) {
+         if (!THREAD_EQUAL(p -> id, self)) {
+             if (p -> flags & FINISHED) continue;
+             if (p -> thread_blocked) continue;
+-#           ifndef GC_OPENBSD_THREADS
+-              n_live_threads++;
+-#           endif
++            n_live_threads++;
+ #           ifdef DEBUG_THREADS
+               GC_log_printf("Sending restart signal to 0x%x\n",
+                             (unsigned)(p -> id));
+ #           endif
+ 
+-#         ifdef GC_OPENBSD_THREADS
+-            if (pthread_resume_np(p -> id) != 0)
+-              ABORT("pthread_resume_np failed");
+-#         else
+ #           ifndef PLATFORM_ANDROID
+               result = pthread_kill(p -> id, SIG_THR_RESTART);
+ #           else
+@@ -785,7 +768,6 @@ GC_INNER void GC_start_world(void)
+                 default:
+                     ABORT("pthread_kill failed");
+             }
+-#         endif
+         }
+       }
+     }

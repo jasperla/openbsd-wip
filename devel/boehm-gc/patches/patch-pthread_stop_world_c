@@ -1,0 +1,25 @@
+$OpenBSD$
+--- pthread_stop_world.c.orig	Wed Jul  4 13:15:32 2012
++++ pthread_stop_world.c	Wed Jul  4 14:00:12 2012
+@@ -446,8 +446,8 @@ STATIC int GC_suspend_all(void)
+ #           endif
+ 
+ #           ifdef GC_OPENBSD_THREADS
+-              if (pthread_suspend_np(p -> id) != 0)
+-                ABORT("pthread_suspend_np failed");
++	      if (pthread_kill(p -> id, SIG_SUSPEND))
++	        ABORT("pthread_kill failed");
+               /* This will only work for userland pthreads.  It will    */
+               /* fail badly on rthreads.  Perhaps we should consider    */
+               /* a pthread_sp_np() function that returns the stack      */
+@@ -767,8 +767,8 @@ GC_INNER void GC_start_world(void)
+ #           endif
+ 
+ #         ifdef GC_OPENBSD_THREADS
+-            if (pthread_resume_np(p -> id) != 0)
+-              ABORT("pthread_resume_np failed");
++	    if (pthread_kill(p -> id, SIGCONT))
++	      ABORT("pthread_kill failed");
+ #         else
+ #           ifndef PLATFORM_ANDROID
+               result = pthread_kill(p -> id, SIG_THR_RESTART);

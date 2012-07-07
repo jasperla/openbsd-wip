@@ -2161,7 +2161,11 @@ share/sounds/KDE-Window-Shade-Up.ogg
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @exec %D/bin/gtk-update-icon-cache -q %D/share/apps/desktoptheme/default/icons 2>/dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/apps/desktoptheme/default/icons 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/doc/HTML/en/kcontrol/icons 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/doc/HTML/en/kcontrol/icons 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true

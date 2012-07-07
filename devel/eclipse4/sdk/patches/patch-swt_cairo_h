@@ -1,0 +1,12 @@
+$OpenBSD$
+--- swt/cairo.h.orig	Wed Feb  1 15:39:40 2012
++++ swt/cairo.h	Fri May  4 11:30:42 2012
+@@ -23,6 +23,8 @@
+ #define INC_cairo_H
+ 
+ #include <cairo.h>
++#include <cairo-pdf.h>
++#include <cairo-ps.h>
+ #include <cairo-xlib.h>
+ #include <string.h>
+ #include <dlfcn.h>

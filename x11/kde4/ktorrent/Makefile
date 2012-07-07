@@ -4,7 +4,7 @@ COMMENT =	K Desktop Environment, torrent client
 V =		4.2.0
 DISTNAME =	ktorrent-${V}
 HOMEPAGE =	http://ktorrent.org/
-EXTRACT_SUFX ?=	.tar.bz2
+EXTRACT_SUFX =	.tar.bz2
 
 SHARED_LIBS =	ktcore		0.0
 

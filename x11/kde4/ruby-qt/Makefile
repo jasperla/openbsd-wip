@@ -4,7 +4,6 @@ CATEGORIES =	devel lang/ruby x11/kde4
 COMMENT =	K Desktop Environment, Qt4 bindings for Ruby
 DISTNAME =	qtruby-${MODKDE_VERSION}
 PKGNAME =	ruby-qt-${MODKDE_VERSION}
-
 HOMEPAGE =	http://techbase.kde.org/Development/Languages/Ruby
 
 SHARED_LIBS =	qtruby4shared		0.0 # 2.0

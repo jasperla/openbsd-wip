@@ -1,0 +1,27 @@
+$OpenBSD$
+--- launcher/bundles/org.eclipse.equinox.executable/library/gtk/make_openbsd.mak.orig	Fri May  4 11:30:42 2012
++++ launcher/bundles/org.eclipse.equinox.executable/library/gtk/make_openbsd.mak	Fri May  4 11:30:42 2012
+@@ -42,12 +42,12 @@ DLL_OBJS	= eclipse.o eclipseGtk.o eclipseUtil.o eclips
+ EXEC = $(PROGRAM_OUTPUT)
+ DLL = $(PROGRAM_LIBRARY)
+ #LIBS = `pkg-config --libs-only-L gtk+-2.0` -lgtk-x11-2.0 -lgdk_pixbuf-2.0 -lgobject-2.0 -lgdk-x11-2.0 -lpthread -ldl -lX11
+-LIBS = -lpthread -ldl
++LIBS = -pthread
+ GTK_LIBS = -DGTK_LIB="\"libgtk-x11-2.0.so.0\"" -DGDK_LIB="\"libgdk-x11-2.0.so.0\"" -DPIXBUF_LIB="\"libgdk_pixbuf-2.0.so.0\"" -DGOBJ_LIB="\"libgobject-2.0.so.0\"" -DX11_LIB="\"libX11.so.6\""
+ LFLAGS = ${M_ARCH} -shared -fpic -Wl,--export-dynamic 
+ CFLAGS = ${M_ARCH} -g -s -Wall\
+ 	-fpic \
+-	-DLINUX \
++	-DOPENBSD \
+ 	-DMOZILLA_FIX \
+ 	-DDEFAULT_OS="\"$(DEFAULT_OS)\"" \
+ 	-DDEFAULT_OS_ARCH="\"$(DEFAULT_OS_ARCH)\"" \
+@@ -56,7 +56,7 @@ CFLAGS = ${M_ARCH} -g -s -Wall\
+ 	$(GTK_LIBS) \
+ 	-I. \
+ 	-I.. \
+-	-I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/linux \
++	-I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/openbsd \
+ 	`pkg-config --cflags gtk+-2.0`
+ 
+ all: $(EXEC) $(DLL)

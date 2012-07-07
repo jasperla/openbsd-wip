@@ -1,0 +1,12 @@
+$OpenBSD$
+--- ctypes_configure/cbuild.py.orig	Thu Jun 28 09:27:12 2012
++++ ctypes_configure/cbuild.py	Thu Jun 28 09:28:45 2012
+@@ -5,7 +5,7 @@ import distutils
+ 
+ debug = 0
+ 
+-configdir = py.path.local.make_numbered_dir(prefix='ctypes_configure-')
++configdir = os.environ.get('PYPY_CTYPES_DIR')
+ 
+ class ExternalCompilationInfo(object):
+ 

@@ -1,11 +1,10 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, office suite
-VERSION =	2.4.2
+VERSION =	2.4.3
 DISTNAME =	calligra-${VERSION}
-REVISION =	0
 PKGNAME =	${DISTNAME:C/-/4-/1}
-EXTRACT_SUFX ?=	.tar.bz2
+EXTRACT_SUFX =	.tar.bz2
 
 SHARED_LIBS =	flake			0.0 # 8.0
 SHARED_LIBS +=	kokross			0.0 # 8.0
@@ -75,8 +74,7 @@ WANTLIB += kmime crypto marblewidget ssl kdeclarative
 
 BUILD_DEPENDS =	devel/boost
 
-RUN_DEPENDS =	misc/shared-mime-info \
-		x11/gtk+2,-guic
+RUN_DEPENDS =	misc/shared-mime-info
 
 # Optional run-time dependency, does not affect build
 #RUN_DEPENDS +=	graphics/create-resources

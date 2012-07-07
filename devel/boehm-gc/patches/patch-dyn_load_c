@@ -1,0 +1,12 @@
+$OpenBSD: patch-dyn_load_c,v 1.6 2008/04/01 17:41:13 kurt Exp $
+--- dyn_load.c.orig	Wed Jul  4 11:50:24 2012
++++ dyn_load.c	Wed Jul  4 11:52:39 2012
+@@ -88,7 +88,7 @@ STATIC GC_has_static_roots_func GC_has_static_roots = 
+                              || defined(NETBSD) || defined(OPENBSD)))
+ # include <stddef.h>
+ # if !defined(OPENBSD) && !defined(PLATFORM_ANDROID)
+-    /* FIXME: Why we exclude it for OpenBSD? */
++    /* Exclude OpenBSD because elf.h doesn't exist. */
+     /* Exclude Android because linker.h below includes its own version. */
+ #   include <elf.h>
+ # endif

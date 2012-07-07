@@ -3,7 +3,6 @@
 COMMENT =	K Desktop Environment, software development kit
 DISTNAME =	kdesdk-${MODKDE_VERSION}
 
-
 SHARED_LIBS =	komparedialogpages	0.0 # 4.7
 SHARED_LIBS +=	komparediff2		0.0 # 4.7
 SHARED_LIBS +=	kompareinterface	0.0 # 4.7
@@ -15,7 +14,6 @@ SHARED_LIBS +=  kasten1okteta1core        0.0 # 0.2
 SHARED_LIBS +=  kasten1okteta1gui         0.0 # 0.2
 SHARED_LIBS +=  okteta1core               0.0 # 0.8
 SHARED_LIBS +=  okteta1gui                0.0 # 0.8
-
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDesigner

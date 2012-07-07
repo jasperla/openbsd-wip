@@ -1,0 +1,24 @@
+$OpenBSD$
+--- pypy/translator/platform/openbsd.py.orig	Thu Jun 28 11:41:52 2012
++++ pypy/translator/platform/openbsd.py	Thu Jun 28 11:44:18 2012
+@@ -15,11 +15,19 @@ def get_env_vector(key, default):
+     # XXX: handle quotes
+     return string.split()
+ 
++def append_env_vector(key, mandatory, override):
++    env_s = get_env(key, "")
++    if env_s == "":
++        string = mandatory + " " + override
++    else:
++        string = env_s + " " + mandatory
++    return string.split()
++
+ class OpenBSD(posix.BasePosix):
+     name = "openbsd"
+ 
+     link_flags = get_env_vector("LDFLAGS", '-pthread')
+-    cflags = get_env_vector("CFLAGS", "-O3 -pthread -fomit-frame-pointer -D_BSD_SOURCE")
++    cflags = append_env_vector("CFLAGS", "-pthread -fomit-frame-pointer -D_BSD_SOURCE", "-O3")
+     standalone_only = []
+     shared_only = []
+     so_ext = 'so'

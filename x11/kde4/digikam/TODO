@@ -9,11 +9,3 @@ MySQL server should be actually RUN_DEPENDS only, but it's a lot simplier to mak
 libkgeomap crashes when trying to use Google Maps. And Marble widget isn't usable (looks like, Marble bug).
 
 Crashed once when importing from directory with >7GB of different pictures.
-
----------------------------------------------------------------------------
-Build fails because camke find /usr/local/lib/libopencv_calib3d.so but we
-have /usr/local/lib/libopencv_calib3d.so.1.0.
-The same Problem with other opencv libs. Error Message:
-
-make: don't know how to make /usr/local/lib/libopencv_calib3d.so. Stop in /usr/ports/pobj/digikam4-2.6.0/build-amd64.
-*** Error code 2
