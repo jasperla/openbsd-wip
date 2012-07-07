@@ -1,5 +1,0 @@
-- At least calling clutter_init() doesn't crash somewhere deep down in
-  Mesa anymore. But another issue is left; clutter doesn't redraw the window
-  anymore. The window is still responsive, but it's not refreshed...as can be
-  seen with libchamplain-demo from openbsd-wip/geo/libchamplain or any of the
-  examples built along with clutter...
