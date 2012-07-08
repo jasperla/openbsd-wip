@@ -3,14 +3,14 @@ $OpenBSD$
 Meant to use atool (not ported yet), but bsdtar copes with many of these
 archives directly so use that instead.
 
---- ranger/data/scope.sh.orig	Mon Oct 24 00:51:28 2011
-+++ ranger/data/scope.sh	Mon Nov  7 13:48:54 2011
+--- ranger/data/scope.sh.orig	Thu May  3 18:47:39 2012
++++ ranger/data/scope.sh	Mon Jul  9 00:06:14 2012
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/ksh
  # ranger supports enhanced previews.  If the option "use_preview_script"
- # is set to True (by default it's False), this script will be called
- # and its output is displayed in ranger.  ANSI color codes are supported.
+ # is set to True and this file exists, this script will be called and its
+ # output is displayed in ranger.  ANSI color codes are supported.
 @@ -38,8 +38,8 @@ case "$extension" in
  	# Archive extensions:
  	7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|\
