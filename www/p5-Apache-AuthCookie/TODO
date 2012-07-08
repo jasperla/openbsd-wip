@@ -1,16 +1,10 @@
-After make regress.
+I have fixed problem with make regress by building as non-root user and running make regress.
+I need to decide how to deal with building and regressing for 3 possibilities:
+mod_perl 1
+mod_perl 2
+Both mod_perls at once
 
-# cat t/logs/error_log                                                                      
-[Mon Jul  2 10:39:21 2012] [notice] Initializing etag from /usr/ports/pobj/p5-Apache-AuthCookie-3.14/Apache-AuthCookie-3.14/t/logs/etag-state
-[Mon Jul  2 10:39:21 2012] [crit] (1)Operation not permitted: could not chown /usr/ports/pobj/p5-Apache-AuthCookie-3.14/Apache-AuthCookie-3.14/t/logs/etag-state
-
-Empty etag-state file (nobody:nobody) causes httpd -u to fail to start.
-
-If I run as root:
-
-/usr/sbin/httpd -u  -d /usr/ports/pobj/p5-Apache-AuthCookie-3.14/Apache-AuthCookie-3.14/t -f /usr/ports/pobj/p5-Apache-AuthCookie-3.14/Apache-AuthCookie-3.14/t/conf/httpd.conf -D APACHE1 
-
-after using make regress (or make test in pobj), httpd starts and etag-state gets values.
-make regress then passes all tests.
-
-How should I get this to happen in first place without manually stepping into regress process?
+Modules are installed for both, either way.
+Regress tests are different.
+Port FLAVORS?
+Regress options?

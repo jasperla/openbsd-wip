@@ -19,9 +19,7 @@ RUN_DEPENDS=		www/mod_perl>=1.27
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
-REGRESS_FLAGS=		APACHE_TEST_STARTUP_TIMEOUT=10 \
-			TEST_VERBOSE=1
-
+# make regress must be done as non-root user
 REGRESS_DEPENDS=	www/p5-Apache-Test
 
 .include <bsd.port.mk>
