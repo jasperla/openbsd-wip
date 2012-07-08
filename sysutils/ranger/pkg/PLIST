@@ -73,6 +73,8 @@ lib/python${MODPY_VERSION}/site-packages/ranger/ext/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/accumulator.py
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/accumulator.pyc
+lib/python${MODPY_VERSION}/site-packages/ranger/ext/cached_function.py
+lib/python${MODPY_VERSION}/site-packages/ranger/ext/cached_function.pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/curses_interrupt_handler.py
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/curses_interrupt_handler.pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/direction.py
@@ -89,6 +91,8 @@ lib/python${MODPY_VERSION}/site-packages/ranger/ext/lazy_property.py
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/lazy_property.pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/mount_path.py
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/mount_path.pyc
+lib/python${MODPY_VERSION}/site-packages/ranger/ext/next_available_filename.py
+lib/python${MODPY_VERSION}/site-packages/ranger/ext/next_available_filename.pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/openstruct.py
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/openstruct.pyc
 lib/python${MODPY_VERSION}/site-packages/ranger/ext/relative_symlink.py

@@ -2,7 +2,7 @@
 
 COMMENT =	minimalistic console file manager
 
-MODPY_EGG_VERSION = 1.5.2
+MODPY_EGG_VERSION = 1.5.4
 DISTNAME =	ranger-${MODPY_EGG_VERSION}
 
 CATEGORIES =	sysutils
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP =	 Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	 Yes
 
-MASTER_SITES =	http://git.savannah.gnu.org/cgit/ranger.git/snapshot/
+MASTER_SITES =	${HOMEPAGE}
 
 MODULES =	lang/python
 # libarchive (bsdtar) used as an alternative to atool; see scope.sh patch
