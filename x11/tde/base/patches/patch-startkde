@@ -1,0 +1,20 @@
+$OpenBSD$
+--- startkde.orig	Sat Jul  7 20:51:58 2012
++++ startkde	Sat Jul  7 20:52:48 2012
+@@ -5,6 +5,16 @@
+ 
+ echo "[startkde] Starting startkde." 1>&2
+ 
++case X"$DISPLAY" in
++X)
++	exec /usr/X11R6/bin/startx $0;;
++esac
++
++if [ -z "${XDG_MENU_PREFIX}" ] ; then
++	XDG_MENU_PREFIX="kde3-"
++	export XDG_MENU_PREFIX
++fi
++
+ # When the X server dies we get a HUP signal from xinit. We must ignore it
+ # because we still need to do some cleanup.
+ trap '[startkde] echo GOT SIGHUP' HUP

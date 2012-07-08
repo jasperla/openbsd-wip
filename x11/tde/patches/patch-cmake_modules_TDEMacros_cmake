@@ -1,0 +1,14 @@
+$OpenBSD$
+--- cmake/modules/TDEMacros.cmake.orig	Thu Oct 27 05:20:11 2011
++++ cmake/modules/TDEMacros.cmake	Sat Jul  7 20:15:55 2012
+@@ -663,8 +663,8 @@ macro( tde_add_library _arg_target )
+       get_target_property( _soversion ${_target} SOVERSION )
+ 
+       if( _version )
+-        set( _location "${_destination}/${_output}.${_version}" )
+-        set( _soname "${_output}.${_soversion}" )
++        set( _location "${_destination}/${_output}.${LIB${_arg_target}_VERSION}" )
++        set( _soname "${_output}.${LIB${_arg_target}_VERSION}" )
+       else( )
+         set( _location "${_destination}/${_output}" )
+         set( _soname "${_output}" )
