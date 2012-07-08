@@ -1,7 +1,7 @@
 $OpenBSD$
---- krunner/CMakeLists.txt.orig	Sun Oct 23 08:01:31 2011
-+++ krunner/CMakeLists.txt	Sun Oct 23 08:45:13 2011
-@@ -74,9 +74,9 @@ if(NOT WIN32)
+--- krunner/CMakeLists.txt.orig	Sun Apr 29 23:05:49 2012
++++ krunner/CMakeLists.txt	Sat Jun 30 21:11:48 2012
+@@ -80,9 +80,9 @@ if(NOT WIN32)
    target_link_libraries(kdeinit_krunner processui  ${X11_Xrender_LIB} ${X11_LIBRARIES})
  endif(NOT WIN32)
  
