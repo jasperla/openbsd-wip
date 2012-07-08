@@ -1,0 +1,1228 @@
+Script started on Mon Jun 11 23:12:00 2012
+Old mercenaries never die.  They go to hell and regroup.
+
+OpenBSD 5.1-current (GENERIC.MP) #2: Tue May 29 14:07:17 CEST 2012 amd64
+@(#)PD KSH v5.2.14 99/07/13.2
+Boomtime, day 16 in the season of Confusion, 3172.
+The Moon is Waning Crescent (46% of Full)
+Mon Jun 11 23:12:00 CEST 2012
+Stardate 65911.5
+Unix time: 1339449120
+23:12 /usr/ports/openbsd-wip/x11/tde/arts $ make
+===>  Building for arts-3.5.13
+/usr/local/bin/cmake -H/usr/ports/pobj/arts-3.5.13/dependencies/arts -B/usr/ports/pobj/arts-3.5.13/build-amd64 --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/local/bin/cmake -E cmake_progress_start /usr/ports/pobj/arts-3.5.13/build-amd64/CMakeFiles /usr/ports/pobj/arts-3.5.13/build-amd64/CMakeFiles/progress.marks
+make -f CMakeFiles/Makefile2 all
+make -f libltdl/CMakeFiles/ltdlc-static.dir/build.make libltdl/CMakeFiles/ltdlc-static.dir/depend
+cd /usr/ports/pobj/arts-3.5.13/build-amd64 && /usr/local/bin/cmake -E cmake_depends "Unix Makefiles" /usr/ports/pobj/arts-3.5.13/dependencies/arts /usr/ports/pobj/arts-3.5.13/dependencies/arts/libltdl /usr/ports/pobj/arts-3.5.13/build-amd64 /usr/ports/pobj/arts-3.5.13/build-amd64/libltdl /usr/ports/pobj/arts-3.5.13/build-amd64/libltdl/CMakeFiles/ltdlc-static.dir/DependInfo.cmake --color=
+make -f libltdl/CMakeFiles/ltdlc-static.dir/build.make libltdl/CMakeFiles/ltdlc-static.dir/build
+/usr/local/bin/cmake -E cmake_progress_report /usr/ports/pobj/arts-3.5.13/build-amd64/CMakeFiles  68
+[  1%] Built target ltdlc-static
+make -f mcop/CMakeFiles/mcop-shared.dir/build.make mcop/CMakeFiles/mcop-shared.dir/depend
+cd /usr/ports/pobj/arts-3.5.13/build-amd64 && /usr/local/bin/cmake -E cmake_depends "Unix Makefiles" /usr/ports/pobj/arts-3.5.13/dependencies/arts /usr/ports/pobj/arts-3.5.13/dependencies/arts/mcop /usr/ports/pobj/arts-3.5.13/build-amd64 /usr/ports/pobj/arts-3.5.13/build-amd64/mcop /usr/ports/pobj/arts-3.5.13/build-amd64/mcop/CMakeFiles/mcop-shared.dir/DependInfo.cmake --color=
+make -f mcop/CMakeFiles/mcop-shared.dir/build.make mcop/CMakeFiles/mcop-shared.dir/build
+Linking CXX shared library libmcop.so
+cd /usr/ports/pobj/arts-3.5.13/build-amd64/mcop && /usr/local/bin/cmake -E cmake_link_script CMakeFiles/mcop-shared.dir/link.txt --verbose=1
+/usr/ports/pobj/arts-3.5.13/bin/c++  -fPIC -pthread -I/usr/local/include  -Wl,--no-undefined -shared -Wl,-soname,libmcop.so.1.0 -o libmcop.so.1.0 CMakeFiles/mcop-shared.dir/buffer.cc.o CMakeFiles/mcop-shared.dir/connection.cc.o CMakeFiles/mcop-shared.dir/core.cc.o CMakeFiles/mcop-shared.dir/debug.cc.o CMakeFiles/mcop-shared.dir/dispatcher.cc.o CMakeFiles/mcop-shared.dir/iomanager.cc.o CMakeFiles/mcop-shared.dir/object.cc.o CMakeFiles/mcop-shared.dir/socketconnection.cc.o CMakeFiles/mcop-shared.dir/tcpconnection.cc.o CMakeFiles/mcop-shared.dir/unixconnection.cc.o CMakeFiles/mcop-shared.dir/tcpserver.cc.o CMakeFiles/mcop-shared.dir/unixserver.cc.o CMakeFiles/mcop-shared.dir/objectmanager.cc.o CMakeFiles/mcop-shared.dir/factory.cc.o CMakeFiles/mcop-shared.dir/idlfilereg.cc.o CMakeFiles/mcop-shared.dir/ifacerepo_impl.cc.o CMakeFiles/mcop-shared.dir/mcoputils.cc.o CMakeFiles/mcop-shared.dir/startupmanager.cc.o CMakeFiles/mcop-shared.dir/md5.c.o CMakeFiles/mcop-shared.dir/md5auth.cc.o CMakeFiles/mcop-shared.dir/referenceclean.cc.o CMakeFiles/mcop-shared.dir/datapacket.cc.o CMakeFiles/mcop-shared.dir/asyncstream.cc.o CMakeFiles/mcop-shared.dir/notification.cc.o CMakeFiles/mcop-shared.dir/flowsystem.cc.o CMakeFiles/mcop-shared.dir/extensionloader.cc.o CMakeFiles/mcop-shared.dir/tmpglobalcomm.cc.o CMakeFiles/mcop-shared.dir/mcopconfig.cc.o CMakeFiles/mcop-shared.dir/connect.cc.o CMakeFiles/mcop-shared.dir/reference.cc.o CMakeFiles/mcop-shared.dir/type.cc.o CMakeFiles/mcop-shared.dir/trader_impl.cc.o CMakeFiles/mcop-shared.dir/dynamicrequest.cc.o CMakeFiles/mcop-shared.dir/anyref.cc.o CMakeFiles/mcop-shared.dir/loopback.cc.o CMakeFiles/mcop-shared.dir/delayedreturn.cc.o CMakeFiles/mcop-shared.dir/thread.cc.o CMakeFiles/mcop-shared.dir/dynamicskeleton.cc.o ../libltdl/libltdlc.a -Wl,-rpath-link,/usr/X11R6/lib:/usr/local/lib:/usr/X11R6/lib/modules/multimedia:/usr/X11R6/lib/modules:/usr/X11R6/lib/modules/extensions:/usr/X11R6/lib/modules/input:/usr/X11R6/lib/modules/drivers 
+CMakeFiles/mcop-shared.dir/buffer.cc.o(.text+0xc37): In function `stringncmp(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long)':
+: undefined reference to `strncmp'
+CMakeFiles/mcop-shared.dir/buffer.cc.o(.text+0xe6c): In function `Arts::Buffer::toString(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/buffer.cc.o(.text+0xffb): In function `Arts::Buffer::toString(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/buffer.cc.o(.text+0x1010): In function `Arts::Buffer::toString(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__stack_smash_handler'
+CMakeFiles/mcop-shared.dir/buffer.cc.o(.text+0x1068): In function `Arts::Buffer::patchLong(long, long)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/buffer.cc.o(.text+0x1133): In function `Arts::Buffer::patchLength()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/buffer.cc.o(.text+0x123f): In function `Arts::Buffer::readBool()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/buffer.cc.o(.text+0x12ad): In function `Arts::Buffer::peek(long)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/buffer.cc.o(.text+0x13ad): In function `Arts::Buffer::writeBoolSeq(std::vector<bool, std::allocator<bool> > const&)':
+: undefined reference to `memcpy'
+CMakeFiles/mcop-shared.dir/buffer.cc.o(.gnu.linkonce.t._ZNSt15__copy_backwardILb1ESt26random_access_iterator_tagE8__copy_bIhEEPT_PKS3_S6_S4_+0x46): In function `unsigned char* std::__copy_backward<true, std::random_access_iterator_tag>::__copy_b<unsigned char>(unsigned char const*, unsigned char const*, unsigned char*)':
+: undefined reference to `memmove'
+CMakeFiles/mcop-shared.dir/buffer.cc.o(.gnu.linkonce.t._ZNSt6__copyILb1ESt26random_access_iterator_tagE4copyIhEEPT_PKS3_S6_S4_+0x31): In function `unsigned char* std::__copy<true, std::random_access_iterator_tag>::copy<unsigned char>(unsigned char const*, unsigned char const*, unsigned char*)':
+: undefined reference to `memmove'
+CMakeFiles/mcop-shared.dir/buffer.cc.o(.gnu.linkonce.t._ZNSt15__copy_backwardILb1ESt26random_access_iterator_tagE8__copy_bIfEEPT_PKS3_S6_S4_+0x56): In function `float* std::__copy_backward<true, std::random_access_iterator_tag>::__copy_b<float>(float const*, float const*, float*)':
+: undefined reference to `memmove'
+CMakeFiles/mcop-shared.dir/buffer.cc.o(.gnu.linkonce.t._ZNSt6__copyILb1ESt26random_access_iterator_tagE4copyIfEEPT_PKS3_S6_S4_+0x3a): In function `float* std::__copy<true, std::random_access_iterator_tag>::copy<float>(float const*, float const*, float*)':
+: undefined reference to `memmove'
+CMakeFiles/mcop-shared.dir/buffer.cc.o(.gnu.linkonce.t._ZNSt15__copy_backwardILb1ESt26random_access_iterator_tagE8__copy_bIlEEPT_PKS3_S6_S4_+0x56): In function `long* std::__copy_backward<true, std::random_access_iterator_tag>::__copy_b<long>(long const*, long const*, long*)':
+: undefined reference to `memmove'
+CMakeFiles/mcop-shared.dir/buffer.cc.o(.gnu.linkonce.t._ZNSt6__copyILb1ESt26random_access_iterator_tagE4copyIlEEPT_PKS3_S6_S4_+0x3a): more undefined references to `memmove' follow
+CMakeFiles/mcop-shared.dir/buffer.cc.o(.gnu.linkonce.t._ZNSt6vectorIbSaIbEE15_M_erase_at_endESt13_Bit_iterator+0x26): In function `std::vector<bool, std::allocator<bool> >::_M_erase_at_end(std::_Bit_iterator)':
+: undefined reference to `memcpy'
+CMakeFiles/mcop-shared.dir/buffer.cc.o(.gnu.linkonce.t._ZNSt6vectorIbSaIbEE13_M_insert_auxESt13_Bit_iteratorb+0x376): In function `std::vector<bool, std::allocator<bool> >::_M_insert_aux(std::_Bit_iterator, bool)':
+: undefined reference to `memcpy'
+CMakeFiles/mcop-shared.dir/buffer.cc.o(.gnu.linkonce.t._ZNSt6vectorIbSaIbEE13_M_insert_auxESt13_Bit_iteratorb+0x3d1): In function `std::vector<bool, std::allocator<bool> >::_M_insert_aux(std::_Bit_iterator, bool)':
+: undefined reference to `memcpy'
+CMakeFiles/mcop-shared.dir/connection.cc.o(.text+0x35a): In function `Arts::Connection::_release()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/connection.cc.o(.text+0x3d0): In function `Arts::Connection::_copy()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/connection.cc.o(.text+0x6e5): In function `Arts::Connection::~Connection()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/connection.cc.o(.text+0x711): In function `Arts::Connection::~Connection()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/connection.cc.o(.text+0x81f): In function `Arts::Connection::~Connection()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/connection.cc.o(.text+0x84b): more undefined references to `__assert2' follow
+CMakeFiles/mcop-shared.dir/connection.cc.o(.gnu.linkonce.t._ZNSt15__copy_backwardILb1ESt26random_access_iterator_tagE8__copy_bIPN4Arts17ConnectionPrivate4DataEEEPT_PKS7_SA_S8_+0x56): In function `Arts::ConnectionPrivate::Data** std::__copy_backward<true, std::random_access_iterator_tag>::__copy_b<Arts::ConnectionPrivate::Data*>(Arts::ConnectionPrivate::Data* const*, Arts::ConnectionPrivate::Data* const*, Arts::ConnectionPrivate::Data**)':
+: undefined reference to `memmove'
+CMakeFiles/mcop-shared.dir/connection.cc.o(.gnu.linkonce.t._ZNSt6__copyILb1ESt26random_access_iterator_tagE4copyIPN4Arts17ConnectionPrivate4DataEEEPT_PKS7_SA_S8_+0x3a): In function `Arts::ConnectionPrivate::Data** std::__copy<true, std::random_access_iterator_tag>::copy<Arts::ConnectionPrivate::Data*>(Arts::ConnectionPrivate::Data* const*, Arts::ConnectionPrivate::Data* const*, Arts::ConnectionPrivate::Data**)':
+: undefined reference to `memmove'
+CMakeFiles/mcop-shared.dir/core.cc.o(.text+0xce01): In function `Arts::Loader_base::_create(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/core.cc.o(.text+0xce6f): In function `Arts::Loader_base::_create(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/core.cc.o(.text+0xcf81): In function `Arts::TraderQuery_base::_create(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/core.cc.o(.text+0xcfef): In function `Arts::TraderQuery_base::_create(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/core.cc.o(.text+0xd101): In function `Arts::TraderOffer_base::_create(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/core.cc.o(.text+0xd16f): more undefined references to `__assert2' follow
+CMakeFiles/mcop-shared.dir/debug.cc.o(.text+0x75): In function `Arts::shell_quote(char const*)':
+: undefined reference to `strlen'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.text+0x8b): In function `Arts::shell_quote(char const*)':
+: undefined reference to `malloc'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.text+0x41a): In function `printf_string_upper_bound(char const*, int, __va_list_tag*)':
+: undefined reference to `printf'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.text+0x80c): In function `printf_string_upper_bound(char const*, int, __va_list_tag*)':
+: undefined reference to `printf'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.text+0xa3f): In function `printf_string_upper_bound(char const*, int, __va_list_tag*)':
+: undefined reference to `strlen'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.text+0xa6f): In function `printf_string_upper_bound(char const*, int, __va_list_tag*)':
+: undefined reference to `printf'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.text+0xae9): In function `printf_string_upper_bound(char const*, int, __va_list_tag*)':
+: undefined reference to `__errno'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.text+0xaf0): In function `printf_string_upper_bound(char const*, int, __va_list_tag*)':
+: undefined reference to `strerror'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.text+0xb04): In function `printf_string_upper_bound(char const*, int, __va_list_tag*)':
+: undefined reference to `strlen'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.text+0xb72): In function `printf_string_upper_bound(char const*, int, __va_list_tag*)':
+: undefined reference to `printf'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.text+0xcd3): In function `arts_strdup_vprintf(char const*, __va_list_tag*)':
+: undefined reference to `malloc'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.text+0xce8): In function `arts_strdup_vprintf(char const*, __va_list_tag*)':
+: undefined reference to `vsprintf'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.text+0xdf3): In function `Arts::Debug::messageApp(char const*)':
+: undefined reference to `strlen'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.text+0xe03): In function `Arts::Debug::messageApp(char const*)':
+: undefined reference to `realloc'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.text+0xe1a): In function `Arts::Debug::messageApp(char const*)':
+: undefined reference to `strcpy'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.text+0xe65): In function `Arts::output_message(Arts::Debug::Level, char const*)':
+: undefined reference to `__sF'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.text+0xe76): In function `Arts::output_message(Arts::Debug::Level, char const*)':
+: undefined reference to `fprintf'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.text+0xf0f): In function `Arts::output_message(Arts::Debug::Level, char const*)':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.text+0xf1f): In function `Arts::output_message(Arts::Debug::Level, char const*)':
+: undefined reference to `system'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.text+0xf28): In function `Arts::output_message(Arts::Debug::Level, char const*)':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.text+0xf66): In function `Arts::display_message(Arts::Debug::Level, char const*)':
+: undefined reference to `strncmp'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.text+0xfbf): In function `Arts::display_message(Arts::Debug::Level, char const*)':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.text+0xfd4): In function `Arts::display_message(Arts::Debug::Level, char const*)':
+: undefined reference to `strncpy'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.text+0x1121): In function `Arts::Debug::debug(char const*, ...)':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.text+0x1232): In function `Arts::Debug::info(char const*, ...)':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.text+0x1342): In function `Arts::Debug::warning(char const*, ...)':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.text+0x1547): In function `Arts::Debug::fatal(char const*, ...)':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.text+0x1557): In function `Arts::Debug::fatal(char const*, ...)':
+: undefined reference to `abort'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.text+0x1561): In function `Arts::Debug::fatal(char const*, ...)':
+: undefined reference to `exit'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.gnu.linkonce.t._ZN4Arts16DebugInitFromEnvC1Ev+0x14): In function `Arts::DebugInitFromEnv::DebugInitFromEnv()':
+: undefined reference to `getenv'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.gnu.linkonce.t._ZN4Arts16DebugInitFromEnvC1Ev+0x33): In function `Arts::DebugInitFromEnv::DebugInitFromEnv()':
+: undefined reference to `strcmp'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.gnu.linkonce.t._ZN4Arts16DebugInitFromEnvC1Ev+0x56): In function `Arts::DebugInitFromEnv::DebugInitFromEnv()':
+: undefined reference to `strcmp'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.gnu.linkonce.t._ZN4Arts16DebugInitFromEnvC1Ev+0x76): In function `Arts::DebugInitFromEnv::DebugInitFromEnv()':
+: undefined reference to `strcmp'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.gnu.linkonce.t._ZN4Arts16DebugInitFromEnvC1Ev+0x96): In function `Arts::DebugInitFromEnv::DebugInitFromEnv()':
+: undefined reference to `strcmp'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.gnu.linkonce.t._ZN4Arts16DebugInitFromEnvC1Ev+0xad): In function `Arts::DebugInitFromEnv::DebugInitFromEnv()':
+: undefined reference to `__sF'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.gnu.linkonce.t._ZN4Arts16DebugInitFromEnvC1Ev+0xca): In function `Arts::DebugInitFromEnv::DebugInitFromEnv()':
+: undefined reference to `fwrite'
+CMakeFiles/mcop-shared.dir/debug.cc.o(.gnu.linkonce.t._ZN4Arts16DebugInitFromEnvC1Ev+0xd6): In function `Arts::DebugInitFromEnv::DebugInitFromEnv()':
+: undefined reference to `getenv'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x2dd): In function `__static_initialization_and_destruction_0(int, int)':
+: undefined reference to `__cxa_atexit'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x3d2): In function `Arts::Dispatcher::run()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x435): In function `Arts::Dispatcher::setFlowSystem(Arts::FlowSystem_impl*)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x488): In function `Arts::Dispatcher::globalComm()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x4dd): In function `Arts::Dispatcher::flowSystem()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x526): In function `Arts::Dispatcher::delayReturn()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0xa4b): In function `Arts::Dispatcher::initiateConnection(Arts::Connection*)':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0xa54): In function `Arts::Dispatcher::initiateConnection(Arts::Connection*)':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0xb81): In function `Arts::Dispatcher::connectUrl(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `strncmp'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0xbed): In function `Arts::Dispatcher::connectUrl(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `strncmp'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0xfdb): In function `Arts::Dispatcher::stringToObjectReference(Arts::ObjectReference&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `strncmp'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x14a9): In function `Arts::Dispatcher::generateServerID()':
+: undefined reference to `time'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x14b1): In function `Arts::Dispatcher::generateServerID()':
+: undefined reference to `getpid'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x150a): In function `Arts::Dispatcher::generateServerID()':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x157a): In function `Arts::Dispatcher::removeObject(long)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x1a82): In function `Arts::Dispatcher::handle(Arts::Connection*, Arts::Buffer*, long)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x1d02): In function `Arts::Dispatcher::handle(Arts::Connection*, Arts::Buffer*, long)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x22e0): In function `Arts::Dispatcher::handle(Arts::Connection*, Arts::Buffer*, long)':
+: undefined reference to `strlen'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x231c): In function `Arts::Dispatcher::handle(Arts::Connection*, Arts::Buffer*, long)':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x2b32): In function `Arts::Dispatcher::handle(Arts::Connection*, Arts::Buffer*, long)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x2d90): In function `Arts::Dispatcher::~Dispatcher()':
+: undefined reference to `signal'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x3346): In function `Arts::Dispatcher::~Dispatcher()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x33b5): In function `Arts::Dispatcher::~Dispatcher()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x36de): In function `Arts::Dispatcher::~Dispatcher()':
+: undefined reference to `signal'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x3c94): In function `Arts::Dispatcher::~Dispatcher()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x3d03): In function `Arts::Dispatcher::~Dispatcher()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x3f18): In function `Arts::Dispatcher::Dispatcher(Arts::IOManager*, Arts::Dispatcher::StartServer)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x4597): In function `Arts::Dispatcher::Dispatcher(Arts::IOManager*, Arts::Dispatcher::StartServer)':
+: undefined reference to `signal'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x462a): In function `Arts::Dispatcher::Dispatcher(Arts::IOManager*, Arts::Dispatcher::StartServer)':
+: undefined reference to `getenv'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x51c0): In function `Arts::Dispatcher::Dispatcher(Arts::IOManager*, Arts::Dispatcher::StartServer)':
+: undefined reference to `strlen'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x51d4): In function `Arts::Dispatcher::Dispatcher(Arts::IOManager*, Arts::Dispatcher::StartServer)':
+: undefined reference to `memset'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x51e0): In function `Arts::Dispatcher::Dispatcher(Arts::IOManager*, Arts::Dispatcher::StartServer)':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x543e): In function `Arts::Dispatcher::Dispatcher(Arts::IOManager*, Arts::Dispatcher::StartServer)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x5abd): In function `Arts::Dispatcher::Dispatcher(Arts::IOManager*, Arts::Dispatcher::StartServer)':
+: undefined reference to `signal'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x5b50): In function `Arts::Dispatcher::Dispatcher(Arts::IOManager*, Arts::Dispatcher::StartServer)':
+: undefined reference to `getenv'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x66e6): In function `Arts::Dispatcher::Dispatcher(Arts::IOManager*, Arts::Dispatcher::StartServer)':
+: undefined reference to `strlen'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x66fa): In function `Arts::Dispatcher::Dispatcher(Arts::IOManager*, Arts::Dispatcher::StartServer)':
+: undefined reference to `memset'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.text+0x6706): In function `Arts::Dispatcher::Dispatcher(Arts::IOManager*, Arts::Dispatcher::StartServer)':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.gnu.linkonce.t._ZN4Arts23DispatcherWakeUpHandler6wakeUpEv+0x21): In function `Arts::DispatcherWakeUpHandler::wakeUp()':
+: undefined reference to `write'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.gnu.linkonce.t._ZN4Arts23DispatcherWakeUpHandler6wakeUpEv+0x2f): In function `Arts::DispatcherWakeUpHandler::wakeUp()':
+: undefined reference to `__errno'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.gnu.linkonce.t._ZN4Arts11Object_base5_copyEv+0x34): In function `Arts::Object_base::_copy()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.gnu.linkonce.t._ZN4Arts10GlobalComm12_method_callEv+0x89): In function `Arts::GlobalComm::_method_call()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.gnu.linkonce.t._ZNK4Arts6Object14_interfaceNameEv+0x47): In function `Arts::Object::_interfaceName() const':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.gnu.linkonce.t._ZNSt11char_traitsIcE6lengthEPKc+0x11): In function `std::char_traits<char>::length(char const*)':
+: undefined reference to `strlen'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.gnu.linkonce.t._ZNSt15__copy_backwardILb1ESt26random_access_iterator_tagE8__copy_bIPmEEPT_PKS4_S7_S5_+0x56): In function `unsigned long** std::__copy_backward<true, std::random_access_iterator_tag>::__copy_b<unsigned long*>(unsigned long* const*, unsigned long* const*, unsigned long**)':
+: undefined reference to `memmove'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.gnu.linkonce.t._ZNSt6__copyILb1ESt26random_access_iterator_tagE4copyIPmEEPT_PKS4_S7_S5_+0x3a): In function `unsigned long** std::__copy<true, std::random_access_iterator_tag>::copy<unsigned long*>(unsigned long* const*, unsigned long* const*, unsigned long**)':
+: undefined reference to `memmove'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.gnu.linkonce.t._ZNSt15__copy_backwardILb1ESt26random_access_iterator_tagE8__copy_bIPN4Arts11Object_skelEEEPT_PKS6_S9_S7_+0x56): In function `Arts::Object_skel** std::__copy_backward<true, std::random_access_iterator_tag>::__copy_b<Arts::Object_skel*>(Arts::Object_skel* const*, Arts::Object_skel* const*, Arts::Object_skel**)':
+: undefined reference to `memmove'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.gnu.linkonce.t._ZNSt6__copyILb1ESt26random_access_iterator_tagE4copyIPN4Arts11Object_skelEEEPT_PKS6_S9_S7_+0x3a): In function `Arts::Object_skel** std::__copy<true, std::random_access_iterator_tag>::copy<Arts::Object_skel*>(Arts::Object_skel* const*, Arts::Object_skel* const*, Arts::Object_skel**)':
+: undefined reference to `memmove'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.gnu.linkonce.t._ZNSt15__copy_backwardILb1ESt26random_access_iterator_tagE8__copy_bIPN4Arts6BufferEEEPT_PKS6_S9_S7_+0x56): In function `Arts::Buffer** std::__copy_backward<true, std::random_access_iterator_tag>::__copy_b<Arts::Buffer*>(Arts::Buffer* const*, Arts::Buffer* const*, Arts::Buffer**)':
+: undefined reference to `memmove'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.gnu.linkonce.t._ZNSt6__copyILb1ESt26random_access_iterator_tagE4copyIPN4Arts6BufferEEEPT_PKS6_S9_S7_+0x3a): more undefined references to `memmove' follow
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.gnu.linkonce.t._ZN4Arts23DispatcherWakeUpHandlerC1Ev+0x30): In function `Arts::DispatcherWakeUpHandler::DispatcherWakeUpHandler()':
+: undefined reference to `pipe'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.gnu.linkonce.t._ZN4Arts23DispatcherWakeUpHandlerC1Ev+0x3e): In function `Arts::DispatcherWakeUpHandler::DispatcherWakeUpHandler()':
+: undefined reference to `__errno'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.gnu.linkonce.t._ZN4Arts23DispatcherWakeUpHandlerC1Ev+0x45): In function `Arts::DispatcherWakeUpHandler::DispatcherWakeUpHandler()':
+: undefined reference to `strerror'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.gnu.linkonce.t._ZN4Arts23DispatcherWakeUpHandlerD0Ev+0x4b): In function `Arts::DispatcherWakeUpHandler::~DispatcherWakeUpHandler()':
+: undefined reference to `close'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.gnu.linkonce.t._ZN4Arts23DispatcherWakeUpHandlerD0Ev+0x57): In function `Arts::DispatcherWakeUpHandler::~DispatcherWakeUpHandler()':
+: undefined reference to `close'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.gnu.linkonce.t._ZN4Arts23DispatcherWakeUpHandlerD1Ev+0x4b): In function `Arts::DispatcherWakeUpHandler::~DispatcherWakeUpHandler()':
+: undefined reference to `close'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.gnu.linkonce.t._ZN4Arts23DispatcherWakeUpHandlerD1Ev+0x57): In function `Arts::DispatcherWakeUpHandler::~DispatcherWakeUpHandler()':
+: undefined reference to `close'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.gnu.linkonce.t._ZN4Arts23DispatcherWakeUpHandler8notifyIOEii+0x8f): In function `Arts::DispatcherWakeUpHandler::notifyIO(int, int)':
+: undefined reference to `read'
+CMakeFiles/mcop-shared.dir/dispatcher.cc.o(.gnu.linkonce.t._ZN4Arts23DispatcherWakeUpHandler8notifyIOEii+0x9d): In function `Arts::DispatcherWakeUpHandler::notifyIO(int, int)':
+: undefined reference to `__errno'
+CMakeFiles/mcop-shared.dir/iomanager.cc.o(.text+0x321): In function `Arts::TimeWatcher::TimeWatcher(int, Arts::TimeNotify*)':
+: undefined reference to `gettimeofday'
+CMakeFiles/mcop-shared.dir/iomanager.cc.o(.text+0x47b): In function `Arts::TimeWatcher::TimeWatcher(int, Arts::TimeNotify*)':
+: undefined reference to `gettimeofday'
+CMakeFiles/mcop-shared.dir/iomanager.cc.o(.text+0xb10): In function `Arts::StdIOManager::run()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/iomanager.cc.o(.text+0xb3d): In function `Arts::StdIOManager::run()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/iomanager.cc.o(.text+0xbc4): In function `Arts::StdIOManager::processOneEvent(bool)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/iomanager.cc.o(.text+0xc44): In function `Arts::StdIOManager::processOneEvent(bool)':
+: undefined reference to `memset'
+CMakeFiles/mcop-shared.dir/iomanager.cc.o(.text+0xc61): In function `Arts::StdIOManager::processOneEvent(bool)':
+: undefined reference to `memset'
+CMakeFiles/mcop-shared.dir/iomanager.cc.o(.text+0xc7e): In function `Arts::StdIOManager::processOneEvent(bool)':
+: undefined reference to `memset'
+CMakeFiles/mcop-shared.dir/iomanager.cc.o(.text+0xc9b): In function `Arts::StdIOManager::processOneEvent(bool)':
+: undefined reference to `memset'
+CMakeFiles/mcop-shared.dir/iomanager.cc.o(.text+0xcb8): In function `Arts::StdIOManager::processOneEvent(bool)':
+: undefined reference to `memset'
+CMakeFiles/mcop-shared.dir/iomanager.cc.o(.text+0xcd5): more undefined references to `memset' follow
+CMakeFiles/mcop-shared.dir/iomanager.cc.o(.text+0x15f6): In function `Arts::StdIOManager::processOneEvent(bool)':
+: undefined reference to `gettimeofday'
+CMakeFiles/mcop-shared.dir/iomanager.cc.o(.text+0x184a): In function `Arts::StdIOManager::processOneEvent(bool)':
+: undefined reference to `select'
+CMakeFiles/mcop-shared.dir/iomanager.cc.o(.text+0x1bc4): In function `Arts::StdIOManager::processOneEvent(bool)':
+: undefined reference to `gettimeofday'
+CMakeFiles/mcop-shared.dir/iomanager.cc.o(.gnu.linkonce.t._ZNSt15__copy_backwardILb1ESt26random_access_iterator_tagE8__copy_bIPPN4Arts9IOWatchFDEEEPT_PKS7_SA_S8_+0x56): In function `Arts::IOWatchFD*** std::__copy_backward<true, std::random_access_iterator_tag>::__copy_b<Arts::IOWatchFD**>(Arts::IOWatchFD** const*, Arts::IOWatchFD** const*, Arts::IOWatchFD***)':
+: undefined reference to `memmove'
+CMakeFiles/mcop-shared.dir/iomanager.cc.o(.gnu.linkonce.t._ZNSt6__copyILb1ESt26random_access_iterator_tagE4copyIPPN4Arts9IOWatchFDEEEPT_PKS7_SA_S8_+0x3a): In function `Arts::IOWatchFD*** std::__copy<true, std::random_access_iterator_tag>::copy<Arts::IOWatchFD**>(Arts::IOWatchFD** const*, Arts::IOWatchFD** const*, Arts::IOWatchFD***)':
+: undefined reference to `memmove'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x42a): In function `__static_initialization_and_destruction_0(int, int)':
+: undefined reference to `__cxa_atexit'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x22a7): In function `Arts::Object_base::_create(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x233b): In function `Arts::Object_stub::Object_stub()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x23e3): In function `Arts::Object_skel::_interfaceName()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x2465): In function `Arts::Object_base::_sendCustomMessage(Arts::Buffer*)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x2495): In function `Arts::Object_base::_allocCustomMessage(long)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x24c1): more undefined references to `__assert2' follow
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x25fb): In function `Arts::Object_stub::Object_stub(Arts::Connection*, long)':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x26bd): In function `Arts::Object_stub::Object_stub(Arts::Connection*, long)':
+: undefined reference to `rand'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x2765): In function `Arts::Object_stub::Object_stub(Arts::Connection*, long)':
+: undefined reference to `sprintf'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x2798): In function `Arts::Object_stub::Object_stub(Arts::Connection*, long)':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x27ad): In function `Arts::Object_stub::Object_stub(Arts::Connection*, long)':
+: undefined reference to `__stack_smash_handler'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x41d5): In function `Arts::Object_skel::_releaseRemote()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x4346): In function `Arts::Object_base::_destroy()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x4530): In function `Arts::Object_skel::Object_skel()':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x463b): In function `Arts::Object_skel::Object_skel()':
+: undefined reference to `sprintf'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x4689): In function `Arts::Object_skel::Object_skel()':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x469e): In function `Arts::Object_skel::Object_skel()':
+: undefined reference to `__stack_smash_handler'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x4737): In function `Arts::Object_base::_node()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x4a1e): In function `Arts::Object_base::_node()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x4aa4): In function `Arts::Object_base::~Object_base()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x4d3a): In function `Arts::Object_base::~Object_base()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x4fd0): In function `Arts::Object_base::~Object_base()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x5670): In function `Arts::Object_stub::Object_stub(Arts::Connection*, long)':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x5714): In function `Arts::Object_stub::Object_stub(Arts::Connection*, long)':
+: undefined reference to `rand'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x57a3): In function `Arts::Object_stub::Object_stub(Arts::Connection*, long)':
+: undefined reference to `sprintf'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x5801): In function `Arts::Object_stub::Object_stub(Arts::Connection*, long)':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x5816): In function `Arts::Object_stub::Object_stub(Arts::Connection*, long)':
+: undefined reference to `__stack_smash_handler'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x5e78): In function `Arts::Object_stub::Object_stub()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x6274): In function `Arts::Object_skel::Object_skel()':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x6370): In function `Arts::Object_skel::Object_skel()':
+: undefined reference to `sprintf'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x63ce): In function `Arts::Object_skel::Object_skel()':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/object.cc.o(.text+0x63e3): In function `Arts::Object_skel::Object_skel()':
+: undefined reference to `__stack_smash_handler'
+CMakeFiles/mcop-shared.dir/object.cc.o(.gnu.linkonce.t._ZN4Arts10FlowSystem12_method_callEv+0x89): In function `Arts::FlowSystem::_method_call()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/object.cc.o(.gnu.linkonce.t._ZN4Arts13InterfaceRepo12_method_callEv+0x89): In function `Arts::InterfaceRepo::_method_call()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/object.cc.o(.gnu.linkonce.t._ZN4Arts10NamedStoreINS_6ObjectEE3putERKSsRKS1_+0x2b): In function `Arts::NamedStore<Arts::Object>::put(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Arts::Object const&)':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/object.cc.o(.gnu.linkonce.t._ZN4Arts10NamedStoreINS_6ObjectEE3putERKSsRKS1_+0x1a4): In function `Arts::NamedStore<Arts::Object>::put(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Arts::Object const&)':
+: undefined reference to `sprintf'
+CMakeFiles/mcop-shared.dir/object.cc.o(.gnu.linkonce.t._ZN4Arts10NamedStoreINS_6ObjectEE3putERKSsRKS1_+0x2c8): In function `Arts::NamedStore<Arts::Object>::put(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Arts::Object const&)':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/object.cc.o(.gnu.linkonce.t._ZN4Arts10NamedStoreINS_6ObjectEE3putERKSsRKS1_+0x2dd): In function `Arts::NamedStore<Arts::Object>::put(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Arts::Object const&)':
+: undefined reference to `__stack_smash_handler'
+CMakeFiles/mcop-shared.dir/socketconnection.cc.o(.text+0x39): In function `Arts::SocketConnection::drop()':
+: undefined reference to `close'
+CMakeFiles/mcop-shared.dir/socketconnection.cc.o(.text+0xca): In function `Arts::SocketConnection::writeBuffer(Arts::Buffer*)':
+: undefined reference to `write'
+CMakeFiles/mcop-shared.dir/socketconnection.cc.o(.text+0x110): In function `Arts::SocketConnection::notifyIO(int, int)':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/socketconnection.cc.o(.text+0x14a): In function `Arts::SocketConnection::notifyIO(int, int)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/socketconnection.cc.o(.text+0x176): In function `Arts::SocketConnection::notifyIO(int, int)':
+: undefined reference to `read'
+CMakeFiles/mcop-shared.dir/socketconnection.cc.o(.text+0x1bf): In function `Arts::SocketConnection::notifyIO(int, int)':
+: undefined reference to `__errno'
+CMakeFiles/mcop-shared.dir/socketconnection.cc.o(.text+0x1cb): In function `Arts::SocketConnection::notifyIO(int, int)':
+: undefined reference to `__errno'
+CMakeFiles/mcop-shared.dir/socketconnection.cc.o(.text+0x1fc): In function `Arts::SocketConnection::notifyIO(int, int)':
+: undefined reference to `close'
+CMakeFiles/mcop-shared.dir/socketconnection.cc.o(.text+0x294): In function `Arts::SocketConnection::notifyIO(int, int)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/socketconnection.cc.o(.text+0x3b6): In function `Arts::SocketConnection::notifyIO(int, int)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/socketconnection.cc.o(.text+0x3bd): In function `Arts::SocketConnection::notifyIO(int, int)':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/socketconnection.cc.o(.text+0x3d2): In function `Arts::SocketConnection::notifyIO(int, int)':
+: undefined reference to `__stack_smash_handler'
+CMakeFiles/mcop-shared.dir/tcpconnection.cc.o(.text+0x11): In function `parse_tcp_url(char const*)':
+: undefined reference to `strdup'
+CMakeFiles/mcop-shared.dir/tcpconnection.cc.o(.text+0x25): In function `parse_tcp_url(char const*)':
+: undefined reference to `strtok'
+CMakeFiles/mcop-shared.dir/tcpconnection.cc.o(.text+0x40): In function `parse_tcp_url(char const*)':
+: undefined reference to `strcmp'
+CMakeFiles/mcop-shared.dir/tcpconnection.cc.o(.text+0x4d): In function `parse_tcp_url(char const*)':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/tcpconnection.cc.o(.text+0x6b): In function `parse_tcp_url(char const*)':
+: undefined reference to `strtok'
+CMakeFiles/mcop-shared.dir/tcpconnection.cc.o(.text+0x7f): In function `parse_tcp_url(char const*)':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/tcpconnection.cc.o(.text+0x9d): In function `parse_tcp_url(char const*)':
+: undefined reference to `strtok'
+CMakeFiles/mcop-shared.dir/tcpconnection.cc.o(.text+0xb1): In function `parse_tcp_url(char const*)':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/tcpconnection.cc.o(.text+0xc7): In function `parse_tcp_url(char const*)':
+: undefined reference to `atol'
+CMakeFiles/mcop-shared.dir/tcpconnection.cc.o(.text+0xe5): In function `parse_tcp_url(char const*)':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/tcpconnection.cc.o(.text+0xfb): In function `parse_tcp_url(char const*)':
+: undefined reference to `gethostbyname'
+CMakeFiles/mcop-shared.dir/tcpconnection.cc.o(.text+0x124): In function `parse_tcp_url(char const*)':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/tcpconnection.cc.o(.text+0x144): In function `parse_tcp_url(char const*)':
+: undefined reference to `memset'
+CMakeFiles/mcop-shared.dir/tcpconnection.cc.o(.text+0x192): In function `parse_tcp_url(char const*)':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/tcpconnection.cc.o(.text+0x1f9): In function `tcp_connect(char const*)':
+: undefined reference to `socket'
+CMakeFiles/mcop-shared.dir/tcpconnection.cc.o(.text+0x249): In function `tcp_connect(char const*)':
+: undefined reference to `setsockopt'
+CMakeFiles/mcop-shared.dir/tcpconnection.cc.o(.text+0x26c): In function `tcp_connect(char const*)':
+: undefined reference to `close'
+CMakeFiles/mcop-shared.dir/tcpconnection.cc.o(.text+0x29b): In function `tcp_connect(char const*)':
+: undefined reference to `setsockopt'
+CMakeFiles/mcop-shared.dir/tcpconnection.cc.o(.text+0x2c7): In function `tcp_connect(char const*)':
+: undefined reference to `connect'
+CMakeFiles/mcop-shared.dir/tcpconnection.cc.o(.text+0x2ed): In function `tcp_connect(char const*)':
+: undefined reference to `close'
+CMakeFiles/mcop-shared.dir/unixconnection.cc.o(.text+0x11): In function `parse_unix_url(char const*)':
+: undefined reference to `strdup'
+CMakeFiles/mcop-shared.dir/unixconnection.cc.o(.text+0x25): In function `parse_unix_url(char const*)':
+: undefined reference to `strtok'
+CMakeFiles/mcop-shared.dir/unixconnection.cc.o(.text+0x40): In function `parse_unix_url(char const*)':
+: undefined reference to `strcmp'
+CMakeFiles/mcop-shared.dir/unixconnection.cc.o(.text+0x4d): In function `parse_unix_url(char const*)':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/unixconnection.cc.o(.text+0x6b): In function `parse_unix_url(char const*)':
+: undefined reference to `strtok'
+CMakeFiles/mcop-shared.dir/unixconnection.cc.o(.text+0x7f): In function `parse_unix_url(char const*)':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/unixconnection.cc.o(.text+0xa6): In function `parse_unix_url(char const*)':
+: undefined reference to `memset'
+CMakeFiles/mcop-shared.dir/unixconnection.cc.o(.text+0xc3): In function `parse_unix_url(char const*)':
+: undefined reference to `strncpy'
+CMakeFiles/mcop-shared.dir/unixconnection.cc.o(.text+0xe1): In function `parse_unix_url(char const*)':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/unixconnection.cc.o(.text+0x147): In function `unix_connect(char const*)':
+: undefined reference to `socket'
+CMakeFiles/mcop-shared.dir/unixconnection.cc.o(.text+0x197): In function `unix_connect(char const*)':
+: undefined reference to `setsockopt'
+CMakeFiles/mcop-shared.dir/unixconnection.cc.o(.text+0x1ba): In function `unix_connect(char const*)':
+: undefined reference to `close'
+CMakeFiles/mcop-shared.dir/unixconnection.cc.o(.text+0x1d4): In function `unix_connect(char const*)':
+: undefined reference to `connect'
+CMakeFiles/mcop-shared.dir/unixconnection.cc.o(.text+0x1fa): In function `unix_connect(char const*)':
+: undefined reference to `close'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0x3e): In function `Arts::TCPServer::notifyIO(int, int)':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0x72): In function `Arts::TCPServer::notifyIO(int, int)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0xa0): In function `Arts::TCPServer::notifyIO(int, int)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0xda): In function `Arts::TCPServer::notifyIO(int, int)':
+: undefined reference to `accept'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0xfe): In function `Arts::TCPServer::notifyIO(int, int)':
+: undefined reference to `fcntl'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0x126): In function `Arts::TCPServer::notifyIO(int, int)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0x13e): In function `Arts::TCPServer::notifyIO(int, int)':
+: undefined reference to `fcntl'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0x166): In function `Arts::TCPServer::notifyIO(int, int)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0x225): In function `Arts::TCPServer::notifyIO(int, int)':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0x23a): In function `Arts::TCPServer::notifyIO(int, int)':
+: undefined reference to `__stack_smash_handler'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0x263): In function `Arts::TCPServer::url()':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0x28e): In function `Arts::TCPServer::url()':
+: undefined reference to `sprintf'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0x3a1): In function `Arts::TCPServer::url()':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0x3b6): In function `Arts::TCPServer::url()':
+: undefined reference to `__stack_smash_handler'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0x424): In function `Arts::TCPServer::~TCPServer()':
+: undefined reference to `close'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0x49c): In function `Arts::TCPServer::~TCPServer()':
+: undefined reference to `close'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0x514): In function `Arts::TCPServer::~TCPServer()':
+: undefined reference to `close'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0x53c): In function `Arts::TCPServer::initSocket()':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0x559): In function `Arts::TCPServer::initSocket()':
+: undefined reference to `socket'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0x5a5): In function `Arts::TCPServer::initSocket()':
+: undefined reference to `fcntl'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0x5c9): In function `Arts::TCPServer::initSocket()':
+: undefined reference to `close'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0x606): In function `Arts::TCPServer::initSocket()':
+: undefined reference to `setsockopt'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0x62a): In function `Arts::TCPServer::initSocket()':
+: undefined reference to `close'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0x65d): In function `Arts::TCPServer::initSocket()':
+: undefined reference to `setsockopt'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0x6c1): In function `Arts::TCPServer::initSocket()':
+: undefined reference to `inet_addr'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0x6ec): In function `Arts::TCPServer::initSocket()':
+: undefined reference to `bind'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0x710): In function `Arts::TCPServer::initSocket()':
+: undefined reference to `close'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0x737): In function `Arts::TCPServer::initSocket()':
+: undefined reference to `getsockname'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0x77b): In function `Arts::TCPServer::initSocket()':
+: undefined reference to `listen'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0x7a1): In function `Arts::TCPServer::initSocket()':
+: undefined reference to `close'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0x7ca): In function `Arts::TCPServer::initSocket()':
+: undefined reference to `close'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0x837): In function `Arts::TCPServer::initSocket()':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/tcpserver.cc.o(.text+0x84c): In function `Arts::TCPServer::initSocket()':
+: undefined reference to `__stack_smash_handler'
+CMakeFiles/mcop-shared.dir/unixserver.cc.o(.text+0x38): In function `Arts::UnixServer::notifyIO(int, int)':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/unixserver.cc.o(.text+0x72): In function `Arts::UnixServer::notifyIO(int, int)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/unixserver.cc.o(.text+0xa3): In function `Arts::UnixServer::notifyIO(int, int)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/unixserver.cc.o(.text+0xec): In function `Arts::UnixServer::notifyIO(int, int)':
+: undefined reference to `accept'
+CMakeFiles/mcop-shared.dir/unixserver.cc.o(.text+0x119): In function `Arts::UnixServer::notifyIO(int, int)':
+: undefined reference to `fcntl'
+CMakeFiles/mcop-shared.dir/unixserver.cc.o(.text+0x147): In function `Arts::UnixServer::notifyIO(int, int)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/unixserver.cc.o(.text+0x165): In function `Arts::UnixServer::notifyIO(int, int)':
+: undefined reference to `fcntl'
+CMakeFiles/mcop-shared.dir/unixserver.cc.o(.text+0x193): In function `Arts::UnixServer::notifyIO(int, int)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/unixserver.cc.o(.text+0x273): In function `Arts::UnixServer::notifyIO(int, int)':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/unixserver.cc.o(.text+0x288): In function `Arts::UnixServer::notifyIO(int, int)':
+: undefined reference to `__stack_smash_handler'
+CMakeFiles/mcop-shared.dir/unixserver.cc.o(.text+0x35d): In function `Arts::UnixServer::initSocket(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/unixserver.cc.o(.text+0x37a): In function `Arts::UnixServer::initSocket(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `socket'
+CMakeFiles/mcop-shared.dir/unixserver.cc.o(.text+0x3d2): In function `Arts::UnixServer::initSocket(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `fcntl'
+CMakeFiles/mcop-shared.dir/unixserver.cc.o(.text+0x3f9): In function `Arts::UnixServer::initSocket(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `close'
+CMakeFiles/mcop-shared.dir/unixserver.cc.o(.text+0x4ba): In function `Arts::UnixServer::initSocket(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `strncpy'
+CMakeFiles/mcop-shared.dir/unixserver.cc.o(.text+0x503): In function `Arts::UnixServer::initSocket(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `bind'
+CMakeFiles/mcop-shared.dir/unixserver.cc.o(.text+0x539): In function `Arts::UnixServer::initSocket(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `close'
+CMakeFiles/mcop-shared.dir/unixserver.cc.o(.text+0x55c): In function `Arts::UnixServer::initSocket(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `listen'
+CMakeFiles/mcop-shared.dir/unixserver.cc.o(.text+0x583): In function `Arts::UnixServer::initSocket(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `close'
+CMakeFiles/mcop-shared.dir/unixserver.cc.o(.text+0x5e1): In function `Arts::UnixServer::initSocket(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/unixserver.cc.o(.text+0x5f6): In function `Arts::UnixServer::initSocket(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__stack_smash_handler'
+CMakeFiles/mcop-shared.dir/unixserver.cc.o(.text+0x7f5): In function `Arts::UnixServer::~UnixServer()':
+: undefined reference to `close'
+CMakeFiles/mcop-shared.dir/unixserver.cc.o(.text+0x80a): In function `Arts::UnixServer::~UnixServer()':
+: undefined reference to `unlink'
+CMakeFiles/mcop-shared.dir/unixserver.cc.o(.text+0x8c9): In function `Arts::UnixServer::~UnixServer()':
+: undefined reference to `close'
+CMakeFiles/mcop-shared.dir/unixserver.cc.o(.text+0x8de): In function `Arts::UnixServer::~UnixServer()':
+: undefined reference to `unlink'
+CMakeFiles/mcop-shared.dir/unixserver.cc.o(.text+0x99d): In function `Arts::UnixServer::~UnixServer()':
+: undefined reference to `close'
+CMakeFiles/mcop-shared.dir/unixserver.cc.o(.text+0x9b2): In function `Arts::UnixServer::~UnixServer()':
+: undefined reference to `unlink'
+CMakeFiles/mcop-shared.dir/objectmanager.cc.o(.text+0x159): In function `__static_initialization_and_destruction_0(int, int)':
+: undefined reference to `__cxa_atexit'
+CMakeFiles/mcop-shared.dir/objectmanager.cc.o(.text+0x34a): In function `Arts::ObjectManager::the()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/objectmanager.cc.o(.text+0x398): In function `Arts::ObjectManager::~ObjectManager()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/objectmanager.cc.o(.text+0x3ea): In function `Arts::ObjectManager::~ObjectManager()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/objectmanager.cc.o(.text+0x4bc): In function `Arts::ObjectManager::~ObjectManager()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/objectmanager.cc.o(.text+0x50e): In function `Arts::ObjectManager::~ObjectManager()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/objectmanager.cc.o(.text+0x61f): more undefined references to `__assert2' follow
+CMakeFiles/mcop-shared.dir/ifacerepo_impl.cc.o(.text+0x159): In function `__static_initialization_and_destruction_0(int, int)':
+: undefined reference to `__cxa_atexit'
+CMakeFiles/mcop-shared.dir/ifacerepo_impl.cc.o(.text+0x1239): In function `Arts::InterfaceRepo_impl::queryInterface(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `fopen'
+CMakeFiles/mcop-shared.dir/ifacerepo_impl.cc.o(.text+0x129a): In function `Arts::InterfaceRepo_impl::queryInterface(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `fgetc'
+CMakeFiles/mcop-shared.dir/ifacerepo_impl.cc.o(.text+0x12b5): In function `Arts::InterfaceRepo_impl::queryInterface(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `fclose'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x2a7): In function `Arts::MCOPUtils::mcopDirectory()':
+: undefined reference to `__cxa_atexit'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x328): In function `Arts::MCOPUtils::mcopDirectory()':
+: undefined reference to `getenv'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x468): In function `Arts::MCOPUtils::mcopDirectory()':
+: undefined reference to `mkdir'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x481): In function `Arts::MCOPUtils::mcopDirectory()':
+: undefined reference to `mkdir'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x4c7): In function `Arts::MCOPUtils::mcopDirectory()':
+: undefined reference to `__errno'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x4ce): In function `Arts::MCOPUtils::mcopDirectory()':
+: undefined reference to `strerror'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x539): In function `Arts::MCOPUtils::mcopDirectory()':
+: undefined reference to `stat'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x613): In function `readPath(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `getenv'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x862): In function `Arts::MCOPUtils::traderPath()':
+: undefined reference to `getenv'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0xb2b): In function `Arts::MCOPUtils::readConfigEntry(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `getenv'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0xc52): In function `Arts::MCOPUtils::getFullHostname()':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0xc78): In function `Arts::MCOPUtils::getFullHostname()':
+: undefined reference to `gethostname'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0xd2a): In function `Arts::MCOPUtils::getFullHostname()':
+: undefined reference to `gethostbyname'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0xdc8): In function `Arts::MCOPUtils::getFullHostname()':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0xddd): In function `Arts::MCOPUtils::getFullHostname()':
+: undefined reference to `__stack_smash_handler'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0xe0e): In function `check_tmp_dir(char const*)':
+: undefined reference to `lstat'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0xe1c): In function `check_tmp_dir(char const*)':
+: undefined reference to `__errno'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0xe4f): In function `check_tmp_dir(char const*)':
+: undefined reference to `mkdir'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0xe92): In function `check_tmp_dir(char const*)':
+: undefined reference to `stat'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0xedc): In function `check_tmp_dir(char const*)':
+: undefined reference to `getuid'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0xeea): In function `check_tmp_dir(char const*)':
+: undefined reference to `getuid'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0xf43): In function `locate_mcop_dir()':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0xf69): In function `locate_mcop_dir()':
+: undefined reference to `getuid'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0xf7b): In function `locate_mcop_dir()':
+: undefined reference to `getenv'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0xf97): In function `locate_mcop_dir()':
+: undefined reference to `getenv'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0xfac): In function `locate_mcop_dir()':
+: undefined reference to `getenv'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0xfdb): In function `locate_mcop_dir()':
+: undefined reference to `getenv'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1006): In function `locate_mcop_dir()':
+: undefined reference to `getenv'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1051): In function `locate_mcop_dir()':
+: undefined reference to `getpwuid'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1067): In function `locate_mcop_dir()':
+: undefined reference to `getuid'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1400): In function `locate_mcop_dir()':
+: undefined reference to `stat'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1443): In function `locate_mcop_dir()':
+: undefined reference to `gethostname'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x148f): In function `locate_mcop_dir()':
+: undefined reference to `lstat'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x14c4): In function `locate_mcop_dir()':
+: undefined reference to `strdup'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x14ec): In function `locate_mcop_dir()':
+: undefined reference to `__errno'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1599): In function `locate_mcop_dir()':
+: undefined reference to `realloc'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x15ee): In function `locate_mcop_dir()':
+: undefined reference to `readlink'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1629): In function `locate_mcop_dir()':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x169d): In function `locate_mcop_dir()':
+: undefined reference to `strncmp'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x16f3): In function `locate_mcop_dir()':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1737): In function `locate_mcop_dir()':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x17ca): In function `locate_mcop_dir()':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x17df): In function `locate_mcop_dir()':
+: undefined reference to `__stack_smash_handler'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1821): In function `create_link(char const*, char const*)':
+: undefined reference to `symlink'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1840): In function `create_link(char const*, char const*)':
+: undefined reference to `__sF'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1851): In function `create_link(char const*, char const*)':
+: undefined reference to `fprintf'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1873): In function `create_link(char const*, char const*)':
+: undefined reference to `printf'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x18a1): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x18c7): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `getuid'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x18d9): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `getenv'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x18f5): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `getenv'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x190a): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `getenv'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x193d): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `getpwuid'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1953): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `getuid'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1963): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `__sF'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1974): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `fprintf'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1b0f): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `__sF'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1b2c): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `fwrite'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1b36): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `exit'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1c4e): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `stat'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1c62): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `__errno'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1c9d): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `mkdir'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1cdf): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `gethostname'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1d2b): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `lstat'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1d6c): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `printf'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1d89): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `__errno'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1dcf): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `printf'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1e2f): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `unlink'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1e56): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `strdup'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1e69): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `mktemp'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1e96): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1edf): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `__sF'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1ef0): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `fprintf'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1f2f): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `realloc'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1f83): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `readlink'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x1fbe): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x2014): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `printf'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x2049): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `strncmp'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x2094): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `__sF'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x20a5): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `fprintf'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x20b1): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x20c5): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `unlink'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x20e5): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `printf'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x2145): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `unlink'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x216c): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `strdup'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x217f): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `mktemp'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x21ac): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x21db): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x2207): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `unlink'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x222e): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `strdup'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x2241): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `mktemp'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x226e): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x22ff): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x2314): In function `build_link(std::basic_string<char, std::char_traits<char>, std::allocator<char> >, char const*)':
+: undefined reference to `__stack_smash_handler'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x236b): In function `Arts::MCOPUtils::createFilePath(std::basic_string<char, std::char_traits<char>, std::allocator<char> >)':
+: undefined reference to `getenv'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.text+0x238d): In function `Arts::MCOPUtils::createFilePath(std::basic_string<char, std::char_traits<char>, std::allocator<char> >)':
+: undefined reference to `getenv'
+CMakeFiles/mcop-shared.dir/mcoputils.cc.o(.gnu.linkonce.t.isalnum+0x10): In function `isalnum':
+: undefined reference to `_ctype_'
+CMakeFiles/mcop-shared.dir/startupmanager.cc.o(.text+0x163): In function `__static_initialization_and_destruction_0(int, int)':
+: undefined reference to `__cxa_atexit'
+CMakeFiles/mcop-shared.dir/startupmanager.cc.o(.text+0x17b): In function `__static_initialization_and_destruction_0(int, int)':
+: undefined reference to `__cxa_atexit'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x11): In function `arts_md5_auth_set_cookie':
+: undefined reference to `strlen'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x35): In function `arts_md5_auth_set_cookie':
+: undefined reference to `strncpy'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x81): In function `md5_load_cookie(char const*, char*)':
+: undefined reference to `open'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0xa9): In function `md5_load_cookie(char const*, char*)':
+: undefined reference to `fstat'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0xc5): In function `md5_load_cookie(char const*, char*)':
+: undefined reference to `lseek'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0xd9): In function `md5_load_cookie(char const*, char*)':
+: undefined reference to `read'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0xfa): In function `md5_load_cookie(char const*, char*)':
+: undefined reference to `close'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x121): In function `md5_load_cookie(char const*, char*)':
+: undefined reference to `sleep'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x16f): In function `arts_md5_auth_cookie':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x18b): In function `md5_to_ascii_overwrite(char*)':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x1d1): In function `md5_to_ascii_overwrite(char*)':
+: undefined reference to `sprintf'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x1e8): In function `md5_to_ascii_overwrite(char*)':
+: undefined reference to `strdup'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x1ff): In function `md5_to_ascii_overwrite(char*)':
+: undefined reference to `memset'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x212): In function `md5_to_ascii_overwrite(char*)':
+: undefined reference to `memset'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x21d): In function `md5_to_ascii_overwrite(char*)':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x232): In function `md5_to_ascii_overwrite(char*)':
+: undefined reference to `__stack_smash_handler'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x246): In function `arts_md5_auth_mkcookie':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x265): In function `arts_md5_auth_mkcookie':
+: undefined reference to `memset'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x276): In function `arts_md5_auth_mkcookie':
+: undefined reference to `gettimeofday'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x27b): In function `arts_md5_auth_mkcookie':
+: undefined reference to `getpid'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x291): In function `arts_md5_auth_mkcookie':
+: undefined reference to `uname'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x2a7): In function `arts_md5_auth_mkcookie':
+: undefined reference to `open'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x2d4): In function `arts_md5_auth_mkcookie':
+: undefined reference to `read'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x2df): In function `arts_md5_auth_mkcookie':
+: undefined reference to `close'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x316): In function `arts_md5_auth_mkcookie':
+: undefined reference to `strncpy'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x341): In function `arts_md5_auth_mkcookie':
+: undefined reference to `memset'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x351): In function `arts_md5_auth_mkcookie':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x366): In function `arts_md5_auth_mkcookie':
+: undefined reference to `__stack_smash_handler'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x392): In function `arts_md5_auth_init_seed':
+: undefined reference to `getpid'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x3b5): In function `arts_md5_auth_init_seed':
+: undefined reference to `lstat'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x3c8): In function `arts_md5_auth_init_seed':
+: undefined reference to `time'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x408): In function `arts_md5_auth_init_seed':
+: undefined reference to `open'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x423): In function `arts_md5_auth_init_seed':
+: undefined reference to `strlen'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x432): In function `arts_md5_auth_init_seed':
+: undefined reference to `write'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x43b): In function `arts_md5_auth_init_seed':
+: undefined reference to `strlen'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x44c): In function `arts_md5_auth_init_seed':
+: undefined reference to `memset'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x455): In function `arts_md5_auth_init_seed':
+: undefined reference to `free'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x45d): In function `arts_md5_auth_init_seed':
+: undefined reference to `close'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x473): In function `arts_md5_auth_mangle':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x4a5): In function `arts_md5_auth_mangle':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x4ba): In function `arts_md5_auth_mangle':
+: undefined reference to `strncpy'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x4d0): In function `arts_md5_auth_mangle':
+: undefined reference to `strncat'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x4f9): In function `arts_md5_auth_mangle':
+: undefined reference to `memset'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x509): In function `arts_md5_auth_mangle':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/md5auth.cc.o(.text+0x51e): In function `arts_md5_auth_mangle':
+: undefined reference to `__stack_smash_handler'
+CMakeFiles/mcop-shared.dir/referenceclean.cc.o(.text+0x241): In function `Arts::ReferenceClean::notifyTime()':
+: undefined reference to `time'
+CMakeFiles/mcop-shared.dir/datapacket.cc.o(.text+0xae): In function `Arts::ByteDataPacket::read(Arts::Buffer&)':
+: undefined reference to `memcpy'
+CMakeFiles/mcop-shared.dir/notification.cc.o(.gnu.linkonce.t._ZNKSt15_Deque_iteratorIN4Arts12NotificationERKS1_PS2_EplEl+0x50): In function `std::_Deque_iterator<Arts::Notification, Arts::Notification const&, Arts::Notification const*>::operator+(long) const':
+: undefined reference to `memmove'
+CMakeFiles/mcop-shared.dir/notification.cc.o(.gnu.linkonce.t._ZNSt15__copy_backwardILb1ESt26random_access_iterator_tagE8__copy_bIPN4Arts12NotificationEEEPT_PKS6_S9_S7_+0x56): In function `Arts::Notification** std::__copy_backward<true, std::random_access_iterator_tag>::__copy_b<Arts::Notification*>(Arts::Notification* const*, Arts::Notification* const*, Arts::Notification**)':
+: undefined reference to `memmove'
+CMakeFiles/mcop-shared.dir/notification.cc.o(.gnu.linkonce.t._ZNSt6__copyILb1ESt26random_access_iterator_tagE4copyIPN4Arts12NotificationEEEPT_PKS6_S9_S7_+0x3a): In function `Arts::Notification** std::__copy<true, std::random_access_iterator_tag>::copy<Arts::Notification*>(Arts::Notification* const*, Arts::Notification* const*, Arts::Notification**)':
+: undefined reference to `memmove'
+CMakeFiles/mcop-shared.dir/flowsystem.cc.o(.text+0x20b): In function `Arts::RemoteScheduleNode::devirtualize(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Arts::ScheduleNode*, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/flowsystem.cc.o(.text+0x243): In function `Arts::RemoteScheduleNode::virtualize(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Arts::ScheduleNode*, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/flowsystem.cc.o(.text+0x26f): In function `Arts::RemoteScheduleNode::requireFlow()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/flowsystem.cc.o(.text+0x2a7): In function `Arts::RemoteScheduleNode::initStream(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, void*, long)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/flowsystem.cc.o(.text+0x2e5): In function `Arts::ScheduleNode::nodeObject()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/flowsystem.cc.o(.text+0x805): more undefined references to `__assert2' follow
+CMakeFiles/mcop-shared.dir/extensionloader.cc.o(.text+0x31e): In function `Arts::ExtensionLoader::ExtensionLoader(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `access'
+CMakeFiles/mcop-shared.dir/extensionloader.cc.o(.text+0x4ff): In function `Arts::ExtensionLoader::ExtensionLoader(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/extensionloader.cc.o(.text+0x5f8): In function `Arts::ExtensionLoader::ExtensionLoader(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `access'
+CMakeFiles/mcop-shared.dir/tmpglobalcomm.cc.o(.gnu.linkonce.t._ZN4Arts18TmpGlobalComm_impl5eraseERKSs+0x70): In function `Arts::TmpGlobalComm_impl::erase(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `unlink'
+CMakeFiles/mcop-shared.dir/tmpglobalcomm.cc.o(.gnu.linkonce.t._ZN4Arts18TmpGlobalComm_impl3getERKSs+0x2e): In function `Arts::TmpGlobalComm_impl::get(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/tmpglobalcomm.cc.o(.gnu.linkonce.t._ZN4Arts18TmpGlobalComm_impl3getERKSs+0x113): In function `Arts::TmpGlobalComm_impl::get(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `open'
+CMakeFiles/mcop-shared.dir/tmpglobalcomm.cc.o(.gnu.linkonce.t._ZN4Arts18TmpGlobalComm_impl3getERKSs+0x139): In function `Arts::TmpGlobalComm_impl::get(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `read'
+CMakeFiles/mcop-shared.dir/tmpglobalcomm.cc.o(.gnu.linkonce.t._ZN4Arts18TmpGlobalComm_impl3getERKSs+0x182): In function `Arts::TmpGlobalComm_impl::get(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `close'
+CMakeFiles/mcop-shared.dir/tmpglobalcomm.cc.o(.gnu.linkonce.t._ZN4Arts18TmpGlobalComm_impl3getERKSs+0x1ee): In function `Arts::TmpGlobalComm_impl::get(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/tmpglobalcomm.cc.o(.gnu.linkonce.t._ZN4Arts18TmpGlobalComm_impl3getERKSs+0x203): In function `Arts::TmpGlobalComm_impl::get(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__stack_smash_handler'
+CMakeFiles/mcop-shared.dir/tmpglobalcomm.cc.o(.gnu.linkonce.t._ZN4Arts18TmpGlobalComm_impl3putERKSsS2_+0x83): In function `Arts::TmpGlobalComm_impl::put(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `open'
+CMakeFiles/mcop-shared.dir/tmpglobalcomm.cc.o(.gnu.linkonce.t._ZN4Arts18TmpGlobalComm_impl3putERKSsS2_+0xb1): In function `Arts::TmpGlobalComm_impl::put(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `write'
+CMakeFiles/mcop-shared.dir/tmpglobalcomm.cc.o(.gnu.linkonce.t._ZN4Arts18TmpGlobalComm_impl3putERKSsS2_+0xe1): In function `Arts::TmpGlobalComm_impl::put(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/tmpglobalcomm.cc.o(.gnu.linkonce.t._ZN4Arts18TmpGlobalComm_impl3putERKSsS2_+0xe9): In function `Arts::TmpGlobalComm_impl::put(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `close'
+CMakeFiles/mcop-shared.dir/mcopconfig.cc.o(.text+0x139): In function `Arts::MCOPConfig::readListEntry(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/mcopconfig.cc.o(.text+0x361): In function `Arts::MCOPConfig::readListEntry(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/mcopconfig.cc.o(.text+0x376): In function `Arts::MCOPConfig::readListEntry(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__stack_smash_handler'
+CMakeFiles/mcop-shared.dir/mcopconfig.cc.o(.text+0x3af): In function `Arts::MCOPConfig::readEntry(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/mcopconfig.cc.o(.text+0x5ea): In function `Arts::MCOPConfig::readEntry(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/mcopconfig.cc.o(.text+0x5ff): In function `Arts::MCOPConfig::readEntry(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__stack_smash_handler'
+CMakeFiles/mcop-shared.dir/connect.cc.o(.text+0x159): In function `__static_initialization_and_destruction_0(int, int)':
+: undefined reference to `__cxa_atexit'
+CMakeFiles/mcop-shared.dir/connect.cc.o(.text+0x1d4): In function `Arts::setValue(Arts::Object const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, float)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/connect.cc.o(.text+0x240): In function `Arts::disconnect(Arts::Object const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Arts::Object const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/connect.cc.o(.text+0x2bc): In function `Arts::connect(Arts::Object const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Arts::Object const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/connect.cc.o(.text+0x331): In function `Arts::setValue(Arts::Object const&, float)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/connect.cc.o(.text+0x444): In function `Arts::disconnect(Arts::Object const&, Arts::Object const&)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/connect.cc.o(.text+0x620): more undefined references to `__assert2' follow
+CMakeFiles/mcop-shared.dir/trader_impl.cc.o(.text+0x2f7): In function `__static_initialization_and_destruction_0(int, int)':
+: undefined reference to `__cxa_atexit'
+CMakeFiles/mcop-shared.dir/trader_impl.cc.o(.text+0x3f8): In function `getOfferPreference(Arts::TraderOffer)':
+: undefined reference to `atoi'
+CMakeFiles/mcop-shared.dir/trader_impl.cc.o(.text+0x94a): In function `Arts::TraderOffer_impl::TraderOffer_impl(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/trader_impl.cc.o(.text+0xdea): In function `Arts::TraderOffer_impl::TraderOffer_impl(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/trader_impl.cc.o(.text+0xdff): In function `Arts::TraderOffer_impl::TraderOffer_impl(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__stack_smash_handler'
+CMakeFiles/mcop-shared.dir/trader_impl.cc.o(.text+0xea9): In function `Arts::TraderHelper::addDirectory(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::map<std::pair<int, unsigned int>, bool, std::less<std::pair<int, unsigned int> >, std::allocator<std::pair<std::pair<int, unsigned int> const, bool> > >*)':
+: undefined reference to `stat'
+CMakeFiles/mcop-shared.dir/trader_impl.cc.o(.text+0xee9): In function `Arts::TraderHelper::addDirectory(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::map<std::pair<int, unsigned int>, bool, std::less<std::pair<int, unsigned int> >, std::allocator<std::pair<std::pair<int, unsigned int> const, bool> > >*)':
+: undefined reference to `opendir'
+CMakeFiles/mcop-shared.dir/trader_impl.cc.o(.text+0xfc6): In function `Arts::TraderHelper::addDirectory(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::map<std::pair<int, unsigned int>, bool, std::less<std::pair<int, unsigned int> >, std::allocator<std::pair<std::pair<int, unsigned int> const, bool> > >*)':
+: undefined reference to `stat'
+CMakeFiles/mcop-shared.dir/trader_impl.cc.o(.text+0x1019): In function `Arts::TraderHelper::addDirectory(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::map<std::pair<int, unsigned int>, bool, std::less<std::pair<int, unsigned int> >, std::allocator<std::pair<std::pair<int, unsigned int> const, bool> > >*)':
+: undefined reference to `strcmp'
+CMakeFiles/mcop-shared.dir/trader_impl.cc.o(.text+0x1035): In function `Arts::TraderHelper::addDirectory(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::map<std::pair<int, unsigned int>, bool, std::less<std::pair<int, unsigned int> >, std::allocator<std::pair<std::pair<int, unsigned int> const, bool> > >*)':
+: undefined reference to `strcmp'
+CMakeFiles/mcop-shared.dir/trader_impl.cc.o(.text+0x109c): In function `Arts::TraderHelper::addDirectory(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::map<std::pair<int, unsigned int>, bool, std::less<std::pair<int, unsigned int> >, std::allocator<std::pair<std::pair<int, unsigned int> const, bool> > >*)':
+: undefined reference to `strlen'
+CMakeFiles/mcop-shared.dir/trader_impl.cc.o(.text+0x10b3): In function `Arts::TraderHelper::addDirectory(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::map<std::pair<int, unsigned int>, bool, std::less<std::pair<int, unsigned int> >, std::allocator<std::pair<std::pair<int, unsigned int> const, bool> > >*)':
+: undefined reference to `strlen'
+CMakeFiles/mcop-shared.dir/trader_impl.cc.o(.text+0x10d0): In function `Arts::TraderHelper::addDirectory(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::map<std::pair<int, unsigned int>, bool, std::less<std::pair<int, unsigned int> >, std::allocator<std::pair<std::pair<int, unsigned int> const, bool> > >*)':
+: undefined reference to `strncmp'
+CMakeFiles/mcop-shared.dir/trader_impl.cc.o(.text+0x120f): In function `Arts::TraderHelper::addDirectory(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::map<std::pair<int, unsigned int>, bool, std::less<std::pair<int, unsigned int> >, std::allocator<std::pair<std::pair<int, unsigned int> const, bool> > >*)':
+: undefined reference to `readdir'
+CMakeFiles/mcop-shared.dir/trader_impl.cc.o(.text+0x1262): In function `Arts::TraderHelper::addDirectory(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::map<std::pair<int, unsigned int>, bool, std::less<std::pair<int, unsigned int> >, std::allocator<std::pair<std::pair<int, unsigned int> const, bool> > >*)':
+: undefined reference to `closedir'
+CMakeFiles/mcop-shared.dir/trader_impl.cc.o(.text+0x150d): In function `Arts::TraderOffer_impl::TraderOffer_impl(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/trader_impl.cc.o(.text+0x18cd): In function `Arts::TraderOffer_impl::TraderOffer_impl(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__guard'
+CMakeFiles/mcop-shared.dir/trader_impl.cc.o(.text+0x18e2): In function `Arts::TraderOffer_impl::TraderOffer_impl(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__stack_smash_handler'
+CMakeFiles/mcop-shared.dir/trader_impl.cc.o(.gnu.linkonce.t._ZNSt15__copy_backwardILb1ESt26random_access_iterator_tagE8__copy_bIPN4Arts16TraderOffer_implEEEPT_PKS6_S9_S7_+0x56): In function `Arts::TraderOffer_impl** std::__copy_backward<true, std::random_access_iterator_tag>::__copy_b<Arts::TraderOffer_impl*>(Arts::TraderOffer_impl* const*, Arts::TraderOffer_impl* const*, Arts::TraderOffer_impl**)':
+: undefined reference to `memmove'
+CMakeFiles/mcop-shared.dir/trader_impl.cc.o(.gnu.linkonce.t._ZNSt6__copyILb1ESt26random_access_iterator_tagE4copyIPN4Arts16TraderOffer_implEEEPT_PKS6_S9_S7_+0x3a): In function `Arts::TraderOffer_impl** std::__copy<true, std::random_access_iterator_tag>::copy<Arts::TraderOffer_impl*>(Arts::TraderOffer_impl* const*, Arts::TraderOffer_impl* const*, Arts::TraderOffer_impl**)':
+: undefined reference to `memmove'
+CMakeFiles/mcop-shared.dir/dynamicrequest.cc.o(.text+0x159): In function `__static_initialization_and_destruction_0(int, int)':
+: undefined reference to `__cxa_atexit'
+CMakeFiles/mcop-shared.dir/dynamicrequest.cc.o(.text+0x776): In function `Arts::DynamicRequest::method(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/dynamicrequest.cc.o(.gnu.linkonce.t._ZNK4Arts6Object13_lookupMethodERKNS_9MethodDefE+0x47): In function `Arts::Object::_lookupMethod(Arts::MethodDef const&) const':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/anyref.cc.o(.text+0x85d): In function `Arts::AnyRefBase::_read(Arts::Buffer*) const':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/anyref.cc.o(.text+0xb22): In function `Arts::AnyRefBase::_write(Arts::Buffer*) const':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/anyref.cc.o(.text+0xbb7): In function `Arts::AnyRefBase::type() const':
+: undefined reference to `__cxa_atexit'
+CMakeFiles/mcop-shared.dir/anyref.cc.o(.text+0xc92): In function `Arts::AnyRefBase::type() const':
+: undefined reference to `__cxa_atexit'
+CMakeFiles/mcop-shared.dir/anyref.cc.o(.text+0xd6d): In function `Arts::AnyRefBase::type() const':
+: undefined reference to `__cxa_atexit'
+CMakeFiles/mcop-shared.dir/anyref.cc.o(.text+0xe48): In function `Arts::AnyRefBase::type() const':
+: undefined reference to `__cxa_atexit'
+CMakeFiles/mcop-shared.dir/anyref.cc.o(.text+0xf23): In function `Arts::AnyRefBase::type() const':
+: undefined reference to `__cxa_atexit'
+CMakeFiles/mcop-shared.dir/anyref.cc.o(.text+0xffe): more undefined references to `__cxa_atexit' follow
+CMakeFiles/mcop-shared.dir/anyref.cc.o(.text+0x1688): In function `Arts::AnyRefBase::type() const':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/anyref.cc.o(.gnu.linkonce.t._ZN4Arts15InterfaceRepoV212_method_callEv+0x89): In function `Arts::InterfaceRepoV2::_method_call()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/anyref.cc.o(.gnu.linkonce.t._ZN4Arts19AnyRefHelperStartup7startupEv+0x34): In function `Arts::AnyRefHelperStartup::startup()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/loopback.cc.o(.text+0x37): In function `Arts::LoopbackConnection::drop()':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/loopback.cc.o(.text+0x77): In function `Arts::LoopbackConnection::qSendBuffer(Arts::Buffer*)':
+: undefined reference to `__assert2'
+CMakeFiles/mcop-shared.dir/loopback.cc.o(.text+0xad): more undefined references to `__assert2' follow
+CMakeFiles/mcop-shared.dir/thread.cc.o(.text+0xb5): In function `__static_initialization_and_destruction_0(int, int)':
+: undefined reference to `__cxa_atexit'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x336): In function `rpl_strdup':
+: undefined reference to `strlen'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x354): In function `rpl_strdup':
+: undefined reference to `strcpy'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x3c1): In function `rpl_realloc':
+: undefined reference to `realloc'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x67a): In function `presym_open':
+: undefined reference to `strcmp'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x740): In function `presym_sym':
+: undefined reference to `strcmp'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0xbd4): In function `tryall_dlopen':
+: undefined reference to `strcmp'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0xe15): In function `find_module':
+: undefined reference to `strlen'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0xe21): In function `find_module':
+: undefined reference to `strlen'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0xea1): In function `find_module':
+: undefined reference to `sprintf'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0xf09): In function `find_module':
+: undefined reference to `strlen'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0xf24): In function `find_module':
+: undefined reference to `strlen'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0xf97): In function `find_module':
+: undefined reference to `strcpy'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0xfb0): In function `find_module':
+: undefined reference to `strcat'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0xfbd): In function `find_module':
+: undefined reference to `strcat'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x101b): In function `find_module':
+: undefined reference to `strlen'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x1032): In function `find_module':
+: undefined reference to `strlen'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x1066): In function `find_module':
+: undefined reference to `strcpy'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x107c): In function `find_module':
+: undefined reference to `strcat'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x1156): In function `find_file':
+: undefined reference to `strlen'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x1234): In function `find_file':
+: undefined reference to `strchr'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x1248): In function `find_file':
+: undefined reference to `strlen'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x1327): In function `find_file':
+: undefined reference to `strncpy'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x1364): In function `find_file':
+: undefined reference to `strcpy'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x13a2): In function `find_file':
+: undefined reference to `fopen'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x1574): In function `trim':
+: undefined reference to `strrchr'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x1581): In function `trim':
+: undefined reference to `strlen'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x1632): In function `trim':
+: undefined reference to `strncpy'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x17f0): In function `lt_dlopen':
+: undefined reference to `memset'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x1908): In function `lt_dlopen':
+: undefined reference to `strrchr'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x19a7): In function `lt_dlopen':
+: undefined reference to `strncpy'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x19de): In function `lt_dlopen':
+: undefined reference to `strrchr'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x19fd): In function `lt_dlopen':
+: undefined reference to `strcmp'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x1b62): In function `lt_dlopen':
+: undefined reference to `getenv'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x1b9a): In function `lt_dlopen':
+: undefined reference to `fopen'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x1c21): In function `lt_dlopen':
+: undefined reference to `fclose'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x1c8c): In function `lt_dlopen':
+: undefined reference to `fgets'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x1d07): In function `lt_dlopen':
+: undefined reference to `fgets'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x1d40): In function `lt_dlopen':
+: undefined reference to `__isthreaded'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x1d65): In function `lt_dlopen':
+: undefined reference to `feof'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x1db3): In function `lt_dlopen':
+: undefined reference to `strncmp'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x1df0): In function `lt_dlopen':
+: undefined reference to `strncmp'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x1e2d): In function `lt_dlopen':
+: undefined reference to `strncmp'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x1e6a): In function `lt_dlopen':
+: undefined reference to `strncmp'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x1ea2): In function `lt_dlopen':
+: undefined reference to `strcmp'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x1ec5): In function `lt_dlopen':
+: undefined reference to `strcmp'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x1efa): In function `lt_dlopen':
+: undefined reference to `strncmp'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x1f3b): In function `lt_dlopen':
+: undefined reference to `strrchr'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x1f9d): In function `lt_dlopen':
+: undefined reference to `__isthreaded'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x1fc3): In function `lt_dlopen':
+: undefined reference to `feof'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x1fe2): In function `lt_dlopen':
+: undefined reference to `fclose'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x20af): In function `lt_dlopen':
+: undefined reference to `memset'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x2240): In function `lt_dlopen':
+: undefined reference to `memset'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x22a2): In function `lt_dlopen':
+: undefined reference to `getenv'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x2486): In function `lt_dlopenext':
+: undefined reference to `strlen'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x252e): In function `lt_dlopenext':
+: undefined reference to `strcpy'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x253e): In function `lt_dlopenext':
+: undefined reference to `strcat'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x25c0): In function `lt_dlopenext':
+: undefined reference to `strcat'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x28c5): In function `lt_dlsym':
+: undefined reference to `__guard'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x2966): In function `lt_dlsym':
+: undefined reference to `strlen'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x2994): In function `lt_dlsym':
+: undefined reference to `strlen'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x29c5): In function `lt_dlsym':
+: undefined reference to `strlen'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x2ade): In function `lt_dlsym':
+: undefined reference to `strcpy'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x2af5): In function `lt_dlsym':
+: undefined reference to `strcat'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x2b0e): In function `lt_dlsym':
+: undefined reference to `strcpy'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x2b21): In function `lt_dlsym':
+: undefined reference to `strcat'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x2b34): In function `lt_dlsym':
+: undefined reference to `strcat'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x2c15): In function `lt_dlsym':
+: undefined reference to `strcpy'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x2c28): In function `lt_dlsym':
+: undefined reference to `strcat'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x2c3d): In function `lt_dlsym':
+: undefined reference to `strcpy'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x2cc2): In function `lt_dlsym':
+: undefined reference to `__guard'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x2cd7): In function `lt_dlsym':
+: undefined reference to `__stack_smash_handler'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x2dce): In function `lt_dladdsearchdir':
+: undefined reference to `strlen'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x2dda): In function `lt_dladdsearchdir':
+: undefined reference to `strlen'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x2e5f): In function `lt_dladdsearchdir':
+: undefined reference to `sprintf'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x3777): In function `lt_dlloader_remove':
+: undefined reference to `strcmp'
+../libltdl/libltdlc.a(ltdl.c.o)(.text+0x39f5): In function `lt_dlloader_find':
+: undefined reference to `strcmp'
+../libltdl/libltdlc.a(ltdl.c.o)(.data.rel+0x0): undefined reference to `malloc'
+../libltdl/libltdlc.a(ltdl.c.o)(.data.rel+0x8): undefined reference to `free'
+collect2: ld returned 1 exit status
+*** Error code 1
+
+Stop in /usr/ports/pobj/arts-3.5.13/build-amd64 (line 1011 of mcop/CMakeFiles/mcop-shared.dir/build.make).
+*** Error code 1
+
+Stop in /usr/ports/pobj/arts-3.5.13/build-amd64 (line 125 of CMakeFiles/Makefile2).
+*** Error code 1
+
+Stop in /usr/ports/pobj/arts-3.5.13/build-amd64 (line 113 of Makefile).
+*** Error code 1
+
+Stop in /usr/ports/openbsd-wip/x11/tde/arts (line 2462 of /usr/ports/infrastructure/mk/bsd.port.mk).
+*** Error code 1
+
+Stop in /usr/ports/openbsd-wip/x11/tde/arts (line 2211 of /usr/ports/infrastructure/mk/bsd.port.mk).
+23:12 /usr/ports/openbsd-wip/x11/tde/arts $ q
+
+Script done on Mon Jun 11 23:12:04 2012

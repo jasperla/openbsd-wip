@@ -1,0 +1,14 @@
+$OpenBSD$
+--- flow/gsl/CMakeLists.txt.orig	Tue Oct  4 04:01:15 2011
++++ flow/gsl/CMakeLists.txt	Mon Jun 11 23:38:10 2012
+@@ -77,8 +77,10 @@ endif( WITH_MAD )
+ 
+ include( CheckTypeSize )
+ 
++set( CMAKE_EXTRA_INCLUDE_FILES "pthread.h" )
+ check_type_size( pthread_mutex_t GSL_SIZEOF_PTH_MUTEX_T )
+ check_type_size( pthread_cond_t GSL_SIZEOF_PTH_COND_T )
++set( CMAKE_EXTRA_INCLUDE_FILES )
+ check_type_size( intmax_t GSL_SIZEOF_STD_INTMAX_T )
+ 
+ set( bak_CMAKE_REQUIRED_LIBRARIES ${CMAKE_REQUIRED_LIBRARIES} )
