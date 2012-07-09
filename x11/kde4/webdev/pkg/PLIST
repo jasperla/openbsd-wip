@@ -134,7 +134,5 @@ share/kde4/services/kimagemapeditorpart.desktop
 share/kde4/services/klinkstatus_automation.desktop
 share/kde4/services/klinkstatus_part.desktop
 share/kde4/services/krossmoduleklinkstatus.desktop
-@exec %D/bin/gtk-update-icon-cache -q %D/share/apps/kfilereplacepart/icons/crystalsvg 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/apps/kfilereplacepart/icons/crystalsvg 2>/dev/null || true
 @exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
