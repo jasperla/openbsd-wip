@@ -37,5 +37,5 @@ share/icons/hicolor/64x64/apps/kwalletmanager.png
 share/icons/hicolor/64x64/apps/kwalletmanager2.png
 share/kde4/services/kwalletconfig.desktop
 share/kde4/services/kwalletmanager_show.desktop
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor 2>/dev/null || true

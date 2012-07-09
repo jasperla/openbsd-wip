@@ -109,5 +109,5 @@ share/icons/hicolor/scalable/actions/newfunction.svgz
 share/icons/hicolor/scalable/actions/newparametric.svgz
 share/icons/hicolor/scalable/actions/newpolar.svgz
 share/icons/hicolor/scalable/actions/resetview.svgz
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor 2>/dev/null || true
