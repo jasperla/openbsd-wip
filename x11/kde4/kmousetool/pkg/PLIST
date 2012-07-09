@@ -16,5 +16,5 @@ share/icons/hicolor/16x16/apps/kmousetool.png
 share/icons/hicolor/32x32/actions/kmousetool_off.png
 share/icons/hicolor/32x32/actions/kmousetool_on.png
 share/icons/hicolor/32x32/apps/kmousetool.png
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor 2>/dev/null || true
