@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+@unexec-delete rm -f %D/share/icons/oxygen/icon-theme.cache
 share/icons/oxygen/
 share/icons/oxygen/128x128/
 share/icons/oxygen/128x128/actions/
@@ -6867,4 +6868,3 @@ share/icons/oxygen/index.theme
 @exec %D/bin/gtk-update-icon-cache -q %D/share/icons/oxygen 2>/dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/oxygen 2>/dev/null || true
 @exec %D/bin/gtk-update-icon-cache -q %D/share/icons/oxygen 2>/dev/null || true
-@unexec-delete rm -f %D/share/icons/oxygen/icon-theme.cache

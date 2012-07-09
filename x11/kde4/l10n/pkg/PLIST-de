@@ -2748,5 +2748,3 @@ share/locale/de/LC_SCRIPTS/
 share/locale/de/LC_SCRIPTS/kdelibs4/
 share/locale/de/LC_SCRIPTS/kdelibs4/kdelibs4.js
 share/locale/de/entry.desktop
-@exec %D/bin/gtk-update-icon-cache -q %D/share/doc/HTML/de/kcontrol/icons 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/doc/HTML/de/kcontrol/icons 2>/dev/null || true
