@@ -26,14 +26,15 @@ HOMEPAGE=		http://www.eclipse.org/
 
 MAINTAINER=		Matthew Dempsky <matthew@openbsd.org>
 
-# XXX(matthew): Blindly copied from Eclipse 3.x port
+# Licenses are detailed in about.html and notice.html and include:
 #
 # Eclipse Public License Version 1.0 (http://www.eclipse.org/legal/epl-v10.html)
+# Common Public License 1.0 (http://www.eclipse.org/legal/cpl-v10.html)
+# Apache Software License 1.1 (http://www.apache.org/licenses/LICENSE)
 # Apache Software License 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
-# IBM Public License 1.0 (http://oss.software.ibm.com/developerworks/opensource/license10.html)
 # Metro Link Public License 1.00 (http://www.opengroup.org/openmotif/supporters/metrolink/license.html)
 # Mozilla Public License Version 1.1 (http://www.mozilla.org/MPL/MPL-1.1.html)
-# LGPL 2.1 
+# LGPL 2.1 (http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html)
 PERMIT_PACKAGE_CDROM=	commercial distribution defend and indemnify clauses
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	commercial distribution defend and indemnify clauses
@@ -48,7 +49,7 @@ MASTER_SITES=		${MASTER_SITE_ECLIPSE:=R-4.2-201206081400/}
 MASTER_SITES0=		file://${FILESDIR}/
 
 MODULES=		java
-MODJAVA_VER=		1.7+
+MODJAVA_VER=		1.6+
 
 BUILD_DEPENDS=		devel/xulrunner/1.9,-devel devel/gmake archivers/zip archivers/unzip
 RUN_DEPENDS=		${MODJAVA_RUN_DEPENDS}
