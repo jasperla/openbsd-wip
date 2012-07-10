@@ -39,7 +39,7 @@ WANTLIB-main +=	qjson tag>=5.0 usb xml2
 WANTLIB-kde4 =	${WANTLIB-common} ${MODKDE4_WANTLIB}
 WANTLIB-kde4 +=	lib/qt4/QtSvg kdeui plasma
 
-MODULES =	devel/cmake devel/gettext x11/qt4 x11/kde4
+MODULES =	devel/gettext x11/kde4
 
 .if ${FLAVOR:Mno_kde4}
 MODKDE4_USE =
