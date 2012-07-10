@@ -1,6 +1,6 @@
 $OpenBSD$
---- libsrc/Thread/sched_pthread.c.orig	Fri Sep  9 15:31:39 2011
-+++ libsrc/Thread/sched_pthread.c	Fri Sep  9 15:32:34 2011
+--- libsrc/Thread/sched_pthread.c.orig	Tue Mar 13 04:29:01 2012
++++ libsrc/Thread/sched_pthread.c	Wed Jul  4 00:54:35 2012
 @@ -206,7 +206,7 @@ thread_initial (unsigned long stack_size)
    CKRET (rc);
  #endif
@@ -10,7 +10,7 @@ $OpenBSD$
    rc = pthread_mutexattr_setpshared (&_mutex_attr, PTHREAD_PROCESS_PRIVATE);
    CKRET (rc);
  #endif
-@@ -1038,7 +1038,7 @@ mutex_allocate_typed (int type)
+@@ -1072,7 +1072,7 @@ mutex_allocate_typed (int type)
        if (!is_initialized)
  	{
  	  pthread_mutexattr_init (&_mutex_attr);
@@ -19,7 +19,7 @@ $OpenBSD$
  	  rc = pthread_mutexattr_setpshared (&_mutex_attr, PTHREAD_PROCESS_PRIVATE);
  	  CKRET (rc);
  #endif
-@@ -1095,7 +1095,7 @@ dk_mutex_init (dk_mutex_t * mtx, int type)
+@@ -1129,7 +1129,7 @@ dk_mutex_init (dk_mutex_t * mtx, int type)
        if (!is_initialized) 
  	{
  	  pthread_mutexattr_init (&_attr);
