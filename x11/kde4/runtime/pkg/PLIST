@@ -2161,7 +2161,7 @@ share/sounds/KDE-Window-Shade-Up.ogg
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons 2>/dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

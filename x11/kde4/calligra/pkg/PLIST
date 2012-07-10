@@ -6823,7 +6823,7 @@ share/templates/TextDocument.desktop
 @unexec-delete %D/bin/shared-mime-info
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor 2>/dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen

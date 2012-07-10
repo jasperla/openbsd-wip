@@ -84,5 +84,5 @@ share/locale/sv/LC_MESSAGES/libkgeomap.mo
 share/locale/uk/LC_MESSAGES/libkgeomap.mo
 share/locale/zh_CN/LC_MESSAGES/libkgeomap.mo
 share/locale/zh_TW/LC_MESSAGES/libkgeomap.mo
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
