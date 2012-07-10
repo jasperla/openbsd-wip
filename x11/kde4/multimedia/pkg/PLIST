@@ -138,7 +138,7 @@ share/kde4/services/libkcddb.desktop
 share/kde4/services/videopreview.desktop
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor 2>/dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
