@@ -62,7 +62,7 @@ WANTLIB += lzma pcre pcreposix png polkit-qt-core-1 qca2>=0.0 xml2 xslt
 MODULES =	multimedia/phonon
 MODKDE4_USE =	
 
-BUILD_DEPENDS =	misc/shared-desktop-ontologies \
+BUILD_DEPENDS =	misc/shared-desktop-ontologies>=0.10 \
 		misc/shared-mime-info \
 		net/avahi \
 		textproc/docbook \
