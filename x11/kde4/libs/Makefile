@@ -78,7 +78,7 @@ RUN_DEPENDS =	misc/shared-mime-info \
 LIB_DEPENDS =	audio/pulseaudio \
 		archivers/bzip2 \
 		archivers/xz \
-		databases/soprano>=2.7.6 \
+		databases/soprano>=2.7.56 \
 		databases/strigi \
 		devel/pcre \
 		graphics/jasper \
