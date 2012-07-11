@@ -1,6 +1,6 @@
 $OpenBSD$
 --- CMakeLists.txt.orig	Mon Mar 28 04:09:15 2011
-+++ CMakeLists.txt	Sat Jul  7 16:45:14 2012
++++ CMakeLists.txt	Tue Jul 10 16:15:09 2012
 @@ -33,6 +33,7 @@ option( WITH_ALSA "Enable ALSA support" ON )
  option( WITH_AUDIOFILE "Enable audiofile (wav) support" ON )
  option( WITH_VORBIS "Enable Ogg/Vorbis support" ON )
@@ -44,12 +44,13 @@ $OpenBSD$
  ##### check for glib/gthread modules ############
  
  pkg_search_module( GLIB2 glib-2.0 )
-@@ -186,7 +196,7 @@ add_definitions(
+@@ -185,9 +195,6 @@ install( FILES ${CMAKE_CURRENT_BINARY_DIR}/arts.pc DES
+ add_definitions(
    -DHAVE_CONFIG_H
  )
- 
+-
 -set( CMAKE_SHARED_LINKER_FLAGS "-Wl,--no-undefined" )
-+set( CMAKE_SHARED_LINKER_FLAGS "-Wl,--no-undefined,-lc" )
- 
+-
  
  ##### project subdirectories ####################
+ 

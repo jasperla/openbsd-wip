@@ -32,9 +32,7 @@ LIB_DEPENDS =		devel/glib2 \
 			audio/libvorbis \
 			audio/libmad
 
-CONFIGURE_ARGS +=	-DWITH_ALSA=OFF \
-			-DLDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS +=	-DWITH_ALSA=OFF
 
 WRKDIST =		${WRKDIR}/dependencies/arts
 
