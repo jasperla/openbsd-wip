@@ -1,6 +1,6 @@
 $OpenBSD: patch-src_daemon_c,v 1.4 2007/12/21 14:42:23 todd Exp $
---- src/daemon.c.orig	Sat Jul 30 21:54:31 2011
-+++ src/daemon.c	Mon Aug 22 10:11:32 2011
+--- src/daemon.c.orig	Wed Apr 11 20:48:33 2012
++++ src/daemon.c	Wed Jul 11 12:07:55 2012
 @@ -561,7 +561,7 @@ void *process_connection(void *ptr) {
  
      while(ATX->users->items == 0 || invalid) {
@@ -32,17 +32,17 @@ $OpenBSD: patch-src_daemon_c,v 1.4 2007/12/21 14:42:23 todd Exp $
    char buf[128];
    char *cmd;
  
--  cmd = daemon_getline(TTX, 300); 
-+  cmd = daemon_getline(TTX, 900); 
+-  cmd = daemon_getline(TTX, 300);
++  cmd = daemon_getline(TTX, 900);
    if (cmd == NULL)
      return NULL;
  
-@@ -1015,7 +1015,7 @@ char *daemon_expect(THREAD_CTX *TTX, const char *comma
-     if (send_socket(TTX, buf)<=0)
-       return NULL;
-     free(cmd);
--    cmd = daemon_getline(TTX, 300);
-+    cmd = daemon_getline(TTX, 900);
-     if (cmd == NULL)
-       return NULL;
-   } 
+@@ -1018,7 +1018,7 @@ char *daemon_expect(THREAD_CTX *TTX, const char *comma
+       if (send_socket(TTX, buf)<=0)
+         return NULL;
+       free(cmd);
+-      cmd = daemon_getline(TTX, 300);
++      cmd = daemon_getline(TTX, 900);
+       if (cmd == NULL)
+         return NULL;
+     }
