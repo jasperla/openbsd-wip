@@ -1,46 +1,75 @@
-# $OpenBSD$
+# $OpenBSD: Makefile,v 1.57 2012/01/16 22:10:59 espie Exp $
 
-COMMENT =		Trinity Desktop Environment, internationalization
+SUBDIR += af 
+SUBDIR += ar 
+SUBDIR += az 
+SUBDIR += be 
+SUBDIR += bg 
+SUBDIR += bn 
+SUBDIR += br 
+SUBDIR += bs 
+SUBDIR += ca 
+SUBDIR += cs 
+SUBDIR += csb 
+SUBDIR += cy 
+SUBDIR += da 
+SUBDIR += de 
+SUBDIR += el 
+SUBDIR += en_GB 
+SUBDIR += eo 
+SUBDIR += es 
+SUBDIR += et 
+SUBDIR += eu 
+SUBDIR += fa
+SUBDIR += fi 
+SUBDIR += fr 
+SUBDIR += fy 
+SUBDIR += ga 
+SUBDIR += gl 
+SUBDIR += he 
+SUBDIR += hi 
+SUBDIR += hr 
+SUBDIR += hu 
+SUBDIR += is 
+SUBDIR += it 
+SUBDIR += ja 
+SUBDIR += kk 
+SUBDIR += km 
+SUBDIR += ko 
+SUBDIR += lt 
+SUBDIR += lv 
+SUBDIR += mk 
+SUBDIR += mn 
+SUBDIR += ms 
+SUBDIR += nb 
+SUBDIR += nds
+SUBDIR += nl 
+SUBDIR += nn 
+SUBDIR += pa 
+SUBDIR += pl 
+SUBDIR += pt 
+SUBDIR += pt_BR 
+SUBDIR += ro 
+SUBDIR += ru 
+SUBDIR += rw 
+SUBDIR += se 
+SUBDIR += sk 
+SUBDIR += sl 
+SUBDIR += sr 
+SUBDIR += sr@Latn 
+SUBDIR += ss 
+SUBDIR += sv 
+SUBDIR += ta 
+SUBDIR += te 
+SUBDIR += tg 
+SUBDIR += th
+SUBDIR += tr 
+SUBDIR += uk 
+SUBDIR += uz 
+SUBDIR += uz@cyrillic 
+SUBDIR += vi 
+SUBDIR += wa 
+SUBDIR += zh_CN 
+SUBDIR += zh_TW
 
-DISTNAME =		kde-i18n-${TDE_V}
-
-#SHARED_LIBS =		???
-
-#WANTLIB =		???
-
-#MODULES =		???
-#BUILD_DEPENDS =	???
-#RUN_DEPENDS =		???
-#LIB_DEPENDS =		???
-#REGRESS_DEPENDS =	???
-
-#MAKE_FLAGS =		???
-#MAKE_ENV =		???
-#FAKE_FLAGS =		???
-#REGRESS_FLAGS =	???
-
-#USE_GMAKE =		Yes
-#USE_GROFF =		Yes
-#USE_LIBTOOL =		Yes
-#CONFIGURE_STYLE =	
-#CONFIGURE_SCRIPT =	??? (if other than configure)
-#CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
-#CONFIGURE_ENV =	???
-
-#NO_BUILD =		Yes
-#NO_REGRESS =		Yes
-
-#CFLAGS =		???
-#LDFLAGS =		???
-#MAKE_FILE =		???
-#PKG_ARCH =		??? (* for arch-independent packages)
-#WRKDIST =		??? if other than ${WRKDIR}/${DISTNAME}
-#WRKSRC =		??? if other than ${WRKDIST}
-#WRKBUILD =		??? if other than ${WRKSRC}
-#WRKCONF =		??? if other than ${WRKBUILD}
-
-#ALL_TARGET =		???
-#INSTALL_TARGET =	???
-#REGRESS_TARGET =	???
-
-.include <bsd.port.mk>
+.include <bsd.port.subdir.mk>

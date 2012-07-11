@@ -31,7 +31,7 @@ WANTLIB-main = ${WANTLIB} Half Iex IlmImf IlmThread Imath Imlib Xext Xft Xxf86vm
 WANTLIB-main += art_lgpl_2 fribidi jpeg kdeprint khtml kjs kparts kutils
 WANTLIB-main += lcms png poppler pthread tiff ungif
 WANTLIB-kamera = ${WANTLIB} exif gphoto2 gphoto2_port usb
-WANTLIB-sane =	${WANTLIB} jpeg kdeprint kparts pthread sane tiff usb
+WANTLIB-sane = ${WANTLIB} jpeg kdeprint kparts pthread sane tiff usb
 WANTLIB-kpov = ${WANTLIB} GL GLU Xmu Xt kparts pthread
 
 MODULES =		devel/gettext \

@@ -11,6 +11,7 @@ WANTLIB +=		m stdc++
 
 MASTER_SITES =		${MASTER_SITE_TDE:=dependencies/}
 
+# XXX
 RUN_DEPENDS =		shells/bash \
 			textproc/gsed
 
@@ -22,6 +23,11 @@ CONFIGURE_ARGS +=	-DQT_VERSION=3 \
 			-DQT_LIBRARY_DIR="${MODQT3_LIBDIR}"
 
 WRKDIST =		${WRKDIR}/dependencies/tqtinterface
+
+SUBST_VARS +=		MODQT3_UIC
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/qtinterface/uic-tqt
 
 post-install:
 	cd ${PREFIX}/bin && perl -pi -e \
