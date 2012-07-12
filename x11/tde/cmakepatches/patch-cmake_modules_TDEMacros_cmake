@@ -1,7 +1,31 @@
 $OpenBSD$
---- cmake/modules/TDEMacros.cmake.orig	Thu Oct 27 05:20:11 2011
-+++ cmake/modules/TDEMacros.cmake	Sat Jul  7 20:15:55 2012
-@@ -663,8 +663,8 @@ macro( tde_add_library _arg_target )
+
+Make cmake stuff obey our versioning, important for import and .la files.
+
+--- cmake/modules/TDEMacros.cmake.orig	Thu Oct 27 17:54:47 2011
++++ cmake/modules/TDEMacros.cmake	Wed Jul 11 15:09:41 2012
+@@ -385,13 +385,16 @@ macro( tde_install_libtool_file _target _destination )
+   get_target_property( _target_version ${_target} VERSION )
+   get_target_property( _target_soversion ${_target} SOVERSION )
+ 
++  string( REGEX REPLACE "lib" "" __target "${_soname}" )
++  string( REGEX REPLACE ".so" "" __target "${__target}" )
++
+   # we have so version
+   if( _target_version )
+-    set( _library_name_1 "${_soname}.${_target_version}" )
+-    set( _library_name_2 "${_soname}.${_target_soversion}" )
+-    set( _library_name_3 "${_soname}" )
++    set( _library_name_1 "${_soname}.${LIB${__target}_VERSION}" )
++    set( _library_name_2 "${_soname}.${LIB${__target}_VERSION}" )
++    set( _library_name_3 "${_soname}.${LIB${__target}_VERSION}" )
+ 
+-    string( REGEX MATCH "^([0-9]+)\\.([0-9]+)\\.([0-9]+)$" _dummy  "${_target_version}" )
++    string( REGEX MATCH "^([0-9]+)\\.([0-9]+)\\.([0-9]+)$" _dummy  "${LIB${__target}_VERSION}" )
+     set( _version_current  "${CMAKE_MATCH_1}" )
+     set( _version_age  "${CMAKE_MATCH_2}" )
+     set( _version_revision "${CMAKE_MATCH_3}" )
+@@ -663,8 +666,8 @@ macro( tde_add_library _arg_target )
        get_target_property( _soversion ${_target} SOVERSION )
  
        if( _version )

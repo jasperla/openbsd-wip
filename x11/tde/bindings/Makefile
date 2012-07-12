@@ -21,7 +21,8 @@ MODULES =		lang/python \
 			perl
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+2,-guic
-LIB_DEPENDS =		x11/tde/libs
+LIB_DEPENDS =		x11/tde/libs \
+			${MODRUBY_LIB_DEPENDS}
 
 CONFIGURE_STYLE =	autoconf
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
