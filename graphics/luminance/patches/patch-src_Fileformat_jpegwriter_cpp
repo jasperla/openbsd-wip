@@ -1,0 +1,39 @@
+$OpenBSD$
+--- src/Fileformat/jpegwriter.cpp.orig	Mon Jul 16 14:02:26 2012
++++ src/Fileformat/jpegwriter.cpp	Mon Jul 16 14:03:23 2012
+@@ -36,7 +36,7 @@
+ #include <lcms2.h>
+ #include <jpeglib.h>
+ 
+-#if defined(WIN32) || defined(__APPLE__) || defined(__FreeBSD__)
++#if defined(WIN32) || defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <QTemporaryFile>
+ #endif
+ 
+@@ -218,7 +218,7 @@ bool JpegWriter::writeQImageToJpeg()
+ 
+     ResouceHandlerFile outfile;
+ 
+-#if defined(WIN32) || defined(__APPLE__) || defined(__FreeBSD__)
++#if defined(WIN32) || defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+     QTemporaryFile output_temp_file;
+ #else
+     std::vector<char> outbuf;
+@@ -238,7 +238,7 @@ bool JpegWriter::writeQImageToJpeg()
+ 	} 
+     else                            // we are writing to memory buffer
+     {
+-#if defined(WIN32) || defined(__APPLE__) || defined(__FreeBSD__)
++#if defined(WIN32) || defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+         if ( !output_temp_file.open() ) return false; // could not open the temporary file!
+ 
+         QByteArray output_temp_filename = QFile::encodeName( output_temp_file.fileName() );
+@@ -288,7 +288,7 @@ bool JpegWriter::writeQImageToJpeg()
+ 
+     if ( m_fname.isEmpty() )
+     {
+-#if defined(WIN32) || defined(__APPLE__) || defined(__FreeBSD__)
++#if defined(WIN32) || defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+         fflush(outfile.data());
+         fseek(outfile.data(), 0, SEEK_END);
+         m_filesize = ftell(outfile.data());
