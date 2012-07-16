@@ -33,6 +33,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/qt4
 
 CONFIGURE_ARGS += 	-DCMAKE_BUILD_TYPE=Release \
+			-DCMAKE_EXE_LINKER_FLAGS=-pthread \
 			-DLIBPNG_INCLUDE_DIR=${LOCALBASE}/include/libpng
 
 NO_REGRESS =		Yes
