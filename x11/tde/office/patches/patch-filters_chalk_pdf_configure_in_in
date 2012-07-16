@@ -1,9 +1,6 @@
 $OpenBSD$
-
-http://git.trinitydesktop.org/cgit/koffice/commit/filters/chalk/pdf?id=11a4c24db6013007b300e78fa04af34a8a71019c
-
---- filters/chalk/pdf/configure.in.in.orig	Thu Jul 12 00:03:03 2012
-+++ filters/chalk/pdf/configure.in.in	Thu Jul 12 00:03:07 2012
+--- filters/chalk/pdf/configure.in.in.orig	Thu Jul 12 23:17:05 2012
++++ filters/chalk/pdf/configure.in.in	Thu Jul 12 23:17:16 2012
 @@ -1,5 +1,4 @@
  # Compile the pdf import filter only if Poppler is available
 -# PKG_CHECK_MODULES(POPPLER, poppler-qt >= 0.5.1, have_poppler=yes, have_poppler=no)

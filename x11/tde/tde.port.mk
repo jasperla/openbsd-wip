@@ -27,7 +27,8 @@ MODTDE_CONFIGURE_ENV +=		PTHREAD_LIBS=-pthread
 MODTDE_MAKE_FLAGS =		CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
 MODTDE_MAKE_FLAGS +=		LIBRESOLV=
 
-MODTDE_post-patch =	find ${WRKDIST} -name Makefile.am -o -name aclocal.m4 -exec touch {}.in \;
+MODTDE_post-patch =	find ${WRKDIST} -name Makefile.am -o -name aclocal.m4 \
+				-exec touch {}.in \;
 
 WANTLIB +=	lib/qt3/qt-mt>=3.34
 
