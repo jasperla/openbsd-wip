@@ -68,10 +68,6 @@ bin/kfmexec
 bin/preparetips
 @bin bin/start_kdeinit
 @bin bin/start_kdeinit_wrapper
-etc/
-etc/xdg/
-etc/xdg/menus/
-etc/xdg/menus/applications.menu
 include/TGlibEventLoop.h
 include/arts/artskde.h
 include/arts/kartsdispatcher.h
@@ -1282,6 +1278,13 @@ share/apps/kconf_update/kioslave.upd
 share/apps/kconf_update/move_kio_help_cache.sh
 share/apps/kconf_update/proxytype.pl
 share/apps/kconf_update/useragent.pl
+share/apps/kde-conf-sample/
+share/apps/kde-conf-sample/xdg/
+@sample ${SYSCONFDIR}/xdg/
+share/apps/kde-conf-sample/xdg/menus/
+@sample ${SYSCONFDIR}/xdg/menus/
+share/apps/kde-conf-sample/xdg/menus/applications.menu
+@sample ${SYSCONFDIR}/xdg/menus/applications.menu
 share/apps/kdeprint/
 share/apps/kdeprint/apsdriver1
 share/apps/kdeprint/apsdriver2
