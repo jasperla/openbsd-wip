@@ -44,4 +44,4 @@ share/services/kconfiguredialog/
 share/services/kconfiguredialog/kopete_otr_config.desktop
 share/services/kopete_otr.desktop
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/crystalsvg
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/crystalsvg
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/crystalsvg
