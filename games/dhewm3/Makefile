@@ -35,10 +35,19 @@ NO_REGRESS =		Yes
 
 WRKSRC =		${WRKDIST}/neo
 
+CFLAGS +=		-DLINUX_DEFAULT_PATH=\\\"${TRUEPREFIX}/share/dhewm3\\\"
+
+.if ${MACHINE_ARCH} == "amd64"
+A =	amd64
+.else
+A =	x86
+.endif
+SUBST_VARS +=		A
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/dhewm3 ${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/dhewm3
-	${INSTALL_DATA} ${WRKDIST}/base/default.cfg \
-		${PREFIX}/share/examples/dhewm3
+	${INSTALL_DATA_DIR} ${PREFIX}/share/dhewm3
+	${INSTALL_DATA_DIR} ${PREFIX}/share/dhewm3/base
+	${INSTALL_DATA} ${WRKBUILD}/game${A}.so ${PREFIX}/share/dhewm3/base
 
 .include <bsd.port.mk>

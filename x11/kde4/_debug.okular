@@ -1,0 +1,91 @@
+# At the first time all KDE applications crash with  SIGSEGV _atomic_lock...
+# With second time it starts fine and ever think looks good for me.
+#
+# OUTPUT (first run)
+okular(2939)/KSharedDataCache ensureFileAllocated: This system misses support for posix_fallocate() -- ensure this partition has room for at least 10526824 bytes. 
+/usr/local/bin/okular:/usr/local/lib/qt4/libQtScript.so.2.0: /usr/local/lib/libkjsapi.so.0.0 : WARNING: symbol(_ZTIN14WTFNoncopyable11NoncopyableE) size mismatch, relink your program
+okular(2939)/KSharedDataCache ensureFileAllocated: This system misses support for posix_fallocate() -- ensure this partition has room for at least 10526824 bytes. 
+okular(2939)/kdecore (KSycoca) KSycocaPrivate::checkDatabase: We have no database.... launching kdeinit
+okular(2939)/kdecore (kdelibs) KToolInvocation::klauncher: klauncher not running... launching kdeinit
+kdeinit4: preparing to launch /usr/local/lib/libkdeinit4_klauncher.so
+kdeinit4: Launched KLauncher, pid = 24168, result = 0
+Connecting to deprecated signal QDBusConnectionInterface::serviceOwnerChanged(QString,QString,QString)
+klauncher(24168)/kio (KIOConnection) KIO::ConnectionServer::listenForRemote: Listening on  "local:/tmp/ksocket-sizeofvoid/klauncherQ24168.slave-socket"
+kdeinit4: opened connection to :0
+kdeinit4: preparing to launch /usr/local/lib/libkdeinit4_kded4.so
+kdeinit4: Launched KDED, pid = 7641 result = 0
+QDBusConnection: session D-Bus connection created before QCoreApplication. Application may misbehave.
+QDBusConnection: session D-Bus connection created before QCoreApplication. Application may misbehave.
+kded(7222)/KSharedDataCache ensureFileAllocated: This system misses support for posix_fallocate() -- ensure this partition has room for at least 10526824 bytes. 
+kdeinit4: Got EXT_EXEC '/usr/local/bin/kbuildsycoca4' from launcher.
+kdeinit4: preparing to launch /usr/local/lib/libkdeinit4_kbuildsycoca4.so
+klauncher(24168)/kio (KLauncher) KLauncher::processRequestReturn: "/usr/local/bin/kbuildsycoca4" (pid 9242) up and running.
+kbuildsycoca4 running...
+kbuildsycoca4(9242)/kdecore (KSycoca) KSycocaPrivate::openDatabase: Trying to open ksycoca from "/var/tmp/kdecache-sizeofvoid/ksycoca4"
+kbuildsycoca4(9242) KBuildSycoca::checkTimestamps: checking file timestamps
+kbuildsycoca4(9242) KBuildSycoca::checkTimestamps: timestamps check ok
+kbuildsycoca4(9242) kdemain: Emitting notifyDatabaseChanged ()
+kdeinit4: PID 9242 terminated.
+kded(7222)/kdecore (KSycoca) KSycocaPrivate::openDatabase: Trying to open ksycoca from "/var/tmp/kdecache-sizeofvoid/ksycoca4"
+klauncher(24168)/kdecore (KSycoca) KSycocaPrivate::openDatabase: Trying to open ksycoca from "/var/tmp/kdecache-sizeofvoid/ksycoca4"
+kdeinit4: Got EXEC_NEW 'kconf_update' from launcher.
+kdeinit4: preparing to launch /usr/local/lib/libkdeinit4_kconf_update.so
+klauncher(24168)/kio (KLauncher) KLauncher::processRequestReturn: "kconf_update" (pid 23091) up and running.
+kdeinit4: PID 23091 terminated.
+kdeinit4: PID 7641 terminated.
+okular(2939)/kdecore (KSycoca) KSycocaPrivate::openDatabase: Trying to open ksycoca from "/var/tmp/kdecache-sizeofvoid/ksycoca4"
+okular(2939)/kdecore (KConfigSkeleton) KCoreConfigSkeleton::writeConfig:
+okular(2939)/kdecore (KConfigSkeleton) KCoreConfigSkeleton::writeConfig:
+okular(2939)/kdecore (KConfigSkeleton) KCoreConfigSkeleton::writeConfig:
+okular(2939)/kdecore (KConfigSkeleton) KCoreConfigSkeleton::writeConfig:
+okular(2939)/kdecore (KConfigSkeleton) KCoreConfigSkeleton::writeConfig:
+
+Program received signal SIGSEGV, Segmentation fault.
+0x00000002006086a5 in _atomic_lock (lock=0x2028d2a40) at /usr/src/lib/librthread/arch/amd64/_atomic_lock.c:21
+21		__asm__("xchg %0,(%2)"
+Current language:  auto; currently c
+
+#
+# Output gdb bt
+#
+
+#0  0x00000002006086a5 in _atomic_lock (lock=0x2028d2a40) at /usr/src/lib/librthread/arch/amd64/_atomic_lock.c:21
+#1  0x00000002006079f3 in _spinlock (lock=Variable "lock" is not available.
+) at /usr/src/lib/librthread/rthread.c:73
+#2  0x00000002006090b9 in _sem_wait (sem=0x2028d2a40, tryonly=0, abstime=0x7f7ffffc1070, delayed_cancel=0x200a0fe40) at /usr/src/lib/librthread/rthread_sem.c:36
+#3  0x00000002006091f0 in sem_timedwait (semp=0x2166ca008, abstime=0x7f7ffffc1070) at /usr/src/lib/librthread/rthread_sem.c:197
+#4  0x000000021073c91a in semaphoreTimedLock::lock (this=0x205946800) at kshareddatacache_p.h:255
+#5  0x000000021073c457 in KSharedDataCache::Private::lock (this=Variable "this" is not available.
+) at /usr/ports/pobj/kdelibs-4.8.3/kdelibs-4.8.3/kdecore/util/kshareddatacache.cpp:1133
+#6  0x000000021073de7c in KSharedDataCache::Private::CacheLocker::cautiousLock (this=0x7f7ffffc1210) at /usr/ports/pobj/kdelibs-4.8.3/kdelibs-4.8.3/kdecore/util/kshareddatacache.cpp:1155
+#7  0x000000021073dec7 in CacheLocker (this=0x7f7ffffc1210, _d=Variable "_d" is not available.
+) at /usr/ports/pobj/kdelibs-4.8.3/kdelibs-4.8.3/kdecore/util/kshareddatacache.cpp:1179
+#8  0x000000021073af49 in KSharedDataCache::find (this=0x2059462c0, key=@0x7f7ffffc1510, destination=0x7f7ffffc12f0) at /usr/ports/pobj/kdelibs-4.8.3/kdelibs-4.8.3/kdecore/util/kshareddatacache.cpp:1509
+#9  0x0000000202c3e95c in KIconLoaderPrivate::findCachedPixmapWithPath (this=0x2097b1380, key=@0x7f7ffffc1510, data=@0x7f7ffffc1470, path=@0x7f7ffffc13e0) at /usr/ports/pobj/kdelibs-4.8.3/kdelibs-4.8.3/kdeui/icons/kiconloader.cpp:860
+#10 0x0000000202c42c80 in KIconLoader::loadIcon (this=0x208a3c020, _name=Variable "_name" is not available.
+) at /usr/ports/pobj/kdelibs-4.8.3/kdelibs-4.8.3/kdeui/icons/kiconloader.cpp:1222
+#11 0x0000000202c4535f in SmallIcon (name=@0x7f7ffffc1740, force_size=0, state=0, overlays=@0x7f7ffffc1730) at /usr/ports/pobj/kdelibs-4.8.3/kdelibs-4.8.3/kdeui/icons/kiconloader.cpp:1635
+#12 0x000000021e51b663 in PageViewMessage::display (this=0x203891380, message=Variable "message" is not available.
+) at /usr/ports/pobj/okular-4.8.3/okular-4.8.3/ui/pageviewutils.cpp:290
+#13 0x000000021e4fac43 in PageView::slotShowWelcome (this=0x204876700) at /usr/ports/pobj/okular-4.8.3/okular-4.8.3/ui/pageview.cpp:4040
+#14 0x000000020a3a0776 in QObject::event () from /usr/local/lib/qt4/libQtCore.so.9.0
+#15 0x000000020f311703 in QWidget::event () from /usr/local/lib/qt4/libQtGui.so.10.0
+#16 0x000000020f7279db in QFrame::event () from /usr/local/lib/qt4/libQtGui.so.10.0
+#17 0x000000020f7bb3db in QAbstractScrollArea::event () from /usr/local/lib/qt4/libQtGui.so.10.0
+#18 0x000000020f2b3dff in QApplicationPrivate::notify_helper () from /usr/local/lib/qt4/libQtGui.so.10.0
+#19 0x000000020f2bb6b5 in QApplication::notify () from /usr/local/lib/qt4/libQtGui.so.10.0
+#20 0x0000000202ca26de in KApplication::notify (this=0x7f7ffffc24c0, receiver=0x204876700, event=0x203891000) at /usr/ports/pobj/kdelibs-4.8.3/kdelibs-4.8.3/kdeui/kernel/kapplication.cpp:311
+#21 0x000000020a38bc44 in QCoreApplication::notifyInternal () from /usr/local/lib/qt4/libQtCore.so.9.0
+#22 0x000000020a390153 in QCoreApplicationPrivate::sendPostedEvents () from /usr/local/lib/qt4/libQtCore.so.9.0
+#23 0x000000020a3c1b03 in QEventDispatcherGlib::registeredTimers () from /usr/local/lib/qt4/libQtCore.so.9.0
+#24 0x0000000204c7923a in g_main_context_dispatch () from /usr/local/lib/libglib-2.0.so.3200.0
+#25 0x0000000204c7b6d5 in g_main_context_prepare () from /usr/local/lib/libglib-2.0.so.3200.0
+#26 0x0000000204c7b917 in g_main_context_iteration () from /usr/local/lib/libglib-2.0.so.3200.0
+#27 0x000000020a3c1d6c in QEventDispatcherGlib::processEvents () from /usr/local/lib/qt4/libQtCore.so.9.0
+#28 0x000000020f36b2af in QGuiEventDispatcherGlib::processEvents () from /usr/local/lib/qt4/libQtGui.so.10.0
+#29 0x000000020a38abfd in QEventLoop::processEvents () from /usr/local/lib/qt4/libQtCore.so.9.0
+#30 0x000000020a38afd6 in QEventLoop::exec () from /usr/local/lib/qt4/libQtCore.so.9.0
+#31 0x000000020a39062e in QCoreApplication::exec () from /usr/local/lib/qt4/libQtCore.so.9.0
+#32 0x0000000000408e60 in main (argc=Variable "argc" is not available.
+) at /usr/ports/pobj/okular-4.8.3/okular-4.8.3/shell/main.cpp:85
+

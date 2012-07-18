@@ -501,3 +501,5 @@ share/icons/hicolor/scalable/apps/kteatime.svgz
 share/kde4/services/ScreenSavers/ktux.desktop
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

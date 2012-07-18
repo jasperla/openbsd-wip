@@ -1,8 +1,8 @@
 $OpenBSD$
 Add image/tiff to the list of supported MIME types.
---- app/gwenview.desktop.orig	Fri Sep  9 22:50:02 2011
-+++ app/gwenview.desktop	Fri Sep  9 22:52:05 2011
-@@ -194,7 +194,7 @@ Terminal=false
+--- app/gwenview.desktop.orig	Tue Jan 10 15:15:44 2012
++++ app/gwenview.desktop	Sat Jun 30 04:51:26 2012
+@@ -198,7 +198,7 @@ Terminal=false
  Icon=gwenview
  Type=Application
  Categories=Qt;KDE;Graphics;Viewer;Photography;

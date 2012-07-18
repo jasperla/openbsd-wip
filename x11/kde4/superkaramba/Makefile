@@ -3,7 +3,6 @@
 COMMENT =	K Desktop Environment, interactive desktop widget creation
 DISTNAME =	superkaramba-${MODKDE_VERSION}
 
-
 SHARED_LIBS =	superkaramba	0.0 # 4.7
 
 WANTLIB =  ICE lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtScript

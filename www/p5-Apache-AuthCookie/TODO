@@ -1,0 +1,13 @@
+mod_perl 1
+mod_perl 2
+Both mod_perls at once
+
+I decided to make 2 FLAVORS.
+p5-Apache-AuthCookie and -ap2-mod_perl
+The same Modules are installed for both, either way.
+Each FLAVOR requires different run/build DEPENDS.
+-ap2-mod_perl requires REGRESS_FLAGS
+I patched the Makefile.PL to force mod_perl 1 or 2 after meeting run and build depends.
+This allows mod_perl 2 testing to actually happen instead of using mod_perl 1 when both mod_perls are installed.
+I patched startup.pl to match libraries needed for both flavors (just one patch).
+Is all of this OK?

@@ -4,7 +4,7 @@ COMMENT =	K Desktop Environment, IDE creation toolkit
 VERSION =	1.3.1
 DISTNAME =	kdevplatform-${VERSION}
 HOMEPAGE =	http://www.kdevelop.org/
-EXTRACT_SUFX ?=	.tar.bz2
+EXTRACT_SUFX =	.tar.bz2
 
 SHARED_LIBS =	kdevplatformdebugger		0.0 # 3.0
 SHARED_LIBS +=	kdevplatformdocumentation	0.0 # 3.0

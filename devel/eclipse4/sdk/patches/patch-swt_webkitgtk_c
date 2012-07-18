@@ -1,0 +1,12 @@
+$OpenBSD$
+--- swt/webkitgtk.c.orig	Fri Jul  6 11:15:52 2012
++++ swt/webkitgtk.c	Fri Jul  6 11:15:52 2012
+@@ -17,6 +17,8 @@
+ #include "webkitgtk_structs.h"
+ #include "webkitgtk_stats.h"
+ 
++#include <JavaScriptCore/JavaScript.h>
++
+ #ifndef WebKitGTK_NATIVE
+ #define WebKitGTK_NATIVE(func) Java_org_eclipse_swt_internal_webkit_WebKitGTK_##func
+ #endif

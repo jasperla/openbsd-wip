@@ -26,7 +26,7 @@ MODKDE4_RESOURCES ?=	No
 #     kdelibs, kde-runtime, kdepimlibs or kdepim-runtime.
 #
 #   - Set to "libs" for ports that need only libs, without runtime support.
-#     All options below imply "Libs". If no from "none", "libs" or
+#     All options below imply "libs". If no from "none", "libs" or
 #     "runtime" were specified, "libs" is implied. This is the default
 #     value when MODKDE4_RESOURCES is enabled.
 #
@@ -54,22 +54,28 @@ MODKDE_NO_QT ?=		Yes
 _MODKDE4_USE_ALL =	libs runtime workspace pim
 .for _modkde4_u in ${MODKDE4_USE:L}
 .   if !${_MODKDE4_USE_ALL:M${_modkde4_u}}
-ERRORS += "Fatal: unknown KDE 4 use flag: ${_modkde4_u}\n(not in ${_MODKDE4_USE_ALL})"
+ERRORS += "Fatal: unknown KDE 4 use flag: ${_modkde4_u}"
+ERRORS += "Fatal: (not one from ${_MODKDE4_USE_ALL})."
 .   endif
 .endfor
 .if ${MODKDE4_USE:L} == "pim" || ${MODKDE4_USE:Mworkspace}
 MODKDE4_USE +=		runtime
 .endif
 
-PKGNAME ?= ${DISTNAME}
-
-# Force CMake which has merged KDE modules
-MODKDE4_BUILD_DEPENDS =	STEM->=2.8.8:devel/cmake
-MODKDE4_LIB_DEPENDS =
-MODKDE4_RUN_DEPENDS =
+# 1. Force CMake which has merged KDE modules
+# 2. Various distfiles contain long paths, necessitating an archiver
+# compliant with POSIX.1-2001 extended headers.
+MODKDE4_BUILD_DEPENDS =	archivers/gtar \
+			STEM->=2.8.8:devel/cmake
+MODKDE4_LIB_DEPENDS =	
+MODKDE4_RUN_DEPENDS =	x11/gtk+2,-guic
 MODKDE4_WANTLIB =
+MODKDE4_CONF_ARGS =
+
+TAR =			${LOCALBASE}/bin/gtar
 
 # Small hack, until automoc4 will be gone
+PKGNAME ?= ${DISTNAME}
 .if !${PKGNAME:Mautomoc4-*}
 MODKDE4_BUILD_DEPENDS +=	x11/kde4/automoc
 .endif
@@ -93,6 +99,14 @@ MODKDE4_BUILD_DEPENDS +=	STEM->=${MODKDE4_VERSION}:x11/kde4/libs
 .else
 MODKDE4_NO_QT ?=	No
 .   if ${MODKDE4_USE:L:Mlibs}
+.       if ${MODKDE4_NO_QT:L} == "yes"
+ERRORS +=	"Fatal: KDE libraries require Qt."
+.       endif
+
+# all sorts of packages require linking with pulseaudio, 
+# instead of patching them locally, patch globally
+MODKDE4_LIB_DEPENDS +=		audio/pulseaudio
+
 MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/libs
 MODKDE4_WANTLIB +=		kdecore>=8
 .       if ${MODKDE4_USE:L:Mpim}
@@ -113,10 +127,10 @@ MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/workspace
 
 .if ${CONFIGURE_STYLE:Mcmake}
 .   if ${FLAVOR:Mdebug}
-CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE:String=Debug
+MODKDE4_CONF_ARGS +=	-DCMAKE_BUILD_TYPE:String=Debug
 MODKDE4_CMAKE_PREFIX =	-debug
 .   else
-CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE:String=Release
+MODKDE4_CONF_ARGS +=	-DCMAKE_BUILD_TYPE:String=Release
 MODKDE4_CMAKE_PREFIX =	-release
 .   endif
 
@@ -144,6 +158,17 @@ FLAVORS +=	debug
 # ${MODKDE4_RESOURCES:L} != "no"
 .endif
 
+.if ${CONFIGURE_STYLE:Mcmake}
+# Set up directories
+MODKDE4_CONF_ARGS +=	-DKDE4_INCLUDE_INSTALL_DIR:String=${PREFIX}/include \
+			-DKDE4_INSTALL_DIR:String=${PREFIX} \
+			-DKDE4_LIB_INSTALL_DIR:String=${PREFIX}/lib \
+			-DKDE4_LIBEXEC_INSTALL_DIR:String=${PREFIX}/libexec \
+			-DKDE4_INFO_INSTALL_DIR:String=${PREFIX}/info \
+			-DKDE4_MAN_INSTALL_DIR:String=${PREFIX}/man \
+			-DKDE4_SYSCONF_INSTALL_DIR:String=${SYSCONFDIR}
+.endif
+
 # FIXME
 MODKDE4_CONFIGURE_ENV =	HOME=${WRKDIR}
 PORTHOME ?=		${WRKDIR}
@@ -162,18 +187,12 @@ MODKDE_RUN_DEPENDS =	${MODKDE4_RUN_DEPENDS}
 MODKDE_WANTLIB =	${MODKDE4_WANTLIB}
 MODKDE_CONFIGURE_ENV =	${MODKDE4_CONFIGURE_ENV}
 
-# various distfiles contain long paths, necessitating an archiver
-# compliant with POSIX.1-2001 extended headers.
-BUILD_DEPENDS +=	${MODKDE_BUILD_DEPENDS} \
-			archivers/gtar
+BUILD_DEPENDS +=	${MODKDE_BUILD_DEPENDS}
 
-# all sorts of packages require linking with pulseaudio, 
-# instead of patching them locally, patch globally
-LIB_DEPENDS +=		${MODKDE_LIB_DEPENDS} \
-			audio/pulseaudio
+LIB_DEPENDS +=		${MODKDE_LIB_DEPENDS}
 
 RUN_DEPENDS +=		${MODKDE_RUN_DEPENDS}
 WANTLIB +=		${MODKDE_WANTLIB}
 CONFIGURE_ENV +=	${MODKDE_CONFIGURE_ENV}
-
-TAR =			${LOCALBASE}/bin/gtar
+CONFIGURE_ARGS +=	${MODKDE4_CONF_ARGS}
+# MAKE_FLAGS +=		${MODKDE4_CONF_ARGS}

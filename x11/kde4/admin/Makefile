@@ -18,7 +18,6 @@ BUILD_DEPENDS =	devel/py-sip \
 
 RUN_DEPENDS =	print/py-cups \
 		print/system-config-printer \
-		x11/gtk+2,-guic \
 		x11/kde4/py-kde
 
 CONFIGURE_ARGS =	-DINSTALL_SYSTEM_CONFIG_PRINTER=TRUE

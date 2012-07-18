@@ -1,0 +1,12 @@
+@comment $OpenBSD$
+${P5SITE}/Apache/
+${P5SITE}/Apache/AuthCookie/
+${P5SITE}/Apache/AuthCookie.pm
+${P5SITE}/Apache/AuthCookie/FAQ.pod
+${P5SITE}/Apache/AuthCookie/Util.pm
+${P5SITE}/Apache2/
+${P5SITE}/Apache2/AuthCookie.pm
+@man man/man3p/Apache2::AuthCookie.3p
+@man man/man3p/Apache::AuthCookie.3p
+@man man/man3p/Apache::AuthCookie::FAQ.3p
+@man man/man3p/Apache::AuthCookie::Util.3p

@@ -1,7 +1,7 @@
 $OpenBSD$
---- libsrc/Wi/bif_file.c.orig	Thu Nov 10 15:48:40 2011
-+++ libsrc/Wi/bif_file.c	Thu Nov 10 15:49:13 2011
-@@ -6161,7 +6161,7 @@ signal_error:
+--- libsrc/Wi/bif_file.c.orig	Thu Mar  8 20:17:27 2012
++++ libsrc/Wi/bif_file.c	Wed Jul  4 00:54:35 2012
+@@ -6195,7 +6195,7 @@ signal_error:
  }
  
  

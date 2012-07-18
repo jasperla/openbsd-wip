@@ -1,0 +1,21 @@
+$OpenBSD: patch-mach_dep_c,v 1.4 2007/07/14 22:16:17 kili Exp $
+--- mach_dep.c.orig	Wed Jul  4 12:05:51 2012
++++ mach_dep.c	Wed Jul  4 12:06:45 2012
+@@ -171,7 +171,7 @@ asm static void PushMacRegisters()
+ # undef HAVE_PUSH_REGS
+ #endif
+ 
+-#if !defined(HAVE_PUSH_REGS) && defined(UNIX_LIKE)
++#if !defined(HAVE_PUSH_REGS) && defined(UNIX_LIKE) && !defined(OPENBSD)
+ # include <signal.h>
+ # ifndef NO_GETCONTEXT
+ #   include <ucontext.h>
+@@ -192,7 +192,7 @@ GC_INNER void GC_with_callee_saves_pushed(void (*fn)(p
+ 
+ #   if defined(HAVE_PUSH_REGS)
+       GC_push_regs();
+-#   elif defined(UNIX_LIKE) && !defined(NO_GETCONTEXT)
++#   elif defined(UNIX_LIKE) && !defined(NO_GETCONTEXT) && !defined(OPENBSD)
+       /* Older versions of Darwin seem to lack getcontext(). */
+       /* ARM and MIPS Linux often doesn't support a real     */
+       /* getcontext().                                       */

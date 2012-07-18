@@ -1,0 +1,12 @@
+$OpenBSD$
+--- libunixfile/bundles/org.eclipse.core.filesystem/natives/unix/openbsd/Makefile.orig	Fri May  4 11:30:42 2012
++++ libunixfile/bundles/org.eclipse.core.filesystem/natives/unix/openbsd/Makefile	Fri May  4 11:30:42 2012
+@@ -17,7 +17,7 @@ LIB_NAME = libunixfile.so
+ LIB_NAME_FULL = libunixfile_1_0_0.so
+ 
+ #Set this to be your OS type
+-OS_TYPE = linux
++OS_TYPE = openbsd
+ 
+ #Set this to be the location of your JRE
+ ifeq (${JAVA_HOME},)

@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, Google contacts/calendar <-> Akonadi 
 DISTNAME =	akonadi-googledata-1.2.0
-EXTRACT_SUFX ?=	.tar.bz2
+EXTRACT_SUFX =	.tar.bz2
 
 MASTER_SITES =	http://libgcal.googlecode.com/files/
 
