@@ -1,0 +1,13 @@
+$OpenBSD$
+--- neo/framework/Licensee.h.orig	Sat Jul  7 00:36:35 2012
++++ neo/framework/Licensee.h	Sat Jul  7 00:37:52 2012
+@@ -97,7 +97,9 @@ If you have questions concerning this license or the a
+ #ifdef ID_DEMO_BUILD
+ 	#define LINUX_DEFAULT_PATH			"/usr/local/games/dhewm3-demo"
+ #else
++# ifndef LINUX_DEFAULT_PATH
+ 	#define LINUX_DEFAULT_PATH			"/usr/local/games/dhewm3"
++# endif
+ #endif
+ 
+ // CD Key file info

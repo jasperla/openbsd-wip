@@ -3,7 +3,6 @@
 COMMENT =	K Desktop Environment, printer status applet
 DISTNAME =	printer-applet-${MODKDE_VERSION}
 
-
 MODULES =	lang/python
 
 BUILD_DEPENDS =		x11/kde4/py-kde \

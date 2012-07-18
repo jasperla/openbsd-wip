@@ -1,0 +1,66 @@
+$OpenBSD$
+--- swt/webkitgtk.h.orig	Tue Jun  5 19:51:16 2012
++++ swt/webkitgtk.h	Fri Jul  6 11:28:29 2012
+@@ -20,7 +20,11 @@
+ #include <string.h>
+ #include <glib-object.h>
+ 
++#if defined(__OpenBSD__)
+ #define WebKitGTK_LOAD_FUNCTION(var, name) \
++	void (* const (var))() = (void (*)())&(name);
++#else
++#define WebKitGTK_LOAD_FUNCTION(var, name) \
+ 	static int initialized = 0; \
+ 	static void *var = NULL; \
+ 	if (!initialized) { \
+@@ -33,46 +37,10 @@
+ 		} \
+ 		initialized = 1; \
+ 	}
++#endif
+ 
+-typedef struct {
+-    int version;
+-    int attributes;
+-    const char* className;
+-    void* parentClass;
+-    const void* staticValues;
+-    const void* staticFunctions;
+-    void* initialize;
+-    void* finalize;
+-    void* hasProperty;
+-    void* getProperty;
+-    void* setProperty;
+-    void* deleteProperty;
+-    void* getPropertyNames;
+-    void* callAsFunction;
+-    void* callAsConstructor;
+-    void* hasInstance;
+-    void* convertToType;
+-} JSClassDefinition;
+-
+-typedef struct {
+-	char* name;
+-	char* value;
+-	char* domain;
+-	char* path;
+-	void* expires;
+-	gboolean secure;
+-	gboolean http_only;
+-} SoupCookie;
+-
+-typedef struct {
+-	GObject parent;
+-	const char* method;
+-	guint status_code;
+-	char* reason_phrase;
+-	void* request_body;
+-	void* request_headers;
+-	void* response_body;
+-	void* response_headers;
+-} SoupMessage;
++#include <JavaScriptCore/JavaScript.h>
++#include <webkit/webkit.h>
++#include <libsoup/soup.h>
+ 
+ #endif /* INC_webkitgtk_H */

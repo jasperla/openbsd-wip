@@ -6,7 +6,6 @@ DISTNAME =	kross-interpreters-${MODKDE_VERSION}
 PKGNAME-main =	${PKGNAME}
 PKGNAME-java =	${PKGNAME:C/interpreters/java/}
 
-
 MULTI_PACKAGES =	-main -java
 
 # XXX Can't use <bsd.port.arch.mk> due to mishandling of MODULES

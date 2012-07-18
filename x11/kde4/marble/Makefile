@@ -3,7 +3,6 @@
 COMMENT =	K Desktop Environment, maps
 DISTNAME =	marble-${MODKDE_VERSION}
 
-
 SHARED_LIBS =	marblewidget		0.0 # 0.12
 
 WANTLIB =  c m pthread stdc++

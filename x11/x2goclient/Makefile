@@ -2,9 +2,9 @@
 
 CATEGORIES =		x11
 COMMENT =		x2go qt4 client
-VERSION =		3.99.2.0
+VERSION =		3.99.2.1
 PKGNAME =		x2goclient-${VERSION}
-DISTNAME =		x2goclient_${VERSION}
+DISTNAME =		x2goclient-${VERSION}
 HOMEPAGE =		http://www.x2go.org
 
 MAINTAINER =		Rafael Sadowski <rafael@sizeofvoid.org>
@@ -34,6 +34,9 @@ BUILD__DEPENDS =	x11/nx/nxproxy \
 			x11/qt4 \
 			databases/openldap \
 			print/cups
+
+WRKDIST=		${WRKDIR}/x2goclient_${VERSION}
+
 pre-configure:
 	find ${WRKSRC} -type f -iname "*.cpp" -exec \
 		perl -pi -e 's,Q_OS_LINUX,Q_OS_OPENBSD,g;' \

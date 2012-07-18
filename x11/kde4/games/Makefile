@@ -3,7 +3,6 @@
 COMMENT =	K Desktop Environment, games
 DISTNAME =	kdegames-${MODKDE_VERSION}
 
-
 SHARED_LIBS =	kdegames             5.0      # .4.0
 SHARED_LIBS +=	kmahjongglib         0.0      # .1.0
 SHARED_LIBS +=	kggzgames            0.0      # .4.0

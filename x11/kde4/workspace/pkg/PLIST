@@ -1,5 +1,10 @@
 @comment $OpenBSD: PLIST,v 1.7 2010/06/20 09:07:43 espie Exp $
 @newgroup _kdesud:583
+@unexec-delete rm -f %D/share/icons/Oxygen_Black/icon-theme.cache
+@unexec-delete rm -f %D/share/icons/Oxygen_Blue/icon-theme.cache
+@unexec-delete rm -f %D/share/icons/Oxygen_White/icon-theme.cache
+@unexec-delete rm -f %D/share/icons/Oxygen_Yellow/icon-theme.cache
+@unexec-delete rm -f %D/share/icons/Oxygen_Zion/icon-theme.cache
 @bin bin/genkdmconf
 @bin bin/kaccess
 @bin bin/kapplymousetheme
@@ -2123,3 +2128,32 @@ share/wallpapers/stripes.png
 share/wallpapers/stripes.png.desktop
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Oxygen_Black
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Oxygen_Black
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Oxygen_Black/cursors
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Oxygen_Black/cursors
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Oxygen_Blue
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Oxygen_Blue
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Oxygen_Blue/cursors
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Oxygen_Blue/cursors
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Oxygen_White
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Oxygen_White
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Oxygen_White/cursors
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Oxygen_White/cursors
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Oxygen_Yellow
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Oxygen_Yellow
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Oxygen_Yellow/cursors
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Oxygen_Yellow/cursors
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Oxygen_Zion
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Oxygen_Zion
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Oxygen_Zion/cursors
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Oxygen_Zion/cursors
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Oxygen_Black
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Oxygen_Blue
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Oxygen_White
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Oxygen_Yellow
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Oxygen_Zion

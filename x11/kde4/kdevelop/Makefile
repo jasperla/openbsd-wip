@@ -5,7 +5,7 @@ VERSION =	4.3.1
 DISTNAME =	kdevelop-${VERSION}
 HOMEPAGE =	http://www.kdevelop.org/
 
-EXTRACT_SUFX ?=	.tar.bz2
+EXTRACT_SUFX =	.tar.bz2
 
 SHARED_LIBS =	kdev4cmakecommon	0.0
 SHARED_LIBS +=	kdev4cppduchain		0.0

@@ -1,0 +1,75 @@
+@comment $OpenBSD: PLIST-main,v 1.1 2008/07/01 09:43:19 landry Exp $
+@pkgpath devel/boehm-gc
+%%SHARED%%
+include/gc/
+include/gc.h
+include/gc/cord.h
+include/gc/gc.h
+include/gc/gc_allocator.h
+include/gc/gc_amiga_redirects.h
+include/gc/gc_backptr.h
+include/gc/gc_config_macros.h
+include/gc/gc_gcj.h
+include/gc/gc_inline.h
+include/gc/gc_mark.h
+include/gc/gc_pthread_redirects.h
+include/gc/gc_tiny_fl.h
+include/gc/gc_typed.h
+include/gc/gc_version.h
+include/gc/leak_detector.h
+include/gc/new_gc_alloc.h
+include/gc/weakpointer.h
+lib/libcord.a
+lib/libcord.la
+lib/libgc.a
+lib/libgc.la
+lib/pkgconfig/
+lib/pkgconfig/atomic_ops.pc
+lib/pkgconfig/bdw-gc.pc
+@man man/man3/GC_enable_incremental.3
+@man man/man3/GC_free.3
+@man man/man3/GC_malloc.3
+@man man/man3/GC_malloc_atomic.3
+@man man/man3/GC_malloc_atomic_ignore_off_page.3
+@man man/man3/GC_malloc_ignore_off_page.3
+@man man/man3/GC_realloc.3
+@man man/man3/GC_register_finalizer.3
+@man man/man3/GC_set_warn_proc.3
+@man man/man3/gc.3
+share/gc/
+share/gc/README
+share/gc/README.DGUX386
+share/gc/README.Mac
+share/gc/README.MacOSX
+share/gc/README.OS2
+share/gc/README.amiga
+share/gc/README.arm.cross
+share/gc/README.autoconf
+share/gc/README.changes
+share/gc/README.cmake
+share/gc/README.contributors
+share/gc/README.cords
+share/gc/README.darwin
+share/gc/README.dj
+share/gc/README.environment
+share/gc/README.ews4800
+share/gc/README.hp
+share/gc/README.linux
+share/gc/README.macros
+share/gc/README.rs6000
+share/gc/README.sgi
+share/gc/README.solaris2
+share/gc/README.uts
+share/gc/README.win32
+share/gc/README.win64
+share/gc/barrett_diagram
+share/gc/debugging.html
+@comment share/gc/gc.man
+share/gc/gcdescr.html
+share/gc/gcinterface.html
+share/gc/leak.html
+share/gc/overview.html
+share/gc/porting.html
+share/gc/scale.html
+share/gc/simple_example.html
+share/gc/tree.html
