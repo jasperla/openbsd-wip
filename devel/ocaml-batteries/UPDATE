@@ -1,0 +1,8 @@
+Fix toplevel help system
+
+The path to the documentation is hardcoded at build time.
+Therefore DOCROOT may not be prefixed by WRKINST at build time.
+
+What is better here? PREFIX or LOCALBASE?
+
+also /usr/local/ocaml/site-lib/batteries/ocaml is a script, no executable
