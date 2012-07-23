@@ -2,7 +2,7 @@
 %%native%%
 @bin bin/ocamlfind
 bin/safe_camlp4
-lib/ocaml/
+@comment lib/ocaml/
 lib/ocaml/site-lib/
 lib/ocaml/site-lib/bigarray/
 lib/ocaml/site-lib/bigarray/META
