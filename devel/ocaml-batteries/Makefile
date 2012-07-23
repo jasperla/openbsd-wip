@@ -2,7 +2,7 @@
 
 COMMENT =	OCaml Batteries Included - OCaml foundation library
 CATEGORIES =	devel
-REVISION =	0
+REVISION =	1
 
 V =		1.4.3
 # $N changes with every release, too.
@@ -31,10 +31,11 @@ REGRESS_DEPENDS = devel/ounit
 USE_GMAKE =	Yes
 
 MAKE_ENV =	BATTERIES_NATIVE=${MODOCAML_NATIVE:S/Yes/yes/:S/No/no/} \
-    		DOCROOT=${WRKINST}${LOCALBASE}/share/doc/ocaml-batteries \
+		DOCROOT=${PREFIX}/share/doc/ocaml-batteries \
 		TERM=${TERM}
 
-FAKE_FLAGS =	DESTDIR=${WRKINST}${LOCALBASE}/lib/ocaml/site-lib
+FAKE_FLAGS =	DESTDIR=${WRKINST}${PREFIX}/lib/ocaml/site-lib \
+		DOCROOT=${WRKINST}${PREFIX}/share/doc/ocaml-batteries
 
 ALL_TARGET =	all doc
 REGRESS_TARGET =	test
