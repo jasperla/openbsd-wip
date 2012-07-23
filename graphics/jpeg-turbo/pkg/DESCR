@@ -1,0 +1,20 @@
+This package contains software to implement JPEG image encoding,
+decoding, and transcoding.  JPEG (pronounced "jay-peg") is a
+standardized compression method for full-color and gray-scale images.
+
+This software implements JPEG baseline, extended-sequential, and
+progressive compression processes.
+
+A set of library routines for reading and writing JPEG image files is
+provided, plus two sample applications "cjpeg" and "djpeg", which use
+the library to perform conversion between JPEG and some other popular
+image file formats. Also included is "jpegtran", a utility for lossless
+transcoding between different JPEG processes, and "rdjpgcom" and
+"wrjpgcom", two simple applications for inserting and extracting textual
+comments in JFIF files.
+
+libjpeg-turbo is a derivative of libjpeg that uses SIMD instructions
+(MMX, SSE2, NEON) to accelerate baseline JPEG compression and
+decompression on x86, x86-64, and ARM systems. On such systems,
+libjpeg-turbo is generally 2-4x as fast as the unmodified version of
+libjpeg, all else being equal.
