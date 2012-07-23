@@ -2,8 +2,7 @@
 
 COMMENT =	bayesian spam filter
 
-DISTNAME =	bogofilter-1.1.6
-REVISION =	5
+DISTNAME =	bogofilter-1.2.2
 CATEGORIES =	mail
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
