@@ -1,7 +1,6 @@
 @comment $OpenBSD: PLIST,v 1.8 2011/06/13 10:11:05 dcoppa Exp $
 @pkgpath ${BASE_PKGPATH},imlib2
 @bin bin/conky
-lib/conky/
 @man man/man1/conky.1
 share/doc/conky/
 share/doc/conky/README

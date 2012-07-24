@@ -1,0 +1,5 @@
+* version bump to 1.9.0
+* remove libs tagged as EXTRA by make lib-depends-check
+* remove patches included upstream
+* remove lib/conky/ from PLIST (why was this here?)
+* OpenBSD has no statfs64(). Plain statfs() will do.
