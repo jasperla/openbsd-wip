@@ -4,8 +4,7 @@ ONLY_FOR_ARCHS= ${APM_ARCHS}
 
 COMMENT=	light-weight system monitor
 
-DISTNAME=	conky-1.8.1
-REVISION=	10
+DISTNAME=	conky-1.9.0
 CATEGORIES=	sysutils
 HOMEPAGE=	http://conky.sourceforge.net/
 
@@ -50,9 +49,9 @@ CONFIGURE_ARGS+=--disable-double-buffer \
 .else
 CONFIGURE_ARGS+=--enable-imlib2
 LIB_DEPENDS+=	graphics/imlib2
-WANTLIB+=	Imlib2 X11 Xau Xdamage Xdmcp Xext Xfixes Xft \
+WANTLIB+=	Imlib2 X11 Xdamage Xext Xfixes Xft \
 		Xrender expat fontconfig freetype \
-		pthread-stubs xcb
+		xcb
 .endif
 
 .if ${FLAVOR:L:Maudacious}
