@@ -38,6 +38,7 @@ share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/qemu/
 share/doc/qemu/qemu-doc.html
 share/doc/qemu/qemu-tech.html
+share/doc/qemu/qmp-commands.txt
 share/examples/qemu/
 share/examples/qemu/qemu-ifdown
 @mode 755
