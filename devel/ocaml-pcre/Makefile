@@ -32,6 +32,15 @@ USE_GMAKE =	Yes
 
 WRKSRC =	${WRKDIST}/lib
 
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mocaml_native}
+ALL_TARGET =		htdoc byte-code-library native-code-library
+INSTALL_TARGET =	libinstall
+.else
+ALL_TARGET =		htdoc byte-code-library
+INSTALL_TARGET =	libinstall-byte-code
+.endif
+
 pre-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml/site-lib/pcre
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml/stublibs
@@ -45,11 +54,3 @@ post-install:
 	    ${PREFIX}/share/doc/ocaml-pcre/html/
 
 .include <bsd.port.mk>
-
-.if ${MODOCAML_NATIVE:L} == "yes"
-ALL_TARGET =		htdoc byte-code-library native-code-library
-INSTALL_TARGET =	libinstall
-.else
-ALL_TARGET =		htdoc byte-code-library
-INSTALL_TARGET =	libinstall-byte-code
-.endif
