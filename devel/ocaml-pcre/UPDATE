@@ -1,0 +1,5 @@
+fix devel/ocaml-pcre to build on sparc64
+
+* setting WRKSRC=${WRKDIST}/lib in all cases now and use ${WRKDIST} for manual
+installs.
+* as always: change to "new style" assignments (FOO = BAR instead of FOO= BAR)
