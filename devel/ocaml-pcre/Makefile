@@ -30,7 +30,7 @@ MAKE_FLAGS=	"NO_CUSTOM=y"
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 
-ALL_TARGET=	all htdoc
+WRKSRC=		${WRKDIST}/lib
 
 pre-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml/site-lib/pcre
@@ -38,16 +38,18 @@ pre-install:
 	ln -s ../stublibs ${PREFIX}/lib/ocaml/site-lib/
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml-pcre/html/
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/ocaml-pcre/
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${PREFIX}/share/doc/ocaml-pcre/
+	${INSTALL_DATA} ${WRKDIST}/LICENSE ${PREFIX}/share/doc/ocaml-pcre/
+	${INSTALL_DATA} ${WRKDIST}/README.txt ${PREFIX}/share/doc/ocaml-pcre/
 	${INSTALL_DATA} \
-	    ${WRKSRC}/lib/doc/pcre/html/* \
+	    ${WRKDIST}/lib/doc/pcre/html/* \
 	    ${PREFIX}/share/doc/ocaml-pcre/html/
 
 .include <bsd.port.mk>
 
-.if ${MODOCAML_NATIVE:L:Mno}
-WRKSRC=		${WRKDIST}/lib
-ALL_TARGET=	byte-code-library htdoc
-INSTALL_TARGET=	libinstall-byte-code
+.if ${MODOCAML_NATIVE:L} == "yes"
+ALL_TARGET =		htdoc byte-code-library native-code-library
+INSTALL_TARGET =	libinstall
+.else
+ALL_TARGET=		htdoc byte-code-library
+INSTALL_TARGET=		libinstall-byte-code
 .endif
