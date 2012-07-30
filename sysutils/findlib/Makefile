@@ -2,8 +2,7 @@
 
 COMMENT=	OCaml package manager
 CATEGORIES=	sysutils
-DISTNAME=	findlib-1.3.1
-REVISION=	2
+DISTNAME=	findlib-1.3.3
 MASTER_SITES=	http://download.camlcity.org/download/
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
@@ -15,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-WANTLIB =	c curses m pthread
+WANTLIB =	c m
 MODULES+=	lang/ocaml
 NO_REGRESS=	Yes
 
