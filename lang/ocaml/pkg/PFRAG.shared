@@ -4,7 +4,6 @@ lib/ocaml/stublibs/dllbigarray.so
 lib/ocaml/stublibs/dllcamlstr.so
 lib/ocaml/stublibs/dllgraphics.so
 lib/ocaml/stublibs/dlllabltk.so
-lib/ocaml/stublibs/dllmldbm.so
 lib/ocaml/stublibs/dllnums.so
 lib/ocaml/stublibs/dllthreads.so
 lib/ocaml/stublibs/dllunix.so

@@ -24,11 +24,13 @@ bin/ocamllex
 bin/ocamlmklib
 bin/ocamlmktop
 bin/ocamlobjinfo
+bin/ocamloptp
 bin/ocamlprof
 @bin bin/ocamlrun
 @bin bin/ocamlyacc
 lib/ocaml/
 lib/ocaml/Makefile.config
+lib/ocaml/VERSION
 lib/ocaml/arg.cmi
 lib/ocaml/arg.ml
 lib/ocaml/arg.mli
@@ -59,6 +61,7 @@ lib/ocaml/caml/compatibility.h
 lib/ocaml/caml/config.h
 lib/ocaml/caml/custom.h
 lib/ocaml/caml/fail.h
+lib/ocaml/caml/hash.h
 lib/ocaml/caml/intext.h
 lib/ocaml/caml/memory.h
 lib/ocaml/caml/misc.h
@@ -165,7 +168,83 @@ lib/ocaml/char.cmi
 lib/ocaml/char.ml
 lib/ocaml/char.mli
 lib/ocaml/compiler-libs/
+lib/ocaml/compiler-libs/annot.cmi
+lib/ocaml/compiler-libs/arch.cmi
+lib/ocaml/compiler-libs/asmgen.cmi
+lib/ocaml/compiler-libs/asmlibrarian.cmi
+lib/ocaml/compiler-libs/asmlink.cmi
+lib/ocaml/compiler-libs/asmpackager.cmi
+lib/ocaml/compiler-libs/asttypes.cmi
+lib/ocaml/compiler-libs/btype.cmi
+lib/ocaml/compiler-libs/bytegen.cmi
+lib/ocaml/compiler-libs/bytelibrarian.cmi
+lib/ocaml/compiler-libs/bytelink.cmi
+lib/ocaml/compiler-libs/bytepackager.cmi
+lib/ocaml/compiler-libs/bytesections.cmi
+lib/ocaml/compiler-libs/ccomp.cmi
+lib/ocaml/compiler-libs/clambda.cmi
+lib/ocaml/compiler-libs/clflags.cmi
+lib/ocaml/compiler-libs/closure.cmi
+lib/ocaml/compiler-libs/cmi_format.cmi
+lib/ocaml/compiler-libs/cmm.cmi
+lib/ocaml/compiler-libs/cmmgen.cmi
+lib/ocaml/compiler-libs/cmo_format.cmi
+lib/ocaml/compiler-libs/cmt_format.cmi
+lib/ocaml/compiler-libs/cmx_format.cmi
+lib/ocaml/compiler-libs/coloring.cmi
+lib/ocaml/compiler-libs/comballoc.cmi
+lib/ocaml/compiler-libs/compile.cmi
+lib/ocaml/compiler-libs/compilenv.cmi
+lib/ocaml/compiler-libs/config.cmi
+lib/ocaml/compiler-libs/consistbl.cmi
+lib/ocaml/compiler-libs/ctype.cmi
+lib/ocaml/compiler-libs/datarepr.cmi
+lib/ocaml/compiler-libs/debuginfo.cmi
+lib/ocaml/compiler-libs/dll.cmi
+lib/ocaml/compiler-libs/emit.cmi
+lib/ocaml/compiler-libs/emitaux.cmi
+lib/ocaml/compiler-libs/emitcode.cmi
+lib/ocaml/compiler-libs/env.cmi
+lib/ocaml/compiler-libs/errors.cmi
+lib/ocaml/compiler-libs/expunge.cmi
+lib/ocaml/compiler-libs/genprintval.cmi
+lib/ocaml/compiler-libs/ident.cmi
+lib/ocaml/compiler-libs/includeclass.cmi
+lib/ocaml/compiler-libs/includecore.cmi
+lib/ocaml/compiler-libs/includemod.cmi
+lib/ocaml/compiler-libs/instruct.cmi
+lib/ocaml/compiler-libs/interf.cmi
+lib/ocaml/compiler-libs/lambda.cmi
+lib/ocaml/compiler-libs/lexer.cmi
+lib/ocaml/compiler-libs/linearize.cmi
+lib/ocaml/compiler-libs/liveness.cmi
+lib/ocaml/compiler-libs/location.cmi
+lib/ocaml/compiler-libs/longident.cmi
+lib/ocaml/compiler-libs/mach.cmi
+lib/ocaml/compiler-libs/main.cmi
+lib/ocaml/compiler-libs/main.cmo
+lib/ocaml/compiler-libs/main_args.cmi
+lib/ocaml/compiler-libs/matching.cmi
+lib/ocaml/compiler-libs/meta.cmi
+lib/ocaml/compiler-libs/misc.cmi
+lib/ocaml/compiler-libs/mtype.cmi
+lib/ocaml/compiler-libs/ocamlbytecomp.cma
+lib/ocaml/compiler-libs/ocamlcommon.cma
+lib/ocaml/compiler-libs/ocamloptcomp.cma
+lib/ocaml/compiler-libs/ocamltoplevel.cma
+lib/ocaml/compiler-libs/opcodes.cmi
+lib/ocaml/compiler-libs/oprint.cmi
+lib/ocaml/compiler-libs/optcompile.cmi
+lib/ocaml/compiler-libs/opterrors.cmi
+lib/ocaml/compiler-libs/optmain.cmi
+lib/ocaml/compiler-libs/optmain.cmo
+lib/ocaml/compiler-libs/outcometree.cmi
+lib/ocaml/compiler-libs/parmatch.cmi
+lib/ocaml/compiler-libs/parse.cmi
+lib/ocaml/compiler-libs/parser.cmi
+lib/ocaml/compiler-libs/parsetree.cmi
 lib/ocaml/compiler-libs/parsing/
+@comment lib/ocaml/compiler-libs/parsing/.ignore
 lib/ocaml/compiler-libs/parsing/asttypes.cmi
 lib/ocaml/compiler-libs/parsing/asttypes.mli
 lib/ocaml/compiler-libs/parsing/lexer.cmi
@@ -173,11 +252,6 @@ lib/ocaml/compiler-libs/parsing/lexer.cmo
 lib/ocaml/compiler-libs/parsing/lexer.ml
 lib/ocaml/compiler-libs/parsing/lexer.mli
 lib/ocaml/compiler-libs/parsing/lexer.mll
-lib/ocaml/compiler-libs/parsing/linenum.cmi
-lib/ocaml/compiler-libs/parsing/linenum.cmo
-lib/ocaml/compiler-libs/parsing/linenum.ml
-lib/ocaml/compiler-libs/parsing/linenum.mli
-lib/ocaml/compiler-libs/parsing/linenum.mll
 lib/ocaml/compiler-libs/parsing/location.cmi
 lib/ocaml/compiler-libs/parsing/location.cmo
 lib/ocaml/compiler-libs/parsing/location.ml
@@ -206,6 +280,56 @@ lib/ocaml/compiler-libs/parsing/syntaxerr.cmi
 lib/ocaml/compiler-libs/parsing/syntaxerr.cmo
 lib/ocaml/compiler-libs/parsing/syntaxerr.ml
 lib/ocaml/compiler-libs/parsing/syntaxerr.mli
+lib/ocaml/compiler-libs/path.cmi
+lib/ocaml/compiler-libs/pparse.cmi
+lib/ocaml/compiler-libs/predef.cmi
+lib/ocaml/compiler-libs/primitive.cmi
+lib/ocaml/compiler-libs/printast.cmi
+lib/ocaml/compiler-libs/printclambda.cmi
+lib/ocaml/compiler-libs/printcmm.cmi
+lib/ocaml/compiler-libs/printinstr.cmi
+lib/ocaml/compiler-libs/printlambda.cmi
+lib/ocaml/compiler-libs/printlinear.cmi
+lib/ocaml/compiler-libs/printmach.cmi
+lib/ocaml/compiler-libs/printtyp.cmi
+lib/ocaml/compiler-libs/printtyped.cmi
+lib/ocaml/compiler-libs/proc.cmi
+lib/ocaml/compiler-libs/reg.cmi
+lib/ocaml/compiler-libs/reload.cmi
+lib/ocaml/compiler-libs/reloadgen.cmi
+lib/ocaml/compiler-libs/runtimedef.cmi
+lib/ocaml/compiler-libs/schedgen.cmi
+lib/ocaml/compiler-libs/scheduling.cmi
+lib/ocaml/compiler-libs/selectgen.cmi
+lib/ocaml/compiler-libs/selection.cmi
+lib/ocaml/compiler-libs/simplif.cmi
+lib/ocaml/compiler-libs/spill.cmi
+lib/ocaml/compiler-libs/split.cmi
+lib/ocaml/compiler-libs/stypes.cmi
+lib/ocaml/compiler-libs/subst.cmi
+lib/ocaml/compiler-libs/switch.cmi
+lib/ocaml/compiler-libs/symtable.cmi
+lib/ocaml/compiler-libs/syntaxerr.cmi
+lib/ocaml/compiler-libs/tbl.cmi
+lib/ocaml/compiler-libs/terminfo.cmi
+lib/ocaml/compiler-libs/topdirs.cmi
+lib/ocaml/compiler-libs/toploop.cmi
+lib/ocaml/compiler-libs/topmain.cmi
+lib/ocaml/compiler-libs/topstart.cmi
+lib/ocaml/compiler-libs/topstart.cmo
+lib/ocaml/compiler-libs/trace.cmi
+lib/ocaml/compiler-libs/translclass.cmi
+lib/ocaml/compiler-libs/translcore.cmi
+lib/ocaml/compiler-libs/translmod.cmi
+lib/ocaml/compiler-libs/translobj.cmi
+lib/ocaml/compiler-libs/typeclass.cmi
+lib/ocaml/compiler-libs/typecore.cmi
+lib/ocaml/compiler-libs/typedecl.cmi
+lib/ocaml/compiler-libs/typedtree.cmi
+lib/ocaml/compiler-libs/typemod.cmi
+lib/ocaml/compiler-libs/typeopt.cmi
+lib/ocaml/compiler-libs/types.cmi
+lib/ocaml/compiler-libs/typetexp.cmi
 lib/ocaml/compiler-libs/typing/
 lib/ocaml/compiler-libs/typing/annot.cmi
 lib/ocaml/compiler-libs/typing/annot.mli
@@ -213,6 +337,14 @@ lib/ocaml/compiler-libs/typing/btype.cmi
 lib/ocaml/compiler-libs/typing/btype.cmo
 lib/ocaml/compiler-libs/typing/btype.ml
 lib/ocaml/compiler-libs/typing/btype.mli
+lib/ocaml/compiler-libs/typing/cmi_format.cmi
+lib/ocaml/compiler-libs/typing/cmi_format.cmo
+lib/ocaml/compiler-libs/typing/cmi_format.ml
+lib/ocaml/compiler-libs/typing/cmi_format.mli
+lib/ocaml/compiler-libs/typing/cmt_format.cmi
+lib/ocaml/compiler-libs/typing/cmt_format.cmo
+lib/ocaml/compiler-libs/typing/cmt_format.ml
+lib/ocaml/compiler-libs/typing/cmt_format.mli
 lib/ocaml/compiler-libs/typing/ctype.cmi
 lib/ocaml/compiler-libs/typing/ctype.cmo
 lib/ocaml/compiler-libs/typing/ctype.ml
@@ -271,6 +403,10 @@ lib/ocaml/compiler-libs/typing/printtyp.cmi
 lib/ocaml/compiler-libs/typing/printtyp.cmo
 lib/ocaml/compiler-libs/typing/printtyp.ml
 lib/ocaml/compiler-libs/typing/printtyp.mli
+lib/ocaml/compiler-libs/typing/printtyped.cmi
+lib/ocaml/compiler-libs/typing/printtyped.cmo
+lib/ocaml/compiler-libs/typing/printtyped.ml
+lib/ocaml/compiler-libs/typing/printtyped.mli
 lib/ocaml/compiler-libs/typing/stypes.cmi
 lib/ocaml/compiler-libs/typing/stypes.cmo
 lib/ocaml/compiler-libs/typing/stypes.ml
@@ -307,11 +443,8 @@ lib/ocaml/compiler-libs/typing/typetexp.cmi
 lib/ocaml/compiler-libs/typing/typetexp.cmo
 lib/ocaml/compiler-libs/typing/typetexp.ml
 lib/ocaml/compiler-libs/typing/typetexp.mli
-lib/ocaml/compiler-libs/typing/unused_var.cmi
-lib/ocaml/compiler-libs/typing/unused_var.cmo
-lib/ocaml/compiler-libs/typing/unused_var.ml
-lib/ocaml/compiler-libs/typing/unused_var.mli
 lib/ocaml/compiler-libs/utils/
+@comment lib/ocaml/compiler-libs/utils/.ignore
 lib/ocaml/compiler-libs/utils/ccomp.cmi
 lib/ocaml/compiler-libs/utils/ccomp.cmo
 lib/ocaml/compiler-libs/utils/ccomp.ml
@@ -346,13 +479,11 @@ lib/ocaml/compiler-libs/utils/warnings.cmi
 lib/ocaml/compiler-libs/utils/warnings.cmo
 lib/ocaml/compiler-libs/utils/warnings.ml
 lib/ocaml/compiler-libs/utils/warnings.mli
+lib/ocaml/compiler-libs/warnings.cmi
 lib/ocaml/complex.cmi
 lib/ocaml/complex.ml
 lib/ocaml/complex.mli
 lib/ocaml/condition.mli
-lib/ocaml/dbm.cma
-lib/ocaml/dbm.cmi
-lib/ocaml/dbm.mli
 lib/ocaml/digest.cmi
 lib/ocaml/digest.ml
 lib/ocaml/digest.mli
@@ -622,7 +753,6 @@ lib/ocaml/libbigarray.a
 lib/ocaml/libcamlrun.a
 lib/ocaml/libcamlstr.a
 lib/ocaml/libgraphics.a
-lib/ocaml/libmldbm.a
 lib/ocaml/libnums.a
 lib/ocaml/libthreads.a
 lib/ocaml/libunix.a
@@ -681,6 +811,7 @@ lib/ocaml/ocamldoc/odoc_dep.cmi
 lib/ocaml/ocamldoc/odoc_dot.cmi
 lib/ocaml/ocamldoc/odoc_env.cmi
 lib/ocaml/ocamldoc/odoc_exception.cmi
+lib/ocaml/ocamldoc/odoc_gen.cmi
 lib/ocaml/ocamldoc/odoc_global.cmi
 lib/ocaml/ocamldoc/odoc_html.cmi
 lib/ocaml/ocamldoc/odoc_info.cma
@@ -717,8 +848,6 @@ lib/ocaml/ocamldoc/odoc_value.cmi
 lib/ocaml/oo.cmi
 lib/ocaml/oo.ml
 lib/ocaml/oo.mli
-lib/ocaml/outcometree.cmi
-lib/ocaml/outcometree.mli
 lib/ocaml/parsing.cmi
 lib/ocaml/parsing.ml
 lib/ocaml/parsing.mli
@@ -786,10 +915,6 @@ lib/ocaml/threads/thread.cmi
 lib/ocaml/threads/threadUnix.cmi
 lib/ocaml/threads/threads.cma
 lib/ocaml/topdirs.cmi
-lib/ocaml/toplevellib.cma
-lib/ocaml/toploop.cmi
-lib/ocaml/topmain.cmi
-lib/ocaml/topstart.cmo
 lib/ocaml/unix.cma
 lib/ocaml/unix.cmi
 lib/ocaml/unix.mli
@@ -825,9 +950,16 @@ lib/ocaml/weak.mli
 @man man/man1/ocamlmktop.1
 @man man/man1/ocamlopt.1
 @man man/man1/ocamlopt.opt.1
+@man man/man1/ocamloptp.1
 @man man/man1/ocamlprof.1
 @man man/man1/ocamlrun.1
 @man man/man1/ocamlyacc.1
+@man man/man3/Hashtbl.MakeSeeded.3o
+@man man/man3/Hashtbl.SeededHashedType.3o
+@man man/man3/Hashtbl.SeededS.3o
+@man man/man3/MoreLabels.Hashtbl.MakeSeeded.3o
+@man man/man3/MoreLabels.Hashtbl.SeededHashedType.3o
+@man man/man3/MoreLabels.Hashtbl.SeededS.3o
 share/doc/ocaml/
 share/doc/ocaml/LICENSE
 share/doc/ocaml/html/
@@ -856,7 +988,6 @@ share/doc/ocaml/html/libref/CamlinternalOO.html
 share/doc/ocaml/html/libref/Char.html
 share/doc/ocaml/html/libref/Complex.html
 share/doc/ocaml/html/libref/Condition.html
-share/doc/ocaml/html/libref/Dbm.html
 share/doc/ocaml/html/libref/Digest.html
 share/doc/ocaml/html/libref/Dynlink.html
 share/doc/ocaml/html/libref/Event.html
@@ -868,7 +999,10 @@ share/doc/ocaml/html/libref/Graphics.html
 share/doc/ocaml/html/libref/GraphicsX11.html
 share/doc/ocaml/html/libref/Hashtbl.HashedType.html
 share/doc/ocaml/html/libref/Hashtbl.Make.html
+share/doc/ocaml/html/libref/Hashtbl.MakeSeeded.html
 share/doc/ocaml/html/libref/Hashtbl.S.html
+share/doc/ocaml/html/libref/Hashtbl.SeededHashedType.html
+share/doc/ocaml/html/libref/Hashtbl.SeededS.html
 share/doc/ocaml/html/libref/Hashtbl.html
 share/doc/ocaml/html/libref/Int32.html
 share/doc/ocaml/html/libref/Int64.html
@@ -883,7 +1017,10 @@ share/doc/ocaml/html/libref/Map.html
 share/doc/ocaml/html/libref/Marshal.html
 share/doc/ocaml/html/libref/MoreLabels.Hashtbl.HashedType.html
 share/doc/ocaml/html/libref/MoreLabels.Hashtbl.Make.html
+share/doc/ocaml/html/libref/MoreLabels.Hashtbl.MakeSeeded.html
 share/doc/ocaml/html/libref/MoreLabels.Hashtbl.S.html
+share/doc/ocaml/html/libref/MoreLabels.Hashtbl.SeededHashedType.html
+share/doc/ocaml/html/libref/MoreLabels.Hashtbl.SeededS.html
 share/doc/ocaml/html/libref/MoreLabels.Hashtbl.html
 share/doc/ocaml/html/libref/MoreLabels.Map.Make.html
 share/doc/ocaml/html/libref/MoreLabels.Map.OrderedType.html
@@ -907,6 +1044,7 @@ share/doc/ocaml/html/libref/Printf.html
 share/doc/ocaml/html/libref/Queue.html
 share/doc/ocaml/html/libref/Random.State.html
 share/doc/ocaml/html/libref/Random.html
+share/doc/ocaml/html/libref/Ratio.html
 share/doc/ocaml/html/libref/Scanf.Scanning.html
 share/doc/ocaml/html/libref/Scanf.html
 share/doc/ocaml/html/libref/Set.Make.html
@@ -963,7 +1101,6 @@ share/doc/ocaml/html/libref/type_CamlinternalOO.html
 share/doc/ocaml/html/libref/type_Char.html
 share/doc/ocaml/html/libref/type_Complex.html
 share/doc/ocaml/html/libref/type_Condition.html
-share/doc/ocaml/html/libref/type_Dbm.html
 share/doc/ocaml/html/libref/type_Digest.html
 share/doc/ocaml/html/libref/type_Dynlink.html
 share/doc/ocaml/html/libref/type_Event.html
@@ -975,7 +1112,10 @@ share/doc/ocaml/html/libref/type_Graphics.html
 share/doc/ocaml/html/libref/type_GraphicsX11.html
 share/doc/ocaml/html/libref/type_Hashtbl.HashedType.html
 share/doc/ocaml/html/libref/type_Hashtbl.Make.html
+share/doc/ocaml/html/libref/type_Hashtbl.MakeSeeded.html
 share/doc/ocaml/html/libref/type_Hashtbl.S.html
+share/doc/ocaml/html/libref/type_Hashtbl.SeededHashedType.html
+share/doc/ocaml/html/libref/type_Hashtbl.SeededS.html
 share/doc/ocaml/html/libref/type_Hashtbl.html
 share/doc/ocaml/html/libref/type_Int32.html
 share/doc/ocaml/html/libref/type_Int64.html
@@ -990,7 +1130,10 @@ share/doc/ocaml/html/libref/type_Map.html
 share/doc/ocaml/html/libref/type_Marshal.html
 share/doc/ocaml/html/libref/type_MoreLabels.Hashtbl.HashedType.html
 share/doc/ocaml/html/libref/type_MoreLabels.Hashtbl.Make.html
+share/doc/ocaml/html/libref/type_MoreLabels.Hashtbl.MakeSeeded.html
 share/doc/ocaml/html/libref/type_MoreLabels.Hashtbl.S.html
+share/doc/ocaml/html/libref/type_MoreLabels.Hashtbl.SeededHashedType.html
+share/doc/ocaml/html/libref/type_MoreLabels.Hashtbl.SeededS.html
 share/doc/ocaml/html/libref/type_MoreLabels.Hashtbl.html
 share/doc/ocaml/html/libref/type_MoreLabels.Map.Make.html
 share/doc/ocaml/html/libref/type_MoreLabels.Map.OrderedType.html
@@ -1014,6 +1157,7 @@ share/doc/ocaml/html/libref/type_Printf.html
 share/doc/ocaml/html/libref/type_Queue.html
 share/doc/ocaml/html/libref/type_Random.State.html
 share/doc/ocaml/html/libref/type_Random.html
+share/doc/ocaml/html/libref/type_Ratio.html
 share/doc/ocaml/html/libref/type_Scanf.Scanning.html
 share/doc/ocaml/html/libref/type_Scanf.html
 share/doc/ocaml/html/libref/type_Set.Make.html

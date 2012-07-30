@@ -9,12 +9,11 @@ BROKEN-powerpc=	build: Could not find the .cmi file for interface
 
 COMMENT=	ML language based on complete class-based objective system
 
-BASENAME=	ocaml-3.12
-DISTNAME=	${BASENAME}.1
-REVISION=	1
+BASENAME=	ocaml-4.00
+DISTNAME=	${BASENAME}.0
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/pub/distrib/${BASENAME}/
-DOCFILES=	${BASENAME}-refman.html.tar.gz
+DOCFILES=	${BASENAME}-refman-html.tar.gz
 DISTFILES=	${DISTNAME}.tar.gz ${DOCFILES}
 
 HOMEPAGE=	http://www.ocaml.org/

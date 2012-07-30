@@ -9,11 +9,10 @@
 # PFRAG.foo-native    -- nativecode files for FLAVOR == foo
 # PFRAG.no-foo-native -- nativecode files for FLAVOR != foo
 
-OCAML_VERSION=3.12.1
+OCAML_VERSION=4.00.0
 
-.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "i386" || \
-	${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "amd64" || \
-	${MACHINE_ARCH} == "powerpc"
+.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64" || \
+    ${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "powerpc"
 MODOCAML_NATIVE=Yes
 
 # include nativecode base files
