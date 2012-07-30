@@ -1,0 +1,486 @@
+@comment $OpenBSD: PFRAG.native,v 1.12 2011/12/21 21:31:50 avsm Exp $
+@bin bin/camlp4o.opt
+@bin bin/camlp4of.opt
+@bin bin/camlp4oof.opt
+@bin bin/camlp4orf.opt
+@bin bin/camlp4r.opt
+@bin bin/camlp4rf.opt
+@bin bin/ocamlbuild.native
+@bin bin/ocamlc.opt
+@bin bin/ocamldep.opt
+@bin bin/ocamldoc.opt
+@bin bin/ocamllex.opt
+bin/ocamlopt
+@bin bin/ocamlopt.opt
+lib/ocaml/arg.cmx
+lib/ocaml/arg.p.cmx
+lib/ocaml/arith_flags.cmx
+lib/ocaml/arith_status.cmx
+lib/ocaml/array.cmx
+lib/ocaml/array.p.cmx
+lib/ocaml/arrayLabels.cmx
+lib/ocaml/arrayLabels.p.cmx
+lib/ocaml/big_int.cmx
+lib/ocaml/bigarray.a
+lib/ocaml/bigarray.cmx
+lib/ocaml/bigarray.cmxa
+lib/ocaml/buffer.cmx
+lib/ocaml/buffer.p.cmx
+lib/ocaml/callback.cmx
+lib/ocaml/callback.p.cmx
+lib/ocaml/camlinternalLazy.cmx
+lib/ocaml/camlinternalLazy.p.cmx
+lib/ocaml/camlinternalMod.cmx
+lib/ocaml/camlinternalMod.p.cmx
+lib/ocaml/camlinternalOO.cmx
+lib/ocaml/camlinternalOO.p.cmx
+lib/ocaml/camlp4/Camlp4Bin.cmx
+lib/ocaml/camlp4/Camlp4Bin.o
+lib/ocaml/camlp4/Camlp4Filters/Camlp4AstLifter.cmx
+lib/ocaml/camlp4/Camlp4Filters/Camlp4AstLifter.o
+lib/ocaml/camlp4/Camlp4Filters/Camlp4ExceptionTracer.cmx
+lib/ocaml/camlp4/Camlp4Filters/Camlp4ExceptionTracer.o
+lib/ocaml/camlp4/Camlp4Filters/Camlp4FoldGenerator.cmx
+lib/ocaml/camlp4/Camlp4Filters/Camlp4FoldGenerator.o
+lib/ocaml/camlp4/Camlp4Filters/Camlp4LocationStripper.cmx
+lib/ocaml/camlp4/Camlp4Filters/Camlp4LocationStripper.o
+lib/ocaml/camlp4/Camlp4Filters/Camlp4MapGenerator.cmx
+lib/ocaml/camlp4/Camlp4Filters/Camlp4MapGenerator.o
+lib/ocaml/camlp4/Camlp4Filters/Camlp4MetaGenerator.cmx
+lib/ocaml/camlp4/Camlp4Filters/Camlp4MetaGenerator.o
+lib/ocaml/camlp4/Camlp4Filters/Camlp4Profiler.cmx
+lib/ocaml/camlp4/Camlp4Filters/Camlp4Profiler.o
+lib/ocaml/camlp4/Camlp4Filters/Camlp4TrashRemover.cmx
+lib/ocaml/camlp4/Camlp4Filters/Camlp4TrashRemover.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4AstLoader.cmx
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4AstLoader.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4DebugParser.cmx
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4DebugParser.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4GrammarParser.cmx
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4GrammarParser.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4ListComprehension.cmx
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4ListComprehension.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4MacroParser.cmx
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4MacroParser.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlOriginalQuotationExpander.cmx
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlOriginalQuotationExpander.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlParser.cmx
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlParser.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlParserParser.cmx
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlParserParser.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlReloadedParser.cmx
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlReloadedParser.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlRevisedParser.cmx
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlRevisedParser.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlRevisedParserParser.cmx
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlRevisedParserParser.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlRevisedQuotationExpander.cmx
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4OCamlRevisedQuotationExpander.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4QuotationCommon.cmx
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4QuotationCommon.o
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4QuotationExpander.cmx
+lib/ocaml/camlp4/Camlp4Parsers/Camlp4QuotationExpander.o
+lib/ocaml/camlp4/Camlp4Printers/Camlp4AstDumper.cmx
+lib/ocaml/camlp4/Camlp4Printers/Camlp4AstDumper.o
+lib/ocaml/camlp4/Camlp4Printers/Camlp4AutoPrinter.cmx
+lib/ocaml/camlp4/Camlp4Printers/Camlp4AutoPrinter.o
+lib/ocaml/camlp4/Camlp4Printers/Camlp4NullDumper.cmx
+lib/ocaml/camlp4/Camlp4Printers/Camlp4NullDumper.o
+lib/ocaml/camlp4/Camlp4Printers/Camlp4OCamlAstDumper.cmx
+lib/ocaml/camlp4/Camlp4Printers/Camlp4OCamlAstDumper.o
+lib/ocaml/camlp4/Camlp4Printers/Camlp4OCamlPrinter.cmx
+lib/ocaml/camlp4/Camlp4Printers/Camlp4OCamlPrinter.o
+lib/ocaml/camlp4/Camlp4Printers/Camlp4OCamlRevisedPrinter.cmx
+lib/ocaml/camlp4/Camlp4Printers/Camlp4OCamlRevisedPrinter.o
+lib/ocaml/camlp4/Camlp4Top/Rprint.cmx
+lib/ocaml/camlp4/Camlp4Top/Rprint.o
+lib/ocaml/camlp4/Camlp4Top/Top.cmx
+lib/ocaml/camlp4/Camlp4Top/Top.o
+lib/ocaml/camlp4/camlp4fulllib.a
+lib/ocaml/camlp4/camlp4fulllib.cmxa
+lib/ocaml/camlp4/camlp4lib.a
+lib/ocaml/camlp4/camlp4lib.cmxa
+lib/ocaml/camlp4/camlp4prof.cmx
+lib/ocaml/camlp4/camlp4prof.o
+lib/ocaml/char.cmx
+lib/ocaml/char.p.cmx
+lib/ocaml/complex.cmx
+lib/ocaml/complex.p.cmx
+lib/ocaml/dbm.a
+lib/ocaml/dbm.cmx
+lib/ocaml/dbm.cmxa
+lib/ocaml/digest.cmx
+lib/ocaml/digest.p.cmx
+lib/ocaml/filename.cmx
+lib/ocaml/filename.p.cmx
+lib/ocaml/format.cmx
+lib/ocaml/format.p.cmx
+lib/ocaml/gc.cmx
+lib/ocaml/gc.p.cmx
+lib/ocaml/genlex.cmx
+lib/ocaml/genlex.p.cmx
+lib/ocaml/graphics.a
+lib/ocaml/graphics.cmx
+lib/ocaml/graphics.cmxa
+lib/ocaml/graphicsX11.cmx
+lib/ocaml/hashtbl.cmx
+lib/ocaml/hashtbl.p.cmx
+lib/ocaml/int32.cmx
+lib/ocaml/int32.p.cmx
+lib/ocaml/int64.cmx
+lib/ocaml/int64.p.cmx
+lib/ocaml/int_misc.cmx
+lib/ocaml/labltk/balloon.cmx
+lib/ocaml/labltk/bell.cmx
+lib/ocaml/labltk/button.cmx
+lib/ocaml/labltk/cBell.cmx
+lib/ocaml/labltk/cButton.cmx
+lib/ocaml/labltk/cCanvas.cmx
+lib/ocaml/labltk/cCheckbutton.cmx
+lib/ocaml/labltk/cClipboard.cmx
+lib/ocaml/labltk/cDialog.cmx
+lib/ocaml/labltk/cEncoding.cmx
+lib/ocaml/labltk/cEntry.cmx
+lib/ocaml/labltk/cFocus.cmx
+lib/ocaml/labltk/cFont.cmx
+lib/ocaml/labltk/cFrame.cmx
+lib/ocaml/labltk/cGrab.cmx
+lib/ocaml/labltk/cGrid.cmx
+lib/ocaml/labltk/cImage.cmx
+lib/ocaml/labltk/cImagebitmap.cmx
+lib/ocaml/labltk/cImagephoto.cmx
+lib/ocaml/labltk/cLabel.cmx
+lib/ocaml/labltk/cListbox.cmx
+lib/ocaml/labltk/cMenu.cmx
+lib/ocaml/labltk/cMenubutton.cmx
+lib/ocaml/labltk/cMessage.cmx
+lib/ocaml/labltk/cOption.cmx
+lib/ocaml/labltk/cOptionmenu.cmx
+lib/ocaml/labltk/cPack.cmx
+lib/ocaml/labltk/cPalette.cmx
+lib/ocaml/labltk/cPixmap.cmx
+lib/ocaml/labltk/cPlace.cmx
+lib/ocaml/labltk/cRadiobutton.cmx
+lib/ocaml/labltk/cResource.cmx
+lib/ocaml/labltk/cScale.cmx
+lib/ocaml/labltk/cScrollbar.cmx
+lib/ocaml/labltk/cSelection.cmx
+lib/ocaml/labltk/cText.cmx
+lib/ocaml/labltk/cTk.cmx
+lib/ocaml/labltk/cTkvars.cmx
+lib/ocaml/labltk/cTkwait.cmx
+lib/ocaml/labltk/cToplevel.cmx
+lib/ocaml/labltk/cWinfo.cmx
+lib/ocaml/labltk/cWm.cmx
+lib/ocaml/labltk/camltk.cmx
+lib/ocaml/labltk/canvas.cmx
+lib/ocaml/labltk/checkbutton.cmx
+lib/ocaml/labltk/clipboard.cmx
+lib/ocaml/labltk/dialog.cmx
+lib/ocaml/labltk/encoding.cmx
+lib/ocaml/labltk/entry.cmx
+lib/ocaml/labltk/fileevent.cmx
+lib/ocaml/labltk/fileselect.cmx
+lib/ocaml/labltk/focus.cmx
+lib/ocaml/labltk/font.cmx
+lib/ocaml/labltk/frame.cmx
+lib/ocaml/labltk/frxlib.a
+lib/ocaml/labltk/frxlib.cmxa
+lib/ocaml/labltk/grab.cmx
+lib/ocaml/labltk/grid.cmx
+lib/ocaml/labltk/image.cmx
+lib/ocaml/labltk/imagebitmap.cmx
+lib/ocaml/labltk/imagephoto.cmx
+lib/ocaml/labltk/jpf_font.cmx
+lib/ocaml/labltk/jpflib.a
+lib/ocaml/labltk/jpflib.cmxa
+lib/ocaml/labltk/label.cmx
+lib/ocaml/labltk/labltk.a
+lib/ocaml/labltk/labltk.cmx
+lib/ocaml/labltk/labltk.cmxa
+lib/ocaml/labltk/listbox.cmx
+lib/ocaml/labltk/menu.cmx
+lib/ocaml/labltk/menubutton.cmx
+lib/ocaml/labltk/message.cmx
+lib/ocaml/labltk/option.cmx
+lib/ocaml/labltk/optionmenu.cmx
+lib/ocaml/labltk/pack.cmx
+lib/ocaml/labltk/palette.cmx
+lib/ocaml/labltk/pixmap.cmx
+lib/ocaml/labltk/place.cmx
+lib/ocaml/labltk/protocol.cmx
+lib/ocaml/labltk/radiobutton.cmx
+lib/ocaml/labltk/rawwidget.cmx
+lib/ocaml/labltk/scale.cmx
+lib/ocaml/labltk/scrollbar.cmx
+lib/ocaml/labltk/selection.cmx
+lib/ocaml/labltk/shell.cmx
+lib/ocaml/labltk/text.cmx
+lib/ocaml/labltk/textvariable.cmx
+lib/ocaml/labltk/timer.cmx
+lib/ocaml/labltk/tk.cmx
+lib/ocaml/labltk/tkthread.cmx
+lib/ocaml/labltk/tkthread.o
+lib/ocaml/labltk/tkvars.cmx
+lib/ocaml/labltk/tkwait.cmx
+lib/ocaml/labltk/toplevel.cmx
+lib/ocaml/labltk/widget.cmx
+lib/ocaml/labltk/winfo.cmx
+lib/ocaml/labltk/wm.cmx
+lib/ocaml/lazy.cmx
+lib/ocaml/lazy.p.cmx
+lib/ocaml/lexing.cmx
+lib/ocaml/lexing.p.cmx
+lib/ocaml/libasmrun.a
+lib/ocaml/libasmrunp.a
+lib/ocaml/libthreadsnat.a
+lib/ocaml/list.cmx
+lib/ocaml/list.p.cmx
+lib/ocaml/listLabels.cmx
+lib/ocaml/listLabels.p.cmx
+lib/ocaml/map.cmx
+lib/ocaml/map.p.cmx
+lib/ocaml/marshal.cmx
+lib/ocaml/marshal.p.cmx
+lib/ocaml/moreLabels.cmx
+lib/ocaml/moreLabels.p.cmx
+lib/ocaml/nat.cmx
+lib/ocaml/nativeint.cmx
+lib/ocaml/nativeint.p.cmx
+lib/ocaml/num.cmx
+lib/ocaml/nums.a
+lib/ocaml/nums.cmxa
+lib/ocaml/obj.cmx
+lib/ocaml/obj.p.cmx
+lib/ocaml/ocamlbuild/ocamlbuild.cmx
+lib/ocaml/ocamlbuild/ocamlbuild.o
+lib/ocaml/ocamlbuild/ocamlbuild_executor.cmx
+lib/ocaml/ocamlbuild/ocamlbuild_executor.o
+lib/ocaml/ocamlbuild/ocamlbuild_unix_plugin.cmx
+lib/ocaml/ocamlbuild/ocamlbuild_unix_plugin.o
+lib/ocaml/ocamlbuild/ocamlbuildlib.a
+lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa
+lib/ocaml/ocamldoc/odoc_info.a
+lib/ocaml/ocamldoc/odoc_info.cmxa
+lib/ocaml/oo.cmx
+lib/ocaml/oo.p.cmx
+lib/ocaml/parsing.cmx
+lib/ocaml/parsing.p.cmx
+lib/ocaml/pervasives.cmx
+lib/ocaml/pervasives.p.cmx
+lib/ocaml/printexc.cmx
+lib/ocaml/printexc.p.cmx
+lib/ocaml/printf.cmx
+lib/ocaml/printf.p.cmx
+lib/ocaml/queue.cmx
+lib/ocaml/queue.p.cmx
+lib/ocaml/random.cmx
+lib/ocaml/random.p.cmx
+lib/ocaml/ratio.cmx
+lib/ocaml/scanf.cmx
+lib/ocaml/scanf.p.cmx
+lib/ocaml/set.cmx
+lib/ocaml/set.p.cmx
+lib/ocaml/sort.cmx
+lib/ocaml/sort.p.cmx
+lib/ocaml/stack.cmx
+lib/ocaml/stack.p.cmx
+lib/ocaml/stdLabels.cmx
+lib/ocaml/stdLabels.p.cmx
+lib/ocaml/std_exit.cmx
+lib/ocaml/std_exit.o
+lib/ocaml/std_exit.p.cmx
+lib/ocaml/std_exit.p.o
+lib/ocaml/stdlib.a
+lib/ocaml/stdlib.cmxa
+lib/ocaml/stdlib.p.a
+lib/ocaml/stdlib.p.cmxa
+lib/ocaml/str.a
+lib/ocaml/str.cmx
+lib/ocaml/str.cmxa
+lib/ocaml/stream.cmx
+lib/ocaml/stream.p.cmx
+lib/ocaml/string.cmx
+lib/ocaml/string.p.cmx
+lib/ocaml/stringLabels.cmx
+lib/ocaml/stringLabels.p.cmx
+lib/ocaml/sys.cmx
+lib/ocaml/sys.p.cmx
+lib/ocaml/threads/condition.cmx
+lib/ocaml/threads/event.cmx
+lib/ocaml/threads/mutex.cmx
+lib/ocaml/threads/thread.cmx
+lib/ocaml/threads/threadUnix.cmx
+lib/ocaml/threads/threads.a
+lib/ocaml/threads/threads.cmxa
+lib/ocaml/unix.a
+lib/ocaml/unix.cmx
+lib/ocaml/unix.cmxa
+lib/ocaml/unixLabels.cmx
+lib/ocaml/weak.cmx
+lib/ocaml/weak.p.cmx
+@man man/man3/Arg.3o
+@man man/man3/Array.3o
+@man man/man3/ArrayLabels.3o
+@man man/man3/Bigarray.3o
+@man man/man3/Bigarray.Array1.3o
+@man man/man3/Bigarray.Array2.3o
+@man man/man3/Bigarray.Array3.3o
+@man man/man3/Bigarray.Genarray.3o
+@man man/man3/Buffer.3o
+@man man/man3/Callback.3o
+@man man/man3/CamlinternalLazy.3o
+@man man/man3/CamlinternalMod.3o
+@man man/man3/CamlinternalOO.3o
+@man man/man3/Char.3o
+@man man/man3/Complex.3o
+@man man/man3/Digest.3o
+@man man/man3/Filename.3o
+@man man/man3/Format.3o
+@man man/man3/Gc.3o
+@man man/man3/Genlex.3o
+@man man/man3/Hashtbl.3o
+@man man/man3/Hashtbl.HashedType.3o
+@man man/man3/Hashtbl.Make.3o
+@man man/man3/Hashtbl.S.3o
+@man man/man3/Int32.3o
+@man man/man3/Int64.3o
+@man man/man3/Lazy.3o
+@man man/man3/Lexing.3o
+@man man/man3/List.3o
+@man man/man3/ListLabels.3o
+@man man/man3/Map.3o
+@man man/man3/Map.Make.3o
+@man man/man3/Map.OrderedType.3o
+@man man/man3/Map.S.3o
+@man man/man3/Marshal.3o
+@man man/man3/MoreLabels.3o
+@man man/man3/MoreLabels.Hashtbl.3o
+@man man/man3/MoreLabels.Hashtbl.HashedType.3o
+@man man/man3/MoreLabels.Hashtbl.Make.3o
+@man man/man3/MoreLabels.Hashtbl.S.3o
+@man man/man3/MoreLabels.Map.3o
+@man man/man3/MoreLabels.Map.Make.3o
+@man man/man3/MoreLabels.Map.OrderedType.3o
+@man man/man3/MoreLabels.Map.S.3o
+@man man/man3/MoreLabels.Set.3o
+@man man/man3/MoreLabels.Set.Make.3o
+@man man/man3/MoreLabels.Set.OrderedType.3o
+@man man/man3/MoreLabels.Set.S.3o
+@man man/man3/Nativeint.3o
+@man man/man3/Num.3o
+@man man/man3/Obj.3o
+@man man/man3/Oo.3o
+@man man/man3/Parsing.3o
+@man man/man3/Pervasives.3o
+@man man/man3/Pervasives.LargeFile.3o
+@man man/man3/Printexc.3o
+@man man/man3/Printf.3o
+@man man/man3/Queue.3o
+@man man/man3/Random.3o
+@man man/man3/Random.State.3o
+@man man/man3/Scanf.3o
+@man man/man3/Scanf.Scanning.3o
+@man man/man3/Set.3o
+@man man/man3/Set.Make.3o
+@man man/man3/Set.OrderedType.3o
+@man man/man3/Set.S.3o
+@man man/man3/Sort.3o
+@man man/man3/Stack.3o
+@man man/man3/StdLabels.3o
+@man man/man3/StdLabels.Array.3o
+@man man/man3/StdLabels.List.3o
+@man man/man3/StdLabels.String.3o
+@man man/man3/Str.3o
+@man man/man3/Stream.3o
+@man man/man3/String.3o
+@man man/man3/StringLabels.3o
+@man man/man3/Sys.3o
+@man man/man3/Unix.3o
+@man man/man3/Unix.LargeFile.3o
+@man man/man3/Weak.3o
+@man man/man3/Weak.Make.3o
+@man man/man3/Weak.S.3o
+%%dynlink%%
+lib/ocaml/compiler-libs/parsing/lexer.cmx
+lib/ocaml/compiler-libs/parsing/linenum.cmx
+lib/ocaml/compiler-libs/parsing/location.cmx
+lib/ocaml/compiler-libs/parsing/longident.cmx
+lib/ocaml/compiler-libs/parsing/parse.cmx
+lib/ocaml/compiler-libs/parsing/parser.cmx
+lib/ocaml/compiler-libs/parsing/printast.cmx
+lib/ocaml/compiler-libs/parsing/syntaxerr.cmx
+lib/ocaml/compiler-libs/typing/btype.cmx
+lib/ocaml/compiler-libs/typing/ctype.cmx
+lib/ocaml/compiler-libs/typing/datarepr.cmx
+lib/ocaml/compiler-libs/typing/env.cmx
+lib/ocaml/compiler-libs/typing/ident.cmx
+lib/ocaml/compiler-libs/typing/includeclass.cmx
+lib/ocaml/compiler-libs/typing/includecore.cmx
+lib/ocaml/compiler-libs/typing/includemod.cmx
+lib/ocaml/compiler-libs/typing/mtype.cmx
+lib/ocaml/compiler-libs/typing/oprint.cmx
+lib/ocaml/compiler-libs/typing/parmatch.cmx
+lib/ocaml/compiler-libs/typing/path.cmx
+lib/ocaml/compiler-libs/typing/predef.cmx
+lib/ocaml/compiler-libs/typing/primitive.cmx
+lib/ocaml/compiler-libs/typing/printtyp.cmx
+lib/ocaml/compiler-libs/typing/stypes.cmx
+lib/ocaml/compiler-libs/typing/subst.cmx
+lib/ocaml/compiler-libs/typing/typeclass.cmx
+lib/ocaml/compiler-libs/typing/typecore.cmx
+lib/ocaml/compiler-libs/typing/typedecl.cmx
+lib/ocaml/compiler-libs/typing/typedtree.cmx
+lib/ocaml/compiler-libs/typing/typemod.cmx
+lib/ocaml/compiler-libs/typing/types.cmx
+lib/ocaml/compiler-libs/typing/typetexp.cmx
+lib/ocaml/compiler-libs/typing/unused_var.cmx
+lib/ocaml/compiler-libs/utils/ccomp.cmx
+lib/ocaml/compiler-libs/utils/clflags.cmx
+lib/ocaml/compiler-libs/utils/config.cmx
+lib/ocaml/compiler-libs/utils/consistbl.cmx
+lib/ocaml/compiler-libs/utils/misc.cmx
+lib/ocaml/compiler-libs/utils/tbl.cmx
+lib/ocaml/compiler-libs/utils/terminfo.cmx
+lib/ocaml/compiler-libs/utils/warnings.cmx
+lib/ocaml/compiler-libs/parsing/lexer.o
+lib/ocaml/compiler-libs/parsing/linenum.o
+lib/ocaml/compiler-libs/parsing/location.o
+lib/ocaml/compiler-libs/parsing/longident.o
+lib/ocaml/compiler-libs/parsing/parse.o
+lib/ocaml/compiler-libs/parsing/parser.o
+lib/ocaml/compiler-libs/parsing/printast.o
+lib/ocaml/compiler-libs/parsing/syntaxerr.o
+lib/ocaml/compiler-libs/typing/btype.o
+lib/ocaml/compiler-libs/typing/ctype.o
+lib/ocaml/compiler-libs/typing/datarepr.o
+lib/ocaml/compiler-libs/typing/env.o
+lib/ocaml/compiler-libs/typing/ident.o
+lib/ocaml/compiler-libs/typing/includeclass.o
+lib/ocaml/compiler-libs/typing/includecore.o
+lib/ocaml/compiler-libs/typing/includemod.o
+lib/ocaml/compiler-libs/typing/mtype.o
+lib/ocaml/compiler-libs/typing/oprint.o
+lib/ocaml/compiler-libs/typing/parmatch.o
+lib/ocaml/compiler-libs/typing/path.o
+lib/ocaml/compiler-libs/typing/predef.o
+lib/ocaml/compiler-libs/typing/primitive.o
+lib/ocaml/compiler-libs/typing/printtyp.o
+lib/ocaml/compiler-libs/typing/stypes.o
+lib/ocaml/compiler-libs/typing/subst.o
+lib/ocaml/compiler-libs/typing/typeclass.o
+lib/ocaml/compiler-libs/typing/typecore.o
+lib/ocaml/compiler-libs/typing/typedecl.o
+lib/ocaml/compiler-libs/typing/typedtree.o
+lib/ocaml/compiler-libs/typing/typemod.o
+lib/ocaml/compiler-libs/typing/types.o
+lib/ocaml/compiler-libs/typing/typetexp.o
+lib/ocaml/compiler-libs/typing/unused_var.o
+lib/ocaml/compiler-libs/utils/ccomp.o
+lib/ocaml/compiler-libs/utils/clflags.o
+lib/ocaml/compiler-libs/utils/config.o
+lib/ocaml/compiler-libs/utils/consistbl.o
+lib/ocaml/compiler-libs/utils/misc.o
+lib/ocaml/compiler-libs/utils/tbl.o
+lib/ocaml/compiler-libs/utils/terminfo.o
+lib/ocaml/compiler-libs/utils/warnings.o
