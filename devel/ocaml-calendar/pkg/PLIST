@@ -1,5 +1,4 @@
 @comment $OpenBSD: PLIST,v 1.1.1.1 2005/09/22 14:38:41 avsm Exp $
-%%SHARED%%
 %%native%%
 lib/ocaml/
 lib/ocaml/calendar/
