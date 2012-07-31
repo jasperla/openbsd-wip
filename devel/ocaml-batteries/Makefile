@@ -2,14 +2,13 @@
 
 COMMENT =	OCaml Batteries Included - OCaml foundation library
 CATEGORIES =	devel
-REVISION =	1
 
-V =		1.4.3
+V =		1.5.0
 DISTNAME =	batteries-${V}
 PKGNAME =	ocaml-batteries-${V}
 
 # You need to update MASTER_SITES too, when changing the version number.
-MASTER_SITES =	https://forge.ocamlcore.org/frs/download.php/884/
+MASTER_SITES =	https://forge.ocamlcore.org/frs/download.php/950/
 
 HOMEPAGE =	http://batteries.forge.ocamlcore.org/
 
@@ -33,21 +32,21 @@ MAKE_ENV =	BATTERIES_NATIVE=${MODOCAML_NATIVE:S/Yes/yes/:S/No/no/} \
 		DOCROOT=${PREFIX}/share/doc/ocaml-batteries \
 		TERM=${TERM}
 
-FAKE_FLAGS =	DESTDIR=${WRKINST}${PREFIX}/lib/ocaml/site-lib \
+FAKE_FLAGS =	DESTDIR=${WRKINST}${PREFIX}/lib/ocaml \
 		DOCROOT=${WRKINST}${PREFIX}/share/doc/ocaml-batteries
 
-ALL_TARGET =	all doc
+ALL_TARGET =		all doc
 REGRESS_TARGET =	test
 INSTALL_TARGET =	install install-doc
 
 
 pre-fake:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml/site-lib
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml
 
 post-install:
 	${INSTALL_DATA} \
-	    ${WRKSRC}/ocamlinit \
-	    ${PREFIX}/share/doc/ocaml-batteries/
+		${WRKSRC}/ocamlinit \
+		${PREFIX}/share/doc/ocaml-batteries/
 
 
 .include <bsd.port.mk>
