@@ -5,12 +5,11 @@ CATEGORIES =	devel
 REVISION =	1
 
 V =		1.4.3
-# $N changes with every release, too.
-N =		884
 DISTNAME =	batteries-${V}
 PKGNAME =	ocaml-batteries-${V}
 
-MASTER_SITES =	https://forge.ocamlcore.org/frs/download.php/$N/
+# You need to update MASTER_SITES too, when changing the version number.
+MASTER_SITES =	https://forge.ocamlcore.org/frs/download.php/884/
 
 HOMEPAGE =	http://batteries.forge.ocamlcore.org/
 
