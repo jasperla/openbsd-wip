@@ -1,14 +1,13 @@
 @comment $OpenBSD: PLIST,v 1.2 2012/07/18 08:04:11 sthen Exp $
 %%SHARED%%
 %%native%%
-lib/ocaml/site-lib/pcre/
-lib/ocaml/site-lib/pcre/META
-lib/ocaml/site-lib/pcre/libpcre_stubs.a
-lib/ocaml/site-lib/pcre/pcre.cma
-lib/ocaml/site-lib/pcre/pcre.cmi
-lib/ocaml/site-lib/pcre/pcre.mli
-@comment lib/ocaml/site-lib/stublibs
-@comment lib/ocaml/stublibs/
+lib/ocaml/pcre/
+lib/ocaml/pcre/META
+lib/ocaml/pcre/libpcre_stubs.a
+lib/ocaml/pcre/pcre.cma
+lib/ocaml/pcre/pcre.cmi
+lib/ocaml/pcre/pcre.mli
+lib/ocaml/stublibs/
 @comment lib/ocaml/stublibs/dllpcre_stubs.so.owner
 share/doc/ocaml-pcre/
 share/doc/ocaml-pcre/api/
