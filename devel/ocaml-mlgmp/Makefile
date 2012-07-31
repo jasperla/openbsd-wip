@@ -3,6 +3,7 @@
 COMMENT =		GMP bindings for OCaml
 
 V =			0.13
+REVISION =		0
 DISTNAME =		mlgmp-${V}
 PKGNAME =		ocaml-mlgmp-${V}
 
@@ -33,14 +34,26 @@ MAKE_FLAGS += CFLAGS_MISC="${CFLAGS}"
 # deal with this my calling certain make targets
 LIBS_NATIVE =	gmp.a gmp.cmxa
 LIBS_OTHER =	libmlgmp.a gmp.cma gmp.cmi
-MAKE_FLAGS +=	LIBS="${LIBS_OTHER} ${MODOCAML_NATIVE:L:S/yes/${LIBS_NATIVE}/:S/no//}"
-MAKE_FLAGS +=	TESTS="test_suite ${MODOCAML_NATIVE:L:S/yes/test_suite.opt/:S/no//}"
-MAKE_FLAGS +=	TESTS_RUN="tests-nonative ${MODOCAML_NATIVE:L:S/yes/tests-native/:S/no//}"
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mocaml_native}
+MAKE_FLAGS +=	LIBS="${LIBS_OTHER} ${LIBS_NATIVE}"
+MAKE_FLAGS +=	TESTS="test_suite test_suite.opt"
+MAKE_FLAGS +=	TESTS_RUN="tests-nonative tests-native"
+.else
+MAKE_FLAGS +=	LIBS="${LIBS_OTHER}"
+MAKE_FLAGS +=	TESTS="test_suite"
+MAKE_FLAGS +=	TESTS_RUN="tests-nonative"
+.endif
 
 REGRESS_TARGET =	tests
 
 # make dependencies are screwed up in the release tarball
 pre-build:
 	cd ${WRKBUILD} && ${MAKE_PROGRAM} clean
+
+post-install:
+	${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -c \
+		${FILESDIR}/META ${PREFIX}/lib/ocaml/gmp/META
 
 .include <bsd.port.mk>
