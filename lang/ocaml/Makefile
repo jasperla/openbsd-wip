@@ -48,12 +48,12 @@ RUN_DEPENDS +=	${MODTK_RUN_DEPENDS}
 LIB_DEPENDS +=	${MODTK_LIB_DEPENDS}
 WANTLIB +=	${MODTK_WANTLIB}
 
-.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "sparc" || \
-	${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || \
-	${MACHINE_ARCH} == "powerpc"
+.include <bsd.port.arch.mk>
+
+.if ${PROPERTIES:Mocaml_native}
 ALL_TARGET=	world bootstrap opt opt.opt
 PKG_ARGS+=-Dnative=1
-.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
+.if ${PROPERTIES:Mocaml_native_dl}
 PKG_ARGS+=-Ddynlink=1
 .else
 PKG_ARGS+=-Ddynlink=0

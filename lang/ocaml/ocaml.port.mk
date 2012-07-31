@@ -11,14 +11,15 @@
 
 OCAML_VERSION=4.00.0
 
-.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64" || \
-    ${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "powerpc"
+.include <bsd.port.arch.mk>
+
+.if ${PROPERTIES:Mocaml_native}
 MODOCAML_NATIVE=Yes
 
 # include nativecode base files
 PKG_ARGS+=-Dnative=1
 
-.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
+.if ${PROPERTIES:Mocaml_native_dl}
 MODOCAML_NATDYNLINK=Yes
 
 # include native dynlink base files
