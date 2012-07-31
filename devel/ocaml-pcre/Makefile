@@ -30,8 +30,6 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--destdir ${WRKINST} --override pkg_name ocaml-pcre
 
 pre-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml/site-lib/pcre
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml/stublibs
-	ln -s ../stublibs ${PREFIX}/lib/ocaml/site-lib/
 
 .include <bsd.port.mk>
