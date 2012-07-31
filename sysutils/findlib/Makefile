@@ -14,12 +14,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-WANTLIB =	c m
-MODULES+=	lang/ocaml
+WANTLIB =	c curses m pthread
+MODULES+=	lang/ocaml x11/tk
 NO_REGRESS=	Yes
 
 CONFIGURE_STYLE=simple
-CONFIGURE_ARGS=	-with-toolbox -config ${PREFIX}/share/examples/findlib/findlib.conf
+CONFIGURE_ARGS=	-with-toolbox \
+		-sitelib "/usr/local/lib/ocaml" \
+		-config ${PREFIX}/share/examples/findlib/findlib.conf
 
 ALL_TARGET=	all ${MODOCAML_NATIVE:S,Yes,all opt,:S,No,,}
 FAKE_FLAGS=	prefix=${DESTDIR}
