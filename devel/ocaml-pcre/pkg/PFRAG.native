@@ -2,4 +2,3 @@
 lib/ocaml/pcre/pcre.a
 lib/ocaml/pcre/pcre.cmx
 lib/ocaml/pcre/pcre.cmxa
-@bin lib/ocaml/pcre/pcre.cmxs
