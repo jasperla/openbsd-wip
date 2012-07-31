@@ -3,7 +3,7 @@
 COMMENT =	the Ocamlnet internet protocol foundation library
 CATEGORIES =	devel www mail
 
-V =		3.5.1
+V =		3.6
 DISTNAME =	ocamlnet-${V}
 PKGNAME =	ocaml-net-${V}
 
@@ -20,10 +20,8 @@ PERMIT_DISTFILES_CDROM =	Yes
 
 MODULES =	lang/ocaml
 
-RUN_DEPENDS =	devel/ocaml-pcre
 BUILD_DEPENDS =	${RUN_DEPENDS} sysutils/findlib
-LIB_DEPENDS =	devel/pcre
-WANTLIB =	c curses m pthread pcre
+WANTLIB =	c curses m pthread
 
 CONFIGURE_STYLE = simple
 CONFIGURE_ARGS = -with-nethttpd
@@ -33,10 +31,13 @@ USE_GMAKE =	Yes
 
 ALL_TARGET =	all ${MODOCAML_NATIVE:S/Yes/opt/:S/No//}
 
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mocaml_native}
+ALL_TARGET +=	opt
+.endif
+
 pre-fake:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml/site-lib
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml/stublibs
-	ln -s ../stublibs ${PREFIX}/lib/ocaml/site-lib/
 
 EXAMPLEDIR =	${PREFIX}/share/examples/ocaml-net
 post-install:
