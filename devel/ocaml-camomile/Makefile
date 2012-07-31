@@ -5,6 +5,7 @@ COMMENT =	unicode library for objective caml
 CATEGORIES =	devel
 
 V =		0.8.3
+REVISION =	0
 DISTNAME =	camomile-${V}
 PKGNAME =	ocaml-camomile-${V}
 EXTRACT_SUFX =	.tar.bz2
@@ -33,7 +34,7 @@ USE_GMAKE =	Yes
 ALL_TARGET =	all dochtml
 
 pre-fake:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml/site-lib
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/camomile/html/
