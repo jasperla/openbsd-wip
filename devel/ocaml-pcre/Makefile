@@ -3,10 +3,9 @@
 COMMENT =	OCaml perl-compatible regexp library
 CATEGORIES =	devel textproc
 
-V =		6.2.5
+V =		7.0.2
 DISTNAME =	pcre-ocaml-$V
 PKGNAME =	ocaml-pcre-$V
-REVISION =	1
 
 HOMEPAGE =	http://ocaml.info/home/ocaml_sources.html
 
@@ -25,32 +24,14 @@ BUILD_DEPENDS =	${RUN_DEPENDS}
 LIB_DEPENDS =	devel/pcre
 WANTLIB =	pcre
 
-MAKE_FLAGS =	"NO_CUSTOM=y"
-
 NO_REGRESS =	Yes
-USE_GMAKE =	Yes
 
-WRKSRC =	${WRKDIST}/lib
-
-.include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mocaml_native}
-ALL_TARGET =		htdoc byte-code-library native-code-library
-INSTALL_TARGET =	libinstall
-.else
-ALL_TARGET =		htdoc byte-code-library
-INSTALL_TARGET =	libinstall-byte-code
-.endif
+CONFIGURE_STYLE =	simple
+CONFIGURE_ARGS +=	--destdir ${WRKINST} --override pkg_name ocaml-pcre
 
 pre-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml/site-lib/pcre
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml/stublibs
 	ln -s ../stublibs ${PREFIX}/lib/ocaml/site-lib/
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml-pcre/html/
-	${INSTALL_DATA} ${WRKDIST}/LICENSE ${PREFIX}/share/doc/ocaml-pcre/
-	${INSTALL_DATA} ${WRKDIST}/README.txt ${PREFIX}/share/doc/ocaml-pcre/
-	${INSTALL_DATA} \
-	    ${WRKDIST}/lib/doc/pcre/html/* \
-	    ${PREFIX}/share/doc/ocaml-pcre/html/
 
 .include <bsd.port.mk>
