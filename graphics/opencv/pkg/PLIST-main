@@ -157,8 +157,7 @@ include/opencv2/videostab/videostab.hpp
 @lib lib/libopencv_video.so.${LIBopencv_video_VERSION}
 @lib lib/libopencv_videostab.so.${LIBopencv_videostab_VERSION}
 lib/pkgconfig/opencv.pc
-lib/python${MODPY_VERSION}/site-packages/cv.py
-lib/python${MODPY_VERSION}/site-packages/cv2.so
+share/OpenCV/
 share/opencv/
 share/opencv/OpenCVConfig-version.cmake
 share/opencv/OpenCVConfig.cmake

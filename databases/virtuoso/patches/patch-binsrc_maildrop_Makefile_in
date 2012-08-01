@@ -1,7 +1,7 @@
 $OpenBSD$
---- binsrc/maildrop/Makefile.in.orig	Fri Sep  9 17:38:19 2011
-+++ binsrc/maildrop/Makefile.in	Fri Sep  9 17:38:32 2011
-@@ -322,7 +322,7 @@ virt_mail_SOURCES = \
+--- binsrc/maildrop/Makefile.in.orig	Thu Mar 15 22:15:20 2012
++++ binsrc/maildrop/Makefile.in	Wed Jul  4 00:54:38 2012
+@@ -324,7 +324,7 @@ virt_mail_SOURCES = \
  noinst_HEADERS = sysexits.h
  BUILT_SOURCES = virt_mail_vers.c odbc_mail_vers.c
  CLEANFILES = virt_mail_vers.c odbc_mail_vers.c

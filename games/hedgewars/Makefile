@@ -1,5 +1,7 @@
 # $OpenBSD$
 
+SHARED_ONLY =		Yes
+
 COMMENT =		Worms-like strategy game
 
 V =			0.9.17
@@ -19,7 +21,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += QtGui QtNetwork SDL SDL_image SDL_mixer SDL_net SDL_ttf
-WANTLIB += c lua m pthread stdc++ z
+WANTLIB += c m pthread stdc++ z ${MODLUA_WANTLIB}
 
 MASTER_SITES =		http://download.gna.org/hedgewars/
 EXTRACT_SUFX =		.tar.bz2

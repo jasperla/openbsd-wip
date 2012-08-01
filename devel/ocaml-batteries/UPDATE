@@ -1,0 +1,16 @@
+* bump version to 1.5.0
+
+* remove patch - META info fixed upstream
+
+* move cmxs to PFRAG.native-dynlink
+
+* update ocamlfind sitelib path
+
+* /usr/local/ocaml/site-lib/batteries/ocaml is a script, no executable
+
+* Fix toplevel help system
+
+  The path to the documentation is hardcoded at build time.
+  Therefore DOCROOT may not be prefixed by WRKINST at build time.
+
+  What is better here? PREFIX or LOCALBASE?

@@ -1,7 +1,7 @@
 $OpenBSD$
---- calgebra/main.cpp.orig	Fri Sep  9 20:42:50 2011
-+++ calgebra/main.cpp	Fri Sep  9 20:42:42 2011
-@@ -130,7 +130,13 @@ int main(int argc, char *argv[])
+--- calgebra/main.cpp.orig	Thu Nov 17 22:00:47 2011
++++ calgebra/main.cpp	Fri Jun 29 16:06:51 2012
+@@ -152,7 +152,13 @@ int main(int argc, char *argv[])
  	for(int i=0; i<history_get_history_state()->length; i++) {
  		HIST_ENTRY *he = remove_history(i);
  // 		free(he->line);

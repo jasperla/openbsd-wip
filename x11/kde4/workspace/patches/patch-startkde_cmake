@@ -1,0 +1,16 @@
+$OpenBSD$
+
+workaround patch, because kde4-config can't find stuff like "lnusertemp" in
+"/usr/local/libexec"
+
+--- startkde.cmake.orig	Sun Jul  8 00:39:25 2012
++++ startkde.cmake	Sun Jul  8 00:39:23 2012
+@@ -231,7 +231,7 @@ else
+     export GS_LIB
+ fi
+ 
+-lnusertemp=`kde4-config --path exe --locate lnusertemp`
++lnusertemp="/usr/local/libexec/lnusertemp"
+ if test -z "$lnusertemp"; then
+   # Startup error
+   echo 'startkde: ERROR: Could not locate lnusertemp in '`kde4-config --path exe` 1>&2

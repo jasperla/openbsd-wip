@@ -7,3 +7,4 @@ lib/fpc/${V}/units/${CONFIG}/rtl/ports.o
 lib/fpc/${V}/units/${CONFIG}/rtl/ports.ppu
 lib/fpc/${V}/units/${CONFIG}/rtl/x86.o
 lib/fpc/${V}/units/${CONFIG}/rtl/x86.ppu
+@man man/man1/ppc386.1

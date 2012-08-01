@@ -7,6 +7,7 @@ COMMENT-kde4 =	KDE4 Plasma runner for Clementine
 DISTNAME =	clementine-1.0.1
 PKGNAME-main =	${PKGNAME}
 PKGNAME-kde4 =	${PKGNAME:C/-/-kde4-/1}
+REVISION-main =	0
 HOMEPAGE =	http://clementine-player.org/
 
 PSEUDO_FLAVORS =	no_kde4
@@ -38,7 +39,11 @@ WANTLIB-main +=	qjson tag>=5.0 usb xml2
 WANTLIB-kde4 =	${WANTLIB-common} ${MODKDE4_WANTLIB}
 WANTLIB-kde4 +=	lib/qt4/QtSvg kdeui plasma
 
-MODULES =	devel/cmake devel/gettext x11/qt4 x11/kde4
+MODULES =	devel/gettext x11/kde4
+
+.if ${FLAVOR:Mno_kde4}
+MODKDE4_USE =
+.endif
 
 .include <bsd.port.arch.mk>
 

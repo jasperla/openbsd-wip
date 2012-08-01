@@ -2,7 +2,7 @@
 
 COMMENT =		stereoscopic 3D video player
 
-DISTNAME =		bino-1.3.0
+DISTNAME =		bino-1.4.0
 
 CATEGORIES =		x11
 
@@ -20,7 +20,7 @@ WANTLIB += GL GLEWmx QtGui QtOpenGL X11 Xext Xfixes ass avcodec
 WANTLIB += avdevice avformat avutil bz2 c gsm m mp3lame
 WANTLIB += ogg openal orc-0.4 pthread schroedinger-1.0 sndio speex
 WANTLIB += stdc++ swscale theoradec theoraenc vorbis vorbisenc
-WANTLIB += vpx x264 z
+WANTLIB += vpx x264 xvidcore z
 
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=bino/}
 EXTRACT_SUFX =		.tar.xz
