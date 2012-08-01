@@ -1,7 +1,7 @@
 $OpenBSD: patch-test_CMakeLists_txt,v 1.1 2008/01/21 21:47:56 espie Exp $
---- test/CMakeLists.txt.orig	Thu Oct 25 09:36:44 2007
-+++ test/CMakeLists.txt	Fri Oct 26 00:27:30 2007
-@@ -25,7 +25,7 @@ qt4_automoc(${blitztest_SRCS}) 
+--- test/CMakeLists.txt.orig	Wed Jul 28 20:06:14 2010
++++ test/CMakeLists.txt	Sat Jun 30 18:57:26 2012
+@@ -24,7 +24,7 @@ endif(COMMAND cmake_policy) 
  add_executable(blitztest ${blitztest_SRCS})
  
  target_link_libraries(blitztest ${QT_QTCORE_LIBRARY}

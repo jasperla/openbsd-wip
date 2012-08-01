@@ -2,6 +2,8 @@
 
 COMMENT =	K Desktop Environment, image effects
 DISTNAME =	qimageblitz-0.0.6
+REVISION =	0
+
 EXTRACT_SUFX =	.tar.bz2
 
 SHARED_LIBS =	qimageblitz         0.0      # .4.0

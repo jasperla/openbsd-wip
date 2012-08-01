@@ -3,7 +3,7 @@
 COMMENT-main=	graphical network protocol analyzer
 COMMENT-text=	network protocol analyzer
 
-VER=		1.8.0
+VER=		1.8.1
 WVER=		${VER}
 DISTNAME=	wireshark-${WVER}
 PKGNAME-main=	wireshark-${VER}
@@ -35,12 +35,15 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c glib-2.0 m pcap pthread z
 
-WANTLIB-text += ${WANTLIB} GeoIP cares gcrypt gmodule-2.0 gnutls
-WANTLIB-text += gpg-error krb5 lua smi
+WANTLIB-text += ${WANTLIB} ${MODLUA_WANTLIB} GeoIP cares gcrypt gmodule-2.0
+WANTLIB-text += gnutls gpg-error krb5 smi
 
 WANTLIB-main += ${WANTLIB} wireshark wiretap wsutil
-WANTLIB-main += cairo gdk_pixbuf-2.0 gmodule-2.0 gobject-2.0 
+WANTLIB-main += cairo gdk_pixbuf-2.0 gmodule-2.0 gobject-2.0
 WANTLIB-main += pango-1.0 pangocairo-1.0 portaudio stdc++
+
+MODULES=	lang/lua
+MODLUA_SA=	Yes
 
 MULTI_PACKAGES= -text -main
 
@@ -52,8 +55,8 @@ SUBST_VARS=	WVER
 LIB_DEPENDS=
 
 LIB_DEPENDS-text= ${LIB_DEPENDS} \
+		${MODLUA_LIB_DEPENDS} \
 		devel/glib2 \
-		lang/lua \
 		net/libcares \
 		net/libsmi \
 		net/GeoIP  \
@@ -69,14 +72,16 @@ LIB_DEPENDS-main= ${LIB_DEPENDS} \
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+= --tag=disable-static
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE= gnu
+SEPARATE_BUILD=	Yes
+CFLAGS+=	-I${LOCALBASE}/include/lua-5.1
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-dumpcap-group=_wireshark \
 		--with-ssl
 
 .if !${FLAVOR:L:Mno_python}
-MODULES =		lang/python
+MODULES +=		lang/python
 WANTLIB-text +=		${MODPY_WANTLIB}
 LIB_DEPENDS-text +=	${MODPY_LIB_DEPENDS}
 CONFIGURE_ARGS +=	--with-python

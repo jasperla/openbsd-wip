@@ -1,16 +1,53 @@
 $OpenBSD$
---- configure.in.orig	Sat Oct 29 03:28:08 2011
-+++ configure.in	Sun Feb  5 17:47:04 2012
-@@ -368,7 +368,7 @@ AM_CONDITIONAL(WITH_HTMLDOC, test "x$HTMLDOC" != "x")
+--- configure.in.orig	Tue Jul 10 11:10:16 2012
++++ configure.in	Tue Jul 10 11:10:29 2012
+@@ -217,6 +217,23 @@ case ${VIRTUOSO_LAYOUT} in
+ 	hostingdir=$libdir/virtuoso/hosting
+ 	;;
  
- AM_PROG_LEX
++  [[Op]][[Pp]][[Ee]][[Nn]][[Bb]][[Ss]][[Dd]])		# OpenBSD
++	virtuoso_layout=OpenBSD
++	if test "x$prefix" = "xNONE"
++	then
++		prefix=/usr/local
++		localstatedir=/var
++	fi
++	vaddir=$datadir/virtuoso/vad
++	docdir=$datadir/virtuoso/doc
++	htmldocdir=$datadir/virtuoso/doc/html
++	pdfdocdir=$datadir/virtuoso/doc/pdf
++	demodir=$localstatedir/virtuoso/demo
++	dbdir=$localstatedir/virtuoso/db
++	httprootdir=$localstatedir/virtuoso/vsp
++	hostingdir=$libdir/virtuoso/hosting
++	;;
++
+   [[Oo]][[Pp]][[Tt]])					# /opt
+ 	virtuoso_layout=opt
+ 	test "x$prefix" = xNONE && prefix=/opt/virtuoso-opensource
+@@ -246,7 +263,7 @@ case ${VIRTUOSO_LAYOUT} in
+   *)							# UNKNOWN
+   	AC_MSG_RESULT(unknown)
+ 	echo ""
+-	echo "AC_HELP_STRING([Supported layouts:], [Debian FreeBSD GNU OpenLink opt RedHat])"
++	echo "AC_HELP_STRING([Supported layouts:], [Debian FreeBSD OpenBSD GNU OpenLink opt RedHat])"
+ 	echo ""
+ 	AC_MSG_ERROR([unable to continue])
+ 	;;
+@@ -366,9 +383,10 @@ AC_PROG_YACC
+ AC_PATH_PROG(HTMLDOC, htmldoc)
+ AM_CONDITIONAL(WITH_HTMLDOC, test "x$HTMLDOC" != "x")
+ 
+-AM_PROG_LEX
++# AM_PROG_LEX
  
 -AC_PATH_PROG(FLEX, flex, flex)
++AC_PATH_PROG(LEX, gflex, gflex)
 +AC_PATH_PROG(FLEX, gflex, gflex)
  AC_PATH_PROG(GAWK, gawk, gawk)
  AC_PATH_PROG(GPERF, gperf, gperf)
  AC_PATH_PROG(PERL, perl, perl)
-@@ -1404,7 +1404,8 @@ then
+@@ -1404,7 +1422,8 @@ then
  int
  main ()
  {
@@ -20,7 +57,7 @@ $OpenBSD$
  
    return 0;
  }],
-@@ -1651,7 +1652,7 @@ if test $with_pthreads = "yes"; then
+@@ -1651,7 +1670,7 @@ if test $with_pthreads = "yes"; then
         [AC_CHECK_LIB(pthread, pthread_create,
           [BUILD_OPTS="$BUILD_OPTS pthreads"
  	  WITH_PTHREADS="yes"

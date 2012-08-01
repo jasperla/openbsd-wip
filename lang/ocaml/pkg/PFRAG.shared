@@ -1,0 +1,10 @@
+@comment $OpenBSD: PFRAG.shared,v 1.3 2010/12/07 15:01:35 dcoppa Exp $
+lib/ocaml/libcamlrun_shared.so
+lib/ocaml/stublibs/dllbigarray.so
+lib/ocaml/stublibs/dllcamlstr.so
+lib/ocaml/stublibs/dllgraphics.so
+lib/ocaml/stublibs/dlllabltk.so
+lib/ocaml/stublibs/dllnums.so
+lib/ocaml/stublibs/dllthreads.so
+lib/ocaml/stublibs/dllunix.so
+lib/ocaml/stublibs/dllvmthreads.so

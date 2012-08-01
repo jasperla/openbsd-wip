@@ -4,6 +4,7 @@ COMMENT =		Qt wrapper for Zeitgeist, event logging framework
 
 V =			0.8.0
 DISTNAME =		libqzeitgeist-${V}
+REVISION =		0
 
 SHARED_LIBS =		qzeitgeist	1.0
 
@@ -27,7 +28,8 @@ MASTER_SITES =		${MASTER_SITE_KDE:=stable/libqzeitgeist/${V}/src/}
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		devel/cmake x11/qt4 lang/python
-BUILD_DEPENDS =		productivity/zeitgeist
+BUILD_DEPENDS =		productivity/zeitgeist \
+			x11/kde4/automoc
 RUN_DEPENDS =		productivity/zeitgeist
 SEPARATE_BUILD =	simple
 NO_REGRESS =		Yes

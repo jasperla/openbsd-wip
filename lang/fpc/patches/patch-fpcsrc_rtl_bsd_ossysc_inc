@@ -1,0 +1,12 @@
+$OpenBSD$
+--- fpcsrc/rtl/bsd/ossysc.inc.orig	Thu Jul 26 20:34:03 2012
++++ fpcsrc/rtl/bsd/ossysc.inc	Thu Jul 26 20:34:16 2012
+@@ -223,7 +223,7 @@ with blockmode have this higher?}
+ function readbuffer:longint;
+ 
+ var retval :longint;
+-    basep : clong;
++    basep : off_t;
+ begin
+ {$ifdef USE_GETDIRENTRIES_SYSCALL}
+  Retval:=do_syscall(syscall_nr_getdirentries,TSysParam(dirp^.dd_fd),TSysParam(@dirp^.dd_buf^),DIRBLKSIZ {sizeof(getdentsbuffer)},TSysParam(@basep));

@@ -27,9 +27,49 @@ share/icons/hicolor/48x48/
 share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/rawtherapee.png
 share/rawtherapee/
+share/rawtherapee/dcpprofiles/
+share/rawtherapee/dcpprofiles/Canon EOS 20D.dcp
+share/rawtherapee/dcpprofiles/Canon EOS 400D.dcp
+share/rawtherapee/dcpprofiles/Canon EOS 40D.dcp
+share/rawtherapee/dcpprofiles/Canon EOS 450D.dcp
+share/rawtherapee/dcpprofiles/Canon EOS 550D.dcp
+share/rawtherapee/dcpprofiles/Canon EOS 5D.dcp
+share/rawtherapee/dcpprofiles/Canon EOS 7D.dcp
+share/rawtherapee/dcpprofiles/Canon EOS D60.dcp
+share/rawtherapee/dcpprofiles/Canon EOS Digital Rebel XSi.dcp
+share/rawtherapee/dcpprofiles/Canon EOS Digital Rebel XTi.dcp
+share/rawtherapee/dcpprofiles/Canon EOS Rebel T2i.dcp
+share/rawtherapee/dcpprofiles/Canon EOS-1D Mark III.dcp
+share/rawtherapee/dcpprofiles/Canon PowerShot G10.dcp
+share/rawtherapee/dcpprofiles/Canon PowerShot G12.dcp
+share/rawtherapee/dcpprofiles/Nikon D200.dcp
+share/rawtherapee/dcpprofiles/Nikon D300.dcp
+share/rawtherapee/dcpprofiles/Nikon D3000.dcp
+share/rawtherapee/dcpprofiles/Nikon D3100.dcp
+share/rawtherapee/dcpprofiles/Nikon D3S.dcp
+share/rawtherapee/dcpprofiles/Nikon D50.dcp
+share/rawtherapee/dcpprofiles/Nikon D5100.dcp
+share/rawtherapee/dcpprofiles/Nikon D700.dcp
+share/rawtherapee/dcpprofiles/Nikon D7000.dcp
+share/rawtherapee/dcpprofiles/Olympus E-1.dcp
+share/rawtherapee/dcpprofiles/Olympus E-P2.dcp
+share/rawtherapee/dcpprofiles/Panasonic DMC-FZ150.dcp
+share/rawtherapee/dcpprofiles/Panasonic DMC-FZ35.dcp
+share/rawtherapee/dcpprofiles/Panasonic DMC-FZ38.dcp
+share/rawtherapee/dcpprofiles/Panasonic DMC-G1.dcp
+share/rawtherapee/dcpprofiles/Panasonic DMC-G3.dcp
+share/rawtherapee/dcpprofiles/Panasonic DMC-GH1.dcp
+share/rawtherapee/dcpprofiles/Panasonic DMC-GH2.dcp
+share/rawtherapee/dcpprofiles/Pentax K10D.dcp
+share/rawtherapee/dcpprofiles/Pentax K200D.dcp
+share/rawtherapee/dcpprofiles/Sony DSLR-A700.dcp
+share/rawtherapee/dcpprofiles/Sony DSLR-A900.dcp
+share/rawtherapee/dcpprofiles/Sony NEX-5N.dcp
+share/rawtherapee/dcpprofiles/Sony SLT-A55V.dcp
 share/rawtherapee/iccprofiles/
 share/rawtherapee/iccprofiles/input/
 share/rawtherapee/iccprofiles/input/Canon EOS 20D.icc
+share/rawtherapee/iccprofiles/input/Canon EOS 40D.icc
 share/rawtherapee/iccprofiles/input/Canon EOS 450D.icc
 share/rawtherapee/iccprofiles/input/Canon EOS 550D.icc
 share/rawtherapee/iccprofiles/input/Canon EOS 5D.icc
@@ -37,7 +77,9 @@ share/rawtherapee/iccprofiles/input/Canon EOS Digital Rebel XSi.icc
 share/rawtherapee/iccprofiles/input/Canon EOS Rebel T2i.icc
 share/rawtherapee/iccprofiles/input/Canon EOS-1D Mark III.icc
 share/rawtherapee/iccprofiles/input/Canon PowerShot G10.icc
+share/rawtherapee/iccprofiles/input/Canon PowerShot G12.icc
 share/rawtherapee/iccprofiles/input/Nikon D200.icc
+share/rawtherapee/iccprofiles/input/Nikon D3000.icc
 share/rawtherapee/iccprofiles/input/Nikon D3100.icc
 share/rawtherapee/iccprofiles/input/Nikon D3S.icc
 share/rawtherapee/iccprofiles/input/Nikon D700.icc
@@ -52,6 +94,8 @@ share/rawtherapee/iccprofiles/input/Panasonic DMC-GH1.icc
 share/rawtherapee/iccprofiles/input/Panasonic DMC-GH2.icc
 share/rawtherapee/iccprofiles/input/Pentax K200D.icc
 share/rawtherapee/iccprofiles/input/Sony DSLR-A700.icc
+share/rawtherapee/iccprofiles/input/Sony DSLR-A900.icc
+share/rawtherapee/iccprofiles/input/Sony SLT-A55V.icc
 share/rawtherapee/iccprofiles/output/
 share/rawtherapee/iccprofiles/output/RT_Large_g10.icc
 share/rawtherapee/iccprofiles/output/RT_Large_gBT709.icc
@@ -555,8 +599,6 @@ share/rawtherapee/languages/Czech
 share/rawtherapee/languages/Dansk
 share/rawtherapee/languages/Deutsch
 share/rawtherapee/languages/English
-share/rawtherapee/languages/English (UK)
-share/rawtherapee/languages/English (US)
 share/rawtherapee/languages/Espanol
 share/rawtherapee/languages/Euskara
 share/rawtherapee/languages/Francais
@@ -587,15 +629,15 @@ share/rawtherapee/profiles/BW-1.pp3
 share/rawtherapee/profiles/BW-2.pp3
 share/rawtherapee/profiles/BW-3.pp3
 share/rawtherapee/profiles/BW-4.pp3
+share/rawtherapee/profiles/Default-ISO-High.pp3
+share/rawtherapee/profiles/Default-ISO-Medium.pp3
+share/rawtherapee/profiles/Default.pp3
 share/rawtherapee/profiles/Highkey-1.pp3
 share/rawtherapee/profiles/Natural-1.pp3
 share/rawtherapee/profiles/Natural-2.pp3
+share/rawtherapee/profiles/Neutral.pp3
 share/rawtherapee/profiles/Punchy-1.pp3
 share/rawtherapee/profiles/Punchy-2.pp3
-share/rawtherapee/profiles/default-ISO-high.pp3
-share/rawtherapee/profiles/default-ISO-medium.pp3
-share/rawtherapee/profiles/default.pp3
-share/rawtherapee/profiles/neutral.pp3
 share/rawtherapee/sounds/
 share/rawtherapee/sounds/BatchComplete.wav
 share/rawtherapee/sounds/Empty.wav

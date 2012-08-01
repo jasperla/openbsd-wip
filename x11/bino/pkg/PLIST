@@ -4,6 +4,7 @@
 @man man/man1/bino.1
 share/applications/bino.desktop
 share/doc/bino/
+share/doc/bino/audio-video-sync.mp4
 share/doc/bino/bino.html
 share/doc/bino/crosstalk-pattern-tb.png
 share/doc/bino/gamma-pattern-tb.png
@@ -24,6 +25,7 @@ share/doc/bino/input-layout-top-bottom-half.png
 share/doc/bino/input-layout-top-bottom.png
 share/doc/bino/multi-display-rotated.jpg
 share/doc/bino/multi-display-vrlab.jpg
+share/doc/bino/output-type-alternating.png
 share/doc/bino/output-type-amber-blue.png
 share/doc/bino/output-type-checkerboard.png
 share/doc/bino/output-type-even-odd-columns.png
@@ -57,10 +59,8 @@ share/icons/hicolor/64x64/apps/bino.png
 share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/bino.svg
-share/locale/cs/LC_MESSAGES/bino.mo
 share/locale/de/LC_MESSAGES/bino.mo
 share/locale/fr/LC_MESSAGES/bino.mo
-share/locale/pl/LC_MESSAGES/bino.mo
 share/locale/ru/LC_MESSAGES/bino.mo
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

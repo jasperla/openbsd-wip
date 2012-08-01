@@ -62,5 +62,5 @@ share/icons/hicolor/64x64/apps/kiten.png
 share/icons/hicolor/scalable/apps/kiten.svgz
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

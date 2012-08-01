@@ -8,7 +8,7 @@ COMMENT-main=		library of programming functions for real time cv
 COMMENT-docs=		documentation for OpenCV
 
 V=			2.4.1
-REVISION=		2
+REVISION=		3
 DISTNAME=		OpenCV-$V
 PKGNAME-main=		opencv-$V
 PKGNAME-docs=		opencv-docs-$V

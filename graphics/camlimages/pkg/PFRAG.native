@@ -1,0 +1,50 @@
+@comment $OpenBSD: PFRAG.native,v 1.5 2011/01/13 10:22:54 dcoppa Exp $
+lib/ocaml/site-lib/camlimages/camlimages_all.a
+lib/ocaml/site-lib/camlimages/camlimages_all.cmxa
+lib/ocaml/site-lib/camlimages/camlimages_core.a
+lib/ocaml/site-lib/camlimages/camlimages_core.cmxa
+lib/ocaml/site-lib/camlimages/camlimages_freetype.a
+lib/ocaml/site-lib/camlimages/camlimages_freetype.cmxa
+lib/ocaml/site-lib/camlimages/camlimages_gif.a
+lib/ocaml/site-lib/camlimages/camlimages_gif.cmxa
+lib/ocaml/site-lib/camlimages/camlimages_graphics.a
+lib/ocaml/site-lib/camlimages/camlimages_graphics.cmxa
+lib/ocaml/site-lib/camlimages/camlimages_jpeg.a
+lib/ocaml/site-lib/camlimages/camlimages_jpeg.cmxa
+lib/ocaml/site-lib/camlimages/camlimages_png.a
+lib/ocaml/site-lib/camlimages/camlimages_png.cmxa
+lib/ocaml/site-lib/camlimages/camlimages_ps.a
+lib/ocaml/site-lib/camlimages/camlimages_ps.cmxa
+lib/ocaml/site-lib/camlimages/camlimages_supported.a
+lib/ocaml/site-lib/camlimages/camlimages_supported.cmxa
+lib/ocaml/site-lib/camlimages/camlimages_tiff.a
+lib/ocaml/site-lib/camlimages/camlimages_tiff.cmxa
+lib/ocaml/site-lib/camlimages/camlimages_xpm.a
+lib/ocaml/site-lib/camlimages/camlimages_xpm.cmxa
+share/examples/camlimages/converter/converter.cmx
+share/examples/camlimages/converter/converter.o
+@bin share/examples/camlimages/converter/converter.opt
+share/examples/camlimages/crop/crop.cmx
+share/examples/camlimages/crop/crop.o
+@bin share/examples/camlimages/crop/crop.opt
+share/examples/camlimages/edgedetect/edge.cmx
+share/examples/camlimages/edgedetect/edge.o
+@bin share/examples/camlimages/edgedetect/edge.opt
+share/examples/camlimages/imgstat/imgstat.cmx
+share/examples/camlimages/imgstat/imgstat.o
+@bin share/examples/camlimages/imgstat/imgstat.opt
+share/examples/camlimages/monochrome/monochrome.cmx
+share/examples/camlimages/monochrome/monochrome.o
+@bin share/examples/camlimages/monochrome/monochrome.opt
+share/examples/camlimages/normalize/normalize.cmx
+share/examples/camlimages/normalize/normalize.o
+@bin share/examples/camlimages/normalize/normalize.opt
+share/examples/camlimages/resize/resize.cmx
+share/examples/camlimages/resize/resize.o
+@bin share/examples/camlimages/resize/resize.opt
+share/examples/camlimages/tiffps/tiffps.cmx
+share/examples/camlimages/tiffps/tiffps.o
+@bin share/examples/camlimages/tiffps/tiffps.opt
+share/examples/camlimages/ttfimg/ttfimg.cmx
+share/examples/camlimages/ttfimg/ttfimg.o
+@bin share/examples/camlimages/ttfimg/ttfimg.opt

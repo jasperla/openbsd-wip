@@ -2,7 +2,7 @@
 
 COMMENT=	anti-spam filter
 
-VERSION=	3.10.1
+VERSION=	3.10.2
 DISTNAME=	dspam-${VERSION}
 SHARED_LIBS=	dspam	9.0
 CATEGORIES=	mail

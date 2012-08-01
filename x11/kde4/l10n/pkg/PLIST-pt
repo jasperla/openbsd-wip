@@ -2011,5 +2011,3 @@ share/locale/pt/LC_MESSAGES/validatorsplugin.mo
 share/locale/pt/LC_MESSAGES/webarchiver.mo
 share/locale/pt/LC_MESSAGES/xml_mimetypes.mo
 share/locale/pt/entry.desktop
-@exec %D/bin/gtk-update-icon-cache -q %D/share/doc/HTML/pt/kcontrol/icons 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/doc/HTML/pt/kcontrol/icons 2>/dev/null || true

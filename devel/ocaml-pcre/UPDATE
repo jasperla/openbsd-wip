@@ -1,0 +1,4 @@
+fix devel/ocaml-pcre to build on sparc64
+
+* switch to new build system - OASIS
+* as always: change to "new style" assignments (FOO = BAR instead of FOO= BAR)
