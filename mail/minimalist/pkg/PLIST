@@ -10,6 +10,10 @@ sbin/minimalist.pl
 
 @mode
 @owner
+share/doc/minimalist/
+share/doc/minimalist/CHANGES
+share/doc/minimalist/README
+
 share/examples/minimalist/
 @sample /var/db/minimalist/
 
