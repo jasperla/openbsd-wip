@@ -1,0 +1,7 @@
+To use the example mailing list installed with this package
+add the following lines to /etc/mail/aliases and run newaliases.
+
+minimalist:			|/usr/local/sbin/minimalist.pl
+
+minimalist-example:		|/usr/local/sbin/minimalist.pl
+minimalist-example-owner:	postmaster

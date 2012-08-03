@@ -1,0 +1,28 @@
+$OpenBSD$
+--- minimalist.conf.orig	Fri Aug  3 10:52:51 2012
++++ minimalist.conf	Fri Aug  3 11:22:12 2012
+@@ -12,7 +12,7 @@
+ # 
+ # Defaults to the real uid
+ #
+-#user = minimalist
++user = _minimalist
+ 
+ # Administrator password. It applies to all lists, regardless to
+ # authentication settings in these lists. For per-list authentication see
+@@ -53,13 +53,13 @@
+ #
+ # Default is no logfile
+ #
+-#logfile = /var/log/Minimalist.log
++logfile = /var/log/minimalist
+ 
+ # Log info about messages, passed through Minimalist. Can be 'yes' or 'no'
+ #
+ # Default to 'no'. logfile (see above) to 'none' implies 'no'
+ #
+-#log messages = yes
++log messages = yes
+ 
+ # Run in background. If 'yes', Minimalist uses fork for detach from MTA and
+ # continues execution in background.
