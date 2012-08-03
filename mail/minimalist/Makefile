@@ -39,6 +39,10 @@ do-install:
 	${INSTALL_DATA} \
 		${WRKDIST}/minimalist.conf \
 		${PREFIX}/share/examples/minimalist/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/minimalist/
+	${INSTALL_DATA} ${WRKDIST}/README ${PREFIX}/share/doc/minimalist/
+	${INSTALL_DATA} ${WRKDIST}/CHANGES ${PREFIX}/share/doc/minimalist/
+
 
 
 .include <bsd.port.mk>
