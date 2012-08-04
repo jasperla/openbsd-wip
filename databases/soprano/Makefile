@@ -20,7 +20,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MODULES =		devel/cmake x11/qt4
+MODULES =		x11/kde4
+MODKDE4_USE =
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
@@ -32,6 +33,8 @@ LIB_DEPENDS = 	textproc/clucene \
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtCore lib/qt4/QtDBus lib/qt4/QtNetwork lib/qt4/QtXml
 WANTLIB += clucene iodbc raptor2 rdf
+
+CONFIGURE_STYLE =	cmake
 
 # No Java, thanks
 CONFIGURE_ARGS =	-DSOPRANO_DISABLE_SESAME2_BACKEND:Bool=Yes \
