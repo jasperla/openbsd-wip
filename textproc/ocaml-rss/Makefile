@@ -3,14 +3,13 @@
 COMMENT=	Objective Caml library to parse RSS 2.0
 CATEGORIES=	textproc
 
-V=		0.4
-DISTNAME=	ocamlrss_${V}
+V=		2.0
+DISTNAME=	ocamlrss-${V}
 PKGNAME=	ocaml-rss-${V}
-REVISION =	2
-MASTER_SITES=	http://pauillac.inria.fr/~guesdon/Tools/Tars/
+MASTER_SITES=	http://zoggy.github.com/ocamlrss/
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
-HOMEPAGE=	http://www.nongnu.org/ocamlrss/
+HOMEPAGE=	http://zoggy.github.com/ocamlrss/
 
 # LGPL
 PERMIT_PACKAGE_FTP=	Yes
@@ -19,11 +18,18 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
 MODULES=	lang/ocaml
-WRKDIST=	${WRKDIR}/ocamlrss-${V}
-NO_REGRESS= 	Yes
-ALL_TARGET=	byte ${MODOCAML_NATIVE:S,Yes,opt,:S,No,,}
-USE_GMAKE=	Yes
-CONFIGURE_STYLE= gnu
-BUILD_DEPENDS+=	textproc/ocaml-xml-light
+
+USE_GMAKE =	yes
+
+RUN_DEPENDS =	textproc/ocaml-xmlm
+BUILD_DEPENDS =	${RUN_DEPENDS} sysutils/findlib
+
+ALL_TARGET =	byte
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mocaml_native}
+.else
+ALL_TARGET +=	opt
+.endif
+
 
 .include <bsd.port.mk>
