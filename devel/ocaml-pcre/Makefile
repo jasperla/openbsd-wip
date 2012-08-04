@@ -24,12 +24,20 @@ BUILD_DEPENDS =	${RUN_DEPENDS}
 LIB_DEPENDS =	devel/pcre
 WANTLIB =	pcre
 
-NO_REGRESS =	Yes
+ALL_TARGET =		build doc
+REGRESS_TARGET =	test
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--destdir ${WRKINST} --override pkg_name ocaml-pcre
 
 pre-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml/stublibs
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}
+	@cp -R ${WRKDIST}/examples/* ${PREFIX}/share/examples/${NAME}/
+	@chmod -R a-w ${PREFIX}/share/examples/${NAME}/*
+	${INSTALL_DATA} ${FILESDIR}/README ${PREFIX}/share/examples/${NAME}/
 
 .include <bsd.port.mk>
