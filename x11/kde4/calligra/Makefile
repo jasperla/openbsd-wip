@@ -1,10 +1,12 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, office suite
+HOMEPAGE =	http://www.calligra-suite.org/
 VERSION =	2.4.3
-REVISION =	0
 DISTNAME =	calligra-${VERSION}
 PKGNAME =	${DISTNAME:C/-/4-/1}
+REVISION =	1
+
 EXTRACT_SUFX =	.tar.bz2
 
 SHARED_LIBS =	flake			0.0 # 8.0
