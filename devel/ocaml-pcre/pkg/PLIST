@@ -1,6 +1,7 @@
 @comment $OpenBSD: PLIST,v 1.2 2012/07/18 08:04:11 sthen Exp $
 %%SHARED%%
 %%native%%
+lib/ocaml/
 lib/ocaml/pcre/
 lib/ocaml/pcre/META
 lib/ocaml/pcre/libpcre_stubs.a
@@ -24,3 +25,17 @@ share/doc/ocaml-pcre/api/index_types.html
 share/doc/ocaml-pcre/api/index_values.html
 share/doc/ocaml-pcre/api/style.css
 share/doc/ocaml-pcre/api/type_Pcre.html
+share/examples/ocaml-pcre/
+share/examples/ocaml-pcre/README
+share/examples/ocaml-pcre/cloc/
+share/examples/ocaml-pcre/cloc/README.md
+share/examples/ocaml-pcre/cloc/cloc.ml
+share/examples/ocaml-pcre/count_hash/
+share/examples/ocaml-pcre/count_hash/README.md
+share/examples/ocaml-pcre/count_hash/count_hash.ml
+share/examples/ocaml-pcre/pcregrep/
+share/examples/ocaml-pcre/pcregrep/README.md
+share/examples/ocaml-pcre/pcregrep/pcregrep.ml
+share/examples/ocaml-pcre/subst/
+share/examples/ocaml-pcre/subst/README.md
+share/examples/ocaml-pcre/subst/subst.ml
