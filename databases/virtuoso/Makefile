@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	object-relational SQL database
-DISTNAME =	virtuoso-opensource-6.1.5
+DISTNAME =	virtuoso-opensource-6.1.6
 PKGNAME =	${DISTNAME:C/-opensource//}
 
 CATEGORIES =	databases
@@ -34,7 +34,7 @@ LIB_DEPENDS =		textproc/libwbxml \
 USE_LIBTOOL =		Yes
 
 CONFIGURE_STYLE =	gnu autoconf
-AUTOCONF_VERSION =	2.68
+AUTOCONF_VERSION =	2.61
 AUTOMAKE_VERSION =	1.9
 
 COPTS =			-I${LOCALBASE}/include/wbxml \
