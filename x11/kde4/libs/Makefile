@@ -42,10 +42,6 @@ SHARED_LIBS +=  kemoticons		0.0 # 4.7
 SHARED_LIBS +=  kidletime		0.0 # 4.7
 SHARED_LIBS +=  kprintutils		0.0 # 4.7
 
-SHARED_LIBS +=  nepomuk			0.0 # 4.7
-SHARED_LIBS +=  nepomukquery		0.0 # 4.7
-SHARED_LIBS +=  nepomukutils		0.0 # 4.7
-
 
 WANTLIB =  c krb5 m pthread stdc++ util z
 WANTLIB += ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xpm Xrender Xss
