@@ -1,0 +1,26 @@
+Minimalist is a MINImalist MAiling LIST manager. It is fast, extremely easy
+to setup and support. It is written in Perl and tested on OpenBSD/OpenSMTPd.
+However there are no causes not to use Minimalist on any other Unix system,
+because it doesn't use any system-dependent features.
+
+Minimalist has these features:
+
+ . subscribe/unsubscribe users by request
+    * including write-only option of subscription
+ . read-only/closed/mandatory lists
+ . information about list; users, subscribed to list; lists, to which user
+    subscribed
+ . per-user options:
+    * read-only (for open lists)
+    * write allow (for read-only lists))
+    * maximum message size
+ . susped/resume subscription
+ . archiving lists (internal and external), with maximum size of archived
+    message
+ . multilanguage support
+ . process MIME-encoded messages
+    * including support for local charset (for reports and footer)
+ . hook for bounce processing (using VERP - Variable Envelope Return-Path)
+ . external delivery of processed message
+ . blacklist
+ . logging activity

@@ -1,0 +1,51 @@
+@comment $OpenBSD$
+
+@newuser _minimalist:701:nogroup::Minimalist mailing list manager:/nonexistent:/sbin/nologin
+
+@exec-add install -o _minimalist -g wheel -m 640 /dev/null /var/log/minimalist
+
+@mode 4555
+@owner root
+sbin/minimalist.pl
+
+@mode
+@owner
+share/doc/minimalist/
+share/doc/minimalist/CHANGES
+share/doc/minimalist/README
+
+share/examples/minimalist/
+@sample /var/db/minimalist/
+
+@extra /var/db/minimalist/auth/.lastclean
+share/examples/minimalist/auth/
+@mode 700
+@owner _minimalist
+@sample /var/db/minimalist/auth/
+
+@mode
+@owner
+share/examples/minimalist/lists/
+@sample /var/db/minimalist/lists/
+share/examples/minimalist/lists/minimalist-example/
+@sample /var/db/minimalist/lists/minimalist-example/
+share/examples/minimalist/lists/minimalist-example/config
+@sample /var/db/minimalist/lists/minimalist-example/config
+share/examples/minimalist/lists/minimalist-example/footer
+@sample /var/db/minimalist/lists/minimalist-example/footer
+share/examples/minimalist/lists/minimalist-example/info
+@sample /var/db/minimalist/lists/minimalist-example/info
+
+share/examples/minimalist/lists/minimalist-example/list
+@mode 600
+@owner _minimalist
+@sample /var/db/minimalist/lists/minimalist-example/list
+
+@mode
+@owner
+share/examples/minimalist/minimalist.conf
+@sample /etc/minimalist.conf
+share/examples/minimalist/translations/
+@sample /var/db/minimalist/translations/
+share/examples/minimalist/translations/de.pm
+@sample /var/db/minimalist/translations/de.pm
