@@ -1,10 +1,9 @@
 # $OpenBSD: Makefile,v 1.3 2010/11/22 08:37:02 espie Exp $
 
 COMMENT =		K Desktop Environment, PIM access libraries
-DISTNAME =		akonadi-1.7.2
-REVISION =		1
+DISTNAME =		akonadi-1.8.0
 
-SHARED_LIBS = 		akonadiprotocolinternals 0.0	# 1.0
+SHARED_LIBS = 		akonadiprotocolinternals 1.0	# 1.0
 
 MODKDE4_USE =
 EXTRACT_SUFX =		.tar.bz2
