@@ -8,6 +8,6 @@ EXTRACT_SUFX =	.tar.xz
 
 LIB_DEPENDS =	x11/vlc>=2
 
-WANTLIB =	lib/qt4/QtDBus lib/qt4/QtGui m stdc++ vlc vlccore
+WANTLIB =	lib/qt4/QtGui m stdc++ vlc
 
 .include <bsd.port.mk>
