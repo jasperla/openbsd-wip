@@ -1,0 +1,14 @@
+The Parma Polyhedra Library (PPL) provides numerical abstractions
+especially targeted at applications in the field of analysis and
+verification of complex systems. These abstractions include convex
+polyhedra, defined as the intersection of a finite number of (open or
+closed) halfspaces, each described by a linear inequality (strict or
+non-strict) with rational coefficients; some special classes of
+polyhedra shapes that offer interesting complexity/precision tradeoffs;
+and grids which represent regularly spaced points that satisfy a set of
+linear congruence relations. The library also supports finite powersets
+and products of (any kind of) polyhedra and grids, a mixed integer
+linear programming problem solver using an exact-arithmetic version of
+the simplex algorithm, a parametric integer programming solver, and
+primitives for termination analysis via the automatic synthesis of
+linear ranking functions.
