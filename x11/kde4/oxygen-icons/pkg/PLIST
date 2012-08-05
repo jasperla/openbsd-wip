@@ -1,5 +1,4 @@
 @comment $OpenBSD$
-@unexec-delete rm -f %D/share/icons/oxygen/icon-theme.cache
 share/icons/oxygen/
 share/icons/oxygen/128x128/
 share/icons/oxygen/128x128/actions/
@@ -135,6 +134,7 @@ share/icons/oxygen/128x128/apps/kig.png
 share/icons/oxygen/128x128/apps/kivio.png
 share/icons/oxygen/128x128/apps/kjournal.png
 share/icons/oxygen/128x128/apps/klipper.png
+share/icons/oxygen/128x128/apps/kmag.png
 share/icons/oxygen/128x128/apps/kmail2.png
 share/icons/oxygen/128x128/apps/kmplayer.png
 share/icons/oxygen/128x128/apps/knewsticker.png
@@ -314,6 +314,8 @@ share/icons/oxygen/128x128/devices/printer-laser.png
 share/icons/oxygen/128x128/devices/printer.png
 share/icons/oxygen/128x128/devices/scanner.png
 share/icons/oxygen/128x128/devices/secure-card.png
+share/icons/oxygen/128x128/devices/smartphone.png
+share/icons/oxygen/128x128/devices/tablet.png
 share/icons/oxygen/128x128/devices/video-display.png
 share/icons/oxygen/128x128/devices/video-projector.png
 share/icons/oxygen/128x128/devices/video-television.png
@@ -1326,6 +1328,7 @@ share/icons/oxygen/16x16/apps/kig.png
 share/icons/oxygen/16x16/apps/kivio.png
 share/icons/oxygen/16x16/apps/kjournal.png
 share/icons/oxygen/16x16/apps/klipper.png
+share/icons/oxygen/16x16/apps/kmag.png
 share/icons/oxygen/16x16/apps/kmplayer.png
 share/icons/oxygen/16x16/apps/knewsticker.png
 share/icons/oxygen/16x16/apps/knotes.png
@@ -1502,6 +1505,8 @@ share/icons/oxygen/16x16/devices/phone.png
 share/icons/oxygen/16x16/devices/printer.png
 share/icons/oxygen/16x16/devices/scanner.png
 share/icons/oxygen/16x16/devices/secure-card.png
+share/icons/oxygen/16x16/devices/smartphone.png
+share/icons/oxygen/16x16/devices/tablet.png
 share/icons/oxygen/16x16/devices/video-display.png
 share/icons/oxygen/16x16/devices/video-projector.png
 share/icons/oxygen/16x16/devices/video-television.png
@@ -2602,6 +2607,7 @@ share/icons/oxygen/22x22/apps/kgpg.png
 share/icons/oxygen/22x22/apps/kig.png
 share/icons/oxygen/22x22/apps/kjournal.png
 share/icons/oxygen/22x22/apps/klipper.png
+share/icons/oxygen/22x22/apps/kmag.png
 share/icons/oxygen/22x22/apps/kmplayer.png
 share/icons/oxygen/22x22/apps/knotes.png
 share/icons/oxygen/22x22/apps/kolf.png
@@ -2782,6 +2788,8 @@ share/icons/oxygen/22x22/devices/phone.png
 share/icons/oxygen/22x22/devices/printer.png
 share/icons/oxygen/22x22/devices/scanner.png
 share/icons/oxygen/22x22/devices/secure-card.png
+share/icons/oxygen/22x22/devices/smartphone.png
+share/icons/oxygen/22x22/devices/tablet.png
 share/icons/oxygen/22x22/devices/video-display.png
 share/icons/oxygen/22x22/devices/video-projector.png
 share/icons/oxygen/22x22/devices/video-television.png
@@ -3291,6 +3299,7 @@ share/icons/oxygen/256x256/apps/kformula.png
 share/icons/oxygen/256x256/apps/kgpg.png
 share/icons/oxygen/256x256/apps/kig.png
 share/icons/oxygen/256x256/apps/kivio.png
+share/icons/oxygen/256x256/apps/kmag.png
 share/icons/oxygen/256x256/apps/kmail2.png
 share/icons/oxygen/256x256/apps/konqueror.png
 share/icons/oxygen/256x256/apps/kontact-import-wizard.png
@@ -3371,6 +3380,8 @@ share/icons/oxygen/256x256/devices/network-wireless-disconnected.png
 share/icons/oxygen/256x256/devices/network-wireless.png
 share/icons/oxygen/256x256/devices/printer-laser.png
 share/icons/oxygen/256x256/devices/secure-card.png
+share/icons/oxygen/256x256/devices/smartphone.png
+share/icons/oxygen/256x256/devices/tablet.png
 share/icons/oxygen/256x256/devices/video-display.png
 share/icons/oxygen/256x256/mimetypes/
 share/icons/oxygen/256x256/mimetypes/application-epub+zip.png
@@ -4327,6 +4338,7 @@ share/icons/oxygen/32x32/apps/kig.png
 share/icons/oxygen/32x32/apps/kivio.png
 share/icons/oxygen/32x32/apps/kjournal.png
 share/icons/oxygen/32x32/apps/klipper.png
+share/icons/oxygen/32x32/apps/kmag.png
 share/icons/oxygen/32x32/apps/kmplayer.png
 share/icons/oxygen/32x32/apps/knewsticker.png
 share/icons/oxygen/32x32/apps/knotes.png
@@ -4512,6 +4524,8 @@ share/icons/oxygen/32x32/devices/printer-laser.png
 share/icons/oxygen/32x32/devices/printer.png
 share/icons/oxygen/32x32/devices/scanner.png
 share/icons/oxygen/32x32/devices/secure-card.png
+share/icons/oxygen/32x32/devices/smartphone.png
+share/icons/oxygen/32x32/devices/tablet.png
 share/icons/oxygen/32x32/devices/video-display.png
 share/icons/oxygen/32x32/devices/video-projector.png
 share/icons/oxygen/32x32/devices/video-television.png
@@ -5531,6 +5545,7 @@ share/icons/oxygen/48x48/animations/process-idle-kde.png
 share/icons/oxygen/48x48/animations/process-working-kde.png
 share/icons/oxygen/48x48/apps/
 share/icons/oxygen/48x48/apps/Charm.png
+share/icons/oxygen/48x48/apps/KMag.png
 share/icons/oxygen/48x48/apps/accessories-calculator.png
 share/icons/oxygen/48x48/apps/accessories-character-map.png
 share/icons/oxygen/48x48/apps/accessories-dictionary.png
@@ -5754,6 +5769,8 @@ share/icons/oxygen/48x48/devices/printer-laser.png
 share/icons/oxygen/48x48/devices/printer.png
 share/icons/oxygen/48x48/devices/scanner.png
 share/icons/oxygen/48x48/devices/secure-card.png
+share/icons/oxygen/48x48/devices/smartphone.png
+share/icons/oxygen/48x48/devices/tablet.png
 share/icons/oxygen/48x48/devices/video-display.png
 share/icons/oxygen/48x48/devices/video-projector.png
 share/icons/oxygen/48x48/devices/video-television.png
@@ -6298,6 +6315,7 @@ share/icons/oxygen/64x64/apps/kig.png
 share/icons/oxygen/64x64/apps/kivio.png
 share/icons/oxygen/64x64/apps/kjournal.png
 share/icons/oxygen/64x64/apps/klipper.png
+share/icons/oxygen/64x64/apps/kmag.png
 share/icons/oxygen/64x64/apps/kmplayer.png
 share/icons/oxygen/64x64/apps/knewsticker.png
 share/icons/oxygen/64x64/apps/knotes.png
@@ -6471,6 +6489,8 @@ share/icons/oxygen/64x64/devices/phone.png
 share/icons/oxygen/64x64/devices/printer-laser.png
 share/icons/oxygen/64x64/devices/printer.png
 share/icons/oxygen/64x64/devices/scanner.png
+share/icons/oxygen/64x64/devices/smartphone.png
+share/icons/oxygen/64x64/devices/tablet.png
 share/icons/oxygen/64x64/devices/video-display.png
 share/icons/oxygen/64x64/devices/video-projector.png
 share/icons/oxygen/64x64/devices/video-television.png
@@ -6867,4 +6887,4 @@ share/icons/oxygen/8x8/emblems/vcs-update-required.png
 share/icons/oxygen/index.theme
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
+@unexec-delete rm -f %D/share/icons/oxygen/icon-theme.cache
