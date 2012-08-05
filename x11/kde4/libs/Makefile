@@ -87,7 +87,8 @@ LIB_DEPENDS =	audio/pulseaudio \
 		textproc/libxslt \
 		x11/kde4/attica>=0.4.0 \
 		x11/dbusmenu-qt \
-		x11/polkit-qt4
+		x11/polkit-qt4 \
+		x11/grantlee
 
 # we don't have krb5-config
 CONFIGURE_ARGS =	-DGSSAPI_LIBS:STRING="-lgssapi -lkrb5 -lasn1 -lcom_err" \
