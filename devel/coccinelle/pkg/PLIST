@@ -1,10 +1,13 @@
 @comment $OpenBSD: PLIST,v 1.6 2011/09/08 20:09:00 sthen Exp $
 bin/spatch
-lib/dllpycaml_stubs.so
+bin/spatch.byte
+%%native%%
+%%SHARED%%
 @man man/man1/spatch.1
 @man man/man3/Coccilib.3
 share/coccinelle/
 share/coccinelle/commons/
+share/coccinelle/commons/commands.cmi
 share/coccinelle/commons/common.cmi
 share/coccinelle/commons/common_extra.cmi
 share/coccinelle/commons/glimpse.cmi
@@ -88,6 +91,6 @@ share/coccinelle/python/coccilib/report.py
 share/coccinelle/python/coccilib/report.pyc
 share/coccinelle/python/coccilib/trac.py
 share/coccinelle/python/coccilib/trac.pyc
-@bin share/coccinelle/spatch${OCAMLOPT}
+@bin share/coccinelle/spatch
 share/coccinelle/standard.h
 share/coccinelle/standard.iso
