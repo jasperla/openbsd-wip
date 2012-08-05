@@ -17,7 +17,7 @@
 # releases of KDE SC).
 
 # Build dependency tree of main building blocks:
-# akonadi, attica, automoc, oxygen-icons, qimageblitz
+# akonadi, attica, automoc, cagibi, oxygen-icons, qimageblitz
 # |
 #  - libs
 #   |
@@ -60,6 +60,7 @@
      SUBDIR += akonadi			# minor issues
      SUBDIR += attica			# OK
      SUBDIR += automoc			# OK
+     SUBDIR += cagibi			# untested
      SUBDIR += oxygen-icons		# OK
 
 # libraries
