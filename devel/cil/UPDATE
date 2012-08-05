@@ -1,0 +1,7 @@
+This port builds, but I have no idea about how to test it.
+
+* bump version to 1.5.1
+* new MASTER_SITE
+* clean up Makefile
+* remove obsolete patch
+* update PLIST
