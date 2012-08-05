@@ -21,7 +21,7 @@
 # |
 #  - libs
 #   |
-#   |- l10n, wallpapers
+#   |- artwork, base-artwork, l10n, wallpapers
 #   |- runtime
 #   |- baseapps
 #   |- pimlibs
@@ -54,6 +54,7 @@
 #   | -- former kdeedu
 #   | -- former kdeutils
 #   | -- former kdegraphics
+#   | -- former kdemultimedia
 
 # basic bricks
      SUBDIR += akonadi			# minor issues
@@ -96,7 +97,6 @@
 # fat packages
      SUBDIR += admin			# test
      SUBDIR += games			# minor issues
-#RC1     SUBDIR += multimedia		# OK, but Kscd needs testing
      SUBDIR += network			# test
      SUBDIR += pim			# OK
      SUBDIR += sdk			# test
@@ -138,6 +138,7 @@
      SUBDIR += kwordquiz		# OK
      SUBDIR += libkdeedu		# OK
      SUBDIR += marble			# test
+     SUBDIR += pairs			# untested
      SUBDIR += parley			# OK
      SUBDIR += rocs			# minor issues
      SUBDIR += step			# OK
@@ -161,6 +162,17 @@
      SUBDIR += mobipocket		# untested
      SUBDIR += okular			# test
      SUBDIR += svgpart			# OK
+
+# former kdemultimedia
+     SUBDIR += audiocd-kio		# untested
+     SUBDIR += dragon			# minor issues
+     SUBDIR += ffmpegthumbs		# test
+     SUBDIR += juk			# OK
+     SUBDIR += kmix			# broken
+     SUBDIR += kscd			# untested
+     SUBDIR += libkcddb			# untested
+     SUBDIR += libkcompactdisc		# untested
+     SUBDIR += mplayerthumbs		# test
 
 # other apps
      SUBDIR += kate			# OK
