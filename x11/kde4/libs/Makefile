@@ -66,10 +66,10 @@ BUILD_DEPENDS =	misc/shared-desktop-ontologies>=0.10 \
 
 RUN_DEPENDS =	misc/shared-mime-info \
 		misc/shared-desktop-ontologies \
-		net/cagibi \
 		sysutils/gamin \
 		STEM->=${MODKDE4_VERSION}:x11/kde4/oxygen-icons \
-		x11/dbus
+		x11/dbus \
+		x11/kde4/cagibi
 
 LIB_DEPENDS =	audio/pulseaudio \
 		archivers/bzip2 \
