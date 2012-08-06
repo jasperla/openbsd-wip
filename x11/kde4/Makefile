@@ -188,8 +188,10 @@
      SUBDIR += ktorrent			# test
 
 # additional resources
+     SUBDIR += artwork			# OK
+     SUBDIR += base-artwork		# OK
      SUBDIR += plasma-addons		# untested
-#RC1     SUBDIR += l10n			# OK
+     SUBDIR += l10n			# OK
      SUBDIR += wallpapers		# OK
 
 .include <bsd.port.subdir.mk>
