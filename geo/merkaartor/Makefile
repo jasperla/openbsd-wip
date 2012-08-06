@@ -1,15 +1,9 @@
 # $OpenBSD: Makefile.template,v 1.61 2012/03/29 13:41:58 sthen Exp $
 
 COMMENT =		Editor for OpenStreetMap
-
 DISTNAME =		merkaartor-0.17.2
-
-#SHARED_LIBS =		???
-
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
-
 CATEGORIES =		geo
-
 HOMEPAGE =		http://merkaartor.be/wiki/
 
 # GPLv2
@@ -28,12 +22,13 @@ EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		x11/qt4
 
-# gdal etc. XXX
-#LIB_DEPENDS =		???
+LIB_DEPENDS =		geo/gdal \
+			graphics/exiv2 \
+			graphics/zbar \
+			net/libproxy
+RUN_DEPENDS =		misc/gpsd
 
-#SEPARATE_BUILD =	Yes (build in a directory other than WRKSRC)
 USE_GMAKE =		Yes
-
 NO_REGRESS =		Yes
 
 do-configure:
