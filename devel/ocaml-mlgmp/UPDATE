@@ -1,0 +1,4 @@
+* bump REVISION
+* update ocamlfind sitelib
+* use new ocaml_native PROPERTY
+* add ocamlfind META info
