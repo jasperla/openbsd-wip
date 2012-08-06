@@ -1,0 +1,59 @@
+$OpenBSD$
+--- tests/Concrete_Expression/polyhedron2.cc.orig	Thu Jun 28 11:50:33 2012
++++ tests/Concrete_Expression/polyhedron2.cc	Sat Jul 14 17:11:22 2012
+@@ -119,27 +119,26 @@ test04() {
+   FP_Interval_Abstract_Store store(2);
+   store.set_interval(A, tmp0);
+   store.set_interval(B, tmp0);
+-  FP_Interval tmp(tmp0);
+-  tmp = 2;
+-  tmp /= FP_Interval(3);
+   FP_Linear_Form la(A);
+   FP_Linear_Form lb(B);
+-  FP_Linear_Form lk(tmp);
+ 
++  FP_Interval tmp(2);
++  tmp /= FP_Interval(3);
++
+   C_Polyhedron ph(2);
+   ph.generalized_refine_with_linear_form_inequality(
+-    lk, la, GREATER_THAN);
++    FP_Linear_Form(tmp), la, GREATER_THAN);
++  tmp = -1;
++  tmp /= FP_Interval(3);
++  ph.generalized_refine_with_linear_form_inequality(
++    FP_Linear_Form(tmp), -la, GREATER_OR_EQUAL);
+   tmp = 1;
+-  lk -= tmp;
++  tmp /= FP_Interval(3);
+   ph.generalized_refine_with_linear_form_inequality(
+-    lk, -la, GREATER_OR_EQUAL);
+-  ph.generalized_refine_with_linear_form_inequality(
+-    lb, -lk, LESS_OR_EQUAL);
++    lb, FP_Linear_Form(tmp), LESS_OR_EQUAL);
+   tmp = 0;
+-  lk = FP_Linear_Form(tmp);
+   ph.generalized_refine_with_linear_form_inequality(
+-    -lb, lk, LESS_THAN);
+-  print_constraints(ph, "*** ph ***");
++    -lb, FP_Linear_Form(tmp), LESS_THAN);
+ 
+   C_Polyhedron known_result1(2);
+   known_result1.add_constraint(3*A >= 1);
+@@ -148,10 +147,16 @@ test04() {
+   known_result1.add_constraint(3*B <= 1);
+   print_constraints(known_result1, "*** known_result1 ***");
+ 
++  Box<FP_Interval> box(ph);
++  print_constraints(ph, "*** ph ***");
++  print_constraints(box, "*** box ***");
++
+   bool ok1 = ph.contains(known_result1);
+ 
+   ph.refine_fp_interval_abstract_store(store);
+   nout << "*** FP_Interval_Abstract_Store ***" << endl;
++
++  nout << "tmp0 = " << tmp0 << endl;
+ 
+   nout << "A = " << store.get_interval(A) << endl;
+   bool ok2 = tmp0.contains(store.get_interval(A));

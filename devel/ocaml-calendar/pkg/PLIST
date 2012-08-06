@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2005/09/22 14:38:41 avsm Exp $
+%%native%%
+lib/ocaml/
+lib/ocaml/calendar/
+lib/ocaml/calendar/META
+lib/ocaml/calendar/calendar.mli
+lib/ocaml/calendar/calendarLib.cma
+lib/ocaml/calendar/calendarLib.cmi
+lib/ocaml/calendar/calendarLib.cmo
+lib/ocaml/calendar/calendar_builder.mli
+lib/ocaml/calendar/calendar_sig.mli
+lib/ocaml/calendar/date.mli
+lib/ocaml/calendar/date_sig.mli
+lib/ocaml/calendar/fcalendar.mli
+lib/ocaml/calendar/ftime.mli
+lib/ocaml/calendar/period.mli
+lib/ocaml/calendar/printer.mli
+lib/ocaml/calendar/time.mli
+lib/ocaml/calendar/time_Zone.mli
+lib/ocaml/calendar/time_sig.mli
+lib/ocaml/calendar/utils.mli
+lib/ocaml/calendar/version.mli

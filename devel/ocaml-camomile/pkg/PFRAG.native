@@ -1,0 +1,7 @@
+@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2012/07/13 08:38:10 edd Exp $
+lib/ocaml/camomile/camomile.a
+lib/ocaml/camomile/camomile.cmxa
+lib/ocaml/camomile/camomileLibrary.cmx
+lib/ocaml/camomile/camomileLibrary.cmxa
+lib/ocaml/camomile/camomileLibraryDefault.cmx
+lib/ocaml/camomile/camomileLibraryDyn.cmx

@@ -1,9 +1,4 @@
 fix devel/ocaml-pcre to build on sparc64
 
-* use new PROPERTIES instead of MODOCAML_NATIVE. This depends on the properties
-  being added to arch-defines.mk (See arch-defines.mk.diff) !!!
-  Use commit 42f55c5f7925da883531f8932f42fca7505e2549 until then.
-
-* setting WRKSRC=${WRKDIST}/lib in all cases now and use ${WRKDIST} for manual
-installs.
+* switch to new build system - OASIS
 * as always: change to "new style" assignments (FOO = BAR instead of FOO= BAR)
