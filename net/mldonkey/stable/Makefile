@@ -1,7 +1,7 @@
 # $OpenBSD: Makefile,v 1.49 2012/07/17 13:26:49 dcoppa Exp $
 
 COMMENT =	e-donkey client
-DISTNAME =	mldonkey-3.1.2
+DISTNAME =	mldonkey-3.1.3
 CATEGORIES =	net
 
 HOMEPAGE =	http://mldonkey.sourceforge.net/Main_Page
@@ -52,7 +52,13 @@ LIB_DEPENDS =	archivers/bzip2 \
 		x11/gnome/librsvg \
 		x11/gtk+2
 
-FAKE_FLAGS =	MODOCAML_NATIVE=${MODOCAML_NATIVE}
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mocaml_native}
+FAKE_FLAGS =	OCAML_NATIVE=yes
+.else
+FAKE_FLAGS =	OCAML_NATIVE=yes
+.endif
+
 NO_REGRESS =	Yes
 
 post-install:
