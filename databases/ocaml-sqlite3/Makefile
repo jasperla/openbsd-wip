@@ -24,13 +24,8 @@ MODULES=	lang/ocaml
 WANTLIB =	sqlite3
 BUILD_DEPENDS =	sysutils/findlib
 
-CONFIGURE_STYLE =	simple
-CONFIGURE_ARGS +=	--destdir ${WRKINST} --override pkg_name ${NAME} --enable-tests
-ALL_TARGET =		build
-REGRESS_TARGET =	test
-
-pre-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml/stublibs
+CONFIGURE_STYLE =	oasis
+CONFIGURE_ARGS +=	--enable-tests
 
 
 .include <bsd.port.mk>
