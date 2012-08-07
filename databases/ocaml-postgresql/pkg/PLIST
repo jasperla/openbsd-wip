@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.5 2009/03/15 11:45:08 ajacoutot Exp $
+lib/ocaml/
+lib/ocaml/postgresql/
+lib/ocaml/postgresql/libpostgresql_stubs.a
+lib/ocaml/postgresql/postgresql.cma
+lib/ocaml/postgresql/postgresql.cmi
+lib/ocaml/postgresql/postgresql.mli
+share/examples/ocaml-postgresql/
+share/examples/ocaml-postgresql/OCamlMakefile
+share/examples/ocaml-postgresql/cursor/
+share/examples/ocaml-postgresql/cursor/Makefile
+@comment share/examples/ocaml-postgresql/cursor/Makefile.orig
+share/examples/ocaml-postgresql/cursor/cursor.ml
+share/examples/ocaml-postgresql/dump/
+share/examples/ocaml-postgresql/dump/Makefile
+@comment share/examples/ocaml-postgresql/dump/Makefile.orig
+share/examples/ocaml-postgresql/dump/dump.ml
+share/examples/ocaml-postgresql/populate/
+share/examples/ocaml-postgresql/populate/Makefile
+@comment share/examples/ocaml-postgresql/populate/Makefile.orig
+share/examples/ocaml-postgresql/populate/populate.ml
+share/examples/ocaml-postgresql/prompt/
+share/examples/ocaml-postgresql/prompt/Makefile
+@comment share/examples/ocaml-postgresql/prompt/Makefile.orig
+share/examples/ocaml-postgresql/prompt/prompt.ml
+share/examples/ocaml-postgresql/prompt_gtk/
+share/examples/ocaml-postgresql/prompt_gtk/Makefile
+@comment share/examples/ocaml-postgresql/prompt_gtk/Makefile.orig
+share/examples/ocaml-postgresql/prompt_gtk/prompt_gtk.ml
+share/examples/ocaml-postgresql/test_lo/
+share/examples/ocaml-postgresql/test_lo/Makefile
+@comment share/examples/ocaml-postgresql/test_lo/Makefile.orig
+share/examples/ocaml-postgresql/test_lo/test_lo.ml
+%%native%%
