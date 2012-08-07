@@ -1,3 +1,2 @@
 @comment $OpenBSD$
-@bin lib/ocaml/cryptokit/cryptokit.cmxs
 lib/ocaml/stublibs/dllcryptokit_stubs.so

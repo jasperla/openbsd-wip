@@ -28,9 +28,14 @@ REGRESS_DEPENDS = devel/ounit
 
 USE_GMAKE =	Yes
 
-MAKE_ENV =	BATTERIES_NATIVE=${MODOCAML_NATIVE:S/Yes/yes/:S/No/no/} \
-		DOCROOT=${PREFIX}/share/doc/ocaml-batteries \
+MAKE_ENV =	DOCROOT=${PREFIX}/share/doc/ocaml-batteries \
 		TERM=${TERM}
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mocaml_native}
+MAKE_ENV +=	BATTERIES_NATIVE=yes
+.else
+MAKE_ENV +=	BATTERIES_NATIVE=no
+.endif
 
 FAKE_FLAGS =	DESTDIR=${WRKINST}${PREFIX}/lib/ocaml \
 		DOCROOT=${WRKINST}${PREFIX}/share/doc/ocaml-batteries
