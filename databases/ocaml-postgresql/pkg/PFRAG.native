@@ -2,4 +2,4 @@
 lib/ocaml/postgresql/postgresql.a
 lib/ocaml/postgresql/postgresql.cmx
 lib/ocaml/postgresql/postgresql.cmxa
-@bin lib/ocaml/postgresql/postgresql.cmxs
+%%dynlink%%
