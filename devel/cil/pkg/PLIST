@@ -1,0 +1,61 @@
+@comment $OpenBSD: PLIST,v 1.5 2009/03/11 21:20:27 avsm Exp $
+bin/cilly
+bin/patcher
+lib/cil/
+lib/cil/alpha.cmi
+lib/cil/bitmap.cmi
+lib/cil/cabs2cil.cmi
+lib/cil/cabsvisit.cmi
+lib/cil/callgraph.cmi
+lib/cil/canonicalize.cmi
+lib/cil/cfg.cmi
+lib/cil/check.cmi
+lib/cil/cil.a
+lib/cil/cil.cma
+lib/cil/cil.cmi
+lib/cil/cil.cmxa
+lib/cil/cillower.cmi
+lib/cil/ciloptions.cmi
+lib/cil/clexer.cmi
+lib/cil/clist.cmi
+lib/cil/dataflow.cmi
+lib/cil/dataslicing.cmi
+lib/cil/dominators.cmi
+lib/cil/errormsg.cmi
+lib/cil/escape.cmi
+lib/cil/formatcil.cmi
+lib/cil/frontc.cmi
+lib/cil/growArray.cmi
+lib/cil/inthash.cmi
+lib/cil/libperfcount.a
+lib/cil/logcalls.cmi
+lib/cil/longarray.cmi
+lib/cil/mergecil.cmi
+lib/cil/olf.cmi
+lib/cil/oneret.cmi
+lib/cil/patch.cmi
+lib/cil/pretty.cmi
+lib/cil/ptranal.cmi
+lib/cil/rmtmps.cmi
+lib/cil/setp.cmi
+lib/cil/ssa.cmi
+lib/cil/stats.cmi
+lib/cil/trace.cmi
+lib/cil/uref.cmi
+lib/cil/util.cmi
+lib/cil/whitetrack.cmi
+${P5SITE}/CIL/
+${P5SITE}/CIL/Cilly.pm
+${P5SITE}/CIL/KeptFile.pm
+${P5SITE}/CIL/OutputFile.pm
+${P5SITE}/CIL/TempFile.pm
+${P5SITE}/CilConfig.pm
+libexec/cil/
+@bin libexec/cil/cilly.asm.exe
+@bin libexec/cil/cilly.byte.exe
+@bin libexec/cil/machdep.exe
+@comment share/cil/
+@comment share/cil/Cilly.pm
+@comment share/cil/KeptFile.pm
+@comment share/cil/OutputFile.pm
+@comment share/cil/TempFile.pm

@@ -1,0 +1,42 @@
+@comment $OpenBSD: PLIST,v 1.3 2012/06/26 22:08:39 pascal Exp $
+@conflict osh-*
+@bin bin/cvs_realclean
+bin/ocamldep-omake
+@bin bin/omake
+bin/osh
+lib/omake/
+lib/omake/OMakefile.default
+lib/omake/OMakeroot.default
+lib/omake/OMakeroot.om
+lib/omake/Pervasives.om
+lib/omake/build/
+lib/omake/build/C.om
+lib/omake/build/Common.om
+lib/omake/build/LaTeX.om
+lib/omake/build/OCaml.om
+lib/omake/build/svn_realclean.om
+lib/omake/configure/
+lib/omake/configure/Configure.om
+lib/omake/configure/X.om
+lib/omake/configure/fam.om
+lib/omake/configure/fs_case_sensitive.om
+lib/omake/configure/ncurses.om
+lib/omake/configure/readline.om
+lib/omake/configure/snprintf.om
+lib/omake/parse/
+lib/omake/parse/C/
+lib/omake/parse/C/Lex.om
+lib/omake/parse/C/Parse.om
+share/doc/omake/
+share/doc/omake/CHANGELOG.txt
+share/doc/omake/LICENSE
+share/doc/omake/LICENSE.OMake
+share/doc/omake/LICENSE.ocamldep-omake
+share/doc/omake/html/
+share/doc/omake/html/announce.txt
+share/doc/omake/html/changelog.html
+share/doc/omake/html/contents_motif.gif
+share/doc/omake/html/download.html
+share/doc/omake/omake-doc.pdf
+share/doc/omake/omake-doc.ps
+share/doc/omake/omake-doc.txt
