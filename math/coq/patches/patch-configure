@@ -1,11 +1,12 @@
---- configure.orig	Thu Oct  3 14:46:22 2002
-+++ configure	Mon Nov  4 13:12:09 2002
-@@ -402,7 +402,7 @@ PRINTF=`which printf`
- 
- # Subdirectories of theories/ added in coq_config.ml
- subdirs () {
--    (cd $1; find . -type d ! -name CVS ! -regex ".*extraction/test.*" ! -name .  -exec $PRINTF "\"%s\";\n" {} \; >> $mlconfig_file)
-+    (cd $1; find . -type d ! -name CVS ! -path "*extraction/test*" ! -name .  -exec $PRINTF "\"%s\";\n" {} \; >> $mlconfig_file)
- }
- 
- echo "let theories_dirs = [" >> $mlconfig_file
+$OpenBSD$
+--- configure.orig	Tue Aug  7 16:33:55 2012
++++ configure	Tue Aug  7 16:33:32 2012
+@@ -454,7 +454,7 @@ case $CAMLVERSION in
+ 	    echo "          Configuration script failed!"
+ 	    exit 1
+ 	fi;;
+-    3.11.2|3.12*)
++    3.11.2|3.12*|4.00*)
+ 	CAMLP4COMPAT="-loc loc" 
+ 	echo "You have Objective-Caml $CAMLVERSION. Good!";;
+     *)
