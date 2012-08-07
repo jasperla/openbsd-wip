@@ -38,9 +38,14 @@ WANTLIB += GL Xxf86vm drm gthread-2.0 pthread xcb-render xcb-shm
 .endif
 
 # CFLAGS _must_ be empty.  This is an OCaml compiler.
-MAKE_FLAGS+=	NATIVE=${MODOCAML_NATIVE:S/Yes/true/:S/No/false/} \
-		OCAMLOPT=ocamlopt.opt \
+MAKE_FLAGS+=	OCAMLOPT=ocamlopt.opt \
 		CFLAGS=
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mocaml_native}
+MAKE_FLAGS+=	NATIVE=true
+.else
+MAKE_FLAGS+=	NATIVE=false
+.endif
 
 REGRESS_TARGET=	selftest
 PORTHOME=	${WRKDIR}
