@@ -4,10 +4,13 @@ COMMENT =	OCaml perl-compatible regexp library
 CATEGORIES =	devel textproc
 
 V =		7.0.2
+NAME =		ocaml-pcre
 DISTNAME =	pcre-ocaml-$V
-PKGNAME =	ocaml-pcre-$V
+PKGNAME =	${NAME}-$V
+MASTER_SITES =	https://bitbucket.org/mmottl/pcre-ocaml/downloads/
 
-HOMEPAGE =	http://ocaml.info/home/ocaml_sources.html
+HOMEPAGE =	https://bitbucket.org/mmottl/pcre-ocaml/
+
 
 # GPLv2+
 PERMIT_PACKAGE_FTP =		Yes
@@ -17,24 +20,13 @@ PERMIT_DISTFILES_CDROM =	Yes
 
 MODULES =	lang/ocaml
 
-MASTER_SITES =	https://bitbucket.org/mmottl/pcre-ocaml/downloads/
-
-RUN_DEPENDS =	sysutils/findlib
-BUILD_DEPENDS =	${RUN_DEPENDS}
+BUILD_DEPENDS =	sysutils/findlib
 LIB_DEPENDS =	devel/pcre
 WANTLIB =	pcre
 
-ALL_TARGET =		build doc
-REGRESS_TARGET =	test
-
-CONFIGURE_STYLE =	simple
-CONFIGURE_ARGS +=	--destdir ${WRKINST} --override pkg_name ocaml-pcre
-
-pre-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml/stublibs
+CONFIGURE_STYLE =	oasis
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}
 	@cp -R ${WRKDIST}/examples/* ${PREFIX}/share/examples/${NAME}/
 	@chmod -R a-w ${PREFIX}/share/examples/${NAME}/*

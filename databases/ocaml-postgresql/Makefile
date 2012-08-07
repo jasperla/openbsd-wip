@@ -24,13 +24,7 @@ WANTLIB =	pq
 BUILD_DEPENDS =	sysutils/findlib
 LIB_DEPENDS=	databases/postgresql
 
-CONFIGURE_STYLE =	simple
-CONFIGURE_ARGS +=	--destdir ${WRKINST} --override pkg_name ${NAME}
-ALL_TARGET =		build
-REGRESS_TARGET =	test
-
-pre-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml/stublibs
+CONFIGURE_STYLE =	oasis
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}

@@ -10,3 +10,24 @@ lib/ocaml/sqlite3/sqlite3.mli
 %%SHARED%%
 @comment lib/ocaml/stublibs/
 @comment lib/ocaml/stublibs/dllsqlite3_stubs.so.owner
+share/doc/ocaml-sqlite3/
+share/doc/ocaml-sqlite3/api/
+share/doc/ocaml-sqlite3/api/Sqlite3.Aggregate.html
+share/doc/ocaml-sqlite3/api/Sqlite3.Data.html
+share/doc/ocaml-sqlite3/api/Sqlite3.Rc.html
+share/doc/ocaml-sqlite3/api/Sqlite3.html
+share/doc/ocaml-sqlite3/api/index.html
+share/doc/ocaml-sqlite3/api/index_attributes.html
+share/doc/ocaml-sqlite3/api/index_class_types.html
+share/doc/ocaml-sqlite3/api/index_classes.html
+share/doc/ocaml-sqlite3/api/index_exceptions.html
+share/doc/ocaml-sqlite3/api/index_methods.html
+share/doc/ocaml-sqlite3/api/index_module_types.html
+share/doc/ocaml-sqlite3/api/index_modules.html
+share/doc/ocaml-sqlite3/api/index_types.html
+share/doc/ocaml-sqlite3/api/index_values.html
+share/doc/ocaml-sqlite3/api/style.css
+share/doc/ocaml-sqlite3/api/type_Sqlite3.Aggregate.html
+share/doc/ocaml-sqlite3/api/type_Sqlite3.Data.html
+share/doc/ocaml-sqlite3/api/type_Sqlite3.Rc.html
+share/doc/ocaml-sqlite3/api/type_Sqlite3.html
