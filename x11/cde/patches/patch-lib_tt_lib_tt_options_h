@@ -1,0 +1,40 @@
+$OpenBSD$
+--- lib/tt/lib/tt_options.h.orig	Mon Aug  6 17:55:44 2012
++++ lib/tt/lib/tt_options.h	Mon Aug  6 17:58:39 2012
+@@ -560,6 +560,36 @@
+ # define OPT_BUG_RPCINTR
+ # undef  OPT_XTHREADS 
+ 
++#elif defined(CSRG_BASED)
++
++# undef  OPT_UNIX_SOCKET_RPC 
++# undef  OPT_TLI 
++# undef  OPT_DLOPEN_X11 
++# undef  OPT_DLOPEN_CE 
++# undef  OPT_ADDMSG_DIRECT 
++# undef  OPT_SECURE_RPC 
++# undef  OPT_CLASSING_ENGINE
++# undef  OPT_PATCH
++# define OPT_POSIX_SIGNAL
++# undef  OPT_BSD_WAIT
++# undef  OPT_DGETTEXT
++# define OPT_CATGETS
++# undef  OPT_GETDTABLESIZE
++# undef  OPT_SYSINFO
++# define OPT_CPP_PATH		"/usr/libexec/cpp"
++# define OPT_CPP_OPTIONS	""
++# define OPT_STRERROR
++# undef  OPT_SVR4_GETMNTENT
++# undef  OPT_LOCKF_MNTENT
++# define OPT_LOCAL_MOUNT_TYPE	MNTTYPE_UFS
++# undef  OPT_OLD_RPC
++# define OPT_DEFINE_SIG_PF
++# define OPT_TAR_HAS_EXCLUDE_OPTION
++# define OPT_HAS_REALPATH
++# define OPT_AUTOMOUNT_PATH_FIX
++# define OPT_BUG_RPCINTR
++# undef  OPT_XTHREADS 
++
+ #else
+ /* Unknown configuration, complain */
+ }}}} You must edit lib/tt_options.h and add a section defining the options for your configuration.

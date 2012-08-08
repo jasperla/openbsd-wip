@@ -1,0 +1,13 @@
+$OpenBSD$
+--- programs/dtcm/server/svcmain.c.orig	Tue Aug  7 16:14:07 2012
++++ programs/dtcm/server/svcmain.c	Tue Aug  7 16:14:22 2012
+@@ -702,7 +702,8 @@ main(int argc, char **argv)
+ 
+ 		if (udp_transp == (SVCXPRT *)-1) {
+ 			udp_transp = svcudp_create(standalone ? RPC_ANYSOCK : 0
+-#if defined(_AIX) || defined(hpV4) || defined(__osf__) || defined(linux)
++#if defined(_AIX) || defined(hpV4) || defined(__osf__) || defined(linux) || \
++	defined(CSRG_BASED)
+ 					);
+ #else
+ 					,0,0);

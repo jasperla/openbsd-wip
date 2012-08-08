@@ -1,0 +1,12 @@
+$OpenBSD$
+--- include/EUSCompat.h.orig	Tue Aug  7 02:11:46 2012
++++ include/EUSCompat.h	Tue Aug  7 02:13:23 2012
+@@ -110,7 +110,7 @@ typedef enum {B_FALSE, B_TRUE} boolean_t;
+ 
+ #endif	/* HPUX */
+ 
+-#if defined(linux)
++#if defined(linux) || defined(CSRG_BASED)
+ typedef enum {B_FALSE, B_TRUE} boolean_t;
+ #define MAXNAMELEN      	256
+ 

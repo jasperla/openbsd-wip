@@ -1,0 +1,21 @@
+$OpenBSD$
+--- programs/dtmail/dtmail/RoamApp.C.orig	Tue Aug  7 10:16:27 2012
++++ programs/dtmail/dtmail/RoamApp.C	Tue Aug  7 10:17:14 2012
+@@ -70,7 +70,7 @@
+ 
+ #include <unistd.h>
+ #include <wchar.h>
+-#if defined(USL) || defined(__uxp__) || defined(linux)
++#if defined(USL) || defined(__uxp__) || defined(linux) || defined(CSRG_BASED)
+ #define wcswcs wcsstr
+ #include <wctype.h>  // iswspace is defined in this header on USL */
+ #endif
+@@ -2015,7 +2015,7 @@ char *formatPropPair(char * key, void * data)
+     int m_size;
+ 
+     if (data == NULL)
+-	data = "";
++	data = (void *)"";
+ 
+     // figure out whitespace for formatting
+     // assume 13 for normal sized alias name

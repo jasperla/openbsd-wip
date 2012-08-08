@@ -1,0 +1,12 @@
+$OpenBSD$
+--- programs/dtmail/libDtMail/RFC/RFCTransport.C.orig	Tue Aug  7 09:57:52 2012
++++ programs/dtmail/libDtMail/RFC/RFCTransport.C	Tue Aug  7 09:58:09 2012
+@@ -973,7 +973,7 @@ RFCTransport::signalRegister(void)
+     initialized = 1;
+ 
+ #if defined(hpux) || defined(_aix) || defined(__osf__) || defined(linux) || \
+-    (defined(sun) && OSMAJORVERSION>=5 && OSMINORVERSION>4)
++    (defined(sun) && OSMAJORVERSION>=5 && OSMINORVERSION>4) || defined(CSRG_BASED)
+     // SunOS 5.5 and above defined prototype for signal handler
+     act.sa_handler = (void (*)(int))&RFCTransport::childHandler;
+ #else

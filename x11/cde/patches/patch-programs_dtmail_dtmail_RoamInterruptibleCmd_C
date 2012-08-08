@@ -1,0 +1,12 @@
+$OpenBSD$
+--- programs/dtmail/dtmail/RoamInterruptibleCmd.C.orig	Tue Aug  7 10:18:22 2012
++++ programs/dtmail/dtmail/RoamInterruptibleCmd.C	Tue Aug  7 10:18:27 2012
+@@ -48,7 +48,7 @@
+ #include <Xm/Xm.h>
+ #include <Xm/MessageB.h>
+ #include <assert.h>
+-extern forceUpdate( Widget );
++extern int forceUpdate( Widget );
+ 
+ 
+ RoamInterruptibleCmd::RoamInterruptibleCmd ( char *name, 

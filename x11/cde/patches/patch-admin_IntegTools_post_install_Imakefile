@@ -1,0 +1,13 @@
+$OpenBSD$
+--- admin/IntegTools/post_install/Imakefile.orig	Mon Aug  6 17:31:22 2012
++++ admin/IntegTools/post_install/Imakefile	Mon Aug  6 17:33:21 2012
+@@ -19,6 +19,9 @@ PLATFORM = hp-ux
+ PLATFORM = linux
+ SUBDIRS = linux
+ #endif
++#ifdef OpenBSDArchitecture
++PLATFORM = openbsd
++#endif
+ #ifdef RsArchitecture
+ PLATFORM = aix
+ SUBDIRS = ibm

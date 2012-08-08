@@ -1,0 +1,21 @@
+$OpenBSD$
+--- programs/nsgmls/OutputCharStream.C.orig	Wed Aug  8 00:33:13 2012
++++ programs/nsgmls/OutputCharStream.C	Wed Aug  8 00:33:43 2012
+@@ -28,7 +28,7 @@
+ #include "OutputCharStream.h"
+ #include "CodingSystem.h"
+ #include "macros.h"
+-#if defined(linux)
++#if defined(linux) || defined(CSRG_BASED)
+ #include <iostream>
+ #else
+ #include <iostream.h>
+@@ -148,7 +148,7 @@ void IosOutputCharStream::flush()
+     encoder_->output(buf_, ptr_ - buf_, byteStream_);
+     ptr_ = buf_;
+   }
+-#if defined(linux)
++#if defined(linux) || defined(CSRG_BASED)
+   byteStream_->pubsync();
+ #else
+   byteStream_->sync();

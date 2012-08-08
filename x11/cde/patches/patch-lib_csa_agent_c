@@ -1,0 +1,12 @@
+$OpenBSD$
+--- lib/csa/agent.c.orig	Tue Aug  7 01:56:38 2012
++++ lib/csa/agent.c	Tue Aug  7 02:20:03 2012
+@@ -296,7 +296,7 @@ _DtCm_process_updates()
+  */
+  
+ Update_Status *
+-_DtCm_update_callback_1(Table_Res_4 *t, void *dummy)
++_DtCm_update_callback_1(Table_Res_4 *t, _DtCm_Connection *dummy)
+ {
+ 	static Update_Status status = update_succeeded;
+ 	_CallbackInfo *cbi;

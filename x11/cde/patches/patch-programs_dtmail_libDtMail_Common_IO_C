@@ -1,0 +1,12 @@
+$OpenBSD$
+--- programs/dtmail/libDtMail/Common/IO.C.orig	Tue Aug  7 09:26:03 2012
++++ programs/dtmail/libDtMail/Common/IO.C	Tue Aug  7 09:26:24 2012
+@@ -819,7 +819,7 @@ GetPasswordEntry(passwd & result)
+     memcpy(&passwordEntry, tresult, sizeof(struct passwd));
+     passwordEntry.pw_name = strdup(passwordEntry.pw_name);
+     passwordEntry.pw_passwd = strdup(passwordEntry.pw_passwd);
+-#if !defined(_AIX) && !defined(linux)
++#if !defined(_AIX) && !defined(linux) && !defined(CSRG_BASED)
+ #ifndef __osf__
+     passwordEntry.pw_age = strdup(passwordEntry.pw_age);
+ #endif

@@ -1,0 +1,12 @@
+$OpenBSD$
+--- lib/tt/bin/shell/mover.C.orig	Mon Aug  6 21:08:22 2012
++++ lib/tt/bin/shell/mover.C	Mon Aug  6 21:08:41 2012
+@@ -35,7 +35,7 @@
+ #include "tt_options.h"
+ #include <errno.h>
+ #include <string.h>
+-#if defined(__osf__) || defined(linux)
++#if defined(__osf__) || defined(linux) || defined(CSRG_BASED)
+ #include <unistd.h>
+ #else
+ #if !defined(USL) && !defined(__uxp__)

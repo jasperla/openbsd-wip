@@ -1,0 +1,12 @@
+$OpenBSD$
+--- lib/DtTerm/Term/TermParse.c.orig	Tue Aug  7 01:40:21 2012
++++ lib/DtTerm/Term/TermParse.c	Tue Aug  7 01:41:05 2012
+@@ -57,7 +57,7 @@ static char rcs_id[] = "$TOG: TermParse.c /main/3 1999
+  */
+ #undef MAXINT
+ #endif
+-#include  <values.h>        
++#define MAXSHORT SHRT_MAX
+ 
+ #if defined(USL) || defined(__uxp__)
+ #include <ctype.h>

@@ -1,0 +1,18 @@
+$OpenBSD$
+--- programs/dtscreen/worm.c.orig	Tue Aug  7 15:34:54 2012
++++ programs/dtscreen/worm.c	Tue Aug  7 15:35:29 2012
+@@ -87,12 +87,14 @@ typedef struct {
+     int         size[MAXCOLORS];
+ }           wormstruct;
+ 
++#if !defined(CSRG_BASED)
+ int
+ round(x)
+     float       x;
+ {
+     return ((int) floor((double) x));
+ }
++#endif
+ 
+ 
+ void

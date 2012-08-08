@@ -1,0 +1,28 @@
+$OpenBSD$
+--- programs/dtfile/MkDir.c.orig	Tue Aug  7 14:39:33 2012
++++ programs/dtfile/MkDir.c	Tue Aug  7 14:40:10 2012
+@@ -107,13 +107,13 @@ RunFileCommand(
+   
+    /* prepare to catch the command termination */
+ 
+-   oldSig = signal (SIGCLD, SIG_DFL);
++   oldSig = signal (SIGCHLD, SIG_DFL);
+ 
+    /* fork a process to run command */
+ 
+    if ((child = fork ()) < 0)	/* fork failed */
+    {
+-      (void) signal (SIGCLD, oldSig);
++      (void) signal (SIGCHLD, oldSig);
+       return (-1);
+    }
+ 
+@@ -126,7 +126,7 @@ RunFileCommand(
+          wait_return = wait (&exit_value);
+       } while (wait_return != child);
+ 
+-      (void) signal (SIGCLD, oldSig); /* child stopped or terminated */
++      (void) signal (SIGCHLD, oldSig); /* child stopped or terminated */
+ 
+       return (exit_value);      /* if exit_value == 0 then success */
+    }

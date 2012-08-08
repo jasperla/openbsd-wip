@@ -1,0 +1,30 @@
+$OpenBSD$
+--- programs/dthelp/parser/canon1/helptag/help.c.orig	Tue Aug  7 09:02:04 2012
++++ programs/dthelp/parser/canon1/helptag/help.c	Tue Aug  7 09:05:55 2012
+@@ -356,7 +356,7 @@ char *qualname;
+ char *unqualname;
+ #endif
+ {
+-#if defined(hpux) || defined(_AIX) || defined(sun) || defined(USL) || defined(__uxp__) || defined(__osf__) || defined(linux)
++#if defined(__unix__)
+ 
+ FILE *f;
+ #endif
+@@ -381,7 +381,7 @@ else
+ 
+ fnp = fn;
+ 
+-#if defined(hpux) || defined(_AIX) || defined(sun) || defined(USL) || defined(__uxp__) || defined(__osf__) || defined(linux)
++#if defined(__unix__)
+ qualname[0] = '\0';
+ gp = qualname + strlen(qualname);
+ roomleft = roomleft - strlen(qualname);
+@@ -495,7 +495,7 @@ do  {
+ while (1);
+ *strrchr(qualname, CSEP) = '\0';
+ 
+-#if defined(hpux) || defined(_AIX) || defined(sun) || defined(USL) || defined(__uxp__) || defined(__osf__) || defined(linux)
++#if defined(__unix__)
+ #else
+ strupr ( qualname );
+ #endif

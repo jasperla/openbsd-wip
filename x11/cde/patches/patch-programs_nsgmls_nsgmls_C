@@ -1,0 +1,39 @@
+$OpenBSD$
+--- programs/nsgmls/nsgmls.C.orig	Wed Aug  8 00:34:22 2012
++++ programs/nsgmls/nsgmls.C	Wed Aug  8 00:34:39 2012
+@@ -38,7 +38,7 @@
+ #include "sptchar.h"
+ #include "macros.h"
+ 
+-#if defined(linux)
++#if defined(linux) || defined(CSRG_BASED)
+ #include <iostream>
+ #include <fstream>
+ #else
+@@ -84,7 +84,7 @@ class XRastEventHandler : public RastEventHandler { (p
+ 		    const AppChar *filename,
+ 		    const StringC &filenameStr,
+ 		    const OutputCodingSystem *,
+-#if defined(linux)
++#if defined(linux) || defined(CSRG_BASED)
+ 		    ::Messenger *messenger);
+ #else
+ 		    Messenger *messenger);
+@@ -94,7 +94,7 @@ class XRastEventHandler : public RastEventHandler { (p
+   void truncateOutput();
+   void allLinkTypesActivated();
+ private:
+-#if defined(linux)
++#if defined(linux) || defined(CSRG_BASED)
+   ::Messenger *messenger_;
+ #else
+   Messenger *messenger_;
+@@ -248,7 +248,7 @@ XRastEventHandler::XRastEventHandler(SgmlParser *parse
+ 				     const AppChar *filename,
+ 				     const StringC &filenameStr,
+ 				     const OutputCodingSystem *codingSystem,
+-#if defined(linux)
++#if defined(linux) || defined(CSRG_BASED)
+ 				     ::Messenger *messenger)
+ #else
+ 				     ::Messenger *messenger)

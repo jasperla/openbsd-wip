@@ -1,0 +1,12 @@
+$OpenBSD$
+--- lib/DtSvc/include/codelibs/privbuf.h.orig	Mon Aug  6 23:51:17 2012
++++ lib/DtSvc/include/codelibs/privbuf.h	Mon Aug  6 23:51:53 2012
+@@ -48,7 +48,7 @@ typedef void (*privbuf_func)(void *v);
+ #include <stddef.h>
+ #include <stdlib.h>
+ 
+-#if defined(__osf__) || defined(sun) || defined(linux)
++#if defined(__osf__) || defined(sun) || defined(linux) || defined(CSRG_BASED)
+ // The DEC C++ compiler rejects valid inline declarations, claiming
+ // they have both internal and external linkage.
+ #else

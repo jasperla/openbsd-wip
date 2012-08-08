@@ -1,0 +1,11 @@
+$OpenBSD$
+--- lib/csa/agent.x.orig	Tue Aug  7 02:09:31 2012
++++ lib/csa/agent.x	Tue Aug  7 02:09:38 2012
+@@ -32,6 +32,6 @@ enum Update_Status {
+ */
+ program AGENTPROG {
+         version AGENTVERS {
+-                Update_Status update_callback(Table_Res) = 1;
++                Update_Status update_callback(Table_Res_4) = 1;
+         }=1;
+ }=00;

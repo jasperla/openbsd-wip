@@ -1,0 +1,13 @@
+$OpenBSD$
+--- programs/dtappbuilder/src/libABobj/obj.c.orig	Tue Aug  7 16:19:54 2012
++++ programs/dtappbuilder/src/libABobj/obj.c	Tue Aug  7 16:20:09 2012
+@@ -47,7 +47,9 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <ctype.h>
++#if !defined(CSRG_BASED)
+ #include <values.h>
++#endif
+ #include <stdlib.h>
+ #include <sys/param.h>
+ #include <string.h>

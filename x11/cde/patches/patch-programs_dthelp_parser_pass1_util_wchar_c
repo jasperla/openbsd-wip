@@ -1,0 +1,12 @@
+$OpenBSD$
+--- programs/dthelp/parser/pass1/util/wchar.c.orig	Mon Aug  6 16:35:01 2012
++++ programs/dthelp/parser/pass1/util/wchar.c	Mon Aug  6 16:37:06 2012
+@@ -26,6 +26,8 @@
+ */
+ 
+ #include "basic.h"
++#include "trie.h"
++#include "cont.h"
+ 
+ 
+ /* compare two wide character strings */

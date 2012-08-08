@@ -1,0 +1,12 @@
+$OpenBSD$
+--- lib/DtSvc/include/bms/sbstdinc.h.orig	Mon Aug  6 22:24:35 2012
++++ lib/DtSvc/include/bms/sbstdinc.h	Mon Aug  6 22:34:00 2012
+@@ -59,7 +59,7 @@
+ /************************************************************************/
+ 
+ /* Domain/OS BSD has bzero(), bcmp(), and bcopy() defined. */
+-#if !defined(apollo) || !defined(__bsd)
++#if !(defined(apollo) && defined(__bsd)) && !defined(BSD)
+ 
+ #if defined(__STDC__)
+ #if !defined(linux) && !defined(__osf__) && !defined(_XFUNCS_H_)

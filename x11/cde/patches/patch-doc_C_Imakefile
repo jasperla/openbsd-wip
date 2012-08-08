@@ -1,0 +1,12 @@
+$OpenBSD$
+--- doc/C/Imakefile.orig	Sun Aug  5 00:16:08 2012
++++ doc/C/Imakefile	Mon Aug  6 14:58:58 2012
+@@ -3,7 +3,7 @@ XCOMM $XConsortium: Imakefile /main/10 1996/07/23 22:0
+ #define PassCDebugFlags
+ 
+ /* due to split-VOB setup, force help to come last in make Makefiles */
+-#if defined(LinuxArchitecture)
++#if defined(LinuxArchitecture) || defined(OpenBSDArchitecture)
+ XCOMM we cannot build guides on linux yet
+ SUBDIRS = man help
+ BSUBDIRS = help man 

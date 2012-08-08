@@ -1,0 +1,12 @@
+$OpenBSD$
+--- programs/dthelp/parser/pass2/htag2/global.h.orig	Tue Aug  7 09:07:09 2012
++++ programs/dthelp/parser/pass2/htag2/global.h	Tue Aug  7 09:07:19 2012
+@@ -44,7 +44,7 @@
+ #endif
+ #include <ctype.h>
+ 
+-#if defined(hpux) || defined(_AIX) || defined(sun) || defined(USL) || defined(__uxp__) || defined(linux)
++#if defined(__unix__)
+ #include <unistd.h>
+ #include <locale.h>
+ #include <fcntl.h>

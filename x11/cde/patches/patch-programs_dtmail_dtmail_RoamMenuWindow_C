@@ -1,0 +1,138 @@
+$OpenBSD$
+--- programs/dtmail/dtmail/RoamMenuWindow.C.orig	Tue Aug  7 10:19:38 2012
++++ programs/dtmail/dtmail/RoamMenuWindow.C	Tue Aug  7 10:26:34 2012
+@@ -124,7 +124,7 @@
+ 
+ #include "SortCmd.hh"
+ 
+-extern force( Widget );
++extern int force( Widget );
+ 
+  static const char * NormalIcon = "DtMail";
+  static const char * EmptyIcon = "DtMnone";
+@@ -725,7 +725,7 @@ RoamMenuWindow::createWorkArea(Widget parent)
+     printHelpId("form1", form1);
+     /* add help callback */
+     // XtAddCallback(form1, XmNhelpCallback, HelpCB, helpId);
+-    XtAddCallback(form1, XmNhelpCallback, HelpCB, DTMAILWINDOWID);
++    XtAddCallback(form1, XmNhelpCallback, HelpCB, (void *)DTMAILWINDOWID);
+ 
+     panedW = XtCreateManagedWidget("panedW", xmPanedWindowWidgetClass,
+ 				   form1, NULL, 0);
+@@ -757,7 +757,7 @@ RoamMenuWindow::createWorkArea(Widget parent)
+     /* add help callback */
+     // XtAddCallback(_rowOfLabels, XmNhelpCallback, HelpCB, helpId);
+     XtAddCallback(
+-	_rowOfLabels, XmNhelpCallback, HelpCB, DTMAILWINDOWROWOFLABELSID);
++	_rowOfLabels, XmNhelpCallback, HelpCB, (void *)DTMAILWINDOWROWOFLABELSID);
+ 
+     XtVaSetValues(_rowOfLabels, 
+ 		  XmNrightAttachment,XmATTACH_FORM, 
+@@ -792,7 +792,7 @@ RoamMenuWindow::createWorkArea(Widget parent)
+ 
+     XtAddCallback(
+ 	_list->get_scrolling_list(), XmNhelpCallback, 
+-	HelpCB, DTMAILMSGLISTID);
++	HelpCB, (void *)DTMAILMSGLISTID);
+ 
+     XtVaSetValues(_list->get_scrolling_list(), XmNuserData, this, NULL);
+     _rowOfButtons =
+@@ -2863,7 +2863,7 @@ RoamMenuWindow::addToRowOfButtons()
+ 				TRUE, this );
+     ci  = new ButtonInterface (_rowOfButtons, _delete_button);
+     w = ci->baseWidget();
+-    XtAddCallback(w, XmNhelpCallback, HelpCB, DTMAILDELBTNID);
++    XtAddCallback(w, XmNhelpCallback, HelpCB, (void *)DTMAILDELBTNID);
+     XtVaSetValues(w,
+ 	XmNleftAttachment, XmATTACH_FORM,
+ 	XmNtopAttachment, XmATTACH_FORM,
+@@ -2880,7 +2880,7 @@ RoamMenuWindow::addToRowOfButtons()
+ 			TRUE, this );
+     ci  = new ButtonInterface (_rowOfButtons, _next_button);
+     w = ci->baseWidget();
+-    XtAddCallback(w, XmNhelpCallback, HelpCB, DTMAILNEXTBTNID);
++    XtAddCallback(w, XmNhelpCallback, HelpCB, (void *)DTMAILNEXTBTNID);
+     XtVaSetValues(w,
+ 	XmNleftAttachment, XmATTACH_WIDGET,
+ 	XmNleftWidget, prev_widget,
+@@ -2899,7 +2899,7 @@ RoamMenuWindow::addToRowOfButtons()
+ 				TRUE, this );
+     ci  = new ButtonInterface (_rowOfButtons, _previous_button);
+     w = ci->baseWidget();
+-    XtAddCallback(w, XmNhelpCallback, HelpCB, DTMAILPREVBTNID);
++    XtAddCallback(w, XmNhelpCallback, HelpCB, (void *)DTMAILPREVBTNID);
+     XtVaSetValues(w,
+ 	XmNleftAttachment, XmATTACH_WIDGET,
+ 	XmNleftWidget, prev_widget,
+@@ -2920,7 +2920,7 @@ RoamMenuWindow::addToRowOfButtons()
+ 				FALSE );
+     ci  = new ButtonInterface (_rowOfButtons, _replySender_button);
+     w = ci->baseWidget();
+-    XtAddCallback(w, XmNhelpCallback, HelpCB, DTMAILREPLYBTNID);
++    XtAddCallback(w, XmNhelpCallback, HelpCB, (void *)DTMAILREPLYBTNID);
+     XtVaSetValues(w,
+ 	XmNleftAttachment, XmATTACH_WIDGET,
+ 	XmNleftWidget, prev_widget,
+@@ -2938,7 +2938,7 @@ RoamMenuWindow::addToRowOfButtons()
+ 				TRUE, TRUE, this);
+     ci  = new ButtonInterface (_rowOfButtons, _print_button);
+     w = ci->baseWidget();
+-    XtAddCallback(w, XmNhelpCallback, HelpCB, DTMAILPRINTBTNID);
++    XtAddCallback(w, XmNhelpCallback, HelpCB, (void *)DTMAILPRINTBTNID);
+     XtVaSetValues(w,
+ 	XmNleftAttachment, XmATTACH_WIDGET,
+ 	XmNleftWidget, prev_widget,
+@@ -3292,7 +3292,7 @@ RoamMenuWindow::createContainerList()
+ void
+ RoamMenuWindow::createOpenContainerList(CmdList * open_container)
+ {
+-    int			ncontainers;
++    int			ncontainers, i;
+     char		*container_name;
+     ContainerMenuCmd	*container_cmd;
+ 
+@@ -3327,7 +3327,7 @@ RoamMenuWindow::createOpenContainerList(CmdList * open
+     _open_container_containerlist =
+       new DtVirtArray<ContainerMenuCmd*>(ncontainers);
+ 
+-    for (int i=0; i<ncontainers; i++)
++    for (i=0; i<ncontainers; i++)
+     {
+ 	container_name = (*_user_containerlist)[i]->containerName();
+ 	if (NULL != container_name)
+@@ -3490,7 +3490,7 @@ RoamMenuWindow::construct_file_menu()
+ void
+ RoamMenuWindow::createCopyList(CmdList * copy_to)
+ {
+-    int			ncontainers;
++    int			ncontainers, i;
+     char		*container_name;
+     ContainerMenuCmd	*container_cmd;
+ 
+@@ -3550,7 +3550,7 @@ RoamMenuWindow::createCopyList(CmdList * copy_to)
+     _copyto_containerlist =
+       new DtVirtArray<ContainerMenuCmd *> (ncontainers);
+ 
+-    for (int i=0; i<ncontainers; i++)
++    for (i=0; i<ncontainers; i++)
+     {
+ 	container_name = (*_user_containerlist)[i]->containerName();
+ 	if (NULL != container_name)
+@@ -3930,7 +3930,7 @@ RoamMenuWindow::construct_compose_menu()
+ void
+ RoamMenuWindow::construct_move_menu()
+ {
+-    int			ncontainers;
++    int			ncontainers, i;
+     char		*container_name;
+     ContainerMenuCmd	*container_cmd;
+ 
+@@ -3967,7 +3967,7 @@ RoamMenuWindow::construct_move_menu()
+       delete _move_containerlist;
+     _move_containerlist = new DtVirtArray<ContainerMenuCmd *> (ncontainers);
+ 
+-    for (int i=0; i<ncontainers; i++)
++    for (i=0; i<ncontainers; i++)
+     {
+ 	container_name = (*_user_containerlist)[i]->containerName();
+ 	if (NULL != container_name)

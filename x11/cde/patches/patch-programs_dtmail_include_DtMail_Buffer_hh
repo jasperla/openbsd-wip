@@ -1,0 +1,12 @@
+$OpenBSD$
+--- programs/dtmail/include/DtMail/Buffer.hh.orig	Tue Aug  7 09:19:08 2012
++++ programs/dtmail/include/DtMail/Buffer.hh	Tue Aug  7 09:19:25 2012
+@@ -103,7 +103,7 @@ class BufferMemory : public Buffer {
+ 	virtual int getSize(void);      // get total size of the buffer
+ 
+     private:
+-#if !defined(linux)
++#if !defined(linux) && !defined(CSRG_BASED)
+ 	class Chunk;
+ #endif
+ 

@@ -1,0 +1,11 @@
+$OpenBSD$
+--- programs/dtmail/dtmail/Sort.C.orig	Tue Aug  7 10:27:27 2012
++++ programs/dtmail/dtmail/Sort.C	Tue Aug  7 10:28:36 2012
+@@ -398,6 +398,7 @@ Sort::sortMessages(MsgScrollingList	*displayList,
+ #define	Record(i)	(base + (width * (i)))
+ #define	Link(i)		(*((int *) (Record(i) + offset)))
+ 
++int
+ Sort::_msort (char	* base,
+ 	      int	  nel,
+ 	      int	  width,
