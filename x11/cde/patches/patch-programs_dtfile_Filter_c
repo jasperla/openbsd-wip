@@ -1,0 +1,11 @@
+$OpenBSD$
+--- programs/dtfile/Filter.c.orig	Wed Aug  8 15:38:32 2012
++++ programs/dtfile/Filter.c	Wed Aug  8 15:38:40 2012
+@@ -106,6 +106,7 @@
+ #include "Filter.h"
+ #include "Help.h"
+ 
++char **DtDtsDataTypeNames(void);
+ 
+ static char * FILE_FILTER = "FileFilter";
+ 
