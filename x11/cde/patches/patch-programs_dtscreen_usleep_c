@@ -1,0 +1,12 @@
+$OpenBSD$
+--- programs/dtscreen/usleep.c.orig	Tue Aug  7 15:34:32 2012
++++ programs/dtscreen/usleep.c	Tue Aug  7 15:34:46 2012
+@@ -41,7 +41,7 @@
+ 
+ #include "dtscreen.h"
+ 
+-#if !defined(_AIX) && !defined(hpV4) && !defined(linux)
++#if !defined(_AIX) && !defined(hpV4) && !defined(linux) && !defined(CSRG_BASED)
+ int
+ usleep(unsigned long usec)
+ {

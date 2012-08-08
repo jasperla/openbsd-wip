@@ -1,0 +1,21 @@
+$OpenBSD$
+--- programs/dtsearchpath/libCliSrv/UnixEnv.C.orig	Tue Aug  7 16:15:29 2012
++++ programs/dtsearchpath/libCliSrv/UnixEnv.C	Tue Aug  7 16:17:46 2012
+@@ -53,7 +53,7 @@
+ #endif
+ #include <errno.h>
+ 
+-#if defined(sun) || defined(_AIX) || defined(__osf__) || defined(USL) || defined(__uxp__) || (linux)
++#if defined(sun) || defined(_AIX) || defined(__osf__) || defined(USL) || defined(__uxp__) || defined(linux) || defined(CSRG_BASED)
+ #define UID_NO_CHANGE ((uid_t) -1)
+ #define GID_NO_CHANGE ((gid_t) -1)
+ #endif
+@@ -80,6 +80,8 @@ UnixEnvironment::UnixEnvironment()
+         manpath = "/usr/share/%L/man:/usr/share/man:/usr/local/man";
+ #elif defined(linux)
+         manpath = "/usr/share/man/%L:/usr/share/man:/usr/contrib/man/%L:/usr/contrib/man:/usr/local/man/%L:/usr/local/man";
++#elif defined(CSRG_BASED)
++	manpath = "/usr/share/man:/usr/X11R6/man:/usr/local/man:/usr/ports/infrastructure/man";
+ #endif
+     else
+ 	manpath = temp;

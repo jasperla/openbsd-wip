@@ -1,0 +1,12 @@
+$OpenBSD$
+--- lib/DtTerm/TermPrim/TermPrimParser.c.orig	Tue Aug  7 01:01:32 2012
++++ lib/DtTerm/TermPrim/TermPrimParser.c	Tue Aug  7 01:01:57 2012
+@@ -47,7 +47,7 @@ static char rcs_id[] = "$TOG: TermPrimParser.c /main/2
+  */
+ #undef MAXINT
+ #endif
+-#include <values.h>          
++#define MAXINT INT_MAX
+ 
+ #ifdef	BBA
+ #pragma	BBA_IGNORE

@@ -1,0 +1,12 @@
+$OpenBSD$
+--- programs/dtprintinfo/UI/DtPrinterIcon.C.orig	Tue Aug  7 20:28:40 2012
++++ programs/dtprintinfo/UI/DtPrinterIcon.C	Tue Aug  7 20:28:50 2012
+@@ -174,7 +174,7 @@ char *DtPrinterIcon::Description()
+ 
+    sprintf(buf, "%s_Print", queue->Name());
+    char *desc = DtActionDescription(buf);
+-   return (desc ? desc : "");
++   return (desc ? desc : (char *)"");
+ }
+ 
+ void DtPrinterIcon::PrintQueueUp(boolean _flag)

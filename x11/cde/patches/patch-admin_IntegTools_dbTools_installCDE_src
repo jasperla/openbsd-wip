@@ -1,0 +1,57 @@
+$OpenBSD$
+--- admin/IntegTools/dbTools/installCDE.src.orig	Sun Aug  5 00:16:08 2012
++++ admin/IntegTools/dbTools/installCDE.src	Wed Aug  8 09:15:17 2012
+@@ -207,6 +207,9 @@ CleanDaemons()
+       then
+         stopsrc -s inetd >>$LOGFILE 2>&1
+       fi
++    elif [ "$PLATFORM" = openbsd ]
++    then
++      true
+     else    
+       ps -ef | grep $i | grep -v grep >/tmp/tmppsout
+       if [ -s /tmp/tmppsout ]
+@@ -234,6 +237,9 @@ RestartInetd()
+   elif [ "$PLATFORM" = "dec" ]
+   then
+     /usr/sbin/inetd
++  elif [ "$PLATFORM" = "openbsd" ]
++  then
++    true
+   else
+ #ifdef hpV4
+     /usr/sbin/inetd 
+@@ -537,6 +543,10 @@ XCOMM 
+   then
+     PLATFORM="linux"
+     PLATFORM_SCRIPT_DIR=""
++  elif [ $BUILDSYSTEM = "OpenBSD" ];
++  then
++    PLATFORM="openbsd"
++    PLATFORM_SCRIPT_DIR=""
+   else			# Build system = HP
+     PLATFORM=hp-ux
+     PLATFORM_SCRIPT_DIR=hp
+@@ -566,9 +576,6 @@ XCOMM 
+ 
+   unset TMPDIR
+ 
+-  PATH=/bin:/usr/bin:/etc:/usr/bin/X11:
+-  export PATH
+-
+   CLEANING="no"
+   CLEANING_ETC="no"
+   TARBALL="no"
+@@ -872,9 +879,9 @@ XCOMM
+     fi
+   fi
+ 
+-  INSTALL_LOCATION=CDE_INSTALLATION_TOP
+-  CONFIGURE_LOCATION=CDE_CONFIGURATION_TOP
+-  LOGFILES_LOCATION=CDE_LOGFILES_TOP
++  [ -z "$INSTALL_LOCATION" ] && INSTALL_LOCATION=CDE_INSTALLATION_TOP
++  [ -z "$CONFIGURE_LOCATION" ] && CONFIGURE_LOCATION=CDE_CONFIGURATION_TOP
++  [ -z "$LOGFILES_LOCATION" ] && LOGFILES_LOCATION=CDE_LOGFILES_TOP
+ 
+   if [ -L $INSTALL_LOCATION -a "$CONFIGURE_ONLY" != "yes" ]
+   then

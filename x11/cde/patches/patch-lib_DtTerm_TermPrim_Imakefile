@@ -1,0 +1,14 @@
+$OpenBSD$
+--- lib/DtTerm/TermPrim/Imakefile.orig	Tue Aug  7 00:52:10 2012
++++ lib/DtTerm/TermPrim/Imakefile	Tue Aug  7 00:51:53 2012
+@@ -109,6 +109,10 @@ LinkFile(TermPrimGetPty.c,TermPrimGetPty-svr4.c)
+ LinkFile(TermPrimGetPty.c,TermPrimGetPty-svr4.c)
+ #endif
+ 
++#ifdef OpenBSDArchitecture
++LinkFile(TermPrimGetPty.c,TermPrimGetPty-bsd.c)
++#endif
++
+ SubdirLibraryRule($(OBJS))
+ 
+ DependTarget()

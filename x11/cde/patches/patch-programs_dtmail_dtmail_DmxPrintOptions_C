@@ -1,0 +1,38 @@
+$OpenBSD$
+--- programs/dtmail/dtmail/DmxPrintOptions.C.orig	Tue Aug  7 10:09:11 2012
++++ programs/dtmail/dtmail/DmxPrintOptions.C	Tue Aug  7 10:12:07 2012
+@@ -210,6 +210,7 @@ DmxPrintOptions::DmxPrintOptions (
+     char		**strings;
+     void		**data;
+     XmString		xms;
++    int			i, j, nhdrftrs;
+ 
+     _iom_array = new DtVirtArray<IndexedOptionMenu *>(10);
+     _propui_array = new DtVirtArray<PropUiItem *>(10);
+@@ -240,7 +241,7 @@ DmxPrintOptions::DmxPrintOptions (
+     nitems = DMX_ARRAY_SIZE(hdrftr_values);;
+     strings = (char **) XtMalloc( nitems * sizeof(char*) );
+     data = (void **) XtMalloc( nitems * sizeof(void*) );
+-    for (int i=0; i<nitems; i++)
++    for (i=0; i<nitems; i++)
+     {
+         data[i] = (void*) hdrftr_values[i].prop_string;
+         strings[i] = GETMSG(
+@@ -265,7 +266,7 @@ DmxPrintOptions::DmxPrintOptions (
+     //
+     menu_buttons = NULL;
+     _DtPrintHdrFtrFrameMenuWidgets( _hdrftr_frame, NULL, NULL, &menu_buttons);
+-    for (int j=0, nhdrftrs=DMX_ARRAY_SIZE(hdrftr_keys); j<nhdrftrs; j++)
++    for (j=0, nhdrftrs=DMX_ARRAY_SIZE(hdrftr_keys); j<nhdrftrs; j++)
+     {
+         w = _DtPrintHdrFtrFrameEnumToWidget(
+ 				_hdrftr_frame,
+@@ -671,7 +672,7 @@ DmxPrintOptions::isValidMarginSpec(PropUiItem* pui, vo
+     char	*marginSpec = NULL;
+     XtEnum	parseError;
+     Widget	text;
+-#if defined(linux)
++#if defined(linux) || defined(CSRG_BASED)
+     _DtPrintMarginEnum which = *((_DtPrintMarginEnum *) data);
+ #else
+     _DtPrintMarginEnum which = (_DtPrintMarginEnum) data;

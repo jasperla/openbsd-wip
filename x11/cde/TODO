@@ -1,0 +1,7 @@
+* make build with external imake
+* awk segfault
+* dttypes needs advance/compile
+* japanese localisation
+* upstream problems: dtksh, dtinfo, makedepend shit, docs
+
+NEEDS: printproto, libXp, printing enabled in openmotif

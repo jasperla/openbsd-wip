@@ -1,0 +1,53 @@
+$OpenBSD$
+--- programs/dtsession/SmRestore.c.orig	Tue Aug  7 15:16:14 2012
++++ programs/dtsession/SmRestore.c	Tue Aug  7 15:17:54 2012
+@@ -473,11 +473,11 @@ SystemCmd (char *pchCmd)
+ {
+     void (*signalHandler) ();
+ 
+-    signalHandler = (void (*)())signal (SIGCLD, SIG_DFL);
++    signalHandler = (void (*)())signal (SIGCHLD, SIG_DFL);
+ 
+     system (pchCmd);
+ 
+-    signal (SIGCLD, signalHandler);
++    signal (SIGCHLD, signalHandler);
+ } /* END OF FUNTION SystemCmd */
+ 
+ 
+@@ -896,7 +896,7 @@ RestoreResources( Boolean errorHandlerInstalled, ... )
+ 	setegid(smGD.runningGID);
+ #endif
+ #endif
+-#ifdef __osf__
++#if defined(__osf__) || defined(CSRG_BASED)
+         setsid();
+ #else
+ 	(void) setpgrp();
+@@ -3607,7 +3607,7 @@ StartLocalClient (
+ 
+ 	_DtEnvControl(DT_ENV_RESTORE_PRE_DT);
+ 
+-#ifdef __osf__
++#if defined(__osf__) || defined(CSRG_BASED)
+         setsid();
+ #else
+ 	(void)setpgrp();
+@@ -3843,7 +3843,7 @@ ForkWM( void )
+ #endif
+ 	_DtEnvControl(DT_ENV_RESTORE_PRE_DT);
+ 
+-#ifdef __osf__
++#if defined(__osf__) || defined(CSRG_BASED)
+         setsid();
+ #else
+         (void)setpgrp();
+@@ -3928,7 +3928,7 @@ KillParent( void )
+     /*
+      * Disassociate from parent
+      */
+-#ifdef __osf__
++#if defined(__osf__) || defined(CSRG_BASED)
+     setsid();
+ #else
+     setpgrp();

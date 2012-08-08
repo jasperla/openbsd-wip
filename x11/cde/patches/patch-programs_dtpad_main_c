@@ -1,0 +1,21 @@
+$OpenBSD$
+--- programs/dtpad/main.c.orig	Tue Aug  7 12:37:57 2012
++++ programs/dtpad/main.c	Tue Aug  7 12:38:17 2012
+@@ -985,7 +985,7 @@ InitEditSessionAndFirstPad(
+         sigfillset(&act.sa_mask);
+         act.sa_flags = 0;
+         act.sa_handler = SigcldHndlr;
+-        sigaction(SIGCLD, &act, (struct sigaction *)NULL);
++        sigaction(SIGCHLD, &act, (struct sigaction *)NULL);
+     }
+ }
+ 
+@@ -1591,7 +1591,7 @@ void SigcldHndlr (int dummy)
+     /*
+      * Is this really necessary?
+      */
+-    sigaction(SIGCLD, &act, (struct sigaction *)NULL);
++    sigaction(SIGCHLD, &act, (struct sigaction *)NULL);
+ }
+ 
+ 

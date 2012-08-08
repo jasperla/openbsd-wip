@@ -1,0 +1,30 @@
+$OpenBSD$
+--- lib/DtSvc/include/codelibs/stringx.h.orig	Mon Aug  6 23:39:13 2012
++++ lib/DtSvc/include/codelibs/stringx.h	Mon Aug  6 23:54:19 2012
+@@ -75,7 +75,7 @@ extern "C"
+ 
+ #ifdef __cplusplus
+     char *strtokx(char *&ptr, const char *sep);
+-# if !defined(__osf__) && !defined(linux)
++# if !defined(__osf__) && !defined(linux) && !defined(CSRG_BASED)
+     char **strsep(const char *str, const char *sep,
+ 	boolean whsp = TRUE, int *num = NULL);
+ #  if !defined(__osf__)
+@@ -85,7 +85,7 @@ extern "C"
+ 
+ #else /* __STDC__ */
+     char *strtokx(char **ptr, const char *sep);
+-# if !defined(linux)
++# if !defined(linux) && !defined(CSRG_BASED)
+     char **strsep(const char *str, const char *sep,
+ 	boolean whsp, int *num);
+ #endif
+@@ -137,7 +137,7 @@ inline void  strfree(const char *s)
+ 	{ if (s != NULL) free((char *)s); }
+ #else
+ inline void  strfree(const char *s)
+-#if defined(__hpux) || defined(__osf__)
++#if defined(__hpux) || defined(__osf__) || defined(CSRG_BASED)
+ 	{ if (s != NULL) free((void *)s); }
+ #else
+ 	{ if (s != NULL) free((const void *)s); }

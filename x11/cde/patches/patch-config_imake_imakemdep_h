@@ -1,0 +1,14 @@
+$OpenBSD$
+--- config/imake/imakemdep.h.orig	Mon Aug  6 22:47:27 2012
++++ config/imake/imakemdep.h	Mon Aug  6 22:49:55 2012
+@@ -623,6 +623,10 @@ char *cpp_argv[ARGUMENTS] = {
+ # define DEFAULT_OS_MINOR_REV   "r %*d.%[0-9]"
+ # define DEFAULT_OS_TEENY_REV   "r %*d.%*d.%[0-9]" 
+ # define DEFAULT_OS_NAME        "srm %[^\n]"
++#elif defined(CSRG_BASED)
++# define DEFAULT_OS_MAJOR_REV   "r %[0-9]"
++# define DEFAULT_OS_MINOR_REV   "r %*d.%[0-9]"
++# define DEFAULT_OS_NAME        "srm %[^\n]"
+ #endif
+ 
+ #else /* else MAKEDEPEND */

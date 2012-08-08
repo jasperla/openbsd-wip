@@ -1,0 +1,12 @@
+$OpenBSD$
+--- programs/dtmail/include/DtMail/Threads.hh.orig	Tue Aug  7 09:19:34 2012
++++ programs/dtmail/include/DtMail/Threads.hh	Tue Aug  7 09:20:32 2012
+@@ -120,7 +120,7 @@ class Condition : public DtCPlusPlusAllocator {
+ 
+     int state(void);
+     int operator=(int);
+-    operator += (int);
++    int operator += (int);
+     operator int(void);
+ 
+     void wait(void);

@@ -1,0 +1,30 @@
+$OpenBSD$
+--- lib/tt/lib/tttk/ttdtfile.C.orig	Mon Aug  6 20:15:25 2012
++++ lib/tt/lib/tttk/ttdtfile.C	Mon Aug  6 20:16:10 2012
+@@ -115,7 +115,7 @@ _ttDtFileJoinPat(
+ 	Tt_pattern pat = _ttDtPatternCreate( TT_OBSERVE, theScope,
+ 					     theScope != TT_FILE, pathname,
+ 					     TTDT_DELETED, _ttDtFileCB,
+-					     cb, clientData, 0 );
++					     (void *)cb, clientData, 0 );
+ 	Tt_status status = tt_ptr_error( pat );
+ 	if (status != TT_OK) {
+ 		return pat;
+@@ -254,7 +254,7 @@ ttdt_file_request(
+ )
+ {
+ 	Tt_message msg = _ttDtPMessageCreate( context, TT_REQUEST, theScope, 0,
+-					      op, _ttDtFileCB, cb, clientData);
++					      op, _ttDtFileCB, (void *)cb, clientData);
+ 	Tt_status status = tt_ptr_error( msg );
+ 	if (status != TT_OK) {
+ 		return msg;
+@@ -298,7 +298,7 @@ _ttDtFileEventPat(
+ 	Tt_pattern pat = _ttDtPatternCreate( TT_HANDLE, theScope,
+ 					     theScope != TT_FILE, pathname,
+ 					     TTDT_SAVE, _ttDtFileCB,
+-					     cb, clientData, 0 );
++					     (void *)cb, clientData, 0 );
+ 	Tt_status status = tt_ptr_error( pat );
+ 	if (status != TT_OK) {
+ 		return pat;

@@ -1,0 +1,39 @@
+$OpenBSD$
+--- programs/dtimsstart/start.c.orig	Tue Aug  7 22:08:59 2012
++++ programs/dtimsstart/start.c	Tue Aug  7 22:10:13 2012
+@@ -28,7 +28,7 @@
+ #include	<setjmp.h>
+ #include	<unistd.h>
+ 
+-#if (defined(USL) || defined(__uxp__) | defined(linux)) && !defined(_NFILE)
++#if (defined(USL) || defined(__uxp__) || defined(linux) || defined(CSRG_BASED)) && !defined(_NFILE)
+ #define _NFILE FOPEN_MAX
+ #endif
+ 
+@@ -233,7 +233,7 @@ void	set_sig_chld(enable)
+     int		enable;
+ {
+     DPR(("set_sig_chld(%s)\n", enable ? "Enabled" : "Disabled"));
+-    signal(SIGCLD, enable ? on_sig_chld : SIG_IGN);
++    signal(SIGCHLD, enable ? on_sig_chld : SIG_IGN);
+ }
+ 
+ int	im_mod_available(renv)
+@@ -620,7 +620,7 @@ static int	invoke_ims(sel)
+ 	for (i = 0; i < _NFILE; i++)
+ 	    (void) close(i);
+ 
+-#ifdef __osf__
++#if defined(__osf__) || defined(CSRG_BASED)
+ 	setsid();
+ #else
+ 	setpgrp();
+@@ -668,7 +668,7 @@ static void	on_sig_chld(sig)
+     if (pid == -1)
+ 	return;
+ 
+-    signal(SIGCLD, on_sig_chld);
++    signal(SIGCHLD, on_sig_chld);
+ 
+     if (WIFEXITED(wait_status)) {
+ 	cause = ErrImsAborted;

@@ -1,0 +1,48 @@
+$OpenBSD$
+--- programs/ttsnoop/messageProps_stubs.C.src.orig	Tue Aug  7 21:59:26 2012
++++ programs/ttsnoop/messageProps_stubs.C.src	Tue Aug  7 21:59:52 2012
+@@ -40,7 +40,7 @@
+  *** Add include files, types, macros, externs, and user functions here.
+  ***/
+ 
+-#if defined(linux)
++#if defined(linux) || defined(CSRG_BASED)
+ #include <strstream>
+ #else
+ #include <strstream.h>
+@@ -620,7 +620,7 @@ DtTtMessageWidgetCreate(
+ 		}
+ 	}
+ 
+-	ostrstream labelStream;
++	std::ostrstream labelStream;
+ 	labelStream << "Tt_message " << (void *)msg;
+ 	XtVaSetValues( instance->messageProps,
+ 		       XmNtitle, labelStream.str(),
+@@ -1408,7 +1408,7 @@ msgGenAction(
+     /*** DTB_USER_CODE_END   ^^^ Add C variables and code above ^^^ ***/
+     
+     /*** DTB_USER_CODE_START vvv Add C code below vvv ***/
+-    ostrstream action; // XXX when to delete .str()?
++    std::ostrstream action; // XXX when to delete .str()?
+     DtbMessagePropsMessagePropsInfo instance =
+ 	    (DtbMessagePropsMessagePropsInfo)clientData;
+     Tt_message msg = messageProps2Msg( instance );
+@@ -1475,7 +1475,7 @@ msgGenC(
+     /*** DTB_USER_CODE_END   ^^^ Add C variables and code above ^^^ ***/
+     
+     /*** DTB_USER_CODE_START vvv Add C code below vvv ***/
+-	ostrstream code; // XXX when to delete .str()?
++	std::ostrstream code; // XXX when to delete .str()?
+ 	DtbMessagePropsMessagePropsInfo instance =
+ 		(DtbMessagePropsMessagePropsInfo)clientData;
+ 	Tt_message msg = messageProps2Msg( instance );
+@@ -1878,7 +1878,7 @@ genObserver(
+     /*** DTB_USER_CODE_END   ^^^ Add C variables and code above ^^^ ***/
+     
+     /*** DTB_USER_CODE_START vvv Add C code below vvv ***/
+-    ostrstream ptype; // XXX when to delete .str()?
++    std::ostrstream ptype; // XXX when to delete .str()?
+     DtbMessagePropsMessagePropsInfo instance =
+ 	    (DtbMessagePropsMessagePropsInfo)clientData;
+     Tt_message msg = messageProps2Msg( instance );

@@ -1,0 +1,38 @@
+$OpenBSD$
+--- programs/Imakefile.orig	Sun Aug  5 00:16:08 2012
++++ programs/Imakefile	Tue Aug  7 23:28:35 2012
+@@ -5,11 +5,14 @@ XCOMM $XConsortium: Imakefile /main/17 1996/10/06 17:1
+ #if UseNSGMLS
+ NSGMLSDIR = nsgmls
+ #endif
+-EXTRADIRS = util types localized tttypes $(NSGMLSDIR)
++EXTRADIRS = types localized tttypes $(NSGMLSDIR)
++#if !defined(OpenBSDArchitecture)
++EXTRADIRS += util
++#endif
+ 
+ XCOMM some of these cannot be built on linux yet.
+ XCOMM dtksh dtinfo
+-#if defined(LinuxArchitecture)
++#if defined(LinuxArchitecture) || defined(OpenBSDArchitecture)
+ DTKSHDIR = 
+ DTINFODIR = 
+ #else
+@@ -18,7 +21,7 @@ DTINFODIR = dtinfo
+ #endif
+ 
+ 
+-SUBDIRS = dthelp dtmail dsdm dtpad dtfile dtwm dtlogin \
++SUBDIRS = dthelp dsdm dtpad dtfile dtwm dtlogin \
+ 	dtsession dthello dtstyle dtexec dtdbcache dticon dtterm \
+ 	dtcalc dtaction dtspcd \
+ 	dtscreen $(DTKSHDIR) dtcm dtsearchpath \
+@@ -27,7 +30,7 @@ SUBDIRS = dthelp dtmail dsdm dtpad dtfile dtwm dtlogin
+ 	dtudcfonted dtudcexch dtimsstart dtdocbook dtpdm dtsr \
+ 	dtpdmd $(DTINFODIR) $(EXTRADIRS)
+ 
+-LINTSUBDIRS = dthelp dtmail dsdm dtpad dtfile dtlogin dtwm \
++LINTSUBDIRS = dthelp dsdm dtpad dtfile dtlogin dtwm \
+ 	dtsession dthello dtstyle dtexec dtdbcache dticon dtterm \
+ 	dtcalc dtaction dtcreate \
+ 	dtscreen $(DTKSHDIR) dtcm dtsearchpath \

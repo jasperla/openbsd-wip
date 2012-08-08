@@ -1,0 +1,13 @@
+$OpenBSD$
+--- lib/DtHelp/Imakefile.orig	Tue Aug  7 00:21:37 2012
++++ lib/DtHelp/Imakefile	Tue Aug  7 00:22:31 2012
+@@ -28,6 +28,9 @@ BIT_ORDER_DEFINES = -DLSB_BIT_ORDER
+ #endif
+ 
+ INCLUDES = -I. -I./il -I./jpeg
++#if defined(OpenBSDArchitecture)
++INCLUDES += -I$(INCROOT)
++#endif
+ DEFINES = -DDTLIB -DXK_MISCELLANY $(LOCAL_DEFINES) \
+ 	  -DCDE_INSTALLATION_TOP='"$(CDE_INSTALLATION_TOP)"' \
+ 	  -DCDE_CONFIGURATION_TOP='"$(CDE_CONFIGURATION_TOP)"' \

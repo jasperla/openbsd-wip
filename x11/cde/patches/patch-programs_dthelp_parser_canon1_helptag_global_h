@@ -1,0 +1,30 @@
+$OpenBSD$
+--- programs/dthelp/parser/canon1/helptag/global.h.orig	Sun Aug  5 00:16:08 2012
++++ programs/dthelp/parser/canon1/helptag/global.h	Tue Aug  7 09:03:10 2012
+@@ -44,7 +44,7 @@
+ #endif
+ #include <ctype.h>
+ 
+-#if defined(hpux) || defined(_AIX) || defined(sun) || defined(USL) || defined(__uxp__) || defined(__osf__) || defined(linux)
++#if defined(__unix__)
+ #include <unistd.h>
+ #include <locale.h>
+ #include <fcntl.h>
+@@ -179,7 +179,7 @@ EXTERN char dirsep
+ #if defined(MSDOS)
+ INIT('\\')
+ #else
+-#if defined(hpux) || defined(_AIX) || defined(sun) || defined(USL) || defined(__uxp__) || defined(__osf__) || defined(linux)
++#if defined(__unix__)
+ INIT('/')
+ #else
+ ****define directory separator here****
+@@ -187,7 +187,7 @@ INIT('/')
+ #endif
+   ;
+ 
+-#if defined(hpux) || defined(_AIX) || defined(sun) || defined(USL) || defined(__uxp__)|| defined(__osf__) || defined(linux)
++#if defined(__unix__)
+ #define CSEP '/'
+ #define SSEP "/"
+ #else

@@ -1,0 +1,110 @@
+$OpenBSD$
+--- programs/ttsnoop/DtTt.C.orig	Tue Aug  7 21:56:43 2012
++++ programs/ttsnoop/DtTt.C	Tue Aug  7 21:57:29 2012
+@@ -34,7 +34,7 @@
+ #include <fcntl.h>
+ #include <unistd.h>
+ 
+-#if defined(linux)
++#if defined(linux) || defined(CSRG_BASED)
+ #include <strstream>
+ #else
+ #include <strstream.h>
+@@ -468,7 +468,7 @@ DtTtSetLabel(
+ )
+ {
+     Tt_status status = tt_ptr_error( val );
+-    ostrstream errStream;
++    std::ostrstream errStream;
+     errStream << func << " = " << val << " (" << status << ")" << ends;
+     char *label = errStream.str();
+     DtTtSetLabel( labelWidget, label );
+@@ -483,7 +483,7 @@ DtTtSetLabel(
+ 	Tt_status status
+ )
+ {
+-    ostrstream errStream;
++    std::ostrstream errStream;
+     errStream << func << " = " << status << ends;
+     char *label = errStream.str();
+     DtTtSetLabel( labelWidget, label );
+@@ -498,7 +498,7 @@ DtTtSetLabel(
+ 	int returnVal
+ )
+ {
+-    ostrstream errStream;
++    std::ostrstream errStream;
+     errStream << func << " = " << returnVal << ends;
+     char *label = errStream.str();
+     DtTtSetLabel( labelWidget, label );
+@@ -519,7 +519,7 @@ _DtTtChoices(
+ 		return 0;
+ 	}
+ 	for (int i = 0; i < count; i++) {
+-		ostrstream itemStream;
++		std::ostrstream itemStream;
+ 		itemStream << (void *)pPats[ i ];
+ 		char *name = (char *)
+ 			tt_pattern_user( *pPats[ i ], _DtTtPatsNameKey );
+@@ -566,7 +566,7 @@ _DtTtChoices(
+ 		}
+ 		*itemCount = dtTtMessagesCount;
+ 		for (i = 0; i < dtTtMessagesCount; i++) {
+-			ostrstream itemStream;
++			std::ostrstream itemStream;
+ 			itemStream << (void *)dtTtMessages[ i ];
+ 			char *op = tt_message_op( dtTtMessages[ i ] );
+ 			if (! tt_is_err( tt_ptr_error( op ))) {
+@@ -592,7 +592,7 @@ _DtTtChoices(
+ 		}
+ 		*itemCount = dtTtPatternsCount;
+ 		for (i = 0; i < dtTtPatternsCount; i++) {
+-			ostrstream itemStream;
++			std::ostrstream itemStream;
+ 			itemStream << (void *)dtTtPatterns[ i ] << ends;
+ 			items[ i ] = XmStringCreateLocalized(
+ 					itemStream.str() );
+@@ -636,11 +636,11 @@ _DtOpen(
+ )
+ {
+     char *file = tempnam( 0, AIX_CONST_STRING tempnamTemplate );
+-    ostrstream cmdStream;
++    std::ostrstream cmdStream;
+     cmdStream << cmd << " > " << file << ends;
+     int sysStat = system( cmdStream.str() );
+     if (! WIFEXITED( sysStat )) {
+-	    ostrstream func;
++	    std::ostrstream func;
+ 	    func << "system( \"" << cmdStream.str() << "\" )" << ends;
+ 	    DtTtSetLabel( label, func.str(), sysStat );
+ 	    delete cmdStream.str();
+@@ -662,12 +662,12 @@ _DtOpen(
+ 	const char *	file
+ )
+ {
+-    ostrstream labelStream;
++    std::ostrstream labelStream;
+     labelStream << "dtaction Open " << file << ends;
+     DtTtSetLabel( label, labelStream.str() );
+     delete labelStream.str();
+ 
+-    ostrstream cmd;
++    std::ostrstream cmd;
+     cmd << "( unset TT_TRACE_SCRIPT; if dtaction Open " << file
+ 	<< "; then :; else textedit " << file << "; fi; sleep 600; rm -f "
+ 	<< file << " ) &" << ends;
+@@ -699,12 +699,12 @@ _DtMan(
+ 	const char *	topic
+ )
+ {
+-    ostrstream labelStream;
++    std::ostrstream labelStream;
+     labelStream << "dtaction Dtmanpageview " << topic << ends;
+     DtTtSetLabel( label, labelStream.str() );
+     delete labelStream.str();
+ 
+-    ostrstream cmd;
++    std::ostrstream cmd;
+     cmd << "unset TT_TRACE_SCRIPT; if dtaction Dtmanpageview " << topic
+ 	<< "; then :; else cmdtool -c man " << topic << "; fi &" << ends;
+     system( cmd.str() );

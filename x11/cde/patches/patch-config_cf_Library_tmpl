@@ -1,0 +1,11 @@
+$OpenBSD$
+--- config/cf/Library.tmpl.orig	Mon Aug  6 21:48:17 2012
++++ config/cf/Library.tmpl	Mon Aug  6 21:48:38 2012
+@@ -79,6 +79,7 @@ CDEBUGFLAGS = LibraryCDebugFlags
+    CXXOPTIONS = LibraryCplusplusOptions
+   STD_DEFINES = LibraryDefines $(PROJECT_DEFINES)
+ CXXDEBUGFLAGS = LibraryCplusplusDebugFlags
++       CXXLIB = CplusplusLibC
+ # if defined(LargePICTable) && LargePICTable
+ #  ifdef LargePositionIndependentCplusplusFlags
+   CXXPICFLAGS = LargePositionIndependentCplusplusFlags

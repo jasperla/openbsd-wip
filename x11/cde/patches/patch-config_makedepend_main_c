@@ -1,0 +1,12 @@
+$OpenBSD$
+--- config/makedepend/main.c.orig	Mon Aug  6 17:35:57 2012
++++ config/makedepend/main.c	Mon Aug  6 17:36:05 2012
+@@ -499,7 +499,7 @@ match(str, list)
+  * Get the next line.  We only return lines beginning with '#' since that
+  * is all this program is ever interested in.
+  */
+-char *getline(filep)
++char *our_getline(filep)
+ 	register struct filepointer	*filep;
+ {
+ 	register char	*p,	/* walking pointer */

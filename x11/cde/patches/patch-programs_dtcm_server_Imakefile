@@ -1,0 +1,12 @@
+$OpenBSD$
+--- programs/dtcm/server/Imakefile.orig	Tue Aug  7 15:56:49 2012
++++ programs/dtcm/server/Imakefile	Tue Aug  7 15:56:55 2012
+@@ -30,7 +30,7 @@ LOCAL_LIBRARIES = $(CSALIB) $(DTWIDGETLIB) $(DTHELPLIB
+ 
+  OSMAJORVERSION = OSMajorVersion
+  OSMINORVERSION = OSMinorVersion
+-        DEFINES = -DREL="$(OSMAJORVERSION)$(OSMINORVERSION)" -DSVR4 \
++        DEFINES = -DREL="$(OSMAJORVERSION)$(OSMINORVERSION)" \
+                   -DRELMAJOR="$(OSMAJORVERSION)" \
+                   -DRELMINOR="$(OSMINORVERSION)"
+ 

@@ -1,0 +1,25 @@
+$OpenBSD$
+--- programs/dtfile/Find.c.orig	Tue Aug  7 14:37:01 2012
++++ programs/dtfile/Find.c	Tue Aug  7 14:38:59 2012
+@@ -1811,7 +1811,7 @@ ExecuteFind(
+    if (access_priv == -1 && geteuid() != root_user)
+    {
+ #else
+-#  if defined(__hp_osf) || defined(__ultrix) || defined(__osf__) || defined(linux)
++#  if defined(__hp_osf) || defined(__ultrix) || defined(__osf__) || defined(linux) || defined(CSRG_BASED)
+    setreuid(geteuid(),-1);
+    if (access ((char *) path, R_OK) == -1)
+    {
+@@ -1908,10 +1908,10 @@ ExecuteFind(
+ #ifdef __osf__
+    oldSig = signal(SIGCHLD, sigchld_handler);
+ #else
+-   oldSig = signal(SIGCLD, SIG_DFL);
++   oldSig = signal(SIGCHLD, SIG_DFL);
+ #endif /* __osf__ */
+    find_rec->popenId = findpopen(command, "r",&(find_rec->childpid));
+-   signal (SIGCLD, oldSig);
++   signal (SIGCHLD, oldSig);
+ 
+    if (find_rec->popenId == NULL)
+    {

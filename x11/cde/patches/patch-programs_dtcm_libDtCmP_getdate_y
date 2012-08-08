@@ -1,0 +1,12 @@
+$OpenBSD$
+--- programs/dtcm/libDtCmP/getdate.y.orig	Tue Aug  7 15:36:37 2012
++++ programs/dtcm/libDtCmP/getdate.y	Tue Aug  7 15:52:28 2012
+@@ -65,7 +65,7 @@ static  char sccsid[] = "@(#)getdate.y 1.10 94/11/07 C
+ #define STANDARD 2
+ #define MAYBE    3
+ 
+-extern long timezone;
++extern long our_timezone;
+ 
+ %}
+ 

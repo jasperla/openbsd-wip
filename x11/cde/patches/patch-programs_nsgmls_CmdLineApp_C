@@ -1,0 +1,21 @@
+$OpenBSD$
+--- programs/nsgmls/CmdLineApp.C.orig	Wed Aug  8 00:07:48 2012
++++ programs/nsgmls/CmdLineApp.C	Wed Aug  8 00:29:40 2012
+@@ -58,7 +58,7 @@
+ 
+ #include "ConsoleOutput.h"
+ 
+-#if defined(linux)
++#if defined(linux) || defined(CSRG_BASED)
+ #include <iostream>
+ #include <fstream>
+ using namespace std;
+@@ -292,7 +292,7 @@ Boolean CmdLineApp::openFilebufWrite(filebuf &file,
+     return 0;
+   return file.attach(fd) != 0;
+ #else
+-#if defined(linux)
++#if defined(linux) || defined(CSRG_BASED)
+   return file.open(filename, ios::out|ios::trunc) != 0;
+ #else
+   return file.open(filename, ios::out|ios::trunc|IOS_BINARY) != 0;

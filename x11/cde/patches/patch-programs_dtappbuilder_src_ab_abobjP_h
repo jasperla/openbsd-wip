@@ -1,0 +1,13 @@
+$OpenBSD$
+--- programs/dtappbuilder/src/ab/abobjP.h.orig	Tue Aug  7 20:07:42 2012
++++ programs/dtappbuilder/src/ab/abobjP.h	Tue Aug  7 20:08:01 2012
+@@ -47,7 +47,9 @@
+ #define _ABOBJ_P_H_
+ 
+ 
++#if !defined(CSRG_BASED)
+ #include <values.h>
++#endif
+ 
+ #include <ab_private/abobj.h>
+ #include <ab_private/abobj_set.h>

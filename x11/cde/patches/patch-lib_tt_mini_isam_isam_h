@@ -1,0 +1,14 @@
+$OpenBSD$
+--- lib/tt/mini_isam/isam.h.orig	Mon Aug  6 18:50:53 2012
++++ lib/tt/mini_isam/isam.h	Mon Aug  6 18:51:03 2012
+@@ -57,8 +57,8 @@ extern long ldlong();
+ extern float ldfloat();
+ extern double lddbl();
+ extern short ldshort();
+-extern ldchar(), stchar(), stlong(), stint(), stdbl(), stfloat();
+-extern stbin(), ldbin();
++extern int ldchar(), stchar(), stlong(), stint(), stdbl(), stfloat();
++extern int stbin(), ldbin();
+ 
+ extern int	iserrno;		     /* isam error number code */
+ extern long	isrecnum;		     /* record number of last call */
