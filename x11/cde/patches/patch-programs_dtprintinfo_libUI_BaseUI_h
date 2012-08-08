@@ -1,0 +1,12 @@
+$OpenBSD$
+--- programs/dtprintinfo/libUI/BaseUI.h.orig	Tue Aug  7 20:17:42 2012
++++ programs/dtprintinfo/libUI/BaseUI.h	Tue Aug  7 20:17:54 2012
+@@ -40,7 +40,7 @@
+   #define boolean boolean_t
+   #define true B_TRUE
+   #define false B_FALSE
+-#elif defined(linux)
++#elif defined(linux) || defined(CSRG_BASED)
+   #define false 0
+   #define true 0
+   #define boolean int

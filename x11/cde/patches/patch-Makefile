@@ -1,0 +1,17 @@
+$OpenBSD$
+--- Makefile.orig	Mon Aug  6 20:22:25 2012
++++ Makefile	Mon Aug  6 20:22:49 2012
+@@ -52,13 +52,10 @@ World:
+ 	;; esac;
+ 	@date
+ 	@echo ""
+-	cd $(IMAKESRC) && $(MAKE) $(FLAGS) clean
+ 	$(MAKE) $(MFLAGS) Makefile.boot
+ 	$(MAKE_CMD) $(MFLAGS) VerifyOS
+ 	$(MAKE_CMD) $(MFLAGS) Makefiles
+ 	$(MAKE_CMD) $(MFLAGS) Makefiles.doc
+-	$(MAKE_CMD) $(MFLAGS) clean
+-	$(MAKE_CMD) $(MFLAGS) clean.doc
+ 	$(MAKE_CMD) $(MFLAGS) includes
+ 	$(MAKE_CMD) $(MFLAGS) includes.doc
+ 	$(MAKE_CMD) $(MFLAGS) depend

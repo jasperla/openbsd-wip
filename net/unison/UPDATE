@@ -1,0 +1,2 @@
+* bump version of snapshot to 2.45.4
+* replace MODOCAML_NATIVE by ocaml_native PROPERTY

@@ -1,0 +1,21 @@
+$OpenBSD$
+--- programs/dtsession/SmGlobals.c.orig	Tue Aug  7 15:14:38 2012
++++ programs/dtsession/SmGlobals.c	Tue Aug  7 15:15:55 2012
+@@ -1352,7 +1352,7 @@ RemoveFiles(
+ 
+         _DtEnvControl(DT_ENV_RESTORE_PRE_DT);
+         
+-#ifdef __osf__
++#if defined(__osf__) || defined(CSRG_BASED)
+         setsid();
+ #else
+         (void) setpgrp();
+@@ -1457,7 +1457,7 @@ MoveDirectory(
+ 
+         _DtEnvControl(DT_ENV_RESTORE_PRE_DT);
+         
+-#ifdef __osf__
++#if defined(__osf__) || defined(CSRG_BASED)
+         setsid();
+ #else
+         (void) setpgrp();

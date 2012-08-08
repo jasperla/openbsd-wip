@@ -1,0 +1,3 @@
+* bump version to 1.10
+* use new PROPERTY ocaml_native
+* patch Makefile / config.sh to respect environment variables

@@ -1,0 +1,13 @@
+$OpenBSD$
+XXX
+--- lib/DtTerm/TermPrim/TermPrimGetPty-bsd.c.orig	Tue Aug  7 00:53:58 2012
++++ lib/DtTerm/TermPrim/TermPrimGetPty-bsd.c	Tue Aug  7 01:01:12 2012
+@@ -254,7 +254,7 @@ GetPty(char **ptySlave, char **ptyMaster)
+ 			     * name for the tty that everyone else will
+ 			     * use...
+ 			     */
+-			    if (c1 = _XTtyname(ttyFd, tty_buf)) {
++			    if (c1 = _XTtyname(ttyFd)) {
+ 				ttyDev = realloc(ttyDev, strlen(c1) + 1);
+ 				(void) strcpy(ttyDev, c1);
+ 			    }

@@ -1,0 +1,20 @@
+$OpenBSD$
+--- programs/nsgmls/Imakefile.orig	Tue Aug  7 23:50:24 2012
++++ programs/nsgmls/Imakefile	Wed Aug  8 00:02:41 2012
+@@ -77,14 +77,14 @@ STLIBCENV =
+ M4 = /bin/m4
+ #endif
+ 
+-#if defined(LinuxArchitecture)
++#if defined(LinuxArchitecture) || defined(OpenBSDArchitecture)
+ 
+ /*
+  * put cpp directives here rather than in CXXDEFINES because
+  * for some reason the CXXDEFINES aren't passed to the link phase
+  * but they are needed there to instantiate templates
+  */
+-CXXOPTIONS = \
++CCOPTIONS = \
+   -DSP_VOLATILE=volatile -DSP_CONST=const -DSP_ANSI_CLASS_INST \
+   -DSP_HAVE_LOCALE -DSP_MULTI_BYTE -DSP_MANUAL_INST -fno-implicit-templates
+ 

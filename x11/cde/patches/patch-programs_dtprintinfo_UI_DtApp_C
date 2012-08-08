@@ -1,0 +1,37 @@
+$OpenBSD$
+--- programs/dtprintinfo/UI/DtApp.C.orig	Tue Aug  7 20:21:06 2012
++++ programs/dtprintinfo/UI/DtApp.C	Tue Aug  7 20:28:20 2012
+@@ -324,16 +324,16 @@ void DtApp::SaveYourSelf()
+ 
+    save_state = true;
+ 
+-   char *value = window->setPrefD->ShowOnlyMyJobs() ? "1" : "0";
++   char *value = window->setPrefD->ShowOnlyMyJobs() ? (char *)"1" : (char *)"0";
+    Save("ShowOnlyMine", value);
+ 
+-   value = window->setPrefD->ShowStatusLine() ? "1" : "0";
++   value = window->setPrefD->ShowStatusLine() ? (char *)"1" : (char *)"0";
+    Save("ShowMessageLine", value);
+ 
+-   value = window->setPrefD->ShowDetailsLabel() ? "1" : "0";
++   value = window->setPrefD->ShowDetailsLabel() ? (char *)"1" : (char *)"0";
+    Save("ShowDetailsLabel", value);
+ 
+-   value = window->setPrefD->ShowStatusFlags() ? "1" : "0";
++   value = window->setPrefD->ShowStatusFlags() ? (char *)"1" : (char *)"0";
+    Save("ShowProblemFlag", value);
+ 
+    char interval[9];
+@@ -357,10 +357,10 @@ void DtApp::SaveYourSelf()
+       queues = (DtPrinterIcon **) window->container->Children();
+       for (i = 0; i < window->container->NumChildren(); i++)
+        {
+-	 value = queues[i]->Visible() ? "1" : "0";
++	 value = queues[i]->Visible() ? (char *)"1" : (char *)"0";
+ 	 sprintf(attribute, "%s.Visible", queues[i]->QueueObj()->Name());
+ 	 Save(attribute, value);
+-	 value = queues[i]->Open() ? "1" : "0";
++	 value = queues[i]->Open() ? (char *)"1" : (char *)"0";
+ 	 sprintf(attribute, "%s.Open", queues[i]->QueueObj()->Name());
+ 	 Save(attribute, value);
+        }

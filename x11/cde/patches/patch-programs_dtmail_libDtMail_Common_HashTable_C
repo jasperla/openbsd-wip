@@ -1,0 +1,53 @@
+$OpenBSD$
+--- programs/dtmail/libDtMail/Common/HashTable.C.orig	Tue Aug  7 09:22:47 2012
++++ programs/dtmail/libDtMail/Common/HashTable.C	Tue Aug  7 09:25:45 2012
+@@ -78,13 +78,14 @@ void *
+ HashTableImpl::lookup(ObjectKey & key)
+ {
+     short hash_key = key.hashValue();
++    HashEntry *chain;
+ 
+     int slot = hash_key % _table_size;
+ 
+     // Search the slot looking for the value. Return NULL if there
+     // are no objects matching this key.
+     //
+-    for (HashEntry * chain = &_hash_table[slot]; chain; chain = chain->next) {
++    for (chain = &_hash_table[slot]; chain; chain = chain->next) {
+ 	if (chain->key && key == *(chain->key)) {
+ 	    break;
+ 	}
+@@ -102,6 +103,7 @@ HashTableImpl::set(ObjectKey & key, void * value)
+ {
+     short hash_key = key.hashValue();
+     int slot = hash_key % _table_size;
++    HashEntry *chain;
+ 
+     // See if we have already filled the slot.
+     //
+@@ -116,7 +118,7 @@ HashTableImpl::set(ObjectKey & key, void * value)
+     // We either have a collision or a duplicate. In the case of duplicates
+     // we simply replace the value.
+     //
+-    for (HashEntry * chain = &_hash_table[slot]; chain->next; chain = chain->next) {
++    for (chain = &_hash_table[slot]; chain->next; chain = chain->next) {
+ 	// If this item is already stored then update the value.
+ 	//
+ 	if (key == *(chain->key)) {
+@@ -139,6 +141,7 @@ HashTableImpl::remove(ObjectKey & key)
+     short hash_val = key.hashValue();
+     int slot = hash_val % _table_size;
+     void * removed_val = NULL;
++    HashEntry *chain;
+ 
+     // See if we even have this object.
+     //
+@@ -151,7 +154,7 @@ HashTableImpl::remove(ObjectKey & key)
+     // Try to find it in the chain.
+     //
+     HashEntry * last = NULL;
+-    for (HashEntry * chain = &_hash_table[slot]; chain; chain = chain->next) {
++    for (chain = &_hash_table[slot]; chain; chain = chain->next) {
+ 	if (key == *(chain->key)) {
+ 	    break;
+ 	}

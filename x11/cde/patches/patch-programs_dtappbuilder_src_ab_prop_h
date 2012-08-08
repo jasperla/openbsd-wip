@@ -1,0 +1,13 @@
+$OpenBSD$
+--- programs/dtappbuilder/src/ab/prop.h.orig	Tue Aug  7 20:06:35 2012
++++ programs/dtappbuilder/src/ab/prop.h	Tue Aug  7 20:11:05 2012
+@@ -47,7 +47,9 @@
+ #define _PROPS_H_
+ 
+ #include <X11/Intrinsic.h>
++#if !defined(CSRG_BASED)
+ #include <values.h>
++#endif
+ #include <limits.h>
+ #include <ab_private/obj.h>
+ #include <ab_private/pal.h>

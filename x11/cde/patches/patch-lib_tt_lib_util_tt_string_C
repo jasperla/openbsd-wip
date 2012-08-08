@@ -1,0 +1,20 @@
+$OpenBSD$
+--- lib/tt/lib/util/tt_string.C.orig	Mon Aug  6 19:28:39 2012
++++ lib/tt/lib/util/tt_string.C	Mon Aug  6 19:29:15 2012
+@@ -54,7 +54,7 @@
+ #endif
+ #include <stdlib.h>
+ #include <ctype.h>
+-#if defined(linux)
++#if defined(linux) || defined(CSRG_BASED)
+ #include <wctype.h>
+ #endif
+ #include "util/tt_string.h"
+@@ -1073,6 +1073,7 @@ _tt_xdr_decode(xdrproc_t xdr_fn, void *data, _Tt_strin
+ /* 
+  * XDR encode or decode a _Tt_string
+  */
++int
+ tt_xdr_string(XDR *xdrs, _Tt_string *s)
+ {
+ 	return(s->xdr(xdrs));

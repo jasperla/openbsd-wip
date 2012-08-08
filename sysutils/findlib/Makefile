@@ -23,9 +23,13 @@ CONFIGURE_ARGS=	-with-toolbox \
 		-sitelib "/usr/local/lib/ocaml" \
 		-config ${PREFIX}/share/examples/findlib/findlib.conf
 
-ALL_TARGET=	all ${MODOCAML_NATIVE:S,Yes,all opt,:S,No,,}
+USE_GMAKE=	Yes
 FAKE_FLAGS=	prefix=${DESTDIR}
 
-USE_GMAKE=	Yes
+ALL_TARGET=	all
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mocaml_native}
+ALL_TARGET +=	opt
+.endif
 
 .include <bsd.port.mk>

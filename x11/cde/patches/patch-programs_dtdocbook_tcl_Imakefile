@@ -1,0 +1,31 @@
+$OpenBSD$
+--- programs/dtdocbook/tcl/Imakefile.orig	Tue Aug  7 22:19:54 2012
++++ programs/dtdocbook/tcl/Imakefile	Tue Aug  7 22:37:19 2012
+@@ -14,6 +14,9 @@ XCOMM Directory from which applications will reference
+ XCOMM scripts (note: you can set the TCL_LIBRARY environment variable at
+ XCOMM run-time to override this value):
+ TCL_LIBRARY =	$(prefix)/lib/tcl$(VERSION)
++#ifdef OpenBSDArchitecture
++TCL_LIBRARY =	TclLibrary
++#endif
+ 
+ #ifdef SunArchitecture
+ EXTRA_DEFINES = -DTCL_LIBRARY=\"${TCL_LIBRARY}\" \
+@@ -31,10 +34,17 @@ EXTRA_DEFINES = -DTCL_LIBRARY=\"${TCL_LIBRARY}\" \
+ 	-DTCL_GOT_TIMEZONE -DTIME_WITH_SYS_TIME
+ 
+ #   else
++#     ifdef OpenBSDArchitecture
+ EXTRA_DEFINES = -DTCL_LIBRARY=\"${TCL_LIBRARY}\" \
++	-DNO_UNION_WAIT -DHAVE_UNISTD_H \
++	-DTCL_GOT_TIMEZONE
++
++#     else
++EXTRA_DEFINES = -DTCL_LIBRARY=\"${TCL_LIBRARY}\" \
+ 	-DNO_UNION_WAIT -DHAVE_UNISTD_H -DNEED_MATHERR \
+ 	-DTCL_GOT_TIMEZONE
+ 
++#     endif
+ #   endif
+ # endif
+ #endif

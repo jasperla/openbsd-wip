@@ -1,0 +1,21 @@
+$OpenBSD$
+--- lib/tt/bin/ttdbserverd/db_server_svc.C.orig	Mon Aug  6 22:01:01 2012
++++ lib/tt/bin/ttdbserverd/db_server_svc.C	Mon Aug  6 22:02:22 2012
+@@ -266,7 +266,7 @@ main(int argc, char** argv, char **envp)
+ // have TIRPC yet.
+ 
+         signal(SIGTTOU, SIG_IGN);
+-	if (getsockname(0, (struct sockaddr *) &saddr, &asize) == 0) {
++	if (getsockname(0, (struct sockaddr *) &saddr, (socklen_t *)&asize) == 0) {
+ 	
+ 		//  We were given a socket.  This means  we were started
+ 		// from inetd.
+@@ -484,7 +484,7 @@ main(int argc, char** argv, char **envp)
+ 		if (!_tt_debug_mode) {
+ 			if (0!=fork()) exit(0);
+ 
+-#ifdef __osf__
++#if defined(__osf__) || defined(CSRG_BASED)
+ 			setsid();
+ #else
+  			setpgrp();

@@ -1,0 +1,12 @@
+$OpenBSD$
+--- programs/dtappbuilder/src/libAButil/istr.h.orig	Sun Aug  5 00:16:08 2012
++++ programs/dtappbuilder/src/libAButil/istr.h	Tue Aug  7 20:04:31 2012
+@@ -272,7 +272,7 @@ extern ISTR_PRIVT_STRN	*istrP_int_array1809065681PrivD
+ #define istr_string_safe(s) ((s) == NULL? Istr_null_string:istr_string(s))
+ 
+ #define istrP_get_string_fast3718930164PrivF(istring) \
+-    (istrP_int_array1809065681PrivD[((int)istring)].str)
++    ((istring)==NULL ? Istr_null_string : (istrP_int_array1809065681PrivD[((long)istring)].str))
+ 
+ /* istr_string - if debugging is turned on, checks ISTRINGS for validity */
+ #ifdef DEBUG

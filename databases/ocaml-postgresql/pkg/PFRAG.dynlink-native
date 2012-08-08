@@ -1,0 +1,2 @@
+@comment $OpenBSD: $
+@bin lib/ocaml/postgresql/postgresql.cmxs

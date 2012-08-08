@@ -1,0 +1,61 @@
+$OpenBSD$
+--- programs/dtmail/MotifApp/MenuBar.C.orig	Tue Aug  7 10:02:40 2012
++++ programs/dtmail/MotifApp/MenuBar.C	Tue Aug  7 10:03:43 2012
+@@ -191,22 +191,22 @@ MenuBar::createPulldown ( 
+ 			helpId = XtName(*cascade);
+ 			if (helpId == "Mailbox") {
+ 				XtAddCallback(*cascade, XmNhelpCallback, 
+-				HelpCB, DTMAILCONTAINERMENUID);
++				HelpCB, (void *)DTMAILCONTAINERMENUID);
+ 			} else if (helpId == "Edit") {
+ 				XtAddCallback(*cascade, XmNhelpCallback, 
+-					HelpCB, DTMAILEDITMENUID);
++					HelpCB, (void *)DTMAILEDITMENUID);
+ 			} else if (helpId == "Message") {
+ 				XtAddCallback(*cascade, XmNhelpCallback, 
+-					HelpCB, DTMAILMESSAGEMENUID);
++					HelpCB, (void *)DTMAILMESSAGEMENUID);
+ 			} else if (helpId == "Attachments") {
+ 				XtAddCallback(*cascade, XmNhelpCallback, 
+-					HelpCB, DTMAILATTACHMENUID);
++					HelpCB, (void *)DTMAILATTACHMENUID);
+ 			} else if (helpId == "View") {
+ 				XtAddCallback(*cascade, XmNhelpCallback, 
+-					HelpCB, DTMAILVIEWMENUID);
++					HelpCB, (void *)DTMAILVIEWMENUID);
+ 			} else if (helpId == "Compose") {
+ 				XtAddCallback(*cascade, XmNhelpCallback, 
+-					HelpCB, DTMAILCOMPOSEMENUID);
++					HelpCB, (void *)DTMAILCOMPOSEMENUID);
+ 			}
+ 		}
+      } else
+@@ -323,22 +323,22 @@ MenuBar::createPulldown ( 
+ 		helpId = XtName(cascade);
+ 		if (helpId == "Mailbox") {
+ 			XtAddCallback(cascade, XmNhelpCallback, 
+-				HelpCB, DTMAILCONTAINERMENUID);
++				HelpCB, (void *)DTMAILCONTAINERMENUID);
+ 		} else if (helpId == "Edit") {
+ 			XtAddCallback(cascade, XmNhelpCallback, 
+-				HelpCB, DTMAILEDITMENUID);
++				HelpCB, (void *)DTMAILEDITMENUID);
+ 		} else if (helpId == "Message") {
+ 			XtAddCallback(cascade, XmNhelpCallback, 
+-				HelpCB, DTMAILMESSAGEMENUID);
++				HelpCB, (void *)DTMAILMESSAGEMENUID);
+ 		} else if (helpId == "Attachments") {
+ 			XtAddCallback(cascade, XmNhelpCallback, 
+-				HelpCB, DTMAILATTACHMENUID);
++				HelpCB, (void *)DTMAILATTACHMENUID);
+ 		} else if (helpId == "View") {
+ 			XtAddCallback(cascade, XmNhelpCallback, 
+-				HelpCB, DTMAILVIEWMENUID);
++				HelpCB, (void *)DTMAILVIEWMENUID);
+ 		} else if (helpId == "Compose") {
+ 			XtAddCallback(cascade, XmNhelpCallback, 
+-				HelpCB, DTMAILCOMPOSEMENUID);
++				HelpCB, (void *)DTMAILCOMPOSEMENUID);
+ 		}
+      } else
+ 		pulldown = _w;

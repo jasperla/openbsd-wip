@@ -1,0 +1,16 @@
+$OpenBSD$
+--- programs/dtmail/libDtMail/RFC/V3BodyPart.C.orig	Tue Aug  7 09:58:21 2012
++++ programs/dtmail/libDtMail/RFC/V3BodyPart.C	Tue Aug  7 09:58:41 2012
+@@ -328,9 +328,11 @@ V3BodyPart::checksum(DtMailEnv & error)
+ static int
+ countTypes(char ** types)
+ {
++    int count;
++
+     if (NULL == types) return 0;
+ 
+-    for (int count = 0; *types; types++, count++) {
++    for (count = 0; *types; types++, count++) {
+ 	continue;
+     }
+ 

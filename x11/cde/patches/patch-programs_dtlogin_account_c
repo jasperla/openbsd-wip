@@ -1,0 +1,35 @@
+$OpenBSD$
+--- programs/dtlogin/account.c.orig	Sun Aug  5 00:16:08 2012
++++ programs/dtlogin/account.c	Wed Aug  8 10:55:11 2012
+@@ -138,6 +138,7 @@ Account( struct display *d, char *user, char *line, pi
+ #endif /* NeedWidePrototypes */
+         waitType exitcode )
+ {
++#if !defined(CSRG_BASED) /* we cannot do this on BSD ... */
+     struct utmp utmp;		/* local struct for new entry	   	   */
+     struct utmp *u;		/* pointer to entry in utmp file	   */
+     int	fd;
+@@ -348,6 +349,7 @@ Account( struct display *d, char *user, char *line, pi
+ #endif
+ 
+ #endif /* !sun */
++#endif /* !CSRG_BASED */
+ }
+ 
+ 
+@@ -369,6 +371,7 @@ UtmpIdOpen( char *utmpId )
+     struct utmp *u;		/* pointer to entry in utmp file	   */
+     int    status = 1;		/* return code				   */
+ 
++#if !defined(CSRG_BASED)
+     while ( (u = getutent()) != NULL ) {
+ 
+ 	if ( (strncmp(u->ut_id, utmpId, 4) == 0 ) &&
+@@ -380,6 +383,7 @@ UtmpIdOpen( char *utmpId )
+     }
+     
+     endutent();
++#endif
+     return (status);
+ }
+ 

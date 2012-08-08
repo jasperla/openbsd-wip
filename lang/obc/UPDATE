@@ -1,0 +1,3 @@
+* should be buildable on every 32bit arch (but not tested yet!)
+* -m32 does not make sense on 32bit archs
+  (does this make any sense on any arch on OpenBSD ?!

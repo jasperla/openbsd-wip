@@ -1,0 +1,12 @@
+$OpenBSD$
+--- programs/dtterm/util/logger.c.orig	Tue Aug  7 15:20:30 2012
++++ programs/dtterm/util/logger.c	Tue Aug  7 15:20:43 2012
+@@ -71,7 +71,7 @@ main(int argc, char **argv)
+     }
+ 
+     /* init data... */
+-#if defined(USL) || defined(__uxp__) || defined(linux)
++#if defined(USL) || defined(__uxp__) || defined(linux) || defined(CSRG_BASED)
+     (void) memset((void *) &myaddr_in, (int) '\0', sizeof(myaddr_in));
+ #else
+     (void) memset(myaddr_in, '\0', sizeof(myaddr_in));

@@ -1,0 +1,21 @@
+$OpenBSD$
+--- config/makedepend/parse.c.orig	Mon Aug  6 17:36:09 2012
++++ config/makedepend/parse.c	Mon Aug  6 17:36:19 2012
+@@ -56,7 +56,7 @@ gobble(filep, file, file_red)
+ 	register char	*line;
+ 	register int	type;
+ 
+-	while (line = getline(filep)) {
++	while (line = our_getline(filep)) {
+ 		switch(type = deftype(line, filep, file_red, file, FALSE)) {
+ 		case IF:
+ 		case IFFALSE:
+@@ -544,7 +544,7 @@ find_includes(filep, file, file_red, recursion, failOK
+ 	register int	type;
+ 	boolean recfailOK;
+ 
+-	while (line = getline(filep)) {
++	while (line = our_getline(filep)) {
+ 		switch(type = deftype(line, filep, file_red, file, TRUE)) {
+ 		case IF:
+ 		doif:

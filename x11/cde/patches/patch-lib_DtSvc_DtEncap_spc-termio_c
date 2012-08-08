@@ -1,0 +1,28 @@
+$OpenBSD$
+--- lib/DtSvc/DtEncap/spc-termio.c.orig	Sun Aug  5 00:16:08 2012
++++ lib/DtSvc/DtEncap/spc-termio.c	Wed Aug  8 10:54:18 2012
+@@ -36,7 +36,7 @@
+ #include <bms/stringbuf.h>
+ 
+ #include <termios.h>
+-#if !defined(linux)
++#if !defined(linux) && !defined(CSRG_BASED)
+ #include <sys/termio.h>
+ #endif
+ #include <codelibs/stringx.h>
+@@ -145,6 +145,7 @@ static struct modes_s Output_modes[] = {    
+     "OCRNL",	OCRNL,
+     "ONOCR",	ONOCR,
+     "ONLRET",	ONLRET,
++#if !defined(CSRG_BASED)
+     "OFILL",	OFILL,
+     "OFDEL",	OFDEL,
+     "NLDLY",	NLDLY,
+@@ -169,6 +170,7 @@ static struct modes_s Output_modes[] = {    
+     "FFDLY",	FFDLY,
+     "FF0",	FF0,
+     "FF1",	FF1,
++#endif
+     END_OF_LIST, 0
+ };
+ 
