@@ -1,0 +1,21 @@
+$OpenBSD$
+--- lib/DtSvc/DtUtil2/XlationSvc.c.orig	Sun Aug  5 00:16:08 2012
++++ lib/DtSvc/DtUtil2/XlationSvc.c	Wed Aug  8 08:05:15 2012
+@@ -2197,7 +2197,7 @@ int _DtXlateGetXlateEnv(
+    /* then look up version number of execution host */
+    if (ret_AppExecEnvVersion) 
+    {
+-#if defined(sun) || defined(_AIX) || defined(USL) || defined(__uxp__) || defined(__osf__) || defined(linux)
++#if defined(sun) || defined(_AIX) || defined(USL) || defined(__uxp__) || defined(__osf__) || defined(linux) || defined(CSRG_BASED)
+       char version[SYS_NMLN+SYS_NMLN+2];
+ #else
+       char version[UTSLEN+UTSLEN+2];
+@@ -2250,7 +2250,7 @@ int _DtXlateGetXlateEnv(
+ #error OSMAJORVERSION and/or OSMINORVERSION not defined
+ #endif
+ 
+-#if defined(linux)
++#if defined(linux) || defined(CSRG_BASED)
+       sprintf(buf,"%s%s%s", STR(OSMAJORVERSION), 
+                      nl_langinfo('.'), STR(OSMINORVERSION));
+ #else

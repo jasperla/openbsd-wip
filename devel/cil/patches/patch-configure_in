@@ -1,0 +1,26 @@
+$OpenBSD: patch-configure_in,v 1.7 2009/03/11 21:20:27 avsm Exp $
+--- configure.in.orig	Mon Feb  5 21:10:29 2007
++++ configure.in	Thu Nov 27 12:26:42 2008
+@@ -80,7 +80,7 @@ binaryExists() {
+ # this specifies the root of the source tree; it's just the
+ # directory where ./configure runs, except on cygwin, which
+ # overrides this below
+-CILHOME=`pwd`
++CILHOME=${LOCALBASE}
+ 
+ DEFAULT_COMPILER=_GNUCC
+ DEFAULT_CIL_MODE=GNUCC
+@@ -408,6 +408,13 @@ case "$target" in
+ 
+   *86*linux*)
+     AC_MSG_RESULT(configuring for linux/x86)
++
++    ARCHOS=x86_LINUX
++    ;;
++
++   # openbsd
++  *openbsd*)
++    AC_MSG_RESULT(configuring for OpenBSD)
+ 
+     ARCHOS=x86_LINUX
+     ;;

@@ -46,6 +46,7 @@ lib/ocaml/stdlib/
 lib/ocaml/stdlib/META
 lib/ocaml/str/
 lib/ocaml/str/META
+lib/ocaml/stublibs/
 lib/ocaml/threads/
 lib/ocaml/threads/META
 lib/ocaml/topfind

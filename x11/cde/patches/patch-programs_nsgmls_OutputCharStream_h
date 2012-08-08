@@ -1,0 +1,12 @@
+$OpenBSD$
+--- programs/nsgmls/OutputCharStream.h.orig	Wed Aug  8 00:30:05 2012
++++ programs/nsgmls/OutputCharStream.h	Wed Aug  8 00:30:18 2012
+@@ -33,7 +33,7 @@
+ #include "Owner.h"
+ #include "CodingSystem.h"
+ 
+-#if defined(linux)
++#if defined(linux) || defined(CSRG_BASED)
+ #include <streambuf>
+ using namespace std;
+ #else

@@ -20,7 +20,7 @@ PERMIT_DISTFILES_CDROM =	Yes
 
 MODULES =	lang/ocaml
 
-BUILD_DEPENDS =	${RUN_DEPENDS} sysutils/findlib
+BUILD_DEPENDS =	sysutils/findlib
 WANTLIB =	c curses m pthread
 
 CONFIGURE_STYLE = simple

@@ -1,0 +1,37 @@
+$OpenBSD$
+--- lib/DtTerm/TermPrim/TermPrimSetUtmp.c.orig	Sun Aug  5 00:16:08 2012
++++ lib/DtTerm/TermPrim/TermPrimSetUtmp.c	Tue Aug  7 15:28:55 2012
+@@ -332,6 +332,7 @@ _DtTermPrimUtmpGetUtLine(int pty, char *ptyName)
+ static char *
+ UtmpEntryCreate(Widget w, pid_t pid, char *utmpLine)
+ {
++#if !defined(CSRG_BASED) /* XXX */
+     DtTermPrimitiveWidget tw = (DtTermPrimitiveWidget) w;
+     struct termData *tpd = tw->term.tpd;
+     struct utmp ut;
+@@ -489,6 +490,9 @@ UtmpEntryCreate(Widget w, pid_t pid, char *utmpLine)
+     /* failure... */
+     (void) endutent();
+     return((char *) 0);
++#else /* __OpenBSD__ */
++    return(utmpLine);
++#endif
+ }
+ 
+ /* this is a public wrapper around the previous function that runs the
+@@ -511,6 +515,7 @@ _DtTermPrimUtmpEntryCreate(Widget w, pid_t pid, char *
+ static void
+ UtmpEntryDestroy(Widget w, char *utmpLine)
+ {
++#if !defined(CSRG_BASED)
+     struct utmp ut;
+     struct utmp *utPtr;
+     time_t now;
+@@ -537,6 +542,7 @@ UtmpEntryDestroy(Widget w, char *utmpLine)
+     (void) endutent();
+ 
+     (void) DeleteUtmpInfo(utmpLine);
++#endif /* !__OpenBSD__ */
+ }
+ 
+ /* this is a public wrapper around the previous function that runs the

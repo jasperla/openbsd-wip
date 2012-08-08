@@ -1,0 +1,13 @@
+$OpenBSD$
+--- programs/dtcm/server/insert.c.orig	Tue Aug  7 15:57:52 2012
++++ programs/dtcm/server/insert.c	Tue Aug  7 15:58:11 2012
+@@ -38,7 +38,9 @@
+ #include <string.h>
+ #include <pwd.h>
+ #include <time.h>
++#if !defined(CSRG_BASED)
+ #include <values.h>
++#endif
+ #ifdef SunOS
+ #include <sys/systeminfo.h>
+ #endif

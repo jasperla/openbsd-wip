@@ -1,0 +1,14 @@
+$OpenBSD$
+--- programs/dtfile/Imakefile.orig	Tue Aug  7 13:44:05 2012
++++ programs/dtfile/Imakefile	Tue Aug  7 13:45:04 2012
+@@ -31,6 +31,10 @@ EXTRA_CCOPTIONS = -xF
+ EXTRA_INCLUDES = -I/usr/include/freetype2
+ #endif
+ 
++#if defined(OpenBSDArchitecture)
++EXTRA_INCLUDES = -I$(XPROJECTROOT)/include/freetype2
++#endif
++
+ SRCS =  ChangeDir.c     ChangeDirP.c    Command.c       Common.c \
+         Desktop.c       Directory.c     Encaps.c        File.c \
+         FileDialog.c    FileManip.c     FileMgr.c       FileOp.c \

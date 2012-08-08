@@ -1,0 +1,79 @@
+$OpenBSD$
+--- databases/CDE-SHLIBS.src.orig	Wed Aug  8 09:35:55 2012
++++ databases/CDE-SHLIBS.src	Wed Aug  8 09:40:52 2012
+@@ -1223,3 +1223,75 @@ XCOMM 
+         install_target = /usr/shlib/libDtMmdb.so
+ 	type = sym_link
+ }
++
++
++XCOMM 
++XCOMM 
++XCOMM >>-----------------------------
++XCOMM  openbsd libraries
++XCOMM <<-----------------------------
++XCOMM 
++
++XCOMM 
++lib/DtHelp/libDtHelp.so.%%SHVERSION%%
++{ openbsd
++        install_target = %%PREFIX%%/lib/libDtHelp.so.%%SHVERSION%%
++	mode = 0755
++}
++XCOMM 
++lib/DtPrint/libDtPrint.so.%%SHVERSION%%
++{ openbsd
++        install_target = %%PREFIX%%/lib/libDtPrint.so.%%SHVERSION%%
++	mode = 0755
++}        
++XCOMM 
++lib/DtMrm/libDtMrm.so.%%SHVERSION%%
++{ openbsd
++        install_target = %%PREFIX%%/lib/libDtMrm.so.%%SHVERSION%%
++	mode = 0755
++}        
++XCOMM 
++lib/DtSvc/libDtSvc.so.%%SHVERSION%%
++{ openbsd
++        install_target = %%PREFIX%%/lib/libDtSvc.so.%%SHVERSION%%
++	mode = 0755
++}
++XCOMM 
++lib/DtWidget/libDtWidget.so.%%SHVERSION%%
++{ openbsd
++        install_target = %%PREFIX%%/lib/libDtWidget.so.%%SHVERSION%%
++	mode = 0755
++}        
++XCOMM 
++lib/DtTerm/libDtTerm.so.%%SHVERSION%%
++{ openbsd
++        install_target = %%PREFIX%%/lib/libDtTerm.so.%%SHVERSION%%
++	mode = 0755
++}
++XCOMM 
++lib/tt/lib/libtt.so.%%SHVERSION%%
++{ openbsd
++        install_target = %%PREFIX%%/lib/libtt.so.%%SHVERSION%%
++	mode = 0755
++}
++XCOMM
++lib/csa/libcsa.so.%%SHVERSION%%
++{ openbsd
++	install_target = %%PREFIX%%/lib/libcsa.so.%%SHVERSION%%
++	mode = 0755
++}
++XCOMM 
++lib/DtSearch/libDtSearch.so.%%SHVERSION%%
++{ openbsd
++        install_target = %%PREFIX%%/lib/libDtSearch.so.%%SHVERSION%%
++	mode = 0755
++}
++#if 0 /* JET - not for openbsd (yet) */ 
++XCOMM
++lib/DtMmdb/libDtMmdb.so.%%SHVERSION%%
++{ openbsd
++        install_target = %%PREFIX%%/lib/libDtMmdb.so.%%SHVERSION%%
++	mode = 0755
++}
++XCOMM 
++#endif

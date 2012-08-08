@@ -1,0 +1,12 @@
+$OpenBSD$
+--- programs/dtprintinfo/UI/DtPrinterIcon.h.orig	Tue Aug  7 20:19:44 2012
++++ programs/dtprintinfo/UI/DtPrinterIcon.h	Tue Aug  7 20:20:22 2012
+@@ -59,7 +59,7 @@ class DtPrinterContainer : public Container
+       : Container(category, parent, name, SCROLLED_HORIZONTAL_ROW_COLUMN) { }
+    ~DtPrinterContainer() { delete dnd; }
+ 
+-   boolean DtPrinterContainer::SetVisiblity(boolean flag)
++   boolean SetVisiblity(boolean flag)
+     {
+       Container::SetVisiblity(flag);
+       dnd->UpdateActivity(flag);

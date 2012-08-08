@@ -1,0 +1,82 @@
+$OpenBSD$
+--- programs/dtinfo/tools/misc/msgsets.C.orig	Mon Aug  6 16:54:52 2012
++++ programs/dtinfo/tools/misc/msgsets.C	Mon Aug  6 17:10:26 2012
+@@ -42,7 +42,7 @@
+ #ifdef __cplusplus
+ 
+ #include <stdlib.h>
+-#if !defined(__DECCXX) && !defined(USL)
++#if !defined(__DECCXX) && !defined(USL) && !defined(CSRG_BASED)
+ #include <osfcn.h>
+ #else
+ #include <unistd.h>
+@@ -195,11 +195,12 @@ typedef struct yy_buffer_state *YY_BUFFER_STATE;
+ /*	All Rights Reserved			*/
+ 
+ #include <string.h>
+-#include <strstream.h>
++#include <strstream>
++#include <iostream>
+ 
+ #define BUFFER_INCR_UNIT	64
+ 
+-ostrstream **sets;
++std::ostrstream **sets;
+ int sets_cnt = 0; /* number of sets slots occupied */
+ int sets_max = 0; /* total number of sets slots */
+ 
+@@ -509,14 +510,14 @@ case 1:
+ 
+ 	sets_max += BUFFER_INCR_UNIT;
+ 	if (sets_cnt == 0) {
+-	    sets = (ostrstream **)
+-			malloc(sizeof(ostrstream *) * sets_max);
++	    sets = (std::ostrstream **)
++			malloc(sizeof(std::ostrstream *) * sets_max);
+ 	    set_nums = (int *)
+ 			malloc(sizeof(int) * sets_max);
+ 	}
+ 	else {
+-	    sets = (ostrstream **)
+-			realloc(sets, sizeof(ostrstream *) * sets_max);
++	    sets = (std::ostrstream **)
++			realloc(sets, sizeof(std::ostrstream *) * sets_max);
+ 	    set_nums = (int *)
+ 			realloc(set_nums, sizeof(int) * sets_max);
+ 	}
+@@ -528,7 +529,7 @@ case 1:
+     }
+     if (cur_set >= 0)
+ 	*sets[cur_set] << '\0';
+-    sets[cur_set = sets_cnt++] = new ostrstream;
++    sets[cur_set = sets_cnt++] = new std::ostrstream;
+ 
+     *sets[cur_set] << (char*)yytext;
+ 
+@@ -556,7 +557,7 @@ case 3:
+ case 4:
+ {
+     if (cur_set < 0) { // maybe not a message id
+-	cout << (char*)yytext;
++	std::cout << (char*)yytext;
+     }
+     else { // must be a message id
+ 	*sets[cur_set] << (char*)yytext;
+@@ -581,7 +582,7 @@ case 7:
+ case 8:
+ {
+     if (cur_set < 0)
+-	cout << *(char*)yytext;
++	std::cout << *(char*)yytext;
+     else
+ 	*sets[cur_set] << *(char*)yytext;
+ }
+@@ -1151,7 +1152,7 @@ main()
+ 
+     for (i = 0; i < sets_cnt; i++) {
+ 	const char* record = sets[sorted[i]]->str();
+-	cout << record << '\n' << flush;
++	std::cout << record << '\n' << std::flush;
+     }
+ 
+     free(sorted);

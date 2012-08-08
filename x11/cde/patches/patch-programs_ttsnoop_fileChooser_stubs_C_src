@@ -1,0 +1,39 @@
+$OpenBSD$
+--- programs/ttsnoop/fileChooser_stubs.C.src.orig	Tue Aug  7 21:58:26 2012
++++ programs/ttsnoop/fileChooser_stubs.C.src	Tue Aug  7 21:59:09 2012
+@@ -39,7 +39,7 @@
+ #include <sys/wait.h>
+ #include <Xm/TextF.h>
+ 
+-#if defined(linux)
++#if defined(linux) || defined(CSRG_BASED)
+ #include <fstream>
+ #include <strstream>
+ #else
+@@ -61,7 +61,7 @@ extern XtPointer _XmStringUngenerate (XmString string,
+                         XmTextType output_type);
+ }
+ 
+-extern ofstream snoopStream;
++extern std::ofstream snoopStream;
+ extern int	globalTimeout;
+ 
+ typedef struct _FileChooserInfo {
+@@ -217,7 +217,7 @@ fileOkayed(
+     XtVaGetValues( instance->fchooser, XmNuserData, &xtPtr, 0 );
+     FileChooserInfo *info = (FileChooserInfo *)xtPtr;
+     Widget label = dtb_ttsnoop_ttsnoop_win.ttsnoopWin_label;
+-    ostrstream script;
++    std::ostrstream script;
+     switch (info->choice) {
+ 	    Tt_pattern *pats;
+ 	    Tt_message msg;
+@@ -305,7 +305,7 @@ fileOkayed(
+ 		    break;
+ 	    }
+ 	    if (WEXITSTATUS( ival ) != 0) {
+-		    ostrstream diagnosis;
++		    std::ostrstream diagnosis;
+ 		    diagnosis << "tt_type_comp -p: syntax error in "
+ 			    << path << ends;
+ 		    DtTtSetLabel( label, diagnosis.str() );

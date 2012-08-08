@@ -9,7 +9,16 @@ SHARED_LIBS +=	turbojpeg	0.0
 CATEGORIES =	graphics
 HOMEPAGE =	http://www.libjpeg-turbo.org/
 
-PKGNAME =	jpeg-${V}-turbo
+PKGNAME =	jpeg-${V}
+
+FLAVORS =	turbo
+FLAVOR ?=	turbo
+
+.if ${FLAVOR:Mturbo}
+.else
+ERRORS =	"Fatal: You must select the turbo flavor. This is jpeg-turbo after all."
+.endif
+
 
 # BSD-style
 PERMIT_PACKAGE_CDROM =		Yes

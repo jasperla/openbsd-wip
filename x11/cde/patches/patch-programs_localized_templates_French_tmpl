@@ -1,0 +1,11 @@
+$OpenBSD$
+--- programs/localized/templates/French.tmpl.orig	Tue Aug  7 12:24:55 2012
++++ programs/localized/templates/French.tmpl	Tue Aug  7 12:33:46 2012
+@@ -31,6 +31,6 @@ LANG=fr
+ LANG=fr
+ #endif
+ 
+-#if defined(LinuxArchitecture) || defined(FreeBSDArchitecture)
++#if defined(LinuxArchitecture) || defined(FreeBSDArchitecture) || defined(OpenBSDArchitecture)
+ LANG=fr_FR.ISO8859-1
+ #endif

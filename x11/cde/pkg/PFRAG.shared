@@ -1,0 +1,10 @@
+@comment $OpenBSD$
+@lib lib/libDtHelp.so.${LIBDtHelp_VERSION}
+@lib lib/libDtMrm.so.${LIBDtMrm_VERSION}
+@lib lib/libDtPrint.so.${LIBDtPrint_VERSION}
+@lib lib/libDtSearch.so.${LIBDtSearch_VERSION}
+@lib lib/libDtSvc.so.${LIBDtSvc_VERSION}
+@lib lib/libDtTerm.so.${LIBDtTerm_VERSION}
+@lib lib/libDtWidget.so.${LIBDtWidget_VERSION}
+@lib lib/libcsa.so.${LIBcsa_VERSION}
+@lib lib/libtt.so.${LIBtt_VERSION}

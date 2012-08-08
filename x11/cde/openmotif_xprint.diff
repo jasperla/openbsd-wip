@@ -1,0 +1,66 @@
+Index: Makefile
+===================================================================
+RCS file: /cvs/ports/x11/openmotif/Makefile,v
+retrieving revision 1.51
+diff -u -p -r1.51 Makefile
+--- Makefile	16 Sep 2011 12:29:16 -0000	1.51
++++ Makefile	8 Aug 2012 08:50:54 -0000
+@@ -8,8 +8,8 @@ DISTNAME=		openmotif-${VERSION}
+ PKGNAME-main=		openmotif-${VERSION}
+ PKGNAME-demos=		openmotif-demos-${VERSION}
+ 
+-REVISION-main=		3
+-REVISION-demos= 	2
++REVISION-main=		4
++REVISION-demos= 	3
+ 
+ SHARED_LIBS=		Mrm	4.1	\
+ 			Uil	5.0	\
+@@ -35,10 +35,10 @@ CONFIGURE_STYLE=	gnu
+ CONFIGURE_ARGS=		--enable-themes \
+ 			--enable-xft \
+ 			--enable-jpeg \
+-			--disable-printing \
++			--enable-printing \
+ 			--enable-png
+-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+-			LDFLAGS="-L${LOCALBASE}/lib -lm"
++CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng -I${X11BASE}/include -I${X11BASE}/include/freetype2" \
++			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lm"
+ 
+ USE_LIBTOOL=		Yes
+ 
+@@ -49,14 +49,16 @@ FAKE_FLAGS+=		bindir=${PREFIX}/bin/
+ 
+ MODULES=		converters/libiconv
+ 
++BUILD_DEPENDS=		print/printproto
+ LIB_DEPENDS=		graphics/jpeg \
+-			graphics/png
++			graphics/png \
++			print/libXp
+ LIB_DEPENDS-demos=	x11/openmotif \
+ 			${MODLIBICONV_LIB_DEPENDS} \
+ 			${LIB_DEPENDS}
+-WANTLIB=		ICE SM X11 Xext Xt c Xau Xdmcp Xft Xmu Xrender \
+-			expat fontconfig freetype m z pthread-stubs xcb \
+-			jpeg png
++WANTLIB=		ICE SM X11 Xext Xt c Xau Xft Xmu Xrender \
++			expat fontconfig freetype m z xcb \
++			jpeg png Xp
+ WANTLIB-demos=		${WANTLIB} Xm Mrm
+ 
+ # XXX  Large, complicated, only partially automated test suite available
+Index: pkg/PFRAG.shared-main
+===================================================================
+RCS file: /cvs/ports/x11/openmotif/pkg/PFRAG.shared-main,v
+retrieving revision 1.1
+diff -u -p -r1.1 PFRAG.shared-main
+--- pkg/PFRAG.shared-main	23 Nov 2006 23:30:06 -0000	1.1
++++ pkg/PFRAG.shared-main	8 Aug 2012 08:50:54 -0000
+@@ -1,4 +1,4 @@
+-@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/23 23:30:06 kili Exp $
++@comment $OpenBSD$
+ @lib lib/libMrm.so.${LIBMrm_VERSION}
+ @lib lib/libUil.so.${LIBUil_VERSION}
+ @lib lib/libXm.so.${LIBXm_VERSION}

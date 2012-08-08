@@ -1,0 +1,11 @@
+$OpenBSD$
+--- Imakefile.orig	Mon Aug  6 15:03:02 2012
++++ Imakefile	Mon Aug  6 15:03:08 2012
+@@ -139,7 +139,6 @@ Everything.doc::
+ 
+ NamedTargetSubdirs(install.doc,$(DOCSUBDIRS),"installing",DESTDIR=$(DESTDIR),install)
+ NamedTargetSubdirs(install.man.doc,$(DOCSUBDIRS),"installing man pages",DESTDIR=$(DESTDIR),install.man)
+-InstallLinkKitSubdirs($(DOCSUBDIRS))
+ NamedCleanSubdirs(clean.doc,$(DOCSUBDIRS))
+ NamedTagSubdirs(tags.doc,$(DOCSUBDIRS))
+ MakeMakeSubdirs($(DOCSUBDIRS),Makefiles.doc)

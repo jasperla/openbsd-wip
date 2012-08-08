@@ -1,0 +1,12 @@
+$OpenBSD$
+--- programs/dtlogin/session.c.orig	Tue Aug  7 15:09:35 2012
++++ programs/dtlogin/session.c	Tue Aug  7 15:10:24 2012
+@@ -1290,7 +1290,7 @@ StartClient( struct verify_info *verify, struct displa
+ 	}
+ #endif
+ 
+-#ifndef sun
++#if !defined(sun) && !defined(CSRG_BASED)
+ 	Account(d, user, NULL, getpid(), USER_PROCESS, status);
+ #endif
+ 

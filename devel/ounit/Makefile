@@ -21,14 +21,7 @@ MODULES =		lang/ocaml
 
 BUILD_DEPENDS +=	sysutils/findlib
 
-CONFIGURE_STYLE =	simple
-CONFIGURE_ARGS =	--destdir ${WRKINST}
+CONFIGURE_STYLE =	oasis
 
-MAKE_ENV =		TERM=${TERM}
-
-REGRESS_TARGET =	test
-
-pre-fake:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml
 
 .include <bsd.port.mk>

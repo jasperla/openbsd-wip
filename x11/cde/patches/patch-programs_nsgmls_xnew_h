@@ -1,0 +1,12 @@
+$OpenBSD$
+--- programs/nsgmls/xnew.h.orig	Wed Aug  8 00:25:27 2012
++++ programs/nsgmls/xnew.h	Wed Aug  8 00:25:55 2012
+@@ -39,7 +39,7 @@ void set_new_handler(VFP);
+ 
+ #else /* not SP_NEW_H_MISSING */
+ 
+-#if defined(linux)
++#if defined(linux) || defined(CSRG_BASED)
+ #include <new>
+ #else
+ #include <new.h>

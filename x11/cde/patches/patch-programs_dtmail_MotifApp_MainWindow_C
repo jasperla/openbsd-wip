@@ -1,0 +1,12 @@
+$OpenBSD$
+--- programs/dtmail/MotifApp/MainWindow.C.orig	Tue Aug  7 10:00:44 2012
++++ programs/dtmail/MotifApp/MainWindow.C	Tue Aug  7 10:02:20 2012
+@@ -150,7 +150,7 @@ MainWindow::initialize( )
+     /* install callback */
+     // XtAddCallback(_main, XmNhelpCallback, HelpCB, helpId);
+     XtAddCallback(_main, XmNhelpCallback, 
+-			    HelpCB, "_HOMETOPIC");
++			    HelpCB, (void *)"_HOMETOPIC");
+     
+     // Called derived class to create the work area
+     

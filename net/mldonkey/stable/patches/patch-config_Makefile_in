@@ -1,0 +1,34 @@
+$OpenBSD$
+--- config/Makefile.in.orig	Sun Jul  1 19:47:41 2012
++++ config/Makefile.in	Tue Aug  7 07:54:39 2012
+@@ -633,6 +633,8 @@ uninstall::
+ 	rm -f $(BINDIR)/mlnet
+ 	rm -f $(BINDIR)/mlgui
+ 
++ifeq ("$(OCAML_NATIVE)", "yes")
++
+ install:: opt 
+ 	mkdir -p $(DESTDIR)$(prefix)/bin
+ 	if test -f mlnet; then \
+@@ -652,6 +654,21 @@ install:: opt 
+              done; \
+          fi
+ 
++else
++
++install::
++	cp -f mlnet.byte $(DESTDIR)$(prefix)/bin/mlnet
++	for link in mlslsk mldonkey mlgnut mldc mlbt; do \
++	  ln -s mlnet $(DESTDIR)$(prefix)/bin/$$link; \
++	done
++	cp -f mlgui.byte $(DESTDIR)$(prefix)/bin/mlgui
++	ln -s mlgui $(DESTDIR)$(prefix)/bin/mldonkey_gui
++	cp -f mlnet+gui.byte $(DESTDIR)$(prefix)/bin/mlnet+gui
++	for link in mlslsk+gui mldonkey+gui mlgnut+gui mldc+gui mlbt+gui; do \
++	  ln -s mlnet+gui $(DESTDIR)$(prefix)/bin/$$link; \
++	done
++
++endif
+ 
+ ifneq ("$(GUI)" , "no")
+   ifeq ("$(GUI)", "newgui2")

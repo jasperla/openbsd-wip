@@ -1,0 +1,13 @@
+$OpenBSD$
+--- programs/dtcm/server/delete.c.orig	Tue Aug  7 15:56:24 2012
++++ programs/dtcm/server/delete.c	Tue Aug  7 15:56:39 2012
+@@ -38,7 +38,9 @@
+ #include <string.h>
+ #include <pwd.h>
+ #include <time.h>
++#if !defined(CSRG_BASED)
+ #include <values.h>
++#endif
+ #ifdef SunOS
+ #include <sys/systeminfo.h>
+ #endif

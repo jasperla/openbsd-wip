@@ -1,0 +1,11 @@
+$OpenBSD$
+--- programs/localized/templates/Spanish.tmpl.orig	Tue Aug  7 12:25:53 2012
++++ programs/localized/templates/Spanish.tmpl	Tue Aug  7 12:26:06 2012
+@@ -31,6 +31,6 @@ LANG=es
+ LANG=es
+ #endif
+ 
+-#if defined(LinuxArchitecture) || defined(FreeBSDArchitecture)
++#if defined(LinuxArchitecture) || defined(FreeBSDArchitecture) || defined(OpenBSDArchitecture)
+ LANG=es_ES.ISO8859-1
+ #endif

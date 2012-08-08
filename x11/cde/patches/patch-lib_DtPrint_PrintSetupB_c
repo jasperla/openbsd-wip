@@ -1,0 +1,20 @@
+$OpenBSD$
+--- lib/DtPrint/PrintSetupB.c.orig	Tue Aug  7 00:48:32 2012
++++ lib/DtPrint/PrintSetupB.c	Tue Aug  7 00:49:02 2012
+@@ -46,7 +46,6 @@
+ #endif
+ 
+ #include <stdlib.h>
+-#include <values.h>
+ #include <stdio.h>
+ 
+ #include <Xm/XmAll.h>
+@@ -59,6 +58,8 @@
+ #include <Dt/PsubDefProcI.h>
+ #include <Dt/PsubUtilI.h>
+ #include <Dt/PrintI.h>
++
++#define MAXINT INT_MAX
+ 
+ /*
+  * ------------------------------------------------------------------------

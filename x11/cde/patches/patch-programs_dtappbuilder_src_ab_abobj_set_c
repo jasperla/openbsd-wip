@@ -1,0 +1,13 @@
+$OpenBSD$
+--- programs/dtappbuilder/src/ab/abobj_set.c.orig	Tue Aug  7 20:09:02 2012
++++ programs/dtappbuilder/src/ab/abobj_set.c	Tue Aug  7 20:09:17 2012
+@@ -49,7 +49,9 @@
+  ***********************************************************************
+  */
+ #include <stdio.h>
++#if !defined(CSRG_BASED)
+ #include <values.h>
++#endif
+ #include <Xm/Xm.h>
+ #include <Xm/List.h>
+ #include <Dt/SpinBox.h>

@@ -1,0 +1,12 @@
+$OpenBSD$
+--- lib/DtWidget/Editor.c.orig	Tue Aug  7 00:12:07 2012
++++ lib/DtWidget/Editor.c	Tue Aug  7 00:14:52 2012
+@@ -67,6 +67,8 @@
+ #elif defined(linux)
+ # include <wctype.h>
+ # define NO_putwc
++#elif defined(CSRG_BASED)
++# include <wctype.h>
+ #endif /* linux */
+ 
+ #include <sys/wait.h>

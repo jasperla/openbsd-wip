@@ -1,0 +1,12 @@
+$OpenBSD$
+--- programs/nsgmls/CmdLineApp.h.orig	Wed Aug  8 00:28:23 2012
++++ programs/nsgmls/CmdLineApp.h	Wed Aug  8 00:28:42 2012
+@@ -43,7 +43,7 @@
+ #include <stddef.h>
+ #endif
+ 
+-#if defined(linux)
++#if defined(linux) || defined(CSRG_BASED)
+ #include <fstream>
+ using namespace std;
+ #else

@@ -1,0 +1,13 @@
+$OpenBSD$
+--- programs/dtsr/tomita.c.orig	Tue Aug  7 22:41:13 2012
++++ programs/dtsr/tomita.c	Tue Aug  7 22:42:23 2012
+@@ -701,7 +701,9 @@ static void     deleter (char *infname)
+     signal (SIGQUIT, kill_delete);
+     signal (SIGTRAP, kill_delete);
+     signal (SIGTERM, kill_delete);
++#if defined(SIGPWR)
+     signal (SIGPWR, kill_delete);
++#endif
+ #ifdef _AIX
+     signal (SIGXCPU, kill_delete);	/* cpu time limit exceeded */
+     signal (SIGDANGER, kill_delete);	/* imminent paging space

@@ -1,0 +1,27 @@
+$OpenBSD$
+--- config/cf/bsdLib.tmpl.orig	Sun Aug  5 00:16:08 2012
++++ config/cf/bsdLib.tmpl	Tue Aug  7 02:27:55 2012
+@@ -13,3 +13,23 @@ XCOMM $XConsortium: bsdLib.tmpl /main/3 1996/09/28 16:
+ #ifndef SharedXmuReqs
+ #define SharedXmuReqs $(LDPRELIBS) $(XTOOLONLYLIB) $(XONLYLIB)
+ #endif
++
++#ifndef SharedXReqs
++# define SharedXReqs $(XTOOLLIB) $(XLIB) $(LDPOSTLIBS)
++#endif
++
++#ifndef SharedXmReqs
++# define SharedXmReqs $(LDPRELIBS) SharedXReqs -lc
++#endif
++
++#ifndef SharedTtReqs
++# define SharedTtReqs $(LDPRELIBS) SharedXReqs $(CXXLIB)
++#endif
++
++#ifndef SharedDtSvcReqs
++# define SharedDtSvcReqs $(LDPRELIBS) SharedXReqs $(CXXLIB)
++#endif
++
++#ifndef SharedCsaReqs
++# define SharedCsaReqs -lXt $(LDPOSTLIBS)
++#endif

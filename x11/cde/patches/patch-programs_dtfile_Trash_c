@@ -1,0 +1,62 @@
+$OpenBSD$
+--- programs/dtfile/Trash.c.orig	Tue Aug  7 14:40:30 2012
++++ programs/dtfile/Trash.c	Tue Aug  7 14:45:57 2012
+@@ -101,7 +101,12 @@
+ #include <dirent.h>
+ #include <unistd.h>
+ #include <string.h>
++#if defined(CSRG_BASED)
++#include <sys/param.h>
++#include <sys/mount.h>
++#else
+ #include <ustat.h>
++#endif
+ 
+ #include <Xm/RowColumn.h>
+ #include <Xm/CascadeB.h>
+@@ -4106,17 +4111,29 @@ CheckDeletePermission(
+   char *parentdir,
+   char *destinationPath)
+ {
++#if defined(CSRG_BASED)
++  struct statfs statbuf;
++#else
+   struct stat statbuf;
++#endif
+   char fname[1024];
+ 
++#if defined(CSRG_BASED)
++  if (statfs(parentdir,&statbuf) < 0)  /* does not exist */
++#else
+   if (lstat(parentdir,&statbuf) < 0)  /* does not exist */
++#endif
+     return -1;
+ 
+   /* check if we are root */
+   if (getuid() == 0)
+   {
+     /* if NFS, need to check if server trusts root */
++#if defined(CSRG_BASED)
++    if (!strcmp(statbuf.f_fstypename, "nfs"))  /* Root user and nfs */
++#else
+     if (FileSysType(statbuf.st_dev) < 0)  /* Root user and nfs */
++#endif
+     {
+        char *tmpfile;
+        tmpfile = tempnam(parentdir,"quang");
+@@ -4195,6 +4212,7 @@ CheckDeletePermissionRecur(
+   return 0;
+ }
+ 
++#if !defined(CSRG_BASED)
+ static int
+ FileSysType(
+    int dev)
+@@ -4204,6 +4222,7 @@ FileSysType(
+      return -2;
+   return u1.f_tinode;
+ }
++#endif
+ 
+ static int
+ RestoreObject(
