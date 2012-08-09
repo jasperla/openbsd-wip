@@ -1,0 +1,39 @@
+$OpenBSD$
+
+Don't symlink libs. Create libs with a correct soname.
+
+--- Makefile.orig	Sat Jun  9 22:37:44 2012
++++ Makefile	Tue Jul 10 18:30:00 2012
+@@ -55,7 +55,7 @@ lib${PROJECT}.a: ${OBJECTS}
+ 
+ lib${PROJECT}.so.${SOVERSION}: ${OBJECTS}
+ 	$(ECHO) LD $@
+-	$(QUIET)${CC} -Wl,-soname,lib${PROJECT}.so.${SOMAJOR} -shared ${LDFLAGS} -o $@ ${OBJECTS} ${LIBS}
++	$(QUIET)${CC} -Wl,-soname,lib${PROJECT}.so.${SOMAJOR}.${SOMINOR} -shared ${LDFLAGS} -o $@ ${OBJECTS} ${LIBS}
+ 
+ clean:
+ 	$(QUIET)rm -rf ${OBJECTS} ${PROJECT}-${VERSION}.tar.gz \
+@@ -73,7 +73,7 @@ lib${PROJECT}-debug.a: ${DOBJECTS}
+ 
+ lib${PROJECT}-debug.so.${SOVERSION}: ${DOBJECTS}
+ 	$(ECHO) LD $@
+-	$(QUIET)${CC} -Wl,-soname,lib${PROJECT}.so.${SOMAJOR} -shared ${LDFLAGS} -o $@ ${DOBJECTS} ${LIBS}
++	$(QUIET)${CC} -Wl,-soname,lib${PROJECT}.so.${SOMAJOR}.${SOMINOR} -shared ${LDFLAGS} -o $@ ${DOBJECTS} ${LIBS}
+ 
+ debug: options ${PROJECT}-debug
+ 
+@@ -124,10 +124,10 @@ install: all install-headers
+ 	$(QUIET)mkdir -m 755 -p ${DESTDIR}${LIBDIR}
+ 	$(QUIET)install -m 644 lib${PROJECT}.a ${DESTDIR}${LIBDIR}
+ 	$(QUIET)install -m 644 lib${PROJECT}.so.${SOVERSION} ${DESTDIR}${LIBDIR}
+-	$(QUIET)ln -s lib${PROJECT}.so.${SOVERSION} ${DESTDIR}${LIBDIR}/lib${PROJECT}.so.${SOMAJOR} || \
+-		echo "Failed to create lib${PROJECT}.so.${SOMAJOR}. Please check if it exists and points to the correct version of lib${PROJECT}.so."
+-	$(QUIET)ln -s lib${PROJECT}.so.${SOVERSION} ${DESTDIR}${LIBDIR}/lib${PROJECT}.so || \
+-		echo "Failed to create lib${PROJECT}.so. Please check if it exists and points to the correct version of lib${PROJECT}.so."
++	#$(QUIET)ln -s lib${PROJECT}.so.${SOVERSION} ${DESTDIR}${LIBDIR}/lib${PROJECT}.so.${SOMAJOR} || \
++	#	echo "Failed to create lib${PROJECT}.so.${SOMAJOR}. Please check if it exists and points to the correct version of lib${PROJECT}.so."
++	#$(QUIET)ln -s lib${PROJECT}.so.${SOVERSION} ${DESTDIR}${LIBDIR}/lib${PROJECT}.so || \
++	#	echo "Failed to create lib${PROJECT}.so. Please check if it exists and points to the correct version of lib${PROJECT}.so."
+ 	$(QUIET)${MAKE} -C po install
+ 
+ install-headers: version.h ${PROJECT}.pc
