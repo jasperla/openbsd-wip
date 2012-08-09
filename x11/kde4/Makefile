@@ -26,6 +26,7 @@
 #   |- baseapps
 #   |- pimlibs
 #   | |
+#   | |- libkgapi
 #   | |- pim-runtime
 #   |  - pim
 #   |-
@@ -64,6 +65,7 @@
      SUBDIR += oxygen-icons		# OK
 
 # libraries
+     SUBDIR += libkgapi			# untested
      SUBDIR += libs			# OK
      SUBDIR += pimlibs			# OK
      SUBDIR += qimageblitz		# OK
