@@ -1,8 +1,6 @@
 @comment $OpenBSD: PLIST,v 1.5 2011/01/13 10:22:54 dcoppa Exp $
 %%SHARED%%
 %%native%%
-@comment lib/ocaml/
-@comment lib/ocaml/site-lib/
 lib/ocaml/camlimages/
 lib/ocaml/camlimages/META
 lib/ocaml/camlimages/bitmap.cmi

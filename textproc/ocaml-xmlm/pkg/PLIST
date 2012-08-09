@@ -1,6 +1,4 @@
 @comment $OpenBSD$
-lib/ocaml/
-lib/ocaml/stublibs/
 lib/ocaml/xmlm/
 lib/ocaml/xmlm/META
 lib/ocaml/xmlm/xmlm.cma
