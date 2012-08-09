@@ -3,44 +3,48 @@
 COMMENT =	K Desktop Environment, libraries
 DISTNAME =	kdelibs-${MODKDE_VERSION}
 
-SHARED_LIBS =	kde3support          0.0      # .4.0
-SHARED_LIBS +=	kdecore              8.0      # .5.0
-SHARED_LIBS +=	kdefakes             8.0      # .5.0
-SHARED_LIBS +=	kdesu                8.0      # .5.0
-SHARED_LIBS +=	kdeui                9.0      # .5.0
-SHARED_LIBS +=	kdnssd               3.0      # .2.0
-SHARED_LIBS +=	khtml                8.0      # .5.0
-SHARED_LIBS +=	kimproxy             2.0      # .4.0
-SHARED_LIBS +=	kio                  8.0      # .5.0
-SHARED_LIBS +=	kjs                  6.0      # .2.0
-SHARED_LIBS +=	kjsembed             3.0      # .4.0
-SHARED_LIBS +=	kmediaplayer         2.0      # .4.0
-SHARED_LIBS +=	knotifyconfig        0.0      # .4.0
-SHARED_LIBS +=	kntlm                2.0      # .1.0
-SHARED_LIBS +=	kparts               5.0      # .4.0
-SHARED_LIBS +=	krosscore            0.0      # .4.0
-SHARED_LIBS +=	ktexteditor          2.0      # .4.0
-SHARED_LIBS +=	kunittest            3.0      # .4.0
-SHARED_LIBS +=	kutils               5.0      # .2.0
-SHARED_LIBS +=	solid                0.0      # .4.0
-SHARED_LIBS +=	threadweaver         0.0      # .4.0
-SHARED_LIBS +=	kfile                0.0      # .4.0
-SHARED_LIBS +=	knewstuff2           0.0      # .4.0
-SHARED_LIBS +=	krossui              0.0      # .4.0
-SHARED_LIBS +=  kpty                 0.0      # .4.0
+SHARED_LIBS =	kde3support          1.0      # .4.0
+SHARED_LIBS +=	kdecore              9.0      # .5.0
+SHARED_LIBS +=	kdefakes             9.0      # .5.0
+SHARED_LIBS +=	kdesu                9.0      # .5.0
+SHARED_LIBS +=	kdeui                10.0      # .5.0
+SHARED_LIBS +=	kdnssd               4.0      # .2.0
+SHARED_LIBS +=	khtml                9.0      # .5.0
+SHARED_LIBS +=	kimproxy             3.0      # .4.0
+SHARED_LIBS +=	kio                  9.0      # .5.0
+SHARED_LIBS +=	kjs                  7.0      # .2.0
+SHARED_LIBS +=	kjsembed             4.0      # .4.0
+SHARED_LIBS +=	kmediaplayer         3.0      # .4.0
+SHARED_LIBS +=	knotifyconfig        1.0      # .4.0
+SHARED_LIBS +=	kntlm                3.0      # .1.0
+SHARED_LIBS +=	kparts               6.0      # .4.0
+SHARED_LIBS +=	krosscore            1.0      # .4.0
+SHARED_LIBS +=	ktexteditor          3.0      # .4.0
+SHARED_LIBS +=	kunittest            4.0      # .4.0
+SHARED_LIBS +=	kutils               6.0      # .2.0
+SHARED_LIBS +=	solid                1.0      # .4.0
+SHARED_LIBS +=	threadweaver         1.0      # .4.0
+SHARED_LIBS +=	kfile                1.0      # .4.0
+SHARED_LIBS +=	knewstuff2           1.0      # .4.0
+SHARED_LIBS +=	krossui              1.0      # .4.0
+SHARED_LIBS +=  kpty                 1.0      # .4.0
 
-SHARED_LIBS += 	krossqtsplugin 		0.0
-SHARED_LIBS +=  kjsapi 			0.0
-SHARED_LIBS +=	kdewebkit		0.0
-SHARED_LIBS +=	knewstuff3		0.0
-SHARED_LIBS +=	kunitconversion		0.0
-SHARED_LIBS +=	plasma			0.0
+SHARED_LIBS += 	krossqtsplugin 		1.0
+SHARED_LIBS +=  kjsapi 			1.0
+SHARED_LIBS +=	kdewebkit		1.0
+SHARED_LIBS +=	knewstuff3		1.0
+SHARED_LIBS +=	kunitconversion		1.0
+SHARED_LIBS +=	plasma			1.0
 
-SHARED_LIBS +=  kcmutils		0.0 # 4.7
-SHARED_LIBS +=  kdeclarative		0.0 # 5.7
-SHARED_LIBS +=  kemoticons		0.0 # 4.7
-SHARED_LIBS +=  kidletime		0.0 # 4.7
-SHARED_LIBS +=  kprintutils		0.0 # 4.7
+SHARED_LIBS +=  kcmutils		1.0 # 4.7
+SHARED_LIBS +=  kdeclarative		1.0 # 5.7
+SHARED_LIBS +=  kemoticons		1.0 # 4.7
+SHARED_LIBS +=  kidletime		1.0 # 4.7
+SHARED_LIBS +=  kprintutils		1.0 # 4.7
+
+SHARED_LIBS +=  nepomuk			1.0 # 4.9
+SHARED_LIBS +=  nepomukquery		1.0 # 4.9
+SHARED_LIBS +=  nepomukutils		1.0 # 4.9
 
 
 WANTLIB =  c krb5 m pthread stdc++ util z
@@ -71,8 +75,7 @@ RUN_DEPENDS =	misc/shared-mime-info \
 		x11/dbus \
 		x11/kde4/cagibi
 
-LIB_DEPENDS =	audio/pulseaudio \
-		archivers/bzip2 \
+LIB_DEPENDS =	archivers/bzip2 \
 		archivers/xz \
 		databases/soprano>=2.7.56 \
 		databases/strigi \

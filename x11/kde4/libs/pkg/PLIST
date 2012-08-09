@@ -3252,6 +3252,7 @@ share/apps/ksgmltools2/customization/xsl/
 share/apps/ksgmltools2/customization/xsl/README
 share/apps/ksgmltools2/customization/xsl/all-l10n.xml
 share/apps/ksgmltools2/customization/xsl/ca.xml
+share/apps/ksgmltools2/customization/xsl/cs.xml
 share/apps/ksgmltools2/customization/xsl/de.xml
 share/apps/ksgmltools2/customization/xsl/el.xml
 share/apps/ksgmltools2/customization/xsl/en.xml
@@ -3259,6 +3260,7 @@ share/apps/ksgmltools2/customization/xsl/es.xml
 share/apps/ksgmltools2/customization/xsl/et.xml
 share/apps/ksgmltools2/customization/xsl/fr.xml
 share/apps/ksgmltools2/customization/xsl/gl.xml
+share/apps/ksgmltools2/customization/xsl/hu.xml
 share/apps/ksgmltools2/customization/xsl/it.xml
 share/apps/ksgmltools2/customization/xsl/lt.xml
 share/apps/ksgmltools2/customization/xsl/nds.xml
@@ -3470,8 +3472,6 @@ share/doc/HTML/en/sonnet/
 share/doc/HTML/en/sonnet/common
 share/doc/HTML/en/sonnet/index.cache.bz2
 share/doc/HTML/en/sonnet/index.docbook
-share/examples/dbus-1/system.d/
-@sample ${SYSCONFDIR}/dbus-1/system.d/
 share/examples/dbus-1/system.d/org.kde.auth.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.auth.conf
 share/examples/xdg/
