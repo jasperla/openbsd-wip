@@ -56,20 +56,17 @@ LIB_DEPENDS =	archivers/bzip2 \
 .if ${PROPERTIES:Mocaml_native}
 FAKE_FLAGS =	OCAML_NATIVE=yes
 .else
-FAKE_FLAGS =	OCAML_NATIVE=yes
+FAKE_FLAGS =	OCAML_NATIVE=no
 .endif
 
 NO_REGRESS =	Yes
 
+.include <bsd.port.arch.mk>
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/mldonkey
 	cp -R ${WRKDIST}/distrib ${PREFIX}/share/mldonkey/
-	@${strip_binaries}
+.if ${PROPERTIES:Mocaml_native}
+	@cd ${PREFIX}/bin && strip mlnet mlgui mlnet+gui
+.endif
 
 .include <bsd.port.mk>
-
-.if ${MODOCAML_NATIVE:L} == "yes"
-strip_binaries=cd ${PREFIX}/bin && strip mlnet mlgui mlnet+gui
-.else
-strip_binaries=:
-.endif

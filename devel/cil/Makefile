@@ -1,7 +1,8 @@
 # $OpenBSD: Makefile,v 1.20 2010/12/07 14:57:19 dcoppa Exp $
 
 # until tested on others, even though bytecode is produced
-ONLY_FOR_ARCHS=	i386 amd64 powerpc
+.include <bsd.port.arch.mk>
+ONLY_FOR_ARCHS =	${OCAML_NATIVE_ARCHS}
 
 COMMENT=	framework for analysis and transformation of C
 CATEGORIES =	devel lang

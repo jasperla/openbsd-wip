@@ -1,0 +1,14 @@
+$OpenBSD$
+On bytecode-only archs no *.cmx* files are generated.
+This would let the shell pattern matching fail.
+--- Makefile.orig	Thu Aug  9 16:19:01 2012
++++ Makefile	Thu Aug  9 16:21:48 2012
+@@ -209,7 +209,7 @@ headers:
+ install: $(LIBS) $(CLIBS) META
+ 	@if [ "`sed -n -e 's/version = "\([0-9.+dev]*\)"/\1/p' META`" = "$(VERSION)" ]; then \
+ 	  (if test -d `ocamlfind install -help | grep destdir | sed -e "s/.*default: \(.*\))/\1/"`/$(NAME); then $(MAKE) uninstall; fi;\
+-	  $(CAMLFIND) install $(NAME) target/*.cm[ioxa] target/*.cmx[as] $(MLI)  $(CLIBS) META); \
++	  $(CAMLFIND) install $(NAME) target/*.cm* $(MLI)  $(CLIBS) META); \
+ 	else \
+ 	  (echo; echo "Not the good version. Please, do :"; \
+ 	   echo "  make clean && make"; \
