@@ -86,6 +86,9 @@ MODKDE4_USE +=		libs
 .if ${MODKDE4_RESOURCES:L} != "no"
 PKG_ARCH ?=		*
 MODKDE4_NO_QT ?=	Yes	# resources usually don't need Qt
+.   if ${MODKDE4_USE:L:Mworkspace}
+MODKDE4_BUILD_DEPENDS +=	STEM->=${MODKDE4_VERSION}:x11/kde4/workspace
+.   endif
 .   if ${MODKDE4_USE:L:Mlibs}
 MODKDE4_BUILD_DEPENDS +=	STEM->=${MODKDE4_VERSION}:x11/kde4/libs
 .   endif
