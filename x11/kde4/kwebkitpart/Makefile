@@ -1,9 +1,11 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, web browser based on WebKit
+HOMEPAGE =	https://projects.kde.org/projects/extragear/base/kwebkitpart
 DISTNAME =	kwebkitpart-1.2
-EXTRACT_SUFX =	.tar.bz2
+REVISION =	1
 
+EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	http://www.ohvost.ru/dnl/kde/src/
 
 WANTLIB =  c m stdc++
