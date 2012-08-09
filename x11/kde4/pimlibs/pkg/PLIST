@@ -1,6 +1,7 @@
 @comment $OpenBSD: PLIST,v 1.4 2010/06/18 11:50:29 espie Exp $
 include/KDE/Akonadi/
 include/KDE/Akonadi/AgentBase
+include/KDE/Akonadi/AgentFactory
 include/KDE/Akonadi/AgentFilterProxyModel
 include/KDE/Akonadi/AgentInstance
 include/KDE/Akonadi/AgentInstanceCreateJob
@@ -14,6 +15,9 @@ include/KDE/Akonadi/AgentTypeWidget
 include/KDE/Akonadi/Attribute
 include/KDE/Akonadi/AttributeFactory
 include/KDE/Akonadi/CachePolicy
+include/KDE/Akonadi/Calendar/
+include/KDE/Akonadi/Calendar/FreeBusyProviderBase
+include/KDE/Akonadi/Calendar/StandardCalendarActionManager
 include/KDE/Akonadi/ChangeRecorder
 include/KDE/Akonadi/Collection
 include/KDE/Akonadi/CollectionAttributesSynchronizationJob
@@ -27,6 +31,7 @@ include/KDE/Akonadi/CollectionFetchScope
 include/KDE/Akonadi/CollectionFilterProxyModel
 include/KDE/Akonadi/CollectionModel
 include/KDE/Akonadi/CollectionModifyJob
+include/KDE/Akonadi/CollectionMoveJob
 include/KDE/Akonadi/CollectionPropertiesDialog
 include/KDE/Akonadi/CollectionPropertiesPage
 include/KDE/Akonadi/CollectionRequester
@@ -63,8 +68,11 @@ include/KDE/Akonadi/Control
 include/KDE/Akonadi/ETMViewStateSaver
 include/KDE/Akonadi/Entity
 include/KDE/Akonadi/EntityDisplayAttribute
+include/KDE/Akonadi/EntityHiddenAttribute
 include/KDE/Akonadi/EntityListView
 include/KDE/Akonadi/EntityMimeTypeFilterModel
+include/KDE/Akonadi/EntityOrderProxyModel
+include/KDE/Akonadi/EntityRightsFilterModel
 include/KDE/Akonadi/EntityTreeModel
 include/KDE/Akonadi/EntityTreeView
 include/KDE/Akonadi/Exception
@@ -88,8 +96,11 @@ include/KDE/Akonadi/KCal/FreeBusyProviderBase
 include/KDE/Akonadi/KCal/IncidenceMimeTypeVisitor
 include/KDE/Akonadi/KMime/
 include/KDE/Akonadi/KMime/AddressAttribute
+include/KDE/Akonadi/KMime/MessageFlags
 include/KDE/Akonadi/KMime/MessageFolderAttribute
 include/KDE/Akonadi/KMime/MessageModel
+include/KDE/Akonadi/KMime/MessageParts
+include/KDE/Akonadi/KMime/MessageStatus
 include/KDE/Akonadi/KMime/MessageThreaderProxyModel
 include/KDE/Akonadi/KMime/MessageThreadingAttribute
 include/KDE/Akonadi/KMime/SpecialMailCollections
@@ -98,6 +109,8 @@ include/KDE/Akonadi/LinkJob
 include/KDE/Akonadi/MimeTypeChecker
 include/KDE/Akonadi/Monitor
 include/KDE/Akonadi/PreprocessorBase
+include/KDE/Akonadi/RecursiveCollectionFilterProxyModel
+include/KDE/Akonadi/RecursiveItemFetchJob
 include/KDE/Akonadi/ResourceBase
 include/KDE/Akonadi/SearchCreateJob
 include/KDE/Akonadi/ServerManager
@@ -363,6 +376,7 @@ include/KDE/KResources/SelectDialog
 include/KDE/KTNEF/
 include/KDE/KTNEF/Formatter
 include/KDE/KTNEF/KTNEFAttach
+include/KDE/KTNEF/KTNEFDefs
 include/KDE/KTNEF/KTNEFMessage
 include/KDE/KTNEF/KTNEFParser
 include/KDE/KTNEF/KTNEFProperty
@@ -1188,6 +1202,7 @@ share/apps/libkholidays/plan2/holiday_pt_pt
 share/apps/libkholidays/plan2/holiday_py_es
 share/apps/libkholidays/plan2/holiday_re_fr
 share/apps/libkholidays/plan2/holiday_ro_ro
+share/apps/libkholidays/plan2/holiday_rs_sr
 share/apps/libkholidays/plan2/holiday_ru_ru
 share/apps/libkholidays/plan2/holiday_se_sv
 share/apps/libkholidays/plan2/holiday_sg_en-gb
@@ -1255,7 +1270,7 @@ share/kde4/services/akonadi/contact/skypeprotocol.desktop
 share/kde4/services/akonadi/contact/smsprotocol.desktop
 share/kde4/services/akonadi/contact/yahooprotocol.desktop
 share/kde4/services/akonadicontact_actions.desktop
-share/kde4/services/imap4.protocol
+share/kde4/services/imap.protocol
 share/kde4/services/imaps.protocol
 share/kde4/services/kcm_mailtransport.desktop
 share/kde4/services/kresources/
