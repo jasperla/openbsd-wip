@@ -24,11 +24,13 @@ USE_GMAKE =	yes
 RUN_DEPENDS =	textproc/ocaml-xmlm
 BUILD_DEPENDS =	${RUN_DEPENDS} sysutils/findlib
 
-ALL_TARGET =	byte
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mocaml_native}
+ALL_TARGET =		all
+INSTALL_TARGET =	install_all
 .else
-ALL_TARGET +=	opt
+ALL_TARGET =		byte
+INSTALL_TARGET =	install_byte
 .endif
 
 

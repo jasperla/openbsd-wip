@@ -70,6 +70,11 @@ post-extract:
 	@cp ${WRKSRC}/asmrun/power-elf.S ${WRKSRC}/asmrun/power-bsd.S
 
 post-install:
+.if ${PROPERTIES:Mocaml_native}
+	@ln -sf ${LOCALBASE}/bin/ocamlbuild.native ${PREFIX}/bin/ocamlbuild
+.else
+	@ln -sf ${LOCALBASE}/bin/ocamlbuild.byte ${PREFIX}/bin/ocamlbuild
+.endif
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml/html/libref
 	@${INSTALL_DATA} ${WRKDIR}/htmlman/*.{html,gif} \
 		${PREFIX}/share/doc/ocaml/html

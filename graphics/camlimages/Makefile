@@ -32,6 +32,13 @@ BUILD_DEPENDS=	devel/omake \
 # The camlimages build system seems to need some include paths in CPATH and
 # others in CFLAGS. I don't know why, but this way at least it works.
 MAKE_ENV+=	CPATH="${LOCALBASE}/include/libpng"
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mocaml_native}
+MAKE_ENV +=	OCAML_NATIVE=1
+.else
+MAKE_ENV +=	OCAML_NATIVE=0
+.endif
+
 MAKE_FLAGS+=	CFLAGS="${CFLAGS} \
 			-I${X11BASE}/include \
 			-I${X11BASE}/include/X11 \
@@ -47,11 +54,6 @@ OMAKE=		omake --force-dotomake --dotomake ${WRKSRC}/omake_cache
 
 do-build:
 	cd ${WRKSRC} && env -i ${MAKE_ENV} ${OMAKE} ${MAKE_FLAGS}
-
-pre-fake:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml/site-lib
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml/stublibs
-	ln -s ../stublibs ${PREFIX}/lib/ocaml/site-lib/
 
 do-install:
 	cd ${WRKSRC} && env -i ${MAKE_ENV} \
