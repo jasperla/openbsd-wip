@@ -1,0 +1,13 @@
+$OpenBSD$
+signal.h should be fixed instead, probably.
+--- service/main.cpp.orig	Thu Aug  9 13:35:41 2012
++++ service/main.cpp	Thu Aug  9 14:00:59 2012
+@@ -76,7 +76,7 @@ static void initSignalCatching() {
+ #ifndef Q_OS_WIN32 // krazy:skip
+     struct sigaction action;
+ 
+-    ::sigemptyset(&action.sa_mask);
++    sigemptyset(&action.sa_mask);
+     action.sa_flags = 0;
+ 
+     /* Use the sa_sigaction field because the handles has two additional parameters */
