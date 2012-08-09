@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	base artwork for the KDE Plasma Workspace
+COMMENT =	KDE KSplash theme
 DISTNAME =	kde-base-artwork-${MODKDE_VERSION}
 
 MODKDE4_RESOURCES =	Yes
