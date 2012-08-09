@@ -53,7 +53,7 @@ WANTLIB +=	${MODTK_WANTLIB}
 .if ${PROPERTIES:Mocaml_native}
 ALL_TARGET=	world bootstrap opt opt.opt
 PKG_ARGS+=-Dnative=1
-.if ${PROPERTIES:Mocaml_native_dl}
+.if ${PROPERTIES:Mocaml_native_dynlink}
 PKG_ARGS+=-Ddynlink=1
 .else
 PKG_ARGS+=-Ddynlink=0
