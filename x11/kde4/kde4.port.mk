@@ -105,10 +105,6 @@ MODKDE4_NO_QT ?=	No
 ERRORS +=	"Fatal: KDE libraries require Qt."
 .       endif
 
-# all sorts of packages require linking with pulseaudio, 
-# instead of patching them locally, patch globally
-MODKDE4_LIB_DEPENDS +=		audio/pulseaudio
-
 MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/libs
 MODKDE4_WANTLIB +=		kdecore>=8
 .       if ${MODKDE4_USE:L:Mpim}
