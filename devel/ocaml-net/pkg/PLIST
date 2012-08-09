@@ -3,7 +3,6 @@
 %%native%%
 @bin bin/netplex-admin
 @bin bin/ocamlrpcgen
-lib/ocaml/
 lib/ocaml/equeue/
 lib/ocaml/equeue/META
 lib/ocaml/equeue/equeue.cma

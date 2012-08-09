@@ -5,9 +5,7 @@ bin/safe_camlp4
 @comment lib/ocaml/
 lib/ocaml/bigarray/
 lib/ocaml/bigarray/META
-lib/ocaml/camlp4/
 lib/ocaml/camlp4/META
-lib/ocaml/compiler-libs/
 lib/ocaml/compiler-libs/META
 lib/ocaml/dbm/
 lib/ocaml/dbm/META
@@ -31,7 +29,6 @@ lib/ocaml/findlib/topfind.cmi
 lib/ocaml/findlib/topfind.mli
 lib/ocaml/graphics/
 lib/ocaml/graphics/META
-lib/ocaml/labltk/
 lib/ocaml/labltk/META
 lib/ocaml/num/
 lib/ocaml/num-top/
@@ -40,14 +37,11 @@ lib/ocaml/num-top/num_top.cma
 lib/ocaml/num-top/num_top.cmi
 lib/ocaml/num-top/num_top_printers.cmi
 lib/ocaml/num/META
-lib/ocaml/ocamlbuild/
 lib/ocaml/ocamlbuild/META
 lib/ocaml/stdlib/
 lib/ocaml/stdlib/META
 lib/ocaml/str/
 lib/ocaml/str/META
-lib/ocaml/stublibs/
-lib/ocaml/threads/
 lib/ocaml/threads/META
 lib/ocaml/topfind
 lib/ocaml/unix/

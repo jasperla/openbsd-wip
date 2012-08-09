@@ -13,8 +13,6 @@ bin/mlgnut+gui
 @bin bin/mlnet+gui
 bin/mlslsk
 bin/mlslsk+gui
-lib/ocaml/
-lib/ocaml/stublibs/
 share/mldonkey/
 share/mldonkey/distrib/
 share/mldonkey/distrib/Authors.txt
