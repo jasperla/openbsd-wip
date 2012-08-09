@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, libraries
 DISTNAME =	kdelibs-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kde3support          1.0      # .4.0
 SHARED_LIBS +=	kdecore              9.0      # .5.0
@@ -66,13 +67,15 @@ BUILD_DEPENDS =	misc/shared-desktop-ontologies>=0.10 \
 		misc/shared-mime-info \
 		net/avahi \
 		textproc/docbook \
-		textproc/docbook-xsl
+		textproc/docbook-xsl \
+		x11/grantlee
 
 RUN_DEPENDS =	misc/shared-mime-info \
 		misc/shared-desktop-ontologies \
 		sysutils/gamin \
 		STEM->=${MODKDE4_VERSION}:x11/kde4/oxygen-icons \
 		x11/dbus \
+		x11/grantlee \
 		x11/kde4/cagibi
 
 LIB_DEPENDS =	archivers/bzip2 \
@@ -90,8 +93,7 @@ LIB_DEPENDS =	archivers/bzip2 \
 		textproc/libxslt \
 		x11/kde4/attica>=0.4.0 \
 		x11/dbusmenu-qt \
-		x11/polkit-qt4 \
-		x11/grantlee
+		x11/polkit-qt4
 
 # we don't have krb5-config
 CONFIGURE_ARGS =	-DGSSAPI_LIBS:STRING="-lgssapi -lkrb5 -lasn1 -lcom_err" \
