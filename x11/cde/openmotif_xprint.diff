@@ -34,7 +34,7 @@ diff -u -p -r1.51 Makefile
  
  MODULES=		converters/libiconv
  
-+BUILD_DEPENDS=		print/printproto
++BUILD_DEPENDS=		print/xprintproto
  LIB_DEPENDS=		graphics/jpeg \
 -			graphics/png
 +			graphics/png \

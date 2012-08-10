@@ -2,7 +2,9 @@
 
 COMMENT =		X11 printing headers
 
-DISTNAME =		printproto-1.0.5
+V =			1.0.5
+DISTNAME =		printproto-${V}
+PKGNAME =		xprintproto-${V}
 
 CATEGORIES =		print devel x11
 
