@@ -33,7 +33,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cdesktopenv/}
 
 MODULES =		lang/tcl
 BUILD_DEPENDS =		lang/gawk \
-			print/printproto
+			print/xprintproto
 #RUN_DEPENDS =		???
 LIB_DEPENDS =		x11/openmotif
 #REGRESS_DEPENDS =	???

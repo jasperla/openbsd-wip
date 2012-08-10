@@ -23,7 +23,7 @@ WANTLIB += X11 Xau Xext xcb
 MASTER_SITES =		ftp://ftp.cs.cuhk.edu.hk/pub/X11/individual/lib/
 EXTRACT_SUFX =		.tar.bz2
 
-BUILD_DEPENDS =		print/printproto
+BUILD_DEPENDS =		print/xprintproto
 
 USE_GROFF =		Yes
 USE_LIBTOOL =		Yes
