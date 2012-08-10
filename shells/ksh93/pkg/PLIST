@@ -1,0 +1,11 @@
+@comment $OpenBSD$
+@shell bin/ksh93
+@shell bin/rksh93
+lib/libshell.a
+@man man/man1/ksh93.1
+@man man/man1/rksh93.1
+@man man/man3/shell.3
+share/examples/ksh93/
+share/examples/ksh93/dirs
+share/examples/ksh93/popd
+share/examples/ksh93/pushd
