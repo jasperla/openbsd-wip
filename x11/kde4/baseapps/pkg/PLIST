@@ -289,6 +289,7 @@ share/dbus-1/interfaces/org.kde.nsplugins.viewer.xml
 share/doc/HTML/en/dolphin/
 share/doc/HTML/en/dolphin/common
 share/doc/HTML/en/dolphin/default-ui.png
+share/doc/HTML/en/dolphin/grouping-view.png
 share/doc/HTML/en/dolphin/index.cache.bz2
 share/doc/HTML/en/dolphin/index.docbook
 share/doc/HTML/en/dolphin/locationbar-breadcrumb.png
@@ -332,6 +333,7 @@ share/doc/HTML/en/konqueror/filemanager.docbook
 share/doc/HTML/en/konqueror/folders.png
 share/doc/HTML/en/konqueror/format-font-size-less.png
 share/doc/HTML/en/konqueror/format-font-size-more.png
+share/doc/HTML/en/konqueror/grouping-view.png
 share/doc/HTML/en/konqueror/index.cache.bz2
 share/doc/HTML/en/konqueror/index.docbook
 share/doc/HTML/en/konqueror/introduction.docbook
