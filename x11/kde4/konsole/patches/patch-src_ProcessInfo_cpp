@@ -1,27 +1,26 @@
 $OpenBSD$
---- src/ProcessInfo.cpp.orig	Mon Apr  2 13:28:40 2012
-+++ src/ProcessInfo.cpp	Sat Jun 30 08:28:53 2012
-@@ -54,12 +54,14 @@
+--- src/ProcessInfo.cpp.orig	Wed Jun 20 01:54:21 2012
++++ src/ProcessInfo.cpp	Fri Aug 10 13:24:29 2012
+@@ -57,12 +57,14 @@
  #include <kde_file.h>
  #endif
  
 -#if defined(Q_OS_FREEBSD)
--#include <sys/sysctl.h> //krazy:exclude=includes
 +#if defined(Q_OS_FREEBSD) || defined(Q_OS_OPENBSD)
+ #include <sys/sysctl.h>
  #include <sys/types.h>
-+#include <sys/sysctl.h> //krazy:exclude=includes
  #include <sys/user.h>
  #include <sys/syslimits.h>
 -#include <libutil.h>
-+#    if defined(Q_OS_FREEBSD)
-+#    include <libutil.h>
-+#    endif
++#   if defined(Q_OS_FREEBSD)
++#   include <libutil.h>
++#   endif
  #endif
  
  using namespace Konsole;
-@@ -659,11 +661,11 @@ class LinuxProcessInfo : public UnixProcessInfo (priva
+@@ -607,60 +609,117 @@ class LinuxProcessInfo : public UnixProcessInfo (priva
      }
- } ;
+ };
  
 -#if defined(Q_OS_FREEBSD)
 -class FreeBSDProcessInfo : public UnixProcessInfo
@@ -29,15 +28,13 @@ $OpenBSD$
 +class BSDProcessInfo : public UnixProcessInfo
  {
  public:
--    FreeBSDProcessInfo(int pid, bool readEnvironment) :
-+    BSDProcessInfo(int pid, bool readEnvironment) :
-         UnixProcessInfo(pid, readEnvironment)
-     {
+-    FreeBSDProcessInfo(int aPid, bool readEnvironment) :
++    BSDProcessInfo(int aPid, bool readEnvironment) :
+         UnixProcessInfo(aPid, readEnvironment) {
      }
-@@ -671,53 +673,101 @@ class FreeBSDProcessInfo : public UnixProcessInfo (pub
+ 
  private:
-     virtual bool readProcInfo(int pid)
-     {
+     virtual bool readProcInfo(int aPid) {
 -        int managementInfoBase[4];
 -        size_t mibLength;
 +        int managementInfoBase[6];
@@ -47,13 +44,10 @@ $OpenBSD$
          managementInfoBase[0] = CTL_KERN;
          managementInfoBase[1] = KERN_PROC;
          managementInfoBase[2] = KERN_PROC_PID;
-         managementInfoBase[3] = pid;
+         managementInfoBase[3] = aPid;
 +#if defined(Q_OS_OPENBSD)
 +        managementInfoBase[4] = sizeof(struct kinfo_proc);
 +        managementInfoBase[5] = 1;
-+        mibCnt = 6;
-+#else
-+        mibCnt = 4;
 +#endif
  
 -        if (sysctl(managementInfoBase, 4, NULL, &mibLength, NULL, 0) == -1)
@@ -62,15 +56,14 @@ $OpenBSD$
  
          kInfoProc = new struct kinfo_proc [mibLength];
  
--        if (sysctl(managementInfoBase, 4, kInfoProc, &mibLength, NULL, 0) == -1)
-+        if (sysctl(managementInfoBase, mibCnt, kInfoProc, &mibLength, NULL, 0) == -1)
-         {
+-        if (sysctl(managementInfoBase, 4, kInfoProc, &mibLength, NULL, 0) == -1) {
++        if (sysctl(managementInfoBase, mibCnt, kInfoProc, &mibLength, NULL, 0) == -1) {
              delete [] kInfoProc;
              return false;
          }
  
 -#if defined(__DragonFly__)
-+#if defined(Q_OS_OPENBSD)
++#if defined(Q_OS_OPENBSD))
 +        setName(kInfoProc->p_comm);
 +        setPid(kInfoProc->p_pid);
 +        setParentPid(kInfoProc->p_ppid);
@@ -99,54 +92,62 @@ $OpenBSD$
          return true;
      }
  
-     virtual bool readArguments(int pid)
-     {
--        char args[ARG_MAX];
-         int managementInfoBase[4];
--        size_t len;
-+	size_t len;
- 
 +#if defined(Q_OS_OPENBSD)
-         managementInfoBase[0] = CTL_KERN;
-+        managementInfoBase[1] = KERN_PROC_ARGS;
-+        managementInfoBase[2] = pid;
-+        managementInfoBase[3] = KERN_PROC_ARGV;
-+
-+	void *buf = NULL;
-+        int rc = -1;
-+        len = 4096;
-+        do
-+        {
-+            len *= 2;
-+            void *nbuf = realloc(buf, len);
-+            if (nbuf == NULL)
-+                break;
-+            buf = nbuf;
-+            rc = sysctl(managementInfoBase, 4, buf, &len, NULL, 0);
-+        } while (rc == -1 && errno == ENOMEM);
-+
-+        if (rc == -1)
-+        {
-+            free(buf);
-+            return false;
-+        }
-+
-+        for (const char **p = ((const char **)buf); *p != NULL; p++)
-+        {
-+            addArgument(QString(*p));
-+        }
-+
-+        free(buf);
-+#else
-+        char args[ARG_MAX];
-+        len = sizeof(args);
++    char** readProcArgs(int aPid, int whatMib) {
++	void	*buf = NULL;
++	size_t	 len = 4096;
++	int	 rc = -1;
++	int	 managementInfoBase[4];
 +
 +        managementInfoBase[0] = CTL_KERN;
++        managementInfoBase[1] = KERN_PROC_ARGS;
++        managementInfoBase[2] = aPid;
++        managementInfoBase[3] = whatMib;
++
++	do
++	{
++	    len *= 2;
++	    nbuf = realloc(buf, len);
++	    if (nbuf == NULL)
++		break;
++	    buf = nbuf;
++	    rc = ssctl(managementInfoBase, 4, buf, &len, NULL, 0);
++	} while (rc == -1 && errno == ENOMEM);
++
++	if (rc == -1)
++	{
++	    free(buf);
++	    return NULL;
++	}
++
++	return (char**)buf;
++    }
++#endif
++
+     virtual bool readArguments(int aPid) {
++#if defined(Q_OS_OPENBSD)
++	char **argv;
++#else
+         char args[ARG_MAX];
+         int managementInfoBase[4];
+         size_t len;
++#endif
+ 
++#if defined(Q_OS_OPENBSD)
++	argv = readProcArgs(aPid, KERN_PROC_ARGV);
++	if (argv == NULL)
++	    return false;
++	for (const char **p = argv); *p != NULL; p++)
++	{
++	    addArgument(QString(*p));
++	}
++	free(argv);
++#else
+         managementInfoBase[0] = CTL_KERN;
          managementInfoBase[1] = KERN_PROC;
          managementInfoBase[2] = KERN_PROC_PID;
-         managementInfoBase[3] = pid;
-@@ -732,30 +782,77 @@ class FreeBSDProcessInfo : public UnixProcessInfo (pub
-         {
+@@ -675,28 +734,51 @@ class FreeBSDProcessInfo : public UnixProcessInfo (pri
+         for (QStringList::const_iterator it = argumentList.begin(); it != argumentList.end(); ++it) {
              addArgument(*it);
          }
 +#endif
@@ -154,57 +155,31 @@ $OpenBSD$
          return true;
      }
  
-     virtual bool readEnvironment(int pid)
-     {
+     virtual bool readEnvironment(int aPid) {
 +#if defined(Q_OS_OPENBSD)
-+        int managementInfoBase[4];
-+	size_t len;
++	char	**envp, *eqsign;
 +
-+        managementInfoBase[0] = CTL_KERN;
-+        managementInfoBase[1] = KERN_PROC_ARGS;
-+        managementInfoBase[2] = pid;
-+        managementInfoBase[3] = KERN_PROC_ENV;
-+
-+	void *buf = NULL;
-+        int rc = -1;
-+        len = 4096;
-+        do
-+        {
-+            len *= 2;
-+            void *nbuf = realloc(buf, len);
-+            if (nbuf == NULL)
-+                break;
-+            buf = nbuf;
-+            rc = sysctl(managementInfoBase, 4, buf, &len, NULL, 0);
-+        } while (rc == -1 && errno == ENOMEM);
-+
-+        if (rc == -1)
-+        {
-+            free(buf);
-+            return false;
-+        }
-+
-+        for (char **p = ((char **)buf); *p != NULL; p++)
-+        {
-+            char *eqsign = strchr(*p, '=');
-+            if (eqsign == NULL || eqsign[1] == '\0')
-+                continue;
-+            *eqsign = '\0';
-+            QString name(*p);
-+            QString value(eqsign + 1);
-+            addEnvironmentBinding(name, value);
-+        }
-+
-+        free(buf);
-+        return true;
++	envp = readProcArgs(aPid, KERN_PROC_ENV);
++	if (envp == NULL)
++	    return false;
++	for (char **p = envp); *p != NULL; p++)
++	{
++	    eqsign = strchr(*p, '=');
++	    if (eqsign == NULL || eqsign[1] == '\0')
++		continue;
++	    *eqsign = '\0';
++	    addEnvironmentBinding(QString((const char *)p),
++		QString((const char *)eqsign + 1);
++	}
++	free(envp);
++	return true;
 +#else
          // Not supported in FreeBSD?
          return false;
 +#endif
      }
  
-     virtual bool readCurrentDir(int pid)
-     {
+     virtual bool readCurrentDir(int aPid) {
 -#if defined(__DragonFly__)
 +#if defined(__DragonFly__) || defined(Q_OS_OPENBSD)
          char buf[PATH_MAX];
@@ -215,14 +190,14 @@ $OpenBSD$
 -        managementInfoBase[0] = CTL_KERN;
 -        managementInfoBase[1] = KERN_PROC;
 -        managementInfoBase[2] = KERN_PROC_CWD;
--        managementInfoBase[3] = pid;
-+        i = 0;
+-        managementInfoBase[3] = aPid;
++	i = 0;
 +        managementInfoBase[i++] = CTL_KERN;
 +#if defined(__DragonFly__)
 +        managementInfoBase[i++] = KERN_PROC;
 +#endif
 +        managementInfoBase[i++] = KERN_PROC_CWD;
-+        managementInfoBase[i++] = pid;
++        managementInfoBase[i++] = aPid;
  
          len = sizeof(buf);
 -        if (sysctl(managementInfoBase, 4, buf, &len, NULL, 0) == -1)
@@ -230,14 +205,14 @@ $OpenBSD$
              return false;
  
          setCurrentDir(buf);
-@@ -1149,8 +1246,8 @@ ProcessInfo* ProcessInfo::newInstance(int pid,bool ena
-     return new SolarisProcessInfo(pid,enableEnvironmentRead);
+@@ -1049,8 +1131,8 @@ ProcessInfo* ProcessInfo::newInstance(int aPid, bool e
+     return new SolarisProcessInfo(aPid, enableEnvironmentRead);
  #elif defined(Q_OS_MAC)
-     return new MacProcessInfo(pid,enableEnvironmentRead);
+     return new MacProcessInfo(aPid, enableEnvironmentRead);
 -#elif defined(Q_OS_FREEBSD)
--    return new FreeBSDProcessInfo(pid,enableEnvironmentRead);
+-    return new FreeBSDProcessInfo(aPid, enableEnvironmentRead);
 +#elif defined(Q_OS_FREEBSD) || defined(Q_OS_OPENBSD)
-+    return new BSDProcessInfo(pid,enableEnvironmentRead);
++    return new BSDProcessInfo(aPid, enableEnvironmentRead);
  #else
-     return new NullProcessInfo(pid,enableEnvironmentRead);
+     return new NullProcessInfo(aPid, enableEnvironmentRead);
  #endif
