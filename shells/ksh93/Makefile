@@ -39,7 +39,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/arch/openbsd.${MACHINE_ARCH}/bin/ksh \
 		${PREFIX}/bin/ksh93
 	cd ${PREFIX}/bin && ln ksh93 rksh93
-	${INSTALL_DATA} ${WRKSRC}/arch/openbsd.${MACHINE_ARCH}/lib/libshell.a \
+	${INSTALL_DATA} \
+	${WRKSRC}/arch/openbsd.${MACHINE_ARCH}/lib/lib{ast,cmd,shell}.a \
 		${PREFIX}/lib
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ksh93		
 	${INSTALL_DATA} ${WRKSRC}/arch/openbsd.${MACHINE_ARCH}/fun/* \
@@ -57,7 +58,7 @@ do-install:
 		${WRKSRC}/arch/openbsd.${MACHINE_ARCH}/include/ast/sfio{,_s}.h \
 		${PREFIX}/include/ast
 	${INSTALL_DATA} \
-		${WRKSRC}/arch/openbsd.${MACHINE_ARCH}/include/ast/prototyped.h \
+	${WRKSRC}/arch/openbsd.${MACHINE_ARCH}/include/ast/prototyped.h \
 		${PREFIX}/include/ast
 	
 do-regress:
