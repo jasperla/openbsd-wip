@@ -12,3 +12,4 @@ bin/coqtop
 bin/coqtop.byte
 bin/coqwc
 bin/gallina
+lib/coq/plugins/micromega/csdpcert

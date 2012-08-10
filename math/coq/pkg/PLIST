@@ -260,7 +260,6 @@ lib/coq/plugins/micromega/ZCoeff.vo
 lib/coq/plugins/micromega/ZMicromega.vo
 lib/coq/plugins/micromega/certificate.cmi
 lib/coq/plugins/micromega/coq_micromega.cmi
-lib/coq/plugins/micromega/csdpcert
 lib/coq/plugins/micromega/g_micromega.cmi
 lib/coq/plugins/micromega/mfourier.cmi
 lib/coq/plugins/micromega/micromega.cmi
