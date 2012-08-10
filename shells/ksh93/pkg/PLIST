@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+@conflict libast-*
 @shell bin/ksh93
 @shell bin/rksh93
 include/ast/
@@ -38,6 +39,8 @@ include/ast/ast_windows.h
 include/ast/prototyped.h
 include/ast/sfio.h
 include/ast/sfio_s.h
+lib/libast.a
+lib/libcmd.a
 lib/libshell.a
 @man man/man1/ksh93.1
 @man man/man1/rksh93.1
