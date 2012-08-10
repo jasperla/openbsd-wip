@@ -17,12 +17,12 @@ diff -u -p -r1.6 arch-defines.mk
  MONO_ARCHS = amd64 i386
  LLVM_ARCHS = amd64 i386 powerpc sparc64
 +OCAML_NATIVE_ARCHS = i386 sparc amd64 powerpc
-+OCAML_NATIVE_DL_ARCHS = i386 amd64
++OCAML_NATIVE_DYNLINK_ARCHS = i386 amd64
  
 -.for PROP in ALL APM BE LE LP64 NO_SHARED GCC4 GCC3 GCC2 MONO LLVM
 +
 +.for PROP in ALL APM BE LE LP64 NO_SHARED GCC4 GCC3 GCC2 MONO LLVM \
-+                               OCAML_NATIVE OCAML_NATIVE_DL
++                               OCAML_NATIVE OCAML_NATIVE_DYNLINK
  .  for A B in ${MACHINE_ARCH} ${ARCH}
  .    if !empty(${PROP}_ARCHS:M$A) || !empty(${PROP}_ARCHS:M$B)
  PROPERTIES += ${PROP:L}

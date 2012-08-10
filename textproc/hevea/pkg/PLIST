@@ -139,8 +139,6 @@ lib/hevea/winstyles.hva
 lib/hevea/xspace.hva
 lib/hevea/xxcharset.exe
 lib/hevea/xxdate.exe
-lib/ocaml/
-lib/ocaml/stublibs/
 share/doc/hevea/
 share/doc/hevea/browser.html
 share/doc/hevea/contents_motif.gif

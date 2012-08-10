@@ -51,7 +51,7 @@ USE_GMAKE =		Yes
 REGRESS_TARGET =	test
 
 .include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mocaml_native_dl}
+.if ${PROPERTIES:Mocaml_native_dynlink}
 # word builds both: opt AND byte
 ALL_TARGET =		world
 .else

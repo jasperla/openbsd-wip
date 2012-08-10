@@ -7,7 +7,8 @@ COMMENT-kde4 =	KDE4 Plasma runner for Clementine
 DISTNAME =	clementine-1.0.1
 PKGNAME-main =	${PKGNAME}
 PKGNAME-kde4 =	${PKGNAME:C/-/-kde4-/1}
-REVISION-main =	0
+REVISION-main =	2
+REVISION-kde4 =	0
 HOMEPAGE =	http://clementine-player.org/
 
 PSEUDO_FLAVORS =	no_kde4
@@ -57,6 +58,7 @@ RUN_DEPENDS-kde4 =	${BUILD_PKGPATH},-main \
 
 LIB_DEPENDS-main =	${MODGETTEXT_LIB_DEPENDS} \
 			${MODQT4_LIB_DEPENDS} \
+			audio/chromaprint \
 			audio/taglib>=1.4 \
 			audio/libcdio \
 			audio/libnjb \
@@ -80,9 +82,6 @@ CONFIGURE_ARGS =	-DENABLE_LIBGPOD:Bool=No \
 
 # Crash reporting
 CONFIGURE_ARGS +=	-DENABLE_BREAKPAD:Bool=No
-
-# Not ported, force using bundled version instead
-CONFIGURE_ARGS +=	-DCHROMAPRINT_FOUND:Bool=No
 
 # Unported stuff
 CONFIGURE_ARGS +=	-DENABLE_SOUNDMENU:Bool=No

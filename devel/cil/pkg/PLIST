@@ -1,7 +1,6 @@
 @comment $OpenBSD: PLIST,v 1.5 2009/03/11 21:20:27 avsm Exp $
 bin/cilly
 bin/patcher
-lib/ocaml/
 lib/ocaml/cil/
 lib/ocaml/cil/META
 lib/ocaml/cil/alpha.cmi
@@ -128,7 +127,6 @@ lib/ocaml/cil/whitetrack.cmi
 lib/ocaml/cil/whitetrack.mli
 lib/ocaml/cil/zrapp.mli
 %%native%%
-lib/ocaml/stublibs/
 @comment ${P5SITE}/CIL/CilConfig.pm
 ${P5SITE}/CIL/
 ${P5SITE}/CIL/CilConfig.pm

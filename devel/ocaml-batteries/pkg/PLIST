@@ -207,7 +207,6 @@ lib/ocaml/estring/pa_estring.cmo
 lib/ocaml/estring/pa_estring.mli
 lib/ocaml/estring/pa_estring_top.cmi
 lib/ocaml/estring/pa_estring_top.cmo
-lib/ocaml/stublibs/
 share/doc/ocaml-batteries/
 share/doc/ocaml-batteries/FAQ
 share/doc/ocaml-batteries/GUIDELINES

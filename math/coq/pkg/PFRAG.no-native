@@ -1,0 +1,15 @@
+@comment $OpenBSD: $
+bin/coq-tex
+bin/coq_makefile
+bin/coqc
+bin/coqchk
+bin/coqdep
+bin/coqdoc
+bin/coqide
+bin/coqide.byte
+bin/coqmktop
+bin/coqtop
+bin/coqtop.byte
+bin/coqwc
+bin/gallina
+lib/coq/plugins/micromega/csdpcert

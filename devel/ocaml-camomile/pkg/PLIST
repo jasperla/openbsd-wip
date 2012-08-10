@@ -1,6 +1,5 @@
 @comment $OpenBSD: PLIST,v 1.1.1.1 2012/07/13 08:38:10 edd Exp $
 %%native%%
-lib/ocaml/
 lib/ocaml/camomile/
 lib/ocaml/camomile/META
 lib/ocaml/camomile/camomile.cma
