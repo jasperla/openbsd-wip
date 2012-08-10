@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile,v 1.3 2012/07/18 08:04:11 sthen Exp $
 
-COMMENT =	OCaml perl-compatible regexp library
+COMMENT =	OCaml Perl-compatible regexp library
 CATEGORIES =	devel textproc
 
 V =		7.0.2
