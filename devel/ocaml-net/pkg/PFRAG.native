@@ -87,6 +87,7 @@ lib/ocaml/netstring/xdr.cmx
 lib/ocaml/netstring/xdr.o
 lib/ocaml/netstring/xdr.p.cmx
 lib/ocaml/netstring/xdr.p.o
+%%pcre%%
 lib/ocaml/netsys/libnetsys.p.a
 lib/ocaml/netsys/netsys.a
 lib/ocaml/netsys/netsys.cmxa
