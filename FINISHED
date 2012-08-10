@@ -18,6 +18,7 @@ devel/libgeier:		Ready for import. Sent to ports@ 11.12.2011 (sizeofvoid)
 productivity/taxbird:	Ready for import. Sent to ports@ 11.12.2011 (sizeofvoid)
 cad/tkgate:		Ready for import. Sent to ports@ 2008-01-13 and still works (yason)
 games/nexuiz			sent to ports@ Dec 10 2011 (pstumpf)
+sysutils/conky		Ready for import. Sent to maintainer 2012-07-24, similar update sent to ports@ 2012-05-06
 
 
 OCaml 4.00:
