@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/ProcessInfo.cpp.orig	Wed Jun 20 01:54:21 2012
-+++ src/ProcessInfo.cpp	Fri Aug 10 13:24:29 2012
++++ src/ProcessInfo.cpp	Fri Aug 10 16:37:50 2012
 @@ -57,12 +57,14 @@
  #include <kde_file.h>
  #endif
@@ -18,7 +18,7 @@ $OpenBSD$
  #endif
  
  using namespace Konsole;
-@@ -607,60 +609,117 @@ class LinuxProcessInfo : public UnixProcessInfo (priva
+@@ -607,56 +609,111 @@ class LinuxProcessInfo : public UnixProcessInfo (priva
      }
  };
  
@@ -63,7 +63,7 @@ $OpenBSD$
          }
  
 -#if defined(__DragonFly__)
-+#if defined(Q_OS_OPENBSD))
++#if defined(Q_OS_OPENBSD)
 +        setName(kInfoProc->p_comm);
 +        setPid(kInfoProc->p_pid);
 +        setParentPid(kInfoProc->p_ppid);
@@ -94,7 +94,7 @@ $OpenBSD$
  
 +#if defined(Q_OS_OPENBSD)
 +    char** readProcArgs(int aPid, int whatMib) {
-+	void	*buf = NULL;
++	void	*buf = NULL, *nbuf;
 +	size_t	 len = 4096;
 +	int	 rc = -1;
 +	int	 managementInfoBase[4];
@@ -111,7 +111,7 @@ $OpenBSD$
 +	    if (nbuf == NULL)
 +		break;
 +	    buf = nbuf;
-+	    rc = ssctl(managementInfoBase, 4, buf, &len, NULL, 0);
++	    rc = sysctl(managementInfoBase, 4, buf, &len, NULL, 0);
 +	} while (rc == -1 && errno == ENOMEM);
 +
 +	if (rc == -1)
@@ -127,26 +127,20 @@ $OpenBSD$
      virtual bool readArguments(int aPid) {
 +#if defined(Q_OS_OPENBSD)
 +	char **argv;
-+#else
-         char args[ARG_MAX];
-         int managementInfoBase[4];
-         size_t len;
-+#endif
- 
-+#if defined(Q_OS_OPENBSD)
++
 +	argv = readProcArgs(aPid, KERN_PROC_ARGV);
 +	if (argv == NULL)
 +	    return false;
-+	for (const char **p = argv); *p != NULL; p++)
++	for (char **p = argv; *p != NULL; p++)
 +	{
 +	    addArgument(QString(*p));
 +	}
 +	free(argv);
 +#else
-         managementInfoBase[0] = CTL_KERN;
-         managementInfoBase[1] = KERN_PROC;
-         managementInfoBase[2] = KERN_PROC_PID;
-@@ -675,28 +734,51 @@ class FreeBSDProcessInfo : public UnixProcessInfo (pri
+         char args[ARG_MAX];
+         int managementInfoBase[4];
+         size_t len;
+@@ -675,28 +732,51 @@ class FreeBSDProcessInfo : public UnixProcessInfo (pri
          for (QStringList::const_iterator it = argumentList.begin(); it != argumentList.end(); ++it) {
              addArgument(*it);
          }
@@ -162,14 +156,14 @@ $OpenBSD$
 +	envp = readProcArgs(aPid, KERN_PROC_ENV);
 +	if (envp == NULL)
 +	    return false;
-+	for (char **p = envp); *p != NULL; p++)
++	for (char **p = envp; *p != NULL; p++)
 +	{
 +	    eqsign = strchr(*p, '=');
 +	    if (eqsign == NULL || eqsign[1] == '\0')
 +		continue;
 +	    *eqsign = '\0';
 +	    addEnvironmentBinding(QString((const char *)p),
-+		QString((const char *)eqsign + 1);
++		QString((const char *)eqsign + 1));
 +	}
 +	free(envp);
 +	return true;
@@ -205,7 +199,7 @@ $OpenBSD$
              return false;
  
          setCurrentDir(buf);
-@@ -1049,8 +1131,8 @@ ProcessInfo* ProcessInfo::newInstance(int aPid, bool e
+@@ -1049,8 +1129,8 @@ ProcessInfo* ProcessInfo::newInstance(int aPid, bool e
      return new SolarisProcessInfo(aPid, enableEnvironmentRead);
  #elif defined(Q_OS_MAC)
      return new MacProcessInfo(aPid, enableEnvironmentRead);
