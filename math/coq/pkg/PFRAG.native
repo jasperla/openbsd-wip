@@ -1,4 +1,16 @@
 @comment $OpenBSD: PFRAG.native,v 1.1 2002/12/18 09:41:07 sturm Exp $
+@bin bin/coq-tex
+@bin bin/coq_makefile
+@bin bin/coqc
+bin/coqchk
+@bin bin/coqdep
+@bin bin/coqdoc
+bin/coqide
+@bin bin/coqmktop
+bin/coqtop
+bin/coqtop.byte
+@bin bin/coqwc
+@bin bin/gallina
 @bin bin/coqchk.opt
 @bin bin/coqide.opt
 @bin bin/coqtop.opt

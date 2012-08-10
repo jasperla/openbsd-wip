@@ -40,7 +40,7 @@ graphics/camlimages		ready for import.
 lang/obc			waiting for i386 test
 lang/ocaml			ready for import.
 lang/ocamlduce			ready for import, but BROKEN
-math/coq			waiting for sparc64 to build
+math/coq			ready for import.
 net/mldonkey/stable		ready for import.
 net/unison/stable		ready for import.
 productivity/wyrd		ready for import.
