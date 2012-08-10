@@ -53,7 +53,7 @@ WANTLIB +=	${MODTK_WANTLIB}
 .if ${PROPERTIES:Mocaml_native}
 ALL_TARGET=	world bootstrap opt opt.opt
 PKG_ARGS+=-Dnative=1
-.if ${PROPERTIES:Mocaml_native_dl}
+.if ${PROPERTIES:Mocaml_native_dynlink}
 PKG_ARGS+=-Ddynlink=1
 .else
 PKG_ARGS+=-Ddynlink=0
@@ -70,6 +70,11 @@ post-extract:
 	@cp ${WRKSRC}/asmrun/power-elf.S ${WRKSRC}/asmrun/power-bsd.S
 
 post-install:
+.if ${PROPERTIES:Mocaml_native}
+	@ln -sf ${LOCALBASE}/bin/ocamlbuild.native ${PREFIX}/bin/ocamlbuild
+.else
+	@ln -sf ${LOCALBASE}/bin/ocamlbuild.byte ${PREFIX}/bin/ocamlbuild
+.endif
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml/html/libref
 	@${INSTALL_DATA} ${WRKDIR}/htmlman/*.{html,gif} \
 		${PREFIX}/share/doc/ocaml/html

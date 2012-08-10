@@ -13,7 +13,7 @@ bin/labltk
 bin/mkcamlp4
 bin/ocaml
 bin/ocamlbrowser
-@bin bin/ocamlbuild
+bin/ocamlbuild
 bin/ocamlbuild.byte
 bin/ocamlc
 bin/ocamlcp
@@ -169,11 +169,6 @@ lib/ocaml/char.ml
 lib/ocaml/char.mli
 lib/ocaml/compiler-libs/
 lib/ocaml/compiler-libs/annot.cmi
-lib/ocaml/compiler-libs/arch.cmi
-lib/ocaml/compiler-libs/asmgen.cmi
-lib/ocaml/compiler-libs/asmlibrarian.cmi
-lib/ocaml/compiler-libs/asmlink.cmi
-lib/ocaml/compiler-libs/asmpackager.cmi
 lib/ocaml/compiler-libs/asttypes.cmi
 lib/ocaml/compiler-libs/btype.cmi
 lib/ocaml/compiler-libs/bytegen.cmi
@@ -182,27 +177,16 @@ lib/ocaml/compiler-libs/bytelink.cmi
 lib/ocaml/compiler-libs/bytepackager.cmi
 lib/ocaml/compiler-libs/bytesections.cmi
 lib/ocaml/compiler-libs/ccomp.cmi
-lib/ocaml/compiler-libs/clambda.cmi
 lib/ocaml/compiler-libs/clflags.cmi
-lib/ocaml/compiler-libs/closure.cmi
 lib/ocaml/compiler-libs/cmi_format.cmi
-lib/ocaml/compiler-libs/cmm.cmi
-lib/ocaml/compiler-libs/cmmgen.cmi
 lib/ocaml/compiler-libs/cmo_format.cmi
 lib/ocaml/compiler-libs/cmt_format.cmi
-lib/ocaml/compiler-libs/cmx_format.cmi
-lib/ocaml/compiler-libs/coloring.cmi
-lib/ocaml/compiler-libs/comballoc.cmi
 lib/ocaml/compiler-libs/compile.cmi
-lib/ocaml/compiler-libs/compilenv.cmi
 lib/ocaml/compiler-libs/config.cmi
 lib/ocaml/compiler-libs/consistbl.cmi
 lib/ocaml/compiler-libs/ctype.cmi
 lib/ocaml/compiler-libs/datarepr.cmi
-lib/ocaml/compiler-libs/debuginfo.cmi
 lib/ocaml/compiler-libs/dll.cmi
-lib/ocaml/compiler-libs/emit.cmi
-lib/ocaml/compiler-libs/emitaux.cmi
 lib/ocaml/compiler-libs/emitcode.cmi
 lib/ocaml/compiler-libs/env.cmi
 lib/ocaml/compiler-libs/errors.cmi
@@ -213,14 +197,10 @@ lib/ocaml/compiler-libs/includeclass.cmi
 lib/ocaml/compiler-libs/includecore.cmi
 lib/ocaml/compiler-libs/includemod.cmi
 lib/ocaml/compiler-libs/instruct.cmi
-lib/ocaml/compiler-libs/interf.cmi
 lib/ocaml/compiler-libs/lambda.cmi
 lib/ocaml/compiler-libs/lexer.cmi
-lib/ocaml/compiler-libs/linearize.cmi
-lib/ocaml/compiler-libs/liveness.cmi
 lib/ocaml/compiler-libs/location.cmi
 lib/ocaml/compiler-libs/longident.cmi
-lib/ocaml/compiler-libs/mach.cmi
 lib/ocaml/compiler-libs/main.cmi
 lib/ocaml/compiler-libs/main.cmo
 lib/ocaml/compiler-libs/main_args.cmi
@@ -230,14 +210,9 @@ lib/ocaml/compiler-libs/misc.cmi
 lib/ocaml/compiler-libs/mtype.cmi
 lib/ocaml/compiler-libs/ocamlbytecomp.cma
 lib/ocaml/compiler-libs/ocamlcommon.cma
-lib/ocaml/compiler-libs/ocamloptcomp.cma
 lib/ocaml/compiler-libs/ocamltoplevel.cma
 lib/ocaml/compiler-libs/opcodes.cmi
 lib/ocaml/compiler-libs/oprint.cmi
-lib/ocaml/compiler-libs/optcompile.cmi
-lib/ocaml/compiler-libs/opterrors.cmi
-lib/ocaml/compiler-libs/optmain.cmi
-lib/ocaml/compiler-libs/optmain.cmo
 lib/ocaml/compiler-libs/outcometree.cmi
 lib/ocaml/compiler-libs/parmatch.cmi
 lib/ocaml/compiler-libs/parse.cmi
@@ -285,26 +260,12 @@ lib/ocaml/compiler-libs/pparse.cmi
 lib/ocaml/compiler-libs/predef.cmi
 lib/ocaml/compiler-libs/primitive.cmi
 lib/ocaml/compiler-libs/printast.cmi
-lib/ocaml/compiler-libs/printclambda.cmi
-lib/ocaml/compiler-libs/printcmm.cmi
 lib/ocaml/compiler-libs/printinstr.cmi
 lib/ocaml/compiler-libs/printlambda.cmi
-lib/ocaml/compiler-libs/printlinear.cmi
-lib/ocaml/compiler-libs/printmach.cmi
 lib/ocaml/compiler-libs/printtyp.cmi
 lib/ocaml/compiler-libs/printtyped.cmi
-lib/ocaml/compiler-libs/proc.cmi
-lib/ocaml/compiler-libs/reg.cmi
-lib/ocaml/compiler-libs/reload.cmi
-lib/ocaml/compiler-libs/reloadgen.cmi
 lib/ocaml/compiler-libs/runtimedef.cmi
-lib/ocaml/compiler-libs/schedgen.cmi
-lib/ocaml/compiler-libs/scheduling.cmi
-lib/ocaml/compiler-libs/selectgen.cmi
-lib/ocaml/compiler-libs/selection.cmi
 lib/ocaml/compiler-libs/simplif.cmi
-lib/ocaml/compiler-libs/spill.cmi
-lib/ocaml/compiler-libs/split.cmi
 lib/ocaml/compiler-libs/stypes.cmi
 lib/ocaml/compiler-libs/subst.cmi
 lib/ocaml/compiler-libs/switch.cmi
@@ -954,12 +915,90 @@ lib/ocaml/weak.mli
 @man man/man1/ocamlprof.1
 @man man/man1/ocamlrun.1
 @man man/man1/ocamlyacc.1
+@man man/man3/Arg.3o
+@man man/man3/Array.3o
+@man man/man3/ArrayLabels.3o
+@man man/man3/Bigarray.3o
+@man man/man3/Bigarray.Array1.3o
+@man man/man3/Bigarray.Array2.3o
+@man man/man3/Bigarray.Array3.3o
+@man man/man3/Bigarray.Genarray.3o
+@man man/man3/Buffer.3o
+@man man/man3/Callback.3o
+@man man/man3/CamlinternalLazy.3o
+@man man/man3/CamlinternalMod.3o
+@man man/man3/CamlinternalOO.3o
+@man man/man3/Complex.3o
+@man man/man3/Digest.3o
+@man man/man3/Filename.3o
+@man man/man3/Format.3o
+@man man/man3/Gc.3o
+@man man/man3/Genlex.3o
+@man man/man3/Hashtbl.3o
+@man man/man3/Hashtbl.HashedType.3o
+@man man/man3/Hashtbl.Make.3o
 @man man/man3/Hashtbl.MakeSeeded.3o
+@man man/man3/Hashtbl.S.3o
 @man man/man3/Hashtbl.SeededHashedType.3o
 @man man/man3/Hashtbl.SeededS.3o
+@man man/man3/Int32.3o
+@man man/man3/Int64.3o
+@man man/man3/Lexing.3o
+@man man/man3/List.3o
+@man man/man3/ListLabels.3o
+@man man/man3/Map.3o
+@man man/man3/Map.Make.3o
+@man man/man3/Map.OrderedType.3o
+@man man/man3/Map.S.3o
+@man man/man3/Marshal.3o
+@man man/man3/MoreLabels.3o
+@man man/man3/MoreLabels.Hashtbl.3o
+@man man/man3/MoreLabels.Hashtbl.HashedType.3o
+@man man/man3/MoreLabels.Hashtbl.Make.3o
 @man man/man3/MoreLabels.Hashtbl.MakeSeeded.3o
+@man man/man3/MoreLabels.Hashtbl.S.3o
 @man man/man3/MoreLabels.Hashtbl.SeededHashedType.3o
 @man man/man3/MoreLabels.Hashtbl.SeededS.3o
+@man man/man3/MoreLabels.Map.3o
+@man man/man3/MoreLabels.Map.Make.3o
+@man man/man3/MoreLabels.Map.OrderedType.3o
+@man man/man3/MoreLabels.Map.S.3o
+@man man/man3/MoreLabels.Set.3o
+@man man/man3/MoreLabels.Set.Make.3o
+@man man/man3/MoreLabels.Set.OrderedType.3o
+@man man/man3/MoreLabels.Set.S.3o
+@man man/man3/Nativeint.3o
+@man man/man3/Num.3o
+@man man/man3/Obj.3o
+@man man/man3/Oo.3o
+@man man/man3/Parsing.3o
+@man man/man3/Pervasives.3o
+@man man/man3/Pervasives.LargeFile.3o
+@man man/man3/Printexc.3o
+@man man/man3/Printf.3o
+@man man/man3/Queue.3o
+@man man/man3/Random.3o
+@man man/man3/Random.State.3o
+@man man/man3/Scanf.3o
+@man man/man3/Scanf.Scanning.3o
+@man man/man3/Set.Make.3o
+@man man/man3/Set.OrderedType.3o
+@man man/man3/Set.S.3o
+@man man/man3/Sort.3o
+@man man/man3/Stack.3o
+@man man/man3/StdLabels.3o
+@man man/man3/StdLabels.Array.3o
+@man man/man3/StdLabels.List.3o
+@man man/man3/StdLabels.String.3o
+@man man/man3/Str.3o
+@man man/man3/Stream.3o
+@man man/man3/StringLabels.3o
+@man man/man3/Sys.3o
+@man man/man3/Unix.3o
+@man man/man3/Unix.LargeFile.3o
+@man man/man3/Weak.3o
+@man man/man3/Weak.Make.3o
+@man man/man3/Weak.S.3o
 share/doc/ocaml/
 share/doc/ocaml/LICENSE
 share/doc/ocaml/html/

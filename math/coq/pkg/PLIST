@@ -1,17 +1,7 @@
 @comment $OpenBSD: PLIST,v 1.4 2004/09/15 09:11:59 espie Exp $
 %%SHARED%%
-@bin bin/coq-tex
-@bin bin/coq_makefile
-@bin bin/coqc
-bin/coqchk
-@bin bin/coqdep
-@bin bin/coqdoc
-bin/coqide
-@bin bin/coqmktop
-bin/coqtop
-bin/coqtop.byte
-@bin bin/coqwc
-@bin bin/gallina
+%%native%%
+!%%native%%
 etc/
 etc/xdg/
 etc/xdg/coq/
@@ -129,7 +119,6 @@ lib/coq/lib/util.cmi
 lib/coq/lib/xml_lexer.cmi
 lib/coq/lib/xml_parser.cmi
 lib/coq/lib/xml_utils.cmi
-lib/coq/libcoqrun.a
 lib/coq/library/
 lib/coq/library/assumptions.cmi
 lib/coq/library/decl_kinds.cmi
@@ -271,7 +260,6 @@ lib/coq/plugins/micromega/ZCoeff.vo
 lib/coq/plugins/micromega/ZMicromega.vo
 lib/coq/plugins/micromega/certificate.cmi
 lib/coq/plugins/micromega/coq_micromega.cmi
-@bin lib/coq/plugins/micromega/csdpcert
 lib/coq/plugins/micromega/g_micromega.cmi
 lib/coq/plugins/micromega/mfourier.cmi
 lib/coq/plugins/micromega/micromega.cmi
@@ -978,8 +966,6 @@ lib/coq/toplevel/vernacexpr.cmi
 lib/coq/toplevel/vernacinterp.cmi
 lib/coq/toplevel/whelp.cmi
 lib/coq/user-contrib/
-lib/ocaml/
-lib/ocaml/stublibs/
 share/coq/
 share/coq/coq.png
 share/doc/coq/
@@ -1543,7 +1529,6 @@ share/emacs/site-lisp/coq-font-lock.el
 share/emacs/site-lisp/coq-inferior.el
 share/emacs/site-lisp/coq-syntax.el
 share/emacs/site-lisp/coq.el
-%%native%%
 share/emacs/site-lisp/coqdoc.sty
 share/man/
 share/man/man1/

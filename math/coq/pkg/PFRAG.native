@@ -1,7 +1,19 @@
 @comment $OpenBSD: PFRAG.native,v 1.1 2002/12/18 09:41:07 sturm Exp $
+@bin bin/coq-tex
+@bin bin/coq_makefile
+@bin bin/coqc
+bin/coqchk
 @bin bin/coqchk.opt
+@bin bin/coqdep
+@bin bin/coqdoc
+bin/coqide
 @bin bin/coqide.opt
+@bin bin/coqmktop
+bin/coqtop
+bin/coqtop.byte
 @bin bin/coqtop.opt
+@bin bin/coqwc
+@bin bin/gallina
 lib/coq/config/coq_config.cmx
 lib/coq/config/coq_config.o
 lib/coq/ide/ide.a
@@ -12,12 +24,14 @@ lib/coq/kernel/kernel.a
 lib/coq/kernel/kernel.cmxa
 lib/coq/lib/lib.a
 lib/coq/lib/lib.cmxa
+lib/coq/libcoqrun.a
 lib/coq/library/library.a
 lib/coq/library/library.cmxa
 lib/coq/parsing/highparsing.a
 lib/coq/parsing/highparsing.cmxa
 lib/coq/parsing/parsing.a
 lib/coq/parsing/parsing.cmxa
+@bin lib/coq/plugins/micromega/csdpcert
 lib/coq/pretyping/pretyping.a
 lib/coq/pretyping/pretyping.cmxa
 lib/coq/proofs/proofs.a

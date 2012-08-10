@@ -19,7 +19,7 @@ MODOCAML_NATIVE=Yes
 # include nativecode base files
 PKG_ARGS+=-Dnative=1
 
-.if ${PROPERTIES:Mocaml_native_dl}
+.if ${PROPERTIES:Mocaml_native_dynlink}
 MODOCAML_NATDYNLINK=Yes
 
 # include native dynlink base files

@@ -1,3 +1,0 @@
-* testing on bytecode-only and no-dll arches
-* why does lib-depends-check show Extra:  curses.12 pthread.16 ?
-  - they are needed by the findlib executable

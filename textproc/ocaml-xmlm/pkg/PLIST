@@ -1,13 +1,11 @@
 @comment $OpenBSD$
-@bin bin/xmltrip
-lib/ocaml/
-lib/ocaml/stublibs/
 lib/ocaml/xmlm/
 lib/ocaml/xmlm/META
 lib/ocaml/xmlm/xmlm.cma
 lib/ocaml/xmlm/xmlm.cmi
 lib/ocaml/xmlm/xmlm.mli
 %%native%%
+!%%native%%
 share/doc/ocaml-xmlm/
 share/doc/ocaml-xmlm/Xmlm.Buffer.html
 share/doc/ocaml-xmlm/Xmlm.Make.html

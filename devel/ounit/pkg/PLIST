@@ -1,6 +1,5 @@
 @comment $OpenBSD: PLIST,v 1.1.1.1 2012/07/13 08:36:03 edd Exp $
 %%native%%
-lib/ocaml/
 lib/ocaml/oUnit/
 lib/ocaml/oUnit/META
 lib/ocaml/oUnit/oUnit.cma
@@ -8,7 +7,6 @@ lib/ocaml/oUnit/oUnit.cmi
 lib/ocaml/oUnit/oUnit.mli
 lib/ocaml/oUnit/oUnitDiff.cmi
 lib/ocaml/oUnit/oUnitDiff.mli
-lib/ocaml/stublibs/
 share/doc/ounit/
 share/doc/ounit/OUnit.html
 share/doc/ounit/OUnitDiff.DIFF_ELEMENT.html

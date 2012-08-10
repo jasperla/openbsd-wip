@@ -87,12 +87,14 @@ lib/ocaml/netstring/xdr.cmx
 lib/ocaml/netstring/xdr.o
 lib/ocaml/netstring/xdr.p.cmx
 lib/ocaml/netstring/xdr.p.o
+%%pcre%%
 lib/ocaml/netsys/libnetsys.p.a
 lib/ocaml/netsys/netsys.a
 lib/ocaml/netsys/netsys.cmxa
 lib/ocaml/netsys/netsys.p.a
 lib/ocaml/netsys/netsys.p.cmxa
 lib/ocaml/netsys/netsys_c_gprof.o
+lib/ocaml/netsys/netsys_gprof_init.cmi
 lib/ocaml/netsys/netsys_gprof_init.p.cmx
 lib/ocaml/netsys/netsys_gprof_init.p.o
 lib/ocaml/netsys/netsys_oothr.a
@@ -120,6 +122,7 @@ lib/ocaml/rpc-generator/rpc_generator.a
 lib/ocaml/rpc-generator/rpc_generator.cmxa
 lib/ocaml/rpc-generator/rpc_generator.p.a
 lib/ocaml/rpc-generator/rpc_generator.p.cmxa
+lib/ocaml/rpc/rpc.a
 lib/ocaml/rpc/rpc.cmxa
 lib/ocaml/rpc/rpc.p.a
 lib/ocaml/rpc/rpc.p.cmxa

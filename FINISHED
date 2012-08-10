@@ -18,6 +18,40 @@ devel/libgeier:		Ready for import. Sent to ports@ 11.12.2011 (sizeofvoid)
 productivity/taxbird:	Ready for import. Sent to ports@ 11.12.2011 (sizeofvoid)
 cad/tkgate:		Ready for import. Sent to ports@ 2008-01-13 and still works (yason)
 games/nexuiz			sent to ports@ Dec 10 2011 (pstumpf)
+sysutils/conky		Ready for import. Sent to maintainer 2012-07-24, similar update sent to ports@ 2012-05-06
+
+
+OCaml 4.00:
+All tested on amd64 and sparc64
+Sent to lang/ocaml maintainer Anil Madhavapeddy <anil@recoil.org>
+
+databases/ocaml-postgresql	ready for import.
+databases/ocaml-sqlite3		ready for import.
+devel/cil			ready for import.
+devel/coccinelle		ready for import.
+devel/ocaml-batteries		ready for import.
+devel/ocaml-calendar		ready for import.
+devel/ocaml-camomile		ready for import.
+devel/ocaml-mlgmp		ready for import.
+devel/ocaml-net			ready for import.
+devel/ocaml-pcre		ready for import.
+devel/omake			ready for import.
+devel/ounit			ready for import.
+graphics/camlimages		ready for import.
+lang/obc			waiting for i386 test
+lang/ocaml			ready for import.
+lang/ocamlduce			ready for import, but BROKEN
+math/coq			ready for import.
+net/mldonkey/stable		ready for import.
+net/unison/stable		ready for import.
+productivity/wyrd		ready for import.
+security/(ocaml-)cryptokit	ready for import. Renamed cryptokit->ocaml-crytokit
+sysutils/findlib		ready for import.
+textproc/hevea			ready for import.
+textproc/ocaml-rss		ready for import.
+textproc/ocaml-xmlm		ready for import.
+textproc/ocaml-xml-light	ready for import.
+
 
 KDE 4.8 related
 

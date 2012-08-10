@@ -3,7 +3,6 @@
 %%native%%
 @bin bin/netplex-admin
 @bin bin/ocamlrpcgen
-lib/ocaml/
 lib/ocaml/equeue/
 lib/ocaml/equeue/META
 lib/ocaml/equeue/equeue.cma
@@ -393,6 +392,7 @@ lib/ocaml/netstring/xdr.cmi
 lib/ocaml/netstring/xdr.mli
 lib/ocaml/netstring/xdr_mstring.cmi
 lib/ocaml/netstring/xdr_mstring.mli
+%%pcre%%
 lib/ocaml/netsys/
 lib/ocaml/netsys/META
 lib/ocaml/netsys/libnetsys.a
@@ -404,7 +404,6 @@ lib/ocaml/netsys/netsys.cma
 lib/ocaml/netsys/netsys.cmi
 lib/ocaml/netsys/netsys.mli
 lib/ocaml/netsys/netsys_conf.cmi
-lib/ocaml/netsys/netsys_gprof_init.cmi
 lib/ocaml/netsys/netsys_gprof_init.mli
 lib/ocaml/netsys/netsys_impl_util.cmi
 lib/ocaml/netsys/netsys_mem.cmi
@@ -474,7 +473,6 @@ lib/ocaml/rpc-generator/rpc_generator.cma
 lib/ocaml/rpc-generator/rpcgen-packlist
 lib/ocaml/rpc-generator/syntax.cmi
 lib/ocaml/rpc/META
-lib/ocaml/rpc/rpc.a
 lib/ocaml/rpc/rpc.cma
 lib/ocaml/rpc/rpc.cmi
 lib/ocaml/rpc/rpc.mli

@@ -20,16 +20,27 @@ PERMIT_DISTFILES_CDROM =	Yes
 
 MODULES =	lang/ocaml
 
-BUILD_DEPENDS =	sysutils/findlib
-WANTLIB =	c curses m pthread
+FLAVORS =	pcre
+FLAVOR ?=
 
-CONFIGURE_STYLE = simple
-CONFIGURE_ARGS = -with-nethttpd
+BUILD_DEPENDS =		sysutils/findlib
+WANTLIB =		c curses m pthread
+
+CONFIGURE_STYLE =	simple
+CONFIGURE_ARGS =	-with-nethttpd
+
+.if ${FLAVOR:Mpcre}
+RUN_DEPENDS +=		devel/ocaml-pcre
+BUILD_DEPENDS +=	devel/ocaml-pcre
+WANTLIB +=		pcre
+
+CONFIGURE_ARGS +=	-enable-pcre
+.endif
 
 NO_REGRESS =	Yes
 USE_GMAKE =	Yes
 
-ALL_TARGET =	all ${MODOCAML_NATIVE:S/Yes/opt/:S/No//}
+ALL_TARGET =	all
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mocaml_native}

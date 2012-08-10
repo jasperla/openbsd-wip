@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+@bin bin/xmltrip
 lib/ocaml/xmlm/xmlm.a
 lib/ocaml/xmlm/xmlm.cmx
 lib/ocaml/xmlm/xmlm.cmxa
