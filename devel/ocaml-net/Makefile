@@ -32,6 +32,7 @@ CONFIGURE_ARGS =	-with-nethttpd
 .if ${FLAVOR:Mpcre}
 RUN_DEPENDS +=		devel/ocaml-pcre
 BUILD_DEPENDS +=	devel/ocaml-pcre
+WANTLIB +=		pcre
 
 CONFIGURE_ARGS +=	-enable-pcre
 .endif

@@ -392,6 +392,7 @@ lib/ocaml/netstring/xdr.cmi
 lib/ocaml/netstring/xdr.mli
 lib/ocaml/netstring/xdr_mstring.cmi
 lib/ocaml/netstring/xdr_mstring.mli
+%%pcre%%
 lib/ocaml/netsys/
 lib/ocaml/netsys/META
 lib/ocaml/netsys/libnetsys.a
