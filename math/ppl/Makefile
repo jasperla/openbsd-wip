@@ -1,9 +1,17 @@
 # $OpenBSD: Makefile.template,v 1.61 2012/03/29 13:41:58 sthen Exp $
 
-# XXX SUBPACKAGE THIS
+V =			1.0
+MULTI_PACKAGES =	-main -ocaml -java
 
-COMMENT =		numerical abstractions library and tools
-DISTNAME =		ppl-1.0
+PKGNAME-main =		ppl-${V}
+PKGNAME-ocaml =		ppl-ocaml-${V}
+PKGNAME-java =		ppl-java-${V}
+
+COMMENT-main =		numerical abstractions library and tools
+COMMENT-ocaml =		Ocaml bindings for PPL numerical abstractions library
+COMMENT-java =		Java bindings for PPL numerical abstractions library
+
+DISTNAME =		ppl-${V}
 
 SHARED_LIBS +=  	ppl	0.0 # 12.0
 SHARED_LIBS +=  	ppl_c	0.0 # 4.0
@@ -20,8 +28,8 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/ocaml \
 			java
-
 MODJAVA_VER =		1.7
+MODJAVA_JRERUN =	Yes
 
 WANTLIB =		c glpk gmp gmpxx m stdc++ z
 
@@ -30,9 +38,13 @@ MASTER_SITES =		ftp://ftp.cs.unipr.it/pub/ppl/releases/1.0/
 BUILD_DEPENDS +=	${MODOCAML_BUILD_DEPENDS} \
 			${MODJAVA_BUILD_DEPENDS} \
 			devel/ocaml-mlgmp
+
 LIB_DEPENDS =		devel/gmp \
 			devel/glpk
-RUN_DEPENDS =		devel/ocaml-mlgmp
+LIB_DEPENDS-ocaml =	devel/ocaml-mlgmp \
+			devel/glpk
+
+RUN_DEPENDS-java =	${MODJAVA_RUN_DEPENDS}
 
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes
