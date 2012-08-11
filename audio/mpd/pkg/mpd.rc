@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# $OpenBSD: mpd.rc,v 1.4 2010/12/27 14:50:22 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/sbin/mpd"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1
