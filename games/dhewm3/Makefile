@@ -1,5 +1,7 @@
 # $OpenBSD$
 
+SHARED_ONLY =		Yes
+
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		open-source version of Doom 3
