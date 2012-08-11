@@ -10,16 +10,16 @@ lib/libppl.a
 lib/libppl.la
 lib/libppl_c.a
 lib/libppl_c.la
-lib/ppl/
-lib/ppl/libppl_java.la
-lib/ppl/libppl_ocaml.a
-lib/ppl/ppl_java.jar
-lib/ppl/ppl_ocaml.a
-lib/ppl/ppl_ocaml.cma
-lib/ppl/ppl_ocaml.cmi
-lib/ppl/ppl_ocaml.cmxa
-lib/ppl/ppl_ocaml.mli
-lib/ppl/ppl_ocaml_globals.cmi
+lib/libppl_java.la
+lib/libppl_ocaml.a
+lib/ocaml/site-lib/
+lib/ocaml/site-lib/ppl/
+lib/ocaml/site-lib/ppl/ppl_ocaml.a
+lib/ocaml/site-lib/ppl/ppl_ocaml.cma
+lib/ocaml/site-lib/ppl/ppl_ocaml.cmi
+lib/ocaml/site-lib/ppl/ppl_ocaml.cmxa
+lib/ocaml/site-lib/ppl/ppl_ocaml.mli
+lib/ocaml/site-lib/ppl/ppl_ocaml_globals.cmi
 @man man/man1/ppl-config.1
 @man man/man1/ppl_lcdd.1
 @man man/man1/ppl_lpsol.1
@@ -2042,3 +2042,6 @@ share/doc/ppl/ppl-user-ocaml-interface-1.0-html/tab_s.png
 share/doc/ppl/ppl-user-ocaml-interface-1.0-html/tabs.css
 share/doc/ppl/ppl-user-ocaml-interface-1.0.pdf
 share/doc/ppl/ppl-user-ocaml-interface-1.0.ps.gz
+share/java/
+share/java/classes/
+share/java/classes/ppl_java.jar

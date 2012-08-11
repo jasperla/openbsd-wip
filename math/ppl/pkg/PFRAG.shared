@@ -1,4 +1,4 @@
 @comment $OpenBSD$
 @lib lib/libppl.so.${LIBppl_VERSION}
 @lib lib/libppl_c.so.${LIBppl_c_VERSION}
-lib/ppl/libppl_java.so
+lib/libppl_java.so
