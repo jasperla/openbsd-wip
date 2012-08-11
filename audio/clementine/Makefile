@@ -7,7 +7,7 @@ COMMENT-kde4 =	KDE4 Plasma runner for Clementine
 DISTNAME =	clementine-1.0.1
 PKGNAME-main =	${PKGNAME}
 PKGNAME-kde4 =	${PKGNAME:C/-/-kde4-/1}
-REVISION-main =	2
+REVISION-main =	3
 REVISION-kde4 =	0
 HOMEPAGE =	http://clementine-player.org/
 
@@ -51,6 +51,7 @@ MODKDE4_USE =
 BUILD_DEPENDS =		devel/boost
 
 RUN_DEPENDS-main =	devel/desktop-file-utils \
+			multimedia/gstreamer-0.10/plugins-ugly \
 			x11/qt4,-sqlite
 
 RUN_DEPENDS-kde4 =	${BUILD_PKGPATH},-main \
