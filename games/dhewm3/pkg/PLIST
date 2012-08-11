@@ -1,5 +1,5 @@
 @comment $OpenBSD$
-%%SHARED%%
 @bin bin/dhewm3
 share/dhewm3/
 share/dhewm3/base/
+share/dhewm3/base/game${A}.so
