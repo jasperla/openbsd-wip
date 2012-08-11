@@ -31,7 +31,20 @@ MODULES =		lang/ocaml \
 MODJAVA_VER =		1.7
 MODJAVA_JRERUN =	Yes
 
-WANTLIB =		c glpk gmp gmpxx m stdc++ z
+WANTLIB-main =		gmp gmpxx m stdc++ ${WANTLIB} c glpk z
+WANTLIB-java =		gmp gmpxx m stdc++ ${WANTLIB} ppl
+WANTLIB-ocaml =		
+
+#ppl-ocaml-1.0(math/ppl,-ocaml):
+#Extra:  c.65 glpk.6 gmp.9 gmpxx.1 m.7 stdc++.55 z.4
+#Asking ports for dependency gmp-5.0.2p0(devel/gmp)
+#Asking ports for dependency glpk-4.44(devel/glpk)
+#Asking ports for dependency jdk-1.7.0.03p0v0(devel/jdk/1.7,-main)
+#Asking ports for dependency libiconv-1.14(converters/libiconv)
+
+#ppl-java-1.0(math/ppl,-java):
+#Missing lib: ppl.0 (/usr/local/lib/libppl_java.so) (NOT REACHABLE)
+#Extra:  c.65 glpk.6 z.4
 
 MASTER_SITES =		ftp://ftp.cs.unipr.it/pub/ppl/releases/1.0/
 
@@ -43,6 +56,8 @@ LIB_DEPENDS =		devel/gmp \
 			devel/glpk
 LIB_DEPENDS-ocaml =	devel/ocaml-mlgmp \
 			devel/glpk
+LIB_DEPENDS-java =	math/ppl,-main
+			
 
 RUN_DEPENDS-java =	${MODJAVA_RUN_DEPENDS}
 
