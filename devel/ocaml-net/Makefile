@@ -52,12 +52,12 @@ pre-fake:
 
 EXAMPLEDIR =	${PREFIX}/share/examples/ocaml-net
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocamlnet/html
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/ocamlnet/
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${PREFIX}/share/doc/ocamlnet/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml-net/html
+	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/ocaml-net/
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${PREFIX}/share/doc/ocaml-net/
 	${INSTALL_DATA} \
 	    ${WRKSRC}/doc/html-main/* \
-	    ${PREFIX}/share/doc/ocamlnet/html/
+	    ${PREFIX}/share/doc/ocaml-net/html/
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}
 	cp -r ${WRKSRC}/examples/* ${EXAMPLEDIR}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLEDIR}
