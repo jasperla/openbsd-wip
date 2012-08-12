@@ -22,3 +22,6 @@ Check if we could/should comment out set(QT_USE_IMPORTED_TARGETS TRUE) in FindKD
 Localized documentation incorrectly encodes names in the documentation tree.
 
 Fix kjs/collector.cpp (see current patch), KJS asserts at startup otherwise. We're using Webkit by default now, instead of KHTML, to make Konqueror and other browsers usable.
+
+BUG#305023 https://bugs.kde.org/show_bug.cgi?id=305023
+Repeatable crash in KSharedDataCache::Private::lock when first KDE app starts.
