@@ -22,6 +22,3 @@ Check if we could/should comment out set(QT_USE_IMPORTED_TARGETS TRUE) in FindKD
 Localized documentation incorrectly encodes names in the documentation tree.
 
 Fix kjs/collector.cpp (see current patch), KJS asserts at startup otherwise. We're using Webkit by default now, instead of KHTML, to make Konqueror and other browsers usable.
-
-pers@somehost$ kde4-config --path exe
-/home/pers/.kde/lib/kde4/libexec/:/usr/local/bin/

@@ -1,0 +1,11 @@
+$OpenBSD$
+--- kdecore/kernel/kstandarddirs.cpp.orig	Sun Aug 12 14:02:20 2012
++++ kdecore/kernel/kstandarddirs.cpp	Sun Aug 12 16:02:03 2012
+@@ -279,6 +279,7 @@ QStringList KStandardDirs::allTypes() const
+         list.append(QLatin1String(types_string + types_indices[i]));
+     // Those are added manually by addKDEDefaults
+     list.append(QString::fromLatin1("lib"));
++    list.append(QString::fromLatin1("libexec"));
+     //list.append(QString::fromLatin1("home")); // undocumented on purpose, said Waldo in r113855.
+ 
+     // Those are handled by resourceDirs() itself
