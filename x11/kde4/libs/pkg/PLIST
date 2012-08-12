@@ -2152,7 +2152,6 @@ share/apps/cmake/modules/FindIOKit.cmake
 share/apps/cmake/modules/FindKDE4Internal.cmake
 share/apps/cmake/modules/FindKDE4Workspace.cmake
 share/apps/cmake/modules/FindKDevPlatform.cmake
-share/apps/cmake/modules/FindKdcraw.cmake
 share/apps/cmake/modules/FindKdeMultimedia.cmake
 share/apps/cmake/modules/FindKdepim.cmake
 share/apps/cmake/modules/FindKdepimLibs.cmake
