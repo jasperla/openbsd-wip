@@ -13,8 +13,7 @@ WANTLIB += jpeg lcms
 
 MODKDE4_USE =	libs
 
-LIB_DEPENDS = 	x11/kde4/libkipi \
-		graphics/lcms \
+LIB_DEPENDS = 	graphics/lcms \
 		graphics/jpeg
 
 CONFIGURE_ARGS =	-DWITH_OpenMP:Bool=FALSE
