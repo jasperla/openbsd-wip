@@ -1,0 +1,17 @@
+$OpenBSD$
+
+ * `whereis -b` does not exist on OpenBSD
+
+--- .default.orig	Sun Aug 12 23:55:13 2012
++++ .default	Sun Aug 12 23:55:23 2012
+@@ -13,8 +13,8 @@ VERSION = 0.9.9
+ LANG_LIST ?= de fr es it nl pl pt_BR ru sk tr uk zh_CN zh_TW
+ 
+ YEAR = $(shell date +%Y)
+-ECHO = $(shell whereis -b echo | awk '{print $$2}')
+-PRINTF = $(shell whereis -b printf | awk '{print $$2}')
++ECHO = $(shell whereis echo | awk '{print $$2}')
++PRINTF = $(shell whereis printf | awk '{print $$2}')
+ 
+ PREFIX = /usr/local
+ ETCDIR = $(PREFIX)/etc/xdg

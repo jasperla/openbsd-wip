@@ -1,0 +1,31 @@
+$OpenBSD$
+
+ * `whereis -b` does not exist on OpenBSD
+ * Remove broken terminal escapes*
+
+--- src/Makefile.orig	Sun Aug 12 23:36:45 2012
++++ src/Makefile	Sun Aug 12 23:38:52 2012
+@@ -20,7 +20,7 @@
+ include ../.default
+ -include ../.config
+ 
+-PKGCONFIG := $(shell whereis -b "pkg-config" | tr -s ' ' '\n' | grep "bin/""pkg-config""$$" | head -n 1)
++PKGCONFIG := $(shell whereis "pkg-config" | tr -s ' ' '\n' | grep "bin/""pkg-config""$$" | head -n 1)
+ 
+ VTE ?= ""
+ 
+@@ -187,12 +187,10 @@ clean:
+ 	done
+ 
+ %.o: %.c %.h data.h $(BINARY).h
+-	@ $(PRINTF) "\033[1;33m** compiling $@...\033[0m\n"
+-	@ $(CC) $(CFLAGS) $(INCLUDES) -c $< `$(OBJ_PKG_CMD)`
++	$(CC) $(CFLAGS) $(INCLUDES) -c $< `$(OBJ_PKG_CMD)`
+ 
+ $(BINARY): $(OBJ)
+-	@ $(PRINTF) "\033[1;36m** compiling $(BINARY)...\033[0m\n"
+-	@ $(CC) $(LDFLAGS) $(CFLAGS) -o $(BINARY) $(OBJ) `$(BINARY_PKG_CMD)`
++	$(CC) $(LDFLAGS) $(CFLAGS) -o $(BINARY) $(OBJ) `$(BINARY_PKG_CMD)`
+ 
+ .PHONY: data
+ data: debug

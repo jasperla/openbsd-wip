@@ -1,0 +1,38 @@
+$OpenBSD$
+
+ * `whereis -b` does not exist on OpenBSD
+
+--- src/unit_test.sh.orig	Sun Aug 12 23:40:51 2012
++++ src/unit_test.sh	Sun Aug 12 23:41:03 2012
+@@ -28,15 +28,15 @@ BUILD_ONLY=0
+ LIB_LISTS="lilyterm.h"
+ FUNCTION_FOUND=0
+ 
+-ECHO=`whereis -b "echo" | tr -s ' ' '\n' | grep "bin/""echo""$" | head -n 1`
+-PRINTF=`whereis -b "printf" | tr -s ' ' '\n' | grep "bin/""printf""$" | head -n 1`
+-CAT=`whereis -b "cat" | tr -s ' ' '\n' | grep "bin/""cat""$" | head -n 1`
+-GDB=`whereis -b "gdb" | tr -s ' ' '\n' | grep "bin/""gdb""$" | head -n 1`
+-VALGRIND=`whereis -b "valgrind" | tr -s ' ' '\n' | grep "bin/""valgrind""$" | head -n 1`
++ECHO=`whereis "echo" | tr -s ' ' '\n' | grep "bin/""echo""$" | head -n 1`
++PRINTF=`whereis "printf" | tr -s ' ' '\n' | grep "bin/""printf""$" | head -n 1`
++CAT=`whereis "cat" | tr -s ' ' '\n' | grep "bin/""cat""$" | head -n 1`
++GDB=`whereis "gdb" | tr -s ' ' '\n' | grep "bin/""gdb""$" | head -n 1`
++VALGRIND=`whereis "valgrind" | tr -s ' ' '\n' | grep "bin/""valgrind""$" | head -n 1`
+ 
+-MAKE=`whereis -b "gmake" | tr -s ' ' '\n' | grep "bin/""gmake""$" | head -n 1`                                                                        
++MAKE=`whereis "gmake" | tr -s ' ' '\n' | grep "bin/""gmake""$" | head -n 1`                                                                        
+ if [ -z "$MAKE" ]; then
+-	MAKE=`whereis -b "make" | tr -s ' ' '\n' | grep "bin/""make""$" | head -n 1`
++	MAKE=`whereis "make" | tr -s ' ' '\n' | grep "bin/""make""$" | head -n 1`
+ fi
+ 
+ for opt do
+@@ -87,7 +87,7 @@ if [ -z "$CHECK_INCLUDES" ]; then
+ fi
+ 
+ 
+-PKGCONFIG=`whereis -b "pkg-config" | tr -s ' ' '\n' | grep "bin/""pkg-config""$" | head -n 1`
++PKGCONFIG=`whereis "pkg-config" | tr -s ' ' '\n' | grep "bin/""pkg-config""$" | head -n 1`
+ if [ -z "$PKGCONFIG" ]; then
+ 	$PRINTF "\033[1;31m** ERROR: Command pkg-config is not found!\033[0m\n"
+ 	exit 1

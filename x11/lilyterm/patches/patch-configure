@@ -1,0 +1,64 @@
+$OpenBSD$
+
+ * `whereis` does not exist on OpenBSD
+ * Remove broken colour terminal escapes
+
+--- configure.orig	Sun Aug 12 23:33:59 2012
++++ configure	Sun Aug 12 23:34:58 2012
+@@ -25,15 +25,15 @@ if [ -z "$CFLAGS" ]; then
+   CFLAGS="-Wall -O -g"
+ fi
+ 
+-MAKE=`whereis -b "gmake" | tr -s ' ' '\n' | grep "bin/""gmake""$" | head -n 1`
++MAKE=`whereis "gmake" | tr -s ' ' '\n' | grep "bin/""gmake""$" | head -n 1`
+ if [ -z "$MAKE" ]; then
+-MAKE=`whereis -b "make" | tr -s ' ' '\n' | grep "bin/""make""$" | head -n 1`
++MAKE=`whereis "make" | tr -s ' ' '\n' | grep "bin/""make""$" | head -n 1`
+ else
+   GMAKE="$MAKE"
+ fi
+-ECHO=`whereis -b "echo" | tr -s ' ' '\n' | grep "bin/""echo""$" | head -n 1`
+-PRINTF=`whereis -b "printf" | tr -s ' ' '\n' | grep "bin/""printf""$" | head -n 1`
+-WC=`whereis -b "wc" | tr -s ' ' '\n' | grep "bin/""wc""$" | head -n 1`
++ECHO=`whereis "echo" | tr -s ' ' '\n' | grep "bin/""echo""$" | head -n 1`
++PRINTF=`whereis "printf" | tr -s ' ' '\n' | grep "bin/""printf""$" | head -n 1`
++WC=`whereis "wc" | tr -s ' ' '\n' | grep "bin/""wc""$" | head -n 1`
+ 
+ ERR()
+ {
+@@ -115,7 +115,7 @@ if [ "$1" = "-h" -o "$1" = "--help" -o "$1" = "-help" 
+   exit 0
+ fi
+ 
+-PKGCONFIG=`whereis -b "pkg-config" | tr -s ' ' '\n' | grep "bin/""pkg-config""$" | head -n 1`
++PKGCONFIG=`whereis "pkg-config" | tr -s ' ' '\n' | grep "bin/""pkg-config""$" | head -n 1`
+ if [ -z "$PKGCONFIG" ]; then
+   ERR "\n  ERROR: \`"
+   WARN "pkg-config"
+@@ -271,7 +271,7 @@ fi
+ 
+ if [ "$NLS" = 'Y' ]; then
+   CHECK_MESSAGE 'Native Language Support'
+-  GETTEXT=`whereis -b "msgfmt" | tr -s ' ' '\n' | grep "bin/""msgfmt""$" | head -n 1`
++  GETTEXT=`whereis "msgfmt" | tr -s ' ' '\n' | grep "bin/""msgfmt""$" | head -n 1`
+   if [ -z "$GETTEXT" ]; then
+     if [ $NLS_SPC -eq 1 ]; then
+       ERR "[NG]"
+@@ -332,7 +332,7 @@ fi
+ if [ "$STRIP" = 'Y' ]; then
+   IMPORTANT "  STRIP     = $STRIP\n"
+ fi
+-CHECK_CC=`whereis -b "$CC" | tr -s ' ' '\n' | grep "bin/""$CC""$" | head -n 1`
++CHECK_CC=`whereis "$CC" | tr -s ' ' '\n' | grep "bin/""$CC""$" | head -n 1`
+ if [ -n "$CHECK_CC" ]; then
+   if [ "$CC" != 'gcc' ]; then
+     IMPORTANT "  CC        = $CC\n"
+@@ -365,7 +365,7 @@ if [ -n "$GMAKE" ]; then
+   IMPORTANT "gmake"
+   WARN "' instead of \`"
+   IMPORTANT "make"
+-  WARN "' to compile $PACKAGE\!\!\n\n"
++  WARN "' to compile $PACKAGE!\n\n"
+ fi
+ 
+ $ECHO "PREFIX = $PREFIX" > .config
