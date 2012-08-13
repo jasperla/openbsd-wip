@@ -2,8 +2,8 @@ $OpenBSD$
 
  * Remove broken colour terminal escapes
 
---- data/Makefile.orig	Sun Aug 12 23:42:35 2012
-+++ data/Makefile	Sun Aug 12 23:44:23 2012
+--- data/Makefile.orig	Sat Jun 16 03:21:04 2012
++++ data/Makefile	Mon Aug 13 10:36:33 2012
 @@ -37,12 +37,10 @@ $(BINARY).conf:
  		cd ../src ; \
  		$(MAKE) ; \
@@ -17,4 +17,54 @@ $OpenBSD$
 -		$(PRINTF) "\033[1;33m** adding $(BINARY).1...\033[0m\n" ; \
  		gzip $(BINARY).1 ; \
  	fi
+ 
+@@ -59,35 +57,28 @@ clean:
+ 
+ .PHONY: install
+ install: all
+-	@ $(PRINTF) "\033[1;33m** installing $(BINARY).conf to $(DESTDIR)/$(ETCDIR)...\033[0m\n"
+-	@ install -d $(DESTDIR)/$(ETCDIR)
+-	@ install -m 644 $(BINARY).conf $(DESTDIR)/$(ETCDIR)
++	install -d $(DESTDIR)/$(ETCDIR)
++	install -m 644 $(BINARY).conf $(DESTDIR)/$(ETCDIR)
+ 
+-	@ $(PRINTF) "\033[1;33m** installing AUTHORS COPYING ChangeLog to $(DESTDIR)/$(DOCDIR)...\033[0m\n"
+-	@ install -d $(DESTDIR)/$(DOCDIR)
+-	@ install -m 644 ../AUTHORS ../COPYING ../ChangeLog $(DESTDIR)/$(DOCDIR)
++	install -d $(DESTDIR)/$(DOCDIR)
++	install -m 644 ../AUTHORS ../COPYING ../ChangeLog $(DESTDIR)/$(DOCDIR)
+ 
+-	@ $(PRINTF) "\033[1;33m** installing $(BINARY).1.gz to $(DESTDIR)/$(MANDIR)...\033[0m\n"
+-	@ install -d $(DESTDIR)/$(MANDIR)
+-	@ install -m 644 $(BINARY).1.gz $(DESTDIR)/$(MANDIR)
++	install -d $(DESTDIR)/$(MANDIR)
++	install -m 644 $(BINARY).1.gz $(DESTDIR)/$(MANDIR)
+ 
+-	@ $(PRINTF) "\033[1;33m** installing $(BINARY).desktop to $(DESTDIR)/$(DESKTOP_DIR)...\033[0m\n"
+-	@ install -d $(DESTDIR)/$(DESKTOP_DIR)
+-	@ install -m 644  $(BINARY).desktop $(DESTDIR)/$(DESKTOP_DIR)
++	install -d $(DESTDIR)/$(DESKTOP_DIR)
++	install -m 644  $(BINARY).desktop $(DESTDIR)/$(DESKTOP_DIR)
+ 
+-	@ $(PRINTF) "\033[1;33m** installing $(BINARY).png $(BINARY).xpm to $(DESTDIR)/$(ICONDIR)...\033[0m\n"
+-	@ install -d $(DESTDIR)/$(ICONDIR)
+-	@ install -m 644 $(BINARY).png $(BINARY).xpm $(DESTDIR)/$(ICONDIR)
++	install -d $(DESTDIR)/$(ICONDIR)
++	install -m 644 $(BINARY).png $(BINARY).xpm $(DESTDIR)/$(ICONDIR)
+ 
+-	@ $(PRINTF) "\033[1;33m** installing $(BINARY).conf to $(DESTDIR)/$(EXAMPLES_DIR)...\033[0m\n"
+-	@ install -d $(DESTDIR)/$(EXAMPLES_DIR)
+-	@ install -m 644 $(BINARY).conf $(DESTDIR)/$(EXAMPLES_DIR)
++	install -d $(DESTDIR)/$(EXAMPLES_DIR)
++	install -m 644 $(BINARY).conf $(DESTDIR)/$(EXAMPLES_DIR)
+ 
+ ifeq ($(GNOME_CONTROL_CENTER), Y)
+     ifneq ($(GNOME_CONTROL_CENTER_DIR), )
+-	@ $(PRINTF) "\033[1;33m** installing $(BINARY).xml to $(DESTDIR)/$(GNOME_CONTROL_CENTER_DIR)...\033[0m\n"
+-	@ install -d $(DESTDIR)/$(GNOME_CONTROL_CENTER_DIR)
+-	@ install -m 644 $(BINARY).xml $(DESTDIR)/$(GNOME_CONTROL_CENTER_DIR)
++	install -d $(DESTDIR)/$(GNOME_CONTROL_CENTER_DIR)
++	install -m 644 $(BINARY).xml $(DESTDIR)/$(GNOME_CONTROL_CENTER_DIR)
+     endif
+ endif
  
