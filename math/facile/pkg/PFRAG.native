@@ -1,0 +1,3 @@
+@comment $OpenBSD$
+lib/facile/facile.a
+lib/facile/facile.cmxa
