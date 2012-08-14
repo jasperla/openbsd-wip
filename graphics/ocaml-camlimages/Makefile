@@ -5,6 +5,7 @@ CATEGORIES=	graphics
 
 V=		4.0.1
 DISTNAME=	camlimages-$V
+PKGNAME=	ocaml-${DISTNAME}
 DISTFILES=	v$V.tar.gz
 MASTER_SITES=	https://bitbucket.org/camlspotter/camlimages/get/
 WRKDIST=	${WRKDIR}/camlspotter-camlimages-c803efa9d5d3
@@ -60,6 +61,6 @@ do-install:
 	${OMAKE} ${ALL_FAKE_FLAGS} ${FAKE_TARGET}
 
 post-install:
-	@cp -R ${WRKSRC}/examples/ ${PREFIX}/share/examples/camlimages
+	@cp -R ${WRKSRC}/examples/ ${PREFIX}/share/examples/ocaml-camlimages
 
 .include <bsd.port.mk>
