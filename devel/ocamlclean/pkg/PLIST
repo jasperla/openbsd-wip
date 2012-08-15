@@ -1,5 +1,5 @@
 @comment $OpenBSD$
 %%native%%
-@bin bin/ocamlclean
+!%%native%%
 bin/ocamlclean.byte
 @man man/man1/ocamlclean.1.gz

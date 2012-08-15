@@ -12,7 +12,7 @@ MASTER_SITES =	http://distfiles.nl/
 HOMEPAGE =	http://www.algo-prog.info/ocapic/web/index.php?id=OCamlClean
 MAINTAINER =	Christopher Zimmermann <madroach@gmerlin.de>
 
-# LGPL >=2.1
+# CeCILL
 PERMIT_PACKAGE_FTP =		Yes
 PERMIT_PACKAGE_CDROM =		Yes
 PERMIT_DISTFILES_FTP =		Yes
