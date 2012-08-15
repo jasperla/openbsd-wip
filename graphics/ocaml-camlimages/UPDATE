@@ -1,5 +1,6 @@
 bump version to 4.0.1
 
+* rename to ocaml-camlimages
 * new MASTER_SITES and DISTFILES naming scheme
 * switch to omake
 * remove gettext dependency

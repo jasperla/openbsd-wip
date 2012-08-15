@@ -1,8 +1,6 @@
 $OpenBSD$
-On bytecode-only archs no *.cmx* files are generated.
-This would let the shell pattern matching fail.
---- Makefile.orig	Thu Aug  9 16:19:01 2012
-+++ Makefile	Thu Aug  9 16:21:48 2012
+--- Makefile.in.orig	Fri Aug 10 03:46:25 2012
++++ Makefile.in	Fri Aug 10 03:46:58 2012
 @@ -209,7 +209,7 @@ headers:
  install: $(LIBS) $(CLIBS) META
  	@if [ "`sed -n -e 's/version = "\([0-9.+dev]*\)"/\1/p' META`" = "$(VERSION)" ]; then \
