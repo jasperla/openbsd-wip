@@ -5,12 +5,11 @@
 
 NOT_FOR_ARCHS=	hppa
 
-BROKEN-powerpc=	build: Could not find the .cmi file for interface
-
 COMMENT=	ML language based on complete class-based objective system
 
 BASENAME=	ocaml-4.00
 DISTNAME=	${BASENAME}.0
+REVISION=       1
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/pub/distrib/${BASENAME}/
 DOCFILES=	${BASENAME}-refman-html.tar.gz
@@ -82,10 +81,6 @@ post-install:
 		${PREFIX}/share/doc/ocaml/html/libref
 	@strip ${PREFIX}/bin/ocamlrun ${PREFIX}/bin/ocamlyacc
 	@${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/ocaml
-	@mkdir -p ${PREFIX}/lib/ocaml/compiler-libs
-	@cp -R ${WRKBUILD}/typing ${PREFIX}/lib/ocaml/compiler-libs
-	@cp -R ${WRKBUILD}/utils ${PREFIX}/lib/ocaml/compiler-libs
-	@cp -R ${WRKBUILD}/parsing ${PREFIX}/lib/ocaml/compiler-libs
 
 # PFRAG.native was generated from PLIST with:
 # egrep '(ocamlopt|\.cmx|\.cmxa|\.cmxs|\.opt|opt\.1|opt.cmi|\.native|\.o)$'

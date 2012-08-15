@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/fcl_data.mli.orig	Fri Aug 10 05:51:55 2012
++++ src/fcl_data.mli	Fri Aug 10 05:52:00 2012
+@@ -23,7 +23,7 @@ end
+ 
+ module Hashtbl : sig
+   type ('a, 'b) t
+-  val create : int -> ('a, 'b) t
++  val create :  ?random:bool -> int -> ('a, 'b) t
+   val get : ('a, 'b) t -> ('a, 'b) Hashtbl.t
+   val add : ('a, 'b) t -> 'a -> 'b -> unit
+   val find : ('a, 'b) t -> 'a -> 'b
