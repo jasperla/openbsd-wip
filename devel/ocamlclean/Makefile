@@ -7,7 +7,7 @@ DISTNAME =	ocamlclean-1.9
 EXTRACT_SUFX =	.tar.bz2
 
 # The last url component (the number) changes every release, too.
-MASTER_SITES =	http://distfiles.nl/
+MASTER_SITES =	http://www.algo-prog.info/ocapic/web/lib/exe/fetch.php?media=ocamlclean-1.9.tar.bz2&dummy=/
 
 HOMEPAGE =	http://www.algo-prog.info/ocapic/web/index.php?id=OCamlClean
 MAINTAINER =	Christopher Zimmermann <madroach@gmerlin.de>
