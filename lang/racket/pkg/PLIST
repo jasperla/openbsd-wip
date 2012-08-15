@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+%%SHARED%%
 bin/drracket
 @bin bin/gracket
 bin/gracket-text
@@ -42,6 +43,7 @@ include/racket/sconfig.h
 include/racket/stypes.h
 include/racket/uconfig.h
 lib/libracket3m.a
+lib/libracket3m.la
 lib/racket/
 lib/racket/buildinfo
 lib/racket/collects/
