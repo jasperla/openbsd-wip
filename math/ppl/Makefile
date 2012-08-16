@@ -67,6 +67,13 @@ PKG_ARGS +=		-Djava=0
 CONFIGURE_ENV +=	CPPFLAGS=-I${LOCALBASE}/include
 CONFIGURE_ENV +=	LDFLAGS=-L${LOCALBASE}/lib
 
+# should a regression test fail, this gives more info
+MAKE_ENV +=		PPL_NOISY_TESTS=yes
+
+pre-regress:
+	@# subst in LIBppl_VERSION
+	${SUBST_CMD} ${WRKBUILD}/interfaces/OCaml/tests/Makefile
+
 post-install:
 	-# Put Ocaml stuff in the right place
 	${INSTALL_DATA_DIR} ${WRKINST}/${TRUEPREFIX}/lib/ocaml/site-lib/ppl

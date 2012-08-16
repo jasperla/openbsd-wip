@@ -1,0 +1,26 @@
+$OpenBSD$
+--- interfaces/OCaml/tests/Makefile.in.orig	Wed Aug 15 12:32:51 2012
++++ interfaces/OCaml/tests/Makefile.in	Wed Aug 15 13:32:30 2012
+@@ -366,11 +366,11 @@ EXTRA_DIST = \
+ $(interface_generator_files) \
+ ppl_ocaml_tests_common
+ 
+-OCAMLC_ENV = OCAMLRUNPARAM='l=1M'
++OCAMLC_ENV = OCAMLRUNPARAM='l=4M'
+ OCAMLC_COMPILE_FLAGS = \
+ -I @mlgmp_dir@ -I .. -ccopt -g -ccopt -Wno-write-strings
+ 
+-OCAMLC_LINK_FLAGS = \
++OCAMLC_LINK_FLAGS = -cclib ${LDFLAGS} \
+ -cclib -lmlgmp -cclib -lmpfr \
+ `echo " $(extra_libraries) " | $(SED) -e "s/ -R[^ ]*//g" -e "s/ -/ -cclib -/g"`
+ 
+@@ -378,7 +378,7 @@ OCAMLOPT_ENV = $(OCAMLC_ENV)
+ OCAMLOPT_COMPILE_FLAGS = $(OCAMLC_COMPILE_FLAGS)
+ OCAMLOPT_LINK_FLAGS = $(OCAMLC_LINK_FLAGS)
+ @ENABLE_SHARED_FALSE@BUILT_PPL_FLAGS = -cclib $(top_builddir)/src/.libs/libppl.$(LIBEXT)
+-@ENABLE_SHARED_TRUE@BUILT_PPL_FLAGS = -cclib $(top_builddir)/src/.libs/libppl$(SHREXT)
++@ENABLE_SHARED_TRUE@BUILT_PPL_FLAGS = -cclib $(top_builddir)/src/.libs/libppl$(SHREXT).${LIBppl_VERSION}
+ PPL_DLOPEN = -dlopen ../../../src/libppl.la
+ @HAVE_OCAMLC_TRUE@OCAMLC_TESTS = \
+ @HAVE_OCAMLC_TRUE@test1 \

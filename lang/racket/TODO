@@ -1,7 +1,1 @@
-The port is just the initial work of Lars Engblom (sent to ports@
-March 2012) with some little changes. 
-
-IIRC, this port pass all the tests. 
-
-The biggest TODO now is to review if the port is 100% complete and
-correct. 
+It needs tests on i386.
