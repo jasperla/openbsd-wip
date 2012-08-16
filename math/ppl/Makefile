@@ -35,17 +35,6 @@ WANTLIB-main =		gmp gmpxx m stdc++ ${WANTLIB} c glpk z
 WANTLIB-java =		gmp gmpxx m stdc++ ${WANTLIB} ppl
 WANTLIB-ocaml =		
 
-#ppl-ocaml-1.0(math/ppl,-ocaml):
-#Extra:  c.65 glpk.6 gmp.9 gmpxx.1 m.7 stdc++.55 z.4
-#Asking ports for dependency gmp-5.0.2p0(devel/gmp)
-#Asking ports for dependency glpk-4.44(devel/glpk)
-#Asking ports for dependency jdk-1.7.0.03p0v0(devel/jdk/1.7,-main)
-#Asking ports for dependency libiconv-1.14(converters/libiconv)
-
-#ppl-java-1.0(math/ppl,-java):
-#Missing lib: ppl.0 (/usr/local/lib/libppl_java.so) (NOT REACHABLE)
-#Extra:  c.65 glpk.6 z.4
-
 MASTER_SITES =		ftp://ftp.cs.unipr.it/pub/ppl/releases/1.0/
 
 BUILD_DEPENDS +=	${MODOCAML_BUILD_DEPENDS} \
@@ -58,7 +47,6 @@ LIB_DEPENDS-ocaml =	devel/ocaml-mlgmp \
 			devel/glpk
 LIB_DEPENDS-java =	math/ppl,-main
 			
-
 RUN_DEPENDS-java =	${MODJAVA_RUN_DEPENDS}
 
 USE_GMAKE =		Yes
@@ -66,12 +54,18 @@ USE_LIBTOOL =		Yes
 USE_GTAR =		Yes # or make clean fails
 
 CONFIGURE_STYLE =	gnu
+
+# Java support for OpenBSD only on amd64 or i386
+.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
 CONFIGURE_ARGS +=	--enable-interfaces=c,cxx,ocaml,java \
 			--with-java=${JAVA_HOME}
+.else
+CONFIGURE_ARGS +=	--enable-interfaces=c,cxx,ocaml
+PKG_ARGS +=		-Djava=0
+.endif
+
 CONFIGURE_ENV +=	CPPFLAGS=-I${LOCALBASE}/include
 CONFIGURE_ENV +=	LDFLAGS=-L${LOCALBASE}/lib
-
-#NO_REGRESS =		Yes
 
 post-install:
 	-# Put Ocaml stuff in the right place
@@ -80,6 +74,7 @@ post-install:
 		${WRKINST}/${TRUEPREFIX}/lib/ocaml/site-lib/ppl/
 	mv ${WRKINST}/${TRUEPREFIX}/lib/ppl/libppl_ocaml.a \
 		${WRKINST}/${TRUEPREFIX}/lib
+.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
 	-# Put Java stuff in the right place
 	${INSTALL_DATA_DIR} ${MODJAVA_JAR_DIR}
 	mv ${WRKINST}/${TRUEPREFIX}/lib/ppl/ppl_java.jar ${MODJAVA_JAR_DIR}
@@ -87,6 +82,7 @@ post-install:
 		${WRKINST}/${TRUEPREFIX}/lib
 	mv ${WRKINST}/${TRUEPREFIX}/lib/ppl/libppl_java.so \
 		${WRKINST}/${TRUEPREFIX}/lib
+.endif
 	-# Remove the now empty dir
 	rmdir ${WRKINST}/${TRUEPREFIX}/lib/ppl/
 
