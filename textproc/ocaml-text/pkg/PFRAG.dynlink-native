@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+@bin lib/ocaml/text/text-bigarray.cmxs
+@bin lib/ocaml/text/text-pcre-syntax.cmxs
+@bin lib/ocaml/text/text-pcre.cmxs
+@bin lib/ocaml/text/text.cmxs
