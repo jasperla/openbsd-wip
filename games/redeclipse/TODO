@@ -1,0 +1,8 @@
+- build enet seperately from port Makefile
+- honour CXXFLAGS without breaking enet build
+- install examples in correct dir
+- install uncompressed man pages in correct dir
+
+- has problems on radeon r300, from dmesg:
+error: [drm:pid26781:r300_emit_carefully_checked_packet0] *ERROR* Register 42c8 failed check as flag=00
+error: [drm:pid26781:r300_do_cp_cmdbuf] *ERROR* r300_emit_packet0 failed
