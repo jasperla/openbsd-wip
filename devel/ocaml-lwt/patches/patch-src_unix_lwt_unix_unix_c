@@ -1,0 +1,20 @@
+$OpenBSD$
+--- src/unix/lwt_unix_unix.c.orig	Thu Jul 19 13:35:56 2012
++++ src/unix/lwt_unix_unix.c	Thu Aug 16 19:42:32 2012
+@@ -31,6 +31,7 @@
+    +-----------------------------------------------------------------+ */
+ 
+ #include <poll.h>
++#include <sys/uio.h>
+ 
+ CAMLprim value lwt_unix_readable(value fd)
+ {
+@@ -419,7 +420,7 @@ CAMLprim value lwt_unix_get_credentials(value fd)
+ {
+     CAMLparam1(fd);
+     CAMLlocal1(res);
+-    struct ucred cred;
++    struct sockpeercred cred;
+     socklen_t cred_len = sizeof(cred);
+ 
+     if (getsockopt(Int_val(fd), SOL_SOCKET, SO_PEERCRED, &cred, &cred_len) == -1)
