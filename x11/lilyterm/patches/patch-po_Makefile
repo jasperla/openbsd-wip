@@ -2,8 +2,8 @@ $OpenBSD$
 
  * `whereis -b` does not exist on OpenBSD
 
---- po/Makefile.orig	Sun Aug 12 23:41:42 2012
-+++ po/Makefile	Sun Aug 12 23:41:50 2012
+--- po/Makefile.orig	Sat Jun 16 03:22:00 2012
++++ po/Makefile	Mon Aug 13 10:35:23 2012
 @@ -4,7 +4,7 @@ include ../.default
  PO_LIST ?= $(LANG_LIST:=.po)
  MO_LIST ?= $(LANG_LIST:=.mo)
@@ -42,3 +42,19 @@ $OpenBSD$
  
  .PHONY: all
  all: $(MO_LIST)
+@@ -80,7 +80,6 @@ endif
+ 	@ if ($(MSGCMP) $(MSGCMP_PARAMETER) $(BINARY).pot $(BINARY).po > /dev/null 2>&1) then \
+ 		rm $(BINARY).po ; \
+ 	else \
+-		$(PRINTF) "\033[1;36m** creating $(BINARY).pot...\033[0m\n" ; \
+ 		mv $(BINARY).po $(BINARY).pot ; \
+ 		echo "" ; \
+ 	fi
+@@ -109,7 +108,6 @@ ifeq ($(MSGFMT), )
+ 	@ $(PRINTF) "\033[1;31mERROR: gettext package is needed to make mo files. ABORT!\033[0m\n"
+ 	@ exit 1
+ endif
+-	@ $(PRINTF) "\033[1;33m** creating $@...\033[0m\n"
+ 	-@ $(MSGFMT) --check --statistics $< -o $@
+ 
+ .PHONY: clean
