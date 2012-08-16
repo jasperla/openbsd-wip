@@ -1,0 +1,18 @@
+$OpenBSD$
+--- qcommon/files.c.orig	Sun Jan  8 23:55:30 2012
++++ qcommon/files.c	Wed Aug 15 19:59:37 2012
+@@ -3891,7 +3891,14 @@ void FS_Init( void )
+ 	// set basepaths
+ 	//
+ 	fs_cdpath = Cvar_Get( "fs_cdpath", "", CVAR_NOSET );
++#ifdef DATA_PATH
++	fs_basepath = Cvar_Get( "fs_basepath", DATA_PATH, CVAR_NOSET );
++#else
+ 	fs_basepath = Cvar_Get( "fs_basepath", ".", CVAR_NOSET );
++#endif
++#ifdef LIB_PATH
++	FS_AddBasePath( LIB_PATH );
++#endif
+ 	if( Sys_FS_GetHomeDirectory() != NULL )
+ #ifdef PUBLIC_BUILD
+ 		fs_usehomedir = Cvar_Get( "fs_usehomedir", "1", CVAR_NOSET );

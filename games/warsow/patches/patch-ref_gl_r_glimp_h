@@ -1,0 +1,12 @@
+$OpenBSD$
+--- ref_gl/r_glimp.h.orig	Sun May 20 00:57:35 2012
++++ ref_gl/r_glimp.h	Wed Aug 15 20:05:07 2012
+@@ -35,7 +35,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+ #define QGL_GLX_EXT( type, name, params )
+ #endif
+ 
+-#if defined ( __linux__ ) || defined ( __FreeBSD__ )
++#if defined ( __linux__ ) || defined ( __FreeBSD__ ) || defined(__OpenBSD__)
+ #define QGL_WGL( type, name, params )
+ #define QGL_WGL_EXT( type, name, params )
+ #define QGL_GLX( type, name, params ) QGL_EXTERN type( APIENTRY * q ## name ) params;
