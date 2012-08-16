@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+%%SHARED%%
+@bin bin/wsw_server
+@bin bin/wswtv_server
+lib/warsow/
+lib/warsow/basewsw/

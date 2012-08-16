@@ -1,0 +1,15 @@
+$OpenBSD$
+--- qcommon/library.c.orig	Tue Sep 27 17:23:31 2011
++++ qcommon/library.c	Wed Aug 15 20:01:25 2012
+@@ -236,9 +236,9 @@ void *Com_LoadGameLibrary( const char *basename, const
+ 	gamelib->lib = NULL;
+ 	gamelib->fullname = NULL;
+ 
+-	libname_size = strlen( basename ) + 1 + strlen( ARCH ) + strlen( LIB_SUFFIX ) + 1;
++	libname_size = strlen( basename ) + 1 + strlen( LIB_SUFFIX ) + 1;
+ 	libname = ( char* )Mem_TempMalloc( libname_size );
+-	Q_snprintfz( libname, libname_size, "%s_" ARCH LIB_SUFFIX, basename );
++	Q_snprintfz( libname, libname_size, "%s" LIB_SUFFIX, basename );
+ 
+ 	// it exists?
+ 	if( FS_FOpenFile( libname, NULL, FS_READ ) == -1 )
