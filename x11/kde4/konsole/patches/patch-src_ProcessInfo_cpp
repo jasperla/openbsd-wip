@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/ProcessInfo.cpp.orig	Wed Jun 20 01:54:21 2012
-+++ src/ProcessInfo.cpp	Fri Aug 10 16:37:50 2012
++++ src/ProcessInfo.cpp	Fri Aug 17 18:30:29 2012
 @@ -57,12 +57,14 @@
  #include <kde_file.h>
  #endif
@@ -18,7 +18,7 @@ $OpenBSD$
  #endif
  
  using namespace Konsole;
-@@ -607,56 +609,111 @@ class LinuxProcessInfo : public UnixProcessInfo (priva
+@@ -607,56 +609,115 @@ class LinuxProcessInfo : public UnixProcessInfo (priva
      }
  };
  
@@ -38,27 +38,36 @@ $OpenBSD$
 -        int managementInfoBase[4];
 -        size_t mibLength;
 +        int managementInfoBase[6];
-+        size_t mibLength, mibCnt;
++        size_t mibLength, mibCnt = 0;
          struct kinfo_proc* kInfoProc;
  
-         managementInfoBase[0] = CTL_KERN;
-         managementInfoBase[1] = KERN_PROC;
-         managementInfoBase[2] = KERN_PROC_PID;
-         managementInfoBase[3] = aPid;
+-        managementInfoBase[0] = CTL_KERN;
+-        managementInfoBase[1] = KERN_PROC;
+-        managementInfoBase[2] = KERN_PROC_PID;
+-        managementInfoBase[3] = aPid;
++        managementInfoBase[mibCnt++] = CTL_KERN;
++        managementInfoBase[mibCnt++] = KERN_PROC;
++        managementInfoBase[mibCnt++] = KERN_PROC_PID;
++        managementInfoBase[mibCnt++] = aPid;
 +#if defined(Q_OS_OPENBSD)
-+        managementInfoBase[4] = sizeof(struct kinfo_proc);
-+        managementInfoBase[5] = 1;
++        managementInfoBase[mibCnt++] = sizeof(struct kinfo_proc);
++        managementInfoBase[mibCnt++] = 1;
 +#endif
  
 -        if (sysctl(managementInfoBase, 4, NULL, &mibLength, NULL, 0) == -1)
-+        if (sysctl(managementInfoBase, mibCnt, NULL, &mibLength, NULL, 0) == -1)
++        if (::sysctl(managementInfoBase, mibCnt, NULL, &mibLength, NULL, 0) == -1) {
++            kWarning() << "first sysctl() call failed with code" << errno;
              return false;
++        }
  
-         kInfoProc = new struct kinfo_proc [mibLength];
+-        kInfoProc = new struct kinfo_proc [mibLength];
++        kInfoProc = (struct kinfo_proc*)malloc(mibLength);
  
 -        if (sysctl(managementInfoBase, 4, kInfoProc, &mibLength, NULL, 0) == -1) {
-+        if (sysctl(managementInfoBase, mibCnt, kInfoProc, &mibLength, NULL, 0) == -1) {
-             delete [] kInfoProc;
+-            delete [] kInfoProc;
++        if (::sysctl(managementInfoBase, mibCnt, kInfoProc, &mibLength, NULL, 0) == -1) {
++            kWarning() << "second sysctl() call failed with code" << errno;
++            free(kInfoProc);
              return false;
          }
  
@@ -88,7 +97,8 @@ $OpenBSD$
  
 -        readUserName();
 -
-         delete [] kInfoProc;
+-        delete [] kInfoProc;
++        free(kInfoProc);
          return true;
      }
  
@@ -111,7 +121,8 @@ $OpenBSD$
 +	    if (nbuf == NULL)
 +		break;
 +	    buf = nbuf;
-+	    rc = sysctl(managementInfoBase, 4, buf, &len, NULL, 0);
++	    rc = ::sysctl(managementInfoBase, 4, buf, &len, NULL, 0);
++            kWarning() << "sysctl() call failed with code" << errno;
 +	} while (rc == -1 && errno == ENOMEM);
 +
 +	if (rc == -1)
@@ -140,7 +151,18 @@ $OpenBSD$
          char args[ARG_MAX];
          int managementInfoBase[4];
          size_t len;
-@@ -675,28 +732,51 @@ class FreeBSDProcessInfo : public UnixProcessInfo (pri
+@@ -667,37 +728,63 @@ class FreeBSDProcessInfo : public UnixProcessInfo (pri
+         managementInfoBase[3] = aPid;
+ 
+         len = sizeof(args);
+-        if (sysctl(managementInfoBase, 4, args, &len, NULL, 0) == -1)
++        if (::sysctl(managementInfoBase, 4, args, &len, NULL, 0) == -1) {
++            kWarning() << "sysctl() call failed with code" << errno;
+             return false;
++        }
+ 
+         const QStringList& argumentList = QString(args).split(QChar('\0'));
+ 
          for (QStringList::const_iterator it = argumentList.begin(); it != argumentList.end(); ++it) {
              addArgument(*it);
          }
@@ -177,29 +199,46 @@ $OpenBSD$
 -#if defined(__DragonFly__)
 +#if defined(__DragonFly__) || defined(Q_OS_OPENBSD)
          char buf[PATH_MAX];
--        int managementInfoBase[4];
-+        int i, managementInfoBase[4];
-         size_t len;
+         int managementInfoBase[4];
+-        size_t len;
++        size_t len, mibCnt = 0;
  
 -        managementInfoBase[0] = CTL_KERN;
 -        managementInfoBase[1] = KERN_PROC;
 -        managementInfoBase[2] = KERN_PROC_CWD;
 -        managementInfoBase[3] = aPid;
-+	i = 0;
-+        managementInfoBase[i++] = CTL_KERN;
++        managementInfoBase[mibCnt++] = CTL_KERN;
 +#if defined(__DragonFly__)
-+        managementInfoBase[i++] = KERN_PROC;
++        managementInfoBase[mibCnt++] = KERN_PROC;
 +#endif
-+        managementInfoBase[i++] = KERN_PROC_CWD;
-+        managementInfoBase[i++] = aPid;
++        managementInfoBase[mibCnt++] = KERN_PROC_CWD;
++        managementInfoBase[mibCnt++] = aPid;
  
          len = sizeof(buf);
 -        if (sysctl(managementInfoBase, 4, buf, &len, NULL, 0) == -1)
-+        if (sysctl(managementInfoBase, i, buf, &len, NULL, 0) == -1)
++        if (::sysctl(managementInfoBase, mibCnt, buf, &len, NULL, 0) == -1) {
++            kWarning() << "sysctl() call failed with code" << errno;
              return false;
++        }
  
          setCurrentDir(buf);
-@@ -1049,8 +1129,8 @@ ProcessInfo* ProcessInfo::newInstance(int aPid, bool e
+ 
+@@ -706,10 +793,12 @@ class FreeBSDProcessInfo : public UnixProcessInfo (pri
+         int numrecords;
+         struct kinfo_file* info = 0;
+ 
+-        info = kinfo_getfile(aPid, &numrecords);
++        info = ::kinfo_getfile(aPid, &numrecords);
+ 
+-        if (!info)
++        if (!info) {
++            kWarning() << "kinfo_getfile() call failed with code" << errno;
+             return false;
++        }
+ 
+         for (int i = 0; i < numrecords; ++i) {
+             if (info[i].kf_fd == KF_FD_TYPE_CWD) {
+@@ -1049,8 +1138,8 @@ ProcessInfo* ProcessInfo::newInstance(int aPid, bool e
      return new SolarisProcessInfo(aPid, enableEnvironmentRead);
  #elif defined(Q_OS_MAC)
      return new MacProcessInfo(aPid, enableEnvironmentRead);
