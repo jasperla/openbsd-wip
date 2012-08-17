@@ -2145,7 +2145,6 @@ share/apps/cmake/modules/FindGMP.cmake
 share/apps/cmake/modules/FindGObject.cmake
 share/apps/cmake/modules/FindGSSAPI.cmake
 share/apps/cmake/modules/FindGStreamer.cmake
-share/apps/cmake/modules/FindGettext.cmake
 share/apps/cmake/modules/FindGphoto2.cmake
 share/apps/cmake/modules/FindHUNSPELL.cmake
 share/apps/cmake/modules/FindIOKit.cmake

@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, libraries
 DISTNAME =	kdelibs-${MODKDE_VERSION}
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS =	kde3support          1.0      # .4.0
 SHARED_LIBS +=	kdecore              9.0      # .5.0
@@ -117,7 +117,7 @@ CONFIGURE_ARGS +=	-D_KDE_DEFAULT_HOME_POSTFIX:String="4" \
 REWR_CMAKE_MODULES =	FindXine FindXKB FindPolkitQt
 
 # Contain (required) additional functionality compared to system ones
-WRAP_CMAKE_MODULES =	FindGettext FindLibXslt
+WRAP_CMAKE_MODULES =	FindLibXslt
 
 WRONG_SYSCONF_FILES =	dbus-1	share/examples \
 			xdg	share/examples
