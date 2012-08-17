@@ -35,22 +35,31 @@ devel/ocaml-camomile		ready for import.
 devel/ocaml-mlgmp		ready for import.
 devel/ocaml-net			ready for import.
 devel/ocaml-pcre		ready for import.
+devel/ocaml-react		ready for import.
+devel/ocaml-lwt			ready for import.
+devel/ocaml-zed			ready for import.
+devel/ocaml-lambda-term		ready for import.
+devel/ocamlclean		ready for import.
 devel/omake			ready for import.
 devel/ounit			ready for import.
 graphics/ocaml-camlimages	ready for import.
 lang/obc			waiting for i386 test
 lang/ocaml			ready for import.
 lang/ocamlduce			ready for import, but BROKEN
+lang/utop			ready for import.
 math/coq			ready for import.
 net/mldonkey/stable		ready for import.
 net/unison/stable		ready for import.
 productivity/wyrd		ready for import.
 security/(ocaml-)cryptokit	ready for import. Renamed cryptokit->ocaml-crytokit
+security/ocaml-ssl		ready for import.
 sysutils/findlib		ready for import.
 textproc/hevea			ready for import.
+textproc/ocaml-text		ready for import.
 textproc/ocaml-rss		ready for import.
 textproc/ocaml-xmlm		ready for import.
 textproc/ocaml-xml-light	ready for import.
+www/ocaml-tyxml			ready for import.
 
 
 KDE 4.8 related
