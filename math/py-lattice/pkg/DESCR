@@ -1,0 +1,5 @@
+A Python library for modelling finite lattices. A finite lattice is an
+algebraic structure in which any two elements have a unique supremum and
+an infimum. There is no limitation in the element class (supports
+unhashable types) and a Hasse diagram can be created. Comments of any
+kind are welcome.
