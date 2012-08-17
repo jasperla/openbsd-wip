@@ -1,11 +1,108 @@
 $OpenBSD$
---- kdecore/util/kshareddatacache.cpp.orig	Thu Mar 29 12:58:32 2012
-+++ kdecore/util/kshareddatacache.cpp	Sat Jun 30 23:18:18 2012
-@@ -40,6 +40,7 @@
+--- kdecore/util/kshareddatacache.cpp.orig	Wed Jun 20 01:45:52 2012
++++ kdecore/util/kshareddatacache.cpp	Fri Aug 17 12:04:29 2012
+@@ -429,7 +429,7 @@ struct SharedMemory
+      * 2. Any member variable you add takes up space in shared memory as well,
+      * so make sure you need it.
+      */
+-    bool performInitialSetup(uint _cacheSize, uint _pageSize)
++    bool performInitialSetup(uint _cacheSize, uint _pageSize, int fd)
+     {
+         if (_cacheSize < MINIMUM_CACHE_SIZE) {
+             kError(ksdcArea()) << "Internal error: Attempted to create a cache sized < "
+@@ -450,7 +450,7 @@ struct SharedMemory
+         }
  
- #include <sys/types.h>
- #include <sys/mman.h>
-+#include <pthread.h>
- #include <stdlib.h>
+         bool isProcessShared = false;
+-        QSharedPointer<KSDCLock> tempLock(createLockFromId(shmLock.type, shmLock));
++        QSharedPointer<KSDCLock> tempLock(createLockFromId(shmLock.type, shmLock, fd));
  
- /// The maximum number of probes to make while searching for a bucket in
+         if (!tempLock->initialize(isProcessShared)) {
+             kError(ksdcArea()) << "Unable to initialize the lock for the cache!";
+@@ -1020,6 +1020,10 @@ class KSharedDataCache::Private
+ 
+         shm = 0;
+         m_mapSize = 0;
++
++        if (m_cache.handle() != -1) {
++            m_cache.close();
++        }
+     }
+ 
+     // This function does a lot of the important work, attempting to connect to shared
+@@ -1038,7 +1042,7 @@ class KSharedDataCache::Private
+ 
+         // The m_cacheName is used to find the file to store the cache in.
+         QString cacheName = KGlobal::dirs()->locateLocal("cache", m_cacheName + QLatin1String(".kcache"));
+-        QFile file(cacheName);
++        m_cache.setFileName(cacheName);
+ 
+         // The basic idea is to open the file that we want to map into shared
+         // memory, and then actually establish the mapping. Once we have mapped the
+@@ -1058,14 +1062,14 @@ class KSharedDataCache::Private
+         // We establish the shared memory mapping here, only if we will have appropriate
+         // mutex support (systemSupportsProcessSharing), then we:
+         // Open the file and resize to some sane value if the file is too small.
+-        if (file.open(QIODevice::ReadWrite) &&
+-           (file.size() >= size || file.resize(size)) &&
+-           ensureFileAllocated(file.handle(), size))
++        if (m_cache.open(QIODevice::ReadWrite) &&
++           (m_cache.size() >= size || m_cache.resize(size)) &&
++           ensureFileAllocated(m_cache.handle(), size))
+         {
+             // Use mmap directly instead of QFile::map since the QFile (and its
+             // shared mapping) will disappear unless we hang onto the QFile for no
+             // reason (see the note below, we don't care about the file per se...)
+-            mapAddress = ::mmap(NULL, size, PROT_READ | PROT_WRITE, MAP_SHARED, file.handle(), 0);
++            mapAddress = ::mmap(NULL, size, PROT_READ | PROT_WRITE, MAP_SHARED, m_cache.handle(), 0);
+ 
+             // So... it is possible that someone else has mapped this cache already
+             // with a larger size. If that's the case we need to at least match
+@@ -1096,7 +1100,7 @@ class KSharedDataCache::Private
+                     unsigned actualPageSize = mapped->cachePageSize();
+                     ::munmap(mapAddress, size);
+                     size = SharedMemory::totalSize(cacheSize, actualPageSize);
+-                    mapAddress = ::mmap(NULL, size, PROT_READ | PROT_WRITE, MAP_SHARED, file.handle(), 0);
++                    mapAddress = ::mmap(NULL, size, PROT_READ | PROT_WRITE, MAP_SHARED, m_cache.handle(), 0);
+                 }
+             }
+         }
+@@ -1150,18 +1154,18 @@ class KSharedDataCache::Private
+                 // Didn't acquire within ~8 seconds?  Assume an issue exists
+                 kError(ksdcArea()) << "Unable to acquire shared lock, is the cache corrupt?";
+ 
+-                file.remove(); // Unlink the cache in case it's corrupt.
++                m_cache.remove(); // Unlink the cache in case it's corrupt.
+                 detachFromSharedMemory();
+                 return; // Fallback to QCache (later)
+             }
+ 
+             if (shm->ready.testAndSetAcquire(0, 1)) {
+-                if (!shm->performInitialSetup(cacheSize, pageSize)) {
++                if (!shm->performInitialSetup(cacheSize, pageSize, m_cache.handle())) {
+                     kError(ksdcArea()) << "Unable to perform initial setup, this system probably "
+                                    "does not really support process-shared pthreads or "
+                                    "semaphores, even though it claims otherwise.";
+ 
+-                    file.remove();
++                    m_cache.remove();
+                     detachFromSharedMemory();
+                     return;
+                 }
+@@ -1175,7 +1179,7 @@ class KSharedDataCache::Private
+         }
+ 
+         m_expectedType = shm->shmLock.type;
+-        m_lock = QSharedPointer<KSDCLock>(createLockFromId(m_expectedType, shm->shmLock));
++        m_lock = QSharedPointer<KSDCLock>(createLockFromId(m_expectedType, shm->shmLock, m_cache.handle()));
+         bool isProcessSharingSupported = false;
+ 
+         if (!m_lock->initialize(isProcessSharingSupported)) {
+@@ -1348,6 +1352,7 @@ class KSharedDataCache::Private
+     };
+ 
+     QString m_cacheName;
++    QFile m_cache;
+     QMutex m_threadLock;
+     SharedMemory *shm;
+     QSharedPointer<KSDCLock> m_lock;
