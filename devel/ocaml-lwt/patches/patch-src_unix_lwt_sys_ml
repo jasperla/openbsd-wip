@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/unix/lwt_sys.ml.orig	Fri Aug 17 17:00:59 2012
++++ src/unix/lwt_sys.ml	Fri Aug 17 17:01:03 2012
+@@ -52,7 +52,7 @@ let have = function
+   | `get_affinity
+   | `set_affinity -> <:optcomp< HAVE_AFFINITY >>
+   | `fd_passing -> <:optcomp< HAVE_FD_PASSING >>
+-  | `get_credentials -> <:optcomp< HAVE_GET_CREDENTIALS >>
++  | `get_credentials -> <:optcomp< HAVE_GET_CREDENTIALS_LINUX || HAVE_GET_CREDENTIALS_NETBSD || HAVE_GET_CREDENTIALS_OPENBSD || HAVE_GET_CREDENTIALS_FREEBSD >>
+   | `fdatasync -> <:optcomp< HAVE_FDATASYNC >>
+   | `libev -> <:optcomp< HAVE_LIBEV >>
+ 

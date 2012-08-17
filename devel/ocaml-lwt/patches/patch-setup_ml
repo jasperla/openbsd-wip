@@ -1,6 +1,6 @@
 $OpenBSD$
---- setup.ml.orig	Thu Aug 16 18:58:08 2012
-+++ setup.ml	Thu Aug 16 18:58:36 2012
+--- setup.ml.orig	Thu Jul 19 13:36:00 2012
++++ setup.ml	Fri Aug 17 15:44:30 2012
 @@ -5748,7 +5748,7 @@ let setup_t =
                   CustomPlugin.cmd_main =
                     [
