@@ -23,8 +23,8 @@ MYDEPENDS =	devel/ocaml-react \
 		security/ocaml-ssl
 BUILD_DEPENDS =	${MYDEPENDS} sysutils/findlib
 RUN_DEPENDS =	${MYDEPENDS} lang/ocaml
-LIB_DEPENDS =	devel/pcre
-WANTLIB =	pcre
+LIB_DEPENDS =	devel/glib2 devel/libev converters/libiconv
+WANTLIB =	glib-2.0 ev iconv intl pthread
 
 CONFIGURE_STYLE =	oasis
 CONFIGURE_ARGS =	--enable-tests --enable-react --enable-glib --enable-ssl
