@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/unix/lwt_unix.ml.orig	Fri Aug 17 17:06:14 2012
++++ src/unix/lwt_unix.ml	Fri Aug 17 17:07:19 2012
+@@ -1748,7 +1748,7 @@ type credentials = {
+   cred_gid : int;
+ }
+ 
+-#if HAVE_GET_CREDENTIALS || HAVE_GETPEEREID
++#if HAVE_GET_CREDENTIALS_LINUX || HAVE_GET_CREDENTIALS_NETBSD || HAVE_GET_CREDENTIALS_OPENBSD || HAVE_GET_CREDENTIALS_FREEBSD || HAVE_GETPEEREID
+ 
+ external stub_get_credentials : Unix.file_descr -> credentials = "lwt_unix_get_credentials"
+ 
