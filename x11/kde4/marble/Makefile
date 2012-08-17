@@ -11,11 +11,12 @@ WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSql
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtWebKit lib/qt4/QtXml
 WANTLIB += kdeui kio knewstuff3 kparts nepomuk
 WANTLIB += nepomukutils phonon plasma soprano
-WANTLIB += gps
+WANTLIB += gps shp
 
 MODKDE4_USE =	libs
 
-LIB_DEPENDS = 	misc/gpsd,-main
+LIB_DEPENDS = 	devel/shapelib \
+		misc/gpsd,-main
 
 PATCHORIG =	.ports.orig
 
