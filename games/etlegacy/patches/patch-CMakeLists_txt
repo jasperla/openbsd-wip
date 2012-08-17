@@ -1,0 +1,66 @@
+$OpenBSD$
+--- CMakeLists.txt.orig	Thu Aug 16 07:03:14 2012
++++ CMakeLists.txt	Fri Aug 17 23:57:17 2012
+@@ -26,7 +26,12 @@ option(BUILD_MOD        "Build the mod libraries"     
+ option(BUILD_MOD_PK3    "Pack the mod libraries into mp_bin.pk3"                                OFF)
+ option(BUILD_PAK3_PK3   "Pack updated game scripts into pak3.pk3"                               OFF)
+ 
+-option(CROSS_COMPILE32  "Compile 32-bit version of ET:L (64bit is incompatible with 2.60b)"     ON)
++# no support for 32 bit binaries on OpenBSD/amd64
++if (CMAKE_SYSTEM MATCHES "OpenBSD*")
++	option(CROSS_COMPILE32  "Compile 32-bit version of ET:L (64bit is incompatible with 2.60b)"     OFF)
++else()
++	option(CROSS_COMPILE32  "Compile 32-bit version of ET:L (64bit is incompatible with 2.60b)"     ON)
++endif()
+ option(BUNDLED_LIBS     "Use bundled libraries instead of the system ones."                     OFF)
+ 
+ # Optional features
+@@ -51,13 +56,19 @@ if(UNIX AND CROSS_COMPILE32) # 32-bit build
+ endif(UNIX AND CROSS_COMPILE32)
+ 
+ if(UNIX)
+-        set(OS_LIBRARIES dl m)
++	if (CMAKE_SYSTEM MATCHES "OpenBSD*")
++        	set(OS_LIBRARIES m pthread)
++	else()
++        	set(OS_LIBRARIES dl m)
++	endif()
+         set(LIB_SUFFIX ".mp.")
+         #set(CMAKE_SHARED_LIBRARY_C_FLAGS "-fPIC -fvisibility=hidden")
+-        if(NOT APPLE) # Linux and *BSD
+-                set(ETLEGACY_INSTALL_DIRECTORY "games/etlegacy") # FIXME: needs to be unset for CPack packages. How???
+-        else() # Mac OS X
++	if(APPLE) # Mac OS X
+                 set(ETLEGACY_INSTALL_DIRECTORY "etlegacy") # TODO: correct this
++	elseif (CMAKE_SYSTEM MATCHES "OpenBSD*")
++                set(ETLEGACY_INSTALL_DIRECTORY "share/enemy-territory")
++	else() # Linux and *BSD
++                set(ETLEGACY_INSTALL_DIRECTORY "games/etlegacy") # FIXME: needs to be unset for CPack packages. How???
+         endif()
+ elseif(WIN32)
+         add_definitions(-DWINVER=0x501)
+@@ -349,7 +360,7 @@ if("${CMAKE_SYSTEM}" MATCHES "Linux")
+                 install(CODE "
+                         execute_process(
+                                 COMMAND \${CMAKE_COMMAND} -E remove \${CMAKE_INSTALL_PREFIX}/bin/etl
+-                                COMMAND \${CMAKE_COMMAND} -E create_symlink \"\${CMAKE_INSTALL_PREFIX}/games/etlegacy/etl\" \${CMAKE_INSTALL_PREFIX}/bin/etl
++                                COMMAND \${CMAKE_COMMAND} -E create_symlink \"\${CMAKE_INSTALL_DIRECTORY}/etl\" \${CMAKE_INSTALL_PREFIX}/bin/etl
+                         )
+                         list(APPEND CMAKE_INSTALL_MANIFEST_FILES \${CMAKE_INSTALL_PREFIX}/bin/etl)
+                 ")
+@@ -358,7 +369,7 @@ if("${CMAKE_SYSTEM}" MATCHES "Linux")
+                 install(CODE "
+                         execute_process(
+                                 COMMAND \${CMAKE_COMMAND} -E remove \${CMAKE_INSTALL_PREFIX}/bin/etlded
+-                                COMMAND \${CMAKE_COMMAND} -E create_symlink \${CMAKE_INSTALL_PREFIX}/games/etlegacy/etlded \${CMAKE_INSTALL_PREFIX}/bin/etlded
++                                COMMAND \${CMAKE_COMMAND} -E create_symlink \${CMAKE_INSTALL_DIRECTORY}/etlded \${CMAKE_INSTALL_PREFIX}/bin/etlded
+                         )
+                         list(APPEND CMAKE_INSTALL_MANIFEST_FILES \${CMAKE_INSTALL_PREFIX}/bin/etlded)
+                 ")
+@@ -386,4 +397,4 @@ configure_file(
+         IMMEDIATE @ONLY
+ )
+ 
+-include(CPack) # Has to be included after the package configuration!
+\ No newline at end of file
++include(CPack) # Has to be included after the package configuration!
