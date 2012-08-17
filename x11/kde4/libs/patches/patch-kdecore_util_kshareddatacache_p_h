@@ -1,11 +1,266 @@
 $OpenBSD$
---- kdecore/util/kshareddatacache_p.h.orig	Sat Sep  3 23:13:21 2011
-+++ kdecore/util/kshareddatacache_p.h	Sat Sep  3 23:13:43 2011
-@@ -27,6 +27,7 @@
- #include <unistd.h>
- #include <errno.h>
- #include <fcntl.h>
-+#include <pthread.h>
- #include <time.h>
+--- kdecore/util/kshareddatacache_p.h.orig	Wed May 23 11:00:55 2012
++++ kdecore/util/kshareddatacache_p.h	Fri Aug 17 12:08:14 2012
+@@ -21,6 +21,7 @@
+ #define KSHAREDDATACACHE_P_H
  
- #include <kdebug.h>
+ #include <config.h> // HAVE_SYS_MMAN_H
++#include <config-util.h>
+ 
+ #include <QtCore/QSharedPointer>
+ 
+@@ -46,11 +47,18 @@ int ksdcArea();
+ #warning "No support for POSIX timeouts -- application hangs are possible if the cache is corrupt"
+ #endif
+ 
++#if defined(HAVE_LOCKF) || defined(HAVE_FLOCK)
++#define KSDC_FILELOCKS_SUPPORTED 1
++#endif
++
+ #if defined(_POSIX_THREAD_PROCESS_SHARED) && ((_POSIX_THREAD_PROCESS_SHARED == 0) || (_POSIX_THREAD_PROCESS_SHARED >= 200112L)) && !defined(__APPLE__)
+-#include <pthread.h>
+ #define KSDC_THREAD_PROCESS_SHARED_SUPPORTED 1
+ #endif
+ 
++#if defined(KSDC_FILELOCKS_SUPPORTED) || defined(KSDC_THREAD_PROCESS_SHARED_SUPPORTED)
++#include <pthread.h>
++#endif
++
+ #if defined(_POSIX_SEMAPHORES) && ((_POSIX_SEMAPHORES == 0) || (_POSIX_SEMAPHORES >= 200112L))
+ #include <semaphore.h>
+ #define KSDC_SEMAPHORES_SUPPORTED 1
+@@ -116,6 +124,147 @@ class KSDCLock { (public)
+     }
+ };
+ 
++#ifdef KSDC_FILELOCKS_SUPPORTED
++// Prefer flock() over lockf() because flock() locks do not release when any
++// descriptor for this file (inode) is closed.
++// See "Everything you never wanted to know about file locking"
++// http://apenwarr.ca/log/?m=201012#13 for details.
++class fileLock : public KSDCLock
++{
++public:
++    // Duplicate to make sure position doesn't change
++    fileLock(int fd)
++        : m_fd(::dup(fd)),
++          m_initialized(false)
++    {
++        kDebug(ksdcArea()) << "created on fd" << m_fd;
++    }
++
++    virtual ~fileLock() {
++        kWarning(ksdcArea()) << "destroying";
++        if (m_initialized) {
++            int rc = ::pthread_mutex_destroy(&m_mutex);
++            if (rc != 0) {
++                kError(ksdcArea()) << "pthread_mutex_destroy failed, errno:" << rc;
++            }
++        }
++        if (m_fd != -1 && ::close(m_fd) == -1) {
++            kError(ksdcArea()) << "close failed, errno:" << errno;
++        }
++    }
++
++    virtual bool initialize(bool &processSharingSupported)
++    {
++        int rc;
++
++        kDebug(ksdcArea()) << "called";
++        processSharingSupported = false;
++
++#ifdef HAVE_FLOCK
++        // In case of flock() we obviously should avoid child inheriting any acquired locks.
++        // Probably not a problem for KDE but it's better to be safe than sorry.
++        if (::fcntl(m_fd, F_SETFD, FD_CLOEXEC) == -1) {
++            kError(ksdcArea()) << "fcntl(" << m_fd << ", F_SETFD, FD_CLOEXEC) failed, errno:" << errno;
++            return false;
++        }
++#endif
++
++        // Make sure we lock entire file
++        if (::lseek(m_fd, 0, SEEK_SET) == -1) {
++            kError(ksdcArea()) << "lseek failed, errno:" << errno;
++            return false;
++        }
++
++        rc = ::pthread_mutex_init(&m_mutex, NULL);
++        if (rc != 0) {
++            kError(ksdcArea()) << "pthread_mutex_init failed, errno:" << rc;
++            return false;
++        }
++
++        processSharingSupported = true;
++        m_initialized = true;
++        kDebug(ksdcArea()) << "success";
++        return true;
++    }
++
++    virtual bool lock()
++    {
++        int rc;
++
++        kDebug(ksdcArea()) << "called";
++
++        if (m_fd == -1) {
++            kWarning(ksdcArea()) << "file descriptor is closed, fail to lock";
++            return false;
++        }
++
++        // We use two locks: file lock for process-shared locking and simple
++        // mutex for thread-sharing.
++        //
++        // First acquire smaller lock (thread-level), then try bigger one
++        // (process level). Otherwise we could unlock
++
++        rc = ::pthread_mutex_lock(&m_mutex);
++        if (rc != 0) {
++            kError(ksdcArea()) << "pthread_mutex_lock failed, errno:" << rc;
++            return false;
++        }
++
++#ifdef HAVE_FLOCK
++        if (::flock(m_fd, LOCK_EX) == -1) {
++#else
++        if (::lockf(m_fd, F_LOCK, 0) == -1) {
++#endif
++            if (errno == EBADF) {
++                m_fd = -1;    // do not try to lock it anymore
++            }
++            kError(ksdcArea()) << "file lock failed, errno:" << errno;
++            ::pthread_mutex_unlock(&m_mutex);
++            return false;
++        }
++
++        kDebug(ksdcArea()) << "locked successfully";
++        return true;
++    }
++
++    virtual void unlock()
++    {
++        int rc;
++
++        kDebug(ksdcArea()) << "called";
++
++        if (m_fd == -1) {
++            kWarning(ksdcArea()) << "file descriptor is closed, fail to unlock";
++            return;
++        }
++
++        // Proceed with locks in the reverse order as in lock()
++
++#ifdef HAVE_FLOCK
++        if (::flock(m_fd, LOCK_UN) == -1) {
++#else
++        if (::lockf(m_fd, F_ULOCK, 0) == -1) {
++#endif
++            if (errno == EBADF) {
++                m_fd = -1;    // do not try to lock it anymore
++            }
++            kError(ksdcArea()) << "file unlock failed, errno:" << errno;
++        }
++
++        rc = ::pthread_mutex_unlock(&m_mutex);
++        if (rc != 0) {
++            kError(ksdcArea()) << "pthread_mutex_lock failed, errno:" << rc;
++        }
++    }
++
++protected:
++    int m_fd;
++    pthread_mutex_t m_mutex;
++private:
++    bool m_initialized;
++};
++#endif    // KSDC_FILELOCKS_SUPPORTED
++
+ #ifdef KSDC_THREAD_PROCESS_SHARED_SUPPORTED
+ class pthreadLock : public KSDCLock
+ {
+@@ -251,7 +400,7 @@ class semaphoreTimedLock : public semaphoreLock (publi
+         timeout.tv_sec = 10 + ::time(NULL); // Absolute time, so 10 seconds from now
+         timeout.tv_nsec = 0;
+ 
+-        return sem_timedwait(&m_semaphore, &timeout) == 0;
++        return ::sem_timedwait(&m_semaphore, &timeout) == 0;
+     }
+ };
+ #endif
+@@ -263,7 +412,8 @@ class semaphoreTimedLock : public semaphoreLock (publi
+ enum SharedLockId {
+     LOCKTYPE_INVALID   = 0,
+     LOCKTYPE_MUTEX     = 1,  // pthread_mutex
+-    LOCKTYPE_SEMAPHORE = 2   // sem_t
++    LOCKTYPE_SEMAPHORE = 2,  // sem_t
++    LOCKTYPE_FILE      = 3,  // int (file descriptor)
+ };
+ 
+ // This type is a union of all possible lock types, with a SharedLockId used
+@@ -296,6 +446,10 @@ struct SharedLock
+  */
+ static SharedLockId findBestSharedLock()
+ {
++#if defined(__OpenBSD__)
++    kWarning(ksdcArea()) << "OpenBSD does not support shared locks, please send patches to tech@openbsd.org";
++    return LOCKTYPE_FILE;
++#else
+     // We would prefer a process-shared capability that also supports
+     // timeouts. Failing that, process-shared is preferred over timeout
+     // support. Failing that we'll go thread-local
+@@ -325,11 +479,13 @@ static SharedLockId findBestSharedLock()
+         }
+ 
+         pthreadsSupported = tempLock->initialize(pthreadsProcessShared);
++        kDebug(ksdcArea()) << pthreadsSupported << " (shared: " << pthreadsProcessShared << ")" << endl;
+     }
+ #endif
+ 
+     // Our first choice is pthread_mutex_t for compatibility.
+     if(timeoutsSupported && pthreadsProcessShared) {
++        kDebug(ksdcArea()) << "returning (timeoutsSupported && pthreadsProcessShared) => LOCKTYPE_MUTEX" << endl;
+         return LOCKTYPE_MUTEX;
+     }
+ 
+@@ -349,29 +505,40 @@ static SharedLockId findBestSharedLock()
+ #endif
+ 
+     if(timeoutsSupported && semaphoresProcessShared) {
++        kDebug(ksdcArea()) << "returning (timeoutsSupported && semaphoresProcessShared) => LOCKTYPE_SEMAPHORE" << endl;
+         return LOCKTYPE_SEMAPHORE;
+     }
+     else if(pthreadsProcessShared) {
++        kDebug(ksdcArea()) << "returning (pthreadsProcessShared) => LOCKTYPE_MUTEX" << endl;
+         return LOCKTYPE_MUTEX;
+     }
+     else if(semaphoresProcessShared) {
++        kDebug(ksdcArea()) << "returning (semaphoresProcessShared) => LOCKTYPE_SEMAPHORE" << endl;
+         return LOCKTYPE_SEMAPHORE;
+     }
+     else if(pthreadsSupported) {
++        kDebug(ksdcArea()) << "returning (pthreadsSupported) => LOCKTYPE_MUTEX" << endl;
+         return LOCKTYPE_MUTEX;
+     }
+     else if(semaphoresSupported) {
++        kDebug(ksdcArea()) << "returning (semaphoresSupported) => LOCKTYPE_SEMAPHORE" << endl;
+         return LOCKTYPE_SEMAPHORE;
+     }
+ 
+     // If we get to this point we'll likely fail later but this is the
+     // standard behavior that has existed as well, so...
+-    return static_cast<SharedLockId>(0);
++    return LOCKTYPE_INVALID;
++#endif   // defined(__OpenBSD__)
+ }
+ 
+-static KSDCLock *createLockFromId(SharedLockId id, SharedLock &lock)
++static KSDCLock *createLockFromId(SharedLockId id, SharedLock &lock, int fd)
+ {
+     switch(id) {
++#ifdef KSDC_FILELOCKS_SUPPORTED
++    case LOCKTYPE_FILE:
++        return new fileLock(fd);
++#endif
++
+ #ifdef KSDC_THREAD_PROCESS_SHARED_SUPPORTED
+     case LOCKTYPE_MUTEX:
+ #ifdef KSDC_TIMEOUTS_SUPPORTED

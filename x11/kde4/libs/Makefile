@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, libraries
 DISTNAME =	kdelibs-${MODKDE_VERSION}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	kde3support          1.0      # .4.0
 SHARED_LIBS +=	kdecore              9.0      # .5.0
@@ -133,5 +133,7 @@ post-extract:
 .for M in ${WRAP_CMAKE_MODULES}
 	${SUBST_CMD} -c ${FILESDIR}/${M}.cmake ${WRKSRC}/cmake/modules/${M}.cmake
 .endfor
+	cp ${FILESDIR}/config-util.h.cmake ${WRKSRC}/kdecore/util/
+	cp ${FILESDIR}/ConfigureChecks.cmake ${WRKSRC}/kdecore/util/
 
 .include <bsd.port.mk>
