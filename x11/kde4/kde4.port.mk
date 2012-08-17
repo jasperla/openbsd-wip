@@ -157,6 +157,9 @@ FLAVORS +=	debug
 .endif
 
 .if ${CONFIGURE_STYLE:Mcmake}
+# Enable regression tests if any
+MODKDE4_CONF_ARGS +=	-DKDE4_BUILD_TESTS:Bool=Yes
+
 # Set up directories
 MODKDE4_CONF_ARGS +=	-DKDE4_INCLUDE_INSTALL_DIR:String=${PREFIX}/include \
 			-DKDE4_INSTALL_DIR:String=${PREFIX} \
