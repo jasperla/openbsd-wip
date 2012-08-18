@@ -25,4 +25,10 @@ MODULES =		lang/python
 
 PKG_ARCH =		*
 
+# install some brief documentation
+DOCINST =	${WRKINST}${TRUEPREFIX}/share/doc/py-lattice/
+post-install:
+	${INSTALL_DATA_DIR} ${DOCINST}
+	${INSTALL_DATA} ${WRKBUILD}/README ${DOCINST}
+
 .include <bsd.port.mk>

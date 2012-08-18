@@ -1,0 +1,42 @@
+$OpenBSD$
+
+Tidy formatting.
+
+--- README.orig	Sat Aug 18 10:47:58 2012
++++ README	Sat Aug 18 10:48:18 2012
+@@ -1,6 +1,6 @@
+-
+ python-lattice
+ ==============
++
+ Python library to operate elements of a finite lattice
+ 
+ 
+@@ -8,8 +8,10 @@ A finite lattice is an algebraic structure in which an
+ unique supremum and an infimum. More info at the wikipedia page. There is no
+ limitation in the element class (supports unhashable types) and a Hasse diagram
+ can be created. Comments of any kind are welcome.
++
+ Usage and Example 1
+ -------------------
++
+ Given the power set of { x, y, z } partially ordered by inclusion.
+ In this case, the join and meet operation is the union and intersection between
+ sets, respectively.
+@@ -76,9 +78,9 @@ in the future), it will appear the graph.
+ 	"set(['y', 'z'])" -> "set(['y', 'x', 'z'])";
+ 	}
+ 
+-
+ Example 2
+ ---------
++
+ 	>>> from lattice import Lattice
+ 	>>> def gcd(a,b):
+ 	...     while b > 0: a,b = b, a%b 
+@@ -115,5 +117,3 @@ Example 2
+ 	"20" -> "60";
+ 	"30" -> "60";
+ 	}
+-
+-
