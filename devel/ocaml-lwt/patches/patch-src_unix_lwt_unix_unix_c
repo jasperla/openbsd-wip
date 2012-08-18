@@ -1,40 +1,47 @@
 $OpenBSD$
 --- src/unix/lwt_unix_unix.c.orig	Thu Jul 19 13:35:56 2012
-+++ src/unix/lwt_unix_unix.c	Fri Aug 17 16:44:57 2012
-@@ -31,6 +31,7 @@
++++ src/unix/lwt_unix_unix.c	Sat Aug 18 09:30:51 2012
+@@ -26,12 +26,17 @@
+ 
+ #define ARGS(args...) args
+ 
++#include <sys/uio.h>
++#include <sys/un.h>
++#include <sys/time.h>
++#include <sys/resource.h>
++#include <sys/wait.h>
++#include <poll.h>
++
+ /* +-----------------------------------------------------------------+
+    | Test for readability/writability                                |
     +-----------------------------------------------------------------+ */
  
- #include <poll.h>
-+#include <sys/uio.h>
- 
+-#include <poll.h>
+-
  CAMLprim value lwt_unix_readable(value fd)
  {
-@@ -411,26 +412,47 @@ CAMLprim value lwt_unix_bytes_send_msg(value val_fd, v
+   struct pollfd pollfd;
+@@ -411,24 +416,36 @@ CAMLprim value lwt_unix_bytes_send_msg(value val_fd, v
     | Credentials                                                     |
     +-----------------------------------------------------------------+ */
  
 -#if defined(HAVE_GET_CREDENTIALS)
 +#if defined(HAVE_GET_CREDENTIALS_LINUX)
-+#define CREDENTIALS_TYPE struct ucred
-+#define CREDENTIALS_FIELD(id) id
- 
++#  define CREDENTIALS_TYPE struct ucred
++#  define CREDENTIALS_FIELD(id) id
 +#elif defined(HAVE_GET_CREDENTIALS_NETBSD)
-+#define CREDENTIALS_TYPE struct sockcred
-+#define CREDENTIALS_FIELD(id) sc_ ## id
-+
++#  define CREDENTIALS_TYPE struct sockcred
++#  define CREDENTIALS_FIELD(id) sc_ ## id
 +#elif defined(HAVE_GET_CREDENTIALS_OPENBSD)
-+#define CREDENTIALS_TYPE struct sockpeercred
-+#define CREDENTIALS_FIELD(id) id
-+
++#  define CREDENTIALS_TYPE struct sockpeercred
++#  define CREDENTIALS_FIELD(id) id
 +#elif defined(HAVE_GET_CREDENTIALS_FREEBSD)
-+#define CREDENTIALS_TYPE struct cmsgcred
-+#define CREDENTIALS_FIELD(id) cmsgcred_ ## id
-+
++#  define CREDENTIALS_TYPE struct cmsgcred
++#  define CREDENTIALS_FIELD(id) cmsgcred_ ## id
 +#endif
-+
+ 
+-#include <sys/un.h>
 +#if defined(CREDENTIALS_TYPE)
-+
- #include <sys/un.h>
  
  CAMLprim value lwt_unix_get_credentials(value fd)
  {
@@ -56,9 +63,15 @@ $OpenBSD$
 +    Store_field(res, 2, Val_int(cred.CREDENTIALS_FIELD(gid)));
      CAMLreturn(res);
  }
-+
-+#undef CREDENTIALS_TYPE
-+#undef CREDENTIALS_FIELD
  
- #elif defined(HAVE_GETPEEREID)
+@@ -458,10 +475,6 @@ CAMLprim value lwt_unix_get_credentials(value fd)
+    +-----------------------------------------------------------------+ */
  
+ /* Some code duplicated from OCaml's otherlibs/unix/wait.c */
+-
+-#include <sys/time.h>
+-#include <sys/resource.h>
+-#include <sys/wait.h>
+ 
+ CAMLextern int caml_convert_signal_number (int);
+ CAMLextern int caml_rev_convert_signal_number (int);
