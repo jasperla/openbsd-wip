@@ -563,6 +563,7 @@ lib/coq/theories/Lists/List.vo
 lib/coq/theories/Lists/ListSet.vo
 lib/coq/theories/Lists/ListTactics.vo
 lib/coq/theories/Lists/SetoidList.vo
+lib/coq/theories/Lists/SetoidPermutation.vo
 lib/coq/theories/Lists/StreamMemo.vo
 lib/coq/theories/Lists/Streams.vo
 lib/coq/theories/Logic/
@@ -774,6 +775,7 @@ lib/coq/theories/Reals/Exp_prop.vo
 lib/coq/theories/Reals/Integration.vo
 lib/coq/theories/Reals/LegacyRfield.vo
 lib/coq/theories/Reals/MVT.vo
+lib/coq/theories/Reals/Machin.vo
 lib/coq/theories/Reals/NewtonInt.vo
 lib/coq/theories/Reals/PSeries_reg.vo
 lib/coq/theories/Reals/PartSum.vo
@@ -788,6 +790,9 @@ lib/coq/theories/Reals/Ranalysis1.vo
 lib/coq/theories/Reals/Ranalysis2.vo
 lib/coq/theories/Reals/Ranalysis3.vo
 lib/coq/theories/Reals/Ranalysis4.vo
+lib/coq/theories/Reals/Ranalysis5.vo
+lib/coq/theories/Reals/Ranalysis_reg.vo
+lib/coq/theories/Reals/Ratan.vo
 lib/coq/theories/Reals/Raxioms.vo
 lib/coq/theories/Reals/Rbase.vo
 lib/coq/theories/Reals/Rbasic_fun.vo
@@ -810,6 +815,7 @@ lib/coq/theories/Reals/Rsigma.vo
 lib/coq/theories/Reals/Rsqrt_def.vo
 lib/coq/theories/Reals/Rtopology.vo
 lib/coq/theories/Reals/Rtrigo.vo
+lib/coq/theories/Reals/Rtrigo1.vo
 lib/coq/theories/Reals/Rtrigo_alt.vo
 lib/coq/theories/Reals/Rtrigo_calc.vo
 lib/coq/theories/Reals/Rtrigo_def.vo
