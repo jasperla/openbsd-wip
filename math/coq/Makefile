@@ -2,7 +2,7 @@
 
 COMMENT=		proof assistant based on a typed lambda calculus
 
-DISTNAME=		coq-8.4beta2
+DISTNAME=		coq-8.4
 CATEGORIES=		math
 HOMEPAGE=		http://coq.inria.fr/
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://coq.inria.fr/distrib/V8.4beta2/files/
+MASTER_SITES=		http://pauillac.inria.fr/~herbelin/coq/distrib/V8.4/files/
 MASTER_SITES0=		${MASTER_SITES:S@$@doc/@}
 MASTER_SITES1=		http://coq.inria.fr/distrib/V8.4beta2/
 MASTER_SITES2=		http://coq.inria.fr/ps/
@@ -32,10 +32,15 @@ EXTRACT_ONLY=		${DISTNAME}.tar.gz \
 
 DESTDIRNAME=		COQINSTALLPREFIX
 
-WANTLIB=		c m pthread GL X11 Xcomposite Xcursor Xdamage \
-			Xext Xfixes Xi Xinerama Xrandr Xrender expat\
-			fontconfig freetype pixman-1 pthread-stubs \
-			xcb xcb-render xcb-shm z
+RUN_DEPENDS =		x11/lablgtk2
+BUILD_DEPENDS =		x11/lablgtk2
+
+WANTLIB =		GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
+			Xinerama Xrandr Xrender atk-1.0 c cairo expat \
+			fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
+			glib-2.0 gobject-2.0 gtk-x11-2.0 iconv intl m \
+			pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png \
+			pthread pthread-stubs xcb xcb-render xcb-shm z
 
 USE_GMAKE=		Yes
 USE_GROFF =		Yes
