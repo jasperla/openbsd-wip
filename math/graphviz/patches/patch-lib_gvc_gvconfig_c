@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Plugin scanner fails to find our libs because we overide lib version.
+
+--- lib/gvc/gvconfig.c.orig2	Mon Jun 18 11:57:45 2012
++++ lib/gvc/gvconfig.c	Mon Jun 18 11:59:53 2012
+@@ -385,6 +385,8 @@ static void config_rescan(GVC_t *gvc, char *config_pat
+ 
+ #if defined(WIN32) && !defined(__MINGW32__) && !defined(__CYGWIN__)
+     sprintf(config_re,"%s%s", plugin_re_beg, plugin_re_end);
++#elif defined(__OpenBSD__)
++    sprintf(config_re,"%s[0-9]\\.[0-9]%s", plugin_re_beg, plugin_re_end);
+ #elif defined(GVPLUGIN_VERSION)
+     sprintf(config_re,"%s%d%s", plugin_re_beg, GVPLUGIN_VERSION, plugin_re_end);
+ #else

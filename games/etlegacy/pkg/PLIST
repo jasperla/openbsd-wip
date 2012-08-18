@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+%%SHARED%%
+bin/etlegacy
+@bin share/enemy-territory/etl
+@bin share/enemy-territory/etlded
