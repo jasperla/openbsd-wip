@@ -1,1 +1,5 @@
 It needs tests on i386.
+
+I can't update the port to the last version, Racket 5.3 doesn't compile
+http://bugs.racket-lang.org/query/?cmd=view%20audit-trail&database=default&pr=13022
+.
