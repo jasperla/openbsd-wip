@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+share/enemy-territory/etmain/cgame.mp.${MACHINE_ARCH}.so
+share/enemy-territory/etmain/qagame.mp.${MACHINE_ARCH}.so
+share/enemy-territory/etmain/ui.mp.${MACHINE_ARCH}.so
