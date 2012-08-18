@@ -10,7 +10,6 @@ my $n3 = gv::node($g, "c") ;
 gv::edge($n1, $n2) ;
 gv::edge($n2, $n3) ;
 gv::edge($n3, $n1) ;
-gv::edge($n2, $n1) ;
 
 gv::layout($g, 'dot');
 gv::render($g, 'xlib' );
