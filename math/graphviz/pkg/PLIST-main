@@ -68,6 +68,7 @@ include/graphviz/usershape.h
 include/graphviz/xdot.h
 lib/graphviz/
 lib/graphviz/R/
+lib/graphviz/config6
 lib/graphviz/go/
 lib/graphviz/guile/
 @comment
@@ -498,7 +499,6 @@ share/examples/graphviz/lefty/fractal2.lefty
 share/examples/graphviz/lefty/lefty.psp
 share/examples/graphviz/lefty/slides.lefty
 share/examples/graphviz/lefty/tree.lefty
-@exec %D/bin/dot -c
 share/graphviz/
 share/graphviz/demo/
 share/graphviz/demo/modgraph.pl
