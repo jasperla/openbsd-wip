@@ -131,4 +131,10 @@ post-build:
 	cat ${WRKBUILD}/cmd/${CMD}/${CMD}.ksh >>${WRKBUILD}/cmd/${CMD}/${CMD}
 .endfor
 
+# Install a config6 file which is generated from `dot -c'.
+# We generate one and install it in this way to avoid @exec/@unexec-delete
+post-install:
+	${INSTALL_DATA} ${FILESDIR}/config6 \
+		${WRKINST}${TRUEPREFIX}/lib/graphviz/
+
 .include <bsd.port.mk>
