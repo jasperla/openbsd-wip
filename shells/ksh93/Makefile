@@ -55,7 +55,7 @@ do-install:
 		${WRKSRC}/arch/openbsd.${MACHINE_ARCH}/include/ast/ast* \
 		${PREFIX}/include/ast
 	${INSTALL_DATA} \
-		${WRKSRC}/arch/openbsd.${MACHINE_ARCH}/include/ast/sfio{,_s}.h \
+		${WRKSRC}/arch/openbsd.${MACHINE_ARCH}/include/ast/{sfio,sfio_s,shell,cdt,nval,option}.h \
 		${PREFIX}/include/ast
 	${INSTALL_DATA} \
 	${WRKSRC}/arch/openbsd.${MACHINE_ARCH}/include/ast/prototyped.h \

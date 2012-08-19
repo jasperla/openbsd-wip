@@ -36,9 +36,13 @@ include/ast/ast_wait.h
 include/ast/ast_wchar.h
 include/ast/ast_wctype.h
 include/ast/ast_windows.h
+include/ast/cdt.h
+include/ast/nval.h
+include/ast/option.h
 include/ast/prototyped.h
 include/ast/sfio.h
 include/ast/sfio_s.h
+include/ast/shell.h
 lib/libast.a
 lib/libcmd.a
 lib/libshell.a
