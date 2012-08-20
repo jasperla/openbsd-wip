@@ -1,16 +1,7 @@
 $OpenBSD$
---- configure.orig	Mon May 21 11:38:55 2012
-+++ configure	Thu Aug  9 18:49:24 2012
-@@ -454,7 +454,7 @@ case $CAMLVERSION in
- 	    echo "          Configuration script failed!"
- 	    exit 1
- 	fi;;
--    3.11.2|3.12*)
-+    3.11.2|3.12*|4.00*)
- 	CAMLP4COMPAT="-loc loc" 
- 	echo "You have Objective-Caml $CAMLVERSION. Good!";;
-     *)
-@@ -905,7 +905,7 @@ case $coqrunbyteflags_spec/$local/$custom_spec/$CUSTOM
+--- configure.orig	Sun Aug 12 00:03:19 2012
++++ configure	Sat Aug 18 06:42:21 2012
+@@ -879,7 +879,7 @@ case $coqrunbyteflags_spec/$local/$custom_spec/$CUSTOM
      */true/*/*) COQRUNBYTEFLAGS="-dllib -lcoqrun -dllpath '$COQTOP'/kernel/byterun";;
      *)
          COQRUNBYTEFLAGS="-dllib -lcoqrun -dllpath '$LIBDIR'"

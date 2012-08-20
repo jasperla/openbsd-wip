@@ -1,0 +1,13 @@
+$OpenBSD$
+--- snd_openal/snd_main.c.orig	Wed Aug 15 23:32:18 2012
++++ snd_openal/snd_main.c	Wed Aug 15 23:32:06 2012
+@@ -273,6 +273,9 @@ void Com_Printf( const char *format, ... )
+ #elif defined ( __MACOSX__ )
+ #define ALDRIVER "/System/Library/Frameworks/OpenAL.framework/OpenAL"
+ #define ALDEVICE_DEFAULT NULL
++#elif defined( __OpenBSD__ )
++#define ALDRIVER "libopenal.so"
++#define ALDEVICE_DEFAULT NULL
+ #else
+ #define ALDRIVER "libopenal.so.1"
+ #define ALDRIVER_ALT "libopenal.so.0"

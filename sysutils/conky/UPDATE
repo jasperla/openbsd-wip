@@ -3,3 +3,4 @@
 * remove patches included upstream
 * remove lib/conky/ from PLIST (why was this here?)
 * OpenBSD has no statfs64(). Plain statfs() will do.
+* tested on amd64, sparc64

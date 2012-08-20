@@ -1,0 +1,231 @@
+$OpenBSD$
+--- Makefile-c++.orig	Tue Sep 27 17:40:49 2011
++++ Makefile-c++	Thu Aug 16 01:22:00 2012
+@@ -52,13 +52,13 @@ SHARED_LIBRARY_EXTENSION=dll
+ else
+ CC?=gcc
+ CXX?=g++
+-LD=gcc
+-LXX?=g++
++LD=$(CC))
++LXX?=$(CXX)
+ AR=ar
+ RANLIB=ranlib
+ 
+ # this nice line comes from the linux kernel makefile
+-BASE_ARCH:=$(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc/ -e s/sparc64/sparc/ -e s/arm.*/arm/ -e s/sa110/arm/ -e s/alpha/axp/)
++BASE_ARCH:=$(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc/ -e s/sparc64/sparc/ -e s/arm.*/arm/ -e s/sa110/arm/ -e s/alpha/axp/ -e s/amd64/x86_64/)
+ OS=$(shell uname)
+ 
+ ifeq ($(OS),FreeBSD)
+@@ -214,8 +214,13 @@ LXXFLAGS_COMMON=$(LDFLAGS) -lstdc++ -lsupc++
+ ifeq ($(OS),FreeBSD)
+ LDFLAGS_COMMON+= -L/usr/local/lib -lm -pthread
+ else
++ifeq ($(OS),OpenBSD)
++CFLAGS_CLIENT+=$(shell pkg-config --cflags libpng)
++LDFLAGS_COMMON+= -L/usr/local/lib -lm -pthread
++else
+ LDFLAGS_COMMON+= -L/usr/local/lib -ldl -lm -Wl -O1 -Wl,--as-needed
+ endif
++endif
+ 
+ ifneq ($(DEBUG_BUILD),YES)
+ LDFLAGS_COMMON+= -s
+@@ -223,7 +228,11 @@ LXXFLAGS_COMMON+= -s
+ endif
+ 
+ ifeq ($(ARCH),x86_64)
++ifeq ($(OS),OpenBSD)
++LIB=lib
++else
+ LIB=lib64
++endif
+ else
+ LIB=lib
+ endif
+@@ -251,9 +260,9 @@ endif # BUILD_SND_QF
+ 
+ LDFLAGS_ANGELWRAP=$(ANGELSCRIPT_LIB) -lpthread
+ 
+-CLIENT_EXE=warsow.$(ARCH)
+-SERVER_EXE=wsw_server.$(ARCH)
+-TV_SERVER_EXE=wswtv_server.$(ARCH)
++CLIENT_EXE=warsow
++SERVER_EXE=wsw_server
++TV_SERVER_EXE=wswtv_server
+ endif # USE_MINGW
+ 
+ ####################### MAC support ######################
+@@ -526,10 +535,10 @@ OBJS_TV_SERVER = $(addprefix $(BUILDDIR)/tv_server/, $
+ 
+ all: client openal qf ded cgame game ui ui_old ui_as ui_rocket irc angelwrap tv_server
+ 
+-client: $(BUILDDIRS) message-client compile-client link-client start-script-client
++client: $(BUILDDIRS) message-client compile-client link-client
+ openal: $(BUILDDIRS) message-openal compile-openal link-openal
+ qf: $(BUILDDIRS) message-qf compile-qf link-qf
+-ded: $(BUILDDIRS) message-ded compile-ded link-ded start-script-ded
++ded: $(BUILDDIRS) message-ded compile-ded link-ded
+ cgame: $(BUILDDIRS) message-cgame compile-cgame link-cgame
+ game: $(BUILDDIRS) message-game compile-game link-game
+ ui: $(BUILDDIRS) message-ui compile-ui link-ui
+@@ -538,7 +547,7 @@ ui_as: $(BUILDDIRS) message-ui_as compile-ui_as link-u
+ ui_rocket: $(BUILDDIRS) message-ui_rocket compile-ui_rocket link-ui_rocket
+ irc: $(BUILDDIRS) message-irc compile-irc link-irc
+ angelwrap: $(BUILDDIRS) message-angelwrap compile-angelwrap link-angelwrap
+-tv_server: $(BUILDDIRS) message-tv_server compile-tv_server link-tv_server start-script-tv_server
++tv_server: $(BUILDDIRS) message-tv_server compile-tv_server link-tv_server
+ 
+ clean: clean-msg clean-depend clean-client clean-openal clean-qf clean-ded clean-cgame clean-game clean-ui clean-ui_rocket clean-librocket clean-irc clean-angelwrap clean-tv_server
+ 
+@@ -572,7 +581,7 @@ message-openal:
+ 	@echo "> * Building openal"
+ 	@echo "> *********************************************************"
+ compile-openal: $(OBJS_OPENAL)
+-link-openal: $(BINDIR)/libs $(BINDIR)/libs/snd_openal_$(ARCH).$(SHARED_LIBRARY_EXTENSION)
++link-openal: $(BINDIR)/libs $(BINDIR)/libs/snd_openal.$(SHARED_LIBRARY_EXTENSION)
+ clean-openal:
+ 	@echo "  > Removing openal objects" && \
+ 	$(RM) $(OBJS_OPENAL)
+@@ -584,7 +593,7 @@ message-qf:
+ 	@echo "> * Building qf"
+ 	@echo "> *********************************************************"
+ compile-qf: $(OBJS_QF)
+-link-qf: $(BINDIR)/libs $(BINDIR)/libs/snd_qf_$(ARCH).$(SHARED_LIBRARY_EXTENSION)
++link-qf: $(BINDIR)/libs $(BINDIR)/libs/snd_qf.$(SHARED_LIBRARY_EXTENSION)
+ clean-qf:
+ 	@echo "  > Removing qf objects" && \
+ 	$(RM) $(OBJS_QF)
+@@ -609,7 +618,7 @@ message-cgame:
+ 	@echo "> * Building cgame"
+ 	@echo "> *********************************************************"
+ compile-cgame: $(OBJS_CGAME)
+-link-cgame: $(BINDIR)/basewsw $(BINDIR)/basewsw/cgame_$(ARCH).$(SHARED_LIBRARY_EXTENSION)
++link-cgame: $(BINDIR)/basewsw $(BINDIR)/basewsw/cgame.$(SHARED_LIBRARY_EXTENSION)
+ clean-cgame:
+ 	@echo "  > Removing cgame objects" && \
+ 	$(RM) $(OBJS_CGAME)
+@@ -621,7 +630,7 @@ message-game:
+ 	@echo "> * Building game"
+ 	@echo "> *********************************************************"
+ compile-game: $(OBJS_GAME)
+-link-game: $(BINDIR)/basewsw $(BINDIR)/basewsw/game_$(ARCH).$(SHARED_LIBRARY_EXTENSION)
++link-game: $(BINDIR)/basewsw $(BINDIR)/basewsw/game.$(SHARED_LIBRARY_EXTENSION)
+ clean-game:
+ 	@echo "  > Removing game objects" && \
+ 	$(RM) $(OBJS_GAME)
+@@ -633,7 +642,7 @@ message-ui_rocket:
+ 	@echo "> * Building ui.rocket"
+ 	@echo "> *********************************************************"
+ compile-ui_rocket: $(OBJS_UI_ROCKET) $(LIBROCKET_LIB)
+-link-ui_rocket: $(BINDIR)/basewsw $(BINDIR)/basewsw/ui_rocket_$(ARCH).$(SHARED_LIBRARY_EXTENSION)
++link-ui_rocket: $(BINDIR)/basewsw $(BINDIR)/basewsw/ui_rocket.$(SHARED_LIBRARY_EXTENSION)
+ clean-ui_rocket:
+ 	@echo "  > Removing ui.rocket objects" && \
+ 	$(RM) $(OBJS_UI_ROCKET)
+@@ -656,7 +665,7 @@ message-ui_as:
+ 	@echo "> * Building ui.as"
+ 	@echo "> *********************************************************"
+ compile-ui_as: $(OBJS_UI_AS)
+-link-ui_as: $(BINDIR)/basewsw $(BINDIR)/basewsw/ui_as_$(ARCH).$(SHARED_LIBRARY_EXTENSION)
++link-ui_as: $(BINDIR)/basewsw $(BINDIR)/basewsw/ui_as.$(SHARED_LIBRARY_EXTENSION)
+ clean-ui_as:
+ 	@echo "  > Removing ui.as objects" && \
+ 	$(RM) $(OBJS_UI_AS)
+@@ -668,7 +677,7 @@ message-uiold:
+ 	@echo "> * Building ui.old"
+ 	@echo "> *********************************************************"
+ compile-uiold: $(OBJS_UIOLD)
+-link-uiold: $(BINDIR)/basewsw $(BINDIR)/basewsw/uiold_$(ARCH).$(SHARED_LIBRARY_EXTENSION)
++link-uiold: $(BINDIR)/basewsw $(BINDIR)/basewsw/uiold.$(SHARED_LIBRARY_EXTENSION)
+ clean-uiold:
+ 	@echo "  > Removing ui.old objects" && \
+ 	$(RM) $(OBJS_UIOLD)
+@@ -680,7 +689,7 @@ message-ui:
+ 	@echo "> * Building ui"
+ 	@echo "> *********************************************************"
+ compile-ui: $(OBJS_UI)
+-link-ui: $(BINDIR)/basewsw $(BINDIR)/basewsw/ui_$(ARCH).$(SHARED_LIBRARY_EXTENSION)
++link-ui: $(BINDIR)/basewsw $(BINDIR)/basewsw/ui.$(SHARED_LIBRARY_EXTENSION)
+ clean-ui:
+ 	@echo "  > Removing ui objects" && \
+ 	$(RM) $(OBJS_UI)
+@@ -692,7 +701,7 @@ message-irc:
+ 	@echo "> * Building irc"
+ 	@echo "> *********************************************************"
+ compile-irc: $(OBJS_IRC)
+-link-irc: $(BINDIR)/libs $(BINDIR)/libs/irc_$(ARCH).$(SHARED_LIBRARY_EXTENSION)
++link-irc: $(BINDIR)/libs $(BINDIR)/libs/irc.$(SHARED_LIBRARY_EXTENSION)
+ clean-irc:
+ 	@echo "  > Removing irc objects" && \
+ 	$(RM) $(OBJS_IRC)
+@@ -721,7 +730,7 @@ $(ANGELSCRIPT_LIB): $(ANGELSCRIPT_INC)/angelscript.h
+ 	@echo "> * Continuing angelwrap building..."
+ 
+ compile-angelwrap: $(ANGELSCRIPT_LIB) $(OBJS_ANGELWRAP)
+-link-angelwrap: $(BINDIR)/libs $(BINDIR)/libs/angelwrap_$(ARCH).$(SHARED_LIBRARY_EXTENSION)
++link-angelwrap: $(BINDIR)/libs $(BINDIR)/libs/angelwrap.$(SHARED_LIBRARY_EXTENSION)
+ clean-angelwrap:
+ 	@echo "  > Removing angelscript objects"
+ 	@CXX=$(CXX) make -C $(ANGELSCRIPT_PROJECT_DIR) clean
+@@ -768,49 +777,49 @@ endif
+ #########
+ # OPENAL
+ #########
+-$(BINDIR)/libs/snd_openal_$(ARCH).$(SHARED_LIBRARY_EXTENSION): $(OBJS_OPENAL)
++$(BINDIR)/libs/snd_openal.$(SHARED_LIBRARY_EXTENSION): $(OBJS_OPENAL)
+ 	@echo "  > Linking $@" && \
+ 	$(LD) -o $@ $^ $(LDFLAGS_COMMON) $(LDFLAGS_MODULE) $(LDFLAGS_OPENAL)
+ 
+ #########
+ # QF
+ #########
+-$(BINDIR)/libs/snd_qf_$(ARCH).$(SHARED_LIBRARY_EXTENSION): $(OBJS_QF)
++$(BINDIR)/libs/snd_qf.$(SHARED_LIBRARY_EXTENSION): $(OBJS_QF)
+ 	@echo "  > Linking $@" && \
+ 	$(LD) -o $@ $^ $(LDFLAGS_COMMON) $(LDFLAGS_MODULE) $(LDFLAGS_QF)
+ 
+ ########
+ # .SO
+ ########
+-$(BINDIR)/basewsw/cgame_$(ARCH).$(SHARED_LIBRARY_EXTENSION): $(OBJS_CGAME)
++$(BINDIR)/basewsw/cgame.$(SHARED_LIBRARY_EXTENSION): $(OBJS_CGAME)
+ 	@echo "  > Linking $@" && \
+ 	$(LD) -o $@ $^ $(LDFLAGS_COMMON) $(LDFLAGS_MODULE)
+ 
+-$(BINDIR)/basewsw/game_$(ARCH).$(SHARED_LIBRARY_EXTENSION): $(OBJS_GAME)
++$(BINDIR)/basewsw/game.$(SHARED_LIBRARY_EXTENSION): $(OBJS_GAME)
+ 	@echo "  > Linking $@" && \
+ 	$(LD) -o $@ $^ $(LDFLAGS_COMMON) $(LDFLAGS_MODULE)
+ 
+-$(BINDIR)/basewsw/ui_$(ARCH).$(SHARED_LIBRARY_EXTENSION): $(OBJS_UI)
++$(BINDIR)/basewsw/ui.$(SHARED_LIBRARY_EXTENSION): $(OBJS_UI)
+ 	@echo "  > Linking $@" && \
+ 	$(LXX) -o $@ $^ $(LXXFLAGS_COMMON) $(LDFLAGS_MODULE)
+ 
+-$(BINDIR)/basewsw/uiold_$(ARCH).$(SHARED_LIBRARY_EXTENSION): $(OBJS_UIOLD)
++$(BINDIR)/basewsw/uiold.$(SHARED_LIBRARY_EXTENSION): $(OBJS_UIOLD)
+ 	@echo "  > Linking $@" && \
+ 	$(LD) -o $@ $^ $(LDFLAGS_COMMON) $(LDFLAGS_MODULE)
+ 
+-$(BINDIR)/basewsw/ui_as_$(ARCH).$(SHARED_LIBRARY_EXTENSION): $(OBJS_UI_AS)
++$(BINDIR)/basewsw/ui_as.$(SHARED_LIBRARY_EXTENSION): $(OBJS_UI_AS)
+ 	@echo "  > Linking $@" && \
+ 	$(LD) -o $@ $^ $(LDFLAGS_COMMON) $(LDFLAGS_MODULE)
+ 
+-$(BINDIR)/basewsw/ui_rocket_$(ARCH).$(SHARED_LIBRARY_EXTENSION): $(OBJS_UI_ROCKET)
++$(BINDIR)/basewsw/ui_rocket.$(SHARED_LIBRARY_EXTENSION): $(OBJS_UI_ROCKET)
+ 	@echo "  > Linking $@" && \
+ 	$(LXX) -o $@ $^ $(LXXFLAGS_COMMON) $(LDFLAGS_MODULE) $(LDFLAGS_ROCKET)
+ 
+-$(BINDIR)/libs/irc_$(ARCH).$(SHARED_LIBRARY_EXTENSION): $(OBJS_IRC)
++$(BINDIR)/libs/irc.$(SHARED_LIBRARY_EXTENSION): $(OBJS_IRC)
+ 	@echo "  > Linking $@" && \
+ 	$(LD) -o $@ $^ $(LDFLAGS_COMMON) $(LDFLAGS_MODULE)
+ 
+-$(BINDIR)/libs/angelwrap_$(ARCH).$(SHARED_LIBRARY_EXTENSION): $(OBJS_ANGELWRAP)
++$(BINDIR)/libs/angelwrap.$(SHARED_LIBRARY_EXTENSION): $(OBJS_ANGELWRAP)
+ 	@echo "  > Linking $@" && \
+ 	$(LXX) -o $@ $^ $(LXXFLAGS_COMMON) $(LDFLAGS_MODULE) $(LDFLAGS_ANGELWRAP)
+ 

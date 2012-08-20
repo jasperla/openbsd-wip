@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2011/09/15 15:50:23 sthen Exp $
+%%dynlink%%
+lib/ocaml/react/react.a
+lib/ocaml/react/react.cmx
+lib/ocaml/react/react.cmxa

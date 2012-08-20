@@ -1,0 +1,12 @@
+$OpenBSD$
+--- client/libmumblelink.c.orig	Wed Aug 15 20:24:03 2012
++++ client/libmumblelink.c	Wed Aug 15 20:24:26 2012
+@@ -91,6 +91,8 @@ int mumble_link(const char* name)
+ 		hMapObject = NULL;
+ 		return -1;
+ 	}
++#elif defined __OpenBSD__
++	return -1;
+ #else
+ 	char file[256];
+ 	int shmfd;
