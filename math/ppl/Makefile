@@ -26,11 +26,6 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MODULES =		lang/ocaml \
-			java
-MODJAVA_VER =		1.7
-MODJAVA_JRERUN =	Yes
-
 WANTLIB-main =		gmp gmpxx m stdc++ ${WANTLIB} c glpk z
 WANTLIB-java =		gmp gmpxx m stdc++ ${WANTLIB} ppl
 WANTLIB-ocaml =		
@@ -57,6 +52,10 @@ CONFIGURE_STYLE =	gnu
 
 # Java support for OpenBSD only on amd64 or i386
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
+MODULES +=		lang/ocaml \
+			java
+MODJAVA_VER =		1.7
+MODJAVA_JRERUN =	Yes
 CONFIGURE_ARGS +=	--enable-interfaces=c,cxx,ocaml,java \
 			--with-java=${JAVA_HOME}
 .else
