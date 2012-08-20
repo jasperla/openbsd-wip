@@ -9,7 +9,7 @@ A construction that is not compatible with BSD grep.
  
  graphviz_version.h: config.h
 -	$(GREP) 'PACKAGE\|VERSION\|GVPLUGIN' config.h > graphviz_version.h
-+	$(GREP) -e 'PACKAGE' -e 'VERSION' -e 'GVPLUGIN' config.h > graphviz_version.h
++	$(GREP) -E '(PACKAGE|VERSION|GVPLUGIN)' config.h > graphviz_version.h
  
  .PHONY: rpm
  rpm: dist

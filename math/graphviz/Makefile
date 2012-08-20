@@ -110,6 +110,8 @@ EXBASE=		${PREFIX}/share/examples/graphviz
 MAKE_FLAGS=	TCL_STUB_LIB_SPEC='-L${LOCALBASE}/lib -ltclstub85_pic' \
 		TK_STUB_LIB_SPEC='-L${LOCALBASE}/lib -ltkstub85_pic'
 
+CFLAGS +=	-DLT_DEBUG_LOADERS
+
 FAKE_FLAGS=	htmldir="${DOCBASE}/html" \
 		pdfdir="${DOCBASE}/pdf" \
 		txtdir="${DOCBASE}" \
@@ -131,10 +133,15 @@ post-build:
 	cat ${WRKBUILD}/cmd/${CMD}/${CMD}.ksh >>${WRKBUILD}/cmd/${CMD}/${CMD}
 .endfor
 
-# Install a config6 file which is generated from `dot -c'.
-# We generate one and install it in this way to avoid @exec/@unexec-delete
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/config6 \
-		${WRKINST}${TRUEPREFIX}/lib/graphviz/
+	@# install pre-generated config6 to avoid @exec/@unexec-delete
+	${SUBST_CMD} -c ${FILESDIR}/config6 ${PREFIX}/lib/graphviz/config6
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/graphviz/config6
+
+# NOTE: When updating this port:
+#  * Check we have commented .la and .a corresponding to unversioned .so files
+#    in the packing list.
+#  * Run 'dot -c' manually and subsitute all hardcoded library versions to
+#    ${LIB_libname_VERSION}. Put the file in files/config6
 
 .include <bsd.port.mk>

@@ -71,9 +71,8 @@ lib/graphviz/R/
 lib/graphviz/config6
 lib/graphviz/go/
 lib/graphviz/guile/
-@comment
-lib/graphviz/guile/libgv_guile.a
-lib/graphviz/guile/libgv_guile.la
+@comment lib/graphviz/guile/libgv_guile.a
+@comment lib/graphviz/guile/libgv_guile.la
 lib/graphviz/io/
 lib/graphviz/java/
 lib/graphviz/libgvplugin_core.a
@@ -98,9 +97,8 @@ lib/graphviz/lua/
 lib/graphviz/ocaml/
 lib/graphviz/perl/
 lib/graphviz/perl/gv.pm
-@comment
-lib/graphviz/perl/libgv_perl.a
-lib/graphviz/perl/libgv_perl.la
+@comment lib/graphviz/perl/libgv_perl.a
+@comment lib/graphviz/perl/libgv_perl.la
 lib/graphviz/php/
 lib/graphviz/python/
 lib/graphviz/python23/
@@ -135,9 +133,8 @@ lib/tcl/
 lib/tcl/graphviz/
 lib/tcl/graphviz/libgdtclft.a
 lib/tcl/graphviz/libgdtclft.la
-@comment
-lib/tcl/graphviz/libgv_tcl.a
-lib/tcl/graphviz/libgv_tcl.la
+@comment lib/tcl/graphviz/libgv_tcl.a
+@comment lib/tcl/graphviz/libgv_tcl.la
 lib/tcl/graphviz/libtcldot.a
 lib/tcl/graphviz/libtcldot.la
 lib/tcl/graphviz/libtcldot_builtin.a
