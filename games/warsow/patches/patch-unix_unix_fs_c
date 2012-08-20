@@ -1,0 +1,12 @@
+$OpenBSD$
+--- unix/unix_fs.c.orig	Wed Aug 15 20:15:55 2012
++++ unix/unix_fs.c	Wed Aug 15 20:17:27 2012
+@@ -26,7 +26,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+ #include <sys/stat.h>
+ 
+ // Mac OS X and FreeBSD don't know the readdir64 and dirent64
+-#if ( defined (__FreeBSD__) || !defined(_LARGEFILE64_SOURCE) )
++#if ( defined (__FreeBSD__) || defined (__OpenBSD__) || !defined(_LARGEFILE64_SOURCE) )
+ #define readdir64 readdir
+ #define dirent64 dirent
+ #endif

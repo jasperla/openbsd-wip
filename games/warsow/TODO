@@ -1,0 +1,3 @@
+- seems to crash in angelscript function call goop when run on
+amd64 when starting a local game or setting video options
+- snd_qf stutters, perhaps disable and only have snd_openal?

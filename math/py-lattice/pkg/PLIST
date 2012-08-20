@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+lib/python${MODPY_VERSION}/site-packages/lattice.py
+lib/python${MODPY_VERSION}/site-packages/lattice.pyc
+lib/python${MODPY_VERSION}/site-packages/python_lattice-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+share/doc/py-lattice/
+share/doc/py-lattice/README
