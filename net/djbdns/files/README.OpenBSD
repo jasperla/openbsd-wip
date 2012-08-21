@@ -1,0 +1,16 @@
+To setup an authoritative server:
+  tinydns-conf _tinydns _dnslog /etc/tinydns <IP address>
+
+To log by syslog instead of multilog, edit /etc/tinydns/log/run
+and change the line to:
+  exec logger -t tinydns -p daemon.info
+
+
+To start it you should have svscan monitoring a directory;
+  mkdir /service
+  svscan /service/ &
+then symlink it in:
+  ln -s /etc/tinydns /service/
+
+
+
