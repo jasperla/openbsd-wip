@@ -24,15 +24,17 @@ FLAVORS=	no_lua static
 FLAVOR?=
 
 USE_GMAKE=	Yes
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
+AUTOCONF_VERSION= 2.68
 CONFIGURE_ARGS+= --enable-bash-extensions \
 		LDFLAGS="${LDFLAGS}"
 LDFLAGS=	-L${LOCALBASE}/lib
 
 .if !${FLAVOR:Mno_lua}
+MODULES+=	lang/lua
 CONFIGURE_ARGS+= --with-lua
-WANTLIB+=	lua m
-LIB_DEPENDS=	lang/lua
+WANTLIB+=	${MODLUA_WANTLIB} m
+LIB_DEPENDS=	${MODLUA_LIB_DEPENDS}
 .endif
 
 .if ${FLAVOR:Mstatic}
