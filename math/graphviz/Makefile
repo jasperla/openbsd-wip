@@ -58,7 +58,7 @@ LIB_DEPENDS=	graphics/jpeg \
 		x11/gtk+2 \
 		www/libcroco \
 		x11/gnome/librsvg \
-		x11/tk/${MODTK_VERSION} # not ${MODTK_LIB_DEPENDS}!
+		${_MODTK_SPEC}:x11/tk/${MODTK_VERSION}
 RUN_DEPENDS=	lang/guile
 BUILD_DEPENDS=	devel/swig
 
@@ -69,7 +69,7 @@ WANTLIB += freetype gd gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg
 WANTLIB += ltdl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs rsvg-2 stdc++ xcb xcb-render
-WANTLIB += xcb-shm xml2 z tk85 Xft Xss perl util
+WANTLIB += xcb-shm xml2 z ${MODTK_LIB} Xft Xss perl util
 
 USE_LIBTOOL=	Yes
 USE_GMAKE =	Yes
