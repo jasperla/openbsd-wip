@@ -55,11 +55,10 @@ LIB_DEPENDS=	graphics/jpeg \
 		graphics/png \
 		devel/libtool,-ltdl \
 		graphics/gd>=2.0.34 \
-		x11/gnome/libgnomeui \
 		x11/gtk+2 \
 		www/libcroco \
 		x11/gnome/librsvg \
-		${MODTK_LIB_DEPENDS}
+		x11/tk/${MODTK_VERSION} # not ${MODTK_LIB_DEPENDS}!
 RUN_DEPENDS=	lang/guile
 BUILD_DEPENDS=	devel/swig
 
