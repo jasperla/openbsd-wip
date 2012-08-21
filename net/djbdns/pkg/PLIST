@@ -1,0 +1,39 @@
+@comment $OpenBSD$
+@newgroup _dnslog:945
+@newgroup _tinydns:946
+@newgroup _dnscache:947
+@newuser _dnslog:945:_dnslog:daemon:dnslog user:/nonexistent:/sbin/nologin
+@newuser _tinydns:946:_tinydns:daemon:tinydns user:/nonexistent:/sbin/nologin
+@newuser _dnscache:947:_dnscache:daemon:dnscache user:/nonexistent:/sbin/nologin
+@bin bin/axfr-get
+@bin bin/axfrdns
+@bin bin/axfrdns-conf
+@bin bin/dnscache
+@bin bin/dnscache-conf
+@bin bin/dnsfilter
+@bin bin/dnsip
+@bin bin/dnsipq
+@bin bin/dnsmx
+@bin bin/dnsname
+@bin bin/dnsq
+@bin bin/dnsqr
+@bin bin/dnstrace
+bin/dnstracesort
+@bin bin/dnstxt
+@bin bin/pickdns
+@bin bin/pickdns-conf
+@bin bin/pickdns-data
+@bin bin/random-ip
+@bin bin/rbldns
+@bin bin/rbldns-conf
+@bin bin/rbldns-data
+@bin bin/tinydns
+@bin bin/tinydns-conf
+@bin bin/tinydns-data
+@bin bin/tinydns-edit
+@bin bin/tinydns-get
+@bin bin/walldns
+@bin bin/walldns-conf
+share/examples/djbdns/
+share/examples/djbdns/dnsroots.global
+@sample ${SYSCONFDIR}/dnsroots.global

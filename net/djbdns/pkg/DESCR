@@ -1,0 +1,8 @@
+djbdns is quirky dns software useful in some special cases.
+It provides various tools and the follow servers:-
+
+tinydns, an authoritative server
+dnscache, a dns cache
+rbldns, a specialist server for hosting DNS-based lists of IP addresses
+walldns, a specialist server mapping 4.3.2.1.in-addr.arpa. to 1.2.3.4 and
+vice-versa.
