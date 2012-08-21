@@ -79,6 +79,8 @@ MODOASIS_configure = \
 	rm setup.cm[io] && \
 	${SETENV} ${CONFIGURE_ENV} ${_MODOASIS_SETUP} -configure \
 	--destdir ${WRKINST} \
+	--mandir ${PREFIX}/man \
+	--infodir ${PREFIX}/info \
 	--override pkg_name ${NAME} \
 	${CONFIGURE_ARGS}
 
