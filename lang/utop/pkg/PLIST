@@ -12,6 +12,9 @@ lib/ocaml/utop/uTop_main.cmi
 lib/ocaml/utop/uTop_main.mli
 lib/ocaml/utop/utop-camlp4.cma
 lib/ocaml/utop/utop.cma
+@man man/man1/utop-full.1.gz
+@man man/man1/utop.1.gz
+@man man/man5/utoprc.5.gz
 share/doc/utop/
 share/doc/utop/CHANGES
 share/doc/utop/LICENSE
@@ -37,6 +40,3 @@ share/doc/utop/utoprc-light
 share/emacs/
 share/emacs/site-lisp/
 share/emacs/site-lisp/utop.el
-@man share/man/man1/utop-full.1.gz
-@man share/man/man1/utop.1.gz
-@man share/man/man5/utoprc.5.gz
