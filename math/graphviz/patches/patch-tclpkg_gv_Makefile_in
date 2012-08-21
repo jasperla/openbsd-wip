@@ -1,0 +1,21 @@
+$OpenBSD$
+--- tclpkg/gv/Makefile.in.orig2	Tue Aug 21 11:19:37 2012
++++ tclpkg/gv/Makefile.in	Tue Aug 21 11:20:51 2012
+@@ -249,7 +249,7 @@ libgv_perl_la_OBJECTS = $(am_libgv_perl_la_OBJECTS) \
+ libgv_perl_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
+ 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
+ 	$(AM_CXXFLAGS) $(CXXFLAGS) $(libgv_perl_la_LDFLAGS) $(LDFLAGS) \
+-	-o $@
++	-pthread -o $@
+ @WITH_PERL_TRUE@@WITH_SWIG_TRUE@am_libgv_perl_la_rpath = -rpath \
+ @WITH_PERL_TRUE@@WITH_SWIG_TRUE@	$(pkgperldir)
+ libgv_php_la_DEPENDENCIES = $(BASELIBS) $(am__DEPENDENCIES_1)
+@@ -392,7 +392,7 @@ libgv_tcl_la_OBJECTS = $(am_libgv_tcl_la_OBJECTS) \
+ 	$(nodist_libgv_tcl_la_OBJECTS)
+ libgv_tcl_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
+-	$(CXXFLAGS) $(libgv_tcl_la_LDFLAGS) $(LDFLAGS) -o $@
++	$(CXXFLAGS) $(libgv_tcl_la_LDFLAGS) $(LDFLAGS) -pthread -o $@
+ @WITH_SWIG_TRUE@@WITH_TCL_TRUE@am_libgv_tcl_la_rpath = -rpath \
+ @WITH_SWIG_TRUE@@WITH_TCL_TRUE@	$(pkgtcldir)
+ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
