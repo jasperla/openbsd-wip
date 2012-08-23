@@ -1,0 +1,12 @@
+$OpenBSD$
+--- hier.c.orig	Wed Feb  3 20:42:21 2010
++++ hier.c	Wed Feb  3 20:45:36 2010
+@@ -2,7 +2,7 @@
+ 
+ void hier()
+ {
+-  c("/","etc","dnsroots.global",-1,-1,0644);
++  c(auto_home,"share/examples/djbdns","dnsroots.global",-1,-1,0644);
+ 
+   h(auto_home,-1,-1,02755);
+   d(auto_home,"bin",-1,-1,02755);
