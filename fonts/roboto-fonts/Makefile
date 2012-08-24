@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	Roboto is the sans-serif typeface family of Android OS.
+COMMENT =	Roboto is the sans-serif typeface family of Android OS
 PKG_ARCH =	*
 V =		20120824
 DISTNAME =	androidfonts-${V}
@@ -8,10 +8,8 @@ PKGNAME =	roboto-fonts-${V}
 CATEGORIES =	fonts x11
 EXTRACT_SUFX =	.tar.gz
 
-# The homepage contain an old version. The distfile is generated with:
-# git clone -b jb-dev https://android.googlesource.com/platform/frameworks/base
-# cd base/data
-# tar -czf androidfonts-20120824.tar.gz fonts
+# The homepage contain an old version. The distfile is generated
+# from the git repo of Android.
 HOMEPAGE =	https://developer.android.com/design/style/typography.html
 
 MAINTAINER =	Juan Francisco Cantero Hurtado <iam@juanfra.info>
@@ -22,7 +20,7 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-MASTER_SITES =	http://juanfra.info/temporales/
+MASTER_SITES =	http://download.tuxfamily.org/jod/fonts/roboto-fonts/
 
 NO_BUILD =	Yes
 NO_REGRESS =	Yes
