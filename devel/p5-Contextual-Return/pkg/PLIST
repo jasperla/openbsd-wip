@@ -1,0 +1,7 @@
+@comment $OpenBSD$
+${P5SITE}/Contextual/
+${P5SITE}/Contextual/Return/
+${P5SITE}/Contextual/Return.pm
+${P5SITE}/Contextual/Return/Failure.pm
+@man man/man3p/Contextual::Return.3p
+@man man/man3p/Contextual::Return::Failure.3p
