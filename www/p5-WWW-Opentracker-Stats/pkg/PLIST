@@ -1,0 +1,35 @@
+@comment $OpenBSD$
+${P5SITE}/WWW/Opentracker/
+${P5SITE}/WWW/Opentracker/Stats/
+${P5SITE}/WWW/Opentracker/Stats.pm
+${P5SITE}/WWW/Opentracker/Stats/Mode/
+${P5SITE}/WWW/Opentracker/Stats/Mode.pm
+${P5SITE}/WWW/Opentracker/Stats/Mode/Conn.pm
+${P5SITE}/WWW/Opentracker/Stats/Mode/Fullscrape.pm
+${P5SITE}/WWW/Opentracker/Stats/Mode/HttpErrors.pm
+${P5SITE}/WWW/Opentracker/Stats/Mode/Peer.pm
+${P5SITE}/WWW/Opentracker/Stats/Mode/Renew.pm
+${P5SITE}/WWW/Opentracker/Stats/Mode/Scrape.pm
+${P5SITE}/WWW/Opentracker/Stats/Mode/TCP4.pm
+${P5SITE}/WWW/Opentracker/Stats/Mode/TPBS/
+${P5SITE}/WWW/Opentracker/Stats/Mode/TPBS.pm
+${P5SITE}/WWW/Opentracker/Stats/Mode/TPBS/Bencode.pm
+${P5SITE}/WWW/Opentracker/Stats/Mode/Top10.pm
+${P5SITE}/WWW/Opentracker/Stats/Mode/Torr.pm
+${P5SITE}/WWW/Opentracker/Stats/Mode/UDP4.pm
+${P5SITE}/WWW/Opentracker/Stats/UserAgent.pm
+@man man/man3p/WWW::Opentracker::Stats.3p
+@man man/man3p/WWW::Opentracker::Stats::Mode.3p
+@man man/man3p/WWW::Opentracker::Stats::Mode::Conn.3p
+@man man/man3p/WWW::Opentracker::Stats::Mode::Fullscrape.3p
+@man man/man3p/WWW::Opentracker::Stats::Mode::HttpErrors.3p
+@man man/man3p/WWW::Opentracker::Stats::Mode::Peer.3p
+@man man/man3p/WWW::Opentracker::Stats::Mode::Renew.3p
+@man man/man3p/WWW::Opentracker::Stats::Mode::Scrape.3p
+@man man/man3p/WWW::Opentracker::Stats::Mode::TCP4.3p
+@man man/man3p/WWW::Opentracker::Stats::Mode::TPBS.3p
+@man man/man3p/WWW::Opentracker::Stats::Mode::TPBS::Bencode.3p
+@man man/man3p/WWW::Opentracker::Stats::Mode::Top10.3p
+@man man/man3p/WWW::Opentracker::Stats::Mode::Torr.3p
+@man man/man3p/WWW::Opentracker::Stats::Mode::UDP4.3p
+@man man/man3p/WWW::Opentracker::Stats::UserAgent.3p
