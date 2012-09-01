@@ -1,0 +1,6 @@
+Provides an easy to use interface to retrieve various statistics from
+opentracker, a BitTorrent tracker.
+ 
+It executes HTTP requests to opentrackers web services, parses the
+response and returns data structures that you can easily extract data from,
+to store it in a database or display it on the web.
