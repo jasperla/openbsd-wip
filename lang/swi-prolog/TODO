@@ -1,0 +1,15 @@
+Regress failures:
+
+ * script: test_signal.pl hangs forever *sometimes*. Sometimes it passes
+
+ * script: test_resource_error.pl hangs seemingly forever
+
+ * gmp(shift-3) (embedded in test.pl) crashes and hangs with:                   
+   SWI-Prolog [thread 1]: received * fatal signal 10 (bus)
+
+ * test_zlib:
+   ERROR:
+   /usr/ports/pobj/swi-prolog-6.1.11/pl-6.1.11/packages/zlib/test_zlib.pl:62:
+   test multi_part: wrong answer (compared using ==)
+   ERROR:     Expected: [80,97,114,116,49,10,80,97,114|...]
+   ERROR:     Got:      [80,97,114,116,49,10]
