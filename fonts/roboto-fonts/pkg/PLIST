@@ -1,0 +1,14 @@
+@comment $OpenBSD$
+@pkgpath x11/roboto-fonts
+lib/X11/fonts/
+@fontdir lib/X11/fonts/Roboto/
+lib/X11/fonts/Roboto/Roboto-Bold.ttf
+lib/X11/fonts/Roboto/Roboto-BoldItalic.ttf
+lib/X11/fonts/Roboto/Roboto-Italic.ttf
+lib/X11/fonts/Roboto/Roboto-Light.ttf
+lib/X11/fonts/Roboto/Roboto-LightItalic.ttf
+lib/X11/fonts/Roboto/Roboto-Regular.ttf
+lib/X11/fonts/Roboto/RobotoCondensed-Bold.ttf
+lib/X11/fonts/Roboto/RobotoCondensed-BoldItalic.ttf
+lib/X11/fonts/Roboto/RobotoCondensed-Italic.ttf
+lib/X11/fonts/Roboto/RobotoCondensed-Regular.ttf

@@ -47,7 +47,8 @@ REGRESS_DEPENDS =	${BUILD_PKGPATH}
 MAKE_FLAGS =		PP=${COMPNAME} NOGDB=1
 MAKE_ENV =		MKDIRPROG=/bin/mkdir ECHO=/bin/echo \
 			GINSTALL=/usr/bin/install DATE=/bin/date \
-			TARPROG=/bin/tar
+			TARPROG=/bin/tar COMPILER_OPTIONS=-k-nopie \
+			FPCMAKEOPT=-k-nopie
 FAKE_FLAGS =		INSTALLEXE="${INSTALL_PROGRAM}" \
 			MKDIR="${INSTALL_DATA_DIR}" \
 			INSTALL="${INSTALL_DATA}"

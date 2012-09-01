@@ -1,0 +1,10 @@
+When you need to create a subroutine that returns different values in
+different contexts (list, scalar, or void), you can write code that is
+more readable. In its simplest usage, this module makes code more
+readable by providing three subroutines "LIST()", "SCALAR()", "VOID()"
+that are true only when the current subroutine is called in the
+corresponding context.  Those three subroutines can also be used in
+another way: as labels on a series of contextual return blocks
+(collectively known as a contextual return sequence). When a context
+sequence is returned, it automatically selects the appropriate
+contextual return block for the calling context.
