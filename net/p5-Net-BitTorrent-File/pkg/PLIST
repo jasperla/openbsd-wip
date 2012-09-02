@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+${P5SITE}/Net/
+${P5SITE}/Net/BitTorrent/
+${P5SITE}/Net/BitTorrent/File.pm
+@man man/man3p/Net::BitTorrent::File.3p
