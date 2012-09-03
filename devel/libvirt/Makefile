@@ -20,7 +20,9 @@ MODULES=		devel/gettext
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 
-CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION=	2.68
+
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	--with-python \
 			--without-network
 
