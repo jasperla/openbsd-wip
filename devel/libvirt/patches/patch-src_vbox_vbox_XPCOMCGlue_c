@@ -1,4 +1,7 @@
 $OpenBSD$
+
+Define DYNLIB_NAME on OpenBSD.
+
 --- src/vbox/vbox_XPCOMCGlue.c.orig	Mon Sep  3 14:14:35 2012
 +++ src/vbox/vbox_XPCOMCGlue.c	Mon Sep  3 14:14:55 2012
 @@ -48,7 +48,7 @@
