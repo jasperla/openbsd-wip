@@ -12,4 +12,6 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=		lang/python
 
+RUN_DEPENDS=		www/py-urlgrabber
+
 .include <bsd.port.mk>

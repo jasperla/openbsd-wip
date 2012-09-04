@@ -1,5 +1,0 @@
-@comment $OpenBSD$
-lib/libvirt/connection-driver/libvirt_driver_secret.so
-lib/libvirt/connection-driver/libvirt_driver_storage.so
-lib/python${MODPY_VERSION}/site-packages/libvirtmod.so
-lib/python${MODPY_VERSION}/site-packages/libvirtmod_qemu.so
