@@ -26,7 +26,7 @@ lib/python${MODPY_VERSION}/site-packages/virtconv/parsers/vmx.pyc
 lib/python${MODPY_VERSION}/site-packages/virtconv/vmcfg.py
 lib/python${MODPY_VERSION}/site-packages/virtconv/vmcfg.pyc
 lib/python${MODPY_VERSION}/site-packages/virtinst/
-lib/python${MODPY_VERSION}/site-packages/virtinst-0.600.3-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/virtinst-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/virtinst/Boot.py
 lib/python${MODPY_VERSION}/site-packages/virtinst/Boot.pyc
 lib/python${MODPY_VERSION}/site-packages/virtinst/CPU.py
@@ -123,57 +123,27 @@ lib/python${MODPY_VERSION}/site-packages/virtinst/support.py
 lib/python${MODPY_VERSION}/site-packages/virtinst/support.pyc
 lib/python${MODPY_VERSION}/site-packages/virtinst/util.py
 lib/python${MODPY_VERSION}/site-packages/virtinst/util.pyc
-share/locale/
-share/locale/da/
-share/locale/da/LC_MESSAGES/
+@man man/man1/virt-clone.1
+@man man/man1/virt-convert.1
+@man man/man1/virt-image.1
+@man man/man1/virt-install.1
+@man man/man5/virt-image.5
 share/locale/da/LC_MESSAGES/virtinst.mo
-share/locale/es/
-share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/virtinst.mo
-share/locale/fr/
-share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/virtinst.mo
 share/locale/gu/
 share/locale/gu/LC_MESSAGES/
 share/locale/gu/LC_MESSAGES/virtinst.mo
-share/locale/it/
-share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/virtinst.mo
-share/locale/ja/
-share/locale/ja/LC_MESSAGES/
 share/locale/ja/LC_MESSAGES/virtinst.mo
-share/locale/nl/
-share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/virtinst.mo
-share/locale/pl/
-share/locale/pl/LC_MESSAGES/
 share/locale/pl/LC_MESSAGES/virtinst.mo
-share/locale/pt_BR/
-share/locale/pt_BR/LC_MESSAGES/
 share/locale/pt_BR/LC_MESSAGES/virtinst.mo
-share/locale/ru/
-share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/virtinst.mo
-share/locale/sr/
-share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/virtinst.mo
 share/locale/sr@latin/
 share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/virtinst.mo
-share/locale/uk/
-share/locale/uk/LC_MESSAGES/
 share/locale/uk/LC_MESSAGES/virtinst.mo
-share/locale/zh_CN/
-share/locale/zh_CN/LC_MESSAGES/
 share/locale/zh_CN/LC_MESSAGES/virtinst.mo
-share/locale/zh_TW/
-share/locale/zh_TW/LC_MESSAGES/
 share/locale/zh_TW/LC_MESSAGES/virtinst.mo
-share/man/
-share/man/man1/
-@man share/man/man1/virt-clone.1
-@man share/man/man1/virt-convert.1
-@man share/man/man1/virt-image.1
-@man share/man/man1/virt-install.1
-share/man/man5/
-@man share/man/man5/virt-image.5
