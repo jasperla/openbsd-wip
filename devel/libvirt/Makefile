@@ -8,9 +8,11 @@ CATEGORIES=		devel
 SHARED_LIBS +=  virt-qemu                 0.0 # 10.1
 SHARED_LIBS +=  virt                      0.0 # 10.1
 
+HOMEPAGE=		http://libvirt.org/
+
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
-MASTER_SITES=		http://libvirt.org/sources/
+MASTER_SITES=		${HOMEPAGE}/sources/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=   Yes
