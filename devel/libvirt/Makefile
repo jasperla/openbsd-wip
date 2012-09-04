@@ -39,9 +39,16 @@ AUTOCONF_VERSION=	2.68
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	--with-avahi \
 			--with-python \
+			--without-yajl \
 			--without-netcf \
 			--without-network
+# OpenBSD can't act as a virtualization host, so no need for libvirtd.
+CONFIGURE_ARGS+=	--without-libvirtd
 
-FAKE_FLAGS=		confdir=${PREFIX}/share/examples/libvirt/
+FAKE_FLAGS=		confdir=${PREFIX}/share/examples/libvirt/ \
+
+# nwfilters are only used by libvirtd, which is (currently) disabled on OpenBSD
+FAKE_FLAGS+=		NWFILTER_DIR=${TMPDIR} \
+			FILTERS=""
 
 .include <bsd.port.mk>
