@@ -5,8 +5,8 @@ COMMENT=		tool/library for managing platform virtualization
 DISTNAME=		libvirt-0.10.1
 CATEGORIES=		devel
 
-SHARED_LIBS +=  virt-qemu                 10.1 # 10.1
-SHARED_LIBS +=  virt                      10.1 # 10.1
+SHARED_LIBS +=  virt-qemu                 0.0 # 10.1
+SHARED_LIBS +=  virt                      0.0 # 10.1
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
