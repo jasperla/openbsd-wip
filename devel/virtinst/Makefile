@@ -4,7 +4,6 @@ COMMENT=		tool to provision operating systems into virtual machines
 
 MODPY_EGG_VERSION=	0.600.3
 DISTNAME=		virtinst-${MODPY_EGG_VERSION}
-REVISION=		0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://virt-manager.org/
