@@ -12,23 +12,22 @@ include/libvirt/virterror.h
 lib/libvirt/
 lib/libvirt-qemu.a
 lib/libvirt-qemu.la
+@lib lib/libvirt-qemu.so.${LIBvirt-qemu_VERSION}
 lib/libvirt.a
 lib/libvirt.la
+@lib lib/libvirt.so.${LIBvirt_VERSION}
 lib/libvirt/connection-driver/
 lib/libvirt/connection-driver/libvirt_driver_secret.a
-lib/libvirt/connection-driver/libvirt_driver_secret.la
+@comment lib/libvirt/connection-driver/libvirt_driver_secret.la
 lib/libvirt/connection-driver/libvirt_driver_storage.a
-lib/libvirt/connection-driver/libvirt_driver_storage.la
-lib/pkgconfig/
+@comment lib/libvirt/connection-driver/libvirt_driver_storage.la
 lib/pkgconfig/libvirt.pc
-lib/python2.7/
-lib/python2.7/site-packages/
-lib/python2.7/site-packages/libvirt.py
-lib/python2.7/site-packages/libvirt_qemu.py
-lib/python2.7/site-packages/libvirtmod.a
-lib/python2.7/site-packages/libvirtmod.la
-lib/python2.7/site-packages/libvirtmod_qemu.a
-lib/python2.7/site-packages/libvirtmod_qemu.la
+lib/python${MODPY_VERSION}/site-packages/libvirt.py
+lib/python${MODPY_VERSION}/site-packages/libvirt_qemu.py
+lib/python${MODPY_VERSION}/site-packages/libvirtmod.a
+lib/python${MODPY_VERSION}/site-packages/libvirtmod.la
+lib/python${MODPY_VERSION}/site-packages/libvirtmod_qemu.a
+lib/python${MODPY_VERSION}/site-packages/libvirtmod_qemu.la
 @bin libexec/libvirt_iohelper
 @man man/man1/virsh.1
 @man man/man1/virt-host-validate.1
@@ -155,8 +154,11 @@ share/doc/libvirt-python-0.10.1/examples/error.py
 share/doc/libvirt-python-0.10.1/examples/node.py
 share/doc/libvirt-python-0.10.1/examples/uuid.py
 share/examples/libvirt/
+@sample ${SYSCONFDIR}/libvirt/
 share/examples/libvirt/libvirt.conf
+@sample ${SYSCONFDIR}/libvirt/libvirt.conf
 share/examples/libvirt/libvirtd.conf
+@sample ${SYSCONFDIR}/libvirt/libvirtd.conf
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/libvirt/

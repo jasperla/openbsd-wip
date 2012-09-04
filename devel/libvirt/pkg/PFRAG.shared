@@ -1,7 +1,5 @@
 @comment $OpenBSD$
-@lib lib/libvirt-qemu.so.${LIBvirt-qemu_VERSION}
-@lib lib/libvirt.so.${LIBvirt_VERSION}
 lib/libvirt/connection-driver/libvirt_driver_secret.so
 lib/libvirt/connection-driver/libvirt_driver_storage.so
-lib/python2.7/site-packages/libvirtmod.so
-lib/python2.7/site-packages/libvirtmod_qemu.so
+lib/python${MODPY_VERSION}/site-packages/libvirtmod.so
+lib/python${MODPY_VERSION}/site-packages/libvirtmod_qemu.so
