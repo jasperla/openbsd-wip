@@ -5,8 +5,7 @@ ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		Scheme dialect often used for teaching programming
 
-V =			5.2.1
-REVISION =		3
+V =			5.3
 PKGNAME =		racket-$V
 DISTNAME =		racket-$V-src-unix
 CATEGORIES =		lang
@@ -46,8 +45,9 @@ CONFIGURE_STYLE =	gnu
 
 # --enable-libffi needs LDFLAGS="-pthread"
 # gettext support needs CPPFLAGS="-I${LOCALBASE}/include"
+# -DMZ_USE_JIT_SSE enables use of SSE floating point
 CONFIGURE_ENV =		LDFLAGS="-pthread -lcrypto" \
-			CPPFLAGS="-I${LOCALBASE}/include"
+			CPPFLAGS="-I${LOCALBASE}/include -DMZ_USE_JIT_SSE"
 
 CONFIGURE_ARGS +=	--enable-shared \
 			--enable-libffi \
@@ -58,13 +58,18 @@ CONFIGURE_ARGS +=	--enable-shared \
 			--enable-float \
 			--enable-docs \
 			--enable-pthread \
-			--enable-lt=${LIBTOOL}
+			--enable-lt=${LIBTOOL} \
+			--enable-futures
 
-# "futures" disabled because breaks "make fake".
 # "backtrace" is expensive.
 # http://article.gmane.org/gmane.comp.lang.racket.devel/6700
-CONFIGURE_ARGS +=	--disable-futures \
-			--disable-backtrace
+CONFIGURE_ARGS +=	--disable-backtrace
+
+# Racket removes the symbols by default.
+# FIXME It doesn't work. I'm doing something wrong.
+.ifdef DEBUG
+CONFIGURE_ARGS +=	--enable-noopt
+.endif
 
 USE_LIBTOOL =		Yes
 
@@ -76,5 +81,18 @@ MODULES +=		converters/libiconv \
 MODGCC4_VERSION =	4.6
 MODGCC4_LANGS =		c
 MODGCC4_ARCHS =		*
+
+# -- Racket with futures disabled. 5.2 vs 5.3 --
+# Racket 5.2 (with futures disabled) compiles OK with the default limits of the
+# shell but for Racket 5.3 I need increase the limits. These problems occur
+# only when this port is compiled with sudo, when is compiled from the root
+# account all is OK.
+#
+# -- Racket + futures crash because the various make jobs --
+# It's necessary to use only one job for the make install. Racket uses various
+# jobs by default when futures is enabled, so Racket reaches the limits again
+# and crash.
+do-install:
+	@cd ${WRKBUILD} && ulimit -s 8192 && PLT_SETUP_OPTIONS="-j 1" make install
 
 .include <bsd.port.mk>
