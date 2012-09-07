@@ -39,17 +39,14 @@ lib/chicken/6/utils.import.so
 lib/libchicken.a
 lib/libchicken.so
 @lib lib/libchicken.so.${LIBchicken_VERSION}
-@bin lib/libchicken.so.6
-m1an/
-m1an/man1/
-m1an/man1/chicken-bug.1
-m1an/man1/chicken-install.1
-m1an/man1/chicken-profile.1
-m1an/man1/chicken-status.1
-m1an/man1/chicken-uninstall.1
-m1an/man1/chicken.1
-m1an/man1/csc.1
-m1an/man1/csi.1
+@man man/man1/chicken-bug.1
+@man man/man1/chicken-install.1
+@man man/man1/chicken-profile.1
+@man man/man1/chicken-status.1
+@man man/man1/chicken-uninstall.1
+@man man/man1/chicken.1
+@man man/man1/csc.1
+@man man/man1/csi.1
 share/chicken/
 share/chicken/setup.defaults
 share/doc/chicken/
