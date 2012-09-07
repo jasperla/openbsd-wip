@@ -12,4 +12,3 @@ $OpenBSD$
 +.B chicken
  program is the basic Scheme-to-C translator used in this system.
  For a more convenient interface, see the manual page for csc(1).
- 
