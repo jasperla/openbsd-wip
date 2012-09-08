@@ -1,0 +1,67 @@
+$OpenBSD$
+--- lib/Net/BitTorrent/File.pm.orig	Sun Jul 24 11:24:31 2005
++++ lib/Net/BitTorrent/File.pm	Sat Sep  8 14:19:45 2012
+@@ -8,7 +8,7 @@ use Digest::SHA1 qw(sha1);
+ BEGIN {
+ 	use Exporter ();
+ 	use vars qw ($VERSION @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
+-	$VERSION     = 1.02;
++	$VERSION     = 1.03;
+ 	@ISA         = qw (Exporter);
+ 	#Give a hoot don't pollute, do not export more than needed by default
+ 	@EXPORT      = qw ();
+@@ -115,11 +115,22 @@ When called with no arguments returns the I<name> prop
+ it sets it to I<$value>. If this value is changed, the I<info_hash> property needs
+ to be regenerated.
+ 
++=item * comment( [$value] )
++
++When called with no arguments returns the I<comment> propertys current value, else
++it sets it to I<$value>. If this value is changed, the I<info_hash> property needs
++to be regenerated.
++
+ =item * announce( [$value] )
+ 
+ When called with no arguments returns the I<announce> propertys current value, else
+ it sets it to I<$value>.
+ 
++=item * url_list( [$value] )
++
++When called with no arguments returns the I<url-list> properties current value, 
++else it sets it to I<$value>.
++
+ =item * piece_length( [$value] )
+ 
+ When called with no arguments returns the I<piece_length> propertys current value, else
+@@ -206,6 +217,15 @@ sub name {
+ 	return $self->{'data'}->{'info'}->{'name'};
+ }
+ 
++sub comment {
++	my $self = shift;
++	my $comment = shift;
++	if(defined($comment)) {
++		$self->{'data'}->{'info'}->{'comment'} = $comment;
++	}
++	return $self->{'data'}->{'info'}->{'comment'};
++}
++
+ sub announce {
+ 	my $self = shift;
+ 	my $announce = shift;
+@@ -213,6 +233,15 @@ sub announce {
+ 		$self->{'data'}->{'announce'} = $announce;
+ 	}
+ 	return $self->{'data'}->{'announce'};
++}
++
++sub url_list {
++    my $self     = shift;
++    my $url_list = shift;
++    if ( defined($url_list) ) {
++        $self->{'data'}->{'url-list'} = $url_list;
++    }
++    return $self->{'data'}->{'url-list'};
+ }
+ 
+ sub piece_length {
