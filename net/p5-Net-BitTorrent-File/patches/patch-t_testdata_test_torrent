@@ -1,8 +1,8 @@
 $OpenBSD$
 --- t/testdata/test.torrent.orig	Tue Oct  7 18:30:38 2003
-+++ t/testdata/test.torrent	Sat Sep  8 14:20:46 2012
++++ t/testdata/test.torrent	Sat Sep  8 14:47:57 2012
 @@ -1 +1 @@
 -d8:announce11:Test string4:infod5:files7:nothing6:lengthi42e4:name9:test data12:piece_lengthi262144e6:pieces40:AAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBBee
 \ No newline at end of file
-+d8:announce11:Test string4:infod7:comment11:Test string5:files7:nothing6:lengthi42e4:name9:test data12:piece_lengthi262144e6:pieces40:AAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBBe8:url-listl27:http://www.example.com/test27:ftp://ftp.example.com/test/ee
++d8:announce11:Test string7:comment11:Test string10:created by11:Test string13:creation datei1347140877e4:infod5:files7:nothing6:lengthi42e4:name9:test data12:piece_lengthi262144e6:pieces40:AAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBBe8:url-listl27:http://www.example.com/test27:ftp://ftp.example.com/test/ee
 \ No newline at end of file
