@@ -1,0 +1,32 @@
+$OpenBSD$
+--- t/003_io.t.orig	Tue Oct  7 18:50:33 2003
++++ t/003_io.t	Sat Sep  8 14:22:15 2012
+@@ -11,16 +11,19 @@ my $test_file = 't/testdata/test.torrent';
+ my $test_save = 't/testdata/save.torrent';
+ my $test_pieces = 'AAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBB';
+ my $pieces_array = ['AAAAAAAAAAAAAAAAAAAA','BBBBBBBBBBBBBBBBBBBB'];
++my $web_seeds = ['http://www.example.com/test','ftp://ftp.example.com/test/'];
+ my $info = {
+ 	files => 'nothing',
+ 	pieces => $test_pieces,
+ 	length => 42,
+ 	piece_length => 2**18,
+-	name => 'test data'
++	name => 'test data',
++	comment => $test_string,
+ };
+ my $data = {
+ 	announce => $test_string,
+ 	info => $info,
++	'url-list' => $web_seeds,
+ };
+ 
+ 
+@@ -33,6 +36,7 @@ isnt($object->info_hash(), undef, 'info_hash generated
+ is_deeply($object->pieces_array(), $pieces_array, 'pieces_array generated');
+ is_deeply($object->{'data'}, $data, 'data loaded correctly');
+ 
++$object->comment($test_string);
+ if(-f $test_save) {
+ 	unlink $test_save;
+ }

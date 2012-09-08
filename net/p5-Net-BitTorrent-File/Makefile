@@ -3,7 +3,7 @@
 COMMENT=	Object for manipulating .torrent files
 
 DISTNAME=	Net-BitTorrent-File-1.02-fix
-PKGNAME=	p5-${DISTNAME:S/-fix//}
+PKGNAME=	p5-${DISTNAME:S/-fix//}p0
 WRKDIST=	${WRKDIR}/${DISTNAME:S/-fix//}
 
 CATEGORIES=	net
