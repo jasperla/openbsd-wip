@@ -1,11 +1,12 @@
 $OpenBSD$
 --- t/002_methods.t.orig	Tue Oct  7 18:31:04 2003
-+++ t/002_methods.t	Sat Sep  8 14:17:40 2012
-@@ -18,14 +18,19 @@ my $info = {
++++ t/002_methods.t	Sat Sep  8 14:40:52 2012
+@@ -18,14 +18,25 @@ my $info = {
  		name => 'test data'
  	};
  my $files = [{length => 1, path => 'a'}, {length => 2, path => 'b'}];
 +my $web_seeds = ['http://www.example.com/path','ftp://ftp.example.com/test/'];
++my $created = time;
  
  my $object = Net::BitTorrent::File->new ();
  isa_ok ($object, 'Net::BitTorrent::File', 'empty object');
@@ -18,6 +19,11 @@ $OpenBSD$
  is($object->announce(), $test_string, 'setting announce');
 +$object->url_list($web_seeds);
 +is($object->url_list, $web_seeds, 'setting url-list');
++$object->url_list($web_seeds);
++$object->creation_date($created);
++is($object->creation_date(), $created, 'setting creation date');
++$object->created_by($test_string);
++is($object->created_by(), $test_string, 'setting created by');
  $object->piece_length($test_number);
  is($object->piece_length(), $test_number, 'setting piece_length');
  $object->length($test_number);

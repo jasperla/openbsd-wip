@@ -1,6 +1,6 @@
 $OpenBSD$
 --- lib/Net/BitTorrent/File.pm.orig	Sun Jul 24 11:24:31 2005
-+++ lib/Net/BitTorrent/File.pm	Sat Sep  8 14:19:45 2012
++++ lib/Net/BitTorrent/File.pm	Sat Sep  8 14:56:46 2012
 @@ -8,7 +8,7 @@ use Digest::SHA1 qw(sha1);
  BEGIN {
  	use Exporter ();
@@ -10,7 +10,7 @@ $OpenBSD$
  	@ISA         = qw (Exporter);
  	#Give a hoot don't pollute, do not export more than needed by default
  	@EXPORT      = qw ();
-@@ -115,11 +115,22 @@ When called with no arguments returns the I<name> prop
+@@ -115,11 +115,34 @@ When called with no arguments returns the I<name> prop
  it sets it to I<$value>. If this value is changed, the I<info_hash> property needs
  to be regenerated.
  
@@ -20,6 +20,18 @@ $OpenBSD$
 +it sets it to I<$value>. If this value is changed, the I<info_hash> property needs
 +to be regenerated.
 +
++=item * creation_date( [$epoch] )
++
++When called with no arguments returns the I<creation_date> propertys
++current value, else it sets it to I<$value>.
++
++=item * created_by( [$value] )
++
++When called with no arguments returns the I<created_by> propertys 
++current value, else it sets it to I<$value>.
++
++Defaults to "Net::BitTorrent::File $VERSION"
++
  =item * announce( [$value] )
  
  When called with no arguments returns the I<announce> propertys current value, else
@@ -27,13 +39,25 @@ $OpenBSD$
  
 +=item * url_list( [$value] )
 +
-+When called with no arguments returns the I<url-list> properties current value, 
++When called with no arguments returns the I<url-list> propertys current value, 
 +else it sets it to I<$value>.
 +
  =item * piece_length( [$value] )
  
  When called with no arguments returns the I<piece_length> propertys current value, else
-@@ -206,6 +217,15 @@ sub name {
+@@ -188,7 +211,10 @@ sub new
+ {
+ 	my ($class, $file) = @_;
+ 
+-	my $self = bless ({}, ref ($class) || $class);
++	my $self = bless ({ data => {
++		'created by'    => 'Net::BitTorrent::File ' . $VERSION,
++		'creation date' => time,
++	}}, ref ($class) || $class);
+ 
+ 	if(defined($file)) {
+ 		$self->load($file);
+@@ -206,6 +232,33 @@ sub name {
  	return $self->{'data'}->{'info'}->{'name'};
  }
  
@@ -41,15 +65,33 @@ $OpenBSD$
 +	my $self = shift;
 +	my $comment = shift;
 +	if(defined($comment)) {
-+		$self->{'data'}->{'info'}->{'comment'} = $comment;
++		$self->{'data'}->{'comment'} = $comment;
 +	}
-+	return $self->{'data'}->{'info'}->{'comment'};
++	return $self->{'data'}->{'comment'};
++}
++
++sub creation_date {
++	my $self = shift;
++	my $creation_date = shift;
++	if(defined($creation_date)) {
++		$self->{'data'}->{'creation date'} = $creation_date;
++	}
++	return $self->{'data'}->{'creation date'};
++}
++
++sub created_by {
++	my $self = shift;
++	my $created_by = shift;
++	if(defined($created_by)) {
++		$self->{'data'}->{'created by'} = $created_by;
++	}
++	return $self->{'data'}->{'created by'};
 +}
 +
  sub announce {
  	my $self = shift;
  	my $announce = shift;
-@@ -213,6 +233,15 @@ sub announce {
+@@ -213,6 +266,15 @@ sub announce {
  		$self->{'data'}->{'announce'} = $announce;
  	}
  	return $self->{'data'}->{'announce'};
