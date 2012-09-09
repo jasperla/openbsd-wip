@@ -37,7 +37,6 @@ lib/chicken/6/tcp.import.so
 lib/chicken/6/types.db
 lib/chicken/6/utils.import.so
 lib/libchicken.a
-lib/libchicken.so
 @lib lib/libchicken.so.${LIBchicken_VERSION}
 @man man/man1/chicken-bug.1
 @man man/man1/chicken-install.1
