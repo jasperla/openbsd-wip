@@ -1,7 +1,7 @@
 $OpenBSD$
 --- t/003_io.t.orig	Tue Oct  7 18:50:33 2003
-+++ t/003_io.t	Sat Sep  8 14:52:16 2012
-@@ -11,16 +11,21 @@ my $test_file = 't/testdata/test.torrent';
++++ t/003_io.t	Sat Sep  8 17:03:26 2012
+@@ -11,16 +11,22 @@ my $test_file = 't/testdata/test.torrent';
  my $test_save = 't/testdata/save.torrent';
  my $test_pieces = 'AAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBB';
  my $pieces_array = ['AAAAAAAAAAAAAAAAAAAA','BBBBBBBBBBBBBBBBBBBB'];
@@ -16,6 +16,7 @@ $OpenBSD$
  };
  my $data = {
  	announce => $test_string,
++    'announce-list' => [ $test_string, $test_string . '2' ],
 +	comment  => $test_string,
  	info => $info,
 +	'url-list' => $web_seeds,

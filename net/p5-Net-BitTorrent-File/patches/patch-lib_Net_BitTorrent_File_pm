@@ -1,6 +1,6 @@
 $OpenBSD$
 --- lib/Net/BitTorrent/File.pm.orig	Sun Jul 24 11:24:31 2005
-+++ lib/Net/BitTorrent/File.pm	Sat Sep  8 14:56:46 2012
++++ lib/Net/BitTorrent/File.pm	Sat Sep  8 17:01:30 2012
 @@ -8,7 +8,7 @@ use Digest::SHA1 qw(sha1);
  BEGIN {
  	use Exporter ();
@@ -10,7 +10,7 @@ $OpenBSD$
  	@ISA         = qw (Exporter);
  	#Give a hoot don't pollute, do not export more than needed by default
  	@EXPORT      = qw ();
-@@ -115,11 +115,34 @@ When called with no arguments returns the I<name> prop
+@@ -115,11 +115,41 @@ When called with no arguments returns the I<name> prop
  it sets it to I<$value>. If this value is changed, the I<info_hash> property needs
  to be regenerated.
  
@@ -37,6 +37,13 @@ $OpenBSD$
  When called with no arguments returns the I<announce> propertys current value, else
  it sets it to I<$value>.
  
++=item * announce_list( [$new_array] )
++
++When called with no arguments returns the I<announce-list> propertys current value, 
++else it sets it to I<$new_array> and calls I<announce> with $new_array->[0].
++
++If passed a scalar acts just like I<announce>.
++
 +=item * url_list( [$value] )
 +
 +When called with no arguments returns the I<url-list> propertys current value, 
@@ -45,7 +52,7 @@ $OpenBSD$
  =item * piece_length( [$value] )
  
  When called with no arguments returns the I<piece_length> propertys current value, else
-@@ -188,7 +211,10 @@ sub new
+@@ -188,7 +218,10 @@ sub new
  {
  	my ($class, $file) = @_;
  
@@ -57,7 +64,7 @@ $OpenBSD$
  
  	if(defined($file)) {
  		$self->load($file);
-@@ -206,6 +232,33 @@ sub name {
+@@ -206,13 +239,66 @@ sub name {
  	return $self->{'data'}->{'info'}->{'name'};
  }
  
@@ -91,10 +98,27 @@ $OpenBSD$
  sub announce {
  	my $self = shift;
  	my $announce = shift;
-@@ -213,6 +266,15 @@ sub announce {
+ 	if(defined($announce)) {
++        return $self->announce_list($announce) if ref $announce eq 'ARRAY';
++
  		$self->{'data'}->{'announce'} = $announce;
  	}
  	return $self->{'data'}->{'announce'};
++}
++
++sub announce_list {
++	my $self = shift;
++	my $announce = shift;
++	if(defined($announce)) {
++        if (ref $announce eq 'ARRAY') {
++		    $self->{'data'}->{'announce-list'} = $announce;
++            $self->announce($announce->[0]);
++        }
++        else {
++            return $self->announce($announce);
++        }
++	}
++	return $self->{'data'}->{'announce-list'};
 +}
 +
 +sub url_list {
