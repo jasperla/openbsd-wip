@@ -1,12 +1,13 @@
 $OpenBSD$
 --- Changes.orig	Sun Jul 24 11:17:00 2005
-+++ Changes	Sat Sep  8 14:30:14 2012
-@@ -1,4 +1,9 @@
++++ Changes	Sat Sep  8 16:50:01 2012
+@@ -1,4 +1,10 @@
  Revision history for Perl module Net::BitTorrent::File
 +1.03 Sat Sep  8 13:52:36 MST 2012
 +	- Added support for url-list, aka web-seeds
 +	- Added support for comment
 +	- Added support for creation_date and created_by
++	- Added support for announce-list, to allow multiple trackers
 +
  1.02 Sun Jul 24 14:15:00 2005
  	- Finaly got around to fixing the slurp mode bug that
