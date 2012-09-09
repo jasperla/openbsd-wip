@@ -7,7 +7,7 @@ COMMENT=	practical and portable Scheme system
 V=		4.7.0.6
 DISTNAME=	chicken-$V
 
-SHARED_LIBS+=	chicken	6.0
+SHARED_LIBS=	chicken	6.0
 
 CATEGORIES=	lang
 
@@ -27,8 +27,7 @@ WANTLIB=		c m pthread
 MAKE_FLAGS+=		PLATFORM=bsd C_COMPILER="${CC}" CXX_COMPILER="${CXX}" \
 			C_COMPILER_OPTIONS="-DHAVE_CHICKEN_CONFIG_H" \
 			C_COMPILER_OPTIMIZATION_OPTIONS="${CFLAGS}" \
-			LIBchicken_VERSION=${LIBchicken_VERSION} \
-			SONAME_VERSION=".${LIBchicken_VERSION}"
+			LIBchicken_VERSION="${LIBchicken_VERSION}"
 
 MAKE_FILE=		GNUmakefile
 
