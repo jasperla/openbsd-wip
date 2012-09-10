@@ -2,8 +2,8 @@
 
 COMMENT=	menu cache generation for pcmanfm
 
-DISTNAME=	menu-cache-0.3.2
-PKGNAME=	libmenu-cache-0.3.2
+DISTNAME=	menu-cache-0.3.3
+PKGNAME=	libmenu-cache-0.3.3
 
 CATEGORIES=	x11
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lxde/}
 
-WANTLIB=	c gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
+WANTLIB=	c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
 		pcre pthread z
 
 LIB_DEPENDS=	devel/glib2
@@ -28,7 +28,6 @@ MODULES=	devel/gettext
 USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -pthread"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 
 .include <bsd.port.mk>
