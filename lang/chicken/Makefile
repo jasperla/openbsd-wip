@@ -33,6 +33,8 @@ MAKE_FILE=		GNUmakefile
 
 FAKE_FLAGS=		PREFIX=${TRUEPREFIX}
 
+REGRESS_TARGET=		check
+
 pre-build:
 .if ${MACHINE_ARCH} == "hppa"
 	perl -pi -e 's/C_STACK_GROWS_DOWNWARD 1/C_STACK_GROWS_DOWNWARD 0/g' ${WRKSRC}/Makefile.bsd
