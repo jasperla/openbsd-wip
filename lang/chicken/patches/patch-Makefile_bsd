@@ -1,12 +1,11 @@
 $OpenBSD$
---- Makefile.bsd.orig	Wed Sep 14 20:18:20 2011
-+++ Makefile.bsd	Wed Sep 14 20:18:33 2011
-@@ -57,7 +57,7 @@ LINKER_LINK_SHARED_LIBRARY_OPTIONS = -shared
- LINKER_LINK_SHARED_DLOADABLE_OPTIONS = -shared -Wl,-R"$(RUNTIME_LINKER_PATH)" -Wl,-L.
- LINKER_LINK_SHARED_PROGRAM_OPTIONS = -Wl,-R"$(RUNTIME_LINKER_PATH)"
+--- Makefile.bsd.orig	Sun Sep  9 12:04:49 2012
++++ Makefile.bsd	Sun Sep  9 12:04:57 2012
+@@ -59,7 +59,6 @@ LINKER_LINK_SHARED_PROGRAM_OPTIONS = -Wl,-R"$(RUNTIME_
  LIBCHICKEN_SO_LINKER_OPTIONS = -Wl,-soname,lib$(PROGRAM_PREFIX)chicken$(PROGRAM_SUFFIX).so$(SONAME_VERSION)
--LIBRARIES = -lm -lpthread
-+LIBRARIES = -lm -pthread
+ LIBRARIES = -lm -lpthread
  NEEDS_RELINKING = yes
- USES_SONAME = yes
+-USES_SONAME = yes
+ 
+ # special files
  

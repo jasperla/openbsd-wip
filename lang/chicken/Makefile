@@ -4,15 +4,15 @@ SHARED_ONLY=	Yes
 
 COMMENT=	practical and portable Scheme system
 
-V=		4.7.0
+V=		4.7.0.6
 DISTNAME=	chicken-$V
 
-SHARED_LIBS=	chicken	2.0
+SHARED_LIBS=	chicken	6.0
 
 CATEGORIES=	lang
 
 HOMEPAGE=	http://www.call-cc.org/
-MASTER_SITES=	http://code.call-cc.org/releases/$V/
+MASTER_SITES=	http://code.call-cc.org/releases/current/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,11 +27,13 @@ WANTLIB=		c m pthread
 MAKE_FLAGS+=		PLATFORM=bsd C_COMPILER="${CC}" CXX_COMPILER="${CXX}" \
 			C_COMPILER_OPTIONS="-DHAVE_CHICKEN_CONFIG_H" \
 			C_COMPILER_OPTIMIZATION_OPTIONS="${CFLAGS}" \
-			SONAME_VERSION=".${LIBchicken_VERSION}"
+			LIBchicken_VERSION="${LIBchicken_VERSION}"
 
 MAKE_FILE=		GNUmakefile
 
 FAKE_FLAGS=		PREFIX=${TRUEPREFIX}
+
+REGRESS_TARGET=		check
 
 pre-build:
 .if ${MACHINE_ARCH} == "hppa"
