@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/ProcessInfo.cpp.orig	Wed Jun 20 01:54:21 2012
-+++ src/ProcessInfo.cpp	Fri Aug 17 18:30:29 2012
++++ src/ProcessInfo.cpp	Thu Aug 23 00:25:21 2012
 @@ -57,12 +57,14 @@
  #include <kde_file.h>
  #endif
@@ -104,49 +104,49 @@ $OpenBSD$
  
 +#if defined(Q_OS_OPENBSD)
 +    char** readProcArgs(int aPid, int whatMib) {
-+	void	*buf = NULL, *nbuf;
-+	size_t	 len = 4096;
-+	int	 rc = -1;
-+	int	 managementInfoBase[4];
++        void    *buf = NULL, *nbuf;
++        size_t   len = 4096;
++        int      rc = -1;
++        int      managementInfoBase[4];
 +
 +        managementInfoBase[0] = CTL_KERN;
 +        managementInfoBase[1] = KERN_PROC_ARGS;
 +        managementInfoBase[2] = aPid;
 +        managementInfoBase[3] = whatMib;
 +
-+	do
-+	{
-+	    len *= 2;
-+	    nbuf = realloc(buf, len);
-+	    if (nbuf == NULL)
-+		break;
-+	    buf = nbuf;
-+	    rc = ::sysctl(managementInfoBase, 4, buf, &len, NULL, 0);
++        do
++        {
++            len *= 2;
++            nbuf = realloc(buf, len);
++            if (nbuf == NULL)
++                break;
++            buf = nbuf;
++            rc = ::sysctl(managementInfoBase, 4, buf, &len, NULL, 0);
 +            kWarning() << "sysctl() call failed with code" << errno;
-+	} while (rc == -1 && errno == ENOMEM);
++        } while (rc == -1 && errno == ENOMEM);
 +
-+	if (rc == -1)
-+	{
-+	    free(buf);
-+	    return NULL;
-+	}
++        if (rc == -1)
++        {
++            free(buf);
++            return NULL;
++        }
 +
-+	return (char**)buf;
++        return (char**)buf;
 +    }
 +#endif
 +
      virtual bool readArguments(int aPid) {
 +#if defined(Q_OS_OPENBSD)
-+	char **argv;
++        char **argv;
 +
-+	argv = readProcArgs(aPid, KERN_PROC_ARGV);
-+	if (argv == NULL)
-+	    return false;
-+	for (char **p = argv; *p != NULL; p++)
-+	{
-+	    addArgument(QString(*p));
-+	}
-+	free(argv);
++        argv = readProcArgs(aPid, KERN_PROC_ARGV);
++        if (argv == NULL)
++            return false;
++        for (char **p = argv; *p != NULL; p++)
++        {
++            addArgument(QString(*p));
++        }
++        free(argv);
 +#else
          char args[ARG_MAX];
          int managementInfoBase[4];
@@ -173,22 +173,22 @@ $OpenBSD$
  
      virtual bool readEnvironment(int aPid) {
 +#if defined(Q_OS_OPENBSD)
-+	char	**envp, *eqsign;
++        char **envp, *eqsign;
 +
-+	envp = readProcArgs(aPid, KERN_PROC_ENV);
-+	if (envp == NULL)
-+	    return false;
-+	for (char **p = envp; *p != NULL; p++)
-+	{
-+	    eqsign = strchr(*p, '=');
-+	    if (eqsign == NULL || eqsign[1] == '\0')
-+		continue;
-+	    *eqsign = '\0';
-+	    addEnvironmentBinding(QString((const char *)p),
-+		QString((const char *)eqsign + 1));
-+	}
-+	free(envp);
-+	return true;
++        envp = readProcArgs(aPid, KERN_PROC_ENV);
++        if (envp == NULL)
++            return false;
++        for (char **p = envp; *p != NULL; p++)
++        {
++            eqsign = strchr(*p, '=');
++            if (eqsign == NULL || eqsign[1] == '\0')
++                continue;
++            *eqsign = '\0';
++            addEnvironmentBinding(QString((const char *)p),
++                QString((const char *)eqsign + 1));
++        }
++        free(envp);
++        return true;
 +#else
          // Not supported in FreeBSD?
          return false;
