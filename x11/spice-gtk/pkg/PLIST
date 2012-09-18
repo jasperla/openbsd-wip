@@ -1,8 +1,25 @@
 @comment $OpenBSD$
-%%SHARED%%
 @bin bin/snappy
 @bin bin/spicy
 @bin bin/spicy-stats
+include/spice-1/
+include/spice-1/spice/
+include/spice-1/spice/barrier.h
+include/spice-1/spice/controller_prot.h
+include/spice-1/spice/end-packed.h
+include/spice-1/spice/enums.h
+include/spice-1/spice/error_codes.h
+include/spice-1/spice/foreign_menu_prot.h
+include/spice-1/spice/ipc_ring.h
+include/spice-1/spice/macros.h
+include/spice-1/spice/protocol.h
+include/spice-1/spice/qxl_dev.h
+include/spice-1/spice/qxl_windows.h
+include/spice-1/spice/start-packed.h
+include/spice-1/spice/stats.h
+include/spice-1/spice/types.h
+include/spice-1/spice/vd_agent.h
+include/spice-1/spice/vdi_dev.h
 include/spice-client-glib-2.0/
 include/spice-client-glib-2.0/channel-cursor.h
 include/spice-client-glib-2.0/channel-display.h
@@ -31,24 +48,22 @@ include/spice-client-gtk-3.0/spice-widget.h
 include/spice-client-gtk-3.0/usb-device-widget.h
 include/spice-controller/
 include/spice-controller/spice-controller.h
-lib/girepository-1.0/
 lib/girepository-1.0/SpiceClientGLib-2.0.typelib
 lib/girepository-1.0/SpiceClientGtk-3.0.typelib
 lib/libspice-client-glib-2.0.a
 lib/libspice-client-glib-2.0.la
+@lib lib/libspice-client-glib-2.0.so.${LIBspice-client-glib-2.0_VERSION}
 lib/libspice-client-gtk-3.0.a
 lib/libspice-client-gtk-3.0.la
+@lib lib/libspice-client-gtk-3.0.so.${LIBspice-client-gtk-3.0_VERSION}
 lib/libspice-controller.a
 lib/libspice-controller.la
-lib/pkgconfig/
+@lib lib/libspice-controller.so.${LIBspice-controller_VERSION}
 lib/pkgconfig/spice-client-glib-2.0.pc
 lib/pkgconfig/spice-client-gtk-3.0.pc
 lib/pkgconfig/spice-controller.pc
-share/gir-1.0/
 share/gir-1.0/SpiceClientGLib-2.0.gir
 share/gir-1.0/SpiceClientGtk-3.0.gir
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/spice-gtk/
 share/gtk-doc/html/spice-gtk/SpiceAudio.html
 share/gtk-doc/html/spice-gtk/SpiceChannel.html
@@ -85,6 +100,5 @@ share/gtk-doc/html/spice-gtk/spice-gtk.devhelp2
 share/gtk-doc/html/spice-gtk/style.css
 share/gtk-doc/html/spice-gtk/up.png
 share/locale/fr/LC_MESSAGES/spice-gtk.mo
-share/vala/
-share/vala/vapi/
+share/pkgconfig/spice-protocol.pc
 share/vala/vapi/spice-protocol.vapi

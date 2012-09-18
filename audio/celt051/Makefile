@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =	http://downloads.xiph.org/releases/celt/
+MASTER_SITES =		http://downloads.xiph.org/releases/celt/
 
 WANTLIB =		c m ogg>=5 #sndio
 

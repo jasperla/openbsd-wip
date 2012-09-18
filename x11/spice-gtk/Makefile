@@ -2,16 +2,16 @@
 
 COMMENT=	GTK widget for SPICE clients
 
-DISTNAME=	spice-gtk-0.11
+DISTNAME=	spice-gtk-0.12.101
 CATEGORIES=	x11 net
 
 HOMEPAGE=	http://spice-space.org/page/Spice-Gtk
 
-SHARED_LIBS +=  spice-client-glib-2.0     0.0 # 7.0
-SHARED_LIBS +=  spice-client-gtk-3.0      0.0 # 3.0
+SHARED_LIBS +=  spice-client-glib-2.0     0.0 # 9.0
+SHARED_LIBS +=  spice-client-gtk-3.0      0.0 # 4.0
 SHARED_LIBS +=  spice-controller          0.0 # 0.0
 
-# LGPL
+# LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -28,20 +28,21 @@ WANTLIB += gobject-2.0 gstapp-0.10 gstaudio-0.10 gstbase-0.10
 WANTLIB += gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10 gthread-2.0
 WANTLIB += gtk-3 jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs sasl2 ssl stdc++
-WANTLIB += xcb xcb-render xcb-shm xml2 z
+WANTLIB += xcb xcb-render xcb-shm xml2 z dbus-1 dbus-glib-1
 
 MODULES=	devel/gettext \
+		lang/python \
 		textproc/intltool
 
-BUILD_DEPENDS=	devel/spice-protocol \
-		lang/vala
+BUILD_DEPENDS=	lang/vala \
+		devel/py-parsing
 LIB_DEPENDS=	audio/celt051 \
 		multimedia/gstreamer-0.10/plugins-base \
 		security/cyrus-sasl2 \
+		x11/dbus-glib \
 		x11/gtk+3
 
 USE_GMAKE=	Yes
-
 USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
@@ -53,6 +54,8 @@ CONFIGURE_ARGS=	--disable-gtk-doc \
 		--with-audio=gstreamer \
 		--enable-introspection=yes
 CONFIGURE_ENV+=	CPPFLAGS="-I/usr/local/include" \
-		LDFLAGS="-L/usr/local/lib "
+		LDFLAGS="-L/usr/local/lib"
+
+MODPY_ADJ_FILES=spice-common/spice_codegen.py
 
 .include <bsd.port.mk>
