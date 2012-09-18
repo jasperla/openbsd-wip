@@ -1,7 +1,8 @@
 $OpenBSD$
-Do not install files that interfere with system ones.
+Do not install files that interfere with system ones or are better handled in
+other (KDE) packages.
 --- cmake/modules/CMakeLists.txt.orig	Wed May 23 03:40:56 2012
-+++ cmake/modules/CMakeLists.txt	Fri Aug 17 15:32:01 2012
++++ cmake/modules/CMakeLists.txt	Fri Aug 17 15:40:06 2012
 @@ -7,9 +7,10 @@ set(module_install_dir ${DATA_INSTALL_DIR}/cmake/modul
  # to have it around, so there is a place where the modules which are not installed
  # are listed explicitely:
@@ -34,7 +35,7 @@ Do not install files that interfere with system ones.
                 FindCarbon.cmake
                 FindDBusMenuQt.cmake
                 FindDNSSD.cmake
-@@ -46,8 +43,6 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
+@@ -46,21 +43,17 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
                 FindFlac.cmake
                 FindFlex.cmake
                 FindFontconfig.cmake
@@ -43,7 +44,12 @@ Do not install files that interfere with system ones.
                 FindGLIB2.cmake
                 FindGMP.cmake
                 FindGObject.cmake
-@@ -60,7 +55,6 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
+                FindGSSAPI.cmake
+                FindGStreamer.cmake
+-               FindGettext.cmake
+                FindGphoto2.cmake
+                FindHUNSPELL.cmake
+                FindIOKit.cmake
                 FindKDE4Internal.cmake
                 FindKDE4Workspace.cmake
                 FindKDevPlatform.cmake
@@ -51,7 +57,7 @@ Do not install files that interfere with system ones.
                 FindKdeMultimedia.cmake
                 FindKdepim.cmake
                 FindKdepimLibs.cmake
-@@ -68,14 +62,11 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
+@@ -68,14 +61,11 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
                 FindKipi.cmake
                 FindKopete.cmake
                 FindKorundum.cmake
@@ -66,7 +72,7 @@ Do not install files that interfere with system ones.
                 FindLibraryWithDebug.cmake
                 FindLinuxWirelesstools.cmake
                 FindMsgfmt.cmake
-@@ -85,25 +76,17 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
+@@ -85,25 +75,17 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
                 FindNetworkManager.cmake
                 FindOggVorbis.cmake
                 FindOpenEXR.cmake
@@ -93,7 +99,7 @@ Do not install files that interfere with system ones.
                 FindSIP.cmake
                 FindSamba.cmake
                 FindSane.cmake
-@@ -116,7 +99,6 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
+@@ -116,7 +98,6 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
                 FindTaglib.cmake
                 FindUSB.cmake
                 FindWcecompat.cmake
