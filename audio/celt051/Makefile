@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	ultra-low delay audio codec (0.5.1.x API)
+COMMENT =	ultra-low delay audio codec (051 API)
 
 V =		0.5.1.1
 DISTNAME =	celt-$V
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://downloads.xiph.org/releases/celt/
 
-WANTLIB =		c m ogg>=5 #sndio
+WANTLIB =		c m ogg
 
 LIB_DEPENDS =		audio/libogg
 
@@ -30,10 +30,5 @@ CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--with-ogg=${LOCALBASE}
-
-# XXX: Need to port to sndio
-#CONFIGURE_ENV =	CPPFLAGS="-DUSE_SNDIO"
-
-SEPARATE_BUILD =	Yes
 
 .include <bsd.port.mk>
