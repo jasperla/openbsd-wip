@@ -1,0 +1,39 @@
+$OpenBSD: README,v 1.5 2012/01/10 18:04:31 edd Exp $
+
+Note: This is not a README for users.
+
+TeX Live 2011 - Porting progress
+================================
+
+ * Get base compilers working:			
+ * Test build works.			
+   -> amd64					
+   -> i386					
+   -> sparc64					
+ * Do texmf split (see texmf/files/rblatter)	
+ * Split out conTeXt (use grep)			
+ * Move manuals and pdf manuals			
+ * Remove external deps				
+   -> texworks					
+   -> latexmk					
+   -> asymptote					
+ * Remove windows junk				
+ * Get basic texmf packaging:			
+ * Re-add depenedencies:			
+ * Hack configs for subsets:			
+   -> hack texmf.cnf:				
+ * Implement @xxx in plists			
+ * emulate texlinks				
+ * patch in ruby/python versions for texexec	
+ * Pull in perl modules needed for updmap	
+ * Generate texmf-var pregen			
+   (all as root) 'mktexlsr', 'fmtutil-sys --all',
+     'updmap-sys', rm ls-R and tar up texmf-var
+ * Apply any security/reliability patches	
+   Search here: http://tug.org/pipermail/tldistro/
+ * @comment manpages conflicting with t1utils	
+
+Known Issues
+============
+
+None *yet*
