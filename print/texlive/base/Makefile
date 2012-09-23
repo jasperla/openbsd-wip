@@ -1,5 +1,9 @@
 # $OpenBSD: Makefile,v 1.60 2012/08/07 15:15:09 edd Exp $
 
+# XXX
+# Do we still need the patch
+# patch-texk_texlive_context_mtxrun
+
 COMMENT =		base binaries for TeXLive typesetting distribution
 
 DISTNAME =		texlive-${DIST_V}-source
@@ -152,24 +156,25 @@ post-install:
 	done
 
 	# emulate texlinks
-	for i in ${ALEPH_LN}; do \
-		ln -s ${TRUEPREFIX}/bin/aleph ${PREFIX}/bin/$$i; \
-	done
-	for i in ${LUATEX_LN}; do \
-		ln -s ${TRUEPREFIX}/bin/luatex ${PREFIX}/bin/$$i; \
-	done
-	for i in ${MPOST_LN}; do \
-		ln -s ${TRUEPREFIX}/bin/mpost ${PREFIX}/bin/$$i; \
-	done
-	for i in ${PDFTEX_LN}; do \
-		ln -s ${TRUEPREFIX}/bin/pdftex ${PREFIX}/bin/$$i; \
-	done
-	for i in ${EPTEX_LN}; do \
-		ln -s ${TRUEPREFIX}/bin/eptex ${PREFIX}/bin/$$i; \
-	done
-	for i in ${XETEX_LN}; do \
-		ln -s ${TRUEPREFIX}/bin/xetex ${PREFIX}/bin/$$i; \
-	done
+	# XXX re-enable
+	#for i in ${ALEPH_LN}; do \
+	#	ln -s ${TRUEPREFIX}/bin/aleph ${PREFIX}/bin/$$i; \
+	#done
+	#for i in ${LUATEX_LN}; do \
+	#	ln -s ${TRUEPREFIX}/bin/luatex ${PREFIX}/bin/$$i; \
+	#done
+	#for i in ${MPOST_LN}; do \
+	#	ln -s ${TRUEPREFIX}/bin/mpost ${PREFIX}/bin/$$i; \
+	#done
+	#for i in ${PDFTEX_LN}; do \
+	#	ln -s ${TRUEPREFIX}/bin/pdftex ${PREFIX}/bin/$$i; \
+	#done
+	#for i in ${EPTEX_LN}; do \
+	#	ln -s ${TRUEPREFIX}/bin/eptex ${PREFIX}/bin/$$i; \
+	#done
+	#for i in ${XETEX_LN}; do \
+	#	ln -s ${TRUEPREFIX}/bin/xetex ${PREFIX}/bin/$$i; \
+	#done
 
 .include <bsd.port.mk>
 
