@@ -8,8 +8,8 @@ COMMENT-main =		texlive texmf for basic functionality
 DISTNAME =		texlive-${DIST_V}-texmf
 MASTER_SITES0 =		http://spacehopper.org/mirrors/ \
 			http://theunixzoo.co.uk/distfiles/
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			texlive-${DIST_V}-extra${EXTRACT_SUFX}
+#DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
+#			texlive-${DIST_V}-extra${EXTRACT_SUFX}
 # XXX re-enable when pregen done
 #			texmf-var-pregen-2011${EXTRACT_SUFX}:0
 

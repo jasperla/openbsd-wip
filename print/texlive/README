@@ -5,23 +5,23 @@ Note: This is not a README for users.
 TeX Live 2011 - Porting progress
 ================================
 
- * Get base compilers working:			
- * Test build works.			
+ * Get base compilers working:			OK
+ * Test build works.				OK
    -> amd64					
    -> i386					
    -> sparc64					
- * Do texmf split (see texmf/files/rblatter)	
- * Split out conTeXt (use grep)			
- * Move manuals and pdf manuals			
+ * Do texmf split (see texmf/files/rblatter)	OK
+ * Split out conTeXt (use grep)			OK
+ * Move manuals and pdf manuals			1/2
  * Remove external deps				
    -> texworks					
    -> latexmk					
    -> asymptote					
  * Remove windows junk				
- * Get basic texmf packaging:			
+ * Get basic texmf packaging:			OK
  * Re-add depenedencies:			
  * Hack configs for subsets:			
-   -> hack texmf.cnf:				
+   -> hack texmf.cnf:				OK
  * Implement @xxx in plists			
  * emulate texlinks				
  * patch in ruby/python versions for texexec	

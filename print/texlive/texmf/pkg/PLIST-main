@@ -1,6 +1,6 @@
 @man man/man1/dt2dv.1
 @man man/man1/dv2dt.1
-@man man/man1/dvi2tty.1
+@comment @man man/man1/dvi2tty.1
 @man man/man1/dvibook.1
 @man man/man1/dviconcat.1
 @man man/man1/dvidvi.1

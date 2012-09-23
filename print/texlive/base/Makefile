@@ -8,10 +8,12 @@ COMMENT =		base binaries for TeXLive typesetting distribution
 
 DISTNAME =		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
-REVISION =		6
 
-SHARED_LIBS =		kpathsea	4.0
-SHARED_LIBS +=		ptexenc		1.0
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
+			texlive-${DIST_V}-extra${EXTRACT_SUFX}               
+
+SHARED_LIBS =		kpathsea	5.0
+SHARED_LIBS +=		ptexenc		2.0
 
 WANTLIB +=		ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c expat
 WANTLIB +=		fontconfig freetype gd jpeg lcms2 m ncurses
@@ -139,12 +141,10 @@ PDFTEX_LN =	amstex cslatex csplain eplain etex jadetex latex mex \
 EPTEX_LN =	platex
 XETEX_LN =	xelatex
 
+EXTRA_ROOT =	${WRKDIR}/texlive-${DIST_V}-extra
+
 post-install:
 	rm -Rf ${WRKSRC}/inst
-
-	# following tradition, texmf is in ${PREFIX}/share
-	#mv ${PREFIX}/texmf ${PREFIX}/share/texmf
-	#mv ${PREFIX}/texmf-dist ${PREFIX}/share/texmf-dist
 
 	# translate some sylinks from ../texmf* to ../share/texmf*
 	for link in `find ${PREFIX}/bin -type l`; do \
@@ -155,26 +155,36 @@ post-install:
 		fi \
 	done
 
+	# We should not install any texmf files from this package
+	# Yet the install target installs some anyway.
+	#rm -Rf ${PREFIX}/share/texmf*
+
+# Updmap needs these perl bits from the extra tarball
+	${INSTALL} -d ${PREFIX}/libdata/perl5/site_perl/TeXLive/               
+	${INSTALL} ${EXTRA_ROOT}/tlpkg/TeXLive/TLUtils.pm \
+		${PREFIX}/libdata/perl5/site_perl/TeXLive/                      
+	${INSTALL} ${EXTRA_ROOT}/tlpkg/TeXLive/TLConfig.pm \
+		${PREFIX}/libdata/perl5/site_perl/TeXLive/
+
 	# emulate texlinks
-	# XXX re-enable
-	#for i in ${ALEPH_LN}; do \
-	#	ln -s ${TRUEPREFIX}/bin/aleph ${PREFIX}/bin/$$i; \
-	#done
-	#for i in ${LUATEX_LN}; do \
-	#	ln -s ${TRUEPREFIX}/bin/luatex ${PREFIX}/bin/$$i; \
-	#done
-	#for i in ${MPOST_LN}; do \
-	#	ln -s ${TRUEPREFIX}/bin/mpost ${PREFIX}/bin/$$i; \
-	#done
-	#for i in ${PDFTEX_LN}; do \
-	#	ln -s ${TRUEPREFIX}/bin/pdftex ${PREFIX}/bin/$$i; \
-	#done
-	#for i in ${EPTEX_LN}; do \
-	#	ln -s ${TRUEPREFIX}/bin/eptex ${PREFIX}/bin/$$i; \
-	#done
-	#for i in ${XETEX_LN}; do \
-	#	ln -s ${TRUEPREFIX}/bin/xetex ${PREFIX}/bin/$$i; \
-	#done
+	for i in ${ALEPH_LN}; do \
+		ln -s ${TRUEPREFIX}/bin/aleph ${PREFIX}/bin/$$i; \
+	done
+	for i in ${LUATEX_LN}; do \
+		ln -s ${TRUEPREFIX}/bin/luatex ${PREFIX}/bin/$$i; \
+	done
+	for i in ${MPOST_LN}; do \
+		ln -s ${TRUEPREFIX}/bin/mpost ${PREFIX}/bin/$$i; \
+	done
+	for i in ${PDFTEX_LN}; do \
+		ln -s ${TRUEPREFIX}/bin/pdftex ${PREFIX}/bin/$$i; \
+	done
+	for i in ${EPTEX_LN}; do \
+		ln -s ${TRUEPREFIX}/bin/eptex ${PREFIX}/bin/$$i; \
+	done
+	for i in ${XETEX_LN}; do \
+		ln -s ${TRUEPREFIX}/bin/xetex ${PREFIX}/bin/$$i; \
+	done
 
 .include <bsd.port.mk>
 
