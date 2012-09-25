@@ -1,3 +1,10 @@
+@comment $OpenBSD$
+@conflict teTeX_texmf-doc-*
+@conflict texlive_base-<2012
+@conflict texlive_texmf-minimal-<2012
+@conflict texlive_texmf-full-<2012
+@pkgpath print/texlive/texmf-docs
+@pkgpath print/teTeX_texmf,-doc
 @man man/man1/MPL-1.1
 @man man/man1/a2ping.1
 @man man/man1/afm2afm.1
@@ -22,7 +29,6 @@
 @man man/man1/chbar.1
 @man man/man1/chktex.1
 @man man/man1/chkweb.1
-@man man/man1/context.1
 @man man/man1/ctangle.1
 @man man/man1/ctanify.1
 @man man/man1/ctie.1
@@ -30967,3 +30973,5 @@ share/texmf/doc/xindy/xindy.pdf
 share/texmf/scripts/
 share/texmf/scripts/texlive/
 share/texmf/scripts/texlive/NEWS
+@exec %D/bin/mktexlsr > /dev/null 2>&1
+@unexec-delete %D/bin/mktexlsr > /dev/null 2>&1

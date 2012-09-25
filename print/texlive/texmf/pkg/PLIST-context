@@ -1,3 +1,5 @@
+@comment $OpenBSD$
+@man man/man1/context.1
 share/texmf-dist/bibtex/bst/context/
 share/texmf-dist/bibtex/bst/context/cont-ab.bst
 share/texmf-dist/bibtex/bst/context/cont-au.bst
@@ -2364,3 +2366,8 @@ share/texmf-dist/tex/xetex/zhspacing/context/t-zhspacing.tex
 share/texmf/tex/context/
 share/texmf/tex/context/asymptote/
 share/texmf/tex/context/asymptote/colo-asy.tex
+@unexec rm -Rf %D/share/texmf-var/luatex-cache
+@exec %D/bin/mtxrun --generate > /dev/null 2>&1
+@comment some of this could be shared with other parts of TL, hash with kpse
+@exec %D/bin/mktexlsr > /dev/null 2>&1
+@unexec-delete %D/bin/mktexlsr > /dev/null 2>&1

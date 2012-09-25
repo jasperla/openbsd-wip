@@ -557,7 +557,11 @@ libdata/perl5/site_perl/TeXLive/TLConfig.pm
 @man man/man5/synctex.5
 @man man/man5/updmap.cfg.5
 share/doc/pkg-readmes/${FULLPKGNAME}
+@exec mktexlsr > /dev/null 2>&1
 @extra share/texmf/ls-R
 @extra share/texmf-dist/ls-R
 @extra share/texmf-var/ls-R
 @extra share/texmf-config/ls-R
+@unexec-delete rm %D/share/texmf/ls-R
+@unexec-delete rm %D/share/texmf-dist/ls-R
+@unexec-delete rm %D/share/texmf-var/ls-R
