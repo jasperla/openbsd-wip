@@ -1,9 +1,5 @@
 # $OpenBSD: Makefile,v 1.60 2012/08/07 15:15:09 edd Exp $
 
-# XXX
-# Do we still need the patch
-# patch-texk_texlive_context_mtxrun
-
 COMMENT =		base binaries for TeXLive typesetting distribution
 
 DISTNAME =		texlive-${DIST_V}-source
@@ -26,8 +22,8 @@ RUN_DEPENDS =		print/ghostscript/gnu \
 			print/ps2eps \
 			print/psutils \
 			print/t1utils \
-			print/latex-mk
-#			texlive_texmf-minimal-${V}:print/texlive/texmf,-main
+			print/latex-mk \
+			texlive_texmf-minimal-${V}:print/texlive/texmf,-main
 
 LIB_DEPENDS =		devel/t1lib \
 			graphics/png \
@@ -140,6 +136,7 @@ PDFTEX_LN =	amstex cslatex csplain eplain etex jadetex latex mex \
 		xmltex
 EPTEX_LN =	platex
 XETEX_LN =	xelatex
+EUPTEX_LN =	uplatex
 
 EXTRA_ROOT =	${WRKDIR}/texlive-${DIST_V}-extra
 
@@ -155,11 +152,7 @@ post-install:
 		fi \
 	done
 
-	# We should not install any texmf files from this package
-	# Yet the install target installs some anyway.
-	#rm -Rf ${PREFIX}/share/texmf*
-
-# Updmap needs these perl bits from the extra tarball
+	# Updmap needs these perl bits from the extra tarball
 	${INSTALL} -d ${PREFIX}/libdata/perl5/site_perl/TeXLive/               
 	${INSTALL} ${EXTRA_ROOT}/tlpkg/TeXLive/TLUtils.pm \
 		${PREFIX}/libdata/perl5/site_perl/TeXLive/                      
@@ -185,6 +178,10 @@ post-install:
 	for i in ${XETEX_LN}; do \
 		ln -s ${TRUEPREFIX}/bin/xetex ${PREFIX}/bin/$$i; \
 	done
+	for i in ${EUPTEX_LN}; do \
+		ln -s ${TRUEPREFIX}/bin/euptex ${PREFIX}/bin/$$i; \
+	done
+
 
 .include <bsd.port.mk>
 
