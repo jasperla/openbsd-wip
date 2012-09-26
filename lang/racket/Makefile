@@ -28,6 +28,7 @@ MASTER_SITES =		http://download.racket-lang.org/installers/${V}/racket/ \
 
 NO_REGRESS =		Yes
 VMEM_WARNING =		Yes
+DPB_PROPERTIES =	parallel
 
 # Dependencies listed within src/README and the output of configure
 LIB_DEPENDS =		devel/libffi \
