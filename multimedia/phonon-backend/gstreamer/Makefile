@@ -7,7 +7,7 @@ REVISION =	0
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/phonon/phonon-backend-gstreamer/${VERSION}/src/}
 
 LIB_DEPENDS +=	multimedia/gstreamer-0.10/core \
-		devel/glib2,-main
+		devel/glib2
 
 WANTLIB +=	GL m stdc++
 WANTLIB +=	lib/qt4/QtGui lib/qt4/QtOpenGL 
