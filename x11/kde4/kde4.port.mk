@@ -139,9 +139,8 @@ CONFIGURE_ARGS +=	-DMAN_INSTALL_DIR=${PREFIX}/man \
 
 # DCMAKE_C(XX)FLAGS & DCMAKE_EXE_LINKER_FLAGS needed to fix undefined symbols
 # for pthread & pulseaudio related functions, fixing globally here
-CONFIGURE_ARGS +=	-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include \
-				-pthread" \
-			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -pthread" \
+CONFIGURE_ARGS +=	-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+			-DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
 			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib \
 				-Wl,-rpath,${LOCALBASE}/lib/pulseaudio"
 
