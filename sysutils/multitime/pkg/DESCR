@@ -1,5 +1,5 @@
 Unix's 'time' utility is a simple and often effective way of measuring how
-long a command takes to run ('wall time#). Unfortunately, running a command
+long a command takes to run ('wall time'). Unfortunately, running a command
 once can give misleading timings: the process may create a cache on its first
 execution, running faster subsequently; other processes may cause the command
 to be starved of CPU or IO time; etc. It is common to see people run 'time'

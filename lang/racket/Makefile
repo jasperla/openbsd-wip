@@ -28,6 +28,7 @@ MASTER_SITES =		http://download.racket-lang.org/installers/${V}/racket/ \
 
 NO_REGRESS =		Yes
 VMEM_WARNING =		Yes
+DPB_PROPERTIES =	parallel
 
 # Dependencies listed within src/README and the output of configure
 LIB_DEPENDS =		devel/libffi \
@@ -71,6 +72,10 @@ CONFIGURE_ARGS +=	--disable-backtrace
 CONFIGURE_ARGS +=	--enable-noopt
 .endif
 
+.ifdef MAKE_JOBS
+MAKE_FLAGS +=		-j${MAKE_JOBS}
+.endif
+
 USE_LIBTOOL =		Yes
 
 # With the system gcc, racket ("foreign" folder) doesn't compile
@@ -93,6 +98,8 @@ MODGCC4_ARCHS =		*
 # jobs by default when futures is enabled, so Racket reaches the limits again
 # and crash.
 do-install:
-	@cd ${WRKBUILD} && ulimit -s 8192 && PLT_SETUP_OPTIONS="-j 1" make install
+	@cd ${WRKBUILD} && ulimit -s 8192 && PLT_SETUP_OPTIONS="-j 1" \
+		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} -f ${MAKE_FILE} \
+		${FAKE_TARGET}
 
 .include <bsd.port.mk>
