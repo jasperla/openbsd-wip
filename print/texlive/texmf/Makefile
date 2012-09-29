@@ -42,8 +42,10 @@ RUN_DEPENDS-docs +=	x11/p5-Tk
 
 MULTI_PACKAGES =	-context -docs -full -main
 
-# files which are named *.[1-9] which are not manuals.
-# the BEGIN/END ensure that each real entry has a space either side
+# Files which are named *.[1-9] which are not manuals. This list
+# is shorter than the list of files which *are* manuals scattered
+# all over the texmf.
+# The BEGIN/END ensure that each real entry has a space either side
 # of it. Grep uses this to ensure we don't accidentally pick up
 # a path which is a subset of one of the following:
 NOT_A_MANUAL = BEGIN \
@@ -63,10 +65,17 @@ NOT_A_MANUAL = BEGIN \
 	${PREFIX}/share/texmf-dist/doc/latex/tablor/Figures/tablor_Tab.8 \
 	${PREFIX}/share/texmf-dist/doc/latex/tablor/Figures/tablor_Tab.9 \
 	${PREFIX}/share/texmf-dist/doc/latex/flashmovie/flv-player-license/MPL-1.1 \
+	${PREFIX}/share/texmf-dist/doc/fonts/wasy/wasyfont.2 \
+	${PREFIX}/share/texmf-dist/doc/latex/acmconf/THIS-IS-VERSION-1.3 \
+	${PREFIX}/share/texmf-dist/doc/latex/rcsinfo/README-1.9 \
+	${PREFIX}/share/texmf-dist/doc/pdftex/Announcement-1.40.2 \
+	${PREFIX}/share/texmf-dist/source/latex/koma-script/ChangeLog.2 \
+	${PREFIX}/share/texmf-dist/doc/latex/feynmf/manpics.2 \
+	${PREFIX}/share/texmf-dist/doc/latex/feynmf/manpics.3 \
+	${PREFIX}/share/texmf-dist/doc/latex/webguide/expeg.6 \
 	END
 
 do-install:
-	chown -R ${SHAREOWN}:${SHAREGRP} ${WRKDIST}
 	
 	# The rest goes in share/texmf*
 	mv ${WRKDIST}/texmf ${PREFIX}/share
@@ -75,17 +84,17 @@ do-install:
 	# Collect all the manual pages that are *everywhere* for
 	# some reason. I wanted to use file(1) to detect if files
 	# are manual pages, but it gets it wrong (sigh).
-	# XXX [1-9]
-	for i in `find  ${PREFIX} -type f | grep -e '.*\.1$$'`; do \
+	for i in `find  ${PREFIX} -type f | grep -e '.*\.[1-9]$$'`; do \
 		if [ "`echo ${NOT_A_MANUAL} | grep -e \" $$i "`" = "" ]; then \
-			mv $$i ${PREFIX}/man/man$${i#*.}/ ; \
-		else \
-			echo "no $$i"; \
+			mv $$i ${PREFIX}/man/man$${i#$${i%?}}/ ; \
 		fi \
 	done
 	
 	# plug in my pregenerated map and formats
 	mv ${WRKDIR}/texmf-var ${PREFIX}/share
+
+	# adjust permissions
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/{share/texmf*,man/man*/*}
 
 # selfauto does not work with our legacy texmf paths, patch in paths.
 post-install:
