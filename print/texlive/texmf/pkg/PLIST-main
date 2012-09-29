@@ -17,7 +17,6 @@
 @man man/man1/pfb2pfa.1
 @man man/man1/pk2bm.1
 @man man/man1/ps2pk.1
-@man man/man1/tabvar.1
 share/texmf-dist/
 share/texmf-dist/bibtex/
 share/texmf-dist/bibtex/bib/
@@ -35738,6 +35737,7 @@ share/texmf-dist/tex/latex/tablor/tablor-xetex.sty
 share/texmf-dist/tex/latex/tablor/tablor.cfg
 share/texmf-dist/tex/latex/tablor/tablor.sty
 share/texmf-dist/tex/latex/tabvar/
+share/texmf-dist/tex/latex/tabvar/tabvar.1
 share/texmf-dist/tex/latex/tabvar/tabvar.2
 share/texmf-dist/tex/latex/tabvar/tabvar.3
 share/texmf-dist/tex/latex/tabvar/tabvar.cfg

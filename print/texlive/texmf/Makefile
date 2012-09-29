@@ -42,6 +42,29 @@ RUN_DEPENDS-docs +=	x11/p5-Tk
 
 MULTI_PACKAGES =	-context -docs -full -main
 
+# files which are named *.[1-9] which are not manuals.
+# the BEGIN/END ensure that each real entry has a space either side
+# of it. Grep uses this to ensure we don't accidentally pick up
+# a path which is a subset of one of the following:
+NOT_A_MANUAL = BEGIN \
+	${PREFIX}/share/texmf-dist/tex/latex/tabvar/tabvar.1 \
+	${PREFIX}/share/texmf-dist/tex/latex/tabvar/tabvar.2 \
+	${PREFIX}/share/texmf-dist/tex/latex/tabvar/tabvar.3 \
+	${PREFIX}/share/texmf-dist/doc/metapost/base/source-manual/figs.1 \
+	${PREFIX}/share/texmf-dist/doc/latex/feynmf/manpics.1 \
+	${PREFIX}/share/texmf-dist/doc/pdftex/manual/samplepdf/samplepdf.1 \
+	${PREFIX}/share/texmf-dist/doc/latex/tablor/Figures/tablor_Tab.1 \
+	${PREFIX}/share/texmf-dist/doc/latex/tablor/Figures/tablor_Tab.2 \
+	${PREFIX}/share/texmf-dist/doc/latex/tablor/Figures/tablor_Tab.3 \
+	${PREFIX}/share/texmf-dist/doc/latex/tablor/Figures/tablor_Tab.4 \
+	${PREFIX}/share/texmf-dist/doc/latex/tablor/Figures/tablor_Tab.5 \
+	${PREFIX}/share/texmf-dist/doc/latex/tablor/Figures/tablor_Tab.6 \
+	${PREFIX}/share/texmf-dist/doc/latex/tablor/Figures/tablor_Tab.7 \
+	${PREFIX}/share/texmf-dist/doc/latex/tablor/Figures/tablor_Tab.8 \
+	${PREFIX}/share/texmf-dist/doc/latex/tablor/Figures/tablor_Tab.9 \
+	${PREFIX}/share/texmf-dist/doc/latex/flashmovie/flv-player-license/MPL-1.1 \
+	END
+
 do-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${WRKDIST}
 	
@@ -52,13 +75,16 @@ do-install:
 	# Collect all the manual pages that are *everywhere* for
 	# some reason. I wanted to use file(1) to detect if files
 	# are manual pages, but it gets it wrong (sigh).
-	# XXX check that everything we move here is a manual page
+	# XXX [1-9]
 	for i in `find  ${PREFIX} -type f | grep -e '.*\.1$$'`; do \
-		mv $$i ${PREFIX}/man/man1/ ;\
+		if [ "`echo ${NOT_A_MANUAL} | grep -e \" $$i "`" = "" ]; then \
+			mv $$i ${PREFIX}/man/man$${i#*.}/ ; \
+		else \
+			echo "no $$i"; \
+		fi \
 	done
 	
 	# plug in my pregenerated map and formats
-	chown -R ${SHAREOWN}:${SHAREGRP} ${WRKDIR}/texmf-var
 	mv ${WRKDIR}/texmf-var ${PREFIX}/share
 
 # selfauto does not work with our legacy texmf paths, patch in paths.

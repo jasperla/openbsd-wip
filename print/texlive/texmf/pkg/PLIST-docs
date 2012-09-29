@@ -5,7 +5,6 @@
 @conflict texlive_texmf-full-<2012
 @pkgpath print/texlive/texmf-docs
 @pkgpath print/teTeX_texmf,-doc
-@man man/man1/MPL-1.1
 @man man/man1/a2ping.1
 @man man/man1/afm2afm.1
 @man man/man1/afm2pl.1
@@ -67,7 +66,6 @@
 @man man/man1/extractbb.1
 @man man/man1/extractres.1
 @man man/man1/fig2epic.1
-@man man/man1/figs.1
 @man man/man1/findhyph.1
 @man man/man1/fixdlsrps.1
 @man man/man1/fixfmps.1
@@ -108,7 +106,6 @@
 @man man/man1/luatex.1
 @man man/man1/m-tx.1
 @man man/man1/makeindex.1
-@man man/man1/manpics.1
 @man man/man1/mathspic.1
 @man man/man1/mendex.1
 @man man/man1/mf-nowin.1
@@ -185,7 +182,6 @@
 @man man/man1/repstopdf.1
 @man man/man1/rubibtex.1
 @man man/man1/rumakeindex.1
-@man man/man1/samplepdf.1
 @man man/man1/scor2prt.1
 @man man/man1/sjisconv.1
 @man man/man1/splitindex.1
@@ -201,7 +197,6 @@
 @man man/man1/t1reencode.1
 @man man/man1/t1testpage.1
 @man man/man1/t1unmac.1
-@man man/man1/tablor_Tab.1
 @man man/man1/tangle.1
 @man man/man1/tex.1
 @man man/man1/tex2xindy.1
@@ -11086,6 +11081,7 @@ share/texmf-dist/doc/latex/feynmf/Feynman.Diagrams
 share/texmf-dist/doc/latex/feynmf/README
 share/texmf-dist/doc/latex/feynmf/Tutorial
 share/texmf-dist/doc/latex/feynmf/fmfman.pdf
+share/texmf-dist/doc/latex/feynmf/manpics.1
 share/texmf-dist/doc/latex/feynmf/manpics.2
 share/texmf-dist/doc/latex/feynmf/manpics.3
 share/texmf-dist/doc/latex/feynmf/template.tex
@@ -11212,6 +11208,7 @@ share/texmf-dist/doc/latex/flashcards/samplecards.tex
 share/texmf-dist/doc/latex/flashmovie/
 share/texmf-dist/doc/latex/flashmovie/README
 share/texmf-dist/doc/latex/flashmovie/flv-player-license/
+share/texmf-dist/doc/latex/flashmovie/flv-player-license/MPL-1.1
 share/texmf-dist/doc/latex/flashmovie/flv-player-license/license.txt
 share/texmf-dist/doc/latex/flashmovie/test-beamer-0.pdf
 share/texmf-dist/doc/latex/flashmovie/test-beamer-0.tex
@@ -25174,6 +25171,7 @@ share/texmf-dist/doc/latex/tablor/Figures/
 share/texmf-dist/doc/latex/tablor/Figures/TSav-105.mp
 share/texmf-dist/doc/latex/tablor/Figures/capture.eps
 share/texmf-dist/doc/latex/tablor/Figures/tablor_Tab.0
+share/texmf-dist/doc/latex/tablor/Figures/tablor_Tab.1
 share/texmf-dist/doc/latex/tablor/Figures/tablor_Tab.10
 share/texmf-dist/doc/latex/tablor/Figures/tablor_Tab.105
 share/texmf-dist/doc/latex/tablor/Figures/tablor_Tab.11
@@ -28355,6 +28353,7 @@ share/texmf-dist/doc/metapost/base/source-manual/countries.d
 share/texmf-dist/doc/metapost/base/source-manual/ctabbing.sty
 share/texmf-dist/doc/metapost/base/source-manual/demo.ms
 share/texmf-dist/doc/metapost/base/source-manual/energy.d
+share/texmf-dist/doc/metapost/base/source-manual/figs.1
 share/texmf-dist/doc/metapost/base/source-manual/figs.mp
 share/texmf-dist/doc/metapost/base/source-manual/grdemo-doc.ms
 share/texmf-dist/doc/metapost/base/source-manual/grdemo-doc.ps
@@ -29153,6 +29152,7 @@ share/texmf-dist/doc/pdftex/manual/samplepdf/pic.png
 share/texmf-dist/doc/pdftex/manual/samplepdf/pic16.png
 share/texmf-dist/doc/pdftex/manual/samplepdf/rgb.icc
 share/texmf-dist/doc/pdftex/manual/samplepdf/samplepdf.0
+share/texmf-dist/doc/pdftex/manual/samplepdf/samplepdf.1
 share/texmf-dist/doc/pdftex/manual/samplepdf/samplepdf.tex
 share/texmf-dist/doc/pdftex/manual/samplepdf/supp-mis.tex
 share/texmf-dist/doc/pdftex/manual/samplepdf/supp-pdf.tex
