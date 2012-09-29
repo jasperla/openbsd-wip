@@ -27,11 +27,8 @@ MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}/src \
 				${WRKSRC}/packages/jpl \
 				${WRKSRC}/packages/xpce/src
 
-LDFLAGS +=		-L${LOCALBASE}/lib
-CPPFLAGS +=		-I${LOCALBASE}/include
-
-CONFIGURE_ENV +=	CIFLAGS=' -I/usr/local/include' \
-			LDFLAGS=' -L/usr/local/lib' \
+CONFIGURE_ENV +=	CIFLAGS=' -I${LOCALBASE}/include' \
+			LDFLAGS=' -L${LOCALBASE}/lib' \
 			COFLAGS='-O2 -pipe -g'
 
 CONFIGURE_ARGS =	--enable-mt \
@@ -56,15 +53,7 @@ WANTLIB += expat fontconfig freetype gmp jpeg m ncursesw pthread
 WANTLIB += readline ssl z
 
 FULLARCH =		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
-SUBST_VARS +=		V XV FULLARCH BOOT LDFLAGS CFLAGS CPPFLAGS
-
-# warning: #warning "<malloc.h> is obsolete, use <stdlib.h>"
-pre-patch:
-	find ${WRKSRC}/packages/{clib,sgml,xpce} -name '*.[ch]' | \
-	  xargs fgrep -l malloc.h | \
-	while read i; do \
-		sed -e 's/malloc.h/stdlib.h/' $$i >$$i.bak && mv $$i.bak $$i; \
-	done
+SUBST_VARS +=		V BOOT FULLARCH
 
 post-install:
 	cd ${PREFIX}/lib && \
