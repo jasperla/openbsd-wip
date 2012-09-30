@@ -4,7 +4,7 @@ SHARED_ONLY=	Yes
 
 COMMENT=	practical and portable Scheme system
 
-V=		4.7.0.6
+V=		4.8.0
 DISTNAME=	chicken-$V
 
 SHARED_LIBS=	chicken	6.0
