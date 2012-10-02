@@ -62,12 +62,3 @@ textproc/ocaml-rss		ready for import.
 textproc/ocaml-xmlm		ready for import.
 textproc/ocaml-xml-light	ready for import.
 www/ocaml-tyxml			ready for import.
-
-
-KDE 4.8 related
-
-textproc/liblrdf:	Ready for import. Sent to ports@ October 10, 2011 (grayed)
-textproc/raptor:	Ready for import. Sent to ports@ October 10, 2011 (grayed)
-textproc/rasqal:	Ready for import. Sent to ports@ October 10, 2011 (grayed)
-textproc/redland:	Ready for import. Sent to ports@ October 10, 2011 (grayed)
-math/libqalculate	Ready for import. Sent to ports@ October 24, 2011 (grayed, amitkulz)
