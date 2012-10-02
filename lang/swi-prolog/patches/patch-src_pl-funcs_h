@@ -1,4 +1,7 @@
 $OpenBSD$
+
+Silence annoying redefinition of getwd() warnings
+
 --- src/pl-funcs.h.orig	Sat Sep 29 15:00:41 2012
 +++ src/pl-funcs.h	Sat Sep 29 15:00:52 2012
 @@ -344,7 +344,7 @@ COMMON(void)		setOSPrologFlags(void);

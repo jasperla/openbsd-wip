@@ -22,7 +22,6 @@ lib/chicken/6/irregex.import.so
 lib/chicken/6/lolevel.import.so
 lib/chicken/6/ports.import.so
 lib/chicken/6/posix.import.so
-lib/chicken/6/scheme.import.so
 lib/chicken/6/setup-api.import.so
 lib/chicken/6/setup-api.so
 lib/chicken/6/setup-download.import.so
