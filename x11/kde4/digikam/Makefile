@@ -11,10 +11,9 @@ HOMEPAGE =		http://www.digikam.org/
 VERSION =		2.7.0
 DISTNAME =		digikam-${VERSION}
 
-PKGNAME =		digikam4-${VERSION}
 PKGNAME-face =		libkface-2.0.0
 PKGNAME-geomap =	libkgeomap-${VERSION}
-PKGNAME-kipi =		kipi-plugins4-${VERSION}
+PKGNAME-kipi =		kipi-plugins-${VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 PKGNAME-vkontakte =	libkvkontakte-1.0.0
