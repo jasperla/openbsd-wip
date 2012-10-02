@@ -27,7 +27,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB-main =		gmp gmpxx m stdc++ ${WANTLIB} c glpk z
-WANTLIB-java =		c gmp gmpxx m stdc++ ${WANTLIB} ppl
+WANTLIB-java =		gmp gmpxx m stdc++ ${WANTLIB} ppl
 WANTLIB-ocaml =		
 
 MASTER_SITES =		ftp://ftp.cs.unipr.it/pub/ppl/releases/1.0/
