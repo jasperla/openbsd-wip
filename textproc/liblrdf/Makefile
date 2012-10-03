@@ -9,8 +9,6 @@ SHARED_LIBS =		lrdf	1.0	# 0.0
 
 CATEGORIES =		textproc
 
-MAINTAINER =		Jacob Meuser <jakemsr@openbsd.org>
-
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
