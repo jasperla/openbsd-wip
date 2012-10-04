@@ -162,7 +162,6 @@
      SUBDIR += libkexiv2		# test
      SUBDIR += libkipi			# OK
      SUBDIR += libksane			# untested
-     SUBDIR += mobipocket		# untested
      SUBDIR += okular			# test
      SUBDIR += svgpart			# OK
 
