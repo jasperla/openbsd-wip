@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-MODKDE4_VERSION =	4.9.0
+MODKDE4_VERSION =	4.9.2
 MODKDE_VERSION =	${MODKDE4_VERSION}
 
 # General options set by module
@@ -136,13 +136,6 @@ MODKDE4_CMAKE_PREFIX =	-release
 CONFIGURE_ARGS +=	-DMAN_INSTALL_DIR=${PREFIX}/man \
 			-DINFO_INSTALL_DIR=${PREFIX}/info \
 			-DLIBEXEC_INSTALL_DIR=${PREFIX}/libexec
-
-# DCMAKE_C(XX)FLAGS & DCMAKE_EXE_LINKER_FLAGS needed to fix undefined symbols
-# for pthread & pulseaudio related functions, fixing globally here
-CONFIGURE_ARGS +=	-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-			-DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
-			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib \
-				-Wl,-rpath,${LOCALBASE}/lib/pulseaudio"
 
 # NOTE: due to bugs in make-plist, plist may contain
 # ${FLAVORS} instead of ${MODKDE4_CMAKE_PREFIX}.
