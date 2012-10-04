@@ -23,7 +23,8 @@ WANTLIB=	m c stdc++
 
 MASTER_SITES=	http://www.riverbankcomputing.co.uk/static/Downloads/sip4/ \
 		http://spacehopper.org/mirrors/ \
-		http://distfiles.nl/
+		http://distfiles.nl/ \
+		${MASTER_SITE_SOURCEFORGE:=pyqt/}
 
 MODULES=	lang/python
 
