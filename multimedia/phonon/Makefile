@@ -28,7 +28,7 @@ WANTLIB +=	lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg
 WANTLIB +=	lib/qt4/QtTest lib/qt4/QtXml lib/qt4/QtXmlPatterns
 WANTLIB +=	pulse pulse-mainloop-glib qzeitgeist
 
-LIB_DEPENDS =	productivity/qzeitgeist>=0.8.0 \
+LIB_DEPENDS =	productivity/libqzeitgeist>=0.8.0 \
 		audio/pulseaudio
 
 CONFIGURE_ARGS =	-DPHONON_INSTALL_QT_EXTENSIONS_INTO_SYSTEM_QT:Bool=Yes
