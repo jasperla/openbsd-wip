@@ -170,6 +170,7 @@ share/icons/oxygen/128x128/apps/office-calendar.png
 share/icons/oxygen/128x128/apps/okteta.png
 share/icons/oxygen/128x128/apps/oxygen.png
 share/icons/oxygen/128x128/apps/partitionmanager.png
+share/icons/oxygen/128x128/apps/picmi.png
 share/icons/oxygen/128x128/apps/planner.png
 share/icons/oxygen/128x128/apps/plasma.png
 share/icons/oxygen/128x128/apps/plasmagik.png
@@ -598,6 +599,7 @@ share/icons/oxygen/128x128/places/bookmarks.png
 share/icons/oxygen/128x128/places/certificate-server.png
 share/icons/oxygen/128x128/places/document-multiple.png
 share/icons/oxygen/128x128/places/favorites.png
+share/icons/oxygen/128x128/places/folder-activities.png
 share/icons/oxygen/128x128/places/folder-black.png
 share/icons/oxygen/128x128/places/folder-blue.png
 share/icons/oxygen/128x128/places/folder-bookmark.png
@@ -1361,6 +1363,7 @@ share/icons/oxygen/16x16/apps/office-calendar.png
 share/icons/oxygen/16x16/apps/okteta.png
 share/icons/oxygen/16x16/apps/oxygen.png
 share/icons/oxygen/16x16/apps/partitionmanager.png
+share/icons/oxygen/16x16/apps/picmi.png
 share/icons/oxygen/16x16/apps/plasma.png
 share/icons/oxygen/16x16/apps/plasmagik.png
 share/icons/oxygen/16x16/apps/preferences-contact-list.png
@@ -1810,6 +1813,7 @@ share/icons/oxygen/16x16/places/bookmarks.png
 share/icons/oxygen/16x16/places/certificate-server.png
 share/icons/oxygen/16x16/places/document-multiple.png
 share/icons/oxygen/16x16/places/favorites.png
+share/icons/oxygen/16x16/places/folder-activities.png
 share/icons/oxygen/16x16/places/folder-black.png
 share/icons/oxygen/16x16/places/folder-blue.png
 share/icons/oxygen/16x16/places/folder-bookmark.png
@@ -2639,6 +2643,7 @@ share/icons/oxygen/22x22/apps/office-calendar.png
 share/icons/oxygen/22x22/apps/okteta.png
 share/icons/oxygen/22x22/apps/oxygen.png
 share/icons/oxygen/22x22/apps/partitionmanager.png
+share/icons/oxygen/22x22/apps/picmi.png
 share/icons/oxygen/22x22/apps/plasma.png
 share/icons/oxygen/22x22/apps/plasmagik.png
 share/icons/oxygen/22x22/apps/preferences-contact-list.png
@@ -3127,6 +3132,7 @@ share/icons/oxygen/22x22/places/bookmarks.png
 share/icons/oxygen/22x22/places/certificate-server.png
 share/icons/oxygen/22x22/places/document-multiple.png
 share/icons/oxygen/22x22/places/favorites.png
+share/icons/oxygen/22x22/places/folder-activities.png
 share/icons/oxygen/22x22/places/folder-black.png
 share/icons/oxygen/22x22/places/folder-blue.png
 share/icons/oxygen/22x22/places/folder-bookmark.png
@@ -3315,6 +3321,7 @@ share/icons/oxygen/256x256/apps/mameexecutor.png
 share/icons/oxygen/256x256/apps/multimedia-volume-control.png
 share/icons/oxygen/256x256/apps/oxygen.png
 share/icons/oxygen/256x256/apps/partitionmanager.png
+share/icons/oxygen/256x256/apps/picmi.png
 share/icons/oxygen/256x256/apps/planner.png
 share/icons/oxygen/256x256/apps/preferences-desktop-locale.png
 share/icons/oxygen/256x256/apps/preferences-desktop-screensaver.png
@@ -3637,6 +3644,7 @@ share/icons/oxygen/256x256/mimetypes/x-office-spreadsheet.png
 share/icons/oxygen/256x256/places/
 share/icons/oxygen/256x256/places/certificate-server.png
 share/icons/oxygen/256x256/places/favorites.png
+share/icons/oxygen/256x256/places/folder-activities.png
 share/icons/oxygen/256x256/places/folder-black.png
 share/icons/oxygen/256x256/places/folder-blue.png
 share/icons/oxygen/256x256/places/folder-bookmark.png
@@ -4371,6 +4379,7 @@ share/icons/oxygen/32x32/apps/office-calendar.png
 share/icons/oxygen/32x32/apps/okteta.png
 share/icons/oxygen/32x32/apps/oxygen.png
 share/icons/oxygen/32x32/apps/partitionmanager.png
+share/icons/oxygen/32x32/apps/picmi.png
 share/icons/oxygen/32x32/apps/plasma.png
 share/icons/oxygen/32x32/apps/plasmagik.png
 share/icons/oxygen/32x32/apps/preferences-contact-list.png
@@ -4830,6 +4839,7 @@ share/icons/oxygen/32x32/places/bookmarks.png
 share/icons/oxygen/32x32/places/certificate-server.png
 share/icons/oxygen/32x32/places/document-multiple.png
 share/icons/oxygen/32x32/places/favorites.png
+share/icons/oxygen/32x32/places/folder-activities.png
 share/icons/oxygen/32x32/places/folder-black.png
 share/icons/oxygen/32x32/places/folder-blue.png
 share/icons/oxygen/32x32/places/folder-bookmark.png
@@ -5545,7 +5555,6 @@ share/icons/oxygen/48x48/animations/process-idle-kde.png
 share/icons/oxygen/48x48/animations/process-working-kde.png
 share/icons/oxygen/48x48/apps/
 share/icons/oxygen/48x48/apps/Charm.png
-share/icons/oxygen/48x48/apps/KMag.png
 share/icons/oxygen/48x48/apps/accessories-calculator.png
 share/icons/oxygen/48x48/apps/accessories-character-map.png
 share/icons/oxygen/48x48/apps/accessories-dictionary.png
@@ -5585,6 +5594,7 @@ share/icons/oxygen/48x48/apps/kig.png
 share/icons/oxygen/48x48/apps/kivio.png
 share/icons/oxygen/48x48/apps/kjournal.png
 share/icons/oxygen/48x48/apps/klipper.png
+share/icons/oxygen/48x48/apps/kmag.png
 share/icons/oxygen/48x48/apps/kmplayer.png
 share/icons/oxygen/48x48/apps/knewsticker.png
 share/icons/oxygen/48x48/apps/knotes.png
@@ -5617,6 +5627,7 @@ share/icons/oxygen/48x48/apps/office-calendar.png
 share/icons/oxygen/48x48/apps/okteta.png
 share/icons/oxygen/48x48/apps/oxygen.png
 share/icons/oxygen/48x48/apps/partitionmanager.png
+share/icons/oxygen/48x48/apps/picmi.png
 share/icons/oxygen/48x48/apps/plasma.png
 share/icons/oxygen/48x48/apps/plasmagik.png
 share/icons/oxygen/48x48/apps/preferences-contact-list.png
@@ -6059,6 +6070,7 @@ share/icons/oxygen/48x48/places/bookmarks.png
 share/icons/oxygen/48x48/places/certificate-server.png
 share/icons/oxygen/48x48/places/document-multiple.png
 share/icons/oxygen/48x48/places/favorites.png
+share/icons/oxygen/48x48/places/folder-activities.png
 share/icons/oxygen/48x48/places/folder-add.png
 share/icons/oxygen/48x48/places/folder-black.png
 share/icons/oxygen/48x48/places/folder-blue.png
@@ -6348,6 +6360,7 @@ share/icons/oxygen/64x64/apps/office-calendar.png
 share/icons/oxygen/64x64/apps/okteta.png
 share/icons/oxygen/64x64/apps/oxygen.png
 share/icons/oxygen/64x64/apps/partitionmanager.png
+share/icons/oxygen/64x64/apps/picmi.png
 share/icons/oxygen/64x64/apps/planner.png
 share/icons/oxygen/64x64/apps/plasma.png
 share/icons/oxygen/64x64/apps/plasmagik.png
@@ -6774,6 +6787,7 @@ share/icons/oxygen/64x64/places/bookmarks.png
 share/icons/oxygen/64x64/places/certificate-server.png
 share/icons/oxygen/64x64/places/document-multiple.png
 share/icons/oxygen/64x64/places/favorites.png
+share/icons/oxygen/64x64/places/folder-activities.png
 share/icons/oxygen/64x64/places/folder-black.png
 share/icons/oxygen/64x64/places/folder-blue.png
 share/icons/oxygen/64x64/places/folder-bookmark.png
