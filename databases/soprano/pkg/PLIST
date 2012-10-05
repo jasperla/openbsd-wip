@@ -167,8 +167,9 @@ lib/soprano/libsoprano_nquadparser.so
 lib/soprano/libsoprano_nquadserializer.so
 lib/soprano/libsoprano_raptorparser.so
 lib/soprano/libsoprano_raptorserializer.so
-lib/soprano/libsoprano_redlandbackend.so
 lib/soprano/libsoprano_virtuosobackend.so
+share/dbus-1/
+share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.soprano.Model.xml
 share/dbus-1/interfaces/org.soprano.NodeIterator.xml
 share/dbus-1/interfaces/org.soprano.QueryResultIterator.xml
@@ -182,7 +183,6 @@ share/soprano/plugins/nquadparser.desktop
 share/soprano/plugins/nquadserializer.desktop
 share/soprano/plugins/raptorparser.desktop
 share/soprano/plugins/raptorserializer.desktop
-share/soprano/plugins/redlandbackend.desktop
 share/soprano/plugins/virtuosobackend.desktop
 share/soprano/rules/
 share/soprano/rules/nrl.rules
