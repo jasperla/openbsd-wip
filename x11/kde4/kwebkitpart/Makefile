@@ -6,7 +6,7 @@ DISTNAME =	kwebkitpart-1.2
 REVISION =	2
 
 EXTRACT_SUFX =	.tar.bz2
-MASTER_SITES =	http://www.ohvost.ru/dnl/kde/src/
+MASTER_SITES =	http://malcolm.ecentrum.hu/distfiles/
 
 WANTLIB =  c m stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
