@@ -27,12 +27,11 @@ RUN_DEPENDS =	devel/desktop-file-utils
 
 LIB_DEPENDS = 	textproc/clucene \
 	    	databases/iodbc \
-		textproc/raptor \
-		textproc/redland
+		textproc/raptor
 
-WANTLIB =  c m pthread stdc++
+WANTLIB =  c m stdc++
 WANTLIB += lib/qt4/QtCore lib/qt4/QtDBus lib/qt4/QtNetwork lib/qt4/QtXml
-WANTLIB += clucene iodbc raptor2 rdf
+WANTLIB += clucene-core iodbc raptor2
 
 CONFIGURE_STYLE =	cmake
 
