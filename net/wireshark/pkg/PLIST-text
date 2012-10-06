@@ -56,6 +56,7 @@ share/wireshark/console.lua
 share/wireshark/dfilters
 share/wireshark/dftest.html
 share/wireshark/diameter/
+share/wireshark/diameter/AlcatelLucent.xml
 share/wireshark/diameter/Cisco.xml
 share/wireshark/diameter/Ericsson.xml
 share/wireshark/diameter/TGPPGmb.xml
