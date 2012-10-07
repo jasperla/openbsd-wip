@@ -2,11 +2,11 @@ $OpenBSD$
 
 missing includes
 
---- epan/dissectors/packet-fcdns.c.orig	Thu Jan 12 15:11:42 2012
-+++ epan/dissectors/packet-fcdns.c	Thu Jan 12 16:36:23 2012
-@@ -27,6 +27,12 @@
- # include "config.h"
- #endif
+--- epan/dissectors/packet-fcdns.c.orig	Thu Sep 20 03:12:41 2012
++++ epan/dissectors/packet-fcdns.c	Sun Oct  7 00:23:01 2012
+@@ -25,6 +25,12 @@
+ 
+ #include "config.h"
  
 +#include <stdlib.h>
 +
