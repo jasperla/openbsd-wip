@@ -1,9 +1,9 @@
 $OpenBSD$
 
 correct order and add missing
---- capture_ifinfo.c.orig	Thu Jan 12 15:11:54 2012
-+++ capture_ifinfo.c	Thu Jan 12 18:07:26 2012
-@@ -31,12 +31,20 @@
+--- capture_ifinfo.c.orig	Thu Sep 20 02:35:31 2012
++++ capture_ifinfo.c	Sun Oct  7 00:23:01 2012
+@@ -29,12 +29,20 @@
  #include <stdlib.h>
  #include <string.h>
  
