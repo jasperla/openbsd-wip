@@ -6,7 +6,7 @@ CATEGORIES =	databases devel textproc sysutils
 
 HOMEPAGE =	http://strigi.sourceforge.net
 DISTNAME =	strigi-0.7.7
-REVISION =	3
+REVISION =	4
 
 MASTER_SITES =	http://malcolm.ecentrum.hu/distfiles/
 
@@ -29,12 +29,12 @@ LIB_DEPENDS =	archivers/bzip2 \
 		graphics/exiv2 \
 		graphics/ffmpeg \
 		sysutils/gamin \
-		textproc/clucene>=0.9.21 \
+		textproc/clucene-old \
 		textproc/libxml \
 		x11/qt4 \
 		x11/dbus
 
-WANTLIB += bz2 c clucene>=1 dbus-1 exiv2 \
+WANTLIB += bz2 c clucene dbus-1 exiv2 \
 	lib/qt4/QtCore lib/qt4/QtDBus lib/qt4/QtGui \
 	fam m pthread stdc++ xml2 z avcodec avformat avutil swscale
 
