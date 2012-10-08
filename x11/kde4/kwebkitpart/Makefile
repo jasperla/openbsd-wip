@@ -3,7 +3,6 @@
 COMMENT =	K Desktop Environment, web browser based on WebKit
 HOMEPAGE =	https://projects.kde.org/projects/extragear/base/kwebkitpart
 DISTNAME =	kwebkitpart-1.2
-REVISION =	2
 
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	http://malcolm.ecentrum.hu/distfiles/
