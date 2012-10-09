@@ -3,10 +3,10 @@
 COMMENT =	library for manipulating the terminal
 CATEGORIES =	devel
 
-DISTNAME =	lambda-term-1.2
+# also adapt MASTER_SITES when changing the version!
+DISTNAME =	lambda-term-1.3
 PKGNAME =	ocaml-${DISTNAME}
-MASTER_SITES =	http://forge.ocamlcore.org/frs/download.php/945/
-REVISION =	3
+MASTER_SITES =	http://forge.ocamlcore.org/frs/download.php/1034/
 
 HOMEPAGE =	http://forge.ocamlcore.org/projects/lambda-term
 

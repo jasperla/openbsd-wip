@@ -3,7 +3,7 @@
 COMMENT =	cooperative lightweight thread library
 CATEGORIES =	devel
 
-DISTNAME =	lwt-2.4.0
+DISTNAME =	lwt-2.4.2
 PKGNAME =	ocaml-${DISTNAME}
 MASTER_SITES =	http://ocsigen.org/download/
 
@@ -28,6 +28,7 @@ WANTLIB =	glib-2.0 ev iconv intl pthread
 
 CONFIGURE_STYLE =	oasis
 CONFIGURE_ARGS =	--enable-tests --enable-react --enable-glib --enable-ssl
+USE_GMAKE =	Yes
 
 
 post-install:
