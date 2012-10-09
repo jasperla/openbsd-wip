@@ -21,8 +21,7 @@ EXTRACT_SUFX =	.zip
 MODULES =	lang/php
 
 RUN_DEPENDS =	lang/php/${MODPHP_VERSION},-mysql \
-		lang/php/${MODPHP_VERSION},-gd \
-		lang/php/${MODPHP_VERSION},-xmlrpc \
+		lang/php/${MODPHP_VERSION},-gd
 		textproc/catdoc
 		
 NO_BUILD =	Yes
