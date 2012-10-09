@@ -26,21 +26,21 @@ fonts/roboto-fonts	Ready for import. Sent to ports@ 2012-08-24 (juanfra684).
 OCaml 4.00:
 Sent to lang/ocaml maintainer Anil Madhavapeddy <anil@recoil.org>
 
-databases/ocaml-sqlite3		ready for import. TODO
-devel/cil			ready for import. TODO
-devel/coccinelle		ready for import. TODO, maybe update to rc15
-devel/ocaml-calendar		ready for import. TODO
-devel/ocaml-lwt			ready for import. TODO
-devel/ocaml-lambda-term		ready for import. TODO
-lang/obc			waiting for i386 test TODO
-lang/ocaml			ready for import. TODO
-lang/ocamlduce			ready for import, but BROKEN TODO
-lang/utop			ready for import. TODO
-math/coq			ready for import. TODO
-net/unison/stable		ready for import. TODO
-textproc/hevea			ready for import. TODO
-textproc/ocaml-xmlm		ready for import. TODO
-www/ocaml-tyxml			ready for import. TODO
+databases/ocaml-sqlite3		ready for import.
+devel/cil			ready for import.
+devel/coccinelle		ready for import.
+devel/ocaml-calendar		ready for import.
+devel/ocaml-lwt			ready for import.
+devel/ocaml-lambda-term		ready for import.
+lang/obc			waiting for i386 test
+lang/ocaml			needs testing.
+lang/ocamlduce			ready for import, but BROKEN
+lang/utop			ready for import.
+math/coq			ready for import.
+net/unison/stable		ready for import.
+textproc/hevea			ready for import.
+textproc/ocaml-xmlm		ready for import.
+www/ocaml-tyxml			ready for import.
 
 KDE 4.9 related
 ---------------

@@ -10,8 +10,7 @@ BROKEN-powerpc=	'struct sigcontext' has no member named 'regs'
 COMMENT=	ML language based on complete class-based objective system
 
 BASENAME=	ocaml-4.00
-DISTNAME=	${BASENAME}.0
-REVISION=       1
+DISTNAME=	${BASENAME}.1
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/pub/distrib/${BASENAME}/
 DOCFILES=	${BASENAME}-refman-html.tar.gz
