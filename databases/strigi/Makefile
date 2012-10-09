@@ -8,7 +8,8 @@ HOMEPAGE =	http://strigi.sourceforge.net
 DISTNAME =	strigi-0.7.7
 REVISION =	4
 
-MASTER_SITES =	http://malcolm.ecentrum.hu/distfiles/
+MASTER_SITES =	http://malcolm.ecentrum.hu/distfiles/ \
+		http://www.ohvost.ru/dnl/kde/src/
 
 # LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
