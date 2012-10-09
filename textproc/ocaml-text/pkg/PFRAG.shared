@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2012/07/18 08:04:11 sthen Exp $
-lib/ocaml/stublibs/dlltext-bigarray_stubs.so
-lib/ocaml/stublibs/dlltext_stubs.so
