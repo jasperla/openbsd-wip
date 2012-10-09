@@ -931,8 +931,8 @@ fengoffice/application/widgets/people/
 fengoffice/application/widgets/people/index.php
 fengoffice/application/widgets/people/template.php
 @mode g+w
-@owner www
 @group www
+@owner www
 fengoffice/cache/
 fengoffice/cache/.htaccess
 fengoffice/cache/dummy.txt
@@ -941,8 +941,8 @@ fengoffice/config/.htaccess
 fengoffice/config/empty.config.php
 fengoffice/config/ldap.config.example.php
 @mode
-@owner
 @group
+@owner
 fengoffice/cron.php
 fengoffice/crossdomain.xml
 fengoffice/dummy.php
@@ -6434,13 +6434,13 @@ fengoffice/public/assets/themes/default/stylesheets/project/
 fengoffice/public/assets/themes/default/stylesheets/project/project.css
 fengoffice/public/assets/themes/default/stylesheets/website.css
 @mode g+w
-@owner www
 @group www
+@owner www
 fengoffice/public/files/
 fengoffice/public/files/dummy.txt
 @mode
-@owner
 @group
+@owner
 fengoffice/public/help/
 fengoffice/public/help/help.html
 fengoffice/public/help/index.html
@@ -6566,8 +6566,8 @@ fengoffice/revision.php
 fengoffice/robots.txt
 fengoffice/s.gif
 @mode g+w
-@owner www
 @group www
+@owner www
 fengoffice/tmp/
 fengoffice/tmp/dummy.php
 fengoffice/upload/
@@ -6575,8 +6575,8 @@ fengoffice/upload/.htaccess
 fengoffice/upload/dummy.php
 fengoffice/upload/index.html
 @mode
-@owner
 @group
+@owner
 fengoffice/version.php
 @extraunexec rm -rf fengoffice/{cache,config,public/files,upload}/*
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
