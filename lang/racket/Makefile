@@ -5,9 +5,10 @@ ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		Scheme dialect often used for teaching programming
 
-V =			5.3
+V =			5.3.1.1
 PKGNAME =		racket-$V
-DISTNAME =		racket-$V-src-unix
+#DISTNAME =		racket-$V-src-unix
+DISTNAME =		plt-$V-src-unix
 CATEGORIES =		lang
 HOMEPAGE =		http://racket-lang.org
 MAINTAINER =		Juan Francisco Cantero Hurtado <iam@juanfra.info>
@@ -23,8 +24,9 @@ MASTER_SITES =		http://download.racket-lang.org/installers/${V}/racket/ \
 			http://www.cs.utah.edu/plt/installers/${V}/racket/ \
 			http://mirror.csclub.uwaterloo.ca/racket/racket-installers/${V}/racket/ \
 			http://mirror.informatik.uni-tuebingen.de/mirror/racket/${V}/racket/ \
-			http://russell.cs.bilgi.edu.tr/racket-installers/${V}/racket/ \
-			http://racket.infogroep.be/${V}/racket/
+			http://racket.infogroep.be/${V}/racket/ \
+			http://pre.racket-lang.org/installers/ \
+			http://download.tuxfamily.org/jod/lang/racket/
 
 NO_REGRESS =		Yes
 VMEM_WARNING =		Yes
@@ -98,8 +100,8 @@ MODGCC4_ARCHS =		*
 # jobs by default when futures is enabled, so Racket reaches the limits again
 # and crash.
 do-install:
-	@cd ${WRKBUILD} && ulimit -s 8192 && PLT_SETUP_OPTIONS="-j 1" \
-		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} -f ${MAKE_FILE} \
-		${FAKE_TARGET}
+	@cd ${WRKBUILD} && ulimit -s 8192 && ${SETENV} ${MAKE_ENV} \
+		PLT_SETUP_OPTIONS="-j 1" ${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} \
+		-f ${MAKE_FILE} ${FAKE_TARGET}
 
 .include <bsd.port.mk>
