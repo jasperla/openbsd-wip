@@ -6578,6 +6578,6 @@ fengoffice/upload/index.html
 @owner
 @group
 fengoffice/version.php
-@extraunexec rm -rf fengoffice/{cache,config,upload}/*
+@extraunexec rm -rf fengoffice/{cache,config,public/files,upload}/*
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
 ${FULLPKGNAME}
