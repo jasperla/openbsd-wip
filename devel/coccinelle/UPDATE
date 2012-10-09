@@ -1,4 +1,4 @@
-* bump version to 1.0.0-rc14
+* bump version to 1.0.0-rc15
 * use CONFIGURE_STYLE = gnu
 * move to new PROPERTY ocaml_native_dl,
   simplify native/byte target selection

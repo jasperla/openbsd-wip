@@ -86,6 +86,7 @@ MODOASIS_configure = \
 
 ######################################################################
 # BUILD
+BUILD_DEPENDS+= sysutils/findlib
 MODOASIS_BUILD_TARGET = cd ${WRKSRC}
 . for TARGET in ${ALL_TARGET}
 MODOASIS_BUILD_TARGET += \

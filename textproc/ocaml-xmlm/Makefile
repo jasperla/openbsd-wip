@@ -3,7 +3,7 @@
 COMMENT =	streaming XML input/output for OCaml
 CATEGORIES =	textproc
 
-V =		1.1.0
+V =		1.1.1
 DISTNAME =	xmlm-${V}
 PKGNAME =	ocaml-${DISTNAME}
 EXTRACT_SUFX =	.tbz
