@@ -1,8 +1,0 @@
-bump version to 4.0.1
-
-* rename to ocaml-camlimages
-* new MASTER_SITES and DISTFILES naming scheme
-* switch to omake
-* remove gettext dependency
-* remove lablgtk dependency - only needed for examples
-* remove ghostscript runtime dependency - only needed for postscript.

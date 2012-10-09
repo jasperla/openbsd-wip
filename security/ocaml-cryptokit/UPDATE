@@ -1,4 +1,0 @@
-* bump version to 1.6
-* new HOMEPAGE, new MASTER_SITE
-* use new CONFIGURE_STYLE=oasis
-* rename from cryptokit to ocaml-cryptokit
