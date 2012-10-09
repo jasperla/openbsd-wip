@@ -1,11 +1,11 @@
 $OpenBSD$
 Do not install files that interfere with system ones or are better handled in
 other (KDE) packages.
---- cmake/modules/CMakeLists.txt.orig	Wed May 23 03:40:56 2012
-+++ cmake/modules/CMakeLists.txt	Fri Aug 17 15:40:06 2012
+--- cmake/modules/CMakeLists.txt.orig	Thu Sep 27 19:09:04 2012
++++ cmake/modules/CMakeLists.txt	Mon Oct  8 19:03:42 2012
 @@ -7,9 +7,10 @@ set(module_install_dir ${DATA_INSTALL_DIR}/cmake/modul
  # to have it around, so there is a place where the modules which are not installed
- # are listed explicitely:
+ # are listed explicitly:
  set(cmakeFilesDontInstall
 +               FindGettext.cmake
                 FindHUpnp.cmake

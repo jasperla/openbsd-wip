@@ -1,7 +1,7 @@
 $OpenBSD: patch-kjs_CMakeLists_txt,v 1.1 2010/06/20 21:09:52 espie Exp $
---- kjs/CMakeLists.txt.orig	Thu Jun 23 18:49:06 2011
-+++ kjs/CMakeLists.txt	Sat Sep  3 22:53:16 2011
-@@ -232,7 +232,7 @@ kde4_add_executable(kjs_bin NOGUI ${kjs_SRCS})
+--- kjs/CMakeLists.txt.orig	Thu Sep 27 19:09:06 2012
++++ kjs/CMakeLists.txt	Mon Oct  8 19:03:42 2012
+@@ -236,7 +236,7 @@ kde4_add_executable(kjs_bin NOGUI ${kjs_SRCS})
  
  set_target_properties(kjs_bin PROPERTIES OUTPUT_NAME ${kjs_bin_OUTPUT_NAME})
  
