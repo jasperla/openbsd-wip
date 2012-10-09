@@ -1,6 +1,8 @@
+# $OpenBSD$
+
 COMMENT =	web-based collaboration platform and groupware
 
-DISTNAME =	fengoffice_2.2.0beta
+DISTNAME =	fengoffice_2.2.0rc
 PKGNAME =	${DISTNAME:S/_/-/}
 CATEGORIES =	www
 
@@ -19,8 +21,10 @@ EXTRACT_SUFX =	.zip
 MODULES =	lang/php
 
 RUN_DEPENDS =	lang/php/${MODPHP_VERSION},-mysql \
-		lang/php/${MODPHP_VERSION},-gd
-
+		lang/php/${MODPHP_VERSION},-gd \
+		lang/php/${MODPHP_VERSION},-xmlrpc \
+		textproc/catdoc
+		
 NO_BUILD =	Yes
 NO_REGRESS =	Yes
 PKG_ARCH =	*
