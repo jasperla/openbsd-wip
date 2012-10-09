@@ -47,7 +47,7 @@ SHARED_LIBS +=  nepomukquery		1.0 # 4.9
 SHARED_LIBS +=  nepomukutils		1.0 # 4.9
 
 
-WANTLIB =  c krb5 m pthread stdc++ util z
+WANTLIB =  c krb5 ssl m pthread stdc++ util z
 WANTLIB += ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xpm Xrender Xss
 WANTLIB += Xtst
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDeclarative
@@ -79,7 +79,7 @@ RUN_DEPENDS =	misc/shared-mime-info \
 
 LIB_DEPENDS =	archivers/bzip2 \
 		archivers/xz \
-		databases/soprano>=2.7.56 \
+		databases/soprano>=2.8.0 \
 		databases/strigi \
 		devel/pcre \
 		graphics/jasper \
@@ -95,7 +95,7 @@ LIB_DEPENDS =	archivers/bzip2 \
 		x11/polkit-qt4
 
 # we don't have krb5-config
-CONFIGURE_ARGS =	-DGSSAPI_LIBS:STRING="-lgssapi -lkrb5 -lasn1 -lcom_err" \
+CONFIGURE_ARGS =	-DGSSAPI_LIBS:STRING="-lgssapi -lkrb5 -lasn1 -lcom_err -lssl -lcrypto" \
 			-DGSSAPI_INCS:STRING="/usr/include/kerberosV" \
 			-DGSSAPI_FLAVOR:STRING="HEIMDAL" \
 			-DGSSAPI_FOUND:BOOL=TRUE
