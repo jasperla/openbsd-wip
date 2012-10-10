@@ -7,15 +7,15 @@ CATEGORIES =	databases devel textproc sysutils
 HOMEPAGE =	https://projects.kde.org/projects/kdesupport/strigi/
 DISTNAME =	strigi-0.7.7pl1
 
-MASTER_SITES =	http://malcolm.ecentrum.edu/distfiles/ \
+MASTER_SITES =	http://malcolm.ecentrum.hu/distfiles/ \
 		http://spacehopper.org/mirrors/ \
 		http://www.ohvost.ru/dnl/kde/src/
 
 # LGPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =	Yes
+PERMIT_DISTFILES_FTP =		Yes
 
 SHARED_LIBS +=  searchclient       1.2 # .0.5
 SHARED_LIBS +=  streamanalyzer     1.2 # .0.5
