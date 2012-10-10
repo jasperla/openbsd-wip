@@ -39,6 +39,7 @@ share/dbus-1/interfaces/org.freedesktop.Akonadi.Resource.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.Server.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.Tracer.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.TracerNotification.xml
+share/dbus-1/services/
 share/dbus-1/services/org.freedesktop.Akonadi.Control.service
 share/mime/packages/akonadi-mime.xml
 @exec %D/bin/update-mime-database %D/share/mime
