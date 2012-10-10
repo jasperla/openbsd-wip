@@ -11,7 +11,7 @@ SHARED_LIBS +=	sopranoserver             1.0 # 1.0
 
 HOMEPAGE =	http://soprano.sourceforge.net/
 DISTNAME =	soprano-2.8.0
-REVISION =	0
+REVISION =	1
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=soprano/}
 
@@ -28,11 +28,12 @@ RUN_DEPENDS =	devel/desktop-file-utils
 
 LIB_DEPENDS = 	textproc/clucene-old \
 	    	databases/iodbc \
-		textproc/raptor
+		textproc/raptor \
+		textproc/redland
 
 WANTLIB =  c m stdc++
 WANTLIB += lib/qt4/QtCore lib/qt4/QtDBus lib/qt4/QtNetwork lib/qt4/QtXml
-WANTLIB += clucene iodbc raptor2
+WANTLIB += clucene iodbc raptor2 rdf
 
 CONFIGURE_STYLE =	cmake
 

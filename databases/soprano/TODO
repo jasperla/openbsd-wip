@@ -1,3 +1,17 @@
+make configure output
+
+-- Found Redland storage: /usr/local/lib/redland/librdf_storage_virtuoso.so
+-- Cannot load specified object
+-- Redland with broken NEEDED section detected, disabling
+-- Could NOT find Redland  (missing:  _REDLAND_VERSION_OK) 
+
+I have made a dirty patch to disable this test, but it needs to be 
+investigated further
+
+
+-------------------
+
+
 The following tests FAILED:
           8 - redlandpersistentmodeltest (Failed)
          13 - parsertest (Failed)
