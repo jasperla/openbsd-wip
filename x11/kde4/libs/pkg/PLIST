@@ -271,6 +271,7 @@ include/KDE/KCharsets
 include/KDE/KCheckableProxyModel
 include/KDE/KCmdLineArgs
 include/KDE/KCmdLineOptions
+include/KDE/KCodecAction
 include/KDE/KCodecs
 include/KDE/KColor
 include/KDE/KColorButton
@@ -567,6 +568,7 @@ include/KDE/KParts/GenericFactory
 include/KDE/KParts/GenericFactoryBase
 include/KDE/KParts/HistoryProvider
 include/KDE/KParts/HtmlExtension
+include/KDE/KParts/ListingExtension
 include/KDE/KParts/LiveConnectExtension
 include/KDE/KParts/MainWindow
 include/KDE/KParts/OpenUrlEvent
@@ -614,6 +616,7 @@ include/KDE/KPtyProcess
 include/KDE/KPushButton
 include/KDE/KRandom
 include/KDE/KRandomSequence
+include/KDE/KRatingPainter
 include/KDE/KRatingWidget
 include/KDE/KRecentDocument
 include/KDE/KRecentFilesAction
@@ -1493,6 +1496,7 @@ include/kparts/genericfactory.h
 include/kparts/historyprovider.h
 include/kparts/htmlextension.h
 include/kparts/kparts_export.h
+include/kparts/listingextension.h
 include/kparts/mainwindow.h
 include/kparts/part.h
 include/kparts/partmanager.h

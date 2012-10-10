@@ -46,18 +46,17 @@ SHARED_LIBS +=  nepomuk			1.0 # 4.9
 SHARED_LIBS +=  nepomukquery		1.0 # 4.9
 SHARED_LIBS +=  nepomukutils		1.0 # 4.9
 
-
-WANTLIB =  c krb5 ssl m pthread stdc++ util z
-WANTLIB += ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xpm Xrender Xss
-WANTLIB += Xtst
+WANTLIB =  c m pthread stdc++ z
+WANTLIB += Half ICE Iex IlmImf IlmThread Imath
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDeclarative
 WANTLIB += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtOpenGL
 WANTLIB += lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg
-WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml
-WANTLIB += attica soprano sopranoclient streamanalyzer streams
-WANTLIB += Half Iex IlmImf IlmThread Imath asn1 aspell bz2 com_err
-WANTLIB += dbusmenu-qt enchant exslt fam gif gssapi intl jasper jpeg
-WANTLIB += lzma pcre pcreposix png polkit-qt-core-1 qca2>=0.0 xml2 xslt
+WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml SM X11 Xau Xcursor Xdmcp Xext
+WANTLIB += Xfixes Xft Xpm Xrender Xss Xtst asn1 aspell attica
+WANTLIB += bz2 com_err crypto dbusmenu-qt enchant exslt fam
+WANTLIB += gif gssapi intl jasper jpeg krb5 lzma pcre pcreposix
+WANTLIB += png polkit-qt-core-1 qca2 soprano sopranoclient
+WANTLIB += ssl streamanalyzer streams util xml2 xslt
 
 MODULES =	multimedia/phonon
 MODKDE4_USE =	
