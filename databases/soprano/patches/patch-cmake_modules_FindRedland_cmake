@@ -1,8 +1,8 @@
 $OpenBSD$
 Remove Linux-specific linker option.
---- cmake/modules/FindRedland.cmake.orig	Mon Oct  3 23:01:19 2011
-+++ cmake/modules/FindRedland.cmake	Mon Oct  3 23:01:29 2011
-@@ -108,7 +108,6 @@ if(NOT WIN32)
+--- cmake/modules/FindRedland.cmake.orig	Wed Jun 27 02:15:18 2012
++++ cmake/modules/FindRedland.cmake	Tue Oct  9 19:00:27 2012
+@@ -108,15 +108,9 @@ if(NOT WIN32)
      try_run(_TEST_EXITCODE _TEST_COMPILED
        "${CMAKE_CURRENT_BINARY_DIR}"
        "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules/CheckLibraryLoads.c"
@@ -10,3 +10,11 @@ Remove Linux-specific linker option.
        RUN_OUTPUT_VARIABLE _OUTPUT
        ARGS ${_REDLAND_STORAGE_LIBS}
      )
+-    if(NOT "${_TEST_EXITCODE}" EQUAL 0)
+-      set(_REDLAND_VERSION_OK)
+-      message(STATUS "${_OUTPUT}")
+-      message(STATUS "Redland with broken NEEDED section detected, disabling")
+-    endif(NOT "${_TEST_EXITCODE}" EQUAL 0)
+   endif(_REDLAND_STORAGE_LIBS)
+ 
+ endif(NOT WIN32)
