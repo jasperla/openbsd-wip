@@ -1,11 +1,11 @@
 # $OpenBSD: Makefile,v 1.13 2011/07/07 01:06:59 ajacoutot Exp $
 
-SHARED_ONLY =	Yes
 COMMENT =	document indexer
 CATEGORIES =	databases devel textproc sysutils
 
 HOMEPAGE =	https://projects.kde.org/projects/kdesupport/strigi/
 DISTNAME =	strigi-0.7.7pl1
+SHARED_ONLY =	Yes
 
 MASTER_SITES =	http://malcolm.ecentrum.hu/distfiles/ \
 		http://spacehopper.org/mirrors/ \
