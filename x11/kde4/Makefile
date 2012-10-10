@@ -20,6 +20,7 @@
 # akonadi, attica, automoc, cagibi, oxygen-icons, qimageblitz
 # |
 #  - libs
+#   |   -kactivities -> nepomuk-core -> pimlibs -> runtime
 #   |
 #   |- artwork, base-artwork, l10n, wallpapers
 #   |- runtime
@@ -72,6 +73,7 @@
 
 # extra base
      SUBDIR += kactivities		# untested
+     SUBDIR += nepomuk-core		# untested
      SUBDIR += runtime			# test
      SUBDIR += pim-runtime		# OK
      SUBDIR += workspace		# test
