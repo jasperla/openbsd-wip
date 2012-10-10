@@ -27,6 +27,7 @@ OCaml 4.00:
 Sent to lang/ocaml maintainer Anil Madhavapeddy <anil@recoil.org>
 
 databases/ocaml-sqlite3		ready for import.
+devel/camomile			ready for import.
 devel/cil			ready for import.
 devel/coccinelle		ready for import.
 devel/ocaml-calendar		ready for import.
