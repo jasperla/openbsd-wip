@@ -35,8 +35,6 @@ WANTLIB =  c m stdc++
 WANTLIB += lib/qt4/QtCore lib/qt4/QtDBus lib/qt4/QtNetwork lib/qt4/QtXml
 WANTLIB += clucene-core iodbc raptor2 rdf
 
-CONFIGURE_STYLE =	cmake
-
 # No Java, thanks
 CONFIGURE_ARGS =	-DSOPRANO_DISABLE_SESAME2_BACKEND:Bool=Yes \
 			-DSOPRANO_BUILD_TESTS:Bool=Yes
