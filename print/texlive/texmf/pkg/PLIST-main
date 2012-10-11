@@ -108,7 +108,6 @@
 @man man/man1/latex2man.1
 @man man/man1/latexdiff-vc.1
 @man man/man1/latexdiff.1
-@man man/man1/latexmk.1
 @man man/man1/latexrevise.1
 @man man/man1/luatex.1
 @man man/man1/m-tx.1
@@ -31357,11 +31356,6 @@ share/texmf-dist/scripts/pgfplots/matlab2pgfplots.m
 share/texmf-dist/scripts/pgfplots/matlab2pgfplots.sh
 share/texmf-dist/scripts/pgfplots/pgf2pdf.sh
 share/texmf-dist/scripts/pgfplots/pgfplots.py
-share/texmf-dist/scripts/pst-pdf/
-share/texmf-dist/scripts/pst-pdf/ps4pdf
-share/texmf-dist/scripts/pst-pdf/ps4pdf.bat
-share/texmf-dist/scripts/pst-pdf/ps4pdf.bat.noMiKTeX
-share/texmf-dist/scripts/pst-pdf/ps4pdf.bat.w95
 share/texmf-dist/scripts/pst2pdf/
 share/texmf-dist/scripts/pst2pdf/pst2pdf
 share/texmf-dist/scripts/thumbpdf/
@@ -36561,7 +36555,6 @@ share/texmf-dist/tex/plain/cyrplain/cyrtex.cfg
 share/texmf-dist/tex/plain/cyrplain/cyrtex.ini
 share/texmf-dist/tex/plain/cyrplain/cyrtex.tex
 share/texmf-dist/tex/plain/cyrplain/cyrtxinf.ini
-share/texmf-dist/tex/plain/cyrplain/makefmts.bat
 share/texmf-dist/tex/plain/cyrplain/makefmts.sh
 share/texmf-dist/tex/plain/cyrplain/plainenc.tex
 share/texmf-dist/tex/plain/cyrplain/txxdefs.tex
@@ -36594,7 +36587,6 @@ share/texmf-dist/tex/plain/gustlib/plbtx993/plbtxbst.doc
 share/texmf-dist/tex/plain/gustlib/plbtx993/test.mex
 share/texmf-dist/tex/plain/gustlib/plmac218/
 share/texmf-dist/tex/plain/gustlib/plmac218/plidxmac.tex
-share/texmf-dist/tex/plain/gustlib/plmac218/plind.bat
 share/texmf-dist/tex/plain/gustlib/plmac218/przyklad.tex
 share/texmf-dist/tex/plain/gustlib/rbox-ex.tex
 share/texmf-dist/tex/plain/gustlib/roundbox.tex
@@ -36875,18 +36867,6 @@ share/texmf/
 share/texmf/doc/
 share/texmf/doc/man/
 share/texmf/doc/man/man1/
-share/texmf/doc/man/man1/dt2dv.man1.pdf
-share/texmf/doc/man/man1/dv2dt.man1.pdf
-share/texmf/doc/man/man1/dvi2tty.man1.pdf
-share/texmf/doc/man/man1/dvibook.man1.pdf
-share/texmf/doc/man/man1/dviconcat.man1.pdf
-share/texmf/doc/man/man1/dvidvi.man1.pdf
-share/texmf/doc/man/man1/dviselect.man1.pdf
-share/texmf/doc/man/man1/dvitodvi.man1.pdf
-share/texmf/doc/man/man1/mag.man1.pdf
-share/texmf/doc/man/man1/pfb2pfa.man1.pdf
-share/texmf/doc/man/man1/pk2bm.man1.pdf
-share/texmf/doc/man/man1/ps2pk.man1.pdf
 share/texmf/dvipdfm/
 share/texmf/dvipdfm/config/
 share/texmf/dvipdfm/config/config
