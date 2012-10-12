@@ -10,8 +10,13 @@ EXTRACT_SUFX ?=		.tar.xz
 
 CATEGORIES +=		x11/kde4
 MODULES +=		devel/cmake
-CONFIGURE_STYLE ?=	cmake
 SEPARATE_BUILD ?=	flavored
+
+# CONFIGURE_STYLE needs separate handling because it is set to empty
+# string in bsd.port.mk initially.
+.if "${CONFIGURE_STYLE}" == ""
+CONFIGURE_STYLE =	cmake
+.endif
 
 # MODKDE4_RESOURCES: Yes/No
 #   If enabled, disable default Qt and KDE LIB_DEPENDS and RUN_DEPENDS,
