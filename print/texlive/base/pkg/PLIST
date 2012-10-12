@@ -7,11 +7,127 @@
 @pkgpath print/teTeX/base,-fmt
 %%SHARED%%
 %%xindy%%
-bin/a2ping
-bin/afm2afm
 @bin bin/afm2pl
 @bin bin/afm2tfm
 @bin bin/aleph
+@bin bin/bg5conv
+@bin bin/bibtex
+@bin bin/bibtex8
+@bin bin/bibtexu
+@bin bin/cef5conv
+@bin bin/cefconv
+@bin bin/cefsconv
+@bin bin/cfftot1
+@bin bin/chktex
+@bin bin/ctangle
+@bin bin/ctie
+@bin bin/cweave
+@bin bin/devnag
+@bin bin/dt2dv
+@bin bin/dv2dt
+@bin bin/dvibook
+@bin bin/dviconcat
+@bin bin/dvicopy
+@bin bin/dvidvi
+@bin bin/dvilj
+@bin bin/dvilj2p
+@bin bin/dvilj4
+@bin bin/dvilj4l
+@bin bin/dvipdfmx
+@bin bin/dvipng
+@bin bin/dvipos
+@bin bin/dvips
+@bin bin/dviselect
+@bin bin/dvisvgm
+@bin bin/dvitodvi
+@bin bin/dvitype
+@bin bin/eptex
+@bin bin/euptex
+@bin bin/extconv
+@bin bin/gftodvi
+@bin bin/gftopk
+@bin bin/gftype
+@bin bin/gsftopk
+@bin bin/hbf2gf
+@bin bin/kpseaccess
+@bin bin/kpsereadlink
+@bin bin/kpsestat
+@bin bin/kpsewhich
+@bin bin/lacheck
+@bin bin/luatex
+@bin bin/mag
+@bin bin/makeindex
+@bin bin/makejvf
+@bin bin/mendex
+@bin bin/mf
+@bin bin/mf-nowin
+@bin bin/mft
+@bin bin/mmafm
+@bin bin/mmpfb
+@bin bin/mpost
+@bin bin/odvicopy
+@bin bin/odvitype
+@bin bin/omfonts
+@bin bin/otangle
+@bin bin/otfinfo
+@bin bin/otftotfm
+@bin bin/otp2ocp
+@bin bin/outocp
+@bin bin/patgen
+@bin bin/pbibtex
+@bin bin/pdfclose
+@bin bin/pdfopen
+@bin bin/pdftex
+@bin bin/pdftosrc
+@bin bin/pdvitype
+@bin bin/pfb2pfa
+@bin bin/pk2bm
+@bin bin/pktogf
+@bin bin/pktype
+@bin bin/pltotf
+@bin bin/pmxab
+@bin bin/pooltype
+@bin bin/ppltotf
+@bin bin/prepmx
+@bin bin/ps2pk
+@bin bin/ptex
+@bin bin/ptftopl
+@bin bin/scor2prt
+@bin bin/sjisconv
+@bin bin/synctex
+@bin bin/t1dotlessj
+@bin bin/t1lint
+@bin bin/t1rawafm
+@bin bin/t1reencode
+@bin bin/t1testpage
+@bin bin/t4ht
+@bin bin/tangle
+@bin bin/teckit_compile
+@bin bin/tex
+@bin bin/tex4ht
+@bin bin/tftopl
+@bin bin/tie
+@bin bin/ttf2afm
+@bin bin/ttf2pk
+@bin bin/ttf2tfm
+@bin bin/ttfdump
+@bin bin/ttftotype42
+@bin bin/upbibtex
+@bin bin/updvitype
+@bin bin/uppltotf
+@bin bin/uptex
+@bin bin/uptftopl
+@bin bin/vftovp
+@bin bin/vlna
+@bin bin/vptovf
+@bin bin/weave
+@bin bin/wovp2ovf
+@bin bin/xdvi-xaw
+@bin bin/xdvipdfmx
+@bin bin/xetex
+@comment bin/tlmgr
+bin/a2ping
+bin/afm2afm
 bin/allcm
 bin/allec
 bin/allneeded
@@ -21,71 +137,40 @@ bin/authorindex
 bin/autoinst
 bin/bg5+latex
 bin/bg5+pdflatex
-@bin bin/bg5conv
 bin/bg5latex
 bin/bg5pdflatex
 bin/bibexport
-@bin bin/bibtex
-@bin bin/bibtex8
-@bin bin/bibtexu
 bin/bundledoc
 bin/cachepic
-@bin bin/cef5conv
 bin/cef5latex
 bin/cef5pdflatex
-@bin bin/cefconv
 bin/ceflatex
 bin/cefpdflatex
-@bin bin/cefsconv
 bin/cefslatex
 bin/cefspdflatex
-@bin bin/cfftot1
 bin/checkcites
-@bin bin/chktex
 bin/chkweb
 bin/context
 bin/convbkmk
 bin/cslatex
 bin/csplain
-@bin bin/ctangle
 bin/ctanify
 bin/ctanupload
-@bin bin/ctie
 bin/ctxtools
-@bin bin/cweave
 bin/de-macro
-@bin bin/devnag
 bin/deweb
 bin/dosepsbin
-@bin bin/dt2dv
-@bin bin/dv2dt
 bin/dvi2fax
 bin/dviasm
-@bin bin/dvibook
-@bin bin/dviconcat
-@bin bin/dvicopy
-@bin bin/dvidvi
 bin/dvigif
 bin/dvihp
-@bin bin/dvilj
-@bin bin/dvilj2p
-@bin bin/dvilj4
-@bin bin/dvilj4l
 bin/dvilj6
 bin/dvilualatex
 bin/dviluatex
 bin/dvipdfm
-@bin bin/dvipdfmx
 bin/dvipdft
-@bin bin/dvipng
-@bin bin/dvipos
-@bin bin/dvips
 bin/dvired
-@bin bin/dviselect
-@bin bin/dvisvgm
-@bin bin/dvitodvi
 bin/dvitomp
-@bin bin/dvitype
 bin/e2pall
 bin/ebb
 bin/ebong
@@ -93,11 +178,8 @@ bin/eplain
 bin/epspdf
 bin/epspdftk
 bin/epstopdf
-@bin bin/eptex
 bin/etex
-@bin bin/euptex
 bin/exceltex
-@bin bin/extconv
 bin/extractbb
 bin/fig4latex
 bin/findhyph
@@ -107,11 +189,6 @@ bin/fontinst
 bin/fragmaster
 bin/gbklatex
 bin/gbkpdflatex
-@bin bin/gftodvi
-@bin bin/gftopk
-@bin bin/gftype
-@bin bin/gsftopk
-@bin bin/hbf2gf
 bin/ht
 bin/htcontext
 bin/htlatex
@@ -124,42 +201,28 @@ bin/inimf
 bin/initex
 bin/installfont-tl
 bin/jadetex
-@bin bin/kpseaccess
 bin/kpsepath
-@bin bin/kpsereadlink
-@bin bin/kpsestat
 bin/kpsetool
 bin/kpsewhere
-@bin bin/kpsewhich
 bin/kpsexpand
-@bin bin/lacheck
 bin/lamed
 bin/latex
 bin/latex2man
 bin/latexdiff
 bin/latexdiff-vc
 bin/latexfileversion
-@comment bin/latexmk
 bin/latexrevise
 bin/listbib
 bin/listings-ext.sh
 bin/lualatex
-@bin bin/luatex
 bin/luatools
 bin/m-tx
-@bin bin/mag
 bin/makeglossaries
-@bin bin/makeindex
-@bin bin/makejvf
 bin/match_parens
 bin/mathspic
-@bin bin/mendex
 bin/mex
-@bin bin/mf
-@bin bin/mf-nowin
 bin/mf2pt1
 bin/mfplain
-@bin bin/mft
 bin/mk4ht
 bin/mkgrkindex
 bin/mkindex
@@ -175,35 +238,21 @@ bin/mktexpk
 bin/mktextfm
 bin/mllatex
 bin/mltex
-@bin bin/mmafm
-@bin bin/mmpfb
-@bin bin/mpost
 bin/mptopdf
 bin/mtxrun
 bin/musixflx
 bin/musixtex
-@bin bin/odvicopy
-@bin bin/odvitype
 bin/ofm2opl
-@bin bin/omfonts
 bin/opl2ofm
 bin/ot2kpx
-@bin bin/otangle
-@bin bin/otfinfo
-@bin bin/otftotfm
-@bin bin/otp2ocp
-@bin bin/outocp
 bin/ovf2ovp
 bin/ovp2ovf
-@bin bin/patgen
-@bin bin/pbibtex
 bin/pdf${MODRUBY_BINREV}0
 bin/pdf270
 bin/pdf90
 bin/pdfannotextractor
 bin/pdfatfi
 bin/pdfbook
-@bin bin/pdfclose
 bin/pdfcrop
 bin/pdfcslatex
 bin/pdfcsplain
@@ -218,62 +267,33 @@ bin/pdfjoin
 bin/pdflatex
 bin/pdfmex
 bin/pdfnup
-@bin bin/pdfopen
 bin/pdfpun
-@bin bin/pdftex
-@bin bin/pdftosrc
 bin/pdfxmltex
-@bin bin/pdvitype
 bin/pedigree
 bin/perltex
-@bin bin/pfb2pfa
 bin/physe
 bin/phyzzx
-@bin bin/pk2bm
 bin/pkfix
 bin/pkfix-helper
-@bin bin/pktogf
-@bin bin/pktype
 bin/platex
-@bin bin/pltotf
 bin/pmx2pdf
-@bin bin/pmxab
-@bin bin/pooltype
-@bin bin/ppltotf
-@bin bin/prepmx
 bin/ps2frag
-@bin bin/ps2pk
 bin/ps4pdf
 bin/pslatex
 bin/pst2pdf
 bin/pstopdf
-@bin bin/ptex
-@bin bin/ptftopl
 bin/purifyeps
 bin/repstopdf
 bin/rpdfcrop
 bin/rubibtex
 bin/rumakeindex
 bin/rungs
-@bin bin/scor2prt
 bin/simpdftex
-@bin bin/sjisconv
 bin/sjislatex
 bin/sjispdflatex
 bin/splitindex
 bin/sty2dtx
 bin/svn-multi
-@bin bin/synctex
-@bin bin/t1dotlessj
-@bin bin/t1lint
-@bin bin/t1rawafm
-@bin bin/t1reencode
-@bin bin/t1testpage
-@bin bin/t4ht
-@bin bin/tangle
-@bin bin/teckit_compile
-@bin bin/tex
-@bin bin/tex4ht
 bin/texconfig
 bin/texconfig-dialog
 bin/texconfig-sys
@@ -292,41 +312,20 @@ bin/texlua
 bin/texluac
 bin/texmfstart
 bin/texsis
-@bin bin/tftopl
 bin/thumbpdf
-@bin bin/tie
-@comment bin/tlmgr
 bin/tpic2pdftex
-@bin bin/ttf2afm
-@bin bin/ttf2pk
-@bin bin/ttf2tfm
-@bin bin/ttfdump
-@bin bin/ttftotype42
 bin/typeoutfileinfo
 bin/ulqda
-@bin bin/upbibtex
 bin/updmap
 bin/updmap-setup-kanji
 bin/updmap-sys
-@bin bin/updvitype
-@bin bin/uppltotf
-@bin bin/uptex
-@bin bin/uptftopl
 bin/urlbst
 bin/utf8mex
-@bin bin/vftovp
-@bin bin/vlna
 bin/vpe
 bin/vpl2ovp
 bin/vpl2vpl
-@bin bin/vptovf
-@bin bin/weave
-@bin bin/wovp2ovf
 bin/xdvi
-@bin bin/xdvi-xaw
-@bin bin/xdvipdfmx
 bin/xelatex
-@bin bin/xetex
 bin/xmltex
 include/kpathsea/
 include/kpathsea/absolute.h
@@ -377,186 +376,17 @@ include/kpathsea/win32lib.h
 include/ptexenc/
 include/ptexenc/ptexenc.h
 include/ptexenc/unicode.h
-@info info/dvipng.info
-@info info/dvips.info
-@info info/kpathsea.info
-@info info/web2c.info
 lib/libkpathsea.a
 lib/libkpathsea.la
 lib/libptexenc.a
 lib/libptexenc.la
-libdata/perl5/site_perl/TeXLive/TLUtils.pm
 libdata/perl5/site_perl/TeXLive/TLConfig.pm
+libdata/perl5/site_perl/TeXLive/TLUtils.pm
+share/doc/pkg-readmes/${FULLPKGNAME}
 @exec mktexlsr > /dev/null 2>&1
 @unexec-delete rm %D/share/texmf/ls-R
 @unexec-delete rm %D/share/texmf-dist/ls-R
 @unexec-delete rm %D/share/texmf-var/ls-R
-@man man/man1/afm2pl.1
-@man man/man1/afm2tfm.1
-@man man/man1/aleph.1
-@man man/man1/allcm.1
-@man man/man1/allec.1
-@man man/man1/allneeded.1
-@man man/man1/amstex.1
-@man man/man1/bg5conv.1
-@man man/man1/bibtex.1
-@man man/man1/cef5conv.1
-@man man/man1/cefconv.1
-@man man/man1/cefsconv.1
-@man man/man1/cfftot1.1
-@man man/man1/chktex.1
-@man man/man1/chkweb.1
-@man man/man1/context.1
-@man man/man1/ctangle.1
-@man man/man1/ctie.1
-@man man/man1/ctxtools.1
-@man man/man1/cweave.1
-@man man/man1/cweb.1
-@man man/man1/deweb.1
-@comment @man man/man1/dt2dv.1
-@comment @man man/man1/dv2dt.1
-@man man/man1/dvi2fax.1
-@comment @man man/man1/dvibook.1
-@comment @man man/man1/dviconcat.1
-@man man/man1/dvicopy.1
-@comment @man man/man1/dvidvi.1
-@man man/man1/dvigif.1
-@man man/man1/dvihp.1
-@man man/man1/dvilj.1
-@man man/man1/dvilj2p.1
-@man man/man1/dvilj4.1
-@man man/man1/dvilj4l.1
-@man man/man1/dvilj6.1
-@man man/man1/dvipdfm.1
-@man man/man1/dvipdft.1
-@man man/man1/dvipng.1
-@man man/man1/dvipos.1
-@man man/man1/dvips.1
-@man man/man1/dvired.1
-@comment @man man/man1/dviselect.1
-@man man/man1/dvisvgm.1
-@comment @man man/man1/dvitodvi.1
-@man man/man1/dvitomp.1
-@man man/man1/dvitype.1
-@man man/man1/e2pall.1
-@man man/man1/ebb.1
-@man man/man1/eplain.1
-@man man/man1/extconv.1
-@man man/man1/extractbb.1
-@man man/man1/fmtutil-sys.1
-@man man/man1/fmtutil.1
-@man man/man1/fontinst.1
-@man man/man1/gftodvi.1
-@man man/man1/gftopk.1
-@man man/man1/gftype.1
-@man man/man1/gsftopk.1
-@man man/man1/hbf2gf.1
-@man man/man1/kpseaccess.1
-@man man/man1/kpsepath.1
-@man man/man1/kpsereadlink.1
-@man man/man1/kpsestat.1
-@man man/man1/kpsetool.1
-@man man/man1/kpsewhere.1
-@man man/man1/kpsewhich.1
-@man man/man1/kpsexpand.1
-@comment @man man/man1/lacheck.1
-@man man/man1/lamed.1
-@man man/man1/latex.1
-@man man/man1/luatex.1
-@man man/man1/m-tx.1
-@comment @man man/man1/mag.1
-@man man/man1/makeindex.1
-@man man/man1/mendex.1
-@man man/man1/mf-nowin.1
-@man man/man1/mf.1
-@man man/man1/mft.1
-@man man/man1/mkindex.1
-@man man/man1/mkocp.1
-@man man/man1/mkofm.1
-@man man/man1/mktexfmt.1
-@man man/man1/mktexlsr.1
-@man man/man1/mktexmf.1
-@man man/man1/mktexpk.1
-@man man/man1/mktextfm.1
-@man man/man1/mmafm.1
-@man man/man1/mmpfb.1
-@man man/man1/mpost.1
-@man man/man1/mptopdf.1
-@man man/man1/odvicopy.1
-@man man/man1/odvitype.1
-@man man/man1/ofm2opl.1
-@man man/man1/opl2ofm.1
-@man man/man1/otangle.1
-@man man/man1/otfinfo.1
-@man man/man1/otftotfm.1
-@man man/man1/otp2ocp.1
-@man man/man1/outocp.1
-@man man/man1/ovf2ovp.1
-@man man/man1/ovp2ovf.1
-@man man/man1/patgen.1
-@man man/man1/pdfclose.1
-@man man/man1/pdfetex.1
-@man man/man1/pdflatex.1
-@man man/man1/pdfopen.1
-@man man/man1/pdftex.1
-@man man/man1/pdftosrc.1
-@comment @man man/man1/pfb2pfa.1
-@comment @man man/man1/pk2bm.1
-@man man/man1/pktogf.1
-@man man/man1/pktype.1
-@man man/man1/pltotf.1
-@man man/man1/pmx2pdf.1
-@man man/man1/pmxab.1
-@man man/man1/pooltype.1
-@man man/man1/prepmx.1
-@man man/man1/ps2frag.1
-@comment @man man/man1/ps2pk.1
-@man man/man1/pslatex.1
-@man man/man1/pstopdf.1
-@man man/man1/rubibtex.1
-@man man/man1/rumakeindex.1
-@man man/man1/scor2prt.1
-@man man/man1/sjisconv.1
-@man man/man1/synctex.1
-@man man/man1/t1dotlessj.1
-@man man/man1/t1lint.1
-@man man/man1/t1rawafm.1
-@man man/man1/t1reencode.1
-@man man/man1/t1testpage.1
-@man man/man1/tangle.1
-@man man/man1/tex.1
-@man man/man1/tex2xindy.1
-@man man/man1/texconfig-sys.1
-@man man/man1/texconfig.1
-@man man/man1/texdoctk.1
-@man man/man1/texexec.1
-@man man/man1/texhash.1
-@man man/man1/texindy.1
-@man man/man1/texlinks.1
-@man man/man1/texlua.1
-@man man/man1/texluac.1
-@man man/man1/texmfstart.1
-@man man/man1/tftopl.1
-@man man/man1/thumbpdf.1
-@man man/man1/tie.1
-@man man/man1/tpic2pdftex.1
-@man man/man1/ttf2afm.1
-@man man/man1/ttf2pk.1
-@man man/man1/ttf2tfm.1
-@man man/man1/ttfdump.1
-@man man/man1/ttftotype42.1
-@man man/man1/updmap-sys.1
-@man man/man1/updmap.1
-@man man/man1/vftovp.1
-@man man/man1/vlna.1
-@man man/man1/vptovf.1
-@man man/man1/weave.1
-@man man/man1/xdvi.1
-@man man/man1/xindy.1
-@man man/man5/fmtutil.cnf.5
-@man man/man5/synctex.5
-@man man/man5/updmap.cfg.5
-share/doc/pkg-readmes/${FULLPKGNAME}
 @exec mktexlsr > /dev/null 2>&1
 @extra share/texmf/ls-R
 @extra share/texmf-dist/ls-R
