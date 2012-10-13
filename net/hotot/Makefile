@@ -3,6 +3,7 @@
 COMMENT =	lightweight client for twitter and identi.ca
 
 V =		0.9.8.7
+REVISION =	0
 DISTNAME =	hotot-$V
 DISTFILES =	${V}
 CATEGORIES =	net
@@ -24,7 +25,7 @@ MASTER_SITES =	https://github.com/shellex/Hotot/tarball/ \
 
 WRKDIST=	${WRKDIR}/shellex-Hotot-44272ff
 
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+MODPY_VERSION =	2.7
 CONFIGURE_ARGS =-DWITH_GIR=on -DWITH_GTK=on -DWITH_QT=off -DWITH_KDE=off \
 		-DWITH_CHROME=off -DCMAKE_INSTALL_PREFIX=${PREFIX} \
 		-DPYTHON_EXECUTABLE=${MODPY_BIN}
