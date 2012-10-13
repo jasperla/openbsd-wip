@@ -21,6 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c curses m pthread
 
 MODULES =		lang/ocaml
+RUN_DEPENDS =		lang/ocaml
 BUILD_DEPENDS=		sysutils/findlib
 
 CONFIGURE_STYLE =	autoconf no-autoheader

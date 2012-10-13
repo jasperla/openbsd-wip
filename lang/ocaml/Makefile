@@ -9,6 +9,8 @@ BROKEN-powerpc=	'struct sigcontext' has no member named 'regs'
 
 COMMENT=	ML language based on complete class-based objective system
 
+PKGSPEC=	ocaml-=4.00.1
+
 BASENAME=	ocaml-4.00
 DISTNAME=	${BASENAME}.1
 CATEGORIES=	lang
