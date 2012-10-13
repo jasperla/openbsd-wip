@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += c m util
 
-#MASTER_SITES =		http://www2.research.att.com/~gsf/download/tgz/
+MASTER_SITES =		http://distfiles.bsdfrog.org/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} INIT.${V}${EXTRACT_SUFX}
 EXTRACT_SUFX =		.tgz
 DIST_SUBDIR =		ksh93
