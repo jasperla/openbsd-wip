@@ -1,11 +1,13 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, quake-style terminal emulator
+HOMEPAGE =	http://yakuake.kde.org/
 VERSION =	2.9.8
 DISTNAME =	yakuake-${VERSION}
-EXTRACT_SUFX =	.tar.bz2
+REVISION =	0
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/yakuake/${VERSION}/src/}
+EXTRACT_SUFX =	.tar.bz2
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += X11

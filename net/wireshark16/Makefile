@@ -3,7 +3,7 @@
 COMMENT-main=	graphical network protocol analyzer
 COMMENT-text=	network protocol analyzer
 
-WVER=		1.6.8
+WVER=		1.6.11
 DISTNAME=	wireshark-${WVER}
 PKGNAME-main=	wireshark16-${WVER}
 PKGNAME-text=	tshark16-${WVER}
@@ -14,6 +14,7 @@ SHARED_LIBS +=  wiretap              0.0      # 1.0
 SHARED_LIBS +=  wireshark            0.0      # 1.0
 
 CATEGORIES=	net security x11
+DPB_PROPERTIES=	Parallel
 
 HOMEPAGE=	http://www.wireshark.org/
 
@@ -34,12 +35,15 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c glib-2.0 m pcap pthread z
 
-WANTLIB-text += ${WANTLIB} GeoIP cares gcrypt gmodule-2.0 gnutls
-WANTLIB-text += gpg-error krb5 lua smi
+WANTLIB-text += ${WANTLIB} ${MODLUA_WANTLIB} GeoIP cares gcrypt gmodule-2.0
+WANTLIB-text += gpg-error krb5 smi
 
 WANTLIB-main += ${WANTLIB} wireshark wiretap wsutil
 WANTLIB-main += gdk-x11-2.0 gdk_pixbuf-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB-main += gthread-2.0 pango-1.0 portaudio
+
+MODULES=	lang/lua
+MODLUA_SA=	Yes
 
 MULTI_PACKAGES= -text -main
 
@@ -50,23 +54,24 @@ SUBST_VARS=	WVER
 LIB_DEPENDS=
 
 LIB_DEPENDS-text= ${LIB_DEPENDS} \
+		${MODLUA_LIB_DEPENDS} \
 		devel/glib2 \
-		lang/lua \
 		net/libcares \
 		net/libsmi \
 		net/GeoIP  \
-		security/libgcrypt \
-		security/gnutls
+		security/libgcrypt
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
-		tshark16-${WVER}:${PKGPATH},${FLAVOR},-text \
+		tshark16-${WVER}:${BUILD_PKGPATH:S/,$//},-text \
 		audio/portaudio-svn \
 		x11/gtk+2 \
 
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+= --tag=disable-static
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE= gnu
+SEPARATE_BUILD=	Yes
+CFLAGS+=	-I${LOCALBASE}/include/lua-5.1
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-dumpcap-group=_wireshark \
@@ -74,7 +79,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-ssl
 
 .if !${FLAVOR:L:Mno_python}
-MODULES =		lang/python
+MODULES +=		lang/python
 WANTLIB-text +=		${MODPY_WANTLIB}
 LIB_DEPENDS-text +=	${MODPY_LIB_DEPENDS}
 CONFIGURE_ARGS +=	--with-python
@@ -82,7 +87,8 @@ CONFIGURE_ARGS +=	--with-python
 
 .if ${FLAVOR:L:Mgtk3}
 BROKEN =	Yes
-CONFIGURE_ARGS +=	--with-gtk3=yes
+CONFIGURE_ARGS +=	--with-gtk3=yes \
+			CPPFLAGS="-DGDK_VERSION_MIN_REQUIRED=GDK_VERSION_3_0"
 WANTLIB-main +=		gtk-3
 LIB_DEPENDS-main +=		x11/gtk+3
 .endif

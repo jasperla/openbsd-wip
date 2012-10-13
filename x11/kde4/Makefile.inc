@@ -24,6 +24,8 @@ PERMIT_PACKAGE_FTP ?=		Yes
 # module port, and breaks build.
 CONFIGURE_STYLE =	cmake
 
+RUN_DEPENDS +=		x11/gtk+2,-guic
+
 WRONG_SYSCONF_FILES ?=
 
 kde4-post-install:

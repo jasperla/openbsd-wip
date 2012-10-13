@@ -1,7 +1,7 @@
 # $OpenBSD: Makefile,v 1.6 2011/09/16 11:41:41 espie Exp $
 
 COMMENT=		RDF Parser Toolkit for Redland
-DISTNAME=		raptor2-2.0.7
+DISTNAME=		raptor2-2.0.8
 PKGNAME=		${DISTNAME:C/raptor2/raptor/}
 CATEGORIES=		textproc
 
@@ -29,7 +29,7 @@ LIB_DEPENDS=		net/curl \
 			textproc/libxslt
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--with-xml-parser=libxml \
+CONFIGURE_ARGS=		--enable-parsers=all \
 			--with-www=curl
 
 .include <bsd.port.mk>

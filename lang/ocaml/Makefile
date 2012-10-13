@@ -5,11 +5,14 @@
 
 NOT_FOR_ARCHS=	hppa
 
+BROKEN-powerpc=	'struct sigcontext' has no member named 'regs'
+
 COMMENT=	ML language based on complete class-based objective system
 
+PKGSPEC=	ocaml-=4.00.1
+
 BASENAME=	ocaml-4.00
-DISTNAME=	${BASENAME}.0
-REVISION=       1
+DISTNAME=	${BASENAME}.1
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/pub/distrib/${BASENAME}/
 DOCFILES=	${BASENAME}-refman-html.tar.gz
@@ -80,7 +83,9 @@ post-install:
 	@${INSTALL_DATA} ${WRKDIR}/htmlman/libref/* \
 		${PREFIX}/share/doc/ocaml/html/libref
 	@strip ${PREFIX}/bin/ocamlrun ${PREFIX}/bin/ocamlyacc
-	@${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/ocaml
+	@${INSTALL_DATA} \
+		${WRKSRC}/{LICENSE,Changes} \
+		${PREFIX}/share/doc/ocaml
 
 # PFRAG.native was generated from PLIST with:
 # egrep '(ocamlopt|\.cmx|\.cmxa|\.cmxs|\.opt|opt\.1|opt.cmi|\.native|\.o)$'

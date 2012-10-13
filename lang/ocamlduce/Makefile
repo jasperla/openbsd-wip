@@ -20,6 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 MODULES=	lang/ocaml
 WANTLIB=	curses m c pthread
 
+RUN_DEPENDS =	lang/ocaml
 BUILD_DEPENDS+=	sysutils/findlib
 
 NO_REGRESS= 	Yes

@@ -3,13 +3,11 @@
 COMMENT =		light RDF manipulation with LADSPA plugin support
 DISTNAME =		swh-LRDF-7ebc032
 PKGNAME =		liblrdf-0.5.0
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS =		lrdf	1.0	# 0.0
 
 CATEGORIES =		textproc
-
-MAINTAINER =		Jacob Meuser <jakemsr@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -33,6 +31,8 @@ AUTOMAKE_VERSION =	1.11
 CONFIGURE_STYLE =	autoconf automake gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+REGRESS_DEPENDS =	audio/swh-plugins
 
 post-patch:
 	@cd ${WRKBUILD} && env AUTOCONF_VERSION=2.68 AUTOMAKE_VERSION=1.11 ./autogen.sh

@@ -1,4 +1,1 @@
-* bump version to 2.0.2
-* use OASIS build system
-* remove obsolete patches
-* enable regression tests
+* enable sqlite3_sleep and sqlite3_clear_bindings

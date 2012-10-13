@@ -4,8 +4,6 @@ COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	http://www.calligra-suite.org/
 VERSION =	2.4.3
 DISTNAME =	calligra-${VERSION}
-PKGNAME =	${DISTNAME:C/-/4-/1}
-REVISION =	1
 
 EXTRACT_SUFX =	.tar.bz2
 

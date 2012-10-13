@@ -2,7 +2,10 @@
 
 COMMENT =		put videos on the Sansa Fuze
 
-DISTNAME =		video4fuze-0.6
+V =			0.6
+DISTNAME =		video4fuze-$V
+
+SUBST_VARS +=		V
 
 CATEGORIES =		multimedia
 

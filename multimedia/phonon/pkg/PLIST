@@ -1,5 +1,4 @@
 @comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/18 12:53:38 espie Exp $
-%%SHARED%%
 include/KDE/
 include/KDE/Phonon/
 include/KDE/Phonon/AbstractAudioOutput
@@ -163,22 +162,17 @@ include/phonon/videowidgetinterface.h
 include/phonon/volumefadereffect.h
 include/phonon/volumefaderinterface.h
 include/phonon/volumeslider.h
-lib/cmake/
 lib/cmake/phonon/
 lib/cmake/phonon/PhononConfig.cmake
 lib/cmake/phonon/PhononConfigVersion.cmake
-lib/cmake/phonon/PhononTargets-release.cmake
+lib/cmake/phonon/PhononTargets${MODKDE4_CMAKE_PREFIX}.cmake
 lib/cmake/phonon/PhononTargets.cmake
-lib/pkgconfig/
+@lib lib/libphonon.so.${LIBphonon_VERSION}
+@lib lib/libphononexperimental.so.${LIBphononexperimental_VERSION}
 lib/pkgconfig/phonon.pc
-lib/qt4/
-lib/qt4/mkspecs/
-lib/qt4/mkspecs/modules/
 lib/qt4/mkspecs/modules/qt_phonon.pri
-lib/qt4/plugins/
-lib/qt4/plugins/designer/
-share/dbus-1/
-share/dbus-1/interfaces/
+@comment conflicts with native Qt's plugin
+@comment lib/qt4/plugins/designer/libphononwidgets.so
 share/dbus-1/interfaces/org.kde.Phonon.AudioOutput.xml
 share/phonon/
 share/phonon/buildsystem/

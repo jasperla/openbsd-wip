@@ -1,5 +1,0 @@
-@comment $OpenBSD: $
-lib/ocaml/netstring-pcre/netstring-pcre.a
-lib/ocaml/netstring-pcre/netstring-pcre.cmxa
-lib/ocaml/netstring-pcre/netstring-pcre.p.a
-lib/ocaml/netstring-pcre/netstring-pcre.p.cmxa
