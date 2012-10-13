@@ -1,9 +1,0 @@
-@comment $OpenBSD$
-bin/niceload
-bin/parallel
-bin/sem
-bin/sql
-@man man/man1/niceload.1
-@man man/man1/parallel.1
-@man man/man1/sem.1
-@man man/man1/sql.1
