@@ -38,9 +38,12 @@ BUILD_DEPENDS +=	${MODOCAML_BUILD_DEPENDS} \
 
 LIB_DEPENDS =		devel/gmp \
 			devel/glpk
+
 LIB_DEPENDS-ocaml =	devel/ocaml-mlgmp \
 			devel/glpk \
 			math/ppl,-main
+RUN_DEPENDS-ocaml =	lang/ocaml
+
 LIB_DEPENDS-java =	math/ppl,-main
 			
 RUN_DEPENDS-java =	${MODJAVA_RUN_DEPENDS}
