@@ -31,40 +31,31 @@ MAKE_ENV =		CC="${CC}" CCFLAGS="${CFLAGS}" SHELL=/bin/sh \
 USE_GROFF =		Yes
 
 WRKDIST =		${WRKDIR}
+AST_ARCH =		${WRKSRC}/arch/openbsd.${MACHINE_ARCH}
+AST_INC =		${AST_ARCH}/include/ast
 
 do-build:
 	cd ${WRKSRC} && env -i ${MAKE_ENV} /bin/sh bin/package make
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/arch/openbsd.${MACHINE_ARCH}/bin/ksh \
-		${PREFIX}/bin/ksh93
+	${INSTALL_PROGRAM} ${AST_ARCH}/bin/ksh ${PREFIX}/bin/ksh93
 	cd ${PREFIX}/bin && ln ksh93 rksh93
-	${INSTALL_DATA} \
-	${WRKSRC}/arch/openbsd.${MACHINE_ARCH}/lib/lib{ast,cmd,shell}.a \
-		${PREFIX}/lib
+	${INSTALL_DATA} ${AST_ARCH}/lib/lib{ast,cmd,shell}.a ${PREFIX}/lib
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ksh93		
-	${INSTALL_DATA} ${WRKSRC}/arch/openbsd.${MACHINE_ARCH}/fun/* \
-		${PREFIX}/share/examples/ksh93
-	${INSTALL_MAN} ${WRKSRC}/arch/openbsd.${MACHINE_ARCH}/man/man1/sh.1 \
-		${PREFIX}/man/man1/ksh93.1
+	${INSTALL_DATA} ${AST_ARCH}/fun/* ${PREFIX}/share/examples/ksh93
+	${INSTALL_MAN} ${AST_ARCH}/man/man1/sh.1 ${PREFIX}/man/man1/ksh93.1
 	cd ${PREFIX}/man/man1 && ln ksh93.1 rksh93.1
-	${INSTALL_MAN} ${WRKSRC}/arch/openbsd.${MACHINE_ARCH}/man/man3/shell.3 \
-		${PREFIX}/man/man3
+	${INSTALL_MAN} ${AST_ARCH}/man/man3/shell.3 ${PREFIX}/man/man3
 	${INSTALL_DATA_DIR} ${PREFIX}/include/ast
-	${INSTALL_DATA} \
-		${WRKSRC}/arch/openbsd.${MACHINE_ARCH}/include/ast/ast* \
+	${INSTALL_DATA} ${AST_INC}/ast* ${PREFIX}/include/ast
+	${INSTALL_DATA} ${AST_INC}/{sfio,sfio_s,shell,cdt,nval,option}.h \
 		${PREFIX}/include/ast
-	${INSTALL_DATA} \
-		${WRKSRC}/arch/openbsd.${MACHINE_ARCH}/include/ast/{sfio,sfio_s,shell,cdt,nval,option}.h \
-		${PREFIX}/include/ast
-	${INSTALL_DATA} \
-	${WRKSRC}/arch/openbsd.${MACHINE_ARCH}/include/ast/prototyped.h \
-		${PREFIX}/include/ast
+	${INSTALL_DATA} ${AST_INC}/prototyped.h ${PREFIX}/include/ast
 	
 do-regress:
 	cd ${WRKSRC}/src/cmd/ksh93/tests && env -i \
-		SHELL=${WRKSRC}/arch/openbsd.${MACHINE_ARCH}/bin/ksh \
+		SHELL=${AST_ARCH}/bin/ksh \
 		TMPDIR=${WRKDIR} \
-		${WRKSRC}/arch/openbsd.${MACHINE_ARCH}/bin/ksh shtests
+		${AST_ARCH}/bin/ksh shtests
 
 .include <bsd.port.mk>
