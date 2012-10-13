@@ -15,10 +15,8 @@ games/violetland:	Ready for import. Sent to ports@ 05.07.2011 and 09.09.2011 (ya
 audio/liblastfm:	sent to ports@ Sep 06 2011. Ready for import. (grayed)
 audio/clementine:	sent to ports@ Sep 06 2011. Ready for import. (grayed)
 cad/tkgate:		Ready for import. Sent to ports@ 2008-01-13 and still works (yason)
-games/nexuiz			sent to ports@ Dec 10 2011 (pstumpf)
+games/nexuiz		sent to ports@ Dec 10 2011 (pstumpf)
 sysutils/conky		Ready for import. Sent to maintainer 2012-07-24, similar update sent to ports@ 2012-05-06
-audio/mpd		Ready for import. Sent to maintainer 2012-08-11
-fonts/roboto-fonts	Ready for import. Sent to ports@ 2012-08-24 (juanfra684).
 
 
 OCaml 4.00:
