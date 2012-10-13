@@ -1,9 +1,9 @@
 @comment $OpenBSD$
-bin/traditional-edit
+@bin bin/traditional-edit
 @bin bin/traditional-ex
-bin/traditional-vedit
-bin/traditional-vi
-bin/traditional-view
+@bin bin/traditional-vedit
+@bin bin/traditional-vi
+@bin bin/traditional-view
 @bin libexec/expreserve
 @bin libexec/exrecover
 @man man/man1/traditional-edit.1

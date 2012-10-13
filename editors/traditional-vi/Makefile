@@ -31,14 +31,17 @@ NO_REGRESS =		Yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ex ${PREFIX}/bin/traditional-ex
 .for _l in edit vedit vi view
-	ln -s traditional-ex ${PREFIX}/bin/traditional-${_l}
+	cd ${PREFIX}/bin && ln traditional-ex ${PREFIX}/bin/traditional-${_l}
 .endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/exrecover ${PREFIX}/libexec
 	${INSTALL_PROGRAM} ${WRKSRC}/expreserve ${PREFIX}/libexec
 	${INSTALL_MAN} ${WRKSRC}/vi.1 ${PREFIX}/man/man1/traditional-vi.1
 	${INSTALL_MAN} ${WRKSRC}/ex.1 ${PREFIX}/man/man1/traditional-ex.1
-	ln -s traditional-ex.1 ${PREFIX}/man/man1/traditional-edit.1
-	ln -s traditional-vi.1 ${PREFIX}/man/man1/traditional-vedit.1
-	ln -s traditional-vi.1 ${PREFIX}/man/man1/traditional-view.1
+	cd ${PREFIX}/man/man1 && ln traditional-ex.1 \
+		${PREFIX}/man/man1/traditional-edit.1
+	cd ${PREFIX}/man/man1 && ln traditional-vi.1 \
+		${PREFIX}/man/man1/traditional-vedit.1
+	cd ${PREFIX}/man/man1 && ln traditional-vi.1 \
+		${PREFIX}/man/man1/traditional-view.1
 
 .include <bsd.port.mk>
