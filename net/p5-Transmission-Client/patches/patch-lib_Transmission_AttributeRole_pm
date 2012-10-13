@@ -1,0 +1,52 @@
+$OpenBSD$
+--- lib/Transmission/AttributeRole.pm.orig	Mon May  7 10:27:30 2012
++++ lib/Transmission/AttributeRole.pm	Sat Oct 13 15:38:14 2012
+@@ -63,31 +63,38 @@ has eager_read => (
+ );
+ 
+ # this method name exists to prove a point - not to be readable...
+-sub _camel2Normal {
++sub _convert {
+     if(ref $_[1] eq 'HASH') {
+         for my $camel (keys %{ $_[1] }) {
+-            my $key = __PACKAGE__->_camel2Normal($camel);
++            my $key = $_[2]->($camel);
+ 
+             if(ref $_[1]->{$camel} eq 'HASH') {
+-                __PACKAGE__->_camel2Normal($_[1]->{$camel});
++                __PACKAGE__->_convert($_[1]->{$camel}, $_[2]);
+             }
+ 
+             $_[1]->{$key} = delete $_[1]->{$camel};
+         }
+     }
+     else {
+-        local $_ = $_[1];
++        return $_[2]->($_[1]);
++    }
++}
++
++sub _camel2Normal {
++    $_[0]->_convert( $_[1], sub {
++        local $_ = $_[0];
+         tr/-/_/;
+         s/([A-Z]+)/{ "_" .lc($1) }/ge;
+         return $_;
+-    }
++    } );
+ }
+-
+ sub _normal2Camel {
+-    local $_ = $_[1];
+-    tr/_/-/;
+-    s/_(\w)/{ uc($1) }/ge; # wild guess...
+-    return $_;
++    $_[0]->_convert( $_[1], sub {
++        local $_ = $_[0];
++        tr/_/-/;
++        s/_(\w)/{ uc($1) }/ge; # wild guess...
++        return $_;
++    } );
+ }
+ 
+ =head1 LICENSE

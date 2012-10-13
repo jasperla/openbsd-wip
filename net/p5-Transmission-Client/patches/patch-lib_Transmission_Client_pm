@@ -1,0 +1,14 @@
+$OpenBSD$
+--- lib/Transmission/Client.pm.orig	Sat Oct 13 14:44:16 2012
++++ lib/Transmission/Client.pm	Sat Oct 13 15:08:07 2012
+@@ -538,6 +538,10 @@ sub rpc {
+ 
+     $method = $self->_normal2Camel($method);
+ 
++    # The keys need to be dashes as well
++    # _normal2Camel modifies a hashref in places
++    $self->_normal2Camel( \%args );
++
+     # make sure ids are numeric
+     if(ref $args{'ids'} eq 'ARRAY') {
+         for my $id (@{ $args{'ids'} }) {
