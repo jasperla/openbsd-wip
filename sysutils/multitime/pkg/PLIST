@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@bin bin/multitime
-@man man/man1/multitime.1
