@@ -1,7 +1,0 @@
-Zeitgeist is a service which logs the users activities and events,
-anywhere from files opened to websites visited and conversations
-had.
-
-It makes this information readily available for other applications
-to use. It is able to establish relationships between items based
-on similarity and usage patterns.

@@ -1,17 +1,17 @@
 # $OpenBSD: Makefile,v 1.20 2010/12/07 14:57:19 dcoppa Exp $
 
 # until tested on others, even though bytecode is produced
-.include <bsd.port.arch.mk>
 ONLY_FOR_ARCHS =	${OCAML_NATIVE_ARCHS}
 
 COMMENT=	framework for analysis and transformation of C
 CATEGORIES =	devel lang
 
 DISTNAME =	cil-1.5.1
+REVISION =      1
 EXTRACT_SUFX =	.tar.gz
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=cil/}
 
-HOMEPAGE=	http://www.eecs.berkeley.edu/~necula/cil/
+HOMEPAGE=	http://kerneis.github.com/cil/
 
 # BSD license
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,6 +21,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c curses m pthread
 
 MODULES =		lang/ocaml
+RUN_DEPENDS =		lang/ocaml
+BUILD_DEPENDS=		sysutils/findlib
 
 CONFIGURE_STYLE =	autoconf no-autoheader
 AUTOCONF_VERSION =	2.69

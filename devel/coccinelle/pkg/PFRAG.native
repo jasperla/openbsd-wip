@@ -1,3 +1,0 @@
-@comment $OpenBSD: $
-bin/spatch.opt
-@bin share/coccinelle/spatch.opt

@@ -26,6 +26,7 @@ include/okular/interfaces/
 include/okular/interfaces/configinterface.h
 include/okular/interfaces/guiinterface.h
 include/okular/interfaces/printinterface.h
+include/okular/interfaces/saveinterface.h
 include/okular/interfaces/viewerinterface.h
 lib/cmake/Okular/
 lib/cmake/Okular/OkularConfig.cmake
@@ -110,7 +111,9 @@ share/config.kcfg/okular.kcfg
 share/doc/HTML/en/okular/
 share/doc/HTML/en/okular/annotation-properties.png
 share/doc/HTML/en/okular/annotations.png
+share/doc/HTML/en/okular/bookmark-management.png
 share/doc/HTML/en/okular/common
+share/doc/HTML/en/okular/configure-editor.png
 share/doc/HTML/en/okular/configure.png
 share/doc/HTML/en/okular/embedded-files-bar.png
 share/doc/HTML/en/okular/forms-bar.png
@@ -118,6 +121,7 @@ share/doc/HTML/en/okular/index.cache.bz2
 share/doc/HTML/en/okular/index.docbook
 share/doc/HTML/en/okular/mainwindow.png
 share/doc/HTML/en/okular/presentation.png
+share/doc/HTML/en/okular/rating.png
 share/icons/hicolor/128x128/apps/okular.png
 share/icons/hicolor/16x16/apps/okular.png
 share/icons/hicolor/22x22/apps/okular.png

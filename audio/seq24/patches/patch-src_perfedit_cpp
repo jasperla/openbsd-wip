@@ -1,0 +1,14 @@
+$OpenBSD$
+--- src/perfedit.cpp.orig	Fri Sep 21 14:36:24 2012
++++ src/perfedit.cpp	Fri Sep 21 14:37:09 2012
+@@ -31,6 +31,10 @@
+ #include "undo.xpm"
+ #include "down.xpm"
+ 
++#if defined(__OpenBSD__)
++#define SigC	sigc
++#endif
++
+ using namespace SigC;
+ 
+ perfedit::perfedit( perform *a_perf ) 

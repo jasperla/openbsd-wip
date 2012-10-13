@@ -1,7 +1,7 @@
 $OpenBSD$
---- epan/dissectors/packet-dvbci.c.orig	Fri Apr  6 18:43:16 2012
-+++ epan/dissectors/packet-dvbci.c	Tue May 15 15:19:47 2012
-@@ -49,7 +49,9 @@
+--- epan/dissectors/packet-dvbci.c.orig	Sun Sep 30 19:04:10 2012
++++ epan/dissectors/packet-dvbci.c	Sun Oct  7 00:23:01 2012
+@@ -48,7 +48,9 @@
  #include "packet-ber.h"
  
  #ifdef HAVE_LIBGCRYPT

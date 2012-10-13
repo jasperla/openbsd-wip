@@ -2,9 +2,9 @@ $OpenBSD$
 
 This test appears to use >64MB of stack!?
 
---- src/test.pl.orig	Sat Sep  1 01:31:12 2012
-+++ src/test.pl	Sat Sep  1 01:31:32 2012
-@@ -581,10 +581,10 @@ gmp(shift-1) :-
+--- src/test.pl.orig	Thu Sep 27 19:43:34 2012
++++ src/test.pl	Sat Sep 29 13:30:54 2012
+@@ -582,10 +582,10 @@ gmp(shift-1) :-
  gmp(shift-2) :-
  	A is 1<<55, B is A<<8,
  	B =:= 9223372036854775808.
