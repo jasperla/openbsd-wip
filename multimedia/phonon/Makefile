@@ -4,6 +4,8 @@ COMMENT =	multimedia layer for Qt4/KDE4
 CATEGORIES =	multimedia devel x11/kde4
 VERSION =	4.6.0
 DISTNAME =	phonon-${VERSION}
+HOMEPAGE =	http://phonon.kde.org/
+REVISION =	1
 
 # Higher than one in Qt4 to avoid issues
 SHARED_LIBS +=	phonon			7.0
@@ -21,10 +23,10 @@ PERMIT_PACKAGE_FTP =	Yes
 EXTRACT_SUFX =	.tar.xz
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/phonon/${VERSION}/src/}
 
-MODULES =	devel/cmake \
-		x11/qt4
+MODULES =	x11/kde4
+MODKDE4_USE =
 
-WANTLIB =	m stdc++
+WANTLIB =	m pthread stdc++
 WANTLIB +=	lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
 WANTLIB +=	lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg
 WANTLIB +=	lib/qt4/QtTest lib/qt4/QtXml lib/qt4/QtXmlPatterns
