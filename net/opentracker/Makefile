@@ -22,7 +22,7 @@ FLAVORS+=		compression_gzip compression_gzip_always
 FLAVORS+=		log_networks restrict_stats
 FLAVORS+=		ip_from_proxy fulllog_networks log_numwant
 FLAVORS+=		modest_fullscrapes spot_woodpecker syslogs
-FLAVORS+=		dev_random v6
+FLAVORS+=		fullscrape dev_random v6
 FLAVOR?=
 
 WANTLIB =		c pthread z
