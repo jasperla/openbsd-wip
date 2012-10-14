@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+@bin lib/ocaml/zed/zed.cmxs

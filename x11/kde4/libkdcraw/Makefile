@@ -13,14 +13,10 @@ WANTLIB += jpeg lcms
 
 MODKDE4_USE =	libs
 
-LIB_DEPENDS = 	graphics/lcms \
+LIB_DEPENDS = 	x11/kde4/libkipi \
+		graphics/lcms \
 		graphics/jpeg
 
 CONFIGURE_ARGS =	-DWITH_OpenMP:Bool=FALSE
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/apps/cmake/modules
-	${INSTALL_DATA} ${WRKSRC}/cmake/modules/FindKdcraw.cmake \
-		 ${PREFIX}/share/apps/cmake/modules/
 
 .include <bsd.port.mk>

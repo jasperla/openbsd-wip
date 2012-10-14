@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, admin tools
 DISTNAME =	kdeadmin-${MODKDE_VERSION}
-REVISION =	0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
@@ -21,9 +20,9 @@ RUN_DEPENDS =	print/py-cups \
 		print/system-config-printer \
 		x11/kde4/py-kde
 
-CONFIGURE_ARGS =	-DINSTALL_SYSTEM_CONFIG_PRINTER:Bool=TRUE
+CONFIGURE_ARGS =	-DINSTALL_SYSTEM_CONFIG_PRINTER=TRUE
 
-MAKE_FLAGS =		-DINSTALL_SYSTEM_CONFIG_PRINTER:Bool=TRUE
+MAKE_FLAGS =		-DINSTALL_SYSTEM_CONFIG_PRINTER=TRUE
 
 MODPY_ADJ_FILES =	system-config-printer-kde/pysmb.py \
 			system-config-printer-kde/authconn.py \

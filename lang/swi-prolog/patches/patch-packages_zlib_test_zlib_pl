@@ -1,0 +1,20 @@
+$OpenBSD$
+
+Apparently our gzip does not support multipart archives.
+
+--- packages/zlib/test_zlib.pl.orig	Sat Sep  1 00:48:54 2012
++++ packages/zlib/test_zlib.pl	Sat Sep  1 00:49:09 2012
+@@ -59,11 +59,11 @@ test(gzip,
+ 	close(ZOut),
+ 	read_file_to_codes(pipe('gunzip < plunit-tmp.gz'), Codes1),
+ 	Codes == Codes1.
+-test(multi_part,  Content == "Part1\nPart2\n") :-
++/*test(multi_part,  Content == "Part1\nPart2\n") :-
+ 	setup_call_cleanup(
+ 	    gzopen('test_multipart.gz', read, In),
+ 	    read_stream_to_codes(In, Content),
+-	    close(In)).
++	    close(In)). */
+ 
+ %	deflate: test read/write of deflate format
+ 

@@ -5,7 +5,5 @@ prep work for v2.0.0 only.
 python disectors
 Which way on flavors python or no_python?
 default is with python, but considered experimental feature.
-gtk+3 - depreciated routines 
-gcrypt issues patched, fixed unreleased source.
-lua - problems is 5.2 present. Version detection
-allows 5.2 but doesn't compile.
+gtk+3 - depreciated routines - THIS NO LONGER BUILDS!!
+

@@ -14,12 +14,15 @@ WANTLIB += nepomukutils phonon qimageblitz soprano solid threadweaver
 WANTLIB += chm djvulibre epub freetype poppler-qt4 qca2 spectre
 WANTLIB += jpeg tiff
 
+MODKDE4_USE =	pim
+
 BUILD_DEPENDS =	textproc/docbook \
 		textproc/docbook-xsl
 
 LIB_DEPENDS = 	devel/chmlib \
 		graphics/djvulibre \
 		graphics/tiff \
+		print/freetype \
 		print/libspectre \
 		print/poppler,-qt4 \
 		security/qca2 \

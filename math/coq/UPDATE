@@ -1,4 +1,1 @@
-* bump version to 8.4
-* adapt patches
-* add 4.00 to list of supported versions
-* use new compiler-libs for toploop support.
+* bump version to 8.4beta2

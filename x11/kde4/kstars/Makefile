@@ -10,12 +10,8 @@ WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += kdeui kio knewstuff3
 WANTLIB += cfitsio
 
-LIB_DEPENDS = 	math/cfitsio
-
-BUILD_DEPENDS =	math/eigen2 \
-		x11/xplanet
-
-RUN_DEPENDS =	math/eigen2 \
+LIB_DEPENDS = 	math/cfitsio \
+		math/eigen2 \
 		x11/xplanet
 
 .include <bsd.port.mk>

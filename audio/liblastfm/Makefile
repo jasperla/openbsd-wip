@@ -35,10 +35,8 @@ CONFIGURE_STYLE =	gnu
 
 MODRUBY_RUNDEP =	No
 
-REGRESS_DEPENDS =	${BUILD_PKGPATH}
-
-do-regress:
-	cd ${WRKBUILD}/_bin && ./tests
+# __tests is built as part of 'all', but doesn't really run any tests
+NO_REGRESS =	Yes
 
 pre-configure:
 	perl -pi -e 's,(\b|!)(/usr/bin/)?ruby\b,\1${RUBY},g' ${WRKSRC}/configure

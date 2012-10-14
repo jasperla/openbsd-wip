@@ -3,7 +3,7 @@
 COMMENT-main=	graphical network protocol analyzer
 COMMENT-text=	network protocol analyzer
 
-VER=		1.8.3
+VER=		1.8.2
 WVER=		${VER}
 DISTNAME=	wireshark-${WVER}
 PKGNAME-main=	wireshark-${VER}
@@ -15,7 +15,6 @@ SHARED_LIBS +=  wiretap              0.0      # 1.0
 SHARED_LIBS +=  wireshark            0.0      # 1.0
 
 CATEGORIES=	net security x11
-DPB_PROPERTIES=	parallel
 
 HOMEPAGE=	http://www.wireshark.org/
 
@@ -37,11 +36,11 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += c glib-2.0 m pcap pthread z
 
 WANTLIB-text += ${WANTLIB} ${MODLUA_WANTLIB} GeoIP cares gcrypt gmodule-2.0
-WANTLIB-text += gpg-error krb5 smi
+WANTLIB-text += gnutls gpg-error krb5 smi
 
 WANTLIB-main += ${WANTLIB} wireshark wiretap wsutil
 WANTLIB-main += cairo gdk_pixbuf-2.0 gmodule-2.0 gobject-2.0
-WANTLIB-main += pango-1.0 pangocairo-1.0 portaudio
+WANTLIB-main += pango-1.0 pangocairo-1.0 portaudio stdc++
 
 MODULES=	lang/lua
 MODLUA_SA=	Yes
@@ -61,10 +60,11 @@ LIB_DEPENDS-text= ${LIB_DEPENDS} \
 		net/libcares \
 		net/libsmi \
 		net/GeoIP  \
-		security/libgcrypt
+		security/libgcrypt \
+		security/gnutls
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
-		tshark-${VER}:${BUILD_PKGPATH:S/,$//},-text \
+		tshark-${VER}:${PKGPATH},${FLAVOR},-text \
 		audio/portaudio-svn \
 		devel/pango \
 		graphics/cairo

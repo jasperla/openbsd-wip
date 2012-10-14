@@ -1,13 +1,13 @@
 # $OpenBSD$
 
-COMMENT =	open source communications platform written in C
+COMMENT =	an open source communications platform written in C
 
 SHARED_ONLY =	Yes
 
 DISTNAME =	freeswitch-1.0.6
 CATEGORIES =	telephony
 
-SHARED_LIBS =	freeswitch	0.0
+SHARED_LIBS =	freeswitch	1.0
 
 HOMEPAGE =	http://www.freeswitch.org
 MASTER_SITES=	http://files.freeswitch.org/
@@ -52,12 +52,12 @@ pre-configure:
 
 post-patch:
 
--post-install:
-	${INSTALL_DATA} ${WRKSRC}/{BUGS,CHANGES,COPYING,CREDITS} \
-		${WRKSRC}/{ChangeLog,LICENSE,README*,UPGRADE*.txt} \
-	${INSTALL_DATA} `find ${WRKSRC}/doc -type f` \
-		${PREFIX}/share/doc/asterisk
-	${INSTALL_DATA_DIR} ${EXAMPLEDIR}/openbsd
-	@chown -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLEDIR}
+post-install:
+	#${INSTALL_DATA} ${WRKSRC}/{BUGS,CHANGES,COPYING,CREDITS} \
+		#${WRKSRC}/{ChangeLog,LICENSE,README*,UPGRADE*.txt} \
+	#${INSTALL_DATA} `find ${WRKSRC}/doc -type f` \
+		#${PREFIX}/share/doc/asterisk
+	#${INSTALL_DATA_DIR} ${EXAMPLEDIR}/openbsd
+	#@chown -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLEDIR}
 
 .include <bsd.port.mk>

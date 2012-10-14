@@ -1,8 +1,6 @@
-$OpenBSD: patch-lib_sqlite3_stubs_c,v 1.1 2012/08/18 21:57:24 avsm Exp $
-But not broken on OpenBSD
-
---- lib/sqlite3_stubs.c.orig	Fri Jul 20 17:39:49 2012
-+++ lib/sqlite3_stubs.c	Fri Oct  5 16:25:41 2012
+$OpenBSD$
+--- lib/sqlite3_stubs.c.orig	Sat Aug  4 09:27:17 2012
++++ lib/sqlite3_stubs.c	Sat Aug  4 09:27:23 2012
 @@ -40,7 +40,7 @@
  
  #if __GNUC__ >= 3
@@ -12,39 +10,3 @@ But not broken on OpenBSD
  # define __unused __attribute__ ((unused))
  # endif
  #else
-@@ -843,16 +843,11 @@ CAMLprim value caml_sqlite3_bind(value v_stmt, value v
-   return Val_rc(SQLITE_ERROR);
- }
- 
--/* FIXME */
--
--/* Sorry this gives a linking error! */
--#if 0
- CAMLprim value caml_sqlite3_clear_bindings(value v_stmt)
- {
-   sqlite3_stmt *stmt = safe_get_stmtw("clear_bindings", v_stmt)->stmt;
-   return Val_rc(sqlite3_clear_bindings(stmt));
- }
--#endif
- 
- CAMLprim value caml_sqlite3_column_name(value v_stmt, value v_index)
- {
-@@ -937,10 +932,6 @@ CAMLprim value caml_sqlite3_column(value v_stmt, value
-   CAMLreturn(v_res);
- }
- 
--/* FIXME */
--
--/* Sorry, this gives a linking error! */
--#if 0
- CAMLprim value caml_sqlite3_sleep(value v_duration)
- {
-   int res;
-@@ -949,7 +940,6 @@ CAMLprim value caml_sqlite3_sleep(value v_duration)
-   caml_leave_blocking_section();
-   return (Int_val(res));
- }
--#endif
- 
- 
- /* User-defined functions */

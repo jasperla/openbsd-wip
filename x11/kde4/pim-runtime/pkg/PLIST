@@ -2,14 +2,14 @@
 @bin bin/accountwizard
 @bin bin/akonadi2xml
 @bin bin/akonadi_birthdays_resource
+@bin bin/akonadi_calendarsearch_agent
 @bin bin/akonadi_davgroupware_resource
-@bin bin/akonadi_googlecalendar_resource
-@bin bin/akonadi_googlecontacts_resource
 @bin bin/akonadi_imap_resource
 @bin bin/akonadi_invitations_agent
 @bin bin/akonadi_kabc_resource
 @bin bin/akonadi_kcal_resource
 @bin bin/akonadi_kdeaccounts_resource
+@bin bin/akonadi_kolabproxy_resource
 @bin bin/akonadi_localbookmarks_resource
 @bin bin/akonadi_maildispatcher_agent
 @bin bin/akonadi_mailtransport_dummy_resource
@@ -49,6 +49,9 @@ lib/kde4/akonadi_serializer_kcalcore.so
 lib/kde4/akonadi_serializer_mail.so
 lib/kde4/akonadi_serializer_microblog.so
 lib/kde4/akonadi_vcard_resource.so
+lib/kde4/imports/
+lib/kde4/imports/org/
+lib/kde4/imports/org/kde/
 lib/kde4/imports/org/kde/BreadcrumbNavigationView.qml
 lib/kde4/imports/org/kde/Dialog.qml
 lib/kde4/imports/org/kde/Flap.qml
@@ -95,10 +98,9 @@ share/akonadi/agents/
 share/akonadi/agents/akonadinepomukfeederagent.desktop
 share/akonadi/agents/akonotesresource.desktop
 share/akonadi/agents/birthdaysresource.desktop
+share/akonadi/agents/calendarsearchagent.desktop
 share/akonadi/agents/contactsresource.desktop
 share/akonadi/agents/davgroupwareresource.desktop
-share/akonadi/agents/googlecalendarresource.desktop
-share/akonadi/agents/googlecontactsresource.desktop
 share/akonadi/agents/icalresource.desktop
 share/akonadi/agents/imapresource.desktop
 share/akonadi/agents/invitationsagent.desktop
@@ -108,6 +110,7 @@ share/akonadi/agents/kalarmresource.desktop
 share/akonadi/agents/kcalresource.desktop
 share/akonadi/agents/kdeaccountsresource.desktop
 share/akonadi/agents/knutresource.desktop
+share/akonadi/agents/kolabproxyresource.desktop
 share/akonadi/agents/localbookmarksresource.desktop
 share/akonadi/agents/maildirresource.desktop
 share/akonadi/agents/maildispatcheragent.desktop
@@ -137,6 +140,10 @@ share/apps/akonadi/accountwizard/imap/
 share/apps/akonadi/accountwizard/imap/imapwizard.desktop
 share/apps/akonadi/accountwizard/imap/imapwizard.es
 share/apps/akonadi/accountwizard/imap/imapwizard.ui
+share/apps/akonadi/accountwizard/kolab/
+share/apps/akonadi/accountwizard/kolab/kolabwizard.desktop
+share/apps/akonadi/accountwizard/kolab/kolabwizard.es
+share/apps/akonadi/accountwizard/kolab/kolabwizard.ui
 share/apps/akonadi/accountwizard/mailbox/
 share/apps/akonadi/accountwizard/mailbox/mailboxwizard.desktop
 share/apps/akonadi/accountwizard/mailbox/mailboxwizard.es
@@ -149,10 +156,6 @@ share/apps/akonadi/accountwizard/pop3/
 share/apps/akonadi/accountwizard/pop3/pop3wizard.desktop
 share/apps/akonadi/accountwizard/pop3/pop3wizard.js
 share/apps/akonadi/accountwizard/pop3/pop3wizard.ui
-share/apps/akonadi/accountwizard/tine20/
-share/apps/akonadi/accountwizard/tine20/tine20wizard.desktop
-share/apps/akonadi/accountwizard/tine20/tine20wizard.es
-share/apps/akonadi/accountwizard/tine20/tine20wizard.ui
 share/apps/akonadi/akonadi-xml.xsd
 share/apps/akonadi/firstrun/
 share/apps/akonadi/firstrun/defaultaddressbook
@@ -172,6 +175,7 @@ share/apps/akonadi_knut_resource/
 share/apps/akonadi_knut_resource/knut-template.xml
 share/apps/akonadi_maildispatcher_agent/
 share/apps/akonadi_maildispatcher_agent/akonadi_maildispatcher_agent.notifyrc
+share/autostart/
 share/autostart/kaddressbookmigrator.desktop
 share/config/accountwizard.knsrc
 share/config/kmail-migratorrc
@@ -182,6 +186,7 @@ share/icons/hicolor/128x128/apps/ox.png
 share/icons/hicolor/16x16/apps/ox.png
 share/icons/hicolor/32x32/apps/ox.png
 share/icons/hicolor/48x48/apps/ox.png
+share/icons/hicolor/64x64/apps/kolab.png
 share/icons/hicolor/64x64/apps/ox.png
 share/kde4/services/akonadi.protocol
 share/kde4/services/akonadi/davgroupware-providers/
@@ -212,6 +217,7 @@ share/mime/packages/kdepim-mime.xml
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
+share/ontology/kde/
 share/ontology/kde/aneo.ontology
 share/ontology/kde/aneo.trig
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

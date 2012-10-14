@@ -3,6 +3,7 @@
 CATEGORIES =	devel
 COMMENT =	K Desktop Environment, Qt4 bindings for .NET/Mono
 DISTNAME =	qyoto-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	qyoto			0.0 # 2.0
 

@@ -1,7 +1,7 @@
 $OpenBSD$
---- epan/dissectors/packet-isakmp.c.orig	Thu Sep 20 03:12:41 2012
-+++ epan/dissectors/packet-isakmp.c	Sun Oct  7 00:23:01 2012
-@@ -59,7 +59,9 @@
+--- epan/dissectors/packet-isakmp.c.orig	Fri Apr  6 18:43:17 2012
++++ epan/dissectors/packet-isakmp.c	Tue May 15 15:24:08 2012
+@@ -61,7 +61,9 @@
  #include <epan/expert.h>
  
  #ifdef HAVE_LIBGCRYPT

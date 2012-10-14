@@ -24,16 +24,9 @@ share/gtk-doc/html/flickcurl/appgarden-new-api-key-secret.png
 share/gtk-doc/html/flickcurl/appgarden-tell-us-about-your-app.png
 share/gtk-doc/html/flickcurl/appgarden-test-app-page.png
 share/gtk-doc/html/flickcurl/flickcurl-auth-authenticate.html
-share/gtk-doc/html/flickcurl/flickcurl-auth-build.html
 share/gtk-doc/html/flickcurl/flickcurl-auth-register.html
-share/gtk-doc/html/flickcurl/flickcurl-auth-upgrade.html
 share/gtk-doc/html/flickcurl/flickcurl-auth-use.html
 share/gtk-doc/html/flickcurl/flickcurl-auth.html
-share/gtk-doc/html/flickcurl/flickcurl-legacy-auth-authenticate.html
-share/gtk-doc/html/flickcurl/flickcurl-legacy-auth-build.html
-share/gtk-doc/html/flickcurl/flickcurl-legacy-auth-register.html
-share/gtk-doc/html/flickcurl/flickcurl-legacy-auth-use.html
-share/gtk-doc/html/flickcurl/flickcurl-legacy-auth.html
 share/gtk-doc/html/flickcurl/flickcurl-searching-search-example.html
 share/gtk-doc/html/flickcurl/flickcurl-searching-search-extras.html
 share/gtk-doc/html/flickcurl/flickcurl-searching-search-paging.html
@@ -49,7 +42,6 @@ share/gtk-doc/html/flickcurl/flickcurl-section-category.html
 share/gtk-doc/html/flickcurl/flickcurl-section-collections.html
 share/gtk-doc/html/flickcurl/flickcurl-section-comment.html
 share/gtk-doc/html/flickcurl/flickcurl-section-commons.html
-share/gtk-doc/html/flickcurl/flickcurl-section-config.html
 share/gtk-doc/html/flickcurl/flickcurl-section-contact.html
 share/gtk-doc/html/flickcurl/flickcurl-section-context.html
 share/gtk-doc/html/flickcurl/flickcurl-section-core.html
@@ -78,6 +70,7 @@ share/gtk-doc/html/flickcurl/flickcurl-section-test.html
 share/gtk-doc/html/flickcurl/flickcurl-section-upload.html
 share/gtk-doc/html/flickcurl/flickcurl-section-urls.html
 share/gtk-doc/html/flickcurl/flickcurl-section-video.html
+share/gtk-doc/html/flickcurl/flickcurl.devhelp
 share/gtk-doc/html/flickcurl/flickcurl.devhelp2
 share/gtk-doc/html/flickcurl/home.png
 share/gtk-doc/html/flickcurl/index.html

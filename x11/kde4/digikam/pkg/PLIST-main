@@ -1,5 +1,4 @@
 @comment $OpenBSD$
-@conflict digikam4-*
 bin/cleanup_digikamdb
 @bin bin/digikam
 bin/digitaglinktree

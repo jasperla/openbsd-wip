@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+lib/ocaml/stublibs/dllpostgresql_stubs.so

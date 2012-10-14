@@ -169,8 +169,6 @@ lib/soprano/libsoprano_raptorparser.so
 lib/soprano/libsoprano_raptorserializer.so
 lib/soprano/libsoprano_redlandbackend.so
 lib/soprano/libsoprano_virtuosobackend.so
-share/dbus-1/
-share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.soprano.Model.xml
 share/dbus-1/interfaces/org.soprano.NodeIterator.xml
 share/dbus-1/interfaces/org.soprano.QueryResultIterator.xml

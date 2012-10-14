@@ -1,7 +1,7 @@
 $OpenBSD$
---- Makefile.orig	Mon Sep  3 16:51:27 2012
-+++ Makefile	Tue Oct  9 16:18:40 2012
-@@ -1,24 +1,24 @@
+--- Makefile.orig	Sun Aug  5 16:03:59 2012
++++ Makefile	Sun Aug  5 16:04:44 2012
+@@ -1,26 +1,26 @@
  #### Standard configuration parameters
  # Compile using ocamlopt, to use ocamlc set TARGET=byte
 -TARGET=opt
@@ -15,6 +15,9 @@ $OpenBSD$
  # Where to install programms
 -BINDIR=$(PREFIX)/bin
 +BINDIR?=$(PREFIX)/bin
+ # Install prefix prefix
+-DESTDIR=
++DESTDIR?=
  #Where to install hevea.sty
 -LATEXLIBDIR=$(PREFIX)/lib/hevea
 +LATEXLIBDIR?=$(PREFIX)/lib/hevea
@@ -22,8 +25,8 @@ $OpenBSD$
 -SUF=
 -DIR=
 -OCAMLC=$(DIR)ocamlc$(SUF)
--#OCAMLFLAGS=-w +a-4-9 -warn-error +a
--OCAMLFLAGS=-w +a-4-9
+-OCAMLFLAGS=
+-OCAMLFLAGS=-w ZY
 -OCAMLCI=$(OCAMLC)
 -OCAMLOPT=$(DIR)ocamlopt$(SUF)
 -OCAMLLEX=$(DIR)ocamllex$(SUF) -q
@@ -31,8 +34,8 @@ $OpenBSD$
 +SUF?=
 +DIR?=
 +OCAMLC?=$(DIR)ocamlc$(SUF)
-+#OCAMLFLAGS?=-w +a-4-9 -warn-error +a
-+OCAMLFLAGS?=-w +a-4-9
++OCAMLFLAGS?=
++OCAMLFLAGS?=-w ZY
 +OCAMLCI?=$(OCAMLC)
 +OCAMLOPT?=$(DIR)ocamlopt$(SUF)
 +OCAMLLEX?=$(DIR)ocamllex$(SUF) -q

@@ -1,7 +1,7 @@
 $OpenBSD$
---- epan/dissectors/packet-snmp.c.orig	Mon Sep 24 20:41:11 2012
-+++ epan/dissectors/packet-snmp.c	Sun Oct  7 00:23:01 2012
-@@ -87,7 +87,9 @@
+--- epan/dissectors/packet-snmp.c.orig	Fri Apr  6 18:43:16 2012
++++ epan/dissectors/packet-snmp.c	Tue May 15 15:26:18 2012
+@@ -89,7 +89,9 @@
  
  
  #ifdef HAVE_LIBGCRYPT

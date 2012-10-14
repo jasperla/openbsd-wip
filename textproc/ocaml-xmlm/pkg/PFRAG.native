@@ -1,5 +1,4 @@
 @comment $OpenBSD$
-%%dynlink%%
 @bin bin/xmltrip
 lib/ocaml/xmlm/xmlm.a
 lib/ocaml/xmlm/xmlm.cmx

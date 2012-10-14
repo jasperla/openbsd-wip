@@ -9,7 +9,7 @@
 # PFRAG.foo-native    -- nativecode files for FLAVOR == foo
 # PFRAG.no-foo-native -- nativecode files for FLAVOR != foo
 
-OCAML_VERSION=4.00.1
+OCAML_VERSION=4.00.0
 
 .include <bsd.port.arch.mk>
 
@@ -86,7 +86,6 @@ MODOASIS_configure = \
 
 ######################################################################
 # BUILD
-BUILD_DEPENDS+= sysutils/findlib
 MODOASIS_BUILD_TARGET = cd ${WRKSRC}
 . for TARGET in ${ALL_TARGET}
 MODOASIS_BUILD_TARGET += \

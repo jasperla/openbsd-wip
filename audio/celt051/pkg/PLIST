@@ -1,0 +1,12 @@
+@comment $OpenBSD$
+%%SHARED%%
+@bin bin/celtdec051
+@bin bin/celtenc051
+include/celt051/
+include/celt051/celt.h
+include/celt051/celt_header.h
+include/celt051/celt_types.h
+lib/libcelt051.a
+lib/libcelt051.la
+lib/pkgconfig/
+lib/pkgconfig/celt051.pc

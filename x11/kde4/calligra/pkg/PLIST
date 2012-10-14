@@ -1,6 +1,4 @@
 @comment $OpenBSD$
-@conflict koffice-*
-@conflict koffice4-*
 @bin bin/braindump
 @bin bin/calligra
 @bin bin/calligraactive

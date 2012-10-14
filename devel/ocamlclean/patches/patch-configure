@@ -1,0 +1,88 @@
+$OpenBSD$
+--- configure.orig	Tue Jul 24 00:50:37 2012
++++ configure	Wed Aug 15 10:40:28 2012
+@@ -1,4 +1,4 @@
+-#! /bin/bash
++#! /bin/sh
+ ###########################################################################
+ ##                                                                       ##
+ ##                              OCamlClean                               ##
+@@ -10,17 +10,17 @@
+ ##                                                                       ##
+ ###########################################################################
+ 
+-function error () {
++error () {
+     echo "$@" 1>&2
+     exit 1
+ }
+ 
+-function usage () {
++usage () {
+     echo "$@" 1>&2
+     error "Usage: $0 [ -prefix <dir> ] [ -bindir <dir> ] [ -mandir <dir> ]"
+ }
+ 
+-function check_command () {
++check_command () {
+     which "$1" > /dev/null
+     if [ $? -ne 0 ]; then
+         error "Error: \"$1\" not installed"
+@@ -30,7 +30,6 @@ function check_command () {
+ ###
+ 
+ check_command "ocamlc"
+-check_command "ocamlopt"
+ check_command "ocamlbuild"
+ check_command "ocamldep"
+ check_command "mkdir"
+@@ -52,6 +51,12 @@ OCAMLBUILD=$(which ocamlbuild)
+ VERSION=$(cat VERSION)
+ PWD=$(pwd)
+ 
++if [ -n "$OCAMLOPT" ]; then
++TARGETS='native byte'
++else
++TARGETS='byte'
++fi
++
+ ###
+ 
+ BINDIR=/usr/local/bin
+@@ -65,6 +70,7 @@ while [ $# -ne 0 ]; do
+             BINDIR="$2"/bin
+             MANDIR="$2"/man/man1
+             shift;;
++        -destdir)  DESTDIR="$2"; shift ;;
+         *)
+         usage "Don't know what to do with \"$1\""
+     esac
+@@ -74,8 +80,10 @@ done
+ ###
+ 
+ echo -n "\
++DESTDIR = $DESTDIR
+ BINDIR = $BINDIR
+-MAN1DIR = $MANDIR/man1
++MAN1DIR = $MANDIR
++TARGETS = $TARGETS
+ OCAMLC = $OCAMLC -w Ae -warn-error A
+ OCAMLOPT = $OCAMLOPT -w Ae -warn-error A
+ OCAMLC_UNSAFE = $OCAMLC
+@@ -84,12 +92,12 @@ BIN = $PWD/bin
+ ETC = $PWD/etc
+ DIST = $PWD/dist
+ define compile
+-        @make --no-print-directory -q -C \$1 && \
+-        make --no-print-directory -C \$1 || \
+-        make -C \$1
++	@\$(MAKE) --no-print-directory -q -C \$1 && \
++	\$(MAKE) --no-print-directory -C \$1 || \
++	\$(MAKE) -C \$1
+ endef
+ define clean
+-        @make --no-print-directory -C \$1 clean > /dev/null
++	@\$(MAKE) --no-print-directory -C \$1 clean > /dev/null
+ endef
+ " > etc/Makefile.conf
+ 

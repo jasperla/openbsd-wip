@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, default theme
 DISTNAME =	oxygen-icons-${MODKDE_VERSION}
+REVISION =	1
 
 MODKDE4_RESOURCES =	Yes
 MODKDE4_USE =

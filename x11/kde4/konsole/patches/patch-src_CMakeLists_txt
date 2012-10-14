@@ -1,0 +1,15 @@
+$OpenBSD$
+--- src/CMakeLists.txt.orig	Sun Dec  4 14:25:44 2011
++++ src/CMakeLists.txt	Sun Dec  4 14:27:28 2011
+@@ -6,9 +6,9 @@ if(LIBKONQ_FOUND)
+ endif()
+ 
+ ### Compile-time features
+-macro_optional_find_package(XKB)
++macro_bool_to_01(X11_Xkb_FOUND HAVE_XKB)
+ macro_bool_to_01(X11_Xrender_FOUND HAVE_XRENDER)
+-macro_log_feature(XKB_FOUND "XKB" "X keyboard extension" "http://www.x.org" FALSE "" "Gives Konsole better keyboard support.")
++macro_log_feature(X11_Xkb_FOUND "XKB" "X keyboard extension" "http://www.x.org" FALSE "" "Gives Konsole better keyboard support.")
+ 
+ include(CheckIncludeFiles)
+ check_include_files("sys/proc.h"      HAVE_SYS_PROC_H)

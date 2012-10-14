@@ -27,7 +27,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB-main =		gmp gmpxx m stdc++ ${WANTLIB} c glpk z
-WANTLIB-java =		gmp gmpxx m stdc++ ${WANTLIB} ppl
+WANTLIB-java =		c gmp gmpxx m stdc++ ${WANTLIB} ppl
 WANTLIB-ocaml =		
 
 MASTER_SITES =		ftp://ftp.cs.unipr.it/pub/ppl/releases/1.0/
@@ -38,12 +38,9 @@ BUILD_DEPENDS +=	${MODOCAML_BUILD_DEPENDS} \
 
 LIB_DEPENDS =		devel/gmp \
 			devel/glpk
-
 LIB_DEPENDS-ocaml =	devel/ocaml-mlgmp \
 			devel/glpk \
 			math/ppl,-main
-RUN_DEPENDS-ocaml =	lang/ocaml
-
 LIB_DEPENDS-java =	math/ppl,-main
 			
 RUN_DEPENDS-java =	${MODJAVA_RUN_DEPENDS}

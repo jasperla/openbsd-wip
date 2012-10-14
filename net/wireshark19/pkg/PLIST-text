@@ -8,10 +8,10 @@
 @mode
 @group
 @bin bin/editcap
+bin/idl2wrs
 @bin bin/mergecap
 @bin bin/randpkt
 @bin bin/rawshark
-@bin bin/reordercap
 @bin bin/text2pcap
 @bin bin/tshark
 lib/libwireshark.la
@@ -37,15 +37,14 @@ lib/wireshark/plugins/${WVER}/stats_tree.so
 lib/wireshark/plugins/${WVER}/unistim.so
 lib/wireshark/plugins/${WVER}/wimax.so
 lib/wireshark/plugins/${WVER}/wimaxasncp.so
-lib/wireshark/plugins/${WVER}/wimaxmacphy.so
 @man man/man1/capinfos.1
 @man man/man1/dftest.1
 @man man/man1/dumpcap.1
 @man man/man1/editcap.1
+@man man/man1/idl2wrs.1
 @man man/man1/mergecap.1
 @man man/man1/randpkt.1
 @man man/man1/rawshark.1
-@man man/man1/reordercap.1
 @man man/man1/text2pcap.1
 @man man/man1/tshark.1
 @man man/man4/wireshark-filter.4
@@ -55,15 +54,14 @@ share/wireshark/COPYING
 share/wireshark/capinfos.html
 share/wireshark/cfilters
 share/wireshark/colorfilters
+share/wireshark/console.lua
 share/wireshark/dfilters
 share/wireshark/dftest.html
 share/wireshark/diameter/
-share/wireshark/diameter/AlcatelLucent.xml
 share/wireshark/diameter/Cisco.xml
 share/wireshark/diameter/Ericsson.xml
 share/wireshark/diameter/TGPPGmb.xml
 share/wireshark/diameter/TGPPRx.xml
-share/wireshark/diameter/TGPPS9.xml
 share/wireshark/diameter/TGPPSh.xml
 share/wireshark/diameter/Vodafone.xml
 share/wireshark/diameter/chargecontrol.xml
@@ -78,6 +76,7 @@ share/wireshark/diameter/mobileipv6.xml
 share/wireshark/diameter/nasreq.xml
 share/wireshark/diameter/sip.xml
 share/wireshark/diameter/sunping.xml
+share/wireshark/dtd_gen.lua
 share/wireshark/dtds/
 share/wireshark/dtds/dc.dtd
 share/wireshark/dtds/itunes.dtd
@@ -101,6 +100,8 @@ share/wireshark/help/faq.txt
 share/wireshark/help/getting_started.txt
 share/wireshark/help/overview.txt
 share/wireshark/help/toc
+share/wireshark/idl2wrs.html
+share/wireshark/init.lua
 share/wireshark/ipmap.html
 share/wireshark/manuf
 share/wireshark/mergecap.html
@@ -249,13 +250,32 @@ share/wireshark/radius/dictionary.xedia
 share/wireshark/radius/dictionary.zyxel
 share/wireshark/randpkt.html
 share/wireshark/rawshark.html
-share/wireshark/reordercap.html
 share/wireshark/services
 share/wireshark/smi_modules
 share/wireshark/text2pcap.html
 share/wireshark/tpncp/
 share/wireshark/tpncp/tpncp.dat
 share/wireshark/tshark.html
+share/wireshark/ui/
+share/wireshark/ui/main-menubar-ui.xml
+share/wireshark/ui/qt/
+share/wireshark/ui/qt/capture_start_24.png
+share/wireshark/ui/qt/capture_start_active_24.png
+share/wireshark/ui/qt/capture_stop_24.png
+share/wireshark/ui/qt/dfilter_apply_hover.png
+share/wireshark/ui/qt/dfilter_apply_normal.png
+share/wireshark/ui/qt/dfilter_apply_pressed.png
+share/wireshark/ui/qt/dfilter_bookmark_hover.png
+share/wireshark/ui/qt/dfilter_bookmark_normal.png
+share/wireshark/ui/qt/dfilter_bookmark_pressed.png
+share/wireshark/ui/qt/dfilter_dropdown.png
+share/wireshark/ui/qt/dfilter_erase_active.png
+share/wireshark/ui/qt/dfilter_erase_normal.png
+share/wireshark/ui/qt/dfilter_erase_selected.png
+share/wireshark/ui/qt/dfilter_refresh_active.png
+share/wireshark/ui/qt/dfilter_refresh_normal.png
+share/wireshark/ui/qt/display_filter_16.svg
+share/wireshark/ui/qt/gpl-template.txt
 share/wireshark/wimaxasncp/
 share/wireshark/wimaxasncp/dictionary.dtd
 share/wireshark/wimaxasncp/dictionary.xml

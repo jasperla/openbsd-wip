@@ -2,7 +2,6 @@
 
 COMMENT =		template and text document library for Qt
 DISTNAME =		grantlee-0.2.0
-REVISION =		0
 CATEGORIES =		devel x11 x11/qt4
 HOMEPAGE =		http://www.gitorious.org/grantlee/
 
@@ -18,7 +17,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		http://downloads.grantlee.org/ \
 			http://www.loegria.net/grantlee/
 
-WANTLIB += c m stdc++ pthread
+WANTLIB += c m stdc++
 WANTLIB += lib/qt4/QtGui lib/qt4/QtScript
 
 MODULES =		devel/cmake x11/qt4

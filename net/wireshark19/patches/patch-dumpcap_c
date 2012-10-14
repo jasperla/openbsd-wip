@@ -1,9 +1,9 @@
 $OpenBSD$
 
 correct order and add missing headers
---- dumpcap.c.orig	Wed Oct  3 17:26:42 2012
-+++ dumpcap.c	Sun Oct  7 00:23:01 2012
-@@ -54,6 +54,14 @@
+--- dumpcap.c.orig	Thu Jan 12 15:11:54 2012
++++ dumpcap.c	Thu Jan 12 18:14:46 2012
+@@ -48,6 +48,14 @@
  #include <unistd.h>
  #endif
  

@@ -119,12 +119,10 @@ share/sip/PyKDE4/akonadi/collectionstatistics.sip
 share/sip/PyKDE4/akonadi/collectionstatisticsdelegate.sip
 share/sip/PyKDE4/akonadi/collectionstatisticsjob.sip
 share/sip/PyKDE4/akonadi/collectionstatisticsmodel.sip
-share/sip/PyKDE4/akonadi/collectionutils_p.sip
 share/sip/PyKDE4/akonadi/collectionview.sip
 share/sip/PyKDE4/akonadi/control.sip
 share/sip/PyKDE4/akonadi/differencesalgorithminterface.sip
 share/sip/PyKDE4/akonadi/entity.sip
-share/sip/PyKDE4/akonadi/entitydeletedattribute.sip
 share/sip/PyKDE4/akonadi/entitydisplayattribute.sip
 share/sip/PyKDE4/akonadi/entityhiddenattribute.sip
 share/sip/PyKDE4/akonadi/entitylistview.sip
@@ -185,10 +183,6 @@ share/sip/PyKDE4/akonadi/statisticsproxymodel.sip
 share/sip/PyKDE4/akonadi/transactionjobs.sip
 share/sip/PyKDE4/akonadi/transactionsequence.sip
 share/sip/PyKDE4/akonadi/transportresourcebase.sip
-share/sip/PyKDE4/akonadi/trashfilterproxymodel.sip
-share/sip/PyKDE4/akonadi/trashjob.sip
-share/sip/PyKDE4/akonadi/trashrestorejob.sip
-share/sip/PyKDE4/akonadi/trashsettings.sip
 share/sip/PyKDE4/akonadi/unlinkjob.sip
 share/sip/PyKDE4/dnssd/
 share/sip/PyKDE4/dnssd/dnssdmod.sip

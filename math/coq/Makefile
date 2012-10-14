@@ -32,7 +32,7 @@ EXTRACT_ONLY=		${DISTNAME}.tar.gz \
 
 DESTDIRNAME=		COQINSTALLPREFIX
 
-RUN_DEPENDS =		lang/ocaml x11/lablgtk2
+RUN_DEPENDS =		x11/lablgtk2
 BUILD_DEPENDS =		x11/lablgtk2
 
 WANTLIB =		GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \

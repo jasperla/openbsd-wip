@@ -1,7 +1,4 @@
-One regression tests fail, probably due to lack of decent locale support in base:
-10/26 Test #10: InputStreamReaderTest ............***Failed    0.05 sec
-      Start 11: InputStreamTest
-
+Two regression tests fail.
 
 Need to investigate if we have threading problems here:
 [ 31%] Building CXX object libstreamanalyzer/lib/CMakeFiles/streamanalyzerstatic.dir/saxeventanalyzer.cpp.o
