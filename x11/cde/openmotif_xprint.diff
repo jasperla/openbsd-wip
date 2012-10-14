@@ -1,22 +1,31 @@
 Index: Makefile
 ===================================================================
 RCS file: /cvs/ports/x11/openmotif/Makefile,v
-retrieving revision 1.51
-diff -u -p -r1.51 Makefile
---- Makefile	16 Sep 2011 12:29:16 -0000	1.51
-+++ Makefile	8 Aug 2012 08:50:54 -0000
+retrieving revision 1.52
+diff -u -p -r1.52 Makefile
+--- Makefile	23 Sep 2012 08:05:53 -0000	1.52
++++ Makefile	14 Oct 2012 23:35:33 -0000
 @@ -8,8 +8,8 @@ DISTNAME=		openmotif-${VERSION}
  PKGNAME-main=		openmotif-${VERSION}
  PKGNAME-demos=		openmotif-demos-${VERSION}
  
--REVISION-main=		3
+-REVISION-main=		4
 -REVISION-demos= 	2
-+REVISION-main=		4
++REVISION-main=		5
 +REVISION-demos= 	3
  
  SHARED_LIBS=		Mrm	4.1	\
  			Uil	5.0	\
-@@ -35,10 +35,10 @@ CONFIGURE_STYLE=	gnu
+@@ -23,6 +23,8 @@ DIST_SUBDIR=		openmotif
+ 
+ HOMEPAGE=		http://www.opengroup.org/openmotif/
+ 
++MAINTAINER=		Pascal Stumpf <Pascal.Stumpf@cubes.de>
++
+ PERMIT_PACKAGE_CDROM=	Yes
+ PERMIT_DISTFILES_CDROM=	Yes
+ PERMIT_PACKAGE_FTP=	Yes
+@@ -35,10 +37,10 @@ CONFIGURE_STYLE=	gnu
  CONFIGURE_ARGS=		--enable-themes \
  			--enable-xft \
  			--enable-jpeg \
@@ -30,7 +39,7 @@ diff -u -p -r1.51 Makefile
  
  USE_LIBTOOL=		Yes
  
-@@ -49,14 +49,16 @@ FAKE_FLAGS+=		bindir=${PREFIX}/bin/
+@@ -49,14 +51,16 @@ FAKE_FLAGS+=		bindir=${PREFIX}/bin/
  
  MODULES=		converters/libiconv
  
@@ -57,7 +66,7 @@ RCS file: /cvs/ports/x11/openmotif/pkg/PFRAG.shared-main,v
 retrieving revision 1.1
 diff -u -p -r1.1 PFRAG.shared-main
 --- pkg/PFRAG.shared-main	23 Nov 2006 23:30:06 -0000	1.1
-+++ pkg/PFRAG.shared-main	8 Aug 2012 08:50:54 -0000
++++ pkg/PFRAG.shared-main	14 Oct 2012 23:35:33 -0000
 @@ -1,4 +1,4 @@
 -@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/23 23:30:06 kili Exp $
 +@comment $OpenBSD$
