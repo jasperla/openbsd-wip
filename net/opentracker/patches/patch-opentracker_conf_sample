@@ -1,0 +1,16 @@
+$OpenBSD$
+--- opentracker.conf.sample.orig	Sat Oct 13 17:56:12 2012
++++ opentracker.conf.sample	Sat Oct 13 17:56:42 2012
+@@ -94,10 +94,12 @@
+ #
+ #
+ # tracker.rootdir /usr/local/etc/opentracker
++tracker.rootdir /var/opentracker
+ #
+ #      Tell opentracker which user to setuid to.
+ #
+ # tracker.user    nobody
++tracker.user _opentracker
+ #
+ 
+ # VI)  opentracker can be told to answer to a "GET / HTTP"-request with a
