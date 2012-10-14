@@ -10,4 +10,6 @@ daemon_flags="-f ${SYSCONFDIR}/opentracker.conf"
 rc_bg=YES
 rc_reload=NO
 
+mkdir -p /var/opentracker
+
 rc_cmd $1

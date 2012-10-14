@@ -1,4 +1,6 @@
 @comment $OpenBSD$
+@newgroup _opentracker:801
+@newuser _opentracker:801:_opentracker:daemon:redis account:/var/opentracker:/sbin/nologin
 @bin bin/opentracker
 share/doc/opentracker/
 share/doc/opentracker/README
