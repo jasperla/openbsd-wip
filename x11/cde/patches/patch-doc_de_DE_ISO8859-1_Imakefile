@@ -1,0 +1,12 @@
+$OpenBSD$
+--- doc/de_DE.ISO8859-1/Imakefile.orig	Sun Oct 14 18:13:05 2012
++++ doc/de_DE.ISO8859-1/Imakefile	Sun Oct 14 18:13:15 2012
+@@ -4,7 +4,7 @@ XCOMM $XConsortium: Imakefile /main/3 1996/06/19 16:19
+ 
+ #if defined(LinuxArchitecture) || defined(OpenBSDArchitecture) || defined(FreeBSDArchitecture)
+ XCOMM we cannot build guides on linux yet
+-SUBDIRS = help 
++SUBDIRS =
+ #else
+ SUBDIRS = help guides
+ #endif

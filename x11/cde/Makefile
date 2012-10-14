@@ -1,12 +1,10 @@
 # $OpenBSD$
 
-#ONLY_FOR_ARCHS =	???
-#NOT_FOR_ARCHS =	???
-#SHARED_ONLY =		???
+SHARED_ONLY =		Yes
 
 COMMENT =		Common Deskop Environment
 
-V =			2.2.0a
+V =			2.2.0c
 DISTNAME =		cde-src-$V-alpha
 PKGNAME =		cde-$V
 
@@ -61,9 +59,7 @@ MAKE_FLAGS =		BOOTSTRAPCFLAGS="${BOOTSTRAPCFLAGS}" \
 #FAKE_FLAGS =		???
 #REGRESS_FLAGS =	???
 
-#USE_GMAKE =		Yes
-#USE_GROFF =		Yes
-#USE_LIBTOOL =		Yes
+USE_GROFF =		Yes
 # XXX only works with included imake at this point
 #CONFIGURE_STYLE =	imake
 #CONFIGURE_SCRIPT =	??? (if other than configure)
@@ -74,42 +70,28 @@ XMKMF =			xmkmf -a -DBOOTSTRAPCFLAGS="\'${BOOTSTRAPCFLAGS}\'"
 #NO_REGRESS =		Yes
 
 CFLAGS =		-g
-#LDFLAGS =		???
-#MAKE_FILE =		???
-#PKG_ARCH =		??? (* for arch-independent packages)
-WRKDIST =		${WRKDIR}/cde
-#WRKSRC =		??? if other than ${WRKDIST}
-#WRKBUILD =		??? if other than ${WRKSRC}
-#WRKCONF =		??? if other than ${WRKBUILD}
+WRKDIST =		${WRKDIR}/${PKGNAME}
 
-#ALL_TARGET =		Everything
-ALL_TARGET =		World.dev
-#INSTALL_TARGET =	???
-#REGRESS_TARGET =	???
-
-#post-extract:
-#	mkdir -p ${WRKSRC}/imports/x11
-#	cd ${WRKSRC}/imports/x11 && ln -s ${X11BASE}/include .
-#	mkdir -p ${WRKSRC}/imports/motif/include
-#	cd ${WRKSRC}/imports/motif/include && ln -s ${LOCALBASE}/include/Xm .
-#	cd ${WRKSRC}/imports/motif/include && ln -s ${LOCALBASE}/include/Mrm .
+ALL_TARGET =		World
 
 post-patch:
 	# this actually makes our awk segfault
 	perl -pi -e "s,/usr/bin/awk,${LOCALBASE}/bin/gawk," \
 		${WRKSRC}/admin/IntegTools/dbTools/udbToAny.ksh
 	# XXX use SUBST_CMD for most of this
+	perl -pi -e "s,/usr/dt/lib,${WRKINST}${PREFIX}/lib,g; \
+		     s,/usr/local/dt/lib,${WRKINST}${PREFIX}/lib,g; \
+		     s,2\.1,${CDE_SHVERSION},g" \
+		${WRKSRC}/databases/CDE-SHLIBS.src
 	cd ${WRKSRC}/databases/ && perl -pi -e \
 		"s,/usr/dt,${WRKINST}${CDEDIR},g" *.udb *.src
-	perl -pi -e "s,%%PREFIX%%,${WRKINST}${PREFIX},g; \
-		     s,%%SHVERSION%%,${CDE_SHVERSION},g" \
-		${WRKSRC}/databases/CDE-SHLIBS.src
 
 do-install:
 	cd ${WRKSRC}/admin/IntegTools/dbTools && env -i \
 		INSTALL_LOCATION="${PREFIX}" \
 		CONFIGURE_LOCATION="${PREFIX}/share/examples/cde" \
-		LOGFILES_LOCATION="${WRKINST}${LOCALSTATEDIR}" \
 		/bin/sh ./installCDE -s ${WRKSRC}
+	rm ${WRKINST}${CDEDIR}/bin/ttrmdir
+	cd ${WRKINST}${CDEDIR}/bin && ln -s ttrm ttrmdir
 
 .include <bsd.port.mk>

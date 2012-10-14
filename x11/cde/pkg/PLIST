@@ -1,5 +1,4 @@
 @comment $OpenBSD$
-%%SHARED%%
 dt/
 dt/CONTRIBUTORS
 dt/COPYING
@@ -4279,8 +4278,11 @@ dt/bin/dthelptag
 @bin dt/bin/dticon
 @bin dt/bin/dtimsstart
 dt/bin/dtinfogen
+@shell dt/bin/dtksh
 @bin dt/bin/dtlogin
 dt/bin/dtlp
+@bin dt/bin/dtmail
+@bin dt/bin/dtmailpr
 @bin dt/bin/dtpad
 @bin dt/bin/dtpdm
 @bin dt/bin/dtpdmd
@@ -4300,12 +4302,14 @@ dt/bin/dtsession_res
 @bin dt/bin/dtsrload
 @bin dt/bin/dtstyle
 @bin dt/bin/dtterm
+@bin dt/bin/dttypes
 @bin dt/bin/dtudcexch
 @bin dt/bin/dtudcfonted
 @bin dt/bin/dtwm
 @bin dt/bin/huffcode
 @bin dt/bin/rpc.cmsd
 @bin dt/bin/rpc.ttdbserver
+@bin dt/bin/suid_exec
 @bin dt/bin/tt_type_comp
 @bin dt/bin/ttauth
 @bin dt/bin/ttcp
@@ -4399,13 +4403,6 @@ dt/config/it_IT.ISO8859-1/sys.session
 dt/config/svc/
 dt/config/svc/CDE.lcx
 dt/config/sys.dtprofile
-dt/config/xfonts/
-dt/config/xfonts/C/
-dt/config/xfonts/C/fonts.alias
-dt/config/xfonts/C/fonts.dir
-dt/config/xfonts/ja_JP/
-dt/config/xfonts/ja_JP/fonts.alias
-dt/config/xfonts/ja_JP/fonts.dir
 dt/copyright
 dt/dthelp/
 dt/dthelp/dtdocbook/
@@ -4587,7 +4584,10 @@ dt/lib/nls/msg/C/DtMail.cat
 dt/lib/nls/msg/C/DtPrint.cat
 dt/lib/nls/msg/C/DtWidget.cat
 dt/lib/nls/msg/C/MotifApp.cat
+dt/lib/nls/msg/C/Mrm.cat
 dt/lib/nls/msg/C/SUNW_TOOLTALK.cat
+dt/lib/nls/msg/C/Uil.cat
+dt/lib/nls/msg/C/Xm.cat
 dt/lib/nls/msg/C/dt.cat
 dt/lib/nls/msg/C/dtact.cat
 dt/lib/nls/msg/C/dtbuilder.cat
@@ -4629,7 +4629,10 @@ dt/lib/nls/msg/de_DE.ISO8859-1/DtMail.cat
 dt/lib/nls/msg/de_DE.ISO8859-1/DtPrint.cat
 dt/lib/nls/msg/de_DE.ISO8859-1/DtWidget.cat
 dt/lib/nls/msg/de_DE.ISO8859-1/MotifApp.cat
+dt/lib/nls/msg/de_DE.ISO8859-1/Mrm.cat
 dt/lib/nls/msg/de_DE.ISO8859-1/SUNW_TOOLTALK.cat
+dt/lib/nls/msg/de_DE.ISO8859-1/Uil.cat
+dt/lib/nls/msg/de_DE.ISO8859-1/Xm.cat
 dt/lib/nls/msg/de_DE.ISO8859-1/dt.cat
 dt/lib/nls/msg/de_DE.ISO8859-1/dtact.cat
 dt/lib/nls/msg/de_DE.ISO8859-1/dtcalc.cat
@@ -4671,7 +4674,10 @@ dt/lib/nls/msg/es_ES.ISO8859-1/DtMail.cat
 dt/lib/nls/msg/es_ES.ISO8859-1/DtPrint.cat
 dt/lib/nls/msg/es_ES.ISO8859-1/DtWidget.cat
 dt/lib/nls/msg/es_ES.ISO8859-1/MotifApp.cat
+dt/lib/nls/msg/es_ES.ISO8859-1/Mrm.cat
 dt/lib/nls/msg/es_ES.ISO8859-1/SUNW_TOOLTALK.cat
+dt/lib/nls/msg/es_ES.ISO8859-1/Uil.cat
+dt/lib/nls/msg/es_ES.ISO8859-1/Xm.cat
 dt/lib/nls/msg/es_ES.ISO8859-1/dt.cat
 dt/lib/nls/msg/es_ES.ISO8859-1/dtact.cat
 dt/lib/nls/msg/es_ES.ISO8859-1/dtcalc.cat
@@ -4713,7 +4719,10 @@ dt/lib/nls/msg/fr_FR.ISO8859-1/DtMail.cat
 dt/lib/nls/msg/fr_FR.ISO8859-1/DtPrint.cat
 dt/lib/nls/msg/fr_FR.ISO8859-1/DtWidget.cat
 dt/lib/nls/msg/fr_FR.ISO8859-1/MotifApp.cat
+dt/lib/nls/msg/fr_FR.ISO8859-1/Mrm.cat
 dt/lib/nls/msg/fr_FR.ISO8859-1/SUNW_TOOLTALK.cat
+dt/lib/nls/msg/fr_FR.ISO8859-1/Uil.cat
+dt/lib/nls/msg/fr_FR.ISO8859-1/Xm.cat
 dt/lib/nls/msg/fr_FR.ISO8859-1/dt.cat
 dt/lib/nls/msg/fr_FR.ISO8859-1/dtact.cat
 dt/lib/nls/msg/fr_FR.ISO8859-1/dtcalc.cat
@@ -4755,7 +4764,10 @@ dt/lib/nls/msg/it_IT.ISO8859-1/DtMail.cat
 dt/lib/nls/msg/it_IT.ISO8859-1/DtPrint.cat
 dt/lib/nls/msg/it_IT.ISO8859-1/DtWidget.cat
 dt/lib/nls/msg/it_IT.ISO8859-1/MotifApp.cat
+dt/lib/nls/msg/it_IT.ISO8859-1/Mrm.cat
 dt/lib/nls/msg/it_IT.ISO8859-1/SUNW_TOOLTALK.cat
+dt/lib/nls/msg/it_IT.ISO8859-1/Uil.cat
+dt/lib/nls/msg/it_IT.ISO8859-1/Xm.cat
 dt/lib/nls/msg/it_IT.ISO8859-1/dt.cat
 dt/lib/nls/msg/it_IT.ISO8859-1/dtact.cat
 dt/lib/nls/msg/it_IT.ISO8859-1/dtcalc.cat
@@ -4928,6 +4940,25 @@ dt/share/examples/dthelp/help/sounds/whatsup.snd
 dt/share/examples/dthelp/helpdemoHelpEnv.csh
 dt/share/examples/dthelp/helpdemoHelpEnv.sh
 dt/share/examples/dtksh/
+dt/share/examples/dtksh/CallDataTest4
+dt/share/examples/dtksh/CallbackTest2
+dt/share/examples/dtksh/DtCursorTest2
+dt/share/examples/dtksh/DtWsTest1
+dt/share/examples/dtksh/EventHandlerTest
+dt/share/examples/dtksh/ListBounds1
+dt/share/examples/dtksh/ListItemPos1
+dt/share/examples/dtksh/ListPosSel1
+dt/share/examples/dtksh/PopupTest
+dt/share/examples/dtksh/SelBoxResTest
+dt/share/examples/dtksh/SessionTest
+dt/share/examples/dtksh/TextCutBuf1
+dt/share/examples/dtksh/TextDisp1
+dt/share/examples/dtksh/TextFXYPos1
+dt/share/examples/dtksh/TransEventTest
+dt/share/examples/dtksh/TransTest1
+dt/share/examples/dtksh/WorkProcTest1
+dt/share/examples/dtksh/XdrawTest
+dt/share/examples/dtksh/crMovesText1
 dt/share/examples/dtksh/ksh93.memo
 dt/share/examples/dtscreen/
 dt/share/examples/dtscreen/Makefile.HP
@@ -5118,9 +5149,676 @@ dt/share/include/Tt/tt_c.h
 dt/share/include/Tt/tttk.h
 dt/share/include/csa/
 dt/share/include/csa/csa.h
-dt/share/man/
+@mandir dt/share/man/
 dt/share/man/man1/
+@man dt/share/man/man1/dsdm.1
+@man dt/share/man/man1/dtaction.1
+@man dt/share/man/man1/dtappgather.1
+@man dt/share/man/man1/dtappintegrate.1
+@man dt/share/man/man1/dtbuilder.1
+@man dt/share/man/man1/dtcalc.1
+@man dt/share/man/man1/dtchooser.1
+@man dt/share/man/man1/dtcm.1
+@man dt/share/man/man1/dtcm_delete.1
+@man dt/share/man/man1/dtcm_editor.1
+@man dt/share/man/man1/dtcm_insert.1
+@man dt/share/man/man1/dtcm_lookup.1
+@man dt/share/man/man1/dtcodegen.1
+@man dt/share/man/man1/dtconfig.1
+@man dt/share/man/man1/dtcreate.1
+@man dt/share/man/man1/dtdocbook.1
+@man dt/share/man/man1/dtexec.1
+@man dt/share/man/man1/dtfile.1
+@man dt/share/man/man1/dtfile_copy.1
+@man dt/share/man/man1/dtfile_error.1
+@man dt/share/man/man1/dtfplist.1
+@man dt/share/man/man1/dtgreet.1
+@man dt/share/man/man1/dthello.1
+@man dt/share/man/man1/dthelp_ctag1.1
+@man dt/share/man/man1/dthelp_htag1.1
+@man dt/share/man/man1/dthelp_htag2.1
+@man dt/share/man/man1/dthelpgen.1
+@man dt/share/man/man1/dthelpprint.1
+@man dt/share/man/man1/dthelptag.1
+@man dt/share/man/man1/dthelpview.1
+@man dt/share/man/man1/dticon.1
+@man dt/share/man/man1/dtimsstart.1
+@man dt/share/man/man1/dtinfo.1
+@man dt/share/man/man1/dtinfogen.1
+@man dt/share/man/man1/dtksh.1
+@man dt/share/man/man1/dtlogin.1
+@man dt/share/man/man1/dtlp.1
+@man dt/share/man/man1/dtmail.1
+@man dt/share/man/man1/dtmailpr.1
+@man dt/share/man/man1/dtpad.1
+@man dt/share/man/man1/dtpdm.1
+@man dt/share/man/man1/dtpdmd.1
+@man dt/share/man/man1/dtprintinfo.1
+@man dt/share/man/man1/dtscreen.1
+@man dt/share/man/man1/dtsearchpath.1
+@man dt/share/man/man1/dtsession.1
+@man dt/share/man/man1/dtsession_res.1
+@man dt/share/man/man1/dtsrcreate.1
+@man dt/share/man/man1/dtsrdbrec.1
+@man dt/share/man/man1/dtsrhan.1
+@man dt/share/man/man1/dtsrindex.1
+@man dt/share/man/man1/dtsrkdump.1
+@man dt/share/man/man1/dtsrload.1
+@man dt/share/man/man1/dtstyle.1
+@man dt/share/man/man1/dtterm.1
+@man dt/share/man/man1/dttypes.1
+@man dt/share/man/man1/dtudcexch.1
+@man dt/share/man/man1/dtudcfonted.1
+@man dt/share/man/man1/dtwm.1
+@man dt/share/man/man1/huffcode.1
+@comment @man dt/share/man/man1/ksh.1
+@man dt/share/man/man1/tt_type_comp.1
 @man dt/share/man/man1/ttauth.1
+@man dt/share/man/man1/ttcp.1
+@man dt/share/man/man1/ttmv.1
+@man dt/share/man/man1/ttrm.1
+@man dt/share/man/man1/ttrmdir.1
+@man dt/share/man/man1/ttsession.1
+@man dt/share/man/man1/tttar.1
+@man dt/share/man/man1/tttrace.1
+dt/share/man/man1m/
+@man dt/share/man/man1m/dtspcd.1m
+@man dt/share/man/man1m/rpc.cmsd.1m
+@man dt/share/man/man1m/ttdbck.1m
+@man dt/share/man/man1m/ttdbserver.1m
+@man dt/share/man/man1m/ttdbserverd.1m
+dt/share/man/man3/
+@man dt/share/man/man3/DtActionCallbackProc.3
+@man dt/share/man/man3/DtActionDescription.3
+@man dt/share/man/man3/DtActionExists.3
+@man dt/share/man/man3/DtActionIcon.3
+@man dt/share/man/man3/DtActionInvoke.3
+@man dt/share/man/man3/DtActionLabel.3
+@man dt/share/man/man3/DtAppInitialize.3
+@man dt/share/man/man3/DtComboBox.3
+@man dt/share/man/man3/DtComboBoxAddItem.3
+@man dt/share/man/man3/DtComboBoxDeletePos.3
+@man dt/share/man/man3/DtComboBoxSelectItem.3
+@man dt/share/man/man3/DtComboBoxSetItem.3
+@man dt/share/man/man3/DtCreateComboBox.3
+@man dt/share/man/man3/DtCreateEditor.3
+@man dt/share/man/man3/DtCreateHelpDialog.3
+@man dt/share/man/man3/DtCreateHelpQuickDialog.3
+@man dt/share/man/man3/DtCreateMenuButton.3
+@man dt/share/man/man3/DtCreatePrintSetupBox.3
+@man dt/share/man/man3/DtCreatePrintSetupDialog.3
+@man dt/share/man/man3/DtCreateSpinBox.3
+@man dt/share/man/man3/DtCreateTerm.3
+@man dt/share/man/man3/DtDbLoad.3
+@man dt/share/man/man3/DtDbReloadNotify.3
+@man dt/share/man/man3/DtDndCreateSourceIcon.3
+@man dt/share/man/man3/DtDndDragStart.3
+@man dt/share/man/man3/DtDndDropRegister.3
+@man dt/share/man/man3/DtDndDropUnregister.3
+@man dt/share/man/man3/DtDndVaDragStart.3
+@man dt/share/man/man3/DtDndVaDropRegister.3
+@man dt/share/man/man3/DtDtsBufferToAttributeList.3
+@man dt/share/man/man3/DtDtsBufferToAttributeValue.3
+@man dt/share/man/man3/DtDtsBufferToDataType.3
+@man dt/share/man/man3/DtDtsDataToDataType.3
+@man dt/share/man/man3/DtDtsDataTypeIsAction.3
+@man dt/share/man/man3/DtDtsDataTypeNames.3
+@man dt/share/man/man3/DtDtsDataTypeToAttributeList.3
+@man dt/share/man/man3/DtDtsDataTypeToAttributeValue.3
+@man dt/share/man/man3/DtDtsFileToAttributeList.3
+@man dt/share/man/man3/DtDtsFileToAttributeValue.3
+@man dt/share/man/man3/DtDtsFileToDataType.3
+@man dt/share/man/man3/DtDtsFindAttribute.3
+@man dt/share/man/man3/DtDtsFreeAttributeList.3
+@man dt/share/man/man3/DtDtsFreeAttributeValue.3
+@man dt/share/man/man3/DtDtsFreeDataType.3
+@man dt/share/man/man3/DtDtsFreeDataTypeNames.3
+@man dt/share/man/man3/DtDtsIsTrue.3
+@man dt/share/man/man3/DtDtsLoadDataTypes.3
+@man dt/share/man/man3/DtDtsRelease.3
+@man dt/share/man/man3/DtDtsSetDataType.3
+@man dt/share/man/man3/DtEditor.3
+@man dt/share/man/man3/DtEditorAppend.3
+@man dt/share/man/man3/DtEditorAppendFromFile.3
+@man dt/share/man/man3/DtEditorChange.3
+@man dt/share/man/man3/DtEditorCheckForUnsavedChanges.3
+@man dt/share/man/man3/DtEditorClearSelection.3
+@man dt/share/man/man3/DtEditorCopyToClipboard.3
+@man dt/share/man/man3/DtEditorCutToClipboard.3
+@man dt/share/man/man3/DtEditorDeleteSelection.3
+@man dt/share/man/man3/DtEditorDeselect.3
+@man dt/share/man/man3/DtEditorDisableRedisplay.3
+@man dt/share/man/man3/DtEditorEnableRedisplay.3
+@man dt/share/man/man3/DtEditorFind.3
+@man dt/share/man/man3/DtEditorFormat.3
+@man dt/share/man/man3/DtEditorGetContents.3
+@man dt/share/man/man3/DtEditorGetInsertionPosition.3
+@man dt/share/man/man3/DtEditorGetLastPosition.3
+@man dt/share/man/man3/DtEditorGetMessageTextFieldID.3
+@man dt/share/man/man3/DtEditorGetSizeHints.3
+@man dt/share/man/man3/DtEditorGoToLine.3
+@man dt/share/man/man3/DtEditorInsert.3
+@man dt/share/man/man3/DtEditorInsertFromFile.3
+@man dt/share/man/man3/DtEditorInvokeFindChangeDialog.3
+@man dt/share/man/man3/DtEditorInvokeFormatDialog.3
+@man dt/share/man/man3/DtEditorInvokeSpellDialog.3
+@man dt/share/man/man3/DtEditorPasteFromClipboard.3
+@man dt/share/man/man3/DtEditorReplace.3
+@man dt/share/man/man3/DtEditorReplaceFromFile.3
+@man dt/share/man/man3/DtEditorReset.3
+@man dt/share/man/man3/DtEditorSaveContentsToFile.3
+@man dt/share/man/man3/DtEditorSelectAll.3
+@man dt/share/man/man3/DtEditorSetContents.3
+@man dt/share/man/man3/DtEditorSetContentsFromFile.3
+@man dt/share/man/man3/DtEditorSetInsertionPosition.3
+@man dt/share/man/man3/DtEditorTraverseToEditor.3
+@man dt/share/man/man3/DtEditorUndoEdit.3
+@man dt/share/man/man3/DtHelpDialog.3
+@man dt/share/man/man3/DtHelpQuickDialog.3
+@man dt/share/man/man3/DtHelpQuickDialogGetChild.3
+@man dt/share/man/man3/DtHelpReturnSelectedWidgetId.3
+@man dt/share/man/man3/DtHelpSetCatalogName.3
+@man dt/share/man/man3/DtInfoShowTopic.3
+@man dt/share/man/man3/DtInitialize.3
+@man dt/share/man/man3/DtMenuButton.3
+@man dt/share/man/man3/DtMmdbBookCaseFreeInfo.3
+@man dt/share/man/man3/DtMmdbBookCaseGetInfo.3
+@man dt/share/man/man3/DtMmdbBookGetLicense.3
+@man dt/share/man/man3/DtMmdbBookGetLongTitle.3
+@man dt/share/man/man3/DtMmdbBookGetSeqNum.3
+@man dt/share/man/man3/DtMmdbBookGetShortTitle.3
+@man dt/share/man/man3/DtMmdbBookGetTabList.3
+@man dt/share/man/man3/DtMmdbBookGetTocObjectId.3
+@man dt/share/man/man3/DtMmdbCloseInfoLib.3
+@man dt/share/man/man3/DtMmdbDlpGetNextSectionId.3
+@man dt/share/man/man3/DtMmdbDlpGetPrevSectionId.3
+@man dt/share/man/man3/DtMmdbFreeGraphicInfo.3
+@man dt/share/man/man3/DtMmdbFreeHandle.3
+@man dt/share/man/man3/DtMmdbFreeHandleList.3
+@man dt/share/man/man3/DtMmdbGetBookCaseByIndex.3
+@man dt/share/man/man3/DtMmdbGetBookCaseByLoc.3
+@man dt/share/man/man3/DtMmdbGetBookCaseByLocs.3
+@man dt/share/man/man3/DtMmdbGetBookCaseByName.3
+@man dt/share/man/man3/DtMmdbGraphicGetData.3
+@man dt/share/man/man3/DtMmdbGraphicGetInfo.3
+@man dt/share/man/man3/DtMmdbInfoLibFreeInfo.3
+@man dt/share/man/man3/DtMmdbInfoLibGetInfo.3
+@man dt/share/man/man3/DtMmdbInit.3
+@man dt/share/man/man3/DtMmdbLocatorGetSectionLoc.3
+@man dt/share/man/man3/DtMmdbLocatorGetSectionObjectId.3
+@man dt/share/man/man3/DtMmdbOpenInfoLib.3
+@man dt/share/man/man3/DtMmdbQuit.3
+@man dt/share/man/man3/DtMmdbSectionGetBookId.3
+@man dt/share/man/man3/DtMmdbSectionGetData.3
+@man dt/share/man/man3/DtMmdbSectionGetDataSize.3
+@man dt/share/man/man3/DtMmdbSectionGetLoc.3
+@man dt/share/man/man3/DtMmdbSectionGetLongTitle.3
+@man dt/share/man/man3/DtMmdbSectionGetShortTitle.3
+@man dt/share/man/man3/DtMmdbSectionGetStyleSheetId.3
+@man dt/share/man/man3/DtMmdbSectionGetTocLoc.3
+@man dt/share/man/man3/DtMmdbStylesheetGetData.3
+@man dt/share/man/man3/DtMmdbStylesheetGetName.3
+@man dt/share/man/man3/DtMmdbTocGetChildIds.3
+@man dt/share/man/man3/DtMmdbTocGetNumOfChildren.3
+@man dt/share/man/man3/DtMmdbTocGetParentId.3
+@man dt/share/man/man3/DtMrmInitialize.3
+@man dt/share/man/man3/DtMsgLogMessage.3
+@man dt/share/man/man3/DtMsgLogOpenFile.3
+@man dt/share/man/man3/DtMsgLogSetHandler.3
+@man dt/share/man/man3/DtPrintCopySetupData.3
+@man dt/share/man/man3/DtPrintFillSetupData.3
+@man dt/share/man/man3/DtPrintFreeSetupData.3
+@man dt/share/man/man3/DtPrintResetConnection.3
+@man dt/share/man/man3/DtPrintSetupBox.3
+@man dt/share/man/man3/DtPrintSetupProc.3
+@man dt/share/man/man3/DtSaverGetWindows.3
+@man dt/share/man/man3/DtSearchAddMessage.3
+@man dt/share/man/man3/DtSearchExit.3
+@man dt/share/man/man3/DtSearchFreeMessages.3
+@man dt/share/man/man3/DtSearchFreeResults.3
+@man dt/share/man/man3/DtSearchGetKeytypes.3
+@man dt/share/man/man3/DtSearchGetMaxResults.3
+@man dt/share/man/man3/DtSearchGetMessages.3
+@man dt/share/man/man3/DtSearchHasMessages.3
+@man dt/share/man/man3/DtSearchHighlight.3
+@man dt/share/man/man3/DtSearchInit.3
+@man dt/share/man/man3/DtSearchMergeResults.3
+@man dt/share/man/man3/DtSearchQuery.3
+@man dt/share/man/man3/DtSearchReinit.3
+@man dt/share/man/man3/DtSearchRetrieve.3
+@man dt/share/man/man3/DtSearchSetMaxResults.3
+@man dt/share/man/man3/DtSearchSortResults.3
+@man dt/share/man/man3/DtSearchValidDateString.3
+@man dt/share/man/man3/DtSessionRestorePath.3
+@man dt/share/man/man3/DtSessionSavePath.3
+@man dt/share/man/man3/DtSpinBox.3
+@man dt/share/man/man3/DtSpinBoxAddItem.3
+@man dt/share/man/man3/DtSpinBoxDeletePos.3
+@man dt/share/man/man3/DtSpinBoxSetItem.3
+@man dt/share/man/man3/DtSrAPI.3
+@man dt/share/man/man3/DtTerm.3
+@man dt/share/man/man3/DtTermDisplaySend.3
+@man dt/share/man/man3/DtTermInitialize.3
+@man dt/share/man/man3/DtTermSubprocReap.3
+@man dt/share/man/man3/DtTermSubprocSend.3
+@man dt/share/man/man3/DtWsmAddCurrentWorkspaceCallback.3
+@man dt/share/man/man3/DtWsmAddWorkspace.3
+@man dt/share/man/man3/DtWsmAddWorkspaceFunctions.3
+@man dt/share/man/man3/DtWsmAddWorkspaceModifiedCallback.3
+@man dt/share/man/man3/DtWsmChangeBackdrop.3
+@man dt/share/man/man3/DtWsmDeleteWorkspace.3
+@man dt/share/man/man3/DtWsmFreeWorkspaceInfo.3
+@man dt/share/man/man3/DtWsmGetCurrentBackdropWindow.3
+@man dt/share/man/man3/DtWsmGetCurrentWorkspace.3
+@man dt/share/man/man3/DtWsmGetWorkspaceInfo.3
+@man dt/share/man/man3/DtWsmGetWorkspaceList.3
+@man dt/share/man/man3/DtWsmGetWorkspacesOccupied.3
+@man dt/share/man/man3/DtWsmOccupyAllWorkspaces.3
+@man dt/share/man/man3/DtWsmRemoveWorkspaceCallback.3
+@man dt/share/man/man3/DtWsmRemoveWorkspaceFunctions.3
+@man dt/share/man/man3/DtWsmSetCurrentWorkspace.3
+@man dt/share/man/man3/DtWsmSetWorkspaceTitle.3
+@man dt/share/man/man3/DtWsmSetWorkspacesOccupied.3
+@man dt/share/man/man3/csa_add_calendar.3
+@man dt/share/man/man3/csa_add_entry.3
+@man dt/share/man/man3/csa_call_callbacks.3
+@man dt/share/man/man3/csa_delete_calendar.3
+@man dt/share/man/man3/csa_delete_entry.3
+@man dt/share/man/man3/csa_free.3
+@man dt/share/man/man3/csa_free_time_search.3
+@man dt/share/man/man3/csa_list_calendar_attributes.3
+@man dt/share/man/man3/csa_list_calendars.3
+@man dt/share/man/man3/csa_list_entries.3
+@man dt/share/man/man3/csa_list_entry_attributes.3
+@man dt/share/man/man3/csa_list_entry_sequence.3
+@man dt/share/man/man3/csa_logoff.3
+@man dt/share/man/man3/csa_logon.3
+@man dt/share/man/man3/csa_look_up.3
+@man dt/share/man/man3/csa_query_configuration.3
+@man dt/share/man/man3/csa_read_calendar_attributes.3
+@man dt/share/man/man3/csa_read_entry_attributes.3
+@man dt/share/man/man3/csa_read_next_reminder.3
+@man dt/share/man/man3/csa_register_callback.3
+@man dt/share/man/man3/csa_restore.3
+@man dt/share/man/man3/csa_save.3
+@man dt/share/man/man3/csa_unregister_callback.3
+@man dt/share/man/man3/csa_update_calendar_attributes.3
+@man dt/share/man/man3/csa_update_entry_attributes.3
+@man dt/share/man/man3/csa_x_process_updates.3
+@man dt/share/man/man3/tt_X_session.3
+@man dt/share/man/man3/tt_bcontext_join.3
+@man dt/share/man/man3/tt_bcontext_quit.3
+@man dt/share/man/man3/tt_close.3
+@man dt/share/man/man3/tt_context_join.3
+@man dt/share/man/man3/tt_context_quit.3
+@man dt/share/man/man3/tt_default_file.3
+@man dt/share/man/man3/tt_default_file_set.3
+@man dt/share/man/man3/tt_default_procid.3
+@man dt/share/man/man3/tt_default_procid_set.3
+@man dt/share/man/man3/tt_default_ptype.3
+@man dt/share/man/man3/tt_default_ptype_set.3
+@man dt/share/man/man3/tt_default_session.3
+@man dt/share/man/man3/tt_default_session_set.3
+@man dt/share/man/man3/tt_error.3
+@man dt/share/man/man3/tt_error_int.3
+@man dt/share/man/man3/tt_error_pointer.3
+@man dt/share/man/man3/tt_fd.3
+@man dt/share/man/man3/tt_feature_enabled.3
+@man dt/share/man/man3/tt_feature_required.3
+@man dt/share/man/man3/tt_file_copy.3
+@man dt/share/man/man3/tt_file_destroy.3
+@man dt/share/man/man3/tt_file_join.3
+@man dt/share/man/man3/tt_file_move.3
+@man dt/share/man/man3/tt_file_netfile.3
+@man dt/share/man/man3/tt_file_objects_query.3
+@man dt/share/man/man3/tt_file_quit.3
+@man dt/share/man/man3/tt_free.3
+@man dt/share/man/man3/tt_host_file_netfile.3
+@man dt/share/man/man3/tt_host_netfile_file.3
+@man dt/share/man/man3/tt_icontext_join.3
+@man dt/share/man/man3/tt_icontext_quit.3
+@man dt/share/man/man3/tt_initial_session.3
+@man dt/share/man/man3/tt_int_error.3
+@man dt/share/man/man3/tt_is_err.3
+@man dt/share/man/man3/tt_malloc.3
+@man dt/share/man/man3/tt_mark.3
+@man dt/share/man/man3/tt_message_abstainer.3
+@man dt/share/man/man3/tt_message_abstainers_count.3
+@man dt/share/man/man3/tt_message_accept.3
+@man dt/share/man/man3/tt_message_accepter.3
+@man dt/share/man/man3/tt_message_accepters_count.3
+@man dt/share/man/man3/tt_message_address.3
+@man dt/share/man/man3/tt_message_address_set.3
+@man dt/share/man/man3/tt_message_arg_add.3
+@man dt/share/man/man3/tt_message_arg_bval.3
+@man dt/share/man/man3/tt_message_arg_bval_set.3
+@man dt/share/man/man3/tt_message_arg_ival.3
+@man dt/share/man/man3/tt_message_arg_ival_set.3
+@man dt/share/man/man3/tt_message_arg_mode.3
+@man dt/share/man/man3/tt_message_arg_type.3
+@man dt/share/man/man3/tt_message_arg_val.3
+@man dt/share/man/man3/tt_message_arg_val_set.3
+@man dt/share/man/man3/tt_message_arg_xval.3
+@man dt/share/man/man3/tt_message_arg_xval_set.3
+@man dt/share/man/man3/tt_message_args_count.3
+@man dt/share/man/man3/tt_message_barg_add.3
+@man dt/share/man/man3/tt_message_bcontext_set.3
+@man dt/share/man/man3/tt_message_callback_add.3
+@man dt/share/man/man3/tt_message_class.3
+@man dt/share/man/man3/tt_message_class_set.3
+@man dt/share/man/man3/tt_message_context_bval.3
+@man dt/share/man/man3/tt_message_context_ival.3
+@man dt/share/man/man3/tt_message_context_set.3
+@man dt/share/man/man3/tt_message_context_slotname.3
+@man dt/share/man/man3/tt_message_context_val.3
+@man dt/share/man/man3/tt_message_context_xval.3
+@man dt/share/man/man3/tt_message_contexts_count.3
+@man dt/share/man/man3/tt_message_create.3
+@man dt/share/man/man3/tt_message_create_super.3
+@man dt/share/man/man3/tt_message_destroy.3
+@man dt/share/man/man3/tt_message_disposition.3
+@man dt/share/man/man3/tt_message_disposition_set.3
+@man dt/share/man/man3/tt_message_fail.3
+@man dt/share/man/man3/tt_message_file.3
+@man dt/share/man/man3/tt_message_file_set.3
+@man dt/share/man/man3/tt_message_gid.3
+@man dt/share/man/man3/tt_message_handler.3
+@man dt/share/man/man3/tt_message_handler_ptype.3
+@man dt/share/man/man3/tt_message_handler_ptype_set.3
+@man dt/share/man/man3/tt_message_handler_set.3
+@man dt/share/man/man3/tt_message_iarg_add.3
+@man dt/share/man/man3/tt_message_icontext_set.3
+@man dt/share/man/man3/tt_message_id.3
+@man dt/share/man/man3/tt_message_object.3
+@man dt/share/man/man3/tt_message_object_set.3
+@man dt/share/man/man3/tt_message_op.3
+@man dt/share/man/man3/tt_message_op_set.3
+@man dt/share/man/man3/tt_message_opnum.3
+@man dt/share/man/man3/tt_message_otype.3
+@man dt/share/man/man3/tt_message_otype_set.3
+@man dt/share/man/man3/tt_message_pattern.3
+@man dt/share/man/man3/tt_message_print.3
+@man dt/share/man/man3/tt_message_receive.3
+@man dt/share/man/man3/tt_message_reject.3
+@man dt/share/man/man3/tt_message_rejecter.3
+@man dt/share/man/man3/tt_message_rejecters_count.3
+@man dt/share/man/man3/tt_message_reply.3
+@man dt/share/man/man3/tt_message_scope.3
+@man dt/share/man/man3/tt_message_scope_set.3
+@man dt/share/man/man3/tt_message_send.3
+@man dt/share/man/man3/tt_message_send_on_exit.3
+@man dt/share/man/man3/tt_message_sender.3
+@man dt/share/man/man3/tt_message_sender_ptype.3
+@man dt/share/man/man3/tt_message_sender_ptype_set.3
+@man dt/share/man/man3/tt_message_session.3
+@man dt/share/man/man3/tt_message_session_set.3
+@man dt/share/man/man3/tt_message_state.3
+@man dt/share/man/man3/tt_message_status.3
+@man dt/share/man/man3/tt_message_status_set.3
+@man dt/share/man/man3/tt_message_status_string.3
+@man dt/share/man/man3/tt_message_status_string_set.3
+@man dt/share/man/man3/tt_message_uid.3
+@man dt/share/man/man3/tt_message_user.3
+@man dt/share/man/man3/tt_message_user_set.3
+@man dt/share/man/man3/tt_message_xarg_add.3
+@man dt/share/man/man3/tt_message_xcontext_set.3
+@man dt/share/man/man3/tt_netfile_file.3
+@man dt/share/man/man3/tt_objid_equal.3
+@man dt/share/man/man3/tt_objid_objkey.3
+@man dt/share/man/man3/tt_onotice_create.3
+@man dt/share/man/man3/tt_open.3
+@man dt/share/man/man3/tt_orequest_create.3
+@man dt/share/man/man3/tt_otype_base.3
+@man dt/share/man/man3/tt_otype_derived.3
+@man dt/share/man/man3/tt_otype_deriveds_count.3
+@man dt/share/man/man3/tt_otype_hsig_arg_mode.3
+@man dt/share/man/man3/tt_otype_hsig_arg_type.3
+@man dt/share/man/man3/tt_otype_hsig_args_count.3
+@man dt/share/man/man3/tt_otype_hsig_count.3
+@man dt/share/man/man3/tt_otype_hsig_op.3
+@man dt/share/man/man3/tt_otype_is_derived.3
+@man dt/share/man/man3/tt_otype_opnum_callback_add.3
+@man dt/share/man/man3/tt_otype_osig_arg_mode.3
+@man dt/share/man/man3/tt_otype_osig_arg_type.3
+@man dt/share/man/man3/tt_otype_osig_args_count.3
+@man dt/share/man/man3/tt_otype_osig_count.3
+@man dt/share/man/man3/tt_otype_osig_op.3
+@man dt/share/man/man3/tt_pattern_address_add.3
+@man dt/share/man/man3/tt_pattern_arg_add.3
+@man dt/share/man/man3/tt_pattern_barg_add.3
+@man dt/share/man/man3/tt_pattern_bcontext_add.3
+@man dt/share/man/man3/tt_pattern_callback_add.3
+@man dt/share/man/man3/tt_pattern_category.3
+@man dt/share/man/man3/tt_pattern_category_set.3
+@man dt/share/man/man3/tt_pattern_class_add.3
+@man dt/share/man/man3/tt_pattern_context_add.3
+@man dt/share/man/man3/tt_pattern_create.3
+@man dt/share/man/man3/tt_pattern_destroy.3
+@man dt/share/man/man3/tt_pattern_disposition_add.3
+@man dt/share/man/man3/tt_pattern_file_add.3
+@man dt/share/man/man3/tt_pattern_iarg_add.3
+@man dt/share/man/man3/tt_pattern_icontext_add.3
+@man dt/share/man/man3/tt_pattern_object_add.3
+@man dt/share/man/man3/tt_pattern_op_add.3
+@man dt/share/man/man3/tt_pattern_opnum_add.3
+@man dt/share/man/man3/tt_pattern_otype_add.3
+@man dt/share/man/man3/tt_pattern_print.3
+@man dt/share/man/man3/tt_pattern_register.3
+@man dt/share/man/man3/tt_pattern_scope_add.3
+@man dt/share/man/man3/tt_pattern_sender_add.3
+@man dt/share/man/man3/tt_pattern_sender_ptype_add.3
+@man dt/share/man/man3/tt_pattern_session_add.3
+@man dt/share/man/man3/tt_pattern_state_add.3
+@man dt/share/man/man3/tt_pattern_unregister.3
+@man dt/share/man/man3/tt_pattern_user.3
+@man dt/share/man/man3/tt_pattern_user_set.3
+@man dt/share/man/man3/tt_pattern_xarg_add.3
+@man dt/share/man/man3/tt_pattern_xcontext_add.3
+@man dt/share/man/man3/tt_pnotice_create.3
+@man dt/share/man/man3/tt_pointer_error.3
+@man dt/share/man/man3/tt_prequest_create.3
+@man dt/share/man/man3/tt_procid_session.3
+@man dt/share/man/man3/tt_ptr_error.3
+@man dt/share/man/man3/tt_ptype_declare.3
+@man dt/share/man/man3/tt_ptype_exists.3
+@man dt/share/man/man3/tt_ptype_opnum_callback_add.3
+@man dt/share/man/man3/tt_ptype_undeclare.3
+@man dt/share/man/man3/tt_release.3
+@man dt/share/man/man3/tt_session_bprop.3
+@man dt/share/man/man3/tt_session_bprop_add.3
+@man dt/share/man/man3/tt_session_bprop_set.3
+@man dt/share/man/man3/tt_session_join.3
+@man dt/share/man/man3/tt_session_prop.3
+@man dt/share/man/man3/tt_session_prop_add.3
+@man dt/share/man/man3/tt_session_prop_count.3
+@man dt/share/man/man3/tt_session_prop_set.3
+@man dt/share/man/man3/tt_session_propname.3
+@man dt/share/man/man3/tt_session_propnames_count.3
+@man dt/share/man/man3/tt_session_quit.3
+@man dt/share/man/man3/tt_session_types_load.3
+@man dt/share/man/man3/tt_spec_bprop.3
+@man dt/share/man/man3/tt_spec_bprop_add.3
+@man dt/share/man/man3/tt_spec_bprop_set.3
+@man dt/share/man/man3/tt_spec_create.3
+@man dt/share/man/man3/tt_spec_destroy.3
+@man dt/share/man/man3/tt_spec_file.3
+@man dt/share/man/man3/tt_spec_move.3
+@man dt/share/man/man3/tt_spec_prop.3
+@man dt/share/man/man3/tt_spec_prop_add.3
+@man dt/share/man/man3/tt_spec_prop_count.3
+@man dt/share/man/man3/tt_spec_prop_set.3
+@man dt/share/man/man3/tt_spec_propname.3
+@man dt/share/man/man3/tt_spec_propnames_count.3
+@man dt/share/man/man3/tt_spec_type.3
+@man dt/share/man/man3/tt_spec_type_set.3
+@man dt/share/man/man3/tt_spec_write.3
+@man dt/share/man/man3/tt_status_message.3
+@man dt/share/man/man3/tt_thread_procid.3
+@man dt/share/man/man3/tt_thread_procid_set.3
+@man dt/share/man/man3/tt_thread_session.3
+@man dt/share/man/man3/tt_thread_session_set.3
+@man dt/share/man/man3/tt_trace_control.3
+@man dt/share/man/man3/tt_xcontext_join.3
+@man dt/share/man/man3/tt_xcontext_quit.3
+@man dt/share/man/man3/ttdt_Get_Modified.3
+@man dt/share/man/man3/ttdt_Revert.3
+@man dt/share/man/man3/ttdt_Save.3
+@man dt/share/man/man3/ttdt_close.3
+@man dt/share/man/man3/ttdt_file_event.3
+@man dt/share/man/man3/ttdt_file_join.3
+@man dt/share/man/man3/ttdt_file_notice.3
+@man dt/share/man/man3/ttdt_file_quit.3
+@man dt/share/man/man3/ttdt_file_request.3
+@man dt/share/man/man3/ttdt_message_accept.3
+@man dt/share/man/man3/ttdt_open.3
+@man dt/share/man/man3/ttdt_sender_imprint_on.3
+@man dt/share/man/man3/ttdt_session_join.3
+@man dt/share/man/man3/ttdt_session_quit.3
+@man dt/share/man/man3/ttdt_subcontract_manage.3
+@man dt/share/man/man3/ttmedia_Deposit.3
+@man dt/share/man/man3/ttmedia_load.3
+@man dt/share/man/man3/ttmedia_load_reply.3
+@man dt/share/man/man3/ttmedia_ptype_declare.3
+@man dt/share/man/man3/tttk_Xt_input_handler.3
+@man dt/share/man/man3/tttk_block_while.3
+@man dt/share/man/man3/tttk_message_abandon.3
+@man dt/share/man/man3/tttk_message_create.3
+@man dt/share/man/man3/tttk_message_destroy.3
+@man dt/share/man/man3/tttk_message_fail.3
+@man dt/share/man/man3/tttk_message_reject.3
+@man dt/share/man/man3/tttk_op_string.3
+@man dt/share/man/man3/tttk_string_op.3
+dt/share/man/man4/
+@man dt/share/man/man4/BIL.4
+@man dt/share/man/man4/Deposit.4
+@man dt/share/man/man4/Display.4
+@man dt/share/man/man4/DtDndProtocol.4
+@man dt/share/man/man4/DtInfo_LoadInfoLib.4
+@man dt/share/man/man4/DtInfo_PrintInfoAtLoc.4
+@man dt/share/man/man4/DtInfo_Quit.4
+@man dt/share/man/man4/DtInfo_ShowInfoAtLoc.4
+@man dt/share/man/man4/Edit.4
+@man dt/share/man/man4/Get_Environment.4
+@man dt/share/man/man4/Get_Geometry.4
+@man dt/share/man/man4/Get_Iconified.4
+@man dt/share/man/man4/Get_Locale.4
+@man dt/share/man/man4/Get_Mapped.4
+@man dt/share/man/man4/Get_Modified.4
+@man dt/share/man/man4/Get_Situation.4
+@man dt/share/man/man4/Get_Status.4
+@man dt/share/man/man4/Get_Sysinfo.4
+@man dt/share/man/man4/Get_XInfo.4
+@man dt/share/man/man4/Instantiate.4
+@man dt/share/man/man4/Lower.4
+@man dt/share/man/man4/Mail.4
+@man dt/share/man/man4/Modified.4
+@man dt/share/man/man4/Pause.4
+@man dt/share/man/man4/Print.4
+@man dt/share/man/man4/Quit.4
+@man dt/share/man/man4/Raise.4
+@man dt/share/man/man4/Resume.4
+@man dt/share/man/man4/Revert.4
+@man dt/share/man/man4/Reverted.4
+@man dt/share/man/man4/Save.4
+@man dt/share/man/man4/Saved.4
+@man dt/share/man/man4/Set_Environment.4
+@man dt/share/man/man4/Set_Geometry.4
+@man dt/share/man/man4/Set_Iconified.4
+@man dt/share/man/man4/Set_Locale.4
+@man dt/share/man/man4/Set_Mapped.4
+@man dt/share/man/man4/Set_Situation.4
+@man dt/share/man/man4/Signal.4
+@man dt/share/man/man4/Started.4
+@man dt/share/man/man4/Status.4
+@man dt/share/man/man4/Stopped.4
+@man dt/share/man/man4/Translate.4
+@man dt/share/man/man4/dtactionfile.4
+@man dt/share/man/man4/dtbmfile.4
+@man dt/share/man/man4/dtcm_archive.4
+@man dt/share/man/man4/dtcm_entry.4
+@man dt/share/man/man4/dtdpfile.4
+@man dt/share/man/man4/dtdtfile.4
+@man dt/share/man/man4/dtdtsfile.4
+@man dt/share/man/man4/dtfile_config.4
+@man dt/share/man/man4/dtfpfile.4
+@man dt/share/man/man4/dthelptagdtd.4
+@man dt/share/man/man4/dthffile.4
+@man dt/share/man/man4/dticonfile.4
+@man dt/share/man/man4/dtlocator.4
+@man dt/share/man/man4/dtpmfile.4
+@man dt/share/man/man4/dtresourcesfile.4
+@man dt/share/man/man4/dtsdldtd.4
+@man dt/share/man/man4/dtsdlfile.4
+@man dt/share/man/man4/dtsessiondb.4
+@man dt/share/man/man4/dtsessionfile.4
+@man dt/share/man/man4/dtspcdenv.4
+@man dt/share/man/man4/dtsrdbfiles.4
+@man dt/share/man/man4/dtsrfzkfiles.4
+@man dt/share/man/man4/dtsrhanfile.4
+@man dt/share/man/man4/dtsrlangfiles.4
+@man dt/share/man/man4/dtsrocffile.4
+@man dt/share/man/man4/dtwmrc.4
+@man dt/share/man/man4/mt-libtt-intro.4
+@man dt/share/man/man4/startlog.4
+@man dt/share/man/man4/tttracefile.4
+dt/share/man/man5/
+@man dt/share/man/man5/Dt.5
+@man dt/share/man/man5/DtAction.5
+@man dt/share/man/man5/DtComboBox.5
+@man dt/share/man/man5/DtDnd.5
+@man dt/share/man/man5/DtDts.5
+@man dt/share/man/man5/DtEditor.5
+@man dt/share/man/man5/DtHelp.5
+@man dt/share/man/man5/DtHelpDialog.5
+@man dt/share/man/man5/DtHelpQuickD.5
+@man dt/share/man/man5/DtInfoLib.5
+@man dt/share/man/man5/DtMenuButton.5
+@man dt/share/man/man5/DtMmdbBookCase.5
+@man dt/share/man/man5/DtMmdbGraphicInfo.5
+@man dt/share/man/man5/DtMmdbHandle.5
+@man dt/share/man/man5/DtMmdbInfoLibInfo.5
+@man dt/share/man/man5/DtMmdbInfoRequest.5
+@man dt/share/man/man5/DtMrm.5
+@man dt/share/man/man5/DtMsgLog.5
+@man dt/share/man/man5/DtPrint.5
+@man dt/share/man/man5/DtSaver.5
+@man dt/share/man/man5/DtSearch.5
+@man dt/share/man/man5/DtSession.5
+@man dt/share/man/man5/DtSpinBox.5
+@man dt/share/man/man5/DtStdAppFontNames.5
+@man dt/share/man/man5/DtStdInterfaceFontNames.5
+@man dt/share/man/man5/DtTerm.5
+@man dt/share/man/man5/DtWsm.5
+@man dt/share/man/man5/Tttt_c.5
+@man dt/share/man/man5/Tttttk.5
+@man dt/share/man/man5/csacsa.5
+@man dt/share/man/man5/dtactionaction.5
+@man dt/share/man/man5/dtappaction.5
+@man dt/share/man/man5/dtbuilderaction.5
+@man dt/share/man/man5/dtcalcaction.5
+@man dt/share/man/man5/dtcalendaraction.5
+@man dt/share/man/man5/dtenvvar.5
+@man dt/share/man/man5/dtfileaction.5
+@man dt/share/man/man5/dtfilsys.5
+@man dt/share/man/man5/dthelpaction.5
+@man dt/share/man/man5/dticonaction.5
+@man dt/share/man/man5/dtimsstartaction.5
+@man dt/share/man/man5/dtinfoBookdtd.5
+@man dt/share/man/man5/dtinfoStyledtd.5
+@man dt/share/man/man5/dtinfoTOCdtd.5
+@man dt/share/man/man5/dtinfoaction.5
+@man dt/share/man/man5/dtinfoaf.5
+@man dt/share/man/man5/dtmailaction.5
+@man dt/share/man/man5/dtmanaction.5
+@man dt/share/man/man5/dtprintinfoaction.5
+@man dt/share/man/man5/dtsessionaction.5
+@man dt/share/man/man5/dtstyleaction.5
+@man dt/share/man/man5/dtterm.5
+@man dt/share/man/man5/dttermaction.5
+@man dt/share/man/man5/dttextaction.5
+@man dt/share/man/man5/dttrashaction.5
+dt/share/man/man6/
+@man dt/share/man/man6/ttsnoop.6
 dt/share/palettes/
 dt/share/palettes/Alpine.dp
 dt/share/palettes/Arizona.dp
@@ -5168,5 +5866,15 @@ dt/share/palettes/desc.de_DE.ISO8859-1
 dt/share/palettes/desc.es_ES.ISO8859-1
 dt/share/palettes/desc.fr_FR.ISO8859-1
 dt/share/palettes/desc.it_IT.ISO8859-1
+@lib lib/libDtHelp.so.${LIBDtHelp_VERSION}
+@lib lib/libDtMrm.so.${LIBDtMrm_VERSION}
+@lib lib/libDtPrint.so.${LIBDtPrint_VERSION}
+@lib lib/libDtSearch.so.${LIBDtSearch_VERSION}
+@lib lib/libDtSvc.so.${LIBDtSvc_VERSION}
+@lib lib/libDtTerm.so.${LIBDtTerm_VERSION}
+@lib lib/libDtWidget.so.${LIBDtWidget_VERSION}
+@lib lib/libcsa.so.${LIBcsa_VERSION}
+@lib lib/libtt.so.${LIBtt_VERSION}
 share/examples/cde/
+@sample ${SYSCONFDIR}/
 @sample ${LOCALSTATEDIR}/
