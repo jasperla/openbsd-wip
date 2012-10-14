@@ -25,7 +25,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-#WANTLIB =		???
+WANTLIB += ICE Mrm SM Uil X11 Xau Xdmcp Xext Xm Xmu Xp Xt c iconv
+WANTLIB += m stdc++ util
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cdesktopenv/}
 
@@ -34,14 +35,11 @@ BUILD_DEPENDS =		lang/gawk \
 			print/xprintproto
 #RUN_DEPENDS =		???
 LIB_DEPENDS =		x11/openmotif
-#REGRESS_DEPENDS =	???
 
 LOCALSTATEDIR =		${BASELOCALSTATEDIR}/dt
 SYSCONFDIR =		${BASESYSCONFDIR}/dt
 CDEDIR =		${TRUEPREFIX}/dt
 BOOTSTRAPCFLAGS =	${CFLAGS} -I${X11BASE}/include -I${X11BASE}/include/X11
-#BOOTSTRAPCFLAGS =	${CFLAGS}
-#MAKE_FLAGS =		???
 MAKE_FLAGS =		BOOTSTRAPCFLAGS="${BOOTSTRAPCFLAGS}" \
 			IMAKE_DEFINES="-DX11ProjectRoot=${X11BASE} \
 			-DCplusplusCmd=${CXX} \
@@ -57,7 +55,6 @@ MAKE_FLAGS =		BOOTSTRAPCFLAGS="${BOOTSTRAPCFLAGS}" \
 			-DCDESharedRev=${CDE_SHVERSION} \
 			-DTclLibrary=${MODTCL_LIBDIR}"
 #FAKE_FLAGS =		???
-#REGRESS_FLAGS =	???
 
 USE_GROFF =		Yes
 # XXX only works with included imake at this point
@@ -66,8 +63,7 @@ USE_GROFF =		Yes
 XMKMF =			xmkmf -a -DBOOTSTRAPCFLAGS="\'${BOOTSTRAPCFLAGS}\'"
 #CONFIGURE_ENV =		
 
-#NO_BUILD =		Yes
-#NO_REGRESS =		Yes
+NO_REGRESS =		Yes
 
 CFLAGS =		-g
 WRKDIST =		${WRKDIR}/${PKGNAME}

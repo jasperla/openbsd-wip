@@ -1,7 +1,10 @@
 * make build with external imake
 * awk segfault
-* dttypes needs advance/compile
-* japanese localisation
-* upstream problems: dtksh, dtinfo, makedepend shit, docs
+* upstream problems: dtinfo, makedepend shit, docs
+* rc script
+* better install framework
+* PREFIX cleanliness (currently assumes /usr/dt)
+* dtdocbook memory fault
+* manpage sections
 
 NEEDS: printproto, libXp, printing enabled in openmotif
