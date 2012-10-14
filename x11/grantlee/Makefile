@@ -2,6 +2,7 @@
 
 COMMENT =		template and text document library for Qt
 DISTNAME =		grantlee-0.2.0
+REVISION =		1
 CATEGORIES =		devel x11 x11/qt4
 HOMEPAGE =		http://www.gitorious.org/grantlee/
 
@@ -27,7 +28,8 @@ REGRESS_DEPENDS =	devel/cmake \
 
 SEPARATE_BUILD =	simple
 
-COPTS = 		-lc -pthread
+# Even LDFLAGS doesn't work
+COPTS = 		-lc -lpthread
 
 # NOTE: Some regression tests could fail when started by "make regress".
 # Re-run them manually from the command line to check.
