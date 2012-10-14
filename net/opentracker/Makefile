@@ -16,6 +16,15 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
+FLAVORS+=		accesslist_white accesslist_black
+FLAVORS+=		sync_live ip_from_query_string
+FLAVORS+=		compression_gzip compression_gzip_always
+FLAVORS+=		log_networks restrict_stats
+FLAVORS+=		ip_from_proxy fulllog_networks log_numwant
+FLAVORS+=		modest_fullscrapes spot_woodpecker syslogs
+FLAVORS+=		dev_random v6
+FLAVOR?=
+
 WANTLIB =		c pthread z
 
 #MASTER_SITES =		???
@@ -27,6 +36,18 @@ WRKDIST =		${WRKDIR}/opentracker
 ALL_TARGET =		opentracker
 
 NO_REGRESS =		Yes
+
+.if ${FLAVOR:Maccesslist_white} && ${FLAVOR:Maccesslist_black}
+ERRORS+="Fatal: accesslist_white and accesslist_black flavors are mutually exclusive"
+.endif
+
+.for feature in ${FLAVORS}
+.if ${FLAVOR:M${feature}}
+FEATURES+=-DWANT_${feature:U}
+.endif
+.endfor
+
+MAKE_FLAGS+=FEATURES="${FEATURES}"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/opentracker
