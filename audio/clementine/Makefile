@@ -7,11 +7,10 @@ COMMENT-kde4 =	KDE4 Plasma runner for Clementine
 DISTNAME =	clementine-1.0.1
 PKGNAME-main =	${PKGNAME}
 PKGNAME-kde4 =	${PKGNAME:C/-/-kde4-/1}
-REVISION-main =	4
+REVISION-main =	2
 REVISION-kde4 =	0
 HOMEPAGE =	http://clementine-player.org/
 
-FLAVOR ?=
 PSEUDO_FLAVORS =	no_kde4
 MULTI_PACKAGES =	-main -kde4
 
@@ -36,7 +35,7 @@ WANTLIB-main +=	gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB-main +=	gstapp-0.10 gstbase-0.10 gstcdda-0.10 gstreamer-0.10
 WANTLIB-main +=	gsttag-0.10
 WANTLIB-main +=	avcodec avutil cdio lastfm mtp protobuf-lite qca2
-WANTLIB-main +=	qjson tag>=5.0 usb-1.0 xml2
+WANTLIB-main +=	qjson tag>=5.0 usb xml2
 
 WANTLIB-kde4 =	${WANTLIB-common} ${MODKDE4_WANTLIB}
 WANTLIB-kde4 +=	lib/qt4/QtSvg kdeui plasma
@@ -52,7 +51,7 @@ MODKDE4_USE =
 BUILD_DEPENDS =		devel/boost
 
 RUN_DEPENDS-main =	devel/desktop-file-utils \
-			multimedia/gstreamer-0.10/plugins-ugly
+			x11/qt4,-sqlite
 
 RUN_DEPENDS-kde4 =	${BUILD_PKGPATH},-main \
 			${MODKDE4_RUN_DEPENDS}
@@ -66,13 +65,13 @@ LIB_DEPENDS-main =	${MODGETTEXT_LIB_DEPENDS} \
 			audio/liblastfm \
 			devel/libmtp \
 			devel/libplist \
-			devel/libusb1 \
 			devel/protobuf \
 			devel/qjson \
 			graphics/ffmpeg \
 			graphics/glew \
 			multimedia/gstreamer-0.10/core \
-			multimedia/gstreamer-0.10/plugins-base \
+			multimedia/gstreamer-0.10/plugins-base,-main \
+			multimedia/gstreamer-0.10/plugins-base,-cdda \
 			security/qca2
 
 LIB_DEPENDS-kde4 =	${MODKDE4_LIB_DEPENDS}

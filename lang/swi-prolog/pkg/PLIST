@@ -143,7 +143,6 @@ lib/swipl-${V}/doc/Manual/home.gif
 lib/swipl-${V}/doc/Manual/hooks.html
 lib/swipl-${V}/doc/Manual/idepreds.html
 lib/swipl-${V}/doc/Manual/idesummary.html
-lib/swipl-${V}/doc/Manual/implhistory.html
 lib/swipl-${V}/doc/Manual/import.html
 lib/swipl-${V}/doc/Manual/importmodule.html
 lib/swipl-${V}/doc/Manual/index.gif
@@ -495,7 +494,6 @@ lib/swipl-${V}/library/dialect/sicstus/lists.pl
 lib/swipl-${V}/library/dialect/sicstus/sockets.pl
 lib/swipl-${V}/library/dialect/sicstus/swipl-lfr.pl
 lib/swipl-${V}/library/dialect/sicstus/system.pl
-lib/swipl-${V}/library/dialect/sicstus/terms.pl
 lib/swipl-${V}/library/dialect/sicstus/timeout.pl
 lib/swipl-${V}/library/dialect/swi/
 lib/swipl-${V}/library/dialect/swi/syspred_options.pl

@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, math features
 DISTNAME =	analitza-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	analitza		0.0	# 4.7
 SHARED_LIBS +=	analitzagui		0.0	# 4.7

@@ -28,7 +28,7 @@ CHECKSUM_FILE =	${.CURDIR}/../distinfo
 MODULES =	devel/gettext
 NO_REGRESS =	Yes
 CONFIGURE_ENV =	CFLAGS=-I${PREFIX}/include \
-		LDFLAGS="-L${PREFIX}/lib -liconv -lintl"
+		LDFLAGS="-pthread -L${PREFIX}/lib -liconv -lintl"
 
 # XXX have to do this manually here...
 .include "${.CURDIR}/../../Makefile.inc"

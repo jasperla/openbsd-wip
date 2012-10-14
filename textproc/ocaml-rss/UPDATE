@@ -1,0 +1,4 @@
+* bump version to 2.0
+* new MASTER_SITES and HOMEPAGE
+* use new PROPERTY ocaml_native
+* patch to support install on bytecode-only arch

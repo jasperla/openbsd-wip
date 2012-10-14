@@ -3,7 +3,6 @@
 COMMENT =		high-level interface for RDF
 DISTNAME =		redland-1.0.15
 CATEGORIES =		textproc
-REVISION =		0
 
 SHARED_LIBS =		rdf	1.1 # 0.0
 
@@ -17,9 +16,8 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-WANTLIB =	c crypto curl idn iodbc iodbcinst ltdl m ssl xml2
-WANTLIB +=	xslt z raptor2 rasqal pthread sqlite3
-WANTLIB +=	gcrypt gmp gpg-error mpfr
+WANTLIB +=	c crypto curl idn iodbc iodbcinst ltdl m ssl xml2
+WANTLIB +=	xslt z raptor2 rasqal
 
 MODULES =	devel/gettext
 
@@ -30,17 +28,15 @@ LIB_DEPENDS =	databases/iodbc \
 
 CONFIGURE_STYLE =	gnu
 USE_LIBTOOL =		gnu
+USE_GROFF =		Yes
 
-CONFIGURE_ARGS =	--disable-gtk-doc \
-			--with-bdb=no \
-			--with-ltdl-include=${LOCALBASE}/include \
-			--with-ltdl-lib=${LOCALBASE}/lib \
+CONFIGURE_ARGS +=	--with-raptor=system \
+			--with-rasqal=system \
+			--with-threestore=no \
+			--with-sqlite=no \
 			--with-mysql=no \
 			--with-postgresql=no \
-			--with-raptor=system \
-			--with-rasqal=system \
-			--with-sqlite=3 \
-			--with-threads=yes \
-			--with-threestore=no
+			--with-ltdl-include=${LOCALBASE}/include \
+			--with-ltdl-lib=${LOCALBASE}/lib
 
 .include <bsd.port.mk>

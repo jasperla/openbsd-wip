@@ -1,0 +1,16 @@
+$OpenBSD$
+--- kded/kded.cpp.orig	Mon Jan 30 11:02:29 2012
++++ kded/kded.cpp	Mon Jan 30 15:16:28 2012
+@@ -916,6 +916,12 @@ extern "C" KDE_EXPORT int kdemain(int argc, char *argv
+ 
+      KCrash::setFlags(KCrash::AutoRestart);
+ 
++#ifdef __OpenBSD__
++     // XXX Lower priority on OpenBSD until the reason for
++     // constant CPU consumption is found.
++     nice(20);
++#endif
++
+      // Not sure why kded is created before KDEDApplication
+      // but if it has to be, then it needs to be moved to the main thread
+      // before it can use timers (DF)

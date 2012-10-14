@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+@lib lib/libspice-client-glib-2.0.so.${LIBspice-client-glib-2.0_VERSION}
+@lib lib/libspice-client-gtk-3.0.so.${LIBspice-client-gtk-3.0_VERSION}
+@lib lib/libspice-controller.so.${LIBspice-controller_VERSION}

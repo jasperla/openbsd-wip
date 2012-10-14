@@ -1,0 +1,14 @@
+$OpenBSD$
+Interface of stdlib changed in ocaml 4.00. Adapt this extlib appropriately.
+
+--- bundles/extlib/extlib-1.5.2/extHashtbl.mli.orig	Sun Aug  5 09:51:10 2012
++++ bundles/extlib/extlib-1.5.2/extHashtbl.mli	Sun Aug  5 09:50:38 2012
+@@ -73,7 +73,7 @@ module Hashtbl :
+ 		functions. (note : functor support removed to avoid code
+ 		duplication). *)
+ 
+-	val create : int -> ('a, 'b) t
++	val create : ?random:bool -> int -> ('a, 'b) t
+ 	val clear : ('a, 'b) t -> unit
+ 	val add : ('a, 'b) t -> 'a -> 'b -> unit
+ 	val copy : ('a, 'b) t -> ('a, 'b) t

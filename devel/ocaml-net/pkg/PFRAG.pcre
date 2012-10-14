@@ -1,0 +1,6 @@
+@comment $OpenBSD: $
+lib/ocaml/netstring-pcre/
+lib/ocaml/netstring-pcre/META
+lib/ocaml/netstring-pcre/netstring-pcre.cma
+lib/ocaml/netstring-pcre/netstring_pcre.cmi
+lib/ocaml/netstring-pcre/netstring_pcre.mli

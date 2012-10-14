@@ -1,7 +1,7 @@
 $OpenBSD$
---- epan/epan.c.orig	Thu Sep 20 02:54:33 2012
-+++ epan/epan.c	Sun Oct  7 00:23:01 2012
-@@ -28,7 +28,9 @@
+--- epan/epan.c.orig	Fri Apr  6 18:43:17 2012
++++ epan/epan.c	Tue May 15 15:49:19 2012
+@@ -30,7 +30,9 @@
  #endif
  
  #ifdef HAVE_LIBGCRYPT

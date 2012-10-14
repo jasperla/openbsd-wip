@@ -1,7 +1,7 @@
 $OpenBSD$
---- epan/dissectors/packet-rpcap.c.orig	Thu Sep 20 03:12:39 2012
-+++ epan/dissectors/packet-rpcap.c	Sun Oct  7 00:23:01 2012
-@@ -31,6 +31,7 @@
+--- epan/dissectors/packet-rpcap.c.orig	Mon Oct 11 18:19:00 2010
++++ epan/dissectors/packet-rpcap.c	Wed Oct 13 00:05:32 2010
+@@ -33,6 +33,7 @@
  #include <sys/types.h>
  #endif
  

@@ -3,7 +3,6 @@
 @bin bin/libfm-pref-apps
 include/libfm/
 include/libfm/libfm/
-include/libfm/libfm/fm-actions.h
 include/libfm/libfm/fm-app-chooser-combo-box.h
 include/libfm/libfm/fm-app-chooser-dlg.h
 include/libfm/libfm/fm-app-info.h
@@ -56,9 +55,10 @@ include/libfm/libfm/fm-side-pane.h
 include/libfm/libfm/fm-simple-job.h
 include/libfm/libfm/fm-tab-label.h
 include/libfm/libfm/fm-thumbnail.h
-include/libfm/libfm/fm-thumbnailer.h
 include/libfm/libfm/fm-utils.h
 include/libfm/libfm/fm.h
+lib/gio/
+lib/gio/modules/
 lib/libfm-gtk.a
 lib/libfm-gtk.la
 lib/libfm.a
@@ -66,7 +66,6 @@ lib/libfm.la
 lib/pkgconfig/
 lib/pkgconfig/libfm-gtk.pc
 lib/pkgconfig/libfm.pc
-@man man/man1/libfm-pref-apps.1
 share/applications/
 share/applications/libfm-pref-apps.desktop
 share/examples/libfm/
@@ -87,8 +86,6 @@ share/gtk-doc/html/libfm/FmConfig.html
 share/gtk-doc/html/libfm/FmDeepCountJob.html
 share/gtk-doc/html/libfm/FmDirListJob.html
 share/gtk-doc/html/libfm/FmDirTreeModel.html
-share/gtk-doc/html/libfm/FmDirTreeView.html
-share/gtk-doc/html/libfm/FmDndDest.html
 share/gtk-doc/html/libfm/FmDndSrc.html
 share/gtk-doc/html/libfm/FmDummyMonitor.html
 share/gtk-doc/html/libfm/FmFileInfoJob.html
@@ -98,32 +95,25 @@ share/gtk-doc/html/libfm/FmFolderModel.html
 share/gtk-doc/html/libfm/FmFolderView.html
 share/gtk-doc/html/libfm/FmJob.html
 share/gtk-doc/html/libfm/FmNavHistory.html
-share/gtk-doc/html/libfm/FmPathBar.html
 share/gtk-doc/html/libfm/FmPathEntry.html
-share/gtk-doc/html/libfm/FmPlacesModel.html
 share/gtk-doc/html/libfm/FmPlacesView.html
-share/gtk-doc/html/libfm/FmSidePane.html
+share/gtk-doc/html/libfm/FmSimpleJob.html
 share/gtk-doc/html/libfm/FmTabLabel.html
-share/gtk-doc/html/libfm/annotation-glossary.html
 share/gtk-doc/html/libfm/api-index-full.html
 share/gtk-doc/html/libfm/home.png
 share/gtk-doc/html/libfm/index.html
 share/gtk-doc/html/libfm/index.sgml
 share/gtk-doc/html/libfm/left.png
-share/gtk-doc/html/libfm/libfm-FmSimpleJob.html
-share/gtk-doc/html/libfm/libfm-core.html
+share/gtk-doc/html/libfm/libfm-FmDndDest.html
 share/gtk-doc/html/libfm/libfm-fm-app-chooser-combo-box.html
 share/gtk-doc/html/libfm/libfm-fm-app-chooser-dlg.html
-share/gtk-doc/html/libfm/libfm-fm-app-info.html
 share/gtk-doc/html/libfm/libfm-fm-app-menu-view.html
 share/gtk-doc/html/libfm/libfm-fm-archiver.html
 share/gtk-doc/html/libfm/libfm-fm-clipboard.html
-share/gtk-doc/html/libfm/libfm-fm-dnd-auto-scroll.html
 share/gtk-doc/html/libfm/libfm-fm-file-info.html
 share/gtk-doc/html/libfm/libfm-fm-file-launcher.html
 share/gtk-doc/html/libfm/libfm-fm-file-menu.html
 share/gtk-doc/html/libfm/libfm-fm-file-properties.html
-share/gtk-doc/html/libfm/libfm-fm-gtk-file-launcher.html
 share/gtk-doc/html/libfm/libfm-fm-gtk-utils.html
 share/gtk-doc/html/libfm/libfm-fm-gtk.html
 share/gtk-doc/html/libfm/libfm-fm-icon-pixbuf.html
@@ -134,11 +124,8 @@ share/gtk-doc/html/libfm/libfm-fm-monitor.html
 share/gtk-doc/html/libfm/libfm-fm-path.html
 share/gtk-doc/html/libfm/libfm-fm-progress-dlg.html
 share/gtk-doc/html/libfm/libfm-fm-thumbnail.html
-share/gtk-doc/html/libfm/libfm-fm-thumbnailer.html
 share/gtk-doc/html/libfm/libfm-fm-utils.html
 share/gtk-doc/html/libfm/libfm-fm.html
-share/gtk-doc/html/libfm/libfm-gtk.html
-share/gtk-doc/html/libfm/libfm-jobs.html
 share/gtk-doc/html/libfm/libfm.devhelp2
 share/gtk-doc/html/libfm/libfm.html
 share/gtk-doc/html/libfm/object-tree.html

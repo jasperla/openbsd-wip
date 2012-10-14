@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+@bin lib/ocaml/cryptokit/cryptokit.cmxs

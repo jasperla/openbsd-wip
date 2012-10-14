@@ -1,17 +1,13 @@
 # $OpenBSD$
 
-COMMENT =	KDE Activity rooms management
+COMMENT =	K Desktop Environment, desktop activity
 DISTNAME =	kactivities-${MODKDE_VERSION}
 
 SHARED_LIBS =	kactivities	0.0 # 6.0
 
-WANTLIB =  c m pthread stdc++
-WANTLIB += ICE SM X11 Xext
-WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui lib/qt4/QtNetwork
-WANTLIB += lib/qt4/QtOpenGL lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg
-WANTLIB += lib/qt4/QtXml
-WANTLIB += kdeclarative kdeui kio nepomuk nepomukquery plasma soprano
+WANTLIB =  lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg c m
+WANTLIB += kdeui nepomuk nepomukquery pthread soprano stdc++
 
-MODKDE4_USE =		libs
+BUILD_DEPENDS =		x11/kde4/libs
 
 .include <bsd.port.mk>

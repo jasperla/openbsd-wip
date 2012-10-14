@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/08/18 22:13:17 avsm Exp $
+# $OpenBSD: Makefile,v 1.1.1.1 2012/07/13 08:38:09 edd Exp $
 
 COMMENT =	unicode library for objective caml
 
@@ -24,7 +24,6 @@ PERMIT_DISTFILES_CDROM =	Yes
 
 MODULES =	lang/ocaml
 
-RUN_DEPENDS =	lang/ocaml
 BUILD_DEPENDS =	sysutils/findlib
 
 CONFIGURE_STYLE = gnu dest

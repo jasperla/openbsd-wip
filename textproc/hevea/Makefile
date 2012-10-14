@@ -13,7 +13,7 @@ WANTLIB=		c m
 
 BUILD_DEPENDS=	lang/ocaml
 
-DISTNAME =	hevea-2.00
+DISTNAME =	hevea-1.10
 MASTER_SITES =	http://para.inria.fr/~maranget/hevea/distri/
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-manual${EXTRACT_SUFX}

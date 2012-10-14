@@ -1,0 +1,12 @@
+$OpenBSD$
+--- gtk/channel-display.c.orig	Wed Apr 11 20:12:25 2012
++++ gtk/channel-display.c	Wed Apr 11 20:12:33 2012
+@@ -19,6 +19,8 @@
+ #include "config.h"
+ #endif
+ 
++#include <sys/types.h>
++
+ #ifdef HAVE_SYS_SHM_H
+ #include <sys/shm.h>
+ #endif

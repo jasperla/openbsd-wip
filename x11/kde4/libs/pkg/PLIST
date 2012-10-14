@@ -271,7 +271,6 @@ include/KDE/KCharsets
 include/KDE/KCheckableProxyModel
 include/KDE/KCmdLineArgs
 include/KDE/KCmdLineOptions
-include/KDE/KCodecAction
 include/KDE/KCodecs
 include/KDE/KColor
 include/KDE/KColorButton
@@ -568,7 +567,6 @@ include/KDE/KParts/GenericFactory
 include/KDE/KParts/GenericFactoryBase
 include/KDE/KParts/HistoryProvider
 include/KDE/KParts/HtmlExtension
-include/KDE/KParts/ListingExtension
 include/KDE/KParts/LiveConnectExtension
 include/KDE/KParts/MainWindow
 include/KDE/KParts/OpenUrlEvent
@@ -616,7 +614,6 @@ include/KDE/KPtyProcess
 include/KDE/KPushButton
 include/KDE/KRandom
 include/KDE/KRandomSequence
-include/KDE/KRatingPainter
 include/KDE/KRatingWidget
 include/KDE/KRecentDocument
 include/KDE/KRecentFilesAction
@@ -1496,7 +1493,6 @@ include/kparts/genericfactory.h
 include/kparts/historyprovider.h
 include/kparts/htmlextension.h
 include/kparts/kparts_export.h
-include/kparts/listingextension.h
 include/kparts/mainwindow.h
 include/kparts/part.h
 include/kparts/partmanager.h
@@ -2149,12 +2145,14 @@ share/apps/cmake/modules/FindGMP.cmake
 share/apps/cmake/modules/FindGObject.cmake
 share/apps/cmake/modules/FindGSSAPI.cmake
 share/apps/cmake/modules/FindGStreamer.cmake
+share/apps/cmake/modules/FindGettext.cmake
 share/apps/cmake/modules/FindGphoto2.cmake
 share/apps/cmake/modules/FindHUNSPELL.cmake
 share/apps/cmake/modules/FindIOKit.cmake
 share/apps/cmake/modules/FindKDE4Internal.cmake
 share/apps/cmake/modules/FindKDE4Workspace.cmake
 share/apps/cmake/modules/FindKDevPlatform.cmake
+share/apps/cmake/modules/FindKdcraw.cmake
 share/apps/cmake/modules/FindKdeMultimedia.cmake
 share/apps/cmake/modules/FindKdepim.cmake
 share/apps/cmake/modules/FindKdepimLibs.cmake
@@ -3254,7 +3252,6 @@ share/apps/ksgmltools2/customization/xsl/
 share/apps/ksgmltools2/customization/xsl/README
 share/apps/ksgmltools2/customization/xsl/all-l10n.xml
 share/apps/ksgmltools2/customization/xsl/ca.xml
-share/apps/ksgmltools2/customization/xsl/cs.xml
 share/apps/ksgmltools2/customization/xsl/de.xml
 share/apps/ksgmltools2/customization/xsl/el.xml
 share/apps/ksgmltools2/customization/xsl/en.xml
@@ -3262,7 +3259,6 @@ share/apps/ksgmltools2/customization/xsl/es.xml
 share/apps/ksgmltools2/customization/xsl/et.xml
 share/apps/ksgmltools2/customization/xsl/fr.xml
 share/apps/ksgmltools2/customization/xsl/gl.xml
-share/apps/ksgmltools2/customization/xsl/hu.xml
 share/apps/ksgmltools2/customization/xsl/it.xml
 share/apps/ksgmltools2/customization/xsl/lt.xml
 share/apps/ksgmltools2/customization/xsl/nds.xml
@@ -3474,6 +3470,8 @@ share/doc/HTML/en/sonnet/
 share/doc/HTML/en/sonnet/common
 share/doc/HTML/en/sonnet/index.cache.bz2
 share/doc/HTML/en/sonnet/index.docbook
+share/examples/dbus-1/system.d/
+@sample ${SYSCONFDIR}/dbus-1/system.d/
 share/examples/dbus-1/system.d/org.kde.auth.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.auth.conf
 share/examples/xdg/

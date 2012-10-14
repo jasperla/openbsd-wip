@@ -2,7 +2,7 @@
 
 COMMENT =		Prolog for the real world
 
-V =			6.2.2
+V =			6.2.0
 DISTNAME =		pl-$V
 PKGNAME =		swi-prolog-$V
 CATEGORIES =		lang
@@ -14,7 +14,7 @@ HOMEPAGE =		http://www.swi-prolog.org/
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes 
+PERMIT_DISTFILES_CDROM = Yes 
 PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/download/stable/src/ \
@@ -27,9 +27,14 @@ MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}/src \
 				${WRKSRC}/packages/jpl \
 				${WRKSRC}/packages/xpce/src
 
-CONFIGURE_ENV +=	CIFLAGS=' -I${LOCALBASE}/include' \
-			LDFLAGS=' -L${LOCALBASE}/lib' \
+LDFLAGS +=		-L${LOCALBASE}/lib
+CPPFLAGS +=		-I${LOCALBASE}/include
+
+SWI_ENV =		CIFLAGS=' -I/usr/local/include' \
+			LDFLAGS=' -L/usr/local/lib' \
 			COFLAGS='-O2 -pipe -g'
+BUILD_ENV +=		${SWI_ENV}
+CONFIGURE_ENV +=	${SWI_ENV} # XXX needed?
 
 CONFIGURE_ARGS =	--enable-mt \
 			--disable-custom-flags \
@@ -47,23 +52,32 @@ BUILD_DEPENDS =		${RUN_DEPENDS}
 LIB_DEPENDS =		devel/gmp \
 			devel/libexecinfo \
 			graphics/jpeg
-
-WANTLIB += ICE SM X11 Xext Xft Xinerama Xpm Xt c crypto execinfo
-WANTLIB += expat fontconfig freetype gmp jpeg m ncursesw pthread
-WANTLIB += readline ssl z
+# XXX sort later
+WANTLIB +=	ICE SM X11 Xext Xft Xinerama Xpm Xt c crypto execinfo gmp 
+WANTLIB +=	m ncursesw pthread readline ssl z
+WANTLIB += expat fontconfig freetype jpeg
 
 FULLARCH =		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
-SUBST_VARS +=		V BOOT FULLARCH
+SUBST_VARS +=		V XV FULLARCH BOOT LDFLAGS CFLAGS CPPFLAGS
+
+# warning: #warning "<malloc.h> is obsolete, use <stdlib.h>"
+pre-patch:
+	find ${WRKSRC}/packages/{clib,sgml,xpce} -name '*.[ch]' | \
+	  xargs fgrep -l malloc.h | \
+	while read i; do \
+		sed -e 's/malloc.h/stdlib.h/' $$i >$$i.bak && mv $$i.bak $$i; \
+	done
+
+#post-patch:
+#	${SUBST_CMD} -c ${WRKSRC}/build.templ ${WRKSRC}/build
 
 post-install:
 	cd ${PREFIX}/lib && \
 		ln -sf swipl-$V/lib/${FULLARCH}/libpl.so.${LIBpl_VERSION}
 
-# Swipl multithreading flaky at best on OpenBSD.
-# We are not sure if this is our threading implementation or their code.
-# The following tests fail (hang). We remove them to allow the rest
-# of the tests to execute atleast.
-# When updating, uncomment these to see if they still fail.
+# Consider swipl multithreading broken on OpenBSD :(
+# The following tests fail, we remove them to allow the rest
+# of the tests to execute atleast
 pre-regress:
 	rm -f ${WRKBUILD}/src/Tests/thread/test_signal.pl
 	rm -f ${WRKBUILD}/src/Tests/core/test_resource_error.pl

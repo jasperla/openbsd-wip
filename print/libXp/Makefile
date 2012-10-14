@@ -4,7 +4,7 @@ COMMENT =		X11 printing system
 
 DISTNAME =		libXp-1.0.1
 
-SHARED_LIBS +=  Xp                        11.0
+SHARED_LIBS +=  Xp                        0.0 # 0.0
 
 CATEGORIES =		print devel x11
 

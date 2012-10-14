@@ -1,4 +1,2 @@
-SHA256 (plt-5.3.1.1-src-unix.tgz) = PmlOFqBcZRqP70P+qB7GECgcbx1JRME2i22GdPJHC7M=
-SHA256 (racket-5.3-src-unix.tgz) = Q9+Qpq6qZYnbrHXs+EOeN8tMmsm6HDer+9+A+SSngUU=
-SIZE (plt-5.3.1.1-src-unix.tgz) = 18299231
-SIZE (racket-5.3-src-unix.tgz) = 18111154
+SHA256 (racket-5.2.1-src-unix.tgz) = nWsMwNMp2atS0uboRobliPe6jfk1JGUC8qIAdb5CoR0=
+SIZE (racket-5.2.1-src-unix.tgz) = 17211427
