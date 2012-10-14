@@ -25,12 +25,13 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += ICE Mrm SM Uil X11 Xau Xdmcp Xext Xm Xmu Xp Xt c iconv
+WANTLIB += ICE Mrm SM Uil X11 Xau Xdmcp Xext Xm Xmu Xp Xt c
 WANTLIB += m stdc++ util
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cdesktopenv/}
 
-MODULES =		lang/tcl
+MODULES =		lang/tcl \
+			converters/libiconv
 BUILD_DEPENDS =		lang/gawk \
 			print/xprintproto
 #RUN_DEPENDS =		???
