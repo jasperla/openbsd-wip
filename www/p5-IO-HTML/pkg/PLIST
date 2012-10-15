@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/IO/
+${P5SITE}/IO/HTML.pm
+@man man/man3p/IO::HTML.3p
