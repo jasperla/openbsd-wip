@@ -1,6 +1,8 @@
 @comment $OpenBSD: PLIST,v 1.5 2009/12/21 20:46:02 ajacoutot Exp $
 @bin bin/pcmanfm
+@man man/man1/pcmanfm.1
 share/applications/
+share/applications/pcmanfm-desktop-pref.desktop
 share/applications/pcmanfm.desktop
 share/examples/pcmanfm/
 share/examples/pcmanfm/xdg/

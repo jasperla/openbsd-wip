@@ -1,0 +1,6 @@
+SHA256 (texlive-20120701-extra.tar.xz) = QpTxeIaF4J1kgvOOTqS8rTatAXDpHDWLfwGJTrZ1aDE=
+SHA256 (texlive-20120701-texmf.tar.xz) = mHvdLUhE4nkbGFoTLhhhHluX13R/CAmQQtDeM9Nrwbo=
+SHA256 (texmf-var-pregen-2012.tar.xz) = lZel90H95pXKw0snUJ4+xmgKjssdWvK5zYv0W+SZg+o=
+SIZE (texlive-20120701-extra.tar.xz) = 326776
+SIZE (texlive-20120701-texmf.tar.xz) = 1428125120
+SIZE (texmf-var-pregen-2012.tar.xz) = 14698424

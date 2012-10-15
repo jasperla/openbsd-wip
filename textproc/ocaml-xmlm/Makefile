@@ -3,7 +3,7 @@
 COMMENT =	streaming XML input/output for OCaml
 CATEGORIES =	textproc
 
-V =		1.1.0
+V =		1.1.1
 DISTNAME =	xmlm-${V}
 PKGNAME =	ocaml-${DISTNAME}
 EXTRACT_SUFX =	.tbz
@@ -21,6 +21,7 @@ PERMIT_DISTFILES_CDROM =	Yes
 MODULES =	lang/ocaml
 
 WANTLIB =	c m
+RUN_DEPENDS =	lang/ocaml
 BUILD_DEPENDS =	sysutils/findlib
 
 CONFIGURE_STYLE =	oasis

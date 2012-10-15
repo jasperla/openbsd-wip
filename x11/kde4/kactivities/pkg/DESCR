@@ -1,7 +1,1 @@
-This package includes libraries that are central to the development and 
-execution of a KDE program, as well as internationalization files for these 
-libraries, misc HTML documentation, theme modules, and regression tests. 
-Here is an alphabetical list:
-
-* kactivities
-    Activities enable settings for multiple desktops to be stored.
+System service to manage user's activities, track the usage patterns etc.

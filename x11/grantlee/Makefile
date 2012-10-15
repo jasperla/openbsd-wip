@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		http://downloads.grantlee.org/ \
 			http://www.loegria.net/grantlee/
 
-WANTLIB += c m stdc++
+WANTLIB += c m stdc++ pthread
 WANTLIB += lib/qt4/QtGui lib/qt4/QtScript
 
 MODULES =		devel/cmake x11/qt4

@@ -12,8 +12,6 @@ Look closer at following tests:
 
 Hard ones: HUPnP and UDev emulation layers.
 
-kded4 constantly eats 25-30% CPU, the problem relies in ksycoca4, which looks up access mode (through access(2)) and other info (through stat(2)) to system .desktop files in loop. It's integral part of kded, so cannot be disabled (if ever should).
-
 knotify4 prints the following on startup:
 QStringList Solid::Backends::Hal::HalManager::findDeviceByDeviceInterface(Solid::DeviceInterface::Type)  error:  "org.freedesktop.DBus.Error.ServiceUnknown" 
 
@@ -22,6 +20,3 @@ Check if we could/should comment out set(QT_USE_IMPORTED_TARGETS TRUE) in FindKD
 Localized documentation incorrectly encodes names in the documentation tree.
 
 Fix kjs/collector.cpp (see current patch), KJS asserts at startup otherwise. We're using Webkit by default now, instead of KHTML, to make Konqueror and other browsers usable.
-
-pers@somehost$ kde4-config --path exe
-/home/pers/.kde/lib/kde4/libexec/:/usr/local/bin/

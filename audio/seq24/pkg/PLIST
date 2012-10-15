@@ -1,0 +1,3 @@
+@comment $OpenBSD$
+@comment @bin bin/dump
+@bin bin/seq24

@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2005/05/23 23:04:53 avsm Exp $
-lib/ocaml/rss/rss.a
-lib/ocaml/rss/rss.cmxa

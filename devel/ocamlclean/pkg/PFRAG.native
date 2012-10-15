@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@bin bin/ocamlclean.native
-@bin bin/ocamlclean

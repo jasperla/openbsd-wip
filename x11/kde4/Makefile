@@ -17,15 +17,17 @@
 # releases of KDE SC).
 
 # Build dependency tree of main building blocks:
-# akonadi, attica, automoc, oxygen-icons, qimageblitz
+# akonadi, attica, automoc, cagibi, oxygen-icons, qimageblitz
 # |
 #  - libs
+#   |   -kactivities -> nepomuk-core -> pimlibs -> runtime
 #   |
-#   |- l10n, wallpapers
+#   |- artwork, base-artwork, l10n, wallpapers
 #   |- runtime
 #   |- baseapps
 #   |- pimlibs
 #   | |
+#   | |- libkgapi
 #   | |- pim-runtime
 #   |  - pim
 #   |-
@@ -54,20 +56,24 @@
 #   | -- former kdeedu
 #   | -- former kdeutils
 #   | -- former kdegraphics
+#   | -- former kdemultimedia
 
 # basic bricks
      SUBDIR += akonadi			# minor issues
      SUBDIR += attica			# OK
      SUBDIR += automoc			# OK
+     SUBDIR += cagibi			# untested
      SUBDIR += oxygen-icons		# OK
 
 # libraries
+     SUBDIR += libkgapi			# untested
      SUBDIR += libs			# OK
      SUBDIR += pimlibs			# OK
      SUBDIR += qimageblitz		# OK
 
 # extra base
      SUBDIR += kactivities		# untested
+     SUBDIR += nepomuk-core		# untested
      SUBDIR += runtime			# test
      SUBDIR += pim-runtime		# OK
      SUBDIR += workspace		# test
@@ -96,7 +102,6 @@
 # fat packages
      SUBDIR += admin			# test
      SUBDIR += games			# minor issues
-     SUBDIR += multimedia		# OK, but Kscd needs testing
      SUBDIR += network			# test
      SUBDIR += pim			# OK
      SUBDIR += sdk			# test
@@ -138,6 +143,7 @@
      SUBDIR += kwordquiz		# OK
      SUBDIR += libkdeedu		# OK
      SUBDIR += marble			# test
+     SUBDIR += pairs			# untested
      SUBDIR += parley			# OK
      SUBDIR += rocs			# minor issues
      SUBDIR += step			# OK
@@ -158,9 +164,19 @@
      SUBDIR += libkexiv2		# test
      SUBDIR += libkipi			# OK
      SUBDIR += libksane			# untested
-     SUBDIR += mobipocket		# untested
      SUBDIR += okular			# test
      SUBDIR += svgpart			# OK
+
+# former kdemultimedia
+     SUBDIR += audiocd-kio		# untested
+     SUBDIR += dragon			# minor issues
+     SUBDIR += ffmpegthumbs		# test
+     SUBDIR += juk			# OK
+     SUBDIR += kmix			# broken
+     SUBDIR += kscd			# untested
+     SUBDIR += libkcddb			# untested
+     SUBDIR += libkcompactdisc		# untested
+     SUBDIR += mplayerthumbs		# test
 
 # other apps
      SUBDIR += kate			# OK
@@ -175,6 +191,8 @@
      SUBDIR += ktorrent			# test
 
 # additional resources
+     SUBDIR += artwork			# OK
+     SUBDIR += base-artwork		# OK
      SUBDIR += plasma-addons		# untested
      SUBDIR += l10n			# OK
      SUBDIR += wallpapers		# OK

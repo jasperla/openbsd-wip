@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/actions/Makefile.am.orig	Mon Sep 10 12:08:28 2012
++++ src/actions/Makefile.am	Mon Sep 10 12:09:24 2012
+@@ -9,7 +9,7 @@ AM_CPPFLAGS = \
+ 	-DPACKAGE_DATA_DIR=\""$(datadir)/libfm"\" \
+ 	-DPACKAGE_LIB_DIR=\""$(libdir)/libfm"\" \
+ 	-DPACKAGE_LOCALE_DIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
+-	-Wno-unused-but-set-variable -Wno-unused-variable \
++	-Wno-unused-variable \
+ 	$(NULL)
+ 
+ noinst_LTLIBRARIES = libfmactions.la
