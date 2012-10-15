@@ -2,10 +2,11 @@
 
 COMMENT =	K Desktop Environment, RAW picture decoding C++ library
 DISTNAME =	libkdcraw-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kdcraw			0.0	# 20.0
 
-WANTLIB =  c m stdc++
+WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += kdeui kio
