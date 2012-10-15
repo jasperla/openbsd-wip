@@ -2,7 +2,7 @@
 
 COMMENT=		proof assistant based on a typed lambda calculus
 
-DISTNAME=		coq-8.4
+DISTNAME=		coq-8.3pl4
 CATEGORIES=		math
 HOMEPAGE=		http://coq.inria.fr/
 
@@ -14,20 +14,21 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://pauillac.inria.fr/~herbelin/coq/distrib/V8.4/files/
-DISTFILES=		${DISTNAME}.tar.gz
+MASTER_SITES=		http://coq.inria.fr/distrib/V8.3pl4/files/
+DISTFILES=		${DISTNAME}.tar.gz \
 
+#DIST_SUBDIR=		coq
 DESTDIRNAME=		COQINSTALLPREFIX
 
+#BUILD_DEPENDS =		lang/camlp5
 RUN_DEPENDS =		x11/lablgtk2
-BUILD_DEPENDS =		x11/lablgtk2
+BUILD_DEPENDS =		x11/lablgtk2 lang/camlp5
 
-WANTLIB =		GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
-			Xinerama Xrandr Xrender atk-1.0 c cairo expat \
-			fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
-			glib-2.0 gobject-2.0 gtk-x11-2.0 iconv intl m \
-			pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png \
-			pthread pthread-stubs xcb xcb-render xcb-shm z
+
+WANTLIB=		c m pthread GL X11 Xcomposite Xcursor Xdamage \
+			Xext Xfixes Xi Xinerama Xrandr Xrender expat\
+			fontconfig freetype pixman-1 pthread-stubs \
+			xcb xcb-render xcb-shm z
 
 USE_GMAKE=		Yes
 USE_GROFF =		Yes
@@ -37,8 +38,7 @@ MODULES=		lang/ocaml
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS=		-prefix ${PREFIX} \
 			-emacslib ${PREFIX}/share/emacs/site-lisp \
-			-usecamlp4 \
-			-makecmd ${GMAKE}
+			-camlp5dir ${LOCALBASE}/lib/ocaml/camlp5
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mocaml_native}
 CONFIGURE_ARGS +=	-opt
@@ -51,9 +51,10 @@ REGRESS_TARGET=		check
 
 
 post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/coq-8.3
 	${INSTALL_DATA} \
 		${WRKDIST}/{LICENSE,COPYRIGHT,CREDITS,CHANGES,COMPATIBILITY} \
-		${PREFIX}/share/doc/coq/
+		${PREFIX}/share/doc/coq-8.3/
 
 
 .include <bsd.port.mk>

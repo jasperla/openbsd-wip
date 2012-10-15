@@ -1,0 +1,14 @@
+$OpenBSD$
+--- ide/preferences.ml.orig	Sun Nov  6 12:59:10 2011
++++ ide/preferences.ml	Mon Oct 15 21:48:56 2012
+@@ -31,6 +31,10 @@ let mod_to_str (m:Gdk.Tags.modifier) =
+     | `CONTROL -> "CONTROL"
+     | `LOCK -> "LOCK"
+     | `SHIFT -> "SHIFT"
++    | `HYPER -> "<Hyper>"
++    | `META -> "<Meta>"
++    | `SUPER -> "<Super>"
++    | `RELEASE -> "Release"
+ 
+ let (str_to_mod:string -> Gdk.Tags.modifier) =
+   function

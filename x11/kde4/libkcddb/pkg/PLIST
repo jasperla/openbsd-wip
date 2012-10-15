@@ -1,0 +1,30 @@
+@comment $OpenBSD$
+include/libkcddb/
+include/libkcddb/cdinfo.h
+include/libkcddb/cdinfodialog.h
+include/libkcddb/client.h
+include/libkcddb/configbase.h
+include/libkcddb/genres.h
+include/libkcddb/kcddb.h
+include/libkcddb/kcddb_export.h
+include/libkcddb/kcddbconfig.h
+lib/cmake/libkcddb/
+lib/cmake/libkcddb/LibkcddbConfig.cmake
+lib/cmake/libkcddb/LibkcddbTargets${MODKDE4_CMAKE_PREFIX}.cmake
+lib/cmake/libkcddb/LibkcddbTargets.cmake
+lib/kde4/kcm_cddb.so
+lib/libkcddb.so
+share/apps/kconf_update/kcmcddb-emailsettings.upd
+share/config.kcfg/
+share/config.kcfg/libkcddb.kcfg
+share/doc/HTML/en/kcontrol/
+share/doc/HTML/en/kcontrol/cddbretrieval/
+share/doc/HTML/en/kcontrol/cddbretrieval/common
+share/doc/HTML/en/kcontrol/cddbretrieval/index.cache.bz2
+share/doc/HTML/en/kcontrol/cddbretrieval/index.docbook
+share/doc/HTML/en/kcontrol/cddbretrieval/kscd13.png
+share/doc/HTML/en/kcontrol/cddbretrieval/kscd14.png
+share/doc/HTML/en/kcontrol/cddbretrieval/kscd16.png
+share/kde4/services/libkcddb.desktop
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
