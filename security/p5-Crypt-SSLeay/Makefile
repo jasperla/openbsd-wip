@@ -19,17 +19,18 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB +=		c crypto ssl z
 
-RUN_DEPENDS =	www/p5-LWP-Protocol-https>=6.02
+# These are for testing perl test check for
+# module version during configure
+BUILD_DEPENDS =	devel/p5-Try-Tiny>=0.9 \
+		www/p5-LWP-Protocol-https>=6.02
 
-BUILD_DEPENDS =	${RUN_DEPENDS} \
-		devel/p5-Try-Tiny>=0.9
-
-CONFIGURE_ARGS+=--default --lib=/usr --no-live-tests
+CONFIGURE_ARGS+=--default --lib=/usr 
 
 # Use make -D LIVE_TEST regress to run regression with live tests
-pre-regress:
 .ifdef	LIVE_TEST
-	perl -pi -e 's/network_tests\s+0/network_tests 1/' ${WRKSRC}/test.config
+CONFIGURE_ARGS +=	--live-tests
+.else
+CONFIGURE_ARGS +=	--no-live-tests
 .endif
 
 MODCPAN_EXAMPLES=	Yes
