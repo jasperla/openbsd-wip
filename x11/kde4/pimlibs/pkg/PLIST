@@ -1,4 +1,6 @@
 @comment $OpenBSD: PLIST,v 1.4 2010/06/18 11:50:29 espie Exp $
+@bin bin/akonadi_benchmarker
+@bin bin/akonaditest
 include/KDE/Akonadi/
 include/KDE/Akonadi/AgentBase
 include/KDE/Akonadi/AgentFactory
@@ -843,6 +845,9 @@ include/kimap/setquotajob.h
 include/kimap/storejob.h
 include/kimap/subscribejob.h
 include/kimap/unsubscribejob.h
+include/kimaptest/
+include/kimaptest/fakeserver.h
+include/kimaptest/mockjob.h
 include/kldap/
 include/kldap/ber.h
 include/kldap/kldap_export.h
@@ -1074,6 +1079,7 @@ lib/kde4/plugins/designer/kholidayswidgets.so
 @lib lib/libkcalutils.so.${LIBkcalutils_VERSION}
 @lib lib/libkholidays.so.${LIBkholidays_VERSION}
 @lib lib/libkimap.so.${LIBkimap_VERSION}
+@comment lib/libkimaptest.a
 @lib lib/libkldap.so.${LIBkldap_VERSION}
 @lib lib/libkmbox.so.${LIBkmbox_VERSION}
 @lib lib/libkmime.so.${LIBkmime_VERSION}
