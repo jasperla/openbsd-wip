@@ -142,11 +142,6 @@ CONFIGURE_ARGS +=	-DMAN_INSTALL_DIR=${PREFIX}/man \
 			-DINFO_INSTALL_DIR=${PREFIX}/info \
 			-DLIBEXEC_INSTALL_DIR=${PREFIX}/libexec
 
-# CMAKE_EXE_LINKER_FLAGS needed to fix undefined symbols
-# for pulseaudio functions, fixing globally here
-CONFIGURE_ARGS +=	-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib \
-				-Wl,-rpath,${LOCALBASE}/lib/pulseaudio"
-
 # NOTE: due to bugs in make-plist, plist may contain
 # ${FLAVORS} instead of ${MODKDE4_CMAKE_PREFIX}.
 # You've been warned.
