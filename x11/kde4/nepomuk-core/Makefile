@@ -14,6 +14,7 @@ WANTLIB += streamanalyzer streams
 
 MODKDE4_USE =	libs
 
+BUILD_DEPENDS =	misc/shared-desktop-ontologies
 LIB_DEPENDS =	databases/soprano \
 		databases/strigi
 
