@@ -1,0 +1,2 @@
+gnucash can use either mysql or postgresql as a backend database by
+installing the libdbi-drivers-mysql or libdbi-drivers-pgsql packages.
