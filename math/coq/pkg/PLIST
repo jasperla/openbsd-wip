@@ -975,7 +975,12 @@ lib/coq/user-contrib/
 share/coq/
 share/coq/coq.png
 share/doc/coq/
+share/doc/coq/CHANGES
+share/doc/coq/COMPATIBILITY
+share/doc/coq/COPYRIGHT
+share/doc/coq/CREDITS
 share/doc/coq/FAQ-CoqIde
+share/doc/coq/LICENSE
 share/emacs/
 share/emacs/site-lisp/
 share/emacs/site-lisp/coq-db.el

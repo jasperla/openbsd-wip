@@ -49,4 +49,12 @@ CONFIGURE_ARGS +=	-byteonly
 ALL_TARGET=		world
 REGRESS_TARGET=		check
 
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/coq-8.3
+	${INSTALL_DATA} \
+		${WRKDIST}/{LICENSE,COPYRIGHT,CREDITS,CHANGES,COMPATIBILITY} \
+		${PREFIX}/share/doc/coq-8.3/
+
+
 .include <bsd.port.mk>

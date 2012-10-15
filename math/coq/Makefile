@@ -49,4 +49,11 @@ CONFIGURE_ARGS +=	-byteonly
 ALL_TARGET=		world
 REGRESS_TARGET=		check
 
+
+post-install:
+	${INSTALL_DATA} \
+		${WRKDIST}/{LICENSE,COPYRIGHT,CREDITS,CHANGES,COMPATIBILITY} \
+		${PREFIX}/share/doc/coq/
+
+
 .include <bsd.port.mk>
