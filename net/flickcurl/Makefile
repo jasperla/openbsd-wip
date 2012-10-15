@@ -29,7 +29,7 @@ USE_GROFF =		Yes
 LIB_DEPENDS =		net/curl \
 			devel/libidn \
 			textproc/libxml,-main \
-			textproc/raptor
+			textproc/raptor>=2
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS = 	${CONFIGURE_SHARED} --with-raptor=2
