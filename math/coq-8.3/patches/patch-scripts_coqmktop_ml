@@ -1,0 +1,12 @@
+$OpenBSD$
+--- scripts/coqmktop.ml.orig	Sun Nov  6 12:59:10 2011
++++ scripts/coqmktop.ml	Sat Aug 18 10:14:08 2012
+@@ -274,7 +274,7 @@ let main () =
+         ocamloptexec^" -linkall"
+     end else
+       (* bytecode (we shunt ocamlmktop script which fails on win32) *)
+-      let ocamlmktoplib = " toplevellib.cma" in
++      let ocamlmktoplib = " ocamlcommon.cma ocamlbytecomp.cma ocamltoplevel.cma" in
+       let ocamlcexec = Filename.concat camlbin "ocamlc" in
+       let ocamlccustom = Printf.sprintf "%s %s -linkall "
+         ocamlcexec Coq_config.coqrunbyteflags in
