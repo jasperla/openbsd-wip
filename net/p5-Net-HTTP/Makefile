@@ -16,4 +16,11 @@ PERMIT_DISTFILES_FTP =	 Yes
 
 MODULES =	cpan
 
+RUN_DEPENDS	+= p5-Crypt-SSLeay-*|p5-IO-Socket-SSL-*:security/p5-Crypt-SSLeay
+BUILD_DEPENDS	+= ${RUN_DEPENDS}
+
+.if LIVE_TEST
+CONFIGURE_ARGS +=--live-tests
+.endif
+
 .include <bsd.port.mk>
