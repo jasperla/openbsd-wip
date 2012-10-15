@@ -2,24 +2,22 @@
 
 COMMENT =	K Desktop Environment, base runtime
 DISTNAME =	kde-runtime-${MODKDE_VERSION}
-REVISION =	2
 
 SHARED_LIBS =	kwalletbackend 		0.0	# 4.7
 SHARED_LIBS +=	molletnetwork 		0.0	# 4.7
-SHARED_LIBS +=	nepomuksync 		4.7	# 4.7
-SHARED_LIBS +=	nepomukdatamanagement 	0.0	# 4.8
+#SHARED_LIBS +=	nepomukdatamanagement	0.0	# 4.7
 
-WANTLIB =  Half ICE Iex IlmImf IlmThread Imath
+WANTLIB =  c m stdc++ pthread util
+WANTLIB +=  Half ICE Iex IlmImf IlmThread Imath SM X11 Xcursor Xext
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSvg
-WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml SM X11 Xcursor
-WANTLIB += Xext attica c exiv2 jpeg kcmutils kdeclarative kdesu
-WANTLIB += kdeui kdewebkit kdnssd kemoticons kfile khtml kidletime
+WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml
+WANTLIB += attica exiv2 jpeg kactivities kcmutils kdeclarative
+WANTLIB += kdesu kdeui kdewebkit kdnssd kemoticons kfile khtml
 WANTLIB += kio kjs kmediaplayer knewstuff3 knotifyconfig kparts
-WANTLIB += kpty m nepomuk nepomukquery nepomukutils phonon plasma
-WANTLIB += pthread smbclient solid soprano sopranoclient sopranoserver
-WANTLIB += ssh stdc++ streamanalyzer streams util xine canberra
-WANTLIB += glib-2.0 pulse pulse-mainloop-glib
+WANTLIB += kpty kxmlrpcclient nepomuk nepomukcore nepomukutils
+WANTLIB += phonon plasma solid soprano
+WANTLIB += glib-2.0 pulse pulse-mainloop-glib smbclient ssh xine canberra
 
 MODKDE4_USE =	libs
 
@@ -40,9 +38,11 @@ LIB_DEPENDS =	audio/libcanberra \
 		multimedia/phonon \
 		multimedia/xine-lib \
 		net/samba \
-		productivity/qzeitgeist \
 		security/libssh \
-		x11/kde4/attica
+		x11/kde4/attica \
+		STEM->=${MODKDE4_VERSION}:x11/kde4/kactivities \
+		STEM->=${MODKDE4_VERSION}:x11/kde4/nepomuk-core \
+		STEM->=${MODKDE4_VERSION}:x11/kde4/pimlibs
 
 # QNtrack depends on libnl, Linux-specific library.
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_ALSA:Bool=TRUE \

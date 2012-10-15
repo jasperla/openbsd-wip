@@ -1,7 +1,7 @@
 @comment $OpenBSD$
 bin/fuze
 bin/video4fuze
-lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/video4fuze-${V}-py${MODPY_VERSION}.egg-info
 share/applications/video4fuze.desktop
 share/pixmaps/
 share/pixmaps/blackfuze.png

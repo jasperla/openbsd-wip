@@ -8,14 +8,10 @@ share/applications/kde4/gwenview.desktop
 share/apps/gvpart/
 share/apps/gvpart/gvpart.rc
 share/apps/gwenview/
+share/apps/gwenview/color-schemes/
+share/apps/gwenview/color-schemes/fullscreen.colors
 share/apps/gwenview/cursors/
 share/apps/gwenview/cursors/zoom.png
-share/apps/gwenview/fullscreenthemes/
-share/apps/gwenview/fullscreenthemes/blackglass/
-share/apps/gwenview/fullscreenthemes/blackglass/checked.png
-share/apps/gwenview/fullscreenthemes/blackglass/scroll-left.png
-share/apps/gwenview/fullscreenthemes/blackglass/scroll-right.png
-share/apps/gwenview/fullscreenthemes/blackglass/style.css
 share/apps/gwenview/gwenviewui.rc
 share/apps/solid/
 share/apps/solid/actions/

@@ -1,3 +1,4 @@
 @comment $OpenBSD$
 @lib lib/librdf.so.${LIBrdf_VERSION}
+lib/redland/librdf_storage_sqlite.so
 lib/redland/librdf_storage_virtuoso.so

@@ -10,7 +10,8 @@ SHARED_LIBS +=	sopranoindex              1.0 # 1.0
 SHARED_LIBS +=	sopranoserver             1.0 # 1.0
 
 HOMEPAGE =	http://soprano.sourceforge.net/
-DISTNAME =	soprano-2.7.6
+DISTNAME =	soprano-2.8.0
+REVISION =	2
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=soprano/}
 
@@ -20,8 +21,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MODULES =		devel/cmake x11/qt4
-CONFIGURE_STYLE =	cmake
+MODULES =		x11/kde4
+MODKDE4_USE =
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
@@ -30,13 +31,17 @@ LIB_DEPENDS = 	textproc/clucene \
 		textproc/raptor \
 		textproc/redland
 
-WANTLIB =  c m pthread stdc++
+WANTLIB =  c m stdc++
 WANTLIB += lib/qt4/QtCore lib/qt4/QtDBus lib/qt4/QtNetwork lib/qt4/QtXml
-WANTLIB += clucene iodbc raptor2 rdf
+WANTLIB += clucene-core iodbc raptor2 rdf
 
 # No Java, thanks
 CONFIGURE_ARGS =	-DSOPRANO_DISABLE_SESAME2_BACKEND:Bool=Yes \
 			-DSOPRANO_BUILD_TESTS:Bool=Yes
+
+REGRESS_DEPENDS =		databases/virtuoso \
+				x11/dbus
+REGRESS_IS_INTERACTIVE =	X11
 
 post-extract:
 	cd ${WRKDIST}/cmake/modules && \

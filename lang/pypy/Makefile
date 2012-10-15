@@ -2,7 +2,7 @@
 
 ONLY_FOR_ARCHS =	amd64
 
-COMMENT =		Fast implementation of the Python language
+COMMENT =		fast implementation of the Python language
 
 V=1.9
 DISTNAME =		release-${V}
@@ -21,19 +21,23 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
+WANTLIB +=		bz2 c crypto curses expat ffi m pthread ssl util z
+
 MASTER_SITES =		https://bitbucket.org/pypy/pypy/get/
 EXTRACT_SUFX =		.tar.bz2
 
+DIST_SUBDIR =		pypy
+
 MODULES =		lang/python
-MODPY_VERSION=		2.7
+MODPY_VERSION =		2.7
 VMEM_WARNING =		Yes
 USE_GMAKE =		Yes
 BUILD_DEPENDS =		textproc/py-sphinx
 
 MODULES +=		devel/gettext
-WANTLIB +=		bz2 c crypto curses expat ffi m pthread ssl util z
 
-WRKDIST=		${WRKDIR}/pypy-pypy-*
+WRKDIST =		${WRKDIR}/pypy-pypy-*
+
 do-build:
 	cd ${WRKSRC}/pypy/translator/goal/ && \
 	  PYPY_USESSION_DIR=${WRKDIR}/usession PYPY_CTYPES_DIR=${WRKDIR}/ctypes \

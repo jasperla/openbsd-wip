@@ -1,0 +1,5 @@
+The "Virt Install" tool (virt-install for short command name, virtinst
+for package name) is a command line tool which provides an easy way to
+provision operating systems into virtual machines. It also provides an
+API to the virt-manager application for its graphical VM creation
+wizard.

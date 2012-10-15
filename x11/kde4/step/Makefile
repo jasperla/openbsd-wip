@@ -13,8 +13,9 @@ WANTLIB += cln glib-2.0 gsl gslcblas iconv intl qalculate xml2
 MODULES =	devel/gettext
 
 LIB_DEPENDS = 	devel/gsl \
-		math/eigen2 \
 		math/qalculate/libqalculate
+
+BUILD_DEPENDS =	math/eigen2
 
 CONFIGURE_ARGS =	-DSTEPCORE_TESTS:Bool=True
 

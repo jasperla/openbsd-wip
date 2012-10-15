@@ -1,8 +1,8 @@
 $OpenBSD$
 Do not use home-grown swapXX macros instead of system ones.
---- libstreams/lib/textutils.cpp.orig	Mon Jan 16 19:15:37 2012
-+++ libstreams/lib/textutils.cpp	Mon Jan 16 19:16:43 2012
-@@ -159,12 +159,18 @@ Strigi::convertNewLines(char* p) {
+--- libstreams/lib/textutils.cpp.orig	Sun Feb  5 17:08:27 2012
++++ libstreams/lib/textutils.cpp	Tue Oct  9 14:07:24 2012
+@@ -163,12 +163,18 @@ Strigi::convertNewLines(char* p) {
      }
  }
  
@@ -21,7 +21,7 @@ Do not use home-grown swapXX macros instead of system ones.
  #define swap64(x) \
        ((((x) & 0xff00000000000000ull) >> 56) \
       | (((x) & 0x00ff000000000000ull) >> 40) \
-@@ -174,6 +180,7 @@ Strigi::convertNewLines(char* p) {
+@@ -178,6 +184,7 @@ Strigi::convertNewLines(char* p) {
       | (((x) & 0x0000000000ff0000ull) << 24) \
       | (((x) & 0x000000000000ff00ull) << 40) \
       | (((x) & 0x00000000000000ffull) << 56))

@@ -1,25 +1,24 @@
 # $OpenBSD$
 
-COMMENT-face =		K Desktop Environment, Qt/C++ wrapper around LibFace
-COMMENT-geomap =	K Desktop Environment, KIPI interface library for Marble
-COMMENT-kipi =		K Desktop Environment, image plugins infrastructure
-COMMENT-main =		K Desktop Environment, photo management utility
-COMMENT-mediawiki =	K Desktop Environment, KIPI interface for MediaWiki
-COMMENT-vkontakte =	K Desktop Environment, KIPI interface for VKontakte.Ru
+COMMENT-face =		Qt/C++ wrapper around LibFace
+COMMENT-geomap =	KIPI interface library for Marble
+COMMENT-kipi =		KDE image plugins collection
+COMMENT-main =		KDE photo management utility
+COMMENT-mediawiki =	KIPI interface for MediaWiki
+COMMENT-vkontakte =	KIPI interface for VK.com
 
-VERSION =		2.6.0
+HOMEPAGE =		http://www.digikam.org/
+VERSION =		2.7.0
 DISTNAME =		digikam-${VERSION}
-REVISION =		0
 
-PKGNAME =		digikam4-${VERSION}
 PKGNAME-face =		libkface-2.0.0
 PKGNAME-geomap =	libkgeomap-${VERSION}
-PKGNAME-kipi =		kipi-plugins4-${VERSION}
+PKGNAME-kipi =		kipi-plugins-${VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 PKGNAME-vkontakte =	libkvkontakte-1.0.0
 
-EXTRACT_SUFX ?=		.tar.bz2
+EXTRACT_SUFX =		.tar.bz2
 
 SHARED_LIBS =	kipiplugins		0.0
 SHARED_LIBS +=  digikamcore		0.0 # 2.0

@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@bin lib/ocaml/batteries/batteries.cmxs
-@bin lib/ocaml/batteries/batteries_uni.cmxs

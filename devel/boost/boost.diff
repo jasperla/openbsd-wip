@@ -1,0 +1,467 @@
+Index: Makefile
+===================================================================
+RCS file: /cvs/ports/devel/boost/Makefile,v
+retrieving revision 1.39
+diff -u -p -r1.39 Makefile
+--- Makefile	29 Sep 2012 07:08:38 -0000	1.39
++++ Makefile	11 Oct 2012 00:06:32 -0000
+@@ -6,12 +6,11 @@ BROKEN-hppa =	ICE on src/tr1/assoc_lague
+ COMMENT=	free peer-reviewed portable C++ source libraries
+ 
+ PKGNAME=	boost-${VERSION}
+-REVISION=	14
+ 
+-VERSION=	1.42.0
++VERSION=	1.51.0
+ DISTNAME=	boost_${VERSION:S/./_/g}
+ 
+-SO_VERSION=	4.0
++SO_VERSION=	5.0
+ BOOST_LIBS=	boost_date_time boost_date_time-mt \
+ 		boost_filesystem boost_filesystem-mt \
+ 		boost_graph boost_graph-mt \
+@@ -29,10 +28,15 @@ BOOST_LIBS=	boost_date_time boost_date_t
+ 		boost_serialization boost_serialization-mt \
+ 		boost_signals boost_signals-mt \
+ 		boost_system boost_system-mt \
+-		boost_thread-mt \
++		boost_thread \
+ 		boost_unit_test_framework boost_unit_test_framework-mt \
+ 		boost_wave boost_wave-mt \
+-		boost_wserialization boost_wserialization-mt
++		boost_wserialization boost_wserialization-mt \
++		boost_chrono boost_chrono-mt \
++		boost_context boost_context-mt \
++		boost_random boost_random-mt \
++		boost_timer boost_timer-mt \
++		boost_graph_parallel boost_graph_parallel-mt
+ .for _lib in ${BOOST_LIBS}
+ SHARED_LIBS+=	${_lib} ${SO_VERSION}
+ .endfor
+@@ -58,7 +62,7 @@ BJAM_CONFIG=	-sNO_BZIP2=1 \
+ 		-d+2 -q \
+ 		-j ${MAKE_JOBS} \
+ 		cflags='${CFLAGS}' cxxflags='${CXXFLAGS}' \
+-		variant=release link=static,shared threading=single,multi 
++		variant=release link=static,shared threading=multi
+ 
+ BOOTSTRAP_CONFIG=	--without-icu \
+ 			--with-python=${MODPY_BIN} \
+@@ -96,7 +100,7 @@ do-build:
+ 		./bjam ${BJAM_CONFIG}
+ 
+ do-install:
+-	${INSTALL_PROGRAM} ${WRKSRC}/tools/jam/src/bin.*/bjam \
++	${INSTALL_PROGRAM} ${WRKSRC}/tools/build/v2/engine/bin.*/bjam \
+ 		${PREFIX}/bin
+ 
+ 	${INSTALL_DATA} ${WRKSRC}/stage/lib/lib!(*.so) ${PREFIX}/lib
+Index: distinfo
+===================================================================
+RCS file: /cvs/ports/devel/boost/distinfo,v
+retrieving revision 1.5
+diff -u -p -r1.5 distinfo
+--- distinfo	21 Apr 2010 09:26:58 -0000	1.5
++++ distinfo	11 Oct 2012 00:06:32 -0000
+@@ -1,5 +1,2 @@
+-MD5 (boost_1_42_0.tar.gz) = +CLwHcTrAPWvAAz2M5YaIw==
+-RMD160 (boost_1_42_0.tar.gz) = nqTQcz+52sCo37Q7a8KTIvnAJ/g=
+-SHA1 (boost_1_42_0.tar.gz) = vC6wt9/0Khpr6BMtouSpCS6vPvw=
+-SHA256 (boost_1_42_0.tar.gz) = rFcb6SI9/i73fTU1GrDny7JFzj+p5ut+DBt84FBLFl0=
+-SIZE (boost_1_42_0.tar.gz) = 40932853
++SHA256 (boost_1_51_0.tar.gz) = sPfsxm631u5ahl802+Z5Hc3w/+rFklFC3uqmfTyMI/U=
++SIZE (boost_1_51_0.tar.gz) = 61031842
+Index: patches/patch-Jamroot
+===================================================================
+RCS file: /cvs/ports/devel/boost/patches/patch-Jamroot,v
+retrieving revision 1.2
+diff -u -p -r1.2 patch-Jamroot
+--- patches/patch-Jamroot	21 Apr 2010 09:26:58 -0000	1.2
++++ patches/patch-Jamroot	11 Oct 2012 00:06:32 -0000
+@@ -1,29 +1,14 @@
+ $OpenBSD: patch-Jamroot,v 1.2 2010/04/21 09:26:58 landry Exp $
+---- Jamroot.orig	Sun Jan 24 21:43:34 2010
+-+++ Jamroot	Wed Apr 21 09:38:38 2010
+-@@ -138,6 +138,7 @@ import option ;
++--- Jamroot.orig	Fri Jul 27 13:15:55 2012
+++++ Jamroot	Wed Oct 10 16:45:59 2012
++@@ -134,8 +134,9 @@ import path ;
+  path-constant BOOST_ROOT : . ;
+- constant BOOST_VERSION : 1.42.0 ;
++ constant BOOST_VERSION : 1.51.0 ;
+  constant BOOST_JAMROOT_MODULE : $(__name__) ;
+-+constant SO_VERSION : ${SO_VERSION} ;
+++constant SO_VERSION : 5.0 ;
+  
+- local version-tag = [ MATCH "^([^.]+)[.]([^.]+)[.]([^.]+)" : $(BOOST_VERSION) ]
+-     ;
+-@@ -369,7 +370,7 @@ rule tag ( name : type ? : property-set )
+-         else if $(layout) = system
+-         {
+-             result = [ common.format-name
+--                <base> 
+-+                <base> <threading>
+-                 -$(BUILD_ID)
+-                 : $(name) : $(type) : $(property-set) ] ;
+-         }
+-@@ -390,7 +391,7 @@ rule tag ( name : type ? : property-set )
+-           ( ! ( [ $(property-set).get <target-os> ] in windows cygwin darwin aix ) &&
+-             ! ( [ $(property-set).get <toolset> ] in pgi ) )
+-         {
+--            result = $(result).$(BOOST_VERSION)  ;
+-+            result = $(result).$(SO_VERSION)  ;
+-         }
+-             
+-         return $(result) ;
++-boostcpp.set-version $(BOOST_VERSION) ;
+++boostcpp.set-version $(SO_VERSION) ;
++ 
++ project boost
++     : requirements <include>.
+Index: patches/patch-boost_archive_basic_archive_hpp
+===================================================================
+RCS file: patches/patch-boost_archive_basic_archive_hpp
+diff -N patches/patch-boost_archive_basic_archive_hpp
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ patches/patch-boost_archive_basic_archive_hpp	11 Oct 2012 00:06:32 -0000
+@@ -0,0 +1,21 @@
++$OpenBSD$
++--- boost/archive/basic_archive.hpp.orig	Wed Oct 10 17:12:59 2012
+++++ boost/archive/basic_archive.hpp	Wed Oct 10 17:10:46 2012
++@@ -115,7 +115,7 @@ class class_id_type { (public)
++     explicit class_id_type(const int t_) : t(t_){
++         BOOST_ASSERT(t_ <= boost::integer_traits<base_type>::const_max);
++     }
++-    explicit class_id_type(const std::size_t t_) : t(t_){
+++    explicit class_id_type(const size_t t_) : t(t_){
++  //       BOOST_ASSERT(t_ <= boost::integer_traits<base_type>::const_max);
++     }
++     class_id_type(const class_id_type & t_) : 
++@@ -151,7 +151,7 @@ class object_id_type { (private)
++ public:
++     object_id_type(): t(0) {};
++     // note: presumes that size_t >= unsigned int.
++-    explicit object_id_type(const std::size_t & t_) : t(t_){
+++    explicit object_id_type(const size_t & t_) : t(t_){
++         BOOST_ASSERT(t_ <= boost::integer_traits<base_type>::const_max);
++     }
++     object_id_type(const object_id_type & t_) : 
+Index: patches/patch-boost_archive_iterators_remove_whitespace_hpp
+===================================================================
+RCS file: /cvs/ports/devel/boost/patches/patch-boost_archive_iterators_remove_whitespace_hpp,v
+retrieving revision 1.2
+diff -u -p -r1.2 patch-boost_archive_iterators_remove_whitespace_hpp
+--- patches/patch-boost_archive_iterators_remove_whitespace_hpp	2 Nov 2011 11:54:15 -0000	1.2
++++ patches/patch-boost_archive_iterators_remove_whitespace_hpp	11 Oct 2012 00:06:32 -0000
+@@ -1,11 +1,11 @@
+ $OpenBSD: patch-boost_archive_iterators_remove_whitespace_hpp,v 1.2 2011/11/02 11:54:15 jasper Exp $
+---- boost/archive/iterators/remove_whitespace.hpp.orig	Sun Dec 20 14:40:29 2009
+-+++ boost/archive/iterators/remove_whitespace.hpp	Sun Dec 20 19:07:34 2009
+-@@ -16,6 +16,7 @@
++--- boost/archive/iterators/remove_whitespace.hpp.orig	Wed Oct 10 15:21:03 2012
+++++ boost/archive/iterators/remove_whitespace.hpp	Wed Oct 10 15:21:31 2012
++@@ -18,6 +18,7 @@
+  
+- //  See http://www.boost.org for updates, documentation, and revision history.
++ #include <boost/assert.hpp>
+  
+ +#include <cwctype>
+- #include <cassert>
+- 
+  #include <boost/config.hpp> // for BOOST_DEDUCED_TYPENAME
++ 
++ #include <boost/serialization/pfto.hpp>
+Index: patches/patch-boost_asio_detail_pipe_select_interrupter_hpp
+===================================================================
+RCS file: /cvs/ports/devel/boost/patches/patch-boost_asio_detail_pipe_select_interrupter_hpp,v
+retrieving revision 1.1
+diff -u -p -r1.1 patch-boost_asio_detail_pipe_select_interrupter_hpp
+--- patches/patch-boost_asio_detail_pipe_select_interrupter_hpp	30 Mar 2010 11:01:10 -0000	1.1
++++ patches/patch-boost_asio_detail_pipe_select_interrupter_hpp	11 Oct 2012 00:06:32 -0000
+@@ -1,11 +1,11 @@
+ $OpenBSD: patch-boost_asio_detail_pipe_select_interrupter_hpp,v 1.1 2010/03/30 11:01:10 robert Exp $
+---- boost/asio/detail/pipe_select_interrupter.hpp.orig	Tue May 12 18:05:45 2009
+-+++ boost/asio/detail/pipe_select_interrupter.hpp	Tue May 12 18:06:32 2009
+-@@ -27,6 +27,7 @@
++--- boost/asio/detail/pipe_select_interrupter.hpp.orig	Wed Oct 10 15:22:58 2012
+++++ boost/asio/detail/pipe_select_interrupter.hpp	Wed Oct 10 15:23:33 2012
++@@ -23,6 +23,7 @@
++ #if !defined(BOOST_ASIO_HAS_EVENTFD)
+  
+  #include <boost/asio/detail/push_options.hpp>
+- #include <fcntl.h>
+ +#include <unistd.h>
+- #include <boost/asio/detail/pop_options.hpp>
+  
+- #include <boost/asio/error.hpp>
++ namespace boost {
++ namespace asio {
+Index: patches/patch-boost_asio_detail_socket_ops_hpp
+===================================================================
+RCS file: /cvs/ports/devel/boost/patches/patch-boost_asio_detail_socket_ops_hpp,v
+retrieving revision 1.1
+diff -u -p -r1.1 patch-boost_asio_detail_socket_ops_hpp
+--- patches/patch-boost_asio_detail_socket_ops_hpp	30 Mar 2010 11:01:10 -0000	1.1
++++ patches/patch-boost_asio_detail_socket_ops_hpp	11 Oct 2012 00:06:32 -0000
+@@ -1,12 +1,12 @@
+ $OpenBSD: patch-boost_asio_detail_socket_ops_hpp,v 1.1 2010/03/30 11:01:10 robert Exp $
+---- boost/asio/detail/socket_ops.hpp.orig	Tue May 12 18:06:50 2009
+-+++ boost/asio/detail/socket_ops.hpp	Tue May 12 18:07:35 2009
+-@@ -24,6 +24,8 @@
+- #include <cstdlib>
+- #include <cstring>
+- #include <cerrno>
++--- boost/asio/detail/socket_ops.hpp.orig	Wed Oct 10 15:25:04 2012
+++++ boost/asio/detail/socket_ops.hpp	Wed Oct 10 15:26:49 2012
++@@ -15,6 +15,8 @@
++ # pragma once
++ #endif // defined(_MSC_VER) && (_MSC_VER >= 1200)
++ 
+ +#include <netdb.h>
+ +#include <unistd.h>
+- #include <boost/detail/workaround.hpp>
+- #include <new>
+- #include <boost/asio/detail/pop_options.hpp>
++ #include <boost/asio/detail/config.hpp>
++ 
++ #include <boost/system/error_code.hpp>
+Index: patches/patch-boost_detail_endian_hpp
+===================================================================
+RCS file: /cvs/ports/devel/boost/patches/patch-boost_detail_endian_hpp,v
+retrieving revision 1.4
+diff -u -p -r1.4 patch-boost_detail_endian_hpp
+--- patches/patch-boost_detail_endian_hpp	2 Nov 2011 11:54:15 -0000	1.4
++++ patches/patch-boost_detail_endian_hpp	11 Oct 2012 00:06:32 -0000
+@@ -1,7 +1,7 @@
+ $OpenBSD: patch-boost_detail_endian_hpp,v 1.4 2011/11/02 11:54:15 jasper Exp $
+---- boost/detail/endian.hpp.orig	Wed Oct 21 14:07:45 2009
+-+++ boost/detail/endian.hpp	Mon Oct 17 01:13:58 2011
+-@@ -42,6 +42,14 @@
++--- boost/detail/endian.hpp.orig	Wed Oct 10 15:27:55 2012
+++++ boost/detail/endian.hpp	Wed Oct 10 15:30:03 2012
++@@ -43,6 +43,13 @@
+  #  error Unknown machine endianness detected.
+  # endif
+  # define BOOST_BYTE_ORDER __BYTE_ORDER
+@@ -12,7 +12,6 @@ $OpenBSD: patch-boost_detail_endian_hpp,
+ +# elif (_BYTE_ORDER == _BIG_ENDIAN)
+ +#  define BOOST_BIG_ENDIAN
+ +# endif
+-+# define BOOST_BYTE_ORDER _BYTE_ORDER
+- #elif defined(_BIG_ENDIAN) && !defined(_LITTLE_ENDIAN)
+- # define BOOST_BIG_ENDIAN
+- # define BOOST_BYTE_ORDER 4321
++ #elif defined(_BIG_ENDIAN) && !defined(_LITTLE_ENDIAN) || \
++     defined(__BIG_ENDIAN__) && !defined(__LITTLE_ENDIAN__) || \
++     defined(_STLP_BIG_ENDIAN) && !defined(_STLP_LITTLE_ENDIAN)
+Index: patches/patch-boost_function_function_template_hpp
+===================================================================
+RCS file: patches/patch-boost_function_function_template_hpp
+diff -N patches/patch-boost_function_function_template_hpp
+--- patches/patch-boost_function_function_template_hpp	30 Apr 2010 20:08:02 -0000	1.3
++++ /dev/null	1 Jan 1970 00:00:00 -0000
+@@ -1,14 +0,0 @@
+-$OpenBSD: patch-boost_function_function_template_hpp,v 1.3 2010/04/30 20:08:02 espie Exp $
+---- boost/function/function_template.hpp.orig	Fri Apr 30 21:01:11 2010
+-+++ boost/function/function_template.hpp	Fri Apr 30 21:02:15 2010
+-@@ -1000,9 +1000,9 @@ namespace boost {
+- 
+- #if !BOOST_WORKAROUND(BOOST_MSVC, < 1300)
+-   template<typename R BOOST_FUNCTION_COMMA BOOST_FUNCTION_TEMPLATE_PARMS>
+-+  inline 
+-   typename BOOST_FUNCTION_FUNCTION<
+-       R BOOST_FUNCTION_COMMA BOOST_FUNCTION_TEMPLATE_ARGS>::result_type
+--  inline 
+-   BOOST_FUNCTION_FUNCTION<R BOOST_FUNCTION_COMMA BOOST_FUNCTION_TEMPLATE_ARGS>
+-   ::operator()(BOOST_FUNCTION_PARMS) const
+-   {
+Index: patches/patch-boost_math_tools_config_hpp
+===================================================================
+RCS file: patches/patch-boost_math_tools_config_hpp
+diff -N patches/patch-boost_math_tools_config_hpp
+--- patches/patch-boost_math_tools_config_hpp	2 Nov 2011 11:54:15 -0000	1.2
++++ /dev/null	1 Jan 1970 00:00:00 -0000
+@@ -1,12 +0,0 @@
+-$OpenBSD: patch-boost_math_tools_config_hpp,v 1.2 2011/11/02 11:54:15 jasper Exp $
+---- boost/math/tools/config.hpp.orig	Mon Oct 12 06:35:20 2009
+-+++ boost/math/tools/config.hpp	Mon Oct 17 01:15:58 2011
+-@@ -24,7 +24,7 @@
+- #include <boost/math/special_functions/detail/round_fwd.hpp>
+- 
+- #if defined(__CYGWIN__) || defined(__FreeBSD__) || defined(__NetBSD__) \
+--   || defined(__hppa) || defined(__NO_LONG_DOUBLE_MATH)
+-+   || (defined(__hppa) && !defined(__OpenBSD__)) || defined(__NO_LONG_DOUBLE_MATH)
+- #  define BOOST_MATH_NO_LONG_DOUBLE_MATH_FUNCTIONS
+- #endif
+- #if BOOST_WORKAROUND(__BORLANDC__, BOOST_TESTED_AT(0x582))
+Index: patches/patch-boost_throw_exception_hpp
+===================================================================
+RCS file: /cvs/ports/devel/boost/patches/patch-boost_throw_exception_hpp,v
+retrieving revision 1.3
+diff -u -p -r1.3 patch-boost_throw_exception_hpp
+--- patches/patch-boost_throw_exception_hpp	6 Nov 2011 19:26:23 -0000	1.3
++++ patches/patch-boost_throw_exception_hpp	11 Oct 2012 00:06:32 -0000
+@@ -4,9 +4,9 @@ Fix for /usr/local/include/boost/throw_e
+ `inline' is not at  beginning of declaration which makes -Werror
+ configure scripts bomb
+ 
+---- boost/throw_exception.hpp.orig	Tue Dec 22 21:59:23 2009
+-+++ boost/throw_exception.hpp	Thu Apr  8 13:36:37 2010
+-@@ -55,7 +55,7 @@ void throw_exception( std::exception const & e ); // u
++--- boost/throw_exception.hpp.orig	Wed Oct 10 15:43:10 2012
+++++ boost/throw_exception.hpp	Wed Oct 10 15:43:44 2012
++@@ -57,7 +57,7 @@ void throw_exception( std::exception const & e ); // u
+  
+  inline void throw_exception_assert_compatibility( std::exception const & ) { }
+  
+Index: patches/patch-boost_wave_token_ids_hpp
+===================================================================
+RCS file: patches/patch-boost_wave_token_ids_hpp
+diff -N patches/patch-boost_wave_token_ids_hpp
+--- patches/patch-boost_wave_token_ids_hpp	30 Mar 2010 11:01:10 -0000	1.3
++++ /dev/null	1 Jan 1970 00:00:00 -0000
+@@ -1,12 +0,0 @@
+-$OpenBSD: patch-boost_wave_token_ids_hpp,v 1.3 2010/03/30 11:01:10 robert Exp $
+---- boost/wave/token_ids.hpp.orig	Sun Dec 20 19:48:02 2009
+-+++ boost/wave/token_ids.hpp	Sun Dec 20 19:49:32 2009
+-@@ -27,7 +27,7 @@
+- #if !defined(BOOST_WAVE_TOKEN_IDS_DEFINED)
+- #define BOOST_WAVE_TOKEN_IDS_DEFINED
+- 
+--#if (defined (__FreeBSD__) || defined (__DragonFly__)) && defined (T_DIVIDE) 
+-+#if (defined (__FreeBSD__) || defined (__DragonFly__) || defined(__OpenBSD__)) && defined (T_DIVIDE) 
+- #undef T_DIVIDE
+- #endif
+- 
+Index: patches/patch-libs_filesystem_src_operations_cpp
+===================================================================
+RCS file: /cvs/ports/devel/boost/patches/patch-libs_filesystem_src_operations_cpp,v
+retrieving revision 1.1
+diff -u -p -r1.1 patch-libs_filesystem_src_operations_cpp
+--- patches/patch-libs_filesystem_src_operations_cpp	6 Nov 2011 20:05:47 -0000	1.1
++++ patches/patch-libs_filesystem_src_operations_cpp	11 Oct 2012 00:06:32 -0000
+@@ -1,19 +1,19 @@
+ $OpenBSD: patch-libs_filesystem_src_operations_cpp,v 1.1 2011/11/06 20:05:47 jasper Exp $
+---- libs/filesystem/src/operations.cpp.orig	Thu Nov  3 06:53:43 2011
+-+++ libs/filesystem/src/operations.cpp	Thu Nov  3 06:54:19 2011
+-@@ -58,14 +58,11 @@ using boost::system::system_category;
+- 
+- # else // BOOST_POSIX_API
++--- libs/filesystem/src/operations.cpp.orig	Wed Oct 10 15:47:26 2012
+++++ libs/filesystem/src/operations.cpp	Wed Oct 10 15:49:47 2012
++@@ -73,14 +73,11 @@ using std::wstring;
++     const fs::path dot_dot_path("..");
+  #   include <sys/types.h>
++ #   include <sys/stat.h>
+ -#   if !defined(__APPLE__) && !defined(__OpenBSD__)
+-+#   ifndef __APPLE__
+++#   if !defined(__APPLE__)
+  #     include <sys/statvfs.h>
+  #     define BOOST_STATVFS statvfs
+  #     define BOOST_STATVFS_F_FRSIZE vfs.f_frsize
+  #   else
+--#ifdef __OpenBSD__
++-#     ifdef __OpenBSD__
+ -#     include <sys/param.h>
+--#endif
++-#     endif
+  #     include <sys/mount.h>
+  #     define BOOST_STATVFS statfs
+- #     define BOOST_STATVFS_F_FRSIZE static_cast<boost::uintmax_t>( vfs.f_bsize )
++ #     define BOOST_STATVFS_F_FRSIZE static_cast<boost::uintmax_t>(vfs.f_bsize)
+Index: patches/patch-libs_random_random_device_cpp
+===================================================================
+RCS file: patches/patch-libs_random_random_device_cpp
+diff -N patches/patch-libs_random_random_device_cpp
+--- patches/patch-libs_random_random_device_cpp	30 Mar 2010 11:00:15 -0000	1.2
++++ /dev/null	1 Jan 1970 00:00:00 -0000
+@@ -1,21 +0,0 @@
+-$OpenBSD: patch-libs_random_random_device_cpp,v 1.2 2010/03/30 11:00:15 robert Exp $
+---- libs/random/random_device.cpp.orig	Tue May 12 18:37:39 2009
+-+++ libs/random/random_device.cpp	Tue May 12 18:38:44 2009
+-@@ -22,7 +22,7 @@ const boost::random_device::result_type boost::random_
+- #endif
+- 
+- 
+--#if defined(__linux__) || defined (__FreeBSD__)
+-+#if defined(__linux__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+- 
+- // the default is the unlimited capacity device, using some secure hash
+- // try "/dev/random" for blocking when the entropy pool has drained
+-@@ -90,7 +90,7 @@ class boost::random_device::impl (private)
+-   int fd;
+- };
+- 
+--#endif // __linux__ || __FreeBSD__
+-+#endif // __linux__ || __FreeBSD__ || __OpenBSD__ 
+- 
+- 
+- boost::random_device::random_device(const std::string& token)
+Index: patches/patch-tools_build_v2_tools_gcc_jam
+===================================================================
+RCS file: /cvs/ports/devel/boost/patches/patch-tools_build_v2_tools_gcc_jam,v
+retrieving revision 1.4
+diff -u -p -r1.4 patch-tools_build_v2_tools_gcc_jam
+--- patches/patch-tools_build_v2_tools_gcc_jam	19 Sep 2011 19:53:20 -0000	1.4
++++ patches/patch-tools_build_v2_tools_gcc_jam	11 Oct 2012 00:06:32 -0000
+@@ -1,7 +1,7 @@
+ $OpenBSD: patch-tools_build_v2_tools_gcc_jam,v 1.4 2011/09/19 19:53:20 naddy Exp $
+---- tools/build/v2/tools/gcc.jam.orig	Wed Oct 28 08:47:51 2009
+-+++ tools/build/v2/tools/gcc.jam	Sun Sep 18 13:12:45 2011
+-@@ -269,7 +269,7 @@ class gcc-pch-generator : pch-generator
++--- tools/build/v2/tools/gcc.jam.orig	Wed Oct 10 15:55:07 2012
+++++ tools/build/v2/tools/gcc.jam	Wed Oct 10 16:00:29 2012
++@@ -335,7 +335,7 @@ class gcc-pch-generator : pch-generator
+  
+          # return result of base class and pch-file property as usage-requirements
+          return
+@@ -10,7 +10,7 @@ $OpenBSD: patch-tools_build_v2_tools_gcc
+              $(pch-file)
+            ;
+      }
+-@@ -299,7 +299,7 @@ toolset.flags gcc.compile PCH_FILE <pch>on : <pch-file
++@@ -365,7 +365,7 @@ toolset.flags gcc.compile PCH_FILE <pch>on : <pch-file
+  
+  # Declare flags and action for compilation.
+  toolset.flags gcc.compile OPTIONS <optimization>off   : -O0 ;
+@@ -19,7 +19,7 @@ $OpenBSD: patch-tools_build_v2_tools_gcc
+  toolset.flags gcc.compile OPTIONS <optimization>space : -Os ;
+  
+  toolset.flags gcc.compile OPTIONS <inlining>off  : -fno-inline ;
+-@@ -473,11 +473,13 @@ rule compile.c ( targets * : sources * : properties * 
++@@ -599,11 +599,13 @@ rule compile.fortran ( targets * : sources * : propert
+  
+  actions compile.c++ bind PCH_FILE
+  {
+@@ -33,24 +33,24 @@ $OpenBSD: patch-tools_build_v2_tools_gcc
+      "$(CONFIG_COMMAND)" $(LANG) $(OPTIONS) $(USER_OPTIONS) -D$(DEFINES) -I"$(PCH_FILE:D)" -I"$(INCLUDES)" -c -o "$(<)" "$(>)"
+  }
+  
+-@@ -795,6 +797,7 @@ rule link ( targets * : sources * : properties * )
++@@ -955,6 +957,7 @@ rule link ( targets * : sources * : properties * )
+  
+  actions link bind LIBRARIES
+  {
+-+    echo "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,"$(RPATH)" -Wl,-rpath-link$(SPACE)-Wl,"$(RPATH_LINK)" -o "$(<)" $(START-GROUP) "$(>)" "$(LIBRARIES)" $(FINDLIBS-ST-PFX) -l$(FINDLIBS-ST) $(FINDLIBS-SA-PFX) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
+-     "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,"$(RPATH)" -Wl,-rpath-link$(SPACE)-Wl,"$(RPATH_LINK)" -o "$(<)" $(START-GROUP) "$(>)" "$(LIBRARIES)" $(FINDLIBS-ST-PFX) -l$(FINDLIBS-ST) $(FINDLIBS-SA-PFX) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
+++    echo "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,$(RPATH) -Wl,-rpath-link$(SPACE)-Wl,"$(RPATH_LINK)" -o "$(<)" $(START-GROUP) "$(>)" "$(LIBRARIES)" $(FINDLIBS-ST-PFX) -l$(FINDLIBS-ST) $(FINDLIBS-SA-PFX) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
++     "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,$(RPATH) -Wl,-rpath-link$(SPACE)-Wl,"$(RPATH_LINK)" -o "$(<)" $(START-GROUP) "$(>)" "$(LIBRARIES)" $(FINDLIBS-ST-PFX) -l$(FINDLIBS-ST) $(FINDLIBS-SA-PFX) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
+  
+  }
+-@@ -855,10 +858,10 @@ rule link.dll ( targets * : sources * : properties * )
+-     JAM_SEMAPHORE on $(targets) = <s>gcc-link-semaphore ;
++@@ -1017,10 +1020,10 @@ rule link.dll ( targets * : sources * : properties * )
++     quote-rpath $(targets) ;
+  }
+  
+ -# Differs from 'link' above only by -shared.
+ +# Differs from 'link' above only by -shared and -fPIC.
+  actions link.dll bind LIBRARIES
+  {
+--    "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,"$(RPATH)" "$(.IMPLIB-COMMAND)$(<[1])" -o "$(<[-1])" $(HAVE_SONAME)-Wl,$(SONAME_OPTION)$(SPACE)-Wl,$(<[-1]:D=) -shared $(START-GROUP) "$(>)" "$(LIBRARIES)" $(FINDLIBS-ST-PFX) -l$(FINDLIBS-ST) $(FINDLIBS-SA-PFX) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
+-+    "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,"$(RPATH)" "$(.IMPLIB-COMMAND)$(<[1])" -o "$(<[-1])" $(HAVE_SONAME)-Wl,$(SONAME_OPTION)$(SPACE)-Wl,$(<[-1]:D=) -shared -fPIC $(START-GROUP) "$(>)" "$(LIBRARIES)" $(FINDLIBS-ST-PFX) -l$(FINDLIBS-ST) $(FINDLIBS-SA-PFX) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
++-    "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,$(RPATH) "$(.IMPLIB-COMMAND)$(<[1])" -o "$(<[-1])" $(HAVE_SONAME)-Wl,$(SONAME_OPTION)$(SPACE)-Wl,$(<[-1]:D=) -shared $(START-GROUP) "$(>)" "$(LIBRARIES)" $(FINDLIBS-ST-PFX) -l$(FINDLIBS-ST) $(FINDLIBS-SA-PFX) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
+++    "$(CONFIG_COMMAND)" -L"$(LINKPATH)" -Wl,$(RPATH_OPTION:E=-R)$(SPACE)-Wl,$(RPATH) "$(.IMPLIB-COMMAND)$(<[1])" -o "$(<[-1])" $(HAVE_SONAME)-Wl,$(SONAME_OPTION)$(SPACE)-Wl,$(<[-1]:D=) -shared -fPIC $(START-GROUP) "$(>)" "$(LIBRARIES)" $(FINDLIBS-ST-PFX) -l$(FINDLIBS-ST) $(FINDLIBS-SA-PFX) -l$(FINDLIBS-SA) $(END-GROUP) $(OPTIONS) $(USER_OPTIONS)
+  }
+  
+  rule setup-threading ( targets * : sources * : properties * )

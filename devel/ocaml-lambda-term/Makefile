@@ -3,9 +3,10 @@
 COMMENT =	library for manipulating the terminal
 CATEGORIES =	devel
 
-DISTNAME =	lambda-term-1.2
+# also adapt MASTER_SITES when changing the version!
+DISTNAME =	lambda-term-1.3
 PKGNAME =	ocaml-${DISTNAME}
-MASTER_SITES =	http://forge.ocamlcore.org/frs/download.php/945/
+MASTER_SITES =	http://forge.ocamlcore.org/frs/download.php/1034/
 
 HOMEPAGE =	http://forge.ocamlcore.org/projects/lambda-term
 
@@ -16,12 +17,13 @@ PERMIT_PACKAGE_CDROM =		Yes
 PERMIT_DISTFILES_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 
+WANTLIB =	c ev m pthread
+
 MODULES =	lang/ocaml
 
-BUILD_DEPENDS =	sysutils/findlib devel/ocaml-zed
-RUN_DEPENDS =	lang/ocaml devel/ocaml-zed
+BUILD_DEPENDS =	devel/ocaml-lwt devel/ocaml-zed
+RUN_DEPENDS =	lang/ocaml devel/ocaml-lwt devel/ocaml-zed
 LIB_DEPENDS =	devel/libev
-WANTLIB =	c ev m pthread
 
 CONFIGURE_STYLE =	oasis
 

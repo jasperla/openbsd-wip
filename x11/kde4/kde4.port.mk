@@ -1,7 +1,6 @@
 # $OpenBSD$
 
-BROKEN =		rafael,amit with guidance from vadim working on 4.8.3
-MODKDE4_VERSION =	4.8.3
+MODKDE4_VERSION =	4.9.2
 MODKDE_VERSION =	${MODKDE4_VERSION}
 
 # General options set by module
@@ -11,8 +10,13 @@ EXTRACT_SUFX ?=		.tar.xz
 
 CATEGORIES +=		x11/kde4
 MODULES +=		devel/cmake
-CONFIGURE_STYLE ?=	cmake
 SEPARATE_BUILD ?=	flavored
+
+# CONFIGURE_STYLE needs separate handling because it is set to empty
+# string in bsd.port.mk initially.
+.if "${CONFIGURE_STYLE}" == ""
+CONFIGURE_STYLE =	cmake
+.endif
 
 # MODKDE4_RESOURCES: Yes/No
 #   If enabled, disable default Qt and KDE LIB_DEPENDS and RUN_DEPENDS,
@@ -68,17 +72,11 @@ MODKDE4_USE +=		runtime
 MODKDE4_BUILD_DEPENDS =	archivers/gtar \
 			STEM->=2.8.8:devel/cmake
 MODKDE4_LIB_DEPENDS =	
-MODKDE4_RUN_DEPENDS =	x11/gtk+2,-guic
+MODKDE4_RUN_DEPENDS =	
 MODKDE4_WANTLIB =
 MODKDE4_CONF_ARGS =
 
 TAR =			${LOCALBASE}/bin/gtar
-
-# Small hack, until automoc4 will be gone
-PKGNAME ?= ${DISTNAME}
-.if !${PKGNAME:Mautomoc4-*}
-MODKDE4_BUILD_DEPENDS +=	x11/kde4/automoc
-.endif
 
 FLAVOR ?=
 
@@ -93,19 +91,24 @@ MODKDE4_USE +=		libs
 .if ${MODKDE4_RESOURCES:L} != "no"
 PKG_ARCH ?=		*
 MODKDE4_NO_QT ?=	Yes	# resources usually don't need Qt
+.   if ${MODKDE4_USE:L:Mworkspace}
+MODKDE4_BUILD_DEPENDS +=	STEM->=${MODKDE4_VERSION}:x11/kde4/workspace
+.   endif
 .   if ${MODKDE4_USE:L:Mlibs}
 MODKDE4_BUILD_DEPENDS +=	STEM->=${MODKDE4_VERSION}:x11/kde4/libs
 .   endif
 .else
+# Small hack, until automoc4 will be gone
+PKGNAME ?= ${DISTNAME}
+.   if !${PKGNAME:Mautomoc4-*}
+MODKDE4_BUILD_DEPENDS +=	x11/kde4/automoc
+.   endif
+
 MODKDE4_NO_QT ?=	No
 .   if ${MODKDE4_USE:L:Mlibs}
 .       if ${MODKDE4_NO_QT:L} == "yes"
 ERRORS +=	"Fatal: KDE libraries require Qt."
 .       endif
-
-# all sorts of packages require linking with pulseaudio, 
-# instead of patching them locally, patch globally
-MODKDE4_LIB_DEPENDS +=		audio/pulseaudio
 
 MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/libs
 MODKDE4_WANTLIB +=		kdecore>=8
@@ -139,12 +142,9 @@ CONFIGURE_ARGS +=	-DMAN_INSTALL_DIR=${PREFIX}/man \
 			-DINFO_INSTALL_DIR=${PREFIX}/info \
 			-DLIBEXEC_INSTALL_DIR=${PREFIX}/libexec
 
-# DCMAKE_C(XX)FLAGS & DCMAKE_EXE_LINKER_FLAGS needed to fix undefined symbols
-# for pthread & pulseaudio related functions, fixing globally here
-CONFIGURE_ARGS +=	-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include \
-				-pthread" \
-			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -pthread" \
-			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib \
+# CMAKE_EXE_LINKER_FLAGS needed to fix undefined symbols
+# for pulseaudio functions, fixing globally here
+CONFIGURE_ARGS +=	-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib \
 				-Wl,-rpath,${LOCALBASE}/lib/pulseaudio"
 
 # NOTE: due to bugs in make-plist, plist may contain
@@ -159,6 +159,9 @@ FLAVORS +=	debug
 .endif
 
 .if ${CONFIGURE_STYLE:Mcmake}
+# Enable regression tests if any
+MODKDE4_CONF_ARGS +=	-DKDE4_BUILD_TESTS:Bool=Yes
+
 # Set up directories
 MODKDE4_CONF_ARGS +=	-DKDE4_INCLUDE_INSTALL_DIR:String=${PREFIX}/include \
 			-DKDE4_INSTALL_DIR:String=${PREFIX} \

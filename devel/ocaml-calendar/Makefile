@@ -10,12 +10,15 @@ PKGNAME=	ocaml-calendar-${V}
 MASTER_SITES=	https://forge.ocamlcore.org/frs/download.php/915/
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
-HOMEPAGE=	http://www.lri.fr/~signoles/prog.en.html
+HOMEPAGE=	http://calendar.forge.ocamlcore.org/
 
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
+
+RUN_DEPENDS=	lang/ocaml
+BUILD_DEPENDS=	sysutils/findlib
 
 MODULES=	lang/ocaml
 NO_REGRESS= 	Yes

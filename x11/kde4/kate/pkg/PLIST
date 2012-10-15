@@ -3,7 +3,6 @@
 @bin bin/kate
 @bin bin/ktesnippets_editor
 @bin bin/kwrite
-include/artisticcomment.h
 include/kate/
 include/kate/application.h
 include/kate/documentmanager.h
@@ -38,7 +37,6 @@ lib/kde4/katetabifyplugin.so
 lib/kde4/katetextfilterplugin.so
 lib/kde4/katexmlcheckplugin.so
 lib/kde4/katexmltoolsplugin.so
-lib/kde4/ktexteditor_acomment.so
 lib/kde4/ktexteditor_autobrace.so
 lib/kde4/ktexteditor_exporter.so
 lib/kde4/ktexteditor_hlselection.so
@@ -48,7 +46,6 @@ lib/kde4/ktexteditor_insertfile.so
 lib/kde4/ktexteditor_kdatatool.so
 lib/kde4/ktexteditor_python-encoding.so
 lib/kde4/plasma_applet_katesession.so
-lib/libacomment.a
 @lib lib/libkateinterfaces.so.${LIBkateinterfaces_VERSION}
 @lib lib/libkatepartinterfaces.so.${LIBkatepartinterfaces_VERSION}
 lib/libkdeinit4_kate.so
@@ -60,15 +57,15 @@ share/applications/kde4/ktesnippets_editor.desktop
 share/applications/kde4/kwrite.desktop
 share/apps/kate/
 share/apps/kate/icons/
-share/apps/kate/icons/oxygen/
-share/apps/kate/icons/oxygen/16x16/
-share/apps/kate/icons/oxygen/16x16/actions/
-share/apps/kate/icons/oxygen/16x16/actions/null.png
-share/apps/kate/icons/oxygen/16x16/actions/sql-field-pk.png
-share/apps/kate/icons/oxygen/16x16/actions/sql-field-red.png
-share/apps/kate/icons/oxygen/16x16/actions/sql-field.png
-share/apps/kate/icons/oxygen/16x16/actions/sql-table.png
-share/apps/kate/icons/oxygen/16x16/actions/sql-view.png
+share/apps/kate/icons/hicolor/
+share/apps/kate/icons/hicolor/16x16/
+share/apps/kate/icons/hicolor/16x16/actions/
+share/apps/kate/icons/hicolor/16x16/actions/null.png
+share/apps/kate/icons/hicolor/16x16/actions/sql-field-pk.png
+share/apps/kate/icons/hicolor/16x16/actions/sql-field-red.png
+share/apps/kate/icons/hicolor/16x16/actions/sql-field.png
+share/apps/kate/icons/hicolor/16x16/actions/sql-table.png
+share/apps/kate/icons/hicolor/16x16/actions/sql-view.png
 share/apps/kate/kateui.rc
 share/apps/kate/plugins/
 share/apps/kate/plugins/filetree/
@@ -184,6 +181,7 @@ share/apps/katepart/syntax/desktop.xml
 share/apps/katepart/syntax/diff.xml
 share/apps/katepart/syntax/djangotemplate.xml
 share/apps/katepart/syntax/dosbat.xml
+share/apps/katepart/syntax/dot.xml
 share/apps/katepart/syntax/doxygen.xml
 share/apps/katepart/syntax/doxygenlua.xml
 share/apps/katepart/syntax/dtd.xml
@@ -251,6 +249,7 @@ share/apps/katepart/syntax/mergetagtext.xml
 share/apps/katepart/syntax/metafont.xml
 share/apps/katepart/syntax/mips.xml
 share/apps/katepart/syntax/modelica.xml
+share/apps/katepart/syntax/modelines.xml
 share/apps/katepart/syntax/modula-2.xml
 share/apps/katepart/syntax/monobasic.xml
 share/apps/katepart/syntax/mup.xml
@@ -269,6 +268,7 @@ share/apps/katepart/syntax/perl.xml
 share/apps/katepart/syntax/pgn.xml
 share/apps/katepart/syntax/php.xml
 share/apps/katepart/syntax/picsrc.xml
+share/apps/katepart/syntax/pig.xml
 share/apps/katepart/syntax/pike.xml
 share/apps/katepart/syntax/postscript.xml
 share/apps/katepart/syntax/povray.xml
@@ -294,6 +294,7 @@ share/apps/katepart/syntax/sather.xml
 share/apps/katepart/syntax/scala.xml
 share/apps/katepart/syntax/scheme.xml
 share/apps/katepart/syntax/sci.xml
+share/apps/katepart/syntax/scss.xml
 share/apps/katepart/syntax/sed.xml
 share/apps/katepart/syntax/sgml.xml
 share/apps/katepart/syntax/sieve.xml
@@ -347,8 +348,6 @@ share/apps/katexmltools/xhtml1-strict.dtd.xml
 share/apps/katexmltools/xhtml1-transitional.dtd.xml
 share/apps/katexmltools/xslt-1.0.dtd.xml
 share/apps/kconf_update/kate-2.4.upd
-share/apps/ktexteditor_acomment/
-share/apps/ktexteditor_acomment/acommentui.rc
 share/apps/ktexteditor_exporter/
 share/apps/ktexteditor_exporter/ktexteditor_exporterui.rc
 share/apps/ktexteditor_iconinserter/
@@ -366,7 +365,6 @@ share/apps/ktexteditor_snippets/data/testsnippets.xml
 share/apps/ktexteditor_snippets/data/testsnippetscpp.xml
 share/apps/kwrite/
 share/apps/kwrite/kwriteui.rc
-share/config/artisticcommentrc
 share/config/katefiletemplates.knsrc
 share/config/katemoderc
 share/config/katepartpluginsrc
@@ -380,11 +378,17 @@ share/doc/HTML/en/kate/configdialog01.png
 share/doc/HTML/en/kate/configuring-part.docbook
 share/doc/HTML/en/kate/configuring.docbook
 share/doc/HTML/en/kate/fundamentals.docbook
+share/doc/HTML/en/kate/gdb-call-stack.png
+share/doc/HTML/en/kate/gdb-io.png
+share/doc/HTML/en/kate/gdb-locals.png
+share/doc/HTML/en/kate/gdb-output.png
+share/doc/HTML/en/kate/gdb-settings.png
 share/doc/HTML/en/kate/highlighted.png
 share/doc/HTML/en/kate/highlighting.docbook
 share/doc/HTML/en/kate/index.cache.bz2
 share/doc/HTML/en/kate/index.docbook
 share/doc/HTML/en/kate/kate.png
+share/doc/HTML/en/kate/line-modification-system.png
 share/doc/HTML/en/kate/man-kate.1.docbook
 share/doc/HTML/en/kate/mdi.docbook
 share/doc/HTML/en/kate/menus.docbook
@@ -438,7 +442,6 @@ share/kde4/services/katetabifyplugin.desktop
 share/kde4/services/katetextfilter.desktop
 share/kde4/services/katexmlcheck.desktop
 share/kde4/services/katexmltools.desktop
-share/kde4/services/ktexteditor_acomment.desktop
 share/kde4/services/ktexteditor_autobrace.desktop
 share/kde4/services/ktexteditor_autobrace_config.desktop
 share/kde4/services/ktexteditor_exporter.desktop

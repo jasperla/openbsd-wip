@@ -1,2 +1,0 @@
-@comment $OpenBSD$
-@lib lib/libcelt051.so.${LIBcelt051_VERSION}

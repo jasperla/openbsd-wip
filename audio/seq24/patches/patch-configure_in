@@ -1,0 +1,26 @@
+$OpenBSD$
+--- configure.in.orig	Wed May 31 02:17:06 2006
++++ configure.in	Fri Sep 21 14:42:43 2012
+@@ -15,8 +15,9 @@ AC_PROG_INSTALL
+ AC_PROG_LN_S
+ 
+ dnl Checks for libraries.
+-AC_CHECK_LIB(rt,main, ,    
+-	AC_MSG_ERROR([POSIX.1b RealTime Library Missing -lrt]))
++dnl Not needed on OpenBSD
++#AC_CHECK_LIB(rt,main, ,    
++#	AC_MSG_ERROR([POSIX.1b RealTime Library Missing -lrt]))
+ 
+ dnl Checks for header files.
+ AC_HEADER_STDC
+@@ -28,7 +29,9 @@ AC_C_CONST
+ dnl Checks for library functions.
+ AC_CHECK_FUNCS(select)
+ 
+-AM_PATH_ALSA(0.9.0)
++dnl not on OpenBSD
++#AM_PATH_ALSA(0.9.0)
++ALSA_LIBS=""
+ 
+ ####AM_PATH_GTKMM(1.2.0) OLD
+ 
