@@ -14,4 +14,6 @@ WANTLIB += kdeclarative kdeui kio nepomuk nepomukquery plasma soprano
 
 MODKDE4_USE =		libs
 
+BUILD_DEPENDS =		misc/shared-desktop-ontologies
+
 .include <bsd.port.mk>
