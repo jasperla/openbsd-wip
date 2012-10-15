@@ -2,10 +2,11 @@
 
 COMMENT =	K Desktop Environment, exiv2 wrapper
 DISTNAME =	libkexiv2-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kexiv2			0.0	# 10.0
 
-WANTLIB =  c m stdc++
+WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += kdeui
 WANTLIB += exiv2
