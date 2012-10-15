@@ -1,0 +1,8 @@
+@comment $OpenBSD$
+include/libkcompactdisc/
+include/libkcompactdisc/kcompactdisc.h
+lib/cmake/libkcompactdisc/
+lib/cmake/libkcompactdisc/LibkcompactdiscConfig.cmake
+lib/cmake/libkcompactdisc/LibkcompactdiscTargets${MODKDE4_CMAKE_PREFIX}.cmake
+lib/cmake/libkcompactdisc/LibkcompactdiscTargets.cmake
+lib/libkcompactdisc.so.${LIBkcompactdisc_VERSION}
