@@ -1,0 +1,12 @@
+$OpenBSD$
+--- Makefile.build.orig	Tue May  3 15:34:16 2011
++++ Makefile.build	Sat Aug 18 10:14:08 2012
+@@ -61,7 +61,7 @@ else 
+ endif
+ 
+ LOCALINCLUDES=$(addprefix -I , $(SRCDIRS) )
+-MLINCLUDES=$(LOCALINCLUDES) -I $(MYCAMLP4LIB)
++MLINCLUDES=$(LOCALINCLUDES) -I $(MYCAMLP4LIB) -I +compiler-libs
+ 
+ OCAMLC += $(CAMLFLAGS)
+ OCAMLOPT += $(CAMLFLAGS)
