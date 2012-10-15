@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/Encode/
+${P5SITE}/Encode/Locale.pm
+@man man/man3p/Encode::Locale.3p
