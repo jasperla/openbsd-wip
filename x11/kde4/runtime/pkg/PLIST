@@ -90,6 +90,7 @@ lib/kde4/imports/org/kde/plasma/components/libplasmacomponentsplugin.so
 lib/kde4/imports/org/kde/plasma/components/private/
 lib/kde4/imports/org/kde/plasma/components/private/AppManager.js
 lib/kde4/imports/org/kde/plasma/components/private/ButtonShadow.qml
+lib/kde4/imports/org/kde/plasma/components/private/Config.js
 lib/kde4/imports/org/kde/plasma/components/private/DualStateButton.qml
 lib/kde4/imports/org/kde/plasma/components/private/IconLoader.qml
 lib/kde4/imports/org/kde/plasma/components/private/PageStack.js
@@ -245,6 +246,7 @@ lib/kde4/platformimports/touch/org/kde/plasma/components/libplasmacomponentsplug
 lib/kde4/platformimports/touch/org/kde/plasma/components/private/
 lib/kde4/platformimports/touch/org/kde/plasma/components/private/AppManager.js
 lib/kde4/platformimports/touch/org/kde/plasma/components/private/ButtonShadow.qml
+lib/kde4/platformimports/touch/org/kde/plasma/components/private/Config.js
 lib/kde4/platformimports/touch/org/kde/plasma/components/private/DualStateButton.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/private/IconLoader.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/private/PageStack.js
