@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/07/16 10:14:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/10/12 20:31:45 sthen Exp $
 bin/get_flash_videos
 ${P5SITE}/FlashVideo/
 ${P5SITE}/FlashVideo/Downloader.pm
