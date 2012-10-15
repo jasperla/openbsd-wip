@@ -1,0 +1,9 @@
+@comment $OpenBSD$
+include/alkimia/
+include/alkimia/alk_export.h
+include/alkimia/alkcompany.h
+include/alkimia/alkquoteitem.h
+include/alkimia/alkvalue.h
+@lib lib/libalkimia.so.${LIBalkimia_VERSION}
+lib/pkgconfig/libalkimia.pc
+share/apps/cmake/modules/FindLibAlkimia.cmake
