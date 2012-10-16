@@ -14,7 +14,7 @@ PKGNAME-main =		${PKGNAME}
 PKGNAME-gtk =		${PKGNAME:S/-gadgets/-gadgets-gtk/}
 PKGNAME-qt =		${PKGNAME:S/-gadgets/-gadgets-qt/}
 
-REVISION-main =		1
+REVISION-main =		2
 
 SHARED_LIBS +=  ggadget-1.0               0.0 # 0.0
 SHARED_LIBS +=  ggadget-dbus-1.0          0.0 # 0.0
@@ -77,7 +77,7 @@ LIB_DEPENDS-common =	devel/libtool,-ltdl \
 LIB_DEPENDS-main = 	${LIB_DEPENDS-common} \
 			devel/glib \
 			devel/pango \
-			devel/libsoup \
+			devel/libsoup,-gnome \
 			graphics/cairo \
 			multimedia/gstreamer-0.10/core \
 			multimedia/gstreamer-0.10/plugins-base \
