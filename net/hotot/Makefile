@@ -3,9 +3,8 @@
 COMMENT =	lightweight client for twitter and identi.ca
 
 V =		0.9.8.7
-REVISION =	0
+REVISION =	1
 DISTNAME =	hotot-$V
-DISTFILES =	${V}
 CATEGORIES =	net
 
 HOMEPAGE =	http://hotot.org
@@ -20,7 +19,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	c m pthread
 
-MASTER_SITES =	https://github.com/shellex/Hotot/tarball/ \
+MASTER_SITES =	https://github.com/shellex/Hotot/tarball/${V}/ \
 		http://download.tuxfamily.org/jod/net/hotot/
 
 WRKDIST=	${WRKDIR}/shellex-Hotot-44272ff
