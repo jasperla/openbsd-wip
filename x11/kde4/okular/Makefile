@@ -21,7 +21,7 @@ LIB_DEPENDS = 	devel/chmlib \
 		graphics/djvulibre \
 		graphics/tiff \
 		print/libspectre \
-		print/poppler,-qt4 \
+		print/poppler,,-qt4 \
 		security/qca2 \
 		textproc/ebook-tools \
 		x11/kde4/qimageblitz
