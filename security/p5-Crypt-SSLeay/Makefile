@@ -20,8 +20,12 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB +=		c crypto ssl z
 
 # These are for testing perl test check for
-# module version during configure
+# module version checked during configure
+# include p5-IO-Socket-SSL as selected
+# dependency for p5-Net-HTTP must be before
+# p5-LWP-Protcol-https
 BUILD_DEPENDS =	devel/p5-Try-Tiny>=0.9 \
+		security/p5-IO-Socket-SSL \
 		www/p5-LWP-Protocol-https>=6.02
 
 CONFIGURE_ARGS+=--default --lib=/usr 

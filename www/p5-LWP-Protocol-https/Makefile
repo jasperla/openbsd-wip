@@ -18,8 +18,12 @@ MODULES =	cpan
 
 RUN_DEPENDS =	net/p5-Net-HTTP>=6 \
 		security/p5-Mozilla-CA>=20110101 \
-		security/p5-IO-Socket-SSL>=1.54 \
 		www/p5-libwww>=6.04
-BUILD_DEPENDS =	${RUN_DEPENDS}
+
+# p5-Net-HTTP requires either p5-IO-Socket-SSL
+# or p5-Crypt-SSLeay ensure p5-IO-Socket-SSL
+# is first
+BUILD_DEPENDS =	security/p5-IO-Socket-SSL>=1.54 \
+		${RUN_DEPENDS}
 
 .include <bsd.port.mk>
