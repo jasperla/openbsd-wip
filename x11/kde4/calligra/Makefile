@@ -100,7 +100,7 @@ LIB_DEPENDS =	databases/freetds \
 		graphics/tiff \
 		math/eigen2 \
 		math/fftw3,double \
-		print/poppler,-qt4 \
+		print/poppler,,-qt4 \
 		productivity/librcps \
 		security/qca2 \
 		textproc/libwpd \
