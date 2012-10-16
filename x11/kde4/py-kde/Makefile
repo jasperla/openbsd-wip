@@ -6,7 +6,7 @@ PKGNAME =	py-kde-${MODKDE_VERSION}
 
 MODULES =	lang/python
 
-WANTLIB =  c m stdc++
+WANTLIB =  m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
 WANTLIB += akonadi-kde akonadi-kmime
@@ -15,6 +15,8 @@ WANTLIB += kidletime kio kjs knewstuff2 knewstuff3 kparts kprintutils
 WANTLIB += kpty ktexteditor kutils nepomuk nepomukquery nepomukutils
 WANTLIB += phonon plasma solid soprano sopranoclient sopranoserver
 WANTLIB += ${MODPY_WANTLIB}
+
+VMEM_WARNING =  Yes
 
 MODKDE4_USE =	libs pim
 
