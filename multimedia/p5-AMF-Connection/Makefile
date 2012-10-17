@@ -2,7 +2,7 @@
 
 COMMENT =	AMF client to connect to remote FLEX AIR service
 
-DISTNAME =	AMF-Connection-0.30
+DISTNAME =	AMF-Connection-0.32
 CATEGORIES =	multimedia net
 CPAN_AUTHOR =	AREGGIORI
 
