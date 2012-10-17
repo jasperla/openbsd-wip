@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/gsad.c.orig	Wed Apr 25 09:16:39 2012
-+++ src/gsad.c	Tue May 15 11:44:00 2012
+--- src/gsad.c.orig	Tue Aug  7 22:34:13 2012
++++ src/gsad.c	Sun Oct  7 14:04:34 2012
 @@ -53,14 +53,14 @@
  #undef G_LOG_FATAL_MASK
  #define G_LOG_FATAL_MASK G_LOG_LEVEL_ERROR
@@ -55,3 +55,13 @@ $OpenBSD$
  
  /**
   * @brief Fallback Administrator port.
+@@ -3062,9 +3064,6 @@ gsad_init (void)
+   tracef ("Initializing the Greenbone Security Assistant...\n");
+ 
+   /* Init Glib. */
+-  if (!g_thread_supported ()) g_thread_init (NULL);
+-  if (mutex == NULL)
+-    mutex = g_mutex_new ();
+   users = g_ptr_array_new ();
+ 
+   /* Check for required files. */

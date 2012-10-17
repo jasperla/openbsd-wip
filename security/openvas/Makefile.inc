@@ -1,6 +1,7 @@
 # $OpenBSD$
 
 CATEGORIES ?=		security
+DPB_PROPERTIES ?=	parallel
 
 HOMEPAGE ?=		http://www.openvas.org/
 

@@ -1,7 +1,13 @@
 $OpenBSD$
---- misc/openvas_server.h.orig	Wed May 19 09:56:20 2010
-+++ misc/openvas_server.h	Sun Sep 26 21:30:07 2010
-@@ -46,7 +46,7 @@ extern "C"
+--- misc/openvas_server.h.orig	Thu Aug  9 11:07:32 2012
++++ misc/openvas_server.h	Wed Aug 22 14:30:26 2012
+@@ -42,11 +42,13 @@ extern "C"
+ #endif
+ #endif
+ 
++#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+ #include <gnutls/gnutls.h>
++#pragma GCC diagnostic error "-Wdeprecated-declarations"
  #ifdef _WIN32
  #include <winsock2.h>
  #else
@@ -10,3 +16,12 @@ $OpenBSD$
  #endif
  
  int openvas_server_open (gnutls_session_t *, const char *, int);
+@@ -64,7 +66,7 @@ int openvas_server_sendf (gnutls_session_t *, const ch
+ 
+ int openvas_server_sendf_xml (gnutls_session_t *, const char *, ...);
+ 
+-int openvas_server_new (gnutls_connection_end_t, gchar *, gchar *, gchar *,
++int openvas_server_new (unsigned int, gchar *, gchar *, gchar *,
+                         gnutls_session_t *, gnutls_certificate_credentials_t *);
+ 
+ int openvas_server_free (int, gnutls_session_t,

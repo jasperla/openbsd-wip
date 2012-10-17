@@ -1,13 +1,13 @@
 # $OpenBSD$
 
 COMMENT =		libraries for OpenVAS security scanner
-DISTNAME =		openvas-libraries-5.0.1
+DISTNAME =		openvas-libraries-5.0.3
 
-SHARED_LIBS =		openvas_base    0.15 \
-			openvas_hg	0.15 \
-                        openvas_misc    0.15 \
-                        openvas_nasl    0.15 \
-                        openvas_omp     0.15
+SHARED_LIBS =		openvas_base    0.16 \
+			openvas_hg	0.16 \
+                        openvas_misc    0.16 \
+                        openvas_nasl    0.16 \
+                        openvas_omp     0.16
 
 WANTLIB +=		assuan c e2fs-uuid gcrypt glib-2.0 gnutls gpg-error
 WANTLIB +=		gpgme ldap m pcap pthread
@@ -23,7 +23,7 @@ LIB_DEPENDS +=		security/libgcrypt \
 
 BUILD_DEPENDS +=	devel/bison
 
-MASTER_SITES =		${MASTER_SITES_OPENVAS:=1088/}
+MASTER_SITES =		${MASTER_SITES_OPENVAS:=1159/}
 
 #CONFIGURE_STYLE =	gnu
 #CONFIGURE_ARGS +=	--localstatedir="/var" \
@@ -36,5 +36,9 @@ MASTER_SITES =		${MASTER_SITES_OPENVAS:=1088/}
 CFLAGS = 		-I /usr/local/include
 
 SEPARATE_BUILD =	No
+
+#  remove patch files left in source tarball
+pre-patch:
+	@find ${WRKSRC} \( -name "*.orig" -or -name "*.rej" \) -exec rm {} \; 
 
 .include <bsd.port.mk>
