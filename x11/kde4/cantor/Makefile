@@ -2,8 +2,10 @@
 
 COMMENT =	K Desktop Environment, mathematical applications
 DISTNAME =	cantor-${MODKDE_VERSION}
+REVISION =	1
 
 SHARED_LIBS =  cantorlibs                0.0 # 0.0
+SHARED_LIBS += cantor_config             0.0 # 0.0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
@@ -16,7 +18,7 @@ MODULES =	devel/gettext
 
 LIB_DEPENDS = 	databases/soprano \
 		lang/gfortran,-lib \
-		math/R>=2.15.0 \
+		math/R>=2.15.1p4 \
 		math/qalculate/libqalculate \
 		print/libspectre \
 		x11/kde4/analitza

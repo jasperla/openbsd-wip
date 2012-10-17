@@ -68,6 +68,8 @@ share/apps/cantor/octavebackend/cantor_eigenvectors.m
 share/apps/cantor/octavebackend/cantor_plot2d.m
 share/apps/cantor/octavebackend/cantor_plot3d.m
 share/apps/cantor/octavebackend/cantor_print.m
+share/apps/cantor/sagebackend/
+share/apps/cantor/sagebackend/keywords.xml
 share/apps/cantor/scilabbackend/
 share/apps/cantor/scilabbackend/keywords.xml
 share/apps/cantor/xslt/
