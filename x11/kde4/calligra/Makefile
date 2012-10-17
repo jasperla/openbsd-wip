@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	http://www.calligra-suite.org/
-VERSION =	2.5.90
+VERSION =	2.5.3
 DISTNAME =	calligra-${VERSION}
 
 EXTRACT_SUFX =	.tar.bz2
