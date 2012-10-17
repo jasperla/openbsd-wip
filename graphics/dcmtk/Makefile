@@ -3,7 +3,7 @@
 COMMENT=		DICOM toolkit
 
 DISTNAME=		dcmtk-3.5.4
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		graphics
 
@@ -48,7 +48,9 @@ CONFIGURE_ARGS=		--disable-threads \
 			--with-libpng --with-libpnginc=${LOCALBASE} \
 			--with-libxml --with-libxmlinc=${LOCALBASE}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			ac_cv_prog_LIBTOOL=:
+
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 FAKE_TARGET=		install install-include install-lib
 FAKE_FLAGS=		DESTDIR=${WRKINST} \
