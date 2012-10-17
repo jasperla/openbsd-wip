@@ -30,7 +30,6 @@ MASTER_SITES =		http://download.racket-lang.org/installers/${V}/racket/ \
 
 NO_REGRESS =		Yes
 VMEM_WARNING =		Yes
-DPB_PROPERTIES =	parallel
 
 # Dependencies listed within src/README and the output of configure
 LIB_DEPENDS =		devel/libffi \
@@ -68,14 +67,12 @@ CONFIGURE_ARGS +=	--enable-shared \
 # http://article.gmane.org/gmane.comp.lang.racket.devel/6700
 CONFIGURE_ARGS +=	--disable-backtrace
 
-# Racket removes the symbols by default.
-# FIXME It doesn't work. I'm doing something wrong.
-.ifdef DEBUG
-CONFIGURE_ARGS +=	--enable-noopt
-.endif
+FLAVORS =	noopt
+FLAVOR?=
 
-.ifdef MAKE_JOBS
-MAKE_FLAGS +=		-j${MAKE_JOBS}
+# Racket removes the symbols by default.
+.if ${FLAVOR} == "noopt"
+CONFIGURE_ARGS +=	--enable-noopt
 .endif
 
 USE_LIBTOOL =		Yes

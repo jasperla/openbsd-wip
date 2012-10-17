@@ -2054,6 +2054,7 @@ lib/racket/collects/framework/main.rkt
 lib/racket/collects/framework/preferences.rkt
 lib/racket/collects/framework/private/
 lib/racket/collects/framework/private/application.rkt
+lib/racket/collects/framework/private/aspell.rkt
 lib/racket/collects/framework/private/autocomplete.rkt
 lib/racket/collects/framework/private/autosave.rkt
 lib/racket/collects/framework/private/bday.rkt
@@ -2066,6 +2067,8 @@ lib/racket/collects/framework/private/comment-box.rkt
 lib/racket/collects/framework/private/compiled/
 lib/racket/collects/framework/private/compiled/application_rkt.dep
 lib/racket/collects/framework/private/compiled/application_rkt.zo
+lib/racket/collects/framework/private/compiled/aspell_rkt.dep
+lib/racket/collects/framework/private/compiled/aspell_rkt.zo
 lib/racket/collects/framework/private/compiled/autocomplete_rkt.dep
 lib/racket/collects/framework/private/compiled/autocomplete_rkt.zo
 lib/racket/collects/framework/private/compiled/autosave_rkt.dep
@@ -13473,6 +13476,7 @@ lib/racket/collects/tests/macro-debugger/tests/syntax-errors.rkt
 lib/racket/collects/tests/macro-debugger/tests/syntax-macros.rkt
 lib/racket/collects/tests/macro-debugger/tests/syntax-modules.rkt
 lib/racket/collects/tests/match/
+lib/racket/collects/tests/match/define-match.rkt
 lib/racket/collects/tests/match/examples.rkt
 lib/racket/collects/tests/match/match-tests.rkt
 lib/racket/collects/tests/match/other-plt-tests.rkt
@@ -14869,6 +14873,7 @@ lib/racket/collects/tests/typed-racket/succeed/cl-bug.rkt
 lib/racket/collects/tests/typed-racket/succeed/cl-tests.rkt
 lib/racket/collects/tests/typed-racket/succeed/cl.rkt
 lib/racket/collects/tests/typed-racket/succeed/cmdline.rkt
+lib/racket/collects/tests/typed-racket/succeed/contract-opt+kw.rkt
 lib/racket/collects/tests/typed-racket/succeed/contract-struct-equality.rkt
 lib/racket/collects/tests/typed-racket/succeed/cps.rkt
 lib/racket/collects/tests/typed-racket/succeed/datum-to-syntax.rkt
@@ -14898,6 +14903,7 @@ lib/racket/collects/tests/typed-racket/succeed/for-no-anns.rkt
 lib/racket/collects/tests/typed-racket/succeed/for-no-body-anns.rkt
 lib/racket/collects/tests/typed-racket/succeed/for-over-hash.rkt
 lib/racket/collects/tests/typed-racket/succeed/for-seq.rkt
+lib/racket/collects/tests/typed-racket/succeed/for-vector.rkt
 lib/racket/collects/tests/typed-racket/succeed/for.rkt
 lib/racket/collects/tests/typed-racket/succeed/force-delay.rkt
 lib/racket/collects/tests/typed-racket/succeed/function.rkt
@@ -15019,6 +15025,7 @@ lib/racket/collects/tests/typed-racket/succeed/pr11912.rkt
 lib/racket/collects/tests/typed-racket/succeed/pr12806.rkt
 lib/racket/collects/tests/typed-racket/succeed/pr12807.rkt
 lib/racket/collects/tests/typed-racket/succeed/pr12970.rkt
+lib/racket/collects/tests/typed-racket/succeed/pr13185.rkt
 lib/racket/collects/tests/typed-racket/succeed/pr9043.rkt
 lib/racket/collects/tests/typed-racket/succeed/pr9046.rkt
 lib/racket/collects/tests/typed-racket/succeed/pr9048.rkt
@@ -15285,6 +15292,7 @@ lib/racket/collects/tests/web-server/test-ssl.sh
 lib/racket/collects/tests/web-server/test-tests.rkt
 lib/racket/collects/tests/web-server/util.rkt
 lib/racket/collects/tests/xml/
+lib/racket/collects/tests/xml/offset.rkt
 lib/racket/collects/tests/xml/rss.xml
 lib/racket/collects/tests/xml/srcloc.rkt
 lib/racket/collects/tests/xml/test-clark.rkt
@@ -15948,6 +15956,8 @@ lib/racket/collects/typed/compiled/rackunit_rkt.dep
 lib/racket/collects/typed/compiled/rackunit_rkt.zo
 lib/racket/collects/typed/compiled/scheme_rkt.dep
 lib/racket/collects/typed/compiled/scheme_rkt.zo
+lib/racket/collects/typed/compiled/untyped-utils_rkt.dep
+lib/racket/collects/typed/compiled/untyped-utils_rkt.zo
 lib/racket/collects/typed/file/
 lib/racket/collects/typed/file/compiled/
 lib/racket/collects/typed/file/compiled/gif_rkt.dep
@@ -16153,6 +16163,7 @@ lib/racket/collects/typed/tests/compiled/
 lib/racket/collects/typed/tests/compiled/test-docs-complete_rkt.dep
 lib/racket/collects/typed/tests/compiled/test-docs-complete_rkt.zo
 lib/racket/collects/typed/tests/test-docs-complete.rkt
+lib/racket/collects/typed/untyped-utils.rkt
 lib/racket/collects/unstable/
 lib/racket/collects/unstable/automata/
 lib/racket/collects/unstable/automata/compiled/
@@ -16481,11 +16492,8 @@ lib/racket/collects/unstable/temp-c/scribblings/compiled/temp-c_scrbl.zo
 lib/racket/collects/unstable/temp-c/scribblings/temp-c.scrbl
 lib/racket/collects/unstable/tests/
 lib/racket/collects/unstable/tests/compiled/
-lib/racket/collects/unstable/tests/compiled/match_rkt.dep
-lib/racket/collects/unstable/tests/compiled/match_rkt.zo
 lib/racket/collects/unstable/tests/compiled/test-docs-complete_rkt.dep
 lib/racket/collects/unstable/tests/compiled/test-docs-complete_rkt.zo
-lib/racket/collects/unstable/tests/match.rkt
 lib/racket/collects/unstable/tests/test-docs-complete.rkt
 lib/racket/collects/unstable/time.rkt
 lib/racket/collects/unstable/wrapc.rkt
@@ -18233,17 +18241,7 @@ share/racket/doc/images/pict_180.png
 share/racket/doc/images/pict_181.png
 share/racket/doc/images/pict_182.png
 share/racket/doc/images/pict_183.png
-share/racket/doc/images/pict_184.png
-share/racket/doc/images/pict_185.png
-share/racket/doc/images/pict_186.png
-share/racket/doc/images/pict_187.png
-share/racket/doc/images/pict_188.png
-share/racket/doc/images/pict_189.png
 share/racket/doc/images/pict_19.png
-share/racket/doc/images/pict_190.png
-share/racket/doc/images/pict_191.png
-share/racket/doc/images/pict_192.png
-share/racket/doc/images/pict_193.png
 share/racket/doc/images/pict_2.png
 share/racket/doc/images/pict_20.png
 share/racket/doc/images/pict_21.png
