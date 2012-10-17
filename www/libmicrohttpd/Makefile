@@ -2,10 +2,10 @@
 
 COMMENT =	small http server library
 
-VERSION =	0.9.7
+VERSION =	0.9.22
 DISTNAME =	libmicrohttpd-${VERSION}
 
-SHARED_LIBS =	microhttpd 0.3
+SHARED_LIBS =	microhttpd 0.4
 
 CATEGORIES =	www
 
@@ -19,7 +19,8 @@ PERMIT_PACKAGE_FTP =	 Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	 Yes
 
-WANTLIB += gcrypt gmp gnutls gpg-error hogweed nettle tasn1 z
+WANTLIB +=	gcrypt gmp gnutls gpg-error hogweed nettle p11-kit 
+WANTLIB +=	pthread tasn1 z
 
 MASTER_SITES =	${MASTER_SITE_GNU:=libmicrohttpd/}
 
@@ -35,12 +36,11 @@ BUILD_DEPENDS =	misc/zzuf \
 		net/socat
 
 USE_LIBTOOL =	Yes
-USE_GROFF =	Yes
-# NO_REGRESS =	Yes # XXX can hang; possible pthread issues
+
 CONFIGURE_STYLE =	autoconf	
 CONFIGURE_ARGS +=	--with-gnutls
-CONFIGURE_ENV =		CPPFLAGS="-pthread -I${LOCALBASE}/include" \
-			LDFLAGS="-pthread -L${LOCALBASE}/lib"
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 # should be 2.67
 AUTOCONF_VERSION =	2.67
