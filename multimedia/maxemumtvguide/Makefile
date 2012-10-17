@@ -14,9 +14,9 @@ PERMIT_PACKAGE_FTP =	 Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	 Yes 
 
-WANTLIB += 	ICE SM X11 Xau Xdmcp Xext Xrender c \
+WANTLIB += 	ICE SM X11 Xext Xrender c \
 		Xfixes Xt expat fontconfig freetype \
-		pthread-stubs xcb idn m pthread stdc++ util z \
+		xcb idn m pthread stdc++ util z \
 		jpeg>=62 art_lgpl_2 png DCOP kdecore kdefx \
 		kdesu kdeui kio kwalletclient
 
