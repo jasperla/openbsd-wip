@@ -14,6 +14,7 @@ include/analitza/operator.h
 include/analitza/value.h
 include/analitza/variable.h
 include/analitza/variables.h
+include/analitza/vector.h
 include/analitzagui/
 include/analitzagui/algebrahighlighter.h
 include/analitzagui/analitzaguiexport.h
