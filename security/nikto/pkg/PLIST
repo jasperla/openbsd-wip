@@ -1,0 +1,98 @@
+@comment $OpenBSD: PLIST,v 1.12 2011/03/27 16:41:37 jasper Exp $
+@newgroup _nikto:806
+@newuser _nikto:806:806:daemon:Nikto web scanner:/nonexistent:/sbin/nologin
+bin/nikto
+@man man/man1/nikto.1
+share/doc/nikto/
+share/doc/nikto/CHANGES.txt
+share/doc/nikto/nikto.dtd
+share/doc/nikto/nikto_manual.html
+share/examples/nikto/
+share/examples/nikto/nikto.conf
+@sample ${SYSCONFDIR}/nikto.conf
+share/nikto/
+@sample /var/db/nikto/
+share/nikto/databases/
+@sample /var/db/nikto/databases/
+share/nikto/databases/db_404_strings
+@sample /var/db/nikto/databases/db_404_strings
+share/nikto/databases/db_content_search
+@sample /var/db/nikto/databases/db_content_search
+share/nikto/databases/db_dictionary
+@sample /var/db/nikto/databases/db_dictionary
+share/nikto/databases/db_embedded
+@sample /var/db/nikto/databases/db_embedded
+share/nikto/databases/db_favicon
+@sample /var/db/nikto/databases/db_favicon
+share/nikto/databases/db_headers
+@sample /var/db/nikto/databases/db_headers
+share/nikto/databases/db_httpoptions
+@sample /var/db/nikto/databases/db_httpoptions
+share/nikto/databases/db_multiple_index
+@sample /var/db/nikto/databases/db_multiple_index
+share/nikto/databases/db_outdated
+@sample /var/db/nikto/databases/db_outdated
+share/nikto/databases/db_parked_strings
+@sample /var/db/nikto/databases/db_parked_strings
+share/nikto/databases/db_realms
+@sample /var/db/nikto/databases/db_realms
+share/nikto/databases/db_server_msgs
+@sample /var/db/nikto/databases/db_server_msgs
+share/nikto/databases/db_subdomains
+@sample /var/db/nikto/databases/db_subdomains
+share/nikto/databases/db_tests
+@sample /var/db/nikto/databases/db_tests
+share/nikto/databases/db_variables
+@sample /var/db/nikto/databases/db_variables
+@exec chown -R _nikto:_nikto /var/db/nikto/databases
+@exec chmod -R g+w /var/db/nikto/databases
+share/nikto/plugins/
+share/nikto/plugins/JSON-PP.pm
+share/nikto/plugins/LW2.pm
+share/nikto/plugins/nikto_apache_expect_xss.plugin
+share/nikto/plugins/nikto_apacheusers.plugin
+share/nikto/plugins/nikto_auth.plugin
+share/nikto/plugins/nikto_cgi.plugin
+share/nikto/plugins/nikto_clientaccesspolicy.plugin
+share/nikto/plugins/nikto_content_search.plugin
+share/nikto/plugins/nikto_cookies.plugin
+share/nikto/plugins/nikto_core.plugin
+share/nikto/plugins/nikto_dictionary_attack.plugin
+share/nikto/plugins/nikto_embedded.plugin
+share/nikto/plugins/nikto_favicon.plugin
+share/nikto/plugins/nikto_fileops.plugin
+share/nikto/plugins/nikto_headers.plugin
+share/nikto/plugins/nikto_httpoptions.plugin
+share/nikto/plugins/nikto_msgs.plugin
+share/nikto/plugins/nikto_multiple_index.plugin
+share/nikto/plugins/nikto_outdated.plugin
+share/nikto/plugins/nikto_parked.plugin
+share/nikto/plugins/nikto_paths.plugin
+share/nikto/plugins/nikto_put_del_test.plugin
+share/nikto/plugins/nikto_report_csv.plugin
+share/nikto/plugins/nikto_report_html.plugin
+share/nikto/plugins/nikto_report_msf.plugin
+share/nikto/plugins/nikto_report_nbe.plugin
+share/nikto/plugins/nikto_report_text.plugin
+share/nikto/plugins/nikto_report_xml.plugin
+share/nikto/plugins/nikto_robots.plugin
+share/nikto/plugins/nikto_siebel.plugin
+share/nikto/plugins/nikto_ssl.plugin
+share/nikto/plugins/nikto_subdomain.plugin
+share/nikto/plugins/nikto_tests.plugin
+share/nikto/templates/
+share/nikto/templates/htm_close.tmpl
+share/nikto/templates/htm_end.tmpl
+share/nikto/templates/htm_host_head.tmpl
+share/nikto/templates/htm_host_im.tmpl
+share/nikto/templates/htm_host_item.tmpl
+share/nikto/templates/htm_start.tmpl
+share/nikto/templates/htm_stop.tmpl
+share/nikto/templates/htm_summary.tmpl
+share/nikto/templates/xml_close.tmpl
+share/nikto/templates/xml_end.tmpl
+share/nikto/templates/xml_host_head.tmpl
+share/nikto/templates/xml_host_im.tmpl
+share/nikto/templates/xml_host_item.tmpl
+share/nikto/templates/xml_start.tmpl
+share/nikto/templates/xml_summary.tmpl
