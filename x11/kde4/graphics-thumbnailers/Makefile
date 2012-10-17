@@ -2,8 +2,9 @@
 
 COMMENT =	K Desktop Environment, thumbnail creation plugins
 DISTNAME =	kdegraphics-thumbnailers-${MODKDE_VERSION}
+REVISION =	0
 
-WANTLIB =  c m stdc++
+WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += kdcraw kdeui kexiv2 kio
