@@ -1,13 +1,13 @@
 $OpenBSD$
---- src/admin.c.orig	Thu Aug  2 21:53:38 2012
-+++ src/admin.c	Tue Aug 21 14:33:20 2012
-@@ -39,7 +39,9 @@
- #include <assert.h>
+--- misc/openvas_auth.c.orig	Thu Aug  9 11:07:32 2012
++++ misc/openvas_auth.c	Wed Aug 22 14:51:49 2012
+@@ -36,7 +36,9 @@
+ #include "array.h"
+ 
  #include <errno.h>
- #include <fcntl.h>
 +#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
  #include <gcrypt.h>
 +#pragma GCC diagnostic error "-Wdeprecated-declarations"
- #include <glib.h>
  #include <glib/gstdio.h>
- #include <signal.h>
+ 
+ #ifdef ENABLE_LDAP_AUTH

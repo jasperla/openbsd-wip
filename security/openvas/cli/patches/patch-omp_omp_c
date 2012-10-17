@@ -1,7 +1,7 @@
 $OpenBSD$
---- omp/omp.c.orig	Mon Feb 21 08:58:11 2011
-+++ omp/omp.c	Sun Mar  6 15:07:43 2011
-@@ -792,7 +792,8 @@ ssize_t
+--- omp/omp.c.orig	Thu Jul 19 19:43:25 2012
++++ omp/omp.c	Tue Aug 21 14:12:27 2012
+@@ -790,7 +790,8 @@ ssize_t
  read_password (char **lineptr, size_t *n, FILE *stream)
  {
    struct termios old, new;
@@ -11,7 +11,7 @@ $OpenBSD$
  
    /* Turn echoing off and fail if we can't. */
    if (tcgetattr (fileno (stream), &old) != 0)
-@@ -803,7 +804,14 @@ read_password (char **lineptr, size_t *n, FILE *stream
+@@ -801,7 +802,14 @@ read_password (char **lineptr, size_t *n, FILE *stream
      return -1;
  
    /* Read the password. */

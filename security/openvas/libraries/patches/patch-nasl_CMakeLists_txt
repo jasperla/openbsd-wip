@@ -1,7 +1,7 @@
 $OpenBSD$
---- nasl/CMakeLists.txt.orig	Sun Mar 25 18:23:00 2012
-+++ nasl/CMakeLists.txt	Mon Mar 26 22:28:26 2012
-@@ -33,13 +33,13 @@ endif (POLICY CMP0015)
+--- nasl/CMakeLists.txt.orig	Thu Aug  9 11:07:32 2012
++++ nasl/CMakeLists.txt	Wed Aug 22 15:14:10 2012
+@@ -33,7 +33,7 @@ endif (POLICY CMP0015)
  
  ## Library
  
@@ -10,26 +10,12 @@ $OpenBSD$
  
  set (CMAKE_C_FLAGS_DEBUG        "${CMAKE_C_FLAGS_DEBUG}")
  # The "-D_FILE_OFFSET_BITS=64 -DLARGEFILE_SOURCE=1" is necessary for GPGME!
- # The "-fno-strict-aliasing" silences warnings caused by macros defined in byteorder.h.
- # Once the warnings have been addressed this flag should be removed.
--set (CMAKE_C_FLAGS              "${CMAKE_C_FLAGS} ${HARDENING_FLAGS} -Wall -Werror -D_FILE_OFFSET_BITS=64 -DLARGEFILE_SOURCE=1 -fno-strict-aliasing")
-+set (CMAKE_C_FLAGS              "${CMAKE_C_FLAGS} ${HARDENING_FLAGS} -Wall -D_FILE_OFFSET_BITS=64 -DLARGEFILE_SOURCE=1 -fno-strict-aliasing")
- 
- ## Compile the parser - note that there are (better) CMake macros to achieve
- ## that and that the user is not warned if bison is not installed
-@@ -112,13 +112,13 @@ set_target_properties (openvas_nasl_shared PROPERTIES 
- # line bellow is needed so it also works with no-undefined which is e.g. used by Mandriva
- target_link_libraries (openvas_nasl_shared openvas_base_shared openvas_misc_shared
- 			openvas_hg_shared glib-2.0 gcrypt gpgme
--			gpg-error gnutls pcap m ${WMI})
-+			gpg-error ${GNUTLS_LDFLAGS} pcap m ${WMI})
- 
- # Link the openvas-nasl executable
+@@ -116,7 +116,7 @@ target_link_libraries (openvas_nasl_shared openvas_bas
  add_executable (openvas-nasl nasl.c)
  target_link_libraries (openvas-nasl openvas_nasl_static openvas_base_static
                         openvas_misc_static openvas_hg_static ${GLIB_LDFLAGS} -lgcrypt
--                       -lgpgme -lgpg-error -lgnutls -lpcap -lresolv -lm ${WMI_LIBS})
-+                       -lgpgme -lgpg-error ${GNUTLS_LDFLAGS} -lpcap -lm ${WMI_LIBS})
+-                       -lgpgme -lgpg-error -lgnutls -lpcap -lresolv -lm ${WMI_LIBS}
++                       -lgpgme -lgpg-error -lgnutls -lpcap -lm ${WMI_LIBS}
+                        ${GPGME_LDFLAGS} ${LIBSSH_LDFLAGS})
  set_target_properties (openvas-nasl PROPERTIES COMPILE_FLAGS
                         "${GLIB_CFLAGS} ${GPGME_CFLAGS} ${LIBSSH_CFLAGS}")
- set_target_properties (openvas-nasl PROPERTIES LINK_FLAGS

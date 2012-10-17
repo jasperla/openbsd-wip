@@ -1,7 +1,7 @@
 $OpenBSD$
---- misc/openvas_server.c.orig	Wed Nov 17 11:16:54 2010
-+++ misc/openvas_server.c	Tue Nov 30 23:14:17 2010
-@@ -42,13 +42,14 @@
+--- misc/openvas_server.c.orig	Thu Aug  9 11:07:32 2012
++++ misc/openvas_server.c	Wed Aug 22 14:47:41 2012
+@@ -42,18 +42,21 @@
  
  #else
  
@@ -17,3 +17,19 @@ $OpenBSD$
  
  #endif
  
+ #include <unistd.h>
++#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+ #include <gcrypt.h>
++#pragma GCC diagnostic error "-Wdeprecated-declarations"
+ #include <glib.h>
+ #include <string.h>
+ 
+@@ -606,7 +609,7 @@ openvas_server_sendf_xml (gnutls_session_t * session, 
+  * @return 0 on success, -1 on error.
+  */
+ int
+-openvas_server_new (gnutls_connection_end_t end_type, gchar * ca_cert_file,
++openvas_server_new (unsigned int end_type, gchar * ca_cert_file,
+                     gchar * cert_file, gchar * key_file,
+                     gnutls_session_t * server_session,
+                     gnutls_certificate_credentials_t * server_credentials)

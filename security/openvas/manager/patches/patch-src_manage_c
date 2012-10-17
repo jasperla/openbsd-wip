@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/manage.c.orig	Wed Apr 25 08:09:02 2012
-+++ src/manage.c	Tue May 15 12:28:16 2012
+--- src/manage.c.orig	Thu Aug  9 20:50:51 2012
++++ src/manage.c	Tue Aug 21 14:22:14 2012
 @@ -37,7 +37,7 @@
   */
  
@@ -10,30 +10,3 @@ $OpenBSD$
  
  #include "manage.h"
  #include "manage_sql.h"
-@@ -4276,7 +4279,7 @@ manage_read_info (gchar *type, gchar *name, gchar **re
-   assert (result != NULL);
-   *result = NULL;
- 
--  if (g_strcasecmp ("CPE", type) == 0)
-+  if (g_ascii_strcasecmp ("CPE", type) == 0)
-     {
-       fname = get_cpe_filename ();
-       if (fname)
-@@ -4330,7 +4333,7 @@ manage_read_info (gchar *type, gchar *name, gchar **re
-           g_free (cpe);
-         }
-     }
--  else if (g_strcasecmp ("CVE", type) == 0)
-+  else if (g_ascii_strcasecmp ("CVE", type) == 0)
-     {
-       fname = get_cve_filename (name);
-       if (fname)
-@@ -4370,7 +4373,7 @@ manage_read_info (gchar *type, gchar *name, gchar **re
-           g_free (cve);
-         }
-     }
--  else if (g_strcasecmp ("NVT", type) == 0)
-+  else if (g_ascii_strcasecmp ("NVT", type) == 0)
-     {
-       iterator_t nvts;
-       nvt_t nvt;

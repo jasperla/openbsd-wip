@@ -1,7 +1,7 @@
 $OpenBSD$
---- base/CMakeLists.txt.orig	Thu Mar  3 08:44:22 2011
-+++ base/CMakeLists.txt	Mon Apr 18 18:04:41 2011
-@@ -24,11 +24,11 @@
+--- base/CMakeLists.txt.orig	Thu Aug  9 11:07:32 2012
++++ base/CMakeLists.txt	Wed Aug 22 15:14:10 2012
+@@ -24,7 +24,7 @@
  
  ## Library
  
@@ -10,8 +10,3 @@ $OpenBSD$
  
  if (NOT MINGW)
    set (CMAKE_C_FLAGS_DEBUG        "${CMAKE_C_FLAGS_DEBUG}")
--  set (CMAKE_C_FLAGS              "${CMAKE_C_FLAGS} ${HARDENING_FLAGS} -Wall -Werror -fPIC")
-+  set (CMAKE_C_FLAGS              "${CMAKE_C_FLAGS} ${HARDENING_FLAGS} -Wall -fPIC")
- endif (NOT MINGW)
- 
- if (MINGW)

@@ -1,9 +1,9 @@
 # $OpenBSD$
 
 COMMENT =		OpenVAS security scanner administrator
-DISTNAME =		openvas-administrator-1.2.0
+DISTNAME =		openvas-administrator-1.2.1
 
-MASTER_SITES =		${MASTER_SITES_OPENVAS:=1065/}
+MASTER_SITES =		${MASTER_SITES_OPENVAS:=1140/}
 
 WANTLIB +=		c pthread \
 			assuan e2fs-uuid glib-2.0 gnutls gpg-error gpgme \

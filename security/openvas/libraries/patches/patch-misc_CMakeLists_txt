@@ -1,7 +1,7 @@
 $OpenBSD$
---- misc/CMakeLists.txt.orig	Sun Mar 25 18:23:00 2012
-+++ misc/CMakeLists.txt	Mon Mar 26 22:28:26 2012
-@@ -40,20 +40,20 @@ endif (MINGW)
+--- misc/CMakeLists.txt.orig	Thu Aug  9 11:07:32 2012
++++ misc/CMakeLists.txt	Wed Aug 22 14:49:43 2012
+@@ -40,17 +40,17 @@ endif (MINGW)
  ## Config
  
  if (NOT MINGW)
@@ -23,11 +23,7 @@ $OpenBSD$
 +set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2 -fstack-protector")
  
  set (CMAKE_C_FLAGS_DEBUG        "${CMAKE_C_FLAGS_DEBUG}")
--set (CMAKE_C_FLAGS              "${CMAKE_C_FLAGS} ${HARDENING_FLAGS} -Wall -Werror -fPIC")
-+set (CMAKE_C_FLAGS              "${CMAKE_C_FLAGS} ${HARDENING_FLAGS} -Wall -fPIC")
- 
- if (MINGW)
-   set (FILES openvas_auth.c openvas_server.c proctitle.c)
+ set (CMAKE_C_FLAGS              "${CMAKE_C_FLAGS} ${HARDENING_FLAGS} -Wall -Werror -fPIC")
 @@ -144,19 +144,19 @@ if (OPENVAS_SYSCONF_DIR)
  endif (OPENVAS_SYSCONF_DIR)
  
