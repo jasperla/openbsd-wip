@@ -1,0 +1,21 @@
+$OpenBSD$
+--- doc/Doxyfile.orig	Wed Oct 17 16:38:56 2012
++++ doc/Doxyfile	Wed Oct 17 16:39:33 2012
+@@ -1097,7 +1097,7 @@ RTF_EXTENSIONS_FILE    = 
+ # If the GENERATE_MAN tag is set to YES (the default) Doxygen will 
+ # generate man pages
+ 
+-GENERATE_MAN           = NO
++GENERATE_MAN           = YES
+ 
+ # The MAN_OUTPUT tag is used to specify where the man pages will be put. 
+ # If a relative path is entered the value of OUTPUT_DIRECTORY will be 
+@@ -1116,7 +1116,7 @@ MAN_EXTENSION          = .3
+ # only source the real man page, but without them the man command 
+ # would be unable to find the correct page. The default is NO.
+ 
+-MAN_LINKS              = NO
++MAN_LINKS              = YES
+ 
+ #---------------------------------------------------------------------------
+ # configuration options related to the XML output
