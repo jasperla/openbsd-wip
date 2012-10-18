@@ -5,7 +5,7 @@ ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		Scheme dialect often used for teaching programming
 
-V =			5.3.1.1
+V =			5.3.0.900
 PKGNAME =		racket-$V
 #DISTNAME =		racket-$V-src-unix
 DISTNAME =		plt-$V-src-unix
@@ -25,7 +25,7 @@ MASTER_SITES =		http://download.racket-lang.org/installers/${V}/racket/ \
 			http://mirror.csclub.uwaterloo.ca/racket/racket-installers/${V}/racket/ \
 			http://mirror.informatik.uni-tuebingen.de/mirror/racket/${V}/racket/ \
 			http://racket.infogroep.be/${V}/racket/ \
-			http://pre.racket-lang.org/installers/ \
+			http://pre.racket-lang.org/release/installers/ \
 			http://download.tuxfamily.org/jod/lang/racket/
 
 NO_REGRESS =		Yes
