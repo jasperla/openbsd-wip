@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, personal information management
 DISTNAME =	kdepim-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	akonadi_next 0.0
 SHARED_LIBS +=	akregatorinterfaces 0.0
@@ -35,6 +36,7 @@ SHARED_LIBS +=  kleopatraclientgui        0.0 # 0.3
 SHARED_LIBS +=  kmanagesieve              0.0 # 4.7
 SHARED_LIBS +=  ksieveui                  0.0 # 4.7
 SHARED_LIBS +=  mailcommon                0.0 # 4.7
+SHARED_LIBS +=  mailimporter              0.0 # 4.9
 SHARED_LIBS +=  messagecomposer           0.0 # 4.7
 SHARED_LIBS +=  templateparser            0.0 # 4.7
 
