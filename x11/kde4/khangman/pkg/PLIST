@@ -1,5 +1,10 @@
 @comment $OpenBSD$
 @bin bin/khangman
+include/khangman/
+include/khangman/khangman_engine_export.h
+include/khangman/khangmanengine.h
+include/khangman/prefs.h
+@lib lib/libkhangmanengine.so.${LIBkhangmanengine_VERSION}
 @man man/man6/khangman.6
 share/applications/kde4/khangman.desktop
 share/apps/khangman/
@@ -40,6 +45,10 @@ share/icons/hicolor/22x22/apps/khangman.png
 share/icons/hicolor/32x32/apps/khangman.png
 share/icons/hicolor/48x48/apps/khangman.png
 share/icons/hicolor/64x64/apps/khangman.png
+share/icons/hicolor/80x80/
+share/icons/hicolor/80x80/apps/
+share/icons/hicolor/80x80/apps/khangman-harmattan.png
+share/icons/hicolor/scalable/apps/khangman-harmattan.svgz
 share/icons/hicolor/scalable/apps/khangman.svgz
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
