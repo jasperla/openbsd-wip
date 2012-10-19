@@ -41,7 +41,7 @@ MODKDE4_RESOURCES ?=	No
 #   - Set to "workspace" for ports that require KDE workspace libraries.
 #     This automatically implies "runtime".
 #
-#   - Add "PIM" when port depends on KDE PIM framework.
+#   - Add "pim" when port depends on KDE PIM framework.
 #
 # NOTE: There are no options like "Kate" or "Okular", they should be handled
 #       with simple LIB_DEPENDS on corresponding packages in addition to
