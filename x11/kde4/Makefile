@@ -86,8 +86,8 @@
      SUBDIR += py-kde			# untested
      SUBDIR += ruby-qt			# untested
      SUBDIR += korundum			# untested
-     SUBDIR += qyoto			# untested
-     SUBDIR += kimono			# untested
+#     SUBDIR += qyoto			# untested
+#     SUBDIR += kimono			# untested
      SUBDIR += smokegen			# OK
      SUBDIR += smokekde			# untested
      SUBDIR += smokeqt			# untested

@@ -3,6 +3,7 @@
 CATEGORIES =	devel
 COMMENT =	K Desktop Environment, KDE4 bindings for .NET
 DISTNAME =	kimono-${MODKDE_VERSION}
+BROKEN =	lang/mono is not building on amd64
 
 SHARED_LIBS =	kimono			0.0 # 2.0
 SHARED_LIBS +=	khtml-sharp		0.0
