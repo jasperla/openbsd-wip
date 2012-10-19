@@ -77,6 +77,8 @@ share/apps/ktouch/Lecture/Ukrainian/uk.ktouch.xml
 share/apps/ktouch/down.wav
 share/apps/ktouch/error.wav
 share/apps/ktouch/keyboard/
+share/apps/ktouch/keyboard/Turkish/
+share/apps/ktouch/keyboard/Turkish/tr.f.keyboard.xml
 share/apps/ktouch/keyboard/arabic/
 share/apps/ktouch/keyboard/arabic/ar.keyboard.xml
 share/apps/ktouch/keyboard/brazilian/
@@ -122,6 +124,8 @@ share/apps/ktouch/keyboard/lithuanian/
 share/apps/ktouch/keyboard/lithuanian/lt.keyboard.xml
 share/apps/ktouch/keyboard/norwegian/
 share/apps/ktouch/keyboard/norwegian/no.keyboard.xml
+share/apps/ktouch/keyboard/portuguese/
+share/apps/ktouch/keyboard/portuguese/pt.keyboard.xml
 share/apps/ktouch/keyboard/quebec/
 share/apps/ktouch/keyboard/quebec/qc.keyboard.xml
 share/apps/ktouch/keyboard/russian/
