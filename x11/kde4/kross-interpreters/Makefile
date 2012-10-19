@@ -14,7 +14,7 @@ PSEUDO_FLAVORS =	no_java
 FLAVOR ?=
 
 WANTLIB-common =  ${WANTLIB}
-WANTLIB-common += c m stdc++
+WANTLIB-common += c m pthread stdc++
 WANTLIB-common += lib/qt4/QtDBus lib/qt4/QtScript lib/qt4/QtXml
 WANTLIB-common += krosscore
 
