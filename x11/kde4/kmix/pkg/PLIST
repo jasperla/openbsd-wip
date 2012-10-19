@@ -34,6 +34,7 @@ share/apps/kmix/profiles/ALSA.default.xml
 share/apps/kmix/profiles/ALSA.playback.xml
 share/apps/kmix/profiles/OSS.default.xml
 share/apps/plasma/services/mixer.operations
+share/autostart/
 share/autostart/kmix_autostart.desktop
 share/autostart/restore_kmix_volumes.desktop
 share/dbus-1/interfaces/org.kde.kmix.control.xml
