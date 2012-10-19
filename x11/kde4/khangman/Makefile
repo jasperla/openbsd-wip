@@ -2,6 +2,9 @@
 
 COMMENT =	K Desktop Environment, hangman game
 DISTNAME =	khangman-${MODKDE_VERSION}
+REVISION =	0
+
+SHARED_LIBS =	khangmanengine		0.0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg lib/qt4/QtXml
