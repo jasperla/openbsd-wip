@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, games
 DISTNAME =	kdegames-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kdegames             5.0      # .4.0
 SHARED_LIBS +=	kmahjongglib         0.0      # .1.0
@@ -18,7 +19,9 @@ WANTLIB += kdeui kdnssd kfile kio knewstuff3
 WANTLIB += knotifyconfig phonon>=6
 WANTLIB += openal qca2 sndfile
 
-MODULES =	devel/cmake lang/python
+# Make sure some defines get right.
+# To be fixed when some stuff got out of x11/kde4.
+MODULES =	x11/kde4 lang/python
 
 LIB_DEPENDS =	multimedia/phonon \
 		audio/openal \
