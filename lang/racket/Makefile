@@ -3,9 +3,10 @@
 # "sconfig.h" only supports i386 and amd64 on OpenBSD
 ONLY_FOR_ARCHS =	i386 amd64
 
-COMMENT =		Scheme dialect often used for teaching programming
+COMMENT =		scheme dialect often used for teaching programming
 
 V =			5.3.0.900
+REVISION =		0
 PKGNAME =		racket-$V
 #DISTNAME =		racket-$V-src-unix
 DISTNAME =		plt-$V-src-unix
@@ -37,7 +38,7 @@ LIB_DEPENDS =		devel/libffi \
 			devel/pango \
 			graphics/cairo
 # "WANTLIB" reviewed by hand, "lib-depends-check" doesn't help.
-WANTLIB =		c m pthread ffi crypto
+WANTLIB =		c m pthread ffi crypto iconv
 
 EXTRACT_SUFX =		.tgz
 WRKDIST =		${WRKDIR}/racket-$V

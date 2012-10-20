@@ -1,27 +1,27 @@
 @comment $OpenBSD$
 %%SHARED%%
-@bin bin/drracket
+bin/drracket
 @bin bin/gracket
-@bin bin/gracket-text
+bin/gracket-text
 @bin bin/mred
-@bin bin/mred-text
-@bin bin/mzc
-@bin bin/mzpp
+bin/mred-text
+bin/mzc
+bin/mzpp
 @bin bin/mzscheme
-@bin bin/mztext
-@bin bin/pdf-slatex
-@bin bin/plt-games
-@bin bin/plt-help
-@bin bin/plt-r5rs
-@bin bin/plt-r6rs
-@bin bin/plt-web-server
+bin/mztext
+bin/pdf-slatex
+bin/plt-games
+bin/plt-help
+bin/plt-r5rs
+bin/plt-r6rs
+bin/plt-web-server
 @bin bin/racket
-@bin bin/raco
-@bin bin/scribble
-@bin bin/setup-plt
-@bin bin/slatex
-@bin bin/slideshow
-@bin bin/swindle
+bin/raco
+bin/scribble
+bin/setup-plt
+bin/slatex
+bin/slideshow
+bin/swindle
 include/racket/
 include/racket/escheme.h
 include/racket/ext.exp
