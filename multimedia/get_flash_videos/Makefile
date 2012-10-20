@@ -2,8 +2,8 @@
 
 COMMENT=		download flash video files from various sites
 
-DISTNAME=		App-get_flash_videos-1.24.20121003
-PKGNAME=		get_flash_videos-1.24.20121003
+DISTNAME=		App-get_flash_videos-1.24.20121020
+PKGNAME=		get_flash_videos-1.24.20121020
 #DISTNAME=		monsieurvideo-get-flash-videos-v1.24_02-292-gc52cdf6
 #PKGNAME=		get_flash_videos-1.24.20121012
 #WRKDIST=		${WRKDIR}/monsieurvideo-get-flash-videos-c52cdf6
