@@ -42,5 +42,26 @@ include/smoke/qwt_smoke.h
 @lib lib/libsmokeqtxml.so.${LIBsmokeqtxml_VERSION}
 @lib lib/libsmokeqtxmlpatterns.so.${LIBsmokeqtxmlpatterns_VERSION}
 @lib lib/libsmokeqwt.so.${LIBsmokeqwt_VERSION}
+share/smoke/phonon.argnames.txt
+share/smoke/qimageblitz.argnames.txt
+share/smoke/qsci.argnames.txt
+share/smoke/qt3support.argnames.txt
+share/smoke/qtcore.argnames.txt
+share/smoke/qtdbus.argnames.txt
+share/smoke/qtdeclarative.argnames.txt
+share/smoke/qtgui.argnames.txt
+share/smoke/qthelp.argnames.txt
+share/smoke/qtmultimedia.argnames.txt
+share/smoke/qtnetwork.argnames.txt
+share/smoke/qtopengl.argnames.txt
+share/smoke/qtscript.argnames.txt
+share/smoke/qtsql.argnames.txt
+share/smoke/qtsvg.argnames.txt
+share/smoke/qttest.argnames.txt
+share/smoke/qtuitools.argnames.txt
+share/smoke/qtwebkit.argnames.txt
+share/smoke/qtxml.argnames.txt
+share/smoke/qtxmlpatterns.argnames.txt
+share/smoke/qwt.argnames.txt
 share/smokegen/qt-config.xml
 share/smokegen/qtdefines
