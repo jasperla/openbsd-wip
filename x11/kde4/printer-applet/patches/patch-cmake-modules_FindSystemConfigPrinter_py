@@ -1,0 +1,12 @@
+$OpenBSD$
+--- cmake-modules/FindSystemConfigPrinter.py.orig	Sat Oct 20 12:23:25 2012
++++ cmake-modules/FindSystemConfigPrinter.py	Sat Oct 20 12:23:37 2012
+@@ -4,7 +4,7 @@
+ 
+ import sys
+ 
+-SYSTEM_CONFIG_PRINTER_DIR = "/usr/share/system-config-printer"
++SYSTEM_CONFIG_PRINTER_DIR = "${LOCALBASE}/share/system-config-printer"
+ sys.path.append (SYSTEM_CONFIG_PRINTER_DIR)
+ 
+ try:
