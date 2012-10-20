@@ -238,6 +238,10 @@ share/kde4/services/magnet.protocol
 share/kde4/services/plasma-applet-ktorrent.desktop
 share/kde4/services/plasma-dataengine-ktorrent.desktop
 share/kde4/servicetypes/ktorrentplugin.desktop
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 share/locale/ar/LC_MESSAGES/ktorrent.mo
 share/locale/ast/LC_MESSAGES/ktorrent.mo
 share/locale/be/LC_MESSAGES/ktorrent.mo
@@ -259,6 +263,8 @@ share/locale/fr/LC_MESSAGES/ktorrent.mo
 share/locale/ga/LC_MESSAGES/ktorrent.mo
 share/locale/gl/LC_MESSAGES/ktorrent.mo
 share/locale/hi/LC_MESSAGES/ktorrent.mo
+share/locale/hne/
+share/locale/hne/LC_MESSAGES/
 share/locale/hne/LC_MESSAGES/ktorrent.mo
 share/locale/hr/LC_MESSAGES/ktorrent.mo
 share/locale/hu/LC_MESSAGES/ktorrent.mo
@@ -281,13 +287,19 @@ share/locale/pt/LC_MESSAGES/ktorrent.mo
 share/locale/pt_BR/LC_MESSAGES/ktorrent.mo
 share/locale/ro/LC_MESSAGES/ktorrent.mo
 share/locale/ru/LC_MESSAGES/ktorrent.mo
+share/locale/se/
+share/locale/se/LC_MESSAGES/
 share/locale/se/LC_MESSAGES/ktorrent.mo
 share/locale/si/LC_MESSAGES/ktorrent.mo
 share/locale/sk/LC_MESSAGES/ktorrent.mo
 share/locale/sl/LC_MESSAGES/ktorrent.mo
 share/locale/sq/LC_MESSAGES/ktorrent.mo
 share/locale/sr/LC_MESSAGES/ktorrent.mo
+share/locale/sr@ijekavian/
+share/locale/sr@ijekavian/LC_MESSAGES/
 share/locale/sr@ijekavian/LC_MESSAGES/ktorrent.mo
+share/locale/sr@ijekavianlatin/
+share/locale/sr@ijekavianlatin/LC_MESSAGES/
 share/locale/sr@ijekavianlatin/LC_MESSAGES/ktorrent.mo
 share/locale/sr@latin/LC_MESSAGES/ktorrent.mo
 share/locale/sv/LC_MESSAGES/ktorrent.mo
@@ -296,7 +308,3 @@ share/locale/ug/LC_MESSAGES/ktorrent.mo
 share/locale/uk/LC_MESSAGES/ktorrent.mo
 share/locale/zh_CN/LC_MESSAGES/ktorrent.mo
 share/locale/zh_TW/LC_MESSAGES/ktorrent.mo
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
