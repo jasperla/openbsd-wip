@@ -32,14 +32,5 @@ NO_REGRESS =	Yes
 CONFIGURE_ENV =	CFLAGS=-I${PREFIX}/include \
 		LDFLAGS="-L${PREFIX}/lib -liconv -lintl"
 
-# System (CMake) FindGettext.cmake requires having PO_FILES marker
-post-patch:
-	@find ${WRKSRC} -name CMakeLists.txt -print0 | \
-		xargs -0rt \
-			perl -pi.pofilesfix \
-	-e 'if (/GETTEXT_PROCESS_PO_FILES/) { \
-		s@\$$\{_po_files\}@PO_FILES $$&@; \
-	}'
-
 # XXX have to do this manually here...
 .include "${.CURDIR}/../../Makefile.inc"
