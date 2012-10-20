@@ -199,6 +199,6 @@ CONFIGURE_ARGS +=	${MODKDE4_CONF_ARGS}
 MODKDE4_post-patch =	@echo '====> Fixing Gettext CMake calls'; \
 	find ${WRKSRC} -name CMakeLists.txt -print0 | \
 		xargs -0rt perl -pi.pofilesfix \
-			-e 'if (/GETTEXT_PROCESS_PO_FILES/) { \
+			-e 'if (/GETTEXT_PROCESS_PO_FILES/ and !/\sPO_FILES/) { \
 				s@\$$\{_po_files\}@PO_FILES $$&@; \
 			}'
