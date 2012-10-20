@@ -6354,6 +6354,7 @@ share/kde4/services/ScreenSavers/engine.desktop
 share/kde4/services/ScreenSavers/epicycle.desktop
 share/kde4/services/ScreenSavers/eruption.desktop
 share/kde4/services/ScreenSavers/euler2d.desktop
+share/kde4/services/ScreenSavers/extrusion.desktop
 share/kde4/services/ScreenSavers/fadeplot.desktop
 share/kde4/services/ScreenSavers/fiberlamp.desktop
 share/kde4/services/ScreenSavers/fireworkx.desktop
