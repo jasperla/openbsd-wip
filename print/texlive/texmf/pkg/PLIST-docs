@@ -18366,7 +18366,6 @@ share/texmf-dist/doc/latex/prerex/doc/introFonts.png
 share/texmf-dist/doc/latex/prerex/doc/introchart1.tex
 share/texmf-dist/doc/latex/prerex/doc/introchart2.tex
 share/texmf-dist/doc/latex/prerex/doc/prerex.pdf
-@man man/man7/prerex.sty.7
 share/texmf-dist/doc/latex/prerex/doc/prerex.tex
 share/texmf-dist/doc/latex/prerex/prerex-6.5.1.tar.gz
 share/texmf-dist/doc/latex/prerex/vprerex-6.4.1.tar.gz
@@ -29452,18 +29451,8 @@ share/texmf-dist/doc/support/pedigree-perl/
 share/texmf-dist/doc/support/pedigree-perl/LICENSE
 share/texmf-dist/doc/support/pedigree-perl/Makefile
 share/texmf-dist/doc/support/pedigree-perl/NEWS
-@man man/man3/Pedigree.3
 share/texmf-dist/doc/support/pedigree-perl/Pedigree/
-@man man/man3/AbortionNode.3
-@man man/man3/Area.3
-@man man/man3/ChildlessNode.3
-@man man/man3/Language.3
 share/texmf-dist/doc/support/pedigree-perl/Pedigree/Makefile
-@man man/man3/MarriageNode.3
-@man man/man3/Node.3
-@man man/man3/Parser.3
-@man man/man3/PersonNode.3
-@man man/man3/TwinsNode.3
 share/texmf-dist/doc/support/pedigree-perl/README
 share/texmf-dist/doc/support/pedigree-perl/doc/
 share/texmf-dist/doc/support/pedigree-perl/doc/Makefile
@@ -29895,9 +29884,6 @@ share/texmf/doc/kpathsea/
 share/texmf/doc/kpathsea/kpathsea.html
 share/texmf/doc/kpathsea/kpathsea.pdf
 share/texmf/doc/man/man5/
-@man man/man5/fmtutil.cnf.5
-@man man/man5/synctex.5
-@man man/man5/updmap.cfg.5
 share/texmf/doc/sjisconv/
 share/texmf/doc/sjisconv/sjisconv.pdf
 share/texmf/doc/tetex/

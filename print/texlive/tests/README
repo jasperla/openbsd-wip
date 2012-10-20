@@ -19,4 +19,4 @@ TeX Live Testing
   `texdoc beamer` should show the documentation for the beamer package.
 
 * Test some of your own docs. Make sure you open them to check they *look* right,
-  not just build
+  not just build.
