@@ -14,9 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	www/p5-HTML-Parser>=3.46 \
-		www/p5-HTML-Tagset>=3.02 \
-		www/p5-HTML-Format \
-		www/p5-libwww
+		www/p5-HTML-Tagset>=3.02
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		devel/p5-Test-Fatal
 
