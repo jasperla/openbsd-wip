@@ -1,0 +1,13 @@
+$OpenBSD$
+Fix build with libpng 1.5. From upstream r1248.
+--- src/nvimage/ImageIO.cpp.orig	Wed Jun 20 23:17:34 2012
++++ src/nvimage/ImageIO.cpp	Wed Jun 20 23:24:59 2012
+@@ -603,7 +603,7 @@ static void user_read_data(png_structp png_ptr, png_by
+ {
+ 	nvDebugCheck(png_ptr != NULL);
+ 	
+-	Stream * s = (Stream *)png_ptr->io_ptr;
++	Stream * s = (Stream *)png_get_io_ptr(png_ptr);
+ 	s->serialize(data, (int)length);
+ 	
+ 	if (s->isError()) {
