@@ -1,0 +1,13 @@
+@comment $OpenBSD$
+@lib lib/libnvcore.so.${LIBnvcore_VERSION}
+@lib lib/libnvimage.so.${LIBnvimage_VERSION}
+@lib lib/libnvmath.so.${LIBnvmath_VERSION}
+@lib lib/libnvtt.so.${LIBnvtt_VERSION}
+@bin bin/nvassemble
+@bin bin/nvcompress
+@bin bin/nvddsinfo
+@bin bin/nvdecompress
+@bin bin/nvimgdiff
+@bin bin/nvzoom
+include/nvtt/
+include/nvtt/nvtt.h

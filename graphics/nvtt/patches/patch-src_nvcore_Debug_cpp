@@ -1,0 +1,36 @@
+$OpenBSD$
+http://trac.wildfiregames.com/browser/ps/trunk/libraries/nvtt/issue176.patch
+--- src/nvcore/Debug.cpp.orig	Wed Jun 20 23:11:45 2012
++++ src/nvcore/Debug.cpp	Wed Jun 20 23:14:33 2012
+@@ -34,11 +34,14 @@
+ #	endif
+ #endif
+ 
+-#if NV_OS_DARWIN
++#if NV_OS_DARWIN || NV_OS_OPENBSD
+ #	include <unistd.h>	// getpid
+ #	include <sys/types.h>
++#	include <sys/param.h>
+ #	include <sys/sysctl.h>	// sysctl
+-#	include <sys/ucontext.h>
++#	if !NV_OS_OPENBSD
++#		include <sys/ucontext.h>
++#	endif
+ #	undef HAVE_EXECINFO_H
+ #	if defined(HAVE_EXECINFO_H) // only after OSX 10.5
+ #		include <execinfo.h> // backtrace
+@@ -198,6 +201,14 @@ namespace 
+ 				ucontext_t * ucp = (ucontext_t *)secret;
+ 				return (void *) ucp->uc_mcontext->ss.eip;
+ #			endif
++#		endif
++#	elif NV_OS_OPENBSD
++#		if NV_CPU_X86_64
++			ucontext_t * ucp = (ucontext_t *)secret;
++			return (void *)ucp->sc_rip;
++#		elif NV_CPU_X86
++			ucontext_t * ucp = (ucontext_t *)secret;
++			return (void *)ucp->sc_eip;
+ #		endif
+ #	else
+ #		if NV_CPU_X86_64
