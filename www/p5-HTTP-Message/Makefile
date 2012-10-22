@@ -2,7 +2,7 @@
 
 COMMENT =	HTTP Style Messages
 
-DISTNAME =	HTTP-Message-6.04
+DISTNAME =	HTTP-Message-6.06
 CATEGORIES =	www
 CPAN_AUTHOR =	GAAS
 

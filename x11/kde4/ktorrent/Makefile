@@ -4,6 +4,8 @@ COMMENT =	K Desktop Environment, torrent client
 V =		4.2.0
 DISTNAME =	ktorrent-${V}
 HOMEPAGE =	http://ktorrent.org/
+REVISION =	0
+
 EXTRACT_SUFX =	.tar.bz2
 
 SHARED_LIBS =	ktcore		0.0
@@ -19,11 +21,10 @@ WANTLIB += syndication tag
 
 MASTER_SITES =	${HOMEPAGE}downloads/${V}/
 
-MODKDE4_USE =	workspace
+MODKDE4_USE =	pim workspace
 
 LIBVER =	${V:C/^4/1/}
 LIB_DEPENDS =	audio/taglib \
-		databases/sqlite3 \
 		STEM->=${LIBVER}:x11/kde4/libktorrent
 
 .include <bsd.port.mk>

@@ -1,0 +1,22 @@
+$OpenBSD$
+http://trac.wildfiregames.com/browser/ps/trunk/libraries/nvtt/issue176.patch
+--- src/nvmath/nvmath.h.orig	Wed Jun 20 23:15:29 2012
++++ src/nvmath/nvmath.h	Wed Jun 20 23:15:46 2012
+@@ -115,7 +115,7 @@ inline bool isFinite(const float f)
+ {
+ #if NV_OS_WIN32
+ 	return _finite(f) != 0;
+-#elif NV_OS_DARWIN
++#elif NV_OS_DARWIN || NV_OS_OPENBSD
+ 	return isfinite(f);
+ #elif NV_OS_LINUX
+ 	return finitef(f);
+@@ -130,7 +130,7 @@ inline bool isNan(const float f)
+ {
+ #if NV_OS_WIN32
+ 	return _isnan(f) != 0;
+-#elif NV_OS_DARWIN
++#elif NV_OS_DARWIN || NV_OS_OPENBSD
+ 	return isnan(f);
+ #elif NV_OS_LINUX
+ 	return isnanf(f);

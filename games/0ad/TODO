@@ -1,0 +1,9 @@
+Pyrogenesis has to be run from /usr/local/bin
+
+Not linked with libogg or libvorbis, needs LD_PRELOAD
+
+(wrapper script?)
+
+Horrible build system (doesn't respect CXX, etc.)
+
+So slow!
