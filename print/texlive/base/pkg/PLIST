@@ -387,11 +387,3 @@ share/doc/pkg-readmes/${FULLPKGNAME}
 @unexec-delete rm %D/share/texmf/ls-R
 @unexec-delete rm %D/share/texmf-dist/ls-R
 @unexec-delete rm %D/share/texmf-var/ls-R
-@exec mktexlsr > /dev/null 2>&1
-@extra share/texmf/ls-R
-@extra share/texmf-dist/ls-R
-@extra share/texmf-var/ls-R
-@extra share/texmf-config/ls-R
-@unexec-delete rm %D/share/texmf/ls-R
-@unexec-delete rm %D/share/texmf-dist/ls-R
-@unexec-delete rm %D/share/texmf-var/ls-R

@@ -12,7 +12,7 @@ SHARED_LIBS =		kpathsea	5.0
 SHARED_LIBS +=		ptexenc		2.0
 
 WANTLIB +=		ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c expat
-WANTLIB +=		fontconfig freetype gd jpeg lcms2 m ncurses
+WANTLIB +=		fontconfig freetype gd jpeg lcms2 m
 WANTLIB +=		openjpeg png>=3 poppler pthread pthread-stubs stdc++
 WANTLIB +=		t1>=4 tiff ttf xcb z
 
@@ -29,8 +29,7 @@ LIB_DEPENDS =		devel/t1lib \
 			graphics/png \
 			graphics/gd \
 			print/freetype \
-			print/poppler \
-			textproc/libxml
+			print/poppler
 
 MODULES =		textproc/intltool converters/libiconv
 # These following two modules are just for variable substitution in patches
