@@ -1,0 +1,6 @@
+Fix build on amd64:
+
+/usr/local/include/tiff.h:77: error: conflicting declaration 'typedef long int int64'
+/usr/ports/pobj/nvtt-2.0.8.1/nvidia-texture-tools/src/nvcore/DefsGnucDarwin.h:63: error: 'int64' has a previous declaration as 'typedef int64_t int64'
+/usr/local/include/tiff.h:78: error: conflicting declaration 'typedef long unsigned int uint64'
+/usr/ports/pobj/nvtt-2.0.8.1/nvidia-texture-tools/src/nvcore/DefsGnucDarwin.h:62: error: 'uint64' has a previous declaration as 'typedef uint64_t uint64'

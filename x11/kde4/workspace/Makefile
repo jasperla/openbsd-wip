@@ -36,7 +36,7 @@ SHARED_LIBS +=	weather_ion			0.0 # 6.0
 
 WANTLIB =  c m pthread stdc++ util z
 WANTLIB += GL GLU ICE SM X11 XRes Xau Xcomposite Xcursor Xdamage Xdmcp Xext
-WANTLIB += Xfixes Xft Xi Xinerama Xrandr Xrender Xss Xtst Xxf86misc
+WANTLIB += Xfixes Xft Xi Xinerama Xrandr Xrender Xss Xtst Xxf86misc Xxf86vm
 WANTLIB += fontconfig freetype xkbfile
 
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative

@@ -1,0 +1,16 @@
+$OpenBSD$
+http://trac.wildfiregames.com/browser/ps/trunk/libraries/nvtt/issue176.patch
+--- src/nvcore/poshlib/posh.h.orig	Wed Jun 20 23:14:49 2012
++++ src/nvcore/poshlib/posh.h	Wed Jun 20 23:15:20 2012
+@@ -293,6 +293,11 @@ Metrowerks:
+ #  define POSH_OS_STRING "Linux"
+ #endif
+ 
++#if defined __OpenBSD__
++#  define POSH_OS_OPENBSD 1
++#  define POSH_OS_STRING "OpenBSD"
++#endif
++
+ #if defined __CYGWIN32__
+ #  define POSH_OS_CYGWIN32 1
+ #  define POSH_OS_STRING "Cygwin"

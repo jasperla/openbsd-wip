@@ -3,6 +3,7 @@
 CATEGORIES =	devel
 COMMENT =	K Desktop Environment, introspective wrappers around KDE
 DISTNAME =	smokekde-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	smokeakonadi		0.0 # 3.0
 SHARED_LIBS +=	smokeattica		0.0 # 3.0
@@ -26,7 +27,7 @@ SHARED_LIBS +=	smokesoprano		0.0 # 3.0
 SHARED_LIBS +=	smokesopranoclient	0.0 # 3.0
 SHARED_LIBS +=	smokesopranoserver	0.0 # 3.0
 
-WANTLIB =  c m stdc++
+WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtOpenGL lib/qt4/QtSql
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
