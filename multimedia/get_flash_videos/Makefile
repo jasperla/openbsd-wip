@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2012/10/12 20:31:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2012/10/22 12:32:15 nigel Exp $
 
 COMMENT=		download flash video files from various sites
 
