@@ -1,0 +1,15 @@
+@comment $OpenBSD$
+%%SHARED%%
+include/QtOAuth/
+include/QtOAuth/QtOAuth
+include/QtOAuth/interface.h
+include/QtOAuth/qoauth_global.h
+include/QtOAuth/qoauth_namespace.h
+lib/libqoauth.a
+lib/libqoauth.prl
+lib/pkgconfig/
+lib/pkgconfig/qoauth.pc
+lib/qt4/
+lib/qt4/mkspecs/
+lib/qt4/mkspecs/features/
+lib/qt4/mkspecs/features/oauth.prf
