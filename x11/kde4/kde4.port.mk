@@ -196,9 +196,16 @@ CONFIGURE_ARGS +=	${MODKDE4_CONF_ARGS}
 # MAKE_FLAGS +=		${MODKDE4_CONF_ARGS}
 
 # System (CMake) FindGettext.cmake requires having PO_FILES marker
-MODKDE4_post-patch =	@echo '====> Fixing Gettext CMake calls'; \
-	find ${WRKSRC} -name CMakeLists.txt -print0 | \
-		xargs -0rt perl -pi.pofilesfix \
-			-e 'if (/GETTEXT_PROCESS_PO_FILES/ and !/\sPO_FILES/) { \
+MODKDE4_post-patch =	@echo '====> Fixing GETTEXT_PROCESS_PO_FILES() calls'; \
+	cd ${WRKSRC} && find . -name CMakeLists.txt | \
+		while read F; do \
+			perl -pi.pofilesfix -e '\
+			if (/GETTEXT_PROCESS_PO_FILES/ and !/\sPO_FILES/) { \
 				s@\$$\{_po_files\}@PO_FILES $$&@; \
-			}'
+			}' "$$F"; \
+			if cmp -s "$$F" "$$F".pofilesfix; then \
+				rm "$$F".pofilesfix; \
+			else \
+				echo "$$F" >&2; \
+			fi; \
+		done
