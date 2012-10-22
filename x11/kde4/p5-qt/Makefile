@@ -3,8 +3,9 @@
 COMMENT =	K Desktop Environment, Qt4 bindings for Perl
 DISTNAME =	perlqt-${MODKDE_VERSION}
 PKGNAME =	p5-qt-${MODKDE_VERSION}
+REVISION =	0
 
-WANTLIB =  c m perl pthread stdc++ util
+WANTLIB =  c m perl stdc++ util
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtXml
 WANTLIB += smokebase smokephonon smokeqimageblitz smokeqsci
 WANTLIB += smokeqt3support smokeqtcore smokeqtdbus smokeqtdeclarative
@@ -29,5 +30,9 @@ post-patch:
 			cp "$$F" "$$F".beforeundef && mv "$$F".undef "$$F"; \
 		fi \
 	done
+
+# XXX: Should find the right way; probably looking in libproxy port could help.
+post-install:
+	ln -fs ${PREFIX}/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/QtCore4/{lib,}QtCore4.so
 
 .include <bsd.port.mk>
