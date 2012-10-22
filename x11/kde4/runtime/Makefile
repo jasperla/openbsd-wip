@@ -45,7 +45,7 @@ LIB_DEPENDS =	audio/libcanberra \
 		STEM->=${MODKDE4_VERSION}:x11/kde4/pimlibs
 
 # QNtrack depends on libnl, Linux-specific library.
-CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Alsa:Bool=TRUE \
+CONFIGURE_ARGS =	-DWITH_ALSA:Bool=FALSE \
 			-DCMAKE_DISABLE_FIND_PACKAGE_SLP:Bool=TRUE \
 			-DCMAKE_DISABLE_FIND_PACKAGE_QNtrack:Bool=TRUE
 
