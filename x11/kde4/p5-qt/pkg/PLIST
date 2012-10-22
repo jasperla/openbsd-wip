@@ -55,6 +55,7 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Qt3Support4/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Qt3Support4/Qt3Support4.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/QtCore4/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/QtCore4/QtCore4.so
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/QtCore4/libQtCore4.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/QtDBus4/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/QtDBus4/QtDBus4.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/QtDeclarative4/
