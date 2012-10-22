@@ -3,8 +3,9 @@
 COMMENT =	K Desktop Environment, KDE4 bindings for Perl
 DISTNAME =	perlkde-${MODKDE_VERSION}
 PKGNAME =	p5-kde-${MODKDE_VERSION}
+REVISION =	0
 
-WANTLIB =  c m perl stdc++ util
+WANTLIB =  c m perl pthread stdc++ util
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtOpenGL lib/qt4/QtSql lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += smokeattica smokebase smokekate smokekdecore smokekdeui
@@ -16,8 +17,9 @@ WANTLIB += smokesopranoclient smokesopranoserver smokeakonadi
 
 MODKDE4_USE =	libs
 
+BUILD_DEPENDS =	x11/kde4/p5-qt
+RUN_DEPENDS =	x11/kde4/p5-qt
 LIB_DEPENDS = 	x11/kde4/kate \
-		x11/kde4/p5-qt \
 		x11/kde4/smokekde
 
 # Avoid clashing Perl do_open and do_close with GCC's locale_facets.h
