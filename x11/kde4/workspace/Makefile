@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, workspace
 DISTNAME =	kde-workspace-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kdecorations			0.0 # 4.7
 SHARED_LIBS +=	kephal				0.0 # 4.7
@@ -59,10 +60,12 @@ WANTLIB += glib-2.0 gps jpeg png prison qalculate usb xml2 xmms
 MODULES =	devel/gettext
 MODKDE4_USE =	pim
 
-BUILD_DEPENDS =	misc/shared-desktop-ontologies
+BUILD_DEPENDS =	misc/shared-desktop-ontologies \
+		x11/kde4/py-kde
 
 RUN_DEPENDS =	misc/shared-desktop-ontologies \
 		sysutils/lsof \
+		x11/kde4/py-kde \
 		x11/polkit-qt4
 
 LIB_DEPENDS =	audio/xmms \
@@ -74,9 +77,7 @@ LIB_DEPENDS =	audio/xmms \
 		multimedia/phonon \
 		sysutils/consolekit \
 		x11/dbusmenu-qt \
-		x11/kde4/akonadi \
 		x11/kde4/kactivities \
-		x11/kde4/py-kde \
 		x11/kde4/qimageblitz
 
 CONFIGURE_ARGS =	-DWITH_Sensors:Bool=False \
