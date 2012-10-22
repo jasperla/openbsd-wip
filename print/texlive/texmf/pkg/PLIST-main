@@ -380,8 +380,6 @@ share/texmf-dist/bibtex/csf/polish-csf/cp1250pl.csf
 share/texmf-dist/bibtex/csf/polish-csf/cp852pl.csf
 share/texmf-dist/bibtex/csf/polish-csf/iso8859-7.csf
 share/texmf-dist/doc/
-share/texmf-dist/doc/fonts/wasy/
-share/texmf-dist/doc/fonts/wasy/wasyfont.2
 share/texmf-dist/doc/latex/
 share/texmf-dist/doc/latex/koma-script/
 share/texmf-dist/doc/latex/koma-script/INSTALL.txt
