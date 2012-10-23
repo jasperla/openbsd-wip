@@ -18,4 +18,11 @@ BUILD_DEPENDS =	devel/boost
 # Requires Boost >= 1.43
 CONFIGURE_ARGS =	-DBUILD_DotFilePlugin:Bool=No
 
+# XXX Ugly hack until CMake or rocs, whatever, could be fixed.
+LOST_LIBS =	rocs_GraphStructure rocs_ListStructure
+post-configure:
+.for _l in ${LOST_LIBS}
+	cd ${WRKBUILD}/lib && ln -s {,lib}${_l}.so
+.endfor
+
 .include <bsd.port.mk>

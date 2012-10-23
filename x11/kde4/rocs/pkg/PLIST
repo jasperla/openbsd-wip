@@ -4,10 +4,13 @@ include/rocs/
 include/rocs/Data.h
 include/rocs/DataItem.h
 include/rocs/DataStructure.h
+include/rocs/DataStructurePluginInterface.h
+include/rocs/DataStructurePluginManager.h
 include/rocs/Document.h
 include/rocs/DynamicPropertiesList.h
 include/rocs/FilePluginInterface.h
 include/rocs/GraphicsLayout.h
+include/rocs/IncludeManager.h
 include/rocs/KrossBackend.h
 include/rocs/PluginManager.h
 include/rocs/Pointer.h
@@ -19,6 +22,7 @@ include/rocs/Topology.h
 include/rocs/rocslib_export.h
 lib/kde4/rocs_GraphStructure.so
 lib/kde4/rocs_ListStructure.so
+lib/kde4/rocs_RootedTreeStructure.so
 lib/kde4/rocs_assignvaluesplugin.so
 lib/kde4/rocs_generategraphplugin.so
 lib/kde4/rocs_plaintxt.so
@@ -40,7 +44,6 @@ share/apps/rocs/icons/hicolor/
 share/apps/rocs/icons/hicolor/16x16/
 share/apps/rocs/icons/hicolor/16x16/actions/
 share/apps/rocs/icons/hicolor/16x16/actions/rocsaddedge.png
-share/apps/rocs/icons/hicolor/16x16/actions/rocsaddnode.png
 share/apps/rocs/icons/hicolor/16x16/actions/rocsalignbottom.png
 share/apps/rocs/icons/hicolor/16x16/actions/rocsaligncircle.png
 share/apps/rocs/icons/hicolor/16x16/actions/rocsalignhmiddle.png
@@ -49,7 +52,6 @@ share/apps/rocs/icons/hicolor/16x16/actions/rocsalignright.png
 share/apps/rocs/icons/hicolor/16x16/actions/rocsaligntop.png
 share/apps/rocs/icons/hicolor/16x16/actions/rocsaligntree.png
 share/apps/rocs/icons/hicolor/16x16/actions/rocsalignvmiddle.png
-share/apps/rocs/icons/hicolor/16x16/actions/rocsdelete.png
 share/apps/rocs/icons/hicolor/16x16/actions/rocsselect.png
 share/apps/rocs/icons/hicolor/16x16/actions/rocsselectmove.png
 share/apps/rocs/icons/hicolor/22x22/
@@ -64,12 +66,10 @@ share/apps/rocs/icons/hicolor/22x22/actions/rocsalignright.png
 share/apps/rocs/icons/hicolor/22x22/actions/rocsaligntop.png
 share/apps/rocs/icons/hicolor/22x22/actions/rocsaligntree.png
 share/apps/rocs/icons/hicolor/22x22/actions/rocsalignvmiddle.png
-share/apps/rocs/icons/hicolor/22x22/actions/rocsdelete.png
 share/apps/rocs/icons/hicolor/22x22/actions/rocsselectmove.png
 share/apps/rocs/icons/hicolor/32x32/
 share/apps/rocs/icons/hicolor/32x32/actions/
 share/apps/rocs/icons/hicolor/32x32/actions/rocsaddedge.png
-share/apps/rocs/icons/hicolor/32x32/actions/rocsaddnode.png
 share/apps/rocs/icons/hicolor/32x32/actions/rocsalignbottom.png
 share/apps/rocs/icons/hicolor/32x32/actions/rocsaligncircle.png
 share/apps/rocs/icons/hicolor/32x32/actions/rocsalignhmiddle.png
@@ -78,13 +78,11 @@ share/apps/rocs/icons/hicolor/32x32/actions/rocsalignright.png
 share/apps/rocs/icons/hicolor/32x32/actions/rocsaligntop.png
 share/apps/rocs/icons/hicolor/32x32/actions/rocsaligntree.png
 share/apps/rocs/icons/hicolor/32x32/actions/rocsalignvmiddle.png
-share/apps/rocs/icons/hicolor/32x32/actions/rocsdelete.png
 share/apps/rocs/icons/hicolor/32x32/actions/rocsselect.png
 share/apps/rocs/icons/hicolor/32x32/actions/rocsselectmove.png
 share/apps/rocs/icons/hicolor/48x48/
 share/apps/rocs/icons/hicolor/48x48/actions/
 share/apps/rocs/icons/hicolor/48x48/actions/rocsaddedge.png
-share/apps/rocs/icons/hicolor/48x48/actions/rocsaddnode.png
 share/apps/rocs/icons/hicolor/48x48/actions/rocsalignbottom.png
 share/apps/rocs/icons/hicolor/48x48/actions/rocsaligncircle.png
 share/apps/rocs/icons/hicolor/48x48/actions/rocsalignhmiddle.png
@@ -93,12 +91,10 @@ share/apps/rocs/icons/hicolor/48x48/actions/rocsalignright.png
 share/apps/rocs/icons/hicolor/48x48/actions/rocsaligntop.png
 share/apps/rocs/icons/hicolor/48x48/actions/rocsaligntree.png
 share/apps/rocs/icons/hicolor/48x48/actions/rocsalignvmiddle.png
-share/apps/rocs/icons/hicolor/48x48/actions/rocsdelete.png
 share/apps/rocs/icons/hicolor/48x48/actions/rocsselectmove.png
 share/apps/rocs/icons/hicolor/64x64/
 share/apps/rocs/icons/hicolor/64x64/actions/
 share/apps/rocs/icons/hicolor/64x64/actions/rocsaddedge.png
-share/apps/rocs/icons/hicolor/64x64/actions/rocsaddnode.png
 share/apps/rocs/icons/hicolor/64x64/actions/rocsalignbottom.png
 share/apps/rocs/icons/hicolor/64x64/actions/rocsaligncircle.png
 share/apps/rocs/icons/hicolor/64x64/actions/rocsalignhmiddle.png
@@ -107,10 +103,21 @@ share/apps/rocs/icons/hicolor/64x64/actions/rocsalignright.png
 share/apps/rocs/icons/hicolor/64x64/actions/rocsaligntop.png
 share/apps/rocs/icons/hicolor/64x64/actions/rocsaligntree.png
 share/apps/rocs/icons/hicolor/64x64/actions/rocsalignvmiddle.png
-share/apps/rocs/icons/hicolor/64x64/actions/rocsdelete.png
 share/apps/rocs/icons/hicolor/64x64/actions/rocsselect.png
 share/apps/rocs/icons/hicolor/64x64/actions/rocsselectmove.png
+share/apps/rocs/icons/hicolor/scalable/
+share/apps/rocs/icons/hicolor/scalable/actions/
+share/apps/rocs/icons/hicolor/scalable/actions/rocsadddata.svgz
+share/apps/rocs/icons/hicolor/scalable/actions/rocsdelete.svgz
+share/apps/rocs/icons/hicolor/scalable/actions/rocsdeletedata.svgz
+share/apps/rocs/icons/hicolor/scalable/actions/rocsdeletegrey.svgz
+share/apps/rocs/icons/hicolor/scalable/actions/rocseyeblack.svgz
+share/apps/rocs/icons/hicolor/scalable/actions/rocsnew.svgz
+share/apps/rocs/icons/hicolor/scalable/actions/rocstexticon.svgz
+share/apps/rocs/icons/hicolor/scalable/actions/rocsvalueicon.svgz
 share/apps/rocs/rocsui.rc
+share/apps/rocs_rootedtree/
+share/apps/rocs_rootedtree/RootedTreeui.rc
 share/config.kcfg/rocs.kcfg
 share/config/rocs.knsrc
 share/doc/HTML/en/rocs/
@@ -125,12 +132,17 @@ share/doc/HTML/en/rocs/hi22-action-rocsaligntree.png
 share/doc/HTML/en/rocs/hi22-action-rocsalignvmiddle.png
 share/doc/HTML/en/rocs/index.cache.bz2
 share/doc/HTML/en/rocs/index.docbook
+share/doc/HTML/en/rocs/rocs-control-engine${FLAVORS}.png
+share/doc/HTML/en/rocs/rocs-control-engine-run.png
+share/doc/HTML/en/rocs/rocs-control-engine-step.png
+share/doc/HTML/en/rocs/rocs-control-engine-stop.png
 share/doc/HTML/en/rocs/rocs-interfaces.png
 share/doc/HTML/en/rocs/rocs-screenshot.png
 share/doc/HTML/en/rocs/rocs-toolbar-alignment.png
 share/doc/HTML/en/rocs/rocs-toolbar-main.png
 share/kde4/services/rocs_GraphStructure.desktop
 share/kde4/services/rocs_ListStructure.desktop
+share/kde4/services/rocs_RootedTreeStructure.desktop
 share/kde4/services/rocs_assignvaluesplugin.desktop
 share/kde4/services/rocs_generategraphplugin.desktop
 share/kde4/services/rocs_plaintxtplugin.desktop
@@ -140,3 +152,5 @@ share/kde4/servicetypes/RocsFilePlugin.desktop
 share/kde4/servicetypes/RocsToolsPlugin.desktop
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
