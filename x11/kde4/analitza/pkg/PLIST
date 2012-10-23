@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+@bin bin/calgebra
 include/analitza/
 include/analitza/abstractlexer.h
 include/analitza/analitzaexport.h

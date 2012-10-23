@@ -15,6 +15,6 @@ WANTLIB += lib/qt4/QtXml
 CONFIGURE_ARGS=	-DCMAKE_SHARED_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib"
 
 post-extract:
-	cp ${FILESDIR}/FindNcurses.cmake ${WRKSRC}/cmake/modules/
+	cp ${FILESDIR}/FindNcurses.cmake ${WRKSRC}/cmake/
 
 .include <bsd.port.mk>
