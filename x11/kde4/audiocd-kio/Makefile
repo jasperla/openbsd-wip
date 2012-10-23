@@ -2,6 +2,7 @@
 
 COMMENT =	KDE KIOslave for accessing audio CDs
 DISTNAME =	audiocd-kio-${MODKDE_VERSION}
+REVISION =	0
 
 MODKDE4_USE =	libs
 
@@ -11,6 +12,8 @@ WANTLIB += lib/qt4/QtXml
 WANTLIB += kcompactdisc kdeui kio
 WANTLIB += FLAC cdda_interface cdda_paranoia ogg vorbis vorbisenc
 WANTLIB += vorbisfile
+
+BUILD_DEPENDS =	x11/kde4/libkcddb
 
 LIB_DEPENDS =	audio/cdparanoia \
 		audio/flac \
