@@ -1,0 +1,12 @@
+$OpenBSD$
+--- CMakeLists.txt.orig	Sun Oct 21 22:38:08 2012
++++ CMakeLists.txt	Sun Oct 21 22:38:22 2012
+@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 2.6.0)
+ # In CMake >= 2.8.6, FindBoost.cmake tries to find BoostConfig.cmake which is
+ # not compatible with CMake's FindBoost. Disable this function.
+ set (Boost_NO_BOOST_CMAKE TRUE)
+-find_package(Boost "1.43" REQUIRED)
++find_package(Boost "1.42" REQUIRED)
+ 
+ set(KDE_MIN_VERSION "4.3")
+ find_package(KDE4 REQUIRED)
