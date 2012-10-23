@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, mathematical applications
 DISTNAME =	cantor-${MODKDE_VERSION}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =  cantorlibs                0.0 # 0.0
 SHARED_LIBS += cantor_config             0.0 # 0.0
@@ -21,6 +21,8 @@ LIB_DEPENDS = 	databases/soprano \
 		math/R>=2.15.1p4 \
 		math/qalculate/libqalculate \
 		print/libspectre \
+		textproc/docbook \
+		textproc/docbook-xsl \
 		x11/kde4/analitza
 
 .include <bsd.port.mk>
