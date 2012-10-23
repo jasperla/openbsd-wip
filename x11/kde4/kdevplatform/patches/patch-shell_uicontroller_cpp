@@ -1,0 +1,12 @@
+$OpenBSD$
+--- shell/uicontroller.cpp.orig	Mon Oct 15 16:35:28 2012
++++ shell/uicontroller.cpp	Tue Oct 23 13:00:16 2012
+@@ -635,7 +635,7 @@ Sublime::View* UiController::addToolViewToArea(IToolVi
+     Sublime::View* view = doc->createView();
+     area->addToolView(
+         view,
+-        p == Sublime::Position::AllPositions ? Sublime::dockAreaToPosition(factory->defaultPosition()) : p);
++        p == Sublime::AllPositions ? Sublime::dockAreaToPosition(factory->defaultPosition()) : p);
+ 
+     connect(view, SIGNAL(raise(Sublime::View*)),
+             SLOT(raiseToolView(Sublime::View*)));

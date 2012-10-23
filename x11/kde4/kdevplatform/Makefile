@@ -1,10 +1,9 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, IDE creation toolkit
-VERSION =	1.3.1
+VERSION =	1.4.0
 DISTNAME =	kdevplatform-${VERSION}
 HOMEPAGE =	http://www.kdevelop.org/
-REVISION =	0
 
 EXTRACT_SUFX =	.tar.bz2
 
