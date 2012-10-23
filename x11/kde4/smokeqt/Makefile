@@ -12,7 +12,7 @@ WANTLIB += lib/qt4/QtNetwork lib/qt4/QtOpenGL lib/qt4/QtScript
 WANTLIB += lib/qt4/QtSql lib/qt4/QtSvg lib/qt4/QtTest lib/qt4/QtWebKit
 WANTLIB += lib/qt4/QtXml lib/qt4/QtXmlPatterns
 WANTLIB += phonon qimageblitz smokebase
-WANTLIB += qscintilla2 qwt 
+WANTLIB += qscintilla2 qwt
 
 SHARED_LIBS =	smokephonon		0.0 # 3.0
 SHARED_LIBS +=	smokeqimageblitz	0.0 # 3.0
