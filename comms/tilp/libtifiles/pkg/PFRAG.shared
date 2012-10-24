@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+@lib lib/libtifiles2.so.${LIBtifiles2_VERSION}
