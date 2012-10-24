@@ -6,7 +6,6 @@ MODULES=	cpan
 
 DISTNAME=	Test-WWW-Mechanize-1.44
 CATEGORIES=	www devel
-USE_GROFF =	Yes
 
 # Artitistic License
 PERMIT_PACKAGE_CDROM=	Yes
