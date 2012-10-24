@@ -35,7 +35,6 @@ SHARED_LIBS +=	pigmentcms		0.0 # 8.0
 SHARED_LIBS +=	RtfReader		0.0 # 9.0
 SHARED_LIBS +=	calligrastageprivate	0.0 # 9.0
 SHARED_LIBS +=	flowprivate		0.0 # 9.0
-SHARED_LIBS +=	koabstraction		0.0 # 9.0
 SHARED_LIBS +=	kowv2			0.0 # 9.0
 SHARED_LIBS +=	kundo2			0.0 # 9.0
 SHARED_LIBS +=	libwmf			0.0 # 9.0
@@ -44,7 +43,6 @@ SHARED_LIBS +=	planworkapp		0.0 # 9.0
 SHARED_LIBS +=	planworkfactory		0.0 # 9.0
 SHARED_LIBS +=	rcps_plan		0.0 # 9.0
 SHARED_LIBS +=	textlayout		0.0 # 9.0
-SHARED_LIBS +=	wordsexportfilters	0.0 # 9.0
 SHARED_LIBS +=	wordsprivate		0.0 # 9.0
 SHARED_LIBS +=	braindumpcore		9.0 # 9.0
 SHARED_LIBS +=	calligrasheetscommon	9.0 # 9.0
@@ -55,37 +53,44 @@ VMEM_WARNING =	Yes
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/${DISTNAME}/}
 
 WANTLIB =  c m pthread stdc++
-WANTLIB += X11 lib/qt4/QtDeclarative
+WANTLIB += X11 lib/qt4/QtDeclarative lib/qt4/QtWebKit
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
-WANTLIB += lib/qt4/QtXml lib/qt4/Qt3Support lib/qt4/QtTest dcmdata dcmsr
-WANTLIB += kdeui kio kparts nepomuk nepomukutils soprano png
-WANTLIB += GL GLU Half ICE Iex IlmImf IlmThread Imath SM Xext
 WANTLIB += lib/qt4/QtOpenGL lib/qt4/QtScript lib/qt4/QtXmlPatterns
-WANTLIB += exiv2 gif glib-2.0 gsl gslcblas iconv jpeg kcal kdcraw
-WANTLIB += kde3support kfile khtml kjs krosscore krossui lcms
-WANTLIB += lcms2 mysqlclient ofstd okularcore openjpeg phonon
-WANTLIB += poppler poppler-qt4 qca2 sqlite3 sybdb tiff wpd-0.8
-WANTLIB += xml2 xslt z
-WANTLIB += GLEW QtSql QtWebKit fftw3 kabc kcmutils kemoticons
-WANTLIB += kidletime knewstuff3 knotifyconfig kpimutils kprintutils
-WANTLIB += kresources ktexteditor kutils threadweaver
-WANTLIB += akonadi-contact akonadi-kde fontconfig freetype kcalcore
-WANTLIB += kmime crypto marblewidget ssl kdeclarative
+WANTLIB += lib/qt4/QtXml lib/qt4/Qt3Support lib/qt4/QtSql
+WANTLIB += GL GLEW GLU Half ICE Iex IlmImf IlmThread Imath SM
+WANTLIB += Xext akonadi-contact akonadi-kde exiv2 fftw3 freetype
+WANTLIB += glib-2.0 gsl gslcblas iconv icui18n icuuc jpeg kabc
+WANTLIB += kcal kcalcore kcmutils kdcraw kde3support kdeclarative
+WANTLIB += kdeui kfile khtml kio kjs kmime knewstuff3 knotifyconfig
+WANTLIB += kparts kpimutils kresources krosscore krossui ktexteditor
+WANTLIB += lcms2 marblewidget mysqlclient nepomuk nepomukutils
+WANTLIB += okularcore openjpeg phonon png poppler poppler-qt4
+WANTLIB += qca2 soprano sqlite3 sybdb threadweaver tiff z
 
 
 BUILD_DEPENDS =	devel/boost
 
-RUN_DEPENDS =	misc/shared-mime-info
+# kexi needs all databases to be installed to run
+RUN_DEPENDS =	databases/mysql \
+		databases/libpqxx \
+		databases/sqlite3 \
+		databases/postgresql,-main \
+		databases/postgresql,-server \
+		misc/shared-mime-info
 
 # Optional run-time dependency, does not affect build
 #RUN_DEPENDS +=	graphics/create-resources
 
 MODKDE4_USE =	pim
 
+# kexi needs header in postgresql,-server
+
 LIB_DEPENDS =	databases/freetds \
 		databases/mysql \
 		databases/libpqxx \
 		databases/sqlite3 \
+		databases/postgresql,-main \
+		databases/postgresql,-server \
 		devel/glib \
 		devel/gsl \
 		devel/libgsf \
@@ -110,6 +115,11 @@ LIB_DEPENDS =	databases/freetds \
 		x11/kde4/marble \
 		x11/kde4/okular
 
+# built-in FindCalligraSqlite.cmake is bad, use system file
+# from installed CMake 2.8.8
+post-extract:
+	cp ${FILESDIR}/FindSqlite.cmake ${WRKSRC}/cmake/modules
+
 # Stuff we don't have ATM. Do not bother about CreateResources, it's
 # pure optional run-time dependency.
 CONFIGURE_ARGS =	-DWITH_OpenCTL:BOOL=Off \
@@ -121,8 +131,8 @@ CONFIGURE_ARGS =	-DWITH_OpenCTL:BOOL=Off \
 CONFIGURE_ARGS +=	-DWITH_Pstoedit:BOOL=Off
 
 # Help bundled CMake modules
-# Select sqlite3 from ports
+# Select sqlite3 from base
 CONFIGURE_ARGS +=	-DWPD_INCLUDE_DIR=${LOCALBASE}/include/libwpd-0.8 \
-			-DSQLITE_INCLUDE_DIR=${LOCALBASE}/include
+			-DSQLITE_INCLUDE_DIR:STRING="/usr/include"
 
 .include <bsd.port.mk>
