@@ -5,7 +5,6 @@ COMMENT= 	creating and updating Bugzilla bugs
 MODULES=	cpan
 DISTNAME=	WWW-Bugzilla-1.5
 CATEGORIES=	www
-USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,6 +18,10 @@ RUN_DEPENDS=	devel/p5-Class-MethodMaker>=1.08 \
 		www/p5-WWW-Mechanize>=1.3
 
 BUILD_DEPENDS = ${RUN_DEPENDS}
+
+pre-configure:
+	mkdir -p ${WRKSRC}/lib
+	cp -rp ${WRKSRC}/WWW ${WRKSRC}/lib
 
 REGRESS_IS_INTERACTIVE=makes network connections to bugzilla servers
 
