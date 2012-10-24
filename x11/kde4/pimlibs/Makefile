@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, libraries for PIM
 DISTNAME =	kdepimlibs-${MODKDE_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	kabc                 5.0      # .4.0
 SHARED_LIBS +=	kabc_file_core       0.0      # .4.0
@@ -49,9 +49,7 @@ MODULES =	devel/gettext
 
 MODKDE4_USE =	libs
 
-BUILD_DEPENDS =	devel/boost \
-		textproc/docbook \
-		textproc/docbook-xsl
+BUILD_DEPENDS =	devel/boost
 
 LIB_DEPENDS +=	databases/openldap \
 		graphics/prison \

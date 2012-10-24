@@ -70,7 +70,9 @@ MODKDE4_USE +=		runtime
 # 2. Various distfiles contain long paths, necessitating an archiver
 # compliant with POSIX.1-2001 extended headers.
 MODKDE4_BUILD_DEPENDS =	archivers/gtar \
-			STEM->=2.8.8:devel/cmake
+			STEM->=2.8.8:devel/cmake \
+			textproc/docbook \
+			textproc/docbook-xsl
 MODKDE4_LIB_DEPENDS =	
 MODKDE4_RUN_DEPENDS =	
 MODKDE4_WANTLIB =

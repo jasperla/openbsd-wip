@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, libraries
 DISTNAME =	kdelibs-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kde3support          1.0      # .4.0
 SHARED_LIBS +=	kdecore              9.0      # .5.0
@@ -64,8 +65,6 @@ MODKDE4_USE =
 BUILD_DEPENDS =	misc/shared-desktop-ontologies>=0.10 \
 		misc/shared-mime-info \
 		net/avahi \
-		textproc/docbook \
-		textproc/docbook-xsl \
 		x11/grantlee
 
 RUN_DEPENDS =	misc/shared-mime-info \

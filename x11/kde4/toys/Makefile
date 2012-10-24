@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, toys
 DISTNAME =	kdetoys-${MODKDE_VERSION}
+REVISION =	0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += ICE SM X11 Xext
@@ -13,7 +14,5 @@ MODKDE4_USE =	workspace
 
 # last one should be:
 #WANTLIB += kparts kscreensaver>=8
-BUILD_DEPENDS =	textproc/docbook \
-		textproc/docbook-xsl
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, base runtime
 DISTNAME =	kde-runtime-${MODKDE_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	kwalletbackend 		0.0	# 4.7
 SHARED_LIBS +=	molletnetwork 		0.0	# 4.7
@@ -24,9 +24,7 @@ MODKDE4_USE =	libs
 
 BUILD_DEPENDS =	archivers/bzip2 \
 		archivers/xz \
-		devel/doxygen \
-		textproc/docbook \
-		textproc/docbook-xsl
+		devel/doxygen
 
 RUN_DEPENDS =	archivers/bzip2 \
 		archivers/xz \

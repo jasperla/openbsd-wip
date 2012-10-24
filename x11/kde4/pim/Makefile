@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, personal information management
 DISTNAME =	kdepim-${MODKDE_VERSION}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	akonadi_next 0.0
 SHARED_LIBS +=	akregatorinterfaces 0.0
@@ -70,11 +70,9 @@ BUILD_DEPENDS =	devel/boost \
 		security/cyrus-sasl2 \
 		security/gpgme \
 		security/libassuan \
-		textproc/docbook \
-		textproc/docbook-xsl \
 		textproc/libxslt \
 		x11/grantlee \
-		x11/kde4/akonadi \
+		x11/kde4/akonadi
 
 LIB_DEPENDS =	x11/grantlee
 
