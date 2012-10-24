@@ -1,0 +1,38 @@
+Tests fail to build: http://mail.kde.org/pipermail/kmymoney-devel/2012-October/008790.html
+
+
+-- checking for module 'gwenhywfar>=4.0.0'
+--   package 'gwenhywfar>=4.0.0' not found
+-- checking for module 'aqbanking>=5.0.0'
+--   package 'aqbanking>=5.0.0' not found
+-- Found Libical version 0.48
+-- Found LIBICAL: /usr/local/lib/libical.so.2.0;/usr/local/lib/libicalss.so.2.0  
+-- Looking for RPMTools... - rpmbuild NOT FOUND
+
+-------- KMyMoney 4.6.2 --------
+
+Configure results (user options):
+--------------------------------------------
+OFX plugin:                              no
+
+KBanking plugin:                         no
+
+iCalendar export plugin:                 yes
+--------------------------------------------
+
+
+Configure results (developer options):
+--------------------------------------------
+Qt-Designer library support:             no
+
+Generate developer documentation:        no
+
+Build unit tests:                        no
+
+Generate API documentation with Doxygen: yes
+
+Generate HTML documentation:             no
+
+Build type: RelWithDebInfo
+--------------------------------------------
+
