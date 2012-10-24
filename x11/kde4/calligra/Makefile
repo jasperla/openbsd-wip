@@ -4,6 +4,7 @@ COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	http://www.calligra-suite.org/
 VERSION =	2.5.3
 DISTNAME =	calligra-${VERSION}
+REVISION =	0
 
 EXTRACT_SUFX =	.tar.bz2
 
@@ -67,13 +68,19 @@ WANTLIB += lcms2 marblewidget mysqlclient nepomuk nepomukutils
 WANTLIB += okularcore openjpeg phonon png poppler poppler-qt4
 WANTLIB += qca2 soprano sqlite3 sybdb threadweaver tiff z
 
+# kexi needs headers in postgresql,{-main,-server}
+# kexi needs all db drivers to be present while building
 
-BUILD_DEPENDS =	devel/boost
+BUILD_DEPENDS =	devel/boost \
+		databases/mysql \
+		databases/postgresql,-main \
+		databases/postgresql,-server
 
-# kexi needs all databases to be installed to run
+# kexi needs all db driver installed to run,
+# assuming sqlite3 is in base...
+
 RUN_DEPENDS =	databases/mysql \
 		databases/libpqxx \
-		databases/sqlite3 \
 		databases/postgresql,-main \
 		databases/postgresql,-server \
 		misc/shared-mime-info
@@ -83,14 +90,9 @@ RUN_DEPENDS =	databases/mysql \
 
 MODKDE4_USE =	pim
 
-# kexi needs header in postgresql,-server
-
 LIB_DEPENDS =	databases/freetds \
 		databases/mysql \
 		databases/libpqxx \
-		databases/sqlite3 \
-		databases/postgresql,-main \
-		databases/postgresql,-server \
 		devel/glib \
 		devel/gsl \
 		devel/libgsf \
