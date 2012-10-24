@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/ProcessInfo.cpp.orig	Fri Sep 28 04:33:24 2012
-+++ src/ProcessInfo.cpp	Thu Oct  4 23:59:17 2012
++++ src/ProcessInfo.cpp	Wed Oct 24 14:05:30 2012
 @@ -57,12 +57,14 @@
  #include <kde_file.h>
  #endif
@@ -18,7 +18,7 @@ $OpenBSD$
  #endif
  
  using namespace Konsole;
-@@ -727,6 +729,141 @@ class FreeBSDProcessInfo : public UnixProcessInfo (pri
+@@ -727,6 +729,142 @@ class FreeBSDProcessInfo : public UnixProcessInfo (pri
  };
  #endif
  
@@ -88,7 +88,8 @@ $OpenBSD$
 +
 +            buf = nbuf;
 +            rc = ::sysctl(managementInfoBase, 4, buf, &len, NULL, 0);
-+            kWarning() << "sysctl() call failed with code" << errno;
++            if (rc == -1)
++                kWarning() << "sysctl() call failed with code" << errno;
 +        } while (rc == -1 && errno == ENOMEM);
 +
 +        if (nbuf == NULL || rc == -1) {
@@ -160,7 +161,7 @@ $OpenBSD$
  #if defined(Q_OS_MAC)
  class MacProcessInfo : public UnixProcessInfo
  {
-@@ -1051,6 +1188,8 @@ ProcessInfo* ProcessInfo::newInstance(int aPid, bool e
+@@ -1051,6 +1189,8 @@ ProcessInfo* ProcessInfo::newInstance(int aPid, bool e
      return new MacProcessInfo(aPid, enableEnvironmentRead);
  #elif defined(Q_OS_FREEBSD)
      return new FreeBSDProcessInfo(aPid, enableEnvironmentRead);
