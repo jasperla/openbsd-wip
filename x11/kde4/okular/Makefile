@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, document viewer
 DISTNAME =	okular-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	okularcore		0.0	# 1.7
 
@@ -13,9 +14,6 @@ WANTLIB += kjs kjsapi kparts kprintutils kpty nepomuk
 WANTLIB += nepomukutils phonon qimageblitz soprano solid threadweaver
 WANTLIB += chm djvulibre epub freetype poppler-qt4 qca2 spectre
 WANTLIB += jpeg tiff
-
-BUILD_DEPENDS =	textproc/docbook \
-		textproc/docbook-xsl
 
 LIB_DEPENDS = 	devel/chmlib \
 		graphics/djvulibre \
