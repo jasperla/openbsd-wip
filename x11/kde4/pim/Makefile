@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, personal information management
 DISTNAME =	kdepim-${MODKDE_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	akonadi_next 0.0
 SHARED_LIBS +=	akregatorinterfaces 0.0
@@ -62,7 +62,7 @@ WANTLIB += streamanalyzer streams syndication
 WANTLIB += assuan gpg-error gpgme++ gpgme++-pthread gpgme-pthread
 WANTLIB += grantlee_core grantlee_gui qgpgme sasl2 prison
 
-# textproc/dblatex adds all of texlive, make it optional?
+# textproc/dblatex could be detected but will not be used
 BUILD_DEPENDS =	devel/boost \
 		databases/soprano \
 		databases/strigi \
@@ -70,7 +70,6 @@ BUILD_DEPENDS =	devel/boost \
 		security/cyrus-sasl2 \
 		security/gpgme \
 		security/libassuan \
-		textproc/dblatex \
 		textproc/docbook \
 		textproc/docbook-xsl \
 		textproc/libxslt \
