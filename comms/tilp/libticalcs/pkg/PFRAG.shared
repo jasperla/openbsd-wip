@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+@lib lib/libticalcs2.so.${LIBticalcs2_VERSION}
