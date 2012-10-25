@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, Graph Theory IDE
 DISTNAME =	rocs-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	rocslib			0.0 # 4.7
 

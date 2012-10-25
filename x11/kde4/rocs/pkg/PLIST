@@ -132,7 +132,7 @@ share/doc/HTML/en/rocs/hi22-action-rocsaligntree.png
 share/doc/HTML/en/rocs/hi22-action-rocsalignvmiddle.png
 share/doc/HTML/en/rocs/index.cache.bz2
 share/doc/HTML/en/rocs/index.docbook
-share/doc/HTML/en/rocs/rocs-control-engine${FLAVORS}.png
+share/doc/HTML/en/rocs/rocs-control-engine-debug.png
 share/doc/HTML/en/rocs/rocs-control-engine-run.png
 share/doc/HTML/en/rocs/rocs-control-engine-step.png
 share/doc/HTML/en/rocs/rocs-control-engine-stop.png
