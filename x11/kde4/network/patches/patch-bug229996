@@ -1,0 +1,82 @@
+$OpenBSD$
+See https://bugs.kde.org/show_bug.cgi?id=229996#c10 for details.
+Index: kopete/kopete/contactlist/contactlisttreemodel.cpp
+===================================================================
+--- kopete/kopete/contactlist/contactlisttreemodel.cpp	(revision 1321925)
++++ kopete/kopete/contactlist/contactlisttreemodel.cpp	(working copy)
+@@ -230,7 +230,7 @@
+ 	foreach ( ContactListModelItem* clmi, items )
+ 	{
+ 		MetaContactModelItem* mcmi = dynamic_cast<MetaContactModelItem*>(clmi);
+-		if ( mcmi && ( mcmi->metaContact()->isOnline() || mcmi->metaContact()->isAlwaysVisible() ) )
++		if ( mcmi && mcmi->metaContact() && ( mcmi->metaContact()->isOnline() || mcmi->metaContact()->isAlwaysVisible() ) )
+ 			onlineCount++;
+ 	}
+ 
+@@ -329,7 +329,7 @@
+ 		}
+ 	}
+ 
+-	if ( mcmi )
++	if ( mcmi && mcmi->metaContact() )
+ 	{
+ 		if ( role == Kopete::Items::MetaContactGroupRole )
+ 			return qVariantFromValue( (QObject*)mcmi->parent()->group() );
+@@ -356,7 +356,7 @@
+ 		// metacontact if all the accounts its contacts belong are online
+ 		ContactListModelItem *clmi = itemFor( index );
+ 		MetaContactModelItem *mcmi = dynamic_cast<MetaContactModelItem*>(clmi);
+-		if (mcmi)
++		if (mcmi && mcmi->metaContact())
+ 		{
+ 			f |= Qt::ItemIsEditable;
+ 			bool online = true;
+@@ -694,10 +694,12 @@
+ 				if ( !clmi->isGroup() )
+ 				{
+ 					MetaContactModelItem* mcmi = dynamic_cast<MetaContactModelItem*>( clmi );
+-					QDomElement metaContactElement = doc.createElement( "MetaContact" );
+-					metaContactElement.setAttribute( "uuid", mcmi->metaContact()->metaContactId() );
+-					metaContactElement.setAttribute( "possition", index++ );
+-					groupElement.appendChild( metaContactElement );
++					if ( mcmi->metaContact() ) {
++						QDomElement metaContactElement = doc.createElement( "MetaContact" );
++						metaContactElement.setAttribute( "uuid", mcmi->metaContact()->metaContactId() );
++						metaContactElement.setAttribute( "possition", index++ );
++						groupElement.appendChild( metaContactElement );
++					}
+ 				}
+ 			}
+ 		}
+@@ -781,7 +783,8 @@
+ 					if ( !clmi->isGroup() )
+ 					{
+ 						MetaContactModelItem* mcmi = dynamic_cast<MetaContactModelItem*>(clmi);
+-						uuidToMetaContact.insert( mcmi->metaContact()->metaContactId(), mcmi );
++						if ( mcmi->metaContact() )
++							uuidToMetaContact.insert( mcmi->metaContact()->metaContactId(), mcmi );
+ 					}
+ 				}
+ 
+Index: kopete/kopete/contactlist/contactlisttreemodel_p.h
+===================================================================
+--- kopete/kopete/contactlist/contactlisttreemodel_p.h	(revision 1321925)
++++ kopete/kopete/contactlist/contactlisttreemodel_p.h	(working copy)
+@@ -18,6 +18,8 @@
+ #ifndef KOPETE_UI_CONTACTLISTTREEMODEL_P_H
+ #define KOPETE_UI_CONTACTLISTTREEMODEL_P_H
+ 
++#include <QPointer>
++
+ namespace Kopete {
+ 
+ class Group;
+@@ -87,7 +89,7 @@
+ 	}
+ 
+ private:
+-	Kopete::MetaContact* mMetaContact;
++	QPointer <Kopete::MetaContact> mMetaContact;
+ };
+ 
+ class GroupModelItem : public ContactListModelItem
