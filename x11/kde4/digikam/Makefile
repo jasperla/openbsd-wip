@@ -39,7 +39,6 @@ MODULES =		devel/gettext
 WANTLIB-common =  ${MODQT_WANTLIB} ${MODKDE_WANTLIB}
 WANTLIB-common += c m pthread stdc++
 WANTLIB-common += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg
-WANTLIB-common +=
 WANTLIB-common += kdecore kdeui
 
 WANTLIB-opencv =  opencv_calib3d opencv_contrib opencv_core
