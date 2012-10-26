@@ -4,7 +4,7 @@ COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	http://www.calligra-suite.org/
 VERSION =	2.5.3
 DISTNAME =	calligra-${VERSION}
-REVISION =	2
+REVISION =	3
 
 EXTRACT_SUFX =	.tar.bz2
 
@@ -123,6 +123,9 @@ CONFIGURE_ARGS =	-DWITH_OpenCTL:BOOL=Off \
 			-DWITH_WPD:BOOL=Off \
 			-DWITH_WPG:BOOL=Off \
 			-DWITH_XBase:BOOL=Off
+
+# Don't pick up tons of bloatware for rarely needed stuff.
+CONFIGURE_ARGS +=	-DWITH_JNI:BOOL=Off
 
 # Karbon wants SVG support through a shareware plugin for pstoedit
 CONFIGURE_ARGS +=	-DWITH_Pstoedit:BOOL=Off
