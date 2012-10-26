@@ -11,12 +11,12 @@ HOMEPAGE =		http://www.digikam.org/
 VERSION =		2.9.0
 DISTNAME =		digikam-${VERSION}
 
-PKGNAME-face =		libkface-${VERSION}
+PKGNAME-face =		libkface-2.0.0
 PKGNAME-geomap =	libkgeomap-${VERSION}
 PKGNAME-kipi =		kipi-plugins-${VERSION}
-PKGNAME-main =		${DISTNAME}
-PKGNAME-mediawiki =	libmediawiki-${VERSION}
-PKGNAME-vkontakte =	libkvkontakte-${VERSION}
+PKGNAME-main =		${PKGNAME}
+PKGNAME-mediawiki =	libmediawiki-1.0.0
+PKGNAME-vkontakte =	libkvkontakte-1.0.0
 
 EXTRACT_SUFX =		.tar.bz2
 
@@ -107,7 +107,7 @@ RUN_DEPENDS-vkontakte =	x11/kde4/runtime
 LIBS_DEPENDS-common =	${MODQT_LIB_DEPENDS}
 
 LIB_DEPENDS-face =	${LIB_DEPENDS-common} \
-			graphics/opencv \
+			graphics/opencv>=2.4.1 \
 			x11/kde4/libs
 
 LIB_DEPENDS-geomap =	${LIB_DEPENDS-common} \
@@ -124,7 +124,7 @@ LIB_DEPENDS-kipi =	${LIB_DEPENDS-common} \
 			devel/qjson \
 			graphics/gdk-pixbuf2 \
 			graphics/lensfun \
-			graphics/opencv \
+			graphics/opencv>=2.4.1 \
 			graphics/png \
 			graphics/tiff \
 			multimedia/phonon \
