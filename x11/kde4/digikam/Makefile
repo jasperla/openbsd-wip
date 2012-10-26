@@ -78,7 +78,7 @@ WANTLIB-main += kfile khtml kidletime kio kipi kjs knotifyconfig
 WANTLIB-main += kparts kprintutils kresources kutils nepomuk
 WANTLIB-main += nepomukutils phonon solid soprano sopranoclient
 WANTLIB-main += glib-2.0 gphoto2 gphoto2_port jasper jpeg lcms lqr-1
-WANTLIB-main += png tiff usb
+WANTLIB-main += pgf png tiff usb
 WANTLIB-main += kface kgeomap
 
 WANTLIB-mediawiki =  ${WANTLIB-common}
@@ -154,6 +154,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS-common} \
 			graphics/lcms \
 			graphics/libgphoto2 \
 			graphics/liblqr \
+			graphics/libpgf \
 			graphics/png \
 			graphics/tiff \
 			x11/kde4/libkdcraw \
@@ -170,7 +171,8 @@ LIB_DEPENDS-vkontakte = ${LIB_DEPENDS-common} \
 			devel/qjson \
 			x11/kde4/libs
 
-CONFIGURE_ARGS =	-DENABLE_INTERNALMYSQL:Bool=No \
+CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_CLAPACK:Bool=Yes \
+			-DENABLE_INTERNALMYSQL:Bool=No \
 			-DWITH_OpenMP:Bool=No
 
 FLAVOR ?=
