@@ -8,15 +8,15 @@ COMMENT-mediawiki =	KIPI interface for MediaWiki
 COMMENT-vkontakte =	KIPI interface for VK.com
 
 HOMEPAGE =		http://www.digikam.org/
-VERSION =		2.7.0
+VERSION =		2.9.0
 DISTNAME =		digikam-${VERSION}
 
-PKGNAME-face =		libkface-2.0.0
+PKGNAME-face =		libkface-${VERSION}
 PKGNAME-geomap =	libkgeomap-${VERSION}
 PKGNAME-kipi =		kipi-plugins-${VERSION}
-PKGNAME-main =		${PKGNAME}
-PKGNAME-mediawiki =	libmediawiki-1.0.0
-PKGNAME-vkontakte =	libkvkontakte-1.0.0
+PKGNAME-main =		${DISTNAME}
+PKGNAME-mediawiki =	libmediawiki-${VERSION}
+PKGNAME-vkontakte =	libkvkontakte-${VERSION}
 
 EXTRACT_SUFX =		.tar.bz2
 
@@ -44,46 +44,42 @@ WANTLIB-common += kdecore kdeui
 WANTLIB-opencv =  opencv_calib3d opencv_contrib opencv_core
 WANTLIB-opencv += opencv_features2d opencv_flann opencv_gpu
 WANTLIB-opencv += opencv_highgui opencv_imgproc opencv_legacy opencv_ml
-WANTLIB-opencv += opencv_objdetect opencv_video
+WANTLIB-opencv += opencv_nonfree  opencv_objdetect opencv_photo
+WANTLIB-opencv += opencv_stitching  opencv_ts opencv_video opencv_videostab
 
-WANTLIB-face =  ${WANTLIB-common} ${WANTLIB-opencv}
+WANTLIB-face =	${WANTLIB-common} ${WANTLIB-opencv}
 
 WANTLIB-geomap =  ${WANTLIB-common}
 WANTLIB-geomap += lib/qt4/QtNetwork lib/qt4/QtXml
-WANTLIB-geomap += khtml kio kjs kparts nepomuk nepomukutils phonon soprano
-WANTLIB-geomap += marblewidget
+WANTLIB-geomap += khtml kio kjs kparts marblewidget nepomuk nepomukutils
+WANTLIB-geomap += phonon soprano
 
 WANTLIB-kipi =  ${WANTLIB-common} ${WANTLIB-opencv} ${MODGETTEXT_WANTLIB}
-WANTLIB-kipi += GL GLU ICE SM X11 Xext Xrandr expat z
 WANTLIB-kipi += lib/qt4/QtNetwork lib/qt4/QtOpenGL lib/qt4/QtXmlPatterns
 WANTLIB-kipi += lib/qt4/QtTest lib/qt4/QtXml
-WANTLIB-kipi += kcalcore kdcraw kexiv2 khtml kio kjs kipi kparts
-WANTLIB-kipi += ksane nepomuk nepomukutils phonon qca2 solid soprano threadweaver
-WANTLIB-kipi += gdk_pixbuf-2.0 gmodule-2.0 gobject-2.0
-WANTLIB-kipi += gthread-2.0
-WANTLIB-kipi += exslt glib-2.0 gpod iconv intl jpeg png qjson tiff xml2 xslt
-WANTLIB-kipi += kfile kgeomap kvkontakte mediawiki
+WANTLIB-kipi += GL GLU ICE SM X11 Xext Xrandr expat exslt gdk_pixbuf-2.0
+WANTLIB-kipi += glib-2.0 gmodule-2.0 gobject-2.0 gpod gthread-2.0 jpeg
+WANTLIB-kipi += kcalcore kdcraw kexiv2 kfile kgeomap khtml kio kipi
+WANTLIB-kipi += kjs kparts ksane kvkontakte mediawiki nepomuk nepomukutils
+WANTLIB-kipi += phonon png qca2 qjson solid soprano threadweaver tiff
+WANTLIB-kipi += xml2 xslt z
 
 WANTLIB-main =  ${WANTLIB-common}
-WANTLIB-main += ICE SM X11 Xext z
 WANTLIB-main += lib/qt4/Qt3Support lib/qt4/QtNetwork lib/qt4/QtSql
 WANTLIB-main += lib/qt4/QtXml
-WANTLIB-main += kabc kcmutils kdcraw kemoticons kexiv2
-WANTLIB-main += kfile khtml kidletime kio kipi kjs knotifyconfig
-WANTLIB-main += kparts kprintutils kresources kutils nepomuk
-WANTLIB-main += nepomukutils phonon solid soprano sopranoclient
-WANTLIB-main += glib-2.0 gphoto2 gphoto2_port jasper jpeg lcms lqr-1
-WANTLIB-main += pgf png tiff usb
-WANTLIB-main += kface kgeomap
+WANTLIB-main += ICE SM X11 Xext glib-2.0 gphoto2 gphoto2_port jasper
+WANTLIB-main += jpeg kabc kcmutils kdcraw kemoticons kexiv2 kface kfile
+WANTLIB-main += kgeomap khtml kidletime kio kipi kjs knotifyconfig
+WANTLIB-main += kparts kprintutils kresources kutils lcms lqr-1 nepomuk
+WANTLIB-main += nepomukutils pgf phonon png solid soprano sopranoclient
+WANTLIB-main += tiff usb z
 
 WANTLIB-mediawiki =  ${WANTLIB-common}
-WANTLIB-mediawiki += lib/qt4/QtNetwork lib/qt4/QtXml
-WANTLIB-mediawiki += kio
+WANTLIB-mediawiki += lib/qt4/QtNetwork lib/qt4/QtXml kio
 
 WANTLIB-vkontakte =  ${WANTLIB-common}
 WANTLIB-vkontakte += lib/qt4/QtNetwork lib/qt4/QtWebKit lib/qt4/QtXml
-WANTLIB-vkontakte += kdewebkit kio kparts nepomuk nepomukutils soprano
-WANTLIB-vkontakte += qjson
+WANTLIB-vkontakte += kdewebkit kio kparts nepomuk nepomukutils qjson soprano
 
 # Define dependencies manually per subpackage
 # TODO: fix kde4.port.mk to allow such grained tuning

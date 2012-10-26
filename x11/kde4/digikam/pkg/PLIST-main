@@ -578,7 +578,6 @@ share/apps/showfoto/showfotoui.rc
 share/apps/solid/
 share/apps/solid/actions/
 share/apps/solid/actions/digikam-opencamera.desktop
-share/config.kcfg/
 share/config.kcfg/PLEConfigSkeleton.kcfgc
 share/doc/HTML/en/digikam/
 share/doc/HTML/en/digikam/2Greens.png
