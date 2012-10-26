@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+@lib lib/libpgf.so.${LIBpgf_VERSION}

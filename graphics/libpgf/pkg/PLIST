@@ -1,0 +1,205 @@
+@comment $OpenBSD$
+%%SHARED%%
+include/libpgf/
+include/libpgf/PGFimage.h
+include/libpgf/PGFplatform.h
+include/libpgf/PGFstream.h
+include/libpgf/PGFtypes.h
+lib/libpgf.a
+@comment lib/libpgf.la
+lib/pkgconfig/
+lib/pkgconfig/libpgf.pc
+@comment @man man/man3/BitStream.h.3
+@man man/man3/CDecoder.3
+@man man/man3/CDecoder_CMacroBlock.3
+@man man/man3/CEncoder.3
+@man man/man3/CEncoder_CMacroBlock.3
+@man man/man3/CPGFFileStream.3
+@man man/man3/CPGFImage.3
+@man man/man3/CPGFMemoryStream.3
+@man man/man3/CPGFStream.3
+@man man/man3/CRoiIndices.3
+@man man/man3/CSubband.3
+@man man/man3/CWaveletTransform.3
+@comment @man man/man3/Decoder.cpp.3
+@comment @man man/man3/Decoder.h.3
+@comment @man man/man3/Encoder.cpp.3
+@comment @man man/man3/Encoder.h.3
+@man man/man3/IOException.3
+@man man/man3/PGFHeader.3
+@man man/man3/PGFMagicVersion.3
+@man man/man3/PGFPostHeader.3
+@man man/man3/PGFPreHeader.3
+@man man/man3/PGFRect.3
+@comment @man man/man3/PGFimage.cpp.3
+@comment @man man/man3/PGFimage.h.3
+@comment @man man/man3/PGFplatform.h.3
+@comment @man man/man3/PGFstream.cpp.3
+@comment @man man/man3/PGFstream.h.3
+@comment @man man/man3/PGFtypes.h.3
+@man man/man3/ROIBlockHeader.3
+@man man/man3/ROIBlockHeader_RBH.3
+@comment @man man/man3/Subband.cpp.3
+@comment @man man/man3/Subband.h.3
+@comment @man man/man3/WaveletTransform.cpp.3
+@comment @man man/man3/WaveletTransform.h.3
+@comment @man man/man3/config.h.3
+share/doc/${PKGNAME}/
+share/doc/${PKGNAME}/html/
+share/doc/${PKGNAME}/html/BitStream_8h.html
+share/doc/${PKGNAME}/html/BitStream_8h_source.html
+share/doc/${PKGNAME}/html/Decoder_8cpp.html
+share/doc/${PKGNAME}/html/Decoder_8cpp_source.html
+share/doc/${PKGNAME}/html/Decoder_8h.html
+share/doc/${PKGNAME}/html/Decoder_8h_source.html
+share/doc/${PKGNAME}/html/Encoder_8cpp.html
+share/doc/${PKGNAME}/html/Encoder_8cpp_source.html
+share/doc/${PKGNAME}/html/Encoder_8h.html
+share/doc/${PKGNAME}/html/Encoder_8h_source.html
+share/doc/${PKGNAME}/html/PGFimage_8cpp.html
+share/doc/${PKGNAME}/html/PGFimage_8cpp_source.html
+share/doc/${PKGNAME}/html/PGFimage_8h.html
+share/doc/${PKGNAME}/html/PGFimage_8h_source.html
+share/doc/${PKGNAME}/html/PGFplatform_8h.html
+share/doc/${PKGNAME}/html/PGFplatform_8h_source.html
+share/doc/${PKGNAME}/html/PGFstream_8cpp.html
+share/doc/${PKGNAME}/html/PGFstream_8cpp_source.html
+share/doc/${PKGNAME}/html/PGFstream_8h.html
+share/doc/${PKGNAME}/html/PGFstream_8h_source.html
+share/doc/${PKGNAME}/html/PGFtypes_8h.html
+share/doc/${PKGNAME}/html/PGFtypes_8h_source.html
+share/doc/${PKGNAME}/html/Subband_8cpp.html
+share/doc/${PKGNAME}/html/Subband_8cpp_source.html
+share/doc/${PKGNAME}/html/Subband_8h.html
+share/doc/${PKGNAME}/html/Subband_8h_source.html
+share/doc/${PKGNAME}/html/WaveletTransform_8cpp.html
+share/doc/${PKGNAME}/html/WaveletTransform_8cpp_source.html
+share/doc/${PKGNAME}/html/WaveletTransform_8h.html
+share/doc/${PKGNAME}/html/WaveletTransform_8h_source.html
+share/doc/${PKGNAME}/html/annotated.html
+share/doc/${PKGNAME}/html/bc_s.png
+share/doc/${PKGNAME}/html/classCDecoder-members.html
+share/doc/${PKGNAME}/html/classCDecoder.html
+share/doc/${PKGNAME}/html/classCDecoder_1_1CMacroBlock-members.html
+share/doc/${PKGNAME}/html/classCDecoder_1_1CMacroBlock.html
+share/doc/${PKGNAME}/html/classCEncoder-members.html
+share/doc/${PKGNAME}/html/classCEncoder.html
+share/doc/${PKGNAME}/html/classCEncoder_1_1CMacroBlock-members.html
+share/doc/${PKGNAME}/html/classCEncoder_1_1CMacroBlock.html
+share/doc/${PKGNAME}/html/classCPGFFileStream-members.html
+share/doc/${PKGNAME}/html/classCPGFFileStream.html
+share/doc/${PKGNAME}/html/classCPGFFileStream.png
+share/doc/${PKGNAME}/html/classCPGFImage-members.html
+share/doc/${PKGNAME}/html/classCPGFImage.html
+share/doc/${PKGNAME}/html/classCPGFMemoryStream-members.html
+share/doc/${PKGNAME}/html/classCPGFMemoryStream.html
+share/doc/${PKGNAME}/html/classCPGFMemoryStream.png
+share/doc/${PKGNAME}/html/classCPGFStream-members.html
+share/doc/${PKGNAME}/html/classCPGFStream.html
+share/doc/${PKGNAME}/html/classCPGFStream.png
+share/doc/${PKGNAME}/html/classCRoiIndices-members.html
+share/doc/${PKGNAME}/html/classCRoiIndices.html
+share/doc/${PKGNAME}/html/classCSubband-members.html
+share/doc/${PKGNAME}/html/classCSubband.html
+share/doc/${PKGNAME}/html/classCWaveletTransform-members.html
+share/doc/${PKGNAME}/html/classCWaveletTransform.html
+share/doc/${PKGNAME}/html/classes.html
+share/doc/${PKGNAME}/html/closed.png
+share/doc/${PKGNAME}/html/config_8h.html
+share/doc/${PKGNAME}/html/config_8h_source.html
+share/doc/${PKGNAME}/html/doxygen.png
+share/doc/${PKGNAME}/html/files.html
+share/doc/${PKGNAME}/html/ftv2blank.png
+share/doc/${PKGNAME}/html/ftv2doc.png
+share/doc/${PKGNAME}/html/ftv2folderclosed.png
+share/doc/${PKGNAME}/html/ftv2folderopen.png
+share/doc/${PKGNAME}/html/ftv2lastnode.png
+share/doc/${PKGNAME}/html/ftv2link.png
+share/doc/${PKGNAME}/html/ftv2mlastnode.png
+share/doc/${PKGNAME}/html/ftv2mnode.png
+share/doc/${PKGNAME}/html/ftv2node.png
+share/doc/${PKGNAME}/html/ftv2plastnode.png
+share/doc/${PKGNAME}/html/ftv2pnode.png
+share/doc/${PKGNAME}/html/ftv2vertline.png
+share/doc/${PKGNAME}/html/functions.html
+share/doc/${PKGNAME}/html/functions_0x62.html
+share/doc/${PKGNAME}/html/functions_0x63.html
+share/doc/${PKGNAME}/html/functions_0x64.html
+share/doc/${PKGNAME}/html/functions_0x65.html
+share/doc/${PKGNAME}/html/functions_0x66.html
+share/doc/${PKGNAME}/html/functions_0x67.html
+share/doc/${PKGNAME}/html/functions_0x68.html
+share/doc/${PKGNAME}/html/functions_0x69.html
+share/doc/${PKGNAME}/html/functions_0x6c.html
+share/doc/${PKGNAME}/html/functions_0x6d.html
+share/doc/${PKGNAME}/html/functions_0x6e.html
+share/doc/${PKGNAME}/html/functions_0x6f.html
+share/doc/${PKGNAME}/html/functions_0x70.html
+share/doc/${PKGNAME}/html/functions_0x71.html
+share/doc/${PKGNAME}/html/functions_0x72.html
+share/doc/${PKGNAME}/html/functions_0x73.html
+share/doc/${PKGNAME}/html/functions_0x74.html
+share/doc/${PKGNAME}/html/functions_0x75.html
+share/doc/${PKGNAME}/html/functions_0x76.html
+share/doc/${PKGNAME}/html/functions_0x77.html
+share/doc/${PKGNAME}/html/functions_0x7e.html
+share/doc/${PKGNAME}/html/functions_func.html
+share/doc/${PKGNAME}/html/functions_func_0x62.html
+share/doc/${PKGNAME}/html/functions_func_0x63.html
+share/doc/${PKGNAME}/html/functions_func_0x64.html
+share/doc/${PKGNAME}/html/functions_func_0x65.html
+share/doc/${PKGNAME}/html/functions_func_0x66.html
+share/doc/${PKGNAME}/html/functions_func_0x67.html
+share/doc/${PKGNAME}/html/functions_func_0x68.html
+share/doc/${PKGNAME}/html/functions_func_0x69.html
+share/doc/${PKGNAME}/html/functions_func_0x6c.html
+share/doc/${PKGNAME}/html/functions_func_0x6d.html
+share/doc/${PKGNAME}/html/functions_func_0x6e.html
+share/doc/${PKGNAME}/html/functions_func_0x6f.html
+share/doc/${PKGNAME}/html/functions_func_0x70.html
+share/doc/${PKGNAME}/html/functions_func_0x71.html
+share/doc/${PKGNAME}/html/functions_func_0x72.html
+share/doc/${PKGNAME}/html/functions_func_0x73.html
+share/doc/${PKGNAME}/html/functions_func_0x74.html
+share/doc/${PKGNAME}/html/functions_func_0x75.html
+share/doc/${PKGNAME}/html/functions_func_0x76.html
+share/doc/${PKGNAME}/html/functions_func_0x77.html
+share/doc/${PKGNAME}/html/functions_func_0x7e.html
+share/doc/${PKGNAME}/html/functions_rela.html
+share/doc/${PKGNAME}/html/functions_vars.html
+share/doc/${PKGNAME}/html/globals.html
+share/doc/${PKGNAME}/html/globals_defs.html
+share/doc/${PKGNAME}/html/globals_enum.html
+share/doc/${PKGNAME}/html/globals_eval.html
+share/doc/${PKGNAME}/html/globals_func.html
+share/doc/${PKGNAME}/html/globals_type.html
+share/doc/${PKGNAME}/html/globals_vars.html
+share/doc/${PKGNAME}/html/hierarchy.html
+share/doc/${PKGNAME}/html/index.html
+share/doc/${PKGNAME}/html/main.html
+share/doc/${PKGNAME}/html/nav_f.png
+share/doc/${PKGNAME}/html/nav_h.png
+share/doc/${PKGNAME}/html/open.png
+share/doc/${PKGNAME}/html/structIOException-members.html
+share/doc/${PKGNAME}/html/structIOException.html
+share/doc/${PKGNAME}/html/structPGFHeader-members.html
+share/doc/${PKGNAME}/html/structPGFHeader.html
+share/doc/${PKGNAME}/html/structPGFMagicVersion-members.html
+share/doc/${PKGNAME}/html/structPGFMagicVersion.html
+share/doc/${PKGNAME}/html/structPGFMagicVersion.png
+share/doc/${PKGNAME}/html/structPGFPostHeader-members.html
+share/doc/${PKGNAME}/html/structPGFPostHeader.html
+share/doc/${PKGNAME}/html/structPGFPreHeader-members.html
+share/doc/${PKGNAME}/html/structPGFPreHeader.html
+share/doc/${PKGNAME}/html/structPGFPreHeader.png
+share/doc/${PKGNAME}/html/structPGFRect-members.html
+share/doc/${PKGNAME}/html/structPGFRect.html
+share/doc/${PKGNAME}/html/structROIBlockHeader_1_1RBH-members.html
+share/doc/${PKGNAME}/html/structROIBlockHeader_1_1RBH.html
+share/doc/${PKGNAME}/html/tab_a.png
+share/doc/${PKGNAME}/html/tab_b.png
+share/doc/${PKGNAME}/html/tab_h.png
+share/doc/${PKGNAME}/html/tab_s.png
+share/doc/${PKGNAME}/html/tree.html
+share/doc/${PKGNAME}/html/unionROIBlockHeader-members.html
+share/doc/${PKGNAME}/html/unionROIBlockHeader.html
