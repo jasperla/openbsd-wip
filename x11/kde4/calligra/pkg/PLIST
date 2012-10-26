@@ -715,11 +715,8 @@ lib/kde4/opencalcexport.so
 lib/kde4/opencalcimport.so
 lib/kde4/pathshapes.so
 lib/kde4/pictureshape.so
-lib/kde4/planconvert/
-lib/kde4/planconvert/PlanConvert.jar
 lib/kde4/planicalexport.so
 lib/kde4/plankplatoimport.so
-lib/kde4/planmpxjimport.so
 lib/kde4/planpart.so
 lib/kde4/plantjscheduler.so
 lib/kde4/planworkpart.so
@@ -6957,8 +6954,6 @@ share/kde4/services/pathshapes.desktop
 share/kde4/services/pictureshape.desktop
 share/kde4/services/plan_icalendar_export.desktop
 share/kde4/services/plan_kplato_import.desktop
-share/kde4/services/plan_msproject_import.desktop
-share/kde4/services/plan_planner_import.desktop
 share/kde4/services/planpart.desktop
 share/kde4/services/planrcpsscheduler.desktop
 share/kde4/services/plantjscheduler.desktop
