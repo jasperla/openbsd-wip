@@ -1,7 +1,4 @@
 $OpenBSD$
-
-patch away boost related -fno_exceptions + handle sqlite3 in base
-
 --- CMakeLists.txt.orig	Sat Oct  6 02:46:53 2012
 +++ CMakeLists.txt	Wed Oct 24 14:37:15 2012
 @@ -145,6 +145,8 @@ macro_ensure_out_of_source_build("Compiling Calligra i
@@ -13,12 +10,3 @@ patch away boost related -fno_exceptions + handle sqlite3 in base
  find_package(Perl REQUIRED)
  find_package(ZLIB REQUIRED)
  find_package(PNG REQUIRED)
-@@ -523,7 +525,7 @@ if(BUILD_kexi AND SHOULD_BUILD_KEXI)
-     set(SQLITE_MIN_VERSION 3.6.16)
-     set(SQLITE_RECOMMENDED_VERSION 3.7.12)
-     set(SQLITE_LOAD_EXTENSION_REQUIRED ON)
--    find_package(CalligraSqlite 3.6.16)
-+    find_package(Sqlite 3.7.13)
-     macro_log_feature(SQLITE_FOUND "SQLite" "Embedded SQL database engine with enabled extensions loading"
-                       "http://www.sqlite.org" FALSE "${SQLITE_MIN_VERSION}"
-                       "Required by Kexi for its default database driver.")
