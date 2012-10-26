@@ -1,5 +1,4 @@
 @comment $OpenBSD$
-@bin bin/libkgeomap_demo
 include/libkgeomap/
 include/libkgeomap/abstractmarkertiler.h
 include/libkgeomap/dragdrophandler.h
@@ -60,6 +59,7 @@ share/icons/hicolor/16x16/actions/gpsimagetag.png
 share/icons/hicolor/32x32/actions/gpsimagetag.png
 share/locale/bg/LC_MESSAGES/libkgeomap.mo
 share/locale/bs/LC_MESSAGES/libkgeomap.mo
+share/locale/ca/LC_MESSAGES/libkgeomap.mo
 share/locale/cs/LC_MESSAGES/libkgeomap.mo
 share/locale/da/LC_MESSAGES/libkgeomap.mo
 share/locale/de/LC_MESSAGES/libkgeomap.mo
@@ -67,14 +67,18 @@ share/locale/el/LC_MESSAGES/libkgeomap.mo
 share/locale/en_GB/LC_MESSAGES/libkgeomap.mo
 share/locale/es/LC_MESSAGES/libkgeomap.mo
 share/locale/et/LC_MESSAGES/libkgeomap.mo
+share/locale/fi/LC_MESSAGES/libkgeomap.mo
 share/locale/fr/LC_MESSAGES/libkgeomap.mo
 share/locale/ga/LC_MESSAGES/libkgeomap.mo
+share/locale/hu/LC_MESSAGES/libkgeomap.mo
 share/locale/it/LC_MESSAGES/libkgeomap.mo
 share/locale/ja/LC_MESSAGES/libkgeomap.mo
+share/locale/km/LC_MESSAGES/libkgeomap.mo
 share/locale/lt/LC_MESSAGES/libkgeomap.mo
 share/locale/nb/LC_MESSAGES/libkgeomap.mo
 share/locale/nds/LC_MESSAGES/libkgeomap.mo
 share/locale/nl/LC_MESSAGES/libkgeomap.mo
+share/locale/nn/LC_MESSAGES/libkgeomap.mo
 share/locale/pl/LC_MESSAGES/libkgeomap.mo
 share/locale/pt/LC_MESSAGES/libkgeomap.mo
 share/locale/pt_BR/LC_MESSAGES/libkgeomap.mo

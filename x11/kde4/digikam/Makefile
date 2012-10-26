@@ -37,43 +37,39 @@ MODULES =		devel/gettext
 # Do not use WANTLIB due to gettext module automatically adding to it
 
 WANTLIB-common =  ${MODQT_WANTLIB} ${MODKDE_WANTLIB}
-WANTLIB-common += c m stdc++
+WANTLIB-common += c m pthread stdc++
 WANTLIB-common += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg
 WANTLIB-common +=
 WANTLIB-common += kdecore kdeui
 
-WANTLIB-face =  ${WANTLIB-common}
-WANTLIB-face += opencv_calib3d opencv_contrib opencv_core
-WANTLIB-face += opencv_features2d opencv_flann opencv_gpu
-WANTLIB-face += opencv_highgui opencv_imgproc opencv_legacy opencv_ml
-WANTLIB-face += opencv_objdetect opencv_video
+WANTLIB-opencv =  opencv_calib3d opencv_contrib opencv_core
+WANTLIB-opencv += opencv_features2d opencv_flann opencv_gpu
+WANTLIB-opencv += opencv_highgui opencv_imgproc opencv_legacy opencv_ml
+WANTLIB-opencv += opencv_objdetect opencv_video
+
+WANTLIB-face =  ${WANTLIB-common} ${WANTLIB-opencv}
 
 WANTLIB-geomap =  ${WANTLIB-common}
-WANTLIB-geomap += pthread
 WANTLIB-geomap += lib/qt4/QtNetwork lib/qt4/QtXml
-WANTLIB-geomap += kexiv2 khtml kio kjs kparts nepomuk nepomukutils phonon soprano
+WANTLIB-geomap += khtml kio kjs kparts nepomuk nepomukutils phonon soprano
 WANTLIB-geomap += marblewidget
 
-WANTLIB-kipi =  ${WANTLIB-common} ${MODGETTEXT_WANTLIB}
-WANTLIB-kipi += GL GLU ICE SM X11 Xext Xrandr expat pthread z
-WANTLIB-kipi += lib/qt4/QtNetwork lib/qt4/QtOpenGL lib/qt4/QtXmlPatterns qca2
-WANTLIB-kipi += lib/qt4/QtXml
+WANTLIB-kipi =  ${WANTLIB-common} ${WANTLIB-opencv} ${MODGETTEXT_WANTLIB}
+WANTLIB-kipi += GL GLU ICE SM X11 Xext Xrandr expat z
+WANTLIB-kipi += lib/qt4/QtNetwork lib/qt4/QtOpenGL lib/qt4/QtXmlPatterns
+WANTLIB-kipi += lib/qt4/QtTest lib/qt4/QtXml
 WANTLIB-kipi += kcalcore kdcraw kexiv2 khtml kio kjs kipi kparts
-WANTLIB-kipi += ksane nepomuk nepomukutils phonon soprano threadweaver
+WANTLIB-kipi += ksane nepomuk nepomukutils phonon qca2 solid soprano threadweaver
 WANTLIB-kipi += gdk_pixbuf-2.0 gmodule-2.0 gobject-2.0
 WANTLIB-kipi += gthread-2.0
-WANTLIB-kipi += opencv_calib3d opencv_contrib opencv_core
-WANTLIB-kipi += opencv_features2d opencv_flann opencv_gpu
-WANTLIB-kipi += opencv_highgui opencv_imgproc opencv_legacy opencv_ml
-WANTLIB-kipi += opencv_objdetect opencv_video
 WANTLIB-kipi += exslt glib-2.0 gpod iconv intl jpeg png qjson tiff xml2 xslt
-WANTLIB-kipi += kfile kgeomap kvkontakte
+WANTLIB-kipi += kfile kgeomap kvkontakte mediawiki
 
 WANTLIB-main =  ${WANTLIB-common}
-WANTLIB-main += ICE SM X11 Xext pthread z
+WANTLIB-main += ICE SM X11 Xext z
 WANTLIB-main += lib/qt4/Qt3Support lib/qt4/QtNetwork lib/qt4/QtSql
 WANTLIB-main += lib/qt4/QtXml
-WANTLIB-main += kabc kcmutils kdcraw kde3support kemoticons kexiv2
+WANTLIB-main += kabc kcmutils kdcraw kemoticons kexiv2
 WANTLIB-main += kfile khtml kidletime kio kipi kjs knotifyconfig
 WANTLIB-main += kparts kprintutils kresources kutils nepomuk
 WANTLIB-main += nepomukutils phonon solid soprano sopranoclient
@@ -120,7 +116,6 @@ LIB_DEPENDS-face =	${LIB_DEPENDS-common} \
 			x11/kde4/libs
 
 LIB_DEPENDS-geomap =	${LIB_DEPENDS-common} \
-			x11/kde4/libkexiv2 \
 			x11/kde4/libs \
 			x11/kde4/marble
 

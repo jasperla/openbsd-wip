@@ -2,7 +2,6 @@
 @bin bin/dngconverter
 @bin bin/dnginfo
 @bin bin/expoblending
-@bin bin/multithread
 @bin bin/panoramagui
 @bin bin/photolayoutseditor
 @bin bin/scangui
@@ -18,8 +17,11 @@ lib/kde4/kipiplugin_flashexport.so
 lib/kde4/kipiplugin_flickrexport.so
 lib/kde4/kipiplugin_galleryexport.so
 lib/kde4/kipiplugin_gpssync.so
+lib/kde4/kipiplugin_helloworld.so
 lib/kde4/kipiplugin_htmlexport.so
+lib/kde4/kipiplugin_imageshackexport.so
 lib/kde4/kipiplugin_imageviewer.so
+lib/kde4/kipiplugin_imgurexport.so
 lib/kde4/kipiplugin_ipodexport.so
 lib/kde4/kipiplugin_jpeglossless.so
 lib/kde4/kipiplugin_kioexportimport.so
@@ -39,21 +41,15 @@ lib/kde4/kipiplugin_shwup.so
 lib/kde4/kipiplugin_smug.so
 lib/kde4/kipiplugin_timeadjust.so
 lib/kde4/kipiplugin_vkontakte.so
+lib/kde4/kipiplugin_wikimedia.so
 lib/kde4/kipiplugin_yandexfotki.so
 @lib lib/libkipiplugins.so.${LIBkipiplugins_VERSION}
 share/applications/kde4/dngconverter.desktop
 share/applications/kde4/expoblending.desktop
 share/applications/kde4/kipiplugins.desktop
 share/applications/kde4/panoramagui.desktop
-share/apps/kipiplugin_imageviewer/
-share/apps/kipiplugin_imageviewer/pics/
-share/apps/kipiplugin_panorama/
-share/apps/kipiplugin_panorama/pics/
-share/apps/kipiplugin_piwigoexport/
-share/apps/kipiplugin_piwigoexport/pics/
-share/apps/kipiplugin_printimages/
-share/apps/kipiplugin_printimages/templates/
-share/apps/kipiplugin_removeredeyes/
+share/apps/kipi/
+share/apps/kipi/tips
 share/apps/kipiplugin_expoblending/
 share/apps/kipiplugin_expoblending/pics/
 share/apps/kipiplugin_expoblending/pics/assistant-enfuse.png
@@ -61,11 +57,11 @@ share/apps/kipiplugin_expoblending/pics/assistant-preprocessing.png
 share/apps/kipiplugin_expoblending/pics/assistant-stack.png
 share/apps/kipiplugin_expoblending/pics/assistant-tripod.png
 share/apps/kipiplugin_flashexport/
-share/apps/kipiplugin_flashexport/simpleviewer_html/
 share/apps/kipiplugin_flashexport/index.template
 share/apps/kipiplugin_flashexport/index2.template
 share/apps/kipiplugin_flashexport/index3.template
 share/apps/kipiplugin_flashexport/index4.template
+share/apps/kipiplugin_flashexport/simpleviewer_html/
 share/apps/kipiplugin_flashexport/simpleviewer_html/space.png
 share/apps/kipiplugin_galleryexport/
 share/apps/kipiplugin_galleryexport/pics/
@@ -110,6 +106,7 @@ share/apps/kipiplugin_htmlexport/themes/floating_cards/
 share/apps/kipiplugin_htmlexport/themes/floating_cards/back.png
 share/apps/kipiplugin_htmlexport/themes/floating_cards/floating_cards.desktop
 share/apps/kipiplugin_htmlexport/themes/floating_cards/forward.png
+share/apps/kipiplugin_htmlexport/themes/floating_cards/image_nav.js
 share/apps/kipiplugin_htmlexport/themes/floating_cards/next.png
 share/apps/kipiplugin_htmlexport/themes/floating_cards/prev.png
 share/apps/kipiplugin_htmlexport/themes/floating_cards/preview.png
@@ -154,15 +151,23 @@ share/apps/kipiplugin_htmlexport/themes/snow/previous_disabled.png
 share/apps/kipiplugin_htmlexport/themes/snow/snow.desktop
 share/apps/kipiplugin_htmlexport/themes/snow/style.css
 share/apps/kipiplugin_htmlexport/themes/snow/template.xsl
+share/apps/kipiplugin_imageviewer/
+share/apps/kipiplugin_imageviewer/pics/
 share/apps/kipiplugin_imageviewer/pics/hand.png
 share/apps/kipiplugin_imageviewer/pics/nullImage.png
 share/apps/kipiplugin_imageviewer/pics/zoom.png
+share/apps/kipiplugin_panorama/
+share/apps/kipiplugin_panorama/pics/
 share/apps/kipiplugin_panorama/pics/assistant-hugin.png
 share/apps/kipiplugin_panorama/pics/assistant-preprocessing.png
 share/apps/kipiplugin_panorama/pics/assistant-stack.png
 share/apps/kipiplugin_panorama/pics/assistant-tripod.png
+share/apps/kipiplugin_piwigoexport/
+share/apps/kipiplugin_piwigoexport/pics/
 share/apps/kipiplugin_piwigoexport/pics/piwigo_logo.png
+share/apps/kipiplugin_printimages/
 share/apps/kipiplugin_printimages/TEMPLATE_HOWTO
+share/apps/kipiplugin_printimages/templates/
 share/apps/kipiplugin_printimages/templates/1_photo_10.5x14.8cm.desktop
 share/apps/kipiplugin_printimages/templates/1_photo_10x15cm.desktop
 share/apps/kipiplugin_printimages/templates/1_photo_20x25cm.desktop
@@ -177,6 +182,7 @@ share/apps/kipiplugin_printimages/templates/4_photos_3.5x5.desktop
 share/apps/kipiplugin_printimages/templates/4_photos_4.5x5cm.desktop
 share/apps/kipiplugin_printimages/templates/4_photos_9x13cm.desktop
 share/apps/kipiplugin_printimages/templates/4x6Album.desktop
+share/apps/kipiplugin_printimages/templates/6_photos_3.5x4.5cm.desktop
 share/apps/kipiplugin_printimages/templates/6_photos_3.5x4cm.desktop
 share/apps/kipiplugin_printimages/templates/8_photos_6x9cm.desktop
 share/apps/kipiplugin_printimages/templates/Album-Collage.desktop
@@ -188,26 +194,24 @@ share/apps/kipiplugin_printimages/templates/Photoframe.desktop
 share/apps/kipiplugin_printimages/templates/Thumbnails_5x4.desktop
 share/apps/kipiplugin_printimages/templates/Thumbnails_6x5.desktop
 share/apps/kipiplugin_printimages/templates/templates.xml
+share/apps/kipiplugin_removeredeyes/
 share/apps/kipiplugin_removeredeyes/controlwidget.svg
 share/apps/kipiplugin_removeredeyes/removeredeyes_classifier_eye_20_20.xml
 share/doc/HTML/en/kipi-plugins/
 share/doc/HTML/en/kipi-plugins/acquire-savetargetpreview.png
 share/doc/HTML/en/kipi-plugins/acquire-screenshotpreview.png
 share/doc/HTML/en/kipi-plugins/acquireimages.docbook
-share/doc/HTML/en/kipi-plugins/calendar.docbook
 share/doc/HTML/en/kipi-plugins/colorimages.docbook
 share/doc/HTML/en/kipi-plugins/common
 share/doc/HTML/en/kipi-plugins/convertimages.docbook
 share/doc/HTML/en/kipi-plugins/effectimages.docbook
 share/doc/HTML/en/kipi-plugins/filterimages.docbook
-share/doc/HTML/en/kipi-plugins/findduplicateimages.docbook
 share/doc/HTML/en/kipi-plugins/flickrexport.docbook
 share/doc/HTML/en/kipi-plugins/flickrexportauthenticated.png
 share/doc/HTML/en/kipi-plugins/flickrexportcontinue.png
 share/doc/HTML/en/kipi-plugins/flickrexportsignup.png
 share/doc/HTML/en/kipi-plugins/flickrexportuploaddialog.png
 share/doc/HTML/en/kipi-plugins/flickrexportuploading.png
-share/doc/HTML/en/kipi-plugins/galleryexport.docbook
 share/doc/HTML/en/kipi-plugins/geolocation.docbook
 share/doc/HTML/en/kipi-plugins/geolocationcorrelate.png
 share/doc/HTML/en/kipi-plugins/geolocationcorrelate1.png
@@ -223,7 +227,6 @@ share/doc/HTML/en/kipi-plugins/imageviewer.docbook
 share/doc/HTML/en/kipi-plugins/index.cache.bz2
 share/doc/HTML/en/kipi-plugins/index.docbook
 share/doc/HTML/en/kipi-plugins/jpeglossless.docbook
-share/doc/HTML/en/kipi-plugins/kameraklient.docbook
 share/doc/HTML/en/kipi-plugins/metadataeditor.docbook
 share/doc/HTML/en/kipi-plugins/printwizard.docbook
 share/doc/HTML/en/kipi-plugins/raw_converter_batch.png
@@ -233,14 +236,11 @@ share/doc/HTML/en/kipi-plugins/recompressimages.docbook
 share/doc/HTML/en/kipi-plugins/renameimages.docbook
 share/doc/HTML/en/kipi-plugins/resizeimages.docbook
 share/doc/HTML/en/kipi-plugins/sendimages.docbook
-share/doc/HTML/en/kipi-plugins/sendimages_imageselection.png
 share/doc/HTML/en/kipi-plugins/sendimages_mail.png
 share/doc/HTML/en/kipi-plugins/sendimages_progress.png
 share/doc/HTML/en/kipi-plugins/slideshow.docbook
 share/doc/HTML/en/kipi-plugins/slideshow.png
 share/doc/HTML/en/kipi-plugins/slideshow_dialog.png
-share/doc/HTML/en/kipi-plugins/timeadjust.docbook
-share/doc/HTML/en/kipi-plugins/wallpaper.docbook
 share/icons/hicolor/16x16/actions/debianscreenshots.png
 share/icons/hicolor/16x16/actions/expoblending.png
 share/icons/hicolor/16x16/actions/facebook.png
@@ -318,21 +318,14 @@ share/icons/hicolor/scalable/actions/picasa.svgz
 share/icons/hicolor/scalable/actions/piwigo.svgz
 share/icons/hicolor/scalable/actions/smugmug.svgz
 share/icons/hicolor/scalable/actions/zooomr.svgz
-share/icons/oxygen/128x128/apps/dngconverter.png
 share/icons/oxygen/128x128/apps/rawconverter.png
-share/icons/oxygen/16x16/apps/dngconverter.png
 share/icons/oxygen/16x16/apps/rawconverter.png
-share/icons/oxygen/22x22/apps/dngconverter.png
 share/icons/oxygen/22x22/apps/rawconverter.png
-share/icons/oxygen/32x32/apps/dngconverter.png
 share/icons/oxygen/32x32/apps/rawconverter.png
-share/icons/oxygen/48x48/apps/dngconverter.png
 share/icons/oxygen/48x48/apps/rawconverter.png
-share/icons/oxygen/64x64/apps/dngconverter.png
 share/icons/oxygen/64x64/apps/rawconverter.png
 share/icons/oxygen/scalable/
 share/icons/oxygen/scalable/apps/
-share/icons/oxygen/scalable/apps/dngconverter.svgz
 share/icons/oxygen/scalable/apps/rawconverter.svgz
 share/kde4/services/kipiplugin_acquireimages.desktop
 share/kde4/services/kipiplugin_advancedslideshow.desktop
@@ -346,8 +339,11 @@ share/kde4/services/kipiplugin_flashexport.desktop
 share/kde4/services/kipiplugin_flickrexport.desktop
 share/kde4/services/kipiplugin_galleryexport.desktop
 share/kde4/services/kipiplugin_gpssync.desktop
+share/kde4/services/kipiplugin_helloworld.desktop
 share/kde4/services/kipiplugin_htmlexport.desktop
+share/kde4/services/kipiplugin_imageshackexport.desktop
 share/kde4/services/kipiplugin_imageviewer.desktop
+share/kde4/services/kipiplugin_imgurexport.desktop
 share/kde4/services/kipiplugin_ipodexport.desktop
 share/kde4/services/kipiplugin_jpeglossless.desktop
 share/kde4/services/kipiplugin_kioexportimport.desktop
@@ -355,6 +351,7 @@ share/kde4/services/kipiplugin_kmlexport.desktop
 share/kde4/services/kipiplugin_kopete.desktop
 share/kde4/services/kipiplugin_metadataedit.desktop
 share/kde4/services/kipiplugin_panorama.desktop
+share/kde4/services/kipiplugin_photolayoutseditor.desktop
 share/kde4/services/kipiplugin_picasawebexport.desktop
 share/kde4/services/kipiplugin_piwigoexport.desktop
 share/kde4/services/kipiplugin_printimages.desktop
@@ -366,7 +363,10 @@ share/kde4/services/kipiplugin_shwup.desktop
 share/kde4/services/kipiplugin_smug.desktop
 share/kde4/services/kipiplugin_timeadjust.desktop
 share/kde4/services/kipiplugin_vkontakte.desktop
+share/kde4/services/kipiplugin_wikimedia.desktop
 share/kde4/services/kipiplugin_yandexfotki.desktop
+share/kde4/servicetypes/photolayoutseditorborderplugin.desktop
+share/kde4/servicetypes/photolayoutseditoreffectplugin.desktop
 share/locale/ar/LC_MESSAGES/kipiplugin_jpeglossless.mo
 share/locale/ar/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/ar/LC_MESSAGES/kipiplugins.mo
@@ -601,6 +601,7 @@ share/locale/es/LC_MESSAGES/kipiplugin_advancedslideshow.mo
 share/locale/es/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 share/locale/es/LC_MESSAGES/kipiplugin_calendar.mo
 share/locale/es/LC_MESSAGES/kipiplugin_dngconverter.mo
+share/locale/es/LC_MESSAGES/kipiplugin_expoblending.mo
 share/locale/es/LC_MESSAGES/kipiplugin_facebook.mo
 share/locale/es/LC_MESSAGES/kipiplugin_flashexport.mo
 share/locale/es/LC_MESSAGES/kipiplugin_flickrexport.mo
@@ -610,12 +611,15 @@ share/locale/es/LC_MESSAGES/kipiplugin_htmlexport.mo
 share/locale/es/LC_MESSAGES/kipiplugin_imageviewer.mo
 share/locale/es/LC_MESSAGES/kipiplugin_ipodexport.mo
 share/locale/es/LC_MESSAGES/kipiplugin_jpeglossless.mo
+share/locale/es/LC_MESSAGES/kipiplugin_kioexportimport.mo
 share/locale/es/LC_MESSAGES/kipiplugin_metadataedit.mo
 share/locale/es/LC_MESSAGES/kipiplugin_picasawebexport.mo
+share/locale/es/LC_MESSAGES/kipiplugin_piwigoexport.mo
 share/locale/es/LC_MESSAGES/kipiplugin_printimages.mo
 share/locale/es/LC_MESSAGES/kipiplugin_rawconverter.mo
 share/locale/es/LC_MESSAGES/kipiplugin_removeredeyes.mo
 share/locale/es/LC_MESSAGES/kipiplugin_sendimages.mo
+share/locale/es/LC_MESSAGES/kipiplugin_shwup.mo
 share/locale/es/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/es/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/es/LC_MESSAGES/kipiplugins.mo
@@ -797,6 +801,9 @@ share/locale/hr/LC_MESSAGES/kipiplugin_shwup.mo
 share/locale/hr/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/hr/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/hr/LC_MESSAGES/kipiplugins.mo
+share/locale/hu/LC_MESSAGES/kipiplugin_facebook.mo
+share/locale/hu/LC_MESSAGES/kipiplugin_imageviewer.mo
+share/locale/hu/LC_MESSAGES/kipiplugins.mo
 share/locale/is/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/is/LC_MESSAGES/kipiplugin_advancedslideshow.mo
 share/locale/is/LC_MESSAGES/kipiplugin_batchprocessimages.mo
@@ -878,8 +885,6 @@ share/locale/ja/LC_MESSAGES/kipiplugin_shwup.mo
 share/locale/ja/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/ja/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/ja/LC_MESSAGES/kipiplugins.mo
-share/locale/km/
-share/locale/km/LC_MESSAGES/
 share/locale/km/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/km/LC_MESSAGES/kipiplugin_advancedslideshow.mo
 share/locale/km/LC_MESSAGES/kipiplugin_batchprocessimages.mo
@@ -1244,6 +1249,11 @@ share/locale/sk/LC_MESSAGES/kipiplugin_shwup.mo
 share/locale/sk/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/sk/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/sk/LC_MESSAGES/kipiplugins.mo
+share/locale/sl/LC_MESSAGES/kipiplugin_acquireimages.mo
+share/locale/sl/LC_MESSAGES/kipiplugin_advancedslideshow.mo
+share/locale/sl/LC_MESSAGES/kipiplugin_calendar.mo
+share/locale/sl/LC_MESSAGES/kipiplugin_dngconverter.mo
+share/locale/sl/LC_MESSAGES/kipiplugins.mo
 share/locale/sq/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/sq/LC_MESSAGES/kipiplugin_batchprocessimages.mo
 share/locale/sq/LC_MESSAGES/kipiplugin_calendar.mo
@@ -1423,6 +1433,19 @@ share/locale/zh_TW/LC_MESSAGES/kipiplugin_shwup.mo
 share/locale/zh_TW/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/zh_TW/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/zh_TW/LC_MESSAGES/kipiplugins.mo
+share/templates/
+share/templates/kipiplugins_photolayoutseditor/
+share/templates/kipiplugins_photolayoutseditor/data/
+share/templates/kipiplugins_photolayoutseditor/data/templates/
+share/templates/kipiplugins_photolayoutseditor/data/templates/a4/
+share/templates/kipiplugins_photolayoutseditor/data/templates/a4/h/
+share/templates/kipiplugins_photolayoutseditor/data/templates/a4/h/Bear boy.ple
+share/templates/kipiplugins_photolayoutseditor/data/templates/a4/h/Bear girl.ple
+share/templates/kipiplugins_photolayoutseditor/data/templates/a4/h/Flipping Tux Black.ple
+share/templates/kipiplugins_photolayoutseditor/data/templates/a4/h/Flipping Tux White.ple
+share/templates/kipiplugins_photolayoutseditor/data/templates/a4/h/Its a boy.ple
+share/templates/kipiplugins_photolayoutseditor/data/templates/a4/h/Its a girl.ple
+share/templates/kipiplugins_photolayoutseditor/data/templates/a4/h/Tux Rider.ple
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
