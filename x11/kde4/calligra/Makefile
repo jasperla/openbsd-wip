@@ -4,7 +4,7 @@ COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	http://www.calligra-suite.org/
 VERSION =	2.5.3
 DISTNAME =	calligra-${VERSION}
-REVISION =	0
+REVISION =	1
 
 EXTRACT_SUFX =	.tar.bz2
 
@@ -110,31 +110,25 @@ LIB_DEPENDS =	databases/freetds \
 		print/poppler,,-qt4 \
 		productivity/librcps \
 		security/qca2 \
-		textproc/libwpd \
 		textproc/libxml \
 		textproc/libxslt \
 		x11/kde4/libkdcraw \
 		x11/kde4/marble \
 		x11/kde4/okular
 
-# built-in FindCalligraSqlite.cmake is bad, use system file
-# from installed CMake 2.8.8
-post-extract:
-	cp ${FILESDIR}/FindSqlite.cmake ${WRKSRC}/cmake/modules
-
 # Stuff we don't have ATM. Do not bother about CreateResources, it's
 # pure optional run-time dependency.
 CONFIGURE_ARGS =	-DWITH_OpenCTL:BOOL=Off \
 			-DWITH_Spnav:BOOL=Off \
+			-DWITH_WPD:BOOL=Off \
 			-DWITH_WPG:BOOL=Off \
 			-DWITH_XBase:BOOL=Off
 
 # Karbon wants SVG support through a shareware plugin for pstoedit
 CONFIGURE_ARGS +=	-DWITH_Pstoedit:BOOL=Off
 
-# Help bundled CMake modules
-# Select sqlite3 from base
-CONFIGURE_ARGS +=	-DWPD_INCLUDE_DIR=${LOCALBASE}/include/libwpd-0.8 \
-			-DSQLITE_INCLUDE_DIR:STRING="/usr/include"
+# Identical to system one anyway but shuts up CMake
+post-extract:
+	rm ${WRKSRC}/cmake/modules/FindIconv.cmake
 
 .include <bsd.port.mk>
