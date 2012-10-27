@@ -1,0 +1,19 @@
+$OpenBSD$
+
+Don't run fc-cache on install.
+
+--- configure.in.orig	Sat Feb 19 15:07:05 2011
++++ configure.in	Fri Oct 26 23:22:36 2012
+@@ -1990,12 +1990,7 @@ if test x"$enable_lame" != "xno" ; then
+ 
+ fi
+ 
+-AC_PATH_PROGS(FCCACHE, fc-cache, false)
+-if test x"$FCCACHE" = "xfalse"; then
+   AM_CONDITIONAL(HAVE_FC_CACHE, false)
+-else
+-  AM_CONDITIONAL(HAVE_FC_CACHE, true)
+-fi
+ 
+ if test x"$is_amigaos4" = "xyes"; then
+   if test x"$enable_sdlui" != "xyes"; then
