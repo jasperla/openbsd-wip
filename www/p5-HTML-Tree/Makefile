@@ -5,7 +5,6 @@ COMMENT=	perl parser that builds an HTML tree
 MODULES=	cpan
 DISTNAME=	HTML-Tree-5.03
 CATEGORIES=	www
-USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

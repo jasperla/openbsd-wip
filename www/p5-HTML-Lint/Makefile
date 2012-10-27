@@ -6,7 +6,6 @@ COMMENT=		check for HTML errors in a string or file
 MODULES=		cpan
 DISTNAME=		HTML-Lint-2.20
 CATEGORIES=		www
-USE_GROFF =		Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

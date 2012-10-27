@@ -3,7 +3,6 @@ bin/lwp-download
 bin/lwp-dump
 bin/lwp-mirror
 bin/lwp-request
-${P5SITE}/LWP/
 ${P5SITE}/LWP.pm
 ${P5SITE}/LWP/Authen/
 ${P5SITE}/LWP/Authen/Basic.pm
