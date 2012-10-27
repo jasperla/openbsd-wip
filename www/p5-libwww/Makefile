@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	libwww-perl-6.04
 PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES=	www
-USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

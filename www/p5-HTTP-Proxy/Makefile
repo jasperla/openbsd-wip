@@ -5,7 +5,6 @@ COMMENT=	pure Perl HTTP proxy
 MODULES=	cpan
 DISTNAME=	HTTP-Proxy-0.25
 CATEGORIES=	www
-USE_GROFF =	Yes
 
 MAINTAINER=	Sam Smith <s@msmith.net>
 
