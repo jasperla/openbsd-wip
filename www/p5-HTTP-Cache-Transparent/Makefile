@@ -2,7 +2,7 @@
 
 COMMENT =	Cache the result of http get-requests persistently
 
-DISTNAME =	HTTP-Cache-Transparent-1.0
+DISTNAME =	HTTP-Cache-Transparent-1.1
 CATEGORIES =	www
 CPAN_AUTHOR =	MATTIASH
 
