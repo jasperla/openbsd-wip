@@ -4,3 +4,6 @@ I need reorganize the makefile.
 
 Search missing symbols in the binaries, e.g. from plt-games:
 /usr/local/bin/gracket:/usr/X11R6/lib/libGLU.so.7.0: undefined symbol
+
+Jewel, Checkers and Gobblet (plt-games) doesn't work. Probably is a bug in both
+programs, not in the port. I need test it again.

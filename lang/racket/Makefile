@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	i386 amd64
 COMMENT =		scheme dialect often used for teaching programming
 
 V =			5.3.0.900
-REVISION =		0
+REVISION =		1
 PKGNAME =		racket-$V
 #DISTNAME =		racket-$V-src-unix
 DISTNAME =		plt-$V-src-unix
@@ -38,7 +38,7 @@ LIB_DEPENDS =		devel/libffi \
 			devel/pango \
 			graphics/cairo
 # "WANTLIB" reviewed by hand, "lib-depends-check" doesn't help.
-WANTLIB =		c m pthread ffi crypto iconv
+WANTLIB =		c m pthread ffi crypto iconv GLU GL
 
 EXTRACT_SUFX =		.tgz
 WRKDIST =		${WRKDIR}/racket-$V
@@ -49,8 +49,11 @@ CONFIGURE_STYLE =	gnu
 # --enable-libffi needs LDFLAGS="-pthread"
 # gettext support needs CPPFLAGS="-I${LOCALBASE}/include"
 # -DMZ_USE_JIT_SSE enables use of SSE floating point
-CONFIGURE_ENV =		LDFLAGS="-pthread -lcrypto" \
-			CPPFLAGS="-I${LOCALBASE}/include -DMZ_USE_JIT_SSE"
+# plt-games needs GLU
+CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread \
+			-lcrypto -lGLU -lGL" \
+			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
+			-DMZ_USE_JIT_SSE"
 
 CONFIGURE_ARGS +=	--enable-shared \
 			--enable-libffi \
