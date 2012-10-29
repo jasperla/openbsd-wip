@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.native,v 1.12 2011/12/21 21:31:50 avsm Exp $
+@comment $OpenBSD: $
 %%dynlink%%
 @bin bin/camlp4o.opt
 @bin bin/camlp4of.opt

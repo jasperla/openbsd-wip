@@ -1,0 +1,7 @@
+@comment $OpenBSD: $
+%%SHARED%%
+%%native%%
+@bin bin/ocamlrun
+share/doc/ocaml/
+share/doc/ocaml/Changes
+share/doc/ocaml/LICENSE
