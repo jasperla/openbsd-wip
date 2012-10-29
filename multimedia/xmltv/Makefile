@@ -13,7 +13,7 @@ MAINTAINER =		Nigel Taylor <nigel@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes 
+PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=xmltv/}
 EXTRACT_SUFX =		.tar.bz2
@@ -51,7 +51,7 @@ RUN_DEPENDS =	archivers/p5-Archive-Zip \
 		x11/p5-Tk-TableMatrix
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
-CONFIGURE_STYLE = perl	
+CONFIGURE_STYLE = perl
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} --yes
 
 .include <bsd.port.mk>

@@ -39,6 +39,6 @@ SEPARATE_BUILD =	No
 
 #  remove patch files left in source tarball
 pre-patch:
-	@find ${WRKSRC} \( -name "*.orig" -or -name "*.rej" \) -exec rm {} \; 
+	@find ${WRKSRC} \( -name "*.orig" -or -name "*.rej" \) -exec rm {} \;
 
 .include <bsd.port.mk>
