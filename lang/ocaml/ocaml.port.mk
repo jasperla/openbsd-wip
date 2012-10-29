@@ -57,6 +57,7 @@ MODOCAML_pre-fake = \
 #
 # Also overrides do-{build,install,test}
 #
+CONFIGURE_STYLE?=
 .if ${CONFIGURE_STYLE:L:Moasis}
 
 ALL_TARGET ?= -build -doc
