@@ -24,7 +24,6 @@ PERMIT_DISTFILES_CDROM =	Yes
 
 MODULES =	lang/ocaml
 
-RUN_DEPENDS =	lang/ocaml
 BUILD_DEPENDS =	sysutils/findlib
 
 CONFIGURE_STYLE = gnu dest

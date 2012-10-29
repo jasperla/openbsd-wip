@@ -22,7 +22,7 @@ MYDEPENDS =	devel/ocaml-react \
 		textproc/ocaml-text \
 		security/ocaml-ssl
 BUILD_DEPENDS =	${MYDEPENDS} sysutils/findlib
-RUN_DEPENDS =	${MYDEPENDS} lang/ocaml
+RUN_DEPENDS =	${MYDEPENDS}
 LIB_DEPENDS =	devel/glib2 devel/libev converters/libiconv
 WANTLIB =	glib-2.0 ev iconv intl pthread
 

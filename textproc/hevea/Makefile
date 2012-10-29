@@ -11,8 +11,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 WANTLIB=		c m 
 
-BUILD_DEPENDS=	lang/ocaml
-
 DISTNAME =	hevea-2.00
 MASTER_SITES =	http://para.inria.fr/~maranget/hevea/distri/
 

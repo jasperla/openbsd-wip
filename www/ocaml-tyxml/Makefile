@@ -19,7 +19,7 @@ PERMIT_DISTFILES_CDROM =	Yes
 MODULES =	lang/ocaml
 
 BUILD_DEPENDS =	sysutils/findlib devel/ocaml-net
-RUN_DEPENDS =	lang/ocaml devel/ocaml-net
+RUN_DEPENDS =	devel/ocaml-net
 
 USE_GMAKE =	Yes
 

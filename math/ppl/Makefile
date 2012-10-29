@@ -42,7 +42,7 @@ LIB_DEPENDS =		devel/gmp \
 LIB_DEPENDS-ocaml =	devel/ocaml-mlgmp \
 			devel/glpk \
 			math/ppl,-main
-RUN_DEPENDS-ocaml =	lang/ocaml
+RUN_DEPENDS-ocaml =	lang/ocaml-run
 
 LIB_DEPENDS-java =	math/ppl,-main
 			
