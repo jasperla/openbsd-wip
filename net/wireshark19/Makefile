@@ -40,7 +40,7 @@ WANTLIB-text += ${WANTLIB} ${MODLUA_WANTLIB} GeoIP cares gcrypt gmodule-2.0
 WANTLIB-text += gpg-error krb5 smi
 
 WANTLIB-main += ${WANTLIB} wireshark wiretap wsutil
-WANTLIB-main += cairo gdk_pixbuf-2.0 gmodule-2.0 gobject-2.0 
+WANTLIB-main += cairo gdk_pixbuf-2.0 gmodule-2.0 gobject-2.0
 WANTLIB-main += pango-1.0 pangocairo-1.0 portaudio
 
 MODULES=	lang/lua

@@ -1,5 +1,5 @@
 OpenVAS server
 
-Some instructions and notes specific to OpenBSD 
+Some instructions and notes specific to OpenBSD
 are in
 ${PREFIX}/share/doc/openvas/README.OpenBSD

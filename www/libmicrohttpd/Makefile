@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP =	 Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	 Yes
 
-WANTLIB +=	gcrypt gmp gnutls gpg-error hogweed nettle p11-kit 
+WANTLIB +=	gcrypt gmp gnutls gpg-error hogweed nettle p11-kit
 WANTLIB +=	pthread tasn1 z
 
 MASTER_SITES =	${MASTER_SITE_GNU:=libmicrohttpd/}
@@ -37,7 +37,7 @@ BUILD_DEPENDS =	misc/zzuf \
 
 USE_LIBTOOL =	Yes
 
-CONFIGURE_STYLE =	autoconf	
+CONFIGURE_STYLE =	autoconf
 CONFIGURE_ARGS +=	--with-gnutls
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

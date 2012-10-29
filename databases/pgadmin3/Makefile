@@ -38,7 +38,7 @@ BUILD_DEPENDS +=	databases/postgresql,-server
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS}"
-CONFIGURE_ARGS=	--with-pgsql=${LOCALBASE} 
+CONFIGURE_ARGS=	--with-pgsql=${LOCALBASE}
 
 USE_GMAKE=	Yes
 
