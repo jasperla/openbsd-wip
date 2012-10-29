@@ -22,7 +22,7 @@ WANTLIB =	c ev m pthread
 MODULES =	lang/ocaml
 
 BUILD_DEPENDS =	devel/ocaml-lwt devel/ocaml-zed
-RUN_DEPENDS =	lang/ocaml devel/ocaml-lwt devel/ocaml-zed
+RUN_DEPENDS =	devel/ocaml-lwt devel/ocaml-zed
 LIB_DEPENDS =	devel/libev
 
 CONFIGURE_STYLE =	oasis

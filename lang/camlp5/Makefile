@@ -18,8 +18,6 @@ PERMIT_DISTFILES_CDROM =	Yes
 
 MODULES =		lang/ocaml
 
-RUN_DEPENDS +=		lang/ocaml
-
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	-prefix ${PREFIX} -transitional
 

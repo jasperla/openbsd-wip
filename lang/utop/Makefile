@@ -19,11 +19,10 @@ PERMIT_DISTFILES_CDROM =	Yes
 
 MODULES =		lang/ocaml
 
-BOTH_DEPENDS =		devel/ocaml-lwt \
+BUILD_DEPENDS =		devel/ocaml-lwt \
 			devel/ocaml-camomile \
 			devel/ocaml-lambda-term
-BUILD_DEPENDS +=	${BOTH_DEPENDS} sysutils/findlib
-RUN_DEPENDS +=		${BOTH_DEPENDS} lang/ocaml
+RUN_DEPENDS +=		${BUILD_DEPENDS}
 
 CONFIGURE_STYLE =	oasis
 

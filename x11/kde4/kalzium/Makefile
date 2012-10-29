@@ -23,6 +23,6 @@ RUN_DEPENDS =	math/facile
 LIB_DEPENDS = 	education/avogadro \
 		math/eigen2 \
 		misc/openbabel \
-		lang/ocaml
+		lang/ocaml-run
 
 .include <bsd.port.mk>

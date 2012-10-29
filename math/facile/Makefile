@@ -13,8 +13,6 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${HOMEPAGE}distrib/
 
-RUN_DEPENDS =		lang/ocaml
-
 MODULES =		lang/ocaml
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	simple

@@ -10,16 +10,16 @@ BROKEN-powerpc=	'struct sigcontext' has no member named 'regs'
 COMMENT-main =	ML language based on complete class-based objective system
 COMMENT-run =	runtime system for OCaml bytecode executables
 
-.include "ocaml.port.mk"
+VERSION=4.00.1
 
-DISTNAME =	ocaml-${OCAML_VERSION}
+DISTNAME =	ocaml-${VERSION}
 
 MULTI_PACKAGES = -main -run
-PKGNAME-main =	ocaml-${OCAML_VERSION}
-PKGNAME-run =	ocaml-run-${OCAML_VERSION}
+PKGNAME-main =	ocaml-${VERSION}
+PKGNAME-run =	ocaml-run-${VERSION}
 # OCaml has no binary compatibility between releases.
-PKGSPEC-main =	ocaml-=${OCAML_VERSION}
-PKGSPEC-run =	ocaml-run-=${OCAML_VERSION}
+PKGSPEC-main =	ocaml-=${VERSION}
+PKGSPEC-run =	ocaml-run-=${VERSION}
 
 CATEGORIES=	lang
 BASENAME =	${DISTNAME:C/\.[^.]*$//}
@@ -56,7 +56,7 @@ USE_GMAKE=	Yes
 BUILD_DEPENDS =		${MODTK_BUILD_DEPENDS} \
 			devel/gdb
 RUN_DEPENDS =		${MODTK_RUN_DEPENDS}
-RUN_DEPENDS-run = 	${RUN_DEPENDS} lang/ocaml
+RUN_DEPENDS-main = 	${RUN_DEPENDS} ocaml-run-${VERSION}:lang/ocaml
 LIB_DEPENDS =		${MODTK_LIB_DEPENDS}
 WANTLIB =		X11 c curses iberty m pthread z ${MODTK_WANTLIB}
 
@@ -64,8 +64,15 @@ WANTLIB =		X11 c curses iberty m pthread z ${MODTK_WANTLIB}
 
 .if ${PROPERTIES:Mocaml_native}
 ALL_TARGET=	world bootstrap opt opt.opt
+PKG_ARGS +=	-Dnative=1
+.if ${PROPERTIES:Mocaml_native_dynlink}
+PKG_ARGS +=	-Ddynlink=1
+.else
+PKG_ARGS +=	-Ddynlink=0
+.endif
 .else
 ALL_TARGET=	world bootstrap
+PKG_ARGS +=	-Dnative=0
 .endif
 
 # XXX regress tests only work on archs with native-code compiler
