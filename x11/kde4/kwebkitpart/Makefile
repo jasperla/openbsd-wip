@@ -6,7 +6,8 @@ DISTNAME =	kwebkitpart-1.2
 REVISION =	3
 
 EXTRACT_SUFX =	.tar.bz2
-MASTER_SITES =	http://malcolm.ecentrum.hu/distfiles/ \
+MASTER_SITES =	ftp://3ps.if.ua/pub/OpenBSD/distfiles/ \
+		http://malcolm.ecentrum.hu/distfiles/ \
 		http://www.ohvost.ru/dnl/kde/src/
 
 WANTLIB =  c m pthread stdc++
