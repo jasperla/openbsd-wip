@@ -1,10 +1,9 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, torrent client
-V =		4.2.0
+V =		4.3.0
 DISTNAME =	ktorrent-${V}
 HOMEPAGE =	http://ktorrent.org/
-REVISION =	0
 
 EXTRACT_SUFX =	.tar.bz2
 
