@@ -38,11 +38,11 @@ MODGCC4_VERSION =	4.6
 MODGCC4_LANGS =		c
 MODGCC4_ARCHS =		*
 
-# Dependencies listed within src/README and the output of configure
-LIB_DEPENDS =		x11/gtk+2
+# XXX: it seems gtk+2 would merely be a BUILD/RUN_DEPENDS, need to check
+LIB_DEPENDS =		devel/libffi
 
-# "WANTLIB" reviewed by hand, "lib-depends-check" doesn't help.
-WANTLIB =		c m pthread ffi crypto iconv GLU GL
+WANTLIB += GL GLU X11 Xdamage Xext Xfixes Xxf86vm c crypto drm
+WANTLIB += ffi m pthread stdc++ xcb
 
 WRKDIST =		${WRKDIR}/racket-$V
 WRKSRC =		${WRKDIST}/src
@@ -56,7 +56,6 @@ USE_LIBTOOL =		Yes
 
 CONFIGURE_STYLE =	gnu
 # --enable-libffi needs LDFLAGS="-pthread"
-# gettext support needs CPPFLAGS="-I${LOCALBASE}/include"
 # -DMZ_USE_JIT_SSE enables use of SSE floating point
 # plt-games needs GLU
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
