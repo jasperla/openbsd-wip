@@ -9,3 +9,5 @@ Jewel, Checkers and Gobblet (plt-games) doesn't work. Probably is a bug in both
 programs, not in the port. I need test it again.
 
 Describe the 'noopt' flavor in DESCR.
+
+Fix LIB/BUILD/RUN_DEPENDS.
