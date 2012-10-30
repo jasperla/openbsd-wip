@@ -31,7 +31,7 @@ MASTER_SITES =		http://download.racket-lang.org/installers/${V}/racket/ \
 
 EXTRACT_SUFX =		.tgz
 
-# With the system gcc, racket ("foreign" folder) doesn't compile
+# With the base gcc, racket ("foreign" folder) doesn't compile
 # due to threads problems.
 MODULES +=		converters/libiconv \
 			gcc4
@@ -41,10 +41,8 @@ MODGCC4_LANGS =		c
 MODGCC4_ARCHS =		*
 
 # Dependencies listed within src/README and the output of configure
-LIB_DEPENDS =		devel/libffi \
-			x11/gtk+2 \
-			devel/pango \
-			graphics/cairo
+LIB_DEPENDS =		x11/gtk+2
+
 # "WANTLIB" reviewed by hand, "lib-depends-check" doesn't help.
 WANTLIB =		c m pthread ffi crypto iconv GLU GL
 
