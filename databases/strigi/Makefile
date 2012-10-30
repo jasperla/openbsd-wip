@@ -7,7 +7,8 @@ HOMEPAGE =	https://projects.kde.org/projects/kdesupport/strigi/
 DISTNAME =	strigi-0.7.7pl1
 SHARED_ONLY =	Yes
 
-MASTER_SITES =	http://malcolm.ecentrum.hu/distfiles/ \
+MASTER_SITES =	ftp://3ps.if.ua/pub/OpenBSD/distfiles/ \
+		http://malcolm.ecentrum.hu/distfiles/ \
 		http://spacehopper.org/mirrors/ \
 		http://www.ohvost.ru/dnl/kde/src/
 
