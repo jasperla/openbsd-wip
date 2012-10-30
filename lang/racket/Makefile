@@ -29,8 +29,16 @@ MASTER_SITES =		http://download.racket-lang.org/installers/${V}/racket/ \
 			http://pre.racket-lang.org/release/installers/ \
 			http://download.tuxfamily.org/jod/lang/racket/
 
-NO_REGRESS =		Yes
-VMEM_WARNING =		Yes
+EXTRACT_SUFX =		.tgz
+
+# With the system gcc, racket ("foreign" folder) doesn't compile
+# due to threads problems.
+MODULES +=		converters/libiconv \
+			gcc4
+
+MODGCC4_VERSION =	4.6
+MODGCC4_LANGS =		c
+MODGCC4_ARCHS =		*
 
 # Dependencies listed within src/README and the output of configure
 LIB_DEPENDS =		devel/libffi \
@@ -40,22 +48,21 @@ LIB_DEPENDS =		devel/libffi \
 # "WANTLIB" reviewed by hand, "lib-depends-check" doesn't help.
 WANTLIB =		c m pthread ffi crypto iconv GLU GL
 
-EXTRACT_SUFX =		.tgz
 WRKDIST =		${WRKDIR}/racket-$V
 WRKSRC =		${WRKDIST}/src
-SEPARATE_BUILD =	simple
-CONFIGURE_STYLE =	gnu
 
+NO_REGRESS =		Yes
+VMEM_WARNING =		Yes
+SEPARATE_BUILD =	simple
+
+USE_LIBTOOL =		Yes
+
+CONFIGURE_STYLE =	gnu
 # --enable-libffi needs LDFLAGS="-pthread"
 # gettext support needs CPPFLAGS="-I${LOCALBASE}/include"
 # -DMZ_USE_JIT_SSE enables use of SSE floating point
 # plt-games needs GLU
-CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread \
-			-lcrypto -lGLU -lGL" \
-			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
-			-DMZ_USE_JIT_SSE"
-
-CONFIGURE_ARGS +=	--enable-shared \
+CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--enable-libffi \
 			--enable-gracket \
 			--enable-jit \
@@ -66,10 +73,14 @@ CONFIGURE_ARGS +=	--enable-shared \
 			--enable-pthread \
 			--enable-lt=${LIBTOOL} \
 			--enable-futures
-
 # "backtrace" is expensive.
 # http://article.gmane.org/gmane.comp.lang.racket.devel/6700
 CONFIGURE_ARGS +=	--disable-backtrace
+
+CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread \
+			-lcrypto -lGLU -lGL" \
+			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
+			-DMZ_USE_JIT_SSE"
 
 FLAVORS =	noopt
 FLAVOR?=
@@ -78,17 +89,6 @@ FLAVOR?=
 .if ${FLAVOR} == "noopt"
 CONFIGURE_ARGS +=	--enable-noopt
 .endif
-
-USE_LIBTOOL =		Yes
-
-# With the system gcc, racket ("foreign" folder) doesn't compile
-# due to threads problems.
-MODULES +=		converters/libiconv \
-			gcc4
-
-MODGCC4_VERSION =	4.6
-MODGCC4_LANGS =		c
-MODGCC4_ARCHS =		*
 
 # -- Racket with futures disabled. 5.2 vs 5.3 --
 # Racket 5.2 (with futures disabled) compiles OK with the default limits of the
