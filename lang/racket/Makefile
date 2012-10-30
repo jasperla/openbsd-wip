@@ -11,7 +11,7 @@ PKGNAME =		racket-$V
 #DISTNAME =		racket-$V-src-unix
 DISTNAME =		plt-$V-src-unix
 CATEGORIES =		lang
-HOMEPAGE =		http://racket-lang.org
+HOMEPAGE =		http://racket-lang.org/
 MAINTAINER =		Juan Francisco Cantero Hurtado <iam@juanfra.info>
 
 # LGPLv2+
@@ -28,11 +28,9 @@ MASTER_SITES =		http://download.racket-lang.org/installers/${V}/racket/ \
 			http://racket.infogroep.be/${V}/racket/ \
 			http://pre.racket-lang.org/release/installers/ \
 			http://download.tuxfamily.org/jod/lang/racket/
-
 EXTRACT_SUFX =		.tgz
 
-# With the base gcc, racket ("foreign" folder) doesn't compile
-# due to threads problems.
+# base gcc fails on "foreign" folder (due to threads problems)
 MODULES +=		converters/libiconv \
 			gcc4
 
@@ -53,6 +51,7 @@ NO_REGRESS =		Yes
 VMEM_WARNING =		Yes
 SEPARATE_BUILD =	simple
 
+USE_GROFF =		Yes
 USE_LIBTOOL =		Yes
 
 CONFIGURE_STYLE =	gnu
@@ -75,10 +74,8 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 # http://article.gmane.org/gmane.comp.lang.racket.devel/6700
 CONFIGURE_ARGS +=	--disable-backtrace
 
-CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread \
-			-lcrypto -lGLU -lGL" \
-			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
-			-DMZ_USE_JIT_SSE"
+CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread -lcrypto -lGLU -lGL" \
+			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include -DMZ_USE_JIT_SSE"
 
 FLAVORS =	noopt
 FLAVOR?=
