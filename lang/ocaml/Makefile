@@ -56,7 +56,7 @@ USE_GMAKE=	Yes
 BUILD_DEPENDS =		${MODTK_BUILD_DEPENDS} \
 			devel/gdb
 RUN_DEPENDS =		${MODTK_RUN_DEPENDS}
-RUN_DEPENDS-main = 	${RUN_DEPENDS} ocaml-run-${VERSION}:lang/ocaml
+RUN_DEPENDS-main = 	${RUN_DEPENDS} ${BASE_PKGPATH},-run
 LIB_DEPENDS =		${MODTK_LIB_DEPENDS}
 WANTLIB =		X11 c curses iberty m pthread z ${MODTK_WANTLIB}
 
