@@ -3,6 +3,7 @@
 COMMENT =	object-relational SQL database
 DISTNAME =	virtuoso-opensource-6.1.6
 PKGNAME =	${DISTNAME:C/-opensource//}
+REVISION =	0
 
 CATEGORIES =	databases
 HOMEPAGE =	http://www.openlinksw.com/
@@ -20,10 +21,11 @@ WANTLIB += wbxml2 wmf-0.2 wmflite-0.2 xcb xml2 z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=virtuoso/}
 
-MODULES =		lang/mono lang/php lang/python lang/ruby
+MODULES =		lang/php lang/python lang/ruby
 
 BUILD_DEPENDS =		devel/bison \
 			devel/flex \
+			devel/gperf \
 			lang/gawk
 
 LIB_DEPENDS =		textproc/libwbxml \
@@ -46,6 +48,7 @@ CONFIGURE_ENV =		CFLAGS="${CFLAGS}" \
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-all-vads \
 			--disable-hslookup \
+			--disable-mono \
 			--disable-openldap \
 			--without-internal-zlib \
 			--with-jdk2=no \
