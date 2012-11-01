@@ -1,7 +1,7 @@
 # $OpenBSD: Makefile,v 1.3 2010/11/22 08:37:02 espie Exp $
 
 COMMENT =		K Desktop Environment, PIM access libraries
-DISTNAME =		akonadi-1.8.0
+DISTNAME =		akonadi-${AKONADI_VERSION}
 REVISION =		0
 
 SHARED_LIBS = 		akonadiprotocolinternals 1.0	# 1.0
@@ -28,7 +28,7 @@ RUN_DEPENDS =		misc/shared-mime-info
 RUN_DEPENDS +=		databases/mysql,-server \
 			x11/qt4,-mysql
 
-LIB_DEPENDS =		STEM->=2.8.0:databases/soprano \
+LIB_DEPENDS =		STEM->={SOPRANO_VERSION}:databases/soprano \
 			devel/boost
 
 CONFIGURE_ARGS =	-DDATABASE_BACKEND:String=MYSQL

@@ -1,8 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, integrated development environment
-VERSION =	4.4.0
-DISTNAME =	kdevelop-${VERSION}
+DISTNAME =	kdevelop-${KDEVELOP_VERSION}
 HOMEPAGE =	http://www.kdevelop.org/
 
 EXTRACT_SUFX =	.tar.bz2
@@ -12,7 +11,7 @@ SHARED_LIBS +=	kdev4cppduchain		0.0
 SHARED_LIBS +=	kdev4cppparser		0.0
 SHARED_LIBS +=	kdev4cpprpp		0.0
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdevelop/${VERSION}/src/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdevelop/${KDEVELOP_VERSION}/src/}
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui

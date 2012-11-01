@@ -1,12 +1,11 @@
 # $OpenBSD$
 
 COMMENT =	link Akonadi to Google services
-VERSION =	0.4.0
-DISTNAME =	libkgapi-${VERSION}
+DISTNAME =	libkgapi-${LIBKGAPI_VERSION}
 REVISION =	0
 
 EXTRACT_SUFX =	.tar.bz2
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/libkgapi/${VERSION}/src/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/libkgapi/${LIBKGAPI_VERSION}/src/}
 
 SHARED_LIBS =   kgapi                     0.0 # 0.4
 

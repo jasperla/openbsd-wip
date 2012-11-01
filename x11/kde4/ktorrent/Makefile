@@ -1,8 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, torrent client
-V =		4.3.0
-DISTNAME =	ktorrent-${V}
+DISTNAME =	ktorrent-${KTORRENT_VERSION}
 HOMEPAGE =	http://ktorrent.org/
 
 EXTRACT_SUFX =	.tar.bz2
@@ -18,12 +17,11 @@ WANTLIB += knotifyconfig kparts kprintutils krosscore ktorrent kutils
 WANTLIB += kworkspace nepomuk nepomukutils phonon plasma solid soprano
 WANTLIB += syndication tag
 
-MASTER_SITES =	${HOMEPAGE}downloads/${V}/
+MASTER_SITES =	${HOMEPAGE}downloads/${KTORRENT_VERSION}/
 
 MODKDE4_USE =	pim workspace
 
-LIBVER =	${V:C/^4/1/}
 LIB_DEPENDS =	audio/taglib \
-		STEM->=${LIBVER}:x11/kde4/libktorrent
+		STEM->=${LIBKTORRENT_VERSION}:x11/kde4/libktorrent
 
 .include <bsd.port.mk>

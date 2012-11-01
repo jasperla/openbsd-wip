@@ -1,8 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, IDE creation toolkit
-VERSION =	1.4.0
-DISTNAME =	kdevplatform-${VERSION}
+DISTNAME =	kdevplatform-${KDEVPLATFORM_VERSION}
 HOMEPAGE =	http://www.kdevelop.org/
 
 EXTRACT_SUFX =	.tar.bz2
@@ -19,7 +18,7 @@ SHARED_LIBS +=	kdevplatformutil		0.0 # 3.0
 SHARED_LIBS +=	kdevplatformvcs			0.0 # 3.0
 SHARED_LIBS +=	sublime				0.0 # 3.0
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdevelop/${VERSION:C/^1/4/}/src/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdevelop/${KDEVELOP_VERSION}/src/}
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork

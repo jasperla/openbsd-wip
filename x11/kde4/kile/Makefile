@@ -2,8 +2,7 @@
 
 COMMENT =	user-friendly TeX/LaTex editor for KDE
 HOMEPAGE =	http://kile.sourceforge.net/
-V =		2.1.3
-DISTNAME =	kile-${V}
+DISTNAME =	kile-${KILE_VERSION}
 
 CATEGORIES =	textproc
 

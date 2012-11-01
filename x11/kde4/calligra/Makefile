@@ -2,8 +2,7 @@
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	http://www.calligra-suite.org/
-VERSION =	2.5.3
-DISTNAME =	calligra-${VERSION}
+DISTNAME =	calligra-${CALLIGRA_VERSION}
 REVISION =	3
 
 EXTRACT_SUFX =	.tar.bz2
@@ -51,7 +50,7 @@ SHARED_LIBS +=	calligrasheetsodf	9.0 # 9.0
 
 VMEM_WARNING =	Yes
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/${DISTNAME}/}
+MASTER_SITES =	${MASTER_SITE_KDE:=${CALLIGRA_BRANCH}/${DISTNAME}/}
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += X11 lib/qt4/QtDeclarative lib/qt4/QtWebKit

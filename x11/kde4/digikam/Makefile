@@ -8,12 +8,11 @@ COMMENT-mediawiki =	KIPI interface for MediaWiki
 COMMENT-vkontakte =	KIPI interface for VK.com
 
 HOMEPAGE =		http://www.digikam.org/
-VERSION =		2.9.0
-DISTNAME =		digikam-${VERSION}
+DISTNAME =		digikam-${DIGIKAM_VERSION}
 
 PKGNAME-face =		libkface-2.0.0
-PKGNAME-geomap =	libkgeomap-${VERSION}
-PKGNAME-kipi =		kipi-plugins-${VERSION}
+PKGNAME-geomap =	libkgeomap-${DIGIKAM_VERSION}
+PKGNAME-kipi =		kipi-plugins-${DIGIKAM_VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 PKGNAME-vkontakte =	libkvkontakte-1.0.0
@@ -28,7 +27,7 @@ SHARED_LIBS +=  kgeomap			0.0 # 1.0
 SHARED_LIBS +=  kvkontakte		0.0 # 1.0
 SHARED_LIBS +=  mediawiki		0.0 # 1.0
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=digikam/${VERSION}/}
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=digikam/${DIGIKAM_VERSION}/}
 
 MULTI_PACKAGES =	-main -face -geomap -kipi -mediawiki -vkontakte
 

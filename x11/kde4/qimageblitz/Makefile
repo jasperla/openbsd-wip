@@ -1,7 +1,7 @@
 # $OpenBSD: Makefile,v 1.5 2010/08/31 08:22:05 jasper Exp $
 
 COMMENT =	K Desktop Environment, image effects
-DISTNAME =	qimageblitz-0.0.6
+DISTNAME =	qimageblitz-${QIMAGEBLITZ_VERSION}
 REVISION =	0
 
 EXTRACT_SUFX =	.tar.bz2
