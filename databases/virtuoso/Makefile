@@ -3,7 +3,7 @@
 COMMENT =	object-relational SQL database
 DISTNAME =	virtuoso-opensource-6.1.6
 PKGNAME =	${DISTNAME:C/-opensource//}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	databases
 HOMEPAGE =	http://www.openlinksw.com/
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =  ICE MagickCore MagickWand SM X11 Xext Xt bz2 c crypto
 WANTLIB += djvulibre expat fftw3 fl fontconfig freetype iconv
 WANTLIB += jasper jbig jpeg lcms2 ltdl lzma m png pthread ssl tiff
-WANTLIB += wbxml2 wmf-0.2 wmflite-0.2 xcb xml2 z
+WANTLIB += wmf-0.2 wmflite-0.2 xcb xml2 z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=virtuoso/}
 
@@ -28,8 +28,7 @@ BUILD_DEPENDS =		devel/bison \
 			devel/gperf \
 			lang/gawk
 
-LIB_DEPENDS =		textproc/libwbxml \
-			graphics/ImageMagick \
+LIB_DEPENDS =		graphics/ImageMagick \
 			graphics/lcms2 \
 			textproc/libxml \
 
@@ -39,8 +38,7 @@ CONFIGURE_STYLE =	gnu autoconf
 AUTOCONF_VERSION =	2.61
 AUTOMAKE_VERSION =	1.9
 
-COPTS =			-I${LOCALBASE}/include/wbxml \
-			-L${LOCALBASE}/lib
+COPTS =			-L${LOCALBASE}/lib
 
 CONFIGURE_ENV =		CFLAGS="${CFLAGS}" \
 			YACC="${LOCALBASE}/bin/bison -y"
