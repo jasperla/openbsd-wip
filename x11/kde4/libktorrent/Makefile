@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, KTorrent engine
-DISTNAME =	libktorrent-1.3.0
+DISTNAME =	libktorrent-${LIBKTORRENT_VERSION}
 HOMEPAGE =	http://ktorrent.org/
 
 EXTRACT_SUFX =	.tar.bz2
@@ -14,7 +14,7 @@ WANTLIB += lib/qt4/QtNetwork
 WANTLIB += kdeui kio solid
 WANTLIB += gcrypt gmp qca2
 
-MASTER_SITES =	${HOMEPAGE}downloads/4.3.0/
+MASTER_SITES =	${HOMEPAGE}downloads/${KTORRENT_VERSION}/
 
 BUILD_DEPENDS =	devel/boost \
 		devel/doxygen

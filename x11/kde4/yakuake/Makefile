@@ -2,10 +2,9 @@
 
 COMMENT =	K Desktop Environment, quake-style terminal emulator
 HOMEPAGE =	http://yakuake.kde.org/
-VERSION =	2.9.9
-DISTNAME =	yakuake-${VERSION}
+DISTNAME =	yakuake-${YAKUAKE_VERSION}
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/yakuake/${VERSION}/src/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/yakuake/${YAKUAKE_VERSION}/src/}
 EXTRACT_SUFX =	.tar.xz
 
 WANTLIB =  c m pthread stdc++ X11
