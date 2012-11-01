@@ -13,7 +13,7 @@ OCAML_VERSION=4.00.1
 
 .include <bsd.port.arch.mk>
 
-RUN_DEPENDS+=	ocaml-run:lang/ocaml-run
+RUN_DEPENDS+=	lang/ocaml,-run
 
 .if ${PROPERTIES:Mocaml_native}
 MODOCAML_NATIVE=Yes

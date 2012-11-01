@@ -812,6 +812,7 @@ lib/ocaml/weak.mli
 @man man/man3/Weak.3o
 @man man/man3/Weak.Make.3o
 @man man/man3/Weak.S.3o
+share/doc/ocaml/Changes
 share/doc/ocaml/html/
 share/doc/ocaml/html/contents_motif.gif
 share/doc/ocaml/html/expr.html
