@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+@bin lib/ocaml/extlib/extLib.cmxs
