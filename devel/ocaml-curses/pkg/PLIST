@@ -1,0 +1,10 @@
+@comment $OpenBSD$
+%%SHARED%%
+lib/ocaml/
+lib/ocaml/curses/
+lib/ocaml/curses/META
+lib/ocaml/curses/curses.cma
+lib/ocaml/curses/curses.cmi
+lib/ocaml/curses/curses.mli
+lib/ocaml/curses/keys.cmi
+lib/ocaml/curses/libcurses_stubs.a
