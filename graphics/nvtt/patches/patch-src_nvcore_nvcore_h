@@ -1,7 +1,8 @@
 $OpenBSD$
+https://code.google.com/p/nvidia-texture-tools/source/detail?r=1156
 http://trac.wildfiregames.com/browser/ps/trunk/libraries/nvtt/issue176.patch
---- src/nvcore/nvcore.h.orig	Wed Jun 20 23:09:16 2012
-+++ src/nvcore/nvcore.h	Wed Jun 20 23:11:39 2012
+--- src/nvcore/nvcore.h.orig	Fri May 14 19:59:28 2010
++++ src/nvcore/nvcore.h	Fri Nov  2 01:24:40 2012
 @@ -38,6 +38,9 @@
  #if defined POSH_OS_LINUX
  #	define NV_OS_LINUX 1
@@ -12,7 +13,31 @@ http://trac.wildfiregames.com/browser/ps/trunk/libraries/nvtt/issue176.patch
  #elif defined POSH_OS_CYGWIN32
  #	define NV_OS_CYGWIN 1
  #elif defined POSH_OS_MINGW
-@@ -158,7 +161,7 @@
+@@ -99,6 +102,23 @@
+ #define NV_ENDIAN_STRING	POSH_ENDIAN_STRING
+ 
+ 
++// Type definitions:
++typedef posh_u8_t   uint8;
++typedef posh_i8_t   int8;
++
++typedef posh_u16_t  uint16;
++typedef posh_i16_t  int16;
++
++typedef posh_u32_t  uint32;
++typedef posh_i32_t  int32;
++
++typedef posh_u64_t  uint64;
++typedef posh_i64_t  int64;
++
++// Aliases
++typedef uint32      uint;
++
++
+ // Version string:
+ #define NV_VERSION_STRING \
+ 	NV_OS_STRING "/" NV_CC_STRING "/" NV_CPU_STRING"/" \
+@@ -158,7 +178,7 @@
  #elif NV_CC_GNUC
  #	if NV_OS_LINUX
  #		include "DefsGnucLinux.h"
