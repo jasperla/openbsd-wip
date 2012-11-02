@@ -77,7 +77,7 @@ RUN_DEPENDS =	misc/shared-mime-info \
 
 LIB_DEPENDS =	archivers/bzip2 \
 		archivers/xz \
-		databases/soprano>=2.8.0 \
+		STEM->={SOPRANO_VERSION}:databases/soprano \
 		databases/strigi \
 		devel/pcre \
 		graphics/jasper \
@@ -88,7 +88,7 @@ LIB_DEPENDS =	archivers/bzip2 \
 		textproc/aspell/core \
 		textproc/enchant \
 		textproc/libxslt \
-		x11/kde4/attica>=0.4.0 \
+		STEM->={ATTICA_VERSION}:x11/kde4/attica \
 		x11/dbusmenu-qt \
 		x11/polkit-qt4
 
