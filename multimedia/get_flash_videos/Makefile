@@ -7,6 +7,7 @@ PKGNAME=		get_flash_videos-1.24.20121020
 #DISTNAME=		monsieurvideo-get-flash-videos-v1.24_02-292-gc52cdf6
 #PKGNAME=		get_flash_videos-1.24.20121012
 #WRKDIST=		${WRKDIR}/monsieurvideo-get-flash-videos-c52cdf6
+REVISION=		0
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://get-flash-videos.googlecode.com/
@@ -35,7 +36,9 @@ RUN_DEPENDS=		devel/p5-Term-ReadKey \
 			security/p5-Crypt-Blowfish_PP \
 			security/p5-Crypt-Rijndael \
 			textproc/p5-XML-Simple \
+			security/p5-IO-Socket-SSL \
 			www/p5-libwww \
+			www/p5-LWP-Protocol-https \
 			www/p5-LWP-Protocol-socks \
 			www/p5-URI \
 			www/p5-WWW-Mechanize
