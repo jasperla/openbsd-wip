@@ -5,6 +5,7 @@
 #
 # For example:
 # net/gnaughty:	ready for import, sent to ports@ (jasperla)
+sysutils/entr			ready for import.
 net/py-boto:		ready for import, sent to maintainer 2012-04-23 (tamentis)
 devel/p5-Test-Most:	ready for import, depends on the update of p5-Test-Warn, did not sent to ports@(wenheping)
 math/p5-Math-GSL:	ready for import, did not sent to ports@, regress depends on devel/p5-Test-Most (wenheping)
