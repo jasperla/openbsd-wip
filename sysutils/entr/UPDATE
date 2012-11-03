@@ -1,0 +1,2 @@
+Update to 1.6 no longer needs pthreads. Support interactive applications by opening a TTY
+
