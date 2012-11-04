@@ -3,6 +3,7 @@
 COMMENT =	K Desktop Environment, KDE4 bindings for Python
 DISTNAME =	pykde4-${MODKDE_VERSION}
 PKGNAME =	py-kde-${MODKDE_VERSION}
+REVISION =	0
 
 MODULES =	lang/python
 
@@ -20,13 +21,13 @@ VMEM_WARNING =  Yes
 
 MODKDE4_USE =	libs pim
 
-BUILD_DEPENDS =	devel/py-sip>=4.13.1 \
+BUILD_DEPENDS =	STEM->=4.14.1:devel/py-sip \
 		misc/shared-desktop-ontologies \
-		x11/py-qt4>=4.9.0 \
+		STEM->=4.9.5:x11/py-qt4 \
 		x11/polkit-qt4
 
 RUN_DEPENDS =	misc/shared-desktop-ontologies \
-		x11/py-qt4>=4.9.0 \
+		STEM->=4.9.5:x11/py-qt4 \
 		x11/polkit-qt4
 
 LIB_DEPENDS = 	databases/soprano
