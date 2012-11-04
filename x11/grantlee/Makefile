@@ -6,9 +6,10 @@ PLIST_VERSION =		${PKG_VERSION:R}
 DISTNAME =		grantlee-${PKG_VERSION}
 CATEGORIES =		devel x11 x11/qt4
 HOMEPAGE =		http://www.gitorious.org/grantlee/
+REVISION =		0
 
-SHARED_LIBS +=		grantlee_core		0.0	# 0.1
-SHARED_LIBS +=		grantlee_gui		0.0	# 0.1
+SHARED_LIBS +=		grantlee_core		1.0	# 0.1
+SHARED_LIBS +=		grantlee_gui		1.0	# 0.1
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
