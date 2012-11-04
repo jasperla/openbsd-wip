@@ -1,8 +1,9 @@
 # $OpenBSD$
 
 COMMENT =		template and text document library for Qt
-DISTNAME =		grantlee-0.2.0
-REVISION =		1
+PKG_VERSION =		0.3.0
+PLIST_VERSION =		0.3
+DISTNAME =		grantlee-${PKG_VERSION}
 CATEGORIES =		devel x11 x11/qt4
 HOMEPAGE =		http://www.gitorious.org/grantlee/
 
@@ -30,6 +31,8 @@ SEPARATE_BUILD =	simple
 
 # Even LDFLAGS doesn't work
 COPTS = 		-lc -lpthread
+
+SUBST_VARS =		PLIST_VERSION
 
 # NOTE: Some regression tests could fail when started by "make regress".
 # Re-run them manually from the command line to check.
