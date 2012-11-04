@@ -189,6 +189,7 @@
      SUBDIR += calligra			# untested
      SUBDIR += libktorrent		# test
      SUBDIR += ktorrent			# test
+     SUBDIR += kile			# test
 
 # additional resources
      SUBDIR += artwork			# OK
