@@ -18,4 +18,6 @@ BUILD_DEPENDS =	misc/shared-desktop-ontologies
 LIB_DEPENDS =	databases/soprano \
 		databases/strigi
 
+RUN_DEPENDS =	databases/virtuoso
+
 .include <bsd.port.mk>
