@@ -3,7 +3,7 @@
 COMMENT =	object-relational SQL database
 DISTNAME =	virtuoso-opensource-6.1.6
 PKGNAME =	${DISTNAME:C/-opensource//}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	databases
 HOMEPAGE =	http://www.openlinksw.com/
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =  ICE MagickCore MagickWand SM X11 Xext Xt bz2 c crypto
-WANTLIB += djvulibre expat fftw3 fl fontconfig freetype iconv
+WANTLIB += djvulibre expat fftw3 fontconfig freetype iconv
 WANTLIB += jasper jbig jpeg lcms2 ltdl lzma m png pthread ssl tiff
 WANTLIB += wmf-0.2 wmflite-0.2 xcb xml2 z
 
