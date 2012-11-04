@@ -43,4 +43,4 @@ lib/cmake/grantlee/GrantleeTargets-noconfig.cmake
 lib/cmake/grantlee/GrantleeTargets.cmake
 lib/cmake/grantlee/GrantleeUse.cmake
 lib/grantlee/
-lib/grantlee/0.2/
+lib/grantlee/${PLIST_VERSION}/
