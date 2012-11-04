@@ -3,6 +3,7 @@
 COMMENT =	K Desktop Environment, quake-style terminal emulator
 HOMEPAGE =	http://yakuake.kde.org/
 DISTNAME =	yakuake-${YAKUAKE_VERSION}
+REVISION =	0
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/yakuake/${YAKUAKE_VERSION}/src/}
 EXTRACT_SUFX =	.tar.xz
@@ -13,5 +14,7 @@ WANTLIB += lib/qt4/QtXml kdeui kio knewstuff3 knotifyconfig kparts nepomuk
 WANTLIB += nepomukutils soprano
 
 RUN_DEPENDS =	x11/kde4/konsole
+
+SUBST_VARS =	PKGNAME
 
 .include <bsd.port.mk>

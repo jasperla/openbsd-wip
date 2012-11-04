@@ -1,7 +1,7 @@
 @comment $OpenBSD$
 @bin bin/yakuake
 share/applications/kde4/yakuake.desktop
-share/apps/kconf_update/${FULLPKGNAME}-startupnotification.pl
+share/apps/kconf_update/${PKGNAME}-startupnotification.pl
 share/apps/kconf_update/yakuake.upd
 share/apps/yakuake/
 share/apps/yakuake/skins/
