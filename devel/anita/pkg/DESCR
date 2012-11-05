@@ -1,6 +1,0 @@
-Anita is an experimental tool for automated testing 
-of the NetBSD operating system. Using anita, you can 
-download a NetBSD distribution and install it in a qemu 
-virtual machine in a fully automated fashion. 
-It's fun to watch, and it has helped find 
-a large number of bugs in NetBSD.
