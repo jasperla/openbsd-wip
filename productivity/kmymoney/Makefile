@@ -5,6 +5,7 @@ HOMEPAGE =		http://kmymoney2.sourceforge.net
 MAINTAINER =		Vadim Zhukov <persgray@gmail.com>
 VERSION =		4.6.3
 DISTNAME =		kmymoney-${VERSION}
+REVISION =		0
 
 SHARED_LIBS =		kmm_kdchart		0.0
 SHARED_LIBS +=		kmm_mymoney		0.0
@@ -22,7 +23,7 @@ WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml alkimia assuan
 WANTLIB += c gmp gpg-error gpgme++-pthread gpgme-pthread ical
 WANTLIB += icalss iconv intl kabc kcmutils kdeui kemoticons kfile
 WANTLIB += kholidays khtml kidletime kio kjs kparts kprintutils
-WANTLIB += kresources kutils m nepomuk nepomukutils ofx osp phonon
+WANTLIB += kresources kutils m nepomuk nepomukutils ofx osp phonon_s
 WANTLIB += pthread qgpgme soprano stdc++ z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=kmymoney2/KMyMoney-KDE4/${VERSION}/}

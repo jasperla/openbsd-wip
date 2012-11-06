@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, base runtime
 DISTNAME =	kde-runtime-${MODKDE_VERSION}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	kwalletbackend 		0.0	# 4.7
 SHARED_LIBS +=	molletnetwork 		0.0	# 4.7
@@ -17,7 +17,7 @@ WANTLIB += attica exiv2 jpeg kactivities kcmutils kdeclarative
 WANTLIB += kdesu kdeui kdewebkit kdnssd kemoticons kfile khtml
 WANTLIB += kio kjs kmediaplayer knewstuff3 knotifyconfig kparts
 WANTLIB += kpty kxmlrpcclient nepomuk nepomukcore nepomukutils
-WANTLIB += phonon plasma solid soprano
+WANTLIB += phonon_s plasma solid soprano
 WANTLIB += glib-2.0 pulse pulse-mainloop-glib smbclient ssh xine canberra
 
 MODKDE4_USE =	libs
@@ -34,7 +34,6 @@ LIB_DEPENDS =	audio/libcanberra \
 		audio/pulseaudio \
 		databases/soprano \
 		graphics/exiv2 \
-		multimedia/phonon \
 		multimedia/xine-lib \
 		net/samba \
 		security/libssh \

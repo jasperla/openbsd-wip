@@ -17,6 +17,10 @@ PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 PKGNAME-vkontakte =	libkvkontakte-1.0.0
 
+REVISION-geomap =	0
+REVISION-kipi =		0
+REVISION-main =		0
+
 EXTRACT_SUFX =		.tar.bz2
 
 SHARED_LIBS =	kipiplugins		0.0
@@ -51,7 +55,7 @@ WANTLIB-face =	${WANTLIB-common} ${WANTLIB-opencv}
 WANTLIB-geomap =  ${WANTLIB-common}
 WANTLIB-geomap += lib/qt4/QtNetwork lib/qt4/QtXml
 WANTLIB-geomap += khtml kio kjs kparts marblewidget nepomuk nepomukutils
-WANTLIB-geomap += phonon soprano
+WANTLIB-geomap += phonon_s soprano
 
 WANTLIB-kipi =  ${WANTLIB-common} ${WANTLIB-opencv} ${MODGETTEXT_WANTLIB}
 WANTLIB-kipi += lib/qt4/QtNetwork lib/qt4/QtOpenGL lib/qt4/QtXmlPatterns
@@ -60,7 +64,7 @@ WANTLIB-kipi += GL GLU ICE SM X11 Xext Xrandr expat exslt gdk_pixbuf-2.0
 WANTLIB-kipi += glib-2.0 gmodule-2.0 gobject-2.0 gpod gthread-2.0 jpeg
 WANTLIB-kipi += kcalcore kdcraw kexiv2 kfile kgeomap khtml kio kipi
 WANTLIB-kipi += kjs kparts ksane kvkontakte mediawiki nepomuk nepomukutils
-WANTLIB-kipi += phonon png qca2 qjson solid soprano threadweaver tiff
+WANTLIB-kipi += phonon_s png qca2 qjson solid soprano threadweaver tiff
 WANTLIB-kipi += xml2 xslt z
 
 WANTLIB-main =  ${WANTLIB-common}
@@ -70,7 +74,7 @@ WANTLIB-main += ICE SM X11 Xext glib-2.0 gphoto2 gphoto2_port jasper
 WANTLIB-main += jpeg kabc kcmutils kdcraw kemoticons kexiv2 kface kfile
 WANTLIB-main += kgeomap khtml kidletime kio kipi kjs knotifyconfig
 WANTLIB-main += kparts kprintutils kresources kutils lcms lqr-1 nepomuk
-WANTLIB-main += nepomukutils pgf phonon png solid soprano sopranoclient
+WANTLIB-main += nepomukutils pgf phonon_s png solid soprano sopranoclient
 WANTLIB-main += tiff usb z
 
 WANTLIB-mediawiki =  ${WANTLIB-common}
@@ -126,7 +130,6 @@ LIB_DEPENDS-kipi =	${LIB_DEPENDS-common} \
 			graphics/opencv>=2.4.1 \
 			graphics/png \
 			graphics/tiff \
-			multimedia/phonon \
 			security/qca2 \
 			x11/kde4/libkdcraw \
 			x11/kde4/libkexiv2 \

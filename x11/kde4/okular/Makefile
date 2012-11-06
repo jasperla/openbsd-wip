@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, document viewer
 DISTNAME =	okular-${MODKDE_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	okularcore		0.0	# 1.7
 
@@ -11,7 +11,7 @@ WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += kdeui khtml kio
 WANTLIB += kjs kjsapi kparts kprintutils kpty nepomuk
-WANTLIB += nepomukutils phonon qimageblitz soprano solid threadweaver
+WANTLIB += nepomukutils phonon_s qimageblitz soprano solid threadweaver
 WANTLIB += chm djvulibre epub freetype poppler-qt4 qca2 spectre
 WANTLIB += jpeg tiff
 

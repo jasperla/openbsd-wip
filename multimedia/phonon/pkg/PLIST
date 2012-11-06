@@ -167,12 +167,10 @@ lib/cmake/phonon/PhononConfig.cmake
 lib/cmake/phonon/PhononConfigVersion.cmake
 lib/cmake/phonon/PhononTargets${MODKDE4_CMAKE_PREFIX}.cmake
 lib/cmake/phonon/PhononTargets.cmake
-@lib lib/libphonon.so.${LIBphonon_VERSION}
+@lib lib/libphonon_s.so.${LIBphonon_s_VERSION}
 @lib lib/libphononexperimental.so.${LIBphononexperimental_VERSION}
 lib/pkgconfig/phonon.pc
 lib/qt4/mkspecs/modules/qt_phonon.pri
-@comment conflicts with native Qt's plugin
-@comment lib/qt4/plugins/designer/libphononwidgets.so
 share/dbus-1/interfaces/org.kde.Phonon.AudioOutput.xml
 share/phonon/
 share/phonon/buildsystem/

@@ -1,11 +1,17 @@
 # $OpenBSD$
 
 CATEGORIES =	devel
-COMMENT =	K Desktop Environment, Qt4 bindings for .NET/Mono
+COMMENT =	Qt4 bindings for .NET/Mono
 DISTNAME =	qyoto-${MODKDE_VERSION}
-BROKEN =	lang/mono is not building on amd64
+REVISION =	0
 
-SHARED_LIBS =	qyoto			0.0 # 2.0
+SHARED_LIBS =	qyoto			1.0 # 2.0
+SHARED_LIBS +=	phonon-sharp		1.0
+SHARED_LIBS +=	qscintilla-sharp	1.0
+SHARED_LIBS +=	qtscript-sharp		1.0
+SHARED_LIBS +=	qttest-sharp		1.0
+SHARED_LIBS +=	qtuitools-sharp		1.0
+SHARED_LIBS +=	qtwebkit-sharp		1.0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
@@ -21,8 +27,9 @@ MODULES =	lang/mono
 MODKDE4_USE =
 
 LIB_DEPENDS =	editors/qscintilla \
-		x11/kde4/qimageblitz \
 		x11/kde4/smokeqt
+
+CONFIGURE_ARGS =	-DPHONON_INCLUDE_DIR:String=${MODQT4_INCDIR}
 
 NO_REGRESS =	Yes
 

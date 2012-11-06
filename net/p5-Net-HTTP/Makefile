@@ -5,6 +5,7 @@ COMMENT =	Perl HTTP connection client
 DISTNAME =	Net-HTTP-6.03
 CATEGORIES =	net
 CPAN_AUTHOR =	GAAS
+REVISION=	0
 
 MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
