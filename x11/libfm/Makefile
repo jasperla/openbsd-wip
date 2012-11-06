@@ -2,7 +2,7 @@
 
 COMMENT=	a library to provide file related widgets for pcmanfm
 
-DISTNAME=	libfm-1.0
+DISTNAME=	libfm-1.1.0
 
 CATEGORIES=	x11
 
@@ -28,20 +28,18 @@ WANTLIB += gtk-x11-2.0 menu-cache pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
 WANTLIB += xcb-shm z
 
+BUILD_DEPENDS=	textproc/intltool
 LIB_DEPENDS=	devel/glib2 \
 		graphics/libexif \
-		textproc/intltool \
 		x11/gtk+2 \
 		x11/libmenu-cache
 
 MODULES=	devel/gettext
 USE_LIBTOOL=	Yes
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE= gnu
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
-
-CONFIGURE_ARGS=	--sysconfdir=${SYSCONFDIR}
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/libfm
 
