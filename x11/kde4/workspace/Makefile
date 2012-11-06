@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, workspace
 DISTNAME =	kde-workspace-${MODKDE_VERSION}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	kdecorations			0.0 # 4.7
 SHARED_LIBS +=	kephal				0.0 # 4.7
@@ -51,7 +51,7 @@ WANTLIB += kdesu kdewebkit kdeui kfile kholidays khtml
 WANTLIB += kidletime kio kjs kmime knewstuff3 knotifyconfig kparts
 WANTLIB += kpimutils kpty kresources krosscore ktexteditor
 WANTLIB += kunitconversion microblog nepomuk nepomukquery nepomukutils
-WANTLIB += phonon>=6 plasma qimageblitz solid soprano streamanalyzer
+WANTLIB += phonon_s plasma qimageblitz solid soprano streamanalyzer
 WANTLIB += strigiqtdbusclient threadweaver syndication
 
 WANTLIB += ck-connector cln dbus-1 dbusmenu-qt ggadget-1.0 ggadget-qt-1.0
@@ -74,7 +74,6 @@ LIB_DEPENDS =	audio/xmms \
 		math/qalculate/libqalculate \
 		misc/google-gadgets,-qt \
 		misc/gpsd \
-		multimedia/phonon \
 		sysutils/consolekit \
 		x11/dbusmenu-qt \
 		x11/kde4/kactivities \

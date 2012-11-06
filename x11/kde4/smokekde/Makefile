@@ -3,7 +3,7 @@
 CATEGORIES =	devel
 COMMENT =	K Desktop Environment, introspective wrappers around KDE
 DISTNAME =	smokekde-${MODKDE_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	smokeakonadi		0.0 # 3.0
 SHARED_LIBS +=	smokeattica		0.0 # 3.0
@@ -34,7 +34,7 @@ WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += attica kateinterfaces kcmutils kde3support kdeui
 WANTLIB += kemoticons kfile khtml kidletime kio kjs knewstuff2
 WANTLIB += knewstuff3 kparts kprintutils ktexteditor nepomuk
-WANTLIB += nepomukquery nepomukutils okularcore phonon plasma smokebase
+WANTLIB += nepomukquery nepomukutils okularcore phonon_s plasma smokebase
 WANTLIB += smokeqtcore smokeqtdbus smokeqtgui smokeqtnetwork smokeqtsvg
 WANTLIB += smokeqtxml solid soprano sopranoclient sopranoserver
 WANTLIB += akonadi-contact akonadi-kabc akonadi-kde akonadi-kmime

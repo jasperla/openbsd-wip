@@ -4,6 +4,7 @@ COMMENT =		K Desktop Environment, ruby bindings for Qt4
 V =			4.7.3
 DISTNAME =		qtruby-${V}
 CATEGORIES =		x11
+REVISION =		0
 
 SHARED_LIBS +=  qtruby4shared             0.0 # 2.0
 
@@ -21,8 +22,8 @@ EXTRACT_SUFX =		.tar.bz2
 MODULES =		x11/qt4 lang/ruby devel/cmake
 
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui lib/qt4/QtNetwork
-WANTLIB += lib/qt4/QtScript lib/qt4/QtWebKit lib/qt4/QtXml c m phonon pthread
-WANTLIB += ruby19 stdc++
+WANTLIB += lib/qt4/QtScript lib/qt4/QtWebKit lib/qt4/QtXml lib/qt4/phonon
+WANTLIB += c m pthread ruby19 stdc++
 
 BUILD_DEPENDS =		x11/kde4/automoc \
 			lang/ruby/1.9

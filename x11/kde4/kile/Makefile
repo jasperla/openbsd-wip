@@ -3,6 +3,7 @@
 COMMENT =	user-friendly TeX/LaTex editor for KDE
 HOMEPAGE =	http://kile.sourceforge.net/
 DISTNAME =	kile-${KILE_VERSION}
+REVISION =	0
 
 CATEGORIES =	textproc
 
@@ -14,7 +15,7 @@ WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtScript lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += kdeui kfile khtml kio kjs kparts krosscore ktexteditor
-WANTLIB += nepomuk nepomukutils phonon soprano
+WANTLIB += nepomuk nepomukutils phonon_s soprano
 
 LIB_DEPENDS =	x11/kde4/libs
 
