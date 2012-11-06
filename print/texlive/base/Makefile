@@ -46,11 +46,17 @@ CONFIGURE_STYLE =	gnu
 
 # Don't put ${PREFIX}/include in CPPFLAGS or system icu .h's are picked up
 # TeX Live uses a modified version of icu.
-#
-# Also, bug in ICU build system (U_PF_BSD)
+CPPFLAGS =	-I${X11BASE}/include \
+		-I${TRUEPREFIX}/include/poppler
+
+# Bug in ICU build system
 # http://tug.org/pipermail/tlbuild/2012q2/002348.html
+CPPFLAGS +=	-DU_PLATFORM=U_PF_BSD 
+
+# Big endian ICU bug
+# http://tug.org/pipermail/tlbuild/2012q2/002266.html
 CONFIGURE_ENV +=	TL_MAKE=${GMAKE} \
-			CPPFLAGS="-I${TRUEPREFIX}/include/poppler -I${X11BASE}/include -DU_PLATFORM=U_PF_BSD"
+			CPPFLAGS="${CPPFLAGS}"
 
 WRKBUILD =              ${WRKSRC}/Work # Can't build in same dir
 CONFIGURE_SCRIPT =      ../configure
