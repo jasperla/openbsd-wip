@@ -1,0 +1,19 @@
+$OpenBSD$
+--- configure.orig	Tue Nov  6 05:22:11 2012
++++ configure	Tue Nov  6 05:22:22 2012
+@@ -4388,12 +4388,13 @@ _ACEOF
+   LIBS="-lrt $LIBS"
+ 
+ else
+-  as_fn_error $? "_POSIX_TIMERS suggests clock_gettime should work but it seems not to work, though" "$LINENO" 5
++  #as_fn_error $? "_POSIX_TIMERS suggests clock_gettime should work but it seems not to work, though" "$LINENO" 5
++  $as_echo "Using -lrt suggests we are on Linux, but we're apparently not"
+ fi
+ 
+ fi
+ 
+-for ac_func in strndup asprintf socket
++for ac_func in clock_gettime strndup asprintf socket
+ do :
+   as_ac_var=`$as_echo "ac_cv_func_$ac_func" | $as_tr_sh`
+ ac_fn_c_check_func "$LINENO" "$ac_func" "$as_ac_var"
