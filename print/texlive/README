@@ -8,17 +8,17 @@ TeX Live 2012 - Porting progress
  * Get base compilers working:			OK
  * Test build works.				
    -> amd64					OK
-   -> i386					
-   -> sparc64					
+   -> i386					?
+   -> sparc64					OK
  * Do texmf split (see texmf/files/rblatter)	OK
  * Split out conTeXt (use grep)			OK
  * Move manuals and pdf manuals			OK
    -> All texmf manuals in -minimal		OK
- * Remove external deps				
-   -> texworks					
-   -> latexmk					
-   -> asymptote					
- * Remove windows junk				
+ * Remove external deps				OK
+   -> texworks					OK
+   -> latexmk					OK
+   -> asymptote					OK
+ * Remove windows junk				OK
  * Get basic texmf packaging:			OK
  * Re-add depenedencies:			OK
  * Hack texmf.cnf				OK
@@ -28,10 +28,10 @@ TeX Live 2012 - Porting progress
  * Take perl modules from extra texmf needed for updmap	OK
  * Generate texmf-var pregen			OK
    (all as root) 'mktexlsr', 'fmtutil-sys --all',
-     'updmap-sys', rm ls-R and tar up texmf-var OK
- * Apply any security/reliability patches	
+     'updmap-sys', rm ls-R and tar up texmf-var
+ * Apply any security/reliability patches	OK
    Search here: http://tug.org/pipermail/tldistro/
- * @comment manpages conflicting with t1utils	
+ * @comment manpages conflicting with t1utils	OK
 
 Known Issues
 ============
