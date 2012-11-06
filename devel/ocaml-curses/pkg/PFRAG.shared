@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-lib/ocaml/stublibs/
-lib/ocaml/stublibs/dllcurses_stubs.so
-@comment lib/ocaml/stublibs/dllcurses_stubs.so.owner

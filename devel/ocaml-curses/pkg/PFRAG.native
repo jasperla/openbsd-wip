@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-lib/ocaml/curses/curses.a
-lib/ocaml/curses/curses.cmxa
