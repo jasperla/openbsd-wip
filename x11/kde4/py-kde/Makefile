@@ -3,7 +3,7 @@
 COMMENT =	K Desktop Environment, KDE4 bindings for Python
 DISTNAME =	pykde4-${MODKDE_VERSION}
 PKGNAME =	py-kde-${MODKDE_VERSION}
-REVISION =	0
+REVISION =	1
 
 MODULES =	lang/python
 
@@ -14,7 +14,7 @@ WANTLIB += akonadi-kde akonadi-kmime
 WANTLIB += kcmutils kdeui kdnssd kemoticons kfile khtml
 WANTLIB += kidletime kio kjs knewstuff2 knewstuff3 kparts kprintutils
 WANTLIB += kpty ktexteditor kutils nepomuk nepomukquery nepomukutils
-WANTLIB += phonon plasma solid soprano sopranoclient sopranoserver
+WANTLIB += phonon_s plasma solid soprano sopranoclient sopranoserver
 WANTLIB += ${MODPY_WANTLIB}
 
 VMEM_WARNING =  Yes

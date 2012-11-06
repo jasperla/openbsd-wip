@@ -3,6 +3,7 @@
 COMMENT =	K Desktop Environment, torrent client
 DISTNAME =	ktorrent-${KTORRENT_VERSION}
 HOMEPAGE =	http://ktorrent.org/
+REVISION =	0
 
 EXTRACT_SUFX =	.tar.bz2
 
@@ -14,7 +15,7 @@ WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml
 WANTLIB += kcmutils kdeui kdewebkit kdnssd kemoticons kidletime kio
 WANTLIB += knotifyconfig kparts kprintutils krosscore ktorrent kutils
-WANTLIB += kworkspace nepomuk nepomukutils phonon plasma solid soprano
+WANTLIB += kworkspace nepomuk nepomukutils phonon_s plasma solid soprano
 WANTLIB += syndication tag
 
 MASTER_SITES =	${HOMEPAGE}downloads/${KTORRENT_VERSION}/

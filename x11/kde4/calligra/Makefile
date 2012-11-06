@@ -3,7 +3,7 @@
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	http://www.calligra-suite.org/
 DISTNAME =	calligra-${CALLIGRA_VERSION}
-REVISION =	3
+REVISION =	4
 
 EXTRACT_SUFX =	.tar.bz2
 
@@ -64,7 +64,7 @@ WANTLIB += kcal kcalcore kcmutils kdcraw kde3support kdeclarative
 WANTLIB += kdeui kfile khtml kio kjs kmime knewstuff3 knotifyconfig
 WANTLIB += kparts kpimutils kresources krosscore krossui ktexteditor
 WANTLIB += lcms2 marblewidget mysqlclient nepomuk nepomukutils
-WANTLIB += okularcore openjpeg phonon png poppler poppler-qt4
+WANTLIB += okularcore openjpeg phonon_s png poppler poppler-qt4
 WANTLIB += qca2 soprano sqlite3 sybdb threadweaver tiff z
 
 # kexi needs headers in postgresql,{-main,-server}
