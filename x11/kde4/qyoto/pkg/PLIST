@@ -16,12 +16,12 @@ include/qyoto/slotreturnvalue.h
 include/qyoto/smokeqyoto.h
 include/qyoto/virtualmethodcall.h
 include/qyoto/virtualmethodreturnvalue.h
-lib/libphonon-sharp.so
-lib/libqscintilla-sharp.so
-lib/libqtscript-sharp.so
-lib/libqttest-sharp.so
-lib/libqtuitools-sharp.so
-lib/libqtwebkit-sharp.so
+@lib lib/libphonon-sharp.so.${LIBphonon-sharp_VERSION}
+@lib lib/libqscintilla-sharp.so.${LIBqscintilla-sharp_VERSION}
+@lib lib/libqtscript-sharp.so.${LIBqtscript-sharp_VERSION}
+@lib lib/libqttest-sharp.so.${LIBqttest-sharp_VERSION}
+@lib lib/libqtuitools-sharp.so.${LIBqtuitools-sharp_VERSION}
+@lib lib/libqtwebkit-sharp.so.${LIBqtwebkit-sharp_VERSION}
 @lib lib/libqyoto.so.${LIBqyoto_VERSION}
 lib/mono/gac/phonon/
 lib/mono/gac/phonon/4.4.0.0__194a23ba31c08164/
