@@ -1,0 +1,35 @@
+$OpenBSD$
+
+Was this code ever compiled, or tested???
+
+--- src/xwin.c.orig	Tue Nov  6 22:31:55 2012
++++ src/xwin.c	Tue Nov  6 23:00:35 2012
+@@ -245,8 +245,9 @@ static int vidmodecount;
+ 
+ static int sortfn (const void *a, const void *b)
+ {
+-    XF86VidModeInfo **ppa = a, *ppb = b;
+-    XF86VidModeInfo *pa = *ppa, *pb = *ppb;
++    XF86VidModeModeInfo **ppa = a, **ppb = b;
++    XF86VidModeModeInfo *pa = *ppa, *pb = *ppb;
++    
+     if (pa->hdisplay != pb->hdisplay)
+ 	return pa->hdisplay - pb->hdisplay;
+     return pa->vdisplay - pb->vdisplay;
+@@ -259,13 +260,13 @@ static int get_vidmodes (void)
+     if (!XF86VidModeGetAllModeLines (display, screen, &vidmodecount, &allmodes))
+ 	return 0;
+ 
+-    qsort (allmodes, vidmodecount, sizeof *allmode, sortfn);
++    qsort (allmodes, vidmodecount, sizeof *allmodes, sortfn);
+ 
+     gfx_fullscreen_modes = sizeof (struct uae_rect) * vidmodecount;
+     n_fullscreen_modes = vidmodecount;
+     for (i = 0; i < vidmodecount; i++) {
+-	gfx_fullscreen_modes[i].w = allmodes[i].hdisplay;
+-	gfx_fullscreen_modes[i].h = allmodes[i].vdisplay;
++	gfx_fullscreen_modes[i].w = allmodes[i]->hdisplay;
++	gfx_fullscreen_modes[i].h = allmodes[i]->vdisplay;
+     }
+ }
+ #endif

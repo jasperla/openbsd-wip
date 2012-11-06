@@ -1,0 +1,12 @@
+$OpenBSD$
+--- configure.orig	Thu Nov  1 00:30:03 2012
++++ configure	Thu Nov  1 00:30:53 2012
+@@ -11774,7 +11774,7 @@ done
+ 
+ 
+ # Determine how to get the list of mounted filesystems.
+-list_mounted_fs=
++list_mounted_fs=no
+ 
+ # If the getmntent function is available but not in the standard library,
+ # make sure LIBS contains -lsun (on Irix4) or -lseq (on PTX).

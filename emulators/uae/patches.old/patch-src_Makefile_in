@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_Makefile_in,v 1.3 2007/10/08 13:45:53 fgsch Exp $
+--- src/Makefile.in.orig	Thu Oct  4 11:25:12 2007
++++ src/Makefile.in	Thu Oct  4 11:25:38 2007
+@@ -100,11 +100,11 @@ blittable.c: tools/genblitter blitfunc.h
+ 	./tools/genblitter t >blittable.c
+ 
+ tools/genblitter:
+-	$(MAKE) -C tools genblitter
++	cd tools && $(MAKE) genblitter
+ tools/build68k:
+-	$(MAKE) -C tools build68kc
++	cd tools && $(MAKE) build68kc
+ tools/gencpu: 
+-	$(MAKE) -C tools gencpu
++	cd tools && $(MAKE) gencpu
+ 
+ custom.o: blit.h
+ drawing.o: linetoscr.c
