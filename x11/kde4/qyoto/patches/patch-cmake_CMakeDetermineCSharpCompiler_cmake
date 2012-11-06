@@ -1,0 +1,12 @@
+$OpenBSD$
+CMAKE_FILES_DIRECTORY isn't documented so we can expect more breakage here.
+Don't fully understand what's going there.
+--- cmake/CMakeDetermineCSharpCompiler.cmake.orig	Tue Nov  6 18:49:55 2012
++++ cmake/CMakeDetermineCSharpCompiler.cmake	Tue Nov  6 18:49:40 2012
+@@ -85,5 +85,5 @@ get_filename_component(script_dir ${CMAKE_CURRENT_LIST
+ 
+ # configure variables set in this file for fast reload later on
+ configure_file(${script_dir}/CMakeCSharpCompiler.cmake.in
+-  ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/CMakeCSharpCompiler.cmake IMMEDIATE @ONLY)
++  ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/${CMAKE_VERSION}/CMakeCSharpCompiler.cmake IMMEDIATE @ONLY)
+ set(CMAKE_CSharp_COMPILER_ENV_VAR "CSC")
