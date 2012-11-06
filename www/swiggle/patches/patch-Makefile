@@ -1,0 +1,23 @@
+$OpenBSD$
+--- Makefile.orig	Wed Oct 22 23:01:18 2003
++++ Makefile	Mon Nov  5 08:49:51 2012
+@@ -5,8 +5,8 @@ CC = gcc
+ PROGRAM = swiggle
+ OBJS = swiggle.o resize.o html.o
+ HEADER = swiggle.h
+-CFLAGS += -Wall -I/usr/local/include -I/usr/local/include/libexif
+-LDFLAGS += -L/usr/local/lib -ljpeg -lexif
++CFLAGS += -Wall -I${LOCALBASE}/include -I${LOCALBASE}/include/libexif
++LDFLAGS += -L${LOCALBASE}/lib -ljpeg -lexif
+ 
+ all: ${PROGRAM}
+ 
+@@ -16,7 +16,7 @@ ${PROGRAM}: ${OBJS}
+ ${OBJS}: ${HEADER}
+ 
+ install:
+-	install -c -o 0 -g 0 -s swiggle /usr/local/bin
++	install -c -o 0 -g 0 -s swiggle ${PREFIX}/bin
+ 
+ clean:
+	rm -f *.o *.core ${PROGRAM}
