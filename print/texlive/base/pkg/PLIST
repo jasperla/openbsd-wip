@@ -380,6 +380,7 @@ lib/libkpathsea.a
 lib/libkpathsea.la
 lib/libptexenc.a
 lib/libptexenc.la
+libdata/perl5/site_perl/TeXLive/
 libdata/perl5/site_perl/TeXLive/TLConfig.pm
 libdata/perl5/site_perl/TeXLive/TLUtils.pm
 share/doc/pkg-readmes/${FULLPKGNAME}
