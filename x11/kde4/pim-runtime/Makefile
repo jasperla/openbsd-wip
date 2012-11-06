@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, PIM runtime support
 DISTNAME =	kdepim-runtime-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =		akonadi-filestore	0.0 # 4.7
 SHARED_LIBS +=		akonadi-xml		0.0 # 4.7
@@ -20,7 +21,7 @@ WANTLIB += kalarmcal kcal kcalcore kcalutils kcmutils kdewebkit
 WANTLIB += kdeui kgapi kidletime kimap kio
 WANTLIB += kmbox kmime knewstuff3 knotifyconfig kparts kpimidentities
 WANTLIB += kpimtextedit kpimutils kresources krosscore
-WANTLIB += mailtransport microblog nepomuk nepomukutils phonon qjson
+WANTLIB += mailtransport microblog nepomuk nepomukutils phonon_s qjson
 WANTLIB += solid soprano streamanalyzer streams
 
 BUILD_DEPENDS =		devel/boost \
@@ -29,7 +30,6 @@ BUILD_DEPENDS =		devel/boost \
 LIB_DEPENDS =		databases/soprano \
 			databases/strigi \
 			devel/qjson \
-			multimedia/phonon \
 			x11/kde4/akonadi \
 			x11/kde4/libkgapi>=0.4.0 \
 			STEM->=${MODKDE4_VERSION}:x11/kde4/pimlibs

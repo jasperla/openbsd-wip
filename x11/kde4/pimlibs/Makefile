@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, libraries for PIM
 DISTNAME =	kdepimlibs-${MODKDE_VERSION}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	kabc                 5.0      # .4.0
 SHARED_LIBS +=	kabc_file_core       0.0      # .4.0
@@ -43,7 +43,7 @@ WANTLIB += lib/qt4/QtSvg lib/qt4/QtTest lib/qt4/QtXml
 WANTLIB += akonadiprotocolinternals
 WANTLIB += assuan c e2fs-uuid gpg-error gpgme gpgme-pthread ical icalss
 WANTLIB += kcmutils kdeui kemoticons kio kparts lber ldap m nepomuk
-WANTLIB += nepomukutils phonon prison pthread sasl2 solid soprano stdc++
+WANTLIB += nepomukutils phonon_s prison pthread sasl2 solid soprano stdc++
 
 MODULES =	devel/gettext
 

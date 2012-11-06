@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, games
 DISTNAME =	kdegames-${MODKDE_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	kdegames             5.0      # .4.0
 SHARED_LIBS +=	kmahjongglib         0.0      # .1.0
@@ -16,15 +16,14 @@ WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtOpenGL
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml 
 WANTLIB += kdeui kdnssd kfile kio knewstuff3
-WANTLIB += knotifyconfig phonon>=6
+WANTLIB += knotifyconfig phonon_s
 WANTLIB += openal qca2 sndfile
 
 # Make sure some defines get right.
 # To be fixed when some stuff got out of x11/kde4.
 MODULES =	x11/kde4 lang/python
 
-LIB_DEPENDS =	multimedia/phonon \
-		audio/openal \
+LIB_DEPENDS =	audio/openal \
 		audio/libsndfile \
 		devel/py-twisted/core \
 		math/qhull \

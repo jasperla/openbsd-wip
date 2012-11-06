@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, web development
 DISTNAME =	kdewebdev-${MODKDE_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	klinkstatuscommon	0.0
 SHARED_LIBS +=	kommandercore		0.0
@@ -14,7 +14,7 @@ WANTLIB += lib/qt4/QtNetwork lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += kcmutils kde3support kdeui kemoticons khtml
 WANTLIB += kidletime kio kjs kmime knewstuff2 kparts kpimidentities
 WANTLIB += kprintutils krossui kutils mailtransport nepomuk
-WANTLIB += nepomukutils phonon soprano threadweaver tidyp
+WANTLIB += nepomukutils phonon_s soprano threadweaver tidyp
 
 MODULES =	lang/ruby
 

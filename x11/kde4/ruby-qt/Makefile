@@ -5,15 +5,15 @@ COMMENT =	K Desktop Environment, Qt4 bindings for Ruby
 DISTNAME =	qtruby-${MODKDE_VERSION}
 PKGNAME =	ruby-qt-${MODKDE_VERSION}
 HOMEPAGE =	http://techbase.kde.org/Development/Languages/Ruby
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	qtruby4shared		0.0 # 2.0
 
 WANTLIB =  c m stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtWebKit
-WANTLIB += lib/qt4/QtXml
-WANTLIB += phonon qscintilla2 smokebase smokephonon smokeqsci smokeqtcore
+WANTLIB += lib/qt4/QtXml lib/qt4/phonon
+WANTLIB += qscintilla2 smokebase smokephonon smokeqsci smokeqtcore
 WANTLIB += smokeqtdbus smokeqtdeclarative smokeqtgui smokeqtnetwork
 WANTLIB += smokeqtopengl smokeqtscript smokeqtsql smokeqtsvg
 WANTLIB += smokeqttest smokeqtuitools smokeqtwebkit smokeqtxml smokeqwt

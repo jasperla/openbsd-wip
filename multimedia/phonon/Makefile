@@ -5,10 +5,10 @@ CATEGORIES =	multimedia devel x11/kde4
 VERSION =	4.6.0
 DISTNAME =	phonon-${VERSION}
 HOMEPAGE =	http://phonon.kde.org/
-REVISION =	1
+REVISION =	2
 
-# Higher than one in Qt4 to avoid issues
-SHARED_LIBS =	phonon			7.0
+# Renamed to avoid clashing with Qt4's one
+SHARED_LIBS =	phonon_s		0.0
 SHARED_LIBS +=	phononexperimental	2.0
 
 # LGPL v2.1
@@ -31,7 +31,11 @@ WANTLIB +=	pulse pulse-mainloop-glib qzeitgeist
 LIB_DEPENDS =	productivity/libqzeitgeist>=0.8.0 \
 		audio/pulseaudio
 
+# Not sure if it's needed at all but doesn't hurt either for now.
 CONFIGURE_ARGS =	-DPHONON_INSTALL_QT_EXTENSIONS_INTO_SYSTEM_QT:Bool=Yes
+
+# Clashes with the one provided by Qt itself.
+CONFIGURE_ARGS +=	-DPHONON_BUILD_DESIGNER_PLUGIN:Bool=No
 
 # Upstream says, tests need to be redone.
 NO_REGRESS =	Yes

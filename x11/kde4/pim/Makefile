@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, personal information management
 DISTNAME =	kdepim-${MODKDE_VERSION}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	akonadi_next 0.0
 SHARED_LIBS +=	akregatorinterfaces 0.0
@@ -57,7 +57,7 @@ WANTLIB += kdnssd kfile kholidays khtml kimap kio kjs kldap
 WANTLIB += kmbox kmime knewstuff3 knotifyconfig kontactinterface kparts
 WANTLIB += kpimidentities kpimtextedit kpimutils kprintutils kresources
 WANTLIB += ktexteditor ktnef mailtransport nepomuk nepomukquery
-WANTLIB += nepomukutils phonon plasma solid soprano
+WANTLIB += nepomukutils phonon_s plasma solid soprano
 WANTLIB += streamanalyzer streams syndication
 WANTLIB += assuan gpg-error gpgme++ gpgme++-pthread gpgme-pthread
 WANTLIB += grantlee_core grantlee_gui qgpgme sasl2 prison

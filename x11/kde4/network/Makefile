@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, network
 DISTNAME =	kdenetwork-${MODKDE_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	kgetcore		0.0 # 4.0
 SHARED_LIBS +=	kopete			3.0 # 4.0
@@ -30,11 +30,11 @@ WANTLIB += gadu glib-2.0 gpg-error gpgme++-pthread gpgme-pthread idn
 WANTLIB += kemoticons kfile khtml kidletime kio kjs knewstuff2
 WANTLIB += knotifyconfig konq kparts kpimidentities kprintutils
 WANTLIB += kresources ktexteditor kutils meanwhile
-WANTLIB += nepomuk nepomukutils plasma qca2 qgpgme
+WANTLIB += nepomuk nepomukutils plasma phonon_s qca2 qgpgme
 WANTLIB += qimageblitz solid soprano mms kworkspace
 WANTLIB += assuan jasper jpeg otr xml2 xmms xslt ktorrent
 
-MODULES =	devel/gettext multimedia/phonon
+MODULES =	devel/gettext
 
 MODKDE4_USE =	pim workspace
 
