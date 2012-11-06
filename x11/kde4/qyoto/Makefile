@@ -3,6 +3,7 @@
 CATEGORIES =	devel
 COMMENT =	Qt4 bindings for .NET/Mono
 DISTNAME =	qyoto-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	qyoto			1.0 # 2.0
 SHARED_LIBS +=	phonon-sharp		1.0
@@ -26,7 +27,6 @@ MODULES =	lang/mono
 MODKDE4_USE =
 
 LIB_DEPENDS =	editors/qscintilla \
-		x11/kde4/qimageblitz \
 		x11/kde4/smokeqt
 
 CONFIGURE_ARGS =	-DPHONON_INCLUDE_DIR:String=${MODQT4_INCDIR}
