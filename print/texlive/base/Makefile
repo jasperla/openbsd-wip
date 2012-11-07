@@ -6,7 +6,7 @@ DISTNAME =		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			texlive-${DIST_V}-extra${EXTRACT_SUFX}               
+			texlive-${DIST_V}-extra${EXTRACT_SUFX}
 
 SHARED_LIBS =		kpathsea	5.0
 SHARED_LIBS +=		ptexenc		2.0
@@ -51,7 +51,7 @@ CPPFLAGS =	-I${X11BASE}/include \
 
 # Bug in ICU build system
 # http://tug.org/pipermail/tlbuild/2012q2/002348.html
-CPPFLAGS +=	-DU_PLATFORM=U_PF_BSD 
+CPPFLAGS +=	-DU_PLATFORM=U_PF_BSD
 
 # Big endian ICU bug
 # http://tug.org/pipermail/tlbuild/2012q2/002266.html
@@ -158,9 +158,9 @@ post-install:
 	done
 
 	# Updmap needs these perl bits from the extra tarball
-	${INSTALL} -d ${PREFIX}/libdata/perl5/site_perl/TeXLive/               
+	${INSTALL} -d ${PREFIX}/libdata/perl5/site_perl/TeXLive/
 	${INSTALL} ${EXTRA_ROOT}/tlpkg/TeXLive/TLUtils.pm \
-		${PREFIX}/libdata/perl5/site_perl/TeXLive/                      
+		${PREFIX}/libdata/perl5/site_perl/TeXLive/
 	${INSTALL} ${EXTRA_ROOT}/tlpkg/TeXLive/TLConfig.pm \
 		${PREFIX}/libdata/perl5/site_perl/TeXLive/
 

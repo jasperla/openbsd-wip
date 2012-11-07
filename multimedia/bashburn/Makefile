@@ -38,7 +38,7 @@ RUN_DEPENDS+=		:cdparanoia-*:audio/cdparanoia \
 			:normalize-*:audio/normalize \
 			:mpg123-*:audio/mpg123
 .endif
-			
+
 NO_BUILD=		Yes
 
 DOCS=			COPYING CREDITS ChangeLog FAQ HOWTO README
@@ -48,11 +48,11 @@ do-configure:
 	@sed -e 's,bin/bash,usr/local/bin/bash,g' -e 's,@@BBROOTDIR@@,/usr/local/bashburn,g' \
 		${WRKDIST}/BashBurn.sh > ${WRKDIST}/BashBurn.sh.tmp
 	@mv ${WRKDIST}/BashBurn.sh.tmp ${WRKDIST}/BashBurn.sh
-	
+
 # OpenBSD use different syntax of sleep command
 	@sed '/\(\t*sleep *[0-9]\)\(s\$\)/s//\1/' ${CONVERT}/convert_flacs.sh \
 		> ${CONVERT}/convert_flacs.sh.tmp
-	@mv ${CONVERT}/convert_flacs.sh.tmp ${CONVERT}/convert_flacs.sh 
+	@mv ${CONVERT}/convert_flacs.sh.tmp ${CONVERT}/convert_flacs.sh
 	@sed '/\(\t*sleep *[0-9]\)\(s\$\)/s//\1/' ${CONVERT}/convert_mp3s.sh \
 		> ${CONVERT}/convert_mp3s.sh.tmp
 	@mv ${CONVERT}/convert_mp3s.sh.tmp ${CONVERT}/convert_mp3s.sh
@@ -63,7 +63,7 @@ do-configure:
 pre-install:
 	@sed -f ${WRKDIST}/bashburn_man/bashburn.sed ${WRKDIST}/bashburn_man/bashburn.template \
 		> ${WRKDIST}/bashburn.1
-	
+
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/bashburn
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bashburn

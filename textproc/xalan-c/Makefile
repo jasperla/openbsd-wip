@@ -10,7 +10,7 @@ MAINTAINER =		Nigel Taylor <nigel@openbsd.org>
 
 WANTLIB += 	c m pthread stdc++ xerces-c
 SHARED_LIBS +=	xalan-c 0.0 \
-		xalanMsg 0.0 
+		xalanMsg 0.0
 
 HOMEPAGE =	http://xalan.apache.org/index.html
 

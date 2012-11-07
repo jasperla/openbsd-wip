@@ -76,7 +76,7 @@ NOT_A_MANUAL = BEGIN \
 	END
 
 do-install:
-	
+
 	# The rest goes in share/texmf*
 	mv ${WRKDIST}/texmf ${PREFIX}/share
 	mv ${WRKDIST}/texmf-dist ${PREFIX}/share
@@ -89,7 +89,7 @@ do-install:
 			mv $$i ${PREFIX}/man/man$${i#$${i%?}}/ ; \
 		fi \
 	done
-	
+
 	# plug in my pregenerated map and formats
 	mv ${WRKDIR}/texmf-var ${PREFIX}/share
 

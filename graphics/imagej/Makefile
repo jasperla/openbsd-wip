@@ -11,7 +11,7 @@ HOMEPAGE=	http://rsbweb.nih.gov/ij/
 
 EXTRACT_SUFX =         .zip
 
-# Public Domain 
+# Public Domain
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -23,7 +23,7 @@ MODULES=	java
 MODJAVA_VER=	1.5+
 MODJAVA_JRERUN= Yes
 MAKE_ENV+=              JAVA_HOME=${JAVA_HOME}
-RUN_DEPENDS=            java/javaPathHelper 
+RUN_DEPENDS=            java/javaPathHelper
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

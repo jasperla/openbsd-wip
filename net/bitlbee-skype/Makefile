@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		https://github.com/downloads/vmiklos/bitlbee-skype/
 
-WANTLIB =		c 
+WANTLIB =		c
 
 USE_GMAKE =          Yes
 USE_LIBTOOL = 		Yes

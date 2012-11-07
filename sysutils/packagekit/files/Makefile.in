@@ -456,7 +456,7 @@ clean-pluginLTLIBRARIES:
 	  echo "rm -f \"$${dir}/so_locations\""; \
 	  rm -f "$${dir}/so_locations"; \
 	done
-libpk_backend_openbsd-ports.la: $(libpk_backend_openbsd_ports_la_OBJECTS) $(libpk_backend_openbsd_ports_la_DEPENDENCIES) 
+libpk_backend_openbsd-ports.la: $(libpk_backend_openbsd_ports_la_OBJECTS) $(libpk_backend_openbsd_ports_la_DEPENDENCIES)
 	$(AM_V_CCLD)$(libpk_backend_openbsd_ports_la_LINK) -rpath $(plugindir) $(libpk_backend_openbsd_ports_la_OBJECTS) $(libpk_backend_openbsd_ports_la_LIBADD) $(LIBS)
 
 mostlyclean-compile:

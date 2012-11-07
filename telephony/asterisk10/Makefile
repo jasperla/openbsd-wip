@@ -204,7 +204,7 @@ CONFIGURE_ARGS+=	--with-postgres=no
 # snmp
 COMMENT-snmp=		Net-SNMP support for Asterisk
 WANTLIB-snmp=		m netsnmp netsnmpagent netsnmpmibs crypto kvm wrap
-LIB_DEPENDS-snmp=	net/net-snmp 
+LIB_DEPENDS-snmp=	net/net-snmp
 
 .if !${BUILD_PACKAGES:M-snmp}
 CONFIGURE_ARGS+=	--with-snmp=no

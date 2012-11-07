@@ -7,7 +7,7 @@ REVISION =	0
 SHARED_LIBS =	ksane			0.0	# 0.2
 
 WANTLIB =  c m pthread stdc++
-WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg 
+WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg
 WANTLIB += kdeui
 WANTLIB += sane
 

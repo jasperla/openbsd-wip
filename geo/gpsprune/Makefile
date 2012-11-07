@@ -1,8 +1,8 @@
 # $OpenBSD $
 
-COMMENT=	GpsPrune is application for working with GPS data. 
+COMMENT=	GpsPrune is application for working with GPS data
 
-V=		13.2	
+V=		13.2
 DISTNAME=	gpsprune_${V}
 DISTFILES=  ${DISTNAME}.jar
 PKGNAME= 	gpsprune-${V}
@@ -24,7 +24,7 @@ MODULES=	java
 MODJAVA_VER=	1.5+
 MODJAVA_JRERUN= Yes
 MAKE_ENV+=              JAVA_HOME=${JAVA_HOME}
-RUN_DEPENDS=            java/javaPathHelper 
+RUN_DEPENDS=            java/javaPathHelper
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

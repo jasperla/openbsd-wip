@@ -62,7 +62,7 @@ USE_GROFF =		Yes
 #CONFIGURE_STYLE =	imake
 #CONFIGURE_SCRIPT =	??? (if other than configure)
 XMKMF =			xmkmf -a -DBOOTSTRAPCFLAGS="\'${BOOTSTRAPCFLAGS}\'"
-#CONFIGURE_ENV =		
+#CONFIGURE_ENV =
 
 NO_REGRESS =		Yes
 

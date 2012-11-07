@@ -27,7 +27,7 @@ WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml
 WANTLIB += kcmutils kdeui kfile kio knewstuff3
 WANTLIB += knotifyconfig kparts krosscore ktexteditor nepomuk
 WANTLIB += nepomukutils plasma soprano threadweaver
-WANTLIB += qjson 
+WANTLIB += qjson
 
 # Disable Subversion plugin until KDE bug #283980 get fixed
 WANTLIB += apr-1 aprutil-1 svn_client-1 svn_fs-1 svn_ra-1

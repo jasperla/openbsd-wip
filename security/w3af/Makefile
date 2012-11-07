@@ -28,7 +28,7 @@ MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes 
+PERMIT_DISTFILES_FTP =	Yes
 
 # "make port-lib-depends-check" can help
 #WANTLIB =		???
@@ -96,7 +96,7 @@ RUN_DEPENDS =		devel/py-SOAPpy \
 # 	  imake [noman]: port uses imake for configuration.
 #	  (noman: no man page installation)
 # 	  simple: port has its own configure script
-#CONFIGURE_STYLE =	
+#CONFIGURE_STYLE =
 #CONFIGURE_SCRIPT =	??? (if other than configure)
 #CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 #CONFIGURE_ENV =	???

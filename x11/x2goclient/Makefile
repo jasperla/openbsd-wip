@@ -41,7 +41,7 @@ pre-configure:
 	find ${WRKSRC} -type f -iname "*.cpp" -exec \
 		perl -pi -e 's,Q_OS_LINUX,Q_OS_OPENBSD,g;' \
 		-e 's,#include <linux/fs.h>,,g;' {} \;
-	
+
 	find ${WRKSRC} -type f -iname "*.h" -exec \
 		perl -pi -e 's,Q_OS_LINUX,Q_OS_OPENBSD,g;' \
 		-e 's,#include <linux/fs.h>,,g;' {} \;

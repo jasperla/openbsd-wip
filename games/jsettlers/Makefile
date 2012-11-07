@@ -37,10 +37,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/users/*.html ${WRKINST}${PREFIX-web}/jsettlers/users/
 	${INSTALL_DATA_DIR} ${WRKINST}${PREFIX-web}/jsettlers/users/images
 	${INSTALL_DATA} ${WRKSRC}/docs/users/images/* ${WRKINST}${PREFIX-web}/jsettlers/users/images/
-	
+
 	${INSTALL_DATA} ${WRKSRC}/JSettlers.jar ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/JSettlersServer.jar ${PREFIX}/bin
-	
+
 	@cp -r ${WRKSRC}/docs ${PREFIX}/share/doc/jsettlers
 	${INSTALL_DATA} ${WRKSRC}/COPYING.txt ${PREFIX}/share/doc/jsettlers/
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${PREFIX}/share/doc/jsettlers/

@@ -9,7 +9,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-WANTLIB=		c m 
+WANTLIB=		c m
 
 DISTNAME =	hevea-2.00
 MASTER_SITES =	http://para.inria.fr/~maranget/hevea/distri/

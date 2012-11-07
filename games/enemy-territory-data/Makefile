@@ -38,5 +38,5 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/${N}/etmain/video
 	${INSTALL_DATA} ${WRKSRC}/etmain/video/etintro.roq \
 	    ${PREFIX}/share/${N}/etmain/video/etintro.roq
-	
+
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	rebuild iTunes DB for Apple iPod	
+COMMENT =	rebuild iTunes DB for Apple iPod
 
 DISTNAME =	rebuild_db-1.0-rc1
 PKGNAME =	${DISTNAME}
