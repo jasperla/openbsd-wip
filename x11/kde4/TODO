@@ -1,23 +1,21 @@
-KDE 4.8 notes:
-1) Have to merge Antoine's guic changes, see mail to ports@ on Dec 3, 2011
-titled "gtk-update-icon-cache". This is partly done...
+The main idea is to make this pie-e-e-ece of shit run. Then make
+it stable.  Then polish patches. Then mark as done and start hacking
+on KDE5. (*)
 
---------------------------------------------------------------------------
-The main idea is to make this pie-e-e-ece of shit run. Then make it stable.
-Then polish patches. Then mark as done and start hacking on KDE5. (*)
+Also the option of installing (not building, looks like it's not
+possible) KDE3/TDE and KDE4 simultaneously should be investigated.
+Curent situation is that there are too many conflicts between KDE3,
+KDE4 and TDE. Possibly, some stuff could get installed in ".../kde4"
+subdirectories or get a suffix appended.
 
-KDE 4 programs fail in a different ways when they're given a KDE 3 profile.
-So until we find a better way, move out (rename) your ~/.kde/, or start
-all KDE 4 programs with KDEHOME=~/something/else.
+Note: almost no shared library bumps were made. This should be no
+problem if you don't have any KDE 4 packages installed.
 
-Also the option of installing (not building, looks like it's not possible) KDE3 and KDE4 simultaneously should be investigated. Conflicting package names get the "4" suffix now. Maybe name all packages as kde4-XXX instead? Possibly, some stuff could get installed in /usr/loca/lib{,exec}/kde4 and then symlinked to /usr/local/bin?..
+We should review patches other *BSDs have, and also OpenSUSE ones
+(this Linux distro still supports KDE3 and KDE4).
 
-Note: almost no shared library bumps were made. This should be no problem
-if you don't have any KDE 4 packages installed.
-
-We should review patches other *BSDs have, and also OpenSUSE ones (this Linux distro still supports KDE3 and KDE4).
-
-For more information see main Makefile and TODOs and Makefiles in subdirectories.
+For more information see main Makefile and TODOs and Makefiles in
+subdirectories.
 
 ---
  * - Last one is a joke. (Captain)
