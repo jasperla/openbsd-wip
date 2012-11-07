@@ -49,5 +49,5 @@ post-install:
 	${INSTALL_DATA_DIR} ${SWIG_DOCS}
 	cp -R ${WRKSRC}/Examples/* ${SWIG_EXAMPLES}
 	cp -R ${WRKSRC}/Doc/* ${SWIG_DOCS}
-	
+
 .include <bsd.port.mk>

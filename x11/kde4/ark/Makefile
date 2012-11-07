@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	K Desktop Environment, file archiver 
+COMMENT =	K Desktop Environment, file archiver
 DISTNAME =	ark-${MODKDE_VERSION}
 REVISION =	0
 

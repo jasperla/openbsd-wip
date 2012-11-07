@@ -29,7 +29,7 @@ WANTLIB-common =	${MODQT4_WANTLIB} lib/qt4/QtDBus lib/qt4/QtGui c m stdc++
 
 WANTLIB-main =	${WANTLIB-common} ${MODQT4_WANTLIB} ${MODGETTEXT_WANTLIB}
 WANTLIB-main +=	pthread z
-WANTLIB-main +=	GL GLU GLEW ICE SM X11 Xext 
+WANTLIB-main +=	GL GLU GLEW ICE SM X11 Xext
 WANTLIB-main +=	lib/qt4/QtNetwork lib/qt4/QtOpenGL lib/qt4/QtSql
 WANTLIB-main += lib/qt4/QtWebKit lib/qt4/QtXml lib/qt4/QtXmlPatterns
 WANTLIB-main +=	gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0

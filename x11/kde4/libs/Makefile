@@ -60,7 +60,7 @@ WANTLIB += png polkit-qt-core-1 qca2 soprano sopranoclient
 WANTLIB += ssl streamanalyzer streams util xml2 xslt
 
 MODULES =	multimedia/phonon
-MODKDE4_USE =	
+MODKDE4_USE =
 
 BUILD_DEPENDS =	misc/shared-desktop-ontologies>=0.10 \
 		misc/shared-mime-info \

@@ -23,7 +23,7 @@ MODULES=	java
 MODJAVA_VER=	1.5+
 MODJAVA_JRERUN= Yes
 MAKE_ENV+=              JAVA_HOME=${JAVA_HOME}
-RUN_DEPENDS=            java/javaPathHelper 
+RUN_DEPENDS=            java/javaPathHelper
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

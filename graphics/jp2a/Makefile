@@ -1,12 +1,12 @@
 # $OpenBSD$
 
-COMMENT = 		small utility that converts JPG images to ASCII 
+COMMENT = 		small utility that converts JPG images to ASCII
 
 DISTNAME = 		jp2a-1.0.6
 
 CATEGORIES = 		graphics
 
-HOMEPAGE = 		http://csl.sublevel3.org/jp2a/ 
+HOMEPAGE = 		http://csl.sublevel3.org/jp2a/
 
 MAINTAINER = 		Kirill Bychkov <yason@linklevel.net>
 

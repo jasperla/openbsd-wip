@@ -29,7 +29,7 @@ WANTLIB =		c pthread z
 
 #MASTER_SITES =		???
 
-BUILD_DEPENDS =		devel/libowfat	
+BUILD_DEPENDS =		devel/libowfat
 
 WRKDIST =		${WRKDIR}/opentracker
 

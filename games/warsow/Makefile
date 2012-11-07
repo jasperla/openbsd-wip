@@ -59,7 +59,7 @@ LIB_DEPENDS-server +=	net/curl \
 RUN_DEPENDS-server +=	${BASE_PKGPATH},-data
 WANTLIB-server +=       ${WANTLIB}
 
-LIB_DEPENDS-data =	
+LIB_DEPENDS-data =
 WANTLIB-data =
 
 LIB_PATH =		${PREFIX}/lib/warsow

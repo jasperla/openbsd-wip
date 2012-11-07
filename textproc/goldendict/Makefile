@@ -21,8 +21,10 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES=   	${MASTER_SITE_SOURCEFORGE:=goldendict/}
 EXTRACT_SUFX =		.tar.bz2
 
-WANTLIB += QtDBus QtGui QtNetwork QtWebKit QtXml QtXmlPatterns X11 Xtst c hunspell-1.2
-WANTLIB += iconv m ogg phonon pthread sqlite3 stdc++ vorbis vorbisfile z
+WANTLIB =  lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
+WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml lib/qt4/QtXmlPatterns
+WANTLIB += lib/qt4/phonon X11 Xtst c hunspell-1.2
+WANTLIB += iconv m ogg pthread sqlite3 stdc++ vorbis vorbisfile z
 
 MODULES =		x11/qt4
 LIB_DEPENDS =		textproc/hunspell \

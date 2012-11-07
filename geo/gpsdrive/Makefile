@@ -31,7 +31,7 @@ LIB_DEPENDS =		graphics/libart \
 					devel/pcre \
 					textproc/libxml
 
-LIB_DEPENDS-mysql=      databases/mysql 
+LIB_DEPENDS-mysql=      databases/mysql
 
 #::databases/mysql
 RUN_DEPENDS = 	www/p5-libwww

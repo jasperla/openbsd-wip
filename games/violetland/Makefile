@@ -30,7 +30,7 @@ LIB_DEPENDS =		devel/boost \
 			devel/sdl-mixer \
 			devel/sdl-ttf
 RUN_DEPENDS = 		devel/desktop-file-utils
-	
+
 CONFIGURE_ARGS = 	-DCMAKE_INSTALL_PREFIX="${PREFIX}"
 
 NO_REGRESS =		Yes

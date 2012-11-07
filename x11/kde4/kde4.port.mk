@@ -75,8 +75,8 @@ MODKDE4_BUILD_DEPENDS =	archivers/gtar \
 			STEM->=2.8.8:devel/cmake \
 			textproc/docbook \
 			textproc/docbook-xsl
-MODKDE4_LIB_DEPENDS =	
-MODKDE4_RUN_DEPENDS =	
+MODKDE4_LIB_DEPENDS =
+MODKDE4_RUN_DEPENDS =
 MODKDE4_WANTLIB =
 MODKDE4_CONF_ARGS =
 

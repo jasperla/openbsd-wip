@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-        SUBDIR = 
+        SUBDIR =
         SUBDIR += accessibility
         SUBDIR += addons
         SUBDIR += admin

@@ -64,7 +64,7 @@ WANTLIB-main += xml2 xslt Half Iex
 WANTLIB-main += IlmImf IlmThread Imath aspell jasper tiff
 WANTLIB-main += art_lgpl_2 artsflow artsflow_idl kmedia2_idl mcop qtmcop
 WANTLIB-main += soundserver_idl
-WANTLIB-cups += ${WANTLIB} DCOP cups kdecore kdefakes kdefx kdeprint 
+WANTLIB-cups += ${WANTLIB} DCOP cups kdecore kdefakes kdefx kdeprint
 WANTLIB-cups += kdeprint_management kdesu kdeui kio kwalletclient
 
 MODULES =		devel/gettext

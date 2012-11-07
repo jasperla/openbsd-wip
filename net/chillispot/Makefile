@@ -9,7 +9,7 @@ HOMEPAGE=		http://www.chillispot.org/
 MAINTAINER=		OpenBSD ports <ports@openbsd.org>
 
 # GPL
-PERMIT_PACKAGE_CDROM=  	No 
+PERMIT_PACKAGE_CDROM=  	No
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=   Yes

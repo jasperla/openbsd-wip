@@ -92,7 +92,7 @@ MODOASIS_BUILD_TARGET += \
 	&& ${SETENV} ${MAKE_ENV} ${_MODOASIS_SETUP} ${TARGET}
 . endfor
 . if !target(do-build)
-do-build: 
+do-build:
 	${MODOASIS_BUILD_TARGET}
 . endif
 
@@ -104,7 +104,7 @@ MODOASIS_INSTALL_TARGET += \
 	&& ${SETENV} ${MAKE_ENV} ${_MODOASIS_SETUP} ${TARGET}
 . endfor
 . if !target(do-install)
-do-install: 
+do-install:
 	${MODOASIS_INSTALL_TARGET}
 . endif
 
@@ -116,7 +116,7 @@ MODOASIS_REGRESS_TARGET += \
 	&& ${SETENV} ${MAKE_ENV} ${_MODOASIS_SETUP} ${TARGET}
 . endfor
 . if !target(do-regress)
-do-regress: 
+do-regress:
 	${MODOASIS_REGRESS_TARGET}
 . endif
 

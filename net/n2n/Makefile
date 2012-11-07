@@ -6,7 +6,7 @@ DISTNAME=		n2n-${VERSION}
 PKGNAME=		${DISTNAME}
 CATEGORIES=		net
 
-# This project hasn't any mirrors -- only main svn revsystem storage. 
+# This project hasn't any mirrors -- only main svn revsystem storage.
 # So using my own mirror for download
 MASTER_SITES=		http://dukzcry.cc/hlam/distfiles/
 DISTFILES=		${PKGNAME}.tar.gz
@@ -29,5 +29,5 @@ do-install:
 	    ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKDIST}/supernode.1 \
 	    ${PREFIX}/man/man1
-	    
+
 .include <bsd.port.mk>

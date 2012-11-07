@@ -29,7 +29,7 @@ WANTLIB=		pthread stdc++ m c
 BUILD_DEPENDS=		comms/barry \
 					archivers/libtar \
 					devel/libglademm
-# XXX gtk 
+# XXX gtk
 RUN_DEPENDS=		${BUILD_DEPENDS}
 
 CONFIGURE_STYLE=	gnu

@@ -21,7 +21,7 @@ LIB_DEPENDS =	archivers/bzip2 \
 CONFIGURE_ENV += \
 	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng \
 		-I${X11BASE}/include/freetype2" \
-	LDFLAGS="-L${LOCALBASE}/lib" 
+	LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS += \
 	--x-includes=${X11BASE}/include \
 	--x-libraries=${X11BASE}/lib \

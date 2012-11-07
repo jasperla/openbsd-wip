@@ -4,7 +4,7 @@ COMMENT=	Free and Open-Source molecular modeling system
 V=		1.4.1
 DISTNAME=	pymol-$V
 PKGNAME=	pymol-$V
-CATEGORIES=	biology	
+CATEGORIES=	biology
 
 HOMEPAGE=	http://pymol.org
 

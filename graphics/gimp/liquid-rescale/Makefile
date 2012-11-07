@@ -30,7 +30,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender c expat fontconfig freetype
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 m pixman-1 pthread z
 WANTLIB += atk-1.0 cairo gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 png pthread-stubs xcb
-WANTLIB += gio-2.0 lqr-1 gimp-2.0 gimpbase-2.0 gimpcolor-2.0 gimpconfig-2.0 
+WANTLIB += gio-2.0 lqr-1 gimp-2.0 gimpbase-2.0 gimpcolor-2.0 gimpconfig-2.0
 WANTLIB += gimpmath-2.0 gimpmodule-2.0 gimpui-2.0 gimpwidgets-2.0
 WANTLIB += xcb-render xcb-shm
 

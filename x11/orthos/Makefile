@@ -47,11 +47,11 @@ do-configure:
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/orthos/examples/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/orthos/Attic/
-	
+
 	${INSTALL_DATA} ${WRKDIST}/orthos ${PREFIX}/share/orthos/Attic/
 	${INSTALL_DATA} ${WRKDIST}/skins/*.so ${PREFIX}/share/orthos/Attic/
 	${INSTALL_PROGRAM} ${WRKDIST}/oskintest ${PREFIX}/bin/
-	
+
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/orthos/
 	@cd ${WRKDIST}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/orthos/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/orthos/
@@ -68,7 +68,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIST}/*.cpp ${PREFIX}/share/orthos/Attic/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/orthos/include/
 	${INSTALL_DATA} ${WRKDIST}/include/*.h ${PREFIX}/share/orthos/include/
-	
+
 post-install:
 	${SUBST_CMD} -c ${FILESDIR}/README.OpenBSD \
 		${PREFIX}/share/doc/orthos/README.OpenBSD

@@ -1,7 +1,7 @@
 # $OpenBSD: Makefile,v 1.55 2012/07/04 12:49:20 ajacoutot Exp $
 
 # XXX Don't even think of updating ocaml alone.
-# Do check that the ports that depend on it still work, or repair them. 
+# Do check that the ports that depend on it still work, or repair them.
 
 NOT_FOR_ARCHS=	hppa
 
@@ -42,7 +42,7 @@ VMEM_WARNING=	Yes
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=-tkdefs '-I${MODTCL_INCDIR} -I${MODTK_INCDIR}'
 CONFIGURE_ARGS+=-tklibs -L${LOCALBASE}/lib
-CONFIGURE_ARGS+=-prefix ${PREFIX} 
+CONFIGURE_ARGS+=-prefix ${PREFIX}
 CONFIGURE_ARGS+=-cc '${CC} ${CFLAGS}'
 CONFIGURE_ARGS+=-x11include ${X11BASE}/include -x11lib ${X11BASE}/lib
 CONFIGURE_ENV+=OPENBSD_LOCALBASE="${LOCALBASE}"
