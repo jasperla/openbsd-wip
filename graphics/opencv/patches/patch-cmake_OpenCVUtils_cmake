@@ -1,6 +1,6 @@
 $OpenBSD$
 --- cmake/OpenCVUtils.cmake.orig	Thu Nov  8 00:06:23 2012
-+++ cmake/OpenCVUtils.cmake	Thu Nov  8 13:16:36 2012
++++ cmake/OpenCVUtils.cmake	Thu Nov  8 13:31:50 2012
 @@ -92,17 +92,37 @@ macro(CHECK_MODULE module_name define)
  
      if(${ALIAS_FOUND})
@@ -39,7 +39,7 @@ $OpenBSD$
 +        CACHE INTERNAL "Library directories to use when linking to ${module_name}")
 +      if(${ALIAS_LIBRARY_DIRS})
 +        message("-- Adding ${${ALIAS_LIBRARY_DIRS}} to link_directories for ${module_name}.")
-+        message("   This could break build if OpenCV is already installed!").
++        message("   This could break build if OpenCV is already installed!")
 +        link_directories(${${ALIAS_LIBRARY_DIRS}})
 +      endif(${ALIAS_LIBRARY_DIRS})
  
