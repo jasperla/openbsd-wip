@@ -7,11 +7,10 @@ ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		scheme dialect often used for teaching programming
 
-V =			5.3.0.900
-REVISION =		1
+V =			5.3.1
 PKGNAME =		racket-$V
-#DISTNAME =		racket-$V-src-unix
-DISTNAME =		plt-$V-src-unix
+DISTNAME =		racket-$V-src-unix
+#DISTNAME =		plt-$V-src-unix
 CATEGORIES =		lang
 HOMEPAGE =		http://racket-lang.org/
 MAINTAINER =		Juan Francisco Cantero Hurtado <iam@juanfra.info>
