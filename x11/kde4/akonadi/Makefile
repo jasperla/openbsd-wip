@@ -2,7 +2,6 @@
 
 COMMENT =		K Desktop Environment, PIM access libraries
 DISTNAME =		akonadi-${AKONADI_VERSION}
-REVISION =		0
 
 SHARED_LIBS = 		akonadiprotocolinternals 1.0	# 1.0
 
