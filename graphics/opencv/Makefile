@@ -73,7 +73,8 @@ LIB_DEPENDS-main=	multimedia/gstreamer-0.10/plugins-base \
 			graphics/tiff \
 			${MODPY_LIB_DEPENDS}
 
-RUN_DEPENDS-main=	math/py-numpy
+RUN_DEPENDS-main=	${RUN_DEPENDS} \
+			math/py-numpy
 
 WANTLIB-docs=		# empty
 LIB_DEPENDS-docs=	# empty
