@@ -1,15 +1,24 @@
 $OpenBSD$
---- modules/highgui/src/ffmpeg_codecs.hpp.orig	Sat Jun  2 16:30:34 2012
-+++ modules/highgui/src/ffmpeg_codecs.hpp	Sat Jun  2 16:31:45 2012
-@@ -49,9 +49,9 @@ extern "C" {
- #if !defined INT64_C || !defined UINT64_C
- #define INT64_C
- #define UINT64_C
+--- modules/highgui/src/ffmpeg_codecs.hpp.orig	Sun Jun 10 21:36:39 2012
++++ modules/highgui/src/ffmpeg_codecs.hpp	Thu Nov  8 15:27:08 2012
+@@ -46,13 +46,16 @@ extern "C" {
+ 
+ #if !defined(WIN32) || defined(__MINGW32__)
+ // some versions of FFMPEG assume a C99 compiler, and don't define INT64_C
+-#if !defined INT64_C || !defined UINT64_C
+-#define INT64_C
+-#define UINT64_C
 - #define __STDC_CONSTANT_MACROS
-+#define __STDC_CONSTANT_MACROS
++#if !defined __STDC_CONSTANT_MACROS
++# define __STDC_CONSTANT_MACROS
++#endif
  // force re-inclusion of stdint.h to get INT64_C macro
--#undef _STDINT_H
+ #undef _STDINT_H
 +#undef _SYS_STDINT_H
  #include <stdint.h>
++#if !defined INT64_C || !defined UINT64_C
++#define INT64_C(x)	x ## LL
++#define UINT64_C(x)	x ## ULL
  #endif
  #include <errno.h>
+ #endif
