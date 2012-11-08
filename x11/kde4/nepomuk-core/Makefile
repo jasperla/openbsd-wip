@@ -2,7 +2,7 @@
 
 COMMENT =	KDE Nepomuk core libraries
 DISTNAME =	nepomuk-core-${MODKDE_VERSION}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =   nepomukcore               0.0 # 4.9
 SHARED_LIBS +=  nepomuksync               4.9 # 4.9
@@ -19,6 +19,7 @@ BUILD_DEPENDS =	misc/shared-desktop-ontologies
 LIB_DEPENDS =	databases/soprano \
 		databases/strigi
 
-RUN_DEPENDS =	databases/virtuoso
+# turns on indexing, let user make decision, default=no by GNOME & KDE
+#RUN_DEPENDS =	databases/virtuoso
 
 .include <bsd.port.mk>
