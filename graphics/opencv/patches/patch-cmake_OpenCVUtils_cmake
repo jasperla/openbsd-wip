@@ -1,6 +1,6 @@
 $OpenBSD$
 --- cmake/OpenCVUtils.cmake.orig	Thu Nov  8 00:06:23 2012
-+++ cmake/OpenCVUtils.cmake	Thu Nov  8 13:12:17 2012
++++ cmake/OpenCVUtils.cmake	Thu Nov  8 13:16:36 2012
 @@ -92,17 +92,37 @@ macro(CHECK_MODULE module_name define)
  
      if(${ALIAS_FOUND})
@@ -24,7 +24,7 @@ $OpenBSD$
 +      foreach(L ${${ALIAS_LIBRARIES}})
 +        set("${ALIAS}_LIBRARY_${L}")
 +        find_library("${ALIAS}_LIBRARY_${L}" NAMES ${L}
-+          HINTS ${${ALIAS_LIBRARY_DIRS}} ${LOCALBASE}/lib
++          HINTS ${${ALIAS_LIBRARY_DIRS}}
 +          )
 +        if(${ALIAS}_LIBRARY_${L})
 +          list(APPEND LL "${${ALIAS}_LIBRARY_${L}}")
