@@ -39,7 +39,7 @@ include/racket/schvers.h
 include/racket/sconfig.h
 include/racket/stypes.h
 include/racket/uconfig.h
-lib/libracket3m-5.3.0.900.so
+lib/libracket3m-5.3.1.so
 lib/libracket3m.a
 lib/libracket3m.la
 lib/libracket3m.so
@@ -14183,6 +14183,7 @@ lib/racket/collects/tests/racket/embed-me1c.rkt
 lib/racket/collects/tests/racket/embed-me1d.rkt
 lib/racket/collects/tests/racket/embed-me1e.rkt
 lib/racket/collects/tests/racket/embed-me2.rkt
+lib/racket/collects/tests/racket/embed-me20.rkt
 lib/racket/collects/tests/racket/embed-me3.rkt
 lib/racket/collects/tests/racket/embed-me4.rktl
 lib/racket/collects/tests/racket/embed-me5.rkt
@@ -14204,6 +14205,7 @@ lib/racket/collects/tests/racket/embed.rktl
 lib/racket/collects/tests/racket/etc.rktl
 lib/racket/collects/tests/racket/expand.rktl
 lib/racket/collects/tests/racket/fact.rktl
+lib/racket/collects/tests/racket/ffi-call-final.rkt
 lib/racket/collects/tests/racket/ffi-custodian.rkt
 lib/racket/collects/tests/racket/ffi-orig-place.rkt
 lib/racket/collects/tests/racket/file.rktl
@@ -14284,6 +14286,7 @@ lib/racket/collects/tests/racket/place-msg-gc.rkt
 lib/racket/collects/tests/racket/place-parallel.rkt
 lib/racket/collects/tests/racket/place-ports.rkt
 lib/racket/collects/tests/racket/place-stdio.rkt
+lib/racket/collects/tests/racket/place-struct-info.rkt
 lib/racket/collects/tests/racket/place.rktl
 lib/racket/collects/tests/racket/place/distributed/
 lib/racket/collects/tests/racket/place/distributed/bank.rkt
@@ -14858,6 +14861,7 @@ lib/racket/collects/tests/typed-racket/succeed/cl-bug.rkt
 lib/racket/collects/tests/typed-racket/succeed/cl-tests.rkt
 lib/racket/collects/tests/typed-racket/succeed/cl.rkt
 lib/racket/collects/tests/typed-racket/succeed/cmdline.rkt
+lib/racket/collects/tests/typed-racket/succeed/contract-opt+kw.rkt
 lib/racket/collects/tests/typed-racket/succeed/contract-struct-equality.rkt
 lib/racket/collects/tests/typed-racket/succeed/cps.rkt
 lib/racket/collects/tests/typed-racket/succeed/datum-to-syntax.rkt
@@ -14870,6 +14874,7 @@ lib/racket/collects/tests/typed-racket/succeed/empty-or.rkt
 lib/racket/collects/tests/typed-racket/succeed/ephemerons.rkt
 lib/racket/collects/tests/typed-racket/succeed/even-odd.rkt
 lib/racket/collects/tests/typed-racket/succeed/exceptions.rkt
+lib/racket/collects/tests/typed-racket/succeed/exn-any.rkt
 lib/racket/collects/tests/typed-racket/succeed/fix.rkt
 lib/racket/collects/tests/typed-racket/succeed/fixnum.rkt
 lib/racket/collects/tests/typed-racket/succeed/float-internal-err.rkt
@@ -14954,6 +14959,7 @@ lib/racket/collects/tests/typed-racket/succeed/pair-test.rkt
 lib/racket/collects/tests/typed-racket/succeed/pair-test2.rkt
 lib/racket/collects/tests/typed-racket/succeed/pair-test3.rkt
 lib/racket/collects/tests/typed-racket/succeed/param.rkt
+lib/racket/collects/tests/typed-racket/succeed/parameter-c.rkt
 lib/racket/collects/tests/typed-racket/succeed/parameter-proc.rkt
 lib/racket/collects/tests/typed-racket/succeed/parametric-require-tr-base.rkt
 lib/racket/collects/tests/typed-racket/succeed/parse-path.rkt
@@ -15090,6 +15096,7 @@ lib/racket/collects/tests/typed-racket/succeed/values-dots.rkt
 lib/racket/collects/tests/typed-racket/succeed/values-object.rkt
 lib/racket/collects/tests/typed-racket/succeed/varargs-tests.rkt
 lib/racket/collects/tests/typed-racket/succeed/vec-tests.rkt
+lib/racket/collects/tests/typed-racket/succeed/vector-chap.rkt
 lib/racket/collects/tests/typed-racket/succeed/vector-union.rkt
 lib/racket/collects/tests/typed-racket/succeed/with-asserts.rkt
 lib/racket/collects/tests/typed-racket/succeed/with-handlers.rkt
@@ -18222,17 +18229,7 @@ share/racket/doc/images/pict_180.png
 share/racket/doc/images/pict_181.png
 share/racket/doc/images/pict_182.png
 share/racket/doc/images/pict_183.png
-share/racket/doc/images/pict_184.png
-share/racket/doc/images/pict_185.png
-share/racket/doc/images/pict_186.png
-share/racket/doc/images/pict_187.png
-share/racket/doc/images/pict_188.png
-share/racket/doc/images/pict_189.png
 share/racket/doc/images/pict_19.png
-share/racket/doc/images/pict_190.png
-share/racket/doc/images/pict_191.png
-share/racket/doc/images/pict_192.png
-share/racket/doc/images/pict_193.png
 share/racket/doc/images/pict_2.png
 share/racket/doc/images/pict_20.png
 share/racket/doc/images/pict_21.png
