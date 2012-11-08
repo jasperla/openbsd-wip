@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+@shell sbin/anoncvssh
+share/doc/anoncvs/
+share/doc/anoncvs/README
