@@ -1,5 +1,4 @@
 @comment $OpenBSD$
-lib/pkgconfig/
 share/opencv/doc/
 share/opencv/doc/CMakeLists.txt
 share/opencv/doc/acircles_pattern.png
