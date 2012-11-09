@@ -2,8 +2,11 @@
 
 .include "kdeversions.port.mk"
 
+# The version of KDE SC in x11/kde4
+_MODKDE4_STABLE =	4.9.2
+
 # Should be changed only by Makefile.inc in test directories
-MODKDE4_VERSION ?=	4.9.2
+MODKDE4_VERSION ?=	${_MODKDE4_STABLE}
 MODKDE_VERSION =	${MODKDE4_VERSION}
 
 # General options set by module
@@ -201,6 +204,22 @@ WANTLIB +=		${MODKDE_WANTLIB}
 CONFIGURE_ENV +=	${MODKDE_CONFIGURE_ENV}
 CONFIGURE_ARGS +=	${MODKDE4_CONF_ARGS}
 # MAKE_FLAGS +=		${MODKDE4_CONF_ARGS}
+
+# Tweak dependency path for testing directories
+.if "${MODKDE4_VERSION}" != "${MODKDE4_STABLE}"
+_MODKDE4_REAL_DIR =	x11/kde${MODKDE4_VERSION:S/.//g}
+. if "${MULTI_PACKAGES}" == ""
+BUILD_DEPENDS :=	${BUILD_DEPENDS:C@x11/kde4/@${_MODKDE4_REAL_DIR}/@}
+RUN_DEPENDS :=		${RUN_DEPENDS:C@x11/kde4/@${_MODKDE4_REAL_DIR}/@}
+LIB_DEPENDS :=		${LIB_DEPENDS:C@x11/kde4/@${_MODKDE4_REAL_DIR}/@}
+. else
+.  for _s in ${MULTI_PACKAGES}
+BUILD_DEPENDS${_s} :=	${BUILD_DEPENDS${_s}:C@x11/kde4/@${_MODKDE4_REAL_DIR}/@}
+RUN_DEPENDS${_s} :=	${RUN_DEPENDS${_s}:C@x11/kde4/@${_MODKDE4_REAL_DIR}/@}
+LIB_DEPENDS${_s} :=	${LIB_DEPENDS${_s}:C@x11/kde4/@${_MODKDE4_REAL_DIR}/@}
+.  endfor
+. endif
+.endif
 
 # System (CMake) FindGettext.cmake requires having PO_FILES marker
 MODKDE4_post-patch =	@echo '====> Fixing GETTEXT_PROCESS_PO_FILES() calls'; \
