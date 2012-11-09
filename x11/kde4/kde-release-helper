@@ -1,0 +1,228 @@
+#!/bin/sh
+
+set -e
+
+#
+# Working directory: /var/kde4up/${PKGNAME:C/-[0-9].*//}/${VERSION???}
+# Files:
+#   ${step}.done
+#   ${step}.log
+#
+# TODO: MULTI_PACKAGES
+#
+# prepare:
+#   copy directory
+#   add corresponding line to Makefile.inc
+#   remove distinfo files
+#
+# compare lists of packages both for source code and for l10n
+#
+# for each dep in: init[ial] libs pimlibs runtime pimruntime
+#   for each pkg with dep
+#     new-window in tmux; run commands via set-buffer, paste-buffer?
+#     switch step
+#       step 1=configure
+#         make makesum
+#         make patch
+#         make configure
+#         mark step done
+#         if previous log exists and does not differ, go to step 2
+#           (N.B.: ignore library versions changes and such)
+#         break
+#       step 2=plist
+#         rm -f pkg/PLIST*.orig
+#         make update-plist
+#         fix plist (FLAVORS => MODKDE4_CMAKE_PREFIX, etc.)
+#         ignore l10n and such
+#         mark step done
+#         if nothing interesting was left, go to step 3
+#         break
+#       step 3=port-depends
+#         make port-lib-depends-check
+#         mark step done
+#         if nothing changed, go to step 4
+#         break
+#       step 4=lib-depends
+#         make lib-depends-check
+#         mark step done
+#         if nothing changed, go to step 5
+#         break
+#       step 5=install
+#         make install
+#         mark step done
+#     end switch
+#
+
+usage() {
+	echo "usage: $0 prepare new-KDE-version" >&2
+	echo "       $0 check-lists" >&2
+#	echo "       $0 update use-flag" >&2
+	echo >&2
+	echo "examples:" >&2
+	echo "  $0 prepare 4.9.3" >&2
+#	echo "  $0 update initial" >&2
+	exit 1
+}
+
+# echo-and-run
+ear() {
+	echo "$*" >&2
+	"$@"
+}
+
+CLEANUP_ITEMS=
+cleanup() {
+	test -n "$CLEANUP_ITEMS" && ear rm -Rf $CLEANUP_ITEMS
+}
+trap cleanup EXIT
+
+# Arg: KDE version in X.Y.Z format
+# Output: kdeXYZ
+kde_port_dir() {
+	if ! echo "$1" | egrep -q '^[0-9]+\.[0-9]+\.[0-9]+$'; then
+		echo "$1 is not a valid KDE version (X.Y.Z)" >&2
+		exit 1
+	fi
+	echo "kde$1" | sed -e 's/\.//g'
+}
+
+# List all ports (subdirectories) from KDE SC itself in current directory
+# Assume we're in KDE ports root directory.
+# Output does not include l10n, see list_l10n_ports() below.
+list_local_ports() {
+	ls | while read P; do
+		# Test for being directory for safety in case of symlinks
+		test -d $P -a -e $P/Makefile || continue
+		egrep -q 'DISTNAME.*MODKDE4?_VERSION' $P/Makefile || continue
+		echo "$P"
+	done
+}
+
+# Assume we're in KDE ports root directory.
+list_l10n_ports() {
+	for L in $(cd l10n/ru && make show=ALL_LANGS); do
+		echo "kde-l10n-${L}"
+	done | sort
+}
+
+# Assume we're in the apporiate port's directory
+list_remote_source() {
+	local LIST URL V
+	V=$1; shift
+
+	for URL in $(make show=MASTER_SITES); do
+		echo "$1" | grep -q '^ftp://' || continue
+		LIST="$(curl -l \"$1\" | grep -v ^. | sort)" || continue
+		echo "$LIST"
+		return 0
+	done
+
+	echo "Could not retrieve source files list." >&2
+	echo "Probably more FTP servers with NLIST command supported" >&2
+	echo "are needed in MASTER_SITES." >&2
+	return 1
+}
+
+# Assume the same as list_remote_source().
+# Input: sorted local list of ports.
+# Output: list of new ports prefixed with "+"
+compare_sources_lists() {
+	T="`mktemp`"
+	OCLEANUP_ITEMS="$CLEANUP_ITEMS"
+	CLEANUP_ITEMS="$CLEANUP_ITEMS $T"
+	list_remote_source >"$T"
+	diff -u - "$T" || true
+	rm "$T"
+	CLEANUP_ITEMS="$OCLEANUP_ITEMS"
+}
+
+### Main actions go here
+
+prepare() {
+	test $# -eq 1 || usage
+	local NEW_KDE_PORT_VER=$1; shift
+
+	if ! [ -f kde4.port.mk -a X"`cd .. && basename $(pwd)`" = Xx11 ]; then
+		echo "Please run $0 from x11/kde4 directory in ports tree" >&2
+		exit 2
+	fi
+
+	cd ..
+	local NEW_KDE_PORT_DIR=`kde_port_dir "$NEW_KDE_PORT_VER"` 
+	if [ -e $NEW_KDE_PORT_DIR ]; then
+		echo "x11/$NEW_KDE_PORT_DIR already exists" >&2
+		exit 2
+	fi
+
+	echo '==> copying ports directory' >&2
+	CLEANUP_ITEMS="$CLEANUP_ITEMS $NEW_KDE_PORT_DIR"
+	cp -R kde4 $NEW_KDE_PORT_DIR
+	local LOCAL_PORTS=`cd $NEW_KDE_PORT_DIR && list_local_ports`
+
+	echo '==> removing extra files' >&2
+	ear rm $NEW_KDE_PORT_DIR/kde4.port.mk $NEW_KDE_PORT_DIR/`basename "$0"`
+	ear rm -f $NEW_KDE_PORT_DIR/STATUS-*
+	find $NEW_KDE_PORT_DIR -name 'PLIST*.orig' -print0 | xargs -0rt rm
+	ear rm -f $NEW_KDE_PORT_DIR/l10n/distinfo
+	for P in $LOCAL_PORTS; do
+		ear rm -f $P/distinfo
+	done
+
+	echo '==> removing REVISION marks' >&2
+	for P in $LOCAL_PORTS; do
+		local OCLEANUP_ITEMS="$CLEANUP_ITEMS"
+		CLEANUP_ITEMS="$CLEANUP_ITEMS $NEW_KDE_PORT_DIR/$P/Makefile.orig"
+		perl -ni.orig -e '/^REVISION/ or print' $NEW_KDE_PORT_DIR/$P/Makefile
+		cmp -s $NEW_KDE_PORT_DIR/$P/Makefile{.orig,} || echo $P
+		rm $NEW_KDE_PORT_DIR/$P/Makefile.orig
+		CLEANUP_ITEMS="$OCLEANUP_ITEMS"
+        done
+
+	echo '==> patching Makefile.inc' >&2
+	local MI=$NEW_KDE_PORT_DIR/Makefile.inc
+	local T=`mktemp "$MI".XXXXXXXXXXX`
+	CLEANUP_ITEMS="$CLEANUP_ITEMS $T"
+	awk "NR == 3 {print \"MODKDE4_VERSION =	$NEW_KDE_PORT_VER\"} {print}" <"$MI" >"$T"
+	mv "$T" "$MI"
+
+	echo "==> creating STATUS-${NEW_KDE_PORT_VER}" >&2
+	for P in $LOCAL_PORTS l10n; do
+		printf '%-32sSTARTED\n' $P >>${NEW_KDE_PORT_DIR}/STATUS-${NEW_KDE_PORT_VER}
+	done
+
+	# Avoid removing newly created directory
+	CLEANUP_ITEMS=
+}
+
+check_lists() {
+	test $# -eq 0 || usage
+	echo '==> checking for new source packages' >&2
+	list_local_ports | (cd libs && compare_sources_lists) |
+		 grep '^+' 
+
+	echo '==> checking for l10n package list changes' >&2
+	list_l10n_ports | (cd l10n/ru && compare_sources_lists) |
+		 grep '^[+-]' 
+}
+
+update() {
+	test $# -ge 1 || usage
+}
+
+# All actions take (at least) one argument
+test $# -ge 1 || usage
+ACTION=$1; shift
+
+case $ACTION in
+p|pr|pre|prep|prepa|prepar|prepare)
+	prepare "$@"
+	;;
+
+check-l|check-li|check-lis|check-list|check-lists)
+	check_lists "$@"
+	;;
+
+u|up|upd|upda|updat|update)
+	update "$@"
+	;;
+esac
