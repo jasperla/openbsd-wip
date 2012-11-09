@@ -93,7 +93,7 @@ list_local_ports() {
 	ls | while read P; do
 		# Test for being directory for safety in case of symlinks
 		test -d $P -a -e $P/Makefile || continue
-		egrep -q 'DISTNAME.*MODKDE4?_VERSION' $P/Makefile || continue
+		egrep -q '^DISTNAME.*MODKDE4?_VERSION' $P/Makefile || continue
 		echo "$P"
 	done
 }
@@ -107,12 +107,16 @@ list_l10n_ports() {
 
 # Assume we're in the apporiate port's directory
 list_remote_source() {
-	local LIST URL V
-	V=$1; shift
+	local LIST URL
+	local V=`make show=MODKDE_VERSION`
 
 	for URL in $(make show=MASTER_SITES); do
-		echo "$1" | grep -q '^ftp://' || continue
-		LIST="$(curl -l \"$1\" | grep -v ^. | sort)" || continue
+		echo "$URL" | grep -q '^ftp://' || continue
+		LIST="$(ear curl -sl $URL |
+		    sed -e s@-${V}.*@@ |
+		    grep -v '^\.' |
+		    sort)" || continue
+		test `echo -n "$LIST" | wc -l` -gt 1 || continue
 		echo "$LIST"
 		return 0
 	done
