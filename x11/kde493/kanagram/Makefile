@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, letter order game
 DISTNAME =	kanagram-${MODKDE_VERSION}
-REVISION =	0
 
 SHARED_LIBS =	kanagramengine		0.0
 

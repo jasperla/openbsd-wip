@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, Japanese reference tool
 DISTNAME =	kiten-${MODKDE_VERSION}
-REVISION =	1
 
 SHARED_LIBS =	kiten			0.0 # 4.7
 

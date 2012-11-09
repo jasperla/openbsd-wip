@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, vocabulary trainer
 DISTNAME =	parley-${MODKDE_VERSION}
-REVISION =	0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += ICE SM X11 Xext Xrender
