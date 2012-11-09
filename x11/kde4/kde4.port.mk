@@ -206,7 +206,7 @@ CONFIGURE_ARGS +=	${MODKDE4_CONF_ARGS}
 # MAKE_FLAGS +=		${MODKDE4_CONF_ARGS}
 
 # Tweak dependency path for testing directories
-.if "${MODKDE4_VERSION}" != "${MODKDE4_STABLE}"
+.if "${MODKDE4_VERSION}" != "${_MODKDE4_STABLE}"
 _MODKDE4_REAL_DIR =	x11/kde${MODKDE4_VERSION:S/.//g}
 CATEGORIES +=		${_MODKDE4_REAL_DIR}
 . if "${MULTI_PACKAGES}" == ""
