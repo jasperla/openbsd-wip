@@ -51,6 +51,6 @@ CONFIGURE_ARGS =	-DENABLE_KBANKING:Bool=No \
 
 #REGRESS_FLAGS =	???
 #REGRESS_IS_INTERACTIVE =	Yes
-#NO_REGRESS =		Yes
+NO_REGRESS =		Yes
 
 .include <bsd.port.mk>
