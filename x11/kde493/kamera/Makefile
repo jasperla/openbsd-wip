@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, digital camera support
 DISTNAME =	kamera-${MODKDE_VERSION}
-REVISION =	0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui

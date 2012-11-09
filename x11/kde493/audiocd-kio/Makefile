@@ -2,7 +2,6 @@
 
 COMMENT =	KDE KIOslave for accessing audio CDs
 DISTNAME =	audiocd-kio-${MODKDE_VERSION}
-REVISION =	0
 
 MODKDE4_USE =	libs
 

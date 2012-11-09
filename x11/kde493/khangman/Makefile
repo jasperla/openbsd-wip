@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, hangman game
 DISTNAME =	khangman-${MODKDE_VERSION}
-REVISION =	1
 
 SHARED_LIBS =	khangmanengine		0.0
 

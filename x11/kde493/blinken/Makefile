@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, game Simon Says
 DISTNAME =	blinken-${MODKDE_VERSION}
-REVISION =	0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
