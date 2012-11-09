@@ -18,6 +18,7 @@ BUILD_DEPENDS =	misc/shared-desktop-ontologies
 LIB_DEPENDS =	databases/soprano \
 		databases/strigi
 
-RUN_DEPENDS =	databases/virtuoso
+# turns on indexing, let user make decision, default=no by GNOME & KDE
+#RUN_DEPENDS =	databases/virtuoso
 
 .include <bsd.port.mk>
