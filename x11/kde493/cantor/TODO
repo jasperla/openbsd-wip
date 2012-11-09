@@ -1,0 +1,2 @@
+Fixed LibR* bug. Now, /usr/local/bin/cantor_rserver find our new R-libs
+but bin/R need more love.

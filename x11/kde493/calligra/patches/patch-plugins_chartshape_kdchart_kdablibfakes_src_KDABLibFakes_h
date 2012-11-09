@@ -1,0 +1,14 @@
+$OpenBSD$
+--- plugins/chartshape/kdchart/kdablibfakes/src/KDABLibFakes.h.orig	Wed Dec  7 16:06:41 2011
++++ plugins/chartshape/kdchart/kdablibfakes/src/KDABLibFakes.h	Wed Dec  7 16:07:01 2011
+@@ -56,8 +56,8 @@
+ #define ISNAN(x) std::isnan(x)
+ #define ISINF(x) std::isinf(x)
+ #else
+-#define ISNAN(x) isnan(x)
+-#define ISINF(x) isinf(x)
++#define ISNAN(x) std::isnan(x)
++#define ISINF(x) std::isinf(x)
+ #endif
+ 
+ 

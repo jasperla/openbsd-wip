@@ -1,0 +1,11 @@
+$OpenBSD$
+--- krita/ui/CMakeLists.txt.orig	Tue Oct 23 16:43:37 2012
++++ krita/ui/CMakeLists.txt	Tue Oct 23 16:44:00 2012
+@@ -6,6 +6,7 @@ include_directories( ${KOTEXT_INCLUDES}
+ 	${CMAKE_CURRENT_SOURCE_DIR}/widgets/resources
+ 	${CMAKE_CURRENT_SOURCE_DIR}/openrastertk
+ 	${CMAKE_SOURCE_DIR}/krita/image/metadata
++	${PNG_INCLUDE_DIR}
+ 	${EXIV2_INCLUDE_DIR} )
+ 
+ add_subdirectory( tests )

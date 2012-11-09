@@ -1,0 +1,22 @@
+Look at sendfile(3) support.
+
+Look closer at following tests:
+-- Performing Test HAVE_X86_MMX
+-- Performing Test HAVE_X86_MMX - Success
+-- Performing Test HAVE_X86_SSE
+-- Performing Test HAVE_X86_SSE - Success
+-- Performing Test HAVE_X86_SSE2
+-- Performing Test HAVE_X86_SSE2 - Success
+-- Performing Test HAVE_X86_3DNOW
+-- Performing Test HAVE_X86_3DNOW - Success
+
+Hard ones: HUPnP and UDev emulation layers.
+
+knotify4 prints the following on startup:
+QStringList Solid::Backends::Hal::HalManager::findDeviceByDeviceInterface(Solid::DeviceInterface::Type)  error:  "org.freedesktop.DBus.Error.ServiceUnknown" 
+
+Check if we could/should comment out set(QT_USE_IMPORTED_TARGETS TRUE) in FindKDE4Internal.cmake.
+
+Localized documentation incorrectly encodes names in the documentation tree.
+
+Fix kjs/collector.cpp (see current patch), KJS asserts at startup otherwise. We're using Webkit by default now, instead of KHTML, to make Konqueror and other browsers usable.

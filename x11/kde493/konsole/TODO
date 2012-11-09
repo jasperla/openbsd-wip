@@ -1,0 +1,3 @@
+lib-depends-check complains about konq.8 missing
+
+Check that sysctl() really could return EAGAIN (OpenBSDProcessInfo).

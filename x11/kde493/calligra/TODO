@@ -1,0 +1,68 @@
+Updating MIME database produces:
+Unknown media type in type 'all/all'
+
+Unknown media type in type 'all/allfiles'
+Unknown media type in type 'uri/mms'
+Unknown media type in type 'uri/mmst'
+Unknown media type in type 'uri/mmsu'
+Unknown media type in type 'uri/pnm'
+Unknown media type in type 'uri/rtspt'
+Unknown media type in type 'uri/rtspu'
+Unknown media type in type 'interface/x-winamp-skin'
+
+
+The following error could not be fixed by adding cmake_policy() call to main
+CMakeLists.txt file:
+
+CMake Warning (dev) at /usr/local/share/cmake/Modules/Qt4ConfigDependentSettings
+.cmake:29 (INCLUDE):
+  File /usr/local/share/cmake/Modules/Qt4ConfigDependentSettings.cmake
+  includes
+  /usr/ports/pobj/calligra4-2.3.86/calligra-2.3.86/cmake/modules/FindIconv.cmake
+  (found via CMAKE_MODULE_PATH) which shadows
+  /usr/local/share/cmake/Modules/FindIconv.cmake.  This may cause errors
+  later on .
+
+  Policy CMP0017 is not set: Prefer files from the CMake module directory
+  when including from there.  Run "cmake --help-policy CMP0017" for policy
+  details.  Use the cmake_policy command to set the policy and suppress this
+  warning.
+Call Stack (most recent call first):
+  /usr/local/share/cmake/Modules/FindQt4.cmake:1052 (INCLUDE)
+  filters/words/rtf/import/rtf-qt/CMakeLists.txt:5 (find_package)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+
+-- Looking for sys/iconv.h
+-- Looking for sys/iconv.h - not found
+-- wv2 depends on a modern iconv installation, supporting UNICODELITTLE and
+-- UNICODEBIG. The detected iconv version doesn't support these conversions.
+-- 
+-- Please get a new libiconv from http://www.gnu.org/software/libiconv/
+-- You might want to install the library to some alternative directory, in
+-- order not to overwrite your current installation. Please use the options
+-- -DICONV_INCLUDE_DIR=DIR and -DICONV_LIBRARIES=DIR to specify the location.
+
+   * XBase  <http://linux.techass.com/projects/xdb/>
+     XBase compatible C++ class library
+     Required by Kexi XBase Migration driver
+
+   * OpenCTL (0.9.10 or higher)  <http://www.opengtl.org>
+     Free Color Transformation Language implementation (part of OpenGTL)
+     Required for High Dynamic Range Color Spaces, YCbCr and LMS support
+
+   * OpenShiva  <http://www.opengtl.org>
+     OpenShiva interpreter for the Shiva Kernel Language (part of OpenGTL)
+     Required for Shiva based Generators and Filters
+
+   * QtShiva  <http://www.opengtl.org>
+     Qt bindings for the OpenShiva interpreter (part of libQtGTL)
+     Required for Shiva based Generators and Filters
+
+   * Spnav  <http://spacenav.sourceforge.net/>
+     3Dconnexion device driver and SDK
+     Required by SpaceNavigator 3D mouse plugin
+
+   * WPG  <http://libwpg.sourceforge.net/>
+     WordPerfect Graphics Library
+     Required by the Karbon WPG import filter
