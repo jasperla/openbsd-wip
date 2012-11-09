@@ -99,10 +99,10 @@ CONFIGURE_ARGS =	-DGSSAPI_LIBS:STRING="-lgssapi -lkrb5 -lasn1 -lcom_err -lssl -l
 			-DGSSAPI_FOUND:BOOL=TRUE
 
 # and do not have this stuff at all
-CONFIGURE_ARGS +=	-DACL_FOUND:Bool=FALSE \
-			-DHSPELL_FOUND:Bool=FALSE \
-			-DHUPNP_FOUND:Bool=FALSE \
-			-DUDEV_FOUND:Bool=FALSE
+CONFIGURE_ARGS +=	-DWITH_ACL:Bool=FALSE \
+			-DWITH_HSPELL:Bool=FALSE \
+			-DWITH_HUpnp:Bool=FALSE \
+			-DWITH_UDev:Bool=FALSE
 
 # some basic defines
 CONFIGURE_ARGS +=	-D_KDE_DEFAULT_HOME_POSTFIX:String="4" \
