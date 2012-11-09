@@ -1,0 +1,5 @@
+Wants valgrind as optional (build-time?) dependency.
+
+libkgeomap crashes when trying to use Google Maps. And Marble widget isn't usable (looks like, Marble bug).
+
+Crashes when importing from directories with a lot of items.

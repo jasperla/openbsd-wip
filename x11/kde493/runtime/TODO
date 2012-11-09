@@ -1,0 +1,10 @@
+Missing optional dependencies:
+
+   * OpenSLP  <http://www.openslp.org/>
+     SLP (Service Location Protocol) implementation
+     Provides SLP support in the network:/ kioslave.
+
+   * QNtrack  <http://launchpad.net/ntrack>
+     Network status tracking library
+     Provides data input for Solid network status
+     [relies on libnl, which is hardwired to Linux kernel]

@@ -1,0 +1,21 @@
+In klinkstatus, when calling "Statistics":
+Kross: "Loading the interpreter library for ruby" 
+Kross: "Successfully loaded Interpreter instance from library." 
+Kross: "RubyScript::callExecuteException script=#<Kross::Script:0x86d14634> error=#<NameError: uninitialized constant Qt::UiLoader>" 
+/usr/local/share/apps/klinkstatus/scripts/statistics.rb:33:in `const_missing': uninitialized constant Qt::UiLoader (NameError)
+        /usr/local/share/apps/klinkstatus/scripts/statistics.rb:33:in `initialize'
+        /usr/local/share/apps/klinkstatus/scripts/statistics.rb:76:in `new'
+        /usr/local/share/apps/klinkstatus/scripts/statistics.rb:76
+Kross: "Error error=/usr/local/share/apps/klinkstatus/scripts/statistics.rb:33:in `const_missing': uninitialized constant Qt::UiLoader (NameError) lineno=-1 trace=
+/usr/local/share/apps/klinkstatus/scripts/statistics.rb:33:in `initialize'
+/usr/local/share/apps/klinkstatus/scripts/statistics.rb:76:in `new'
+/usr/local/share/apps/klinkstatus/scripts/statistics.rb:76
+" 
+Kross: "Compilation has failed. errorMessage=/usr/local/share/apps/klinkstatus/scripts/statistics.rb:33:in `const_missing': uninitialized constant Qt::UiLoader (NameError) errorTrace=
+/usr/local/share/apps/klinkstatus/scripts/statistics.rb:33:in `initialize'
+/usr/local/share/apps/klinkstatus/scripts/statistics.rb:76:in `new'
+/usr/local/share/apps/klinkstatus/scripts/statistics.rb:76
+
+" 
+
+

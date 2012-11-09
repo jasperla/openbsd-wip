@@ -1,0 +1,20 @@
+@comment $OpenBSD$
+lib/akonadi.dll
+lib/kde-dotnet.dll
+lib/kde4/kimonopluginfactory.so
+lib/khtml-dll.dll
+lib/ktexteditor-dotnet.dll
+@lib lib/libakonadi-sharp.so.${LIBakonadi-sharp_VERSION}
+@lib lib/libkhtml-sharp.so.${LIBkhtml-sharp_VERSION}
+@lib lib/libkimono.so.${LIBkimono_VERSION}
+@lib lib/libktexteditor-sharp.so.${LIBktexteditor-sharp_VERSION}
+@lib lib/libnepomuk-sharp.so.${LIBnepomuk-sharp_VERSION}
+@lib lib/libplasma-sharp.so.${LIBplasma-sharp_VERSION}
+@lib lib/libsoprano-sharp.so.${LIBsoprano-sharp_VERSION}
+lib/nepomuk-dll.dll
+lib/plasma-dll.dll
+lib/soprano.dll
+share/apps/plasma_scriptengine_kimono/
+share/apps/plasma_scriptengine_kimono/PlasmaScriptengineKimono.dll
+share/kde4/services/plasma-scriptengine-kimono-applet.desktop
+share/kde4/services/plasma-scriptengine-kimono-dataengine.desktop

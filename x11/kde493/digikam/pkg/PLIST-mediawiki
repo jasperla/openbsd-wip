@@ -1,0 +1,27 @@
+@comment $OpenBSD$
+include/libmediawiki/
+include/libmediawiki/edit.h
+include/libmediawiki/generalinfo.h
+include/libmediawiki/image.h
+include/libmediawiki/imageinfo.h
+include/libmediawiki/job.h
+include/libmediawiki/login.h
+include/libmediawiki/logout.h
+include/libmediawiki/mediawiki.h
+include/libmediawiki/mediawiki_export.h
+include/libmediawiki/page.h
+include/libmediawiki/parse.h
+include/libmediawiki/protection.h
+include/libmediawiki/queryimageinfo.h
+include/libmediawiki/queryimages.h
+include/libmediawiki/queryinfo.h
+include/libmediawiki/queryrevision.h
+include/libmediawiki/querysiteinfogeneral.h
+include/libmediawiki/querysiteinfousergroups.h
+include/libmediawiki/revision.h
+include/libmediawiki/upload.h
+include/libmediawiki/usergroup.h
+include/libmediawiki/version.h
+@lib lib/libmediawiki.so.${LIBmediawiki_VERSION}
+lib/pkgconfig/libmediawiki.pc
+share/apps/cmake/modules/FindMediawiki.cmake

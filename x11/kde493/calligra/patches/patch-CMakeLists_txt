@@ -1,0 +1,12 @@
+$OpenBSD$
+--- CMakeLists.txt.orig	Sat Oct  6 02:46:53 2012
++++ CMakeLists.txt	Wed Oct 24 14:37:15 2012
+@@ -145,6 +145,8 @@ macro_ensure_out_of_source_build("Compiling Calligra i
+ ############################
+ ###########################
+ 
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${KDE4_ENABLE_EXCEPTIONS}")
++
+ find_package(Perl REQUIRED)
+ find_package(ZLIB REQUIRED)
+ find_package(PNG REQUIRED)

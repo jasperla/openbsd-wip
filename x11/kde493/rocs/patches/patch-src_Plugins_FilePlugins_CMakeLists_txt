@@ -1,0 +1,9 @@
+$OpenBSD$
+--- src/Plugins/FilePlugins/CMakeLists.txt.orig	Fri Sep 28 04:34:36 2012
++++ src/Plugins/FilePlugins/CMakeLists.txt	Sun Oct 21 22:35:18 2012
+@@ -1,4 +1,4 @@
+ add_subdirectory(TXTParser)
+ add_subdirectory(kmlParser)
+ add_subdirectory(GMLParser)
+-add_subdirectory(DotFilePlugin)
++macro_optional_add_subdirectory(DotFilePlugin)

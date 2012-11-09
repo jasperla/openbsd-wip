@@ -1,0 +1,47 @@
+@comment $OpenBSD$
+@bin bin/kactivitymanagerd
+include/KDE/KActivities/
+include/KDE/KActivities/Consumer
+include/KDE/KActivities/Controller
+include/KDE/KActivities/Info
+include/KDE/KActivities/ResourceInstance
+include/kactivities/
+include/kactivities/consumer.h
+include/kactivities/controller.h
+include/kactivities/info.h
+include/kactivities/kactivities_export.h
+include/kactivities/resourceinstance.h
+lib/cmake/KActivities/
+lib/cmake/KActivities/KActivitiesConfig.cmake
+lib/cmake/KActivities/KActivitiesConfigVersion.cmake
+lib/cmake/KActivities/KActivitiesLibraryTargets${MODKDE4_CMAKE_PREFIX}.cmake
+lib/cmake/KActivities/KActivitiesLibraryTargets.cmake
+lib/kde4/activitymanager_plugin_globalshortcuts.so
+lib/kde4/activitymanager_plugin_slc.so
+lib/kde4/activitymanager_plugin_sqlite.so
+lib/kde4/activitymanager_uihandler_declarative.so
+lib/kde4/activitymanager_uihandler_kdialog.so
+lib/kde4/kactivitymanagerd_fileitem_linking_plugin.so
+lib/kde4/kio_activities.so
+@lib lib/libkactivities.so.${LIBkactivities_VERSION}
+lib/pkgconfig/libkactivities.pc
+share/apps/plasma/packages/
+share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/
+share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/contents/
+share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/contents/ui/
+share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/contents/ui/ChoiceDialog.qml
+share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/contents/ui/MessageDialog.qml
+share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/contents/ui/NewPasswordDialog.qml
+share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/contents/ui/PasswordDialog.qml
+share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/contents/ui/uihandler.qml
+share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/metadata.desktop
+share/kde4/services/activities.protocol
+share/kde4/services/activitymanager-plugin-globalshortcuts.desktop
+share/kde4/services/activitymanager-plugin-slc.desktop
+share/kde4/services/activitymanager-plugin-sqlite.desktop
+share/kde4/services/kactivitymanagerd.desktop
+share/kde4/services/kactivitymanagerd_fileitem_linking_plugin.desktop
+share/kde4/servicetypes/activitymanager-plugin.desktop
+share/ontology/kde/
+share/ontology/kde/kao.ontology
+share/ontology/kde/kao.trig

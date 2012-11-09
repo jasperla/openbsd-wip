@@ -1,0 +1,10 @@
+$OpenBSD$
+--- mobile/lib/tests/bnf_selection/CMakeLists.txt.orig	Sun Sep  4 17:45:05 2011
++++ mobile/lib/tests/bnf_selection/CMakeLists.txt	Sun Sep  4 17:45:19 2011
+@@ -18,5 +18,6 @@ target_link_libraries(bnf_selection
+   kdepimmobileui
+   ${QT_QTGUI_LIBRARIES}
+   ${QT_QTCORE_LIBRARIES}
++  -pthread
+ )
+ 

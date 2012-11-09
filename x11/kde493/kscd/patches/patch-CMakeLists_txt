@@ -1,0 +1,16 @@
+$OpenBSD$
+--- CMakeLists.txt.orig	Fri Oct 19 21:05:17 2012
++++ CMakeLists.txt	Fri Oct 19 21:05:21 2012
+@@ -9,7 +9,11 @@ include(MacroLibrary)
+ include_directories(${QT_INCLUDES} ${KDE4_INCLUDES})
+ 
+ find_package(Alsa)
+-alsa_configure_file(${CMAKE_CURRENT_BINARY_DIR}/config-alsa.h)
++if(ALSA_FOUND)
++		alsa_configure_file(${CMAKE_CURRENT_BINARY_DIR}/config-alsa.h)
++else(ALSA_FOUND)
++		file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/config-alsa.h" "/* stub */")
++endif(ALSA_FOUND)
+ 
+ find_package(MusicBrainz3 REQUIRED)
+ 

@@ -1,0 +1,12 @@
+$OpenBSD$
+--- extra/kipi-plugins/panorama/CMakeLists.txt.orig	Mon Jun  4 22:38:54 2012
++++ extra/kipi-plugins/panorama/CMakeLists.txt	Sat Jun 30 01:42:57 2012
+@@ -1,6 +1,7 @@
+ ADD_SUBDIRECTORY(icons)
+ 
+-INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/importwizard
++INCLUDE_DIRECTORIES(${PNG_INCLUDE_DIR}
++                    ${CMAKE_CURRENT_SOURCE_DIR}/importwizard
+                     ${CMAKE_CURRENT_SOURCE_DIR}/manager
+                     ${CMAKE_CURRENT_SOURCE_DIR}/plugin
+ #                     ${CMAKE_CURRENT_SOURCE_DIR}/ptogenerator

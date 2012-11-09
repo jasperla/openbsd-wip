@@ -1,0 +1,18 @@
+$OpenBSD$
+--- krunner/lock/CMakeLists.txt.orig	Sun Oct 23 06:13:44 2011
++++ krunner/lock/CMakeLists.txt	Sun Oct 23 06:19:26 2011
+@@ -2,9 +2,12 @@ include_directories( ${KDEBASE_WORKSPACE_SOURCE_DIR}/k
+ 
+ ########### next target ###############
+ 
+-check_library_exists(Xxf86misc XF86MiscSetGrabKeysState "" HAVE_XF86MISCSETGRABKEYSSTATE)
++find_package(X11)
++check_library_exists(${X11_Xxf86misc_LIB} XF86MiscSetGrabKeysState "" HAVE_XF86MISCSETGRABKEYSSTATE)
++
+ if(WITH_OpenGL)
+-check_library_exists(GL glXChooseVisual "" HAVE_GLXCHOOSEVISUAL)
++find_package(OpenGL)
++check_library_exists(${OPENGL_gl_LIBRARY} glXChooseVisual "" HAVE_GLXCHOOSEVISUAL)
+ endif(WITH_OpenGL)
+ 
+ configure_file(config-krunner-lock.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-krunner-lock.h)
