@@ -175,6 +175,7 @@ share/locale/nb/LC_MESSAGES/filelight.mo
 share/locale/nb/LC_MESSAGES/filetypes.mo
 share/locale/nb/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/nb/LC_MESSAGES/fileviewgitplugin.mo
+share/locale/nb/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/nb/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/nb/LC_MESSAGES/freespacenotifier.mo
 share/locale/nb/LC_MESSAGES/fsview.mo
@@ -809,6 +810,7 @@ share/locale/nb/LC_MESSAGES/plasmagenericshell.mo
 share/locale/nb/LC_MESSAGES/plasmapkg.mo
 share/locale/nb/LC_MESSAGES/plasmawallpaperviewer.mo
 share/locale/nb/LC_MESSAGES/plasmoidviewer.mo
+share/locale/nb/LC_MESSAGES/pothumbnail.mo
 share/locale/nb/LC_MESSAGES/powerdevil.mo
 share/locale/nb/LC_MESSAGES/powerdevilactivitiesconfig.mo
 share/locale/nb/LC_MESSAGES/powerdevilglobalconfig.mo

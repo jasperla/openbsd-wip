@@ -1276,6 +1276,7 @@ share/locale/sr/LC_MESSAGES/kabcformat_binary.mo
 share/locale/sr/LC_MESSAGES/kaccess.mo
 share/locale/sr/LC_MESSAGES/kaccessibleapp.mo
 share/locale/sr/LC_MESSAGES/kactivitymanagerd.mo
+share/locale/sr/LC_MESSAGES/kactivitymanagerd_fileitem_linking_plugin.mo
 share/locale/sr/LC_MESSAGES/kaddressbook-mobile.mo
 share/locale/sr/LC_MESSAGES/kaddressbook.mo
 share/locale/sr/LC_MESSAGES/kaddressbookmigrator.mo
@@ -1934,6 +1935,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/kabcformat_binary.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kaccess.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kaccessibleapp.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kactivitymanagerd.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kactivitymanagerd_fileitem_linking_plugin.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kaddressbook-mobile.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kaddressbook.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kaddressbookmigrator.mo
@@ -2592,6 +2594,7 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/kabcformat_binary.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kaccess.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kaccessibleapp.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kactivitymanagerd.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kactivitymanagerd_fileitem_linking_plugin.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kaddressbook-mobile.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kaddressbook.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kaddressbookmigrator.mo
@@ -3248,6 +3251,7 @@ share/locale/sr@latin/LC_MESSAGES/kabcformat_binary.mo
 share/locale/sr@latin/LC_MESSAGES/kaccess.mo
 share/locale/sr@latin/LC_MESSAGES/kaccessibleapp.mo
 share/locale/sr@latin/LC_MESSAGES/kactivitymanagerd.mo
+share/locale/sr@latin/LC_MESSAGES/kactivitymanagerd_fileitem_linking_plugin.mo
 share/locale/sr@latin/LC_MESSAGES/kaddressbook-mobile.mo
 share/locale/sr@latin/LC_MESSAGES/kaddressbook.mo
 share/locale/sr@latin/LC_MESSAGES/kaddressbookmigrator.mo

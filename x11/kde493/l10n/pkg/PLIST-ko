@@ -126,6 +126,7 @@ share/locale/ko/LC_MESSAGES/kcal_akonadi.mo
 share/locale/ko/LC_MESSAGES/kcalc.mo
 share/locale/ko/LC_MESSAGES/kcertpart.mo
 share/locale/ko/LC_MESSAGES/kcharselect.mo
+share/locale/ko/LC_MESSAGES/kcm-kwin-scripts.mo
 share/locale/ko/LC_MESSAGES/kcm_akonadi.mo
 share/locale/ko/LC_MESSAGES/kcm_attica.mo
 share/locale/ko/LC_MESSAGES/kcm_autostart.mo
@@ -269,6 +270,7 @@ share/locale/ko/LC_MESSAGES/kio_nepomuksearch.mo
 share/locale/ko/LC_MESSAGES/kio_nfs.mo
 share/locale/ko/LC_MESSAGES/kio_nntp.mo
 share/locale/ko/LC_MESSAGES/kio_perldoc.mo
+share/locale/ko/LC_MESSAGES/kio_recentdocuments.mo
 share/locale/ko/LC_MESSAGES/kio_remote.mo
 share/locale/ko/LC_MESSAGES/kio_sftp.mo
 share/locale/ko/LC_MESSAGES/kio_smb.mo
@@ -394,6 +396,7 @@ share/locale/ko/LC_MESSAGES/libmessagelist.mo
 share/locale/ko/LC_MESSAGES/libmessageviewer.mo
 share/locale/ko/LC_MESSAGES/liboktetacore.mo
 share/locale/ko/LC_MESSAGES/liboktetakasten.mo
+share/locale/ko/LC_MESSAGES/liboxygenstyleconfig.mo
 share/locale/ko/LC_MESSAGES/libphonon.mo
 share/locale/ko/LC_MESSAGES/libplasma.mo
 share/locale/ko/LC_MESSAGES/libplasma_groupingcontainment.mo
@@ -536,6 +539,7 @@ share/locale/ko/LC_MESSAGES/plasma_engine_kdeobservatory.mo
 share/locale/ko/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/ko/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/ko/LC_MESSAGES/plasma_engine_metadata.mo
+share/locale/ko/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/ko/LC_MESSAGES/plasma_engine_network.mo
 share/locale/ko/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/ko/LC_MESSAGES/plasma_engine_nowplaying.mo
@@ -543,6 +547,8 @@ share/locale/ko/LC_MESSAGES/plasma_engine_rss.mo
 share/locale/ko/LC_MESSAGES/plasma_engine_share.mo
 share/locale/ko/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/ko/LC_MESSAGES/plasma_engine_weather.mo
+share/locale/ko/LC_MESSAGES/plasma_package_org.kde.desktop.activitymanager.mo
+share/locale/ko/LC_MESSAGES/plasma_package_org.kde.desktop.widgetexplorer.mo
 share/locale/ko/LC_MESSAGES/plasma_packagestructure_comic.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_activities.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
@@ -576,6 +582,7 @@ share/locale/ko/LC_MESSAGES/plasmapkg.mo
 share/locale/ko/LC_MESSAGES/plasmawallpaperviewer.mo
 share/locale/ko/LC_MESSAGES/plasmoidviewer.mo
 share/locale/ko/LC_MESSAGES/powerdevil.mo
+share/locale/ko/LC_MESSAGES/powerdevilactivitiesconfig.mo
 share/locale/ko/LC_MESSAGES/powerdevilglobalconfig.mo
 share/locale/ko/LC_MESSAGES/powerdevilprofilesconfig.mo
 share/locale/ko/LC_MESSAGES/printer-applet.mo

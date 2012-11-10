@@ -1802,6 +1802,7 @@ share/locale/es/LC_MESSAGES/kabcformat_binary.mo
 share/locale/es/LC_MESSAGES/kaccess.mo
 share/locale/es/LC_MESSAGES/kaccessibleapp.mo
 share/locale/es/LC_MESSAGES/kactivitymanagerd.mo
+share/locale/es/LC_MESSAGES/kactivitymanagerd_fileitem_linking_plugin.mo
 share/locale/es/LC_MESSAGES/kaddressbook-mobile.mo
 share/locale/es/LC_MESSAGES/kaddressbook.mo
 share/locale/es/LC_MESSAGES/kaddressbookmigrator.mo
