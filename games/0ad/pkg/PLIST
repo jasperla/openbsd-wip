@@ -190,3 +190,4 @@ share/0ad/tools/fontbuilder/fonts/GUST-FONT-LICENSE.txt
 share/0ad/tools/fontbuilder/fonts/LICENSE.txt
 share/0ad/tools/fontbuilder/fonts/texgyrepagella-bold.otf
 share/0ad/tools/fontbuilder/fonts/texgyrepagella-regular.otf
+share/doc/pkg-readmes/${FULLPKGNAME}
