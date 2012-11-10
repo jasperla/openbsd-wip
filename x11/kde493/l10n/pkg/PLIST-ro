@@ -245,6 +245,7 @@ share/locale/ro/LC_MESSAGES/kcm_pci.mo
 share/locale/ro/LC_MESSAGES/kcm_phonon.mo
 share/locale/ro/LC_MESSAGES/kcm_phononxine.mo
 share/locale/ro/LC_MESSAGES/kcm_platform.mo
+share/locale/ro/LC_MESSAGES/kcm_remotecontrol.mo
 share/locale/ro/LC_MESSAGES/kcm_solid.mo
 share/locale/ro/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/ro/LC_MESSAGES/kcm_standard_actions.mo
@@ -442,9 +443,11 @@ share/locale/ro/LC_MESSAGES/kppp.mo
 share/locale/ro/LC_MESSAGES/kppplogview.mo
 share/locale/ro/LC_MESSAGES/kquitapp.mo
 share/locale/ro/LC_MESSAGES/krandr.mo
+share/locale/ro/LC_MESSAGES/krcdnotifieritem.mo
 share/locale/ro/LC_MESSAGES/krdb.mo
 share/locale/ro/LC_MESSAGES/krdc.mo
 share/locale/ro/LC_MESSAGES/kreadconfig.mo
+share/locale/ro/LC_MESSAGES/kremotecontroldaemon.mo
 share/locale/ro/LC_MESSAGES/kres-migrator.mo
 share/locale/ro/LC_MESSAGES/kres_blog.mo
 share/locale/ro/LC_MESSAGES/kres_remote.mo
@@ -540,6 +543,7 @@ share/locale/ro/LC_MESSAGES/libkpgp.mo
 share/locale/ro/LC_MESSAGES/libkpimidentities.mo
 share/locale/ro/LC_MESSAGES/libkpimtextedit.mo
 share/locale/ro/LC_MESSAGES/libkpimutils.mo
+share/locale/ro/LC_MESSAGES/libkremotecontrol.mo
 share/locale/ro/LC_MESSAGES/libkresources.mo
 share/locale/ro/LC_MESSAGES/libksane.mo
 share/locale/ro/LC_MESSAGES/libkscreensaver.mo

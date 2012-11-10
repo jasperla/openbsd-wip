@@ -221,6 +221,7 @@ share/locale/el/LC_MESSAGES/akonadi_singlefile_resource.mo
 share/locale/el/LC_MESSAGES/akonadi_strigi_feeder.mo
 share/locale/el/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/el/LC_MESSAGES/akonadi_vcarddir_resource.mo
+share/locale/el/LC_MESSAGES/akonadinotes.mo
 share/locale/el/LC_MESSAGES/akonaditray.mo
 share/locale/el/LC_MESSAGES/akregator.mo
 share/locale/el/LC_MESSAGES/akregator_konqplugin.mo
@@ -323,6 +324,7 @@ share/locale/el/LC_MESSAGES/kcertpart.mo
 share/locale/el/LC_MESSAGES/kcharselect.mo
 share/locale/el/LC_MESSAGES/kcm-kwin-scripts.mo
 share/locale/el/LC_MESSAGES/kcm_akonadi.mo
+share/locale/el/LC_MESSAGES/kcm_akonadicontact_actions.mo
 share/locale/el/LC_MESSAGES/kcm_attica.mo
 share/locale/el/LC_MESSAGES/kcm_autostart.mo
 share/locale/el/LC_MESSAGES/kcm_desktoppaths.mo
@@ -504,6 +506,7 @@ share/locale/el/LC_MESSAGES/klock.mo
 share/locale/el/LC_MESSAGES/kmag.mo
 share/locale/el/LC_MESSAGES/kmahjongg.mo
 share/locale/el/LC_MESSAGES/kmail-migrator.mo
+share/locale/el/LC_MESSAGES/kmail-mobile.mo
 share/locale/el/LC_MESSAGES/kmail.mo
 share/locale/el/LC_MESSAGES/kmailcvt.mo
 share/locale/el/LC_MESSAGES/kmenuedit.mo
@@ -607,8 +610,10 @@ share/locale/el/LC_MESSAGES/kwriteconfig.mo
 share/locale/el/LC_MESSAGES/kxkb.mo
 share/locale/el/LC_MESSAGES/kxsconfig.mo
 share/locale/el/LC_MESSAGES/lancelot.mo
+share/locale/el/LC_MESSAGES/libakonadi-calendar.mo
 share/locale/el/LC_MESSAGES/libakonadi-kmime.mo
 share/locale/el/LC_MESSAGES/libakonadi.mo
+share/locale/el/LC_MESSAGES/libeventviews.mo
 share/locale/el/LC_MESSAGES/libincidenceeditors.mo
 share/locale/el/LC_MESSAGES/libkalarmcal.mo
 share/locale/el/LC_MESSAGES/libkasten.mo
@@ -621,6 +626,7 @@ share/locale/el/LC_MESSAGES/libkdecorations.mo
 share/locale/el/LC_MESSAGES/libkdeedu.mo
 share/locale/el/LC_MESSAGES/libkdegames.mo
 share/locale/el/LC_MESSAGES/libkdepim.mo
+share/locale/el/LC_MESSAGES/libkdepimmobileui.mo
 share/locale/el/LC_MESSAGES/libkexiv2.mo
 share/locale/el/LC_MESSAGES/libkholidays.mo
 share/locale/el/LC_MESSAGES/libkimap.mo
@@ -665,6 +671,7 @@ share/locale/el/LC_MESSAGES/lskat.mo
 share/locale/el/LC_MESSAGES/mailreader.mo
 share/locale/el/LC_MESSAGES/marble.mo
 share/locale/el/LC_MESSAGES/marble_qt.mo
+share/locale/el/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/el/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/el/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/el/LC_MESSAGES/messageviewer_text_xdiff_plugin.mo
@@ -680,6 +687,7 @@ share/locale/el/LC_MESSAGES/nepomukserver.mo
 share/locale/el/LC_MESSAGES/nepomukservicestub.mo
 share/locale/el/LC_MESSAGES/nepomukstorage.mo
 share/locale/el/LC_MESSAGES/newmailnotifieragent.mo
+share/locale/el/LC_MESSAGES/notes-mobile.mo
 share/locale/el/LC_MESSAGES/nsplugin.mo
 share/locale/el/LC_MESSAGES/okteta.mo
 share/locale/el/LC_MESSAGES/oktetapart.mo
@@ -883,6 +891,7 @@ share/locale/el/LC_MESSAGES/svgpart.mo
 share/locale/el/LC_MESSAGES/sweeper.mo
 share/locale/el/LC_MESSAGES/system-config-printer-kde.mo
 share/locale/el/LC_MESSAGES/systemsettings.mo
+share/locale/el/LC_MESSAGES/tasks-mobile.mo
 share/locale/el/LC_MESSAGES/timezones4.mo
 share/locale/el/LC_MESSAGES/uachangerplugin.mo
 share/locale/el/LC_MESSAGES/umbrello.mo
