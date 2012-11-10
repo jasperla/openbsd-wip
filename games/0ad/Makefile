@@ -71,7 +71,7 @@ pre-build:
 		${WRKDIST}/source/gui/scripting/GuiScriptConversions.cpp \
 		${WRKDIST}/source/gui/scripting/ScriptFunctions.cpp \
 		${WRKDIST}/source/scriptinterface/tests/test_ScriptConversions.h \
-		${WRKDIST}/source/scriptinterface/tests/test_ScriptVal.h \
+		${WRKDIST}/source/scriptinterface/tests/test_ScriptVal.h
 
 do-build:
 	cd ${WRKDIST}/libraries/fcollada/src && \
