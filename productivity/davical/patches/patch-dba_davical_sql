@@ -1,0 +1,33 @@
+$OpenBSD$
+
+http://postgresql.1045698.n5.nabble.com/Buildfarm-now-building-but-with-test-failures-tp5119291p5120094.html
+
+--- dba/davical.sql.orig	Sat Nov 10 15:57:57 2012
++++ dba/davical.sql	Sat Nov 10 15:58:25 2012
+@@ -36,7 +36,7 @@ BEGIN
+           ELSE 0 END)::BIT(24);
+ END
+ $$
+-LANGUAGE 'PlPgSQL' IMMUTABLE STRICT;
++LANGUAGE PlPgSQL IMMUTABLE STRICT;
+ 
+ -- Given an array of verbose DAV: or CalDAV: privilege names return the bitmask
+ CREATE or REPLACE FUNCTION privilege_to_bits( TEXT[] ) RETURNS BIT(24) AS $$
+@@ -62,7 +62,7 @@ BEGIN
+   RETURN out_bits;
+ END
+ $$
+-LANGUAGE 'PlPgSQL' IMMUTABLE STRICT;
++LANGUAGE PlPgSQL IMMUTABLE STRICT;
+ 
+ 
+ -- This sequence is used in a number of places so that any DAV resource will have a unique ID
+@@ -262,7 +262,7 @@ CREATE or REPLACE FUNCTION sync_dav_id ( ) RETURNS TRI
+     RETURN NEW;
+ 
+   END
+-$$ LANGUAGE 'plpgsql';
++$$ LANGUAGE plpgsql;
+ CREATE TRIGGER caldav_data_sync_dav_id AFTER INSERT OR UPDATE ON caldav_data
+     FOR EACH ROW EXECUTE PROCEDURE sync_dav_id();
+ 

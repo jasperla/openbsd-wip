@@ -2,9 +2,8 @@
 
 COMMENT =	CalDAV/CardDav calendar/contacts server
 
-DISTNAME =	davical-1.0.2
+DISTNAME =	davical-1.1.1
 CATEGORIES =	productivity net
-REVISION =	0
 
 HOMEPAGE =	http://www.davical.org/
 
