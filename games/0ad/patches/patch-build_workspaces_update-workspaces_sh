@@ -1,0 +1,13 @@
+$OpenBSD$
+Don't build bundled libraries during configure.
+--- build/workspaces/update-workspaces.sh.orig	Sat Nov 10 00:38:01 2012
++++ build/workspaces/update-workspaces.sh	Sat Nov 10 00:38:06 2012
+@@ -67,7 +67,7 @@ echo "Updating bundled third-party dependencies..."
+ echo
+ 
+ # Build/update bundled external libraries
+-(cd ../../libraries/fcollada/src && ${MAKE} ${JOBS}) || die "FCollada build failed"
++#(cd ../../libraries/fcollada/src && ${MAKE} ${JOBS}) || die "FCollada build failed"
+ echo
+ if [ "$with_system_mozjs185" = "false" ]; then
+   (cd ../../libraries/spidermonkey && MAKE=${MAKE} JOBS=${JOBS} ./build.sh) || die "SpiderMonkey build failed"

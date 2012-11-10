@@ -34,7 +34,8 @@ LIB_DEPENDS =		audio/libvorbis \
 			net/enet \
 			textproc/libxml
 
-MAKE_FLAGS =		SILENT=
+MAKE_FLAGS =		SILENT= \
+			CXX="${CXX}"
 
 USE_GMAKE =		Yes
 CONFIGURE_ARGS +=	--with-system-nvtt \
@@ -71,6 +72,13 @@ pre-build:
 		${WRKDIST}/source/gui/scripting/ScriptFunctions.cpp \
 		${WRKDIST}/source/scriptinterface/tests/test_ScriptConversions.h \
 		${WRKDIST}/source/scriptinterface/tests/test_ScriptVal.h \
+
+do-build:
+	cd ${WRKDIST}/libraries/fcollada/src && \
+		env -i ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS}
+	cd ${WRKSRC} &&\
+		env -i ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
+			-f ${MAKE_FILE} ${ALL_TARGET}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/0ad
