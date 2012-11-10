@@ -14,15 +14,14 @@ WANTLIB += kdeui khtml kio kjs knewstuff3 kparts
 WANTLIB += kunitconversion nepomuk nepomukutils phonon_s plasma
 WANTLIB += avogadro boost_python-mt openbabel
 
-MODULES =	lang/python
+MODULES =	x11/kde4 lang/ocaml lang/python
 
-BUILD_DEPENDS =	math/facile
+BUILD_DEPENDS =	math/eigen2 \
+		math/facile
 
 RUN_DEPENDS =	math/facile
 
 LIB_DEPENDS = 	education/avogadro \
-		math/eigen2 \
-		misc/openbabel \
-		lang/ocaml,,-run
+		misc/openbabel
 
 .include <bsd.port.mk>
