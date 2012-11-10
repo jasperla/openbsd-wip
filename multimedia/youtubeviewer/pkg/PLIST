@@ -1,0 +1,4 @@
+@comment $OpenBSD:
+bin/youtube-viewer
+libdata/perl5/site_perl/WWW/
+libdata/perl5/site_perl/WWW/YoutubeViewer.pm
