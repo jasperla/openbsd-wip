@@ -1,0 +1,13 @@
+# $Id: TODO,v 1.2 2012/11/10 10:19:26 dhn Exp $
+
+2012-11-09 Dennis Herrmann <dhn@FreeBSD.org>
+
+ * Update to latest version (currently: 3.0.3) but the developer
+   has only the 3.0.0 Version as a *.tar.gz file on the Google
+   Code Server. Or maybe the git version?
+
+ * Remove the patches (see first point)
+ * Add the gtk-GUI Support
+ * Bevor this port run, we need www/p5-XML-Fast !
+
+EOF

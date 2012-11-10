@@ -1,0 +1,3 @@
+Youtube Viewer is a CLI application dedicated for searching and streaming
+Youtube Videos with MPlayer. It has been written in Perl and plays videos
+from Youtube at the best quality available without using a flash player.
