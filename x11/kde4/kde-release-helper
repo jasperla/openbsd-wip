@@ -99,6 +99,15 @@ list_local_ports() {
 }
 
 # Assume we're in KDE ports root directory.
+# Input: list of subdirectories.
+# Output: list of distribution names.
+port_dir_to_distname() {
+	while read D; do
+		(cd $D && make show=DISTNAME)
+	done | sed -Ee 's@-([0-9]|\$).*@@' | sort
+}
+
+# Assume we're in KDE ports root directory.
 list_l10n_ports() {
 	for L in $(cd l10n/ru && make show=ALL_LANGS); do
 		echo "kde-l10n-${L}"
@@ -201,12 +210,16 @@ prepare() {
 check_lists() {
 	test $# -eq 0 || usage
 	echo '==> checking for new source packages' >&2
-	list_local_ports | (cd libs && compare_sources_lists) |
-		 grep '^+' 
+	list_local_ports |
+	    port_dir_to_distname |
+	    (cd libs && compare_sources_lists) |
+	    grep '^+[^+]' |
+	    grep -v '^+kde-l10n' || true
 
 	echo '==> checking for l10n package list changes' >&2
-	list_l10n_ports | (cd l10n/ru && compare_sources_lists) |
-		 grep '^[+-]' 
+	list_l10n_ports |
+	    (cd l10n/ru && compare_sources_lists) |
+	    grep '^[+-]' || true
 }
 
 update() {
