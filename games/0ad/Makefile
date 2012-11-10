@@ -22,6 +22,7 @@ MASTER_SITES =		http://releases.wildfiregames.com/
 DISTFILES =		${PKGNAME}-alpha-unix-build.tar.gz \
 			${PKGNAME}-alpha-unix-data.tar.gz
 
+BUILD_DEPENDS =		shells/bash
 LIB_DEPENDS =		audio/libvorbis \
 			audio/openal \
 			devel/boost \
