@@ -56,6 +56,6 @@ LIB_DEPENDS +=	databases/openldap \
 		security/gpgme>=0.4.5 \
 		sysutils/e2fsprogs \
 		textproc/libical \
-		x11/kde4/akonadi
+		STEM->=${AKONADI_VERSION}:x11/kde4/akonadi
 
 .include <bsd.port.mk>
