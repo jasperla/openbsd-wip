@@ -1,0 +1,34 @@
+$OpenBSD$
+--- okteta/kasten/controllers/test/scriptvalueconvertertest.cpp.orig	Sun Nov 11 22:17:20 2012
++++ okteta/kasten/controllers/test/scriptvalueconvertertest.cpp	Sun Nov 11 22:35:36 2012
+@@ -18,6 +18,11 @@
+  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+  */
+ 
++#define __STDC_CONSTANT_MACROS
++
++#include <sys/types.h>
++#include <stdint.h>
++
+ #include "view/structures/script/scriptengineinitializer.h"
+ #include "view/structures/allprimitivetypes.h"
+ 
+@@ -312,14 +317,14 @@ void ScriptValueConverterTest::testParseEnum_data()
+     QTest::newRow("float2int32_range") << arg2(baseStr, "uint32()", "5294967296.234") << 0
+             << quint64(0) << false;
+     QTest::newRow("float2int64") << arg2(baseStr, "uint64()", "5294967296.234") << 1
+-            << quint64(5294967296UL) << false;
++            << quint64(UINT64_C(5294967296)) << false;
+     QTest::newRow("double_overflow") << arg2(baseStr, "uint64()", "9007199254740993.0") << 0
+-            << quint64(9007199254740993UL) << false; //only 992 and 994 can be represented as a double
++            << quint64(UINT64_C(9007199254740993)) << false; //only 992 and 994 can be represented as a double
+     QTest::newRow("uint64_max_hex")
+     << arg2(baseStr, "uint64()", "new String(\"0xFFFFFFFFFFFFFFFF\")") << 1
+-            << quint64(0xFFFFFFFFFFFFFFFFL) << false;
++            << quint64(UINT64_C(0xFFFFFFFFFFFFFFFF)) << false;
+     QTest::newRow("uint64_max") << arg2(baseStr, "uint64()", "new String(\"18446744073709551615\")")
+-            << 1 << quint64(18446744073709551615UL) << false;
++            << 1 << quint64(UINT64_C(18446744073709551615)) << false;
+ }
+ 
+ QTEST_MAIN(ScriptValueConverterTest)
