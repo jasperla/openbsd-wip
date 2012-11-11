@@ -1,0 +1,12 @@
+$OpenBSD$
+--- konq-plugins/validators/tidy_validator.cpp.orig	Sun Nov 11 22:12:46 2012
++++ konq-plugins/validators/tidy_validator.cpp	Sun Nov 11 22:13:25 2012
+@@ -26,7 +26,7 @@
+ #include <kdebug.h>
+ 
+ #include <buffio.h>
+-#include <tidy.h>
++#include <tidyp.h>
+ 
+ #include <config-konq-validator.h>
+ 

@@ -1,0 +1,36 @@
+$OpenBSD$
+--- konq-plugins/validators/FindLibTidy.cmake.orig	Mon Oct 22 16:05:53 2012
++++ konq-plugins/validators/FindLibTidy.cmake	Mon Oct 22 16:15:25 2012
+@@ -17,18 +17,18 @@ if (LIBTIDY_INCLUDE_DIR)
+   set(LibTidy_FIND_QUIETLY TRUE)
+ endif (LIBTIDY_INCLUDE_DIR)
+ 
+-FIND_PATH(LIBTIDY_INCLUDE_DIR tidy.h)
++FIND_PATH(LIBTIDY_INCLUDE_DIR tidyp.h)
+ 
+ if( NOT LIBTIDY_INCLUDE_DIR )
+-    find_path(LIBTIDY_INCLUDE_DIR tidy.h PATH_SUFFIXES tidy)
+-    #now tidy.h was inside a tidy subdirectory so we need to
++    find_path(LIBTIDY_INCLUDE_DIR tidyp.h PATH_SUFFIXES tidyp)
++    #now tidyp.h was inside a tidyp subdirectory so we need to
+     #add that to the include dir
+-    set(LIBTIDY_INCLUDE_DIR ${LIBTIDY_INCLUDE_DIR}/tidy CACHE PATH "Libtidy include directory")
++    set(LIBTIDY_INCLUDE_DIR ${LIBTIDY_INCLUDE_DIR}/tidyp CACHE PATH "Libtidy include directory")
+ endif( NOT LIBTIDY_INCLUDE_DIR )
+ 
+ 
+ 
+-FIND_LIBRARY(LIBTIDY_LIBRARIES NAMES tidy)
++FIND_LIBRARY(LIBTIDY_LIBRARIES NAMES tidyp)
+ 
+ if (LIBTIDY_INCLUDE_DIR AND LIBTIDY_LIBRARIES)
+    set(LIBTIDY_FOUND TRUE)
+@@ -41,7 +41,7 @@ if (LIBTIDY_FOUND)
+    endif (NOT LibTidy_FIND_QUIETLY)
+ 
+     SET(CHECK_TIDY_ULONG_SOURCE_CODE "
+-#include <${LIBTIDY_INCLUDE_DIR}/tidy.h>
++#include <${LIBTIDY_INCLUDE_DIR}/tidyp.h>
+ 
+ int main()
+ {
