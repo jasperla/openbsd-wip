@@ -1,5 +1,5 @@
 @comment $OpenBSD$
-@conflict gwenview-*
+@conflict gwenview4-*
 @bin bin/gwenview
 @bin bin/gwenview_importer
 lib/kde4/gvpart.so

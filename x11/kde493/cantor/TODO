@@ -1,2 +1,2 @@
-Fixed LibR* bug. Now, /usr/local/bin/cantor_rserver find our new R-libs
-but bin/R need more love.
+Bogus message about "backend /usr/local/bin/latex" at startup when no
+backend is choosen on the command line.

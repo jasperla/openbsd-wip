@@ -22,6 +22,7 @@ MASTER_SITES =		http://releases.wildfiregames.com/
 DISTFILES =		${PKGNAME}-alpha-unix-build.tar.gz \
 			${PKGNAME}-alpha-unix-data.tar.gz
 
+BUILD_DEPENDS =		shells/bash
 LIB_DEPENDS =		audio/libvorbis \
 			audio/openal \
 			devel/boost \
@@ -33,7 +34,8 @@ LIB_DEPENDS =		audio/libvorbis \
 			net/enet \
 			textproc/libxml
 
-MAKE_FLAGS =		SILENT=
+MAKE_FLAGS =		SILENT= \
+			CXX="${CXX}"
 
 USE_GMAKE =		Yes
 CONFIGURE_ARGS +=	--with-system-nvtt \
@@ -69,7 +71,14 @@ pre-build:
 		${WRKDIST}/source/gui/scripting/GuiScriptConversions.cpp \
 		${WRKDIST}/source/gui/scripting/ScriptFunctions.cpp \
 		${WRKDIST}/source/scriptinterface/tests/test_ScriptConversions.h \
-		${WRKDIST}/source/scriptinterface/tests/test_ScriptVal.h \
+		${WRKDIST}/source/scriptinterface/tests/test_ScriptVal.h
+
+do-build:
+	cd ${WRKDIST}/libraries/fcollada/src && \
+		env -i ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS}
+	cd ${WRKSRC} &&\
+		env -i ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
+			-f ${MAKE_FILE} ${ALL_TARGET}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/0ad
