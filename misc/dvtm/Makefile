@@ -6,10 +6,9 @@ DISTNAME=		dvtm-0.8
 CATEGORIES=		misc
 
 HOMEPAGE=		http://www.brain-dump.org/projects/dvtm/
-MAINTAINER=		Emilien Gaspar <gapz@dud-t.org>
+MAINTAINER=		Dennis Herrmann <dhn@FreeBSD.org>
 
 # MIT/X
-# LGPL: madtty.c
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
