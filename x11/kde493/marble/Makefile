@@ -13,8 +13,6 @@ WANTLIB += kdeui kio knewstuff3 kparts nepomuk
 WANTLIB += nepomukutils phonon_s plasma soprano
 WANTLIB += gps shp
 
-MODKDE4_USE =	libs
-
 LIB_DEPENDS = 	devel/shapelib \
 		misc/gpsd,-main
 
