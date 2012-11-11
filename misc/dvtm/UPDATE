@@ -1,0 +1,15 @@
+# $Id: UPDATE,v 1.1 2012/11/10 22:24:59 dhn Exp $
+
+2012-11-10 Dennis Herrmann <dhn@FreeBSD.org>
+
+ * Update to 0.8
+ * Update/Fix some patches
+   - Updated: patches/patch-config_mk: [01]
+   - Fix: patches/patch-dvtm_c: [02]
+   - Fix: patches/patch-vt_c: [03]
+
+[01] Update for the new release
+[02] "warning: comparison is always false due to limited range of data type"
+[03] "warning: sprintf() is often misused, please use snprintf()"
+
+EOF
