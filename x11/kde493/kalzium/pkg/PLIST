@@ -20,6 +20,8 @@ lib/kde4/plasma_applet_molmassCalculator.so
 lib/kde4/plasma_engine_kalzium.so
 @lib lib/libcompoundviewer.so.${LIBcompoundviewer_VERSION}
 @lib lib/libscience.so.${LIBscience_VERSION}
+@comment lib/ocaml/
+@comment lib/ocaml/stublibs/
 @man man/man1/kalzium.1
 share/applications/kde4/kalzium.desktop
 share/apps/desktoptheme/default/widgets/chalkboard.svg

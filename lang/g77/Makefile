@@ -11,7 +11,7 @@ DISTFILES = 		g77-openbsd.tgz
 CONFIG = 		${MACHINE_ARCH}-unknown-openbsd${OSREV}
 SUBST_VARS += 		CONFIG V
 SYSV =			4.2.1
-SYSLIBPATH !=		 cc -v 2>&1| sed -n -e '/gcc-lib/s%^[^/]*\(/.*\)/[^/]*%\1%p'
+SYSLIBPATH =		 `cc -v 2>&1| sed -n -e '/gcc-lib/s%^[^/]*\(/.*\)/[^/]*%\1%p'`
 
 COMMENT =		GNU fortran 77 compiler
 CATEGORIES =		lang math

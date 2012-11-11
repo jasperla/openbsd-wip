@@ -22,12 +22,17 @@ WANTLIB += openal qca2 sndfile
 # To be fixed when some stuff got out of x11/kde4.
 MODULES =	x11/kde4 lang/python
 
+BUILD_DEPENDS =	devel/py-twisted/core \
+		math/qhull \
+		x11/kde4/py-kde
+
+RUN_DEPENDS =	devel/py-twisted/core \
+		math/qhull \
+		x11/kde4/py-kde
+
 LIB_DEPENDS =	audio/openal \
 		audio/libsndfile \
-		devel/py-twisted/core \
-		math/qhull \
-		security/qca2 \
-		x11/kde4/py-kde
+		security/qca2
 
 # for Kajongg to avoid build-time dependency
 CONFIGURE_ARGS =	-DINSTALL_KAJONGG:Bool=True
