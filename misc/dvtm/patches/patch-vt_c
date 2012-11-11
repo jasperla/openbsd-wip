@@ -1,0 +1,22 @@
+--- vt.c.orig	Wed Aug  1 13:28:26 2012
++++ vt.c	Sat Nov 10 22:21:48 2012
+@@ -46,6 +46,10 @@
+ # include "forkpty-aix.c"
+ #endif
+ 
++#if defined(__GNUC__) && defined(__STRICT_ANSI__)
++#define alloca(size)	__builtin_alloca(size)
++#endif
++
+ #ifndef NCURSES_ATTR_SHIFT
+ # define NCURSES_ATTR_SHIFT 8
+ #endif
+@@ -1452,7 +1456,7 @@
+ static void send_curs(Vt *t)
+ {
+ 	char keyseq[16];
+-	sprintf(keyseq, "\e[%d;%dR", (int)(t->curs_row - t->lines), t->curs_col);
++	printf(keyseq, "\e[%d;%dR", (int)(t->curs_row - t->lines), t->curs_col);
+ 	vt_write(t, keyseq, strlen(keyseq));
+ }
+ 

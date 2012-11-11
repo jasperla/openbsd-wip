@@ -1,0 +1,11 @@
+--- dvtm.c.orig	Sat Nov 10 21:55:39 2012
++++ dvtm.c	Sat Nov 10 21:55:52 2012
+@@ -408,7 +408,7 @@
+ 	short fg = -1, bg = -1;
+ 	const ColorRule *r;
+ 
+-	for (i = 0; i < countof(colorrules); i++) {
++	for (int i = 0; i < countof(colorrules); i++) {
+ 		r = &colorrules[i];
+ 		if (strstr(c->title, r->title)) {
+ 			attrs = r->attrs;
