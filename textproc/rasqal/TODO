@@ -1,7 +1,0 @@
-  Testsuites summary:
-    Failed tests:
-      dawg-triple-pattern-001
-      dawg-triple-pattern-002
-      dawg-triple-pattern-003
-      dawg-triple-pattern-004
-    Passed: 8  Failed: 4  Skipped: 0  Xfailed: 0  Uxpassed: 0
