@@ -3,6 +3,7 @@
 COMMENT =	K Desktop Environment, integrated development environment
 DISTNAME =	kdevelop-${KDEVELOP_VERSION}
 HOMEPAGE =	http://www.kdevelop.org/
+REVISION =	0
 
 EXTRACT_SUFX =	.tar.bz2
 
@@ -37,7 +38,7 @@ USE_GMAKE =	Yes
 
 BUILD_DEPENDS =	misc/shared-mime-info
 
-LIB_DEPENDS = 	x11/kde4/kdevplatform>=${VERSION:C/^4/1/} \
+LIB_DEPENDS = 	STEM->=${KDEVPLATFORM_VERSION}:x11/kde4/kdevplatform \
 		x11/kde4/sdk
 
 .include <bsd.port.mk>
