@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, workspace
 DISTNAME =	kde-workspace-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kdecorations			0.0 # 4.7
 SHARED_LIBS +=	kephal				0.0 # 4.7
@@ -71,7 +72,8 @@ LIB_DEPENDS =	audio/xmms \
 		databases/soprano \
 		devel/libusb-compat \
 		math/qalculate/libqalculate \
-		misc/google-gadgets,-qt \
+		misc/google-gadgets \
+		misc/google-gadgets,,-qt \
 		misc/gpsd \
 		sysutils/consolekit \
 		x11/dbusmenu-qt \
