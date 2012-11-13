@@ -1,3 +1,0 @@
-KOffice wants to link with DCMTK , so we have to install
-headers and libraries. While here, regression tests could
-be enabled too.
