@@ -214,9 +214,12 @@ RUN_DEPENDS :=		${RUN_DEPENDS:C@x11/kde4/@${_MODKDE4_REAL_DIR}/@}
 LIB_DEPENDS :=		${LIB_DEPENDS:C@x11/kde4/@${_MODKDE4_REAL_DIR}/@}
 . if "${MULTI_PACKAGES}" != ""
 .  for _s in ${MULTI_PACKAGES}
-BUILD_DEPENDS${_s} :=	${BUILD_DEPENDS${_s}:C@x11/kde4/@${_MODKDE4_REAL_DIR}/@}
+.   if defined(RUN_DEPENDS${_s})
 RUN_DEPENDS${_s} :=	${RUN_DEPENDS${_s}:C@x11/kde4/@${_MODKDE4_REAL_DIR}/@}
+.   endif
+.   if defined(LIB_DEPENDS${_s})
 LIB_DEPENDS${_s} :=	${LIB_DEPENDS${_s}:C@x11/kde4/@${_MODKDE4_REAL_DIR}/@}
+.   endif
 .  endfor
 . endif
 .endif
