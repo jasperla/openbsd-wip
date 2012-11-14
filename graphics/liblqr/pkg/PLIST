@@ -17,7 +17,7 @@ include/lqr-1/lqr/lqr_vmap_list_pub.h
 include/lqr-1/lqr/lqr_vmap_pub.h
 lib/liblqr-1.a
 lib/liblqr-1.la
-lib/pkgconfig/
+@lib lib/liblqr-1.so.${LIBlqr-1_VERSION}
 lib/pkgconfig/lqr-1.pc
 share/cmake/
 share/cmake/Modules/
