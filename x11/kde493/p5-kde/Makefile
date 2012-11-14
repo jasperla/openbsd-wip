@@ -18,8 +18,7 @@ MODKDE4_USE =	libs
 
 BUILD_DEPENDS =	x11/kde4/p5-qt
 RUN_DEPENDS =	x11/kde4/p5-qt
-LIB_DEPENDS = 	x11/kde4/kate \
-		x11/kde4/smokekde
+LIB_DEPENDS = 	x11/kde4/smokekde
 
 # Avoid clashing Perl do_open and do_close with GCC's locale_facets.h
 post-patch:
