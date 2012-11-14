@@ -63,17 +63,18 @@ WANTLIB += grantlee_core grantlee_gui qgpgme sasl2 prison
 
 # textproc/dblatex could be detected but will not be used
 BUILD_DEPENDS =	devel/boost \
-		databases/soprano \
-		databases/strigi \
 		misc/shared-desktop-ontologies \
+		textproc/libxslt
+
+RUN_DEPENDS =	misc/shared-desktop-ontologies
+
+LIB_DEPENDS =	databases/soprano \
+		databases/strigi \
 		security/cyrus-sasl2 \
 		security/gpgme \
 		security/libassuan \
-		textproc/libxslt \
 		x11/grantlee \
 		x11/kde4/akonadi
-
-LIB_DEPENDS =	x11/grantlee
 
 WRONG_SYSCONF_FILES =	dbus-1	share/examples
 
