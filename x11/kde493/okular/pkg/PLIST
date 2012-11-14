@@ -1,5 +1,5 @@
 @comment $OpenBSD$
-@conflict gwenview-*
+@conflict gwenview-<4.9.3
 @bin bin/okular
 include/okular/
 include/okular/core/
