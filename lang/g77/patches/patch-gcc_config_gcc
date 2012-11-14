@@ -1,6 +1,6 @@
 $OpenBSD: patch-gcc_config_gcc,v 1.1 2012/09/01 00:00:32 pascal Exp $
---- gcc/config.gcc.orig    Sat May 22 12:18:42 2010
-+++ gcc/config.gcc    Sun Oct 21 20:48:05 2012
+--- gcc/config.gcc.orig	Sat May 22 18:18:42 2010
++++ gcc/config.gcc	Tue Nov 13 13:52:33 2012
 @@ -1184,6 +1184,7 @@ i[34567]86-*-openbsd*)
  	gnu_ld=yes
    	;;
@@ -9,7 +9,15 @@ $OpenBSD: patch-gcc_config_gcc,v 1.1 2012/09/01 00:00:32 pascal Exp $
  	tm_file="i386/biarch64.h i386/i386.h i386/unix.h i386/att.h dbxelf.h elfos.h openbsd.h openbsd-libpthread.h i386/x86-64.h i386/openbsd64.h"
  	tm_file="${tm_file} exec-stack.h"
  	tmake_file="t-libc-ok t-openbsd i386/t-openbsd"
-@@ -2460,6 +2461,7 @@ sparc-*-openbsd*)
+@@ -1936,6 +1937,7 @@ mips*-*-linux*)				# Linux MIPS, either endian.
+ 	;;
+ mips*-*-openbsd*)
+ 	target_cpu_default="MASK_GAS|MASK_ABICALLS"
++	tm_defines="${tm_defines} PIE_DEFAULT=1"
+ 	tm_file="elfos.h ${tm_file}"
+ 	case $machine in
+         mips64*-*)
+@@ -2460,6 +2462,7 @@ sparc-*-openbsd*)
  	use_collect2=yes
  	;;
  sparc64-*-openbsd*)
