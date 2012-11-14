@@ -13,7 +13,6 @@ BUILD_DEPENDS =	archivers/bzip2 \
 		archivers/xz
 
 LIB_DEPENDS =	archivers/libarchive \
-		devel/qjson \
 		x11/kde4/baseapps
 
 .include <bsd.port.mk>
