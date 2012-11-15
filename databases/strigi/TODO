@@ -1,9 +1,0 @@
-One regression tests fail, probably due to lack of decent locale support in base:
-10/26 Test #10: InputStreamReaderTest ............***Failed    0.05 sec
-      Start 11: InputStreamTest
-
-
-Need to investigate if we have threading problems here:
-[ 31%] Building CXX object libstreamanalyzer/lib/CMakeFiles/streamanalyzerstatic.dir/saxeventanalyzer.cpp.o
-cd /usr/ports/pobj/strigi-0.7.5/build-amd64/libstreamanalyzer/lib && /usr/bin/c++   -D_REENTRANT -DHAVE_CONFIG_H -DMAKE_STREAMANALYZER_LIB -O2 -pipe   -fvisibility=hidden -fvisibility-inlines-hidden -I/usr/ports/pobj/strigi-0.7.5/strigi-0.7.5/libstreams/include -I/usr/ports/pobj/strigi-0.7.5/build-amd64/libstreams/include -I/usr/ports/pobj/strigi-0.7.5/strigi-0.7.5/libstreamanalyzer/include -I/usr/ports/pobj/strigi-0.7.5/build-amd64/libstreamanalyzer/include -I/usr/ports/pobj/strigi-0.7.5/strigi-0.7.5/libstreamanalyzer/lib -I/usr/ports/pobj/strigi-0.7.5/build-amd64/libstreamanalyzer/lib -I/usr/local/include -I/usr/local/include/libavcodec -I/usr/local/include/libavformat -I/usr/local/include/libavutil -I/usr/local/include/libswscale -I/usr/local/include/libxml2    -fPIC -o CMakeFiles/streamanalyzerstatic.dir/saxeventanalyzer.cpp.o -c /usr/ports/pobj/strigi-0.7.5/strigi-0.7.5/libstreamanalyzer/lib/saxeventanalyzer.cpp
-/usr/ports/pobj/strigi-0.7.5/strigi-0.7.5/libstreamanalyzer/lib/saxeventanalyzer.cpp:30:2: warning: #warning Strigi needs a thread safe version of libxml2
