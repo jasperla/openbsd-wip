@@ -1,14 +1,13 @@
 # $OpenBSD: Makefile,v 1.39 2012/09/29 07:08:38 landry Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
-#BROKEN-hppa =	ICE on src/tr1/assoc_laguerre.cpp
-BROKEN =	very raw initial diff, sent to brad for feedback
+BROKEN-hppa =	ICE on src/tr1/assoc_laguerre.cpp
 
 COMMENT=	free peer-reviewed portable C++ source libraries
 
 PKGNAME=	boost-${VERSION}
 
-VERSION=	1.51.0
+VERSION=	1.52.0
 DISTNAME=	boost_${VERSION:S/./_/g}
 
 SO_VERSION=	5.0
@@ -59,7 +58,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=boost/}
 
 MAKE_ENV=	GCC="${CC}" GXX="${CXX}"
 
-BJAM_CONFIG=	-sNO_BZIP2=1 \
+BJAM_CONFIG=	-sNO_COMPRESSION=1 \
 		-d+2 -q \
 		-j ${MAKE_JOBS} \
 		cflags='${CFLAGS}' cxxflags='${CXXFLAGS}' \
