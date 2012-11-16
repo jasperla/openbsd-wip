@@ -79,7 +79,14 @@ cleanup() {
 trap cleanup EXIT
 
 # Files to ignore during prepare and megre stages in addition to git ones
-IGNORE_FILES="*.port.mk `basename $0`"
+IGNORE_FILES="*.port.mk `basename $0` STATUS-*"
+
+# List of options for diff(1) to make it ignore files above
+diff_ignore_opts() {
+	for F in ${IGNORE_FILES}; do
+		echo -n " -x $F"
+	done
+}
 
 # Arg: KDE version in X.Y.Z format
 # Output: kdeXYZ
@@ -179,7 +186,6 @@ prepare() {
 
 	echo '==> removing extra files' >&2
 	for F in $IGNORE_FILES; do ear rm $NEW_KDE_PORT_DIR/$F; done
-	ear rm -f $NEW_KDE_PORT_DIR/STATUS-*
 	find $NEW_KDE_PORT_DIR -name 'PLIST*.orig' -print0 | xargs -0rt rm
 	ear rm -f $NEW_KDE_PORT_DIR/l10n/distinfo
 	for P in $LOCAL_PORTS; do
@@ -230,12 +236,11 @@ check_lists() {
 merge_back() {
 	test $# -eq 0 || usage
 	# Avoid erroring out here, we'll print a nicer message below.
-	local KDEV="`cd libs && make show=MODKDE_VERSION || true`"
+	local SKDEV=`cd libs && make show=_MODKDE4_STABLE || true`
+	local KDEV=`cd libs && make show=MODKDE_VERSION || true`
 
-	if [ -f kde4.port.mk \
-	  -o X"`cd .. && basename $(pwd)`" != Xx11 \
-	  -o X"$KDEV" = X"`cd libs && make show=_MODKDE4_STABLE`" \
-          ]; then
+	if [ -f kde4.port.mk -o X"`cd .. && basename $(pwd)`" != Xx11 -o \
+	     X"$KDEV" = X ]; then
 		echo "Please run $0 from directory with KDE4 ports being tested" >&2
 		exit 2
 	fi
@@ -245,21 +250,26 @@ merge_back() {
 	cd ..
 	T=`mktemp -t kdepatch.XXXXXXXX`
 	CLEANUP_ITEMS="$CLEANUP_ITEMS $T"
-	diff -urNp -I '^MODKDE4?_VERSION[[:space:]]*=' -X ../.gitignore \
-	    -x kde-release-helper \
-	    -x kde4.port.mk \
-	    -x 'STATUS-*' \
-	    $SKPD $KPD |
-	    sed -e "s@^+++ ${KPD}/@+++ ${SKPD}/@" >$T || true
-	 cat - $T <<EOF | ${PAGER:-more}
+
+	SKVERLINE="`egrep -n ^_MODKDE4_STABLE ${SKPD}/kde4.port.mk | head -1`"
+
+	cat >$T <<EOF
 Here is a summary patch to be applied, please review. Note that STATUS-* files
 are missing in the diff by purpose, they will be handled specially.
 
 If you proceed and NOT abort, commit message editor will appear
 two times: first time for merging, and second - for removing.
 
+--- ${SKPD}/kde4.port.mk
++++ ${SKPD}/kde4.port.mk
+@@ -${SKVERLINE%%:*},1 +${SKVERLINE%%:*},1 @@
+-${SKVERLINE#*:}
++_MODKDE4_STABLE = ${KPD}
 EOF
-
+	diff -urNp -I '^MODKDE4?_VERSION[[:space:]]*=' -X ../.gitignore \
+	    `diff_ignore_opts` $SKPD $KPD \
+	    | sed -e "s@^+++ ${KPD}/@+++ ${SKPD}/@" >>$T
+	${PAGER:-more} <$T
 	patch -E <$T
 	rm $T
 	rm $SKPD/STATUS-*
