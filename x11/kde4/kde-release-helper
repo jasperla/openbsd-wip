@@ -79,7 +79,7 @@ cleanup() {
 trap cleanup EXIT
 
 # Files to ignore during prepare and megre stages in addition to git ones
-IGNORE_FILES="kde4.port.mk `basename $0`"
+IGNORE_FILES="*.port.mk `basename $0`"
 
 # Arg: KDE version in X.Y.Z format
 # Output: kdeXYZ
