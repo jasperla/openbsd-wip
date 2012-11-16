@@ -143,7 +143,7 @@ list_remote_source() {
 # Input: sorted local list of ports.
 # Output: list of new ports prefixed with "+"
 compare_sources_lists() {
-	T="`mktemp`"
+	T="`mktemp -t srccomp.XXXXXXXX`"
 	OCLEANUP_ITEMS="$CLEANUP_ITEMS"
 	CLEANUP_ITEMS="$CLEANUP_ITEMS $T"
 	list_remote_source >"$T"
