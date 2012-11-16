@@ -41,6 +41,8 @@ MODGCC4_ARCHS =		*
 
 # XXX: it seems gtk+2 would merely be a BUILD/RUN_DEPENDS, need to check
 LIB_DEPENDS =		devel/libffi
+BUILD_DEPENDS =		graphics/cairo
+RUN_DEPENDS =		x11/gtk+2
 
 WANTLIB += GL GLU X11 Xdamage Xext Xfixes Xxf86vm c crypto drm
 WANTLIB += ffi m pthread stdc++ xcb
