@@ -76,6 +76,9 @@ cleanup() {
 }
 trap cleanup EXIT
 
+# Files to ignore during prepare and megre stages in addition to git ones
+IGNORE_FILES="kde4.port.mk `basename $0`"
+
 # Arg: KDE version in X.Y.Z format
 # Output: kdeXYZ
 kde_port_dir() {
@@ -173,7 +176,7 @@ prepare() {
 	local LOCAL_PORTS=`cd $NEW_KDE_PORT_DIR && list_local_ports`
 
 	echo '==> removing extra files' >&2
-	ear rm $NEW_KDE_PORT_DIR/kde4.port.mk $NEW_KDE_PORT_DIR/`basename "$0"`
+	for F in $IGNORE_FILES; do ear rm $NEW_KDE_PORT_DIR/$F; done
 	ear rm -f $NEW_KDE_PORT_DIR/STATUS-*
 	find $NEW_KDE_PORT_DIR -name 'PLIST*.orig' -print0 | xargs -0rt rm
 	ear rm -f $NEW_KDE_PORT_DIR/l10n/distinfo
