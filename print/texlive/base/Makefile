@@ -57,11 +57,12 @@ CPPFLAGS +=	-DU_PLATFORM=U_PF_BSD
 # http://tug.org/pipermail/tlbuild/2012q2/002266.html
 CONFIGURE_ENV +=	TL_MAKE=${GMAKE} \
 			CPPFLAGS="${CPPFLAGS}"
-
-WRKBUILD =              ${WRKSRC}/Work # Can't build in same dir
+# Can't build in same dir
+WRKBUILD =              ${WRKSRC}/Work
 CONFIGURE_SCRIPT =      ../configure
 MAKE_ENV =		${CONFIGURE_ENV}
-NO_REGRESS =		Yes # not worth the effort.
+# Not worth the effort.
+NO_REGRESS =		Yes
 
 USE_GMAKE =	Yes
 USE_LIBTOOL =	Yes
@@ -77,7 +78,7 @@ BUILD_DEPENDS +=	lang/clisp
 RUN_DEPENDS +=		lang/clisp
 CONFIGURE_ARGS +=	--enable-xindy \
 			--disable-xindy-rules
-PKG_ARGS +=		-Dxindy=1 # Note. texmf-full required for xindy
+PKG_ARGS +=		-Dxindy=1
 .else
 PKG_ARGS +=		-Dxindy=0
 .endif
@@ -118,7 +119,7 @@ CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--disable-multiplatform \
 			--disable-native-texlive-build \
 			--with-banner-add="-OpenBSD_Ports" \
-			--with-system-xpdf # link poppler instead of internal xpdf
+			--with-system-xpdf #link poppler
 
 SUBST_VARS +=		TRUEPREFIX LOCALBASE
 
