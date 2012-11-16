@@ -9,11 +9,14 @@ lib/kde4/libaudiocd_encoder_wav.so
 lib/libaudiocdplugins.so
 share/apps/kconf_update/audiocd.upd
 share/apps/kconf_update/upgrade-metadata.sh
+share/apps/konqsidebartng/
+share/apps/konqsidebartng/virtual_folders/
 share/apps/konqsidebartng/virtual_folders/services/
 share/apps/konqsidebartng/virtual_folders/services/audiocd.desktop
 share/apps/solid/
 share/apps/solid/actions/
 share/apps/solid/actions/solid_audiocd.desktop
+share/config.kcfg/
 share/config.kcfg/audiocd_lame_encoder.kcfg
 share/config.kcfg/audiocd_vorbis_encoder.kcfg
 share/doc/HTML/en/kioslave/audiocd/
