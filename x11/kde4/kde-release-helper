@@ -56,10 +56,12 @@ set -e
 usage() {
 	echo "usage: $0 prepare new-KDE-version" >&2
 	echo "       $0 check-lists" >&2
+	echo "       $0 merge" >&2
 #	echo "       $0 update use-flag" >&2
 	echo >&2
 	echo "examples:" >&2
 	echo "  $0 prepare 4.9.3" >&2
+	echo "  $0 merge" >&2
 #	echo "  $0 update initial" >&2
 	exit 1
 }
@@ -225,6 +227,49 @@ check_lists() {
 	    grep '^[+-]' || true
 }
 
+merge_back() {
+	test $# -eq 0 || usage
+	# Avoid erroring out here, we'll print a nicer message below.
+	local KDEV="`cd libs && make show=MODKDE_VERSION || true`"
+
+	if [ -f kde4.port.mk \
+	  -o X"`cd .. && basename $(pwd)`" != Xx11 \
+	  -o X"$KDEV" = X"`cd libs && make show=_MODKDE4_STABLE`" \
+          ]; then
+		echo "Please run $0 from directory with KDE4 ports being tested" >&2
+		exit 2
+	fi
+
+	local SKPD=kde4
+	local KPD=$(kde_port_dir $KDEV)
+	cd ..
+	T=`mktemp -t kdepatch.XXXXXXXX`
+	CLEANUP_ITEMS="$CLEANUP_ITEMS $T"
+	diff -urNp -I '^MODKDE4?_VERSION[[:space:]]*=' -X ../.gitignore \
+	    -x kde-release-helper \
+	    -x kde4.port.mk \
+	    -x 'STATUS-*' \
+	    $SKPD $KPD |
+	    sed -e "s@^+++ ${KPD}/@+++ ${SKPD}/@" >$T || true
+	 cat - $T <<EOF | ${PAGER:-more}
+Here is a summary patch to be applied, please review. Note that STATUS-* files
+are missing in the diff by purpose, they will be handled specially.
+
+If you proceed and NOT abort, commit message editor will appear
+two times: first time for merging, and second - for removing.
+
+EOF
+
+	patch -E <$T
+	rm $T
+	rm $SKPD/STATUS-*
+	mv $KPD/STATUS-* $SKPD/
+	git add $SKPD
+	git commit -m "Merge KDE $KDEV from testing directory." -e -- $SKPD
+	rm -R $KPD
+	git commit -m "Remove KDE $KDEV testing directory." -e -- $KPD
+}
+
 update() {
 	test $# -ge 1 || usage
 }
@@ -240,6 +285,10 @@ p|pr|pre|prep|prepa|prepar|prepare)
 
 check-l|check-li|check-lis|check-list|check-lists)
 	check_lists "$@"
+	;;
+
+m|me|mer|merg|merge)
+	merge_back "$@"
 	;;
 
 u|up|upd|upda|updat|update)
