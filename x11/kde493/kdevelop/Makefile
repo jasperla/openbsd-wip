@@ -3,7 +3,6 @@
 COMMENT =	K Desktop Environment, integrated development environment
 DISTNAME =	kdevelop-${KDEVELOP_VERSION}
 HOMEPAGE =	http://www.kdevelop.org/
-REVISION =	0
 
 EXTRACT_SUFX =	.tar.bz2
 
