@@ -1,0 +1,352 @@
+===>  Enabling ccache for boost-1.52.0
+===> boost-1.52.0 depends on: python->=2.7,<2.8 -> python-2.7.3p1
+===> boost-1.52.0 depends on: ccache-* -> ccache-3.1.8
+===>  Verifying specs: c m pthread stdc++ util z c m pthread stdc++ util z
+===>  found c.66.0 m.7.1 pthread.17.0 stdc++.55.0 util.11.4 z.4.1
+===>  Checking files for boost-1.52.0
+`/home/amit/obsd/ports/distfiles/boost_1_52_0.tar.gz' is up to date.
+>> (SHA256) boost_1_52_0.tar.gz: OK
+===>  Extracting for boost-1.52.0
+===>  Patching for boost-1.52.0
+===>  Configuring for boost-1.52.0
+perl /home/amit/obsd/ports/infrastructure/bin/pkg_subst -DMODPY_PYCACHE= -DMODPY_COMMENT=\"@comment\ \" -DMODPY_PYC_MAGIC_TAG= -DMODPY_BIN=/usr/local/bin/python2.7 -DMODPY_EGG_VERSION= -DMODPY_VERSION=2.7 -DMODPY_BIN_SUFFIX= -DMODPY_PY_PREFIX=py- -DSO_VERSION=5.0 -DLIBboost_date_time_VERSION=5.0 -DLIBboost_date_time-mt_VERSION=5.0 -DLIBboost_filesystem_VERSION=5.0 -DLIBboost_filesystem-mt_VERSION=5.0 -DLIBboost_graph_VERSION=5.0 -DLIBboost_graph-mt_VERSION=5.0 -DLIBboost_iostreams_VERSION=5.0 -DLIBboost_iostreams-mt_VERSION=5.0 -DLIBboost_math_c99_VERSION=5.0 -DLIBboost_math_c99-mt_VERSION=5.0 -DLIBboost_math_c99f_VERSION=5.0 -DLIBboost_math_c99f-mt_VERSION=5.0 -DLIBboost_math_c99l_VERSION=5.0 -DLIBboost_math_c99l-mt_VERSION=5.0 -DLIBboost_math_tr1_VERSION=5.0 -DLIBboost_math_tr1-mt_VERSION=5.0 -DLIBboost_math_tr1f_VERSION=5.0 -DLIBboost_math_tr1f-mt_VERSION=5.0 -DLIBboost_math_tr1l_VERSION=5.0 -DLIBboost_math_tr1l-mt_VERSION=5.0 -DLIBboost_prg_exec_monitor-mt_VERSION=5.0 -DLIBboost_prg_exec_monitor_VERSION=5.0 -DLIBboost_program_options_VERSION=5.0 -DLIBboost_program_options-mt_VERSION=5.0 -DLIBboost_python_VERSION=5.0 -DLIBboost_python-mt_VERSION=5.0 -DLIBboost_regex_VERSION=5.0 -DLIBboost_regex-mt_VERSION=5.0 -DLIBboost_serialization_VERSION=5.0 -DLIBboost_serialization-mt_VERSION=5.0 -DLIBboost_signals_VERSION=5.0 -DLIBboost_signals-mt_VERSION=5.0 -DLIBboost_system_VERSION=5.0 -DLIBboost_system-mt_VERSION=5.0 -DLIBboost_thread_VERSION=5.0 -DLIBboost_unit_test_framework_VERSION=5.0 -DLIBboost_unit_test_framework-mt_VERSION=5.0 -DLIBboost_wave_VERSION=5.0 -DLIBboost_wave-mt_VERSION=5.0 -DLIBboost_wserialization_VERSION=5.0 -DLIBboost_wserialization-mt_VERSION=5.0 -DLIBboost_chrono_VERSION=5.0 -DLIBboost_chrono-mt_VERSION=5.0 -DLIBboost_context_VERSION=5.0 -DLIBboost_context-mt_VERSION=5.0 -DLIBboost_random_VERSION=5.0 -DLIBboost_random-mt_VERSION=5.0 -DLIBboost_timer_VERSION=5.0 -DLIBboost_timer-mt_VERSION=5.0 -DLIBboost_graph_parallel_VERSION=5.0 -DLIBboost_graph_parallel-mt_VERSION=5.0 -DMACHINE_ARCH=amd64 -DARCH=amd64 -DHOMEPAGE=http://www.boost.org/ -D^PREFIX=/usr/local -D^SYSCONFDIR=/etc -DFLAVOR_EXT= -DFULLPKGNAME=boost-1.52.0 -DMAINTAINER=Brad\ Smith\ \<brad@comstyle.com\> -D^BASE_PKGPATH=devel/boost-new -D^LOCALBASE=/usr/local -D^X11BASE=/usr/X11R6 -D^TRUEPREFIX=/usr/local -D^RCDIR=/etc/rc.d /home/amit/obsd/ports/pobj/boost-1.52.0/boost_1_52_0/Jamroot
+*** ./configure: boost configuration utility ***
+
+Please stand by while exploring compiler capabilities...
+Be patient - this could take some time...
+
+Note that this test script only gives an approximate
+configuration - you will need to test the results carefully
+using the boost regression test suite before using the results.
+
+***
+
+Info : .cpp used as extension for tests
+checking for boost main tree... ./../..
+checking for g++... g++
+checking for C++ compiler default output file name... a.out
+checking whether the C++ compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking for pthread_exit in -lpthread... yes
+checking for cos in -lm... yes
+checking for clock in -lrt... no
+checking Working ADL barriers. ... OK
+checking Koenig lookup ... OK
+checking template specialisations of array types ... OK
+checking C++0x auto declarators unavailable ... Failed
+checking C++0x auto multideclarators unavailable ... Failed
+checking std::auto_ptr ... OK
+checking Full partial specialization support. ... OK
+checking C++0x char16_t unavailable ... Failed
+checking C++0x char32_t unavailable ... Failed
+checking No complete value-initialization ... Note: Failed to value-initialize m_enum_holder_and_int.
+Note: Failed to value-initialize m_enum_holder_and_int_array[0].
+Note: Failed to value-initialize m_user_defined_copy_constructor_holder_and_int_array[0].
+Note: Failed to value-initialize m_virtual_destructor_holder.
+Note: Failed to value-initialize m_virtual_destructor_holder_array[0].
+Note: Failed to value-initialize m_virtual_destructor_holder_array[1].
+Note: Failed to value-initialize m_non_pod.
+Note: Failed to value-initialize m_non_pod_array[0].
+Note: Failed to value-initialize m_non_pod_array[1].
+- Number of subobject initialization failures of a temporary: 9
+Note: Failed to value-initialize int_struct::data.
+Note: Failed to value-initialize m_enum_holder_and_int.
+Note: Failed to value-initialize m_enum_holder_and_int_array[1].
+Note: Failed to value-initialize m_user_defined_copy_constructor_holder_and_int.
+Note: Failed to value-initialize m_user_defined_copy_constructor_holder_and_int_array[0].
+Note: Failed to value-initialize m_user_defined_copy_constructor_holder_and_int_array[1].
+Note: Failed to value-initialize m_virtual_destructor_holder.
+Note: Failed to value-initialize m_virtual_destructor_holder_array[0].
+Note: Failed to value-initialize m_virtual_destructor_holder_array[1].
+Note: Failed to value-initialize m_non_pod.
+Note: Failed to value-initialize m_non_pod_array[0].
+Note: Failed to value-initialize m_non_pod_array[1].
+- Number of subobject initialization failures on the stack: 12
+- Number of subobject initialization failures on the heap: 0
+Note: Failed to value-initialize derived_pod_struct().
+Note: Failed to value-initialize derived_struct().
+Note: Failed to value-initialize derived_int_struct().
+Note: Failed to value-initialize private_int_holder().
+Note: Failed to value-initialize private_int_array_pair().
+Note: Failed to value-initialize enum_holder_and_int().
+Note: Failed to value-initialize private_and_protected_int().
+- Number of initialization failures of temporary objects: 7
+- Number of failures of heap objects: 0
+-- Total number of initialization failures (9+12+0+7+0): 28
+Detected by boost_no_complete_value_initialization::test() revision 32.
+Failed
+checking C++0x constexpr unavailable ... Failed
+checking functions in <ctype.h> ... OK
+checking template specialisations of cv-qualified types ... OK
+checking template specialisations of cv-qualified void ... OK
+checking <wchar.h> and <cwchar> ... OK
+checking <wctype.h> and <cwctype> ... OK
+checking C++11 <memory> doesn't have C++0x allocator support ... Failed
+checking C++11 <memory> does not support atomic smart pointer operations ... Failed
+checking C++0x header <array> unavailable ... Failed
+checking C++0x header <chrono> unavailable ... Failed
+checking C++0x header <codecvt> unavailable ... Failed
+checking C++0x header <condition_variable> unavailable ... Failed
+checking C++0x header <forward_list> unavailable ... Failed
+checking C++0x header <future> unavailable ... Failed
+checking C++0x header <initializer_list> unavailable ... Failed
+checking C++0x header <mutex> unavailable ... Failed
+checking C++0x header <random> unavailable ... Failed
+checking C++0x header <ratio> unavailable ... Failed
+checking C++0x header <regex> unavailable ... Failed
+checking C++0x header <system_error> unavailable ... Failed
+checking C++0x header <thread> unavailable ... Failed
+checking C++0x header <tuple> unavailable ... Failed
+checking C++0x header <type_traits> unavailable ... Failed
+checking C++0x header <typeindex> unavailable ... Failed
+checking C++0x header <unordered_map> unavailable ... Failed
+checking C++0x header <unordered_set> unavailable ... Failed
+checking static function lowest() in numeric_limits class <limits> ... Failed
+checking C++11 <memory> has no shared_ptr and unique_ptr ... Failed
+checking C++11 <functional> unavailable ... Failed
+checking C++0x decltype unavailable ... Failed
+checking C++0x decltype v1.1 unavailable ... Failed
+checking deduced typenames ... OK
+checking C++0x defaulted functions unavailable ... Failed
+checking C++0x =delete functions unavailable ... Failed
+checking dependent nested template classes ... OK
+checking dependent non-type template parameters ... OK
+checking <exception> is in namespace std ... OK
+checking exception handling support ... OK
+checking non-deduced function template parameters ... OK
+checking C++0x explicit conversion operators unavailable ... Failed
+checking C++0x extern template unavailable ... OK
+checking fenv.h ... OK
+checking no function template ordering ... OK
+checking Default template arguments for function templates ... Failed
+checking template specialisations of function types ... OK
+checking std::numeric_limits<__int64> ... Failed
+checking inline member constant initialisation ... OK
+checking long long and integral constant expressions ... OK
+checking <iosfwd> ... OK
+checking No iostream support ... OK
+checking is_abstract implementation technique ... OK
+checking template iterator-constructors ... OK
+checking C++0x lambda feature unavailable ... Failed
+checking <limits> ... OK
+checking compile time constants in <limits> ... OK
+checking std::numeric_limits<long long> ... OK
+checking C++0x long long unavailable ... OK
+checking Specialisation of individual member functions. ... OK
+checking member templates keyword ... OK
+checking pointers to members as template arguments ... OK
+checking member template friends ... OK
+checking member templates ... OK
+checking Access to private members from nested classes ... OK
+checking C++0x noexcept unavailable ... Failed
+checking C++0x nullptr feature unavailable ... Failed
+checking friend operators in namespace ... OK
+checking Default arguments in partial specialization ... OK
+checking partial specialisation ... OK
+checking private in aggregate types ... OK
+checking pointers to const member functions ... OK
+checking C++11 ranged-based for statement unavailable ... Failed
+checking C++0x raw string literals unavailable ... Failed
+checking detection of unreachable returns ... OK
+checking RTTI unavailable ... OK
+checking C++0x rvalue references unavailable ... Failed
+checking C++0x scoped enum unavailable ... Failed
+checking SFINAE (substitution failure is not an error) ... OK
+checking SFINAE for expressions ... Failed
+checking <sstream> ... OK
+checking C++0x static_assert unavailable ... Failed
+checking std::allocator ... OK
+checking std::distance ... OK
+checking std::iterator_traits ... OK
+checking std::iterator ... OK
+checking std::locale ... OK
+checking std::messages<charT> ... OK
+checking std::min and std::max ... OK
+checking That the std output iterators are assignable ... OK
+checking type_info not in namespace std ... OK
+checking <unordered_map> and <unordered_set> ... Failed
+checking std::use_facet ... OK
+checking std::basic_streambuf<wchar_t> ... OK
+checking std::wstring ... OK
+checking std:: namespace for C API's ... OK
+checking swprintf ... OK
+checking local classes as template parameters ... Failed
+checking C++0x template_aliases feature unavailable ... Failed
+checking basic_iostream<> ... OK
+checking template template paramters. ... OK
+checking Two phase name lookup ... OK
+checking typeid unavailable ... OK
+checking Use of typename keyword with constructors ... OK
+checking C++0x unicode literals unavailable ... Failed
+checking C++0x unified initialization syntax unavailable ... Failed
+checking broken ADL ... OK
+checking using declaration function overloads from a typename base ... OK
+checking using template declarations ... OK
+checking C++0x variadic macros unavailable ... OK
+checking C++0x variadic templates unavailable ... Failed
+checking no void returns ... OK
+checking intrinsic wchar_t ... OK
+checking two argument version of use_facet... no
+checking BeOS Threads... no
+checking clock_gettime... Yes
+checking <dirent.h>... Yes
+checking expm1... Yes
+checking The platform has FTIME.... no
+checking GetSystemTimeAsFileTime... no
+checking gettimeofday... Yes
+checking <hashset> and <hashmap>... no
+checking log1p... Yes
+checking long long... Yes
+checking macro version of use_facet: _USE... no
+checking __int64... no
+checking nanosleep... Yes
+checking <nl_types.h>... Yes
+checking Named return value optimisation.... Yes
+checking limited std::allocator support... Yes
+checking pthread_delay_np... no
+checking pthread_mutexattr_settype... Yes
+checking pthread_yield... Yes
+checking POSIX Threads... Yes
+checking rvalue references... no
+checking sched_yield... Yes
+checking SGI style <type_traits.h>... no
+checking sigaction... Yes
+checking <slist>... no
+checking static assertions... no
+checking stdint.h... Yes
+checking STLport version of use_facet... no
+checking std::tr1::array... no
+checking std::tr1::bind... no
+checking std::complex overloads... no
+checking std::complex inverse trig functions... no
+checking std::tr1::function... no
+checking std::tr1::hash... no
+checking std::tr1::mem_fn... no
+checking std::tr1::random... no
+checking std::tr1::reference_wrapper... no
+checking std::tr1::regex... no
+checking std::tr1::result_of... no
+checking std::tr1::shared_ptr... no
+checking std::tr1::tuple... no
+checking std::tr1::type_traits... no
+checking std::tr1::unordered_map... no
+checking std::tr1::unordered_set... no
+checking std::tr1::utility... no
+checking <unistd.h>... Yes
+checking variadic templates... no
+checking microsoft member templates... Yes
+checking microsoft's version of std::iterator... no
+checking MS Windows threads... no
+boost_base=./../..
+checking original configuration ... done
+checking new configuration ... done
+configure: creating ./config.status
+config.status: executing default commands
+
+Adjustments to boost configuration have been written to
+user.hpp.  Copy this to boost/config/user.hpp to use "as is",
+or define BOOST_SITE_CONFIG to point to its location.
+
+TREAT THIS FILE WITH CARE.
+Autoconf generated options are not infallible!
+
+Building Boost.Build engine with toolset gcc... tools/build/v2/engine/bin.openbsdx86_64/b2
+Unicode/ICU support for Boost.Regex?... disabled.
+Generating Boost.Build configuration in project-config.jam...
+
+Bootstrapping is done. To build, run:
+
+    ./b2
+    
+To adjust configuration, edit 'project-config.jam'.
+Further information:
+
+   - Command line help:
+     ./b2 --help
+     
+   - Getting started guide: 
+     http://www.boost.org/more/getting_started/unix-variants.html
+     
+   - Boost.Build documentation:
+     http://www.boost.org/boost-build2/doc/html/index.html
+
+===>  Building for boost-1.52.0
+
+*** WARNING: you may see an error such as
+***       virtual memory exhausted
+*** when building this package.  If you do you must increase
+*** your limits.  See the man page for your shell and look
+*** for the 'limit' or 'ulimit' command. You may also want to
+*** see the login.conf(5) manual page.
+*** Some examples are: 
+*** 	csh(1) and tcsh(1): limit datasize <kbytes of memory>
+***	ksh(1), zsh(1) and bash(1): ulimit -d <kbytes of memory>
+
+
+Building the Boost C++ Libraries.
+
+
+Performing configuration checks
+
+    - 32-bit                   : no
+    - 64-bit                   : yes
+    - x86                      : yes
+    - has_icu builds           : no
+warning: Graph library does not contain MPI-based parallel components.
+note: to enable them, add "using mpi ;" to your user-config.jam
+    - iconv (libc)             : no
+    - iconv (separate)         : no
+    - icu                      : no
+    - icu (lib64)              : no
+- Boost.Locale needs either iconv or ICU library to be built.
+- Boost.Locale needs either iconv or ICU library to be built.
+- Boost.Locale needs either iconv or ICU library to be built.
+- Boost.Locale needs either iconv or ICU library to be built.
+- Boost.Locale needs either iconv or ICU library to be built.
+- Boost.Locale needs either iconv or ICU library to be built.
+    - gcc visibility           : yes
+    - long double support      : yes
+warning: skipping optional Message Passing Interface (MPI) library.
+note: to enable MPI support, add "using mpi ;" to user-config.jam.
+note: to suppress this message, pass "--without-mpi" to bjam.
+note: otherwise, you can safely ignore this message.
+- Boost.Locale needs either iconv or ICU library to be built.
+- Boost.Locale needs either iconv or ICU library to be built.
+- Boost.Locale needs either iconv or ICU library to be built.
+- Boost.Locale needs either iconv or ICU library to be built.
+- Boost.Locale needs either iconv or ICU library to be built.
+- Boost.Locale needs either iconv or ICU library to be built.
+- Boost.Locale needs either iconv or ICU library to be built.
+- Boost.Locale needs either iconv or ICU library to be built.
+- Boost.Locale needs either iconv or ICU library to be built.
+- Boost.Locale needs either iconv or ICU library to be built.
+- Boost.Locale needs either iconv or ICU library to be built.
+- Boost.Locale needs either iconv or ICU library to be built.
+- Boost.Locale needs either iconv or ICU library to be built.
+- Boost.Locale needs either iconv or ICU library to be built.
+- Boost.Locale needs either iconv or ICU library to be built.
+- Boost.Locale needs either iconv or ICU library to be built.
+- Boost.Locale needs either iconv or ICU library to be built.
+- Boost.Locale needs either iconv or ICU library to be built.
+/home/amit/obsd/ports/pobj/boost-1.52.0/boost_1_52_0/tools/build/v2/build/virtual-target.jam:1079: in virtual-target.register-actual-name from module virtual-target
+error: Duplicate name of actual target: <pstage/lib>libboost_chrono.a
+error: previous virtual target { common%common.copy-libboost_chrono.a.STATIC_LIB { gcc%gcc.archive-libboost_chrono.a.STATIC_LIB { gcc%gcc.compile.c++-chrono.o.OBJ { chrono.cpp.CPP } } { gcc%gcc.compile.c++-thread_clock.o.OBJ { thread_clock.cpp.CPP } } { gcc%gcc.compile.c++-process_cpu_clocks.o.OBJ { process_cpu_clocks.cpp.CPP } } } }
+error: created from ./stage-proper
+error: another virtual target { common%common.copy-libboost_chrono.a.STATIC_LIB { gcc%gcc.archive-libboost_chrono.a.STATIC_LIB { gcc%gcc.compile.c++-chrono.o.OBJ { chrono.cpp.CPP } } { gcc%gcc.compile.c++-thread_clock.o.OBJ { thread_clock.cpp.CPP } } { gcc%gcc.compile.c++-process_cpu_clocks.o.OBJ { process_cpu_clocks.cpp.CPP } } } }
+error: created from ./stage-proper
+error: added properties: <library>object(file-target)@3451 <threading>multi
+error: removed properties: <library>object(file-target)@988 <threading>single
+/home/amit/obsd/ports/pobj/boost-1.52.0/boost_1_52_0/tools/build/v2/build/virtual-target.jam:490: in actualize-no-scanner from module object(file-target)@3940
+/home/amit/obsd/ports/pobj/boost-1.52.0/boost_1_52_0/tools/build/v2/build/virtual-target.jam:135: in object(file-target)@3940.actualize from module object(file-target)@3940
+/home/amit/obsd/ports/pobj/boost-1.52.0/boost_1_52_0/tools/build/v2/build-system.jam:749: in load from module build-system
+/home/amit/obsd/ports/pobj/boost-1.52.0/boost_1_52_0/tools/build/v2/kernel/modules.jam:283: in import from module modules
+/home/amit/obsd/ports/pobj/boost-1.52.0/boost_1_52_0/tools/build/v2/kernel/bootstrap.jam:142: in boost-build from module
+/home/amit/obsd/ports/pobj/boost-1.52.0/boost_1_52_0/boost-build.jam:17: in module scope from module
+
+*** Error 1 in . (Makefile:100 'do-build': @cd /home/amit/obsd/ports/pobj/boost-1.52.0/boost_1_52_0 &&  ./bjam -sNO_COMPRESSION=1  -d+2 -q  ...)
+*** Error 1 in . (/home/amit/obsd/ports/infrastructure/mk/bsd.port.mk:2563 '/home/amit/obsd/ports/pobj/boost-1.52.0/.build_done')
+*** Error 1 in /home/amit/obsd/ports/openbsd-wip/devel/boost-new (/home/amit/obsd/ports/infrastructure/mk/bsd.port.mk:2287 'all')
