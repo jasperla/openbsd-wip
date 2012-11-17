@@ -10,6 +10,8 @@ BUILD_DEPENDS =		x11/kde4/py-kde \
 
 RUN_DEPENDS =		print/py-cups>=1.9.62p0
 
+LIB_DEPENDS =		print/system-config-printer
+
 MODPY_ADJ_FILES =	authconn.py \
 			debug.py \
 			monitor.py \
