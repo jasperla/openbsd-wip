@@ -1,0 +1,10 @@
+Optional dependencies for Tkabber:
+* audio/snack (sound notifications)
+* graphics/tkimg (support for PNG, JPG images)
+* x11/tkcon (Tk console)
+* x11/tktray (iconify Tkabber)
+* x11/tkXwin (autoaway) [missing (http://wiki.tcl.tk/tkXwin)]
+* x11/xosd (OSD support)
+* security/tclgpgme (encryption features) [missing (http://tkabber.jabber.ru/dependencies ???)]
+* tclmore (stream compression) [missing (https://gna.org/projects/tclmore/)]
+* ztcl (stream compression) [missing (https://gna.org/projects/ztcl/)]

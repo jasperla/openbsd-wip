@@ -20,16 +20,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		http://files.jabber.ru/tkabber/
 DISTFILES =		tkabber-${V}.tar.gz tkabber-plugins-${V}.tar.gz
 
-#TODO: some dependencies should be moved to install message, packages for
-#      missing dependencies should be created.
-RUN_DEPENDS =		lang/tcl devel/tcllib x11/tk x11/bwidget \
-			graphics/tkimg audio/snack x11/tktray x11/tkcon \
-			x11/xosd
-#Missing:
-# * tkXwin (http://wiki.tcl.tk/tkXwin)
-# * TclGPGme (http://tkabber.jabber.ru/dependencies ???)
-# * TCLmore (https://gna.org/projects/tclmore/)
-# * ZTCL (https://gna.org/projects/ztcl/)
+RUN_DEPENDS =		lang/tcl devel/tcllib x11/tk x11/bwidget
 
 NO_BUILD =		Yes
 NO_REGRESS =		Yes
