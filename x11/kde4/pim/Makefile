@@ -70,11 +70,11 @@ RUN_DEPENDS =	misc/shared-desktop-ontologies
 
 LIB_DEPENDS =	databases/soprano \
 		databases/strigi \
+		STEM->=${AKONADI_VERSION}:productivity/akonadi \
 		security/cyrus-sasl2 \
 		security/gpgme \
 		security/libassuan \
-		x11/grantlee \
-		x11/kde4/akonadi
+		x11/grantlee
 
 WRONG_SYSCONF_FILES =	dbus-1	share/examples
 

@@ -52,10 +52,10 @@ BUILD_DEPENDS =	devel/boost
 
 LIB_DEPENDS +=	databases/openldap \
 		graphics/prison \
+		STEM->=${AKONADI_VERSION}:productivity/akonadi \
 		security/cyrus-sasl2 \
 		security/gpgme>=0.4.5 \
 		sysutils/e2fsprogs \
-		textproc/libical \
-		STEM->=${AKONADI_VERSION}:x11/kde4/akonadi
+		textproc/libical
 
 .include <bsd.port.mk>

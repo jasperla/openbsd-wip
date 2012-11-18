@@ -42,7 +42,7 @@ WANTLIB += kabc kcalcore kmime kpimutils kresources
 MODKDE4_USE =	libs pim
 
 LIB_DEPENDS =	databases/soprano \
-		x11/kde4/attica \
+		productivity/attica \
 		x11/kde4/kate \
 		x11/kde4/okular \
 		x11/kde4/smokegen \

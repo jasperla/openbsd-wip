@@ -17,7 +17,8 @@
 # releases of KDE SC).
 
 # Build dependency tree of main building blocks:
-# akonadi, attica, automoc, cagibi, oxygen-icons, qimageblitz
+# OUTSIDE: akonadi, attica, automoc, cagibi, qimageblitz
+# HERE: oxygen-icons
 # |
 #  - libs
 #   |   -kactivities -> nepomuk-core -> pimlibs -> runtime
@@ -59,14 +60,9 @@
 #   | -- former kdemultimedia
 
 # basic bricks
-     SUBDIR += akonadi			# minor issues
-     SUBDIR += attica			# OK
-     SUBDIR += automoc			# OK
-     SUBDIR += cagibi			# untested
      SUBDIR += oxygen-icons		# OK
 
 # libraries
-     SUBDIR += libkgapi			# untested
      SUBDIR += libs			# OK
      SUBDIR += pimlibs			# OK
      SUBDIR += qimageblitz		# OK
@@ -149,7 +145,6 @@
      SUBDIR += step			# OK
 
 # former kdegraphics
-     SUBDIR += digikam			# test
      SUBDIR += graphics-strigi-analyzer	# untested
      SUBDIR += graphics-thumbnailers	# untested
      SUBDIR += gwenview			# OK
@@ -181,15 +176,6 @@
 # other apps
      SUBDIR += kate			# OK
      SUBDIR += konsole			# OK
-     SUBDIR += akonadi-googledata	# test
-     SUBDIR += kdevplatform		# untested
-     SUBDIR += kdevelop			# untested
-     SUBDIR += yakuake			# OK
-     SUBDIR += kwebkitpart		# OK
-     SUBDIR += calligra			# untested
-     SUBDIR += libktorrent		# test
-     SUBDIR += ktorrent			# test
-     SUBDIR += kile			# test
 
 # additional resources
      SUBDIR += artwork			# OK

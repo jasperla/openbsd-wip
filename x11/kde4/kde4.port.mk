@@ -111,7 +111,7 @@ MODKDE4_BUILD_DEPENDS +=	STEM->=${MODKDE4_VERSION}:x11/kde4/libs
 # Small hack, until automoc4 will be gone
 PKGNAME ?= ${DISTNAME}
 .   if !${PKGNAME:Mautomoc4-*}
-MODKDE4_BUILD_DEPENDS +=	x11/kde4/automoc
+MODKDE4_BUILD_DEPENDS +=	devel/automoc
 .   endif
 
 MODKDE4_NO_QT ?=	No

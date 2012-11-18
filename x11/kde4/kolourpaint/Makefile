@@ -11,6 +11,6 @@ WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += kcmutils kdeui kemoticons kidletime kio
 WANTLIB += kprintutils kutils qimageblitz
 
-LIB_DEPENDS = 	x11/kde4/qimageblitz
+LIB_DEPENDS = 	graphics/qimageblitz
 
 .include <bsd.port.mk>

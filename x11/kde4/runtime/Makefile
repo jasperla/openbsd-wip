@@ -35,8 +35,8 @@ LIB_DEPENDS =	audio/libcanberra \
 		graphics/exiv2 \
 		multimedia/xine-lib \
 		net/samba \
+		productivity/attica \
 		security/libssh \
-		x11/kde4/attica \
 		STEM->=${MODKDE4_VERSION}:x11/kde4/kactivities \
 		STEM->=${MODKDE4_VERSION}:x11/kde4/nepomuk-core \
 		STEM->=${MODKDE4_VERSION}:x11/kde4/pimlibs

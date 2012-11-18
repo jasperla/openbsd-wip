@@ -22,6 +22,6 @@ LIB_DEPENDS = 	devel/chmlib \
 		print/poppler,,-qt4 \
 		security/qca2 \
 		textproc/ebook-tools \
-		x11/kde4/qimageblitz
+		graphics/qimageblitz
 
 .include <bsd.port.mk>
