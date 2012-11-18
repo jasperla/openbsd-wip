@@ -1,9 +1,7 @@
 Optional dependencies for Tkabber:
 * audio/snack (sound notifications)
 * graphics/tkimg (support for PNG, JPG images)
-* net/tclmore (stream compression) [missing (https://gna.org/projects/tclmore/)]
-* net/ztcl (stream compression) [missing (https://gna.org/projects/ztcl/)]
-* security/tclgpg (encryption features) [missing (https://code.google.com/p/tclgpg/)]
+* security/tclgpg (encryption features)
 * textproc/ispell (spell checking)
 * x11/tkcon (Tk console)
 * x11/tktray (iconify Tkabber)
