@@ -68,11 +68,11 @@ BUILD_DEPENDS =	misc/shared-desktop-ontologies>=0.10 \
 
 RUN_DEPENDS =	misc/shared-mime-info \
 		misc/shared-desktop-ontologies \
+		net/cagibi \
 		sysutils/gamin \
 		STEM->=${MODKDE4_VERSION}:x11/kde4/oxygen-icons \
 		x11/dbus \
-		x11/grantlee \
-		x11/kde4/cagibi
+		x11/grantlee
 
 LIB_DEPENDS =	archivers/bzip2 \
 		archivers/xz \
@@ -87,7 +87,7 @@ LIB_DEPENDS =	archivers/bzip2 \
 		textproc/aspell/core \
 		textproc/enchant \
 		textproc/libxslt \
-		STEM->=${ATTICA_VERSION}:x11/kde4/attica \
+		STEM->=${ATTICA_VERSION}:productivity/attica \
 		x11/dbusmenu-qt \
 		x11/polkit-qt4
 

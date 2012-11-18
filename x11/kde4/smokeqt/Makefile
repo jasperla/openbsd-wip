@@ -45,7 +45,7 @@ MODKDE4_USE =
 #FLAVOR =		ruby19
 
 LIB_DEPENDS =	editors/qscintilla \
-		x11/kde4/qimageblitz \
+		graphics/qimageblitz \
 		x11/kde4/smokegen \
 		x11/qwt
 

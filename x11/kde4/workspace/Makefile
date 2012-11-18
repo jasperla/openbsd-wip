@@ -71,14 +71,14 @@ RUN_DEPENDS =	misc/shared-desktop-ontologies \
 LIB_DEPENDS =	audio/xmms \
 		databases/soprano \
 		devel/libusb-compat \
+		graphics/qimageblitz \
 		math/qalculate/libqalculate \
 		misc/google-gadgets \
 		misc/google-gadgets,,-qt \
 		misc/gpsd \
 		sysutils/consolekit \
 		x11/dbusmenu-qt \
-		x11/kde4/kactivities \
-		x11/kde4/qimageblitz
+		x11/kde4/kactivities
 
 CONFIGURE_ARGS =	-DWITH_Sensors:Bool=False \
 			-DWITH_NetworkManager:Bool=False \

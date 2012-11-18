@@ -22,7 +22,7 @@ WANTLIB += glib-2.0 tidyp
 
 # KJS is broken, so allow KDE browsers to work out of the box
 # using QtWebKit.
-RUN_DEPENDS =	x11/kde4/kwebkitpart
+RUN_DEPENDS =	www/kwebkitpart
 
 LIB_DEPENDS =	www/tidyp
 

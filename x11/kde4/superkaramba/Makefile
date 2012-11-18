@@ -12,6 +12,6 @@ WANTLIB += qimageblitz stdc++ util ${MODPY_WANTLIB}
 
 MODULES =	lang/python
 
-LIB_DEPENDS =	x11/kde4/qimageblitz
+LIB_DEPENDS =	graphics/qimageblitz
 
 .include <bsd.port.mk>

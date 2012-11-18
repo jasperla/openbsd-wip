@@ -31,16 +31,16 @@ MODKDE4_USE =	pim workspace
 
 BUILD_DEPENDS =	math/eigen2
 LIB_DEPENDS =	devel/qjson \
+		graphics/qimageblitz \
 		inputmethods/ibus \
 		inputmethods/scim \
 		math/qalculate/libqalculate \
+		productivity/attica \
 		security/qca2 \
 		security/qoauth \
 		x11/dbusmenu-qt \
-		x11/kde4/attica \
 		x11/kde4/libkexiv2 \
 		x11/kde4/marble \
-		x11/kde4/qimageblitz \
 		x11/qwt
 
 .include <bsd.port.mk>
