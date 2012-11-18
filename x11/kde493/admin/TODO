@@ -1,8 +1,0 @@
-From configure:
--- rpm and deb file plugins necessary in system != UNIX ?
--- PORT kfile plugins!!!
-
-ksystemlog: possibly adapt "kernel" mode to OpenBSD? Too much work for now...
-
-Contains a lot of patches for ksystemlog to make it contain useful
-defaults; probably they should be wrapped in "#ifdef (__OpenBSD__)".
