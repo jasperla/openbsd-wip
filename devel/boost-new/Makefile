@@ -62,7 +62,7 @@ BJAM_CONFIG=	-sNO_COMPRESSION=1 \
 		-d+2 -q \
 		-j ${MAKE_JOBS} \
 		cflags='${CFLAGS}' cxxflags='${CXXFLAGS}' \
-		variant=release link=static,shared threading=multi
+		variant=release link=static,shared threading=single,multi
 
 BOOTSTRAP_CONFIG=	--without-icu \
 			--with-python=${MODPY_BIN} \
