@@ -31,7 +31,7 @@ CONFIGURE_STYLE =	cmake
 
 MODKDE4_RESOURCES ?=	No
 
-# MODKDE4_USE: [libs | runtime] [PIM]
+# MODKDE4_USE: [libs | runtime | workspace] [PIM]
 #   - Set to empty for stuff that is a prerequisite for kde base blocks:
 #     kdelibs, kde-runtime, kdepimlibs or kdepim-runtime.
 #
@@ -47,7 +47,9 @@ MODKDE4_RESOURCES ?=	No
 #   - Set to "workspace" for ports that require KDE workspace libraries.
 #     This automatically implies "runtime".
 #
-#   - Add "pim" when port depends on KDE PIM framework.
+#   - Add "pim" when port depends on KDE PIM framework, i.e. LIB_DEPENDS
+#     on kdepimlibs and, if "libs" was not specified, RUN_DEPENDS on
+#     kdepim-runtime.
 #
 # NOTE: There are no options like "Kate" or "Okular", they should be handled
 #       with simple LIB_DEPENDS on corresponding packages in addition to
