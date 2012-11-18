@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, libraries for PIM
 DISTNAME =	kdepimlibs-${MODKDE_VERSION}
-REVISION =	2
 
 SHARED_LIBS =	kabc                 5.0      # .4.0
 SHARED_LIBS +=	kabc_file_core       0.0      # .4.0
@@ -57,6 +56,6 @@ LIB_DEPENDS +=	databases/openldap \
 		security/gpgme>=0.4.5 \
 		sysutils/e2fsprogs \
 		textproc/libical \
-		x11/kde4/akonadi
+		STEM->=${AKONADI_VERSION}:x11/kde4/akonadi
 
 .include <bsd.port.mk>

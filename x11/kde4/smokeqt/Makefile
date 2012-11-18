@@ -3,7 +3,6 @@
 CATEGORIES =	devel
 COMMENT =	K Desktop Environment, introspective wrappers around Qt
 DISTNAME =	smokeqt-${MODKDE_VERSION}
-REVISION =	1
 
 WANTLIB = m stdc++
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDeclarative

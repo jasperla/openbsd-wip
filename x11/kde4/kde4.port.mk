@@ -3,7 +3,7 @@
 .include "kdeversions.port.mk"
 
 # The version of KDE SC in x11/kde4
-_MODKDE4_STABLE =	4.9.2
+_MODKDE4_STABLE =	4.9.3
 
 # Should be changed only by Makefile.inc in test directories
 MODKDE4_VERSION ?=	${_MODKDE4_STABLE}

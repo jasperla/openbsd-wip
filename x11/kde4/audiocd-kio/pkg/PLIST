@@ -6,9 +6,11 @@ lib/kde4/libaudiocd_encoder_flac.so
 lib/kde4/libaudiocd_encoder_lame.so
 lib/kde4/libaudiocd_encoder_vorbis.so
 lib/kde4/libaudiocd_encoder_wav.so
-lib/libaudiocdplugins.so
+@lib lib/libaudiocdplugins.so.${LIBaudiocdplugins_VERSION}
 share/apps/kconf_update/audiocd.upd
 share/apps/kconf_update/upgrade-metadata.sh
+share/apps/konqsidebartng/
+share/apps/konqsidebartng/virtual_folders/
 share/apps/konqsidebartng/virtual_folders/services/
 share/apps/konqsidebartng/virtual_folders/services/audiocd.desktop
 share/apps/solid/
@@ -22,3 +24,5 @@ share/doc/HTML/en/kioslave/audiocd/index.cache.bz2
 share/doc/HTML/en/kioslave/audiocd/index.docbook
 share/kde4/services/audiocd.desktop
 share/kde4/services/audiocd.protocol
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

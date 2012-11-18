@@ -69,6 +69,10 @@ share/doc/HTML/cs/bomber/
 share/doc/HTML/cs/bomber/common
 share/doc/HTML/cs/bomber/index.cache.bz2
 share/doc/HTML/cs/bomber/index.docbook
+share/doc/HTML/cs/bovo/
+share/doc/HTML/cs/bovo/common
+share/doc/HTML/cs/bovo/index.cache.bz2
+share/doc/HTML/cs/bovo/index.docbook
 share/doc/HTML/cs/common/
 share/doc/HTML/cs/common/fdl-translated.html
 share/doc/HTML/cs/common/gpl-translated.html
@@ -99,6 +103,18 @@ share/doc/HTML/cs/kmahjongg/
 share/doc/HTML/cs/kmahjongg/common
 share/doc/HTML/cs/kmahjongg/index.cache.bz2
 share/doc/HTML/cs/kmahjongg/index.docbook
+share/doc/HTML/cs/kmix/
+share/doc/HTML/cs/kmix/common
+share/doc/HTML/cs/kmix/index.cache.bz2
+share/doc/HTML/cs/kmix/index.docbook
+share/doc/HTML/cs/knetwalk/
+share/doc/HTML/cs/knetwalk/common
+share/doc/HTML/cs/knetwalk/index.cache.bz2
+share/doc/HTML/cs/knetwalk/index.docbook
+share/doc/HTML/cs/kollision/
+share/doc/HTML/cs/kollision/common
+share/doc/HTML/cs/kollision/index.cache.bz2
+share/doc/HTML/cs/kollision/index.docbook
 share/doc/HTML/cs/kpat/
 share/doc/HTML/cs/kpat/common
 share/doc/HTML/cs/kpat/index.cache.bz2
@@ -225,6 +241,7 @@ share/locale/cs/LC_MESSAGES/kabcformat_binary.mo
 share/locale/cs/LC_MESSAGES/kaccess.mo
 share/locale/cs/LC_MESSAGES/kaccessibleapp.mo
 share/locale/cs/LC_MESSAGES/kactivitymanagerd.mo
+share/locale/cs/LC_MESSAGES/kactivitymanagerd_fileitem_linking_plugin.mo
 share/locale/cs/LC_MESSAGES/kaddressbook-mobile.mo
 share/locale/cs/LC_MESSAGES/kaddressbook.mo
 share/locale/cs/LC_MESSAGES/kaddressbookmigrator.mo
