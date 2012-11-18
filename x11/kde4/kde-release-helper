@@ -264,7 +264,7 @@ two times: first time for merging, and second - for removing.
 +++ ${SKPD}/kde4.port.mk
 @@ -${SKVERLINE%%:*},1 +${SKVERLINE%%:*},1 @@
 -${SKVERLINE#*:}
-+_MODKDE4_STABLE = ${KPD}
++_MODKDE4_STABLE =	${KDEV}
 EOF
 	diff -urNp -I '^MODKDE4?_VERSION[[:space:]]*=' -X ../.gitignore \
 	    `diff_ignore_opts` $SKPD $KPD \

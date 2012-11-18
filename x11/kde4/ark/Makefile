@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, file archiver
 DISTNAME =	ark-${MODKDE_VERSION}
-REVISION =	0
 
 SHARED_LIBS =	kerfuffle	0.0 # 4.7
 
@@ -14,7 +13,6 @@ BUILD_DEPENDS =	archivers/bzip2 \
 		archivers/xz
 
 LIB_DEPENDS =	archivers/libarchive \
-		devel/qjson \
 		x11/kde4/baseapps
 
 .include <bsd.port.mk>

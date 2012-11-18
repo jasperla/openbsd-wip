@@ -1,0 +1,12 @@
+$OpenBSD$
+--- bhm.cpp.orig	Sun Nov 18 12:35:30 2012
++++ bhm.cpp	Sun Nov 18 12:36:12 2012
+@@ -13,7 +13,7 @@
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <arpa/inet.h>
+-#include <netinet/ip.h>
++//#include <netinet/ip.h>
+ 
+ #include "postal.h"
+ #include "logit.h"

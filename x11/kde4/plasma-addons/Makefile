@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, extra plasmoids
 DISTNAME =	kdeplasma-addons-${MODKDE_VERSION}
-REVISION =	1
 
 SHARED_LIBS =	lancelot-datamodels		0.0 # 1.7
 SHARED_LIBS +=	lancelot			0.0 # 1.9
@@ -32,16 +31,16 @@ MODKDE4_USE =	pim workspace
 
 BUILD_DEPENDS =	math/eigen2
 LIB_DEPENDS =	devel/qjson \
+		graphics/qimageblitz \
 		inputmethods/ibus \
 		inputmethods/scim \
 		math/qalculate/libqalculate \
+		productivity/attica \
 		security/qca2 \
 		security/qoauth \
 		x11/dbusmenu-qt \
-		x11/kde4/attica \
 		x11/kde4/libkexiv2 \
 		x11/kde4/marble \
-		x11/kde4/qimageblitz \
 		x11/qwt
 
 .include <bsd.port.mk>

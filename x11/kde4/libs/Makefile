@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, libraries
 DISTNAME =	kdelibs-${MODKDE_VERSION}
-REVISION =	2
 
 SHARED_LIBS =	kde3support          1.0      # .4.0
 SHARED_LIBS +=	kdecore              9.0      # .5.0
@@ -69,11 +68,11 @@ BUILD_DEPENDS =	misc/shared-desktop-ontologies>=0.10 \
 
 RUN_DEPENDS =	misc/shared-mime-info \
 		misc/shared-desktop-ontologies \
+		net/cagibi \
 		sysutils/gamin \
 		STEM->=${MODKDE4_VERSION}:x11/kde4/oxygen-icons \
 		x11/dbus \
-		x11/grantlee \
-		x11/kde4/cagibi
+		x11/grantlee
 
 LIB_DEPENDS =	archivers/bzip2 \
 		archivers/xz \
@@ -88,7 +87,7 @@ LIB_DEPENDS =	archivers/bzip2 \
 		textproc/aspell/core \
 		textproc/enchant \
 		textproc/libxslt \
-		STEM->=${ATTICA_VERSION}:x11/kde4/attica \
+		STEM->=${ATTICA_VERSION}:productivity/attica \
 		x11/dbusmenu-qt \
 		x11/polkit-qt4
 
@@ -116,7 +115,7 @@ REWR_CMAKE_MODULES =	FindXine FindXKB FindPolkitQt
 # Contain (required) additional functionality compared to system ones
 WRAP_CMAKE_MODULES =	FindLibXslt
 
-WRONG_SYSCONF_FILES =	dbus-1	share/examples \
+MODKDE4_SYSCONF_FILES =	dbus-1	share/examples \
 			xdg	share/examples
 
 post-extract:

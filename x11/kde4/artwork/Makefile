@@ -13,6 +13,8 @@ WANTLIB += lib/qt4/QtOpenGL lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += kdecorations kdeui kexiv2 kio kparts kscreensaver
 WANTLIB += nepomuk nepomukutils soprano
 
+BUILD_DEPENDS =	math/eigen2
+
 LIB_DEPENDS =	x11/kde4/libkexiv2
 
 .include <bsd.port.mk>
