@@ -18,7 +18,7 @@ PKGNAME-mediawiki =	libmediawiki-1.0.0
 PKGNAME-vkontakte =	libkvkontakte-1.0.0
 
 REVISION-geomap =	0
-REVISION-kipi =		1
+REVISION-kipi =		0
 REVISION-main =		0
 
 EXTRACT_SUFX =		.tar.bz2

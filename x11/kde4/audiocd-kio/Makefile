@@ -4,7 +4,7 @@ COMMENT =	KDE KIOslave for accessing audio CDs
 DISTNAME =	audiocd-kio-${MODKDE_VERSION}
 REVISION =	0
 
-MODKDE4_USE =	libs
+SHARED_LIBS =	audiocdplugins		0.0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg

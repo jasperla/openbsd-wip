@@ -947,7 +947,6 @@ share/apps/marble/data/weather/wind-arrows.svgz
 share/apps/marble/marble.knsrc
 share/apps/marble/marble_part.rc
 share/apps/marble/marbleui.rc
-share/config.kcfg/
 share/config.kcfg/marble.kcfg
 share/doc/HTML/en/marble/
 share/doc/HTML/en/marble/common
