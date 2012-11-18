@@ -1,0 +1,24 @@
+# $Id: UPDATE,v 1.1 2012/11/18 21:40:28 dhn Exp $
+
+2012-11-18 Dennis Herrmann <dhn@FreeBSD.org>
+
+ * Update to 0.90.85
+ * Update HOMEPAGE
+ * Add archivers/zziplib to RUN_DEPENDS
+ * Add: patch-src_tracker_sdl_SDL_Main_cpp [01]
+ * Remove: patch-src_milkyplay_drivers_jack_AudioDriver_JACK_cpp [02]
+
+[01] Fixed: Thanks FreeBSD for the patch :)
+  ....
+  sdl/SDL_Main.cpp: In function 'void processSDLUserEvents(const SDL_UserEvent&)':
+  sdl/SDL_Main.cpp:754: error: cast from 'void*' to 'pp_int32' loses precision
+  sdl/SDL_Main.cpp:755: error: cast from 'void*' to 'pp_int32' loses precision
+  sdl/SDL_Main.cpp:764: error: cast from 'void*' to 'pp_int32' loses precision
+  sdl/SDL_Main.cpp:765: error: cast from 'void*' to 'pp_int32' loses precision
+  sdl/SDL_Main.cpp:773: error: cast from 'void*' to 'pp_int32' loses precision
+  sdl/SDL_Main.cpp:774: error: cast from 'void*' to 'pp_int32' loses precision
+  sdl/SDL_Main.cpp:783: error: cast from 'void*' to 'pp_int32' loses precision
+  ....
+[02] The patch is already in 0.90.85
+
+EOF
