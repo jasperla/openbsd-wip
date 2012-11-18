@@ -115,7 +115,7 @@ REWR_CMAKE_MODULES =	FindXine FindXKB FindPolkitQt
 # Contain (required) additional functionality compared to system ones
 WRAP_CMAKE_MODULES =	FindLibXslt
 
-WRONG_SYSCONF_FILES =	dbus-1	share/examples \
+MODKDE4_SYSCONF_FILES =	dbus-1	share/examples \
 			xdg	share/examples
 
 post-extract:

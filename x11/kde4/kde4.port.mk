@@ -240,3 +240,22 @@ MODKDE4_post-patch =	@echo '====> Fixing GETTEXT_PROCESS_PO_FILES() calls'; \
 				echo "$$F" >&2; \
 			fi; \
 		done
+
+# Some KDE ports install files under ${SYSCONFDIR}.
+# We want to have them under ${PREFIX}/share/examples or such,
+# and just be @sample'd under ${SYSCONFDIR}.
+# So add "file/dir destination" pairs to this variable, and
+# apporiate @sample lines to packing list, e.g.:
+#   dbus-1	share/examples
+MODKDE4_SYSCONF_FILES ?=
+
+kde4-post-install:
+.for F D in ${MODKDE4_SYSCONF_FILES}
+	rm -Rf ${PREFIX}/$D/$F
+	${INSTALL_DATA_DIR} ${PREFIX}/$D
+	mv ${WRKINST}${SYSCONFDIR}/$F ${PREFIX}/$D/$F
+.endfor
+
+.if !target(post-install)
+post-install: kde4-post-install
+.endif

@@ -85,7 +85,7 @@ CONFIGURE_ARGS =	-DWITH_Sensors:Bool=False \
 			-DWITH_RAW1394:Bool=False \
 			-DWITH_PCIUTILS:Bool=False
 
-WRONG_SYSCONF_FILES =	dbus-1		share/examples \
+MODKDE4_SYSCONF_FILES =	dbus-1		share/examples \
 			ksysguarddrc	share/examples/kde
 
 post-extract:
