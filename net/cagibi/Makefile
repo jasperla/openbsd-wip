@@ -23,7 +23,7 @@ MODKDE4_USE =
 
 RUN_DEPENDS =	net/avahi
 
-WRONG_SYSCONF_FILES =	dbus-1		share/examples \
+MODKDE4_SYSCONF_FILES =	dbus-1		share/examples \
 			cagibid.conf	share/examples/cagibi
 
 CONFIGURE_ARGS =	-DSYSCONF_INSTALL_DIR:String=${SYSCONFDIR}

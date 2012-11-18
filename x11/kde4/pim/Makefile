@@ -76,6 +76,6 @@ LIB_DEPENDS =	databases/soprano \
 		security/libassuan \
 		x11/grantlee
 
-WRONG_SYSCONF_FILES =	dbus-1	share/examples
+MODKDE4_SYSCONF_FILES =	dbus-1	share/examples
 
 .include <bsd.port.mk>

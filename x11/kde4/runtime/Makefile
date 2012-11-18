@@ -46,7 +46,7 @@ CONFIGURE_ARGS =	-DWITH_ALSA:Bool=FALSE \
 			-DCMAKE_DISABLE_FIND_PACKAGE_SLP:Bool=TRUE \
 			-DCMAKE_DISABLE_FIND_PACKAGE_QNtrack:Bool=TRUE
 
-WRONG_SYSCONF_FILES =	dbus-1	share/examples \
+MODKDE4_SYSCONF_FILES =	dbus-1	share/examples \
 			xdg	share/examples
 
 .include <bsd.port.mk>

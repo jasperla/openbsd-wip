@@ -21,16 +21,3 @@ PERMIT_PACKAGE_FTP =		Yes
 # sees empty CONFIGURE_STYLE, it forces that this is Python
 # module port, and breaks build.
 CONFIGURE_STYLE =	cmake
-
-WRONG_SYSCONF_FILES ?=
-
-kde4-post-install:
-.for F D in ${WRONG_SYSCONF_FILES}
-	rm -Rf ${PREFIX}/$D/$F
-	${INSTALL_DATA_DIR} ${PREFIX}/$D
-	mv ${WRKINST}${SYSCONFDIR}/$F ${PREFIX}/$D/$F
-.endfor
-
-.if !target(post-install)
-post-install: kde4-post-install
-.endif
