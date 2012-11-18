@@ -1,0 +1,9 @@
+@comment $OpenBSD$
+@bin bin/postal-list
+@man man/man1/postal-list.1
+@man man/man8/bhm.8
+@man man/man8/postal.8
+@man man/man8/rabid.8
+@bin sbin/bhm
+@bin sbin/postal
+@bin sbin/rabid

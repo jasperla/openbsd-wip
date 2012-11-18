@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, PIM runtime support
 DISTNAME =	kdepim-runtime-${MODKDE_VERSION}
-REVISION =	0
 
 SHARED_LIBS =		akonadi-filestore	0.0 # 4.7
 SHARED_LIBS +=		akonadi-xml		0.0 # 4.7
@@ -30,8 +29,8 @@ BUILD_DEPENDS =		devel/boost \
 LIB_DEPENDS =		databases/soprano \
 			databases/strigi \
 			devel/qjson \
-			x11/kde4/akonadi \
-			x11/kde4/libkgapi>=0.4.0 \
+			STEM->=${AKONADI_VERSION}:productivity/akonadi \
+			productivity/libkgapi>=0.4.0 \
 			STEM->=${MODKDE4_VERSION}:x11/kde4/pimlibs
 
 # Long dependency chain, not ported yet.

@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, document viewer
 DISTNAME =	okular-${MODKDE_VERSION}
-REVISION =	1
+REVISION =	0
 
 SHARED_LIBS =	okularcore		0.0	# 1.7
 
@@ -22,6 +22,6 @@ LIB_DEPENDS = 	devel/chmlib \
 		print/poppler,,-qt4 \
 		security/qca2 \
 		textproc/ebook-tools \
-		x11/kde4/qimageblitz
+		graphics/qimageblitz
 
 .include <bsd.port.mk>

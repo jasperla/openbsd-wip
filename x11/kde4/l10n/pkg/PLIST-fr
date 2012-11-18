@@ -713,6 +713,12 @@ share/doc/HTML/fr/kdiamond/
 share/doc/HTML/fr/kdiamond/common
 share/doc/HTML/fr/kdiamond/index.cache.bz2
 share/doc/HTML/fr/kdiamond/index.docbook
+share/doc/HTML/fr/kdm/
+share/doc/HTML/fr/kdm/common
+share/doc/HTML/fr/kdm/index.cache.bz2
+share/doc/HTML/fr/kdm/index.docbook
+share/doc/HTML/fr/kdm/kdmrc-ref.docbook
+share/doc/HTML/fr/kdm/theme-ref.docbook
 share/doc/HTML/fr/kfilereplace/
 share/doc/HTML/fr/kfilereplace/common
 share/doc/HTML/fr/kfilereplace/index.cache.bz2

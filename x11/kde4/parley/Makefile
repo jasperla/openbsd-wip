@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, vocabulary trainer
 DISTNAME =	parley-${MODKDE_VERSION}
-REVISION =	0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += ICE SM X11 Xext Xrender
@@ -15,7 +14,7 @@ WANTLIB += xml2 xslt
 
 LIB_DEPENDS = 	textproc/libxml \
 		textproc/libxslt \
-		x11/kde4/attica \
+		productivity/attica \
 		x11/kde4/libkdeedu
 
 .include <bsd.port.mk>

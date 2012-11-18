@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, calculator
 DISTNAME =	kalgebra-${MODKDE_VERSION}
-REVISION =	1
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += GL GLU lib/qt4/QtDeclarative
@@ -13,7 +12,7 @@ WANTLIB += kdeui khtml kio kjs kparts nepomuk
 WANTLIB += nepomukutils phonon_s plasma soprano
 WANTLIB += analitza analitzagui
 
-LIB_DEPENDS = 	x11/kde4/libkdeedu \
-		x11/kde4/analitza
+LIB_DEPENDS = 	x11/kde4/analitza \
+		x11/kde4/libkdeedu
 
 .include <bsd.port.mk>

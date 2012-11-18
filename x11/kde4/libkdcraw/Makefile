@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, RAW picture decoding C++ library
 DISTNAME =	libkdcraw-${MODKDE_VERSION}
-REVISION =	0
 
 SHARED_LIBS =	kdcraw			0.0	# 20.0
 
@@ -19,7 +18,7 @@ LIB_DEPENDS = 	graphics/lcms \
 
 CONFIGURE_ARGS =	-DWITH_OpenMP:Bool=FALSE
 
-post-install:
+post-install: kde4-post-install
 	${INSTALL_DATA_DIR} ${PREFIX}/share/apps/cmake/modules
 	${INSTALL_DATA} ${WRKSRC}/cmake/modules/FindKdcraw.cmake \
 		 ${PREFIX}/share/apps/cmake/modules/
