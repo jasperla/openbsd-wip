@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, image effects
 DISTNAME =	qimageblitz-${QIMAGEBLITZ_VERSION}
-REVISION =	0
+REVISION =	1
 
 EXTRACT_SUFX =	.tar.bz2
 
