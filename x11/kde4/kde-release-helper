@@ -98,14 +98,16 @@ kde_port_dir() {
 	echo "kde$1" | sed -e 's/\.//g'
 }
 
-# List all ports (subdirectories) from KDE SC itself in current directory
+# List all ports (subdirectories) in current directory.
 # Assume we're in KDE ports root directory.
 # Output does not include l10n, see list_l10n_ports() below.
 list_local_ports() {
 	ls | while read P; do
 		# Test for being directory for safety in case of symlinks
-		test -d $P -a -e $P/Makefile || continue
-		egrep -q '^DISTNAME.*MODKDE4?_VERSION' $P/Makefile || continue
+		test X"$P" != Xl10n -a \
+		     X"$P" != Xtemplate -a \
+		     -d "$P" \
+		     -a -e "$P"/Makefile || continue
 		echo "$P"
 	done
 }
@@ -156,7 +158,7 @@ compare_sources_lists() {
 	OCLEANUP_ITEMS="$CLEANUP_ITEMS"
 	CLEANUP_ITEMS="$CLEANUP_ITEMS $T"
 	list_remote_source >"$T"
-	diff -u - "$T" || true
+	diff -u "$T" - || true
 	rm "$T"
 	CLEANUP_ITEMS="$OCLEANUP_ITEMS"
 }
@@ -224,13 +226,13 @@ check_lists() {
 	list_local_ports |
 	    port_dir_to_distname |
 	    (cd libs && compare_sources_lists) |
-	    grep '^+[^+]' |
+	    egrep '^[\+-][^\+-]' |
 	    grep -v '^+kde-l10n' || true
 
 	echo '==> checking for l10n package list changes' >&2
 	list_l10n_ports |
 	    (cd l10n/ru && compare_sources_lists) |
-	    grep '^[+-]' || true
+	    egrep '^[\+-][^\+-]' || true
 }
 
 merge_back() {
