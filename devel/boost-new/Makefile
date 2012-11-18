@@ -28,15 +28,15 @@ BOOST_LIBS=	boost_date_time boost_date_time-mt \
 		boost_serialization boost_serialization-mt \
 		boost_signals boost_signals-mt \
 		boost_system boost_system-mt \
-		boost_thread \
+		boost_thread-mt \
 		boost_unit_test_framework boost_unit_test_framework-mt \
 		boost_wave boost_wave-mt \
 		boost_wserialization boost_wserialization-mt \
 		boost_chrono boost_chrono-mt \
 		boost_context boost_context-mt \
 		boost_random boost_random-mt \
-		boost_timer boost_timer-mt \
-		boost_graph_parallel boost_graph_parallel-mt
+		boost_timer boost_timer-mt
+
 .for _lib in ${BOOST_LIBS}
 SHARED_LIBS+=	${_lib} ${SO_VERSION}
 .endfor
@@ -47,6 +47,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 HOMEPAGE=	http://www.boost.org/
 VMEM_WARNING =	Yes
+DPB_PROPERTIES=	parallel
 
 # MIT-like
 PERMIT_PACKAGE_CDROM=	Yes
@@ -62,7 +63,8 @@ BJAM_CONFIG=	-sNO_COMPRESSION=1 \
 		-d+2 -q \
 		-j ${MAKE_JOBS} \
 		cflags='${CFLAGS}' cxxflags='${CXXFLAGS}' \
-		variant=release link=static,shared threading=single,multi
+		variant=release link=static,shared threading=single,multi \
+		--layout=tagged
 
 BOOTSTRAP_CONFIG=	--without-icu \
 			--with-python=${MODPY_BIN} \
@@ -74,7 +76,7 @@ CONFIGURE_ENV=	BJAM_CONFIG="${BJAM_CONFIG}"
 
 NO_REGRESS=	Yes
 
-WANTLIB=	c m pthread stdc++ util z
+WANTLIB=	c m pthread stdc++ util
 
 MODULES=	lang/python
 MODPY_RUNDEP=	No
