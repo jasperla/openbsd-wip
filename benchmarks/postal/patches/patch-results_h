@@ -1,0 +1,12 @@
+$OpenBSD$
+--- results.h.orig	Sun Nov 18 12:33:06 2012
++++ results.h	Sun Nov 18 12:33:16 2012
+@@ -33,7 +33,7 @@ class results (protected)
+ private:
+ 
+   unsigned int m_msgs;
+-  unsigned long long m_bytes;
++  unsigned long m_bytes;
+   unsigned int m_errors;
+ };
+ 
