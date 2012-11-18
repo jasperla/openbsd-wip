@@ -21,6 +21,7 @@ MASTER_SITES =		http://files.jabber.ru/tkabber/
 DISTFILES =		tkabber-${V}.tar.gz tkabber-plugins-${V}.tar.gz
 
 RUN_DEPENDS =		lang/tcl devel/tcllib x11/tk x11/bwidget
+RUN_DEPENDS +=		net/tcludp security/tcltls
 
 NO_BUILD =		Yes
 NO_REGRESS =		Yes
