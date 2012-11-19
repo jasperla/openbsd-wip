@@ -5,27 +5,27 @@ DISTNAME =		milkytracker-0.90.85
 
 CATEGORIES =		audio
 
-HOMEPAGE =		http://www.milkytracker.org
+HOMEPAGE =		http://www.milkytracker.org/
 
 MAINTAINER =		Jacob Meuser <jakemsr@openbsd.org>
 
-# GPL v3
+# GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		SDL c m pthread stdc++
+WANTLIB =		SDL c m pthread stdc++ z
 
-MASTER_SITES =		${HOMEPAGE}/files/
+MASTER_SITES =		${HOMEPAGE}files/
 
 # libjack accessed via dlopen()
-RUN_DEPENDS =		audio/jack \
-			archivers/zziplib
+RUN_DEPENDS =		audio/jack
 BUILD_DEPENDS =		${RUN_DEPENDS}
 LIB_DEPENDS =		devel/sdl
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoconf
+AUTOCONF_VERSION =	2.64
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
