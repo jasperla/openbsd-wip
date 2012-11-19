@@ -16,13 +16,20 @@ WANTLIB += gnunetutil gobject-2.0 gpg-error gthread-2.0 gtk-3
 WANTLIB += ltdl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs stdc++ unistring util xcb
 WANTLIB += xcb-render xcb-shm xml2 z gnunetats gnunetnamestore
+WANTLIB += ICE SM atk-bridge-2.0 atspi dbus-1 dbus-glib-1 gnunetdnsparser
+WANTLIB += harfbuzz icudata icule icuuc idn qrencode unique-3.0
 
 MODULES =		devel/gettext
-RUN_DEPENDS =		devel/desktop-file-utils
+RUN_DEPENDS =		devel/desktop-file-utils \
+			x11/gtk+2,-guic
 LIB_DEPENDS =		net/gnunet/base \
-			devel/glade
+			devel/glade \
+			devel/libunique3 \
+			graphics/libqrencode
 
 USE_LIBTOOL =		Yes
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--with-extractor="${LOCALBASE}"
