@@ -19,7 +19,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		bz2 c expat fontconfig freetype ltdl m mpeg2 pthread z
+WANTLIB  = bz2 c expat fontconfig freetype ltdl m mpeg2 pthread z
+WANTLIB += jpeg lcms2 openjpeg png poppler stdc++ tiff
 
 MASTER_SITES =		${MASTER_SITE_GNU:=libextractor/}
 
@@ -27,7 +28,7 @@ MODULES =		devel/gettext
 LIB_DEPENDS =		devel/libtool,-ltdl \
 			graphics/png \
 			graphics/libmpeg2 \
-			print/poppler \
+			print/poppler,-main \
 			archivers/bzip2
 
 USE_LIBTOOL =		gnu
@@ -37,7 +38,8 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-gsf \
 			--disable-gnome
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
+				  -I${LOCALBASE}/include/poppler" \
 			LIBS="-lfontconfig -lfreetype -pthread"
 
 NO_REGRESS =		Yes
