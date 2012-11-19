@@ -6,7 +6,7 @@
    So I take the maintainership now. [04]
 
  * Remove: "# LGPL: madtty.c" in the Makefile,
-   because madtty.c is no longer a part of the qpackage.
+   because madtty.c is no longer a part of the package.
 
 2012-11-10 Dennis Herrmann <dhn@FreeBSD.org>
 
