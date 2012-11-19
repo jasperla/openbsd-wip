@@ -20,7 +20,7 @@ MODULES =		devel/cmake \
 
 MODPHONON_PLUGIN_DEPS =	No
 
-BUILD_DEPENDS +=	x11/kde4/automoc
+BUILD_DEPENDS +=	devel/automoc
 
 SEPARATE_BUILD ?=	flavored
 
