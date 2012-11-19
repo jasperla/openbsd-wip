@@ -1,0 +1,12 @@
+$OpenBSD$
+--- lib/tt/slib/mp_rpc_server.C.orig	Sun Nov 18 18:10:32 2012
++++ lib/tt/slib/mp_rpc_server.C	Sun Nov 18 18:10:57 2012
+@@ -120,7 +120,7 @@ init(void (*service_fn)(struct svc_req *, SVCXPRT *))
+ 	unsigned int buffersize = (bufopt != (char *)0) ? atoi(bufopt) : 32000;
+ 
+ 	if (_socket != RPC_ANYSOCK) {
+-#ifdef OPT_UNIX_SOCKET_RPC
++#if defined(OPT_UNIX_SOCKET_RPC) || defined(__OpenBSD__)
+ 		_transp = svcfd_create(_socket, buffersize, buffersize);
+ 		if (_transp == (SVCXPRT *)0) {
+ 			return(0);
