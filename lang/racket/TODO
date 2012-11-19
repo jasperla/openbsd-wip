@@ -8,3 +8,6 @@ with OpenBSD.
 Describe the 'noopt' flavor in DESCR.
 
 Fix LIB/BUILD/RUN_DEPENDS.
+
+Add a note about the bug in Spatial_Transformations.html and images generated
+with the doc.
