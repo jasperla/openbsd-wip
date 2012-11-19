@@ -1,0 +1,12 @@
+$OpenBSD$
+--- Makefile.orig	Mon Nov 19 01:33:06 2012
++++ Makefile	Mon Nov 19 01:33:28 2012
+@@ -22,7 +22,7 @@ install-bin:
+ 	mkdir -p $(DESTDIR)/$(TKABBERDIR)
+ 	cp -r *.tcl $(SUBDIRS) $(DESTDIR)/$(TKABBERDIR)
+ 	mkdir -p $(DESTDIR)/$(BINDIR)
+-	echo -e "#!/bin/sh\nexec wish $(TKABBERDIR)/tkabber.tcl -name tkabber \"\$$@\"\n" \
++	echo -e "#!/bin/sh\nexec wish8.5 $(TKABBERDIR)/tkabber.tcl -name tkabber \"\$$@\"\n" \
+ 		>$(DESTDIR)/$(BINDIR)/tkabber
+ 	chmod 755 $(DESTDIR)/$(BINDIR)/tkabber
+ 

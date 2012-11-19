@@ -20,7 +20,8 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		http://files.jabber.ru/tkabber/
 DISTFILES =		tkabber-${V}.tar.gz tkabber-plugins-${V}.tar.gz
 
-RUN_DEPENDS =		lang/tcl devel/tcllib x11/tk x11/bwidget
+MODULES =		lang/tcl x11/tk
+RUN_DEPENDS =		${MODTK_RUN_DEPENDS} devel/tcllib x11/bwidget
 RUN_DEPENDS +=		net/tcludp security/tcltls
 
 NO_BUILD =		Yes

@@ -1,0 +1,11 @@
+$OpenBSD$
+--- tkabber.tcl.orig	Mon Nov 19 01:17:47 2012
++++ tkabber.tcl	Mon Nov 19 01:18:33 2012
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ # the next line restarts using the correct interpreter \
+-exec wish "$0" -name tkabber "$@"
++exec wish8.5 "$0" -name tkabber "$@"
+ 
+ # $Id: tkabber.tcl 1517 2008-10-17 14:28:01Z sergei $
+ 

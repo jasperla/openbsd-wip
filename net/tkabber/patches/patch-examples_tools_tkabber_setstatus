@@ -1,0 +1,9 @@
+$OpenBSD$
+--- examples/tools/tkabber_setstatus.orig	Mon Nov 19 01:18:51 2012
++++ examples/tools/tkabber_setstatus	Sat Sep 16 18:42:52 2006
+@@ -1,4 +1,4 @@
+-#!/usr/bin/wish
++#!/usr/bin/wish8.5
+ 
+ set tkabbers {}
+ foreach w [winfo interps] {
