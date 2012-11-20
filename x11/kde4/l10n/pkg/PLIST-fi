@@ -443,6 +443,7 @@ share/locale/fi/LC_MESSAGES/ktexteditor_plugins.mo
 share/locale/fi/LC_MESSAGES/ktexteditorkabcbridge_plugin.mo
 share/locale/fi/LC_MESSAGES/ktimer.mo
 share/locale/fi/LC_MESSAGES/ktimetracker.mo
+share/locale/fi/LC_MESSAGES/ktnef.mo
 share/locale/fi/LC_MESSAGES/ktouch.mo
 share/locale/fi/LC_MESSAGES/ktraderclient.mo
 share/locale/fi/LC_MESSAGES/ktron.mo

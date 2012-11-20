@@ -40,7 +40,6 @@ RUN_DEPENDS-extras = \
 		STEM-=${V}:${BASE_PKGPATH},-edu \
 		STEM-=${V}:${BASE_PKGPATH},-graphics \
 		STEM-=${V}:${BASE_PKGPATH},-multimedia \
-		productivity/kmymoney	\
 		x11/kde4/artwork	\
 		x11/kde4/base-artwork	\
 		x11/kde4/digikam,-main	\

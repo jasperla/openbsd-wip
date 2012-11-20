@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, network
 DISTNAME =	kdenetwork-${MODKDE_VERSION}
-REVISION =	1
 
 SHARED_LIBS =	kgetcore		0.0 # 4.0
 SHARED_LIBS +=	kopete			3.0 # 4.0
@@ -41,13 +40,13 @@ MODKDE4_USE =	pim workspace
 RUN_DEPENDS =	security/qca-ossl
 
 LIB_DEPENDS =	audio/xmms \
+		graphics/qimageblitz \
 		multimedia/libmms \
 		net/libgadu \
+		net/libktorrent \
 		net/meanwhile \
 		security/libotr \
 		security/qca2 \
-		x11/kde4/baseapps \
-		x11/kde4/libktorrent \
-		x11/kde4/qimageblitz
+		x11/kde4/baseapps
 
 .include <bsd.port.mk>

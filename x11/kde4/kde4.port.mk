@@ -3,7 +3,7 @@
 .include "kdeversions.port.mk"
 
 # The version of KDE SC in x11/kde4
-_MODKDE4_STABLE =	4.9.2
+_MODKDE4_STABLE =	4.9.3
 
 # Should be changed only by Makefile.inc in test directories
 MODKDE4_VERSION ?=	${_MODKDE4_STABLE}
@@ -31,7 +31,7 @@ CONFIGURE_STYLE =	cmake
 
 MODKDE4_RESOURCES ?=	No
 
-# MODKDE4_USE: [libs | runtime] [PIM]
+# MODKDE4_USE: [libs | runtime | workspace] [PIM]
 #   - Set to empty for stuff that is a prerequisite for kde base blocks:
 #     kdelibs, kde-runtime, kdepimlibs or kdepim-runtime.
 #
@@ -47,7 +47,9 @@ MODKDE4_RESOURCES ?=	No
 #   - Set to "workspace" for ports that require KDE workspace libraries.
 #     This automatically implies "runtime".
 #
-#   - Add "pim" when port depends on KDE PIM framework.
+#   - Add "pim" when port depends on KDE PIM framework, i.e. LIB_DEPENDS
+#     on kdepimlibs and, if "libs" was not specified, RUN_DEPENDS on
+#     kdepim-runtime.
 #
 # NOTE: There are no options like "Kate" or "Okular", they should be handled
 #       with simple LIB_DEPENDS on corresponding packages in addition to
@@ -109,7 +111,7 @@ MODKDE4_BUILD_DEPENDS +=	STEM->=${MODKDE4_VERSION}:x11/kde4/libs
 # Small hack, until automoc4 will be gone
 PKGNAME ?= ${DISTNAME}
 .   if !${PKGNAME:Mautomoc4-*}
-MODKDE4_BUILD_DEPENDS +=	x11/kde4/automoc
+MODKDE4_BUILD_DEPENDS +=	devel/automoc
 .   endif
 
 MODKDE4_NO_QT ?=	No
@@ -175,6 +177,9 @@ MODKDE4_CONF_ARGS +=	-DKDE4_INCLUDE_INSTALL_DIR:String=${PREFIX}/include \
 			-DKDE4_INFO_INSTALL_DIR:String=${PREFIX}/info \
 			-DKDE4_MAN_INSTALL_DIR:String=${PREFIX}/man \
 			-DKDE4_SYSCONF_INSTALL_DIR:String=${SYSCONFDIR}
+
+# Tell that we're a separate distribution
+MODKDE4_CONF_ARGS +=	-DKDE_DISTRIBUTION_TEXT:String="OpenBSD packages"
 .endif
 
 # FIXME
@@ -238,3 +243,22 @@ MODKDE4_post-patch =	@echo '====> Fixing GETTEXT_PROCESS_PO_FILES() calls'; \
 				echo "$$F" >&2; \
 			fi; \
 		done
+
+# Some KDE ports install files under ${SYSCONFDIR}.
+# We want to have them under ${PREFIX}/share/examples or such,
+# and just be @sample'd under ${SYSCONFDIR}.
+# So add "file/dir destination" pairs to this variable, and
+# apporiate @sample lines to packing list, e.g.:
+#   dbus-1	share/examples
+MODKDE4_SYSCONF_FILES ?=
+
+kde4-post-install:
+.for F D in ${MODKDE4_SYSCONF_FILES}
+	rm -Rf ${PREFIX}/$D/$F
+	${INSTALL_DATA_DIR} ${PREFIX}/$D
+	mv ${WRKINST}${SYSCONFDIR}/$F ${PREFIX}/$D/$F
+.endfor
+
+.if !target(post-install)
+post-install: kde4-post-install
+.endif

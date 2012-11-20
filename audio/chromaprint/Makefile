@@ -5,7 +5,8 @@ CATEGORIES =		audio devel
 HOMEPAGE =		http://acoustid.org/chromaprint/
 DISTNAME =		chromaprint-0.6
 
-MASTER_SITES =		http://www.ohvost.ru/dnl/
+MASTER_SITES =		http://www.ohvost.ru/dnl/ \
+			http://malcolm.ecentrum.hu/distfiles/
 
 SHARED_LIBS =		chromaprint		0.0  # 0.1
 

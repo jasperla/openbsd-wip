@@ -3,7 +3,6 @@
 CATEGORIES =	devel
 COMMENT =	Qt4 bindings for .NET/Mono
 DISTNAME =	qyoto-${MODKDE_VERSION}
-REVISION =	0
 
 SHARED_LIBS =	qyoto			1.0 # 2.0
 SHARED_LIBS +=	phonon-sharp		1.0
@@ -13,7 +12,7 @@ SHARED_LIBS +=	qttest-sharp		1.0
 SHARED_LIBS +=	qtuitools-sharp		1.0
 SHARED_LIBS +=	qtwebkit-sharp		1.0
 
-WANTLIB =  c m pthread stdc++
+WANTLIB =  c m stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtScript lib/qt4/QtTest lib/qt4/QtWebKit
 WANTLIB += lib/qt4/QtXml lib/qt4/phonon

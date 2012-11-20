@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, maps
 DISTNAME =	marble-${MODKDE_VERSION}
-REVISION =	0
 
 SHARED_LIBS =	marblewidget		0.0 # 0.12
 
@@ -13,8 +12,6 @@ WANTLIB += lib/qt4/QtSvg lib/qt4/QtWebKit lib/qt4/QtXml
 WANTLIB += kdeui kio knewstuff3 kparts nepomuk
 WANTLIB += nepomukutils phonon_s plasma soprano
 WANTLIB += gps shp
-
-MODKDE4_USE =	libs
 
 LIB_DEPENDS = 	devel/shapelib \
 		misc/gpsd,-main
