@@ -81,14 +81,6 @@ CONFIGURE_ARGS +=	--disable-backtrace
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread -lcrypto -lGLU -lGL" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include -DMZ_USE_JIT_SSE"
 
-FLAVORS =	noopt
-FLAVOR?=
-
-# Racket removes the symbols by default.
-.if ${FLAVOR} == "noopt"
-CONFIGURE_ARGS +=	--enable-noopt
-.endif
-
 # -- Racket with futures disabled. 5.2 vs 5.3 --
 # Racket 5.2 (with futures disabled) compiles OK with the default limits of the
 # shell but for Racket 5.3 I need increase the limits. These problems occur
