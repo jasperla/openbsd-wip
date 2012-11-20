@@ -7,7 +7,19 @@ with OpenBSD.
 
 Fix LIB/BUILD/RUN_DEPENDS.
 
+Tests if the binaries and libs are stripped or not.
+
+----
+
 Add a note about the bug in Spatial_Transformations.html and images generated
 with the doc.
 
-Tests if the binaries and libs are stripped or not.
+Generate the images on amd64 and install manually on i386 if the filename is
+the same. Review
+http://docs.racket-lang.org/images/Spatial_Transformations.html and the
+filenames of the images.
+
+Other solution is remove the files from both arch and add a note about the
+missing files.
+
+The bug will be fixed in the next version of racket.
