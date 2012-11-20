@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, base runtime
 DISTNAME =	kde-runtime-${MODKDE_VERSION}
-REVISION =	2
 
 SHARED_LIBS =	kwalletbackend 		0.0	# 4.7
 SHARED_LIBS +=	molletnetwork 		0.0	# 4.7
@@ -36,8 +35,8 @@ LIB_DEPENDS =	audio/libcanberra \
 		graphics/exiv2 \
 		multimedia/xine-lib \
 		net/samba \
+		productivity/attica \
 		security/libssh \
-		x11/kde4/attica \
 		STEM->=${MODKDE4_VERSION}:x11/kde4/kactivities \
 		STEM->=${MODKDE4_VERSION}:x11/kde4/nepomuk-core \
 		STEM->=${MODKDE4_VERSION}:x11/kde4/pimlibs
@@ -47,7 +46,7 @@ CONFIGURE_ARGS =	-DWITH_ALSA:Bool=FALSE \
 			-DCMAKE_DISABLE_FIND_PACKAGE_SLP:Bool=TRUE \
 			-DCMAKE_DISABLE_FIND_PACKAGE_QNtrack:Bool=TRUE
 
-WRONG_SYSCONF_FILES =	dbus-1	share/examples \
+MODKDE4_SYSCONF_FILES =	dbus-1	share/examples \
 			xdg	share/examples
 
 .include <bsd.port.mk>

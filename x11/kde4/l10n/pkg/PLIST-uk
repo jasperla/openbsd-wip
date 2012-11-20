@@ -2246,6 +2246,7 @@ share/locale/uk/LC_MESSAGES/kabcformat_binary.mo
 share/locale/uk/LC_MESSAGES/kaccess.mo
 share/locale/uk/LC_MESSAGES/kaccessibleapp.mo
 share/locale/uk/LC_MESSAGES/kactivitymanagerd.mo
+share/locale/uk/LC_MESSAGES/kactivitymanagerd_fileitem_linking_plugin.mo
 share/locale/uk/LC_MESSAGES/kaddressbook-mobile.mo
 share/locale/uk/LC_MESSAGES/kaddressbook.mo
 share/locale/uk/LC_MESSAGES/kaddressbookmigrator.mo

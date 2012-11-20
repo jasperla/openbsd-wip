@@ -2,7 +2,6 @@
 COMMENT =	KDE audio mixer
 CATEGORIES =	audio
 DISTNAME =	kmix-${MODKDE_VERSION}
-REVISION =	0
 
 MODKDE4_USE =	libs
 

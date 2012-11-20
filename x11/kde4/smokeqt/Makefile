@@ -3,7 +3,6 @@
 CATEGORIES =	devel
 COMMENT =	K Desktop Environment, introspective wrappers around Qt
 DISTNAME =	smokeqt-${MODKDE_VERSION}
-REVISION =	1
 
 WANTLIB = m stdc++
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDeclarative
@@ -46,7 +45,7 @@ MODKDE4_USE =
 #FLAVOR =		ruby19
 
 LIB_DEPENDS =	editors/qscintilla \
-		x11/kde4/qimageblitz \
+		graphics/qimageblitz \
 		x11/kde4/smokegen \
 		x11/qwt
 

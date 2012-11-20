@@ -19,7 +19,8 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-MASTER_SITES =	http://www.ohvost.ru/dnl/
+MASTER_SITES =	http://www.ohvost.ru/dnl/ \
+		http://malcolm.ecentrum.hu/distfiles/
 WRKDIST =	${WRKDIR}/mxcl-liblastfm-f0b3239
 
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtSql lib/qt4/QtXml

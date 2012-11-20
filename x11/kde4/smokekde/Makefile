@@ -3,7 +3,6 @@
 CATEGORIES =	devel
 COMMENT =	K Desktop Environment, introspective wrappers around KDE
 DISTNAME =	smokekde-${MODKDE_VERSION}
-REVISION =	1
 
 SHARED_LIBS =	smokeakonadi		0.0 # 3.0
 SHARED_LIBS +=	smokeattica		0.0 # 3.0
@@ -43,8 +42,7 @@ WANTLIB += kabc kcalcore kmime kpimutils kresources
 MODKDE4_USE =	libs pim
 
 LIB_DEPENDS =	databases/soprano \
-		x11/kde4/akonadi \
-		x11/kde4/attica \
+		productivity/attica \
 		x11/kde4/kate \
 		x11/kde4/okular \
 		x11/kde4/smokegen \

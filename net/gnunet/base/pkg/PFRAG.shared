@@ -1,6 +1,9 @@
 @comment $OpenBSD$
 lib/gnunet/libgnunet_plugin_block_dht.so
+lib/gnunet/libgnunet_plugin_block_dns.so
 lib/gnunet/libgnunet_plugin_block_fs.so
+lib/gnunet/libgnunet_plugin_block_gns.so
+lib/gnunet/libgnunet_plugin_block_mesh.so
 lib/gnunet/libgnunet_plugin_block_template.so
 lib/gnunet/libgnunet_plugin_block_test.so
 lib/gnunet/libgnunet_plugin_datacache_sqlite.so
@@ -9,6 +12,8 @@ lib/gnunet/libgnunet_plugin_datastore_sqlite.so
 lib/gnunet/libgnunet_plugin_datastore_template.so
 lib/gnunet/libgnunet_plugin_namestore_sqlite.so
 lib/gnunet/libgnunet_plugin_test.so
+lib/gnunet/libgnunet_plugin_transport_http_client.so
+lib/gnunet/libgnunet_plugin_transport_https_client.so
 lib/gnunet/libgnunet_plugin_transport_tcp.so
 lib/gnunet/libgnunet_plugin_transport_template.so
 lib/gnunet/libgnunet_plugin_transport_udp.so
@@ -20,20 +25,29 @@ lib/gnunet/libgnunet_plugin_transport_unix.so
 @lib lib/libgnunetdatacache.so.${LIBgnunetdatacache_VERSION}
 @lib lib/libgnunetdatastore.so.${LIBgnunetdatastore_VERSION}
 @lib lib/libgnunetdht.so.${LIBgnunetdht_VERSION}
+@lib lib/libgnunetdns.so.${LIBgnunetdns_VERSION}
+@lib lib/libgnunetdnsparser.so.${LIBgnunetdnsparser_VERSION}
+@lib lib/libgnunetdnsstub.so.${LIBgnunetdnsstub_VERSION}
 @lib lib/libgnunetfragmentation.so.${LIBgnunetfragmentation_VERSION}
 @lib lib/libgnunetfs.so.${LIBgnunetfs_VERSION}
+@lib lib/libgnunetgns.so.${LIBgnunetgns_VERSION}
+@lib lib/libgnunetgns_common.so.${LIBgnunetgns_common_VERSION}
 @lib lib/libgnunethello.so.${LIBgnunethello_VERSION}
 @lib lib/libgnunetlockmanager.so.${LIBgnunetlockmanager_VERSION}
 @lib lib/libgnunetmesh.so.${LIBgnunetmesh_VERSION}
+@lib lib/libgnunetmeshblock.so.${LIBgnunetmeshblock_VERSION}
 @lib lib/libgnunetnamestore.so.${LIBgnunetnamestore_VERSION}
 @lib lib/libgnunetnat.so.${LIBgnunetnat_VERSION}
 @lib lib/libgnunetnse.so.${LIBgnunetnse_VERSION}
 @lib lib/libgnunetpeerinfo.so.${LIBgnunetpeerinfo_VERSION}
+@lib lib/libgnunetregex.so.${LIBgnunetregex_VERSION}
 @lib lib/libgnunetstatistics.so.${LIBgnunetstatistics_VERSION}
+@lib lib/libgnunetstream.so.${LIBgnunetstream_VERSION}
 @lib lib/libgnunettestbed.so.${LIBgnunettestbed_VERSION}
 @lib lib/libgnunettesting.so.${LIBgnunettesting_VERSION}
-@lib lib/libgnunettesting_new.so.${LIBgnunettesting_new_VERSION}
+@lib lib/libgnunettesting_old.so.${LIBgnunettesting_old_VERSION}
 @lib lib/libgnunettransport.so.${LIBgnunettransport_VERSION}
 @lib lib/libgnunettransporttesting.so.${LIBgnunettransporttesting_VERSION}
 @lib lib/libgnunettun.so.${LIBgnunettun_VERSION}
 @lib lib/libgnunetutil.so.${LIBgnunetutil_VERSION}
+@lib lib/libgnunetvpn.so.${LIBgnunetvpn_VERSION}

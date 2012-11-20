@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, games
 DISTNAME =	kdegames-${MODKDE_VERSION}
-REVISION =	1
+REVISION =	0
 
 SHARED_LIBS =	kdegames             5.0      # .4.0
 SHARED_LIBS +=	kmahjongglib         0.0      # .1.0
@@ -19,16 +19,19 @@ WANTLIB += kdeui kdnssd kfile kio knewstuff3
 WANTLIB += knotifyconfig phonon_s
 WANTLIB += openal qca2 sndfile
 
-# Make sure some defines get right.
-# To be fixed when some stuff got out of x11/kde4.
-MODULES =	x11/kde4 lang/python
+MODULES =	lang/python
+
+BUILD_DEPENDS =	devel/py-twisted/core \
+		math/qhull \
+		x11/kde4/py-kde
+
+RUN_DEPENDS =	devel/py-twisted/core \
+		math/qhull \
+		x11/kde4/py-kde
 
 LIB_DEPENDS =	audio/openal \
 		audio/libsndfile \
-		devel/py-twisted/core \
-		math/qhull \
-		security/qca2 \
-		x11/kde4/py-kde
+		security/qca2
 
 # for Kajongg to avoid build-time dependency
 CONFIGURE_ARGS =	-DINSTALL_KAJONGG:Bool=True
