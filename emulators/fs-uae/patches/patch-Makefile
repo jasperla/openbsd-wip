@@ -1,0 +1,36 @@
+$OpenBSD$
+
+Add OpenBSD support
+
+--- Makefile.orig	Fri Oct 26 17:28:39 2012
++++ Makefile	Tue Nov 20 01:41:39 2012
+@@ -123,6 +123,9 @@ else ifeq ($(os), macosx)
+ else ifeq ($(os), freebsd)
+   cppflags += -DFREEBSD
+   libs += -lGL -lGLU -lopenal -lX11 -lcompat
++else ifeq ($(os), openbsd)
++  cppflags += -DOPENBSD
++  libs += -lGL -lGLU -lopenal -lX11 -lcompat
+ else
+   ldflags += -Wa,--execstack
+   libs += -lGL -lGLU -lopenal -ldl -lX11
+@@ -595,13 +598,13 @@ dist: distdir pubfiles-source po-dist
+ 		dist/$(series)/$(version)/fs-uae-game-server-$(version).py
+ 
+ install:
+-	mkdir -p $(DESTDIR)$(prefix)/bin
+-	cp out/fs-uae $(DESTDIR)$(prefix)/bin/fs-uae
+-	mkdir -p $(DESTDIR)$(prefix)/share
+-	cp -a share/* $(DESTDIR)$(prefix)/share
++	install -d $(DESTDIR)$(prefix)/bin
++	install out/fs-uae $(DESTDIR)$(prefix)/bin/fs-uae
++	install -d $(DESTDIR)$(prefix)/share
++	tar cf - share/ | tar xf - -C $(DESTDIR)$(prefix)/
+ 
+-	mkdir -p $(DESTDIR)$(docdir)
+-	cp -a README COPYING example.conf $(DESTDIR)$(docdir)
++	install -d $(DESTDIR)$(docdir)
++	install README COPYING example.conf $(DESTDIR)$(docdir)
+ 
+ clean:
+ 	rm -f gen/build68k gen/genblitter gen/gencpu gen/genlinetoscr
