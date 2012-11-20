@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		${MASTER_SITE_DEBIAN:=main/i/ikiwiki/}
 
 BUILD_DEPENDS =		devel/p5-YAML-XS \
+			graphics/ImageMagick \
 			mail/p5-Mail-Sendmail \
 			textproc/p5-Text-Markdown \
 			textproc/p5-XML-Simple \
