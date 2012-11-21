@@ -60,8 +60,8 @@ SEPARATE_BUILD =	flavored
 CONFIGURE_ARGS +=	--without-lame
 CONFIGURE_ENV +=	aktion_has_xanim=yes
 
-REVISION =	10
-WANTLIB = FLAC>=8 ICE SM X11 Xau Xdmcp Xext Xrender Xv Xxf86dga Xxf86vm akode \
+REVISION =	11
+WANTLIB = FLAC>=8 ICE SM X11 Xext Xrender Xv Xxf86dga Xxf86vm akode \
 	art_lgpl_2 audiofile c cdda_interface cdda_paranoia expat fam \
 	fontconfig freetype glib-2.0 gmodule-2.0 gobject-2.0 gstreamer-0.10 \
 	gthread-2.0 idn jpeg lib/kde3/DCOP lib/kde3/artsc lib/kde3/artsflow \
@@ -71,8 +71,10 @@ WANTLIB = FLAC>=8 ICE SM X11 Xau Xdmcp Xext Xrender Xv Xxf86dga Xxf86vm akode \
 	lib/kde3/kmedia2_idl lib/kde3/kmediaplayer lib/kde3/kmid \
 	lib/kde3/kparts lib/kde3/kutils lib/kde3/kwalletclient lib/kde3/mcop \
 	lib/kde3/qtmcop lib/kde3/soundserver_idl ltdl m mad ogg ossaudio pcre \
-	pcreposix png pthread pthread-stubs sndio stdc++ tag theora \
+	pcreposix png pthread sndio stdc++ tag theora \
 	util vorbis vorbisenc vorbisfile xcb xine xml2 z
+WANTLIB += GL Xcursor Xdamage Xfixes Xft Xi Xinerama Xmu Xrandr
+WANTLIB += Xt drm ffi lcms mng
 
 
 post-extract:

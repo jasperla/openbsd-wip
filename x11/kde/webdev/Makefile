@@ -9,7 +9,7 @@ SHARED_LIBS +=	kommanderplugin      1.0      # .0.0
 SHARED_LIBS +=	kommanderwidget      1.0      # .0.0
 SHARED_LIBS +=	kommanderwidgets     1.0      # .0.0
 
-REVISION =	7
+REVISION =	8
 
 MODULES =	x11/kde devel/gettext
 
@@ -27,14 +27,15 @@ SEPARATE_BUILD = 	flavored
 
 USE_LIBTOOL =		gnu
 
-WANTLIB = ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c cvsservice exslt fam \
+WANTLIB = ICE SM X11 Xext Xrender art_lgpl_2 c cvsservice exslt fam \
 	gcrypt gpg-error idn jpeg kmdi knewstuff lib/kde3/DCOP lib/kde3/kabc \
 	lib/kde3/katepartinterfaces lib/kde3/kdecore>=6 lib/kde3/kdefx \
 	lib/kde3/kdeprint lib/kde3/kdesu lib/kde3/kdeui lib/kde3/khtml \
 	lib/kde3/kio lib/kde3/kjs lib/kde3/kparts lib/kde3/kresources \
 	lib/kde3/kspell lib/kde3/ktexteditor lib/kde3/kutils \
 	lib/kde3/kwalletclient lib/kde3/vcard m pcre pcreposix png pthread \
-	pthread-stubs stdc++ util xcb xml2 xslt z
+	stdc++ util xcb xml2 xslt z
+WANTLIB += Xfixes Xt expat fontconfig freetype
 
 # don't pick up gtar
 CONFIGURE_ENV=		TAR=tar

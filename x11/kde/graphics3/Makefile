@@ -28,7 +28,7 @@ SHARED_LIBS +=	kscan                2.0      # .1.0
 MODULES =		x11/kde devel/gettext
 
 BUILD_DEPENDS =		print/texlive/base
-WANTLIB = ICE SM X11 Xext art_lgpl_2 idn jpeg lib/kde3/DCOP \
+WANTLIB = ICE SM X11 Xext art_lgpl_2 fam idn lib/kde3/DCOP \
 	lib/kde3/kdecore>=6 lib/kde3/kdefx lib/kde3/kdesu lib/kde3/kdeui \
 	lib/kde3/kio m png qt-mt stdc++ util xcb z
 LIB_DEPENDS =		${MODGETTEXT_LIB_DEPENDS} \
@@ -62,17 +62,17 @@ WANTLIB-kpov =		${WANTLIB}
 WANTLIB-kamera =	${WANTLIB}
 WANTLIB-sane =		${WANTLIB}
 
-REVISION-main = 16
-REVISION-kamera = 8
-REVISION-kpov = 8
-REVISION-sane = 12
+REVISION-main = 17
+REVISION-kamera = 9
+REVISION-kpov = 9
+REVISION-sane = 13
 
 WANTLIB-main +=	 GL Half ICE Iex IlmImf IlmThread Imath Imlib SM \
 	Xcursor Xdamage Xext Xfixes Xft Xi Xinerama Xmu Xrandr Xrender Xt \
 	Xxf86vm c drm expat fontconfig freetype fribidi lcms lib/kde3/kdeprint \
 	lib/kde3/khtml lib/kde3/kjs lib/kde3/kparts lib/kde3/kutils \
 	lib/kde3/kwalletclient mng openjpeg pcre pcreposix poppler \
-	poppler-qt pthread tiff ungif
+	poppler-qt pthread tiff ungif jpeg lcms2
 
 WANTLIB-kpov += GL GLU Xdamage Xfixes Xi Xmu Xrender Xt Xxf86vm c \
 	drm freetype lib/kde3/kparts lib/kde3/kwalletclient pthread \
@@ -84,7 +84,7 @@ WANTLIB-kamera +=  Xrender exif gphoto2 gphoto2_port pthread \
 WANTLIB-sane +=	c Xfixes Xrender Xt expat fontconfig freetype lib/kde3/kwalletclient \
 	lib/kde3/kabc lib/kde3/kdeprint lib/kde3/kparts lib/kde3/kresources \
 	lib/kde3/kspell lib/kde3/ktexteditor lib/kde3/vcard pthread sane \
-	tiff usb usb-1.0
+	tiff usb usb-1.0 cups jpeg
 
 post-patch:
 	@cp ${FILESDIR}/part_init.cpp ${WRKSRC}/kghostview

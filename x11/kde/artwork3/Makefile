@@ -18,15 +18,15 @@ BUILD_DEPENDS =		x11/xscreensaver,-data
 RUN_DEPENDS =		x11/xscreensaver,-data \
 			x11/gtk+2,-guic
 
-REVISION =		11
+REVISION =		12
 
-WANTLIB = GL GLU ICE SM X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xt Xxf86vm \
+WANTLIB = GL GLU ICE SM X11 Xdamage Xext Xfixes Xrender Xt Xxf86vm \
 	art_lgpl_2 artsflow artsflow_idl artskde audiofile c drm fam glib-2.0 \
-	gmodule-2.0 gthread-2.0 idn jpeg kmedia2_idl kwalletclient \
+	gmodule-2.0 gthread-2.0 idn kmedia2_idl kwalletclient \
 	lib/kde3/DCOP lib/kde3/kdecorations lib/kde3/kdecore>=6 \
 	lib/kde3/kdefx lib/kde3/kdesu lib/kde3/kdeui lib/kde3/kio \
 	lib/kde3/kparts lib/kde3/kscreensaver m mad mcop ogg pcre png pthread \
-	pthread-stubs qtmcop rpcsvc sndio soundserver_idl stdc++ util vorbis \
+	qtmcop sndio soundserver_idl stdc++ util vorbis \
 	vorbisenc vorbisfile xcb z
 
 

@@ -3,7 +3,7 @@
 COMMENT =		K Desktop Environment, addons
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
-REVISION =		11
+REVISION =		12
 DISTNAME =		kdeaddons-${VERSION}
 MODKDE_VERSION =	3.5.8
 
@@ -26,7 +26,7 @@ LIB_DEPENDS = 	x11/kde/libs3 \
 
 SEPARATE_BUILD =	flavored
 
-WANTLIB = ICE SDL>=1 SM X11 Xau Xdmcp Xext Xi Xrandr Xrender art_lgpl_2 \
+WANTLIB = ICE SDL>=1 SM X11 Xext Xi Xrandr Xrender art_lgpl_2 \
 	artsflow artsflow_idl audiofile c fam gdk glib glib-2.0 gmodule \
 	gmodule-2.0 gthread-2.0 gtk idn jpeg kimproxy kmedia2_idl \
 	lib/db4/db_cxx lib/kde3/DCOP lib/kde3/artsbuilder lib/kde3/artsgui \
@@ -42,8 +42,8 @@ WANTLIB = ICE SDL>=1 SM X11 Xau Xdmcp Xext Xi Xrandr Xrender art_lgpl_2 \
 	lib/kde3/konqsidebarplugin lib/kde3/kparts lib/kde3/kresources \
 	lib/kde3/ktexteditor lib/kde3/kutils lib/kde3/kwalletclient \
 	lib/kde3/noatun lib/kde3/noatuncontrols lib/kde3/noatuntags \
-	lib/kde3/vcard m mad mcop ogg pcre pcreposix png pthread pthread-stubs \
-	qtmcop rpcsvc sndio soundserver_idl stdc++ usbhid util vorbis \
+	lib/kde3/vcard m mad mcop ogg pcre pcreposix png pthread \
+	qtmcop sndio soundserver_idl stdc++ usbhid util vorbis \
 	vorbisenc vorbisfile xcb xmms z
 
 .include <bsd.port.mk>

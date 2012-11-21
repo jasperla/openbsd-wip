@@ -7,9 +7,9 @@ VERSION =		3.5.10
 DISTNAME =		kdesdk-${VERSION}
 
 PKGNAME-main =		${DISTNAME}
-REVISION-main =		10
+REVISION-main =		11
 PKGNAME-svn =		kdesvn-${VERSION}
-REVISION-svn =		9
+REVISION-svn =		10
 
 MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	cvsservice           1.0      # .0.1
@@ -37,10 +37,10 @@ LIB_DEPENDS-svn = 	${LIB_DEPENDS} \
 
 SEPARATE_BUILD =	flavored
 
-WANTLIB	= ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam idn jpeg \
+WANTLIB	= ICE SM X11 Xext Xft Xrender art_lgpl_2 c fam idn \
 	lib/kde3/DCOP lib/kde3/kdecore>=6 lib/kde3/kdefx lib/kde3/kdesu \
 	lib/kde3/kdeui lib/kde3/kio lib/kde3/kwalletclient m png pthread \
-	pthread-stubs rpcsvc stdc++ util xcb z
+	stdc++ util xcb z
 WANTLIB-main = ${WANTLIB}
 WANTLIB-svn = ${WANTLIB}
 
@@ -48,10 +48,15 @@ WANTLIB-main += Xfixes Xt expat fontconfig freetype kabc kdeprint \
 	khtml kjs kparts kresources kspell ktexteditor ktnef ktnef kunittest \
 	kutils lib/kde3/kcal lib/kde3/kmime pcre pcreposix qui-mt vcard xml2 \
 	xslt
+WANTLIB-main += GL GLU Xcursor Xdamage Xi Xinerama Xmu Xrandr Xxf86vm
+WANTLIB-main += drm jpeg lcms mng
+
 WANTLIB-svn += apr-1 aprutil-1 asn1 crypto db expat gssapi krb5 \
 	neon sasl2 sqlite3 ssl svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
 	svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1 svn_ra-1 svn_ra_local-1 \
 	svn_ra_neon-1 svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1
+WANTLIB-svn += Xfixes Xt fontconfig freetype magic proxy
+
 
 post-patch:
 	find "${WRKSRC}"/scripts -type f | while read F; do \

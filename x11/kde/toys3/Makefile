@@ -14,13 +14,14 @@ LIB_DEPENDS = 		x11/kde/libs3
 
 SEPARATE_BUILD =	flavored
 
-REVISION = 7
-WANTLIB = ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam idn jpeg \
+REVISION = 8
+WANTLIB = ICE SM X11 Xext Xrender art_lgpl_2 c fam idn jpeg \
 	lib/kde3/DCOP lib/kde3/kdecore>=6 lib/kde3/kdefx lib/kde3/kdeprint \
 	lib/kde3/kdesu lib/kde3/kdeui lib/kde3/khtml lib/kde3/kio lib/kde3/kjs \
 	lib/kde3/kparts lib/kde3/kscreensaver lib/kde3/kutils \
-	lib/kde3/kwalletclient m pcre pcreposix png pthread pthread-stubs \
+	lib/kde3/kwalletclient m pcre pcreposix png pthread \
 	stdc++ util xcb z
+WANTLIB += Xfixes Xt expat fontconfig freetype
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common

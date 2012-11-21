@@ -81,6 +81,9 @@ LIB_DEPENDS-main =	\
 	textproc/aspell/core
 
 WANTLIB-main =	${WANTLIB} dns_sd
+WANTLIB-main +=	GL Xcursor Xdamage Xfixes Xft Xi Xinerama Xmu Xrandr
+WANTLIB-main +=	Xt Xxf86vm avahi-client avahi-common dbus-1 drm expat
+WANTLIB-main +=	fontconfig freetype lcms mng
 
 RUN_DEPENDS-main = \
 	${RUN_DEPENDS} \
@@ -94,7 +97,7 @@ LIB_DEPENDS-cups = \
 
 WANTLIB-cups = ${WANTLIB}
 
-REVISION-main = 19
+REVISION-main = 20
 REVISION-cups = 10
 WANTLIB-main += Half Iex IlmImf>=4 IlmThread Imath artsflow>=1 \
 	artsflow_idl aspell audiofile bz2 glib-2.0 gmodule-2.0 gthread-2.0 \
