@@ -15,3 +15,16 @@ collect2: ld returned 1 exit status
 geo/merkartor	(qmake build system)	Boost parse error, 
 math/cgal 	(Cmake build system)	Boost parse error, see KDE bugs for fix
 mail/zarafa	-- patch sent to robert@ (might be unrelated to this boost diff)
+entire KDE4	(Cmake build system)	Boost parse error, see KDE bugs for fix
+
+Unclassified but causing problems in cvs
+---------------------------------
+databases/mongodb
+games/wesnoth
+games/pokerth
+games/frogatto
+multimedia/mkvtoolnix
+
+FIXED
+-------
+graphics/aqsis (in openbsd-wip)
