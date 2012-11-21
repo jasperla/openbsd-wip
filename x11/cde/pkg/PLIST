@@ -454,6 +454,7 @@ dt/appconfig/appmanager/it_IT.ISO8859-1/System_Admin/
 dt/appconfig/help/
 dt/appconfig/help/C/
 dt/appconfig/help/C/AppBuilder/
+dt/appconfig/help/C/AppBuilder.sdl
 dt/appconfig/help/C/AppBuilder/graphics/
 dt/appconfig/help/C/AppBuilder/graphics/abicon.pm
 dt/appconfig/help/C/AppBuilder/graphics/align.tif
@@ -554,6 +555,7 @@ dt/appconfig/help/C/AppBuilder/graphics/viewmenu.tif
 dt/appconfig/help/C/AppBuilder/graphics/viewmods.tif
 dt/appconfig/help/C/AppBuilder/graphics/windows.tif
 dt/appconfig/help/C/Appmanager/
+dt/appconfig/help/C/Appmanager.sdl
 dt/appconfig/help/C/Appmanager/graphics/
 dt/appconfig/help/C/Appmanager/graphics/actions.tif
 dt/appconfig/help/C/Appmanager/graphics/addappfp.tif
@@ -570,6 +572,7 @@ dt/appconfig/help/C/Appmanager/graphics/newfile.tif
 dt/appconfig/help/C/Appmanager/graphics/newfold.tif
 dt/appconfig/help/C/Appmanager/graphics/openfile.tif
 dt/appconfig/help/C/Calculator/
+dt/appconfig/help/C/Calculator.sdl
 dt/appconfig/help/C/Calculator/graphics/
 dt/appconfig/help/C/Calculator/graphics/calcarea.tif
 dt/appconfig/help/C/Calculator/graphics/calcpop.tif
@@ -586,6 +589,7 @@ dt/appconfig/help/C/Calculator/graphics/nfunct2.tif
 dt/appconfig/help/C/Calculator/graphics/numbase.tif
 dt/appconfig/help/C/Calculator/graphics/trigbase.tif
 dt/appconfig/help/C/Calendar/
+dt/appconfig/help/C/Calendar.sdl
 dt/appconfig/help/C/Calendar/graphics/
 dt/appconfig/help/C/Calendar/graphics/accesalt.tif
 dt/appconfig/help/C/Calendar/graphics/access.tif
@@ -636,6 +640,7 @@ dt/appconfig/help/C/Calendar/graphics/weekvw.tif
 dt/appconfig/help/C/Calendar/graphics/yearicon.tif
 dt/appconfig/help/C/Calendar/graphics/yearvw.tif
 dt/appconfig/help/C/CreatAct/
+dt/appconfig/help/C/CreatAct.sdl
 dt/appconfig/help/C/CreatAct/graphics/
 dt/appconfig/help/C/CreatAct/graphics/addtypes.tif
 dt/appconfig/help/C/CreatAct/graphics/advance.tif
@@ -649,6 +654,7 @@ dt/appconfig/help/C/CreatAct/graphics/mainwin.tif
 dt/appconfig/help/C/Desktop.hf
 dt/appconfig/help/C/DesktopIntro.hf
 dt/appconfig/help/C/FPanel/
+dt/appconfig/help/C/FPanel.sdl
 dt/appconfig/help/C/FPanel/graphics/
 dt/appconfig/help/C/FPanel/graphics/arrowbut.tif
 dt/appconfig/help/C/FPanel/graphics/clock.pm
@@ -690,6 +696,7 @@ dt/appconfig/help/C/FPanel/graphics/trash.pm
 dt/appconfig/help/C/FPanel/graphics/wholefp.tif
 dt/appconfig/help/C/FPanel/graphics/wsswitch.pm
 dt/appconfig/help/C/Filemgr/
+dt/appconfig/help/C/Filemgr.sdl
 dt/appconfig/help/C/Filemgr/graphics/
 dt/appconfig/help/C/Filemgr/graphics/chdir.tif
 dt/appconfig/help/C/Filemgr/graphics/copy.tif
@@ -716,6 +723,7 @@ dt/appconfig/help/C/Filemgr/graphics/rename.tif
 dt/appconfig/help/C/Filemgr/graphics/replace.tif
 dt/appconfig/help/C/Filemgr/graphics/selected.tif
 dt/appconfig/help/C/Help4Help/
+dt/appconfig/help/C/Help4Help.sdl
 dt/appconfig/help/C/Help4Help/graphics/
 dt/appconfig/help/C/Help4Help/graphics/execute.tif
 dt/appconfig/help/C/Help4Help/graphics/genhlp.tif
@@ -739,6 +747,7 @@ dt/appconfig/help/C/Help4Help/graphics/topicerr.tif
 dt/appconfig/help/C/Help4Help/graphics/topics.tif
 dt/appconfig/help/C/Help4Help/graphics/volerr.tif
 dt/appconfig/help/C/Iconed/
+dt/appconfig/help/C/Iconed.sdl
 dt/appconfig/help/C/Iconed/graphics/
 dt/appconfig/help/C/Iconed/graphics/circle.pm
 dt/appconfig/help/C/Iconed/graphics/ellipse.pm
@@ -752,6 +761,7 @@ dt/appconfig/help/C/Iconed/graphics/polyline.pm
 dt/appconfig/help/C/Iconed/graphics/rectang.pm
 dt/appconfig/help/C/Iconed/graphics/select.pm
 dt/appconfig/help/C/Infomgr/
+dt/appconfig/help/C/Infomgr.sdl
 dt/appconfig/help/C/Infomgr/graphics/
 dt/appconfig/help/C/Infomgr/graphics/addinfo.tif
 dt/appconfig/help/C/Infomgr/graphics/addlib.tif
@@ -812,6 +822,7 @@ dt/appconfig/help/C/Infomgr/graphics/srchmenu.tif
 dt/appconfig/help/C/Infomgr/graphics/winbmenu.tif
 dt/appconfig/help/C/Infomgr/graphics/winrmenu.tif
 dt/appconfig/help/C/Intromgr/
+dt/appconfig/help/C/Intromgr.sdl
 dt/appconfig/help/C/Intromgr/graphics/
 dt/appconfig/help/C/Intromgr/graphics/appmenu.tif
 dt/appconfig/help/C/Intromgr/graphics/appmgr.pm
@@ -863,11 +874,14 @@ dt/appconfig/help/C/Intromgr/graphics/winmenu.tif
 dt/appconfig/help/C/Intromgr/graphics/wsmenu.tif
 dt/appconfig/help/C/Intromgr/graphics/wsobmenu.tif
 dt/appconfig/help/C/LibDtPrint/
+dt/appconfig/help/C/LibDtPrint.sdl
 dt/appconfig/help/C/LibDtPrint/graphics/
 dt/appconfig/help/C/LibDtPrint/graphics/filselec.tif
 dt/appconfig/help/C/LibDtPrint/graphics/prninfo.tif
 dt/appconfig/help/C/LibDtPrint/graphics/prnselec.tif
+dt/appconfig/help/C/Loginmgr.sdl
 dt/appconfig/help/C/Mailer/
+dt/appconfig/help/C/Mailer.sdl
 dt/appconfig/help/C/Mailer/graphics/
 dt/appconfig/help/C/Mailer/graphics/advopts.tif
 dt/appconfig/help/C/Mailer/graphics/aliopts.tif
@@ -904,6 +918,7 @@ dt/appconfig/help/C/Mailer/graphics/vacopts.tif
 dt/appconfig/help/C/Mailer/graphics/viewmenu.tif
 dt/appconfig/help/C/Mailer/graphics/viewopts.tif
 dt/appconfig/help/C/Printmgr/
+dt/appconfig/help/C/Printmgr.sdl
 dt/appconfig/help/C/Printmgr/graphics/
 dt/appconfig/help/C/Printmgr/graphics/dojob.tif
 dt/appconfig/help/C/Printmgr/graphics/find.tif
@@ -927,11 +942,13 @@ dt/appconfig/help/C/Printmgr/graphics/prtmenu.tif
 dt/appconfig/help/C/Printmgr/graphics/showprt.tif
 dt/appconfig/help/C/Printmgr/graphics/viewmenu.tif
 dt/appconfig/help/C/PrnSetup/
+dt/appconfig/help/C/PrnSetup.sdl
 dt/appconfig/help/C/PrnSetup/graphics/
 dt/appconfig/help/C/PrnSetup/graphics/pdmjob.tif
 dt/appconfig/help/C/PrnSetup/graphics/pdmmain.tif
 dt/appconfig/help/C/PrnSetup/graphics/pdmprint.tif
 dt/appconfig/help/C/Stylemgr/
+dt/appconfig/help/C/Stylemgr.sdl
 dt/appconfig/help/C/Stylemgr/graphics/
 dt/appconfig/help/C/Stylemgr/graphics/addpal.tif
 dt/appconfig/help/C/Stylemgr/graphics/audio.pm
@@ -960,6 +977,7 @@ dt/appconfig/help/C/Stylemgr/graphics/stylemgr.tif
 dt/appconfig/help/C/Stylemgr/graphics/windlg.tif
 dt/appconfig/help/C/Stylemgr/graphics/winmgr.pm
 dt/appconfig/help/C/Terminal/
+dt/appconfig/help/C/Terminal.sdl
 dt/appconfig/help/C/Terminal/graphics/
 dt/appconfig/help/C/Terminal/graphics/bell.tif
 dt/appconfig/help/C/Terminal/graphics/color.tif
@@ -973,6 +991,7 @@ dt/appconfig/help/C/Terminal/graphics/prompt.tif
 dt/appconfig/help/C/Terminal/graphics/screen.tif
 dt/appconfig/help/C/Terminal/graphics/scroll.tif
 dt/appconfig/help/C/Textedit/
+dt/appconfig/help/C/Textedit.sdl
 dt/appconfig/help/C/Textedit/graphics/
 dt/appconfig/help/C/Textedit/graphics/button.tif
 dt/appconfig/help/C/Textedit/graphics/confirm.tif
@@ -998,6 +1017,7 @@ dt/appconfig/help/C/graphics/noteicon.pm
 dt/appconfig/help/C/graphics/warnicon.pm
 dt/appconfig/help/de_DE.ISO8859-1/
 dt/appconfig/help/de_DE.ISO8859-1/Appmanager/
+dt/appconfig/help/de_DE.ISO8859-1/Appmanager.sdl
 dt/appconfig/help/de_DE.ISO8859-1/Appmanager/graphics/
 dt/appconfig/help/de_DE.ISO8859-1/Appmanager/graphics/actions.tif
 dt/appconfig/help/de_DE.ISO8859-1/Appmanager/graphics/addappfp.tif
@@ -1014,6 +1034,7 @@ dt/appconfig/help/de_DE.ISO8859-1/Appmanager/graphics/newfile.tif
 dt/appconfig/help/de_DE.ISO8859-1/Appmanager/graphics/newfold.tif
 dt/appconfig/help/de_DE.ISO8859-1/Appmanager/graphics/openfile.tif
 dt/appconfig/help/de_DE.ISO8859-1/Calculator/
+dt/appconfig/help/de_DE.ISO8859-1/Calculator.sdl
 dt/appconfig/help/de_DE.ISO8859-1/Calculator/graphics/
 dt/appconfig/help/de_DE.ISO8859-1/Calculator/graphics/calcarea.tif
 dt/appconfig/help/de_DE.ISO8859-1/Calculator/graphics/calcpop.tif
@@ -1030,6 +1051,7 @@ dt/appconfig/help/de_DE.ISO8859-1/Calculator/graphics/nfunct2.tif
 dt/appconfig/help/de_DE.ISO8859-1/Calculator/graphics/numbase.tif
 dt/appconfig/help/de_DE.ISO8859-1/Calculator/graphics/trigbase.tif
 dt/appconfig/help/de_DE.ISO8859-1/Calendar/
+dt/appconfig/help/de_DE.ISO8859-1/Calendar.sdl
 dt/appconfig/help/de_DE.ISO8859-1/Calendar/graphics/
 dt/appconfig/help/de_DE.ISO8859-1/Calendar/graphics/accesalt.tif
 dt/appconfig/help/de_DE.ISO8859-1/Calendar/graphics/access.tif
@@ -1080,6 +1102,7 @@ dt/appconfig/help/de_DE.ISO8859-1/Calendar/graphics/weekvw.tif
 dt/appconfig/help/de_DE.ISO8859-1/Calendar/graphics/yearicon.tif
 dt/appconfig/help/de_DE.ISO8859-1/Calendar/graphics/yearvw.tif
 dt/appconfig/help/de_DE.ISO8859-1/CreatAct/
+dt/appconfig/help/de_DE.ISO8859-1/CreatAct.sdl
 dt/appconfig/help/de_DE.ISO8859-1/CreatAct/graphics/
 dt/appconfig/help/de_DE.ISO8859-1/CreatAct/graphics/addtypes.tif
 dt/appconfig/help/de_DE.ISO8859-1/CreatAct/graphics/advance.tif
@@ -1093,6 +1116,7 @@ dt/appconfig/help/de_DE.ISO8859-1/CreatAct/graphics/mainwin.tif
 dt/appconfig/help/de_DE.ISO8859-1/Desktop.hf
 dt/appconfig/help/de_DE.ISO8859-1/DesktopIntro.hf
 dt/appconfig/help/de_DE.ISO8859-1/FPanel/
+dt/appconfig/help/de_DE.ISO8859-1/FPanel.sdl
 dt/appconfig/help/de_DE.ISO8859-1/FPanel/graphics/
 dt/appconfig/help/de_DE.ISO8859-1/FPanel/graphics/arrowbut.tif
 dt/appconfig/help/de_DE.ISO8859-1/FPanel/graphics/clock.pm
@@ -1134,6 +1158,7 @@ dt/appconfig/help/de_DE.ISO8859-1/FPanel/graphics/trash.pm
 dt/appconfig/help/de_DE.ISO8859-1/FPanel/graphics/wholefp.tif
 dt/appconfig/help/de_DE.ISO8859-1/FPanel/graphics/wsswitch.pm
 dt/appconfig/help/de_DE.ISO8859-1/Filemgr/
+dt/appconfig/help/de_DE.ISO8859-1/Filemgr.sdl
 dt/appconfig/help/de_DE.ISO8859-1/Filemgr/graphics/
 dt/appconfig/help/de_DE.ISO8859-1/Filemgr/graphics/chdir.tif
 dt/appconfig/help/de_DE.ISO8859-1/Filemgr/graphics/copy.tif
@@ -1160,6 +1185,7 @@ dt/appconfig/help/de_DE.ISO8859-1/Filemgr/graphics/rename.tif
 dt/appconfig/help/de_DE.ISO8859-1/Filemgr/graphics/replace.tif
 dt/appconfig/help/de_DE.ISO8859-1/Filemgr/graphics/selected.tif
 dt/appconfig/help/de_DE.ISO8859-1/Help4Help/
+dt/appconfig/help/de_DE.ISO8859-1/Help4Help.sdl
 dt/appconfig/help/de_DE.ISO8859-1/Help4Help/graphics/
 dt/appconfig/help/de_DE.ISO8859-1/Help4Help/graphics/execute.tif
 dt/appconfig/help/de_DE.ISO8859-1/Help4Help/graphics/genhlp.tif
@@ -1183,6 +1209,7 @@ dt/appconfig/help/de_DE.ISO8859-1/Help4Help/graphics/topicerr.tif
 dt/appconfig/help/de_DE.ISO8859-1/Help4Help/graphics/topics.tif
 dt/appconfig/help/de_DE.ISO8859-1/Help4Help/graphics/volerr.tif
 dt/appconfig/help/de_DE.ISO8859-1/Iconed/
+dt/appconfig/help/de_DE.ISO8859-1/Iconed.sdl
 dt/appconfig/help/de_DE.ISO8859-1/Iconed/graphics/
 dt/appconfig/help/de_DE.ISO8859-1/Iconed/graphics/circle.pm
 dt/appconfig/help/de_DE.ISO8859-1/Iconed/graphics/ellipse.pm
@@ -1196,6 +1223,7 @@ dt/appconfig/help/de_DE.ISO8859-1/Iconed/graphics/polyline.pm
 dt/appconfig/help/de_DE.ISO8859-1/Iconed/graphics/rectang.pm
 dt/appconfig/help/de_DE.ISO8859-1/Iconed/graphics/select.pm
 dt/appconfig/help/de_DE.ISO8859-1/Infomgr/
+dt/appconfig/help/de_DE.ISO8859-1/Infomgr.sdl
 dt/appconfig/help/de_DE.ISO8859-1/Infomgr/graphics/
 dt/appconfig/help/de_DE.ISO8859-1/Infomgr/graphics/addinfo.tif
 dt/appconfig/help/de_DE.ISO8859-1/Infomgr/graphics/addlib.tif
@@ -1256,6 +1284,7 @@ dt/appconfig/help/de_DE.ISO8859-1/Infomgr/graphics/srchmenu.tif
 dt/appconfig/help/de_DE.ISO8859-1/Infomgr/graphics/winbmenu.tif
 dt/appconfig/help/de_DE.ISO8859-1/Infomgr/graphics/winrmenu.tif
 dt/appconfig/help/de_DE.ISO8859-1/Intromgr/
+dt/appconfig/help/de_DE.ISO8859-1/Intromgr.sdl
 dt/appconfig/help/de_DE.ISO8859-1/Intromgr/graphics/
 dt/appconfig/help/de_DE.ISO8859-1/Intromgr/graphics/appmenu.tif
 dt/appconfig/help/de_DE.ISO8859-1/Intromgr/graphics/appmgr.pm
@@ -1307,11 +1336,14 @@ dt/appconfig/help/de_DE.ISO8859-1/Intromgr/graphics/winmenu.tif
 dt/appconfig/help/de_DE.ISO8859-1/Intromgr/graphics/wsmenu.tif
 dt/appconfig/help/de_DE.ISO8859-1/Intromgr/graphics/wsobmenu.tif
 dt/appconfig/help/de_DE.ISO8859-1/LibDtPrint/
+dt/appconfig/help/de_DE.ISO8859-1/LibDtPrint.sdl
 dt/appconfig/help/de_DE.ISO8859-1/LibDtPrint/graphics/
 dt/appconfig/help/de_DE.ISO8859-1/LibDtPrint/graphics/filselec.tif
 dt/appconfig/help/de_DE.ISO8859-1/LibDtPrint/graphics/prninfo.tif
 dt/appconfig/help/de_DE.ISO8859-1/LibDtPrint/graphics/prnselec.tif
+dt/appconfig/help/de_DE.ISO8859-1/Loginmgr.sdl
 dt/appconfig/help/de_DE.ISO8859-1/Mailer/
+dt/appconfig/help/de_DE.ISO8859-1/Mailer.sdl
 dt/appconfig/help/de_DE.ISO8859-1/Mailer/graphics/
 dt/appconfig/help/de_DE.ISO8859-1/Mailer/graphics/advopts.tif
 dt/appconfig/help/de_DE.ISO8859-1/Mailer/graphics/aliopts.tif
@@ -1348,6 +1380,7 @@ dt/appconfig/help/de_DE.ISO8859-1/Mailer/graphics/vacopts.tif
 dt/appconfig/help/de_DE.ISO8859-1/Mailer/graphics/viewmenu.tif
 dt/appconfig/help/de_DE.ISO8859-1/Mailer/graphics/viewopts.tif
 dt/appconfig/help/de_DE.ISO8859-1/Printmgr/
+dt/appconfig/help/de_DE.ISO8859-1/Printmgr.sdl
 dt/appconfig/help/de_DE.ISO8859-1/Printmgr/graphics/
 dt/appconfig/help/de_DE.ISO8859-1/Printmgr/graphics/dojob.tif
 dt/appconfig/help/de_DE.ISO8859-1/Printmgr/graphics/find.tif
@@ -1371,11 +1404,13 @@ dt/appconfig/help/de_DE.ISO8859-1/Printmgr/graphics/prtmenu.tif
 dt/appconfig/help/de_DE.ISO8859-1/Printmgr/graphics/showprt.tif
 dt/appconfig/help/de_DE.ISO8859-1/Printmgr/graphics/viewmenu.tif
 dt/appconfig/help/de_DE.ISO8859-1/PrnSetup/
+dt/appconfig/help/de_DE.ISO8859-1/PrnSetup.sdl
 dt/appconfig/help/de_DE.ISO8859-1/PrnSetup/graphics/
 dt/appconfig/help/de_DE.ISO8859-1/PrnSetup/graphics/pdmjob.tif
 dt/appconfig/help/de_DE.ISO8859-1/PrnSetup/graphics/pdmmain.tif
 dt/appconfig/help/de_DE.ISO8859-1/PrnSetup/graphics/pdmprint.tif
 dt/appconfig/help/de_DE.ISO8859-1/Stylemgr/
+dt/appconfig/help/de_DE.ISO8859-1/Stylemgr.sdl
 dt/appconfig/help/de_DE.ISO8859-1/Stylemgr/graphics/
 dt/appconfig/help/de_DE.ISO8859-1/Stylemgr/graphics/addpal.tif
 dt/appconfig/help/de_DE.ISO8859-1/Stylemgr/graphics/audio.pm
@@ -1404,6 +1439,7 @@ dt/appconfig/help/de_DE.ISO8859-1/Stylemgr/graphics/stylemgr.tif
 dt/appconfig/help/de_DE.ISO8859-1/Stylemgr/graphics/windlg.tif
 dt/appconfig/help/de_DE.ISO8859-1/Stylemgr/graphics/winmgr.pm
 dt/appconfig/help/de_DE.ISO8859-1/Terminal/
+dt/appconfig/help/de_DE.ISO8859-1/Terminal.sdl
 dt/appconfig/help/de_DE.ISO8859-1/Terminal/graphics/
 dt/appconfig/help/de_DE.ISO8859-1/Terminal/graphics/bell.tif
 dt/appconfig/help/de_DE.ISO8859-1/Terminal/graphics/color.tif
@@ -1417,6 +1453,7 @@ dt/appconfig/help/de_DE.ISO8859-1/Terminal/graphics/prompt.tif
 dt/appconfig/help/de_DE.ISO8859-1/Terminal/graphics/screen.tif
 dt/appconfig/help/de_DE.ISO8859-1/Terminal/graphics/scroll.tif
 dt/appconfig/help/de_DE.ISO8859-1/Textedit/
+dt/appconfig/help/de_DE.ISO8859-1/Textedit.sdl
 dt/appconfig/help/de_DE.ISO8859-1/Textedit/graphics/
 dt/appconfig/help/de_DE.ISO8859-1/Textedit/graphics/button.tif
 dt/appconfig/help/de_DE.ISO8859-1/Textedit/graphics/confirm.tif
@@ -1442,6 +1479,7 @@ dt/appconfig/help/de_DE.ISO8859-1/graphics/noteicon.pm
 dt/appconfig/help/de_DE.ISO8859-1/graphics/warnicon.pm
 dt/appconfig/help/es_ES.ISO8859-1/
 dt/appconfig/help/es_ES.ISO8859-1/Appmanager/
+dt/appconfig/help/es_ES.ISO8859-1/Appmanager.sdl
 dt/appconfig/help/es_ES.ISO8859-1/Appmanager/graphics/
 dt/appconfig/help/es_ES.ISO8859-1/Appmanager/graphics/actions.tif
 dt/appconfig/help/es_ES.ISO8859-1/Appmanager/graphics/addappfp.tif
@@ -1458,6 +1496,7 @@ dt/appconfig/help/es_ES.ISO8859-1/Appmanager/graphics/newfile.tif
 dt/appconfig/help/es_ES.ISO8859-1/Appmanager/graphics/newfold.tif
 dt/appconfig/help/es_ES.ISO8859-1/Appmanager/graphics/openfile.tif
 dt/appconfig/help/es_ES.ISO8859-1/Calculator/
+dt/appconfig/help/es_ES.ISO8859-1/Calculator.sdl
 dt/appconfig/help/es_ES.ISO8859-1/Calculator/graphics/
 dt/appconfig/help/es_ES.ISO8859-1/Calculator/graphics/calcarea.tif
 dt/appconfig/help/es_ES.ISO8859-1/Calculator/graphics/calcpop.tif
@@ -1474,6 +1513,7 @@ dt/appconfig/help/es_ES.ISO8859-1/Calculator/graphics/nfunct2.tif
 dt/appconfig/help/es_ES.ISO8859-1/Calculator/graphics/numbase.tif
 dt/appconfig/help/es_ES.ISO8859-1/Calculator/graphics/trigbase.tif
 dt/appconfig/help/es_ES.ISO8859-1/Calendar/
+dt/appconfig/help/es_ES.ISO8859-1/Calendar.sdl
 dt/appconfig/help/es_ES.ISO8859-1/Calendar/graphics/
 dt/appconfig/help/es_ES.ISO8859-1/Calendar/graphics/accesalt.tif
 dt/appconfig/help/es_ES.ISO8859-1/Calendar/graphics/access.tif
@@ -1524,6 +1564,7 @@ dt/appconfig/help/es_ES.ISO8859-1/Calendar/graphics/weekvw.tif
 dt/appconfig/help/es_ES.ISO8859-1/Calendar/graphics/yearicon.tif
 dt/appconfig/help/es_ES.ISO8859-1/Calendar/graphics/yearvw.tif
 dt/appconfig/help/es_ES.ISO8859-1/CreatAct/
+dt/appconfig/help/es_ES.ISO8859-1/CreatAct.sdl
 dt/appconfig/help/es_ES.ISO8859-1/CreatAct/graphics/
 dt/appconfig/help/es_ES.ISO8859-1/CreatAct/graphics/addtypes.tif
 dt/appconfig/help/es_ES.ISO8859-1/CreatAct/graphics/advance.tif
@@ -1537,6 +1578,7 @@ dt/appconfig/help/es_ES.ISO8859-1/CreatAct/graphics/mainwin.tif
 dt/appconfig/help/es_ES.ISO8859-1/Desktop.hf
 dt/appconfig/help/es_ES.ISO8859-1/DesktopIntro.hf
 dt/appconfig/help/es_ES.ISO8859-1/FPanel/
+dt/appconfig/help/es_ES.ISO8859-1/FPanel.sdl
 dt/appconfig/help/es_ES.ISO8859-1/FPanel/graphics/
 dt/appconfig/help/es_ES.ISO8859-1/FPanel/graphics/arrowbut.tif
 dt/appconfig/help/es_ES.ISO8859-1/FPanel/graphics/clock.pm
@@ -1578,6 +1620,7 @@ dt/appconfig/help/es_ES.ISO8859-1/FPanel/graphics/trash.pm
 dt/appconfig/help/es_ES.ISO8859-1/FPanel/graphics/wholefp.tif
 dt/appconfig/help/es_ES.ISO8859-1/FPanel/graphics/wsswitch.pm
 dt/appconfig/help/es_ES.ISO8859-1/Filemgr/
+dt/appconfig/help/es_ES.ISO8859-1/Filemgr.sdl
 dt/appconfig/help/es_ES.ISO8859-1/Filemgr/graphics/
 dt/appconfig/help/es_ES.ISO8859-1/Filemgr/graphics/chdir.tif
 dt/appconfig/help/es_ES.ISO8859-1/Filemgr/graphics/copy.tif
@@ -1604,6 +1647,7 @@ dt/appconfig/help/es_ES.ISO8859-1/Filemgr/graphics/rename.tif
 dt/appconfig/help/es_ES.ISO8859-1/Filemgr/graphics/replace.tif
 dt/appconfig/help/es_ES.ISO8859-1/Filemgr/graphics/selected.tif
 dt/appconfig/help/es_ES.ISO8859-1/Help4Help/
+dt/appconfig/help/es_ES.ISO8859-1/Help4Help.sdl
 dt/appconfig/help/es_ES.ISO8859-1/Help4Help/graphics/
 dt/appconfig/help/es_ES.ISO8859-1/Help4Help/graphics/execute.tif
 dt/appconfig/help/es_ES.ISO8859-1/Help4Help/graphics/genhlp.tif
@@ -1627,6 +1671,7 @@ dt/appconfig/help/es_ES.ISO8859-1/Help4Help/graphics/topicerr.tif
 dt/appconfig/help/es_ES.ISO8859-1/Help4Help/graphics/topics.tif
 dt/appconfig/help/es_ES.ISO8859-1/Help4Help/graphics/volerr.tif
 dt/appconfig/help/es_ES.ISO8859-1/Iconed/
+dt/appconfig/help/es_ES.ISO8859-1/Iconed.sdl
 dt/appconfig/help/es_ES.ISO8859-1/Iconed/graphics/
 dt/appconfig/help/es_ES.ISO8859-1/Iconed/graphics/circle.pm
 dt/appconfig/help/es_ES.ISO8859-1/Iconed/graphics/ellipse.pm
@@ -1640,6 +1685,7 @@ dt/appconfig/help/es_ES.ISO8859-1/Iconed/graphics/polyline.pm
 dt/appconfig/help/es_ES.ISO8859-1/Iconed/graphics/rectang.pm
 dt/appconfig/help/es_ES.ISO8859-1/Iconed/graphics/select.pm
 dt/appconfig/help/es_ES.ISO8859-1/Infomgr/
+dt/appconfig/help/es_ES.ISO8859-1/Infomgr.sdl
 dt/appconfig/help/es_ES.ISO8859-1/Infomgr/graphics/
 dt/appconfig/help/es_ES.ISO8859-1/Infomgr/graphics/addinfo.tif
 dt/appconfig/help/es_ES.ISO8859-1/Infomgr/graphics/addlib.tif
@@ -1700,6 +1746,7 @@ dt/appconfig/help/es_ES.ISO8859-1/Infomgr/graphics/srchmenu.tif
 dt/appconfig/help/es_ES.ISO8859-1/Infomgr/graphics/winbmenu.tif
 dt/appconfig/help/es_ES.ISO8859-1/Infomgr/graphics/winrmenu.tif
 dt/appconfig/help/es_ES.ISO8859-1/Intromgr/
+dt/appconfig/help/es_ES.ISO8859-1/Intromgr.sdl
 dt/appconfig/help/es_ES.ISO8859-1/Intromgr/graphics/
 dt/appconfig/help/es_ES.ISO8859-1/Intromgr/graphics/appmenu.tif
 dt/appconfig/help/es_ES.ISO8859-1/Intromgr/graphics/appmgr.pm
@@ -1751,11 +1798,14 @@ dt/appconfig/help/es_ES.ISO8859-1/Intromgr/graphics/winmenu.tif
 dt/appconfig/help/es_ES.ISO8859-1/Intromgr/graphics/wsmenu.tif
 dt/appconfig/help/es_ES.ISO8859-1/Intromgr/graphics/wsobmenu.tif
 dt/appconfig/help/es_ES.ISO8859-1/LibDtPrint/
+dt/appconfig/help/es_ES.ISO8859-1/LibDtPrint.sdl
 dt/appconfig/help/es_ES.ISO8859-1/LibDtPrint/graphics/
 dt/appconfig/help/es_ES.ISO8859-1/LibDtPrint/graphics/filselec.tif
 dt/appconfig/help/es_ES.ISO8859-1/LibDtPrint/graphics/prninfo.tif
 dt/appconfig/help/es_ES.ISO8859-1/LibDtPrint/graphics/prnselec.tif
+dt/appconfig/help/es_ES.ISO8859-1/Loginmgr.sdl
 dt/appconfig/help/es_ES.ISO8859-1/Mailer/
+dt/appconfig/help/es_ES.ISO8859-1/Mailer.sdl
 dt/appconfig/help/es_ES.ISO8859-1/Mailer/graphics/
 dt/appconfig/help/es_ES.ISO8859-1/Mailer/graphics/advopts.tif
 dt/appconfig/help/es_ES.ISO8859-1/Mailer/graphics/aliopts.tif
@@ -1792,6 +1842,7 @@ dt/appconfig/help/es_ES.ISO8859-1/Mailer/graphics/vacopts.tif
 dt/appconfig/help/es_ES.ISO8859-1/Mailer/graphics/viewmenu.tif
 dt/appconfig/help/es_ES.ISO8859-1/Mailer/graphics/viewopts.tif
 dt/appconfig/help/es_ES.ISO8859-1/Printmgr/
+dt/appconfig/help/es_ES.ISO8859-1/Printmgr.sdl
 dt/appconfig/help/es_ES.ISO8859-1/Printmgr/graphics/
 dt/appconfig/help/es_ES.ISO8859-1/Printmgr/graphics/dojob.tif
 dt/appconfig/help/es_ES.ISO8859-1/Printmgr/graphics/find.tif
@@ -1815,11 +1866,13 @@ dt/appconfig/help/es_ES.ISO8859-1/Printmgr/graphics/prtmenu.tif
 dt/appconfig/help/es_ES.ISO8859-1/Printmgr/graphics/showprt.tif
 dt/appconfig/help/es_ES.ISO8859-1/Printmgr/graphics/viewmenu.tif
 dt/appconfig/help/es_ES.ISO8859-1/PrnSetup/
+dt/appconfig/help/es_ES.ISO8859-1/PrnSetup.sdl
 dt/appconfig/help/es_ES.ISO8859-1/PrnSetup/graphics/
 dt/appconfig/help/es_ES.ISO8859-1/PrnSetup/graphics/pdmjob.tif
 dt/appconfig/help/es_ES.ISO8859-1/PrnSetup/graphics/pdmmain.tif
 dt/appconfig/help/es_ES.ISO8859-1/PrnSetup/graphics/pdmprint.tif
 dt/appconfig/help/es_ES.ISO8859-1/Stylemgr/
+dt/appconfig/help/es_ES.ISO8859-1/Stylemgr.sdl
 dt/appconfig/help/es_ES.ISO8859-1/Stylemgr/graphics/
 dt/appconfig/help/es_ES.ISO8859-1/Stylemgr/graphics/addpal.tif
 dt/appconfig/help/es_ES.ISO8859-1/Stylemgr/graphics/audio.pm
@@ -1848,6 +1901,7 @@ dt/appconfig/help/es_ES.ISO8859-1/Stylemgr/graphics/stylemgr.tif
 dt/appconfig/help/es_ES.ISO8859-1/Stylemgr/graphics/windlg.tif
 dt/appconfig/help/es_ES.ISO8859-1/Stylemgr/graphics/winmgr.pm
 dt/appconfig/help/es_ES.ISO8859-1/Terminal/
+dt/appconfig/help/es_ES.ISO8859-1/Terminal.sdl
 dt/appconfig/help/es_ES.ISO8859-1/Terminal/graphics/
 dt/appconfig/help/es_ES.ISO8859-1/Terminal/graphics/bell.tif
 dt/appconfig/help/es_ES.ISO8859-1/Terminal/graphics/color.tif
@@ -1861,6 +1915,7 @@ dt/appconfig/help/es_ES.ISO8859-1/Terminal/graphics/prompt.tif
 dt/appconfig/help/es_ES.ISO8859-1/Terminal/graphics/screen.tif
 dt/appconfig/help/es_ES.ISO8859-1/Terminal/graphics/scroll.tif
 dt/appconfig/help/es_ES.ISO8859-1/Textedit/
+dt/appconfig/help/es_ES.ISO8859-1/Textedit.sdl
 dt/appconfig/help/es_ES.ISO8859-1/Textedit/graphics/
 dt/appconfig/help/es_ES.ISO8859-1/Textedit/graphics/button.tif
 dt/appconfig/help/es_ES.ISO8859-1/Textedit/graphics/confirm.tif
@@ -1886,6 +1941,7 @@ dt/appconfig/help/es_ES.ISO8859-1/graphics/noteicon.pm
 dt/appconfig/help/es_ES.ISO8859-1/graphics/warnicon.pm
 dt/appconfig/help/fr_FR.ISO8859-1/
 dt/appconfig/help/fr_FR.ISO8859-1/Appmanager/
+dt/appconfig/help/fr_FR.ISO8859-1/Appmanager.sdl
 dt/appconfig/help/fr_FR.ISO8859-1/Appmanager/graphics/
 dt/appconfig/help/fr_FR.ISO8859-1/Appmanager/graphics/actions.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Appmanager/graphics/addappfp.tif
@@ -1902,6 +1958,7 @@ dt/appconfig/help/fr_FR.ISO8859-1/Appmanager/graphics/newfile.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Appmanager/graphics/newfold.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Appmanager/graphics/openfile.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Calculator/
+dt/appconfig/help/fr_FR.ISO8859-1/Calculator.sdl
 dt/appconfig/help/fr_FR.ISO8859-1/Calculator/graphics/
 dt/appconfig/help/fr_FR.ISO8859-1/Calculator/graphics/calcarea.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Calculator/graphics/calcpop.tif
@@ -1918,6 +1975,7 @@ dt/appconfig/help/fr_FR.ISO8859-1/Calculator/graphics/nfunct2.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Calculator/graphics/numbase.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Calculator/graphics/trigbase.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Calendar/
+dt/appconfig/help/fr_FR.ISO8859-1/Calendar.sdl
 dt/appconfig/help/fr_FR.ISO8859-1/Calendar/graphics/
 dt/appconfig/help/fr_FR.ISO8859-1/Calendar/graphics/accesalt.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Calendar/graphics/access.tif
@@ -1968,6 +2026,7 @@ dt/appconfig/help/fr_FR.ISO8859-1/Calendar/graphics/weekvw.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Calendar/graphics/yearicon.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Calendar/graphics/yearvw.tif
 dt/appconfig/help/fr_FR.ISO8859-1/CreatAct/
+dt/appconfig/help/fr_FR.ISO8859-1/CreatAct.sdl
 dt/appconfig/help/fr_FR.ISO8859-1/CreatAct/graphics/
 dt/appconfig/help/fr_FR.ISO8859-1/CreatAct/graphics/addtypes.tif
 dt/appconfig/help/fr_FR.ISO8859-1/CreatAct/graphics/advance.tif
@@ -1981,6 +2040,7 @@ dt/appconfig/help/fr_FR.ISO8859-1/CreatAct/graphics/mainwin.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Desktop.hf
 dt/appconfig/help/fr_FR.ISO8859-1/DesktopIntro.hf
 dt/appconfig/help/fr_FR.ISO8859-1/FPanel/
+dt/appconfig/help/fr_FR.ISO8859-1/FPanel.sdl
 dt/appconfig/help/fr_FR.ISO8859-1/FPanel/graphics/
 dt/appconfig/help/fr_FR.ISO8859-1/FPanel/graphics/arrowbut.tif
 dt/appconfig/help/fr_FR.ISO8859-1/FPanel/graphics/clock.pm
@@ -2022,6 +2082,7 @@ dt/appconfig/help/fr_FR.ISO8859-1/FPanel/graphics/trash.pm
 dt/appconfig/help/fr_FR.ISO8859-1/FPanel/graphics/wholefp.tif
 dt/appconfig/help/fr_FR.ISO8859-1/FPanel/graphics/wsswitch.pm
 dt/appconfig/help/fr_FR.ISO8859-1/Filemgr/
+dt/appconfig/help/fr_FR.ISO8859-1/Filemgr.sdl
 dt/appconfig/help/fr_FR.ISO8859-1/Filemgr/graphics/
 dt/appconfig/help/fr_FR.ISO8859-1/Filemgr/graphics/chdir.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Filemgr/graphics/copy.tif
@@ -2048,6 +2109,7 @@ dt/appconfig/help/fr_FR.ISO8859-1/Filemgr/graphics/rename.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Filemgr/graphics/replace.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Filemgr/graphics/selected.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Help4Help/
+dt/appconfig/help/fr_FR.ISO8859-1/Help4Help.sdl
 dt/appconfig/help/fr_FR.ISO8859-1/Help4Help/graphics/
 dt/appconfig/help/fr_FR.ISO8859-1/Help4Help/graphics/execute.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Help4Help/graphics/genhlp.tif
@@ -2071,6 +2133,7 @@ dt/appconfig/help/fr_FR.ISO8859-1/Help4Help/graphics/topicerr.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Help4Help/graphics/topics.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Help4Help/graphics/volerr.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Iconed/
+dt/appconfig/help/fr_FR.ISO8859-1/Iconed.sdl
 dt/appconfig/help/fr_FR.ISO8859-1/Iconed/graphics/
 dt/appconfig/help/fr_FR.ISO8859-1/Iconed/graphics/circle.pm
 dt/appconfig/help/fr_FR.ISO8859-1/Iconed/graphics/ellipse.pm
@@ -2084,6 +2147,7 @@ dt/appconfig/help/fr_FR.ISO8859-1/Iconed/graphics/polyline.pm
 dt/appconfig/help/fr_FR.ISO8859-1/Iconed/graphics/rectang.pm
 dt/appconfig/help/fr_FR.ISO8859-1/Iconed/graphics/select.pm
 dt/appconfig/help/fr_FR.ISO8859-1/Infomgr/
+dt/appconfig/help/fr_FR.ISO8859-1/Infomgr.sdl
 dt/appconfig/help/fr_FR.ISO8859-1/Infomgr/graphics/
 dt/appconfig/help/fr_FR.ISO8859-1/Infomgr/graphics/addinfo.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Infomgr/graphics/addlib.tif
@@ -2144,6 +2208,7 @@ dt/appconfig/help/fr_FR.ISO8859-1/Infomgr/graphics/srchmenu.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Infomgr/graphics/winbmenu.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Infomgr/graphics/winrmenu.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Intromgr/
+dt/appconfig/help/fr_FR.ISO8859-1/Intromgr.sdl
 dt/appconfig/help/fr_FR.ISO8859-1/Intromgr/graphics/
 dt/appconfig/help/fr_FR.ISO8859-1/Intromgr/graphics/appmenu.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Intromgr/graphics/appmgr.pm
@@ -2195,11 +2260,14 @@ dt/appconfig/help/fr_FR.ISO8859-1/Intromgr/graphics/winmenu.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Intromgr/graphics/wsmenu.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Intromgr/graphics/wsobmenu.tif
 dt/appconfig/help/fr_FR.ISO8859-1/LibDtPrint/
+dt/appconfig/help/fr_FR.ISO8859-1/LibDtPrint.sdl
 dt/appconfig/help/fr_FR.ISO8859-1/LibDtPrint/graphics/
 dt/appconfig/help/fr_FR.ISO8859-1/LibDtPrint/graphics/filselec.tif
 dt/appconfig/help/fr_FR.ISO8859-1/LibDtPrint/graphics/prninfo.tif
 dt/appconfig/help/fr_FR.ISO8859-1/LibDtPrint/graphics/prnselec.tif
+dt/appconfig/help/fr_FR.ISO8859-1/Loginmgr.sdl
 dt/appconfig/help/fr_FR.ISO8859-1/Mailer/
+dt/appconfig/help/fr_FR.ISO8859-1/Mailer.sdl
 dt/appconfig/help/fr_FR.ISO8859-1/Mailer/graphics/
 dt/appconfig/help/fr_FR.ISO8859-1/Mailer/graphics/advopts.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Mailer/graphics/aliopts.tif
@@ -2236,6 +2304,7 @@ dt/appconfig/help/fr_FR.ISO8859-1/Mailer/graphics/vacopts.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Mailer/graphics/viewmenu.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Mailer/graphics/viewopts.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Printmgr/
+dt/appconfig/help/fr_FR.ISO8859-1/Printmgr.sdl
 dt/appconfig/help/fr_FR.ISO8859-1/Printmgr/graphics/
 dt/appconfig/help/fr_FR.ISO8859-1/Printmgr/graphics/dojob.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Printmgr/graphics/find.tif
@@ -2259,11 +2328,13 @@ dt/appconfig/help/fr_FR.ISO8859-1/Printmgr/graphics/prtmenu.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Printmgr/graphics/showprt.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Printmgr/graphics/viewmenu.tif
 dt/appconfig/help/fr_FR.ISO8859-1/PrnSetup/
+dt/appconfig/help/fr_FR.ISO8859-1/PrnSetup.sdl
 dt/appconfig/help/fr_FR.ISO8859-1/PrnSetup/graphics/
 dt/appconfig/help/fr_FR.ISO8859-1/PrnSetup/graphics/pdmjob.tif
 dt/appconfig/help/fr_FR.ISO8859-1/PrnSetup/graphics/pdmmain.tif
 dt/appconfig/help/fr_FR.ISO8859-1/PrnSetup/graphics/pdmprint.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Stylemgr/
+dt/appconfig/help/fr_FR.ISO8859-1/Stylemgr.sdl
 dt/appconfig/help/fr_FR.ISO8859-1/Stylemgr/graphics/
 dt/appconfig/help/fr_FR.ISO8859-1/Stylemgr/graphics/addpal.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Stylemgr/graphics/audio.pm
@@ -2292,6 +2363,7 @@ dt/appconfig/help/fr_FR.ISO8859-1/Stylemgr/graphics/stylemgr.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Stylemgr/graphics/windlg.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Stylemgr/graphics/winmgr.pm
 dt/appconfig/help/fr_FR.ISO8859-1/Terminal/
+dt/appconfig/help/fr_FR.ISO8859-1/Terminal.sdl
 dt/appconfig/help/fr_FR.ISO8859-1/Terminal/graphics/
 dt/appconfig/help/fr_FR.ISO8859-1/Terminal/graphics/bell.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Terminal/graphics/color.tif
@@ -2305,6 +2377,7 @@ dt/appconfig/help/fr_FR.ISO8859-1/Terminal/graphics/prompt.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Terminal/graphics/screen.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Terminal/graphics/scroll.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Textedit/
+dt/appconfig/help/fr_FR.ISO8859-1/Textedit.sdl
 dt/appconfig/help/fr_FR.ISO8859-1/Textedit/graphics/
 dt/appconfig/help/fr_FR.ISO8859-1/Textedit/graphics/button.tif
 dt/appconfig/help/fr_FR.ISO8859-1/Textedit/graphics/confirm.tif
@@ -2330,6 +2403,7 @@ dt/appconfig/help/fr_FR.ISO8859-1/graphics/noteicon.pm
 dt/appconfig/help/fr_FR.ISO8859-1/graphics/warnicon.pm
 dt/appconfig/help/it_IT.ISO8859-1/
 dt/appconfig/help/it_IT.ISO8859-1/Appmanager/
+dt/appconfig/help/it_IT.ISO8859-1/Appmanager.sdl
 dt/appconfig/help/it_IT.ISO8859-1/Appmanager/graphics/
 dt/appconfig/help/it_IT.ISO8859-1/Appmanager/graphics/actions.tif
 dt/appconfig/help/it_IT.ISO8859-1/Appmanager/graphics/addappfp.tif
@@ -2346,6 +2420,7 @@ dt/appconfig/help/it_IT.ISO8859-1/Appmanager/graphics/newfile.tif
 dt/appconfig/help/it_IT.ISO8859-1/Appmanager/graphics/newfold.tif
 dt/appconfig/help/it_IT.ISO8859-1/Appmanager/graphics/openfile.tif
 dt/appconfig/help/it_IT.ISO8859-1/Calculator/
+dt/appconfig/help/it_IT.ISO8859-1/Calculator.sdl
 dt/appconfig/help/it_IT.ISO8859-1/Calculator/graphics/
 dt/appconfig/help/it_IT.ISO8859-1/Calculator/graphics/calcarea.tif
 dt/appconfig/help/it_IT.ISO8859-1/Calculator/graphics/calcpop.tif
@@ -2362,6 +2437,7 @@ dt/appconfig/help/it_IT.ISO8859-1/Calculator/graphics/nfunct2.tif
 dt/appconfig/help/it_IT.ISO8859-1/Calculator/graphics/numbase.tif
 dt/appconfig/help/it_IT.ISO8859-1/Calculator/graphics/trigbase.tif
 dt/appconfig/help/it_IT.ISO8859-1/Calendar/
+dt/appconfig/help/it_IT.ISO8859-1/Calendar.sdl
 dt/appconfig/help/it_IT.ISO8859-1/Calendar/graphics/
 dt/appconfig/help/it_IT.ISO8859-1/Calendar/graphics/accesalt.tif
 dt/appconfig/help/it_IT.ISO8859-1/Calendar/graphics/access.tif
@@ -2412,6 +2488,7 @@ dt/appconfig/help/it_IT.ISO8859-1/Calendar/graphics/weekvw.tif
 dt/appconfig/help/it_IT.ISO8859-1/Calendar/graphics/yearicon.tif
 dt/appconfig/help/it_IT.ISO8859-1/Calendar/graphics/yearvw.tif
 dt/appconfig/help/it_IT.ISO8859-1/CreatAct/
+dt/appconfig/help/it_IT.ISO8859-1/CreatAct.sdl
 dt/appconfig/help/it_IT.ISO8859-1/CreatAct/graphics/
 dt/appconfig/help/it_IT.ISO8859-1/CreatAct/graphics/addtypes.tif
 dt/appconfig/help/it_IT.ISO8859-1/CreatAct/graphics/advance.tif
@@ -2425,6 +2502,7 @@ dt/appconfig/help/it_IT.ISO8859-1/CreatAct/graphics/mainwin.tif
 dt/appconfig/help/it_IT.ISO8859-1/Desktop.hf
 dt/appconfig/help/it_IT.ISO8859-1/DesktopIntro.hf
 dt/appconfig/help/it_IT.ISO8859-1/FPanel/
+dt/appconfig/help/it_IT.ISO8859-1/FPanel.sdl
 dt/appconfig/help/it_IT.ISO8859-1/FPanel/graphics/
 dt/appconfig/help/it_IT.ISO8859-1/FPanel/graphics/arrowbut.tif
 dt/appconfig/help/it_IT.ISO8859-1/FPanel/graphics/clock.pm
@@ -2466,6 +2544,7 @@ dt/appconfig/help/it_IT.ISO8859-1/FPanel/graphics/trash.pm
 dt/appconfig/help/it_IT.ISO8859-1/FPanel/graphics/wholefp.tif
 dt/appconfig/help/it_IT.ISO8859-1/FPanel/graphics/wsswitch.pm
 dt/appconfig/help/it_IT.ISO8859-1/Filemgr/
+dt/appconfig/help/it_IT.ISO8859-1/Filemgr.sdl
 dt/appconfig/help/it_IT.ISO8859-1/Filemgr/graphics/
 dt/appconfig/help/it_IT.ISO8859-1/Filemgr/graphics/chdir.tif
 dt/appconfig/help/it_IT.ISO8859-1/Filemgr/graphics/copy.tif
@@ -2492,6 +2571,7 @@ dt/appconfig/help/it_IT.ISO8859-1/Filemgr/graphics/rename.tif
 dt/appconfig/help/it_IT.ISO8859-1/Filemgr/graphics/replace.tif
 dt/appconfig/help/it_IT.ISO8859-1/Filemgr/graphics/selected.tif
 dt/appconfig/help/it_IT.ISO8859-1/Help4Help/
+dt/appconfig/help/it_IT.ISO8859-1/Help4Help.sdl
 dt/appconfig/help/it_IT.ISO8859-1/Help4Help/graphics/
 dt/appconfig/help/it_IT.ISO8859-1/Help4Help/graphics/execute.tif
 dt/appconfig/help/it_IT.ISO8859-1/Help4Help/graphics/genhlp.tif
@@ -2515,6 +2595,7 @@ dt/appconfig/help/it_IT.ISO8859-1/Help4Help/graphics/topicerr.tif
 dt/appconfig/help/it_IT.ISO8859-1/Help4Help/graphics/topics.tif
 dt/appconfig/help/it_IT.ISO8859-1/Help4Help/graphics/volerr.tif
 dt/appconfig/help/it_IT.ISO8859-1/Iconed/
+dt/appconfig/help/it_IT.ISO8859-1/Iconed.sdl
 dt/appconfig/help/it_IT.ISO8859-1/Iconed/graphics/
 dt/appconfig/help/it_IT.ISO8859-1/Iconed/graphics/circle.pm
 dt/appconfig/help/it_IT.ISO8859-1/Iconed/graphics/ellipse.pm
@@ -2528,6 +2609,7 @@ dt/appconfig/help/it_IT.ISO8859-1/Iconed/graphics/polyline.pm
 dt/appconfig/help/it_IT.ISO8859-1/Iconed/graphics/rectang.pm
 dt/appconfig/help/it_IT.ISO8859-1/Iconed/graphics/select.pm
 dt/appconfig/help/it_IT.ISO8859-1/Infomgr/
+dt/appconfig/help/it_IT.ISO8859-1/Infomgr.sdl
 dt/appconfig/help/it_IT.ISO8859-1/Infomgr/graphics/
 dt/appconfig/help/it_IT.ISO8859-1/Infomgr/graphics/addinfo.tif
 dt/appconfig/help/it_IT.ISO8859-1/Infomgr/graphics/addlib.tif
@@ -2588,6 +2670,7 @@ dt/appconfig/help/it_IT.ISO8859-1/Infomgr/graphics/srchmenu.tif
 dt/appconfig/help/it_IT.ISO8859-1/Infomgr/graphics/winbmenu.tif
 dt/appconfig/help/it_IT.ISO8859-1/Infomgr/graphics/winrmenu.tif
 dt/appconfig/help/it_IT.ISO8859-1/Intromgr/
+dt/appconfig/help/it_IT.ISO8859-1/Intromgr.sdl
 dt/appconfig/help/it_IT.ISO8859-1/Intromgr/graphics/
 dt/appconfig/help/it_IT.ISO8859-1/Intromgr/graphics/appmenu.tif
 dt/appconfig/help/it_IT.ISO8859-1/Intromgr/graphics/appmgr.pm
@@ -2639,11 +2722,14 @@ dt/appconfig/help/it_IT.ISO8859-1/Intromgr/graphics/winmenu.tif
 dt/appconfig/help/it_IT.ISO8859-1/Intromgr/graphics/wsmenu.tif
 dt/appconfig/help/it_IT.ISO8859-1/Intromgr/graphics/wsobmenu.tif
 dt/appconfig/help/it_IT.ISO8859-1/LibDtPrint/
+dt/appconfig/help/it_IT.ISO8859-1/LibDtPrint.sdl
 dt/appconfig/help/it_IT.ISO8859-1/LibDtPrint/graphics/
 dt/appconfig/help/it_IT.ISO8859-1/LibDtPrint/graphics/filselec.tif
 dt/appconfig/help/it_IT.ISO8859-1/LibDtPrint/graphics/prninfo.tif
 dt/appconfig/help/it_IT.ISO8859-1/LibDtPrint/graphics/prnselec.tif
+dt/appconfig/help/it_IT.ISO8859-1/Loginmgr.sdl
 dt/appconfig/help/it_IT.ISO8859-1/Mailer/
+dt/appconfig/help/it_IT.ISO8859-1/Mailer.sdl
 dt/appconfig/help/it_IT.ISO8859-1/Mailer/graphics/
 dt/appconfig/help/it_IT.ISO8859-1/Mailer/graphics/advopts.tif
 dt/appconfig/help/it_IT.ISO8859-1/Mailer/graphics/aliopts.tif
@@ -2680,6 +2766,7 @@ dt/appconfig/help/it_IT.ISO8859-1/Mailer/graphics/vacopts.tif
 dt/appconfig/help/it_IT.ISO8859-1/Mailer/graphics/viewmenu.tif
 dt/appconfig/help/it_IT.ISO8859-1/Mailer/graphics/viewopts.tif
 dt/appconfig/help/it_IT.ISO8859-1/Printmgr/
+dt/appconfig/help/it_IT.ISO8859-1/Printmgr.sdl
 dt/appconfig/help/it_IT.ISO8859-1/Printmgr/graphics/
 dt/appconfig/help/it_IT.ISO8859-1/Printmgr/graphics/dojob.tif
 dt/appconfig/help/it_IT.ISO8859-1/Printmgr/graphics/find.tif
@@ -2703,11 +2790,13 @@ dt/appconfig/help/it_IT.ISO8859-1/Printmgr/graphics/prtmenu.tif
 dt/appconfig/help/it_IT.ISO8859-1/Printmgr/graphics/showprt.tif
 dt/appconfig/help/it_IT.ISO8859-1/Printmgr/graphics/viewmenu.tif
 dt/appconfig/help/it_IT.ISO8859-1/PrnSetup/
+dt/appconfig/help/it_IT.ISO8859-1/PrnSetup.sdl
 dt/appconfig/help/it_IT.ISO8859-1/PrnSetup/graphics/
 dt/appconfig/help/it_IT.ISO8859-1/PrnSetup/graphics/pdmjob.tif
 dt/appconfig/help/it_IT.ISO8859-1/PrnSetup/graphics/pdmmain.tif
 dt/appconfig/help/it_IT.ISO8859-1/PrnSetup/graphics/pdmprint.tif
 dt/appconfig/help/it_IT.ISO8859-1/Stylemgr/
+dt/appconfig/help/it_IT.ISO8859-1/Stylemgr.sdl
 dt/appconfig/help/it_IT.ISO8859-1/Stylemgr/graphics/
 dt/appconfig/help/it_IT.ISO8859-1/Stylemgr/graphics/addpal.tif
 dt/appconfig/help/it_IT.ISO8859-1/Stylemgr/graphics/audio.pm
@@ -2736,6 +2825,7 @@ dt/appconfig/help/it_IT.ISO8859-1/Stylemgr/graphics/stylemgr.tif
 dt/appconfig/help/it_IT.ISO8859-1/Stylemgr/graphics/windlg.tif
 dt/appconfig/help/it_IT.ISO8859-1/Stylemgr/graphics/winmgr.pm
 dt/appconfig/help/it_IT.ISO8859-1/Terminal/
+dt/appconfig/help/it_IT.ISO8859-1/Terminal.sdl
 dt/appconfig/help/it_IT.ISO8859-1/Terminal/graphics/
 dt/appconfig/help/it_IT.ISO8859-1/Terminal/graphics/bell.tif
 dt/appconfig/help/it_IT.ISO8859-1/Terminal/graphics/color.tif
@@ -2749,6 +2839,7 @@ dt/appconfig/help/it_IT.ISO8859-1/Terminal/graphics/prompt.tif
 dt/appconfig/help/it_IT.ISO8859-1/Terminal/graphics/screen.tif
 dt/appconfig/help/it_IT.ISO8859-1/Terminal/graphics/scroll.tif
 dt/appconfig/help/it_IT.ISO8859-1/Textedit/
+dt/appconfig/help/it_IT.ISO8859-1/Textedit.sdl
 dt/appconfig/help/it_IT.ISO8859-1/Textedit/graphics/
 dt/appconfig/help/it_IT.ISO8859-1/Textedit/graphics/button.tif
 dt/appconfig/help/it_IT.ISO8859-1/Textedit/graphics/confirm.tif
