@@ -1,0 +1,16 @@
+math/cgal (Cmake build system)		Boost parse error, see KDE bugs for fix
+geo/merkartor (qmake build system)	Boost parse error, 
+
+audio/ardour
+
+
+: undefined reference to `boost::system::generic_category()'
+gtk2_ardour/analysis_window.o(.text+0x1bd): In function `__static_initialization_and_destruction_0(int, int)':
+: undefined reference to `boost::system::system_category()'
+gtk2_ardour/sfdb_freesound_mootcher.o(.text+0x2fd): In function `__static_initialization_and_destruction_0(int, int)':
+: undefined reference to `boost::system::generic_category()'
+gtk2_ardour/sfdb_freesound_mootcher.o(.text+0x309): In function `__static_initialization_and_destruction_0(int, int)':
+: undefined reference to `boost::system::generic_category()'
+gtk2_ardour/sfdb_freesound_mootcher.o(.text+0x315): In function `__static_initialization_and_destruction_0(int, int)':
+: undefined reference to `boost::system::system_category()'
+collect2: ld returned 1 exit status
