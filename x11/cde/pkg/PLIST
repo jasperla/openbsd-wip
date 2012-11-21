@@ -5966,6 +5966,6 @@ dt/share/palettes/desc.it_IT.ISO8859-1
 @lib lib/libDtWidget.so.${LIBDtWidget_VERSION}
 @lib lib/libcsa.so.${LIBcsa_VERSION}
 @lib lib/libtt.so.${LIBtt_VERSION}
-share/examples/cde/
 @sample ${SYSCONFDIR}/
 @sample ${LOCALSTATEDIR}/
+@rcscript ${RCDIR}/dtlogin
