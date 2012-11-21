@@ -23,7 +23,6 @@ SHARED_LIBS +=	kasbar               2.0      # .1.0
 SHARED_LIBS +=	kfontinst            1.0      # .0.0
 
 MULTI_PACKAGES =	-main -samba
-FLAVORS =		debug
 
 MODULES =	x11/kde devel/gettext
 

@@ -35,7 +35,6 @@ RUN_DEPENDS-svn =	x11/gtk+2,-guic
 LIB_DEPENDS-svn = 	${LIB_DEPENDS} \
 			devel/subversion
 
-FLAVORS =		debug
 SEPARATE_BUILD =	flavored
 
 WANTLIB	= ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam idn jpeg \

@@ -33,8 +33,6 @@ SHARED_LIBS +=	arts_mpeglib         1.0      # .0.3
 SHARED_LIBS +=	arts_splay           1.0      # .0.0
 SHARED_LIBS +=	arts_mpeglib-0.3.0   1.0      # .0.3
 
-FLAVORS =	debug
-
 MODULES =	x11/kde devel/gettext
 
 LIB_DEPENDS = 	x11/kde/libs3 \
