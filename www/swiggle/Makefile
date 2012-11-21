@@ -1,4 +1,4 @@
-# $OpenBSD:  $
+# $OpenBSD$
 
 COMMENT = 		simple web image gallery generator
 
@@ -14,10 +14,21 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
+WANTLIB +=		c exif jpeg
+
 MASTER_SITES =		${HOMEPAGE}/files/
 
-BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		graphics/libexif \
+MODULES =		converters/libiconv \
+			devel/gettext
+
+LIB_DEPENDS =		graphics/libexif \
 			graphics/jpeg
+
+MAKE_FLAGS =		CC=${CC}
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/swiggle ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/swiggle
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/swiggle/
 
 .include <bsd.port.mk>
