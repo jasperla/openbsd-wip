@@ -22,10 +22,10 @@ Unclassified but causing problems in cvs
 ---------------------------------
 databases/mongodb
 games/pokerth
-games/frogatto
 multimedia/mkvtoolnix
 
 FIXED
 -------
-graphics/aqsis (in openbsd-wip)
-x11/pinot
+games/frogatto	(in openbsd-wip)
+graphics/aqsis	(in openbsd-wip)
+x11/pinot	(in openbsd-wip)
