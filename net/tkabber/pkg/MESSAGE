@@ -1,0 +1,8 @@
+Optional dependencies for Tkabber:
+* audio/snack (sound notifications)
+* graphics/tkimg (support for PNG, JPG images)
+* security/tclgpg (encryption features)
+* textproc/ispell (spell checking)
+* x11/tkcon (Tk console)
+* x11/tktray (iconify Tkabber)
+* x11/xosd (OSD support)

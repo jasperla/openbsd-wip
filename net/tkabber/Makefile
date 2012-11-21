@@ -1,0 +1,34 @@
+# $OpenBSD$
+
+COMMENT =		jabber client written in TCL/TK
+
+V =			0.11.1
+DISTNAME =		tkabber-${V}
+
+CATEGORIES =		net
+
+HOMEPAGE =		http://tkabber.jabber.ru/
+
+#MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
+
+# GPL v2+
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
+
+MASTER_SITES =		http://files.jabber.ru/tkabber/
+DISTFILES =		tkabber-${V}.tar.gz tkabber-plugins-${V}.tar.gz
+
+MODULES =		lang/tcl x11/tk
+RUN_DEPENDS =		${MODTK_RUN_DEPENDS} devel/tcllib x11/bwidget
+RUN_DEPENDS +=		net/tcludp security/tcltls
+
+NO_BUILD =		Yes
+NO_REGRESS =		Yes
+
+post-install:
+	@cp -r ${WRKDIR}/tkabber-plugins-${V}/* \
+		${WRKINST}/usr/local/share/tkabber/plugins/
+
+.include <bsd.port.mk>
