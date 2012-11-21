@@ -1,0 +1,34 @@
+$OpenBSD: patch-kioslave_man_man2html_cpp,v 1.14 2007/10/24 21:52:16 espie Exp $
+--- kioslave/man/man2html.cpp.orig	Mon Oct  8 11:51:22 2007
++++ kioslave/man/man2html.cpp	Thu Oct 18 14:52:57 2007
+@@ -2706,6 +2706,7 @@ static const char *section_list[] = {
+     "3L", "Lightweight Processes Library",
+     "3M", "Mathematical Library",
+     "3N", "Network Functions",
++    "3p", "Perl Functions",
+     "3R", "RPC Services Library",
+     "3S", "Standard I/O Functions",
+     "3V", "C Library Functions",
+@@ -5480,16 +5481,17 @@ static char *scan_troff_mandoc(char *c, bool san, char
+         end++;
+     }
+ 
+-    if (end > c + 2
++    if (end >= c + 2
+         && ispunct(*(end - 1))
+ 	&& isspace(*(end - 2)) && *(end - 2) != '\n') {
+       /* Don't format lonely punctuation E.g. in "xyz ," format
+        * the xyz and then append the comma removing the space.
+        */
+-        *(end - 2) = '\n';
+-	ret = scan_troff(c, san, result);
+-        *(end - 2) = *(end - 1);
+-        *(end - 1) = ' ';
++        *(end - 2) = 0;
++	(void)scan_troff(c, 0, result);
++	ret = end-2;
++	*(end-2)=*(end-1);
++	*(end-1)=' ';
+     }
+     else {
+ 	ret = scan_troff(c, san, result);
