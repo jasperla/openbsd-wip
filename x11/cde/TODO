@@ -1,7 +1,6 @@
 * make build with external imake
 * awk segfault
 * upstream problems: dtinfo, makedepend shit
-* rc script
 * better install framework
 * PREFIX cleanliness (currently assumes /usr/dt)
 * dtdocbook memory fault (only with malloc.conf -> S)
