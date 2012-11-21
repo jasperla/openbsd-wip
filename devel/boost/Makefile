@@ -9,7 +9,7 @@ PKGNAME=	boost-${VERSION}
 
 VERSION=	1.52.0
 DISTNAME=	boost_${VERSION:S/./_/g}
-REVISION=	0
+REVISION=	1
 
 SO_VERSION=	5.0
 BOOST_LIBS=	boost_date_time boost_date_time-mt \
