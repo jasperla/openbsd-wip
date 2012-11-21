@@ -61,6 +61,7 @@ MODULES =	x11/kde devel/gettext
 
 LIB_DEPENDS =	graphics/libart \
 		devel/libidn \
+		net/avahi \
 		sysutils/gamin 
 
 WANTLIB =	asn1 crypto gssapi util jpeg krb5 m X11 \
@@ -79,7 +80,7 @@ LIB_DEPENDS-main =	\
 	graphics/openexr \
 	textproc/aspell/core
 
-WANTLIB-main = ${WANTLIB}
+WANTLIB-main =	${WANTLIB} dns_sd
 
 RUN_DEPENDS-main = \
 	${RUN_DEPENDS} \
@@ -93,7 +94,7 @@ LIB_DEPENDS-cups = \
 
 WANTLIB-cups = ${WANTLIB}
 
-REVISION-main = 18
+REVISION-main = 19
 REVISION-cups = 10
 WANTLIB-main += Half Iex IlmImf>=4 IlmThread Imath artsflow>=1 \
 	artsflow_idl aspell audiofile bz2 glib-2.0 gmodule-2.0 gthread-2.0 \
