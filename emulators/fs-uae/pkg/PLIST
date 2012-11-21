@@ -5,11 +5,8 @@ share/applications/fs-uae.desktop
 share/doc/fs-uae/
 share/doc/fs-uae/COPYING
 share/doc/fs-uae/README
-share/doc/fs-uae/example.conf
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor                 
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor        
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+share/examples/fs-uae/
+share/examples/fs-uae/fs-uae.conf
 share/fs-uae/
 share/fs-uae/2x_1920_1080/
 share/fs-uae/2x_1920_1080/theme.conf
@@ -161,3 +158,7 @@ share/locale/it/LC_MESSAGES/fs-uae.mo
 share/locale/nb/LC_MESSAGES/fs-uae.mo
 share/locale/pl/LC_MESSAGES/fs-uae.mo
 share/locale/sr/LC_MESSAGES/fs-uae.mo
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
