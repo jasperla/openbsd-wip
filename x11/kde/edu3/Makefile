@@ -21,8 +21,8 @@ SEPARATE_BUILD =	flavored
 
 CONFIGURE_ARGS +=	--disable-kig-python-scripting
 
-REVISION =	8
-WANTLIB = GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi Xinerama \
+REVISION =	9
+WANTLIB = GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama \
 	Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 artsflow artsflow_idl artskde \
 	audiofile c drm expat fam fontconfig freetype glib-2.0>=800 \
 	gmodule-2.0>=800 gthread-2.0>=800 idn jpeg katepartinterfaces \
@@ -31,7 +31,7 @@ WANTLIB = GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi Xinerama \
 	lib/kde3/kdeui lib/kde3/khtml lib/kde3/kio lib/kde3/kjs \
 	lib/kde3/kparts lib/kde3/kresources lib/kde3/kutils \
 	lib/kde3/kwalletclient lib/kde3/vcard m mad mcop mng ogg pcre \
-	pcreposix png pthread pthread-stubs qtmcop sndio \
+	pcreposix png pthread qtmcop sndio \
 	soundserver_idl stdc++ util vorbis vorbisenc vorbisfile xcb z
 
 post-install:

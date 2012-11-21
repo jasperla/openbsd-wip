@@ -13,7 +13,7 @@ SHARED_LIBS +=	rss                  2.0      # .1.0
 
 MODULES =	x11/kde devel/gettext
 
-RUN_DEPENDS +=	devel/desktop-file-utils \
+RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+2,-guic
 LIB_DEPENDS = 	x11/kde/libs3 \
 		audio/xmms \
@@ -23,8 +23,8 @@ RUN_DEPENDS +=	security/qca-tls
 
 SEPARATE_BUILD =	flavored
 
-REVISION = 	8
-WANTLIB = GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi Xinerama \
+REVISION = 	9
+WANTLIB = GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama \
 	Xmu Xrandr Xrender Xss Xt Xtst Xxf86vm art_lgpl_2 c crypto drm expat \
 	fam fontconfig freetype gdk glib glib-2.0 gmodule gmodule-2.0 gtk idn \
 	jpeg lcms lib/kde3/DCOP lib/kde3/kabc lib/kde3/kdecore>=6 \
@@ -33,7 +33,7 @@ WANTLIB = GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi Xinerama \
 	lib/kde3/knewstuff lib/kde3/kparts lib/kde3/kresources lib/kde3/kspell \
 	lib/kde3/ktexteditor lib/kde3/kutils lib/kde3/kwalletclient \
 	lib/kde3/vcard m meanwhile mng pcre pcreposix png pthread \
-	pthread-stubs ssl stdc++ util xcb xml2 xmms xslt z
+	ssl stdc++ util xcb xml2 xmms xslt z
 
 
 post-configure:

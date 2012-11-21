@@ -29,7 +29,7 @@ MODULES =	x11/kde devel/gettext
 BUILD_DEPENDS = devel/imake
 
 LIB_DEPENDS =	x11/kde/libs3
-WANTLIB = ICE SM X11 Xext Xrender art_lgpl_2 idn jpeg \
+WANTLIB = ICE SM X11 Xext Xrender art_lgpl_2 fam idn \
 	lib/kde3/DCOP lib/kde3/kdecore>=6 lib/kde3/kdefx lib/kde3/kdesu \
 	lib/kde3/kdeui lib/kde3/kio lib/kde3/kwalletclient m png \
 	stdc++ util xcb z
@@ -48,7 +48,7 @@ LIB_DEPENDS-samba = ${LIB_DEPENDS} \
 		net/samba>=3
 
 
-REVISION-main =		20
+REVISION-main =		21
 WANTLIB-main = ${WANTLIB} GL GLU Half Iex IlmImf IlmThread Imath Xcomposite \
 	Xcursor Xdamage Xdamage Xfixes Xfixes Xft Xi Xinerama Xmu Xrandr Xss \
 	Xt Xtst Xxf86misc Xxf86vm Xxf86vm asn1 audiofile c com_err crypto drm \

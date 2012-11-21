@@ -61,13 +61,13 @@ MODULES =	x11/kde devel/gettext
 
 LIB_DEPENDS +=	x11/kde/libs3
 
-REVISION =	12
+REVISION =	13
 REVISION-kpilot =	3
 
 WANTLIB += DCOP GL GLU ICE SM X11 Xcursor Xdamage Xext Xfixes
 WANTLIB += Xft Xi Xinerama Xmu Xpm Xrandr Xrender Xss Xt Xxf86vm
 WANTLIB += art_lgpl_2 artsflow artsflow_idl artskde assuan audiofile
-WANTLIB += c drm expat fontconfig freetype glib-2.0 gmodule-2.0
+WANTLIB += c drm expat fam fontconfig freetype glib-2.0 gmodule-2.0
 WANTLIB += gnokii gpg-error gpgme gthread-2.0 ical idn jpeg kabc
 WANTLIB += kabc_file kdecore kdefakes kdefx kdeprint kdesu kdeui
 WANTLIB += khtml kimproxy kio kjs kmedia2_idl knewstuff kparts
