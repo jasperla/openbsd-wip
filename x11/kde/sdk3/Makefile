@@ -7,7 +7,7 @@ VERSION =		3.5.10
 DISTNAME =		kdesdk-${VERSION}
 
 PKGNAME-main =		${DISTNAME}
-REVISION-main =		9
+REVISION-main =		10
 PKGNAME-svn =		kdesvn-${VERSION}
 REVISION-svn =		9
 

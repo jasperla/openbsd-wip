@@ -3,7 +3,7 @@
 COMMENT=		office suite for KDE
 
 VERSION=		1.6.3
-REVISION =		24
+REVISION =		25
 CATEGORIES=		x11 x11/kde productivity
 VMEM_WARNING=		Yes
 MASTER_SITES?=		${MASTER_SITE_KDE:S@$@stable/koffice-${VERSION}/src/@}

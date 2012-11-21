@@ -62,10 +62,10 @@ WANTLIB-kpov =		${WANTLIB}
 WANTLIB-kamera =	${WANTLIB}
 WANTLIB-sane =		${WANTLIB}
 
-REVISION-main = 15
-REVISION-kamera = 7
-REVISION-kpov = 7
-REVISION-sane = 11
+REVISION-main = 16
+REVISION-kamera = 8
+REVISION-kpov = 8
+REVISION-sane = 12
 
 WANTLIB-main +=	 GL Half ICE Iex IlmImf IlmThread Imath Imlib SM \
 	Xcursor Xdamage Xext Xfixes Xft Xi Xinerama Xmu Xrandr Xrender Xt \
