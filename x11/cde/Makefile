@@ -71,24 +71,30 @@ WRKDIST =		${WRKDIR}/${PKGNAME}
 
 ALL_TARGET =		World
 
-post-patch:
+# .udb files containing files to install
+UDBS =			C DE DEMOS ES FR HELP-C HELP-DE HELP-ES HELP-FR \
+			HELP-IT ICONS INC INFO INFOLIB-C \
+			IT MAN-DEV MAN MIN MSG-C MSG-DE \
+			MSG-ES MSG-FR MSG-IT RUN HELP-RUN HELP-PRG PRG SHLIBS \
+			TT
+
+pre-configure:
 	# this actually makes our awk segfault
 	perl -pi -e "s,/usr/bin/awk,${LOCALBASE}/bin/gawk," \
 		${WRKSRC}/admin/IntegTools/dbTools/udbToAny.ksh
 	# XXX use SUBST_CMD for most of this
-	perl -pi -e "s,/usr/dt/lib,${WRKINST}${PREFIX}/lib,g; \
-		     s,/usr/local/dt/lib,${WRKINST}${PREFIX}/lib,g; \
+	perl -pi -e "s,/usr/dt/lib,${PREFIX}/lib,g; \
+		     s,/usr/local/dt/lib,${PREFIX}/lib,g; \
 		     s,2\.1,${CDE_SHVERSION},g" \
 		${WRKSRC}/databases/CDE-SHLIBS.src
 	cd ${WRKSRC}/databases/ && perl -pi -e \
-		"s,/usr/dt,${WRKINST}${CDEDIR},g" *.udb *.src
+		"s,/usr/dt,${CDEDIR},g" *.udb *.src
 
 do-install:
-	cd ${WRKSRC}/admin/IntegTools/dbTools && env -i \
-		INSTALL_LOCATION="${PREFIX}" \
-		CONFIGURE_LOCATION="${PREFIX}/share/examples/cde" \
-		/bin/sh ./installCDE -s ${WRKSRC}
-	rm ${WRKINST}${CDEDIR}/bin/ttrmdir
-	cd ${WRKINST}${CDEDIR}/bin && ln -s ttrm ttrmdir
+.for _udb in ${UDBS}
+	/bin/sh ${WRKSRC}/admin/IntegTools/dbTools/udbToAny.ksh -toLst \
+	-ReleaseStream openbsd ${WRKSRC}/databases/CDE-${_udb}.udb | /bin/sh \
+	${WRKSRC}/admin/IntegTools/dbTools/mkProd -D ${WRKINST} -S ${WRKSRC} -
+.endfor
 
 .include <bsd.port.mk>
