@@ -9,6 +9,7 @@ PKGNAME=	boost-${VERSION}
 
 VERSION=	1.52.0
 DISTNAME=	boost_${VERSION:S/./_/g}
+REVISION=	0
 
 SO_VERSION=	5.0
 BOOST_LIBS=	boost_date_time boost_date_time-mt \
@@ -59,7 +60,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=boost/}
 
 MAKE_ENV=	GCC="${CC}" GXX="${CXX}"
 
-BJAM_CONFIG=	-sNO_COMPRESSION=1 \
+BJAM_CONFIG=	-sNO_BZIP2=1 \
 		-d+2 -q \
 		-j ${MAKE_JOBS} \
 		cflags='${CFLAGS}' cxxflags='${CXXFLAGS}' \
@@ -76,7 +77,7 @@ CONFIGURE_ENV=	BJAM_CONFIG="${BJAM_CONFIG}"
 
 NO_REGRESS=	Yes
 
-WANTLIB=	c m pthread stdc++ util
+WANTLIB=	c m pthread stdc++ util z
 
 MODULES=	lang/python
 MODPY_RUNDEP=	No
