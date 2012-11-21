@@ -28,4 +28,5 @@ FIXED
 -------
 games/frogatto	(in openbsd-wip)
 graphics/aqsis	(in openbsd-wip)
+graphics/mapnik
 x11/pinot	(in openbsd-wip)
