@@ -1,0 +1,105 @@
+@comment $OpenBSD: PLIST,v 1.24 2012/06/15 08:30:23 ajacoutot Exp $
+@bin bin/embedjs
+@bin bin/jsaccess
+@bin bin/kjscmd
+@bin bin/krubyinit
+@bin bin/qtrubyinit
+@bin bin/rbkconfig_compiler
+bin/rbkdeapi
+bin/rbkdesh
+bin/rbqtapi
+bin/rbqtsh
+@bin bin/rbuic
+include/kjsembed/
+include/kjsembed/customobject_imp.h
+include/kjsembed/global.h
+include/kjsembed/jsbinding.h
+include/kjsembed/jsbindingplugin.h
+include/kjsembed/jsbuiltin.h
+include/kjsembed/jsbuiltin_imp.h
+include/kjsembed/jsconsolewidget.h
+include/kjsembed/jseventmapper.h
+include/kjsembed/jseventutils.h
+include/kjsembed/jsfactory.h
+include/kjsembed/jsfactory_imp.h
+include/kjsembed/jsobjecteventproxy.h
+include/kjsembed/jsobjectproxy.h
+include/kjsembed/jsobjectproxy_imp.h
+include/kjsembed/jsopaqueproxy.h
+include/kjsembed/jsopaqueproxy_imp.h
+include/kjsembed/jsproxy.h
+include/kjsembed/jsproxy_imp.h
+include/kjsembed/jssecuritypolicy.h
+include/kjsembed/jsvalueproxy.h
+include/kjsembed/jsvalueproxy_imp.h
+include/kjsembed/kjsembedpart.h
+include/kjsembed/kjsembedpart_imp.h
+include/kjsembed/slotproxy.h
+include/kjsembed/slotutils.h
+include/kjsembed/xmlactionclient.h
+include/smoke.h
+${KDE}/libcustomobjectplugin.la
+${KDE}/libcustomobjectplugin.so
+${KDE}/libcustomqobjectplugin.la
+${KDE}/libcustomqobjectplugin.so
+${KDE}/libfileitemplugin.la
+${KDE}/libfileitemplugin.so
+${KDE}/libimagefxplugin.la
+${KDE}/libimagefxplugin.so
+${KDE}/libjavascript.la
+${KDE}/libjavascript.so
+${KDE}/libjsconsoleplugin.la
+${KDE}/libjsconsoleplugin.so
+@lib ${KDE}/libkjsembed.so.${LIBkjsembed_VERSION}
+${KDE}/libqprocessplugin.la
+${KDE}/libqprocessplugin.so
+@lib ${KDE}/libsmokekde.so.${LIBsmokekde_VERSION}
+@lib ${KDE}/libsmokeqt.so.${LIBsmokeqt_VERSION}
+lib/libkjsembed.la
+@lib lib/libkjsembed.so.${LIBkjsembed_VERSION}
+lib/libsmokekde.la
+@lib lib/libsmokekde.so.${LIBsmokekde_VERSION}
+lib/libsmokeqt.la
+@lib lib/libsmokeqt.so.${LIBsmokeqt_VERSION}
+lib/python2.5/pydcop.py
+lib/python2.5/site-packages/pcop.la
+lib/python2.5/site-packages/pcop.so
+${MODRUBY_SITEDIR}/KDE/
+${MODRUBY_SITEDIR}/KDE/korundum.rb
+${MODRUBY_SITEDIR}/Korundum.rb
+${MODRUBY_SITEDIR}/Qt/
+${MODRUBY_SITEDIR}/Qt.rb
+${MODRUBY_SITEDIR}/Qt/qtruby.rb
+${MODRUBY_SITEDIR}/${GNU_ARCH}-openbsd/korundum.la
+${MODRUBY_SITEDIR}/${GNU_ARCH}-openbsd/korundum.so
+${MODRUBY_SITEDIR}/${GNU_ARCH}-openbsd/qtruby.la
+${MODRUBY_SITEDIR}/${GNU_ARCH}-openbsd/qtruby.so
+${MODRUBY_SITEDIR}/${GNU_ARCH}-openbsd/qui.la
+${MODRUBY_SITEDIR}/${GNU_ARCH}-openbsd/qui.so
+@man man/man1/kjscmd.1
+share/applications/kde/kjscmd.desktop
+share/applnk/
+share/applnk/Utilities/
+share/applnk/Utilities/embedjs.desktop
+share/apps/embedjs/
+share/apps/embedjs/embedjsui.rc
+share/apps/kate/
+share/apps/kate/scripts/
+share/apps/kate/scripts/swaptabs.desktop
+share/apps/kate/scripts/swaptabs.js
+share/apps/kate/scripts/swaptabs.ui
+share/apps/kjsembed/
+share/apps/kjsembed/cmdline.js
+share/icons/hicolor/16x16/apps/embedjs.png
+share/icons/hicolor/32x32/apps/embedjs.png
+share/services/customobject_plugin.desktop
+share/services/customqobject_plugin.desktop
+share/services/imagefx_plugin.desktop
+share/services/javascript.desktop
+share/services/kfileitem_plugin.desktop
+share/services/qprocess_plugin.desktop
+share/servicetypes/binding_type.desktop
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
