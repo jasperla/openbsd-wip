@@ -76,7 +76,6 @@ WANTLIB += mcop mng ogg pcre pcreposix pisock png pthread qtmcop
 WANTLIB += qui sasl2 sndio soundserver_idl stdc++ usb usb-1.0
 WANTLIB += util vcard vorbis vorbisenc vorbisfile xcb z
 
-FLAVORS =	debug
 RUN_DEPENDS +=	x11/kde/base3 \
 		devel/desktop-file-utils \
 		x11/gtk+2,-guic

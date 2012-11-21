@@ -5,7 +5,6 @@ CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdenetwork-${VERSION}
 MODKDE_VERSION =	3.5.8
-FLAVORS =		debug
 SHARED_LIBS +=	kopete               2.0      # .1.0
 SHARED_LIBS +=	kopete_videodevice   1.0      # .0.0
 SHARED_LIBS +=	kopete_msn_shared    1.0      # .0.0

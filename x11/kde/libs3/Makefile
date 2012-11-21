@@ -50,7 +50,6 @@ SHARED_LIBS +=	kmediaplayer         1.0      # .0.0
 SHARED_LIBS +=	kimproxy             1.0      # .0.0
 SHARED_LIBS +=	katepartinterfaces   1.0      # .0.0
 
-FLAVORS =	debug
 VMEM_WARNING =	Yes
 
 

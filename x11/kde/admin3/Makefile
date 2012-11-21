@@ -11,7 +11,6 @@ MODULES =	x11/kde devel/gettext
 RUN_DEPENDS +=	devel/desktop-file-utils \
 		x11/gtk+2,-guic
 LIB_DEPENDS =	x11/kde/libs3
-FLAVORS =	debug
 
 SEPARATE_BUILD =	flavored
 
