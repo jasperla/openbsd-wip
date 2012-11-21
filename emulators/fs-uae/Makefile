@@ -29,4 +29,10 @@ MAKE_FLAGS +=		prefix=${PREFIX}
 
 NO_REGRESS =		Yes
 
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/fs-uae
+	mv ${PREFIX}/share/doc/fs-uae/example.conf \
+		${PREFIX}/share/examples/fs-uae/fs-uae.conf
+	${SUBST_CMD} ${PREFIX}/share/examples/fs-uae/fs-uae.conf
+
 .include <bsd.port.mk>
