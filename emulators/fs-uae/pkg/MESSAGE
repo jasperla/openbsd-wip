@@ -1,5 +1,0 @@
-You will need to obtain a kickstart rom and tell fs-use about it in a
-config file:
-
- # mkdir -p ~/.config/fs-uae
- # cp ${TRUEPREFIX}/share/examples/fs-uae/fs-uae.conf ~/.config/fs-uae/
