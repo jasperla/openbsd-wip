@@ -20,7 +20,7 @@ LIB_DEPENDS = 	x11/kde/libs3 \
 		net/avahi
 SEPARATE_BUILD =	flavored
 
-REVISION =	9
+REVISION =	10
 WANTLIB = GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama \
 	Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 artsflow artsflow_idl \
 	audiofile c drm expat fam fontconfig freetype glib-2.0 gmodule-2.0 \

@@ -10,11 +10,11 @@
 @bin bin/kxsldbg
 @bin bin/quanta
 @bin bin/xsldbg
-include/kommander_export.h
-include/kommanderfactory.h
-include/kommanderplugin.h
-include/kommanderwidget.h
-include/specials.h
+include/kde3/kommander_export.h
+include/kde3/kommanderfactory.h
+include/kde3/kommanderplugin.h
+include/kde3/kommanderwidget.h
+include/kde3/specials.h
 ${KDE}/libkfilereplacepart.la
 ${KDE}/libkfilereplacepart.so
 ${KDE}/libkimagemapeditor.la

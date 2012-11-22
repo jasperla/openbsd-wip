@@ -16,7 +16,7 @@ LIB_DEPENDS =	x11/kde/libs3
 
 SEPARATE_BUILD =	flavored
 
-REVISION =	12
+REVISION =	13
 
 WANTLIB = ICE SM X11 Xext Xi Xrender Xtst art_lgpl_2 artsflow \
 	artsflow_idl audiofile c fam glib-2.0 gmodule-2.0 gthread-2.0 idn jpeg \

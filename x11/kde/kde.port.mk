@@ -16,6 +16,7 @@ FLAVOR ?=
 MODKDE_CONFIGURE_ARGS =${MODQT_CONFIGURE_ARGS}
 MODKDE_CONFIGURE_ARGS +=	--with-extra-libs="${LOCALBASE}/lib/kde3:${LOCALBASE}/lib/db4:${LOCALBASE}/lib/samba:${LOCALBASE}/lib"
 MODKDE_CONFIGURE_ARGS +=	--with-extra-includes="${LOCALBASE}/include/avahi-compat-libdns_sd:${LOCALBASE}/include/db4:${LOCALBASE}/include/libpng:${LOCALBASE}/include"
+MODKDE_CONFIGURE_ARGS +=	--includedir=${PREFIX}/include/kde
 MODKDE_CONFIGURE_ARGS +=	--with-xdmdir=/var/X11/kdm
 MODKDE_CONFIGURE_ARGS +=	--enable-mitshm
 MODKDE_CONFIGURE_ARGS +=	--with-xinerama
