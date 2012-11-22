@@ -93,6 +93,10 @@ Alt + Enter:	Toggle fullscreen.
 Middle click:	Release mouse from FS-UAE.
 F12 + g:	Release mouse from FS-UAE.
 
+If you have no real joystick configured, you can use the emulated one.
+Cursor keys controls the joystick stick and right ctrl or right alt
+controls the fire button.
+
 Launcher
 ========
 
