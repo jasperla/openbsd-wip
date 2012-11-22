@@ -29,5 +29,6 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf autoheader
 CONFIGURE_ARGS+= ${MODKDE_CONFIGURE_ARGS}
 CONFIGURE_ARGS+= --with-kde-version=3
+CONFIGURE_ENV=	KDEDIR=${LOCALBASE}
 
 .include <bsd.port.mk>

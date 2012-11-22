@@ -4,14 +4,13 @@ COMMENT=	video player for KDE
 
 VERSION=	0.8.8
 DISTNAME=	kaffeine-${VERSION}
-REVISION=	8
+REVISION=	9
 CATEGORIES=	multimedia x11 x11/kde
 MASTER_SITES=	http://hftom.free.fr/ \
 		${MASTER_SITE_SOURCEFORGE:=kaffeine/}
 EXTRACT_SUFX=	.tar.bz2
 
-SHARED_LIBS=	kaffeinepart		0.0 \
-		kaffeineaudioencoder	0.0
+SHARED_LIBS=	kaffeineaudioencoder	0.0
 
 HOMEPAGE=	http://kaffeine.sourceforge.net/
 
