@@ -1,0 +1,6 @@
+ABI Compliance Checker (ACC) is a tool for checking backward binary
+and source-level compatibility of a C/C++ library. The tool checks
+header files and shared libraries of old and new versions and
+analyzes changes in API and ABI (ABI=API+compiler ABI) that may
+break binary and/or source compatibility: changes in calling stack,
+v-table changes, removed symbols, renamed fields, etc.
