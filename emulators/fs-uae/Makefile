@@ -42,8 +42,7 @@ post-build:
 post-install:
 # Install the Launcher
 	cd ${WRKSRC}/launcher &&  ${SETENV} ${MAKE_ENV} && \
-	${MODPY_BIN} ${MODPY_SETUP} ${MODPY_DISTUTILS_INSTALL} && \
-	${MODPY_BIN} ${MODPY_SETUP} clean #or make clean wont work as user
+	${MODPY_BIN} ${MODPY_SETUP} ${MODPY_DISTUTILS_INSTALL}
 
 # Put config file in the right place
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/fs-uae
