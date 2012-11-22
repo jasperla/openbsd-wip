@@ -1,7 +1,7 @@
 $OpenBSD$
 --- example.conf.orig	Fri Oct 26 17:28:41 2012
-+++ example.conf	Tue Nov 20 20:27:12 2012
-@@ -1,21 +1,45 @@
++++ example.conf	Thu Nov 22 00:20:46 2012
+@@ -1,21 +1,41 @@
 -# FS-UAE example configuration file
 +# FS-UAE example configuration file for OpenBSD
 +#
@@ -34,24 +34,20 @@ $OpenBSD$
 +# One of [A500, A500+, A600, A1000, A1200, A1200/020, A4000/040, CD32, CDTV]
 +#amiga_model = A500
 +
-+#kickstart_file = ~/.config/fs-uae/rom
++#kickstart_file = ~/FS-UAE/Kickstarts/your_kickstart_file.rom
 +
-+# You can list >1 disk per drive.
-+#floppy_drive_0 =  /path/to/some-adf-image.adf
-+#floppy_drive_0 =  /path/to/second_disk_for_drive.adf
-+
++#floppy_drive_0 = R-Type.adf 
 +#floppy_drive_1 =  /path/to/another.adf
 +
 +#hard_drive_0 = /path/to/hd-image.hdf
 +
-+# Append <space>#N to specify the second of this type
-+# See ${TRUEPREFIX}/share/fs-uae/input/
-+#joystick_port_0 = SPEED-LINK COMPETITION PRO #2
-+#joystick_port_1 = LOGITECH CORDLESS RUMBLEPAD 2 USB
++#joystick_port_1 = joystick (0)
++
++#keep_aspect = 1
 +
 +# If fs-uae is painfully slow, play with these
-+# video_sync = off
-+# off, vblank, full, auto (default)
++#video_sync = off
++# One of [off, vblank, full, auto (default)]
 +
 +#accuracy = 0
-+# -1 (least), 0 , 1 (more, default)
++# One of [-1 (least), 0 , 1 (more, default)]
