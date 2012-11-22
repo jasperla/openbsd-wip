@@ -39,6 +39,8 @@ CONFIGURE_ARGS +=	--disable-midisupport \
 			--with-extra-libs="${LOCALBASE}/lib" \
 			--with-extra-includes="${LOCALBASE}/include/libpng"
 
+CONFIGURE_ENV =		KDEDIR=${LOCALBASE}
+
 PORTHOME=		${WRKDIR}
 
 NO_REGRESS =		Yes

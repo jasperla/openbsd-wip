@@ -1,11 +1,11 @@
 @comment $OpenBSD: PLIST,v 1.13 2012/06/15 08:32:17 ajacoutot Exp $
 @bin bin/kaffeine
-include/kaffeine/
-include/kaffeine/kaffeineaudioencoder.h
-include/kaffeine/kaffeinepart.h
-include/kaffeine/mrl.h
-include/kaffeine/xine_part.h
-include/kaffeine/xine_part_iface.h
+include/kde/kaffeine/
+include/kde/kaffeine/kaffeineaudioencoder.h
+include/kde/kaffeine/kaffeinepart.h
+include/kde/kaffeine/mrl.h
+include/kde/kaffeine/xine_part.h
+include/kde/kaffeine/xine_part_iface.h
 ${KDE}/libkaffeineoggvorbis.la
 ${KDE}/libkaffeineoggvorbis.so
 ${KDE}/libxinepart.la

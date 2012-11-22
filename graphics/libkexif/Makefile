@@ -3,7 +3,7 @@
 COMMENT =		kde interface to exif
 CATEGORIES =		graphics devel x11 x11/kde
 DISTNAME =		libkexif-0.2.5
-REVISION =		3
+REVISION =		4
 SHARED_LIBS =		kexif	2.2
 EXTRACT_SUFX =		.tar.bz2
 HOMEPAGE =		http://extragear.kde.org/apps/kipi/
