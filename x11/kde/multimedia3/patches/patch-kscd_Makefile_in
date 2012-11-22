@@ -1,0 +1,21 @@
+$OpenBSD: patch-kscd_Makefile_in,v 1.16 2007/10/24 21:52:18 espie Exp $
+--- kscd/Makefile.in.orig	Mon Oct  8 16:27:12 2007
++++ kscd/Makefile.in	Wed Oct 24 12:02:26 2007
+@@ -54,7 +54,7 @@ CONFIG_HEADER = $(top_builddir)/config.h
+ CONFIG_CLEAN_FILES =
+ LTLIBRARIES = $(noinst_LTLIBRARIES)
+ libkcompactdisc_la_DEPENDENCIES =  \
+-	$(top_builddir)/kscd/libwm/libworkman.la
++	$(top_builddir)/kscd/libwm/libkworkman.la
+ am_libkcompactdisc_la_OBJECTS = kcompactdisc.lo
+ #>- libkcompactdisc_la_OBJECTS = $(am_libkcompactdisc_la_OBJECTS)
+ #>+ 1
+@@ -466,7 +466,7 @@ kscd_SOURCES= kscd.cpp  ledlamp.cpp \
+ 
+ noinst_LTLIBRARIES = libkcompactdisc.la
+ libkcompactdisc_la_SOURCES = kcompactdisc.cpp
+-libkcompactdisc_la_LIBADD = $(top_builddir)/kscd/libwm/libworkman.la
++libkcompactdisc_la_LIBADD = $(top_builddir)/kscd/libwm/libkworkman.la
+ kde_kcfg_DATA = kscd.kcfg
+ kscd_LDFLAGS = $(all_libraries) $(KDE_RPATH)
+ kscd_LDADD = $(LIBCDROM) $(LIBCDAUDIO) \

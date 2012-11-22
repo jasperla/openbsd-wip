@@ -1,10 +1,11 @@
 * make build with external imake
 * awk segfault
-* upstream problems: dtinfo, makedepend shit, docs
-* rc script
+* upstream problems: dtinfo, makedepend shit
 * better install framework
 * PREFIX cleanliness (currently assumes /usr/dt)
-* dtdocbook memory fault
+* dtdocbook memory fault (only with malloc.conf -> S)
 * manpage sections
+* dtmail: convert to lockspool(1) locking
+* dtksh: build with newer ksh93
 
 NEEDS: printproto, libXp, printing enabled in openmotif
