@@ -31,31 +31,21 @@ MAKE_FLAGS +=		prefix=${PREFIX}
 
 NO_REGRESS =		Yes
 
-# Attempt to # Stop Python MODULE running setup utils in root WRKSRC
-# as the main build. This does not work. If we find a way then we can
-# get rid of the custom do-build and do-install targets here
-MODPY_BUILDDEP =	No
-MODPY_SETUPUTILS =      No
-CONFIGURE_STYLE =
+# Hack to prevent Python module doing it's own do-build/do-install
+CONFIGURE_STYLE =	not_setup_tools
 
 # Launcher is in Python
-pre-install:
+post-build:
 	cd ${WRKSRC}/launcher &&  ${SETENV} ${MAKE_ENV} && \
-	${MODPY_BIN} ${MODPY_SETUP} build --build-base=${WRKSRC}/launcher && \
-	${MODPY_BIN} ${MODPY_SETUP} ${MODPY_DISTUTILS_INSTALL}
-
-
-# Sadly needed, otherwise Python module tries to do it's thing
-# Also we can't use ${MAKE_FLAGS} or we end up with double DESTDIR'd paths.
-do-build:
-	cd ${WRKSRC} && ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS}
-
-# Again needed, otherwise Python module tries to do it's thing
-# Also we can't use ${MAKE_FLAGS} or we end up with double DESTDIR'd paths.
-do-install:
-	cd ${WRKSRC} && ${MAKE_ENV} ${MAKE_PROGRAM} install prefix=${TRUEPREFIX}
+	${MODPY_BIN} ${MODPY_SETUP} build --build-base=${WRKSRC}/launcher
 
 post-install:
+# Install the Launcher
+	cd ${WRKSRC}/launcher &&  ${SETENV} ${MAKE_ENV} && \
+	${MODPY_BIN} ${MODPY_SETUP} ${MODPY_DISTUTILS_INSTALL} && \
+	${MODPY_BIN} ${MODPY_SETUP} clean #or make clean wont work as user
+
+# Put config file in the right place
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/fs-uae
 	mv ${PREFIX}/share/doc/fs-uae/example.conf \
 		${PREFIX}/share/examples/fs-uae/fs-uae.conf

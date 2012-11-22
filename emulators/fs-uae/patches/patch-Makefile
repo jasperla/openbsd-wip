@@ -3,8 +3,23 @@ $OpenBSD$
 Add OpenBSD support
 
 --- Makefile.orig	Fri Oct 26 17:28:39 2012
-+++ Makefile	Tue Nov 20 01:41:39 2012
-@@ -123,6 +123,9 @@ else ifeq ($(os), macosx)
++++ Makefile	Thu Nov 22 09:45:02 2012
+@@ -66,14 +66,6 @@ endif
+ profile_generate := 0
+ profile_use := 0
+ 
+-ifeq ($(optimize), 1)
+-	cflags += -O2 -ggdb
+-	cxxflags += -O2 -ggdb
+-else ifneq ($(noflags), 1)
+-	cflags += -O0 -ggdb
+-	cxxflags += -O0 -ggdb
+-endif
+-
+ ifeq ($(profile_generate), 1)
+ 	cflags += -fprofile-generate
+ 	cxxflags += -fprofile-generate
+@@ -123,6 +115,9 @@ else ifeq ($(os), macosx)
  else ifeq ($(os), freebsd)
    cppflags += -DFREEBSD
    libs += -lGL -lGLU -lopenal -lX11 -lcompat
@@ -14,7 +29,7 @@ Add OpenBSD support
  else
    ldflags += -Wa,--execstack
    libs += -lGL -lGLU -lopenal -ldl -lX11
-@@ -595,13 +598,13 @@ dist: distdir pubfiles-source po-dist
+@@ -595,13 +590,13 @@ dist: distdir pubfiles-source po-dist
  		dist/$(series)/$(version)/fs-uae-game-server-$(version).py
  
  install:
