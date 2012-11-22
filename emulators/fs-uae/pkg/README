@@ -16,7 +16,7 @@ Next you will need a Kickstart ROM for the system you want to emulate.
 Kickstart is the name given to the chip in a real Amiga that contains
 the bootloader code. The Kickstart ROM can either be dumped from a real
 Amiga using a tool like Amiga Explorer for Windows. Alternatively you
-can buy the Kickstart ROM from AmigaFoerever. More details here:
+can buy the Kickstart ROM from AmigaForever. More details here:
 http://www.amigakickstart.com/
 
 The Kickstart ROMs are copyrighted. You should obtain them legally.
@@ -92,6 +92,7 @@ F12:		Show menu.
 Alt + Enter:	Toggle fullscreen.
 Middle click:	Release mouse from FS-UAE.
 F12 + g:	Release mouse from FS-UAE.
+F12 + q:	Quit
 
 If you have no real joystick configured, you can use the emulated one.
 Cursor keys controls the joystick stick and right ctrl or right alt
