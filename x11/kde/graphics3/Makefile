@@ -62,7 +62,7 @@ WANTLIB-kpov =		${WANTLIB}
 WANTLIB-kamera =	${WANTLIB}
 WANTLIB-sane =		${WANTLIB}
 
-REVISION-main = 17
+REVISION-main = 18
 REVISION-kamera = 9
 REVISION-kpov = 9
 REVISION-sane = 13

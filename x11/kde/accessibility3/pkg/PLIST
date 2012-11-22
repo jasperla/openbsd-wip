@@ -6,7 +6,7 @@
 @bin bin/ksayit
 @bin bin/kttsd
 @bin bin/kttsmgr
-include/ksayit_fxplugin.h
+include/kde/ksayit_fxplugin.h
 ${KDE}/kbstate_panelapplet.la
 ${KDE}/kbstate_panelapplet.so
 ${KDE}/kcm_kttsd.la

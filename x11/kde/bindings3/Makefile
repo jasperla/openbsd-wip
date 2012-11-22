@@ -17,7 +17,7 @@ LIB_DEPENDS =	x11/kde/libs3 \
 		x11/qt3 \
 		${MODRUBY_LIB_DEPENDS}
 
-REVISION =	19
+REVISION =	20
 #XXX missing -rpath to /usr/local ?
 USE_LIBTOOL =	gnu
 USE_GROFF =	Yes

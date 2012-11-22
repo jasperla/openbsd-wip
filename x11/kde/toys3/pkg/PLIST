@@ -6,7 +6,7 @@
 @bin bin/kweatherreport
 @bin bin/kweatherservice
 @bin bin/kworldclock
-include/AmorIface.h
+include/kde/AmorIface.h
 ${KDE}/eyes_panelapplet.la
 ${KDE}/eyes_panelapplet.so
 ${KDE}/fifteen_panelapplet.la
