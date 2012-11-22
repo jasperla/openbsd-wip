@@ -48,5 +48,7 @@ post_install_libs += ;test -e ../lib$l.so.$v && ln -sf ../lib$l.so.$v lib$l.so.$
 .endfor
 .if !target(post-install)
 post-install:
+. if defined(SHARED_LIBS) && !empty(SHARED_LIBS)
 	@${post_install_libs}
+. endif
 .endif
