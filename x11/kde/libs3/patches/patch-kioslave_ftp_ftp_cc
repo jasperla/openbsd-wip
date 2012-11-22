@@ -1,0 +1,18 @@
+$OpenBSD: patch-kioslave_ftp_ftp_cc,v 1.5 2007/05/25 09:49:54 espie Exp $
+--- kioslave/ftp/ftp.cc.orig	Mon May 14 09:52:34 2007
++++ kioslave/ftp/ftp.cc	Mon May 14 16:18:30 2007
+@@ -757,6 +757,14 @@ bool Ftp::ftpSendCmd( const QCString& cmd, int maxretr
+     return false;
+   }
+ 
++  if ( cmd.find( '\r' ) != -1 || cmd.find( '\n' ) != -1)
++  {
++    kdWarning(7102) << "Invalid command received (contains CR or LF): "
++                    << cmd.data() << endl;
++    error( ERR_UNSUPPORTED_ACTION, m_host );
++    return false;
++  }
++
+   // Don't print out the password...
+   bool isPassCmd = (cmd.left(4).lower() == "pass");
+   if ( !isPassCmd )

@@ -1,0 +1,32 @@
+audio/ardour
+
+: undefined reference to `boost::system::generic_category()'
+gtk2_ardour/analysis_window.o(.text+0x1bd): In function `__static_initialization_and_destruction_0(int, int)':
+: undefined reference to `boost::system::system_category()'
+gtk2_ardour/sfdb_freesound_mootcher.o(.text+0x2fd): In function `__static_initialization_and_destruction_0(int, int)':
+: undefined reference to `boost::system::generic_category()'
+gtk2_ardour/sfdb_freesound_mootcher.o(.text+0x309): In function `__static_initialization_and_destruction_0(int, int)':
+: undefined reference to `boost::system::generic_category()'
+gtk2_ardour/sfdb_freesound_mootcher.o(.text+0x315): In function `__static_initialization_and_destruction_0(int, int)':
+: undefined reference to `boost::system::system_category()'
+collect2: ld returned 1 exit status
+
+
+geo/merkartor	(qmake build system)	Boost parse error, 
+math/cgal 	(Cmake build system)	Boost parse error, see KDE bugs for fix
+mail/zarafa	-- patch sent to robert@ (might be unrelated to this boost diff)
+entire KDE4	(Cmake build system)	Boost parse error, see KDE bugs for fix
+(email sent to vadim)
+
+Unclassified but causing problems in cvs
+---------------------------------
+databases/mongodb
+games/pokerth
+multimedia/mkvtoolnix
+
+FIXED
+-------
+games/frogatto	(in openbsd-wip)
+graphics/aqsis	(in openbsd-wip)
+graphics/mapnik
+x11/pinot	(in openbsd-wip)
