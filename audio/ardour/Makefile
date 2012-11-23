@@ -51,8 +51,6 @@ MODSCONS_ENV=	CC="${CC}" \
 		FREEDESKTOP=1 \
 		SYSLIBS=1
 
-MODSCONS_FLAGS=	"-j 4"
-
 BUILD_DEPENDS = 	${RUN_DEPENDS}
 RUN_DEPENDS = 		devel/desktop-file-utils \
 			x11/gtk+2,-guic \
