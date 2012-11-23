@@ -1,7 +1,5 @@
 # $OpenBSD$
 
-ONLY_FOR_ARCHS =	${GCC4_ARCHS}
-
 COMMENT =	detecting ABI changes between releases of shared libs
 DISTNAME =	abi-compliance-checker-1.98.4
 CATEGORIES =	devel
