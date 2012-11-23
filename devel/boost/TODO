@@ -19,6 +19,7 @@ databases/mongodb
 In Progress
 ------------
 games/pokerth (needs tinyxml to be ported, from freebsd)
+		+ an update to 0.9.5
 
 FIXED
 -------
