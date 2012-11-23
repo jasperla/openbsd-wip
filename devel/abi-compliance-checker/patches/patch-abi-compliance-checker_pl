@@ -1,15 +1,126 @@
 $OpenBSD$
+Tweaks:
+  - Avoid changing order of include paths.
+  - Avoid calling system() with command line as single scalar.
+  - Show more stderr output from tools being called.
+  - Avoid using non-portable "-regex" option to find(1).
+  - Use "ectags" instead of "ctags" (OpenBSD-specific).
+  - Do not even try to use C++0x mode (OpenBSD-specific).
 --- abi-compliance-checker.pl.orig	Fri Nov 23 15:59:42 2012
-+++ abi-compliance-checker.pl	Fri Nov 23 19:35:17 2012
++++ abi-compliance-checker.pl	Fri Nov 23 23:16:23 2012
 @@ -54,6 +54,7 @@ Getopt::Long::Configure ("posix_default", "no_ignore_c
  use File::Path qw(mkpath rmtree);
  use File::Temp qw(tempdir);
  use File::Copy qw(copy move);
-+use IPC::Open2;
++use IPC::Run3;
  use Cwd qw(abs_path cwd);
  use Data::Dumper;
  use Config;
-@@ -7376,12 +7377,12 @@ sub checkCTags($)
+@@ -1912,6 +1913,7 @@ sub readDescriptor($$)
+     if(my $Prefix = parseTag(\$Content, "cross_prefix")) {
+         $CrossPrefix = $Prefix;
+     }
++    $Descriptor{$LibVersion}{"IncludePaths"} //= [];
+     foreach my $Path (split(/\s*\n\s*/, parseTag(\$Content, "include_paths")))
+     {
+         $Path=clean_path($Path);
+@@ -1919,8 +1921,9 @@ sub readDescriptor($$)
+             exitStatus("Access_Error", "can't access directory \'$Path\'");
+         }
+         $Path = path_format($Path, $OSgroup);
+-        $Descriptor{$LibVersion}{"IncludePaths"}{$Path} = 1;
++        push(@{$Descriptor{$LibVersion}{"IncludePaths"}}, $Path);
+     }
++    $Descriptor{$LibVersion}{"AddIncludePaths"} //= [];
+     foreach my $Path (split(/\s*\n\s*/, parseTag(\$Content, "add_include_paths")))
+     {
+         $Path=clean_path($Path);
+@@ -1928,7 +1931,7 @@ sub readDescriptor($$)
+             exitStatus("Access_Error", "can't access directory \'$Path\'");
+         }
+         $Path = path_format($Path, $OSgroup);
+-        $Descriptor{$LibVersion}{"AddIncludePaths"}{$Path} = 1;
++        push(@{$Descriptor{$LibVersion}{"AddIncludePaths"}}, $Path);
+     }
+     foreach my $Path (split(/\s*\n\s*/, parseTag(\$Content, "skip_include_paths")))
+     {
+@@ -5720,11 +5723,13 @@ sub sortHeaders($$)
+ sub searchForHeaders($)
+ {
+     my $LibVersion = $_[0];
++    $Add_Include_Paths{$LibVersion} //= [];
++    $Include_Paths{$LibVersion} //= [];
+     # gcc standard include paths
+     find_gcc_cxx_headers($LibVersion);
+     # processing header paths
+-    foreach my $Path (keys(%{$Descriptor{$LibVersion}{"IncludePaths"}}),
+-    keys(%{$Descriptor{$LibVersion}{"AddIncludePaths"}}))
++    foreach my $Path (@{$Descriptor{$LibVersion}{"IncludePaths"}},
++        @{$Descriptor{$LibVersion}{"AddIncludePaths"}})
+     {
+         my $IPath = $Path;
+         if($SystemRoot)
+@@ -5743,15 +5748,15 @@ sub searchForHeaders($)
+         {
+             $Path = get_abs_path($Path);
+             register_directory($Path, 0, $LibVersion);
+-            if($Descriptor{$LibVersion}{"AddIncludePaths"}{$IPath}) {
+-                $Add_Include_Paths{$LibVersion}{$Path} = 1;
++            if(grep { /$IPath/ } @{$Descriptor{$LibVersion}{"AddIncludePaths"}}) {
++                push @{$Add_Include_Paths{$LibVersion}}, $Path;
+             }
+             else {
+-                $Include_Paths{$LibVersion}{$Path} = 1;
++                push @{$Include_Paths{$LibVersion}}, $Path;
+             }
+         }
+     }
+-    if(keys(%{$Include_Paths{$LibVersion}})) {
++    if(@{$Include_Paths{$LibVersion}}) {
+         $INC_PATH_AUTODETECT{$LibVersion} = 0;
+     }
+     # registering directories
+@@ -6977,6 +6982,7 @@ sub get_HeaderDeps($$)
+         return @{$Cache{"get_HeaderDeps"}{$LibVersion}{$AbsPath}};
+     }
+     my %IncDir = ();
++    my @DirList;
+     detect_recursive_includes($AbsPath, $LibVersion);
+     foreach my $HeaderPath (keys(%{$RecursiveIncludes{$LibVersion}{$AbsPath}}))
+     {
+@@ -7030,25 +7036,17 @@ sub get_HeaderDeps($$)
+             { # do NOT include /usr/include/{sys,bits}
+                 next;
+             }
+-            $IncDir{$Dep}=1;
++            if(!$IncDir{$Dep})
++            { # Do not include twice; avoid using bare hash to keep order.
++                $IncDir{$Dep}=1;
++                push(@DirList, $Dep);
++            }
+         }
+     }
+-    $Cache{"get_HeaderDeps"}{$LibVersion}{$AbsPath} = sortIncPaths([keys(%IncDir)], $LibVersion);
++    $Cache{"get_HeaderDeps"}{$LibVersion}{$AbsPath} = @DirList;
+     return @{$Cache{"get_HeaderDeps"}{$LibVersion}{$AbsPath}};
+ }
+ 
+-sub sortIncPaths($$)
+-{
+-    my ($ArrRef, $LibVersion) = @_;
+-    if(not $ArrRef or $#{$ArrRef}<0) {
+-        return $ArrRef;
+-    }
+-    @{$ArrRef} = sort {$b cmp $a} @{$ArrRef};
+-    @{$ArrRef} = sort {get_depth($a)<=>get_depth($b)} @{$ArrRef};
+-    @{$ArrRef} = sort {sortDeps($b, $a, $LibVersion)} @{$ArrRef};
+-    return $ArrRef;
+-}
+-
+ sub sortDeps($$$)
+ {
+     if($Header_Dependency{$_[2]}{$_[0]}
+@@ -7376,12 +7374,12 @@ sub checkCTags($)
      if(not $Path) {
          return;
      }
@@ -24,7 +135,7 @@ $OpenBSD$
      if($Debug) {
          copy($Out, $DEBUG_PATH{$Version}."/ctags.txt");
      }
-@@ -7743,12 +7744,13 @@ sub getDump()
+@@ -7743,12 +7741,13 @@ sub getDump()
              and ($Errors=~/\Q-std=c++0x\E/
              or $Errors=~/is not a class or namespace/))
              { # c++0x: enum class
@@ -44,7 +155,34 @@ $OpenBSD$
              }
              elsif($MinGWMode{$Version}==1)
              { # disable MinGW mode and try again
-@@ -7850,11 +7852,11 @@ sub callPreprocessor($$$)
+@@ -7817,21 +7816,14 @@ sub getIncPaths(@)
+                 $Includes{$Dir}=1;
+             }
+         }
+-        foreach my $Dir (keys(%{$Add_Include_Paths{$Version}}))
+-        { # added by user
+-            next if($Includes{$Dir});
+-            push(@IncPaths, $Dir);
+-        }
+-        foreach my $Dir (@{sortIncPaths([keys(%Includes)], $Version)}) {
+-            push(@IncPaths, $Dir);
+-        }
++        @IncPaths = (
++           grep { !exists $Includes{$_} } @{$Add_Include_Paths{$Version}},
++           grep { exists $Includes{$_} } @HeaderPaths
++           );
+     }
+     else
+     { # user-defined paths
+-        foreach my $Dir (sort {get_depth($a)<=>get_depth($b)}
+-        sort {$b cmp $a} keys(%{$Include_Paths{$Version}})) {
+-            push(@IncPaths, $Dir);
+-        }
++        @IncPaths = @{$Include_Paths{$Version}};
+     }
+     return \@IncPaths;
+ }
+@@ -7850,11 +7842,11 @@ sub callPreprocessor($$$)
      return $Out;
  }
  
@@ -58,7 +196,7 @@ $OpenBSD$
      return () if(not $Path or not -e $Path);
      if($OSgroup eq "windows")
      {
-@@ -7915,27 +7917,36 @@ sub cmd_find($$$$)
+@@ -7915,27 +7907,32 @@ sub cmd_find($$$$)
          { # for directories that are symlinks
              $Path.="/";
          }
@@ -87,30 +225,26 @@ $OpenBSD$
 -        my $Res = `$Cmd 2>\"$TMP_DIR/null\"`;
 -        if($?) {
 -            printMsg("ERROR", "problem with \'find\' utility ($?): $!");
-+        my ($In, $Out, $Pid);
-+        eval { $Pid = open2($Out, $In, @Cmd); };
++        my (@Files, $Res);
++        eval { $Res = run3(\@Cmd, undef, \@Files); };
 +        if($@) {
 +            printMsg("ERROR", "problem with \'find\' utility: $@");
 +            return ();
++        } elsif(!$Res) {
++            printMsg("ERROR", "problem with \'find\' utility: $!");
++            return ();
          }
 -        return split(/\n/, $Res);
-+        my @Files;
++        chomp @Files;
 +        if($Name and $UseRegex)
 +        { # file name regex
-+            while(<$Out>) {
-+                next unless /^${Name}$/;
-+                push(@Files, $_);
-+            }
-+        } else {
-+            @Files = <$Out>;
++            @Files = grep { /^${Name}$/ } @Files;
 +        }
-+        waitpid($Pid, 0);
-+        chomp @Files;
 +        return @Files;
      }
  }
  
-@@ -13719,6 +13730,13 @@ sub esc($)
+@@ -13719,6 +13716,13 @@ sub esc($)
      return $Str;
  }
  
@@ -124,7 +258,7 @@ $OpenBSD$
  sub readLineNum($$)
  {
      my ($Path, $Num) = @_;
-@@ -17234,7 +17252,7 @@ sub getSOPaths_Dest($$)
+@@ -17234,7 +17238,7 @@ sub getSOPaths_Dest($$)
          if($SystemPaths{"lib"}{$Dest})
          { # you have specified /usr/lib as the search directory (<libs>) in the XML descriptor
            # and the real name of the library by -l option (bz2, stdc++, Xaw, ...)
@@ -133,7 +267,7 @@ $OpenBSD$
              { # all files and symlinks that match the name of a library
                  if(get_filename($Path)=~/\A(|lib)\Q$TargetLibraryName\E[\d\-]*\.$LIB_EXT[\d\.]*\Z/i)
                  {
-@@ -17811,7 +17829,7 @@ sub find_libs($$$)
+@@ -17811,7 +17815,7 @@ sub find_libs($$$)
  {
      my ($Path, $Type, $MaxDepth) = @_;
      # FIXME: correct the search pattern
@@ -142,7 +276,7 @@ $OpenBSD$
  }
  
  sub createDescriptor($$)
-@@ -18148,7 +18166,7 @@ sub detect_default_paths($)
+@@ -18148,7 +18152,7 @@ sub detect_default_paths($)
              foreach my $Path (sort {$b=~/\/usr\/bin/ cmp $a=~/\/usr\/bin/}
              keys(%{$SystemPaths{"bin"}}))
              {
