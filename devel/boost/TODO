@@ -13,12 +13,8 @@ collect2: ld returned 1 exit status
 
 
 geo/merkartor	(qmake build system)	Boost parse error, 
-math/cgal 	(Cmake build system)	Boost parse error, see KDE bugs for fix
-mail/zarafa	-- patch sent to robert@ (might be unrelated to this boost diff)
-entire KDE4	(Cmake build system)	Boost parse error, see KDE bugs for fix
-(email sent to vadim)
 
-causing problems in cvs
+still causing problems in cvs
 ---------------------------------
 databases/mongodb
 
@@ -28,8 +24,13 @@ games/pokerth (needs tinyxml to be ported, from freebsd)
 
 FIXED
 -------
-games/frogatto		(in openbsd-wip) patch sent to antoine
+games/frogatto		(in openbsd-wip) patch sent to antoine, who says
+					will fix when new boost hits tree..
 graphics/aqsis		(in openbsd-wip)
 graphics/mapnik		(fixed in boost itself)
+mail/zarafa		patch sent to robert@ (might be unrelated to
+						this boost diff)
+math/cgal 		(in openbsd-wip)
 multimedia/mkvtoolnix	(in openbsd-wip)
+x11/kde4		(in openbsd-wip) vadim fixed automoc4
 x11/pinot		(in openbsd-wip)
