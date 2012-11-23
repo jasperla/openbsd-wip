@@ -1,18 +1,16 @@
-audio/ardour
+geo/merkartor	(qmake build system)	Boost parse error
+		
+		This has to be fixed in qt4
 
-: undefined reference to `boost::system::generic_category()'
-gtk2_ardour/analysis_window.o(.text+0x1bd): In function `__static_initialization_and_destruction_0(int, int)':
-: undefined reference to `boost::system::system_category()'
-gtk2_ardour/sfdb_freesound_mootcher.o(.text+0x2fd): In function `__static_initialization_and_destruction_0(int, int)':
-: undefined reference to `boost::system::generic_category()'
-gtk2_ardour/sfdb_freesound_mootcher.o(.text+0x309): In function `__static_initialization_and_destruction_0(int, int)':
-: undefined reference to `boost::system::generic_category()'
-gtk2_ardour/sfdb_freesound_mootcher.o(.text+0x315): In function `__static_initialization_and_destruction_0(int, int)':
-: undefined reference to `boost::system::system_category()'
-collect2: ld returned 1 exit status
+https://bugreports.qt-project.org/browse/QTBUG-22829
+
+http://git.overlays.gentoo.org/gitweb/?p=proj/qt.git;a=commitdiff;h=4ad28f59f3280c4a0589d436fda41923d354fb00#patch1
+
+http://lists.pld-linux.org/mailman/pipermail/pld-cvs-commit/Week-of-Mon-20120625/341863.html
+
+http://pkgs.fedoraproject.org/cgit/qt.git/tree/qt-everywhere-opensource-src-4.8.0-rc1-moc-boost148.patch?id=f0ce6564e29e22eac504c538698517bdcef80061;id2=060db3c767b670dc1e168252644c937abc9fe607
 
 
-geo/merkartor	(qmake build system)	Boost parse error, 
 
 still causing problems in cvs
 ---------------------------------
@@ -24,6 +22,7 @@ games/pokerth (needs tinyxml to be ported, from freebsd)
 
 FIXED
 -------
+audio/ardour		(in openbsd-wip), linker -lboost_system-mt
 games/frogatto		(in openbsd-wip) patch sent to antoine, who says
 					will fix when new boost hits tree..
 graphics/aqsis		(in openbsd-wip)
