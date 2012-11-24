@@ -18,8 +18,7 @@ WANTLIB +=		c exif jpeg
 
 MASTER_SITES =		${HOMEPAGE}/files/
 
-MODULES =		converters/libiconv \
-			devel/gettext
+MODULES =		devel/gettext
 
 LIB_DEPENDS =		graphics/libexif \
 			graphics/jpeg
