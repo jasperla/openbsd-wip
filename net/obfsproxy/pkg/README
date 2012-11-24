@@ -1,0 +1,5 @@
+To use obfsproxy, put the following lines into your torrc:
+
+UseBridges 1 
+Bridge obfs2 <IP address of bridge supporting obfsproxy>:<port>
+ClientTransportPlugin obfs2 exec /usr/local/bin/obfsproxy --managed
