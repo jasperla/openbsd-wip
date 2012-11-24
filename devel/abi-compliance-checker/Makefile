@@ -18,9 +18,13 @@ RUN_DEPENDS =	devel/ectags \
 		devel/p5-IPC-Run3
 
 NO_BUILD =		Yes
-NO_REGRESS =		Yes
 
 do-install:
 	cd ${WRKSRC} && perl Makefile.pl -install --prefix=${TRUEPREFIX}
+
+do-regress:
+	cd ${WRKBUILD} && \
+	    perl ${WRKSRC}/abi-compliance-checker.pl -test 2>&1 | \
+	    awk '{print} /ERROR/ {EC=1} END {exit EC}'
 
 .include <bsd.port.mk>
