@@ -7,8 +7,14 @@ Tweaks:
   - Use "ectags" instead of "ctags" (OpenBSD-specific).
   - Do not even try to use C++0x mode (OpenBSD-specific).
 --- abi-compliance-checker.pl.orig	Fri Nov 23 15:59:42 2012
-+++ abi-compliance-checker.pl	Fri Nov 23 23:57:10 2012
-@@ -54,6 +54,7 @@ Getopt::Long::Configure ("posix_default", "no_ignore_c
++++ abi-compliance-checker.pl	Sat Nov 24 01:24:46 2012
+@@ -49,11 +49,13 @@
+ # and the GNU Lesser General Public License along with this program.
+ # If not, see <http://www.gnu.org/licenses/>.
+ ###########################################################################
++use strict;
+ use Getopt::Long;
+ Getopt::Long::Configure ("posix_default", "no_ignore_case");
  use File::Path qw(mkpath rmtree);
  use File::Temp qw(tempdir);
  use File::Copy qw(copy move);
@@ -16,7 +22,64 @@ Tweaks:
  use Cwd qw(abs_path cwd);
  use Data::Dumper;
  use Config;
-@@ -1449,7 +1450,7 @@ my %RegisteredObject_Dirs;
+@@ -1245,34 +1247,33 @@ my %LocalIncludes = map {$_=>1} (
+ my %OS_AddPath=(
+ # These paths are needed if the tool cannot detect them automatically
+     "macos"=>{
+-        "include"=>{
+-            "/Library"=>1,
+-            "/Developer/usr/include"=>1
+-        },
+-        "lib"=>{
+-            "/Library"=>1,
+-            "/Developer/usr/lib"=>1
+-        },
+-        "bin"=>{
+-            "/Developer/usr/bin"=>1
+-        }
++        "include"=>[
++            "/Library",
++            "/Developer/usr/include"
++        ],
++        "lib"=>[
++            "/Library",
++            "/Developer/usr/lib"
++        ],
++        "bin"=>[
++            "/Developer/usr/bin"
++        ]
+     },
+     "beos"=>{
+     # Haiku has GCC 2.95.3 by default
+     # try to find GCC>=3.0 in /boot/develop/abi
+-        "include"=>{
+-            "/boot/common"=>1,
+-            "/boot/develop"=>1},
+-        "lib"=>{
+-            "/boot/common/lib"=>1,
+-            "/boot/system/lib"=>1,
+-            "/boot/apps"=>1},
+-        "bin"=>{
+-            "/boot/common/bin"=>1,
+-            "/boot/system/bin"=>1,
+-            "/boot/develop/abi"=>1
++        "include"=>[
++            "/boot/common",
++            "/boot/develop"],
++        "lib"=>[
++            "/boot/common/lib",
++            "/boot/system/lib",
++            "/boot/apps"],
++        "bin"=>[
++            "/boot/common/bin",
++            "/boot/system/bin",
++            "/boot/develop/abi"]
+     }
+-}
+ );
+ 
+ my %Slash_Type=(
+@@ -1449,17 +1450,17 @@ my %RegisteredObject_Dirs;
  
  # System Objects
  my %SystemObjects;
@@ -25,24 +88,85 @@ Tweaks:
  my %DyLib_DefaultPath;
  
  # System Headers
-@@ -1890,6 +1891,7 @@ sub readDescriptor($$)
+ my %SystemHeaders;
+-my %DefaultCppPaths;
+-my %DefaultGccPaths;
+-my %DefaultIncPaths;
++my @DefaultCppPaths;
++my @DefaultGccPaths;
++my @DefaultIncPaths;
+ my %DefaultCppHeader;
+ my %DefaultGccHeader;
+-my %UserIncPath;
++my @UserIncPath;
+ 
+ # Merging
+ my %CompleteSignature;
+@@ -1506,7 +1507,7 @@ my @RecurConstant;
+ 
+ # System
+ my %SystemPaths;
+-my %DefaultBinPaths;
++my @DefaultBinPaths;
+ my $GCC_PATH;
+ 
+ # Symbols versioning
+@@ -1715,7 +1716,7 @@ sub search_Cmd($)
+     if(my $DefaultPath = get_CmdPath_Default($Name)) {
+         return ($Cache{"search_Cmd"}{$Name} = $DefaultPath);
+     }
+-    foreach my $Path (sort {length($a)<=>length($b)} keys(%{$SystemPaths{"bin"}}))
++    foreach my $Path (@{$SystemPaths{"bin"}})
+     {
+         my $CmdPath = joinPath($Path,$Name);
+         if(-f $CmdPath)
+@@ -1768,7 +1769,7 @@ sub get_CmdPath_Default_I($)
+             }
+         }
+     }
+-    foreach my $Path (sort {length($a)<=>length($b)} keys(%DefaultBinPaths))
++    foreach my $Path (@DefaultBinPaths)
+     {
+         if(-f $Path."/".$Name) {
+             return joinPath($Path,$Name);
+@@ -1881,6 +1882,7 @@ sub readDescriptor($$)
+             }
+         }
+     }
++    $SystemPaths{"include"} //= [];
+     foreach my $Path (split(/\s*\n\s*/, parseTag(\$Content, "search_headers")))
+     {
+         $Path = clean_path($Path);
+@@ -1888,8 +1890,9 @@ sub readDescriptor($$)
+             exitStatus("Access_Error", "can't access directory \'$Path\'");
+         }
          $Path = path_format($Path, $OSgroup);
-         $SystemPaths{"include"}{$Path}=1;
+-        $SystemPaths{"include"}{$Path}=1;
++        push(@{$SystemPaths{"include"}}, $Path);
      }
 +    $SystemPaths{"lib"} //= [];
      foreach my $Path (split(/\s*\n\s*/, parseTag(\$Content, "search_libs")))
      {
          $Path = clean_path($Path);
-@@ -1897,7 +1899,7 @@ sub readDescriptor($$)
+@@ -1897,8 +1900,9 @@ sub readDescriptor($$)
              exitStatus("Access_Error", "can't access directory \'$Path\'");
          }
          $Path = path_format($Path, $OSgroup);
 -        $SystemPaths{"lib"}{$Path}=1;
 +        push(@{$SystemPaths{"lib"}}, $Path);
      }
++    $SystemPaths{"bin"} //= [];
      foreach my $Path (split(/\s*\n\s*/, parseTag(\$Content, "tools")))
      {
-@@ -1912,6 +1914,7 @@ sub readDescriptor($$)
+         $Path=clean_path($Path);
+@@ -1906,12 +1910,13 @@ sub readDescriptor($$)
+             exitStatus("Access_Error", "can't access directory \'$Path\'");
+         }
+         $Path = path_format($Path, $OSgroup);
+-        $SystemPaths{"bin"}{$Path}=1;
++        push(@{$SystemPaths{"bin"}}, $Path);
+         $TargetTools{$Path}=1;
+     }
      if(my $Prefix = parseTag(\$Content, "cross_prefix")) {
          $CrossPrefix = $Prefix;
      }
@@ -50,7 +174,7 @@ Tweaks:
      foreach my $Path (split(/\s*\n\s*/, parseTag(\$Content, "include_paths")))
      {
          $Path=clean_path($Path);
-@@ -1919,8 +1922,9 @@ sub readDescriptor($$)
+@@ -1919,8 +1924,9 @@ sub readDescriptor($$)
              exitStatus("Access_Error", "can't access directory \'$Path\'");
          }
          $Path = path_format($Path, $OSgroup);
@@ -61,7 +185,7 @@ Tweaks:
      foreach my $Path (split(/\s*\n\s*/, parseTag(\$Content, "add_include_paths")))
      {
          $Path=clean_path($Path);
-@@ -1928,7 +1932,7 @@ sub readDescriptor($$)
+@@ -1928,7 +1934,7 @@ sub readDescriptor($$)
              exitStatus("Access_Error", "can't access directory \'$Path\'");
          }
          $Path = path_format($Path, $OSgroup);
@@ -70,7 +194,7 @@ Tweaks:
      }
      foreach my $Path (split(/\s*\n\s*/, parseTag(\$Content, "skip_include_paths")))
      {
-@@ -5720,11 +5724,13 @@ sub sortHeaders($$)
+@@ -5720,11 +5726,13 @@ sub sortHeaders($$)
  sub searchForHeaders($)
  {
      my $LibVersion = $_[0];
@@ -86,7 +210,7 @@ Tweaks:
      {
          my $IPath = $Path;
          if($SystemRoot)
-@@ -5743,15 +5749,15 @@ sub searchForHeaders($)
+@@ -5743,15 +5751,15 @@ sub searchForHeaders($)
          {
              $Path = get_abs_path($Path);
              register_directory($Path, 0, $LibVersion);
@@ -106,7 +230,64 @@ Tweaks:
          $INC_PATH_AUTODETECT{$LibVersion} = 0;
      }
      # registering directories
-@@ -6977,6 +6983,7 @@ sub get_HeaderDeps($$)
+@@ -5766,13 +5774,13 @@ sub searchForHeaders($)
+         elsif(-f $Path)
+         {
+             my $Dir = get_dirname($Path);
+-            if(not $SystemPaths{"include"}{$Dir}
+-            and not $LocalIncludes{$Dir})
++            if(!grep { $Dir eq $_ } (@{$SystemPaths{"include"}})
++            and !exists $LocalIncludes{$Dir})
+             {
+                 register_directory($Dir, 1, $LibVersion);
+                 if(my $OutDir = get_dirname($Dir))
+                 { # registering the outer directory
+-                    if(not $SystemPaths{"include"}{$OutDir}
++                    if(!grep { $OutDir eq $_ } (@{$SystemPaths{"include"}})
+                     and not $LocalIncludes{$OutDir}) {
+                         register_directory($OutDir, 0, $LibVersion);
+                     }
+@@ -6028,7 +6036,7 @@ sub detect_recursive_includes($$)
+     return () if($OSgroup ne "windows" and $Name=~/windows|win32|win64/i);
+     return () if($MAIN_CPP_DIR and $AbsPath=~/\A\Q$MAIN_CPP_DIR\E/ and not $STDCXX_TESTING);
+     push(@RecurInclude, $AbsPath);
+-    if($DefaultGccPaths{$AbsDir}
++    if(grep { $AbsDir eq $_ } @DefaultGccPaths
+     or fromLibc($AbsPath))
+     { # check "real" (non-"model") include paths
+         my @Paths = detect_real_includes($AbsPath, $LibVersion);
+@@ -6138,8 +6146,10 @@ sub find_in_defaults($)
+     if(defined $Cache{"find_in_defaults"}{$Header}) {
+         return $Cache{"find_in_defaults"}{$Header};
+     }
+-    foreach my $Dir (sort {get_depth($a)<=>get_depth($b)}
+-    (keys(%DefaultIncPaths), keys(%DefaultGccPaths), keys(%DefaultCppPaths), keys(%UserIncPath)))
++    foreach my $Dir (@DefaultIncPaths,
++                     @DefaultGccPaths,
++                     @DefaultCppPaths,
++                     @UserIncPath)
+     {
+         next if(not $Dir);
+         if(-f $Dir."/".$Header) {
+@@ -6386,7 +6396,7 @@ sub selectSystemHeader_I($$)
+         return "";
+     }
+     
+-    foreach my $Path (keys(%{$SystemPaths{"include"}}))
++    foreach my $Path (@{$SystemPaths{"include"}})
+     { # search in default paths
+         if(-f $Path."/".$Header) {
+             return joinPath($Path,$Header);
+@@ -6434,7 +6444,7 @@ sub is_default_include_dir($)
+ {
+     my $Dir = $_[0];
+     $Dir=~s/[\/\\]+\Z//;
+-    return ($DefaultGccPaths{$Dir} or $DefaultCppPaths{$Dir} or $DefaultIncPaths{$Dir});
++    return grep { $Dir eq $_ } (@DefaultGccPaths, @DefaultCppPaths, @DefaultIncPaths);
+ }
+ 
+ sub identifyHeader($$)
+@@ -6977,6 +6987,7 @@ sub get_HeaderDeps($$)
          return @{$Cache{"get_HeaderDeps"}{$LibVersion}{$AbsPath}};
      }
      my %IncDir = ();
@@ -114,7 +295,7 @@ Tweaks:
      detect_recursive_includes($AbsPath, $LibVersion);
      foreach my $HeaderPath (keys(%{$RecursiveIncludes{$LibVersion}{$AbsPath}}))
      {
-@@ -7030,25 +7037,17 @@ sub get_HeaderDeps($$)
+@@ -7030,25 +7041,17 @@ sub get_HeaderDeps($$)
              { # do NOT include /usr/include/{sys,bits}
                  next;
              }
@@ -146,7 +327,7 @@ Tweaks:
  sub sortDeps($$$)
  {
      if($Header_Dependency{$_[2]}{$_[0]}
-@@ -7376,12 +7375,12 @@ sub checkCTags($)
+@@ -7376,12 +7379,12 @@ sub checkCTags($)
      if(not $Path) {
          return;
      }
@@ -161,7 +342,16 @@ Tweaks:
      if($Debug) {
          copy($Out, $DEBUG_PATH{$Version}."/ctags.txt");
      }
-@@ -7743,12 +7742,13 @@ sub getDump()
+@@ -7465,7 +7468,7 @@ sub getDump()
+         writeFile($DEBUG_PATH{$Version}."/headers/direct-includes.txt", Dumper($Header_Includes{$Version}));
+         writeFile($DEBUG_PATH{$Version}."/headers/recursive-includes.txt", Dumper($RecursiveIncludes{$Version}));
+         writeFile($DEBUG_PATH{$Version}."/headers/include-paths.txt", Dumper($Cache{"get_HeaderDeps"}{$Version}));
+-        writeFile($DEBUG_PATH{$Version}."/headers/default-paths.txt", Dumper(\%DefaultIncPaths));
++        writeFile($DEBUG_PATH{$Version}."/headers/default-paths.txt", Dumper(\@DefaultIncPaths));
+     }
+     
+     # clean memory
+@@ -7743,12 +7746,13 @@ sub getDump()
              and ($Errors=~/\Q-std=c++0x\E/
              or $Errors=~/is not a class or namespace/))
              { # c++0x: enum class
@@ -181,7 +371,7 @@ Tweaks:
              }
              elsif($MinGWMode{$Version}==1)
              { # disable MinGW mode and try again
-@@ -7817,21 +7817,14 @@ sub getIncPaths(@)
+@@ -7817,21 +7821,14 @@ sub getIncPaths(@)
                  $Includes{$Dir}=1;
              }
          }
@@ -208,7 +398,7 @@ Tweaks:
      }
      return \@IncPaths;
  }
-@@ -7850,11 +7843,11 @@ sub callPreprocessor($$$)
+@@ -7850,11 +7847,11 @@ sub callPreprocessor($$$)
      return $Out;
  }
  
@@ -222,7 +412,7 @@ Tweaks:
      return () if(not $Path or not -e $Path);
      if($OSgroup eq "windows")
      {
-@@ -7915,27 +7908,32 @@ sub cmd_find($$$$)
+@@ -7915,27 +7912,32 @@ sub cmd_find($$$$)
          { # for directories that are symlinks
              $Path.="/";
          }
@@ -270,7 +460,7 @@ Tweaks:
      }
  }
  
-@@ -13719,6 +13717,13 @@ sub esc($)
+@@ -13719,6 +13721,13 @@ sub esc($)
      return $Str;
  }
  
@@ -284,7 +474,7 @@ Tweaks:
  sub readLineNum($$)
  {
      my ($Path, $Num) = @_;
-@@ -16645,7 +16650,7 @@ sub get_LibPath_I($$)
+@@ -16645,7 +16654,7 @@ sub get_LibPath_I($$)
      { # ldconfig default paths
          return $DefaultPath;
      }
@@ -293,7 +483,16 @@ Tweaks:
      { # search in default linker directories
        # and then in all system paths
          if(-f $Dir."/".$Name) {
-@@ -17032,7 +17037,7 @@ sub detectSystemHeaders()
+@@ -17019,7 +17028,7 @@ sub get_prefixes_I($$)
+ sub detectSystemHeaders()
+ {
+     my @SysHeaders = ();
+-    foreach my $DevelPath (keys(%{$SystemPaths{"include"}}))
++    foreach my $DevelPath (@{$SystemPaths{"include"}})
+     {
+         next if(not -d $DevelPath);
+         # search for all header files in the /usr/include
+@@ -17032,7 +17041,7 @@ sub detectSystemHeaders()
              }
          }
      }
@@ -302,7 +501,7 @@ Tweaks:
      { # search for config headers in the /usr/lib
          next if(not -d $DevelPath);
          foreach (cmd_find($DevelPath,"f","",""))
-@@ -17050,7 +17055,7 @@ sub detectSystemHeaders()
+@@ -17050,7 +17059,7 @@ sub detectSystemHeaders()
  
  sub detectSystemObjects()
  {
@@ -311,7 +510,7 @@ Tweaks:
      {
          next if(not -d $DevelPath);
          foreach my $Path (find_libs($DevelPath,"",""))
-@@ -17156,7 +17161,7 @@ sub skipHeader_I($$)
+@@ -17156,7 +17165,7 @@ sub skipHeader_I($$)
  sub registerObject_Dir($$)
  {
      my ($Dir, $LibVersion) = @_;
@@ -320,7 +519,7 @@ Tweaks:
      { # system directory
          return;
      }
-@@ -17231,10 +17236,10 @@ sub getSOPaths_Dest($$)
+@@ -17231,10 +17240,10 @@ sub getSOPaths_Dest($$)
      {
          $Dest=~s/[\/\\]+\Z//g;
          my %Libs = ();
@@ -333,7 +532,7 @@ Tweaks:
              { # all files and symlinks that match the name of a library
                  if(get_filename($Path)=~/\A(|lib)\Q$TargetLibraryName\E[\d\-]*\.$LIB_EXT[\d\.]*\Z/i)
                  {
-@@ -17811,7 +17816,7 @@ sub find_libs($$$)
+@@ -17811,7 +17820,7 @@ sub find_libs($$$)
  {
      my ($Path, $Type, $MaxDepth) = @_;
      # FIXME: correct the search pattern
@@ -342,25 +541,171 @@ Tweaks:
  }
  
  sub createDescriptor($$)
-@@ -18007,7 +18012,7 @@ sub detect_default_paths($)
+@@ -17931,7 +17940,7 @@ sub detect_bin_default_paths()
+         $EnvPaths.=":".$ENV{"BETOOLS"};
+     }
+     my $Sep = ($OSgroup eq "windows")?";":":|;";
+-    foreach my $Path (sort {length($a)<=>length($b)} split(/$Sep/, $EnvPaths))
++    foreach my $Path (split(/$Sep/, $EnvPaths))
+     {
+         $Path = path_format($Path, $OSgroup);
+         $Path=~s/[\/\\]+\Z//g;
+@@ -17941,14 +17950,14 @@ sub detect_bin_default_paths()
+         { # do NOT use binaries from target system
+             next;
+         }
+-        $DefaultBinPaths{$Path} = 1;
++        push(@DefaultBinPaths, $Path);
+     }
+ }
+ 
+ sub detect_inc_default_paths()
+ {
+     return () if(not $GCC_PATH);
+-    my %DPaths = ("Cpp"=>{},"Gcc"=>{},"Inc"=>{});
++    my %DPaths = ("Cpp"=>[],"Gcc"=>[],"Inc"=>[]);
+     writeFile("$TMP_DIR/empty.h", "");
+     foreach my $Line (split(/\n/, `$GCC_PATH -v -x c++ -E \"$TMP_DIR/empty.h\" 2>&1`))
+     { # detecting GCC default include paths
+@@ -17959,14 +17968,14 @@ sub detect_inc_default_paths()
+             $Path = path_format($Path, $OSgroup);
+             if($Path=~/c\+\+|\/g\+\+\//)
+             {
+-                $DPaths{"Cpp"}{$Path}=1;
++                push(@{$DPaths{"Cpp"}}, $Path);
+                 if(not defined $MAIN_CPP_DIR
+                 or get_depth($MAIN_CPP_DIR)>get_depth($Path)) {
+                     $MAIN_CPP_DIR = $Path;
+                 }
+             }
+             elsif($Path=~/gcc/) {
+-                $DPaths{"Gcc"}{$Path}=1;
++                push(@{$DPaths{"Gcc"}}, $Path);
+             }
+             else
+             {
+@@ -17978,7 +17987,7 @@ sub detect_inc_default_paths()
+                   # or it is the internal cross-GCC path like arm-linux-gnueabi/include
+                     next;
+                 }
+-                $DPaths{"Inc"}{$Path}=1;
++                push(@{$DPaths{"Inc"}}, $Path);
+             }
+         }
+     }
+@@ -18002,12 +18011,12 @@ sub detect_default_paths($)
+     if($Search!~/gcc/) {
+         $GSearch = 0;
+     }
+-    if(keys(%{$SystemPaths{"include"}}))
++    if(defined ${SystemPaths{"include"}} and @{$SystemPaths{"include"}})
+     { # <search_headers> section of the XML descriptor
        # do NOT search for systems headers
          $HSearch = 0;
      }
 -    if(keys(%{$SystemPaths{"lib"}}))
-+    if(@{$SystemPaths{"lib"}})
++    if(defined ${SystemPaths{"lib"} and @{$SystemPaths{"lib"}})
      { # <search_headers> section of the XML descriptor
        # do NOT search for systems headers
          $LSearch = 0;
-@@ -18093,7 +18098,7 @@ sub detect_default_paths($)
-             foreach my $Path (split(/:|;/, $ENV{"BELIBRARIES"}), split(/:|;/, $ENV{"LIBRARY_PATH"}))
-             {
-                 if(is_abs($Path)) {
--                    $DefaultLibPaths{$Path} = 1;
-+                    push(@DefaultLibPaths, $Path);
+@@ -18017,11 +18026,7 @@ sub detect_default_paths($)
+         next if($Type eq "include" and not $HSearch);
+         next if($Type eq "lib" and not $LSearch);
+         next if($Type eq "bin" and not $BSearch);
+-        foreach my $Path (keys(%{$OS_AddPath{$OSgroup}{$Type}}))
+-        {
+-            next if(not -d $Path);
+-            $SystemPaths{$Type}{$Path} = $OS_AddPath{$OSgroup}{$Type}{$Path};
+-        }
++        push(@{$SystemPaths{$Type}}, grep { -d $_ } @{$OS_AddPath{$OSgroup}{$Type}});
+     }
+     if($OSgroup ne "windows")
+     { # unix-like
+@@ -18036,25 +18041,21 @@ sub detect_default_paths($)
+               # 2. use host commands: ldconfig, readelf, etc.
+                 ($UsrDir, $RootDir) = ("$SystemRoot/usr", $SystemRoot);
+             }
+-            foreach my $Path (cmd_find($RootDir,"d","*$Type*",1)) {
+-                $SystemPaths{$Type}{$Path} = 1;
+-            }
++            push(@{$SystemPaths{$Type}}, cmd_find($RootDir,"d","*$Type*",1));
+             if(-d $RootDir."/".$Type)
+             { # if "/lib" is symbolic link
+                 if($RootDir eq "/") {
+-                    $SystemPaths{$Type}{"/".$Type} = 1;
++                    push(@{$SystemPaths{$Type}}, "/".$Type);
+                 }
+                 else {
+-                    $SystemPaths{$Type}{$RootDir."/".$Type} = 1;
++                    push(@{$SystemPaths{$Type}}, $RootDir."/".$Type);
+                 }
+             }
+             if(-d $UsrDir) {
+-                foreach my $Path (cmd_find($UsrDir,"d","*$Type*",1)) {
+-                    $SystemPaths{$Type}{$Path} = 1;
+-                }
++                push(@{$SystemPaths{$Type}}, cmd_find($UsrDir,"d","*$Type*",1));
+                 if(-d $UsrDir."/".$Type)
+                 { # if "/usr/lib" is symbolic link
+-                    $SystemPaths{$Type}{$UsrDir."/".$Type} = 1;
++                    push(@{$SystemPaths{$Type}}, $UsrDir."/".$Type);
                  }
              }
          }
-@@ -18111,12 +18116,10 @@ sub detect_default_paths($)
+@@ -18062,40 +18063,32 @@ sub detect_default_paths($)
+     if($BSearch)
+     {
+         detect_bin_default_paths();
+-        foreach my $Path (keys(%DefaultBinPaths)) {
+-            $SystemPaths{"bin"}{$Path} = $DefaultBinPaths{$Path};
+-        }
++        push(@{$SystemPaths{"bin"}}, @DefaultBinPaths);
+     }
+     # check environment variables
+     if($OSgroup eq "beos")
+     {
+-        foreach (keys(%{$SystemPaths{"bin"}}))
++        foreach (@{$SystemPaths{"bin"}})
+         {
+             if($_ eq ".") {
+                 next;
+             }
+-            foreach my $Path (cmd_find($_, "d", "bin", ""))
+-            { # search for /boot/develop/abi/x86/gcc4/tools/gcc-4.4.4-haiku-101111/bin/
+-                $SystemPaths{"bin"}{$Path} = 1;
+-            }
++            # search for /boot/develop/abi/x86/gcc4/tools/gcc-4.4.4-haiku-101111/bin/
++            # XXX OK to push() to array being traversed?
++            push(@{$SystemPaths{"bin"}}, cmd_find($_, "d", "bin", ""));
+         }
+         if($HSearch)
+         {
+-            foreach my $Path (split(/:|;/, $ENV{"BEINCLUDES"}))
+-            {
+-                if(is_abs($Path)) {
+-                    $DefaultIncPaths{$Path} = 1;
+-                }
+-            }
++            push(@DefaultIncPaths, grep { is_abs($_) } (
++                split(/:|;/, $ENV{"BEINCLUDES"})
++                ));
+         }
+         if($LSearch)
+         {
+-            foreach my $Path (split(/:|;/, $ENV{"BELIBRARIES"}), split(/:|;/, $ENV{"LIBRARY_PATH"}))
+-            {
+-                if(is_abs($Path)) {
+-                    $DefaultLibPaths{$Path} = 1;
+-                }
+-            }
++            push(@DefaultLibPaths, grep { is_abs($_) } (
++                split(/:|;/, $ENV{"BELIBRARIES"}),
++                split(/:|;/, $ENV{"LIBRARY_PATH"})
++                ));
+         }
+     }
+     if($LSearch)
+@@ -18111,12 +18104,10 @@ sub detect_default_paths($)
                      next;
                  }
                  $DyLib_DefaultPath{$Name} = $LPaths->{$Name};
@@ -375,12 +720,76 @@ Tweaks:
      }
      if($BSearch)
      {
-@@ -18148,7 +18151,7 @@ sub detect_default_paths($)
-             foreach my $Path (sort {$b=~/\/usr\/bin/ cmp $a=~/\/usr\/bin/}
-             keys(%{$SystemPaths{"bin"}}))
+@@ -18145,10 +18136,9 @@ sub detect_default_paths($)
+         }
+         if(not $GCC_PATH)
+         { # try to find gcc-X.Y
+-            foreach my $Path (sort {$b=~/\/usr\/bin/ cmp $a=~/\/usr\/bin/}
+-            keys(%{$SystemPaths{"bin"}}))
++            foreach my $Path (@{$SystemPaths{"bin"}})
              {
 -                if(my @GCCs = cmd_find($Path, "", ".*/gcc-[0-9.]*", 1))
 +                if(my @GCCs = cmd_find($Path, "", ".*/gcc-[0-9.]*", 1, 1))
                  { # select the latest version
                      @GCCs = sort {$b cmp $a} @GCCs;
                      if(check_gcc($GCCs[0], "3"))
+@@ -18181,12 +18171,10 @@ sub detect_default_paths($)
+         if(not $NoStdInc)
+         { # do NOT search in GCC standard paths
+             my %DPaths = detect_inc_default_paths();
+-            %DefaultCppPaths = %{$DPaths{"Cpp"}};
+-            %DefaultGccPaths = %{$DPaths{"Gcc"}};
+-            %DefaultIncPaths = %{$DPaths{"Inc"}};
+-            foreach my $Path (keys(%DefaultIncPaths)) {
+-                $SystemPaths{"include"}{$Path} = $DefaultIncPaths{$Path};
+-            }
++            @DefaultCppPaths = @{$DPaths{"Cpp"}};
++            @DefaultGccPaths = @{$DPaths{"Gcc"}};
++            @DefaultIncPaths = @{$DPaths{"Inc"}};
++            push(@{$SystemPaths{"include"}}, @DefaultIncPaths);
+         }
+     }
+     if($HSearch)
+@@ -18196,7 +18184,7 @@ sub detect_default_paths($)
+             $IncPath = $SystemRoot.$IncPath;
+         }
+         if(-d $IncPath) {
+-            $UserIncPath{$IncPath}=1;
++            push(@UserIncPath, $IncPath);
+         }
+     }
+ }
+@@ -18291,9 +18279,9 @@ sub find_gcc_cxx_headers($)
+     my $LibVersion = $_[0];
+     return if($Cache{"find_gcc_cxx_headers"});# this function should be called once
+     # detecting system header paths
+-    foreach my $Path (sort {get_depth($b) <=> get_depth($a)} keys(%DefaultGccPaths))
++    foreach my $Path (@DefaultGccPaths)
+     {
+-        foreach my $HeaderPath (sort {get_depth($a) <=> get_depth($b)} cmd_find($Path,"f","",""))
++        foreach my $HeaderPath (cmd_find($Path,"f","",""))
+         {
+             my $FileName = get_filename($HeaderPath);
+             next if($DefaultGccHeader{$FileName});
+@@ -18302,10 +18290,10 @@ sub find_gcc_cxx_headers($)
+     }
+     if($COMMON_LANGUAGE{$LibVersion} eq "C++" and not $STDCXX_TESTING)
+     {
+-        foreach my $CppDir (sort {get_depth($b)<=>get_depth($a)} keys(%DefaultCppPaths))
++        foreach my $CppDir (@DefaultCppPaths)
+         {
+             my @AllCppHeaders = cmd_find($CppDir,"f","","");
+-            foreach my $Path (sort {get_depth($a)<=>get_depth($b)} @AllCppHeaders)
++            foreach my $Path (@AllCppHeaders)
+             {
+                 my $FileName = get_filename($Path);
+                 next if($DefaultCppHeader{$FileName});
+@@ -19923,7 +19911,7 @@ sub scenario()
+             my $Ret = readSystemDescriptor(readFile($DumpSystem));
+             foreach (@{$Ret->{"Tools"}})
+             {
+-                $SystemPaths{"bin"}{$_} = 1;
++                push(@{$SystemPaths{"bin"}}, $_);
+                 $TargetTools{$_}=1;
+             }
+             if($Ret->{"CrossPrefix"}) {
