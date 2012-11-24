@@ -27,6 +27,7 @@ audio/ardour		(in openbsd-wip), linker -lboost_system-mt
 games/frogatto		(in openbsd-wip) patch sent to antoine, who says
 					will fix when new boost hits tree..
 graphics/aqsis		(in openbsd-wip)
+graphics/enblend-enfuse	(in openbsd-wip)
 graphics/mapnik		(fixed in boost itself)
 mail/zarafa		patch sent to robert@ (might be unrelated to
 						this boost diff)
