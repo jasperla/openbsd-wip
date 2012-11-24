@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+@bin bin/obfsproxy
+@man man/man1/obfsproxy.1
+share/doc/pkg-readmes/${FULLPKGNAME}
