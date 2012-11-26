@@ -1,0 +1,79 @@
+Tests fail (i.e., ACC doesn't detect those problems):
+
+FieldBecameConstTypedef
+FieldRemovedConst
+FieldBecameConst
+GlobalDataBecamePrivate
+MethodBecamePrivate
+MethodBecameProtected
+MethodBecamePublic
+RemovedConstOverload
+InlineMethod			(int <=> long didn't catch on i386?)
+ParameterBecameRestrict
+ParameterBecameNonRestrict
+FieldBecameVolatile
+FieldBecameNonVolatile
+FieldBecameMutable
+FieldBecameNonMutable
+MethodBecameConstVolatile
+MethodBecameConst
+MethodBecameNonConst
+MethodBecameVolatile
+UnsafeVirtualOverride
+RemovedVirtualDestructor
+Added_Virtual_Method_At_End	(addedMethod)
+AddedEnumMember
+RemovedInlineVirtualFunction
+TestMethodPtr
+TestFieldPtr
+removedTemplateSpec
+AddedVirtualMethod
+BecameVirtualMethod
+AddedPureVirtualMethod
+AddedVirtualMethodAtEnd		(safe)
+AddedVirtualMethodAtEnd_DefaultConstructor
+AddedFirstVirtualMethod
+RemovedVirtualFunction
+RemovedPureVirtualMethodFromEnd
+RemovedPureSymbol
+RemovedVirtualMethodFromEnd
+RemovedLastVirtualMethod
+VirtualTableSize
+VirtualMethodPosition
+PureVirtualFunctionPosition
+VirtualFunctionPosition
+VirtualFunctionPositionSafe
+OverriddenVirtualMethod
+OverriddenVirtualMethodB	(+removed)
+Size_Of_Allocable_Class_Increased
+Size_Of_Allocable_Class_Decreased
+CopyingClassSize
+Base_Class_Became_Virtually_Inherited
+Added_Base_Class
+Added_Base_Class_And_Shift
+Added_Field_And_Size
+Added_Field
+Added_Field			(safe)
+Bit_Field_Size
+Removed_Field
+Removed_Middle_Field
+Added_Middle_Field_And_Size
+Added_Field			(padding)
+Added_Field			(tail padding)
+Test Alignment
+Renamed_Field
+Removed_Field_And_Size
+Field Position
+Removed_Middle_Field_And_Size
+Field_Type_And_Size
+MemberType
+FieldBaseType
+Field_PointerLevel_Increased	(and size)
+Field_PointerLevel
+Added_Interface			(method)
+Added_Interface			(global variable)
+Removed_Interface		(method)
+MethodBecameNonStatic
+Added_Field			(safe: opaque)
+Added_Field			(safe: internal)
+Field_Type			(typedefs in member type)
