@@ -7,7 +7,7 @@ Tweaks:
   - Use "ectags" instead of "ctags" (OpenBSD-specific).
   - Do not even try to use C++0x mode (OpenBSD-specific).
 --- abi-compliance-checker.pl.orig	Fri Nov 23 15:59:42 2012
-+++ abi-compliance-checker.pl	Sat Nov 24 13:45:33 2012
++++ abi-compliance-checker.pl	Mon Nov 26 18:08:57 2012
 @@ -49,11 +49,13 @@
  # and the GNU Lesser General Public License along with this program.
  # If not, see <http://www.gnu.org/licenses/>.
@@ -332,7 +332,7 @@ Tweaks:
          return;
      }
 -    my $CTags = get_CmdPath("ctags");
-+    my $CTags = get_CmdPath("ectags");
++    my $CTags = get_CmdPath("ectags") || get_CmdPath("ctags");
      if(not $CTags) {
          return;
      }
@@ -351,7 +351,18 @@ Tweaks:
      }
      
      # clean memory
-@@ -7743,12 +7746,13 @@ sub getDump()
+@@ -7677,10 +7680,6 @@ sub getDump()
+             next if(not $STDCXX_TESTING and $CName=~/\Astd::/);
+             next if(($CName=~tr![:]!!)>2);
+             next if($SkipTypes{$Version}{$CName});
+-            if($CName=~/\A(.+)::[^:]+\Z/)
+-            { # will be added by name space
+-                next;
+-            }
+             if(defined $TUnit_Funcs{$Version}{$CName})
+             { # the same name for a function and type
+                 next;
+@@ -7743,12 +7742,13 @@ sub getDump()
              and ($Errors=~/\Q-std=c++0x\E/
              or $Errors=~/is not a class or namespace/))
              { # c++0x: enum class
@@ -371,7 +382,7 @@ Tweaks:
              }
              elsif($MinGWMode{$Version}==1)
              { # disable MinGW mode and try again
-@@ -7817,21 +7821,14 @@ sub getIncPaths(@)
+@@ -7817,21 +7817,14 @@ sub getIncPaths(@)
                  $Includes{$Dir}=1;
              }
          }
@@ -398,7 +409,7 @@ Tweaks:
      }
      return \@IncPaths;
  }
-@@ -7850,11 +7847,11 @@ sub callPreprocessor($$$)
+@@ -7850,11 +7843,11 @@ sub callPreprocessor($$$)
      return $Out;
  }
  
@@ -412,7 +423,7 @@ Tweaks:
      return () if(not $Path or not -e $Path);
      if($OSgroup eq "windows")
      {
-@@ -7915,27 +7912,32 @@ sub cmd_find($$$$)
+@@ -7915,27 +7908,32 @@ sub cmd_find($$$$)
          { # for directories that are symlinks
              $Path.="/";
          }
@@ -460,7 +471,7 @@ Tweaks:
      }
  }
  
-@@ -13719,6 +13721,13 @@ sub esc($)
+@@ -13719,6 +13717,13 @@ sub esc($)
      return $Str;
  }
  
@@ -474,7 +485,7 @@ Tweaks:
  sub readLineNum($$)
  {
      my ($Path, $Num) = @_;
-@@ -16645,7 +16654,7 @@ sub get_LibPath_I($$)
+@@ -16645,7 +16650,7 @@ sub get_LibPath_I($$)
      { # ldconfig default paths
          return $DefaultPath;
      }
@@ -483,7 +494,7 @@ Tweaks:
      { # search in default linker directories
        # and then in all system paths
          if(-f $Dir."/".$Name) {
-@@ -17019,7 +17028,7 @@ sub get_prefixes_I($$)
+@@ -17019,7 +17024,7 @@ sub get_prefixes_I($$)
  sub detectSystemHeaders()
  {
      my @SysHeaders = ();
@@ -492,7 +503,7 @@ Tweaks:
      {
          next if(not -d $DevelPath);
          # search for all header files in the /usr/include
-@@ -17032,7 +17041,7 @@ sub detectSystemHeaders()
+@@ -17032,7 +17037,7 @@ sub detectSystemHeaders()
              }
          }
      }
@@ -501,7 +512,7 @@ Tweaks:
      { # search for config headers in the /usr/lib
          next if(not -d $DevelPath);
          foreach (cmd_find($DevelPath,"f","",""))
-@@ -17050,7 +17059,7 @@ sub detectSystemHeaders()
+@@ -17050,7 +17055,7 @@ sub detectSystemHeaders()
  
  sub detectSystemObjects()
  {
@@ -510,7 +521,7 @@ Tweaks:
      {
          next if(not -d $DevelPath);
          foreach my $Path (find_libs($DevelPath,"",""))
-@@ -17156,7 +17165,7 @@ sub skipHeader_I($$)
+@@ -17156,7 +17161,7 @@ sub skipHeader_I($$)
  sub registerObject_Dir($$)
  {
      my ($Dir, $LibVersion) = @_;
@@ -519,7 +530,7 @@ Tweaks:
      { # system directory
          return;
      }
-@@ -17231,10 +17240,10 @@ sub getSOPaths_Dest($$)
+@@ -17231,10 +17236,10 @@ sub getSOPaths_Dest($$)
      {
          $Dest=~s/[\/\\]+\Z//g;
          my %Libs = ();
@@ -532,7 +543,7 @@ Tweaks:
              { # all files and symlinks that match the name of a library
                  if(get_filename($Path)=~/\A(|lib)\Q$TargetLibraryName\E[\d\-]*\.$LIB_EXT[\d\.]*\Z/i)
                  {
-@@ -17811,7 +17820,7 @@ sub find_libs($$$)
+@@ -17811,7 +17816,7 @@ sub find_libs($$$)
  {
      my ($Path, $Type, $MaxDepth) = @_;
      # FIXME: correct the search pattern
@@ -541,7 +552,7 @@ Tweaks:
  }
  
  sub createDescriptor($$)
-@@ -17931,7 +17940,7 @@ sub detect_bin_default_paths()
+@@ -17931,7 +17936,7 @@ sub detect_bin_default_paths()
          $EnvPaths.=":".$ENV{"BETOOLS"};
      }
      my $Sep = ($OSgroup eq "windows")?";":":|;";
@@ -550,7 +561,7 @@ Tweaks:
      {
          $Path = path_format($Path, $OSgroup);
          $Path=~s/[\/\\]+\Z//g;
-@@ -17941,14 +17950,14 @@ sub detect_bin_default_paths()
+@@ -17941,14 +17946,14 @@ sub detect_bin_default_paths()
          { # do NOT use binaries from target system
              next;
          }
@@ -567,7 +578,7 @@ Tweaks:
      writeFile("$TMP_DIR/empty.h", "");
      foreach my $Line (split(/\n/, `$GCC_PATH -v -x c++ -E \"$TMP_DIR/empty.h\" 2>&1`))
      { # detecting GCC default include paths
-@@ -17959,14 +17968,14 @@ sub detect_inc_default_paths()
+@@ -17959,14 +17964,14 @@ sub detect_inc_default_paths()
              $Path = path_format($Path, $OSgroup);
              if($Path=~/c\+\+|\/g\+\+\//)
              {
@@ -584,7 +595,7 @@ Tweaks:
              }
              else
              {
-@@ -17978,7 +17987,7 @@ sub detect_inc_default_paths()
+@@ -17978,7 +17983,7 @@ sub detect_inc_default_paths()
                    # or it is the internal cross-GCC path like arm-linux-gnueabi/include
                      next;
                  }
@@ -593,7 +604,7 @@ Tweaks:
              }
          }
      }
-@@ -18002,12 +18011,12 @@ sub detect_default_paths($)
+@@ -18002,12 +18007,12 @@ sub detect_default_paths($)
      if($Search!~/gcc/) {
          $GSearch = 0;
      }
@@ -608,7 +619,7 @@ Tweaks:
      { # <search_headers> section of the XML descriptor
        # do NOT search for systems headers
          $LSearch = 0;
-@@ -18017,11 +18026,7 @@ sub detect_default_paths($)
+@@ -18017,11 +18022,7 @@ sub detect_default_paths($)
          next if($Type eq "include" and not $HSearch);
          next if($Type eq "lib" and not $LSearch);
          next if($Type eq "bin" and not $BSearch);
@@ -621,7 +632,7 @@ Tweaks:
      }
      if($OSgroup ne "windows")
      { # unix-like
-@@ -18036,25 +18041,21 @@ sub detect_default_paths($)
+@@ -18036,25 +18037,21 @@ sub detect_default_paths($)
                # 2. use host commands: ldconfig, readelf, etc.
                  ($UsrDir, $RootDir) = ("$SystemRoot/usr", $SystemRoot);
              }
@@ -652,7 +663,7 @@ Tweaks:
                  }
              }
          }
-@@ -18062,40 +18063,32 @@ sub detect_default_paths($)
+@@ -18062,40 +18059,32 @@ sub detect_default_paths($)
      if($BSearch)
      {
          detect_bin_default_paths();
@@ -705,7 +716,7 @@ Tweaks:
          }
      }
      if($LSearch)
-@@ -18111,12 +18104,10 @@ sub detect_default_paths($)
+@@ -18111,12 +18100,10 @@ sub detect_default_paths($)
                      next;
                  }
                  $DyLib_DefaultPath{$Name} = $LPaths->{$Name};
@@ -720,7 +731,7 @@ Tweaks:
      }
      if($BSearch)
      {
-@@ -18145,10 +18136,9 @@ sub detect_default_paths($)
+@@ -18145,10 +18132,9 @@ sub detect_default_paths($)
          }
          if(not $GCC_PATH)
          { # try to find gcc-X.Y
@@ -733,7 +744,7 @@ Tweaks:
                  { # select the latest version
                      @GCCs = sort {$b cmp $a} @GCCs;
                      if(check_gcc($GCCs[0], "3"))
-@@ -18181,12 +18171,10 @@ sub detect_default_paths($)
+@@ -18181,12 +18167,10 @@ sub detect_default_paths($)
          if(not $NoStdInc)
          { # do NOT search in GCC standard paths
              my %DPaths = detect_inc_default_paths();
@@ -750,7 +761,7 @@ Tweaks:
          }
      }
      if($HSearch)
-@@ -18196,7 +18184,7 @@ sub detect_default_paths($)
+@@ -18196,7 +18180,7 @@ sub detect_default_paths($)
              $IncPath = $SystemRoot.$IncPath;
          }
          if(-d $IncPath) {
@@ -759,7 +770,7 @@ Tweaks:
          }
      }
  }
-@@ -18291,9 +18279,9 @@ sub find_gcc_cxx_headers($)
+@@ -18291,9 +18275,9 @@ sub find_gcc_cxx_headers($)
      my $LibVersion = $_[0];
      return if($Cache{"find_gcc_cxx_headers"});# this function should be called once
      # detecting system header paths
@@ -771,7 +782,7 @@ Tweaks:
          {
              my $FileName = get_filename($HeaderPath);
              next if($DefaultGccHeader{$FileName});
-@@ -18302,10 +18290,10 @@ sub find_gcc_cxx_headers($)
+@@ -18302,10 +18286,10 @@ sub find_gcc_cxx_headers($)
      }
      if($COMMON_LANGUAGE{$LibVersion} eq "C++" and not $STDCXX_TESTING)
      {
@@ -784,7 +795,7 @@ Tweaks:
              {
                  my $FileName = get_filename($Path);
                  next if($DefaultCppHeader{$FileName});
-@@ -19923,7 +19911,7 @@ sub scenario()
+@@ -19923,7 +19907,7 @@ sub scenario()
              my $Ret = readSystemDescriptor(readFile($DumpSystem));
              foreach (@{$Ret->{"Tools"}})
              {
