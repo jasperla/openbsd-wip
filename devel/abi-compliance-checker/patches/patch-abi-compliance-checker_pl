@@ -7,7 +7,7 @@ Tweaks:
   - Use "ectags" instead of "ctags" (OpenBSD-specific).
   - Do not even try to use C++0x mode (OpenBSD-specific).
 --- abi-compliance-checker.pl.orig	Fri Nov 23 15:59:42 2012
-+++ abi-compliance-checker.pl	Sat Nov 24 01:24:46 2012
++++ abi-compliance-checker.pl	Sat Nov 24 13:45:33 2012
 @@ -49,11 +49,13 @@
  # and the GNU Lesser General Public License along with this program.
  # If not, see <http://www.gnu.org/licenses/>.
@@ -598,13 +598,13 @@ Tweaks:
          $GSearch = 0;
      }
 -    if(keys(%{$SystemPaths{"include"}}))
-+    if(defined ${SystemPaths{"include"}} and @{$SystemPaths{"include"}})
++    if(defined $SystemPaths{"include"} and @{$SystemPaths{"include"}})
      { # <search_headers> section of the XML descriptor
        # do NOT search for systems headers
          $HSearch = 0;
      }
 -    if(keys(%{$SystemPaths{"lib"}}))
-+    if(defined ${SystemPaths{"lib"} and @{$SystemPaths{"lib"}})
++    if(defined $SystemPaths{"lib"} and @{$SystemPaths{"lib"}})
      { # <search_headers> section of the XML descriptor
        # do NOT search for systems headers
          $LSearch = 0;
