@@ -1,11 +1,12 @@
+$OpenBSD$
+
 - Disable anonymous stats.
 - Disable GPU.
 - Adjust the fonts list to fonts available in base.
 
-
---- data/js/conf.js.orig	Wed Sep 19 22:30:47 2012
-+++ data/js/conf.js	Wed Sep 19 22:46:46 2012
-@@ -25,7 +25,7 @@
+--- data/js/conf.js.orig	Tue Nov 27 02:39:36 2012
++++ data/js/conf.js	Tue Nov 27 02:42:04 2012
+@@ -25,7 +25,7 @@ default_settings: {
      , 'proxy_auth': false
      , 'proxy_auth_name': ''
      , 'proxy_auth_password': ''
@@ -14,7 +15,7 @@
      , 'shortcut_summon_hotot': '<Alt>C'
      , 'size_w': 500
      , 'size_h': 550
-@@ -33,7 +33,7 @@
+@@ -33,7 +33,7 @@ default_settings: {
      , 'close_to_exit': false
      , 'sign_in_automatically': false
      , 'starts_minimized': false
@@ -23,21 +24,21 @@
      , 'use_default_reply_all': false
      , 'pos_x': 0
      , 'pos_y': 0
-@@ -55,7 +55,7 @@
+@@ -55,7 +55,7 @@ default_prefs: {
          , 'font_size': 11
          , 'line_height': 1.4
          , 'enable_animation': true
 -        , 'enable_gpu_acceleration': true 
 +        , 'enable_gpu_acceleration': false
            // Behaviors
+         , 'auto_longer_tweet': true
          , 'use_preload_conversation': true
-         , 'use_alt_retweet': false
-@@ -98,7 +98,7 @@
+@@ -105,7 +105,7 @@ default_prefs: {
          , 'font_size': 11
          , 'line_height': 1.4
          , 'enable_animation': true
 -        , 'enable_gpu_acceleration': true
 +        , 'enable_gpu_acceleration': false
            // Behaviors
+         , 'auto_longer_tweet': true
          , 'use_preload_conversation': true
-         , 'use_alt_retweet': false

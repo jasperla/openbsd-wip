@@ -2,8 +2,7 @@
 
 COMMENT =	lightweight client for twitter and identi.ca
 
-V =		0.9.8.7
-REVISION =	1
+V =		0.9.8.10
 DISTNAME =	hotot-$V
 CATEGORIES =	net
 
@@ -22,7 +21,7 @@ WANTLIB =	c m pthread
 MASTER_SITES =	https://github.com/shellex/Hotot/tarball/${V}/ \
 		http://download.tuxfamily.org/jod/net/hotot/
 
-WRKDIST=	${WRKDIR}/shellex-Hotot-44272ff
+WRKDIST=	${WRKDIR}/shellex-Hotot-fc242c7
 
 MODPY_VERSION =	2.7
 CONFIGURE_ARGS =-DWITH_GIR=on -DWITH_GTK=on -DWITH_QT=off -DWITH_KDE=off \
