@@ -24,7 +24,7 @@ do-install:
 
 do-regress:
 	cd ${WRKBUILD} && \
-	    perl ${WRKSRC}/abi-compliance-checker.pl -test 2>&1 | \
+	    perl ${WRKSRC}/abi-compliance-checker.pl -test-dump 2>&1 | \
 	    awk '{print} /ERROR/ {EC=1} END {exit EC}'
 
 .include <bsd.port.mk>
