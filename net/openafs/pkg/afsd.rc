@@ -1,0 +1,53 @@
+#!/bin/sh
+#
+
+daemon="/usr/local/sbin/afsd"
+daemon_flags=
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+rc_restart=NO
+rc_stop=NO
+
+#   The standard rc_check does not work for OpenAFS client.
+#   The OpenAFS client daemon is a hidden system task.
+
+rc_check() {
+	local F=$( /sbin/mount | /usr/bin/awk '$1 == "AFS" { print $1 }' )
+
+	[ X${F} = X"AFS" ]
+}
+
+rc_do() {
+	[ -n "${RC_DEBUG}" ] && echo "doing $@"
+
+	"$@"
+}
+
+check_configuration() {
+	[ -f "/etc/openafs/CellServDB" ] ||
+	[ -f "/etc/openafs/ThisCell" ] ||
+	[ -f "/etc/openafs/cacheinfo" ]
+}
+
+rc_pre() {
+	echo
+
+	rc_do check_configuration || rc_err "OpenAFS client does not seem to be configured"
+
+	${rcexec} "/usr/bin/modstat -n afs >/dev/null"
+
+	[ $? -eq 0 ] || rc_err "OpenAFS kernel module not loaded"
+
+	set -- $( awk -F: '{ print $1, $2 }' /etc/openafs/cacheinfo )
+
+	[ -d "$1" ] || rc_err "OpenAFS client mount point missing: $1"
+	[ -d "$2" ] || rc_err "OpenAFS client cache directory missing: $2"
+
+	[ X"${afsclearcache}" = X"YES" ] && ${rcexec} "/bin/rm -f /var/spool/afs/CacheItems"
+
+	return 0
+}
+
+rc_cmd $1

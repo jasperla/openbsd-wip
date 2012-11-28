@@ -1,0 +1,11 @@
+$OpenBSD$
+--- src/venus/afsio.c.orig	Tue Nov 13 16:07:34 2012
++++ src/venus/afsio.c	Tue Nov 13 16:07:58 2012
+@@ -104,6 +104,7 @@
+ #include <assert.h>
+ pthread_key_t uclient_key;
+ #endif
++#include <stdint.h>
+ 
+ static int lockFile(struct cmd_syndesc *, void *);
+ static int readFile(struct cmd_syndesc *, void *);

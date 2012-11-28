@@ -1,0 +1,33 @@
+diff -u src/afs/OBSD/osi_vfsops.c.orig src/afs/OBSD/osi_vfsops.c
+--- src/afs/OBSD/osi_vfsops.c.orig	Mon Mar 26 18:03:34 2012
++++ src/afs/OBSD/osi_vfsops.c	Tue Nov 13 15:02:09 2012
+@@ -309,10 +309,18 @@ afs_badcall(struct proc *p, void *xx, register_t * yy)
+     return ENOSYS;
+ }
+ 
++#if defined(AFS_OBSD49_ENV)
++extern struct vops afs_vops;
++#endif
++
+ void
+ afs_obsd_getnewvnode(struct vcache *tvc)
+ {
++#if defined(AFS_OBSD49_ENV)
++    while (getnewvnode(VT_AFS, afs_globalVFS, &afs_vops, &tvc->v)) {
++#else
+     while (getnewvnode(VT_AFS, afs_globalVFS, afs_vnodeop_p, &tvc->v)) {
++#endif
+ 	/* no vnodes available, force an alloc (limits be damned)! */
+ 	desiredvnodes++;
+     }
+@@ -441,8 +449,10 @@ afs_vfs_load(struct lkm_table *lkmtp, int cmd)
+ {
+     extern char *memname[];
+ 
++#if ! defined(AFS_OBSD49_ENV)
+     vfs_opv_init_explicit(&afs_vnodeop_opv_desc);
+     vfs_opv_init_default(&afs_vnodeop_opv_desc);
++#endif
+     if (memname[M_AFSGENERIC] == NULL)
+ 	memname[M_AFSGENERIC] = afsgenmem;
+     if (memname[M_AFSFID] == NULL)
