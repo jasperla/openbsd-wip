@@ -1,0 +1,20 @@
+diff -u src/afs/OBSD/osi_machdep.h.orig src/afs/OBSD/osi_machdep.h
+--- src/afs/OBSD/osi_machdep.h.orig	Mon Mar 26 18:03:34 2012
++++ src/afs/OBSD/osi_machdep.h	Tue Nov 13 14:54:28 2012
+@@ -216,6 +216,16 @@ extern struct lock afs_global_lock;
+ 
+ #endif /* AFS_OBSD44_ENV */
+ 
++#define ifaddr_address_family(x) (x)->ifa_addr->sa_family
++#define ifaddr_address(x, y, z) memcpy(y, (x)->ifa_addr, z)
++#define ifaddr_netmask(x, y, z) memcpy(y, (x)->ifa_netmask, z)
++#define ifaddr_dstaddress(x, y, z) memcpy(y, (x)->ifa_dstaddr, z)
++#define ifaddr_ifnet(x) (x?(x)->ifa_ifp:0)
++#define ifnet_flags(x) (x?(x)->if_flags:0)
++#define ifnet_metric(x) (x?(x)->if_data.ifi_metric:0)
++#define ifnet_mtu(x) (x)->if_mtu
++#define ifaddr_withnet(x) ifa_ifwithnet(x)
++
+ #undef SPLVAR
+ #define SPLVAR int splvar
+ #undef NETPRI
