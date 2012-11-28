@@ -1,0 +1,10 @@
+- tweak openafs-setup to work in a client-less environment
+ - when setting up a secondary server
+   - perhaps dig in dns to have a complete list of servers
+   - actually ask for existing server(s) instead of just the primary
+- merge withcache into main build and use a subpackage
+- determine problem with lkm (fails to insert due to missing symbols currently)
+- checkout pthreaded servers, if better than lwp install by default
+- remove /usr/afs/etc (last transarc path)
+- consider a transarc path flavor, UofA and likely other places may wish
+  to have uniform paths across all servers
