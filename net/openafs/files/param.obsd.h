@@ -1,6 +1,6 @@
 /*
- * $OpenBSD: param.i386_obsd.h,v 1.2 2008/07/21 03:13:01 todd Exp $
- * Jim Rees, University of Michigan CITI
+ * Thanks to Jim Rees and University of Michigan CITI, for the initial
+ * OpenBSD porting work.
  */
 
 #ifndef	AFS_PARAM_H
@@ -10,14 +10,16 @@
 #include <sys/param.h>
 #endif
 
-#define SYS_NAME		"i386_obsd%OSrev%"
-#define SYS_NAME_ID		SYS_NAME_ID_i386_obsd%OSrev%
+#define SYS_NAME		"%ARCH%_obsd%OSrev%"
+#define SYS_NAME_ID		SYS_NAME_ID_%ARCH%_obsd%OSrev%
 
 #define AFS_XBSD_ENV		1	/* {Free,Open,Net}BSD */
 #define AFS_X86_XBSD_ENV	1
 
 #define AFS_NAMEI_ENV		1	/* User space interface to file system */
+#if defined(__LP64__)
 #define AFS_64BIT_ENV		1
+#endif
 #define AFS_64BIT_CLIENT	1
 #define AFS_64BIT_IOPS_ENV	1	/* Needed for NAMEI */
 #define AFS_OBSD_ENV		1
@@ -31,6 +33,15 @@
 #define AFS_OBSD41_ENV		1
 #define AFS_OBSD42_ENV		1
 #define AFS_OBSD43_ENV		1
+#define AFS_OBSD44_ENV		1
+#define AFS_OBSD45_ENV		1
+#define AFS_OBSD46_ENV		1
+#define AFS_OBSD47_ENV		1
+#define AFS_OBSD48_ENV		1
+#define AFS_OBSD49_ENV		1
+#define AFS_OBSD50_ENV		1
+#define AFS_OBSD51_ENV		1
+#define AFS_OBSD%OSrev%_ENV		1
 #define AFS_NONFSTRANS		1
 #define AFS_VM_RDWR_ENV		1
 #define AFS_VFS_ENV		1

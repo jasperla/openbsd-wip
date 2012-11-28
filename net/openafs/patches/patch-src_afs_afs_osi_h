@@ -1,0 +1,22 @@
+diff -u src/afs/afs_osi.h.orig src/afs/afs_osi.h
+--- src/afs/afs_osi.h.orig	Mon Mar 26 18:03:34 2012
++++ src/afs/afs_osi.h	Tue Nov 13 15:04:40 2012
+@@ -129,13 +129,17 @@ struct afs_osi_WaitHandle {
+  *
+  * Darwin, all of the BSDs, and Linux have their own
+  */
+-#if !defined(AFS_DARWIN_ENV) && !defined(AFS_XBSD_ENV) && !defined(AFS_LINUX20_ENV)
++#if !defined(AFS_DARWIN_ENV) && !defined(AFS_XBSD_ENV) && !defined(AFS_LINUX20_ENV) && !defined(AFS_OBSD49_ENV)
+ # define	vType(vc)	    (vc)->v.v_type
+ # define	vSetType(vc,type)   (vc)->v.v_type = (type)
+ # define	vSetVfsp(vc,vfsp)   (vc)->v.v_vfsp = (vfsp)
+ extern struct vnodeops *afs_ops;
+ # define	IsAfsVnode(v)	    ((v)->v_op == afs_ops)
+ # define	SetAfsVnode(v)	    (v)->v_op = afs_ops
++#endif
++#if defined(AFS_OBSD49_ENV)
++extern struct vops afs_vops;
++#define IsAfsVnode(v)	((v)->v_op == &afs_vops)
+ #endif
+ 
+ struct vcache;
