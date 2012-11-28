@@ -175,8 +175,7 @@ Welcome to the OpenAFS server1 setup script!
 
 This script will assist you in setting up your first afs server.
 
-It will use OpenAFS for the AFS server, but arla's afsd that comes with
-OpenBSD for the AFS client.
+It will use OpenAFS for the AFS server.
 
 It will use heimdal KerberosV that comes with OpenBSD.
 
@@ -377,19 +376,12 @@ ask_yn "Are you really sure that you're ready to proceed?"
 [[ $resp == n ]] && { echo "Ok, try again later.\n" ; exit ; }
 
 echo
-log "preparing ${SYSCONFDIR}/{open,}afs /usr/afs /var/openafs..."
+log "preparing ${SYSCONFDIR}/openafs /usr/afs /var/openafs..."
 
 # Initialize the filesystems
 initfs() {
 	kdestroy
-	pkill -9 afsd
-	umount /afs > /dev/null 2>&1
-	if [ -d /var/spool/afs ]; then
-		log clearing afs cache
-		retry rm -rf -- "/var/spool/afs/*"
-		retry mkdir -p /var/spool/afs
-	fi
-	log stopping any pre-existing arla and/or openafs daemons
+	log stopping any pre-existing openafs daemons
 	if [ "$(pgrep bosserver)" ]
 	then
 		bos shutdown localhost -noauth -wait > /dev/null 2>&1
@@ -433,7 +425,7 @@ fi
 
 # update the CellServDB's
 writecsdb() {
-	# put back arla's CellServDB when this script exits
+	# put back openafs's CellServDB when this script exits
 	log "Adding cell $c to CellServDB"
 	trap 'rm -rf $DIR; cp $CURdb $csdb; exit 1' 0 1 2 3 13 15
 	echo ">$c	# $c" > $DIR/CellServDB
@@ -445,11 +437,10 @@ writecsdb() {
 	else
 		echo "$ip	#$h" >> $DIR/CellServDB
 	fi
-	cat $DIR/CellServDB | \
-  		tee -a $csdb ${SYSCONFDIR}/openafs/server/CellServDB
+	cat $DIR/CellServDB | tee -a $csdb
 }
 writethiscell() {
-	echo $c | tee ${SYSCONFDIR}/openafs/server/ThisCell > /etc/afs/ThisCell
+	echo $c > ${SYSCONFDIR}/openafs/server/ThisCell
 }
 hostkeytab() {
 	kadd host/$h --random-key 
@@ -471,10 +462,6 @@ addexampleuser() {
 	log When asked for a password below, the answer will set it.
 	let sc=sc-1
 	kadd $A
-}
-disablearla() {
-	log "Disabling arla admin commands (use openafs commands on servers):"
-	retry chmod 644 /usr/sbin/{bos,pts,vos,fs}
 }
 setuppts() {
 	log setting up pts memberships, $pA as initial afs admin
@@ -546,11 +533,12 @@ addchg() {
 	done
 }
 
-log updating /etc/afs/CellServDB ${SYSCONFDIR}/openafs/server/CellServDB
 
-csdb=/etc/afs/CellServDB
+csdb=${SYSCONFDIR}/openafs/server/CellServDB
 CURdb=/var/backups/$(_fnchg $csdb).current
 BACKdb=/var/backups/$(_fnchg $csdb).backup
+
+log updating $csdb
 
 initfs
 backupcsdb
@@ -575,7 +563,6 @@ saveafskey
 if [ first -eq 1 ]; then
 	addexampleuser
 fi
-disablearla
 
 log starting unauthenticated bosserver
 retry bosserver -log -syslog -noauth
@@ -631,21 +618,9 @@ retry bosserver -log -syslog
 retry bos restart localhost -all -cell $c -localauth
 
 
-log starting afs client
-retry mkdir -p /afs
-[ "$(mount | egrep "^/afs")" ] || mount -t nnpfs /dev/nnpfs0 /afs
-retry /usr/libexec/afsd -z --log=/var/log/afsd.log
-
 log authenticating $A
 retry kinit $A
 retry pts listentries
-
-# do this on reboot
-grep "^afs=YES" /etc/rc.conf > /dev/null 2>&1 || \
-grep "^afs=YES" /etc/rc.conf.local > /dev/null 2>&1 || \
-echo afs=YES >> /etc/rc.conf.local
-
-retry ls /afs
 
 # only 1st afs server
 if [ first -eq 1 ]; then
@@ -660,13 +635,8 @@ log release of replicated volumes
 retry vos release root.afs
 retry vos release root.cell
 
-log restart afsd so it sees RO replicated volumes
-pkill afsd
-retry /usr/libexec/afsd -z --log=/var/log/afsd.log
-
 addchg /etc/kerberosV/krb5.conf
 addchg "+/etc/kerberosV/krb5.keytab"
-addchg /etc/afs/{CellServDB,ThisCell,afsd.conf}
 addchg ${SYSCONFDIR}/openafs/{BosConfig,server/{CellServDB,ThisCell,UserList,krb.conf}}
 addchg "+${SYSCONFDIR}/openafs/server/KeyFile"
 addchg /var/openafs/NetInfo
