@@ -1,10 +1,16 @@
-- tweak openafs-setup to work in a client-less environment
+- tweak openafs-setup
  - when setting up a secondary server
    - perhaps dig in dns to have a complete list of servers
    - actually ask for existing server(s) instead of just the primary
+   - figure out how to bootstrap a cell without an afs client (if it is
+     possible), alternately get the lkm working
 - merge withcache into main build and use a subpackage
 - determine problem with lkm (fails to insert due to missing symbols currently)
 - checkout pthreaded servers, if better than lwp install by default
-- remove /usr/afs/etc (last transarc path)
+- /usr/afs
+  - add to fake area so openafs-setup doesn't do it until src mods remove the
+    path from being necessary
 - consider a transarc path flavor, UofA and likely other places may wish
   to have uniform paths across all servers
+- annotate sample krb5.conf with optional dns entries that can
+  deprecate having manually specified bits in krb5.conf
