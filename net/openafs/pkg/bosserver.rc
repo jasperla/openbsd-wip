@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+
+daemon="/usr/local/sbin/bosserver"
+daemon_flags=
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_do() {
+	[ -n "${RC_DEBUG}" ] && echo "doing $@"
+
+	"$@"
+}
+
+check_configuration() {
+	[ -f "/etc/openafs/BosConfig" ] ||
+	[ -f "/etc/openafs/server/CellServDB" ] ||
+	[ -f "/etc/openafs/server/ThisCell" ]
+}
+
+rc_pre() {
+	rc_do check_configuration || rc_err "OpenAFS server does not seem to be configured"
+}
+
+case "$1" in
+restart|stop)
+	rc_do rc_check && ${rcexec} "/usr/local/bin/bos shutdown localhost -localauth -wait"
+	;;
+esac
+
+rc_cmd $1

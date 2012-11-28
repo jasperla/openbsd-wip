@@ -1,0 +1,12 @@
+diff -u src/libafs/MakefileProto.OBSD.in.orig src/libafs/MakefileProto.OBSD.in
+--- src/libafs/MakefileProto.OBSD.in.orig	Mon Mar 26 18:03:34 2012
++++ src/libafs/MakefileProto.OBSD.in	Tue Nov 13 15:00:04 2012
+@@ -16,7 +16,7 @@ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ 
+ # System specific build commands and flags
+ KSRC = @BSD_KERNEL_PATH@
+-KFLAGS= -Wall -march=i486 -fno-builtin-printf -fno-builtin-log -fno-builtin-malloc -nostdinc
++KFLAGS= -Wall -fno-builtin-malloc -fno-builtin-printf -fno-builtin-log -fno-builtin-malloc -nostdinc
+ <i386_obsd33>
+ KFLAGS+= -fno-stack-protector
+ <all>
