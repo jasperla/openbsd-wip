@@ -1,17 +1,18 @@
 @comment $OpenBSD$
 @conflict kdelibs-<4.9.0p2
-include/libkdcraw/
-include/libkdcraw/dcrawinfocontainer.h
-include/libkdcraw/dcrawsettingswidget.h
-include/libkdcraw/kdcraw.h
-include/libkdcraw/libkdcraw_export.h
-include/libkdcraw/rawdecodingsettings.h
-include/libkdcraw/rawfiles.h
-include/libkdcraw/rcombobox.h
-include/libkdcraw/rexpanderbox.h
-include/libkdcraw/rnuminput.h
-include/libkdcraw/squeezedcombobox.h
-include/libkdcraw/version.h
+include/kde4/libkdcraw/
+include/kde4/libkdcraw/dcrawinfocontainer.h
+include/kde4/libkdcraw/dcrawsettingswidget.h
+include/kde4/libkdcraw/kdcraw.h
+include/kde4/libkdcraw/libkdcraw_export.h
+include/kde4/libkdcraw/rawdecodingsettings.h
+include/kde4/libkdcraw/rawfiles.h
+include/kde4/libkdcraw/rcombobox.h
+include/kde4/libkdcraw/rexpanderbox.h
+include/kde4/libkdcraw/rnuminput.h
+include/kde4/libkdcraw/squeezedcombobox.h
+include/kde4/libkdcraw/version.h
+@lib lib/kde4/private/libkdcraw.so.${LIBkdcraw_VERSION}
 @lib lib/libkdcraw.so.${LIBkdcraw_VERSION}
 lib/pkgconfig/libkdcraw.pc
 share/apps/cmake/modules/FindKdcraw.cmake
