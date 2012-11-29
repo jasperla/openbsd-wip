@@ -1,5 +1,8 @@
 @comment $OpenBSD$
+@pkgpath audio/clementine,-main
+@pkgpath audio/clementine,-kde4
 @bin bin/clementine
+@bin bin/clementine-tagreader
 share/applications/clementine.desktop
 share/clementine/
 share/clementine/projectm-presets/
@@ -574,13 +577,13 @@ share/clementine/projectm-presets/nil - Vortex of Vortices.milk
 share/clementine/projectm-presets/project.tga
 share/clementine/projectm-presets/shifter - escape the worm - Eo.S. + Phat - Before_It_Eats_Your_Brain_Mix_v2.milk
 share/clementine/projectm-presets/shifter - escape the worm - Eo.S. + Phat 5362.milk
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/application-x-clementine.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/application-x-clementine.svg
+share/kde4/
+share/kde4/services/
+share/kde4/services/clementine-feed.protocol
+share/kde4/services/clementine-itms.protocol
+share/kde4/services/clementine-itpc.protocol
+share/kde4/services/clementine-zune.protocol
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
