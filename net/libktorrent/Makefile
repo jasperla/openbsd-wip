@@ -4,7 +4,7 @@ CATEGORIES =	net
 COMMENT =	KTorrent engine
 DISTNAME =	libktorrent-${LIBKTORRENT_VERSION}
 HOMEPAGE =	http://ktorrent.org/
-REVISION =	0
+REVISION =	1
 
 EXTRACT_SUFX =	.tar.bz2
 
@@ -24,7 +24,8 @@ WANTLIB += gcrypt gmp qca2
 
 MASTER_SITES =	${HOMEPAGE}downloads/${KTORRENT_VERSION}/
 
-MODULES =	x11/kde4
+MODULES =		x11/kde4
+MODKDE4_USE =		libs
 
 BUILD_DEPENDS =	devel/boost \
 		devel/doxygen
