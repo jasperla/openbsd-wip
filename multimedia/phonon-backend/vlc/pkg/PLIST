@@ -1,5 +1,4 @@
 @comment $OpenBSD$
-lib/kde4/
 lib/kde4/plugins/
 lib/kde4/plugins/phonon_backend/
 lib/kde4/plugins/phonon_backend/phonon_vlc.so
