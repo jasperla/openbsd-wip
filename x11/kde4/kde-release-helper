@@ -57,6 +57,7 @@ usage() {
 	echo "usage: $0 prepare new-KDE-version" >&2
 	echo "       $0 check-lists" >&2
 	echo "       $0 merge" >&2
+	echo "       $0 show {built|packaged|unpackaged} [all|l10n|sc]" >&2
 #	echo "       $0 update use-flag" >&2
 	echo >&2
 	echo "examples:" >&2
@@ -123,8 +124,13 @@ port_dir_to_distname() {
 
 # Assume we're in KDE ports root directory.
 list_l10n_ports() {
+	local SHOWPKGNAME=${1:-Yes}
 	for L in $(cd l10n/ru && make show=ALL_LANGS); do
-		echo "kde-l10n-${L}"
+		if [ X"${SHOWPKGNAME}" = Yes ]; then
+			echo "kde-l10n-${L}"
+		else
+			echo "$L"
+		fi
 	done | sort
 }
 
@@ -282,6 +288,93 @@ EOF
 	git commit -m "Remove KDE $KDEV testing directory." -e -- $KPD
 }
 
+is_built() {
+	# XXX Rely on SEPARATE_BUILD being set to avoid extra make invocation
+	D=`cd $1 && make show=WRKBUILD`
+	test -e "$D/.build_done"
+}
+
+is_packaged() {
+	for F in `cd $1 && make show=PKGFILES`; do
+		test -e "$F" || return 1
+	done
+	return 0
+}
+
+show() {
+	test $# -ge 1 -a $# -le 2 || usage
+
+	if ! [ -f ../kde4/kde4.port.mk -a X"`cd .. && basename $(pwd)`" = Xx11 ]; then
+		echo "Please run $0 from a KDE 4 directory in ports tree" >&2
+		exit 2
+	fi
+
+	local SHOWSC SHOWL10N
+	case ${2:-all} in
+	all)
+		SHOWSC=Yes
+		SHOWL10N=Yes
+		;;
+	sc)
+		SHOWSC=Yes
+		SHOWL10N=No
+		;;
+	l10n)
+		SHOWSC=No
+		SHOWL10N=Yes
+		;;
+	*)
+		usage
+		;;
+	esac
+
+	local P
+	case $1 in
+	b|bu|bui|buil|built)
+		if [ $SHOWSC = Yes ]; then
+			for P in `list_local_ports`; do
+				is_built $P && echo $P
+			done
+		fi
+		if [ $SHOWL10N = Yes ]; then
+			for P in `list_l10n_ports`; do
+				is_built l10n/$P && echo l10n/$P
+			done
+		fi
+		;;
+
+	p|pa|pac|pack|packa|packag|package|packaged)
+		if [ $SHOWSC = Yes ]; then
+			for P in `list_local_ports`; do
+				is_packaged $P && echo $P
+			done
+		fi
+		if [ $SHOWL10N = Yes ]; then
+			for P in `list_l10n_ports`; do
+				is_packaged l10n/$P && echo l10n/$P
+			done
+		fi
+		;;
+
+	u|un|unp|unpa|unpac|unpack|unpacka|unpackag|unpackage|unpackaged)
+		if [ $SHOWSC = Yes ]; then
+			for P in `list_local_ports`; do
+				is_packaged $P || echo $P
+			done
+		fi
+		if [ $SHOWL10N = Yes ]; then
+			for P in `list_l10n_ports`; do
+				is_packaged l10n/$P || echo l10n/$P
+			done
+		fi
+		;;
+
+	*)
+		usage
+	esac
+	true
+}
+
 update() {
 	test $# -ge 1 || usage
 }
@@ -301,6 +394,10 @@ check-l|check-li|check-lis|check-list|check-lists)
 
 m|me|mer|merg|merge)
 	merge_back "$@"
+	;;
+
+s|sh|sho|show)
+	show "$@"
 	;;
 
 u|up|upd|upda|updat|update)
