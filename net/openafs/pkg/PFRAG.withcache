@@ -1,8 +1,8 @@
 @comment $OpenBSD: PLIST,v 1.5 2010/11/15 08:11:17 jasper Exp $
 %%SHARED%%
+lib/openafs/libafs.o
 @owner root
 @group wheel
 @bin sbin/afsd
 @owner
 @group
-lib/openafs/libafs.o

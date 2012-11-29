@@ -5,7 +5,8 @@ ONLY_FOR_ARCHS=		i386 amd64
 COMMENT=		OpenAFS distributed filesystem
 
 VERSION=		1.6.1
-DISTNAME=		openafs-${VERSION}
+DISTNAME=		openafs-${VERSION}-src
+PKGNAME=		openafs-${VERSION}
 
 CATEGORIES=		net
 
@@ -28,7 +29,9 @@ SHARED_LIBS +=  kopenafs                  1.1
 
 MASTER_SITES=		http://www.openafs.org/dl/openafs/${VERSION}/
 
-EXTRACT_SUFX=		-src.tar.gz
+EXTRACT_SUFX=		.tar.gz
+DOC_DISTFILE=		openafs-${VERSION}-doc
+DISTFILES=		${DISTNAME}${EXTRACT_SUFX} ${DOC_DISTFILE}${EXTRACT_SUFX}
 
 NO_REGRESS=		Yes
 
@@ -51,6 +54,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 
 FLAVORS=	debug withcache
 FLAVOR?=
+
+WRKDIST=	${WRKDIR}/openafs-${VERSION}
 
 post-patch:
 	@sed "s/%OSrev%/${OSrev}/g;s/%ARCH%/${ARCH}/g" \
@@ -89,5 +94,13 @@ CONFIGURE_ARGS+=	--enable-littleendian
 .else
 CONFIGURE_ARGS+=	--enable-bigendian
 .endif
+
+post-extract:
+	cd ${WRKSRC} && tar xzf ${FULLDISTDIR}/${DOC_DISTFILE}${EXTRACT_SUFX}
+
+post-install:
+.for dir in man1 man5 man8
+	cd ${WRKSRC}/doc/man-pages/${dir} && pax -rw . ${PREFIX}/man
+.endfor
 
 .include <bsd.port.mk>
