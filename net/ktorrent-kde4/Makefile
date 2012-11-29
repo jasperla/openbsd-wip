@@ -31,6 +31,6 @@ MODULES =	x11/kde4
 MODKDE4_USE =	pim workspace
 
 LIB_DEPENDS =	audio/taglib \
-		STEM->=${LIBKTORRENT_VERSION}:x11/kde4/libktorrent
+		STEM->=${LIBKTORRENT_VERSION}:net/libktorrent
 
 .include <bsd.port.mk>
