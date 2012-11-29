@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, exiv2 wrapper
 DISTNAME =	libkexiv2-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kexiv2			0.0	# 10.0
 
