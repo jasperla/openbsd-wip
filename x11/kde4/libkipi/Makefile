@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, image plugins infrastructure
 DISTNAME =	libkipi-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kipi		2.0
 
