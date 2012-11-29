@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/tubik/Makefile.in.orig	Thu Nov 29 09:58:01 2012
++++ src/tubik/Makefile.in	Thu Nov 29 10:04:55 2012
+@@ -7,7 +7,7 @@
+ 
+ srcdir=@srcdir@/../ubik
+ include @TOP_OBJDIR@/src/config/Makefile.config
+-INSTALL = @INSTALL@
++INSTALL = cp
+ INSTALL_DATA = @INSTALL_DATA@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_SCRIPT = @INSTALL_SCRIPT@
