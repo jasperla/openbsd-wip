@@ -1,5 +1,4 @@
 @comment $OpenBSD$
-%%SHARED%%
 include/prison/
 include/prison/AbstractBarcode
 include/prison/BarcodeItem
@@ -15,3 +14,4 @@ include/prison/qrcodebarcode.h
 lib/cmake/
 lib/cmake/Prison/
 lib/cmake/Prison/PrisonConfig.cmake
+@lib lib/libprison.so.${LIBprison_VERSION}
