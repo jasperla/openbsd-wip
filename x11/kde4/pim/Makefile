@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, personal information management
 DISTNAME =	kdepim-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	akonadi_next 0.0
 SHARED_LIBS +=	akregatorinterfaces 0.0
