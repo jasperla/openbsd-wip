@@ -1,13 +1,11 @@
 # $OpenBSD: Makefile,v 1.12 2011/09/16 12:29:16 espie Exp $
 
-
-BROKEN=		Need to resolve various issues
 COMMENT=	front-end/embeddable kpart for mplayer
-CATEGORIES=	x11	x11/kde
+CATEGORIES=	x11 x11/kde
 DISTNAME=	kmplayer-0.6.4
 EXTRACT_SUFX=	.tar.bz2
 
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS=	kparts_kmplayer  0.0 \
 		kdeinit_kmplayer 0.0
