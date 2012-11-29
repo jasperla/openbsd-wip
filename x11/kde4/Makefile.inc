@@ -21,3 +21,5 @@ PERMIT_PACKAGE_FTP =		Yes
 # sees empty CONFIGURE_STYLE, it forces that this is Python
 # module port, and breaks build.
 CONFIGURE_STYLE =	cmake
+
+MODKDE4_LIB_LINKS =	Yes

@@ -2,15 +2,16 @@
 
 COMMENT =	K Desktop Environment, printer status applet
 DISTNAME =	printer-applet-${MODKDE_VERSION}
+REVISION =	0
 
 MODULES =	lang/python
 
 BUILD_DEPENDS =		x11/kde4/py-kde \
-			print/py-cups>=1.9.62p0
+			print/py-cups>=1.9.62p0 \
+			print/system-config-printer
 
-RUN_DEPENDS =		print/py-cups>=1.9.62p0
-
-LIB_DEPENDS =		print/system-config-printer
+RUN_DEPENDS =		print/py-cups>=1.9.62p0 \
+			print/system-config-printer
 
 MODPY_ADJ_FILES =	authconn.py \
 			debug.py \

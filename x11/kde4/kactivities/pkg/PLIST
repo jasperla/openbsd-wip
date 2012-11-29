@@ -1,16 +1,16 @@
 @comment $OpenBSD$
 @bin bin/kactivitymanagerd
-include/KDE/KActivities/
-include/KDE/KActivities/Consumer
-include/KDE/KActivities/Controller
-include/KDE/KActivities/Info
-include/KDE/KActivities/ResourceInstance
-include/kactivities/
-include/kactivities/consumer.h
-include/kactivities/controller.h
-include/kactivities/info.h
-include/kactivities/kactivities_export.h
-include/kactivities/resourceinstance.h
+include/kde4/KDE/KActivities/
+include/kde4/KDE/KActivities/Consumer
+include/kde4/KDE/KActivities/Controller
+include/kde4/KDE/KActivities/Info
+include/kde4/KDE/KActivities/ResourceInstance
+include/kde4/kactivities/
+include/kde4/kactivities/consumer.h
+include/kde4/kactivities/controller.h
+include/kde4/kactivities/info.h
+include/kde4/kactivities/kactivities_export.h
+include/kde4/kactivities/resourceinstance.h
 lib/cmake/KActivities/
 lib/cmake/KActivities/KActivitiesConfig.cmake
 lib/cmake/KActivities/KActivitiesConfigVersion.cmake
@@ -23,6 +23,7 @@ lib/kde4/activitymanager_uihandler_declarative.so
 lib/kde4/activitymanager_uihandler_kdialog.so
 lib/kde4/kactivitymanagerd_fileitem_linking_plugin.so
 lib/kde4/kio_activities.so
+@lib lib/kde4/private/libkactivities.so.${LIBkactivities_VERSION}
 @lib lib/libkactivities.so.${LIBkactivities_VERSION}
 lib/pkgconfig/libkactivities.pc
 share/apps/plasma/packages/
