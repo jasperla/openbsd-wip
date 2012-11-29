@@ -5,7 +5,7 @@ CATEGORIES =	multimedia devel x11/kde4
 VERSION =	4.6.0
 DISTNAME =	phonon-${VERSION}
 HOMEPAGE =	http://phonon.kde.org/
-REVISION =	2
+REVISION =	3
 
 # Renamed to avoid clashing with Qt4's one
 SHARED_LIBS =	phonon_s		0.0
@@ -17,10 +17,11 @@ PERMIT_DISTFILES_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/phonon/${VERSION}/src/}
+MASTER_SITES =		${MASTER_SITE_KDE:=stable/phonon/${VERSION}/src/}
 
-MODULES =	x11/kde4
+MODULES =		x11/kde4
 MODKDE4_USE =
+MODKDE4_LIB_LINKS =	Yes
 
 WANTLIB =	m pthread stdc++
 WANTLIB +=	lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui

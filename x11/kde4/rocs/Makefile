@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, Graph Theory IDE
 DISTNAME =	rocs-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	rocslib			0.0 # 4.7
 
@@ -12,11 +13,9 @@ WANTLIB += lib/qt4/QtXml
 WANTLIB += kdeui kio knewstuff3 kparts krosscore
 WANTLIB += krossui ktexteditor nepomuk nepomukutils plasma
 WANTLIB += soprano
+WANTLIB += boost_graph-mt
 
-BUILD_DEPENDS =	devel/boost
-
-# Requires Boost >= 1.43
-CONFIGURE_ARGS =	-DBUILD_DotFilePlugin:Bool=No
+LIB_DEPENDS =	devel/boost
 
 # XXX Ugly hack until CMake or rocs, whatever, could be fixed.
 LOST_LIBS =	rocs_GraphStructure rocs_ListStructure

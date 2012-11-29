@@ -140,17 +140,35 @@ MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/workspace
 
 .if ${CONFIGURE_STYLE:Mcmake}
 .   if ${FLAVOR:Mdebug}
-MODKDE4_CONF_ARGS +=	-DCMAKE_BUILD_TYPE:String=Debug
-MODKDE4_CMAKE_PREFIX =	-debug
+MODKDE4_CONF_ARGS +=	-DCMAKE_BUILD_TYPE:String=DebugFull
+MODKDE4_CMAKE_PREFIX =	-debugfull
 .   else
-MODKDE4_CONF_ARGS +=	-DCMAKE_BUILD_TYPE:String=Release
-MODKDE4_CMAKE_PREFIX =	-release
+MODKDE4_CONF_ARGS +=	-DCMAKE_BUILD_TYPE:String=RelWithDebInfo
+MODKDE4_CMAKE_PREFIX =	-relwithdebinfo
 .   endif
 
+MODKDE4_INCLUDE_DIR =	include/kde4
+MODKDE4_LIB_DIR =	lib/kde4/private
+MODKDE_INCLUDE_DIR =	${MODKDE4_INCLUDE_DIR}
+MODKDE_LIB_DIR =	${MODKDE4_LIB_DIR}
+
 # Use right directories
-CONFIGURE_ARGS +=	-DMAN_INSTALL_DIR=${PREFIX}/man \
-			-DINFO_INSTALL_DIR=${PREFIX}/info \
-			-DLIBEXEC_INSTALL_DIR=${PREFIX}/libexec
+MODKDE4_CONF_ARGS +=	-DMAN_INSTALL_DIR:Path=${PREFIX}/man \
+			-DINFO_INSTALL_DIR:Path=${PREFIX}/info \
+			-DLIBEXEC_INSTALL_DIR:Path=${PREFIX}/libexec \
+			-DSYSCONF_INSTALL_DIR:Path=${SYSCONFDIR}
+
+# Avoid conflicts with KDE3.
+# Libraries are handled in kde4-post-install target, see below.
+MODKDE4_CONF_ARGS +=	-DINCLUDE_INSTALL_DIR:Path=${MODKDE4_INCLUDE_DIR} \
+			-DKDE4_LIB_INSTALL_DIR:Path=${PREFIX}/${MODKDE4_LIB_DIR}
+
+# Enable PIE if supported by platform
+. if !empty(PIE_ARCH:M${ARCH})
+MODKDE4_CONF_ARGS +=	-DKDE4_ENABLE_FPIE:Bool=Yes
+. else
+MODKDE4_CONF_ARGS +=	-DKDE4_ENABLE_FPIE:Bool=No
+. endif
 
 # NOTE: due to bugs in make-plist, plist may contain
 # ${FLAVORS} instead of ${MODKDE4_CMAKE_PREFIX}.
@@ -252,13 +270,47 @@ MODKDE4_post-patch =	@echo '====> Fixing GETTEXT_PROCESS_PO_FILES() calls'; \
 #   dbus-1	share/examples
 MODKDE4_SYSCONF_FILES ?=
 
+# Create soft links for shared libraries in ${PREFIX}/lib to
+# ${MODKDE4_LIB_DIR}. Used to avoid clashing with KDE 3.
+MODKDE4_LIB_LINKS ?=	No
+
+# We cannot use at least "MODKDE4_pre-install", as it means a totally different
+# thing for MODULES rather than for ports. So play another game...
+
+# Always create directory for headers, remove later if left empty
+kde4-pre-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/${MODKDE4_INCLUDE_DIR}
+
+# 1. Remove includes directory created above, if empty.
+# 2. Create links for shared libraries in ${PREFIX}/lib/kde4/private/ ,
+#    to allow using -DKDE4_LIB_INSTALL_DIR=${PREFIX}/lib/kde4/private.
+# 3. Fixup files in ${SYSCONFDIR}, see notes for MODKDE4_SYSCONF_FILES above.
 kde4-post-install:
-.for F D in ${MODKDE4_SYSCONF_FILES}
-	rm -Rf ${PREFIX}/$D/$F
-	${INSTALL_DATA_DIR} ${PREFIX}/$D
-	mv ${WRKINST}${SYSCONFDIR}/$F ${PREFIX}/$D/$F
+	rmdir ${PREFIX}/${MODKDE4_INCLUDE_DIR} 2>/dev/null || true
+#	if [ -d ${PREFIX}/lib/kde4 ]; then \
+#		${INSTALL_DATA_DIR} ${PREFIX}/${MODKDE4_LIB_DIR}; \
+#		cd ${PREFIX}/${MODKDE4_LIB_DIR} && ln -s .. kde4; \
+#	fi
+.if ${MODKDE4_LIB_LINKS:L} == "yes" && defined(SHARED_LIBS) && !empty(SHARED_LIBS)
+	${INSTALL_DATA_DIR} ${PREFIX}/${MODKDE4_LIB_DIR}
+. for _l _v in ${SHARED_LIBS}
+# Note that number of upper-level directories depends on
+# actual ${MODKDE4_LIB_DIR} value relative to ${PREFIX}/lib.
+	if [ -e ${PREFIX}/lib/lib${_l}.so.${_v} ]; then \
+		cd ${PREFIX}/${MODKDE4_LIB_DIR} && \
+		    ln -sf ../../lib${_l}.so.${_v}; \
+	fi
+. endfor
+.endif
+.for _f _d in ${MODKDE4_SYSCONF_FILES}
+	rm -Rf ${PREFIX}/${_d}/${_f}
+	${INSTALL_DATA_DIR} ${PREFIX}/${_d}
+	mv ${WRKINST}${SYSCONFDIR}/${_f} ${PREFIX}/${_d}/${_f}
 .endfor
 
+.if !target(pre-install)
+pre-install: kde4-pre-install
+.endif
 .if !target(post-install)
 post-install: kde4-post-install
 .endif

@@ -13,22 +13,22 @@
 @bin bin/nspluginviewer
 bin/servicemenudeinstallation
 bin/servicemenuinstallation
-include/knewmenu.h
-include/konq_dndpopupmenuplugin.h
-include/konq_events.h
-include/konq_fileitemcapabilities.h
-include/konq_historyentry.h
-include/konq_historyprovider.h
-include/konq_menuactions.h
-include/konq_operations.h
-include/konq_popupmenu.h
-include/konq_popupmenuinformation.h
-include/konq_popupmenuplugin.h
-include/konqmimedata.h
-include/konqsidebarplugin.h
-include/kversioncontrolplugin.h
-include/kversioncontrolplugin2.h
-include/libkonq_export.h
+include/kde4/knewmenu.h
+include/kde4/konq_dndpopupmenuplugin.h
+include/kde4/konq_events.h
+include/kde4/konq_fileitemcapabilities.h
+include/kde4/konq_historyentry.h
+include/kde4/konq_historyprovider.h
+include/kde4/konq_menuactions.h
+include/kde4/konq_operations.h
+include/kde4/konq_popupmenu.h
+include/kde4/konq_popupmenuinformation.h
+include/kde4/konq_popupmenuplugin.h
+include/kde4/konqmimedata.h
+include/kde4/konqsidebarplugin.h
+include/kde4/kversioncontrolplugin.h
+include/kde4/kversioncontrolplugin2.h
+include/kde4/libkonq_export.h
 lib/kde4/adblock.so
 lib/kde4/akregatorkonqfeedicon.so
 lib/kde4/autorefresh.so
@@ -68,6 +68,11 @@ lib/kde4/libkcminit_nsplugins.so
 lib/kde4/libnsplugin.so
 lib/kde4/minitoolsplugin.so
 lib/kde4/plasma_applet_folderview.so
+@lib lib/kde4/private/libdolphinprivate.so.${LIBdolphinprivate_VERSION}
+@lib lib/kde4/private/libkbookmarkmodel_private.so.${LIBkbookmarkmodel_private_VERSION}
+@lib lib/kde4/private/libkonq.so.${LIBkonq_VERSION}
+@lib lib/kde4/private/libkonqsidebarplugin.so.${LIBkonqsidebarplugin_VERSION}
+@lib lib/kde4/private/libkonquerorprivate.so.${LIBkonquerorprivate_VERSION}
 lib/kde4/rellinksplugin.so
 lib/kde4/searchbarplugin.so
 lib/kde4/uachangerplugin.so

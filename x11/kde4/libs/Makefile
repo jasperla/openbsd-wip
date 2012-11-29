@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, libraries
 DISTNAME =	kdelibs-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kde3support          1.0      # .4.0
 SHARED_LIBS +=	kdecore              9.0      # .5.0
@@ -29,7 +30,6 @@ SHARED_LIBS +=	knewstuff2           1.0      # .4.0
 SHARED_LIBS +=	krossui              1.0      # .4.0
 SHARED_LIBS +=  kpty                 1.0      # .4.0
 
-SHARED_LIBS += 	krossqtsplugin 		1.0
 SHARED_LIBS +=  kjsapi 			1.0
 SHARED_LIBS +=	kdewebkit		1.0
 SHARED_LIBS +=	knewstuff3		1.0
@@ -45,6 +45,14 @@ SHARED_LIBS +=  kprintutils		1.0 # 4.7
 SHARED_LIBS +=  nepomuk			1.0 # 4.9
 SHARED_LIBS +=  nepomukquery		1.0 # 4.9
 SHARED_LIBS +=  nepomukutils		1.0 # 4.9
+
+# Each lib is used by corresponding binary in libexec/,
+# so technically those are not plugins.
+SHARED_LIBS +=	kdeinit4_kbuildsycoca4		0.0
+SHARED_LIBS +=	kdeinit4_kconf_update		0.0
+SHARED_LIBS +=	kdeinit4_kded4			0.0
+SHARED_LIBS +=	kdeinit4_kio_http_cache_cleaner	0.0
+SHARED_LIBS +=	kdeinit4_klauncher		0.0
 
 WANTLIB =  c m pthread stdc++ z
 WANTLIB += Half ICE Iex IlmImf IlmThread Imath
@@ -119,10 +127,6 @@ MODKDE4_SYSCONF_FILES =	dbus-1	share/examples \
 			xdg	share/examples
 
 post-extract:
-	@if pkg_info -e 'kdelibs-<4'; then \
-		echo "Error: don't try to build with kde3 around"; \
-		exit 1; \
-	fi
 .for M in ${REWR_CMAKE_MODULES}
 	cp ${FILESDIR}/${M}.cmake ${WRKSRC}/cmake/modules/${M}.cmake
 .endfor

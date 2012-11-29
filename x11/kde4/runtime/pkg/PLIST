@@ -1,6 +1,5 @@
 @comment $OpenBSD: PLIST,v 1.4 2010/06/20 09:36:14 espie Exp $
 @conflict kdebase-<4
-@group wheel
 @bin bin/kcmshell4
 @bin bin/kde-cp
 @bin bin/kde-mv
@@ -31,9 +30,9 @@ bin/kde4
 @bin bin/plasma-remote-helper
 @bin bin/plasmapkg
 @bin bin/solid-hardware
-include/knotify_export.h
-include/knotifyconfig.h
-include/knotifyplugin.h
+include/kde4/knotify_export.h
+include/kde4/knotifyconfig.h
+include/kde4/knotifyplugin.h
 lib/attica_kde.so
 lib/kconf_update_bin/
 @bin lib/kconf_update_bin/phonon_devicepreference_update
@@ -260,6 +259,8 @@ lib/kde4/platformimports/touch/org/kde/plasma/components/private/TextFieldFocus.
 lib/kde4/platformimports/touch/org/kde/plasma/components/qmldir
 lib/kde4/plugins/phonon_platform/
 lib/kde4/plugins/phonon_platform/kde.so
+@lib lib/kde4/private/libkwalletbackend.so.${LIBkwalletbackend_VERSION}
+@lib lib/kde4/private/libmolletnetwork.so.${LIBmolletnetwork_VERSION}
 lib/kde4/svgthumbnail.so
 lib/kde4/textthumbnail.so
 lib/kde4/windowsexethumbnail.so
@@ -276,9 +277,11 @@ lib/libknotifyplugin.so
 @bin libexec/kcmremotewidgetshelper
 libexec/kdeeject
 @bin libexec/kdesu
+@group wheel
 @mode g+s
 @bin libexec/kdesud
 @mode
+@group
 @bin libexec/kdontchangethehostname
 libexec/khc_docbookdig.pl
 libexec/khc_htdig.pl
