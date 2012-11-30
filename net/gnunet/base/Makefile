@@ -40,7 +40,7 @@ SHARED_LIBS +=  gnunetvpn                 0.0 # 0.0
 
 WANTLIB += bz2 c crypto curl expat extractor fontconfig freetype
 WANTLIB += gcrypt gpg-error idn ltdl m pthread sqlite3 ssl unistring
-WANTLIB += z
+WANTLIB += z ogg
 
 MODULES =		devel/gettext
 LIB_DEPENDS =		devel/libextractor \
