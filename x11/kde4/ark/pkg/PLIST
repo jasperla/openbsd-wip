@@ -10,6 +10,7 @@ lib/kde4/kerfuffle_libbz2.so
 lib/kde4/kerfuffle_libgz.so
 lib/kde4/kerfuffle_libxz.so
 lib/kde4/libextracthere.so
+@lib lib/kde4/private/libkerfuffle.so.${LIBkerfuffle_VERSION}
 @lib lib/libkerfuffle.so.${LIBkerfuffle_VERSION}
 @man man/man1/ark.1
 share/applications/kde4/ark.desktop
