@@ -52,122 +52,122 @@ bin/krdb
 @bin bin/solid-action-desktop-gen
 bin/startkde
 @bin bin/systemsettings
-include/KDE/Plasma/Weather/
-include/KDE/Plasma/Weather/Ion
-include/kcommondecoration.h
-include/kdecoration.h
-include/kdecorationbridge.h
-include/kdecorationfactory.h
-include/kgreeterplugin.h
-include/kscreensaver.h
-include/kscreensaver_export.h
-include/kscreensaver_vroot.h
-include/ksgrd/
-include/ksgrd/SensorAgent.h
-include/ksgrd/SensorClient.h
-include/ksgrd/SensorManager.h
-include/ksgrd/SensorShellAgent.h
-include/ksgrd/SensorSocketAgent.h
-include/ksysguard/
-include/ksysguard/KTextEditVT.h
-include/ksysguard/ProcessFilter.h
-include/ksysguard/ProcessModel.h
-include/ksysguard/ksignalplotter.h
-include/ksysguard/ksysguardprocesslist.h
-include/ksysguard/lsof.h
-include/ksysguard/process.h
-include/ksysguard/processes.h
-include/kwinanimationeffect.h
-include/kwinconfig.h
-include/kwineffects.h
-include/kwinglobals.h
-include/kwinglplatform.h
-include/kwingltexture.h
-include/kwinglutils.h
-include/kwinglutils_funcs.h
-include/kwinxrenderutils.h
-include/kworkspace/
-include/kworkspace/kdisplaymanager.h
-include/kworkspace/kwindowlistmenu.h
-include/kworkspace/kworkspace.h
-include/kworkspace/kworkspace_export.h
-include/plasma/geolocation/
-include/plasma/geolocation/geolocation_export.h
-include/plasma/geolocation/geolocationprovider.h
-include/plasma/weather/
-include/plasma/weather/ion.h
-include/plasma/weather/ion_export.h
-include/plasmaclock/
-include/plasmaclock/calendar.h
-include/plasmaclock/calendartable.h
-include/plasmaclock/clockapplet.h
-include/plasmaclock/plasmaclock_export.h
-include/solid/control/
-include/solid/control/ifaces/
-include/solid/control/ifaces/modemcdmainterface.h
-include/solid/control/ifaces/modemgsmcardinterface.h
-include/solid/control/ifaces/modemgsmcontactsinterface.h
-include/solid/control/ifaces/modemgsmhsointerface.h
-include/solid/control/ifaces/modemgsmnetworkinterface.h
-include/solid/control/ifaces/modemgsmsmsinterface.h
-include/solid/control/ifaces/modemgsmussdinterface.h
-include/solid/control/ifaces/modeminterface.h
-include/solid/control/ifaces/modemlocationinterface.h
-include/solid/control/ifaces/modemmanager.h
-include/solid/control/ifaces/networkbtinterface.h
-include/solid/control/ifaces/networkcdmainterface.h
-include/solid/control/ifaces/networkgsminterface.h
-include/solid/control/ifaces/networkinterface.h
-include/solid/control/ifaces/networkmanager.h
-include/solid/control/ifaces/networkserialinterface.h
-include/solid/control/ifaces/wirednetworkinterface.h
-include/solid/control/ifaces/wirelessaccesspoint.h
-include/solid/control/ifaces/wirelessnetworkinterface.h
-include/solid/control/modemcdmainterface.h
-include/solid/control/modemgsmcardinterface.h
-include/solid/control/modemgsmcontactsinterface.h
-include/solid/control/modemgsmhsointerface.h
-include/solid/control/modemgsmnetworkinterface.h
-include/solid/control/modemgsmsmsinterface.h
-include/solid/control/modemgsmussdinterface.h
-include/solid/control/modeminterface.h
-include/solid/control/modemlocationinterface.h
-include/solid/control/modemmanager.h
-include/solid/control/modemmanagerinterface.h
-include/solid/control/networkbtinterface.h
-include/solid/control/networkcdmainterface.h
-include/solid/control/networkgsminterface.h
-include/solid/control/networking.h
-include/solid/control/networkinterface.h
-include/solid/control/networkipv4config.h
-include/solid/control/networkmanager.h
-include/solid/control/networkserialinterface.h
-include/solid/control/singletondefs.h
-include/solid/control/solid_control_export.h
-include/solid/control/wirednetworkinterface.h
-include/solid/control/wirelessaccesspoint.h
-include/solid/control/wirelessnetworkinterface.h
-include/systemsettingsview/
-include/systemsettingsview/BaseData.h
-include/systemsettingsview/BaseMode.h
-include/systemsettingsview/MenuItem.h
-include/systemsettingsview/MenuModel.h
-include/systemsettingsview/MenuProxyModel.h
-include/systemsettingsview/ModuleView.h
-include/systemsettingsview/systemsettingsview_export.h
-include/taskmanager/
-include/taskmanager/abstractgroupableitem.h
-include/taskmanager/abstractgroupingstrategy.h
-include/taskmanager/abstractsortingstrategy.h
-include/taskmanager/groupmanager.h
-include/taskmanager/launcheritem.h
-include/taskmanager/startup.h
-include/taskmanager/task.h
-include/taskmanager/taskactions.h
-include/taskmanager/taskgroup.h
-include/taskmanager/taskitem.h
-include/taskmanager/taskmanager.h
-include/taskmanager/taskmanager_export.h
+include/kde4/KDE/Plasma/Weather/
+include/kde4/KDE/Plasma/Weather/Ion
+include/kde4/kcommondecoration.h
+include/kde4/kdecoration.h
+include/kde4/kdecorationbridge.h
+include/kde4/kdecorationfactory.h
+include/kde4/kgreeterplugin.h
+include/kde4/kscreensaver.h
+include/kde4/kscreensaver_export.h
+include/kde4/kscreensaver_vroot.h
+include/kde4/ksgrd/
+include/kde4/ksgrd/SensorAgent.h
+include/kde4/ksgrd/SensorClient.h
+include/kde4/ksgrd/SensorManager.h
+include/kde4/ksgrd/SensorShellAgent.h
+include/kde4/ksgrd/SensorSocketAgent.h
+include/kde4/ksysguard/
+include/kde4/ksysguard/KTextEditVT.h
+include/kde4/ksysguard/ProcessFilter.h
+include/kde4/ksysguard/ProcessModel.h
+include/kde4/ksysguard/ksignalplotter.h
+include/kde4/ksysguard/ksysguardprocesslist.h
+include/kde4/ksysguard/lsof.h
+include/kde4/ksysguard/process.h
+include/kde4/ksysguard/processes.h
+include/kde4/kwinanimationeffect.h
+include/kde4/kwinconfig.h
+include/kde4/kwineffects.h
+include/kde4/kwinglobals.h
+include/kde4/kwinglplatform.h
+include/kde4/kwingltexture.h
+include/kde4/kwinglutils.h
+include/kde4/kwinglutils_funcs.h
+include/kde4/kwinxrenderutils.h
+include/kde4/kworkspace/
+include/kde4/kworkspace/kdisplaymanager.h
+include/kde4/kworkspace/kwindowlistmenu.h
+include/kde4/kworkspace/kworkspace.h
+include/kde4/kworkspace/kworkspace_export.h
+include/kde4/plasma/geolocation/
+include/kde4/plasma/geolocation/geolocation_export.h
+include/kde4/plasma/geolocation/geolocationprovider.h
+include/kde4/plasma/weather/
+include/kde4/plasma/weather/ion.h
+include/kde4/plasma/weather/ion_export.h
+include/kde4/plasmaclock/
+include/kde4/plasmaclock/calendar.h
+include/kde4/plasmaclock/calendartable.h
+include/kde4/plasmaclock/clockapplet.h
+include/kde4/plasmaclock/plasmaclock_export.h
+include/kde4/solid/control/
+include/kde4/solid/control/ifaces/
+include/kde4/solid/control/ifaces/modemcdmainterface.h
+include/kde4/solid/control/ifaces/modemgsmcardinterface.h
+include/kde4/solid/control/ifaces/modemgsmcontactsinterface.h
+include/kde4/solid/control/ifaces/modemgsmhsointerface.h
+include/kde4/solid/control/ifaces/modemgsmnetworkinterface.h
+include/kde4/solid/control/ifaces/modemgsmsmsinterface.h
+include/kde4/solid/control/ifaces/modemgsmussdinterface.h
+include/kde4/solid/control/ifaces/modeminterface.h
+include/kde4/solid/control/ifaces/modemlocationinterface.h
+include/kde4/solid/control/ifaces/modemmanager.h
+include/kde4/solid/control/ifaces/networkbtinterface.h
+include/kde4/solid/control/ifaces/networkcdmainterface.h
+include/kde4/solid/control/ifaces/networkgsminterface.h
+include/kde4/solid/control/ifaces/networkinterface.h
+include/kde4/solid/control/ifaces/networkmanager.h
+include/kde4/solid/control/ifaces/networkserialinterface.h
+include/kde4/solid/control/ifaces/wirednetworkinterface.h
+include/kde4/solid/control/ifaces/wirelessaccesspoint.h
+include/kde4/solid/control/ifaces/wirelessnetworkinterface.h
+include/kde4/solid/control/modemcdmainterface.h
+include/kde4/solid/control/modemgsmcardinterface.h
+include/kde4/solid/control/modemgsmcontactsinterface.h
+include/kde4/solid/control/modemgsmhsointerface.h
+include/kde4/solid/control/modemgsmnetworkinterface.h
+include/kde4/solid/control/modemgsmsmsinterface.h
+include/kde4/solid/control/modemgsmussdinterface.h
+include/kde4/solid/control/modeminterface.h
+include/kde4/solid/control/modemlocationinterface.h
+include/kde4/solid/control/modemmanager.h
+include/kde4/solid/control/modemmanagerinterface.h
+include/kde4/solid/control/networkbtinterface.h
+include/kde4/solid/control/networkcdmainterface.h
+include/kde4/solid/control/networkgsminterface.h
+include/kde4/solid/control/networking.h
+include/kde4/solid/control/networkinterface.h
+include/kde4/solid/control/networkipv4config.h
+include/kde4/solid/control/networkmanager.h
+include/kde4/solid/control/networkserialinterface.h
+include/kde4/solid/control/singletondefs.h
+include/kde4/solid/control/solid_control_export.h
+include/kde4/solid/control/wirednetworkinterface.h
+include/kde4/solid/control/wirelessaccesspoint.h
+include/kde4/solid/control/wirelessnetworkinterface.h
+include/kde4/systemsettingsview/
+include/kde4/systemsettingsview/BaseData.h
+include/kde4/systemsettingsview/BaseMode.h
+include/kde4/systemsettingsview/MenuItem.h
+include/kde4/systemsettingsview/MenuModel.h
+include/kde4/systemsettingsview/MenuProxyModel.h
+include/kde4/systemsettingsview/ModuleView.h
+include/kde4/systemsettingsview/systemsettingsview_export.h
+include/kde4/taskmanager/
+include/kde4/taskmanager/abstractgroupableitem.h
+include/kde4/taskmanager/abstractgroupingstrategy.h
+include/kde4/taskmanager/abstractsortingstrategy.h
+include/kde4/taskmanager/groupmanager.h
+include/kde4/taskmanager/launcheritem.h
+include/kde4/taskmanager/startup.h
+include/kde4/taskmanager/task.h
+include/kde4/taskmanager/taskactions.h
+include/kde4/taskmanager/taskgroup.h
+include/kde4/taskmanager/taskitem.h
+include/kde4/taskmanager/taskmanager.h
+include/kde4/taskmanager/taskmanager_export.h
 lib/cmake/KDE4Workspace/
 lib/cmake/KDE4Workspace/KDE4WorkspaceConfig.cmake
 lib/cmake/KDE4Workspace/KDE4WorkspaceConfigVersion.cmake
@@ -374,6 +374,36 @@ lib/kde4/powerdevildpmsaction_config.so
 lib/kde4/powerdevilhandlebuttoneventsaction_config.so
 lib/kde4/powerdevilrunscriptaction_config.so
 lib/kde4/powerdevilsuspendsessionaction_config.so
+@lib lib/kde4/private/libkdecorations.so.${LIBkdecorations_VERSION}
+@lib lib/kde4/private/libkephal.so.${LIBkephal_VERSION}
+@lib lib/kde4/private/libkfontinst.so.${LIBkfontinst_VERSION}
+@lib lib/kde4/private/libkfontinstui.so.${LIBkfontinstui_VERSION}
+@lib lib/kde4/private/libkhotkeysprivate.so.${LIBkhotkeysprivate_VERSION}
+@lib lib/kde4/private/libkickoff.so.${LIBkickoff_VERSION}
+@lib lib/kde4/private/libkscreensaver.so.${LIBkscreensaver_VERSION}
+@lib lib/kde4/private/libksgrd.so.${LIBksgrd_VERSION}
+@lib lib/kde4/private/libksignalplotter.so.${LIBksignalplotter_VERSION}
+@lib lib/kde4/private/libkwineffects.so.${LIBkwineffects_VERSION}
+@lib lib/kde4/private/libkwinglutils.so.${LIBkwinglutils_VERSION}
+@lib lib/kde4/private/libkwinnvidiahack.so.${LIBkwinnvidiahack_VERSION}
+@lib lib/kde4/private/libkworkspace.so.${LIBkworkspace_VERSION}
+@lib lib/kde4/private/liblsofui.so.${LIBlsofui_VERSION}
+@lib lib/kde4/private/liboxygenstyle.so.${LIBoxygenstyle_VERSION}
+@lib lib/kde4/private/liboxygenstyleconfig.so.${LIBoxygenstyleconfig_VERSION}
+@lib lib/kde4/private/libplasma-geolocation-interface.so.${LIBplasma-geolocation-interface_VERSION}
+@lib lib/kde4/private/libplasma_applet-system-monitor.so.${LIBplasma_applet-system-monitor_VERSION}
+@lib lib/kde4/private/libplasmaclock.so.${LIBplasmaclock_VERSION}
+@lib lib/kde4/private/libplasmagenericshell.so.${LIBplasmagenericshell_VERSION}
+@lib lib/kde4/private/libpowerdevilconfigcommonprivate.so.${LIBpowerdevilconfigcommonprivate_VERSION}
+@lib lib/kde4/private/libpowerdevilcore.so.${LIBpowerdevilcore_VERSION}
+@lib lib/kde4/private/libpowerdevilui.so.${LIBpowerdevilui_VERSION}
+@lib lib/kde4/private/libprocesscore.so.${LIBprocesscore_VERSION}
+@lib lib/kde4/private/libprocessui.so.${LIBprocessui_VERSION}
+@lib lib/kde4/private/libsolidcontrol.so.${LIBsolidcontrol_VERSION}
+@lib lib/kde4/private/libsolidcontrolifaces.so.${LIBsolidcontrolifaces_VERSION}
+@lib lib/kde4/private/libsystemsettingsview.so.${LIBsystemsettingsview_VERSION}
+@lib lib/kde4/private/libtaskmanager.so.${LIBtaskmanager_VERSION}
+@lib lib/kde4/private/libweather_ion.so.${LIBweather_ion_VERSION}
 lib/kde4/solid_fakenet.so
 lib/kde4/solid_wicd.so
 @lib lib/libkdecorations.so.${LIBkdecorations_VERSION}
