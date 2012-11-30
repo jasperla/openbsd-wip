@@ -1,0 +1,15 @@
+$OpenBSD$
+--- src/main/extractor_plugin_main.c.orig	Thu Nov 29 21:18:00 2012
++++ src/main/extractor_plugin_main.c	Thu Nov 29 21:18:31 2012
+@@ -417,7 +417,11 @@ handle_init_message (struct ProcessingContext *pc)
+       return -1;
+     }
+ #else
++#ifdef HAVE_SHM_OPEN
+     pc->shm_id = shm_open (shm_name, O_RDONLY, 0);
++#else
++    pc->shm_id = open (shm_name, O_RDONLY, 0);
++#endif
+     if (-1 == pc->shm_id)
+       {
+ 	LOG_STRERROR_FILE ("open", shm_name);
