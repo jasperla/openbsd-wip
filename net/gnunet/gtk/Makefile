@@ -17,7 +17,7 @@ WANTLIB += ltdl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs stdc++ unistring util xcb
 WANTLIB += xcb-render xcb-shm xml2 z gnunetats gnunetnamestore
 WANTLIB += ICE SM atk-bridge-2.0 atspi dbus-1 dbus-glib-1 gnunetdnsparser
-WANTLIB += harfbuzz icudata icule icuuc idn qrencode unique-3.0
+WANTLIB += harfbuzz icudata icule icuuc idn qrencode unique-3.0 ogg
 
 MODULES =		devel/gettext
 RUN_DEPENDS =		devel/desktop-file-utils \
