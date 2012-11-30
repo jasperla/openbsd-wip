@@ -1,19 +1,18 @@
 # $OpenBSD$
 
-COMMENT=	Qt-based library that maps JSON data to QVariant objects
-DISTNAME =	qjson-0.7.1
-REVISION =	1
-CATEGORIES =	devel
 SHARED_ONLY =	Yes
+CATEGORIES =	devel
+COMMENT=	Qt-based library that maps JSON data to QVariant objects
+DISTNAME =	qjson-0.8.1
+HOMEPAGE =	http://qjson.sourceforge.net/
 
-SHARED_LIBS =	qjson	0.0
+SHARED_LIBS =	qjson	1.0
 
 MODULES =	devel/cmake x11/qt4
 WANTLIB =	m stdc++
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=qjson/}
+MASTER_SITES =	https://github.com/downloads/flavio/qjson/
 EXTRACT_SUFX =	.tar.bz2
-WRKSRC =	${WRKDIR}/qjson
 
 # LGPLv2
 PERMIT_DISTFILES_CDROM =	Yes
