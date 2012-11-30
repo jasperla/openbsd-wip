@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, SANE (scanner) wrapper library
 DISTNAME =	libksane-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	ksane			0.0	# 0.2
 
