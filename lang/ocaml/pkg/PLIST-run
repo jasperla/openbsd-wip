@@ -1,5 +1,0 @@
-@comment $OpenBSD: $
-%%SHARED%%
-@bin bin/ocamlrun
-share/doc/ocaml/
-share/doc/ocaml/LICENSE

@@ -1,1 +1,0 @@
-* add patch to work around nl_langinfo (C) return value.
