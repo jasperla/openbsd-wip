@@ -195,9 +195,6 @@ MODKDE4_CONF_ARGS +=	-DKDE4_INCLUDE_INSTALL_DIR:String=${PREFIX}/include \
 			-DKDE4_INFO_INSTALL_DIR:String=${PREFIX}/info \
 			-DKDE4_MAN_INSTALL_DIR:String=${PREFIX}/man \
 			-DKDE4_SYSCONF_INSTALL_DIR:String=${SYSCONFDIR}
-
-# Tell that we're a separate distribution
-MODKDE4_CONF_ARGS +=	-DKDE_DISTRIBUTION_TEXT:String="OpenBSD packages"
 .endif
 
 # FIXME
