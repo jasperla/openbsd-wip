@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, libraries
 DISTNAME =	kdelibs-${MODKDE_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	kde3support          1.0      # .4.0
 SHARED_LIBS +=	kdecore              9.0      # .5.0
@@ -113,7 +113,7 @@ CONFIGURE_ARGS +=	-DWITH_ACL:Bool=FALSE \
 
 # some basic defines
 CONFIGURE_ARGS +=	-D_KDE_DEFAULT_HOME_POSTFIX:String="4" \
-			-DKDE_DISTRIBUTION_TEXT:String="OpenBSD WIP ports tree" \
+			-DKDE_DISTRIBUTION_TEXT:String="OpenBSD Ports" \
 			-DKDE4_AUTH_BACKEND_NAME:String="PolkitQt-1" \
 			-DKDESU_USE_SUDO_DEFAULT:Bool=TRUE
 
