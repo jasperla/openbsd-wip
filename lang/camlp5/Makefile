@@ -1,6 +1,6 @@
 # $OpenBSD: $
 
-COMMENT =	improved toplevel for OCaml
+COMMENT =	preprocessor and pretty-printer for OCaml
 CATEGORIES =	lang
 
 DISTNAME =	camlp5-6.07
