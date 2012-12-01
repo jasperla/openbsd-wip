@@ -2,7 +2,7 @@
 
 COMMENT =	KDE graphics, styles and icon themes
 DISTNAME =	kdeartwork-${MODKDE_VERSION}
-REVISION =	0
+REVISION =	1
 
 MODKDE4_USE =	workspace
 
