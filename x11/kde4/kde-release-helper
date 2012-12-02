@@ -400,7 +400,7 @@ show() {
 }
 
 update_status() {
-	local WHAT=${1:-all}; shift
+	local WHAT=${1:-all}
 	local V=`kde_version`
 	local T="`mktemp STATUS-${V}.XXXXXXXX`"
 	local OCLEANUP_ITEMS="$CLEANUP_ITEMS"
@@ -451,7 +451,7 @@ BEGIN {
 }
 
 update() {
-	test $# -gt 1 || usage
+	test $# -ge 1 || usage
 
 	if ! [ -f ../kde4/kde4.port.mk -a \
                X"`cd .. && basename $(pwd)`" = Xx11 ]; then
