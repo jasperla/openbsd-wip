@@ -1,16 +1,15 @@
 @comment $OpenBSD$
-include/audiocdencoder.h
+include/kde4/audiocdencoder.h
 lib/kde4/kcm_audiocd.so
 lib/kde4/kio_audiocd.so
 lib/kde4/libaudiocd_encoder_flac.so
 lib/kde4/libaudiocd_encoder_lame.so
 lib/kde4/libaudiocd_encoder_vorbis.so
 lib/kde4/libaudiocd_encoder_wav.so
+@lib lib/kde4/private/libaudiocdplugins.so.${LIBaudiocdplugins_VERSION}
 @lib lib/libaudiocdplugins.so.${LIBaudiocdplugins_VERSION}
 share/apps/kconf_update/audiocd.upd
 share/apps/kconf_update/upgrade-metadata.sh
-share/apps/konqsidebartng/
-share/apps/konqsidebartng/virtual_folders/
 share/apps/konqsidebartng/virtual_folders/services/
 share/apps/konqsidebartng/virtual_folders/services/audiocd.desktop
 share/apps/solid/

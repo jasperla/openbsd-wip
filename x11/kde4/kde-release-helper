@@ -59,11 +59,12 @@ usage: $0 prepare new-KDE-version
        $0 check-lists
        $0 merge
        $0 show {built|packaged|status|unpackaged} [all|l10n|sc]
+       $0 update status [all|l10n|sc]
 
 typical usecases:
   $0 prepare 4.9.3
   # start hacking
-  $0 show status | tee STATUS-4.9.3
+  $0 update status
   # commit and hack more
   $0 merge
 EOF
@@ -398,8 +399,59 @@ show() {
 	true
 }
 
+update_status() {
+	local WHAT=${1:-all}; shift
+	local V=`kde_version`
+	local T="`mktemp STATUS-${V}.XXXXXXXX`"
+	local OCLEANUP_ITEMS="$CLEANUP_ITEMS"
+	CLEANUP_ITEMS="$T $CLEANUP_ITEMS"
+	if [ -e "STATUS-${V}" ]; then
+		echo "===> Updating status of KDE $V porting"
+		local P S
+		show_status "$WHAT" | awk "
+BEGIN {
+	while (getline L <\"STATUS-${V}\") {
+		split(L, PARTS);
+		STATUS[PARTS[1]] = PARTS[2];
+	}
+
+	# From most to least useful, the latest one isn't actually needed now.
+	STATUSES[1] = \"PACKAGED\";
+	STATUSES[2] = \"BUILT\";
+	STATUSES[3] = \"STARTED\";
+	#STATUSES[4] = \"WAITING\";
+
+	# We cannot use 'for(... in STATUSES)' because it doesn't restart
+	# on every loop, but starts cycling items from the position where
+	# previous loop was interrupted.
+	NSTATUSES = 4
+}
+
+/^([[:space:]]*#.*)?\$/ {
+	next;
+}
+
+{
+	for (I = 1; I < NSTATUSES; I++) {
+		S = STATUSES[I];
+		if (STATUS[\$1] == S || \$2 == S) {
+			printf(\"%-32s%s\\n\", \$1, S);
+			next;
+		}
+	}
+	printf(\"%-32s%s\\n\", \$1, \"WAITING\");
+}
+	    " | tee "$T"
+	else
+		echo "===> Old status file missing, recreating"
+		show_status "$WHAT" | tee "$T"
+	fi
+	mv "$T" "STATUS-${V}"
+	CLEANUP_ITEMS="$OCLEANUP_ITEMS"
+}
+
 update() {
-	test $# -lt 1 || usage
+	test $# -gt 1 || usage
 
 	if ! [ -f ../kde4/kde4.port.mk -a \
                X"`cd .. && basename $(pwd)`" = Xx11 ]; then
@@ -409,6 +461,10 @@ update() {
 
 	local CMD=$1; shift
 	case $CMD in
+	s|st|sta|stat|statu|status)
+		update_status "$@"
+		;;
+
 	*)
 		usage
 		;;
@@ -436,7 +492,7 @@ s|sh|sho|show)
 	show "$@"
 	;;
 
-#u|up|upd|upda|updat|update)
-#	update "$@"
-#	;;
+u|up|upd|upda|updat|update)
+	update "$@"
+	;;
 esac
