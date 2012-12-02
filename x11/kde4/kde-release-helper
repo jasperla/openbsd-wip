@@ -54,16 +54,19 @@ set -e
 #
 
 usage() {
-	echo "usage: $0 prepare new-KDE-version" >&2
-	echo "       $0 check-lists" >&2
-	echo "       $0 merge" >&2
-	echo "       $0 show {built|packaged|unpackaged} [all|l10n|sc]" >&2
-#	echo "       $0 update use-flag" >&2
-	echo >&2
-	echo "examples:" >&2
-	echo "  $0 prepare 4.9.3" >&2
-	echo "  $0 merge" >&2
-#	echo "  $0 update initial" >&2
+cat >&2 <<EOF
+usage: $0 prepare new-KDE-version
+       $0 check-lists
+       $0 merge
+       $0 show {built|packaged|status|unpackaged} [all|l10n|sc]
+
+typical usecases:
+  $0 prepare 4.9.3
+  # start hacking
+  $0 show status | tee STATUS-4.9.3
+  # commit and hack more
+  $0 merge
+EOF
 	exit 1
 }
 
@@ -124,13 +127,15 @@ port_dir_to_distname() {
 
 # Assume we're in KDE ports root directory.
 list_l10n_ports() {
-	local SHOWPKGNAME=${1:-Yes}
 	for L in $(cd l10n/ru && make show=ALL_LANGS); do
-		if [ X"${SHOWPKGNAME}" = Yes ]; then
-			echo "kde-l10n-${L}"
-		else
-			echo "$L"
-		fi
+		echo "kde-l10n-${L}"
+	done | sort
+}
+
+# Assume we're in KDE ports root directory.
+list_l10n_ports_dirs() {
+	for L in $(cd l10n/ru && make show=ALL_LANGS); do
+		echo "l10n/$L"
 	done | sort
 }
 
@@ -167,6 +172,16 @@ compare_sources_lists() {
 	diff -u "$T" - || true
 	rm "$T"
 	CLEANUP_ITEMS="$OCLEANUP_ITEMS"
+}
+
+# Assume we're in KDE ports root directory.
+kde_version() {
+	(cd libs && make show=MODKDE_VERSION)
+}
+
+# Arguments: port, status
+print_status_line() {
+	printf '%-32s%s\n' "$1" "$2"
 }
 
 ### Main actions go here
@@ -219,7 +234,8 @@ prepare() {
 
 	echo "==> creating STATUS-${NEW_KDE_PORT_VER}" >&2
 	for P in $LOCAL_PORTS l10n; do
-		printf '%-32sSTARTED\n' $P >>${NEW_KDE_PORT_DIR}/STATUS-${NEW_KDE_PORT_VER}
+		print_status_line $P STARTED \
+		    >>${NEW_KDE_PORT_DIR}/STATUS-${NEW_KDE_PORT_VER}
 	done
 
 	# Avoid removing newly created directory
@@ -288,9 +304,14 @@ EOF
 	git commit -m "Remove KDE $KDEV testing directory." -e -- $KPD
 }
 
+is_started() {
+	D="`cd $1 && make show=WRKSRC`"
+	test -d "$D"
+}
+
 is_built() {
 	# XXX Rely on SEPARATE_BUILD being set to avoid extra make invocation
-	D=`cd $1 && make show=WRKBUILD`
+	D="`cd $1 && make show=WRKBUILD`"
 	test -e "$D/.build_done"
 }
 
@@ -301,72 +322,74 @@ is_packaged() {
 	return 0
 }
 
-show() {
-	test $# -ge 1 -a $# -le 2 || usage
-
-	if ! [ -f ../kde4/kde4.port.mk -a X"`cd .. && basename $(pwd)`" = Xx11 ]; then
-		echo "Please run $0 from a KDE 4 directory in ports tree" >&2
-		exit 2
-	fi
-
-	local SHOWSC SHOWL10N
-	case ${2:-all} in
+expand_port_list() {
+	case ${1:-all} in
 	all)
-		SHOWSC=Yes
-		SHOWL10N=Yes
+		list_local_ports
+		list_l10n_ports_dirs
 		;;
 	sc)
-		SHOWSC=Yes
-		SHOWL10N=No
+		list_local_ports
 		;;
 	l10n)
-		SHOWSC=No
-		SHOWL10N=Yes
+		list_l10n_ports_dirs
 		;;
 	*)
 		usage
 		;;
 	esac
+}
 
-	local P
-	case $1 in
+# Assume to be running in KDE4 ports directory
+show_status() {
+	local P T V PORTLIST=$(expand_port_list "$1")
+
+	V="`kde_version`"
+	for P in $PORTLIST; do
+		if is_packaged $P; then
+			print_status_line $P PACKAGED
+		elif is_built $P; then
+			print_status_line $P BUILT
+		elif is_started $P; then
+			print_status_line $P STARTED
+		else
+			print_status_line $P WAITING
+		fi
+	done
+}
+
+show() {
+	test $# -ge 1 -a $# -le 2 || usage
+
+	if ! [ -f ../kde4/kde4.port.mk -a \
+               X"`cd .. && basename $(pwd)`" = Xx11 ]; then
+		echo "Please run $0 from a KDE 4 directory in ports tree" >&2
+		exit 2
+	fi
+
+	local P WHAT PORTLIST=$(expand_port_list "$2")
+	WHAT=$1; shift
+	case $WHAT in
 	b|bu|bui|buil|built)
-		if [ $SHOWSC = Yes ]; then
-			for P in `list_local_ports`; do
-				is_built $P && echo $P
-			done
-		fi
-		if [ $SHOWL10N = Yes ]; then
-			for P in `list_l10n_ports`; do
-				is_built l10n/$P && echo l10n/$P
-			done
-		fi
+		for P in $PORTLIST; do
+			is_built $P && echo $P
+		done
 		;;
 
 	p|pa|pac|pack|packa|packag|package|packaged)
-		if [ $SHOWSC = Yes ]; then
-			for P in `list_local_ports`; do
-				is_packaged $P && echo $P
-			done
-		fi
-		if [ $SHOWL10N = Yes ]; then
-			for P in `list_l10n_ports`; do
-				is_packaged l10n/$P && echo l10n/$P
-			done
-		fi
+		for P in $PORTLIST; do
+			is_packaged $P && echo $P
+		done
+		;;
+
+	s|st|sta|stat|statu|status)
+		show_status "$@"
 		;;
 
 	u|un|unp|unpa|unpac|unpack|unpacka|unpackag|unpackage|unpackaged)
-		if [ $SHOWSC = Yes ]; then
-			for P in `list_local_ports`; do
-				is_packaged $P || echo $P
-			done
-		fi
-		if [ $SHOWL10N = Yes ]; then
-			for P in `list_l10n_ports`; do
-				is_packaged l10n/$P || echo l10n/$P
-			done
-		fi
+		for P in $PORTLIST; do
+			is_packaged $P || echo $P
+		done
 		;;
 
 	*)
@@ -376,7 +399,20 @@ show() {
 }
 
 update() {
-	test $# -ge 1 || usage
+	test $# -lt 1 || usage
+
+	if ! [ -f ../kde4/kde4.port.mk -a \
+               X"`cd .. && basename $(pwd)`" = Xx11 ]; then
+		echo "Please run $0 from a KDE 4 directory in ports tree" >&2
+		exit 2
+	fi
+
+	local CMD=$1; shift
+	case $CMD in
+	*)
+		usage
+		;;
+	esac
 }
 
 # All actions take (at least) one argument
@@ -400,7 +436,7 @@ s|sh|sho|show)
 	show "$@"
 	;;
 
-u|up|upd|upda|updat|update)
-	update "$@"
-	;;
+#u|up|upd|upda|updat|update)
+#	update "$@"
+#	;;
 esac
