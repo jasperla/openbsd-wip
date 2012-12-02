@@ -5,6 +5,7 @@ COMMENT =	K Desktop Environment, Qt4 bindings for Ruby
 DISTNAME =	qtruby-${MODKDE_VERSION}
 PKGNAME =	ruby-qt-${MODKDE_VERSION}
 HOMEPAGE =	http://techbase.kde.org/Development/Languages/Ruby
+REVISION =	0
 
 SHARED_LIBS =	qtruby4shared		0.0 # 2.0
 
@@ -17,7 +18,7 @@ WANTLIB += smokeqtdbus smokeqtdeclarative smokeqtgui smokeqtnetwork
 WANTLIB += smokeqtopengl smokeqtscript smokeqtsql smokeqtsvg
 WANTLIB += smokeqttest smokeqtuitools smokeqtwebkit smokeqtxml smokeqwt
 
-MODULES =		x11/kde4 lang/ruby
+MODULES =		lang/ruby
 
 MODKDE4_USE =
 
