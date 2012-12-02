@@ -59,7 +59,7 @@ usage: $0 prepare new-KDE-version
        $0 check-lists
        $0 merge
        $0 show {built|packaged|status|unpackaged} [all|l10n|sc]
-       $0 update status [all|l10n|sc]
+       $0 update status
 
 typical usecases:
   $0 prepare 4.9.3
@@ -400,7 +400,8 @@ show() {
 }
 
 update_status() {
-	local WHAT=${1:-all}
+	test $# -eq 0 || usage
+
 	local V=`kde_version`
 	local T="`mktemp STATUS-${V}.XXXXXXXX`"
 	local OCLEANUP_ITEMS="$CLEANUP_ITEMS"
@@ -408,7 +409,7 @@ update_status() {
 	if [ -e "STATUS-${V}" ]; then
 		echo "===> Updating status of KDE $V porting"
 		local P S
-		show_status "$WHAT" | awk "
+		show_status all | awk "
 BEGIN {
 	while (getline L <\"STATUS-${V}\") {
 		split(L, PARTS);
