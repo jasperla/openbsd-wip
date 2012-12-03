@@ -3,7 +3,7 @@
 COMMENT =	C++ toolkit for GUI
 CATEGORIES =	devel
 
-DISTNAME =	fox-1.6.44
+DISTNAME =	fox-1.6.47
 
 SHARED_LIBS +=	FOX-1.6              2.0      # .0.37
 SHARED_LIBS +=	CHART-1.6            1.0      # .0.28
