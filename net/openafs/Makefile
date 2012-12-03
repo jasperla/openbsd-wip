@@ -20,7 +20,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c
+WANTLIB=		c asn1 com_err crypto krb5 ncurses
+WANTLIB+=		pthread
+
 
 SHARED_LIBS +=  afsauthent                1.1
 SHARED_LIBS +=  afsrpc                    1.5
@@ -42,6 +44,10 @@ AUTOCONF_VERSION=	2.68
 AUTOMAKE_VERSION=	1.10
 CONFIGURE_STYLE=	automake autoconf
 
+.if defined(SUDO)
+MAKE_ENV+=		SUDO=sudo
+.endif
+
 CONFIGURE_ENV+=		INSTALL_DATA="install -c -m 444"
 CONFIGURE_ARGS+=	KRB5CFLAGS="-I/usr/include/kerberosV" \
 			KRB5LIBS="-lcrypto" \
@@ -52,19 +58,33 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-afs-sysname=${ARCH}_obsd${OSrev} \
 			--disable-transarc-paths \
 			--enable-namei-fileserver \
-			--enable-largefile-fileserver \
-			--enable-supergroups
+			--enable-supergroups \
+			--enable-pthreaded-ubik \
+			--enable-kernel-module
 
-FLAVORS=	debug withcache
+
+FLAVORS=	debug
 FLAVOR?=
 
 WRKDIST=	${WRKDIR}/openafs-${VERSION}
 
-.if ${FLAVOR:L:Mwithcache}
-CONFIGURE_ARGS+=	--enable-kernel-module
-.else
-CONFIGURE_ARGS+=	--disable-kernel-module
-.endif
+post-patch:
+	@sed "s/%OSrev%/${OSrev}/g;s/%ARCH%/${ARCH}/g" \
+		${FILESDIR}/param.obsd.h \
+		> ${WRKSRC}/src/config/param.${ARCH}_obsd${OSrev}.h
+
+post-install:
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openafs
+	${SUBST_CMD} -c \
+		${FILESDIR}/krb5.conf \
+		${WRKSRC}/obsd.krb5.conf
+	${INSTALL_DATA} -m 755 ${WRKSRC}/obsd.krb5.conf \
+		${PREFIX}/share/examples/openafs/krb5.conf
+	${SUBST_CMD} -c \
+		${FILESDIR}/openafs-setup \
+		${WRKSRC}/obsd.openafs-setup
+	${INSTALL_PROGRAM} -m 755 ${WRKSRC}/obsd.openafs-setup \
+		${PREFIX}/sbin/openafs-setup
 
 .if ${FLAVOR:L:Mdebug}
 CONFIGURE_ARGS+=	--enable-debug
