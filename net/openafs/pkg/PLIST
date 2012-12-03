@@ -1,6 +1,7 @@
 @comment $OpenBSD: PLIST,v 1.5 2010/11/15 08:11:17 jasper Exp $
 %%SHARED%%
-%%withcache%%
+@owner root
+@group wheel
 @bin bin/afs_compile_et
 @bin bin/afsio
 @bin bin/afsmonitor
