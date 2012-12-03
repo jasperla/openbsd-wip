@@ -5,7 +5,6 @@ COMMENT =	HTTP Style Messages
 DISTNAME =	HTTP-Message-6.06
 CATEGORIES =	www
 CPAN_AUTHOR =	GAAS
-REVISION=	1
 
 MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
