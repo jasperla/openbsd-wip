@@ -3,7 +3,7 @@
 COMMENT-main=	graphical network protocol analyzer
 COMMENT-text=	network protocol analyzer
 
-WVER=		1.6.11
+WVER=		1.6.12
 DISTNAME=	wireshark-${WVER}
 PKGNAME-main=	wireshark16-${WVER}
 PKGNAME-text=	tshark16-${WVER}
@@ -14,7 +14,6 @@ SHARED_LIBS +=  wiretap              0.0      # 1.0
 SHARED_LIBS +=  wireshark            0.0      # 1.0
 
 CATEGORIES=	net security x11
-DPB_PROPERTIES=	parallel
 
 HOMEPAGE=	http://www.wireshark.org/
 

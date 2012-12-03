@@ -61,6 +61,8 @@ share/wireshark/diameter/
 share/wireshark/diameter/AlcatelLucent.xml
 share/wireshark/diameter/Cisco.xml
 share/wireshark/diameter/Ericsson.xml
+share/wireshark/diameter/Nokia.xml
+share/wireshark/diameter/NokiaSiemensNetworks.xml
 share/wireshark/diameter/TGPPGmb.xml
 share/wireshark/diameter/TGPPRx.xml
 share/wireshark/diameter/TGPPS9.xml

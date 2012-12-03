@@ -15,7 +15,6 @@ SHARED_LIBS +=  wiretap              0.0      # 1.0
 SHARED_LIBS +=  wireshark            0.0      # 1.0
 
 CATEGORIES=	net security x11
-DPB_PROPERTIES=	parallel
 
 HOMEPAGE=	http://www.wireshark.org/
 
