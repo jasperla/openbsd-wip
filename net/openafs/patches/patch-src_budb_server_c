@@ -1,0 +1,11 @@
+$OpenBSD$
+--- src/budb/server.c.orig	Sat Dec  1 01:36:22 2012
++++ src/budb/server.c	Sat Dec  1 01:37:46 2012
+@@ -23,6 +23,7 @@
+ #include <netdb.h>
+ #endif
+ #include <string.h>
++#include <inttypes.h>
+ #include <afs/stds.h>
+ #include <sys/types.h>
+ #include <time.h>
