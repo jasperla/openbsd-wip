@@ -4,7 +4,7 @@ COMMENT-main=	graphical network protocol analyzer
 COMMENT-text=	network protocol analyzer
 
 VER=		1.9.0
-WVER=		${VER}-SVN-45356
+WVER=		${VER}-SVN-46310
 DISTNAME=	wireshark-${WVER}
 PKGNAME-main=	wireshark19-${VER}
 PKGNAME-text=	tshark19-${VER}
@@ -15,7 +15,6 @@ SHARED_LIBS +=  wiretap              0.0      # 1.0
 SHARED_LIBS +=  wireshark            0.0      # 1.0
 
 CATEGORIES=	net security x11
-DPB_PROPERTIES=	parallel
 
 HOMEPAGE=	http://www.wireshark.org/
 
