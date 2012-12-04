@@ -24,7 +24,9 @@ MASTER_SITES =		http://video4fuze.googlecode.com/files/
 MODULES =		lang/python
 BUILD_DEPENDS =		devel/desktop-file-utils
 RUN_DEPENDS =		x11/mplayer \
-			x11/py-qt4
+			x11/py-qt4 \
+			graphics/py-Imaging \
+			multimedia/fuzemux
 
 NO_BUILD =		Yes
 NO_REGRESS =		Yes
