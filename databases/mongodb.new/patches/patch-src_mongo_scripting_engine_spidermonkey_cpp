@@ -3,6 +3,8 @@ $OpenBSD$
 Force pickup of jsdate.h from lang/spidermonkey which has js-1.8 
 and NOT from bundled, old js-1.7
 
+lifted from http://www.freebsd.org/cgi/query-pr.cgi?pr=173358
+
 --- src/mongo/scripting/engine_spidermonkey.cpp.orig	Tue Dec  4 17:48:25 2012
 +++ src/mongo/scripting/engine_spidermonkey.cpp	Tue Dec  4 17:49:19 2012
 @@ -25,7 +25,7 @@

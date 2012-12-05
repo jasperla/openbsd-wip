@@ -1,6 +1,9 @@
 $OpenBSD$
---- SConstruct.orig	Wed Nov 21 14:13:47 2012
-+++ SConstruct	Wed Nov 21 14:34:20 2012
+
+from older OpenBSD port + http://www.freebsd.org/cgi/query-pr.cgi?pr=173358
+
+--- SConstruct.orig	Mon Oct 29 12:17:38 2012
++++ SConstruct	Wed Dec  5 13:49:51 2012
 @@ -677,7 +677,6 @@ if nix:
      # -Winvalid-pch Warn if a precompiled header (see Precompiled Headers) is found in the search path but can't be used.
      env.Append( CCFLAGS=["-fPIC",
@@ -29,3 +32,12 @@ $OpenBSD$
  
      if debugLogging:
          env.Append( CPPDEFINES=["_DEBUG"] );
+@@ -1103,7 +1101,7 @@ Export("testEnv")
+ Export("has_option use_system_version_of_library")
+ Export("installSetup")
+ Export("usesm usev8")
+-Export("darwin windows solaris linux nix")
++Export("darwin windows solaris linux nix openbsd")
+ 
+ env.SConscript( 'src/SConscript', variant_dir='$BUILD_DIR', duplicate=False )
+ env.SConscript( 'src/SConscript.client', variant_dir='$BUILD_DIR/client_build', duplicate=False )

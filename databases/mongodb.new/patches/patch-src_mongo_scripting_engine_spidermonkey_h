@@ -3,6 +3,8 @@ $OpenBSD$
 Force pickup of jsapi.h from lang/spidermonkey which has js-1.8
 and NOT from bundled, old js-1.7
 
+lifted from http://www.freebsd.org/cgi/query-pr.cgi?pr=173358
+
 --- src/mongo/scripting/engine_spidermonkey.h.orig	Tue Dec  4 17:49:32 2012
 +++ src/mongo/scripting/engine_spidermonkey.h	Tue Dec  4 17:49:48 2012
 @@ -29,7 +29,7 @@
