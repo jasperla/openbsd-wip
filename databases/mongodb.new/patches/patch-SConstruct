@@ -1,0 +1,31 @@
+$OpenBSD$
+--- SConstruct.orig	Wed Nov 21 14:13:47 2012
++++ SConstruct	Wed Nov 21 14:34:20 2012
+@@ -677,7 +677,6 @@ if nix:
+     # -Winvalid-pch Warn if a precompiled header (see Precompiled Headers) is found in the search path but can't be used.
+     env.Append( CCFLAGS=["-fPIC",
+                          "-fno-strict-aliasing",
+-                         "-ggdb",
+                          "-pthread",
+                          "-Wall",
+                          "-Wsign-compare",
+@@ -691,6 +690,7 @@ if nix:
+ 
+     env.Append( CPPDEFINES=["_FILE_OFFSET_BITS=64"] )
+     env.Append( CXXFLAGS=["-Wnon-virtual-dtor", "-Woverloaded-virtual"] )
++    env.Append( CXXFLAGS=os.environ['CXXFLAGS'] )
+     env.Append( LINKFLAGS=["-fPIC", "-pthread",  "-rdynamic"] )
+     env.Append( LIBS=[] )
+ 
+@@ -709,10 +709,8 @@ if nix:
+         env.Append( LINKFLAGS=" -fprofile-arcs -ftest-coverage " )
+ 
+     if debugBuild:
+-        env.Append( CCFLAGS=["-O0", "-fstack-protector"] )
++        env.Append( CCFLAGS=["-O0", "-fstack-protector -ggdb"] )
+         env['ENV']['GLIBCXX_FORCE_NEW'] = 1; # play nice with valgrind
+-    else:
+-        env.Append( CCFLAGS=["-O3"] )
+ 
+     if debugLogging:
+         env.Append( CPPDEFINES=["_DEBUG"] );
