@@ -18,8 +18,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	c m pthread
 
-MASTER_SITES =	https://github.com/shellex/Hotot/tarball/${V}/ \
-		http://download.tuxfamily.org/jod/net/hotot/
+MASTER_SITES =	http://download.tuxfamily.org/jod/net/hotot/
 
 WRKDIST=	${WRKDIR}/shellex-Hotot-fc242c7
 
