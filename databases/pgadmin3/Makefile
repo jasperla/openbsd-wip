@@ -34,7 +34,8 @@ WANTLIB +=      wx_base_xml wx_base_odbc wx_gtk2_html wx_gtk2_richtext \
 		wx_base_net wx_gtk2_dbgrid wx_gtk2_qa wx_base wx_gtk2_core \
 		pq>=4 xml2>=6 xslt>=3
 
-BUILD_DEPENDS +=	databases/postgresql,-server
+BUILD_DEPENDS +=	databases/postgresql,-server \
+			textproc/py-sphinx
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS}"
