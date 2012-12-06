@@ -27,11 +27,13 @@ RUN_DEPENDS =		x11/mplayer \
 			x11/py-qt4 \
 			graphics/py-Imaging \
 			multimedia/fuzemux
+MODPY_ADJ_FILES =	fuze.py info.py p2fuze.py setup.py video4fuze.pyw \
+			vthumb.py
 
-NO_BUILD =		Yes
+#NO_BUILD =		Yes
 NO_REGRESS =		Yes
 
-pre-install:
+pre-configure:
 	${SUBST_CMD} ${WRKSRC}/dist/fuze ${WRKSRC}/dist/video4fuze
 
 .include <bsd.port.mk>
