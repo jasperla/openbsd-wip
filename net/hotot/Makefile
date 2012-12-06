@@ -20,12 +20,8 @@ WANTLIB =	c m pthread
 
 MASTER_SITES =	http://download.tuxfamily.org/jod/net/hotot/
 
-WRKDIST=	${WRKDIR}/shellex-Hotot-fc242c7
-
-MODPY_VERSION =	2.7
-CONFIGURE_ARGS =-DWITH_GIR=on -DWITH_GTK=on -DWITH_QT=off -DWITH_KDE=off \
-		-DWITH_CHROME=off -DCMAKE_INSTALL_PREFIX=${PREFIX} \
-		-DPYTHON_EXECUTABLE=${MODPY_BIN}
+MODULES =	devel/cmake \
+		lang/python
 
 BUILD_DEPENDS =	textproc/intltool
 
@@ -33,9 +29,15 @@ RUN_DEPENDS =	devel/py-gobject3 \
 		www/webkit,gtk3 \
 		x11/dbus-python
 
-MODULES =	devel/cmake \
-		lang/python
+MODPY_VERSION =	2.7
+
+# QT version is buggy and unofficial
+CONFIGURE_ARGS =-DWITH_GIR=on -DWITH_GTK=on -DWITH_QT=off -DWITH_KDE=off \
+		-DWITH_CHROME=off -DCMAKE_INSTALL_PREFIX=${PREFIX} \
+		-DPYTHON_EXECUTABLE=${MODPY_BIN}
 
 NO_REGRESS =	Yes
+
+WRKDIST=	${WRKDIR}/shellex-Hotot-fc242c7
 
 .include <bsd.port.mk>
