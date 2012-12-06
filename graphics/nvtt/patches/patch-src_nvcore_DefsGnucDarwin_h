@@ -1,0 +1,27 @@
+$OpenBSD$
+https://code.google.com/p/nvidia-texture-tools/source/detail?r=1156
+--- src/nvcore/DefsGnucDarwin.h.orig	Fri Nov  2 01:25:48 2012
++++ src/nvcore/DefsGnucDarwin.h	Fri Nov  2 01:27:15 2012
+@@ -2,7 +2,7 @@
+ #error "Do not include this file directly."
+ #endif
+ 
+-#include <stdint.h> // uint8_t, int8_t, ...
++//#include <stdint.h> // uint8_t, int8_t, ...
+ 
+ // Function linkage
+ #define DLL_IMPORT
+@@ -48,7 +48,7 @@
+ 
+ #define restrict    __restrict__
+ 
+-
++/*
+ // Type definitions
+ typedef uint8_t     uint8;
+ typedef int8_t      int8;
+@@ -64,3 +64,4 @@ typedef int64_t     int64;
+ 
+ // Aliases
+ typedef uint32      uint;
++*/
