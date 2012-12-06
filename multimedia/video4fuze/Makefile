@@ -30,7 +30,6 @@ RUN_DEPENDS =		x11/mplayer \
 MODPY_ADJ_FILES =	fuze.py info.py p2fuze.py setup.py video4fuze.pyw \
 			vthumb.py
 
-#NO_BUILD =		Yes
 NO_REGRESS =		Yes
 
 pre-configure:
