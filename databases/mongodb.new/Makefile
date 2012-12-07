@@ -2,7 +2,7 @@
 
 #atomic_int.h: error "unsupported compiler or platform" on other archs
 ONLY_FOR_ARCHS =	i386 amd64
-BROKEN =	fgsch@ will look into it in mid-late Dec 2012
+BROKEN =	fgsch@ investigate in mid-late Dec 2012, rthreads issues.
 
 COMMENT =	scalable, high-performance document-oriented database
 
