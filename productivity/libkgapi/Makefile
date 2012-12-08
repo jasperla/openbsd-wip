@@ -3,7 +3,7 @@
 CATEGORIES =	productivity
 COMMENT =	link Akonadi to Google services
 DISTNAME =	libkgapi-${LIBKGAPI_VERSION}
-REVISION =	2
+REVISION =	3
 
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/libkgapi/${LIBKGAPI_VERSION}/src/}

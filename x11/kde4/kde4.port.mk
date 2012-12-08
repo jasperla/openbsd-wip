@@ -138,13 +138,16 @@ MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/workspace
 .       endif
 .   endif    # ${MODKDE4_USE:L:Mlibs}
 
+# See FindKDE4Internal.cmake from kdelibs package for details.
 .if ${CONFIGURE_STYLE:Mcmake}
 .   if ${FLAVOR:Mdebug}
+# No optimization, debug symbols included, qDebug/kDebug enabled
 MODKDE4_CONF_ARGS +=	-DCMAKE_BUILD_TYPE:String=DebugFull
 MODKDE4_CMAKE_PREFIX =	-debugfull
 .   else
-MODKDE4_CONF_ARGS +=	-DCMAKE_BUILD_TYPE:String=RelWithDebInfo
-MODKDE4_CMAKE_PREFIX =	-relwithdebinfo
+# Optimization for speed, debug symbols stripped, qDebug/kDebug disabled
+MODKDE4_CONF_ARGS +=	-DCMAKE_BUILD_TYPE:String=Release
+MODKDE4_CMAKE_PREFIX =	-release
 .   endif
 
 MODKDE4_INCLUDE_DIR =	include/kde4

@@ -4,6 +4,7 @@ CATEGORIES =	devel
 COMMENT =	IDE creation toolkit for KDE 4
 DISTNAME =	kdevplatform-${KDEVPLATFORM_VERSION}
 HOMEPAGE =	http://www.kdevelop.org/
+REVISION =	0
 
 EXTRACT_SUFX =	.tar.bz2
 
