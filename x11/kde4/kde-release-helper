@@ -235,7 +235,7 @@ prepare() {
 
 	echo "==> creating STATUS-${NEW_KDE_PORT_VER}" >&2
 	for P in $LOCAL_PORTS l10n; do
-		print_status_line $P STARTED \
+		print_status_line $P WAITING \
 		    >>${NEW_KDE_PORT_DIR}/STATUS-${NEW_KDE_PORT_VER}
 	done
 
