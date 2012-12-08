@@ -65,7 +65,6 @@
 # libraries
      SUBDIR += libs			# OK
      SUBDIR += pimlibs			# OK
-     SUBDIR += qimageblitz		# OK
 
 # extra base
      SUBDIR += kactivities		# untested
