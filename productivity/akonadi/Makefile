@@ -3,7 +3,7 @@
 CATEGORIES =	productivity
 COMMENT =	PIM cache and access services
 DISTNAME =	akonadi-${AKONADI_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS = 	akonadiprotocolinternals 1.0	# 1.0
 

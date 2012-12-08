@@ -2,7 +2,7 @@
 
 COMMENT =	KDE Nepomuk core libraries
 DISTNAME =	nepomuk-core-${MODKDE_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =   nepomukcore               0.0 # 4.9
 SHARED_LIBS +=  nepomuksync               4.9 # 4.9

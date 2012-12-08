@@ -24,7 +24,7 @@ REVISION-geomap =	1
 REVISION-kipi =		1
 REVISION-main =		1
 REVISION-mediawiki =	0
-REVISION-vkontakte =	0
+REVISION-vkontakte =	1
 
 EXTRACT_SUFX =		.tar.bz2
 

@@ -2,7 +2,7 @@
 
 COMMENT =	KDE compact discs interface library
 DISTNAME =	libkcompactdisc-${MODKDE_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	kcompactdisc		0.0
 

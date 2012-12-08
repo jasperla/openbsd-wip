@@ -3,6 +3,7 @@
 CATEGORIES =	devel
 COMMENT =	Qt4 bindings for .NET/Mono
 DISTNAME =	qyoto-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	qyoto			1.0 # 2.0
 SHARED_LIBS +=	phonon-sharp		1.0
