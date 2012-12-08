@@ -230,7 +230,15 @@ prepare() {
 	local MI=$NEW_KDE_PORT_DIR/Makefile.inc
 	local T=`mktemp "$MI".XXXXXXXXXXX`
 	CLEANUP_ITEMS="$CLEANUP_ITEMS $T"
-	awk "NR == 3 {print \"MODKDE4_VERSION =	$NEW_KDE_PORT_VER\"} {print}" <"$MI" >"$T"
+	local MSPATCH=
+
+	if [ `echo $NEW_KDE_PORT_VER | sed -E 's/^.*\.([0-9]+)$/\1/'` -ge 80 ]; then
+		# KDE alpha/beta/etc. versions start from 80
+		MSPATCH="sed /MASTER_SITES/s@stable/@unstable/@"
+	else
+		MSPATCH=cat
+	fi
+	awk "NR == 3 {print \"MODKDE4_VERSION =	$NEW_KDE_PORT_VER\"} {print}" <"$MI" | $MSPATCH >"$T"
 	mv "$T" "$MI"
 
 	echo "==> creating STATUS-${NEW_KDE_PORT_VER}" >&2
