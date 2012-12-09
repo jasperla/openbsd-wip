@@ -145,7 +145,7 @@ list_remote_source() {
 	local LIST URL
 	local V=`make show=MODKDE_VERSION`
 
-	for URL in $(make show=MASTER_SITES); do
+	for URL in $(make MASTER_SITE_BACKUP= show=MASTER_SITES); do
 		echo "$URL" | grep -q '^ftp://' || continue
 		LIST="$(ear curl -sl $URL |
 		    sed -e s@-${V}.*@@ |
@@ -170,7 +170,7 @@ compare_sources_lists() {
 	OCLEANUP_ITEMS="$CLEANUP_ITEMS"
 	CLEANUP_ITEMS="$CLEANUP_ITEMS $T"
 	list_remote_source >"$T"
-	diff -u "$T" - || true
+	test -s "$T" && diff -u - "$T" || true
 	rm "$T"
 	CLEANUP_ITEMS="$OCLEANUP_ITEMS"
 }
