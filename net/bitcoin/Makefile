@@ -4,8 +4,8 @@ VMEM_WARNING =		Yes
 
 COMMENT =		P2P payment system
 
-V =			0.6.3
-REV =			6e0c5e3
+V =			0.7.1
+REV =			eb49457
 DISTNAME =		bitcoin-bitcoin-v${V}-0-g${REV}
 PKGNAME =		bitcoin-${V}
 
@@ -33,7 +33,7 @@ LIB_DEPENDS =		devel/boost \
 			databases/db/v4 \
 			net/miniupnp/miniupnpc
 
-MAKE_FLAGS =		USE_UPNP=0 PIE=1 CXX="${CXX}" BOOST_LIB_SUFFIX=-mt \
+MAKE_FLAGS =		USE_UPNP=0 CXX="${CXX}" BOOST_LIB_SUFFIX=-mt \
 			LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/db4" \
 			CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/db4"
 
@@ -42,7 +42,7 @@ USE_GMAKE =		Yes
 NO_REGRESS =		Yes
 
 MAKE_FILE =		makefile.unix
-WRKDIST =		${WRKDIR}/bitcoin-bitcoin-bbe1084
+WRKDIST =		${WRKDIR}/bitcoin-bitcoin-d082365
 WRKSRC =		${WRKDIST}/src
 
 ALL_TARGET =		bitcoind

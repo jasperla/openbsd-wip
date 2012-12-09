@@ -1,13 +1,23 @@
 $OpenBSD$
---- src/db.cpp.orig	Tue Jun 19 22:44:55 2012
-+++ src/db.cpp	Wed Jul  4 19:42:14 2012
-@@ -98,7 +98,9 @@ CDB::CDB(const char *pszFile, const char* pszMode) : p
-             dbenv.set_errfile(fopen(pathErrorFile.string().c_str(), "a")); /// debug
-             dbenv.set_flags(DB_TXN_WRITE_NOSYNC, 1);
-             dbenv.set_flags(DB_AUTO_COMMIT, 1);
+--- src/db.cpp.orig	Tue Oct  9 13:22:09 2012
++++ src/db.cpp	Sat Dec  1 12:15:39 2012
+@@ -84,7 +84,9 @@ bool CDBEnv::Open(boost::filesystem::path pathEnv_)
+     dbenv.set_errfile(fopen(pathErrorFile.string().c_str(), "a")); /// debug
+     dbenv.set_flags(DB_AUTO_COMMIT, 1);
+     dbenv.set_flags(DB_TXN_WRITE_NOSYNC, 1);
 +#if DB_VERSION_MINOR > 7
-             dbenv.log_set_config(DB_LOG_AUTO_REMOVE, 1);
+     dbenv.log_set_config(DB_LOG_AUTO_REMOVE, 1);
 +#endif
-             ret = dbenv.open(pathDataDir.string().c_str(),
-                              DB_CREATE     |
-                              DB_INIT_LOCK  |
+     int ret = dbenv.open(pathDataDir.string().c_str(),
+                      DB_CREATE     |
+                      DB_INIT_LOCK  |
+@@ -119,7 +121,9 @@ void CDBEnv::MakeMock()
+     dbenv.set_lk_max_locks(10000);
+     dbenv.set_lk_max_objects(10000);
+     dbenv.set_flags(DB_AUTO_COMMIT, 1);
++#if DB_VERSION_MINOR > 7
+     dbenv.log_set_config(DB_LOG_IN_MEMORY, 1);
++#endif
+     int ret = dbenv.open(NULL,
+                      DB_CREATE     |
+                      DB_INIT_LOCK  |
