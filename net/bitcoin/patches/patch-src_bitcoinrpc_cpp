@@ -1,0 +1,17 @@
+$OpenBSD$
+--- src/bitcoinrpc.cpp.orig	Tue Oct  9 13:22:09 2012
++++ src/bitcoinrpc.cpp	Sat Dec  1 12:44:07 2012
+@@ -11,6 +11,13 @@
+ #include "bitcoinrpc.h"
+ #include "db.h"
+ 
++/* HACK for boost pre 1.46 */
++#ifdef OPENSSL_NO_SSL2
++# define SSLv2_method SSLv3_method
++# define SSLv2_client_method SSLv3_client_method
++# define SSLv2_server_method SSLv3_server_method
++#endif
++
+ #undef printf
+ #include <boost/asio.hpp>
+ #include <boost/asio/ip/v6_only.hpp>
