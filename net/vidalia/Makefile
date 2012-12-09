@@ -2,7 +2,7 @@
 
 COMMENT =		GUI controller for Tor
 
-DISTNAME =		vidalia-0.2.17
+DISTNAME =		vidalia-0.2.21
 
 CATEGORIES =		net
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		QtGui QtNetwork QtXml c m pthread stdc++
+WANTLIB =		QtGui QtNetwork QtXml c m stdc++
 
 VMEM_WARNING =		Yes
 
