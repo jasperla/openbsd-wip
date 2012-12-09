@@ -89,6 +89,7 @@ RUN_DEPENDS-edu = \
 		x11/kde4/step
 
 RUN_DEPENDS-graphics = \
+		x11/kde4/graphics-mobipocket \
 		x11/kde4/graphics-strigi-analyzer \
 		x11/kde4/graphics-thumbnailers \
 		x11/kde4/gwenview	\
