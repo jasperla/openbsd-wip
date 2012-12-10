@@ -2,7 +2,7 @@
 
 COMMENT=	administration and development platform for PostgreSQL
 
-V=		1.16.0
+V=		1.16.1
 DISTNAME=	pgadmin3-$V
 CATEGORIES=	databases devel
 
