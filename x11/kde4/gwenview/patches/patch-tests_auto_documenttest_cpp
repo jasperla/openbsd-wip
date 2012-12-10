@@ -1,0 +1,22 @@
+$OpenBSD$
+--- tests/auto/documenttest.cpp.orig	Mon Dec 10 17:15:52 2012
++++ tests/auto/documenttest.cpp	Mon Dec 10 17:16:11 2012
+@@ -28,6 +28,9 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Bos
+ #include <KIO/NetAccess>
+ #include <qtest_kde.h>
+ 
++// Other
++#include <exiv2/exif.hpp>
++
+ // Local
+ #include "../lib/abstractimageoperation.h"
+ #include "../lib/document/abstractdocumenteditor.h"
+@@ -37,8 +40,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Bos
+ #include "../lib/imageutils.h"
+ #include "../lib/transformimageoperation.h"
+ #include "testutils.h"
+-
+-#include <exiv2/exif.hpp>
+ 
+ #include "documenttest.moc"
+ 

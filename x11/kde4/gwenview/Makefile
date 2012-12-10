@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, image viewer
 DISTNAME =	gwenview-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	gwenviewlib               0.0 # 4.7
 
