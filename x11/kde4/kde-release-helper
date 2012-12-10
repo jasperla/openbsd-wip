@@ -1,71 +1,23 @@
-#!/bin/sh
+#!/bin/ksh
 
 set -e
-
-#
-# Working directory: /var/kde4up/${PKGNAME:C/-[0-9].*//}/${VERSION???}
-# Files:
-#   ${step}.done
-#   ${step}.log
-#
-# TODO: MULTI_PACKAGES
-#
-# prepare:
-#   copy directory
-#   add corresponding line to Makefile.inc
-#   remove distinfo files
-#
-# compare lists of packages both for source code and for l10n
-#
-# for each dep in: init[ial] libs pimlibs runtime pimruntime
-#   for each pkg with dep
-#     new-window in tmux; run commands via set-buffer, paste-buffer?
-#     switch step
-#       step 1=configure
-#         make makesum
-#         make patch
-#         make configure
-#         mark step done
-#         if previous log exists and does not differ, go to step 2
-#           (N.B.: ignore library versions changes and such)
-#         break
-#       step 2=plist
-#         rm -f pkg/PLIST*.orig
-#         make update-plist
-#         fix plist (FLAVORS => MODKDE4_CMAKE_PREFIX, etc.)
-#         ignore l10n and such
-#         mark step done
-#         if nothing interesting was left, go to step 3
-#         break
-#       step 3=port-depends
-#         make port-lib-depends-check
-#         mark step done
-#         if nothing changed, go to step 4
-#         break
-#       step 4=lib-depends
-#         make lib-depends-check
-#         mark step done
-#         if nothing changed, go to step 5
-#         break
-#       step 5=install
-#         make install
-#         mark step done
-#     end switch
-#
 
 usage() {
 cat >&2 <<EOF
 usage: $0 prepare new-KDE-version
        $0 check-lists
        $0 merge
+       $0 next
        $0 show {built|packaged|status|unpackaged} [all|l10n|sc]
        $0 update status
 
 typical usecases:
   $0 prepare 4.9.3
   # start hacking
+  $0 next
+  # after some progress but before committing
   $0 update status
-  # commit and hack more
+  # when new KDE release is ready
   $0 merge
 EOF
 	exit 1
@@ -185,6 +137,40 @@ print_status_line() {
 	printf '%-32s%s\n' "$1" "$2"
 }
 
+is_started() {
+	test -d "`cd $1 && make show=WRKSRC`"
+}
+
+is_configured() {
+	test -e "`cd $1 && make show=_CONFIGURE_COOKIE`"
+}
+
+is_built() {
+	test -e "`cd $1 && make show=_BUILD_COOKIE`"
+}
+
+is_tested() {
+	test -e "`cd $1 && make show=_REGRESS_COOKIE`"
+}
+
+is_packaged() {
+	for F in `cd $1 && make show=PKGFILES`; do
+		test -e "$F" || return 1
+	done
+	return 0
+}
+
+is_locked() {
+	# LOCKDIR could be empty, see ports(7)
+	LOCKDIR="${LOCKDIR:-X`cd $1 && make show=LOCKDIR`}"
+	if [ "$LOCKDIR" != X ]; then
+		test -e "${LOCKDIR#X}/`cd $1 && make show=FULLPKGNAME`.lock"
+	else
+		# XXX Better detection mechanizm?
+		false
+	fi
+}
+
 ### Main actions go here
 
 prepare() {
@@ -266,6 +252,49 @@ check_lists() {
 	    egrep '^[\+-][^\+-]' || true
 }
 
+choose_next() {
+	test $# -eq 0 || usage
+
+	local KDEDIR=$(kde_port_dir `kde_version`)
+	local P PP BDEPS DEP DEP2
+
+	echo "===> Gathering lists of KDE ports packaged or being built" >&2
+	for P in `list_local_ports; list_l10n_ports_dirs`; do
+		# normalize build dependencies list by removing all but pkgpath
+		BDEPS=$(cd $P && make build-depends-list |
+		    sed -Ee 's@^.*"([^"]*)".*$@\1@' -e 's@[^[:space:]]+:@@g')
+
+		# take care of KDE SC dependencies only
+		for DEP2 in $BDEPS; do
+			echo "$DEP2"
+		done |
+		fgrep "x11/${KDEDIR}/" |
+		sed -e "s%x11/${KDEDIR}/%%" -e "s%\$% ${P}%"
+	done |
+	tsort -h ../kde4/kde.deps.hints |
+	while read PP; do
+		is_packaged $PP && continue
+		is_locked $PP && continue
+
+		if is_built $PP; then
+			echo "# $PP was built"
+			echo "(cd $PP && make update-plist) && \\"
+			echo "(cd $PP && make port-lib-depends-check) && \\"
+			echo "(cd $PP && make package)"
+		elif is_configured $PP; then
+			echo "# $PP was configured"
+			echo "(cd $PP && make build)"
+		elif is_started $PP; then
+			echo "# $PP was started"
+			echo "(cd $PP && make configure)"
+		elif is_waiting $PP; then
+			echo "# $PP was not started"
+			echo "(cd $PP && make patch)"
+		fi
+		break
+	done
+}
+
 merge_back() {
 	test $# -eq 0 || usage
 	# Avoid erroring out here, we'll print a nicer message below.
@@ -313,24 +342,6 @@ EOF
 	git commit -m "Remove KDE $KDEV testing directory." -e -- $KPD
 }
 
-is_started() {
-	D="`cd $1 && make show=WRKSRC`"
-	test -d "$D"
-}
-
-is_built() {
-	# XXX Rely on SEPARATE_BUILD being set to avoid extra make invocation
-	D="`cd $1 && make show=WRKBUILD`"
-	test -e "$D/.build_done"
-}
-
-is_packaged() {
-	for F in `cd $1 && make show=PKGFILES`; do
-		test -e "$F" || return 1
-	done
-	return 0
-}
-
 expand_port_list() {
 	case ${1:-all} in
 	all)
@@ -359,6 +370,8 @@ show_status() {
 			print_status_line $P PACKAGED
 		elif is_built $P; then
 			print_status_line $P BUILT
+		elif is_configured $P; then
+			print_status_line $P CONFIGURED
 		elif is_started $P; then
 			print_status_line $P STARTED
 		else
@@ -379,6 +392,12 @@ show() {
 	local P WHAT PORTLIST=$(expand_port_list "$2")
 	WHAT=$1; shift
 	case $WHAT in
+	c|co|con|conf|confi|config|configu|configur|configure|configured)
+		for P in $PORTLIST; do
+			is_configured $P && echo $P
+		done
+		;;
+
 	b|bu|bui|buil|built)
 		for P in $PORTLIST; do
 			is_built $P && echo $P
@@ -427,8 +446,9 @@ BEGIN {
 	# From most to least useful, the latest one isn't actually needed now.
 	STATUSES[1] = \"PACKAGED\";
 	STATUSES[2] = \"BUILT\";
-	STATUSES[3] = \"STARTED\";
-	#STATUSES[4] = \"WAITING\";
+	STATUSES[3] = \"CONFIGURED\";
+	STATUSES[4] = \"STARTED\";
+	#STATUSES[5] = \"WAITING\";
 
 	# We cannot use 'for(... in STATUSES)' because it doesn't restart
 	# on every loop, but starts cycling items from the position where
@@ -495,6 +515,10 @@ check-l|check-li|check-lis|check-list|check-lists)
 
 m|me|mer|merg|merge)
 	merge_back "$@"
+	;;
+
+n|ne|nex|next)
+	choose_next "$@"
 	;;
 
 s|sh|sho|show)
