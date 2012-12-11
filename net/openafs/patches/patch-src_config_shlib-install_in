@@ -1,0 +1,17 @@
+$OpenBSD$
+--- src/config/shlib-install.in.orig	Tue Dec 11 22:00:23 2012
++++ src/config/shlib-install.in	Tue Dec 11 22:02:14 2012
+@@ -69,6 +69,13 @@ hp_ux*)
+         ln -s -f "$library.$suffix.$major" "$dest/$library.$suffix"
+     fi
+     ;;
++*_obsd*)
++    if [ -z "$major" ] ; then
++        $install "$filename" "$dest/$library.$suffix"
++    else
++        $install "$filename" $dest/"$filename"
++    fi
++    ;;
+ *)
+     if [ -z "$major" ] ; then
+         $install "$filename" "$dest/$library.$suffix"

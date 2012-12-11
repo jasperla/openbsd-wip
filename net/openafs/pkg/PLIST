@@ -1,14 +1,8 @@
 @comment $OpenBSD: PLIST,v 1.5 2010/11/15 08:11:17 jasper Exp $
 %%SHARED%%
 %%withcache%%
-@owner root
-@group wheel
 @bin bin/afs_compile_et
-@owner
-@group
 @bin bin/afsio
-@owner root
-@group wheel
 @bin bin/afsmonitor
 @bin bin/aklog
 @bin bin/asetkey
@@ -25,11 +19,7 @@
 @bin bin/pagsh
 @bin bin/pagsh.krb
 @bin bin/pts
-@owner
-@group
 @bin bin/restorevol
-@owner root
-@group wheel
 @bin bin/rxgen
 @bin bin/scout
 @bin bin/sys
@@ -45,26 +35,14 @@ include/afs/
 include/afs/acl.h
 include/afs/afs.h
 include/afs/afs_args.h
-@owner
-@group
 include/afs/afs_assert.h
-@owner root
-@group wheel
 include/afs/afs_atomlist.h
-@owner
-@group
 include/afs/afs_consts.h
-@owner root
-@group wheel
 include/afs/afs_lhash.h
 include/afs/afs_stats.h
 include/afs/afs_sysnames.h
 include/afs/afscbint.h
-@owner
-@group
 include/afs/afscp.h
-@owner root
-@group wheel
 include/afs/afsint.h
 include/afs/afssyscalls.h
 include/afs/afsutil.h
@@ -85,11 +63,7 @@ include/afs/cellconfig.h
 include/afs/cmd.h
 include/afs/cnvldb.h
 include/afs/com_err.h
-@owner
-@group
 include/afs/daemon_com.h
-@owner root
-@group wheel
 include/afs/dir.h
 include/afs/dirpath.h
 include/afs/error_table.h
@@ -126,11 +100,7 @@ include/afs/nfs.h
 include/afs/nfsclient.h
 include/afs/osi_inode.h
 include/afs/packages.h
-@owner
-@group
 include/afs/pagcb.h
-@owner root
-@group wheel
 include/afs/param.h
 include/afs/partition.h
 include/afs/prclient.h
@@ -148,11 +118,7 @@ include/afs/ptserver.h
 include/afs/ptuser.h
 include/afs/remote.h
 include/afs/rxgen_consts.h
-@owner
-@group
 include/afs/salvsync.h
-@owner root
-@group wheel
 include/afs/softsig.h
 include/afs/stds.h
 include/afs/sysctl.h
@@ -162,28 +128,18 @@ include/afs/usd.h
 include/afs/venus.h
 include/afs/vice.h
 include/afs/viceinode.h
-@owner
 include/afs/vioc.h
-@owner root
 include/afs/vl_opcodes.h
 include/afs/vldbint.h
 include/afs/vlserver.h
 include/afs/vnode.h
-@owner
-@group
 include/afs/vnode_inline.h
-@owner root
-@group wheel
 include/afs/voldefs.h
 include/afs/volint.h
 include/afs/volser.h
 include/afs/volume.h
-@owner
-@group
 include/afs/volume_inline.h
 include/afs/vsutils_prototypes.h
-@owner root
-@group wheel
 include/afs/xfsattrs.h
 include/afs/xstat_cm.h
 include/afs/xstat_fs.h
@@ -191,11 +147,7 @@ include/des.h
 include/des_conf.h
 include/des_odd.h
 include/des_prototypes.h
-@owner
-@group
 include/kopenafs.h
-@owner root
-@group wheel
 include/lock.h
 include/lwp.h
 include/mit-cpyright.h
@@ -225,11 +177,7 @@ include/ubik.h
 include/ubik_int.h
 lib/afs/
 lib/afs/libacl.a
-@owner
-@group
 lib/afs/libafscom_err.a
-@owner root
-@group wheel
 lib/afs/libafsint.a
 lib/afs/libafsutil.a
 lib/afs/libaudit.a
@@ -258,41 +206,21 @@ lib/afs/libxstat_fs.a
 lib/afs/util.a
 lib/afs/vlib.a
 lib/libafsauthent.a
-@owner
-@group
-lib/libafsauthent.so.1
 lib/libafsauthent_pic.a
 lib/libafscp.a
-@owner root
-@group wheel
 lib/libafsrpc.a
-@owner
-@group
-lib/libafsrpc.so.1
 lib/libafsrpc_pic.a
-@owner root
-@group wheel
 lib/libdes.a
-@owner
-@group
 lib/libkopenafs.a
-lib/libkopenafs.so.1
-@owner root
-@group wheel
 lib/liblwp.a
 lib/librx.a
 lib/librxkad.a
 lib/librxstat.a
 lib/libubik.a
-lib/openafs/
 libexec/openafs/
 @bin libexec/openafs/buserver
-@owner
-@group
 @bin libexec/openafs/dafileserver
 @bin libexec/openafs/davolserver
-@owner root
-@group wheel
 @bin libexec/openafs/fileserver
 @bin libexec/openafs/kaserver
 @bin libexec/openafs/ptserver
@@ -301,8 +229,6 @@ libexec/openafs/
 @bin libexec/openafs/upserver
 @bin libexec/openafs/vlserver
 @bin libexec/openafs/volserver
-@owner
-@group
 @man man/man1/afs.1
 @man man/man1/afs_compile_et.1
 @man man/man1/afsmonitor.1
@@ -647,18 +573,12 @@ libexec/openafs/
 @man man/man8/volserver.8
 @man man/man8/vsys.8
 @man man/man8/xfs_size_check.8
-@owner root
-@group wheel
 @bin sbin/backup
 @bin sbin/bos_util
 @bin sbin/bosserver
 @bin sbin/butc
 @bin sbin/fms
-@owner
-@group
 @bin sbin/fssync-debug
-@owner root
-@group wheel
 @bin sbin/fstrace
 @bin sbin/ka-forwarder
 @bin sbin/kadb_check
@@ -672,11 +592,7 @@ sbin/openafs-setup
 @bin sbin/read_tape
 @bin sbin/rmtsysd
 @bin sbin/rxdebug
-@owner
-@group
 @bin sbin/state_analyzer
-@owner root
-@group wheel
 @bin sbin/uss
 @bin sbin/vldb_check
 @bin sbin/vldb_convert
@@ -684,14 +600,14 @@ sbin/openafs-setup
 @bin sbin/volinfo
 @bin sbin/vos
 @bin sbin/vsys
-@owner
-@group
 share/doc/pkg-readmes/${FULLPKGNAME}
-@owner root
-@group wheel
 share/examples/openafs/
+@sample ${SYSCONFDIR}/openafs/
+share/examples/openafs/CellServDB
+@sample ${SYSCONFDIR}/openafs/CellServDB
+share/examples/openafs/cacheinfo
+@sample ${SYSCONFDIR}/openafs/cacheinfo
 share/examples/openafs/krb5.conf
-@owner
 share/openafs/
 share/openafs/C/
 share/openafs/C/afszcm.cat
