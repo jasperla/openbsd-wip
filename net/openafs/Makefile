@@ -28,10 +28,13 @@ SHARED_LIBS +=  kopenafs                  1.1
 
 
 MASTER_SITES=		http://www.openafs.org/dl/openafs/${VERSION}/
+MASTER_SITES0=		http://grand.central.org/dl/cellservdb/
 
 EXTRACT_SUFX=		.tar.gz
 DOC_DISTFILE=		openafs-${VERSION}-doc
-DISTFILES=		${DISTNAME}${EXTRACT_SUFX} ${DOC_DISTFILE}${EXTRACT_SUFX}
+CELLSRVDB=		CellServDB.2011-08-14
+DISTFILES=		${DISTNAME}${EXTRACT_SUFX} ${DOC_DISTFILE}${EXTRACT_SUFX} ${CELLSRVDB}:0
+EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX} ${DOC_DISTFILE}${EXTRACT_SUFX}
 
 NO_REGRESS=		Yes
 
@@ -57,24 +60,6 @@ FLAVOR?=
 
 WRKDIST=	${WRKDIR}/openafs-${VERSION}
 
-post-patch:
-	@sed "s/%OSrev%/${OSrev}/g;s/%ARCH%/${ARCH}/g" \
-		${FILESDIR}/param.obsd.h \
-		> ${WRKSRC}/src/config/param.${ARCH}_obsd${OSrev}.h
-
-post-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openafs
-	${SUBST_CMD} -c \
-		${FILESDIR}/krb5.conf \
-		${WRKSRC}/obsd.krb5.conf
-	${INSTALL_DATA} -m 755 ${WRKSRC}/obsd.krb5.conf \
-		${PREFIX}/share/examples/openafs/krb5.conf
-	${SUBST_CMD} -c \
-		${FILESDIR}/openafs-setup \
-		${WRKSRC}/obsd.openafs-setup
-	${INSTALL_PROGRAM} -m 755 ${WRKSRC}/obsd.openafs-setup \
-		${PREFIX}/sbin/openafs-setup
-
 .if ${FLAVOR:L:Mwithcache}
 CONFIGURE_ARGS+=	--enable-kernel-module
 .else
@@ -95,12 +80,26 @@ CONFIGURE_ARGS+=	--enable-littleendian
 CONFIGURE_ARGS+=	--enable-bigendian
 .endif
 
-post-extract:
-	cd ${WRKSRC} && tar xzf ${FULLDISTDIR}/${DOC_DISTFILE}${EXTRACT_SUFX}
+post-patch:
+	@sed "s/%OSrev%/${OSrev}/g;s/%ARCH%/${ARCH}/g" \
+		${FILESDIR}/param.obsd.h \
+		> ${WRKSRC}/src/config/param.${ARCH}_obsd${OSrev}.h
 
 post-install:
-.for dir in man1 man5 man8
-	cd ${WRKSRC}/doc/man-pages/${dir} && pax -rw . ${PREFIX}/man
-.endfor
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openafs
+	${SUBST_CMD} -c \
+		${FILESDIR}/krb5.conf \
+		${WRKSRC}/obsd.krb5.conf
+	${INSTALL_DATA} -m 755 ${WRKSRC}/obsd.krb5.conf \
+		${PREFIX}/share/examples/openafs/krb5.conf
+	${SUBST_CMD} -c \
+		${FILESDIR}/openafs-setup \
+		${WRKSRC}/obsd.openafs-setup
+	${INSTALL_PROGRAM} -m 755 ${WRKSRC}/obsd.openafs-setup \
+		${PREFIX}/sbin/openafs-setup
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openafs
+	${INSTALL_DATA} ${FULLDISTDIR}/${CELLSRVDB} \
+		${PREFIX}/share/examples/openafs/CellServDB
+	${INSTALL_DATA} ${FILESDIR}/cacheinfo ${PREFIX}/share/examples/openafs
 
 .include <bsd.port.mk>

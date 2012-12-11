@@ -1,7 +1,4 @@
 @comment $OpenBSD: PFRAG.shared,v 1.1 2008/07/21 03:13:01 todd Exp $
-lib/libafsauthent.so
 @lib lib/libafsauthent.so.${LIBafsauthent_VERSION}
-lib/libafsrpc.so
 @lib lib/libafsrpc.so.${LIBafsrpc_VERSION}
-lib/libkopenafs.so
 @lib lib/libkopenafs.so.${LIBkopenafs_VERSION}

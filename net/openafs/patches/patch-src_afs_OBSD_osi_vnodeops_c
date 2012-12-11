@@ -1,12 +1,57 @@
 diff -u src/afs/OBSD/osi_vnodeops.c.orig src/afs/OBSD/osi_vnodeops.c
---- src/afs/OBSD/osi_vnodeops.c.orig	Mon Mar 26 18:03:34 2012
-+++ src/afs/OBSD/osi_vnodeops.c	Tue Nov 13 16:05:20 2012
-@@ -151,6 +151,47 @@ int afs_obsd_advlock(void *);
+--- src/afs/OBSD/osi_vnodeops.c.orig	Tue Mar 27 01:03:34 2012
++++ src/afs/OBSD/osi_vnodeops.c	Tue Dec 11 22:26:09 2012
+@@ -151,56 +151,42 @@ int afs_obsd_advlock(void *);
  	((int (*) __P((void *)))eopnotsupp)
  #define afs_obsd_reallocblks afs_obsd_opnotsupp
  
-+#if defined(AFS_OBSD49_ENV)
-+
+-/* Global vfs data structures for AFS. */
+-int (**afs_vnodeop_p) __P((void *));
+-struct vnodeopv_entry_desc afs_vnodeop_entries[] = {
+-#ifdef AFS_OBSD44_ENV /* feel free to zero in on this */
+-  {&vop_default_desc, eopnotsupp},
+-#else
+-    {&vop_default_desc, vn_default_error},
+-#endif
+-    {&vop_lookup_desc, afs_obsd_lookup},	/* lookup */
+-    {&vop_create_desc, afs_obsd_create},	/* create */
+-    {&vop_mknod_desc, afs_obsd_mknod},		/* mknod */
+-    {&vop_open_desc, afs_obsd_open},		/* open */
+-    {&vop_close_desc, afs_obsd_close},		/* close */
+-    {&vop_access_desc, afs_obsd_access},	/* access */
+-    {&vop_getattr_desc, afs_obsd_getattr},	/* getattr */
+-    {&vop_setattr_desc, afs_obsd_setattr},	/* setattr */
+-    {&vop_read_desc, afs_obsd_read},		/* read */
+-    {&vop_write_desc, afs_obsd_write},		/* write */
+-    {&vop_ioctl_desc, afs_obsd_ioctl},		/* XXX ioctl */
+-#ifdef AFS_OBSD35_ENV
+-    {&vop_poll_desc, afs_obsd_select},		/* select */
+-#else
+-    {&vop_select_desc, afs_obsd_select},	/* select */
+-#endif
+-    {&vop_fsync_desc, afs_obsd_fsync},		/* fsync */
+-    {&vop_remove_desc, afs_obsd_remove},	/* remove */
+-    {&vop_link_desc, afs_obsd_link},		/* link */
+-    {&vop_rename_desc, afs_obsd_rename},	/* rename */
+-    {&vop_mkdir_desc, afs_obsd_mkdir},		/* mkdir */
+-    {&vop_rmdir_desc, afs_obsd_rmdir},		/* rmdir */
+-    {&vop_symlink_desc, afs_obsd_symlink},	/* symlink */
+-    {&vop_readdir_desc, afs_obsd_readdir},	/* readdir */
+-    {&vop_readlink_desc, afs_obsd_readlink},	/* readlink */
+-    {&vop_abortop_desc, vop_generic_abortop},	/* abortop */
+-    {&vop_inactive_desc, afs_obsd_inactive},	/* inactive */
+-    {&vop_reclaim_desc, afs_obsd_reclaim},	/* reclaim */
+-    {&vop_lock_desc, afs_obsd_lock},		/* lock */
+-    {&vop_unlock_desc, afs_obsd_unlock},	/* unlock */
+-    {&vop_bmap_desc, afs_obsd_bmap},		/* bmap */
+-    {&vop_strategy_desc, afs_obsd_strategy},	/* strategy */
+-    {&vop_print_desc, afs_obsd_print},		/* print */
+-    {&vop_islocked_desc, afs_obsd_islocked},	/* islocked */
+-    {&vop_pathconf_desc, afs_obsd_pathconf},	/* pathconf */
+-    {&vop_advlock_desc, afs_obsd_advlock},	/* advlock */
+-    {&vop_reallocblks_desc, afs_obsd_reallocblks},	/* reallocblks */
+-    {&vop_bwrite_desc, vop_generic_bwrite},
+-    {(struct vnodeop_desc *)NULL, (int (*)__P((void *)))NULL}
 +struct vops afs_vops = {
 +//	.vop_default	= eopnotsupp,
 +	.vop_lookup	= afs_obsd_lookup,
@@ -42,23 +87,13 @@ diff -u src/afs/OBSD/osi_vnodeops.c.orig src/afs/OBSD/osi_vnodeops.c
 +	.vop_pathconf	= afs_obsd_pathconf,
 +	.vop_advlock	= afs_obsd_advlock,
 +	.vop_bwrite	= vop_generic_bwrite,
-+};
-+
-+#else
-+
- /* Global vfs data structures for AFS. */
- int (**afs_vnodeop_p) __P((void *));
- struct vnodeopv_entry_desc afs_vnodeop_entries[] = {
-@@ -202,6 +243,8 @@ struct vnodeopv_entry_desc afs_vnodeop_entries[] = {
- struct vnodeopv_desc afs_vnodeop_opv_desc =
-     { &afs_vnodeop_p, afs_vnodeop_entries };
+ };
+-struct vnodeopv_desc afs_vnodeop_opv_desc =
+-    { &afs_vnodeop_p, afs_vnodeop_entries };
  
-+#endif
-+
  #define GETNAME()	\
      struct componentname *cnp = ap->a_cnp; \
-     char *name; \
-@@ -249,7 +292,7 @@ afs_obsd_lookup(void *v)
+@@ -249,7 +235,7 @@ afs_obsd_lookup(void *v)
      }
      dvp = ap->a_dvp;
      if (afs_debug & AFSDEB_VNLAYER && !(dvp->v_flag & VROOT))
@@ -67,7 +102,7 @@ diff -u src/afs/OBSD/osi_vnodeops.c.orig src/afs/OBSD/osi_vnodeops.c
  	       name, dvp->v_usecount);
      AFS_GLOCK();
      code = afs_lookup(VTOAFS(dvp), name, &vcp, cnp->cn_cred);
-@@ -296,7 +339,7 @@ afs_obsd_lookup(void *v)
+@@ -296,7 +282,7 @@ afs_obsd_lookup(void *v)
  
      DROPNAME();
      if (afs_debug & AFSDEB_VNLAYER && !(dvp->v_flag & VROOT))
@@ -76,7 +111,7 @@ diff -u src/afs/OBSD/osi_vnodeops.c.orig src/afs/OBSD/osi_vnodeops.c
      return code;
  }
  
-@@ -315,7 +358,7 @@ afs_obsd_create(void *v)
+@@ -315,7 +301,7 @@ afs_obsd_create(void *v)
      GETNAME();
  
      if (afs_debug & AFSDEB_VNLAYER)
@@ -85,7 +120,7 @@ diff -u src/afs/OBSD/osi_vnodeops.c.orig src/afs/OBSD/osi_vnodeops.c
  
      /* vnode layer handles excl/nonexcl */
  
-@@ -342,7 +385,7 @@ afs_obsd_create(void *v)
+@@ -342,7 +328,7 @@ afs_obsd_create(void *v)
      vput(dvp);
      DROPNAME();
      if (afs_debug & AFSDEB_VNLAYER)
@@ -94,7 +129,7 @@ diff -u src/afs/OBSD/osi_vnodeops.c.orig src/afs/OBSD/osi_vnodeops.c
      return code;
  }
  
-@@ -678,7 +721,11 @@ afs_obsd_rename(void *v)
+@@ -678,7 +664,11 @@ afs_obsd_rename(void *v)
  	if ((fcnp->cn_flags & SAVESTART) == 0)
  	    panic("afs_rename: lost from startdir");
  	fcnp->cn_nameiop = DELETE;
