@@ -1,13 +1,24 @@
 It needs tests on i386.
 
-I need reorganize the makefile.
-
 I need add a message about the incompatibility of the OpenGL part of racket
 with OpenBSD.
 
 Fix LIB/BUILD/RUN_DEPENDS.
 
-Tests if the binaries and libs are stripped or not.
+----
+
+Crash on i386. The culprit is probably some change in ports in the last weeks.
+
+raco setup: making: gui-debugger
+raco setup:  in gui-debugger
+Seg fault (internal error) at 0xc8ff256
+Abort trap (core dumped) 
+*** Error 134 in . (Makefile:134 'install-3m')
+*** Error 1 in /usr/ports/pobj/racket-5.3.1/build-i386 (Makefile:74 'install')
+*** Error 1 in . (Makefile:97 'do-install')
+*** Error 1 in . (/usr/ports/infrastructure/mk/bsd.port.mk:2631 '/usr/ports/pobj/racket-5.3.1/fake-i386/.fake_don
+e')
+*** Error 1 in /usr/ports/openbsd-wip/lang/racket (/usr/ports/infrastructure/mk/bsd.port.mk:2283 'update-plist')
 
 ----
 
