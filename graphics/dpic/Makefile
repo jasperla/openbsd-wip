@@ -2,7 +2,7 @@
 
 COMMENT =		pic-like interpreter for producing line graphics
 
-DISTNAME =		dpic-2012.07.07
+DISTNAME =		dpic-2012.11.04
 
 CATEGORIES =		graphics
 
