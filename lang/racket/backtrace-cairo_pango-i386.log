@@ -1,0 +1,72 @@
+
+Thread 3 (process 31613):
+#0  0x07d1beb9 in nanosleep () at <stdin>:2
+#1  0x0510352b in nanosleep (rqtp=0x8510ef68, rmtp=0x0)
+    at /usr/src/lib/librthread/rthread_cancel.c:274
+#2  0x07d0ea2e in usleep (useconds=Variable "useconds" is not available.
+) at /usr/src/lib/libc/gen/usleep.c:46
+#3  0x0bd29056 in green_thread_timer (data=0x7e434d80) at port.c:10335
+#4  0x0bcdef80 in mzrt_thread_stub (data=0x87ba3ce0)
+    at /usr/ports/pobj/racket-5.3.1/racket-5.3.1/src/racket/gc2/../src/mzrt.c:171
+#5  0x0510010e in _rthread_start (v=0x86598900) at /usr/src/lib/librthread/rthread.c:122
+#6  0x07d15809 in __tfork_thread () at /usr/src/lib/libc/arch/i386/sys/tfork_thread.S:92
+
+Thread 2 (process 19540):
+#0  0x07d657d5 in _thread_sys___thrsigdivert () at <stdin>:2
+#1  0x05102c0c in sigwait (set=0x8985bf78, sig=0x8985bf88)
+    at /usr/src/lib/librthread/rthread_sig.c:59
+#2  0x0bd27419 in mz_proc_thread_signal_worker (data=0x0) at place.c:838
+#3  0x0bcdef80 in mzrt_thread_stub (data=0x87ba3920)
+    at /usr/ports/pobj/racket-5.3.1/racket-5.3.1/src/racket/gc2/../src/mzrt.c:171
+#4  0x0510010e in _rthread_start (v=0x86598c00) at /usr/src/lib/librthread/rthread.c:122
+#5  0x07d15809 in __tfork_thread () at /usr/src/lib/libc/arch/i386/sys/tfork_thread.S:92
+
+Thread 1 (process 23218):
+#0  0x07d2cabd in kill () at <stdin>:2
+#1  0x07d986a6 in raise (s=6) at /usr/src/lib/libc/gen/raise.c:39
+#2  0x07d985cc in abort () at /usr/src/lib/libc/stdlib/abort.c:70
+#3  0x0be0ab8a in fault_handler (sn=Could not find the frame base for "fault_handler".
+) at sighand.c:138
+#4  0x3c004d20 in ?? ()
+#5  0xfffffe7c in ?? ()
+#6  0x8760fcf0 in ?? ()
+#7  0x00000030 in ?? ()
+#8  0x00000004 in ?? ()
+#9  0x0be0ab56 in fault_handler (sn=11, si=0xcfbbc3b0, ctx=0xcfbbc35c) at sighand.c:136
+#10 <signal handler called>
+#11 sse2_composite_over_n_8_8888 (imp=0x835f4800, info=0xcfbbc754) at emmintrin.h:584
+#12 0x0a75ec41 in pixman_composite_glyphs_no_mask (op=PIXMAN_OP_OVER, src=0x86728500, 
+    dest=0x81fb8900, src_x=0, src_y=0, dest_x=0, dest_y=0, cache=0x80846000, n_glyphs=2, 
+    glyphs=0xcfbbc878) at /usr/xenocara/lib/pixman/pixman/pixman-glyph.c:489
+#13 0x1002cfc8 in composite_glyphs () from /usr/local/lib/libcairo.so.12.1
+#14 0x10075de8 in composite_glyphs () from /usr/local/lib/libcairo.so.12.1
+#15 0x1007775a in clip_and_composite () from /usr/local/lib/libcairo.so.12.1
+#16 0x10077a23 in _cairo_traps_compositor_glyphs () from /usr/local/lib/libcairo.so.12.1
+#17 0x1001ee92 in _cairo_compositor_glyphs () from /usr/local/lib/libcairo.so.12.1
+#18 0x10031355 in _cairo_image_surface_glyphs () from /usr/local/lib/libcairo.so.12.1
+#19 0x10066602 in _cairo_surface_show_text_glyphs () from /usr/local/lib/libcairo.so.12.1
+#20 0x1002794a in _cairo_gstate_show_text_glyphs () from /usr/local/lib/libcairo.so.12.1
+#21 0x100186fe in cairo_show_glyphs () from /usr/local/lib/libcairo.so.12.1
+#22 0x038c41c9 in pango_cairo_renderer_show_text_glyphs (renderer=0x8672d420, text=0x0, 
+    text_len=0, glyphs=0x86598610, clusters=0x0, num_clusters=0, backward=0, font=0x876bf8c0, 
+    x=0, y=0) at pangocairo-render.c:367
+#23 0x038c45c5 in pango_cairo_renderer_draw_glyphs (renderer=0x8672d420, font=0x876bf8c0, 
+    glyphs=0x86598610, x=0, y=0) at pangocairo-render.c:383
+#24 0x0ef47eca in pango_renderer_draw_glyphs (renderer=0x8672d420, font=0x876bf8c0, 
+    glyphs=0x86598610, x=0, y=0) at pango-renderer.c:641
+#25 0x0ef47fdd in pango_renderer_draw_glyph_item (renderer=0x8672d420, text=0x8760fc60 "()", 
+    glyph_item=0x8795eb88, x=0, y=0) at pango-renderer.c:705
+#26 0x0ef4868a in pango_renderer_draw_layout_line (renderer=0x8672d420, line=0x7d7a0140, x=0, 
+    y=0) at pango-renderer.c:570
+#27 0x038c2dd8 in _pango_cairo_do_layout_line (cr=0x876c1000, line=0x7d7a0140, do_path=0)
+    at pangocairo-render.c:858
+#28 0x00833d73 in ffi_call_SYSV () from racket/.libs/libffi.so.0.0
+#29 0x00833b7a in ffi_call (cif=0x7e3b2640, fn=0x38c2e60 <pango_cairo_show_layout_line>, 
+    rvalue=0xcfbbf5ac, avalue=0xcfbbf508) at src/x86/ffi.c:326
+#30 0x0bdf6b64 in finish_ffi_call (cif=0x7e3b2640, c_func=0x38c2e60, cfoff=0, nargs=2, 
+    ivals=0xcfbbf444, avalues=0xcfbbf508, offsets=0xcfbbf548, p=0xcfbbf5ac)
+    at xsrc/foreign.c:5256
+#31 0x0bdfebd4 in ffi_do_call (data=0x902e8870, argc=2, argv=0x8467877c)
+    at xsrc/foreign.c:5339
+#32 0x0bc05c1a in scheme_do_eval (obj=0x902e8850, num_rands=Variable "num_rands" is not available.
+) at eval.c:2993
