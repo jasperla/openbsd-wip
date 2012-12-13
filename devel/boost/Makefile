@@ -1,18 +1,20 @@
 # $OpenBSD: Makefile,v 1.40 2012/10/15 20:31:59 robert Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
-BROKEN-hppa =	ICE on src/tr1/assoc_laguerre.cpp
 
 COMMENT=	free peer-reviewed portable C++ source libraries
 
-PKGNAME=	boost-${VERSION}
-
 VERSION=	1.52.0
 DISTNAME=	boost_${VERSION:S/./_/g}
+PKGNAME=	boost-${VERSION}
 REVISION=	1
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=boost/}
 
 SO_VERSION=	5.0
-BOOST_LIBS=	boost_date_time boost_date_time-mt \
+BOOST_LIBS=	boost_chrono boost_chrono-mt \
+		boost_context boost_context-mt \
+		boost_date_time boost_date_time-mt \
 		boost_filesystem boost_filesystem-mt \
 		boost_graph boost_graph-mt \
 		boost_iostreams boost_iostreams-mt \
@@ -25,30 +27,24 @@ BOOST_LIBS=	boost_date_time boost_date_time-mt \
 		boost_prg_exec_monitor-mt boost_prg_exec_monitor \
 		boost_program_options boost_program_options-mt \
 		boost_python boost_python-mt \
+		boost_random boost_random-mt \
 		boost_regex boost_regex-mt \
 		boost_serialization boost_serialization-mt \
 		boost_signals boost_signals-mt \
 		boost_system boost_system-mt \
 		boost_thread-mt \
+		boost_timer boost_timer-mt \
 		boost_unit_test_framework boost_unit_test_framework-mt \
 		boost_wave boost_wave-mt \
-		boost_wserialization boost_wserialization-mt \
-		boost_chrono boost_chrono-mt \
-		boost_context boost_context-mt \
-		boost_random boost_random-mt \
-		boost_timer boost_timer-mt
+		boost_wserialization boost_wserialization-mt
 
 .for _lib in ${BOOST_LIBS}
 SHARED_LIBS+=	${_lib} ${SO_VERSION}
 .endfor
 
-CATEGORIES=	devel
+HOMEPAGE=	http://www.boost.org/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
-
-HOMEPAGE=	http://www.boost.org/
-VMEM_WARNING =	Yes
-DPB_PROPERTIES=	parallel
 
 # MIT-like
 PERMIT_PACKAGE_CDROM=	Yes
@@ -56,7 +52,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=boost/}
+WANTLIB=	c m pthread stdc++ util z
+
+MODULES=	lang/python
+MODPY_RUNDEP=	No
 
 MAKE_ENV=	GCC="${CC}" GXX="${CXX}"
 
@@ -71,21 +70,19 @@ BOOTSTRAP_CONFIG=	--without-icu \
 			--with-python=${MODPY_BIN} \
 			--with-python-root=${LOCALBASE} \
 			--with-python-version=${MODPY_VERSION} \
-#			--without-libraries=test,thread,serialization,system,date_time,filesystem,graph,math,mpi,program_options,signals,wave
-
-CONFIGURE_ENV=	BJAM_CONFIG="${BJAM_CONFIG}"
-
-NO_REGRESS=	Yes
-
-WANTLIB=	c m pthread stdc++ util z
-
-MODULES=	lang/python
-MODPY_RUNDEP=	No
 
 # python.port.mk makes assumptions about an empty CONFIGURE_STYLE
 CONFIGURE_STYLE=none
+CONFIGURE_ENV=	BJAM_CONFIG="${BJAM_CONFIG}"
+
+VMEM_WARNING =	Yes
+
+DPB_PROPERTIES=	parallel
+
+NO_REGRESS=	Yes
 
 SUBST_VARS+=	SO_VERSION
+
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Jamroot
 
