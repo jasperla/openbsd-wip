@@ -2,6 +2,7 @@
 @bin bin/superkaramba
 lib/kde4/plasma_package_superkaramba.so
 lib/kde4/plasma_scriptengine_superkaramba.so
+@lib lib/kde4/private/libsuperkaramba.so.${LIBsuperkaramba_VERSION}
 @lib lib/libsuperkaramba.so.${LIBsuperkaramba_VERSION}
 share/applications/kde4/superkaramba.desktop
 share/apps/superkaramba/
