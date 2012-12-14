@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, document viewer
 DISTNAME =	okular-${MODKDE_VERSION}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	okularcore		0.0	# 1.7
 
