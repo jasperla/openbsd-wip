@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, image editor
 DISTNAME =	kolourpaint-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kolourpaint_lgpl	0.0	# 4.7
 
