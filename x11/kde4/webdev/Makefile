@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, web development
 DISTNAME =	kdewebdev-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	klinkstatuscommon	0.0
 SHARED_LIBS +=	kommandercore		0.0
