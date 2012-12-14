@@ -26,14 +26,6 @@ EXTRACT_SUFX =		.tar.bz2
 MODULES =		x11/kde4
 MODKDE4_USE =
 
-LIB_DEPENDS devel/py-sip not needed for education/avogadro ?
-LIB_DEPENDS graphics/glew not needed for education/avogadro ?
-LIB_DEPENDS math/eigen2 not needed for education/avogadro ?
-LIB_DEPENDS x11/py-qt4 not needed for education/avogadro ?
-
-
-
-
 BUILD_DEPENDS =		devel/py-sip \
 			graphics/glew \
 			math/eigen2 \
