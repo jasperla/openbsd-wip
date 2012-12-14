@@ -3,6 +3,7 @@
 CATEGORIES =	devel
 COMMENT =	K Desktop Environment, KDE4 bindings for .NET
 DISTNAME =	kimono-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kimono			1.1 # 2.0
 SHARED_LIBS +=	akonadi-sharp		2.0
