@@ -4,7 +4,7 @@ COMMENT =		molecule editor and visualizer
 V =			1.0.3
 DISTNAME =		avogadro-${V}
 CATEGORIES =		education biology
-REVISION =		4
+REVISION =		5
 HOMEPAGE =		http://avogadro.openmolecules.net/
 
 SHARED_LIBS +=		avogadro	0.0	# 1.0
@@ -23,17 +23,33 @@ WANTLIB += boost_python-mt openbabel ${MODPY_WANTLIB}
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=avogadro/${V}/}
 EXTRACT_SUFX =		.tar.bz2
 
-MODULES =		devel/cmake x11/qt4
-BUILD_DEPENDS =		textproc/docbook \
-			math/py-numpy
-RUN_DEPENDS =		devel/desktop-file-utils \
-			math/py-numpy
-LIB_DEPENDS =		devel/boost \
-			devel/py-sip \
+MODULES =		x11/kde4
+MODKDE4_USE =
+
+LIB_DEPENDS devel/py-sip not needed for education/avogadro ?
+LIB_DEPENDS graphics/glew not needed for education/avogadro ?
+LIB_DEPENDS math/eigen2 not needed for education/avogadro ?
+LIB_DEPENDS x11/py-qt4 not needed for education/avogadro ?
+
+
+
+
+BUILD_DEPENDS =		devel/py-sip \
 			graphics/glew \
 			math/eigen2 \
-			misc/openbabel \
+			math/py-numpy \
+			textproc/docbook \
 			x11/py-qt4
+
+
+RUN_DEPENDS =		devel/desktop-file-utils \
+			devel/py-sip \
+			graphics/glew \
+			math/py-numpy \
+			x11/py-qt4
+
+LIB_DEPENDS =		devel/boost \
+			misc/openbabel
 
 SEPARATE_BUILD =	simple
 USE_GROFF =		Yes
