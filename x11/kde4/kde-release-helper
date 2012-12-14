@@ -288,7 +288,7 @@ choose_next() {
 		elif is_started $PP; then
 			echo "# $PP was started"
 			echo "(cd $PP && make configure)"
-		elif is_waiting $PP; then
+		else
 			echo "# $PP was not started"
 			echo "(cd $PP && make patch)"
 		fi
