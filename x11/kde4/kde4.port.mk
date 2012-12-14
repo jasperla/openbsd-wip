@@ -127,6 +127,7 @@ MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/libs
 MODKDE4_WANTLIB +=		kdecore>=8
 .       if ${MODKDE4_USE:L:Mpim}
 MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/pimlibs
+MODKDE4_BUILD_DEPENDS +=	devel/boost
 .       endif
 
 .       if ${MODKDE4_USE:L:Mruntime}
