@@ -258,6 +258,7 @@ choose_next() {
 	local KDEDIR=$(kde_port_dir `kde_version`)
 	local P PP BDEPS DEP DEP2
 
+# -h ../kde4/kde.deps.hints
 	echo "===> Gathering lists of KDE ports packaged or being built" >&2
 	for P in `list_local_ports; list_l10n_ports_dirs`; do
 		# normalize build dependencies list by removing all but pkgpath
@@ -271,7 +272,7 @@ choose_next() {
 		fgrep "x11/${KDEDIR}/" |
 		sed -e "s%x11/${KDEDIR}/%%" -e "s%\$% ${P}%"
 	done |
-	tsort -h ../kde4/kde.deps.hints |
+	tsort |
 	while read PP; do
 		is_packaged $PP && continue
 		is_locked $PP && continue
