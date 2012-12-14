@@ -3,15 +3,18 @@
 @bin bin/kimagemapeditor
 @bin bin/klinkstatus
 @bin bin/kommander
-include/kommandercore_export.h
-include/kommanderplugin.h
-include/kommanderwidget.h
-include/specials.h
+include/kde4/kommandercore_export.h
+include/kde4/kommanderplugin.h
+include/kde4/kommanderwidget.h
+include/kde4/specials.h
 lib/kde4/automationklinkstatus.so
 lib/kde4/klinkstatuspart.so
 lib/kde4/krossmoduleklinkstatus.so
 lib/kde4/libkfilereplacepart.so
 lib/kde4/libkimagemapeditor.so
+@lib lib/kde4/private/libklinkstatuscommon.so.${LIBklinkstatuscommon_VERSION}
+@lib lib/kde4/private/libkommandercore.so.${LIBkommandercore_VERSION}
+@lib lib/kde4/private/libkommanderwidgets.so.${LIBkommanderwidgets_VERSION}
 @lib lib/libklinkstatuscommon.so.${LIBklinkstatuscommon_VERSION}
 @lib lib/libkommandercore.so.${LIBkommandercore_VERSION}
 @lib lib/libkommanderwidgets.so.${LIBkommanderwidgets_VERSION}
