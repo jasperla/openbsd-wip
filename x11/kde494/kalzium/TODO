@@ -1,0 +1,18 @@
+Works, but loops forever on exit. Previously there was double free.
+
+(gdb) bt
+#0  0x0534fa40 in OpenBabel::OBForceFieldUFF::~OBForceFieldUFF () from /usr/local/lib/libopenbabel.so.5.0
+#1  0x0534fe30 in __tcf_3 () from /usr/local/lib/libopenbabel.so.5.0
+#2  0x0ccdfdf9 in __cxa_finalize (dso=0x2521e368) at /usr/src/lib/libc/stdlib/atexit.c:151
+#3  0x05237f70 in ?? () from /usr/local/lib/libopenbabel.so.5.0
+#4  0x2521e368 in __data_start () from /usr/local/lib/libopenbabel.so.5.0
+#5  0x287b70cc in ?? () from /usr/libexec/ld.so
+#6  0xcfbf31fc in ?? ()
+#7  0x0536a188 in _fini () from /usr/local/lib/libopenbabel.so.5.0
+#8  0xcfbf31dc in ?? ()
+#9  0x087bb9f0 in _dl_child_refcnt_decrement () from /usr/libexec/ld.so
+Previous frame inner to this frame (corrupt stack?)
+(gdb) info threads
+  3 process 1342853130, thread 0x827cb800 (RUNNING)  0x0534fa40 in OpenBabel::OBForceFieldUFF::~OBForceFieldUFF () from /usr/local/lib/libopenbabel.so.5.0
+  2 process 1342853130, thread 0x7d405c00 (COND_WAIT)  _thread_kern_sched (scp=0x0) at /usr/src/lib/libpthread/uthread/uthread_kern.c:497
+* 1 process 1342853130  0x0534fa40 in OpenBabel::OBForceFieldUFF::~OBForceFieldUFF () from /usr/local/lib/libopenbabel.so.5.0

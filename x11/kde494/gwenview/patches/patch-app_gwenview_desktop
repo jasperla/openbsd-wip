@@ -1,0 +1,13 @@
+$OpenBSD$
+Add image/tiff to the list of supported MIME types.
+--- app/gwenview.desktop.orig	Tue Jan 10 15:15:44 2012
++++ app/gwenview.desktop	Sat Jun 30 04:51:26 2012
+@@ -198,7 +198,7 @@ Terminal=false
+ Icon=gwenview
+ Type=Application
+ Categories=Qt;KDE;Graphics;Viewer;Photography;
+-MimeType=inode/directory;image/gif;image/jpeg;image/png;image/bmp;image/x-eps;image/x-ico;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-xbitmap;image/x-xpixmap;
++MimeType=inode/directory;image/gif;image/jpeg;image/png;image/bmp;image/tiff;image/x-eps;image/x-ico;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-xbitmap;image/x-xpixmap;
+ X-DocPath=gwenview/index.html
+ # InitialPreference should be greater than Okular so that Gwenview is the
+ # primary application associated with images, but less than Konqueror or Dolphin

@@ -1,0 +1,16 @@
+$OpenBSD$
+--- krunner/CMakeLists.txt.orig	Sun Apr 29 23:05:49 2012
++++ krunner/CMakeLists.txt	Sat Jun 30 21:11:48 2012
+@@ -80,9 +80,9 @@ if(NOT WIN32)
+   target_link_libraries(kdeinit_krunner processui  ${X11_Xrender_LIB} ${X11_LIBRARIES})
+ endif(NOT WIN32)
+ 
+-if(X11_Xss_LIB)
+-  target_link_libraries(kdeinit_krunner ${X11_Xss_LIB})
+-endif(X11_Xss_LIB)
++if(X11_Xscreensaver_LIB)
++  target_link_libraries(kdeinit_krunner ${X11_Xscreensaver_LIB})
++endif(X11_Xscreensaver_LIB)
+ 
+ if(X11_Xcursor_FOUND)
+   target_link_libraries(kdeinit_krunner ${X11_Xcursor_LIB})

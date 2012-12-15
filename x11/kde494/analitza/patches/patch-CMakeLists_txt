@@ -1,0 +1,32 @@
+$OpenBSD$
+--- CMakeLists.txt.orig	Fri Sep 28 04:43:00 2012
++++ CMakeLists.txt	Wed Oct 17 18:58:19 2012
+@@ -9,17 +9,26 @@ include_directories(${CMAKE_SOURCE_DIR} ${CMAKE_BINARY
+ #Checking whether we can compile calgebra
+ include(CheckIncludeFiles)
+ macro_optional_find_package(Readline)
++macro_optional_find_package(Ncurses QUIET)
+ macro_bool_to_01(READLINE_FOUND HAVE_READLINE)
++macro_bool_to_01(NCURSES_FOUND HAVE_NCURSES)
++if(READLINE_FOUND AND NCURSES_FOUND)
++	set(CONSOLE_SUPPORTED TRUE)
++else(READLINE_FOUND AND NCURSES_FOUND)
++	set(CONSOLE_SUPPORTED FALSE)
++endif(READLINE_FOUND AND NCURSES_FOUND)
+ macro_log_feature(READLINE_FOUND "GNU Readline" "Allows KAlgebra to provide a console interface." "http://cnswww.cns.cwru.edu/php/chet/readline/rltop.html" FALSE "" "")
++macro_log_feature(READLINE_FOUND "NCurses" "Allows KAlgebra to provide a console interface." "XXX" FALSE "" "")
+ 
++
+ include_directories(.)
+ add_definitions (-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
+ 
+ add_subdirectory(analitza)
+ add_subdirectory(analitzagui)
+-if(HAVE_READLINE)
++if(CONSOLE_SUPPORTED)
+ 	add_subdirectory(calgebra)
+-endif(HAVE_READLINE)
++endif(CONSOLE_SUPPORTED)
+ 
+ if (${CMAKE_CURRENT_SOURCE_DIR} STREQUAL ${CMAKE_SOURCE_DIR})
+    macro_display_feature_log()

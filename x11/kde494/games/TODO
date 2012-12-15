@@ -1,0 +1,27 @@
+Unknown media type in type 'all/all'
+Unknown media type in type 'all/allfiles'
+Unknown media type in type 'uri/mms'
+Unknown media type in type 'uri/mmst'
+Unknown media type in type 'uri/mmsu'
+Unknown media type in type 'uri/pnm'
+Unknown media type in type 'uri/rtspt'
+Unknown media type in type 'uri/rtspu'
+
+Kajong sometimes could not start local game.
+
+Battleship sometimes freezes the gameplay (program itself works).
+
+Some games doesn't refresh field at the start, showing only background.
+This is a regression in 4.8.
+
+Kigo needs GnuGo or compatible.
+
+Killbots sometimes freezes, possibly related with graphics initialization/deinitialization.
+
+KJumpingCube rarely crashes.
+
+Konquest locks up when starting game with bots only.
+
+Ksudoku crashes at the start of the game.
+
+Palapeli doesn't see installed Samba.
