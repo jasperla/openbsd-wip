@@ -214,7 +214,7 @@ prepare() {
 
 	echo '==> patching Makefile.inc' >&2
 	local MI=$NEW_KDE_PORT_DIR/Makefile.inc
-	local T=`mktemp "$MI".XXXXXXXXXXX`
+	local T=`mktemp -u "$MI".XXXXXXXXXXX`
 	CLEANUP_ITEMS="$CLEANUP_ITEMS $T"
 	local MSPATCH=
 
@@ -431,7 +431,7 @@ update_status() {
 	test $# -eq 0 || usage
 
 	local V=`kde_version`
-	local T="`mktemp STATUS-${V}.XXXXXXXX`"
+	local T="`mktemp -u STATUS-${V}.XXXXXXXX`"
 	local OCLEANUP_ITEMS="$CLEANUP_ITEMS"
 	CLEANUP_ITEMS="$T $CLEANUP_ITEMS"
 	if [ -e "STATUS-${V}" ]; then
