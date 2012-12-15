@@ -1,0 +1,13 @@
+$OpenBSD$
+--- kinit/kinit.cpp.orig	Sun Aug 12 14:09:53 2012
++++ kinit/kinit.cpp	Sun Aug 12 14:31:20 2012
+@@ -501,6 +501,9 @@ static pid_t launch(int argc, const char *_name, const
+             if( lib.contains( QLatin1String( "/lib" KDELIBSUFF "/kde4/libexec/" ))) {
+                 libpath = QString( lib ).replace( QLatin1String( "/lib" KDELIBSUFF "/kde4/libexec/" ),
+                     QLatin1String("/lib" KDELIBSUFF "/libkdeinit4_")) + QLatin1String(".so");
++            } else if( lib.contains( QLatin1String( "/libexec/" ))) {
++                libpath = QString( lib ).replace( QLatin1String( "/libexec/" ),
++                    QLatin1String("/lib" KDELIBSUFF "/libkdeinit4_")) + QLatin1String(".so");
+             } else if( lib.contains( QLatin1String( "/bin/" ))) {
+                 libpath = QString( lib ).replace( QLatin1String( "/bin/" ),
+                     QLatin1String("/lib" KDELIBSUFF "/libkdeinit4_")) + QLatin1String(".so");
