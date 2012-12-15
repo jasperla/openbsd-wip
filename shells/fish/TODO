@@ -1,0 +1,8 @@
+- fixit. this seems to happen for any if statement using the output
+from an external command :
+
+sthen@ > if test (uname) = OpenBSD
+             echo open
+         end
+test: Missing argument at index 2
+
