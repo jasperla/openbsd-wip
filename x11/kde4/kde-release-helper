@@ -80,6 +80,7 @@ port_dir_to_distname() {
 
 # Assume we're in KDE ports root directory.
 list_l10n_ports() {
+	test -d l10n || return 0
 	for L in $(cd l10n/ru && make show=ALL_LANGS); do
 		echo "kde-l10n-${L}"
 	done | sort
@@ -87,6 +88,7 @@ list_l10n_ports() {
 
 # Assume we're in KDE ports root directory.
 list_l10n_ports_dirs() {
+	test -d l10n || return 0
 	for L in $(cd l10n/ru && make show=ALL_LANGS); do
 		echo "l10n/$L"
 	done | sort
@@ -171,6 +173,12 @@ is_locked() {
 	fi
 }
 
+# Argument: KDE version in X.Y.Z format.
+is_stable_ver() {
+	# KDE alpha/beta/etc. versions start from 80
+	test 80 -gt `echo $1 | sed -E 's/^.*\.([0-9]+)$/\1/'`
+}
+
 ### Main actions go here
 
 prepare() {
@@ -197,7 +205,12 @@ prepare() {
 	echo '==> removing extra files' >&2
 	for F in $IGNORE_FILES; do ear rm $NEW_KDE_PORT_DIR/$F; done
 	find $NEW_KDE_PORT_DIR -name 'PLIST*.orig' -print0 | xargs -0rt rm
-	ear rm -f $NEW_KDE_PORT_DIR/l10n/distinfo
+	if is_stable_ver $NEW_KDE_PORT_VER; then
+		ear rm -f $NEW_KDE_PORT_DIR/l10n/distinfo
+	else
+		# Unstable KDE versions usually lacks l10n
+		ear rm -Rf $NEW_KDE_PORT_DIR/l10n
+	fi
 	for P in $LOCAL_PORTS; do
 		ear rm -f $P/distinfo
 	done
@@ -218,17 +231,16 @@ prepare() {
 	CLEANUP_ITEMS="$CLEANUP_ITEMS $T"
 	local MSPATCH=
 
-	if [ `echo $NEW_KDE_PORT_VER | sed -E 's/^.*\.([0-9]+)$/\1/'` -ge 80 ]; then
-		# KDE alpha/beta/etc. versions start from 80
-		MSPATCH="sed /MASTER_SITES/s@stable/@unstable/@"
-	else
+	if is_stable_ver $NEW_KDE_PORT_VER; then
 		MSPATCH=cat
+	else
+		MSPATCH="sed /MASTER_SITES/s@stable/@unstable/@"
 	fi
 	awk "NR == 3 {print \"MODKDE4_VERSION =	$NEW_KDE_PORT_VER\"} {print}" <"$MI" | $MSPATCH >"$T"
 	mv "$T" "$MI"
 
 	echo "==> creating STATUS-${NEW_KDE_PORT_VER}" >&2
-	for P in $LOCAL_PORTS l10n; do
+	for P in $LOCAL_PORTS `list_l10n_ports_dirs`; do
 		print_status_line $P WAITING \
 		    >>${NEW_KDE_PORT_DIR}/STATUS-${NEW_KDE_PORT_VER}
 	done
@@ -246,6 +258,7 @@ check_lists() {
 	    egrep '^[\+-][^\+-]' |
 	    grep -v '^+kde-l10n' || true
 
+	test -d l10n || return 0
 	echo '==> checking for l10n package list changes' >&2
 	list_l10n_ports |
 	    (cd l10n/ru && compare_sources_lists) |
