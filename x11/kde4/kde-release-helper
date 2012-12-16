@@ -179,6 +179,24 @@ is_stable_ver() {
 	test 80 -gt `echo $1 | sed -E 's/^.*\.([0-9]+)$/\1/'`
 }
 
+expand_port_list() {
+	case ${1:-all} in
+	all)
+		list_local_ports
+		list_l10n_ports_dirs
+		;;
+	sc)
+		list_local_ports
+		;;
+	l10n)
+		list_l10n_ports_dirs
+		;;
+	*)
+		usage
+		;;
+	esac
+}
+
 ### Main actions go here
 
 prepare() {
@@ -354,24 +372,6 @@ EOF
 	git commit -m "Merge KDE $KDEV from testing directory." -e -- $SKPD
 	rm -R $KPD
 	git commit -m "Remove KDE $KDEV testing directory." -e -- $KPD
-}
-
-expand_port_list() {
-	case ${1:-all} in
-	all)
-		list_local_ports
-		list_l10n_ports_dirs
-		;;
-	sc)
-		list_local_ports
-		;;
-	l10n)
-		list_l10n_ports_dirs
-		;;
-	*)
-		usage
-		;;
-	esac
 }
 
 # Assume to be running in KDE4 ports directory
