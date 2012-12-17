@@ -1,5 +1,7 @@
 # $OpenBSD$
 
+BROKEN-i386 =		segfault in gui-debugger
+
 SHARED_ONLY =		Yes
 
 # "sconfig.h" only supports i386 and amd64 on OpenBSD
