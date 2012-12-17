@@ -53,7 +53,7 @@ BUILD_DEPENDS =	devel/boost
 
 LIB_DEPENDS +=	databases/openldap \
 		graphics/prison \
-		STEM->=${AKONADI_VERSION}:productivity/akonadi \
+		STEM->=${MIN_AKONADI_VERSION}:productivity/akonadi \
 		security/cyrus-sasl2 \
 		security/gpgme>=0.4.5 \
 		sysutils/e2fsprogs \

@@ -29,7 +29,7 @@ BUILD_DEPENDS =		devel/boost \
 LIB_DEPENDS =		databases/soprano \
 			databases/strigi \
 			devel/qjson \
-			STEM->=${AKONADI_VERSION}:productivity/akonadi \
+			STEM->=${MIN_AKONADI_VERSION}:productivity/akonadi \
 			productivity/libkgapi>=0.4.0 \
 			STEM->=${MODKDE4_VERSION}:x11/kde4/pimlibs
 
