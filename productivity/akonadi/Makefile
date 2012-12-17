@@ -2,8 +2,7 @@
 
 CATEGORIES =	productivity
 COMMENT =	PIM cache and access services
-DISTNAME =	akonadi-${AKONADI_VERSION}
-REVISION =	1
+DISTNAME =	akonadi-1.8.80
 
 SHARED_LIBS = 	akonadiprotocolinternals 1.0	# 1.0
 
@@ -40,6 +39,7 @@ RUN_DEPENDS +=		databases/mysql,-server \
 LIB_DEPENDS =		STEM->=${SOPRANO_VERSION}:databases/soprano \
 			devel/boost
 
-CONFIGURE_ARGS =	-DDATABASE_BACKEND:String=MYSQL
+CONFIGURE_ARGS =	-DDATABASE_BACKEND:String=SQLITE \
+			-DINSTALL_QSQLITE_IN_QT_PREFIX:Bool=Yes
 
 .include <bsd.port.mk>
