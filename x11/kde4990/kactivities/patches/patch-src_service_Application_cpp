@@ -1,8 +1,7 @@
 $OpenBSD$
-signal.h should be fixed instead, probably.
---- service/main.cpp.orig	Thu Aug  9 13:35:41 2012
-+++ service/main.cpp	Thu Aug  9 14:00:59 2012
-@@ -76,7 +76,7 @@ static void initSignalCatching() {
+--- src/service/Application.cpp.orig	Mon Dec 17 20:40:20 2012
++++ src/service/Application.cpp	Mon Dec 17 20:40:29 2012
+@@ -265,7 +265,7 @@ static void initSignalCatching() {
  #ifndef Q_OS_WIN32 // krazy:skip
      struct sigaction action;
  
