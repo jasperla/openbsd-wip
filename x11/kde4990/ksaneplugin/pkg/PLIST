@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+lib/kde4/ksaneplugin.so
+share/kde4/services/ksane_scan_service.desktop
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
