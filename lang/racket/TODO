@@ -20,6 +20,12 @@ Abort trap (core dumped)
 e')
 *** Error 1 in /usr/ports/openbsd-wip/lang/racket (/usr/ports/infrastructure/mk/bsd.port.mk:2283 'update-plist')
 
+CVS dates:
+2012/12/11: Crash
+2012/12/01: Crash
+2012/11/15: Crash
+2012/11/01: OK
+
 ----
 
 Add a note about the bug in Spatial_Transformations.html and images generated
