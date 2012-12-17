@@ -1,0 +1,8 @@
+Crashed after following actions:
+  1. Enable OpenGL;
+  2. Play with map;
+  3. Go to settings;
+  4. Go to satellites options;
+  5. Update satellites info;
+  6. Enable showing satellites;
+  7. Click "OK".

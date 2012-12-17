@@ -1,0 +1,55 @@
+$OpenBSD$
+--- kdecore/kernel/kstandarddirs.cpp.orig	Wed Nov 14 19:58:29 2012
++++ kdecore/kernel/kstandarddirs.cpp	Sun Dec 16 14:02:48 2012
+@@ -279,6 +279,7 @@ QStringList KStandardDirs::allTypes() const
+         list.append(QLatin1String(types_string + types_indices[i]));
+     // Those are added manually by addKDEDefaults
+     list.append(QString::fromLatin1("lib"));
++    list.append(QString::fromLatin1("libexec"));
+     //list.append(QString::fromLatin1("home")); // undocumented on purpose, said Waldo in r113855.
+ 
+     // Those are handled by resourceDirs() itself
+@@ -1341,7 +1342,7 @@ QString KStandardDirs::findExe( const QString& appname
+                                 const QString& pstr,
+                                 SearchOptions options )
+ {
+-    //kDebug(180) << "findExe(" << appname << ", pstr, " << ignoreExecBit << ") called";
++    kDebug(180) << "findExe(" << appname << ", pstr, " << options << ") called";
+ 
+ #ifdef Q_OS_WIN
+     QStringList executable_extensions = executableExtensions();
+@@ -1371,7 +1372,7 @@ QString KStandardDirs::findExe( const QString& appname
+     QString p = installPath("libexec") + appname;
+     QString result = checkExecutable(p, options & IgnoreExecBit);
+     if (!result.isEmpty()) {
+-        //kDebug(180) << "findExe(): returning " << result;
++        kDebug(180) << "findExe(): returning libexec item " << result;
+         return result;
+     }
+ 
+@@ -1385,7 +1386,7 @@ QString KStandardDirs::findExe( const QString& appname
+         // Check for executable in this tokenized path
+         result = checkExecutable(p, options & IgnoreExecBit);
+         if (!result.isEmpty()) {
+-            //kDebug(180) << "findExe(): returning " << result;
++            kDebug(180) << "findExe(): returning PATH item " << result;
+             return result;
+         }
+     }
+@@ -1395,14 +1396,14 @@ QString KStandardDirs::findExe( const QString& appname
+     p += appname;
+     result = checkExecutable(p, options & IgnoreExecBit);
+     if (!result.isEmpty()) {
+-        //kDebug(180) << "findExe(): returning " << result;
++        kDebug(180) << "findExe(): returning KDE bin " << result;
+         return result;
+     }
+ 
+     // If we reach here, the executable wasn't found.
+     // So return empty string.
+ 
+-    //kDebug(180) << "findExe(): failed, nothing matched";
++    kDebug(180) << "findExe(): failed, nothing matched";
+     return QString();
+ }
+ 
