@@ -31,10 +31,10 @@ MODULES =		lang/mono
 MODKDE4_USE =
 
 BUILD_DEPENDS =		misc/shared-desktop-ontologies \
-			STEM->=${AKONADI_VERSION}:productivity/akonadi \
+			STEM->=${MIN_AKONADI_VERSION}:productivity/akonadi \
 			x11/kde4/nepomuk-core
 
-RUN_DEPENDS =		STEM->=${AKONADI_VERSION}:productivity/akonadi \
+RUN_DEPENDS =		STEM->=${MIN_AKONADI_VERSION}:productivity/akonadi \
 			x11/kde4/nepomuk-core
 
 LIB_DEPENDS =		databases/soprano \
