@@ -21,7 +21,7 @@ gwenview                        WAITING
 jovie                           WAITING
 juk                             WAITING
 kaccessible                     WAITING
-kactivities                     WAITING
+kactivities                     PACKAGED
 kajongg                         WAITING
 kalgebra                        WAITING
 kalzium                         WAITING
@@ -107,7 +107,7 @@ libs                            PACKAGED
 lskat                           WAITING
 marble                          WAITING
 mplayerthumbs                   WAITING
-nepomuk-core                    WAITING
+nepomuk-core                    PACKAGED
 nepomuk-widgets                 WAITING
 network                         WAITING
 okular                          WAITING
