@@ -8,12 +8,16 @@ usage: $0 prepare new-KDE-version
        $0 check-lists
        $0 merge
        $0 next
+       $0 new port-name [commentary ...]
        $0 show {built|packaged|status|unpackaged} [all|l10n|sc]
        $0 update status
 
 typical usecases:
   $0 prepare 4.9.3
+  cd ../kde493
   # start hacking
+  $0 check-lists
+  $0 new kdepkg some cool KDE stuff
   $0 next
   # after some progress but before committing
   $0 update status
@@ -246,6 +250,7 @@ prepare() {
 	echo '==> patching Makefile.inc' >&2
 	local MI=$NEW_KDE_PORT_DIR/Makefile.inc
 	local T=`mktemp -u "$MI".XXXXXXXXXXX`
+	OCLEANUP_ITEMS="$CLEANUP_ITEMS"
 	CLEANUP_ITEMS="$CLEANUP_ITEMS $T"
 	local MSPATCH=
 
@@ -256,6 +261,14 @@ prepare() {
 	fi
 	awk "NR == 3 {print \"MODKDE4_VERSION =	$NEW_KDE_PORT_VER\"} {print}" <"$MI" | $MSPATCH >"$T"
 	mv "$T" "$MI"
+
+	if ! is_stable_ver $NEW_KDE_PORT_VER; then
+		echo '==> patching Makefile' >&2
+		sed -Ee '/^SUBDIR[[:space:]]*\+=[[:space:]]*l10n/d' \
+		    <$NEW_KDE_PORT_DIR/Makefile >"$T"
+		mv "$T" $NEW_KDE_PORT_DIR/Makefile
+	fi
+	CLEANUP_ITEMS="$OCLEANUP_ITEMS"
 
 	echo "==> creating STATUS-${NEW_KDE_PORT_VER}" >&2
 	for P in $LOCAL_PORTS `list_l10n_ports_dirs`; do
@@ -325,6 +338,18 @@ choose_next() {
 		fi
 		break
 	done
+}
+
+new_port() {
+	test $# -ge 1 || usage
+	NEW_P=$1; shift
+	mkdir "$NEW_P" "$NEW_P"/pkg
+	sed -e "s@XYZ@${NEW_P}@g" \
+	    -e "s@^COMMENT.*@COMMENT =	$*@" \
+	    <template/Makefile \
+	    >"$NEW_P"/Makefile
+	echo "Now run:" >&2
+	echo "cd $NEW_P && ${VISUAL:-${EDITOR:-vi}} Makefile" >&2
 }
 
 merge_back() {
@@ -531,8 +556,12 @@ m|me|mer|merg|merge)
 	merge_back "$@"
 	;;
 
-n|ne|nex|next)
+nex|next)
 	choose_next "$@"
+	;;
+
+new)
+	new_port "$@"
 	;;
 
 s|sh|sho|show)
