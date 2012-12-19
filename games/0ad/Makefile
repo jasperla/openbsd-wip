@@ -2,21 +2,21 @@
 
 COMMENT =		historical real-time strategy game
 
-PKGNAME =		0ad-0.0.11
+PKGNAME =		0ad-0.0.12
 
 CATEGORIES =		games
 
-HOMEPAGE =		http://wildfiregames.com/0ad/
+HOMEPAGE =		http://play0ad.com/
 
-# GPL, MIT for libs, CC-BY-SA for data
+# GPLv2+, MIT for libs, CC-BY-SA for data
 PERMIT_PACKAGE_CDROM =		Yes
 PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-WANTLIB +=	GL SDL X11 Xcursor boost_system c curl enet execinfo
-WANTLIB +=	jpeg m nvtt openal png pthread stdc++ vorbisfile xml2
-WANTLIB +=	z
+WANTLIB +=		GL SDL X11 Xcursor boost_system c curl enet execinfo
+WANTLIB +=		jpeg m mozjs185 nvtt openal png pthread stdc++
+WANTLIB +=		vorbisfile xml2 z
 
 MASTER_SITES =		http://releases.wildfiregames.com/
 DISTFILES =		${PKGNAME}-alpha-unix-build.tar.gz \
