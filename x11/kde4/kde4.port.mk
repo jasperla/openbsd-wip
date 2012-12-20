@@ -81,7 +81,7 @@ ERRORS += "Fatal: (not one from ${_MODKDE4_USE_ALL})."
 .if ${MODKDE4_USE:L:Mworkspace}
 MODKDE4_USE +=		runtime
 .endif
-.if ${MODKDE4_USE:L:Mlibs} == "" && ${MODKDE4_USE:L:Mruntime} == ""
+.if !empty(MODKDE4_USE) && ${MODKDE4_USE:L:Mlibs} == "" && ${MODKDE4_USE:L:Mruntime} == ""
 MODKDE4_USE +=		runtime
 .endif
 
