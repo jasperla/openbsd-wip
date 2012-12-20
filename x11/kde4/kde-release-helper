@@ -207,8 +207,8 @@ prepare() {
 	test $# -eq 1 || usage
 	local NEW_KDE_PORT_VER=$1; shift
 
-	if ! [ -f kde4.port.mk -a X"`cd .. && basename $(pwd)`" = Xx11 ]; then
-		echo "Please run $0 from x11/kde4 directory in ports tree" >&2
+	if ! [ -f ../kde4/kde4.port.mk -a X"`cd .. && basename $(pwd)`" = Xx11 ]; then
+		echo "Please run $0 from KDE 4 directory in ports tree" >&2
 		exit 2
 	fi
 
@@ -225,7 +225,7 @@ prepare() {
 	local LOCAL_PORTS=`cd $NEW_KDE_PORT_DIR && list_local_ports`
 
 	echo '==> removing extra files' >&2
-	for F in $IGNORE_FILES; do ear rm $NEW_KDE_PORT_DIR/$F; done
+	for F in $IGNORE_FILES; do ear rm -f $NEW_KDE_PORT_DIR/$F; done
 	find $NEW_KDE_PORT_DIR -name 'PLIST*.orig' -print0 | xargs -0rt rm
 	if is_stable_ver $NEW_KDE_PORT_VER; then
 		ear rm -f $NEW_KDE_PORT_DIR/l10n/distinfo
@@ -302,7 +302,7 @@ choose_next() {
 	local KDEDIR=$(kde_port_dir `kde_version`)
 	local P PP BDEPS DEP DEP2
 
-# -h ../kde4/kde.deps.hints
+# -h kde.deps.hints
 	echo "===> Gathering lists of KDE ports packaged or being built" >&2
 	for P in `list_local_ports; list_l10n_ports_dirs`; do
 		# normalize build dependencies list by removing all but pkgpath
