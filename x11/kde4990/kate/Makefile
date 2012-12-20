@@ -15,4 +15,7 @@ WANTLIB += kcmutils kdeui kemoticons kfile kidletime kio knewstuff2
 WANTLIB += knewstuff3 kparts kprintutils ktexteditor kutils nepomuk
 WANTLIB += nepomukutils plasma soprano
 
+LIB_DEPENDS =	x11/kde4/kactivities \
+		x11/kde4/py-kde
+
 .include <bsd.port.mk>

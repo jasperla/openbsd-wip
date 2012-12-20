@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	XYZ for KDE
-DISTNAME =	XYZ-${MODKDE_VERSION}
+COMMENT =	Nepomuk-based KDE Plasma widgets
+DISTNAME =	nepomuk-widgets-${MODKDE_VERSION}
 
 .include <bsd.port.mk>
