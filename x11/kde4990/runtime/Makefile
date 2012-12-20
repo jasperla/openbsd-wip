@@ -7,8 +7,8 @@ SHARED_LIBS =	kwalletbackend 		0.0	# 4.7
 SHARED_LIBS +=	molletnetwork 		0.0	# 4.7
 #SHARED_LIBS +=	nepomukdatamanagement	0.0	# 4.7
 
-WANTLIB =  c m stdc++ pthread util
-WANTLIB +=  Half ICE Iex IlmImf IlmThread Imath SM X11 Xcursor Xext
+WANTLIB =  c m pthread stdc++ util
+WANTLIB += Half ICE Iex IlmImf IlmThread Imath SM X11 Xcursor Xext
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml
@@ -17,7 +17,7 @@ WANTLIB += kdesu kdeui kdewebkit kdnssd kemoticons kfile khtml
 WANTLIB += kio kjs kmediaplayer knewstuff3 knotifyconfig kparts
 WANTLIB += kpty kxmlrpcclient nepomuk nepomukcore nepomukutils
 WANTLIB += phonon_s plasma solid soprano
-WANTLIB += glib-2.0 pulse pulse-mainloop-glib smbclient ssh xine canberra
+WANTLIB += glib-2.0 pulse pulse-mainloop-glib smbclient ssh canberra
 
 MODKDE4_USE =	libs
 
@@ -32,8 +32,8 @@ RUN_DEPENDS =	archivers/bzip2 \
 LIB_DEPENDS =	audio/libcanberra \
 		audio/pulseaudio \
 		databases/soprano \
+		graphics/openexr \
 		graphics/exiv2 \
-		multimedia/xine-lib \
 		net/samba \
 		productivity/attica \
 		security/libssh \

@@ -37,12 +37,16 @@ SHARED_LIBS +=  kcalcore		0.0 # 4.7
 SHARED_LIBS +=  kcalutils		0.0 # 4.7
 SHARED_LIBS +=  kmbox			0.0 # 4.7
 
+SHARED_LIBS +=  akonadi-socialutils	0.0 # 4.10
+
+WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSql
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtTest lib/qt4/QtXml
 WANTLIB += akonadiprotocolinternals
-WANTLIB += assuan c e2fs-uuid gpg-error gpgme gpgme-pthread ical icalss
-WANTLIB += kcmutils kdeui kemoticons kio kparts lber ldap m nepomuk
-WANTLIB += nepomukutils phonon_s prison pthread sasl2 solid soprano stdc++
+WANTLIB += kcmutils kdeui kemoticons kio kparts nepomuk
+WANTLIB += nepomukutils phonon_s prison qjson solid soprano
+WANTLIB += assuan e2fs-uuid gpg-error gpgme gpgme-pthread ical icalss
+WANTLIB += lber ldap sasl2
 
 MODULES =	devel/gettext
 
@@ -50,9 +54,10 @@ MODKDE4_USE =	libs
 
 BUILD_DEPENDS =	devel/boost
 
-LIB_DEPENDS +=	databases/openldap \
+LIB_DEPENDS =	databases/openldap \
+		devel/qjson \
 		graphics/prison \
-		STEM->=${AKONADI_VERSION}:productivity/akonadi \
+		STEM->=${MIN_AKONADI_VERSION}:productivity/akonadi \
 		security/cyrus-sasl2 \
 		security/gpgme>=0.4.5 \
 		sysutils/e2fsprogs \

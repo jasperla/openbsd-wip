@@ -5,6 +5,7 @@ include/kde4/libkdcraw/dcrawinfocontainer.h
 include/kde4/libkdcraw/dcrawsettingswidget.h
 include/kde4/libkdcraw/kdcraw.h
 include/kde4/libkdcraw/libkdcraw_export.h
+include/kde4/libkdcraw/ractionthreadbase.h
 include/kde4/libkdcraw/rawdecodingsettings.h
 include/kde4/libkdcraw/rawfiles.h
 include/kde4/libkdcraw/rcombobox.h

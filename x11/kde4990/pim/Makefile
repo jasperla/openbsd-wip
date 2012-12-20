@@ -70,7 +70,7 @@ RUN_DEPENDS =	misc/shared-desktop-ontologies
 
 LIB_DEPENDS =	databases/soprano \
 		databases/strigi \
-		STEM->=${AKONADI_VERSION}:productivity/akonadi \
+		STEM->=${MIN_AKONADI_VERSION}:productivity/akonadi \
 		security/cyrus-sasl2 \
 		security/gpgme \
 		security/libassuan \

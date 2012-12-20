@@ -14,8 +14,8 @@ WANTLIB += ICE SM X11 Xext Xt Xrender
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
-WANTLIB += kcmutils kde3support kdesu kdeui kfile khtml kio
-WANTLIB += kjs knewstuff3 kparts nepomuk nepomukquery nepomukutils
+WANTLIB += kactivities kcmutils kde3support kdesu kdeui kfile khtml kio
+WANTLIB += kjs knewstuff3 kparts nepomuk nepomukcore nepomukutils
 WANTLIB += phonon_s plasma solid soprano
 WANTLIB += glib-2.0 tidyp
 
@@ -23,6 +23,9 @@ WANTLIB += glib-2.0 tidyp
 # using QtWebKit.
 RUN_DEPENDS =	www/kwebkitpart
 
-LIB_DEPENDS =	www/tidyp
+LIB_DEPENDS =	devel/glib2 \
+		x11/kde4/kactivities \
+		x11/kde4/nepomuk-core \
+		www/tidyp
 
 .include <bsd.port.mk>

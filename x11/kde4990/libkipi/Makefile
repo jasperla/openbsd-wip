@@ -12,4 +12,8 @@ WANTLIB += kdeui kio kfile kparts nepomuk nepomukutils soprano
 
 MODKDE4_USE =	libs
 
+post-patch:
+	cd ${WRKSRC}; \
+	perl -pi -e '$$.==1 and $$_ = "/*\n"' tests/kipitestmainwindow.cpp
+
 .include <bsd.port.mk>

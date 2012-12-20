@@ -5,10 +5,14 @@ DISTNAME =	analitza-${MODKDE_VERSION}
 
 SHARED_LIBS =	analitza		0.0	# 4.7
 SHARED_LIBS +=	analitzagui		0.0	# 4.7
+SHARED_LIBS +=	analitzaplot		0.0	# 4.10
 
 WANTLIB =  c m pthread stdc++
+WANTLIB += GL GLU
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg
-WANTLIB += lib/qt4/QtXml ncurses readline
+WANTLIB += lib/qt4/QtOpenGL lib/qt4/QtXml
+WANTLIB += kdeui
+WANTLIB += ncurses readline
 
 CONFIGURE_ARGS=	-DCMAKE_SHARED_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib"
 
