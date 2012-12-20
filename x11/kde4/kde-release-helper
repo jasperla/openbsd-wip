@@ -2,27 +2,33 @@
 
 set -e
 
+MY_NAME=$(basename "$0")
+MY_NAME="${MY_NAME:-kde-release-helper}"
+
 usage() {
 cat >&2 <<EOF
-usage: $0 prepare new-KDE-version
-       $0 check-lists
-       $0 merge
-       $0 next
-       $0 new port-name [commentary ...]
-       $0 show {built|packaged|status|unpackaged} [all|l10n|sc]
-       $0 update status
+usage: $MY_NAME prepare new-KDE-version
+       $MY_NAME check-lists
+       $MY_NAME deps
+       $MY_NAME merge
+       $MY_NAME next
+       $MY_NAME new port-name [commentary ...]
+       $MY_NAME run
+       $MY_NAME show {built|packaged|status|unpackaged} [all|l10n|sc]
+       $MY_NAME update status
 
 typical usecases:
-  $0 prepare 4.9.3
+  $MY_NAME prepare 4.9.3
   cd ../kde493
   # start hacking
-  $0 check-lists
-  $0 new kdepkg some cool KDE stuff
-  $0 next
+  $MY_NAME check-lists
+  $MY_NAME new kdepkg some cool KDE stuff
+  $MY_NAME deps
+  $MY_NAME run
   # after some progress but before committing
-  $0 update status
+  $MY_NAME update status
   # when new KDE release is ready
-  $0 merge
+  $MY_NAME merge
 EOF
 	exit 1
 }
@@ -40,7 +46,7 @@ cleanup() {
 trap cleanup EXIT
 
 # Files to ignore during prepare and megre stages in addition to git ones
-IGNORE_FILES="*.port.mk `basename $0` STATUS-*"
+IGNORE_FILES="*.port.mk $MY_NAME STATUS-*"
 
 # List of options for diff(1) to make it ignore files above
 diff_ignore_opts() {
@@ -208,7 +214,7 @@ prepare() {
 	local NEW_KDE_PORT_VER=$1; shift
 
 	if ! [ -f ../kde4/kde4.port.mk -a X"`cd .. && basename $(pwd)`" = Xx11 ]; then
-		echo "Please run $0 from KDE 4 directory in ports tree" >&2
+		echo "Please run $MY_NAME from KDE 4 directory in ports tree" >&2
 		exit 2
 	fi
 
@@ -360,7 +366,7 @@ merge_back() {
 
 	if [ -f kde4.port.mk -o X"`cd .. && basename $(pwd)`" != Xx11 -o \
 	     X"$KDEV" = X ]; then
-		echo "Please run $0 from directory with KDE4 ports being tested" >&2
+		echo "Please run $MY_NAME from directory with KDE4 ports being tested" >&2
 		exit 2
 	fi
 
@@ -424,7 +430,7 @@ show() {
 
 	if ! [ -f ../kde4/kde4.port.mk -a \
                X"`cd .. && basename $(pwd)`" = Xx11 ]; then
-		echo "Please run $0 from a KDE 4 directory in ports tree" >&2
+		echo "Please run $MY_NAME from a KDE 4 directory in ports tree" >&2
 		exit 2
 	fi
 
@@ -523,7 +529,7 @@ update() {
 
 	if ! [ -f ../kde4/kde4.port.mk -a \
                X"`cd .. && basename $(pwd)`" = Xx11 ]; then
-		echo "Please run $0 from a KDE 4 directory in ports tree" >&2
+		echo "Please run $MY_NAME from a KDE 4 directory in ports tree" >&2
 		exit 2
 	fi
 
