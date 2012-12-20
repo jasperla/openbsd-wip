@@ -34,7 +34,7 @@ CONFIGURE_STYLE =	cmake
 
 MODKDE4_RESOURCES ?=	No
 
-# MODKDE4_USE: [libs | runtime | workspace] [PIM]
+# MODKDE4_USE: [libs | runtime | workspace] [PIM] [games]
 #   - Set to empty for stuff that is a prerequisite for kde base blocks:
 #     kdelibs, kde-runtime, kdepimlibs or kdepim-runtime.
 #
@@ -54,6 +54,10 @@ MODKDE4_RESOURCES ?=	No
 #     on kdepimlibs and, if "libs" was not specified, RUN_DEPENDS on
 #     kdepim-runtime.
 #
+#   - Add "games" when port is usual KDE game. It adds LIB_DEPENDS on
+#     libkdegames and add kdegames to WANTLIB. Also, Makefile.inc may
+#     use this value, e.g., to provide different default HOMEPAGE.
+#
 # NOTE: There are no options like "Kate" or "Okular", they should be handled
 #       with simple LIB_DEPENDS on corresponding packages in addition to
 #       options above.
@@ -66,14 +70,18 @@ MODKDE4_USE ?=		libs
 MODKDE_NO_QT ?=		Yes
 .endif
 
-_MODKDE4_USE_ALL =	libs runtime workspace pim
+_MODKDE4_USE_ALL =	libs runtime workspace pim games
 .for _modkde4_u in ${MODKDE4_USE:L}
 .   if !${_MODKDE4_USE_ALL:M${_modkde4_u}}
 ERRORS += "Fatal: unknown KDE 4 use flag: ${_modkde4_u}"
 ERRORS += "Fatal: (not one from ${_MODKDE4_USE_ALL})."
 .   endif
 .endfor
-.if ${MODKDE4_USE:L} == "pim" || ${MODKDE4_USE:Mworkspace}
+
+.if ${MODKDE4_USE:L:Mworkspace}
+MODKDE4_USE +=		runtime
+.endif
+.if ${MODKDE4_USE:L:Mlibs} == "" && ${MODKDE4_USE:L:Mruntime} == ""
 MODKDE4_USE +=		runtime
 .endif
 
@@ -128,6 +136,11 @@ MODKDE4_WANTLIB +=		kdecore>=8
 .       if ${MODKDE4_USE:L:Mpim}
 MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/pimlibs
 MODKDE4_BUILD_DEPENDS +=	devel/boost
+.       endif
+
+.       if ${MODKDE4_USE:L:Mgames}
+MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/libkdegames
+MODKDE4_WANTLIB +=		kdegames
 .       endif
 
 .       if ${MODKDE4_USE:L:Mruntime}
