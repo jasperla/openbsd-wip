@@ -48,6 +48,9 @@ trap cleanup EXIT
 # Files to ignore during prepare and megre stages in addition to git ones
 IGNORE_FILES="*.port.mk $MY_NAME STATUS-*"
 
+# File containing list of KDE packages in order they should be built
+DEPS_LIST=kde.deps.list
+
 # List of options for diff(1) to make it ignore files above
 diff_ignore_opts() {
 	for F in ${IGNORE_FILES}; do
@@ -302,18 +305,20 @@ check_lists() {
 	    egrep '^[\+-][^\+-]' || true
 }
 
-choose_next() {
+build_deps_list() {
 	test $# -eq 0 || usage
 
 	local KDEDIR=$(kde_port_dir `kde_version`)
-	local P PP BDEPS DEP DEP2
+	local P BDEPS DEP DEP2 T
 
-# -h kde.deps.hints
+	T=$(mktemp ${DEPS_LIST}.XXXXXXXX)
+	OCLEANUP_ITEMS="$CLEANUP_ITEMS"
+	CLEANUP_ITEMS="$CLEANUP_ITEMS $T"
 	echo "===> Gathering lists of KDE ports packaged or being built" >&2
 	for P in `list_local_ports; list_l10n_ports_dirs`; do
 		# normalize build dependencies list by removing all but pkgpath
-		BDEPS=$(cd $P && make build-depends-list |
-		    sed -Ee 's@^.*"([^"]*)".*$@\1@' -e 's@[^[:space:]]+:@@g')
+		BDEPS=$(cd $P && make show="BUILD_DEPENDS LIB_DEPENDS" |
+		    sed -Ee 's@[^[:space:]]+:@@g')
 
 		# take care of KDE SC dependencies only
 		for DEP2 in $BDEPS; do
@@ -321,26 +326,33 @@ choose_next() {
 		done |
 		fgrep "x11/${KDEDIR}/" |
 		sed -e "s%x11/${KDEDIR}/%%" -e "s%\$% ${P}%"
-	done |
-	tsort |
-	while read PP; do
-		is_packaged $PP && continue
-		is_locked $PP && continue
+	done >"$T"
+	mv "$T" "$DEPS_LIST"
+	CLEANUP_ITEMS="$OCLEANUP_ITEMS"
+}
 
-		if is_built $PP; then
-			echo "# $PP was built"
-			echo "(cd $PP && make update-plist) && \\"
-			echo "(cd $PP && make port-lib-depends-check) && \\"
-			echo "(cd $PP && make package)"
-		elif is_configured $PP; then
-			echo "# $PP was configured"
-			echo "(cd $PP && make build)"
-		elif is_started $PP; then
-			echo "# $PP was started"
-			echo "(cd $PP && make configure)"
+choose_next() {
+	test $# -eq 0 || usage
+
+	local P
+	tsort <"$DEPS_LIST" | while read P; do
+		is_packaged $P && continue
+		is_locked $P && continue
+
+		if is_built $P; then
+			echo "# $P was built"
+			echo "(cd $P && make update-plist) && \\"
+			echo "(cd $P && make port-lib-depends-check) && \\"
+			echo "(cd $P && make package)"
+		elif is_configured $P; then
+			echo "# $P was configured"
+			echo "(cd $P && make build)"
+		elif is_started $P; then
+			echo "# $P was started"
+			echo "(cd $P && make configure)"
 		else
-			echo "# $PP was not started"
-			echo "(cd $PP && make patch)"
+			echo "# $P was not started"
+			echo "(cd $P && make patch)"
 		fi
 		break
 	done
@@ -403,6 +415,32 @@ EOF
 	git commit -m "Merge KDE $KDEV from testing directory." -e -- $SKPD
 	rm -R $KPD
 	git commit -m "Remove KDE $KDEV testing directory." -e -- $KPD
+}
+
+run_job() {
+	test $# -eq 0 || usage
+	for P in `list_local_ports`; do
+		if is_packaged $P || is_locked $P; then
+			continue
+		fi
+
+		echo "==> Working on port $P" >&2
+		if is_built $P; then
+			local TARGETS=
+			if ! ls $P/pkg/PLIST*.orig >/dev/null 2>&1; then
+				TARGETS=update-plist
+			fi
+			TARGETS="$TARGETS port-lib-depends-check package"
+			TARGETS="$TARGETS lib-depends-check install clean"
+			(cd $P && make $TARGETS)
+		elif is_configured $P; then
+			(cd $P && make build)
+		elif is_started $P; then
+			(cd $P && make configure)
+		else
+			(cd $P && make makesum prepare)
+		fi
+	done
 }
 
 # Assume to be running in KDE4 ports directory
@@ -558,6 +596,10 @@ check-l|check-li|check-lis|check-list|check-lists)
 	check_lists "$@"
 	;;
 
+d|de|dep|deps)
+	build_deps_list "$@"
+	;;
+
 m|me|mer|merg|merge)
 	merge_back "$@"
 	;;
@@ -568,6 +610,10 @@ nex|next)
 
 new)
 	new_port "$@"
+	;;
+
+r|ru|run)
+	run_job "$@"
 	;;
 
 s|sh|sho|show)
