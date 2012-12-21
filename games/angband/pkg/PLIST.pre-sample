@@ -1,0 +1,94 @@
+@comment $OpenBSD$
+%%sdl%%
+@extraunexec rm /var/games/angband/*/* 2>/dev/null || true
+@mode g+s
+@group games
+@bin bin/angband
+@mode
+share/angband/
+share/angband/file/
+share/angband/file/crown.txt
+share/angband/file/dead.txt
+share/angband/file/news.txt
+share/angband/help/
+share/angband/help/attack.txt
+share/angband/help/birth.txt
+share/angband/help/command.txt
+share/angband/help/debug.txt
+share/angband/help/dungeon.txt
+share/angband/help/general.txt
+share/angband/help/help.hlp
+share/angband/help/option.txt
+share/angband/help/playing.txt
+share/angband/help/readme.txt
+share/angband/help/version.txt
+share/angband/info/
+share/angband/info/readme.txt
+share/angband/xtra/
+share/angband/xtra/icon/
+share/angband/xtra/icon/att-128.png
+share/angband/xtra/icon/att-16.png
+share/angband/xtra/icon/att-256.png
+share/angband/xtra/icon/att-32.png
+share/angband/xtra/icon/att-512.png
+share/applications/angband-x11.desktop
+share/examples/angband/
+share/examples/angband/etc/
+@sample ${SYSCONFDIR}/angband/
+share/examples/angband/etc/edit/
+share/examples/angband/etc/edit/artifact.txt
+share/examples/angband/etc/edit/ego_item.txt
+share/examples/angband/etc/edit/flavor.txt
+share/examples/angband/etc/edit/hints.txt
+share/examples/angband/etc/edit/limits.txt
+share/examples/angband/etc/edit/monster.txt
+share/examples/angband/etc/edit/monster_base.txt
+share/examples/angband/etc/edit/names.txt
+share/examples/angband/etc/edit/object.txt
+share/examples/angband/etc/edit/object_base.txt
+share/examples/angband/etc/edit/p_class.txt
+share/examples/angband/etc/edit/p_hist.txt
+share/examples/angband/etc/edit/p_race.txt
+share/examples/angband/etc/edit/pain.txt
+share/examples/angband/etc/edit/pit.txt
+share/examples/angband/etc/edit/shop_own.txt
+share/examples/angband/etc/edit/spell.txt
+share/examples/angband/etc/edit/store.txt
+share/examples/angband/etc/edit/terrain.txt
+share/examples/angband/etc/edit/vault.txt
+share/examples/angband/etc/pref/
+share/examples/angband/etc/pref/flvr-dvg.prf
+share/examples/angband/etc/pref/flvr-new.prf
+share/examples/angband/etc/pref/flvr-nmd.prf
+share/examples/angband/etc/pref/flvr-shb.prf
+share/examples/angband/etc/pref/flvr-xxx.prf
+share/examples/angband/etc/pref/font-gcu.prf
+share/examples/angband/etc/pref/font-mac.prf
+share/examples/angband/etc/pref/font${FLAVORS}.prf
+share/examples/angband/etc/pref/font-win.prf
+share/examples/angband/etc/pref/font-x11.prf
+share/examples/angband/etc/pref/font-xxx.prf
+share/examples/angband/etc/pref/font.prf
+share/examples/angband/etc/pref/graf-dvg.prf
+share/examples/angband/etc/pref/graf-new.prf
+share/examples/angband/etc/pref/graf-nmd.prf
+share/examples/angband/etc/pref/graf-shb.prf
+share/examples/angband/etc/pref/graf-xxx.prf
+share/examples/angband/etc/pref/graf.prf
+share/examples/angband/etc/pref/message.prf
+share/examples/angband/etc/pref/pref.prf
+share/examples/angband/etc/pref/user.prf
+share/examples/angband/etc/pref/xtra-dvg.prf
+share/examples/angband/etc/pref/xtra-new.prf
+share/examples/angband/etc/pref/xtra-nmd.prf
+share/examples/angband/etc/pref/xtra-shb.prf
+share/examples/angband/etc/pref/xtra-xxx.prf
+@mode 775
+@sample /var/games/angband/
+@comment @sample /var/games/angband/apex/
+@comment @sample /var/games/angband/save/
+@comment @sample /var/games/angband/user/
+@mode
+@group
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
