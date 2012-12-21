@@ -133,9 +133,9 @@ share/examples/angband/etc/pref/xtra-xxx.prf
 @sample ${SYSCONFDIR}/angband/pref/xtra-xxx.prf
 @mode 775
 @sample /var/games/angband/
-@comment @sample /var/games/angband/apex/
-@comment @sample /var/games/angband/save/
-@comment @sample /var/games/angband/user/
+@sample /var/games/angband/apex/
+@sample /var/games/angband/save/
+@sample /var/games/angband/user/
 @mode
 @group
 @exec %D/bin/update-desktop-database
