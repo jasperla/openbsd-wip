@@ -29,8 +29,6 @@ AUTOCONF_VERSION =	2.68
 CONFIGURE_STYLE=	autoconf
 
 CONFIGURE_ARGS +=	--with-setgid=games \
-			--with-varpath=/var/games/angband \
-			--with-configpath=${PREFIX}/share/angband \
 			--bindir=${PREFIX}/bin
 
 CONFIGURE_ENV=          TRUEPREFIX=${TRUEPREFIX}
