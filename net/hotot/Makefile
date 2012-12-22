@@ -26,6 +26,7 @@ MODULES =	devel/cmake \
 BUILD_DEPENDS =	textproc/intltool
 
 RUN_DEPENDS =	devel/py-gobject3 \
+		devel/xdg-utils \
 		www/webkit,gtk3 \
 		x11/dbus-python
 
