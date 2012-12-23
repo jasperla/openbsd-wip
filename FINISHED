@@ -19,22 +19,6 @@ sysutils/conky		Ready for import. Sent to maintainer 2012-07-24, similar update 
 devel/py-anita		Ready for import. Sent to ports@ 2012-11-05.
 misc/dvtm		sent to ports@ 2012/12/04. Ready for import.
 net/hotot		Ready for import. Sent to ports@ 2012-12-06.
-
-OCaml 4.00:
-Sent to lang/ocaml maintainer Anil Madhavapeddy <anil@recoil.org>
-
-databases/ocaml-sqlite3		ready for import.
-devel/camomile			ready for import.
-devel/cil			ready for import.
-devel/ocaml-calendar		ready for import.
-devel/ocaml-lwt			ready for import.
-devel/ocaml-lambda-term		ready for import.
-lang/obc			waiting for i386 test
-lang/ocaml			needs testing.
-lang/ocamlduce			ready for import, but BROKEN
-lang/utop			ready for import.
-math/coq			ready for import.
-net/unison/stable		ready for import.
-textproc/hevea			ready for import.
-textproc/ocaml-xmlm		ready for import.
-www/ocaml-tyxml			ready for import.
+lang/utop		ready for import. Waiting for libcharset fix in ocaml-lamda-term
+net/unison/stable	ready for import.
+www/ocaml-tyxml		ready for import.
