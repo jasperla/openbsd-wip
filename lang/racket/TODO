@@ -21,6 +21,7 @@ e')
 *** Error 1 in /usr/ports/openbsd-wip/lang/racket (/usr/ports/infrastructure/mk/bsd.port.mk:2283 'update-plist')
 
 CVS dates:
+2012/12/23: Crash
 2012/12/18: Crash
 2012/12/11: Crash
 2012/12/01: Crash
