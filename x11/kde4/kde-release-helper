@@ -268,7 +268,20 @@ prepare() {
 	else
 		MSPATCH="sed /MASTER_SITES/s@stable/@unstable/@"
 	fi
-	awk "NR == 3 {print \"MODKDE4_VERSION =	$NEW_KDE_PORT_VER\"} {print}" <"$MI" | $MSPATCH >"$T"
+	awk "
+/^MODKDE[0-9]?_VERSION[[:space:]]*:?=/ {
+	print \"MODKDE4_VERSION =	$NEW_KDE_PORT_VER\";
+	VL = 1;
+}
+
+{
+	if (VL) {
+		VL = 0;
+	} else {
+		print;
+	}
+}
+	    " <"$MI" | $MSPATCH >"$T"
 	mv "$T" "$MI"
 
 	if ! is_stable_ver $NEW_KDE_PORT_VER; then
