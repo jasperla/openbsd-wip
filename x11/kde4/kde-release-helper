@@ -230,7 +230,7 @@ prepare() {
 
 	echo '==> copying ports directory' >&2
 	CLEANUP_ITEMS="$CLEANUP_ITEMS $NEW_KDE_PORT_DIR"
-	cp -R kde4 $NEW_KDE_PORT_DIR
+	cp -R "$OLDPWD" $NEW_KDE_PORT_DIR
 	local LOCAL_PORTS=`cd $NEW_KDE_PORT_DIR && list_local_ports`
 
 	echo '==> removing extra files' >&2
@@ -243,7 +243,7 @@ prepare() {
 		ear rm -Rf $NEW_KDE_PORT_DIR/l10n
 	fi
 	for P in $LOCAL_PORTS; do
-		ear rm -f $P/distinfo
+		ear rm -f $NEW_KDE_PORT_DIR/$P/distinfo
 	done
 
 	echo '==> removing REVISION marks' >&2
