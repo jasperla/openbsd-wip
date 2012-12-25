@@ -214,12 +214,14 @@ expand_port_list() {
 
 prepare() {
 	test $# -eq 1 || usage
-	local NEW_KDE_PORT_VER=$1; shift
 
 	if ! [ -f ../kde4/kde4.port.mk -a X"`cd .. && basename $(pwd)`" = Xx11 ]; then
 		echo "Please run $MY_NAME from KDE 4 directory in ports tree" >&2
 		exit 2
 	fi
+
+	local NEW_KDE_PORT_VER=$1; shift
+	local CUR_KDE_PORT_VER=`kde_version`
 
 	cd ..
 	local NEW_KDE_PORT_DIR=`kde_port_dir "$NEW_KDE_PORT_VER"` 
@@ -261,10 +263,14 @@ prepare() {
 	local T=`mktemp -u "$MI".XXXXXXXXXXX`
 	OCLEANUP_ITEMS="$CLEANUP_ITEMS"
 	CLEANUP_ITEMS="$CLEANUP_ITEMS $T"
-	local MSPATCH=
+	local MSPATCH OSTABLE=1 NSTABLE=1
+	is_stable_ver $CUR_KDE_PORT_VER || OSTABLE=0
+	is_stable_ver $NEW_KDE_PORT_VER || NSTABLE=0
 
-	if is_stable_ver $NEW_KDE_PORT_VER; then
+	if [[ $OSTABLE -eq $NSTABLE ]]; then
 		MSPATCH=cat
+	elif [[ $OSTABLE -eq 0 ]]; then
+		MSPATCH="sed /MASTER_SITES/s@unstable/@stable/@"
 	else
 		MSPATCH="sed /MASTER_SITES/s@stable/@unstable/@"
 	fi
