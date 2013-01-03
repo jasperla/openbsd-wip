@@ -1,0 +1,11 @@
+$OpenBSD$
+--- kioslave/smtp/command.h.orig	Thu Jan  3 22:25:22 2013
++++ kioslave/smtp/command.h	Thu Jan  3 22:24:27 2013
+@@ -34,6 +34,7 @@
+ 
+ 
+ extern "C" {
++#include <sys/types.h>
+ #include <sasl/sasl.h>
+ }
+ 
