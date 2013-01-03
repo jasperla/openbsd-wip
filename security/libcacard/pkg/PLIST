@@ -1,0 +1,22 @@
+@comment $OpenBSD$
+%%SHARED%%
+@bin bin/vscclient
+include/cacard/
+include/cacard/cac.h
+include/cacard/card_7816.h
+include/cacard/card_7816t.h
+include/cacard/eventt.h
+include/cacard/mutex.h
+include/cacard/passthru.h
+include/cacard/vcard.h
+include/cacard/vcard_emul.h
+include/cacard/vcard_emul_type.h
+include/cacard/vcardt.h
+include/cacard/vevent.h
+include/cacard/vreader.h
+include/cacard/vreadert.h
+include/cacard/vscard_common.h
+lib/libcacard.a
+lib/libcacard.la
+lib/pkgconfig/
+lib/pkgconfig/libcacard.pc
