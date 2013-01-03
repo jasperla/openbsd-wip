@@ -1,0 +1,6 @@
+This emulator is designed to provide emulation of actual smart cards to a
+virtual card reader running in a guest virtual machine. The emulated smart
+cards can be representations of real smart cards, where the necessary functions
+such as signing, card removal/insertion, etc. are mapped to real, physical
+cards which are shared with the client machine the emulator is running on, or
+the cards could be pure software constructs.
