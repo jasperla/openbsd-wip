@@ -98,4 +98,10 @@ do-install:
 		PLT_SETUP_OPTIONS="-j 1" ${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} \
 		-f ${MAKE_FILE} ${FAKE_TARGET}
 
+.if ${MACHINE_ARCH} == "amd64"
+PKG_ARGS+=-Damd64=1 -Di386=0
+.elif ${MACHINE_ARCH} == "i386"
+PKG_ARGS+=-Damd64=0 -Di386=1
+.endif
+
 .include <bsd.port.mk>
