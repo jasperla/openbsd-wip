@@ -1,2 +1,3 @@
-Update to 1.6 no longer needs pthreads. Support interactive applications by opening a TTY
-
+- Update to 1.8 no longer needs pthreads.
+- Support interactive applications by opening a TTY
+- Stat deleted files before running a command 
