@@ -1,13 +1,12 @@
 # $OpenBSD$
 
 COMMENT =		molecule editor and visualizer
-V =			1.0.3
+V =			1.1.0
 DISTNAME =		avogadro-${V}
 CATEGORIES =		education biology
-REVISION =		5
 HOMEPAGE =		http://avogadro.openmolecules.net/
 
-SHARED_LIBS +=		avogadro	0.0	# 1.0
+SHARED_LIBS +=		avogadro	0.0	# 1.1
 
 # GPL v3
 PERMIT_PACKAGE_CDROM =	Yes
@@ -16,7 +15,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += c m pthread stdc++ z
-WANTLIB += GL GLU ICE SM X11 Xext
+WANTLIB += GL GLU ICE SM X11 Xext python2.7
 WANTLIB += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtOpenGL
 WANTLIB += boost_python-mt openbabel ${MODPY_WANTLIB}
 

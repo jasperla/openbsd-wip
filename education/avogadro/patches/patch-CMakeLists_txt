@@ -1,0 +1,12 @@
+$OpenBSD$
+--- CMakeLists.txt.orig	Sun Jan  6 19:10:56 2013
++++ CMakeLists.txt	Sun Jan  6 19:11:49 2013
+@@ -52,6 +52,8 @@ if (CMAKE_COMPILER_IS_GNUCXX)
+ #  set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wshadow -Wold-style-cast")
+   endif(EXTRA_WARNINGS)
+   add_definitions (-D_BSD_SOURCE)
++  # Boost 1.48+, BOOST_JOIN and Qt MOC-fix, https://bugreports.qt-project.org/browse/QTBUG-22829
++  add_definitions (-DBOOST_TT_HAS_OPERATOR_HPP_INCLUDED)
+   # Set some linker flags
+   if(CMAKE_SYSTEM_NAME MATCHES Linux)
+     set(CMAKE_SHARED_LINKER_FLAGS
