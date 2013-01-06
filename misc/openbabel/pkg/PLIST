@@ -1,0 +1,169 @@
+@comment $OpenBSD$
+%%SHARED%%
+@bin bin/babel
+@bin bin/obabel
+@bin bin/obchiral
+@bin bin/obconformer
+@bin bin/obenergy
+@bin bin/obfit
+@bin bin/obgen
+@bin bin/obgrep
+@bin bin/obminimize
+@bin bin/obprobe
+@bin bin/obprop
+@bin bin/obrotamer
+@bin bin/obrotate
+@bin bin/obspectrophore
+@bin bin/roundtrip
+include/inchi/
+include/inchi/inchi_api.h
+include/openbabel-2.0/
+include/openbabel-2.0/openbabel/
+include/openbabel-2.0/openbabel/alias.h
+include/openbabel-2.0/openbabel/atom.h
+include/openbabel-2.0/openbabel/atomclass.h
+include/openbabel-2.0/openbabel/babelconfig.h
+include/openbabel-2.0/openbabel/base.h
+include/openbabel-2.0/openbabel/bitvec.h
+include/openbabel-2.0/openbabel/bond.h
+include/openbabel-2.0/openbabel/bondtyper.h
+include/openbabel-2.0/openbabel/builder.h
+include/openbabel-2.0/openbabel/canon.h
+include/openbabel-2.0/openbabel/chains.h
+include/openbabel-2.0/openbabel/chargemodel.h
+include/openbabel-2.0/openbabel/chemdrawcdx.h
+include/openbabel-2.0/openbabel/chiral.h
+include/openbabel-2.0/openbabel/conformersearch.h
+include/openbabel-2.0/openbabel/data.h
+include/openbabel-2.0/openbabel/descriptor.h
+include/openbabel-2.0/openbabel/dlhandler.h
+include/openbabel-2.0/openbabel/fingerprint.h
+include/openbabel-2.0/openbabel/forcefield.h
+include/openbabel-2.0/openbabel/format.h
+include/openbabel-2.0/openbabel/generic.h
+include/openbabel-2.0/openbabel/graphsym.h
+include/openbabel-2.0/openbabel/grid.h
+include/openbabel-2.0/openbabel/griddata.h
+include/openbabel-2.0/openbabel/groupcontrib.h
+include/openbabel-2.0/openbabel/inchiformat.h
+include/openbabel-2.0/openbabel/internalcoord.h
+include/openbabel-2.0/openbabel/isomorphism.h
+include/openbabel-2.0/openbabel/kinetics.h
+include/openbabel-2.0/openbabel/lineend.h
+include/openbabel-2.0/openbabel/locale.h
+include/openbabel-2.0/openbabel/math/
+include/openbabel-2.0/openbabel/math/align.h
+include/openbabel-2.0/openbabel/math/erf.h
+include/openbabel-2.0/openbabel/math/matrix3x3.h
+include/openbabel-2.0/openbabel/math/spacegroup.h
+include/openbabel-2.0/openbabel/math/transform3d.h
+include/openbabel-2.0/openbabel/math/vector3.h
+include/openbabel-2.0/openbabel/matrix.h
+include/openbabel-2.0/openbabel/mcdlutil.h
+include/openbabel-2.0/openbabel/mol.h
+include/openbabel-2.0/openbabel/molchrg.h
+include/openbabel-2.0/openbabel/obconversion.h
+include/openbabel-2.0/openbabel/oberror.h
+include/openbabel-2.0/openbabel/obiter.h
+include/openbabel-2.0/openbabel/obmolecformat.h
+include/openbabel-2.0/openbabel/obutil.h
+include/openbabel-2.0/openbabel/op.h
+include/openbabel-2.0/openbabel/optransform.h
+include/openbabel-2.0/openbabel/parsmart.h
+include/openbabel-2.0/openbabel/patty.h
+include/openbabel-2.0/openbabel/phmodel.h
+include/openbabel-2.0/openbabel/plugin.h
+include/openbabel-2.0/openbabel/pointgroup.h
+include/openbabel-2.0/openbabel/query.h
+include/openbabel-2.0/openbabel/rand.h
+include/openbabel-2.0/openbabel/reaction.h
+include/openbabel-2.0/openbabel/residue.h
+include/openbabel-2.0/openbabel/ring.h
+include/openbabel-2.0/openbabel/rotamer.h
+include/openbabel-2.0/openbabel/rotor.h
+include/openbabel-2.0/openbabel/shared_ptr.h
+include/openbabel-2.0/openbabel/spectrophore.h
+include/openbabel-2.0/openbabel/stereo/
+include/openbabel-2.0/openbabel/stereo/cistrans.h
+include/openbabel-2.0/openbabel/stereo/squareplanar.h
+include/openbabel-2.0/openbabel/stereo/stereo.h
+include/openbabel-2.0/openbabel/stereo/tetrahedral.h
+include/openbabel-2.0/openbabel/stereo/tetranonplanar.h
+include/openbabel-2.0/openbabel/stereo/tetraplanar.h
+include/openbabel-2.0/openbabel/text.h
+include/openbabel-2.0/openbabel/tokenst.h
+include/openbabel-2.0/openbabel/typer.h
+include/openbabel-2.0/openbabel/xml.h
+lib/cmake/
+lib/cmake/openbabel2/
+lib/cmake/openbabel2/OpenBabel2Config.cmake
+lib/cmake/openbabel2/OpenBabel2ConfigVersion.cmake
+lib/cmake/openbabel2/OpenBabel2_EXPORTS-relwithdebinfo.cmake
+lib/cmake/openbabel2/OpenBabel2_EXPORTS.cmake
+lib/openbabel/
+lib/openbabel/${V}/
+lib/pkgconfig/
+lib/pkgconfig/openbabel-2.0.pc
+share/man/
+share/man/man1/
+@man share/man/man1/OBGUI.1
+@man share/man/man1/babel.1
+@man share/man/man1/obabel.1
+@man share/man/man1/obchiral.1
+@man share/man/man1/obconformer.1
+@man share/man/man1/obenergy.1
+@man share/man/man1/obfit.1
+@man share/man/man1/obgen.1
+@man share/man/man1/obgrep.1
+@man share/man/man1/obminimize.1
+@man share/man/man1/obprobe.1
+@man share/man/man1/obprop.1
+@man share/man/man1/obrotamer.1
+@man share/man/man1/obrotate.1
+@man share/man/man1/roundtrip.1
+share/openbabel/
+share/openbabel/${V}/
+share/openbabel/${V}/MACCS.txt
+share/openbabel/${V}/SMARTS_InteLigand.txt
+share/openbabel/${V}/UFF.prm
+share/openbabel/${V}/aromatic.txt
+share/openbabel/${V}/atomtyp.txt
+share/openbabel/${V}/babel_povray3.inc
+share/openbabel/${V}/bondtyp.txt
+share/openbabel/${V}/element.txt
+share/openbabel/${V}/fragments.txt
+share/openbabel/${V}/gaff.dat
+share/openbabel/${V}/gaff.prm
+share/openbabel/${V}/ghemical.prm
+share/openbabel/${V}/isotope-small.txt
+share/openbabel/${V}/isotope.txt
+share/openbabel/${V}/logp.txt
+share/openbabel/${V}/mmff94.ff
+share/openbabel/${V}/mmff94s.ff
+share/openbabel/${V}/mmffang.par
+share/openbabel/${V}/mmffbndk.par
+share/openbabel/${V}/mmffbond.par
+share/openbabel/${V}/mmffchg.par
+share/openbabel/${V}/mmffdef.par
+share/openbabel/${V}/mmffdfsb.par
+share/openbabel/${V}/mmffoop.par
+share/openbabel/${V}/mmffpbci.par
+share/openbabel/${V}/mmffprop.par
+share/openbabel/${V}/mmffs_oop.par
+share/openbabel/${V}/mmffs_tor.par
+share/openbabel/${V}/mmffstbn.par
+share/openbabel/${V}/mmfftor.par
+share/openbabel/${V}/mmffvdw.par
+share/openbabel/${V}/mr.txt
+share/openbabel/${V}/patterns.txt
+share/openbabel/${V}/phmodel.txt
+share/openbabel/${V}/plugindefines.txt
+share/openbabel/${V}/psa.txt
+share/openbabel/${V}/qeq.txt
+share/openbabel/${V}/resdata.txt
+share/openbabel/${V}/ringtyp.txt
+share/openbabel/${V}/space-groups.txt
+share/openbabel/${V}/superatom.txt
+share/openbabel/${V}/svgformat.script
+share/openbabel/${V}/torlib.txt
+share/openbabel/${V}/types.txt
