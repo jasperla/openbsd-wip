@@ -14,12 +14,11 @@ http://pkgs.fedoraproject.org/cgit/qt.git/tree/qt-everywhere-opensource-src-4.8.
 
 still causing problems in cvs
 ---------------------------------
-databases/mongodb
+databases/mongodb (fgsch@ will take care of it)
 
 In Progress
 ------------
-games/pokerth (needs tinyxml to be ported, from freebsd)
-		+ an update to 0.9.5
+games/pokerth (needs an update to 0.9.5)
 
 FIXED
 -------
