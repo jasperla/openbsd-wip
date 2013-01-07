@@ -20,8 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-BUILD_DEPENDS =	devel/boost \
-		devel/doxygen
+BUILD_DEPENDS =	devel/boost
 
 WANTLIB +=	GL GLEW SDL SDL_gfx SDL_image SDL_mixer SDL_net SDL_ttf
 WANTLIB +=	c m png pthread stdc++ z execinfo ${MODLUA_WANTLIB}
