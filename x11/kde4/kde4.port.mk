@@ -297,39 +297,30 @@ MODKDE4_LIB_LINKS ?=	No
 # thing for MODULES rather than for ports. So play another game...
 
 # Always create directory for headers, remove later if left empty
-kde4-pre-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/${MODKDE4_INCLUDE_DIR}
+MODKDE4_pre-fake =	${SUDO} ${INSTALL_DATA_DIR} ${PREFIX}/include/kde4;
 
 # 1. Remove includes directory created above, if empty.
 # 2. Create links for shared libraries in ${PREFIX}/lib/kde4/private/ ,
 #    to allow using -DKDE4_LIB_INSTALL_DIR=${PREFIX}/lib/kde4/private.
 # 3. Fixup files in ${SYSCONFDIR}, see notes for MODKDE4_SYSCONF_FILES above.
-kde4-post-install:
-	rmdir ${PREFIX}/${MODKDE4_INCLUDE_DIR} 2>/dev/null || true
-#	if [ -d ${PREFIX}/lib/kde4 ]; then \
-#		${INSTALL_DATA_DIR} ${PREFIX}/${MODKDE4_LIB_DIR}; \
-#		cd ${PREFIX}/${MODKDE4_LIB_DIR} && ln -s .. kde4; \
-#	fi
+MODKDE4_post-install =	rmdir ${PREFIX}/${MODKDE4_INCLUDE_DIR} 2>/dev/null || :;
+
 .if ${MODKDE4_LIB_LINKS:L} == "yes" && defined(SHARED_LIBS) && !empty(SHARED_LIBS)
-	${INSTALL_DATA_DIR} ${PREFIX}/${MODKDE4_LIB_DIR}
-. for _l _v in ${SHARED_LIBS}
+MODKDE4_post-install +=	\
+	${INSTALL_DATA_DIR} ${PREFIX}/${MODKDE4_LIB_DIR}; \
+	cd ${PREFIX}/${MODKDE4_LIB_DIR};
+
 # Note that number of upper-level directories depends on
 # actual ${MODKDE4_LIB_DIR} value relative to ${PREFIX}/lib.
-	if [ -e ${PREFIX}/lib/lib${_l}.so.${_v} ]; then \
-		cd ${PREFIX}/${MODKDE4_LIB_DIR} && \
-		    ln -sf ../../lib${_l}.so.${_v}; \
-	fi
+. for _l _v in ${SHARED_LIBS}
+MODKDE4_post-install +=	\
+	test -e ../../lib${_l}.so.${_v} && ln -sf ../../lib${_l}.so.${_v};
 . endfor
 .endif
-.for _f _d in ${MODKDE4_SYSCONF_FILES}
-	rm -Rf ${PREFIX}/${_d}/${_f}
-	${INSTALL_DATA_DIR} ${PREFIX}/${_d}
-	mv ${WRKINST}${SYSCONFDIR}/${_f} ${PREFIX}/${_d}/${_f}
-.endfor
 
-.if !target(pre-install)
-pre-install: kde4-pre-install
-.endif
-.if !target(post-install)
-post-install: kde4-post-install
-.endif
+.for _f _d in ${MODKDE4_SYSCONF_FILES}
+MODKDE4_post-install +=	\
+	rm -Rf ${PREFIX}/${_d}/${_f}; \
+	${INSTALL_DATA_DIR} ${PREFIX}/${_d}; \
+	mv ${WRKINST}${SYSCONFDIR}/${_f} ${PREFIX}/${_d}/${_f};
+.endfor

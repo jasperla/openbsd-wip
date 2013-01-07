@@ -91,7 +91,7 @@ MODKDE4_SYSCONF_FILES =	dbus-1		share/examples \
 post-extract:
 	cp ${FILESDIR}/checkpass_bsd.c ${WRKSRC}/kcheckpass/
 
-post-install: kde4-post-install
+post-install:
 	rm -f ${PREFIX}/share/config/kdm/*.bak
 
 .include <bsd.port.mk>

@@ -19,7 +19,7 @@ LIB_DEPENDS = 	graphics/lcms \
 
 CONFIGURE_ARGS =	-DWITH_OpenMP:Bool=FALSE
 
-post-install: kde4-post-install
+post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/apps/cmake/modules
 	${INSTALL_DATA} ${WRKSRC}/cmake/modules/FindKdcraw.cmake \
 		 ${PREFIX}/share/apps/cmake/modules/
