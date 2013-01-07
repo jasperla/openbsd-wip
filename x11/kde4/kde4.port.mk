@@ -161,6 +161,8 @@ MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/workspace
 # No optimization, debug symbols included, qDebug/kDebug enabled
 MODKDE4_CONF_ARGS +=	-DCMAKE_BUILD_TYPE:String=DebugFull
 MODKDE4_CMAKE_PREFIX =	-debugfull
+COPTS +=		-O0 -ggdb
+CXXOPTS +=		-O0 -ggdb
 .   else
 # Optimization for speed, debug symbols stripped, qDebug/kDebug disabled
 MODKDE4_CONF_ARGS +=	-DCMAKE_BUILD_TYPE:String=Release
