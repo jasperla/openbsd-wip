@@ -41,4 +41,16 @@ NO_REGRESS =		Yes
 pre-extract:
 	mkdir ${WRKDIST}
 
+pre-configure:
+# Allow builds from release distfile to display correct git hash in "About"
+# dialog window.
+	@perl -pi -e \
+		's,@GIT_SHA1@,be5409f2ed028b0a509d3f4cd44a970a09d2ef6c,' \
+			${WRKSRC}/src/Common/GitSHA1.cpp.in
+# Point to the right location of GPL license text.
+	${SUBST_CMD} ${WRKSRC}/src/Common/archs.h
+	@perl -pi -e \
+		's,share/doc/luminance-hdr,share/luminance-hdr,' \
+			${WRKSRC}/src/UI/UMessageBox.cpp
+
 .include <bsd.port.mk>
