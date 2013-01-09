@@ -1,0 +1,2 @@
+lots of "pthread_mutex_destroy on mutex with waiters!" when running
+"QObject::startTimer: QTimer can only be used with threads started with QThread" at shutdown
