@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Without this patch, racket reaches the limits of the shell and crashes.
+
+--- src/racket/sconfig.h.orig	Wed Jan  9 14:05:24 2013
++++ src/racket/sconfig.h	Wed Jan  9 14:08:42 2013
+@@ -297,6 +297,9 @@
+ #  define SCHEME_PLATFORM_LIBRARY_SUBPATH "i386-openbsd"
+ # endif
+ 
++# define ASSUME_FIXED_STACK_SIZE
++# define FIXED_STACK_SIZE 1048576
++
+ # include "uconfig.h"
+ # undef HAS_STANDARD_IOB
+ 
