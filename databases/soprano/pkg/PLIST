@@ -92,6 +92,7 @@ include/soprano/asyncresult.h
 include/soprano/backend.h
 include/soprano/bindingset.h
 include/soprano/cluceneindex.h
+include/soprano/datastream.h
 include/soprano/dbusclient.h
 include/soprano/dbusexportiterator.h
 include/soprano/dbusexportmodel.h

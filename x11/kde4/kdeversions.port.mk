@@ -18,4 +18,4 @@ QIMAGEBLITZ_VERSION =	0.0.6
 YAKUAKE_VERSION =	2.9.9
 
 # this is outside x11/kde4 but tied into x11/kde4
-SOPRANO_VERSION =	2.8.0
+SOPRANO_VERSION =	2.9.0

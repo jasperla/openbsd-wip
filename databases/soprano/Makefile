@@ -4,14 +4,13 @@ SHARED_ONLY =	Yes
 COMMENT =	RDF framework
 CATEGORIES =	databases devel textproc sysutils
 
-SHARED_LIBS =	soprano                   1.0 # 1.0
-SHARED_LIBS +=	sopranoclient             1.0 # 1.0
-SHARED_LIBS +=	sopranoindex              1.0 # 1.0
-SHARED_LIBS +=	sopranoserver             1.0 # 1.0
+SHARED_LIBS =	soprano                   1.1 # 1.0
+SHARED_LIBS +=	sopranoclient             1.1 # 1.0
+SHARED_LIBS +=	sopranoindex              1.1 # 1.0
+SHARED_LIBS +=	sopranoserver             1.1 # 1.0
 
 HOMEPAGE =	http://soprano.sourceforge.net/
-DISTNAME =	soprano-2.8.0
-REVISION =	3
+DISTNAME =	soprano-2.9.0
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=soprano/}
 
