@@ -94,7 +94,7 @@ CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread -lcrypto 
 # jobs by default when futures is enabled, so Racket reaches the limits again
 # and crash.
 do-install:
-	@cd ${WRKBUILD} && ulimit -s 8192 && ${SETENV} ${MAKE_ENV} \
+	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} \
 		PLT_SETUP_OPTIONS="-j 1" ${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} \
 		-f ${MAKE_FILE} ${FAKE_TARGET}
 
