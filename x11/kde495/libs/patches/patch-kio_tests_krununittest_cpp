@@ -1,0 +1,12 @@
+$OpenBSD$
+--- kio/tests/krununittest.cpp.orig	Sun Aug 12 14:07:23 2012
++++ kio/tests/krununittest.cpp	Sun Aug 12 14:07:45 2012
+@@ -160,7 +160,7 @@ void KRunUnitTest::testProcessDesktopExecNoFile_data()
+     if (kmailservice.isEmpty()) kmailservice = "kmailservice";
+     if (!kdeinit.isEmpty()) {
+         QVERIFY(!kmailservice.isEmpty());
+-        QVERIFY(kmailservice.contains("kde4/libexec"));
++        QVERIFY(kmailservice.contains("/libexec"));
+     }
+ 
+     QTest::newRow("%U l0") << "kdeinit4 %U" << l0 << false << kdeinit;

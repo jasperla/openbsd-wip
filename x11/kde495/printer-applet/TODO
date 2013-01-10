@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/usr/local/bin/printer-applet", line 1153, in <module>
+    applet = JobManager()
+  File "/usr/local/bin/printer-applet", line 299, in __init__
+    notification = NewPrinterNotification(bus, self)
+  File "/usr/local/bin/printer-applet", line 1042, in __init__
+    bus_name = dbus.service.BusName (PDS_OBJ, bus=bus)
+  File "/usr/local/lib/python2.7/site-packages/dbus/service.py", line 129, in __new__
+    retval = bus.request_name(name, name_flags)
+  File "/usr/local/lib/python2.7/site-packages/dbus/bus.py", line 306, in request_name
+    'su', (name, flags))
+  File "/usr/local/lib/python2.7/site-packages/dbus/connection.py", line 630, in call_blocking
+    message, timeout)
+dbus.exceptions.DBusException: org.freedesktop.DBus.Error.AccessDenied: Connection ":1.4" is not allowed to own the service "com.redhat.NewPrinterNotification" due to security policies in the configuration file
