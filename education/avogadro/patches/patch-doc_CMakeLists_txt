@@ -1,0 +1,27 @@
+$OpenBSD$
+Avoid picking up docbook2html and docbook2pdf by accident.
+--- doc/CMakeLists.txt.orig	Thu Jan 10 16:20:44 2013
++++ doc/CMakeLists.txt	Thu Jan 10 16:23:19 2013
+@@ -27,8 +27,9 @@ endif()
+ # find the required tools
+ find_program(DOCBOOK2PDF_EXECUTABLE docbook2pdf)
+ find_program(DOCBOOK2HTML_EXECUTABLE docbook2html)
++option(USE_DOCBOOK_TOOLS "Use docbook2pdf and docbook2html tools to generate corresponding documentation bundles" ON)
+ 
+-if( DOCBOOK2PDF_EXECUTABLE AND DOCBOOK2HTML_EXECUTABLE )
++if( USE_DOCBOOK_TOOLS AND DOCBOOK2PDF_EXECUTABLE AND DOCBOOK2HTML_EXECUTABLE )
+    # create a target to build pdf docs
+    add_custom_target(pdfdocs COMMAND ${DOCBOOK2PDF_EXECUTABLE} -o pdf
+       ${CMAKE_CURRENT_SOURCE_DIR}/index.docbook )
+@@ -48,9 +49,9 @@ if( DOCBOOK2PDF_EXECUTABLE AND DOCBOOK2HTML_EXECUTABLE
+    #INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/pdf/index.pdf  DESTINATION share/doc/avogadro/pdf/ OPTIONAL)
+    #INSTALL(FILES ${avogadro_HTML}  DESTINATION share/doc/avogadro/html/ OPTIONAL)
+ 
+-else( DOCBOOK2PDF_EXECUTABLE AND DOCBOOK2HTML_EXECUTABLE )
++else( USE_DOCBOOK_TOOLS AND DOCBOOK2PDF_EXECUTABLE AND DOCBOOK2HTML_EXECUTABLE )
+    message(STATUS "docbook tools not found, doc targets disabled")
+-endif( DOCBOOK2PDF_EXECUTABLE AND DOCBOOK2HTML_EXECUTABLE )
++endif( USE_DOCBOOK_TOOLS AND DOCBOOK2PDF_EXECUTABLE AND DOCBOOK2HTML_EXECUTABLE )
+ 
+ # Manpages
+ if(UNIX)

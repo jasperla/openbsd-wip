@@ -22,8 +22,7 @@ WANTLIB += boost_python-mt openbabel ${MODPY_WANTLIB}
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=avogadro/${V}/}
 EXTRACT_SUFX =		.tar.bz2
 
-MODULES =		x11/kde4 lang/python
-MODKDE4_USE =
+MODULES =		devel/cmake x11/qt4 lang/python
 
 BUILD_DEPENDS =		devel/py-sip \
 			graphics/glew \
@@ -39,11 +38,9 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/py-qt4
 
 LIB_DEPENDS =		devel/boost \
-			misc/openbabel
+			STEM->=2.3:misc/openbabel
 
-SEPARATE_BUILD =	Yes
-USE_GROFF =		Yes
-
-NO_REGRESS =		Yes
+CONFIGURE_ENV =		QTDIR=${MODQT_LIBDIR}
+MAKE_ENV =		QTDIR=${MODQT_LIBDIR}
 
 .include <bsd.port.mk>
