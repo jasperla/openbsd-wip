@@ -1,12 +1,21 @@
 $OpenBSD$
---- CMakeLists.txt.orig	Sun Jan  6 19:10:56 2013
-+++ CMakeLists.txt	Sun Jan  6 19:11:49 2013
-@@ -52,6 +52,8 @@ if (CMAKE_COMPILER_IS_GNUCXX)
+--- CMakeLists.txt.orig	Mon Sep  3 21:09:28 2012
++++ CMakeLists.txt	Thu Jan 10 16:11:03 2013
+@@ -51,6 +51,8 @@ if (CMAKE_COMPILER_IS_GNUCXX)
  #  set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wshadow -Wold-style-cast")
-   endif(EXTRA_WARNINGS)
+   endif()
    add_definitions (-D_BSD_SOURCE)
 +  # Boost 1.48+, BOOST_JOIN and Qt MOC-fix, https://bugreports.qt-project.org/browse/QTBUG-22829
 +  add_definitions (-DBOOST_TT_HAS_OPERATOR_HPP_INCLUDED)
    # Set some linker flags
    if(CMAKE_SYSTEM_NAME MATCHES Linux)
      set(CMAKE_SHARED_LINKER_FLAGS
+@@ -537,7 +539,7 @@ if(QT_MKSPECS_DIR AND INSTALL_QMAKE_PRF)
+ #    )
+     install(FILES
+       "${CMAKE_CURRENT_BINARY_DIR}/avogadro.prf"
+-      DESTINATION "${CMAKE_INSTALL_PREFIX}/${QT_MKSPECS_RELATIVE}/features"
++      DESTINATION "${QT_MKSPECS_DIR}/features"
+     )
+ #  endif ("${QT_MKSPECS_DIR}" MATCHES ^$"${CMAKE_INSTALL_PREFIX}/")
+ else()

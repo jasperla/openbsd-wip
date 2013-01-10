@@ -54,4 +54,4 @@ lib/avogadro/1_1/tools/clickmeasuretool.so
 lib/avogadro/1_1/tools/drawtool.so
 lib/avogadro/1_1/tools/manipulatetool.so
 lib/avogadro/1_1/tools/selectrotatetool.so
-lib/python2.7/site-packages/Avogadro.so
+lib/python${MODPY_VERSION}/site-packages/Avogadro.so
