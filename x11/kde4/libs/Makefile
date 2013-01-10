@@ -95,7 +95,7 @@ LIB_DEPENDS =	archivers/bzip2 \
 		textproc/aspell/core \
 		textproc/enchant \
 		textproc/libxslt \
-		STEM->=${ATTICA_VERSION}:productivity/attica \
+		productivity/attica \
 		x11/dbusmenu-qt \
 		x11/polkit-qt4
 

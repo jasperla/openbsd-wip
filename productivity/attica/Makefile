@@ -2,7 +2,7 @@
 
 CATEGORIES =	productivity
 COMMENT =	collaboration services library for KDE
-DISTNAME =	attica-${ATTICA_VERSION}
+DISTNAME =	attica-0.4.0
 REVISION =	0
 
 SHARED_LIBS =	attica		1.0

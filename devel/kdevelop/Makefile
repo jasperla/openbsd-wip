@@ -2,7 +2,8 @@
 
 CATEGORIES =	devel x11
 COMMENT =	integrated development environment for KDE 4
-DISTNAME =	kdevelop-${KDEVELOP_VERSION}
+V =		4.4.1
+DISTNAME =	kdevelop-$V
 HOMEPAGE =	http://www.kdevelop.org/
 
 EXTRACT_SUFX =	.tar.bz2
@@ -12,7 +13,7 @@ SHARED_LIBS +=	kdev4cppduchain		0.0
 SHARED_LIBS +=	kdev4cppparser		0.0
 SHARED_LIBS +=	kdev4cpprpp		0.0
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdevelop/${KDEVELOP_VERSION}/src/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdevelop/$V/src/}
 DIST_SUBDIR =	kde
 
 # GPLv2+, LGPLv2.1+, GNU FDLv1.2

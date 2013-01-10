@@ -1,7 +1,5 @@
 # $OpenBSD$
 
-.include "kdeversions.port.mk"
-
 # The version of KDE SC in x11/kde4
 _MODKDE4_STABLE =	4.9.3
 

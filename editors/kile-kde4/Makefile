@@ -3,7 +3,7 @@
 CATEGORIES =	editors
 COMMENT =	user-friendly TeX/LaTex editor for KDE
 HOMEPAGE =	http://kile.sourceforge.net/
-DISTNAME =	kile-${KILE_VERSION}
+DISTNAME =	kile-2.1.3
 REVISION =	2
 
 EXTRACT_SUFX =	.tar.bz2
