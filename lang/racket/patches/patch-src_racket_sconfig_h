@@ -2,6 +2,8 @@ $OpenBSD$
 
 Without this patch, racket reaches the limits of the shell and crashes.
 
+Sent to upstream https://github.com/plt/racket/pull/212
+
 --- src/racket/sconfig.h.orig	Wed Jan  9 14:05:24 2013
 +++ src/racket/sconfig.h	Wed Jan  9 14:08:42 2013
 @@ -297,6 +297,9 @@
