@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, KDE4 libraries for education apps
 DISTNAME =	libkdeedu-${MODKDE_VERSION}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	keduvocdocument		0.0 # 4.7
 
