@@ -24,18 +24,14 @@ PERMIT_PACKAGE_FTP =            Yes
 MODULES =		x11/kde4
 MODKDE4_USE =
 
+# We build support for MySQL and PostgreSQL but SQLite
+# is our default now.
 BUILD_DEPENDS =		databases/mysql,-server \
 			x11/qt4 \
-			x11/qt4,-mysql
-
-# Build PostgreSQL support for those who want it
-BUILD_DEPENDS +=	x11/qt4,-postgresql
+			x11/qt4,-mysql \
+			x11/qt4,-postgresql
 
 RUN_DEPENDS =		misc/shared-mime-info
-
-# Do not force PostgreSQL as a dependency, MySQL is most tested one.
-RUN_DEPENDS +=		databases/mysql,-server \
-			x11/qt4,-mysql
 
 LIB_DEPENDS =		STEM->=2.9.0:databases/soprano \
 			devel/boost
