@@ -1,3 +1,4 @@
+SUBDIR =
 SUBDIR +=	gstreamer
 SUBDIR +=	vlc
 

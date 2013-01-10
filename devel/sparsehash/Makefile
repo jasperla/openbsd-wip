@@ -13,7 +13,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/files/
 
-SEPARATE_BUILD =	Yes (build in a directory other than WRKSRC)
+SEPARATE_BUILD =	Yes
 VMEM_WARNING =		Yes
 
 CONFIGURE_STYLE =	gnu

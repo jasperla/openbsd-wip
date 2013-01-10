@@ -16,7 +16,7 @@ PKGNAME-qt =		${PKGNAME:S/-gadgets/-gadgets-qt/}
 
 REVISION-main =		2
 
-SHARED_LIBS +=  ggadget-1.0               0.0 # 0.0
+SHARED_LIBS =   ggadget-1.0               0.0 # 0.0
 SHARED_LIBS +=  ggadget-dbus-1.0          0.0 # 0.0
 SHARED_LIBS +=  ggadget-gtk-1.0           0.0 # 0.0
 SHARED_LIBS +=  ggadget-js-1.0            0.0 # 0.0
@@ -97,12 +97,7 @@ LIB_DEPENDS-qt =	${BUILD_PKGPATH},-main \
 
 SEPARATE_BUILD =	simple
 
-#REGRESS_IS_INTERACTIVE =	Yes
-#NO_REGRESS =		Yes
-#REGRESS_TARGET =	???
-#REGRESS_DEPENDS =	???
-
-CONFIGURE_ARGS	+=	-DGGL_DEFAULT_BROWSER_PLUGINS_DIR=${LOCALBASE}/lib/mozilla/plugins
+CONFIGURE_ARGS	=	-DGGL_DEFAULT_BROWSER_PLUGINS_DIR=${LOCALBASE}/lib/mozilla/plugins
 
 # There are .orig leftovers in distribution
 PATCHORIG =		.ports.orig
