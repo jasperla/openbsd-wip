@@ -8,6 +8,7 @@
 @bin bin/obfit
 @bin bin/obgen
 @bin bin/obgrep
+@bin bin/obgui
 @bin bin/obminimize
 @bin bin/obprobe
 @bin bin/obprop

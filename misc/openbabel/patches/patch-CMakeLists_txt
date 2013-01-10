@@ -1,0 +1,12 @@
+$OpenBSD$
+Allow regression tests to be run.
+--- CMakeLists.txt.orig	Thu Jan 10 13:47:24 2013
++++ CMakeLists.txt	Thu Jan 10 13:48:22 2013
+@@ -355,7 +355,6 @@ if(UNIX AND BUILD_SHARED)
+   else()
+     set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${LIB_INSTALL_DIR}")
+     set(CMAKE_SKIP_BUILD_RPATH FALSE)
+-    set(CMAKE_BUILD_WITH_INSTALL_RPATH FALSE)
+     set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+   endif()
+ endif()
