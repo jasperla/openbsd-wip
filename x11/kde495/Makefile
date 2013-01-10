@@ -3,61 +3,50 @@
      SUBDIR =
 # don't even try to keep these sorted
 
-# Marks meaning:
-#  OK               - can be imported right now
-#  minor issues     - almost OK, some minor functionality does not work
-#  issues           - have troubles with general usage flow
-#  test             - looks like working but deepier tests needed
-#  untested         - only compilation tested
-# Other marks describe actual problems, meaning "this should be fixed".
-# Lack of mark means "port is on its way to import, please wait".
-#
-# Eventually this stuff will be partly moved to corresponding directories,
-# leaving only "basic" KDE packages here (those who get in actual
-# releases of KDE SC).
-
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, qimageblitz
-# HERE: oxygen-icons
+# HERE:
+# oxygen-icons
 # |
-#  - libs
-#   |   -kactivities -> nepomuk-core -> pimlibs -> runtime
+#  -> libs
+#   |-> pure resources: base-artwork, l10n, wallpapers
 #   |
-#   |- artwork, base-artwork, l10n, wallpapers
-#   |- runtime
-#   |- baseapps
-#   |- pimlibs
-#   | |
-#   | |- libkgapi
-#   | |- pim-runtime
-#   |  - pim
-#   |-
-#   |  |
-#   |   -kactivities
-#   |    |
-#   |    |- py-kde
-#   |      |
-#   |      |- workspace
+#   |-> baseapps
+#   |   |
+#   |    -> konsole
 #   |
-#   |- smokegen
-#   | |
-#   | |- smokeqt
-#   | | |
-#   | | |- p5-qt, qyoto,  ruby-qt
-#     -- kate/okular            |
-#      |                        |
-#   |  --- smokekde             |
-#   |     |                     |
-#   |      - p5-kde, kimono, korundum
-#
-#   | -- kwebkitpart, libktorrent
-#      |
-#       -- network
-#   | -- former accessibility
-#   | -- former kdeedu
-#   | -- former kdeutils
-#   | -- former kdegraphics
-#   | -- former kdemultimedia
+#   |-> kactivities -->-+
+#   |-> nepomuk-core ->-+
+#   |-> runtime <--+----+
+#   |-> pimlibs ->-+
+#   |   |
+#   |   |-> libkgapi
+#   |   |-> pim-runtime
+#   |   |-> pim
+#   |   |-> py-kde
+#   |       |-> kdegames
+#   |       |-> workspace
+#   |           |-> admin
+#   |           |-> artwork
+#   |           |-> network
+#   |
+#   |-> kate ------+
+#   |              |
+#   |-> smokekde <-+- smokegen (no SC prerequisites)
+#   |   |             |-> smokeqt
+#   |   |                 |-> qyoto -----+
+#   |   |                 |-> ruby-qt--+ |
+#   |   |                 |-> p5-qt -+ | |
+#   |   |                            | | |
+#   |   |-> p5-kde <-----------------+ | |
+#   |   |-> korundum <-----------------+ |
+#   |   |-> kimono <---------------------+
+#   |
+#   |-> former accessibility
+#   |-> former kdeedu
+#   |-> former kdeutils
+#   |-> former kdegraphics
+#   +-> former kdemultimedia
 
 # basic bricks
 SUBDIR += oxygen-icons
