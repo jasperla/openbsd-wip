@@ -9,7 +9,8 @@ $OpenBSD$
 -# This is needed on non-win32 platforms, as lib-install-dir might be in a
 -# totally different prefix than include-install-dir. So instead hardcode the
 -# absolute path during buildtime
- set( LIBKDEEDU_INCLUDE_DIR "@INCLUDE_INSTALL_DIR@/libkdeedu" )
+-set( LIBKDEEDU_INCLUDE_DIR "@INCLUDE_INSTALL_DIR@/libkdeedu" )
++set( LIBKDEEDU_INCLUDE_DIR "@KDE4_INCLUDE_INSTALL_DIR@/libkdeedu" )
 -
 -else(NOT WIN32)
 -
