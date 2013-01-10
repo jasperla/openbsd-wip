@@ -37,7 +37,7 @@ RUN_DEPENDS =		misc/shared-mime-info
 RUN_DEPENDS +=		databases/mysql,-server \
 			x11/qt4,-mysql
 
-LIB_DEPENDS =		STEM->=${SOPRANO_VERSION}:databases/soprano \
+LIB_DEPENDS =		STEM->=2.9.0:databases/soprano \
 			devel/boost
 
 CONFIGURE_ARGS =	-DDATABASE_BACKEND:String=SQLITE \

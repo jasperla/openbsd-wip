@@ -2,7 +2,8 @@
 
 CATEGORIES =	devel
 COMMENT =	IDE creation toolkit for KDE 4
-DISTNAME =	kdevplatform-${KDEVPLATFORM_VERSION}
+V =		1.4.1
+DISTNAME =	kdevplatform-$V
 HOMEPAGE =	http://www.kdevelop.org/
 REVISION =	0
 
@@ -20,7 +21,7 @@ SHARED_LIBS +=	kdevplatformutil		0.0 # 3.0
 SHARED_LIBS +=	kdevplatformvcs			0.0 # 3.0
 SHARED_LIBS +=	sublime				0.0 # 3.0
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdevelop/${KDEVELOP_VERSION}/src/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdevelop/${V:C/^./4/}/src/}
 DIST_SUBDIR =	kde
 
 # LGPLv2+

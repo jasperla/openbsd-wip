@@ -2,7 +2,8 @@
 
 CATEGORIES =	net
 COMMENT =	KTorrent engine
-DISTNAME =	libktorrent-${LIBKTORRENT_VERSION}
+V =		1.3.0
+DISTNAME =	libktorrent-$V
 HOMEPAGE =	http://ktorrent.org/
 REVISION =	2
 
@@ -22,7 +23,7 @@ WANTLIB += lib/qt4/QtNetwork
 WANTLIB += kdeui kio solid
 WANTLIB += gcrypt gmp qca2
 
-MASTER_SITES =	${HOMEPAGE}downloads/${KTORRENT_VERSION}/
+MASTER_SITES =	${HOMEPAGE}downloads/${V:C/^./4/}/
 
 MODULES =		x11/kde4
 MODKDE4_USE =		libs

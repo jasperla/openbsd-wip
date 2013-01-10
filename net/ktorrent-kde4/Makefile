@@ -2,7 +2,8 @@
 
 CATEGORIES =	net
 COMMENT =	torrent client for KDE 4
-DISTNAME =	ktorrent-${KTORRENT_VERSION}
+V =		4.3.0
+DISTNAME =	ktorrent-$V
 HOMEPAGE =	http://ktorrent.org/
 REVISION =	1
 
@@ -19,7 +20,7 @@ WANTLIB += knotifyconfig kparts kprintutils krosscore ktorrent kutils
 WANTLIB += kworkspace nepomuk nepomukutils phonon_s plasma solid soprano
 WANTLIB += syndication tag
 
-MASTER_SITES =	${HOMEPAGE}downloads/${KTORRENT_VERSION}/
+MASTER_SITES =	${HOMEPAGE}downloads/$V/
 
 # GPLv2+
 PERMIT_DISTFILES_CDROM =        Yes
@@ -31,6 +32,6 @@ MODULES =	x11/kde4
 MODKDE4_USE =	pim workspace
 
 LIB_DEPENDS =	audio/taglib \
-		STEM->=${LIBKTORRENT_VERSION}:net/libktorrent
+		STEM->=${V:C/^./1/}:net/libktorrent
 
 .include <bsd.port.mk>
