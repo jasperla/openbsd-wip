@@ -1,0 +1,630 @@
+
+# exec ck-launch-session startkde >> ~/.xsession-errors 2>&1
+# KDE-Start-Screen starts fine. It looks OK but it kill my mouse 
+# and my keyboard after start. (You know, what this means; reset button)
+#
+Link points to "/tmp/kde-sizeofvoid"
+Link points to "/var/tmp/kdecache-sizeofvoid"
+Link points to "/tmp/ksocket-sizeofvoid"
+startkde: Starting up...
+libkio.so.5 was not found.
+libkparts.so.4 was not found.
+libplasma.so.3 was not found.
+kdeinit4: preparing to launch /usr/local/lib/libkdeinit4_klauncher.so
+kdeinit4: Launched KLauncher, pid = 14654, result = 0
+Connecting to deprecated signal QDBusConnectionInterface::serviceOwnerChanged(QString,QString,QString)
+klauncher(14654)/kio (KIOConnection) KIO::ConnectionServer::listenForRemote: Listening on  "local:/tmp/ksocket-sizeofvoid/klauncherQ14654.slave-socket"
+kdeinit4: opened connection to :0
+kdeinit4: preparing to launch /usr/local/lib/libkdeinit4_kded4.so
+kdeinit4: Launched KDED, pid = 27272 result = 0
+QDBusConnection: session D-Bus connection created before QCoreApplication. Application may misbehave.
+QDBusConnection: session D-Bus connection created before QCoreApplication. Application may misbehave.
+kded(28428)/KSharedDataCache ensureFileAllocated: This system misses support for posix_fallocate() -- ensure this partition has room for at least 10526824 bytes. 
+kdeinit4: Got EXT_EXEC '/usr/local/bin/kbuildsycoca4' from launcher.
+kdeinit4: preparing to launch /usr/local/lib/libkdeinit4_kbuildsycoca4.so
+klauncher(14654)/kio (KLauncher) KLauncher::processRequestReturn: "/usr/local/bin/kbuildsycoca4" (pid 20141) up and running.
+kbuildsycoca4 running...
+kbuildsycoca4(20141)/kdecore (KSycoca) KSycocaPrivate::openDatabase: Trying to open ksycoca from "/var/tmp/kdecache-sizeofvoid/ksycoca4"
+kbuildsycoca4(20141) KBuildSycoca::checkTimestamps: checking file timestamps
+kbuildsycoca4(20141) KBuildSycoca::checkTimestamps: timestamps check ok
+kbuildsycoca4(20141) kdemain: Emitting notifyDatabaseChanged ()
+kdeinit4: PID 20141 terminated.
+kded(28428)/kdecore (KSycoca) KSycocaPrivate::openDatabase: Trying to open ksycoca from "/var/tmp/kdecache-sizeofvoid/ksycoca4"
+klauncher(14654)/kdecore (KSycoca) KSycocaPrivate::openDatabase: Trying to open ksycoca from "/var/tmp/kdecache-sizeofvoid/ksycoca4"
+kdeinit4: Got EXEC_NEW 'kconf_update' from launcher.
+kdeinit4: preparing to launch /usr/local/lib/libkdeinit4_kconf_update.so
+klauncher(14654)/kio (KLauncher) KLauncher::processRequestReturn: "kconf_update" (pid 287) up and running.
+kdeinit4: PID 287 terminated.
+kded(28428) KDEDModule::setModuleName: registerObject() successful for  "powerdevil"
+kded(28428)/kded4 Kded::loadModule: Successfully loaded module "powerdevil"
+kded(28428) KDEDModule::setModuleName: registerObject() successful for  "StatusNotifierWatcher"
+kded(28428) KDEDModule::setModuleName: registerObject() successful for  "statusnotifierwatcher"
+kded(28428)/kded4 Kded::loadModule: Successfully loaded module "statusnotifierwatcher"
+kded(28428) X11Helper::getGroupNames: Fetched layout groups from X server: 	layouts: ("de") 	variants: ("nodeadkeys")
+kded(28428) Rules::readRules: Parsing xkb rules from "/usr/X11R6/share/X11/xkb/rules/base.xml"
+kded(28428) RulesHandler::startElement: xkbConfigRegistry version "1.1"
+kded(28428) Rules::readRules: Parsing xkb rules from "/usr/X11R6/share/X11/xkb/rules/base.extras.xml"
+kded(28428) mergeRules: Merged from extra rules: 13 layouts, 0 models, 0 option groups
+kded(28428) KeyboardDaemon::configureKeyboard: Configuring keyboard
+kded(28428) KeyboardConfig::load: configuring layouts false configuring options false
+kded(28428) X11Helper::getGroupNames: Fetched layout groups from X server: 	layouts: ("de") 	variants: ("nodeadkeys")
+kdeinit4: Got EXT_EXEC '/usr/local/bin/kglobalaccel' from launcher.
+kdeinit4: preparing to launch /usr/local/lib/libkdeinit4_kglobalaccel.so
+klauncher(14654)/kio (KLauncher) KLauncher::processRequestReturn: "/usr/local/bin/kglobalaccel" (pid 1460) up and running.
+QDBusConnection: session D-Bus connection created before QCoreApplication. Application may misbehave.
+QDBusConnection: session D-Bus connection created before QCoreApplication. Application may misbehave.
+kglobalaccel(1955)/KSharedDataCache ensureFileAllocated: This system misses support for posix_fallocate() -- ensure this partition has room for at least 10526824 bytes. 
+kglobalaccel(1955) GlobalShortcutsRegistry::loadSettings: Loading group  "kwin"
+kglobalaccel(1955) GlobalShortcutsRegistry::loadSettings: Loading group  "KDE Keyboard Layout Switcher"
+kglobalaccel(1955) GlobalShortcutsRegistry::loadSettings: Loading group  "plasma-desktop"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+Alt+K" for "KDE Keyboard Layout Switcher" : "Switch to Next Keyboard Layout"
+kded(28428) KeyboardLayoutActionCollection::KeyboardLayoutActionCollection: Keyboard layout toggle shortcut "Ctrl+Alt+K"
+kglobalaccel(1955) KdeDGlobalAccel::Component::cleanUp: 1
+kded(28428) KeyboardLayoutActionCollection::loadLayoutShortcuts: Cleaning component shortcuts on load false
+kded(28428) XInputEventNotifier::registerForNewDeviceEvent: Registered for new device events from XInput, class 93
+kdeinit4: PID 1460 terminated.
+kded(28428) isRestoreSession: loginMode: ""
+kded(28428) LayoutMemoryPersister::restoreFromFile: Failed to open layout memory xml file for reading "/home/sizeofvoid/.kde4/share/apps/kded/session/keyboard/layout_memory.xml" error: 5 
+kded(28428) KDEDModule::setModuleName: registerObject() successful for  "keyboard"
+kded(28428)/kded4 Kded::loadModule: Successfully loaded module "keyboard"
+kded(28428) KDEDModule::setModuleName: registerObject() successful for  "device_automounter"
+kded(28428)/kded4 Kded::loadModule: Successfully loaded module "device_automounter"
+kdeinit4: PID 27272 terminated.
+kdeinit4: preparing to launch /usr/local/lib/libkdeinit4_kcminit_startup.so
+kdeinit4: Launched 'kcminit_startup', pid = 14423 result = 0
+kdeinit4: Got EXT_EXEC '/usr/local/bin/kactivitymanagerd' from launcher.
+kdeinit4: preparing to launch /usr/local/bin/kactivitymanagerd
+klauncher(14654)/kio (KLauncher) KLauncher::processRequestReturn: "/usr/local/bin/kactivitymanagerd" (pid 31376) up and running.
+kcminit(3022)/KSharedDataCache ensureFileAllocated: This system misses support for posix_fallocate() -- ensure this partition has room for at least 10526824 bytes. 
+QDBusConnection: session D-Bus connection created before QCoreApplication. Application may misbehave.
+kded(28428) KActivities::Manager::self: Activity: The kactivitymanagerd service has been registered
+kded(28428) PowerDevil::BackendLoader::loadBackend: Loading UPower backend...
+kded(28428) PowerDevilUPowerBackend::isAvailable: UPower service,  org.freedesktop.UPower , is not registered on the bus. Trying to find out if it is activated.
+kded(28428) PowerDevilUPowerBackend::isAvailable: UPower cannot be found on this system.
+kded(28428) PowerDevil::BackendLoader::loadBackend: Failed!
+kded(28428) PowerDevil::BackendLoader::loadBackend: Loading HAL backend...
+kded(28428) PowerDevil::BackendLoader::loadBackend: Failed!
+kded(28428): KDE Power Management System init failed! 
+QDBusConnection: session D-Bus connection created before QCoreApplication. Application may misbehave.
+kactivitymanagerd(29930)/KSharedDataCache ensureFileAllocated: This system misses support for posix_fallocate() -- ensure this partition has room for at least 10526824 bytes. 
+kcminit(3022)/kdecore (KSycoca) KSycocaPrivate::openDatabase: Trying to open ksycoca from "/var/tmp/kdecache-sizeofvoid/ksycoca4"
+kdeinit4: Got SETENV 'KDE_MULTIHEAD=false' from launcher.
+kdeinit4: PID 14423 terminated.
+kdeinit4: Got KWRAPPER 'ksmserver' from wrapper.
+kdeinit4: preparing to launch /usr/local/lib/libkdeinit4_ksmserver.so
+kactivitymanagerd(29930) ActivityManagerPrivate::ActivityManagerPrivate: 
+
+-------------------------------------------------------
+kactivitymanagerd(29930) ActivityManagerPrivate::ActivityManagerPrivate: Starting the KDE Activity Manager daemon QDateTime("Sun Jul 8 18:43:55 2012")
+kactivitymanagerd(29930) ActivityManagerPrivate::ActivityManagerPrivate: -------------------------------------------------------
+kactivitymanagerd(29930) ActivityManagerPrivate::sessionServiceRegistered: couldn't connect to ksmserver! session stuff won't work
+kactivitymanagerd(29930)/kdecore (KSycoca) KSycocaPrivate::openDatabase: Trying to open ksycoca from "/var/tmp/kdecache-sizeofvoid/ksycoca4"
+kdeinit4: PID 31376 terminated.
+ksmserver(19488)/KSharedDataCache ensureFileAllocated: This system misses support for posix_fallocate() -- ensure this partition has room for at least 10526824 bytes. 
+kdeinit4: Got SETENV 'SESSION_MANAGER=local/fuckup.openhome.sizeofvoid.org:/tmp/.ICE-unix/19488,inet6/fuckup.openhome.sizeofvoid.org:13175,inet/fuckup.openhome.sizeofvoid.org:9526' from launcher.
+ksmserver(19488) KSMServer::restoreSession: KSMServer::restoreSession  "saved at previous logout"
+QDBusConnection: session D-Bus connection created before QCoreApplication. Application may misbehave.
+kwin(29645)/KSharedDataCache ensureFileAllocated: This system misses support for posix_fallocate() -- ensure this partition has room for at least 10526824 bytes. 
+kwin(29645) KWin::Extensions::init: Extensions: shape: 0x "11"  composite: 0x "4"  render: 0x "b"  fixes: 0x "50"  non_native_pixmaps:  true
+kwin(29645) KWin::CompositingPrefs::detect: glx version is  1 . 2
+OpenGL vendor string:                   Advanced Micro Devices, Inc.
+OpenGL renderer string:                 Mesa DRI R600 (RS780 9610) 20090101  TCL
+OpenGL version string:                  1.4 (2.1 Mesa 7.10.3)
+Driver:                                 R600C
+GPU class:                              R600
+OpenGL version:                         1.4
+Mesa version:                           7.10.3
+X server version:                       1.12.2
+Direct rendering:                       no
+Requires strict binding:                yes
+GLSL shaders:                           no
+Texture NPOT support:                   yes
+kwin(29645) KDecorationPlugins::loadPlugin: kwin : path  "/usr/local/lib/kde4/kwin3_oxygen.so"  for  "kwin3_oxygen"
+kwin(29645) KWin::Extensions::init: Extensions: shape: 0x "11"  composite: 0x "4"  render: 0x "b"  fixes: 0x "50"  non_native_pixmaps:  true
+kwin(29645) KWin::Extensions::init: Extensions: shape: 0x "11"  composite: 0x "4"  render: 0x "b"  fixes: 0x "50"  non_native_pixmaps:  true
+kwin(29645) KWin::Workspace::setupCompositing: Initializing OpenGL compositing
+kwin(29645) KWin::SceneOpenGL::initBufferConfigs: Drawable visual (depth  24 ): 0x "7e"
+kwin(29645) KWin::SceneOpenGL::initBufferConfigs: Drawable visual (depth  32 ): 0x "73"
+kwin(29645) KWin::SceneOpenGL::initBuffer: Buffer visual (depth  24 ): 0x "22"
+kwin(29645) KWin::SceneOpenGL::SceneOpenGL: DB: true , Direct: false
+kwin(29645) KWin::currentRefreshRate: Refresh rate  60 Hz
+kwin(29645)/kdecore (KSycoca) KSycocaPrivate::openDatabase: Trying to open ksycoca from "/var/tmp/kdecache-sizeofvoid/ksycoca4"
+kwin(29645) KWin::EffectsHandlerImpl::loadEffect: Trying to load  "kwin4_effect_slidingpopups"
+kwin(29645) KWin::EffectsHandlerImpl::loadEffect: Trying to load  "kwin4_effect_blur"
+kwin(29645) KWin::EffectsHandlerImpl::loadEffect: EffectsHandler::loadEffect : Effect  "kwin4_effect_blur"  is not supported 
+kwin(29645) KWin::EffectsHandlerImpl::loadEffect: Trying to load  "kwin4_effect_fade"
+kwin(29645) KWin::EffectsHandlerImpl::loadEffect: Trying to load  "kwin4_effect_desktopgrid"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+F8" for "kwin" : "ShowDesktopGrid"
+kwin(29645) KWin::EffectsHandlerImpl::loadEffect: Trying to load  "kwin4_effect_slide"
+kwin(29645) KWin::EffectsHandlerImpl::loadEffect: Trying to load  "kwin4_effect_presentwindows"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+F9" for "kwin" : "Expose"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+F10" for "kwin" : "ExposeAll"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+F7" for "kwin" : "ExposeClass"
+kwin(29645) KWin::EffectsHandlerImpl::loadEffect: Trying to load  "kwin4_effect_dashboard"
+kwin(29645) KWin::EffectsHandlerImpl::loadEffect: Trying to load  "kwin4_effect_login"
+kwin(29645) KWin::EffectsHandlerImpl::loadEffect: Trying to load  "kwin4_effect_startupfeedback"
+kwin(29645) KWin::EffectsHandlerImpl::loadEffect: Trying to load  "kwin4_effect_outline"
+kwin(29645) KWin::EffectsHandlerImpl::loadEffect: Trying to load  "kwin4_effect_taskbarthumbnail"
+kwin(29645) KWin::EffectsHandlerImpl::loadEffect: Trying to load  "kwin4_effect_logout"
+kwin(29645) KWin::EffectsHandlerImpl::loadEffect: Trying to load  "kwin4_effect_screenshot"
+kwin(29645) KWin::EffectsHandlerImpl::loadEffect: EffectsHandler::loadEffect : Effect  "kwin4_effect_screenshot"  is not supported 
+kwin(29645) KWin::EffectsHandlerImpl::loadEffect: Trying to load  "kwin4_effect_translucency"
+kwin(29645) KWin::EffectsHandlerImpl::loadEffect: Trying to load  "kwin4_effect_highlightwindow"
+kwin(29645) KWin::EffectsHandlerImpl::loadEffect: Trying to load  "kwin4_effect_zoom"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+=" for "kwin" : "view_zoom_in"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+-" for "kwin" : "view_zoom_out"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+0" for "kwin" : "view_actual_size"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Left" for "kwin" : "MoveZoomLeft"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Right" for "kwin" : "MoveZoomRight"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Up" for "kwin" : "MoveZoomUp"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Down" for "kwin" : "MoveZoomDown"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+F5" for "kwin" : "MoveMouseToFocus"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+F6" for "kwin" : "MoveMouseToCenter"
+kwin(29645) KWin::EffectsHandlerImpl::loadEffect: Trying to load  "kwin4_effect_dialogparent"
+kwin(29645) KWin::EffectsHandlerImpl::loadEffect: Trying to load  "kwin4_effect_minimizeanimation"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Alt+F3" for "kwin" : "Window Operations Menu"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Alt+F4" for "kwin" : "Window Close"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+Alt+A" for "kwin" : "Activate Window Demanding Attention"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Alt+Up" for "kwin" : "Switch Window Up"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Alt+Down" for "kwin" : "Switch Window Down"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Alt+Right" for "kwin" : "Switch Window Right"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Alt+Left" for "kwin" : "Switch Window Left"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+F1" for "kwin" : "Switch to Desktop 1"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+F2" for "kwin" : "Switch to Desktop 2"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+F3" for "kwin" : "Switch to Desktop 3"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+F4" for "kwin" : "Switch to Desktop 4"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+Alt+Esc" for "kwin" : "Kill Window"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Alt+Shift+F12" for "kwin" : "Suspend Compositing"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Alt+Tab" for "kwin" : "Walk Through Windows"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Alt+Shift+Backtab" for "kwin" : "Walk Through Windows (Reverse)"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Alt+Shift+F11" for "kwin" : "Enable/Disable Tiling"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+F" for "kwin" : "Toggle Floating"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+H" for "kwin" : "Switch Focus Left"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+L" for "kwin" : "Switch Focus Right"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+K" for "kwin" : "Switch Focus Up"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+J" for "kwin" : "Switch Focus Down"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Shift+H" for "kwin" : "Move Window Left"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Shift+L" for "kwin" : "Move Window Right"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Shift+K" for "kwin" : "Move Window Up"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Shift+J" for "kwin" : "Move Window Down"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+PgDown" for "kwin" : "Next Layout"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+PgUp" for "kwin" : "Previous Layout"
+kwin(29645) KWin::Workspace::updateClientArea: screens:  1 desktops:  1
+kwin(29645) KWin::Workspace::updateClientArea: Done.
+kwin(29645) KWin::Workspace::updateClientArea: screens:  1 desktops:  1
+kwin(29645) KWin::Workspace::updateClientArea: Done.
+kdeinit4: Got EXEC_NEW '/usr/local/bin/plasma-desktop' from launcher.
+kdeinit4: preparing to launch /usr/local/lib/libkdeinit4_plasma-desktop.so
+klauncher(14654)/kio (KLauncher) KLauncher::processRequestReturn: "/usr/local/bin/plasma-desktop" (pid 6392) up and running.
+unnamed app(6392)/plasma kdemain: !!{} STARTUP TIME 67445679 START (line: 49 )
+kdeinit4: Got EXT_EXEC '/usr/local/bin/knotify4' from launcher.
+kdeinit4: preparing to launch /usr/local/bin/knotify4
+klauncher(14654)/kio (KLauncher) KLauncher::processRequestReturn: "/usr/local/bin/knotify4" (pid 4889) up and running.
+QDBusConnection: session D-Bus connection created before QCoreApplication. Application may misbehave.
+QDBusConnection: session D-Bus connection created before QCoreApplication. Application may misbehave.
+plasma-desktop(490)/KSharedDataCache ensureFileAllocated: This system misses support for posix_fallocate() -- ensure this partition has room for at least 10526824 bytes. 
+plasma-desktop(490)/plasma PlasmaApp::PlasmaApp: !!{} STARTUP TIME 67446027 plasma app ctor start (line: 123 )
+QDBusObjectPath: invalid path ""
+plasma-desktop(490)/plasma PlasmaApp::PlasmaApp: Setting the pixmap cache size to 81232 kilobytes
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+F12" for "plasma-desktop" : "Show Dashboard"
+plasma-desktop(490)/plasma PlasmaApp::PlasmaApp: !!{} STARTUP TIME 67446087 plasma app ctor end (line: 284 )
+plasma-desktop(490)/libplasma Plasma::Corona::Corona: !!{} STARTUP TIME 67446132 Corona ctor start
+plasma-desktop(490)/plasma DesktopCorona::init: !!{} STARTUP TIME 67446135 DesktopCorona init start (line: 83 )
+plasma-desktop(490)/kdecore (KSycoca) KSycocaPrivate::openDatabase: Trying to open ksycoca from "/var/tmp/kdecache-sizeofvoid/ksycoca4"
+plasma-desktop(490)/plasma DesktopCorona::checkAddPanelAction: populateAddPanelsMenu 3
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Tab" for "plasma-desktop" : "Next Activity"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Shift+Tab" for "plasma-desktop" : "Previous Activity"
+plasma-desktop(490)/plasma DesktopCorona::init: !!{} STARTUP TIME 67446146 DesktopCorona init end (line: 126 )
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Q" for "plasma-desktop" : "manage activities"
+"KConfigIni: In file /home/sizeofvoid/.kde4/share/config/plasma-desktop-appletsrc, line 13: " Invalid entry (missing '=') 
+plasma-desktop(490)/plasma DesktopCorona::evaluateScripts: evaluating startup script: "/usr/local/share/apps/plasma-desktop/init/00-defaultLayout.js"
+plasma-desktop(490)/libplasma Plasma::ContainmentPrivate::preferredPanelPos: moved to QPointF(10206, -206)
+plasma-desktop(490)/libplasma Plasma::ContainmentPrivate::positionPanel: no scene yet
+plasma-desktop(490)/libplasma Plasma::ContainmentPrivate::preferredPanelPos: moved to QPointF(10206, -206)
+plasma-desktop(490)/plasma PlasmaApp::createView: !!{} STARTUP TIME 67446385 Plasma App createView() start (line: 909 )
+plasma-desktop(490)/plasma PlasmaApp::createView: Containment name: "Panel" | type 1 | screen: -1 | desktop: -1 | geometry: QRectF(10206,-206 1920x35) | zValue: 0
+plasma-desktop(490)/plasma PlasmaApp::containmentScreenOwnerChanged: @@@was -1 is 0 Panel(0x20af28500) 0
+plasma-desktop(490)/plasma PlasmaApp::containmentScreenOwnerChanged: @@@isPanel
+plasma-desktop(490)/libplasma Plasma::ContainmentPrivate::preferredPanelPos: moved to QPointF(0, -41)
+QDBusConnection: session D-Bus connection created before QCoreApplication. Application may misbehave.
+WARNING: Application calling GLX 1.3 function "glXCreatePixmap" when GLX 1.3 is not supported!  This is an application bug!
+WARNING: Application calling GLX 1.3 function "glXQueryDrawable" when GLX 1.3 is not supported!  This is an application bug!
+kwin(29645): Shaders are not supported 
+kwin(29645) KWin::ShaderManager::initShaders: Orho Shader is not valid
+QDBusConnection: session D-Bus connection created before QCoreApplication. Application may misbehave.
+plasma-desktop(490)/KSharedDataCache ensureFileAllocated: This system misses support for posix_fallocate() -- ensure this partition has room for at least 84213864 bytes. 
+plasma-desktop(490) PanelShadows::Private::setupPixmaps: top margin hint is: QSize(4, 8)
+plasma-desktop(490) PanelShadows::Private::setupPixmaps: right margin hint is: QSize(8, 4)
+plasma-desktop(490)/plasma PanelView::updateStruts: screen l/r/b/t offsets are: 0 0 0 0 3
+kwin(29645) KWin::Client::readUserTimeMapTimestamp: User timestamp, ASN: 4294967295
+kwin(29645) KWin::Client::readUserTimeMapTimestamp: User timestamp, final: 'ID: 18874474 ;WMCLASS: "plasma-desktop" : "plasma-desktop" ;Caption: "plasma-desktop" ' : 202199
+kwin(29645) KWin::Workspace::allowClientActivation: Activation: No client active, allowing
+kwin(29645) KWin::Workspace::updateClientArea: screens:  1 desktops:  1
+kwin(29645) KWin::Workspace::updateClientArea: Done.
+kwin(29645) KWin::Workspace::updateClientArea: screens:  1 desktops:  1
+kwin(29645) KWin::Workspace::updateClientArea: Done.
+kwin(29645) KWin::Workspace::updateClientArea: screens:  1 desktops:  1
+kwin(29645) KWin::Workspace::updateClientArea: Done.
+kwin(29645) KWin::Workspace::updateClientArea: screens:  1 desktops:  1
+kwin(29645) KWin::Workspace::updateClientArea: Done.
+knotify(31797)/KSharedDataCache ensureFileAllocated: This system misses support for posix_fallocate() -- ensure this partition has room for at least 10526824 bytes. 
+knotify(31797)/kdecore (KSycoca) KSycocaPrivate::openDatabase: Trying to open ksycoca from "/var/tmp/kdecache-sizeofvoid/ksycoca4"
+QStringList Solid::Backends::Hal::HalManager::findDeviceByDeviceInterface(Solid::DeviceInterface::Type)  error:  "org.freedesktop.DBus.Error.ServiceUnknown" 
+
+QStringList Solid::Backends::Hal::HalManager::findDeviceByDeviceInterface(Solid::DeviceInterface::Type)  error:  "org.freedesktop.DBus.Error.ServiceUnknown" 
+
+knotify(31797) KNotify::event: 1  ref= 0
+kdeinit4: PID 4889 terminated.
+KCrash: Attempting to start /usr/local/bin/plasma-desktop from kdeinit
+kdeinit4: Got EXEC_NEW '/usr/local/bin/plasma-desktop' from wrapper.
+kdeinit4: preparing to launch /usr/local/lib/libkdeinit4_plasma-desktop.so
+kwin(29645) KWin::Workspace::updateClientArea: screens:  1 desktops:  1
+kwin(29645) KWin::Workspace::updateClientArea: Done.
+plasma-desktop(6392): Communication problem with  "plasma-desktop" , it probably crashed. 
+Error message was:  "org.freedesktop.DBus.Error.NoReply" : " "Message did not receive a reply (timeout by message bus)" " 
+
+WARNING: Application calling GLX 1.3 function "glXDestroyPixmap" when GLX 1.3 is not supported!  This is an application bug!
+kdeinit4: PID 6392 terminated.
+unnamed app(3684)/plasma kdemain: !!{} STARTUP TIME 67451228 START (line: 49 )
+QDBusConnection: session D-Bus connection created before QCoreApplication. Application may misbehave.
+QDBusConnection: session D-Bus connection created before QCoreApplication. Application may misbehave.
+plasma-desktop(2331)/KSharedDataCache ensureFileAllocated: This system misses support for posix_fallocate() -- ensure this partition has room for at least 10526824 bytes. 
+plasma-desktop(2331)/plasma PlasmaApp::PlasmaApp: !!{} STARTUP TIME 67451428 plasma app ctor start (line: 123 )
+QDBusObjectPath: invalid path ""
+plasma-desktop(2331)/plasma PlasmaApp::PlasmaApp: Setting the pixmap cache size to 81232 kilobytes
+plasma-desktop(2331)/plasma PlasmaApp::PlasmaApp: !!{} STARTUP TIME 67451437 plasma app ctor end (line: 284 )
+plasma-desktop(2331)/libplasma Plasma::Corona::Corona: !!{} STARTUP TIME 67451463 Corona ctor start
+plasma-desktop(2331)/plasma DesktopCorona::init: !!{} STARTUP TIME 67451466 DesktopCorona init start (line: 83 )
+plasma-desktop(2331)/kdecore (KSycoca) KSycocaPrivate::openDatabase: Trying to open ksycoca from "/var/tmp/kdecache-sizeofvoid/ksycoca4"
+plasma-desktop(2331)/plasma DesktopCorona::checkAddPanelAction: populateAddPanelsMenu 3
+plasma-desktop(2331)/plasma DesktopCorona::init: !!{} STARTUP TIME 67451476 DesktopCorona init end (line: 126 )
+"KConfigIni: In file /home/sizeofvoid/.kde4/share/config/plasma-desktop-appletsrc, line 13: " Invalid entry (missing '=') 
+plasma-desktop(2331)/plasma DesktopCorona::evaluateScripts: evaluating startup script: "/usr/local/share/apps/plasma-desktop/init/00-defaultLayout.js"
+plasma-desktop(2331)/libplasma Plasma::ContainmentPrivate::preferredPanelPos: moved to QPointF(10206, -206)
+plasma-desktop(2331)/libplasma Plasma::ContainmentPrivate::positionPanel: no scene yet
+plasma-desktop(2331)/libplasma Plasma::ContainmentPrivate::preferredPanelPos: moved to QPointF(10206, -206)
+plasma-desktop(2331)/plasma PlasmaApp::createView: !!{} STARTUP TIME 67451556 Plasma App createView() start (line: 909 )
+plasma-desktop(2331)/plasma PlasmaApp::createView: Containment name: "Panel" | type 1 | screen: -1 | desktop: -1 | geometry: QRectF(10206,-206 1920x35) | zValue: 0
+plasma-desktop(2331)/plasma PlasmaApp::containmentScreenOwnerChanged: @@@was -1 is 0 Panel(0x2058f1800) 0
+plasma-desktop(2331)/plasma PlasmaApp::containmentScreenOwnerChanged: @@@isPanel
+plasma-desktop(2331)/libplasma Plasma::ContainmentPrivate::preferredPanelPos: moved to QPointF(0, -41)
+plasma-desktop(2331)/KSharedDataCache ensureFileAllocated: This system misses support for posix_fallocate() -- ensure this partition has room for at least 84213864 bytes. 
+plasma-desktop(2331) PanelShadows::Private::setupPixmaps: top margin hint is: QSize(4, 8)
+plasma-desktop(2331) PanelShadows::Private::setupPixmaps: right margin hint is: QSize(8, 4)
+kwin(29645) KWin::Client::readUserTimeMapTimestamp: User timestamp, ASN: 4294967295
+kwin(29645) KWin::Client::readUserTimeMapTimestamp: User timestamp, final: 'ID: 18874474 ;WMCLASS: "plasma-desktop" : "plasma-desktop" ;Caption: "plasma-desktop" ' : 207222
+kwin(29645) KWin::Workspace::allowClientActivation: Activation: No client active, allowing
+plasma-desktop(2331)/plasma PanelView::updateStruts: screen l/r/b/t offsets are: 0 0 0 0 3
+kwin(29645) KWin::Workspace::updateClientArea: screens:  1 desktops:  1
+kwin(29645) KWin::Workspace::updateClientArea: Done.
+kwin(29645) KWin::Workspace::updateClientArea: screens:  1 desktops:  1
+kwin(29645) KWin::Workspace::updateClientArea: Done.
+kwin(29645) KWin::Workspace::updateClientArea: screens:  1 desktops:  1
+kwin(29645) KWin::Workspace::updateClientArea: Done.
+kwin(29645) KWin::Workspace::updateClientArea: screens:  1 desktops:  1
+kwin(29645) KWin::Workspace::updateClientArea: Done.
+kwin(29645) KWin::Workspace::updateClientArea: screens:  1 desktops:  1
+kwin(29645) KWin::Workspace::updateClientArea: Done.
+"KConfigIni: In file /home/sizeofvoid/.kde4/share/config/kickoffrc, line 3: " Invalid entry (missing '=') 
+"KConfigIni: In file /home/sizeofvoid/.kde4/share/config/kickoffrc, line 3: " Invalid entry (missing '=') 
+plasma-desktop(2331)/kio (bookmarks) KBookmarkManager::KBookmarkManager: starting KDirWatch for  "/home/sizeofvoid/.local/share/user-places.xbel"
+plasma-desktop(2331)/kio (KDirListerCache) KDirListerCache::listDir: Listing directory: KUrl("trash:/")
+plasma-desktop(2331)/kio (Scheduler) KIO::SchedulerPrivate::doJob: KIO::SimpleJob(0x2058fef40)
+plasma-desktop(2331)/kio (Scheduler) KIO::SchedulerPrivate::protoQ: creating ProtoQueue instance for "trash"
+plasma-desktop(2331)/kio (Scheduler) KIO::ProtoQueue::ProtoQueue: m_maxConnectionsTotal: 2 m_maxConnectionsPerHost: 2
+QStringList Solid::Backends::Hal::HalManager::findDeviceByDeviceInterface(Solid::DeviceInterface::Type)  error:  "org.freedesktop.DBus.Error.ServiceUnknown" 
+
+QStringList Solid::Backends::Hal::HalManager::findDeviceByDeviceInterface(Solid::DeviceInterface::Type)  error:  "org.freedesktop.DBus.Error.ServiceUnknown" 
+
+plasma-desktop(2331)/plasma TaskItemLayout::updatePreferredSize: Empty layout!!!!!!!!!!!!!!!!!!
+plasma-desktop(2331)/plasma TaskItemLayout::updatePreferredSize: Empty layout!!!!!!!!!!!!!!!!!!
+plasma-desktop(2331)/plasma TaskItemLayout::updatePreferredSize: Empty layout!!!!!!!!!!!!!!!!!!
+plasma-desktop(2331)/plasma StatusNotifierItemEngine::registerWatcher: service appeared "org.kde.StatusNotifierWatcher"
+ksmserver(19488) KSMServer::startupSuspendTimeout: Startup suspend timeout: 2
+ksmserver(19488) KSMServer::autoStart0Done: Autostart 0 done
+kwin(29645) KWin::x11ErrorHandler: kwin: X Error ( "error: BadDamage [DAMAGE+0], request: XDamageDestroy[DAMAGE+2], resource: 0x40002a" ) 
+kcminit(3022)/kcontrol KCMInit::runModule: Initializing  "kcm_access" :  "kcminit_access"
+kdeinit4: Got EXEC_NEW '/usr/local/bin/kaccess' from launcher.
+kdeinit4: preparing to launch /usr/local/lib/libkdeinit4_kaccess.so
+klauncher(14654)/kio (KLauncher) KLauncher::processRequestReturn: "/usr/local/bin/kaccess" (pid 2483) up and running.
+QDBusConnection: session D-Bus connection created before QCoreApplication. Application may misbehave.
+unnamed app(7316) kdemain: Xlib XKB extension major= 1  minor= 0
+QDBusConnection: session D-Bus connection created before QCoreApplication. Application may misbehave.
+kaccess(7316)/KSharedDataCache ensureFileAllocated: This system misses support for posix_fallocate() -- ensure this partition has room for at least 10526824 bytes. 
+kaccess(7316) kdemain: X server XKB extension major= 1  minor= 0
+kdeinit4: PID 2483 terminated.
+kcminit(3022)/kcontrol KCMInit::runModule: Initializing  "kcm_style" :  "kcminit_style"
+xrdb:  "Xcursor.theme" on line 641 overrides entry on line 462
+kdeinit4: Got SETENV 'GTK_RC_FILES=/etc/gtk/gtkrc:/home/sizeofvoid/.gtkrc:/home/sizeofvoid/.kde4/share/config/gtkrc' from launcher.
+kdeinit4: Got SETENV 'GTK2_RC_FILES=/etc/gtk-2.0/gtkrc:/home/sizeofvoid/.gtkrc-2.0:/home/sizeofvoid/.kde4/share/config/gtkrc-2.0' from launcher.
+kcminit(3022)/kcontrol KCMInit::runModule: Initializing  "kcm_bell" :  "kcminit_bell"
+kcminit(3022)/kcontrol KCMInit::runModule: Initializing  "kcm_input" :  "kcminit_mouse"
+kglobalaccel(1955) KGlobalAccelImpl::x11Event: Got XMappingNotify event
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+0" for "kwin" : "view_actual_size"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+J" for "kwin" : "Switch Focus Down"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Ctrl+F10" for "kwin" : "ExposeAll"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+Right" for "kwin" : "MoveZoomRight"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Alt+F4" for "kwin" : "Window Close"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+PgUp" for "kwin" : "Previous Layout"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+L" for "kwin" : "Switch Focus Right"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+Shift+J" for "kwin" : "Move Window Down"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Ctrl+Alt+A" for "kwin" : "Activate Window Demanding Attention"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+F6" for "kwin" : "MoveMouseToCenter"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Alt+Shift+Backtab" for "kwin" : "Walk Through Windows (Reverse)"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Ctrl+F1" for "kwin" : "Switch to Desktop 1"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Ctrl+F2" for "kwin" : "Switch to Desktop 2"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Ctrl+F3" for "kwin" : "Switch to Desktop 3"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Ctrl+F4" for "kwin" : "Switch to Desktop 4"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+=" for "kwin" : "view_zoom_in"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+K" for "kwin" : "Switch Focus Up"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+Up" for "kwin" : "MoveZoomUp"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+F5" for "kwin" : "MoveMouseToFocus"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+Down" for "kwin" : "MoveZoomDown"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Ctrl+F8" for "kwin" : "ShowDesktopGrid"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+Alt+Left" for "kwin" : "Switch Window Left"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Alt+F3" for "kwin" : "Window Operations Menu"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Ctrl+F7" for "kwin" : "ExposeClass"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+H" for "kwin" : "Switch Focus Left"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Alt+Shift+F11" for "kwin" : "Enable/Disable Tiling"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+Shift+H" for "kwin" : "Move Window Left"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Alt+Tab" for "kwin" : "Walk Through Windows"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+Shift+K" for "kwin" : "Move Window Up"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+Alt+Right" for "kwin" : "Switch Window Right"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+Shift+L" for "kwin" : "Move Window Right"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+Left" for "kwin" : "MoveZoomLeft"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+-" for "kwin" : "view_zoom_out"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Ctrl+Alt+Esc" for "kwin" : "Kill Window"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+Alt+Up" for "kwin" : "Switch Window Up"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+PgDown" for "kwin" : "Next Layout"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Ctrl+F9" for "kwin" : "Expose"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Alt+Shift+F12" for "kwin" : "Suspend Compositing"
+ksmserver(19488) KSMServer::kcmPhase1Done: Kcminit phase 1 done
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+F" for "kwin" : "Toggle Floating"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+Alt+Down" for "kwin" : "Switch Window Down"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Ctrl+Alt+K" for "KDE Keyboard Layout Switcher" : "Switch to Next Keyboard Layout"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Ctrl+F12" for "plasma-desktop" : "Show Dashboard"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+Q" for "plasma-desktop" : "manage activities"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+Shift+Tab" for "plasma-desktop" : "Previous Activity"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+Tab" for "plasma-desktop" : "Next Activity"
+kdeinit4: Got EXEC_NEW '/usr/local/bin/nepomukserver' from launcher.
+kdeinit4: preparing to launch /usr/local/lib/libkdeinit4_nepomukserver.so
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+0" for "kwin" : "view_actual_size"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+J" for "kwin" : "Switch Focus Down"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+F10" for "kwin" : "ExposeAll"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Right" for "kwin" : "MoveZoomRight"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Alt+F4" for "kwin" : "Window Close"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+PgUp" for "kwin" : "Previous Layout"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+L" for "kwin" : "Switch Focus Right"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Shift+J" for "kwin" : "Move Window Down"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+Alt+A" for "kwin" : "Activate Window Demanding Attention"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+F6" for "kwin" : "MoveMouseToCenter"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Alt+Shift+Backtab" for "kwin" : "Walk Through Windows (Reverse)"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+F1" for "kwin" : "Switch to Desktop 1"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+F2" for "kwin" : "Switch to Desktop 2"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+F3" for "kwin" : "Switch to Desktop 3"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+F4" for "kwin" : "Switch to Desktop 4"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+=" for "kwin" : "view_zoom_in"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+K" for "kwin" : "Switch Focus Up"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Up" for "kwin" : "MoveZoomUp"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+F5" for "kwin" : "MoveMouseToFocus"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Down" for "kwin" : "MoveZoomDown"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+F8" for "kwin" : "ShowDesktopGrid"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Alt+Left" for "kwin" : "Switch Window Left"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Alt+F3" for "kwin" : "Window Operations Menu"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+F7" for "kwin" : "ExposeClass"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+H" for "kwin" : "Switch Focus Left"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Alt+Shift+F11" for "kwin" : "Enable/Disable Tiling"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Shift+H" for "kwin" : "Move Window Left"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Alt+Tab" for "kwin" : "Walk Through Windows"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Shift+K" for "kwin" : "Move Window Up"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Alt+Right" for "kwin" : "Switch Window Right"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Shift+L" for "kwin" : "Move Window Right"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Left" for "kwin" : "MoveZoomLeft"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+-" for "kwin" : "view_zoom_out"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+Alt+Esc" for "kwin" : "Kill Window"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Alt+Up" for "kwin" : "Switch Window Up"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+PgDown" for "kwin" : "Next Layout"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+F9" for "kwin" : "Expose"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Alt+Shift+F12" for "kwin" : "Suspend Compositing"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+F" for "kwin" : "Toggle Floating"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Alt+Down" for "kwin" : "Switch Window Down"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+Alt+K" for "KDE Keyboard Layout Switcher" : "Switch to Next Keyboard Layout"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+F12" for "plasma-desktop" : "Show Dashboard"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Q" for "plasma-desktop" : "manage activities"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Shift+Tab" for "plasma-desktop" : "Previous Activity"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Tab" for "plasma-desktop" : "Next Activity"
+klauncher(14654)/kio (KLauncher) KLauncher::processRequestReturn: "/usr/local/bin/nepomukserver" (pid 22064) up and running.
+kdeinit4: Got EXEC_NEW '/usr/local/bin/krunner' from launcher.
+kdeinit4: preparing to launch /usr/local/lib/libkdeinit4_krunner.so
+QDBusConnection: session D-Bus connection created before QCoreApplication. Application may misbehave.
+NepomukServer(22064)/nepomuk (server) Nepomuk::Server::enableNepomuk: enableNepomuk true
+NepomukServer(22064)/kdecore (KSycoca) KSycocaPrivate::openDatabase: Trying to open ksycoca from "/var/tmp/kdecache-sizeofvoid/ksycoca4"
+NepomukServer(22064)/nepomuk (server) Nepomuk::ServiceManager::Private::startService: "nepomukfileindexer"
+NepomukServer(22064)/nepomuk (server) Nepomuk::ServiceManager::Private::startService: Queueing "nepomukfileindexer" due to dependency "nepomukstorage"
+NepomukServer(22064)/nepomuk (server) Nepomuk::ServiceManager::Private::startService: "nepomukstorage"
+NepomukServer(22064)/nepomuk (server) Nepomuk::ServiceController::start: Starting "nepomukstorage"
+NepomukServer(22064)/nepomuk (server) Nepomuk::ServiceManager::Private::startService: "nepomukqueryservice"
+NepomukServer(22064)/nepomuk (server) Nepomuk::ServiceManager::Private::startService: Queueing "nepomukqueryservice" due to dependency "nepomukstorage"
+NepomukServer(22064)/nepomuk (server) Nepomuk::ServiceManager::Private::startService: "nepomukstorage"
+NepomukServer(22064)/nepomuk (server) Nepomuk::ServiceManager::Private::startService: "nepomukbackupsync"
+NepomukServer(22064)/nepomuk (server) Nepomuk::ServiceManager::Private::startService: Queueing "nepomukbackupsync" due to dependency "nepomukstorage"
+NepomukServer(22064)/nepomuk (server) Nepomuk::ServiceManager::Private::startService: "nepomukfilewatch"
+NepomukServer(22064)/nepomuk (server) Nepomuk::ServiceManager::Private::startService: Queueing "nepomukfilewatch" due to dependency "nepomukstorage"
+[/usr/local/bin/nepomukservicestub] nepomukstorage(9762)/kdecore (KSycoca) KSycocaPrivate::openDatabase: Trying to open ksycoca from "/var/tmp/kdecache-sizeofvoid/ksycoca4"
+[/usr/local/bin/nepomukservicestub] nepomukstorage(9762) main: Failed to lower scheduling priority.
+[/usr/local/bin/nepomukservicestub] nepomukstorage(9762) main: Failed to lower io priority.
+NepomukServer(22064)/nepomuk (server) Nepomuk::ServiceController::slotServiceRegistered: "org.kde.nepomuk.services.nepomukstorage"
+"/usr/local/bin/kactivitymanagerd(29930)" Soprano: "org.freedesktop.DBus.Error.UnknownObject - No such object path '/org/soprano/Server'"
+kactivitymanagerd(29930)/nepomuk (library) <unnamed>::GlobalModelContainer::init: Connecting to local socket "/tmp/ksocket-sizeofvoid/nepomuk-socket"
+"/usr/local/bin/kactivitymanagerd(29930)" Soprano: "QLocalSocket::connectToServer: Invalid name"
+kactivitymanagerd(29930)/nepomuk (library) <unnamed>::GlobalModelContainer::init: Failed to connect to Nepomuk server via local socket "/tmp/ksocket-sizeofvoid/nepomuk-socket"
+[/usr/local/bin/nepomukservicestub] virtual bool Soprano::Virtuoso::BackendPlugin::isAvailable() const could not find Virtuoso ODBC driver
+[/usr/local/bin/nepomukservicestub] (Soprano::PluginManager) plugin  "virtuosobackend" is not available.
+[/usr/local/bin/nepomukservicestub] nepomukstorage(9762)/KSharedDataCache ensureFileAllocated: This system misses support for posix_fallocate() -- ensure this partition has room for at least 10526824 bytes.
+[/usr/local/bin/nepomukservicestub] nepomukstorage(9762)/nepomuk (storage service) Nepomuk::Storage::slotNepomukCoreInitialized: Failed to initialize nepomuk core
+NepomukServer(22064)/nepomuk (server) Nepomuk::ServiceController::slotIsInitializedDBusCallFinished: Service "nepomukstorage" not initialized yet. Listening for signal.
+"/usr/local/bin/kactivitymanagerd(29930)" Soprano: "org.freedesktop.DBus.Error.UnknownObject - No such object path '/org/soprano/Server'"
+NepomukServer(22064)/nepomuk (server) Nepomuk::ServiceController::slotServiceInitialized: Failed to initialize service "nepomukstorage"
+NepomukServer(22064)/nepomuk (server) Nepomuk::ServiceController::stop: Stopping "nepomukstorage"
+kactivitymanagerd(29930)/nepomuk (library) <unnamed>::GlobalModelContainer::init: Connecting to local socket "/tmp/ksocket-sizeofvoid/nepomuk-socket"
+"/usr/local/bin/kactivitymanagerd(29930)" Soprano: "QLocalSocket::connectToServer: Invalid name"
+kactivitymanagerd(29930)/nepomuk (library) <unnamed>::GlobalModelContainer::init: Failed to connect to Nepomuk server via local socket "/tmp/ksocket-sizeofvoid/nepomuk-socket"
+[/usr/local/bin/nepomukservicestub] nepomukstorage(9762)/nepomuk (storage service) Nepomuk::Core::~Core: Shutting down Nepomuk storage core.
+[/usr/local/bin/nepomukservicestub] nepomukstorage(9762)/nepomuk (storage service) Nepomuk::Repository::~Repository: "main"
+nepomukstorage(9762)/nepomuk (storage service) Nepomuk::Repository::close: "main"
+knotify(31797) NotifyByPopup::notify: 2   active notifications: () ()
+knotify(31797)/KSharedDataCache ensureFileAllocated: This system misses support for posix_fallocate() -- ensure this partition has room for at least 10526824 bytes. 
+"/usr/local/bin/kactivitymanagerd(29930)" Soprano: "org.freedesktop.DBus.Error.NoReply - Message did not receive a reply (timeout by message bus)"
+kactivitymanagerd(29930)/nepomuk (library) <unnamed>::GlobalModelContainer::init: Connecting to local socket "/tmp/ksocket-sizeofvoid/nepomuk-socket"
+"/usr/local/bin/kactivitymanagerd(29930)" Soprano: "QLocalSocket::connectToServer: Invalid name"
+kactivitymanagerd(29930)/nepomuk (library) <unnamed>::GlobalModelContainer::init: Failed to connect to Nepomuk server via local socket "/tmp/ksocket-sizeofvoid/nepomuk-socket"
+kactivitymanagerd(29930)/nepomuk (library) Nepomuk::ResourceManagerPrivate::_k_dbusServiceUnregistered: Nepomuk Storage service went down.
+NepomukServer(22064)/nepomuk (server) Nepomuk::ServiceController::slotProcessFinished: Service "nepomukstorage" went down
+NepomukServer(22064)/nepomuk (server) Nepomuk::ServiceManager::Private::_k_serviceStopped: Service stopped: "nepomukstorage"
+NepomukServer(22064)/nepomuk (server) Nepomuk::Server::slotServiceStopped: "nepomukstorage"
+NepomukServer(22064)/nepomuk (server) Nepomuk::Server::slotServiceStopped: Services still running: ()
+Application '/usr/local/bin/nepomukservicestub nepomukstorage' exited normally...
+knotify(31797) KNotify::event: 2  ref= 1
+klauncher(14654)/kio (KLauncher) KLauncher::processRequestReturn: "/usr/local/bin/krunner" (pid 18405) up and running.
+kdeinit4: Got EXEC_NEW '/usr/local/bin/kwrited' from launcher.
+kdeinit4: preparing to launch /usr/local/bin/kwrited
+klauncher(14654)/kio (KLauncher) KLauncher::processRequestReturn: "/usr/local/bin/kwrited" (pid 30755) up and running.
+ksmserver(19488) KSMServer::autoStart1Done: Autostart 1 done
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+Alt+Del" for "ksmserver" : "Log Out"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+Alt+Shift+Del" for "ksmserver" : "Log Out Without Confirmation"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+Alt+Shift+PgDown" for "ksmserver" : "Halt Without Confirmation"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+Alt+Shift+PgUp" for "ksmserver" : "Reboot Without Confirmation"
+kdeinit4: Got EXEC_NEW '/usr/local/bin/kaddressbookmigrator' from launcher.
+kdeinit4: preparing to launch /usr/local/bin/kaddressbookmigrator
+QDBusConnection: session D-Bus connection created before QCoreApplication. Application may misbehave.
+klauncher(14654)/kio (KLauncher) KLauncher::processRequestReturn: "/usr/local/bin/kaddressbookmigrator" (pid 6226) up and running.
+kdeinit4: Got EXEC_NEW '/usr/local/bin/korgac' from launcher.
+kdeinit4: preparing to launch /usr/local/bin/korgac
+QDBusConnection: session D-Bus connection created before QCoreApplication. Application may misbehave.
+klauncher(14654)/kio (KLauncher) KLauncher::processRequestReturn: "/usr/local/bin/korgac" (pid 11589) up and running.
+kwrited(30755) KWrited::KWrited: listening on device /dev/ttyp0
+kglobalaccel(1955) KGlobalAccelDPrivate::_k_newGlobalShortcutNotification: Showing Notification for component "ksmserver"
+knotify(31797) KNotify::event: 3  ref= 0
+kaddressbookmigrator(6226) readContacts: "Unable to open file /home/sizeofvoid/.kde4/share/apps/kabc/std.vcf for reading"
+kdeinit4: PID 6226 terminated.
+QDBusConnection: session D-Bus connection created before QCoreApplication. Application may misbehave.
+kdeinit4: Got EXEC_NEW '/usr/local/bin/printer-applet' from launcher.
+kdeinit4: preparing to launch /usr/local/bin/printer-applet
+klauncher(14654)/kio (KLauncher) KLauncher::processRequestReturn: "/usr/local/bin/printer-applet" (pid 27998) up and running.
+kdeinit4: Got EXEC_NEW '/usr/local/bin/ibus-daemon' from launcher.
+kdeinit4: preparing to launch /usr/local/bin/ibus-daemon
+QDBusConnection: session D-Bus connection created before QCoreApplication. Application may misbehave.
+klauncher(14654)/kio (KLauncher) KLauncher::processRequestReturn: "/usr/local/bin/ibus-daemon" (pid 7233) up and running.
+kdeinit4: Got EXEC_NEW '/usr/local/bin/nepomukcontroller' from launcher.
+kdeinit4: preparing to launch /usr/local/bin/nepomukcontroller
+klauncher(14654)/kio (KLauncher) KLauncher::processRequestReturn: "/usr/local/bin/nepomukcontroller" (pid 16659) up and running.
+QDBusConnection: session D-Bus connection created before QCoreApplication. Application may misbehave.
+kdeinit4: Got EXEC_NEW '/usr/local/bin/klipper' from launcher.
+kdeinit4: preparing to launch /usr/local/lib/libkdeinit4_klipper.so
+klauncher(14654)/kio (KLauncher) KLauncher::processRequestReturn: "/usr/local/bin/klipper" (pid 13479) up and running.
+QDBusConnection: session D-Bus connection created before QCoreApplication. Application may misbehave.
+QDBusConnection: session D-Bus connection created before QCoreApplication. Application may misbehave.
+QDBusConnection: session D-Bus connection created before QCoreApplication. Application may misbehave.
+knotify(31797) KNotify::slotPluginFinished: 2  ref= 1
+knotify(31797) KNotify::closeNotification: 2  ref= 0
+kglobalaccel(1955) KGlobalAccelImpl::x11Event: Got XMappingNotify event
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+0" for "kwin" : "view_actual_size"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+J" for "kwin" : "Switch Focus Down"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Ctrl+F10" for "kwin" : "ExposeAll"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+Right" for "kwin" : "MoveZoomRight"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Alt+F4" for "kwin" : "Window Close"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+PgUp" for "kwin" : "Previous Layout"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+L" for "kwin" : "Switch Focus Right"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+Shift+J" for "kwin" : "Move Window Down"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Ctrl+Alt+A" for "kwin" : "Activate Window Demanding Attention"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+F6" for "kwin" : "MoveMouseToCenter"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Alt+Shift+Backtab" for "kwin" : "Walk Through Windows (Reverse)"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Ctrl+F1" for "kwin" : "Switch to Desktop 1"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Ctrl+F2" for "kwin" : "Switch to Desktop 2"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Ctrl+F3" for "kwin" : "Switch to Desktop 3"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Ctrl+F4" for "kwin" : "Switch to Desktop 4"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+=" for "kwin" : "view_zoom_in"
+kglobalaccel(1955) KGlobalAccelImpl::grabKey: adding shift to the grab
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+K" for "kwin" : "Switch Focus Up"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+Up" for "kwin" : "MoveZoomUp"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+F5" for "kwin" : "MoveMouseToFocus"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+Down" for "kwin" : "MoveZoomDown"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Ctrl+F8" for "kwin" : "ShowDesktopGrid"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+Alt+Left" for "kwin" : "Switch Window Left"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Alt+F3" for "kwin" : "Window Operations Menu"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Ctrl+F7" for "kwin" : "ExposeClass"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+H" for "kwin" : "Switch Focus Left"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Alt+Shift+F11" for "kwin" : "Enable/Disable Tiling"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+Shift+H" for "kwin" : "Move Window Left"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Alt+Tab" for "kwin" : "Walk Through Windows"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+Shift+K" for "kwin" : "Move Window Up"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+Alt+Right" for "kwin" : "Switch Window Right"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+Shift+L" for "kwin" : "Move Window Right"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+Left" for "kwin" : "MoveZoomLeft"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+-" for "kwin" : "view_zoom_out"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Ctrl+Alt+Esc" for "kwin" : "Kill Window"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+Alt+Up" for "kwin" : "Switch Window Up"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+PgDown" for "kwin" : "Next Layout"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Ctrl+F9" for "kwin" : "Expose"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Alt+Shift+F12" for "kwin" : "Suspend Compositing"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+F" for "kwin" : "Toggle Floating"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+Alt+Down" for "kwin" : "Switch Window Down"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Ctrl+Alt+K" for "KDE Keyboard Layout Switcher" : "Switch to Next Keyboard Layout"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Ctrl+Alt+Shift+Del" for "ksmserver" : "Log Out Without Confirmation"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Ctrl+Alt+Shift+PgDown" for "ksmserver" : "Halt Without Confirmation"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Ctrl+Alt+Shift+PgUp" for "ksmserver" : "Reboot Without Confirmation"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Ctrl+Alt+Del" for "ksmserver" : "Log Out"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Ctrl+F12" for "plasma-desktop" : "Show Dashboard"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+Q" for "plasma-desktop" : "manage activities"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+Shift+Tab" for "plasma-desktop" : "Previous Activity"
+kglobalaccel(1955) GlobalShortcutsRegistry::unregisterKey: Unregistering key "Meta+Tab" for "plasma-desktop" : "Next Activity"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+0" for "kwin" : "view_actual_size"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+J" for "kwin" : "Switch Focus Down"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+F10" for "kwin" : "ExposeAll"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Right" for "kwin" : "MoveZoomRight"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Alt+F4" for "kwin" : "Window Close"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+PgUp" for "kwin" : "Previous Layout"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+L" for "kwin" : "Switch Focus Right"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Shift+J" for "kwin" : "Move Window Down"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+Alt+A" for "kwin" : "Activate Window Demanding Attention"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+F6" for "kwin" : "MoveMouseToCenter"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Alt+Shift+Backtab" for "kwin" : "Walk Through Windows (Reverse)"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+F1" for "kwin" : "Switch to Desktop 1"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+F2" for "kwin" : "Switch to Desktop 2"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+F3" for "kwin" : "Switch to Desktop 3"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+F4" for "kwin" : "Switch to Desktop 4"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+=" for "kwin" : "view_zoom_in"
+kglobalaccel(1955) KGlobalAccelImpl::grabKey: adding shift to the grab
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+K" for "kwin" : "Switch Focus Up"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Up" for "kwin" : "MoveZoomUp"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+F5" for "kwin" : "MoveMouseToFocus"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Down" for "kwin" : "MoveZoomDown"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+F8" for "kwin" : "ShowDesktopGrid"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Alt+Left" for "kwin" : "Switch Window Left"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Alt+F3" for "kwin" : "Window Operations Menu"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+F7" for "kwin" : "ExposeClass"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+H" for "kwin" : "Switch Focus Left"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Alt+Shift+F11" for "kwin" : "Enable/Disable Tiling"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Shift+H" for "kwin" : "Move Window Left"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Alt+Tab" for "kwin" : "Walk Through Windows"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Shift+K" for "kwin" : "Move Window Up"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Alt+Right" for "kwin" : "Switch Window Right"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Shift+L" for "kwin" : "Move Window Right"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Left" for "kwin" : "MoveZoomLeft"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+-" for "kwin" : "view_zoom_out"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+Alt+Esc" for "kwin" : "Kill Window"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Alt+Up" for "kwin" : "Switch Window Up"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+PgDown" for "kwin" : "Next Layout"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+F9" for "kwin" : "Expose"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Alt+Shift+F12" for "kwin" : "Suspend Compositing"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+F" for "kwin" : "Toggle Floating"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Alt+Down" for "kwin" : "Switch Window Down"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+Alt+K" for "KDE Keyboard Layout Switcher" : "Switch to Next Keyboard Layout"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+Alt+Shift+Del" for "ksmserver" : "Log Out Without Confirmation"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+Alt+Shift+PgDown" for "ksmserver" : "Halt Without Confirmation"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+Alt+Shift+PgUp" for "ksmserver" : "Reboot Without Confirmation"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+Alt+Del" for "ksmserver" : "Log Out"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Ctrl+F12" for "plasma-desktop" : "Show Dashboard"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Q" for "plasma-desktop" : "manage activities"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Shift+Tab" for "plasma-desktop" : "Previous Activity"
+kglobalaccel(1955) GlobalShortcutsRegistry::registerKey: Registering key "Meta+Tab" for "plasma-desktop" : "Next Activity"

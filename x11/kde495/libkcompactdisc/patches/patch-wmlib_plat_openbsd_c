@@ -1,0 +1,53 @@
+$OpenBSD$
+--- wmlib/plat_openbsd.c.orig	Mon Oct 15 23:21:55 2012
++++ wmlib/plat_openbsd.c	Mon Oct 15 23:24:53 2012
+@@ -28,33 +28,32 @@
+ #if defined(__OpenBSD__) || defined(__OpenBSD)
+ 
+ 
+-#include <errno.h>
+-#include <stdio.h>
+-#include <sys/types.h>
+ #include <sys/param.h>
+ #include <sys/mount.h>
+-#include <fcntl.h>
+-#include <sys/param.h>
+ #include <sys/stat.h>
++#include <sys/ioctl.h>
++#include <sys/cdio.h>
++#include <sys/scsiio.h>
++#include <sys/time.h>
+ 
+-#include "include/wm_config.h"
+-#include "include/wm_cdrom.h"
+-#include "include/wm_helpers.h"
++#include <scsi/cd.h>
++#include <scsi/scsi_all.h>
++/* #include <scsi/scsi_cd.h> */
+ 
++#include <errno.h>
++#include <fcntl.h>
++#include <stdio.h>
++#include <string.h>
++#include <unistd.h>
++
+ /* this is for glibc 2.x which defines the ust structure in ustat.h not stat.h */
+ #ifdef __GLIBC__
+ #include <sys/ustat.h>
+ #endif
+ 
+-#include <sys/time.h>
+-#include <string.h>
+-#include <sys/ioctl.h>
+-#include <sys/cdio.h>
+-#include <sys/scsiio.h>
+-#include <scsi/scsi_all.h>
+-#include <scsi/cd.h>
+-#include <scsi/scsi_cd.h>
+-
++#include "include/wm_config.h"
++#include "include/wm_cdrom.h"
++#include "include/wm_helpers.h"
+ #include "include/wm_struct.h"
+ #include "include/wm_cdtext.h"
+ 

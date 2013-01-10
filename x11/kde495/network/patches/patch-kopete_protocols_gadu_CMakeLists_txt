@@ -1,0 +1,12 @@
+$OpenBSD$
+--- kopete/protocols/gadu/CMakeLists.txt.orig	Fri Dec 14 19:04:07 2012
++++ kopete/protocols/gadu/CMakeLists.txt	Fri Dec 14 19:05:07 2012
+@@ -4,7 +4,7 @@ KDE4_NO_ENABLE_FINAL(kopete)
+ 
+ add_subdirectory( icons ) 
+ 
+-include_directories( ${KOPETE_INCLUDES} ${LIBGADU_INCLUDE_DIRS} }
++include_directories( ${KOPETE_INCLUDES} ${LIBGADU_INCLUDE_DIR} }
+ )
+ 
+ 
