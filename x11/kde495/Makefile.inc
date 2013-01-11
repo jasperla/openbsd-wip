@@ -23,6 +23,4 @@ PERMIT_PACKAGE_FTP =		Yes
 # module port, and breaks build.
 CONFIGURE_STYLE =	cmake
 
-MODKDE4_LIB_LINKS =	Yes
-
 MIN_AKONADI_VERSION =	1.8.1
