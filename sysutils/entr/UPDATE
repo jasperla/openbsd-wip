@@ -1,3 +1,4 @@
-- Update to 1.8 no longer needs pthreads.
+- No longer use pthreads.
 - Support interactive applications by opening a TTY
-- Stat deleted files before running a command 
+- Stat files that dissapear before running a command
+- Always exit after failing to reopen a file under watch
