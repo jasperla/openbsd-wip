@@ -1,5 +1,0 @@
-@comment $OpenBSD$
-lib/kde4/plugins/accessiblebridge/
-lib/kde4/plugins/accessiblebridge/kaccessiblebridge.so
-@bin libexec/kaccessibleapp
-share/dbus-1/services/org.kde.kaccessible.service
