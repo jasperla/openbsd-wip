@@ -13,9 +13,9 @@ $OpenBSD$
 +		localstatedir=/var
 +	fi
 +	vaddir=$datadir/virtuoso/vad
-+	docdir=$datadir/virtuoso/doc
-+	htmldocdir=$datadir/virtuoso/doc/html
-+	pdfdocdir=$datadir/virtuoso/doc/pdf
++	docdir=$datadir/doc/virtuoso
++	htmldocdir=$datadir/doc/html/virtuoso
++	pdfdocdir=$datadir/doc/virtuoso/pdf
 +	demodir=$localstatedir/virtuoso/demo
 +	dbdir=$localstatedir/virtuoso/db
 +	httprootdir=$localstatedir/virtuoso/vsp
