@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP = Yes
 
 WANTLIB += c
 
-MASTER_SITES = http://static.eradman.com/code/ \
+MASTER_SITES = http://entrproject.org/code/ \
 	https://bitbucket.org/eradman/entr/get/
 
 MAKE_FLAGS = CC="${CC}" LDFLAGS="${LDFLAGS}"
