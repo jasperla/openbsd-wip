@@ -15,17 +15,17 @@
 #   |   |
 #   |    -> konsole
 #   |
-#   |-> kactivities -->-+
-#   |-> nepomuk-core ->-+
-#   |-> runtime <--+----+
-#   |-> pimlibs ->-+
-#   |   |
-#   |   |-> libkgapi
-#   |   |-> pim-runtime
-#   |   |-> pim
-#   |   |-> py-kde
-#   |       |-> kdegames
-#   |       |-> workspace
+#   |-> kactivities -->-+---+
+#   |-> nepomuk-core ->-+   |
+#   |-> runtime <--+----+   |
+#   |-> pimlibs ->-+        |
+#   |   |                   |
+#   |   |-> libkgapi        |
+#   |   |-> pim-runtime     |
+#   |   |-> pim             |
+#   |   |-> py-kde          |
+#   |       |-> kdegames    |
+#   |       |-> workspace <-+
 #   |           |-> admin
 #   |           |-> artwork
 #   |           |-> network
@@ -43,7 +43,9 @@
 #   |   |-> kimono <---------------------+
 #   |
 #   |-> former accessibility
-#   |-> former kdeedu
+#   |-> libkdeedu
+#   |   |->former kdeedu
+#   |
 #   |-> former kdeutils
 #   |-> former kdegraphics
 #   +-> former kdemultimedia
@@ -108,6 +110,7 @@ SUBDIR += superkaramba
 SUBDIR += sweeper
 
 # former kdeedu
+SUBDIR += libkdeedu
 SUBDIR += blinken
 SUBDIR += cantor
 SUBDIR += analitza
@@ -125,7 +128,6 @@ SUBDIR += kstars
 SUBDIR += ktouch
 SUBDIR += kturtle
 SUBDIR += kwordquiz
-SUBDIR += libkdeedu
 SUBDIR += marble
 SUBDIR += pairs
 SUBDIR += parley
@@ -133,6 +135,10 @@ SUBDIR += rocs
 SUBDIR += step
 
 # former kdegraphics
+SUBDIR += libkdcraw
+SUBDIR += libkexiv2
+SUBDIR += libkipi
+SUBDIR += libksane
 SUBDIR += graphics-strigi-analyzer
 SUBDIR += graphics-thumbnailers
 SUBDIR += gwenview
@@ -143,22 +149,18 @@ SUBDIR += kolourpaint
 SUBDIR += kruler
 SUBDIR += ksaneplugin
 SUBDIR += ksnapshot
-SUBDIR += libkdcraw
-SUBDIR += libkexiv2
-SUBDIR += libkipi
-SUBDIR += libksane
 SUBDIR += okular
 SUBDIR += svgpart
 
 # former kdemultimedia
+SUBDIR += libkcddb
+SUBDIR += libkcompactdisc
 SUBDIR += audiocd-kio
 SUBDIR += dragon
 SUBDIR += ffmpegthumbs
 SUBDIR += juk
 SUBDIR += kmix
 SUBDIR += kscd
-SUBDIR += libkcddb
-SUBDIR += libkcompactdisc
 SUBDIR += mplayerthumbs
 
 # other apps
