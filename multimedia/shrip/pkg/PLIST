@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+@bin bin/shrip
+@man man/man1/shrip.1
+share/examples/shrip/
+share/examples/shrip/shrip.conf.sample
+@sample ${SYSCONFDIR}/shrip.conf
