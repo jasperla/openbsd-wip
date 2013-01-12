@@ -1,0 +1,32 @@
+$OpenBSD$
+--- fpcsrc/compiler/ogelf.pas.orig	Sun Apr 22 21:47:06 2012
++++ fpcsrc/compiler/ogelf.pas	Thu Dec 27 22:43:08 2012
+@@ -220,7 +220,8 @@ implementation
+           file_class        : byte;
+           data_encoding     : byte;
+           file_version      : byte;
+-          padding           : array[$07..$0f] of byte;
++          osabi             : byte;
++          padding           : array[$08..$0f] of byte;
+           e_type            : word;
+           e_machine         : word;
+           e_version         : longint;
+@@ -266,7 +267,8 @@ implementation
+           file_class        : byte;
+           data_encoding     : byte;
+           file_version      : byte;
+-          padding           : array[$07..$0f] of byte;
++          osabi             : byte;
++          padding           : array[$08..$0f] of byte;
+           e_type            : word;
+           e_machine         : word;
+           e_version         : longint;
+@@ -1204,6 +1206,8 @@ implementation
+            header.data_encoding:=1;
+ 
+            header.file_version:=1;
++           if target_info.system in systems_openbsd then
++             header.osabi:=12;
+            header.e_type:=1;
+ {$ifdef sparc}
+            header.e_machine:=2;
