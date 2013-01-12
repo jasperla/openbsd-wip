@@ -4,8 +4,9 @@ ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		Free Pascal compiler
 
-V =			2.7.1
-DISTNAME =		fpc-${V}.20120503
+V =			2.6.2rc1
+DISTNAME =		fpcbuild-${V}
+PKGNAME =		fpc-${V}
 
 CATEGORIES =		lang
 
@@ -19,36 +20,39 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-# XXX
-#MASTER_SITES =		???
+MASTER_SITES =		ftp://ftp.freepascal.org/pub/fpc/beta/2.6.2-rc1/source/
+MASTER_SITES0 =		ftp://ftp.freepascal.org/pub/fpc/beta/2.6.2-rc1/x86_64-openbsd/
+MASTER_SITES1 =		ftp://ftp.freepascal.org/pub/fpc/beta/2.6.2-rc1/i386-openbsd/
 DIST_SUBDIR =		fpc
-DISTFILES =		${DISTNAME}.zip
-EXTRACT_ONLY =		${DISTNAME}.zip
-SUPDISTFILES =		ppcx64 ppc386
+BOOTSTRAP64 =		fpc-${V}.x86_64-openbsd${EXTRACT_SUFX}:0
+BOOTSTRAP32 =		fpc-${V}.i386-openbsd${EXTRACT_SUFX}:1
+SUPDISTFILES =		${BOOTSTRAP32} ${BOOTSTRAP64}	
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
+	
 
 .if ${MACHINE_ARCH} == "amd64"
-COMPNAME +=		ppcx64
+COMPNAME =		ppcx64
 CONFIG =		x86_64-openbsd
 PKG_ARGS +=		-Damd64=1
 PKG_ARGS +=		-Di386=0
+DISTFILES +=		${BOOTSTRAP64}
 .else
-COMPNAME +=		ppc386
+COMPNAME =		ppc386
 CONFIG =		i386-openbsd
 PKG_ARGS +=		-Di386=1
 PKG_ARGS +=		-Damd64=0
+DISTFILES +=		${BOOTSTRAP32}
 .endif
-
-DISTFILES +=		${COMPNAME}
 
 SUBST_VARS +=		V CONFIG
 
 REGRESS_DEPENDS =	${BUILD_PKGPATH}
 
-MAKE_FLAGS =		PP=${COMPNAME} NOGDB=1
+MAKE_FLAGS =		NOGDB=1
 MAKE_ENV =		MKDIRPROG=/bin/mkdir ECHO=/bin/echo \
 			GINSTALL=/usr/bin/install DATE=/bin/date \
-			TARPROG=/bin/tar COMPILER_OPTIONS=-k-nopie \
-			FPCMAKEOPT=-k-nopie
+			TARPROG=/bin/tar COMPILER_OPTIONS='-k-nopie -Xe' \
+			FPCMAKEOPT='-k-nopie -Xe'
 FAKE_FLAGS =		INSTALLEXE="${INSTALL_PROGRAM}" \
 			MKDIR="${INSTALL_DATA_DIR}" \
 			INSTALL="${INSTALL_DATA}"
@@ -57,11 +61,6 @@ REGRESS_FLAGS =		TEST_FPC=${WRKSRC}/fpcsrc/compiler/${COMPNAME} \
 			FPCMAKE=${WRKSRC}/fpcsrc/utils/fpcm/fpcmake
 
 USE_GMAKE =		Yes
-
-WRKDIST =		${WRKDIR}/fpcbuild
-
-pre-build:
-	cp ${FULLDISTDIR}/${COMPNAME} ${WRKDIR}/bin
 
 post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/fpc/lexyacc

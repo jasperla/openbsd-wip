@@ -1,0 +1,12 @@
+$OpenBSD$
+--- fpcsrc/rtl/bsd/x86_64/syscall.inc.orig	Mon Dec 24 13:42:38 2012
++++ fpcsrc/rtl/bsd/x86_64/syscall.inc	Mon Dec 24 14:27:43 2012
+@@ -24,6 +24,8 @@
+ 
+ {$ASMMODE GAS}
+ 
++Var fpc_threadvar_relocate_proc:TRelocateThreadVarHandler; public name 'FPC_THREADVAR_RELOCATE';
++
+ function fpsysCall(sysnr:TSysParam):TSysResult; assembler;[public,alias:'FPC_DOSYS0'];
+ 
+ asm
