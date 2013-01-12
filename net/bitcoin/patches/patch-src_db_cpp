@@ -1,17 +1,17 @@
 $OpenBSD$
---- src/db.cpp.orig	Tue Oct  9 13:22:09 2012
-+++ src/db.cpp	Sat Dec  1 12:15:39 2012
-@@ -84,7 +84,9 @@ bool CDBEnv::Open(boost::filesystem::path pathEnv_)
+--- src/db.cpp.orig	Mon Dec 10 15:47:37 2012
++++ src/db.cpp	Sat Jan 12 21:07:56 2013
+@@ -87,7 +87,9 @@ bool CDBEnv::Open(boost::filesystem::path pathEnv_)
      dbenv.set_errfile(fopen(pathErrorFile.string().c_str(), "a")); /// debug
      dbenv.set_flags(DB_AUTO_COMMIT, 1);
      dbenv.set_flags(DB_TXN_WRITE_NOSYNC, 1);
 +#if DB_VERSION_MINOR > 7
      dbenv.log_set_config(DB_LOG_AUTO_REMOVE, 1);
 +#endif
-     int ret = dbenv.open(pathDataDir.string().c_str(),
+     int ret = dbenv.open(strPath.c_str(),
                       DB_CREATE     |
                       DB_INIT_LOCK  |
-@@ -119,7 +121,9 @@ void CDBEnv::MakeMock()
+@@ -122,7 +124,9 @@ void CDBEnv::MakeMock()
      dbenv.set_lk_max_locks(10000);
      dbenv.set_lk_max_objects(10000);
      dbenv.set_flags(DB_AUTO_COMMIT, 1);
