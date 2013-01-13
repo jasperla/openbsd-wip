@@ -1,13 +1,13 @@
 $OpenBSD$
---- neo/framework/Licensee.h.orig	Sat Jul  7 00:36:35 2012
-+++ neo/framework/Licensee.h	Sat Jul  7 00:37:52 2012
-@@ -97,7 +97,9 @@ If you have questions concerning this license or the a
- #ifdef ID_DEMO_BUILD
- 	#define LINUX_DEFAULT_PATH			"/usr/local/games/dhewm3-demo"
- #else
-+# ifndef LINUX_DEFAULT_PATH
- 	#define LINUX_DEFAULT_PATH			"/usr/local/games/dhewm3"
-+# endif
- #endif
+--- neo/framework/Licensee.h.orig	Tue Nov 13 23:58:50 2012
++++ neo/framework/Licensee.h	Sun Jan 13 17:15:53 2013
+@@ -90,7 +90,9 @@ If you have questions concerning this license or the a
+ #define WIN32_CONSOLE_CLASS				"dhewm 3 WinConsole"
+ 
+ // Linux info
++#ifndef LINUX_DEFAULT_PATH
+ #define LINUX_DEFAULT_PATH				"/usr/local/games/doom3"
++#endif
  
  // CD Key file info
+ // goes into BASE_GAMEDIR whatever the fs_game is set to

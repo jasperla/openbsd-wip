@@ -1,3 +1,5 @@
-To play Doom3 on OpenBSD, you need the original game, patched to version 1.3.1.
-Copy the game data (pak000-8.pk4) to ~/.doom3/base and place your CD key in a
-file called ~/.doom3/base/doomkey.  Do NOT copy any of the gameXXX.pak4 files.
+To play Doom3 on OpenBSD, you need the original game, patched to
+version 1.3.1.  Copy the game data (pak000-8.pk4) to ~/.config/dhewm3/base
+and place your CD key in a file called ~/.config/dhewm3/base/doomkey.
+Then, copy base.so and d3xp.so from ${TRUEPREFIX}/share/dhewm3/base
+to ~/.config/dhewm3/base.
