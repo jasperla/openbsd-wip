@@ -7,7 +7,7 @@ REV = f508b5eb0260
 
 CATEGORIES = sysutils
 
-HOMEPAGE = https://bitbucket.org/eradman/entr/
+HOMEPAGE = http://entrproject.org/
 
 MAINTAINER = Eric Radman <ericshane@eradman.com>
 
