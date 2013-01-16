@@ -1,6 +1,15 @@
---- /usr/ports/pobj/amd64/gpsd-3.6/gpsd-3.6/SConstruct.orig	Wed May 23 10:13:02 2012
-+++ /usr/ports/pobj/amd64/gpsd-3.6/gpsd-3.6/SConstruct	Sun May 27 21:59:56 2012
-@@ -454,7 +454,7 @@
+--- SConstruct.orig	Tue Jul  3 02:48:16 2012
++++ SConstruct	Wed Jan 16 15:46:03 2013
+@@ -360,7 +360,7 @@ def CheckExecutable(context, testprogram, check_for):
+     return ret
+ 
+ # Stylesheet URLs for making HTML and man pages from DocBook XML.
+-docbook_url_stem = 'http://docbook.sourceforge.net/release/xsl/current/'
++docbook_url_stem = '/usr/local/share/xsl/docbook/'
+ docbook_man_uri = docbook_url_stem + 'manpages/docbook.xsl'
+ docbook_html_uri = docbook_url_stem + 'html/docbook.xsl'
+ 
+@@ -459,7 +459,7 @@ if env['ncurses']:
      elif sys.platform.startswith('freebsd'):
          ncurseslibs= [ '-lncurses' ]
      elif sys.platform.startswith('openbsd'):
@@ -9,19 +18,16 @@
  
  if env['usb']:
      # In FreeBSD except version 7, USB libraries are in the base system
-@@ -727,8 +728,10 @@
-     if platform == 'posix':
-         ilib_suffix = shlib_suffix + '.' + libgps_version
-         (major, age, revision) = libgps_version.split(".")
-+	# XXXHACK
-         soname = "lib" + libname + shlib_suffix + "." + major
--        shlink_flags += [ '-Wl,-Bsymbolic', '-Wl,-soname=%s' % soname ]
-+#        soname = "lib" + libname + shlib_suffix
-+	shlink_flags += [ '-Wl,-Bsymbolic', '-Wl,-soname=%s' % soname ]
-     elif platform == 'cygwin':
-         ilib_suffix = shlib_suffix
-         shlink_flags += [ '-Wl,-Bsymbolic',
-@@ -761,7 +764,10 @@
+@@ -587,7 +587,7 @@ confdefs.append('''
+ #ifdef __LITTLE_ENDIAN__
+ #undef WORDS_BIGENDIAN
+ #else
+-#include <endian.h>
++#include <sys/endian.h>
+ #if __BYTE_ORDER == __BIG_ENDIAN
+ #define WORDS_BIGENDIAN 1
+ #elif __BYTE_ORDER == __LITTLE_ENDIAN
+@@ -783,7 +783,10 @@ def VersionedSharedLibrary(env, libname, version, lib_
          suffix_re = '%s\\.[0-9\\.]*$' % re.escape(shlib_suffix)
          # For libfoo.so.x.y.z, links libfoo.so libfoo.so.x.y libfoo.so.x
          major_name = shlib_suffix + "." + lib.split(".")[2]
@@ -33,7 +39,7 @@
          for linksuffix in [shlib_suffix, major_name, minor_name]:
              linkname = re.sub(suffix_re, linksuffix, lib)
              env.AddPostAction(ilib, 'rm -f %s; ln -s %s %s' % (
-@@ -785,7 +791,8 @@
+@@ -807,7 +810,8 @@ def VersionedSharedLibraryInstall(env, destination, li
              minor_name = major_name + "." + lib.split(".")[3]
              for linksuffix in [shlib_suffix, major_name, minor_name]:
                  linkname = re.sub(suffix_re, linksuffix, lib)
@@ -43,7 +49,7 @@
              env.Clean(lib, linkname)
      return ilibs
  
-@@ -993,7 +1000,7 @@
+@@ -1015,7 +1019,7 @@ else:
              python_objects[ext].append(
                  python_env.NoCache(
                      python_env.SharedObject(
@@ -52,7 +58,7 @@
                      )
                  )
              )
-@@ -1136,7 +1143,6 @@
+@@ -1159,7 +1163,6 @@ python_manpages = {
      "gpscat.1" : "gpscat.xml",
      "xgpsspeed.1" : "gps.xml",
      "xgps.1" : "gps.xml",
@@ -60,7 +66,7 @@
      }
  
  manpage_targets = []
-@@ -1191,7 +1197,7 @@
+@@ -1214,7 +1217,7 @@ if not env['debug'] and not env['profiling'] and env['
  if not env['python']:
      python_install = []
  else:

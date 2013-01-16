@@ -4,7 +4,7 @@ COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-x11=		GUI test apps using gpsd
 COMMENT-php=		web-based gpsd monitor in php
 
-VERSION=		3.6
+VERSION=		3.7
 DISTNAME=		gpsd-${VERSION}
 PKGNAME-main=		gpsd-${VERSION}
 PKGNAME-x11=		gpsd-x11-${VERSION}
