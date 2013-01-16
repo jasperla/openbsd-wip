@@ -15,6 +15,8 @@ WANTLIB += avcodec avformat avutil exiv2 poppler-qt4 tag
 
 MODKDE4_USE =	libs
 
+BUILD_DEPENDS =	devel/doxygen
+
 LIB_DEPENDS =	audio/taglib \
 		databases/soprano \
 		graphics/exiv2 \
