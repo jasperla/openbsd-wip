@@ -19,8 +19,6 @@ share/abi-compliance-checker/modules/RulesBin.xml
 share/abi-compliance-checker/modules/RulesSrc.xml
 share/abi-compliance-checker/modules/Targets/
 share/abi-compliance-checker/modules/Targets/unix/
-share/abi-compliance-checker/modules/Targets/unix/PaxHeader/
-share/abi-compliance-checker/modules/Targets/unix/PaxHeader/descriptors
 share/abi-compliance-checker/modules/Targets/unix/common.xml
 share/abi-compliance-checker/modules/Targets/unix/descriptors/
 share/abi-compliance-checker/modules/Targets/unix/descriptors/lib3dkit.xml
