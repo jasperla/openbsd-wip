@@ -83,7 +83,7 @@ RUN_DEPENDS =	misc/shared-mime-info \
 
 LIB_DEPENDS =	archivers/bzip2 \
 		archivers/xz \
-		STEM->=${SOPRANO_VERSION}:databases/soprano \
+		STEM->=${MIN_SOPRANO_VERSION}:databases/soprano \
 		databases/strigi \
 		devel/pcre \
 		graphics/jasper \
