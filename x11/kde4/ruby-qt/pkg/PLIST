@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+@conflict kdebindings-<4
 bin/rbqtapi
 @bin bin/rbrcc
 @bin bin/rbuic4
