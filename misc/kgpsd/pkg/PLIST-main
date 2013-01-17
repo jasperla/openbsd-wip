@@ -17,8 +17,6 @@ bin/gpsprof
 include/gps.h
 include/gpsd_config.h
 include/libgpsmm.h
-lib/libgps.a
-lib/libgpsd.a
 lib/pkgconfig/libgps.pc
 lib/pkgconfig/libgpsd.pc
 lib/python${MODPY_VERSION}/site-packages/gps/
