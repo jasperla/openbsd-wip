@@ -221,6 +221,7 @@ share/locale/el/LC_MESSAGES/akonadi_singlefile_resource.mo
 share/locale/el/LC_MESSAGES/akonadi_strigi_feeder.mo
 share/locale/el/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/el/LC_MESSAGES/akonadi_vcarddir_resource.mo
+share/locale/el/LC_MESSAGES/akonadicontact.mo
 share/locale/el/LC_MESSAGES/akonadinotes.mo
 share/locale/el/LC_MESSAGES/akonaditray.mo
 share/locale/el/LC_MESSAGES/akregator.mo
@@ -252,6 +253,8 @@ share/locale/el/LC_MESSAGES/dragonplayer.mo
 share/locale/el/LC_MESSAGES/drkonqi.mo
 share/locale/el/LC_MESSAGES/filelight.mo
 share/locale/el/LC_MESSAGES/filetypes.mo
+share/locale/el/LC_MESSAGES/fileviewbazaarplugin.mo
+share/locale/el/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/el/LC_MESSAGES/freespacenotifier.mo
 share/locale/el/LC_MESSAGES/fsview.mo
 share/locale/el/LC_MESSAGES/granatier.mo
@@ -281,6 +284,7 @@ share/locale/el/LC_MESSAGES/kajongg.mo
 share/locale/el/LC_MESSAGES/kalarm.mo
 share/locale/el/LC_MESSAGES/kalgebra.mo
 share/locale/el/LC_MESSAGES/kalzium.mo
+share/locale/el/LC_MESSAGES/kanagram-harmattan.mo
 share/locale/el/LC_MESSAGES/kanagram.mo
 share/locale/el/LC_MESSAGES/kapman.mo
 share/locale/el/LC_MESSAGES/kapptemplate.mo
@@ -342,6 +346,7 @@ share/locale/el/LC_MESSAGES/kcm_pci.mo
 share/locale/el/LC_MESSAGES/kcm_phonon.mo
 share/locale/el/LC_MESSAGES/kcm_phononxine.mo
 share/locale/el/LC_MESSAGES/kcm_platform.mo
+share/locale/el/LC_MESSAGES/kcm_remotecontrol.mo
 share/locale/el/LC_MESSAGES/kcm_solid.mo
 share/locale/el/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/el/LC_MESSAGES/kcm_standard_actions.mo
@@ -526,10 +531,12 @@ share/locale/el/LC_MESSAGES/kollision.mo
 share/locale/el/LC_MESSAGES/kolourpaint.mo
 share/locale/el/LC_MESSAGES/kommander.mo
 share/locale/el/LC_MESSAGES/kompare.mo
+share/locale/el/LC_MESSAGES/konqprofiles.mo
 share/locale/el/LC_MESSAGES/konqueror.mo
 share/locale/el/LC_MESSAGES/konquest.mo
 share/locale/el/LC_MESSAGES/konsole.mo
 share/locale/el/LC_MESSAGES/konsolekalendar.mo
+share/locale/el/LC_MESSAGES/konsoleprofiles.mo
 share/locale/el/LC_MESSAGES/kontact.mo
 share/locale/el/LC_MESSAGES/kontactinterfaces.mo
 share/locale/el/LC_MESSAGES/kopete.mo
@@ -543,9 +550,11 @@ share/locale/el/LC_MESSAGES/kppp.mo
 share/locale/el/LC_MESSAGES/kppplogview.mo
 share/locale/el/LC_MESSAGES/kquitapp.mo
 share/locale/el/LC_MESSAGES/krandr.mo
+share/locale/el/LC_MESSAGES/krcdnotifieritem.mo
 share/locale/el/LC_MESSAGES/krdb.mo
 share/locale/el/LC_MESSAGES/krdc.mo
 share/locale/el/LC_MESSAGES/kreadconfig.mo
+share/locale/el/LC_MESSAGES/kremotecontroldaemon.mo
 share/locale/el/LC_MESSAGES/kres-migrator.mo
 share/locale/el/LC_MESSAGES/kres_blog.mo
 share/locale/el/LC_MESSAGES/kres_remote.mo
@@ -619,6 +628,7 @@ share/locale/el/LC_MESSAGES/libkalarmcal.mo
 share/locale/el/LC_MESSAGES/libkasten.mo
 share/locale/el/LC_MESSAGES/libkblog.mo
 share/locale/el/LC_MESSAGES/libkcal.mo
+share/locale/el/LC_MESSAGES/libkcalutils.mo
 share/locale/el/LC_MESSAGES/libkcddb.mo
 share/locale/el/LC_MESSAGES/libkcompactdisc.mo
 share/locale/el/LC_MESSAGES/libkdcraw.mo
@@ -639,6 +649,7 @@ share/locale/el/LC_MESSAGES/libkpgp.mo
 share/locale/el/LC_MESSAGES/libkpimidentities.mo
 share/locale/el/LC_MESSAGES/libkpimtextedit.mo
 share/locale/el/LC_MESSAGES/libkpimutils.mo
+share/locale/el/LC_MESSAGES/libkremotecontrol.mo
 share/locale/el/LC_MESSAGES/libkresources.mo
 share/locale/el/LC_MESSAGES/libksane.mo
 share/locale/el/LC_MESSAGES/libkscreensaver.mo
@@ -656,6 +667,7 @@ share/locale/el/LC_MESSAGES/libmessagecore.mo
 share/locale/el/LC_MESSAGES/libmessagelist.mo
 share/locale/el/LC_MESSAGES/libmessageviewer.mo
 share/locale/el/LC_MESSAGES/liboktetacore.mo
+share/locale/el/LC_MESSAGES/liboktetagui.mo
 share/locale/el/LC_MESSAGES/liboktetakasten.mo
 share/locale/el/LC_MESSAGES/liboxygenstyleconfig.mo
 share/locale/el/LC_MESSAGES/libphonon.mo
@@ -689,6 +701,7 @@ share/locale/el/LC_MESSAGES/nepomukstorage.mo
 share/locale/el/LC_MESSAGES/newmailnotifieragent.mo
 share/locale/el/LC_MESSAGES/notes-mobile.mo
 share/locale/el/LC_MESSAGES/nsplugin.mo
+share/locale/el/LC_MESSAGES/okteta-mobile.mo
 share/locale/el/LC_MESSAGES/okteta.mo
 share/locale/el/LC_MESSAGES/oktetapart.mo
 share/locale/el/LC_MESSAGES/okular.mo

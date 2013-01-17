@@ -8,5 +8,4 @@ MODKDE4_USE =
 
 RUN_DEPENDS =	x11/gtk+2,-guic
 
-
 .include <bsd.port.mk>

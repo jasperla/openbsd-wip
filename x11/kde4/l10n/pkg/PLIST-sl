@@ -655,6 +655,7 @@ share/locale/sl/LC_MESSAGES/plasma-remote-helper.mo
 share/locale/sl/LC_MESSAGES/plasma-windowed.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_BbalL.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_CharSelectApplet.mo
+share/locale/sl/LC_MESSAGES/plasma_applet_Molmasscalculator.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_akonotes_note.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_binaryclock.mo
@@ -663,6 +664,7 @@ share/locale/sl/LC_MESSAGES/plasma_applet_bubblemon.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_calculator.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_comic.mo
+share/locale/sl/LC_MESSAGES/plasma_applet_concentrationCalculator.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_currentappcontrol.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_dig_clock.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_fifteenPuzzle.mo
@@ -670,6 +672,7 @@ share/locale/sl/LC_MESSAGES/plasma_applet_fileWatcher.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
+share/locale/sl/LC_MESSAGES/plasma_applet_gasCalculator.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_groupingpanel.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_icontasks.mo
@@ -697,6 +700,7 @@ share/locale/sl/LC_MESSAGES/plasma_applet_notes.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_notifications.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_notifier.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_nowplaying.mo
+share/locale/sl/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_opendesktop.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_opendesktop_activities.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_org.kde.showActivityManager.mo
@@ -770,6 +774,7 @@ share/locale/sl/LC_MESSAGES/plasma_runner_konquerorsessions.mo
 share/locale/sl/LC_MESSAGES/plasma_runner_konsolesessions.mo
 share/locale/sl/LC_MESSAGES/plasma_runner_kopete.mo
 share/locale/sl/LC_MESSAGES/plasma_runner_locations.mo
+share/locale/sl/LC_MESSAGES/plasma_runner_marblerunner.mo
 share/locale/sl/LC_MESSAGES/plasma_runner_mediawiki.mo
 share/locale/sl/LC_MESSAGES/plasma_runner_nepomuksearchrunner.mo
 share/locale/sl/LC_MESSAGES/plasma_runner_placesrunner.mo
@@ -818,6 +823,8 @@ share/locale/sl/LC_MESSAGES/solid-network.mo
 share/locale/sl/LC_MESSAGES/solid_qt.mo
 share/locale/sl/LC_MESSAGES/solidcontrol.mo
 share/locale/sl/LC_MESSAGES/soliduiserver.mo
+share/locale/sl/LC_MESSAGES/step.mo
+share/locale/sl/LC_MESSAGES/step_qt.mo
 share/locale/sl/LC_MESSAGES/strigila_diff.mo
 share/locale/sl/LC_MESSAGES/superkaramba.mo
 share/locale/sl/LC_MESSAGES/svgpart.mo

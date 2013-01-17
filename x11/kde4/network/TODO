@@ -2,6 +2,9 @@
 -- The following OPTIONAL packages could NOT be located on your system.
 -- Consider installing them to enable more features from this software.
 -----------------------------------------------------------------------------
+   * telepathy-qt (0.9 or higher)  <http://telepathy.freedesktop.org>
+     Telepathy Qt Bindings
+     Needed to build Telepathy Tubes support.
    * libortp (0.13 or higher)  <http://www.linphone.org/index.php/eng/code_review/ortp>
      oRTP provides an API to send rtp packets
      Needed to build Jingle support, Google Talk libjingle audio call support and voice clips in WLM.

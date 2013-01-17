@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, web development
 DISTNAME =	kdewebdev-${MODKDE_VERSION}
-REVISION =	0
 
 SHARED_LIBS =	klinkstatuscommon	0.0
 SHARED_LIBS +=	kommandercore		0.0
@@ -17,13 +16,11 @@ WANTLIB += kprintutils krossui kutils mailtransport nepomuk
 WANTLIB += nepomukutils phonon_s soprano threadweaver tidyp
 
 MODULES =	lang/ruby
-
 MODKDE4_USE =	pim
 
+BUILD_DEPENDS =	${MODRUBY_BUILD_DEPENDS}
 RUN_DEPENDS =	x11/kde4/korundum
-
-LIB_DEPENDS =	${MODRUBY_LIB_DEPENDS} \
-		www/tidyp
+LIB_DEPENDS =	www/tidyp
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/klinkstatus/src/plugins/scripting/scripts/examples/statistics/statistics.rb

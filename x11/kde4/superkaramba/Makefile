@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, interactive desktop widget creation
 DISTNAME =	superkaramba-${MODKDE_VERSION}
-REVISION =	0
 
 SHARED_LIBS =	superkaramba	0.0 # 4.7
 

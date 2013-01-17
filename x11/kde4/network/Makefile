@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, network
 DISTNAME =	kdenetwork-${MODKDE_VERSION}
-REVISION =	0
 
 SHARED_LIBS =	kgetcore		0.0 # 4.0
 SHARED_LIBS +=	kopete			3.0 # 4.0
@@ -49,5 +48,11 @@ LIB_DEPENDS =	audio/xmms \
 		security/libotr \
 		security/qca2 \
 		x11/kde4/baseapps
+
+CONFIGURE_ARGS =	-DWITH_Libmsn:Bool=No \
+			-DWITH_LiboRTP:Bool=No \
+			-DWITH_Mediastreamer:Bool=No \
+			-DWITH_msiLBC:Bool=No \
+			-DWITH_TelepathyQt4:Bool=No
 
 .include <bsd.port.mk>

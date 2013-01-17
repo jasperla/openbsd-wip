@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, PIM runtime support
 DISTNAME =	kdepim-runtime-${MODKDE_VERSION}
-REVISION =	0
 
 SHARED_LIBS =		akonadi-filestore	0.0 # 4.7
 SHARED_LIBS +=		akonadi-xml		0.0 # 4.7
@@ -35,6 +34,7 @@ LIB_DEPENDS =		databases/soprano \
 			STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/pimlibs
 
 # Long dependency chain, not ported yet.
-CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Libkolab:Bool=TRUE
+CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Libkolab:Bool=TRUE \
+			-DCMAKE_DISABLE_FIND_PACKAGE_Libkolabxml:Bool=TRUE
 
 .include <bsd.port.mk>

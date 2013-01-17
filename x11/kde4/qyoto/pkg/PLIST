@@ -16,6 +16,13 @@ include/qyoto/slotreturnvalue.h
 include/qyoto/smokeqyoto.h
 include/qyoto/virtualmethodcall.h
 include/qyoto/virtualmethodreturnvalue.h
+@lib lib/kde4/private/libphonon-sharp.so.${LIBphonon-sharp_VERSION}
+@lib lib/kde4/private/libqscintilla-sharp.so.${LIBqscintilla-sharp_VERSION}
+@lib lib/kde4/private/libqtscript-sharp.so.${LIBqtscript-sharp_VERSION}
+@lib lib/kde4/private/libqttest-sharp.so.${LIBqttest-sharp_VERSION}
+@lib lib/kde4/private/libqtuitools-sharp.so.${LIBqtuitools-sharp_VERSION}
+@lib lib/kde4/private/libqtwebkit-sharp.so.${LIBqtwebkit-sharp_VERSION}
+@lib lib/kde4/private/libqyoto.so.${LIBqyoto_VERSION}
 @lib lib/libphonon-sharp.so.${LIBphonon-sharp_VERSION}
 @lib lib/libqscintilla-sharp.so.${LIBqscintilla-sharp_VERSION}
 @lib lib/libqtscript-sharp.so.${LIBqtscript-sharp_VERSION}

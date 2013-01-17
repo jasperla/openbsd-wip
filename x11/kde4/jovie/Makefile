@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, text to speech application
 DISTNAME =	jovie-${MODKDE_VERSION}
-REVISION =	0
 
 SHARED_LIBS =	kttsd	0.0 # 4.7
 
