@@ -1,9 +1,0 @@
-$OpenBSD$
---- ksirk/ksirk/iris/src/CMakeLists.txt.orig	Thu Dec 13 21:43:47 2012
-+++ ksirk/ksirk/iris/src/CMakeLists.txt	Thu Dec 13 21:44:05 2012
-@@ -1,4 +1,4 @@
--# FIND_PACKAGE(QCA2 REQUIRED)
-+FIND_PACKAGE(QCA2 REQUIRED)
- FIND_PACKAGE(ZLIB REQUIRED)
- 
- set(libiris_SRCS
