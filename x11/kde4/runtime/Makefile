@@ -20,7 +20,7 @@ WANTLIB += kpty kxmlrpcclient nepomuk nepomukcore nepomukutils
 WANTLIB += phonon_s plasma solid soprano
 WANTLIB += glib-2.0 pulse pulse-mainloop-glib smbclient ssh xine canberra
 
-MODKDE4_USE =	libs
+MODKDE4_USE =	pim libs
 
 BUILD_DEPENDS =	archivers/bzip2 \
 		archivers/xz \
@@ -38,9 +38,8 @@ LIB_DEPENDS =	audio/libcanberra \
 		net/samba \
 		productivity/attica \
 		security/libssh \
-		STEM->=${MODKDE4_VERSION}:x11/kde4/kactivities \
-		STEM->=${MODKDE4_VERSION}:x11/kde4/nepomuk-core \
-		STEM->=${MODKDE4_VERSION}:x11/kde4/pimlibs
+		STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/kactivities \
+		STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/nepomuk-core
 
 # QNtrack depends on libnl, Linux-specific library.
 CONFIGURE_ARGS =	-DWITH_ALSA:Bool=FALSE \

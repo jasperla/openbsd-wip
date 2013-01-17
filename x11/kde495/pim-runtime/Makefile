@@ -31,7 +31,7 @@ LIB_DEPENDS =		databases/soprano \
 			devel/qjson \
 			STEM->=${MIN_AKONADI_VERSION}:productivity/akonadi \
 			productivity/libkgapi>=0.4.0 \
-			STEM->=${MODKDE4_VERSION}:x11/kde4/pimlibs
+			STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/pimlibs
 
 # Long dependency chain, not ported yet.
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Libkolab:Bool=TRUE \
