@@ -78,13 +78,13 @@ RUN_DEPENDS =	misc/shared-mime-info \
 		misc/shared-desktop-ontologies \
 		net/cagibi \
 		sysutils/gamin \
-		STEM->=${MODKDE4_VERSION}:x11/kde4/oxygen-icons \
+		STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/oxygen-icons \
 		x11/dbus \
 		x11/grantlee
 
 LIB_DEPENDS =	archivers/bzip2 \
 		archivers/xz \
-		STEM->=${SOPRANO_VERSION}:databases/soprano \
+		STEM->=${MIN_SOPRANO_VERSION}:databases/soprano \
 		databases/strigi \
 		devel/pcre \
 		graphics/jasper \

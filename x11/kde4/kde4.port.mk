@@ -7,6 +7,9 @@ _MODKDE4_STABLE =	4.9.3
 MODKDE4_VERSION ?=	${_MODKDE4_STABLE}
 MODKDE_VERSION =	${MODKDE4_VERSION}
 
+# Version to be used for SC dependencies by default
+MODKDE4_DEP_VERSION =	${MODKDE4_VERSION:R}
+
 # General options set by module
 SHARED_ONLY ?=		Yes
 ONLY_FOR_ARCHS ?=	${GCC4_ARCHS}
@@ -111,10 +114,10 @@ MODKDE4_USE +=		libs
 PKG_ARCH ?=		*
 MODKDE4_NO_QT ?=	Yes	# resources usually don't need Qt
 .   if ${MODKDE4_USE:L:Mworkspace}
-MODKDE4_BUILD_DEPENDS +=	STEM->=${MODKDE4_VERSION}:x11/kde4/workspace
+MODKDE4_BUILD_DEPENDS +=	STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/workspace
 .   endif
 .   if ${MODKDE4_USE:L:Mlibs}
-MODKDE4_BUILD_DEPENDS +=	STEM->=${MODKDE4_VERSION}:x11/kde4/libs
+MODKDE4_BUILD_DEPENDS +=	STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/libs
 .   endif
 .else
 # Small hack, until automoc4 will be gone
@@ -129,26 +132,26 @@ MODKDE4_NO_QT ?=	No
 ERRORS +=	"Fatal: KDE libraries require Qt."
 .       endif
 
-MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/libs
+MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/libs
 MODKDE4_WANTLIB +=		kdecore>=8
 .       if ${MODKDE4_USE:L:Mpim}
-MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/pimlibs
+MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/pimlibs
 MODKDE4_BUILD_DEPENDS +=	devel/boost
 .       endif
 
 .       if ${MODKDE4_USE:L:Mgames}
-MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/libkdegames
+MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/libkdegames
 MODKDE4_WANTLIB +=		kdegames
 .       endif
 
 .       if ${MODKDE4_USE:L:Mruntime}
-MODKDE4_RUN_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/runtime
+MODKDE4_RUN_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/runtime
 .           if ${MODKDE4_USE:L:Mpim}
-MODKDE4_RUN_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/pim-runtime
+MODKDE4_RUN_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/pim-runtime
 .           endif
 
 .           if ${MODKDE4_USE:L:Mworkspace}
-MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_VERSION}:x11/kde4/workspace
+MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/workspace
 .           endif
 .       endif
 .   endif    # ${MODKDE4_USE:L:Mlibs}
