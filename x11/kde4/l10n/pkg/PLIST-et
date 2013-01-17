@@ -14,7 +14,7 @@
 @comment @man man/et/man1/cvsrevertlast.1
 @comment @man man/et/man1/cxxmetric.1
 @comment @man man/et/man1/demangle.1
-@man man/et/man1/dragon.1
+@comment @man man/et/man1/dragon.1
 @comment @man man/et/man1/extend_dmalloc.1
 @comment @man man/et/man1/extractrc.1
 @comment @man man/et/man1/fixincludes.1
