@@ -1,2 +1,1 @@
  - make it build both static and shared libs
- - find out how to set shared lib version instead of hardcoded internal library version
