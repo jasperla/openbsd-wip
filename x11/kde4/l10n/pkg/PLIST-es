@@ -1284,6 +1284,7 @@ share/doc/HTML/es/konqueror/save-settings.docbook
 share/doc/HTML/es/konqueror/shortcut1.png
 share/doc/HTML/es/konqueror/shortcut2.png
 share/doc/HTML/es/konqueror/sidebar.docbook
+share/doc/HTML/es/konqueror/view-extensions.docbook
 share/doc/HTML/es/konquest/
 share/doc/HTML/es/konquest/common
 share/doc/HTML/es/konquest/index.cache.bz2
@@ -1604,6 +1605,7 @@ share/doc/HTML/es/kwordquiz/kwq-multiple.png
 share/doc/HTML/es/kwordquiz/kwq-qanda.png
 share/doc/HTML/es/kwrite/
 share/doc/HTML/es/kwrite/common
+share/doc/HTML/es/kwrite/fundamentals.docbook
 share/doc/HTML/es/kwrite/index.cache.bz2
 share/doc/HTML/es/kwrite/index.docbook
 share/doc/HTML/es/lokalize/

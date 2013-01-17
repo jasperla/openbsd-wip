@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, software development kit
 DISTNAME =	kdesdk-${MODKDE_VERSION}
-REVISION =	0
 
 SHARED_LIBS =	komparedialogpages	0.0 # 4.7
 SHARED_LIBS +=	komparediff2		0.0 # 4.7
@@ -29,6 +28,8 @@ WANTLIB += threadweaver gettextpo
 WANTLIB += apr-1 hunspell-1.2 svn_client-1 svn_delta-1 svn_fs-1
 WANTLIB += svn_ra-1 svn_subr-1 xml2 xslt
 
+# XXX Actually, KdepimLibs is BUILD_DEPENDS, but it's picked up
+# by other dependencies anyway.
 MODKDE4_USE =	pim
 
 # For building KAppTemplate with weird file names

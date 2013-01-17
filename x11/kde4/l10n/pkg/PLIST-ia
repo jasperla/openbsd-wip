@@ -85,6 +85,7 @@ share/locale/ia/LC_MESSAGES/kabcclient.mo
 share/locale/ia/LC_MESSAGES/kabcformat_binary.mo
 share/locale/ia/LC_MESSAGES/kaccess.mo
 share/locale/ia/LC_MESSAGES/kactivitymanagerd.mo
+share/locale/ia/LC_MESSAGES/kactivitymanagerd_fileitem_linking_plugin.mo
 share/locale/ia/LC_MESSAGES/kaddressbook-mobile.mo
 share/locale/ia/LC_MESSAGES/kaddressbook.mo
 share/locale/ia/LC_MESSAGES/kaddressbookmigrator.mo

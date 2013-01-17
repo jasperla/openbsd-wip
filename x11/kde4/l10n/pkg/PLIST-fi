@@ -125,6 +125,7 @@ share/locale/fi/LC_MESSAGES/kabcformat_binary.mo
 share/locale/fi/LC_MESSAGES/kaccess.mo
 share/locale/fi/LC_MESSAGES/kaccessibleapp.mo
 share/locale/fi/LC_MESSAGES/kactivitymanagerd.mo
+share/locale/fi/LC_MESSAGES/kactivitymanagerd_fileitem_linking_plugin.mo
 share/locale/fi/LC_MESSAGES/kaddressbook-mobile.mo
 share/locale/fi/LC_MESSAGES/kaddressbook.mo
 share/locale/fi/LC_MESSAGES/kaddressbookmigrator.mo

@@ -3,6 +3,7 @@
 @bin bin/gwenview
 @bin bin/gwenview_importer
 lib/kde4/gvpart.so
+@lib lib/kde4/private/libgwenviewlib.so.${LIBgwenviewlib_VERSION}
 @lib lib/libgwenviewlib.so.${LIBgwenviewlib_VERSION}
 share/applications/kde4/gwenview.desktop
 share/apps/gvpart/

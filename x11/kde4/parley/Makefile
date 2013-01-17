@@ -12,9 +12,11 @@ WANTLIB += knewstuff3 kparts krosscore krossui nepomuk nepomukutils
 WANTLIB += phonon_s plasma soprano
 WANTLIB += xml2 xslt
 
+BUILD_DEPENDS =	productivity/attica
+RUN_DEPENDS =	productivity/attica
+
 LIB_DEPENDS = 	textproc/libxml \
 		textproc/libxslt \
-		productivity/attica \
 		x11/kde4/libkdeedu
 
 .include <bsd.port.mk>

@@ -2,7 +2,6 @@
 
 COMMENT =	K Desktop Environment, frontend for remote controls
 DISTNAME =	kremotecontrol-${MODKDE_VERSION}
-REVISION =	0
 
 SHARED_LIBS =	libkremotecontrol	0.0 # 1.0
 

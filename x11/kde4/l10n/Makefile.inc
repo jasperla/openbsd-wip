@@ -3,7 +3,6 @@
 IGNORE_SILENT =		Yes
 COMMENT =		K Desktop Environment, language localization pack
 DISTNAME =		kde-l10n-${KDE_L10N_LANG}-${MODKDE_VERSION}
-REVISION =		0
 
 MODULES =		devel/gettext
 MODKDE4_RESOURCES =	Yes
