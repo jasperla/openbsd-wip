@@ -1,5 +1,5 @@
 --- SConstruct.orig	Tue Jul  3 02:48:16 2012
-+++ SConstruct	Wed Jan 16 15:46:03 2013
++++ SConstruct	Thu Jan 17 08:47:49 2013
 @@ -360,7 +360,7 @@ def CheckExecutable(context, testprogram, check_for):
      return ret
  
@@ -27,19 +27,37 @@
  #if __BYTE_ORDER == __BIG_ENDIAN
  #define WORDS_BIGENDIAN 1
  #elif __BYTE_ORDER == __LITTLE_ENDIAN
-@@ -783,7 +783,10 @@ def VersionedSharedLibrary(env, libname, version, lib_
-         suffix_re = '%s\\.[0-9\\.]*$' % re.escape(shlib_suffix)
+@@ -747,9 +747,8 @@ def VersionedSharedLibrary(env, libname, version, lib_
+     shlink_flags = SCons.Util.CLVar(env.subst('$SHLINKFLAGS'))
+ 
+     if platform == 'posix':
+-        ilib_suffix = shlib_suffix + '.' + version
+-        (major, age, revision) = version.split(".")
+-        soname = "lib" + libname + shlib_suffix + "." + major
++        ilib_suffix = shlib_suffix + '.' + '${LIBgps_VERSION}'
++        soname = "lib" + libname + shlib_suffix + "." + "${LIBgps_VERSION}"
+         shlink_flags += [ '-Wl,-Bsymbolic', '-Wl,-soname=%s' % soname ]
+     elif platform == 'cygwin':
+         ilib_suffix = shlib_suffix
+@@ -784,7 +783,7 @@ def VersionedSharedLibrary(env, libname, version, lib_
          # For libfoo.so.x.y.z, links libfoo.so libfoo.so.x.y libfoo.so.x
          major_name = shlib_suffix + "." + lib.split(".")[2]
--        minor_name = major_name + "." + lib.split(".")[3]
-+	# XXXHACK
-+        #minor_name = major_name + "." + lib.split(".")[3]
-+	minor_name = major_name + ".0"
-+	print "ABABA minor_name=%s" % (minor_name)
-         for linksuffix in [shlib_suffix, major_name, minor_name]:
+         minor_name = major_name + "." + lib.split(".")[3]
+-        for linksuffix in [shlib_suffix, major_name, minor_name]:
++        for linksuffix in [shlib_suffix + "${LIBgps_VERSION}"]:
              linkname = re.sub(suffix_re, linksuffix, lib)
              env.AddPostAction(ilib, 'rm -f %s; ln -s %s %s' % (
-@@ -807,7 +810,8 @@ def VersionedSharedLibraryInstall(env, destination, li
+                 linkname, lib, linkname))
+@@ -799,7 +798,7 @@ def VersionedSharedLibraryInstall(env, destination, li
+     if platform == 'posix':
+         suffix_re = '%s\\.[0-9\\.]*$' % re.escape(shlib_suffix)
+         for lib in map(str, libs):
+-            if lib.count(".") != 4:
++            if lib.count(".") != 3:
+                 # We need a library name in libfoo.so.x.y.z form to proceed
+                 raise ValueError
+             # For libfoo.so.x.y.z, links libfoo.so libfoo.so.x.y libfoo.so.x
+@@ -807,7 +806,8 @@ def VersionedSharedLibraryInstall(env, destination, li
              minor_name = major_name + "." + lib.split(".")[3]
              for linksuffix in [shlib_suffix, major_name, minor_name]:
                  linkname = re.sub(suffix_re, linksuffix, lib)
@@ -49,7 +67,7 @@
              env.Clean(lib, linkname)
      return ilibs
  
-@@ -1015,7 +1019,7 @@ else:
+@@ -1015,7 +1015,7 @@ else:
              python_objects[ext].append(
                  python_env.NoCache(
                      python_env.SharedObject(
@@ -58,7 +76,7 @@
                      )
                  )
              )
-@@ -1159,7 +1163,6 @@ python_manpages = {
+@@ -1159,7 +1159,6 @@ python_manpages = {
      "gpscat.1" : "gpscat.xml",
      "xgpsspeed.1" : "gps.xml",
      "xgps.1" : "gps.xml",
@@ -66,7 +84,7 @@
      }
  
  manpage_targets = []
-@@ -1214,7 +1217,7 @@ if not env['debug'] and not env['profiling'] and env['
+@@ -1214,7 +1213,7 @@ if not env['debug'] and not env['profiling'] and env['
  if not env['python']:
      python_install = []
  else:
