@@ -2,7 +2,7 @@
 
 COMMENT=	Perl interface to the Twitter API
 
-DISTNAME=	Net-Twitter-3.18003
+DISTNAME=	Net-Twitter-3.18004
 CATEGORIES=	net
 
 MAINTAINER=	Andrew Fresh <andrew@cpan.org>
