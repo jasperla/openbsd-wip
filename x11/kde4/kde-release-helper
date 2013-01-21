@@ -411,10 +411,17 @@ merge_back() {
 
 	cat >$T <<EOF
 Here is a summary patch to be applied, please review. Note that STATUS-* files
-are missing in the diff by purpose, they will be handled specially.
+are missing in the diff to make it smaller, they will be handled automatically.
 
-If you proceed and NOT abort, commit message editor will appear
-two times: first time for merging, and second - for removing.
+If you proceed and NOT abort, commit message editor will appear, two times:
+
+  * First time for merging new directory into x11/kde4;
+  * Second time for removing old directory.
+
+To abort, just press ^C and then quit pager.
+
+And do not worry, it's distributed VCS and you always can go back. Because you
+have already commited all your work, didn't you?
 
 --- ${SKPD}/kde4.port.mk
 +++ ${SKPD}/kde4.port.mk
