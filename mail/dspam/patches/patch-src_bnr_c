@@ -1,6 +1,6 @@
 $OpenBSD: patch-src_bnr_c,v 1.1 2005/10/26 06:18:38 jakob Exp $
---- src/bnr.c.orig	Sat Jul 30 21:54:31 2011
-+++ src/bnr.c	Mon Aug 22 10:11:32 2011
+--- src/bnr.c.orig	Wed Apr 11 20:48:33 2012
++++ src/bnr.c	Sat Jan  5 15:35:35 2013
 @@ -136,11 +136,11 @@ int bnr_instantiate(BNR_CTX *BTX) {
      }
  

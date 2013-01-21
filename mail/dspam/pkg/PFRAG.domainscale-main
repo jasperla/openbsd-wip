@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+@pkgpath mail/dspam,domainscale[,hash][,sqlite][,sqlite3][,mysql][,pgsql][,preferences]
