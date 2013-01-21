@@ -1,8 +1,16 @@
 @comment $OpenBSD: PLIST,v 1.8 2011/05/11 12:57:48 jasper Exp $
+%%clamav%%
+%%domainscale%%
+%%ldap%%
+%%largescale%%
+@pkgpath mail/dspam[,hash][,sqlite][,sqlite3][,mysql][,pgsql][,preferences]
 @newgroup _dspam:540
 @newuser _dspam:540:540:daemon:DSPAM Account:/var/dspam:/sbin/nologin
 @extraunexec rm -rf /var/dspam/*
-%%SHARED%%
+@bin bin/cssclean
+@bin bin/csscompress
+@bin bin/cssconvert
+@bin bin/cssstat
 @bin bin/dspam
 @bin bin/dspam_2sql
 @bin bin/dspam_admin
@@ -31,8 +39,12 @@ include/dspam/read_config.h
 include/dspam/storage_driver.h
 include/dspam/tokenizer.h
 lib/dspam/
-lib/libdspam.a
-lib/libdspam.la
+@comment lib/dspam/libhash_drv.la
+lib/dspam/libhash_drv.so
+@comment lib/dspam/libsqlite3_drv.la
+lib/dspam/libsqlite3_drv.so
+@comment lib/libdspam.la
+@lib lib/libdspam.so.${LIBdspam_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/dspam.pc
 @man man/man1/dspam.1
@@ -59,23 +71,28 @@ share/doc/dspam/README
 share/doc/dspam/RELEASE.NOTES
 share/doc/dspam/UPGRADING
 share/doc/dspam/courier.txt
+share/doc/dspam/cssclean.txt
 share/doc/dspam/exim.txt
 share/doc/dspam/markov.txt
+share/doc/dspam/osx.txt
 share/doc/dspam/pop3filter.txt
 share/doc/dspam/postfix.txt
 share/doc/dspam/qmail.txt
 share/doc/dspam/relay.txt
 share/doc/dspam/sendmail.txt
+share/doc/dspam/sqlite_drv.txt
+share/doc/dspam/tests.txt
 share/examples/dspam/
 share/examples/dspam/dspam.conf
 @sample ${SYSCONFDIR}/dspam.conf
-%%sqlite3%%
-%%sqlite%%
-%%mysql%%
-%%pgsql%%
-%%hash%%
+share/examples/dspam/sqlite/
+share/examples/dspam/sqlite/purge-2.sql
+share/examples/dspam/sqlite/purge-3.sql
+@rcscript ${RCDIR}/dspam
 @mode 755
 @owner _dspam
 @group _dspam
 @sample /var/dspam/
 @sample /var/dspam/data/
+@sample /var/dspam/log/
+@sample /var/run/dspam/
