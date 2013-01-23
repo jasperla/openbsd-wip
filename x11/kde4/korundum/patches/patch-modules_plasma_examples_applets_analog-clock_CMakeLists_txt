@@ -1,0 +1,9 @@
+$OpenBSD$
+--- modules/plasma/examples/applets/analog-clock/CMakeLists.txt.orig	Wed Jan 23 20:19:26 2013
++++ modules/plasma/examples/applets/analog-clock/CMakeLists.txt	Wed Jan 23 20:19:32 2013
+@@ -1,4 +1,4 @@
+-FIND_PACKAGE (RUBY REQUIRED)
++FIND_PACKAGE (Ruby REQUIRED)
+ 
+ SET(UI_CLOCKCONFIG ${CMAKE_CURRENT_SOURCE_DIR}/clockConfig.ui)
+ SET(UI_CALENDAR ${CMAKE_CURRENT_SOURCE_DIR}/calendar.ui)
