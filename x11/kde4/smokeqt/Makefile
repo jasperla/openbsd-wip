@@ -3,6 +3,7 @@
 CATEGORIES =	devel
 COMMENT =	K Desktop Environment, introspective wrappers around Qt
 DISTNAME =	smokeqt-${MODKDE_VERSION}
+REVISION =	0
 
 WANTLIB = m stdc++
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDeclarative
@@ -35,14 +36,7 @@ SHARED_LIBS +=	smokeqtxml		0.0 # 3.0
 SHARED_LIBS +=	smokeqtxmlpatterns	0.0 # 3.0
 SHARED_LIBS +=	smokeqwt		0.0 # 3.0
 
-MODULES =	lang/ruby
-
 MODKDE4_USE =
-
-# ruby 1.8 not supported as it requires LD_PRELOAD hacks for pthreads
-#MODRUBY_HANDLE_FLAVORS = Yes
-#FLAVORS =		ruby19
-#FLAVOR =		ruby19
 
 LIB_DEPENDS =	editors/qscintilla \
 		graphics/qimageblitz \
