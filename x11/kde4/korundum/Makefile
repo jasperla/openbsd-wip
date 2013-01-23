@@ -4,7 +4,7 @@ COMMENT =	K Desktop Environment, KDE4 bindings for Ruby
 DISTNAME =	korundum-${MODKDE_VERSION}
 REVISION =	0
 
-WANTLIB =  c m stdc++
+WANTLIB =  c m stdc++ ${MODRUBY_WANTLIB}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml lib/qt4/QtOpenGL lib/qt4/QtSql
 WANTLIB += kcmutils kdeui kemoticons kidletime kio knewstuff2 kprintutils
