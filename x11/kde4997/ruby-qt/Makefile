@@ -5,11 +5,11 @@ COMMENT =	K Desktop Environment, Qt4 bindings for Ruby
 DISTNAME =	qtruby-${MODKDE_VERSION}
 PKGNAME =	ruby-qt-${MODKDE_VERSION}
 HOMEPAGE =	http://techbase.kde.org/Development/Languages/Ruby
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	qtruby4shared		0.0 # 2.0
 
-WANTLIB =  c m stdc++
+WANTLIB =  c m stdc++ ${MODRUBY_WANTLIB}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtWebKit
 WANTLIB += lib/qt4/QtXml lib/qt4/phonon
@@ -18,13 +18,13 @@ WANTLIB += smokeqtdbus smokeqtdeclarative smokeqtgui smokeqtnetwork
 WANTLIB += smokeqtopengl smokeqtscript smokeqtsql smokeqtsvg
 WANTLIB += smokeqttest smokeqtuitools smokeqtwebkit smokeqtxml smokeqwt
 
-MODULES =		lang/ruby
-
+MODULES =	lang/ruby
 MODKDE4_USE =
+MODRUBY_REV =	1.9
 
-LIB_DEPENDS =		x11/kde4/smokeqt
+LIB_DEPENDS =	x11/kde4/smokeqt
 
-PATCHORIG =		.ports.orig
+PATCHORIG =	.ports.orig
 
 post-patch:
 	@echo "====> Adjusting shebangs"
