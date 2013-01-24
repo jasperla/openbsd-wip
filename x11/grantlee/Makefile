@@ -1,12 +1,13 @@
 # $OpenBSD$
 
+SHARED_ONLY =		Yes
 COMMENT =		template and text document library for Qt
 PKG_VERSION =		0.3.0
 PLIST_VERSION =		${PKG_VERSION:R}
 DISTNAME =		grantlee-${PKG_VERSION}
 CATEGORIES =		devel x11 x11/qt4
 HOMEPAGE =		http://www.gitorious.org/grantlee/
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS =		grantlee_core		1.0	# 0.1
 SHARED_LIBS +=		grantlee_gui		1.0	# 0.1

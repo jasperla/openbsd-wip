@@ -1,10 +1,11 @@
 # $OpenBSD$
 
+SHARED_ONLY =		Yes
 COMMENT =		D-Bus menu implementation for Qt
 V =			0.9.2
 DISTNAME =		libdbusmenu-qt-${V}
 PKGNAME =		dbusmenu-qt-${V}
-REVISION =		1
+REVISION =		2
 CATEGORIES =		x11 devel
 HOMEPAGE =		https://launchpad.net/libdbusmenu-qt/
 

@@ -1,11 +1,13 @@
 # $OpenBSD$
 
+SHARED_ONLY =	Yes
 COMMENT =	OAuth support library for Qt-based applications
 V =		1.0.1
 DISTNAME =	qoauth-${V}-src
 PKGNAME =	${DISTNAME:C/-src//}
 CATEGORIES =	security devel
 HOMEPAGE =	https://github.com/ayoy/qoauth
+REVISION =	0
 
 SHARED_LIBS =	qoauth		0.0
 
