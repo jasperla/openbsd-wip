@@ -4,7 +4,7 @@ CATEGORIES =	editors
 COMMENT =	user-friendly TeX/LaTex editor for KDE
 HOMEPAGE =	http://kile.sourceforge.net/
 DISTNAME =	kile-2.1.3
-REVISION =	2
+REVISION =	3
 
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =  ${MASTER_SITE_SOURCEFORGE:=kile/}
@@ -23,7 +23,10 @@ WANTLIB += nepomuk nepomukutils phonon_s soprano
 
 MODULES =	x11/kde4
 
-RUN_DEPENDS =	print/texlive/base \
-		devel/desktop-file-utils
+RUN_DEPENDS =	devel/desktop-file-utils \
+		misc/shared-mime-info \
+		print/texlive/base \
+		x11/gtk+2,-guic \
+		x11/kde4/kate
 
 .include <bsd.port.mk>
