@@ -5,7 +5,7 @@ SHARED_ONLY=	Yes
 COMMENT=	Mozilla's CA cert bundle in PEM format
 
 MODULES=	cpan
-DISTNAME=	Mozilla-CA-20120823
+DISTNAME=	Mozilla-CA-20130114
 CATEGORIES=	security
 
 MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
