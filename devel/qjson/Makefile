@@ -5,6 +5,7 @@ CATEGORIES =	devel
 COMMENT=	Qt-based library that maps JSON data to QVariant objects
 DISTNAME =	qjson-0.8.1
 HOMEPAGE =	http://qjson.sourceforge.net/
+REVISION =	0
 
 SHARED_LIBS =	qjson	1.0
 
@@ -13,6 +14,7 @@ WANTLIB =	m stdc++
 
 MASTER_SITES =	https://github.com/downloads/flavio/qjson/
 EXTRACT_SUFX =	.tar.bz2
+TAR =		gtar
 
 # LGPLv2
 PERMIT_DISTFILES_CDROM =	Yes
@@ -20,7 +22,8 @@ PERMIT_DISTFILES_FTP =		Yes
 PERMIT_PACKAGE_CDROM =		Yes
 PERMIT_PACKAGE_FTP =		Yes
 
-BUILD_DEPENDS =	devel/doxygen
+BUILD_DEPENDS =	devel/doxygen \
+		archivers/gtar
 DOCSDIR =	${PREFIX}/share/doc/qjson
 
 # Test list taken from ${WRKSRC}/tests/CMakeLists.txt
