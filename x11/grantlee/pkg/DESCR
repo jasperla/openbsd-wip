@@ -1,3 +1,1 @@
-Grantlee is a generic set of free software libraries written using
-the Qt framework.  Currently two libraries are shipped with Grantlee:
-Grantlee Templates and Grantlee TextDocument.
+Grantlee is a theming framework for Qt applications.
