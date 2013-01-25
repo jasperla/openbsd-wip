@@ -5,7 +5,7 @@ COMMENT =		D-Bus menu implementation for Qt
 V =			0.9.2
 DISTNAME =		libdbusmenu-qt-${V}
 PKGNAME =		dbusmenu-qt-${V}
-REVISION =		2
+REVISION =		3
 CATEGORIES =		x11 devel
 HOMEPAGE =		https://launchpad.net/libdbusmenu-qt/
 
@@ -25,7 +25,7 @@ WANTLIB =		QtDBus QtGui m stdc++
 BUILD_DEPENDS =		devel/qjson
 REGRESS_DEPENDS =	devel/qjson
 
-SEPARATE_BUILD =		simple
+SEPARATE_BUILD =		Yes
 REGRESS_TARGET =		check
 REGRESS_IS_INTERACTIVE =	X11
 
