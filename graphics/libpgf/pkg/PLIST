@@ -7,7 +7,6 @@ include/libpgf/PGFstream.h
 include/libpgf/PGFtypes.h
 lib/libpgf.a
 @comment lib/libpgf.la
-lib/pkgconfig/
 lib/pkgconfig/libpgf.pc
 @comment @man man/man3/BitStream.h.3
 @man man/man3/CDecoder.3
