@@ -13,16 +13,14 @@ CATEGORIES =		graphics
 
 HOMEPAGE =		http://libiptcdata.sourceforge.net/
 
-#MAINTAINER =		???
-
 # LGPL
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-cWANTLIB =		m util
-WANTLIB-main = 		${cWANTLIB} ${MODGETTEXT_WANTLIB} c pthread
+cWANTLIB =		m util pthread
+WANTLIB-main = 		${cWANTLIB} ${MODGETTEXT_WANTLIB} c
 WANTLIB-python = 	${cWANTLIB} iptcdata
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libiptcdata/}
