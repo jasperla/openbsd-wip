@@ -6,7 +6,7 @@ $OpenBSD$
  BUILT_SOURCES = virt_mail_vers.c odbc_mail_vers.c
  CLEANFILES = virt_mail_vers.c odbc_mail_vers.c
 -virt_mail_CFLAGS = @VIRT_AM_CFLAGS@ -DUDBC -I$(top_srcdir)/libsrc \
-+virt_mail_CFLAGS = @VIRT_AM_CFLAGS@ -pthread -DUDBC -I$(top_srcdir)/libsrc \
++virt_mail_CFLAGS = @VIRT_AM_CFLAGS@ -lpthread -DUDBC -I$(top_srcdir)/libsrc \
  	-I$(top_srcdir)/libsrc/Dk -I$(top_srcdir)/libsrc/Wi \
  	-I$(top_srcdir)/libsrc/odbcsdk/include
  virt_mail_LDADD = \

@@ -6,7 +6,7 @@ $OpenBSD$
  inifile_SOURCES = inifile.c inifile.vers.c
  inifile_CFLAGS = $(AM_CFLAGS) -DOPSYS=\"@OPSYS@\" -DHOST=\"@host@\" \
 -	-DCVSID=\"1.0\" -DFALSE=0 '-Dinitialize_locale='
-+	-DCVSID=\"1.0\" -DFALSE=0 '-Dinitialize_locale=' -pthread
++	-DCVSID=\"1.0\" -DFALSE=0 '-Dinitialize_locale=' -lpthread
  inifile_LDADD = $(client_libs)
  
  # ----------------------------------------------------------------------
