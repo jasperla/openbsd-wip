@@ -5,7 +5,6 @@ include/dbusmenu-qt/dbusmenu_version.h
 include/dbusmenu-qt/dbusmenuexporter.h
 include/dbusmenu-qt/dbusmenuimporter.h
 @lib lib/libdbusmenu-qt.so.${LIBdbusmenu-qt_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/dbusmenu-qt.pc
 share/doc/dbusmenu-qt/
 share/doc/dbusmenu-qt/annotated.html
