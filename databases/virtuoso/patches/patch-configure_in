@@ -57,12 +57,3 @@ $OpenBSD$
  
    return 0;
  }],
-@@ -1651,7 +1670,7 @@ if test $with_pthreads = "yes"; then
-        [AC_CHECK_LIB(pthread, pthread_create,
-          [BUILD_OPTS="$BUILD_OPTS pthreads"
- 	  WITH_PTHREADS="yes"
--	  LIBTHR="-lpthread"
-+	  LIBTHR="-pthread"
- 	  AC_DEFINE([_REENTRANT], [1], [use reentrant code])
- 	  AC_DEFINE([WITH_PTHREADS],
- 	            [1],
