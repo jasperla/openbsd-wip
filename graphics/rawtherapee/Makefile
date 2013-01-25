@@ -8,7 +8,7 @@ CATEGORIES =		graphics
 
 HOMEPAGE =		http://www.rawtherapee.com/
 
-MAINTAINER = 		Kirill Bychkov <yason@linklevel.net>
+MAINTAINER = 		Kirill Bychkov <kirby@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
