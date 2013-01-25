@@ -5,7 +5,7 @@ COMMENT =	K Desktop Environment, frontend to moc
 VERSION =	0.9.88
 DISTNAME =	automoc4-${VERSION}
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	2
+REVISION =	3
 
 # 2-clause BSDL
 PERMIT_DISTFILES_CDROM =        Yes
