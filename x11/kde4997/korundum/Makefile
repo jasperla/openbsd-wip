@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, KDE4 bindings for Ruby
 DISTNAME =	korundum-${MODKDE_VERSION}
-REVISION =	0
+REVISION =	1
 
 WANTLIB =  c m stdc++ ${MODRUBY_WANTLIB}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
@@ -20,7 +20,6 @@ WANTLIB += akonadi-kde akonadi-kmime smokeakonadi
 
 MODULES =	lang/ruby
 MODKDE4_USE =	libs pim
-MODRUBY_REV =	1.9
 
 RUN_DEPENDS =	x11/kde4/kross-interpreters
 
