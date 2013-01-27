@@ -1,5 +1,7 @@
 # $OpenBSD$
 
+SHARED_ONLY = 		Yes
+
 COMMENT-main =		manipulating with IPTC metadata
 COMMENT-python =	libiptcdata Python bindings
 
