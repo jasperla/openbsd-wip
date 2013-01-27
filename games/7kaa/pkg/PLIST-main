@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+bin/7kaa
+@bin share/7kaa/7kaa
+share/doc/7kaa/
+share/doc/7kaa/COPYING
+share/doc/7kaa/README
