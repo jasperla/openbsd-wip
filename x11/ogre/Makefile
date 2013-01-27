@@ -1,0 +1,63 @@
+# $OpenBSD: Makefile,v 1.3 2012/10/07 09:37:45 dcoppa Exp $
+
+SHARED_ONLY =		Yes
+
+COMMENT-main =		3D rendering engine
+COMMENT-samples =	3D rendering engine, demos
+
+V =			1.8.1
+DISTNAME =		ogre_src_v${V:S/./-/g}
+PKGNAME-main =		ogre-${V}
+PKGNAME-samples =	ogre-samples-${V}
+
+MULTI_PACKAGES =	-main -samples
+
+SHARED_LIBS +=  OgreMain                  1.0 # 1.7
+SHARED_LIBS +=  OgrePaging                1.0 # 1.7
+SHARED_LIBS +=  OgreProperty              1.0 # 1.7
+SHARED_LIBS +=  OgreRTShaderSystem        1.0 # 1.7
+SHARED_LIBS +=  OgreTerrain               1.0 # 1.7
+
+CATEGORIES =		x11
+
+HOMEPAGE =		http://www.ogre3d.org
+
+MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+
+# MIT
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
+
+WANTLIB += ICE SM X11 Xaw Xext Xt boost_date_time-mt
+WANTLIB += boost_thread-mt c freeimage freetype m pthread stdc++
+WANTLIB += z zzip
+
+WANTLIB-main = ${WANTLIB} GL GLU Xrandr
+WANTLIB-samples += ${WANTLIB} OIS OgreMain OgrePaging OgreRTShaderSystem
+WANTLIB-samples += OgreTerrain
+
+
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ogre/}
+EXTRACT_SUFX =		.tar.bz2
+
+CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE:STRING=Release \
+			-DOGRE_INSTALL_SAMPLES=1 \
+			-DOGRE_CONFIG_ALLOCATOR=1
+
+VMEM_WARNING =		Yes
+
+MODULES =		devel/cmake
+LIB_DEPENDS =		graphics/freeimage \
+			archivers/zziplib \
+			devel/boost
+LIB_DEPENDS-samples =	${LIB_DEPENDS} \
+			devel/ois \
+			x11/ogre,-main
+
+NO_REGRESS =		Yes
+
+CFLAGS =		-g
+
+.include <bsd.port.mk>

@@ -1,0 +1,12 @@
+$OpenBSD: patch-OgreMain_src_OgreStringConverter_cpp,v 1.1.1.1 2012/03/18 14:31:00 pascal Exp $
+--- OgreMain/src/OgreStringConverter.cpp.orig	Fri May 25 21:48:44 2012
++++ OgreMain/src/OgreStringConverter.cpp	Sat May 26 18:43:38 2012
+@@ -62,7 +62,7 @@ namespace Ogre {
+         return stream.str();
+     }
+     //-----------------------------------------------------------------------
+-#if OGRE_PLATFORM != OGRE_PLATFORM_NACL &&  ( OGRE_ARCH_TYPE == OGRE_ARCHITECTURE_64 || OGRE_PLATFORM == OGRE_PLATFORM_APPLE || OGRE_PLATFORM == OGRE_PLATFORM_APPLE_IOS )
++#if OGRE_PLATFORM != OGRE_PLATFORM_NACL &&  ( OGRE_ARCH_TYPE == OGRE_ARCHITECTURE_64 || OGRE_PLATFORM == OGRE_PLATFORM_APPLE || OGRE_PLATFORM == OGRE_PLATFORM_APPLE_IOS || defined(__OpenBSD__) )
+     String StringConverter::toString(unsigned int val, 
+         unsigned short width, char fill, std::ios::fmtflags flags)
+     {
