@@ -14,7 +14,9 @@ PKGNAME-main =		${PKGNAME}
 PKGNAME-gtk =		${PKGNAME:S/-gadgets/-gadgets-gtk/}
 PKGNAME-qt =		${PKGNAME:S/-gadgets/-gadgets-qt/}
 
-REVISION-main =		2
+REVISION-main =		3
+REVISION-gtk =		0
+REVISION-qt =		0
 
 SHARED_LIBS =   ggadget-1.0               0.0 # 0.0
 SHARED_LIBS +=  ggadget-dbus-1.0          0.0 # 0.0
@@ -65,15 +67,20 @@ WANTLIB-qt += QtGui QtNetwork QtScript QtWebKit
 BUILD_DEPENDS =		archivers/zip \
 			devel/xulrunner/1.9,-devel
 
-RUN_DEPENDS =		devel/desktop-file-utils
-
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			archivers/zip \
-			devel/xulrunner/1.9
+			devel/xulrunner/1.9 \
+			misc/shared-mime-info \
+			x11/gtk+2,-guic
+
+RUN_DEPENDS-gtk =	${RUN_DEPENDS} \
+			devel/desktop-file-utils
+
+RUN_DEPENDS-qt =	${RUN_DEPENDS} \
+			devel/desktop-file-utils
 
 LIB_DEPENDS-common =	devel/libtool,-ltdl \
 
-# TODO check for x11/dbus-glib dependency
 LIB_DEPENDS-main = 	${LIB_DEPENDS-common} \
 			devel/glib \
 			devel/pango \
@@ -94,8 +101,6 @@ LIB_DEPENDS-gtk =	${BUILD_PKGPATH},-main \
 LIB_DEPENDS-qt =	${BUILD_PKGPATH},-main \
 			${LIB_DEPENDS-common} \
 			${MODQT_LIB_DEPENDS}
-
-SEPARATE_BUILD =	simple
 
 CONFIGURE_ARGS	=	-DGGL_DEFAULT_BROWSER_PLUGINS_DIR=${LOCALBASE}/lib/mozilla/plugins
 

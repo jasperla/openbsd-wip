@@ -1,4 +1,5 @@
 $OpenBSD$
+Unfuckup type definitions. Checked on i386 and amd64.
 --- ggadget/variant.h.ports.orig	Mon Dec 28 13:39:57 2009
 +++ ggadget/variant.h	Mon Oct 24 14:47:18 2011
 @@ -137,24 +137,23 @@ class Variant {
