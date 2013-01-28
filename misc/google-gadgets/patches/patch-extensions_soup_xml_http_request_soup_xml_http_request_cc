@@ -1,4 +1,5 @@
 $OpenBSD$
+Fix for -Werror.
 --- extensions/soup_xml_http_request/soup_xml_http_request.cc.ports.orig	Sat Oct 15 21:33:27 2011
 +++ extensions/soup_xml_http_request/soup_xml_http_request.cc	Sat Oct 15 21:35:29 2011
 @@ -857,6 +857,8 @@ class XMLHttpRequest : public ScriptableHelper<XMLHttp

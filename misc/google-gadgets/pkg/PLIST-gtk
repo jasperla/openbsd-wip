@@ -19,3 +19,5 @@ lib/google-gadgets/modules/gtkmoz-browser-element.so
 @lib lib/libggadget-gtk-1.0.so.${LIBggadget-gtk-1.0_VERSION}
 lib/pkgconfig/libggadget-gtk-1.0.pc
 share/applications/ggl-gtk.desktop
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

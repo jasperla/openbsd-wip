@@ -1,4 +1,5 @@
 $OpenBSD$
+Fix for -Werror.
 --- extensions/linux_system_framework/file_system.cc.ports.orig	Sat Oct 15 17:30:45 2011
 +++ extensions/linux_system_framework/file_system.cc	Sat Oct 15 17:33:54 2011
 @@ -1631,7 +1631,7 @@ static bool OperateWildcard(
