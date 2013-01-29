@@ -241,7 +241,9 @@ prepare() {
 	if is_stable_ver $NEW_KDE_PORT_VER; then
 		ear rm -f $NEW_KDE_PORT_DIR/l10n/distinfo
 	else
-		# Unstable KDE versions usually lacks l10n
+		# Unstable KDE versions usually lacks l10n.
+		# And if not, we don't care either, they will not
+		# hit the CVS anyway.
 		ear rm -Rf $NEW_KDE_PORT_DIR/l10n
 	fi
 	for P in $LOCAL_PORTS; do
