@@ -12,17 +12,6 @@ bif_crypto.c: In function 'bif_get_certificate_info':
 bif_crypto.c:1495: warning: assignment discards qualifiers from pointer target type
 bif_crypto.c:1534: warning: assignment discards qualifiers from pointer target type
 
-In file included from wi.h:91,
-                 from strlike.h:29,
-                 from http.h:49,
-                 from bif_intl.c:32:
-ltrx.h:110:1: warning: "RB_INSERT" redefined
-In file included from /usr/include/net/if.h:39,
-                 from ../../libsrc/Dk/Dksestcp.h:39,
-                 from http.h:32,
-                 from bif_intl.c:32:
-/usr/include/sys/tree.h:719:1: warning: this is the location of the previous definition
-
 
 bif_search_excerpt.c: In function 'st_utf8_str_contains_unaccented_ucase_wstr':
 bif_search_excerpt.c:99: warning: 'first_utf8len' may be used uninitialized in this function
@@ -33,33 +22,9 @@ bif_search_excerpt.c:992: warning: 'hit_index_cluster_ofs' may be used uninitial
 bif_search_excerpt.c:811: warning: 'text' may be used uninitialized in this function
 
 
-cc -DHAVE_CONFIG_H -I. -I../../libsrc/Dk -fomit-frame-pointer -fno-strict-aliasing -O2 -Wall -DNDEBUG -I/usr/ports/pobj/virtuoso-6.1.6/virtuoso-opensource-6.1.6/libsrc/Xml.new -DOPENSSL_NO_KRB5 -I../../libsrc -I../../libsrc/Dk -I. -I../../libsrc/langfunc -I../../libsrc/plugin -I../../libsrc/Tidy -I../../libsrc/Xml.new -I../../libsrc/odbcsdk/include -DVAD -DDBP -DBIF_XPER -DOPSYS="UNKNOWN" -DHOST="i386-unknown-openbsd5.2" -O2 -pipe -I/usr/local/include/wbxml -L/usr/local/lib -MT libwi_la-disk.lo -MD -MP -MF .deps/libwi_la-disk.Tpo -c disk.c -o libwi_la-disk.o
-disk.c: In function 'wi_open':
-disk.c:3624: warning: integer constant is too large for 'long' type
-
-
 cc -DHAVE_CONFIG_H -I. -I../../libsrc/Dk -fomit-frame-pointer -fno-strict-aliasing -O2 -Wall -DNDEBUG -I/usr/ports/pobj/virtuoso-6.1.6/virtuoso-opensource-6.1.6/libsrc/Xml.new -DOPENSSL_NO_KRB5 -I../../libsrc -I../../libsrc/Dk -I. -I../../libsrc/langfunc -I../../libsrc/plugin -I../../libsrc/Tidy -I../../libsrc/Xml.new -I../../libsrc/odbcsdk/include -DVAD -DDBP -DBIF_XPER -DOPSYS="UNKNOWN" -DHOST="i386-unknown-openbsd5.2" -O2 -pipe -I/usr/local/include/wbxml -L/usr/local/lib -MT libwi_la-multibyte.lo -MD -MP -MF .deps/libwi_la-multibyte.Tpo -c multibyte.c -fPIC -DPIC -o .libs/libwi_la-multibyte.o
 multibyte.c: In function 'wide_char_length_of_utf8_string':
 multibyte.c:268: warning: passing argument 2 of 'virt_mbsnrtowcs' from incompatible pointer type
-
-
-cc -DHAVE_CONFIG_H -I. -I../../libsrc/Dk -fomit-frame-pointer -fno-strict-aliasing -O2 -Wall -DNDEBUG -I/usr/ports/pobj/virtuoso-6.1.6/virtuoso-opensource-6.1.6/libsrc/Xml.new -DOPENSSL_NO_KRB5 -I../../libsrc -I../../libsrc/Dk -I. -I../../libsrc/langfunc -I../../libsrc/plugin -I../../libsrc/Tidy -I../../libsrc/Xml.new -I../../libsrc/odbcsdk/include -DVAD -DDBP -DBIF_XPER -DOPSYS="UNKNOWN" -DHOST="i386-unknown-openbsd5.2" -O2 -pipe -I/usr/local/include/wbxml -L/usr/local/lib -MT libwi_la-recovery.lo -MD -MP -MF .deps/libwi_la-recovery.Tpo -c recovery.c -fPIC -DPIC -o .libs/libwi_la-recovery.o
-recovery.c: In function 'bkp_check_and_recover_blob_cols':
-recovery.c:399: warning: right shift count >= width of type
-recovery.c:399: warning: right shift count >= width of type
-recovery.c:399: warning: right shift count >= width of type
-recovery.c:399: warning: right shift count >= width of type
-recovery.c:400: warning: right shift count >= width of type
-recovery.c:400: warning: right shift count >= width of type
-recovery.c:400: warning: right shift count >= width of type
-recovery.c:400: warning: right shift count >= width of type
-
-
-cc -DHAVE_CONFIG_H -I. -I../../libsrc/Dk -fomit-frame-pointer -fno-strict-aliasing -O2 -Wall -DNDEBUG -I/usr/ports/pobj/virtuoso-6.1.6/virtuoso-opensource-6.1.6/libsrc/Xml.new -DOPENSSL_NO_KRB5 -I../../libsrc -I../../libsrc/Dk -I. -I../../libsrc/langfunc -I../../libsrc/plugin -I../../libsrc/Tidy -I../../libsrc/Xml.new -I../../libsrc/odbcsdk/include -DVAD -DDBP -DBIF_XPER -DOPSYS="UNKNOWN" -DHOST="i386-unknown-openbsd5.2" -O2 -pipe -I/usr/local/include/wbxml -L/usr/local/lib -MT libwi_la-row.lo -MD -MP -MF .deps/libwi_la-row.Tpo -c row.c -fPIC -DPIC -o .libs/libwi_la-row.o
-row.c: In function 'page_copy_col':
-row.c:675: warning: integer constant is too large for 'long' type
-row.c:678: warning: integer constant is too large for 'long' type
-
 
 
 cc -DHAVE_CONFIG_H -I. -I../../libsrc/Dk -fomit-frame-pointer -fno-strict-aliasing -O2 -Wall -DNDEBUG -I/usr/ports/pobj/virtuoso-6.1.6/virtuoso-opensource-6.1.6/libsrc/Xml.new -DOPENSSL_NO_KRB5 -I../../libsrc -I../../libsrc/Dk -I. -I../../libsrc/langfunc -I../../libsrc/plugin -I../../libsrc/Tidy -I../../libsrc/Xml.new -I../../libsrc/odbcsdk/include -DVAD -DDBP -DBIF_XPER -DOPSYS="UNKNOWN" -DHOST="i386-unknown-openbsd5.2" -O2 -pipe -I/usr/local/include/wbxml -L/usr/local/lib -MT libwi_la-shcompo.lo -MD -MP -MF .deps/libwi_la-shcompo.Tpo -c shcompo.c -fPIC -DPIC -o .libs/libwi_la-shcompo.o
@@ -71,23 +36,6 @@ shcompo.c:511: warning: assignment from incompatible pointer type
 cc -DHAVE_CONFIG_H -I. -I../../libsrc/Dk -fomit-frame-pointer -fno-strict-aliasing -O2 -Wall -DNDEBUG -I/usr/ports/pobj/virtuoso-6.1.6/virtuoso-opensource-6.1.6/libsrc/Xml.new -DOPENSSL_NO_KRB5 -I../../libsrc -I../../libsrc/Dk -I. -I../../libsrc/langfunc -I../../libsrc/plugin -I../../libsrc/Tidy -I../../libsrc/Xml.new -I../../libsrc/odbcsdk/include -DVAD -DDBP -DBIF_XPER -DOPSYS="UNKNOWN" -DHOST="i386-unknown-openbsd5.2" -O2 -pipe -I/usr/local/include/wbxml -L/usr/local/lib -MT libwi_la-sql3.lo -MD -MP -MF .deps/libwi_la-sql3.Tpo -c sql3.c -fPIC -DPIC -o .libs/libwi_la-sql3.o
 ./sql3.y: In function 'yyparse':
 ./sql3.y:2416: warning: assignment from incompatible pointer type
-
-
-
-cc -DHAVE_CONFIG_H -I. -I../../libsrc/Dk -fomit-frame-pointer -fno-strict-aliasing -O2 -Wall -DNDEBUG -I/usr/ports/pobj/virtuoso-6.1.6/virtuoso-opensource-6.1.6/libsrc/Xml.new -DOPENSSL_NO_KRB5 -I../../libsrc -I../../libsrc/Dk -I. -I../../libsrc/langfunc -I../../libsrc/plugin -I../../libsrc/Tidy -I../../libsrc/Xml.new -I../../libsrc/odbcsdk/include -DVAD -DDBP -DBIF_XPER -DOPSYS="UNKNOWN" -DHOST="i386-unknown-openbsd5.2" -O2 -pipe -I/usr/local/include/wbxml -L/usr/local/lib -MT libwi_la-sqlbif.lo -MD -MP -MF .deps/libwi_la-sqlbif.Tpo -c sqlbif.c -o libwi_la-sqlbif.o
-sqlbif.c: In function 'bif_key_replay_insert':
-sqlbif.c:10530: warning: unused variable 'cl'
-sqlbif.c:10544: warning: unused variable 'cl'
-sqlbif.c: In function 'bif_spin_wait_meter':
-sqlbif.c:12820: warning: unused variable 'qi'
-sqlbif.c: In function 'bif_rdf_checksum_int':
-sqlbif.c:14509: warning: 'res_len' is used uninitialized in this function
-sqlbif.c: In function 'bif_rdf_substr_impl':
-sqlbif.c:14037: warning: 'lenl' may be used uninitialized in this function
-sqlbif.c: In function 'bif_exec_result':
-sqlbif.c:1191: warning: 'dummy' is used uninitialized in this function
-sqlbif.c: In function 'bif_result':
-sqlbif.c:1120: warning: 'dummy' is used uninitialized in this function
 
 
 cc -DHAVE_CONFIG_H -I. -I../../libsrc/Dk -fomit-frame-pointer -fno-strict-aliasing -O2 -Wall -DNDEBUG -I/usr/ports/pobj/virtuoso-6.1.6/virtuoso-opensource-6.1.6/libsrc/Xml.new -DOPENSSL_NO_KRB5 -I../../libsrc -I../../libsrc/Dk -I. -I../../libsrc/langfunc -I../../libsrc/plugin -I../../libsrc/Tidy -I../../libsrc/Xml.new -I../../libsrc/odbcsdk/include -DVAD -DDBP -DBIF_XPER -DOPSYS="UNKNOWN" -DHOST="i386-unknown-openbsd5.2" -O2 -pipe -I/usr/local/include/wbxml -L/usr/local/lib -MT libwi_la-sqlo.lo -MD -MP -MF .deps/libwi_la-sqlo.Tpo -c sqlo.c -fPIC -DPIC -o .libs/libwi_la-sqlo.o
@@ -128,16 +76,6 @@ srvstat.c:1481: warning: initialization from incompatible pointer type
 srvstat.c:1495: warning: initialization from incompatible pointer type
 srvstat.c: In function 'srv_ip':
 srvstat.c:1588: warning: unused variable 'herrnop'
-srvstat.c: In function 'col_comp_print':
-srvstat.c:2518: warning: format '%d' expects type 'int', but argument 3 has type 'long unsigned int'
-srvstat.c:2518: warning: format '%d' expects type 'int', but argument 4 has type 'long unsigned int'
-srvstat.c:2538: warning: format '%d' expects type 'int', but argument 3 has type 'long unsigned int'
-srvstat.c:2538: warning: format '%d' expects type 'int', but argument 4 has type 'long unsigned int'
-srvstat.c: In function 'row_map_fprint':
-srvstat.c:2603: warning: format '%d' expects type 'int', but argument 3 has type 'long int'
-srvstat.c:2665: warning: format '%d' expects type 'int', but argument 3 has type 'long int'
-srvstat.c: In function 'rep_num_scale':
-srvstat.c:3447: warning: integer constant is too large for 'long' type
 srvstat.c: At top level:
 srvstat.c:1157: warning: 'oneL' defined but not used
 
@@ -296,18 +234,6 @@ bif_imap.c:695: warning: the address of 'resp' will always evaluate as 'true'
 bif_imap.c:229: warning: 'uid' may be used uninitialized in this function
 
 
-cc -DHAVE_CONFIG_H -I. -I../../libsrc/Dk -fomit-frame-pointer -fno-strict-aliasing -O2 -Wall -DNDEBUG -I/usr/ports/pobj/virtuoso-6.1.6/virtuoso-opensource-6.1.6/libsrc/Xml.new -DOPENSSL_NO_KRB5 -I../../libsrc -I../../libsrc/Dk -I../../libsrc/plugin -I../../libsrc/langfunc -I../../libsrc/odbcsdk/include -O2 -pipe -I/usr/local/include/wbxml -L/usr/local/lib -MT libwic_la-CLIodbc3.lo -MD -MP -MF .deps/libwic_la-CLIodbc3.Tpo -c CLIodbc3.c -fPIC -DPIC -o .libs/libwic_la-CLIodbc3.o
-CLIodbc3.c: In function 'virtodbc__SQLAllocHandle':
-CLIodbc3.c:51: warning: unused variable 'rc'
-CLIodbc3.c: In function 'virtodbc__SQLFreeHandle':
-CLIodbc3.c:96: warning: unused variable 'stmt'
-CLIodbc3.c: In function 'virtodbc__SQLGetDiagRec':
-CLIodbc3.c:348: warning: the address of 'pcbSqlstate' will always evaluate as 'true'
-CLIodbc3.c:348: warning: the address of 'pcbSqlstate' will always evaluate as 'true'
-CLIodbc3.c:364: warning: the address of 'pcbSqlstate' will always evaluate as 'true'
-CLIodbc3.c:364: warning: the address of 'pcbSqlstate' will always evaluate as 'true'
-
-
 cc -DHAVE_CONFIG_H -I. -I../../libsrc/Dk -fomit-frame-pointer -fno-strict-aliasing -O2 -Wall -DNDEBUG -I/usr/ports/pobj/virtuoso-6.1.6/virtuoso-opensource-6.1.6/libsrc/Xml.new -DOPENSSL_NO_KRB5 -I../../libsrc -I../../libsrc/Dk -I../../libsrc/plugin -I../../libsrc/langfunc -I../../libsrc/odbcsdk/include -O2 -pipe -I/usr/local/include/wbxml -L/usr/local/lib -MT libwic_la-CLIsql3W.lo -MD -MP -MF .deps/libwic_la-CLIsql3W.Tpo -c CLIsql3W.c -fPIC -DPIC -o .libs/libwic_la-CLIsql3W.o
 In file included from CLIsql3W.c:32:
 CLIsql3.c: In function 'virtodbc__SQLDriverConnect':
@@ -322,18 +248,6 @@ cc -DHAVE_CONFIG_H -I. -I../../libsrc/Dk -fomit-frame-pointer -fno-strict-aliasi
 multibyte.c: In function 'wide_char_length_of_utf8_string':
 multibyte.c:268: warning: passing argument 2 of 'virt_mbsnrtowcs' from incompatible pointer type
 
-
-cc -DHAVE_CONFIG_H -I. -I../../libsrc/Dk -fomit-frame-pointer -fno-strict-aliasing -O2 -Wall -DNDEBUG -I/usr/ports/pobj/virtuoso-6.1.6/virtuoso-opensource-6.1.6/libsrc/Xml.new -DOPENSSL_NO_KRB5 -D_GNU_SOURCE -DGLOBALREF=extern -D_USRDLL -I../../libsrc -I../../libsrc/Dk -I../../libsrc/langfunc -I../../libsrc/plugin -I../../libsrc/Tidy -I../../libsrc/Xml.new -I../../libsrc/Wi -I../../libsrc/odbcsdk/include -O2 -pipe -I/usr/local/include/wbxml -L/usr/local/lib -MT plugin_sample_la-plugin_sample.lo -MD -MP -MF .deps/plugin_sample_la-plugin_sample.Tpo -c plugin_sample.c -fPIC -DPIC -o .libs/plugin_sample_la-plugin_sample.o
-In file included from plugin_sample.c:24:
-import_gate_virtuoso.h:470:1: warning: "mutex_enter" redefined
-In file included from import_gate_virtuoso.h:16,
-                 from plugin_sample.c:24:
-../Wi/wi.h:1660:1: warning: this is the location of the previous definition
-In file included from plugin_sample.c:24:
-import_gate_virtuoso.h:472:1: warning: "mutex_leave" redefined
-In file included from import_gate_virtuoso.h:16,
-                 from plugin_sample.c:24:
-../Wi/wi.h:1661:1: warning: this is the location of the previous definition
 
 
 cc -DHAVE_CONFIG_H -I. -I../../libsrc/Dk -fomit-frame-pointer -fno-strict-aliasing -O2 -Wall -DNDEBUG -I/usr/ports/pobj/virtuoso-6.1.6/virtuoso-opensource-6.1.6/libsrc/Xml.new -DOPENSSL_NO_KRB5 -DXML_NS -DDTD_VALIDATION -D_XML_SCHEMA -I../../libsrc -I../../libsrc/Dk -I../../libsrc/langfunc -I../../libsrc/plugin -I../../libsrc/Wi -I../../libsrc/odbcsdk/include -I../../libsrc/util/pcrelib -O2 -pipe -I/usr/local/include/wbxml -L/usr/local/lib -MT libxml_la-dtd.lo -MD -MP -MF .deps/libxml_la-dtd.Tpo -c dtd.c -fPIC -DPIC -o .libs/libxml_la-dtd.o
@@ -367,43 +281,3 @@ isql.c:9823: warning: passing argument 2 of 'getservbyname' from incompatible po
 isql.c: In function 'get_list_of_datasources':
 isql.c:10102: warning: passing argument 2 of 'my_strncat' from incompatible pointer type
 
-
-cc -DHAVE_CONFIG_H -I. -I../../libsrc/Dk -fomit-frame-pointer -fno-strict-aliasing -O2 -Wall -DNDEBUG -I/usr/ports/pobj/virtuoso-6.1.6/virtuoso-opensource-6.1.6/libsrc/Xml.new -DOPENSSL_NO_KRB5 -I../../libsrc -I../../libsrc/Dk -I../../libsrc/Wi -I../../libsrc/odbcsdk/include -I../../libsrc/langfunc -I../../libsrc/plugin -DUNIX -DUNIX_ODBC -DDSN_TRANSLATION -O2 -pipe -I/usr/local/include/wbxml -L/usr/local/lib -MT libvirtodbc_la-CLIuti.lo -MD -MP -MF .deps/libvirtodbc_la-CLIuti.Tpo -c ../../libsrc/Wi/CLIuti.c -fPIC -DPIC -o .libs/libvirtodbc_la-CLIuti.o
-In file included from ../../libsrc/Wi/odbcinc.h:63,
-                 from ../../libsrc/Wi/CLI.h:32,
-                 from ../../libsrc/Wi/CLIuti.c:28:
-../../libsrc/Wi/iodbcinst.h:35:1: warning: "HAVE_ODBCINST_H" redefined
-In file included from ../../libsrc/Dk/Dkconfig.h:33,
-                 from ../../libsrc/Dk/Dksystem.h:37,
-                 from ../../libsrc/Dk.h:40,
-                 from ../../libsrc/Wi/CLI.h:31,
-                 from ../../libsrc/Wi/CLIuti.c:28:
-../../libsrc/Dk/config.h:165:1: warning: this is the location of the previous definition
-
-
-cc -DHAVE_CONFIG_H -I. -I../../../libsrc/Dk -fomit-frame-pointer -fno-strict-aliasing -O2 -Wall -DNDEBUG -I/usr/ports/pobj/virtuoso-6.1.6/virtuoso-opensource-6.1.6/libsrc/Xml.new -
-DOPENSSL_NO_KRB5 -I../../../libsrc -I../../../libsrc/Dk -I../../../libsrc/Wi -I../../../libsrc/odbcsdk/include -I../../../libsrc/plugin -I../../../libsrc/langfunc -I/usr/local/incl
-ude/ImageMagick -pthread -D_GNU_SOURCE -DGLOBALREF=extern -D_USRDLL -O2 -pipe -I/usr/local/include/wbxml -L/usr/local/lib -MT im_la-im.lo -MD -MP -MF .deps/im_la-im.Tpo -c im.c -o 
-im_la-im.o
-In file included from im.c:25:
-../../../libsrc/plugin/import_gate_virtuoso.h:470:1: warning: "mutex_enter" redefined
-In file included from ../../../libsrc/plugin/import_gate_virtuoso.h:16,
-                 from im.c:25:
-../../../libsrc/plugin/../Wi/wi.h:1660:1: warning: this is the location of the previous definition
-In file included from im.c:25:
-../../../libsrc/plugin/import_gate_virtuoso.h:472:1: warning: "mutex_leave" redefined
-In file included from ../../../libsrc/plugin/import_gate_virtuoso.h:16,
-                 from im.c:25:
-../../../libsrc/plugin/../Wi/wi.h:1661:1: warning: this is the location of the previous definition
-im.c: In function 'bif_im_get_impl':
-im.c:313: warning: 'MagickGetImageAttribute' is deprecated (declared at /usr/local/include/ImageMagick/wand/deprecate.h:60)
-
-
-wbxml2.c: In function 'bif_wbxml2xml':
-wbxml2.c:67: warning: implicit declaration of function 'wbxml_realloc'
-wbxml2.c:67: warning: assignment makes pointer from integer without a cast
-wbxml2.c:70: warning: 'wbxml_conv_wbxml2xml_withlen' is deprecated (declared at /usr/local/include/wbxml/wbxml_conv.h:239)
-wbxml2.c:81: warning: implicit declaration of function 'wbxml_free'
-wbxml2.c: In function 'bif_xml2wbxml':
-wbxml2.c:99: warning: assignment makes pointer from integer without a cast
-wbxml2.c:107: warning: 'wbxml_conv_xml2wbxml_withlen' is deprecated (declared at /usr/local/include/wbxml/wbxml_conv.h:265)

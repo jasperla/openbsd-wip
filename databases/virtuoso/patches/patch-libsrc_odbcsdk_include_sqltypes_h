@@ -1,4 +1,6 @@
 $OpenBSD$
+This hackish header tries to detect of wchar_t type is available
+in a hacky way, so provide a hack for him to our hackiders too.
 --- libsrc/odbcsdk/include/sqltypes.h.orig	Tue Apr 11 21:56:16 2006
 +++ libsrc/odbcsdk/include/sqltypes.h	Fri Sep  9 00:19:03 2011
 @@ -392,6 +392,7 @@ typedef unsigned short SQLWCHAR;

@@ -1,7 +1,7 @@
 $OpenBSD$
---- libsrc/Wi/system.sql.orig	Tue Oct 25 02:39:17 2011
-+++ libsrc/Wi/system.sql	Tue Oct 25 02:39:31 2011
-@@ -1060,7 +1060,7 @@ done:
+--- libsrc/Wi/system.sql.orig	Thu Aug  2 03:11:51 2012
++++ libsrc/Wi/system.sql	Tue Jan 29 19:31:22 2013
+@@ -1062,7 +1062,7 @@ done:
    inx := 0;
    while (inx < length (cols))
      {

@@ -3,7 +3,7 @@
 COMMENT =	object-relational SQL database
 DISTNAME =	virtuoso-opensource-6.1.6
 PKGNAME =	${DISTNAME:C/-opensource//}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	databases
 HOMEPAGE =	http://www.openlinksw.com/
@@ -17,11 +17,12 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =  ICE MagickCore MagickWand SM X11 Xext Xt bz2 c crypto
 WANTLIB += djvulibre expat fftw3 fontconfig freetype iconv
 WANTLIB += jasper jbig jpeg lcms2 ltdl lzma m png pthread ssl tiff
-WANTLIB += wmf-0.2 wmflite-0.2 xcb xml2 z
+WANTLIB += wbxml2 wmf-0.2 wmflite-0.2 xcb xml2 z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=virtuoso/}
 
 MODULES =		lang/php lang/python lang/ruby
+MODRUBY_REV =		1.9
 
 BUILD_DEPENDS =		devel/bison \
 			devel/flex \
@@ -30,7 +31,8 @@ BUILD_DEPENDS =		devel/bison \
 
 LIB_DEPENDS =		graphics/ImageMagick \
 			graphics/lcms2 \
-			textproc/libxml \
+			textproc/libwbxml \
+			textproc/libxml
 
 USE_LIBTOOL =		Yes
 
@@ -38,24 +40,21 @@ CONFIGURE_STYLE =	gnu autoconf
 AUTOCONF_VERSION =	2.61
 AUTOMAKE_VERSION =	1.9
 
-COPTS =			-L${LOCALBASE}/lib
-
-CONFIGURE_ENV =		CFLAGS="${CFLAGS}" \
+CONFIGURE_ENV =		CFLAGS="${CFLAGS} -L${LOCALBASE}/lib" \
 			YACC="${LOCALBASE}/bin/bison -y"
 
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
+CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--disable-all-vads \
+			--disable-krb \
 			--disable-hslookup \
 			--disable-mono \
 			--disable-openldap \
+			--enable-wbxml2=${LOCALBASE} \
 			--without-internal-zlib \
 			--with-jdk2=no \
 			--with-jdk3=no \
 			--with-jdk4=no \
 			--with-layout=OpenBSD
-
-#REGRESS_IS_INTERACTIVE =	Yes
-#REGRESS_TARGET =		check
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/virtuoso
