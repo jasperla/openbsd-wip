@@ -63,6 +63,7 @@ share/wireshark/diameter/Cisco.xml
 share/wireshark/diameter/Ericsson.xml
 share/wireshark/diameter/Nokia.xml
 share/wireshark/diameter/NokiaSiemensNetworks.xml
+share/wireshark/diameter/SKT.xml
 share/wireshark/diameter/TGPPGmb.xml
 share/wireshark/diameter/TGPPRx.xml
 share/wireshark/diameter/TGPPS9.xml
@@ -109,6 +110,7 @@ share/wireshark/mergecap.html
 share/wireshark/pdml2html.xsl
 share/wireshark/radius/
 share/wireshark/radius/README.radius_dictionary
+share/wireshark/radius/custom.includes
 share/wireshark/radius/dictionary
 share/wireshark/radius/dictionary.3com
 share/wireshark/radius/dictionary.3gpp
@@ -217,9 +219,12 @@ share/wireshark/radius/dictionary.rfc4818
 share/wireshark/radius/dictionary.rfc4849
 share/wireshark/radius/dictionary.rfc5090
 share/wireshark/radius/dictionary.rfc5176
+share/wireshark/radius/dictionary.rfc5447
 share/wireshark/radius/dictionary.rfc5580
 share/wireshark/radius/dictionary.rfc5607
 share/wireshark/radius/dictionary.rfc5904
+share/wireshark/radius/dictionary.rfc6519
+share/wireshark/radius/dictionary.rfc6572
 share/wireshark/radius/dictionary.riverstone
 share/wireshark/radius/dictionary.roaringpenguin
 share/wireshark/radius/dictionary.shasta

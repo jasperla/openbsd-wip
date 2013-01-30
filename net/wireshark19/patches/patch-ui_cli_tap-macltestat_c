@@ -1,0 +1,23 @@
+$OpenBSD$
+--- ui/cli/tap-macltestat.c.orig	Wed Dec 26 06:03:25 2012
++++ ui/cli/tap-macltestat.c	Wed Jan 30 19:40:22 2013
+@@ -501,16 +501,16 @@ mac_lte_stat_draw(void *phs)
+ }
+ 
+ /* Create a new MAC LTE stats struct */
+-static void mac_lte_stat_init(const char *optarg, void *userdata _U_)
++static void mac_lte_stat_init(const char *optarg_p, void *userdata _U_)
+ {
+     mac_lte_stat_t    *hs;
+     const char    *filter = NULL;
+     GString       *error_string;
+ 
+     /* Check for a filter string */
+-    if (strncmp(optarg, "mac-lte,stat,", 13) == 0) {
++    if (strncmp(optarg_p, "mac-lte,stat,", 13) == 0) {
+         /* Skip those characters from filter to display */
+-        filter = optarg + 13;
++        filter = optarg_p + 13;
+     }
+     else {
+         /* No filter */

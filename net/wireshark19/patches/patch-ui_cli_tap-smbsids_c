@@ -1,0 +1,12 @@
+$OpenBSD$
+--- ui/cli/tap-smbsids.c.orig	Thu Sep 20 02:35:28 2012
++++ ui/cli/tap-smbsids.c	Wed Jan 30 19:40:22 2013
+@@ -62,7 +62,7 @@ smbsids_draw(void *pss _U_)
+ 
+ 
+ static void
+-smbsids_init(const char *optarg _U_, void* userdata _U_)
++smbsids_init(const char *optarg_p _U_, void* userdata _U_)
+ {
+ 	GString *error_string;
+ 
