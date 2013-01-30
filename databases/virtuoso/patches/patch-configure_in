@@ -1,7 +1,10 @@
 $OpenBSD$
---- configure.in.orig	Tue Jul 10 11:10:16 2012
-+++ configure.in	Tue Jul 10 11:10:29 2012
-@@ -217,6 +217,23 @@ case ${VIRTUOSO_LAYOUT} in
+Add OpenBSD default configuration profile.
+Force using of GNU flex.
+Help to find Kerberos and libwbxml.
+--- configure.in.orig	Thu Aug  2 02:03:31 2012
++++ configure.in	Tue Jan 29 23:07:18 2013
+@@ -234,6 +234,23 @@ case ${VIRTUOSO_LAYOUT} in
  	hostingdir=$libdir/virtuoso/hosting
  	;;
  
@@ -25,7 +28,7 @@ $OpenBSD$
    [[Oo]][[Pp]][[Tt]])					# /opt
  	virtuoso_layout=opt
  	test "x$prefix" = xNONE && prefix=/opt/virtuoso-opensource
-@@ -246,7 +263,7 @@ case ${VIRTUOSO_LAYOUT} in
+@@ -263,7 +280,7 @@ case ${VIRTUOSO_LAYOUT} in
    *)							# UNKNOWN
    	AC_MSG_RESULT(unknown)
  	echo ""
@@ -34,7 +37,7 @@ $OpenBSD$
  	echo ""
  	AC_MSG_ERROR([unable to continue])
  	;;
-@@ -366,9 +383,10 @@ AC_PROG_YACC
+@@ -383,9 +400,10 @@ AC_PROG_YACC
  AC_PATH_PROG(HTMLDOC, htmldoc)
  AM_CONDITIONAL(WITH_HTMLDOC, test "x$HTMLDOC" != "x")
  
@@ -47,7 +50,16 @@ $OpenBSD$
  AC_PATH_PROG(GAWK, gawk, gawk)
  AC_PATH_PROG(GPERF, gperf, gperf)
  AC_PATH_PROG(PERL, perl, perl)
-@@ -1404,7 +1422,8 @@ then
+@@ -1403,7 +1421,7 @@ then
+ 	   WBXML2_LDFLAGS="-lwbxml2"
+ 	   ;;
+ 	*)
+-	   WBXML2_CFLAGS="-I$with_wbxml2/include"
++	   WBXML2_CFLAGS="-I$with_wbxml2/include/wbxml"
+ 	   WBXML2_LDFLAGS="-L$with_wbxml2/lib -lwbxml2"
+ 	   LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$with_wbxml2/lib"
+ 	   export LD_LIBRARY_PATH
+@@ -1421,7 +1439,8 @@ then
  int
  main ()
  {

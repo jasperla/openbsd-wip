@@ -37,6 +37,8 @@ lib/virtuoso/
 lib/virtuoso/hosting/
 lib/virtuoso/hosting/im.a
 lib/virtuoso/hosting/im.la
+lib/virtuoso/hosting/wbxml2.a
+lib/virtuoso/hosting/wbxml2.la
 share/doc/virtuoso/
 share/doc/virtuoso/AUTHORS
 share/doc/virtuoso/COPYING
