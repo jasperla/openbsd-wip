@@ -9,7 +9,7 @@ ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		scheme dialect often used for teaching programming
 
-V =			5.3.1
+V =			5.3.2
 PKGNAME =		racket-$V
 DISTNAME =		racket-$V-src-unix
 #DISTNAME =		plt-$V-src-unix
@@ -97,11 +97,5 @@ do-install:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} \
 		PLT_SETUP_OPTIONS="-j 1" ${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} \
 		-f ${MAKE_FILE} ${FAKE_TARGET}
-
-.if ${MACHINE_ARCH} == "amd64"
-PKG_ARGS+=-Damd64=1 -Di386=0
-.elif ${MACHINE_ARCH} == "i386"
-PKG_ARGS+=-Damd64=0 -Di386=1
-.endif
 
 .include <bsd.port.mk>
