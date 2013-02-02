@@ -31,5 +31,7 @@ NO_REGRESS =	Yes
 CONFIGURE_ENV =	CFLAGS=-I${PREFIX}/include \
 		LDFLAGS="-L${PREFIX}/lib -liconv -lintl"
 
+MODKDE4_FIX_GETTEXT =	Yes
+
 # XXX have to do this manually here...
 .include "${.CURDIR}/../../Makefile.inc"
