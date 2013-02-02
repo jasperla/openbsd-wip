@@ -29,7 +29,6 @@ WANTLIB += cdio chromaprint lastfm mtp protobuf-lite qca2
 WANTLIB += qjson tag>=5.0 usb-1.0 xml2
 
 MODULES =		devel/cmake devel/gettext x11/qt4
-SEPARATE_BUILD =	Yes
 
 .include <bsd.port.arch.mk>
 
