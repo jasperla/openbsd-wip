@@ -267,6 +267,8 @@ LIB_DEPENDS${_s} :=	${LIB_DEPENDS${_s}:C@x11/kde4/@${_MODKDE4_REAL_DIR}/@}
 . endif
 .endif
 
+MODKDE4_FIX_GETTEXT ?=	Yes
+.if ${MODKDE4_FIX_GETTEXT:L} == "yes"
 # System (CMake) FindGettext.cmake requires having PO_FILES marker
 MODKDE4_post-patch =	@echo '====> Fixing GETTEXT_PROCESS_PO_FILES() calls'; \
 	cd ${WRKSRC} && find . -name CMakeLists.txt | sort | \
@@ -281,6 +283,7 @@ MODKDE4_post-patch =	@echo '====> Fixing GETTEXT_PROCESS_PO_FILES() calls'; \
 				echo "$$F" >&2; \
 			fi; \
 		done
+.endif
 
 # Some KDE ports install files under ${SYSCONFDIR}.
 # We want to have them under ${PREFIX}/share/examples or such,
