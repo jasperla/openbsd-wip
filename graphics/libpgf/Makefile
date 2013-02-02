@@ -4,7 +4,7 @@ COMMENT =	PGF image format handling library
 V =		6.12.24
 DISTNAME =	libpgf-$V-src
 PKGNAME =	${DISTNAME:C/-src//}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =		pgf			0.0
 
@@ -25,7 +25,9 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libpgf/}
 BUILD_DEPENDS =		devel/doxygen
 
 # needs libtoolize
-USE_LIBTOOL =		gnu
+USE_LIBTOOL =		Yes
+BUILD_DEPENDS +=	devel/libtool
+
 CONFIGURE_STYLE =	gnu autoconf automake
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.9

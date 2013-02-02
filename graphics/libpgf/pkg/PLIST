@@ -1,5 +1,4 @@
 @comment $OpenBSD$
-%%SHARED%%
 include/libpgf/
 include/libpgf/PGFimage.h
 include/libpgf/PGFplatform.h
@@ -7,6 +6,8 @@ include/libpgf/PGFstream.h
 include/libpgf/PGFtypes.h
 lib/libpgf.a
 @comment lib/libpgf.la
+@lib lib/libpgf.so.${LIBpgf_VERSION}
+lib/pkgconfig/
 lib/pkgconfig/libpgf.pc
 @comment @man man/man3/BitStream.h.3
 @man man/man3/CDecoder.3
@@ -17,7 +18,6 @@ lib/pkgconfig/libpgf.pc
 @man man/man3/CPGFImage.3
 @man man/man3/CPGFMemoryStream.3
 @man man/man3/CPGFStream.3
-@man man/man3/CRoiIndices.3
 @man man/man3/CSubband.3
 @man man/man3/CWaveletTransform.3
 @comment @man man/man3/Decoder.cpp.3
@@ -42,6 +42,8 @@ lib/pkgconfig/libpgf.pc
 @comment @man man/man3/Subband.h.3
 @comment @man man/man3/WaveletTransform.cpp.3
 @comment @man man/man3/WaveletTransform.h.3
+@man man/man3/_usr_ports_pobj_${PKGNAME}_libpgf_include_.3
+@man man/man3/_usr_ports_pobj_${PKGNAME}_libpgf_src_.3
 @comment @man man/man3/config.h.3
 share/doc/${PKGNAME}/
 share/doc/${PKGNAME}/html/
@@ -77,6 +79,7 @@ share/doc/${PKGNAME}/html/WaveletTransform_8h.html
 share/doc/${PKGNAME}/html/WaveletTransform_8h_source.html
 share/doc/${PKGNAME}/html/annotated.html
 share/doc/${PKGNAME}/html/bc_s.png
+share/doc/${PKGNAME}/html/bdwn.png
 share/doc/${PKGNAME}/html/classCDecoder-members.html
 share/doc/${PKGNAME}/html/classCDecoder.html
 share/doc/${PKGNAME}/html/classCDecoder_1_1CMacroBlock-members.html
@@ -96,8 +99,6 @@ share/doc/${PKGNAME}/html/classCPGFMemoryStream.png
 share/doc/${PKGNAME}/html/classCPGFStream-members.html
 share/doc/${PKGNAME}/html/classCPGFStream.html
 share/doc/${PKGNAME}/html/classCPGFStream.png
-share/doc/${PKGNAME}/html/classCRoiIndices-members.html
-share/doc/${PKGNAME}/html/classCRoiIndices.html
 share/doc/${PKGNAME}/html/classCSubband-members.html
 share/doc/${PKGNAME}/html/classCSubband.html
 share/doc/${PKGNAME}/html/classCWaveletTransform-members.html
@@ -106,9 +107,12 @@ share/doc/${PKGNAME}/html/classes.html
 share/doc/${PKGNAME}/html/closed.png
 share/doc/${PKGNAME}/html/config_8h.html
 share/doc/${PKGNAME}/html/config_8h_source.html
+share/doc/${PKGNAME}/html/dir_68267d1309a1af8e8297ef4c3efbcdba.html
+share/doc/${PKGNAME}/html/dir_d44c64559bbebec7f509842c48db8b23.html
 share/doc/${PKGNAME}/html/doxygen.png
 share/doc/${PKGNAME}/html/files.html
 share/doc/${PKGNAME}/html/ftv2blank.png
+share/doc/${PKGNAME}/html/ftv2cl.png
 share/doc/${PKGNAME}/html/ftv2doc.png
 share/doc/${PKGNAME}/html/ftv2folderclosed.png
 share/doc/${PKGNAME}/html/ftv2folderopen.png
@@ -116,9 +120,12 @@ share/doc/${PKGNAME}/html/ftv2lastnode.png
 share/doc/${PKGNAME}/html/ftv2link.png
 share/doc/${PKGNAME}/html/ftv2mlastnode.png
 share/doc/${PKGNAME}/html/ftv2mnode.png
+share/doc/${PKGNAME}/html/ftv2mo.png
 share/doc/${PKGNAME}/html/ftv2node.png
+share/doc/${PKGNAME}/html/ftv2ns.png
 share/doc/${PKGNAME}/html/ftv2plastnode.png
 share/doc/${PKGNAME}/html/ftv2pnode.png
+share/doc/${PKGNAME}/html/ftv2splitbar.png
 share/doc/${PKGNAME}/html/ftv2vertline.png
 share/doc/${PKGNAME}/html/functions.html
 share/doc/${PKGNAME}/html/functions_0x62.html
@@ -143,27 +150,6 @@ share/doc/${PKGNAME}/html/functions_0x76.html
 share/doc/${PKGNAME}/html/functions_0x77.html
 share/doc/${PKGNAME}/html/functions_0x7e.html
 share/doc/${PKGNAME}/html/functions_func.html
-share/doc/${PKGNAME}/html/functions_func_0x62.html
-share/doc/${PKGNAME}/html/functions_func_0x63.html
-share/doc/${PKGNAME}/html/functions_func_0x64.html
-share/doc/${PKGNAME}/html/functions_func_0x65.html
-share/doc/${PKGNAME}/html/functions_func_0x66.html
-share/doc/${PKGNAME}/html/functions_func_0x67.html
-share/doc/${PKGNAME}/html/functions_func_0x68.html
-share/doc/${PKGNAME}/html/functions_func_0x69.html
-share/doc/${PKGNAME}/html/functions_func_0x6c.html
-share/doc/${PKGNAME}/html/functions_func_0x6d.html
-share/doc/${PKGNAME}/html/functions_func_0x6e.html
-share/doc/${PKGNAME}/html/functions_func_0x6f.html
-share/doc/${PKGNAME}/html/functions_func_0x70.html
-share/doc/${PKGNAME}/html/functions_func_0x71.html
-share/doc/${PKGNAME}/html/functions_func_0x72.html
-share/doc/${PKGNAME}/html/functions_func_0x73.html
-share/doc/${PKGNAME}/html/functions_func_0x74.html
-share/doc/${PKGNAME}/html/functions_func_0x75.html
-share/doc/${PKGNAME}/html/functions_func_0x76.html
-share/doc/${PKGNAME}/html/functions_func_0x77.html
-share/doc/${PKGNAME}/html/functions_func_0x7e.html
 share/doc/${PKGNAME}/html/functions_rela.html
 share/doc/${PKGNAME}/html/functions_vars.html
 share/doc/${PKGNAME}/html/globals.html
@@ -175,8 +161,8 @@ share/doc/${PKGNAME}/html/globals_type.html
 share/doc/${PKGNAME}/html/globals_vars.html
 share/doc/${PKGNAME}/html/hierarchy.html
 share/doc/${PKGNAME}/html/index.html
-share/doc/${PKGNAME}/html/main.html
 share/doc/${PKGNAME}/html/nav_f.png
+share/doc/${PKGNAME}/html/nav_g.png
 share/doc/${PKGNAME}/html/nav_h.png
 share/doc/${PKGNAME}/html/open.png
 share/doc/${PKGNAME}/html/structIOException-members.html
@@ -195,10 +181,11 @@ share/doc/${PKGNAME}/html/structPGFRect-members.html
 share/doc/${PKGNAME}/html/structPGFRect.html
 share/doc/${PKGNAME}/html/structROIBlockHeader_1_1RBH-members.html
 share/doc/${PKGNAME}/html/structROIBlockHeader_1_1RBH.html
+share/doc/${PKGNAME}/html/sync_off.png
+share/doc/${PKGNAME}/html/sync_on.png
 share/doc/${PKGNAME}/html/tab_a.png
 share/doc/${PKGNAME}/html/tab_b.png
 share/doc/${PKGNAME}/html/tab_h.png
 share/doc/${PKGNAME}/html/tab_s.png
-share/doc/${PKGNAME}/html/tree.html
 share/doc/${PKGNAME}/html/unionROIBlockHeader-members.html
 share/doc/${PKGNAME}/html/unionROIBlockHeader.html
