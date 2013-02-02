@@ -5,7 +5,7 @@ COMMENT =	K Desktop Environment, frontend to moc
 VERSION =	0.9.88
 DISTNAME =	automoc4-${VERSION}
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	3
+REVISION =	4
 
 # 2-clause BSDL
 PERMIT_DISTFILES_CDROM =        Yes
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP =            Yes
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/automoc4/${VERSION}/}
 DIST_SUBDIR =	kde
 
-WANTLIB =	c m pthread stdc++
+WANTLIB =	c m stdc++
 
 MODULES =	x11/kde4
 MODKDE4_USE =
