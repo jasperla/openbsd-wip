@@ -3,7 +3,7 @@
 COMMENT =	object-relational SQL database
 DISTNAME =	virtuoso-opensource-6.1.6
 PKGNAME =	${DISTNAME:C/-opensource//}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	databases
 HOMEPAGE =	http://www.openlinksw.com/
@@ -20,9 +20,6 @@ WANTLIB += jasper jbig jpeg lcms2 ltdl lzma m png pthread ssl tiff
 WANTLIB += wbxml2 wmf-0.2 wmflite-0.2 xcb xml2 z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=virtuoso/}
-
-MODULES =		lang/php lang/python lang/ruby
-MODRUBY_REV =		1.9
 
 BUILD_DEPENDS =		devel/bison \
 			devel/flex \
@@ -45,16 +42,23 @@ CONFIGURE_ENV =		CFLAGS="${CFLAGS} -L${LOCALBASE}/lib" \
 
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--disable-all-vads \
-			--disable-krb \
 			--disable-hslookup \
-			--disable-mono \
 			--disable-openldap \
+			--disable-php \
+			--disable-python \
+			--disable-ruby \
 			--enable-wbxml2=${LOCALBASE} \
 			--without-internal-zlib \
 			--with-jdk2=no \
 			--with-jdk3=no \
 			--with-jdk4=no \
 			--with-layout=OpenBSD
+
+# Requires threaded or "multiplicity" Perl
+CONFIGURE_ARGS +=	--disable-perl
+
+# Requires MIT Kerberos
+CONFIGURE_ARGS +=	--disable-krb
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/virtuoso
