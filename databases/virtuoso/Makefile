@@ -3,7 +3,7 @@
 COMMENT =	object-relational SQL database
 DISTNAME =	virtuoso-opensource-6.1.6
 PKGNAME =	${DISTNAME:C/-opensource//}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	databases
 HOMEPAGE =	http://www.openlinksw.com/
