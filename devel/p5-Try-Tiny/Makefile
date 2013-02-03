@@ -3,7 +3,7 @@
 COMMENT =		minimal try/catch with proper localization of $\@
 
 MODULES =		cpan
-DISTNAME =		Try-Tiny-0.11
+DISTNAME =		Try-Tiny-0.12
 CATEGORIES =		devel
 
 MAINTAINER =		Cesare Gargano <gar@plusiagamma.org>
