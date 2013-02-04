@@ -17,7 +17,7 @@ $OpenBSD$
 -	d->action->setToolTip(i18n("Display the Postfix log."));
 -	d->action->setWhatsThis(i18n("Displays the Postfix log in the current tab. Postfix is the most known and used mail server in the Linux world."));
 +	d->action->setToolTip(i18n("Display mail log."));
-+	d->action->setWhatsThis(i18n("Displays log of mail daemon in the current tab."));
++	d->action->setWhatsThis(i18n("Displays summary log of mail daemons in the current tab."));
  
  }
  
