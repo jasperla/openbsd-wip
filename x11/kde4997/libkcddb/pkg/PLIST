@@ -13,7 +13,7 @@ lib/cmake/libkcddb/LibkcddbConfig.cmake
 lib/cmake/libkcddb/LibkcddbTargets${MODKDE4_CMAKE_PREFIX}.cmake
 lib/cmake/libkcddb/LibkcddbTargets.cmake
 lib/kde4/kcm_cddb.so
-lib/libkcddb.so
+@lib lib/libkcddb.so.${LIBkcddb_VERSION}
 share/apps/kconf_update/kcmcddb-emailsettings.upd
 share/config.kcfg/
 share/config.kcfg/libkcddb.kcfg
