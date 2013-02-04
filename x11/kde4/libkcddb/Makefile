@@ -2,6 +2,9 @@
 
 COMMENT =	KDE CDDB library
 DISTNAME =	libkcddb-${MODKDE_VERSION}
+REVISION =	0
+
+SHARED_LIBS =	kcddb		0.0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
