@@ -14,6 +14,9 @@ PKGNAME-edu =		kdeedu-${MODKDE4_VERSION}
 PKGNAME-graphics =	kdegraphics-${MODKDE4_VERSION}
 PKGNAME-multimedia =	kdemultimedia-${MODKDE4_VERSION}
 
+REVISION-main =		0
+REVISION-extras =	0
+
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 
 MODULES =		x11/kde4
@@ -25,7 +28,9 @@ MULTI_PACKAGES +=	-accessbility -edu -graphics -multimedia
 RUN_DEPENDS-main = \
 		STEM-=${MODKDE4_VERSION}:${BASE_PKGPATH},-accessbility \
 		x11/kde4/ark		\
+		x11/kde4/base-artwork	\
 		x11/kde4/kate		\
+		x11/kde4/kgpg		\
 		x11/kde4/konsole	\
 		x11/kde4/kwallet	\
 		x11/kde4/pim		\
@@ -40,16 +45,16 @@ RUN_DEPENDS-extras = \
 		STEM-=${MODKDE4_VERSION}:${BASE_PKGPATH},-graphics \
 		STEM-=${MODKDE4_VERSION}:${BASE_PKGPATH},-multimedia \
 		x11/kde4/artwork	\
-		x11/kde4/base-artwork	\
 		x11/kde4/kdf		\
 		x11/kde4/filelight	\
 		x11/kde4/kfloppy	\
-		x11/kde4/kgpg		\
 		x11/kde4/kremotecontrol \
 		x11/kde4/ktimer		\
 		x11/kde4/wallpapers	\
 		editors/kile-kde4	\
 		graphics/digikam-kde4,-main \
+		multimedia/k3b-kde4	\
+		multimedia/kdenlive	\
 		net/ktorrent-kde4	\
 		x11/yakuake-kde4
 
