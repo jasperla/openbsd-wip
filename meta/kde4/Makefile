@@ -7,26 +7,23 @@ COMMENT-edu =		KDE4 educational meta-package
 COMMENT-graphics =	KDE4 graphics meta-package
 COMMENT-multimedia =	KDE4 multimedia meta-package
 
-MODULES =		x11/kde4
-MODKDE4_USE =
-NO_BUILD =		Yes
-
-V =			${MODKDE4_VERSION}
-PKGNAME =		kde-${V}
-PKGNAME-main =		kde-${V}
-PKGNAME-extras =	kde-extras-${V}
-PKGNAME-accessbility =	kdeaccessbility-${V}
-PKGNAME-edu =		kdeedu-${V}
-PKGNAME-graphics =	kdegraphics-${V}
-PKGNAME-multimedia =	kdemultimedia-${V}
+PKGNAME-main =		kde-${MODKDE4_VERSION}
+PKGNAME-extras =	kde-extras-${MODKDE4_VERSION}
+PKGNAME-accessbility =	kdeaccessbility-${MODKDE4_VERSION}
+PKGNAME-edu =		kdeedu-${MODKDE4_VERSION}
+PKGNAME-graphics =	kdegraphics-${MODKDE4_VERSION}
+PKGNAME-multimedia =	kdemultimedia-${MODKDE4_VERSION}
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
+
+MODULES =		x11/kde4
+MODKDE4_USE =
 
 MULTI_PACKAGES =	-main -extras
 MULTI_PACKAGES +=	-accessbility -edu -graphics -multimedia
 
 RUN_DEPENDS-main = \
-		STEM-=${V}:${BASE_PKGPATH},-accessbility \
+		STEM-=${MODKDE4_VERSION}:${BASE_PKGPATH},-accessbility \
 		x11/kde4/ark		\
 		x11/kde4/kate		\
 		x11/kde4/konsole	\
@@ -38,10 +35,10 @@ RUN_DEPENDS-main = \
 		x11/kde4/workspace
 
 RUN_DEPENDS-extras = \
-		STEM-=${V}:${BASE_PKGPATH},-main \
-		STEM-=${V}:${BASE_PKGPATH},-edu \
-		STEM-=${V}:${BASE_PKGPATH},-graphics \
-		STEM-=${V}:${BASE_PKGPATH},-multimedia \
+		STEM-=${MODKDE4_VERSION}:${BASE_PKGPATH},-main \
+		STEM-=${MODKDE4_VERSION}:${BASE_PKGPATH},-edu \
+		STEM-=${MODKDE4_VERSION}:${BASE_PKGPATH},-graphics \
+		STEM-=${MODKDE4_VERSION}:${BASE_PKGPATH},-multimedia \
 		x11/kde4/artwork	\
 		x11/kde4/base-artwork	\
 		x11/kde4/kdf		\
