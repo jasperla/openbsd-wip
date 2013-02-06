@@ -1,18 +1,18 @@
 # $OpenBSD$
 
-BROKEN-i386 =		segfault in gui-debugger
+BROKEN-i386 =		segfault in gui-debugger due to bug in pixman
 
 SHARED_ONLY =		Yes
 
 # "sconfig.h" only supports i386 and amd64 on OpenBSD
 ONLY_FOR_ARCHS =	i386 amd64
 
-COMMENT =		scheme dialect often used for teaching programming
+COMMENT =		scheme dialect with IDE and teaching resources included
 
 V =			5.3.2
 PKGNAME =		racket-$V
+# The project uses racket-* for stable and plt-* for development releases
 DISTNAME =		racket-$V-src-unix
-#DISTNAME =		plt-$V-src-unix
 CATEGORIES =		lang
 HOMEPAGE =		http://racket-lang.org/
 MAINTAINER =		Juan Francisco Cantero Hurtado <iam@juanfra.info>
@@ -33,7 +33,7 @@ MASTER_SITES =		http://download.racket-lang.org/installers/${V}/racket/ \
 			http://download.tuxfamily.org/jod/lang/racket/
 EXTRACT_SUFX =		.tgz
 
-# base gcc fails on "foreign" folder (due to threads problems)
+# base gcc fails on "foreign" folder due to threads problems
 MODULES +=		converters/libiconv \
 			gcc4
 
@@ -41,7 +41,6 @@ MODGCC4_VERSION =	4.6
 MODGCC4_LANGS =		c
 MODGCC4_ARCHS =		*
 
-# XXX: it seems gtk+2 would merely be a BUILD/RUN_DEPENDS, need to check
 LIB_DEPENDS =		devel/libffi
 BUILD_DEPENDS =		graphics/cairo \
 			devel/pango \
@@ -83,16 +82,9 @@ CONFIGURE_ARGS +=	--disable-backtrace
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread -lcrypto -lGLU -lGL" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include -DMZ_USE_JIT_SSE"
 
-# -- Racket with futures disabled. 5.2 vs 5.3 --
-# Racket 5.2 (with futures disabled) compiles OK with the default limits of the
-# shell but for Racket 5.3 I need increase the limits. These problems occur
-# only when this port is compiled with sudo, when is compiled from the root
-# account all is OK.
-#
-# -- Racket + futures crash because the various make jobs --
-# It's necessary to use only one job for the make install. Racket uses various
-# jobs by default when futures is enabled, so Racket reaches the limits again
-# and crash.
+# It's necessary to use only one job for "make install". Racket uses various
+# jobs by default when futures is enabled. Racket will crash with more than
+# one job.
 do-install:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} \
 		PLT_SETUP_OPTIONS="-j 1" ${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} \
