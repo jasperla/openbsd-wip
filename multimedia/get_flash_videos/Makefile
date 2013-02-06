@@ -2,8 +2,8 @@
 
 COMMENT=		download flash video files from various sites
 
-DISTNAME=		App-get_flash_videos-1.24.20121106
-PKGNAME=		get_flash_videos-1.24.20121106
+DISTNAME=		App-get_flash_videos-1.24.20130206
+PKGNAME=		get_flash_videos-1.24.20130206
 #DISTNAME=		monsieurvideo-get-flash-videos-v1.24_02-292-gc52cdf6
 #PKGNAME=		get_flash_videos-1.24.20121012
 #WRKDIST=		${WRKDIR}/monsieurvideo-get-flash-videos-c52cdf6
@@ -23,10 +23,13 @@ MODULES=		cpan
 CPAN_AUTHOR=		MONSIEUR
 # git checkout
 #MASTER_SITES=		http://spacehopper.org/mirrors/
-MASTER_SITES=		https://github.com/downloads/njtaylor/get-flash-videos/
+#MASTER_SITES=		https://github.com/downloads/njtaylor/get-flash-videos/
+# No CPAN version yet....
+MASTER_SITES=		${HOMEPAGE}files/
 
 BUILD_DEPENDS=		devel/p5-Tie-IxHash
-RUN_DEPENDS=		devel/p5-Term-ReadKey \
+RUN_DEPENDS=		devel/p5-Module-Find \
+			devel/p5-Term-ReadKey \
 			devel/p5-Tie-IxHash \
 			multimedia/p5-AMF-Connection \
 			multimedia/p5-Data-AMF \
