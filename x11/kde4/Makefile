@@ -44,7 +44,7 @@
 #   |
 #   |-> former accessibility
 #   |-> libkdeedu
-#   |   |->former kdeedu
+#   |   |-> former kdeedu
 #   |
 #   |-> former kdeutils
 #   |-> former kdegraphics
