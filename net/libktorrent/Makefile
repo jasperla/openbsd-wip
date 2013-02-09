@@ -2,10 +2,9 @@
 
 CATEGORIES =	net
 COMMENT =	KTorrent engine
-V =		1.3.0
+V =		1.3.1
 DISTNAME =	libktorrent-$V
 HOMEPAGE =	http://ktorrent.org/
-REVISION =	2
 
 EXTRACT_SUFX =	.tar.bz2
 
