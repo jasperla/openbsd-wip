@@ -3,6 +3,7 @@
 CATEGORIES =	devel x11
 COMMENT =	integrated development environment for KDE 4
 V =		4.4.1
+PLATFORM_V =	1.4.1
 DISTNAME =	kdevelop-$V
 HOMEPAGE =	http://www.kdevelop.org/
 
@@ -47,7 +48,7 @@ USE_GMAKE =	Yes
 
 BUILD_DEPENDS =	misc/shared-mime-info
 
-LIB_DEPENDS = 	STEM->=${KDEVPLATFORM_VERSION}:devel/kdevplatform \
+LIB_DEPENDS = 	devel/kdevplatform>=${PLATFORM_V} \
 		x11/kde4/sdk
 
 .include <bsd.port.mk>
