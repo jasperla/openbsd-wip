@@ -2,10 +2,9 @@
 
 CATEGORIES =	net
 COMMENT =	torrent client for KDE 4
-V =		4.3.0
+V =		4.3.1
 DISTNAME =	ktorrent-$V
 HOMEPAGE =	http://ktorrent.org/
-REVISION =	1
 
 EXTRACT_SUFX =	.tar.bz2
 
