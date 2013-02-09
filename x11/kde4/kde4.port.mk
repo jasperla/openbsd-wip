@@ -318,7 +318,7 @@ MODKDE4_post-install +=	\
 # actual ${MODKDE4_LIB_DIR} value relative to ${PREFIX}/lib.
 . for _l _v in ${SHARED_LIBS}
 MODKDE4_post-install +=	\
-	test -e ../../lib${_l}.so.${_v} && ln -sf ../../lib${_l}.so.${_v};
+	! test -e ../../lib${_l}.so.${_v} || ln -sf ../../lib${_l}.so.${_v};
 . endfor
 .endif
 
