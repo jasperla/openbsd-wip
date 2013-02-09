@@ -239,7 +239,14 @@ prepare() {
 	for F in $IGNORE_FILES; do ear rm -f $NEW_KDE_PORT_DIR/$F; done
 	find $NEW_KDE_PORT_DIR -name 'PLIST*.orig' -print0 | xargs -0rt rm
 	if is_stable_ver $NEW_KDE_PORT_VER; then
-		ear rm -f $NEW_KDE_PORT_DIR/l10n/distinfo
+		if is_stable_ver $CUR_KDE_PORT_VER; then
+			# just mark distinfo missing
+			ear rm -f $NEW_KDE_PORT_DIR/l10n/distinfo
+		else
+			# need to copy l10n back from some stable directory
+			ear mkdir -p $NEW_KDE_PORT_DIR/l10n
+			ear cp -R kde4/l10n/* $NEW_KDE_PORT_DIR/l10n
+		fi
 	else
 		# Unstable KDE versions usually lacks l10n.
 		# And if not, we don't care either, they will not
