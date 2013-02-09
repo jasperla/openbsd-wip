@@ -1,0 +1,12 @@
+$OpenBSD$
+--- thumbnailers/po/CMakeLists.txt.orig	Fri Feb  8 21:06:35 2013
++++ thumbnailers/po/CMakeLists.txt	Fri Feb  8 21:06:50 2013
+@@ -7,7 +7,7 @@ find_package(GettextPO REQUIRED)
+ include(KDE4Defaults)
+ 
+ add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
+-include_directories(${QT_INCLUDES} ${KDE4_INCLUDES})
++include_directories(${QT_INCLUDES} ${KDE4_INCLUDES} ${GETTEXTPO_INCLUDE_DIR})
+ 
+ set(pothumbnail_SRCS pocreator.cpp)
+ 
