@@ -1,12 +1,14 @@
 $OpenBSD$
---- ruby/CMakeLists.txt.orig	Sun Feb 10 00:05:25 2013
-+++ ruby/CMakeLists.txt	Sun Feb 10 00:05:38 2013
-@@ -14,8 +14,8 @@ set(krossruby_PART_SRCS
+--- ruby/CMakeLists.txt.orig	Thu Jan 24 02:02:29 2013
++++ ruby/CMakeLists.txt	Sun Feb 10 14:24:20 2013
+@@ -14,8 +14,10 @@ set(krossruby_PART_SRCS
     )
  
  if(RUBY_FOUND)
 -  include_directories(${RUBY_INCLUDE_DIRS})
-+  include_directories(${RUBY_INCLUDE_DIR})
++  include_directories(${RUBY_INCLUDE_DIRS} ${RUBY_INCLUDE_DIR}/backward)
++  # XXX backward-compatible glue for Ruby 1.8
++  include_directories(${RUBY_INCLUDE_DIR}/backward)
    kde4_add_plugin(krossruby ${krossruby_PART_SRCS})
    target_link_libraries(krossruby ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${KDE4_KROSSCORE_LIBS} ${RUBY_LIBRARY})
    install(TARGETS krossruby  DESTINATION ${PLUGIN_INSTALL_DIR})

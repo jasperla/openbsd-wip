@@ -1,3 +1,2 @@
 @comment $OpenBSD$
 lib/kde4/krosspython.so
-lib/kde4/krossruby.so

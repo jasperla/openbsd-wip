@@ -25,12 +25,16 @@ WANTLIB-main += ${MODPY_WANTLIB}
 
 WANTLIB-java =  ${WANTLIB-common}
 
-MODULES =		lang/python lang/ruby
+MODULES =		lang/python
 MODKDE4_USE =		libs
-MODRUBY_REV =		1.9
 
 # Unported
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_FALCON:Bool=Yes
+
+# XXX Ruby 1.9 support is broken
+#MODULES =		lang/python lang/ruby
+#MODRUBY_REV =		1.9
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Ruby:Bool=Yes
 
 .if ${FLAVOR:Mno_java}
 CONFIGURE_ARGS +=	-DBUILD_java:Bool=No

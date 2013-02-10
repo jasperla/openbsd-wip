@@ -20,9 +20,11 @@ MODRUBY_REV =	1.9
 
 MODKDE4_USE =	pim
 
-RUN_DEPENDS =	x11/kde4/korundum>=${MODKDE4_DEP_VERSION} \
-		devel/desktop-file-utils \
+RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+2,-guic
+
+# XXX broken ATM in kross-interpreters
+#RUN_DEPENDS +=	x11/kde4/korundum>=${MODKDE4_DEP_VERSION}
 
 LIB_DEPENDS =	www/tidyp
 
