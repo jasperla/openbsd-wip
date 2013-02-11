@@ -58,3 +58,7 @@ an arch to other.
 Add note relate to scheme-script and r6rs (copy the python and ruby notes). Add
 link to this section of the standard. Also "#!r6rs", racket by default
 runs in "racket mode".
+
+---
+
+Note about only-SSE.
