@@ -1,8 +1,16 @@
 $OpenBSD$
---- wmlib/plat_openbsd.c.orig	Mon Oct 15 23:21:55 2012
-+++ wmlib/plat_openbsd.c	Mon Oct 15 23:24:53 2012
-@@ -28,33 +28,32 @@
- #if defined(__OpenBSD__) || defined(__OpenBSD)
+--- wmlib/plat_openbsd.c.orig	Thu Jan 24 02:04:49 2013
++++ wmlib/plat_openbsd.c	Tue Feb 12 00:00:54 2013
+@@ -22,39 +22,39 @@
+  *
+  * Michael Shalayeff, 7/24/96
+  * Todd Pfaff, 3/20/94
++ * Vadim Zhukov, 2013
+  *
+  */
+ 
+-#if defined(__OpenBSD__) || defined(__OpenBSD)
++#if defined(__OpenBSD__)
  
  
 -#include <errno.h>

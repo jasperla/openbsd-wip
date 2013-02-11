@@ -9,6 +9,6 @@ WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += kdeui kio kipi
 
-LIB_DEPENDS = 	x11/kde4/libkipi
+LIB_DEPENDS = 	x11/kde4/libkipi>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>

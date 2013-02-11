@@ -1,0 +1,46 @@
+$OpenBSD$
+--- ksirk/iris/src/jdns/jdns_sys.c.orig	Mon Feb 11 21:31:54 2013
++++ ksirk/iris/src/jdns/jdns_sys.c	Mon Feb 11 23:26:05 2013
+@@ -702,7 +702,7 @@ static int my_res_init()
+ #endif
+ 
+ #if defined(JDNS_OS_MAC) || defined(JDNS_OS_FREEBSD) || \
+-defined(JDNS_OS_NETBSD) || defined (JDNS_OS_SOLARIS)
++defined(JDNS_OS_NETBSD) || defined(JDNS_OS_OPENBSD) || defined (JDNS_OS_SOLARIS)
+ # define USE_EXTEXT
+ #endif
+ 
+@@ -721,6 +721,12 @@ static jdns_dnsparams_t *dnsparams_get_unixsys()
+ #define RESVAR _res
+ #endif
+ 
++#ifdef JDNS_OS_OPENBSD
++#define RESVAREXT __res_state_ext
++#else
++#define RESVAREXT RESVAR._u._ext
++#endif
++
+ 	params = jdns_dnsparams_new();
+ 
+ 	/* error initializing? */
+@@ -728,15 +734,17 @@ static jdns_dnsparams_t *dnsparams_get_unixsys()
+ 		return params;
+ 
+ 	/* nameservers - ipv6 */
+-	for(n = 0; n < MAXNS && n < RESVAR._u._ext.nscount; ++n)
++	for(n = 0; n < MAXNS && n < RESVAREXT.nscount; ++n)
+ 	{
+ 		jdns_address_t *addr;
+ 		struct sockaddr_in6 *sa6;
+ 
+ #ifdef USE_EXTEXT
+-		sa6 = ((struct sockaddr_in6 *)RESVAR._u._ext.ext) + n;
++		sa6 = ((struct sockaddr_in6 *)RESVAREXT.ext) + n;
++#elif defined(JDNS_OS_OPENBSD)
++		sa6 = RESVAREXT.nsaddrs + n;
+ #else
+-		sa6 = RESVAR._u._ext.nsaddrs[n];
++		sa6 = RESVAREXT.nsaddrs[n];
+ #endif
+ 
+ 		if(sa6 == NULL)

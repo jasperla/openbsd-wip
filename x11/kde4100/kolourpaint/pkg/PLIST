@@ -1,5 +1,6 @@
 @comment $OpenBSD$
 @bin bin/kolourpaint
+@lib lib/kde4/private/libkolourpaint_lgpl.so.${LIBkolourpaint_lgpl_VERSION}
 @lib lib/libkolourpaint_lgpl.so.${LIBkolourpaint_lgpl_VERSION}
 share/applications/kde4/kolourpaint.desktop
 share/apps/kolourpaint/
