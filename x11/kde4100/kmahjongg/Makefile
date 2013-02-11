@@ -10,6 +10,9 @@ WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
 WANTLIB += kdegamesprivate kdeui kio kmahjongglib
 
-LIB_DEPENDS =	STEM->=${MODKDE_VERSION}:x11/kde4/libkmahjongg
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+2,-guic
+
+LIB_DEPENDS =	x11/kde4/libkmahjongg>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>

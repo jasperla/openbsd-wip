@@ -9,4 +9,7 @@ WANTLIB += kpimutils kprintutils kresources kutils m pthread solid stdc++
 
 MODKDE4_USE =	pim
 
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+2,-guic
+
 .include <bsd.port.mk>

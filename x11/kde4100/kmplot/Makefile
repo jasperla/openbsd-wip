@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	K Desktop Environment, mathematical function plotter
+COMMENT =	mathematical function plotter for KDE4
 DISTNAME =	kmplot-${MODKDE_VERSION}
 
 WANTLIB =  c m pthread stdc++
