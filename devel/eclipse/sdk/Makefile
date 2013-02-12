@@ -5,8 +5,8 @@ ONLY_FOR_ARCHS=		amd64 i386
 
 COMMENT=		multi-language software development environment
 
-ECLIPSE_VER=		4.2
-NATIVES_SNAPSHOT=	20120706170607
+ECLIPSE_VER=		4.2.1
+NATIVES_SNAPSHOT=	20130212223438
 
 DISTNAME=		eclipse-sdk
 PKGNAME=		eclipse-sdk-${ECLIPSE_VER}
@@ -43,9 +43,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITE_ECLIPSE+=	\
 	http://www.eclipse.org/downloads/download.php?r=1&file=/eclipse/downloads/drops4/
 
-MASTER_SITES=		${MASTER_SITE_ECLIPSE:=R-4.2-201206081400/}
+MASTER_SITES=		${MASTER_SITE_ECLIPSE:=R-4.2.1-201209141800/}
 
-# XXX(matthew): Hack...
+# XXX(matthew): Hack... for getting the eclipse-natives snapshot
 MASTER_SITES0=		file://${FILESDIR}/
 
 MODULES=		java
@@ -96,7 +96,8 @@ NO_REGRESS=		Yes
 
 JAR=			${JAVA_HOME}/bin/jar
 
-SWT_GTK_VER=		3.100.0.v4233d
+SWT_MINOR=		4234
+SWT_GTK_VER=		3.100.1.v${SWT_MINOR}e
 
 CORE_FILESYSTEM_VER-amd64=	1.2.0.v20120522-1137
 CORE_FILESYSTEM_VER-i386=	1.4.0.v20120522-1137
@@ -118,8 +119,6 @@ post-extract:
 	    -C ${WRKDIST} eclipse/plugins/org.eclipse.swt.gtk.linux.${ECLIPSE_ARCH}.source_${SWT_GTK_VER}.jar
 	unzip -q ${WRKDIST}/eclipse/plugins/org.eclipse.swt.gtk.linux.${ECLIPSE_ARCH}.source_${SWT_GTK_VER}.jar \
 	    -d ${WRKDIST}/swt -x "org/*"
-
-pre-patch:
 	cp ${WRKDIST}/launcher/bundles/org.eclipse.equinox.executable/library/gtk/make_{linux,openbsd}.mak
 	cp -R ${WRKDIST}/libgnomeproxy/bundles/org.eclipse.core.net/natives/unix/{linux,openbsd}
 	cp -R ${WRKDIST}/libunixfile/bundles/org.eclipse.core.filesystem/natives/unix/{linux,openbsd}
@@ -142,7 +141,7 @@ do-install:
 	rm ${PREFIX}/eclipse4/libcairo-swt.so
 	cp ${WRKDIST}/launcher/bundles/org.eclipse.equinox.executable/library/gtk/eclipse \
 	    ${PREFIX}/eclipse4/eclipse
-	cp ${WRKDIST}/launcher/bundles/org.eclipse.equinox.executable/library/gtk/eclipse_1503.so \
+	cp ${WRKDIST}/launcher/bundles/org.eclipse.equinox.executable/library/gtk/eclipse_1504.so \
 	    ${PREFIX}/eclipse4/plugins/org.eclipse.equinox.launcher.gtk.linux.${ECLIPSE_ARCH}_1.1.200.v20120522-1813/eclipse_1502.so
 	${JAR} -uf ${PREFIX}/eclipse4/plugins/org.eclipse.core.net.linux.${ECLIPSE_ARCH}_${CORE_NET_VER}.jar \
 	    -C ${WRKDIST}/libgnomeproxy/bundles/org.eclipse.core.net/natives/unix/openbsd libgnomeproxy-1.0.0.so
@@ -151,6 +150,6 @@ do-install:
 	zip -d ${PREFIX}/eclipse4/plugins/org.eclipse.swt.gtk.linux.${ECLIPSE_ARCH}_${SWT_GTK_VER}.jar libcairo-swt.so
 	# XXX: jar -C fails for some reason, so use cd as a workaround
 	cd ${WRKDIST}/swt && ${JAR} -uf ${PREFIX}/eclipse4/plugins/org.eclipse.swt.gtk.linux.${ECLIPSE_ARCH}_${SWT_GTK_VER}.jar \
-	    libswt{,-{atk,awt,cairo,glx,gnome,mozilla,pi,webkit,xpcominit,xulrunner}}-gtk-4233.so
+	    libswt{,-{atk,awt,cairo,glx,gnome,mozilla,pi,webkit,xpcominit,xulrunner}}-gtk-${SWT_MINOR}.so
 
 .include <bsd.port.mk>
