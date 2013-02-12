@@ -8,8 +8,8 @@ COMMENT=		multi-language software development environment
 ECLIPSE_VER=		4.2
 NATIVES_SNAPSHOT=	20120706170607
 
-DISTNAME=		eclipse4-sdk
-PKGNAME=		eclipse4-sdk-${ECLIPSE_VER}
+DISTNAME=		eclipse-sdk
+PKGNAME=		eclipse-sdk-${ECLIPSE_VER}
 
 SDKDIST-amd64=		eclipse-SDK-${ECLIPSE_VER}-linux-gtk-x86_64.tar.gz
 SDKDIST-i386=		eclipse-SDK-${ECLIPSE_VER}-linux-gtk.tar.gz
@@ -20,7 +20,7 @@ SUPDISTFILES=		${SDKDIST-amd64} ${SDKDIST-i386}
 EXTRACT_ONLY=		${NATIVESDIST}
 WRKDIST=		${WRKDIR}/natives
 
-CATEGORIES=		devel/eclipse4
+CATEGORIES=		devel/eclipse
 
 HOMEPAGE=		http://www.eclipse.org/
 
