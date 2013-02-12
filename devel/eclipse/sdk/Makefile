@@ -51,25 +51,30 @@ MASTER_SITES0=		file://${FILESDIR}/
 MODULES=		java
 MODJAVA_VER=		1.6+
 
-BUILD_DEPENDS=		devel/xulrunner/1.9,-devel devel/gmake archivers/zip archivers/unzip
-RUN_DEPENDS=		${MODJAVA_RUN_DEPENDS}
-RUN_DEPENDS+=		devel/xulrunner/1.9
-LIB_DEPENDS=		x11/gnome/libgnomeui
-LIB_DEPENDS+=		www/webkit
+BUILD_DEPENDS=		archivers/unzip \
+			archivers/zip \
+			devel/gmake \
+			devel/xulrunner/1.9,-devel
 
-WANTLIB=	GL GLU ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
-		Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xt \
-		Xxf86vm art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation \
-		bonoboui-2 c cairo canberra crypto dbus-1 dbus-glib-1 drm enchant \
-		expat ffi fontconfig freetype gailutil gconf-2 gcrypt \
-		gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-2 \
-		gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0 \
-		gpg-error gstapp-0.10 gstbase-0.10 gstinterfaces-0.10 \
-		gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10 gthread-2.0 \
-		gtk-x11-2.0 iconv icudata icui18n icuuc intl jpeg ltdl m ogg \
-		orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png \
-		popt pthread pthread-stubs soup-2.4 sqlite3 ssl stdc++ util vorbis \
-		vorbisfile webkitgtk-1.0 xcb xcb-render xcb-shm xml2 xslt z
+RUN_DEPENDS=		${MODJAVA_RUN_DEPENDS} \
+			devel/xulrunner/1.9
+
+LIB_DEPENDS=		www/webkit \
+			x11/gnome/libgnomeui
+
+WANTLIB=GL GLU ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite \
+	Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xt \
+	Xxf86vm art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation \
+	bonoboui-2 c cairo canberra crypto dbus-1 dbus-glib-1 drm enchant \
+	expat ffi fontconfig freetype gailutil gconf-2 gcrypt \
+	gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-2 \
+	gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0 \
+	gpg-error gstapp-0.10 gstbase-0.10 gstinterfaces-0.10 \
+	gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10 gthread-2.0 \
+	gtk-x11-2.0 iconv icudata icui18n icuuc intl jpeg ltdl m ogg \
+	orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png \
+	popt pthread pthread-stubs soup-2.4 sqlite3 ssl stdc++ util vorbis \
+	vorbisfile webkitgtk-1.0 xcb xcb-render xcb-shm xml2 xslt z
 
 ECLIPSE_WS=		gtk
 ECLIPSE_OS=		linux
@@ -82,7 +87,7 @@ MAKE_ENV=		DEFAULT_OS_ARCH=${ECLIPSE_ARCH} \
 			DEFAULT_WS=${ECLIPSE_WS} \
 			JAVA_HOME=${JAVA_HOME} \
 			CC="${CC}" CXX="${CXX}" \
-			CFLAGS="${CFLAGS} -I/usr/X11R6/include" \
+			CFLAGS="${CFLAGS} -I${X11BASE}/include" \
 			MACHINE_ARCH="${MACHINE_ARCH}"
 
 SUBST_VARS=		ECLIPSE_ARCH
