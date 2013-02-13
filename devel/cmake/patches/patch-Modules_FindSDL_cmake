@@ -1,0 +1,24 @@
+$OpenBSD: patch-Modules_FindSDL_cmake,v 1.4 2012/11/15 08:43:25 dcoppa Exp $
+--- Modules/FindSDL.cmake.orig	Tue Nov 27 17:26:32 2012
++++ Modules/FindSDL.cmake	Wed Feb  6 18:28:10 2013
+@@ -73,6 +73,11 @@ find_path(SDL_INCLUDE_DIR SDL.h
+   PATH_SUFFIXES include/SDL include/SDL12 include/SDL11 include
+ )
+ 
++# On OpenBSD SDL depends on libiconv and SDL_stdinc.h includes iconv.h,
++# which is located in /usr/local/include. Append /usr/local/include
++# to the SDL_INCLUDE_DIR, thus allow to build SDL apps out of box.
++list(APPEND SDL_INCLUDE_DIR /usr/local/include)
++
+ # SDL-1.1 is the name used by FreeBSD ports...
+ # don't confuse it for the version number.
+ find_library(SDL_LIBRARY_TEMP
+@@ -83,7 +88,7 @@ find_library(SDL_LIBRARY_TEMP
+ )
+ 
+ if(NOT SDL_BUILDING_LIBRARY)
+-  if(NOT ${SDL_INCLUDE_DIR} MATCHES ".framework")
++  if(NOT "${SDL_INCLUDE_DIR}" MATCHES ".framework")
+     # Non-OS X framework versions expect you to also dynamically link to
+     # SDLmain. This is mainly for Windows and OS X. Other (Unix) platforms
+     # seem to provide SDLmain for compatibility even though they don't
