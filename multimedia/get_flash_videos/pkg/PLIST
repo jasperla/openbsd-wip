@@ -122,6 +122,7 @@ ${P5SITE}/FlashVideo/Site/Videobb.pm
 ${P5SITE}/FlashVideo/Site/Videojug.pm
 ${P5SITE}/FlashVideo/Site/Videolectures.pm
 ${P5SITE}/FlashVideo/Site/Vimeo.pm
+${P5SITE}/FlashVideo/Site/Vitheque.pm
 ${P5SITE}/FlashVideo/Site/Vrak.pm
 ${P5SITE}/FlashVideo/Site/Wat.pm
 ${P5SITE}/FlashVideo/Site/Xhamster.pm
