@@ -190,5 +190,4 @@ FLAVOR ?=
 CONFIGURE_ARGS +=	-DENABLE_ADVANCEDDEBUGMSG:Bool=Yes
 .endif
 
-MODKDE4_VERSION =	4.10.0
 .include <bsd.port.mk>
