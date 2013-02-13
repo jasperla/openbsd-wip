@@ -14,11 +14,16 @@ WANTLIB += smokenepomukquery smokeokular smokeplasma smokeqtcore
 WANTLIB += smokeqtgui smokeqtnetwork smokesolid smokesoprano
 WANTLIB += smokesopranoclient smokesopranoserver smokeakonadi
 
-MODKDE4_USE =	libs
+MODKDE4_USE =
 
-BUILD_DEPENDS =	x11/kde4/p5-qt
-RUN_DEPENDS =	x11/kde4/p5-qt
-LIB_DEPENDS = 	x11/kde4/smokekde
+BUILD_DEPENDS =	productivity/attica \
+		x11/kde4/okular>=${MODKDE4_DEP_VERSION} \
+		x11/kde4/p5-qt>=${MODKDE4_DEP_VERSION} \
+		x11/kde4/pimlibs>=${MODKDE4_DEP_VERSION}
+
+RUN_DEPENDS =	x11/kde4/p5-qt>=${MODKDE4_DEP_VERSION}
+
+LIB_DEPENDS = 	x11/kde4/smokekde>=${MODKDE4_DEP_VERSION}
 
 # Avoid clashing Perl do_open and do_close with GCC's locale_facets.h
 post-patch:

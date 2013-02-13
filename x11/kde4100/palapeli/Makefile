@@ -1,8 +1,17 @@
 # $OpenBSD$
 
-COMMENT =	XYZ for KDE
+COMMENT =	jigsaw puzzle game for KDE4
 DISTNAME =	palapeli-${MODKDE_VERSION}
 
-MODKDE4_USE =	games
+SHARED_LIBS =	pala		0.0
+
+WANTLIB =  c m pthread stdc++
+WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
+WANTLIB += lib/qt4/QtXml
+WANTLIB += kdeui kfile kio
+
+RUN_DEPENDS =	devel/desktop-file-utils \
+		misc/shared-mime-info \
+		x11/gtk+2,-guic
 
 .include <bsd.port.mk>

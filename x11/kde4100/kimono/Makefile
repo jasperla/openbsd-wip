@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 CATEGORIES =	devel
-COMMENT =	K Desktop Environment, KDE4 bindings for .NET
+COMMENT =	KDE4 bindings for .NET
 DISTNAME =	kimono-${MODKDE_VERSION}
 
 SHARED_LIBS =	kimono			1.1 # 2.0
@@ -30,15 +30,15 @@ MODULES =		lang/mono
 MODKDE4_USE =
 
 BUILD_DEPENDS =		misc/shared-desktop-ontologies \
-			STEM->=${MIN_AKONADI_VERSION}:productivity/akonadi \
-			x11/kde4/nepomuk-core
+			productivity/akonadi>=${MIN_AKONADI_VERSION} \
+			x11/kde4/nepomuk-core>=${MODKDE4_DEP_VERSION}
 
-RUN_DEPENDS =		STEM->=${MIN_AKONADI_VERSION}:productivity/akonadi \
-			x11/kde4/nepomuk-core
+RUN_DEPENDS =		productivity/akonadi>=${MIN_AKONADI_VERSION} \
+			x11/kde4/nepomuk-core>=${MODKDE4_DEP_VERSION}
 
-LIB_DEPENDS =		databases/soprano \
+LIB_DEPENDS =		databases/soprano>=${MIN_SOPRANO_VERSION} \
 			devel/boehm-gc \
-			x11/kde4/qyoto \
-			x11/kde4/smokekde
+			x11/kde4/qyoto>=${MODKDE4_DEP_VERSION} \
+			x11/kde4/smokekde>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>
