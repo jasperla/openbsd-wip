@@ -1,0 +1,58 @@
+$OpenBSD: patch-Modules_FindTclStub_cmake,v 1.3 2012/11/11 17:13:32 dcoppa Exp $
+--- Modules/FindTclStub.cmake.orig	Fri Nov  2 14:05:49 2012
++++ Modules/FindTclStub.cmake	Fri Nov  2 14:10:45 2012
+@@ -38,13 +38,21 @@ include(FindTCL)
+ 
+ get_filename_component(TCL_TCLSH_PATH "${TCL_TCLSH}" PATH)
+ get_filename_component(TCL_TCLSH_PATH_PARENT "${TCL_TCLSH_PATH}" PATH)
+-string(REGEX REPLACE
+-  "^.*tclsh([0-9]\\.*[0-9]).*$" "\\1" TCL_TCLSH_VERSION "${TCL_TCLSH}")
++if(MODTCL_VERSION)
++  set(TCL_TCLSH_VERSION "${MODTCL_VERSION}")
++else(MODTCL_VERSION)
++  string(REGEX REPLACE
++    "^.*tclsh([0-9]\\.*[0-9]).*$" "\\1" TCL_TCLSH_VERSION "${TCL_TCLSH}")
++endif(MODTCL_VERSION)
+ 
+ get_filename_component(TK_WISH_PATH "${TK_WISH}" PATH)
+ get_filename_component(TK_WISH_PATH_PARENT "${TK_WISH_PATH}" PATH)
+-string(REGEX REPLACE
+-  "^.*wish([0-9]\\.*[0-9]).*$" "\\1" TK_WISH_VERSION "${TK_WISH}")
++if(MODTK_VERSION)
++  set(TK_WISH_VERSION "${MODTK_VERSION}")
++else(MODTK_VERSION)
++  string(REGEX REPLACE
++    "^.*wish([0-9]\\.*[0-9]).*$" "\\1" TK_WISH_VERSION "${TK_WISH}")
++endif(MODTK_VERSION)
+ 
+ get_filename_component(TCL_INCLUDE_PATH_PARENT "${TCL_INCLUDE_PATH}" PATH)
+ get_filename_component(TK_INCLUDE_PATH_PARENT "${TK_INCLUDE_PATH}" PATH)
+@@ -59,14 +67,20 @@ get_filename_component(TK_LIBRARY_PATH_PARENT "${TK_LI
+ string(REGEX REPLACE
+   "^.*tk([0-9]\\.*[0-9]).*$" "\\1" TK_LIBRARY_VERSION "${TK_LIBRARY}")
+ 
+-set(TCLTK_POSSIBLE_LIB_PATHS
+-  "${TCL_INCLUDE_PATH_PARENT}/lib"
+-  "${TK_INCLUDE_PATH_PARENT}/lib"
+-  "${TCL_LIBRARY_PATH}"
+-  "${TK_LIBRARY_PATH}"
+-  "${TCL_TCLSH_PATH_PARENT}/lib"
+-  "${TK_WISH_PATH_PARENT}/lib"
+-)
++if(NOT "${TCLTK_OPENBSD_LIB_PATHS}" STREQUAL "")
++  set(TCLTK_POSSIBLE_LIB_PATHS
++    "${TCLTK_OPENBSD_LIB_PATHS}"
++    )
++else()
++  set(TCLTK_POSSIBLE_LIB_PATHS
++    "${TCL_INCLUDE_PATH_PARENT}/lib"
++    "${TK_INCLUDE_PATH_PARENT}/lib"
++    "${TCL_LIBRARY_PATH}"
++    "${TK_LIBRARY_PATH}"
++    "${TCL_TCLSH_PATH_PARENT}/lib"
++    "${TK_WISH_PATH_PARENT}/lib"
++  )
++endif()
+ 
+ if(WIN32)
+   get_filename_component(

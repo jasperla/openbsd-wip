@@ -1,0 +1,60 @@
+$OpenBSD: patch-Modules_FindWish_cmake,v 1.3 2012/11/11 17:13:32 dcoppa Exp $
+--- Modules/FindWish.cmake.orig	Fri Nov  2 14:20:53 2012
++++ Modules/FindWish.cmake	Fri Nov  2 14:23:17 2012
+@@ -20,14 +20,21 @@
+ # (To distribute this file outside of CMake, substitute the full
+ #  License text for the above reference.)
+ 
++set(MODTCL_VERSION $ENV{MODTCL_VERSION})
++set(MODTK_VERSION $ENV{MODTK_VERSION})
++
+ if(UNIX)
+   find_program(TK_WISH cygwish80 )
+ endif()
+ 
+ get_filename_component(TCL_TCLSH_PATH "${TCL_TCLSH}" PATH)
+ get_filename_component(TCL_TCLSH_PATH_PARENT "${TCL_TCLSH_PATH}" PATH)
+-string(REGEX REPLACE
+-  "^.*tclsh([0-9]\\.*[0-9]).*$" "\\1" TCL_TCLSH_VERSION "${TCL_TCLSH}")
++if(MODTCL_VERSION)
++  set(TCL_TCLSH_VERSION "${MODTCL_VERSION}")
++else(MODTCL_VERSION)
++  string(REGEX REPLACE
++    "^.*tclsh([0-9]\\.*[0-9]).*$" "\\1" TCL_TCLSH_VERSION "${TCL_TCLSH}")
++endif(MODTCL_VERSION)
+ 
+ get_filename_component(TCL_INCLUDE_PATH_PARENT "${TCL_INCLUDE_PATH}" PATH)
+ get_filename_component(TK_INCLUDE_PATH_PARENT "${TK_INCLUDE_PATH}" PATH)
+@@ -66,16 +73,22 @@ if(WIN32)
+     )
+ endif()
+ 
+-set(TK_WISH_NAMES
+-  wish
+-  wish${TCL_LIBRARY_VERSION} wish${TK_LIBRARY_VERSION} wish${TCL_TCLSH_VERSION}
+-  wish86 wish8.6
+-  wish85 wish8.5
+-  wish84 wish8.4
+-  wish83 wish8.3
+-  wish82 wish8.2
+-  wish80 wish8.0
+-  )
++if(MODTK_VERSION)
++  set(TK_WISH_NAMES
++    wish${MODTK_VERSION}
++    )
++else(MODTK_VERSION)
++  set(TK_WISH_NAMES
++    wish
++    wish${TCL_LIBRARY_VERSION} wish${TK_LIBRARY_VERSION} wish${TCL_TCLSH_VERSION}
++    wish86 wish8.6
++    wish85 wish8.5
++    wish84 wish8.4
++    wish83 wish8.3
++    wish82 wish8.2
++    wish80 wish8.0
++    )
++endif(MODTK_VERSION)
+ 
+ find_program(TK_WISH
+   NAMES ${TK_WISH_NAMES}
