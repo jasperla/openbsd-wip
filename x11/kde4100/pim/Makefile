@@ -57,11 +57,13 @@ WANTLIB += kcalutils kcmutils kde3support kdeui kdewebkit
 WANTLIB += kdnssd kfile kholidays khtml kimap kio kjs kldap
 WANTLIB += kmbox kmime knewstuff3 knotifyconfig kontactinterface kparts
 WANTLIB += kpimidentities kpimtextedit kpimutils kprintutils kresources
-WANTLIB += ktexteditor ktnef mailtransport nepomuk nepomukquery
-WANTLIB += nepomukutils phonon_s plasma solid soprano
+WANTLIB += ktexteditor ktnef mailtransport nepomuk nepomukcore
+WANTLIB += nepomukutils nepomukwidgets plasma solid soprano
 WANTLIB += streamanalyzer streams syndication
 WANTLIB += assuan gpg-error gpgme++ gpgme++-pthread gpgme-pthread
 WANTLIB += grantlee_core grantlee_gui qgpgme sasl2 prison
+
+MODULES = multimedia/phonon
 
 # textproc/dblatex could be detected but will not be used
 BUILD_DEPENDS =	devel/boost \
@@ -76,7 +78,9 @@ LIB_DEPENDS =	databases/soprano \
 		security/cyrus-sasl2 \
 		security/gpgme \
 		security/libassuan \
-		x11/grantlee
+		x11/grantlee \
+		x11/kde4/nepomuk-core>=${MODKDE4_DEP_VERSION} \
+		x11/kde4/nepomuk-widgets>=${MODKDE4_DEP_VERSION}
 
 MODKDE4_SYSCONF_FILES =	dbus-1	share/examples
 

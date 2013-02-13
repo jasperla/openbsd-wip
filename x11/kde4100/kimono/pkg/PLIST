@@ -1,5 +1,12 @@
 @comment $OpenBSD$
 lib/kde4/kimonopluginfactory.so
+@lib lib/kde4/private/libakonadi-sharp.so.${LIBakonadi-sharp_VERSION}
+@lib lib/kde4/private/libkhtml-sharp.so.${LIBkhtml-sharp_VERSION}
+@lib lib/kde4/private/libkimono.so.${LIBkimono_VERSION}
+@lib lib/kde4/private/libktexteditor-sharp.so.${LIBktexteditor-sharp_VERSION}
+@lib lib/kde4/private/libnepomuk-sharp.so.${LIBnepomuk-sharp_VERSION}
+@lib lib/kde4/private/libplasma-sharp.so.${LIBplasma-sharp_VERSION}
+@lib lib/kde4/private/libsoprano-sharp.so.${LIBsoprano-sharp_VERSION}
 @lib lib/libakonadi-sharp.so.${LIBakonadi-sharp_VERSION}
 @lib lib/libkhtml-sharp.so.${LIBkhtml-sharp_VERSION}
 @lib lib/libkimono.so.${LIBkimono_VERSION}
@@ -39,5 +46,3 @@ share/apps/plasma_scriptengine_kimono/
 share/apps/plasma_scriptengine_kimono/PlasmaScriptengineKimono.dll
 share/kde4/services/plasma-scriptengine-kimono-applet.desktop
 share/kde4/services/plasma-scriptengine-kimono-dataengine.desktop
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
