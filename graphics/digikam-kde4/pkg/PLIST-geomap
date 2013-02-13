@@ -1,19 +1,19 @@
 @comment $OpenBSD$
-include/libkgeomap/
-include/libkgeomap/abstractmarkertiler.h
-include/libkgeomap/dragdrophandler.h
-include/libkgeomap/geocoordinates.h
-include/libkgeomap/itemmarkertiler.h
-include/libkgeomap/kgeomap_primitives.h
-include/libkgeomap/kgeomap_widget.h
-include/libkgeomap/libkgeomap_export.h
-include/libkgeomap/lookup_altitude.h
-include/libkgeomap/lookup_factory.h
-include/libkgeomap/modelhelper.h
-include/libkgeomap/tileindex.h
-include/libkgeomap/version.h
-@lib lib/libkgeomap.so.${LIBkgeomap_VERSION}
+include/kde4/libkgeomap/
+include/kde4/libkgeomap/abstractmarkertiler.h
+include/kde4/libkgeomap/dragdrophandler.h
+include/kde4/libkgeomap/geocoordinates.h
+include/kde4/libkgeomap/itemmarkertiler.h
+include/kde4/libkgeomap/kgeomap_primitives.h
+include/kde4/libkgeomap/kgeomap_widget.h
+include/kde4/libkgeomap/libkgeomap_export.h
+include/kde4/libkgeomap/lookup_altitude.h
+include/kde4/libkgeomap/lookup_factory.h
+include/kde4/libkgeomap/modelhelper.h
+include/kde4/libkgeomap/tileindex.h
+include/kde4/libkgeomap/version.h
 lib/pkgconfig/libkgeomap.pc
+@lib lib/libkgeomap.so.${LIBkgeomap_VERSION}
 share/apps/cmake/modules/FindKGeoMap.cmake
 share/apps/gpssync/
 share/apps/gpssync/bookmarks-marker.png
@@ -80,12 +80,15 @@ share/locale/nb/LC_MESSAGES/libkgeomap.mo
 share/locale/nds/LC_MESSAGES/libkgeomap.mo
 share/locale/nl/LC_MESSAGES/libkgeomap.mo
 share/locale/nn/LC_MESSAGES/libkgeomap.mo
+share/locale/pa/LC_MESSAGES/libkgeomap.mo
 share/locale/pl/LC_MESSAGES/libkgeomap.mo
 share/locale/pt/LC_MESSAGES/libkgeomap.mo
 share/locale/pt_BR/LC_MESSAGES/libkgeomap.mo
 share/locale/ro/LC_MESSAGES/libkgeomap.mo
 share/locale/sk/LC_MESSAGES/libkgeomap.mo
+share/locale/sl/LC_MESSAGES/libkgeomap.mo
 share/locale/sv/LC_MESSAGES/libkgeomap.mo
+share/locale/tr/LC_MESSAGES/libkgeomap.mo
 share/locale/uk/LC_MESSAGES/libkgeomap.mo
 share/locale/zh_CN/LC_MESSAGES/libkgeomap.mo
 share/locale/zh_TW/LC_MESSAGES/libkgeomap.mo
