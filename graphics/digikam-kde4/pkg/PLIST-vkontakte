@@ -33,6 +33,7 @@ include/libkvkontakte/userinfofulljob.h
 include/libkvkontakte/userinfojob.h
 include/libkvkontakte/version.h
 include/libkvkontakte/vkontaktejobs.h
+lib/cmake/
 lib/cmake/LibKVkontakte/
 lib/cmake/LibKVkontakte/LibKVkontakteConfig.cmake
 lib/cmake/LibKVkontakte/LibKVkontakteConfigVersion.cmake
