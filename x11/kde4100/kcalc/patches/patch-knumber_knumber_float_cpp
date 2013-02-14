@@ -1,0 +1,13 @@
+$OpenBSD$
+--- knumber/knumber_float.cpp.orig	Thu Feb 14 09:36:48 2013
++++ knumber/knumber_float.cpp	Thu Feb 14 10:46:30 2013
+@@ -894,7 +894,8 @@ knumber_base *knumber_float::exp10() {
+ 		delete this;
+ 		return new knumber_error(knumber_error::ERROR_POS_INFINITY);
+ 	} else {
+-		return execute_libc_func< ::exp10>(x);
++		// exp10 is glibc-specific extension, avoid it
++		return execute_libc_func< ::pow>(10, x);
+ 	}
+ #endif
+ }
