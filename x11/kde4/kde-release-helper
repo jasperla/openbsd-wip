@@ -169,8 +169,16 @@ is_tested() {
 }
 
 is_packaged() {
-	for F in `cd $1 && make show=PKGFILES`; do
-		test -e "$F" || return 1
+	local P F FOUND FLAVORS=`cd $1 && make show=FLAVORS`
+	for P in `cd $1 && make show=BUILD_PACKAGES`; do
+		FOUND=
+		for F in "" ${FLAVORS}; do
+			if [ -e "`cd $1 && SUBPACKAGE=$P FLAVOR=$F make show=PKGFILE`" ]; then
+				FOUND=Y
+				break
+			fi
+		done
+		test -n "$FOUND" || return 1
 	done
 	return 0
 }
