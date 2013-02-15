@@ -1,0 +1,19 @@
+$OpenBSD$
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Known issues
+============
+
+- It doesn't compile on i386 due a bug in pixman. Keep this in mind if
+  you want deploy your code on OpenBSD i386.
+
+- All tests with differents graphic cards show the OpenGL layer of
+  Racket doesn't work on OpenBSD. Same problem with the software
+  renderer of libGL.
+
+Limitations
+===========
+
+Racket only supports CPUs with SSE extension.
