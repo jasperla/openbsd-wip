@@ -39,7 +39,7 @@ include/racket/schvers.h
 include/racket/sconfig.h
 include/racket/stypes.h
 include/racket/uconfig.h
-lib/libracket3m-5.3.2.so
+lib/libracket3m-5.3.3.so
 lib/libracket3m.a
 lib/libracket3m.la
 lib/libracket3m.so
@@ -18418,6 +18418,7 @@ lib/racket/mzdyn3m.o
 @man man/man1/racket.1
 @man man/man1/raco.1
 @man man/man1/setup-plt.1
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/racket/
 share/racket/doc/
 share/racket/doc/acks/
