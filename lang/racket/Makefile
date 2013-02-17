@@ -48,7 +48,7 @@ BUILD_DEPENDS =		graphics/cairo \
 RUN_DEPENDS =		x11/gtk+2
 
 WANTLIB += GL GLU X11 Xdamage Xext Xfixes Xxf86vm c crypto drm
-WANTLIB += ffi m pthread stdc++ xcb
+WANTLIB += ffi m pthread stdc++ xcb curses
 
 WRKDIST =		${WRKDIR}/racket-$V
 WRKSRC =		${WRKDIST}/src
@@ -79,7 +79,8 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 # http://article.gmane.org/gmane.comp.lang.racket.devel/6700
 CONFIGURE_ARGS +=	--disable-backtrace
 
-CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread -lcrypto -lGLU -lGL" \
+CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib \
+			-pthread -lcrypto -lGLU -lGL -lcurses" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include -DMZ_USE_JIT_SSE"
 
 # It's necessary to use only one job for "make install". Racket uses various
