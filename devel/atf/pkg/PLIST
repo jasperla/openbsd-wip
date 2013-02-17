@@ -96,7 +96,6 @@ tests/atf/atf-c/detail/Kyuafile
 @bin tests/atf/atf-c/detail/process_helpers
 @bin tests/atf/atf-c/detail/process_test
 @bin tests/atf/atf-c/detail/sanity_test
-@bin tests/atf/atf-c/detail/test_helpers_test
 @bin tests/atf/atf-c/detail/text_test
 @bin tests/atf/atf-c/detail/user_test
 @bin tests/atf/atf-c/error_test
@@ -125,7 +124,6 @@ tests/atf/test-programs/Kyuafile
 tests/atf/test-programs/config_test
 @bin tests/atf/test-programs/cpp_helpers
 tests/atf/test-programs/expect_test
-tests/atf/test-programs/fork_test
 tests/atf/test-programs/meta_data_test
 tests/atf/test-programs/result_test
 tests/atf/test-programs/sh_helpers
