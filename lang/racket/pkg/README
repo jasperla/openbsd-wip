@@ -13,6 +13,8 @@ Known issues
   Racket doesn't work on OpenBSD. Same problem with the software
   renderer of libGL.
 
+- Some examples of ffi-lib doesn't work.
+
 Limitations
 ===========
 
