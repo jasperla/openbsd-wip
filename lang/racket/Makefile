@@ -45,10 +45,11 @@ LIB_DEPENDS =		devel/libffi
 BUILD_DEPENDS =		graphics/cairo \
 			devel/pango \
 			graphics/jpeg
-RUN_DEPENDS =		x11/gtk+2
+RUN_DEPENDS =		x11/gtk+2 \
+			databases/iodbc,-main
 
 WANTLIB += GL GLU X11 Xdamage Xext Xfixes Xxf86vm c crypto drm
-WANTLIB += ffi m pthread stdc++ xcb curses
+WANTLIB += ffi m pthread stdc++ xcb curses iodbc
 
 WRKDIST =		${WRKDIR}/racket-$V
 WRKSRC =		${WRKDIST}/src
@@ -64,6 +65,7 @@ CONFIGURE_STYLE =	gnu
 # --enable-libffi needs LDFLAGS="-pthread"
 # -DMZ_USE_JIT_SSE enables use of SSE floating point
 # plt-games needs GLU
+# -lcurses is needed by readline (undefined symbols)
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--enable-libffi \
 			--enable-gracket \
