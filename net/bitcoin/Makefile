@@ -38,8 +38,6 @@ MAKE_FLAGS =		USE_UPNP=0 CXX="${CXX}" BOOST_LIB_SUFFIX=-mt \
 
 USE_GMAKE =		Yes
 
-NO_REGRESS =		Yes
-
 MAKE_FILE =		makefile.unix
 WRKDIST =		${WRKDIR}/bitcoin-bitcoin-f2c8ffc
 WRKSRC =		${WRKDIST}/src
@@ -52,5 +50,8 @@ do-install:
 		${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKDIST}/contrib/debian/manpages/bitcoin.conf.5 \
 		${PREFIX}/man/man5
+
+regress:
+	@cd ${WRKSRC} && ${GMAKE} -f ${MAKE_FILE} ${MAKE_FLAGS} test
 
 .include <bsd.port.mk>
