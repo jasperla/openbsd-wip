@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@lib lib/libmj.so.${LIBmj_VERSION}
-@lib lib/libnetpgp.so.${LIBnetpgp_VERSION}
