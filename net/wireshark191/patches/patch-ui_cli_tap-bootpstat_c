@@ -1,0 +1,21 @@
+$OpenBSD$
+--- ui/cli/tap-bootpstat.c.orig	Wed Dec 26 06:03:25 2012
++++ ui/cli/tap-bootpstat.c	Wed Jan 30 19:10:35 2013
+@@ -134,14 +134,14 @@ dhcpstat_draw(void *psp)
+ /* When called, this function will create a new instance of tap-boopstat.
+  */
+ static void
+-dhcpstat_init(const char *optarg, void* userdata _U_)
++dhcpstat_init(const char *optarg_p, void* userdata _U_)
+ {
+ 	dhcpstat_t *sp;
+ 	const char	*filter=NULL;
+ 	GString		*error_string;
+ 
+-	if (!strncmp (optarg, "bootp,stat,", 11)){
+-		filter=optarg+11;
++	if (!strncmp (optarg_p, "bootp,stat,", 11)){
++		filter=optarg_p+11;
+ 	} else {
+ 		filter=NULL;
+ 	}
