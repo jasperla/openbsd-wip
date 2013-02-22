@@ -6,8 +6,10 @@
 include/netpgp.h
 lib/libmj.a
 lib/libmj.la
+@lib lib/libmj.so.${LIBmj_VERSION}
 lib/libnetpgp.a
 lib/libnetpgp.la
+@lib lib/libnetpgp.so.${LIBnetpgp_VERSION}
 @man man/man1/netpgp.1
 @man man/man1/netpgpkeys.1
 @man man/man1/netpgpverify.1

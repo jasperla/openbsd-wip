@@ -2,9 +2,7 @@
 
 COMMENT =		BSD-licensed PGP implementation
 
-V =			20101107
-DISTNAME =		netpgp
-PKGNAME =		${DISTNAME}-${V}
+DISTNAME =		netpgp-20101107
 
 SHARED_LIBS +=		mj                        0.0 # 0.0
 SHARED_LIBS +=		netpgp                    0.0 # 0.0
@@ -23,7 +21,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB +=		bz2 c crypto z
 
-MASTER_SITES =		${HOMEPAGE}/src/
+MASTER_SITES =		ftp://ftp.netbsd.org/pub/pkgsrc/distfiles/LOCAL_PORTS/
 
 LIB_DEPENDS =		archivers/bzip2
 REGRESS_DEPENDS =	devel/autoconf/2.68
@@ -35,7 +33,5 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -DOPENSSL_NO_IDEA" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-WRKDIST =		${WRKDIR}/${DISTNAME}-${V}
 
 .include <bsd.port.mk>
