@@ -1,0 +1,21 @@
+$OpenBSD$
+--- ui/cli/tap-iostat.c.orig	Wed Oct 24 18:52:37 2012
++++ ui/cli/tap-iostat.c	Wed Jan 30 19:40:22 2013
+@@ -1269,7 +1269,7 @@ register_io_tap(io_stat_t *io, int i, const char *filt
+ }
+ 
+ static void
+-iostat_init(const char *optarg, void* userdata _U_)
++iostat_init(const char *optarg_p, void* userdata _U_)
+ {
+     gdouble interval_float;
+     guint32 idx=0, i;
+@@ -1277,7 +1277,7 @@ iostat_init(const char *optarg, void* userdata _U_)
+     const gchar *filters, *str, *pos;
+ 
+     if ((*(optarg+(strlen(optarg)-1)) == ',') ||
+-        (sscanf(optarg, "io,stat,%lf%n", &interval_float, (int *)&idx) != 1) ||
++        (sscanf(optarg_p, "io,stat,%lf%n", &interval_float, (int *)&idx) != 1) ||
+         (idx < 8)) {
+         fprintf(stderr, "\ntshark: invalid \"-z io,stat,<interval>[,<filter>][,<filter>]...\" argument\n");
+         exit(1);

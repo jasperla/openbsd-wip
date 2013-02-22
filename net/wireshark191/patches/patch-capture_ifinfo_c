@@ -1,0 +1,28 @@
+$OpenBSD$
+
+correct order and add missing
+--- capture_ifinfo.c.orig	Thu Sep 20 02:35:31 2012
++++ capture_ifinfo.c	Sun Oct  7 00:23:01 2012
+@@ -29,12 +29,20 @@
+ #include <stdlib.h>
+ #include <string.h>
+ 
+-#ifdef HAVE_ARPA_INET_H
+-#include <arpa/inet.h>
++#ifdef HAVE_SYS_TYPES_H
++#include <sys/types.h>
+ #endif
+ 
+ #ifdef HAVE_SYS_SOCKET_H
+ #include <sys/socket.h>         /* needed to define AF_ values on UNIX */
++#endif
++
++#ifdef HAVE_NETINET_IN_H
++#include <netinet/in.h>
++#endif
++
++#ifdef HAVE_ARPA_INET_H
++#include <arpa/inet.h>
+ #endif
+ 
+ #ifdef HAVE_WINSOCK2_H
