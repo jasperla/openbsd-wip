@@ -2,7 +2,7 @@
 
 SUBDIR =
 SUBDIR += emf
-#SUBDIR += epic
+SUBDIR += epic
 SUBDIR += findbugs
 #SUBDIR += gef
 #SUBDIR += ivyde
