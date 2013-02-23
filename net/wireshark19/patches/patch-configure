@@ -1,7 +1,7 @@
 $OpenBSD$
---- configure.orig	Wed Jan 30 01:36:58 2013
-+++ configure	Wed Jan 30 17:26:20 2013
-@@ -28070,7 +28070,7 @@ $as_echo_n "checking whether GLib supports loadable mo
+--- configure.orig	Wed Feb 20 16:42:34 2013
++++ configure	Fri Feb 22 21:53:40 2013
+@@ -28712,7 +28712,7 @@ $as_echo_n "checking whether GLib supports loadable mo
  ac_save_CFLAGS="$CFLAGS"
  ac_save_LIBS="$LIBS"
  CFLAGS="$CFLAGS $GLIB_CFLAGS"
