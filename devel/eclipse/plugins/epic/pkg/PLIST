@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.2 2007/06/27 22:47:29 kurt Exp $
+eclipse/
+eclipse/features/
+eclipse/features/org.epic.feature.main_0.6.35.jar
+eclipse/plugins/
+eclipse/plugins/org.epic.debug_0.6.27.jar
+eclipse/plugins/org.epic.doc_0.6.2.jar
+eclipse/plugins/org.epic.lib_0.6.1.jar
+eclipse/plugins/org.epic.perleditor_0.6.24.jar
+eclipse/plugins/org.epic.regexp_0.6.1.jar
+eclipse/plugins/org.epic.source_0.6.35.jar
