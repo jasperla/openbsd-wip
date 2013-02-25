@@ -13,11 +13,11 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 MULTI_PACKAGES=	-main -data
 
 N=		sauerbraten
-V=		20100728
+V=		20130203
 PKGNAME=	${N}-${V}
 PKGNAME-main=	${N}-${V}
 PKGNAME-data=	${N}-data-${V}
-DISTNAME=	${N}_2010_07_28_justice_edition_linux
+DISTNAME=	${N}_2013_02_03_collect_edition_linux
 EXTRACT_SUFX=	.tar.bz2
 
 PKG_ARCH-data=	i386,amd64
