@@ -1,108 +1,129 @@
 $OpenBSD$
---- system-install.mk.orig	Thu Aug 16 23:14:58 2012
-+++ system-install.mk	Thu Aug 16 23:18:33 2012
-@@ -39,7 +39,7 @@ system-install-client: client
- 	install -m755 reclient $(libexecdir)/$(redeclipse)/$(redeclipse)
- 	install -m755 install/nix/redeclipse.am \
- 		$(gamesbindir)/$(redeclipse)
+--- system-install.mk.orig	Mon Aug 13 20:51:04 2012
++++ system-install.mk	Mon Feb 25 23:57:11 2013
+@@ -11,7 +11,7 @@ gamesbindir=$(DESTDIR)$(prefix)$(gamesbin)
+ libexecdir=$(DESTDIR)$(prefix)/lib$(games)
+ datadir=$(DESTDIR)$(prefix)/share$(games)
+ docdir=$(DESTDIR)$(prefix)/share/doc
+-mandir=$(DESTDIR)$(prefix)/share/man
++mandir=$(DESTDIR)$(prefix)/man
+ menudir=$(DESTDIR)$(prefix)/share/applications
+ icondir=$(DESTDIR)$(prefix)/share/icons/hicolor
+ pixmapdir=$(DESTDIR)$(prefix)/share/pixmaps
+@@ -50,7 +50,7 @@ system-install-client: client
+ 	install -m755 $(appclient) $(libexecdir)/$(appname)/$(appname)
+ 	install -m755 install/nix/$(appsrcname).am \
+ 		$(gamesbindir)/$(appname)
 -	sed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
 +	gsed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
  		-e 's,@DATADIR@,$(patsubst $(DESTDIR)%,%,$(datadir)),g' \
  		-e 's,@DOCDIR@,$(patsubst $(DESTDIR)%,%,$(docdir)),g' \
- 		-e 's,@REDECLIPSE@,$(redeclipse),g' \
-@@ -52,7 +52,7 @@ system-install-server: server
- 		$(libexecdir)/$(redeclipse)/$(redeclipse)-server
- 	install -m755 install/nix/redeclipse-server.am \
- 		$(gamesbindir)/$(redeclipse)-server
+ 		-e 's,@APPNAME@,$(appname),g' \
+@@ -65,7 +65,7 @@ system-install-server: server
+ 		$(libexecdir)/$(appname)/$(appname)-server
+ 	install -m755 install/nix/$(appsrcname)-server.am \
+ 		$(gamesbindir)/$(appname)-server
 -	sed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
 +	gsed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
  		-e 's,@DATADIR@,$(patsubst $(DESTDIR)%,%,$(datadir)),g' \
  		-e 's,@DOCDIR@,$(patsubst $(DESTDIR)%,%,$(docdir)),g' \
- 		-e 's,@REDECLIPSE@,$(redeclipse),g' \
-@@ -62,20 +62,20 @@ system-install-data:
- 	install -d $(datadir)/$(redeclipse)
- 	install -d $(libexecdir)/$(redeclipse)
- 	cp -r ../data $(datadir)/$(redeclipse)/data
--	@rm -rv $(datadir)/$(redeclipse)/data/examples
-+	@rm -r $(datadir)/$(redeclipse)/data/examples
- 	ln -s $(patsubst $(DESTDIR)%,%,$(datadir))/$(redeclipse)/data \
- 		$(libexecdir)/$(redeclipse)/data
- 
+ 		-e 's,@APPNAME@,$(appname),g' \
+@@ -78,20 +78,20 @@ system-install-data:
  system-install-docs: $(MANPAGES)
  	install	-d $(mandir)/man6
- 	install -d $(docdir)/$(redeclipse)
+ 	install -d $(docdir)/$(appname)
 -	sed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
 +	gsed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
  		-e 's,@DATADIR@,$(patsubst $(DESTDIR)%,%,$(datadir)),g' \
  		-e 's,@DOCDIR@,$(patsubst $(DESTDIR)%,%,$(docdir)),g' \
- 		-e 's,@REDECLIPSE@,$(redeclipse),g' \
- 		install/nix/redeclipse.6.am | \
- 		$(GZIP) -9 -c > $(mandir)/man6/$(redeclipse).6.gz
+ 		-e 's,@APPNAME@,$(appname),g' \
+ 		-e 's,@CAPPNAME@,$(cappname),g' \
+-		../doc/man/$(appsrcname).6.am | \
+-		gzip -9 -n -c > $(mandir)/man6/$(appname).6.gz
 -	sed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
++		../doc/man/$(appsrcname).6.am \
++		> $(mandir)/man6/$(appname).6
 +	gsed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
  		-e 's,@DATADIR@,$(patsubst $(DESTDIR)%,%,$(datadir)),g' \
  		-e 's,@DOCDIR@,$(patsubst $(DESTDIR)%,%,$(docdir)),g' \
- 		-e 's,@REDECLIPSE@,$(redeclipse),g' \
-@@ -89,7 +89,7 @@ system-install-menus: icons
- 	install -d $(icondir)/48x48/apps
+ 		-e 's,@APPNAME@,$(appname),g' \
+ 		-e 's,@CAPPNAME@,$(cappname),g' \
+-		../doc/man/$(appsrcname)-server.6.am | \
+-		gzip -9 -n -c > $(mandir)/man6/$(appname)-server.6.gz
++		../doc/man/$(appsrcname)-server.6.am \
++		> $(mandir)/man6/$(appname)-server.6
+ 	cp -r ../doc/examples $(docdir)/$(appname)/examples
+ 	cp ../doc/guidelines.txt $(docdir)/$(appname)/guidelines.txt
+ 
+@@ -103,7 +103,7 @@ system-install-menus: icons
  	install -d $(icondir)/64x64/apps
  	install -d $(icondir)/128x128/apps
+ 	install -d $(pixmapdir)
 -	sed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
 +	gsed -e 's,@LIBEXECDIR@,$(patsubst $(DESTDIR)%,%,$(libexecdir)),g' \
  		-e 's,@DATADIR@,$(patsubst $(DESTDIR)%,%,$(datadir)),g' \
  		-e 's,@DOCDIR@,$(patsubst $(DESTDIR)%,%,$(docdir)),g' \
- 		-e 's,@REDECLIPSE@,$(redeclipse),g' \
-@@ -116,36 +116,36 @@ system-install-cube2font-docs: install/nix/cube2font.1
+ 		-e 's,@APPNAME@,$(appname),g' \
+@@ -128,43 +128,42 @@ system-install-cube2font: system-install-cube2font-doc
+ 
+ system-install-cube2font-docs: install/nix/cube2font.1
+ 	install -d $(mandir)/man1
+-	gzip -9 -n -c < ../doc/man/cube2font.1 \
+-		> $(mandir)/man1/cube2font.1.gz
++	install -m644 ../doc/man/cube2font.1 $(mandir)/man1/cube2font.1
+ 
  system-install: system-install-client system-install-server system-install-data system-install-docs system-install-menus
  
  system-uninstall-client:
--	@rm -fv $(libexecdir)/$(redeclipse)/$(redeclipse)
--	@rm -fv $(gamesbindir)/$(redeclipse)
-+	@rm -f $(libexecdir)/$(redeclipse)/$(redeclipse)
-+	@rm -f $(gamesbindir)/$(redeclipse)
+-	@rm -fv $(libexecdir)/$(appname)/$(appname)
+-	@rm -fv $(libexecdir)/$(appname)/data
+-	@rm -fv $(gamesbindir)/$(appname)
++	@rm -f $(libexecdir)/$(appname)/$(appname)
++	@rm -f $(libexecdir)/$(appname)/data
++	@rm -f $(gamesbindir)/$(appname)
  
  system-uninstall-server:
--	@rm -fv $(libexecdir)/$(redeclipse)/$(redeclipse)-server
--	@rm -fv $(gamesbindir)/$(redeclipse)-server
-+	@rm -f $(libexecdir)/$(redeclipse)/$(redeclipse)-server
-+	@rm -f $(gamesbindir)/$(redeclipse)-server
+-	@rm -fv $(libexecdir)/$(appname)/$(appname)-server
+-	@rm -fv $(gamesbindir)/$(appname)-server
++	@rm -f $(libexecdir)/$(appname)/$(appname)-server
++	@rm -f $(gamesbindir)/$(appname)-server
  
  system-uninstall-data:
- 	rm -rf $(datadir)/$(redeclipse)/data
--	@rm -fv $(libexecdir)/$(redeclipse)/data
-+	@rm -f $(libexecdir)/$(redeclipse)/data
+ 	rm -rf $(datadir)/$(appname)/data
  
  system-uninstall-docs:
--	@rm -rfv $(docdir)/$(redeclipse)/examples
--	@rm -fv $(mandir)/man6/$(redeclipse).6.gz
--	@rm -fv $(mandir)/man6/$(redeclipse)-server.6.gz
-+	@rm -rf $(docdir)/$(redeclipse)/examples
-+	@rm -f $(mandir)/man6/$(redeclipse).6.gz
-+	@rm -f $(mandir)/man6/$(redeclipse)-server.6.gz
+-	@rm -rfv $(docdir)/$(appname)/examples
+-	@rm -fv $(mandir)/man6/$(appname).6.gz
+-	@rm -fv $(mandir)/man6/$(appname)-server.6.gz
++	@rm -rf $(docdir)/$(appname)/examples
++	@rm -f $(mandir)/man6/$(appname).6
++	@rm -f $(mandir)/man6/$(appname)-server.6
  
  system-uninstall-menus:
--	@rm -fv $(menudir)/$(redeclipse).desktop
--	@rm -fv $(icondir)/32x32/apps/$(redeclipse).png
--	@rm -fv $(icondir)/48x48/apps/$(redeclipse).png
--	@rm -fv $(icondir)/64x64/apps/$(redeclipse).png
--	@rm -fv $(icondir)/128x128/apps/$(redeclipse).png
-+	@rm -f $(menudir)/$(redeclipse).desktop
-+	@rm -f $(icondir)/32x32/apps/$(redeclipse).png
-+	@rm -f $(icondir)/48x48/apps/$(redeclipse).png
-+	@rm -f $(icondir)/64x64/apps/$(redeclipse).png
-+	@rm -f $(icondir)/128x128/apps/$(redeclipse).png
+-	@rm -fv $(menudir)/$(appname).desktop
+-	@rm -fv $(icondir)/16x16/apps/$(appname).png
+-	@rm -fv $(icondir)/32x32/apps/$(appname).png
+-	@rm -fv $(icondir)/48x48/apps/$(appname).png
+-	@rm -fv $(icondir)/64x64/apps/$(appname).png
+-	@rm -fv $(icondir)/128x128/apps/$(appname).png
++	@rm -f $(menudir)/$(appname).desktop
++	@rm -f $(icondir)/16x16/apps/$(appname).png
++	@rm -f $(icondir)/32x32/apps/$(appname).png
++	@rm -f $(icondir)/48x48/apps/$(appname).png
++	@rm -f $(icondir)/64x64/apps/$(appname).png
++	@rm -f $(icondir)/128x128/apps/$(appname).png
  
  system-uninstall: system-uninstall-client system-uninstall-server system-uninstall-data system-uninstall-docs system-uninstall-menus
--	-@rmdir -v $(libexecdir)/$(redeclipse)
--	-@rmdir -v $(datadir)/$(redeclipse)
--	-@rmdir -v $(docdir)/$(redeclipse)
-+	-@rmdir $(libexecdir)/$(redeclipse)
-+	-@rmdir $(datadir)/$(redeclipse)
-+	-@rmdir $(docdir)/$(redeclipse)
+-	-@rmdir -v $(libexecdir)/$(appname)
+-	-@rmdir -v $(datadir)/$(appname)
+-	-@rmdir -v $(docdir)/$(appname)
++	-@rmdir $(libexecdir)/$(appname)
++	-@rmdir $(datadir)/$(appname)
++	-@rmdir $(docdir)/$(appname)
  
  system-uninstall-cube2font-docs:
 -	@rm -fv $(mandir)/man1/cube2font.1.gz
-+	@rm -f $(mandir)/man1/cube2font.1.gz
++	@rm -f $(mandir)/man1/cube2font.1
  
  system-uninstall-cube2font: system-uninstall-cube2font-docs
 -	@rm -fv $(bindir)/bin/cube2font

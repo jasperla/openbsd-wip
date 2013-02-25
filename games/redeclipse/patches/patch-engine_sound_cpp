@@ -1,7 +1,7 @@
 $OpenBSD$
---- engine/sound.cpp.orig	Thu Aug 16 22:33:14 2012
-+++ engine/sound.cpp	Thu Aug 16 22:37:01 2012
-@@ -564,7 +564,7 @@ COMMAND(0, resetsound, "");
+--- engine/sound.cpp.orig	Sat Aug 11 14:31:26 2012
++++ engine/sound.cpp	Mon Feb 25 22:31:05 2013
+@@ -565,7 +565,7 @@ COMMAND(0, resetsound, "");
  
  #include <unistd.h>
  
@@ -10,7 +10,7 @@ $OpenBSD$
  #include <sys/types.h>
  #include <sys/stat.h>
  #include <sys/mman.h>
-@@ -574,7 +574,7 @@ COMMAND(0, resetsound, "");
+@@ -575,7 +575,7 @@ COMMAND(0, resetsound, "");
  
  #endif
  
@@ -19,7 +19,7 @@ $OpenBSD$
  struct MumbleInfo
  {
      int version, timestamp;
-@@ -587,7 +587,7 @@ struct MumbleInfo
+@@ -588,7 +588,7 @@ struct MumbleInfo
  static HANDLE mumblelink = NULL;
  static MumbleInfo *mumbleinfo = NULL;
  #define VALID_MUMBLELINK (mumblelink && mumbleinfo)
@@ -28,7 +28,7 @@ $OpenBSD$
  static int mumblelink = -1;
  static MumbleInfo *mumbleinfo = (MumbleInfo *)-1;
  #define VALID_MUMBLELINK (mumblelink >= 0 && mumbleinfo != (MumbleInfo *)-1)
-@@ -612,7 +612,7 @@ void initmumble()
+@@ -613,7 +613,7 @@ void initmumble()
              mumbleinfo = (MumbleInfo *)MapViewOfFile(mumblelink, FILE_MAP_ALL_ACCESS, 0, 0, sizeof(MumbleInfo));
              if(mumbleinfo) wcsncpy(mumbleinfo->name, L"redeclipse", 256);
          }
@@ -37,7 +37,7 @@ $OpenBSD$
          defformatstring(shmname)("/MumbleLink.%d", getuid());
          mumblelink = shm_open(shmname, O_RDWR, 0);
          if(mumblelink >= 0)
-@@ -623,7 +623,7 @@ void initmumble()
+@@ -624,7 +624,7 @@ void initmumble()
      #endif
      if(!VALID_MUMBLELINK) closemumble();
  #else
@@ -46,7 +46,7 @@ $OpenBSD$
  #endif
  }
  
-@@ -632,7 +632,7 @@ void closemumble()
+@@ -633,7 +633,7 @@ void closemumble()
  #ifdef WIN32
      if(mumbleinfo) { UnmapViewOfFile(mumbleinfo); mumbleinfo = NULL; }
      if(mumblelink) { CloseHandle(mumblelink); mumblelink = NULL; }
