@@ -7,7 +7,7 @@ SHARED_ONLY =		Yes
 # "sconfig.h" only supports i386 and amd64 on OpenBSD
 ONLY_FOR_ARCHS =	i386 amd64
 
-COMMENT =		scheme dialect with IDE and teaching resources included
+COMMENT =		descendant of scheme with IDE and teaching resources
 
 V =			5.3.3
 PKGNAME =		racket-$V
