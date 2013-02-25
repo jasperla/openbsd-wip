@@ -41,15 +41,24 @@ MODGCC4_VERSION =	4.6
 MODGCC4_LANGS =		c
 MODGCC4_ARCHS =		*
 
+# http://docs.racket-lang.org/draw/libs.html
+# http://docs.racket-lang.org/gui/libs.html
+# Some deps are listed in the README, other in the doc and other
+# are called by ffi.
 LIB_DEPENDS =		devel/libffi
 BUILD_DEPENDS =		graphics/cairo \
 			devel/pango \
 			graphics/jpeg
 RUN_DEPENDS =		x11/gtk+2 \
+			x11/gtkglext \
+			devel/libunique \
 			databases/iodbc,-main
 
 WANTLIB += GL GLU X11 Xdamage Xext Xfixes Xxf86vm c crypto drm
-WANTLIB += ffi m pthread stdc++ xcb curses iodbc
+WANTLIB += ffi m pthread stdc++ xcb curses iodbc glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 pango-1.0 pangocairo-1.0 cairo png jpeg atk-1.0
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 gdkglext-x11-1.0
+WANTLIB += gtkglext-x11-1.0 unique-1.0
 
 WRKDIST =		${WRKDIR}/racket-$V
 WRKSRC =		${WRKDIST}/src
