@@ -5,17 +5,23 @@ lib/redeclipse/
 lib/redeclipse/data
 @bin lib/redeclipse/redeclipse
 @bin lib/redeclipse/redeclipse-server
+@man man/man6/redeclipse-server.6
+@man man/man6/redeclipse.6
 share/applications/
 share/applications/redeclipse.desktop
 share/doc/redeclipse/
 share/doc/redeclipse/examples/
 share/doc/redeclipse/examples/servexec.cfg
 share/doc/redeclipse/examples/servinit.cfg
+share/doc/redeclipse/guidelines.txt
 share/icons/
 share/icons/hicolor/
 share/icons/hicolor/128x128/
 share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/redeclipse.png
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
+share/icons/hicolor/16x16/apps/redeclipse.png
 share/icons/hicolor/32x32/
 share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/redeclipse.png
@@ -25,7 +31,5 @@ share/icons/hicolor/48x48/apps/redeclipse.png
 share/icons/hicolor/64x64/
 share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/redeclipse.png
-share/man/
-share/man/man6/
-@man share/man/man6/redeclipse-server.6.gz
-@man share/man/man6/redeclipse.6.gz
+share/pixmaps/
+share/pixmaps/redeclipse.xpm

@@ -13,11 +13,11 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 MULTI_PACKAGES=	-main -data
 
 N=		redeclipse
-V=		1.2
+V=		1.3.1
 PKGNAME=	${N}-${V}
 PKGNAME-main=	${N}-${V}
 PKGNAME-data=	${N}-data-${V}
-DISTNAME=	${N}_${V}_linux_bsd
+DISTNAME=	${N}_${V}_nix_bsd
 EXTRACT_SUFX=	.tar.bz2
 
 PKG_ARCH-data=	i386,amd64
