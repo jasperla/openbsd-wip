@@ -9,8 +9,8 @@ SUBDIR += gef
 #SUBDIR += py-dev
 #SUBDIR += rdt
 #SUBDIR += struts-console
-#SUBDIR += subclipse
-#SUBDIR += uml2
+SUBDIR += subclipse
+SUBDIR += uml2
 #SUBDIR += wtp
 
 .include <bsd.port.subdir.mk>
