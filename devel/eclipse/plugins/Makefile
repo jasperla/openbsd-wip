@@ -11,6 +11,6 @@ SUBDIR += gef
 #SUBDIR += struts-console
 SUBDIR += subclipse
 SUBDIR += uml2
-#SUBDIR += wtp
+SUBDIR += wtp
 
 .include <bsd.port.subdir.mk>
