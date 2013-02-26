@@ -1,4 +1,4 @@
-Subclipse is an Eclipse 3.x IDE plugin that adds Subversion integration
+Subclipse is an Eclipse IDE plugin that adds Subversion integration
 to the Eclipse IDE.  It works largely the same as the Team->CVS
 functionality, e.g., a SVN Repository window, Team->Subversion menu
 items, and so on.
