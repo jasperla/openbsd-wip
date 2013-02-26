@@ -1,0 +1,7 @@
+- Add flavor with places and futures.
+- Add DESCR with "This flavor uses GCC TLS, it's broken, don't report bugs."
+- Add again PFRAGS for i386.
+- Add comment "don't link this flavor to bulk build".
+- Add section to main README about the new flavor.
+- Remove GCC 4.6 from the main flavor.
+
