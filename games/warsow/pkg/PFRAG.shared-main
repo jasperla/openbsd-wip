@@ -6,4 +6,3 @@ lib/warsow/libs/angelwrap.so
 lib/warsow/libs/cin.so
 lib/warsow/libs/irc.so
 lib/warsow/libs/snd_openal.so
-lib/warsow/libs/snd_qf.so

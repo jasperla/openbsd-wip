@@ -1,7 +1,7 @@
 $OpenBSD$
---- gameshared/q_arch.h.orig	Wed Aug 15 20:05:44 2012
-+++ gameshared/q_arch.h	Wed Aug 15 20:08:31 2012
-@@ -160,7 +160,7 @@ typedef UINT_PTR socket_handle_t;
+--- source/gameshared/q_arch.h.orig	Mon Sep 17 04:49:40 2012
++++ source/gameshared/q_arch.h	Tue Feb 26 03:26:04 2013
+@@ -162,7 +162,7 @@ typedef UINT_PTR socket_handle_t;
  
  //==============================================
  
@@ -10,7 +10,7 @@ $OpenBSD$
  
  #define HAVE_INLINE
  
-@@ -171,12 +171,18 @@ typedef UINT_PTR socket_handle_t;
+@@ -173,13 +173,20 @@ typedef UINT_PTR socket_handle_t;
  #define LIB_DIRECTORY "libs"
  #define LIB_SUFFIX ".so"
  
@@ -24,8 +24,10 @@ $OpenBSD$
  
  #ifdef __FreeBSD__
  #define BUILDSTRING "FreeBSD"
+ #define OSNAME "FreeBSD"
 +#elif defined __OpenBSD__
 +#define BUILDSTRING "OpenBSD"
++#define OSNAME "OpenBSD"
  #else
  #define BUILDSTRING "Linux"
- #endif
+ #define OSNAME "Linux"

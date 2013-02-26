@@ -1,6 +1,6 @@
 $OpenBSD$
---- server/sv_init.c.orig	Tue Sep 27 17:23:31 2011
-+++ server/sv_init.c	Wed Aug 15 23:38:57 2012
+--- source/server/sv_init.c.orig	Tue Sep 27 17:23:31 2011
++++ source/server/sv_init.c	Tue Feb 26 03:26:05 2013
 @@ -187,9 +187,9 @@ static void SV_ReloadPureList( void )
  		char *libname;
  		int libname_size;

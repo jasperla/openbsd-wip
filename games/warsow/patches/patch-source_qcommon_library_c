@@ -1,6 +1,6 @@
 $OpenBSD$
---- qcommon/library.c.orig	Tue Sep 27 17:23:31 2011
-+++ qcommon/library.c	Wed Aug 15 20:01:25 2012
+--- source/qcommon/library.c.orig	Tue Sep 27 17:23:31 2011
++++ source/qcommon/library.c	Tue Feb 26 03:26:05 2013
 @@ -236,9 +236,9 @@ void *Com_LoadGameLibrary( const char *basename, const
  	gamelib->lib = NULL;
  	gamelib->fullname = NULL;
