@@ -1,6 +1,6 @@
 $OpenBSD$
---- client/cl_sound.c.orig	Thu Aug 16 00:04:17 2012
-+++ client/cl_sound.c	Thu Aug 16 00:05:14 2012
+--- source/client/cl_sound.c.orig	Mon Apr 30 18:18:54 2012
++++ source/client/cl_sound.c	Tue Feb 26 03:26:04 2013
 @@ -135,9 +135,9 @@ static qboolean CL_SoundModule_Load( const char *name,
  	if( verbose )
  		Com_Printf( "Loading sound module: %s\n", name );

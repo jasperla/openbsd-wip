@@ -1,6 +1,6 @@
 $OpenBSD$
---- angelwrap/qas_angelwrap.cpp.orig	Wed Aug 15 20:44:59 2012
-+++ angelwrap/qas_angelwrap.cpp	Wed Aug 15 20:45:29 2012
+--- source/angelwrap/qas_angelwrap.cpp.orig	Sat Jul 21 19:38:20 2012
++++ source/angelwrap/qas_angelwrap.cpp	Tue Feb 26 03:26:04 2013
 @@ -1175,7 +1175,7 @@ int qasSetArgDWord( int contextHandle, unsigned int ar
  	return ch->ctx->SetArgDWord( (asUINT)arg, (asDWORD)value );
  }

@@ -56,6 +56,8 @@ share/warsow/basewsw/configs/timer/ya2/4x.cfg
 share/warsow/basewsw/configs/timer/ya2/5x.cfg
 share/warsow/basewsw/data0_10.pk3
 share/warsow/basewsw/data0_10pure.pk3
+share/warsow/basewsw/data1_10.pk3
+share/warsow/basewsw/data1_10pure.pk3
 share/warsow/basewsw/dedicated_autoexec.cfg
 share/warsow/basewsw/editortextures.pk3
 share/warsow/basewsw/map_ui.pk3
@@ -98,6 +100,8 @@ share/warsow/basewsw/map_wdm9.pk3
 share/warsow/basewsw/map_wrace1.pk3
 share/warsow/basewsw/models_nate.pk3
 share/warsow/basewsw/modules_10.pk3
+share/warsow/basewsw/modules_101.pk3
+share/warsow/basewsw/modules_102.pk3
 share/warsow/basewsw/tex_36.pk3
 share/warsow/basewsw/tex_baxandall.pk3
 share/warsow/basewsw/tex_billboard.pk3
@@ -128,6 +132,7 @@ share/warsow/basewsw/tex_plastic.pk3
 share/warsow/basewsw/tex_refly.pk3
 share/warsow/basewsw/tex_russus.pk3
 share/warsow/basewsw/tex_scifi_interior.pk3
+share/warsow/basewsw/tex_scifi_interior_001.pk3
 share/warsow/basewsw/tex_sky.pk3
 share/warsow/basewsw/tex_solidfake.pk3
 share/warsow/basewsw/tex_supersymmetry.pk3
@@ -142,3 +147,5 @@ share/warsow/basewsw/tex_wsw_flareshalos.pk3
 share/warsow/basewsw/tex_zone_neutre.pk3
 share/warsow/basewsw/tvserver_autoexec.cfg
 share/warsow/basewsw/ui_porkui.pk3
+share/warsow/basewsw/ui_porkui_001.pk3
+share/warsow/basewsw/ui_porkui_002.pk3

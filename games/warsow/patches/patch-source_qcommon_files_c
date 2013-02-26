@@ -1,7 +1,7 @@
 $OpenBSD$
---- qcommon/files.c.orig	Sun Jan  8 23:55:30 2012
-+++ qcommon/files.c	Wed Aug 15 19:59:37 2012
-@@ -3891,7 +3891,14 @@ void FS_Init( void )
+--- source/qcommon/files.c.orig	Mon Sep 17 04:49:40 2012
++++ source/qcommon/files.c	Tue Feb 26 03:26:04 2013
+@@ -3918,7 +3918,14 @@ void FS_Init( void )
  	// set basepaths
  	//
  	fs_cdpath = Cvar_Get( "fs_cdpath", "", CVAR_NOSET );

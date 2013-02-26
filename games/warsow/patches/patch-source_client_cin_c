@@ -1,6 +1,6 @@
 $OpenBSD$
---- client/cin.c.orig	Wed Aug 15 23:31:19 2012
-+++ client/cin.c	Wed Aug 15 23:31:33 2012
+--- source/client/cin.c.orig	Sat Apr 21 23:14:43 2012
++++ source/client/cin.c	Tue Feb 26 03:26:04 2013
 @@ -147,7 +147,7 @@ void CIN_LoadLibrary( qboolean verbose )
  	funcs[0].name = "GetCinematicsAPI";
  	funcs[0].funcPointer = ( void ** ) &GetCinematicsAPI;
