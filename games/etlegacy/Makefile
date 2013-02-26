@@ -8,16 +8,26 @@ HOMEPAGE=	http://www.etlegacy.com/
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 MASTER_SITES=	https://github.com/etlegacy/etlegacy/tarball/master/
-DISTNAME=	etlegacy-etlegacy-2862f09
-PKGNAME=	etlegacy-20120815
+DISTNAME=	etlegacy-etlegacy-756f3ac
+PKGNAME=	etlegacy-20130226
 
 LIB_DEPENDS=	devel/sdl \
 		graphics/jpeg \
-		net/curl
+		net/curl \
+		audio/libvorbis
+BUILD_DEPENDS=	archivers/zip
 RUN_DEPENDS=	games/enemy-territory-data
-WANTLIB=	GL GLU ICE SDL SM X11 Xext c curl jpeg m pthread
 
-MODULES=	devel/cmake
+WANTLIB=	GL GLU ICE SDL SM X11 Xext c curl jpeg m ogg pthread \
+		vorbis vorbisfile
+
+MODULES=	devel/cmake \
+		lang/lua
+
+CONFIGURE_ARGS =	-DINSTALL_DEFAULT_MODDIR:String=share/enemy-territory \
+			-DINSTALL_DEFAULT_BINDIR:String=share/enemy-territory \
+			-DBUILD_PAK3_PK3:Bool=True \
+			-DBUILD_MOD_PK3:Bool=True
 
 # GPLv3+additions
 PERMIT_PACKAGE_CDROM=		Yes

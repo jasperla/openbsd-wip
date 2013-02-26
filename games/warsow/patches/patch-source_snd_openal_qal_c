@@ -1,6 +1,6 @@
 $OpenBSD$
---- snd_openal/qal.c.orig	Sat Jun 25 23:04:15 2011
-+++ snd_openal/qal.c	Wed Aug 15 19:57:17 2012
+--- source/snd_openal/qal.c.orig	Sat Jun 25 23:04:15 2011
++++ source/snd_openal/qal.c	Tue Feb 26 03:26:05 2013
 @@ -42,7 +42,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
  #define SYMLOAD( x, y ) GetProcAddress( x, y )
  #define OBJFREE( x ) FreeLibrary( x )
