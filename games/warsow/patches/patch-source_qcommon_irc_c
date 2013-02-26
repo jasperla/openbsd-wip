@@ -1,6 +1,6 @@
 $OpenBSD$
---- qcommon/irc.c.orig	Sun Jun 17 21:24:29 2012
-+++ qcommon/irc.c	Wed Aug 15 20:00:18 2012
+--- source/qcommon/irc.c.orig	Sun Jun 17 21:24:29 2012
++++ source/qcommon/irc.c	Tue Feb 26 03:26:04 2013
 @@ -197,7 +197,7 @@ static void Irc_LoadLibrary( void )
  	funcs[0].name = "GetIrcAPI";
  	funcs[0].funcPointer = (void **) &GetIrcAPI_f;

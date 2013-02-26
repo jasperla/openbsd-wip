@@ -1,6 +1,6 @@
 $OpenBSD$
---- ref_gl/r_glimp.h.orig	Sun May 20 00:57:35 2012
-+++ ref_gl/r_glimp.h	Wed Aug 15 20:05:07 2012
+--- source/ref_gl/r_glimp.h.orig	Tue Aug  7 06:19:09 2012
++++ source/ref_gl/r_glimp.h	Tue Feb 26 03:26:05 2013
 @@ -35,7 +35,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
  #define QGL_GLX_EXT( type, name, params )
  #endif
