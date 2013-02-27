@@ -4,8 +4,9 @@ SHARED_ONLY=		Yes
 
 COMMENT=		NetBeans Java IDE
 
-V=			7.1.1
-DISTNAME=		netbeans-${V}
+V=			7.3
+DISTNAME=		netbeans-${V}-201302132200
+PKGNAME=		netbeans-${V}
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.netbeans.org/
@@ -22,7 +23,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://dlc.sun.com.edgesuite.net/netbeans/${V}/final/zip/
-EXTRACT_SUFX=		-201203012225-ml.zip
+EXTRACT_SUFX=		.zip
 
 MODULES=		java
 MODJAVA_VER=		1.7+
