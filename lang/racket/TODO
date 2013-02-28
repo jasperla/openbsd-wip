@@ -5,3 +5,4 @@
 - Add section to main README about the new flavor.
 - Remove GCC 4.6 from the main flavor.
 - Test pixman bug without futures and places.
+- Test jobs without futures.
