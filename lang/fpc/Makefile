@@ -42,8 +42,6 @@ PKG_ARGS +=		-Damd64=0
 
 SUBST_VARS +=		V CONFIG
 
-REGRESS_DEPENDS =	${BUILD_PKGPATH}
-
 MAKE_FLAGS =		NOGDB=1
 MAKE_ENV =		MKDIRPROG=/bin/mkdir ECHO=/bin/echo \
 			GINSTALL=/usr/bin/install DATE=/bin/date \
@@ -52,7 +50,10 @@ FAKE_FLAGS =		INSTALLEXE="${INSTALL_PROGRAM}" \
 			MKDIR="${INSTALL_DATA_DIR}" \
 			INSTALL="${INSTALL_DATA}"
 
-REGRESS_FLAGS =		TEST_FPC="${LOCALBASE}/bin/fpc"
+REGRESS_FLAGS =		TEST_FPC="${WRKSRC}/fpcsrc/compiler/${COMPNAME}" \
+			FPC="${WRKSRC}/fpcsrc/compiler/${COMPNAME}" \
+			FPCOPT="-Fu${WRKSRC}/fpcsrc/rtl/units/${CONFIG}" \
+			FPCMAKE="${WRKSRC}/fpcsrc/utils/fpcm/fpcmake"
 
 USE_GMAKE =		Yes
 
@@ -76,7 +77,6 @@ post-install:
 	find ${WRKSRC} -name Package.fpc | xargs rm -f
 
 do-regress:
-	cd ${WRKSRC}/fpcsrc/tests && env -i ${MAKE_ENV} \
-		${MAKE_PROGRAM} ${ALL_REGRESS_FLAGS}
+	cd ${WRKSRC}/fpcsrc/tests && ${MAKE_PROGRAM} ${ALL_REGRESS_FLAGS} full
 
 .include <bsd.port.mk>
