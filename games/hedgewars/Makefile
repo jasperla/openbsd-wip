@@ -4,8 +4,8 @@ SHARED_ONLY =		Yes
 
 COMMENT =		Worms-like strategy game
 
-V =			0.9.17
-DISTNAME =		hedgewars-src-${V}
+V =			0.9.18
+DISTNAME =		hedgewars-src-${V}-3
 PKGNAME =		hedgewars-${V}
 
 CATEGORIES =		games
@@ -21,7 +21,8 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += QtGui QtNetwork SDL SDL_image SDL_mixer SDL_net SDL_ttf
-WANTLIB += c m pthread stdc++ z ${MODLUA_WANTLIB}
+WANTLIB += avcodec avformat avutil c lua5.1 m png pthread stdc++
+WANTLIB += z
 
 MASTER_SITES =		http://download.gna.org/hedgewars/
 EXTRACT_SUFX =		.tar.bz2
@@ -33,8 +34,11 @@ BUILD_DEPENDS =		lang/fpc
 LIB_DEPENDS =		devel/sdl-image \
 			devel/sdl-ttf \
 			devel/sdl-net \
-			devel/sdl-mixer
+			devel/sdl-mixer \
+			graphics/ffmpeg
 
 NO_REGRESS =		Yes
+
+WRKDIST =		${WRKDIR}/hedgewars-src-$V
 
 .include <bsd.port.mk>
