@@ -1,6 +1,5 @@
 @comment $OpenBSD$
 lib/libinchi.so
-@lib lib/libopenbabel.so.${LIBopenbabel_VERSION}
 lib/openbabel/${V}/APIInterface.so
 lib/openbabel/${V}/CSRformat.so
 lib/openbabel/${V}/MCDLformat.so
