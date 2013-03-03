@@ -2,7 +2,7 @@
 
 COMMENT =	Open an HTML file with automatic charset detection
 
-DISTNAME =	IO-HTML-0.04
+DISTNAME =	IO-HTML-1.00
 CATEGORIES =	www
 CPAN_AUTHOR =	CJM
 
