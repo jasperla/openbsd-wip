@@ -22,7 +22,7 @@ juk                             PACKAGED
 kaccessible                     PACKAGED
 kactivities                     PACKAGED
 kajongg                         PACKAGED
-kalgebra                        CONFIGURED
+kalgebra                        PACKAGED
 kalzium                         WAITING
 kamera                          PACKAGED
 kanagram                        PACKAGED
@@ -34,7 +34,7 @@ kblocks                         PACKAGED
 kbounce                         PACKAGED
 kbreakout                       PACKAGED
 kbruch                          PACKAGED
-kcalc                           CONFIGURED
+kcalc                           PACKAGED
 kcharselect                     PACKAGED
 kcolorchooser                   PACKAGED
 kdf                             PACKAGED
@@ -124,7 +124,7 @@ plasma-addons                   PACKAGED
 print-manager                   PACKAGED
 py-kde                          PACKAGED
 qyoto                           PACKAGED
-rocs                            STARTED
+rocs                            PACKAGED
 ruby-qt                         PACKAGED
 runtime                         PACKAGED
 sdk                             PACKAGED
