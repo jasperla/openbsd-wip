@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, software development kit
 DISTNAME =	kdesdk-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	komparedialogpages	0.0 # 4.7
 SHARED_LIBS +=	komparediff2		0.0 # 4.7
@@ -35,6 +36,10 @@ USE_GMAKE =	Yes
 
 BUILD_DEPENDS =	archivers/gtar \
 		devel/boost
+
+RUN_DEPENDS =	devel/desktop-file-utils \
+		misc/shared-mime-info \
+		x11/gtk+2,-guic
 
 LIB_DEPENDS =	databases/strigi \
 	 	devel/subversion \

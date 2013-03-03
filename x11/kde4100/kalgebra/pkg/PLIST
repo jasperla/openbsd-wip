@@ -1,6 +1,10 @@
 @comment $OpenBSD$
 @bin bin/kalgebra
 @bin bin/kalgebramobile
+lib/kde4/imports/org/kde/analitza/
+lib/kde4/imports/org/kde/analitza/Graph2D.qml
+lib/kde4/imports/org/kde/analitza/libanalitzadeclarativeplugin.so
+lib/kde4/imports/org/kde/analitza/qmldir
 lib/kde4/plasma_applet_kalgebra.so
 share/applications/kde4/kalgebra.desktop
 share/applications/kde4/kalgebramobile.desktop
@@ -8,7 +12,6 @@ share/apps/kalgebramobile/
 share/apps/kalgebramobile/plugins/
 share/apps/kalgebramobile/plugins/About.qml
 share/apps/kalgebramobile/plugins/Console.qml
-share/apps/kalgebramobile/plugins/Graph2D.qml
 share/apps/kalgebramobile/plugins/Plot2D.qml
 share/apps/kalgebramobile/plugins/Tables.qml
 share/apps/kalgebramobile/plugins/VariablesView.qml
@@ -32,6 +35,13 @@ share/apps/kalgebramobile/plugins/widgets/qmldir
 share/apps/katepart/
 share/apps/katepart/syntax/
 share/apps/katepart/syntax/kalgebra.xml
+share/apps/plasma/plasmoids/
+share/apps/plasma/plasmoids/org.kde.graphsplasmoid/
+share/apps/plasma/plasmoids/org.kde.graphsplasmoid/contents/
+share/apps/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui/
+share/apps/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui/config.ui
+share/apps/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui/main.qml
+share/apps/plasma/plasmoids/org.kde.graphsplasmoid/metadata.desktop
 share/doc/HTML/en/kalgebra/
 share/doc/HTML/en/kalgebra/commands.docbook
 share/doc/HTML/en/kalgebra/common
@@ -48,6 +58,7 @@ share/icons/hicolor/32x32/apps/kalgebra.png
 share/icons/hicolor/48x48/apps/kalgebra.png
 share/icons/hicolor/64x64/apps/kalgebra.png
 share/icons/hicolor/scalable/apps/kalgebra.svgz
+share/kde4/services/graphsplasmoid.desktop
 share/kde4/services/kalgebraplasmoid.desktop
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

@@ -2,6 +2,7 @@
 
 COMMENT =	K Desktop Environment, interactive physics simulator
 DISTNAME =	step-${MODKDE_VERSION}
+REVISION =	0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
@@ -12,10 +13,13 @@ WANTLIB += cln glib-2.0 gsl gslcblas iconv intl qalculate xml2
 
 MODULES =	devel/gettext
 
+BUILD_DEPENDS =	math/eigen2
+
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+2,-guic
+
 LIB_DEPENDS = 	devel/gsl \
 		math/qalculate/libqalculate
-
-BUILD_DEPENDS =	math/eigen2
 
 CONFIGURE_ARGS =	-DSTEPCORE_TESTS:Bool=True
 

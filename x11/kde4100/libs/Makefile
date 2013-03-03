@@ -129,9 +129,9 @@ MODKDE4_SYSCONF_FILES =	dbus-1	share/examples \
 			xdg	share/examples
 
 REGRESS_IS_INTERACTIVE =	X11
-REGRESS_DEPENDS =		${BASE_PKGPATH} \
-				x11/kde4/kate \
-				x11/kde4/konsole
+REGRESS_DEPENDS =		${BUILD_PKGPATH} \
+				x11/kde4/kate>=${MODKDE4_DEP_VERSION} \
+				x11/kde4/konsole>=${MODKDE4_DEP_VERSION}
 
 post-extract:
 .for M in ${REWR_CMAKE_MODULES}

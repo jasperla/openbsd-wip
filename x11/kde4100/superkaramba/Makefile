@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	K Desktop Environment, interactive desktop widget creation
+COMMENT =	interactive desktop widgets for KDE4
 DISTNAME =	superkaramba-${MODKDE_VERSION}
 
 SHARED_LIBS =	superkaramba	0.0 # 4.7
@@ -11,6 +11,9 @@ WANTLIB += c kde3support kdeui kio knewstuff2 kpty krosscore m plasma pthread
 WANTLIB += qimageblitz stdc++ util ${MODPY_WANTLIB}
 
 MODULES =	lang/python
+
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+2,-guic
 
 LIB_DEPENDS =	graphics/qimageblitz
 
