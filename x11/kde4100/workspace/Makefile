@@ -62,7 +62,8 @@ MODKDE4_USE =	pim
 BUILD_DEPENDS =	misc/shared-desktop-ontologies \
 		x11/kde4/py-kde>=${MODKDE4_DEP_VERSION} \
 
-RUN_DEPENDS =	misc/shared-desktop-ontologies \
+RUN_DEPENDS =	devel/desktop-file-utils \
+		misc/shared-desktop-ontologies \
 		sysutils/lsof \
 		x11/kde4/py-kde>=${MODKDE4_DEP_VERSION} \
 		x11/polkit-qt4

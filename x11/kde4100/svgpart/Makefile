@@ -3,6 +3,7 @@
 COMMENT =	KDE KPart for viewing SVG
 DISTNAME =	svgpart-${MODKDE_VERSION}
 CATEGORIES =	graphics
+REVISION =	0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
