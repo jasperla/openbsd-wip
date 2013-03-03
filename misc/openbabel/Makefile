@@ -6,6 +6,7 @@ COMMENT=	chemistry file translation program
 V=		2.3.1
 DISTNAME=	openbabel-${V}
 CATEGORIES=	misc
+REVISION=	0
 
 SUBST_VARS=	V
 
@@ -35,7 +36,7 @@ LIB_DEPENDS=	textproc/libxml \
 		x11/wxWidgets
 
 # Boost is used for shared pointers only, missing in GCC 3.x
-.if ${GCC3_ARCHS:M${ARCH}}
+.if ${COMPILER_VERSION} == "gcc3"
 BUILD_DEPENDS+=	devel/boost
 .endif
 
