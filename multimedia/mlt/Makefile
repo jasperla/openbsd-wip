@@ -73,6 +73,7 @@ USE_GMAKE =		Yes
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--mandir=${PREFIX}/man \
 			--disable-frei0r \
+			--enable-debug \
 			--enable-gpl
 
 NO_REGRESS =		Yes

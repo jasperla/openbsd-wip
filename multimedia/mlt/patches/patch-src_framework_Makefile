@@ -9,18 +9,17 @@ $OpenBSD$
  TARGET = $(NAME).$(version)
  
  ifeq ($(targetos), Darwin)
-@@ -13,6 +12,10 @@ else ifeq ($(targetos), MinGW)
+@@ -13,6 +12,9 @@ else ifeq ($(targetos), MinGW)
  NAME = libmlt$(LIBSUF)
  TARGET = libmlt-$(soversion)$(LIBSUF)
  SHFLAGS += -Wl,--output-def,libmlt.def
 +else ifeq ($(targetos), OpenBSD)
 +LIBmlt_VERSION ?= $(soversion)
 +TARGET = libmlt$(LIBSUF).$(LIBmlt_VERSION)
-+SHFLAGS += -Wl,-shared
  else
  NAME = libmlt$(LIBSUF)
  TARGET = $(NAME).$(version)
-@@ -87,10 +90,12 @@ all:	$(TARGET)
+@@ -87,10 +89,12 @@ all:	$(TARGET)
  
  $(TARGET): $(OBJS)
  		$(CC) $(SHFLAGS) -o $@ $(OBJS) $(LDFLAGS)
@@ -36,7 +35,7 @@ $OpenBSD$
  
  depend:	$(SRCS)
  	$(CC) -MM $(CFLAGS) $^ 1>.depend
-@@ -107,6 +112,8 @@ install:
+@@ -107,6 +111,8 @@ install:
  		install -m 755 $(TARGET) $(DESTDIR)$(prefix) ; \
  		install -m 755 $(TARGET) $(DESTDIR)$(libdir)/libmlt.dll ; \
  		install -m 644 libmlt.def $(DESTDIR)$(libdir) ; \
