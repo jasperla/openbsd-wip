@@ -4,6 +4,7 @@ COMMENT =		non-linear video editor for KDE
 VERSION =		0.9.4
 DISTNAME =		kdenlive-${VERSION}
 CATEGORIES =		multimedia
+REVISION =		0
 
 HOMEPAGE =		http://www.kdenlive.org/
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
@@ -29,11 +30,11 @@ MODULES =		x11/kde4
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
+			multimedia/mlt,-gpl2 \
 			x11/gtk+2,-guic
 
 LIB_DEPENDS =		devel/qjson \
 			multimedia/mlt,-main
-RUN_DEPENDS =		multimedia/mlt,-gpl2
 
 # Fails to compile with enabled visibility
 CONFIGURE_ARGS =	-D__KDE_HAVE_GCC_VISIBILITY=0
