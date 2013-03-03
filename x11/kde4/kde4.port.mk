@@ -133,7 +133,7 @@ ERRORS +=	"Fatal: KDE libraries require Qt."
 .       endif
 
 MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/libs
-MODKDE4_WANTLIB +=		kdecore>=8
+MODKDE4_WANTLIB +=		${MODKDE4_LIB_DIR}/kdecore>=8
 .       if ${MODKDE4_USE:L:Mpim}
 MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/pimlibs
 MODKDE4_BUILD_DEPENDS +=	devel/boost
@@ -141,7 +141,7 @@ MODKDE4_BUILD_DEPENDS +=	devel/boost
 
 .       if ${MODKDE4_USE:L:Mgames}
 MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/libkdegames
-MODKDE4_WANTLIB +=		kdegames
+MODKDE4_WANTLIB +=		${MODKDE4_LIB_DIR}/kdegames
 .       endif
 
 .       if ${MODKDE4_USE:L:Mruntime}
@@ -170,22 +170,6 @@ MODKDE4_CONF_ARGS +=	-DCMAKE_BUILD_TYPE:String=Release
 MODKDE4_CMAKE_PREFIX =	-release
 .   endif
 
-MODKDE4_INCLUDE_DIR =	include/kde4
-MODKDE4_LIB_DIR =	lib/kde4/private
-MODKDE_INCLUDE_DIR =	${MODKDE4_INCLUDE_DIR}
-MODKDE_LIB_DIR =	${MODKDE4_LIB_DIR}
-
-# Use right directories
-MODKDE4_CONF_ARGS +=	-DMAN_INSTALL_DIR:Path=${PREFIX}/man \
-			-DINFO_INSTALL_DIR:Path=${PREFIX}/info \
-			-DLIBEXEC_INSTALL_DIR:Path=${PREFIX}/libexec \
-			-DSYSCONF_INSTALL_DIR:Path=${SYSCONFDIR}
-
-# Avoid conflicts with KDE3.
-# Libraries are handled in kde4-post-install target, see below.
-MODKDE4_CONF_ARGS +=	-DINCLUDE_INSTALL_DIR:Path=${MODKDE4_INCLUDE_DIR} \
-			-DKDE4_LIB_INSTALL_DIR:Path=${PREFIX}/${MODKDE4_LIB_DIR}
-
 # Enable PIE if supported by platform
 . if !empty(PIE_ARCH:M${ARCH})
 MODKDE4_CONF_ARGS +=	-DKDE4_ENABLE_FPIE:Bool=Yes
@@ -204,20 +188,32 @@ FLAVORS +=	debug
 # ${MODKDE4_RESOURCES:L} != "no"
 .endif
 
+# Set up directories, avoiding conflicts with KDE3.
+# Libraries are handled in kde4-post-install target, see below.
+MODKDE4_INCLUDE_DIR =	include/kde4
+MODKDE4_LIB_DIR =	lib/kde4/private
+MODKDE_INCLUDE_DIR =	${MODKDE4_INCLUDE_DIR}
+MODKDE_LIB_DIR =	${MODKDE4_LIB_DIR}
+
+# shortcut to make WANTLIBs and PLISTs more readable
+KDELIB =		${MODKDE4_LIB_DIR}
+SUBST_VARS +=		KDELIB
+
 .if ${CONFIGURE_STYLE:Mcmake}
 . if "${NO_REGRESS:L}" != "yes"
 # Enable regression tests if any
 MODKDE4_CONF_ARGS +=	-DKDE4_BUILD_TESTS:Bool=Yes
 . endif
 
-# Set up directories
-MODKDE4_CONF_ARGS +=	-DKDE4_INCLUDE_INSTALL_DIR:String=${PREFIX}/${MODKDE4_INCLUDE_DIR} \
-			-DKDE4_INSTALL_DIR:String=${PREFIX} \
-			-DKDE4_LIB_INSTALL_DIR:String=${PREFIX}/lib \
-			-DKDE4_LIBEXEC_INSTALL_DIR:String=${PREFIX}/libexec \
-			-DKDE4_INFO_INSTALL_DIR:String=${PREFIX}/info \
-			-DKDE4_MAN_INSTALL_DIR:String=${PREFIX}/man \
-			-DKDE4_SYSCONF_INSTALL_DIR:String=${SYSCONFDIR}
+MODKDE4_CONF_ARGS +=	-DINCLUDE_INSTALL_DIR:Path=${MODKDE4_INCLUDE_DIR} \
+			-DKDE4_INCLUDE_INSTALL_DIR:Path=${PREFIX}/${MODKDE4_INCLUDE_DIR} \
+			-DKDE4_INSTALL_DIR:Path=${PREFIX} \
+			-DKDE4_LIB_DIR:Path=${PREFIX}/${MODKDE4_LIB_DIR} \
+			-DKDE4_LIB_INSTALL_DIR:Path=${PREFIX}/lib \
+			-DKDE4_LIBEXEC_INSTALL_DIR:Path=${PREFIX}/libexec \
+			-DKDE4_INFO_INSTALL_DIR:Path=${PREFIX}/info \
+			-DKDE4_MAN_INSTALL_DIR:Path=${PREFIX}/man \
+			-DKDE4_SYSCONF_INSTALL_DIR:Path=${SYSCONFDIR}
 .endif
 
 # FIXME
