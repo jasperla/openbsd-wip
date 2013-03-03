@@ -1,0 +1,12 @@
+$OpenBSD$
+--- setupbase.py.orig	Sun Mar  3 22:55:34 2013
++++ setupbase.py	Sun Mar  3 22:55:51 2013
+@@ -201,7 +201,7 @@ def find_data_files():
+     """
+ 
+     docdirbase  = pjoin('share', 'doc', 'ipython')
+-    manpagebase = pjoin('share', 'man', 'man1')
++    manpagebase = pjoin('man', 'man1')
+ 
+     # Simple file lists can be made by hand
+     manpages = [f for f in glob(pjoin('docs','man','*.1.gz')) if isfile(f)]
