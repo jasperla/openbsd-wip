@@ -1,4 +1,7 @@
 $OpenBSD$
+
+Superflous .RE
+
 --- install/man/man1/ppdep.1.orig	Thu May  3 14:49:01 2012
 +++ install/man/man1/ppdep.1	Thu May  3 14:49:11 2012
 @@ -89,7 +89,6 @@ Writes some diagnostic messages. If you use this optio

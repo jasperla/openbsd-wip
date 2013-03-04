@@ -1,4 +1,7 @@
 $OpenBSD$
+
+Don't gzip manpages.
+
 --- install/man/Makefile.orig	Thu May  3 14:33:10 2012
 +++ install/man/Makefile	Thu May  3 14:34:25 2012
 @@ -31,5 +31,3 @@ installman:

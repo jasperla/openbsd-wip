@@ -1,4 +1,7 @@
 $OpenBSD$
+
+.PP doesn't take arguments.
+
 --- install/man/man1/fpc.1.orig	Thu May  3 14:49:31 2012
 +++ install/man/man1/fpc.1	Thu May  3 14:51:55 2012
 @@ -252,7 +252,8 @@ Add 

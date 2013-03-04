@@ -1,4 +1,8 @@
 $OpenBSD$
+
+Use correct getdirentries(2) syscall, not the (now deleted) compat one.
+http://svn.freepascal.org/cgi-bin/viewvc.cgi?view=revision&revision=23223
+
 --- fpcsrc/rtl/openbsd/sysnr.inc.orig	Thu Jul 26 19:33:38 2012
 +++ fpcsrc/rtl/openbsd/sysnr.inc	Thu Jul 26 19:35:30 2012
 @@ -256,7 +256,7 @@ Const

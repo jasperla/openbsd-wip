@@ -2,7 +2,7 @@
 
 ONLY_FOR_ARCHS =	amd64 i386
 
-COMMENT =		Free Pascal compiler
+COMMENT =		open source compiler for Pascal/Object Pascal
 
 V =			2.6.2
 DISTNAME =		fpcbuild-${V}
@@ -26,7 +26,6 @@ MASTER_SITES0 =		http://distfiles.bsdfrog.org/
 DIST_SUBDIR =		fpc
 BOOTSTRAP =		fpcboot-openbsd-$V-${BOOT_GEN}${EXTRACT_SUFX}
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} ${BOOTSTRAP}:0
-	
 
 .if ${MACHINE_ARCH} == "amd64"
 COMPNAME =		ppcx64
@@ -42,6 +41,8 @@ PKG_ARGS +=		-Damd64=0
 
 SUBST_VARS +=		V CONFIG
 
+REGRESS_DEPENDS =	devel/nasm
+
 MAKE_FLAGS =		NOGDB=1
 MAKE_ENV =		MKDIRPROG=/bin/mkdir ECHO=/bin/echo \
 			GINSTALL=/usr/bin/install DATE=/bin/date \
@@ -56,6 +57,9 @@ REGRESS_FLAGS =		TEST_FPC="${WRKSRC}/fpcsrc/compiler/${COMPNAME}" \
 			FPCMAKE="${WRKSRC}/fpcsrc/utils/fpcm/fpcmake"
 
 USE_GMAKE =		Yes
+
+post-patch:
+	${SUBST_CMD} ${WRKSRC}/fpcsrc/compiler/systems/t_bsd.pas
 
 post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/fpc/lexyacc
