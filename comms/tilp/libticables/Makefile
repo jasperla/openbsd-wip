@@ -16,7 +16,7 @@ MODULES =		converters/libiconv \
 LIB_DEPENDS =		devel/libusb-compat \
 			devel/glib2
 
-WANTLIB +=		iconv intl glib-2.0 pcre usb usb-1.0
+WANTLIB += iconv intl glib-2.0 pcre pthread usb usb-1.0
 
 CONFIGURE_ARGS =	--enable-static
 

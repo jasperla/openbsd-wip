@@ -17,6 +17,6 @@ LIB_DEPENDS =		comms/tilp/libticonv
 
 CONFIGURE_ARGS =	--enable-static
 
-WANTLIB += iconv intl ticonv z glib-2.0 pcre
+WANTLIB += iconv intl ticonv z glib-2.0 pcre pthread
 
 .include <bsd.port.mk>
