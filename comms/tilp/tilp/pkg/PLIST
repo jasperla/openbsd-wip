@@ -1,14 +1,8 @@
 @comment $OpenBSD$
 @bin bin/tilp
 @man man/man1/tilp.1
-share/applications/
 share/applications/tilp.desktop
-share/locale/
-share/locale/fr/
-share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/tilp2.mo
-share/mime/
-share/mime/packages/
 share/mime/packages/tilp.xml
 share/tilp2/
 share/tilp2/COPYING
@@ -132,3 +126,7 @@ share/tilp2/pixmaps/tb_restore.png
 share/tilp2/pixmaps/tb_send.png
 share/tilp2/pixmaps/tb_trash.png
 share/tilp2/pixmaps/tilp.xpm
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
