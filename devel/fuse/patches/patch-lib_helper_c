@@ -1,0 +1,11 @@
+--- lib/helper.c.orig	Tue Sep  4 12:17:46 2012
++++ lib/helper.c	Wed Jan 16 15:57:40 2013
+@@ -382,7 +382,7 @@ int fuse_version(void)
+ 
+ #include "fuse_compat.h"
+ 
+-#if !defined(__FreeBSD__) && !defined(__NetBSD__)
++#if !defined(__FreeBSD__) && !defined(__NetBSD__) && !defined(__OpenBSD__)
+ 
+ struct fuse *fuse_setup_compat22(int argc, char *argv[],
+ 				 const struct fuse_operations_compat22 *op,

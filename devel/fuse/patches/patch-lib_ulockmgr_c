@@ -1,0 +1,10 @@
+--- lib/ulockmgr.c.orig	Thu Apr 26 11:20:48 2012
++++ lib/ulockmgr.c	Tue Nov 13 11:28:13 2012
+@@ -20,6 +20,7 @@
+ #include <sys/stat.h>
+ #include <sys/socket.h>
+ #include <sys/wait.h>
++#include <sys/uio.h>
+ 
+ struct message {
+ 	unsigned intr : 1;
