@@ -1,40 +1,7 @@
 $OpenBSD$
---- CMakeLists.txt.orig	Tue Feb 26 11:26:16 2013
-+++ CMakeLists.txt	Tue Feb 26 16:45:48 2013
-@@ -315,23 +305,6 @@ if(NOT OLD_CROSS_COMPILE32 STREQUAL CROSS_COMPILE32)
- 	message(STATUS "Libraries rescanned")
- endif(NOT OLD_CROSS_COMPILE32 STREQUAL CROSS_COMPILE32)
- 
--# Use bundled libraries
--if(BUNDLED_SDL OR BUNDLED_CURL AND FEATURE_CURL OR BUNDLED_JPEG OR BUNDLED_LUA AND FEATURE_LUA OR FEATURE_OGG_VORBIS AND NOT MINGW)
--	if(EXISTS "${CMAKE_SOURCE_DIR}/libs/CMakeLists.txt")
--		message(STATUS "Using bundled libraries located at ${CMAKE_SOURCE_DIR}/libs")
--		add_subdirectory(libs)
--	else()
--		message(STATUS "======================================================")
--		message(STATUS "Bundled libraries were not found on your system!")
--		message(STATUS "======================================================")
--		message(STATUS "You need the *multilib* package to crosscompile ET:L on a 64bit system.")
--		message(STATUS "Alternatively clone etlegacy repository and then run")
--		message(STATUS "        'git submodule init && git submodule update'")
--		message(STATUS "and enable BUNDLED_* in CMake configuration.")
--		message(FATAL_ERROR "Build stopped because of missing libraries.")
--	endif()
--endif(BUNDLED_SDL OR BUNDLED_CURL AND FEATURE_CURL OR BUNDLED_JPEG OR BUNDLED_LUA AND FEATURE_LUA OR FEATURE_OGG_VORBIS AND NOT MINGW)
--
- #-----------------------------------------------------------------
- # Client features
- #-----------------------------------------------------------------
-@@ -409,7 +382,7 @@ if(BUILD_CLIENT)
- 	if(FEATURE_OGG_VORBIS)
- 		if(NOT BUNDLED_OGG_VORBIS)
- 			find_package(Vorbis REQUIRED)
--			list(APPEND CLIENT_LIBRARIES ${VORBIS_FILE_LIBRARY}) # This links only libvorbisfile
-+			list(APPEND CLIENT_LIBRARIES ${VORBIS_FILE_LIBRARY} ${OGG_LIBRARY} ${VORBIS_LIBRARY})
- 			include_directories(SYSTEM ${VORBIS_INCLUDE_DIR})
- 		else() # BUNDLED_OGG_VORBIS
- 			list(APPEND CLIENT_LIBRARIES ${OGG_VORBIS_BUNDLED_LIBRARIES} ${OGG_BUNDLED_LIBRARIES})
-@@ -646,7 +619,7 @@ endif(INSTALL_OMNIBOT)
+--- CMakeLists.txt.orig	Tue Mar  5 08:16:51 2013
++++ CMakeLists.txt	Tue Mar  5 11:51:06 2013
+@@ -649,7 +649,7 @@ endif(INSTALL_OMNIBOT)
  
  # misc/etmain/ adds
  install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/misc/etmain/"
@@ -43,7 +10,7 @@ $OpenBSD$
  )
  
  # misc adds
-@@ -667,9 +640,6 @@ install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/misc/etl.ic
+@@ -670,9 +670,6 @@ install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/misc/etl.ic
  
  # project adds
  install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/README.md"
