@@ -8,8 +8,8 @@ HOMEPAGE=	http://www.etlegacy.com/
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 MASTER_SITES=	https://github.com/etlegacy/etlegacy/tarball/master/
-DISTNAME=	etlegacy-etlegacy-756f3ac
-PKGNAME=	etlegacy-20130226
+DISTNAME=	etlegacy-etlegacy-fee5dd1
+PKGNAME=	etlegacy-20130305
 
 LIB_DEPENDS=	devel/sdl \
 		graphics/jpeg \
