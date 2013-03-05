@@ -23,6 +23,6 @@ MODGCC4_LANGS =		c c++
 
 BUILD_DEPENDS =		misc/shared-desktop-ontologies
 
-LIB_DEPENDS =		STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/nepomuk-core
+LIB_DEPENDS =		${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>

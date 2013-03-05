@@ -16,7 +16,7 @@ WANTLIB += vorbisfile
 LIB_DEPENDS =	audio/cdparanoia \
 		audio/flac \
 		audio/libvorbis \
-		x11/kde4/libkcddb>=${MODKDE4_DEP_VERSION} \
-		x11/kde4/libkcompactdisc>=${MODKDE4_DEP_VERSION}
+		${MODKDE4_DEP_DIR}/libkcddb>=${MODKDE4_DEP_VERSION} \
+		${MODKDE4_DEP_DIR}/libkcompactdisc>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>

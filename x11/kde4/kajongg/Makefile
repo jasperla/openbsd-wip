@@ -6,11 +6,11 @@ HOMEPAGE =	http://www.kde.org/applications/games/kajongg/
 
 MODULES =	lang/python
 
-BUILD_DEPENDS =	x11/kde4/py-kde
+BUILD_DEPENDS =	${MODKDE4_DEP_DIR}/py-kde
 
 RUN_DEPENDS =	devel/py-twisted/core \
-		STEM->=${MODKDE4_VERSION}:x11/kde4/libkmahjongg \
-		x11/kde4/py-kde
+		${MODKDE4_DEP_DIR}/libkmahjongg>=${MODKDE4_VERSION} \
+		${MODKDE4_DEP_DIR}/py-kde
 
 # Avoid extra BUILD_DEPENDS
 CONFIGURE_ARGS =	-DINSTALL_KAJONGG:Bool=TRUE

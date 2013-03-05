@@ -1,2 +1,0 @@
-Doesn't work, prints to stderr on start:
-jovie(17497)/kttsd (daemon): could not get a connection to speech-dispatcher 

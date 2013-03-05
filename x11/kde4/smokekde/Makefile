@@ -51,9 +51,9 @@ MODKDE4_USE =	pim libs
 
 LIB_DEPENDS =	databases/soprano \
 		productivity/attica \
-		x11/kde4/kate>=${MODKDE4_DEP_VERSION} \
-		x11/kde4/okular>=${MODKDE4_DEP_VERSION} \
-		x11/kde4/smokegen>=${MODKDE4_DEP_VERSION} \
-		x11/kde4/smokeqt>=${MODKDE4_DEP_VERSION}
+		${MODKDE4_DEP_DIR}/kate>=${MODKDE4_DEP_VERSION} \
+		${MODKDE4_DEP_DIR}/okular>=${MODKDE4_DEP_VERSION} \
+		${MODKDE4_DEP_DIR}/smokegen>=${MODKDE4_DEP_VERSION} \
+		${MODKDE4_DEP_DIR}/smokeqt>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>

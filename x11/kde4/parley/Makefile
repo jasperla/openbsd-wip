@@ -18,7 +18,6 @@ MODULES =	multimedia/phonon
 
 LIB_DEPENDS = 	textproc/libxml \
 		textproc/libxslt \
-		productivity/attica \
-		x11/kde4/libkdeedu
+		${MODKDE4_DEP_DIR}/libkdeedu>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>

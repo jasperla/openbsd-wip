@@ -40,9 +40,10 @@ LIB_DEPENDS =	databases/soprano \
 		devel/qjson \
 		productivity/akonadi>=${MIN_AKONADI_VERSION} \
 		productivity/libkgapi>=0.4.0 \
-		x11/kde4/pimlibs>=${MODKDE4_DEP_VERSION}
+		${MODKDE4_DEP_DIR}/pimlibs>=${MODKDE4_DEP_VERSION}
 
 # Long dependency chain, not ported yet.
-CONFIGURE_ARGS=	-DCMAKE_DISABLE_FIND_PACKAGE_Libkolab:Bool=TRUE
+CONFIGURE_ARGS=	-DCMAKE_DISABLE_FIND_PACKAGE_Libkolab:Bool=Yes \
+		-DCMAKE_DISABLE_FIND_PACKAGE_Libkolabxml:Bool=Yes
 
 .include <bsd.port.mk>

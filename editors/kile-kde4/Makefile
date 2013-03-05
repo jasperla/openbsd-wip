@@ -24,6 +24,6 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		print/texlive/base \
 		x11/gtk+2,-guic \
-		x11/kde4/kate
+		${MODKDE4_DEP_DIR}/kate
 
 .include <bsd.port.mk>

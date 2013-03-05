@@ -24,12 +24,12 @@ VMEM_WARNING =  Yes
 
 MODKDE4_USE =	libs pim
 
-BUILD_DEPENDS =	x11/kde4/nepomuk-core>=${MODKDE4_DEP_VERSION} \
+BUILD_DEPENDS =	${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION} \
 		devel/py-sip>=4.14.1 \
 		misc/shared-desktop-ontologies \
 		x11/py-qt4>=4.9.5 \
 
-RUN_DEPENDS =	x11/kde4/nepomuk-core>=${MODKDE4_DEP_VERSION} \
+RUN_DEPENDS =	${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION} \
 		misc/shared-desktop-ontologies \
 		x11/py-qt4>=4.9.5
 

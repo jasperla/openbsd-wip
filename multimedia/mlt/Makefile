@@ -55,7 +55,7 @@ LIB_DEPENDS-main =	audio/jack \
 			x11/gtk+2,-main
 
 BUILD_DEPENDS-gpl2 =	textproc/libxml>=2.5 \
-			x11/kde4/libs
+			${MODKDE4_DEP_DIR}/libs
 
 LIB_DEPENDS-gpl2 =	${BASE_PKGPATH},-main \
 			${MODQT4_LIB_DEPENDS} \

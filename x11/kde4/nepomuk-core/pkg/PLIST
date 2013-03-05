@@ -117,6 +117,9 @@ lib/cmake/NepomukCore/NepomukCoreConfig.cmake
 lib/cmake/NepomukCore/NepomukCoreConfigVersion.cmake
 lib/cmake/NepomukCore/NepomukCoreTargetsWithPrefix${MODKDE4_CMAKE_PREFIX}.cmake
 lib/cmake/NepomukCore/NepomukCoreTargetsWithPrefix.cmake
+@lib ${KDE4LIB}/libkdeinit4_nepomukserver.so.${LIBkdeinit4_nepomukserver_VERSION}
+@lib ${KDE4LIB}/libnepomukcommon.so.${LIBnepomukcommon_VERSION}
+@lib ${KDE4LIB}/libnepomukcore.so.${LIBnepomukcore_VERSION}
 lib/kde4/nepomukexiv2extractor.so
 lib/kde4/nepomukffmpegextractor.so
 lib/kde4/nepomukfileindexer.so
@@ -125,9 +128,6 @@ lib/kde4/nepomukplaintextextractor.so
 lib/kde4/nepomukpopplerextractor.so
 lib/kde4/nepomukstorage.so
 lib/kde4/nepomuktaglibextractor.so
-@lib ${KDE4LIB}/libkdeinit4_nepomukserver.so.${LIBkdeinit4_nepomukserver_VERSION}
-@lib ${KDE4LIB}/libnepomukcommon.so.${LIBnepomukcommon_VERSION}
-@lib ${KDE4LIB}/libnepomukcore.so.${LIBnepomukcore_VERSION}
 @lib lib/libkdeinit4_nepomukserver.so.${LIBkdeinit4_nepomukserver_VERSION}
 @lib lib/libnepomukcommon.so.${LIBnepomukcommon_VERSION}
 @lib lib/libnepomukcore.so.${LIBnepomukcore_VERSION}

@@ -1681,6 +1681,8 @@ share/kde4/servicetypes/kopeteprotocol.desktop
 share/kde4/servicetypes/kopeteui.desktop
 share/kde4/servicetypes/krdc_plugin.desktop
 share/kde4/servicetypes/krfb-framebuffer.desktop
+share/ontology/kde/kget_history.ontology
+share/ontology/kde/kget_history.trig
 share/sounds/KDE-Im-Phone-Ring.wav
 share/sounds/Kopete_Event.ogg
 share/sounds/Kopete_Received.ogg

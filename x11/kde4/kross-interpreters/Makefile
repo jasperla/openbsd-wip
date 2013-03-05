@@ -5,6 +5,7 @@ COMMENT-java =	KDE Java bindings
 DISTNAME =	kross-interpreters-${MODKDE4_VERSION}
 PKGNAME-main =	${PKGNAME}
 PKGNAME-java =	${PKGNAME:C/interpreters/java/}
+REVISION-main =	0
 
 MULTI_PACKAGES =	-main -java
 
@@ -13,7 +14,7 @@ MULTI_PACKAGES =	-main -java
 PSEUDO_FLAVORS =	no_java
 FLAVOR ?=
 
-WANTLIB =  c m pthread stdc++
+WANTLIB =  m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtScript lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/krosscore
 
@@ -28,9 +29,10 @@ MODKDE4_USE =		libs
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_FALCON:Bool=Yes
 
 # XXX Ruby 1.9 support is broken, and FindRuby doesn't find 1.8
-#MODULES =		lang/python lang/ruby
-#MODRUBY_REV =		1.8
-CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Ruby:Bool=Yes
+MODULES =		lang/python lang/ruby
+MODRUBY_REV =		1.8
+#CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Ruby:Bool=Yes
+CONFIGURE_ARGS +=	-DRUBY_EXECUTABLE=${RUBY}
 
 .if ${FLAVOR:Mno_java}
 CONFIGURE_ARGS +=	-DBUILD_java:Bool=No
