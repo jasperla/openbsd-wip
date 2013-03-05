@@ -59,7 +59,7 @@ BUILD_DEPENDS =	devel/boost \
 RUN_DEPENDS =	misc/shared-mime-info \
 		misc/shared-desktop-ontologies>=0.10
 
-LIB_DEPENDS =	x11/kde4/nepomuk-core>=${MODKDE4_DEP_VERSION} \
+LIB_DEPENDS =	${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION} \
 		databases/openldap \
 		databases/soprano>=${MIN_SOPRANO_VERSION} \
 		devel/qjson \

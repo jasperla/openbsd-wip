@@ -1,9 +1,9 @@
 @comment $OpenBSD$
 lib/kde4/kcm_printer_manager.so
 lib/kde4/kded_printmanager.so
+@lib ${KDE4LIB}/libkcupslib.so.${LIBkcupslib_VERSION}
 lib/kde4/plasma_engine_printers.so
 lib/kde4/plasma_engine_printjobs.so
-@lib ${KDE4LIB}/libkcupslib.so.${LIBkcupslib_VERSION}
 @lib lib/libkcupslib.so.${LIBkcupslib_VERSION}
 @bin libexec/add-printer
 @bin libexec/configure-printer

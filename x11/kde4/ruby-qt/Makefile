@@ -5,10 +5,11 @@ COMMENT =	Qt4 bindings for Ruby
 DISTNAME =	qtruby-${MODKDE4_VERSION}
 PKGNAME =	ruby-qt-${MODKDE4_VERSION}
 HOMEPAGE =	http://techbase.kde.org/Development/Languages/Ruby
+REVISION =	0
 
 SHARED_LIBS =	qtruby4shared		0.0 # 2.0
 
-WANTLIB =  c m stdc++ ${MODRUBY_WANTLIB}
+WANTLIB =  c m stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtWebKit
 WANTLIB += lib/qt4/QtXml lib/qt4/phonon
@@ -24,18 +25,13 @@ WANTLIB += qscintilla2
 
 MODULES =	lang/ruby
 MODKDE4_USE =
-MODRUBY_REV =	1.9
 
-LIB_DEPENDS =	x11/kde4/smokeqt
+MODRUBY_REV =		1.8
+MODRUBY_ADJ_FILES =	*.rb rbqtapi
+CONFIGURE_ARGS =	-DRUBY_EXECUTABLE=${RUBY}
+
+LIB_DEPENDS =	${MODKDE4_DEP_DIR}/smokeqt
 
 PATCHORIG =	.ports.orig
-
-post-patch:
-	@echo "====> Adjusting shebangs"
-	@cd ${WRKSRC} && find . -name '*.rb' | while read F; do \
-		echo -n "\t$$F"; \
-		${MODRUBY_RUBY_ADJ} "$$F"; \
-		echo; \
-	done
 
 .include <bsd.port.mk>

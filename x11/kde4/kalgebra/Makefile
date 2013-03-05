@@ -21,6 +21,6 @@ MODULES =	multimedia/phonon
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+2,-guic
 
-LIB_DEPENDS = 	x11/kde4/analitza>=${MODKDE4_DEP_VERSION}
+LIB_DEPENDS = 	${MODKDE4_DEP_DIR}/analitza>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>

@@ -2022,7 +2022,6 @@ lib/kde4/kspell_enchant.so
 lib/kde4/ktranscript.so
 lib/kde4/libkhtmlpart.so
 lib/kde4/libkmultipart.so
-lib/kde4/notepadpart.so
 @lib ${KDE4LIB}/libkcmutils.so.${LIBkcmutils_VERSION}
 @lib ${KDE4LIB}/libkde3support.so.${LIBkde3support_VERSION}
 @lib ${KDE4LIB}/libkdeclarative.so.${LIBkdeclarative_VERSION}
@@ -2066,6 +2065,7 @@ lib/kde4/notepadpart.so
 @lib ${KDE4LIB}/libplasma.so.${LIBplasma_VERSION}
 @lib ${KDE4LIB}/libsolid.so.${LIBsolid_VERSION}
 @lib ${KDE4LIB}/libthreadweaver.so.${LIBthreadweaver_VERSION}
+lib/kde4/notepadpart.so
 lib/kde4/plugins/designer/
 lib/kde4/plugins/designer/kde3supportwidgets.so
 lib/kde4/plugins/designer/kdedeprecated.so

@@ -2,7 +2,6 @@
 
 COMMENT =	extra KDE plasmoids
 DISTNAME =	kdeplasma-addons-${MODKDE4_VERSION}
-REVISION =	0
 
 SHARED_LIBS =	lancelot-datamodels		0.0 # 1.7
 SHARED_LIBS +=	lancelot			0.0 # 1.9
@@ -52,9 +51,9 @@ LIB_DEPENDS =	devel/qjson \
 		security/qca2 \
 		security/qoauth \
 		x11/dbusmenu-qt \
-		x11/kde4/libkexiv2>=${MODKDE4_DEP_VERSION} \
-		x11/kde4/marble>=${MODKDE4_DEP_VERSION} \
-		x11/kde4/nepomuk-core>=${MODKDE4_DEP_VERSION} \
+		${MODKDE4_DEP_DIR}/libkexiv2>=${MODKDE4_DEP_VERSION} \
+		${MODKDE4_DEP_DIR}/marble>=${MODKDE4_DEP_VERSION} \
+		${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION} \
 		x11/qwt
 
 .include <bsd.port.mk>

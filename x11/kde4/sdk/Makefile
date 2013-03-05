@@ -38,8 +38,7 @@ MODKDE4_USE =	pim
 # For building KAppTemplate with weird file names
 USE_GMAKE =	Yes
 
-BUILD_DEPENDS =	archivers/gtar \
-		devel/boost
+BUILD_DEPENDS =	devel/boost
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
@@ -51,7 +50,7 @@ LIB_DEPENDS =	databases/strigi \
 		textproc/libxslt \
 		textproc/libxml \
 		textproc/hunspell \
-		x11/kde4/baseapps>=${MODKDE4_DEP_VERSION}
+		${MODKDE4_DEP_DIR}/baseapps>=${MODKDE4_DEP_VERSION}
 
 # We have only pre-compiled Antlr3, and poxml wants
 # C runtime from Antlr2, which is not easy to port

@@ -19,7 +19,7 @@ BUILD_DEPENDS =	archivers/bzip2 \
 		archivers/xz
 
 LIB_DEPENDS =	archivers/libarchive \
-		x11/kde4/baseapps
+		${MODKDE4_DEP_DIR}/baseapps
 
 TEST_DEPENDS =	devel/qjson
 

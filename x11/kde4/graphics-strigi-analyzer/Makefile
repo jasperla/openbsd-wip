@@ -9,7 +9,7 @@ WANTLIB += streamanalyzer streams tiff
 MODKDE4_NO_QT =	Yes
 MODKDE4_USE =
 
-BUILD_DEPENDS =	x11/kde4/libs
+BUILD_DEPENDS =	${MODKDE4_DEP_DIR}/libs
 
 LIB_DEPENDS =	databases/strigi
 

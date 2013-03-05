@@ -2021,6 +2021,7 @@ share/locale/nl/LC_MESSAGES/nepomukbackup.mo
 share/locale/nl/LC_MESSAGES/nepomukcleaner.mo
 share/locale/nl/LC_MESSAGES/nepomukcontroller.mo
 share/locale/nl/LC_MESSAGES/nepomukfileindexer.mo
+share/locale/nl/LC_MESSAGES/nepomukpimindexerutility.mo
 share/locale/nl/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/nl/LC_MESSAGES/nepomukserver.mo
 share/locale/nl/LC_MESSAGES/nepomukservicestub.mo

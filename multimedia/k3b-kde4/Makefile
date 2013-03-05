@@ -49,7 +49,7 @@ LIB_DEPENDS =		audio/flac \
 			audio/taglib \
 			devel/libdvdread \
 			graphics/ffmpeg>=20121026 \
-			x11/kde4/libkcddb>=${MODKDE4_DEP_VERSION}
+			${MODKDE4_DEP_DIR}/libkcddb>=${MODKDE4_DEP_VERSION}
 
 CONFIGURE_ARGS =	-DK3B_ENABLE_MUSICBRAINZ:Bool=No
 

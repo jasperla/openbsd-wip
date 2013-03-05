@@ -2,7 +2,6 @@
 
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${MODKDE4_VERSION}
-REVISION =	0
 
 SHARED_LIBS =  cantorlibs                0.0 # 0.0
 SHARED_LIBS += cantor_config             0.0 # 0.0
@@ -24,6 +23,6 @@ LIB_DEPENDS = 	databases/soprano \
 		math/R>=2.15.1p4 \
 		math/libqalculate \
 		print/libspectre \
-		x11/kde4/analitza>=${MODKDE4_DEP_VERSION}
+		${MODKDE4_DEP_DIR}/analitza>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>

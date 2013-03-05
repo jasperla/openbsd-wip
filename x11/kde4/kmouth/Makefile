@@ -10,6 +10,6 @@ WANTLIB += ${KDE4LIB}/kde3support ${KDE4LIB}/kdeui ${KDE4LIB}/kio
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+2,-guic \
-		x11/kde4/jovie>=${MODKDE4_DEP_VERSION}
+		${MODKDE4_DEP_DIR}/jovie>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>

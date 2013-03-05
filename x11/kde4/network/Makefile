@@ -33,7 +33,7 @@ WANTLIB += ${KDE4LIB}/knotifyconfig ${KDE4LIB}/konq ${KDE4LIB}/kparts
 WANTLIB += ${KDE4LIB}/kpimidentities ${KDE4LIB}/kprintutils
 WANTLIB += ${KDE4LIB}/kresources ${KDE4LIB}/ktexteditor ${KDE4LIB}/ktorrent
 WANTLIB += ${KDE4LIB}/kutils ${KDE4LIB}/kworkspace ${KDE4LIB}/nepomuk
-WANTLIB += ${KDE4LIB}/nepomukutils ${KDE4LIB}/plasma
+WANTLIB += ${KDE4LIB}/nepomukquery ${KDE4LIB}/nepomukutils ${KDE4LIB}/plasma
 WANTLIB += ${KDE4LIB}/qgpgme ${KDE4LIB}/solid
 WANTLIB += gadu glib-2.0 gpg-error gpgme++-pthread gpgme-pthread idn
 WANTLIB += assuan jasper jpeg meanwhile mms otr qca2 qimageblitz soprano
@@ -53,7 +53,7 @@ LIB_DEPENDS =	audio/xmms \
 		net/meanwhile \
 		security/libotr \
 		security/qca2 \
-		x11/kde4/baseapps>=${MODKDE4_DEP_VERSION}
+		${MODKDE4_DEP_DIR}/baseapps>=${MODKDE4_DEP_VERSION}
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_LibV4L2:Bool=Yes \
 			-DWITH_LibVNCServer:Bool=No \

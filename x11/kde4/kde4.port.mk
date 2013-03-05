@@ -1,38 +1,49 @@
 # $OpenBSD$
 
 # The version of KDE SC in x11/kde4
-_MODKDE4_STABLE =	4.10.1
+_MODKDE4_STABLE =	4.10.2
 
 # List of currently supported KDE SC versions, except "stable"
-_MODKDE4_OTHERS =	4.10.2
+_MODKDE4_OTHERS =
+
+# Handle kde4* FLAVORs: detect what version is requested, and
+# set MODKDE4_VERSION, MODKDE4_DEP_VERSION and MODKDE4_DEP_DIR
+# accordingly. There is also a shortcut for the latter.
+#
+# MODKDE4_FLAVOR is read-only for ports, except KDE SC itself.
 
 .for _v in ${_MODKDE4_OTHERS}
 MODKDE4_FLAVORS +=	kde${_v:S/.//g}
 .endfor
 FLAVORS +=		${MODKDE4_FLAVORS}
-MODKDE4_FLAVOR =	${FLAVOR:Mkde4*}
+MODKDE4_FLAVOR ?=	${FLAVOR:Mkde4*}
 
-.for _f in ${MODKDE4_FLAVOR}
-.  for _f2 in ${MODKDE4_FLAVOR}
-.    if "${_f2}" != "${_f}"
+.if ${MODKDE4_FLAVOR}
+.   for _f in ${MODKDE4_FLAVOR}
+.      for _f2 in ${MODKDE4_FLAVOR}
+.         if "${_f2}" != "${_f}"
 ERRORS += "Fatal: cannot use more than one kde4* FLAVOR\n"
-.    endif
-.  endfor
+.         endif
+.      endfor
 
-.  for _v in ${_MODKDE4_OTHERS}
-.    if "kde${_v:S/.//g}" == "${_f}"
+.      for _v in ${_MODKDE4_OTHERS}
+.         if "kde${_v:S/.//g}" == "${_f}"
 MODKDE4_VERSION =	${_v}
-.    endif
-.  endfor
+MODKDE4_DEP_VERSION ?=	${_v}
+.         endif
+.      endfor
 
+.   endfor
 MODKDE4_DEP_DIR =	x11/${MODKDE4_FLAVOR}
-.endfor
+.else
+MODKDE4_DEP_DIR =	x11/kde4
+.endif
 
+CATEGORIES +=		${MODKDE4_DEP_DIR}
+
+# Can be set by port to force dependency on particular KDE SC version.
 MODKDE4_VERSION ?=	${_MODKDE4_STABLE}
-MODKDE4_DEP_DIR ?=	x11/kde4
-
-# Version to be used for SC dependencies by default
-MODKDE4_DEP_VERSION =	${MODKDE4_VERSION:R}
+MODKDE4_DEP_VERSION ?=	${MODKDE4_VERSION:R}
 
 # General options set by module
 SHARED_ONLY ?=		Yes
@@ -45,9 +56,9 @@ SEPARATE_BUILD ?=	flavored
 
 # CONFIGURE_STYLE needs separate handling because it is set to empty
 # string in bsd.port.mk initially.
-.  if "${CONFIGURE_STYLE}" == ""
+.   if "${CONFIGURE_STYLE}" == ""
 CONFIGURE_STYLE =	cmake
-.  endif
+.   endif
 .endif
 
 # MODKDE4_RESOURCES: Yes/No
@@ -246,24 +257,6 @@ WANTLIB +=		${MODKDE4_WANTLIB}
 CONFIGURE_ENV +=	${MODKDE4_CONFIGURE_ENV}
 CONFIGURE_ARGS +=	${MODKDE4_CONF_ARGS}
 # MAKE_FLAGS +=		${MODKDE4_CONF_ARGS}
-
-# Tweak dependency path for testing directories
-.if "${MODKDE4_FLAVOR}" != ""
-CATEGORIES +=		${_MODKDE4_REAL_DIR}
-BUILD_DEPENDS :=	${BUILD_DEPENDS:C@x11/kde4/@${MODKDE4_DEP_DIR}/@}
-RUN_DEPENDS :=		${RUN_DEPENDS:C@x11/kde4/@${MODKDE4_DEP_DIR}/@}
-LIB_DEPENDS :=		${LIB_DEPENDS:C@x11/kde4/@${MODKDE4_DEP_DIR}/@}
-. if "${MULTI_PACKAGES}" != ""
-.  for _s in ${MULTI_PACKAGES}
-.   if defined(RUN_DEPENDS${_s})
-RUN_DEPENDS${_s} :=	${RUN_DEPENDS${_s}:C@x11/kde4/@${MODKDE4_DEP_DIR}/@}
-.   endif
-.   if defined(LIB_DEPENDS${_s})
-LIB_DEPENDS${_s} :=	${LIB_DEPENDS${_s}:C@x11/kde4/@${MODKDE4_DEP_DIR}/@}
-.   endif
-.  endfor
-. endif
-.endif
 
 MODKDE4_FIX_GETTEXT ?=	Yes
 .if ${MODKDE4_FIX_GETTEXT:L} == "yes"

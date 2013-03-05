@@ -1,7 +1,6 @@
 # $OpenBSD: Makefile.inc,v 1.12 2010/07/10 16:57:22 espie Exp $
 
 CATEGORIES ?=		x11
-CATEGORIES +=		x11/kde4
 MODULES +=		x11/kde4
 
 MASTER_SITES ?=		${MASTER_SITE_KDE:=stable/${MODKDE4_VERSION}/src/}

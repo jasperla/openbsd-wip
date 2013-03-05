@@ -30,7 +30,7 @@ MODULES =	lang/mono
 MODKDE4_USE =
 
 LIB_DEPENDS =	editors/qscintilla \
-		x11/kde4/smokeqt
+		${MODKDE4_DEP_DIR}/smokeqt
 
 CONFIGURE_ARGS =	-DPHONON_INCLUDE_DIR:String=${MODQT4_INCDIR}
 

@@ -11,7 +11,6 @@ SHARED_LIBS +=	kdeinit4_kglobalaccel	0.0
 SHARED_LIBS +=	kdeinit4_khelpcenter	0.0
 SHARED_LIBS +=	kdeinit4_kuiserver 	0.0
 SHARED_LIBS +=	kdeinit4_kwalletd 	0.0
-SHARED_LIBS +=	attica_kde		0.0
 
 WANTLIB =  c m pthread stdc++ util
 WANTLIB += Half ICE Iex IlmImf IlmThread Imath SM X11 Xcursor Xext
@@ -49,8 +48,8 @@ LIB_DEPENDS =	audio/libcanberra \
 		net/samba \
 		productivity/attica \
 		security/libssh \
-		x11/kde4/kactivities>=${MODKDE4_DEP_VERSION} \
-		x11/kde4/nepomuk-core>=${MODKDE4_DEP_VERSION}
+		${MODKDE4_DEP_DIR}/kactivities>=${MODKDE4_DEP_VERSION} \
+		${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION}
 
 # QNtrack depends on libnl, Linux-specific library.
 CONFIGURE_ARGS =	-DWITH_ALSA:Bool=FALSE \
