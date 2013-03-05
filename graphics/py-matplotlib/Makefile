@@ -32,9 +32,11 @@ RUN_DEPENDS=	devel/py-tz \
 		devel/py-dateutil \
 		math/py-numpy \
 		x11/py-gtk2 \
+		graphics/py-Imaging \
 		${MODPY_TKINTER_DEPENDS}
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	graphics/png
+TEST_DEPENDS =	${RUN_DEPENDS}
 
 MAKE_ENV+=	EXTRA_INCLUDES="${WRKSRC} ${LOCALBASE}/include/libpng ${MODTCL_INCDIR} ${MODTK_INCDIR}" \
 		LDSHARED="${CC} -shared -fPIC"
