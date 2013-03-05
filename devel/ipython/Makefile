@@ -1,6 +1,7 @@
 # $OpenBSD: Makefile,v 1.19 2011/09/22 18:42:14 rpointel Exp $
 #
 # XXX update path FUCKED
+# XXX Run make in docs/ (may need new matplotlib??)
 
 COMMENT=		enhanced interactive Python shell
 
@@ -41,10 +42,7 @@ post-install:
 	mv ${WRKSRC}/docs/examples/core/*.desktop ${APPS_DIR}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${APPS_DIR}
 	# emacs stuff
-	#${INSTALL_DATA_DIR} ${EXAMPLES_DIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/emacs/ipython.el ${EXAMPLES_DIR}
-	#mv ${WRKSRC}/docs/examples/* ${EXAMPLES_DIR}
-	#chown -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLES_DIR}
 
 do-regress:
 	cd ${WRKSRC} && ${MODPY_BIN} ${MODPY_SETUP} check
