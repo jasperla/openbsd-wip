@@ -6,6 +6,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		open-source version of Doom 3
 
+GITREV =		f8de73862e87de299ce76216c407344eac243b11
 DISTNAME =		dhewm-dhewm3-f8de738
 PKGNAME =		dhewm3-20130113
 
@@ -24,7 +25,7 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB += SDL c curl jpeg m ogg openal pthread stdc++ vorbis
 WANTLIB += vorbisfile z
 
-MASTER_SITES =		${HOMEPAGE}/tarball/master/
+MASTER_SITES =		${HOMEPAGE}/tarball/${GITREV}/
 
 MODULES =		devel/cmake
 LIB_DEPENDS =		devel/sdl \
