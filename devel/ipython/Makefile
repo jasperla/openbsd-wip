@@ -1,7 +1,6 @@
 # $OpenBSD: Makefile,v 1.19 2011/09/22 18:42:14 rpointel Exp $
 #
 # XXX update path FUCKED
-# XXX desktop files
 
 COMMENT=		enhanced interactive Python shell
 
@@ -37,9 +36,11 @@ USE_GROFF =	Yes
 EXAMPLES_DIR =	${PREFIX}/share/examples/ipython/
 APPS_DIR = 	${PREFIX}/share/applications/
 post-install:
+	# desktop files
 	${INSTALL_DATA_DIR} ${APPS_DIR}
 	mv ${WRKSRC}/docs/examples/core/*.desktop ${APPS_DIR}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${APPS_DIR}
+	# examples
 	${INSTALL_DATA_DIR} ${EXAMPLES_DIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/emacs/ipython.el ${EXAMPLES_DIR}
 	mv ${WRKSRC}/docs/examples/* ${EXAMPLES_DIR}

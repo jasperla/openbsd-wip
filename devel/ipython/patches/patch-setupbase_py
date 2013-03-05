@@ -1,4 +1,8 @@
 $OpenBSD$
+
+Note that we do not patch the examples, since setup.py does not seem to
+install them anyway. See post-install target in Makefile.
+
 --- setupbase.py.orig	Sun Mar  3 22:55:34 2013
 +++ setupbase.py	Sun Mar  3 22:55:51 2013
 @@ -201,7 +201,7 @@ def find_data_files():
