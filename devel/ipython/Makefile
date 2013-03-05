@@ -40,11 +40,11 @@ post-install:
 	${INSTALL_DATA_DIR} ${APPS_DIR}
 	mv ${WRKSRC}/docs/examples/core/*.desktop ${APPS_DIR}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${APPS_DIR}
-	# examples
-	${INSTALL_DATA_DIR} ${EXAMPLES_DIR}
+	# emacs stuff
+	#${INSTALL_DATA_DIR} ${EXAMPLES_DIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/emacs/ipython.el ${EXAMPLES_DIR}
-	mv ${WRKSRC}/docs/examples/* ${EXAMPLES_DIR}
-	chown -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLES_DIR}
+	#mv ${WRKSRC}/docs/examples/* ${EXAMPLES_DIR}
+	#chown -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLES_DIR}
 
 do-regress:
 	cd ${WRKSRC} && ${MODPY_BIN} ${MODPY_SETUP} check

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2011/09/22 18:42:14 rpointel Exp $
+@comment $OpenBSD$
 bin/ipcluster
 bin/ipcontroller
 bin/ipengine
@@ -1071,6 +1071,9 @@ share/examples/ipython/core/example-embed-short.py
 share/examples/ipython/core/example-embed.py
 share/examples/ipython/core/example-gnuplot.py
 share/examples/ipython/core/ipython-get-history.py
+share/examples/ipython/core/ipython-qtconsole.desktop
+share/examples/ipython/core/ipython-sh.desktop
+share/examples/ipython/core/ipython.desktop
 share/examples/ipython/core/ipython_here_shell_extension.reg
 share/examples/ipython/core/leo_bridge_demo.leo
 share/examples/ipython/core/new-embed.py
