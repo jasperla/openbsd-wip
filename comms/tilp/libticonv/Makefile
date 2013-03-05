@@ -18,6 +18,6 @@ CFLAGS +=		-I/usr/local/include
 
 CONFIGURE_ARGS =	--enable-static
 
-WANTLIB += iconv intl pcre glib-2.0
+WANTLIB += iconv intl pcre pthread glib-2.0
 
 .include <bsd.port.mk>

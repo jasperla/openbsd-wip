@@ -19,6 +19,7 @@ LIB_DEPENDS =		comms/tilp/libticables \
 
 CONFIGURE_ARGS =	--enable-static
 
-WANTLIB += iconv intl ticables2 ticonv tifiles2 pcre usb usb-1.0 z glib-2.0
+WANTLIB += glib-2.0 intl pcre pthread ticables2 ticonv tifiles2
+WANTLIB += usb usb-1.0 z
 
 .include <bsd.port.mk>
