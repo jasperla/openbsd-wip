@@ -1,0 +1,68 @@
+$OpenBSD: patch-setupext_py,v 1.12 2012/02/28 23:01:23 rpointel Exp $
+--- setupext.py.orig	Tue Nov  6 22:31:09 2012
++++ setupext.py	Wed Mar  6 17:24:14 2013
+@@ -657,14 +657,16 @@ def check_for_gtk():
+     gotit = False
+     explanation = None
+     try:
+-        import gtk
++	# the following import requires X11 at build time
++        #import gtk
++	gotit = True
+     except ImportError:
+         explanation = 'Building for Gtk+ requires pygtk; you must be able to "import gtk" in your build/install environment'
+     except RuntimeError:
+         explanation = 'pygtk present but import failed'
+     else:
+         version = (2,2,0)
+-        if gtk.pygtk_version < version:
++        if False:
+             explanation = "Error: GTK backend requires PyGTK %d.%d.%d (or later), " \
+                   "%d.%d.%d was detected." % (
+                 version + gtk.pygtk_version)
+@@ -690,8 +692,8 @@ def check_for_gtk():
+         else:
+             pygobject_version = '[pre-pygobject]'
+         print_status("Gtk+", "gtk+: %s, glib: %s, pygtk: %s, pygobject: %s" %
+-                     (ver2str(gtk.gtk_version), ver2str(gobject.glib_version),
+-                      ver2str(gtk.pygtk_version), pygobject_version))
++                     ("unknown", ver2str(gobject.glib_version),
++                      "unknown", pygobject_version))
+     else:
+         print_status("Gtk+", "no")
+ 
+@@ -699,11 +701,11 @@ def check_for_gtk():
+         print_message(explanation)
+ 
+     # Switch off the event loop for PyGTK >= 2.15.0
+-    if gotit:
+-        try:
+-            gtk.set_interactive(False)
+-        except AttributeError: # PyGTK < 2.15.0
+-            pass
++    #if gotit:
++    #    try:
++    #        gtk.set_interactive(False)
++    #    except AttributeError: # PyGTK < 2.15.0
++    #        pass
+ 
+     return gotit
+ 
+@@ -739,7 +741,8 @@ def add_pygtk_flags(module):
+         pygtkIncludes = getoutput('pkg-config --cflags-only-I pygtk-2.0').split()
+         gtkIncludes = getoutput('pkg-config --cflags-only-I gtk+-2.0').split()
+         includes = pygtkIncludes + gtkIncludes
+-        module.include_dirs.extend([include[2:] for include in includes])
++	module.include_dirs = [include[2:] for include in includes] + \
++	    module.include_dirs
+ 
+         pygtkLinker = getoutput('pkg-config --libs pygtk-2.0').split()
+         gtkLinker =  getoutput('pkg-config --libs gtk+-2.0').split()
+@@ -805,6 +808,7 @@ def check_for_tk():
+         except RuntimeError as e:
+             explanation = str(e)
+         else:
++	    add_pygtk_flags(module)
+             if not find_include_file(module.include_dirs, "tk.h"):
+                 message = 'Tkinter present, but header files are not found. ' + \
+                           'You may need to install development packages.'
