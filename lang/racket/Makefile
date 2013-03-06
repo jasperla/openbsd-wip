@@ -87,7 +87,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 # http://article.gmane.org/gmane.comp.lang.racket.devel/6700
 CONFIGURE_ARGS +=	--disable-backtrace
 
-CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 			-DMZ_USE_JIT_SSE"
 
