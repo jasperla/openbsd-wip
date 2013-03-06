@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Fix "undefined symbols" when racket loads libreadline. Fixed in 5.3.3.8.
+
+--- collects/readline/mzrl.rkt.orig	Wed Mar  6 01:45:49 2013
++++ collects/readline/mzrl.rkt	Wed Mar  6 01:48:02 2013
+@@ -8,6 +8,7 @@
+ 
+ ;; libtermcap needed on some platforms
+ (define libtermcap  (with-handlers ([exn:fail? void]) (ffi-lib "libtermcap")))
++(define libcurses   (ffi-lib "libcurses" #:global? #t)
+ (define libreadline (ffi-lib "libreadline" '("5" "6" "4" "")))
+ 
+ (define make-byte-string ; helper for the two types below
