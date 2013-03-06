@@ -1,0 +1,11 @@
+--- lib/fuse_misc.h.orig	Tue Jan 22 14:26:35 2013
++++ lib/fuse_misc.h	Tue Jan 22 14:27:01 2013
+@@ -14,7 +14,7 @@
+     - confuse the dynamic linker in uClibc
+     - not supported on MacOSX (in MachO binary format)
+ */
+-#if (!defined(__UCLIBC__) && !defined(__APPLE__))
++#if (!defined(__UCLIBC__) && !defined(__APPLE__) && !defined(__OpenBSD__))
+ #define FUSE_SYMVER(x) __asm__(x)
+ #else
+ #define FUSE_SYMVER(x)

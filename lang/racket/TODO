@@ -4,5 +4,7 @@
 - Add comment "don't link this flavor to bulk build".
 - Add section to main README about the new flavor.
 - Remove GCC 4.6 from the main flavor.
-- Test pixman bug without futures and places.
 - Test jobs without futures.
+- Test jobs with GCC 4.2 and dpb parallel.
+- Test a update to 5.3.3.8. It fixed the problem with missing symbols in a lot
+of libraries.
