@@ -8,7 +8,7 @@ Fix "undefined symbols" when racket loads libreadline. Fixed in 5.3.3.8.
  
  ;; libtermcap needed on some platforms
  (define libtermcap  (with-handlers ([exn:fail? void]) (ffi-lib "libtermcap")))
-+(define libcurses   (ffi-lib "libcurses" #:global? #t)
++(define libcurses   (ffi-lib "libcurses" #:global? #t))
  (define libreadline (ffi-lib "libreadline" '("5" "6" "4" "")))
  
  (define make-byte-string ; helper for the two types below
