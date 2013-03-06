@@ -55,7 +55,7 @@ RUN_DEPENDS =		x11/gtk+2 \
 			databases/iodbc,-main
 
 WANTLIB += GL GLU X11 Xdamage Xext Xfixes Xxf86vm c crypto drm cairo png jpeg
-WANTLIB += ffi m pthread stdc++ xcb curses pango-1.0 pangocairo-1.0
+WANTLIB += ffi m pthread stdc++ xcb pango-1.0 pangocairo-1.0
 
 WRKDIST =		${WRKDIR}/racket-$V
 WRKSRC =		${WRKDIST}/src
@@ -87,9 +87,9 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 # http://article.gmane.org/gmane.comp.lang.racket.devel/6700
 CONFIGURE_ARGS +=	--disable-backtrace
 
-CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib \
-			-pthread -lcrypto -lGLU -lGL -lcurses" \
-			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include -DMZ_USE_JIT_SSE"
+CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
+			-DMZ_USE_JIT_SSE"
 
 # It's necessary to use only one job for "make install". Racket uses various
 # jobs by default when futures is enabled. Racket will crash with more than
