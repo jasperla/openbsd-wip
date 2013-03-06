@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 BROKEN-i386 =		segfault in gui-debugger due to bug in pixman
-
+DPB_PROPERTIES =	parallel
 SHARED_ONLY =		Yes
 
 # "sconfig.h" only supports i386 and amd64 on OpenBSD
@@ -96,7 +96,7 @@ CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib \
 # one job.
 do-install:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} \
-		PLT_SETUP_OPTIONS="-j 1" ${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} \
-		-f ${MAKE_FILE} ${FAKE_TARGET}
+		PLT_SETUP_OPTIONS="-j ${MAKE_JOBS}" ${MAKE_PROGRAM} \
+		${ALL_FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
 
 .include <bsd.port.mk>
