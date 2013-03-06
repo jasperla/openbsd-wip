@@ -1,0 +1,11 @@
+--- include/fuse_lowlevel_compat.h.orig	Tue Sep  4 12:17:46 2012
++++ include/fuse_lowlevel_compat.h	Tue Nov 13 11:13:36 2012
+@@ -72,7 +72,7 @@ size_t fuse_dirent_size(size_t namelen);
+ char *fuse_add_dirent(char *buf, const char *name, const struct stat *stbuf,
+ 		      off_t off);
+ 
+-#if !defined(__FreeBSD__) && !defined(__NetBSD__)
++#if !defined(__FreeBSD__) && !defined(__NetBSD__) && !defined(__OpenBSD__)
+ 
+ #include <sys/statfs.h>
+ 

@@ -1,0 +1,32 @@
+--- lib/fuse.c.orig	Mon Oct  1 16:38:37 2012
++++ lib/fuse.c	Wed Jan 16 15:49:08 2013
+@@ -1461,7 +1461,7 @@ static inline void fuse_prepare_interrupt(struct fuse 
+ 		fuse_do_prepare_interrupt(req, d);
+ }
+ 
+-#if !defined(__FreeBSD__) && !defined(__NetBSD__)
++#if !defined(__FreeBSD__) && !defined(__NetBSD__) && !defined(__OpenBSD__)
+ 
+ static int fuse_compat_open(struct fuse_fs *fs, const char *path,
+ 			    struct fuse_file_info *fi)
+@@ -2548,8 +2548,10 @@ static void fuse_delete_context_key(void)
+ 
+ static struct fuse *req_fuse_prepare(fuse_req_t req)
+ {
++	struct fuse_ctx *ctx;
+ 	struct fuse_context_i *c = fuse_get_context_internal();
+-	const struct fuse_ctx *ctx = fuse_req_ctx(req);
++	
++	ctx = &req->ctx;
+ 	c->req = req;
+ 	c->ctx.fuse = req_fuse(req);
+ 	c->ctx.uid = ctx->uid;
+@@ -4816,7 +4818,7 @@ void fuse_register_module(struct fuse_module *mod)
+ 	fuse_modules = mod;
+ }
+ 
+-#if !defined(__FreeBSD__) && !defined(__NetBSD__)
++#if !defined(__FreeBSD__) && !defined(__NetBSD__) && !defined(__OpenBSD__)
+ 
+ static struct fuse *fuse_new_common_compat(int fd, const char *opts,
+ 					   const struct fuse_operations *op,
