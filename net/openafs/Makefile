@@ -34,7 +34,7 @@ MASTER_SITES0=		http://grand.central.org/dl/cellservdb/
 
 EXTRACT_SUFX=		.tar.gz
 DOC_DISTFILE=		openafs-${VERSION}-doc
-CELLSRVDB=		CellServDB.2011-08-14
+CELLSRVDB=		CellServDB.2013-01-28
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} ${DOC_DISTFILE}${EXTRACT_SUFX} ${CELLSRVDB}:0
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX} ${DOC_DISTFILE}${EXTRACT_SUFX}
 
@@ -63,7 +63,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-kernel-module
 
 
-FLAVORS=	debug
+FLAVORS=	debug fuse
 FLAVOR?=
 
 WRKDIST=	${WRKDIR}/openafs-${VERSION}
@@ -90,6 +90,10 @@ post-install:
 CONFIGURE_ARGS+=	--enable-debug
 CONFIGURE_ARGS+=	--enable-debug-kernel
 CONFIGURE_ARGS+=	--enable-debug-lwp
+.endif
+
+.if ${FLAVOR:L:Mfuse}
+CONFIGURE_ARGS+=	--enable-fuse-client
 .endif
 
 .include <bsd.port.arch.mk>
