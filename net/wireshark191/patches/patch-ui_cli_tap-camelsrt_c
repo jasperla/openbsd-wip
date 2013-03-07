@@ -1,6 +1,6 @@
 $OpenBSD$
---- ui/cli/tap-camelsrt.c.orig	Thu Sep 20 02:35:28 2012
-+++ ui/cli/tap-camelsrt.c	Wed Jan 30 19:13:57 2013
+--- ui/cli/tap-camelsrt.c.orig	Tue Mar  5 22:52:03 2013
++++ ui/cli/tap-camelsrt.c	Thu Mar  7 23:14:18 2013
 @@ -199,14 +199,14 @@ static void camelsrt_draw(void *phs)
    printf("\n");
  }
@@ -11,7 +11,7 @@ $OpenBSD$
    struct camelsrt_t *p_camelsrt;
    GString *error_string;
  
-   p_camelsrt = g_malloc(sizeof(struct camelsrt_t));
+   p_camelsrt = g_new(struct camelsrt_t,1);
 -  if(!strncmp(optarg,"camel,srt,",9)){
 -    p_camelsrt->filter=g_strdup(optarg+9);
 +  if(!strncmp(optarg_p,"camel,srt,",9)){
