@@ -5,7 +5,8 @@ COMMENT =	Python development plug-in for Eclipse
 V =		2.7.1
 SVN =		2012100913
 SUBST_VARS =	V SVN
-DISTNAME =	py-dev-${V}
+DISTNAME =	PyDev%20${V}
+PKGNAME =	py-dev-${V}
 
 CATEGORIES +=	lang/python
 
@@ -19,8 +20,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =EPL Indemnify clause
 PERMIT_DISTFILES_FTP =	Yes
 
-# fetched and installed in distfiles manually, has to be hosted
-#MASTER_SITES =	file://${FILESDIR}/
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=pydev/}
 
 #cd ${WRKDIST} && pax -rwL features plugins ${PREFIX}/eclipse4
 #find ${PREFIX}/eclipse4 -type f -print | xargs chmod 644;
