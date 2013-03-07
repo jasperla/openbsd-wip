@@ -20,7 +20,7 @@ PERMIT_DISTFILES_CDROM =EPL Indemnify clause
 PERMIT_DISTFILES_FTP =	Yes
 
 # fetched and installed in distfiles manually, has to be hosted
-MASTER_SITES =	file://${FILESDIR}/
+#MASTER_SITES =	file://${FILESDIR}/
 
 #cd ${WRKDIST} && pax -rwL features plugins ${PREFIX}/eclipse4
 #find ${PREFIX}/eclipse4 -type f -print | xargs chmod 644;
