@@ -21,6 +21,7 @@
 #define AFS_64BIT_CLIENT	1
 #define AFS_64BIT_IOPS_ENV	1	/* Needed for NAMEI */
 #define AFS_OBSD_ENV		1
+#define AFS_USR_OBSD_ENV	1
 #define AFS_OBSD34_ENV		1
 #define AFS_OBSD35_ENV		1
 #define AFS_OBSD36_ENV		1

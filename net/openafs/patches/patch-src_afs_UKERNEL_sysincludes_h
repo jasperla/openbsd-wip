@@ -1,0 +1,30 @@
+$OpenBSD$
+--- src/afs/UKERNEL/sysincludes.h.orig	Thu Mar  7 15:52:13 2013
++++ src/afs/UKERNEL/sysincludes.h	Thu Mar  7 16:21:17 2013
+@@ -11,7 +11,7 @@
+ #define __AFS_SYSINCLUDESH__ 1
+ 
+ #include  <stdio.h>
+-#if !defined(AFS_USR_DARWIN_ENV) && !defined(AFS_USR_FBSD_ENV) && !defined(AFS_USR_DFBSD_ENV) /* must be included after KERNEL undef'd */
++#if !defined(AFS_USR_DARWIN_ENV) && !defined(AFS_USR_FBSD_ENV) && !defined(AFS_USR_DFBSD_ENV) && !defined(AFS_USR_OBSD_ENV) /* must be included after KERNEL undef'd */
+ #include  <errno.h>
+ #endif
+ #include  <stdlib.h>
+@@ -24,7 +24,7 @@
+ #endif
+ #include  <stdarg.h>
+ 
+-#if !defined(AFS_USR_DARWIN_ENV) && !defined(AFS_USR_FBSD_ENV) && !defined(AFS_USR_DFBSD_ENV) /* must be included after KERNEL undef'd */
++#if !defined(AFS_USR_DARWIN_ENV) && !defined(AFS_USR_FBSD_ENV) && !defined(AFS_USR_DFBSD_ENV) && !defined(AFS_USR_OBSD_ENV) /* must be included after KERNEL undef'd */
+ #include  <unistd.h>
+ #include  <ctype.h>
+ #include  <sys/types.h>
+@@ -118,7 +118,7 @@
+ #define FREAD			0x0001
+ #endif /* AFS_USR_LINUX22_ENV */
+ 
+-#if defined(AFS_USR_DARWIN_ENV) || defined(AFS_USR_FBSD_ENV) || defined(AFS_USR_DFBSD_ENV)
++#if defined(AFS_USR_DARWIN_ENV) || defined(AFS_USR_FBSD_ENV) || defined(AFS_USR_DFBSD_ENV) || defined(AFS_USR_OBSD_ENV)
+ #ifdef _KERNEL
+ #undef _KERNEL
+ #endif
