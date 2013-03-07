@@ -9,6 +9,6 @@ EXTRACT_SUFX?=	.zip
 NO_BUILD?=	Yes
 NO_REGRESS?=	Yes
 
-RUN_DEPENDS?=	devel/eclipse/sdk>=4.2.1
+RUN_DEPENDS?=	devel/eclipse/sdk>=4.2.2
 
 WRKDIST?=	${WRKDIR}
