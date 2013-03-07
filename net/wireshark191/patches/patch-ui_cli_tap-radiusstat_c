@@ -1,7 +1,7 @@
 $OpenBSD$
---- ui/cli/tap-radiusstat.c.orig	Thu Sep 20 02:35:28 2012
-+++ ui/cli/tap-radiusstat.c	Wed Jan 30 19:40:22 2013
-@@ -185,14 +185,14 @@ radiusstat_draw(void *prs)
+--- ui/cli/tap-radiusstat.c.orig	Thu Mar  7 07:11:18 2013
++++ ui/cli/tap-radiusstat.c	Thu Mar  7 23:10:03 2013
+@@ -185,15 +185,15 @@ radiusstat_draw(void *prs)
  
  
  static void
@@ -12,9 +12,11 @@ $OpenBSD$
  	int i;
  	GString *error_string;
  
- 	rs=g_malloc(sizeof(radiusstat_t));
+ 	rs=g_new(radiusstat_t,1);
 -	if(!strncmp(optarg,"radius,rtd,",11)){
+-		rs->filter=g_strdup(optarg+11);
 +	if(!strncmp(optarg_p,"radius,rtd,",11)){
- 		rs->filter=g_strdup(optarg+11);
++		rs->filter=g_strdup(optarg_p+11);
  	} else {
  		rs->filter=NULL;
+ 	}
