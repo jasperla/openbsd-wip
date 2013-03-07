@@ -2,6 +2,7 @@
 bin/get_flash_videos
 ${P5SITE}/FlashVideo/
 ${P5SITE}/FlashVideo/Downloader.pm
+${P5SITE}/FlashVideo/FFmpegDownloader.pm
 ${P5SITE}/FlashVideo/Generic.pm
 ${P5SITE}/FlashVideo/JSON.pm
 ${P5SITE}/FlashVideo/Mechanize.pm
