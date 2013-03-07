@@ -1,0 +1,8 @@
+===> Updating for ipython-0.13.1
+Upgrading from ipython-0.11
+mkdir /usr/local/share/examples/ipython: File exists                           
+Fatal error: Installation of ipython-0.13.1 failed, partial installation recorded as partial-ipython-0.13.1
+ at /usr/libdata/perl5/OpenBSD/PkgAdd.pm line 775
+ *** Error 22 in . (/usr/ports/infrastructure/mk/bsd.port.mk:1860 '/usr/ports/update/amd64/ipython-0.13.1')
+ *** Error 1 in /usr/ports/mystuff/devel/ipython (/usr/ports/infrastructure/mk/bsd.port.mk:2347 'update')
+
