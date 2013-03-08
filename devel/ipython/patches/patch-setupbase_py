@@ -1,7 +1,7 @@
 $OpenBSD$
 
 --- setupbase.py.orig	Sun Oct 21 01:30:54 2012
-+++ setupbase.py	Tue Mar  5 13:06:57 2013
++++ setupbase.py	Fri Mar  8 17:07:38 2013
 @@ -201,7 +201,7 @@ def find_data_files():
      """
  
@@ -16,7 +16,7 @@ $OpenBSD$
          'data',
          pjoin('docs','examples'),
 -        pjoin(docdirbase,'examples')
-+        pjoin('share','examples', 'ipython')
++        pjoin('share','examples', 'ipython-examples')
      )
      manual_files = make_dir_struct(
          'data',
