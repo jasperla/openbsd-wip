@@ -6,10 +6,13 @@ $OpenBSD$
 Known issues
 ============
 
-- It doesn't compile on i386 due a bug in pixman. Keep this in mind if
+- It doesn't compile on i386 due a bug in pixman/cairo. Keep this in mind if
   you want deploy your code on OpenBSD i386.
 
 - Some examples of ffi-lib doesn't work.
+
+- Due to lack of thread-local storage support on OpenBSD, "places" and
+  "futures" are disabled.
 
 Limitations
 ===========
