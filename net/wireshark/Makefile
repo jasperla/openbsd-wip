@@ -3,7 +3,7 @@
 COMMENT-main=	graphical network protocol analyzer
 COMMENT-text=	network protocol analyzer
 
-VER=		1.8.5
+VER=		1.8.6
 WVER=		${VER}
 DISTNAME=	wireshark-${WVER}
 PKGNAME-main=	wireshark-${VER}
@@ -30,7 +30,6 @@ USE_GROFF=	Yes
 # tools/pidl is GPLv3 or later. See COPYING.
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c glib-2.0 m pcap pthread z
