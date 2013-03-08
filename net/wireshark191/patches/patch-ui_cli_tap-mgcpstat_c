@@ -1,7 +1,7 @@
 $OpenBSD$
---- ui/cli/tap-mgcpstat.c.orig	Thu Sep 20 02:35:28 2012
-+++ ui/cli/tap-mgcpstat.c	Wed Jan 30 19:40:22 2013
-@@ -169,14 +169,14 @@ mgcpstat_draw(void *pms)
+--- ui/cli/tap-mgcpstat.c.orig	Wed Mar  6 17:51:56 2013
++++ ui/cli/tap-mgcpstat.c	Thu Mar  7 23:09:50 2013
+@@ -169,15 +169,15 @@ mgcpstat_draw(void *pms)
  
  
  static void
@@ -12,9 +12,11 @@ $OpenBSD$
  	int i;
  	GString *error_string;
  
- 	ms=g_malloc(sizeof(mgcpstat_t));
+ 	ms=g_new(mgcpstat_t,1);
 -	if(!strncmp(optarg,"mgcp,rtd,",9)){
+-		ms->filter=g_strdup(optarg+9);
 +	if(!strncmp(optarg_p,"mgcp,rtd,",9)){
- 		ms->filter=g_strdup(optarg+9);
++		ms->filter=g_strdup(optarg_p+9);
  	} else {
  		ms->filter=NULL;
+ 	}

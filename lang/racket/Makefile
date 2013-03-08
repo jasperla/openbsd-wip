@@ -1,10 +1,8 @@
 # $OpenBSD$
 
-BROKEN-i386 =		segfault in gui-debugger due to bug in pixman
-DPB_PROPERTIES =	parallel
+BROKEN-i386 =		segfault in gui-debugger due to bug in pixman/cairo
 SHARED_ONLY =		Yes
-
-# "sconfig.h" only supports i386 and amd64 on OpenBSD
+# Racket only supports i386 and amd64 on OpenBSD
 ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		descendant of scheme with IDE and teaching resources
@@ -24,22 +22,16 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://download.racket-lang.org/installers/${V}/racket/ \
-			http://www.eecs.northwestern.edu/racket/${V}/racket/ \
 			http://www.cs.utah.edu/plt/installers/${V}/racket/ \
 			http://mirror.csclub.uwaterloo.ca/racket/racket-installers/${V}/racket/ \
 			http://mirror.informatik.uni-tuebingen.de/mirror/racket/${V}/racket/ \
 			http://racket.infogroep.be/${V}/racket/ \
 			http://pre.racket-lang.org/release/installers/ \
+			http://pre.racket-lang.org/installers/ \
 			http://download.tuxfamily.org/jod/lang/racket/
 EXTRACT_SUFX =		.tgz
 
-# base gcc fails on "foreign" folder due to threads problems
-MODULES +=		converters/libiconv \
-			gcc4
-
-MODGCC4_VERSION =	4.6
-MODGCC4_LANGS =		c
-MODGCC4_ARCHS =		*
+MODULES +=		converters/libiconv
 
 # http://docs.racket-lang.org/draw/libs.html
 # http://docs.racket-lang.org/gui/libs.html
@@ -68,35 +60,40 @@ USE_GROFF =		Yes
 USE_LIBTOOL =		Yes
 
 CONFIGURE_STYLE =	gnu
-# --enable-libffi needs LDFLAGS="-pthread"
-# -DMZ_USE_JIT_SSE enables use of SSE floating point
-# plt-games needs GLU
-# -lcurses is needed by readline (undefined symbols)
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--enable-libffi \
 			--enable-gracket \
 			--enable-jit \
 			--enable-foreign \
-			--enable-places \
 			--enable-float \
 			--enable-docs \
 			--enable-pthread \
-			--enable-lt=${LIBTOOL} \
-			--enable-futures
+			--enable-lt=${LIBTOOL}
 # "backtrace" is expensive.
 # http://article.gmane.org/gmane.comp.lang.racket.devel/6700
-CONFIGURE_ARGS +=	--disable-backtrace
+# "places" and "futures" require thread-local storage.
+# http://article.gmane.org/gmane.comp.lang.racket.user/16723
+CONFIGURE_ARGS +=	--disable-backtrace \
+			--disable-places \
+			--disable-futures
 
+# --enable-libffi needs LDFLAGS="-pthread" for detect the system ffi.
+# -DMZ_USE_JIT_SSE enables use of SSE floating point in JIT.
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 			-DMZ_USE_JIT_SSE"
 
-# It's necessary to use only one job for "make install". Racket uses various
-# jobs by default when futures is enabled. Racket will crash with more than
-# one job.
+# It compiles racket with one job because "raco -j N" isn't useful with
+# "places" disabled. http://article.gmane.org/gmane.comp.lang.racket.user/16820
 do-install:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} \
-		PLT_SETUP_OPTIONS="-j ${MAKE_JOBS}" ${MAKE_PROGRAM} \
+		PLT_SETUP_OPTIONS="-j 1" ${MAKE_PROGRAM} \
 		${ALL_FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
+
+.if ${MACHINE_ARCH} == "amd64"
+PKG_ARGS+=-Damd64=1 -Di386=0
+.elif ${MACHINE_ARCH} == "i386"
+PKG_ARGS+=-Damd64=0 -Di386=1
+.endif
 
 .include <bsd.port.mk>

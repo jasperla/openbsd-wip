@@ -3,7 +3,7 @@
 COMMENT-main=	graphical network protocol analyzer
 COMMENT-text=	network protocol analyzer
 
-WVER=		1.6.13
+WVER=		1.6.14
 DISTNAME=	wireshark-${WVER}
 PKGNAME-main=	wireshark16-${WVER}
 PKGNAME-text=	tshark16-${WVER}
@@ -29,7 +29,6 @@ USE_GROFF=	Yes
 # tools/pidl is GPLv3 or later. See COPYING.
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c glib-2.0 m pcap pthread z
