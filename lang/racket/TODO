@@ -1,3 +1,0 @@
-- Add again PFRAGS for i386.
-- Test a update to 5.3.3.8. It fixed the problem with missing symbols in a lot
-of libraries.
