@@ -1,6 +1,4 @@
 # $OpenBSD: Makefile,v 1.19 2011/09/22 18:42:14 rpointel Exp $
-#
-# XXX update path FUCKED
 
 COMMENT=		enhanced interactive Python shell
 
@@ -42,13 +40,21 @@ USE_GROFF =	Yes
 # it is expected behaviour. This also makes systrace unhappy, but again, the
 # resulting docs are fine...
 post-build:
-	${MAKE_ENV} cd ${WRKSRC}/docs && ${MAKE_PROGRAM} html
+	${MAKE_ENV} cd ${WRKSRC}/docs && ${MAKE_PROGRAM} html MODPY_BIN=${MODPY_BIN}
 
 # Despite the fact that setupbase.py defines paths for examples to
 # be installed into, we still have to do it manually for some reason.
-EXAMPLES_DIR =	${PREFIX}/share/examples/ipython/
 APPS_DIR = 	${PREFIX}/share/applications/
 DOCS_DIR =	${PREFIX}/share/doc/ipython/
+# XXX XXX XXX
+# The old ipython-0.11 port installed share/examples/ipython as a regular
+# file. This of course was incorrect. Since there is a bug in the package
+# tools that prevents filess from being replaced by directories during an
+# upgrade, we must install the examples elsewhere to avoid the clash.
+# Once the pkg tools bug is fixed, we can use the normal examples path
+# (currently commented). Also be sure to update the setupbase.py patch.
+#EXAMPLES_DIR =	${PREFIX}/share/examples/ipython/
+EXAMPLES_DIR =	${PREFIX}/share/examples/ipython-examples/
 post-install:
 	# desktop files
 	${INSTALL_DATA_DIR} ${APPS_DIR}
