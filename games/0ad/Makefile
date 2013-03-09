@@ -9,14 +9,11 @@ CATEGORIES =		games
 HOMEPAGE =		http://play0ad.com/
 
 # GPLv2+, MIT for libs, CC-BY-SA for data
-PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		GL SDL X11 Xcursor boost_system c curl enet execinfo
-WANTLIB +=		jpeg m mozjs185 nvtt openal png pthread stdc++
-WANTLIB +=		vorbisfile xml2 z
+WANTLIB += GL SDL X11 Xcursor boost_system c curl enet execinfo
+WANTLIB += jpeg m mozjs185 nvtt openal png pthread stdc++
+WANTLIB += vorbisfile xml2 z
 
 MASTER_SITES =		http://releases.wildfiregames.com/
 DISTFILES =		${PKGNAME}-alpha-unix-build.tar.gz \

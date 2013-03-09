@@ -17,13 +17,10 @@ CATEGORIES =		graphics
 HOMEPAGE =		https://code.google.com/p/nvidia-texture-tools/
 
 # MIT
-PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	Half Iex IlmImf IlmThread Imath c jpeg m png pthread
-WANTLIB +=	stdc++ tiff z
+WANTLIB += Half Iex IlmImf IlmThread Imath c jpeg m png pthread
+WANTLIB += stdc++ tiff z
 
 MASTER_SITES =		https://nvidia-texture-tools.googlecode.com/files/
 
