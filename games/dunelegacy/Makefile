@@ -13,9 +13,6 @@ MAINTAINER =		Kirill Bychkov <yason@linklevel.net>
 
 # GPLv2/CC-BY-SA
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		SDL SDL_mixer c m pthread stdc++
 
