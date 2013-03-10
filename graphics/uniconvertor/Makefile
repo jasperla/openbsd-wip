@@ -13,9 +13,6 @@ MAINTAINER =		Kirill Bychkov <yason@linklevel.net>
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://uniconvertor.googlecode.com/files/
 
