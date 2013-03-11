@@ -29,7 +29,7 @@ MAKE_FILE = 		${WRKSRC}/makefile
 
 ALL_TARGET = 		main map_editor
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 WRKDIST = 		${WRKDIR}/zod_engine
 WRKSRC = 		${WRKDIST}/zod_src

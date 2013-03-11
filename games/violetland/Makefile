@@ -30,7 +30,7 @@ RUN_DEPENDS = 		devel/desktop-file-utils
 
 CONFIGURE_ARGS = 	-DCMAKE_INSTALL_PREFIX="${PREFIX}"
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/${DISTNAME:S/-src//}
 

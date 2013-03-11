@@ -18,7 +18,7 @@ MASTER_SITES =		http://uniconvertor.googlecode.com/files/
 
 MODULES =		lang/python
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 SEPARATE_BUILD = 	concurrent
 
