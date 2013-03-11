@@ -19,7 +19,6 @@ MAINTAINER=		Rafael Sadowski <rafael@sizeofvoid.org>
 #   http://www.netbeans.info/downloads/licence/netbeans-3rd-party.txt
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://dlc.sun.com.edgesuite.net/netbeans/${V}/final/zip/

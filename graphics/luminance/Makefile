@@ -11,9 +11,6 @@ MAINTAINER =		Kirill Bychkov <yason@linklevel.net>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=qtpfsgui/}
 EXTRACT_SUFX = 		.tar.bz2
@@ -36,7 +33,7 @@ CONFIGURE_ARGS += 	-DCMAKE_BUILD_TYPE=Release \
 			-DCMAKE_EXE_LINKER_FLAGS=-pthread \
 			-DLIBPNG_INCLUDE_DIR=${LOCALBASE}/include/libpng
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 pre-extract:
 	mkdir ${WRKDIST}

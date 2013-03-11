@@ -17,9 +17,6 @@ MAINTAINER =		Juan Francisco Cantero Hurtado <iam@juanfra.info>
 
 # LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://download.racket-lang.org/installers/${V}/racket/ \
 			http://www.cs.utah.edu/plt/installers/${V}/racket/ \

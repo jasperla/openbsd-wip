@@ -14,7 +14,6 @@ MAINTAINER=		Kurt Miller <kurt@openbsd.org>
 # Common Public License Version 1.0 (http://www.eclipse.org/legal/cpl-v10.html)
 PERMIT_PACKAGE_CDROM=	commercial distribution defend and indemnify clauses
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	commercial distribution defend and indemnify clauses
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://download.eclipse.org/modeling/mdt/uml2/downloads/drops/${V}/R201301140902/

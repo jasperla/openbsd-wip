@@ -15,7 +15,6 @@ MAINTAINER=		Ian Darwin <ian@openbsd.org>
 # Eclipse Public License Version 1.0 (http://www.eclipse.org/legal/epl-v10.html)
 PERMIT_PACKAGE_CDROM=	commercial distribution defend and indemnify clauses
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	commercial distribution defend and indemnify clauses
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://download.eclipse.org/webtools/downloads/drops/R${V}/R-${V}-20120917174803/
