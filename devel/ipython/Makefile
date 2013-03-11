@@ -65,7 +65,7 @@ post-install:
 	# empty dir i dont want in the PLIST
 	rm -r ${DOCS_DIR}/extensions
 
-do-regress:
+do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} ${MODPY_SETUP} check
 
 .include <bsd.port.mk>
