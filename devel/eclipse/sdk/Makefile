@@ -37,7 +37,6 @@ MAINTAINER=		Matthew Dempsky <matthew@openbsd.org>
 # LGPL 2.1 (http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html)
 PERMIT_PACKAGE_CDROM=	commercial distribution defend and indemnify clauses
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	commercial distribution defend and indemnify clauses
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITE_ECLIPSE+=	\

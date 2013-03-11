@@ -9,13 +9,10 @@ CATEGORIES =		emulators
 HOMEPAGE =		http://viceteam.org/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	ICE SM X11 Xaw Xext Xmu Xpm Xt Xv c m ncurses ossaudio
-WANTLIB +=	readline stdc++ usbhid z
+WANTLIB += ICE SM X11 Xaw Xext Xmu Xpm Xt Xv c m ncurses ossaudio
+WANTLIB += readline stdc++ usbhid z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=vice-emu/}
 

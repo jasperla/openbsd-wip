@@ -12,9 +12,6 @@ MAINTAINER =		Kirill Bychkov <yason@linklevel.net>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += GL GLEWmx QtGui QtOpenGL X11 Xext Xfixes ass avcodec
 WANTLIB += avdevice avformat avutil bz2 c gsm m mp3lame
@@ -40,6 +37,6 @@ CONFIGURE_ARGS +=	--without-equalizer \
 CONFIGURE_ENV += 	CPPFLAGS="-I${X11BASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib"
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

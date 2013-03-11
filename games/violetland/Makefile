@@ -13,9 +13,6 @@ MAINTAINER =		Kirill Bychkov <yason@linklevel.net>
 
 # GPLv3 / Creative Commons 3.0 BY-SA
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += GL GLU ICE SDL SDL_image SDL_mixer SDL_ttf SM X11 Xext
 WANTLIB += boost_filesystem-mt boost_system-mt c intl m pthread stdc++
@@ -33,7 +30,7 @@ RUN_DEPENDS = 		devel/desktop-file-utils
 
 CONFIGURE_ARGS = 	-DCMAKE_INSTALL_PREFIX="${PREFIX}"
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/${DISTNAME:S/-src//}
 

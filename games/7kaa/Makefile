@@ -17,9 +17,6 @@ MAINTAINER = 		Kirill Bychkov <kirby@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =  Yes
-PERMIT_PACKAGE_FTP =    Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =  Yes
 
 MASTER_SITES = 		${MASTER_SITE_SOURCEFORGE:=skfans/}
 EXTRACT_SUFX = 		.tar.bz2
@@ -37,7 +34,7 @@ CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			LIBS="-pthread"
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/${PKGNAME-main}
 

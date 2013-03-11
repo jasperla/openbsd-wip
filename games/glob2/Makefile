@@ -12,9 +12,6 @@ MAINTAINER =		Kirill Bychkov <yason@linklevel.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += GL GLU SDL SDL_image SDL_net SDL_ttf boost_thread-mt
 WANTLIB += c fribidi m ogg portaudio pthread speex stdc++ vorbis
