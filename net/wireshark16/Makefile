@@ -28,8 +28,6 @@ USE_GROFF=	Yes
 # Mostly GPLv2 or later. Some files are less restrictive.
 # tools/pidl is GPLv3 or later. See COPYING.
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c glib-2.0 m pcap pthread z
 
@@ -91,7 +89,7 @@ WANTLIB-main +=		gtk-3
 LIB_DEPENDS-main +=		x11/gtk+3
 .endif
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-extract:
 	${INSTALL} -m 555 ${FILESDIR}/krb5-config ${WRKDIR}/bin
