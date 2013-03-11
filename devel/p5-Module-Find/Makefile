@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/12/03 11:44:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:19 espie Exp $
 
 COMMENT=		find and use installed modules in a (sub)category
 
@@ -11,10 +11,8 @@ MAINTAINER=		Sean Comeau <scomeau@obscurity.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
-REGRESS_DEPENDS =	devel/p5-Test-Pod \
-			devel/p5-Test-Pod-Coverage
+TEST_DEPENDS =	devel/p5-Test-Pod \
+		devel/p5-Test-Pod-Coverage
 
 .include <bsd.port.mk>

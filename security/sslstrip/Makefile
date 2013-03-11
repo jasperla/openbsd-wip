@@ -12,8 +12,6 @@ MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	http://www.thoughtcrime.org/software/sslstrip/
 
@@ -22,6 +20,6 @@ RUN_DEPENDS =	py-twisted-web-*:devel/py-twisted/web
 
 SUBST_VARS += APKG
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 .include <bsd.port.mk>

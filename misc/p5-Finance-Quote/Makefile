@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/19 07:23:12 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/03/11 11:23:57 espie Exp $
 
 COMMENT=	module to obtain financial quotes from exchanges
 
@@ -17,10 +17,8 @@ RUN_DEPENDS=	www/p5-HTML-TableExtract \
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 # uncomment for online checks, too many failures because of site changes, lot of downloads.
-#REGRESS_FLAGS =	ONLINE_TEST=true
+#TEST_FLAGS =	ONLINE_TEST=true
 
 .include <bsd.port.mk>

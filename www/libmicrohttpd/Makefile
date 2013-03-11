@@ -15,8 +15,6 @@ MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM =	 Yes
-PERMIT_PACKAGE_FTP =	 Yes
-PERMIT_DISTFILES_FTP =	 Yes
 
 WANTLIB +=	gcrypt gmp gnutls gpg-error hogweed nettle p11-kit
 WANTLIB +=	pthread tasn1 z

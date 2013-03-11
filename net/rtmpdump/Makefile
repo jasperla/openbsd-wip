@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/01/16 22:33:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2013/03/11 11:35:56 espie Exp $
 
 SHARED_LIBS =		rtmp 0.0
 
@@ -15,8 +15,6 @@ HOMEPAGE =		http://rtmpdump.mplayerhq.hu/
 # tools GPLv2+, librtmp LGPLv2.1+
 PERMIT_PACKAGE_CDROM =	No
 PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =No
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c crypto pthread ssl z
 
@@ -27,7 +25,7 @@ MAKE_FLAGS =		CC="${CC}" XCFLAGS="${CFLAGS}" VERSION=${RVER} OPT= \
 			THREADLIB=-pthread SO_VERSION=${LIBrtmp_VERSION}
 
 USE_GROFF =		Yes
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/rtmpdump
