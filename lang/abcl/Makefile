@@ -9,11 +9,8 @@ CATEGORIES =		lang
 
 HOMEPAGE =		http://common-lisp.net/project/armedbear/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/releases/$V/
 
@@ -26,8 +23,8 @@ MODJAVA_JRERUN = 	Yes
 RUN_DEPENDS =		java/javaPathHelper \
 			misc/rlwrap
 
-REGRESS_TARGET =	abcl.test
-NO_REGRESS =		Yes
+TEST_TARGET =		abcl.test
+NO_TEST =		Yes
 
 ABCL_HOME =		${PREFIX}/abcl
 
