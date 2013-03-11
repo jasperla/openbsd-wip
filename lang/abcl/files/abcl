@@ -1,0 +1,15 @@
+#!/bin/ksh
+
+JAVA_CMD=$(javaPathHelper -c abcl)
+
+#ABCL="$JAVA -server -Xrs -cp $ABCL_JAR org.armedbear.lisp.Main"
+#if [ $# -eq 0 ]; then
+#	exec rlwrap -b "[]()'\" " --remember -c -f ~/.abcl_completions \
+#				  -H ~/.abcl_history -s 1000000 $ABCL
+#else
+#	exec $ABCL "$@"
+#fi
+
+rlwrap -f ${TRUEPREFIX}/abcl/abcl_completions ${JAVA_CMD} -classpath \
+	${LOCALBASE}/share/java/classes/'*':${TRUEPREFIX}/abcl/abcl.jar:src:. \
+        org.armedbear.lisp.Main "$@"
