@@ -30,7 +30,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV += 	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL \
 			-I${X11BASE}/include"
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/${PKGNAME}
 

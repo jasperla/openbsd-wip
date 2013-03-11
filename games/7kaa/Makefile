@@ -34,7 +34,7 @@ CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			LIBS="-pthread"
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/${PKGNAME-main}
 

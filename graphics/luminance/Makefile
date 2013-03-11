@@ -33,7 +33,7 @@ CONFIGURE_ARGS += 	-DCMAKE_BUILD_TYPE=Release \
 			-DCMAKE_EXE_LINKER_FLAGS=-pthread \
 			-DLIBPNG_INCLUDE_DIR=${LOCALBASE}/include/libpng
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 pre-extract:
 	mkdir ${WRKDIST}

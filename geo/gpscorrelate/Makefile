@@ -40,7 +40,7 @@ RUN_DEPENDS = 		devel/desktop-file-utils
 USE_GMAKE =		Yes
 FAKE_FLAGS += 		mandir="${PREFIX}/man"
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
