@@ -217,41 +217,41 @@ lib/kde4/plasma_applet_akonotes_note.so
 lib/kde4/plugins/accessible/
 lib/kde4/plugins/accessible/messagevieweraccessiblewidgetfactory.so
 lib/kde4/plugins/designer/kdepimwidgets.so
-@lib lib/kde4/private/libakonadi_next.so.${LIBakonadi_next_VERSION}
-@lib lib/kde4/private/libakregatorinterfaces.so.${LIBakregatorinterfaces_VERSION}
-@lib lib/kde4/private/libakregatorprivate.so.${LIBakregatorprivate_VERSION}
-@lib lib/kde4/private/libcalendarsupport.so.${LIBcalendarsupport_VERSION}
-@lib lib/kde4/private/libeventviews.so.${LIBeventviews_VERSION}
-@lib lib/kde4/private/libincidenceeditorsng.so.${LIBincidenceeditorsng_VERSION}
-@lib lib/kde4/private/libincidenceeditorsngmobile.so.${LIBincidenceeditorsngmobile_VERSION}
-@lib lib/kde4/private/libkaddressbookprivate.so.${LIBkaddressbookprivate_VERSION}
-@lib lib/kde4/private/libkcal_resourceblog.so.${LIBkcal_resourceblog_VERSION}
-@lib lib/kde4/private/libkcal_resourceremote.so.${LIBkcal_resourceremote_VERSION}
-@lib lib/kde4/private/libkdepim.so.${LIBkdepim_VERSION}
-@lib lib/kde4/private/libkdepimdbusinterfaces.so.${LIBkdepimdbusinterfaces_VERSION}
-@lib lib/kde4/private/libkdepimmobileui.so.${LIBkdepimmobileui_VERSION}
-@lib lib/kde4/private/libkdgantt2.so.${LIBkdgantt2_VERSION}
-@lib lib/kde4/private/libkleo.so.${LIBkleo_VERSION}
-@lib lib/kde4/private/libkleopatraclientcore.so.${LIBkleopatraclientcore_VERSION}
-@lib lib/kde4/private/libkleopatraclientgui.so.${LIBkleopatraclientgui_VERSION}
-@lib lib/kde4/private/libkmailprivate.so.${LIBkmailprivate_VERSION}
-@lib lib/kde4/private/libkmanagesieve.so.${LIBkmanagesieve_VERSION}
-@lib lib/kde4/private/libknodecommon.so.${LIBknodecommon_VERSION}
-@lib lib/kde4/private/libkontactprivate.so.${LIBkontactprivate_VERSION}
-@lib lib/kde4/private/libkorganizer_core.so.${LIBkorganizer_core_VERSION}
-@lib lib/kde4/private/libkorganizer_interfaces.so.${LIBkorganizer_interfaces_VERSION}
-@lib lib/kde4/private/libkorganizerprivate.so.${LIBkorganizerprivate_VERSION}
-@lib lib/kde4/private/libkpgp.so.${LIBkpgp_VERSION}
-@lib lib/kde4/private/libksieve.so.${LIBksieve_VERSION}
-@lib lib/kde4/private/libksieveui.so.${LIBksieveui_VERSION}
-@lib lib/kde4/private/libmailcommon.so.${LIBmailcommon_VERSION}
-@lib lib/kde4/private/libmailimporter.so.${LIBmailimporter_VERSION}
-@lib lib/kde4/private/libmessagecomposer.so.${LIBmessagecomposer_VERSION}
-@lib lib/kde4/private/libmessagecore.so.${LIBmessagecore_VERSION}
-@lib lib/kde4/private/libmessagelist.so.${LIBmessagelist_VERSION}
-@lib lib/kde4/private/libmessageviewer.so.${LIBmessageviewer_VERSION}
-@lib lib/kde4/private/libpimcommon.so.${LIBpimcommon_VERSION}
-@lib lib/kde4/private/libtemplateparser.so.${LIBtemplateparser_VERSION}
+@lib ${KDE4LIB}/libakonadi_next.so.${LIBakonadi_next_VERSION}
+@lib ${KDE4LIB}/libakregatorinterfaces.so.${LIBakregatorinterfaces_VERSION}
+@lib ${KDE4LIB}/libakregatorprivate.so.${LIBakregatorprivate_VERSION}
+@lib ${KDE4LIB}/libcalendarsupport.so.${LIBcalendarsupport_VERSION}
+@lib ${KDE4LIB}/libeventviews.so.${LIBeventviews_VERSION}
+@lib ${KDE4LIB}/libincidenceeditorsng.so.${LIBincidenceeditorsng_VERSION}
+@lib ${KDE4LIB}/libincidenceeditorsngmobile.so.${LIBincidenceeditorsngmobile_VERSION}
+@lib ${KDE4LIB}/libkaddressbookprivate.so.${LIBkaddressbookprivate_VERSION}
+@lib ${KDE4LIB}/libkcal_resourceblog.so.${LIBkcal_resourceblog_VERSION}
+@lib ${KDE4LIB}/libkcal_resourceremote.so.${LIBkcal_resourceremote_VERSION}
+@lib ${KDE4LIB}/libkdepim.so.${LIBkdepim_VERSION}
+@lib ${KDE4LIB}/libkdepimdbusinterfaces.so.${LIBkdepimdbusinterfaces_VERSION}
+@lib ${KDE4LIB}/libkdepimmobileui.so.${LIBkdepimmobileui_VERSION}
+@lib ${KDE4LIB}/libkdgantt2.so.${LIBkdgantt2_VERSION}
+@lib ${KDE4LIB}/libkleo.so.${LIBkleo_VERSION}
+@lib ${KDE4LIB}/libkleopatraclientcore.so.${LIBkleopatraclientcore_VERSION}
+@lib ${KDE4LIB}/libkleopatraclientgui.so.${LIBkleopatraclientgui_VERSION}
+@lib ${KDE4LIB}/libkmailprivate.so.${LIBkmailprivate_VERSION}
+@lib ${KDE4LIB}/libkmanagesieve.so.${LIBkmanagesieve_VERSION}
+@lib ${KDE4LIB}/libknodecommon.so.${LIBknodecommon_VERSION}
+@lib ${KDE4LIB}/libkontactprivate.so.${LIBkontactprivate_VERSION}
+@lib ${KDE4LIB}/libkorganizer_core.so.${LIBkorganizer_core_VERSION}
+@lib ${KDE4LIB}/libkorganizer_interfaces.so.${LIBkorganizer_interfaces_VERSION}
+@lib ${KDE4LIB}/libkorganizerprivate.so.${LIBkorganizerprivate_VERSION}
+@lib ${KDE4LIB}/libkpgp.so.${LIBkpgp_VERSION}
+@lib ${KDE4LIB}/libksieve.so.${LIBksieve_VERSION}
+@lib ${KDE4LIB}/libksieveui.so.${LIBksieveui_VERSION}
+@lib ${KDE4LIB}/libmailcommon.so.${LIBmailcommon_VERSION}
+@lib ${KDE4LIB}/libmailimporter.so.${LIBmailimporter_VERSION}
+@lib ${KDE4LIB}/libmessagecomposer.so.${LIBmessagecomposer_VERSION}
+@lib ${KDE4LIB}/libmessagecore.so.${LIBmessagecore_VERSION}
+@lib ${KDE4LIB}/libmessagelist.so.${LIBmessagelist_VERSION}
+@lib ${KDE4LIB}/libmessageviewer.so.${LIBmessageviewer_VERSION}
+@lib ${KDE4LIB}/libpimcommon.so.${LIBpimcommon_VERSION}
+@lib ${KDE4LIB}/libtemplateparser.so.${LIBtemplateparser_VERSION}
 @lib lib/libakonadi_next.so.${LIBakonadi_next_VERSION}
 @lib lib/libakregatorinterfaces.so.${LIBakregatorinterfaces_VERSION}
 @lib lib/libakregatorprivate.so.${LIBakregatorprivate_VERSION}
@@ -1003,8 +1003,6 @@ share/doc/HTML/en/kwatchgnupg/
 share/doc/HTML/en/kwatchgnupg/common
 share/doc/HTML/en/kwatchgnupg/index.cache.bz2
 share/doc/HTML/en/kwatchgnupg/index.docbook
-share/examples/dbus-1/system.d/org.kde.kalarmrtcwake.conf
-@sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.kalarmrtcwake.conf
 share/icons/hicolor/128x128/actions/upload-media.png
 share/icons/hicolor/128x128/apps/akonadiconsole.png
 share/icons/hicolor/128x128/apps/akregator.png
