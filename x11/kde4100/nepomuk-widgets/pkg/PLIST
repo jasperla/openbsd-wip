@@ -7,4 +7,5 @@ lib/cmake/NepomukWidgets/NepomukWidgetsConfig.cmake
 lib/cmake/NepomukWidgets/NepomukWidgetsConfigVersion.cmake
 lib/cmake/NepomukWidgets/NepomukWidgetsTargetsWithPrefix${MODKDE4_CMAKE_PREFIX}.cmake
 lib/cmake/NepomukWidgets/NepomukWidgetsTargetsWithPrefix.cmake
+@lib ${KDE4LIB}/libnepomukwidgets.so.${LIBnepomukwidgets_VERSION}
 @lib lib/libnepomukwidgets.so.${LIBnepomukwidgets_VERSION}
