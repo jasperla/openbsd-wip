@@ -110,7 +110,7 @@ list_l10n_ports_dirs() {
 # Assume we're in the apporiate port's directory
 list_remote_source() {
 	local LIST URL
-	local V=`make show=MODKDE_VERSION`
+	local V=`make show=MODKDE4_VERSION`
 
 	for URL in $(make MASTER_SITE_BACKUP= show=MASTER_SITES); do
 		echo "$URL" | grep -q '^ftp://' || continue
@@ -144,7 +144,7 @@ compare_sources_lists() {
 
 # Assume we're in KDE ports root directory.
 kde_version() {
-	(cd libs && make show=MODKDE_VERSION)
+	(cd libs && make show=MODKDE4_VERSION)
 }
 
 # Arguments: port, status
@@ -410,7 +410,7 @@ merge_back() {
 	test $# -eq 0 || usage
 	# Avoid erroring out here, we'll print a nicer message below.
 	local SKDEV=`cd libs && make show=_MODKDE4_STABLE || true`
-	local KDEV=`cd libs && make show=MODKDE_VERSION || true`
+	local KDEV=`cd libs && make show=MODKDE4_VERSION || true`
 
 	if [ -f kde4.port.mk -o X"`cd .. && basename $(pwd)`" != Xx11 -o \
 	     X"$KDEV" = X ]; then
