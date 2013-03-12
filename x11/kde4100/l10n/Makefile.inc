@@ -2,7 +2,7 @@
 
 IGNORE_SILENT =		Yes
 COMMENT =		K Desktop Environment, language localization pack
-DISTNAME =		kde-l10n-${KDE_L10N_LANG}-${MODKDE_VERSION}
+DISTNAME =		kde-l10n-${KDE_L10N_LANG}-${MODKDE4_VERSION}
 
 MODULES =		devel/gettext
 MODKDE4_RESOURCES =	Yes
@@ -11,12 +11,12 @@ MODKDE4_USE =		libs
 .include "${.CURDIR}/../Makefile.langs"
 
 .for L in ${ALL_LANGS}
-SUPDISTFILES +=	kde-l10n-${L}-${MODKDE_VERSION}${EXTRACT_SUFX}
+SUPDISTFILES +=	kde-l10n-${L}-${MODKDE4_VERSION}${EXTRACT_SUFX}
 .endfor
 
 RUN_DEPENDS =	x11/gtk+2,-guic
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/${MODKDE_VERSION}/src/kde-l10n/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/${MODKDE4_VERSION}/src/kde-l10n/}
 
 KDE_LANG_STR =	${KDE_L10N_LANG} language
 SUBST_VARS =	KDE_LANG_STR
