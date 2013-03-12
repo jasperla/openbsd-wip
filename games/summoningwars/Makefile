@@ -18,9 +18,6 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 # GPLv3+ / CC-by-sa 3.0 for data
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += CEGUIBase CEGUIOgreRenderer OIS OgreMain OgreRTShaderSystem
 WANTLIB += OgreTerrain PocoFoundation X11 Xrandr alut c lua m

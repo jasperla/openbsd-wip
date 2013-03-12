@@ -21,9 +21,6 @@ MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 # Actually, qimage module could be under GPLv3+ if one more object
 # file gets included, see --enable-gpl3 configure option.
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB-main =	GL SDL SDL_image X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB-main +=	Xinerama Xrandr Xrender atk-1.0 avcodec avdevice avformat

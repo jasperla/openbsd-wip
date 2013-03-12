@@ -15,9 +15,6 @@ MASTER_SITES=	http://cr.yp.to/ucspi-tcp/ \
 
 # Public Domain
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 ALL_TARGET=	default
 INSTALL_TARGET=	setup check

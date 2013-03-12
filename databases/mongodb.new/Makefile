@@ -17,9 +17,6 @@ HOMEPAGE =	http://www.mongodb.org/
 
 # Apache 2.0 + AGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	boost_filesystem-mt boost_program_options-mt boost_system-mt \
 		boost_thread-mt c execinfo mozjs m pcap pcre pcrecpp pthread \

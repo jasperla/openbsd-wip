@@ -30,9 +30,6 @@ MULTI_PACKAGES =	-main -gtk -qt
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 EXTRACT_SUFX =		.tar.bz2
 MASTER_SITES =		http://google-gadgets-for-linux.googlecode.com/files/

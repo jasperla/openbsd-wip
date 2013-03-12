@@ -22,9 +22,6 @@ MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 # Asterisk with OpenSSL and OpenH323 and distribute the resulting binary
 # files." core-sounds-*: GPLv2/CC-BY-SA.
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB-main +=	c crypto curl execinfo gsm idn iksemel
 WANTLIB-main += m ogg pthread spandsp sqlite3 srtp ssl stdc++ termcap

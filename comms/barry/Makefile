@@ -17,9 +17,6 @@ MAINTAINER=		Ian Darwin <ian@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		usb pthread stdc++ m c
 
 LIB_DEPENDS=	devel/boost \

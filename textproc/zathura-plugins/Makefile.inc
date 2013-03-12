@@ -7,9 +7,6 @@ V ?=	0.2.0
 
 # MIT
 PERMIT_PACKAGE_CDROM ?=	Yes
-PERMIT_PACKAGE_FTP ?=	Yes
-PERMIT_DISTFILES_CDROM ?=Yes
-PERMIT_DISTFILES_FTP ?=	Yes
 
 RUN_DEPENDS ?=	textproc/zathura-core>=0.2.0
 LIB_DEPENDS ?=	x11/girara

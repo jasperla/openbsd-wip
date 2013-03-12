@@ -37,9 +37,6 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 # OSGPL (see LICENSE.txt)
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += GL Half Iex IlmImf IlmThread QtGui QtOpenGL X11 Xrandr
 WANTLIB += Xrender avcodec avdevice avformat avutil c cairo curl

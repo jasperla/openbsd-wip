@@ -38,9 +38,6 @@ MAINTAINER=		Rafael Sadowski <rafael@sizeofvoid.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://www.sizeofvoid.org/pub/OpenBSD/distfiles/
 EXTRACT_SUFX=		.tar.bz2

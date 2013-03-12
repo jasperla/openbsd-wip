@@ -16,9 +16,6 @@ MASTER_SITES=	http://code.call-cc.org/releases/current/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=		Yes
 

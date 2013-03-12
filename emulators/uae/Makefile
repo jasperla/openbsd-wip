@@ -7,9 +7,6 @@ CATEGORIES=	emulators x11
 HOMEPAGE=	http://uae.coresystems.de/
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL ICE SDL SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86dga Xxf86vm atk-1.0

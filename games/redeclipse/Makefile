@@ -24,9 +24,6 @@ PKG_ARCH-data=	i386,amd64
 
 # zlib (code) + CC-BY-SA-3.0 (data)
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS-main +=	${BASE_PKGPATH},-data \
 			devel/desktop-file-utils

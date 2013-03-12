@@ -18,8 +18,6 @@ MAINTAINER=		Rafael Sadowski <rafael@sizeofvoid.org>
 # For external components see:
 #   http://www.netbeans.info/downloads/licence/netbeans-3rd-party.txt
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://dlc.sun.com.edgesuite.net/netbeans/${V}/final/zip/
 EXTRACT_SUFX=		.zip

@@ -21,9 +21,6 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 # LGPLv2.0+, CC-BY-SA 3.0
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += ICE Mrm SM Uil X11 Xau Xdmcp Xext Xm Xmu Xp Xt c
 WANTLIB += m stdc++ util

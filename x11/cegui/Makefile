@@ -29,9 +29,6 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += GL GLEW GLU ICE Irrlicht OIS OgreMain SM X11 Xau Xaw
 WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xmu Xpm Xt Xxf86vm boost_date_time-mt

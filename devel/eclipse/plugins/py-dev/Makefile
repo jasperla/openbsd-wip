@@ -16,8 +16,6 @@ MAINTAINER=	Ian Darwin <ian@openbsd.org>
 
 # Eclipse Public License
 PERMIT_PACKAGE_CDROM =	EPL Indemnify clause
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=pydev/}
 

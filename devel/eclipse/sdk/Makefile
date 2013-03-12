@@ -36,8 +36,6 @@ MAINTAINER=		Matthew Dempsky <matthew@openbsd.org>
 # Mozilla Public License Version 1.1 (http://www.mozilla.org/MPL/MPL-1.1.html)
 # LGPL 2.1 (http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html)
 PERMIT_PACKAGE_CDROM=	commercial distribution defend and indemnify clauses
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITE_ECLIPSE+=	\
 	http://www.eclipse.org/downloads/download.php?r=1&file=/eclipse/downloads/drops4/

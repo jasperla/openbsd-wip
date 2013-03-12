@@ -14,8 +14,6 @@ SHARED_LIBS +=		grantlee_gui		1.0	# 0.1
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://downloads.grantlee.org/ \
 			http://www.loegria.net/grantlee/

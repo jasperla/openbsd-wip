@@ -12,9 +12,6 @@ HOMEPAGE=	http://mirror.ctan.org/macros/latex/contrib/invoice/
 
 # GPL 2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes

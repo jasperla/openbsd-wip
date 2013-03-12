@@ -12,8 +12,6 @@ MAINTAINER=		Ian Darwin <ian@openbsd.org>
 # SubClipse itself is CPL 1.0, but
 # JavaSVN, which it uses, has a bizarro hybrid: BSD but "no redist w/o source code"
 PERMIT_PACKAGE_CDROM=	Stupid license
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 HOMEPAGE=		http://subclipse.tigris.org/
 
