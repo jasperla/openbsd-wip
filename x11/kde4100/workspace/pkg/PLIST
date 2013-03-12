@@ -600,6 +600,7 @@ share/apps/kdisplay/app-defaults/Xawtv.ad
 share/apps/kdisplay/app-defaults/Xdvi.ad
 share/apps/kdisplay/app-defaults/Xpdf.ad
 share/apps/kdm/
+@sample share/apps/kdm/faces/
 share/apps/kdm/patterns/
 share/apps/kdm/patterns/fish.desktop
 share/apps/kdm/patterns/fish.png
@@ -1101,6 +1102,7 @@ share/apps/plasma/layout-templates/org.kde.plasma-netbook.defaultSal/
 share/apps/plasma/layout-templates/org.kde.plasma-netbook.defaultSal/contents/
 share/apps/plasma/layout-templates/org.kde.plasma-netbook.defaultSal/contents/layout.js
 share/apps/plasma/layout-templates/org.kde.plasma-netbook.defaultSal/metadata.desktop
+share/apps/plasma/packages/
 share/apps/plasma/packages/org.kde.desktop.activitymanager/
 share/apps/plasma/packages/org.kde.desktop.activitymanager/Messages.sh
 share/apps/plasma/packages/org.kde.desktop.activitymanager/contents/
