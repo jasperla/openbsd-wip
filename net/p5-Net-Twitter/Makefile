@@ -2,7 +2,7 @@
 
 COMMENT=	Perl interface to the Twitter API
 
-DISTNAME=	Net-Twitter-3.18004
+DISTNAME=	Net-Twitter-4.00004
 CATEGORIES=	net
 
 MAINTAINER=	Andrew Fresh <andrew@cpan.org>
@@ -14,6 +14,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=	cpan
+CONFIGURE_STYLE=modbuild
 
 CONFIGURE_ARGS=--skipdeps
 
