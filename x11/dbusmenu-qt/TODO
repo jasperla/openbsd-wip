@@ -1,4 +1,4 @@
-Regression tests fail (i386 2012-07-03):
+Tests fail (i386 2012-07-03):
 
 1: Test command: /usr/ports/pobj/dbusmenu-qt-0.9.2/build-i386/tests/dbusmenuexportertest                                           [94/2504]
 1: Test timeout computed to be: 9.99988e+06

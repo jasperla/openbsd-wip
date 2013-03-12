@@ -23,7 +23,7 @@ WANTLIB +=              ${MODPY_WANTLIB}
 
 MODPY_ADJ_FILES =	./setup.py install
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/anita

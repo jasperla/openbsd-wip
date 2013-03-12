@@ -17,6 +17,6 @@ MASTER_SITES=		${HOMEPAGE}
 
 FAKE_FLAGS=		DESTDIR=""
 
-NO_REGRESS=     	Yes
+NO_TEST=     	Yes
 
 .include <bsd.port.mk>

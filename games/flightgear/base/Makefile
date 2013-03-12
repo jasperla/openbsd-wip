@@ -24,7 +24,7 @@ RUN_DEPENDS =	games/flightgear/data>=${V}
 CONFIGURE_ARGS +=	-DCMAKE_INSTALL_MANDIR="${PREFIX}/man" \
 			-DFG_DATA_DIR="${TRUEPREFIX}/share/flightgear"
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 pre-configure:
 	perl -pi -e 's/^\.Id.*//' ${WRKSRC}/man/*.1.in

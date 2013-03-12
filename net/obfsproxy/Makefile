@@ -21,7 +21,7 @@ MODULES =		lang/python
 MODPY_RUNDEP =		No
 LIB_DEPENDS =		devel/libevent2
 RUN_DEPENDS =		net/tor
-REGRESS_DEPENDS =	lang/python/${MODPY_VERSION}
+TEST_DEPENDS =		lang/python/${MODPY_VERSION}
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		ax_cv_check_cflags__Werror__fPIE=no \

@@ -42,7 +42,7 @@ CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=Release \
 			-DINSTALL_LIBS=ON \
 			-DCMAKE_EXTRA_LINK_FLAGS="-pthread"
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 CFLAGS +=		-I${X11BASE}/include
 WRKDIST =		${WRKDIR}/bullet-${V}

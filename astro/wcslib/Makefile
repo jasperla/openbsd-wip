@@ -23,7 +23,7 @@ LIB_DEPENDS =		devel/libf2c \
 #MAKE_FLAGS =		???
 #MAKE_ENV =		???
 #FAKE_FLAGS =		???
-#REGRESS_FLAGS =	???
+#TEST_FLAGS =		???
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu autoconf

@@ -32,7 +32,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 AUTOCONF_VERSION= 2.69
 
-REGRESS_TARGET=	test
+TEST_TARGET=	test
 
 WRKDIST=	${WRKDIR}/fish-shell-master
 

@@ -87,8 +87,8 @@ post-install:
 		${MODPY_BIN} -O ${MODPY_LIBDIR}/py_compile.py {} \;
 
 # Disable regression tests until they are fixed.
-NO_REGRESS = 	Yes
-do-regress:
+NO_TEST = 	Yes
+do-test:
 	@${SETENV} ${MAKE_ENV} ${MODSCONS_BIN} -C ${WRKSRC} \
 		${MODSCONS_ENV} ${MODSCONS_FLAGS} check
 

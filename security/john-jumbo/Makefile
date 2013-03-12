@@ -33,7 +33,7 @@ MAKE_FLAGS =		CC="${CC}" \
 			LDFLAGS="${LDFLAGS} -lssl -lcrypto -lm -lz `pkg-config --libs nss`" \
 			HAVE_NSS="-DHAVE_NSS"
 
-REGRESS_TARGET =	check
+TEST_TARGET =		check
 
 .if ${MACHINE_ARCH} == "i386"
 ALL_TARGET=		openbsd-x86-mmx

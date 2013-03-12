@@ -32,7 +32,7 @@ WRKDIST =		${WRKDIR}/opentracker
 
 ALL_TARGET =		opentracker
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .if ${FLAVOR:Maccesslist_white} && ${FLAVOR:Maccesslist_black}
 ERRORS+="Fatal: accesslist_white and accesslist_black flavors are mutually exclusive"

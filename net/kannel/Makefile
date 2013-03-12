@@ -31,7 +31,7 @@ CONFIGURE_ARGS +=	--enable-warnings
 
 WRKDIST =		${WRKDIR}/gateway-1.5.0
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 PSEUDO_FLAVORS = no_pgsql no_mysql no_sqlite pcre
 

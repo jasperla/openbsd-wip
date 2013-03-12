@@ -33,7 +33,7 @@ MAKE_FLAGS = \
 	MANDIR="${WRKINST}${PREFIX}/man/man1"
 
 USE_GMAKE =		Yes
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 ALL_TARGET =		xfractint
 
 .include <bsd.port.mk>

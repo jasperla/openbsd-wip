@@ -14,7 +14,7 @@ HOMEPAGE=	http://mirror.ctan.org/macros/latex/contrib/invoice/
 PERMIT_PACKAGE_CDROM=	Yes
 
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/texmf/tex/latex/invoice

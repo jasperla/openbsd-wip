@@ -23,7 +23,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		http://distorm.googlecode.com/files/
 MODULES =		lang/python
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 EXAMPLEDIR =	${PREFIX}/share/examples/distorm
 post-install:

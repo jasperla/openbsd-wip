@@ -52,7 +52,7 @@ post-install:
 	    ${PREFIX}/share/examples/mongodb
 
 # Regression tests require at least 256 file descriptors and ~700MB
-do-regress:
+do-test:
 	@${SETENV} ${MAKE_ENV} ${MODSCONS_BIN} -C ${WRKSRC} \
 	    ${MODSCONS_ENV} ${MODSCONS_FLAGS} test && \
 	    ${WRKSRC}/test --dbpath ${WRKSRC}/unittest

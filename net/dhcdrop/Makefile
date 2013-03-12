@@ -20,6 +20,6 @@ EXTRACT_SUFX =		.tar.bz2
 
 CONFIGURE_STYLE =	gnu
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

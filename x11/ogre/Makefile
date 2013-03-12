@@ -53,7 +53,7 @@ LIB_DEPENDS-samples =	${LIB_DEPENDS} \
 			devel/ois \
 			x11/ogre,-main
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 CFLAGS =		-g
 

@@ -24,7 +24,7 @@ MODKDE4_USE =
 
 LIB_DEPENDS =	x11/kde4/smokeqt
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 PATCHORIG =	.ports.orig
 

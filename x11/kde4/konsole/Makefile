@@ -17,6 +17,6 @@ RUN_DEPENDS =	devel/desktop-file-utils
 
 LIB_DEPENDS =	x11/kde4/baseapps
 
-REGRESS_IS_INTERACTIVE =	X11
+TEST_IS_INTERACTIVE =	X11
 
 .include <bsd.port.mk>

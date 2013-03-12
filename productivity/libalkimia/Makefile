@@ -22,15 +22,15 @@ BUILD_DEPENDS =		devel/doxygen \
 			x11/kde4/libs
 LIB_DEPENDS =		devel/gmp
 
-#REGRESS_DEPENDS =	???
+#TEST_DEPENDS =		???
 
 #MAKE_FLAGS =		???
 #MAKE_ENV =		???
 #FAKE_FLAGS =		???
-#REGRESS_FLAGS =	???
+#TEST_FLAGS =		???
 
-#REGRESS_IS_INTERACTIVE =	Yes
-#NO_REGRESS =		Yes
-#REGRESS_TARGET =	???
+#TEST_IS_INTERACTIVE =	Yes
+#NO_TEST =		Yes
+#TEST_TARGET =		???
 
 .include <bsd.port.mk>

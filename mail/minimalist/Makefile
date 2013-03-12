@@ -24,7 +24,7 @@ PERMIT_DISTFILES_FTP =		Yes
 SEPARATE_BUILD =	Yes
 
 NO_BUILD =		Yes
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIST}/minimalist.pl ${PREFIX}/sbin/

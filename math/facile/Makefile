@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.60 2010/10/24 20:41:23 ajacoutot Exp $
+# $OpenBSD$
 
 COMMENT =		integer constraint programming library
 DISTNAME =		facile-1.1
@@ -16,6 +16,6 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--faciledir '$${OCAMLFIND_DESTDIR}/../facile'
 
 ALL_TARGET =		compile
-REGRESS_TARGET =	check
+TEST_TARGET =		check
 
 .include <bsd.port.mk>

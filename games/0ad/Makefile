@@ -83,7 +83,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIST}/binaries/system/lib* ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKDIST}/binaries/system/pyrogenesis ${PREFIX}/bin
 
-do-regress:
+do-test:
 	cd ${WRKDIST}/binaries/system && ./test
 
 .include <bsd.port.mk>

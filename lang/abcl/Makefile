@@ -1,3 +1,4 @@
+# $OpenBSD$
 
 COMMENT =		Common Lisp dialect for the Java Virtual Machine
 

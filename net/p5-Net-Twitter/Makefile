@@ -35,6 +35,6 @@ RUN_DEPENDS=	converters/p5-JSON \
 		www/p5-URI \
 		www/p5-libwww
 
-REGRESS_DEPENDS=devel/p5-Test-Fatal
+TEST_DEPENDS=	devel/p5-Test-Fatal
 
 .include <bsd.port.mk>

@@ -18,6 +18,6 @@ EXTRACT_SUFX =		.tar.bz2
 MODULES =		devel/scons
 
 NO_BUILD =		Yes
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

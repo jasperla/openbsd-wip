@@ -10,7 +10,7 @@ CATEGORIES =		www
 
 RUN_DEPENDS =		www/p5-HTML-Tagset>=3
 BUILD_DEPENDS =		${RUN_DEPENDS}
-TEST_DEPENDS =	www/p5-URI \
+TEST_DEPENDS =		www/p5-URI \
 			www/p5-libwww
 
 MAINTAINER =		Srebrenko Sehic <haver@insecure.dk>

@@ -61,6 +61,6 @@ CONFIGURE_ENV =		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 			am_cv_pathless_PYTHON=python${MODPY_VERSION}
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

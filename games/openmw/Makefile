@@ -37,7 +37,7 @@ LIB_DEPENDS =		x11/ogre \
 			graphics/png \
 			devel/ois
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 CFLAGS +=		-pthread
 

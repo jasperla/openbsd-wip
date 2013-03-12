@@ -39,7 +39,7 @@ LIB_DEPENDS=	graphics/png
 MAKE_ENV+=	EXTRA_INCLUDES="${WRKSRC} ${LOCALBASE}/include/libpng ${MODTCL_INCDIR} ${MODTK_INCDIR}" \
 		LDSHARED="${CC} -shared -fPIC"
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-install:
 	# Make examples use MODPY_VER

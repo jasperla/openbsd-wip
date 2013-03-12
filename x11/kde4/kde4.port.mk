@@ -194,7 +194,7 @@ KDELIB ?=		${KDE4LIB}
 SUBST_VARS +=		KDE4LIB
 
 .if ${CONFIGURE_STYLE:Mcmake}
-. if "${NO_REGRESS:L}" != "yes"
+. if "${NO_TEST:L}" != "yes"
 # Enable regression tests if any
 MODKDE4_CONF_ARGS +=	-DKDE4_BUILD_TESTS:Bool=Yes
 . endif

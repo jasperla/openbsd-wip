@@ -10,6 +10,6 @@ CATEGORIES =		devel
 # Artistic 2.0
 PERMIT_PACKAGE_CDROM =	Yes
 
-REGRESS_DEPENDS=	devel/p5-Test-Base
+TEST_DEPENDS =		devel/p5-Test-Base
 
 .include <bsd.port.mk>

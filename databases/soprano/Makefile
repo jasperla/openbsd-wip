@@ -35,9 +35,9 @@ WANTLIB += clucene-core iodbc raptor2 rdf
 CONFIGURE_ARGS =	-DSOPRANO_DISABLE_SESAME2_BACKEND:Bool=Yes \
 			-DSOPRANO_BUILD_TESTS:Bool=Yes
 
-REGRESS_DEPENDS =		databases/virtuoso \
-				x11/dbus
-REGRESS_IS_INTERACTIVE =	X11
+TEST_DEPENDS =		databases/virtuoso \
+			x11/dbus
+TEST_IS_INTERACTIVE =	X11
 
 post-extract:
 	cd ${WRKDIST}/cmake/modules && \

@@ -18,7 +18,7 @@ MASTER_SITES =	 ${MASTER_SITE_SOURCEFORGE:=shuffle-db/}
 NO_BUILD = Yes
 MODULES =		lang/python
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 do-install:
 	${INSTALL_DATA} ${WRKDIR}/rebuild_db/rebuild_db.py ${PREFIX}/bin/

@@ -38,7 +38,7 @@ CONFIGURE_ARGS += \
 	-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib -liconv -lintl" \
 	-DCMAKE_BUILD_TYPE=Release
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/sumwars-${V}
 

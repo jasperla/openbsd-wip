@@ -30,6 +30,6 @@ LIB_DEPENDS =	editors/qscintilla \
 
 CONFIGURE_ARGS =	-DPHONON_INCLUDE_DIR:String=${MODQT4_INCDIR}
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 .include <bsd.port.mk>

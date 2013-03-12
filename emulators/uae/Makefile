@@ -31,7 +31,7 @@ CONFIGURE_ARGS+=	--enable-dga --enable-vidmode \
 			--with-sdl-sound
 CONFIGURE_ENV=		ac_cv_header_sys_audioio_h=no
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 DOCS=		COMPATIBILITY CREDITS FAQ NEWS README README.PROGRAMMERS
 

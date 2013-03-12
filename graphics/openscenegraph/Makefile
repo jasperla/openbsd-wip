@@ -61,6 +61,6 @@ LIB_DEPENDS =		graphics/openexr \
 
 CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE="Release"
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

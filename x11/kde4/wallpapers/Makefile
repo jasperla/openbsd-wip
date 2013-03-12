@@ -7,6 +7,6 @@ MODKDE4_RESOURCES =	Yes
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 .include <bsd.port.mk>

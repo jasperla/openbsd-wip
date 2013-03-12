@@ -128,10 +128,10 @@ WRAP_CMAKE_MODULES =	FindLibXslt
 MODKDE4_SYSCONF_FILES =	dbus-1	share/examples \
 			xdg	share/examples
 
-REGRESS_IS_INTERACTIVE =	X11
-REGRESS_DEPENDS =		${BUILD_PKGPATH} \
-				x11/kde4/kate>=${MODKDE4_DEP_VERSION} \
-				x11/kde4/konsole>=${MODKDE4_DEP_VERSION}
+TEST_IS_INTERACTIVE =	X11
+TEST_DEPENDS =		${BUILD_PKGPATH} \
+			x11/kde4/kate>=${MODKDE4_DEP_VERSION} \
+			x11/kde4/konsole>=${MODKDE4_DEP_VERSION}
 
 post-extract:
 .for M in ${REWR_CMAKE_MODULES}

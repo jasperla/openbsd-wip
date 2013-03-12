@@ -25,7 +25,7 @@ USE_GMAKE =	Yes
 
 ALL_TARGET =	all doc
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml-tyxml/api

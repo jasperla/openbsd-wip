@@ -23,7 +23,7 @@ EXTRACT_SUFX=	.tar.bz2
 WANTLIB= GL GLU glut png z freetype GLEW
 
 USE_GMAKE=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 VMEM_WARNING=	Yes
 
 BUILD_DEPENDS=	math/py-Numeric \

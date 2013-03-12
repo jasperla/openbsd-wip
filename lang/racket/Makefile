@@ -49,7 +49,7 @@ WANTLIB += ffi m pthread stdc++ xcb pango-1.0 pangocairo-1.0
 WRKDIST =		${WRKDIR}/racket-$V
 WRKSRC =		${WRKDIST}/src
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 VMEM_WARNING =		Yes
 SEPARATE_BUILD =	simple
 

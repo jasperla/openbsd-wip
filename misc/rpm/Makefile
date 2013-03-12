@@ -71,8 +71,8 @@ MAKE_ENV +=              PATH=${WRKDIR}/test/bin:${PATH}
 # NOTE: rpm and rpmdb are picky about the option order.  rcfile and dbpath
 # must come *before* defines.  This is not normally a problem for users as
 # it is very uncommon to override rcfile and dbpath.  We are only doing it
-# here for the regression tests.
-pre-regress:
+# here for the tests.
+pre-test:
 	mkdir -p ${WRKDIR}/test/bin
 	mkdir -p ${WRKDIR}/test/db
 	echo "#!/bin/sh -x" > ${WRKDIR}/test/bin/rpm

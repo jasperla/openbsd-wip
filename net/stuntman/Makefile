@@ -25,7 +25,7 @@ MAKE_FLAGS =	BOOST_INCLUDE='-I/usr/local/include' FLAVOR_FLAGS='${CFLAGS}'
 
 USE_GMAKE =	Yes
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 WRKDIST =	${WRKDIR}/stunserver
 

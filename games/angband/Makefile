@@ -57,7 +57,7 @@ CONFIGURE_ARGS +=	--disable-sdl-mixer	# defaults to ON
 PKG_ARGS +=		-Dsdl=0
 .endif
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 pre-configure:
 	@perl -pi -e "s,/usr/share,${TRUEPREFIX}/share," \

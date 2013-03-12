@@ -20,7 +20,7 @@ WANTLIB =		c
 
 USE_GMAKE =          Yes
 USE_LIBTOOL = 		Yes
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 CONFIGURE_STYLE=        gnu
 

@@ -25,6 +25,6 @@ USE_GMAKE= yes
 MASTER_SITES= http://downloads.syncevolution.org/syncevolution/sources/
 
 FAKE_FLAGS=	PREFIX=${PREFIX}
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>
