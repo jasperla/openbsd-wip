@@ -11,10 +11,10 @@ MAINTAINER=	Wen Heping <wenheping@gmail.com>
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-BUILD_DEPENDS=		devel/p5-ExtUtils-PkgConfig
-LIB_DEPENDS =		devel/gsl
-REGRESS_DEPENDS =	devel/p5-Test-Class \
-			devel/p5-Test-Most
+BUILD_DEPENDS =	devel/p5-ExtUtils-PkgConfig
+LIB_DEPENDS =	devel/gsl
+TEST_DEPENDS =	devel/p5-Test-Class \
+		devel/p5-Test-Most
 
 WANTLIB =		gsl>=12
 

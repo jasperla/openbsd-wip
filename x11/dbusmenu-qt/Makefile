@@ -15,15 +15,15 @@ EXTRACT_SUFX =		.tar.bz2
 # LGPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${HOMEPAGE}trunk/${V}/+download/
+MASTER_SITES =	${HOMEPAGE}trunk/${V}/+download/
 
-MODULES =		devel/cmake x11/qt4
-WANTLIB =		QtDBus QtGui m stdc++
-BUILD_DEPENDS =		devel/qjson
-REGRESS_DEPENDS =	devel/qjson
+MODULES =	devel/cmake x11/qt4
+WANTLIB =	QtDBus QtGui m stdc++
+BUILD_DEPENDS =	devel/qjson
+TEST_DEPENDS =	devel/qjson
 
-SEPARATE_BUILD =		Yes
-REGRESS_TARGET =		check
-REGRESS_IS_INTERACTIVE =	X11
+SEPARATE_BUILD =	Yes
+TEST_TARGET =		check
+TEST_IS_INTERACTIVE =	X11
 
 .include <bsd.port.mk>

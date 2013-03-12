@@ -24,7 +24,7 @@ MAKE_ENV+=              JAVA_HOME=${JAVA_HOME}
 RUN_DEPENDS=            java/javaPathHelper
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 PKG_ARCH=	*
 

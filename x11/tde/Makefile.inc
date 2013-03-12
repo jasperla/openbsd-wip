@@ -62,7 +62,7 @@ MAKE_FLAGS +=		${MODTDE_MAKE_FLAGS}
 USE_LIBTOOL =		gnu
 .endif
 
-NO_REGRESS ?=	Yes
+NO_TEST ?=	Yes
 
 post_install_libs = mkdir -p ${PREFIX}/${TDE}; cd ${PREFIX}/${TDE}
 .for l v in ${SHARED_LIBS}

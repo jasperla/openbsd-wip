@@ -27,6 +27,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		OPENSSL_CFLAGS=" " OPENSSL_LIBS="-lssl -lcrypto"
 USE_GMAKE=		Yes
 USE_LIBTOOL=	Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 .include <bsd.port.mk>

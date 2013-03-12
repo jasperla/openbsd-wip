@@ -21,6 +21,6 @@ DISTFILES =		fuzemux-${V}-fixed.tar.gz
 
 CONFIGURE_STYLE =	gnu
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

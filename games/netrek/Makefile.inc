@@ -10,4 +10,4 @@ CONFIGURE_STYLE =	gnu
 
 USE_GMAKE =		Yes
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes

@@ -27,7 +27,7 @@ RUN_DEPENDS +=	lang/php/${MODPHP_VERSION},-pdo_pgsql \
 		databases/p5-DBD-Pg
 
 NO_BUILD =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 PKG_ARCH =	*
 
 do-install:

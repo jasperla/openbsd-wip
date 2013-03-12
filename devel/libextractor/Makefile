@@ -55,6 +55,6 @@ CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 				  -I${LOCALBASE}/include/poppler" \
 			LIBS="-lfontconfig -lfreetype -pthread -lm -logg"
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

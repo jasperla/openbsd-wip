@@ -23,7 +23,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 CONFIGURE_ENV =		API_VER="${API_VER}"
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} jam -d x

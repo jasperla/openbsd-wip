@@ -31,7 +31,7 @@ LIB_DEPENDS =		devel/sdl \
 			audio/libvorbis \
 			graphics/jpeg
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 WRKSRC =		${WRKDIST}/neo
 

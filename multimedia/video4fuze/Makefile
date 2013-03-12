@@ -27,7 +27,7 @@ RUN_DEPENDS =		x11/mplayer \
 MODPY_ADJ_FILES =	fuze.py info.py p2fuze.py setup.py video4fuze.pyw \
 			vthumb.py
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/dist/fuze ${WRKSRC}/dist/video4fuze

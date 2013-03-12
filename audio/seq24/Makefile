@@ -33,6 +33,6 @@ AUTOMAKE_VERSION =	1.11
 CONFIGURE_ARGS =	--disable-jack-support
 MAKE_FLAGS =		ALSA_LIBS= ALSA_CFLAGS=
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

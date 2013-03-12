@@ -68,7 +68,7 @@ MAKE_ENV=	BUILDTYPE=${BUILDTYPE} V=1
 
 USE_GMAKE=	Yes
 
-REGRESS_TARGET=	base_unittests
+TEST_TARGET=	base_unittests
 
 CONFIGURE_STYLE=none # prevent python MODULE from overriding do-build
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \

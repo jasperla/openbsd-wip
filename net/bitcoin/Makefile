@@ -48,7 +48,7 @@ do-install:
 	${INSTALL_MAN} ${WRKDIST}/contrib/debian/manpages/bitcoin.conf.5 \
 		${PREFIX}/man/man5
 
-regress:
+do-test:
 	@cd ${WRKSRC} && ${GMAKE} -f ${MAKE_FILE} ${MAKE_FLAGS} test
 
 .include <bsd.port.mk>

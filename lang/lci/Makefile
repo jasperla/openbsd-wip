@@ -24,12 +24,12 @@ MODULES =		devel/cmake \
 			lang/python
 MODPY_RUNDEP =		No
 MODPY_BUILDDEP =	No
-REGRESS_DEPENDS =	devel/cmake \
+TEST_DEPENDS =		devel/cmake \
 			lang/python/${MODPY_VERSION}
 
 WRKDIST =		${WRKDIR}/justinmeza-lci-${REV}
 
-pre-regress:
+pre-test:
 	ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 
 .include <bsd.port.mk>

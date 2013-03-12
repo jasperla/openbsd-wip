@@ -25,12 +25,12 @@ BUILD_DEPENDS =		x11/qt4
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+2,-guic
 LIB_DEPENDS =		x11/tde/libs
-#REGRESS_DEPENDS =	???
+#TEST_DEPENDS =		???
 
 #MAKE_FLAGS =		${MODTDE_MAKE_FLAGS}
 #MAKE_ENV =		${MODTDE_MAKE_ENV}
 #FAKE_FLAGS =		???
-#REGRESS_FLAGS =	???
+#TEST_FLAGS =		???
 
 #USE_GMAKE =		Yes
 #USE_GROFF =		Yes
@@ -43,7 +43,7 @@ CONFIGURE_STYLE =	autoconf
 #AUTOMAKE_VERSION =	1.10
 
 #NO_BUILD =		Yes
-#NO_REGRESS =		Yes
+#NO_TEST =		Yes
 
 #CFLAGS =		???
 #LDFLAGS =		???
@@ -56,7 +56,7 @@ WRKDIST =		${WRKDIR}/kdegames
 
 #ALL_TARGET =		???
 #INSTALL_TARGET =	???
-#REGRESS_TARGET =	???
+#TEST_TARGET =		???
 
 #post-patch:
 #	${MODTDE_post-patch}

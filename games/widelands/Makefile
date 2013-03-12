@@ -46,6 +46,6 @@ CONFIGURE_ENV =	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include \
 		LDFLAGS="${LDFLAGS} -lexecinfo -lintl -liconv \
 			-L${LOCALBASE}/lib"
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

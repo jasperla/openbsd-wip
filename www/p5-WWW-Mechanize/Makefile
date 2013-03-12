@@ -13,10 +13,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 # TEST DEPENDS included as
 # perl check versions at configure time
 BUILD_DEPENDS=	${RUN_DEPENDS} \
-		 devel/p5-Test-Memory-Cycle \
-		 devel/p5-Test-Pod \
-		 devel/p5-Test-Taint \
-		 devel/p5-Test-Warn>=0.11
+		devel/p5-Test-Memory-Cycle \
+		devel/p5-Test-Pod \
+		devel/p5-Test-Taint \
+		devel/p5-Test-Warn>=0.11
 
 RUN_DEPENDS=	www/p5-libwww>=5.829 \
 		devel/p5-Test-LongString \
@@ -25,10 +25,10 @@ RUN_DEPENDS=	www/p5-libwww>=5.829 \
 		www/p5-HTML-Tree \
 		www/p5-HTTP-Server-Simple
 
-TEST_DEPENDS= devel/p5-PadWalker \
-		 devel/p5-Test-Exception \
-		 devel/p5-Test-Pod-Coverage \
-		 devel/p5-Test-NoWarnings \
+TEST_DEPENDS=	devel/p5-PadWalker \
+		devel/p5-Test-Exception \
+		devel/p5-Test-Pod-Coverage \
+		devel/p5-Test-NoWarnings \
 
 # Include Live Tests
 .ifdef LIVE_TEST

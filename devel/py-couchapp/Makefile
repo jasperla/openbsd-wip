@@ -24,7 +24,7 @@ MASTER_SITES =	http://github.com/couchapp/couchapp/downloads/
 
 MODULES =	lang/python
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 WRKDIST =	${WRKDIR}/Couchapp-${MODPY_EGG_VERSION}/
 

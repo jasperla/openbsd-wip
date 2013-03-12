@@ -20,7 +20,7 @@ MAKE_FILE =		GNUmakefile
 
 USE_GMAKE =		Yes
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/libowfat

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.60 2010/10/24 20:41:23 ajacoutot Exp $
+# $OpenBSD$
 
 COMMENT =		user interface library from pwmt
 DISTNAME =		girara-0.1.3
@@ -30,10 +30,10 @@ MAKE_FLAGS +=	SOMAJOR=${GIRARA_SOMAJOR} SOMINOR=${GIRARA_SOMINOR}
 
 FAKE_FLAGS +=	PREFIX=${TRUEPREFIX}
 
-REGRESS_TARGET =	test
-REGRESS_DEPENDS =	devel/check
-REGRESS_FLAGS +=	QUIET=
-REGRESS_FLAGS +=	HOME=${HOME}
-REGRESS_IS_INTERACTIVE =X11
+TEST_TARGET =	test
+TEST_DEPENDS =	devel/check
+TEST_FLAGS +=	QUIET=
+TEST_FLAGS +=	HOME=${HOME}
+TEST_IS_INTERACTIVE =	X11
 
 .include <bsd.port.mk>

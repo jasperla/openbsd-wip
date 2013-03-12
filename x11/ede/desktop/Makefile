@@ -31,7 +31,7 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			PTHREAD_LIBS="-pthread" PTHREAD_CFLAGS="-pthread" \
 			PYTHON=python${MODPY_VERSION}
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 MODPY_ADJ_FILES =	doc/asciidoc/asciidoc.py
 

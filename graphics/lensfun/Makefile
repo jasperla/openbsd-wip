@@ -38,7 +38,7 @@ TEST_PROGS =		example tfun
 post-extract:
 	cp ${FILESDIR}/*.cmake ${WRKSRC}/build/CMakeModules
 
-do-regress:
+do-test:
 .for _p in ${TEST_PROGS}
 	cd ${WRKBUILD}/tests && ./${_p}
 .endfor

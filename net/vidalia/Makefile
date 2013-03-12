@@ -24,6 +24,6 @@ MODULES =		x11/qt4 \
 			devel/cmake
 RUN_DEPENDS =		net/tor
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

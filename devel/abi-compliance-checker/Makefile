@@ -21,7 +21,7 @@ NO_BUILD =		Yes
 do-install:
 	cd ${WRKSRC} && perl Makefile.pl -install --prefix=${TRUEPREFIX}
 
-do-regress:
+do-test:
 	cd ${WRKBUILD} && \
 	    perl ${WRKSRC}/abi-compliance-checker.pl -test-dump 2>&1 | \
 	    awk '{print} /ERROR/ {EC=1} END {exit EC}'

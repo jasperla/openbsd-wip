@@ -7,7 +7,7 @@ CATEGORIES+=	devel/eclipse/plugins
 EXTRACT_SUFX?=	.zip
 
 NO_BUILD?=	Yes
-NO_REGRESS?=	Yes
+NO_TEST?=	Yes
 
 RUN_DEPENDS?=	devel/eclipse/sdk>=4.2.2
 

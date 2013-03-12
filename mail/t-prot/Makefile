@@ -15,7 +15,7 @@ MASTER_SITES=		${HOMEPAGE}/t-prot/downloads/
 
 CONFIGURE_STYLE=	none
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/t-prot ${PREFIX}/bin

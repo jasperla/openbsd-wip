@@ -34,7 +34,7 @@ LIB_DEPENDS =		devel/sdl-image \
 			devel/sdl-mixer \
 			graphics/ffmpeg
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/hedgewars-src-$V
 

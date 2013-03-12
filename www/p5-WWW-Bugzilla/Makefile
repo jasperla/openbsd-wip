@@ -16,10 +16,10 @@ RUN_DEPENDS=	devel/p5-Class-MethodMaker>=1.08 \
 
 BUILD_DEPENDS = ${RUN_DEPENDS}
 
+TEST_IS_INTERACTIVE=makes network connections to bugzilla servers
+
 pre-configure:
 	mkdir -p ${WRKSRC}/lib
 	cp -rp ${WRKSRC}/WWW ${WRKSRC}/lib
-
-TEST_IS_INTERACTIVE=makes network connections to bugzilla servers
 
 .include <bsd.port.mk>

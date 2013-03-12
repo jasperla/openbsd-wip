@@ -19,7 +19,7 @@ RUN_DEPENDS =	lang/php/${MODPHP_VERSION},-mysql \
 		lang/php/${MODPHP_VERSION},-gd
 
 NO_BUILD =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 PKG_ARCH =	*
 
 PREFIX =	/var/www

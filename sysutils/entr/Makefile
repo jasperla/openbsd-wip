@@ -22,6 +22,6 @@ MASTER_SITES = http://entrproject.org/code/ \
 MAKE_FLAGS = CC="${CC}" LDFLAGS="${LDFLAGS}"
 WRKDIST = ${WRKDIR}/eradman-entr-${REV}
 
-REGRESS_TARGET = test
+TEST_TARGET = test
 
 .include <bsd.port.mk>

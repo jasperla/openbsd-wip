@@ -61,7 +61,7 @@ post-install:
 # The following tests fail (hang). We remove them to allow the rest
 # of the tests to execute atleast.
 # When updating, uncomment these to see if they still fail.
-pre-regress:
+pre-test:
 	rm -f ${WRKBUILD}/src/Tests/thread/test_signal.pl
 	rm -f ${WRKBUILD}/src/Tests/core/test_resource_error.pl
 

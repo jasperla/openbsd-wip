@@ -16,6 +16,6 @@ MASTER_SITES =		http://files.jabber.ru/tkabber/
 MODULES =		x11/tk
 
 NO_BUILD =		Yes
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 PKG_ARCH =		*

@@ -13,7 +13,7 @@ MAINTAINER=	Andrew Fresh <andrew@cpan.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 CONFIGURE_ARGS=		PREFIX=${DESTDIR}${PREFIX} --skipdeps
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 RUN_DEPENDS=	www/rt \
 		devel/p5-Hook-LexWrap

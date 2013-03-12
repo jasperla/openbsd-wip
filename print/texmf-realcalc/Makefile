@@ -14,7 +14,7 @@ HOMEPAGE=	http://www.ctan.org/tex-archive/help/Catalogue/entries/realcalc.html
 PERMIT_PACKAGE_CDROM=	No
 
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/texmf/tex/latex/realcalc

@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 CONFIGURE_STYLE= modbuild
 
-REGRESS_DEPENDS=devel/p5-Test-NoWarnings
+TEST_DEPENDS=	devel/p5-Test-NoWarnings
 
 RUN_DEPENDS=	devel/p5-Moose \
 		devel/p5-MooseX-FollowPBP \

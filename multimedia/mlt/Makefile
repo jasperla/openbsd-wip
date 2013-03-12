@@ -73,7 +73,7 @@ CONFIGURE_ARGS =	--mandir=${PREFIX}/man \
 			--enable-debug \
 			--enable-gpl
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 LDFLAGS =		-L${X11BASE}/lib
 
 .include <bsd.port.mk>

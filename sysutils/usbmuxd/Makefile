@@ -26,6 +26,6 @@ LIB_DEPENDS =		devel/libusb1 \
 
 CONFIGURE_ENV =		CFLAGS="${CFLAGS} -pthread"
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

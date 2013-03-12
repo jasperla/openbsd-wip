@@ -56,7 +56,7 @@ MAKE_ENV +=		WITH_USB=no
 
 WRKDIST =		${WRKDIR}/calibre
 PORTHOME =		${WRKDIR}
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 ## setup.py doesn't like the options in our python module

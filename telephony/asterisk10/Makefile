@@ -216,7 +216,7 @@ LIB_DEPENDS-speex=	audio/speex>=1.2rc1
 CONFIGURE_ARGS+=	--with-speex=no
 .endif
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 INSTALL_TARGET=		install samples
 EXAMPLEDIR=		${PREFIX}/share/examples/asterisk
 EXAMPLEFILES=		cdr.conf extensions.ael extensions.conf logger.conf \

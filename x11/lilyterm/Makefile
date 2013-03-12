@@ -25,7 +25,7 @@ LIB_DEPENDS =		devel/vte \
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	simple
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 EXAMPLES_DIR =		${PREFIX}/share/examples/lilyterm
 post-install:

@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODAPACHE_NAME =	rpaf
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 APXS =			/usr/sbin/apxs
 
 do-build:

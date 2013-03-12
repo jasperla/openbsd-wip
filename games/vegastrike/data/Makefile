@@ -5,7 +5,7 @@ COMMENT =	data files for vegastrike
 DISTNAME =	vegastrike-data-${V}
 
 NO_BUILD =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 PKG_ARCH =	*
 

@@ -14,5 +14,5 @@ BUILD_DEPENDS ?=${RUN_DEPENDS} # just to satisfy dep checks
 
 MAKE_FLAGS ?=	VERBOSE=1
 
-NO_REGRESS ?=	Yes
+NO_TEST ?=	Yes
 USE_GMAKE ?=	Yes

@@ -38,7 +38,7 @@ MAKE_FLAGS +=		LIB${l}_VERSION=${v}
 
 USE_GMAKE =		Yes
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/SFML-${V}
 

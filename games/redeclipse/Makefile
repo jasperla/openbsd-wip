@@ -36,7 +36,7 @@ WANTLIB-main+=		GL X11 SDL SDL_image SDL_mixer c m pthread stdc++ z
 
 WRKDIST=		${WRKDIR}/${N}/src
 USE_GMAKE=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 INSTALL_TARGET=		system-install
 

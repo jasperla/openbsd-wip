@@ -9,7 +9,7 @@ RUN_DEPENDS =	games/vegastrike/data>=${V}
 EXTRACT_SUFX =	.tar
 
 NO_BUILD =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 PKG_ARCH =	*
 

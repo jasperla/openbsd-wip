@@ -20,7 +20,7 @@ MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 BUILD_DEPENDS =		textproc/py-sphinx
 
-NO_REGRESS = 		Yes
+NO_TEST = 		Yes
 
 post-build:
 	cd ${WRKSRC} && \

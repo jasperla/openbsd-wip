@@ -39,7 +39,7 @@ RUN_DEPENDS-gui = 	devel/desktop-file-utils
 USE_GMAKE = 		Yes
 WRKSRC = 		${WRKDIST}/src/cli
 
-NO_REGRESS = 		Yes
+NO_TEST = 		Yes
 
 post-build:
 	cd ${WRKDIST}/src/qt && qmake4 && gmake

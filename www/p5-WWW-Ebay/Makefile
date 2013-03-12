@@ -23,6 +23,6 @@ TEST_DEPENDS=		converters/p5-DateManip \
 # In order to run all the automatic tests for this distribution,
 # you should set the following environment variables:
 # EBAY_USERID and EBAY_PASSWORD
-TEST_IS_INTERACTIVE= Yes
+TEST_IS_INTERACTIVE=	Yes
 
 .include <bsd.port.mk>

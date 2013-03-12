@@ -23,7 +23,7 @@ CONFIGURE_ARGS +=	--with-python=${MODPY_BIN}
 WANTLIB =		util
 LIB_DEPENDS +=		${MODPY_LIB_DEPENDS}
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 post-build:
 	@${MODAPACHE_CREATE_ENABLE_SCRIPT}

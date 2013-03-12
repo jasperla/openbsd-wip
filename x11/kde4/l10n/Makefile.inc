@@ -27,7 +27,7 @@ PLIST =		${PKGDIR}/PLIST-${KDE_L10N_LANG}
 CHECKSUM_FILE =	${.CURDIR}/../distinfo
 
 MODULES =	devel/gettext
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 CONFIGURE_ENV =	CFLAGS=-I${PREFIX}/include \
 		LDFLAGS="-L${PREFIX}/lib -liconv -lintl"
 

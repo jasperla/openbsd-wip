@@ -12,6 +12,6 @@ WANTLIB += lib/qt4/QtXml
 
 MODKDE4_USE =
 
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 .include <bsd.port.mk>

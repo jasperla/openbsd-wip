@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 TAR=		gtar
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 do-install:
 	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MODPY_BIN} install.py \

@@ -16,7 +16,7 @@ MODULES=	lang/ocaml
 
 BUILD_DEPENDS=  sysutils/findlib
 
-#NO_REGRESS= 	Yes
+#NO_TEST= 	Yes
 ALL_TARGET=	all
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS=	--mandir ${PREFIX}/man

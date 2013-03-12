@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.61 2012/03/29 13:41:58 sthen Exp $
+# $OpenBSD$
 
 COMMENT=		Create context-sensitive return values
 MODULES=		cpan
@@ -13,6 +13,6 @@ PERMIT_DISTFILES_FTP=   Yes
 
 RUN_DEPENDS=		devel/p5-Want
 
-REGRESS_DEPENDS=	devel/p5-Test-Pod
+TEST_DEPENDS=		devel/p5-Test-Pod
 
 .include <bsd.port.mk>

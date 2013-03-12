@@ -22,7 +22,7 @@ BUILD_DEPENDS =		devel/bison
 USE_GMAKE =		Yes
 MAKE_FLAGS =		CC="${CC}" CCFLAGS="${CFLAGS} -Wall"
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/spl2c ${PREFIX}/bin

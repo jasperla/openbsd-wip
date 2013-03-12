@@ -9,7 +9,7 @@ MASTER_SITES =	http://ftp.linux.kiev.ua/pub/fgfs/Shared/ \
 		ftp://ftp.kingmont.com/flightsims/flightgear/Shared/
 
 NO_BUILD =		Yes
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 PKG_ARCH =		*
 

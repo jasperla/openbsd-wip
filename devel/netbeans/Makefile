@@ -29,7 +29,7 @@ RUN_DEPENDS=		java/javaPathHelper \
 			devel/desktop-file-utils
 
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 WRKDIST=		${WRKDIR}/netbeans
 
