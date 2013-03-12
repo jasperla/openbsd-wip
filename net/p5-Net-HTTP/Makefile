@@ -2,7 +2,7 @@
 
 COMMENT =	Perl HTTP connection client
 
-DISTNAME =	Net-HTTP-6.05
+DISTNAME =	Net-HTTP-6.06
 CATEGORIES =	net
 CPAN_AUTHOR =	GAAS
 
