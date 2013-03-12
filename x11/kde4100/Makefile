@@ -5,54 +5,54 @@
 # HERE:
 # oxygen-icons
 # |
-#  -> libs
-#   |-> pure resources: base-artwork, l10n, wallpapers
+# +-> libs
+#   +-> pure resources: base-artwork, l10n, wallpapers
 #   |
-#   |-> baseapps
+#   +-> baseapps
 #   |   |
-#   |    -> konsole
+#   |   +-> konsole
 #   |
-#   |-> kactivities -->--+---------+
-#   |-> nepomuk-core ->--+         |
-#   |-> runtime <--+-----+         |
-#   |-> pimlibs ->-+               |
+#   +-> kactivities -->--+---------+
+#   +-> nepomuk-core ->--+         |
+#   +-> runtime <--+-----+         |
+#   +-> pimlibs ->-+               |
 #   |   |                          |
-#   |   |-> libkgapi               |
-#   |   |-> pim-runtime            |
-#   |   |-> pim                    |
-#   |   |-> py-kde                 |
-#   |       |-> former kdegames    |
-#   |       |-> workspace <------<-+
-#   |       |   |-> admin          |
-#   |       |   |-> artwork        |
-#   |       |   |-> network        |
+#   |   +-> libkgapi               |
+#   |   +-> pim-runtime            |
+#   |   +-> pim                    |
+#   |   +-> py-kde                 |
+#   |       +-> former kdegames    |
+#   |       +-> workspace <------<-+
+#   |       |   +-> admin          |
+#   |       |   +-> artwork        |
+#   |       |   +-> network        |
 #   |       |                      |
 #   |       | +-<----------------<-+
-#   |       |-+-> kate ->-+
+#   |       +-+-> kate ->-+
 #   |                     |
-#   |-> smokekde <--------+-<- smokegen (no SC prerequisites)
-#   |   |                      |-> smokeqt
-#   |   |                          |-> qyoto -----+
-#   |   |                          |-> ruby-qt--+ |
-#   |   |                          |-> p5-qt -+ | |
+#   +-> smokekde <--------+-<- smokegen (no SC prerequisites)
+#   |   |                      +-> smokeqt
+#   |   |                          +-> qyoto -----+
+#   |   |                          +-> ruby-qt--+ |
+#   |   |                          +-> p5-qt -+ | |
 #   |   |                                     | | |
-#   |   |-> p5-kde <--------------------------+ | |
-#   |   |-> korundum <--------------------------+ |
-#   |   |-> kimono <------------------------------+
+#   |   +-> p5-kde <--------------------------+ | |
+#   |   +-> korundum <--------------------------+ |
+#   |   +-> kimono <------------------------------+
 #   |
-#   |-> former accessibility
-#   |-> libkdeedu
-#   |   |-> former kdeedu
+#   +-> former accessibility
+#   +-> libkdeedu
+#   |   +-> former kdeedu
 #   |
-#   |-> former kdeutils
-#   |-> former kdegraphics
+#   +-> former kdeutils
+#   +-> former kdegraphics
 #   +-> former kdemultimedia
 
 SUBDIR =
 # don't even try to keep these sorted
 
 # basic bricks
-SUBDIR += oxygen-icons		# OK
+SUBDIR += oxygen-icons
 
 # libraries
 SUBDIR += libs
