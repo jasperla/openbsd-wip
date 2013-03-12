@@ -19,9 +19,10 @@ PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 PKGNAME-vkontakte =	libkvkontakte-1.0.0
 
+REVISION-main =		0
 REVISION-face =		0
 REVISION-geomap =	1
-REVISION-kipi =		1
+REVISION-kipi =		2
 REVISION-mediawiki =	0
 REVISION-vkontakte =	1
 
@@ -52,7 +53,7 @@ MODULES =		x11/kde4 multimedia/phonon devel/gettext
 WANTLIB-common =  ${MODQT4_WANTLIB} ${MODKDE4_WANTLIB}
 WANTLIB-common += c m pthread stdc++
 WANTLIB-common += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg
-WANTLIB-common += kdecore kdeui
+WANTLIB-common += ${KDE4LIB}/kdeui
 
 WANTLIB-opencv =  opencv_calib3d opencv_contrib opencv_core
 WANTLIB-opencv += opencv_features2d opencv_flann opencv_gpu
@@ -64,7 +65,9 @@ WANTLIB-face =	${WANTLIB-common} ${WANTLIB-opencv}
 
 WANTLIB-geomap =  ${WANTLIB-common} ${MODPHONON_WANTLIB}
 WANTLIB-geomap += lib/qt4/QtNetwork lib/qt4/QtXml
-WANTLIB-geomap += khtml kio kjs kparts marblewidget nepomuk nepomukutils
+WANTLIB-geomap += ${KDE4LIB}/khtml ${KDE4LIB}/kio ${KDE4LIB}/kjs ${KDE4LIB}/kparts
+WANTLIB-geomap += ${KDE4LIB}/marblewidget ${KDE4LIB}/nepomuk
+WANTLIB-geomap += ${KDE4LIB}/nepomukutils
 WANTLIB-geomap += soprano
 
 WANTLIB-kipi =  ${WANTLIB-common} ${WANTLIB-opencv}
@@ -73,28 +76,39 @@ WANTLIB-kipi += lib/qt4/QtNetwork lib/qt4/QtOpenGL lib/qt4/QtXmlPatterns
 WANTLIB-kipi += lib/qt4/QtTest lib/qt4/QtXml
 WANTLIB-kipi += GL GLU ICE SM X11 Xext Xrandr expat exslt gdk_pixbuf-2.0
 WANTLIB-kipi += glib-2.0 gmodule-2.0 gobject-2.0 gpod gthread-2.0 jpeg
-WANTLIB-kipi += kcalcore kdcraw kexiv2 kfile kgeomap khtml kio kipi
-WANTLIB-kipi += kjs kparts ksane kvkontakte mediawiki nepomuk nepomukutils
-WANTLIB-kipi += png qca2 qjson solid soprano threadweaver tiff
-WANTLIB-kipi += xml2 xslt z
+WANTLIB-kipi += ${KDE4LIB}/kcalcore ${KDE4LIB}/kdcraw ${KDE4LIB}/kexiv2
+WANTLIB-kipi += ${KDE4LIB}/kfile ${KDE4LIB}/khtml
+WANTLIB-kipi += ${KDE4LIB}/kio ${KDE4LIB}/kipi ${KDE4LIB}/kjs ${KDE4LIB}/kparts
+WANTLIB-kipi += ${KDE4LIB}/ksane
+WANTLIB-kipi += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils ${KDE4LIB}/solid
+WANTLIB-kipi += ${KDE4LIB}/threadweaver
+WANTLIB-kipi += qjson kgeomap kvkontakte mediawiki png qca2 soprano
+WANTLIB-kipi += tiff xml2 xslt z
 
 WANTLIB-main =  ${WANTLIB-common} ${WANTLIB-opencv} ${MODPHONON_WANTLIB}
 WANTLIB-main += ICE SM X11 Xext z
 WANTLIB-main += lib/qt4/Qt3Support lib/qt4/QtNetwork lib/qt4/QtSql
 WANTLIB-main += lib/qt4/QtXml lib/qt4/QtXmlPatterns
-WANTLIB-main += kabc kcmutils kdcraw kemoticons kexiv2 kface kfile
-WANTLIB-main += kgeomap khtml kidletime kio kipi kjs knotifyconfig
-WANTLIB-main += kparts kprintutils kresources kutils nepomuk
-WANTLIB-main += nepomukutils pgf solid soprano threadweaver
-WANTLIB-main += exif glib-2.0 gphoto2 gphoto2_port jasper jpeg
-WANTLIB-main += lcms lensfun lqr-1 png tiff usb
+WANTLIB-main += ${KDE4LIB}/kabc ${KDE4LIB}/kcmutils ${KDE4LIB}/kdcraw
+WANTLIB-main += ${KDE4LIB}/kemoticons ${KDE4LIB}/kexiv2
+WANTLIB-main += ${KDE4LIB}/kfile ${KDE4LIB}/khtml
+WANTLIB-main += ${KDE4LIB}/kidletime ${KDE4LIB}/kio ${KDE4LIB}/kipi ${KDE4LIB}/kjs
+WANTLIB-main += ${KDE4LIB}/knotifyconfig ${KDE4LIB}/kparts ${KDE4LIB}/kprintutils
+WANTLIB-main += ${KDE4LIB}/kresources ${KDE4LIB}/kutils ${KDE4LIB}/nepomuk
+WANTLIB-main += ${KDE4LIB}/nepomukutils ${KDE4LIB}/solid
+WANTLIB-main += ${KDE4LIB}/threadweaver
+WANTLIB-main += exif glib-2.0 gphoto2 gphoto2_port jasper jpeg kface kgeomap
+WANTLIB-main += lcms lensfun lqr-1 pgf png soprano tiff usb
 
 WANTLIB-mediawiki =  ${WANTLIB-common}
-WANTLIB-mediawiki += lib/qt4/QtNetwork lib/qt4/QtXml kio
+WANTLIB-mediawiki += lib/qt4/QtNetwork lib/qt4/QtXml
+WANTLIB-mediawiki += ${KDE4LIB}/kio
 
 WANTLIB-vkontakte =  ${WANTLIB-common}
 WANTLIB-vkontakte += lib/qt4/QtNetwork lib/qt4/QtWebKit lib/qt4/QtXml
-WANTLIB-vkontakte += kdewebkit kio kparts nepomuk nepomukutils qjson soprano
+WANTLIB-vkontakte += ${KDE4LIB}/kdewebkit ${KDE4LIB}/kio ${KDE4LIB}/kparts
+WANTLIB-vkontakte += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
+WANTLIB-vkontakte += qjson soprano
 
 # Define dependencies manually per subpackage
 # TODO: fix kde4.port.mk to allow such grained tuning
@@ -133,9 +147,9 @@ LIB_DEPENDS-geomap =	${LIB_DEPENDS-common} \
 			x11/kde4/marble
 
 LIB_DEPENDS-kipi =	${LIB_DEPENDS-common} \
-			${BUILD_PKGPATH},-geomap \
-			${BUILD_PKGPATH},-mediawiki \
-			${BUILD_PKGPATH},-vkontakte \
+			${BASE_PKGPATH},-geomap \
+			${BASE_PKGPATH},-mediawiki \
+			${BASE_PKGPATH},-vkontakte \
 			${MODGETTEXT_LIB_DEPENDS} \
 			${MODPHONON_LIB_DEPENDS} \
 			audio/libgpod \
@@ -154,8 +168,8 @@ LIB_DEPENDS-kipi =	${LIB_DEPENDS-common} \
 
 LIB_DEPENDS-main =	${LIB_DEPENDS-common} \
 			${MODPHONON_LIB_DEPENDS} \
-			${BUILD_PKGPATH},-face \
-			${BUILD_PKGPATH},-geomap \
+			${BASE_PKGPATH},-face \
+			${BASE_PKGPATH},-geomap \
 			devel/glib2 \
 			graphics/jasper \
 			graphics/lcms \
@@ -168,7 +182,6 @@ LIB_DEPENDS-main =	${LIB_DEPENDS-common} \
 			x11/kde4/libkdcraw \
 			x11/kde4/libkexiv2 \
 			x11/kde4/libkipi \
-			x11/kde4/marble \
 			x11/kde4/pimlibs
 
 LIB_DEPENDS-mediawiki =	${LIB_DEPENDS-common}
