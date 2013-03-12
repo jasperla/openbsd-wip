@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	2D space arcade game for KDE
-DISTNAME =	kspaceduel-${MODKDE_VERSION}
+DISTNAME =	kspaceduel-${MODKDE4_VERSION}
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg

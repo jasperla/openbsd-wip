@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	KDE4 tool for sweeping unwanted traces from system
-DISTNAME =	sweeper-${MODKDE_VERSION}
+DISTNAME =	sweeper-${MODKDE4_VERSION}
 REVISION =	0
 
 WANTLIB =  c m pthread stdc++

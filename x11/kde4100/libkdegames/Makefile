@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	common library for KDE-based games
-DISTNAME =	libkdegames-${MODKDE_VERSION}
+DISTNAME =	libkdegames-${MODKDE4_VERSION}
 
 SHARED_LIBS =	kdegames		0.0
 SHARED_LIBS +=	kdegamesprivate		0.0

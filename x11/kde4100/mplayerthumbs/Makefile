@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	KDE MPlayer-based thumbnail generator for video files
-DISTNAME =	mplayerthumbs-${MODKDE_VERSION}
+DISTNAME =	mplayerthumbs-${MODKDE4_VERSION}
 
 CATEGORIES =	multimedia
 

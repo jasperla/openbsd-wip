@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	Connect-Four-like game for KDE4
-DISTNAME =	kfourinline-${MODKDE_VERSION}
+DISTNAME =	kfourinline-${MODKDE4_VERSION}
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg

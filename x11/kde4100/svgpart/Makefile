@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	KDE KPart for viewing SVG
-DISTNAME =	svgpart-${MODKDE_VERSION}
+DISTNAME =	svgpart-${MODKDE4_VERSION}
 CATEGORIES =	graphics
 REVISION =	0
 

@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	KDE KIOslave for accessing audio CDs
-DISTNAME =	audiocd-kio-${MODKDE_VERSION}
+DISTNAME =	audiocd-kio-${MODKDE4_VERSION}
 
 SHARED_LIBS =	audiocdplugins		0.0
 

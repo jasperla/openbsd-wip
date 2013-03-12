@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	solitare games collection for KDE4
-DISTNAME =	kpat-${MODKDE_VERSION}
+DISTNAME =	kpat-${MODKDE4_VERSION}
 
 SHARED_LIBS =	kcardgame	0.0
 

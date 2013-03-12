@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, screen capture program
-DISTNAME =	ksnapshot-${MODKDE_VERSION}
+DISTNAME =	ksnapshot-${MODKDE4_VERSION}
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += ICE SM X11 Xext Xfixes

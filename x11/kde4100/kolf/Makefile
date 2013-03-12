@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	mini-golf simulator game for KDE4
-DISTNAME =	kolf-${MODKDE_VERSION}
+DISTNAME =	kolf-${MODKDE4_VERSION}
 
 SHARED_LIBS =	kolfprivate		0.0  # 4.10
 

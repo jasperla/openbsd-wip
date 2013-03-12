@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	common library for Mah Jongg-based KDE games
-DISTNAME =	libkmahjongg-${MODKDE_VERSION}
+DISTNAME =	libkmahjongg-${MODKDE4_VERSION}
 
 SHARED_LIBS =	kmahjongglib		0.0 # 4.10
 

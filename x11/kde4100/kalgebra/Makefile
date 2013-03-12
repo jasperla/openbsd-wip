@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	scientific calculator for KDE4
-DISTNAME =	kalgebra-${MODKDE_VERSION}
+DISTNAME =	kalgebra-${MODKDE4_VERSION}
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += GL GLU

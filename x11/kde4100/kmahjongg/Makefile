@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	Mah Jongg solitare board game for KDE
-DISTNAME =	kmahjongg-${MODKDE_VERSION}
+DISTNAME =	kmahjongg-${MODKDE4_VERSION}
 
 MODKDE4_USE =	games
 

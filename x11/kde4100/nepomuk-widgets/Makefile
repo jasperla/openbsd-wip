@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	Nepomuk-based KDE Plasma widgets
-DISTNAME =	nepomuk-widgets-${MODKDE_VERSION}
+DISTNAME =	nepomuk-widgets-${MODKDE4_VERSION}
 REVISION =	0
 
 SHARED_LIBS =	nepomukwidgets		0.0

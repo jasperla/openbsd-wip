@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, screen gamma management
-DISTNAME =	kgamma-${MODKDE_VERSION}
+DISTNAME =	kgamma-${MODKDE4_VERSION}
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += ICE SM X11 Xext Xxf86vm

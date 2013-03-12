@@ -1,7 +1,7 @@
 # $OpenBSD: Makefile,v 1.9 2010/11/22 08:37:02 espie Exp $
 
 COMMENT =	small and funny applications for KDE4
-DISTNAME =	kdetoys-${MODKDE_VERSION}
+DISTNAME =	kdetoys-${MODKDE4_VERSION}
 REVISION =	0
 
 WANTLIB =  c m pthread stdc++

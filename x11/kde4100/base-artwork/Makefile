@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	KDE KSplash theme
-DISTNAME =	kde-base-artwork-${MODKDE_VERSION}
+DISTNAME =	kde-base-artwork-${MODKDE4_VERSION}
 
 MODKDE4_RESOURCES =	Yes
 

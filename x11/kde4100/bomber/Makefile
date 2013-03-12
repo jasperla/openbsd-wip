@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	bomber 2D arcade game for KDE
-DISTNAME =	bomber-${MODKDE_VERSION}
+DISTNAME =	bomber-${MODKDE4_VERSION}
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg

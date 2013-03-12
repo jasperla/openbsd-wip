@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, text to speech application
-DISTNAME =	jovie-${MODKDE_VERSION}
+DISTNAME =	jovie-${MODKDE4_VERSION}
 
 SHARED_LIBS =	kttsd	0.0 # 4.7
 

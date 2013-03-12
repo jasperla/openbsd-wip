@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	Japanese reference tool for KDE
-DISTNAME =	kiten-${MODKDE_VERSION}
+DISTNAME =	kiten-${MODKDE4_VERSION}
 
 SHARED_LIBS =	kiten			0.0 # 4.7
 
