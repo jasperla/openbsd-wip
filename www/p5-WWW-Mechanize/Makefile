@@ -28,7 +28,7 @@ RUN_DEPENDS=	www/p5-libwww>=5.829 \
 TEST_DEPENDS=	devel/p5-PadWalker \
 		devel/p5-Test-Exception \
 		devel/p5-Test-Pod-Coverage \
-		devel/p5-Test-NoWarnings \
+		devel/p5-Test-NoWarnings
 
 # Include Live Tests
 .ifdef LIVE_TEST
