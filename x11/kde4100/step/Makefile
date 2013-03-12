@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, interactive physics simulator
-DISTNAME =	step-${MODKDE_VERSION}
+DISTNAME =	step-${MODKDE4_VERSION}
 REVISION =	0
 
 WANTLIB =  c m pthread stdc++

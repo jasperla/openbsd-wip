@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, letter order game
-DISTNAME =	kanagram-${MODKDE_VERSION}
+DISTNAME =	kanagram-${MODKDE4_VERSION}
 
 SHARED_LIBS =	kanagramengine		0.0
 

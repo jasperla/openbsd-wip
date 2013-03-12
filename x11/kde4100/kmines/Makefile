@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	minesweeper game for KDE
-DISTNAME =	kmines-${MODKDE_VERSION}
+DISTNAME =	kmines-${MODKDE4_VERSION}
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg

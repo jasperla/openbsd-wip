@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	sudoku game for KDE4
-DISTNAME =	ksudoku-${MODKDE_VERSION}
+DISTNAME =	ksudoku-${MODKDE4_VERSION}
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += GL GLU ICE SM X11 Xext

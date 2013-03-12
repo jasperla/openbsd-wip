@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	touch typing learning tool for KDE4
-DISTNAME =	ktouch-${MODKDE_VERSION}
+DISTNAME =	ktouch-${MODKDE4_VERSION}
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += ICE SM X11 Xext xkbfile

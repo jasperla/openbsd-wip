@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	KDE compact discs interface library
-DISTNAME =	libkcompactdisc-${MODKDE_VERSION}
+DISTNAME =	libkcompactdisc-${MODKDE4_VERSION}
 REVISION =	0
 
 SHARED_LIBS =	kcompactdisc		0.0

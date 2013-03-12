@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	jigsaw puzzle game for KDE4
-DISTNAME =	palapeli-${MODKDE_VERSION}
+DISTNAME =	palapeli-${MODKDE4_VERSION}
 
 SHARED_LIBS =	pala		0.0
 

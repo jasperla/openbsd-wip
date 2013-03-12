@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	screen ruler for KDE4
-DISTNAME =	kruler-${MODKDE_VERSION}
+DISTNAME =	kruler-${MODKDE4_VERSION}
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += ICE SM X11 Xext

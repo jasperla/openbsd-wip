@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	strategy game for KDE4
-DISTNAME =	ksirk-${MODKDE_VERSION}
+DISTNAME =	ksirk-${MODKDE4_VERSION}
 
 SHARED_LIBS =	iris_ksirk		0.0  # 4.10
 

@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	Rubik's cube simulator for KDE4
-DISTNAME =	kubrick-${MODKDE_VERSION}
+DISTNAME =	kubrick-${MODKDE4_VERSION}
 
 WANTLIB =  c m pthread stdc++ GL GLU
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork

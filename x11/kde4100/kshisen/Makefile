@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	solitare board KDE game based on Mah Jongg ideas
-DISTNAME =	kshisen-${MODKDE_VERSION}
+DISTNAME =	kshisen-${MODKDE4_VERSION}
 
 MODKDE4_USE =	games
 

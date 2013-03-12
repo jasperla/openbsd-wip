@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, hangman game
-DISTNAME =	khangman-${MODKDE_VERSION}
+DISTNAME =	khangman-${MODKDE4_VERSION}
 
 SHARED_LIBS =	khangmanengine		0.0
 

@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	KDE CDDB library
-DISTNAME =	libkcddb-${MODKDE_VERSION}
+DISTNAME =	libkcddb-${MODKDE4_VERSION}
 
 SHARED_LIBS =	kcddb		0.0
 

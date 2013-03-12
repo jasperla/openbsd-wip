@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	graphical floppy format utility for KDE4
-DISTNAME =	kfloppy-${MODKDE_VERSION}
+DISTNAME =	kfloppy-${MODKDE4_VERSION}
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg

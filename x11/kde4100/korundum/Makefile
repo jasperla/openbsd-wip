@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, KDE4 bindings for Ruby
-DISTNAME =	korundum-${MODKDE_VERSION}
+DISTNAME =	korundum-${MODKDE4_VERSION}
 
 WANTLIB =  c m stdc++ ${MODRUBY_WANTLIB}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg

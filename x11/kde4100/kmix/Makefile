@@ -1,7 +1,7 @@
 # $OpenBSD$
 COMMENT =	KDE audio mixer
 CATEGORIES =	audio
-DISTNAME =	kmix-${MODKDE_VERSION}
+DISTNAME =	kmix-${MODKDE4_VERSION}
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg lib/qt4/QtXml

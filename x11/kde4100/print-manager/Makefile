@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	printing management for KDE
-DISTNAME =	print-manager-${MODKDE_VERSION}
+DISTNAME =	print-manager-${MODKDE4_VERSION}
 
 SHARED_LIBS =	kcupslib		0.0
 

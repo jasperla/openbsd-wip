@@ -1,7 +1,7 @@
 # $OpenBSD: Makefile,v 1.8 2010/11/22 08:37:02 espie Exp $
 
 COMMENT =	K Desktop Environment, base runtime
-DISTNAME =	kde-runtime-${MODKDE_VERSION}
+DISTNAME =	kde-runtime-${MODKDE4_VERSION}
 
 SHARED_LIBS =	kwalletbackend 		0.0	# 4.7
 SHARED_LIBS +=	molletnetwork 		0.0	# 4.7

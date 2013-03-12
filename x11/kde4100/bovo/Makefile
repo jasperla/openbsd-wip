@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	Gomoku like game for two players for KDE
-DISTNAME =	bovo-${MODKDE_VERSION}
+DISTNAME =	bovo-${MODKDE4_VERSION}
 
 WANTLIB =	c m pthread stdc++
 WANTLIB +=	lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg

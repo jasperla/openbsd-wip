@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, thumbnail creation plugins
-DISTNAME =	kdegraphics-thumbnailers-${MODKDE_VERSION}
+DISTNAME =	kdegraphics-thumbnailers-${MODKDE4_VERSION}
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork

@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	memory and pairs game for KDE
-DISTNAME =	pairs-${MODKDE_VERSION}
+DISTNAME =	pairs-${MODKDE4_VERSION}
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui lib/qt4/QtNetwork

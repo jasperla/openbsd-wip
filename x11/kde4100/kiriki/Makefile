@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	dice rolling game for KDE
-DISTNAME =	kiriki-${MODKDE_VERSION}
+DISTNAME =	kiriki-${MODKDE4_VERSION}
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg

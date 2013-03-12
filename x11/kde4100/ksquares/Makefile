@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	Dots-and-Boxes-like game for KDE4
-DISTNAME =	ksquares-${MODKDE_VERSION}
+DISTNAME =	ksquares-${MODKDE4_VERSION}
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg

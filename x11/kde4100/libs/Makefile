@@ -1,7 +1,7 @@
 # $OpenBSD: Makefile,v 1.18 2010/11/22 08:37:02 espie Exp $
 
 COMMENT =	K Desktop Environment, libraries
-DISTNAME =	kdelibs-${MODKDE_VERSION}
+DISTNAME =	kdelibs-${MODKDE4_VERSION}
 PKGSPEC =	kdelibs->=4
 REVISION =	0
 
