@@ -20,7 +20,8 @@ RUN_DEPENDS =		textproc/py-pygments \
 			net/py-zmq \
 			www/py-tornado
 TEST_DEPENDS =		devel/py-nose
-BUILD_DEPENDS =		textproc/py-sphinx
+BUILD_DEPENDS =		textproc/py-sphinx \
+			graphics/py-matplotlib>=1.2.0
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
