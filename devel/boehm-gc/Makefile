@@ -26,9 +26,6 @@ NOT_FOR_ARCHS=	m68k m88k vax mips64 mips64el
 
 # X11-like: http://www.hpl.hp.com/personal/Hans_Boehm/gc/license.txt
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 USE_LIBTOOL=	Yes
 

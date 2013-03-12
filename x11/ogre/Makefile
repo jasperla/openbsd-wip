@@ -26,9 +26,6 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += ICE SM X11 Xaw Xext Xt boost_date_time-mt
 WANTLIB += boost_thread-mt c freeimage freetype m pthread stdc++

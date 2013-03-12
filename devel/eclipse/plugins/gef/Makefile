@@ -13,8 +13,6 @@ MAINTAINER=		Kurt Miller <kurt@openbsd.org>
 
 # Eclipse Public License Version 1.0 (http://www.eclipse.org/legal/epl-v10.html)
 PERMIT_PACKAGE_CDROM=	commercial distribution defend and indemnify clauses
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://download.eclipse.org/tools/gef/downloads/drops/${V}/R201208200205/
 

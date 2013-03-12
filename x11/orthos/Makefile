@@ -22,9 +22,6 @@ EXTRACT_SUFX=		.git.tar
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		X11 Xau Xdmcp Xext Xmu GL GLU SDL drm freetype pthread stdc++ c m z
 

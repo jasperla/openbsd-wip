@@ -16,10 +16,7 @@ HOMEPAGE ?=		https://projects.kde.org/projects
 .endif
 
 # KDE SC is mostly GPL, or LGPL/BSDL for the central libraries
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
 
 # Do not rely on devel/cmake here: additional modules that are
 # set up in ports may have, say, lang/python before devel/cmake,

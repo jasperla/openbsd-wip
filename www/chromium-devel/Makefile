@@ -18,9 +18,6 @@ EXTRACT_SUFX=		.tar.bz2
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xext Xfixes Xrender Xss bz2 c cairo cups dbus-1
 WANTLIB += event execinfo expat fontconfig freetype gconf-2 gcrypt

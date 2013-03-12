@@ -9,10 +9,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=sqliteman/}
 HOMEPAGE =	http://sourceforge.net/projects/sqliteman/
 
 # GPL
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
 
 MODULES =		devel/cmake
 CONFIGURE_STYLE =	cmake

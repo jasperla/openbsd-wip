@@ -20,9 +20,6 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # GPLv2 - or commercial license if consumer is not GPLv2 XXX
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://distorm.googlecode.com/files/
 MODULES =		lang/python

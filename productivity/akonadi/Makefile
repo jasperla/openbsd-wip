@@ -16,10 +16,7 @@ WANTLIB += lib/qt4/QtSql lib/qt4/QtXml
 WANTLIB += boost_program_options-mt sqlite3 soprano
 
 # LGPLv2+
-PERMIT_DISTFILES_CDROM =        Yes
-PERMIT_DISTFILES_FTP =          Yes
 PERMIT_PACKAGE_CDROM =          Yes
-PERMIT_PACKAGE_FTP =            Yes
 
 MODULES =		x11/kde4
 MODKDE4_USE =

@@ -29,10 +29,7 @@ REVISION-vkontakte =	1
 EXTRACT_SUFX =		.tar.bz2
 
 # LGPL, GPL and many others
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
 
 SHARED_LIBS =	kipiplugins		0.0
 SHARED_LIBS +=  digikamcore		0.0 # 2.0

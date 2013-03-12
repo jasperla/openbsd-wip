@@ -16,9 +16,6 @@ MAINTAINER=		Todd T. Fries <todd@openbsd.org>
 
 # IBM Public License 1.0
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c asn1 com_err crypto krb5 ncurses
 WANTLIB+=		pthread

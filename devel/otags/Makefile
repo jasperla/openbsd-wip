@@ -10,10 +10,7 @@ MAINTAINER=	Christopher Zimmermann <madroach@gmerlin.de>
 HOMEPAGE=	http://askra.de/software/otags/
 
 # GPLv3
-PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 
 MODULES=	lang/ocaml
 

@@ -10,10 +10,7 @@ HOMEPAGE ?=		https://projects.kde.org/projects
 MAINTAINER ?=		KDE porting team <openbsd-kde@googlegroups.com>
 
 # KDE SC is mostly GPL, or LGPL/BSDL for the central libraries
-PERMIT_DISTFILES_CDROM ?=	Yes
-PERMIT_DISTFILES_FTP ?=		Yes
 PERMIT_PACKAGE_CDROM ?=		Yes
-PERMIT_PACKAGE_FTP ?=		Yes
 
 # Do not rely on devel/cmake to set CONFIGURE_STYLE on it's own:
 # ports can request more MODULES, and the full list may become e.g.:

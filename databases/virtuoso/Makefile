@@ -10,9 +10,6 @@ HOMEPAGE =	http://www.openlinksw.com/
 
 # GPLv2, plus some more rights given
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =  ICE MagickCore MagickWand SM X11 Xext Xt bz2 c crypto
 WANTLIB += djvulibre expat fftw3 fontconfig freetype iconv

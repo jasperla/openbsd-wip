@@ -12,9 +12,6 @@ HOMEPAGE =		http://www.libimobiledevice.org
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB  = c gcrypt glib-2.0 gmp gnutls gpg-error gthread-2.0
 WANTLIB += hogweed m nettle p11-kit pcre plist plist++

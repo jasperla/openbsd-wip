@@ -12,9 +12,6 @@ HOMEPAGE =	http://www.gson.org/netbsd/anita/
 MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://www.gson.org/netbsd/anita/download/
 

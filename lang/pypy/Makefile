@@ -17,9 +17,6 @@ MAINTAINER =		Laurence Tratt <laurie@tratt.net>
 # PyPy is MIT; the Python libraries it comes with have the same license as
 # Python
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB +=		bz2 c crypto curses expat ffi m pthread ssl util z
 
