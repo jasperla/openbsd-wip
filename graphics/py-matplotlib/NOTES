@@ -1,3 +1,0 @@
-- tk detection no longer needed.
-- rekludge gtk detection so that gtk is a RUN_DEPENDS only
-- basedir hack no longer needed.
