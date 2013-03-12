@@ -37,7 +37,7 @@ USE_GROFF =	Yes
 # it is expected behaviour. This also makes systrace unhappy, but again, the
 # resulting docs are fine...
 post-build:
-	${MAKE_ENV} cd ${WRKSRC}/docs && ${MAKE_PROGRAM} html MODPY_BIN=${MODPY_BIN}
+	cd ${WRKSRC}/docs && PYTHONPATH=${WRKSRC} ${MAKE_PROGRAM} html MODPY_BIN=${MODPY_BIN}
 
 # Despite the fact that setupbase.py defines paths for examples to
 # be installed into, we still have to do it manually for some reason.
