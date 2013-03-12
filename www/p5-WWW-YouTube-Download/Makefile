@@ -3,7 +3,7 @@
 COMMENT =	simple YouTube interface for downloading videos
 
 MODULES =	cpan
-DISTNAME =	WWW-YouTube-Download-0.44
+DISTNAME =	WWW-YouTube-Download-0.45
 CATEGORIES =	www
 
 MAINTAINER =	Mikolaj Kucharski <mikolaj@kucharski.name>
