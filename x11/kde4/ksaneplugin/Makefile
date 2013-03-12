@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, scanner interface through libksane
-DISTNAME =	ksaneplugin-${MODKDE_VERSION}
+DISTNAME =	ksaneplugin-${MODKDE4_VERSION}
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg

@@ -1,8 +1,8 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, KDE4 bindings for Perl
-DISTNAME =	perlkde-${MODKDE_VERSION}
-PKGNAME =	p5-kde-${MODKDE_VERSION}
+DISTNAME =	perlkde-${MODKDE4_VERSION}
+PKGNAME =	p5-kde-${MODKDE4_VERSION}
 
 WANTLIB =  c m perl pthread stdc++ util
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork

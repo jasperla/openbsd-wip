@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	simple video player for KDE
-DISTNAME =	dragon-${MODKDE_VERSION}
+DISTNAME =	dragon-${MODKDE4_VERSION}
 
 CATEGORIES =	multimedia
 

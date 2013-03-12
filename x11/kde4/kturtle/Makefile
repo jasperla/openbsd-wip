@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, educational programming environment
-DISTNAME =	kturtle-${MODKDE_VERSION}
+DISTNAME =	kturtle-${MODKDE4_VERSION}
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork

@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, calculator
-DISTNAME =	kalgebra-${MODKDE_VERSION}
+DISTNAME =	kalgebra-${MODKDE4_VERSION}
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += GL GLU lib/qt4/QtDeclarative

@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	KDE Nepomuk core libraries
-DISTNAME =	nepomuk-core-${MODKDE_VERSION}
+DISTNAME =	nepomuk-core-${MODKDE4_VERSION}
 
 SHARED_LIBS =   nepomukcore               0.0 # 4.9
 SHARED_LIBS +=  nepomuksync               4.9 # 4.9

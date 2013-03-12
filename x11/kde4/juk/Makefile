@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	music collection manager and player for KDE
-DISTNAME =	juk-${MODKDE_VERSION}
+DISTNAME =	juk-${MODKDE4_VERSION}
 
 CATEGORIES =	audio
 

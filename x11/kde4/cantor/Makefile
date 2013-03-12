@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, mathematical applications
-DISTNAME =	cantor-${MODKDE_VERSION}
+DISTNAME =	cantor-${MODKDE4_VERSION}
 
 SHARED_LIBS =  cantorlibs                0.0 # 0.0
 SHARED_LIBS += cantor_config             0.0 # 0.0

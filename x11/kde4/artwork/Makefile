@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	KDE graphics, styles and icon themes
-DISTNAME =	kdeartwork-${MODKDE_VERSION}
+DISTNAME =	kdeartwork-${MODKDE4_VERSION}
 
 MODKDE4_USE =	workspace
 

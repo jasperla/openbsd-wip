@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, image editor
-DISTNAME =	kolourpaint-${MODKDE_VERSION}
+DISTNAME =	kolourpaint-${MODKDE4_VERSION}
 
 SHARED_LIBS =	kolourpaint_lgpl	0.0	# 4.7
 
