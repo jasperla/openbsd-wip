@@ -1,7 +1,7 @@
 # $OpenBSD: Makefile,v 1.12 2011/07/06 21:25:23 ajacoutot Exp $
 
 COMMENT =	K Desktop Environment, libraries for PIM
-DISTNAME =	kdepimlibs-${MODKDE_VERSION}
+DISTNAME =	kdepimlibs-${MODKDE4_VERSION}
 
 SHARED_LIBS =	kabc                 5.0      # .4.0
 SHARED_LIBS +=	kabc_file_core       0.0      # .4.0

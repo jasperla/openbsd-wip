@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, interactive desktop widget creation
-DISTNAME =	superkaramba-${MODKDE_VERSION}
+DISTNAME =	superkaramba-${MODKDE4_VERSION}
 
 SHARED_LIBS =	superkaramba	0.0 # 4.7
 

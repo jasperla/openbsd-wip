@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, image viewer
-DISTNAME =	gwenview-${MODKDE_VERSION}
+DISTNAME =	gwenview-${MODKDE4_VERSION}
 
 SHARED_LIBS =	gwenviewlib               0.0 # 4.7
 

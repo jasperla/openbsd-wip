@@ -2,7 +2,7 @@
 
 COMMENT =	KDE FFmpeg-based thumbnail generator for video files
 CATEGORIES =	multimedia
-DISTNAME =	ffmpegthumbs-${MODKDE_VERSION}
+DISTNAME =	ffmpegthumbs-${MODKDE4_VERSION}
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg

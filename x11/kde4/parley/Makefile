@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, vocabulary trainer
-DISTNAME =	parley-${MODKDE_VERSION}
+DISTNAME =	parley-${MODKDE4_VERSION}
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += ICE SM X11 Xext Xrender

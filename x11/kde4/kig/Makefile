@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, geometric constructions explorer
-DISTNAME =	kig-${MODKDE_VERSION}
+DISTNAME =	kig-${MODKDE4_VERSION}
 
 MODULES =	lang/python
 

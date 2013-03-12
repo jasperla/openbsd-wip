@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, screen ruler
-DISTNAME =	kruler-${MODKDE_VERSION}
+DISTNAME =	kruler-${MODKDE4_VERSION}
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += ICE SM X11 Xext

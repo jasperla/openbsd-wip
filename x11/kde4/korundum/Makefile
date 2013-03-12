@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, KDE4 bindings for Ruby
-DISTNAME =	korundum-${MODKDE_VERSION}
+DISTNAME =	korundum-${MODKDE4_VERSION}
 REVISION =	2
 
 WANTLIB =  c m stdc++ ${MODRUBY_WANTLIB}

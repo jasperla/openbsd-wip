@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, image plugins infrastructure
-DISTNAME =	libkipi-${MODKDE_VERSION}
+DISTNAME =	libkipi-${MODKDE4_VERSION}
 
 SHARED_LIBS =	kipi		2.0
 

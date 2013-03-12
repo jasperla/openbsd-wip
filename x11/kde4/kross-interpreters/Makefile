@@ -2,14 +2,14 @@
 
 COMMENT-main =	K Desktop Environment, bindings for running interpreters
 COMMENT-java =	K Desktop Environment, KDE4 Java bindings
-DISTNAME =	kross-interpreters-${MODKDE_VERSION}
+DISTNAME =	kross-interpreters-${MODKDE4_VERSION}
 PKGNAME-main =	${PKGNAME}
 PKGNAME-java =	${PKGNAME:C/interpreters/java/}
 
 MULTI_PACKAGES =	-main -java
 
 # XXX Can't use <bsd.port.arch.mk> due to mishandling of MODULES
-# causing MODKDE_VERSION to be undefined.
+# causing MODKDE4_VERSION to be undefined.
 PSEUDO_FLAVORS =	no_java
 FLAVOR ?=
 

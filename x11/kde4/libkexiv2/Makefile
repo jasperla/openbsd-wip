@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, exiv2 wrapper
-DISTNAME =	libkexiv2-${MODKDE_VERSION}
+DISTNAME =	libkexiv2-${MODKDE4_VERSION}
 
 SHARED_LIBS =	kexiv2			0.0	# 10.0
 

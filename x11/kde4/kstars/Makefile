@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, simulate planetarium
-DISTNAME =	kstars-${MODKDE_VERSION}
+DISTNAME =	kstars-${MODKDE4_VERSION}
 
 WANTLIB =  c m pthread stdc++ z
 WANTLIB += GL GLU ICE SM X11 Xext

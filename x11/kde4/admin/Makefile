@@ -1,7 +1,7 @@
 # $OpenBSD: Makefile,v 1.8 2010/11/22 08:37:02 espie Exp $
 
 COMMENT =	K Desktop Environment, admin tools
-DISTNAME =	kdeadmin-${MODKDE_VERSION}
+DISTNAME =	kdeadmin-${MODKDE4_VERSION}
 REVISION =	0
 
 WANTLIB =  c m pthread stdc++

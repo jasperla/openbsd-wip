@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	K Desktop Environment, RAW picture decoding C++ library
-DISTNAME =	libkdcraw-${MODKDE_VERSION}
+DISTNAME =	libkdcraw-${MODKDE4_VERSION}
 
 SHARED_LIBS =	kdcraw			0.0	# 20.0
 
