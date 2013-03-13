@@ -1,0 +1,3 @@
+- lang/fpc needs to build clocale unit
+- fpc.port.mk ?
+- access violation on startup
