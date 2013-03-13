@@ -1,6 +1,6 @@
 $OpenBSD$
---- ui/cli/tap-camelcounter.c.orig	Thu Sep 20 02:35:28 2012
-+++ ui/cli/tap-camelcounter.c	Wed Jan 30 19:24:50 2013
+--- ui/cli/tap-camelcounter.c.orig	Tue Mar  5 22:52:03 2013
++++ ui/cli/tap-camelcounter.c	Wed Mar 13 01:25:37 2013
 @@ -85,14 +85,14 @@ static void camelcounter_draw(void *phs)
    printf("------------------------------------------\n");
  }
@@ -11,7 +11,7 @@ $OpenBSD$
    struct camelcounter_t *p_camelcounter;
    GString *error_string;
  
-   p_camelcounter = g_malloc(sizeof(struct camelcounter_t));
+   p_camelcounter = g_new(struct camelcounter_t,1);
 -  if(!strncmp(optarg,"camel,counter,",13)){
 -    p_camelcounter->filter=g_strdup(optarg+13);
 +  if(!strncmp(optarg_p,"camel,counter,",13)){
