@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 02:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2013/03/11 20:59:05 sthen Exp $
 
 COMMENT=	administration and development platform for PostgreSQL
 
