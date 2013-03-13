@@ -30,15 +30,13 @@ MASTER_SITES=	${MASTER_SITE_PYPI:=i/ipython/}
 
 USE_GROFF =	Yes
 
-# Build some HTML docs.
-# This will whine about missing modules (such as pyglet and opengl) if
-# they are not installed. The generated documentation is still fine despite
-# this. Sphinx also generates a lot of warnings, which again do not affect
-# the resulting documentation. According to people in the IPython IRC channel
-# it is expected behaviour. This also makes systrace unhappy, but again, the
-# resulting docs are fine...
+pre-patch:
+	ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
+
+# Build some HTML docs. OK to ignore python and systrace warnings.
+MAKE_ENV +=	PYTHONPATH=${WRKSRC}
 post-build:
-	cd ${WRKSRC}/docs && PYTHONPATH=${WRKSRC} ${MAKE_PROGRAM} html MODPY_BIN=${MODPY_BIN}
+	cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
 
 # Despite the fact that setupbase.py defines paths for examples to
 # be installed into, we still have to do it manually for some reason.
