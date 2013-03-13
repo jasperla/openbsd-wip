@@ -34,6 +34,7 @@ RUN_DEPENDS=		devel/p5-Module-Find \
 			rtmpdump-*|flvstreamer-*:net/rtmpdump \
 			security/p5-Crypt-Blowfish_PP \
 			security/p5-Crypt-Rijndael \
+			security/p5-Digest-HMAC \
 			textproc/p5-XML-Simple \
 			security/p5-IO-Socket-SSL \
 			www/p5-libwww \
