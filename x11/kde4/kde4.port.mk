@@ -14,8 +14,6 @@ SHARED_ONLY ?=		Yes
 ONLY_FOR_ARCHS ?=	${GCC4_ARCHS}
 EXTRACT_SUFX ?=		.tar.xz
 
-CATEGORIES +=		x11/kde4
-
 .if "${NO_BUILD:L}" != "yes"
 MODULES +=		devel/cmake
 SEPARATE_BUILD ?=	flavored
