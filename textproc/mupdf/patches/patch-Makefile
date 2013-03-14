@@ -1,0 +1,12 @@
+$OpenBSD$
+--- Makefile.orig	Thu Mar 14 11:05:39 2013
++++ Makefile	Thu Mar 14 11:05:47 2013
+@@ -206,7 +206,7 @@ prefix ?= /usr/local
+ bindir ?= $(prefix)/bin
+ libdir ?= $(prefix)/lib
+ incdir ?= $(prefix)/include
+-mandir ?= $(prefix)/share/man
++mandir ?= $(prefix)/man
+ 
+ install: $(FITZ_LIB) $(MUVIEW) $(MUDRAW) $(MUTOOL)
+ 	install -d $(DESTDIR)$(bindir) $(DESTDIR)$(libdir) $(DESTDIR)$(incdir) $(DESTDIR)$(mandir)/man1
