@@ -1,0 +1,24 @@
+MuPDF is a lightweight PDF and XPS viewer.
+
+The renderer in MuPDF is tailored for high quality anti-aliased
+graphics. It renders text with metrics and spacing accurate to within
+fractions of a pixel for the highest fidelity in reproducing the look of
+a printed page on screen.
+
+MuPDF is also small, fast, and yet complete. It supports PDF 1.7 with
+transparency, encryption, hyperlinks, annotations, searching and more.
+It also reads OpenXPS documents.
+
+We don't support interactive features such as form filling, javascript
+and transitions. MuPDF is written modularly, so such features can be
+added on by integrators if they so desire.
+
+The mubusy command line tool supports multiple arguments, including
+"show" to print and examine objects in a PDF file, "clean" to decompress
+and pretty-print the streams and objects in PDF files and also to
+extract individual pages, "info" to display information about objects,
+"extract" to extract individual objects, and "poster" to split a large
+page into many tiles.
+
+The mudraw command line tool renders pages and outputs PGM/PPM/PAM/PNG
+image files.
