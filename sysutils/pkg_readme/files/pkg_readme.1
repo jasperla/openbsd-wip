@@ -1,0 +1,84 @@
+.\"	$OpenBSD$
+.\"
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\"
+.\"
+.Dd $Mdocdate$
+.Dt PKG_README 1
+.Os
+.Sh NAME
+.Nm pkg_readme
+.Nd list and display readme files for packages
+.Sh SYNOPSIS
+.Nm
+.Bk -words
+.Op Ar number
+.Ek
+.Pp
+.Nm
+.Bk -words
+.Ar pkg-name
+.Op Ar ...
+.Ek
+.Sh DESCRIPTION
+When run without arguments,
+.Nm
+will list all available readme files for installed packages together
+with time stamps of last modification, sorted by timestamp.
+.Pp
+If single argument is given, and it's a non-negative
+.Ar number ,
+then
+.Nm
+will show last
+.Ar number
+installed or updated readme files.
+.Pp
+Otherwise, all arguments will be treated as a list of package names
+and/or their stems, and
+.Nm
+will try to find and display readme files for matching packages.
+Package name matching is partial, so both
+.Ar postgresql-server
+and
+.Ar postgresql
+will match
+.Ar postgresql-server-9.2.1
+package.
+.Pp
+.Nm
+does not look into packages repository itself.
+Thus
+.Nm
+can misbehave if packages are being installed, updated or removed while
+it is running.
+.Sh ENVIRONMENT
+.Bl -tag -width PKG_READMEDIR
+.It Ev PAGER
+Program used to display files.
+If unset,
+.Xr more 1
+is used.
+.It Ev PKG_READMEDIR
+Directory containing readme files for packages, defaults to
+.Pa /usr/local/share/doc/pkg-readmes .
+.El
+.Sh SEE ALSO
+.Xr pkg_info 1
+.Sh HISTORY
+The
+.Nm
+command appeared in
+.Ox 5.4 .
+.Sh AUTHORS
+.Bl -tag -width indent -compact
+.It "Vadim Zhukov"
+initial version
+.El
