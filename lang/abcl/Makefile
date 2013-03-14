@@ -25,7 +25,6 @@ RUN_DEPENDS =		java/javaPathHelper \
 			misc/rlwrap
 
 TEST_TARGET =		abcl.test
-NO_TEST =		Yes
 
 ABCL_HOME =		${PREFIX}/abcl
 
@@ -33,10 +32,12 @@ do-install:
 	${INSTALL_DATA_DIR} ${ABCL_HOME}
 	${INSTALL_DATA} ${WRKSRC}/dist/abcl.jar ${ABCL_HOME}
 	@${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -c \
-		${FILESDIR}/abcl \
-		${PREFIX}/bin/abcl
+		${FILESDIR}/abcl ${PREFIX}/bin/abcl
 	cd ${WRKDIST} && tar -cf - src | tar -C ${ABCL_HOME} -xf -
 	chown -R ${SHAREOWN}:${SHAREGRP} ${ABCL_HOME}/src
 	${INSTALL_DATA} ${FILESDIR}/abcl_completions ${ABCL_HOME}
+
+do-test:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/ant ${TEST_TARGET}
 
 .include <bsd.port.mk>
