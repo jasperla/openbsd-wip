@@ -184,7 +184,7 @@ FLAVORS +=	debug
 # Set up directories, avoiding conflicts with KDE3.
 # Libraries are handled in kde4-post-install target, see below.
 MODKDE4_INCLUDE_DIR =	include/kde4
-MODKDE4_LIB_DIR =	lib/kde4/private
+MODKDE4_LIB_DIR =	lib/kde4/p
 
 # shortcut to make WANTLIBs and PLISTs more readable
 KDE4LIB =		${MODKDE4_LIB_DIR}
@@ -286,8 +286,8 @@ MODKDE4_LIB_LINKS ?=	No
 MODKDE4_pre-fake =	${SUDO} ${INSTALL_DATA_DIR} ${PREFIX}/include/kde4;
 
 # 1. Remove includes directory created above, if empty.
-# 2. Create links for shared libraries in ${PREFIX}/lib/kde4/private/ ,
-#    to allow using -DKDE4_LIB_INSTALL_DIR=${PREFIX}/lib/kde4/private.
+# 2. Create links for shared libraries in ${PREFIX}/${KDE4LIB},
+#    to allow using -DDKDE4_LIB_DIR=${PREFIX}/${KDE4LIB}.
 # 3. Fixup files in ${SYSCONFDIR}, see notes for MODKDE4_SYSCONF_FILES above.
 MODKDE4_post-install =	rmdir ${PREFIX}/${MODKDE4_INCLUDE_DIR} 2>/dev/null || :;
 
