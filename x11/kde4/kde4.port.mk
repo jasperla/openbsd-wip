@@ -188,7 +188,6 @@ MODKDE4_LIB_DIR =	lib/kde4/p
 
 # shortcut to make WANTLIBs and PLISTs more readable
 KDE4LIB =		${MODKDE4_LIB_DIR}
-KDELIB ?=		${KDE4LIB}
 SUBST_VARS +=		KDE4LIB
 
 .if ${CONFIGURE_STYLE:Mcmake}
