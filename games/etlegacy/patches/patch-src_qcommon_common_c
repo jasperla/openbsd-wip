@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/qcommon/common.c.orig	Sun Mar 17 14:40:35 2013
++++ src/qcommon/common.c	Sun Mar 17 14:41:25 2013
+@@ -51,7 +51,7 @@
+ 
+ #define MIN_DEDICATED_COMHUNKMEGS   1
+ #define MIN_COMHUNKMEGS             64
+-#define DEF_COMHUNKMEGS             128
++#define DEF_COMHUNKMEGS             64
+ #define DEF_COMZONEMEGS             24
+ #define DEF_COMHUNKMEGS_S           XSTRING(DEF_COMHUNKMEGS)
+ #define DEF_COMZONEMEGS_S           XSTRING(DEF_COMZONEMEGS)
