@@ -5,7 +5,7 @@ CATEGORIES =	multimedia devel x11/kde4
 VERSION =	4.6.0
 DISTNAME =	phonon-${VERSION}
 HOMEPAGE =	http://phonon.kde.org/
-REVISION =	5
+REVISION =	6
 
 # Renamed to avoid clashing with Qt4's one
 SHARED_LIBS =	phonon_s		0.0

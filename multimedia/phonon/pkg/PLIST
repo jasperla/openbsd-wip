@@ -169,9 +169,9 @@ lib/cmake/phonon/PhononConfigVersion.cmake
 lib/cmake/phonon/PhononTargets${MODKDE4_CMAKE_PREFIX}.cmake
 lib/cmake/phonon/PhononTargets.cmake
 lib/kde4/
-lib/kde4/private/
-@lib lib/kde4/private/libphonon_s.so.${LIBphonon_s_VERSION}
-@lib lib/kde4/private/libphononexperimental.so.${LIBphononexperimental_VERSION}
+${KDE4LIB}/
+@lib ${KDE4LIB}/libphonon_s.so.${LIBphonon_s_VERSION}
+@lib ${KDE4LIB}/libphononexperimental.so.${LIBphononexperimental_VERSION}
 @lib lib/libphonon_s.so.${LIBphonon_s_VERSION}
 @lib lib/libphononexperimental.so.${LIBphononexperimental_VERSION}
 lib/pkgconfig/phonon.pc
