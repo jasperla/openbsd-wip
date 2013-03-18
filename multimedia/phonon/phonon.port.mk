@@ -3,7 +3,6 @@ MODPHONON_WANTLIB =	${MODKDE4_LIB_DIR}/phonon_s
 MODPHONON_LIB_DEPENDS =	phonon->=4.6.0p2:multimedia/phonon
 MODPHONON_RUN_DEPENDS =	phonon-gstreamer-*|phonon-vlc-*:multimedia/phonon-backend/gstreamer
 
-MODULES +=	x11/kde4
 WANTLIB +=	${MODPHONON_WANTLIB}
 LIB_DEPENDS +=	${MODPHONON_LIB_DEPENDS}
 
