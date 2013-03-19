@@ -3,7 +3,7 @@ lib/kde4/kcm_printer_manager.so
 lib/kde4/kded_printmanager.so
 lib/kde4/plasma_engine_printers.so
 lib/kde4/plasma_engine_printjobs.so
-@lib lib/kde4/private/libkcupslib.so.${LIBkcupslib_VERSION}
+@lib ${KDE4LIB}/libkcupslib.so.${LIBkcupslib_VERSION}
 @lib lib/libkcupslib.so.${LIBkcupslib_VERSION}
 @bin libexec/add-printer
 @bin libexec/configure-printer

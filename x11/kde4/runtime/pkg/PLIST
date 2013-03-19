@@ -259,8 +259,8 @@ lib/kde4/platformimports/touch/org/kde/plasma/components/private/TextFieldFocus.
 lib/kde4/platformimports/touch/org/kde/plasma/components/qmldir
 lib/kde4/plugins/phonon_platform/
 lib/kde4/plugins/phonon_platform/kde.so
-@lib lib/kde4/private/libkwalletbackend.so.${LIBkwalletbackend_VERSION}
-@lib lib/kde4/private/libmolletnetwork.so.${LIBmolletnetwork_VERSION}
+@lib ${KDE4LIB}/libkwalletbackend.so.${LIBkwalletbackend_VERSION}
+@lib ${KDE4LIB}/libmolletnetwork.so.${LIBmolletnetwork_VERSION}
 lib/kde4/svgthumbnail.so
 lib/kde4/textthumbnail.so
 lib/kde4/windowsexethumbnail.so

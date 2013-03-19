@@ -201,7 +201,7 @@ include/kde4/libktorrent/utp/utpserver.h
 include/kde4/libktorrent/utp/utpserverthread.h
 include/kde4/libktorrent/utp/utpsocket.h
 include/kde4/libktorrent/version.h
-@lib lib/kde4/private/libktorrent.so.${LIBktorrent_VERSION}
+@lib ${KDE4LIB}/libktorrent.so.${LIBktorrent_VERSION}
 @lib lib/libktorrent.so.${LIBktorrent_VERSION}
 share/apps/cmake/modules/FindKTorrent.cmake
 share/locale/ar/LC_MESSAGES/libktorrent.mo

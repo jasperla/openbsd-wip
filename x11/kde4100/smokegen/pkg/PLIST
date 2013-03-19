@@ -12,9 +12,9 @@ include/smokegen/options.h
 include/smokegen/type.h
 include/smokegen/type_compiler.h
 lib/kde4/
-lib/kde4/private/
-@lib lib/kde4/private/libcppparser.so.${LIBcppparser_VERSION}
-@lib lib/kde4/private/libsmokebase.so.${LIBsmokebase_VERSION}
+${KDE4LIB}/
+@lib ${KDE4LIB}/libcppparser.so.${LIBcppparser_VERSION}
+@lib ${KDE4LIB}/libsmokebase.so.${LIBsmokebase_VERSION}
 @lib lib/libcppparser.so.${LIBcppparser_VERSION}
 @lib lib/libsmokebase.so.${LIBsmokebase_VERSION}
 lib/smokegen/

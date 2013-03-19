@@ -12,7 +12,7 @@ include/qtruby/marshall_primitives.h
 include/qtruby/marshall_types.h
 include/qtruby/qtruby.h
 include/qtruby/smokeruby.h
-@lib lib/kde4/private/libqtruby4shared.so.${LIBqtruby4shared_VERSION}
+@lib ${KDE4LIB}/libqtruby4shared.so.${LIBqtruby4shared_VERSION}
 @lib lib/libqtruby4shared.so.${LIBqtruby4shared_VERSION}
 ${MODRUBY_SITEDIR}/Qt/
 ${MODRUBY_SITEDIR}/Qt.rb

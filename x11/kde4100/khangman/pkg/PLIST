@@ -4,7 +4,7 @@ include/khangman/
 include/khangman/khangman_engine_export.h
 include/khangman/khangmanengine.h
 include/khangman/prefs.h
-@lib lib/kde4/private/libkhangmanengine.so.${LIBkhangmanengine_VERSION}
+@lib ${KDE4LIB}/libkhangmanengine.so.${LIBkhangmanengine_VERSION}
 @lib lib/libkhangmanengine.so.${LIBkhangmanengine_VERSION}
 @man man/man6/khangman.6
 share/applications/kde4/khangman.desktop

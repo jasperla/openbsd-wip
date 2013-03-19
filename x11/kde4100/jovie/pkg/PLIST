@@ -4,7 +4,7 @@ lib/kde4/jovie_stringreplacerplugin.so
 lib/kde4/jovie_talkerchooserplugin.so
 lib/kde4/jovie_xmltransformerplugin.so
 lib/kde4/kcm_kttsd.so
-@lib lib/kde4/private/libkttsd.so.${LIBkttsd_VERSION}
+@lib ${KDE4LIB}/libkttsd.so.${LIBkttsd_VERSION}
 @lib lib/libkttsd.so.${LIBkttsd_VERSION}
 share/applications/kde4/jovieapp.desktop
 share/apps/jovie/

@@ -195,13 +195,13 @@ lib/kde4/plasma_wallpaper_potd.so
 lib/kde4/plasma_wallpaper_qml.so
 lib/kde4/plasma_wallpaper_virus.so
 lib/kde4/plasma_wallpaper_weather.so
-@lib lib/kde4/private/liblancelot-datamodels.so.${LIBlancelot-datamodels_VERSION}
-@lib lib/kde4/private/liblancelot.so.${LIBlancelot_VERSION}
-@lib lib/kde4/private/libplasma_groupingcontainment.so.${LIBplasma_groupingcontainment_VERSION}
-@lib lib/kde4/private/libplasmacomicprovidercore.so.${LIBplasmacomicprovidercore_VERSION}
-@lib lib/kde4/private/libplasmapotdprovidercore.so.${LIBplasmapotdprovidercore_VERSION}
-@lib lib/kde4/private/libplasmaweather.so.${LIBplasmaweather_VERSION}
-@lib lib/kde4/private/librtm.so.${LIBrtm_VERSION}
+@lib ${KDE4LIB}/liblancelot-datamodels.so.${LIBlancelot-datamodels_VERSION}
+@lib ${KDE4LIB}/liblancelot.so.${LIBlancelot_VERSION}
+@lib ${KDE4LIB}/libplasma_groupingcontainment.so.${LIBplasma_groupingcontainment_VERSION}
+@lib ${KDE4LIB}/libplasmacomicprovidercore.so.${LIBplasmacomicprovidercore_VERSION}
+@lib ${KDE4LIB}/libplasmapotdprovidercore.so.${LIBplasmapotdprovidercore_VERSION}
+@lib ${KDE4LIB}/libplasmaweather.so.${LIBplasmaweather_VERSION}
+@lib ${KDE4LIB}/librtm.so.${LIBrtm_VERSION}
 @lib lib/liblancelot-datamodels.so.${LIBlancelot-datamodels_VERSION}
 @lib lib/liblancelot.so.${LIBlancelot_VERSION}
 @lib lib/libplasma_groupingcontainment.so.${LIBplasma_groupingcontainment_VERSION}

@@ -76,8 +76,8 @@ lib/cmake/KDEGames/KDEGamesConfig.cmake
 lib/cmake/KDEGames/KDEGamesConfigVersion.cmake
 lib/cmake/KDEGames/KDEGamesLibraryDepends${MODKDE4_CMAKE_PREFIX}.cmake
 lib/cmake/KDEGames/KDEGamesLibraryDepends.cmake
-@lib lib/kde4/private/libkdegames.so.${LIBkdegames_VERSION}
-@lib lib/kde4/private/libkdegamesprivate.so.${LIBkdegamesprivate_VERSION}
+@lib ${KDE4LIB}/libkdegames.so.${LIBkdegames_VERSION}
+@lib ${KDE4LIB}/libkdegamesprivate.so.${LIBkdegamesprivate_VERSION}
 @lib lib/libkdegames.so.${LIBkdegames_VERSION}
 @lib lib/libkdegamesprivate.so.${LIBkdegamesprivate_VERSION}
 share/apps/carddecks/

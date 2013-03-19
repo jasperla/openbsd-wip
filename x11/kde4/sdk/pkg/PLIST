@@ -480,17 +480,17 @@ lib/kde4/libkbytearrayedit.so
 lib/kde4/oktetapart.so
 lib/kde4/plugins/designer/oktetadesignerplugin.so
 lib/kde4/pothumbnail.so
-@lib lib/kde4/private/libkasten2controllers.so.${LIBkasten2controllers_VERSION}
-@lib lib/kde4/private/libkasten2core.so.${LIBkasten2core_VERSION}
-@lib lib/kde4/private/libkasten2gui.so.${LIBkasten2gui_VERSION}
-@lib lib/kde4/private/libkasten2okteta1controllers.so.${LIBkasten2okteta1controllers_VERSION}
-@lib lib/kde4/private/libkasten2okteta1core.so.${LIBkasten2okteta1core_VERSION}
-@lib lib/kde4/private/libkasten2okteta1gui.so.${LIBkasten2okteta1gui_VERSION}
-@lib lib/kde4/private/libkomparedialogpages.so.${LIBkomparedialogpages_VERSION}
-@lib lib/kde4/private/libkomparediff2.so.${LIBkomparediff2_VERSION}
-@lib lib/kde4/private/libkompareinterface.so.${LIBkompareinterface_VERSION}
-@lib lib/kde4/private/libokteta1core.so.${LIBokteta1core_VERSION}
-@lib lib/kde4/private/libokteta1gui.so.${LIBokteta1gui_VERSION}
+@lib ${KDE4LIB}/libkasten2controllers.so.${LIBkasten2controllers_VERSION}
+@lib ${KDE4LIB}/libkasten2core.so.${LIBkasten2core_VERSION}
+@lib ${KDE4LIB}/libkasten2gui.so.${LIBkasten2gui_VERSION}
+@lib ${KDE4LIB}/libkasten2okteta1controllers.so.${LIBkasten2okteta1controllers_VERSION}
+@lib ${KDE4LIB}/libkasten2okteta1core.so.${LIBkasten2okteta1core_VERSION}
+@lib ${KDE4LIB}/libkasten2okteta1gui.so.${LIBkasten2okteta1gui_VERSION}
+@lib ${KDE4LIB}/libkomparedialogpages.so.${LIBkomparedialogpages_VERSION}
+@lib ${KDE4LIB}/libkomparediff2.so.${LIBkomparediff2_VERSION}
+@lib ${KDE4LIB}/libkompareinterface.so.${LIBkompareinterface_VERSION}
+@lib ${KDE4LIB}/libokteta1core.so.${LIBokteta1core_VERSION}
+@lib ${KDE4LIB}/libokteta1gui.so.${LIBokteta1gui_VERSION}
 lib/kde4/quithumbnail.so
 @lib lib/libkasten2controllers.so.${LIBkasten2controllers_VERSION}
 @lib lib/libkasten2core.so.${LIBkasten2core_VERSION}

@@ -20,8 +20,8 @@ lib/kde4/plasma_applet_molmassCalculator.so
 lib/kde4/plasma_engine_kalzium.so
 @comment lib/ocaml/
 @comment lib/ocaml/stublibs/
-@lib lib/kde4/private/libcompoundviewer.so.${LIBcompoundviewer_VERSION}
-@lib lib/kde4/private/libscience.so.${LIBscience_VERSION}
+@lib ${KDE4LIB}/libcompoundviewer.so.${LIBcompoundviewer_VERSION}
+@lib ${KDE4LIB}/libscience.so.${LIBscience_VERSION}
 @lib lib/libcompoundviewer.so.${LIBcompoundviewer_VERSION}
 @lib lib/libscience.so.${LIBscience_VERSION}
 @man man/man1/kalzium.1

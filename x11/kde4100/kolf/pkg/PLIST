@@ -1,6 +1,6 @@
 @comment $OpenBSD$
 @bin bin/kolf
-@lib lib/kde4/private/libkolfprivate.so.${LIBkolfprivate_VERSION}
+@lib ${KDE4LIB}/libkolfprivate.so.${LIBkolfprivate_VERSION}
 @lib lib/libkolfprivate.so.${LIBkolfprivate_VERSION}
 share/applications/kde4/kolf.desktop
 share/apps/kolf/

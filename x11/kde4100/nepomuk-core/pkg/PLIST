@@ -125,8 +125,8 @@ lib/kde4/nepomukplaintextextractor.so
 lib/kde4/nepomukpopplerextractor.so
 lib/kde4/nepomukstorage.so
 lib/kde4/nepomuktaglibextractor.so
-@lib lib/kde4/private/libnepomukcommon.so.${LIBnepomukcommon_VERSION}
-@lib lib/kde4/private/libnepomukcore.so.${LIBnepomukcore_VERSION}
+@lib ${KDE4LIB}/libnepomukcommon.so.${LIBnepomukcommon_VERSION}
+@lib ${KDE4LIB}/libnepomukcore.so.${LIBnepomukcore_VERSION}
 lib/libkdeinit4_nepomukserver.so
 @lib lib/libnepomukcommon.so.${LIBnepomukcommon_VERSION}
 @lib lib/libnepomukcore.so.${LIBnepomukcore_VERSION}

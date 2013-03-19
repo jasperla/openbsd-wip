@@ -12,9 +12,9 @@ lib/kde4/klinkstatuspart.so
 lib/kde4/krossmoduleklinkstatus.so
 lib/kde4/libkfilereplacepart.so
 lib/kde4/libkimagemapeditor.so
-@lib lib/kde4/private/libklinkstatuscommon.so.${LIBklinkstatuscommon_VERSION}
-@lib lib/kde4/private/libkommandercore.so.${LIBkommandercore_VERSION}
-@lib lib/kde4/private/libkommanderwidgets.so.${LIBkommanderwidgets_VERSION}
+@lib ${KDE4LIB}/libklinkstatuscommon.so.${LIBklinkstatuscommon_VERSION}
+@lib ${KDE4LIB}/libkommandercore.so.${LIBkommandercore_VERSION}
+@lib ${KDE4LIB}/libkommanderwidgets.so.${LIBkommanderwidgets_VERSION}
 @lib lib/libklinkstatuscommon.so.${LIBklinkstatuscommon_VERSION}
 @lib lib/libkommandercore.so.${LIBkommandercore_VERSION}
 @lib lib/libkommanderwidgets.so.${LIBkommanderwidgets_VERSION}

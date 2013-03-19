@@ -384,36 +384,36 @@ lib/kde4/powerdevildpmsaction_config.so
 lib/kde4/powerdevilhandlebuttoneventsaction_config.so
 lib/kde4/powerdevilrunscriptaction_config.so
 lib/kde4/powerdevilsuspendsessionaction_config.so
-@lib lib/kde4/private/libkdecorations.so.${LIBkdecorations_VERSION}
-@lib lib/kde4/private/libkephal.so.${LIBkephal_VERSION}
-@lib lib/kde4/private/libkfontinst.so.${LIBkfontinst_VERSION}
-@lib lib/kde4/private/libkfontinstui.so.${LIBkfontinstui_VERSION}
-@lib lib/kde4/private/libkhotkeysprivate.so.${LIBkhotkeysprivate_VERSION}
-@lib lib/kde4/private/libkickoff.so.${LIBkickoff_VERSION}
-@lib lib/kde4/private/libkscreensaver.so.${LIBkscreensaver_VERSION}
-@lib lib/kde4/private/libksgrd.so.${LIBksgrd_VERSION}
-@lib lib/kde4/private/libksignalplotter.so.${LIBksignalplotter_VERSION}
-@lib lib/kde4/private/libkwineffects.so.${LIBkwineffects_VERSION}
-@lib lib/kde4/private/libkwinglutils.so.${LIBkwinglutils_VERSION}
-@lib lib/kde4/private/libkwinnvidiahack.so.${LIBkwinnvidiahack_VERSION}
-@lib lib/kde4/private/libkworkspace.so.${LIBkworkspace_VERSION}
-@lib lib/kde4/private/liblsofui.so.${LIBlsofui_VERSION}
-@lib lib/kde4/private/liboxygenstyle.so.${LIBoxygenstyle_VERSION}
-@lib lib/kde4/private/liboxygenstyleconfig.so.${LIBoxygenstyleconfig_VERSION}
-@lib lib/kde4/private/libplasma-geolocation-interface.so.${LIBplasma-geolocation-interface_VERSION}
-@lib lib/kde4/private/libplasma_applet-system-monitor.so.${LIBplasma_applet-system-monitor_VERSION}
-@lib lib/kde4/private/libplasmaclock.so.${LIBplasmaclock_VERSION}
-@lib lib/kde4/private/libplasmagenericshell.so.${LIBplasmagenericshell_VERSION}
-@lib lib/kde4/private/libpowerdevilconfigcommonprivate.so.${LIBpowerdevilconfigcommonprivate_VERSION}
-@lib lib/kde4/private/libpowerdevilcore.so.${LIBpowerdevilcore_VERSION}
-@lib lib/kde4/private/libpowerdevilui.so.${LIBpowerdevilui_VERSION}
-@lib lib/kde4/private/libprocesscore.so.${LIBprocesscore_VERSION}
-@lib lib/kde4/private/libprocessui.so.${LIBprocessui_VERSION}
-@lib lib/kde4/private/libsolidcontrol.so.${LIBsolidcontrol_VERSION}
-@lib lib/kde4/private/libsolidcontrolifaces.so.${LIBsolidcontrolifaces_VERSION}
-@lib lib/kde4/private/libsystemsettingsview.so.${LIBsystemsettingsview_VERSION}
-@lib lib/kde4/private/libtaskmanager.so.${LIBtaskmanager_VERSION}
-@lib lib/kde4/private/libweather_ion.so.${LIBweather_ion_VERSION}
+@lib ${KDE4LIB}/libkdecorations.so.${LIBkdecorations_VERSION}
+@lib ${KDE4LIB}/libkephal.so.${LIBkephal_VERSION}
+@lib ${KDE4LIB}/libkfontinst.so.${LIBkfontinst_VERSION}
+@lib ${KDE4LIB}/libkfontinstui.so.${LIBkfontinstui_VERSION}
+@lib ${KDE4LIB}/libkhotkeysprivate.so.${LIBkhotkeysprivate_VERSION}
+@lib ${KDE4LIB}/libkickoff.so.${LIBkickoff_VERSION}
+@lib ${KDE4LIB}/libkscreensaver.so.${LIBkscreensaver_VERSION}
+@lib ${KDE4LIB}/libksgrd.so.${LIBksgrd_VERSION}
+@lib ${KDE4LIB}/libksignalplotter.so.${LIBksignalplotter_VERSION}
+@lib ${KDE4LIB}/libkwineffects.so.${LIBkwineffects_VERSION}
+@lib ${KDE4LIB}/libkwinglutils.so.${LIBkwinglutils_VERSION}
+@lib ${KDE4LIB}/libkwinnvidiahack.so.${LIBkwinnvidiahack_VERSION}
+@lib ${KDE4LIB}/libkworkspace.so.${LIBkworkspace_VERSION}
+@lib ${KDE4LIB}/liblsofui.so.${LIBlsofui_VERSION}
+@lib ${KDE4LIB}/liboxygenstyle.so.${LIBoxygenstyle_VERSION}
+@lib ${KDE4LIB}/liboxygenstyleconfig.so.${LIBoxygenstyleconfig_VERSION}
+@lib ${KDE4LIB}/libplasma-geolocation-interface.so.${LIBplasma-geolocation-interface_VERSION}
+@lib ${KDE4LIB}/libplasma_applet-system-monitor.so.${LIBplasma_applet-system-monitor_VERSION}
+@lib ${KDE4LIB}/libplasmaclock.so.${LIBplasmaclock_VERSION}
+@lib ${KDE4LIB}/libplasmagenericshell.so.${LIBplasmagenericshell_VERSION}
+@lib ${KDE4LIB}/libpowerdevilconfigcommonprivate.so.${LIBpowerdevilconfigcommonprivate_VERSION}
+@lib ${KDE4LIB}/libpowerdevilcore.so.${LIBpowerdevilcore_VERSION}
+@lib ${KDE4LIB}/libpowerdevilui.so.${LIBpowerdevilui_VERSION}
+@lib ${KDE4LIB}/libprocesscore.so.${LIBprocesscore_VERSION}
+@lib ${KDE4LIB}/libprocessui.so.${LIBprocessui_VERSION}
+@lib ${KDE4LIB}/libsolidcontrol.so.${LIBsolidcontrol_VERSION}
+@lib ${KDE4LIB}/libsolidcontrolifaces.so.${LIBsolidcontrolifaces_VERSION}
+@lib ${KDE4LIB}/libsystemsettingsview.so.${LIBsystemsettingsview_VERSION}
+@lib ${KDE4LIB}/libtaskmanager.so.${LIBtaskmanager_VERSION}
+@lib ${KDE4LIB}/libweather_ion.so.${LIBweather_ion_VERSION}
 lib/kde4/solid_fakenet.so
 lib/kde4/solid_wicd.so
 @lib lib/libkdecorations.so.${LIBkdecorations_VERSION}

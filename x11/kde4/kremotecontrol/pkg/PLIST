@@ -4,7 +4,7 @@ lib/kde4/kcm_remotecontrol.so
 lib/kde4/kded_kremotecontroldaemon.so
 lib/kde4/kremotecontrol_lirc.so
 lib/kde4/plasma_engine_kremoteconrol.so
-@lib lib/kde4/private/liblibkremotecontrol.so.${LIBlibkremotecontrol_VERSION}
+@lib ${KDE4LIB}/liblibkremotecontrol.so.${LIBlibkremotecontrol_VERSION}
 @lib lib/liblibkremotecontrol.so.${LIBlibkremotecontrol_VERSION}
 share/applications/kde4/krcdnotifieritem.desktop
 share/apps/kremotecontrol/
