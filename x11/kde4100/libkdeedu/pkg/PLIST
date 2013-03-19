@@ -26,7 +26,7 @@ lib/cmake/libkdeedu/
 lib/cmake/libkdeedu/LibKdeEduConfig.cmake
 lib/cmake/libkdeedu/LibKdeEduTargets${MODKDE4_CMAKE_PREFIX}.cmake
 lib/cmake/libkdeedu/LibKdeEduTargets.cmake
-@lib lib/kde4/private/libkeduvocdocument.so.${LIBkeduvocdocument_VERSION}
+@lib ${KDE4LIB}/libkeduvocdocument.so.${LIBkeduvocdocument_VERSION}
 @lib lib/libkeduvocdocument.so.${LIBkeduvocdocument_VERSION}
 lib/libqtmmlwidget.a
 share/apps/kvtml/

@@ -13,7 +13,7 @@ lib/cmake/libkcddb/LibkcddbConfig.cmake
 lib/cmake/libkcddb/LibkcddbTargets${MODKDE4_CMAKE_PREFIX}.cmake
 lib/cmake/libkcddb/LibkcddbTargets.cmake
 lib/kde4/kcm_cddb.so
-@lib lib/kde4/private/libkcddb.so.${LIBkcddb_VERSION}
+@lib ${KDE4LIB}/libkcddb.so.${LIBkcddb_VERSION}
 @lib lib/libkcddb.so.${LIBkcddb_VERSION}
 share/config.kcfg/
 share/config.kcfg/libkcddb.kcfg

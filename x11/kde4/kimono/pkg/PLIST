@@ -1,12 +1,12 @@
 @comment $OpenBSD$
 lib/kde4/kimonopluginfactory.so
-@lib lib/kde4/private/libakonadi-sharp.so.${LIBakonadi-sharp_VERSION}
-@lib lib/kde4/private/libkhtml-sharp.so.${LIBkhtml-sharp_VERSION}
-@lib lib/kde4/private/libkimono.so.${LIBkimono_VERSION}
-@lib lib/kde4/private/libktexteditor-sharp.so.${LIBktexteditor-sharp_VERSION}
-@lib lib/kde4/private/libnepomuk-sharp.so.${LIBnepomuk-sharp_VERSION}
-@lib lib/kde4/private/libplasma-sharp.so.${LIBplasma-sharp_VERSION}
-@lib lib/kde4/private/libsoprano-sharp.so.${LIBsoprano-sharp_VERSION}
+@lib ${KDE4LIB}/libakonadi-sharp.so.${LIBakonadi-sharp_VERSION}
+@lib ${KDE4LIB}/libkhtml-sharp.so.${LIBkhtml-sharp_VERSION}
+@lib ${KDE4LIB}/libkimono.so.${LIBkimono_VERSION}
+@lib ${KDE4LIB}/libktexteditor-sharp.so.${LIBktexteditor-sharp_VERSION}
+@lib ${KDE4LIB}/libnepomuk-sharp.so.${LIBnepomuk-sharp_VERSION}
+@lib ${KDE4LIB}/libplasma-sharp.so.${LIBplasma-sharp_VERSION}
+@lib ${KDE4LIB}/libsoprano-sharp.so.${LIBsoprano-sharp_VERSION}
 @lib lib/libakonadi-sharp.so.${LIBakonadi-sharp_VERSION}
 @lib lib/libkhtml-sharp.so.${LIBkhtml-sharp_VERSION}
 @lib lib/libkimono.so.${LIBkimono_VERSION}

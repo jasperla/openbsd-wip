@@ -85,11 +85,11 @@ lib/kde4/kcm_akonadi.so
 lib/kde4/kcm_akonadi_resources.so
 lib/kde4/kcm_akonadi_server.so
 lib/kde4/kio_akonadi.so
-@lib lib/kde4/private/libakonadi-filestore.so.${LIBakonadi-filestore_VERSION}
-@lib lib/kde4/private/libakonadi-xml.so.${LIBakonadi-xml_VERSION}
-@lib lib/kde4/private/libkdepim-copy.so.${LIBkdepim-copy_VERSION}
-@lib lib/kde4/private/libkmindexreader.so.${LIBkmindexreader_VERSION}
-@lib lib/kde4/private/libmaildir.so.${LIBmaildir_VERSION}
+@lib ${KDE4LIB}/libakonadi-filestore.so.${LIBakonadi-filestore_VERSION}
+@lib ${KDE4LIB}/libakonadi-xml.so.${LIBakonadi-xml_VERSION}
+@lib ${KDE4LIB}/libkdepim-copy.so.${LIBkdepim-copy_VERSION}
+@lib ${KDE4LIB}/libkmindexreader.so.${LIBkmindexreader_VERSION}
+@lib ${KDE4LIB}/libmaildir.so.${LIBmaildir_VERSION}
 @lib lib/libakonadi-filestore.so.${LIBakonadi-filestore_VERSION}
 @lib lib/libakonadi-xml.so.${LIBakonadi-xml_VERSION}
 @lib lib/libkdepim-copy.so.${LIBkdepim-copy_VERSION}

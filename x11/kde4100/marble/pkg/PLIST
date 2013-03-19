@@ -179,7 +179,7 @@ lib/kde4/plugins/marble/SunPlugin.so
 lib/kde4/plugins/marble/Weather.so
 lib/kde4/plugins/marble/Wikipedia.so
 lib/kde4/plugins/marble/YoursPlugin.so
-@lib lib/kde4/private/libmarblewidget.so.${LIBmarblewidget_VERSION}
+@lib ${KDE4LIB}/libmarblewidget.so.${LIBmarblewidget_VERSION}
 @lib lib/libmarblewidget.so.${LIBmarblewidget_VERSION}
 lib/qt4/imports/org/kde/
 lib/qt4/imports/org/kde/edu/

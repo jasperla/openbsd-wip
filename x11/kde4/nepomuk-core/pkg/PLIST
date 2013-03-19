@@ -116,8 +116,8 @@ lib/kde4/nepomukfileindexer.so
 lib/kde4/nepomukfilewatch.so
 lib/kde4/nepomukqueryservice.so
 lib/kde4/nepomukstorage.so
-@lib lib/kde4/private/libnepomukcore.so.${LIBnepomukcore_VERSION}
-@lib lib/kde4/private/libnepomuksync.so.${LIBnepomuksync_VERSION}
+@lib ${KDE4LIB}/libnepomukcore.so.${LIBnepomukcore_VERSION}
+@lib ${KDE4LIB}/libnepomuksync.so.${LIBnepomuksync_VERSION}
 lib/libkdeinit4_nepomukserver.so
 lib/libnepomukcommon.so
 @lib lib/libnepomukcore.so.${LIBnepomukcore_VERSION}

@@ -12,7 +12,7 @@ include/kde4/libkdcraw/rexpanderbox.h
 include/kde4/libkdcraw/rnuminput.h
 include/kde4/libkdcraw/squeezedcombobox.h
 include/kde4/libkdcraw/version.h
-@lib lib/kde4/private/libkdcraw.so.${LIBkdcraw_VERSION}
+@lib ${KDE4LIB}/libkdcraw.so.${LIBkdcraw_VERSION}
 @lib lib/libkdcraw.so.${LIBkdcraw_VERSION}
 lib/pkgconfig/libkdcraw.pc
 share/apps/cmake/modules/FindKdcraw.cmake

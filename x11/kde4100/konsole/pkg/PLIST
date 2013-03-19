@@ -2,8 +2,8 @@
 @bin bin/konsole
 bin/konsoleprofile
 lib/kde4/libkonsolepart.so
-@lib lib/kde4/private/libkdeinit4_konsole.so.${LIBkdeinit4_konsole_VERSION}
-@lib lib/kde4/private/libkonsoleprivate.so.${LIBkonsoleprivate_VERSION}
+@lib ${KDE4LIB}/libkdeinit4_konsole.so.${LIBkdeinit4_konsole_VERSION}
+@lib ${KDE4LIB}/libkonsoleprivate.so.${LIBkonsoleprivate_VERSION}
 @lib lib/libkdeinit4_konsole.so.${LIBkdeinit4_konsole_VERSION}
 @lib lib/libkonsoleprivate.so.${LIBkonsoleprivate_VERSION}
 share/applications/kde4/konsole.desktop

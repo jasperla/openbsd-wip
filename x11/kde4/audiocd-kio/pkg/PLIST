@@ -6,7 +6,7 @@ lib/kde4/libaudiocd_encoder_flac.so
 lib/kde4/libaudiocd_encoder_lame.so
 lib/kde4/libaudiocd_encoder_vorbis.so
 lib/kde4/libaudiocd_encoder_wav.so
-@lib lib/kde4/private/libaudiocdplugins.so.${LIBaudiocdplugins_VERSION}
+@lib ${KDE4LIB}/libaudiocdplugins.so.${LIBaudiocdplugins_VERSION}
 @lib lib/libaudiocdplugins.so.${LIBaudiocdplugins_VERSION}
 share/apps/kconf_update/audiocd.upd
 share/apps/kconf_update/upgrade-metadata.sh

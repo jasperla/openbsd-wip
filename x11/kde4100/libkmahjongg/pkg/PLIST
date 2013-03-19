@@ -4,7 +4,7 @@ include/kde4/kmahjonggbackground.h
 include/kde4/kmahjonggconfigdialog.h
 include/kde4/kmahjonggtileset.h
 include/kde4/libkmahjongg_export.h
-@lib lib/kde4/private/libkmahjongglib.so.${LIBkmahjongglib_VERSION}
+@lib ${KDE4LIB}/libkmahjongglib.so.${LIBkmahjongglib_VERSION}
 @lib lib/libkmahjongglib.so.${LIBkmahjongglib_VERSION}
 share/apps/kmahjongglib/
 share/apps/kmahjongglib/backgrounds/

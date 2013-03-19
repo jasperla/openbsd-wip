@@ -15,8 +15,8 @@ include/kde4/rocs/Pointer.h
 include/kde4/rocs/PointerItem.h
 include/kde4/rocs/RocsCoreExport.h
 include/kde4/rocs/Topology.h
-@lib lib/kde4/private/librocscore.so.${LIBrocscore_VERSION}
-@lib lib/kde4/private/librocsvisualeditor.so.${LIBrocsvisualeditor_VERSION}
+@lib ${KDE4LIB}/librocscore.so.${LIBrocscore_VERSION}
+@lib ${KDE4LIB}/librocsvisualeditor.so.${LIBrocsvisualeditor_VERSION}
 lib/kde4/rocs_GraphStructure.so
 lib/kde4/rocs_ListStructure.so
 lib/kde4/rocs_RootedTreeStructure.so

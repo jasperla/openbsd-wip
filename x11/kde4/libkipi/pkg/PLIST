@@ -13,7 +13,7 @@ include/kde4/libkipi/plugin.h
 include/kde4/libkipi/pluginloader.h
 include/kde4/libkipi/uploadwidget.h
 include/kde4/libkipi/version.h
-@lib lib/kde4/private/libkipi.so.${LIBkipi_VERSION}
+@lib ${KDE4LIB}/libkipi.so.${LIBkipi_VERSION}
 @lib lib/libkipi.so.${LIBkipi_VERSION}
 lib/pkgconfig/libkipi.pc
 share/apps/kipi/

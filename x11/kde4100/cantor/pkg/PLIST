@@ -42,8 +42,8 @@ lib/kde4/cantor_scilabbackend.so
 lib/kde4/cantor_solveassistant.so
 lib/kde4/cantor_variablemanagerplugin.so
 lib/kde4/libcantorpart.so
-@lib lib/kde4/private/libcantor_config.so.${LIBcantor_config_VERSION}
-@lib lib/kde4/private/libcantorlibs.so.${LIBcantorlibs_VERSION}
+@lib ${KDE4LIB}/libcantor_config.so.${LIBcantor_config_VERSION}
+@lib ${KDE4LIB}/libcantorlibs.so.${LIBcantorlibs_VERSION}
 @lib lib/libcantor_config.so.${LIBcantor_config_VERSION}
 @lib lib/libcantorlibs.so.${LIBcantorlibs_VERSION}
 share/applications/kde4/cantor.desktop

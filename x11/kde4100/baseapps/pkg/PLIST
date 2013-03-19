@@ -68,11 +68,11 @@ lib/kde4/libkcminit_nsplugins.so
 lib/kde4/libnsplugin.so
 lib/kde4/minitoolsplugin.so
 lib/kde4/plasma_applet_folderview.so
-@lib lib/kde4/private/libdolphinprivate.so.${LIBdolphinprivate_VERSION}
-@lib lib/kde4/private/libkbookmarkmodel_private.so.${LIBkbookmarkmodel_private_VERSION}
-@lib lib/kde4/private/libkonq.so.${LIBkonq_VERSION}
-@lib lib/kde4/private/libkonqsidebarplugin.so.${LIBkonqsidebarplugin_VERSION}
-@lib lib/kde4/private/libkonquerorprivate.so.${LIBkonquerorprivate_VERSION}
+@lib ${KDE4LIB}/libdolphinprivate.so.${LIBdolphinprivate_VERSION}
+@lib ${KDE4LIB}/libkbookmarkmodel_private.so.${LIBkbookmarkmodel_private_VERSION}
+@lib ${KDE4LIB}/libkonq.so.${LIBkonq_VERSION}
+@lib ${KDE4LIB}/libkonqsidebarplugin.so.${LIBkonqsidebarplugin_VERSION}
+@lib ${KDE4LIB}/libkonquerorprivate.so.${LIBkonquerorprivate_VERSION}
 lib/kde4/rellinksplugin.so
 lib/kde4/searchbarplugin.so
 lib/kde4/uachangerplugin.so

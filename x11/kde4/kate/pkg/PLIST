@@ -46,9 +46,9 @@ lib/kde4/ktexteditor_insertfile.so
 lib/kde4/ktexteditor_kdatatool.so
 lib/kde4/ktexteditor_python-encoding.so
 lib/kde4/plasma_applet_katesession.so
-@lib lib/kde4/private/libkateinterfaces.so.${LIBkateinterfaces_VERSION}
-@lib lib/kde4/private/libkatepartinterfaces.so.${LIBkatepartinterfaces_VERSION}
-@lib lib/kde4/private/libktexteditor_codesnippets_core.so.${LIBktexteditor_codesnippets_core_VERSION}
+@lib ${KDE4LIB}/libkateinterfaces.so.${LIBkateinterfaces_VERSION}
+@lib ${KDE4LIB}/libkatepartinterfaces.so.${LIBkatepartinterfaces_VERSION}
+@lib ${KDE4LIB}/libktexteditor_codesnippets_core.so.${LIBktexteditor_codesnippets_core_VERSION}
 @lib lib/libkateinterfaces.so.${LIBkateinterfaces_VERSION}
 @lib lib/libkatepartinterfaces.so.${LIBkatepartinterfaces_VERSION}
 lib/libkdeinit4_kate.so

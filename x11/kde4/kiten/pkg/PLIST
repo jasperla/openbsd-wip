@@ -18,7 +18,7 @@ include/kde4/libkiten/entrylist.h
 include/kde4/libkiten/historyptrlist.h
 include/kde4/libkiten/kromajiedit.h
 include/kde4/libkiten/libkitenexport.h
-@lib lib/kde4/private/libkiten.so.${LIBkiten_VERSION}
+@lib ${KDE4LIB}/libkiten.so.${LIBkiten_VERSION}
 @lib lib/libkiten.so.${LIBkiten_VERSION}
 share/applications/kde4/kiten.desktop
 share/applications/kde4/kitenkanjibrowser.desktop

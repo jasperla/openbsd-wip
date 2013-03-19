@@ -52,7 +52,7 @@ lib/kde4/okularGenerator_poppler.so
 lib/kde4/okularGenerator_tiff.so
 lib/kde4/okularGenerator_xps.so
 lib/kde4/okularpart.so
-@lib lib/kde4/private/libokularcore.so.${LIBokularcore_VERSION}
+@lib ${KDE4LIB}/libokularcore.so.${LIBokularcore_VERSION}
 @lib lib/libokularcore.so.${LIBokularcore_VERSION}
 @man man/man1/okular.1
 share/applications/kde4/okular.desktop

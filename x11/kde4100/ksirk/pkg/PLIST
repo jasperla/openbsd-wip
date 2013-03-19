@@ -1,7 +1,7 @@
 @comment $OpenBSD$
 @bin bin/ksirk
 @bin bin/ksirkskineditor
-@lib lib/kde4/private/libiris_ksirk.so.${LIBiris_ksirk_VERSION}
+@lib ${KDE4LIB}/libiris_ksirk.so.${LIBiris_ksirk_VERSION}
 @lib lib/libiris_ksirk.so.${LIBiris_ksirk_VERSION}
 share/applications/kde4/ksirk.desktop
 share/applications/kde4/ksirkskineditor.desktop

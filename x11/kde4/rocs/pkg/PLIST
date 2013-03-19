@@ -20,7 +20,7 @@ include/kde4/rocs/Rocs_Typedefs.h
 include/kde4/rocs/ToolsPluginInterface.h
 include/kde4/rocs/Topology.h
 include/kde4/rocs/rocslib_export.h
-@lib lib/kde4/private/librocslib.so.${LIBrocslib_VERSION}
+@lib ${KDE4LIB}/librocslib.so.${LIBrocslib_VERSION}
 lib/kde4/rocs_GMLParser.so
 lib/kde4/rocs_GraphStructure.so
 lib/kde4/rocs_ListStructure.so

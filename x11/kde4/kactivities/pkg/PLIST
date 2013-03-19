@@ -23,7 +23,7 @@ lib/kde4/activitymanager_uihandler_declarative.so
 lib/kde4/activitymanager_uihandler_kdialog.so
 lib/kde4/kactivitymanagerd_fileitem_linking_plugin.so
 lib/kde4/kio_activities.so
-@lib lib/kde4/private/libkactivities.so.${LIBkactivities_VERSION}
+@lib ${KDE4LIB}/libkactivities.so.${LIBkactivities_VERSION}
 @lib lib/libkactivities.so.${LIBkactivities_VERSION}
 lib/pkgconfig/libkactivities.pc
 share/apps/plasma/packages/

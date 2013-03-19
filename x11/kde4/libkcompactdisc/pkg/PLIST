@@ -5,5 +5,5 @@ lib/cmake/libkcompactdisc/
 lib/cmake/libkcompactdisc/LibkcompactdiscConfig.cmake
 lib/cmake/libkcompactdisc/LibkcompactdiscTargets${MODKDE4_CMAKE_PREFIX}.cmake
 lib/cmake/libkcompactdisc/LibkcompactdiscTargets.cmake
-@lib lib/kde4/private/libkcompactdisc.so.${LIBkcompactdisc_VERSION}
+@lib ${KDE4LIB}/libkcompactdisc.so.${LIBkcompactdisc_VERSION}
 @lib lib/libkcompactdisc.so.${LIBkcompactdisc_VERSION}
