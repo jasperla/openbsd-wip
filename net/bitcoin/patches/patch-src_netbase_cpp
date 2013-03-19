@@ -1,4 +1,7 @@
 $OpenBSD$
+
+No AI_ADDRCONFIG.
+
 --- src/netbase.cpp.orig	Tue Oct  9 13:22:09 2012
 +++ src/netbase.cpp	Sat Dec  1 11:40:01 2012
 @@ -72,7 +72,7 @@ bool static LookupIntern(const char *pszName, std::vec
