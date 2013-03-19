@@ -25,8 +25,6 @@ PKG_ARCH-data=	i386,amd64
 # zlib (code) + no modification (data)
 PERMIT_PACKAGE_CDROM=   No
 PERMIT_PACKAGE_FTP=     No
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 WRKDIST=		${WRKDIR}/${N}/src
 AUTOCONF_VERSION=	2.62

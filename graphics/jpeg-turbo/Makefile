@@ -22,9 +22,6 @@ ERRORS =	"Fatal: You must select the turbo flavor. This is jpeg-turbo after all.
 
 # BSD-style
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=libjpeg-turbo/}
 DISTFILES =	libjpeg-turbo-${V}.tar.gz

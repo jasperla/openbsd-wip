@@ -15,9 +15,6 @@ SHARED_LIBS +=           rpm                       1.0 \
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =   Yes
-PERMIT_PACKAGE_FTP =     Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =   Yes
 
 MASTER_SITES =           http://rpm.org/releases/rpm-4.9.x/
 

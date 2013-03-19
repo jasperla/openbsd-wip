@@ -14,9 +14,6 @@ MAINTAINER =	Christian Rueger <cr+openbsd@rueger-net.de>
 
 # Apache2
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 WANTLIB =	${MODPY_WANTLIB}
 
