@@ -11,10 +11,7 @@ HOMEPAGE =	http://ocsigen.org/tyxml/
 
 
 # BSD3
-PERMIT_PACKAGE_FTP =		Yes
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_DISTFILES_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
 
 MODULES =	lang/ocaml
 

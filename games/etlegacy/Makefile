@@ -32,9 +32,6 @@ CONFIGURE_ARGS =	-DINSTALL_DEFAULT_MODDIR:String=share/enemy-territory \
 
 # GPLv3+additions
 PERMIT_PACKAGE_CDROM=		Yes
-PERMIT_PACKAGE_FTP=		Yes
-PERMIT_DISTFILES_CDROM=		Yes
-PERMIT_DISTFILES_FTP=		Yes
 
 post-install:
 	cp ${FILESDIR}/etlegacy.sh ${WRKSRC}/

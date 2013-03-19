@@ -13,9 +13,6 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # custom, see fractsrc.txt
 PERMIT_PACKAGE_CDROM =	 Yes
-PERMIT_PACKAGE_FTP =	 Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	 Yes
 
 WANTLIB += X11 Xft c fontconfig m
 

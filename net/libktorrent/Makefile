@@ -11,10 +11,7 @@ EXTRACT_SUFX =	.tar.bz2
 SHARED_LIBS =	ktorrent	0.0
 
 # GPLv2+
-PERMIT_DISTFILES_CDROM =        Yes
-PERMIT_DISTFILES_FTP =          Yes
 PERMIT_PACKAGE_CDROM =          Yes
-PERMIT_PACKAGE_FTP =            Yes
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg lib/qt4/QtXml

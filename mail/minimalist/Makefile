@@ -17,9 +17,6 @@ MAINTAINER =	Christopher Zimmermann <madroach@gmerlin.de>
 
 # 2-clause BSD
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 SEPARATE_BUILD =	Yes
 

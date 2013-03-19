@@ -10,10 +10,7 @@ EXTRACT_SUFX =	.tar.bz2
 SHARED_LIBS =	qimageblitz         0.0      # .4.0
 
 # 2-clause BSDL
-PERMIT_DISTFILES_CDROM =        Yes
-PERMIT_DISTFILES_FTP =          Yes
 PERMIT_PACKAGE_CDROM =          Yes
-PERMIT_PACKAGE_FTP =            Yes
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/qimageblitz/}
 

@@ -14,7 +14,6 @@ HOMEPAGE =		http://rtmpdump.mplayerhq.hu/
 
 # tools GPLv2+, librtmp LGPLv2.1+
 PERMIT_PACKAGE_CDROM =	No
-PERMIT_PACKAGE_FTP =	Yes
 
 WANTLIB =		c crypto pthread ssl z
 
