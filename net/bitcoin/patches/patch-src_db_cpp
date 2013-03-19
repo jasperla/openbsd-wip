@@ -1,7 +1,10 @@
 $OpenBSD$
---- src/db.cpp.orig	Mon Dec 10 15:47:37 2012
-+++ src/db.cpp	Sat Jan 12 21:07:56 2013
-@@ -87,7 +87,9 @@ bool CDBEnv::Open(boost::filesystem::path pathEnv_)
+
+Build with BerkeleyDB <4.7
+
+--- src/db.cpp.orig	Sun Mar 17 20:35:36 2013
++++ src/db.cpp	Tue Mar 19 12:39:33 2013
+@@ -85,7 +85,9 @@ bool CDBEnv::Open(const boost::filesystem::path& path)
      dbenv.set_errfile(fopen(pathErrorFile.string().c_str(), "a")); /// debug
      dbenv.set_flags(DB_AUTO_COMMIT, 1);
      dbenv.set_flags(DB_TXN_WRITE_NOSYNC, 1);
@@ -11,7 +14,7 @@ $OpenBSD$
      int ret = dbenv.open(strPath.c_str(),
                       DB_CREATE     |
                       DB_INIT_LOCK  |
-@@ -122,7 +124,9 @@ void CDBEnv::MakeMock()
+@@ -120,7 +122,9 @@ void CDBEnv::MakeMock()
      dbenv.set_lk_max_locks(10000);
      dbenv.set_lk_max_objects(10000);
      dbenv.set_flags(DB_AUTO_COMMIT, 1);
