@@ -2,7 +2,7 @@
 
 CATEGORIES =	productivity
 COMMENT =	PIM cache and access services
-DISTNAME =	akonadi-1.9.0
+DISTNAME =	akonadi-1.9.1
 HOMEPAGE =	http://community.kde.org/KDE_PIM/Akonadi
 
 SHARED_LIBS = 	akonadiprotocolinternals 1.0	# 1.0
@@ -33,7 +33,10 @@ RUN_DEPENDS =		misc/shared-mime-info
 LIB_DEPENDS =		STEM->=2.9.0:databases/soprano \
 			devel/boost
 
+# XXX (buggy) dbconfigtest fails due to SQLITE being default
 CONFIGURE_ARGS =	-DDATABASE_BACKEND:String=SQLITE \
 			-DINSTALL_QSQLITE_IN_QT_PREFIX:Bool=Yes
+
+TEST_IS_INTERACTIVE =	X11
 
 .include <bsd.port.mk>
