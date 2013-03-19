@@ -2,7 +2,7 @@
 
 CATEGORIES =	productivity
 COMMENT =	PIM cache and access services
-DISTNAME =	akonadi-1.9.1
+DISTNAME =	akonadi-1.9.0
 HOMEPAGE =	http://community.kde.org/KDE_PIM/Akonadi
 
 SHARED_LIBS = 	akonadiprotocolinternals 1.0	# 1.0
