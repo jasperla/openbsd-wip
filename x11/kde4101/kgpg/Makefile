@@ -1,0 +1,15 @@
+# $OpenBSD$
+
+COMMENT =	K Desktop Environment, interface to GnuPG
+DISTNAME =	kgpg-${MODKDE4_VERSION}
+
+WANTLIB =  lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
+WANTLIB += lib/qt4/QtXml c kabc kcmutils kdeui kemoticons kidletime kio
+WANTLIB += kpimutils kprintutils kresources kutils m pthread solid stdc++
+
+MODKDE4_USE =	pim
+
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+2,-guic
+
+.include <bsd.port.mk>
