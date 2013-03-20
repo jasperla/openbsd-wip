@@ -1,0 +1,60 @@
+Most important note: Redmine will not work in chrooted environment. It needs
+access to Ruby, SCMs, fonts and probably something more.
+
+1. Gantt support for CJK
+========================
+
+For using Gantt charts in CJK, you need to install ja-mplus-ttf package.
+
+
+2. Configuration files tuning
+=============================
+
+After installation you should adjust the following configuration files:
+
+  ${SYSCONFDIR}/configuration.yml
+  ${SYSCONFDIR}/database.yml
+
+database_cipher_key and secret_token should be set separately and unique for
+each new setup in configuration.yml.  You can use the following commands for
+initial setup:
+
+  # perl -pi -e "s/@DBCIPHERKEY@/`mktemp -u $(jot -b X -s '' 40)`/;" \
+             -e "s/@STOKEN@/`mktemp -u $(jot -b X -s '' 40)`/;" \
+             ${SYSCONFDIR}/configuration.yml
+
+If you want to use redmine in a cluster, remember to set those options to the
+same value on all hosts.
+
+
+3. Database setup
+=================
+
+If you want to use MySQL or PosgreSQL database backend, you must install
+an apporiate gem:
+
+         | MySQL                          | PosgreSQL
+---------+--------------------------------+------------------------------------
+JRuby    | activerecord-jdbcmysql-adapter | activerecord-jdbcpostgresql-adapter
+Ruby 1.8 | ruby-mysql                     | ruby-pg
+Other    | ruby-mysql2                    | ruby-pg
+
+Some of those gems are already in OpenBSD packages, please check them first.
+By default, Redmine will use SQLite 3 database /var/redmine/redmine.db.
+
+You need to initialize database schema the first time after installing Redmine
+package, and update each time you do upgrade to a newer version of package
+(RC script will do all that for you on start for "production" enviornment):
+
+  $ cd ${REDMINE} && sudo -u _redmine \
+    ${RAKE} db:migrate RAILS_ENV=production
+
+Also you should run the following after installing or updating any plugin:
+
+  $ cd ${REDMINE} && sudo -u _redmine \
+    ${RAKE} redmine:plugins:migrate RAILS_ENV=production
+
+When installing plugin using the OpenBSD packages, this will be called
+automatically.
+
+# $OpenBSD$

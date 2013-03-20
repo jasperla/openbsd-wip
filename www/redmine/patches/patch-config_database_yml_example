@@ -1,0 +1,41 @@
+$OpenBSD$
+--- config/database.yml.example.orig	Tue Feb 12 23:54:42 2013
++++ config/database.yml.example	Mon Feb 25 16:42:43 2013
+@@ -1,28 +1,23 @@
+-# Default setup is given for MySQL with ruby1.8. If you're running Redmine
++# Default setup is given for SQLite3 with ruby1.8. If you're running Redmine
+ # with MySQL and ruby1.9, replace the adapter name with `mysql2`.
+ # Examples for PostgreSQL and SQLite3 can be found at the end.
+ 
+ production:
+-  adapter: mysql
+-  database: redmine
+-  host: localhost
+-  username: root
+-  password: ""
+-  encoding: utf8
++  adapter: sqlite3
++  database: ${LOCALSTATEDIR}/redmine.db
+ 
+ development:
+-  adapter: mysql
+-  database: redmine_development
+-  host: localhost
+-  username: root
+-  password: ""
+-  encoding: utf8
++  adapter: sqlite3
++  database: ${LOCALSTATEDIR}/redmine_dev.db
+ 
+ # Warning: The database defined as "test" will be erased and
+ # re-generated from your development database when you run "rake".
+ # Do not set this db to the same as development or production.
++
++# If you're running Redmine with MySQL and ruby1.8, replace the adapter
++# name `mysql2` with `mysql`.
+ test:
+-  adapter: mysql
++  adapter: mysql2
+   database: redmine_test
+   host: localhost
+   username: root
