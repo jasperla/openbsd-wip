@@ -2,8 +2,8 @@
 
 COMMENT=		download flash video files from various sites
 
-DISTNAME=		App-get_flash_videos-1.24.20130307
-PKGNAME=		get_flash_videos-1.24.20130307
+DISTNAME=		App-get_flash_videos-1.24.20130320
+PKGNAME=		get_flash_videos-1.24.20130320
 #DISTNAME=		monsieurvideo-get-flash-videos-v1.24_02-292-gc52cdf6
 #PKGNAME=		get_flash_videos-1.24.20121012
 #WRKDIST=		${WRKDIR}/monsieurvideo-get-flash-videos-c52cdf6
@@ -28,7 +28,6 @@ BUILD_DEPENDS=		devel/p5-Tie-IxHash
 RUN_DEPENDS=		devel/p5-Module-Find \
 			devel/p5-Term-ReadKey \
 			devel/p5-Tie-IxHash \
-			multimedia/p5-AMF-Connection \
 			multimedia/p5-Data-AMF \
 			multimedia/p5-Storable-AMF \
 			rtmpdump-*|flvstreamer-*:net/rtmpdump \

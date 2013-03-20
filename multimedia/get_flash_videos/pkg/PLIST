@@ -41,6 +41,7 @@ ${P5SITE}/FlashVideo/Site/Divxstage.pm
 ${P5SITE}/FlashVideo/Site/Ehow.pm
 ${P5SITE}/FlashVideo/Site/Escapistmagazine.pm
 ${P5SITE}/FlashVideo/Site/Expertvillage.pm
+${P5SITE}/FlashVideo/Site/Facebook.pm
 ${P5SITE}/FlashVideo/Site/Filebox.pm
 ${P5SITE}/FlashVideo/Site/Flickr.pm
 ${P5SITE}/FlashVideo/Site/Fliqz.pm
