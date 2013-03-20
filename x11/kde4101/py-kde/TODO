@@ -1,0 +1,4 @@
+/usr/local/include/kconfiggroup.h:627: warning: 'virtual const KConfigGroup KConfigGroup::groupImpl(const QByteArray&) const' was hidden
+/usr/ports/pobj/py-kde-4.9.0/build-i386/sip/kdecore/sipkdecorepart6.cpp:16053: warning:   by 'virtual KConfigGroup sipKConfigGroup::groupImpl(const QByteArray&)'
+/usr/local/include/kconfig.h:387: warning: 'virtual const KConfigGroup KConfig::groupImpl(const QByteArray&) const' was hidden
+/usr/ports/pobj/py-kde-4.9.0/build-i386/sip/kdecore/sipkdecorepart6.cpp:19561: warning:   by 'virtual KConfigGroup sipKConfig::groupImpl(const QByteArray&)'
