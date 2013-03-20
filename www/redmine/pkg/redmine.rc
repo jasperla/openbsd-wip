@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# The first shell word in $daemon_flags should be always the name of
+# Rails enviornment being used, "production" by default.
+daemon="${RUBY} script/rails server -d -e"
+daemon_flags="${MODREDMINE_RAILS_ENV}"
+daemon_user=_redmine
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_start() {
+	local prodname
+	set -A prodname -- ${daemon_flags}
+	install -d -o ${daemon_user} -g ${daemon_user} -m 0750 /tmp/redmine
+	${rcexec} "cd ${REDMINE} && ${RAKE} db:migrate RAILS_ENV=${prodname[0]}"
+	${rcexec} "cd ${REDMINE} && ${daemon} ${daemon_flags}"
+}
+
+rc_cmd $1
