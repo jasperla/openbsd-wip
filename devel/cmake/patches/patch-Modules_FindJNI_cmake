@@ -1,6 +1,6 @@
 $OpenBSD: patch-Modules_FindJNI_cmake,v 1.8 2012/12/05 11:32:04 dcoppa Exp $
---- Modules/FindJNI.cmake.orig	Tue Nov 27 17:26:32 2012
-+++ Modules/FindJNI.cmake	Wed Feb  6 18:28:10 2013
+--- Modules/FindJNI.cmake.orig	Tue Nov 27 14:26:32 2012
++++ Modules/FindJNI.cmake	Wed Dec  5 10:18:21 2012
 @@ -26,6 +26,8 @@
  # (To distribute this file outside of CMake, substitute the full
  #  License text for the above reference.)
@@ -63,20 +63,20 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.8 2012/12/05 11:32:04 dcoppa Exp $
 +if(MODJAVA_VER)
 +  if(MODJAVA_VER MATCHES "^1\\.6$")
 +    JAVA_APPEND_LIBRARY_DIRECTORIES(JAVA_AWT_LIBRARY_DIRECTORIES
-+      /usr/local/jdk-1.6.0/jre/lib/{libarch}
-+      /usr/local/jre-1.6.0/lib/{libarch}
++      ${LOCALBASE}/jdk-1.6.0/jre/lib/{libarch}
++      ${LOCALBASE}/jre-1.6.0/lib/{libarch}
 +      )
 +  elseif(MODJAVA_VER MATCHES "^1\\.6\\+$")
 +    JAVA_APPEND_LIBRARY_DIRECTORIES(JAVA_AWT_LIBRARY_DIRECTORIES
-+      /usr/local/jdk-1.7.0/jre/lib/{libarch}
-+      /usr/local/jre-1.7.0/lib/{libarch}
-+      /usr/local/jdk-1.6.0/jre/lib/{libarch}
-+      /usr/local/jre-1.6.0/lib/{libarch}
++      ${LOCALBASE}/jdk-1.7.0/jre/lib/{libarch}
++      ${LOCALBASE}/jre-1.7.0/lib/{libarch}
++      ${LOCALBASE}/jdk-1.6.0/jre/lib/{libarch}
++      ${LOCALBASE}/jre-1.6.0/lib/{libarch}
 +      )
 +  else(MODJAVA_VER MATCHES "^1\\.6$")
 +    JAVA_APPEND_LIBRARY_DIRECTORIES(JAVA_AWT_LIBRARY_DIRECTORIES
-+      /usr/local/jdk-1.7.0/jre/lib/{libarch}
-+      /usr/local/jre-1.7.0/lib/{libarch}
++      ${LOCALBASE}/jdk-1.7.0/jre/lib/{libarch}
++      ${LOCALBASE}/jre-1.7.0/lib/{libarch}
 +      )
 +  endif(MODJAVA_VER MATCHES "^1\\.6$")
 +else(MODJAVA_VER)
@@ -110,10 +110,10 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.8 2012/12/05 11:32:04 dcoppa Exp $
 +    /usr/lib/jvm/default-java/jre/lib
 +    /usr/lib/jvm/default-java/lib
 +    # OpenBSD specific paths for default JVM
-+    /usr/local/jdk-1.7.0/jre/lib/{libarch}
-+    /usr/local/jre-1.7.0/lib/{libarch}
-+    /usr/local/jdk-1.6.0/jre/lib/{libarch}
-+    /usr/local/jre-1.6.0/lib/{libarch}
++    ${LOCALBASE}/jdk-1.7.0/jre/lib/{libarch}
++    ${LOCALBASE}/jre-1.7.0/lib/{libarch}
++    ${LOCALBASE}/jdk-1.6.0/jre/lib/{libarch}
++    ${LOCALBASE}/jre-1.6.0/lib/{libarch}
 +    )
 +endif(MODJAVA_VER)
  
@@ -126,16 +126,16 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.8 2012/12/05 11:32:04 dcoppa Exp $
 +if(MODJAVA_VER)
 +  if(MODJAVA_VER MATCHES "^1\\.6$")
 +    set(JAVA_AWT_INCLUDE_DIRECTORIES
-+      /usr/local/jdk-1.6.0/include
++      ${LOCALBASE}/jdk-1.6.0/include
 +      )
 +  elseif(MODJAVA_VER MATCHES "^1\\.6\\+$")
 +    set(JAVA_AWT_INCLUDE_DIRECTORIES
-+      /usr/local/jdk-1.7.0/include
-+      /usr/local/jdk-1.6.0/include
++      ${LOCALBASE}/jdk-1.7.0/include
++      ${LOCALBASE}/jdk-1.6.0/include
 +      )
 +  else(MODJAVA_VER MATCHES "^1\\.6$")
 +    set(JAVA_AWT_INCLUDE_DIRECTORIES
-+      /usr/local/jdk-1.7.0/include
++      ${LOCALBASE}/jdk-1.7.0/include
 +      )
 +  endif(MODJAVA_VER MATCHES "^1\\.6$")
 +else(MODJAVA_VER)
@@ -160,8 +160,8 @@ $OpenBSD: patch-Modules_FindJNI_cmake,v 1.8 2012/12/05 11:32:04 dcoppa Exp $
 +    # Debian specific path for default JVM
 +    /usr/lib/jvm/default-java/include
 +    # OpenBSD specific path for default JVM
-+    /usr/local/jdk-1.7.0/include
-+    /usr/local/jdk-1.6.0/include
++    ${LOCALBASE}/jdk-1.7.0/include
++    ${LOCALBASE}/jdk-1.6.0/include
 +    )
 +endif(MODJAVA_VER)
  

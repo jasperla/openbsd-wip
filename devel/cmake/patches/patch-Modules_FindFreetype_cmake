@@ -2,13 +2,13 @@ $OpenBSD: patch-Modules_FindFreetype_cmake,v 1.2 2012/11/15 08:43:25 dcoppa Exp 
 
 Unbreak
 
---- Modules/FindFreetype.cmake.orig	Tue Nov 27 17:26:32 2012
-+++ Modules/FindFreetype.cmake	Wed Feb  6 18:28:10 2013
+--- Modules/FindFreetype.cmake.orig	Tue Nov  6 20:41:36 2012
++++ Modules/FindFreetype.cmake	Mon Nov 12 13:59:46 2012
 @@ -46,6 +46,7 @@ find_path(FREETYPE_INCLUDE_DIR_ft2build ft2build.h
    HINTS
      ENV FREETYPE_DIR
    PATHS
-+    /usr/X11R6
++    ${X11BASE}
      /usr/local/X11R6
      /usr/local/X11
      /usr/freeware
@@ -16,7 +16,7 @@ Unbreak
    HINTS
      ENV FREETYPE_DIR
    PATHS
-+    /usr/X11R6
++    ${X11BASE}
      /usr/local/X11R6
      /usr/local/X11
      /usr/freeware
@@ -24,7 +24,7 @@ Unbreak
      ENV FREETYPE_DIR
    PATH_SUFFIXES lib
    PATHS
-+  /usr/X11R6
++  ${X11BASE}
    /usr/local/X11R6
    /usr/local/X11
    /usr/freeware

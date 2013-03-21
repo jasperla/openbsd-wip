@@ -1,6 +1,6 @@
 $OpenBSD: patch-Modules_FindQt4_cmake,v 1.17 2012/11/22 13:21:49 dcoppa Exp $
---- Modules/FindQt4.cmake.orig	Tue Nov 27 17:26:32 2012
-+++ Modules/FindQt4.cmake	Wed Feb  6 18:28:10 2013
+--- Modules/FindQt4.cmake.orig	Tue Nov  6 20:41:36 2012
++++ Modules/FindQt4.cmake	Thu Nov 22 13:36:47 2012
 @@ -497,13 +497,22 @@ get_filename_component(qt_install_version "[HKEY_CURRE
  # check for qmake
  # Debian uses qmake-qt4
@@ -35,7 +35,7 @@ $OpenBSD: patch-Modules_FindQt4_cmake,v 1.17 2012/11/22 13:21:49 dcoppa Exp $
  
    # Set QT_INCLUDES
    set( QT_INCLUDES ${QT_MKSPECS_DIR}/default ${QT_INCLUDE_DIR} ${QT_QTCORE_INCLUDE_DIR})
-+  list(APPEND QT_INCLUDES "/usr/X11R6/include")
++  list(APPEND QT_INCLUDES "${X11BASE}/include")
  
  
    # ask qmake for the documentation directory

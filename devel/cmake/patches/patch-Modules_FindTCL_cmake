@@ -1,6 +1,6 @@
 $OpenBSD: patch-Modules_FindTCL_cmake,v 1.7 2012/12/05 11:32:04 dcoppa Exp $
---- Modules/FindTCL.cmake.orig	Tue Nov 27 17:26:32 2012
-+++ Modules/FindTCL.cmake	Wed Feb  6 18:28:10 2013
+--- Modules/FindTCL.cmake.orig	Tue Nov 27 14:26:32 2012
++++ Modules/FindTCL.cmake	Wed Dec  5 10:21:21 2012
 @@ -48,19 +48,36 @@ include(CMakeFindFrameworks)
  include(FindTclsh)
  include(FindWish)
@@ -78,10 +78,10 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.7 2012/12/05 11:32:04 dcoppa Exp $
 +    "${TK_LIBRARY_PATH}"
 +    "${TCL_TCLSH_PATH_PARENT}/lib"
 +    "${TK_WISH_PATH_PARENT}/lib"
-+    /usr/local/lib/tcl/tcl8.5
-+    /usr/local/lib/tcl/tk8.5
-+    /usr/local/lib/tcl/tcl8.4
-+    /usr/local/lib/tcl/tk8.4
++    ${LOCALBASE}/lib/tcl/tcl8.5
++    ${LOCALBASE}/lib/tcl/tk8.5
++    ${LOCALBASE}/lib/tcl/tcl8.4
++    ${LOCALBASE}/lib/tcl/tk8.4
 +    )
 +endif()
 +
@@ -214,10 +214,10 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.7 2012/12/05 11:32:04 dcoppa Exp $
 +    /usr/include/tcl8.3
 +    /usr/include/tcl8.2
 +    /usr/include/tcl8.0
-+    /usr/local/include/tcl8.5
-+    /usr/local/include/tk8.5
-+    /usr/local/include/tcl8.4
-+    /usr/local/include/tk8.4
++    ${LOCALBASE}/include/tcl8.5
++    ${LOCALBASE}/include/tk8.5
++    ${LOCALBASE}/include/tcl8.4
++    ${LOCALBASE}/include/tk8.4
 +    )
 +endif()
  
