@@ -3,7 +3,7 @@
 
 COMMENT-main =		bug tracker and project management system
 COMMENT-extra =		some sample files for Redmine
-V =			2.2.3
+V =			2.3.0
 DISTNAME =		redmine-${V}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-extra =		redmine-extra-${V}
@@ -13,9 +13,6 @@ MAINTAINER =		Vadim Zhukov <persgray@gmail.com>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://files.rubyforge.vm.bytemark.co.uk/redmine/
 
@@ -41,7 +38,7 @@ RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			textproc/ruby-builder,${MODRUBY_FLAVOR}>=3.0.0,<3.1 \
 			textproc/ruby-coderay,${MODRUBY_FLAVOR}>=1.0.6,<1.1 \
 			textproc/ruby-fastercsv,${MODRUBY_FLAVOR}>=1.5.0,<1.6 \
-			www/ruby-rails,${MODRUBY_FLAVOR}>=3.2.12,<3.3 \
+			www/ruby-rails,${MODRUBY_FLAVOR}=3.2.13 \
 			www/ruby-jquery-rails,${MODRUBY_FLAVOR}>=2.0.2,<2.1
 
 RUN_DEPENDS-extra =	${BASE_PKGPATH},-main
@@ -52,14 +49,15 @@ CUSTOM_GEMS +=		rmagick
 .endif
 
 .if ${FLAVOR:Mjruby}
-RUN_DEPENDS-main +=	databases/ruby-activerecord-jdbcmysql-adapter,${MODRUBY_FLAVOR} \
+BUILD_DEPENDS +=	lang/jruby>=1.7.0
+RUN_DEPENDS-main +=	databases/ruby-activerecord-jdbc-adapter,${MODRUBY_FLAVOR}=1.2.5 \
+			databases/ruby-activerecord-jdbcmysql-adapter,${MODRUBY_FLAVOR} \
 			databases/ruby-activerecord-jdbcpostgresql-adapter,${MODRUBY_FLAVOR} \
-			databases/ruby-activerecord-jdbcsqlite3-adapter,${MODRUBY_FLAVOR} \
-			security/ruby-jruby-openssl,${MODRUBY_FLAVOR}
-CUSTOM_GEMS +=		activerecord-jdbcmysql-adapter \
+			databases/ruby-activerecord-jdbcsqlite3-adapter,${MODRUBY_FLAVOR}
+CUSTOM_GEMS +=		activerecord-jdbc-adapter \
+			activerecord-jdbcmysql-adapter \
 			activerecord-jdbcpostgresql-adapter \
 			activerecord-jdbcsqlite3-adapter \
-			jruby-openssl
 .else
 RUN_DEPENDS-main +=	databases/ruby-pg,${MODRUBY_FLAVOR}>=0.11.0 \
 			databases/ruby-sqlite3,${MODRUBY_FLAVOR}
@@ -78,7 +76,7 @@ CONFIGURE_STYLE =	none
 NO_BUILD =		Yes
 
 # Needs porting and updating a few things
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 LOCALSTATEDIR =		${BASELOCALSTATEDIR}/redmine
 SYSCONFDIR =		${BASESYSCONFDIR}/redmine

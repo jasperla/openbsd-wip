@@ -2,7 +2,7 @@
 
 COMMENT=	easy email delivery and testing for ruby
 
-VERSION=	3.2.12
+VERSION=	3.2.13
 DISTNAME=	actionmailer-${VERSION}
 CATEGORIES=	mail
 
@@ -13,7 +13,7 @@ MODULES=	lang/ruby
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS= 	devel/ruby-actionpack,${MODRUBY_FLAVOR}=${VERSION} \
-		mail/ruby-mail,${MODRUBY_FLAVOR}>=2.4.4,<2.5
+		mail/ruby-mail,${MODRUBY_FLAVOR}>=2.5.3,<2.6
 
 CONFIGURE_STYLE=ruby gem
 

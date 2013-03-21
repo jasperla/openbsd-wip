@@ -271,7 +271,6 @@ ${GEM_LIB}/gems/${DISTNAME}/guides/source/active_record_querying.textile
 ${GEM_LIB}/gems/${DISTNAME}/guides/source/active_record_validations_callbacks.textile
 ${GEM_LIB}/gems/${DISTNAME}/guides/source/active_resource_basics.textile
 ${GEM_LIB}/gems/${DISTNAME}/guides/source/active_support_core_extensions.textile
-${GEM_LIB}/gems/${DISTNAME}/guides/source/ajax_on_rails.textile
 ${GEM_LIB}/gems/${DISTNAME}/guides/source/api_documentation_guidelines.textile
 ${GEM_LIB}/gems/${DISTNAME}/guides/source/asset_pipeline.textile
 ${GEM_LIB}/gems/${DISTNAME}/guides/source/association_basics.textile

@@ -60,6 +60,7 @@ share/redmine/app/controllers/wikis_controller.rb
 share/redmine/app/controllers/workflows_controller.rb
 share/redmine/app/helpers/
 share/redmine/app/helpers/account_helper.rb
+share/redmine/app/helpers/activities_helper.rb
 share/redmine/app/helpers/admin_helper.rb
 share/redmine/app/helpers/application_helper.rb
 share/redmine/app/helpers/attachments_helper.rb
@@ -87,6 +88,7 @@ share/redmine/app/helpers/queries_helper.rb
 share/redmine/app/helpers/reports_helper.rb
 share/redmine/app/helpers/repositories_helper.rb
 share/redmine/app/helpers/roles_helper.rb
+share/redmine/app/helpers/routes_helper.rb
 share/redmine/app/helpers/search_helper.rb
 share/redmine/app/helpers/settings_helper.rb
 share/redmine/app/helpers/sort_helper.rb
@@ -124,6 +126,7 @@ share/redmine/app/models/issue_custom_field.rb
 share/redmine/app/models/issue_observer.rb
 share/redmine/app/models/issue_priority.rb
 share/redmine/app/models/issue_priority_custom_field.rb
+share/redmine/app/models/issue_query.rb
 share/redmine/app/models/issue_relation.rb
 share/redmine/app/models/issue_status.rb
 share/redmine/app/models/journal.rb
@@ -156,6 +159,7 @@ share/redmine/app/models/time_entry.rb
 share/redmine/app/models/time_entry_activity.rb
 share/redmine/app/models/time_entry_activity_custom_field.rb
 share/redmine/app/models/time_entry_custom_field.rb
+share/redmine/app/models/time_entry_query.rb
 share/redmine/app/models/token.rb
 share/redmine/app/models/tracker.rb
 share/redmine/app/models/user.rb
@@ -176,6 +180,7 @@ share/redmine/app/sweepers/
 share/redmine/app/views/
 share/redmine/app/views/account/
 share/redmine/app/views/account/login.html.erb
+share/redmine/app/views/account/logout.html.erb
 share/redmine/app/views/account/lost_password.html.erb
 share/redmine/app/views/account/password_recovery.html.erb
 share/redmine/app/views/account/register.html.erb
@@ -191,10 +196,12 @@ share/redmine/app/views/admin/projects.html.erb
 share/redmine/app/views/attachments/
 share/redmine/app/views/attachments/_form.html.erb
 share/redmine/app/views/attachments/_links.html.erb
+share/redmine/app/views/attachments/destroy.js.erb
 share/redmine/app/views/attachments/diff.html.erb
 share/redmine/app/views/attachments/file.html.erb
 share/redmine/app/views/attachments/show.api.rsb
 share/redmine/app/views/attachments/upload.api.rsb
+share/redmine/app/views/attachments/upload.js.erb
 share/redmine/app/views/auth_sources/
 share/redmine/app/views/auth_sources/_form.html.erb
 share/redmine/app/views/auth_sources/_form_auth_source_ldap.html.erb
@@ -255,7 +262,7 @@ share/redmine/app/views/groups/_general.html.erb
 share/redmine/app/views/groups/_memberships.html.erb
 share/redmine/app/views/groups/_users.html.erb
 share/redmine/app/views/groups/add_users.js.erb
-share/redmine/app/views/groups/autocomplete_for_user.html.erb
+share/redmine/app/views/groups/autocomplete_for_user.js.erb
 share/redmine/app/views/groups/destroy_membership.js.erb
 share/redmine/app/views/groups/edit.html.erb
 share/redmine/app/views/groups/edit_membership.js.erb
@@ -300,7 +307,6 @@ share/redmine/app/views/issues/_list.html.erb
 share/redmine/app/views/issues/_list_simple.html.erb
 share/redmine/app/views/issues/_relations.html.erb
 share/redmine/app/views/issues/_sidebar.html.erb
-share/redmine/app/views/issues/_update_form.js.erb
 share/redmine/app/views/issues/bulk_edit.html.erb
 share/redmine/app/views/issues/bulk_edit.js.erb
 share/redmine/app/views/issues/destroy.html.erb
@@ -310,6 +316,7 @@ share/redmine/app/views/issues/index.html.erb
 share/redmine/app/views/issues/new.html.erb
 share/redmine/app/views/issues/show.api.rsb
 share/redmine/app/views/issues/show.html.erb
+share/redmine/app/views/issues/update_form.js.erb
 share/redmine/app/views/journals/
 share/redmine/app/views/journals/_notes_form.html.erb
 share/redmine/app/views/journals/diff.html.erb
@@ -358,7 +365,7 @@ share/redmine/app/views/mailer/wiki_content_added.text.erb
 share/redmine/app/views/mailer/wiki_content_updated.html.erb
 share/redmine/app/views/mailer/wiki_content_updated.text.erb
 share/redmine/app/views/members/
-share/redmine/app/views/members/autocomplete.html.erb
+share/redmine/app/views/members/autocomplete.js.erb
 share/redmine/app/views/members/create.js.erb
 share/redmine/app/views/members/destroy.js.erb
 share/redmine/app/views/members/index.api.rsb
@@ -583,7 +590,7 @@ share/redmine/config/database.yml.example
 share/redmine/config/environment.rb
 share/redmine/config/environments/
 share/redmine/config/environments/development.rb
-share/redmine/config/environments/production.rb
+share/redmine/config/environments/${MODREDMINE_RAILS_ENV}.rb
 share/redmine/config/environments/test.rb
 share/redmine/config/environments/test_pgsql.rb
 share/redmine/config/environments/test_sqlite3.rb
@@ -596,6 +603,7 @@ share/redmine/config/initializers/backtrace_silencers.rb
 share/redmine/config/initializers/inflections.rb
 share/redmine/config/locales/
 share/redmine/config/locales/ar.yml
+share/redmine/config/locales/az.yml
 share/redmine/config/locales/bg.yml
 share/redmine/config/locales/bs.yml
 share/redmine/config/locales/ca.yml
@@ -644,14 +652,14 @@ share/redmine/config/locales/zh-TW.yml
 share/redmine/config/locales/zh.yml
 share/redmine/config/preinitializer.rb
 share/redmine/config/routes.rb
+@mode 0640
 @owner _redmine
 @group _redmine
-@mode 0640
 share/redmine/config/settings.yml
 @mode
 share/redmine/db/
-@group
 @owner
+@group
 share/redmine/db/migrate/
 share/redmine/db/migrate/001_setup.rb
 share/redmine/db/migrate/002_issue_move.rb
@@ -862,6 +870,18 @@ share/redmine/db/migrate/20120731164049_add_boards_parent_id.rb
 share/redmine/db/migrate/20120930112914_add_journals_private_notes.rb
 share/redmine/db/migrate/20121026002032_add_enumerations_position_name.rb
 share/redmine/db/migrate/20121026003537_populate_enumerations_position_name.rb
+share/redmine/db/migrate/20121209123234_add_queries_type.rb
+share/redmine/db/migrate/20121209123358_update_queries_to_sti.rb
+share/redmine/db/migrate/20121213084931_add_attachments_disk_directory.rb
+share/redmine/db/migrate/20130110122628_split_documents_permissions.rb
+share/redmine/db/migrate/20130201184705_add_unique_index_on_tokens_value.rb
+share/redmine/db/migrate/20130202090625_add_projects_inherit_members.rb
+share/redmine/db/migrate/20130207175206_add_unique_index_on_custom_fields_trackers.rb
+share/redmine/db/migrate/20130207181455_add_unique_index_on_custom_fields_projects.rb
+share/redmine/db/migrate/20130215073721_change_users_lastname_length_to_255.rb
+share/redmine/db/migrate/20130215111127_add_issues_closed_on.rb
+share/redmine/db/migrate/20130215111141_populate_issues_closed_on.rb
+share/redmine/db/migrate/20130217094251_remove_issues_default_fk_values.rb
 share/redmine/db/schema.rb
 share/redmine/doc/
 share/redmine/doc/CHANGELOG
@@ -1035,32 +1055,6 @@ share/redmine/lib/plugins/awesome_nested_set/test/fixtures/category.rb
 share/redmine/lib/plugins/awesome_nested_set/test/fixtures/departments.yml
 share/redmine/lib/plugins/awesome_nested_set/test/fixtures/notes.yml
 share/redmine/lib/plugins/awesome_nested_set/test/test_helper.rb
-share/redmine/lib/plugins/classic_pagination/
-share/redmine/lib/plugins/classic_pagination/CHANGELOG
-share/redmine/lib/plugins/classic_pagination/README
-share/redmine/lib/plugins/classic_pagination/Rakefile
-share/redmine/lib/plugins/classic_pagination/init.rb
-share/redmine/lib/plugins/classic_pagination/install.rb
-share/redmine/lib/plugins/classic_pagination/lib/
-share/redmine/lib/plugins/classic_pagination/lib/pagination.rb
-share/redmine/lib/plugins/classic_pagination/lib/pagination_helper.rb
-share/redmine/lib/plugins/classic_pagination/test/
-share/redmine/lib/plugins/classic_pagination/test/fixtures/
-share/redmine/lib/plugins/classic_pagination/test/fixtures/companies.yml
-share/redmine/lib/plugins/classic_pagination/test/fixtures/company.rb
-share/redmine/lib/plugins/classic_pagination/test/fixtures/developer.rb
-share/redmine/lib/plugins/classic_pagination/test/fixtures/developers.yml
-share/redmine/lib/plugins/classic_pagination/test/fixtures/developers_projects.yml
-share/redmine/lib/plugins/classic_pagination/test/fixtures/project.rb
-share/redmine/lib/plugins/classic_pagination/test/fixtures/projects.yml
-share/redmine/lib/plugins/classic_pagination/test/fixtures/replies.yml
-share/redmine/lib/plugins/classic_pagination/test/fixtures/reply.rb
-share/redmine/lib/plugins/classic_pagination/test/fixtures/schema.sql
-share/redmine/lib/plugins/classic_pagination/test/fixtures/topic.rb
-share/redmine/lib/plugins/classic_pagination/test/fixtures/topics.yml
-share/redmine/lib/plugins/classic_pagination/test/helper.rb
-share/redmine/lib/plugins/classic_pagination/test/pagination_helper_test.rb
-share/redmine/lib/plugins/classic_pagination/test/pagination_test.rb
 share/redmine/lib/plugins/gravatar/
 share/redmine/lib/plugins/gravatar/.gitignore
 share/redmine/lib/plugins/gravatar/MIT-LICENSE
@@ -1222,7 +1216,6 @@ share/redmine/lib/plugins/rfpdf/utf8test.txt
 share/redmine/lib/redcloth3.rb
 share/redmine/lib/redmine/
 share/redmine/lib/redmine.rb
-share/redmine/lib/redmine/about.rb
 share/redmine/lib/redmine/access_control.rb
 share/redmine/lib/redmine/access_keys.rb
 share/redmine/lib/redmine/activity/
@@ -1258,6 +1251,7 @@ share/redmine/lib/redmine/info.rb
 share/redmine/lib/redmine/menu_manager.rb
 share/redmine/lib/redmine/mime_type.rb
 share/redmine/lib/redmine/notifiable.rb
+share/redmine/lib/redmine/pagination.rb
 share/redmine/lib/redmine/platform.rb
 share/redmine/lib/redmine/plugin.rb
 share/redmine/lib/redmine/pop3.rb
@@ -1399,6 +1393,7 @@ share/redmine/public/images/folder_open_orange.png
 share/redmine/public/images/group.png
 share/redmine/public/images/help.png
 share/redmine/public/images/history.png
+share/redmine/public/images/hourglass.png
 share/redmine/public/images/jstoolbar/
 share/redmine/public/images/jstoolbar/bt_bq.png
 share/redmine/public/images/jstoolbar/bt_bq_remove.png
@@ -1465,9 +1460,12 @@ share/redmine/public/images/zoom_in.png
 share/redmine/public/images/zoom_out.png
 share/redmine/public/javascripts/
 share/redmine/public/javascripts/application.js
+share/redmine/public/javascripts/attachments.js
 share/redmine/public/javascripts/context_menu.js
+share/redmine/public/javascripts/gantt.js
 share/redmine/public/javascripts/i18n/
 share/redmine/public/javascripts/i18n/jquery.ui.datepicker-ar.js
+share/redmine/public/javascripts/i18n/jquery.ui.datepicker-az.js
 share/redmine/public/javascripts/i18n/jquery.ui.datepicker-bg.js
 share/redmine/public/javascripts/i18n/jquery.ui.datepicker-bs.js
 share/redmine/public/javascripts/i18n/jquery.ui.datepicker-ca.js
@@ -1510,12 +1508,13 @@ share/redmine/public/javascripts/i18n/jquery.ui.datepicker-uk.js
 share/redmine/public/javascripts/i18n/jquery.ui.datepicker-vi.js
 share/redmine/public/javascripts/i18n/jquery.ui.datepicker-zh-CN.js
 share/redmine/public/javascripts/i18n/jquery.ui.datepicker-zh-TW.js
-share/redmine/public/javascripts/jquery-1.7.2-ui-1.8.21-ujs-2.0.3.js
+share/redmine/public/javascripts/jquery-1.8.3-ui-1.9.2-ujs-2.0.3.js
 share/redmine/public/javascripts/jstoolbar/
 share/redmine/public/javascripts/jstoolbar/jstoolbar-textile.min.js
 share/redmine/public/javascripts/jstoolbar/jstoolbar.js
 share/redmine/public/javascripts/jstoolbar/lang/
 share/redmine/public/javascripts/jstoolbar/lang/jstoolbar-ar.js
+share/redmine/public/javascripts/jstoolbar/lang/jstoolbar-az.js
 share/redmine/public/javascripts/jstoolbar/lang/jstoolbar-bg.js
 share/redmine/public/javascripts/jstoolbar/lang/jstoolbar-bs.js
 share/redmine/public/javascripts/jstoolbar/lang/jstoolbar-ca.js
@@ -1562,6 +1561,7 @@ share/redmine/public/javascripts/jstoolbar/lang/jstoolbar-vi.js
 share/redmine/public/javascripts/jstoolbar/lang/jstoolbar-zh-tw.js
 share/redmine/public/javascripts/jstoolbar/lang/jstoolbar-zh.js
 share/redmine/public/javascripts/jstoolbar/textile.js
+share/redmine/public/javascripts/project_identifier.js
 share/redmine/public/javascripts/raphael.js
 share/redmine/public/javascripts/repository_navigation.js
 share/redmine/public/javascripts/revision_graph.js
@@ -1586,7 +1586,7 @@ share/redmine/public/stylesheets/jquery/images/ui-icons_222222_256x240.png
 share/redmine/public/stylesheets/jquery/images/ui-icons_759fcf_256x240.png
 share/redmine/public/stylesheets/jquery/images/ui-icons_ffd27a_256x240.png
 share/redmine/public/stylesheets/jquery/images/ui-icons_ffffff_256x240.png
-share/redmine/public/stylesheets/jquery/jquery-ui-1.8.21.css
+share/redmine/public/stylesheets/jquery/jquery-ui-1.9.2.css
 share/redmine/public/stylesheets/jstoolbar.css
 share/redmine/public/stylesheets/rtl.css
 share/redmine/public/stylesheets/scm.css
