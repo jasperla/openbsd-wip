@@ -360,11 +360,9 @@ lib/kde4/plasma_engine_systemmonitor.so
 lib/kde4/plasma_engine_tasks.so
 lib/kde4/plasma_engine_time.so
 lib/kde4/plasma_engine_weather.so
-lib/kde4/plasma_package_ggl.so
 lib/kde4/plasma_packagestructure_dashboard.so
 lib/kde4/plasma_packagestructure_share.so
 lib/kde4/plasma_packagestructure_web.so
-lib/kde4/plasma_scriptengine_ggl.so
 lib/kde4/plasma_toolbox_desktoptoolbox.so
 lib/kde4/plasma_toolbox_nettoolbox.so
 lib/kde4/plasma_toolbox_paneltoolbox.so
@@ -2294,7 +2292,6 @@ share/kde4/services/plasma-layout-org.kde.plasma-netbook.defaultPage.desktop
 share/kde4/services/plasma-layout-org.kde.plasma-netbook.defaultPanel.desktop
 share/kde4/services/plasma-layout-org.kde.plasma-netbook.defaultSal.desktop
 share/kde4/services/plasma-packagestructure-dashboard.desktop
-share/kde4/services/plasma-packagestructure-googlegadgets.desktop
 share/kde4/services/plasma-packagestructure-share.desktop
 share/kde4/services/plasma-packagestructure-web.desktop
 share/kde4/services/plasma-pager-default.desktop
@@ -2330,7 +2327,6 @@ share/kde4/services/plasma-scriptengine-applet-dashboard.desktop
 share/kde4/services/plasma-scriptengine-applet-python.desktop
 share/kde4/services/plasma-scriptengine-applet-web.desktop
 share/kde4/services/plasma-scriptengine-dataengine-python.desktop
-share/kde4/services/plasma-scriptengine-googlegadgets.desktop
 share/kde4/services/plasma-scriptengine-ruby-applet.desktop
 share/kde4/services/plasma-scriptengine-ruby-dataengine.desktop
 share/kde4/services/plasma-scriptengine-runner-python.desktop
