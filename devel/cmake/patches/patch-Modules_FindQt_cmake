@@ -1,11 +1,11 @@
 $OpenBSD: patch-Modules_FindQt_cmake,v 1.3 2012/11/15 08:43:25 dcoppa Exp $
---- Modules/FindQt.cmake.orig	Tue Nov 27 17:26:32 2012
-+++ Modules/FindQt.cmake	Wed Feb  6 18:28:10 2013
+--- Modules/FindQt.cmake.orig	Tue Nov  6 20:41:36 2012
++++ Modules/FindQt.cmake	Mon Nov 12 14:03:53 2012
 @@ -31,6 +31,12 @@
  #  License text for the above reference.)
  
  # look for signs of qt3 installations
-+file(GLOB GLOB_TEMP_VAR /usr/local/lib/qt3/bin/qmake)
++file(GLOB GLOB_TEMP_VAR ${LOCALBASE}/lib/qt3/bin/qmake)
 +if(GLOB_TEMP_VAR)
 +  set(QT3_INSTALLED TRUE)
 +endif()
@@ -18,7 +18,7 @@ $OpenBSD: patch-Modules_FindQt_cmake,v 1.3 2012/11/15 08:43:25 dcoppa Exp $
  set(GLOB_TEMP_VAR)
  
  # look for qt4 installations
-+file(GLOB GLOB_TEMP_VAR /usr/local/lib/qt4/bin/qmake)
++file(GLOB GLOB_TEMP_VAR ${LOCALBASE}/lib/qt4/bin/qmake)
 +if(GLOB_TEMP_VAR)
 +  set(QT4_INSTALLED TRUE)
 +endif()
@@ -31,7 +31,7 @@ $OpenBSD: patch-Modules_FindQt_cmake,v 1.3 2012/11/15 08:43:25 dcoppa Exp $
    "[HKEY_CURRENT_USER\\Software\\Trolltech\\Versions\\4.0.0;InstallDir]/include/Qt"
    ${qt_headers}/Qt
    $ENV{QTDIR}/include/Qt
-+  /usr/local/include/X11/qt4/Qt
++  ${LOCALBASE}/include/X11/qt4/Qt
    /usr/local/qt/include/Qt
    /usr/local/include/Qt
    /usr/lib/qt/include/Qt
@@ -39,7 +39,7 @@ $OpenBSD: patch-Modules_FindQt_cmake,v 1.3 2012/11/15 08:43:25 dcoppa Exp $
    "[HKEY_CURRENT_USER\\Software\\Trolltech\\Qt3Versions\\3.1.0;InstallDir]/include/Qt"
    C:/Qt/3.3.3Educational/include
    $ENV{QTDIR}/include
-+  /usr/local/include/X11/qt3
++  ${LOCALBASE}/include/X11/qt3
    /usr/include/qt3/Qt
    /usr/local/qt/include
    /usr/local/include

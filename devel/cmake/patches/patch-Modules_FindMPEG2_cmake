@@ -1,6 +1,6 @@
 $OpenBSD: patch-Modules_FindMPEG2_cmake,v 1.5 2012/11/15 08:43:25 dcoppa Exp $
---- Modules/FindMPEG2.cmake.orig	Tue Nov 27 17:26:32 2012
-+++ Modules/FindMPEG2.cmake	Wed Feb  6 18:28:10 2013
+--- Modules/FindMPEG2.cmake.orig	Tue Nov  6 20:41:36 2012
++++ Modules/FindMPEG2.cmake	Mon Nov 12 14:02:50 2012
 @@ -21,27 +21,21 @@
  #  License text for the above reference.)
  
@@ -8,12 +8,12 @@ $OpenBSD: patch-Modules_FindMPEG2_cmake,v 1.5 2012/11/15 08:43:25 dcoppa Exp $
 -  NAMES mpeg2.h mpeg2dec/mpeg2.h
 -  PATHS /usr/local/livid
 +  NAMES mpeg2dec/mpeg2.h
-+  PATHS /usr/local/include
++  PATHS ${LOCALBASE}/include
  )
  
  find_library(MPEG2_mpeg2_LIBRARY mpeg2
 -  /usr/local/livid/mpeg2dec/libmpeg2/.libs
-+  /usr/local/lib
++  ${LOCALBASE}/lib
  )
  
 -find_library( MPEG2_vo_LIBRARY vo

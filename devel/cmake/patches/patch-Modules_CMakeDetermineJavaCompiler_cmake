@@ -1,6 +1,6 @@
 $OpenBSD: patch-Modules_CMakeDetermineJavaCompiler_cmake,v 1.6 2012/12/05 11:32:04 dcoppa Exp $
---- Modules/CMakeDetermineJavaCompiler.cmake.orig	Tue Nov 27 17:26:32 2012
-+++ Modules/CMakeDetermineJavaCompiler.cmake	Wed Feb  6 18:28:10 2013
+--- Modules/CMakeDetermineJavaCompiler.cmake.orig	Tue Nov 27 14:26:32 2012
++++ Modules/CMakeDetermineJavaCompiler.cmake	Wed Dec  5 10:15:58 2012
 @@ -16,6 +16,8 @@
  # NOTE, a generator may set CMAKE_Java_COMPILER before
  # loading this file to force a compiler.
@@ -38,14 +38,14 @@ $OpenBSD: patch-Modules_CMakeDetermineJavaCompiler_cmake,v 1.6 2012/12/05 11:32:
 -    )
 +  if(MODJAVA_VER)
 +    if(MODJAVA_VER MATCHES "^1\\.6$")
-+      set(Java_BIN_PATH /usr/local/jdk-1.6.0/bin)
++      set(Java_BIN_PATH ${LOCALBASE}/jdk-1.6.0/bin)
 +    elseif(MODJAVA_VER MATCHES "^1\\.6\\+$")
 +      set(Java_BIN_PATH
-+        /usr/local/jdk-1.7.0/bin
-+        /usr/local/jdk-1.6.0/bin
++        ${LOCALBASE}/jdk-1.7.0/bin
++        ${LOCALBASE}/jdk-1.6.0/bin
 +        )
 +    else(MODJAVA_VER MATCHES "^1\\.6$")
-+      set(Java_BIN_PATH /usr/local/jdk-1.7.0/bin)
++      set(Java_BIN_PATH ${LOCALBASE}/jdk-1.7.0/bin)
 +    endif(MODJAVA_VER MATCHES "^1\\.6$")
 +  else(MODJAVA_VER)
 +    set(Java_BIN_PATH
@@ -69,8 +69,8 @@ $OpenBSD: patch-Modules_CMakeDetermineJavaCompiler_cmake,v 1.6 2012/12/05 11:32:
 +      /usr/java/j2sdk1.4.2_09/bin
 +      /usr/lib/j2sdk1.5-sun/bin
 +      /opt/sun-jdk-1.5.0.04/bin
-+      /usr/local/jdk-1.7.0/bin
-+      /usr/local/jdk-1.6.0/bin
++      ${LOCALBASE}/jdk-1.7.0/bin
++      ${LOCALBASE}/jdk-1.6.0/bin
 +      )
 +  endif(MODJAVA_VER)
    # if no compiler has been specified yet, then look for one
