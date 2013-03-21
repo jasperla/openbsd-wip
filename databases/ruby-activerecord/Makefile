@@ -2,7 +2,7 @@
 
 COMMENT =	object relation model implementation for ruby
 
-VERSION =	3.2.12
+VERSION =	3.2.13
 DISTNAME =	activerecord-${VERSION}
 CATEGORIES =	databases
 

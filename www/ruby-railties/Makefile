@@ -2,7 +2,7 @@
 
 COMMENT=	glues the Ruby on Rails framework together
 
-VERSION=	3.2.12
+VERSION=	3.2.13
 DISTNAME=	railties-${VERSION}
 CATEGORIES=	www
 

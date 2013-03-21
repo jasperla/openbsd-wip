@@ -2,7 +2,7 @@
 
 COMMENT =	wraps web resources in model classes
 
-VERSION =	3.2.12
+VERSION =	3.2.13
 DISTNAME =	activeresource-${VERSION}
 CATEGORIES =	www
 

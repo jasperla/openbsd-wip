@@ -1,6 +1,6 @@
 $OpenBSD$
---- config/configuration.yml.example.orig	Mon Feb 25 14:47:05 2013
-+++ config/configuration.yml.example	Mon Feb 25 15:36:29 2013
+--- config/configuration.yml.example.orig	Wed Mar 20 00:32:31 2013
++++ config/configuration.yml.example	Thu Mar 21 14:32:13 2013
 @@ -80,33 +80,27 @@
  
  # default configuration options for all environments
@@ -45,7 +45,7 @@ $OpenBSD$
  
    # Configuration of SCM executable command.
    #
-@@ -145,7 +139,7 @@ default:
+@@ -151,7 +145,7 @@ default:
    # * decrypt data using 'rake db:decrypt RAILS_ENV=production' first
    # * change the cipher key here in your configuration file
    # * encrypt data using 'rake db:encrypt RAILS_ENV=production'
@@ -54,7 +54,7 @@ $OpenBSD$
  
    # Set this to false to disable plugins' assets mirroring on startup.
    # You can use `rake redmine:plugins:assets` to manually mirror assets
-@@ -160,11 +154,11 @@ default:
+@@ -166,11 +160,11 @@ default:
    #
    # If you have a load-balancing Redmine cluster, you have to use the
    # same secret token on each machine.
@@ -68,7 +68,7 @@ $OpenBSD$
  
    # Configuration of RMagcik font.
    #
-@@ -186,7 +180,11 @@ default:
+@@ -192,7 +186,11 @@ default:
    #   Linux:
    #     rmagick_font_path: /usr/share/fonts/ipa-mincho/ipam.ttf
    #
@@ -79,5 +79,5 @@ $OpenBSD$
 +  #
 +  rmagick_font_path: ${LOCALBASE}/lib/X11/fonts/mplus/ipam.ttf
  
- # specific configuration options for production environment
- # that overrides the default ones
+   # Maximum number of simultaneous AJAX uploads
+   #max_concurrent_ajax_uploads: 2
