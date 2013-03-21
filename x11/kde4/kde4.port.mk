@@ -184,7 +184,7 @@ FLAVORS +=	debug
 # Set up directories, avoiding conflicts with KDE3.
 # Libraries are handled in kde4-post-install target, see below.
 MODKDE4_INCLUDE_DIR =	include/kde4
-MODKDE4_LIB_DIR =	lib/kde4/opri
+MODKDE4_LIB_DIR =	lib/kde4/libs
 
 # shortcut to make WANTLIBs and PLISTs more readable
 KDE4LIB =		${MODKDE4_LIB_DIR}
