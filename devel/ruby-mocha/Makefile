@@ -9,9 +9,6 @@ HOMEPAGE =	http://mocha.rubyforge.org/
 
 # MIT License
 PERMIT_PACKAGE_CDROM =   Yes
-PERMIT_PACKAGE_FTP =     Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =   Yes
 
 MODULES =	lang/ruby
 
@@ -22,6 +19,6 @@ RUN_DEPENDS =	${MODRUBY_RAKE_DEPENDS} \
 CONFIGURE_STYLE = ruby gem
 
 # requires more stuff
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 .include <bsd.port.mk>
