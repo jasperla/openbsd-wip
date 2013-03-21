@@ -165,7 +165,7 @@ is_built() {
 }
 
 is_tested() {
-	test -e "`cd $1 && make show=_REGRESS_COOKIE`"
+	test -e "`cd $1 && make show=_TEST_COOKIE`"
 }
 
 is_packaged() {
