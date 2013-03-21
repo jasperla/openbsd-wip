@@ -73,8 +73,6 @@ LIB_DEPENDS =	audio/xmms \
 		devel/libusb-compat \
 		graphics/qimageblitz \
 		math/qalculate/libqalculate \
-		misc/google-gadgets \
-		misc/google-gadgets,,-qt \
 		misc/gpsd \
 		sysutils/consolekit \
 		x11/dbusmenu-qt \
