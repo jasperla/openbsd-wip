@@ -1,5 +1,3 @@
-- build enet seperately from port Makefile
-- honour CXXFLAGS without breaking enet build
 - install examples in correct dir
 
 - has problems on radeon r300, from dmesg:
