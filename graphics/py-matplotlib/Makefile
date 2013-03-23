@@ -15,7 +15,7 @@ HOMEPAGE=	http://matplotlib.sourceforge.net/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat ffi
+WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo ffi
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0 harfbuzz
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
@@ -35,11 +35,10 @@ RUN_DEPENDS=	math/py-numpy \
 		${MODPY_TKINTER_DEPENDS}
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	graphics/png
+TEST_DEPENDS =	graphics/py-matplotlib
 
 MAKE_ENV+=	EXTRA_INCLUDES="${WRKSRC} ${LOCALBASE}/include/libpng ${MODTCL_INCDIR} ${MODTK_INCDIR}" \
 		LDSHARED="${CC} -shared -fPIC"
-
-NO_TEST=	Yes
 
 post-install:
 	# Make examples use MODPY_VER
@@ -51,5 +50,10 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-matplotlib
 	(set -e ; cd ${WRKSRC}/examples ; tar cf - . | \
 	    (set -e ; cd ${PREFIX}/share/examples/py-matplotlib ; tar xf - ))
+
+# Do not run `make update-plist` after running tests or you will end
+# up with the test outcomes in the PLIST.
+do-test:
+	cd ${WRKSRC}/examples/tests && ${MODPY_BIN} backend_driver.py
 
 .include <bsd.port.mk>
