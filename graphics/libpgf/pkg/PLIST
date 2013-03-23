@@ -7,44 +7,7 @@ include/libpgf/PGFtypes.h
 lib/libpgf.a
 @comment lib/libpgf.la
 @lib lib/libpgf.so.${LIBpgf_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libpgf.pc
-@comment @man man/man3/BitStream.h.3
-@man man/man3/CDecoder.3
-@man man/man3/CDecoder_CMacroBlock.3
-@man man/man3/CEncoder.3
-@man man/man3/CEncoder_CMacroBlock.3
-@man man/man3/CPGFFileStream.3
-@man man/man3/CPGFImage.3
-@man man/man3/CPGFMemoryStream.3
-@man man/man3/CPGFStream.3
-@man man/man3/CSubband.3
-@man man/man3/CWaveletTransform.3
-@comment @man man/man3/Decoder.cpp.3
-@comment @man man/man3/Decoder.h.3
-@comment @man man/man3/Encoder.cpp.3
-@comment @man man/man3/Encoder.h.3
-@man man/man3/IOException.3
-@man man/man3/PGFHeader.3
-@man man/man3/PGFMagicVersion.3
-@man man/man3/PGFPostHeader.3
-@man man/man3/PGFPreHeader.3
-@man man/man3/PGFRect.3
-@comment @man man/man3/PGFimage.cpp.3
-@comment @man man/man3/PGFimage.h.3
-@comment @man man/man3/PGFplatform.h.3
-@comment @man man/man3/PGFstream.cpp.3
-@comment @man man/man3/PGFstream.h.3
-@comment @man man/man3/PGFtypes.h.3
-@man man/man3/ROIBlockHeader.3
-@man man/man3/ROIBlockHeader_RBH.3
-@comment @man man/man3/Subband.cpp.3
-@comment @man man/man3/Subband.h.3
-@comment @man man/man3/WaveletTransform.cpp.3
-@comment @man man/man3/WaveletTransform.h.3
-@man man/man3/_usr_ports_pobj_${PKGNAME}_libpgf_include_.3
-@man man/man3/_usr_ports_pobj_${PKGNAME}_libpgf_src_.3
-@comment @man man/man3/config.h.3
 share/doc/${PKGNAME}/
 share/doc/${PKGNAME}/html/
 share/doc/${PKGNAME}/html/BitStream_8h.html
