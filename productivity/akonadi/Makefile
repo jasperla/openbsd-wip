@@ -24,13 +24,12 @@ MODKDE4_USE =
 # We build support for MySQL and PostgreSQL but SQLite
 # is our default now.
 BUILD_DEPENDS =		databases/mysql,-server \
-			x11/qt4 \
 			x11/qt4,-mysql \
 			x11/qt4,-postgresql
 
 RUN_DEPENDS =		misc/shared-mime-info
 
-LIB_DEPENDS =		STEM->=2.9.0:databases/soprano \
+LIB_DEPENDS =		databases/soprano>=2.9.0 \
 			devel/boost
 
 # XXX (buggy) dbconfigtest fails due to SQLITE being default
