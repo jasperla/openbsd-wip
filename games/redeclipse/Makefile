@@ -28,7 +28,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 RUN_DEPENDS-main +=	${BASE_PKGPATH},-data \
 			devel/desktop-file-utils
 
-BUILD_DEPENDS-main=	textproc/gsed
+BUILD_DEPENDS=		textproc/gsed
 LIB_DEPENDS-main=	devel/sdl \
 			devel/sdl-mixer \
 			devel/sdl-image \
