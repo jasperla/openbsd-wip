@@ -57,6 +57,8 @@ CONFIGURE_ARGS +=	--disable-perl
 # Requires MIT Kerberos
 CONFIGURE_ARGS +=	--disable-krb
 
+TEST_IS_INTERACTIVE =	Yes
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/virtuoso
 	mv ${WRKINST}/var/virtuoso/* ${PREFIX}/share/virtuoso
