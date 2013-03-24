@@ -1191,7 +1191,6 @@ share/doc/HTML/it/kstars/lightcurves.docbook
 share/doc/HTML/it/kstars/luminosity.docbook
 share/doc/HTML/it/kstars/magnitude.docbook
 share/doc/HTML/it/kstars/meridian.docbook
-share/doc/HTML/it/kstars/observinglist.docbook
 share/doc/HTML/it/kstars/obsplanner.docbook
 share/doc/HTML/it/kstars/parallax.docbook
 share/doc/HTML/it/kstars/precession.docbook
@@ -1784,6 +1783,7 @@ share/locale/it/LC_MESSAGES/kscreenlocker.mo
 share/locale/it/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/it/LC_MESSAGES/kscreensaver.mo
 share/locale/it/LC_MESSAGES/ksendemail.mo
+share/locale/it/LC_MESSAGES/ksgrd.mo
 share/locale/it/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/it/LC_MESSAGES/kshisen.mo
 share/locale/it/LC_MESSAGES/kshorturifilter.mo
@@ -1917,6 +1917,7 @@ share/locale/it/LC_MESSAGES/nepomukbackup.mo
 share/locale/it/LC_MESSAGES/nepomukcleaner.mo
 share/locale/it/LC_MESSAGES/nepomukcontroller.mo
 share/locale/it/LC_MESSAGES/nepomukfileindexer.mo
+share/locale/it/LC_MESSAGES/nepomukpimindexerutility.mo
 share/locale/it/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/it/LC_MESSAGES/nepomukserver.mo
 share/locale/it/LC_MESSAGES/nepomukservicestub.mo

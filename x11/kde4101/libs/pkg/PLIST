@@ -2066,31 +2066,31 @@ lib/kde4/notepadpart.so
 @lib ${KDE4LIB}/libplasma.so.${LIBplasma_VERSION}
 @lib ${KDE4LIB}/libsolid.so.${LIBsolid_VERSION}
 @lib ${KDE4LIB}/libthreadweaver.so.${LIBthreadweaver_VERSION}
-${KDE4LIB}lugins/designer/
-${KDE4LIB}lugins/designer/kde3supportwidgets.so
-${KDE4LIB}lugins/designer/kdedeprecated.so
-${KDE4LIB}lugins/designer/kdewebkitwidgets.so
-${KDE4LIB}lugins/designer/kdewidgets.so
-${KDE4LIB}lugins/imageformats/
-${KDE4LIB}lugins/imageformats/kimg_dds.so
-${KDE4LIB}lugins/imageformats/kimg_eps.so
-${KDE4LIB}lugins/imageformats/kimg_exr.so
-${KDE4LIB}lugins/imageformats/kimg_jp2.so
-${KDE4LIB}lugins/imageformats/kimg_pcx.so
-${KDE4LIB}lugins/imageformats/kimg_pic.so
-${KDE4LIB}lugins/imageformats/kimg_psd.so
-${KDE4LIB}lugins/imageformats/kimg_ras.so
-${KDE4LIB}lugins/imageformats/kimg_rgb.so
-${KDE4LIB}lugins/imageformats/kimg_tga.so
-${KDE4LIB}lugins/imageformats/kimg_xcf.so
-${KDE4LIB}lugins/imageformats/kimg_xview.so
-${KDE4LIB}lugins/kauth/
-${KDE4LIB}lugins/kauth/backend/
-${KDE4LIB}lugins/kauth/backend/kauth_backend_plugin.so
-${KDE4LIB}lugins/kauth/helper/
-${KDE4LIB}lugins/kauth/helper/kauth_helper_plugin.so
-${KDE4LIB}lugins/script/
-${KDE4LIB}lugins/script/libkrossqtsplugin.so
+lib/kde4/plugins/designer/
+lib/kde4/plugins/designer/kde3supportwidgets.so
+lib/kde4/plugins/designer/kdedeprecated.so
+lib/kde4/plugins/designer/kdewebkitwidgets.so
+lib/kde4/plugins/designer/kdewidgets.so
+lib/kde4/plugins/imageformats/
+lib/kde4/plugins/imageformats/kimg_dds.so
+lib/kde4/plugins/imageformats/kimg_eps.so
+lib/kde4/plugins/imageformats/kimg_exr.so
+lib/kde4/plugins/imageformats/kimg_jp2.so
+lib/kde4/plugins/imageformats/kimg_pcx.so
+lib/kde4/plugins/imageformats/kimg_pic.so
+lib/kde4/plugins/imageformats/kimg_psd.so
+lib/kde4/plugins/imageformats/kimg_ras.so
+lib/kde4/plugins/imageformats/kimg_rgb.so
+lib/kde4/plugins/imageformats/kimg_tga.so
+lib/kde4/plugins/imageformats/kimg_xcf.so
+lib/kde4/plugins/imageformats/kimg_xview.so
+lib/kde4/plugins/kauth/
+lib/kde4/plugins/kauth/backend/
+lib/kde4/plugins/kauth/backend/kauth_backend_plugin.so
+lib/kde4/plugins/kauth/helper/
+lib/kde4/plugins/kauth/helper/kauth_helper_plugin.so
+lib/kde4/plugins/script/
+lib/kde4/plugins/script/libkrossqtsplugin.so
 lib/kde4/spellcheckplugin.so
 @lib lib/libkcmutils.so.${LIBkcmutils_VERSION}
 @lib lib/libkde3support.so.${LIBkde3support_VERSION}

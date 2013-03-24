@@ -13,17 +13,13 @@ MULTI_PACKAGES =	-main -java
 PSEUDO_FLAVORS =	no_java
 FLAVOR ?=
 
-WANTLIB-common =  ${WANTLIB}
-WANTLIB-common += c m pthread stdc++
-WANTLIB-common += lib/qt4/QtDBus lib/qt4/QtScript lib/qt4/QtXml
-WANTLIB-common += krosscore
+WANTLIB =  c m pthread stdc++
+WANTLIB += lib/qt4/QtDBus lib/qt4/QtScript lib/qt4/QtXml
+WANTLIB += ${KDE4LIB}/krosscore
 
-WANTLIB-main =  ${WANTLIB-common}
+WANTLIB-main =  ${WANTLIB} ${MODPY_WANTLIB}
 WANTLIB-main += lib/qt4/QtGui
-WANTLIB-main += kpty
-WANTLIB-main += ${MODPY_WANTLIB}
-
-WANTLIB-java =  ${WANTLIB-common}
+WANTLIB-main += ${KDE4LIB}/kpty
 
 MODULES =		lang/python
 MODKDE4_USE =		libs
@@ -31,9 +27,9 @@ MODKDE4_USE =		libs
 # Unported
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_FALCON:Bool=Yes
 
-# XXX Ruby 1.9 support is broken
+# XXX Ruby 1.9 support is broken, and FindRuby doesn't find 1.8
 #MODULES =		lang/python lang/ruby
-#MODRUBY_REV =		1.9
+#MODRUBY_REV =		1.8
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Ruby:Bool=Yes
 
 .if ${FLAVOR:Mno_java}
