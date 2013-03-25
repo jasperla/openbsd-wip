@@ -4,7 +4,7 @@ CATEGORIES =	productivity
 COMMENT =	link Akonadi to Google services
 V =		0.4.0
 DISTNAME =	libkgapi-$V
-REVISION =	3
+REVISION =	4
 
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/libkgapi/$V/src/}
@@ -17,12 +17,16 @@ PERMIT_PACKAGE_CDROM =		Yes
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtWebKit lib/qt4/QtXml
-WANTLIB += kabc kcalcore kdeui kdewebkit kio kmime kparts kresources
-WANTLIB += nepomuk nepomukutils qjson soprano
+WANTLIB += ${KDE4LIB}/kabc ${KDE4LIB}/kcalcore ${KDE4LIB}/kdeui
+WANTLIB += ${KDE4LIB}/kdewebkit ${KDE4LIB}/kio ${KDE4LIB}/kmime
+WANTLIB += ${KDE4LIB}/kparts ${KDE4LIB}/kresources ${KDE4LIB}/nepomuk
+WANTLIB += ${KDE4LIB}/nepomukutils
+WANTLIB += qjson soprano
 
-MODULES =	x11/kde4
-MODKDE4_USE =	libs pim
+MODULES =		x11/kde4
+MODKDE4_USE =		libs pim
+MODKDE4_LIB_LINKS =	Yes
 
-LIB_DEPENDS =	devel/qjson
+LIB_DEPENDS =		devel/qjson
 
 .include <bsd.port.mk>
