@@ -3,6 +3,7 @@ bin/redeclipse
 bin/redeclipse-server
 lib/redeclipse/
 lib/redeclipse/data
+lib/redeclipse/game
 @bin lib/redeclipse/redeclipse
 @bin lib/redeclipse/redeclipse-server
 @man man/man6/redeclipse-server.6
@@ -11,7 +12,6 @@ share/applications/
 share/applications/redeclipse.desktop
 share/doc/redeclipse/
 share/doc/redeclipse/examples/
-share/doc/redeclipse/examples/servexec.cfg
 share/doc/redeclipse/examples/servinit.cfg
 share/doc/redeclipse/guidelines.txt
 share/icons/

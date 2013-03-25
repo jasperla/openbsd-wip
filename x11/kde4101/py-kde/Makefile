@@ -9,11 +9,15 @@ MODULES =	lang/python
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
-WANTLIB += akonadi-kde akonadi-kmime
-WANTLIB += kcmutils kdeui kdnssd kemoticons kfile khtml
-WANTLIB += kidletime kio kjs knewstuff2 knewstuff3 kparts kprintutils
-WANTLIB += kpty ktexteditor kutils nepomuk nepomukquery nepomukutils
-WANTLIB += phonon_s plasma solid soprano sopranoclient sopranoserver
+WANTLIB += ${KDE4LIB}/kcmutils ${KDE4LIB}/kdeui ${KDE4LIB}/kdnssd
+WANTLIB += ${KDE4LIB}/kemoticons ${KDE4LIB}/kfile ${KDE4LIB}/khtml
+WANTLIB += ${KDE4LIB}/kidletime ${KDE4LIB}/kio ${KDE4LIB}/kjs
+WANTLIB += ${KDE4LIB}/knewstuff2 ${KDE4LIB}/knewstuff3 ${KDE4LIB}/kparts
+WANTLIB += ${KDE4LIB}/kprintutils ${KDE4LIB}/kpty ${KDE4LIB}/ktexteditor
+WANTLIB += ${KDE4LIB}/kutils ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukquery
+WANTLIB += ${KDE4LIB}/nepomukutils ${KDE4LIB}/phonon_s ${KDE4LIB}/plasma
+WANTLIB += ${KDE4LIB}/solid
+WANTLIB += akonadi-kde akonadi-kmime soprano sopranoclient sopranoserver
 WANTLIB += ${MODPY_WANTLIB}
 
 VMEM_WARNING =  Yes
@@ -29,7 +33,7 @@ RUN_DEPENDS =	x11/kde4/nepomuk-core>=${MODKDE4_DEP_VERSION} \
 		misc/shared-desktop-ontologies \
 		x11/py-qt4>=4.9.5
 
-LIB_DEPENDS = 	databases/soprano
+LIB_DEPENDS = 	databases/soprano>=${MIN_SOPRANO_VERSION}
 
 # One who said that Polkit-Qt-1 is a drop-in replacement
 # for Polkit-Qt, is probably the one who said that

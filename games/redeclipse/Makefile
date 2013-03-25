@@ -13,11 +13,11 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 MULTI_PACKAGES=	-main -data
 
 N=		redeclipse
-V=		1.3.1
+V=		1.4
 PKGNAME=	${N}-${V}
 PKGNAME-main=	${N}-${V}
 PKGNAME-data=	${N}-data-${V}
-DISTNAME=	${N}_${V}_nix_bsd
+DISTNAME=	${N}_${V}_nix
 EXTRACT_SUFX=	.tar.bz2
 
 PKG_ARCH-data=	i386,amd64
@@ -28,14 +28,16 @@ PERMIT_PACKAGE_CDROM=	Yes
 RUN_DEPENDS-main +=	${BASE_PKGPATH},-data \
 			devel/desktop-file-utils
 
-BUILD_DEPENDS-main=	textproc/gsed
+BUILD_DEPENDS=		textproc/gsed
 LIB_DEPENDS-main=	devel/sdl \
 			devel/sdl-mixer \
-			devel/sdl-image
-WANTLIB-main+=		GL X11 SDL SDL_image SDL_mixer c m pthread stdc++ z
+			devel/sdl-image \
+			net/enet
+WANTLIB-main+=		GL X11 SDL SDL_image SDL_mixer c enet m pthread stdc++ z
 
-WRKDIST=		${WRKDIR}/${N}/src
+WRKDIST=		${WRKDIR}/${N}-${V}/src
 USE_GMAKE=		Yes
+MAKE_ENV+=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 NO_TEST=		Yes
 
 INSTALL_TARGET=		system-install

@@ -1,6 +1,11 @@
 @comment $OpenBSD$
 man/sr@latin/
 man/sr@latin/man1/
+@man man/sr@latin/man1/ark.1
+@man man/sr@latin/man1/dragon.1
+@man man/sr@latin/man1/kbookmarkmerger.1
+@man man/sr@latin/man1/kdesu.1
+@man man/sr@latin/man1/kfind.1
 share/apps/
 share/apps/desktoptheme/
 share/apps/desktoptheme/default/
@@ -1515,6 +1520,7 @@ share/locale/sr/LC_MESSAGES/kscreenlocker.mo
 share/locale/sr/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/sr/LC_MESSAGES/kscreensaver.mo
 share/locale/sr/LC_MESSAGES/ksendemail.mo
+share/locale/sr/LC_MESSAGES/ksgrd.mo
 share/locale/sr/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/sr/LC_MESSAGES/kshisen.mo
 share/locale/sr/LC_MESSAGES/kshorturifilter.mo
@@ -2183,6 +2189,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/kscreenlocker.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kscreensaver.mo
 share/locale/sr@ijekavian/LC_MESSAGES/ksendemail.mo
+share/locale/sr@ijekavian/LC_MESSAGES/ksgrd.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kshisen.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kshorturifilter.mo
@@ -2851,6 +2858,7 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/kscreenlocker.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kscreensaver.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/ksendemail.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/ksgrd.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kshisen.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kshorturifilter.mo
@@ -3517,6 +3525,7 @@ share/locale/sr@latin/LC_MESSAGES/kscreenlocker.mo
 share/locale/sr@latin/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/sr@latin/LC_MESSAGES/kscreensaver.mo
 share/locale/sr@latin/LC_MESSAGES/ksendemail.mo
+share/locale/sr@latin/LC_MESSAGES/ksgrd.mo
 share/locale/sr@latin/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/sr@latin/LC_MESSAGES/kshisen.mo
 share/locale/sr@latin/LC_MESSAGES/kshorturifilter.mo

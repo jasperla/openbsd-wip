@@ -352,6 +352,7 @@ share/doc/HTML/pt_BR/kate/man-kate.1.docbook
 share/doc/HTML/pt_BR/kate/mdi.docbook
 share/doc/HTML/pt_BR/kate/menus.docbook
 share/doc/HTML/pt_BR/kate/part.docbook
+share/doc/HTML/pt_BR/kate/plugins-part.docbook
 share/doc/HTML/pt_BR/kate/plugins.docbook
 share/doc/HTML/pt_BR/kate/regular-expressions.docbook
 share/doc/HTML/pt_BR/kate/vi.docbook
@@ -2141,6 +2142,7 @@ share/locale/pt_BR/LC_MESSAGES/kscreenlocker.mo
 share/locale/pt_BR/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/pt_BR/LC_MESSAGES/kscreensaver.mo
 share/locale/pt_BR/LC_MESSAGES/ksendemail.mo
+share/locale/pt_BR/LC_MESSAGES/ksgrd.mo
 share/locale/pt_BR/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/pt_BR/LC_MESSAGES/kshisen.mo
 share/locale/pt_BR/LC_MESSAGES/kshorturifilter.mo
@@ -2274,6 +2276,7 @@ share/locale/pt_BR/LC_MESSAGES/nepomukbackup.mo
 share/locale/pt_BR/LC_MESSAGES/nepomukcleaner.mo
 share/locale/pt_BR/LC_MESSAGES/nepomukcontroller.mo
 share/locale/pt_BR/LC_MESSAGES/nepomukfileindexer.mo
+share/locale/pt_BR/LC_MESSAGES/nepomukpimindexerutility.mo
 share/locale/pt_BR/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/pt_BR/LC_MESSAGES/nepomukserver.mo
 share/locale/pt_BR/LC_MESSAGES/nepomukservicestub.mo
