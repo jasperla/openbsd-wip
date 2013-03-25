@@ -31,5 +31,6 @@ lib/cmake/LibKGAPI/LibKGAPIConfig.cmake
 lib/cmake/LibKGAPI/LibKGAPIConfigVersion.cmake
 lib/cmake/LibKGAPI/LibKGAPITargetsWithPrefix${MODKDE4_CMAKE_PREFIX}.cmake
 lib/cmake/LibKGAPI/LibKGAPITargetsWithPrefix.cmake
+@lib ${KDE4LIB}/libkgapi.so.${LIBkgapi_VERSION}
 @lib lib/libkgapi.so.${LIBkgapi_VERSION}
 lib/pkgconfig/libkgapi.pc
