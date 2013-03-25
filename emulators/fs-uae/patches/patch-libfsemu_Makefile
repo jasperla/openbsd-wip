@@ -1,0 +1,16 @@
+$OpenBSD$
+--- libfsemu/Makefile.orig	Sun Mar 24 23:51:27 2013
++++ libfsemu/Makefile	Sun Mar 24 23:52:30 2013
+@@ -104,12 +104,6 @@ ifeq ($(devel), 1)
+ 	#-Werror=implicit-function-declaration
+ endif
+ 
+-ifeq ($(debug), 1)
+-	cflags += -g -O0 -fno-inline
+-else ifneq ($(noflags), 1)
+-	cflags += -g -O2
+-endif
+-
+ ifeq ($(os), windows)
+ 	cppflags += -DWINDOWS -DWIN32
+ 	cppflags += -DUSE_SDL
