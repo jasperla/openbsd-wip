@@ -1,21 +1,26 @@
 # $OpenBSD$
 
-COMMENT =	K Desktop Environment, Qt4 bindings for Perl
+COMMENT =	Qt4 bindings for Perl
 DISTNAME =	perlqt-${MODKDE4_VERSION}
 PKGNAME =	p5-qt-${MODKDE4_VERSION}
 
 WANTLIB =  c m perl stdc++ util
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtXml
-WANTLIB += smokebase smokephonon smokeqimageblitz smokeqsci
-WANTLIB += smokeqt3support smokeqtcore smokeqtdbus smokeqtdeclarative
-WANTLIB += smokeqtgui smokeqthelp smokeqtmultimedia smokeqtnetwork
-WANTLIB += smokeqtopengl smokeqtscript smokeqtsql smokeqtsvg smokeqttest
-WANTLIB += smokeqtuitools smokeqtwebkit smokeqtxml smokeqtxmlpatterns
-WANTLIB += smokeqwt
+WANTLIB += ${KDE4LIB}/smokebase ${KDE4LIB}/smokephonon
+WANTLIB += ${KDE4LIB}/smokeqimageblitz ${KDE4LIB}/smokeqsci
+WANTLIB += ${KDE4LIB}/smokeqt3support ${KDE4LIB}/smokeqtcore
+WANTLIB += ${KDE4LIB}/smokeqtdbus ${KDE4LIB}/smokeqtdeclarative
+WANTLIB += ${KDE4LIB}/smokeqtgui ${KDE4LIB}/smokeqthelp
+WANTLIB += ${KDE4LIB}/smokeqtmultimedia ${KDE4LIB}/smokeqtnetwork
+WANTLIB += ${KDE4LIB}/smokeqtopengl ${KDE4LIB}/smokeqtscript
+WANTLIB += ${KDE4LIB}/smokeqtsql ${KDE4LIB}/smokeqtsvg
+WANTLIB += ${KDE4LIB}/smokeqttest ${KDE4LIB}/smokeqtuitools
+WANTLIB += ${KDE4LIB}/smokeqtwebkit ${KDE4LIB}/smokeqtxml
+WANTLIB += ${KDE4LIB}/smokeqtxmlpatterns ${KDE4LIB}/smokeqwt
 
 MODKDE4_USE =
 
-LIB_DEPENDS = 	x11/kde4/smokeqt
+LIB_DEPENDS = 	x11/kde4/smokeqt>=${MODKDE4_DEP_VERSION}
 
 # Avoid clashing Perl do_open and do_close with GCC's locale_facets.h
 post-patch:

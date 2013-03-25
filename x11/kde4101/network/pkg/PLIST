@@ -159,11 +159,6 @@ lib/kde4/krfb_framebuffer_qt.so
 lib/kde4/krfb_framebuffer_x11.so
 lib/kde4/krunner_kget.so
 lib/kde4/libchattexteditpart.so
-lib/kde4/plasma_engine_kget.so
-lib/kde4/plasma_kget_barapplet.so
-lib/kde4/plasma_kget_piechart.so
-lib/kde4/plugins/accessible/
-lib/kde4/plugins/accessible/chatwindowaccessiblewidgetfactory.so
 @lib ${KDE4LIB}/libkgetcore.so.${LIBkgetcore_VERSION}
 @lib ${KDE4LIB}/libkopete.so.${LIBkopete_VERSION}
 @lib ${KDE4LIB}/libkopete_oscar.so.${LIBkopete_oscar_VERSION}
@@ -180,6 +175,11 @@ lib/kde4/plugins/accessible/chatwindowaccessiblewidgetfactory.so
 @lib ${KDE4LIB}/libkyahoo.so.${LIBkyahoo_VERSION}
 @lib ${KDE4LIB}/liboscar.so.${LIBoscar_VERSION}
 @lib ${KDE4LIB}/libqgroupwise.so.${LIBqgroupwise_VERSION}
+lib/kde4/plasma_engine_kget.so
+lib/kde4/plasma_kget_barapplet.so
+lib/kde4/plasma_kget_piechart.so
+lib/kde4/plugins/accessible/
+lib/kde4/plugins/accessible/chatwindowaccessiblewidgetfactory.so
 lib/kde4/sambausershareplugin.so
 @lib lib/libkgetcore.so.${LIBkgetcore_VERSION}
 @lib lib/libkopete.so.${LIBkopete_VERSION}

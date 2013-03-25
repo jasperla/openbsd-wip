@@ -10,8 +10,11 @@ WANTLIB += ICE SM X11 Xext
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtOpenGL lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
-WANTLIB += kcmutils kdeclarative kdeui kio nepomukcore plasma soprano
+WANTLIB += ${KDE4LIB}/kcmutils ${KDE4LIB}/kdeclarative ${KDE4LIB}/kdeui
+WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/nepomukcore ${KDE4LIB}/plasma
+WANTLIB += soprano
 
+# Force usage of GCC 4.2, to make sure daemon crap remains disabled
 MODULES =		gcc4
 MODKDE4_USE =		libs
 MODGCC4_ARCHS =		*

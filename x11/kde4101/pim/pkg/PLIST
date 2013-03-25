@@ -208,15 +208,6 @@ lib/kde4/korg_yearprint.so
 lib/kde4/korganizerpart.so
 lib/kde4/ktexteditorkabcbridge.so
 lib/kde4/ktimetrackerpart.so
-lib/kde4/messageviewer_bodypartformatter_application_mstnef.so
-lib/kde4/messageviewer_bodypartformatter_text_calendar.so
-lib/kde4/messageviewer_bodypartformatter_text_vcard.so
-lib/kde4/messageviewer_bodypartformatter_text_xdiff.so
-lib/kde4/plasma_applet_akonotes_list.so
-lib/kde4/plasma_applet_akonotes_note.so
-lib/kde4/plugins/accessible/
-lib/kde4/plugins/accessible/messagevieweraccessiblewidgetfactory.so
-lib/kde4/plugins/designer/kdepimwidgets.so
 @lib ${KDE4LIB}/libakonadi_next.so.${LIBakonadi_next_VERSION}
 @lib ${KDE4LIB}/libakregatorinterfaces.so.${LIBakregatorinterfaces_VERSION}
 @lib ${KDE4LIB}/libakregatorprivate.so.${LIBakregatorprivate_VERSION}
@@ -252,6 +243,15 @@ lib/kde4/plugins/designer/kdepimwidgets.so
 @lib ${KDE4LIB}/libmessageviewer.so.${LIBmessageviewer_VERSION}
 @lib ${KDE4LIB}/libpimcommon.so.${LIBpimcommon_VERSION}
 @lib ${KDE4LIB}/libtemplateparser.so.${LIBtemplateparser_VERSION}
+lib/kde4/messageviewer_bodypartformatter_application_mstnef.so
+lib/kde4/messageviewer_bodypartformatter_text_calendar.so
+lib/kde4/messageviewer_bodypartformatter_text_vcard.so
+lib/kde4/messageviewer_bodypartformatter_text_xdiff.so
+lib/kde4/plasma_applet_akonotes_list.so
+lib/kde4/plasma_applet_akonotes_note.so
+lib/kde4/plugins/accessible/
+lib/kde4/plugins/accessible/messagevieweraccessiblewidgetfactory.so
+lib/kde4/plugins/designer/kdepimwidgets.so
 @lib lib/libakonadi_next.so.${LIBakonadi_next_VERSION}
 @lib lib/libakregatorinterfaces.so.${LIBakregatorinterfaces_VERSION}
 @lib lib/libakregatorprivate.so.${LIBakregatorprivate_VERSION}

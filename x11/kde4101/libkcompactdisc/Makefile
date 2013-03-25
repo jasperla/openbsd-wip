@@ -7,7 +7,7 @@ SHARED_LIBS =	kcompactdisc		0.0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus
-WANTLIB += solid
+WANTLIB += ${KDE4LIB}/solid
 
 MODULES =	multimedia/phonon
 MODKDE4_USE =	libs

@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	K Desktop Environment, Graph Theory IDE
+COMMENT =	graph theory IDE for KDE
 DISTNAME =	rocs-${MODKDE4_VERSION}
 
 #SHARED_LIBS =	rocslib			0.0 # 4.7
@@ -11,8 +11,10 @@ WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtScript lib/qt4/QtScriptTools lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml
-WANTLIB += kdeui kio knewstuff3 kparts krosscore
-WANTLIB += krossui ktexteditor nepomuk nepomukutils plasma
+WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/knewstuff3
+WANTLIB += ${KDE4LIB}/kparts ${KDE4LIB}/krosscore ${KDE4LIB}/krossui
+WANTLIB += ${KDE4LIB}/ktexteditor ${KDE4LIB}/nepomuk
+WANTLIB += ${KDE4LIB}/nepomukutils ${KDE4LIB}/plasma
 WANTLIB += soprano
 
 BUILD_DEPENDS =	devel/boost

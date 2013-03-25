@@ -1,11 +1,12 @@
 # $OpenBSD$
 
-COMMENT =	K Desktop Environment, mouse clicker for accessibility users
+COMMENT =	KDE mouse clicker for accessibility users
 DISTNAME =	kmousetool-${MODKDE4_VERSION}
 
 WANTLIB =  c m pthread stdc++
+WANTLIB += ICE SM X11 Xext Xtst
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg
-WANTLIB += ICE SM X11 Xext Xtst kdeui
+WANTLIB += ${KDE4LIB}/kdeui
 
 MODULES =	multimedia/phonon
 

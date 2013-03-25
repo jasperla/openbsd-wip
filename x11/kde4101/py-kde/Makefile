@@ -17,8 +17,8 @@ WANTLIB += ${KDE4LIB}/kprintutils ${KDE4LIB}/kpty ${KDE4LIB}/ktexteditor
 WANTLIB += ${KDE4LIB}/kutils ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukquery
 WANTLIB += ${KDE4LIB}/nepomukutils ${KDE4LIB}/phonon_s ${KDE4LIB}/plasma
 WANTLIB += ${KDE4LIB}/solid
-WANTLIB += akonadi-kde akonadi-kmime soprano sopranoclient sopranoserver
-WANTLIB += ${MODPY_WANTLIB}
+WANTLIB += ${KDE4LIB}/akonadi-kde ${KDE4LIB}/akonadi-kmime
+WANTLIB += ${MODPY_WANTLIB} soprano sopranoclient sopranoserver
 
 VMEM_WARNING =  Yes
 

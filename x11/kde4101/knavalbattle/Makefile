@@ -6,7 +6,7 @@ DISTNAME =	knavalbattle-${MODKDE4_VERSION}
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
-WANTLIB += kdnssd kdeui
+WANTLIB += ${KDE4LIB}/kdnssd ${KDE4LIB}/kdeui
 
 MODULES =	multimedia/phonon
 MODKDE4_USE =	games

@@ -6,7 +6,8 @@ DISTNAME =	kscd-${MODKDE4_VERSION}
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
-WANTLIB += kcddb kcompactdisc kdeui kio solid
+WANTLIB += ${KDE4LIB}/kcddb ${KDE4LIB}/kcompactdisc ${KDE4LIB}/kdeui
+WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/solid
 WANTLIB += musicbrainz3
 
 MODULES =	multimedia/phonon
