@@ -9,9 +9,10 @@ WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSql
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtWebKit lib/qt4/QtXml
-WANTLIB += kdeui kio knewstuff3 kparts nepomuk
-WANTLIB += nepomukutils plasma soprano
-WANTLIB += gps shp
+WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/knewstuff3
+WANTLIB += ${KDE4LIB}/kparts ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
+WANTLIB += ${KDE4LIB}/plasma
+WANTLIB += gps shp soprano
 
 MODULES =	multimedia/phonon
 

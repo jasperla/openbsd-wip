@@ -1,10 +1,13 @@
 # $OpenBSD$
 
-COMMENT =	K Desktop Environment, versatile math calculator
+COMMENT =	KDE versatile math calculator
 DISTNAME =	kcalc-${MODKDE4_VERSION}
 
-WANTLIB =  lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg
-WANTLIB += lib/qt4/QtXml c gmp kdeui m pthread stdc++
+WANTLIB =  c m pthread stdc++
+WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg
+WANTLIB += lib/qt4/QtXml
+WANTLIB += ${KDE4LIB}/kdeui
+WANTLIB += gmp
 
 LIB_DEPENDS =	devel/gmp
 

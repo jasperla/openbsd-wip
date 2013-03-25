@@ -1,12 +1,12 @@
 # $OpenBSD$
 
-COMMENT =	XYZ for KDE
+COMMENT =	kill-all-robots game for KDE
 DISTNAME =	killbots-${MODKDE4_VERSION}
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
-WANTLIB += kdeui
+WANTLIB += ${KDE4LIB}/kdeui
 
 MODKDE4_USE =	games
 

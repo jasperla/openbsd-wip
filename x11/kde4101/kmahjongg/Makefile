@@ -8,7 +8,8 @@ MODKDE4_USE =	games
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
-WANTLIB += kdegamesprivate kdeui kio kmahjongglib
+WANTLIB += ${KDE4LIB}/kdegamesprivate ${KDE4LIB}/kdeui ${KDE4LIB}/kio
+WANTLIB += ${KDE4LIB}/kmahjongglib
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+2,-guic

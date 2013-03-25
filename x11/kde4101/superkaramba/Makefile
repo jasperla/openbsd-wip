@@ -5,10 +5,14 @@ DISTNAME =	superkaramba-${MODKDE4_VERSION}
 
 SHARED_LIBS =	superkaramba	0.0 # 4.7
 
-WANTLIB =  ICE lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtScript
-WANTLIB += lib/qt4/Qt3Support lib/qt4/QtSvg lib/qt4/QtXml SM X11 Xext Xrender
-WANTLIB += c kde3support kdeui kio knewstuff2 kpty krosscore m plasma pthread
-WANTLIB += qimageblitz stdc++ util ${MODPY_WANTLIB}
+WANTLIB =  c m pthread stdc++ util 
+WANTLIB += ICE SM X11 Xext Xrender
+WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtScript
+WANTLIB += lib/qt4/Qt3Support lib/qt4/QtSvg lib/qt4/QtXml
+WANTLIB += ${KDE4LIB}/kde3support ${KDE4LIB}/kdeui ${KDE4LIB}/kio
+WANTLIB += ${KDE4LIB}/knewstuff2 ${KDE4LIB}/kpty ${KDE4LIB}/krosscore
+WANTLIB += ${KDE4LIB}/plasma
+WANTLIB += qimageblitz ${MODPY_WANTLIB}
 
 MODULES =	lang/python
 

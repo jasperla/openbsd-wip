@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	K Desktop Environment, image editor
+COMMENT =	KDE raster image editor
 DISTNAME =	kolourpaint-${MODKDE4_VERSION}
 
 SHARED_LIBS =	kolourpaint_lgpl	0.0	# 4.7
@@ -8,8 +8,10 @@ SHARED_LIBS =	kolourpaint_lgpl	0.0	# 4.7
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
-WANTLIB += kcmutils kdeui kemoticons kidletime kio
-WANTLIB += kprintutils kutils qimageblitz
+WANTLIB += ${KDE4LIB}/kcmutils ${KDE4LIB}/kdeui ${KDE4LIB}/kemoticons
+WANTLIB += ${KDE4LIB}/kidletime ${KDE4LIB}/kio ${KDE4LIB}/kprintutils
+WANTLIB += ${KDE4LIB}/kutils
+WANTLIB += qimageblitz
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+2,-guic

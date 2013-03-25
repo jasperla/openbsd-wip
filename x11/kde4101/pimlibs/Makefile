@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile,v 1.12 2011/07/06 21:25:23 ajacoutot Exp $
 
-COMMENT =	K Desktop Environment, libraries for PIM
+COMMENT =	libraries for KDE PIM services
 DISTNAME =	kdepimlibs-${MODKDE4_VERSION}
 
 SHARED_LIBS =	kabc                 5.0      # .4.0
@@ -42,11 +42,11 @@ SHARED_LIBS +=  akonadi-socialutils	0.0 # 4.10
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSql
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtTest lib/qt4/QtXml
-WANTLIB += akonadiprotocolinternals
-WANTLIB += kcmutils kdeui kemoticons kio kparts nepomuk nepomukcore
-WANTLIB += nepomukutils phonon_s prison qjson solid soprano
-WANTLIB += assuan e2fs-uuid gpg-error gpgme gpgme-pthread ical icalss
-WANTLIB += lber ldap sasl2
+WANTLIB += ${KDE4LIB}/kcmutils ${KDE4LIB}/kdeui ${KDE4LIB}/kemoticons
+WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kparts ${KDE4LIB}/nepomuk
+WANTLIB += ${KDE4LIB}/nepomukcore ${KDE4LIB}/nepomukutils ${KDE4LIB}/solid
+WANTLIB += akonadiprotocolinternals assuan e2fs-uuid gpg-error gpgme
+WANTLIB += gpgme-pthread ical icalss lber ldap prison qjson sasl2 soprano
 
 MODULES =	devel/gettext multimedia/phonon
 

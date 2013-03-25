@@ -7,7 +7,7 @@ SHARED_LIBS =	kmahjongglib		0.0 # 4.10
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg
-WANTLIB += kdeui
+WANTLIB += ${KDE4LIB}/kdeui
 
 MODKDE4_USE =	games libs
 

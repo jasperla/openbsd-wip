@@ -8,11 +8,14 @@ SHARED_LIBS =	okularcore		0.0	# 1.7
 WANTLIB =  c m pthread stdc++ z
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtSvg lib/qt4/QtXml
-WANTLIB += kactivities kdeui khtml kio
-WANTLIB += kjs kjsapi kparts kprintutils kpty nepomuk
-WANTLIB += nepomukutils phonon_s qimageblitz soprano solid threadweaver
-WANTLIB += chm djvulibre epub freetype poppler-qt4 qca2 spectre
-WANTLIB += jpeg tiff
+WANTLIB += ${KDE4LIB}/kactivities ${KDE4LIB}/kdeui ${KDE4LIB}/khtml
+WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kjs ${KDE4LIB}/kjsapi
+WANTLIB += ${KDE4LIB}/kparts ${KDE4LIB}/kprintutils ${KDE4LIB}/kpty
+WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
+WANTLIB += chm djvulibre epub freetype jpeg poppler-qt4 qca2 qimageblitz
+WANTLIB += soprano solid spectre threadweaver tiff
+
+MODULES =	multimedia/phonon
 
 LIB_DEPENDS = 	devel/chmlib \
 		graphics/djvulibre \
