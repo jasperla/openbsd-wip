@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	K Desktop Environment, collection of wallpapers
+COMMENT =	KDE collection of wallpapers
 DISTNAME =	kde-wallpapers-${MODKDE4_VERSION}
 
 MODKDE4_RESOURCES =	Yes

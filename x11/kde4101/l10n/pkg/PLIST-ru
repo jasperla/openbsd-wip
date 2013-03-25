@@ -1136,6 +1136,7 @@ share/locale/ru/LC_MESSAGES/accountwizard_maildir.mo
 share/locale/ru/LC_MESSAGES/accountwizard_pop3.mo
 share/locale/ru/LC_MESSAGES/adblock.mo
 share/locale/ru/LC_MESSAGES/akonadi-filestore.mo
+share/locale/ru/LC_MESSAGES/akonadi_archivemail_agent.mo
 share/locale/ru/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_davgroupware_resource.mo
@@ -1219,6 +1220,7 @@ share/locale/ru/LC_MESSAGES/kabcformat_binary.mo
 share/locale/ru/LC_MESSAGES/kaccess.mo
 share/locale/ru/LC_MESSAGES/kaccessibleapp.mo
 share/locale/ru/LC_MESSAGES/kactivitymanagerd.mo
+share/locale/ru/LC_MESSAGES/kactivitymanagerd_fileitem_linking_plugin.mo
 share/locale/ru/LC_MESSAGES/kaddressbook-mobile.mo
 share/locale/ru/LC_MESSAGES/kaddressbook.mo
 share/locale/ru/LC_MESSAGES/kaddressbookmigrator.mo
@@ -1242,8 +1244,10 @@ share/locale/ru/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/ru/LC_MESSAGES/katemailfilesplugin.mo
 share/locale/ru/LC_MESSAGES/kateopenheader.mo
 share/locale/ru/LC_MESSAGES/katepart4.mo
+share/locale/ru/LC_MESSAGES/kateproject.mo
 share/locale/ru/LC_MESSAGES/katesearch.mo
 share/locale/ru/LC_MESSAGES/katesnippets_tng.mo
+share/locale/ru/LC_MESSAGES/katesnippetsplugin.mo
 share/locale/ru/LC_MESSAGES/katesql.mo
 share/locale/ru/LC_MESSAGES/katesymbolviewer.mo
 share/locale/ru/LC_MESSAGES/katetabbarextension.mo

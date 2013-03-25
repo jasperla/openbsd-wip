@@ -3,11 +3,11 @@
 COMMENT =	small and funny applications for KDE
 DISTNAME =	kdetoys-${MODKDE4_VERSION}
 
-WANTLIB =  c m pthread stdc++
+WANTLIB =  c m pthread stdc++ ${MODPY_WANTLIB}
 WANTLIB += ICE SM X11 Xext
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtSvg
-WANTLIB += kdeui knotifyconfig kscreensaver ${MODPY_WANTLIB}
+WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/knotifyconfig ${KDE4LIB}/kscreensaver
 
 MODKDE4_USE =	workspace
 

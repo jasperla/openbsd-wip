@@ -25,7 +25,7 @@ WANTLIB += ssl stdc++ z leveldb
 
 MASTER_SITES =		https://github.com/bitcoin/bitcoin/tarball/v${V}/
 
-LIB_DEPENDS =		devel/boost \
+LIB_DEPENDS =		devel/boost>=1.53 \
 			databases/db/v4 \
 			net/miniupnp/miniupnpc \
 			databases/leveldb

@@ -37,10 +37,10 @@ lib/kde4/ktexteditor_exporter.so
 lib/kde4/ktexteditor_hlselection.so
 lib/kde4/ktexteditor_iconinserter.so
 lib/kde4/ktexteditor_insertfile.so
-lib/kde4/pateplugin.so
-lib/kde4/plasma_applet_katesession.so
 @lib ${KDE4LIB}/libkateinterfaces.so.${LIBkateinterfaces_VERSION}
 @lib ${KDE4LIB}/libkatepartinterfaces.so.${LIBkatepartinterfaces_VERSION}
+lib/kde4/pateplugin.so
+lib/kde4/plasma_applet_katesession.so
 @lib lib/libkateinterfaces.so.${LIBkateinterfaces_VERSION}
 @lib lib/libkatepartinterfaces.so.${LIBkatepartinterfaces_VERSION}
 lib/libkdeinit4_kate.so
@@ -447,11 +447,13 @@ share/doc/HTML/en/kate/line-modification-system.png
 share/doc/HTML/en/kate/man-kate.1.docbook
 share/doc/HTML/en/kate/mdi.docbook
 share/doc/HTML/en/kate/menus.docbook
+share/doc/HTML/en/kate/minimap.png
 share/doc/HTML/en/kate/part.docbook
+share/doc/HTML/en/kate/plugins-part.docbook
 share/doc/HTML/en/kate/plugins.docbook
 share/doc/HTML/en/kate/regular-expressions.docbook
-share/doc/HTML/en/kate/snippets-config.png
 share/doc/HTML/en/kate/snippets-form.png
+share/doc/HTML/en/kate/snippets-panel.png
 share/doc/HTML/en/kate/snippets-usage.png
 share/doc/HTML/en/kate/unhighlighted.png
 share/doc/HTML/en/kate/vi.docbook

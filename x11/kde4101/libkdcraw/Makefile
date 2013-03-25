@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	K Desktop Environment, RAW picture decoding C++ library
+COMMENT =	KDE RAW picture decoding C++ library
 DISTNAME =	libkdcraw-${MODKDE4_VERSION}
 
 SHARED_LIBS =	kdcraw			0.0	# 20.0
@@ -8,7 +8,8 @@ SHARED_LIBS =	kdcraw			0.0	# 20.0
 WANTLIB =  m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
-WANTLIB += ${KDELIB}/kdeui ${KDELIB}/kio ${KDELIB}/solid ${KDELIB}/threadweaver
+WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/solid
+WANTLIB += ${KDE4LIB}/threadweaver
 WANTLIB += raw_r
 
 MODKDE4_USE =	libs
