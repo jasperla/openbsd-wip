@@ -1,8 +1,8 @@
 @comment $OpenBSD$
 @bin bin/superkaramba
+@lib ${KDE4LIB}/libsuperkaramba.so.${LIBsuperkaramba_VERSION}
 lib/kde4/plasma_package_superkaramba.so
 lib/kde4/plasma_scriptengine_superkaramba.so
-@lib ${KDE4LIB}/libsuperkaramba.so.${LIBsuperkaramba_VERSION}
 @lib lib/libsuperkaramba.so.${LIBsuperkaramba_VERSION}
 share/applications/kde4/superkaramba.desktop
 share/apps/superkaramba/

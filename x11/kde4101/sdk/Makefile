@@ -27,11 +27,11 @@ WANTLIB += ${KDE4LIB}/kcmutils ${KDE4LIB}/kde3support ${KDE4LIB}/kdesu
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kfile ${KDE4LIB}/kio
 WANTLIB += ${KDE4LIB}/knewstuff3 ${KDE4LIB}/konq ${KDE4LIB}/kparts
 WANTLIB += ${KDE4LIB}/krosscore ${KDE4LIB}/krossui ${KDE4LIB}/ktexteditor
-WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils ${KDE4LIB}/qca2
+WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
 WANTLIB += ${KDE4LIB}/solid ${KDE4LIB}/threadweaver
 WANTLIB += apr-1 hunspell-1.2 svn_client-1 svn_delta-1 svn_fs-1
 WANTLIB += svn_ra-1 svn_subr-1 xml2 xslt
-WANTLIB += gettextpo soprano streamanalyzer streams
+WANTLIB += gettextpo qca2 soprano streamanalyzer streams
 
 MODKDE4_USE =	pim
 
