@@ -1,6 +1,6 @@
 # $OpenBSD:$
 
-COMMENT =	Open an HTML file with automatic charset detection
+COMMENT =	open an HTML file with automatic charset detection
 
 DISTNAME =	IO-HTML-1.00
 CATEGORIES =	www

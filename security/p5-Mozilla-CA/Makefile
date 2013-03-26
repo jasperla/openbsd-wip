@@ -1,7 +1,5 @@
 # $OpenBSD:$
 
-SHARED_ONLY=	Yes
-
 COMMENT=	Mozilla's CA cert bundle in PEM format
 
 MODULES=	cpan

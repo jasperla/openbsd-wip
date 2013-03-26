@@ -1,1 +1,2 @@
-Determine the locale encoding
+The purpose of this Perl module is try determine what encodings should
+be used when interfacing to various external interfaces.
