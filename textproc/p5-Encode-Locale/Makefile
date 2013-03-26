@@ -1,6 +1,6 @@
 # $OpenBSD:$
 
-COMMENT =	Determine the locale encoding
+COMMENT =	determine the locale encoding
 
 DISTNAME =	Encode-Locale-1.03
 CATEGORIES =	textproc
