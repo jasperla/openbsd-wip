@@ -1,6 +1,6 @@
 $OpenBSD$
---- cmake/modules/KAppTemplateMacro.cmake.orig	Sat Oct  8 08:49:01 2011
-+++ cmake/modules/KAppTemplateMacro.cmake	Sat Oct  8 08:50:26 2011
+--- kapptemplate/cmake/modules/KAppTemplateMacro.cmake.orig	Sat Oct  8 08:49:01 2011
++++ kapptemplate/cmake/modules/KAppTemplateMacro.cmake	Sat Oct  8 08:50:26 2011
 @@ -37,7 +37,7 @@ macro(kapptemplate_add_app_templates _templateNames)
              )
          else(WIN32)

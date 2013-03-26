@@ -1,6 +1,6 @@
 $OpenBSD$
---- thumbnailers/po/CMakeLists.txt.orig	Fri Feb  8 21:06:35 2013
-+++ thumbnailers/po/CMakeLists.txt	Fri Feb  8 21:06:50 2013
+--- kdesdk-thumbnailers/po_thumbnailer/CMakeLists.txt.orig	Fri Feb  8 21:06:35 2013
++++ kdesdk-thumbnailers/po_thumbnailer/CMakeLists.txt	Fri Feb  8 21:06:50 2013
 @@ -7,7 +7,7 @@ find_package(GettextPO REQUIRED)
  include(KDE4Defaults)
  
