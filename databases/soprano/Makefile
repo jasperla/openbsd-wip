@@ -4,10 +4,10 @@ SHARED_ONLY =	Yes
 COMMENT =	RDF framework
 CATEGORIES =	databases devel textproc sysutils
 
-SHARED_LIBS =	soprano                   1.1 # 1.0
-SHARED_LIBS +=	sopranoclient             1.1 # 1.0
-SHARED_LIBS +=	sopranoindex              1.1 # 1.0
-SHARED_LIBS +=	sopranoserver             1.1 # 1.0
+SHARED_LIBS =	soprano                   2.0
+SHARED_LIBS +=	sopranoclient             2.0
+SHARED_LIBS +=	sopranoindex              2.0
+SHARED_LIBS +=	sopranoserver             2.0
 
 HOMEPAGE =	http://soprano.sourceforge.net/
 DISTNAME =	soprano-2.9.0
@@ -17,8 +17,10 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=soprano/}
 # GPL/LGPL
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =		x11/kde4
+MODULES =	x11/kde4
 MODKDE4_USE =
+
+BUILD_DEPENDS =	devel/doxygen
 
 RUN_DEPENDS =	devel/desktop-file-utils
 

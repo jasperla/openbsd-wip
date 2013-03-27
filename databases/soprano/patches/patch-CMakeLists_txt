@@ -1,4 +1,5 @@
 $OpenBSD$
+Avoid useless warning.
 --- CMakeLists.txt.orig	Sat Apr 21 15:01:46 2012
 +++ CMakeLists.txt	Sat Apr 21 15:01:52 2012
 @@ -1,6 +1,6 @@
