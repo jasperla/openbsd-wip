@@ -13,9 +13,11 @@ include/marble/AbstractProjection.h
 include/marble/AbstractWorkerThread.h
 include/marble/AlternativeRoutesModel.h
 include/marble/AutoNavigation.h
+include/marble/BillboardGraphicsItem.h
 include/marble/BookmarkManager.h
 include/marble/ClipPainter.h
 include/marble/CurrentLocationWidget.h
+include/marble/CylindricalProjection.h
 include/marble/DialogConfigurationInterface.h
 include/marble/DownloadRegion.h
 include/marble/DownloadRegionDialog.h
@@ -112,6 +114,7 @@ include/marble/SunLocator.h
 include/marble/TileCoordsPyramid.h
 include/marble/TileCreator.h
 include/marble/TileCreatorDialog.h
+include/marble/TileId.h
 include/marble/TileLevelRangeWidget.h
 include/marble/TinyWebBrowser.h
 include/marble/ViewportParams.h
@@ -120,10 +123,12 @@ include/marble/geodata_export.h
 include/marble/global.h
 include/marble/marble_export.h
 lib/kde4/libmarble_part.so
+@lib ${KDE4LIB}/libmarblewidget.so.${LIBmarblewidget_VERSION}
 lib/kde4/plasma_applet_worldclock.so
 lib/kde4/plasma_runner_marble.so
 lib/kde4/plugins/marble/
 lib/kde4/plugins/marble/AprsPlugin.so
+lib/kde4/plugins/marble/AtmospherePlugin.so
 lib/kde4/plugins/marble/CachePlugin.so
 lib/kde4/plugins/marble/CompassFloatItem.so
 lib/kde4/plugins/marble/CrosshairsPlugin.so
@@ -131,6 +136,7 @@ lib/kde4/plugins/marble/EarthquakePlugin.so
 lib/kde4/plugins/marble/ElevationProfileFloatItem.so
 lib/kde4/plugins/marble/ElevationProfileMarker.so
 lib/kde4/plugins/marble/FlightGearPositionProviderPlugin.so
+lib/kde4/plugins/marble/FoursquarePlugin.so
 lib/kde4/plugins/marble/GosmoreReverseGeocodingPlugin.so
 lib/kde4/plugins/marble/GosmoreRoutingPlugin.so
 lib/kde4/plugins/marble/GpsInfo.so
@@ -138,6 +144,7 @@ lib/kde4/plugins/marble/GpsdPositionProviderPlugin.so
 lib/kde4/plugins/marble/GpxPlugin.so
 lib/kde4/plugins/marble/GraticulePlugin.so
 lib/kde4/plugins/marble/HostipPlugin.so
+lib/kde4/plugins/marble/JsonPlugin.so
 lib/kde4/plugins/marble/KmlPlugin.so
 lib/kde4/plugins/marble/LatLonPlugin.so
 lib/kde4/plugins/marble/LocalDatabasePlugin.so
@@ -173,7 +180,6 @@ lib/kde4/plugins/marble/SunPlugin.so
 lib/kde4/plugins/marble/Weather.so
 lib/kde4/plugins/marble/Wikipedia.so
 lib/kde4/plugins/marble/YoursPlugin.so
-@lib ${KDE4LIB}/libmarblewidget.so.${LIBmarblewidget_VERSION}
 @lib lib/libmarblewidget.so.${LIBmarblewidget_VERSION}
 lib/qt4/imports/org/kde/
 lib/qt4/imports/org/kde/edu/
@@ -195,6 +201,10 @@ lib/qt4/imports/org/kde/edu/marble/qtcomponents/ViaPointEditor.qml
 lib/qt4/imports/org/kde/edu/marble/qtcomponents/libQtComponentsPlugin.so
 lib/qt4/imports/org/kde/edu/marble/qtcomponents/qmldir
 share/applications/kde4/marble.desktop
+share/applications/kde4/marble_gpx.desktop
+share/applications/kde4/marble_kml.desktop
+share/applications/kde4/marble_osm.desktop
+share/applications/kde4/marble_shp.desktop
 share/apps/cmake/modules/FindMarble.cmake
 share/apps/marble/
 share/apps/marble/data/
@@ -239,6 +249,15 @@ share/apps/marble/data/bitmaps/earth_apollo.jpg
 share/apps/marble/data/bitmaps/flag.png
 share/apps/marble/data/bitmaps/folder.png
 share/apps/marble/data/bitmaps/hand.png
+share/apps/marble/data/bitmaps/highway_footway.png
+share/apps/marble/data/bitmaps/highway_motorway.png
+share/apps/marble/data/bitmaps/highway_path.png
+share/apps/marble/data/bitmaps/highway_primary.png
+share/apps/marble/data/bitmaps/highway_secondary.png
+share/apps/marble/data/bitmaps/highway_tertiary.png
+share/apps/marble/data/bitmaps/highway_track.png
+share/apps/marble/data/bitmaps/highway_trunk.png
+share/apps/marble/data/bitmaps/highway_unclassified.png
 share/apps/marble/data/bitmaps/lake.png
 share/apps/marble/data/bitmaps/manned_landing.png
 share/apps/marble/data/bitmaps/mountain_1.png
@@ -310,6 +329,7 @@ share/apps/marble/data/bitmaps/robotic_rover.png
 share/apps/marble/data/bitmaps/routing_pick.png
 share/apps/marble/data/bitmaps/routing_remove.png
 share/apps/marble/data/bitmaps/routing_step.png
+share/apps/marble/data/bitmaps/satellite.png
 share/apps/marble/data/bitmaps/shipwreck.png
 share/apps/marble/data/bitmaps/turn-around.png
 share/apps/marble/data/bitmaps/turn-continue.png
@@ -912,6 +932,7 @@ share/apps/marble/data/svg/marble-logo-inverted-32dpi.png
 share/apps/marble/data/svg/marble-logo-inverted-72dpi.png
 share/apps/marble/data/svg/marble-logo.png
 share/apps/marble/data/svg/marble-logo.svg
+share/apps/marble/data/svg/sun.png
 share/apps/marble/data/svg/sunshine.png
 share/apps/marble/data/svg/track_turtle.svg
 share/apps/marble/data/svg/wikipedia.svg
@@ -980,9 +1001,16 @@ share/icons/hicolor/32x32/apps/marble.png
 share/icons/hicolor/48x48/apps/marble.png
 share/icons/hicolor/64x64/apps/marble.png
 share/kde4/services/marble_part.desktop
+share/kde4/services/marble_part_gpx.desktop
+share/kde4/services/marble_part_kml.desktop
+share/kde4/services/marble_part_osm.desktop
+share/kde4/services/marble_part_shp.desktop
 share/kde4/services/plasma-applet-kworldclock.desktop
 share/kde4/services/plasma-runner-marble.desktop
+share/mime/packages/geo.xml
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

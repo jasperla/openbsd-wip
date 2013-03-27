@@ -1,25 +1,31 @@
 # $OpenBSD$
 
-COMMENT =	K Desktop Environment, periodic system of elements
+COMMENT =	periodic system of elements for KDE
 DISTNAME =	kalzium-${MODKDE4_VERSION}
 
 SHARED_LIBS =	science			0.0 # 4.7
 SHARED_LIBS +=	compoundviewer		0.0 # 4.7
 
-WANTLIB =  c m pthread soprano stdc++ ${MODPY_WANTLIB}
+WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus
 WANTLIB += lib/qt4/QtDeclarative lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtOpenGL lib/qt4/QtScript lib/qt4/QtSvg lib/qt4/QtXml
-WANTLIB += kdeui khtml kio kjs knewstuff3 kparts
-WANTLIB += kunitconversion nepomuk nepomukutils phonon_s plasma
-WANTLIB += avogadro openbabel
+WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/khtml ${KDE4LIB}/kio ${KDE4LIB}/kjs
+WANTLIB += ${KDE4LIB}/knewstuff3 ${KDE4LIB}/kparts
+WANTLIB += ${KDE4LIB}/kunitconversion ${KDE4LIB}/nepomuk
+WANTLIB += ${KDE4LIB}/nepomukutils ${KDE4LIB}/plasma
+WANTLIB += avogadro openbabel soprano
 
-MODULES =	x11/kde4 lang/ocaml
+MODULES =	x11/kde4 multimedia/phonon lang/ocaml
 
+# misc/chemical-mime-data is checked but does not affect build.
 BUILD_DEPENDS =	math/eigen2 \
 		math/facile
 
-RUN_DEPENDS =	math/facile
+RUN_DEPENDS =	devel/desktop-file-utils \
+		math/facile \
+		misc/chemical-mime-data \
+		x11/gtk+2,-guic
 
 LIB_DEPENDS = 	education/avogadro \
 		misc/openbabel

@@ -2,7 +2,6 @@
 @bin bin/kcharselect
 share/applications/kde4/KCharSelect.desktop
 share/apps/kcharselect/kcharselectui.rc
-share/apps/kconf_update/kcharselect.upd
 share/doc/HTML/en/kcharselect/
 share/doc/HTML/en/kcharselect/common
 share/doc/HTML/en/kcharselect/index.cache.bz2

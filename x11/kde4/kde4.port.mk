@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 # The version of KDE SC in x11/kde4
-_MODKDE4_STABLE =	4.9.5
+_MODKDE4_STABLE =	4.10.1
 
 # Should be changed only by Makefile.inc in test directories
 MODKDE4_VERSION ?=	${_MODKDE4_STABLE}

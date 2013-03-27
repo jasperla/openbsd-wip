@@ -5,6 +5,7 @@
 @bin bin/akonadi_davgroupware_resource
 @bin bin/akonadi_googlecalendar_resource
 @bin bin/akonadi_googlecontacts_resource
+@bin bin/akonadi_icaldir_resource
 @bin bin/akonadi_imap_resource
 @bin bin/akonadi_invitations_agent
 @bin bin/akonadi_kabc_resource
@@ -26,6 +27,7 @@
 @bin bin/kjotsmigrator
 @bin bin/kmail-migrator
 @bin bin/kres-migrator
+@bin bin/nepomukpimindexerutility
 lib/kde4/accountwizard_plugin.so
 lib/kde4/akonadi_akonotes_resource.so
 lib/kde4/akonadi_contacts_resource.so
@@ -91,7 +93,6 @@ lib/kde4/kio_akonadi.so
 @lib lib/libakonadi-filestore.so.${LIBakonadi-filestore_VERSION}
 @lib lib/libakonadi-xml.so.${LIBakonadi-xml_VERSION}
 @lib lib/libkdepim-copy.so.${LIBkdepim-copy_VERSION}
-lib/libkdepim-runtime-dms-copy.so
 @lib lib/libkmindexreader.so.${LIBkmindexreader_VERSION}
 @lib lib/libmaildir.so.${LIBmaildir_VERSION}
 lib/libnepomukfeederpluginlib.a
@@ -104,6 +105,7 @@ share/akonadi/agents/contactsresource.desktop
 share/akonadi/agents/davgroupwareresource.desktop
 share/akonadi/agents/googlecalendarresource.desktop
 share/akonadi/agents/googlecontactsresource.desktop
+share/akonadi/agents/icaldirresource.desktop
 share/akonadi/agents/icalresource.desktop
 share/akonadi/agents/imapresource.desktop
 share/akonadi/agents/invitationsagent.desktop
@@ -163,8 +165,6 @@ share/apps/akonadi/firstrun/
 share/apps/akonadi/firstrun/defaultaddressbook
 share/apps/akonadi/firstrun/defaultcalendar
 share/apps/akonadi/firstrun/defaultnotebook
-share/apps/akonadi/plugins/
-share/apps/akonadi/plugins/serializer/
 share/apps/akonadi/plugins/serializer/akonadi_serializer_addressee.desktop
 share/apps/akonadi/plugins/serializer/akonadi_serializer_bookmark.desktop
 share/apps/akonadi/plugins/serializer/akonadi_serializer_contactgroup.desktop
@@ -177,6 +177,10 @@ share/apps/akonadi_knut_resource/
 share/apps/akonadi_knut_resource/knut-template.xml
 share/apps/akonadi_maildispatcher_agent/
 share/apps/akonadi_maildispatcher_agent/akonadi_maildispatcher_agent.notifyrc
+share/apps/akonadi_nepomuk_feeder/
+share/apps/akonadi_nepomuk_feeder/akonadi_nepomuk_feeder.notifyrc
+share/apps/nepomukpimindexerutility/
+share/apps/nepomukpimindexerutility/nepomukpimindexerutility.rc
 share/autostart/kaddressbookmigrator.desktop
 share/config/accountwizard.knsrc
 share/config/kmail-migratorrc

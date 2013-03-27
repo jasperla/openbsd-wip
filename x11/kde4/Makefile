@@ -1,54 +1,75 @@
 # $OpenBSD: Makefile,v 1.25 2010/06/24 07:45:06 espie Exp $
 
-     SUBDIR =
-# don't even try to keep these sorted
-
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, qimageblitz
 # HERE:
-# oxygen-icons
-# |
-#  -> libs
-#   |-> pure resources: base-artwork, l10n, wallpapers
-#   |
-#   |-> baseapps
-#   |   |
-#   |    -> konsole
-#   |
-#   |-> kactivities -->-+---+
-#   |-> nepomuk-core ->-+   |
-#   |-> runtime <--+----+   |
-#   |-> pimlibs ->-+        |
-#   |   |                   |
-#   |   |-> libkgapi        |
-#   |   |-> pim-runtime     |
-#   |   |-> pim             |
-#   |   |-> py-kde          |
-#   |       |-> kdegames    |
-#   |       |-> workspace <-+
-#   |           |-> admin
-#   |           |-> artwork
-#   |           |-> network
-#   |
-#   |-> kate ------+
-#   |              |
-#   |-> smokekde <-+- smokegen (no SC prerequisites)
-#   |   |             |-> smokeqt
-#   |   |                 |-> qyoto -----+
-#   |   |                 |-> ruby-qt--+ |
-#   |   |                 |-> p5-qt -+ | |
-#   |   |                            | | |
-#   |   |-> p5-kde <-----------------+ | |
-#   |   |-> korundum <-----------------+ |
-#   |   |-> kimono <---------------------+
-#   |
-#   |-> former accessibility
-#   |-> libkdeedu
-#   |   |-> former kdeedu
-#   |
-#   |-> former kdeutils
-#   |-> former kdegraphics
-#   +-> former kdemultimedia
+#
+# smokegen
+# +-> smokeqt
+# |   +-> qyoto ->------------------------------------->-----+
+# |   +-> ruby-qt ->----------------------------------->----+|
+# |   +-> p5-qt ->------------------------------------->---+||
+# |                                                        |||
+# +->-------------------------------------------------->-+ |||
+#                                                        | |||
+# oxygen-icons                                           | |||
+# +-> libs                                               | |||
+#     +-> pure resources: base-artwork, l10n, wallpapers | |||
+#     |                                                  | |||
+#     +-> baseapps                                       | |||
+#     |   +-> konsole                                    | |||
+#     |                                                  | |||
+#     +-> nepomuk-core                                   | |||
+#     |   +-> kactivities                                | |||
+#     |   |   +-> pimlibs                                | |||
+#     |   |       +-> pim-runtime                        | |||
+#     |   |       +-> pim                                | |||
+#     |   |       +-> py-kde                             | |||
+#     |   |       +-> py-kde                             | |||
+#     |   |                                              | |||
+#     |   +-> runtime                                    | |||
+#     |                                                  | |||
+#     +-> nepomuk-core                                   | |||
+#     |   +-> kactivities -->--+------->-+               | |||
+#     |   +-> runtime <--+---<-+         |               | |||
+#     |   +-> pimlibs ->-+               |               | |||
+#     |       +-> libkgapi               |               | |||
+#     |       +-> pim-runtime            |               | |||
+#     |       +-> pim                    |               | |||
+#     |       +-> py-kde                 |               | |||
+#     |           +-> some games         |               | |||
+#     |           +-> workspace <------<-+               | |||
+#     |           |   +-> admin          |               | |||
+#     |           |   +-> artwork        |               | |||
+#     |           |   +-> network        |               | |||
+#     |           |                      |               | |||
+#     |           | +-<----------------<-+               | |||
+#     |           | |                                    | |||
+#     |           +-+-> kate ->-+                        | |||
+#     |                         |                        | |||
+#     +-> smokekde <-+-<--------+-<-+-<---(smokegen)---<-+ |||
+#     |   |          |              |                      |||
+#     |   |          +-<- smokeqt <-+                      |||
+#     |   |                                                |||
+#     |   +-> p5-kde <--------------------(p5-qt)----------+||
+#     |   +-> korundum <------------------(ruby-qt)---------+|
+#     |   +-> kimono <--------------------(qyoto)------------+
+#     |
+#     +-> libkdeedu
+#     |   +-> former kdeedu
+#     |
+#     +-> libkdegames, libkmahjongg
+#     |   +-> former kdegames (see also py-kde above)
+#     |
+#     +-> other libk*
+#     |   +-> former kdegraphics
+#     |   +-> former kdemultimedia
+#     |
+#     +-> former accessibility
+#     +-> former kdeutils
+
+SUBDIR =
+# don't even try to keep these sorted
 
 # basic bricks
 SUBDIR += oxygen-icons
@@ -64,35 +85,36 @@ SUBDIR += runtime
 SUBDIR += pim-runtime
 SUBDIR += workspace
 SUBDIR += baseapps
+SUBDIR += kate
+SUBDIR += konsole
 
 # bindings and wrappers
 SUBDIR += kross-interpreters
-SUBDIR += p5-kde
-SUBDIR += p5-qt
-SUBDIR += py-kde
-SUBDIR += ruby-qt
-SUBDIR += korundum
-SUBDIR += +=
-SUBDIR += +=
 SUBDIR += smokegen
-SUBDIR += smokekde
 SUBDIR += smokeqt
-
-# former accessibility
-SUBDIR += jovie
-SUBDIR += kaccessible
-SUBDIR += kmousetool
-SUBDIR += kmag
-SUBDIR += kmouth
+SUBDIR += p5-qt
+SUBDIR += ruby-qt
+SUBDIR += qyoto
+SUBDIR += smokekde
+SUBDIR += py-kde
+SUBDIR += p5-kde
+SUBDIR += korundum
+SUBDIR += kimono
 
 # fat packages
 SUBDIR += admin
-SUBDIR += games
 SUBDIR += network
 SUBDIR += pim
 SUBDIR += sdk
 SUBDIR += toys
 SUBDIR += webdev
+
+# former kdeaccessibility
+SUBDIR += jovie
+SUBDIR += kaccessible
+SUBDIR += kmousetool
+SUBDIR += kmag
+SUBDIR += kmouth
 
 # former kdeutils
 SUBDIR += ark
@@ -105,12 +127,11 @@ SUBDIR += kgpg
 SUBDIR += kremotecontrol
 SUBDIR += ktimer
 SUBDIR += kwallet
-SUBDIR += printer-applet
+SUBDIR += print-manager
 SUBDIR += superkaramba
 SUBDIR += sweeper
 
 # former kdeedu
-SUBDIR += libkdeedu
 SUBDIR += blinken
 SUBDIR += cantor
 SUBDIR += analitza
@@ -128,17 +149,58 @@ SUBDIR += kstars
 SUBDIR += ktouch
 SUBDIR += kturtle
 SUBDIR += kwordquiz
+SUBDIR += libkdeedu
 SUBDIR += marble
 SUBDIR += pairs
 SUBDIR += parley
 SUBDIR += rocs
 SUBDIR += step
 
+# former kdegames
+SUBDIR += libkdegames
+SUBDIR += libkmahjongg
+SUBDIR += bomber
+SUBDIR += bovo
+SUBDIR += granatier
+SUBDIR += kajongg
+SUBDIR += kapman
+SUBDIR += katomic
+SUBDIR += kblackbox
+SUBDIR += kblocks
+SUBDIR += kbounce
+SUBDIR += kbreakout
+SUBDIR += kdiamond
+SUBDIR += kfourinline
+SUBDIR += kgoldrunner
+SUBDIR += kigo
+SUBDIR += killbots
+SUBDIR += kiriki
+SUBDIR += kjumpingcube
+SUBDIR += klickety
+SUBDIR += klines
+SUBDIR += kmahjongg
+SUBDIR += kmines
+SUBDIR += knavalbattle
+SUBDIR += knetwalk
+SUBDIR += kolf
+SUBDIR += kollision
+SUBDIR += konquest
+SUBDIR += kpat
+SUBDIR += kreversi
+SUBDIR += kshisen
+SUBDIR += ksirk
+SUBDIR += ksnakeduel
+SUBDIR += kspaceduel
+SUBDIR += ksquares
+SUBDIR += ksudoku
+SUBDIR += ktuberling
+SUBDIR += kubrick
+SUBDIR += lskat
+SUBDIR += palapeli
+SUBDIR += picmi
+
 # former kdegraphics
-SUBDIR += libkdcraw
-SUBDIR += libkexiv2
-SUBDIR += libkipi
-SUBDIR += libksane
+SUBDIR += graphics-mobipocket
 SUBDIR += graphics-strigi-analyzer
 SUBDIR += graphics-thumbnailers
 SUBDIR += gwenview
@@ -149,29 +211,29 @@ SUBDIR += kolourpaint
 SUBDIR += kruler
 SUBDIR += ksaneplugin
 SUBDIR += ksnapshot
+SUBDIR += libkdcraw
+SUBDIR += libkexiv2
+SUBDIR += libkipi
+SUBDIR += libksane
 SUBDIR += okular
 SUBDIR += svgpart
 
 # former kdemultimedia
-SUBDIR += libkcddb
-SUBDIR += libkcompactdisc
 SUBDIR += audiocd-kio
 SUBDIR += dragon
 SUBDIR += ffmpegthumbs
 SUBDIR += juk
 SUBDIR += kmix
 SUBDIR += kscd
+SUBDIR += libkcddb
+SUBDIR += libkcompactdisc
 SUBDIR += mplayerthumbs
-
-# other apps
-SUBDIR += kate
-SUBDIR += konsole
 
 # additional resources
 SUBDIR += artwork
 SUBDIR += base-artwork
+SUBDIR += nepomuk-widgets
 SUBDIR += plasma-addons
-SUBDIR += l10n
 SUBDIR += wallpapers
 
 .include <bsd.port.subdir.mk>

@@ -58,6 +58,7 @@ bin/pprof2calltree
 bin/pruneemptydirs
 bin/qtdoc
 @bin bin/split2po
+bin/struct2osd.sh
 bin/svn-clean
 bin/svnbackport
 bin/svnchangesince
@@ -477,20 +478,23 @@ lib/kde4/komparenavtreepart.so
 lib/kde4/komparepart.so
 lib/kde4/kuiviewerpart.so
 lib/kde4/libkbytearrayedit.so
-lib/kde4/oktetapart.so
-lib/kde4/plugins/designer/oktetadesignerplugin.so
-lib/kde4/pothumbnail.so
 @lib ${KDE4LIB}/libkasten2controllers.so.${LIBkasten2controllers_VERSION}
 @lib ${KDE4LIB}/libkasten2core.so.${LIBkasten2core_VERSION}
 @lib ${KDE4LIB}/libkasten2gui.so.${LIBkasten2gui_VERSION}
 @lib ${KDE4LIB}/libkasten2okteta1controllers.so.${LIBkasten2okteta1controllers_VERSION}
 @lib ${KDE4LIB}/libkasten2okteta1core.so.${LIBkasten2okteta1core_VERSION}
 @lib ${KDE4LIB}/libkasten2okteta1gui.so.${LIBkasten2okteta1gui_VERSION}
+@lib ${KDE4LIB}/libkdeinit4_cervisia.so.${LIBkdeinit4_cervisia_VERSION}
+@lib ${KDE4LIB}/libkdeinit4_cvsaskpass.so.${LIBkdeinit4_cvsaskpass_VERSION}
+@lib ${KDE4LIB}/libkdeinit4_cvsservice.so.${LIBkdeinit4_cvsservice_VERSION}
 @lib ${KDE4LIB}/libkomparedialogpages.so.${LIBkomparedialogpages_VERSION}
 @lib ${KDE4LIB}/libkomparediff2.so.${LIBkomparediff2_VERSION}
 @lib ${KDE4LIB}/libkompareinterface.so.${LIBkompareinterface_VERSION}
 @lib ${KDE4LIB}/libokteta1core.so.${LIBokteta1core_VERSION}
 @lib ${KDE4LIB}/libokteta1gui.so.${LIBokteta1gui_VERSION}
+lib/kde4/oktetapart.so
+lib/kde4/plugins/designer/oktetadesignerplugin.so
+lib/kde4/pothumbnail.so
 lib/kde4/quithumbnail.so
 @lib lib/libkasten2controllers.so.${LIBkasten2controllers_VERSION}
 @lib lib/libkasten2core.so.${LIBkasten2core_VERSION}
@@ -498,9 +502,9 @@ lib/kde4/quithumbnail.so
 @lib lib/libkasten2okteta1controllers.so.${LIBkasten2okteta1controllers_VERSION}
 @lib lib/libkasten2okteta1core.so.${LIBkasten2okteta1core_VERSION}
 @lib lib/libkasten2okteta1gui.so.${LIBkasten2okteta1gui_VERSION}
-lib/libkdeinit4_cervisia.so
-lib/libkdeinit4_cvsaskpass.so
-lib/libkdeinit4_cvsservice.so
+@lib lib/libkdeinit4_cervisia.so.${LIBkdeinit4_cervisia_VERSION}
+@lib lib/libkdeinit4_cvsaskpass.so.${LIBkdeinit4_cvsaskpass_VERSION}
+@lib lib/libkdeinit4_cvsservice.so.${LIBkdeinit4_cvsservice_VERSION}
 @lib lib/libkomparedialogpages.so.${LIBkomparedialogpages_VERSION}
 @lib lib/libkomparediff2.so.${LIBkomparediff2_VERSION}
 @lib lib/libkompareinterface.so.${LIBkompareinterface_VERSION}
@@ -563,10 +567,6 @@ share/apps/kcachegrind/icons/hicolor/32x32/actions/
 share/apps/kcachegrind/icons/hicolor/32x32/actions/percent.png
 share/apps/kcachegrind/kcachegrindui.rc
 share/apps/kcachegrind/tips
-share/apps/kconf_update/cervisia-change_repos_list.pl
-share/apps/kconf_update/cervisia-normalize_cvsroot.pl
-share/apps/kconf_update/cervisia.upd
-share/apps/kconf_update/change_colors.pl
 share/apps/kdevappwizard/
 share/apps/kdevappwizard/template_previews/
 share/apps/kdevappwizard/template_previews/akonadi-resources.png
@@ -636,6 +636,7 @@ share/apps/okteta/structures/
 share/apps/okteta/structures/elf/
 share/apps/okteta/structures/elf/elf.desktop
 share/apps/okteta/structures/elf/elf.osd
+share/apps/okteta/structures/gccxml-to-osd.xsl
 share/apps/okteta/structures/png/
 share/apps/okteta/structures/png/png.desktop
 share/apps/okteta/structures/png/png.osd

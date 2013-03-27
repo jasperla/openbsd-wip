@@ -64,6 +64,7 @@ share/apps/cantor/cantor_scripteditor.rc
 share/apps/cantor/cantor_shell.rc
 share/apps/cantor/cantor_solve_assistant.rc
 share/apps/cantor/maximabackend/
+share/apps/cantor/maximabackend/cantor-initmaxima.lisp
 share/apps/cantor/maximabackend/keywords.xml
 share/apps/cantor/octavebackend/
 share/apps/cantor/octavebackend/cantor_eigenvectors.m

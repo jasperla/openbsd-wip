@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	K Desktop Environment, mathematical applications
+COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${MODKDE4_VERSION}
 
 SHARED_LIBS =  cantorlibs                0.0 # 0.0
@@ -8,10 +8,13 @@ SHARED_LIBS += cantor_config             0.0 # 0.0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
-WANTLIB += lib/qt4/QtXml lib/qt4/QtXmlPatterns analitza analitzagui
-WANTLIB += cln gfortran glib-2.0 kdeui kio knewstuff3 kparts kpty ktexteditor
+WANTLIB += lib/qt4/QtXml lib/qt4/QtXmlPatterns
+WANTLIB += ${KDE4LIB}/analitza ${KDE4LIB}/analitzagui ${KDE4LIB}/analitzaplot
+WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/knewstuff3
+WANTLIB += ${KDE4LIB}/kparts ${KDE4LIB}/kpty ${KDE4LIB}/ktexteditor
+WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
 WANTLIB += lib/R/lib/R lib/R/lib/Rblas lib/R/lib/Rlapack
-WANTLIB += nepomuk nepomukutils qalculate soprano spectre xml2
+WANTLIB += cln gfortran glib-2.0 qalculate soprano spectre xml2
 
 MODULES =	devel/gettext
 
@@ -20,6 +23,6 @@ LIB_DEPENDS = 	databases/soprano \
 		math/R>=2.15.1p4 \
 		math/qalculate/libqalculate \
 		print/libspectre \
-		x11/kde4/analitza
+		x11/kde4/analitza>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>

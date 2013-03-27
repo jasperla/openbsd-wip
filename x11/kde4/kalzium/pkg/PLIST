@@ -14,18 +14,19 @@ include/kde4/libkdeedu/spectrum.h
 include/kde4/libkdeedu/spectrumparser.h
 lib/kde4/concentrationCalculator.so
 lib/kde4/gasCalculator.so
+@lib ${KDE4LIB}/libcompoundviewer.so.${LIBcompoundviewer_VERSION}
+@lib ${KDE4LIB}/libscience.so.${LIBscience_VERSION}
 lib/kde4/nuclearCalculator.so
 lib/kde4/plasma_applet_didyouknow.so
 lib/kde4/plasma_applet_molmassCalculator.so
 lib/kde4/plasma_engine_kalzium.so
-@comment lib/ocaml/
-@comment lib/ocaml/stublibs/
-@lib ${KDE4LIB}/libcompoundviewer.so.${LIBcompoundviewer_VERSION}
-@lib ${KDE4LIB}/libscience.so.${LIBscience_VERSION}
 @lib lib/libcompoundviewer.so.${LIBcompoundviewer_VERSION}
 @lib lib/libscience.so.${LIBscience_VERSION}
+@comment lib/ocaml/
+@comment lib/ocaml/stublibs/
 @man man/man1/kalzium.1
 share/applications/kde4/kalzium.desktop
+share/applications/kde4/kalzium_cml.desktop
 share/apps/desktoptheme/default/widgets/chalkboard.svg
 share/apps/kalzium/
 share/apps/kalzium/data/
@@ -381,6 +382,8 @@ share/apps/kalzium/icons/hicolor/scalable/actions/statematter.svgz
 share/apps/kalzium/icons/hicolor/scalable/actions/timeline.svgz
 share/apps/kalzium/icons/hicolor/scalable/actions/tooltip.svgz
 share/apps/kalzium/kalziumui.rc
+share/apps/kalzium/qml/
+share/apps/kalzium/qml/detailview.qml
 share/apps/libkdeedu/
 share/apps/libkdeedu/data/
 share/apps/libkdeedu/data/elements.xml
@@ -440,5 +443,7 @@ share/kde4/services/nuclearCalculator.desktop
 share/kde4/services/plasma-applet-Molmasscalculator.desktop
 share/kde4/services/plasma-dataengine-kalzium.desktop
 share/kde4/services/plasma_didyouknow.desktop
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

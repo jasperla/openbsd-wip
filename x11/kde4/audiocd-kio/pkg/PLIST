@@ -8,8 +8,6 @@ lib/kde4/libaudiocd_encoder_vorbis.so
 lib/kde4/libaudiocd_encoder_wav.so
 @lib ${KDE4LIB}/libaudiocdplugins.so.${LIBaudiocdplugins_VERSION}
 @lib lib/libaudiocdplugins.so.${LIBaudiocdplugins_VERSION}
-share/apps/kconf_update/audiocd.upd
-share/apps/kconf_update/upgrade-metadata.sh
 share/apps/konqsidebartng/virtual_folders/services/
 share/apps/konqsidebartng/virtual_folders/services/audiocd.desktop
 share/apps/solid/

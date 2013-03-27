@@ -7,7 +7,8 @@ CATEGORIES =	graphics
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
-WANTLIB += kdeui kio kparts nepomuk nepomukutils
+WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/kparts
+WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
 WANTLIB += soprano
 
 .include <bsd.port.mk>

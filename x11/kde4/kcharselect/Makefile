@@ -1,9 +1,10 @@
 # $OpenBSD$
 
-COMMENT =	K Desktop Environment, character select and clipboard copy
+COMMENT =	KDE character select and clipboard copy
 DISTNAME =	kcharselect-${MODKDE4_VERSION}
 
-WANTLIB =  lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg
-WANTLIB += c kdeui m pthread stdc++
+WANTLIB =  c m pthread stdc++
+WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg
+WANTLIB += ${KDE4LIB}/kdeui
 
 .include <bsd.port.mk>

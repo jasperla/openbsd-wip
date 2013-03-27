@@ -1,8 +1,7 @@
 # $OpenBSD: Makefile,v 1.18 2010/11/22 08:37:02 espie Exp $
 
-COMMENT =	K Desktop Environment, libraries
+COMMENT =	KDE core libraries
 DISTNAME =	kdelibs-${MODKDE4_VERSION}
-REVISION =	0
 PKGSPEC =	kdelibs->=4
 
 SHARED_LIBS =	kde3support          1.0      # .4.0
@@ -55,17 +54,17 @@ SHARED_LIBS +=	kdeinit4_kded4			0.0
 SHARED_LIBS +=	kdeinit4_kio_http_cache_cleaner	0.0
 SHARED_LIBS +=	kdeinit4_klauncher		0.0
 
-WANTLIB =  c m pthread stdc++ z
-WANTLIB += Half ICE Iex IlmImf IlmThread Imath
+WANTLIB =  c com_err crypto krb5 m pthread ssl stdc++ util z
+WANTLIB += Half ICE Iex IlmImf IlmThread Imath SM X11 Xau Xcursor Xdmcp
+WANTLIB += Xext Xfixes Xft Xpm Xrender Xss Xtst
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDeclarative
 WANTLIB += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtOpenGL
 WANTLIB += lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg
-WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml SM X11 Xau Xcursor Xdmcp Xext
-WANTLIB += Xfixes Xft Xpm Xrender Xss Xtst asn1 aspell attica
-WANTLIB += bz2 com_err crypto dbusmenu-qt enchant exslt fam
-WANTLIB += gif gssapi intl jasper jpeg krb5 lzma pcre pcreposix
+WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml
+WANTLIB += asn1 aspell attica bz2 dbusmenu-qt enchant exslt fam
+WANTLIB += gif gssapi intl jasper jpeg lzma pcre pcreposix
 WANTLIB += png polkit-qt-core-1 qca2 soprano sopranoclient
-WANTLIB += ssl streamanalyzer streams util xml2 xslt
+WANTLIB += streamanalyzer streams xml2 xslt
 
 MODULES =	multimedia/phonon
 MODKDE4_USE =
@@ -73,19 +72,21 @@ MODKDE4_USE =
 BUILD_DEPENDS =	misc/shared-desktop-ontologies>=0.10 \
 		misc/shared-mime-info \
 		net/avahi \
-		x11/grantlee
+		x11/grantlee \
+		x11/kde4/oxygen-icons>=${MODKDE4_DEP_VERSION}
 
-RUN_DEPENDS =	misc/shared-mime-info \
+RUN_DEPENDS =	devel/desktop-file-utils \
+		misc/shared-mime-info \
 		misc/shared-desktop-ontologies \
 		net/cagibi \
 		sysutils/gamin \
-		STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/oxygen-icons \
+		x11/kde4/oxygen-icons>=${MODKDE4_DEP_VERSION} \
 		x11/dbus \
 		x11/grantlee
 
 LIB_DEPENDS =	archivers/bzip2 \
 		archivers/xz \
-		STEM->=${MIN_SOPRANO_VERSION}:databases/soprano \
+		databases/soprano>=${MIN_SOPRANO_VERSION} \
 		databases/strigi \
 		devel/pcre \
 		graphics/jasper \
@@ -114,7 +115,7 @@ CONFIGURE_ARGS +=	-DWITH_ACL:Bool=FALSE \
 
 # some basic defines
 CONFIGURE_ARGS +=	-D_KDE_DEFAULT_HOME_POSTFIX:String="4" \
-			-DKDE_DISTRIBUTION_TEXT:String="OpenBSD Ports" \
+			-DKDE_DISTRIBUTION_TEXT:String="OpenBSD packages" \
 			-DKDE4_AUTH_BACKEND_NAME:String="PolkitQt-1" \
 			-DKDESU_USE_SUDO_DEFAULT:Bool=TRUE
 
@@ -127,12 +128,18 @@ WRAP_CMAKE_MODULES =	FindLibXslt
 MODKDE4_SYSCONF_FILES =	dbus-1	share/examples \
 			xdg	share/examples
 
+TEST_IS_INTERACTIVE =	X11
+TEST_DEPENDS =		${BUILD_PKGPATH} \
+			x11/kde4/kate>=${MODKDE4_DEP_VERSION} \
+			x11/kde4/konsole>=${MODKDE4_DEP_VERSION}
+
 post-extract:
 .for M in ${REWR_CMAKE_MODULES}
 	cp ${FILESDIR}/${M}.cmake ${WRKSRC}/cmake/modules/${M}.cmake
 .endfor
 .for M in ${WRAP_CMAKE_MODULES}
-	${SUBST_CMD} -c ${FILESDIR}/${M}.cmake ${WRKSRC}/cmake/modules/${M}.cmake
+	${SUBST_CMD} -c ${FILESDIR}/${M}.cmake \
+	    ${WRKSRC}/cmake/modules/${M}.cmake
 .endfor
 	cp ${FILESDIR}/config-util.h.cmake ${WRKSRC}/kdecore/util/
 	cp ${FILESDIR}/ConfigureChecks.cmake ${WRKSRC}/kdecore/util/

@@ -1,8 +1,8 @@
 @comment $OpenBSD$
 @bin bin/superkaramba
+@lib ${KDE4LIB}/libsuperkaramba.so.${LIBsuperkaramba_VERSION}
 lib/kde4/plasma_package_superkaramba.so
 lib/kde4/plasma_scriptengine_superkaramba.so
-@lib ${KDE4LIB}/libsuperkaramba.so.${LIBsuperkaramba_VERSION}
 @lib lib/libsuperkaramba.so.${LIBsuperkaramba_VERSION}
 share/applications/kde4/superkaramba.desktop
 share/apps/superkaramba/
@@ -18,5 +18,7 @@ share/icons/hicolor/64x64/apps/superkaramba.png
 share/icons/hicolor/scalable/apps/superkaramba.svgz
 share/kde4/services/plasma-package-superkaramba.desktop
 share/kde4/services/plasma-scriptengine-superkaramba.desktop
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

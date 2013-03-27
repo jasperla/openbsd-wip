@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile,v 1.12 2011/07/06 21:25:23 ajacoutot Exp $
 
-COMMENT =	K Desktop Environment, libraries for PIM
+COMMENT =	libraries for KDE PIM services
 DISTNAME =	kdepimlibs-${MODKDE4_VERSION}
 
 SHARED_LIBS =	kabc                 5.0      # .4.0
@@ -37,22 +37,34 @@ SHARED_LIBS +=  kcalcore		0.0 # 4.7
 SHARED_LIBS +=  kcalutils		0.0 # 4.7
 SHARED_LIBS +=  kmbox			0.0 # 4.7
 
+SHARED_LIBS +=  akonadi-socialutils	0.0 # 4.10
+
+WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSql
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtTest lib/qt4/QtXml
-WANTLIB += akonadiprotocolinternals
-WANTLIB += assuan c e2fs-uuid gpg-error gpgme gpgme-pthread ical icalss
-WANTLIB += kcmutils kdeui kemoticons kio kparts lber ldap m nepomuk
-WANTLIB += nepomukutils phonon_s prison pthread sasl2 solid soprano stdc++
+WANTLIB += ${KDE4LIB}/kcmutils ${KDE4LIB}/kdeui ${KDE4LIB}/kemoticons
+WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kparts ${KDE4LIB}/nepomuk
+WANTLIB += ${KDE4LIB}/nepomukcore ${KDE4LIB}/nepomukutils ${KDE4LIB}/solid
+WANTLIB += akonadiprotocolinternals assuan e2fs-uuid gpg-error gpgme
+WANTLIB += gpgme-pthread ical icalss lber ldap prison qjson sasl2 soprano
 
-MODULES =	devel/gettext
+MODULES =	devel/gettext multimedia/phonon
 
 MODKDE4_USE =	libs
 
-BUILD_DEPENDS =	devel/boost
+BUILD_DEPENDS =	devel/boost \
+		misc/shared-mime-info \
+		misc/shared-desktop-ontologies>=0.10
 
-LIB_DEPENDS +=	databases/openldap \
+RUN_DEPENDS =	misc/shared-mime-info \
+		misc/shared-desktop-ontologies>=0.10
+
+LIB_DEPENDS =	x11/kde4/nepomuk-core>=${MODKDE4_DEP_VERSION} \
+		databases/openldap \
+		databases/soprano>=${MIN_SOPRANO_VERSION} \
+		devel/qjson \
 		graphics/prison \
-		STEM->=${MIN_AKONADI_VERSION}:productivity/akonadi \
+		productivity/akonadi>=${MIN_AKONADI_VERSION} \
 		security/cyrus-sasl2 \
 		security/gpgme>=0.4.5 \
 		sysutils/e2fsprogs \

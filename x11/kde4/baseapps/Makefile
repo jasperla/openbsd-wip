@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	K Desktop Environment, base applications
+COMMENT =	KDE base applications
 DISTNAME =	kde-baseapps-${MODKDE4_VERSION}
 
 SHARED_LIBS =	konq			8.0	# 6.0
@@ -14,15 +14,24 @@ WANTLIB += ICE SM X11 Xext Xt Xrender
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
-WANTLIB += kcmutils kde3support kdesu kdeui kfile khtml kio
-WANTLIB += kjs knewstuff3 kparts nepomuk nepomukquery nepomukutils
-WANTLIB += phonon_s plasma solid soprano
-WANTLIB += glib-2.0 tidyp
+WANTLIB += ${KDE4LIB}/kactivities ${KDE4LIB}/kcmutils ${KDE4LIB}/kde3support
+WANTLIB += ${KDE4LIB}/kdesu ${KDE4LIB}/kdeui ${KDE4LIB}/kfile ${KDE4LIB}/khtml
+WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kjs ${KDE4LIB}/knewstuff3
+WANTLIB += ${KDE4LIB}/kparts ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukcore
+WANTLIB += ${KDE4LIB}/nepomukutils ${KDE4LIB}/nepomukwidgets ${KDE4LIB}/plasma
+WANTLIB += ${KDE4LIB}/solid
+WANTLIB += glib-2.0 soprano tidyp
+
+MODULES =	multimedia/phonon
 
 # KJS is broken, so allow KDE browsers to work out of the box
 # using QtWebKit.
 RUN_DEPENDS =	www/kwebkitpart
 
-LIB_DEPENDS =	www/tidyp
+LIB_DEPENDS =	devel/glib2 \
+		x11/kde4/kactivities \
+		x11/kde4/nepomuk-core \
+		x11/kde4/nepomuk-widgets \
+		www/tidyp
 
 .include <bsd.port.mk>

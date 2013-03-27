@@ -117,7 +117,6 @@ share/icons/oxygen/128x128/apps/internet-telephony.png
 share/icons/oxygen/128x128/apps/internet-web-browser.png
 share/icons/oxygen/128x128/apps/k3b.png
 share/icons/oxygen/128x128/apps/kaffeine.png
-share/icons/oxygen/128x128/apps/karbon.png
 share/icons/oxygen/128x128/apps/kblogger.png
 share/icons/oxygen/128x128/apps/kbruch.png
 share/icons/oxygen/128x128/apps/kbugbuster.png
@@ -127,7 +126,6 @@ share/icons/oxygen/128x128/apps/kde-windows.png
 share/icons/oxygen/128x128/apps/kde.png
 share/icons/oxygen/128x128/apps/kdevelop.png
 share/icons/oxygen/128x128/apps/kdf.png
-share/icons/oxygen/128x128/apps/kexi.png
 share/icons/oxygen/128x128/apps/kformula.png
 share/icons/oxygen/128x128/apps/kgpg.png
 share/icons/oxygen/128x128/apps/kig.png
@@ -149,7 +147,6 @@ share/icons/oxygen/128x128/apps/kplato.png
 share/icons/oxygen/128x128/apps/kpresenter.png
 share/icons/oxygen/128x128/apps/krdc.png
 share/icons/oxygen/128x128/apps/krfb.png
-share/icons/oxygen/128x128/apps/krita.png
 share/icons/oxygen/128x128/apps/ksnapshot.png
 share/icons/oxygen/128x128/apps/ksniffer.png
 share/icons/oxygen/128x128/apps/kspread.png
@@ -436,6 +433,11 @@ share/icons/oxygen/128x128/mimetypes/application-x-java.png
 share/icons/oxygen/128x128/mimetypes/application-x-javascript.png
 share/icons/oxygen/128x128/mimetypes/application-x-k3b.png
 share/icons/oxygen/128x128/mimetypes/application-x-kcsrc.png
+share/icons/oxygen/128x128/mimetypes/application-x-kexi-connectiondata.png
+share/icons/oxygen/128x128/mimetypes/application-x-kexiproject-shortcut.png
+share/icons/oxygen/128x128/mimetypes/application-x-kexiproject-sqlite.png
+share/icons/oxygen/128x128/mimetypes/application-x-kexiproject-sqlite2.png
+share/icons/oxygen/128x128/mimetypes/application-x-kexiproject-sqlite3.png
 share/icons/oxygen/128x128/mimetypes/application-x-kformula.png
 share/icons/oxygen/128x128/mimetypes/application-x-kgetlist.png
 share/icons/oxygen/128x128/mimetypes/application-x-kontour.png
@@ -474,6 +476,8 @@ share/icons/oxygen/128x128/mimetypes/application-x-shockwave-flash.png
 share/icons/oxygen/128x128/mimetypes/application-x-siag.png
 share/icons/oxygen/128x128/mimetypes/application-x-smb-server.png
 share/icons/oxygen/128x128/mimetypes/application-x-smb-workgroup.png
+share/icons/oxygen/128x128/mimetypes/application-x-sqlite2.png
+share/icons/oxygen/128x128/mimetypes/application-x-sqlite3.png
 share/icons/oxygen/128x128/mimetypes/application-x-srt.png
 share/icons/oxygen/128x128/mimetypes/application-x-srtrip.png
 share/icons/oxygen/128x128/mimetypes/application-x-subrip.png
@@ -593,6 +597,7 @@ share/icons/oxygen/128x128/mimetypes/x-media-podcast.png
 share/icons/oxygen/128x128/mimetypes/x-office-address-book.png
 share/icons/oxygen/128x128/mimetypes/x-office-calendar.png
 share/icons/oxygen/128x128/mimetypes/x-office-document.png
+share/icons/oxygen/128x128/mimetypes/x-office-presentation.png
 share/icons/oxygen/128x128/mimetypes/x-office-spreadsheet.png
 share/icons/oxygen/128x128/places/
 share/icons/oxygen/128x128/places/bookmarks.png
@@ -1313,7 +1318,6 @@ share/icons/oxygen/16x16/apps/internet-web-browser.png
 share/icons/oxygen/16x16/apps/java.png
 share/icons/oxygen/16x16/apps/k3b.png
 share/icons/oxygen/16x16/apps/kaffeine.png
-share/icons/oxygen/16x16/apps/karbon.png
 share/icons/oxygen/16x16/apps/kblogger.png
 share/icons/oxygen/16x16/apps/kbruch.png
 share/icons/oxygen/16x16/apps/kbugbuster.png
@@ -1323,7 +1327,6 @@ share/icons/oxygen/16x16/apps/kde-windows.png
 share/icons/oxygen/16x16/apps/kde.png
 share/icons/oxygen/16x16/apps/kdevelop.png
 share/icons/oxygen/16x16/apps/kdf.png
-share/icons/oxygen/16x16/apps/kexi.png
 share/icons/oxygen/16x16/apps/kformula.png
 share/icons/oxygen/16x16/apps/kgpg.png
 share/icons/oxygen/16x16/apps/kig.png
@@ -1343,7 +1346,6 @@ share/icons/oxygen/16x16/apps/kplato.png
 share/icons/oxygen/16x16/apps/kpresenter.png
 share/icons/oxygen/16x16/apps/krdc.png
 share/icons/oxygen/16x16/apps/krfb.png
-share/icons/oxygen/16x16/apps/krita.png
 share/icons/oxygen/16x16/apps/ksnapshot.png
 share/icons/oxygen/16x16/apps/ksniffer.png
 share/icons/oxygen/16x16/apps/kspread.png
@@ -1650,6 +1652,11 @@ share/icons/oxygen/16x16/mimetypes/application-x-java.png
 share/icons/oxygen/16x16/mimetypes/application-x-javascript.png
 share/icons/oxygen/16x16/mimetypes/application-x-k3b.png
 share/icons/oxygen/16x16/mimetypes/application-x-kcsrc.png
+share/icons/oxygen/16x16/mimetypes/application-x-kexi-connectiondata.png
+share/icons/oxygen/16x16/mimetypes/application-x-kexiproject-shortcut.png
+share/icons/oxygen/16x16/mimetypes/application-x-kexiproject-sqlite.png
+share/icons/oxygen/16x16/mimetypes/application-x-kexiproject-sqlite2.png
+share/icons/oxygen/16x16/mimetypes/application-x-kexiproject-sqlite3.png
 share/icons/oxygen/16x16/mimetypes/application-x-kformula.png
 share/icons/oxygen/16x16/mimetypes/application-x-kgetlist.png
 share/icons/oxygen/16x16/mimetypes/application-x-kontour.png
@@ -1688,6 +1695,8 @@ share/icons/oxygen/16x16/mimetypes/application-x-shockwave-flash.png
 share/icons/oxygen/16x16/mimetypes/application-x-siag.png
 share/icons/oxygen/16x16/mimetypes/application-x-smb-server.png
 share/icons/oxygen/16x16/mimetypes/application-x-smb-workgroup.png
+share/icons/oxygen/16x16/mimetypes/application-x-sqlite2.png
+share/icons/oxygen/16x16/mimetypes/application-x-sqlite3.png
 share/icons/oxygen/16x16/mimetypes/application-x-srt.png
 share/icons/oxygen/16x16/mimetypes/application-x-srtrip.png
 share/icons/oxygen/16x16/mimetypes/application-x-subrip.png
@@ -1807,6 +1816,7 @@ share/icons/oxygen/16x16/mimetypes/x-office-address-book.png
 share/icons/oxygen/16x16/mimetypes/x-office-calendar.png
 share/icons/oxygen/16x16/mimetypes/x-office-contact.png
 share/icons/oxygen/16x16/mimetypes/x-office-document.png
+share/icons/oxygen/16x16/mimetypes/x-office-presentation.png
 share/icons/oxygen/16x16/mimetypes/x-office-spreadsheet.png
 share/icons/oxygen/16x16/places/
 share/icons/oxygen/16x16/places/bookmarks.png
@@ -2605,7 +2615,6 @@ share/icons/oxygen/22x22/apps/kde-windows.png
 share/icons/oxygen/22x22/apps/kde.png
 share/icons/oxygen/22x22/apps/kdevelop.png
 share/icons/oxygen/22x22/apps/kdf.png
-share/icons/oxygen/22x22/apps/kexi.png
 share/icons/oxygen/22x22/apps/kformula.png
 share/icons/oxygen/22x22/apps/kgpg.png
 share/icons/oxygen/22x22/apps/kig.png
@@ -2623,7 +2632,6 @@ share/icons/oxygen/22x22/apps/kplato.png
 share/icons/oxygen/22x22/apps/kpresenter.png
 share/icons/oxygen/22x22/apps/krdc.png
 share/icons/oxygen/22x22/apps/krfb.png
-share/icons/oxygen/22x22/apps/krita.png
 share/icons/oxygen/22x22/apps/ksnapshot.png
 share/icons/oxygen/22x22/apps/ksniffer.png
 share/icons/oxygen/22x22/apps/kspread.png
@@ -2966,6 +2974,11 @@ share/icons/oxygen/22x22/mimetypes/application-x-java.png
 share/icons/oxygen/22x22/mimetypes/application-x-javascript.png
 share/icons/oxygen/22x22/mimetypes/application-x-k3b.png
 share/icons/oxygen/22x22/mimetypes/application-x-kcsrc.png
+share/icons/oxygen/22x22/mimetypes/application-x-kexi-connectiondata.png
+share/icons/oxygen/22x22/mimetypes/application-x-kexiproject-shortcut.png
+share/icons/oxygen/22x22/mimetypes/application-x-kexiproject-sqlite.png
+share/icons/oxygen/22x22/mimetypes/application-x-kexiproject-sqlite2.png
+share/icons/oxygen/22x22/mimetypes/application-x-kexiproject-sqlite3.png
 share/icons/oxygen/22x22/mimetypes/application-x-kformula.png
 share/icons/oxygen/22x22/mimetypes/application-x-kgetlist.png
 share/icons/oxygen/22x22/mimetypes/application-x-kontour.png
@@ -3004,6 +3017,8 @@ share/icons/oxygen/22x22/mimetypes/application-x-shockwave-flash.png
 share/icons/oxygen/22x22/mimetypes/application-x-siag.png
 share/icons/oxygen/22x22/mimetypes/application-x-smb-server.png
 share/icons/oxygen/22x22/mimetypes/application-x-smb-workgroup.png
+share/icons/oxygen/22x22/mimetypes/application-x-sqlite2.png
+share/icons/oxygen/22x22/mimetypes/application-x-sqlite3.png
 share/icons/oxygen/22x22/mimetypes/application-x-srt.png
 share/icons/oxygen/22x22/mimetypes/application-x-srtrip.png
 share/icons/oxygen/22x22/mimetypes/application-x-subrip.png
@@ -3126,6 +3141,7 @@ share/icons/oxygen/22x22/mimetypes/x-office-address-book.png
 share/icons/oxygen/22x22/mimetypes/x-office-calendar.png
 share/icons/oxygen/22x22/mimetypes/x-office-contact.png
 share/icons/oxygen/22x22/mimetypes/x-office-document.png
+share/icons/oxygen/22x22/mimetypes/x-office-presentation.png
 share/icons/oxygen/22x22/mimetypes/x-office-spreadsheet.png
 share/icons/oxygen/22x22/places/
 share/icons/oxygen/22x22/places/bookmarks.png
@@ -3294,13 +3310,11 @@ share/icons/oxygen/256x256/apps/clock.png
 share/icons/oxygen/256x256/apps/digikam.png
 share/icons/oxygen/256x256/apps/internet-web-browser.png
 share/icons/oxygen/256x256/apps/k3b.png
-share/icons/oxygen/256x256/apps/karbon.png
 share/icons/oxygen/256x256/apps/kbruch.png
 share/icons/oxygen/256x256/apps/kchart.png
 share/icons/oxygen/256x256/apps/kde-windows.png
 share/icons/oxygen/256x256/apps/kdevelop.png
 share/icons/oxygen/256x256/apps/kdf.png
-share/icons/oxygen/256x256/apps/kexi.png
 share/icons/oxygen/256x256/apps/kformula.png
 share/icons/oxygen/256x256/apps/kgpg.png
 share/icons/oxygen/256x256/apps/kig.png
@@ -3312,7 +3326,6 @@ share/icons/oxygen/256x256/apps/kontact-import-wizard.png
 share/icons/oxygen/256x256/apps/korgac.png
 share/icons/oxygen/256x256/apps/kplato.png
 share/icons/oxygen/256x256/apps/kpresenter.png
-share/icons/oxygen/256x256/apps/krita.png
 share/icons/oxygen/256x256/apps/kspread.png
 share/icons/oxygen/256x256/apps/kwalletmanager.png
 share/icons/oxygen/256x256/apps/kword.png
@@ -3486,6 +3499,11 @@ share/icons/oxygen/256x256/mimetypes/application-x-java.png
 share/icons/oxygen/256x256/mimetypes/application-x-javascript.png
 share/icons/oxygen/256x256/mimetypes/application-x-k3b.png
 share/icons/oxygen/256x256/mimetypes/application-x-kcsrc.png
+share/icons/oxygen/256x256/mimetypes/application-x-kexi-connectiondata.png
+share/icons/oxygen/256x256/mimetypes/application-x-kexiproject-shortcut.png
+share/icons/oxygen/256x256/mimetypes/application-x-kexiproject-sqlite.png
+share/icons/oxygen/256x256/mimetypes/application-x-kexiproject-sqlite2.png
+share/icons/oxygen/256x256/mimetypes/application-x-kexiproject-sqlite3.png
 share/icons/oxygen/256x256/mimetypes/application-x-kformula.png
 share/icons/oxygen/256x256/mimetypes/application-x-kgetlist.png
 share/icons/oxygen/256x256/mimetypes/application-x-kontour.png
@@ -3523,6 +3541,8 @@ share/icons/oxygen/256x256/mimetypes/application-x-shockwave-flash.png
 share/icons/oxygen/256x256/mimetypes/application-x-siag.png
 share/icons/oxygen/256x256/mimetypes/application-x-smb-server.png
 share/icons/oxygen/256x256/mimetypes/application-x-smb-workgroup.png
+share/icons/oxygen/256x256/mimetypes/application-x-sqlite2.png
+share/icons/oxygen/256x256/mimetypes/application-x-sqlite3.png
 share/icons/oxygen/256x256/mimetypes/application-x-srt.png
 share/icons/oxygen/256x256/mimetypes/application-x-srtrip.png
 share/icons/oxygen/256x256/mimetypes/application-x-subrip.png
@@ -3640,6 +3660,7 @@ share/icons/oxygen/256x256/mimetypes/x-media-podcast.png
 share/icons/oxygen/256x256/mimetypes/x-office-address-book.png
 share/icons/oxygen/256x256/mimetypes/x-office-calendar.png
 share/icons/oxygen/256x256/mimetypes/x-office-document.png
+share/icons/oxygen/256x256/mimetypes/x-office-presentation.png
 share/icons/oxygen/256x256/mimetypes/x-office-spreadsheet.png
 share/icons/oxygen/256x256/places/
 share/icons/oxygen/256x256/places/certificate-server.png
@@ -4329,7 +4350,6 @@ share/icons/oxygen/32x32/apps/internet-web-browser.png
 share/icons/oxygen/32x32/apps/java.png
 share/icons/oxygen/32x32/apps/k3b.png
 share/icons/oxygen/32x32/apps/kaffeine.png
-share/icons/oxygen/32x32/apps/karbon.png
 share/icons/oxygen/32x32/apps/kblogger.png
 share/icons/oxygen/32x32/apps/kbruch.png
 share/icons/oxygen/32x32/apps/kbugbuster.png
@@ -4339,7 +4359,6 @@ share/icons/oxygen/32x32/apps/kde-windows.png
 share/icons/oxygen/32x32/apps/kde.png
 share/icons/oxygen/32x32/apps/kdevelop.png
 share/icons/oxygen/32x32/apps/kdf.png
-share/icons/oxygen/32x32/apps/kexi.png
 share/icons/oxygen/32x32/apps/kformula.png
 share/icons/oxygen/32x32/apps/kgpg.png
 share/icons/oxygen/32x32/apps/kig.png
@@ -4359,7 +4378,6 @@ share/icons/oxygen/32x32/apps/kplato.png
 share/icons/oxygen/32x32/apps/kpresenter.png
 share/icons/oxygen/32x32/apps/krdc.png
 share/icons/oxygen/32x32/apps/krfb.png
-share/icons/oxygen/32x32/apps/krita.png
 share/icons/oxygen/32x32/apps/ksnapshot.png
 share/icons/oxygen/32x32/apps/ksniffer.png
 share/icons/oxygen/32x32/apps/kspread.png
@@ -4675,6 +4693,11 @@ share/icons/oxygen/32x32/mimetypes/application-x-java.png
 share/icons/oxygen/32x32/mimetypes/application-x-javascript.png
 share/icons/oxygen/32x32/mimetypes/application-x-k3b.png
 share/icons/oxygen/32x32/mimetypes/application-x-kcsrc.png
+share/icons/oxygen/32x32/mimetypes/application-x-kexi-connectiondata.png
+share/icons/oxygen/32x32/mimetypes/application-x-kexiproject-shortcut.png
+share/icons/oxygen/32x32/mimetypes/application-x-kexiproject-sqlite.png
+share/icons/oxygen/32x32/mimetypes/application-x-kexiproject-sqlite2.png
+share/icons/oxygen/32x32/mimetypes/application-x-kexiproject-sqlite3.png
 share/icons/oxygen/32x32/mimetypes/application-x-kformula.png
 share/icons/oxygen/32x32/mimetypes/application-x-kgetlist.png
 share/icons/oxygen/32x32/mimetypes/application-x-kontour.png
@@ -4713,6 +4736,8 @@ share/icons/oxygen/32x32/mimetypes/application-x-shockwave-flash.png
 share/icons/oxygen/32x32/mimetypes/application-x-siag.png
 share/icons/oxygen/32x32/mimetypes/application-x-smb-server.png
 share/icons/oxygen/32x32/mimetypes/application-x-smb-workgroup.png
+share/icons/oxygen/32x32/mimetypes/application-x-sqlite2.png
+share/icons/oxygen/32x32/mimetypes/application-x-sqlite3.png
 share/icons/oxygen/32x32/mimetypes/application-x-srt.png
 share/icons/oxygen/32x32/mimetypes/application-x-srtrip.png
 share/icons/oxygen/32x32/mimetypes/application-x-subrip.png
@@ -4833,6 +4858,7 @@ share/icons/oxygen/32x32/mimetypes/x-office-address-book.png
 share/icons/oxygen/32x32/mimetypes/x-office-calendar.png
 share/icons/oxygen/32x32/mimetypes/x-office-contact.png
 share/icons/oxygen/32x32/mimetypes/x-office-document.png
+share/icons/oxygen/32x32/mimetypes/x-office-presentation.png
 share/icons/oxygen/32x32/mimetypes/x-office-spreadsheet.png
 share/icons/oxygen/32x32/places/
 share/icons/oxygen/32x32/places/bookmarks.png
@@ -5577,7 +5603,6 @@ share/icons/oxygen/48x48/apps/internet-web-browser.png
 share/icons/oxygen/48x48/apps/java.png
 share/icons/oxygen/48x48/apps/k3b.png
 share/icons/oxygen/48x48/apps/kaffeine.png
-share/icons/oxygen/48x48/apps/karbon.png
 share/icons/oxygen/48x48/apps/kblogger.png
 share/icons/oxygen/48x48/apps/kbruch.png
 share/icons/oxygen/48x48/apps/kbugbuster.png
@@ -5587,7 +5612,6 @@ share/icons/oxygen/48x48/apps/kde-windows.png
 share/icons/oxygen/48x48/apps/kde.png
 share/icons/oxygen/48x48/apps/kdevelop.png
 share/icons/oxygen/48x48/apps/kdf.png
-share/icons/oxygen/48x48/apps/kexi.png
 share/icons/oxygen/48x48/apps/kformula.png
 share/icons/oxygen/48x48/apps/kgpg.png
 share/icons/oxygen/48x48/apps/kig.png
@@ -5607,7 +5631,6 @@ share/icons/oxygen/48x48/apps/kplato.png
 share/icons/oxygen/48x48/apps/kpresenter.png
 share/icons/oxygen/48x48/apps/krdc.png
 share/icons/oxygen/48x48/apps/krfb.png
-share/icons/oxygen/48x48/apps/krita.png
 share/icons/oxygen/48x48/apps/ksnapshot.png
 share/icons/oxygen/48x48/apps/ksniffer.png
 share/icons/oxygen/48x48/apps/kspread.png
@@ -5906,6 +5929,11 @@ share/icons/oxygen/48x48/mimetypes/application-x-java.png
 share/icons/oxygen/48x48/mimetypes/application-x-javascript.png
 share/icons/oxygen/48x48/mimetypes/application-x-k3b.png
 share/icons/oxygen/48x48/mimetypes/application-x-kcsrc.png
+share/icons/oxygen/48x48/mimetypes/application-x-kexi-connectiondata.png
+share/icons/oxygen/48x48/mimetypes/application-x-kexiproject-shortcut.png
+share/icons/oxygen/48x48/mimetypes/application-x-kexiproject-sqlite.png
+share/icons/oxygen/48x48/mimetypes/application-x-kexiproject-sqlite2.png
+share/icons/oxygen/48x48/mimetypes/application-x-kexiproject-sqlite3.png
 share/icons/oxygen/48x48/mimetypes/application-x-kformula.png
 share/icons/oxygen/48x48/mimetypes/application-x-kgetlist.png
 share/icons/oxygen/48x48/mimetypes/application-x-kontour.png
@@ -5944,6 +5972,8 @@ share/icons/oxygen/48x48/mimetypes/application-x-shockwave-flash.png
 share/icons/oxygen/48x48/mimetypes/application-x-siag.png
 share/icons/oxygen/48x48/mimetypes/application-x-smb-server.png
 share/icons/oxygen/48x48/mimetypes/application-x-smb-workgroup.png
+share/icons/oxygen/48x48/mimetypes/application-x-sqlite2.png
+share/icons/oxygen/48x48/mimetypes/application-x-sqlite3.png
 share/icons/oxygen/48x48/mimetypes/application-x-srt.png
 share/icons/oxygen/48x48/mimetypes/application-x-srtrip.png
 share/icons/oxygen/48x48/mimetypes/application-x-subrip.png
@@ -6064,6 +6094,7 @@ share/icons/oxygen/48x48/mimetypes/x-office-address-book.png
 share/icons/oxygen/48x48/mimetypes/x-office-calendar.png
 share/icons/oxygen/48x48/mimetypes/x-office-contact.png
 share/icons/oxygen/48x48/mimetypes/x-office-document.png
+share/icons/oxygen/48x48/mimetypes/x-office-presentation.png
 share/icons/oxygen/48x48/mimetypes/x-office-spreadsheet.png
 share/icons/oxygen/48x48/places/
 share/icons/oxygen/48x48/places/bookmarks.png
@@ -6310,7 +6341,6 @@ share/icons/oxygen/64x64/apps/internet-telephony.png
 share/icons/oxygen/64x64/apps/internet-web-browser.png
 share/icons/oxygen/64x64/apps/k3b.png
 share/icons/oxygen/64x64/apps/kaffeine.png
-share/icons/oxygen/64x64/apps/karbon.png
 share/icons/oxygen/64x64/apps/kblogger.png
 share/icons/oxygen/64x64/apps/kbruch.png
 share/icons/oxygen/64x64/apps/kbugbuster.png
@@ -6320,7 +6350,6 @@ share/icons/oxygen/64x64/apps/kde-windows.png
 share/icons/oxygen/64x64/apps/kde.png
 share/icons/oxygen/64x64/apps/kdevelop.png
 share/icons/oxygen/64x64/apps/kdf.png
-share/icons/oxygen/64x64/apps/kexi.png
 share/icons/oxygen/64x64/apps/kformula.png
 share/icons/oxygen/64x64/apps/kgpg.png
 share/icons/oxygen/64x64/apps/kig.png
@@ -6341,7 +6370,6 @@ share/icons/oxygen/64x64/apps/kplato.png
 share/icons/oxygen/64x64/apps/kpresenter.png
 share/icons/oxygen/64x64/apps/krdc.png
 share/icons/oxygen/64x64/apps/krfb.png
-share/icons/oxygen/64x64/apps/krita.png
 share/icons/oxygen/64x64/apps/ksnapshot.png
 share/icons/oxygen/64x64/apps/ksniffer.png
 share/icons/oxygen/64x64/apps/kspread.png
@@ -6625,6 +6653,11 @@ share/icons/oxygen/64x64/mimetypes/application-x-java.png
 share/icons/oxygen/64x64/mimetypes/application-x-javascript.png
 share/icons/oxygen/64x64/mimetypes/application-x-k3b.png
 share/icons/oxygen/64x64/mimetypes/application-x-kcsrc.png
+share/icons/oxygen/64x64/mimetypes/application-x-kexi-connectiondata.png
+share/icons/oxygen/64x64/mimetypes/application-x-kexiproject-shortcut.png
+share/icons/oxygen/64x64/mimetypes/application-x-kexiproject-sqlite.png
+share/icons/oxygen/64x64/mimetypes/application-x-kexiproject-sqlite2.png
+share/icons/oxygen/64x64/mimetypes/application-x-kexiproject-sqlite3.png
 share/icons/oxygen/64x64/mimetypes/application-x-kformula.png
 share/icons/oxygen/64x64/mimetypes/application-x-kgetlist.png
 share/icons/oxygen/64x64/mimetypes/application-x-kontour.png
@@ -6663,6 +6696,8 @@ share/icons/oxygen/64x64/mimetypes/application-x-shockwave-flash.png
 share/icons/oxygen/64x64/mimetypes/application-x-siag.png
 share/icons/oxygen/64x64/mimetypes/application-x-smb-server.png
 share/icons/oxygen/64x64/mimetypes/application-x-smb-workgroup.png
+share/icons/oxygen/64x64/mimetypes/application-x-sqlite2.png
+share/icons/oxygen/64x64/mimetypes/application-x-sqlite3.png
 share/icons/oxygen/64x64/mimetypes/application-x-srt.png
 share/icons/oxygen/64x64/mimetypes/application-x-srtrip.png
 share/icons/oxygen/64x64/mimetypes/application-x-subrip.png
@@ -6781,6 +6816,7 @@ share/icons/oxygen/64x64/mimetypes/x-media-podcast.png
 share/icons/oxygen/64x64/mimetypes/x-office-address-book.png
 share/icons/oxygen/64x64/mimetypes/x-office-calendar.png
 share/icons/oxygen/64x64/mimetypes/x-office-document.png
+share/icons/oxygen/64x64/mimetypes/x-office-presentation.png
 share/icons/oxygen/64x64/mimetypes/x-office-spreadsheet.png
 share/icons/oxygen/64x64/places/
 share/icons/oxygen/64x64/places/bookmarks.png

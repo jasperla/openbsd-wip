@@ -67,6 +67,7 @@ include/kde4/KDE/Akonadi/Contact/StandardContactActionManager
 include/kde4/KDE/Akonadi/Contact/StandardContactFormatter
 include/kde4/KDE/Akonadi/Contact/StandardContactGroupFormatter
 include/kde4/KDE/Akonadi/Control
+include/kde4/KDE/Akonadi/DBusConnectionPool
 include/kde4/KDE/Akonadi/ETMViewStateSaver
 include/kde4/KDE/Akonadi/Entity
 include/kde4/KDE/Akonadi/EntityDisplayAttribute
@@ -105,6 +106,7 @@ include/kde4/KDE/Akonadi/KMime/MessageParts
 include/kde4/KDE/Akonadi/KMime/MessageStatus
 include/kde4/KDE/Akonadi/KMime/MessageThreaderProxyModel
 include/kde4/KDE/Akonadi/KMime/MessageThreadingAttribute
+include/kde4/KDE/Akonadi/KMime/RemoveDuplicatesJob
 include/kde4/KDE/Akonadi/KMime/SpecialMailCollections
 include/kde4/KDE/Akonadi/KMime/SpecialMailCollectionsRequestJob
 include/kde4/KDE/Akonadi/LinkJob
@@ -117,6 +119,10 @@ include/kde4/KDE/Akonadi/ResourceBase
 include/kde4/KDE/Akonadi/SearchCreateJob
 include/kde4/KDE/Akonadi/ServerManager
 include/kde4/KDE/Akonadi/Session
+include/kde4/KDE/Akonadi/SocialUtils/
+include/kde4/KDE/Akonadi/SocialUtils/ImageProvider
+include/kde4/KDE/Akonadi/SocialUtils/SocialFeedItem
+include/kde4/KDE/Akonadi/SocialUtils/SocialNetworkAttributes
 include/kde4/KDE/Akonadi/StandardActionManager
 include/kde4/KDE/Akonadi/TransactionBeginJob
 include/kde4/KDE/Akonadi/TransactionCommitJob
@@ -359,6 +365,14 @@ include/kde4/KDE/KPIMIdentities/Signature
 include/kde4/KDE/KPIMIdentities/SignatureConfigurator
 include/kde4/KDE/KPIMTextEdit/
 include/kde4/KDE/KPIMTextEdit/EMailQuoteHighlighter
+include/kde4/KDE/KPIMTextEdit/EmoticonTextEditAction
+include/kde4/KDE/KPIMTextEdit/HtmlHighlighter
+include/kde4/KDE/KPIMTextEdit/InsertHtmlDialog
+include/kde4/KDE/KPIMTextEdit/InsertImageDialog
+include/kde4/KDE/KPIMTextEdit/InsertImageWidget
+include/kde4/KDE/KPIMTextEdit/InsertTableDialog
+include/kde4/KDE/KPIMTextEdit/InsertTableWidget
+include/kde4/KDE/KPIMTextEdit/TableFormatDialog
 include/kde4/KDE/KPIMTextEdit/TextEdit
 include/kde4/KDE/KPIMUtils/
 include/kde4/KDE/KPIMUtils/Email
@@ -557,6 +571,7 @@ include/kde4/akonadi/kmime/messageparts.h
 include/kde4/akonadi/kmime/messagestatus.h
 include/kde4/akonadi/kmime/messagethreaderproxymodel.h
 include/kde4/akonadi/kmime/messagethreadingattribute.h
+include/kde4/akonadi/kmime/removeduplicatesjob.h
 include/kde4/akonadi/kmime/specialmailcollections.h
 include/kde4/akonadi/kmime/specialmailcollectionsrequestjob.h
 include/kde4/akonadi/kmime/standardmailactionmanager.h
@@ -581,6 +596,11 @@ include/kde4/akonadi/searchcreatejob.h
 include/kde4/akonadi/selectionproxymodel.h
 include/kde4/akonadi/servermanager.h
 include/kde4/akonadi/session.h
+include/kde4/akonadi/socialutils/
+include/kde4/akonadi/socialutils/imageprovider.h
+include/kde4/akonadi/socialutils/libakonadisocialutils_export.h
+include/kde4/akonadi/socialutils/socialfeeditem.h
+include/kde4/akonadi/socialutils/socialnetworkattributes.h
 include/kde4/akonadi/specialcollections.h
 include/kde4/akonadi/specialcollectionsrequestjob.h
 include/kde4/akonadi/standardactionmanager.h
@@ -899,7 +919,14 @@ include/kde4/kpimidentities/signature.h
 include/kde4/kpimidentities/signatureconfigurator.h
 include/kde4/kpimtextedit/
 include/kde4/kpimtextedit/emailquotehighlighter.h
+include/kde4/kpimtextedit/emoticontexteditaction.h
+include/kde4/kpimtextedit/htmlhighlighter.h
+include/kde4/kpimtextedit/inserthtmldialog.h
+include/kde4/kpimtextedit/insertimagedialog.h
+include/kde4/kpimtextedit/insertimagewidget.h
+include/kde4/kpimtextedit/inserttabledialog.h
 include/kde4/kpimtextedit/kpimtextedit_export.h
+include/kde4/kpimtextedit/tableformatdialog.h
 include/kde4/kpimtextedit/textedit.h
 include/kde4/kpimtextedit/textutils.h
 include/kde4/kpimutils/
@@ -1043,6 +1070,7 @@ lib/cmake/KdepimLibs/KdepimLibsConfigVersion.cmake
 lib/gpgmepp/
 lib/gpgmepp/GpgmeppConfig.cmake
 lib/gpgmepp/GpgmeppLibraryDepends.cmake
+lib/kde4/akonadi_serializer_socialfeeditem.so
 lib/kde4/kabc_directory.so
 lib/kde4/kabc_file.so
 lib/kde4/kabc_ldapkio.so
@@ -1068,6 +1096,7 @@ lib/kde4/plugins/designer/kholidayswidgets.so
 @lib ${KDE4LIB}/libakonadi-kde.so.${LIBakonadi-kde_VERSION}
 @lib ${KDE4LIB}/libakonadi-kmime.so.${LIBakonadi-kmime_VERSION}
 @lib ${KDE4LIB}/libakonadi-notes.so.${LIBakonadi-notes_VERSION}
+@lib ${KDE4LIB}/libakonadi-socialutils.so.${LIBakonadi-socialutils_VERSION}
 @lib ${KDE4LIB}/libgpgme++-pthread.so.${LIBgpgme++-pthread_VERSION}
 @lib ${KDE4LIB}/libgpgme++.so.${LIBgpgme++_VERSION}
 @lib ${KDE4LIB}/libkabc.so.${LIBkabc_VERSION}
@@ -1100,6 +1129,7 @@ lib/kde4/plugins/designer/kholidayswidgets.so
 @lib lib/libakonadi-kde.so.${LIBakonadi-kde_VERSION}
 @lib lib/libakonadi-kmime.so.${LIBakonadi-kmime_VERSION}
 @lib lib/libakonadi-notes.so.${LIBakonadi-notes_VERSION}
+@lib lib/libakonadi-socialutils.so.${LIBakonadi-socialutils_VERSION}
 @lib lib/libgpgme++-pthread.so.${LIBgpgme++-pthread_VERSION}
 @lib lib/libgpgme++.so.${LIBgpgme++_VERSION}
 @lib lib/libkabc.so.${LIBkabc_VERSION}
@@ -1149,12 +1179,15 @@ share/apps/akonadi/contact/icons/oxygen/16x16/apps/sms_protocol.png
 share/apps/akonadi/contact/icons/oxygen/16x16/apps/yahoo_protocol.png
 share/apps/akonadi/contact/pics/
 share/apps/akonadi/contact/pics/world.jpg
+share/apps/akonadi/plugins/
+share/apps/akonadi/plugins/serializer/
+share/apps/akonadi/plugins/serializer/akonadi_serializer_socialfeeditem.desktop
 share/apps/cmake/modules/CheckTimezone.cmake
-share/apps/cmake/modules/FindAkonadi.cmake
 share/apps/cmake/modules/FindGpgme.cmake
 share/apps/cmake/modules/FindLdap.cmake
 share/apps/cmake/modules/FindLibical.cmake
 share/apps/cmake/modules/FindQGpgme.cmake
+share/apps/cmake/modules/FindQtOAuth.cmake
 share/apps/cmake/modules/KDEPimLibsDependencies.cmake
 share/apps/kabc/
 share/apps/kabc/countrytransl.map
@@ -1182,10 +1215,14 @@ share/apps/libkholidays/plan2/holiday_br_pt-br
 share/apps/libkholidays/plan2/holiday_by_be
 share/apps/libkholidays/plan2/holiday_ca-qc_fr
 share/apps/libkholidays/plan2/holiday_ca_en-gb
+share/apps/libkholidays/plan2/holiday_ch_de
 share/apps/libkholidays/plan2/holiday_ch_fr
+share/apps/libkholidays/plan2/holiday_ch_it
 share/apps/libkholidays/plan2/holiday_cl_es
 share/apps/libkholidays/plan2/holiday_cn_zh-cn
 share/apps/libkholidays/plan2/holiday_co_es
+share/apps/libkholidays/plan2/holiday_cr_en
+share/apps/libkholidays/plan2/holiday_cr_es
 share/apps/libkholidays/plan2/holiday_cz_cs
 share/apps/libkholidays/plan2/holiday_de-by_de
 share/apps/libkholidays/plan2/holiday_de_de
@@ -1304,6 +1341,7 @@ share/kde4/services/akonadi/
 share/kde4/services/akonadi/contact/
 share/kde4/services/akonadi/contact/aimprotocol.desktop
 share/kde4/services/akonadi/contact/gaduprotocol.desktop
+share/kde4/services/akonadi/contact/googletalkprotocol.desktop
 share/kde4/services/akonadi/contact/groupwiseprotocol.desktop
 share/kde4/services/akonadi/contact/icqprotocol.desktop
 share/kde4/services/akonadi/contact/ircprotocol.desktop
@@ -1347,3 +1385,4 @@ share/mime/packages/kdepimlibs-mime.xml
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
+share/mime/packages/x-vnd.akonadi.socialfeeditem.xml

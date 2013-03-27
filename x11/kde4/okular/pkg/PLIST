@@ -16,10 +16,12 @@ include/kde4/okular/core/okular_export.h
 include/kde4/okular/core/page.h
 include/kde4/okular/core/pagesize.h
 include/kde4/okular/core/pagetransition.h
+include/kde4/okular/core/settings_core.h
 include/kde4/okular/core/sound.h
 include/kde4/okular/core/sourcereference.h
 include/kde4/okular/core/textdocumentgenerator.h
 include/kde4/okular/core/textpage.h
+include/kde4/okular/core/tile.h
 include/kde4/okular/core/utils.h
 include/kde4/okular/core/version.h
 include/kde4/okular/interfaces/
@@ -31,7 +33,11 @@ include/kde4/okular/interfaces/viewerinterface.h
 lib/cmake/Okular/
 lib/cmake/Okular/OkularConfig.cmake
 lib/cmake/Okular/OkularConfigVersion.cmake
+lib/kde4/imports/org/kde/okular/
+lib/kde4/imports/org/kde/okular/libokularplugin.so
+lib/kde4/imports/org/kde/okular/qmldir
 lib/kde4/kio_msits.so
+@lib ${KDE4LIB}/libokularcore.so.${LIBokularcore_VERSION}
 lib/kde4/okularGenerator_chmlib.so
 lib/kde4/okularGenerator_comicbook.so
 lib/kde4/okularGenerator_djvu.so
@@ -47,8 +53,8 @@ lib/kde4/okularGenerator_poppler.so
 lib/kde4/okularGenerator_tiff.so
 lib/kde4/okularGenerator_xps.so
 lib/kde4/okularpart.so
-@lib ${KDE4LIB}/libokularcore.so.${LIBokularcore_VERSION}
 @lib lib/libokularcore.so.${LIBokularcore_VERSION}
+@man man/man1/okular.1
 share/applications/kde4/okular.desktop
 share/applications/kde4/okularApplication_chm.desktop
 share/applications/kde4/okularApplication_comicbook.desktop
@@ -64,6 +70,7 @@ share/applications/kde4/okularApplication_pdf.desktop
 share/applications/kde4/okularApplication_plucker.desktop
 share/applications/kde4/okularApplication_tiff.desktop
 share/applications/kde4/okularApplication_xps.desktop
+share/apps/kconf_update/okular.upd
 share/apps/okular/
 share/apps/okular/icons/
 share/apps/okular/icons/hicolor/
@@ -109,6 +116,7 @@ share/apps/okular/shell.rc
 share/apps/okular/tools.xml
 share/config.kcfg/gssettings.kcfg
 share/config.kcfg/okular.kcfg
+share/config.kcfg/okular_core.kcfg
 share/doc/HTML/en/okular/
 share/doc/HTML/en/okular/annotation-properties.png
 share/doc/HTML/en/okular/annotations.png
@@ -121,6 +129,7 @@ share/doc/HTML/en/okular/forms-bar.png
 share/doc/HTML/en/okular/index.cache.bz2
 share/doc/HTML/en/okular/index.docbook
 share/doc/HTML/en/okular/mainwindow.png
+share/doc/HTML/en/okular/man-okular.1.docbook
 share/doc/HTML/en/okular/presentation.png
 share/doc/HTML/en/okular/rating.png
 share/icons/hicolor/128x128/apps/okular.png

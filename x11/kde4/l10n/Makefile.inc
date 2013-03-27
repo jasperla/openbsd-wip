@@ -33,5 +33,8 @@ CONFIGURE_ENV =	CFLAGS=-I${PREFIX}/include \
 
 MODKDE4_FIX_GETTEXT =	Yes
 
+post-install:
+	rm -Rf ${PREFIX}/man/${KDE_L10N_LANG}/
+
 # XXX have to do this manually here...
 .include "${.CURDIR}/../../Makefile.inc"
