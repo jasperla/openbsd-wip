@@ -1,6 +1,4 @@
 @comment $OpenBSD: PLIST,v 1.8 2010/07/10 16:57:22 espie Exp $
-@option no-default-conflict
-@conflict kdelibs->=4
 bin/checkXML
 @bin bin/kbuildsycoca4
 @bin bin/kconfig_compiler
@@ -13,8 +11,10 @@ bin/checkXML
 @bin bin/kfilemetadatareader
 @bin bin/kjs
 @bin bin/kjscmd
+@bin bin/kmailservice
 @bin bin/kross
 @bin bin/kshell4
+@bin bin/ktelnetservice
 @bin bin/kunittestmodrunner
 @bin bin/kwrapper4
 @bin bin/makekdewidgets
@@ -236,6 +236,7 @@ include/kde4/KDE/KAuth/ActionWatcher
 include/kde4/KDE/KAuth/HelperSupport
 include/kde4/KDE/KAuthorized
 include/kde4/KDE/KAutoMount
+include/kde4/KDE/KAutoSaveFile
 include/kde4/KDE/KAutoUnmount
 include/kde4/KDE/KAutostart
 include/kde4/KDE/KBookmark
@@ -251,6 +252,7 @@ include/kde4/KDE/KBookmarkImporterBase
 include/kde4/KDE/KBookmarkManager
 include/kde4/KDE/KBookmarkMenu
 include/kde4/KDE/KBookmarkOwner
+include/kde4/KDE/KBreadcrumbSelectionModel
 include/kde4/KDE/KBugReport
 include/kde4/KDE/KBuildSycocaProgressDialog
 include/kde4/KDE/KButtonGroup
@@ -262,6 +264,7 @@ include/kde4/KDE/KCModuleProxy
 include/kde4/KDE/KCMultiDialog
 include/kde4/KDE/KCalendarSystem
 include/kde4/KDE/KCalendarSystemFactory
+include/kde4/KDE/KCapacityBar
 include/kde4/KDE/KCategorizedSortFilterProxyModel
 include/kde4/KDE/KCategorizedView
 include/kde4/KDE/KCategoryDrawer
@@ -307,6 +310,7 @@ include/kde4/KDE/KCurrencyCode
 include/kde4/KDE/KCursor
 include/kde4/KDE/KDBusServiceStarter
 include/kde4/KDE/KDEDModule
+include/kde4/KDE/KDEPrintDialog
 include/kde4/KDE/KDEsuClient
 include/kde4/KDE/KDataTool
 include/kde4/KDE/KDataToolAction
@@ -322,8 +326,10 @@ include/kde4/KDE/KDateWidget
 include/kde4/KDE/KDebug
 include/kde4/KDE/KDescendantsProxyModel
 include/kde4/KDE/KDesktopFile
+include/kde4/KDE/KDeviceListModel
 include/kde4/KDE/KDialog
 include/kde4/KDE/KDialogButtonBox
+include/kde4/KDE/KDialogJobUiDelegate
 include/kde4/KDE/KDirLister
 include/kde4/KDE/KDirModel
 include/kde4/KDE/KDirNotify
@@ -367,6 +373,7 @@ include/kde4/KDE/KFileSharePropsPlugin
 include/kde4/KDE/KFileTreeBranch
 include/kde4/KDE/KFileTreeView
 include/kde4/KDE/KFileWidget
+include/kde4/KDE/KFileWritePlugin
 include/kde4/KDE/KFilterBase
 include/kde4/KDE/KFilterDev
 include/kde4/KDE/KFilterProxySearchLine
@@ -385,6 +392,7 @@ include/kde4/KDE/KGenericFactoryBase
 include/kde4/KDE/KGlobal
 include/kde4/KDE/KGlobalAccel
 include/kde4/KDE/KGlobalSettings
+include/kde4/KDE/KGlobalShortcutInfo
 include/kde4/KDE/KGradientSelector
 include/kde4/KDE/KGraphicsWebView
 include/kde4/KDE/KGuiItem
@@ -450,6 +458,7 @@ include/kde4/KDE/KIconDialog
 include/kde4/KDE/KIconEffect
 include/kde4/KDE/KIconLoader
 include/kde4/KDE/KIconTheme
+include/kde4/KDE/KIdentityProxyModel
 include/kde4/KDE/KIdleTime
 include/kde4/KDE/KImageCache
 include/kde4/KDE/KImageFilePreview
@@ -459,6 +468,7 @@ include/kde4/KDE/KIntNumInput
 include/kde4/KDE/KIntSpinBox
 include/kde4/KDE/KIntValidator
 include/kde4/KDE/KJob
+include/kde4/KDE/KJobTrackerInterface
 include/kde4/KDE/KJobUiDelegate
 include/kde4/KDE/KKeySequenceWidget
 include/kde4/KDE/KLanguageButton
@@ -467,9 +477,11 @@ include/kde4/KDE/KLibFactory
 include/kde4/KDE/KLibLoader
 include/kde4/KDE/KLibrary
 include/kde4/KDE/KLineEdit
+include/kde4/KDE/KLinkItemSelectionModel
 include/kde4/KDE/KListWidget
 include/kde4/KDE/KListWidgetSearchLine
 include/kde4/KDE/KLocale
+include/kde4/KDE/KLocalizedDate
 include/kde4/KDE/KLocalizedString
 include/kde4/KDE/KLockFile
 include/kde4/KDE/KMD5
@@ -492,7 +504,9 @@ include/kde4/KDE/KMimeTypeChooserDialog
 include/kde4/KDE/KMimeTypeResolver
 include/kde4/KDE/KMimeTypeTrader
 include/kde4/KDE/KMimeTypeValidator
+include/kde4/KDE/KModelIndexProxyMapper
 include/kde4/KDE/KModifierKeyInfo
+include/kde4/KDE/KMountPoint
 include/kde4/KDE/KMozillaBookmarkImporterImpl
 include/kde4/KDE/KMultiTabBar
 include/kde4/KDE/KMultiTabBarButton
@@ -515,6 +529,7 @@ include/kde4/KDE/KNSBookmarkExporterImpl
 include/kde4/KDE/KNSBookmarkImporter
 include/kde4/KDE/KNSBookmarkImporterImpl
 include/kde4/KDE/KNTLM
+include/kde4/KDE/KNameAndUrlInputDialog
 include/kde4/KDE/KNetwork/
 include/kde4/KDE/KNetwork/KActiveSocketBase
 include/kde4/KDE/KNetwork/KBufferedSocket
@@ -538,6 +553,7 @@ include/kde4/KDE/KNetwork/KSocksSocketDevice
 include/kde4/KDE/KNetwork/KStreamSocket
 include/kde4/KDE/KNetwork/KUnixSocketAddress
 include/kde4/KDE/KNewFileMenu
+include/kde4/KDE/KNewPasswordDialog
 include/kde4/KDE/KNotification
 include/kde4/KDE/KNotificationRestrictions
 include/kde4/KDE/KNotifyConfigWidget
@@ -621,6 +637,7 @@ include/kde4/KDE/KRatingWidget
 include/kde4/KDE/KRecentDocument
 include/kde4/KDE/KRecentFilesAction
 include/kde4/KDE/KRecursiveFilterProxyModel
+include/kde4/KDE/KRegExpEditorInterface
 include/kde4/KDE/KRemoteEncoding
 include/kde4/KDE/KReplace
 include/kde4/KDE/KReplaceDialog
@@ -640,6 +657,7 @@ include/kde4/KDE/KSelectionWatcher
 include/kde4/KDE/KSelector
 include/kde4/KDE/KSeparator
 include/kde4/KDE/KService
+include/kde4/KDE/KServiceAction
 include/kde4/KDE/KServiceGroup
 include/kde4/KDE/KServiceType
 include/kde4/KDE/KServiceTypeProfile
@@ -673,6 +691,8 @@ include/kde4/KDE/KStartupInfo
 include/kde4/KDE/KStartupInfoData
 include/kde4/KDE/KStartupInfoId
 include/kde4/KDE/KStatusBar
+include/kde4/KDE/KStatusBarJobTracker
+include/kde4/KDE/KStatusBarOfflineIndicator
 include/kde4/KDE/KStatusNotifierItem
 include/kde4/KDE/KStringHandler
 include/kde4/KDE/KStringListValidator
@@ -784,6 +804,7 @@ include/kde4/KDE/KUser
 include/kde4/KDE/KUserGroup
 include/kde4/KDE/KVBox
 include/kde4/KDE/KViewStateMaintainer
+include/kde4/KDE/KViewStateSaver
 include/kde4/KDE/KWallet/
 include/kde4/KDE/KWallet/Wallet
 include/kde4/KDE/KWebPage
@@ -791,6 +812,7 @@ include/kde4/KDE/KWebPluginFactory
 include/kde4/KDE/KWebView
 include/kde4/KDE/KWebWallet
 include/kde4/KDE/KWidgetItemDelegate
+include/kde4/KDE/KWidgetJobTracker
 include/kde4/KDE/KWindowInfo
 include/kde4/KDE/KWindowSystem
 include/kde4/KDE/KWordMacroExpander
@@ -2001,31 +2023,6 @@ lib/kde4/ktranscript.so
 lib/kde4/libkhtmlpart.so
 lib/kde4/libkmultipart.so
 lib/kde4/notepadpart.so
-lib/kde4/plugins/designer/
-lib/kde4/plugins/designer/kde3supportwidgets.so
-lib/kde4/plugins/designer/kdedeprecated.so
-lib/kde4/plugins/designer/kdewebkitwidgets.so
-lib/kde4/plugins/designer/kdewidgets.so
-lib/kde4/plugins/imageformats/
-lib/kde4/plugins/imageformats/kimg_dds.so
-lib/kde4/plugins/imageformats/kimg_eps.so
-lib/kde4/plugins/imageformats/kimg_exr.so
-lib/kde4/plugins/imageformats/kimg_jp2.so
-lib/kde4/plugins/imageformats/kimg_pcx.so
-lib/kde4/plugins/imageformats/kimg_pic.so
-lib/kde4/plugins/imageformats/kimg_psd.so
-lib/kde4/plugins/imageformats/kimg_ras.so
-lib/kde4/plugins/imageformats/kimg_rgb.so
-lib/kde4/plugins/imageformats/kimg_tga.so
-lib/kde4/plugins/imageformats/kimg_xcf.so
-lib/kde4/plugins/imageformats/kimg_xview.so
-lib/kde4/plugins/kauth/
-lib/kde4/plugins/kauth/backend/
-lib/kde4/plugins/kauth/backend/kauth_backend_plugin.so
-lib/kde4/plugins/kauth/helper/
-lib/kde4/plugins/kauth/helper/kauth_helper_plugin.so
-lib/kde4/plugins/script/
-lib/kde4/plugins/script/libkrossqtsplugin.so
 @lib ${KDE4LIB}/libkcmutils.so.${LIBkcmutils_VERSION}
 @lib ${KDE4LIB}/libkde3support.so.${LIBkde3support_VERSION}
 @lib ${KDE4LIB}/libkdeclarative.so.${LIBkdeclarative_VERSION}
@@ -2069,6 +2066,31 @@ lib/kde4/plugins/script/libkrossqtsplugin.so
 @lib ${KDE4LIB}/libplasma.so.${LIBplasma_VERSION}
 @lib ${KDE4LIB}/libsolid.so.${LIBsolid_VERSION}
 @lib ${KDE4LIB}/libthreadweaver.so.${LIBthreadweaver_VERSION}
+lib/kde4/plugins/designer/
+lib/kde4/plugins/designer/kde3supportwidgets.so
+lib/kde4/plugins/designer/kdedeprecated.so
+lib/kde4/plugins/designer/kdewebkitwidgets.so
+lib/kde4/plugins/designer/kdewidgets.so
+lib/kde4/plugins/imageformats/
+lib/kde4/plugins/imageformats/kimg_dds.so
+lib/kde4/plugins/imageformats/kimg_eps.so
+lib/kde4/plugins/imageformats/kimg_exr.so
+lib/kde4/plugins/imageformats/kimg_jp2.so
+lib/kde4/plugins/imageformats/kimg_pcx.so
+lib/kde4/plugins/imageformats/kimg_pic.so
+lib/kde4/plugins/imageformats/kimg_psd.so
+lib/kde4/plugins/imageformats/kimg_ras.so
+lib/kde4/plugins/imageformats/kimg_rgb.so
+lib/kde4/plugins/imageformats/kimg_tga.so
+lib/kde4/plugins/imageformats/kimg_xcf.so
+lib/kde4/plugins/imageformats/kimg_xview.so
+lib/kde4/plugins/kauth/
+lib/kde4/plugins/kauth/backend/
+lib/kde4/plugins/kauth/backend/kauth_backend_plugin.so
+lib/kde4/plugins/kauth/helper/
+lib/kde4/plugins/kauth/helper/kauth_helper_plugin.so
+lib/kde4/plugins/script/
+lib/kde4/plugins/script/libkrossqtsplugin.so
 lib/kde4/spellcheckplugin.so
 @lib lib/libkcmutils.so.${LIBkcmutils_VERSION}
 @lib lib/libkde3support.so.${LIBkde3support_VERSION}
@@ -2125,10 +2147,8 @@ libexec/fileshareset
 @bin libexec/kio_http_cache_cleaner
 @bin libexec/kioslave
 @bin libexec/klauncher
-@bin libexec/kmailservice
 @bin libexec/kpac_dhcp_helper
 @bin libexec/ksendbugmail
-@bin libexec/ktelnetservice
 @bin libexec/lnusertemp
 @bin libexec/start_kdeinit
 @bin libexec/start_kdeinit_wrapper
@@ -2298,6 +2318,7 @@ share/apps/kcm_componentchooser/
 share/apps/kcm_componentchooser/kcm_instantmessenger.desktop
 share/apps/kcm_componentchooser/kcm_ktexteditor.desktop
 share/apps/kconf_update/
+share/apps/kconf_update/kcookiescfg.pl
 share/apps/kconf_update/kcookiescfg.upd
 share/apps/kconf_update/kded.upd
 share/apps/kconf_update/kio_help.upd
@@ -2317,7 +2338,7 @@ share/apps/kdeui/about/bar-middle-right.png
 share/apps/kdeui/about/bar-top-left.png
 share/apps/kdeui/about/bar-top-middle.png
 share/apps/kdeui/about/bar-top-right.png
-share/apps/kdeui/about/body-background.jpg
+share/apps/kdeui/about/body-background.png
 share/apps/kdeui/about/box-bottom-left.png
 share/apps/kdeui/about/box-bottom-middle.png
 share/apps/kdeui/about/box-bottom-right.png

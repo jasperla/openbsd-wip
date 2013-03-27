@@ -1,48 +1,28 @@
 $OpenBSD$
-Do not install files that interfere with system ones or are better handled in
-other (KDE) packages.
---- cmake/modules/CMakeLists.txt.orig	Thu Sep 27 19:09:04 2012
-+++ cmake/modules/CMakeLists.txt	Mon Oct  8 19:03:42 2012
-@@ -7,9 +7,10 @@ set(module_install_dir ${DATA_INSTALL_DIR}/cmake/modul
+--- cmake/modules/CMakeLists.txt.orig	Sun Dec 16 14:03:08 2012
++++ cmake/modules/CMakeLists.txt	Mon Dec 17 16:21:21 2012
+@@ -7,10 +7,19 @@ set(module_install_dir ${DATA_INSTALL_DIR}/cmake/modul
  # to have it around, so there is a place where the modules which are not installed
  # are listed explicitly:
  set(cmakeFilesDontInstall
 +               FindGettext.cmake
                 FindHUpnp.cmake
 +               FindKdcraw.cmake
++               FindLCMS.cmake
++               FindLibintl.cmake
                 FindPolkitQt.cmake
 -               FindPolkitQt-1.cmake
++               FindPostgreSQL.cmake
++               FindQt4.cmake
++               FindRUBY.cmake
                 FindUDev.cmake
++               FindX11.cmake
++               Qt4Macros.cmake
++               Qt4ConfigDependentSettings.cmake
                 )
  
-@@ -18,10 +19,7 @@ set(cmakeFilesDontInstall
- # which are used inside kdelibs, but which don't have to be installed (and
- # so become part of the public interface of kdelibs which has to be kept
- # compatible).
--set(cmakeFiles CheckCXXSourceCompiles.cmake
--               CheckCXXSourceRuns.cmake
--               CheckCXXSymbolExists.cmake
--               CheckPointerMember.cmake
-+set(cmakeFiles CheckPointerMember.cmake
-                CheckPrototypeExists.cmake
-                CheckStructMember.cmake
-                FindACL.cmake
-@@ -33,7 +31,6 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
-                FindBerkeleyDB.cmake
-                FindBlitz.cmake
-                FindBlueZ.cmake
--               FindBoost.cmake
-                FindCarbon.cmake
-                FindDBusMenuQt.cmake
-                FindDNSSD.cmake
-@@ -46,21 +43,17 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
-                FindFlac.cmake
-                FindFlex.cmake
-                FindFontconfig.cmake
--               FindFreetype.cmake
--               FindGIF.cmake
-                FindGLIB2.cmake
-                FindGMP.cmake
+ # Explicitly list all files which will be installed.
+@@ -48,14 +57,12 @@ set(cmakeFiles
                 FindGObject.cmake
                 FindGSSAPI.cmake
                 FindGStreamer.cmake
@@ -57,7 +37,7 @@ other (KDE) packages.
                 FindKdeMultimedia.cmake
                 FindKdepim.cmake
                 FindKdepimLibs.cmake
-@@ -68,14 +61,11 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
+@@ -63,13 +70,11 @@ set(cmakeFiles
                 FindKipi.cmake
                 FindKopete.cmake
                 FindKorundum.cmake
@@ -66,20 +46,14 @@ other (KDE) packages.
                 FindLibAttica.cmake
                 FindLibKonq.cmake
                 FindLibLZMA.cmake
--               FindLibXml2.cmake
                 FindLibXslt.cmake
 -               FindLibintl.cmake
                 FindLibraryWithDebug.cmake
                 FindLinuxWirelesstools.cmake
                 FindMsgfmt.cmake
-@@ -85,25 +75,17 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
-                FindNetworkManager.cmake
-                FindOggVorbis.cmake
-                FindOpenEXR.cmake
--               FindOpenSSL.cmake
+@@ -82,18 +87,14 @@ set(cmakeFiles
                 FindPCRE.cmake
                 FindPhonon.cmake
--               FindPkgConfig.cmake
                 FindPlasma.cmake
 +               FindPolkitQt-1.cmake
                 FindPopplerQt4.cmake
@@ -89,8 +63,6 @@ other (KDE) packages.
                 FindPyQt4.cmake
 -               Qt4Macros.cmake
 -               Qt4ConfigDependentSettings.cmake
--               FindPackageHandleStandardArgs.cmake
--               CMakeParseArguments.cmake  # used by FindPackageHandleStandardArgs.cmake, will be in CMake 2.8.3
                 FindPythonLibrary.cmake
                 FindQCA2.cmake
                 FindQImageBlitz.cmake
@@ -99,7 +71,7 @@ other (KDE) packages.
                 FindSIP.cmake
                 FindSamba.cmake
                 FindSane.cmake
-@@ -116,7 +98,6 @@ set(cmakeFiles CheckCXXSourceCompiles.cmake
+@@ -106,7 +107,6 @@ set(cmakeFiles
                 FindTaglib.cmake
                 FindUSB.cmake
                 FindWcecompat.cmake

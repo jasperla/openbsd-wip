@@ -46,5 +46,3 @@ share/apps/plasma_scriptengine_kimono/
 share/apps/plasma_scriptengine_kimono/PlasmaScriptengineKimono.dll
 share/kde4/services/plasma-scriptengine-kimono-applet.desktop
 share/kde4/services/plasma-scriptengine-kimono-dataengine.desktop
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database

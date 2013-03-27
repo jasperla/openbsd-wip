@@ -1,8 +1,11 @@
 ####### checks for kdecore/util  ###############
 include(CheckCSourceCompiles)
 include(CheckCSourceRuns)
+include(CheckIncludeFile)
 include(CheckFunctionExists)
 include(CMakePushCheckState)
+
+check_include_file("sys/mman.h"        HAVE_SYS_MMAN_H)
 
 check_function_exists(flock            HAVE_FLOCK)
 check_function_exists(lockf            HAVE_LOCKF)

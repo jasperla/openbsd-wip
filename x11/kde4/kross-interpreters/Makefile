@@ -1,7 +1,7 @@
 # $OpenBSD$
 
-COMMENT-main =	K Desktop Environment, bindings for running interpreters
-COMMENT-java =	K Desktop Environment, KDE4 Java bindings
+COMMENT-main =	KDE bindings for running interpreters
+COMMENT-java =	KDE Java bindings
 DISTNAME =	kross-interpreters-${MODKDE4_VERSION}
 PKGNAME-main =	${PKGNAME}
 PKGNAME-java =	${PKGNAME:C/interpreters/java/}
@@ -13,22 +13,24 @@ MULTI_PACKAGES =	-main -java
 PSEUDO_FLAVORS =	no_java
 FLAVOR ?=
 
-WANTLIB-common =  ${WANTLIB}
-WANTLIB-common += c m pthread stdc++
-WANTLIB-common += lib/qt4/QtDBus lib/qt4/QtScript lib/qt4/QtXml
-WANTLIB-common += krosscore
+WANTLIB =  c m pthread stdc++
+WANTLIB += lib/qt4/QtDBus lib/qt4/QtScript lib/qt4/QtXml
+WANTLIB += ${KDE4LIB}/krosscore
 
-WANTLIB-main =  ${WANTLIB-common}
+WANTLIB-main =  ${WANTLIB} ${MODPY_WANTLIB}
 WANTLIB-main += lib/qt4/QtGui
-WANTLIB-main += kpty
-WANTLIB-main += ${MODPY_WANTLIB}
+WANTLIB-main += ${KDE4LIB}/kpty
 
-WANTLIB-java =  ${WANTLIB-common}
-
-MODULES =		lang/python lang/ruby
+MODULES =		lang/python
+MODKDE4_USE =		libs
 
 # Unported
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_FALCON:Bool=Yes
+
+# XXX Ruby 1.9 support is broken, and FindRuby doesn't find 1.8
+#MODULES =		lang/python lang/ruby
+#MODRUBY_REV =		1.8
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Ruby:Bool=Yes
 
 .if ${FLAVOR:Mno_java}
 CONFIGURE_ARGS +=	-DBUILD_java:Bool=No
@@ -39,8 +41,6 @@ MODJAVA_JRERUN =	Yes
 .endif
 
 LIB_DEPENDS-main =	${LIB_DEPENDS}
-
-RUN_DEPENDS-common =	x11/kde4/libs
 
 RUN_DEPENDS-main =	${RUN_DEPENDS-common} \
 			${MODPY_RUN_DEPENDS} \

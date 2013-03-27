@@ -1,11 +1,13 @@
 $OpenBSD$
---- klinkstatus/src/tidy/tidyx.h.orig	Mon Oct 22 16:09:07 2012
-+++ klinkstatus/src/tidy/tidyx.h	Mon Oct 22 16:22:56 2012
-@@ -48,7 +48,12 @@
+--- klinkstatus/src/tidy/tidyx.h.orig	Fri Mar  1 09:23:13 2013
++++ klinkstatus/src/tidy/tidyx.h	Sun Mar 24 19:47:53 2013
+@@ -48,7 +48,14 @@
    Created 2002-07-11 by Charles Reitzel
  */
  
 -#include <tidy.h>
++#include <config-tidy.h>
++
 +#if HAVE_TIDYP
 +# include <tidyp.h>
 +#else
@@ -15,7 +17,7 @@ $OpenBSD$
  #include <buffio.h>
  
  #include <config-tidy.h>
-@@ -565,8 +570,6 @@ class Document (public)
+@@ -565,8 +572,6 @@ class Document (public)
      void  SetAppData( void* data ) { tidySetAppData( _tdoc, data ); }
      void* GetAppData()             { return tidyGetAppData( _tdoc ); }
  #endif

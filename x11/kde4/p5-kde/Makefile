@@ -1,24 +1,35 @@
 # $OpenBSD$
 
-COMMENT =	K Desktop Environment, KDE4 bindings for Perl
+COMMENT =	KDE bindings for Perl
 DISTNAME =	perlkde-${MODKDE4_VERSION}
 PKGNAME =	p5-kde-${MODKDE4_VERSION}
 
 WANTLIB =  c m perl pthread stdc++ util
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtOpenGL lib/qt4/QtSql lib/qt4/QtSvg lib/qt4/QtXml
-WANTLIB += smokeattica smokebase smokekate smokekdecore smokekdeui
-WANTLIB += smokekfile smokekhtml smokekio smokeknewstuff2 smokeknewstuff3
-WANTLIB += smokekparts smokektexteditor smokekutils smokenepomuk
-WANTLIB += smokenepomukquery smokeokular smokeplasma smokeqtcore
-WANTLIB += smokeqtgui smokeqtnetwork smokesolid smokesoprano
-WANTLIB += smokesopranoclient smokesopranoserver smokeakonadi
+WANTLIB += ${KDE4LIB}/smokeattica ${KDE4LIB}/smokebase ${KDE4LIB}/smokekate
+WANTLIB += ${KDE4LIB}/smokekdecore ${KDE4LIB}/smokekdeui
+WANTLIB += ${KDE4LIB}/smokekfile ${KDE4LIB}/smokekhtml ${KDE4LIB}/smokekio
+WANTLIB += ${KDE4LIB}/smokeknewstuff2 ${KDE4LIB}/smokeknewstuff3
+WANTLIB += ${KDE4LIB}/smokekparts ${KDE4LIB}/smokektexteditor
+WANTLIB += ${KDE4LIB}/smokekutils ${KDE4LIB}/smokenepomuk
+WANTLIB += ${KDE4LIB}/smokenepomukquery ${KDE4LIB}/smokeokular
+WANTLIB += ${KDE4LIB}/smokeplasma ${KDE4LIB}/smokeqtcore
+WANTLIB += ${KDE4LIB}/smokeqtgui ${KDE4LIB}/smokeqtnetwork
+WANTLIB += ${KDE4LIB}/smokesolid ${KDE4LIB}/smokesoprano
+WANTLIB += ${KDE4LIB}/smokesopranoclient ${KDE4LIB}/smokesopranoserver
+WANTLIB += ${KDE4LIB}/smokeakonadi
 
-MODKDE4_USE =	libs
+MODKDE4_USE =
 
-BUILD_DEPENDS =	x11/kde4/p5-qt
-RUN_DEPENDS =	x11/kde4/p5-qt
-LIB_DEPENDS = 	x11/kde4/smokekde
+BUILD_DEPENDS =	productivity/attica \
+		x11/kde4/okular>=${MODKDE4_DEP_VERSION} \
+		x11/kde4/p5-qt>=${MODKDE4_DEP_VERSION} \
+		x11/kde4/pimlibs>=${MODKDE4_DEP_VERSION}
+
+RUN_DEPENDS =	x11/kde4/p5-qt>=${MODKDE4_DEP_VERSION}
+
+LIB_DEPENDS = 	x11/kde4/smokekde>=${MODKDE4_DEP_VERSION}
 
 # Avoid clashing Perl do_open and do_close with GCC's locale_facets.h
 post-patch:

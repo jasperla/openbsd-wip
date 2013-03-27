@@ -18,7 +18,9 @@ share/apps/kremotecontrol/profiles/kscd.profile.xml
 share/apps/kremotecontrol/profiles/okular.profile.xml
 share/apps/kremotecontrol/profiles/powermanagement.profile.xml
 share/apps/kremotecontrol/profiles/profile.xsd
+share/apps/kremotecontrol/profiles/tomahawk.profile.xml
 share/apps/kremotecontrol/profiles/vlc.profile.xml
+share/apps/kremotecontrol/profiles/vlc2.profile.xml
 share/apps/kremotecontroldaemon/
 share/apps/kremotecontroldaemon/kremotecontroldaemon.notifyrc
 share/doc/HTML/en/kcontrol/kremotecontrol/
@@ -60,5 +62,7 @@ share/kde4/services/kremotecontrolbackends/
 share/kde4/services/kremotecontrolbackends/kremotecontrol_lirc.desktop
 share/kde4/services/plasma-engine-kremotecontrol.desktop
 share/kde4/servicetypes/kremotecontrolmanager.desktop
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

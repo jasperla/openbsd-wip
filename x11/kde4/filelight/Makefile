@@ -1,10 +1,14 @@
 # $OpenBSD$
 
-COMMENT =	K Desktop Environment, graphical equivalent of du
+COMMENT =	KDE graphical equivalent of du
 DISTNAME =	filelight-${MODKDE4_VERSION}
 
-WANTLIB =  lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
-WANTLIB += lib/qt4/QtXml c kdeui kfile kio kparts m nepomuk nepomukutils
-WANTLIB += pthread solid soprano stdc++
+WANTLIB =  c m pthread stdc++
+WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
+WANTLIB += lib/qt4/QtXml
+WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kfile ${KDE4LIB}/kio
+WANTLIB += ${KDE4LIB}/kparts ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
+WANTLIB += ${KDE4LIB}/solid
+WANTLIB += soprano
 
 .include <bsd.port.mk>

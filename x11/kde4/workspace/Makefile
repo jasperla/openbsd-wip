@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile,v 1.14 2010/11/22 08:37:02 espie Exp $
 
-COMMENT =	K Desktop Environment, workspace
+COMMENT =	KDE workspace
 DISTNAME =	kde-workspace-${MODKDE4_VERSION}
 REVISION =	0
 
@@ -36,36 +36,45 @@ SHARED_LIBS +=	taskmanager			0.0 # 4.7
 SHARED_LIBS +=	weather_ion			0.0 # 6.0
 
 WANTLIB =  c m pthread stdc++ util z
-WANTLIB += GL GLU ICE SM X11 XRes Xau Xcomposite Xcursor Xdamage Xdmcp Xext
-WANTLIB += Xfixes Xft Xi Xinerama Xrandr Xrender Xss Xtst Xxf86misc Xxf86vm
-WANTLIB += fontconfig freetype xkbfile
+WANTLIB += GL GLU ICE SM X11 X11-xcb XRes Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xft Xi Xinerama Xrandr Xrender Xss Xtst Xxf86vm
+WANTLIB += fontconfig freetype xcb xcb-damage xcb-xfixes xkbfile
 
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative
 WANTLIB += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtOpenGL
 WANTLIB += lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg lib/qt4/QtTest
-WANTLIB += lib/qt4/QtXml lib/qt4/QtWebKit
+WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml lib/qt4/QtXmlPatterns
 
-WANTLIB += akonadi-kcal akonadi-kde akonadi-kmime kabc kactivities
-WANTLIB += kcalcore kcalutils kcmutils kdeclarative kdefakes
-WANTLIB += kdesu kdewebkit kdeui kfile kholidays khtml
-WANTLIB += kidletime kio kjs kmime knewstuff3 knotifyconfig kparts
-WANTLIB += kpimutils kpty kresources krosscore ktexteditor
-WANTLIB += kunitconversion microblog nepomuk nepomukquery nepomukutils
-WANTLIB += phonon_s plasma qimageblitz solid soprano streamanalyzer
-WANTLIB += strigiqtdbusclient threadweaver syndication
+WANTLIB += ${KDE4LIB}/akonadi-kcal ${KDE4LIB}/akonadi-kde
+WANTLIB += ${KDE4LIB}/akonadi-kmime ${KDE4LIB}/kabc ${KDE4LIB}/kactivities
+WANTLIB += ${KDE4LIB}/kcalcore ${KDE4LIB}/kcalutils ${KDE4LIB}/kcmutils
+WANTLIB += ${KDE4LIB}/kdeclarative ${KDE4LIB}/kdefakes ${KDE4LIB}/kdesu
+WANTLIB += ${KDE4LIB}/kdewebkit ${KDE4LIB}/kdeui ${KDE4LIB}/kfile
+WANTLIB += ${KDE4LIB}/kholidays ${KDE4LIB}/khtml ${KDE4LIB}/kidletime
+WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kjs ${KDE4LIB}/kmime
+WANTLIB += ${KDE4LIB}/knewstuff3 ${KDE4LIB}/knotifyconfig ${KDE4LIB}/kparts
+WANTLIB += ${KDE4LIB}/kpimutils ${KDE4LIB}/kpty ${KDE4LIB}/kresources
+WANTLIB += ${KDE4LIB}/krosscore ${KDE4LIB}/ktexteditor
+WANTLIB += ${KDE4LIB}/kunitconversion ${KDE4LIB}/microblog
+WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukcore
+WANTLIB += ${KDE4LIB}/nepomukutils ${KDE4LIB}/plasma
+WANTLIB += ${KDE4LIB}/solid ${KDE4LIB}/threadweaver
+WANTLIB += ${KDE4LIB}/syndication
 
-WANTLIB += ck-connector cln dbus-1 dbusmenu-qt ggadget-1.0 ggadget-qt-1.0
-WANTLIB += glib-2.0 gps jpeg png prison qalculate usb xml2 xmms
+WANTLIB += ck-connector cln dbus-1 dbusmenu-qt glib-2.0 gps jpeg png
+WANTLIB += prison qalculate qimageblitz qjson soprano streamanalyzer
+WANTLIB += strigiqtdbusclient usb xml2 xmms
 
-MODULES =	devel/gettext
+MODULES =	devel/gettext multimedia/phonon
 MODKDE4_USE =	pim
 
 BUILD_DEPENDS =	misc/shared-desktop-ontologies \
-		x11/kde4/py-kde
+		x11/kde4/py-kde>=${MODKDE4_DEP_VERSION} \
 
-RUN_DEPENDS =	misc/shared-desktop-ontologies \
+RUN_DEPENDS =	devel/desktop-file-utils \
+		misc/shared-desktop-ontologies \
 		sysutils/lsof \
-		x11/kde4/py-kde \
+		x11/kde4/py-kde>=${MODKDE4_DEP_VERSION} \
 		x11/polkit-qt4
 
 LIB_DEPENDS =	audio/xmms \
@@ -76,12 +85,13 @@ LIB_DEPENDS =	audio/xmms \
 		misc/gpsd \
 		sysutils/consolekit \
 		x11/dbusmenu-qt \
-		x11/kde4/kactivities
+		x11/kde4/kactivities>=${MODKDE4_DEP_VERSION}
 
-CONFIGURE_ARGS =	-DWITH_Sensors:Bool=False \
+CONFIGURE_ARGS =	-DWITH_Googlegadgets:Bool=False \
 			-DWITH_NetworkManager:Bool=False \
+			-DWITH_PCIUTILS:Bool=False \
 			-DWITH_RAW1394:Bool=False \
-			-DWITH_PCIUTILS:Bool=False
+			-DWITH_Sensors:Bool=False
 
 MODKDE4_SYSCONF_FILES =	dbus-1		share/examples \
 			ksysguarddrc	share/examples/kde

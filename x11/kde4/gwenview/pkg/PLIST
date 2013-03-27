@@ -14,6 +14,8 @@ share/apps/gwenview/color-schemes/fullscreen.colors
 share/apps/gwenview/cursors/
 share/apps/gwenview/cursors/zoom.png
 share/apps/gwenview/gwenviewui.rc
+share/apps/gwenview/images/
+share/apps/gwenview/images/background.png
 share/apps/solid/
 share/apps/solid/actions/
 share/apps/solid/actions/gwenview_importer.desktop

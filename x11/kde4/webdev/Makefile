@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile,v 1.9 2010/11/22 08:37:02 espie Exp $
 
-COMMENT =	K Desktop Environment, web development
+COMMENT =	web development tools for KDE
 DISTNAME =	kdewebdev-${MODKDE4_VERSION}
 
 SHARED_LIBS =	klinkstatuscommon	0.0
@@ -10,16 +10,25 @@ SHARED_LIBS +=	kommanderwidgets	0.0
 WANTLIB =  c m pthread stdc++ z
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtSvg lib/qt4/QtXml
-WANTLIB += kcmutils kde3support kdeui kemoticons khtml
-WANTLIB += kidletime kio kjs kmime knewstuff2 kparts kpimidentities
-WANTLIB += kprintutils krossui kutils mailtransport nepomuk
-WANTLIB += nepomukutils phonon_s soprano threadweaver tidyp
+WANTLIB += ${KDE4LIB}/kcmutils ${KDE4LIB}/kde3support ${KDE4LIB}/kdeui
+WANTLIB += ${KDE4LIB}/kemoticons ${KDE4LIB}/khtml ${KDE4LIB}/kidletime
+WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kjs ${KDE4LIB}/kmime
+WANTLIB += ${KDE4LIB}/knewstuff2 ${KDE4LIB}/kparts ${KDE4LIB}/kpimidentities
+WANTLIB += ${KDE4LIB}/kprintutils ${KDE4LIB}/krossui ${KDE4LIB}/kutils
+WANTLIB += ${KDE4LIB}/mailtransport ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
+WANTLIB += ${KDE4LIB}/threadweaver
+WANTLIB += soprano tidyp
 
-MODULES =	lang/ruby
+MODULES =	multimedia/phonon lang/ruby
+MODRUBY_REV =	1.9
 MODKDE4_USE =	pim
 
-BUILD_DEPENDS =	${MODRUBY_BUILD_DEPENDS}
-RUN_DEPENDS =	x11/kde4/korundum
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+2,-guic
+
+# XXX broken ATM in kross-interpreters
+#RUN_DEPENDS +=	x11/kde4/korundum>=${MODKDE4_DEP_VERSION}
+
 LIB_DEPENDS =	www/tidyp
 
 post-patch:

@@ -66,13 +66,13 @@ lib/kde4/konqsidebar_tree.so
 lib/kde4/konqsidebar_web.so
 lib/kde4/libkcminit_nsplugins.so
 lib/kde4/libnsplugin.so
-lib/kde4/minitoolsplugin.so
-lib/kde4/plasma_applet_folderview.so
 @lib ${KDE4LIB}/libdolphinprivate.so.${LIBdolphinprivate_VERSION}
 @lib ${KDE4LIB}/libkbookmarkmodel_private.so.${LIBkbookmarkmodel_private_VERSION}
 @lib ${KDE4LIB}/libkonq.so.${LIBkonq_VERSION}
 @lib ${KDE4LIB}/libkonqsidebarplugin.so.${LIBkonqsidebarplugin_VERSION}
 @lib ${KDE4LIB}/libkonquerorprivate.so.${LIBkonquerorprivate_VERSION}
+lib/kde4/minitoolsplugin.so
+lib/kde4/plasma_applet_folderview.so
 lib/kde4/rellinksplugin.so
 lib/kde4/searchbarplugin.so
 lib/kde4/uachangerplugin.so
@@ -123,10 +123,6 @@ share/apps/kbookmark/
 share/apps/kbookmark/directory_bookmarkbar.desktop
 share/apps/kcmcss/
 share/apps/kcmcss/template.css
-share/apps/kconf_update/favicons.upd
-share/apps/kconf_update/kfmclient_3_2.upd
-share/apps/kconf_update/kfmclient_3_2_update.sh
-share/apps/kconf_update/move_favicons.sh
 share/apps/kcontrol/
 share/apps/kcontrol/pics/
 share/apps/kcontrol/pics/onlyone.png
@@ -301,6 +297,7 @@ share/doc/HTML/en/dolphin/locationbar-breadcrumb.png
 share/doc/HTML/en/dolphin/locationbar-context-menu.png
 share/doc/HTML/en/dolphin/locationbar-editable.png
 share/doc/HTML/en/dolphin/locationbar-places-icon.png
+share/doc/HTML/en/dolphin/nepomuk-search-more-options.png
 share/doc/HTML/en/dolphin/nepomuk-search.png
 share/doc/HTML/en/dolphin/preferences-general-behavior.png
 share/doc/HTML/en/dolphin/preferences-navigation.png

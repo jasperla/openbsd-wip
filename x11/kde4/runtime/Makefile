@@ -1,24 +1,36 @@
 # $OpenBSD: Makefile,v 1.8 2010/11/22 08:37:02 espie Exp $
 
-COMMENT =	K Desktop Environment, base runtime
+COMMENT =	KDE core run-time components
 DISTNAME =	kde-runtime-${MODKDE4_VERSION}
 
-SHARED_LIBS =	kwalletbackend 		0.0	# 4.7
-SHARED_LIBS +=	molletnetwork 		0.0	# 4.7
-#SHARED_LIBS +=	nepomukdatamanagement	0.0	# 4.7
+SHARED_LIBS =	kwalletbackend 		0.0
+SHARED_LIBS +=	molletnetwork 		0.0
+#SHARED_LIBS +=	nepomukdatamanagement	0.0
+SHARED_LIBS +=	kdeinit4_kcmshell4	0.0
+SHARED_LIBS +=	kdeinit4_kglobalaccel	0.0
+SHARED_LIBS +=	kdeinit4_khelpcenter	0.0
+SHARED_LIBS +=	kdeinit4_kuiserver 	0.0
+SHARED_LIBS +=	kdeinit4_kwalletd 	0.0
+SHARED_LIBS +=	attica_kde		0.0
 
-WANTLIB =  c m stdc++ pthread util
-WANTLIB +=  Half ICE Iex IlmImf IlmThread Imath SM X11 Xcursor Xext
+WANTLIB =  c m pthread stdc++ util
+WANTLIB += Half ICE Iex IlmImf IlmThread Imath SM X11 Xcursor Xext
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml
-WANTLIB += attica exiv2 jpeg kactivities kcmutils kdeclarative
-WANTLIB += kdesu kdeui kdewebkit kdnssd kemoticons kfile khtml
-WANTLIB += kio kjs kmediaplayer knewstuff3 knotifyconfig kparts
-WANTLIB += kpty kxmlrpcclient nepomuk nepomukcore nepomukutils
-WANTLIB += phonon_s plasma solid soprano
-WANTLIB += glib-2.0 pulse pulse-mainloop-glib smbclient ssh xine canberra
+WANTLIB += ${KDE4LIB}/kactivities ${KDE4LIB}/kcmutils ${KDE4LIB}/kdeclarative
+WANTLIB += ${KDE4LIB}/kdesu ${KDE4LIB}/kdeui ${KDE4LIB}/kdewebkit 
+WANTLIB += ${KDE4LIB}/kdnssd ${KDE4LIB}/kemoticons ${KDE4LIB}/kfile
+WANTLIB += ${KDE4LIB}/khtml ${KDE4LIB}/kio ${KDE4LIB}/kjs
+WANTLIB += ${KDE4LIB}/kmediaplayer ${KDE4LIB}/knewstuff3
+WANTLIB += ${KDE4LIB}/knotifyconfig ${KDE4LIB}/kparts ${KDE4LIB}/kpty
+WANTLIB += ${KDE4LIB}/kxmlrpcclient ${KDE4LIB}/nepomuk
+WANTLIB += ${KDE4LIB}/nepomukcore ${KDE4LIB}/nepomukutils ${KDE4LIB}/plasma
+WANTLIB += ${KDE4LIB}/solid
+WANTLIB += attica canberra exiv2 glib-2.0 jpeg pulse
+WANTLIB += pulse-mainloop-glib smbclient ssh soprano
 
+MODULES =	multimedia/phonon
 MODKDE4_USE =	pim libs
 
 BUILD_DEPENDS =	archivers/bzip2 \
@@ -32,13 +44,13 @@ RUN_DEPENDS =	archivers/bzip2 \
 LIB_DEPENDS =	audio/libcanberra \
 		audio/pulseaudio \
 		databases/soprano \
+		graphics/openexr \
 		graphics/exiv2 \
-		multimedia/xine-lib \
 		net/samba \
 		productivity/attica \
 		security/libssh \
-		STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/kactivities \
-		STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/nepomuk-core
+		x11/kde4/kactivities>=${MODKDE4_DEP_VERSION} \
+		x11/kde4/nepomuk-core>=${MODKDE4_DEP_VERSION}
 
 # QNtrack depends on libnl, Linux-specific library.
 CONFIGURE_ARGS =	-DWITH_ALSA:Bool=FALSE \

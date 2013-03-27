@@ -9,11 +9,13 @@ WANTLIB =  c m pthread stdc++
 WANTLIB += GL GLU ICE SM X11 Xext Xt
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtOpenGL lib/qt4/QtSvg lib/qt4/QtXml
-WANTLIB += kdecorations kdeui kexiv2 kio kparts kscreensaver
-WANTLIB += nepomuk nepomukutils soprano
+WANTLIB += ${KDE4LIB}/kdecorations ${KDE4LIB}/kdeui ${KDE4LIB}/kexiv2
+WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kparts ${KDE4LIB}/kscreensaver
+WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
+WANTLIB += soprano
 
 BUILD_DEPENDS =	math/eigen2
 
-LIB_DEPENDS =	x11/kde4/libkexiv2
+LIB_DEPENDS =	x11/kde4/libkexiv2>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>

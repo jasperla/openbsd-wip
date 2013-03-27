@@ -1,5 +1,6 @@
 @comment $OpenBSD$
 bin/pykdeuic4
+bin/pykdeuic4-${MODPY_VERSION}
 lib/kde4/kpythonpluginfactory.so
 lib/python${MODPY_VERSION}/site-packages/PyKDE4/
 lib/python${MODPY_VERSION}/site-packages/PyKDE4/__init__.py

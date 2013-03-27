@@ -6,24 +6,28 @@ MODULES +=		x11/kde4
 
 MASTER_SITES ?=		${MASTER_SITE_KDE:=stable/${MODKDE4_VERSION}/src/}
 DIST_SUBDIR =		kde
-HOMEPAGE ?=		https://projects.kde.org/projects
 MAINTAINER ?=		KDE porting team <openbsd-kde@googlegroups.com>
 
-# KDE SC is mostly GPL, or LGPL/BSDL for the central libraries
-PERMIT_PACKAGE_CDROM ?=		Yes
+.if defined(MODKDE4_USE) && ${MODKDE4_USE:Mgames}
+HOMEPAGE ?=		http://games.kde.org/game.php?game=${DISTNAME:C/-[0-9].*//}
+.else
+HOMEPAGE ?=		https://projects.kde.org/projects
+.endif
 
-# Do not rely on devel/cmake to set CONFIGURE_STYLE on it's own:
-# ports can request more MODULES, and the full list may become e.g.:
-#   lang/python x11/kde4 devel/cmake x11/qt4
-# In this case, CONFIGURE_STYLE will be set by lang/python module, as
-# it gets evaluated first, and port build will break. We DO know that
-# all KDE SC stuff is built using CMake anyway.
+# KDE SC is mostly GPL, or LGPL/BSDL for the central libraries
+PERMIT_PACKAGE_CDROM =		Yes
+
+# Do not rely on devel/cmake here: additional modules that are
+# set up in ports may have, say, lang/python before devel/cmake,
+# thus making lang/python evaluating first. And when lang/python
+# sees empty CONFIGURE_STYLE, it forces that this is Python
+# module port, and breaks build.
 CONFIGURE_STYLE =	cmake
 
-MIN_AKONADI_VERSION ?=	1.8.1
-MIN_SOPRANO_VERSION ?=	2.8.0
+MODKDE4_LIB_LINKS =	Yes
 
-MODKDE4_LIB_LINKS ?=	Yes
+MIN_AKONADI_VERSION =	1.8.53
+MIN_SOPRANO_VERSION =	2.9.0
 
 # Only needed for l10n
-MODKDE4_FIX_GETTEXT ?=	No
+MODKDE4_FIX_GETTEXT ?=  No
