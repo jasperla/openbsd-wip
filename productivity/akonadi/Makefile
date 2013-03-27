@@ -16,7 +16,7 @@ WANTLIB += lib/qt4/QtSql lib/qt4/QtXml
 WANTLIB += boost_program_options-mt sqlite3 soprano
 
 # LGPLv2+
-PERMIT_PACKAGE_CDROM =          Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		x11/kde4
 MODKDE4_USE =
@@ -32,7 +32,8 @@ RUN_DEPENDS =		misc/shared-mime-info
 LIB_DEPENDS =		databases/soprano>=2.9.0 \
 			devel/boost
 
-# XXX (buggy) dbconfigtest fails due to SQLITE being default
+# XXX (buggy) dbconfigtest fails due to SQLITE being default,
+# and it doesn't work to fix
 CONFIGURE_ARGS =	-DDATABASE_BACKEND:String=SQLITE \
 			-DINSTALL_QSQLITE_IN_QT_PREFIX:Bool=Yes
 
