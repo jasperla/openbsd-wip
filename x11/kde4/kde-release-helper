@@ -451,15 +451,7 @@ EOF
 	    | sed -e "s@^+++ ${KPD}/@+++ ${SKPD}/@" >>$T
 	${PAGER:-more} <$T
 
-	# Add missing directories, or patch(1) will create new files in
-	# current working directory instead.
-	find $KPD -mindepth 1 -type d | sed "s/^${KPD}//" | while read D; do
-		echo -n "creating directory ${SKPD}${D}..." >&2
-		mkdir -p "${SKPD}${D}"
-		echo >&2
-	done
-
-	patch -E <$T
+	patch -E -p0 <$T
 	rm $T
 	rm $SKPD/STATUS-*
 	mv $KPD/STATUS-* $SKPD/
