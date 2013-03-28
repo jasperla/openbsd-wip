@@ -1,0 +1,12 @@
+$OpenBSD$
+--- configure.ac.orig	Fri Mar 29 00:09:45 2013
++++ configure.ac	Fri Mar 29 00:09:25 2013
+@@ -32,6 +32,8 @@ AC_PROG_CXX
+ dnl Check for doxygen support
+ AC_PATH_PROG([DOXYGEN], [doxygen])
+ AC_PATH_PROG([DOT], [dot])
++DOXYGEN=
++DOT=
+ AM_CONDITIONAL(HAS_DOXYGEN, test $DOXYGEN && $DOT)
+ 
+ # Generate output
