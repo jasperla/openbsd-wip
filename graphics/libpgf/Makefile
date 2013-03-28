@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.61 2012/03/29 13:41:58 sthen Exp $
+# $OpenBSD$
 
 COMMENT =	PGF image format handling library
 V =		6.12.24
@@ -19,10 +19,6 @@ WANTLIB =	m stdc++
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=libpgf/}
 
-# actually, cutting out this dep requires more work,
-# and all real users of libpgf use doxygen anyway
-BUILD_DEPENDS =		devel/doxygen
-
 # needs libtoolize
 BUILD_DEPENDS +=	devel/libtool
 
@@ -38,10 +34,5 @@ post-patch:
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		sh autogen.sh
-
-# Those generated manpages are ugly themselves, badly named, placed in
-# the wrong directory and generally useless.
-post-install:
-	rm -R ${PREFIX}/share/man
 
 .include <bsd.port.mk>
