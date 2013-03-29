@@ -36,6 +36,6 @@ CONFIGURE_ARGS =	-DPHONON_INSTALL_QT_EXTENSIONS_INTO_SYSTEM_QT:Bool=Yes
 CONFIGURE_ARGS +=	-DPHONON_BUILD_DESIGNER_PLUGIN:Bool=No
 
 # Upstream says, tests need to be redone.
-NO_TEST =	Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
