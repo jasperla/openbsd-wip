@@ -3,11 +3,13 @@
 COMMENT =	GStreamer-based Phonon backend
 VERSION =	4.6.2
 DISTNAME =	phonon-backend-gstreamer-${VERSION}
-REVISION =	1
+REVISION =	2
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/phonon/phonon-backend-gstreamer/${VERSION}/src/}
 
-RUN_DEPENDS =	x11/gtk+2,-guic
+RUN_DEPENDS =	multimedia/gstreamer-0.10/plugins-base \
+		multimedia/gstreamer-0.10/plugins-ugly
+		x11/gtk+2,-guic
 
 LIB_DEPENDS =	multimedia/gstreamer-0.10/core
 
