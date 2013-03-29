@@ -6,6 +6,8 @@ MODPHONON_RUN_DEPENDS =	phonon-gstreamer-*|phonon-vlc-*:multimedia/phonon-backen
 WANTLIB +=	${MODPHONON_WANTLIB}
 LIB_DEPENDS +=	${MODPHONON_LIB_DEPENDS}
 
+# If enabled (default), make sure at least one Phonon backend is
+# installed prior installing affected port.
 MODPHONON_PLUGIN_DEPS ?=	Yes
 .if ${MODPHONON_PLUGIN_DEPS:L} == "yes"
 RUN_DEPENDS +=	${MODPHONON_RUN_DEPENDS}
