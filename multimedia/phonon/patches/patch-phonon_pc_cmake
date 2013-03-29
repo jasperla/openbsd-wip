@@ -1,4 +1,5 @@
 $OpenBSD$
+Rename library file name to distinguish from Qt's one.
 --- phonon.pc.cmake.orig	Mon Nov  5 23:34:21 2012
 +++ phonon.pc.cmake	Mon Nov  5 23:34:30 2012
 @@ -8,5 +8,5 @@ Name: Phonon

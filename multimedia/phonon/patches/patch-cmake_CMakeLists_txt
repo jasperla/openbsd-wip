@@ -1,4 +1,6 @@
 $OpenBSD$
+Skip installing files we already have in either CMake base
+installation or somewhere else.
 --- cmake/CMakeLists.txt.orig	Sun Feb  5 21:07:55 2012
 +++ cmake/CMakeLists.txt	Sun Feb  5 21:08:35 2012
 @@ -1,15 +1,9 @@

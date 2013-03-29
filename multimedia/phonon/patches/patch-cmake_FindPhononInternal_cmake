@@ -1,4 +1,5 @@
 $OpenBSD$
+Allow paths to be overriden.
 --- cmake/FindPhononInternal.cmake.orig	Thu Nov 15 15:47:01 2012
 +++ cmake/FindPhononInternal.cmake	Thu Nov 15 15:46:55 2012
 @@ -90,10 +90,10 @@ set(CMAKE_MODULE_PATH ${_phonon_cmake_module_path_back
