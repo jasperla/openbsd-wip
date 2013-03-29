@@ -21,11 +21,10 @@ MULTI_PACKAGES =	-main -extra
 MODULES =		www/redmine
 
 # XXX Need to keep in sync with ruby.port.mk
-FLAVORS =		chroot ruby18 ruby19 ruby20 rbx jruby
 FLAVOR ?=		ruby19
 
 # List of gems to be added in Gemfile.local
-CUSTOM_GEMS =		
+CUSTOM_GEMS =
 
 BUILD_DEPENDS =		${RUN_DEPENDS-main}
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
@@ -127,8 +126,6 @@ do-install:
 	cd ${REDMINE} && rm -Rf ${UNNEDED}
 	find ${REDMINE} -type f -print0 | xargs -0 chmod ${SHAREMODE}
 	@find ${REDMINE}/script -type f -print0 | xargs -0t chmod ${BINMODE}
-#	mv ${REDMINE}/public ${REDMINE_WWW}
-#	ln -s ${REDMINE_WWW} ${REDMINE}/public
 	chmod o-rwx ${REDMINE}/config
 	ln -s /tmp/redmine ${REDMINE}/tmp
 	ln -s /var/log/redmine ${REDMINE}/log
