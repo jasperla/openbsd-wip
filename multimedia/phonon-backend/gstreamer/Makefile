@@ -8,7 +8,7 @@ REVISION =	2
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/phonon/phonon-backend-gstreamer/${VERSION}/src/}
 
 RUN_DEPENDS =	multimedia/gstreamer-0.10/plugins-base \
-		multimedia/gstreamer-0.10/plugins-ugly
+		multimedia/gstreamer-0.10/plugins-ugly \
 		x11/gtk+2,-guic
 
 LIB_DEPENDS =	multimedia/gstreamer-0.10/core
