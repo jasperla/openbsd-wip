@@ -32,6 +32,7 @@ ABCL_HOME =		${PREFIX}/abcl
 do-install:
 	${INSTALL_DATA_DIR} ${ABCL_HOME}
 	${INSTALL_DATA} ${WRKSRC}/dist/abcl.jar ${ABCL_HOME}
+	${INSTALL_DATA} ${WRKSRC}/dist/abcl-contrib.jar ${ABCL_HOME}	
 	@${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -c \
 		${FILESDIR}/abcl ${PREFIX}/bin/abcl
 	cd ${WRKDIST} && tar -cf - src | tar -C ${ABCL_HOME} -xf -
