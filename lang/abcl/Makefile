@@ -26,6 +26,7 @@ RUN_DEPENDS =		java/javaPathHelper \
 			misc/rlwrap
 
 TEST_TARGET =		abcl.test
+NO_TEST =		Yes
 
 ABCL_HOME =		${PREFIX}/abcl
 
