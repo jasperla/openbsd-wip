@@ -26,7 +26,9 @@ MAKE_FLAGS =		LIBqoauth_VERSION=${LIBqoauth_VERSION}
 DESTDIRNAME =		INSTALL_ROOT
 
 TEST_TARGET =		check
+# XXX wants to interact with external servers, too
 TEST_IS_INTERACTIVE =	X11
+TEST_NAMES =		ft_interface ut_interface
 
 do-configure:
 	cd ${WRKDIST} && ${LOCALBASE}/bin/qmake4 \
@@ -35,5 +37,12 @@ do-configure:
 
 post-install:
 	cd ${WRKBUILD}/src && make static-install
+
+do-test:
+.for _t in ${TEST_NAMES}
+	cd ${WRKBUILD}/tests/${_t} && \
+	    LD_PRELOAD=${WRKBUILD}/lib/libqoauth.so.${LIBqoauth_VERSION} \
+	    ./${_t}
+.endfor
 
 .include <bsd.port.mk>
