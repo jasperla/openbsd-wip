@@ -4,6 +4,7 @@ COMMENT =		Common Lisp dialect for the Java Virtual Machine
 
 V =			1.1.1
 DISTNAME =		abcl-src-${V}
+PKGNAME =		abcl-${V}
 PKG_ARCH =		*
 
 CATEGORIES =		lang
