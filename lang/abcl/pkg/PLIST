@@ -1,5 +1,6 @@
 @comment $OpenBSD$
 abcl/
+abcl/abcl-contrib.jar
 abcl/abcl.jar
 abcl/abcl_completions
 abcl/src/
