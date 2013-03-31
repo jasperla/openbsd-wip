@@ -199,4 +199,6 @@ FLAVOR ?=
 CONFIGURE_ARGS +=	-DENABLE_ADVANCEDDEBUGMSG:Bool=Yes
 .endif
 
+TEST_IS_INTERACTIVE =	X11
+
 .include <bsd.port.mk>
