@@ -14,13 +14,14 @@ MULTI_PACKAGES=	-main -data
 
 N=		sauerbraten
 V=		20130203
+REVISION=	0
 PKGNAME=	${N}-${V}
 PKGNAME-main=	${N}-${V}
 PKGNAME-data=	${N}-data-${V}
 DISTNAME=	${N}_2013_02_03_collect_edition_linux
 EXTRACT_SUFX=	.tar.bz2
 
-PKG_ARCH-data=	i386,amd64
+PKG_ARCH-data=	*
 
 # zlib (code) + no modification (data)
 PERMIT_PACKAGE_CDROM=	no modify
@@ -28,25 +29,17 @@ PERMIT_PACKAGE_FTP=	no modify
 PERMIT_DISTFILES_FTP=	Yes
 
 WRKDIST=		${WRKDIR}/${N}/src
-AUTOCONF_VERSION=	2.62
-AUTOMAKE_VERSION=	1.9
 USE_GMAKE=		Yes
+MAKE_ENV+=              CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 NO_TEST=		Yes
 
 RUN_DEPENDS-main +=	${BASE_PKGPATH},-data
 
 LIB_DEPENDS-main=	devel/sdl \
 			devel/sdl-mixer \
-			devel/sdl-image
-WANTLIB-main=		GL X11 SDL SDL_image SDL_mixer c m pthread stdc++ z
-
-post-patch:
-	@cd ${WRKSRC}/enet && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} aclocal
-
-pre-configure:
-	@cd ${WRKSRC}/enet && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} automake --foreign
+			devel/sdl-image \
+			net/enet
+WANTLIB-main=		GL X11 SDL SDL_image SDL_mixer c enet m pthread stdc++ z
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sauer_client ${PREFIX}/libexec
