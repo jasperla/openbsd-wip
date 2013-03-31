@@ -20,7 +20,7 @@ PKGNAME-data=	${N}-data-${V}
 DISTNAME=	${N}_${V}_nix
 EXTRACT_SUFX=	.tar.bz2
 
-PKG_ARCH-data=	i386,amd64
+PKG_ARCH-data=	*
 
 # zlib (code) + CC-BY-SA-3.0 (data)
 PERMIT_PACKAGE_CDROM=	Yes
