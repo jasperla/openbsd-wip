@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/Crypt/
+${P5SITE}/Crypt/RandPasswd.pm
+@man man/man3p/Crypt::RandPasswd.3p
