@@ -1,7 +1,7 @@
 $OpenBSD$
---- gw/smsc/smsc_smpp.c.orig	Sun May 13 10:52:22 2012
-+++ gw/smsc/smsc_smpp.c	Sun May 13 10:53:14 2012
-@@ -977,7 +977,7 @@ static SMPP_PDU *msg_to_pdu(SMPP *smpp, Msg *msg)
+--- gw/smsc/smsc_smpp.c.orig	Thu Mar 14 14:27:47 2013
++++ gw/smsc/smsc_smpp.c	Sat Mar 16 18:36:05 2013
+@@ -1041,7 +1041,7 @@ static SMPP_PDU *msg_to_pdu(SMPP *smpp, Msg *msg)
  }
  
  
