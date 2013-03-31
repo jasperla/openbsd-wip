@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD:
+# $OpenBSD$
 
 daemon="${TRUEPREFIX}/sbin/bearerbox"
 
