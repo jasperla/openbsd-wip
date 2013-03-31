@@ -20,7 +20,6 @@ lib/libPropertyBrowser.a
 @lib lib/libdigikamdatabase.so.${LIBdigikamdatabase_VERSION}
 @man man/man1/cleanup_digikamdb.1
 @man man/man1/digitaglinktree.1
-share/applications/kde4/
 share/applications/kde4/digikam.desktop
 share/applications/kde4/photolayoutseditor.desktop
 share/applications/kde4/scangui.desktop
