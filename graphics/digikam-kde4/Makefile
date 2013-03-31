@@ -21,7 +21,7 @@ PKGNAME-vkontakte =	libkvkontakte-1.0.0
 
 REVISION-face =		1
 REVISION-geomap =	2
-REVISION-kipi =		3
+REVISION-kipi =		4
 REVISION-mediawiki =	1
 REVISION-vkontakte =	2
 
@@ -78,7 +78,7 @@ WANTLIB-kipi += ${KDE4LIB}/kio ${KDE4LIB}/kipi ${KDE4LIB}/kjs ${KDE4LIB}/kparts
 WANTLIB-kipi += ${KDE4LIB}/ksane
 WANTLIB-kipi += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils ${KDE4LIB}/solid
 WANTLIB-kipi += ${KDE4LIB}/threadweaver
-WANTLIB-kipi += qjson kgeomap kvkontakte mediawiki png qca2 soprano
+WANTLIB-kipi += qjson kgeomap kqoauth kvkontakte mediawiki png qca2 soprano
 WANTLIB-kipi += tiff xml2 xslt z
 
 WANTLIB-main =  ${WANTLIB-common} ${WANTLIB-opencv} ${MODPHONON_WANTLIB}
@@ -156,6 +156,7 @@ LIB_DEPENDS-kipi =	${LIB_DEPENDS-common} \
 			graphics/png \
 			graphics/tiff \
 			security/qca2 \
+			security/kqoauth \
 			x11/kde4/libkdcraw \
 			x11/kde4/libkexiv2 \
 			x11/kde4/libkipi \
@@ -188,7 +189,6 @@ LIB_DEPENDS-vkontakte = ${LIB_DEPENDS-common} \
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_CLAPACK:Bool=Yes \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Hupnp:Bool=Yes \
 			-DCMAKE_DISABLE_FIND_PACKAGE_QtGStreamer:Bool=Yes \
-			-DCMAKE_DISABLE_FIND_PACKAGE_QtKOAuth:Bool=Yes \
 			-DDIGIKAMSC_USE_PRIVATE_KDEGRAPHICS:Bool=No \
 			-DENABLE_INTERNALMYSQL:Bool=No \
 			-DWITH_OpenMP:Bool=No
