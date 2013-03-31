@@ -143,11 +143,11 @@ LIB_DEPENDS-geomap =	${LIB_DEPENDS-common} \
 			x11/kde4/marble
 
 LIB_DEPENDS-kipi =	${LIB_DEPENDS-common} \
+			${MODGETTEXT_LIB_DEPENDS} \
+			${MODPHONON_LIB_DEPENDS} \
 			${BASE_PKGPATH},-geomap \
 			${BASE_PKGPATH},-mediawiki \
 			${BASE_PKGPATH},-vkontakte \
-			${MODGETTEXT_LIB_DEPENDS} \
-			${MODPHONON_LIB_DEPENDS} \
 			audio/libgpod \
 			devel/glib2 \
 			devel/qjson \
