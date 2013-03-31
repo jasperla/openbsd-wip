@@ -23,4 +23,5 @@ include/kde4/libmediawiki/upload.h
 include/kde4/libmediawiki/usergroup.h
 include/kde4/libmediawiki/version.h
 lib/pkgconfig/libmediawiki.pc
+@lib lib/libmediawiki.so.${LIBmediawiki_VERSION}
 share/apps/cmake/modules/FindMediawiki.cmake
