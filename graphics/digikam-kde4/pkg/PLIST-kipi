@@ -382,9 +382,9 @@ share/icons/hicolor/48x48/actions/shwup.png
 share/icons/hicolor/48x48/actions/smugmug.png
 share/icons/hicolor/48x48/actions/wikimedia.png
 share/icons/hicolor/48x48/actions/zooomr.png
+share/icons/hicolor/64x64/actions/dlna.png
 share/icons/hicolor/64x64/actions/imageshack.png
 share/icons/hicolor/64x64/actions/metadataedit.png
-share/icons/hicolor/64x64/actions/dlna.png
 share/icons/hicolor/64x64/actions/rajce.png
 share/icons/hicolor/scalable/actions/debianscreenshots.svgz
 share/icons/hicolor/scalable/actions/facebook.svgz
@@ -516,6 +516,7 @@ share/locale/ca/LC_MESSAGES/kipiplugin_shwup.mo
 share/locale/ca/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/ca/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/ca/LC_MESSAGES/kipiplugins.mo
+share/locale/ca/LC_MESSAGES/libkipi.mo
 share/locale/cs/LC_MESSAGES/kipiplugin_acquireimages.mo
 share/locale/cs/LC_MESSAGES/kipiplugin_advancedslideshow.mo
 share/locale/cs/LC_MESSAGES/kipiplugin_batchprocessimages.mo

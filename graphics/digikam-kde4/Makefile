@@ -9,7 +9,7 @@ COMMENT-vkontakte =	KIPI interface for VK.com
 
 CATEGORIES =		graphics
 HOMEPAGE =		http://www.digikam.org/
-VERSION =		3.0.0
+VERSION =		3.1.0
 DISTNAME =		digikam-${VERSION}
 
 PKGNAME-face =		libkface-2.0.0
@@ -19,12 +19,11 @@ PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 PKGNAME-vkontakte =	libkvkontakte-1.0.0
 
-REVISION-main =		0
-REVISION-face =		0
-REVISION-geomap =	1
-REVISION-kipi =		2
-REVISION-mediawiki =	0
-REVISION-vkontakte =	1
+REVISION-face =		1
+REVISION-geomap =	2
+REVISION-kipi =		3
+REVISION-mediawiki =	1
+REVISION-vkontakte =	2
 
 EXTRACT_SUFX =		.tar.bz2
 
@@ -161,7 +160,7 @@ LIB_DEPENDS-kipi =	${LIB_DEPENDS-common} \
 			x11/kde4/libkexiv2 \
 			x11/kde4/libkipi \
 			x11/kde4/libksane \
-			x11/kde4/pimlibs \
+			x11/kde4/pimlibs
 
 LIB_DEPENDS-main =	${LIB_DEPENDS-common} \
 			${MODPHONON_LIB_DEPENDS} \

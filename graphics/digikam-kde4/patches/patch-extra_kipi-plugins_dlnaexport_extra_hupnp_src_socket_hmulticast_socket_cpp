@@ -1,13 +1,18 @@
 $OpenBSD$
---- extra/kipi-plugins/dlnaexport/extra/hupnp/src/socket/hmulticast_socket.cpp.orig	Tue Feb 12 17:39:35 2013
-+++ extra/kipi-plugins/dlnaexport/extra/hupnp/src/socket/hmulticast_socket.cpp	Tue Feb 12 17:40:18 2013
-@@ -25,7 +25,8 @@
+--- extra/kipi-plugins/dlnaexport/extra/hupnp/src/socket/hmulticast_socket.cpp.orig	Mon Mar 11 12:24:09 2013
++++ extra/kipi-plugins/dlnaexport/extra/hupnp/src/socket/hmulticast_socket.cpp	Sun Mar 31 13:51:19 2013
+@@ -25,9 +25,12 @@
  #ifdef Q_OS_WIN
  #include <winsock2.h>
  #include <ws2tcpip.h>
 -#elif Q_OS_SYMBIAN || Q_OS_FREEBSD
+-#include <netinet/in.h>
 +#elif defined(Q_OS_SYMBIAN) || defined(Q_OS_FREEBSD) || \
 +      defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
- #include <netinet/in.h>
++#include <sys/types.h>
  #include <sys/socket.h>
++#include <netinet/in.h>
++#include <arpa/inet.h>
  #else
+ #include <arpa/inet.h>
+ #endif
