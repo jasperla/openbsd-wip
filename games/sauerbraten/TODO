@@ -1,2 +1,0 @@
-- build enet seperately from port Makefile
-- honour CXXFLAGS without breaking enet build
