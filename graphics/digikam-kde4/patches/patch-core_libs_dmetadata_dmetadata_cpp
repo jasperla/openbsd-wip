@@ -1,0 +1,13 @@
+$OpenBSD$
+Disable usage of KDCraw until crash reasons are determined.
+--- core/libs/dmetadata/dmetadata.cpp.orig	Sun Mar 31 22:42:37 2013
++++ core/libs/dmetadata/dmetadata.cpp	Mon Apr  1 14:17:10 2013
+@@ -132,6 +132,8 @@ bool DMetadata::applyChanges() const
+ 
+ bool DMetadata::loadUsingDcraw(const QString& filePath) const
+ {
++    return false;
++
+     DcrawInfoContainer identify;
+ 
+     if (KDcraw::rawFileIdentify(identify, filePath))
