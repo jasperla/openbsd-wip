@@ -1,4 +1,5 @@
 $OpenBSD$
+Unbreak compilation.
 --- core/libs/3rdparty/kmemoryinfo/kmemoryinfo_backend.cpp.orig	Mon Mar 11 12:24:30 2013
 +++ core/libs/3rdparty/kmemoryinfo/kmemoryinfo_backend.cpp	Sun Mar 31 13:15:01 2013
 @@ -22,5 +22,7 @@
