@@ -26,11 +26,14 @@ LIB_DEPENDS =	lang/gfortran,-lib \
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu autoconf
+CONFIGURE_ENV =		LIBwcs_VERSION=${LIBwcs_VERSION}
+
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--docdir=${PREFIX}/share/doc/wcslib \
-			--without-pgplot \
 			--with-x
-CONFIGURE_ENV =		LIBwcs_VERSION=${LIBwcs_VERSION}
+
+# non-free licensed dependency
+CONFIGURE_ARGS +=	--without-pgplot \
 
 AUTOCONF_VERSION =	2.61
 MAKE_FILE =		GNUmakefile
