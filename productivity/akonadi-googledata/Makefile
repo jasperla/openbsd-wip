@@ -3,16 +3,18 @@
 CATEGORIES =	productivity
 COMMENT =	Google contacts/calendar connector for Akonadi
 DISTNAME =	akonadi-googledata-1.2.0
-EXTRACT_SUFX =	.tar.bz2
-REVISION =	0
+REVISION =	1
 
-MASTER_SITES =	http://libgcal.googlecode.com/files/
+HOMEPAGE =	https://code.google.com/p/libgcal/
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += akonadi-kde kabc kcal kdeui kio kresources
 WANTLIB += gcal
+
+MASTER_SITES =	http://libgcal.googlecode.com/files/
+EXTRACT_SUFX =	.tar.bz2
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM =          Yes
