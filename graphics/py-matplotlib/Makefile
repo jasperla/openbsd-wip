@@ -41,10 +41,7 @@ MAKE_ENV+=	EXTRA_INCLUDES="${WRKSRC} ${LOCALBASE}/include/libpng ${MODTCL_INCDIR
 		LDSHARED="${CC} -shared -fPIC"
 
 pre-configure:
-	perl -pi \
-	    -e 's|^.*env python.*$$|\#!${MODPY_BIN}|;' \
-	    -e 's|^.*bin/python.*$$|\#!${MODPY_BIN}|;' \
-	    `find ${WRKSRC}/examples -name \*.py`
+	@find ${WRKSRC}/examples -name \*.py | xargs ${MODPY_BIN_ADJ}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-matplotlib
