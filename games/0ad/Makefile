@@ -34,6 +34,8 @@ LIB_DEPENDS =		audio/libvorbis \
 MAKE_FLAGS =		SILENT= \
 			CXX="${CXX}"
 
+PATCHORIG =		.orig.port
+
 USE_GMAKE =		Yes
 CONFIGURE_ARGS +=	--with-system-nvtt \
 			--with-system-enet \
