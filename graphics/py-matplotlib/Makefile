@@ -28,28 +28,28 @@ MODULES=	lang/python \
 		devel/gettext \
 		x11/tk
 
-RUN_DEPENDS=	math/py-numpy \
-		x11/py-gtk2 \
-		devel/py-tz \
+RUN_DEPENDS=	devel/py-tz \
 		devel/py-dateutil \
+		math/py-numpy \
+		x11/py-gtk2 \
 		${MODPY_TKINTER_DEPENDS}
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	graphics/png
-TEST_DEPENDS =	graphics/py-matplotlib
+TEST_DEPENDS =	${BASE_PKGPATH}
 
 MAKE_ENV+=	EXTRA_INCLUDES="${WRKSRC} ${LOCALBASE}/include/libpng ${MODTCL_INCDIR} ${MODTK_INCDIR}" \
 		LDSHARED="${CC} -shared -fPIC"
 
+pre-configure:
+	perl -pi \
+	    -e 's|^.*env python.*$$|\#!${MODPY_BIN}|;' \
+	    -e 's|^.*bin/python.*$$|\#!${MODPY_BIN}|;' \
+	    `find ${WRKSRC}/examples -name \*.py`
+
 post-install:
-	# Make examples use MODPY_VER
-	(set -ex ; for fn in `find ${WRKSRC}/examples -name \*.py` ; do \
-	    sed "1s/python\$$/python${MODPY_VERSION}/" < $${fn} > $${fn}__ ; \
-	    mv $${fn}__ $${fn} ; \
-	done)
-	# examples
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-matplotlib
-	(set -e ; cd ${WRKSRC}/examples ; tar cf - . | \
-	    (set -e ; cd ${PREFIX}/share/examples/py-matplotlib ; tar xf - ))
+	cd ${WRKSRC}/examples && pax -rw * \
+	    ${PREFIX}/share/examples/py-matplotlib
 
 # Do not run `make update-plist` after running tests or you will end
 # up with the test outcomes in the PLIST.
