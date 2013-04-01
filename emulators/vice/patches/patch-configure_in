@@ -2,9 +2,9 @@ $OpenBSD$
 
 Don't run fc-cache on install.
 
---- configure.in.orig	Sat Feb 19 15:07:05 2011
-+++ configure.in	Fri Oct 26 23:22:36 2012
-@@ -1990,12 +1990,7 @@ if test x"$enable_lame" != "xno" ; then
+--- configure.in.orig	Thu Nov  1 09:37:51 2012
++++ configure.in	Sun Mar 31 14:03:33 2013
+@@ -2090,12 +2090,7 @@ if test x"$enable_lame" != "xno" ; then
  
  fi
  

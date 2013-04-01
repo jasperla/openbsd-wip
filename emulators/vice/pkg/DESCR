@@ -5,6 +5,8 @@ The following programs are included:
 
    - x64, a C64 emulator;
 
+   - x64sc, a C64 emulator focused on accuracy;
+
    - x64dtv, a C64 Direct-to-TV (DTV) emulator;
 
    - x128, a C128 emulator;
@@ -16,6 +18,10 @@ The following programs are included:
    - xplus4, a PLUS4 emulator;
 
    - xcbm2, a CBM-II emulator;
+
+   - xcbm5x0, a CBM-5x0 emulator;
+
+   - vsid, a SID player;
 
    - c1541, a stand-alone disk image maintenance utility;
 
