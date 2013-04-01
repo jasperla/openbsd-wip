@@ -19,8 +19,5 @@ subdirectories.
 
 Probably a lot of BUILD_DEPENDS on docbook is missing.
 
-WANTLIB should use lib/kde4/private/foobar form. Probably change
-"private" to just "p"?
-
 ---
  * - Last one is a joke. (Captain)
