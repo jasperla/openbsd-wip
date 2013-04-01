@@ -56,7 +56,6 @@ RUN_DEPENDS =		misc/shared-mime-info \
 			sysutils/polkit
 
 USE_GMAKE =		Yes
-USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu autoconf
 
 AUTOCONF_VERSION=	2.65

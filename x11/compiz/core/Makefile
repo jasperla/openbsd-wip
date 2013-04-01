@@ -32,7 +32,6 @@ LIB_DEPENDS =	devel/startup-notification \
 		x11/gtk+2
 
 USE_GMAKE =	Yes
-USE_LIBTOOL =	Yes
 
 LIBTOOL_FLAGS =	--tag=disable-static
 

@@ -29,7 +29,6 @@ CONFIGURE_ARGS += \
 
 # LGPL or looser
 PERMIT_PACKAGE_CDROM = Yes
-USE_LIBTOOL =	Yes
 USE_GROFF =	Yes
 
 FOX =		fox-1.6

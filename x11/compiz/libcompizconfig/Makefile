@@ -18,8 +18,6 @@ BUILD_DEPENDS =	x11/compiz/core
 RUN_DEPENDS =	x11/compiz/core
 LIB_DEPENDS =	textproc/libxml
 
-USE_LIBTOOL =	Yes
-
 LIBTOOL_FLAGS =	--tag=disable-static
 
 BASESYSCONFDIR = ${LOCALBASE}/share/compiz

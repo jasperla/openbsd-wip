@@ -26,7 +26,6 @@ LIB_DEPENDS=	x11/gtk+2 \
 		x11/libmenu-cache
 
 MODULES=	devel/gettext
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"

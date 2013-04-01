@@ -62,7 +62,6 @@ LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		audio/portaudio-svn \
 		x11/gtk+2 \
 
-USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+= --tag=disable-static
 
 CONFIGURE_STYLE= gnu

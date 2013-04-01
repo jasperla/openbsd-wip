@@ -65,7 +65,6 @@ LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		devel/pango \
 		graphics/cairo
 
-USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+= --tag=disable-static
 
 CONFIGURE_STYLE= gnu

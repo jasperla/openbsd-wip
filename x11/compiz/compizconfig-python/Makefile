@@ -16,8 +16,6 @@ MODULES =	lang/python
 
 BUILD_DEPENDS =	devel/pyrex
 
-USE_LIBTOOL =	Yes
-
 LIBTOOL_FLAGS =	--tag=disable-static
 
 CONFIGURE_STYLE = gnu

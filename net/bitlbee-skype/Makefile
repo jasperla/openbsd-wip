@@ -19,7 +19,6 @@ MASTER_SITES =		https://github.com/downloads/vmiklos/bitlbee-skype/
 WANTLIB =		c
 
 USE_GMAKE =          Yes
-USE_LIBTOOL = 		Yes
 NO_TEST =		Yes
 
 CONFIGURE_STYLE=        gnu

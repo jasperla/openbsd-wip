@@ -26,7 +26,6 @@ BUILD_DEPENDS =		devel/m4
 LIB_DEPENDS =		devel/gmp
 
 USE_GMAKE =		Yes
-USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--with-cc=${CC} \

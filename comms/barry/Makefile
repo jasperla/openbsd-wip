@@ -26,7 +26,6 @@ CONFIGURE_STYLE=	gnu
 # OPENSSL_CFLAGS must be non-empty to work around "test -n" in configure
 CONFIGURE_ENV=		OPENSSL_CFLAGS=" " OPENSSL_LIBS="-lssl -lcrypto"
 USE_GMAKE=		Yes
-USE_LIBTOOL=	Yes
 NO_TEST=		Yes
 
 .include <bsd.port.mk>
