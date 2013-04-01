@@ -27,8 +27,6 @@ LIB_DEPENDS =		graphics/ImageMagick \
 			graphics/lcms2 \
 			textproc/libxml
 
-USE_LIBTOOL =		Yes
-
 CONFIGURE_STYLE =	gnu autoconf
 AUTOCONF_VERSION =	2.61
 AUTOMAKE_VERSION =	1.9
