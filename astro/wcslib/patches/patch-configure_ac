@@ -7,8 +7,8 @@ $OpenBSD$
  
 -# Library version number, same as package version.
 -LIBVER="$PACKAGE_VERSION"
-+# Library version number, usually same as package version,
-+# but could be different on some OSes (e.g., OpenBSD)
++# Library version number. Usually same as package version,
++# but could be different on some OSes, e.g., OpenBSD.
 +if test "x${LIBwcs_VERSION}" = x ; then
 +  LIBVER="$PACKAGE_VERSION"
 +else
