@@ -27,7 +27,6 @@ LIB_DEPENDS =		net/gnunet/base \
 			devel/libunique3 \
 			graphics/libqrencode
 
-USE_LIBTOOL =		Yes
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_STYLE =	gnu

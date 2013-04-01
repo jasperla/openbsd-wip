@@ -36,7 +36,6 @@ MODPY_SETUPTOOLS =       No
 
 SEPARATE_BUILD =         simple
 USE_GMAKE =              Yes
-USE_LIBTOOL =            Yes
 AUTOCONF_VERSION =       2.68
 AUTOMAKE_VERSION =       1.11
 CONFIGURE_STYLE =        automake autoconf gnu

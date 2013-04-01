@@ -18,7 +18,6 @@ WANTLIB =	GLU ICE SM X11 X11-xcb Xcomposite Xdamage Xext Xfixes \
 MODULES =	devel/gettext \
 		textproc/intltool
 
-USE_LIBTOOL =	Yes
 USE_GMAKE =	Yes
 
 LIBTOOL_FLAGS =	--tag=disable-static

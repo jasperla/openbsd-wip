@@ -50,7 +50,6 @@ LIB_DEPENDS =		devel/libextractor \
 			converters/libunistring
 
 USE_GMAKE =		Yes
-USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--with-extractor="${LOCALBASE}" \

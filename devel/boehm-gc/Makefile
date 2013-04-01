@@ -27,8 +27,6 @@ NOT_FOR_ARCHS=	m68k m88k vax mips64 mips64el
 # X11-like: http://www.hpl.hp.com/personal/Hans_Boehm/gc/license.txt
 PERMIT_PACKAGE_CDROM=	Yes
 
-USE_LIBTOOL=	Yes
-
 CONFIGURE_STYLE=gnu
 
 CONFIGURE_ARGS= ${CONFIGURE_SHARED} \

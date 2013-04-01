@@ -31,7 +31,6 @@ RUN_DEPENDS=		${BUILD_DEPENDS}
 
 CONFIGURE_STYLE=	gnu
 USE_GMAKE=			Yes
-USE_LIBTOOL=		Yes
 NO_TEST=			Yes
 
 .include <bsd.port.mk>

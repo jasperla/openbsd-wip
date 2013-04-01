@@ -30,7 +30,6 @@ MULTI_PACKAGES = -main -mysql -pgsql
 WANTLIB = m pthread
 WANTLIB-main += ${WANTLIB} c sqlite3
 
-USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS =	--tag=disable-static
 USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu

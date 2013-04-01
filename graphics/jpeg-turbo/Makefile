@@ -31,7 +31,6 @@ WANTLIB =	c m
 BUILD_DEPENDS =	devel/nasm>=2.00
 
 SEPARATE_BUILD =	Yes
-USE_LIBTOOL =		Yes
 CONFIGURE_STYLE = gnu
 CONFIGURE_ARGS =	${CONFIGURE_SHARED}
 # Symbol versioning triggers weird linking problems in dependent ports.

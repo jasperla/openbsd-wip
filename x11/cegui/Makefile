@@ -49,7 +49,6 @@ LIB_DEPENDS =		x11/ogre \
 			graphics/glew \
 			devel/ois
 
-USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-version-suffix \

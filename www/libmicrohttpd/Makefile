@@ -32,8 +32,6 @@ BUILD_DEPENDS =	misc/zzuf \
 		net/curl \
 		net/socat
 
-USE_LIBTOOL =	Yes
-
 CONFIGURE_STYLE =	autoconf
 CONFIGURE_ARGS +=	--with-gnutls
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \

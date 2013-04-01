@@ -44,7 +44,6 @@ LIB_DEPENDS =		devel/libtool,-ltdl \
 			graphics/libungif \
 			devel/libmagic
 
-USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-glib \

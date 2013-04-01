@@ -29,7 +29,6 @@ LIB_DEPENDS =	graphics/jpeg \
 
 USE_X11 =	Yes
 USE_GMAKE =	Yes
-USE_LIBTOOL =	Yes
 
 # For systrace
 # /usr/local/qt3/lib/etc/settings write access required

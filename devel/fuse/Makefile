@@ -21,6 +21,5 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 WANTLIB=	c pthread
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
 
 .include <bsd.port.mk>

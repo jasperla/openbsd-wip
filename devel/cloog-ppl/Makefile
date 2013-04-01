@@ -23,7 +23,6 @@ LIB_DEPENDS =		devel/gmp \
 			devel/ppl
 
 USE_GMAKE =		Yes
-USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--with-gmp="${LOCALBASE}" \

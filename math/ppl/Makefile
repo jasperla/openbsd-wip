@@ -46,7 +46,6 @@ LIB_DEPENDS-java =	math/ppl,-main
 RUN_DEPENDS-java =	${MODJAVA_RUN_DEPENDS}
 
 USE_GMAKE =		Yes
-USE_LIBTOOL =		Yes
 
 CONFIGURE_STYLE =	gnu
 

@@ -22,7 +22,6 @@ WANTLIB=	c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
 LIB_DEPENDS=	devel/glib2
 
 MODULES=	devel/gettext
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"

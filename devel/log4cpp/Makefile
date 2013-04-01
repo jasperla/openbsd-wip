@@ -24,7 +24,6 @@ CONFIGURE_ARGS+=	--with-pthreads --disable-html-docs
 
 CONFIGURE_STYLE=	gnu
 
-USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 
 SEPARATE_BUILD=		simple

@@ -28,7 +28,6 @@ LIB_DEPENDS =		sysutils/usbmuxd \
 			security/gnutls
 
 USE_GMAKE =		Yes
-USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
