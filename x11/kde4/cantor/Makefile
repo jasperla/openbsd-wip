@@ -2,6 +2,7 @@
 
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =  cantorlibs                0.0 # 0.0
 SHARED_LIBS += cantor_config             0.0 # 0.0
@@ -21,7 +22,7 @@ MODULES =	devel/gettext
 LIB_DEPENDS = 	databases/soprano \
 		lang/gfortran,-lib \
 		math/R>=2.15.1p4 \
-		math/qalculate/libqalculate \
+		math/libqalculate \
 		print/libspectre \
 		x11/kde4/analitza>=${MODKDE4_DEP_VERSION}
 

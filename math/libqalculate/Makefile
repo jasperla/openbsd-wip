@@ -2,7 +2,7 @@
 
 COMMENT =	applied math library
 DISTNAME =	libqalculate-${V}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	qalculate		0.0	# 5.0
 
