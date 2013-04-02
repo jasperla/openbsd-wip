@@ -2,6 +2,7 @@
 
 COMMENT =	KDE interactive physics simulator
 DISTNAME =	step-${MODKDE4_VERSION}
+REVISION =	0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
@@ -19,7 +20,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+2,-guic
 
 LIB_DEPENDS = 	devel/gsl \
-		math/qalculate/libqalculate
+		math/libqalculate
 
 CONFIGURE_ARGS =	-DSTEPCORE_TESTS:Bool=True
 

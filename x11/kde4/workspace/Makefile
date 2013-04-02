@@ -2,7 +2,7 @@
 
 COMMENT =	KDE workspace
 DISTNAME =	kde-workspace-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	kdecorations			0.0 # 4.7
 SHARED_LIBS +=	kephal				0.0 # 4.7
@@ -81,7 +81,7 @@ LIB_DEPENDS =	audio/xmms \
 		databases/soprano \
 		devel/libusb-compat \
 		graphics/qimageblitz \
-		math/qalculate/libqalculate \
+		math/libqalculate \
 		misc/gpsd \
 		sysutils/consolekit \
 		x11/dbusmenu-qt \

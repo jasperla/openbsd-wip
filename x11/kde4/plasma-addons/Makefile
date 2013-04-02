@@ -2,6 +2,7 @@
 
 COMMENT =	extra KDE plasmoids
 DISTNAME =	kdeplasma-addons-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	lancelot-datamodels		0.0 # 1.7
 SHARED_LIBS +=	lancelot			0.0 # 1.9
@@ -46,7 +47,7 @@ LIB_DEPENDS =	devel/qjson \
 		graphics/qimageblitz \
 		inputmethods/ibus \
 		inputmethods/scim \
-		math/qalculate/libqalculate \
+		math/libqalculate \
 		productivity/attica \
 		security/qca2 \
 		security/qoauth \
