@@ -35,7 +35,6 @@ RUN_DEPENDS=	devel/py-tz \
 		${MODPY_TKINTER_DEPENDS}
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	graphics/png
-TEST_DEPENDS =	${BASE_PKGPATH}
 
 MAKE_ENV+=	EXTRA_INCLUDES="${WRKSRC} ${LOCALBASE}/include/libpng ${MODTCL_INCDIR} ${MODTK_INCDIR}" \
 		LDSHARED="${CC} -shared -fPIC"
@@ -48,9 +47,7 @@ post-install:
 	cd ${WRKSRC}/examples && pax -rw * \
 	    ${PREFIX}/share/examples/py-matplotlib
 
-# Do not run `make update-plist` after running tests or you will end
-# up with the test outcomes in the PLIST.
-do-test:
+do-test: fake
 	cd ${WRKSRC}/examples/tests && ${MODPY_BIN} backend_driver.py
 
 .include <bsd.port.mk>
