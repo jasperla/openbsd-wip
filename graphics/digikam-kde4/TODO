@@ -4,6 +4,8 @@ libkgeomap crashes when trying to use Google Maps. And Marble widget isn't usabl
 
 Crashes when importing from directories with a lot of items.
 
+Crashes when accessing libkdcraw routines. Probably, related to PIC and/or specific for 32-bit archs.
+
 The following tests FAILED:
           1 - mediawiki-logintest (Failed)
           8 - mediawiki-queryrevisiontest (Failed)
