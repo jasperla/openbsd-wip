@@ -1,6 +1,5 @@
 # $OpenBSD$
 
-BROKEN-i386 =		segfault in gui-debugger due to bug in pixman/cairo
 SHARED_ONLY =		Yes
 # Racket only supports i386 and amd64 on OpenBSD
 ONLY_FOR_ARCHS =	i386 amd64
