@@ -73,6 +73,7 @@ CONFIGURE_ARGS +=	--disable-backtrace \
 			--disable-futures
 
 # --enable-libffi needs LDFLAGS="-pthread" for detect the system ffi.
+# It will be fixed in 5.3.4
 # -DMZ_USE_JIT_SSE enables use of SSE floating point in JIT.
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
