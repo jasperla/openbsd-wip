@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+@pkgpath math/qalculate/libqalculate
 %%SHARED%%
 @bin bin/qalc
 include/libqalculate/
