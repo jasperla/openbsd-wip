@@ -1,14 +1,12 @@
 # $OpenBSD$
 
 COMMENT =	implementation of the FITS WCS standard
+CATEGORIES =	astro devel
 DISTNAME =	wcslib-4.17
-REVISION =	0
+REVISION =	1
+HOMEPAGE =	http://www.atnf.csiro.au/people/mcalabre/WCS/wcslib/
 
 SHARED_LIBS =	wcs		0.0
-
-CATEGORIES =	astro devel
-
-HOMEPAGE =	http://www.atnf.csiro.au/people/mcalabre/WCS/wcslib/
 
 # LGPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -20,7 +18,6 @@ EXTRACT_SUFX =	.tar.bz2
 
 BUILD_DEPENDS =	lang/gfortran
 RUN_DEPENDS =	lang/gfortran
-
 LIB_DEPENDS =	lang/gfortran,-lib \
 		math/cfitsio
 
@@ -33,7 +30,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--with-x
 
 # non-free licensed dependency
-CONFIGURE_ARGS +=	--without-pgplot \
+CONFIGURE_ARGS +=	--without-pgplot
 
 AUTOCONF_VERSION =	2.61
 MAKE_FILE =		GNUmakefile
