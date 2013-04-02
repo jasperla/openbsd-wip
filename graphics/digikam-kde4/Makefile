@@ -19,12 +19,12 @@ PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 PKGNAME-vkontakte =	libkvkontakte-1.0.0
 
-REVISION-main =		0
-REVISION-face =		1
-REVISION-geomap =	2
+REVISION-main =		1
+REVISION-face =		2
+REVISION-geomap =	3
 REVISION-kipi =		4
-REVISION-mediawiki =	1
-REVISION-vkontakte =	2
+REVISION-mediawiki =	2
+REVISION-vkontakte =	3
 
 EXTRACT_SUFX =		.tar.bz2
 
@@ -48,7 +48,7 @@ MODULES =		x11/kde4 multimedia/phonon devel/gettext
 # Do not use WANTLIB due to gettext module automatically adding to it
 
 WANTLIB-common =  ${MODQT4_WANTLIB} ${MODKDE4_WANTLIB}
-WANTLIB-common += c m pthread stdc++
+WANTLIB-common += m pthread stdc++
 WANTLIB-common += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg
 WANTLIB-common += ${KDE4LIB}/kdeui
 
@@ -69,21 +69,22 @@ WANTLIB-geomap += soprano
 
 WANTLIB-kipi =  ${WANTLIB-common} ${WANTLIB-opencv}
 WANTLIB-kipi += ${MODGETTEXT_WANTLIB} ${MODPHONON_WANTLIB}
+WANTLIB-kipi += c GL GLU ICE SM X11 Xext Xrandr expat
 WANTLIB-kipi += lib/qt4/QtNetwork lib/qt4/QtOpenGL lib/qt4/QtXmlPatterns
 WANTLIB-kipi += lib/qt4/QtTest lib/qt4/QtXml
-WANTLIB-kipi += GL GLU ICE SM X11 Xext Xrandr expat exslt gdk_pixbuf-2.0
-WANTLIB-kipi += glib-2.0 gmodule-2.0 gobject-2.0 gpod gthread-2.0 jpeg
 WANTLIB-kipi += ${KDE4LIB}/kcalcore ${KDE4LIB}/kdcraw ${KDE4LIB}/kexiv2
 WANTLIB-kipi += ${KDE4LIB}/kfile ${KDE4LIB}/khtml
 WANTLIB-kipi += ${KDE4LIB}/kio ${KDE4LIB}/kipi ${KDE4LIB}/kjs ${KDE4LIB}/kparts
 WANTLIB-kipi += ${KDE4LIB}/ksane
 WANTLIB-kipi += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils ${KDE4LIB}/solid
 WANTLIB-kipi += ${KDE4LIB}/threadweaver
+WANTLIB-kipi += exslt gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpod
+WANTLIB-kipi += gthread-2.0 jpeg
 WANTLIB-kipi += qjson kgeomap kqoauth kvkontakte mediawiki png qca2 soprano
 WANTLIB-kipi += tiff xml2 xslt z
 
 WANTLIB-main =  ${WANTLIB-common} ${WANTLIB-opencv} ${MODPHONON_WANTLIB}
-WANTLIB-main += ICE SM X11 Xext z
+WANTLIB-main += c ICE SM X11 Xext z
 WANTLIB-main += lib/qt4/Qt3Support lib/qt4/QtNetwork lib/qt4/QtSql
 WANTLIB-main += lib/qt4/QtXml lib/qt4/QtXmlPatterns
 WANTLIB-main += ${KDE4LIB}/kabc ${KDE4LIB}/kcmutils ${KDE4LIB}/kdcraw
@@ -95,7 +96,7 @@ WANTLIB-main += ${KDE4LIB}/kresources ${KDE4LIB}/kutils ${KDE4LIB}/nepomuk
 WANTLIB-main += ${KDE4LIB}/nepomukutils ${KDE4LIB}/solid
 WANTLIB-main += ${KDE4LIB}/threadweaver
 WANTLIB-main += exif glib-2.0 gphoto2 gphoto2_port jasper jpeg kface kgeomap
-WANTLIB-main += lcms lensfun lqr-1 pgf png soprano tiff usb
+WANTLIB-main += lcms2 lensfun lqr-1 pgf png soprano sqlite tiff usb
 
 WANTLIB-mediawiki =  ${WANTLIB-common}
 WANTLIB-mediawiki += lib/qt4/QtNetwork lib/qt4/QtXml
@@ -168,9 +169,10 @@ LIB_DEPENDS-main =	${LIB_DEPENDS-common} \
 			${MODPHONON_LIB_DEPENDS} \
 			${BASE_PKGPATH},-face \
 			${BASE_PKGPATH},-geomap \
+			databases/sqlite \
 			devel/glib2 \
 			graphics/jasper \
-			graphics/lcms \
+			graphics/lcms2 \
 			graphics/lensfun>=0.2.6 \
 			graphics/libgphoto2 \
 			graphics/liblqr \
@@ -191,6 +193,7 @@ CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_CLAPACK:Bool=Yes \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Hupnp:Bool=Yes \
 			-DCMAKE_DISABLE_FIND_PACKAGE_QtGStreamer:Bool=Yes \
 			-DDIGIKAMSC_USE_PRIVATE_KDEGRAPHICS:Bool=No \
+			-DENABLE_LCMS2:Bool=Yes \
 			-DENABLE_INTERNALMYSQL:Bool=No \
 			-DWITH_OpenMP:Bool=No
 
