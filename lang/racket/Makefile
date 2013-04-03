@@ -33,17 +33,14 @@ MODULES +=		converters/libiconv
 # http://docs.racket-lang.org/gui/libs.html
 # Some deps are listed in the README, other in the doc and other
 # are called by ffi.
-LIB_DEPENDS =		devel/libffi
-BUILD_DEPENDS =		graphics/cairo \
-			devel/pango \
+LIB_DEPENDS =		devel/libffi>=3.0.9p2
+BUILD_DEPENDS =		devel/pango \
 			graphics/jpeg
-RUN_DEPENDS =		x11/gtk+2 \
-			x11/gtkglext \
+RUN_DEPENDS =		x11/gtkglext \
 			devel/libunique \
 			databases/iodbc,-main
 
-WANTLIB += GL GLU X11 Xdamage Xext Xfixes Xxf86vm c crypto drm cairo png jpeg
-WANTLIB += ffi m pthread stdc++ xcb pango-1.0 pangocairo-1.0
+WANTLIB += c m pthread
 
 WRKDIST =		${WRKDIR}/racket-$V
 WRKSRC =		${WRKDIST}/src
