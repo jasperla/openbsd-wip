@@ -163,13 +163,6 @@ MODKDE4_CONF_ARGS +=	-DCMAKE_BUILD_TYPE:String=Release
 MODKDE4_CMAKE_PREFIX =	-release
 .   endif
 
-# Enable PIE if supported by platform
-. if !empty(PIE_ARCH:M${ARCH})
-MODKDE4_CONF_ARGS +=	-DKDE4_ENABLE_FPIE:Bool=Yes
-. else
-MODKDE4_CONF_ARGS +=	-DKDE4_ENABLE_FPIE:Bool=No
-. endif
-
 # NOTE: due to bugs in make-plist, plist may contain
 # ${FLAVORS} instead of ${MODKDE4_CMAKE_PREFIX}.
 # You've been warned.
