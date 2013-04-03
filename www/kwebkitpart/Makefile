@@ -4,7 +4,7 @@ CATEGORIES =	www
 COMMENT =	Webkit-based KPart for KDE
 HOMEPAGE =	https://projects.kde.org/projects/extragear/base/kwebkitpart
 DISTNAME =	kwebkitpart-1.2
-REVISION =	6
+REVISION =	7
 
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	ftp://3ps.if.ua/pub/OpenBSD/distfiles/ \
@@ -20,6 +20,8 @@ WANTLIB += lib/qt4/QtSvg lib/qt4/QtWebKit lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/kparts
 WANTLIB += ${KDE4LIB}/kdewebkit ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
 WANTLIB += soprano
+
+RUN_DEPENDS =	x11/gtk+2,-guic
 
 MODULES =	x11/kde4
 
