@@ -2,9 +2,9 @@
 
 COMMENT =		LOLCODE interpreter
 
-V =			0.9.2
-REV =			c95d6f7
-DISTNAME =		justinmeza-lci-v${V}-0-g${REV}
+V =			0.10.4
+REV =			e309811
+DISTNAME =		v$V
 PKGNAME =		lci-${V}
 
 CATEGORIES =		lang
@@ -19,6 +19,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =		c m
 
 MASTER_SITES =		http://github.com/justinmeza/lci/tarball/v${V}/
+DIST_SUBDIR =		lci
 
 MODULES =		devel/cmake \
 			lang/python
@@ -29,7 +30,7 @@ TEST_DEPENDS =		devel/cmake \
 
 WRKDIST =		${WRKDIR}/justinmeza-lci-${REV}
 
-pre-test:
-	ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
+post-extract:
+	perl -pi -e 's,python,${MODPY_BIN},' ${WRKSRC}/cmake/AddLolTest.cmake
 
 .include <bsd.port.mk>
