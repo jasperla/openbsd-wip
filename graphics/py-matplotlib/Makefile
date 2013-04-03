@@ -48,6 +48,8 @@ post-install:
 	    ${PREFIX}/share/examples/py-matplotlib
 
 do-test: fake
-	cd ${WRKSRC}/examples/tests && ${MODPY_BIN} backend_driver.py
+	cd ${WRKSRC}/test && ${MAKE_ENV} \
+	    PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
+	    ${MODPY_BIN} backend_driver.py
 
 .include <bsd.port.mk>
