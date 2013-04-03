@@ -3,14 +3,15 @@
 SHARED_ONLY =	Yes
 COMMENT =	RDF framework
 CATEGORIES =	databases devel textproc sysutils
+HOMEPAGE =	http://soprano.sourceforge.net/
+DISTNAME =	soprano-2.9.0
+REVISION =	0
 
 SHARED_LIBS =	soprano                   2.0
 SHARED_LIBS +=	sopranoclient             2.0
 SHARED_LIBS +=	sopranoindex              2.0
 SHARED_LIBS +=	sopranoserver             2.0
 
-HOMEPAGE =	http://soprano.sourceforge.net/
-DISTNAME =	soprano-2.9.0
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=soprano/}
 
@@ -41,6 +42,7 @@ TEST_DEPENDS =		databases/virtuoso \
 			x11/dbus
 TEST_IS_INTERACTIVE =	X11
 
+# Remove stuff provided with CMake
 post-extract:
 	cd ${WRKDIST}/cmake/modules && \
 		rm FindQt4.cmake MacroPushRequiredVars.cmake
