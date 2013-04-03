@@ -8,7 +8,7 @@ REVISION =	6
 
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	ftp://3ps.if.ua/pub/OpenBSD/distfiles/ \
-		http://malcolm.ecentrum.hu/distfiles/ \
+		http://spacehopper.org/mirrors/ \
 		http://www.ohvost.ru/dnl/kde/src/
 
 # LGPLv2+
