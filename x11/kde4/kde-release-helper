@@ -305,6 +305,13 @@ prepare() {
 	}
 }
 	    " <"$MI" | $MSPATCH >"$T"
+
+	if ! grep -q ^MODKDE4_VERSION "$T"; then
+		# MODKDE4_VERSION could be missing
+		echo >>"$T"
+		echo "MODKDE4_VERSION =	$NEW_KDE_PORT_VER" >>"$T"
+	fi
+
 	mv "$T" "$MI"
 
 	if ! is_stable_ver $NEW_KDE_PORT_VER; then
