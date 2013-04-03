@@ -1,5 +1,5 @@
 $OpenBSD$
-Fixes "make regress"
+Fix tests.
 --- po/POTFILES.in.orig	Thu Sep 22 03:25:10 2011
 +++ po/POTFILES.in	Thu Sep 22 03:25:52 2011
 @@ -1,5 +1,13 @@
