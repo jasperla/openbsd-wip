@@ -19,7 +19,7 @@ PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 PKGNAME-vkontakte =	libkvkontakte-1.0.0
 
-REVISION-main =		1
+REVISION-main =		2
 REVISION-face =		2
 REVISION-geomap =	3
 REVISION-kipi =		4
