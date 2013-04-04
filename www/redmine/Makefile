@@ -11,6 +11,8 @@ CATEGORIES =		www
 HOMEPAGE =		http://www.redmine.org/
 MAINTAINER =		Vadim Zhukov <persgray@gmail.com>
 
+REVISION-main =		0
+
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
@@ -24,16 +26,18 @@ MODULES =		www/redmine
 FLAVOR ?=		ruby19
 
 # List of gems to be added in Gemfile.local
-CUSTOM_GEMS =
+CUSTOM_GEMS =		rack-openid
 
 BUILD_DEPENDS =		${RUN_DEPENDS-main}
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			devel/ruby-bundler,${MODRUBY_FLAVOR}>=1.0,<2.0 \
 			devel/ruby-i18n,${MODRUBY_FLAVOR}>=0.6.0,<0.7 \
 			devel/ruby-mocha,${MODRUBY_FLAVOR}=0.12.3 \
+			devel/ruby-rdoc,${MODRUBY_FLAVOR}>=3.12.2,<3.13 \
+			devel/ruby-tilt,${MODRUBY_FLAVOR}>=1.3.4,<1.4 \
 			net/ruby-net-ldap,${MODRUBY_FLAVOR}>=0.3.1,<0.4 \
 			security/ruby-rack-openid,${MODRUBY_FLAVOR} \
-			security/ruby-openid,${MODRUBY_FLAVOR}>=2.1.3,<2.3 \
+			security/ruby-openid,${MODRUBY_FLAVOR}>=2.2.2,<2.3 \
 			textproc/ruby-builder,${MODRUBY_FLAVOR}>=3.0.0,<3.1 \
 			textproc/ruby-coderay,${MODRUBY_FLAVOR}>=1.0.6,<1.1 \
 			textproc/ruby-fastercsv,${MODRUBY_FLAVOR}>=1.5.0,<1.6 \
