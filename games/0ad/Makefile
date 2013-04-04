@@ -2,7 +2,7 @@
 
 COMMENT =		historical real-time strategy game
 
-PKGNAME =		0ad-0.0.12
+PKGNAME =		0ad-0.0.13
 
 CATEGORIES =		games
 
@@ -15,7 +15,8 @@ WANTLIB += GL SDL X11 Xcursor boost_system c curl enet execinfo
 WANTLIB += jpeg m mozjs185 nvtt openal png pthread stdc++
 WANTLIB += vorbisfile xml2 z
 
-MASTER_SITES =		http://releases.wildfiregames.com/
+MASTER_SITES =		http://releases.wildfiregames.com/ \
+			${MASTER_SITE_SOURCEFORGE:=zero-ad/}
 DISTFILES =		${PKGNAME}-alpha-unix-build.tar.gz \
 			${PKGNAME}-alpha-unix-data.tar.gz
 
@@ -73,7 +74,7 @@ pre-build:
 		${WRKDIST}/source/scriptinterface/tests/test_ScriptVal.h
 
 do-build:
-	cd ${WRKDIST}/libraries/fcollada/src && \
+	cd ${WRKDIST}/libraries/source/fcollada/src && \
 		env -i ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS}
 	cd ${WRKSRC} &&\
 		env -i ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
