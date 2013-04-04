@@ -6,36 +6,39 @@ V =		4.4.1
 PLATFORM_V =	1.4.1
 DISTNAME =	kdevelop-$V
 HOMEPAGE =	http://www.kdevelop.org/
-
-EXTRACT_SUFX =	.tar.bz2
+REVISION =	0
 
 SHARED_LIBS =	kdev4cmakecommon	0.0
 SHARED_LIBS +=	kdev4cppduchain		0.0
 SHARED_LIBS +=	kdev4cppparser		0.0
 SHARED_LIBS +=	kdev4cpprpp		0.0
 
+EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdevelop/$V/src/}
 DIST_SUBDIR =	kde
 
 # GPLv2+, LGPLv2.1+, GNU FDLv1.2
-PERMIT_PACKAGE_CDROM =          Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
 WANTLIB += lib/qt4/QtHelp lib/qt4/QtNetwork lib/qt4/QtScript
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtWebKit lib/qt4/QtXml
-WANTLIB += kcmutils kdeclarative kdeui
+WANTLIB += ${KDE4LIB}/kcmutils ${KDE4LIB}/kdeclarative ${KDE4LIB}/kdeui
+WANTLIB += ${KDE4LIB}/kemoticons ${KDE4LIB}/kidletime ${KDE4LIB}/kio
+WANTLIB += ${KDE4LIB}/knewstuff3 ${KDE4LIB}/knotifyconfig ${KDE4LIB}/kparts
+WANTLIB += ${KDE4LIB}/kprintutils ${KDE4LIB}/ktexteditor ${KDE4LIB}/kutils
+WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils ${KDE4LIB}/plasma
+WANTLIB += ${KDE4LIB}/kasten2controllers ${KDE4LIB}/kasten2core
+WANTLIB += ${KDE4LIB}/kasten2gui ${KDE4LIB}/kasten2okteta1controllers
+WANTLIB += ${KDE4LIB}/kasten2okteta1core ${KDE4LIB}/kasten2okteta1gui
+WANTLIB += ${KDE4LIB}/okteta1core ${KDE4LIB}/okteta1gui
+WANTLIB += ${KDE4LIB}/threadweaver
 WANTLIB += kdevplatformdebugger kdevplatformdocumentation
 WANTLIB += kdevplatforminterfaces kdevplatformlanguage
 WANTLIB += kdevplatformoutputview kdevplatformproject kdevplatformshell
-WANTLIB += kdevplatformutil kdevplatformvcs kemoticons kidletime kio
-WANTLIB += knewstuff3 knotifyconfig kparts kprintutils ktexteditor kutils
-WANTLIB += nepomuk nepomukutils plasma
-WANTLIB += processcore processui
-WANTLIB += soprano sublime threadweaver
-WANTLIB += kasten2controllers kasten2core kasten2gui
-WANTLIB += kasten2okteta1controllers kasten2okteta1core
-WANTLIB += kasten2okteta1gui okteta1core okteta1gui
+WANTLIB += kdevplatformutil kdevplatformvcs
+WANTLIB += processcore processui soprano sublime
 
 MODULES =	x11/kde4
 MODKDE4_USE =	workspace
