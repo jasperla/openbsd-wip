@@ -11,7 +11,7 @@ CATEGORIES =		www
 HOMEPAGE =		http://www.redmine.org/
 MAINTAINER =		Vadim Zhukov <persgray@gmail.com>
 
-REVISION-main =		0
+REVISION-main =		1
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
@@ -60,7 +60,7 @@ RUN_DEPENDS-main +=	databases/ruby-activerecord-jdbc-adapter,${MODRUBY_FLAVOR}=1
 CUSTOM_GEMS +=		activerecord-jdbc-adapter \
 			activerecord-jdbcmysql-adapter \
 			activerecord-jdbcpostgresql-adapter \
-			activerecord-jdbcsqlite3-adapter \
+			activerecord-jdbcsqlite3-adapter
 .else
 RUN_DEPENDS-main +=	databases/ruby-pg,${MODRUBY_FLAVOR}>=0.11.0 \
 			databases/ruby-sqlite3,${MODRUBY_FLAVOR}
