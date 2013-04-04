@@ -5,6 +5,7 @@ COMMENT =	KTorrent engine
 V =		1.3.1
 DISTNAME =	libktorrent-$V
 HOMEPAGE =	http://ktorrent.org/
+REVISION =	0
 
 EXTRACT_SUFX =	.tar.bz2
 
@@ -13,10 +14,10 @@ SHARED_LIBS =	ktorrent	0.0
 # GPLv2+
 PERMIT_PACKAGE_CDROM =          Yes
 
-WANTLIB =  c m pthread stdc++
+WANTLIB =  m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += lib/qt4/QtNetwork
-WANTLIB += kdeui kio solid
+WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/solid
 WANTLIB += gcrypt gmp qca2
 
 MASTER_SITES =	${HOMEPAGE}downloads/${V:C/^./4/}/
