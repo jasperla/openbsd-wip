@@ -1,0 +1,26 @@
+# $OpenBSD$
+
+COMMENT =	scientific calculator for KDE
+DISTNAME =	kalgebra-${MODKDE4_VERSION}
+
+WANTLIB =  c m pthread stdc++
+WANTLIB += GL GLU
+WANTLIB += lib/qt4/QtDeclarative
+WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
+WANTLIB += lib/qt4/QtOpenGL lib/qt4/QtSvg
+WANTLIB += lib/qt4/QtXml kdeclarative
+WANTLIB += ${KDE4LIB}/analitza ${KDE4LIB}/analitzagui
+WANTLIB += ${KDE4LIB}/analitzaplot ${KDE4LIB}/kdeui ${KDE4LIB}/khtml
+WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kjs ${KDE4LIB}/kparts
+WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
+WANTLIB += ${KDE4LIB}/plasma
+WANTLIB += soprano
+
+MODULES =	multimedia/phonon
+
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+2,-guic
+
+LIB_DEPENDS = 	x11/kde4/analitza>=${MODKDE4_DEP_VERSION}
+
+.include <bsd.port.mk>
