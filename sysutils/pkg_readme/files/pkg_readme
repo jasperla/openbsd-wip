@@ -75,7 +75,7 @@ if ($stemlookup) {
 	my @sorted = sort { $readmes{$a} <=> $readmes{$b} } keys %readmes;
 	if ($listcount) {
 		$listcount = @sorted if @sorted < $listcount;
-		exec { $pager } $pager, @sorted[0 .. $listcount-1];
+		exec { $pager } $pager, @sorted[@sorted - $listcount .. @sorted - 1];
 		die "exec failed: $!";
 	} else {
 		foreach (@sorted) {

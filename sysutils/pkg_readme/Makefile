@@ -2,7 +2,7 @@
 PKG_ARCH =		*
 
 COMMENT =		packages readme files viewer
-DISTNAME =		pkg_readme-1.0
+DISTNAME =		pkg_readme-1.1
 CATEGORIES =		sysutils
 HOMEPAGE =		http://www.openbsd.org/
 MAINTAINER =		Vadim Zhukov <persgray@gmail.com>
