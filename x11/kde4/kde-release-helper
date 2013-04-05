@@ -292,8 +292,8 @@ prepare() {
 		MSPATCH="sed /MASTER_SITES/s@stable/@unstable/@"
 	fi
 	awk "
-/^MODKDE[0-9]?_VERSION[[:space:]]*:?=/ {
-	print \"MODKDE4_VERSION =	$NEW_KDE_PORT_VER\";
+/^MODKDE4_FLAVOR[[:space:]]*:?=/ {
+	print \"MODKDE4_FLAVOR =	${NEW_KDE_PORT_DIR}\";
 	VL = 1;
 }
 
@@ -306,10 +306,10 @@ prepare() {
 }
 	    " <"$MI" | $MSPATCH >"$T"
 
-	if ! grep -q ^MODKDE4_VERSION "$T"; then
-		# MODKDE4_VERSION could be missing
+	if ! grep -q ^MODKDE4_FLAVOR "$T"; then
+		# MODKDE4_FLAVOR could be missing
 		echo >>"$T"
-		echo "MODKDE4_VERSION =	$NEW_KDE_PORT_VER" >>"$T"
+		echo "MODKDE4_FLAVOR =	$NEW_KDE_PORT_DIR" >>"$T"
 	fi
 
 	mv "$T" "$MI"
@@ -453,11 +453,12 @@ have already commited all your work, didn't you?
 -${SKVERLINE#*:}
 +_MODKDE4_STABLE =	${KDEV}
 EOF
-	diff -urNp -I '^MODKDE4?_VERSION[[:space:]]*=' -X ../.gitignore \
+	diff -urNp -I '^MODKDE4_FLAVOR[[:space:]]*=' -X ../.gitignore \
 	    `diff_ignore_opts` $SKPD $KPD \
 	    | sed -e "s@^+++ ${KPD}/@+++ ${SKPD}/@" >>$T
 	${PAGER:-more} <$T
 
+	patch -C -E -p0 <$T
 	patch -E -p0 <$T
 	rm $T
 	rm $SKPD/STATUS-*
