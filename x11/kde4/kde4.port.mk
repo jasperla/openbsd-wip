@@ -4,7 +4,7 @@
 _MODKDE4_STABLE =	4.10.2
 
 # List of currently supported KDE SC versions, except "stable"
-_MODKDE4_OTHERS =	4.10.2
+_MODKDE4_OTHERS =
 
 # Handle kde4* FLAVORs: detect what version is requested, and
 # set MODKDE4_VERSION, MODKDE4_DEP_VERSION and MODKDE4_DEP_DIR
