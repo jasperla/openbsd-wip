@@ -1,9 +1,0 @@
-This project aims to be a full replacement for the current printing
-management of KDE:
-
-  * printd: contains a kded module that checks for user print jobs
-    and shows a systray icon;
-  * printqueue: contains an application that show the printers queue;
-  * printer-manager-kcm: configure printers in a very simple way;
-  * add-printer: a wizard to add new printers;
-  * plasmoid: show printers and it's jobs.
