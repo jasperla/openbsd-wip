@@ -49,6 +49,6 @@ USE_GMAKE =	Yes
 BUILD_DEPENDS =	misc/shared-mime-info
 
 LIB_DEPENDS = 	devel/kdevplatform>=${PLATFORM_V} \
-		x11/kde4/sdk
+		${MODKDE4_DEP_DIR}/sdk
 
 .include <bsd.port.mk>

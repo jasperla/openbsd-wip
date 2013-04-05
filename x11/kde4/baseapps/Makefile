@@ -29,9 +29,9 @@ MODULES =	multimedia/phonon
 RUN_DEPENDS =	www/kwebkitpart
 
 LIB_DEPENDS =	devel/glib2 \
-		x11/kde4/kactivities \
-		x11/kde4/nepomuk-core \
-		x11/kde4/nepomuk-widgets \
+		${MODKDE4_DEP_DIR}/kactivities \
+		${MODKDE4_DEP_DIR}/nepomuk-core \
+		${MODKDE4_DEP_DIR}/nepomuk-widgets \
 		www/tidyp
 
 .include <bsd.port.mk>

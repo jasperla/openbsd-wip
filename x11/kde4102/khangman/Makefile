@@ -16,6 +16,6 @@ MODULES =	multimedia/phonon
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+2,-guic
 
-LIB_DEPENDS = 	x11/kde4/libkdeedu>=${MODKDE4_DEP_VERSION}
+LIB_DEPENDS = 	${MODKDE4_DEP_DIR}/libkdeedu>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>

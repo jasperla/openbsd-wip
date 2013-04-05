@@ -27,7 +27,7 @@ EXTRACT_SUFX =	.tar.bz2
 MODULES =	devel/gettext x11/kde4 multimedia/phonon
 MODKDE4_USE =	pim
 
-BUILD_DEPENDS =	x11/kde4/libkcompactdisc
+BUILD_DEPENDS =	${MODKDE4_DEP_DIR}/libkcompactdisc
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
@@ -39,8 +39,8 @@ LIB_DEPENDS =	audio/taglib \
 		net/yaz \
 		print/poppler,,-qt4 \
 		textproc/exempi \
-		x11/kde4/libksane>=4.10.1p0 \
-		x11/kde4/libkcddb
+		${MODKDE4_DEP_DIR}/libksane>=4.10.1p0 \
+		${MODKDE4_DEP_DIR}/libkcddb
 
 TEST_IS_INTERACTIVE =	X11
 

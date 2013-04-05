@@ -25,8 +25,8 @@ LIB_DEPENDS = 	graphics/exiv2 \
 		graphics/jpeg \
 		graphics/lcms2 \
 		graphics/png \
-		x11/kde4/baseapps>=${MODKDE4_DEP_VERSION} \
-		x11/kde4/kactivities>=${MODKDE4_DEP_VERSION} \
-		x11/kde4/libkipi>=${MODKDE4_DEP_VERSION}
+		${MODKDE4_DEP_DIR}/baseapps>=${MODKDE4_DEP_VERSION} \
+		${MODKDE4_DEP_DIR}/kactivities>=${MODKDE4_DEP_VERSION} \
+		${MODKDE4_DEP_DIR}/libkipi>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>

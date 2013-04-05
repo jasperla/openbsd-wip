@@ -31,11 +31,11 @@ MODULES =	lang/ruby
 MODKDE4_USE =	libs pim
 MODRUBY_REV =	1.9
 
-RUN_DEPENDS =	x11/kde4/kross-interpreters>=${MODKDE4_DEP_VERSION}
+RUN_DEPENDS =	${MODKDE4_DEP_DIR}/kross-interpreters>=${MODKDE4_DEP_VERSION}
 
-LIB_DEPENDS = 	x11/kde4/kate>=${MODKDE4_DEP_VERSION} \
-		x11/kde4/ruby-qt>=${MODKDE4_DEP_VERSION} \
-		x11/kde4/smokekde>=${MODKDE4_DEP_VERSION}
+LIB_DEPENDS = 	${MODKDE4_DEP_DIR}/kate>=${MODKDE4_DEP_VERSION} \
+		${MODKDE4_DEP_DIR}/ruby-qt>=${MODKDE4_DEP_VERSION} \
+		${MODKDE4_DEP_DIR}/smokekde>=${MODKDE4_DEP_VERSION}
 
 # same as in ruby-qt
 post-patch:

@@ -53,7 +53,7 @@ LIB_DEPENDS =	audio/xmms \
 		net/meanwhile \
 		security/libotr \
 		security/qca2 \
-		x11/kde4/baseapps>=${MODKDE4_DEP_VERSION}
+		${MODKDE4_DEP_DIR}/baseapps>=${MODKDE4_DEP_VERSION}
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_LibV4L2:Bool=Yes \
 			-DWITH_LibVNCServer:Bool=No \

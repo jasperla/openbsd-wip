@@ -24,6 +24,6 @@ LIB_DEPENDS = 	databases/soprano \
 		math/R>=2.15.1p4 \
 		math/libqalculate \
 		print/libspectre \
-		x11/kde4/analitza>=${MODKDE4_DEP_VERSION}
+		${MODKDE4_DEP_DIR}/analitza>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>

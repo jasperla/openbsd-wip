@@ -68,12 +68,12 @@ MODULES =	devel/gettext multimedia/phonon
 MODKDE4_USE =	pim
 
 BUILD_DEPENDS =	misc/shared-desktop-ontologies \
-		x11/kde4/py-kde>=${MODKDE4_DEP_VERSION} \
+		${MODKDE4_DEP_DIR}/py-kde>=${MODKDE4_DEP_VERSION} \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-desktop-ontologies \
 		sysutils/lsof \
-		x11/kde4/py-kde>=${MODKDE4_DEP_VERSION} \
+		${MODKDE4_DEP_DIR}/py-kde>=${MODKDE4_DEP_VERSION} \
 		x11/polkit-qt4
 
 LIB_DEPENDS =	audio/xmms \
@@ -84,7 +84,7 @@ LIB_DEPENDS =	audio/xmms \
 		misc/gpsd \
 		sysutils/consolekit \
 		x11/dbusmenu-qt \
-		x11/kde4/kactivities>=${MODKDE4_DEP_VERSION}
+		${MODKDE4_DEP_DIR}/kactivities>=${MODKDE4_DEP_VERSION}
 
 CONFIGURE_ARGS =	-DWITH_Googlegadgets:Bool=False \
 			-DWITH_NetworkManager:Bool=False \

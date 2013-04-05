@@ -27,7 +27,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+2,-guic
 
 # XXX broken ATM in kross-interpreters
-#RUN_DEPENDS +=	x11/kde4/korundum>=${MODKDE4_DEP_VERSION}
+#RUN_DEPENDS +=	${MODKDE4_DEP_DIR}/korundum>=${MODKDE4_DEP_VERSION}
 
 LIB_DEPENDS =	www/tidyp
 

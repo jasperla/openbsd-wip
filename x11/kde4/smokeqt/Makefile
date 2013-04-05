@@ -39,7 +39,7 @@ MODKDE4_USE =
 
 LIB_DEPENDS =	editors/qscintilla \
 		graphics/qimageblitz \
-		x11/kde4/smokegen \
+		${MODKDE4_DEP_DIR}/smokegen \
 		x11/qwt
 
 .include <bsd.port.mk>

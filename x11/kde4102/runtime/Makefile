@@ -48,8 +48,8 @@ LIB_DEPENDS =	audio/libcanberra \
 		net/samba \
 		productivity/attica \
 		security/libssh \
-		x11/kde4/kactivities>=${MODKDE4_DEP_VERSION} \
-		x11/kde4/nepomuk-core>=${MODKDE4_DEP_VERSION}
+		${MODKDE4_DEP_DIR}/kactivities>=${MODKDE4_DEP_VERSION} \
+		${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION}
 
 # QNtrack depends on libnl, Linux-specific library.
 CONFIGURE_ARGS =	-DWITH_ALSA:Bool=FALSE \

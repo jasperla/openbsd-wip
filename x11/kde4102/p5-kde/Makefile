@@ -23,13 +23,13 @@ WANTLIB += ${KDE4LIB}/smokeakonadi
 MODKDE4_USE =
 
 BUILD_DEPENDS =	productivity/attica \
-		x11/kde4/okular>=${MODKDE4_DEP_VERSION} \
-		x11/kde4/p5-qt>=${MODKDE4_DEP_VERSION} \
-		x11/kde4/pimlibs>=${MODKDE4_DEP_VERSION}
+		${MODKDE4_DEP_DIR}/okular>=${MODKDE4_DEP_VERSION} \
+		${MODKDE4_DEP_DIR}/p5-qt>=${MODKDE4_DEP_VERSION} \
+		${MODKDE4_DEP_DIR}/pimlibs>=${MODKDE4_DEP_VERSION}
 
-RUN_DEPENDS =	x11/kde4/p5-qt>=${MODKDE4_DEP_VERSION}
+RUN_DEPENDS =	${MODKDE4_DEP_DIR}/p5-qt>=${MODKDE4_DEP_VERSION}
 
-LIB_DEPENDS = 	x11/kde4/smokekde>=${MODKDE4_DEP_VERSION}
+LIB_DEPENDS = 	${MODKDE4_DEP_DIR}/smokekde>=${MODKDE4_DEP_VERSION}
 
 # Avoid clashing Perl do_open and do_close with GCC's locale_facets.h
 post-patch:

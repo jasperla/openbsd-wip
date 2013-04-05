@@ -19,7 +19,7 @@ MODULES =		x11/kde4
 MODKDE4_USE =
 
 BUILD_DEPENDS =		devel/doxygen \
-			x11/kde4/libs
+			${MODKDE4_DEP_DIR}/libs
 LIB_DEPENDS =		devel/gmp
 
 #TEST_DEPENDS =		???

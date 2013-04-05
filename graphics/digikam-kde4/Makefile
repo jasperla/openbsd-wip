@@ -142,7 +142,7 @@ LIB_DEPENDS-face =	${LIB_DEPENDS-common} \
 
 LIB_DEPENDS-geomap =	${LIB_DEPENDS-common} \
 			${MODPHONON_LIB_DEPENDS} \
-			x11/kde4/marble
+			${MODKDE4_DEP_DIR}/marble
 
 LIB_DEPENDS-kipi =	${LIB_DEPENDS-common} \
 			${MODGETTEXT_LIB_DEPENDS} \
@@ -159,11 +159,11 @@ LIB_DEPENDS-kipi =	${LIB_DEPENDS-common} \
 			graphics/tiff \
 			security/qca2 \
 			security/kqoauth \
-			x11/kde4/libkdcraw \
-			x11/kde4/libkexiv2 \
-			x11/kde4/libkipi \
-			x11/kde4/libksane \
-			x11/kde4/pimlibs
+			${MODKDE4_DEP_DIR}/libkdcraw \
+			${MODKDE4_DEP_DIR}/libkexiv2 \
+			${MODKDE4_DEP_DIR}/libkipi \
+			${MODKDE4_DEP_DIR}/libksane \
+			${MODKDE4_DEP_DIR}/pimlibs
 
 LIB_DEPENDS-main =	${LIB_DEPENDS-common} \
 			${MODPHONON_LIB_DEPENDS} \
@@ -179,10 +179,10 @@ LIB_DEPENDS-main =	${LIB_DEPENDS-common} \
 			graphics/libpgf \
 			graphics/png \
 			graphics/tiff \
-			x11/kde4/libkdcraw \
-			x11/kde4/libkexiv2 \
-			x11/kde4/libkipi \
-			x11/kde4/pimlibs
+			${MODKDE4_DEP_DIR}/libkdcraw \
+			${MODKDE4_DEP_DIR}/libkexiv2 \
+			${MODKDE4_DEP_DIR}/libkipi \
+			${MODKDE4_DEP_DIR}/pimlibs
 
 LIB_DEPENDS-mediawiki =	${LIB_DEPENDS-common}
 

@@ -16,6 +16,6 @@ WANTLIB += soprano
 
 BUILD_DEPENDS =	math/eigen2
 
-LIB_DEPENDS =	x11/kde4/libkexiv2>=${MODKDE4_DEP_VERSION}
+LIB_DEPENDS =	${MODKDE4_DEP_DIR}/libkexiv2>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>

@@ -13,6 +13,6 @@ WANTLIB += soprano
 
 MODKDE4_USE =	libs
 
-LIB_DEPENDS =	x11/kde4/nepomuk-core>=${MODKDE4_DEP_VERSION}
+LIB_DEPENDS =	${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>

@@ -40,14 +40,14 @@ MODKDE4_USE =
 
 BUILD_DEPENDS =		misc/shared-desktop-ontologies \
 			productivity/akonadi>=${MIN_AKONADI_VERSION} \
-			x11/kde4/nepomuk-core>=${MODKDE4_DEP_VERSION}
+			${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION}
 
 RUN_DEPENDS =		productivity/akonadi>=${MIN_AKONADI_VERSION} \
-			x11/kde4/nepomuk-core>=${MODKDE4_DEP_VERSION}
+			${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION}
 
 LIB_DEPENDS =		databases/soprano>=${MIN_SOPRANO_VERSION} \
 			devel/boehm-gc \
-			x11/kde4/qyoto>=${MODKDE4_DEP_VERSION} \
-			x11/kde4/smokekde>=${MODKDE4_DEP_VERSION}
+			${MODKDE4_DEP_DIR}/qyoto>=${MODKDE4_DEP_VERSION} \
+			${MODKDE4_DEP_DIR}/smokekde>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>
