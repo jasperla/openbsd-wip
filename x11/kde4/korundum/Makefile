@@ -30,7 +30,9 @@ WANTLIB += qtruby4shared soprano
 
 MODULES =	lang/ruby
 MODKDE4_USE =	libs pim
-MODRUBY_REV =	1.8
+
+MODRUBY_REV =		1.8
+MODRUBY_ADJ_FILES =	*.rb
 CONFIGURE_ARGS =	-DRUBY_EXECUTABLE=${RUBY}
 
 RUN_DEPENDS =	${MODKDE4_DEP_DIR}/kross-interpreters>=${MODKDE4_DEP_VERSION},>=4.10.2p0
@@ -38,14 +40,5 @@ RUN_DEPENDS =	${MODKDE4_DEP_DIR}/kross-interpreters>=${MODKDE4_DEP_VERSION},>=4.
 LIB_DEPENDS = 	${MODKDE4_DEP_DIR}/kate>=${MODKDE4_DEP_VERSION} \
 		${MODKDE4_DEP_DIR}/ruby-qt=${MODKDE4_VERSION} \
 		${MODKDE4_DEP_DIR}/smokekde>=${MODKDE4_DEP_VERSION}
-
-# same as in ruby-qt
-post-patch:
-	@echo "====> Adjusting shebangs"
-	@cd ${WRKSRC} && find . -name '*.rb' | while read F; do \
-		echo -n "\t$$F"; \
-		${MODRUBY_RUBY_ADJ} "$$F"; \
-		echo; \
-	done
 
 .include <bsd.port.mk>
