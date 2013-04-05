@@ -9,12 +9,14 @@ _MODKDE4_OTHERS =	4.10.2
 # Handle kde4* FLAVORs: detect what version is requested, and
 # set MODKDE4_VERSION, MODKDE4_DEP_VERSION and MODKDE4_DEP_DIR
 # accordingly. There is also a shortcut for the latter.
+#
+# MODKDE4_FLAVOR is read-only for ports, except KDE SC itself.
 
 .for _v in ${_MODKDE4_OTHERS}
 MODKDE4_FLAVORS +=	kde${_v:S/.//g}
 .endfor
 FLAVORS +=		${MODKDE4_FLAVORS}
-MODKDE4_FLAVOR =	${FLAVOR:Mkde4*}
+MODKDE4_FLAVOR ?=	${FLAVOR:Mkde4*}
 
 .if ${MODKDE4_FLAVOR}
 .   for _f in ${MODKDE4_FLAVOR}
@@ -36,6 +38,8 @@ MODKDE4_DEP_DIR =	x11/${MODKDE4_FLAVOR}
 .else
 MODKDE4_DEP_DIR =	x11/kde4
 .endif
+
+CATEGORIES +=		${MODKDE4_DEP_DIR}
 
 # Can be set by port to force dependency on particular KDE SC version.
 MODKDE4_VERSION ?=	${_MODKDE4_STABLE}
