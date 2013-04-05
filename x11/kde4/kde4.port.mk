@@ -112,7 +112,7 @@ MODKDE4_USE +=		runtime
 # 2. Various distfiles contain long paths, necessitating an archiver
 # compliant with POSIX.1-2001 extended headers.
 MODKDE4_BUILD_DEPENDS =	archivers/gtar \
-			STEM->=2.8.9:devel/cmake \
+			devel/cmake>=2.8.9 \
 			textproc/docbook \
 			textproc/docbook-xsl
 MODKDE4_LIB_DEPENDS =
@@ -132,10 +132,10 @@ MODKDE4_USE +=		libs
 PKG_ARCH ?=		*
 MODKDE4_NO_QT ?=	Yes	# resources usually don't need Qt
 .   if ${MODKDE4_USE:L:Mworkspace}
-MODKDE4_BUILD_DEPENDS +=	STEM->=${MODKDE4_DEP_VERSION}:${MODKDE4_DEP_DIR}/workspace>=${MODKDE4_DEP_VERSION}
+MODKDE4_BUILD_DEPENDS +=	${MODKDE4_DEP_DIR}/workspace>=${MODKDE4_DEP_VERSION}
 .   endif
 .   if ${MODKDE4_USE:L:Mlibs}
-MODKDE4_BUILD_DEPENDS +=	STEM->=${MODKDE4_DEP_VERSION}:${MODKDE4_DEP_DIR}/libs>=${MODKDE4_DEP_VERSION}
+MODKDE4_BUILD_DEPENDS +=	${MODKDE4_DEP_DIR}/libs>=${MODKDE4_DEP_VERSION}
 .   endif
 .else
 # Small hack, until automoc4 will be gone
@@ -150,26 +150,26 @@ MODKDE4_NO_QT ?=	No
 ERRORS +=	"Fatal: KDE libraries require Qt."
 .       endif
 
-MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:${MODKDE4_DEP_DIR}/libs
+MODKDE4_LIB_DEPENDS +=		${MODKDE4_DEP_DIR}/libs>=${MODKDE4_DEP_VERSION}
 MODKDE4_WANTLIB +=		${MODKDE4_LIB_DIR}/kdecore>=8
 .       if ${MODKDE4_USE:L:Mpim}
-MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:${MODKDE4_DEP_DIR}/pimlibs
+MODKDE4_LIB_DEPENDS +=		${MODKDE4_DEP_DIR}/pimlibs>=${MODKDE4_DEP_VERSION}
 MODKDE4_BUILD_DEPENDS +=	devel/boost
 .       endif
 
 .       if ${MODKDE4_USE:L:Mgames}
-MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:${MODKDE4_DEP_DIR}/libkdegames
+MODKDE4_LIB_DEPENDS +=		${MODKDE4_DEP_DIR}/libkdegames>=${MODKDE4_DEP_VERSION}
 MODKDE4_WANTLIB +=		${MODKDE4_LIB_DIR}/kdegames
 .       endif
 
 .       if ${MODKDE4_USE:L:Mruntime}
-MODKDE4_RUN_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:${MODKDE4_DEP_DIR}/runtime
+MODKDE4_RUN_DEPENDS +=		${MODKDE4_DEP_DIR}/runtime>=${MODKDE4_DEP_VERSION}
 .           if ${MODKDE4_USE:L:Mpim}
-MODKDE4_RUN_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:${MODKDE4_DEP_DIR}/pim-runtime
+MODKDE4_RUN_DEPENDS +=		${MODKDE4_DEP_DIR}/pim-runtime>=${MODKDE4_DEP_VERSION}
 .           endif
 
 .           if ${MODKDE4_USE:L:Mworkspace}
-MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:${MODKDE4_DEP_DIR}/workspace
+MODKDE4_LIB_DEPENDS +=		${MODKDE4_DEP_DIR}/workspace>=${MODKDE4_DEP_VERSION}
 .           endif
 .       endif
 .   endif    # ${MODKDE4_USE:L:Mlibs}
