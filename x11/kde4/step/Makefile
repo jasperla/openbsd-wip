@@ -2,7 +2,6 @@
 
 COMMENT =	KDE interactive physics simulator
 DISTNAME =	step-${MODKDE4_VERSION}
-REVISION =	0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork

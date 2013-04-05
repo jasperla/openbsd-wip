@@ -1088,7 +1088,6 @@ lib/kde4/kio_nntp.so
 lib/kde4/kio_pop3.so
 lib/kde4/kio_sieve.so
 lib/kde4/kio_smtp.so
-lib/kde4/plugins/designer/kholidayswidgets.so
 @lib ${KDE4LIB}/libakonadi-calendar.so.${LIBakonadi-calendar_VERSION}
 @lib ${KDE4LIB}/libakonadi-contact.so.${LIBakonadi-contact_VERSION}
 @lib ${KDE4LIB}/libakonadi-kabc.so.${LIBakonadi-kabc_VERSION}
@@ -1122,6 +1121,7 @@ lib/kde4/plugins/designer/kholidayswidgets.so
 @lib ${KDE4LIB}/libmicroblog.so.${LIBmicroblog_VERSION}
 @lib ${KDE4LIB}/libqgpgme.so.${LIBqgpgme_VERSION}
 @lib ${KDE4LIB}/libsyndication.so.${LIBsyndication_VERSION}
+lib/kde4/plugins/designer/kholidayswidgets.so
 @lib lib/libakonadi-calendar.so.${LIBakonadi-calendar_VERSION}
 @lib lib/libakonadi-contact.so.${LIBakonadi-contact_VERSION}
 @lib lib/libakonadi-kabc.so.${LIBakonadi-kabc_VERSION}
@@ -1274,6 +1274,7 @@ share/apps/libkholidays/plan2/holiday_na_en-gb
 share/apps/libkholidays/plan2/holiday_nc_fr
 share/apps/libkholidays/plan2/holiday_nl_nl
 share/apps/libkholidays/plan2/holiday_no_nb
+share/apps/libkholidays/plan2/holiday_no_nn
 share/apps/libkholidays/plan2/holiday_nz_en-gb
 share/apps/libkholidays/plan2/holiday_pa_en
 share/apps/libkholidays/plan2/holiday_pa_es

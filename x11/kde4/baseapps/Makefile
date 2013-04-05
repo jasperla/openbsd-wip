@@ -30,6 +30,7 @@ RUN_DEPENDS =	www/kwebkitpart
 
 LIB_DEPENDS =	devel/glib2 \
 		${MODKDE4_DEP_DIR}/kactivities \
+		${MODKDE4_DEP_DIR}/libs>=4.10.2 \
 		${MODKDE4_DEP_DIR}/nepomuk-core \
 		${MODKDE4_DEP_DIR}/nepomuk-widgets \
 		www/tidyp

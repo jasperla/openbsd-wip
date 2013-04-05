@@ -1761,6 +1761,7 @@ share/locale/pt/LC_MESSAGES/nepomukbackup.mo
 share/locale/pt/LC_MESSAGES/nepomukcleaner.mo
 share/locale/pt/LC_MESSAGES/nepomukcontroller.mo
 share/locale/pt/LC_MESSAGES/nepomukfileindexer.mo
+share/locale/pt/LC_MESSAGES/nepomukpimindexerutility.mo
 share/locale/pt/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/pt/LC_MESSAGES/nepomukserver.mo
 share/locale/pt/LC_MESSAGES/nepomukservicestub.mo

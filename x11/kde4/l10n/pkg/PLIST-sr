@@ -1635,6 +1635,7 @@ share/locale/sr/LC_MESSAGES/nepomukbackup.mo
 share/locale/sr/LC_MESSAGES/nepomukcleaner.mo
 share/locale/sr/LC_MESSAGES/nepomukcontroller.mo
 share/locale/sr/LC_MESSAGES/nepomukfileindexer.mo
+share/locale/sr/LC_MESSAGES/nepomukpimindexerutility.mo
 share/locale/sr/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/sr/LC_MESSAGES/nepomukserver.mo
 share/locale/sr/LC_MESSAGES/nepomukservicestub.mo
@@ -2304,6 +2305,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/nepomukbackup.mo
 share/locale/sr@ijekavian/LC_MESSAGES/nepomukcleaner.mo
 share/locale/sr@ijekavian/LC_MESSAGES/nepomukcontroller.mo
 share/locale/sr@ijekavian/LC_MESSAGES/nepomukfileindexer.mo
+share/locale/sr@ijekavian/LC_MESSAGES/nepomukpimindexerutility.mo
 share/locale/sr@ijekavian/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/sr@ijekavian/LC_MESSAGES/nepomukserver.mo
 share/locale/sr@ijekavian/LC_MESSAGES/nepomukservicestub.mo
@@ -2973,6 +2975,7 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/nepomukbackup.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/nepomukcleaner.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/nepomukcontroller.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/nepomukfileindexer.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/nepomukpimindexerutility.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/nepomukserver.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/nepomukservicestub.mo
@@ -3640,6 +3643,7 @@ share/locale/sr@latin/LC_MESSAGES/nepomukbackup.mo
 share/locale/sr@latin/LC_MESSAGES/nepomukcleaner.mo
 share/locale/sr@latin/LC_MESSAGES/nepomukcontroller.mo
 share/locale/sr@latin/LC_MESSAGES/nepomukfileindexer.mo
+share/locale/sr@latin/LC_MESSAGES/nepomukpimindexerutility.mo
 share/locale/sr@latin/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/sr@latin/LC_MESSAGES/nepomukserver.mo
 share/locale/sr@latin/LC_MESSAGES/nepomukservicestub.mo

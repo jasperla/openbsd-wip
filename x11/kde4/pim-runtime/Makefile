@@ -43,6 +43,7 @@ LIB_DEPENDS =	databases/soprano \
 		${MODKDE4_DEP_DIR}/pimlibs>=${MODKDE4_DEP_VERSION}
 
 # Long dependency chain, not ported yet.
-CONFIGURE_ARGS=	-DCMAKE_DISABLE_FIND_PACKAGE_Libkolab:Bool=TRUE
+CONFIGURE_ARGS=	-DCMAKE_DISABLE_FIND_PACKAGE_Libkolab:Bool=Yes \
+		-DCMAKE_DISABLE_FIND_PACKAGE_Libkolabxml:Bool=Yes
 
 .include <bsd.port.mk>

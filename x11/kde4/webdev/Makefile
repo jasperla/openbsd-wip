@@ -2,6 +2,7 @@
 
 COMMENT =	web development tools for KDE
 DISTNAME =	kdewebdev-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	klinkstatuscommon	0.0
 SHARED_LIBS +=	kommandercore		0.0
@@ -20,14 +21,13 @@ WANTLIB += ${KDE4LIB}/threadweaver
 WANTLIB += soprano tidyp
 
 MODULES =	multimedia/phonon lang/ruby
-MODRUBY_REV =	1.9
+MODRUBY_REV =	1.8
 MODKDE4_USE =	pim
+CONFIGURE_ARGS =	-DRUBY_EXECUTABLE=${RUBY}
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic
-
-# XXX broken ATM in kross-interpreters
-#RUN_DEPENDS +=	${MODKDE4_DEP_DIR}/korundum>=${MODKDE4_DEP_VERSION}
+		x11/gtk+2,-guic \
+		${MODKDE4_DEP_DIR}/korundum>=${MODKDE4_DEP_VERSION}
 
 LIB_DEPENDS =	www/tidyp
 

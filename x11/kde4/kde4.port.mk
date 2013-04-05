@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 # The version of KDE SC in x11/kde4
-_MODKDE4_STABLE =	4.10.1
+_MODKDE4_STABLE =	4.10.2
 
 # List of currently supported KDE SC versions, except "stable"
 _MODKDE4_OTHERS =	4.10.2

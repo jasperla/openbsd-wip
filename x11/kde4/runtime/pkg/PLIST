@@ -34,10 +34,10 @@ bin/kde4
 include/kde4/knotify_export.h
 include/kde4/knotifyconfig.h
 include/kde4/knotifyplugin.h
-lib/attica_kde.so.0.0
 lib/kconf_update_bin/
 @bin lib/kconf_update_bin/phonon_devicepreference_update
 @bin lib/kconf_update_bin/phonon_deviceuids_update
+lib/kde4/attica_kde.so
 lib/kde4/comicbookthumbnail.so
 lib/kde4/cursorthumbnail.so
 lib/kde4/djvuthumbnail.so

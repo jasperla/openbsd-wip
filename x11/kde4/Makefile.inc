@@ -30,3 +30,5 @@ MIN_SOPRANO_VERSION =	2.9.0
 
 # Only needed for l10n
 MODKDE4_FIX_GETTEXT ?=  No
+
+MODKDE4_FLAVOR =	kde4102

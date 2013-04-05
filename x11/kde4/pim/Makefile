@@ -91,4 +91,6 @@ LIB_DEPENDS =	databases/soprano \
 		${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION} \
 		${MODKDE4_DEP_DIR}/nepomuk-widgets>=${MODKDE4_DEP_VERSION}
 
+MODKDE4_SYSCONF_FILES =	dbus-1	share/examples
+
 .include <bsd.port.mk>
