@@ -2,8 +2,9 @@
 
 COMMENT =	KDE bindings for Ruby
 DISTNAME =	korundum-${MODKDE4_VERSION}
+REVISION =	0
 
-WANTLIB =  c m pthread stdc++ ${MODRUBY_WANTLIB}
+WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml lib/qt4/QtOpenGL lib/qt4/QtSql
 WANTLIB += ${KDE4LIB}/akonadi-kde ${KDE4LIB}/akonadi-kmime
@@ -29,12 +30,13 @@ WANTLIB += qtruby4shared soprano
 
 MODULES =	lang/ruby
 MODKDE4_USE =	libs pim
-MODRUBY_REV =	1.9
+MODRUBY_REV =	1.8
+CONFIGURE_ARGS =	-DRUBY_EXECUTABLE=${RUBY}
 
-RUN_DEPENDS =	${MODKDE4_DEP_DIR}/kross-interpreters>=${MODKDE4_DEP_VERSION}
+RUN_DEPENDS =	${MODKDE4_DEP_DIR}/kross-interpreters>=${MODKDE4_DEP_VERSION},>=4.10.2p0
 
 LIB_DEPENDS = 	${MODKDE4_DEP_DIR}/kate>=${MODKDE4_DEP_VERSION} \
-		${MODKDE4_DEP_DIR}/ruby-qt>=${MODKDE4_DEP_VERSION} \
+		${MODKDE4_DEP_DIR}/ruby-qt=${MODKDE4_VERSION} \
 		${MODKDE4_DEP_DIR}/smokekde>=${MODKDE4_DEP_VERSION}
 
 # same as in ruby-qt
