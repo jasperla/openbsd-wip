@@ -685,6 +685,7 @@ share/locale/el/LC_MESSAGES/lskat.mo
 share/locale/el/LC_MESSAGES/mailreader.mo
 share/locale/el/LC_MESSAGES/marble.mo
 share/locale/el/LC_MESSAGES/marble_qt.mo
+share/locale/el/LC_MESSAGES/marble_xml_mimetypes.mo
 share/locale/el/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/el/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/el/LC_MESSAGES/messageviewer_text_vcard_plugin.mo

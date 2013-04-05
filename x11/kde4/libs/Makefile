@@ -72,8 +72,7 @@ MODKDE4_USE =
 BUILD_DEPENDS =	misc/shared-desktop-ontologies>=0.10 \
 		misc/shared-mime-info \
 		net/avahi \
-		x11/grantlee \
-		${MODKDE4_DEP_DIR}/oxygen-icons>=${MODKDE4_DEP_VERSION}
+		x11/grantlee
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \

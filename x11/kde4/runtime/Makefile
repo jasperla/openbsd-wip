@@ -11,7 +11,6 @@ SHARED_LIBS +=	kdeinit4_kglobalaccel	0.0
 SHARED_LIBS +=	kdeinit4_khelpcenter	0.0
 SHARED_LIBS +=	kdeinit4_kuiserver 	0.0
 SHARED_LIBS +=	kdeinit4_kwalletd 	0.0
-SHARED_LIBS +=	attica_kde		0.0
 
 WANTLIB =  c m pthread stdc++ util
 WANTLIB += Half ICE Iex IlmImf IlmThread Imath SM X11 Xcursor Xext

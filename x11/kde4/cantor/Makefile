@@ -2,7 +2,6 @@
 
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${MODKDE4_VERSION}
-REVISION =	0
 
 SHARED_LIBS =  cantorlibs                0.0 # 0.0
 SHARED_LIBS += cantor_config             0.0 # 0.0

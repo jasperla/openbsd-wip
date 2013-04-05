@@ -38,8 +38,7 @@ MODKDE4_USE =	pim
 # For building KAppTemplate with weird file names
 USE_GMAKE =	Yes
 
-BUILD_DEPENDS =	archivers/gtar \
-		devel/boost
+BUILD_DEPENDS =	devel/boost
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \

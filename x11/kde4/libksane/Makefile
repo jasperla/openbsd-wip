@@ -2,7 +2,6 @@
 
 COMMENT =	KDE SANE (scanner) wrapper library
 DISTNAME =	libksane-${MODKDE4_VERSION}
-REVISION =	0
 
 SHARED_LIBS =	ksane			0.0	# 0.2
 
