@@ -6,7 +6,6 @@ share/redmine/
 share/redmine/.bundle/
 share/redmine/.bundle/config
 share/redmine/Gemfile
-share/redmine/Gemfile.local
 share/redmine/Gemfile.lock
 share/redmine/README.rdoc
 share/redmine/Rakefile
@@ -1606,6 +1605,7 @@ share/redmine/script/about
 share/redmine/script/rails
 share/redmine/tmp
 share/redmine/vendor/
+@rcscript ${RCDIR}/redmine
 @mode 0750
 @owner _redmine
 @group _redmine
@@ -1614,7 +1614,3 @@ share/redmine/vendor/
 @sample ${LOCALSTATEDIR}/public/
 @sample ${LOCALSTATEDIR}/public/plugin_assets/
 @sample /var/log/redmine/
-@mode
-@owner
-@group
-@rcscript ${RCDIR}/redmine

@@ -11,7 +11,7 @@ CATEGORIES =		www
 HOMEPAGE =		http://www.redmine.org/
 MAINTAINER =		Vadim Zhukov <persgray@gmail.com>
 
-REVISION-main =		2
+REVISION-main =		3
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
@@ -74,11 +74,16 @@ SYSCONFDIR =		${BASESYSCONFDIR}/redmine
 REDMINE_WWW =		${WRKINST}/var/www/redmine
 SUBST_VARS =		LOCALSTATEDIR RUBY
 
-MODRUBY_ADJ_FILES =	*.rb dispatch.fcgi.example about rails
-UNNEDED =		.*ignore \
+MODRUBY_ADJ_FILES =	*.rb \
+			dispatch.fcgi.example \
+			about \
+			rails
+
+UNNEDED =		*${PATCHORIG} \
+			.*ignore \
 			Gemfile.dist \
 			config/*.beforesubst \
-			config/*.orig \
+			config/*${PATCHORIG} \
 			files/delete.me \
 			log \
 			public/plugin_assets \
@@ -119,6 +124,8 @@ do-install:
 	ln -s /var/log/redmine ${REDMINE}/log
 	ln -s ${LOCALSTATEDIR}/public/plugin_assets ${REDMINE}/public/plugin_assets
 	ln -s ${LOCALSTATEDIR}/schema.rb ${REDMINE}/db/schema.rb
+	rm -f ${REDMINE}/Gemfile.lock
+	ln -s ${LOCALSTATEDIR}/Gemfile.lock ${REDMINE}/Gemfile.lock
 	${SUBST_CMD} -c ${PKGDIR}/redmine.rc ${WRKINST}/etc/rc.d/redmine
 
 .include <bsd.port.mk>
