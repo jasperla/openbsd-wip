@@ -3,8 +3,33 @@
 # The version of KDE SC in x11/kde4
 _MODKDE4_STABLE =	4.10.1
 
-# Should be changed only by Makefile.inc in test directories
+# List of currently supported KDE SC versions, except "stable"
+_MODKDE4_OTHERS =	4.10.2
+
+.for _v in ${_MODKDE4_OTHERS}
+MODKDE4_FLAVORS +=	kde${_v:S/.//g}
+.endfor
+FLAVORS +=		${MODKDE4_FLAVORS}
+MODKDE4_FLAVOR =	${FLAVOR:Mkde4*}
+
+.for _f in ${MODKDE4_FLAVOR}
+.  for _f2 in ${MODKDE4_FLAVOR}
+.    if "${_f2}" != "${_f}"
+ERRORS += "Fatal: cannot use more than one kde4* FLAVOR\n"
+.    endif
+.  endfor
+
+.  for _v in ${_MODKDE4_OTHERS}
+.    if "kde${_v:S/.//g}" == "${_f}"
+MODKDE4_VERSION =	${_v}
+.    endif
+.  endfor
+
+MODKDE4_DEP_DIR =	x11/${MODKDE4_FLAVOR}
+.endfor
+
 MODKDE4_VERSION ?=	${_MODKDE4_STABLE}
+MODKDE4_DEP_DIR ?=	x11/kde4
 
 # Version to be used for SC dependencies by default
 MODKDE4_DEP_VERSION =	${MODKDE4_VERSION:R}
@@ -107,10 +132,10 @@ MODKDE4_USE +=		libs
 PKG_ARCH ?=		*
 MODKDE4_NO_QT ?=	Yes	# resources usually don't need Qt
 .   if ${MODKDE4_USE:L:Mworkspace}
-MODKDE4_BUILD_DEPENDS +=	STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/workspace
+MODKDE4_BUILD_DEPENDS +=	STEM->=${MODKDE4_DEP_VERSION}:${MODKDE4_DEP_DIR}/workspace>=${MODKDE4_DEP_VERSION}
 .   endif
 .   if ${MODKDE4_USE:L:Mlibs}
-MODKDE4_BUILD_DEPENDS +=	STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/libs
+MODKDE4_BUILD_DEPENDS +=	STEM->=${MODKDE4_DEP_VERSION}:${MODKDE4_DEP_DIR}/libs>=${MODKDE4_DEP_VERSION}
 .   endif
 .else
 # Small hack, until automoc4 will be gone
@@ -125,26 +150,26 @@ MODKDE4_NO_QT ?=	No
 ERRORS +=	"Fatal: KDE libraries require Qt."
 .       endif
 
-MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/libs
+MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:${MODKDE4_DEP_DIR}/libs
 MODKDE4_WANTLIB +=		${MODKDE4_LIB_DIR}/kdecore>=8
 .       if ${MODKDE4_USE:L:Mpim}
-MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/pimlibs
+MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:${MODKDE4_DEP_DIR}/pimlibs
 MODKDE4_BUILD_DEPENDS +=	devel/boost
 .       endif
 
 .       if ${MODKDE4_USE:L:Mgames}
-MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/libkdegames
+MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:${MODKDE4_DEP_DIR}/libkdegames
 MODKDE4_WANTLIB +=		${MODKDE4_LIB_DIR}/kdegames
 .       endif
 
 .       if ${MODKDE4_USE:L:Mruntime}
-MODKDE4_RUN_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/runtime
+MODKDE4_RUN_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:${MODKDE4_DEP_DIR}/runtime
 .           if ${MODKDE4_USE:L:Mpim}
-MODKDE4_RUN_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/pim-runtime
+MODKDE4_RUN_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:${MODKDE4_DEP_DIR}/pim-runtime
 .           endif
 
 .           if ${MODKDE4_USE:L:Mworkspace}
-MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:x11/kde4/workspace
+MODKDE4_LIB_DEPENDS +=		STEM->=${MODKDE4_DEP_VERSION}:${MODKDE4_DEP_DIR}/workspace
 .           endif
 .       endif
 .   endif    # ${MODKDE4_USE:L:Mlibs}
@@ -223,19 +248,18 @@ CONFIGURE_ARGS +=	${MODKDE4_CONF_ARGS}
 # MAKE_FLAGS +=		${MODKDE4_CONF_ARGS}
 
 # Tweak dependency path for testing directories
-.if "${MODKDE4_VERSION}" != "${_MODKDE4_STABLE}"
-_MODKDE4_REAL_DIR =	x11/kde${MODKDE4_VERSION:S/.//g}
+.if "${MODKDE4_FLAVOR}" != ""
 CATEGORIES +=		${_MODKDE4_REAL_DIR}
-BUILD_DEPENDS :=	${BUILD_DEPENDS:C@x11/kde4/@${_MODKDE4_REAL_DIR}/@}
-RUN_DEPENDS :=		${RUN_DEPENDS:C@x11/kde4/@${_MODKDE4_REAL_DIR}/@}
-LIB_DEPENDS :=		${LIB_DEPENDS:C@x11/kde4/@${_MODKDE4_REAL_DIR}/@}
+BUILD_DEPENDS :=	${BUILD_DEPENDS:C@x11/kde4/@${MODKDE4_DEP_DIR}/@}
+RUN_DEPENDS :=		${RUN_DEPENDS:C@x11/kde4/@${MODKDE4_DEP_DIR}/@}
+LIB_DEPENDS :=		${LIB_DEPENDS:C@x11/kde4/@${MODKDE4_DEP_DIR}/@}
 . if "${MULTI_PACKAGES}" != ""
 .  for _s in ${MULTI_PACKAGES}
 .   if defined(RUN_DEPENDS${_s})
-RUN_DEPENDS${_s} :=	${RUN_DEPENDS${_s}:C@x11/kde4/@${_MODKDE4_REAL_DIR}/@}
+RUN_DEPENDS${_s} :=	${RUN_DEPENDS${_s}:C@x11/kde4/@${MODKDE4_DEP_DIR}/@}
 .   endif
 .   if defined(LIB_DEPENDS${_s})
-LIB_DEPENDS${_s} :=	${LIB_DEPENDS${_s}:C@x11/kde4/@${_MODKDE4_REAL_DIR}/@}
+LIB_DEPENDS${_s} :=	${LIB_DEPENDS${_s}:C@x11/kde4/@${MODKDE4_DEP_DIR}/@}
 .   endif
 .  endfor
 . endif
