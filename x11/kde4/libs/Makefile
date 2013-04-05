@@ -73,14 +73,14 @@ BUILD_DEPENDS =	misc/shared-desktop-ontologies>=0.10 \
 		misc/shared-mime-info \
 		net/avahi \
 		x11/grantlee \
-		x11/kde4/oxygen-icons>=${MODKDE4_DEP_VERSION}
+		${MODKDE4_DEP_DIR}/oxygen-icons>=${MODKDE4_DEP_VERSION}
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		misc/shared-desktop-ontologies \
 		net/cagibi \
 		sysutils/gamin \
-		x11/kde4/oxygen-icons>=${MODKDE4_DEP_VERSION} \
+		${MODKDE4_DEP_DIR}/oxygen-icons>=${MODKDE4_DEP_VERSION} \
 		x11/dbus \
 		x11/grantlee
 
@@ -130,8 +130,8 @@ MODKDE4_SYSCONF_FILES =	dbus-1	share/examples \
 
 TEST_IS_INTERACTIVE =	X11
 TEST_DEPENDS =		${BUILD_PKGPATH} \
-			x11/kde4/kate>=${MODKDE4_DEP_VERSION} \
-			x11/kde4/konsole>=${MODKDE4_DEP_VERSION}
+			${MODKDE4_DEP_DIR}/kate>=${MODKDE4_DEP_VERSION} \
+			${MODKDE4_DEP_DIR}/konsole>=${MODKDE4_DEP_VERSION}
 
 post-extract:
 .for M in ${REWR_CMAKE_MODULES}

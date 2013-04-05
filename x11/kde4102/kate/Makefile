@@ -21,12 +21,12 @@ WANTLIB += qjson soprano
 MODULES =	lang/python
 
 BUILD_DEPENDS =	devel/py-sip \
-		x11/kde4/py-kde>=${MODKDE4_DEP_VERSION}
+		${MODKDE4_DEP_DIR}/py-kde>=${MODKDE4_DEP_VERSION}
 
-RUN_DEPENDS =	x11/kde4/py-kde>=${MODKDE4_DEP_VERSION}
+RUN_DEPENDS =	${MODKDE4_DEP_DIR}/py-kde>=${MODKDE4_DEP_VERSION}
 
 LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		devel/qjson \
-		x11/kde4/kactivities>=${MODKDE4_DEP_VERSION}
+		${MODKDE4_DEP_DIR}/kactivities>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>

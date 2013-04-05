@@ -88,7 +88,7 @@ LIB_DEPENDS =	databases/soprano \
 		security/gpgme \
 		security/libassuan \
 		x11/grantlee \
-		x11/kde4/nepomuk-core>=${MODKDE4_DEP_VERSION} \
-		x11/kde4/nepomuk-widgets>=${MODKDE4_DEP_VERSION}
+		${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION} \
+		${MODKDE4_DEP_DIR}/nepomuk-widgets>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>

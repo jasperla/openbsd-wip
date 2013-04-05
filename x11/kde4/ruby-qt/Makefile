@@ -26,7 +26,7 @@ MODULES =	lang/ruby
 MODKDE4_USE =
 MODRUBY_REV =	1.9
 
-LIB_DEPENDS =	x11/kde4/smokeqt
+LIB_DEPENDS =	${MODKDE4_DEP_DIR}/smokeqt
 
 PATCHORIG =	.ports.orig
 

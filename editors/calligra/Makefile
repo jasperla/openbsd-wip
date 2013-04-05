@@ -117,9 +117,9 @@ LIB_DEPENDS =	databases/freetds \
 		security/qca2 \
 		textproc/libxml \
 		textproc/libxslt \
-		x11/kde4/libkdcraw \
-		x11/kde4/marble \
-		x11/kde4/okular
+		${MODKDE4_DEP_DIR}/libkdcraw \
+		${MODKDE4_DEP_DIR}/marble \
+		${MODKDE4_DEP_DIR}/okular
 
 # Stuff we don't have ATM. Do not bother about CreateResources, it's
 # pure optional run-time dependency.

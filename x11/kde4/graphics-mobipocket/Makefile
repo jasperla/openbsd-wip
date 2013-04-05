@@ -10,6 +10,6 @@ WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/okularcore
 WANTLIB += streamanalyzer streams
 
 LIB_DEPENDS =	databases/strigi \
-		x11/kde4/okular>=${MODKDE4_DEP_VERSION}
+		${MODKDE4_DEP_DIR}/okular>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>

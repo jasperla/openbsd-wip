@@ -18,6 +18,6 @@ MODULES =	multimedia/phonon
 
 LIB_DEPENDS = 	textproc/libxml \
 		textproc/libxslt \
-		x11/kde4/libkdeedu>=${MODKDE4_DEP_VERSION}
+		${MODKDE4_DEP_DIR}/libkdeedu>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>

@@ -51,7 +51,7 @@ LIB_DEPENDS =	databases/strigi \
 		textproc/libxslt \
 		textproc/libxml \
 		textproc/hunspell \
-		x11/kde4/baseapps>=${MODKDE4_DEP_VERSION}
+		${MODKDE4_DEP_DIR}/baseapps>=${MODKDE4_DEP_VERSION}
 
 # We have only pre-compiled Antlr3, and poxml wants
 # C runtime from Antlr2, which is not easy to port

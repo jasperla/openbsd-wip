@@ -27,30 +27,30 @@ MULTI_PACKAGES +=	-accessbility -edu -graphics -multimedia
 
 RUN_DEPENDS-main = \
 		STEM-=${MODKDE4_VERSION}:${BASE_PKGPATH},-accessbility \
-		x11/kde4/ark		\
-		x11/kde4/base-artwork	\
-		x11/kde4/kate		\
-		x11/kde4/kgpg		\
-		x11/kde4/konsole	\
-		x11/kde4/kwallet	\
-		x11/kde4/pim		\
-		x11/kde4/printer-applet	\
-		x11/kde4/superkaramba	\
-		x11/kde4/sweeper	\
-		x11/kde4/workspace
+		${MODKDE4_DEP_DIR}/ark		\
+		${MODKDE4_DEP_DIR}/base-artwork	\
+		${MODKDE4_DEP_DIR}/kate		\
+		${MODKDE4_DEP_DIR}/kgpg		\
+		${MODKDE4_DEP_DIR}/konsole	\
+		${MODKDE4_DEP_DIR}/kwallet	\
+		${MODKDE4_DEP_DIR}/pim		\
+		${MODKDE4_DEP_DIR}/printer-applet	\
+		${MODKDE4_DEP_DIR}/superkaramba	\
+		${MODKDE4_DEP_DIR}/sweeper	\
+		${MODKDE4_DEP_DIR}/workspace
 
 RUN_DEPENDS-extras = \
 		STEM-=${MODKDE4_VERSION}:${BASE_PKGPATH},-main \
 		STEM-=${MODKDE4_VERSION}:${BASE_PKGPATH},-edu \
 		STEM-=${MODKDE4_VERSION}:${BASE_PKGPATH},-graphics \
 		STEM-=${MODKDE4_VERSION}:${BASE_PKGPATH},-multimedia \
-		x11/kde4/artwork	\
-		x11/kde4/kdf		\
-		x11/kde4/filelight	\
-		x11/kde4/kfloppy	\
-		x11/kde4/kremotecontrol \
-		x11/kde4/ktimer		\
-		x11/kde4/wallpapers	\
+		${MODKDE4_DEP_DIR}/artwork	\
+		${MODKDE4_DEP_DIR}/kdf		\
+		${MODKDE4_DEP_DIR}/filelight	\
+		${MODKDE4_DEP_DIR}/kfloppy	\
+		${MODKDE4_DEP_DIR}/kremotecontrol \
+		${MODKDE4_DEP_DIR}/ktimer		\
+		${MODKDE4_DEP_DIR}/wallpapers	\
 		editors/kile-kde4	\
 		graphics/digikam-kde4,-main \
 		multimedia/k3b-kde4	\
@@ -59,64 +59,64 @@ RUN_DEPENDS-extras = \
 		x11/yakuake-kde4
 
 RUN_DEPENDS-accessbility = \
-		x11/kde4/jovie		\
-		x11/kde4/kaccessible	\
-		x11/kde4/kmag		\
-		x11/kde4/kmousetool	\
-		x11/kde4/kmouth	
+		${MODKDE4_DEP_DIR}/jovie		\
+		${MODKDE4_DEP_DIR}/kaccessible	\
+		${MODKDE4_DEP_DIR}/kmag		\
+		${MODKDE4_DEP_DIR}/kmousetool	\
+		${MODKDE4_DEP_DIR}/kmouth	
 
 RUN_DEPENDS-edu = \
-		x11/kde4/blinken	\
-		x11/kde4/cantor		\
-		x11/kde4/analitza	\
-		x11/kde4/kalgebra	\
-		x11/kde4/kalzium	\
-		x11/kde4/kanagram	\
-		x11/kde4/kbruch		\
-		x11/kde4/kgeography	\
-		x11/kde4/khangman	\
-		x11/kde4/kig		\
-		x11/kde4/kiten		\
-		x11/kde4/klettres	\
-		x11/kde4/kmplot		\
-		x11/kde4/kstars		\
-		x11/kde4/ktouch		\
-		x11/kde4/kturtle	\
-		x11/kde4/kwordquiz	\
-		x11/kde4/libkdeedu	\
-		x11/kde4/marble		\
-		x11/kde4/pairs		\
-		x11/kde4/parley		\
-		x11/kde4/rocs		\
-		x11/kde4/step
+		${MODKDE4_DEP_DIR}/blinken	\
+		${MODKDE4_DEP_DIR}/cantor		\
+		${MODKDE4_DEP_DIR}/analitza	\
+		${MODKDE4_DEP_DIR}/kalgebra	\
+		${MODKDE4_DEP_DIR}/kalzium	\
+		${MODKDE4_DEP_DIR}/kanagram	\
+		${MODKDE4_DEP_DIR}/kbruch		\
+		${MODKDE4_DEP_DIR}/kgeography	\
+		${MODKDE4_DEP_DIR}/khangman	\
+		${MODKDE4_DEP_DIR}/kig		\
+		${MODKDE4_DEP_DIR}/kiten		\
+		${MODKDE4_DEP_DIR}/klettres	\
+		${MODKDE4_DEP_DIR}/kmplot		\
+		${MODKDE4_DEP_DIR}/kstars		\
+		${MODKDE4_DEP_DIR}/ktouch		\
+		${MODKDE4_DEP_DIR}/kturtle	\
+		${MODKDE4_DEP_DIR}/kwordquiz	\
+		${MODKDE4_DEP_DIR}/libkdeedu	\
+		${MODKDE4_DEP_DIR}/marble		\
+		${MODKDE4_DEP_DIR}/pairs		\
+		${MODKDE4_DEP_DIR}/parley		\
+		${MODKDE4_DEP_DIR}/rocs		\
+		${MODKDE4_DEP_DIR}/step
 
 RUN_DEPENDS-graphics = \
-		x11/kde4/graphics-mobipocket \
-		x11/kde4/graphics-strigi-analyzer \
-		x11/kde4/graphics-thumbnailers \
-		x11/kde4/gwenview	\
-		x11/kde4/kamera		\
-		x11/kde4/kcolorchooser	\
-		x11/kde4/kgamma		\
-		x11/kde4/kolourpaint	\
-		x11/kde4/kruler		\
-		x11/kde4/ksaneplugin	\
-		x11/kde4/ksnapshot	\
-		x11/kde4/libkdcraw	\
-		x11/kde4/libkexiv2	\
-		x11/kde4/libkipi	\
-		x11/kde4/libksane	\
-		x11/kde4/okular		\
-		x11/kde4/svgpart	\
+		${MODKDE4_DEP_DIR}/graphics-mobipocket \
+		${MODKDE4_DEP_DIR}/graphics-strigi-analyzer \
+		${MODKDE4_DEP_DIR}/graphics-thumbnailers \
+		${MODKDE4_DEP_DIR}/gwenview	\
+		${MODKDE4_DEP_DIR}/kamera		\
+		${MODKDE4_DEP_DIR}/kcolorchooser	\
+		${MODKDE4_DEP_DIR}/kgamma		\
+		${MODKDE4_DEP_DIR}/kolourpaint	\
+		${MODKDE4_DEP_DIR}/kruler		\
+		${MODKDE4_DEP_DIR}/ksaneplugin	\
+		${MODKDE4_DEP_DIR}/ksnapshot	\
+		${MODKDE4_DEP_DIR}/libkdcraw	\
+		${MODKDE4_DEP_DIR}/libkexiv2	\
+		${MODKDE4_DEP_DIR}/libkipi	\
+		${MODKDE4_DEP_DIR}/libksane	\
+		${MODKDE4_DEP_DIR}/okular		\
+		${MODKDE4_DEP_DIR}/svgpart	\
 		graphics/digikam-kde4,-kipi
 
 RUN_DEPENDS-multimedia = \
-		x11/kde4/audiocd-kio	\
-		x11/kde4/ffmpegthumbs	\
-		x11/kde4/dragon		\
-		x11/kde4/juk		\
-		x11/kde4/kmix		\
-		x11/kde4/kscd		\
-		x11/kde4/mplayerthumbs
+		${MODKDE4_DEP_DIR}/audiocd-kio	\
+		${MODKDE4_DEP_DIR}/ffmpegthumbs	\
+		${MODKDE4_DEP_DIR}/dragon		\
+		${MODKDE4_DEP_DIR}/juk		\
+		${MODKDE4_DEP_DIR}/kmix		\
+		${MODKDE4_DEP_DIR}/kscd		\
+		${MODKDE4_DEP_DIR}/mplayerthumbs
 
 .include <bsd.port.mk>
