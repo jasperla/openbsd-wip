@@ -9,7 +9,7 @@ MODULES =	lang/python
 BUILD_DEPENDS =	${MODKDE4_DEP_DIR}/py-kde
 
 RUN_DEPENDS =	devel/py-twisted/core \
-		STEM->=${MODKDE4_VERSION}:${MODKDE4_DEP_DIR}/libkmahjongg \
+		${MODKDE4_DEP_DIR}/libkmahjongg>=${MODKDE4_VERSION} \
 		${MODKDE4_DEP_DIR}/py-kde
 
 # Avoid extra BUILD_DEPENDS
