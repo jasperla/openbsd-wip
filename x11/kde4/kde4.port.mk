@@ -254,24 +254,6 @@ CONFIGURE_ENV +=	${MODKDE4_CONFIGURE_ENV}
 CONFIGURE_ARGS +=	${MODKDE4_CONF_ARGS}
 # MAKE_FLAGS +=		${MODKDE4_CONF_ARGS}
 
-# Tweak dependency path for testing directories
-.if "${MODKDE4_FLAVOR}" != ""
-CATEGORIES +=		${_MODKDE4_REAL_DIR}
-BUILD_DEPENDS :=	${BUILD_DEPENDS:C@x11/kde4/@${MODKDE4_DEP_DIR}/@}
-RUN_DEPENDS :=		${RUN_DEPENDS:C@x11/kde4/@${MODKDE4_DEP_DIR}/@}
-LIB_DEPENDS :=		${LIB_DEPENDS:C@x11/kde4/@${MODKDE4_DEP_DIR}/@}
-. if "${MULTI_PACKAGES}" != ""
-.  for _s in ${MULTI_PACKAGES}
-.   if defined(RUN_DEPENDS${_s})
-RUN_DEPENDS${_s} :=	${RUN_DEPENDS${_s}:C@x11/kde4/@${MODKDE4_DEP_DIR}/@}
-.   endif
-.   if defined(LIB_DEPENDS${_s})
-LIB_DEPENDS${_s} :=	${LIB_DEPENDS${_s}:C@x11/kde4/@${MODKDE4_DEP_DIR}/@}
-.   endif
-.  endfor
-. endif
-.endif
-
 MODKDE4_FIX_GETTEXT ?=	Yes
 .if ${MODKDE4_FIX_GETTEXT:L} == "yes"
 # System (CMake) FindGettext.cmake requires having PO_FILES marker
