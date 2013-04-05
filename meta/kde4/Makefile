@@ -23,6 +23,7 @@ MODKDE4_USE =
 
 MULTI_PACKAGES =	-main -extras
 MULTI_PACKAGES +=	-accessbility -edu -games -graphics -multimedia
+FLAVOR_EXT =
 
 RUN_DEPENDS-main = \
 	${BASE_PKGPATH},-accessbility=${MODKDE4_VERSION} \
