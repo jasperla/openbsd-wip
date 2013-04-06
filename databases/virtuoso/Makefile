@@ -3,7 +3,7 @@
 COMMENT =	object-relational SQL database
 DISTNAME =	virtuoso-opensource-6.1.6
 PKGNAME =	${DISTNAME:C/-opensource//}
-REVISION =	7
+REVISION =	8
 
 CATEGORIES =	databases
 HOMEPAGE =	http://www.openlinksw.com/
@@ -13,8 +13,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =  ICE MagickCore MagickWand SM X11 Xext Xt bz2 c crypto
 WANTLIB += djvulibre expat fftw3 fontconfig freetype iconv
-WANTLIB += jasper jbig jpeg lcms2 ltdl lzma m png pthread ssl tiff
-WANTLIB += wmf-0.2 wmflite-0.2 xcb xml2 z
+WANTLIB += jasper jbig jpeg lcms2 ltdl lzma m png pthread
+WANTLIB += pthread-stubs ssl tiff wmf wmflite xcb xml2 z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=virtuoso/}
 
@@ -56,8 +56,8 @@ CONFIGURE_ARGS +=	--disable-krb
 TEST_IS_INTERACTIVE =	Yes
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/virtuoso
-	mv ${WRKINST}/var/virtuoso/* ${PREFIX}/share/virtuoso
-	rmdir ${WRKINST}/var/virtuoso
+	rm -R ${PREFIX}/share/virtuoso
+	mv ${WRKINST}/var/virtuoso ${PREFIX}/share/virtuoso
+	mv ${PREFIX}/lib/virtodbc* ${PREFIX}/lib/virtuoso/
 
 .include <bsd.port.mk>
