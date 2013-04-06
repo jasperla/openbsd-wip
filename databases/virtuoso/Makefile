@@ -31,8 +31,7 @@ CONFIGURE_STYLE =	gnu autoconf
 AUTOCONF_VERSION =	2.61
 AUTOMAKE_VERSION =	1.9
 
-CONFIGURE_ENV =		CFLAGS="${CFLAGS} -L${LOCALBASE}/lib" \
-			YACC="${LOCALBASE}/bin/bison -y"
+CONFIGURE_ENV =		YACC="${LOCALBASE}/bin/bison -y"
 
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--disable-all-vads \
