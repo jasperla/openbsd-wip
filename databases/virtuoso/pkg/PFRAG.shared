@@ -1,6 +1,6 @@
 @comment $OpenBSD$
 lib/virtuoso/hosting/im.so
-lib/virtuoso/virtodbc.so
-lib/virtuoso/virtodbc_r.so
-lib/virtuoso/virtodbcu.so
-lib/virtuoso/virtodbcu_r.so
+lib/virtuoso/plugins/virtodbc.so
+lib/virtuoso/plugins/virtodbc_r.so
+lib/virtuoso/plugins/virtodbcu.so
+lib/virtuoso/plugins/virtodbcu_r.so
