@@ -25,18 +25,18 @@ lib/sesame/create.xsl
 lib/sesame/virt_sesame.jar
 lib/sesame/virt_sesame2.jar
 lib/sesame/virt_sesame3.jar
-lib/virtodbc.a
-lib/virtodbc.la
-lib/virtodbc_r.a
-lib/virtodbc_r.la
-lib/virtodbcu.a
-lib/virtodbcu.la
-lib/virtodbcu_r.a
-lib/virtodbcu_r.la
 lib/virtuoso/
 lib/virtuoso/hosting/
 lib/virtuoso/hosting/im.a
 lib/virtuoso/hosting/im.la
+lib/virtuoso/virtodbc.a
+lib/virtuoso/virtodbc.la
+lib/virtuoso/virtodbc_r.a
+lib/virtuoso/virtodbc_r.la
+lib/virtuoso/virtodbcu.a
+lib/virtuoso/virtodbcu.la
+lib/virtuoso/virtodbcu_r.a
+lib/virtuoso/virtodbcu_r.la
 share/doc/virtuoso/
 share/doc/virtuoso/AUTHORS
 share/doc/virtuoso/COPYING
@@ -56,10 +56,13 @@ share/doc/virtuoso/README.php5
 share/doc/virtuoso/README.sesame2
 share/doc/virtuoso/README.sesame3
 share/virtuoso/
+@sample /var/virtuoso/
 share/virtuoso/db/
 @sample /var/virtuoso/db/
 share/virtuoso/db/virtuoso.ini
+@sample /var/virtuoso/db/virtuoso.ini
 share/virtuoso/vad/
+@sample /var/virtuoso/vad/
 share/virtuoso/vsp/
 @sample /var/virtuoso/vsp/
 share/virtuoso/vsp/admin/
