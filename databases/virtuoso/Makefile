@@ -3,7 +3,7 @@
 COMMENT =	object-relational SQL database
 DISTNAME =	virtuoso-opensource-6.1.6
 PKGNAME =	${DISTNAME:C/-opensource//}
-REVISION =	8
+REVISION =	9
 
 CATEGORIES =	databases
 HOMEPAGE =	http://www.openlinksw.com/
@@ -58,6 +58,7 @@ TEST_IS_INTERACTIVE =	Yes
 post-install:
 	rm -R ${PREFIX}/share/virtuoso
 	mv ${WRKINST}/var/virtuoso ${PREFIX}/share/virtuoso
-	mv ${PREFIX}/lib/virtodbc* ${PREFIX}/lib/virtuoso/
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/virtuoso/plugins
+	mv ${PREFIX}/lib/virtodbc* ${PREFIX}/lib/virtuoso/plugins
 
 .include <bsd.port.mk>
