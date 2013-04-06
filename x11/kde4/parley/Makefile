@@ -20,4 +20,18 @@ LIB_DEPENDS = 	textproc/libxml \
 		textproc/libxslt \
 		${MODKDE4_DEP_DIR}/libkdeedu>=${MODKDE4_DEP_VERSION}
 
+RUN_DEPENDS =	${MODKDE4_DEP_DIR}/kross-interpreters>=${MODKDE4_DEP_VERSION}
+
+KROSS_SCRIPTS = plugins/test.py \
+		plugins/leo-dict.py \
+		plugins/example.py \
+		plugins/google_images.py \
+		plugins/wiktionary/wiktionary_sound.py \
+		plugins/google_dictionary.py
+
+post-patch:
+.for _f in ${KROSS_SCRIPTS}
+	perl -pi -e '$$. == 1 and s@.*@#!${LOCALBASE}/bin/kross@' ${WRKSRC}/${_f}
+.endfor
+
 .include <bsd.port.mk>
