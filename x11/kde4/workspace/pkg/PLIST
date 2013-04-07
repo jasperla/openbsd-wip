@@ -457,8 +457,8 @@ lib/libkdeinit4_plasma-windowed.so
 @lib lib/libsystemsettingsview.so.${LIBsystemsettingsview_VERSION}
 @lib lib/libtaskmanager.so.${LIBtaskmanager_VERSION}
 @lib lib/libweather_ion.so.${LIBweather_ion_VERSION}
-lib/python2.7/site-packages/PyKDE4/plasmascript.py
-lib/python2.7/site-packages/PyKDE4/plasmascript.pyc
+lib/python${MODPY_VERSION}/site-packages/PyKDE4/plasmascript.py
+lib/python${MODPY_VERSION}/site-packages/PyKDE4/plasmascript.pyc
 lib/strigi/strigita_font.so
 @bin libexec/backlighthelper
 @bin libexec/fontinst
