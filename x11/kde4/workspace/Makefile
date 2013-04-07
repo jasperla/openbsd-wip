@@ -2,7 +2,7 @@
 
 COMMENT =	KDE workspace
 DISTNAME =	kde-workspace-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	kdecorations			0.0 # 4.7
 SHARED_LIBS +=	kephal				0.0 # 4.7
@@ -65,8 +65,11 @@ WANTLIB += ck-connector cln dbus-1 dbusmenu-qt glib-2.0 gps jpeg png
 WANTLIB += prison qalculate qimageblitz qjson soprano streamanalyzer
 WANTLIB += strigiqtdbusclient usb xml2 xmms
 
-MODULES =	devel/gettext multimedia/phonon lang/python
+MODULES =	devel/gettext multimedia/phonon lang/python lang/ruby
 MODKDE4_USE =	pim
+
+MODRUBY_REV =		1.8
+MODRUBY_BUILDDEP =	No
 
 BUILD_DEPENDS =	misc/shared-desktop-ontologies \
 		${MODKDE4_DEP_DIR}/py-kde>=${MODKDE4_DEP_VERSION} \
