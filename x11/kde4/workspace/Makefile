@@ -2,6 +2,7 @@
 
 COMMENT =	KDE workspace
 DISTNAME =	kde-workspace-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kdecorations			0.0 # 4.7
 SHARED_LIBS +=	kephal				0.0 # 4.7
@@ -64,7 +65,7 @@ WANTLIB += ck-connector cln dbus-1 dbusmenu-qt glib-2.0 gps jpeg png
 WANTLIB += prison qalculate qimageblitz qjson soprano streamanalyzer
 WANTLIB += strigiqtdbusclient usb xml2 xmms
 
-MODULES =	devel/gettext multimedia/phonon
+MODULES =	devel/gettext multimedia/phonon lang/python
 MODKDE4_USE =	pim
 
 BUILD_DEPENDS =	misc/shared-desktop-ontologies \
