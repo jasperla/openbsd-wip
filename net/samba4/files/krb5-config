@@ -1,0 +1,4 @@
+#!/bin/sh
+# Samba 4 configurator actually parses this file instead of running it.
+libdir=/usr/lib
+includedir=/usr/include/kerberosV
