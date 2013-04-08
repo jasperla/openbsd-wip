@@ -1,0 +1,7 @@
+Cannot build correctly when Samba 3.x is installed, linking problems.
+
+Integration with our BIND is not possible, but should with net/isc-bind.
+
+Does not respect SHARED_LIBS.
+
+Probably could use our com_err, need to investigate configure script more.
