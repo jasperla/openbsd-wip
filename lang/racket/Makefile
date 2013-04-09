@@ -11,6 +11,7 @@ PKGNAME =		racket-$V
 # The project uses racket-* for stable and plt-* for development releases
 DISTNAME =		plt-$V-src-unix
 CATEGORIES =		lang
+DPB_PROPERTIES =	parallel
 HOMEPAGE =		http://racket-lang.org/
 MAINTAINER =		Juan Francisco Cantero Hurtado <iam@juanfra.info>
 
@@ -76,11 +77,13 @@ CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 			-DMZ_USE_JIT_SSE"
 
-# It compiles racket with one job because "raco -j N" isn't useful with
-# "places" disabled. http://article.gmane.org/gmane.comp.lang.racket.user/16820
+# MAKE_JOBS: If places is enabled, racket uses places channels. When places is
+# disabled, racket uses multiple racket processes and pipes.
+# http://permalink.gmane.org/gmane.comp.lang.racket.user/17281
+# https://github.com/plt/racket/commit/2295d16074b9538ce500cf9bf9de65265ce5531c
 do-install:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} \
-		PLT_SETUP_OPTIONS="-j 1" ${MAKE_PROGRAM} \
+		PLT_SETUP_OPTIONS="-j ${MAKE_JOBS}" ${MAKE_PROGRAM} \
 		${ALL_FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
 
 .if ${MACHINE_ARCH} == "amd64"
