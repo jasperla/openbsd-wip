@@ -14,7 +14,7 @@ CATEGORIES =		lang
 HOMEPAGE =		http://racket-lang.org/
 MAINTAINER =		Juan Francisco Cantero Hurtado <iam@juanfra.info>
 
-# LGPLv2+
+# LGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		http://download.racket-lang.org/installers/${V}/racket/ \
