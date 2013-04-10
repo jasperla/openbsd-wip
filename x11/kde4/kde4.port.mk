@@ -119,19 +119,15 @@ MODKDE4_USE +=		runtime
 MODKDE4_USE +=		runtime
 .endif
 
-# 1. Force CMake which has merged KDE modules
-# 2. Various distfiles contain long paths, necessitating an archiver
-# compliant with POSIX.1-2001 extended headers.
-MODKDE4_BUILD_DEPENDS =	archivers/gtar \
-			devel/cmake>=2.8.9 \
+# Force CMake which has merged KDE modules.
+# Almost all KDE ports use docbook.
+MODKDE4_BUILD_DEPENDS =	STEM->=2.8.9:devel/cmake \
 			textproc/docbook \
 			textproc/docbook-xsl
 MODKDE4_LIB_DEPENDS =
 MODKDE4_RUN_DEPENDS =
 MODKDE4_WANTLIB =
 MODKDE4_CONF_ARGS =
-
-TAR =			${LOCALBASE}/bin/gtar
 
 FLAVOR ?=
 
