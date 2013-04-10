@@ -1,5 +1,5 @@
 $OpenBSD$
-Unbreak build.
+Unbreak build (wrong header path, triggered by SEPARATE_BUILD).
 --- src/qalc.cc.orig	Tue Sep 13 22:24:17 2011
 +++ src/qalc.cc	Tue Sep 13 22:27:36 2011
 @@ -9,7 +9,7 @@

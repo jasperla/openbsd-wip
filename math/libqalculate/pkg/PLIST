@@ -1,6 +1,5 @@
 @comment $OpenBSD$
 @pkgpath math/qalculate/libqalculate
-%%SHARED%%
 @bin bin/qalc
 include/libqalculate/
 include/libqalculate/BuiltinFunctions.h
@@ -18,6 +17,7 @@ include/libqalculate/qalculate.h
 include/libqalculate/util.h
 lib/libqalculate.a
 lib/libqalculate.la
+@lib lib/libqalculate.so.${LIBqalculate_VERSION}
 lib/pkgconfig/libqalculate.pc
 share/doc/${DISTNAME}/
 share/doc/${DISTNAME}/reference/

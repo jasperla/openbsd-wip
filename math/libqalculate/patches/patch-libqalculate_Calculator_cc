@@ -1,5 +1,5 @@
 $OpenBSD$
-Unbreak build.
+Unbreak build (different locale structure layout).
 --- libqalculate/Calculator.cc.orig	Tue Sep 13 21:59:52 2011
 +++ libqalculate/Calculator.cc	Tue Sep 13 22:03:06 2011
 @@ -295,8 +295,13 @@ Calculator::Calculator() {
