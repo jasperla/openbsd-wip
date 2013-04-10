@@ -5,7 +5,7 @@ COMMENT =	IDE creation toolkit for KDE 4
 V =		1.4.1
 DISTNAME =	kdevplatform-$V
 HOMEPAGE =	http://www.kdevelop.org/
-REVISION =	1
+REVISION =	2
 
 EXTRACT_SUFX =	.tar.bz2
 
