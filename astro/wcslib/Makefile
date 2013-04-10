@@ -17,7 +17,6 @@ MASTER_SITES =	ftp://ftp.atnf.csiro.au/pub/software/wcslib/
 EXTRACT_SUFX =	.tar.bz2
 
 BUILD_DEPENDS =	lang/gfortran
-RUN_DEPENDS =	lang/gfortran
 LIB_DEPENDS =	lang/gfortran,-lib \
 		math/cfitsio
 
@@ -25,7 +24,7 @@ USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu autoconf
 CONFIGURE_ENV =		LIBwcs_VERSION=${LIBwcs_VERSION}
 
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
+CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--docdir=${PREFIX}/share/doc/wcslib \
 			--with-x
 
