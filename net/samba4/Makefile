@@ -1,10 +1,9 @@
 # $OpenBSD$
 
 SHARED_ONLY =		Yes
-
 COMMENT =		SMB and CIFS client and server for UNIX
-
 DISTNAME =		samba-4.0.4
+REVISION =		0
 
 SHARED_LIBS =		wbclient		0.0 \
 			com_err-samba4		0.0 \
@@ -53,6 +52,7 @@ BUILD_DEPENDS =		textproc/libxslt
 
 LIB_DEPENDS =		databases/openldap \
 			devel/libexecinfo \
+			net/avahi \
 			security/gnutls
 #TEST_DEPENDS =		
 
@@ -63,6 +63,7 @@ CONFIGURE_ARGS =	configure \
 			--prefix=${PREFIX} \
 			--destdir=${WRKINST} \
 			--docdir=${PREFIX}/share/doc \
+			--mandir=${PREFIX}/man \
 			--localedir=${PREFIX}/share/locale \
 			--localstatedir=/var \
 			--sharedstatedir=/var \
@@ -88,5 +89,11 @@ post-patch:
 
 do-build:
 	cd ${WRKBUILD} && env -i ${MAKE_ENV} ${WAF} -v -j ${MAKE_JOBS} build
+
+post-install:
+	cd ${PREFIX}/share/perl5 && for D in *; do \
+		rm -Rf ${PREFIX}/libdata/perl5/$D; \
+		mv $D ${PREFIX}/libdata/perl5/; \
+	done
 
 .include <bsd.port.mk>
