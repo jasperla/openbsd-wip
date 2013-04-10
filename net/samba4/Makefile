@@ -42,7 +42,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 # "make port-lib-depends-check" can help
 #WANTLIB =		???
 
-MASTER_SITES =		http://ftp.samba.org/pub/samba/ \
+MASTER_SITES =		http://ftp.samba.org/pub/samba/stable/ \
 			http://ftp.samba.org/pub/samba/old-versions/
 
 MODULES =		devel/gettext lang/python
