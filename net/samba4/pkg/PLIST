@@ -847,157 +847,150 @@ sbin/samba_upgradeprovision
 @bin sbin/smbd
 @bin sbin/swat
 @bin sbin/winbindd
-share/man/
-share/man/man1/
-@man share/man/man1/dbwrap_tool.1
-@man share/man/man1/findsmb.1
-@man share/man/man1/gentest.1
-@man share/man/man1/ldbadd.1
-@man share/man/man1/ldbdel.1
-@man share/man/man1/ldbedit.1
-@man share/man/man1/ldbmodify.1
-@man share/man/man1/ldbrename.1
-@man share/man/man1/ldbsearch.1
-@man share/man/man1/locktest.1
-@man share/man/man1/log2pcap.1
-@man share/man/man1/masktest.1
-@man share/man/man1/ndrdump.1
-@man share/man/man1/nmblookup.1
-@man share/man/man1/nmblookup4.1
-@man share/man/man1/ntlm_auth.1
-@man share/man/man1/oLschema2ldif.1
-@man share/man/man1/pidl.1
-@man share/man/man1/profiles.1
-@man share/man/man1/regdiff.1
-@man share/man/man1/regpatch.1
-@man share/man/man1/regshell.1
-@man share/man/man1/regtree.1
-@man share/man/man1/rpcclient.1
-@man share/man/man1/sharesec.1
-@man share/man/man1/smbcacls.1
-@man share/man/man1/smbclient.1
-@man share/man/man1/smbcontrol.1
-@man share/man/man1/smbcquotas.1
-@man share/man/man1/smbget.1
-@man share/man/man1/smbstatus.1
-@man share/man/man1/smbtar.1
-@man share/man/man1/smbtorture.1
-@man share/man/man1/smbtree.1
-@man share/man/man1/testparm.1
-@man share/man/man1/vfstest.1
-@man share/man/man1/wbinfo.1
-share/man/man3/
-@man share/man/man3/Parse::Pidl::Dump.3p
-@man share/man/man3/Parse::Pidl::NDR.3p
-@man share/man/man3/Parse::Pidl::Util.3p
-@man share/man/man3/Parse::Pidl::Wireshark::Conformance.3p
-@man share/man/man3/Parse::Pidl::Wireshark::NDR.3p
-@man share/man/man3/ldb.3
-@man share/man/man3/talloc.3
-share/man/man5/
-@man share/man/man5/lmhosts.5
-@man share/man/man5/smb.conf.5
-@man share/man/man5/smbgetrc.5
-@man share/man/man5/smbpasswd.5
-share/man/man7/
-@man share/man/man7/libsmbclient.7
-@man share/man/man7/samba.7
-@man share/man/man7/winbind_krb5_locator.7
-share/man/man8/
-@man share/man/man8/eventlogadm.8
-@man share/man/man8/idmap_ad.8
-@man share/man/man8/idmap_autorid.8
-@man share/man/man8/idmap_hash.8
-@man share/man/man8/idmap_ldap.8
-@man share/man/man8/idmap_nss.8
-@man share/man/man8/idmap_rid.8
-@man share/man/man8/idmap_tdb.8
-@man share/man/man8/idmap_tdb2.8
-@man share/man/man8/net.8
-@man share/man/man8/nmbd.8
-@man share/man/man8/pdbedit.8
-@man share/man/man8/samba-tool.8
-@man share/man/man8/samba.8
-@man share/man/man8/smbd.8
-@man share/man/man8/smbpasswd.8
-@man share/man/man8/smbspool.8
-@man share/man/man8/smbta-util.8
-@man share/man/man8/swat.8
-@man share/man/man8/tdbbackup.8
-@man share/man/man8/tdbdump.8
-@man share/man/man8/tdbrestore.8
-@man share/man/man8/tdbtool.8
-@man share/man/man8/vfs_acl_tdb.8
-@man share/man/man8/vfs_acl_xattr.8
-@man share/man/man8/vfs_aio_fork.8
-@man share/man/man8/vfs_aio_linux.8
-@man share/man/man8/vfs_aio_pthread.8
-@man share/man/man8/vfs_audit.8
-@man share/man/man8/vfs_cacheprime.8
-@man share/man/man8/vfs_cap.8
-@man share/man/man8/vfs_catia.8
-@man share/man/man8/vfs_commit.8
-@man share/man/man8/vfs_crossrename.8
-@man share/man/man8/vfs_default_quota.8
-@man share/man/man8/vfs_dirsort.8
-@man share/man/man8/vfs_extd_audit.8
-@man share/man/man8/vfs_fake_perms.8
-@man share/man/man8/vfs_fileid.8
-@man share/man/man8/vfs_full_audit.8
-@man share/man/man8/vfs_gpfs.8
-@man share/man/man8/vfs_media_harmony.8
-@man share/man/man8/vfs_netatalk.8
-@man share/man/man8/vfs_notify_fam.8
-@man share/man/man8/vfs_prealloc.8
-@man share/man/man8/vfs_preopen.8
-@man share/man/man8/vfs_readahead.8
-@man share/man/man8/vfs_readonly.8
-@man share/man/man8/vfs_recycle.8
-@man share/man/man8/vfs_scannedonly.8
-@man share/man/man8/vfs_shadow_copy.8
-@man share/man/man8/vfs_shadow_copy2.8
-@man share/man/man8/vfs_smb_traffic_analyzer.8
-@man share/man/man8/vfs_streams_depot.8
-@man share/man/man8/vfs_streams_xattr.8
-@man share/man/man8/vfs_time_audit.8
-@man share/man/man8/vfs_tsmsm.8
-@man share/man/man8/vfs_xattr_tdb.8
-@man share/man/man8/winbindd.8
-share/perl5/
-share/perl5/Parse/
-share/perl5/Parse/Pidl/
-share/perl5/Parse/Pidl.pm
-share/perl5/Parse/Pidl/CUtil.pm
-share/perl5/Parse/Pidl/Compat.pm
-share/perl5/Parse/Pidl/Dump.pm
-share/perl5/Parse/Pidl/Expr.pm
-share/perl5/Parse/Pidl/IDL.pm
-share/perl5/Parse/Pidl/NDR.pm
-share/perl5/Parse/Pidl/ODL.pm
-share/perl5/Parse/Pidl/Samba3/
-share/perl5/Parse/Pidl/Samba3/ClientNDR.pm
-share/perl5/Parse/Pidl/Samba3/ServerNDR.pm
-share/perl5/Parse/Pidl/Samba4/
-share/perl5/Parse/Pidl/Samba4.pm
-share/perl5/Parse/Pidl/Samba4/COM/
-share/perl5/Parse/Pidl/Samba4/COM/Header.pm
-share/perl5/Parse/Pidl/Samba4/COM/Proxy.pm
-share/perl5/Parse/Pidl/Samba4/COM/Stub.pm
-share/perl5/Parse/Pidl/Samba4/Header.pm
-share/perl5/Parse/Pidl/Samba4/NDR/
-share/perl5/Parse/Pidl/Samba4/NDR/Client.pm
-share/perl5/Parse/Pidl/Samba4/NDR/Parser.pm
-share/perl5/Parse/Pidl/Samba4/NDR/Server.pm
-share/perl5/Parse/Pidl/Samba4/Python.pm
-share/perl5/Parse/Pidl/Samba4/TDR.pm
-share/perl5/Parse/Pidl/Samba4/Template.pm
-share/perl5/Parse/Pidl/Typelist.pm
-share/perl5/Parse/Pidl/Util.pm
-share/perl5/Parse/Pidl/Wireshark/
-share/perl5/Parse/Pidl/Wireshark/Conformance.pm
-share/perl5/Parse/Pidl/Wireshark/NDR.pm
-share/perl5/Parse/Yapp/
-share/perl5/Parse/Yapp/Driver.pm
+@man man/man1/dbwrap_tool.1
+@man man/man1/findsmb.1
+@man man/man1/gentest.1
+@man man/man1/ldbadd.1
+@man man/man1/ldbdel.1
+@man man/man1/ldbedit.1
+@man man/man1/ldbmodify.1
+@man man/man1/ldbrename.1
+@man man/man1/ldbsearch.1
+@man man/man1/locktest.1
+@man man/man1/log2pcap.1
+@man man/man1/masktest.1
+@man man/man1/ndrdump.1
+@man man/man1/nmblookup.1
+@man man/man1/nmblookup4.1
+@man man/man1/ntlm_auth.1
+@man man/man1/oLschema2ldif.1
+@man man/man1/pidl.1
+@man man/man1/profiles.1
+@man man/man1/regdiff.1
+@man man/man1/regpatch.1
+@man man/man1/regshell.1
+@man man/man1/regtree.1
+@man man/man1/rpcclient.1
+@man man/man1/sharesec.1
+@man man/man1/smbcacls.1
+@man man/man1/smbclient.1
+@man man/man1/smbcontrol.1
+@man man/man1/smbcquotas.1
+@man man/man1/smbget.1
+@man man/man1/smbstatus.1
+@man man/man1/smbtar.1
+@man man/man1/smbtorture.1
+@man man/man1/smbtree.1
+@man man/man1/testparm.1
+@man man/man1/vfstest.1
+@man man/man1/wbinfo.1
+@man man/man3/Parse::Pidl::Dump.3p
+@man man/man3/Parse::Pidl::NDR.3p
+@man man/man3/Parse::Pidl::Util.3p
+@man man/man3/Parse::Pidl::Wireshark::Conformance.3p
+@man man/man3/Parse::Pidl::Wireshark::NDR.3p
+@man man/man3/ldb.3
+@man man/man3/talloc.3
+@man man/man5/lmhosts.5
+@man man/man5/smb.conf.5
+@man man/man5/smbgetrc.5
+@man man/man5/smbpasswd.5
+@man man/man7/libsmbclient.7
+@man man/man7/samba.7
+@man man/man7/winbind_krb5_locator.7
+@man man/man8/eventlogadm.8
+@man man/man8/idmap_ad.8
+@man man/man8/idmap_autorid.8
+@man man/man8/idmap_hash.8
+@man man/man8/idmap_ldap.8
+@man man/man8/idmap_nss.8
+@man man/man8/idmap_rid.8
+@man man/man8/idmap_tdb.8
+@man man/man8/idmap_tdb2.8
+@man man/man8/net.8
+@man man/man8/nmbd.8
+@man man/man8/pdbedit.8
+@man man/man8/samba-tool.8
+@man man/man8/samba.8
+@man man/man8/smbd.8
+@man man/man8/smbpasswd.8
+@man man/man8/smbspool.8
+@man man/man8/smbta-util.8
+@man man/man8/swat.8
+@man man/man8/tdbbackup.8
+@man man/man8/tdbdump.8
+@man man/man8/tdbrestore.8
+@man man/man8/tdbtool.8
+@man man/man8/vfs_acl_tdb.8
+@man man/man8/vfs_acl_xattr.8
+@man man/man8/vfs_aio_fork.8
+@man man/man8/vfs_aio_linux.8
+@man man/man8/vfs_aio_pthread.8
+@man man/man8/vfs_audit.8
+@man man/man8/vfs_cacheprime.8
+@man man/man8/vfs_cap.8
+@man man/man8/vfs_catia.8
+@man man/man8/vfs_commit.8
+@man man/man8/vfs_crossrename.8
+@man man/man8/vfs_default_quota.8
+@man man/man8/vfs_dirsort.8
+@man man/man8/vfs_extd_audit.8
+@man man/man8/vfs_fake_perms.8
+@man man/man8/vfs_fileid.8
+@man man/man8/vfs_full_audit.8
+@man man/man8/vfs_gpfs.8
+@man man/man8/vfs_media_harmony.8
+@man man/man8/vfs_netatalk.8
+@man man/man8/vfs_notify_fam.8
+@man man/man8/vfs_prealloc.8
+@man man/man8/vfs_preopen.8
+@man man/man8/vfs_readahead.8
+@man man/man8/vfs_readonly.8
+@man man/man8/vfs_recycle.8
+@man man/man8/vfs_scannedonly.8
+@man man/man8/vfs_shadow_copy.8
+@man man/man8/vfs_shadow_copy2.8
+@man man/man8/vfs_smb_traffic_analyzer.8
+@man man/man8/vfs_streams_depot.8
+@man man/man8/vfs_streams_xattr.8
+@man man/man8/vfs_time_audit.8
+@man man/man8/vfs_tsmsm.8
+@man man/man8/vfs_xattr_tdb.8
+@man man/man8/winbindd.8
+libdata/perl5/Parse/
+libdata/perl5/Parse/Pidl/
+libdata/perl5/Parse/Pidl.pm
+libdata/perl5/Parse/Pidl/CUtil.pm
+libdata/perl5/Parse/Pidl/Compat.pm
+libdata/perl5/Parse/Pidl/Dump.pm
+libdata/perl5/Parse/Pidl/Expr.pm
+libdata/perl5/Parse/Pidl/IDL.pm
+libdata/perl5/Parse/Pidl/NDR.pm
+libdata/perl5/Parse/Pidl/ODL.pm
+libdata/perl5/Parse/Pidl/Samba3/
+libdata/perl5/Parse/Pidl/Samba3/ClientNDR.pm
+libdata/perl5/Parse/Pidl/Samba3/ServerNDR.pm
+libdata/perl5/Parse/Pidl/Samba4/
+libdata/perl5/Parse/Pidl/Samba4.pm
+libdata/perl5/Parse/Pidl/Samba4/COM/
+libdata/perl5/Parse/Pidl/Samba4/COM/Header.pm
+libdata/perl5/Parse/Pidl/Samba4/COM/Proxy.pm
+libdata/perl5/Parse/Pidl/Samba4/COM/Stub.pm
+libdata/perl5/Parse/Pidl/Samba4/Header.pm
+libdata/perl5/Parse/Pidl/Samba4/NDR/
+libdata/perl5/Parse/Pidl/Samba4/NDR/Client.pm
+libdata/perl5/Parse/Pidl/Samba4/NDR/Parser.pm
+libdata/perl5/Parse/Pidl/Samba4/NDR/Server.pm
+libdata/perl5/Parse/Pidl/Samba4/Python.pm
+libdata/perl5/Parse/Pidl/Samba4/TDR.pm
+libdata/perl5/Parse/Pidl/Samba4/Template.pm
+libdata/perl5/Parse/Pidl/Typelist.pm
+libdata/perl5/Parse/Pidl/Util.pm
+libdata/perl5/Parse/Pidl/Wireshark/
+libdata/perl5/Parse/Pidl/Wireshark/Conformance.pm
+libdata/perl5/Parse/Pidl/Wireshark/NDR.pm
+libdata/perl5/Parse/Yapp/
+libdata/perl5/Parse/Yapp/Driver.pm
 share/samba/
 share/samba/codepages/
 share/samba/codepages/de.msg
