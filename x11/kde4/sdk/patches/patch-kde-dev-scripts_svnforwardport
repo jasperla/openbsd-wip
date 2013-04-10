@@ -1,0 +1,12 @@
+$OpenBSD$
+--- kde-dev-scripts/svnforwardport.orig	Sun Apr  7 13:27:40 2013
++++ kde-dev-scripts/svnforwardport	Wed Apr 10 17:08:06 2013
+@@ -19,7 +19,7 @@ usage() {
+   exit
+ }
+ 
+-while getopts '-:h' opt ; do
++while getopts 'h' opt ; do
+   case $opt in
+     *) usage;; # -h, --help will also trip this
+   esac

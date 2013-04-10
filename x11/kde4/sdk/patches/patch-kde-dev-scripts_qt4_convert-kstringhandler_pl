@@ -1,0 +1,9 @@
+$OpenBSD$
+--- kde-dev-scripts/qt4/convert-kstringhandler.pl.orig	Sun Apr  7 13:27:40 2013
++++ kde-dev-scripts/qt4/convert-kstringhandler.pl	Sun Apr  7 15:06:03 2013
+@@ -21,4 +21,4 @@ foreach my $file (@ARGV) {
+     } $file;
+     functionUtilkde::removeIncludeInFile( $file, "kstringhandler.h");
+ }
+-functionUtilkde::diffFile( "@ARGV" );
++functionUtilkde::diffFile( @ARGV );

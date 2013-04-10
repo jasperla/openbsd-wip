@@ -2,6 +2,7 @@
 
 COMMENT =	KDE software development kit
 DISTNAME =	kdesdk-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	komparedialogpages	0.0 # 4.7
 SHARED_LIBS +=	komparediff2		0.0 # 4.7
@@ -33,16 +34,29 @@ WANTLIB += apr-1 hunspell-1.2 svn_client-1 svn_delta-1 svn_fs-1
 WANTLIB += svn_ra-1 svn_subr-1 xml2 xslt
 WANTLIB += gettextpo qca2 soprano streamanalyzer streams
 
-MODKDE4_USE =	pim
+MODULES =		lang/python lang/ruby
+MODKDE4_USE =		pim
+MODPY_BUILDDEP =	No
+MODRUBY_BUILDDEP =	No
+MODRUBY_REV =		1.8
 
 # For building KAppTemplate with weird file names
 USE_GMAKE =	Yes
 
 BUILD_DEPENDS =	devel/boost
 
-RUN_DEPENDS =	devel/desktop-file-utils \
+RUN_DEPENDS =	archivers/bzip2 \
+		devel/desktop-file-utils \
+		misc/findutils \
 		misc/shared-mime-info \
+		sysutils/ggrep \
 		x11/gtk+2,-guic
+
+# for vimdiff script
+RUN_DEPENDS +=	editors/vim
+
+# uses --label option
+RUN_DEPENDS +=	archivers/gtar
 
 LIB_DEPENDS =	databases/strigi \
 	 	devel/subversion \
@@ -55,5 +69,11 @@ LIB_DEPENDS =	databases/strigi \
 # We have only pre-compiled Antlr3, and poxml wants
 # C runtime from Antlr2, which is not easy to port
 CONFIGURE_ARGS =	-DWITH_Antlr2:Bool=FALSE
+
+SUBST_FILES =	kde-dev-scripts/colorsvn \
+		kde-dev-scripts/svn2log.sh
+
+pre-configure:
+	cd ${WRKSRC} && ${SUBST_CMD} ${SUBST_FILES}
 
 .include <bsd.port.mk>
