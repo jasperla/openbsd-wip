@@ -1,0 +1,15 @@
+$OpenBSD$
+
+https://github.com/plt/racket/pull/315
+
+--- src/configure.orig	Thu Apr 11 03:25:55 2013
++++ src/configure	Thu Apr 11 03:29:01 2013
+@@ -2293,7 +2293,7 @@ else
+   libpltdir="${libdir}/racket"
+   collectsdir="${libdir}/racket/collects"
+   includepltdir="${includedir}/racket"
+-  docdir="${datadir}/racket/doc"
++  docdir="${datadir}/doc/racket"
+   MAKE_COPYTREE=copytree
+   COLLECTS_PATH='${collectsdir}'
+   INSTALL_ORIG_TREE=no
