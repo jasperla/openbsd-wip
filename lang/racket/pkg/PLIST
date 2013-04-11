@@ -18421,7 +18421,6 @@ lib/racket/mzdyn3m.o
 @man man/man1/raco.1
 @man man/man1/setup-plt.1
 share/doc/pkg-readmes/${FULLPKGNAME}
-share/racket/
 share/doc/racket/
 share/doc/racket/acks/
 share/doc/racket/acks/blueboxes.rktd
