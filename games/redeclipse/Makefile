@@ -14,6 +14,7 @@ MULTI_PACKAGES=	-main -data
 
 N=		redeclipse
 V=		1.4
+REVISION=	0
 PKGNAME=	${N}-${V}
 PKGNAME-main=	${N}-${V}
 PKGNAME-data=	${N}-data-${V}
@@ -37,7 +38,8 @@ WANTLIB-main+=		GL X11 SDL SDL_image SDL_mixer c enet m pthread stdc++ z
 
 WRKDIST=		${WRKDIR}/${N}-${V}/src
 USE_GMAKE=		Yes
-MAKE_ENV+=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+MAKE_ENV+=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
+			    LOCALBASE="${LOCALBASE}"
 NO_TEST=		Yes
 
 INSTALL_TARGET=		system-install

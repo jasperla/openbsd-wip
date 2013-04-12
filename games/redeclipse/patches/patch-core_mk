@@ -1,6 +1,6 @@
 $OpenBSD$
 --- core.mk.orig	Fri Mar 22 06:45:14 2013
-+++ core.mk	Sat Mar 23 23:40:21 2013
++++ core.mk	Fri Apr 12 13:47:46 2013
 @@ -3,7 +3,7 @@ APPCLIENT=$(APPNAME)
  APPSERVER=$(APPNAME)_server
  
@@ -75,3 +75,12 @@ $OpenBSD$
  	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $(APPSERVER) $(SERVER_OBJS) $(SERVER_LIBS)
  ifneq (,$(STRIP))
  	$(STRIP) $(APPSERVER)
+@@ -243,7 +234,7 @@ depend:
+ all: client server
+ 
+ include system-install.mk
+-include dist.mk
++#include dist.mk
+ 
+ engine/engine.h.gch: shared/cube.h.gch
+ 
