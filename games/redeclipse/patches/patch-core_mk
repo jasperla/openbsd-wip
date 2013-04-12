@@ -1,6 +1,6 @@
 $OpenBSD$
 --- core.mk.orig	Fri Mar 22 06:45:14 2013
-+++ core.mk	Fri Apr 12 13:47:46 2013
++++ core.mk	Fri Apr 12 16:04:33 2013
 @@ -3,7 +3,7 @@ APPCLIENT=$(APPNAME)
  APPSERVER=$(APPNAME)_server
  
@@ -25,12 +25,14 @@ $OpenBSD$
  
  
  STRIP=
-@@ -66,7 +66,7 @@ CLIENT_INCLUDES= $(INCLUDES) -Iinclude
+@@ -65,8 +65,8 @@ endif
+ CLIENT_INCLUDES= $(INCLUDES) -Iinclude
  CLIENT_LIBS= -mwindows $(STD_LIBS) -L$(WINBIN) -L$(WINLIB) -lSDL -lSDL_image -lSDL_mixer -lzlib1 -lopengl32 -lenet -lws2_32 -lwinmm
  else
- CLIENT_INCLUDES= $(INCLUDES) -I/usr/X11R6/include `sdl-config --cflags`
+-CLIENT_INCLUDES= $(INCLUDES) -I/usr/X11R6/include `sdl-config --cflags`
 -CLIENT_LIBS= -Lenet/.libs -lenet -L/usr/X11R6/lib -lX11 `sdl-config --libs` -lSDL_image -lSDL_mixer -lz -lGL
-+CLIENT_LIBS= `pkg-config --libs libenet` -L/usr/X11R6/lib -lX11 `sdl-config --libs` -lSDL_image -lSDL_mixer -lz -lGL
++CLIENT_INCLUDES= $(INCLUDES) `sdl-config --cflags`
++CLIENT_LIBS= `pkg-config --libs libenet` `sdl-config --libs` -lX11 -lSDL_image -lSDL_mixer -lz -lGL
  endif
  ifeq ($(PLATFORM),Linux)
  CLIENT_LIBS+= -lrt
