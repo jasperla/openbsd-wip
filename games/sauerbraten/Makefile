@@ -35,8 +35,7 @@ NO_TEST=		Yes
 
 RUN_DEPENDS-main +=	${BASE_PKGPATH},-data
 
-LIB_DEPENDS-main=	devel/sdl \
-			devel/sdl-mixer \
+LIB_DEPENDS-main=	devel/sdl-mixer \
 			devel/sdl-image \
 			net/enet
 WANTLIB-main=		GL X11 SDL SDL_image SDL_mixer c enet m pthread stdc++ z
@@ -44,8 +43,7 @@ WANTLIB-main=		GL X11 SDL SDL_image SDL_mixer c enet m pthread stdc++ z
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sauer_client ${PREFIX}/libexec
 	${INSTALL_PROGRAM} ${WRKSRC}/sauer_server ${PREFIX}/libexec
-	cp ${FILESDIR}/sauerbraten.sh ${WRKSRC}/sauerbraten.sh
-	@perl -pi -e s,%%LOCALBASE%%,${LOCALBASE}, ${WRKSRC}/sauerbraten.sh
+	${SUBST_CMD} -c ${FILESDIR}/sauerbraten.sh ${WRKSRC}/sauerbraten.sh
 	${INSTALL_SCRIPT} ${WRKSRC}/sauerbraten.sh ${PREFIX}/bin/sauerbraten
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${N}
 	cp -R ${WRKDIR}/${N}/docs/* ${PREFIX}/share/doc/${N}/
