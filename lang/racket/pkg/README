@@ -6,6 +6,10 @@ $OpenBSD$
 Known issues
 ============
 
+- Racket and Scribble crash with a segfault in some specific situations due to
+  the limits imposed by OpenBSD. If this happens, check the limits of the shell
+  and login.conf.
+
 - Some examples of ffi-lib doesn't work.
 
 - Due to lack of thread-local storage support on OpenBSD, "places" and

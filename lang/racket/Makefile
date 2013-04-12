@@ -81,8 +81,10 @@ CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread" \
 # disabled, racket uses multiple racket processes and pipes.
 # http://permalink.gmane.org/gmane.comp.lang.racket.user/17281
 # https://github.com/plt/racket/commit/2295d16074b9538ce500cf9bf9de65265ce5531c
+# Default limit in file descriptors isn't enough for compile as root. The
+# "rendering" phase of scribble reaches the limit in some big documents.
 do-install:
-	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} \
+	@cd ${WRKBUILD} && ulimit -n 512 && ${SETENV} ${MAKE_ENV} \
 		PLT_SETUP_OPTIONS="-j ${MAKE_JOBS}" ${MAKE_PROGRAM} \
 		${ALL_FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
 
