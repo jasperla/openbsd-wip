@@ -1,6 +1,6 @@
 $OpenBSD$
 --- Makefile.orig	Tue Aug 28 15:30:07 2012
-+++ Makefile	Sat Mar 30 23:12:39 2013
++++ Makefile	Fri Apr 12 16:38:03 2013
 @@ -1,10 +1,10 @@
 -CXXFLAGS= -O3 -fomit-frame-pointer
 +CXXFLAGS?= -O3 -fomit-frame-pointer
@@ -14,12 +14,14 @@ $OpenBSD$
  
  STRIP=
  ifeq (,$(findstring -g,$(CXXFLAGS)))
-@@ -37,7 +37,7 @@ endif
+@@ -36,8 +36,8 @@ STD_LIBS= -static-libgcc -static-libstdc++
+ endif
  CLIENT_LIBS= -mwindows $(STD_LIBS) -L$(WINBIN) -L$(WINLIB) -lSDL -lSDL_image -lSDL_mixer -lzlib1 -lopengl32 -lenet -lws2_32 -lwinmm
  else	
- CLIENT_INCLUDES= $(INCLUDES) -I/usr/X11R6/include `sdl-config --cflags`
+-CLIENT_INCLUDES= $(INCLUDES) -I/usr/X11R6/include `sdl-config --cflags`
 -CLIENT_LIBS= -Lenet/.libs -lenet -L/usr/X11R6/lib -lX11 `sdl-config --libs` -lSDL_image -lSDL_mixer -lz -lGL
-+CLIENT_LIBS= `pkg-config --libs libenet` -L/usr/X11R6/lib -lX11 `sdl-config --libs` -lSDL_image -lSDL_mixer -lz -lGL
++CLIENT_INCLUDES= $(INCLUDES) `sdl-config --cflags`
++CLIENT_LIBS= `pkg-config --libs libenet` `sdl-config --libs` -lX11 -lSDL_image -lSDL_mixer -lz -lGL
  endif
  ifeq ($(PLATFORM),Linux)
  CLIENT_LIBS+= -lrt
