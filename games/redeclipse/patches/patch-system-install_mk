@@ -1,12 +1,12 @@
 $OpenBSD$
 --- system-install.mk.orig	Thu Mar 21 09:21:57 2013
-+++ system-install.mk	Fri Apr 12 14:13:44 2013
++++ system-install.mk	Fri Apr 12 15:56:44 2013
 @@ -6,7 +6,7 @@ appclient=$(APPCLIENT)
  appserver=$(APPSERVER)
  appgamedir=game/$(APPSHORTNAME)
  
 -prefix=/usr/local
-+prefix=$(LOCALBASE)
++prefix=$(TRUEPREFIX)
  games=
  gamesbin=/bin
  bindir=$(DESTDIR)$(prefix)/bin

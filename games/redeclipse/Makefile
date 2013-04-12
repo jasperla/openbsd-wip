@@ -27,11 +27,11 @@ PKG_ARCH-data=	*
 PERMIT_PACKAGE_CDROM=	Yes
 
 RUN_DEPENDS-main +=	${BASE_PKGPATH},-data \
-			devel/desktop-file-utils
+			devel/desktop-file-utils \
+			x11/gtk+2,-guic
 
 BUILD_DEPENDS=		textproc/gsed
-LIB_DEPENDS-main=	devel/sdl \
-			devel/sdl-mixer \
+LIB_DEPENDS-main=	devel/sdl-mixer \
 			devel/sdl-image \
 			net/enet
 WANTLIB-main+=		GL X11 SDL SDL_image SDL_mixer c enet m pthread stdc++ z
@@ -39,7 +39,7 @@ WANTLIB-main+=		GL X11 SDL SDL_image SDL_mixer c enet m pthread stdc++ z
 WRKDIST=		${WRKDIR}/${N}-${V}/src
 USE_GMAKE=		Yes
 MAKE_ENV+=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
-			    LOCALBASE="${LOCALBASE}"
+			    TRUEPREFIX="${TRUEPREFIX}"
 NO_TEST=		Yes
 
 INSTALL_TARGET=		system-install
