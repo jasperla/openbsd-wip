@@ -11,9 +11,9 @@ lib/redeclipse/game
 share/applications/
 share/applications/redeclipse.desktop
 share/doc/redeclipse/
-share/doc/redeclipse/examples/
-share/doc/redeclipse/examples/servinit.cfg
 share/doc/redeclipse/guidelines.txt
+share/examples/redeclipse/
+share/examples/redeclipse/servinit.cfg
 share/icons/
 share/icons/hicolor/
 share/icons/hicolor/128x128/
