@@ -6,16 +6,15 @@ ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		descendant of scheme with IDE and teaching resources
 
-V =			5.3.4pre20130506
+V =			5.3.3
 PKGNAME =		racket-$V
 # The project uses racket-* for stable and plt-* for development releases
 DISTNAME =		racket-$V-src-unix
 CATEGORIES =		lang
-DPB_PROPERTIES =	parallel
 HOMEPAGE =		http://racket-lang.org/
 MAINTAINER =		Juan Francisco Cantero Hurtado <iam@juanfra.info>
 
-# LGPLv3
+# LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		http://download.racket-lang.org/installers/${V}/racket/ \
@@ -41,7 +40,7 @@ RUN_DEPENDS =		x11/gtkglext \
 			devel/libunique \
 			databases/iodbc,-main
 
-WANTLIB += c m pthread ffi
+WANTLIB += c m pthread
 
 WRKDIST =		${WRKDIR}/racket-$V
 WRKSRC =		${WRKDIST}/src
@@ -61,7 +60,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--enable-float \
 			--enable-docs \
 			--enable-pthread \
-			--enable-lt=${LIBTOOL} \
+			--enable-lt=${LIBTOOL}
 # "backtrace" is expensive.
 # http://article.gmane.org/gmane.comp.lang.racket.devel/6700
 # "places" and "futures" require thread-local storage.
@@ -70,23 +69,20 @@ CONFIGURE_ARGS +=	--disable-backtrace \
 			--disable-places \
 			--disable-futures
 
-# Since 5.3.4 if __SSE_MATH__ is defined (C_COMPILER_USES_SSE) and
-# MZ_TRY_EXTFLONUMS enabled, MZ_LONG_DOUBLE (extflonum) is turned on. Also
-# C_COMPILER_USES_SSE turn on MZ_USE_JIT_SSE.
-# "-msse -mfpmath=sse" required by extflonum on i386 and probably on amd64.
-CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			CFLAGS="${CFLAGS} -msse -mfpmath=sse"
+# --enable-libffi needs LDFLAGS="-pthread" for detect the system ffi.
+# It will be fixed in 5.3.4
+# -DMZ_USE_JIT_SSE enables use of SSE floating point in JIT.
+CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread" \
+			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
+			-DMZ_USE_JIT_SSE"
 
-# MAKE_JOBS: If places is enabled, racket uses places channels. When places is
-# disabled, racket uses multiple racket processes and pipes.
-# http://permalink.gmane.org/gmane.comp.lang.racket.user/17281
-# https://github.com/plt/racket/commit/2295d16074b9538ce500cf9bf9de65265ce5531c
+# It compiles racket with one job because "raco -j N" isn't useful with
+# "places" disabled. http://article.gmane.org/gmane.comp.lang.racket.user/16820
 # Default limit in file descriptors isn't enough for compile as root. The
 # "rendering" phase of scribble reaches the limit in some big documents.
 do-install:
 	@cd ${WRKBUILD} && ulimit -n 512 && ${SETENV} ${MAKE_ENV} \
-		PLT_SETUP_OPTIONS="-j ${MAKE_JOBS}" ${MAKE_PROGRAM} \
+		PLT_SETUP_OPTIONS="-j 1" ${MAKE_PROGRAM} \
 		${ALL_FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
 
 .if ${MACHINE_ARCH} == "amd64"
