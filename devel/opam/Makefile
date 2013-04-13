@@ -15,7 +15,7 @@ HOMEPAGE =		http://opam.ocamlpro.com/
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c m
+WANTLIB-main =		c m pcre
 
 MASTER_SITES =		http://www.ocamlpro.com/pub/
 
@@ -34,6 +34,7 @@ RUN_DEPENDS =		devel/git \
 			net/curl \
 			net/rsync
 RUN_DEPENDS-ocaml =	${OCAML_DEPS}
+LIB_DEPENDS-main =	devel/pcre
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			lang/python/2.7
 
@@ -53,13 +54,10 @@ docdir =		${PREFIX}/share/doc/opam
 
 post-install:
 	@rm -f ${PREFIX}/man/man1/*.orig
-	${INSTALL_DATA_DIR} ${docdir}
-	${INSTALL_DATA_DIR} ${docdir}/tutorials
+	${INSTALL_DATA_DIR} ${docdir}/{tutorials,api}
+	${INSTALL_DATA} ${WRKSRC}/{CHANGES,README.md} ${docdir}/
 	${INSTALL_DATA} ${WRKSRC}/doc/tutorials/* ${docdir}/tutorials
-	${INSTALL_DATA_DIR} ${docdir}/html
-	${INSTALL_DATA} ${WRKSRC}/doc/html/* ${docdir}/html
-	${INSTALL_DATA_DIR} ${docdir}/dev-manual/
-	${INSTALL_DATA} ${WRKSRC}/doc/dev-manual/dev-manual.pdf \
-	    ${docdir}/dev-manual
+	${INSTALL_DATA} ${WRKSRC}/doc/html/* ${docdir}/api
+	${INSTALL_DATA} ${WRKSRC}/doc/dev-manual/dev-manual.pdf ${docdir}/
 
 .include <bsd.port.mk>

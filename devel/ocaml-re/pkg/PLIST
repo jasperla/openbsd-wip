@@ -24,6 +24,9 @@ lib/ocaml/re/re_str.cma
 lib/ocaml/re/re_str.cmi
 lib/ocaml/re/re_str.mli
 share/doc/ocaml-re/
+share/doc/ocaml-re/CHANGES
+share/doc/ocaml-re/README
+share/doc/ocaml-re/TODO.txt
 share/doc/ocaml-re/api/
 share/doc/ocaml-re/api/Re.html
 share/doc/ocaml-re/api/Re_emacs.html

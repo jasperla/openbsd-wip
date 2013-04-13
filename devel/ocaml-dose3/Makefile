@@ -17,6 +17,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		https://gforge.inria.fr/frs/download.php/31681/
 
 MODULES =		lang/ocaml
+
+WANTLIB =		c m pcre
 OCAML_DEPS =		devel/ocaml-extlib \
 			devel/ocaml-ocamlgraph \
 			devel/ocaml-pcre \
@@ -31,13 +33,17 @@ USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-ocamlgraph
 
-# the tarball lacks needed files
-NO_TEST =		Yes
+ALL_TARGET =		all #doc seems broken, needs texlive_texmf-full, graphviz and hevea
+
 
 post-install:
-	-chmod a-x ${PREFIX}/lib/ocaml/dose3/*.cmxs
 	${INSTALL_MAN} ${WRKSRC}/doc/manpages/*.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/manpages/*.5 ${PREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/doc/manpages/*.8 ${PREFIX}/man/man8
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml-dose3
+	${INSTALL_DATA} \
+		${WRKSRC}/{CHANGES,README.architecture,TODO} \
+		${PREFIX}/share/doc/ocaml-dose3/
+
 
 .include <bsd.port.mk>

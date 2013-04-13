@@ -21,7 +21,11 @@ CONFIGURE_ARGS =	--enable-tests
 
 WRKDIST =		${WRKDIR}/ocaml-re-${DISTNAME}
 
+
 post-install:
-	-chmod a-x ${PREFIX}/lib/ocaml/re/*.cmxs
+	${INSTALL_DATA} \
+		${WRKSRC}/{CHANGES,README,TODO.txt} \
+		${PREFIX}/share/doc/ocaml-re/
+
 
 .include <bsd.port.mk>
