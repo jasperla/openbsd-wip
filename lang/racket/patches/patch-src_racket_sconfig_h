@@ -5,9 +5,9 @@ imposed by OpenBSD to non-root users.
 
 https://github.com/plt/racket/pull/316
 
---- src/racket/sconfig.h.orig	Sat Apr 13 22:57:50 2013
-+++ src/racket/sconfig.h	Sat Apr 13 22:58:14 2013
-@@ -297,14 +297,16 @@
+--- src/racket/sconfig.h.orig	Sat Apr 13 23:15:21 2013
++++ src/racket/sconfig.h	Sun Apr 14 00:16:16 2013
+@@ -295,14 +295,17 @@
  #  define SCHEME_PLATFORM_LIBRARY_SUBPATH "i386-openbsd"
  # endif
  
@@ -21,7 +21,8 @@ https://github.com/plt/racket/pull/316
 +# undef HAS_STANDARD_IOB
  # define HAS_BSD_IOB
 +
-+/* ASSUME_FIXED_STACK_SIZE works fine but OpenBSD supports variable stacksize */
++/* Default UNIX_STACK_MAXIMUM is too big for a non-root user.
++   STACK_SAFETY_MARGIN increased for extra safety. */
 +# undef UNIX_STACK_MAXIMUM
 +# define UNIX_STACK_MAXIMUM 4194304
 +# undef STACK_SAFETY_MARGIN
