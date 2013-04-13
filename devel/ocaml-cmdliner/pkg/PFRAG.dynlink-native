@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+lib/ocaml/cmdliner/cmdliner.cmxs
