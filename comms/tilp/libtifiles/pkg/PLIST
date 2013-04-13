@@ -1,5 +1,4 @@
 @comment $OpenBSD$
-%%SHARED%%
 include/tilp2/
 include/tilp2/export2.h
 include/tilp2/files8x.h
@@ -22,6 +21,7 @@ include/tilp2/typesv2.h
 include/tilp2/typesxx.h
 lib/libtifiles2.a
 lib/libtifiles2.la
+@lib lib/libtifiles2.so.${LIBtifiles2_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/tifiles2.pc
 share/locale/
