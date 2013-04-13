@@ -6,10 +6,10 @@ ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		descendant of scheme with IDE and teaching resources
 
-V =			5.3.3.900
+V =			5.3.4.pre-20130413
 PKGNAME =		racket-$V
 # The project uses racket-* for stable and plt-* for development releases
-DISTNAME =		plt-$V-src-unix
+DISTNAME =		racket-$V-src-unix
 CATEGORIES =		lang
 DPB_PROPERTIES =	parallel
 HOMEPAGE =		http://racket-lang.org/
