@@ -2,7 +2,7 @@
 
 COMMENT =		conversion library for Texas Instruments calculators
 
-TILP_VERSION =		-1.1.3
+TILP_VERSION =		-1.1.4
 TILP_PROJECT =		libticonv
 EXTRACT_SUFX =		.tar.bz2
 
@@ -14,10 +14,9 @@ MODULES =		converters/libiconv \
 			textproc/intltool
 
 LIB_DEPENDS =		devel/glib2
-CFLAGS +=		-I/usr/local/include
 
 CONFIGURE_ARGS =	--enable-static
 
-WANTLIB += iconv intl pcre pthread glib-2.0
+WANTLIB += glib-2.0 intl pcre pthread
 
 .include <bsd.port.mk>

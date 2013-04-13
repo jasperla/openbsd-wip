@@ -1,2 +1,0 @@
-@comment $OpenBSD$
-@lib lib/libticonv.so.${LIBticonv_VERSION}
