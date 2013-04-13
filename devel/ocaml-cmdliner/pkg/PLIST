@@ -1,0 +1,7 @@
+@comment $OpenBSD$
+%%native%%
+lib/ocaml/cmdliner/
+lib/ocaml/cmdliner/META
+lib/ocaml/cmdliner/cmdliner.cma
+lib/ocaml/cmdliner/cmdliner.cmi
+lib/ocaml/cmdliner/cmdliner.mli

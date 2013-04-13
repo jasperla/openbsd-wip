@@ -1,0 +1,9 @@
+@comment $OpenBSD$
+lib/ocaml/dose3/algo.cmxs
+lib/ocaml/dose3/boilerplate.cmxs
+lib/ocaml/dose3/boilerplateNoRpm.cmxs
+lib/ocaml/dose3/common.cmxs
+lib/ocaml/dose3/csw.cmxs
+lib/ocaml/dose3/debian.cmxs
+lib/ocaml/dose3/eclipse.cmxs
+lib/ocaml/dose3/rpm.cmxs
