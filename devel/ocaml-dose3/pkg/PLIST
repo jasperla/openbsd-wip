@@ -52,3 +52,7 @@ lib/ocaml/dose3/version.mli
 @man man/man1/strongdeps.1
 @man man/man5/apt-cudf.conf.5
 @man man/man8/apt-cudf-get.8
+share/doc/ocaml-dose3/
+share/doc/ocaml-dose3/CHANGES
+share/doc/ocaml-dose3/README.architecture
+share/doc/ocaml-dose3/TODO

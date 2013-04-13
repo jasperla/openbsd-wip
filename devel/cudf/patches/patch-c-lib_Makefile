@@ -1,9 +1,10 @@
-$OpenBSD$
+0;95;0c$OpenBSD$
 - OpenBSD doesn't need libdl
 - use pkg-config to find glib libs
 - don't attempt to overwrite an optimized library with a non-existant one
+- fix .pc datarootdir
 --- c-lib/Makefile.orig	Fri Aug  3 12:44:51 2012
-+++ c-lib/Makefile	Sun Mar 24 12:32:34 2013
++++ c-lib/Makefile	Sat Apr 13 15:27:07 2013
 @@ -9,7 +9,7 @@ PROG_CFLAGS = -Wall
  OCAML_LIBDIR := $(shell ocamlc -where)
  INCLUDES = -I . -I $(OCAML_LIBDIR) $(shell pkg-config --cflags glib-2.0)
@@ -13,7 +14,15 @@ $OpenBSD$
  OCAMLC = ocamlfind ocamlc -package unix,extlib
  OCAMLOPT = ocamlfind ocamlopt -package unix,extlib
  
-@@ -68,7 +68,6 @@ install: cudf.pc
+@@ -49,6 +49,7 @@ cudf.pc: cudf.pc.in
+ 			-e "s,@VERSION@,$(VERSION),g" \
+ 			-e "s,@LIBDIR@,$(LIBDIR),g" \
+ 			-e "s,@INCDIR@,$(INCDIR),g" \
++			-e "s,@DATAROOTDIR@,$(PREFIX),g" \
+ 		> $@
+ 
+ %.o: %.c
+@@ -68,7 +69,6 @@ install: cudf.pc
  	else \
  		cp libcudf.a $(DESTDIR)/$(LIBDIR)/libcudf.a ; \
  	fi
