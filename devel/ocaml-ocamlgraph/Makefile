@@ -15,11 +15,17 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/ocaml
 
+BUILD_DEPENDS =		sysutils/findlib
+
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 
-ALL_TARGET =		all doc
 INSTALL_TARGET =	install-findlib
+ALL_TARGET =		doc byte
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mocaml_native}
+ALL_TARGET +=	opt
+.endif
 
 
 post-install:
