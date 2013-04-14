@@ -74,10 +74,10 @@ CONFIGURE_ARGS +=	--disable-backtrace \
 # --enable-libffi needs LDFLAGS="-pthread" for detect the system ffi.
 # It will be fixed in 5.3.4
 # -DMZ_USE_JIT_SSE enables use of SSE floating point in JIT.
-# -DC_COMPILER_USES_SSE is required by extflonums
+# -DC_COMPILER_USES_SSE and -DMZ_TRY_EXTFLONUMS are required by extflonums
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
-			-DMZ_USE_JIT_SSE -DC_COMPILER_USES_SSE"
+			-DMZ_USE_JIT_SSE -DC_COMPILER_USES_SSE -DMZ_TRY_EXTFLONUMS"
 
 # MAKE_JOBS: If places is enabled, racket uses places channels. When places is
 # disabled, racket uses multiple racket processes and pipes.
