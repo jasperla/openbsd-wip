@@ -1,0 +1,8 @@
+@comment $OpenBSD$
+share/xonotic/
+share/xonotic/data/
+share/xonotic/data/font-nimbussansl-20120308.pk3
+share/xonotic/data/font-xolonium-20120308.pk3
+share/xonotic/data/xonotic-20120308-data-low.pk3
+share/xonotic/data/xonotic-20120308-maps-low.pk3
+share/xonotic/data/xonotic-20120308-music-low.pk3
