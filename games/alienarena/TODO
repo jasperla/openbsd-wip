@@ -1,0 +1,31 @@
+on startup:
+
+--------- [Loading Renderer] ---------
+/usr/local/bin/alienarena:/usr/X11R6/lib/libGL.so.13.0: /usr/local/bin/alienarena : WARNING: symbol(glDisableVertexAttribArrayARB) size mismatch, relink your program
+/usr/local/bin/alienarena:/usr/X11R6/lib/libGL.so.13.0: /usr/local/bin/alienarena : WARNING: symbol(glEnableVertexAttribArrayARB) size mismatch, relink your program
+/usr/local/bin/alienarena:/usr/X11R6/lib/libGL.so.13.0: /usr/local/bin/alienarena : WARNING: symbol(glVertexAttribPointerARB) size mismatch, relink your program
+/usr/local/bin/alienarena:/usr/X11R6/lib/libGL.so.13.0: /usr/local/bin/alienarena : WARNING: symbol(glDeleteObjectARB) size mismatch, relink your program
+/usr/local/bin/alienarena:/usr/X11R6/lib/libGL.so.13.0: /usr/local/bin/alienarena : WARNING: symbol(glUniform1fARB) size mismatch, relink your program
+/usr/local/bin/alienarena:/usr/X11R6/lib/libGL.so.13.0: /usr/local/bin/alienarena : WARNING: symbol(glUniform1iARB) size mismatch, relink your program
+/usr/local/bin/alienarena:/usr/X11R6/lib/libGL.so.13.0: /usr/local/bin/alienarena : WARNING: symbol(glUniform2fARB) size mismatch, relink your program
+/usr/local/bin/alienarena:/usr/X11R6/lib/libGL.so.13.0: /usr/local/bin/alienarena : WARNING: symbol(glUniform3fARB) size mismatch, relink your program
+/usr/local/bin/alienarena:/usr/X11R6/lib/libGL.so.13.0: /usr/local/bin/alienarena : WARNING: symbol(glUniformMatrix3fvARB) size mismatch, relink your program
+/usr/local/bin/alienarena:/usr/X11R6/lib/libGL.so.13.0: /usr/local/bin/alienarena : WARNING: symbol(glUseProgramObjectARB) size mismatch, relink your program
+
+crash when starting a level:
+
+Program received signal SIGSEGV, Segmentation fault.
+0x00001ec2827d00c0 in glUseProgramObjectARB () from /usr/local/bin/alienarena
+(gdb) bt
+#0  0x00001ec2827d00c0 in glUseProgramObjectARB ()
+   from /usr/local/bin/alienarena
+#1  0x00001ec2824c2653 in Mod_Modellist_f () from /usr/local/bin/alienarena
+#2  0x00001ec282498b6c in GL_ImageList_f () from /usr/local/bin/alienarena
+#3  0x00001ec282498e09 in GL_ImageList_f () from /usr/local/bin/alienarena
+#4  0x00001ec282456486 in entitycmpfnc () from /usr/local/bin/alienarena
+#5  0x00001ec2824514fa in entitycmpfnc () from /usr/local/bin/alienarena
+#6  0x00001ec282448eca in CL_IRCSay () from /usr/local/bin/alienarena
+#7  0x00001ec28247abf9 in CM_inPVS () from /usr/local/bin/alienarena
+#8  0x00001ec2824e4e8b in Sys_Milliseconds () from /usr/local/bin/alienarena
+#9  0x00001ec28242e621 in ?? () from /usr/local/bin/alienarena
+#10 0x0000000000000000 in ?? ()

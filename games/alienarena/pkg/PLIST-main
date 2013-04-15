@@ -1,0 +1,3 @@
+@comment $OpenBSD$
+@bin bin/alienarena
+@bin bin/alienarena-ded
