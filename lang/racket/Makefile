@@ -41,7 +41,7 @@ RUN_DEPENDS =		x11/gtkglext \
 			devel/libunique \
 			databases/iodbc,-main
 
-WANTLIB += c m pthread
+WANTLIB += c m pthread ffi
 
 WRKDIST =		${WRKDIR}/racket-$V
 WRKSRC =		${WRKDIST}/src
