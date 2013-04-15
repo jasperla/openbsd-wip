@@ -70,13 +70,11 @@ CONFIGURE_ARGS +=	--disable-backtrace \
 			--disable-places \
 			--disable-futures
 
-# --enable-libffi needs LDFLAGS="-pthread" for detect the system ffi.
-# It will be fixed in 5.3.4
 # -DMZ_USE_JIT_SSE enables use of SSE floating point in JIT.
 # If __SSE_MATH__ is defined (C_COMPILER_USES_SSE) and MZ_TRY_EXTFLONUMS
 # enabled, MZ_LONG_DOUBLE (extflonum) is turned on.
 # "-msse -mfpmath=sse" required by extflonum on i386.
-CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread" \
+CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 			-DMZ_USE_JIT_SSE -DMZ_TRY_EXTFLONUMS -msse -mfpmath=sse" \
 			CFLAGS="${CFLAGS} -msse -mfpmath=sse"
