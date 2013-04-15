@@ -3,10 +3,11 @@
 COMMENT =	GStreamer-based Phonon backend
 VERSION =	4.6.2
 DISTNAME =	phonon-backend-gstreamer-${VERSION}
-REVISION =	2
+REVISION =	3
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/phonon/phonon-backend-gstreamer/${VERSION}/src/}
 
+# allow playing Vorbis and MP3 notification sounds out of the box
 RUN_DEPENDS =	multimedia/gstreamer-0.10/plugins-base \
 		multimedia/gstreamer-0.10/plugins-ugly \
 		x11/gtk+2,-guic

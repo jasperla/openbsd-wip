@@ -11,3 +11,5 @@ MODKDE4_USE =
 MODPHONON_PLUGIN_DEPS =	No
 
 CONFIGURE_ARGS =	-DPhonon_DIR:String=${LOCALBASE}/lib/cmake/phonon
+
+MAINTAINER ?=		KDE porting team <openbsd-kde@googlegroups.com>
