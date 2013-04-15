@@ -1,4 +1,5 @@
 $OpenBSD$
+Allow libexec item to be found.
 --- kdeui/dialogs/kbugreport.cpp.orig	Sun Aug 12 16:20:26 2012
 +++ kdeui/dialogs/kbugreport.cpp	Sun Aug 12 16:20:49 2012
 @@ -528,7 +528,7 @@ bool KBugReport::sendBugReport()

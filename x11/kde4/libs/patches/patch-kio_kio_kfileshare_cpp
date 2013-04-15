@@ -1,4 +1,5 @@
 $OpenBSD$
+Obviously non-functional, lies here for consistency.
 --- kio/kio/kfileshare.cpp.orig	Sun Aug 12 14:09:09 2012
 +++ kio/kio/kfileshare.cpp	Sun Aug 12 14:09:35 2012
 @@ -46,7 +46,7 @@ static bool s_sharingEnabled;

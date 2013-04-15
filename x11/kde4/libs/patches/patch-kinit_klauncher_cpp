@@ -1,4 +1,5 @@
 $OpenBSD$
+Allow libexec item to be found.
 --- kinit/klauncher.cpp.orig	Sun Aug 12 16:21:29 2012
 +++ kinit/klauncher.cpp	Sun Aug 12 16:22:06 2012
 @@ -1170,7 +1170,7 @@ KLauncher::requestSlave(const QString &protocol,

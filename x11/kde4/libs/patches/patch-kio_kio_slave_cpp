@@ -1,4 +1,5 @@
 $OpenBSD$
+Allow libexec item to be found.
 --- kio/kio/slave.cpp.orig	Sun Aug 12 16:22:24 2012
 +++ kio/kio/slave.cpp	Sun Aug 12 16:22:40 2012
 @@ -453,7 +453,7 @@ Slave* Slave::createSlave( const QString &protocol, co
