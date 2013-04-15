@@ -1,15 +1,15 @@
 # $OpenBSD: Makefile,v 1.5 2010/11/19 07:23:15 espie Exp $
 
 COMMENT =	multimedia layer for Qt4/KDE4
-CATEGORIES =	multimedia devel x11/kde4
+CATEGORIES =	multimedia devel
 VERSION =	4.6.0
 DISTNAME =	phonon-${VERSION}
 HOMEPAGE =	http://phonon.kde.org/
-REVISION =	6
+REVISION =	7
 
 # Renamed to avoid clashing with Qt4's one
-SHARED_LIBS =	phonon_s		0.0
-SHARED_LIBS +=	phononexperimental	2.0
+SHARED_LIBS =	phonon_s		0.0 \
+		phononexperimental	2.0
 
 # LGPL v2.1
 PERMIT_PACKAGE_CDROM =	Yes
