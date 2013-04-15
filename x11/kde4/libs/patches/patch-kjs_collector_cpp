@@ -1,4 +1,5 @@
 $OpenBSD: patch-kjs_collector_cpp,v 1.4 2010/06/18 11:14:42 espie Exp $
+XXX KJS doesn't work anyway, save this patch as a mark where to dig.
 --- kjs/collector.cpp.orig	Sat May 21 00:24:54 2011
 +++ kjs/collector.cpp	Thu Oct 13 17:55:51 2011
 @@ -500,13 +500,15 @@ static inline void* currentThreadStackBase()
