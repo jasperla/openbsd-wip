@@ -75,9 +75,11 @@ CONFIGURE_ARGS +=	--disable-backtrace \
 # -DMZ_USE_JIT_SSE enables use of SSE floating point in JIT.
 # If __SSE_MATH__ is defined (C_COMPILER_USES_SSE) and MZ_TRY_EXTFLONUMS
 # enabled, MZ_LONG_DOUBLE (extflonum) is turned on.
+# "-msse -mfpmath=sse" required by extflonum on i386.
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
-			-DMZ_USE_JIT_SSE -DMZ_TRY_EXTFLONUMS"
+			-DMZ_USE_JIT_SSE -DMZ_TRY_EXTFLONUMS -msse -mfpmath=sse" \
+			CFLAGS="${CFLAGS} -msse -mfpmath=sse"
 
 # MAKE_JOBS: If places is enabled, racket uses places channels. When places is
 # disabled, racket uses multiple racket processes and pipes.
