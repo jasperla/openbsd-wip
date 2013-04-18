@@ -1,0 +1,17 @@
+$OpenBSD$
+--- syscalls/kcmp.c.orig	Sat Mar  2 20:12:33 2013
++++ syscalls/kcmp.c	Sat Mar  2 20:12:57 2013
+@@ -3,7 +3,7 @@
+  *               unsigned long, idx1, unsigned long, idx2)
+  *
+  */
+-
++#ifdef __LINUX__
+ #include "trinity.h"
+ #include "sanitise.h"
+ #include "compat.h"
+@@ -24,3 +24,4 @@ struct syscall syscall_kcmp = {
+ 	.arg4name = "idx1",
+ 	.arg5name = "idx2",
+ };
++#endif

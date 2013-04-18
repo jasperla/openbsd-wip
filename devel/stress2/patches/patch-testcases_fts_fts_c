@@ -1,0 +1,35 @@
+$OpenBSD$
+--- testcases/fts/fts.c.orig	Sat Mar  2 15:07:13 2013
++++ testcases/fts/fts.c	Sat Mar  2 15:19:49 2013
+@@ -28,13 +28,11 @@
+ /* Directory scan */
+ 
+ #include <sys/cdefs.h>
+-__FBSDID("$FreeBSD: projects/stress2/testcases/fts/fts.c 187224 2009-01-14 16:03:10Z pho $");
+ 
+ #include <sys/param.h>
+ #include <err.h>
+ #include <errno.h>
+ #include <fts.h>
+-#include <libutil.h>
+ #include <stdint.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -43,6 +41,8 @@ __FBSDID("$FreeBSD: projects/stress2/testcases/fts/fts
+ 
+ #include "stress.h"
+ 
++extern char *__progname;
++
+ int
+ setup(int nb)
+ {
+@@ -92,7 +92,7 @@ test(void)
+ 					warnx("%s: %s", p->fts_path, strerror(p->fts_errno));
+ 				break;
+ 			default:
+-				printf("%s: default, %d\n", getprogname(), p->fts_info);
++				printf("%s: default, %d\n", __progname, p->fts_info);
+ 				break;
+ 		}
+ 	}

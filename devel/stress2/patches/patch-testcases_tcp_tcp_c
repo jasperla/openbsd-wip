@@ -1,0 +1,11 @@
+$OpenBSD$
+--- testcases/tcp/tcp.c.orig	Sat Mar  2 15:18:07 2013
++++ testcases/tcp/tcp.c	Sat Mar  2 15:18:21 2013
+@@ -26,7 +26,6 @@
+  */
+ 
+ #include <sys/cdefs.h>
+-__FBSDID("$FreeBSD: projects/stress2/testcases/tcp/tcp.c 187224 2009-01-14 16:03:10Z pho $");
+ 
+ #include <sys/param.h>
+ #include <sys/socket.h>

@@ -1,0 +1,19 @@
+$OpenBSD$
+--- testcases/pty/pty.c.orig	Sat Mar  2 15:12:10 2013
++++ testcases/pty/pty.c	Sat Mar  2 15:20:29 2013
+@@ -28,7 +28,6 @@
+ /* Test PTYs */
+ 
+ #include <sys/cdefs.h>
+-__FBSDID("$FreeBSD: projects/stress2/testcases/pty/pty.c 187224 2009-01-14 16:03:10Z pho $");
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -36,7 +35,6 @@ __FBSDID("$FreeBSD: projects/stress2/testcases/pty/pty
+ #include <sys/types.h>
+ #include <sys/ioctl.h>
+ #include <termios.h>
+-#include <libutil.h>
+ #include <err.h>
+ 
+ #include "stress.h"

@@ -1,0 +1,16 @@
+$OpenBSD$
+--- syscalls/remap_file_pages.c.orig	Sat Mar  2 18:56:51 2013
++++ syscalls/remap_file_pages.c	Sat Mar  2 18:57:24 2013
+@@ -2,6 +2,7 @@
+  * SYSCALL_DEFINE5(remap_file_pages, unsigned long, start, unsigned long, size,
+ 	 unsigned long, prot, unsigned long, pgoff, unsigned long, flags)
+  */
++#ifdef __LINUX__
+ #include <asm/mman.h>
+ 
+ #include "trinity.h"
+@@ -53,3 +54,4 @@ struct syscall syscall_remap_file_pages = {
+ 	},
+ 	.group = GROUP_VM,
+ };
++#endif

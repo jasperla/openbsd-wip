@@ -1,0 +1,11 @@
+$OpenBSD$
+--- testcases/mkdir/mkdir.c.orig	Sat Mar  2 15:09:52 2013
++++ testcases/mkdir/mkdir.c	Sat Mar  2 15:10:08 2013
+@@ -26,7 +26,6 @@
+  */
+ 
+ #include <sys/cdefs.h>
+-__FBSDID("$FreeBSD: projects/stress2/testcases/mkdir/mkdir.c 187224 2009-01-14 16:03:10Z pho $");
+ 
+ #include <sys/types.h>
+ #include <sys/sysctl.h>

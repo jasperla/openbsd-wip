@@ -1,0 +1,10 @@
+Stress test is to reveal programming errors in the kernel, 
+that could lead to downtime.
+Testing is divided into two different tactics: general stress test 
+programs and regression test scenarios.
+The general test programs are a collection of small test programs, 
+that primarily stress test the VFS subsystem. One other test program 
+generates VM pressure, thus causing swapping. These are the primary 
+ingredients for discovering locking errors on a SMP system.
+The regression test scenarios are a collection of shell scripts 
+that cover a much wider area of the kernel. 

@@ -1,0 +1,16 @@
+$OpenBSD$
+--- syscalls/timerfd_create.c.orig	Sat Mar  2 18:42:14 2013
++++ syscalls/timerfd_create.c	Sat Mar  2 18:42:35 2013
+@@ -2,6 +2,7 @@
+  * SYSCALL_DEFINE2(timerfd_create, int, clockid, int, flags)
+  */
+ 
++#ifdef __LINUX__
+ #include <sys/timerfd.h>
+ #include "trinity.h"
+ #include "sanitise.h"
+@@ -23,3 +24,4 @@ struct syscall syscall_timerfd_create = {
+ 		.values = { TFD_NONBLOCK, TFD_CLOEXEC },
+ 	},
+ };
++#endif

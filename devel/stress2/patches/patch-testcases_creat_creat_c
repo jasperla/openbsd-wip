@@ -1,0 +1,29 @@
+$OpenBSD$
+--- testcases/creat/creat.c.orig	Sat Mar  2 15:06:02 2013
++++ testcases/creat/creat.c	Sat Mar  2 15:06:59 2013
+@@ -26,7 +26,6 @@
+  */
+ 
+ #include <sys/cdefs.h>
+-__FBSDID("$FreeBSD: projects/stress2/testcases/creat/creat.c 187224 2009-01-14 16:03:10Z pho $");
+ 
+ #include <unistd.h>
+ #include <stdio.h>
+@@ -40,6 +39,8 @@ __FBSDID("$FreeBSD: projects/stress2/testcases/creat/c
+ 
+ #include "stress.h"
+ 
++extern char *__progname;
++
+ static char path[128];
+ static unsigned long size;
+ 
+@@ -92,7 +93,7 @@ setup(int nb)
+ 
+ 	if (size == 0)
+ 		exit(1);
+-	sprintf(path,"%s.%05d", getprogname(), getpid());
++	sprintf(path,"%s.%05d", __progname, getpid());
+ 	if (mkdir(path, 0770) < 0)
+ 		err(1, "mkdir(%s), %s:%d", path, __FILE__, __LINE__);
+ 

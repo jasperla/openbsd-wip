@@ -1,0 +1,11 @@
+$OpenBSD$
+--- testcases/swap/swap.c.orig	Sat Mar  2 15:14:31 2013
++++ testcases/swap/swap.c	Sat Mar  2 15:15:58 2013
+@@ -26,7 +26,6 @@
+  */
+ 
+ #include <sys/cdefs.h>
+-__FBSDID("$FreeBSD: projects/stress2/testcases/swap/swap.c 191974 2009-05-10 18:58:30Z pho $");
+ 
+ #include <sys/types.h>
+ #include <sys/sysctl.h>

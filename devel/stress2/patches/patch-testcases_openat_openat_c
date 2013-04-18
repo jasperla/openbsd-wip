@@ -1,0 +1,29 @@
+$OpenBSD$
+--- testcases/openat/openat.c.orig	Sat Mar  2 15:11:30 2013
++++ testcases/openat/openat.c	Sat Mar  2 15:11:56 2013
+@@ -26,7 +26,6 @@
+  */
+ 
+ #include <sys/cdefs.h>
+-__FBSDID("$FreeBSD: projects/stress2/testcases/openat/openat.c 187224 2009-01-14 16:03:10Z pho $");
+ 
+ #include <unistd.h>
+ #include <stdio.h>
+@@ -39,6 +38,8 @@ __FBSDID("$FreeBSD: projects/stress2/testcases/openat/
+ 
+ #include "stress.h"
+ 
++extern char *__progname;
++
+ static char path1[128];
+ static char path2[] = "tmp";		
+ 
+@@ -52,7 +53,7 @@ setup(int nb)
+ {
+ 	umask(0);
+ 
+-	sprintf(path1,"%s.%05d", getprogname(), getpid());
++	sprintf(path1,"%s.%05d", __progname, getpid());
+ 	if (mkdir(path1, 0770) < 0)
+ 		err(1, "mkdir(%s), %s:%d", path1, __FILE__, __LINE__);
+ 	if (chdir(path1) == -1)

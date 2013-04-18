@@ -1,0 +1,47 @@
+$OpenBSD$
+--- syscalls/recv.c.orig	Sat Mar  2 20:08:04 2013
++++ syscalls/recv.c	Sat Mar  2 20:12:25 2013
+@@ -7,7 +7,9 @@
+ #include <sys/socket.h>
+ #include "trinity.h"
+ #include "sanitise.h"
++#ifdef __LINUX__
+ #include "compat.h"
++#endif
+ 
+ struct syscall syscall_recv = {
+ 	.name = "recv",
+@@ -22,10 +24,29 @@ struct syscall syscall_recv = {
+ 	.arg4type = ARG_LIST,
+ 	.arg4list = {
+ 		.num = 20,
+-		.values = { MSG_DONTWAIT, MSG_ERRQUEUE, MSG_ERRQUEUE,
+-			    MSG_ERRQUEUE, MSG_OOB, MSG_PEEK, MSG_TRUNC,
+-			    MSG_WAITALL, MSG_EOR, MSG_TRUNC, MSG_CTRUNC,
+-			    MSG_OOB, MSG_ERRQUEUE },
++		.values = {
++				MSG_DONTWAIT,
++#ifdef __LINUX__
++				MSG_ERRQUEUE,
++				MSG_ERRQUEUE,
++			    MSG_ERRQUEUE,
++#endif
++				MSG_OOB,
++				MSG_PEEK,
++#ifdef __LINUX__
++				MSG_TRUNC,
++#endif
++			    MSG_WAITALL,
++#ifdef __LINUX__
++				MSG_EOR,
++				MSG_TRUNC,
++				MSG_CTRUNC,
++#endif
++			    MSG_OOB,
++#ifdef __LINUX__
++				MSG_ERRQUEUE
++#endif
++		},
+ 	},
+ 	.flags = NEED_ALARM,
+ };

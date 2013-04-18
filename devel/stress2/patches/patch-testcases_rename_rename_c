@@ -1,0 +1,29 @@
+$OpenBSD$
+--- testcases/rename/rename.c.orig	Sat Mar  2 15:12:34 2013
++++ testcases/rename/rename.c	Sat Mar  2 15:12:59 2013
+@@ -26,7 +26,6 @@
+  */
+ 
+ #include <sys/cdefs.h>
+-__FBSDID("$FreeBSD: projects/stress2/testcases/rename/rename.c 187224 2009-01-14 16:03:10Z pho $");
+ 
+ #include <unistd.h>
+ #include <stdio.h>
+@@ -39,6 +38,8 @@ __FBSDID("$FreeBSD: projects/stress2/testcases/rename/
+ 
+ #include "stress.h"
+ 
++extern char *__progname;
++
+ static char path[128];
+ static unsigned long size;
+ 
+@@ -80,7 +81,7 @@ setup(int nb)
+ 		size = getval();
+ 	}
+ 
+-	sprintf(path,"%s.%05d", getprogname(), getpid());
++	sprintf(path,"%s.%05d", __progname, getpid());
+ 	if (mkdir(path, 0770) < 0)
+ 		err(1, "mkdir(%s), %s:%d", path, __FILE__, __LINE__);
+ 	if (chdir(path) == -1)

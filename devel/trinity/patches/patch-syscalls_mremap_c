@@ -1,0 +1,16 @@
+$OpenBSD$
+--- syscalls/mremap.c.orig	Sat Mar  2 20:59:56 2013
++++ syscalls/mremap.c	Sat Mar  2 21:01:55 2013
+@@ -4,6 +4,7 @@
+ 	unsigned long, new_addr)
+  */
+ 
++#ifdef __LINUX__
+ #include <linux/mman.h>
+ #include <stdlib.h>
+ #include "trinity.h"
+@@ -53,3 +54,4 @@ struct syscall syscall_mremap = {
+ 	.arg5type = ARG_ADDRESS,
+ 	.group = GROUP_VM,
+ };
++#endif

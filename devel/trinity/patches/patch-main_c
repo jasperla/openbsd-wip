@@ -1,0 +1,55 @@
+$OpenBSD$
+--- main.c.orig	Sat Mar  2 17:33:18 2013
++++ main.c	Sat Mar  2 17:39:46 2013
+@@ -3,11 +3,17 @@
+ #include <unistd.h>
+ #include <string.h>
+ #include <stdlib.h>
++#include <sys/param.h>
++#ifdef __LINUX__
+ #include <sys/prctl.h>
++#endif
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <sys/wait.h>
+ #include <sys/ptrace.h>
++#ifdef OpenBSD
++#include <signal.h>
++#endif
+ 
+ #include "trinity.h"
+ #include "shm.h"
+@@ -85,8 +91,9 @@ static void fork_children(void)
+ 
+ 			memset(childname, 0, sizeof(childname));
+ 			sprintf(childname, "trinity-child%d", pidslot);
++#ifdef __LINUX__
+ 			prctl(PR_SET_NAME, (unsigned long) &childname);
+-
++#endif
+ 			/* Wait for parent to set our pidslot */
+ 			while (shm->pids[pidslot] != getpid()) {
+ 				/* Make sure parent is actually alive to wait for us. */
+@@ -220,8 +227,12 @@ static void handle_child(pid_t childpid, int childstat
+ 				debugf("[%d] got an alarm signal from pid %d\n", getpid(), childpid);
+ 				break;
+ 			case SIGSTOP:
++#ifdef __LINUX__
+ 				debugf("[%d] Sending PTRACE_DETACH (and then KILL)\n", getpid());
+ 				ptrace(PTRACE_DETACH, childpid, NULL, NULL);
++#endif
++				debugf("[%d] Sending PT_DETACH (and then KILL)\n", getpid());
++				ptrace(PT_DETACH, childpid, NULL, NULL);
+ 				kill(childpid, SIGKILL);
+ 				reap_child(childpid);
+ 				break;
+@@ -334,7 +345,9 @@ void do_main_loop(void)
+ 
+ 		shm->parentpid = getpid();
+ 		output(0, "[%d] Main thread is alive.\n", getpid());
++#ifdef __LINUX__
+ 		prctl(PR_SET_NAME, (unsigned long) &taskname);
++#endif
+ 		set_seed(0);
+ 
+ 		setup_fds();

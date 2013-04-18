@@ -1,0 +1,11 @@
+$OpenBSD$
+--- testcases/mkfifo/mkfifo.c.orig	Sat Mar  2 15:10:27 2013
++++ testcases/mkfifo/mkfifo.c	Sat Mar  2 15:10:43 2013
+@@ -26,7 +26,6 @@
+  */
+ 
+ #include <sys/cdefs.h>
+-__FBSDID("$FreeBSD: projects/stress2/testcases/mkfifo/mkfifo.c 187224 2009-01-14 16:03:10Z pho $");
+ 
+ #include <sys/param.h>
+ #include <sys/types.h>
