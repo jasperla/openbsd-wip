@@ -1,0 +1,12 @@
+$OpenBSD$
+--- hardware/common/serial.c.orig	Wed Apr 17 16:55:20 2013
++++ hardware/common/serial.c	Wed Apr 17 16:55:39 2013
+@@ -247,7 +247,7 @@ SR_PRIV int serial_set_params(int fd, int baudrate, in
+ 	case 115200:
+ 		baud = B115200;
+ 		break;
+-#ifndef __APPLE__
++#if !defined(__APPLE__) && !defined(__OpenBSD__)
+ 	case 460800:
+ 		baud = B460800;
+ 		break;
