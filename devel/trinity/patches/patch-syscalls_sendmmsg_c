@@ -1,0 +1,53 @@
+$OpenBSD$
+--- syscalls/sendmmsg.c.orig	Sat Mar  2 18:46:52 2013
++++ syscalls/sendmmsg.c	Sat Mar  2 18:52:04 2013
+@@ -6,7 +6,9 @@
+ #include <sys/socket.h>
+ #include "trinity.h"
+ #include "sanitise.h"
++#ifdef __LINUX__
+ #include "compat.h"
++#endif
+ 
+ struct syscall syscall_sendmmsg = {
+ 	.name = "sendmmsg",
+@@ -21,11 +23,34 @@ struct syscall syscall_sendmmsg = {
+ 	.arg4type = ARG_LIST,
+ 	.arg4list = {
+ 		.num = 20,
+-		.values = { MSG_OOB, MSG_PEEK, MSG_DONTROUTE, MSG_CTRUNC,
+-				MSG_PROBE, MSG_TRUNC, MSG_DONTWAIT, MSG_EOR,
+-				MSG_WAITALL, MSG_FIN, MSG_SYN, MSG_CONFIRM,
+-				MSG_RST, MSG_ERRQUEUE, MSG_NOSIGNAL, MSG_MORE,
+-				MSG_WAITFORONE, MSG_CMSG_CLOEXEC, MSG_FASTOPEN, MSG_CMSG_COMPAT },
++		.values = {
++				MSG_OOB,
++				MSG_PEEK,
++				MSG_DONTROUTE,
++#ifdef __LINUX__
++				MSG_CTRUNC,
++				MSG_PROBE,
++				MSG_TRUNC,
++				MSG_DONTWAIT,
++#endif
++				MSG_EOR,
++				MSG_WAITALL,
++#ifdef __LINUX__
++				MSG_FIN,
++				MSG_SYN,
++				MSG_CONFIRM,
++				MSG_RST,
++				MSG_ERRQUEUE,
++#endif
++				MSG_NOSIGNAL,
++#ifdef __LINUX__
++				MSG_MORE,
++				MSG_WAITFORONE,
++				MSG_CMSG_CLOEXEC,
++				MSG_FASTOPEN,
++				MSG_CMSG_COMPAT
++#endif
++		},
+ 	},
+ 	.flags = NEED_ALARM,
+ };

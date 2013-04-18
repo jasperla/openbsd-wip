@@ -1,0 +1,197 @@
+$OpenBSD$
+--- syscalls/syscalls.h.orig	Tue Jan 22 20:43:08 2013
++++ syscalls/syscalls.h	Sat Mar  2 22:14:52 2013
+@@ -19,7 +19,7 @@ extern struct syscall syscall_chroot;
+ extern struct syscall syscall_clock_adjtime;
+ extern struct syscall syscall_clock_getres;
+ extern struct syscall syscall_clock_gettime;
+-extern struct syscall syscall_clock_nanosleep;
++/*extern struct syscall syscall_clock_nanosleep;*/
+ extern struct syscall syscall_clock_settime;
+ extern struct syscall syscall_clone2;
+ extern struct syscall syscall_clone;
+@@ -30,11 +30,14 @@ extern struct syscall syscall_delete_module;
+ extern struct syscall syscall_dup2;
+ extern struct syscall syscall_dup3;
+ extern struct syscall syscall_dup;
++
++/*
+ extern struct syscall syscall_epoll_create1;
+ extern struct syscall syscall_epoll_create;
+ extern struct syscall syscall_epoll_ctl;
+ extern struct syscall syscall_epoll_pwait;
+ extern struct syscall syscall_epoll_wait;
++*/
+ extern struct syscall syscall_eventfd2;
+ extern struct syscall syscall_eventfd;
+ extern struct syscall syscall_execve;
+@@ -54,13 +57,13 @@ extern struct syscall syscall_fchownat;
+ extern struct syscall syscall_fchown;
+ extern struct syscall syscall_fcntl;
+ extern struct syscall syscall_fdatasync;
+-extern struct syscall syscall_fgetxattr;
++/*extern struct syscall syscall_fgetxattr;*/
+ extern struct syscall syscall_finit_module;
+ extern struct syscall syscall_flistxattr;
+ extern struct syscall syscall_flock;
+ extern struct syscall syscall_fork;
+-extern struct syscall syscall_fremovexattr;
+-extern struct syscall syscall_fsetxattr;
++/*extern struct syscall syscall_fremovexattr;*/
++/*extern struct syscall syscall_fsetxattr;*/
+ extern struct syscall syscall_fstat64;
+ extern struct syscall syscall_fstatat64;
+ extern struct syscall syscall_fstatfs64;
+@@ -68,7 +71,7 @@ extern struct syscall syscall_fstatfs;
+ extern struct syscall syscall_fsync;
+ extern struct syscall syscall_ftruncate64;
+ extern struct syscall syscall_ftruncate;
+-extern struct syscall syscall_futex;
++/*extern struct syscall syscall_futex;*/
+ extern struct syscall syscall_futimesat;
+ extern struct syscall syscall_getcpu;
+ extern struct syscall syscall_getcwd;
+@@ -96,7 +99,7 @@ extern struct syscall syscall_getresgid;
+ extern struct syscall syscall_getresuid16;
+ extern struct syscall syscall_getresuid;
+ extern struct syscall syscall_getrlimit;
+-extern struct syscall syscall_get_robust_list;
++/*extern struct syscall syscall_get_robust_list;*/
+ extern struct syscall syscall_getrusage;
+ extern struct syscall syscall_getsid;
+ extern struct syscall syscall_getsockname;
+@@ -113,7 +116,7 @@ extern struct syscall syscall_inotify_init1;
+ extern struct syscall syscall_inotify_init;
+ extern struct syscall syscall_inotify_rm_watch;
+ extern struct syscall syscall_io_cancel;
+-extern struct syscall syscall_ioctl;
++/*extern struct syscall syscall_ioctl;*/
+ extern struct syscall syscall_io_destroy;
+ extern struct syscall syscall_io_getevents;
+ extern struct syscall syscall_ioperm;
+@@ -124,25 +127,25 @@ extern struct syscall syscall_io_setup;
+ extern struct syscall syscall_io_submit;
+ extern struct syscall syscall_ipc;
+ extern struct syscall syscall_kexec_load;
+-extern struct syscall syscall_keyctl;
++/*extern struct syscall syscall_keyctl;*/
+ extern struct syscall syscall_kill;
+ extern struct syscall syscall_lchown16;
+ extern struct syscall syscall_lchown;
+-extern struct syscall syscall_lgetxattr;
++/*extern struct syscall syscall_lgetxattr;*/
+ extern struct syscall syscall_linkat;
+ extern struct syscall syscall_link;
+ extern struct syscall syscall_listen;
+-extern struct syscall syscall_listxattr;
+-extern struct syscall syscall_llistxattr;
++/*extern struct syscall syscall_listxattr;*/
++/*extern struct syscall syscall_llistxattr;*/
+ extern struct syscall syscall_llseek;
+ extern struct syscall syscall_lookup_dcookie;
+-extern struct syscall syscall_lremovexattr;
++/*extern struct syscall syscall_lremovexattr;*/
+ extern struct syscall syscall_lseek;
+-extern struct syscall syscall_lsetxattr;
++/*extern struct syscall syscall_lsetxattr;*/
+ extern struct syscall syscall_lstat64;
+ extern struct syscall syscall_lstat;
+-extern struct syscall syscall_madvise;
+-extern struct syscall syscall_mbind;
++/*extern struct syscall syscall_madvise;*/
++/*extern struct syscall syscall_mbind;*/
+ extern struct syscall syscall_migrate_pages;
+ extern struct syscall syscall_mincore;
+ extern struct syscall syscall_mkdirat;
+@@ -153,7 +156,7 @@ extern struct syscall syscall_mlockall;
+ extern struct syscall syscall_mlock;
+ extern struct syscall syscall_mmap2;
+ extern struct syscall syscall_mmap;
+-extern struct syscall syscall_mmap_pgoff;
++/* extern struct syscall syscall_mmap_pgoff; */
+ extern struct syscall syscall_modify_ldt;
+ extern struct syscall syscall_mount;
+ extern struct syscall syscall_move_pages;
+@@ -192,7 +195,7 @@ extern struct syscall syscall_open;
+ extern struct syscall syscall_pause;
+ extern struct syscall syscall_pciconfig_read;
+ extern struct syscall syscall_pciconfig_write;
+-extern struct syscall syscall_perf_event_open;
++/*extern struct syscall syscall_perf_event_open;*/
+ extern struct syscall syscall_perfmonctl;
+ extern struct syscall syscall_personality;
+ extern struct syscall syscall_pipe2;
+@@ -219,7 +222,7 @@ extern struct syscall syscall_recv;
+ extern struct syscall syscall_recvfrom;
+ extern struct syscall syscall_recvmmsg;
+ extern struct syscall syscall_recvmsg;
+-extern struct syscall syscall_remap_file_pages;
++/*extern struct syscall syscall_remap_file_pages;*/
+ extern struct syscall syscall_removexattr;
+ extern struct syscall syscall_renameat;
+ extern struct syscall syscall_rename;
+@@ -278,14 +281,14 @@ extern struct syscall syscall_setresuid;
+ extern struct syscall syscall_setreuid16;
+ extern struct syscall syscall_setreuid;
+ extern struct syscall syscall_setrlimit;
+-extern struct syscall syscall_set_robust_list;
++/*extern struct syscall syscall_set_robust_list;*/
+ extern struct syscall syscall_setsid;
+ extern struct syscall syscall_setsockopt;
+ extern struct syscall syscall_set_tid_address;
+ extern struct syscall syscall_settimeofday;
+ extern struct syscall syscall_setuid16;
+ extern struct syscall syscall_setuid;
+-extern struct syscall syscall_setxattr;
++/*extern struct syscall syscall_setxattr; */
+ extern struct syscall syscall_sgetmask;
+ extern struct syscall syscall_shmat;
+ extern struct syscall syscall_shmctl;
+@@ -316,8 +319,8 @@ extern struct syscall syscall_swapon;
+ extern struct syscall syscall_symlinkat;
+ extern struct syscall syscall_symlink;
+ extern struct syscall syscall_sync;
+-extern struct syscall syscall_sync_file_range2;
+-extern struct syscall syscall_sync_file_range;
++/*extern struct syscall syscall_sync_file_range2;
++extern struct syscall syscall_sync_file_range;*/
+ extern struct syscall syscall_syncfs;
+ extern struct syscall syscall_sysctl;
+ extern struct syscall syscall_sysfs;
+@@ -328,9 +331,11 @@ extern struct syscall syscall_tgkill;
+ extern struct syscall syscall_time;
+ extern struct syscall syscall_timer_create;
+ extern struct syscall syscall_timer_delete;
++/*
+ extern struct syscall syscall_timerfd_create;
+ extern struct syscall syscall_timerfd_gettime;
+ extern struct syscall syscall_timerfd_settime;
++*/
+ extern struct syscall syscall_timer_getoverrun;
+ extern struct syscall syscall_timer_gettime;
+ extern struct syscall syscall_timer_settime;
+@@ -343,7 +348,7 @@ extern struct syscall syscall_umount;
+ extern struct syscall syscall_uname;
+ extern struct syscall syscall_unlinkat;
+ extern struct syscall syscall_unlink;
+-extern struct syscall syscall_unshare;
++/*extern struct syscall syscall_unshare;*/
+ extern struct syscall syscall_uselib;
+ extern struct syscall syscall_ustat;
+ extern struct syscall syscall_utime;
+@@ -353,13 +358,13 @@ extern struct syscall syscall_vfork;
+ extern struct syscall syscall_vhangup;
+ extern struct syscall syscall_vm86;
+ extern struct syscall syscall_vm86old;
+-extern struct syscall syscall_vmsplice;
++/*extern struct syscall syscall_vmsplice;*/
+ extern struct syscall syscall_wait4;
+ extern struct syscall syscall_waitid;
+ extern struct syscall syscall_waitpid;
+ extern struct syscall syscall_write;
+ extern struct syscall syscall_writev;
+-extern struct syscall syscall_sendmmsg;
++/*extern struct syscall syscall_sendmmsg;*/
+ extern struct syscall syscall_setns;
+ extern struct syscall syscall_process_vm_readv;
+ extern struct syscall syscall_process_vm_writev;

@@ -1,0 +1,14 @@
+$OpenBSD$
+--- trinity.c.orig	Tue Jan 22 20:43:08 2013
++++ trinity.c	Sat Mar  2 22:26:16 2013
+@@ -7,8 +7,10 @@
+ #include <ctype.h>
+ #include <unistd.h>
+ #include <setjmp.h>
++#ifdef __LINUX__
+ #include <malloc.h>
+ #include <asm/unistd.h>
++#endif
+ #include <sys/time.h>
+ #include <sys/stat.h>
+ #include <sys/types.h>

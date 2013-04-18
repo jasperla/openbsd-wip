@@ -1,0 +1,16 @@
+$OpenBSD$
+--- syscalls/recvmmsg.c.orig	Sat Mar  2 21:51:29 2013
++++ syscalls/recvmmsg.c	Sat Mar  2 21:51:54 2013
+@@ -4,6 +4,7 @@
+ 	 struct timespec __user *, timeout)
+  */
+ 
++#ifdef __LINUX__
+ #include <sys/socket.h>
+ #include "trinity.h"
+ #include "sanitise.h"
+@@ -32,3 +33,4 @@ struct syscall syscall_recvmmsg = {
+ 	.arg5type = ARG_ADDRESS,
+ 	.flags = NEED_ALARM,
+ };
++#endif

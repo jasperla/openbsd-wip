@@ -1,0 +1,29 @@
+$OpenBSD$
+--- lib/main.c.orig	Wed Dec  8 20:33:54 2010
++++ lib/main.c	Sat Mar  2 15:29:14 2013
+@@ -28,7 +28,6 @@
+ /* Main program for all test programs */
+ 
+ #include <sys/cdefs.h>
+-__FBSDID("$FreeBSD: projects/stress2/lib/main.c 208415 2010-05-22 11:38:06Z pho $");
+ 
+ #include <stdio.h>
+ #include <signal.h>
+@@ -43,7 +42,7 @@ __FBSDID("$FreeBSD: projects/stress2/lib/main.c 208415
+ 
+ #include "stress.h"
+ 
+-static char const rcsid[] = "$Name:  $ $FreeBSD: projects/stress2/lib/main.c 208415 2010-05-22 11:38:06Z pho $";
++extern char *__progname;
+ 
+ volatile int done_testing;
+ static int cleanupcalled = 0;
+@@ -107,7 +106,7 @@ run_tests(int i)
+ 	signal(SIGINT, exit_handler);
+ 	atexit(callcleanup);
+ 	setup(i);
+-	if ((strcmp(getprogname(), "run") != 0) && (op->nodelay == 0))
++	if ((strcmp(__progname, "run") != 0) && (op->nodelay == 0))
+ 		sleep(random_int(1,10));
+ 	start = time(NULL);
+ 	while (done_testing == 0 &&

@@ -1,0 +1,16 @@
+$OpenBSD$
+--- syscalls/mmap_pgoff.c.orig	Sat Mar  2 19:04:15 2013
++++ syscalls/mmap_pgoff.c	Sat Mar  2 19:04:44 2013
+@@ -3,6 +3,7 @@
+                  unsigned long, prot, unsigned long, flags,
+                  unsigned long, fd, unsigned long, pgoff)
+  */
++#ifdef __LINUX__
+ #include <asm/mman.h>
+ 
+ #include "trinity.h"
+@@ -37,3 +38,4 @@ struct syscall syscall_mmap_pgoff = {
+ 	.arg6type = ARG_LEN,
+ 	.group = GROUP_VM,
+ };
++#endif

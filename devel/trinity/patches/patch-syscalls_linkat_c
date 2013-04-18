@@ -1,0 +1,27 @@
+$OpenBSD$
+--- syscalls/linkat.c.orig	Sat Mar  2 19:23:16 2013
++++ syscalls/linkat.c	Sat Mar  2 19:25:05 2013
+@@ -6,7 +6,9 @@
+ 
+ #include "trinity.h"
+ #include "sanitise.h"
++#ifdef __LINUX__
+ #include "compat.h"
++#endif
+ 
+ struct syscall syscall_linkat = {
+ 	.name = "linkat",
+@@ -23,7 +25,12 @@ struct syscall syscall_linkat = {
+ 	.arg5type = ARG_LIST,
+ 	.arg5list = {
+ 		.num = 2,
+-		.values = { AT_SYMLINK_FOLLOW , AT_EMPTY_PATH },
++		.values = {
++				AT_SYMLINK_FOLLOW,
++#ifdef __LINUX__
++				AT_EMPTY_PATH
++#endif
++			},
+ 	},
+ 	.flags = NEED_ALARM,
+ };

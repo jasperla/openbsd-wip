@@ -1,0 +1,11 @@
+$OpenBSD$
+--- testcases/run/run.c.orig	Sat Mar  2 15:13:11 2013
++++ testcases/run/run.c	Sat Mar  2 15:13:23 2013
+@@ -28,7 +28,6 @@
+ /* Control program to run all the other test cases */
+ 
+ #include <sys/cdefs.h>
+-__FBSDID("$FreeBSD: projects/stress2/testcases/run/run.c 187224 2009-01-14 16:03:10Z pho $");
+ 
+ #include <stdio.h>
+ #include <stdlib.h>

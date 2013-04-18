@@ -1,0 +1,11 @@
+$OpenBSD$
+--- testcases/socket/socket.c.orig	Sat Mar  2 15:14:08 2013
++++ testcases/socket/socket.c	Sat Mar  2 15:14:22 2013
+@@ -26,7 +26,6 @@
+  */
+ 
+ #include <sys/cdefs.h>
+-__FBSDID("$FreeBSD: projects/stress2/testcases/socket/socket.c 187224 2009-01-14 16:03:10Z pho $");
+ 
+ #include <sys/param.h>
+ #include <sys/socket.h>

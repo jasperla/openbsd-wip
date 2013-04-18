@@ -1,0 +1,41 @@
+$OpenBSD$
+--- testcases/syscall/syscall.c.orig	Wed Dec  8 20:33:55 2010
++++ testcases/syscall/syscall.c	Sat Mar  2 15:36:15 2013
+@@ -28,7 +28,6 @@
+ /* Call random system calls with random arguments */
+ 
+ #include <sys/cdefs.h>
+-__FBSDID("$FreeBSD: projects/stress2/testcases/syscall/syscall.c 187224 2009-01-14 16:03:10Z pho $");
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -41,6 +40,8 @@ __FBSDID("$FreeBSD: projects/stress2/testcases/syscall
+ 
+ #include "stress.h"
+ 
++extern char *__progname;
++
+ static char path[128];
+ static int num;
+ static int starting_dir = 0;
+@@ -57,11 +58,7 @@ static int ignore[] = {
+ 	111,			/* 111 is old sigsuspend */
+ 	SYS_shutdown,
+ 	SYS___syscall,
+-	SYS_rfork,
+ 	SYS_sigsuspend,
+-	SYS_mac_syscall,
+-	SYS_sigtimedwait,
+-	SYS_sigwaitinfo,
+ };
+ 
+ int
+@@ -71,7 +68,7 @@ setup(int nb)
+ 	struct rlimit rl;
+ 
+ 	umask(0);
+-	sprintf(path,"%s.%05d", getprogname(), getpid());
++	sprintf(path,"%s.%05d", __progname, getpid());
+ 	(void)mkdir(path, 0770);
+ 	if (chdir(path) == -1)
+ 		err(1, "chdir(%s), %s:%d", path, __FILE__, __LINE__);

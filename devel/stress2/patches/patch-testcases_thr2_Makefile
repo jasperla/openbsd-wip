@@ -1,0 +1,8 @@
+$OpenBSD$
+--- testcases/thr2/Makefile.orig	Sat Mar  2 15:23:42 2013
++++ testcases/thr2/Makefile	Sat Mar  2 15:24:26 2013
+@@ -5,3 +5,4 @@ PROG=		thr2
+ .include <bsd.prog.mk>
+ 
+ CFLAGS+=	-pthread
++LDFLAGS += -lpthread

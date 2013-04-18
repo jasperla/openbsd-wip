@@ -1,0 +1,16 @@
+$OpenBSD$
+--- syscalls/pipe2.c.orig	Sat Mar  2 20:16:04 2013
++++ syscalls/pipe2.c	Sat Mar  2 20:16:20 2013
+@@ -2,6 +2,7 @@
+  * SYSCALL_DEFINE2(pipe2, int __user *, fildes, int, flags)
+  */
+ 
++#ifdef __LINUX__
+ #include <unistd.h>
+ #include <fcntl.h>
+ 
+@@ -21,3 +22,4 @@ struct syscall syscall_pipe2 = {
+ 		.values = { O_CLOEXEC, O_NONBLOCK, O_DIRECT },
+ 	},
+ };
++#endif

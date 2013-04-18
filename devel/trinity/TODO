@@ -1,0 +1,13 @@
+generic-sanitize: WORDSIZE, 327
+maps.c: memalign
+mainc.c, trinity.c, watchdog.c, *.sh: taint
+modify_ldt.c
+trinity.c: 28
+socket.c: IPPROTO_TCP, IPPROTO_UDP
+setsockopt.c
+MSG_OOB twice in recv.c
+mprotect.c: PROT_WRITE, PROT_READ, PROT_EXEC
+ptrace.c: not all requests are available for all archs
+control arch dependencies in Makefile not in source files
+mmap.c: uncomment syscall with PROT
+replace comments in syscalls-i386.h and syscalls-x86_64.h by defines

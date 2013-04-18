@@ -1,0 +1,122 @@
+$OpenBSD$
+--- lib/resources.c.orig	Sat Mar  2 14:47:50 2013
++++ lib/resources.c	Sat Mar  2 15:02:52 2013
+@@ -28,7 +28,6 @@
+ /* Get various resource limits for the tests */
+ 
+ #include <sys/cdefs.h>
+-__FBSDID("$FreeBSD: projects/stress2/lib/resources.c 187224 2009-01-14 16:03:10Z pho $");
+ 
+ #include <sys/types.h>
+ #include <sys/sysctl.h>
+@@ -41,14 +40,14 @@ __FBSDID("$FreeBSD: projects/stress2/lib/resources.c 1
+ #include <sys/param.h>
+ #include <sys/mount.h>
+ #include <kvm.h>
+-#include <vm/vm_param.h>
+ #include <errno.h>
+ #include <err.h>
+ #include <stdarg.h>
+-#include <libutil.h>
+ 
+ #include "stress.h"
+ 
++extern char *__progname;
++
+ static int lockfd;
+ static int dffd;
+ static int flags;
+@@ -103,6 +102,7 @@ df(void)
+ int64_t
+ swap(void)
+ {
++/*
+ 	struct xswdev xsw;
+ 	size_t mibsize, size;
+ 	int mib[16], n;
+@@ -131,11 +131,14 @@ swap(void)
+ 			sz * getpagesize() / 1024 / 1024);
+ 
+ 	return (sz * getpagesize());
++*/
++	return 0;
+ }
+ 
+ unsigned long
+ usermem(void)
+ {
++	/*
+ 	unsigned long mem;
+ 	size_t nlen = sizeof(mem);
+ 
+@@ -147,6 +150,8 @@ usermem(void)
+ 			mem / 1024 / 1024);
+ 
+ 	return (mem);
++	*/
++	return 0;
+ }
+ 
+ void cleanupdf()
+@@ -170,11 +175,11 @@ getdf(int64_t *block, int64_t *inode)
+ 		}
+ 		if (lockfd != -1)
+ 			break;
+-		fprintf(stderr, "%s. Removing stale %s\n", getprogname(), lockpath);
++		fprintf(stderr, "%s. Removing stale %s\n", __progname, lockpath);
+ 		unlink(lockpath);
+ 	}
+ 	if (lockfd == -1)
+-			errx(1, "%s. Can not create %s\n", getprogname(), lockpath);
++			errx(1, "%s. Can not create %s\n", __progname, lockpath);
+ 	snprintf(dfpath, sizeof(dfpath), "%s/df", op->cd);
+ 	if ((dffd = open(dfpath, O_RDWR, 0644)) == -1) {
+ 		if ((dffd = open(dfpath,
+@@ -208,7 +213,7 @@ reservedf(int64_t blks, int64_t inos)
+ 	int64_t blocks, inodes;
+ 
+ 	if ((dffd = open(dfpath, O_RDWR, 0644)) == -1) {
+-		warn("open(%s) %s:%d. %s", dfpath, __FILE__, __LINE__, getprogname());
++		warn("open(%s) %s:%d. %s", dfpath, __FILE__, __LINE__, __progname);
+ 		goto err;
+ 	}
+ 	if (read(dffd, buf, sizeof(buf)) < 1) {
+@@ -219,13 +224,13 @@ reservedf(int64_t blks, int64_t inos)
+ 
+ 	if (op->verbose > 2)
+ 		printf("%-8s: reservefd(%9jdK, %6jd) out of (%9jdK, %6jd)\n",
+-				getprogname(), blks/1024, inos, blocks/1024, inodes);
++				__progname, blks/1024, inos, blocks/1024, inodes);
+ 	blocks -= blks;
+ 	inodes -= inos;
+ 	
+ 	snprintf(buf, sizeof(buf), "%jd %jd", blocks, inodes);
+ 	if (blocks < 0 || inodes < 0)
+-		printf("******************************** %s: %s\n", getprogname(), buf);
++		printf("******************************** %s: %s\n", __progname, buf);
+ 	if (lseek(dffd, 0, 0) == -1)
+ 		err(1, "lseek. %s:%d", __FILE__, __LINE__);
+ 	if (write(dffd, buf, strlen(buf) + 1) != strlen(buf) +1)
+@@ -242,6 +247,7 @@ err:
+ static void
+ vpr(int code, const char *fmt, va_list ap)
+ {
++	/*
+ 	char path[MAXPATHLEN+1];
+ 	char siz[5], ino[5];
+ 	int64_t s, i;
+@@ -265,12 +271,13 @@ vpr(int code, const char *fmt, va_list ap)
+ 	}
+ 
+ 
+-	fprintf(stderr, "%s: ", getprogname());
++	fprintf(stderr, "%s: ", __progname);
+ 	if (fmt != NULL) {
+ 		vfprintf(stderr, fmt, ap);
+ 		fprintf(stderr, ": ");
+ 	}
+ 	fprintf(stderr, "%s\n", strerror(code));
++	*/
+ }
+ 
+ void

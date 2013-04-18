@@ -1,0 +1,29 @@
+$OpenBSD$
+--- testcases/rw/rw.c.orig	Sat Mar  2 15:20:52 2013
++++ testcases/rw/rw.c	Sat Mar  2 15:21:22 2013
+@@ -28,7 +28,6 @@
+ /* Write and check read a file */
+ 
+ #include <sys/cdefs.h>
+-__FBSDID("$FreeBSD: projects/stress2/testcases/rw/rw.c 187224 2009-01-14 16:03:10Z pho $");
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -40,6 +39,8 @@ __FBSDID("$FreeBSD: projects/stress2/testcases/rw/rw.c
+ 
+ #include "stress.h"
+ 
++extern char *__progname;
++
+ static char path[128];
+ static int starting_dir;
+ static unsigned long size;
+@@ -93,7 +94,7 @@ setup(int nb)
+ 	}
+ 
+ 	umask(0);
+-	sprintf(path,"%s.%05d", getprogname(), getpid());
++	sprintf(path,"%s.%05d", __progname, getpid());
+ 	(void)mkdir(path, 0770);
+ 	if (chdir(path) == -1)
+ 		err(1, "chdir(%s), %s:%d", path, __FILE__, __LINE__);

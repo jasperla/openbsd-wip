@@ -1,0 +1,58 @@
+$OpenBSD$
+--- syscalls/openat.c.orig	Sat Mar  2 19:14:21 2013
++++ syscalls/openat.c	Sat Mar  2 19:18:42 2013
+@@ -5,7 +5,9 @@
+ 
+ #include "trinity.h"
+ #include "sanitise.h"
++#ifdef __LINUX__
+ #include "compat.h"
++#endif
+ 
+ struct syscall syscall_openat = {
+ 	.name = "openat",
+@@ -18,13 +20,37 @@ struct syscall syscall_openat = {
+ 	.arg3type = ARG_LIST,
+ 	.arg3list = {
+ 		.num = 19,
+-		.values = { O_RDONLY, O_WRONLY, O_RDWR,
+-				O_CREAT, O_EXCL, O_NOCTTY,
+-				O_TRUNC, O_APPEND, O_NONBLOCK,
+-				O_SYNC, O_ASYNC,
+-				O_DIRECTORY, O_NOFOLLOW, O_CLOEXEC,
+-				O_DIRECT, O_NOATIME, O_PATH,
+-				O_DSYNC, O_LARGEFILE },
++		.values = {
++                O_RDONLY,
++                O_WRONLY,
++				O_RDWR,
++                O_CREAT,
++                O_EXCL,
++#ifdef __LINUX__
++                O_NOCTTY,
++#endif
++                O_TRUNC,
++                O_APPEND,
++                O_NONBLOCK,
++                O_SYNC,
++#ifdef __LINUX__
++                O_ASYNC,
++#endif
++                O_DIRECTORY,
++                O_NOFOLLOW,
++                O_CLOEXEC,
++#ifdef __LINUX__
++                O_DIRECT,
++                O_NOATIME,
++                O_PATH,
++                O_DSYNC,
++                O_LARGEFILE
++#endif
++#ifdef OpenBSD
++                O_SHLOCK,
++                O_EXLOCK
++#endif
++			},
+ 	},
+ 	.arg4name = "mode",
+ 	.flags = NEED_ALARM,

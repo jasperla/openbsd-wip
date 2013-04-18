@@ -1,0 +1,11 @@
+$OpenBSD$
+--- testcases/lockf2/lockf2.c.orig	Sat Mar  2 15:09:21 2013
++++ testcases/lockf2/lockf2.c	Sat Mar  2 15:09:42 2013
+@@ -34,7 +34,6 @@
+  */
+ 
+ #include <sys/cdefs.h>
+-__FBSDID("$FreeBSD: projects/stress2/testcases/lockf2/lockf2.c 187224 2009-01-14 16:03:10Z pho $");
+ 
+ #include <stdio.h>
+ #include <stdlib.h>

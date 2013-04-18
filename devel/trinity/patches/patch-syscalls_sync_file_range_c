@@ -1,0 +1,16 @@
+$OpenBSD$
+--- syscalls/sync_file_range.c.orig	Sat Mar  2 21:48:01 2013
++++ syscalls/sync_file_range.c	Sat Mar  2 21:48:39 2013
+@@ -2,6 +2,7 @@
+  * SYSCALL_DEFINE(sync_file_range)(int fd, loff_t offset, loff_t nbytes, unsigned int flags)
+  * SYSCALL_DEFINE(sync_file_range2)(int fd, unsigned int flags, loff_t offset, loff_t nbytes)
+  */
++#ifdef __LINUX__
+ #include <linux/fs.h>
+ #include <fcntl.h>
+ #include <stdlib.h>
+@@ -79,3 +80,4 @@ struct syscall syscall_sync_file_range2 = {
+ 	.arg4type = ARG_LEN,
+ 	.flags = NEED_ALARM,
+ };
++#endif
