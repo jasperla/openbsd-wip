@@ -4,8 +4,8 @@ VMEM_WARNING=	Yes
 
 COMMENT=	Python charting and plotting API
 
-MODPY_EGG_VERSION =	1.2.0
-DISTNAME =		matplotlib-1.2.0
+MODPY_EGG_VERSION =	1.2.1
+DISTNAME =		matplotlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		graphics devel math
 
