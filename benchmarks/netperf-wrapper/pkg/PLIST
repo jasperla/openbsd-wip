@@ -27,7 +27,7 @@ share/doc/netperf-wrapper/BUGS
 share/doc/netperf-wrapper/CHANGES
 share/doc/netperf-wrapper/README.rst
 share/doc/netperf-wrapper/misc/
-share/doc/netperf-wrapper/misc/fping_timestamps.patch
+@comment share/doc/netperf-wrapper/misc/fping_timestamps.patch
 share/doc/netperf-wrapper/misc/iperf_unix_timestamps.patch
 share/netperf-wrapper/
 share/netperf-wrapper/tests/
