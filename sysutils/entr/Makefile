@@ -2,8 +2,8 @@
 
 COMMENT = run arbitrary commands when files change
 
-DISTNAME = entr-1.8
-REV = f508b5eb0260
+DISTNAME = entr-1.9
+REV = 587c18272485
 
 CATEGORIES = sysutils
 
@@ -13,13 +13,18 @@ MAINTAINER = Eric Radman <ericshane@eradman.com>
 
 # ISC
 PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE_FTP = Yes
+PERMIT_DISTFILES_CDROM = Yes
+PERMIT_DISTFILES_FTP = Yes
 
 WANTLIB += c
 
 MASTER_SITES = http://entrproject.org/code/ \
 	https://bitbucket.org/eradman/entr/get/
 
+CONFIGURE_STYLE = gnu
 MAKE_FLAGS = CC="${CC}" LDFLAGS="${LDFLAGS}"
+MAKE_FILE = makefile
 WRKDIST = ${WRKDIR}/eradman-entr-${REV}
 
 TEST_TARGET = test
