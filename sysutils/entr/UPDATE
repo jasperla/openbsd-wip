@@ -1,5 +1,7 @@
-- No longer use pthreads.
+- No longer use pthreads
 - Support interactive applications by opening a TTY
 - Stat files that disappear before running a command
 - Always exit after failing to reopen a file under watch
 - Use main project web page (entrproject.org) as first mirror
+- New auto-reload option
+
