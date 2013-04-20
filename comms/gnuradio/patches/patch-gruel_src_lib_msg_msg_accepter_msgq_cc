@@ -1,0 +1,11 @@
+$OpenBSD$
+--- gruel/src/lib/msg/msg_accepter_msgq.cc.orig	Sat Apr 20 15:36:21 2013
++++ gruel/src/lib/msg/msg_accepter_msgq.cc	Sat Apr 20 15:36:29 2013
+@@ -23,6 +23,7 @@
+ #include <config.h>
+ #endif
+ 
++#include <cstddef>
+ #include <gruel/msg_accepter_msgq.h>
+ 
+ using namespace pmt;
