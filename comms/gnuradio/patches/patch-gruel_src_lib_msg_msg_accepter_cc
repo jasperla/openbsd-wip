@@ -1,0 +1,11 @@
+$OpenBSD$
+--- gruel/src/lib/msg/msg_accepter.cc.orig	Sat Apr 20 15:19:23 2013
++++ gruel/src/lib/msg/msg_accepter.cc	Sat Apr 20 15:19:31 2013
+@@ -24,6 +24,7 @@
+ #include "config.h"
+ #endif
+ 
++#include <cstddef>
+ #include <gruel/msg_accepter.h>
+ 
+ namespace gruel {
