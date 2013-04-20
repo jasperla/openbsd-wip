@@ -75,8 +75,7 @@ CONFIGURE_ARGS +=	--disable-backtrace \
 # C_COMPILER_USES_SSE turn on MZ_USE_JIT_SSE.
 # "-msse -mfpmath=sse" required by extflonum on i386 and probably on amd64.
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
-			-msse -mfpmath=sse" \
+			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			CFLAGS="${CFLAGS} -msse -mfpmath=sse"
 
 # MAKE_JOBS: If places is enabled, racket uses places channels. When places is
