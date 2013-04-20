@@ -33,6 +33,9 @@ RUN_DEPENDS=	devel/py-cheetah \
 #--   * gr-shd
 #--   * gr-wavelet
 
+# XXX doesnt find portaudio, does find jack
+
+
 #TEST_DEPENDS= 
 
 CONFIGURE_ARGS+= -DENABLE_DOXYGEN=OFF
