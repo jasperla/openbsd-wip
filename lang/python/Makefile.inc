@@ -134,7 +134,7 @@ post-extract:
 	rm -r ${WRKDIST}/Modules/expat
 
 post-patch:
-	${SUBST_CMD} ${WRKSRC}/configure.in
+	${SUBST_CMD} ${WRKSRC}/configure.ac
 
 post-configure:
 	@cd ${WRKSRC} && ${MAKE_PROGRAM} Makefile
