@@ -4,22 +4,21 @@ SHARED_ONLY=	Yes
 
 COMMENT=	practical and portable Scheme system
 
-V=		4.8.0
-DISTNAME=	chicken-$V
+DISTNAME=	chicken-4.8.0
 
 SHARED_LIBS=	chicken	6.0
 
 CATEGORIES=	lang
 
 HOMEPAGE=	http://www.call-cc.org/
-MASTER_SITES=	http://code.call-cc.org/releases/current/
+MASTER_SITES=	http://code.call-cc.org/releases/4.8.0/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-USE_GMAKE=	Yes
-
 WANTLIB=	c m pthread
+
+USE_GMAKE=	Yes
 
 MAKE_FLAGS+=	PLATFORM=bsd C_COMPILER="${CC}" CXX_COMPILER="${CXX}" \
 		C_COMPILER_OPTIONS="-DHAVE_CHICKEN_CONFIG_H" \
