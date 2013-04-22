@@ -25,7 +25,8 @@ MODPY_VERSION ?=	${MODPY_DEFAULT_VERSION_2}
 .else
 .  if ${MODPY_VERSION} != "2.5" && \
       ${MODPY_VERSION} != "2.7" && \
-      ${MODPY_VERSION} != "3.2"
+      ${MODPY_VERSION} != "3.2" && \
+      ${MODPY_VERSION} != "3.3"
 ERRORS += "Fatal: unknown or unsupported MODPY_VERSION: ${MODPY_VERSION}"
 .  endif
 .endif
