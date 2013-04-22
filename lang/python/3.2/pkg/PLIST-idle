@@ -2,7 +2,7 @@
 @option no-default-conflict
 @conflict python-idle->=3.2,<3.3
 @pkgpath lang/python3/3.2,-idle
-bin/idle3
+@comment bin/idle3
 bin/idle3.2
 lib/python3.2/idlelib/
 lib/python3.2/idlelib/AutoComplete.py
