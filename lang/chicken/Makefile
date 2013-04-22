@@ -6,7 +6,7 @@ COMMENT=	practical and portable Scheme system
 
 DISTNAME=	chicken-4.8.0.3
 
-SHARED_LIBS=	chicken	6.0
+SHARED_LIBS=	chicken	2.0
 
 CATEGORIES=	lang
 
