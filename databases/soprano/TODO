@@ -11,13 +11,16 @@ investigated further
 
 -------------------
 
+Many tests require running Soprano instance or try to fetch from external URLs
+(which seem to not work anymore either). Some are marked below. Beware, that
+mark does not mean that it's the only reason of test fail...
 
 The following tests FAILED:
           8 - redlandpersistentmodeltest (Failed)
-         13 - parsertest (Failed)
-         17 - cluceneindextest (OTHER_FAULT)
-         19 - localsocketmultithreadtest (Failed)
-         20 - sopranodsocketclienttest (Not Run)
+         13 - parsertest (Failed) [fetches remote URL]
+         17 - cluceneindextest (OTHER_FAULT) [fetches remote URL]
+         19 - localsocketmultithreadtest (Failed) [connect() to socket in homedir]
+         20 - sopranodsocketclienttest (Not Run) [connect() to socket in homedir]
          21 - sopranodbusclienttest (Not Run)
          22 - sopranodbusmultithreadtest (OTHER_FAULT)
          24 - virtuosobackendtest (Failed)

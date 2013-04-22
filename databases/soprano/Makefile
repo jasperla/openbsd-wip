@@ -5,7 +5,7 @@ COMMENT =	RDF framework
 CATEGORIES =	databases devel textproc sysutils
 HOMEPAGE =	http://soprano.sourceforge.net/
 DISTNAME =	soprano-2.9.0
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	soprano                   2.0
 SHARED_LIBS +=	sopranoclient             2.0
