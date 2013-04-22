@@ -112,6 +112,8 @@ WANTLIB-main +=	ffi
 
 USE_GROFF =	Yes
 
+AUTOCONF_VERSION ?=	2.69
+
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 # --srcdir is needed for systrace to work correctly
