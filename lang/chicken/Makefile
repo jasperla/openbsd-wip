@@ -4,7 +4,7 @@ SHARED_ONLY=	Yes
 
 COMMENT=	practical and portable Scheme system
 
-DISTNAME=	chicken-4.8.0
+DISTNAME=	chicken-4.8.0.3
 
 SHARED_LIBS=	chicken	6.0
 
@@ -30,6 +30,7 @@ MAKE_FILE=	GNUmakefile
 FAKE_FLAGS=	PREFIX=${TRUEPREFIX}
 
 TEST_TARGET=	check
+TEST_DEPENDS=	${BUILD_PKGPATH}
 
 pre-build:
 .if ${MACHINE_ARCH} == "hppa"
