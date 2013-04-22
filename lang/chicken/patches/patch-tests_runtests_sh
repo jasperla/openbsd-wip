@@ -1,10 +1,10 @@
 $OpenBSD$
---- tests/runtests.sh.orig	Sun Sep 30 13:47:11 2012
-+++ tests/runtests.sh	Sun Sep 30 13:47:56 2012
+--- tests/runtests.sh.orig	Tue Jan  8 19:24:01 2013
++++ tests/runtests.sh	Mon Apr 22 11:39:07 2013
 @@ -356,9 +356,10 @@ for s in 100000 120000 200000 250000 300000 350000 400
-     ../chicken ../utils.scm -:s$s -output-file tmp.c -include-path ..
+     ../chicken ../utils.scm -:s$s -output-file tmp.c -include-path .. 
  done
-
+ 
 -echo "======================================== symbol-GC tests ..."
 -$compile symbolgc-tests.scm
 -./a.out -:w
@@ -12,6 +12,6 @@ $OpenBSD$
 +#echo "======================================== symbol-GC tests ..."
 +#$compile symbolgc-tests.scm
 +#./a.out -:w
-
+ 
  echo "======================================== finalizer tests ..."
  $interpret -s test-finalizers.scm
