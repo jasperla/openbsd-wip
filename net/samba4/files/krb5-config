@@ -1,4 +1,31 @@
 #!/bin/sh
-# Samba 4 configurator actually parses this file instead of running it.
-libdir=/usr/lib
+# Part of Samba 4 configurator parses this file instead of running it,
+# so we have to have includedir and libdir defined like below.
+
 includedir=/usr/include/kerberosV
+libdir=/usr/lib
+libnames="krb5 gssapi"
+
+usage() {
+	echo "$(basename $0) [--cflags] [--libs]" >&2
+	exit 1
+}
+
+while [ $# -gt 0 ]; do
+	case $1 in
+	--libs)
+		for L in $libnames; do
+			ls $libdir/lib${L}.so.* | tail -1
+		done | xargs
+		;;
+	--cflags)
+		for D in $includedir; do
+			echo -I$D;
+		done | xargs
+		;;
+	*)
+		usage
+		;;
+	esac
+	shift
+done
