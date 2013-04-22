@@ -8,9 +8,6 @@ VERSION_SPEC =		>=2.7,<2.8
 CONFIGURE_ARGS +=	--with-cxx_main \
 			--with-system-expat
 
-post-patch:
-	${SUBST_CMD} ${WRKSRC}/configure.ac
-
 pre-configure:
 	touch ${WRKSRC}/pybuilddir.txt
 
