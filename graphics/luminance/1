@@ -17,9 +17,9 @@ EXTRACT_SUFX = 		.tar.bz2
 EXTRACT_CASES += *.tar.bz2) \
         ${BZIP2} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf - -C ${WRKDIST};;
 
-WANTLIB += Half Iex IlmImf QtGui QtNetwork QtSql QtWebKit QtXml c
-WANTLIB += exiv2 fftw3f fftw3f_threads gsl gslcblas jpeg lcms2 m
-WANTLIB += png pthread raw_r stdc++ tiff z
+WANTLIB += Half Iex IlmImf QtGui QtSql QtWebKit QtXml c exiv2
+WANTLIB += fftw3f fftw3f_threads gsl gslcblas jpeg lcms2 m png
+WANTLIB += pthread raw_r stdc++ tiff
 
 MODULES =		devel/cmake x11/qt4
 LIB_DEPENDS =		devel/gsl \
@@ -31,7 +31,8 @@ LIB_DEPENDS =		devel/gsl \
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/qt4
 
-CONFIGURE_ARGS += 	-DCMAKE_BUILD_TYPE=Release
+CONFIGURE_ARGS += 	-DCMAKE_BUILD_TYPE=Release \
+			-DLIBPNG_INCLUDE_DIR=${LOCALBASE}/include/libpng
 
 NO_TEST =		Yes
 
@@ -42,7 +43,7 @@ pre-configure:
 # Allow builds from release distfile to display correct git hash in "About"
 # dialog window.
 	@perl -pi -e \
-		's,@GIT_SHA1@,17472000c439bc5724771acfb7080145794a7fed,' \
+		's,@GIT_SHA1@,be5409f2ed028b0a509d3f4cd44a970a09d2ef6c,' \
 			${WRKSRC}/src/Common/GitSHA1.cpp.in
 # Point to the right location of GPL license text.
 	${SUBST_CMD} ${WRKSRC}/src/Common/archs.h
