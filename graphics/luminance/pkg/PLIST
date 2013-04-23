@@ -77,11 +77,9 @@ share/luminance-hdr/help/en/tonemapping_batch.html
 share/luminance-hdr/help/en/tonemapping_cli.html
 share/luminance-hdr/help/en/tonemapping_interactive.html
 share/luminance-hdr/help/en/workflow.html
-share/luminance-hdr/help/js/
-share/luminance-hdr/help/js/jquery.js
-share/luminance-hdr/help/js/jquery.jtabs.pack.js
 share/luminance-hdr/i18n/
 share/luminance-hdr/i18n/lang_cs.qm
+share/luminance-hdr/i18n/lang_da.qm
 share/luminance-hdr/i18n/lang_de.qm
 share/luminance-hdr/i18n/lang_es.qm
 share/luminance-hdr/i18n/lang_fi.qm
