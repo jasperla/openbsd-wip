@@ -3,6 +3,8 @@
 COMMENT =	KDE terminal emulator
 DISTNAME =	konsole-${MODKDE4_VERSION}
 
+# Check that sysctl() really could return EAGAIN (OpenBSDProcessInfo).
+
 SHARED_LIBS =	kdeinit4_konsole	0.0
 SHARED_LIBS +=	konsoleprivate		0.0
 

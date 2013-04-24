@@ -3,6 +3,8 @@
 COMMENT =	small and funny applications for KDE
 DISTNAME =	kdetoys-${MODKDE4_VERSION}
 
+# Amor misses OpenBSD mascot. Who'd like to fix this major issue?
+
 WANTLIB =  c m pthread stdc++ ${MODPY_WANTLIB}
 WANTLIB += ICE SM X11 Xext
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui

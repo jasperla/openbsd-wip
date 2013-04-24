@@ -4,6 +4,15 @@ COMMENT =	planetarium simulator for KDE
 DISTNAME =	kstars-${MODKDE4_VERSION}
 REVISION =	0
 
+# Crashed after following actions:
+#   1. Enable OpenGL;
+#   2. Play with map;
+#   3. Go to settings;
+#   4. Go to satellites options;
+#   5. Update satellites info;
+#   6. Enable showing satellites;
+#   7. Click "OK".
+
 WANTLIB =  c m pthread stdc++ z
 WANTLIB += GL GLU ICE SM X11 Xext
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtOpenGL

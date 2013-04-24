@@ -14,4 +14,6 @@ MODKDE4_USE =	libs
 
 LIB_DEPENDS = 	graphics/sane-backends
 
+# TODO: Doesn't need Qt at all.
+
 .include <bsd.port.mk>

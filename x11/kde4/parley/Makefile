@@ -3,6 +3,8 @@
 COMMENT =	vocabulary trainer for KDE
 DISTNAME =	parley-${MODKDE4_VERSION}
 
+# XXX Sometimes crashes, possibly due KHotNewStuff bugs.
+
 WANTLIB =  c m pthread stdc++
 WANTLIB += ICE SM X11 Xext Xrender
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork

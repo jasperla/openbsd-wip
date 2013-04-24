@@ -3,6 +3,8 @@
 COMMENT =	graph theory IDE for KDE
 DISTNAME =	rocs-${MODKDE4_VERSION}
 
+# XXX Crashes sometimes.
+
 #SHARED_LIBS =	rocslib			0.0 # 4.7
 SHARED_LIBS =	rocscore		0.0 # 4.10
 SHARED_LIBS +=	rocsvisualeditor	0.0 # 4.10

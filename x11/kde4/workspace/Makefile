@@ -4,6 +4,16 @@ COMMENT =	KDE workspace
 DISTNAME =	kde-workspace-${MODKDE4_VERSION}
 REVISION =	1
 
+# TODO:
+# Port ksysguard to OpenBSD (sensors framework, lsof(1) call replace and others).
+# 
+# Use something else instead of pciutils.
+# 
+# -- Performing Test HAVE_SETLOGIN
+# systrace: deny user: pers, prog: /usr/ports/pobj/kde-workspace-4.7.1/build-i386/CMakeFiles/CMakeTmp/cmTryCompileExec, pid: 19037(0)[20572], policy: /usr/bin/
+# env, filters: 233, syscall: native-setlogin(50), args: 4
+# -- Performing Test HAVE_SETLOGIN - Success
+
 SHARED_LIBS =	kdecorations			0.0 # 4.7
 SHARED_LIBS +=	kephal				0.0 # 4.7
 SHARED_LIBS +=	kfontinst			0.0 # 4.7
