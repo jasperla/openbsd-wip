@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/18 09:30:50 espie Exp $
+@comment $OpenBSD$
+@pkgpath x11/kde4/akonadi
 @bin bin/akonadi_agent_launcher
 @bin bin/akonadi_agent_server
 @bin bin/akonadi_control
