@@ -3,6 +3,12 @@
 COMMENT =	KDE local system administration tools
 DISTNAME =	kdeadmin-${MODKDE4_VERSION}
 
+# From configure:
+# -- rpm and deb file plugins necessary in system != UNIX ?
+# -- PORT kfile plugins!!!
+# 
+# TODO: ksystemlog: adapt "kernel" mode to OpenBSD.
+
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
