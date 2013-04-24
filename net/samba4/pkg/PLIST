@@ -260,8 +260,6 @@ lib/pkgconfig/smbclient.pc
 lib/pkgconfig/smbsharemodes.pc
 lib/pkgconfig/torture.pc
 lib/pkgconfig/wbclient.pc
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/_tevent.so
 lib/python${MODPY_VERSION}/site-packages/ldb.so
 lib/python${MODPY_VERSION}/site-packages/samba/
@@ -307,6 +305,7 @@ lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/winreg.so
 lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/wkssvc.so
 lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/xattr.so
 lib/python${MODPY_VERSION}/site-packages/samba/dckeytab.so
+lib/python${MODPY_VERSION}/site-packages/samba/descriptor.py
 lib/python${MODPY_VERSION}/site-packages/samba/drs_utils.py
 lib/python${MODPY_VERSION}/site-packages/samba/dsdb.so
 lib/python${MODPY_VERSION}/site-packages/samba/external/
@@ -504,7 +503,6 @@ lib/python${MODPY_VERSION}/site-packages/samba/provision/
 lib/python${MODPY_VERSION}/site-packages/samba/provision/__init__.py
 lib/python${MODPY_VERSION}/site-packages/samba/provision/backend.py
 lib/python${MODPY_VERSION}/site-packages/samba/provision/common.py
-lib/python${MODPY_VERSION}/site-packages/samba/provision/descriptor.py
 lib/python${MODPY_VERSION}/site-packages/samba/provision/sambadns.py
 lib/python${MODPY_VERSION}/site-packages/samba/registry.so
 lib/python${MODPY_VERSION}/site-packages/samba/samba3/
@@ -520,6 +518,7 @@ lib/python${MODPY_VERSION}/site-packages/samba/security.so
 lib/python${MODPY_VERSION}/site-packages/samba/sites.py
 lib/python${MODPY_VERSION}/site-packages/samba/smb.so
 lib/python${MODPY_VERSION}/site-packages/samba/socket_wrapper.so
+lib/python${MODPY_VERSION}/site-packages/samba/tdb_util.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/
 lib/python${MODPY_VERSION}/site-packages/samba/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/auth.py
@@ -701,6 +700,7 @@ lib/samba/libheimntlm-samba4.so.1
 lib/samba/libhx509-samba4.so.5
 @bin lib/samba/libhx509-samba4.so.5.0.0
 lib/samba/libidmap.so
+lib/samba/libiniparser.so
 lib/samba/libinterfaces.so
 lib/samba/libkdc-samba4.so.2
 @bin lib/samba/libkdc-samba4.so.2.0.0
@@ -762,7 +762,7 @@ lib/samba/libtdb.so.1
 @bin lib/samba/libtdb.so.1.2.11
 lib/samba/libtdb_compat.so
 lib/samba/libtevent.so.0
-@bin lib/samba/libtevent.so.0.9.17
+@bin lib/samba/libtevent.so.0.9.18
 lib/samba/libtrusts_util.so
 lib/samba/libuid_wrapper.so
 lib/samba/libutil_cmdline.so
@@ -837,16 +837,40 @@ lib/samba/vfs/syncops.so
 lib/samba/vfs/time_audit.so
 lib/samba/vfs/xattr_tdb.so
 lib/winbind_krb5_locator.so
-@bin sbin/nmbd
-@bin sbin/samba
-sbin/samba_dnsupdate
-sbin/samba_kcc
-sbin/samba_spnupdate
-sbin/samba_upgradedns
-sbin/samba_upgradeprovision
-@bin sbin/smbd
-@bin sbin/swat
-@bin sbin/winbindd
+libdata/perl5/Parse/
+libdata/perl5/Parse/Pidl/
+libdata/perl5/Parse/Pidl.pm
+libdata/perl5/Parse/Pidl/CUtil.pm
+libdata/perl5/Parse/Pidl/Compat.pm
+libdata/perl5/Parse/Pidl/Dump.pm
+libdata/perl5/Parse/Pidl/Expr.pm
+libdata/perl5/Parse/Pidl/IDL.pm
+libdata/perl5/Parse/Pidl/NDR.pm
+libdata/perl5/Parse/Pidl/ODL.pm
+libdata/perl5/Parse/Pidl/Samba3/
+libdata/perl5/Parse/Pidl/Samba3/ClientNDR.pm
+libdata/perl5/Parse/Pidl/Samba3/ServerNDR.pm
+libdata/perl5/Parse/Pidl/Samba4/
+libdata/perl5/Parse/Pidl/Samba4.pm
+libdata/perl5/Parse/Pidl/Samba4/COM/
+libdata/perl5/Parse/Pidl/Samba4/COM/Header.pm
+libdata/perl5/Parse/Pidl/Samba4/COM/Proxy.pm
+libdata/perl5/Parse/Pidl/Samba4/COM/Stub.pm
+libdata/perl5/Parse/Pidl/Samba4/Header.pm
+libdata/perl5/Parse/Pidl/Samba4/NDR/
+libdata/perl5/Parse/Pidl/Samba4/NDR/Client.pm
+libdata/perl5/Parse/Pidl/Samba4/NDR/Parser.pm
+libdata/perl5/Parse/Pidl/Samba4/NDR/Server.pm
+libdata/perl5/Parse/Pidl/Samba4/Python.pm
+libdata/perl5/Parse/Pidl/Samba4/TDR.pm
+libdata/perl5/Parse/Pidl/Samba4/Template.pm
+libdata/perl5/Parse/Pidl/Typelist.pm
+libdata/perl5/Parse/Pidl/Util.pm
+libdata/perl5/Parse/Pidl/Wireshark/
+libdata/perl5/Parse/Pidl/Wireshark/Conformance.pm
+libdata/perl5/Parse/Pidl/Wireshark/NDR.pm
+libdata/perl5/Parse/Yapp/
+libdata/perl5/Parse/Yapp/Driver.pm
 @man man/man1/dbwrap_tool.1
 @man man/man1/findsmb.1
 @man man/man1/gentest.1
@@ -957,40 +981,15 @@ sbin/samba_upgradeprovision
 @man man/man8/vfs_tsmsm.8
 @man man/man8/vfs_xattr_tdb.8
 @man man/man8/winbindd.8
-libdata/perl5/Parse/
-libdata/perl5/Parse/Pidl/
-libdata/perl5/Parse/Pidl.pm
-libdata/perl5/Parse/Pidl/CUtil.pm
-libdata/perl5/Parse/Pidl/Compat.pm
-libdata/perl5/Parse/Pidl/Dump.pm
-libdata/perl5/Parse/Pidl/Expr.pm
-libdata/perl5/Parse/Pidl/IDL.pm
-libdata/perl5/Parse/Pidl/NDR.pm
-libdata/perl5/Parse/Pidl/ODL.pm
-libdata/perl5/Parse/Pidl/Samba3/
-libdata/perl5/Parse/Pidl/Samba3/ClientNDR.pm
-libdata/perl5/Parse/Pidl/Samba3/ServerNDR.pm
-libdata/perl5/Parse/Pidl/Samba4/
-libdata/perl5/Parse/Pidl/Samba4.pm
-libdata/perl5/Parse/Pidl/Samba4/COM/
-libdata/perl5/Parse/Pidl/Samba4/COM/Header.pm
-libdata/perl5/Parse/Pidl/Samba4/COM/Proxy.pm
-libdata/perl5/Parse/Pidl/Samba4/COM/Stub.pm
-libdata/perl5/Parse/Pidl/Samba4/Header.pm
-libdata/perl5/Parse/Pidl/Samba4/NDR/
-libdata/perl5/Parse/Pidl/Samba4/NDR/Client.pm
-libdata/perl5/Parse/Pidl/Samba4/NDR/Parser.pm
-libdata/perl5/Parse/Pidl/Samba4/NDR/Server.pm
-libdata/perl5/Parse/Pidl/Samba4/Python.pm
-libdata/perl5/Parse/Pidl/Samba4/TDR.pm
-libdata/perl5/Parse/Pidl/Samba4/Template.pm
-libdata/perl5/Parse/Pidl/Typelist.pm
-libdata/perl5/Parse/Pidl/Util.pm
-libdata/perl5/Parse/Pidl/Wireshark/
-libdata/perl5/Parse/Pidl/Wireshark/Conformance.pm
-libdata/perl5/Parse/Pidl/Wireshark/NDR.pm
-libdata/perl5/Parse/Yapp/
-libdata/perl5/Parse/Yapp/Driver.pm
+@bin sbin/nmbd
+@bin sbin/samba
+sbin/samba_dnsupdate
+sbin/samba_kcc
+sbin/samba_spnupdate
+sbin/samba_upgradedns
+@bin sbin/smbd
+@bin sbin/swat
+@bin sbin/winbindd
 share/samba/
 share/samba/codepages/
 share/samba/codepages/de.msg

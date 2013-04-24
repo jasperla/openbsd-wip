@@ -46,7 +46,8 @@ MASTER_SITES =		http://ftp.samba.org/pub/samba/stable/ \
 MODULES =		devel/gettext lang/python
 MODPY_RUNDEP =		No
 
-BUILD_DEPENDS =		textproc/libxslt
+BUILD_DEPENDS =		textproc/docbook-xsl \
+			textproc/libxslt
 #RUN_DEPENDS =		???
 
 LIB_DEPENDS =		databases/openldap \
