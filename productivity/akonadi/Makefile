@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/22 08:37:02 espie Exp $
+# $OpenBSD$
 
 CATEGORIES =	productivity
 COMMENT =	PIM cache and access services
@@ -33,7 +33,7 @@ LIB_DEPENDS =		databases/soprano>=2.9.0 \
 			devel/boost
 
 # XXX (buggy) dbconfigtest fails due to SQLITE being default,
-# and it doesn't work to fix
+# and it doesn't worth to fix
 CONFIGURE_ARGS =	-DDATABASE_BACKEND:String=SQLITE \
 			-DINSTALL_QSQLITE_IN_QT_PREFIX:Bool=Yes
 
