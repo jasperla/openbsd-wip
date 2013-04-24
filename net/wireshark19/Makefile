@@ -3,7 +3,7 @@
 COMMENT-main=	graphical network protocol analyzer
 COMMENT-text=	network protocol analyzer
 
-VER=		1.9.1
+VER=		1.9.2
 WVER=		${VER}
 DISTNAME=	wireshark-${WVER}
 PKGNAME-main=	wireshark19-${VER}

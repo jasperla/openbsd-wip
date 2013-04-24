@@ -1,6 +1,6 @@
 # $OpenBSD:$
 
-COMMENT =	Parse directory listing
+COMMENT =	parse directory listing
 
 DISTNAME =	File-Listing-6.04
 CPAN_AUTHOR =	GAAS
