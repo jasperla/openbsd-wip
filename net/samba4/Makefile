@@ -89,10 +89,4 @@ pre-configure:
 do-build:
 	cd ${WRKBUILD} && env -i ${MAKE_ENV} ${WAF} -v -j ${MAKE_JOBS} build
 
-post-install:
-	cd ${PREFIX}/share/perl5 && for D in *; do \
-		rm -Rf ${PREFIX}/libdata/perl5/$D; \
-		mv $D ${PREFIX}/libdata/perl5/; \
-	done
-
 .include <bsd.port.mk>
