@@ -81,7 +81,7 @@ MAKE_ENV =		PYTHON=${MODPY_BIN} LC_ALL=en_US.UTF-8
 
 WAF =			${WRKSRC}/buildtools/bin/waf
 
-post-patch:
+pre-configure:
 	find ${WRKSRC} -type f | xargs ${MODPY_BIN_ADJ}
 	${SUBST_CMD} ${WRKSRC}/lib/testtools/testtools/tests/test_compat.py
 	cp ${FILESDIR}/krb5-config ${WRKDIR}/bin
