@@ -51,6 +51,7 @@ BUILD_DEPENDS =		textproc/docbook-xsl \
 #RUN_DEPENDS =		???
 
 LIB_DEPENDS =		databases/openldap \
+			devel/iniparser \
 			devel/libexecinfo \
 			net/avahi \
 			security/gnutls

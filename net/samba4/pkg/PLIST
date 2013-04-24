@@ -700,7 +700,6 @@ lib/samba/libheimntlm-samba4.so.1
 lib/samba/libhx509-samba4.so.5
 @bin lib/samba/libhx509-samba4.so.5.0.0
 lib/samba/libidmap.so
-lib/samba/libiniparser.so
 lib/samba/libinterfaces.so
 lib/samba/libkdc-samba4.so.2
 @bin lib/samba/libkdc-samba4.so.2.0.0
