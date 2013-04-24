@@ -1,0 +1,51 @@
+$OpenBSD$
+--- lib/Makefile.local.orig	Sun Feb 17 15:39:46 2013
++++ lib/Makefile.local	Wed Apr 24 17:33:34 2013
+@@ -26,7 +26,15 @@ SONAME = libnotmuch.$(LIBNOTMUCH_VERSION_MAJOR).$(LIBR
+ LIBNAME = libnotmuch.$(LIBNOTMUCH_VERSION_MAJOR).$(LIBNOTMUCH_VERSION_MINOR).$(LIBNOTMUCH_VERSION_RELEASE).$(LIBRARY_SUFFIX)
+ LIBRARY_LINK_FLAG = -dynamiclib -install_name $(SONAME) -compatibility_version $(LIBNOTMUCH_VERSION_MAJOR).$(LIBNOTMUCH_VERSION_MINOR) -current_version $(LIBNOTMUCH_VERSION_MAJOR).$(LIBNOTMUCH_VERSION_MINOR).$(LIBNOTMUCH_VERSION_RELEASE)
+ else
++ifeq ($(PLATFORM),OPENBSD)
+ LIBRARY_SUFFIX = so
++LINKER_NAME = libnotmuch.$(LIBRARY_SUFFIX).$(LIBNOTMUCH_VERSION_MAJOR).$(LIBNOTMUCH_VERSION_MINOR)
++SONAME = $(LINKER_NAME)
++LIBNAME = $(LINKER_NAME)
++LIBRARY_LINK_FLAG = -shared -Wl,--version-script=notmuch.sym,-soname=$(SONAME)
++# ... -Wl,--no-undefined
++else
++LIBRARY_SUFFIX = so
+ LINKER_NAME = libnotmuch.$(LIBRARY_SUFFIX)
+ SONAME = $(LINKER_NAME).$(LIBNOTMUCH_VERSION_MAJOR)
+ LIBNAME = $(SONAME).$(LIBNOTMUCH_VERSION_MINOR).$(LIBNOTMUCH_VERSION_RELEASE)
+@@ -40,6 +48,7 @@ LIBRARY_INSTALL_POST_COMMAND=ldconfig
+ endif
+ endif
+ endif
++endif
+ 
+ dir := lib
+ extra_cflags += -I$(srcdir)/$(dir) -fPIC
+@@ -79,19 +88,23 @@ $(dir)/$(LIBNAME): $(libnotmuch_modules) notmuch.sym u
+ notmuch.sym: $(srcdir)/$(dir)/notmuch.h $(libnotmuch_modules)
+ 	sh $(srcdir)/$(lib)/gen-version-script.sh $< $(libnotmuch_modules) > $@
+ 
++ifneq ($(PLATFORM),OPENBSD)
+ $(dir)/$(SONAME): $(dir)/$(LIBNAME)
+ 	ln -sf $(LIBNAME) $@
+ 
+ $(dir)/$(LINKER_NAME): $(dir)/$(SONAME)
+ 	ln -sf $(LIBNAME) $@
++endif
+ 
+ install: install-$(dir)
+ 
+ install-$(dir): $(dir)/$(LIBNAME)
+ 	mkdir -p "$(DESTDIR)$(libdir)/"
+ 	install -m0644 "$(lib)/$(LIBNAME)" "$(DESTDIR)$(libdir)/"
++ifneq ($(PLATFORM),OPENBSD)
+ 	ln -sf $(LIBNAME) "$(DESTDIR)$(libdir)/$(SONAME)"
+ 	ln -sf $(LIBNAME) "$(DESTDIR)$(libdir)/$(LINKER_NAME)"
++endif
+ 	mkdir -p "$(DESTDIR)$(includedir)"
+ 	install -m0644 "$(srcdir)/$(lib)/notmuch.h" "$(DESTDIR)$(includedir)/"
+ 	$(LIBRARY_INSTALL_POST_COMMAND)
