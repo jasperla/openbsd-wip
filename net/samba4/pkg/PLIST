@@ -1145,3 +1145,8 @@ share/samba/swat/lang/tr/images/samba.gif
 share/samba/swat/lang/tr/images/shares.gif
 share/samba/swat/lang/tr/images/status.gif
 share/samba/swat/lang/tr/images/viewconfig.gif
+@sample /var/cache/samba/
+@sample /var/log/samba/
+@sample /var/run/samba/
+@sample /var/samba/
+@sample /var/samba/private/

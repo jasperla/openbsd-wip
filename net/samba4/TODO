@@ -7,3 +7,5 @@ Does not respect SHARED_LIBS.
 https://bugzilla.samba.org/show_bug.cgi?id=9774
 
 Probably could use our com_err, need to investigate configure script more.
+
+Build fails with devel/readline installed.
