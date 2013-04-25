@@ -4,8 +4,7 @@ SHARED_ONLY =		Yes
 COMMENT =		SMB and CIFS client and server for UNIX
 DISTNAME =		samba-4.0.5
 
-SHARED_LIBS =		com_err-samba4		0.0 \
-			dcerpc-atsvc		0.0 \
+SHARED_LIBS =		dcerpc-atsvc		0.0 \
 			dcerpc-binding		0.0 \
 			dcerpc-samr		0.0 \
 			dcerpc-server		0.0 \
@@ -123,6 +122,8 @@ post-install:
 		mv ${PREFIX}/lib/lib${_l}.so.+([0-9]).+([0-9]) \
 		   ${PREFIX}/lib/lib${_l}.so.${_v}; \
 	fi
+	ln -s lib${_l}.so.${_v} `echo '${PREFIX}/lib/lib${_l}.so.${_v}' | \
+	    sed -Ee 's/\.[0-9]+$$//'`
 .endfor
 
 .include <bsd.port.mk>
