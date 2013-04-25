@@ -37,8 +37,8 @@ HOMEPAGE =		http://www.samba.org/
 # GPLv3, LGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-# "make port-lib-depends-check" can help
-#WANTLIB =		???
+WANTLIB += avahi-client avahi-common c cups execinfo iniparser
+WANTLIB += lber ldap popt pthread sasl2 z ${MODPY_WANTLIB}
 
 MASTER_SITES =		http://ftp.samba.org/pub/samba/stable/ \
 			http://ftp.samba.org/pub/samba/old-versions/
@@ -53,7 +53,10 @@ BUILD_DEPENDS =		textproc/docbook-xsl \
 LIB_DEPENDS =		databases/openldap \
 			devel/iniparser \
 			devel/libexecinfo \
+			devel/popt \
 			net/avahi \
+			print/cups,-libs \
+			security/cyrus-sasl2 \
 			security/gnutls
 #TEST_DEPENDS =		
 
