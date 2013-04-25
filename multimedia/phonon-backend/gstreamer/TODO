@@ -1,9 +1,0 @@
-Printed on stderr of (some?) programs:
-
-
-(gst-plugin-scanner:18789): GLib-GObject-WARNING **: cannot register existing type `GstVorbisDec'
-
-(gst-plugin-scanner:18789): GLib-CRITICAL **: g_once_init_leave: assertion `result != 0' failed
-
-(gst-plugin-scanner:18789): GStreamer-CRITICAL **: gst_element_register: assertion `g_type_is_a (type, GST_TYPE_ELEMENT)' failed
-
