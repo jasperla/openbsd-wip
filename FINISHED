@@ -18,7 +18,6 @@ net/hotot		Ready for import. Sent to ports@ 2012-12-06.
 lang/utop		ready for import. Waiting for libcharset fix in ocaml-lamda-term
 net/unison/stable	ready for import.
 www/ocaml-tyxml		ready for import.
-sysutils/entr		ready for import, sent to ports 2013-01-11
 multimedia/fuzemux	sent to ports 2013-01-13
 multimedia/video4fuze	sent to ports 2013-01-13
 net/tkabber		ready for import, sent to ports 2013-01-30
