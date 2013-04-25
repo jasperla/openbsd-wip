@@ -84,11 +84,14 @@ CONFIGURE_ARGS =	configure \
 			--pedantic \
 			--without-pam
 
-CONFIGURE_ENV =		LC_ALL=en_US.UTF-8
-MAKE_ENV =		PYTHON=${MODPY_BIN} LC_ALL=en_US.UTF-8
-#COPTS =			-Wno-unused
-
 WAF =			${WRKSRC}/buildtools/bin/waf
+WAF_ARGS =		-v -j ${MAKE_JOBS}
+
+CONFIGURE_ENV =		LC_ALL=en_US.UTF-8
+
+MAKE_ENV =		LC_ALL=en_US.UTF-8 \
+			PYTHON=${MODPY_BIN} \
+			WAF_ARGS="${WAF_ARGS}"
 
 post-extract:
 	cp ${FILESDIR}/krb5-config ${WRKDIR}/bin
@@ -101,9 +104,6 @@ post-patch:
 post-configure:
 	perl -pi.ldflags -e 's/^LINKFLAGS_PYEMBED.*/LINKFLAGS_PYEMBED = []/' \
 	    ${WRKBUILD}/bin/c4che/default.cache.py
-
-do-build:
-	cd ${WRKBUILD} && env -i ${MAKE_ENV} ${WAF} -v -j ${MAKE_JOBS} build
 
 pre-install:
 .for _l _v in ${SHARED_LIBS}
