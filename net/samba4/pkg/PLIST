@@ -161,15 +161,25 @@ include/samba-4.0/util/time.h
 include/samba-4.0/util/xfile.h
 include/samba-4.0/util_ldb.h
 include/samba-4.0/wbclient.h
+lib/libdcerpc-atsvc.so.0
 @lib lib/libdcerpc-atsvc.so.${LIBdcerpc-atsvc_VERSION}
+lib/libdcerpc-binding.so.0
 @lib lib/libdcerpc-binding.so.${LIBdcerpc-binding_VERSION}
+lib/libdcerpc-samr.so.0
 @lib lib/libdcerpc-samr.so.${LIBdcerpc-samr_VERSION}
+lib/libdcerpc-server.so.0
 @lib lib/libdcerpc-server.so.${LIBdcerpc-server_VERSION}
+lib/libdcerpc.so.0
 @lib lib/libdcerpc.so.${LIBdcerpc_VERSION}
+lib/libgensec.so.0
 @lib lib/libgensec.so.${LIBgensec_VERSION}
+lib/libndr-krb5pac.so.0
 @lib lib/libndr-krb5pac.so.${LIBndr-krb5pac_VERSION}
+lib/libndr-nbt.so.0
 @lib lib/libndr-nbt.so.${LIBndr-nbt_VERSION}
+lib/libndr-standard.so.0
 @lib lib/libndr-standard.so.${LIBndr-standard_VERSION}
+lib/libndr.so.0
 @lib lib/libndr.so.${LIBndr_VERSION}
 lib/libnetapi.so
 @bin lib/libnetapi.so.0
@@ -177,13 +187,21 @@ lib/libnss_wins.so
 @bin lib/libnss_wins.so.2
 lib/libpdb.so
 @bin lib/libpdb.so.0
+lib/libregistry.so.0
 @lib lib/libregistry.so.${LIBregistry_VERSION}
+lib/libsamba-credentials.so.0
 @lib lib/libsamba-credentials.so.${LIBsamba-credentials_VERSION}
+lib/libsamba-hostconfig.so.0
 @lib lib/libsamba-hostconfig.so.${LIBsamba-hostconfig_VERSION}
+lib/libsamba-policy.so.0
 @lib lib/libsamba-policy.so.${LIBsamba-policy_VERSION}
+lib/libsamba-util.so.0
 @lib lib/libsamba-util.so.${LIBsamba-util_VERSION}
+lib/libsamdb.so.0
 @lib lib/libsamdb.so.${LIBsamdb_VERSION}
+lib/libsmbclient-raw.so.0
 @lib lib/libsmbclient-raw.so.${LIBsmbclient-raw_VERSION}
+lib/libsmbclient.so.0
 @lib lib/libsmbclient.so.${LIBsmbclient_VERSION}
 lib/libsmbconf.so
 @bin lib/libsmbconf.so.0
@@ -191,8 +209,11 @@ lib/libsmbldap.so
 @bin lib/libsmbldap.so.0
 lib/libsmbsharemodes.so
 @bin lib/libsmbsharemodes.so.0
+lib/libtevent-util.so.0
 @lib lib/libtevent-util.so.${LIBtevent-util_VERSION}
+lib/libtorture.so.0
 @lib lib/libtorture.so.${LIBtorture_VERSION}
+lib/libwbclient.so.0
 @lib lib/libwbclient.so.${LIBwbclient_VERSION}
 lib/mit_samba.so
 lib/pkgconfig/dcerpc.pc
