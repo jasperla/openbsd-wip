@@ -4,8 +4,7 @@ SHARED_ONLY =		Yes
 COMMENT =		SMB and CIFS client and server for UNIX
 DISTNAME =		samba-4.0.5
 
-SHARED_LIBS =		wbclient		0.0 \
-			com_err-samba4		0.0 \
+SHARED_LIBS =		com_err-samba4		0.0 \
 			dcerpc-atsvc		0.0 \
 			dcerpc-binding		0.0 \
 			dcerpc-samr		0.0 \
@@ -38,7 +37,7 @@ HOMEPAGE =		http://www.samba.org/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += avahi-client avahi-common c cups execinfo iniparser
-WANTLIB += lber ldap popt pthread sasl2 z ${MODPY_WANTLIB}
+WANTLIB += lber ldap popt pthread sasl2 util z ${MODPY_WANTLIB}
 
 MASTER_SITES =		http://ftp.samba.org/pub/samba/stable/ \
 			http://ftp.samba.org/pub/samba/old-versions/
@@ -46,9 +45,13 @@ MASTER_SITES =		http://ftp.samba.org/pub/samba/stable/ \
 MODULES =		devel/gettext lang/python
 MODPY_RUNDEP =		No
 
-BUILD_DEPENDS =		textproc/docbook-xsl \
+# TODO check if GNUtls is needed at all.
+
+BUILD_DEPENDS =		security/gnutls \
+			textproc/docbook-xsl \
 			textproc/libxslt
-#RUN_DEPENDS =		???
+
+RUN_DEPENDS =		security/gnutls
 
 LIB_DEPENDS =		databases/openldap \
 			devel/iniparser \
@@ -71,6 +74,7 @@ CONFIGURE_ARGS =	configure \
 			--localedir=${PREFIX}/share/locale \
 			--localstatedir=/var \
 			--sharedstatedir=/var \
+			--sysconfdir=${SYSCONFDIR} \
 			--with-statedir=/var/samba \
 			--with-privatedir=/var/samba/private \
 			--with-lockdir=/var/run/samba \
@@ -93,19 +97,32 @@ post-patch:
 	find ${WRKSRC} -type f | xargs ${MODPY_BIN_ADJ}
 	${SUBST_CMD} ${WRKSRC}/lib/testtools/testtools/tests/test_compat.py
 
+# Avoid bogus -L/usr/local/lib at the start of linker options
+post-configure:
+	perl -pi.ldflags -e 's/^LINKFLAGS_PYEMBED.*/LINKFLAGS_PYEMBED = []/' \
+	    ${WRKBUILD}/bin/c4che/default.cache.py
+
 do-build:
 	cd ${WRKBUILD} && env -i ${MAKE_ENV} ${WAF} -v -j ${MAKE_JOBS} build
 
-post-install:
-	cd ${PREFIX}/share/perl5 && for D in *; do \
-		rm -Rf ${PREFIX}/libdata/perl5/$D; \
-		mv $D ${PREFIX}/libdata/perl5/; \
-	done
+pre-install:
 .for _l _v in ${SHARED_LIBS}
-	mv ${PREFIX}/lib/lib${_l}.so.+([0-9]).+([0-9]).+([0-9])
-	   ${PREFIX}/lib/lib${_l}.so.${_v}
+	rm -f ${PREFIX}/lib/lib${_l}.so.${_v}
+.endfor
+
+# XXX Need to handle com_err-samba4 shared library, too.
+post-install:
+.for _l _v in ${SHARED_LIBS}
 	rm -f ${PREFIX}/lib/lib${_l}.so.+([0-9])
 	rm -f ${PREFIX}/lib/lib${_l}.so
+	if [ -f ${PREFIX}/lib/lib${_l}.so.+([0-9]).+([0-9]).+([0-9]) ]; then \
+		mv ${PREFIX}/lib/lib${_l}.so.+([0-9]).+([0-9]).+([0-9]) \
+		   ${PREFIX}/lib/lib${_l}.so.${_v}; \
+	elif [ ${PREFIX}/lib/lib${_l}.so.+([0-9]).+([0-9]) != \
+	     ${PREFIX}/lib/lib${_l}.so.${_v} ]; then \
+		mv ${PREFIX}/lib/lib${_l}.so.+([0-9]).+([0-9]) \
+		   ${PREFIX}/lib/lib${_l}.so.${_v}; \
+	fi
 .endfor
 
 .include <bsd.port.mk>
