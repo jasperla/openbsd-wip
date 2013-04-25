@@ -45,8 +45,6 @@ bin/samba-tool
 @bin bin/tdbtool
 @bin bin/testparm
 @bin bin/wbinfo
-etc/
-etc/samba/
 include/samba-4.0/
 include/samba-4.0/charset.h
 include/samba-4.0/core/
@@ -163,80 +161,38 @@ include/samba-4.0/util/time.h
 include/samba-4.0/util/xfile.h
 include/samba-4.0/util_ldb.h
 include/samba-4.0/wbclient.h
-lib/libdcerpc-atsvc.so
-lib/libdcerpc-atsvc.so.0
-@bin lib/libdcerpc-atsvc.so.0.0.1
-lib/libdcerpc-binding.so
-lib/libdcerpc-binding.so.0
-@bin lib/libdcerpc-binding.so.0.0.1
-lib/libdcerpc-samr.so
-lib/libdcerpc-samr.so.0
-@bin lib/libdcerpc-samr.so.0.0.1
-lib/libdcerpc-server.so
-lib/libdcerpc-server.so.0
-@bin lib/libdcerpc-server.so.0.0.1
-lib/libdcerpc.so
-lib/libdcerpc.so.0
-@bin lib/libdcerpc.so.0.0.1
-lib/libgensec.so
-lib/libgensec.so.0
-@bin lib/libgensec.so.0.0.1
-lib/libndr-krb5pac.so
-lib/libndr-krb5pac.so.0
-@bin lib/libndr-krb5pac.so.0.0.1
-lib/libndr-nbt.so
-lib/libndr-nbt.so.0
-@bin lib/libndr-nbt.so.0.0.1
-lib/libndr-standard.so
-lib/libndr-standard.so.0
-@bin lib/libndr-standard.so.0.0.1
-lib/libndr.so
-lib/libndr.so.0
-@bin lib/libndr.so.0.0.1
+@lib lib/libdcerpc-atsvc.so.${LIBdcerpc-atsvc_VERSION}
+@lib lib/libdcerpc-binding.so.${LIBdcerpc-binding_VERSION}
+@lib lib/libdcerpc-samr.so.${LIBdcerpc-samr_VERSION}
+@lib lib/libdcerpc-server.so.${LIBdcerpc-server_VERSION}
+@lib lib/libdcerpc.so.${LIBdcerpc_VERSION}
+@lib lib/libgensec.so.${LIBgensec_VERSION}
+@lib lib/libndr-krb5pac.so.${LIBndr-krb5pac_VERSION}
+@lib lib/libndr-nbt.so.${LIBndr-nbt_VERSION}
+@lib lib/libndr-standard.so.${LIBndr-standard_VERSION}
+@lib lib/libndr.so.${LIBndr_VERSION}
 lib/libnetapi.so
 @bin lib/libnetapi.so.0
 lib/libnss_wins.so
 @bin lib/libnss_wins.so.2
 lib/libpdb.so
 @bin lib/libpdb.so.0
-lib/libregistry.so
-lib/libregistry.so.0
-@bin lib/libregistry.so.0.0.1
-lib/libsamba-credentials.so
-lib/libsamba-credentials.so.0
-@bin lib/libsamba-credentials.so.0.0.1
-lib/libsamba-hostconfig.so
-lib/libsamba-hostconfig.so.0
-@bin lib/libsamba-hostconfig.so.0.0.1
-lib/libsamba-policy.so
-lib/libsamba-policy.so.0
-@bin lib/libsamba-policy.so.0.0.1
-lib/libsamba-util.so
-lib/libsamba-util.so.0
-@bin lib/libsamba-util.so.0.0.1
-lib/libsamdb.so
-lib/libsamdb.so.0
-@bin lib/libsamdb.so.0.0.1
-lib/libsmbclient-raw.so
-lib/libsmbclient-raw.so.0
-@bin lib/libsmbclient-raw.so.0.0.1
-lib/libsmbclient.so
-lib/libsmbclient.so.0
-@bin lib/libsmbclient.so.0.2.0
+@lib lib/libregistry.so.${LIBregistry_VERSION}
+@lib lib/libsamba-credentials.so.${LIBsamba-credentials_VERSION}
+@lib lib/libsamba-hostconfig.so.${LIBsamba-hostconfig_VERSION}
+@lib lib/libsamba-policy.so.${LIBsamba-policy_VERSION}
+@lib lib/libsamba-util.so.${LIBsamba-util_VERSION}
+@lib lib/libsamdb.so.${LIBsamdb_VERSION}
+@lib lib/libsmbclient-raw.so.${LIBsmbclient-raw_VERSION}
+@lib lib/libsmbclient.so.${LIBsmbclient_VERSION}
 lib/libsmbconf.so
 @bin lib/libsmbconf.so.0
 lib/libsmbldap.so
 @bin lib/libsmbldap.so.0
 lib/libsmbsharemodes.so
 @bin lib/libsmbsharemodes.so.0
-lib/libtevent-util.so
-lib/libtevent-util.so.0
-@bin lib/libtevent-util.so.0.0.1
-lib/libtorture.so
-lib/libtorture.so.0
-@bin lib/libtorture.so.0.0.1
-lib/libwbclient.so
-lib/libwbclient.so.0
+@lib lib/libtevent-util.so.${LIBtevent-util_VERSION}
+@lib lib/libtorture.so.${LIBtorture_VERSION}
 @lib lib/libwbclient.so.${LIBwbclient_VERSION}
 lib/mit_samba.so
 lib/pkgconfig/dcerpc.pc
