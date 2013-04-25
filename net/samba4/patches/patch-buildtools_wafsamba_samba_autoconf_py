@@ -1,0 +1,31 @@
+$OpenBSD$
+--- buildtools/wafsamba/samba_autoconf.py.orig	Wed Apr 24 17:49:38 2013
++++ buildtools/wafsamba/samba_autoconf.py	Wed Apr 24 17:58:23 2013
+@@ -716,6 +716,27 @@ def ADD_LDFLAGS(conf, flags, testflags=False):
+     if not 'EXTRA_LDFLAGS' in conf.env:
+         conf.env['EXTRA_LDFLAGS'] = []
+     conf.env['EXTRA_LDFLAGS'].extend(TO_LIST(flags))
++
++    ''' Make sure things go in order:
++        1. Local -L and -rpath flags
++        2. External -L and -rpath flags
++        3. Others
++    '''
++    localL = []
++    extL = []
++    other = []
++    for f in conf.env['EXTRA_LDFLAGS']:
++        if f.startswith("-L%s" % "/usr/ports"):
++            localL.extend( [ f ] )
++        elif f.startswith("-L"):
++            extL.extend( [ f ] )
++        else:
++            other.extend( [ f ] )
++    conf.env['EXTRA_LDFLAGS'] = []
++    conf.env['EXTRA_LDFLAGS'].extend(localL)
++    conf.env['EXTRA_LDFLAGS'].extend(extL)
++    conf.env['EXTRA_LDFLAGS'].extend(other)
++
+     return flags
+ 
+ 
