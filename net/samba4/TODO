@@ -9,3 +9,5 @@ https://bugzilla.samba.org/show_bug.cgi?id=9774
 Probably could use our com_err, need to investigate configure script more.
 
 Build fails with devel/readline installed.
+
+Compile and install .pyc and .pyo files to prevent pkg_delete errors.
