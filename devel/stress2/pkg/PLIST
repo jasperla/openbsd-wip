@@ -1,0 +1,27 @@
+@comment $OpenBSD$
+@bin bin/badcode
+@bin bin/creat
+@bin bin/fts
+@bin bin/link
+@bin bin/lockf
+@bin bin/lockf2
+@bin bin/mkdir
+@bin bin/mkfifo
+@bin bin/mmap
+@bin bin/openat
+@bin bin/pty
+@bin bin/rename
+@bin bin/run
+@bin bin/rw
+@bin bin/shm
+@bin bin/socket
+@bin bin/swap
+@bin bin/symlink
+@bin bin/syscall
+@bin bin/sysctl
+@bin bin/tcp
+@bin bin/thr1
+@bin bin/thr2
+@bin bin/udp
+share/doc/${FULLPKGNAME}/
+share/doc/${FULLPKGNAME}/README
