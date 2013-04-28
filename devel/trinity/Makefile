@@ -3,11 +3,12 @@
 COMMENT =		system call fuzz tester
 DISTNAME =		trinity-1.1
 #DISTNAME =		trinity-git-snapshot
+REVISION =	    1
 
 ONLY_FOR_ARCHS = 	arm amd64 i386 mips powerpc sparc64 
 
 EXTRACT_SUFX = 		.tgz
-#EXTRACT_SUFX = 		.tar.gz
+#EXTRACT_SUFX = 	.tar.gz
 
 CATEGORIES =		devel misc
 HOMEPAGE =			http://codemonkey.org.uk/projects/trinity/
@@ -31,5 +32,12 @@ USE_GMAKE =  			Yes
 
 pre-build:
 		cd ${WRKSRC} && bash ./configure.sh
+
+post-install:
+		${INSTALL_DATA_DIR} ${PREFIX}/share/doc/trinity/
+		${INSTALL_PROGRAM} ${WRKSRC}/*.sh ${PREFIX}/share/doc/trinity/
+		${INSTALL_DATA} ${WRKDIST}/{README,COPYING} ${PREFIX}/share/doc/trinity/
+		${INSTALL_DATA_DIR} ${PREFIX}/share/doc/trinity/Documentation
+		${INSTALL_DATA} ${WRKDIST}/Documentation/* ${PREFIX}/share/doc/trinity/Documentation
 
 .include <bsd.port.mk>
