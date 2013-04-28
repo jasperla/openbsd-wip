@@ -1,2 +1,14 @@
-@comment $OpenBSD $
+@comment $OpenBSD$
 @bin bin/trinity
+share/trinity/
+share/trinity/COPYING
+share/trinity/Documentation/
+share/trinity/Documentation/HACKING.txt
+share/trinity/Documentation/Known-bugs.txt
+share/trinity/Documentation/TODO
+share/trinity/README
+share/trinity/configure.sh
+share/trinity/test-all-syscalls-parallel.sh
+share/trinity/test-all-syscalls-sequentially.sh
+share/trinity/test-random.sh
+share/trinity/test-vm.sh
