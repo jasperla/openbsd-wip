@@ -1,10 +1,5 @@
 The following tests FAILED:
           3 - builder_Test (SEGFAULT)
-         29 - charge-mmff94_Test (Failed)
-         30 - charge-gasteiger_Test (Failed)
-         33 - ffgaff_Test (Timeout)
-         34 - ffghemical_Test (Timeout)
-         35 - ffmmff94_Test (Timeout)
-         36 - ffuff_Test (Timeout)
          52 - smilesmatch_Test (SEGFAULT)
 
+libinchi doesn't respect SOVERSION
