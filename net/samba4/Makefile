@@ -42,7 +42,6 @@ MASTER_SITES =		http://ftp.samba.org/pub/samba/stable/ \
 			http://ftp.samba.org/pub/samba/old-versions/
 
 MODULES =		devel/gettext lang/python
-MODPY_RUNDEP =		No
 
 # TODO check if GNUtls is needed at all.
 
