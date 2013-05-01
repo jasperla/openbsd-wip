@@ -418,8 +418,8 @@ lib/python${MODPY_VERSION}/site-packages/samba/external/testtools/tests/
 lib/python${MODPY_VERSION}/site-packages/samba/external/testtools/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/samba/external/testtools/tests/helpers.py
 lib/python${MODPY_VERSION}/site-packages/samba/external/testtools/tests/test_compat.py
-lib/python${MODPY_VERSION}/site-packages/samba/external/testtools/tests/test_compat.py.beforesubst
-lib/python${MODPY_VERSION}/site-packages/samba/external/testtools/tests/test_compat.py.orig
+@comment lib/python${MODPY_VERSION}/site-packages/samba/external/testtools/tests/test_compat.py.beforesubst
+@comment lib/python${MODPY_VERSION}/site-packages/samba/external/testtools/tests/test_compat.py.orig
 lib/python${MODPY_VERSION}/site-packages/samba/external/testtools/tests/test_content.py
 lib/python${MODPY_VERSION}/site-packages/samba/external/testtools/tests/test_content_type.py
 lib/python${MODPY_VERSION}/site-packages/samba/external/testtools/tests/test_deferredruntest.py

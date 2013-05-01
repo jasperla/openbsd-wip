@@ -3,6 +3,7 @@
 SHARED_ONLY =		Yes
 COMMENT =		SMB and CIFS client and server for UNIX
 DISTNAME =		samba-4.0.5
+REVISION =		0
 
 SHARED_LIBS =		dcerpc-atsvc		0.0 \
 			dcerpc-binding		0.0 \
