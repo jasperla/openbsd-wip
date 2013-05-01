@@ -1,5 +1,6 @@
 Cannot build correctly when Samba 3.x is installed, linking problems.
 https://bugzilla.samba.org/show_bug.cgi?id=9773
+Upstream says it's our problem.
 
 Integration with our BIND is not possible, but should with net/isc-bind.
 
