@@ -161,59 +161,32 @@ include/samba-4.0/util/time.h
 include/samba-4.0/util/xfile.h
 include/samba-4.0/util_ldb.h
 include/samba-4.0/wbclient.h
-lib/libdcerpc-atsvc.so.0
 @lib lib/libdcerpc-atsvc.so.${LIBdcerpc-atsvc_VERSION}
-lib/libdcerpc-binding.so.0
 @lib lib/libdcerpc-binding.so.${LIBdcerpc-binding_VERSION}
-lib/libdcerpc-samr.so.0
 @lib lib/libdcerpc-samr.so.${LIBdcerpc-samr_VERSION}
-lib/libdcerpc-server.so.0
 @lib lib/libdcerpc-server.so.${LIBdcerpc-server_VERSION}
-lib/libdcerpc.so.0
 @lib lib/libdcerpc.so.${LIBdcerpc_VERSION}
-lib/libgensec.so.0
 @lib lib/libgensec.so.${LIBgensec_VERSION}
-lib/libndr-krb5pac.so.0
 @lib lib/libndr-krb5pac.so.${LIBndr-krb5pac_VERSION}
-lib/libndr-nbt.so.0
 @lib lib/libndr-nbt.so.${LIBndr-nbt_VERSION}
-lib/libndr-standard.so.0
 @lib lib/libndr-standard.so.${LIBndr-standard_VERSION}
-lib/libndr.so.0
 @lib lib/libndr.so.${LIBndr_VERSION}
-lib/libnetapi.so
-@bin lib/libnetapi.so.0
-lib/libnss_wins.so
-@bin lib/libnss_wins.so.2
-lib/libpdb.so
-@bin lib/libpdb.so.0
-lib/libregistry.so.0
+@lib lib/libnetapi.so.${LIBnetapi_VERSION}
+@lib lib/libnss_wins.so.${LIBnss_wins_VERSION}
+@lib lib/libpdb.so.${LIBpdb_VERSION}
 @lib lib/libregistry.so.${LIBregistry_VERSION}
-lib/libsamba-credentials.so.0
 @lib lib/libsamba-credentials.so.${LIBsamba-credentials_VERSION}
-lib/libsamba-hostconfig.so.0
 @lib lib/libsamba-hostconfig.so.${LIBsamba-hostconfig_VERSION}
-lib/libsamba-policy.so.0
 @lib lib/libsamba-policy.so.${LIBsamba-policy_VERSION}
-lib/libsamba-util.so.0
 @lib lib/libsamba-util.so.${LIBsamba-util_VERSION}
-lib/libsamdb.so.0
 @lib lib/libsamdb.so.${LIBsamdb_VERSION}
-lib/libsmbclient-raw.so.0
 @lib lib/libsmbclient-raw.so.${LIBsmbclient-raw_VERSION}
-lib/libsmbclient.so.0
 @lib lib/libsmbclient.so.${LIBsmbclient_VERSION}
-lib/libsmbconf.so
-@bin lib/libsmbconf.so.0
-lib/libsmbldap.so
-@bin lib/libsmbldap.so.0
-lib/libsmbsharemodes.so
-@bin lib/libsmbsharemodes.so.0
-lib/libtevent-util.so.0
+@lib lib/libsmbconf.so.${LIBsmbconf_VERSION}
+@lib lib/libsmbldap.so.${LIBsmbldap_VERSION}
+@lib lib/libsmbsharemodes.so.${LIBsmbsharemodes_VERSION}
 @lib lib/libtevent-util.so.${LIBtevent-util_VERSION}
-lib/libtorture.so.0
 @lib lib/libtorture.so.${LIBtorture_VERSION}
-lib/libwbclient.so.0
 @lib lib/libwbclient.so.${LIBwbclient_VERSION}
 lib/mit_samba.so
 lib/pkgconfig/dcerpc.pc
@@ -418,8 +391,6 @@ lib/python${MODPY_VERSION}/site-packages/samba/external/testtools/tests/
 lib/python${MODPY_VERSION}/site-packages/samba/external/testtools/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/samba/external/testtools/tests/helpers.py
 lib/python${MODPY_VERSION}/site-packages/samba/external/testtools/tests/test_compat.py
-@comment lib/python${MODPY_VERSION}/site-packages/samba/external/testtools/tests/test_compat.py.beforesubst
-@comment lib/python${MODPY_VERSION}/site-packages/samba/external/testtools/tests/test_compat.py.orig
 lib/python${MODPY_VERSION}/site-packages/samba/external/testtools/tests/test_content.py
 lib/python${MODPY_VERSION}/site-packages/samba/external/testtools/tests/test_content_type.py
 lib/python${MODPY_VERSION}/site-packages/samba/external/testtools/tests/test_deferredruntest.py
@@ -632,8 +603,7 @@ lib/samba/libLIBWBCLIENT_OLD.so
 lib/samba/libMESSAGING.so
 lib/samba/libaddns.so
 lib/samba/libads.so
-lib/samba/libasn1-samba4.so.8
-@bin lib/samba/libasn1-samba4.so.8.0.0
+@lib lib/samba/libasn1-samba4.so.${LIBasn1-samba4_VERSION}
 lib/samba/libasn1util.so
 lib/samba/libauth.so
 lib/samba/libauth4.so
@@ -650,7 +620,6 @@ lib/samba/libcli_spoolss.so
 lib/samba/libcliauth.so
 lib/samba/libcluster.so
 lib/samba/libcmdline-credentials.so
-lib/samba/libcom_err-samba4.so.0
 @lib lib/samba/libcom_err-samba4.so.${LIBcom_err-samba4_VERSION}
 lib/samba/libdb-glue.so
 lib/samba/libdbwrap.so
@@ -664,28 +633,19 @@ lib/samba/libevents.so
 lib/samba/libflag_mapping.so
 lib/samba/libgpo.so
 lib/samba/libgse.so
-lib/samba/libgssapi-samba4.so.2
-@bin lib/samba/libgssapi-samba4.so.2.0.0
-lib/samba/libhcrypto-samba4.so.5
-@bin lib/samba/libhcrypto-samba4.so.5.0.1
-lib/samba/libhdb-samba4.so.11
-@bin lib/samba/libhdb-samba4.so.11.0.2
-lib/samba/libheimbase-samba4.so.1
-@bin lib/samba/libheimbase-samba4.so.1.0.0
-lib/samba/libheimntlm-samba4.so.1
-@bin lib/samba/libheimntlm-samba4.so.1.0.1
-lib/samba/libhx509-samba4.so.5
-@bin lib/samba/libhx509-samba4.so.5.0.0
+@lib lib/samba/libgssapi-samba4.so.${LIBgssapi-samba4_VERSION}
+@lib lib/samba/libhcrypto-samba4.so.${LIBhcrypto-samba4_VERSION}
+@lib lib/samba/libhdb-samba4.so.${LIBhdb-samba4_VERSION}
+@lib lib/samba/libheimbase-samba4.so.${LIBheimbase-samba4_VERSION}
+@lib lib/samba/libheimntlm-samba4.so.${LIBheimntlm-samba4_VERSION}
+@lib lib/samba/libhx509-samba4.so.${LIBhx509-samba4_VERSION}
 lib/samba/libidmap.so
 lib/samba/libinterfaces.so
-lib/samba/libkdc-samba4.so.2
-@bin lib/samba/libkdc-samba4.so.2.0.0
-lib/samba/libkrb5-samba4.so.26
-@bin lib/samba/libkrb5-samba4.so.26.0.0
+@lib lib/samba/libkdc-samba4.so.${LIBkdc-samba4_VERSION}
+@lib lib/samba/libkrb5-samba4.so.${LIBkrb5-samba4_VERSION}
 lib/samba/libkrb5samba.so
 lib/samba/libldb-cmdline.so
-lib/samba/libldb.so.1
-@bin lib/samba/libldb.so.1.1.15
+@lib lib/samba/libldb.so.${LIBldb_VERSION}
 lib/samba/libldbsamba.so
 lib/samba/liblibcli_lsa3.so
 lib/samba/liblibcli_netlogon3.so
@@ -704,13 +664,10 @@ lib/samba/libpopt_samba3.so
 lib/samba/libposix_eadb.so
 lib/samba/libprinting_migrate.so
 lib/samba/libprocess_model.so
-lib/samba/libpyldb-util.so.1
-@bin lib/samba/libpyldb-util.so.1.1.15
-lib/samba/libpytalloc-util.so.2
-@bin lib/samba/libpytalloc-util.so.2.0.7
+@lib lib/samba/libpyldb-util.so.${LIBpyldb-util_VERSION}
+@lib lib/samba/libpytalloc-util.so.${LIBpytalloc-util_VERSION}
 lib/samba/libreplace.so
-lib/samba/libroken-samba4.so.19
-@bin lib/samba/libroken-samba4.so.19.0.1
+@lib lib/samba/libroken-samba4.so.${LIBroken-samba4_VERSION}
 lib/samba/libsamba-modules.so
 lib/samba/libsamba-net.so
 lib/samba/libsamba-security.so
@@ -731,14 +688,11 @@ lib/samba/libsmbpasswdparser.so
 lib/samba/libsmbregistry.so
 lib/samba/libsocket_wrapper.so
 lib/samba/libsubunit.so
-lib/samba/libtalloc.so.2
-@bin lib/samba/libtalloc.so.2.0.7
+@lib lib/samba/libtalloc.so.${LIBtalloc_VERSION}
 lib/samba/libtdb-wrap.so
-lib/samba/libtdb.so.1
-@bin lib/samba/libtdb.so.1.2.11
+@lib lib/samba/libtdb.so.${LIBtdb_VERSION}
 lib/samba/libtdb_compat.so
-lib/samba/libtevent.so.0
-@bin lib/samba/libtevent.so.0.9.18
+@lib lib/samba/libtevent.so.${LIBtevent_VERSION}
 lib/samba/libtrusts_util.so
 lib/samba/libuid_wrapper.so
 lib/samba/libutil_cmdline.so
@@ -746,8 +700,7 @@ lib/samba/libutil_reg.so
 lib/samba/libutil_setid.so
 lib/samba/libutil_tdb.so
 lib/samba/libwinbind-client.so
-lib/samba/libwind-samba4.so.0
-@bin lib/samba/libwind-samba4.so.0.0.0
+@lib lib/samba/libwind-samba4.so.${LIBwind-samba4_VERSION}
 lib/samba/libxattr_tdb.so
 lib/samba/nss_info/
 lib/samba/nss_info/hash.so

@@ -1,0 +1,44 @@
+$OpenBSD$
+Make Samba4 WAF respect OpenBSD shared libraries versioning conventions.
+--- buildtools/wafsamba/samba_install.py.orig	Thu May  2 20:47:10 2013
++++ buildtools/wafsamba/samba_install.py	Thu May  2 22:06:39 2013
+@@ -101,6 +101,7 @@ def install_library(self):
+     # - install_link is a symlink in the install directory, to install_name
+ 
+     if getattr(self, 'samba_realname', None):
++        print "samba_realname is " + self.samba_realname + " for " + target_name
+         install_name = self.samba_realname
+         install_link = None
+         if getattr(self, 'soname', ''):
+@@ -110,18 +111,27 @@ def install_library(self):
+         else:
+             inst_name    = bld.make_libname(t.target)
+     elif self.vnum:
+-        vnum_base    = self.vnum.split('.')[0]
+-        install_name = bld.make_libname(target_name, version=self.vnum)
+-        install_link = bld.make_libname(target_name, version=vnum_base)
++        print "self.vnum = " + self.vnum + " for " + target_name
++        osvnum = os.getenv('LIB' + target_name + '_VERSION')
++        if osvnum:
++            print "OVERRIDE = " + osvnum
++            install_name = bld.make_libname(target_name, version=osvnum)
++            install_link = None
++        else:
++            install_name = bld.make_libname(target_name, version=self.vnum)
++            vnum_base    = self.vnum.split('.')[0]
++            install_link = bld.make_libname(target_name, version=vnum_base)
+         inst_name    = bld.make_libname(t.target)
+         if not self.private_library:
+             # only generate the dev link for non-bundled libs
+             dev_link     = bld.make_libname(target_name)
+     elif getattr(self, 'soname', ''):
++        print "soname is empty for " + target_name
+         install_name = bld.make_libname(target_name)
+-        install_link = self.soname
++        install_link = None
+         inst_name    = bld.make_libname(t.target)
+     else:
++        print "else case for " + target_name
+         install_name = bld.make_libname(target_name)
+         install_link = None
+         inst_name    = bld.make_libname(t.target)
