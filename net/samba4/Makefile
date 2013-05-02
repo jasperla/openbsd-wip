@@ -5,27 +5,51 @@ COMMENT =		SMB and CIFS client and server for UNIX
 DISTNAME =		samba-4.0.5
 REVISION =		0
 
-SHARED_LIBS =		dcerpc-atsvc		0.0 \
+SHARED_LIBS =		asn1-samba4		0.0 \
+			com_err-samba4		0.0 \
+			dcerpc			0.0 \
+			dcerpc-atsvc		0.0 \
 			dcerpc-binding		0.0 \
 			dcerpc-samr		0.0 \
 			dcerpc-server		0.0 \
-			dcerpc			0.0 \
 			gensec			0.0 \
+			gssapi-samba4		0.0 \
+			hcrypto-samba4		0.0 \
+			hdb-samba4		0.0 \
+			heimbase-samba4		0.0 \
+			heimntlm-samba4		0.0 \
+			hx509-samba4		0.0 \
+			kdc-samba4		0.0 \
+			krb5-samba4		0.0 \
+			ldb			0.0 \
+			ndr			0.0 \
 			ndr-krb5pac		0.0 \
 			ndr-nbt			0.0 \
 			ndr-standard		0.0 \
-			ndr			0.0 \
+			netapi			0.0 \
+			nss_wins		0.0 \
+			pdb			0.0 \
+			pyldb-util		0.0 \
+			pytalloc-util		0.0 \
 			registry		0.0 \
+			roken-samba4		0.0 \
 			samba-credentials	0.0 \
 			samba-hostconfig	0.0 \
 			samba-policy		0.0 \
 			samba-util		0.0 \
 			samdb			0.0 \
-			smbclient-raw		0.0 \
 			smbclient		0.0 \
+			smbclient-raw		0.0 \
+			smbconf			0.0 \
+			smbldap			0.0 \
+			smbsharemodes		0.0 \
+			talloc			0.0 \
+			tdb			0.0 \
+			tevent			0.0 \
 			tevent-util		0.0 \
 			torture			0.0 \
-			wbclient		0.0
+			wbclient		0.0 \
+			wind-samba4		0.0
 
 CATEGORIES =		net sysutils security
 
@@ -92,6 +116,10 @@ MAKE_ENV =		LC_ALL=en_US.UTF-8 \
 			PYTHON=${MODPY_BIN} \
 			WAF_ARGS="${WAF_ARGS}"
 
+.for _l _v in ${SHARED_LIBS}
+MAKE_ENV +=		LIB${_l:S/-/_/g}_VERSION=${_v}
+.endfor
+
 post-extract:
 	cp ${FILESDIR}/krb5-config ${WRKDIR}/bin
 
@@ -103,27 +131,5 @@ post-patch:
 post-configure:
 	perl -pi.ldflags -e 's/^LINKFLAGS_PYEMBED.*/LINKFLAGS_PYEMBED = []/' \
 	    ${WRKBUILD}/bin/c4che/default.cache.py
-
-pre-install:
-.for _l _v in ${SHARED_LIBS}
-	rm -f ${PREFIX}/lib/lib${_l}.so.${_v}
-.endfor
-
-# XXX Need to handle com_err-samba4 shared library, too.
-post-install:
-.for _l _v in ${SHARED_LIBS}
-	rm -f ${PREFIX}/lib/lib${_l}.so.+([0-9])
-	rm -f ${PREFIX}/lib/lib${_l}.so
-	if [ -f ${PREFIX}/lib/lib${_l}.so.+([0-9]).+([0-9]).+([0-9]) ]; then \
-		mv ${PREFIX}/lib/lib${_l}.so.+([0-9]).+([0-9]).+([0-9]) \
-		   ${PREFIX}/lib/lib${_l}.so.${_v}; \
-	elif [ ${PREFIX}/lib/lib${_l}.so.+([0-9]).+([0-9]) != \
-	     ${PREFIX}/lib/lib${_l}.so.${_v} ]; then \
-		mv ${PREFIX}/lib/lib${_l}.so.+([0-9]).+([0-9]) \
-		   ${PREFIX}/lib/lib${_l}.so.${_v}; \
-	fi
-	ln -s lib${_l}.so.${_v} `echo '${PREFIX}/lib/lib${_l}.so.${_v}' | \
-	    sed -Ee 's/\.[0-9]+$$//'`
-.endfor
 
 .include <bsd.port.mk>
