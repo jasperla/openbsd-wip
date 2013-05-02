@@ -4,7 +4,7 @@ Upstream says it's our problem.
 
 Integration with our BIND is not possible, but should with net/isc-bind.
 
-Does not respect SHARED_LIBS.
+SHARED_LIBS handling ticket in bug tracker, need to push the patch in:
 https://bugzilla.samba.org/show_bug.cgi?id=9774
 
 Probably could use our com_err, need to investigate configure script more.
