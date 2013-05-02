@@ -132,4 +132,8 @@ post-configure:
 	perl -pi.ldflags -e 's/^LINKFLAGS_PYEMBED.*/LINKFLAGS_PYEMBED = []/' \
 	    ${WRKBUILD}/bin/c4che/default.cache.py
 
+post-install:
+	find ${PREFIX} -name '*${PATCHORIG}' -or -name '*.beforesubst' | \
+	    xargs -rt rm --
+
 .include <bsd.port.mk>
