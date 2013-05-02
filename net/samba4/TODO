@@ -12,3 +12,24 @@ Probably could use our com_err, need to investigate configure script more.
 Build fails with devel/readline installed.
 
 Compile and install .pyc and .pyo files to prevent pkg_delete errors.
+
+
+[ 287/3897] Compiling IDL librpc/idl/winreg.idl
+19:11:54 runner  cd .. && CPP="/usr/bin/cpp" CC="cc" /usr/bin/perl "/usr/ports/pobj/samba-4.0.5/samba-4.0.5/pidl/pidl" --quiet --header --ndr-parser --samba3-ndr-server --server --client --python --outputdir bin/default/librpc/gen_ndr -- "/usr/ports/pobj/samba-4.0.5/samba-4.0.5/librpc/idl/winreg.idl" 
+defined(@array) is deprecated at /usr/ports/pobj/samba-4.0.5/samba-4.0.5/pidl/lib/Parse/Pidl/ODL.pm line 73.
+        (Maybe you should just omit the defined()?)
+defined(@array) is deprecated at /usr/ports/pobj/samba-4.0.5/samba-4.0.5/pidl/pidl line 608.
+        (Maybe you should just omit the defined()?)
+/usr/ports/pobj/samba-4.0.5/samba-4.0.5/librpc/idl/winreg.idl:191: warning: Got pointer for `size', expected fully derefenced variable
+/usr/ports/pobj/samba-4.0.5/samba-4.0.5/librpc/idl/winreg.idl:191: warning: Got pointer for `length', expected fully derefenced variable
+/usr/ports/pobj/samba-4.0.5/samba-4.0.5/librpc/idl/winreg.idl:191: warning: Got pointer for `size', expected fully derefenced variable
+/usr/ports/pobj/samba-4.0.5/samba-4.0.5/librpc/idl/winreg.idl:191: warning: Got pointer for `length', expected fully derefenced variable
+/usr/ports/pobj/samba-4.0.5/samba-4.0.5/librpc/idl/winreg.idl:191: warning: Got pointer for `length', expected fully derefenced variable
+/usr/ports/pobj/samba-4.0.5/samba-4.0.5/librpc/idl/winreg.idl:191: warning: Got pointer for `length', expected fully derefenced variable
+/usr/ports/pobj/samba-4.0.5/samba-4.0.5/librpc/idl/winreg.idl:268: warning: Got pointer for `data_size', expected fully derefenced variable
+/usr/ports/pobj/samba-4.0.5/samba-4.0.5/librpc/idl/winreg.idl:268: warning: Got pointer for `data_length', expected fully derefenced variable
+/usr/ports/pobj/samba-4.0.5/samba-4.0.5/librpc/idl/winreg.idl:268: warning: Got pointer for `data_size', expected fully derefenced variable
+/usr/ports/pobj/samba-4.0.5/samba-4.0.5/librpc/idl/winreg.idl:268: warning: Got pointer for `data_length', expected fully derefenced variable
+/usr/ports/pobj/samba-4.0.5/samba-4.0.5/librpc/idl/winreg.idl:268: warning: Got pointer for `data_length', expected fully derefenced variable
+/usr/ports/pobj/samba-4.0.5/samba-4.0.5/librpc/idl/winreg.idl:268: warning: Got pointer for `data_length', expected fully derefenced variable
+
