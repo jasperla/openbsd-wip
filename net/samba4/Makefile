@@ -3,7 +3,7 @@
 SHARED_ONLY =		Yes
 COMMENT =		SMB and CIFS client and server for UNIX
 DISTNAME =		samba-4.0.5
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS =		asn1-samba4		0.0 \
 			com_err-samba4		0.0 \
@@ -120,6 +120,9 @@ MAKE_ENV =		LC_ALL=en_US.UTF-8 \
 MAKE_ENV +=		LIB${_l:S/-/_/g}_VERSION=${_v}
 .endfor
 
+SAMBA4_PYTHON_PKGPATH =	${PREFIX}/lib/python${MODPY_VERSION}/site-packages
+PYCMD =	"import sys, py_compile;py_compile.compile(sys.argv[1])"
+
 post-extract:
 	cp ${FILESDIR}/krb5-config ${WRKDIR}/bin
 
@@ -133,7 +136,15 @@ post-configure:
 	    ${WRKBUILD}/bin/c4che/default.cache.py
 
 post-install:
-	find ${PREFIX} -name '*${PATCHORIG}' -or -name '*.beforesubst' | \
+	@find ${PREFIX} -name '*${PATCHORIG}' -or -name '*.beforesubst' | \
 	    xargs -rt rm --
+	@export PYTHONPATH=${SAMBA4_PYTHON_PKGPATH}; \
+	    find ${SAMBA4_PYTHON_PKGPATH} -name '*.py' | \
+	    while read F; do \
+	        echo '${MODPY_BIN} -c ${PYCMD}' $$F >&2; \
+	        ${MODPY_BIN} -c ${PYCMD} $$F; \
+	        echo '${MODPY_BIN} -O -c ${PYCMD}' $$F >&2; \
+	        ${MODPY_BIN} -O -c ${PYCMD} $$F; \
+	    done
 
 .include <bsd.port.mk>

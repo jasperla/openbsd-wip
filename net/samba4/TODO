@@ -11,8 +11,6 @@ Probably could use our com_err, need to investigate configure script more.
 
 Build fails with devel/readline installed.
 
-Compile and install .pyc and .pyo files to prevent pkg_delete errors.
-
 
 [ 287/3897] Compiling IDL librpc/idl/winreg.idl
 19:11:54 runner  cd .. && CPP="/usr/bin/cpp" CC="cc" /usr/bin/perl "/usr/ports/pobj/samba-4.0.5/samba-4.0.5/pidl/pidl" --quiet --header --ndr-parser --samba3-ndr-server --server --client --python --outputdir bin/default/librpc/gen_ndr -- "/usr/ports/pobj/samba-4.0.5/samba-4.0.5/librpc/idl/winreg.idl" 
