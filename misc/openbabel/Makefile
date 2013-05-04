@@ -18,6 +18,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openbabel/}
 
+.include <bsd.port.arch.mk>
+
 WANTLIB += c m pthread stdc++ xml2 z cairo wx_base wx_gtk2_adv wx_gtk2_core
 
 MODULES=	devel/cmake \
