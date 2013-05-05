@@ -1,0 +1,18 @@
+$OpenBSD$
+--- test-vm.sh.orig	Sun May  5 11:45:18 2013
++++ test-vm.sh	Sun May  5 11:45:49 2013
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/ksh
+ 
+ if [ ! -d tmp ]; then
+   mkdir tmp
+@@ -6,7 +6,7 @@ fi
+ chmod 755 tmp
+ cd tmp
+ 
+-NR_CPUS=`grep ^processor /proc/cpuinfo | /usr/bin/wc -l`
++NR_CPUS=`sysctl -n hw.ncpufound`
+ NR_PROCESSES=$(($NR_CPUS * 2))
+ 
+ while [ 1 ];

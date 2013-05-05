@@ -1,27 +1,224 @@
 @comment $OpenBSD$
-@bin bin/badcode
-@bin bin/creat
-@bin bin/fts
-@bin bin/link
-@bin bin/lockf
-@bin bin/lockf2
-@bin bin/mkdir
-@bin bin/mkfifo
-@bin bin/mmap
-@bin bin/openat
-@bin bin/pty
-@bin bin/rename
-@bin bin/run
-@bin bin/rw
-@bin bin/shm
-@bin bin/socket
-@bin bin/swap
-@bin bin/symlink
-@bin bin/syscall
-@bin bin/sysctl
-@bin bin/tcp
-@bin bin/thr1
-@bin bin/thr2
-@bin bin/udp
-share/doc/${FULLPKGNAME}/
-share/doc/${FULLPKGNAME}/README
+local/
+local/share/
+local/share/doc/
+local/share/doc/${FULLPKGNAME}/
+local/share/doc/${FULLPKGNAME}/README
+local/share/doc/${FULLPKGNAME}/linuxforum06.pdf
+local/share/doc/${FULLPKGNAME}/stress.pdf
+local/share/${FULLPKGNAME}/
+local/share/${FULLPKGNAME}/all.cfg
+local/share/${FULLPKGNAME}/creat.cfg
+local/share/${FULLPKGNAME}/default.cfg
+local/share/${FULLPKGNAME}/df.cfg
+local/share/${FULLPKGNAME}/disk.cfg
+local/share/${FULLPKGNAME}/io.cfg
+local/share/${FULLPKGNAME}/jeff.cfg
+local/share/${FULLPKGNAME}/link.cfg
+local/share/${FULLPKGNAME}/load.cfg
+local/share/${FULLPKGNAME}/lockf.cfg
+local/share/${FULLPKGNAME}/marcus.cfg
+local/share/${FULLPKGNAME}/misc/
+local/share/${FULLPKGNAME}/misc/README
+local/share/${FULLPKGNAME}/misc/all.sh
+local/share/${FULLPKGNAME}/misc/altbufferflushes.sh
+local/share/${FULLPKGNAME}/misc/alternativeFlushPath.sh
+local/share/${FULLPKGNAME}/misc/backingstore.sh
+local/share/${FULLPKGNAME}/misc/backingstore2.sh
+local/share/${FULLPKGNAME}/misc/backingstore3.sh
+local/share/${FULLPKGNAME}/misc/cdevsw.sh
+local/share/${FULLPKGNAME}/misc/cleanup.sh
+local/share/${FULLPKGNAME}/misc/core.sh
+local/share/${FULLPKGNAME}/misc/crossmp.sh
+local/share/${FULLPKGNAME}/misc/crossmp2.sh
+local/share/${FULLPKGNAME}/misc/datamove.sh
+local/share/${FULLPKGNAME}/misc/datamove2.sh
+local/share/${FULLPKGNAME}/misc/datamove3.sh
+local/share/${FULLPKGNAME}/misc/devfs.sh
+local/share/${FULLPKGNAME}/misc/devfs2.sh
+local/share/${FULLPKGNAME}/misc/extattr.sh
+local/share/${FULLPKGNAME}/misc/extattrctl.sh
+local/share/${FULLPKGNAME}/misc/fdescfs.sh
+local/share/${FULLPKGNAME}/misc/fpclone.sh
+local/share/${FULLPKGNAME}/misc/fpclone2.sh
+local/share/${FULLPKGNAME}/misc/fpu.sh
+local/share/${FULLPKGNAME}/misc/fragments.sh
+local/share/${FULLPKGNAME}/misc/fs.sh
+local/share/${FULLPKGNAME}/misc/fullpath.sh
+local/share/${FULLPKGNAME}/misc/fuzz.sh
+local/share/${FULLPKGNAME}/misc/inversion.sh
+local/share/${FULLPKGNAME}/misc/isofs.sh
+local/share/${FULLPKGNAME}/misc/jail.sh
+local/share/${FULLPKGNAME}/misc/jail2.sh
+local/share/${FULLPKGNAME}/misc/jail3.sh
+local/share/${FULLPKGNAME}/misc/jail4.sh
+local/share/${FULLPKGNAME}/misc/kevent.sh
+local/share/${FULLPKGNAME}/misc/kevent2.sh
+local/share/${FULLPKGNAME}/misc/kevent3.sh
+local/share/${FULLPKGNAME}/misc/kevent4.sh
+local/share/${FULLPKGNAME}/misc/kevent5.sh
+local/share/${FULLPKGNAME}/misc/kinfo.sh
+local/share/${FULLPKGNAME}/misc/kinfo2.sh
+local/share/${FULLPKGNAME}/misc/kinfo3.sh
+local/share/${FULLPKGNAME}/misc/ldt.sh
+local/share/${FULLPKGNAME}/misc/ldt2.sh
+local/share/${FULLPKGNAME}/misc/libMicro.sh
+local/share/${FULLPKGNAME}/misc/lockf.sh
+local/share/${FULLPKGNAME}/misc/lookup_shared.sh
+local/share/${FULLPKGNAME}/misc/mac.sh
+local/share/${FULLPKGNAME}/misc/mac_chkexec.sh
+local/share/${FULLPKGNAME}/misc/md.sh
+local/share/${FULLPKGNAME}/misc/md2.sh
+local/share/${FULLPKGNAME}/misc/md3.sh
+local/share/${FULLPKGNAME}/misc/mlockall.sh
+local/share/${FULLPKGNAME}/misc/mmap.sh
+local/share/${FULLPKGNAME}/misc/mmap2.sh
+local/share/${FULLPKGNAME}/misc/mmap3.sh
+local/share/${FULLPKGNAME}/misc/mmap4.sh
+local/share/${FULLPKGNAME}/misc/mount.sh
+local/share/${FULLPKGNAME}/misc/mount2.sh
+local/share/${FULLPKGNAME}/misc/mountro.sh
+local/share/${FULLPKGNAME}/misc/mountro2.sh
+local/share/${FULLPKGNAME}/misc/mountro3.sh
+local/share/${FULLPKGNAME}/misc/msdos.sh
+local/share/${FULLPKGNAME}/misc/msdos2.sh
+local/share/${FULLPKGNAME}/misc/msdos3.sh
+local/share/${FULLPKGNAME}/misc/msdos4.sh
+local/share/${FULLPKGNAME}/misc/namecache.sh
+local/share/${FULLPKGNAME}/misc/nbufkv.sh
+local/share/${FULLPKGNAME}/misc/newfs.sh
+local/share/${FULLPKGNAME}/misc/newfs2.sh
+local/share/${FULLPKGNAME}/misc/newfs3.sh
+local/share/${FULLPKGNAME}/misc/newfs4.sh
+local/share/${FULLPKGNAME}/misc/nfs.sh
+local/share/${FULLPKGNAME}/misc/nfs2.sh
+local/share/${FULLPKGNAME}/misc/nfs3.sh
+local/share/${FULLPKGNAME}/misc/nfs4.sh
+local/share/${FULLPKGNAME}/misc/nfs5.sh
+local/share/${FULLPKGNAME}/misc/nfs6.sh
+local/share/${FULLPKGNAME}/misc/nfs7.sh
+local/share/${FULLPKGNAME}/misc/nfs8.sh
+local/share/${FULLPKGNAME}/misc/nfs9.sh
+local/share/${FULLPKGNAME}/misc/nfsrename.sh
+local/share/${FULLPKGNAME}/misc/nullfs.sh
+local/share/${FULLPKGNAME}/misc/nullfs2.sh
+local/share/${FULLPKGNAME}/misc/nullfs3.sh
+local/share/${FULLPKGNAME}/misc/nullfs4.sh
+local/share/${FULLPKGNAME}/misc/nullfs5.sh
+local/share/${FULLPKGNAME}/misc/nullfs6.sh
+local/share/${FULLPKGNAME}/misc/pmc.sh
+local/share/${FULLPKGNAME}/misc/procfs.sh
+local/share/${FULLPKGNAME}/misc/procfs2.sh
+local/share/${FULLPKGNAME}/misc/pthread.sh
+local/share/${FULLPKGNAME}/misc/quota1.sh
+local/share/${FULLPKGNAME}/misc/quota10.sh
+local/share/${FULLPKGNAME}/misc/quota2.sh
+local/share/${FULLPKGNAME}/misc/quota3.sh
+local/share/${FULLPKGNAME}/misc/quota4.sh
+local/share/${FULLPKGNAME}/misc/quota5.sh
+local/share/${FULLPKGNAME}/misc/quota6.sh
+local/share/${FULLPKGNAME}/misc/quota7.sh
+local/share/${FULLPKGNAME}/misc/quota8.sh
+local/share/${FULLPKGNAME}/misc/quota9.sh
+local/share/${FULLPKGNAME}/misc/recursiveflushes.sh
+local/share/${FULLPKGNAME}/misc/rename.sh
+local/share/${FULLPKGNAME}/misc/rename2.sh
+local/share/${FULLPKGNAME}/misc/rename3.sh
+local/share/${FULLPKGNAME}/misc/rename4.sh
+local/share/${FULLPKGNAME}/misc/revoke.sh
+local/share/${FULLPKGNAME}/misc/sem.sh
+local/share/${FULLPKGNAME}/misc/sendfile.sh
+local/share/${FULLPKGNAME}/misc/snap.sh
+local/share/${FULLPKGNAME}/misc/snap2-1.sh
+local/share/${FULLPKGNAME}/misc/snap2.sh
+local/share/${FULLPKGNAME}/misc/snap3.sh
+local/share/${FULLPKGNAME}/misc/snap4.sh
+local/share/${FULLPKGNAME}/misc/snap5-1.sh
+local/share/${FULLPKGNAME}/misc/snap5.sh
+local/share/${FULLPKGNAME}/misc/snap6.sh
+local/share/${FULLPKGNAME}/misc/snap7.sh
+local/share/${FULLPKGNAME}/misc/snap8.sh
+local/share/${FULLPKGNAME}/misc/snapbackup.sh
+local/share/${FULLPKGNAME}/misc/softupdate.sh
+local/share/${FULLPKGNAME}/misc/statfs.sh
+local/share/${FULLPKGNAME}/misc/suj.sh
+local/share/${FULLPKGNAME}/misc/suj2.sh
+local/share/${FULLPKGNAME}/misc/suj3.sh
+local/share/${FULLPKGNAME}/misc/suj4.sh
+local/share/${FULLPKGNAME}/misc/suj5.sh
+local/share/${FULLPKGNAME}/misc/suj6.sh
+local/share/${FULLPKGNAME}/misc/suj7.sh
+local/share/${FULLPKGNAME}/misc/symlink.sh
+local/share/${FULLPKGNAME}/misc/symlink2.sh
+local/share/${FULLPKGNAME}/misc/syscall.sh
+local/share/${FULLPKGNAME}/misc/syscall2.sh
+local/share/${FULLPKGNAME}/misc/tmpfs.sh
+local/share/${FULLPKGNAME}/misc/tmpfs2.sh
+local/share/${FULLPKGNAME}/misc/tmpfs3.sh
+local/share/${FULLPKGNAME}/misc/tmpfs4.sh
+local/share/${FULLPKGNAME}/misc/truncate.sh
+local/share/${FULLPKGNAME}/misc/truncate2.sh
+local/share/${FULLPKGNAME}/misc/truncate3.sh
+local/share/${FULLPKGNAME}/misc/truncate4.sh
+local/share/${FULLPKGNAME}/misc/truncate5.sh
+local/share/${FULLPKGNAME}/misc/ucom.sh
+local/share/${FULLPKGNAME}/misc/umount.sh
+local/share/${FULLPKGNAME}/misc/umountf.sh
+local/share/${FULLPKGNAME}/misc/umountf2.sh
+local/share/${FULLPKGNAME}/misc/umountf3.sh
+local/share/${FULLPKGNAME}/misc/umountf4.sh
+local/share/${FULLPKGNAME}/misc/union.sh
+local/share/${FULLPKGNAME}/misc/unionfs.sh
+local/share/${FULLPKGNAME}/misc/unionfs2.sh
+local/share/${FULLPKGNAME}/misc/unionfs3.sh
+local/share/${FULLPKGNAME}/misc/vunref.sh
+local/share/${FULLPKGNAME}/misc/vunref2.sh
+local/share/${FULLPKGNAME}/misc/zfs.sh
+local/share/${FULLPKGNAME}/misc/zfs2.sh
+local/share/${FULLPKGNAME}/misc/zfs3.sh
+local/share/${FULLPKGNAME}/misc/zfs4.sh
+local/share/${FULLPKGNAME}/misc/zfs5.sh
+local/share/${FULLPKGNAME}/mkdir.cfg
+local/share/${FULLPKGNAME}/mkfifo.cfg
+local/share/${FULLPKGNAME}/norw.cfg
+local/share/${FULLPKGNAME}/noswap.cfg
+local/share/${FULLPKGNAME}/pty.cfg
+local/share/${FULLPKGNAME}/rw.cfg
+local/share/${FULLPKGNAME}/syscall.cfg
+local/share/${FULLPKGNAME}/sysctl.cfg
+local/share/${FULLPKGNAME}/testcases/
+@bin local/share/${FULLPKGNAME}/testcases/badcode
+@bin local/share/${FULLPKGNAME}/testcases/creat
+@bin local/share/${FULLPKGNAME}/testcases/fts
+@bin local/share/${FULLPKGNAME}/testcases/link
+@bin local/share/${FULLPKGNAME}/testcases/lockf
+@bin local/share/${FULLPKGNAME}/testcases/lockf2
+@bin local/share/${FULLPKGNAME}/testcases/mkdir
+@bin local/share/${FULLPKGNAME}/testcases/mkfifo
+@bin local/share/${FULLPKGNAME}/testcases/mmap
+@bin local/share/${FULLPKGNAME}/testcases/openat
+@bin local/share/${FULLPKGNAME}/testcases/pty
+@bin local/share/${FULLPKGNAME}/testcases/rename
+@bin local/share/${FULLPKGNAME}/testcases/run
+@bin local/share/${FULLPKGNAME}/testcases/rw
+@bin local/share/${FULLPKGNAME}/testcases/shm
+@bin local/share/${FULLPKGNAME}/testcases/socket
+@bin local/share/${FULLPKGNAME}/testcases/swap
+@bin local/share/${FULLPKGNAME}/testcases/symlink
+@bin local/share/${FULLPKGNAME}/testcases/syscall
+@bin local/share/${FULLPKGNAME}/testcases/sysctl
+@bin local/share/${FULLPKGNAME}/testcases/tcp
+@bin local/share/${FULLPKGNAME}/testcases/thr1
+@bin local/share/${FULLPKGNAME}/testcases/thr2
+@bin local/share/${FULLPKGNAME}/testcases/udp
+local/share/${FULLPKGNAME}/tools/
+local/share/${FULLPKGNAME}/tools/df.sh
+local/share/${FULLPKGNAME}/tools/freeze.sh
+local/share/${FULLPKGNAME}/tools/freeze2.sh
+local/share/${FULLPKGNAME}/tools/fstool.c
+local/share/${FULLPKGNAME}/tools/iwatch.sh
+local/share/${FULLPKGNAME}/tools/l3.sh
+local/share/${FULLPKGNAME}/tools/leaks.sh
+local/share/${FULLPKGNAME}/tools/leaks2.sh
+local/share/${FULLPKGNAME}/udp.cfg
+local/share/${FULLPKGNAME}/vfs.cfg

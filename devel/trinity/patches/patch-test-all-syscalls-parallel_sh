@@ -1,0 +1,9 @@
+$OpenBSD$
+--- test-all-syscalls-parallel.sh.orig	Sun May  5 11:40:36 2013
++++ test-all-syscalls-parallel.sh	Sun May  5 11:41:11 2013
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/ksh
+ 
+ if [ ! -d tmp ]; then
+   mkdir tmp
