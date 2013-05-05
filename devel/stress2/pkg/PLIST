@@ -212,13 +212,5 @@ local/share/${FULLPKGNAME}/testcases/
 @bin local/share/${FULLPKGNAME}/testcases/thr2
 @bin local/share/${FULLPKGNAME}/testcases/udp
 local/share/${FULLPKGNAME}/tools/
-local/share/${FULLPKGNAME}/tools/df.sh
-local/share/${FULLPKGNAME}/tools/freeze.sh
-local/share/${FULLPKGNAME}/tools/freeze2.sh
-local/share/${FULLPKGNAME}/tools/fstool.c
-local/share/${FULLPKGNAME}/tools/iwatch.sh
-local/share/${FULLPKGNAME}/tools/l3.sh
-local/share/${FULLPKGNAME}/tools/leaks.sh
-local/share/${FULLPKGNAME}/tools/leaks2.sh
 local/share/${FULLPKGNAME}/udp.cfg
 local/share/${FULLPKGNAME}/vfs.cfg
