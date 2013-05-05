@@ -1,4 +1,4 @@
-# $OpenBSD  $
+# $OpenBSD $
 
 COMMENT =		wiki written in TCL/TK
 
