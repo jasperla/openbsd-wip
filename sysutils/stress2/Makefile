@@ -6,7 +6,7 @@ PKGNAME = 		stress2
 
 EXTRACT_SUFX = 		.tgz
 
-CATEGORIES =		misc devel
+CATEGORIES =		sysutils devel
 HOMEPAGE =			http://people.freebsd.org/~pho/stress
 
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>

@@ -8,7 +8,7 @@ SHARED_LIBS +=  atf-c++                   0.0 # 0.0
 SHARED_LIBS +=  atf-c                     0.0 # 0.0
 
 
-CATEGORIES =		misc
+CATEGORIES =		misc sysutils
 HOMEPAGE =			http://code.google.com/p/kyua/
 
 MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>

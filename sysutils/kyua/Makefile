@@ -4,7 +4,7 @@ COMMENT =		Quality assurance toolchain for software packages
 DISTNAME =		kyua-cli-0.5
 
 SHARED_LIBS += ct                   5.0      # .4.0
-CATEGORIES =		devel misc
+CATEGORIES =		devel sysutils
 HOMEPAGE =			http://code.google.com/p/kyua/
 
 MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>

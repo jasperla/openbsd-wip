@@ -1,0 +1,9 @@
+$OpenBSD$
+--- testcases/Makefile.inc.orig	Wed Dec  8 20:33:55 2010
++++ testcases/Makefile.inc	Sat May  4 23:18:08 2013
+@@ -6,3 +6,5 @@ LDADD+= -L../../lib -lstress -lutil
+ DPADD+= ../../lib/libstress.a
+ CFLAGS =-g -Wall -I../../include -I../include
+ NOMAN=	sorry
++
++BINDIR= /usr/local/share/stress2/testcases/
