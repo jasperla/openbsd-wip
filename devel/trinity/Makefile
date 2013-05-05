@@ -39,6 +39,6 @@ post-install:
 		${INSTALL_DATA} ${WRKDIST}/{README,COPYING} ${PREFIX}/share/doc/trinity/
 		${INSTALL_DATA} ${WRKDIST}/Documentation/* ${PREFIX}/share/doc/trinity/Documentation/
 		${INSTALL_DATA_DIR} ${PREFIX}/share/trinity/
-		${INSTALL_PROGRAM} ${WRKSRC}/test-*.sh ${PREFIX}/share/trinity/
+		${INSTALL_SCRIPT} ${WRKSRC}/test-*.sh ${PREFIX}/share/trinity/
 
 .include <bsd.port.mk>
