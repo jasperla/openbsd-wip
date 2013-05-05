@@ -2,6 +2,7 @@
 
 COMMENT =		FreeBSD kernel stress test suite
 DISTNAME =		stress2
+PKGNAME = 		stress2
 
 EXTRACT_SUFX = 		.tgz
 
