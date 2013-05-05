@@ -6,7 +6,7 @@ COMMENT =	Automated NetBSD Installation and Test Application
 V = 1.29
 DISTNAME =		anita-${V}
 PKGNAME =		${DISTNAME}
-CATEGORIES =	devel misc
+CATEGORIES =	devel sysutils
 HOMEPAGE =	http://www.gson.org/netbsd/anita/
 
 MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>

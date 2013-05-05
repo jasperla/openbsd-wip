@@ -10,7 +10,7 @@ ONLY_FOR_ARCHS = 	arm amd64 i386 mips powerpc sparc64
 EXTRACT_SUFX = 		.tgz
 #EXTRACT_SUFX = 	.tar.gz
 
-CATEGORIES =		devel misc
+CATEGORIES =		devel sysutils
 HOMEPAGE =			http://codemonkey.org.uk/projects/trinity/
 
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
