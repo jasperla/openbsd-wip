@@ -8,14 +8,12 @@ PKGNAME = 		notebook-${V}
 
 CATEGORIES =		misc x11
 HOMEPAGE =			http://www.wjduquette.com/notebook/
-#HOMEPAGE=			http://notebook.wjduquette.com/
 
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
 PERMIT_PACKAGE_CDROM =  Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_FTP =	Yes
-
 
 MASTER_SITES            = ${HOMEPAGE}
 
@@ -26,6 +24,9 @@ USE_X11=			Yes
 
 NO_BUILD =			Yes
 NO_TEST =			Yes
+
+WRKSRC = ${WRKDIR}/notebook/
+WRKDIST = ${WRKDIR}/notebook/
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/notebook/

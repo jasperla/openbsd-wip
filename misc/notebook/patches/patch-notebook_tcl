@@ -1,0 +1,14 @@
+$OpenBSD$
+--- notebook.tcl.orig	Sun May  5 16:14:46 2013
++++ notebook.tcl	Sun May  5 16:15:11 2013
+@@ -1,8 +1,6 @@
+-#!/bin/sh
++#!/usr/local/bin/wish8.5
+ # -*-tcl-*-
+-# the next line restarts using wish\
+-exec wish83 "`cygpath --windows $0`" "$@"
+-
++#
+ #-------------------------------------------------------------------------
+ # TITLE:
+ #	notebook.tcl
