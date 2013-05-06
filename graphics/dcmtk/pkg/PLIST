@@ -1,5 +1,4 @@
 @comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/10 10:09:56 djm Exp $
-%%SHARED%%
 @bin bin/dcm2pnm
 @bin bin/dcm2xml
 @bin bin/dcmcjpeg
@@ -441,20 +440,32 @@ include/dcmtk/ofstd/oftypes.h
 include/dcmtk/ofstd/ofuoset.h
 lib/dcm2xml.dtd
 lib/libdcmdata.a
+@lib lib/libdcmdata.so.${LIBdcmdata_VERSION}
 lib/libdcmdsig.a
+@lib lib/libdcmsign.so.${LIBdcmsign_VERSION}
 lib/libdcmimage.a
+@lib lib/libdcmimage.so.${LIBdcmimage_VERSION}
 lib/libdcmimgle.a
+@lib lib/libdcmimgle.so.${LIBdcmimgle_VERSION}
 lib/libdcmjpeg.a
+@lib lib/libdcmjpeg.so.${LIBdcmjpeg_VERSION}
 lib/libdcmnet.a
+@lib lib/libdcmnet.so.${LIBdcmnet_VERSION}
 lib/libdcmpstat.a
+@lib lib/libdcmpstat.so.${LIBdcmpstat_VERSION}
 lib/libdcmqrdb.a
+@lib lib/libdcmqrdb.so.${LIBdcmqrdb_VERSION}
 lib/libdcmsr.a
+@lib lib/libdcmsr.so.${LIBdcmsr_VERSION}
 lib/libdcmtls.a
+@lib lib/libdcmtls.so.${LIBdcmtls_VERSION}
 lib/libdcmwlm.a
+@lib lib/libdcmwlm.so.${LIBdcmwlm_VERSION}
 lib/libijg12.a
 lib/libijg16.a
 lib/libijg8.a
 lib/libofstd.a
+@lib lib/libofstd.so.${LIBofstd_VERSION}
 @man man/man1/dcm2pnm.1
 @man man/man1/dcm2xml.1
 @man man/man1/dcmcjpeg.1
