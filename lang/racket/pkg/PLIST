@@ -41,7 +41,7 @@ include/racket/schvers.h
 include/racket/sconfig.h
 include/racket/stypes.h
 include/racket/uconfig.h
-lib/libracket3m-5.3.3.900.so
+lib/libracket3m-5.3.3.901.so
 lib/libracket3m.a
 lib/libracket3m.la
 lib/libracket3m.so
@@ -15474,6 +15474,7 @@ lib/racket/collects/tests/generic/stream.rkt
 lib/racket/collects/tests/generic/struct-form.rkt
 lib/racket/collects/tests/generic/syntax-errors.rkt
 lib/racket/collects/tests/generic/tests.rkt
+lib/racket/collects/tests/generic/top-level.rkt
 lib/racket/collects/tests/gracket/
 lib/racket/collects/tests/gracket/README
 lib/racket/collects/tests/gracket/auto.rktl
@@ -17394,6 +17395,7 @@ lib/racket/collects/tests/typed-racket/succeed/pr13490.rkt
 lib/racket/collects/tests/typed-racket/succeed/pr13503.rkt
 lib/racket/collects/tests/typed-racket/succeed/pr13576.rkt
 lib/racket/collects/tests/typed-racket/succeed/pr13646.rkt
+lib/racket/collects/tests/typed-racket/succeed/pr13691.rkt
 lib/racket/collects/tests/typed-racket/succeed/pr9043.rkt
 lib/racket/collects/tests/typed-racket/succeed/pr9046.rkt
 lib/racket/collects/tests/typed-racket/succeed/pr9048.rkt
