@@ -1,0 +1,14 @@
+$OpenBSD$
+--- src/z80_drv2.s80.orig	Sun May  5 23:25:05 2013
++++ src/z80_drv2.s80	Sun May  5 23:25:32 2013
+@@ -792,7 +792,9 @@ cb_loop
+             LD      HL, WAVBUFFER1
+             LD      (READBUF), HL
+ 
+-            LD      BC, HL          ; BC' point to read buffer
++            ;LD      BC, HL          ; BC' point to read buffer
++	    LD      B, H
++	    LD      C, L
+             LD      D, $80          ; D' = $80 (fast unsign)
+             LD      HL, YMPORT1     ; HL' point to YMPORT1
+             EXX
