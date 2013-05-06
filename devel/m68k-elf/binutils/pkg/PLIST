@@ -1,0 +1,58 @@
+@comment $OpenBSD: PLIST,v 1.2 2010/10/22 15:19:28 jasper Exp $
+@bin bin/m68k-elf-addr2line
+@bin bin/m68k-elf-ar
+@bin bin/m68k-elf-as
+@bin bin/m68k-elf-c++filt
+@bin bin/m68k-elf-gprof
+@bin bin/m68k-elf-ld
+@bin bin/m68k-elf-nm
+@bin bin/m68k-elf-objcopy
+@bin bin/m68k-elf-objdump
+@bin bin/m68k-elf-ranlib
+@bin bin/m68k-elf-readelf
+@bin bin/m68k-elf-size
+@bin bin/m68k-elf-strings
+@bin bin/m68k-elf-strip
+m68k-elf/
+m68k-elf/bin/
+@bin m68k-elf/bin/ar
+@bin m68k-elf/bin/as
+@bin m68k-elf/bin/ld
+@bin m68k-elf/bin/nm
+@bin m68k-elf/bin/objcopy
+@bin m68k-elf/bin/objdump
+@bin m68k-elf/bin/ranlib
+@bin m68k-elf/bin/strip
+m68k-elf/lib/
+m68k-elf/lib/ldscripts/
+m68k-elf/lib/ldscripts/m68kelf.x
+m68k-elf/lib/ldscripts/m68kelf.xbn
+m68k-elf/lib/ldscripts/m68kelf.xc
+m68k-elf/lib/ldscripts/m68kelf.xd
+m68k-elf/lib/ldscripts/m68kelf.xdc
+m68k-elf/lib/ldscripts/m68kelf.xdw
+m68k-elf/lib/ldscripts/m68kelf.xn
+m68k-elf/lib/ldscripts/m68kelf.xr
+m68k-elf/lib/ldscripts/m68kelf.xs
+m68k-elf/lib/ldscripts/m68kelf.xsc
+m68k-elf/lib/ldscripts/m68kelf.xsw
+m68k-elf/lib/ldscripts/m68kelf.xu
+m68k-elf/lib/ldscripts/m68kelf.xw
+@man man/man1/m68k-elf-addr2line.1
+@man man/man1/m68k-elf-ar.1
+@man man/man1/m68k-elf-as.1
+@man man/man1/m68k-elf-c++filt.1
+@man man/man1/m68k-elf-dlltool.1
+@man man/man1/m68k-elf-gprof.1
+@man man/man1/m68k-elf-ld.1
+@man man/man1/m68k-elf-nlmconv.1
+@man man/man1/m68k-elf-nm.1
+@man man/man1/m68k-elf-objcopy.1
+@man man/man1/m68k-elf-objdump.1
+@man man/man1/m68k-elf-ranlib.1
+@man man/man1/m68k-elf-readelf.1
+@man man/man1/m68k-elf-size.1
+@man man/man1/m68k-elf-strings.1
+@man man/man1/m68k-elf-strip.1
+@man man/man1/m68k-elf-windmc.1
+@man man/man1/m68k-elf-windres.1

@@ -1,0 +1,40 @@
+$OpenBSD$
+--- makelib.gen.orig	Tue Feb 26 22:24:11 2013
++++ makelib.gen	Sun May  5 21:33:06 2013
+@@ -1,25 +1,25 @@
+-BIN= $(GDK)/bin
+-LIB= $(GDK)/lib
++BIN= ${LOCALBASE}/bin
++LIB= ${LOCALBASE}/lib
+ 
+ SRC= $(GDK)/src
+ RES= $(GDK)/res
+ INCLUDE= $(GDK)/include
+ 
+-SHELL=$(BIN)/sh
+-RM= $(BIN)/rm
+-AR= $(BIN)/ar
+-CC= $(BIN)/gcc
+-LD= $(BIN)/ld
++SHELL=/bin/sh
++RM=/bin/rm
++AR=${LOCALBASE}/bin/m68k-elf-ar
++CC= $(BIN)/m68k-elf-gcc
++LD= $(BIN)/m68k-elf-ld
+ ECHO=echo
+-OBJCPY= $(BIN)/objcopy
+-ASMZ80= $(BIN)/sjasm
++OBJCPY= $(BIN)/m68k-elf-objcopy
++ASMZ80= ${LOCALBASE}/bin/sjasm
+ MACCER= $(BIN)/mac68k
+ SIZEBND= $(BIN)/sizebnd
+-BINTOS= $(BIN)/bintos
++BINTOS= bin/bintos
+ WAVTORAW= $(BIN)/wavtoraw
+ PCMTORAW= $(BIN)/pcmtoraw
+ GENRES= $(BIN)/genres
+-NM= $(BIN)/nm
++NM=/usr/bin/nm
+ NM2WCH= $(BIN)/nm2wch
+ 
+ OPTION=

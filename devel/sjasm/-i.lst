@@ -1,0 +1,18 @@
+Sjasm Z80 Assembler v0.42c - www.xl2s.tk             [2013.05.05 - 22:01:24]
+
+run
+Errors: 1
+
+Error opening file: run
+
+    LABELS
+-------------------------------------------------
+
+
+ Output: -i
+-------------------------------------------------
+
+ Page: 00
+  Org: 00000000  Size: *  Used: 00000000
+
+    No output

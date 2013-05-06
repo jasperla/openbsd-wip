@@ -1,0 +1,3 @@
+Sjasm is a Z80 assembler with lots of features. It runs on PC running
+Windows or Linux, but the sources are included so it should be possible
+to compile it on other systems as well.

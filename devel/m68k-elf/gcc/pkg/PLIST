@@ -1,0 +1,152 @@
+@comment $OpenBSD: PLIST,v 1.4 2010/10/22 15:20:04 jasper Exp $
+@bin bin/m68k-elf-c++
+@bin bin/m68k-elf-cpp
+@bin bin/m68k-elf-g++
+@bin bin/m68k-elf-gcc
+@bin bin/${FULLPKGNAME}
+bin/m68k-elf-gccbug
+lib/gcc/
+lib/gcc/m68k-elf/
+lib/gcc/m68k-elf/${VERSION}/
+lib/gcc/m68k-elf/${VERSION}/crtbegin.o
+lib/gcc/m68k-elf/${VERSION}/crtend.o
+lib/gcc/m68k-elf/${VERSION}/include/
+lib/gcc/m68k-elf/${VERSION}/include-fixed/
+lib/gcc/m68k-elf/${VERSION}/include-fixed/README
+lib/gcc/m68k-elf/${VERSION}/include-fixed/limits.h
+lib/gcc/m68k-elf/${VERSION}/include-fixed/syslimits.h
+lib/gcc/m68k-elf/${VERSION}/include/float.h
+lib/gcc/m68k-elf/${VERSION}/include/iso646.h
+lib/gcc/m68k-elf/${VERSION}/include/math-68881.h
+lib/gcc/m68k-elf/${VERSION}/include/stdarg.h
+lib/gcc/m68k-elf/${VERSION}/include/stdbool.h
+lib/gcc/m68k-elf/${VERSION}/include/stddef.h
+lib/gcc/m68k-elf/${VERSION}/include/stdfix.h
+lib/gcc/m68k-elf/${VERSION}/include/tgmath.h
+lib/gcc/m68k-elf/${VERSION}/include/unwind.h
+lib/gcc/m68k-elf/${VERSION}/include/varargs.h
+lib/gcc/m68k-elf/${VERSION}/install-tools/
+lib/gcc/m68k-elf/${VERSION}/install-tools/fixinc_list
+lib/gcc/m68k-elf/${VERSION}/install-tools/gsyslimits.h
+lib/gcc/m68k-elf/${VERSION}/install-tools/include/
+lib/gcc/m68k-elf/${VERSION}/install-tools/include/README
+lib/gcc/m68k-elf/${VERSION}/install-tools/include/limits.h
+lib/gcc/m68k-elf/${VERSION}/install-tools/macro_list
+lib/gcc/m68k-elf/${VERSION}/install-tools/mkheaders.conf
+lib/gcc/m68k-elf/${VERSION}/libgcc.a
+lib/gcc/m68k-elf/${VERSION}/libgcov.a
+lib/gcc/m68k-elf/${VERSION}/m51qe/
+lib/gcc/m68k-elf/${VERSION}/m51qe/crtbegin.o
+lib/gcc/m68k-elf/${VERSION}/m51qe/crtend.o
+lib/gcc/m68k-elf/${VERSION}/m51qe/libgcc.a
+lib/gcc/m68k-elf/${VERSION}/m51qe/libgcov.a
+lib/gcc/m68k-elf/${VERSION}/m5206/
+lib/gcc/m68k-elf/${VERSION}/m5206/crtbegin.o
+lib/gcc/m68k-elf/${VERSION}/m5206/crtend.o
+lib/gcc/m68k-elf/${VERSION}/m5206/libgcc.a
+lib/gcc/m68k-elf/${VERSION}/m5206/libgcov.a
+lib/gcc/m68k-elf/${VERSION}/m5206e/
+lib/gcc/m68k-elf/${VERSION}/m5206e/crtbegin.o
+lib/gcc/m68k-elf/${VERSION}/m5206e/crtend.o
+lib/gcc/m68k-elf/${VERSION}/m5206e/libgcc.a
+lib/gcc/m68k-elf/${VERSION}/m5206e/libgcov.a
+lib/gcc/m68k-elf/${VERSION}/m5208/
+lib/gcc/m68k-elf/${VERSION}/m5208/crtbegin.o
+lib/gcc/m68k-elf/${VERSION}/m5208/crtend.o
+lib/gcc/m68k-elf/${VERSION}/m5208/libgcc.a
+lib/gcc/m68k-elf/${VERSION}/m5208/libgcov.a
+lib/gcc/m68k-elf/${VERSION}/m5307/
+lib/gcc/m68k-elf/${VERSION}/m5307/crtbegin.o
+lib/gcc/m68k-elf/${VERSION}/m5307/crtend.o
+lib/gcc/m68k-elf/${VERSION}/m5307/libgcc.a
+lib/gcc/m68k-elf/${VERSION}/m5307/libgcov.a
+lib/gcc/m68k-elf/${VERSION}/m5329/
+lib/gcc/m68k-elf/${VERSION}/m5329/crtbegin.o
+lib/gcc/m68k-elf/${VERSION}/m5329/crtend.o
+lib/gcc/m68k-elf/${VERSION}/m5329/libgcc.a
+lib/gcc/m68k-elf/${VERSION}/m5329/libgcov.a
+lib/gcc/m68k-elf/${VERSION}/m5407/
+lib/gcc/m68k-elf/${VERSION}/m5407/crtbegin.o
+lib/gcc/m68k-elf/${VERSION}/m5407/crtend.o
+lib/gcc/m68k-elf/${VERSION}/m5407/libgcc.a
+lib/gcc/m68k-elf/${VERSION}/m5407/libgcov.a
+lib/gcc/m68k-elf/${VERSION}/m54455/
+lib/gcc/m68k-elf/${VERSION}/m54455/crtbegin.o
+lib/gcc/m68k-elf/${VERSION}/m54455/crtend.o
+lib/gcc/m68k-elf/${VERSION}/m54455/libgcc.a
+lib/gcc/m68k-elf/${VERSION}/m54455/libgcov.a
+lib/gcc/m68k-elf/${VERSION}/m5475/
+lib/gcc/m68k-elf/${VERSION}/m5475/crtbegin.o
+lib/gcc/m68k-elf/${VERSION}/m5475/crtend.o
+lib/gcc/m68k-elf/${VERSION}/m5475/libgcc.a
+lib/gcc/m68k-elf/${VERSION}/m5475/libgcov.a
+lib/gcc/m68k-elf/${VERSION}/m5475/softfp/
+lib/gcc/m68k-elf/${VERSION}/m5475/softfp/crtbegin.o
+lib/gcc/m68k-elf/${VERSION}/m5475/softfp/crtend.o
+lib/gcc/m68k-elf/${VERSION}/m5475/softfp/libgcc.a
+lib/gcc/m68k-elf/${VERSION}/m5475/softfp/libgcov.a
+lib/gcc/m68k-elf/${VERSION}/m68000/
+lib/gcc/m68k-elf/${VERSION}/m68000/crtbegin.o
+lib/gcc/m68k-elf/${VERSION}/m68000/crtend.o
+lib/gcc/m68k-elf/${VERSION}/m68000/libgcc.a
+lib/gcc/m68k-elf/${VERSION}/m68000/libgcov.a
+lib/gcc/m68k-elf/${VERSION}/m68040/
+lib/gcc/m68k-elf/${VERSION}/m68040/crtbegin.o
+lib/gcc/m68k-elf/${VERSION}/m68040/crtend.o
+lib/gcc/m68k-elf/${VERSION}/m68040/libgcc.a
+lib/gcc/m68k-elf/${VERSION}/m68040/libgcov.a
+lib/gcc/m68k-elf/${VERSION}/m68040/softfp/
+lib/gcc/m68k-elf/${VERSION}/m68040/softfp/crtbegin.o
+lib/gcc/m68k-elf/${VERSION}/m68040/softfp/crtend.o
+lib/gcc/m68k-elf/${VERSION}/m68040/softfp/libgcc.a
+lib/gcc/m68k-elf/${VERSION}/m68040/softfp/libgcov.a
+lib/gcc/m68k-elf/${VERSION}/m68060/
+lib/gcc/m68k-elf/${VERSION}/m68060/crtbegin.o
+lib/gcc/m68k-elf/${VERSION}/m68060/crtend.o
+lib/gcc/m68k-elf/${VERSION}/m68060/libgcc.a
+lib/gcc/m68k-elf/${VERSION}/m68060/libgcov.a
+lib/gcc/m68k-elf/${VERSION}/m68060/softfp/
+lib/gcc/m68k-elf/${VERSION}/m68060/softfp/crtbegin.o
+lib/gcc/m68k-elf/${VERSION}/m68060/softfp/crtend.o
+lib/gcc/m68k-elf/${VERSION}/m68060/softfp/libgcc.a
+lib/gcc/m68k-elf/${VERSION}/m68060/softfp/libgcov.a
+lib/gcc/m68k-elf/${VERSION}/mcpu32/
+lib/gcc/m68k-elf/${VERSION}/mcpu32/crtbegin.o
+lib/gcc/m68k-elf/${VERSION}/mcpu32/crtend.o
+lib/gcc/m68k-elf/${VERSION}/mcpu32/libgcc.a
+lib/gcc/m68k-elf/${VERSION}/mcpu32/libgcov.a
+lib/gcc/m68k-elf/${VERSION}/mfidoa/
+lib/gcc/m68k-elf/${VERSION}/mfidoa/crtbegin.o
+lib/gcc/m68k-elf/${VERSION}/mfidoa/crtend.o
+lib/gcc/m68k-elf/${VERSION}/mfidoa/libgcc.a
+lib/gcc/m68k-elf/${VERSION}/mfidoa/libgcov.a
+lib/gcc/m68k-elf/${VERSION}/mfidoa/softfp/
+lib/gcc/m68k-elf/${VERSION}/mfidoa/softfp/crtbegin.o
+lib/gcc/m68k-elf/${VERSION}/mfidoa/softfp/crtend.o
+lib/gcc/m68k-elf/${VERSION}/mfidoa/softfp/libgcc.a
+lib/gcc/m68k-elf/${VERSION}/mfidoa/softfp/libgcov.a
+lib/gcc/m68k-elf/${VERSION}/softfp/
+lib/gcc/m68k-elf/${VERSION}/softfp/crtbegin.o
+lib/gcc/m68k-elf/${VERSION}/softfp/crtend.o
+lib/gcc/m68k-elf/${VERSION}/softfp/libgcc.a
+lib/gcc/m68k-elf/${VERSION}/softfp/libgcov.a
+libexec/gcc/
+libexec/gcc/m68k-elf/
+libexec/gcc/m68k-elf/${VERSION}/
+@bin libexec/gcc/m68k-elf/${VERSION}/cc1
+@bin libexec/gcc/m68k-elf/${VERSION}/cc1plus
+@bin libexec/gcc/m68k-elf/${VERSION}/collect2
+libexec/gcc/m68k-elf/${VERSION}/install-tools/
+libexec/gcc/m68k-elf/${VERSION}/install-tools/fixinc.sh
+@bin libexec/gcc/m68k-elf/${VERSION}/install-tools/fixincl
+libexec/gcc/m68k-elf/${VERSION}/install-tools/mkheaders
+libexec/gcc/m68k-elf/${VERSION}/install-tools/mkinstalldirs
+m68k-elf/
+m68k-elf/lib/
+@man man/man1/m68k-elf-cpp.1
+@man man/man1/m68k-elf-g++.1
+@man man/man1/m68k-elf-gcc.1
+@man man/man1/m68k-elf-gcov.1
+@comment @man man/man7/fsf-funding.7
+@comment @man man/man7/gfdl.7
+@comment @man man/man7/gpl.7

@@ -1,0 +1,33 @@
+CFLAGS=-Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy
+CPPFLAGS=-Iinclude
+LDFLAGS=-n -Tmd.ld -nostdlib
+
+LD=m68k-elf-ld
+CC=m68k-elf-gcc
+OBJCPY=m68k-elf-objcopy
+SIZEBND=bin/sizebnd
+
+LIBGCC=/usr/local/lib/gcc/m68k-elf/4.4.4/libgcc.a
+
+all: out/rom.bin
+
+out/game.o: sample/partic/src/main.c
+	${CC} -c ${CFLAGS} ${CPPFLAGS} sample/partic/src/main.c -o $@
+
+out/rom_head.bin: out/rom_head.o
+	$(LD) ${LDFLAGS} --oformat binary -o $@ out/rom_head.o
+
+out/rom_head.o:
+	$(CC) $(CPPFLAGS) ${CFLAGS} -c src/boot/rom_head.c -o $@
+
+out/sega.o: src/boot/sega.s out/rom_head.bin
+	${CC} $(CPPFLAGS) ${CFLAGS} -c src/boot/sega.s -o $@
+
+out/rom.out: out/rom_head.bin out/sega.o out/game.o
+	${CC} ${LDFLAGS} $(CPPFLAGS) ${CFLAGS} out/sega.o \
+		out/game.o \
+		libmd.a ${LIBGCC} -o out/rom.out
+
+out/rom.bin: out/rom.out
+	$(OBJCPY) -O binary out/rom.out out/rom.bin
+	$(SIZEBND) out/rom.bin -sizealign 131072
