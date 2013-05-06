@@ -1,0 +1,8 @@
+mkdir -p out
+m68k-elf-gcc -Iinclude -Wall -fno-builtin-memset -fno-builtin-memcpy -c src/boot/rom_head.c -o out/rom_head.o
+m68k-elf-ld -Tmd.ld -nostdlib --oformat binary -o out/rom_head.bin out/rom_head.o
+m68k-elf-gcc -Iinclude -Wall -fno-builtin-memset -fno-builtin-memcpy -c src/boot/sega.s -o out/sega.o
+m68k-elf-gcc -c -Wall -fno-builtin-memset -fno-builtin-memcpy -Iinclude sample/partic/src/main.c -o out/game.o
+m68k-elf-gcc -n -Tmd.ld -nostdlib -Iinclude out/sega.o  out/game.o  libmd.a /usr/local/lib/gcc/m68k-elf/4.4.4/libgcc.a -o out/rom.out
+m68k-elf-objcopy -O binary out/rom.out out/rom.bin
+bin/sizebnd out/rom.bin -sizealign 131072

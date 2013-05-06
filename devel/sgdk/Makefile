@@ -35,10 +35,15 @@ do-extract:
 	cd ${WRKSRC} && 7z x ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
 
 MAKE_ENV +=	GDK=${WRKSRC} WRKBUILD=${WRKBUILD}
+SIMPLE_TOOLS =	bintos pcmtoraw sizebnd
 build-tools:
 	rm -f ${WRKSRC}/bin/*.{exe,dll}
-	cd ${WRKSRC}/bin && ${CC} ${CFLAGS} -o bintos \
-		${WRKSRC}/tools/bintos/src/bintos.c
+.for i in ${SIMPLE_TOOLS}
+	cd ${WRKSRC}/bin && ${CC} ${CFLAGS} -o ${i} \
+		${WRKSRC}/tools/${i}/src/${i}.c
+.endfor
+	cd ${WRKSRC}/bin && ${CC} ${CFLAGS} -o wavtoraw \
+		${WRKSRC}/tools/wavtoraw/src/wavtoraw.c -lm
 
 do-build: build-tools
 	cd ${WRKSRC} && env ${MAKE_ENV} \
