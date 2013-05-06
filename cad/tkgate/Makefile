@@ -6,22 +6,23 @@ DISTNAME = 		tkgate-1.8.7
 CATEGORIES = 		cad
 
 HOMEPAGE = 		http://www.tkgate.org/
-MASTER_SITES = 		ftp://gadoid.ices.cmu.edu/pub/tkgate/
+MASTER_SITES = 		http://www.tkgate.org/downloads/
 EXTRACT_SUFX = 		.tgz
 
 # GPLv2
 PERMIT_PACKAGE_CDROM = 	Yes
 
-WANTLIB = 		X11 c m tcl85 tk85
+WANTLIB = 		X11 c m ${MODTK_WANTLIB}
 
 MODULES = 		x11/tk
+BUILD_DEPENDS = 	devel/imake
 LIB_DEPENDS = 		${MODTK_LIB_DEPENDS}
 
 CONFIGURE_STYLE = 	gnu
 
 NO_TEST = 		Yes
 
-pre-patch:
+post-extract:
 	@find ${WRKSRC} -name *.orig -exec rm {} \;
 
 pre-configure:
