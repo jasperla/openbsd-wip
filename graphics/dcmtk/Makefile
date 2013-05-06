@@ -3,7 +3,7 @@
 COMMENT=		DICOM toolkit
 
 DISTNAME=		dcmtk-3.5.4
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		graphics
 
