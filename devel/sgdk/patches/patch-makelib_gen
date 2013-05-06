@@ -1,11 +1,11 @@
 $OpenBSD$
 --- makelib.gen.orig	Tue Feb 26 22:24:11 2013
-+++ makelib.gen	Sun May  5 21:33:06 2013
++++ makelib.gen	Mon May  6 14:03:09 2013
 @@ -1,25 +1,25 @@
 -BIN= $(GDK)/bin
 -LIB= $(GDK)/lib
 +BIN= ${LOCALBASE}/bin
-+LIB= ${LOCALBASE}/lib
++LIB= ${WRKBUILD}
  
  SRC= $(GDK)/src
  RES= $(GDK)/res
