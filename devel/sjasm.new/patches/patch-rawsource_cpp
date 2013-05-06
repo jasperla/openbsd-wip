@@ -1,0 +1,18 @@
+$OpenBSD$
+
+Superb datatype errors.
+
+--- rawsource.cpp.orig	Sat Sep 17 16:37:34 2011
++++ rawsource.cpp	Sun May  5 22:52:29 2013
+@@ -229,9 +229,9 @@ void RawSource::_Group2(string &line) {
+ 
+ void RawSource::_CutLines(string &line) {
+   string res="";
+-  unsigned pos;
++  size_t pos;
+   while ('o') {
+-    pos=(int)line.find_first_of("\\\"'");
++    pos=line.find_first_of("\\\"'");
+     if (pos) res+=line.substr(0,pos);
+     if (pos==string::npos) break;
+     line=line.substr(pos);
