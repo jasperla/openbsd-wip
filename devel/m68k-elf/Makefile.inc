@@ -2,7 +2,7 @@
 
 CONFIG=		m68k-elf
 PKGNAME?=	${CONFIG}-${DISTNAME}
-CATEGORIES+=	devel devel/arm-elf
+CATEGORIES+=	devel devel/m68k-elf
 
 # GPLv3
 # For newlib: multiple copyrights, but basically BSD.
