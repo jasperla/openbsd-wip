@@ -1,0 +1,1078 @@
+===> sgdk094 depends on: m68k-elf-binutils-* -> m68k-elf-binutils-2.23
+===> sgdk094 depends on: m68k-elf-gcc-* -> m68k-elf-gcc-4.4.4
+===> sgdk094 depends on: gmake-* -> gmake-3.82p2
+===>  Checking files for sgdk094
+`/usr/ports/distfiles/sgdk094.7z' is up to date.
+>> (SHA256) sgdk094.7z: OK
+===>  Extracting for sgdk094
+mkdir -p /usr/ports/pobj/sgdk094/sgdk094
+systrace: deny user: edd, prog: /bin/mkdir, pid: 11092(0)[25345], policy: /usr/bin/make, filters: 242, syscall: native-fswrite(136), filename: /usr
+systrace: deny user: edd, prog: /bin/mkdir, pid: 11092(0)[25345], policy: /usr/bin/make, filters: 242, syscall: native-fswrite(136), filename: /usr/ports
+systrace: deny user: edd, prog: /bin/mkdir, pid: 11092(0)[25345], policy: /usr/bin/make, filters: 242, syscall: native-fswrite(136), filename: /usr/ports/pobj
+cd /usr/ports/pobj/sgdk094/sgdk094 && 7z x /usr/ports/distfiles/sgdk094.7z
+
+7-Zip [64] 9.20  Copyright (c) 1999-2010 Igor Pavlov  2010-11-18
+p7zip Version 9.20 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,2 CPUs)
+
+Processing archive: /usr/ports/distfiles/sgdk094.7z
+
+Extracting  doc/doxyfile
+Extracting  doc/html/installdox
+Extracting  sample/sound/res/sound1_16k.wav
+Extracting  doc/sega/sega2f_files/image002.gif
+Extracting  doc/sega/sega2f_files/image004.gif
+Extracting  doc/sega/sega2f_files/image006.gif
+Extracting  doc/sega/sega2f_files/image008.gif
+Extracting  doc/sega/sega2f_files/image010.gif
+Extracting  doc/sega/sega2f_files/image012.gif
+Extracting  doc/sega/sega2f_files/image014.gif
+Extracting  doc/sega/sega2f_files/image016.gif
+Extracting  doc/sega/sega2f_files/image018.gif
+Extracting  doc/sega/sega2f_files/image020.gif
+Extracting  doc/sega/sega2f_files/image022.gif
+Extracting  doc/sega/sega2f_files/image024.gif
+Extracting  doc/sega/sega2f_files/image026.gif
+Extracting  doc/sega/sega2f_files/image028.gif
+Extracting  doc/sega/sega2f_files/image030.gif
+Extracting  doc/sega/sega2f_files/image032.gif
+Extracting  doc/sega/sega2f_files/image034.gif
+Extracting  doc/sega/sega2f_files/image036.gif
+Extracting  doc/sega/sega2f_files/image038.gif
+Extracting  doc/sega/sega2f_files/image040.gif
+Extracting  doc/sega/sega2f_files/image042.gif
+Extracting  doc/sega/sega2f_files/image044.gif
+Extracting  doc/sega/sega2f_files/image046.gif
+Extracting  doc/sega/sega2f_files/image048.gif
+Extracting  doc/sega/sega2f_files/image050.gif
+Extracting  doc/sega/sega2f_files/image052.gif
+Extracting  doc/sega/sega2f_files/image054.gif
+Extracting  doc/sega/sega2f_files/image056.gif
+Extracting  doc/sega/sega2f_files/image058.gif
+Extracting  doc/sega/sega2f_files/image060.gif
+Extracting  doc/sega/sega2f_files/image062.gif
+Extracting  doc/sega/sega2f_files/image064.gif
+Extracting  doc/sega/sega2f_files/image066.gif
+Extracting  doc/sega/sega2f_files/image068.gif
+Extracting  doc/sega/sega2f_files/image070.gif
+Extracting  doc/sega/sega2f_files/image072.gif
+Extracting  doc/sega/sega2f_files/image074.gif
+Extracting  doc/sega/sega2f_files/image076.gif
+Extracting  doc/sega/sega2f_files/image078.gif
+Extracting  doc/sega/sega2f_files/image080.gif
+Extracting  doc/sega/sega2f_files/image082.gif
+Extracting  doc/sega/sega2f_files/image084.gif
+Extracting  doc/sega/sega2f_files/image086.gif
+Extracting  doc/sega/sega2f_files/image088.gif
+Extracting  doc/sega/sega2f_files/image089.gif
+Extracting  doc/sega/sega2f_files/image091.gif
+Extracting  doc/sega/sega2f_files/image093.gif
+Extracting  doc/sega/sega2f_files/image095.gif
+Extracting  doc/sega/sega2f_files/image097.gif
+Extracting  doc/sega/sega2f_files/image099.gif
+Extracting  doc/sega/sega2f_files/image101.gif
+Extracting  doc/sega/sega2f_files/image103.gif
+Extracting  doc/sega/sega2f_files/image105.gif
+Extracting  doc/sega/sega2f_files/image107.gif
+Extracting  doc/sega/sega2f_files/image109.gif
+Extracting  doc/sega/sega2f_files/image111.gif
+Extracting  doc/sega/sega2f_files/image112.gif
+Extracting  doc/sega/sega2f_files/image114.gif
+Extracting  doc/sega/sega2f_files/image116.gif
+Extracting  doc/sega/sega2f_files/image118.gif
+Extracting  doc/sega/sega2f_files/image120.gif
+Extracting  doc/sega/sega2f_files/image122.gif
+Extracting  doc/sega/sega2f_files/image124.gif
+Extracting  doc/sega/sega2f_files/image126.gif
+Extracting  doc/sega/sega2f_files/image128.gif
+Extracting  doc/sega/sega2f_files/image130.gif
+Extracting  doc/sega/sega2f_files/image131.gif
+Extracting  doc/sega/sega2f_files/image133.gif
+Extracting  doc/sega/sega2f_files/image134.gif
+Extracting  doc/sega/sega2f_files/image136.gif
+Extracting  doc/sega/sega2f_files/image138.gif
+Extracting  doc/sega/sega2f_files/image140.gif
+Extracting  doc/sega/sega2f_files/image142.gif
+Extracting  doc/sega/sega2f_files/image144.gif
+Extracting  doc/sega/sega2f_files/image146.gif
+Extracting  doc/sega/sega2f_files/image148.gif
+Extracting  doc/sega/sega2f_files/image150.gif
+Extracting  doc/sega/sega2f_files/image152.gif
+Extracting  doc/sega/sega2f_files/image154.gif
+Extracting  doc/sega/sega2f_files/image156.gif
+Extracting  doc/sega/sega2f_files/image158.gif
+Extracting  doc/sega/sega2f_files/image160.gif
+Extracting  doc/sega/sega2f_files/image162.gif
+Extracting  doc/sega/sega2f_files/image164.gif
+Extracting  doc/sega/sega2f_files/image166.gif
+Extracting  doc/sega/sega2f_files/image168.gif
+Extracting  doc/sega/sega2f_files/image170.gif
+Extracting  doc/sega/sega2f_files/image172.gif
+Extracting  doc/sega/sega2f_files/image174.gif
+Extracting  doc/sega/sega2f_files/image176.gif
+Extracting  doc/sega/sega2f_files/image177.gif
+Extracting  doc/sega/sega2f_files/image178.gif
+Extracting  doc/sega/sega2f_files/image179.gif
+Extracting  doc/sega/sega2f_files/image181.gif
+Extracting  doc/sega/sega2f_files/image183.gif
+Extracting  doc/sega/sega2f_files/image185.gif
+Extracting  doc/sega/sega2f_files/image187.gif
+Extracting  doc/sega/sega2f_files/image189.gif
+Extracting  doc/sega/sega2f_files/image191.gif
+Extracting  doc/sega/sega2f_files/image193.gif
+Extracting  doc/sega/sega2f_files/image195.gif
+Extracting  doc/sega/sega2f_files/image197.gif
+Extracting  doc/sega/sega2f_files/image199.gif
+Extracting  doc/sega/sega2f_files/image201.gif
+Extracting  doc/sega/sega2f_files/image203.gif
+Extracting  doc/sega/sega2f_files/image205.gif
+Extracting  doc/sega/sega2f_files/image207.gif
+Extracting  doc/sega/sega2f_files/image209.gif
+Extracting  doc/sega/sega2f_files/image211.gif
+Extracting  doc/sega/sega2f_files/image213.gif
+Extracting  doc/sega/sega2f_files/image215.gif
+Extracting  doc/sega/sega2f_files/image217.gif
+Extracting  doc/sega/sega2f_files/image219.gif
+Extracting  doc/sega/sega2f_files/image221.gif
+Extracting  doc/sega/sega2f_files/image223.gif
+Extracting  doc/sega/sega2f_files/image225.gif
+Extracting  doc/sega/sega2f_files/image227.gif
+Extracting  doc/sega/sega2f_files/image229.gif
+Extracting  doc/sega/sega2f_files/image231.gif
+Extracting  doc/sega/sega2f_files/image233.gif
+Extracting  doc/sega/sega2f_files/image235.gif
+Extracting  doc/sega/sega2f_files/image237.gif
+Extracting  doc/sega/sega2f_files/image239.gif
+Extracting  doc/sega/sega2f_files/image241.gif
+Extracting  doc/sega/sega2f_files/image243.gif
+Extracting  doc/sega/sega2f_files/image245.gif
+Extracting  doc/sega/sega2f_files/image247.gif
+Extracting  doc/sega/sega2f_files/image249.gif
+Extracting  doc/sega/sega2f_files/image251.gif
+Extracting  doc/sega/sega2f_files/image253.gif
+Extracting  doc/sega/sega2f_files/image255.gif
+Extracting  doc/sega/sega2f_files/image257.gif
+Extracting  doc/sega/sega2f_files/image259.gif
+Extracting  doc/sega/sega2f_files/image261.gif
+Extracting  doc/sega/sega2f_files/image263.gif
+Extracting  doc/sega/sega2f_files/image265.gif
+Extracting  doc/sega/sega2f_files/image267.gif
+Extracting  doc/sega/sega2f_files/image269.gif
+Extracting  doc/sega/sega2f_files/image271.gif
+Extracting  doc/sega/sega2f_files/image273.gif
+Extracting  doc/sega/sega2f_files/image275.gif
+Extracting  doc/sega/sega2f_files/image277.gif
+Extracting  doc/sega/sega2f_files/image279.gif
+Extracting  doc/sega/sega2f_files/image281.gif
+Extracting  doc/sega/sega2f_files/image283.gif
+Extracting  doc/sega/sega2f_files/image285.gif
+Extracting  doc/sega/sega2f_files/image287.gif
+Extracting  doc/sega/sega2f_files/image289.gif
+Extracting  doc/sega/sega2f_files/image291.gif
+Extracting  doc/sega/sega2f_files/image293.gif
+Extracting  doc/sega/sega2f_files/image295.gif
+Extracting  doc/sega/sega2f_files/image297.gif
+Extracting  doc/sega/sega2f_files/image299.gif
+Extracting  doc/sega/sega2f_files/image301.gif
+Extracting  doc/sega/sega2f_files/image303.gif
+Extracting  doc/sega/sega2f_files/image305.gif
+Extracting  doc/sega/sega2f_files/image307.gif
+Extracting  doc/sega/sega2f_files/image309.gif
+Extracting  doc/sega/sega2f_files/image311.gif
+Extracting  doc/sega/sega2f_files/image313.gif
+Extracting  doc/sega/sega2f_files/image315.gif
+Extracting  doc/sega/sega2f_files/image317.gif
+Extracting  doc/sega/sega2f_files/image319.gif
+Extracting  doc/sega/sega2f_files/image321.gif
+Extracting  doc/sega/sega2f_files/image323.gif
+Extracting  doc/sega/sega2f_files/image325.gif
+Extracting  doc/sega/sega2f_files/image327.gif
+Extracting  doc/sega/sega2f_files/image329.gif
+Extracting  doc/sega/sega2f_files/image331.gif
+Extracting  doc/sega/sega2f_files/image333.gif
+Extracting  doc/sega/sega2f_files/image335.gif
+Extracting  doc/sega/sega2f_files/image337.gif
+Extracting  doc/sega/sega2f_files/image339.gif
+Extracting  doc/sega/sega2f_files/image341.gif
+Extracting  doc/sega/sega2f_files/image343.gif
+Extracting  doc/sega/sega2f_files/image345.gif
+Extracting  doc/sega/sega2f_files/image347.gif
+Extracting  doc/sega/sega2f_files/image349.gif
+Extracting  doc/sega/sega2f_files/image351.gif
+Extracting  doc/sega/sega2f_files/image353.gif
+Extracting  doc/sega/sega2f_files/image355.gif
+Extracting  doc/sega/sega2f_files/image357.gif
+Extracting  doc/sega/sega2f_files/image359.gif
+Extracting  doc/sega/sega2f_files/image361.gif
+Extracting  doc/sega/sega2f_files/image363.gif
+Extracting  doc/sega/sega2f_files/image365.gif
+Extracting  doc/sega/sega2f_files/image367.gif
+Extracting  doc/sega/sega2f_files/image369.gif
+Extracting  doc/html/bc_s.png
+Extracting  doc/html/search/close.png
+Extracting  doc/html/closed.png
+Extracting  doc/html/doxygen.png
+Extracting  doc/html/ftv2blank.png
+Extracting  doc/html/ftv2doc.png
+Extracting  doc/html/ftv2folderclosed.png
+Extracting  doc/html/ftv2folderopen.png
+Extracting  doc/html/ftv2lastnode.png
+Extracting  doc/html/ftv2link.png
+Extracting  doc/html/ftv2mlastnode.png
+Extracting  doc/html/ftv2mnode.png
+Extracting  doc/html/ftv2node.png
+Extracting  doc/html/ftv2plastnode.png
+Extracting  doc/html/ftv2pnode.png
+Extracting  doc/html/ftv2splitbar.png
+Extracting  doc/html/ftv2vertline.png
+Extracting  doc/html/search/mag_sel.png
+Extracting  doc/html/nav_f.png
+Extracting  doc/html/nav_h.png
+Extracting  doc/html/open.png
+Extracting  doc/html/search/search_l.png
+Extracting  doc/html/search/search_m.png
+Extracting  doc/html/search/search_r.png
+Extracting  doc/html/tab_a.png
+Extracting  doc/html/tab_b.png
+Extracting  doc/html/tab_h.png
+Extracting  doc/html/tab_s.png
+Extracting  res/logo_lib.bmp
+Extracting  sample/sound/out/rom.bin
+Extracting  sample/cube_flat/out/rom.bin
+Extracting  sample/partic/out/rom.bin
+Extracting  sample/joytest/out/rom.bin
+Extracting  include/asm.h
+Extracting  include/bmp.h
+Extracting  include/config.h
+Extracting  include/everdrive.h
+Extracting  include/fat16.h
+Extracting  include/font.h
+Extracting  include/genesis.h
+Extracting  include/genres.h
+Extracting  include/joy.h
+Extracting  include/kdebug.h
+Extracting  tools/genitile/lz77.h
+Extracting  include/maths.h
+Extracting  include/maths3D.h
+Extracting  tools/genitile/mdttSDK.h
+Extracting  include/memory.h
+Extracting  sample/cube_flat/meshs.h
+Extracting  sample/sound/src/music1_vgm.h
+Extracting  sample/sound/src/music2_vgm.h
+Extracting  tools/genitile/Nemesis.h
+Extracting  include/psg.h
+Extracting  include/sega.h
+Extracting  include/smp_null.h
+Extracting  include/smp_null_pcm.h
+Extracting  include/sound.h
+Extracting  sample/sound/src/sounds.h
+Extracting  include/sram.h
+Extracting  include/string.h
+Extracting  include/sys.h
+Extracting  include/tab_cnv.h
+Extracting  include/tab_vol.h
+Extracting  include/tfcplay.h
+Extracting  tools/genitile/tgApp.h
+Extracting  tools/genitile/tgImgPlugin.h
+Extracting  tools/genitile/tgList.h
+Extracting  tools/genitile/tgOutputPlugin.h
+Extracting  tools/genitile/tgPlugin.h
+Extracting  tools/genitile/tgPluginsList.h
+Extracting  tools/genitile/tgTools.h
+Extracting  include/timer.h
+Extracting  include/tools.h
+Extracting  include/types.h
+Extracting  include/vdp.h
+Extracting  include/vdp_bg.h
+Extracting  include/vdp_dma.h
+Extracting  include/vdp_pal.h
+Extracting  include/vdp_spr.h
+Extracting  include/vdp_tile.h
+Extracting  include/ym2612.h
+Extracting  include/z80_ctrl.h
+Extracting  src/z80_drv1.h
+Extracting  src/z80_drv2.h
+Extracting  src/z80_drv3.h
+Extracting  src/z80_drv4.h
+Extracting  src/z80_mvs.h
+Extracting  include/z80_mvsc.h
+Extracting  src/z80_tfm.h
+Extracting  include/z80_vgm.h
+Extracting  tools/bintos/src/bintos.c
+Extracting  src/bmp.c
+Extracting  src/everdrive.c
+Extracting  src/fat16.c
+Extracting  src/font.c
+Extracting  src/joy.c
+Extracting  sample/joytest/src/main.c
+Extracting  sample/cube_flat/main.c
+Extracting  sample/partic/src/main.c
+Extracting  sample/sound/src/main.c
+Extracting  src/maths.c
+Extracting  src/maths3D.c
+Extracting  src/memory.c
+Extracting  sample/cube_flat/meshs.c
+Extracting  sample/sound/src/music1_vgm.c
+Extracting  sample/sound/src/music2_vgm.c
+Extracting  tools/pcmtoraw/src/pcmtoraw.c
+Extracting  src/psg.c
+Extracting  src/boot/rom_head.c
+Extracting  tools/sizebnd/src/sizebnd.c
+Extracting  src/sound.c
+Extracting  src/sram.c
+Extracting  src/string.c
+Extracting  src/sys.c
+Extracting  src/tab_cnv.c
+Extracting  src/tab_log10.c
+Extracting  src/tab_log2.c
+Extracting  src/tab_sin.c
+Extracting  src/tab_sqrt.c
+Extracting  src/tab_vol.c
+Extracting  src/tfcplay.c
+Extracting  src/timer.c
+Extracting  src/tools.c
+Extracting  src/types.c
+Extracting  src/vdp.c
+Extracting  src/vdp_bg.c
+Extracting  src/vdp_dma.c
+Extracting  src/vdp_pal.c
+Extracting  src/vdp_spr.c
+Extracting  src/vdp_tile.c
+Extracting  tools/wavtoraw/src/wavtoraw.c
+Extracting  src/ym2612.c
+Extracting  src/z80_ctrl.c
+Extracting  src/z80_vgm.c
+Extracting  tools/genitile/plugins/img_bmp/img_bmp.cpp
+Extracting  tools/genitile/plugins/img_pcx/img_pcx.cpp
+Extracting  tools/genitile/lz77.cpp
+Extracting  tools/genitile/mdtt.cpp
+Extracting  tools/genitile/plugins/out_asgcc/out_asgcc.cpp
+Extracting  tools/genitile/plugins/out_asm/out_asm.cpp
+Extracting  tools/genitile/plugins/out_asmgcc/out_asmgcc.cpp
+Extracting  tools/genitile/plugins/out_bin/out_bin.cpp
+Extracting  tools/genitile/plugins/out_bmp/out_bmp.cpp
+Extracting  tools/genitile/plugins/out_h/out_h.cpp
+Extracting  tools/genitile/plugins/out_pcx/out_pcx.cpp
+Extracting  tools/genitile/tgApp.cpp
+Extracting  tools/genitile/tgImgPlugin.cpp
+Extracting  tools/genitile/tgOutputPlugin.cpp
+Extracting  tools/genitile/tgPlugin.cpp
+Extracting  tools/genitile/tgTools.cpp
+Extracting  doc/sega/sega2f_files/filelist.xml
+Extracting  doc/sega/sega2f_files/header.htm
+Extracting  doc/sega/sega2f.htm
+Extracting  doc/html/search/all_61.html
+Extracting  doc/html/search/all_62.html
+Extracting  doc/html/search/all_63.html
+Extracting  doc/html/search/all_64.html
+Extracting  doc/html/search/all_65.html
+Extracting  doc/html/search/all_66.html
+Extracting  doc/html/search/all_67.html
+Extracting  doc/html/search/all_68.html
+Extracting  doc/html/search/all_69.html
+Extracting  doc/html/search/all_6a.html
+Extracting  doc/html/search/all_6b.html
+Extracting  doc/html/search/all_6c.html
+Extracting  doc/html/search/all_6d.html
+Extracting  doc/html/search/all_6e.html
+Extracting  doc/html/search/all_70.html
+Extracting  doc/html/search/all_71.html
+Extracting  doc/html/search/all_72.html
+Extracting  doc/html/search/all_73.html
+Extracting  doc/html/search/all_74.html
+Extracting  doc/html/search/all_75.html
+Extracting  doc/html/search/all_76.html
+Extracting  doc/html/search/all_77.html
+Extracting  doc/html/search/all_79.html
+Extracting  doc/html/search/all_7a.html
+Extracting  doc/html/annotated.html
+Extracting  doc/html/asm_8h.html
+Extracting  doc/html/asm_8h_source.html
+Extracting  doc/html/bmp_8h.html
+Extracting  doc/html/bmp_8h_source.html
+Extracting  doc/html/bmp__cmn_8h.html
+Extracting  doc/html/bmp__cmn_8h_source.html
+Extracting  doc/html/bmp__ff_8h.html
+Extracting  doc/html/bmp__ff_8h_source.html
+Extracting  doc/html/bmp__intr_8h.html
+Extracting  doc/html/bmp__intr_8h_source.html
+Extracting  doc/html/classes.html
+Extracting  doc/html/search/classes_62.html
+Extracting  doc/html/search/classes_67.html
+Extracting  doc/html/search/classes_6c.html
+Extracting  doc/html/search/classes_6d.html
+Extracting  doc/html/search/classes_70.html
+Extracting  doc/html/search/classes_72.html
+Extracting  doc/html/search/classes_73.html
+Extracting  doc/html/search/classes_74.html
+Extracting  doc/html/search/classes_76.html
+Extracting  doc/html/config_8h_source.html
+Extracting  doc/html/search/defines_62.html
+Extracting  doc/html/search/defines_63.html
+Extracting  doc/html/search/defines_66.html
+Extracting  doc/html/search/defines_67.html
+Extracting  doc/html/search/defines_68.html
+Extracting  doc/html/search/defines_69.html
+Extracting  doc/html/search/defines_6d.html
+Extracting  doc/html/search/defines_6e.html
+Extracting  doc/html/search/defines_70.html
+Extracting  doc/html/search/defines_72.html
+Extracting  doc/html/search/defines_73.html
+Extracting  doc/html/search/defines_74.html
+Extracting  doc/html/search/defines_75.html
+Extracting  doc/html/search/defines_76.html
+Extracting  doc/html/search/defines_79.html
+Extracting  doc/html/search/defines_7a.html
+Extracting  doc/html/deprecated.html
+Extracting  doc/html/everdrive_8h.html
+Extracting  doc/html/everdrive_8h_source.html
+Extracting  doc/html/fat16_8h.html
+Extracting  doc/html/fat16_8h_source.html
+Extracting  doc/html/files.html
+Extracting  doc/html/search/files_61.html
+Extracting  doc/html/search/files_62.html
+Extracting  doc/html/search/files_65.html
+Extracting  doc/html/search/files_66.html
+Extracting  doc/html/search/files_6a.html
+Extracting  doc/html/search/files_6b.html
+Extracting  doc/html/search/files_6c.html
+Extracting  doc/html/search/files_6d.html
+Extracting  doc/html/search/files_70.html
+Extracting  doc/html/search/files_73.html
+Extracting  doc/html/search/files_74.html
+Extracting  doc/html/search/files_76.html
+Extracting  doc/html/search/files_79.html
+Extracting  doc/html/search/files_7a.html
+Extracting  doc/html/font_8h.html
+Extracting  doc/html/font_8h_source.html
+Extracting  doc/html/search/functions_62.html
+Extracting  doc/html/search/functions_64.html
+Extracting  doc/html/search/functions_66.html
+Extracting  doc/html/search/functions_67.html
+Extracting  doc/html/search/functions_69.html
+Extracting  doc/html/search/functions_6a.html
+Extracting  doc/html/search/functions_6d.html
+Extracting  doc/html/search/functions_70.html
+Extracting  doc/html/search/functions_71.html
+Extracting  doc/html/search/functions_72.html
+Extracting  doc/html/search/functions_73.html
+Extracting  doc/html/search/functions_75.html
+Extracting  doc/html/search/functions_76.html
+Extracting  doc/html/search/functions_77.html
+Extracting  doc/html/search/functions_79.html
+Extracting  doc/html/search/functions_7a.html
+Extracting  doc/html/genesis_8h_source.html
+Extracting  doc/html/globals.html
+Extracting  doc/html/globals_0x62.html
+Extracting  doc/html/globals_0x63.html
+Extracting  doc/html/globals_0x64.html
+Extracting  doc/html/globals_0x65.html
+Extracting  doc/html/globals_0x66.html
+Extracting  doc/html/globals_0x67.html
+Extracting  doc/html/globals_0x68.html
+Extracting  doc/html/globals_0x69.html
+Extracting  doc/html/globals_0x6a.html
+Extracting  doc/html/globals_0x6c.html
+Extracting  doc/html/globals_0x6d.html
+Extracting  doc/html/globals_0x6e.html
+Extracting  doc/html/globals_0x70.html
+Extracting  doc/html/globals_0x71.html
+Extracting  doc/html/globals_0x72.html
+Extracting  doc/html/globals_0x73.html
+Extracting  doc/html/globals_0x74.html
+Extracting  doc/html/globals_0x75.html
+Extracting  doc/html/globals_0x76.html
+Extracting  doc/html/globals_0x77.html
+Extracting  doc/html/globals_0x79.html
+Extracting  doc/html/globals_0x7a.html
+Extracting  doc/html/globals_defs.html
+Extracting  doc/html/globals_defs_0x63.html
+Extracting  doc/html/globals_defs_0x66.html
+Extracting  doc/html/globals_defs_0x67.html
+Extracting  doc/html/globals_defs_0x68.html
+Extracting  doc/html/globals_defs_0x69.html
+Extracting  doc/html/globals_defs_0x6d.html
+Extracting  doc/html/globals_defs_0x6e.html
+Extracting  doc/html/globals_defs_0x70.html
+Extracting  doc/html/globals_defs_0x72.html
+Extracting  doc/html/globals_defs_0x73.html
+Extracting  doc/html/globals_defs_0x74.html
+Extracting  doc/html/globals_defs_0x75.html
+Extracting  doc/html/globals_defs_0x76.html
+Extracting  doc/html/globals_defs_0x79.html
+Extracting  doc/html/globals_defs_0x7a.html
+Extracting  doc/html/globals_func.html
+Extracting  doc/html/globals_func_0x64.html
+Extracting  doc/html/globals_func_0x66.html
+Extracting  doc/html/globals_func_0x67.html
+Extracting  doc/html/globals_func_0x69.html
+Extracting  doc/html/globals_func_0x6a.html
+Extracting  doc/html/globals_func_0x6d.html
+Extracting  doc/html/globals_func_0x70.html
+Extracting  doc/html/globals_func_0x71.html
+Extracting  doc/html/globals_func_0x72.html
+Extracting  doc/html/globals_func_0x73.html
+Extracting  doc/html/globals_func_0x75.html
+Extracting  doc/html/globals_func_0x76.html
+Extracting  doc/html/globals_func_0x77.html
+Extracting  doc/html/globals_func_0x79.html
+Extracting  doc/html/globals_func_0x7a.html
+Extracting  doc/html/globals_type.html
+Extracting  doc/html/globals_vars.html
+Extracting  doc/html/index.html
+Extracting  doc/html/joy_8h.html
+Extracting  doc/html/joy_8h_source.html
+Extracting  doc/html/kdebug_8h.html
+Extracting  doc/html/kdebug_8h_source.html
+Extracting  doc/html/logo__lib_8h.html
+Extracting  doc/html/logo__lib_8h_source.html
+Extracting  doc/html/maths3_d_8h.html
+Extracting  doc/html/maths3_d_8h_source.html
+Extracting  doc/html/maths_8h.html
+Extracting  doc/html/maths_8h_source.html
+Extracting  doc/html/memory_8h.html
+Extracting  doc/html/memory_8h_source.html
+Extracting  doc/html/search/nomatches.html
+Extracting  doc/html/pages.html
+Extracting  doc/html/psg_8h.html
+Extracting  doc/html/psg_8h_source.html
+Extracting  doc/html/sega_8h_source.html
+Extracting  doc/html/smp__null_8h_source.html
+Extracting  doc/html/smp__null__pcm_8h_source.html
+Extracting  doc/html/sound_8h.html
+Extracting  doc/html/sound_8h_source.html
+Extracting  doc/html/sram_8h.html
+Extracting  doc/html/sram_8h_source.html
+Extracting  doc/html/string_8h.html
+Extracting  doc/html/string_8h_source.html
+Extracting  doc/html/struct_bitmap-members.html
+Extracting  doc/html/struct_bitmap.html
+Extracting  doc/html/struct_gen_res_sprites-members.html
+Extracting  doc/html/struct_gen_res_sprites.html
+Extracting  doc/html/struct_gen_res_tiles-members.html
+Extracting  doc/html/struct_gen_res_tiles.html
+Extracting  doc/html/struct_line-members.html
+Extracting  doc/html/struct_line.html
+Extracting  doc/html/struct_mat2_d__f16-members.html
+Extracting  doc/html/struct_mat2_d__f16.html
+Extracting  doc/html/struct_mat3_d__f16-members.html
+Extracting  doc/html/struct_mat3_d__f16.html
+Extracting  doc/html/struct_mat4_d__f16-members.html
+Extracting  doc/html/struct_mat4_d__f16.html
+Extracting  doc/html/struct_pixel-members.html
+Extracting  doc/html/struct_pixel.html
+Extracting  doc/html/struct_rotation3_d.html
+Extracting  doc/html/struct_sprite_def-members.html
+Extracting  doc/html/struct_sprite_def.html
+Extracting  doc/html/struct_transformation3_d-members.html
+Extracting  doc/html/struct_transformation3_d.html
+Extracting  doc/html/struct_translation3_d.html
+Extracting  doc/html/struct_triangle-members.html
+Extracting  doc/html/struct_triangle.html
+Extracting  doc/html/struct_vect2_d__f16-members.html
+Extracting  doc/html/struct_vect2_d__f16.html
+Extracting  doc/html/struct_vect2_d__s16-members.html
+Extracting  doc/html/struct_vect2_d__s16.html
+Extracting  doc/html/struct_vect2_d__s32-members.html
+Extracting  doc/html/struct_vect2_d__s32.html
+Extracting  doc/html/struct_vect2_d__u16-members.html
+Extracting  doc/html/struct_vect2_d__u16.html
+Extracting  doc/html/struct_vect2_d__u32-members.html
+Extracting  doc/html/struct_vect2_d__u32.html
+Extracting  doc/html/struct_vect3_d__f16-members.html
+Extracting  doc/html/struct_vect3_d__f16.html
+Extracting  doc/html/struct_vect4_d__f16-members.html
+Extracting  doc/html/struct_vect4_d__f16.html
+Extracting  doc/html/sys_8h.html
+Extracting  doc/html/sys_8h_source.html
+Extracting  doc/html/tab__bmp_8h_source.html
+Extracting  doc/html/tab__cnv_8h_source.html
+Extracting  doc/html/tab__vol_8h_source.html
+Extracting  doc/html/tab__vram_8h_source.html
+Extracting  doc/html/tfcplay_8h.html
+Extracting  doc/html/tfcplay_8h_source.html
+Extracting  doc/html/timer_8h.html
+Extracting  doc/html/timer_8h_source.html
+Extracting  doc/html/tools_8h.html
+Extracting  doc/html/tools_8h_source.html
+Extracting  doc/html/search/typedefs_66.html
+Extracting  doc/html/types_8h.html
+Extracting  doc/html/types_8h_source.html
+Extracting  doc/html/search/variables_61.html
+Extracting  doc/html/search/variables_62.html
+Extracting  doc/html/search/variables_63.html
+Extracting  doc/html/search/variables_65.html
+Extracting  doc/html/search/variables_69.html
+Extracting  doc/html/search/variables_6c.html
+Extracting  doc/html/search/variables_70.html
+Extracting  doc/html/search/variables_73.html
+Extracting  doc/html/search/variables_74.html
+Extracting  doc/html/search/variables_7a.html
+Extracting  doc/html/vdp_8h.html
+Extracting  doc/html/vdp_8h_source.html
+Extracting  doc/html/vdp__bg_8h.html
+Extracting  doc/html/vdp__bg_8h_source.html
+Extracting  doc/html/vdp__dma_8h.html
+Extracting  doc/html/vdp__dma_8h_source.html
+Extracting  doc/html/vdp__pal_8h.html
+Extracting  doc/html/vdp__pal_8h_source.html
+Extracting  doc/html/vdp__spr_8h.html
+Extracting  doc/html/vdp__spr_8h_source.html
+Extracting  doc/html/vdp__tile_8h.html
+Extracting  doc/html/vdp__tile_8h_source.html
+Extracting  doc/html/ym2612_8h.html
+Extracting  doc/html/ym2612_8h_source.html
+Extracting  doc/html/z80__ctrl_8h.html
+Extracting  doc/html/z80__ctrl_8h_source.html
+Extracting  doc/html/z80__mvsc_8h.html
+Extracting  doc/html/z80__mvsc_8h_source.html
+Extracting  doc/html/z80__vgm_8h.html
+Extracting  doc/html/z80__vgm_8h_source.html
+Extracting  doc/html/doxygen.css
+Extracting  doc/html/navtree.css
+Extracting  doc/html/search/search.css
+Extracting  doc/html/tabs.css
+Extracting  doc/html/jquery.js
+Extracting  doc/html/navtree.js
+Extracting  doc/html/resize.js
+Extracting  doc/html/search/search.js
+Extracting  bin/genres.txt
+Extracting  readme.txt
+Extracting  bin/sjasm.txt
+Extracting  lib/libgcc.a
+Extracting  lib/libmd.a
+Extracting  tools/bintos/bintos.cbp
+Extracting  sample/cube_flat/essai3D.cbp
+Extracting  tools/genitile/genitile.cbp
+Extracting  tools/genitile/plugins/img_bmp/img_bmp.cbp
+Extracting  tools/genitile/plugins/img_pcx/img_pcx.cbp
+Extracting  sample/joytest/joytest.cbp
+Extracting  tools/genitile/plugins/out_asgcc/out_asgcc.cbp
+Extracting  tools/genitile/plugins/out_asm/out_asm.cbp
+Extracting  tools/genitile/plugins/out_asmgcc/out_asmgcc.cbp
+Extracting  tools/genitile/plugins/out_bin/out_bin.cbp
+Extracting  tools/genitile/plugins/out_bmp/out_bmp.cbp
+Extracting  tools/genitile/plugins/out_h/out_h.cbp
+Extracting  tools/genitile/plugins/out_pcx/out_pcx.cbp
+Extracting  sample/partic/partic.cbp
+Extracting  tools/pcmtoraw/pcmtoraw.cbp
+Extracting  tools/sizebnd/sizebnd.cbp
+Extracting  sample/sound/sound.cbp
+Extracting  tools/wavtoraw/wavtoraw.cbp
+Extracting  makefile.gen
+Extracting  makelib.gen
+Extracting  src/z80_def.i80
+Extracting  src/z80_fct.i80
+Extracting  src/z80_mac.i80
+Extracting  md.ld
+Extracting  doc/sega/sega2f_files/oledata.mso
+Extracting  sample/sound/res/music_mvs.mvs
+Extracting  sample/sound/res/india_pcm_22k.pcm
+Extracting  sample/sound/res/loop4_pcm_22k.pcm
+Extracting  sample/sound/res/beat1_16k.raw
+Extracting  sample/sound/res/india_11k.raw
+Extracting  sample/sound/res/india_13k.raw
+Extracting  sample/sound/res/india_16k.raw
+Extracting  sample/sound/res/india_22k.raw
+Extracting  sample/sound/res/india_32k.raw
+Extracting  sample/sound/res/india_8k.raw
+Extracting  sample/sound/res/loop1_16k.raw
+Extracting  sample/sound/res/loop2_16k.raw
+Extracting  sample/sound/res/loop3_16k.raw
+Extracting  sample/sound/res/piano1_16k.raw
+Extracting  sample/sound/res/violon1_16k.raw
+Extracting  sample/sound/res/violon2_16k.raw
+Extracting  src/bmp_a.s
+Extracting  src/kdebug.s
+Extracting  src/maths3D_a.s
+Extracting  src/memory_a.s
+Extracting  src/boot/sega.s
+Extracting  src/smp_null.s
+Extracting  src/smp_null_pcm.s
+Extracting  src/sram_a.s
+Extracting  src/sys_a.s
+Extracting  src/vdp_pal_a.s
+Extracting  src/vdp_tile_a.s
+Extracting  src/z80_drv1.s80
+Extracting  src/z80_drv2.s80
+Extracting  src/z80_drv3.s80
+Extracting  src/z80_drv4.s80
+Extracting  src/z80_mvs.s80
+Extracting  src/z80_tfm.s80
+Extracting  sample/sound/res/music_tfd.tfd
+Extracting  sample/sound/res/bad_apple.vgm
+Extracting  doc/sega/sega2f_files/image001.wmz
+Extracting  doc/sega/sega2f_files/image003.wmz
+Extracting  doc/sega/sega2f_files/image005.wmz
+Extracting  doc/sega/sega2f_files/image007.wmz
+Extracting  doc/sega/sega2f_files/image009.wmz
+Extracting  doc/sega/sega2f_files/image011.wmz
+Extracting  doc/sega/sega2f_files/image013.wmz
+Extracting  doc/sega/sega2f_files/image015.wmz
+Extracting  doc/sega/sega2f_files/image017.wmz
+Extracting  doc/sega/sega2f_files/image019.wmz
+Extracting  doc/sega/sega2f_files/image021.wmz
+Extracting  doc/sega/sega2f_files/image023.wmz
+Extracting  doc/sega/sega2f_files/image025.wmz
+Extracting  doc/sega/sega2f_files/image027.wmz
+Extracting  doc/sega/sega2f_files/image029.wmz
+Extracting  doc/sega/sega2f_files/image031.wmz
+Extracting  doc/sega/sega2f_files/image033.wmz
+Extracting  doc/sega/sega2f_files/image035.wmz
+Extracting  doc/sega/sega2f_files/image037.wmz
+Extracting  doc/sega/sega2f_files/image039.wmz
+Extracting  doc/sega/sega2f_files/image041.wmz
+Extracting  doc/sega/sega2f_files/image043.wmz
+Extracting  doc/sega/sega2f_files/image045.wmz
+Extracting  doc/sega/sega2f_files/image047.wmz
+Extracting  doc/sega/sega2f_files/image049.wmz
+Extracting  doc/sega/sega2f_files/image051.wmz
+Extracting  doc/sega/sega2f_files/image053.wmz
+Extracting  doc/sega/sega2f_files/image055.wmz
+Extracting  doc/sega/sega2f_files/image057.wmz
+Extracting  doc/sega/sega2f_files/image059.wmz
+Extracting  doc/sega/sega2f_files/image061.wmz
+Extracting  doc/sega/sega2f_files/image063.wmz
+Extracting  doc/sega/sega2f_files/image065.wmz
+Extracting  doc/sega/sega2f_files/image067.wmz
+Extracting  doc/sega/sega2f_files/image069.wmz
+Extracting  doc/sega/sega2f_files/image071.wmz
+Extracting  doc/sega/sega2f_files/image073.wmz
+Extracting  doc/sega/sega2f_files/image075.wmz
+Extracting  doc/sega/sega2f_files/image077.wmz
+Extracting  doc/sega/sega2f_files/image079.wmz
+Extracting  doc/sega/sega2f_files/image081.wmz
+Extracting  doc/sega/sega2f_files/image083.wmz
+Extracting  doc/sega/sega2f_files/image085.wmz
+Extracting  doc/sega/sega2f_files/image087.wmz
+Extracting  doc/sega/sega2f_files/image090.wmz
+Extracting  doc/sega/sega2f_files/image092.wmz
+Extracting  doc/sega/sega2f_files/image094.wmz
+Extracting  doc/sega/sega2f_files/image096.wmz
+Extracting  doc/sega/sega2f_files/image098.wmz
+Extracting  doc/sega/sega2f_files/image100.wmz
+Extracting  doc/sega/sega2f_files/image102.wmz
+Extracting  doc/sega/sega2f_files/image104.wmz
+Extracting  doc/sega/sega2f_files/image106.wmz
+Extracting  doc/sega/sega2f_files/image108.wmz
+Extracting  doc/sega/sega2f_files/image110.wmz
+Extracting  doc/sega/sega2f_files/image113.wmz
+Extracting  doc/sega/sega2f_files/image115.wmz
+Extracting  doc/sega/sega2f_files/image117.wmz
+Extracting  doc/sega/sega2f_files/image119.wmz
+Extracting  doc/sega/sega2f_files/image121.wmz
+Extracting  doc/sega/sega2f_files/image123.wmz
+Extracting  doc/sega/sega2f_files/image125.wmz
+Extracting  doc/sega/sega2f_files/image127.wmz
+Extracting  doc/sega/sega2f_files/image129.wmz
+Extracting  doc/sega/sega2f_files/image132.wmz
+Extracting  doc/sega/sega2f_files/image135.wmz
+Extracting  doc/sega/sega2f_files/image137.wmz
+Extracting  doc/sega/sega2f_files/image139.wmz
+Extracting  doc/sega/sega2f_files/image141.wmz
+Extracting  doc/sega/sega2f_files/image143.wmz
+Extracting  doc/sega/sega2f_files/image145.wmz
+Extracting  doc/sega/sega2f_files/image147.wmz
+Extracting  doc/sega/sega2f_files/image149.wmz
+Extracting  doc/sega/sega2f_files/image151.wmz
+Extracting  doc/sega/sega2f_files/image153.wmz
+Extracting  doc/sega/sega2f_files/image155.wmz
+Extracting  doc/sega/sega2f_files/image157.wmz
+Extracting  doc/sega/sega2f_files/image159.wmz
+Extracting  doc/sega/sega2f_files/image161.wmz
+Extracting  doc/sega/sega2f_files/image163.wmz
+Extracting  doc/sega/sega2f_files/image165.wmz
+Extracting  doc/sega/sega2f_files/image167.wmz
+Extracting  doc/sega/sega2f_files/image169.wmz
+Extracting  doc/sega/sega2f_files/image171.wmz
+Extracting  doc/sega/sega2f_files/image173.wmz
+Extracting  doc/sega/sega2f_files/image175.wmz
+Extracting  doc/sega/sega2f_files/image180.wmz
+Extracting  doc/sega/sega2f_files/image182.wmz
+Extracting  doc/sega/sega2f_files/image184.wmz
+Extracting  doc/sega/sega2f_files/image186.wmz
+Extracting  doc/sega/sega2f_files/image188.wmz
+Extracting  doc/sega/sega2f_files/image190.wmz
+Extracting  doc/sega/sega2f_files/image192.wmz
+Extracting  doc/sega/sega2f_files/image194.wmz
+Extracting  doc/sega/sega2f_files/image196.wmz
+Extracting  doc/sega/sega2f_files/image198.wmz
+Extracting  doc/sega/sega2f_files/image200.wmz
+Extracting  doc/sega/sega2f_files/image202.wmz
+Extracting  doc/sega/sega2f_files/image204.wmz
+Extracting  doc/sega/sega2f_files/image206.wmz
+Extracting  doc/sega/sega2f_files/image208.wmz
+Extracting  doc/sega/sega2f_files/image210.wmz
+Extracting  doc/sega/sega2f_files/image212.wmz
+Extracting  doc/sega/sega2f_files/image214.wmz
+Extracting  doc/sega/sega2f_files/image216.wmz
+Extracting  doc/sega/sega2f_files/image218.wmz
+Extracting  doc/sega/sega2f_files/image220.wmz
+Extracting  doc/sega/sega2f_files/image222.wmz
+Extracting  doc/sega/sega2f_files/image224.wmz
+Extracting  doc/sega/sega2f_files/image226.wmz
+Extracting  doc/sega/sega2f_files/image228.wmz
+Extracting  doc/sega/sega2f_files/image230.wmz
+Extracting  doc/sega/sega2f_files/image232.wmz
+Extracting  doc/sega/sega2f_files/image234.wmz
+Extracting  doc/sega/sega2f_files/image236.wmz
+Extracting  doc/sega/sega2f_files/image238.wmz
+Extracting  doc/sega/sega2f_files/image240.wmz
+Extracting  doc/sega/sega2f_files/image242.wmz
+Extracting  doc/sega/sega2f_files/image244.wmz
+Extracting  doc/sega/sega2f_files/image246.wmz
+Extracting  doc/sega/sega2f_files/image248.wmz
+Extracting  doc/sega/sega2f_files/image250.wmz
+Extracting  doc/sega/sega2f_files/image252.wmz
+Extracting  doc/sega/sega2f_files/image254.wmz
+Extracting  doc/sega/sega2f_files/image256.wmz
+Extracting  doc/sega/sega2f_files/image258.wmz
+Extracting  doc/sega/sega2f_files/image260.wmz
+Extracting  doc/sega/sega2f_files/image262.wmz
+Extracting  doc/sega/sega2f_files/image264.wmz
+Extracting  doc/sega/sega2f_files/image266.wmz
+Extracting  doc/sega/sega2f_files/image268.wmz
+Extracting  doc/sega/sega2f_files/image270.wmz
+Extracting  doc/sega/sega2f_files/image272.wmz
+Extracting  doc/sega/sega2f_files/image274.wmz
+Extracting  doc/sega/sega2f_files/image276.wmz
+Extracting  doc/sega/sega2f_files/image278.wmz
+Extracting  doc/sega/sega2f_files/image280.wmz
+Extracting  doc/sega/sega2f_files/image282.wmz
+Extracting  doc/sega/sega2f_files/image284.wmz
+Extracting  doc/sega/sega2f_files/image286.wmz
+Extracting  doc/sega/sega2f_files/image288.wmz
+Extracting  doc/sega/sega2f_files/image290.wmz
+Extracting  doc/sega/sega2f_files/image292.wmz
+Extracting  doc/sega/sega2f_files/image294.wmz
+Extracting  doc/sega/sega2f_files/image296.wmz
+Extracting  doc/sega/sega2f_files/image298.wmz
+Extracting  doc/sega/sega2f_files/image300.wmz
+Extracting  doc/sega/sega2f_files/image302.wmz
+Extracting  doc/sega/sega2f_files/image304.wmz
+Extracting  doc/sega/sega2f_files/image306.wmz
+Extracting  doc/sega/sega2f_files/image308.wmz
+Extracting  doc/sega/sega2f_files/image310.wmz
+Extracting  doc/sega/sega2f_files/image312.wmz
+Extracting  doc/sega/sega2f_files/image314.wmz
+Extracting  doc/sega/sega2f_files/image316.wmz
+Extracting  doc/sega/sega2f_files/image318.wmz
+Extracting  doc/sega/sega2f_files/image320.wmz
+Extracting  doc/sega/sega2f_files/image322.wmz
+Extracting  doc/sega/sega2f_files/image324.wmz
+Extracting  doc/sega/sega2f_files/image326.wmz
+Extracting  doc/sega/sega2f_files/image328.wmz
+Extracting  doc/sega/sega2f_files/image330.wmz
+Extracting  doc/sega/sega2f_files/image332.wmz
+Extracting  doc/sega/sega2f_files/image334.wmz
+Extracting  doc/sega/sega2f_files/image336.wmz
+Extracting  doc/sega/sega2f_files/image338.wmz
+Extracting  doc/sega/sega2f_files/image340.wmz
+Extracting  doc/sega/sega2f_files/image342.wmz
+Extracting  doc/sega/sega2f_files/image344.wmz
+Extracting  doc/sega/sega2f_files/image346.wmz
+Extracting  doc/sega/sega2f_files/image348.wmz
+Extracting  doc/sega/sega2f_files/image350.wmz
+Extracting  doc/sega/sega2f_files/image352.wmz
+Extracting  doc/sega/sega2f_files/image354.wmz
+Extracting  doc/sega/sega2f_files/image356.wmz
+Extracting  doc/sega/sega2f_files/image358.wmz
+Extracting  doc/sega/sega2f_files/image360.wmz
+Extracting  doc/sega/sega2f_files/image362.wmz
+Extracting  doc/sega/sega2f_files/image364.wmz
+Extracting  doc/sega/sega2f_files/image366.wmz
+Extracting  doc/sega/sega2f_files/image368.wmz
+Extracting  bin/addr2line.exe
+Extracting  bin/ar.exe
+Extracting  bin/as.exe
+Extracting  bin/bintos.exe
+Extracting  bin/cc1.exe
+Extracting  bin/cpp.exe
+Extracting  bin/gcc.exe
+Extracting  bin/genres.exe
+Extracting  bin/ld.exe
+Extracting  bin/mac68k.exe
+Extracting  bin/make.exe
+Extracting  bin/mkdir.exe
+Extracting  bin/nm.exe
+Extracting  bin/nm2wch.exe
+Extracting  bin/objcopy.exe
+Extracting  bin/objdump.exe
+Extracting  bin/out2gsrc.exe
+Extracting  bin/pcmtoraw.exe
+Extracting  bin/rm.exe
+Extracting  bin/sh.exe
+Extracting  bin/sizebnd.exe
+Extracting  bin/sjasm.exe
+Extracting  bin/tfmcom.exe
+Extracting  bin/wavtoraw.exe
+Extracting  bin/z80dasm.exe
+Extracting  bin/ani.dll
+Extracting  bin/bitmap.dll
+Extracting  bin/cygiconv-2.dll
+Extracting  bin/cygintl-3.dll
+Extracting  bin/cygwin1.dll
+Extracting  bin/libiconv-2.dll
+Extracting  bin/libiconv2.dll
+Extracting  bin/libintl-8.dll
+Extracting  bin/libintl3.dll
+Extracting  bin/map.dll
+Extracting  tools/genitile/plugins/nemesis.dll
+Extracting  bin/pal.dll
+Extracting  bin/sprite.dll
+Extracting  tools/wavtoraw/src
+Extracting  tools/wavtoraw
+Extracting  tools/sizebnd/src
+Extracting  tools/sizebnd
+Extracting  tools/pcmtoraw/src
+Extracting  tools/pcmtoraw
+Extracting  tools/genitile/plugins/out_pcx
+Extracting  tools/genitile/plugins/out_h
+Extracting  tools/genitile/plugins/out_bmp
+Extracting  tools/genitile/plugins/out_bin
+Extracting  tools/genitile/plugins/out_asmgcc
+Extracting  tools/genitile/plugins/out_asm
+Extracting  tools/genitile/plugins/out_asgcc
+Extracting  tools/genitile/plugins/img_pcx
+Extracting  tools/genitile/plugins/img_bmp
+Extracting  tools/genitile/plugins
+Extracting  tools/genitile
+Extracting  tools/bintos/src
+Extracting  tools/bintos
+Extracting  tools
+Extracting  src/boot
+Extracting  src
+Extracting  sample/sound/src
+Extracting  sample/sound/res
+Extracting  sample/sound/out
+Extracting  sample/sound
+Extracting  sample/partic/src
+Extracting  sample/partic/out
+Extracting  sample/partic
+Extracting  sample/joytest/src
+Extracting  sample/joytest/out
+Extracting  sample/joytest
+Extracting  sample/cube_flat/out
+Extracting  sample/cube_flat
+Extracting  sample
+Extracting  res
+Extracting  lib
+Extracting  include
+Extracting  doc/sega/sega2f_files
+Extracting  doc/sega
+Extracting  doc/html/search
+Extracting  doc/html
+Extracting  doc
+Extracting  bin
+
+Everything is Ok
+
+Folders: 44
+Files: 903
+Size:       39488823
+Compressed: 8028136
+===>  Patching for sgdk094
+===>  Configuring for sgdk094
+===>  Building for sgdk094
+rm -f /usr/ports/pobj/sgdk094/sgdk094/bin/*.{exe,dll}
+cd /usr/ports/pobj/sgdk094/sgdk094/bin && cc -O2 -pipe  -o bintos  /usr/ports/pobj/sgdk094/sgdk094/tools/bintos/src/bintos.c
+/tmp//ccV1j756.o(.text+0x1fd): In function `main':
+: warning: strcpy() is almost always misused, please use strlcpy()
+/tmp//ccV1j756.o(.text+0x20e): In function `main':
+: warning: strcat() is almost always misused, please use strlcat()
+cd /usr/ports/pobj/sgdk094/sgdk094/bin && cc -O2 -pipe  -o pcmtoraw  /usr/ports/pobj/sgdk094/sgdk094/tools/pcmtoraw/src/pcmtoraw.c
+/tmp//ccgPOnFB.o(.text+0x226): In function `main':
+: warning: strcat() is almost always misused, please use strlcat()
+cd /usr/ports/pobj/sgdk094/sgdk094/bin && cc -O2 -pipe  -o sizebnd  /usr/ports/pobj/sgdk094/sgdk094/tools/sizebnd/src/sizebnd.c
+cd /usr/ports/pobj/sgdk094/sgdk094/bin && cc -O2 -pipe  -o wavtoraw  /usr/ports/pobj/sgdk094/sgdk094/tools/wavtoraw/src/wavtoraw.c -lm
+cd /usr/ports/pobj/sgdk094/sgdk094 && env GDK=/usr/ports/pobj/sgdk094/sgdk094 WRKBUILD=/usr/ports/pobj/sgdk094/sgdk094 PORTSDIR="/usr/ports" LIBTOOL="/usr/bin/libtool "  PATH='/usr/ports/pobj/sgdk094/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/bin:/usr/X11R6/bin' PREFIX='/usr/local'  LOCALBASE='/usr/local' DEPBASE='/usr/local' X11BASE='/usr/X11R6'  CFLAGS='-O2 -pipe'  TRUEPREFIX='/usr/local' DESTDIR=''  HOME='/sgdk094_writes_to_HOME' ELF_TOOLCHAIN=yes COMPILER_VERSION=gcc4  PICFLAG="-fpic" ASPICFLAG=  BINGRP=bin BINOWN=root BINMODE=555 NONBINMODE=444 DIRMODE=755  INSTALL_COPY=-c INSTALL_STRIP=-s  MANGRP=bin MANOWN=root MANMODE=444 BSD_INSTALL_PROGRAM="install -c -s -o root -g bin -m 555"  BSD_INSTALL_SCRIPT="install -c -o root -g bin -m 555"  BSD_INSTALL_DATA="install -c -o root -g bin -m 444"  BSD_INSTALL_MAN="install -c -o root -g bin -m 444"  BSD_INSTALL_PROGRAM_DIR="install -d -o root -g bin -m 755"  BSD_INSTALL_SCRIPT_DIR="install -d -o root -g bin -m 755"  BSD_INSTALL_DATA_DIR="install -d -o root -g bin -m 755"  BSD_INSTALL_MAN_DIR="install -d -o root -g bin -m 755"  gmake  LIBTOOL="/usr/bin/libtool "  SHARED_LIBS_LOG=/usr/ports/pobj/sgdk094/sgdk094/shared_libs.log -f makelib.gen
+bin/bintos -bmp /usr/ports/pobj/sgdk094/sgdk094/res/logo_lib.bmp
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/res/logo_lib.s -o /usr/ports/pobj/sgdk094/sgdk094/res/logo_lib.o
+/usr/local/bin/sjasm -i/usr/ports/pobj/sgdk094/sgdk094/src -i/usr/ports/pobj/sgdk094/sgdk094/include /usr/ports/pobj/sgdk094/sgdk094/src/z80_mvs.s80 /usr/ports/pobj/sgdk094/sgdk094/src/z80_mvs.o80 out.lst
+SjASM Z80 Assembler v0.39g6 - www.xl2s.tk
+Pass 1 complete (0 errors)
+Pass 2 complete
+Errors: 0
+bin/bintos /usr/ports/pobj/sgdk094/sgdk094/src/z80_mvs.o80
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/z80_mvs.s -o /usr/ports/pobj/sgdk094/sgdk094/src/z80_mvs.o
+/usr/local/bin/sjasm -i/usr/ports/pobj/sgdk094/sgdk094/src -i/usr/ports/pobj/sgdk094/sgdk094/include /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv3.s80 /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv3.o80 out.lst
+SjASM Z80 Assembler v0.39g6 - www.xl2s.tk
+Pass 1 complete (0 errors)
+Pass 2 complete
+Errors: 0
+bin/bintos /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv3.o80
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv3.s -o /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv3.o
+/usr/local/bin/sjasm -i/usr/ports/pobj/sgdk094/sgdk094/src -i/usr/ports/pobj/sgdk094/sgdk094/include /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv2.s80 /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv2.o80 out.lst
+SjASM Z80 Assembler v0.39g6 - www.xl2s.tk
+Pass 1 complete (0 errors)
+Pass 2 complete
+Errors: 0
+bin/bintos /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv2.o80
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv2.s -o /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv2.o
+/usr/local/bin/sjasm -i/usr/ports/pobj/sgdk094/sgdk094/src -i/usr/ports/pobj/sgdk094/sgdk094/include /usr/ports/pobj/sgdk094/sgdk094/src/z80_tfm.s80 /usr/ports/pobj/sgdk094/sgdk094/src/z80_tfm.o80 out.lst
+SjASM Z80 Assembler v0.39g6 - www.xl2s.tk
+Pass 1 complete (0 errors)
+Pass 2 complete
+Errors: 0
+bin/bintos /usr/ports/pobj/sgdk094/sgdk094/src/z80_tfm.o80
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/z80_tfm.s -o /usr/ports/pobj/sgdk094/sgdk094/src/z80_tfm.o
+/usr/local/bin/sjasm -i/usr/ports/pobj/sgdk094/sgdk094/src -i/usr/ports/pobj/sgdk094/sgdk094/include /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv4.s80 /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv4.o80 out.lst
+SjASM Z80 Assembler v0.39g6 - www.xl2s.tk
+Pass 1 complete (0 errors)
+Pass 2 complete
+Errors: 0
+bin/bintos /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv4.o80
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv4.s -o /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv4.o
+/usr/local/bin/sjasm -i/usr/ports/pobj/sgdk094/sgdk094/src -i/usr/ports/pobj/sgdk094/sgdk094/include /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv1.s80 /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv1.o80 out.lst
+SjASM Z80 Assembler v0.39g6 - www.xl2s.tk
+Pass 1 complete (0 errors)
+Pass 2 complete
+Errors: 0
+bin/bintos /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv1.o80
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv1.s -o /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv1.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/sram_a.s -o /usr/ports/pobj/sgdk094/sgdk094/src/sram_a.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/bmp_a.s -o /usr/ports/pobj/sgdk094/sgdk094/src/bmp_a.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/vdp_pal_a.s -o /usr/ports/pobj/sgdk094/sgdk094/src/vdp_pal_a.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/memory_a.s -o /usr/ports/pobj/sgdk094/sgdk094/src/memory_a.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/smp_null.s -o /usr/ports/pobj/sgdk094/sgdk094/src/smp_null.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/vdp_tile_a.s -o /usr/ports/pobj/sgdk094/sgdk094/src/vdp_tile_a.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/maths3D_a.s -o /usr/ports/pobj/sgdk094/sgdk094/src/maths3D_a.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/kdebug.s -o /usr/ports/pobj/sgdk094/sgdk094/src/kdebug.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/sys_a.s -o /usr/ports/pobj/sgdk094/sgdk094/src/sys_a.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/smp_null_pcm.s -o /usr/ports/pobj/sgdk094/sgdk094/src/smp_null_pcm.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/tab_sqrt.c -o /usr/ports/pobj/sgdk094/sgdk094/src/tab_sqrt.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/sram.c -o /usr/ports/pobj/sgdk094/sgdk094/src/sram.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/vdp_spr.c -o /usr/ports/pobj/sgdk094/sgdk094/src/vdp_spr.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/timer.c -o /usr/ports/pobj/sgdk094/sgdk094/src/timer.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/string.c -o /usr/ports/pobj/sgdk094/sgdk094/src/string.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/ym2612.c -o /usr/ports/pobj/sgdk094/sgdk094/src/ym2612.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/sound.c -o /usr/ports/pobj/sgdk094/sgdk094/src/sound.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/tab_sin.c -o /usr/ports/pobj/sgdk094/sgdk094/src/tab_sin.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/tools.c -o /usr/ports/pobj/sgdk094/sgdk094/src/tools.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/everdrive.c -o /usr/ports/pobj/sgdk094/sgdk094/src/everdrive.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/sys.c -o /usr/ports/pobj/sgdk094/sgdk094/src/sys.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/z80_ctrl.c -o /usr/ports/pobj/sgdk094/sgdk094/src/z80_ctrl.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/memory.c -o /usr/ports/pobj/sgdk094/sgdk094/src/memory.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/font.c -o /usr/ports/pobj/sgdk094/sgdk094/src/font.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/tab_cnv.c -o /usr/ports/pobj/sgdk094/sgdk094/src/tab_cnv.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/vdp_bg.c -o /usr/ports/pobj/sgdk094/sgdk094/src/vdp_bg.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/tab_log10.c -o /usr/ports/pobj/sgdk094/sgdk094/src/tab_log10.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/bmp.c -o /usr/ports/pobj/sgdk094/sgdk094/src/bmp.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/tfcplay.c -o /usr/ports/pobj/sgdk094/sgdk094/src/tfcplay.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/maths3D.c -o /usr/ports/pobj/sgdk094/sgdk094/src/maths3D.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/vdp_tile.c -o /usr/ports/pobj/sgdk094/sgdk094/src/vdp_tile.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/z80_vgm.c -o /usr/ports/pobj/sgdk094/sgdk094/src/z80_vgm.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/joy.c -o /usr/ports/pobj/sgdk094/sgdk094/src/joy.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/vdp_pal.c -o /usr/ports/pobj/sgdk094/sgdk094/src/vdp_pal.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/fat16.c -o /usr/ports/pobj/sgdk094/sgdk094/src/fat16.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/tab_log2.c -o /usr/ports/pobj/sgdk094/sgdk094/src/tab_log2.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/vdp.c -o /usr/ports/pobj/sgdk094/sgdk094/src/vdp.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/vdp_dma.c -o /usr/ports/pobj/sgdk094/sgdk094/src/vdp_dma.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/psg.c -o /usr/ports/pobj/sgdk094/sgdk094/src/psg.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/types.c -o /usr/ports/pobj/sgdk094/sgdk094/src/types.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/maths.c -o /usr/ports/pobj/sgdk094/sgdk094/src/maths.o
+/usr/local/bin/m68k-elf-gcc  -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy -I/usr/ports/pobj/sgdk094/sgdk094/include -I/usr/ports/pobj/sgdk094/sgdk094/src -I/usr/ports/pobj/sgdk094/sgdk094/res -c /usr/ports/pobj/sgdk094/sgdk094/src/tab_vol.c -o /usr/ports/pobj/sgdk094/sgdk094/src/tab_vol.o
+echo "/usr/ports/pobj/sgdk094/sgdk094/res/logo_lib.o         /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv2.o /usr/ports/pobj/sgdk094/sgdk094/src/z80_mvs.o /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv3.o /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv4.o /usr/ports/pobj/sgdk094/sgdk094/src/z80_tfm.o /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv1.o /usr/ports/pobj/sgdk094/sgdk094/src/smp_null.o /usr/ports/pobj/sgdk094/sgdk094/src/sys_a.o /usr/ports/pobj/sgdk094/sgdk094/src/sram_a.o /usr/ports/pobj/sgdk094/sgdk094/src/kdebug.o /usr/ports/pobj/sgdk094/sgdk094/src/vdp_tile_a.o /usr/ports/pobj/sgdk094/sgdk094/src/memory_a.o /usr/ports/pobj/sgdk094/sgdk094/src/bmp_a.o /usr/ports/pobj/sgdk094/sgdk094/src/maths3D_a.o /usr/ports/pobj/sgdk094/sgdk094/src/vdp_pal_a.o /usr/ports/pobj/sgdk094/sgdk094/src/smp_null_pcm.o /usr/ports/pobj/sgdk094/sgdk094/src/vdp_bg.o /usr/ports/pobj/sgdk094/sgdk094/src/tab_sin.o /usr/ports/pobj/sgdk094/sgdk094/src/tab_log2.o /usr/ports/pobj/sgdk094/sgdk094/src/vdp_dma.o /usr/ports/pobj/sgdk094/sgdk094/src/sram.o /usr/ports/pobj/sgdk094/sgdk094/src/font.o /usr/ports/pobj/sgdk094/sgdk094/src/tab_log10.o /usr/ports/pobj/sgdk094/sgdk094/src/tab_sqrt.o /usr/ports/pobj/sgdk094/sgdk094/src/vdp_tile.o /usr/ports/pobj/sgdk094/sgdk094/src/everdrive.o /usr/ports/pobj/sgdk094/sgdk094/src/memory.o /usr/ports/pobj/sgdk094/sgdk094/src/tools.o /usr/ports/pobj/sgdk094/sgdk094/src/ym2612.o /usr/ports/pobj/sgdk094/sgdk094/src/tfcplay.o /usr/ports/pobj/sgdk094/sgdk094/src/vdp.o /usr/ports/pobj/sgdk094/sgdk094/src/string.o /usr/ports/pobj/sgdk094/sgdk094/src/fat16.o /usr/ports/pobj/sgdk094/sgdk094/src/bmp.o /usr/ports/pobj/sgdk094/sgdk094/src/vdp_pal.o /usr/ports/pobj/sgdk094/sgdk094/src/tab_cnv.o /usr/ports/pobj/sgdk094/sgdk094/src/vdp_spr.o /usr/ports/pobj/sgdk094/sgdk094/src/maths3D.o /usr/ports/pobj/sgdk094/sgdk094/src/z80_vgm.o /usr/ports/pobj/sgdk094/sgdk094/src/psg.o /usr/ports/pobj/sgdk094/sgdk094/src/z80_ctrl.o /usr/ports/pobj/sgdk094/sgdk094/src/sound.o /usr/ports/pobj/sgdk094/sgdk094/src/types.o /usr/ports/pobj/sgdk094/sgdk094/src/tab_vol.o /usr/ports/pobj/sgdk094/sgdk094/src/sys.o /usr/ports/pobj/sgdk094/sgdk094/src/timer.o /usr/ports/pobj/sgdk094/sgdk094/src/joy.o /usr/ports/pobj/sgdk094/sgdk094/src/maths.o" > cmd_
+/usr/local/bin/m68k-elf-ar rs /usr/ports/pobj/sgdk094/sgdk094/libmd.a @cmd_
+/usr/local/bin/m68k-elf-ar: creating /usr/ports/pobj/sgdk094/sgdk094/libmd.a
+/bin/rm cmd_
+rm /usr/ports/pobj/sgdk094/sgdk094/src/z80_mvs.o80 /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv3.s /usr/ports/pobj/sgdk094/sgdk094/res/logo_lib.s /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv1.s /usr/ports/pobj/sgdk094/sgdk094/src/z80_tfm.o80 /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv2.s /usr/ports/pobj/sgdk094/sgdk094/src/z80_tfm.s /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv1.o80 /usr/ports/pobj/sgdk094/sgdk094/src/z80_mvs.s /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv2.o80 /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv4.s /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv4.o80 /usr/ports/pobj/sgdk094/sgdk094/src/z80_drv3.o80
