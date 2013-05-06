@@ -2,9 +2,9 @@
 
 COMMENT =		z80 assembler from XL2S Entertainment
 
-# http://home.wanadoo.nl/smastijn/sjasm42c.zip
-DISTNAME =		sjasm42c
-PKGNAME =		sjasm-42c
+# http://home.wanadoo.nl/smastijn/sjasm39g6.zip
+DISTNAME =		sjasm39g6
+PKGNAME =		sjasm-39g6
 EXTRACT_SUFX =		.zip
 
 CATEGORIES =		devel
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WRKDIST =		${WRKDIR}/sjasmsrc42c
+WRKDIST =		${WRKDIR}/sjasmsrc39g6
 
 WANTLIB +=		c m stdc++
 
@@ -26,7 +26,7 @@ MASTER_SITES =		http://home.wanadoo.nl/smastijn/
 
 USE_GMAKE =		Yes
 
-MAKE_FLAGS =		"CXXFLAGS=${CXXFLAGS}"
+MAKE_FLAGS =		"CXXFLAGS=${CXXFLAGS} -DMAX_PATH=MAXPATHLEN"
 
 # XXX NO TEST
 
