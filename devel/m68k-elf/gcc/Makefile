@@ -28,7 +28,7 @@ LIB_DEPENDS=	devel/mpfr
 
 LANGS=		c,c++
 CC=		/usr/bin/gcc
-CFLAGS=		-O2 -g
+CFLAGS=		-O4 -pipe -fomit-frame-pointer
 
 CONFIGURE_ARGS+=--enable-languages=${LANGS}	\
 		--enable-multilib		\
