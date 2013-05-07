@@ -1,6 +1,6 @@
 $OpenBSD$
 --- makelib.gen.orig	Tue Feb 26 22:24:11 2013
-+++ makelib.gen	Mon May  6 14:03:09 2013
++++ makelib.gen	Tue May  7 00:40:56 2013
 @@ -1,25 +1,25 @@
 -BIN= $(GDK)/bin
 -LIB= $(GDK)/lib
@@ -38,3 +38,12 @@ $OpenBSD$
  NM2WCH= $(BIN)/nm2wch
  
  OPTION=
+@@ -53,7 +53,7 @@ OBJ+= $(SRC_C:.c=.o)
+ 
+ INCS= -I$(INCLUDE) -I$(SRC) -I$(RES)
+ #FLAGS= $(OPTION) -g3 -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy $(INCS)
+-FLAGS= $(OPTION) -m68000 -Wall -O1 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy $(INCS)
++FLAGS= $(OPTION) -m68000 -Wall -O3 -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy $(INCS)
+ #FLAGS= $(OPTION) -m68000 -Wall -O3 -fno-web -fno-gcse -fno-unit-at-a-time -fomit-frame-pointer -fno-builtin-memset -fno-builtin-memcpy $(INCS)
+ FLAGSZ80= -i$(SRC) -i$(INCLUDE)
+ 
