@@ -57,11 +57,8 @@ FAKE_FLAGS=		DESTDIR=${WRKINST} \
 
 USE_GROFF =		Yes
 
-# based on MODPY_BIN_ADJ from python.port.mk
-PERL_BIN_ADJ=	perl -pi \
-		-e '$$. == 1 && s|^.*env perl.*$$|\#!/usr/bin/perl|;' \
-		-e '$$. == 1 && s|^.*bin/perl.*$$|\#!/usr/bin/perl|;' \
-		-e 'close ARGV if eof;'
+MODPERL_ADJ_FILES =	dcmpstat/tests/dcmpsprt.pl \
+			dcmtls/tests/dcmtk_ca.pl
 
 TEST_IS_INTERACTIVE =	X11
 
@@ -86,9 +83,6 @@ post-configure:
 .endif    # ${NO_SHARED_LIBS:L} != "yes"
 
 do-test:
-	${PERL_BIN_ADJ} \
-		${WRKSRC}/dcmpstat/tests/dcmpsprt.pl \
-		${WRKSRC}/dcmtls/tests/dcmtk_ca.pl
 	${MODTCL_WISH_ADJ} \
 		${WRKSRC}/dcmdata/tests/dcmpsdmp.tcl \
 		${WRKSRC}/dcmpstat/tests/dcmpschk.tcl
