@@ -17,7 +17,8 @@ MASTER_SITES =		http://www.gson.org/netbsd/anita/download/
 
 MODULES =			lang/python
 RUN_DEPENDS =     	devel/py-pexpect \
-					emulators/qemu
+					emulators/qemu \
+					sysutils/cdrtools
 
 WANTLIB +=              ${MODPY_WANTLIB}
 
