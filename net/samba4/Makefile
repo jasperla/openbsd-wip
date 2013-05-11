@@ -109,8 +109,10 @@ CONFIGURE_ARGS =	configure \
 
 WAF =			${WRKSRC}/buildtools/bin/waf
 WAF_ARGS =		-v -j ${MAKE_JOBS}
+PKG_CONFIG_PATH =	${WRKDIR}/pkgconfig
 
-CONFIGURE_ENV =		LC_ALL=en_US.UTF-8
+CONFIGURE_ENV =		LC_ALL=en_US.UTF-8 \
+			PKG_CONFIG_PATH=${PKG_CONFIG_PATH}
 
 MAKE_ENV =		LC_ALL=en_US.UTF-8 \
 			PYTHON=${MODPY_BIN} \
@@ -125,6 +127,8 @@ PYCMD =	"import sys, py_compile;py_compile.compile(sys.argv[1])"
 
 post-extract:
 	cp ${FILESDIR}/krb5-config ${WRKDIR}/bin
+	mkdir ${PKG_CONFIG_PATH}
+	cp ${FILESDIR}/*.pc ${PKG_CONFIG_PATH}
 
 post-patch:
 	find ${WRKSRC} -type f | xargs ${MODPY_BIN_ADJ}
