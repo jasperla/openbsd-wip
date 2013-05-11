@@ -5,24 +5,31 @@
 includedir=/usr/include/kerberosV
 libdir=/usr/lib
 libnames="krb5 gssapi"
+vendor="Heimdal"
 
 usage() {
-	echo "$(basename $0) [--cflags] [--libs]" >&2
+	echo "$(basename $0) [--cflags] [--libs] [--vendor]" >&2
 	exit 1
 }
 
 while [ $# -gt 0 ]; do
 	case $1 in
-	--libs)
-		for L in $libnames; do
-			ls $libdir/lib${L}.so.* | tail -1
-		done | xargs
-		;;
 	--cflags)
 		for D in $includedir; do
 			echo -I$D;
 		done | xargs
 		;;
+
+	--libs)
+		for L in $libnames; do
+			ls $libdir/lib${L}.so.* | tail -1
+		done | xargs
+		;;
+
+	--vendor)
+		echo "Heimdal"
+		;;
+	
 	*)
 		usage
 		;;
