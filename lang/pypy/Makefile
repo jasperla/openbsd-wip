@@ -4,8 +4,8 @@ ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		fast implementation of the Python language
 
-V=1.9
-DISTNAME =		release-${V}
+V=2.0
+DISTNAME =		pypy-${V}-src
 PKGNAME =		pypy-${V}
 
 CATEGORIES =		lang
@@ -20,26 +20,30 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=		bz2 c crypto curses expat ffi m pthread ssl util z
 
-MASTER_SITES =		https://bitbucket.org/pypy/pypy/get/
+MASTER_SITES =		https://bitbucket.org/pypy/pypy/downloads/
 EXTRACT_SUFX =		.tar.bz2
 
 DIST_SUBDIR =		pypy
 
-MODULES =		lang/python
+MODULES +=		devel/gettext lang/python gcc4
 MODPY_VERSION =		2.7
+MODGCC4_ARCHS =		*
+MODGCC4_VERSION =	4.7
+MODGCC4_LANGS =		c
+
 VMEM_WARNING =		Yes
 USE_GMAKE =		Yes
 BUILD_DEPENDS =		textproc/py-sphinx
 
-MODULES +=		devel/gettext
+CFLAGS += 		-pthread -fomit-frame-pointer -D_BSD_SOURCE
 
-WRKDIST =		${WRKDIR}/pypy-pypy-*
+WRKDIST =		${WRKDIR}/pypy-${V}-src
 
 do-build:
-	cd ${WRKSRC}/pypy/translator/goal/ && \
+	cd ${WRKSRC}/pypy/goal/ && \
 	  PYPY_USESSION_DIR=${WRKDIR}/usession PYPY_CTYPES_DIR=${WRKDIR}/ctypes \
-	  CC=${CC} CFLAGS="${CFLAGS}" \
-	  ${MODPY_BIN} translate.py --source -Ojit
+	  CC=egcc CFLAGS="${CFLAGS}" \
+	  ${MODPY_BIN} ../../rpython/bin/rpython --source -Ojit
 	cd ${WRKDIR}/usession/testing_1 && ${MAKE_PROGRAM}
 
 do-install:

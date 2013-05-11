@@ -1,6 +1,6 @@
 $OpenBSD$
---- pypy/tool/udir.py.orig	Wed Nov 30 11:28:30 2011
-+++ pypy/tool/udir.py	Wed Nov 30 11:28:40 2011
+--- rpython/tool/udir.py.orig	Fri May 10 20:01:00 2013
++++ rpython/tool/udir.py	Fri May 10 20:01:09 2013
 @@ -49,5 +49,4 @@ def make_udir(dir=None, basename=None):
                                     prefix = 'usession' + basename,
                                     keep = PYPY_KEEP)
