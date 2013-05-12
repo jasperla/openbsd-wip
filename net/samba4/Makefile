@@ -3,7 +3,7 @@
 SHARED_ONLY =		Yes
 COMMENT =		SMB and CIFS client and server for UNIX
 DISTNAME =		samba-4.0.5
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS =		asn1-samba4		0.0 \
 			com_err-samba4		0.0 \
@@ -87,8 +87,8 @@ LIB_DEPENDS =		databases/openldap \
 #TEST_DEPENDS =		
 
 CONFIGURE_STYLE =	simple
-CONFIGURE_ARGS =	configure \
-			--enable-fhs \
+# XXX Remember to remove --enable-developer, it prints passwords in logs.
+CONFIGURE_ARGS =	--enable-fhs \
 			--abi-check-disable \
 			--prefix=${PREFIX} \
 			--destdir=${WRKINST} \
@@ -104,6 +104,7 @@ CONFIGURE_ARGS =	configure \
 			--with-privileged-socket-dir=/var/samba \
 			--enable-developer \
 			--enable-selftest \
+			--private-libraries="!asn1_compile !com_err !crypto" \
 			--pedantic \
 			--without-pam
 
