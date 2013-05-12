@@ -11,14 +11,26 @@ HOMEPAGE =		http://viceteam.org/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ICE SM X11 Xaw Xext Xmu Xpm Xrandr Xt Xv Xxf86vm c
-WANTLIB += m ossaudio readline stdc++ termcap usbhid z
+WANTLIB += ICE SDL SM X11 Xaw Xext Xmu Xpm Xrandr Xt Xv Xxf86vm
+WANTLIB += c jpeg m pthread readline stdc++ termcap ungif usbhid
+WANTLIB += z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=vice-emu/}
+
+LIB_DEPENDS =		devel/sdl \
+			graphics/jpeg \
+			graphics/libungif
 
 CONFIGURE_STYLE =	gnu autoconf
 
 AUTOCONF_VERSION =	2.68
+
+CONFIGURE_ARGS +=	--without-oss \
+			--without-pulse \
+			--with-sdlsound
+
+# XXX broken with ffmpeg-20130319
+CONFIGURE_ARGS +=	--disable-ffmpeg
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/man/vice.1
