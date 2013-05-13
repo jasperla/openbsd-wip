@@ -1,7 +1,0 @@
-#!/bin/ksh
-
-JAVA_CMD=$(javaPathHelper -c abcl)
-
-rlwrap -f ${TRUEPREFIX}/abcl/abcl_completions ${JAVA_CMD} -classpath \
-	${LOCALBASE}/share/java/classes/'*':${TRUEPREFIX}/abcl/abcl.jar:src:. \
-        org.armedbear.lisp.Main "$@"
