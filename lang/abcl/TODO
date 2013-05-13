@@ -1,2 +1,0 @@
-Regress test tries to use make instead of ant and fails.
-test target also executes clean before test which should be patched.
