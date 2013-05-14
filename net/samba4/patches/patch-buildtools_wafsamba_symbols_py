@@ -1,0 +1,15 @@
+$OpenBSD$
+Our nm(1) defaults to show dynamic symbol table, unless there are many.
+--- buildtools/wafsamba/symbols.py.orig	Tue May 14 17:30:33 2013
++++ buildtools/wafsamba/symbols.py	Tue May 14 17:31:41 2013
+@@ -46,8 +46,8 @@ def symbols_extract(bld, objfiles, dynamic=False):
+         return ret
+ 
+     cmd = ["nm"]
+-    if dynamic:
+-        # needed for some .so files
++    if dynamic and not sys.platform.startswith("openbsd"):
++        # needed for some .so files on non-OpenBSD platforms
+         cmd.append("-D")
+     cmd.extend(list(objfiles))
+ 
