@@ -125,7 +125,6 @@ MAKE_ENV +=		LIB${_l:S/-/_/g}_VERSION=${_v}
 .endfor
 
 SAMBA4_PYTHON_PKGPATH =	${PREFIX}/lib/python${MODPY_VERSION}/site-packages
-PYCMD =	"import sys, py_compile;py_compile.compile(sys.argv[1])"
 
 post-extract:
 	cp ${FILESDIR}/krb5-config ${WRKDIR}/bin
@@ -144,13 +143,9 @@ post-configure:
 post-install:
 	@find ${PREFIX} -name '*${PATCHORIG}' -or -name '*.beforesubst' | \
 	    xargs -rt rm --
-	@export PYTHONPATH=${SAMBA4_PYTHON_PKGPATH}; \
-	    find ${SAMBA4_PYTHON_PKGPATH} -name '*.py' | \
-	    while read F; do \
-	        echo '${MODPY_BIN} -c ${PYCMD}' $$F >&2; \
-	        ${MODPY_BIN} -c ${PYCMD} $$F; \
-	        echo '${MODPY_BIN} -O -c ${PYCMD}' $$F >&2; \
-	        ${MODPY_BIN} -O -c ${PYCMD} $$F; \
-	    done
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${SAMBA4_PYTHON_PKGPATH}
+	${MODPY_BIN} -O ${MODPY_LIBDIR}/compileall.py \
+		${SAMBA4_PYTHON_PKGPATH}
 
 .include <bsd.port.mk>
