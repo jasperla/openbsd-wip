@@ -1,7 +1,8 @@
 $OpenBSD$
 Our nm(1) defaults to show dynamic symbol table, unless there are many.
+__cxa_finalize is okay to be included in each library?
 --- buildtools/wafsamba/symbols.py.orig	Tue May 14 17:30:33 2013
-+++ buildtools/wafsamba/symbols.py	Tue May 14 17:31:41 2013
++++ buildtools/wafsamba/symbols.py	Tue May 14 17:37:57 2013
 @@ -46,8 +46,8 @@ def symbols_extract(bld, objfiles, dynamic=False):
          return ret
  
@@ -13,3 +14,12 @@ Our nm(1) defaults to show dynamic symbol table, unless there are many.
          cmd.append("-D")
      cmd.extend(list(objfiles))
  
+@@ -569,7 +569,7 @@ def symbols_whyneeded(task):
+ 
+ def report_duplicate(bld, binname, sym, libs, fail_on_error):
+     '''report duplicated symbols'''
+-    if sym in ['_init', '_fini', '_edata', '_end', '__bss_start']:
++    if sym in ['_init', '_fini', '_edata', '_end', '__bss_start', '__cxa_finalize']:
+         return
+     libnames = []
+     for lib in libs:
