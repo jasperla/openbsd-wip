@@ -3,7 +3,7 @@
 SHARED_ONLY =		Yes
 COMMENT =		SMB and CIFS client and server for UNIX
 DISTNAME =		samba-4.0.5
-REVISION =		3
+REVISION =		4
 
 SHARED_LIBS =		asn1-samba4		0.0 \
 			com_err-samba4		0.0 \
@@ -63,7 +63,7 @@ HOMEPAGE =		http://www.samba.org/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += avahi-client avahi-common c cups execinfo iniparser
-WANTLIB += lber ldap popt pthread sasl2 util z ${MODPY_WANTLIB}
+WANTLIB += lber ldap pam popt pthread sasl2 util z ${MODPY_WANTLIB}
 
 MASTER_SITES =		http://ftp.samba.org/pub/samba/stable/ \
 			http://ftp.samba.org/pub/samba/old-versions/
@@ -85,7 +85,7 @@ LIB_DEPENDS =		databases/openldap \
 			net/avahi \
 			print/cups,-libs \
 			security/cyrus-sasl2 \
-			security/gnutls
+			security/openpam
 #TEST_DEPENDS =		
 
 CONFIGURE_STYLE =	simple
@@ -107,8 +107,7 @@ CONFIGURE_ARGS =	--enable-fhs \
 			--enable-developer \
 			--enable-selftest \
 			--private-libraries="!asn1_compile !com_err !crypto" \
-			--pedantic \
-			--without-pam
+			--pedantic
 
 WAF =			${WRKSRC}/buildtools/bin/waf
 WAF_ARGS =		-v -j ${MAKE_JOBS}
