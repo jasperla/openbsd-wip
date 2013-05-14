@@ -1,19 +1,17 @@
 $OpenBSD$
 Make Samba4 WAF respect OpenBSD shared libraries versioning conventions.
---- buildtools/wafsamba/wafsamba.py.orig	Tue May 14 12:42:59 2013
-+++ buildtools/wafsamba/wafsamba.py	Tue May 14 12:40:55 2013
-@@ -192,6 +192,15 @@ def SAMBA_LIBRARY(bld, libname, source,
+--- buildtools/wafsamba/wafsamba.py.orig	Tue May 14 15:17:30 2013
++++ buildtools/wafsamba/wafsamba.py	Tue May 14 20:16:50 2013
+@@ -192,6 +192,13 @@ def SAMBA_LIBRARY(bld, libname, source,
      deps = TO_LIST(deps)
      deps.append(obj_target)
  
-+    print "Adding Samba library %s: v%s, realname %s, link_name %s, soname %s" % (libname, vnum, realname, link_name, soname)
 +    osvnum = os.getenv('LIB' + libname.replace('-', '_') + '_VERSION')
 +    if osvnum:
 +        vnum = osvnum
 +        if realname:  realname  = re.sub(r'(\.[0-9]+)+$', '.' + osvnum, realname)
 +        if link_name: link_name = re.sub(r'(\.[0-9]+)+$', '.' + osvnum, link_name)
 +        if soname:    soname    = re.sub(r'(\.[0-9]+)+$', '.' + osvnum, soname)
-+        print "OVERRIDEN values for %s: v%s, realname %s, link_name %s, soname %s" % (libname, vnum, realname, link_name, soname)
 +
      realname = bld.map_shlib_extension(realname, python=(target_type=='PYTHON'))
      link_name = bld.map_shlib_extension(link_name, python=(target_type=='PYTHON'))
