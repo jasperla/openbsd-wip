@@ -3,7 +3,7 @@
 SHARED_ONLY =		Yes
 COMMENT =		SMB and CIFS client and server for UNIX
 DISTNAME =		samba-4.0.5
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS =		asn1-samba4		0.0 \
 			com_err-samba4		0.0 \
@@ -22,6 +22,7 @@ SHARED_LIBS =		asn1-samba4		0.0 \
 			kdc-samba4		0.0 \
 			krb5-samba4		0.0 \
 			ldb			0.0 \
+			mit_samba		0.0 \
 			ndr			0.0 \
 			ndr-krb5pac		0.0 \
 			ndr-nbt			0.0 \
@@ -49,7 +50,8 @@ SHARED_LIBS =		asn1-samba4		0.0 \
 			tevent-util		0.0 \
 			torture			0.0 \
 			wbclient		0.0 \
-			wind-samba4		0.0
+			wind-samba4		0.0 \
+			winbind_krb5_locator	0.0
 
 CATEGORIES =		net sysutils security
 
