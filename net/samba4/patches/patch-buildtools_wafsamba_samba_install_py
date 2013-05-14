@@ -1,8 +1,8 @@
 $OpenBSD$
 Make Samba4 WAF respect OpenBSD shared libraries versioning conventions.
---- buildtools/wafsamba/samba_install.py.orig	Tue May 14 12:56:43 2013
-+++ buildtools/wafsamba/samba_install.py	Tue May 14 15:02:44 2013
-@@ -67,17 +67,24 @@ def install_library(self):
+--- buildtools/wafsamba/samba_install.py.orig	Tue May 14 15:17:30 2013
++++ buildtools/wafsamba/samba_install.py	Tue May 14 20:17:22 2013
+@@ -67,17 +67,20 @@ def install_library(self):
          self.env.RPATH = build_ldflags
          return
  
@@ -10,19 +10,15 @@ Make Samba4 WAF respect OpenBSD shared libraries versioning conventions.
 +
 +    # OpenBSD-like library handling
 +    osvnum = os.getenv('LIB' + target_name.replace('-', '_') + '_VERSION')
-+    if osvnum:
-+        print "OVERRIDE = " + osvnum + " for " + target_name
 +
      # setup the install path, expanding variables
      install_path = getattr(self, 'samba_inst_path', None)
-+    print "samba_inst_path FOR ", target_name, " is ", install_path
      if install_path is None:
 -        if getattr(self, 'private_library', False):
 +        if getattr(self, 'private_library', False) and not osvnum:
              install_path = '${PRIVATELIBDIR}'
          else:
              install_path = '${LIBDIR}'
-+    print "RESULT install_path FOR ", target_name, " is ", install_path
      install_path = bld.EXPAND_VARIABLES(install_path)
  
 -    target_name = self.target
@@ -30,11 +26,8 @@ Make Samba4 WAF respect OpenBSD shared libraries versioning conventions.
      if install_ldflags != build_ldflags:
          # we will be creating a new target name, and using that for the
          # install link. That stops us from overwriting the existing build
-@@ -101,27 +108,46 @@ def install_library(self):
-     # - install_link is a symlink in the install directory, to install_name
- 
+@@ -103,23 +106,37 @@ def install_library(self):
      if getattr(self, 'samba_realname', None):
-+        print "samba_realname is " + self.samba_realname + " for " + target_name
          install_name = self.samba_realname
          install_link = None
 -        if getattr(self, 'soname', ''):
@@ -46,7 +39,6 @@ Make Samba4 WAF respect OpenBSD shared libraries versioning conventions.
 +            osname = re.sub(r'(\.[0-9]+)+$', '', osname) + '.' + osvnum
 +            # OpenBSD requires "lib" prefix for all versioned shared libraries
 +            osname = re.sub(r'^(.*/|)(?:lib)?(([^l]|l[^i]|li[^b])[^/]+)$', r'\1lib\2', osname)
-+            print "OVERRIDING: " + install_name + " => " + osname
 +            install_name = osname
 +            if getattr(self, 'soname', ''):
 +                self.soname = osname
@@ -60,7 +52,6 @@ Make Samba4 WAF respect OpenBSD shared libraries versioning conventions.
 -        vnum_base    = self.vnum.split('.')[0]
 -        install_name = bld.make_libname(target_name, version=self.vnum)
 -        install_link = bld.make_libname(target_name, version=vnum_base)
-+        print "self.vnum = " + self.vnum + " for " + target_name
 +        install_link     = None
 +        if osvnum:
 +            install_name = bld.make_libname(target_name, version=osvnum)
@@ -73,13 +64,9 @@ Make Samba4 WAF respect OpenBSD shared libraries versioning conventions.
              # only generate the dev link for non-bundled libs
              dev_link     = bld.make_libname(target_name)
      elif getattr(self, 'soname', ''):
-+        print "soname is " + self.soname + " for " + target_name
          install_name = bld.make_libname(target_name)
 -        install_link = self.soname
 +        install_link = None
          inst_name    = bld.make_libname(t.target)
      else:
-+        print "else case for " + target_name
          install_name = bld.make_libname(target_name)
-         install_link = None
-         inst_name    = bld.make_libname(t.target)
