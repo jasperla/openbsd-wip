@@ -7,7 +7,7 @@ REVISION = 		0
 
 CATEGORIES =		games x11
 
-HOMEPAGE =		http://www.maxthegame.de/
+HOMEPAGE =		http://www.maxr.org/
 
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
@@ -26,7 +26,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-post-patch:
+pre-configure:
 	@perl -pi -e 's|cp -a|cp -RpP|' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
