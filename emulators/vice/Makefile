@@ -17,6 +17,7 @@ WANTLIB += z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=vice-emu/}
 
+BUILD_DEPENDS =		print/texlive/base
 LIB_DEPENDS =		devel/sdl \
 			graphics/jpeg \
 			graphics/libungif

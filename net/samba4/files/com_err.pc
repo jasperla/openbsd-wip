@@ -7,5 +7,5 @@ Name: com_err
 Description: common error description library
 Version: 1.2.3
 Requires: 
-Libs: -L${libdir} -lcom_err
+Libs: -L${libdir} -lcom_err -lcrypto
 Cflags: -I${includedir}

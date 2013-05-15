@@ -1,7 +1,7 @@
 $OpenBSD$
---- components/files/fixedpath.hpp.orig	Tue Mar  6 00:39:26 2012
-+++ components/files/fixedpath.hpp	Tue Mar  6 00:39:59 2012
-@@ -26,7 +26,7 @@
+--- components/files/fixedpath.hpp.orig	Wed Apr 24 00:47:57 2013
++++ components/files/fixedpath.hpp	Sun May 12 20:45:25 2013
+@@ -4,7 +4,7 @@
  #include <string>
  #include <boost/filesystem.hpp>
  

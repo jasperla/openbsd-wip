@@ -4,9 +4,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		open source implementation of TES III: Morrowind
 
-V =			0.12.0
-DISTNAME =		openmw-${V}-source
-PKGNAME =		openmw-${V}
+DISTNAME =		openmw-0.23.0
 
 CATEGORIES =		games
 
@@ -14,42 +12,40 @@ HOMEPAGE =		http://openmw.com
 
 MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
-# GPLv3
+# GPLv3 / OFLv1.1
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += BulletCollision BulletDynamics BulletSoftBody LinearMath
-WANTLIB += OIS OgreMain QtGui boost_filesystem-mt boost_program_options-mt
-WANTLIB += boost_system-mt boost_thread-mt c e2fs-uuid freetype
-WANTLIB += m mpg123 openal png pthread sndfile stdc++
+WANTLIB += MyGUIEngine OIS OgreMain OgreTerrain QtGui QtNetwork QtXml
+WANTLIB += QtXmlPatterns Xt avcodec avformat avutil boost_date_time-mt
+WANTLIB += boost_filesystem-mt boost_program_options-mt boost_system-mt
+WANTLIB += boost_thread-mt c freetype m mpg123 openal pthread
+WANTLIB += sndfile swscale
 
 MASTER_SITES =		http://openmw.googlecode.com/files/
-EXTRACT_SUFX =		.tar.bz2
+TAR = 			${LOCALBASE}/bin/gtar
 
-MODULES =		devel/cmake \
-			x11/qt4
-LIB_DEPENDS =		x11/ogre \
-			devel/boost \
-			audio/openal \
+MODULES =		gcc4 devel/cmake x11/qt4
+MODGCC4_ARCHS = 	*
+MODGCC4_LANGS += 	c++
+BUILD_DEPENDS = 	archivers/gtar
+LIB_DEPENDS =		audio/libsndfile \
 			audio/mpg123 \
-			audio/libsndfile \
-			sysutils/e2fsprogs \
+			audio/openal \
 			devel/bullet \
-			graphics/png \
-			devel/ois
+			devel/mygui \
+			devel/ois \
+			graphics/ffmpeg \
+			x11/ogre,-main>=1.8.1
+RUN_DEPENDS  = 		devel/desktop-file-utils
+
+CONFIGURE_ARGS += 	-DBINDIR=${LOCALBASE}/bin \
+			-DMANDIR:PATH=${LOCALBASE}/man \
+			-DSYSCONFDIR=${SYSCONFDIR}/openmw
 
 NO_TEST =		Yes
 
-CFLAGS +=		-pthread
-
-do-install:
-.	for f in esmtool omwlauncher openmw
-	${INSTALL_PROGRAM} ${WRKBUILD}/${f} ${PREFIX}/bin
-.	endfor
-	${INSTALL_DATA_DIR} ${PREFIX}/share/openmw
-	cd ${WRKBUILD} && pax -rw resources ${PREFIX}/share/openmw/
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openmw
-.	for c in launcher.cfg openmw.cfg
-	${INSTALL_DATA} ${WRKBUILD}/${c} ${PREFIX}/share/examples/openmw/
-.	endfor
+WRKDIST = 		${WRKDIR}/openmw-${DISTNAME}
+CFLAGS += 		-pthread
 
 .include <bsd.port.mk>

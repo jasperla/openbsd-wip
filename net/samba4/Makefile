@@ -3,7 +3,7 @@
 SHARED_ONLY =		Yes
 COMMENT =		SMB and CIFS client and server for UNIX
 DISTNAME =		samba-4.0.5
-REVISION =		2
+REVISION =		4
 
 SHARED_LIBS =		asn1-samba4		0.0 \
 			com_err-samba4		0.0 \
@@ -22,6 +22,7 @@ SHARED_LIBS =		asn1-samba4		0.0 \
 			kdc-samba4		0.0 \
 			krb5-samba4		0.0 \
 			ldb			0.0 \
+			mit_samba		0.0 \
 			ndr			0.0 \
 			ndr-krb5pac		0.0 \
 			ndr-nbt			0.0 \
@@ -49,7 +50,8 @@ SHARED_LIBS =		asn1-samba4		0.0 \
 			tevent-util		0.0 \
 			torture			0.0 \
 			wbclient		0.0 \
-			wind-samba4		0.0
+			wind-samba4		0.0 \
+			winbind_krb5_locator	0.0
 
 CATEGORIES =		net sysutils security
 
@@ -61,7 +63,7 @@ HOMEPAGE =		http://www.samba.org/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += avahi-client avahi-common c cups execinfo iniparser
-WANTLIB += lber ldap popt pthread sasl2 util z ${MODPY_WANTLIB}
+WANTLIB += lber ldap pam popt pthread sasl2 util z ${MODPY_WANTLIB}
 
 MASTER_SITES =		http://ftp.samba.org/pub/samba/stable/ \
 			http://ftp.samba.org/pub/samba/old-versions/
@@ -83,7 +85,7 @@ LIB_DEPENDS =		databases/openldap \
 			net/avahi \
 			print/cups,-libs \
 			security/cyrus-sasl2 \
-			security/gnutls
+			security/openpam
 #TEST_DEPENDS =		
 
 CONFIGURE_STYLE =	simple
@@ -105,8 +107,7 @@ CONFIGURE_ARGS =	--enable-fhs \
 			--enable-developer \
 			--enable-selftest \
 			--private-libraries="!asn1_compile !com_err !crypto" \
-			--pedantic \
-			--without-pam
+			--pedantic
 
 WAF =			${WRKSRC}/buildtools/bin/waf
 WAF_ARGS =		-v -j ${MAKE_JOBS}
@@ -124,7 +125,6 @@ MAKE_ENV +=		LIB${_l:S/-/_/g}_VERSION=${_v}
 .endfor
 
 SAMBA4_PYTHON_PKGPATH =	${PREFIX}/lib/python${MODPY_VERSION}/site-packages
-PYCMD =	"import sys, py_compile;py_compile.compile(sys.argv[1])"
 
 post-extract:
 	cp ${FILESDIR}/krb5-config ${WRKDIR}/bin
@@ -143,13 +143,9 @@ post-configure:
 post-install:
 	@find ${PREFIX} -name '*${PATCHORIG}' -or -name '*.beforesubst' | \
 	    xargs -rt rm --
-	@export PYTHONPATH=${SAMBA4_PYTHON_PKGPATH}; \
-	    find ${SAMBA4_PYTHON_PKGPATH} -name '*.py' | \
-	    while read F; do \
-	        echo '${MODPY_BIN} -c ${PYCMD}' $$F >&2; \
-	        ${MODPY_BIN} -c ${PYCMD} $$F; \
-	        echo '${MODPY_BIN} -O -c ${PYCMD}' $$F >&2; \
-	        ${MODPY_BIN} -O -c ${PYCMD} $$F; \
-	    done
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${SAMBA4_PYTHON_PKGPATH}
+	${MODPY_BIN} -O ${MODPY_LIBDIR}/compileall.py \
+		${SAMBA4_PYTHON_PKGPATH}
 
 .include <bsd.port.mk>
