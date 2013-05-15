@@ -1,2 +1,11 @@
- - split into multipackgaes
+ - install demos in shre/examples/MyGUI as it is done in devel/ode
+ - in CMake/InstallResources.cmake set path for plugins.cfg and resources.xml
+ ? in Base/Ogre/BaseManager.cpp set path for plugins.cfg and resources.xml
  - use shared lib version
+ - write DESCR for extra packges
+ - link demos with OGRE:
+	Loading library /usr/lib/OGRE/RenderSystem_GL
+	terminate called after throwing an instance of 'Ogre::InternalErrorException'
+	  what():  OGRE EXCEPTION(7:InternalErrorException): Could not load dynamic library
+	 /usr/lib/OGRE/RenderSystem_GL.  System Error: File not found in DynLib::load at
+	 /tmp/pobj/ogre_src_v1-8-1/ogre_src_v1-8-1/OgreMain/src/OgreDynLib.cpp (line 93)
