@@ -7,9 +7,8 @@ SHARED_ONLY=		Yes
 COMMENT-main=		library of programming functions for real time cv
 COMMENT-docs=		documentation for OpenCV
 
-V=			2.4.1
-REVISION=		4
-DISTNAME=		OpenCV-$V
+V=			2.4.5
+DISTNAME=		opencv-$V
 PKGNAME-main=		opencv-$V
 PKGNAME-docs=		opencv-docs-$V
 CATEGORIES=		graphics devel
@@ -32,15 +31,14 @@ SHARED_LIBS +=		opencv_photo			0.0
 SHARED_LIBS +=		opencv_stitching		0.0
 SHARED_LIBS +=		opencv_videostab		0.0
 
-HOMEPAGE=		http://code.opencv.org
+HOMEPAGE=		http://www.opencv.org
 
 MAINTAINER=		Rafael Sadowski <rafael@sizeofvoid.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://www.sizeofvoid.org/pub/OpenBSD/distfiles/
-EXTRACT_SUFX=		.tar.bz2
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=opencvlibrary/}
 
 WANTLIB-main += GL Half Iex IlmImf IlmThread Imath X11 Xcomposite Xcursor
 WANTLIB-main += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
@@ -102,7 +100,6 @@ post-configure:
 		perl -pi -e 's/(CXX_DEFINES =).*/$1/' {} \;
 
 post-install:
-	@cd ${PREFIX} && mv -f share/OpenCV/* share/opencv
 	@perl -pi -e 's,libopencv_calib3d.so,libopencv_calib3d.so.${LIBopencv_calib3d_VERSION},g;' \
 		-e 's,libopencv_contrib.so,libopencv_contrib.so.${LIBopencv_contrib_VERSION},g;' \
 		-e 's,libopencv_core.so,libopencv_core.so.${LIBopencv_core_VERSION},g;' \
@@ -121,5 +118,8 @@ post-install:
 		-e 's,libopencv_stitching.so,libopencv_stitching.so.${LIBopencv_stitching_VERSION},g;' \
 		-e 's,libopencv_videostab.so,libopencv_videostab.so.${LIBopencv_videostab_VERSION},g;' \
 		${PREFIX}/share/opencv/OpenCVConfig.cmake
+
+post-extract:
+	cp ${FILESDIR}/how_to_scan_images.cpp ${WRKSRC}/samples/cpp/tutorial_code/core/how_to_scan_images/how_to_scan_images.cpp
 
 .include <bsd.port.mk>

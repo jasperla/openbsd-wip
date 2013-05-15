@@ -1,12 +1,11 @@
 $OpenBSD$
---- cmake/OpenCVFindLibsVideo.cmake.orig	Sat Jun 23 23:35:56 2012
-+++ cmake/OpenCVFindLibsVideo.cmake	Sat Jun 23 23:35:54 2012
-@@ -76,7 +76,7 @@ ocv_clear_vars(HAVE_LIBV4L HAVE_CAMV4L HAVE_CAMV4L2)
+--- cmake/OpenCVFindLibsVideo.cmake.orig	Sat Apr 13 21:25:55 2013
++++ cmake/OpenCVFindLibsVideo.cmake	Sat Apr 13 21:27:20 2013
+@@ -98,7 +98,6 @@ ocv_clear_vars(HAVE_LIBV4L HAVE_CAMV4L HAVE_CAMV4L2 HA
  if(WITH_V4L)
    CHECK_MODULE(libv4l1 HAVE_LIBV4L)
    CHECK_INCLUDE_FILE(linux/videodev.h HAVE_CAMV4L)
 -  CHECK_INCLUDE_FILE(linux/videodev2.h HAVE_CAMV4L2)
-+  CHECK_INCLUDE_FILE(sys/videoio.h HAVE_CAMV4L2)
+   CHECK_INCLUDE_FILE(sys/videoio.h HAVE_VIDEOIO)
  endif(WITH_V4L)
  
- # --- OpenNI ---
