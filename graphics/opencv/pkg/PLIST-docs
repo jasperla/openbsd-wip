@@ -1,21 +1,13 @@
 @comment $OpenBSD$
+lib/pkgconfig/
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
 share/opencv/doc/
-share/opencv/doc/CMakeLists.txt
 share/opencv/doc/acircles_pattern.png
-share/opencv/doc/check_docs_whitelist.txt
 share/opencv/doc/haartraining.htm
 share/opencv/doc/license.txt
 share/opencv/doc/opencv-logo-white.png
 share/opencv/doc/opencv-logo.png
 share/opencv/doc/opencv-logo2.png
-share/opencv/doc/opencv.jpg
-share/opencv/doc/opencv2refman.pdf
-share/opencv/doc/opencv_cheatsheet.pdf
-share/opencv/doc/opencv_tutorials.pdf
-share/opencv/doc/opencv_user.pdf
-share/opencv/doc/packaging.txt
+share/opencv/doc/opencv.ico
 share/opencv/doc/pattern.png
-share/opencv/doc/vidsurv/
-share/opencv/doc/vidsurv/Blob_Tracking_Modules.doc
-share/opencv/doc/vidsurv/Blob_Tracking_Tests.doc
-share/opencv/doc/vidsurv/TestSeq.doc
