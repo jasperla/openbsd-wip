@@ -1,0 +1,11 @@
+$OpenBSD$
+--- apps/launcher/CMakeLists.txt.orig	Mon May 13 16:45:21 2013
++++ apps/launcher/CMakeLists.txt	Mon May 13 16:45:32 2013
+@@ -105,6 +105,6 @@ endif()
+ 
+ # Workaround for binutil => 2.23 problem when linking, should be fixed eventually upstream
+ if (UNIX AND NOT APPLE)
+-target_link_libraries(omwlauncher dl Xt)
++target_link_libraries(omwlauncher Xt)
+ endif()
+ 
