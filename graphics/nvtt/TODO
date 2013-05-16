@@ -1,1 +1,2 @@
-Wait until 0ad is ready?
+Install headers to unbreak DeVIL. There seems to be no make target for this.
+How does debian do this?
