@@ -207,15 +207,6 @@ lib/python${MODPY_VERSION}/site-packages/cv2.so
 share/OpenCV/
 share/OpenCV/OpenCVConfig-version.cmake
 share/OpenCV/OpenCVConfig.cmake
-share/OpenCV/doc/
-share/OpenCV/doc/acircles_pattern.png
-share/OpenCV/doc/haartraining.htm
-share/OpenCV/doc/license.txt
-share/OpenCV/doc/opencv-logo-white.png
-share/OpenCV/doc/opencv-logo.png
-share/OpenCV/doc/opencv-logo2.png
-share/OpenCV/doc/opencv.ico
-share/OpenCV/doc/pattern.png
 share/OpenCV/haarcascades/
 share/OpenCV/haarcascades/haarcascade_eye.xml
 share/OpenCV/haarcascades/haarcascade_eye_tree_eyeglasses.xml
