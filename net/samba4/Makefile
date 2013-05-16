@@ -148,4 +148,25 @@ post-install:
 	${MODPY_BIN} -O ${MODPY_LIBDIR}/compileall.py \
 		${SAMBA4_PYTHON_PKGPATH}
 
+HEIMDAL_LIBS =		asn1 com_err gssapi krb5 
+
+# XXX Method of taking library is flawed, it will break for numbers
+# with different count of digits.
+
+.for _l in ${HEIMDAL_LIBS}
+HLIB_${_l}_OS =		find /usr/lib -name 'lib${_l}.so.*' | sort -nr | head -1
+HLIB_${_l}_SAMBA4 =	find ${WRKINST}${PREFIX}/lib -name 'lib${_l}-samba4.so.*' | sort -nr | head -1
+HLIB_DIFF +=		diff -u oslib.${_l}.nmout samba4lib.${_l}.nmout;
+
+oslib.${_l}.nmout: .PHONY
+	nm $$(${HLIB_${_l}_OS}) | awk '$$2 == "T" {print $$3}' | sort >$@
+samba4lib.${_l}.nmout: fake .PHONY
+	nm $$(${HLIB_${_l}_SAMBA4}) | awk '$$2 == "T" {print $$3}' | sort >$@
+list-conflicting-symbols: oslib.${_l}.nmout samba4lib.${_l}.nmout
+.endfor	
+
+list-conflicting-symbols:
+	@echo "====> Following conflicts with system libraries detected: "
+	@(${HLIB_DIFF}) | awk '/^ / {print $$1}' | sort -u
+
 .include <bsd.port.mk>
