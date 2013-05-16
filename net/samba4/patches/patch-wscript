@@ -1,5 +1,6 @@
 $OpenBSD$
 Use more generic check for OpenBSD.
+BUG: https://bugzilla.samba.org/show_bug.cgi?id=9888
 --- wscript.orig	Sat May 11 13:14:18 2013
 +++ wscript	Sat May 11 13:14:23 2013
 @@ -151,7 +151,7 @@ def configure(conf):

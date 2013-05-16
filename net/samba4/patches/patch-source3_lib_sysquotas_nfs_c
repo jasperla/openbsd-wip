@@ -1,4 +1,5 @@
 $OpenBSD$
+BUG: https://bugzilla.samba.org/show_bug.cgi?id=9889
 --- source3/lib/sysquotas_nfs.c.orig	Mon Apr  8 20:00:46 2013
 +++ source3/lib/sysquotas_nfs.c	Mon Apr  8 20:01:53 2013
 @@ -155,8 +155,8 @@ int sys_get_nfs_quota(const char *path, const char *bd
