@@ -1,4 +1,5 @@
 $OpenBSD$
+BUG: https://bugzilla.samba.org/show_bug.cgi?id=9893
 --- pidl/lib/wscript_build.orig	Wed Apr 24 22:41:09 2013
 +++ pidl/lib/wscript_build	Wed Apr 24 22:41:40 2013
 @@ -1,4 +1,4 @@

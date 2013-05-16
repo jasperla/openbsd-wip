@@ -1,4 +1,6 @@
 $OpenBSD$
+Use safe and generic approach for time_t.
+BUG: https://bugzilla.samba.org/show_bug.cgi?id=9889
 --- examples/libsmbclient/teststat2.c.orig	Mon Apr  8 20:44:21 2013
 +++ examples/libsmbclient/teststat2.c	Mon Apr  8 20:44:59 2013
 @@ -47,10 +47,10 @@ static int gettime(const char * pUrl,

@@ -1,4 +1,6 @@
 $OpenBSD$
+Use safe and generic approach for time_t.
+BUG: https://bugzilla.samba.org/show_bug.cgi?id=9889
 --- examples/libsmbclient/testutime.c.orig	Mon Apr  8 20:45:07 2013
 +++ examples/libsmbclient/testutime.c	Mon Apr  8 20:45:33 2013
 @@ -47,10 +47,10 @@ int main(int argc, char * argv[]) 

@@ -1,4 +1,5 @@
 $OpenBSD$
+BUG: https://bugzilla.samba.org/show_bug.cgi?id=9886
 --- Makefile.orig	Fri Apr 26 00:49:58 2013
 +++ Makefile	Fri Apr 26 00:50:45 2013
 @@ -2,7 +2,8 @@

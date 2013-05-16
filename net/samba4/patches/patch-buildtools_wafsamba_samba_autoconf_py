@@ -1,6 +1,7 @@
 $OpenBSD$
 1. Sort -L flags to unbreak linking when any other version of Samba is installed.
 2. Use more generic check for OpenBSD.
+BUG: https://bugzilla.samba.org/show_bug.cgi?id=9888
 --- buildtools/wafsamba/samba_autoconf.py.orig	Sat May 11 12:20:52 2013
 +++ buildtools/wafsamba/samba_autoconf.py	Sat May 11 13:04:26 2013
 @@ -716,6 +716,27 @@ def ADD_LDFLAGS(conf, flags, testflags=False):

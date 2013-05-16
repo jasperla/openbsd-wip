@@ -1,6 +1,6 @@
 $OpenBSD$
 Reverse order of paths added to get reliable builds.
-Could be pushed upstream, probably.
+BUG: https://bugzilla.samba.org/show_bug.cgi?id=9890
 --- buildtools/wafsamba/samba_conftests.py.orig	Tue May 14 21:50:32 2013
 +++ buildtools/wafsamba/samba_conftests.py	Tue May 14 21:53:28 2013
 @@ -39,9 +39,9 @@ def check(self, *k, **kw):

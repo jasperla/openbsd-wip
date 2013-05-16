@@ -2,6 +2,7 @@ $OpenBSD$
 This code isn't needed at all because lib/replace/system/readline.h
 automatically includes <readline/history.h> if supportted, and it
 breaks the build when devel/readline is installed.
+BUG: https://bugzilla.samba.org/show_bug.cgi?id=9885
 --- source4/torture/smbtorture.c.orig	Mon May 13 00:27:51 2013
 +++ source4/torture/smbtorture.c	Mon May 13 00:31:00 2013
 @@ -34,10 +34,6 @@
