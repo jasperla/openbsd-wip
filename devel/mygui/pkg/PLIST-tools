@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+@bin bin/FontViewer
+@bin bin/ImageSetViewer
+@bin bin/LayoutEditor
+@bin bin/SkinEditor
