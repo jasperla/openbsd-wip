@@ -74,14 +74,11 @@ ${FULLPKGNAME}/lib-python/2.7/_MozillaCookieJar.py
 ${FULLPKGNAME}/lib-python/2.7/__future__.py
 ${FULLPKGNAME}/lib-python/2.7/__phello__.foo.py
 ${FULLPKGNAME}/lib-python/2.7/_abcoll.py
-${FULLPKGNAME}/lib-python/2.7/_abcoll.pyc
 ${FULLPKGNAME}/lib-python/2.7/_pyio.py
 ${FULLPKGNAME}/lib-python/2.7/_strptime.py
 ${FULLPKGNAME}/lib-python/2.7/_threading_local.py
 ${FULLPKGNAME}/lib-python/2.7/_weakrefset.py
-${FULLPKGNAME}/lib-python/2.7/_weakrefset.pyc
 ${FULLPKGNAME}/lib-python/2.7/abc.py
-${FULLPKGNAME}/lib-python/2.7/abc.pyc
 ${FULLPKGNAME}/lib-python/2.7/aifc.py
 ${FULLPKGNAME}/lib-python/2.7/antigravity.py
 ${FULLPKGNAME}/lib-python/2.7/anydbm.py
@@ -1941,7 +1938,6 @@ ${FULLPKGNAME}/lib-python/2.7/trace.py
 ${FULLPKGNAME}/lib-python/2.7/traceback.py
 ${FULLPKGNAME}/lib-python/2.7/tty.py
 ${FULLPKGNAME}/lib-python/2.7/types.py
-${FULLPKGNAME}/lib-python/2.7/types.pyc
 ${FULLPKGNAME}/lib-python/2.7/unittest/
 ${FULLPKGNAME}/lib-python/2.7/unittest/__init__.py
 ${FULLPKGNAME}/lib-python/2.7/unittest/__main__.py
@@ -2021,7 +2017,6 @@ ${FULLPKGNAME}/lib-python/2.7/xmlrpclib.py
 ${FULLPKGNAME}/lib-python/2.7/zipfile.py
 ${FULLPKGNAME}/lib_pypy/
 ${FULLPKGNAME}/lib_pypy/__init__.py
-${FULLPKGNAME}/lib_pypy/__init__.pyc
 ${FULLPKGNAME}/lib_pypy/_codecs_cn.py
 ${FULLPKGNAME}/lib_pypy/_codecs_hk.py
 ${FULLPKGNAME}/lib_pypy/_codecs_iso2022.py
@@ -2060,7 +2055,6 @@ ${FULLPKGNAME}/lib_pypy/_sha256.py
 ${FULLPKGNAME}/lib_pypy/_sha512.py
 ${FULLPKGNAME}/lib_pypy/_sqlite3.py
 ${FULLPKGNAME}/lib_pypy/_structseq.py
-${FULLPKGNAME}/lib_pypy/_structseq.pyc
 ${FULLPKGNAME}/lib_pypy/_subprocess.py
 ${FULLPKGNAME}/lib_pypy/_testcapi.py
 ${FULLPKGNAME}/lib_pypy/_testcapimodule.c
@@ -2100,12 +2094,9 @@ ${FULLPKGNAME}/lib_pypy/cffi/vengine_gen.py
 ${FULLPKGNAME}/lib_pypy/cffi/verifier.py
 ${FULLPKGNAME}/lib_pypy/ctypes_config_cache/
 ${FULLPKGNAME}/lib_pypy/ctypes_config_cache/__init__.py
-${FULLPKGNAME}/lib_pypy/ctypes_config_cache/__init__.pyc
 ${FULLPKGNAME}/lib_pypy/ctypes_config_cache/dumpcache.py
-${FULLPKGNAME}/lib_pypy/ctypes_config_cache/dumpcache.pyc
 ${FULLPKGNAME}/lib_pypy/ctypes_config_cache/locale.ctc.py
 ${FULLPKGNAME}/lib_pypy/ctypes_config_cache/rebuild.py
-${FULLPKGNAME}/lib_pypy/ctypes_config_cache/rebuild.pyc
 ${FULLPKGNAME}/lib_pypy/ctypes_config_cache/resource.ctc.py
 ${FULLPKGNAME}/lib_pypy/ctypes_config_cache/syslog.ctc.py
 ${FULLPKGNAME}/lib_pypy/ctypes_support.py
