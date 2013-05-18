@@ -3,7 +3,13 @@ HDBFlags2int
 KDCOptions2int
 SAMFlags2int
 TicketFlags2int
+__data_start
 __divdi3
+__got_end
+__got_start
+__heimdal_long_version
+__heimdal_version
+_et_list
 _fini
 _hdb_fetch
 _hdb_remove
@@ -17,6 +23,7 @@ _kafs_foldup
 _kafs_get_cred
 _kafs_realm_of_cell
 _kafs_v4_to_kt
+_krb5_AES_string_to_default_iterator
 _krb5_PKCS5_PBKDF2
 _krb5_aes_cts_encrypt
 _krb5_crc_init_table
@@ -49,6 +56,7 @@ _krb5_put_int
 _krb5_send_and_recv_tcp
 _krb5_xlock
 _krb5_xunlock
+_resolve_debug
 add_to_error_table
 arg_printusage
 asn1_APOptions_units
@@ -433,6 +441,7 @@ hdb_generate_key_set
 hdb_generate_key_set_password
 hdb_init_db
 hdb_key2principal
+hdb_kt_ops
 hdb_list_builtin
 hdb_lock
 hdb_ndbm_create
@@ -456,6 +465,8 @@ hdb_value2entry
 hdb_write_master_key
 heim_octet_string_cmp
 heim_oid_cmp
+heimdal_long_version
+heimdal_version
 init_error_table
 initialize_asn1_error_table
 initialize_asn1_error_table_r
@@ -484,6 +495,7 @@ k_unlog
 kafs_set_verbose
 kafs_settoken5
 kafs_settoken_rxkad
+krb4_fkt_ops
 krb524_convert_creds_kdc
 krb524_convert_creds_kdc_ccache
 krb5_425_conv_principal
@@ -491,6 +503,7 @@ krb5_425_conv_principal_ext
 krb5_524_conv_principal
 krb5_abort
 krb5_abortx
+krb5_acc_ops
 krb5_acl_match_file
 krb5_acl_match_string
 krb5_add_et_list
@@ -507,7 +520,9 @@ krb5_afslog
 krb5_afslog_home
 krb5_afslog_uid
 krb5_afslog_uid_home
+krb5_akf_ops
 krb5_aname_to_localname
+krb5_any_ops
 krb5_anyaddr
 krb5_appdefault_boolean
 krb5_appdefault_string
@@ -602,6 +617,7 @@ krb5_cksumtype_valid
 krb5_clear_error_string
 krb5_closelog
 krb5_compare_creds
+krb5_config_file
 krb5_config_file_free
 krb5_config_free_strings
 krb5_config_get
@@ -670,6 +686,7 @@ krb5_decrypt
 krb5_decrypt_EncryptedData
 krb5_decrypt_ivec
 krb5_decrypt_ticket
+krb5_defkeyname
 krb5_derive_key
 krb5_domain_x500_decode
 krb5_domain_x500_encode
@@ -697,7 +714,9 @@ krb5_error_from_rd_error
 krb5_errx
 krb5_expand_hostname
 krb5_expand_hostname_realms
+krb5_fcc_ops
 krb5_find_padata
+krb5_fkt_ops
 krb5_format_time
 krb5_free_address
 krb5_free_addresses
@@ -792,6 +811,7 @@ krb5_init_ets
 krb5_init_etype
 krb5_initlog
 krb5_is_thread_safe
+krb5_javakt_ops
 krb5_keyblock_get_enctype
 krb5_keyblock_init
 krb5_keyblock_key_proc
@@ -832,6 +852,7 @@ krb5_log_msg
 krb5_make_addrport
 krb5_make_principal
 krb5_max_sockaddr_size
+krb5_mcc_ops
 krb5_mk_error
 krb5_mk_priv
 krb5_mk_rep
@@ -839,6 +860,7 @@ krb5_mk_req
 krb5_mk_req_exact
 krb5_mk_req_extended
 krb5_mk_safe
+krb5_mkt_ops
 krb5_net_read
 krb5_net_write
 krb5_net_write_block
@@ -929,6 +951,7 @@ krb5_sock_to_principal
 krb5_sockaddr2address
 krb5_sockaddr2port
 krb5_sockaddr_uninteresting
+krb5_srvtab_fkt_ops
 krb5_std_usage
 krb5_storage_clear_flags
 krb5_storage_emem
@@ -1006,6 +1029,7 @@ krb5_vwarn
 krb5_vwarnx
 krb5_warn
 krb5_warnx
+krb5_wrfkt_ops
 krb5_write_message
 krb5_write_priv_message
 krb5_write_safe_message
