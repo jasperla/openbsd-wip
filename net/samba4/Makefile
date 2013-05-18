@@ -248,7 +248,7 @@ COM_ERR_TABLES =	${FILESDIR}/com_err.tables
 COM_ERR_CONFLICTS =	${WRKDIR}/com_err.conflicts
 OTHER_CONFLICTS =	${WRKDIR}/other.conflicts
 EXTRA_CONFLICTS =	${FILESDIR}/extra.conflicts
-DETECTED_CONFLICTS =	${FILESDIR}/detected.conflicts
+DETECTED_CONFLICTS =	${WRKDIR}/detected.conflicts
 
 ALL_TYPES =		${ASN1_TYPES} ${EXTRA_TYPES}
 
