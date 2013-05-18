@@ -1,0 +1,24 @@
+@comment $OpenBSD$
+bin/charmap.pl
+bin/figlet.pl
+bin/minifig.pl
+bin/showfigfonts.pl
+${P5SITE}/Text/
+${P5SITE}/Text/FIGlet/
+${P5SITE}/Text/FIGlet.pm
+${P5SITE}/Text/FIGlet/Control.pm
+${P5SITE}/Text/FIGlet/Font.pm
+@comment ${P5SITE}/Text/FIGlet/Font.pm.orig
+${P5SITE}/Text/FIGlet/Illuminated.pm
+${P5SITE}/Text/FIGlet/LICENSE.pod
+${P5SITE}/Text/FIGlet/Ransom.pm
+@man man/man1/charmap.pl.1
+@man man/man1/figlet.pl.1
+@man man/man1/minifig.pl.1
+@man man/man1/showfigfonts.pl.1
+@man man/man3p/Text::FIGlet.3p
+@man man/man3p/Text::FIGlet::Control.3p
+@man man/man3p/Text::FIGlet::Font.3p
+@man man/man3p/Text::FIGlet::Illuminated.3p
+@man man/man3p/Text::FIGlet::LICENSE.3p
+@man man/man3p/Text::FIGlet::Ransom.3p

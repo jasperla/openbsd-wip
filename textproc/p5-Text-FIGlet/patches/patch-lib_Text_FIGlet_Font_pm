@@ -1,0 +1,12 @@
+$OpenBSD$
+--- lib/Text/FIGlet/Font.pm.orig	Sat May 18 13:03:59 2013
++++ lib/Text/FIGlet/Font.pm	Sat May 18 13:05:06 2013
+@@ -18,7 +18,7 @@ sub new{
+   my $self = {_maxLen=>0, -U=>-1, -m=>-2, @_};
+   $self->{-m} = -3 if defined($self->{-m}) && $self->{-m} eq '-0';
+   $self->{-f} ||= $ENV{FIGFONT} || 'standard';
+-  $self->{-d} ||= $ENV{FIGLIB}  || '/usr/games/lib/figlet/';
++  $self->{-d} ||= $ENV{FIGLIB}  || '/usr/local/share/figlet';
+   _load_font($self);
+   bless($self);
+ }
