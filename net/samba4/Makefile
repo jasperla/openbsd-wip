@@ -3,7 +3,7 @@
 SHARED_ONLY =		Yes
 COMMENT =		SMB and CIFS client and server for UNIX
 DISTNAME =		samba-4.0.5
-REVISION =		6
+REVISION =		7
 
 SHARED_LIBS =		asn1-samba4		0.0 \
 			com_err-samba4		0.0 \
@@ -64,6 +64,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += avahi-client avahi-common c cups execinfo iniparser
 WANTLIB += lber ldap pam popt pthread sasl2 util z ${MODPY_WANTLIB}
+WANTLIB += gnutls m ncurses
 
 MASTER_SITES =		http://ftp.samba.org/pub/samba/stable/ \
 			http://ftp.samba.org/pub/samba/old-versions/
@@ -85,8 +86,8 @@ LIB_DEPENDS =		databases/openldap \
 			net/avahi \
 			print/cups,-libs \
 			security/cyrus-sasl2 \
+			security/gnutls \
 			security/openpam
-#TEST_DEPENDS =		
 
 CONFIGURE_STYLE =	simple
 # XXX Remember to remove --enable-developer, it prints passwords in logs.
