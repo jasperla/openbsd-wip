@@ -106,7 +106,7 @@ CONFIGURE_ARGS =	--enable-fhs \
 			--with-privileged-socket-dir=/var/samba \
 			--enable-developer \
 			--enable-selftest \
-			--private-libraries="!asn1_compile !com_err !crypto" \
+			--private-libraries="!crypto" \
 			--pedantic
 
 WAF =			${WRKSRC}/buildtools/bin/waf
@@ -135,38 +135,206 @@ post-patch:
 	find ${WRKSRC} -type f | xargs ${MODPY_BIN_ADJ}
 	${SUBST_CMD} ${WRKSRC}/lib/testtools/testtools/tests/test_compat.py
 
+pre-configure: replace-conflicting-symbols
+	@true
+
 # Avoid bogus -L/usr/local/lib at the start of linker options
 post-configure:
 	perl -pi.ldflags -e 's/^LINKFLAGS_PYEMBED.*/LINKFLAGS_PYEMBED = []/' \
 	    ${WRKBUILD}/bin/c4che/default.cache.py
 
 post-install:
-	@find ${PREFIX} -name '*${PATCHORIG}' -or -name '*.beforesubst' | \
-	    xargs -rt rm --
+	@find ${PREFIX} \
+	    -name '*${PATCHORIG}' -or \
+	    -name '*.beforesubst' -or \
+	    -name '*.deconforig' | \
+		xargs -rt rm --
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${SAMBA4_PYTHON_PKGPATH}
 	${MODPY_BIN} -O ${MODPY_LIBDIR}/compileall.py \
 		${SAMBA4_PYTHON_PKGPATH}
 
-HEIMDAL_LIBS =		asn1 com_err gssapi krb5 
-
-# XXX Method of taking library is flawed, it will break for numbers
-# with different count of digits.
-
-.for _l in ${HEIMDAL_LIBS}
-HLIB_${_l}_OS =		find /usr/lib -name 'lib${_l}.so.*' | sort -nr | head -1
-HLIB_${_l}_SAMBA4 =	find ${WRKINST}${PREFIX}/lib -name 'lib${_l}-samba4.so.*' | sort -nr | head -1
-HLIB_DIFF +=		diff -u oslib.${_l}.nmout samba4lib.${_l}.nmout;
-
-oslib.${_l}.nmout: .PHONY
-	nm $$(${HLIB_${_l}_OS}) | awk '$$2 == "T" {print $$3}' | sort >$@
-samba4lib.${_l}.nmout: fake .PHONY
-	nm $$(${HLIB_${_l}_SAMBA4}) | awk '$$2 == "T" {print $$3}' | sort >$@
-list-conflicting-symbols: oslib.${_l}.nmout samba4lib.${_l}.nmout
-.endfor	
-
-list-conflicting-symbols:
-	@echo "====> Following conflicts with system libraries detected: "
-	@(${HLIB_DIFF}) | awk '/^ / {print $$1}' | sort -u
+#
+# Here begins code to deal with conflicting symbols between system
+# and Samba4-bundled Heimdal Kerberos implementations. How it works:
+#
+# 1. Get list of actually conflicting dynamic symbols, by comparing
+#    output of nm(1) for system library and the one from fake dir.
+#
+# 2. Extract list of types used in code, compiled with ASN1. Note, that
+#    some static patches for ASN1 compiler are required for build too,
+#    see patches for source4/heimdal/asn1/gen_* files. This list is put
+#    in ${WRKDIR}/asn1.types.
+#
+# 3. If any more types need to be tweaked, too, list them manually in
+#    ${FILESDIR}/extra.types.
+#
+# 4. Build the full list of (potentially) conflicting symbols, it is
+#    put in ${WRKDIR}/asn1.conflicts.
+#
+# 5. Build the list of other conflicting symbols, it is put in
+#    ${WRKDIR}/other.conflicts.
+#
+# 6. If any more symbols need to be tweaked, too, list them manually in
+#    ${FILESDIR}/extra.conflicts.
+#
+# 7. Now we can cross our fingers and run replace-conflicting-symbols.
+#    It should append "_SAMBA4" to all conflicting symbols in all
+#    source files from asn1.conflicts and other.conflicts. Backups
+#    for each modified file will be saved with .deconforig suffix.
+#
+# 8. If replacing gone wrong, or for any other reason, you can revert
+#    replacing by running restore-conflicts target. So usual process
+#    when you detect missing extra ASN1 type or any other conflicting
+#    symbol name, is to add a line to the corresponding file, run
+#    "make restore-conflicts replace-conflicting-symbols", and then
+#    continue building.
+#
 
 .include <bsd.port.mk>
+
+# List of Kerberos libraries to check. Probably we could
+# patch out com_err from this list eventually...
+HEIMDAL_LIBS =		asn1 com_err gssapi krb5 
+
+# Symbols that are safe to be present in every binary, ready for
+# direct inclusion in regular expression.
+SAFE_SYMBOLS =		_fini _init
+
+# We detect ASN1-compiled symbols by looking at those prefixes.
+# Then, we also use them to generate full list of ASN1 symbols.
+CHECK_PREFIXES =	copy_ decode_ encode_ free_ int2 length_
+CHECK_PREFIXES +=	der_copy_ der_free_ der_get_ der_length_ der_match_ der_put_ 
+
+.for _v in HEIMDAL_LIBS SAFE_SYMBOLS CHECK_PREFIXES ERROR_TABLES_FOR
+.   for _l in ${${_v}}
+${_v}_RE_ :=	${${_v}_RE_}|${_l}
+.   endfor
+${_v}_RE =	${${_v}_RE_:S/^|//}
+.endfor
+
+# XXX Method of searching for latest library version is flawed, it will
+# break for numbers with different count of digits.
+
+.for _l in ${HEIMDAL_LIBS}
+HLIB_${_l}_SYM_OS =	${FILESDIR}/oslib.${_l}.nmout
+HLIB_${_l}_SYM_SAMBA4 =	${FILESDIR}/samba4lib.${_l}.nmout
+HLIB_${_l}_OS =		find /usr/lib -name 'lib${_l}.so.*' | sort -nr | head -1
+HLIB_${_l}_SAMBA4 =	find ${WRKINST}${PREFIX}/lib -name 'lib${_l}-samba4.so.*' | sort -nr | head -1
+HLIB_DIFF +=		diff -u ${HLIB_${_l}_SYM_OS} ${HLIB_${_l}_SYM_SAMBA4};
+HLIB_ALL +=		${HLIB_${_l}_SYM_OS} ${HLIB_${_l}_SYM_SAMBA4}
+
+${HLIB_${_l}_SYM_OS}:
+	@nm $$(${HLIB_${_l}_OS}) | awk '$$2 == "T" {print $$3}' | \
+	sort >$@.tmp && mv $@.tmp $@
+
+# XXX Do not add "fake" as a dependency, or this will force running fake
+# for all dependees, incliding replace-conflicting-symbols.
+${HLIB_${_l}_SYM_SAMBA4}:
+	@${_MAKESYS} fake
+	@nm $$(${HLIB_${_l}_SAMBA4}) | awk '$$2 == "T" {print $$3}' | \
+	sort >$@.tmp && mv $@.tmp $@
+.endfor	
+
+# Some file names macros. Easily generated ones go under ${WRKDIR},
+# others, needing semi- of fully-manual tweaking, should stay under
+# ${FILESDIR}.
+### Probably some should go under ${WRKDIR},
+### but this will need to define WRKDIR altogether above...
+ASN1_TYPES =		${WRKDIR}/asn1.types
+EXTRA_TYPES =		${FILESDIR}/extra.types
+ASN1_CONFLICTS =	${WRKDIR}/asn1.conflicts
+COM_ERR_TABLES =	${FILESDIR}/com_err.tables
+COM_ERR_CONFLICTS =	${WRKDIR}/com_err.conflicts
+OTHER_CONFLICTS =	${WRKDIR}/other.conflicts
+EXTRA_CONFLICTS =	${FILESDIR}/extra.conflicts
+DETECTED_CONFLICTS =	${FILESDIR}/detected.conflicts
+
+ALL_TYPES =		${ASN1_TYPES} ${EXTRA_TYPES}
+
+# Note -r for sort here and below: this is to force longer "fooBar"
+# symbol to go before "foo", which is meaningful for replacements.
+
+${DETECTED_CONFLICTS}: ${HLIB_ALL}
+	@(${HLIB_DIFF}) | \
+	awk '/^ / {print $$1}' | \
+	sort -ru | \
+	egrep -v '^${SAFE_SYMBOLS_RE}$$' >$@.tmp
+	mv $@.tmp $@
+
+find-conflicting-symbols: ${DETECTED_CONFLICTS} .PHONY
+	@cat ${DETECTED_CONFLICTS}
+
+# List of all types for which routines are generated by ASN compiler.
+${ASN1_TYPES}: ${HLIB_ALL}
+	cat ${HLIB_ALL} | \
+	egrep -v '^${SAFE_SYMBOLS_RE}$$' | \
+	awk '/${CHECK_PREFIXES_RE}/ { sub("${CHECK_PREFIXES_RE}", ""); print }' | \
+	sort -ur >$@.tmp
+	mv $@.tmp $@
+
+# Full list of symbols generated by ASN compiler. This supersedes
+# list of actually conflicting symbols.
+${ASN1_CONFLICTS}: ${ALL_TYPES}
+	rm -f $@.tmp
+.for _p in ${CHECK_PREFIXES}
+	cat ${ALL_TYPES} | sed -e 's/^/${_p}/' >>$@.tmp
+.endfor
+	cat ${ALL_TYPES} | sed -e 's/^/asn1_/' -e 's/$$/_units/' >>$@.tmp
+	cat ${ALL_TYPES} | sed -e 's/^/int2/' >>$@.tmp
+	cat ${ALL_TYPES} | sed -e 's/$$/2int/' >>$@.tmp
+	mv $@.tmp $@
+
+# Could those tables be detected dynamically? Will it be better?
+${COM_ERR_CONFLICTS}: ${COM_ERR_TABLES}
+	awk '{L="initialize_" $$0 "_error_table"; print L; print L "_r"}' \
+		<${COM_ERR_TABLES} >$@.tmp
+	mv $@.tmp $@
+
+# Other conflicting symbols, that could be easily replaced on their own
+${OTHER_CONFLICTS}: ${DETECTED_CONFLICTS} ${ASN1_CONFLICTS} ${COM_ERR_CONFLICTS} ${EXTRA_CONFLICTS}
+	cat ${ASN1_CONFLICTS} ${COM_ERR_CONFLICTS} ${EXTRA_CONFLICTS} | \
+	sed -e 's/_SAMBA4$$//' | \
+	sort -ru | \
+	diff -u ${DETECTED_CONFLICTS} - | \
+	awk '/^-[^-]/ {sub("^-", ""); print}' >$@.tmp
+	mv $@.tmp $@
+
+# List of files containing potentially conflicting symbol names, one per line
+CONFLICT_LISTS =	${ASN1_CONFLICTS} ${OTHER_CONFLICTS} ${COM_ERR_CONFLICTS} ${EXTRA_CONFLICTS}
+
+REPLACE_COOKIE =	${WRKDIR}/.replace-conflicting-symbols_started
+REPLACE_COOKIE_OK =	${WRKDIR}/.replace-conflicting-symbols_done
+replace-conflicting-symbols: patch ${CONFLICT_LISTS} .PHONY
+	@if [ -e ${REPLACE_COOKIE:Q} -a ! -e ${REPLACE_COOKIE_OK:Q} ]; then \
+		echo "Process of replacing conflicting symbols failed recently," >&2; \
+		echo "so, please, cleanup first, using make restore-conflicts." >&2; \
+		false; \
+	elif [ -e ${REPLACE_COOKIE_OK:Q} ]; then \
+		echo "Conflicting symbols already replaced, skipping." >&2; \
+	fi
+	@touch -- ${REPLACE_COOKIE:Q}
+	@echo "====> Replacing potentially conflicting Heimdal symbols"
+	cd ${WRKSRC} && find . -type f \! -path './b*' \! -name 'wscript*' -print0 | \
+	xargs -0 perl -pi.deconforig \
+		-e "!/#[\s]*include/ and s/\\b($$(sort -ru ${CONFLICT_LISTS} | xargs | tr ' ' '|'))\\b/\$$&_SAMBA4/g;" \
+		-e "close ARGV if eof;" --
+	find ${WRKSRC} -name '*.deconforig' | while read F; do \
+		cmp -s -- "$$F" "$${F%.deconforig}" && rm -- "$$F"; \
+	done
+	@touch -- ${REPLACE_COOKIE_OK:Q}
+
+#XXX does not detect some source files?!
+#	xargs -0 file -0N -- | \
+#	perl -naF'/\000./' -e '$$F[1] =~ /\btext\b/ and print "$$F[0]\000";' | \
+
+restore-conflicts: patch .PHONY
+	@find ${WRKSRC} -name '*.deconforig' | while read F; do \
+		mv -- "$$F" "$${F%.deconforig}"; \
+	done
+	@rm -f -- ${REPLACE_COOKIE_OK:Q} ${REPLACE_COOKIE:Q}
+
+show-conflicts-diff:
+	-@find ${WRKSRC} -name '*.deconforig' | while read F; do \
+		diff -uNp -- "$$F" "$${F%.deconforig}"; \
+	done
