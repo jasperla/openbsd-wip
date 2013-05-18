@@ -3,7 +3,7 @@
 SHARED_ONLY =		Yes
 COMMENT =		SMB and CIFS client and server for UNIX
 DISTNAME =		samba-4.0.5
-REVISION =		4
+REVISION =		5
 
 SHARED_LIBS =		asn1-samba4		0.0 \
 			com_err-samba4		0.0 \

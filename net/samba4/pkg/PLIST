@@ -1258,6 +1258,8 @@ lib/samba/vfs/streams_xattr.so
 lib/samba/vfs/syncops.so
 lib/samba/vfs/time_audit.so
 lib/samba/vfs/xattr_tdb.so
+lib/security/pam_smbpass.so
+lib/security/pam_winbind.so
 libdata/perl5/Parse/
 libdata/perl5/Parse/Pidl/
 libdata/perl5/Parse/Pidl.pm
@@ -1337,6 +1339,7 @@ libdata/perl5/Parse/Yapp/Driver.pm
 @man man/man3/ldb.3
 @man man/man3/talloc.3
 @man man/man5/lmhosts.5
+@man man/man5/pam_winbind.conf.5
 @man man/man5/smb.conf.5
 @man man/man5/smbgetrc.5
 @man man/man5/smbpasswd.5
@@ -1354,6 +1357,7 @@ libdata/perl5/Parse/Yapp/Driver.pm
 @man man/man8/idmap_tdb2.8
 @man man/man8/net.8
 @man man/man8/nmbd.8
+@man man/man8/pam_winbind.8
 @man man/man8/pdbedit.8
 @man man/man8/samba-tool.8
 @man man/man8/samba.8
