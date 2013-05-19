@@ -1,6 +1,0 @@
-Single addition:
-
-  * Add arch-specific dirs to search paths. Ruby 1.9 does not support them in
-    RbConfig, 2.0 do but it's probably don't worth backporting. So this patch
-    is not intended to go upstream but it unbreaks at least
-    kross-interpreters from KDE 4.
