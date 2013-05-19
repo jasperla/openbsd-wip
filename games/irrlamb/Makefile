@@ -29,6 +29,6 @@ RUN_DEPENDS =	devel/desktop-file-utils
 post-patch:
 	perl -pi -e "s,games/,,g" ${WRKSRC}/CMakeLists.txt \
 				  ${WRKSRC}/deployment/irrlamb
-	perl -pi -e "s,games,bin,g" ${WRKSRC}/CMakeLists.txt \
+	perl -pi -e "s,games,bin,g" ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
