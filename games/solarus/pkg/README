@@ -1,0 +1,21 @@
+$OpenBSD$
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Getting and Playing Games
+=========================
+
+There are two games for Solarus.
+The Legend of Zelda: Mystery of Solarus DX (zsdx)
+and
+The Legend of Zelda: Mystery of Solarus DX (zsxd)
+
+To download the games, go to:
+http://www.zelda-solarus.com/downloads/zsdx/ (or zsxd/)
+and download zsdx-${V}.tar.gz, where ${V} is 1.6 or higher.
+Earlier versions will not work with this version of Solarus.
+
+Extract the tarball to the directory of your choice, and run solarus
+in the extracted directory.
