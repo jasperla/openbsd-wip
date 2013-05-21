@@ -1,0 +1,32 @@
+$OpenBSD$
+--- Makefile.orig	Wed Dec 12 23:41:33 2012
++++ Makefile	Tue May 21 02:13:26 2013
+@@ -62,8 +62,8 @@ else
+ ifeq ($(DEBUG),yes)
+ CFLAGS += -O0 -g
+ else
+-CFLAGS = -O3 -funroll-loops -fexpensive-optimizations -ffast-math \
+-    -fomit-frame-pointer -frerun-cse-after-loop
++#CFLAGS = -O3 -funroll-loops -fexpensive-optimizations -ffast-math \
++#    -fomit-frame-pointer -frerun-cse-after-loop
+ endif
+ endif
+ 
+@@ -71,7 +71,7 @@ CFLAGS += \
+     $(CFL) $(WARN) \
+     -I$(SYSTEM) -Iarch -I.
+ 
+-prefix=/usr/local
++#prefix=/usr/local
+ 
+ INSTALL_DIR = $(prefix)/bin
+ INSTALL=cp
+@@ -229,7 +229,7 @@ all: $(TARGET)
+ 
+ install: all
+ 	$(INSTALL) $(TARGET) $(INSTALL_DIR)
+-	f=arcemrc; test -f $$HOME/.$$f || $(INSTALL) $$f $(HOME)/.$$f
++	#f=arcemrc; test -f $$HOME/.$$f || $(INSTALL) $$f $(HOME)/.$$f
+ 
+ $(TARGET): $(OBJS) $(MODEL).o
+ 	$(LD) $(LDFLAGS) $(OBJS) $(LIBS) $(MODEL).o -o $@
