@@ -1,0 +1,21 @@
+$OpenBSD$
+--- src/Makefile.orig	Thu May 23 00:03:31 2013
++++ src/Makefile	Thu May 23 00:04:21 2013
+@@ -1,11 +1,11 @@
+ # Project: tapclean
+ 
+-CPP  = g++
+-CC   = gcc
+-INCS = 
+-CXXINCS = 
+-CFLAGS = $(INCS)  
+-CXXFLAGS = $(CXXINCS)  
++#CPP  = g++
++#CC   = gcc
++#INCS = 
++#CXXINCS = 
++#CFLAGS = $(INCS)  
++#CXXFLAGS = $(CXXINCS)  
+ LIBS = -lm  
+ BIN  = tapclean
+ 
