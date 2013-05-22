@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		fast implementation of the Python language
 
-V=2.0.1
+V=2.0.2
 DISTNAME =		pypy-${V}-src
 PKGNAME =		pypy-${V}
 
