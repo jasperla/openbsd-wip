@@ -1,17 +1,22 @@
 # $OpenBSD$
 
 SHARED_ONLY =		Yes
+DISTNAME =		samba-4.0.5
+
 COMMENT-main =		SMB and CIFS client and server for UNIX
 COMMENT-ldb =		LDAP-like embedded database
 #COMMENT-ntdb =		new trivial database library
 COMMENT-talloc =	hierarchical memory pool system with destructors
 COMMENT-tdb =		trivial database library
-DISTNAME =		samba-4.0.5
+COMMENT-tevent =	event system based on talloc
+
 PKGNAME-main =		${PKGNAME}
 PKGNAME-ldb =		ldb-1.1.15
 #PKGNAME-ntdb =		ntdb-0.9
 PKGNAME-talloc =	libtalloc-2.0.7
 PKGNAME-tdb =		tdb-1.2.11
+PKGNAME-tevent =	tevent-0.9.18
+
 REVISION-main =		8
 
 SHARED_LIBS =		asn1-samba4		0.0 \
@@ -78,7 +83,7 @@ WANTLIB += gnutls m ncurses
 MASTER_SITES =		http://ftp.samba.org/pub/samba/stable/ \
 			http://ftp.samba.org/pub/samba/old-versions/
 
-MULTI_PACKAGES =	-main -ldb -talloc -tdb
+MULTI_PACKAGES =	-main -ldb -talloc -tdb -tevent
 #MULTI_PACKAGES +=	-ntdb		# disabled by default in Samba4
 
 MODULES =		devel/gettext lang/python
@@ -88,6 +93,8 @@ MODULES =		devel/gettext lang/python
 BUILD_DEPENDS =		net/py-dnspython \
 			textproc/docbook-xsl \
 			textproc/libxslt
+
+RUN_DEPENDS-main =	net/py-dnspython
 
 LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb \
 			${BUILD_PKGPATH},-talloc \
@@ -104,11 +111,15 @@ LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb \
 			security/openpam
 #LIB_DEPENDS-main +=	${BUILD_PKGPATH},-ntdb
 
+LIB_DEPENDS-ldb =	${BUILD_PKGPATH},-tevent
+
+LIB_DEPENDS-tevent =	${BUILD_PKGPATH},-talloc
+
 CONFIGURE_STYLE =	simple
 # XXX Remember to remove --enable-developer, it prints passwords in logs.
 CONFIGURE_ARGS =	--enable-fhs \
 			--abi-check-disable \
-			--bundled-libraries="!crypto ldb ntdb talloc tdb" \
+			--bundled-libraries="!crypto ldb ntdb talloc tdb tevent" \
 			--prefix=${PREFIX} \
 			--destdir=${WRKINST} \
 			--docdir=${PREFIX}/share/doc \

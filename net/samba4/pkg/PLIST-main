@@ -192,7 +192,6 @@ include/samba-4.0/wbclient.h
 @lib lib/libsmbsharemodes.so.${LIBsmbsharemodes_VERSION}
 @lib lib/libtalloc.so.${LIBtalloc_VERSION}
 @lib lib/libtevent-util.so.${LIBtevent-util_VERSION}
-@lib lib/libtevent.so.${LIBtevent_VERSION}
 @lib lib/libtorture.so.${LIBtorture_VERSION}
 @lib lib/libwbclient.so.${LIBwbclient_VERSION}
 @lib lib/libwinbind_krb5_locator.so.${LIBwinbind_krb5_locator_VERSION}
@@ -218,7 +217,6 @@ lib/pkgconfig/smbclient.pc
 lib/pkgconfig/smbsharemodes.pc
 lib/pkgconfig/torture.pc
 lib/pkgconfig/wbclient.pc
-lib/python${MODPY_VERSION}/site-packages/_tevent.so
 lib/python${MODPY_VERSION}/site-packages/samba/
 lib/python${MODPY_VERSION}/site-packages/samba/__init__.py
 lib/python${MODPY_VERSION}/site-packages/samba/__init__.pyc
@@ -783,9 +781,6 @@ lib/python${MODPY_VERSION}/site-packages/samba/xattr.pyo
 lib/python${MODPY_VERSION}/site-packages/samba/xattr_native.so
 lib/python${MODPY_VERSION}/site-packages/samba/xattr_tdb.so
 lib/python${MODPY_VERSION}/site-packages/talloc.so
-lib/python${MODPY_VERSION}/site-packages/tevent.py
-lib/python${MODPY_VERSION}/site-packages/tevent.pyc
-lib/python${MODPY_VERSION}/site-packages/tevent.pyo
 lib/samba/
 lib/samba/auth/
 lib/samba/auth/script.so
