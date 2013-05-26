@@ -346,7 +346,7 @@ restore-conflicts: patch .PHONY
 	done
 	@rm -f -- ${REPLACE_COOKIE_OK:Q} ${REPLACE_COOKIE:Q}
 
-show-conflicts-diff:
+show-conflicts-diff: .PHONY
 	-@find ${WRKSRC} -name '*.deconforig' | while read F; do \
 		diff -uNp -- "$$F" "$${F%.deconforig}"; \
 	done
