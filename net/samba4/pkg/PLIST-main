@@ -1,6 +1,6 @@
 @comment $OpenBSD$
-@conflict tdb-*
-@conflict libtalloc-*
+@pkgpath net/samba4
+@pkgpath net/samba
 @bin bin/cifsdd
 @bin bin/dbwrap_tool
 @bin bin/eventlogadm
@@ -41,10 +41,6 @@ bin/samba-tool
 @bin bin/smbta-util
 @bin bin/smbtorture
 @bin bin/smbtree
-@bin bin/tdbbackup
-@bin bin/tdbdump
-@bin bin/tdbrestore
-@bin bin/tdbtool
 @bin bin/testparm
 @bin bin/wbinfo
 include/samba-4.0/
@@ -203,7 +199,6 @@ include/samba-4.0/wbclient.h
 @lib lib/libsmbldap.so.${LIBsmbldap_VERSION}
 @lib lib/libsmbsharemodes.so.${LIBsmbsharemodes_VERSION}
 @lib lib/libtalloc.so.${LIBtalloc_VERSION}
-@lib lib/libtdb.so.${LIBtdb_VERSION}
 @lib lib/libtevent-util.so.${LIBtevent-util_VERSION}
 @lib lib/libtevent.so.${LIBtevent_VERSION}
 @lib lib/libtorture.so.${LIBtorture_VERSION}
@@ -1041,7 +1036,6 @@ lib/python${MODPY_VERSION}/site-packages/samba/xattr.pyo
 lib/python${MODPY_VERSION}/site-packages/samba/xattr_native.so
 lib/python${MODPY_VERSION}/site-packages/samba/xattr_tdb.so
 lib/python${MODPY_VERSION}/site-packages/talloc.so
-lib/python${MODPY_VERSION}/site-packages/tdb.so
 lib/python${MODPY_VERSION}/site-packages/tevent.py
 lib/python${MODPY_VERSION}/site-packages/tevent.pyc
 lib/python${MODPY_VERSION}/site-packages/tevent.pyo
@@ -1366,10 +1360,6 @@ libdata/perl5/Parse/Yapp/Driver.pm
 @man man/man8/smbspool.8
 @man man/man8/smbta-util.8
 @man man/man8/swat.8
-@man man/man8/tdbbackup.8
-@man man/man8/tdbdump.8
-@man man/man8/tdbrestore.8
-@man man/man8/tdbtool.8
 @man man/man8/vfs_acl_tdb.8
 @man man/man8/vfs_acl_xattr.8
 @man man/man8/vfs_aio_fork.8
