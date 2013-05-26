@@ -1,3 +1,6 @@
+swat build breaks "make clean" as a regular user. Not really a problem,
+as swat is removed upstream in upcoming versions anyway.
+
 Cannot build correctly when any Samba version is already installed, linking problems.
 https://bugzilla.samba.org/show_bug.cgi?id=9773
 Upstream says it's our problem.
