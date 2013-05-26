@@ -210,8 +210,7 @@ post-install:
 # patch out com_err from this list eventually...
 HEIMDAL_LIBS =		asn1 com_err gssapi krb5 
 
-# Symbols that are safe to be present in every binary, ready for
-# direct inclusion in regular expression.
+# Symbols that are safe to be present in every binary.
 SAFE_SYMBOLS =		__data_start __divdi3 _fini __got_start __got_end _init
 
 # We detect ASN1-compiled symbols by looking at those prefixes.
