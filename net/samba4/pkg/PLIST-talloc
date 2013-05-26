@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+@pkgpath devel/libtalloc
+@lib lib/libtalloc.so.${LIBtalloc_VERSION}
+lib/python${MODPY_VERSION}/site-packages/talloc.so
+@man man/man3/talloc.3
