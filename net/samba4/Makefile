@@ -284,8 +284,6 @@ ${HLIB_${_l}_SYM_SAMBA4}:
 # Some file names macros. Easily generated ones go under ${WRKDIR},
 # others, needing semi- of fully-manual tweaking, should stay under
 # ${FILESDIR}.
-### Probably some should go under ${WRKDIR},
-### but this will need to define WRKDIR altogether above...
 ASN1_TYPES =		${WRKDIR}/asn1.types
 EXTRA_TYPES =		${FILESDIR}/extra.types
 ASN1_CONFLICTS =	${WRKDIR}/asn1.conflicts
@@ -363,10 +361,6 @@ replace-conflicting-symbols: patch ${CONFLICT_LISTS} .PHONY
 		cmp -s -- "$$F" "$${F%.deconforig}" && rm -- "$$F"; \
 	done
 	@touch -- ${REPLACE_COOKIE_OK:Q}
-
-#XXX does not detect some source files?!
-#	xargs -0 file -0N -- | \
-#	perl -naF'/\000./' -e '$$F[1] =~ /\btext\b/ and print "$$F[0]\000";' | \
 
 restore-conflicts: patch .PHONY
 	@find ${WRKSRC} -name '*.deconforig' | while read F; do \
