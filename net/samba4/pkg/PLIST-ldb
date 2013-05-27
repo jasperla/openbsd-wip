@@ -5,6 +5,12 @@
 @bin bin/ldbmodify
 @bin bin/ldbrename
 @bin bin/ldbsearch
+include/samba-4.0/ldb.h
+include/samba-4.0/ldb_errors.h
+include/samba-4.0/ldb_handlers.h
+include/samba-4.0/ldb_module.h
+include/samba-4.0/ldb_version.h
+include/samba-4.0/pyldb.h
 @lib lib/libldb.so.${LIBldb_VERSION}
 @lib lib/libpyldb-util.so.${LIBpyldb-util_VERSION}
 lib/python${MODPY_VERSION}/site-packages/ldb.so
