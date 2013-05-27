@@ -8,8 +8,6 @@ CATEGORIES =	net
 
 HOMEPAGE =	http://hotot.org
 
-MAINTAINER =	Juan Francisco Cantero Hurtado <iam@juanfra.info>
-
 # LGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
