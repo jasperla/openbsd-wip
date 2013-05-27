@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+include/samba-4.0/tevent.h
 @lib lib/libtevent.so.${LIBtevent_VERSION}
 lib/python${MODPY_VERSION}/site-packages/_tevent.so
 lib/python${MODPY_VERSION}/site-packages/tevent.py

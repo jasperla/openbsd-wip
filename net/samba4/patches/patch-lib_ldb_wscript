@@ -1,9 +1,19 @@
 $OpenBSD$
-More generic check for OpenBSD platform.
-BUG: https://bugzilla.samba.org/show_bug.cgi?id=9888
---- lib/ldb/wscript.orig	Wed May 15 22:54:13 2013
-+++ lib/ldb/wscript	Thu May 16 14:54:31 2013
-@@ -64,7 +64,7 @@ def configure(conf):
+1. Force building standalone library (e.g., put headers in apporiate place).
+
+2. More generic check for OpenBSD platform.
+   BUG: https://bugzilla.samba.org/show_bug.cgi?id=9888
+--- lib/ldb/wscript.orig	Mon May 27 16:42:26 2013
++++ lib/ldb/wscript	Mon May 27 20:45:07 2013
+@@ -44,6 +44,7 @@ def configure(conf):
+     conf.CONFIG_PATH('LDB_MODULESDIR', conf.SUBST_ENV_VAR('MODULESDIR') + '/ldb')
+ 
+     conf.env.standalone_ldb = conf.IN_LAUNCH_DIR()
++    conf.env.standalone_ldb = True
+ 
+     if not conf.env.standalone_ldb:
+         if conf.CHECK_BUNDLED_SYSTEM_PKG('ldb', minversion=VERSION,
+@@ -64,7 +65,7 @@ def configure(conf):
  
          # we don't want any libraries or modules to rely on runtime
          # resolution of symbols

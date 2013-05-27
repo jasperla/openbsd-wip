@@ -1,6 +1,7 @@
 @comment $OpenBSD$
 @pkgpath devel/libtalloc
 include/samba-4.0/
+include/samba-4.0/talloc.h
 include/samba-4.0/pytalloc.h
 @lib lib/libtalloc.so.${LIBtalloc_VERSION}
 @lib lib/libpytalloc-util.so.${LIBpytalloc-util_VERSION}
