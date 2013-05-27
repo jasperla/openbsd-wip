@@ -17,7 +17,7 @@ PKGNAME-talloc =	libtalloc-2.0.7
 PKGNAME-tdb =		tdb-1.2.11
 PKGNAME-tevent =	tevent-0.9.18
 
-REVISION-main =		8
+REVISION-main =		9
 
 SHARED_LIBS =		asn1-samba4		0.0 \
 			com_err-samba4		0.0 \
@@ -126,6 +126,7 @@ CONFIGURE_ARGS =	--enable-fhs \
 			--mandir=${PREFIX}/man \
 			--localedir=${PREFIX}/share/locale \
 			--localstatedir=/var \
+			--private-libraries="!ldb !ntdb !talloc !tdb !tevent" \
 			--sharedstatedir=/var \
 			--sysconfdir=${SYSCONFDIR} \
 			--with-statedir=/var/samba \
