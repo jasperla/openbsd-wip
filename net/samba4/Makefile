@@ -106,8 +106,6 @@ MULTI_PACKAGES =	-main -ldb -talloc -tdb -tevent
 
 MODULES =		devel/gettext lang/python
 
-# TODO check if GNUtls is needed at all.
-
 BUILD_DEPENDS =		net/py-dnspython \
 			textproc/docbook-xsl \
 			textproc/libxslt
