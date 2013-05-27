@@ -174,8 +174,6 @@ MAKE_ENV =		LC_ALL=en_US.UTF-8 \
 MAKE_ENV +=		LIB${_l:S/-/_/g}_VERSION=${_v}
 .endfor
 
-SAMBA4_PYTHON_PKGPATH =	${PREFIX}/lib/python${MODPY_VERSION}/site-packages
-
 post-patch:
 	find ${WRKSRC} -type f | xargs ${MODPY_BIN_ADJ}
 	${SUBST_CMD} ${WRKSRC}/lib/testtools/testtools/tests/test_compat.py
@@ -195,9 +193,9 @@ post-install:
 	    -name '*.deconforig' | \
 		xargs -rt rm --
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${SAMBA4_PYTHON_PKGPATH}
+		${WRKINST}${MODPY_SITEPKG}
 	${MODPY_BIN} -O ${MODPY_LIBDIR}/compileall.py \
-		${SAMBA4_PYTHON_PKGPATH}
+		${WRKINST}${MODPY_SITEPKG}
 
 #
 # Here begins code to deal with conflicting symbols between system
