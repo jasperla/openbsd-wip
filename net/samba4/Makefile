@@ -249,9 +249,9 @@ CHECK_PREFIXES +=	der_copy_ der_free_ der_get_ der_length_ der_match_ der_put_
 
 .for _v in HEIMDAL_LIBS SAFE_SYMBOLS CHECK_PREFIXES ERROR_TABLES_FOR
 .   for _l in ${${_v}}
-${_v}_RE_ :=	${${_v}_RE_}|${_l}
+_t :=	${_t}|${_l}
 .   endfor
-${_v}_RE =	${${_v}_RE_:S/^|//}
+${_v}_RE =	${_t:S/^|//}
 .endfor
 
 # XXX Method of searching for latest library version is flawed, it will
