@@ -197,6 +197,8 @@ post-install:
 	${MODPY_BIN} -O ${MODPY_LIBDIR}/compileall.py \
 		${WRKINST}${MODPY_SITEPKG}
 
+.include <bsd.port.mk>
+
 #
 # Here begins code to deal with conflicting symbols between system
 # and Samba4-bundled Heimdal Kerberos implementations. How it works:
@@ -230,8 +232,6 @@ post-install:
 #    "make restore-conflicts replace-conflicting-symbols", and then
 #    continue building.
 #
-
-.include <bsd.port.mk>
 
 # List of Kerberos libraries to check. Probably we could
 # patch out com_err from this list eventually...
