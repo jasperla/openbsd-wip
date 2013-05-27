@@ -51,7 +51,7 @@ BUG: https://bugzilla.samba.org/show_bug.cgi?id=9774
  		self.env.append_value('LINKFLAGS', v.split())
  
  	bld = self.bld
-@@ -598,11 +613,11 @@ def apply_vnum(self):
+@@ -598,11 +612,11 @@ def apply_vnum(self):
  	if not path: return
  
  	bld.install_as(path + os.sep + name3, node, env=self.env)
