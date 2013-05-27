@@ -37,7 +37,6 @@ bin/samba-tool
 @bin bin/smbtree
 @bin bin/testparm
 @bin bin/wbinfo
-include/samba-4.0/
 include/samba-4.0/charset.h
 include/samba-4.0/core/
 include/samba-4.0/core/doserr.h
