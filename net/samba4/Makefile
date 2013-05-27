@@ -11,17 +11,23 @@ COMMENT-tdb =		trivial database library
 COMMENT-tevent =	event system based on talloc
 
 PKGNAME-main =		${PKGNAME}
-PKGNAME-ldb =		ldb-1.1.15
-#PKGNAME-ntdb =		ntdb-0.9
-PKGNAME-talloc =	libtalloc-2.0.7
-PKGNAME-tdb =		tdb-1.2.11
-PKGNAME-tevent =	tevent-0.9.18
+PKGNAME-ldb =		ldb-${LDB_V}
+#PKGNAME-ntdb =		ntdb-${NTDB_V}
+PKGNAME-talloc =	libtalloc-${TALLOC_V}
+PKGNAME-tdb =		tdb-${TDB_V}
+PKGNAME-tevent =	tevent-${TEVENT_V}
 
-REVISION-main =		11
-REVISION-ldb =		0
-REVISION-talloc =	0
-REVISION-tdb =		0
-REVISION-tevent =	0
+LDB_V =			1.1.15
+#NTDB_V =		0.9
+TALLOC_V =		2.0.7
+TDB_V =			1.2.11
+TEVENT_V =		0.9.18
+
+REVISION-main =		12
+REVISION-ldb =		1
+REVISION-talloc =	1
+REVISION-tdb =		1
+REVISION-tevent =	1
 
 SHARED_LIBS =		asn1-samba4		0.0 \
 			com_err-samba4		0.0 \
@@ -108,9 +114,10 @@ BUILD_DEPENDS =		net/py-dnspython \
 
 RUN_DEPENDS-main =	net/py-dnspython
 
-LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb \
-			${BUILD_PKGPATH},-talloc \
-			${BUILD_PKGPATH},-tdb \
+LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb>=${LDB_V} \
+			${BUILD_PKGPATH},-talloc>=${TALLOC_V} \
+			${BUILD_PKGPATH},-tdb>=${TDB_V} \
+			${MODGETTEXT_LIB_DEPENDS} \
 			databases/openldap \
 			devel/iniparser \
 			devel/libexecinfo \
@@ -120,17 +127,17 @@ LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb \
 			security/gnutls \
 			security/libgcrypt \
 			security/openpam
-#LIB_DEPENDS-main +=	${BUILD_PKGPATH},-ntdb
+#LIB_DEPENDS-main +=	${BUILD_PKGPATH},-ntdb>=${NTDB_V}
 
-LIB_DEPENDS-ldb =	${BUILD_PKGPATH},-tdb \
-			${BUILD_PKGPATH},-tevent \
+LIB_DEPENDS-ldb =	${BUILD_PKGPATH},-tdb>=${TDB_V} \
+			${BUILD_PKGPATH},-tevent>=${TEVENT_V} \
 			devel/popt
 
 LIB_DEPENDS-talloc =
 
-LIB_DEPENDS-tdb =	${BUILD_PKGPATH},-talloc
+LIB_DEPENDS-tdb =	${BUILD_PKGPATH},-talloc>=${TALLOC_V}
 
-LIB_DEPENDS-tevent =	${BUILD_PKGPATH},-talloc
+LIB_DEPENDS-tevent =	${BUILD_PKGPATH},-talloc>=${TALLOC_V}
 
 CONFIGURE_STYLE =	simple
 # XXX Remember to remove --enable-developer, it prints passwords in logs.
