@@ -139,10 +139,8 @@ CONFIGURE_ARGS =	--enable-fhs \
 
 WAF =			${WRKSRC}/buildtools/bin/waf
 WAF_ARGS =		-v -j ${MAKE_JOBS}
-PKG_CONFIG_PATH =	${WRKDIR}/pkgconfig
 
-CONFIGURE_ENV =		LC_ALL=en_US.UTF-8 \
-			PKG_CONFIG_PATH=${PKG_CONFIG_PATH}
+CONFIGURE_ENV =		LC_ALL=en_US.UTF-8
 
 MAKE_ENV =		LC_ALL=en_US.UTF-8 \
 			PYTHON=${MODPY_BIN} \
@@ -153,11 +151,6 @@ MAKE_ENV +=		LIB${_l:S/-/_/g}_VERSION=${_v}
 .endfor
 
 SAMBA4_PYTHON_PKGPATH =	${PREFIX}/lib/python${MODPY_VERSION}/site-packages
-
-post-extract:
-	cp ${FILESDIR}/krb5-config ${WRKDIR}/bin
-	mkdir ${PKG_CONFIG_PATH}
-	cp ${FILESDIR}/*.pc ${PKG_CONFIG_PATH}
 
 post-patch:
 	find ${WRKSRC} -type f | xargs ${MODPY_BIN_ADJ}
