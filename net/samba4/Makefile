@@ -363,10 +363,11 @@ replace-conflicting-symbols: patch ${CONFLICT_LISTS} .PHONY
 	fi
 
 restore-conflicts: patch .PHONY
+	@rm -f -- ${REPLACE_COOKIE_OK:Q}
 	@find ${WRKSRC} -name '*.deconforig' | while read F; do \
 		mv -- "$$F" "$${F%.deconforig}"; \
 	done
-	@rm -f -- ${REPLACE_COOKIE_OK:Q} ${REPLACE_COOKIE:Q}
+	@rm -f -- ${REPLACE_COOKIE:Q}
 
 show-conflicts-diff: .PHONY
 	-@find ${WRKSRC} -name '*.deconforig' | while read F; do \
