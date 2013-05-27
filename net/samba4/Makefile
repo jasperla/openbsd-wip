@@ -275,7 +275,7 @@ ${HLIB_${_l}_SYM_OS}:
 # XXX Do not add "fake" as a dependency, or this will force running fake
 # for all dependees, incliding replace-conflicting-symbols.
 ${HLIB_${_l}_SYM_SAMBA4}:
-	@${_MAKESYS} fake
+	@${MAKE} fake
 	nm $$(${HLIB_${_l}_SAMBA4}) | awk '$$2 == "T" || $$2 == "D" {print $$3}' | \
 		sed -e 's/_SAMBA4//g' | \
 		sort >$@.tmp
