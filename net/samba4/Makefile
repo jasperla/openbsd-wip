@@ -17,7 +17,7 @@ PKGNAME-talloc =	libtalloc-2.0.7
 PKGNAME-tdb =		tdb-1.2.11
 PKGNAME-tevent =	tevent-0.9.18
 
-REVISION-main =		10
+REVISION-main =		11
 REVISION-ldb =		0
 REVISION-talloc =	0
 REVISION-tdb =		0
