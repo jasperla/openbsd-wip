@@ -349,17 +349,20 @@ replace-conflicting-symbols: patch ${CONFLICT_LISTS} .PHONY
 		false; \
 	elif [ -e ${REPLACE_COOKIE_OK:Q} ]; then \
 		echo "Conflicting symbols already replaced, skipping." >&2; \
+		echo "If you want to re-run replace process, then run" >&2; \
+		echo "make restore-conflicts first." >&2; \
+	else \
+		touch -- ${REPLACE_COOKIE:Q}; \
+		echo "====> Replacing potentially conflicting Heimdal symbols"; \
+		cd ${WRKSRC} && find . -type f \! -path './b*' \! -name 'wscript*' -print0 | \
+		xargs -0 perl -pi.deconforig \
+			-e "!/#[\s]*include/ and s/\\b($$(sort -u ${CONFLICT_LISTS} | xargs | tr ' ' '|'))\\b/\$$&_SAMBA4/g;" \
+			-e "close ARGV if eof;" --; \
+		find ${WRKSRC} -name '*.deconforig' | while read F; do \
+			cmp -s -- "$$F" "$${F%.deconforig}" && rm -- "$$F"; \
+		done; \
+		touch -- ${REPLACE_COOKIE_OK:Q}; \
 	fi
-	@touch -- ${REPLACE_COOKIE:Q}
-	@echo "====> Replacing potentially conflicting Heimdal symbols"
-	cd ${WRKSRC} && find . -type f \! -path './b*' \! -name 'wscript*' -print0 | \
-	xargs -0 perl -pi.deconforig \
-		-e "!/#[\s]*include/ and s/\\b($$(sort -u ${CONFLICT_LISTS} | xargs | tr ' ' '|'))\\b/\$$&_SAMBA4/g;" \
-		-e "close ARGV if eof;" --
-	find ${WRKSRC} -name '*.deconforig' | while read F; do \
-		cmp -s -- "$$F" "$${F%.deconforig}" && rm -- "$$F"; \
-	done
-	@touch -- ${REPLACE_COOKIE_OK:Q}
 
 restore-conflicts: patch .PHONY
 	@find ${WRKSRC} -name '*.deconforig' | while read F; do \
