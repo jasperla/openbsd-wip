@@ -254,14 +254,15 @@ _t :=	${_t}|${_l}
 ${_v}_RE =	${_t:S/^|//}
 .endfor
 
-# XXX Method of searching for latest library version is flawed, it will
-# break for numbers with different count of digits.
+SORT_LIBS_CMD =		perl ${FILESDIR}/sortlibs
 
 .for _l in ${HEIMDAL_LIBS}
 HLIB_${_l}_SYM_OS =	${FILESDIR}/oslib.${_l}.nmout
 HLIB_${_l}_SYM_SAMBA4 =	${FILESDIR}/samba4lib.${_l}.nmout
-HLIB_${_l}_OS =		find /usr/lib -name 'lib${_l}.so.*' | sort -nr | head -1
-HLIB_${_l}_SAMBA4 =	find ${WRKINST}${PREFIX}/lib -name 'lib${_l}-samba4.so.*' | sort -nr | head -1
+HLIB_${_l}_OS =		find /usr/lib -name 'lib${_l}.so.*' | \
+			${SORT_LIBS_CMD} | head -1
+HLIB_${_l}_SAMBA4 =	find ${WRKINST}${PREFIX}/lib -name 'lib${_l}-samba4.so.*' | \
+			${SORT_LIBS_CMD} | head -1
 HLIB_DIFF +=		diff -U 100000 ${HLIB_${_l}_SYM_OS} ${HLIB_${_l}_SYM_SAMBA4} || true;
 HLIB_ALL +=		${HLIB_${_l}_SYM_OS} ${HLIB_${_l}_SYM_SAMBA4}
 
