@@ -7,6 +7,8 @@ Upstream says it's our problem.
 
 Integration with our BIND is not possible, but should with net/isc-bind.
 
+Public headers are not installed for all/most of shared libraries.
+
 
 [ 246/3908] Compiling IDL librpc/idl/auth.idl
 23:55:40 runner  cd .. && CPP="/usr/bin/cpp" CC="cc" /usr/bin/perl "/usr/ports/pobj/samba-4.0.5/samba-4.0.5/pidl/pidl" --quiet --header --nd
