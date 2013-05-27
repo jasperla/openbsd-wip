@@ -115,7 +115,6 @@ LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb \
 			devel/iniparser \
 			devel/libexecinfo \
 			net/avahi \
-			net/py-dnspython \
 			print/cups,-libs \
 			security/cyrus-sasl2 \
 			security/gnutls \
