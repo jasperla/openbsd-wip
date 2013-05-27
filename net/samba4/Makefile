@@ -203,11 +203,12 @@ post-install:
 #
 # 1. Get list of actually conflicting dynamic symbols, by comparing
 #    output of nm(1) for system library and the one from fake dir.
+#    Diff between those is put in ${WRKDIR}/detected.conflicts.
 #
 # 2. Extract list of types used in code, compiled with ASN1. Note, that
 #    some static patches for ASN1 compiler are required for build too,
 #    see patches for source4/heimdal/asn1/gen_* files. This list is put
-#    in ${WRKDIR}/asn1.types.
+#    in ${WRKDIR}/found.types.
 #
 # 3. If any more types need to be tweaked, too, list them manually in
 #    ${FILESDIR}/extra.types.
@@ -215,15 +216,21 @@ post-install:
 # 4. Build the full list of (potentially) conflicting symbols, it is
 #    put in ${WRKDIR}/asn1.conflicts.
 #
-# 5. Build the list of other conflicting symbols, it is put in
+# 5. Build the list of other conflicting symbols (i.e., present in the
+#    detected.conflicts, but not in asn1.conflicts), it is put in
 #    ${WRKDIR}/other.conflicts.
 #
-# 6. Now we can cross our fingers and run replace-conflicting-symbols.
+# 6. Also, a list of com_err error tables should be populated and
+#    saved in ${FILESDIR}/com_err.tables. For each of those tables,
+#    there are few routines and variables generated, and their names
+#    will end up in ${WRKDIR}/com_err.conflicts.
+#
+# 7. Now we can cross our fingers and run replace-conflicting-symbols.
 #    It should append "_SAMBA4" to all conflicting symbols in all
 #    source files from asn1.conflicts and other.conflicts. Backups
 #    for each modified file will be saved with .deconforig suffix.
 #
-# 7. If replacing gone wrong, or for any other reason, you can revert
+# 8. If replacing gone wrong, or for any other reason, you can revert
 #    replacing by running restore-conflicts target. So usual process
 #    when you detect missing extra ASN1 type or any other conflicting
 #    symbol name, is to add a line to the corresponding file, run
