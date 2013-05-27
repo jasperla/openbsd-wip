@@ -17,7 +17,11 @@ PKGNAME-talloc =	libtalloc-2.0.7
 PKGNAME-tdb =		tdb-1.2.11
 PKGNAME-tevent =	tevent-0.9.18
 
-REVISION-main =		9
+REVISION-main =		10
+REVISION-ldb =		0
+REVISION-talloc =	0
+REVISION-tdb =		0
+REVISION-tevent =	0
 
 SHARED_LIBS =		asn1-samba4		0.0 \
 			com_err-samba4		0.0 \
@@ -76,9 +80,17 @@ HOMEPAGE =		http://www.samba.org/
 # GPLv3, LGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =  avahi-client avahi-common c cups execinfo iniparser
-WANTLIB += lber ldap pam popt pthread sasl2 util z ${MODPY_WANTLIB}
-WANTLIB += gnutls m ncurses
+WANTLIB-common =	m pthread util ${MODPY_WANTLIB}
+
+WANTLIB-main =		${WANTLIB-common} ${MODGETTEXT_WANTLIB} c ncurses z
+WANTLIB-main +=		avahi-client avahi-common cups execinfo iniparser lber
+WANTLIB-main +=		ldap pam popt sasl2 gcrypt gnutls
+WANTLIB-main +=		ldb pyldb-util pytalloc-util talloc tdb tevent
+
+WANTLIB-ldb =		${WANTLIB-common} c popt talloc tdb tevent
+WANTLIB-talloc =	${WANTLIB-common}
+WANTLIB-tdb =		${WANTLIB-common} c talloc
+WANTLIB-tevent =	${WANTLIB-common} talloc
 
 MASTER_SITES =		http://ftp.samba.org/pub/samba/stable/ \
 			http://ftp.samba.org/pub/samba/old-versions/
@@ -102,16 +114,22 @@ LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb \
 			databases/openldap \
 			devel/iniparser \
 			devel/libexecinfo \
-			devel/popt \
 			net/avahi \
 			net/py-dnspython \
 			print/cups,-libs \
 			security/cyrus-sasl2 \
 			security/gnutls \
+			security/libgcrypt \
 			security/openpam
 #LIB_DEPENDS-main +=	${BUILD_PKGPATH},-ntdb
 
-LIB_DEPENDS-ldb =	${BUILD_PKGPATH},-tevent
+LIB_DEPENDS-ldb =	${BUILD_PKGPATH},-tdb \
+			${BUILD_PKGPATH},-tevent \
+			devel/popt
+
+LIB_DEPENDS-talloc =
+
+LIB_DEPENDS-tdb =	${BUILD_PKGPATH},-talloc
 
 LIB_DEPENDS-tevent =	${BUILD_PKGPATH},-talloc
 

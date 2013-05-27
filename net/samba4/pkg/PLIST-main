@@ -101,7 +101,6 @@ include/samba-4.0/netapi.h
 include/samba-4.0/param.h
 include/samba-4.0/passdb.h
 include/samba-4.0/policy.h
-include/samba-4.0/pytalloc.h
 include/samba-4.0/read_smb.h
 include/samba-4.0/registry.h
 include/samba-4.0/roles.h
@@ -177,7 +176,6 @@ include/samba-4.0/wbclient.h
 @lib lib/libnetapi.so.${LIBnetapi_VERSION}
 @lib lib/libnss_wins.so.${LIBnss_wins_VERSION}
 @lib lib/libpdb.so.${LIBpdb_VERSION}
-@lib lib/libpytalloc-util.so.${LIBpytalloc-util_VERSION}
 @lib lib/libregistry.so.${LIBregistry_VERSION}
 @lib lib/libroken-samba4.so.${LIBroken-samba4_VERSION}
 @lib lib/libsamba-credentials.so.${LIBsamba-credentials_VERSION}
@@ -795,6 +793,54 @@ lib/samba/idmap/autorid.so
 lib/samba/idmap/hash.so
 lib/samba/idmap/rid.so
 lib/samba/idmap/tdb2.so
+lib/samba/ldb/acl.so
+lib/samba/ldb/aclread.so
+lib/samba/ldb/anr.so
+lib/samba/ldb/asq.so
+lib/samba/ldb/descriptor.so
+lib/samba/ldb/dirsync.so
+lib/samba/ldb/extended_dn_in.so
+lib/samba/ldb/extended_dn_out.so
+lib/samba/ldb/extended_dn_store.so
+lib/samba/ldb/ildap.so
+lib/samba/ldb/instancetype.so
+lib/samba/ldb/lazy_commit.so
+lib/samba/ldb/ldbsamba_extensions.so
+lib/samba/ldb/linked_attributes.so
+lib/samba/ldb/local_password.so
+lib/samba/ldb/new_partition.so
+lib/samba/ldb/objectclass.so
+lib/samba/ldb/objectclass_attrs.so
+lib/samba/ldb/objectguid.so
+lib/samba/ldb/operational.so
+lib/samba/ldb/paged_results.so
+lib/samba/ldb/paged_searches.so
+lib/samba/ldb/partition.so
+lib/samba/ldb/password_hash.so
+lib/samba/ldb/ranged_results.so
+lib/samba/ldb/rdn_name.so
+lib/samba/ldb/repl_meta_data.so
+lib/samba/ldb/resolve_oids.so
+lib/samba/ldb/rootdse.so
+lib/samba/ldb/samba3sam.so
+lib/samba/ldb/samba3sid.so
+lib/samba/ldb/samba_dsdb.so
+lib/samba/ldb/samba_secrets.so
+lib/samba/ldb/samldb.so
+lib/samba/ldb/sample.so
+lib/samba/ldb/schema_data.so
+lib/samba/ldb/schema_load.so
+lib/samba/ldb/secrets_tdb_sync.so
+lib/samba/ldb/server_sort.so
+lib/samba/ldb/show_deleted.so
+lib/samba/ldb/simple_dn.so
+lib/samba/ldb/simple_ldap_map.so
+lib/samba/ldb/skel.so
+lib/samba/ldb/subtree_delete.so
+lib/samba/ldb/subtree_rename.so
+lib/samba/ldb/tdb.so
+lib/samba/ldb/update_keytab.so
+lib/samba/ldb/wins_ldb.so
 lib/samba/libCHARSET3.so
 lib/samba/libHDB_SAMBA4.so
 lib/samba/libLIBWBCLIENT_OLD.so
