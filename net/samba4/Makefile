@@ -252,10 +252,11 @@ CHECK_PREFIXES =	copy_ decode_ encode_ free_ int2 length_
 CHECK_PREFIXES +=	der_copy_ der_free_ der_get_ der_length_ der_match_ der_put_ 
 
 .for _v in HEIMDAL_LIBS SAFE_SYMBOLS CHECK_PREFIXES ERROR_TABLES_FOR
+_t =
 .   for _l in ${${_v}}
 _t :=	${_t}|${_l}
 .   endfor
-${_v}_RE =	${_t:S/^|//}
+${_v}_RE :=	${_t:S/^|//}
 .endfor
 
 SORT_LIBS_CMD =		perl ${FILESDIR}/sortlibs
