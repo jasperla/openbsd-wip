@@ -187,7 +187,6 @@ include/samba-4.0/wbclient.h
 @lib lib/libsmbconf.so.${LIBsmbconf_VERSION}
 @lib lib/libsmbldap.so.${LIBsmbldap_VERSION}
 @lib lib/libsmbsharemodes.so.${LIBsmbsharemodes_VERSION}
-@lib lib/libtalloc.so.${LIBtalloc_VERSION}
 @lib lib/libtevent-util.so.${LIBtevent-util_VERSION}
 @lib lib/libtorture.so.${LIBtorture_VERSION}
 @lib lib/libwbclient.so.${LIBwbclient_VERSION}
@@ -777,7 +776,6 @@ lib/python${MODPY_VERSION}/site-packages/samba/xattr.pyc
 lib/python${MODPY_VERSION}/site-packages/samba/xattr.pyo
 lib/python${MODPY_VERSION}/site-packages/samba/xattr_native.so
 lib/python${MODPY_VERSION}/site-packages/samba/xattr_tdb.so
-lib/python${MODPY_VERSION}/site-packages/talloc.so
 lib/samba/
 lib/samba/auth/
 lib/samba/auth/script.so
@@ -1061,7 +1059,6 @@ libdata/perl5/Parse/Yapp/Driver.pm
 @man man/man3/Parse::Pidl::Util.3p
 @man man/man3/Parse::Pidl::Wireshark::Conformance.3p
 @man man/man3/Parse::Pidl::Wireshark::NDR.3p
-@man man/man3/talloc.3
 @man man/man5/lmhosts.5
 @man man/man5/pam_winbind.conf.5
 @man man/man5/smb.conf.5

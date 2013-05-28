@@ -13,6 +13,8 @@ include/samba-4.0/ldb_version.h
 include/samba-4.0/pyldb.h
 @lib lib/libldb.so.${LIBldb_VERSION}
 @lib lib/libpyldb-util.so.${LIBpyldb-util_VERSION}
+lib/pkgconfig/ldb.pc
+lib/pkgconfig/pyldb-util.pc
 lib/python${MODPY_VERSION}/site-packages/ldb.so
 lib/samba/ldb/
 lib/samba/libldb-cmdline.so

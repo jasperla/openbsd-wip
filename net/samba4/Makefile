@@ -23,11 +23,11 @@ TALLOC_V =		2.0.7
 TDB_V =			1.2.11
 TEVENT_V =		0.9.18
 
-REVISION-main =		12
-REVISION-ldb =		1
-REVISION-talloc =	1
-REVISION-tdb =		1
-REVISION-tevent =	1
+REVISION-main =		13
+REVISION-ldb =		2
+REVISION-talloc =	2
+REVISION-tdb =		2
+REVISION-tevent =	2
 
 SHARED_LIBS =		asn1-samba4		0.0 \
 			com_err-samba4		0.0 \
