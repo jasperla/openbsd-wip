@@ -28,7 +28,7 @@ DIST_SUBDIR =		pypy
 MODULES +=		devel/gettext lang/python gcc4
 MODPY_VERSION =		2.7
 MODGCC4_ARCHS =		*
-MODGCC4_VERSION =	4.7
+MODGCC4_VERSION =	4.6
 MODGCC4_LANGS =		c
 
 VMEM_WARNING =		Yes
@@ -40,23 +40,23 @@ CFLAGS += 		-pthread -fomit-frame-pointer -D_BSD_SOURCE
 WRKDIST =		${WRKDIR}/pypy-${V}-src
 
 do-build:
-	cd ${WRKSRC}/pypy/goal/ && \
+	cd ${WRKSRC}/pypy/goal/ && env ${MAKE_ENV} \
 	  PYPY_USESSION_DIR=${WRKDIR}/usession PYPY_CTYPES_DIR=${WRKDIR}/ctypes \
-	  CC=egcc CFLAGS="${CFLAGS}" \
-	  ${MODPY_BIN} ../../rpython/bin/rpython --source -Ojit
+	  CFLAGS="${CFLAGS}" ${MODPY_BIN} ../../rpython/bin/rpython --source -Ojit
 	cd ${WRKDIR}/usession/testing_1 && ${MAKE_PROGRAM}
 
 do-install:
-	mkdir -p ${PREFIX}/pypy-${V}/bin
-	${INSTALL_PROGRAM} ${WRKDIR}/usession/testing_1/pypy-c ${PREFIX}/pypy-${V}/bin/pypy
-	${INSTALL_DATA_DIR} ${PREFIX}/pypy-${V}/include
-	cp -rp ${WRKSRC}/include/* ${PREFIX}/pypy-${V}/include
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/pypy-${V}/include
-	${INSTALL_DATA_DIR} ${PREFIX}/pypy-${V}/lib_pypy
-	cp -rp ${WRKSRC}/lib_pypy/* ${PREFIX}/pypy-${V}/lib_pypy
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/pypy-${V}/lib_pypy
-	${INSTALL_DATA_DIR} ${PREFIX}/pypy-${V}/lib-python/2.7
-	cp -rp ${WRKSRC}/lib-python/2.7/* ${PREFIX}/pypy-${V}/lib-python/2.7
-	chown -R ${SHAREOWN}:${SHAREGRP}  ${PREFIX}/pypy-${V}/lib-python/2.7
+	mkdir -p ${PREFIX}/pypy/bin
+	${INSTALL_PROGRAM} ${WRKDIR}/usession/testing_1/pypy-c ${PREFIX}/pypy/bin/pypy
+	${INSTALL_DATA_DIR} ${PREFIX}/pypy/include
+	cp -rp ${WRKSRC}/include/* ${PREFIX}/pypy/include
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/pypy/include
+	${INSTALL_DATA_DIR} ${PREFIX}/pypy/lib_pypy
+	cp -rp ${WRKSRC}/lib_pypy/* ${PREFIX}/pypy/lib_pypy
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/pypy/lib_pypy
+	${INSTALL_DATA_DIR} ${PREFIX}/pypy/lib-python/2.7
+	cp -rp ${WRKSRC}/lib-python/2.7/* ${PREFIX}/pypy/lib-python/2.7
+	chown -R ${SHAREOWN}:${SHAREGRP}  ${PREFIX}/pypy/lib-python/2.7
+	cd ${PREFIX}/bin && ln -s ../pypy/bin/pypy
 
 .include <bsd.port.mk>
