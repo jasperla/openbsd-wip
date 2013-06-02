@@ -7,28 +7,28 @@ SHARED_ONLY=		Yes
 COMMENT=		library of programming functions for real time cv
 
 V=			2.4.5
-REVISION=		1
+REVISION=		2
 DISTNAME=		opencv-$V
 PKGNAME=		opencv-$V
 CATEGORIES=		graphics devel
 
-SHARED_LIBS +=		opencv_calib3d			1.0
-SHARED_LIBS +=		opencv_contrib			1.0
-SHARED_LIBS +=		opencv_core			1.0
-SHARED_LIBS +=		opencv_features2d		1.0
-SHARED_LIBS +=		opencv_flann			1.0
-SHARED_LIBS +=		opencv_gpu			1.0
-SHARED_LIBS +=		opencv_highgui			1.0
-SHARED_LIBS +=		opencv_imgproc			1.0
-SHARED_LIBS +=		opencv_legacy			1.0
-SHARED_LIBS +=		opencv_ml			1.0
-SHARED_LIBS +=		opencv_objdetect		1.0
-SHARED_LIBS +=		opencv_ts			0.0
-SHARED_LIBS +=		opencv_video			1.0
-SHARED_LIBS +=		opencv_nonfree			0.0
-SHARED_LIBS +=		opencv_photo			0.0
-SHARED_LIBS +=		opencv_stitching		0.0
-SHARED_LIBS +=		opencv_videostab		0.0
+SHARED_LIBS +=		opencv_calib3d			0.0 #1.0
+SHARED_LIBS +=		opencv_contrib			0.0 #1.0
+SHARED_LIBS +=		opencv_core			0.0 #1.0
+SHARED_LIBS +=		opencv_features2d		0.0 #1.0
+SHARED_LIBS +=		opencv_flann			0.0 #1.0
+SHARED_LIBS +=		opencv_gpu			0.0 #1.0
+SHARED_LIBS +=		opencv_highgui			0.0 #1.0
+SHARED_LIBS +=		opencv_imgproc			0.0 #1.0
+SHARED_LIBS +=		opencv_legacy			0.0 #1.0
+SHARED_LIBS +=		opencv_ml			0.0 #1.0
+SHARED_LIBS +=		opencv_objdetect		0.0 #1.0
+SHARED_LIBS +=		opencv_ts			0.0 #0.0
+SHARED_LIBS +=		opencv_video			0.0 #1.0
+SHARED_LIBS +=		opencv_nonfree			0.0 #0.0
+SHARED_LIBS +=		opencv_photo			0.0 #0.0
+SHARED_LIBS +=		opencv_stitching		0.0 #0.0
+SHARED_LIBS +=		opencv_videostab		0.0 #0.0
 
 HOMEPAGE=		http://www.opencv.org
 
