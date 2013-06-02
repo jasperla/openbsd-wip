@@ -7,7 +7,7 @@ SHARED_ONLY=		Yes
 COMMENT=		library of programming functions for real time cv
 
 V=			2.4.5
-REVISION=		0
+REVISION=		1
 DISTNAME=		opencv-$V
 PKGNAME=		opencv-$V
 CATEGORIES=		graphics devel
@@ -108,7 +108,7 @@ post-install:
 		-e 's,libopencv_photo.so,libopencv_photo.so.${LIBopencv_photo_VERSION},g;' \
 		-e 's,libopencv_stitching.so,libopencv_stitching.so.${LIBopencv_stitching_VERSION},g;' \
 		-e 's,libopencv_videostab.so,libopencv_videostab.so.${LIBopencv_videostab_VERSION},g;' \
-		${PREFIX}/share/opencv/OpenCVConfig.cmake
+		${PREFIX}/share/OpenCV/OpenCVConfig.cmake
 
 post-extract:
 	cp ${FILESDIR}/how_to_scan_images.cpp ${WRKSRC}/samples/cpp/tutorial_code/core/how_to_scan_images/how_to_scan_images.cpp
