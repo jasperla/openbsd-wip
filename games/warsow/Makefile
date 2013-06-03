@@ -30,7 +30,6 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=warsow.mirror/} \
 # GPLv2 (-main and -server) and proprietary licence (-data)
 PERMIT_PACKAGE_CDROM =	No
 PERMIT_PACKAGE_FTP =	No
-PERMIT_DISTFILES_CDROM =No
 PERMIT_DISTFILES_FTP =	No
 
 WANTLIB = c curl crypto iconv idn intl m pthread ssl z
