@@ -790,6 +790,7 @@ lib/samba/ldb/extended_dn_store.so
 lib/samba/ldb/ildap.so
 lib/samba/ldb/instancetype.so
 lib/samba/ldb/lazy_commit.so
+lib/samba/ldb/ldap.so
 lib/samba/ldb/ldbsamba_extensions.so
 lib/samba/ldb/linked_attributes.so
 lib/samba/ldb/local_password.so
@@ -965,6 +966,7 @@ lib/samba/vfs/full_audit.so
 lib/samba/vfs/linux_xfs_sgid.so
 lib/samba/vfs/media_harmony.so
 lib/samba/vfs/netatalk.so
+lib/samba/vfs/notify_fam.so
 lib/samba/vfs/posix_eadb.so
 lib/samba/vfs/preopen.so
 lib/samba/vfs/readahead.so
