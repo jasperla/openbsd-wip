@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 SHARED_ONLY =		Yes
-VERSION =		4.0.5
+VERSION =		4.0.6
 DISTNAME =		samba-${VERSION}
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
@@ -24,10 +24,10 @@ TALLOC_V =		2.0.7
 TDB_V =			1.2.11
 TEVENT_V =		0.9.18
 
-REVISION-main =		14
-REVISION-ldb =		3
-REVISION-tdb =		3
-REVISION-tevent =	3
+REVISION-ldb =		4
+REVISION-tdb =		4
+REVISION-tevent =	4
+REVISION-util =		0
 
 SHARED_LIBS =		asn1-samba4		0.0 \
 			com_err-samba4		0.0 \
@@ -97,8 +97,8 @@ UTIL_WANTLIB =		${UTIL_LIBS:S@^@lib/samba/@} talloc
 WANTLIB-common =	m pthread util ${MODPY_WANTLIB}
 
 WANTLIB-main =		${WANTLIB-common} ${MODGETTEXT_WANTLIB} c ncurses z
-WANTLIB-main +=		avahi-client avahi-common cups execinfo iniparser lber
-WANTLIB-main +=		ldap pam popt sasl2 gcrypt gnutls
+WANTLIB-main +=		avahi-client avahi-common cups execinfo fam iniparser
+WANTLIB-main +=		lber ldap pam popt sasl2 gcrypt gnutls
 WANTLIB-main +=		ldb pyldb-util pytalloc-util tdb tevent
 WANTLIB-main +=		${UTIL_WANTLIB}
 
@@ -139,7 +139,8 @@ LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb>=${LDB_V} \
 			security/cyrus-sasl2 \
 			security/gnutls \
 			security/libgcrypt \
-			security/openpam
+			security/openpam \
+			sysutils/gamin
 #LIB_DEPENDS-main +=	${BUILD_PKGPATH},-ntdb>=${NTDB_V}
 
 LIB_DEPENDS-ldb =	${BUILD_PKGPATH},-tdb>=${TDB_V} \
