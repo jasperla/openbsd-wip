@@ -14,7 +14,6 @@ HOMEPAGE=	http://activityworkshop.net/software/gpsprune/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	GPL
-PERMIT_DISTFILES_CDROM=	GPL
 
 MASTER_SITES=	${HOMEPAGE}
 

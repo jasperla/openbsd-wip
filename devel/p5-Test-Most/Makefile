@@ -8,6 +8,8 @@ CATEGORIES =	devel
 
 MAINTAINER =	Wen Heping <wenheping@gmail.com>
 
+CPAN_AUTHOR =	OVID
+
 # perl
 PERMIT_PACKAGE_CDROM =	Yes
 

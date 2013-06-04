@@ -17,7 +17,6 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # Multi license, including GPLv2, angband license, CC, freeware...
 # The angband license contains the line "other copyrights may also apply"
 PERMIT_PACKAGE_CDROM=	unclear license
-PERMIT_DISTFILES_CDROM= unclear license
 
 WANTLIB=		c m ncursesw
 

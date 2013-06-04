@@ -17,7 +17,7 @@ HOMEPAGE =	http://xalan.apache.org/index.html
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =   Yes
 
-MASTER_SITES =	http://mirrors.ukfast.co.uk/sites/ftp.apache.org/xml/xalan-c/source/
+MASTER_SITES =	https://archive.apache.org/dist/xml/xalan-c/
 
 USE_GMAKE =	Yes
 

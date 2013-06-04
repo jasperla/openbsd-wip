@@ -23,7 +23,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 #WANTLIB =		???
 
-MASTER_SITES =		${HOMEPAGE}/uploads/77/182/${V}%20update%20${U}/
+MASTER_SITES =		${HOMEPAGE}/sites/default/files/software_releases/source/
 EXTRACT_SUFX =		.tgz
 
 #MODULES =		???
