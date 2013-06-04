@@ -12,3 +12,11 @@ emacs org mode tables or, if py-matplotlib is installed, plots.
 Each test can specify several different plots, including time-series
 plots of the values against each other, as well as CDF plots of
 (e.g.) ping times.
+
+Examples (see homepage or netperf-wrapper -h for more):
+
+1. netperf-wrapper -H somehost ping -f plot
+
+2. ssh somehost netserver &
+netperf-wrapper -H somehost rrul
+netperf-wrapper -i rrul-*.json.gz -f plot
