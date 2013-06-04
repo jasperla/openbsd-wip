@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/16 13:25:21 bcallah Exp $
+# $OpenBSD$
 
 V =		0.4.3
 COMMENT =	QT4-based tabbed document viewer
