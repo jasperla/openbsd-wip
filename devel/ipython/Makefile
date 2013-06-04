@@ -47,7 +47,7 @@ DOCS_DIR =	${PREFIX}/share/doc/ipython/
 # XXX XXX XXX
 # The old ipython-0.11 port installed share/examples/ipython as a regular
 # file. This of course was incorrect. Since there is a bug in the package
-# tools that prevents filess from being replaced by directories during an
+# tools that prevents files from being replaced by directories during an
 # upgrade, we must install the examples elsewhere to avoid the clash.
 # Once the pkg tools bug is fixed, we can use the normal examples path
 # (currently commented). Also be sure to update the setupbase.py patch.
