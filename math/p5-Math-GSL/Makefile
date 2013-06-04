@@ -6,6 +6,8 @@ MODULES=	cpan
 DISTNAME=	Math-GSL-0.25
 CATEGORIES=	math
 
+CPAN_AUTHOR=	LETO
+
 MAINTAINER=	Wen Heping <wenheping@gmail.com>
 
 # GPL
