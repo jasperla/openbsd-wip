@@ -5,6 +5,8 @@ COMMENT=		PackageKit GNOME Client Tools
 GNOME_PROJECT=		gnome-packagekit
 GNOME_VERSION=		3.2.1
 
+DIST_SUBDIR=		gnome
+
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://www.packagekit.org/

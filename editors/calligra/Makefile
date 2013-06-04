@@ -8,6 +8,8 @@ REVISION =	6
 
 EXTRACT_SUFX =	.tar.bz2
 
+DIST_SUBDIR =	kde
+
 SHARED_LIBS =	flake			0.0 # 8.0
 SHARED_LIBS +=	kokross			0.0 # 8.0
 SHARED_LIBS +=	kopageapp		0.0 # 8.0

@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 MASTER_SITES =		http://www.fontsquirrel.com/fonts/download/ProFontWindows/
 
 NO_BUILD=		Yes
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 FONTDIR =		${PREFIX}/lib/X11/fonts/profont
 

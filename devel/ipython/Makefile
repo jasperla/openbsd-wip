@@ -2,7 +2,7 @@
 
 COMMENT=		enhanced interactive Python shell
 
-MODPY_EGG_VERSION=	0.13.1
+MODPY_EGG_VERSION=	0.13.2
 DISTNAME=		ipython-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
 
@@ -13,6 +13,7 @@ MAINTAINER=		Will Maier <wcmaier@openbsd.org>
 MODULES=		lang/python
 
 # py-qt4 as a "soft" dependency for qtconsole.
+# sympy is also optional.
 # There are a bunch of other event loops which are used in rare cases.
 # These can be soft dependencies too.
 RUN_DEPENDS =		textproc/py-pygments \
@@ -21,7 +22,8 @@ RUN_DEPENDS =		textproc/py-pygments \
 			www/py-tornado
 TEST_DEPENDS =		devel/py-nose
 BUILD_DEPENDS =		textproc/py-sphinx \
-			graphics/py-matplotlib>=1.2.0
+			graphics/py-matplotlib>=1.2.0 \
+			net/py-zmq
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
