@@ -5,6 +5,8 @@ MODULES=		cpan
 DISTNAME=		Contextual-Return-0.004005
 CATEGORIES=		devel
 
+CPAN_AUTHOR =		DCONWAY
+
 # Perl
 PERMIT_PACKAGE_CDROM=   Yes
 
