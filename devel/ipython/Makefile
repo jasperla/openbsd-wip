@@ -23,7 +23,8 @@ RUN_DEPENDS =		textproc/py-pygments \
 TEST_DEPENDS =		devel/py-nose
 BUILD_DEPENDS =		textproc/py-sphinx \
 			graphics/py-matplotlib>=1.2.0 \
-			net/py-zmq
+			net/py-zmq \
+			math/graphviz
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -56,15 +57,14 @@ EXAMPLES_DIR =	${PREFIX}/share/examples/ipython-examples/
 post-install:
 	# desktop files
 	${INSTALL_DATA_DIR} ${APPS_DIR}
-	mv ${WRKSRC}/docs/examples/core/*.desktop ${APPS_DIR}
-	chown -R ${SHAREOWN}:${SHAREGRP} ${APPS_DIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/examples/core/*.desktop ${APPS_DIR}
 	# emacs stuff
 	${INSTALL_DATA} ${WRKSRC}/docs/emacs/ipython.el ${EXAMPLES_DIR}
 	# html docs
 	cp -r ${WRKSRC}/docs/build/html ${DOCS_DIR}/html
 	chown -R ${SHAREOWN}:${SHAREGRP} ${DOCS_DIR}
 	# empty dir i dont want in the PLIST
-	rm -r ${DOCS_DIR}/extensions
+	rmdir ${DOCS_DIR}/extensions
 
 do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} ${MODPY_SETUP} check
