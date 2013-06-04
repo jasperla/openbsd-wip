@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM =	 Yes
 
 WANTLIB += X11 Xft c fontconfig m
 
-MASTER_SITES = ${HOMEPAGE}ftp/current/linux/
+MASTER_SITES = ${HOMEPAGE}ftp/old/linux/
 
 MAKE_FLAGS = \
 	XFTHFD="${X11BASE}/include/freetype2" \
