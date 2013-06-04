@@ -8,9 +8,10 @@ COMMENT-server=	fast-paced first person shooter, server
 
 MULTI_PACKAGES=	-main -data -server
 
+# xonotic-*-low has JPEG textures instead of DDS with S3TC
 N=		xonotic
 V=		0.6.0
-DISTNAME=	${N}-${V}-low	# JPEG textures instead of DDS with S3TC
+DISTNAME=	${N}-${V}-low
 PKGNAME-main=	${N}-${V}
 PKGNAME-data=	${N}-data-${V}
 PKGNAME-server=	${N}-server-${V}

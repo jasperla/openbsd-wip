@@ -17,7 +17,6 @@ PKG_ARCH=	*
 # EULA
 PERMIT_PACKAGE_CDROM=   No
 PERMIT_PACKAGE_FTP=     No
-PERMIT_DISTFILES_CDROM= No
 PERMIT_DISTFILES_FTP=   No
 
 FILES= campaigncycle.cfg description.txt hunkusage.dat lmscycle.cfg \

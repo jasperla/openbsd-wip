@@ -1,21 +1,22 @@
 # $OpenBSD$
 
 SHARED_ONLY =		Yes
-DISTNAME =		samba-4.0.5
+VERSION =		4.0.6
+DISTNAME =		samba-${VERSION}
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
 COMMENT-ldb =		LDAP-like embedded database
 #COMMENT-ntdb =		new trivial database library
-COMMENT-talloc =	hierarchical memory pool system with destructors
 COMMENT-tdb =		trivial database library
 COMMENT-tevent =	event system based on talloc
+COMMENT-util =		common libraries for Samba suite
 
 PKGNAME-main =		${PKGNAME}
 PKGNAME-ldb =		ldb-${LDB_V}
 #PKGNAME-ntdb =		ntdb-${NTDB_V}
-PKGNAME-talloc =	libtalloc-${TALLOC_V}
 PKGNAME-tdb =		tdb-${TDB_V}
 PKGNAME-tevent =	tevent-${TEVENT_V}
+PKGNAME-util =		samba-util-${TALLOC_V}
 
 LDB_V =			1.1.15
 #NTDB_V =		0.9
@@ -23,11 +24,10 @@ TALLOC_V =		2.0.7
 TDB_V =			1.2.11
 TEVENT_V =		0.9.18
 
-REVISION-main =		13
-REVISION-ldb =		2
-REVISION-talloc =	2
-REVISION-tdb =		2
-REVISION-tevent =	2
+REVISION-ldb =		4
+REVISION-tdb =		4
+REVISION-tevent =	4
+REVISION-util =		0
 
 SHARED_LIBS =		asn1-samba4		0.0 \
 			com_err-samba4		0.0 \
@@ -75,7 +75,12 @@ SHARED_LIBS =		asn1-samba4		0.0 \
 			torture			0.0 \
 			wbclient		0.0 \
 			wind-samba4		0.0 \
-			winbind_krb5_locator	0.0
+			winbind_krb5_locator	0.0 \
+			nss_wrapper		0.0 \
+			socket_wrapper		0.0 \
+			uid_wrapper		0.0 \
+			replace			0.0 \
+			util_setid		0.0
 
 CATEGORIES =		net sysutils security
 
@@ -86,22 +91,32 @@ HOMEPAGE =		http://www.samba.org/
 # GPLv3, LGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
+UTIL_LIBS =		nss_wrapper socket_wrapper uid_wrapper replace util_setid
+UTIL_WANTLIB =		${UTIL_LIBS:S@^@lib/samba/@} talloc
+
 WANTLIB-common =	m pthread util ${MODPY_WANTLIB}
 
 WANTLIB-main =		${WANTLIB-common} ${MODGETTEXT_WANTLIB} c ncurses z
-WANTLIB-main +=		avahi-client avahi-common cups execinfo iniparser lber
-WANTLIB-main +=		ldap pam popt sasl2 gcrypt gnutls
-WANTLIB-main +=		ldb pyldb-util pytalloc-util talloc tdb tevent
+WANTLIB-main +=		avahi-client avahi-common cups execinfo fam iniparser
+WANTLIB-main +=		lber ldap pam popt sasl2 gcrypt gnutls
+WANTLIB-main +=		ldb pyldb-util pytalloc-util tdb tevent
+WANTLIB-main +=		${UTIL_WANTLIB}
 
-WANTLIB-ldb =		${WANTLIB-common} c popt talloc tdb tevent
-WANTLIB-talloc =	${WANTLIB-common}
-WANTLIB-tdb =		${WANTLIB-common} c talloc
-WANTLIB-tevent =	${WANTLIB-common} talloc
+WANTLIB-ldb =		${WANTLIB-common} c popt tdb tevent
+WANTLIB-ldb +=		${UTIL_WANTLIB}
+
+WANTLIB-tdb =		${WANTLIB-common} c
+WANTLIB-tdb +=		${UTIL_WANTLIB}
+
+WANTLIB-tevent =	${WANTLIB-common}
+WANTLIB-tevent +=	${UTIL_WANTLIB}
+
+WANTLIB-util =		${WANTLIB-common}
 
 MASTER_SITES =		http://ftp.samba.org/pub/samba/stable/ \
 			http://ftp.samba.org/pub/samba/old-versions/
 
-MULTI_PACKAGES =	-main -ldb -talloc -tdb -tevent
+MULTI_PACKAGES =	-main -ldb -tdb -tevent -util
 #MULTI_PACKAGES +=	-ntdb		# disabled by default in Samba4
 
 MODULES =		devel/gettext lang/python
@@ -113,8 +128,8 @@ BUILD_DEPENDS =		net/py-dnspython \
 RUN_DEPENDS-main =	net/py-dnspython
 
 LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb>=${LDB_V} \
-			${BUILD_PKGPATH},-talloc>=${TALLOC_V} \
 			${BUILD_PKGPATH},-tdb>=${TDB_V} \
+			${BUILD_PKGPATH},-util>=${TALLOC_V} \
 			${MODGETTEXT_LIB_DEPENDS} \
 			databases/openldap \
 			devel/iniparser \
@@ -124,18 +139,20 @@ LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb>=${LDB_V} \
 			security/cyrus-sasl2 \
 			security/gnutls \
 			security/libgcrypt \
-			security/openpam
+			security/openpam \
+			sysutils/gamin
 #LIB_DEPENDS-main +=	${BUILD_PKGPATH},-ntdb>=${NTDB_V}
 
 LIB_DEPENDS-ldb =	${BUILD_PKGPATH},-tdb>=${TDB_V} \
 			${BUILD_PKGPATH},-tevent>=${TEVENT_V} \
+			${BUILD_PKGPATH},-util>=${TALLOC_V} \
 			devel/popt
 
-LIB_DEPENDS-talloc =
+LIB_DEPENDS-tdb =	${BUILD_PKGPATH},-util>=${TALLOC_V}
 
-LIB_DEPENDS-tdb =	${BUILD_PKGPATH},-talloc>=${TALLOC_V}
+LIB_DEPENDS-tevent =	${BUILD_PKGPATH},-util>=${TALLOC_V}
 
-LIB_DEPENDS-tevent =	${BUILD_PKGPATH},-talloc>=${TALLOC_V}
+LIB_DEPENDS-util =	${MODPY_LIB_DEPENDS}
 
 CONFIGURE_STYLE =	simple
 # XXX Remember to remove --enable-developer, it prints passwords in logs.
@@ -194,6 +211,9 @@ post-install:
 		${WRKINST}${MODPY_SITEPKG}
 	${MODPY_BIN} -O ${MODPY_LIBDIR}/compileall.py \
 		${WRKINST}${MODPY_SITEPKG}
+.for _l in ${UTIL_LIBS}
+	cd ${PREFIX}/lib && ln -fs samba/lib${_l}.so.${LIB${_l}_VERSION}
+.endfor
 
 .include <bsd.port.mk>
 

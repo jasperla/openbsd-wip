@@ -991,6 +991,8 @@ lib/python${MODPY_VERSION}/site-packages/IPython/utils/traitlets.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/traitlets.pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/upgradedir.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/upgradedir.pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/utils/version.py
+lib/python${MODPY_VERSION}/site-packages/IPython/utils/version.pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/warn.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/warn.pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/wildcard.py
@@ -1218,6 +1220,7 @@ share/doc/ipython/html/_images/plot_simple.png
 share/doc/ipython/html/_images/plot_simple_python.png
 share/doc/ipython/html/_images/pull_button.png
 share/doc/ipython/html/_images/qtconsole.png
+share/doc/ipython/html/_images/qtconsole1.png
 share/doc/ipython/html/_images/qtconsole_tabbed.png
 share/doc/ipython/html/_images/queryfade.png
 share/doc/ipython/html/_images/queuefade.png
@@ -1400,6 +1403,7 @@ share/doc/ipython/html/_sources/api/generated/IPython.utils.text.txt
 share/doc/ipython/html/_sources/api/generated/IPython.utils.timing.txt
 share/doc/ipython/html/_sources/api/generated/IPython.utils.traitlets.txt
 share/doc/ipython/html/_sources/api/generated/IPython.utils.upgradedir.txt
+share/doc/ipython/html/_sources/api/generated/IPython.utils.version.txt
 share/doc/ipython/html/_sources/api/generated/IPython.utils.warn.txt
 share/doc/ipython/html/_sources/api/generated/IPython.utils.wildcard.txt
 share/doc/ipython/html/_sources/api/generated/gen.txt
@@ -1497,9 +1501,15 @@ share/doc/ipython/html/_sources/whatsnew/version0.13.txt
 share/doc/ipython/html/_sources/whatsnew/version0.8.txt
 share/doc/ipython/html/_sources/whatsnew/version0.9.txt
 share/doc/ipython/html/_static/
+share/doc/ipython/html/_static/ajax-loader.gif
 share/doc/ipython/html/_static/basic.css
+share/doc/ipython/html/_static/comment-bright.png
+share/doc/ipython/html/_static/comment-close.png
+share/doc/ipython/html/_static/comment.png
 share/doc/ipython/html/_static/default.css
 share/doc/ipython/html/_static/doctools.js
+share/doc/ipython/html/_static/down-pressed.png
+share/doc/ipython/html/_static/down.png
 share/doc/ipython/html/_static/file.png
 share/doc/ipython/html/_static/hist_simple.png
 share/doc/ipython/html/_static/hist_with_text.png
@@ -1529,6 +1539,9 @@ share/doc/ipython/html/_static/qtconsole_tabbed.png
 share/doc/ipython/html/_static/searchtools.js
 share/doc/ipython/html/_static/sidebar.js
 share/doc/ipython/html/_static/underscore.js
+share/doc/ipython/html/_static/up-pressed.png
+share/doc/ipython/html/_static/up.png
+share/doc/ipython/html/_static/websupport.js
 share/doc/ipython/html/about/
 share/doc/ipython/html/about/credits.html
 share/doc/ipython/html/about/history.html
@@ -1703,6 +1716,7 @@ share/doc/ipython/html/api/generated/IPython.utils.text.html
 share/doc/ipython/html/api/generated/IPython.utils.timing.html
 share/doc/ipython/html/api/generated/IPython.utils.traitlets.html
 share/doc/ipython/html/api/generated/IPython.utils.upgradedir.html
+share/doc/ipython/html/api/generated/IPython.utils.version.html
 share/doc/ipython/html/api/generated/IPython.utils.warn.html
 share/doc/ipython/html/api/generated/IPython.utils.wildcard.html
 share/doc/ipython/html/api/generated/gen.html
@@ -1844,6 +1858,8 @@ share/examples/ipython-examples/notebooks/animation.m4v
 share/examples/ipython-examples/notebooks/cython_extension.ipynb
 share/examples/ipython-examples/notebooks/display_protocol.ipynb
 share/examples/ipython-examples/notebooks/formatting.ipynb
+share/examples/ipython-examples/notebooks/logo/
+share/examples/ipython-examples/notebooks/logo/logo.png
 share/examples/ipython-examples/notebooks/octavemagic_extension.ipynb
 share/examples/ipython-examples/notebooks/python-logo.svg
 share/examples/ipython-examples/notebooks/rmagic_extension.ipynb

@@ -13,7 +13,6 @@ MAINTAINER=	Rafael Sadowski <rafael@sizeofvoid.org>
 # OSS (C) Schrodinger, LLC.
 PERMIT_PACKAGE_CDROM=	NO
 PERMIT_PACKAGE_FTP=	NO
-PERMIT_DISTFILES_CDROM=	NO
 PERMIT_DISTFILES_FTP=	NO
 
 # build tarball from svn-repo rev. 3946

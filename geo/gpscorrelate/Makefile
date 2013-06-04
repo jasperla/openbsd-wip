@@ -6,7 +6,7 @@ DISTNAME =		gpscorrelate-1.6.1
 
 CATEGORIES =		geo x11
 
-HOMEPAGE =		http://www.freefoote.com/linux_gpscorr.html
+HOMEPAGE =		https://github.com/freefoote/gpscorrelate
 
 MAINTAINER =		Kirill Bychkov <yason@linklevel.net>
 

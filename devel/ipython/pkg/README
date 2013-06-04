@@ -16,6 +16,11 @@ Using QTConsole Mode
 To use the interactive QT console, install py-qt4 before running:
   $ ipython qtconsole
 
+Sympy
+-----
+
+For symbolic algebra support, install py-sympy.
+
 Various Event Loops
 -------------------
 

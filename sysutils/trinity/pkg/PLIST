@@ -1,4 +1,6 @@
 @comment $OpenBSD$
+@newgroup _trinity:717
+@newuser _trinity:717:_trinity:daemon:Trinity user:/nonexistent:/sbin/nologin
 @bin bin/trinity
 share/doc/trinity/
 share/doc/trinity/COPYING

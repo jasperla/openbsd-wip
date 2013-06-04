@@ -10,7 +10,6 @@ MAINTAINER=		OpenBSD ports <ports@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=  	No
-PERMIT_DISTFILES_CDROM=	No
 WANTLIB=		c
 
 MASTER_SITES=           ${HOMEPAGE}download/ \
