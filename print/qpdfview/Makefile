@@ -29,6 +29,8 @@ LIB_DEPENDS =	devel/libmagic \
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
+NO_TEST =	Yes
+
 pre-configure:
 	perl -pi -e "s,/usr,${LOCALBASE},g;s,share/man,man,g" ${WRKSRC}/qpdfview.pri
 
