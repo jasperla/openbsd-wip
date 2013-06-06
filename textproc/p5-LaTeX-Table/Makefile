@@ -1,20 +1,37 @@
-# $OpenBSD: Makefile,v 1.4 2008/09/08 00:07:40 jasper Exp $
+# $OpenBSD: Makefile.template,v 1.60 2010/10/24 20:41:23 ajacoutot Exp $
 
-COMMENT=		automatic generation of LaTeX tables in Perl
-
-DISTNAME=		LaTeX-Table-v1.0.6
-PKGNAME=		p5-${DISTNAME:S/-v/-/}
-CATEGORIES=		textproc
-
-MODULES=		cpan
+COMMENT=				extension for LaTeX table generation
+	
+MODULES=				cpan
+DISTNAME=				LaTeX-Table-v1.0.6
+PKGNAME=				p5-LaTeX-Table-1.0.6
+CATEGORIES=				textproc
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS=		devel/p5-Moose \
-			devel/p5-MooseX-FollowPBP \
-			textproc/p5-Template
+BUILD_DEPENDS=			textproc/p5-LaTeX-Encode \
+						textproc/p5-LaTeX-Driver \
+						textproc/p5-Text-CSV \
+						devel/p5-Moose \
+						devel/p5-MooseX-FollowPBP \
+						textproc/p5-Template
 
-TEST_DEPENDS=		devel/p5-Test-NoWarnings
+${RUN_DEPENDS}=			${BUILD_DEPENDS}
+
+TEST_DEPENDS=			devel/p5-Test-NoWarnings
+
+MODCPAN_EXAMPLES=		Yes
+MODCPAN_EXAMPLES_DIR=	${PREFIX}/share/examples/p5-LaTeX-Table
+
+post-install:
+	${MODCPAN_POST_INSTALL}
+	${INSTALL_DATA_DIR} ${MODCPAN_EXAMPLES_DIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/examples.pdf \
+		${MODCPAN_EXAMPLES_DIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/generate_examples.pl \
+		${MODCPAN_EXAMPLES_DIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/imdbtop40.dat \
+		${MODCPAN_EXAMPLES_DIR}
 
 .include <bsd.port.mk>
