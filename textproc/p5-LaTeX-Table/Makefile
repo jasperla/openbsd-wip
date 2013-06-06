@@ -8,15 +8,13 @@ CATEGORIES=		textproc
 
 MODULES=		cpan
 
-# MIT
+# Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-CONFIGURE_STYLE= modbuild
+RUN_DEPENDS=		devel/p5-Moose \
+			devel/p5-MooseX-FollowPBP \
+			textproc/p5-Template
 
-TEST_DEPENDS=	devel/p5-Test-NoWarnings
-
-RUN_DEPENDS=	devel/p5-Moose \
-		devel/p5-MooseX-FollowPBP \
-		textproc/p5-Template
+TEST_DEPENDS=		devel/p5-Test-NoWarnings
 
 .include <bsd.port.mk>
