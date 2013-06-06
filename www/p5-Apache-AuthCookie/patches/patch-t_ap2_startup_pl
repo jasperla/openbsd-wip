@@ -1,0 +1,9 @@
+$OpenBSD$
+--- t_ap2/startup.pl.orig  Wed Jun  5 19:13:38 2013
++++ t_ap2/startup.pl	Wed Jun  5 19:17:14 2013
+@@ -1,3 +1,5 @@
+ use lib qw(../blib/lib blib/lib lib t/lib);
++use lib qw(/usr/ports/pobj/p5-Apache-AuthCookie-3.19/Apache-AuthCookie-3.19/lib);
++use lib qw(/usr/ports/pobj/p5-Apache-AuthCookie-3.19/Apache-AuthCookie-3.19/t/lib);
+ 
+ 1;
