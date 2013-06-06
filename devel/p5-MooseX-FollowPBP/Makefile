@@ -1,14 +1,18 @@
-# $OpenBSD$
+#$OpenBSD:Makefile.template,v1.602010/10/2420:41:23ajacoutotExp$
 
-COMMENT=				name your accessors get_foo() and set_foo()
+COMMENT=				name accessors get_foo(), set_foo()
 
 MODULES=				cpan
+
 DISTNAME=				MooseX-FollowPBP-0.05
+
 CATEGORIES=				devel
 
-# Perl
+#Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-TEST_DEPENDS=			devel/p5-Moose
+BUILD_DEPENDS=			${RUN_DEPENDS}
 
-.include <bsd.port.mk>
+RUN_DEPENDS=			devel/p5-Moose
+
+.include<bsd.port.mk>
