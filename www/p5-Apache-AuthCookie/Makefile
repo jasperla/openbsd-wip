@@ -1,39 +1,39 @@
-# $OpenBSD: Makefile.template,v 1.61 2012/03/29 13:41:58 sthen Exp $
+# $OpenBSD: Makefile.template,v 1.65 2013/03/21 08:46:31 ajacoutot Exp $
 
 COMMENT=		authentication and authorization via cookies
-COMMENT-ap2-mod_perl=	authentication and authorization via cookies - ap2-mod_perl
 
-MODULES=		cpan
-V=			3.15
-DISTNAME=		Apache-AuthCookie-3.15
-PKG_NAME-ap2-mod_perl=	Apache-Auth-Cookie-${V}-ap2-mod_perl
-FLAVORS=		ap2-mod_perl
+DISTNAME=		Apache-AuthCookie-3.19
 CATEGORIES=		www
-MASTER_SITES=		ftp://202.232.140.138/pub/FreeBSD/ports/distfiles/
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS=		www/mod_perl>=1.27
+MODULES=		cpan
 
-FLAVOR?=
-.if ${FLAVOR:L:Map2-mod_perl}
-RUN_DEPENDS=		www/ap2-mod_perl>=1.999022
-.endif
+RUN_DEPENDS=		mod_perl->=1.27|ap2-mod_perl->=1.999022:www/mod_perl \
+			devel/p5-Class-Load \
+			devel/p5-autobox
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
-MPV=			1
-.if ${FLAVOR:L:Map2-mod_perl}
-TEST_FLAGS=		APACHE_TEST_APXS=/usr/local/sbin/apxs2 \
-			APACHE_TEST_HTTPD=/usr/local/sbin/httpd2
-MPV=			2
-.endif
+TEST_DEPENDS=		www/p5-Apache-Test>=1.35 \
+			www/ap2-mod_perl \
+			www/mod_perl
 
-pre-configure:
-	@perl -pi -e 's/ = mod_perl_version.*/ = ${MPV};/' ${WRKSRC}/Makefile.PL
+post-extract:
+	@cp -R ${WRKSRC}/t ${WRKSRC}/t_ap2
 
-# make regress must be done as non-root user
-TEST_DEPENDS=	www/p5-Apache-Test
+do-test:
+	@echo 'Need p5-Apache-Test>=1.35 for tests'
+
+#.if ${MPV2}
+#TEST_FLAGS=		APACHE_TEST_APXS=/usr/local/sbin/apxs2 \
+#			APACHE_TEST_HTTPD=/usr/local/sbin/httpd2
+#.endif
+
+#pre-configure:
+#	@perl -pi -e 's/ = mod_perl_version.*/ = ${MPV};/' ${WRKSRC}/Makefile.PL
+
+# make test must be done as non-root user
 
 .include <bsd.port.mk>
