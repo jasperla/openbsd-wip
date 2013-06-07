@@ -14,8 +14,6 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # XXX
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 #WANTLIB =		???
 
