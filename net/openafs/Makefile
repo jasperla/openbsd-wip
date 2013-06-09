@@ -29,7 +29,6 @@ SHARED_LIBS +=  kopenafs                  1.1
 MASTER_SITES=		http://www.openafs.org/dl/openafs/${VERSION}/
 MASTER_SITES0=		http://grand.central.org/dl/cellservdb/
 
-EXTRACT_SUFX=		.tar.gz
 DOC_DISTFILE=		openafs-${VERSION}-doc
 CELLSRVDB=		CellServDB.2013-01-28
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} ${DOC_DISTFILE}${EXTRACT_SUFX} ${CELLSRVDB}:0

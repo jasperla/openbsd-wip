@@ -2,9 +2,7 @@
 
 COMMENT=	binutils for m68k-elf cross-development
 
-V=		2.23
-DISTNAME=	binutils-${V}
-EXTRACT_SUFX =	.tar.gz
+DISTNAME=	binutils-2.23
 
 HOMEPAGE=	http://www.gnu.org/software/binutils/
 

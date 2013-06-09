@@ -14,12 +14,10 @@ MAINTAINER=		Sergey Bronnikov <estetus@gmail.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		https://github.com/ledger/ledger/archive/
 
-EXTRACT_SUFX =  .zip 
+EXTRACT_SUFX =  .zip
 
 WANTLIB=		c gmp>=4 m pcre stdc++
 
