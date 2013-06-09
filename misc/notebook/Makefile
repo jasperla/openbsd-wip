@@ -12,8 +12,6 @@ HOMEPAGE =			http://www.wjduquette.com/notebook/
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
 PERMIT_PACKAGE_CDROM =  Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES            = ${HOMEPAGE}
 
