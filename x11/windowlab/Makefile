@@ -17,8 +17,9 @@ WANTLIB += X11 Xext Xft c
 MASTER_SITES =	http://nickgravgaard.com/windowlab/
 
 USE_GMAKE =	Yes
-
 MAKE_FLAGS =	SYSCONFDIR=${SYSCONFDIR}/X11/windowlab
+
+NO_TEST =	Yes
 
 post-patch:
 	mv ${WRKSRC}/windowlab.1x ${WRKSRC}/windowlab.1
