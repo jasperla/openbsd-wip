@@ -4,10 +4,8 @@ Fixes the order of CFLAGS and LDFLAGS.
 
 https://bitbucket.org/pypy/pypy/pull-request/153
 
--O3 not allowed in ports builds.
-
 --- rpython/translator/platform/openbsd.py.orig	Tue May 21 09:09:59 2013
-+++ rpython/translator/platform/openbsd.py	Tue Jun 11 15:42:48 2013
++++ rpython/translator/platform/openbsd.py	Tue Jun 11 15:34:43 2013
 @@ -8,8 +8,9 @@ class OpenBSD(BSD):
      DEFAULT_CC = "cc"
      name = "openbsd"
