@@ -1,7 +1,7 @@
 # $OpenBSD $
 
-COMMENT =		testing framework
-DISTNAME =		kyua-cli-0.5
+COMMENT =		scriptable interfaces to interact with test programs
+DISTNAME =		kyua-testers-0.1
 
 SHARED_LIBS += ct                   5.0      # .4.0
 CATEGORIES =		devel sysutils
