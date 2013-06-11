@@ -1,5 +1,8 @@
 # $OpenBSD$
 
+# Oh boy. "5495684 maximum resident set size" on amd64
+VMEM_WARNING =		Yes
+
 ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		fast implementation of the Python language
@@ -29,7 +32,6 @@ MODPY_VERSION =		2.7
 MODGCC4_ARCHS =		*
 MODGCC4_LANGS =		c c++
 
-VMEM_WARNING =		Yes
 USE_GMAKE =		Yes
 BUILD_DEPENDS =		textproc/py-sphinx
 
