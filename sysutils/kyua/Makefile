@@ -1,6 +1,6 @@
 # $OpenBSD $
 
-COMMENT =		Quality assurance toolchain for software packages	
+COMMENT =		testing framework
 DISTNAME =		kyua-cli-0.5
 
 SHARED_LIBS += ct                   5.0      # .4.0
