@@ -27,7 +27,6 @@ DIST_SUBDIR =		pypy
 MODULES +=		devel/gettext lang/python gcc4
 MODPY_VERSION =		2.7
 MODGCC4_ARCHS =		*
-MODGCC4_VERSION =	4.6
 MODGCC4_LANGS =		c c++
 
 VMEM_WARNING =		Yes
