@@ -4,8 +4,8 @@ Fixes the order of CFLAGS and LDFLAGS.
 
 https://bitbucket.org/pypy/pypy/pull-request/153
 
---- rpython/translator/platform/openbsd.py.orig	Tue May 21 10:09:59 2013
-+++ rpython/translator/platform/openbsd.py	Mon Jun  3 00:37:41 2013
+--- rpython/translator/platform/openbsd.py.orig	Tue May 21 09:09:59 2013
++++ rpython/translator/platform/openbsd.py	Tue Jun 11 15:34:43 2013
 @@ -8,8 +8,9 @@ class OpenBSD(BSD):
      DEFAULT_CC = "cc"
      name = "openbsd"
@@ -13,7 +13,7 @@ https://bitbucket.org/pypy/pypy/pull-request/153
 -    link_flags = os.environ.get("LDFLAGS", '-pthread').split()
 -    cflags = os.environ.get("CFLAGS", "-O3 -pthread -fomit-frame-pointer -D_BSD_SOURCE").split()
 +    link_flags = os.environ.get("LDFLAGS", "").split() + ['-pthread']
-+    cflags = ['-O3', '-pthread', '-fomit-frame-pointer', '-D_BSD_SOURCE'
++    cflags = ['-pthread', '-fomit-frame-pointer', '-D_BSD_SOURCE'
 +             ] + os.environ.get("CFLAGS", "").split()
  
      def _libs(self, libraries):
