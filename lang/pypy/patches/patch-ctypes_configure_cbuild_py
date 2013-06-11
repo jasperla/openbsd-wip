@@ -1,4 +1,7 @@
 $OpenBSD$
+
+-O3 not allowed in ports builds.
+
 --- ctypes_configure/cbuild.py.orig	Tue Jun 11 15:36:02 2013
 +++ ctypes_configure/cbuild.py	Tue Jun 11 15:37:18 2013
 @@ -377,7 +377,7 @@ class CCompiler:
