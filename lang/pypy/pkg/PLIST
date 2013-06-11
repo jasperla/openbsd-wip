@@ -1,5 +1,5 @@
 @comment $OpenBSD$
-@bin bin/pypy
+bin/pypy
 pypy/
 pypy/bin/
 @bin pypy/bin/pypy
@@ -73,13 +73,17 @@ pypy/lib-python/2.7/UserString.py
 pypy/lib-python/2.7/_LWPCookieJar.py
 pypy/lib-python/2.7/_MozillaCookieJar.py
 pypy/lib-python/2.7/__future__.py
+pypy/lib-python/2.7/__future__.pyc
 pypy/lib-python/2.7/__phello__.foo.py
 pypy/lib-python/2.7/_abcoll.py
+pypy/lib-python/2.7/_abcoll.pyc
 pypy/lib-python/2.7/_pyio.py
 pypy/lib-python/2.7/_strptime.py
 pypy/lib-python/2.7/_threading_local.py
 pypy/lib-python/2.7/_weakrefset.py
+pypy/lib-python/2.7/_weakrefset.pyc
 pypy/lib-python/2.7/abc.py
+pypy/lib-python/2.7/abc.pyc
 pypy/lib-python/2.7/aifc.py
 pypy/lib-python/2.7/antigravity.py
 pypy/lib-python/2.7/anydbm.py
@@ -1939,6 +1943,7 @@ pypy/lib-python/2.7/trace.py
 pypy/lib-python/2.7/traceback.py
 pypy/lib-python/2.7/tty.py
 pypy/lib-python/2.7/types.py
+pypy/lib-python/2.7/types.pyc
 pypy/lib-python/2.7/unittest/
 pypy/lib-python/2.7/unittest/__init__.py
 pypy/lib-python/2.7/unittest/__main__.py
@@ -2018,6 +2023,7 @@ pypy/lib-python/2.7/xmlrpclib.py
 pypy/lib-python/2.7/zipfile.py
 pypy/lib_pypy/
 pypy/lib_pypy/__init__.py
+pypy/lib_pypy/__init__.pyc
 pypy/lib_pypy/_codecs_cn.py
 pypy/lib_pypy/_codecs_hk.py
 pypy/lib_pypy/_codecs_iso2022.py
@@ -2056,6 +2062,7 @@ pypy/lib_pypy/_sha256.py
 pypy/lib_pypy/_sha512.py
 pypy/lib_pypy/_sqlite3.py
 pypy/lib_pypy/_structseq.py
+pypy/lib_pypy/_structseq.pyc
 pypy/lib_pypy/_subprocess.py
 pypy/lib_pypy/_testcapi.py
 pypy/lib_pypy/_testcapimodule.c
@@ -2095,9 +2102,18 @@ pypy/lib_pypy/cffi/vengine_gen.py
 pypy/lib_pypy/cffi/verifier.py
 pypy/lib_pypy/ctypes_config_cache/
 pypy/lib_pypy/ctypes_config_cache/__init__.py
+pypy/lib_pypy/ctypes_config_cache/__init__.pyc
+pypy/lib_pypy/ctypes_config_cache/_locale_64_.py
+pypy/lib_pypy/ctypes_config_cache/_locale_cache.py
+pypy/lib_pypy/ctypes_config_cache/_resource_64_.py
+pypy/lib_pypy/ctypes_config_cache/_resource_cache.py
+pypy/lib_pypy/ctypes_config_cache/_syslog_64_.py
+pypy/lib_pypy/ctypes_config_cache/_syslog_cache.py
 pypy/lib_pypy/ctypes_config_cache/dumpcache.py
+pypy/lib_pypy/ctypes_config_cache/dumpcache.pyc
 pypy/lib_pypy/ctypes_config_cache/locale.ctc.py
 pypy/lib_pypy/ctypes_config_cache/rebuild.py
+pypy/lib_pypy/ctypes_config_cache/rebuild.pyc
 pypy/lib_pypy/ctypes_config_cache/resource.ctc.py
 pypy/lib_pypy/ctypes_config_cache/syslog.ctc.py
 pypy/lib_pypy/ctypes_support.py
