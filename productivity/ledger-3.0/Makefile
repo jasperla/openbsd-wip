@@ -25,7 +25,8 @@ MODULES =       devel/cmake \
 				lang/python
 
 LIB_DEPENDS=	devel/gmp \
-				devel/pcre
+				devel/pcre \
+				devel/boost
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_SCRIPT=	acprep
@@ -34,9 +35,13 @@ CONFIGURE_ARGS=		opt make
 SEPARATE_BUILD=	Yes
 
 WRKSRC=${WRKDIR}/ledger-next
+WRKDIST=${WRKDIR}/ledger-next
 
 pre-configure:
-	#cd ${WRKSRC}
+	cd ${WRKSRC} && mkdir build
+
+pre-build:
+	cd build/ledger/opt && make install
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ledger
