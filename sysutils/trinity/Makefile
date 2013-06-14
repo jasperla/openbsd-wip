@@ -19,8 +19,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES            = ${HOMEPAGE}
 
-BUILD_DEPENDS=    shells/bash
-
 WANTLIB += c m stdc++
 
 USE_GMAKE =  			Yes
