@@ -1,6 +1,6 @@
 $OpenBSD$
---- lib/options.c.orig	Sat Mar  2 14:44:43 2013
-+++ lib/options.c	Sat Mar  2 14:47:12 2013
+--- lib/options.c.orig	Wed Dec  8 20:33:54 2010
++++ lib/options.c	Fri Jun 14 16:18:18 2013
 @@ -26,7 +26,6 @@
   */
  
@@ -9,47 +9,3 @@ $OpenBSD$
  
  #include <stdio.h>
  #include <stdlib.h>
-@@ -42,6 +41,7 @@ opt_t opt;
- opt_t *op;
- 
- static char path[64];
-+extern char *__progname;
- 
- static void
- usage(char *where)
-@@ -50,7 +50,7 @@ usage(char *where)
- 
- 	if (where != NULL)
- 		printf("Error in \"%s\"\n", where);
--	fprintf(stderr, "Usage: %s [-t | -l | -i | -d | -h | -k | -v]\n", getprogname());
-+	fprintf(stderr, "Usage: %s [-t | -l | -i | -d | -h | -k | -v]\n", __progname);
- 	help =  " t <number><s|m|h|d> : time to run test\n"
- 		" l <pct>             : load factor 0 - 100%\n"
- 		" i <number>          : max # of parallel incarnations\n"
-@@ -88,7 +88,7 @@ static char *gete(char *name)
- 	char *cp;
- 	char help[128];
- 
--	snprintf(help, sizeof(help), "%s%s", getprogname(), name);
-+	snprintf(help, sizeof(help), "%s%s", __progname, name);
- 	cp = getenv(help);
- 	if (cp == NULL)
- 		cp = getenv(name);
-@@ -218,7 +218,7 @@ show_status(void)
- 		t = t % (60 * 60 * 24);
- 		strftime(buf, sizeof(buf), "%T", gmtime(&t));
- 		printf("%8s: run time %2d+%s, incarnations %3d, load %3d, verbose %d\n",
--			getprogname(), days, buf, op->incarnations, op->load,
-+			__progname, days, buf, op->incarnations, op->load,
- 			op->verbose);
- 	}
- }
-@@ -226,7 +226,7 @@ show_status(void)
- void
- rmval(void)
- {
--	if (snprintf(path, sizeof(path), "%s/%s.conf", op->cd, getprogname()) < 0)
-+	if (snprintf(path, sizeof(path), "%s/%s.conf", op->cd, __progname) < 0)
- 		err(1, "snprintf path");
- 	(void) unlink(path);
- }

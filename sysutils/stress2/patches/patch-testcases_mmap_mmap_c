@@ -1,6 +1,6 @@
 $OpenBSD$
---- testcases/mmap/mmap.c.orig	Sat Mar  2 15:10:54 2013
-+++ testcases/mmap/mmap.c	Sat Mar  2 15:11:21 2013
+--- testcases/mmap/mmap.c.orig	Wed Dec  8 20:33:55 2010
++++ testcases/mmap/mmap.c	Fri Jun 14 15:56:40 2013
 @@ -26,7 +26,6 @@
   */
  
@@ -9,21 +9,3 @@ $OpenBSD$
  
  #include <unistd.h>
  #include <stdio.h>
-@@ -41,6 +40,8 @@ __FBSDID("$FreeBSD: projects/stress2/testcases/mmap/mm
- 
- #include "stress.h"
- 
-+extern char *__progname;
-+
- static char path[128];
- 
- #define INPUTFILE "/bin/date"
-@@ -50,7 +51,7 @@ setup(int nb)
- {
- 	umask(0);
- 
--	sprintf(path,"%s.%05d", getprogname(), getpid());
-+	sprintf(path,"%s.%05d", __progname, getpid());
- 	if (mkdir(path, 0770) < 0)
- 		err(1, "mkdir(%s), %s:%d", path, __FILE__, __LINE__);
- 
