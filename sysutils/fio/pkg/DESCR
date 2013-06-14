@@ -1,0 +1,8 @@
+fio is an I/O tool meant to be used both for benchmark 
+and stress/hardware verification. It has support 
+for 13 different types of I/O engines (sync, mmap, 
+libaio, posixaio, SG v3, splice, null, network, syslet,
+guasi, solarisaio, and more), I/O priorities 
+(for newer Linux kernels), rate I/O, forked or threaded jobs, 
+and much more. It can work on block devices as well as files. 
+fio accepts job descriptions in a simple-to-understand text format. 
