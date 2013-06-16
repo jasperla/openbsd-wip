@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@bin bin/sshfs
-@man man/man1/sshfs.1
