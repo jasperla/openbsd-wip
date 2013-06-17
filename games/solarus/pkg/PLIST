@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@bin bin/solarus
-share/doc/pkg-readmes/${FULLPKGNAME}
