@@ -2,9 +2,9 @@
 
 COMMENT =	IJG libjpeg compatible, accellerated JPEG (de)compression
 
-V =		1.2.1
+V =		1.2.90
 DISTNAME =	libjpeg-turbo-$V
-SHARED_LIBS +=	jpeg	64.0	# 11.0
+SHARED_LIBS +=	jpeg		64.0	# 11.0
 SHARED_LIBS +=	turbojpeg	0.0
 CATEGORIES =	graphics
 HOMEPAGE =	http://www.libjpeg-turbo.org/
@@ -37,7 +37,7 @@ CONFIGURE_ARGS =	${CONFIGURE_SHARED}
 CONFIGURE_ARGS +=	--disable-ld-version-script --with-jpeg8
 
 post-install:
-	mv	${PREFIX}/lib/libturbojpeg.so \
+	mv	${PREFIX}/lib/libturbojpeg.so.* \
 		${PREFIX}/lib/libturbojpeg.so.${LIBturbojpeg_VERSION}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/jpeg
 	${INSTALL_DATA} ${WRKSRC}/libjpeg.txt ${WRKSRC}/wizard.txt \
