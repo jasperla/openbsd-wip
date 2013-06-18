@@ -22,6 +22,7 @@ EXTRACT_SUFX= .tar.gz
 
 BUILD_DEPENDS= devel/autoconf/2.59 devel/automake/1.9 devel/gmake devel/pcre
 LIB_DEPENDS=   devel/pcre
+WANTLIB+= c pcre pthread z
 
 USE_GMAKE=   Yes
 USE_LIBTOOL= Yes
