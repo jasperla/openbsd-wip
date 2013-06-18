@@ -2,8 +2,8 @@
 
 COMMENT =	STUN server implementation RFCs 5389, 5769, and 5780
 
-VERSION =	1_1_1
-DISTNAME =	stunserver_${VERSION}
+VERSION =	1.2.3
+DISTNAME =	stunserver-${VERSION}
 PKGNAME =	stuntman-${VERSION:S/_/./g}
 CATEGORIES =	net
 EXTRACT_SUFX =	.tgz
@@ -19,9 +19,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += 	c crypto m pthread stdc++
 
-LIB_DEPENDS =	devel/boost
+BUILD_DEPENDS =	devel/boost
 
-MAKE_FLAGS =	BOOST_INCLUDE='-I/usr/local/include' FLAVOR_FLAGS='${CFLAGS}'
+MAKE_FLAGS =	BOOST_INCLUDE='-I/usr/local/include' \
+		FLAVOR_FLAGS='${CXXFLAGS} -Wno-unknown-pragmas'
 
 USE_GMAKE =	Yes
 
@@ -33,5 +34,7 @@ do-install:
 .for s in stunserver stunclient stuntestcode
 	${INSTALL_PROGRAM} ${WRKSRC}/$s ${PREFIX}/sbin
 .endfor
+	cd ${WRKSRC}/resources/; ${INSTALL_MAN} stunclient.1 stunserver.1 \
+	    ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

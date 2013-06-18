@@ -1,4 +1,11 @@
 @comment $OpenBSD$
+@newgroup _stuntman:717
+@newuser _stuntman:717:717:daemon:STUN server:/nonexistent:/sbin/nologin
+@man man/man1/stunclient.1
+@man man/man1/stunserver.1
 @bin sbin/stunclient
 @bin sbin/stunserver
 @bin sbin/stuntestcode
+share/doc/pkg-readmes/${FULLPKGNAME}
+@rcscript ${RCDIR}/stunserver
+
