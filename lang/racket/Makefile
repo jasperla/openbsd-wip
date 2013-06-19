@@ -32,7 +32,7 @@ MODULES +=		converters/libiconv
 
 # http://docs.racket-lang.org/draw/libs.html
 # http://docs.racket-lang.org/gui/libs.html
-# Some deps are listed in the README, other in the doc and other
+# Some deps are listed in the README, others in the doc and others
 # are called by ffi.
 LIB_DEPENDS =		devel/libffi>=3.0.9p2
 BUILD_DEPENDS =		devel/pango \
@@ -73,13 +73,13 @@ CONFIGURE_ARGS +=	--disable-backtrace \
 # Since 5.3.4 if __SSE_MATH__ is defined (C_COMPILER_USES_SSE) and
 # MZ_TRY_EXTFLONUMS enabled, MZ_LONG_DOUBLE (extflonum) is turned on. Also
 # C_COMPILER_USES_SSE turn on MZ_USE_JIT_SSE.
-# "-msse -mfpmath=sse" required by extflonum on i386 and probably on amd64.
+# "-msse -mfpmath=sse" required by extflonum on i386.
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			CFLAGS="${CFLAGS} -msse -mfpmath=sse"
 
-# MAKE_JOBS: If places is enabled, racket uses places channels. When places is
-# disabled, racket uses multiple racket processes and pipes.
+# MAKE_JOBS: If "places" is enabled, racket uses "places channels". When
+# "places" is disabled, racket uses multiple racket processes and pipes.
 # http://permalink.gmane.org/gmane.comp.lang.racket.user/17281
 # https://github.com/plt/racket/commit/2295d16074b9538ce500cf9bf9de65265ce5531c
 # Default limit in file descriptors isn't enough for compile as root. The
