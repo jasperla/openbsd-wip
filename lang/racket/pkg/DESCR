@@ -9,5 +9,9 @@ The primary components of Racket platform are:
 - DrRacket (formerly named DrScheme), the Racket program development
   environment.
 - Teachpacks to use together with various books.
-- Planet 2, Racket's web-based package distribution system for
-  user-contributed packages.
+- pkg.racket-lang.org, Racket's web-based package distribution system
+  for user-contributed packages.
+- raco, command line tool for finding documentation, compiling Racket
+  source to bytecode, packaging executables, and packaging installable
+  archives.
+
