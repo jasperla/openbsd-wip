@@ -2,22 +2,19 @@
 
 COMMENT =		stereoscopic 3D video player
 
-DISTNAME =		bino-1.4.0
+DISTNAME =		bino-1.4.2
 
 CATEGORIES =		x11
 
 HOMEPAGE =		http://bino3d.org/
 
-MAINTAINER =		Kirill Bychkov <yason@linklevel.net>
+MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
-# GPLv3
+# GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL GLEWmx QtGui QtOpenGL X11 Xext Xfixes ass avcodec
-WANTLIB += avdevice avformat avutil bz2 c gsm m mp3lame
-WANTLIB += ogg openal orc-0.4 pthread schroedinger-1.0 sndio speex
-WANTLIB += stdc++ swscale theoradec theoraenc vorbis vorbisenc
-WANTLIB += vpx x264 xvidcore z
+WANTLIB += GL GLEWmx QtGui QtOpenGL X11 ass avcodec avdevice avformat
+WANTLIB += avutil c m openal pthread stdc++ swscale
 
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=bino/}
 EXTRACT_SUFX =		.tar.xz
@@ -35,7 +32,7 @@ CONFIGURE_ARGS +=	--without-equalizer \
 			--without-liblircclient
 
 CONFIGURE_ENV += 	CPPFLAGS="-I${X11BASE}/include" \
-			LDFLAGS="-L${X11BASE}/lib"
+			LDFLAGS="-L${X11BASE}/lib -Wl,-z,muldefs"
 
 NO_TEST =		Yes
 
