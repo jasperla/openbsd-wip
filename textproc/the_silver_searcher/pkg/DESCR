@@ -1,4 +1,5 @@
-The silver search (also known as ag) is a fast code searching tool
-similar to ack. Except that it is faster than ack, as it is written in
-C instead of perl. Like ack, ag is aware of ignore files of git and
-mercurial and does not search files contained in those ignore files.
+The silver searcher (also known as ag) is a fast text searching tool
+similar to grep or ack. It performs faster than ack, yet is also aware
+of ignore files of git and mercurial repositories and does not search
+files listed in ignore files. It further utilises threads and advanced
+features of PCRE to further improve performance.
