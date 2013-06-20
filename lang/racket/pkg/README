@@ -11,7 +11,7 @@ Known issues
   the limits imposed by OpenBSD. If this happens, check the limits of the shell
   and login.conf.
 
-- Some examples of ffi-lib doesn't work.
+- Some examples of ffi-lib don't work.
 
 - Due to lack of thread-local storage support on OpenBSD, "places" and
   "futures" are disabled.
