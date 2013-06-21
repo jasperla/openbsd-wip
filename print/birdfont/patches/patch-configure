@@ -1,0 +1,12 @@
+$OpenBSD$
+--- configure.orig	Thu Jun 20 09:59:56 2013
++++ configure	Fri Jun 21 03:06:11 2013
+@@ -83,7 +83,7 @@ parser.add_option("-c", "--cc", dest="cc", help="C com
+ (options, args) = parser.parse_args()
+ 
+ if not options.prefix:
+-	options.prefix = "/usr"
++	options.prefix = "/usr/ports/pobj/birdfont-0.19/fake-amd64/usr/local"
+ if not options.dest:
+ 	options.dest = ""
+ if not options.cc:
