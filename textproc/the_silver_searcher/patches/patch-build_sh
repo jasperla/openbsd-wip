@@ -1,9 +1,0 @@
---- build.sh.orig	Tue Mar  5 07:51:49 2013
-+++ build.sh	Thu Jun 20 18:47:14 2013
-@@ -15,5 +15,4 @@
- autoconf && \
- autoheader && \
- automake --add-missing && \
--./configure && \
--make
-+./configure --prefix=/usr/local --srcdir=. install_sh=./install-sh
