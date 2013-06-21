@@ -2,9 +2,7 @@
 
 COMMENT = code searching tool, with a focus on speed (ag)
 
-V=           0.14
-PKGNAME=     the_silver_searcher-${V}
-DISTNAME=    ${PKGNAME}
+DISTNAME=    the_silver_searcher-0.14
 CATEGORIES=  textproc
 
 HOMEPAGE=    https://github.com/ggreer/the_silver_searcher
@@ -17,12 +15,11 @@ WANTLIB+= c pcre pthread z
 
 MASTER_SITES= http://pub.n0la.org/
 
-BUILD_DEPENDS= devel/autoconf/2.59 \
-               devel/automake/1.9 \
-               devel/pcre
+BUILD_DEPENDS= ${MODGNU_AUTOCONF_DEPENDS} \
+               ${MODGNU_AUTOMAKE_DEPENDS}
 LIB_DEPENDS=   devel/pcre
 
-CONFIGURE_STYLE= autoconf
+CONFIGURE_STYLE= gnu
 
 AUTOCONF_VERSION=2.59
 AUTOMAKE_VERSION=1.9
