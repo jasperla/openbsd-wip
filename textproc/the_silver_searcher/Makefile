@@ -15,7 +15,7 @@ WANTLIB+= c pcre pthread z
 
 MASTER_SITES= http://pub.n0la.org/
 
-LIB_DEPENDS=   devel/pcre
+LIB_DEPENDS=  devel/pcre
 
 CONFIGURE_STYLE= gnu
 
