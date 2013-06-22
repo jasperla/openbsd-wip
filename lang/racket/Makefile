@@ -50,8 +50,6 @@ NO_TEST =		Yes
 VMEM_WARNING =		Yes
 SEPARATE_BUILD =	simple
 
-USE_GROFF =		Yes
-
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--enable-libffi \
