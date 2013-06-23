@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+${P5SITE}/Lingua/
+${P5SITE}/Lingua/Romana/
+${P5SITE}/Lingua/Romana/Perligata.pm
+@man man/man3p/Lingua::Romana::Perligata.3p
