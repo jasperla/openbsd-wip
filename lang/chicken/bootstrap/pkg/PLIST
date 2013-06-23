@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+@bin libexec/chicken-bootstrap
