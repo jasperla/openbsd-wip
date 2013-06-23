@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-lib/${MODAPACHE_MODULE}
-sbin/${MODAPACHE_ENABLE}
