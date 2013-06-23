@@ -59,10 +59,10 @@ This repository is not here to migrate people away from using ports@. Ports
 posted here are unlikely to get the level of discussion and testing they get on
 ports@. So this repository is here to keep track of the submissions.
 
-**If you don't want work anymore on your half-finished or not-committed-yet port,
-please remove it from the repository. In the future, other people can rescue
-your work from the git history. A clean repository will avoid convert this in a
-graveyard.**
+**If you don't want to work anymore on your half-finished or not-committed-yet
+port, please remove it from the repository. In the future, other people can
+rescue your work from the git history. Maintaining the repository will prevent
+it from becoming a graveyard of abandoned ports.**
 
 How to use this tree
 ==================================

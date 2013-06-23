@@ -1,0 +1,6 @@
+Pyinotify is a Python module for monitoring filesystem changes.
+Pyinotify relies on inotify, an event-driven notifier; its notifications
+are exported from kernel space to user space through three system calls.
+Pyinotify binds these system calls and provides an implemenation on top
+of them offering a generic and abstract way to manipulate those
+functionalities.

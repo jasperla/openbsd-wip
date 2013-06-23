@@ -1,0 +1,23 @@
+# $OpenBSD$
+
+COMMENT =	automation tool written in Python
+MODPY_EGG_VERSION =	0.21.1
+DISTNAME =	doit-${MODPY_EGG_VERSION}
+CATEGORIES =	devel
+
+HOMEPAGE =	http://pydoit.org/
+
+MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+
+# MIT
+PERMIT_PACKAGE_CDROM =	Yes
+
+MASTER_SITES =	https://pypi.python.org/packages/source/d/doit/
+
+MODULES =	lang/python
+
+RUN_DEPENDS =	devel/py-pyinotify
+
+NO_TEST =	Yes
+
+.include <bsd.port.mk>
