@@ -22,7 +22,11 @@ WRKDIST =	${WRKDIR}/${PKGNAME}
 INTERNAL =	${WRKDIR}/xkb-qwerty-fr/xkb-qwerty-fr_$V_all/usr/share
 
 do-install:
-	${INSTALL_DATA} ${INTERNAL}/X11/xkb/symbols/us_qwerty-fr /usr/X11R6/share/X11/xkb/symbols/us_fr
+	${INSTALL_DATA_DIR} ${PREFIX}/share/X11/xkb/symbols
+	${INSTALL_DATA} ${INTERNAL}/X11/xkb/symbols/us_qwerty-fr ${PREFIX}/share/X11/xkb/symbols/us_fr
 	${INSTALL_MAN} ${INTERNAL}/man/man7/qwerty-fr.7.gz ${PREFIX}/man/man7
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${PKGNAME}
+	${INSTALL_DATA} ${INTERNAL}/doc/xkb-qwerty-fr/copyright ${PREFIX}/share/doc/${PKGNAME}
+	${INSTALL_DATA} ${INTERNAL}/doc/xkb-qwerty-fr/keymap.txt ${PREFIX}/share/doc/${PKGNAME}
 
 .include <bsd.port.mk>

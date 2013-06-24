@@ -1,2 +1,9 @@
 @comment $OpenBSD$
 @man man/man7/qwerty-fr.7.gz
+share/X11/
+share/X11/xkb/
+share/X11/xkb/symbols/
+share/X11/xkb/symbols/us_fr
+share/doc/${FULLPKGNAME}/
+share/doc/${FULLPKGNAME}/copyright
+share/doc/${FULLPKGNAME}/keymap.txt
