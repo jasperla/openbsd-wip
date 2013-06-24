@@ -1,10 +1,2 @@
-Fix USE_SYSTRACE:
-
-   qwerty_fr install a file under /usr/X11R6/share/X11/xkb/symbols/us_fr,
-   wich is forbiden by systrace.
-   With USE_SYSTRACE=No `make fake` works ok.
-
-Fix "Error: bad package name xkb-qwerty-fr":
-
-   Despite of `make fake` beeing ok, `make package` fails.
-
+xkb-qwerty-fr is now installed under "/usr/local/share/X11/xkb/symbols/",
+but setxkbmap(1) doesn't like it.
