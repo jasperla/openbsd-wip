@@ -5,6 +5,7 @@ SHARED_ONLY=		Yes
 COMMENT=		NetBeans Java IDE
 
 V=			7.3
+REVISION=		0
 DISTNAME=		netbeans-${V}-201302132200
 PKGNAME=		netbeans-${V}
 CATEGORIES=		devel
@@ -41,10 +42,9 @@ do-install:
 	@rm -rf ${NB}/profiler3
 	@find ${NB} -name "*.dll" -o -name "*.exe" -o -name "*.cmd" \
 		-o -name "*.bat" -o -name "*.orig" | xargs rm
-	@${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -c \
+	@${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} -c \
 		${FILESDIR}/netbeans \
 		${PREFIX}/bin/netbeans
-	@chmod ${BINMODE} ${PREFIX}/bin/netbeans
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	@${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c \
 		${FILESDIR}/netbeans.desktop \
