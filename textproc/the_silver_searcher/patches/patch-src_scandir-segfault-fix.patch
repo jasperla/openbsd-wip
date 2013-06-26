@@ -1,0 +1,21 @@
+--- src/scandir.c
++++ src/scandir.c
+@@ -44,12 +44,16 @@ int ag_scandir(const char *dirname,
+ 	 */
+         d = malloc(sizeof(struct dirent) + strlen(entry->d_name) + 1);
+ #else
+-        d = malloc(sizeof(struct dirent));
++        d = malloc(entry->d_reclen);
+ #endif
+         if (d == NULL) {
+             goto fail;
+         }
+-        memcpy(d, entry, sizeof(struct dirent));
++        /* Use d_reclen instead of calculating the size with sizeof. This
++         * avoids reading beyound the internal buffer of dirp on some
++         * implementations like OpenBSD's.
++         */
++        memcpy(d, entry, entry->d_reclen);
+ #if defined (__SVR4) && defined (__sun)
+         strcpy(d->d_name, entry->d_name);
+ #endif
