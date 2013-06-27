@@ -16,9 +16,6 @@ Known issues
 - Due to lack of thread-local storage support on OpenBSD, "places" and
   "futures" are disabled.
 
-- "raco pkg install -u" and "raco pkg install -s" don't work correctly. The use
-  of "raco pkg install -i" is discouraged.
-
 Limitations
 ===========
 

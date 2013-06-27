@@ -87,6 +87,17 @@ do-install:
 		PLT_SETUP_OPTIONS="-j ${MAKE_JOBS}" ${MAKE_PROGRAM} \
 		${ALL_FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
 
+# Something in the ports framework or the racket installation modify the
+# timestamp of two files. When raco sees a newer file than make-search.rkt,
+# recompiles again the files but raco fails because the user doesn't have write
+# permission in /usr. The easiest fix is to change the timestamp after "fake".
+# This bug affects to "raco pkg install -u" and "raco pkg install -s". It will
+# be fixed in the next version.
+post-fake:
+	@cd ${WRKINST}/${PREFIX}/lib/racket/collects/scribblings/main/private && \
+		touch -t 201306180906 search-context.html && \
+		touch -t 201306180906 search.js
+
 .if ${MACHINE_ARCH} == "amd64"
 PKG_ARGS+=-Damd64=1 -Di386=0
 .elif ${MACHINE_ARCH} == "i386"
