@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@lib lib/libfm-gtk.so.${LIBfm-gtk_VERSION}
-@lib lib/libfm.so.${LIBfm_VERSION}
