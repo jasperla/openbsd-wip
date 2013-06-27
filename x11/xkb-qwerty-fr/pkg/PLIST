@@ -3,7 +3,8 @@
 share/X11/
 share/X11/xkb/
 share/X11/xkb/symbols/
-share/X11/xkb/symbols/us_fr
+share/X11/xkb/symbols/us_qwerty-fr
+@sample /usr/X11R6/share/X11/xkb/symbols/us_qwerty-fr
 share/doc/${FULLPKGNAME}/
 share/doc/${FULLPKGNAME}/copyright
 share/doc/${FULLPKGNAME}/keymap.txt
