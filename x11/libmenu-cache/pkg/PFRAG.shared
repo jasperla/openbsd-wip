@@ -1,2 +1,0 @@
-@comment $OpenBSD$
-@lib lib/libmenu-cache.so.${LIBmenu-cache_VERSION}
