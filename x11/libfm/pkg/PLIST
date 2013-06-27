@@ -1,5 +1,4 @@
 @comment $OpenBSD$
-%%SHARED%%
 @bin bin/libfm-pref-apps
 include/libfm
 include/libfm-1.0/
@@ -64,8 +63,10 @@ include/libfm-1.0/fm-utils.h
 include/libfm-1.0/fm.h
 lib/libfm-gtk.a
 lib/libfm-gtk.la
+@lib lib/libfm-gtk.so.${LIBfm-gtk_VERSION}
 lib/libfm.a
 lib/libfm.la
+@lib lib/libfm.so.${LIBfm_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/libfm-gtk.pc
 lib/pkgconfig/libfm-gtk3.pc
