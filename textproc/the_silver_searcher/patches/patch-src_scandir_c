@@ -1,8 +1,9 @@
---- src/scandir.c
-+++ src/scandir.c
+$OpenBSD$
+--- src/scandir.c.orig	Fri Jun 21 15:31:05 2013
++++ src/scandir.c	Wed Jun 26 21:02:41 2013
 @@ -44,12 +44,16 @@ int ag_scandir(const char *dirname,
  	 */
-         d = malloc(sizeof(struct dirent) + strlen(entry->d_name) + 1);
+         d = malloc(sizeof(struct dirent) + strlen(entry->d_name));
  #else
 -        d = malloc(sizeof(struct dirent));
 +        d = malloc(entry->d_reclen);
