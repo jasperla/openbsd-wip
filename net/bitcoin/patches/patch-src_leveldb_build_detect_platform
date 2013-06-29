@@ -1,0 +1,21 @@
+$OpenBSD$
+--- src/leveldb/build_detect_platform.orig	Sat Jun 29 21:36:17 2013
++++ src/leveldb/build_detect_platform	Sat Jun 29 21:36:37 2013
+@@ -164,7 +164,7 @@ if [ "$CROSS_COMPILE" = "true" ]; then
+     true
+ else
+     # If -std=c++0x works, use <cstdatomic>.  Otherwise use port_posix.h.
+-    $CXX $CXXFLAGS -std=c++0x -x c++ - -o /dev/null 2>/dev/null  <<EOF
++    $CXX $CXXFLAGS -std=c++0x -x c++ - -o - >/dev/null 2>/dev/null  <<EOF
+       #include <cstdatomic>
+       int main() {}
+ EOF
+@@ -176,7 +176,7 @@ EOF
+     fi
+ 
+     # Test whether tcmalloc is available
+-    $CXX $CXXFLAGS -x c++ - -o /dev/null -ltcmalloc 2>/dev/null  <<EOF
++    $CXX $CXXFLAGS -x c++ - -o - >/dev/null -ltcmalloc 2>/dev/null  <<EOF
+       int main() {}
+ EOF
+     if [ "$?" = 0 ]; then
