@@ -1,14 +1,28 @@
 $OpenBSD$
---- configure.orig	Thu Nov 29 20:33:48 2012
-+++ configure	Thu Nov 29 20:34:05 2012
-@@ -22902,8 +22902,8 @@ fi
+
+#@!*#! bashism
+
+--- configure.orig	Sat Jun 29 21:25:51 2013
++++ configure	Sun Jun 30 00:03:20 2013
+@@ -23579,17 +23579,14 @@ if test "${with_gtk_version+set}" = set; then :
+   withval=$with_gtk_version; { $as_echo "$as_me:${as_lineno-$LINENO}: result: $with_gtk_version" >&5
+ $as_echo "$with_gtk_version" >&6; }
+     case $with_gtk_version in
+-      *)
+-        if test "x${with_gtk_version:0:1}" == "x2"
+-        then
++      2*)
+           check_for_3=false
+           check_for_2=$with_gtk_version
+-        elif test "x${with_gtk_version:0:1}" == "x3"
+-        then
++      ;;
++      3*)
+           check_for_3=$with_gtk_version
+           check_for_2=false
+-        fi
+-        ;;
++      ;;
+     esac
  
- fi
- 
--export CFLAGS=$CFLAGS_OLD
--export CPPFLAGS=$CPPFLAGS_OLD
-+export CFLAGS="$CFLAGS_OLD"
-+export CPPFLAGS="$CPPFLAGS_OLD"
- 
- # check for gtk >= 2.6.0
- { $as_echo "$as_me:${as_lineno-$LINENO}: checking for gtk" >&5
+ else
