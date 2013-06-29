@@ -3,18 +3,22 @@
 COMMENT-main =		KDE4 desktop meta-package (base installation)
 COMMENT-extras =	KDE4 desktop meta-package (full installation)
 COMMENT-accessbility =	KDE4 accessbility meta-package
+COMMENT-admin =		KDE4 system administrator tools
 COMMENT-edu =		KDE4 educational meta-package
 COMMENT-games =		KDE4 games meta-package
 COMMENT-graphics =	KDE4 graphics meta-package
 COMMENT-multimedia =	KDE4 multimedia meta-package
+COMMENT-network =	KDE4 network applications
 
 PKGNAME-main =		kde-${MODKDE4_VERSION}
 PKGNAME-extras =	kde-extras-${MODKDE4_VERSION}
+PKGNAME-admin =		kdeadmin-${MODKDE4_VERSION}
 PKGNAME-accessbility =	kdeaccessbility-${MODKDE4_VERSION}
 PKGNAME-edu =		kdeedu-${MODKDE4_VERSION}
 PKGNAME-games =		kdegames-${MODKDE4_VERSION}
 PKGNAME-graphics =	kdegraphics-${MODKDE4_VERSION}
 PKGNAME-multimedia =	kdemultimedia-${MODKDE4_VERSION}
+PKGNAME-network =	kdenetwork-${MODKDE4_VERSION}
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 
@@ -22,7 +26,8 @@ MODULES =		x11/kde4
 MODKDE4_USE =
 
 MULTI_PACKAGES =	-main -extras
-MULTI_PACKAGES +=	-accessbility -edu -games -graphics -multimedia
+MULTI_PACKAGES +=	-accessbility -admin -edu -games -graphics
+MULTI_PACKAGES +=	-multimedia -network
 FLAVOR_EXT =
 
 RUN_DEPENDS-main = \
@@ -66,6 +71,11 @@ RUN_DEPENDS-accessbility = \
 	${MODKDE4_DEP_DIR}/kmag		\
 	${MODKDE4_DEP_DIR}/kmousetool	\
 	${MODKDE4_DEP_DIR}/kmouth	
+
+RUN_DEPENDS-admin = \
+	${MODKDE4_DEP_DIR}/kcron	\
+	${MODKDE4_DEP_DIR}/ksystemlog	\
+	${MODKDE4_DEP_DIR}/kuser
 
 RUN_DEPENDS-edu = \
 	${MODKDE4_DEP_DIR}/blinken	\
@@ -160,5 +170,15 @@ RUN_DEPENDS-multimedia = \
 	${MODKDE4_DEP_DIR}/kmix		\
 	${MODKDE4_DEP_DIR}/kscd		\
 	${MODKDE4_DEP_DIR}/mplayerthumbs
+
+RUN_DEPENDS-network = \
+	${MODKDE4_DEP_DIR}/kdenetwork-filesharing \
+	${MODKDE4_DEP_DIR}/kdenetwork-strigi-analyzers \
+	${MODKDE4_DEP_DIR}/kdnssd	\
+	${MODKDE4_DEP_DIR}/kget		\
+	${MODKDE4_DEP_DIR}/kopete	\
+	${MODKDE4_DEP_DIR}/kppp		\
+	${MODKDE4_DEP_DIR}/krdc		\
+	${MODKDE4_DEP_DIR}/krfb
 
 .include <bsd.port.mk>
