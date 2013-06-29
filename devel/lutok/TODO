@@ -1,0 +1,12 @@
+compilation problem:
+
+_CharT, _Traits>::ignore(std::streamsize, typename _Traits::int_type) [with _CharT = wchar_t, _Traits = std::char_traits<wchar_t>]' in same scope
+/usr/include/g++/istream:447: warning: previous declaration of 'std::basic_istream<_CharT, _Traits>& std::basic_istream<_CharT, _Traits>::ignore(std::streamsize, typename _Traits::int_type) [with _CharT = wchar_t, _Traits = std::char_traits<wchar_t>]'
+In file included from /usr/local/include/atf-c++/macros.hpp:37,
+                 from /usr/local/include/atf-c++.hpp:33,
+                 from c_gate_test.cpp:31:
+/usr/local/include/atf-c++/tests.hpp:77: error: expected class-name before '{' token
+*** Error 1 in . (Makefile:829 'c_gate_test-c_gate_test.o')
+*** Error 1 in /usr/ports/pobj/lutok-0.3/lutok-0.3 (Makefile:551 'all')
+*** Error 1 in . (/usr/ports/infrastructure/mk/bsd.port.mk:2639 '/usr/ports/pobj/lutok-0.3/.build_done')
+*** Error 1 in /home/estet/source/openbsd/openbsd-wip/devel/lutok (/usr/ports/infrastructure/mk/bsd.port.mk:2368 'all')

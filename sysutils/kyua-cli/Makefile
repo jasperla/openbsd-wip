@@ -13,7 +13,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c m stdc++
 
-BUILD_DEPENDS =			sysutils/
+BUILD_DEPENDS =			sysutils/atf \
+						devel/lutok
 
 MASTER_SITES            = http://kyua.googlecode.com/files/
 

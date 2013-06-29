@@ -1,7 +1,7 @@
 # $OpenBSD $
 
 COMMENT =		lightweight C++ API for Lua
-DISTNAME =		lutok-0.2
+DISTNAME =		lutok-0.3
 
 SHARED_LIBS += ct                   5.0      # .4.0
 CATEGORIES =		devel sysutils
@@ -9,9 +9,9 @@ HOMEPAGE =			https://code.google.com/p/lutok/
 
 MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
+# New BSD License
 PERMIT_PACKAGE_CDROM =	Yes
 
-# "make port-lib-depends-check" can help
 WANTLIB += c m stdc++
 
 WANTLIB=        c crypto m ssl pcre ${MODLUA_WANTLIB}
