@@ -11,7 +11,6 @@ MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 PERMIT_PACKAGE_CDROM =	Yes
 
-# "make port-lib-depends-check" can help
 WANTLIB += c m stdc++
 
 MASTER_SITES            = http://kyua.googlecode.com/files/
