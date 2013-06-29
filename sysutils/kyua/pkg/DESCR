@@ -1,3 +1,7 @@
-The Automated Testing Framework (ATF) is a collection of libraries and
-utilities designed to ease unattended application testing in the hands of
-developers and end users of a specific piece of software.
+Kyua (pronounced Q.A.) is a testing framework
+for both developers and users. Kyua is different
+from most other testing frameworks in that
+it puts the end user experience before anything else.
+There are multiple reasons for users to run
+the tests themselves, and Kyua ensures that
+they can do so in the most convenient way.
