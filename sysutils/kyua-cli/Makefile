@@ -13,6 +13,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c m stdc++
 
+BUILD_DEPENDS =			sysutils/
+
 MASTER_SITES            = http://kyua.googlecode.com/files/
 
 CONFIGURE_STYLE =	gnu
