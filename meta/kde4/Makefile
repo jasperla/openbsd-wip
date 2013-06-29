@@ -2,7 +2,7 @@
 
 COMMENT-main =		KDE4 desktop meta-package (base installation)
 COMMENT-extras =	KDE4 desktop meta-package (full installation)
-COMMENT-accessbility =	KDE4 accessbility meta-package
+COMMENT-accessibility =	KDE4 accessibility meta-package
 COMMENT-admin =		KDE4 system administrator tools
 COMMENT-edu =		KDE4 educational meta-package
 COMMENT-games =		KDE4 games meta-package
@@ -13,7 +13,7 @@ COMMENT-network =	KDE4 network applications
 PKGNAME-main =		kde-${MODKDE4_VERSION}
 PKGNAME-extras =	kde-extras-${MODKDE4_VERSION}
 PKGNAME-admin =		kdeadmin-${MODKDE4_VERSION}
-PKGNAME-accessbility =	kdeaccessbility-${MODKDE4_VERSION}
+PKGNAME-accessibility =	kdeaccessibility-${MODKDE4_VERSION}
 PKGNAME-edu =		kdeedu-${MODKDE4_VERSION}
 PKGNAME-games =		kdegames-${MODKDE4_VERSION}
 PKGNAME-graphics =	kdegraphics-${MODKDE4_VERSION}
@@ -26,12 +26,12 @@ MODULES =		x11/kde4
 MODKDE4_USE =
 
 MULTI_PACKAGES =	-main -extras
-MULTI_PACKAGES +=	-accessbility -admin -edu -games -graphics
+MULTI_PACKAGES +=	-accessibility -admin -edu -games -graphics
 MULTI_PACKAGES +=	-multimedia -network
 FLAVOR_EXT =
 
 RUN_DEPENDS-main = \
-	${BASE_PKGPATH},-accessbility=${MODKDE4_VERSION} \
+	${BASE_PKGPATH},-accessibility=${MODKDE4_VERSION} \
 	${MODKDE4_DEP_DIR}/ark		\
 	${MODKDE4_DEP_DIR}/base-artwork	\
 	${MODKDE4_DEP_DIR}/kate		\
@@ -65,7 +65,7 @@ RUN_DEPENDS-extras = \
 	net/ktorrent-kde4	\
 	x11/yakuake-kde4
 
-RUN_DEPENDS-accessbility = \
+RUN_DEPENDS-accessibility = \
 	${MODKDE4_DEP_DIR}/jovie		\
 	${MODKDE4_DEP_DIR}/kaccessible	\
 	${MODKDE4_DEP_DIR}/kmag		\
