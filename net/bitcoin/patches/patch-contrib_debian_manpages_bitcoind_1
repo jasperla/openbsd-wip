@@ -1,7 +1,7 @@
 $OpenBSD$
---- contrib/debian/manpages/bitcoind.1.orig	Tue Oct  9 13:22:09 2012
-+++ contrib/debian/manpages/bitcoind.1	Sat Dec  1 11:24:22 2012
-@@ -8,7 +8,7 @@ bitcoin [options] help <command> - Get help for a comm
+--- contrib/debian/manpages/bitcoind.1.orig	Tue Jun 25 16:27:24 2013
++++ contrib/debian/manpages/bitcoind.1	Sat Jun 29 16:51:30 2013
+@@ -8,7 +8,7 @@ bitcoin [options] help <command> \- Get help for a com
  .SH DESCRIPTION
  This  manual page documents the bitcoind program. Bitcoin is a peer-to-peer digital currency. Peer-to-peer (P2P) means that there is no central authority to issue new money or keep track of transactions. Instead, these tasks are managed collectively by the nodes of the network. Advantages:
  
