@@ -2,13 +2,11 @@
 
 COMMENT =		system call fuzz tester
 DISTNAME =		trinity-1.1
-#DISTNAME =		trinity-git-snapshot
 REVISION =	    1
 
 ONLY_FOR_ARCHS = 	arm amd64 i386 mips powerpc sparc64 
 
 EXTRACT_SUFX = 		.tgz
-#EXTRACT_SUFX = 	.tar.gz
 
 CATEGORIES =		devel sysutils
 HOMEPAGE =			http://codemonkey.org.uk/projects/trinity/
@@ -22,9 +20,6 @@ MASTER_SITES            = ${HOMEPAGE}
 WANTLIB += c m stdc++
 
 USE_GMAKE =  			Yes
-#PREFIX=/usr/local/
-
-#WRKSRC = ${WRKDIR}/trinity-2013-04-28/
 
 pre-build:
 		cd ${WRKSRC} && bash ./configure.sh
