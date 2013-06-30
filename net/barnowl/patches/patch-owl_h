@@ -1,0 +1,14 @@
+$OpenBSD$
+--- owl.h.orig	Tue Apr 16 21:51:00 2013
++++ owl.h	Tue Apr 16 21:52:11 2013
+@@ -17,8 +17,8 @@
+ 
+ #ifndef OWL_PERL
+ #define NCURSES_ENABLE_STDBOOL_H 1
+-#include <ncursesw/curses.h>
+-#include <ncursesw/panel.h>
++#include <curses.h>
++#include <panel.h>
+ #endif
+ #include <sys/param.h>
+ #include <EXTERN.h>
