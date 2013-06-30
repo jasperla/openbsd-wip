@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/22 08:37:03 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/04/02 16:16:47 ajacoutot Exp $
 
 COMMENT=	fast and lightweight file manager
 
