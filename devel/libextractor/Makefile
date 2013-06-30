@@ -15,7 +15,7 @@ HOMEPAGE =		http://www.gnu.org/s/libextractor/
 
 MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
-# GPLv2+
+# GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += FLAC ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
