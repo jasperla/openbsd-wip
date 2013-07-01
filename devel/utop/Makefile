@@ -12,9 +12,10 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		https://forge.ocamlcore.org/frs/download.php/1169/
 
-CONFIGURE_STYLE =	simple
-CONFIGURE_ARGS =	--destdir ${WRKINST} --mandir ${LOCALBASE}/man --enable-tests
+CONFIGURE_STYLE =	oasis
+#CONFIGURE_ARGS =	--destdir ${WRKINST} --mandir ${LOCALBASE}/man --enable-tests
 
+MODULES =		lang/ocaml
 BUILD_DEPENDS =		devel/ocaml-lambda-term \
 			sysutils/findlib
 RUN_DEPENDS =		${BUILD_DEPENDS}
@@ -22,8 +23,9 @@ RUN_DEPENDS =		${BUILD_DEPENDS}
 USE_GMAKE =		Yes
 
 # --destdir is broken, work around it
-#FAKE_ENV =		OCAMLFIND_DESTDIR=${PREFIX}
+#FAKE_ENV =		OCAMLFIND_DESTDIR=${PREFIX}/lib/ocaml/
 #do-install:
+#	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml/
 #	cd ${WRKBUILD} && ${FAKE_ENV} ./setup.exe -install
 
 .include <bsd.port.mk>
