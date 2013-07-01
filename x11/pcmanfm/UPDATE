@@ -1,6 +1,0 @@
-major update to 1.1.0, complete rewrite over the 0.3 and 0.5 series.
-
-pcmanfm has been split into 
-1) menu-cache
-2) libfm
-3) pcmanfm
