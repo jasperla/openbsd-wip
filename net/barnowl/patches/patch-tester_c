@@ -1,0 +1,12 @@
+$OpenBSD$
+--- tester.c.orig	Tue Jul  2 00:40:18 2013
++++ tester.c	Tue Jul  2 00:40:29 2013
+@@ -10,7 +10,7 @@
+ #include <string.h>
+ 
+ #undef instr
+-#include <ncursesw/curses.h>
++#include <curses.h>
+ 
+ owl_global g;
+ 

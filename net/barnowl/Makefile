@@ -37,9 +37,8 @@ RUN_DEPENDS =		devel/p5-Glib2 \
 LIB_DEPENDS =		devel/glib2
 
 USE_GMAKE =		Yes
-#USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 
-NO_TEST =		Yes
+TEST_TARGET =		check
 
 .include <bsd.port.mk>
