@@ -101,7 +101,7 @@ lib/cmake/openbabel2/OpenBabel2Config.cmake
 lib/cmake/openbabel2/OpenBabel2ConfigVersion.cmake
 lib/cmake/openbabel2/OpenBabel2_EXPORTS-relwithdebinfo.cmake
 lib/cmake/openbabel2/OpenBabel2_EXPORTS.cmake
-lib/libinchi.so
+@lib lib/libinchi.so.${LIBinchi_VERSION}
 @lib lib/libopenbabel.so.${LIBopenbabel_VERSION}
 lib/openbabel/
 lib/openbabel/${V}/

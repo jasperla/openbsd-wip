@@ -6,10 +6,12 @@ COMMENT=	chemistry file translation program
 V=		2.3.2
 DISTNAME=	openbabel-${V}
 CATEGORIES=	misc
+REVISION=	0
 
 SUBST_VARS=	V
 
 SHARED_LIBS=	openbabel	6.0	# .3.0
+SHARED_LIBS+=	inchi		0.0	# .0.4
 
 HOMEPAGE=	http://openbabel.sourceforge.net/
 
