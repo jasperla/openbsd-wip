@@ -93,6 +93,7 @@ do-install:
 # permission in /usr. The easiest fix is to change the timestamp after "fake".
 # This bug affects to "raco pkg install -u" and "raco pkg install -s". It will
 # be fixed in the next version.
+# A simple test: raco pkg install -u github://github.com/takikawa/dummy-pkg/master
 post-fake:
 	@cd ${WRKINST}/${PREFIX}/lib/racket/collects/scribblings/main/private && \
 		touch -t 201306180906 search-context.html && \
