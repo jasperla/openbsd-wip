@@ -1,0 +1,12 @@
+$OpenBSD$
+--- Makefile.in.orig	Thu Jul  4 11:33:32 2013
++++ Makefile.in	Thu Jul  4 11:33:53 2013
+@@ -508,7 +508,7 @@ libuafs: libuafs_setup vlserver_depinstall tvlserver_d
+ 		rxstat_depinstall lwp_depinstall sys_depinstall des cmd
+ 	+set -x; \
+ 	case ${SYS_NAME} in \
+-	hp_ux102* | *_obsd* | sun*_4* | *_nbsd*| hp_ux11i | hp_ux112* | ia64_hpux112*) \
++	hp_ux102* | sun*_4* | *_nbsd*| hp_ux11i | hp_ux112* | ia64_hpux112*) \
+ 		echo Skipping libuafs for ${SYS_NAME} ;; \
+ 	* ) \
+ 		${COMPILE_PART1} libuafs ${COMPILE_PART2} ;; \

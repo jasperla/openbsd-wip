@@ -8,7 +8,7 @@ VERSION=		1.6.1
 DISTNAME=		openafs-${VERSION}-src
 PKGNAME=		openafs-${VERSION}
 
-CATEGORIES=		net
+CATEGORIES=		net openbsd-wip/net
 
 HOMEPAGE=		http://www.openafs.org
 
