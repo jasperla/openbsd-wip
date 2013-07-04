@@ -3,6 +3,7 @@
 COMMENT =	automation tool written in Python
 MODPY_EGG_VERSION =	0.21.1
 DISTNAME =	doit-${MODPY_EGG_VERSION}
+PKGNAME =	py-doit-${MODPY_EGG_VERSION}
 CATEGORIES =	devel
 
 HOMEPAGE =	http://pydoit.org/
@@ -16,7 +17,7 @@ MASTER_SITES =	https://pypi.python.org/packages/source/d/doit/
 
 MODULES =	lang/python
 
-RUN_DEPENDS =	devel/py-pyinotify
+RUN_DEPENDS =	devel/py-six
 
 NO_TEST =	Yes
 
