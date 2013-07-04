@@ -1,0 +1,12 @@
+$OpenBSD$
+--- scripts/bavala.py.orig	Thu Jul  4 15:45:05 2013
++++ scripts/bavala.py	Thu Jul  4 15:45:49 2013
+@@ -63,7 +63,7 @@ class Vala(object):
+         if library:
+             self.header = join(build, library) + '.h'
+             self.vapi = join(build, library) + '.vapi'
+-            self.so = join(build, src) + '.so'
++            self.so = join(build, src) + '.so' + '.${LIBbirdfont_VERSION}'
+ 
+     def gen_c(self, opts):
+         """translate code from vala to C and create .vapi"""

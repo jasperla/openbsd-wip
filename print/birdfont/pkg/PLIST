@@ -1,9 +1,9 @@
 @comment $OpenBSD$
 @bin bin/birdfont
 @bin bin/birdfont-export
-lib/libbirdfont.so
-@man man/man1/birdfont-export.1.gz
-@man man/man1/birdfont.1.gz
+@lib lib/libbirdfont.so.${LIBbirdfont_VERSION}
+@man man/man1/birdfont-export.1
+@man man/man1/birdfont.1
 share/applications/
 share/applications/birdfont.desktop
 share/birdfont/
@@ -126,3 +126,7 @@ share/locale/pt_BR/LC_MESSAGES/birdfont.mo
 share/locale/ru/LC_MESSAGES/birdfont.mo
 share/locale/sv/LC_MESSAGES/birdfont.mo
 share/locale/zh_CN/LC_MESSAGES/birdfont.mo
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
