@@ -90,6 +90,8 @@ CONFIGURE_ARGS+=	--enable-debug-lwp
 
 .if ${FLAVOR:L:Mfuse}
 CONFIGURE_ARGS+=	--enable-fuse-client
+.else
+CONFIGURE_ARGS+=	--disable-fuse-client
 .endif
 
 .include <bsd.port.arch.mk>
