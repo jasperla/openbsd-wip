@@ -1,0 +1,20 @@
+--- afsd_fuse.c.orig	Thu Jul  4 13:57:10 2013
+$OpenBSD$
+--- src/afsd/afsd_fuse.c.orig	Thu Jul  4 15:04:46 2013
++++ src/afsd/afsd_fuse.c	Thu Jul  4 15:51:56 2013
+@@ -34,6 +34,7 @@
+  * afsd_fuse.c - Driver for afsd.fuse, and glue between FUSE and libuafs
+  */
+ 
++#include <sys/stdint.h>
+ #include <afsconfig.h>
+ #include <afs/param.h>
+ 
+@@ -51,6 +52,7 @@
+ 
+ #define FUSE_USE_VERSION 27
+ #include <fuse.h>
++#include <fuse_opt.h>
+ 
+ /* command-line arguments to pass to afsd and the cmd_ library */
+ static struct fuse_args afsd_args = FUSE_ARGS_INIT(0, NULL);
