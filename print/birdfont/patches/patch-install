@@ -1,14 +1,23 @@
 $OpenBSD$
 --- install.orig	Thu Jun 20 09:59:56 2013
-+++ install	Fri Jun 21 03:07:23 2013
-@@ -54,8 +54,8 @@ install ('build/bin/birdfont', '/bin')
++++ install	Thu Jul  4 15:49:03 2013
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python 
++#!/usr/local/bin/python2.7 
+ import os
+ import subprocess
+ import glob
+@@ -52,10 +52,10 @@ install ('resources/linux/birdfont.png', '/share/icons
+ 
+ install ('build/bin/birdfont', '/bin')
  install ('build/bin/birdfont-export', '/bin')
- install ('build/libbirdfont.so', '/lib')
+-install ('build/libbirdfont.so', '/lib')
++install ('build/libbirdfont.so.${LIBbirdfont_VERSION}', '/lib')
  
 -install ('build/birdfont.1.gz', '/share/man/man1')
 -install ('build/birdfont-export.1.gz', '/share/man/man1')
-+install ('build/birdfont.1.gz', '/man/man1')
-+install ('build/birdfont-export.1.gz', '/man/man1')
++install ('resources/linux/birdfont.1', '/man/man1')
++install ('resources/linux/birdfont-export.1', '/man/man1')
  
  # translations
  for lang_dir in glob.glob('build/locale/*'):

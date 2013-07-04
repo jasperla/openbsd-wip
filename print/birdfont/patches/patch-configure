@@ -6,7 +6,7 @@ $OpenBSD$
  
  if not options.prefix:
 -	options.prefix = "/usr"
-+	options.prefix = "/usr/ports/pobj/birdfont-0.19/fake-amd64/usr/local"
++	options.prefix = "${DESTDIR}${PREFIX}"
  if not options.dest:
  	options.dest = ""
  if not options.cc:
