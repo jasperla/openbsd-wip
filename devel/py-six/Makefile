@@ -3,6 +3,7 @@
 COMMENT =	Python 2 and 3 compatibility library
 MODPY_EGG_VERSION =	1.3.0
 DISTNAME =	six-${MODPY_EGG_VERSION}
+PKGNAME =	py-six-${MODPY_EGG_VERSION}
 CATEGORIES =	devel
 
 HOMEPAGE =	http://pythonhosted.org/six/
