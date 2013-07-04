@@ -1,3 +1,0 @@
-FUSE makes it possible to implement a filesystem in a userspace program.
-Features include: simple yet comprehensive API, secure mounting by non-root
-users, multi-threaded operation.

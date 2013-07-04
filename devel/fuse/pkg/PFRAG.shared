@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@lib lib/libfuse.so.${LIBfuse_VERSION}
-@lib lib/libulockmgr.so.${LIBulockmgr_VERSION}
