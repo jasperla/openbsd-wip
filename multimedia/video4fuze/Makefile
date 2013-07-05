@@ -2,10 +2,8 @@
 
 COMMENT =		put videos on the Sansa Fuze
 
-V =			0.6
-DISTNAME =		video4fuze-$V
-
-SUBST_VARS +=		V
+MODPY_EGG_VERSION =	0.6
+DISTNAME =		video4fuze-${MODPY_EGG_VERSION}
 
 CATEGORIES =		multimedia
 
