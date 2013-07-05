@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	free font editor for TTF, EOT, and SVG fonts
-DISTNAME =	birdfont-0.20
+DISTNAME =	birdfont-0.21
 CATEGORIES =	print graphics
 SUBST_VARS +=	DESTDIR
 

@@ -1,6 +1,6 @@
 $OpenBSD$
---- scripts/bavala.py.orig	Fri Jul  5 08:21:59 2013
-+++ scripts/bavala.py	Fri Jul  5 13:07:18 2013
+--- scripts/bavala.py.orig	Fri Jul  5 18:30:02 2013
++++ scripts/bavala.py	Fri Jul  5 18:30:31 2013
 @@ -82,7 +82,7 @@ class Vala(object):
          if library:
              self.header = join(build, library) + '.h'
