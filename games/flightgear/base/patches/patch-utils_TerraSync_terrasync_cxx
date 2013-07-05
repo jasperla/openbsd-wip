@@ -1,12 +1,12 @@
 $OpenBSD$
---- utils/TerraSync/terrasync.cxx.orig	Wed Aug 31 16:55:20 2011
-+++ utils/TerraSync/terrasync.cxx	Wed Aug 31 16:55:36 2011
-@@ -290,7 +290,7 @@ void sync_tree(const char* dir) {
+--- utils/TerraSync/terrasync.cxx.orig	Tue Jun 26 22:06:15 2012
++++ utils/TerraSync/terrasync.cxx	Fri Jul  5 12:26:29 2013
+@@ -51,7 +51,7 @@
  
  #if defined(_MSC_VER) || defined(__MINGW32__)
- typedef void (__cdecl * sighandler_t)(int);
+     typedef void (__cdecl * sighandler_t)(int);
 -#elif defined( __APPLE__ ) || defined (__FreeBSD__)
 +#elif defined( __APPLE__ ) || defined (__FreeBSD__) || defined(__OpenBSD__)
- typedef sig_t sighandler_t;
+     typedef sig_t sighandler_t;
  #endif
  

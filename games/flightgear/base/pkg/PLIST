@@ -2,6 +2,8 @@
 @bin bin/GPSsmooth
 @bin bin/MIDGsmooth
 @bin bin/UGsmooth
+@bin bin/fgadmin
+@bin bin/fgelev
 @bin bin/fgfs
 @bin bin/fgjs
 @bin bin/fgpanel
@@ -10,15 +12,10 @@
 @bin bin/metar
 @bin bin/terrasync
 @bin bin/yasim
+@bin bin/yasim-proptest
 @man man/man1/fgfs.1
 @man man/man1/fgjs.1
 @man man/man1/fgpanel.1
 @man man/man1/gl-info.1
 @man man/man1/js_demo.1
 @man man/man1/terrasync.1
-share/doc/FlightGear/
-share/doc/FlightGear/README
-share/doc/FlightGear/README.OSG
-share/doc/FlightGear/README.OpenAL
-share/doc/FlightGear/README.SimGear
-share/doc/FlightGear/README.plib

@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-V =			2.6.0
+V =			2.10.0
 
 CATEGORIES =		games
 

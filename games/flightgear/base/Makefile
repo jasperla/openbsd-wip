@@ -4,25 +4,27 @@ COMMENT =		flight simulator
 
 DISTNAME =		flightgear-${V}
 
-WANTLIB += GL GLU ICE OpenThreads SM X11 Xext alut apr-1 c m openal
-WANTLIB += osg osgDB osgFX osgGA osgParticle osgSim osgText osgUtil
-WANTLIB += osgViewer pthread stdc++ svn_client-1 svn_ra-1 svn_subr-1
-WANTLIB += z
+WANTLIB += GL GLU ICE OpenThreads SM SimGearCore SimGearScene
+WANTLIB += X11 Xext Xft Xi Xinerama Xmu c fltk fltk_forms fltk_gl
+WANTLIB += fltk_images glut m openal osg osgDB osgFX osgGA osgParticle
+WANTLIB += osgSim osgText osgUtil osgViewer png pthread sqlite3
+WANTLIB += stdc++ z
 
 MASTER_SITES =	ftp://ftp.de.flightgear.org/pub/fgfs/Source/ \
 		http://ftp.igh.cnrs.fr/pub/flightgear/ftp/Source/
 
 MODULES =	devel/cmake
-BUILD_DEPENDS =	graphics/simgear>=${V} \
-		devel/plib
+BUILD_DEPENDS =	devel/plib
 LIB_DEPENDS =	graphics/openscenegraph \
 		graphics/freeglut \
-		audio/freealut \
-		devel/subversion,-main
+		x11/fltk \
+		graphics/simgear>=$V
 RUN_DEPENDS =	games/flightgear/data>=${V}
 
 CONFIGURE_ARGS +=	-DCMAKE_INSTALL_MANDIR="${PREFIX}/man" \
-			-DFG_DATA_DIR="${TRUEPREFIX}/share/flightgear"
+			-DFG_DATA_DIR="${TRUEPREFIX}/share/flightgear" \
+			-DSYSTEM_SQLITE=ON \
+			-DENABLE_LIBSVN=OFF
 
 NO_TEST =	Yes
 
