@@ -1,0 +1,26 @@
+$OpenBSD$
+
+https://github.com/openscenegraph/osg/commit/876cb95fada9a2ea5821e6473c185338ec28a914
+
+--- src/osgPlugins/ffmpeg/FFmpegParameters.hpp.orig	Tue Apr 19 13:40:22 2011
++++ src/osgPlugins/ffmpeg/FFmpegParameters.hpp	Fri Jul  5 10:28:16 2013
+@@ -21,14 +21,17 @@ class FFmpegParameters : public osg::Referenced (publi
+     bool isFormatAvailable() const { return m_format!=NULL; }
+     
+     AVInputFormat* getFormat() { return m_format; }
+-    AVFormatParameters* getFormatParameter() { return &m_parameters; }
++    AVDictionary** getOptions() { return &m_options; }
++    void setContext(AVIOContext* context) { m_context = context; }
++    AVIOContext* getContext() { return m_context; }
+     
+     void parse(const std::string& name, const std::string& value);
+ 
+ protected:
+ 
+     AVInputFormat* m_format;
+-    AVFormatParameters m_parameters;
++    AVIOContext* m_context;
++    AVDictionary* m_options;
+ };
+ 
+ 
