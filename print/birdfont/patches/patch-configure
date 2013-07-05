@@ -1,6 +1,12 @@
 $OpenBSD$
---- configure.orig	Thu Jun 20 09:59:56 2013
-+++ configure	Fri Jun 21 03:06:11 2013
+--- configure.orig	Fri Jul  5 08:21:59 2013
++++ configure	Fri Jul  5 13:07:17 2013
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/local/bin/python2.7
+ import subprocess
+ import os
+ import sys
 @@ -83,7 +83,7 @@ parser.add_option("-c", "--cc", dest="cc", help="C com
  (options, args) = parser.parse_args()
  

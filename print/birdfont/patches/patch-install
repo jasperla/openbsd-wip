@@ -1,6 +1,6 @@
 $OpenBSD$
---- install.orig	Thu Jun 20 09:59:56 2013
-+++ install	Thu Jul  4 15:49:03 2013
+--- install.orig	Fri Jul  5 08:21:59 2013
++++ install	Fri Jul  5 13:07:17 2013
 @@ -1,4 +1,4 @@
 -#!/usr/bin/python 
 +#!/usr/local/bin/python2.7 
