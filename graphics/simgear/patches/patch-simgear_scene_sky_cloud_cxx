@@ -1,7 +1,7 @@
 $OpenBSD$
---- simgear/scene/sky/cloud.cxx.orig	Wed Aug 31 15:38:08 2011
-+++ simgear/scene/sky/cloud.cxx	Wed Aug 31 15:42:07 2011
-@@ -74,6 +74,10 @@ using namespace osg;
+--- simgear/scene/sky/cloud.cxx.orig	Mon Jan 28 18:02:28 2013
++++ simgear/scene/sky/cloud.cxx	Fri Jul  5 11:18:56 2013
+@@ -72,6 +72,10 @@ using namespace osg;
  // #  endif
  // #endif
  
