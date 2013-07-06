@@ -62,6 +62,7 @@ SUBST_VARS +=		V BOOT FULLARCH
 post-install:
 	cd ${PREFIX}/lib && \
 		ln -sf swipl-$V/lib/${FULLARCH}/libpl.so.${LIBpl_VERSION}
+	mv ${PREFIX}/lib/swipl-${V}/doc ${PREFIX}/share/doc/swipl
 
 # Swipl multithreading flaky at best on OpenBSD.
 # We are not sure if this is our threading implementation or their code.
