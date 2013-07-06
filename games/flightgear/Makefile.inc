@@ -1,5 +1,7 @@
 # $OpenBSD$
 
+ONLY_FOR_ARCHS =	amd64 i386
+
 V =			2.10.0
 
 CATEGORIES =		games
