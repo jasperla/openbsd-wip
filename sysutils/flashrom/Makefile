@@ -17,11 +17,8 @@ MASTER_SITES =		http://download.flashrom.org/releases/
 
 BUILD_DEPENDS =		devel/gmake
 
-#LIB_DEPENDS =		sysutils/pciutils \
-#					devel/libftdi
-
-#FAKE_FLAGS =		DESTDIR=${WRKINST}
-#FAKE_FLAGS =		DESTDIR=/usr/local/
+LIB_DEPENDS =		sysutils/pciutils \
+					devel/libftdi
 
 WANTLIB += c m stdc++
 
@@ -29,5 +26,9 @@ USE_GMAKE =  			Yes
 
 post-install:
 		${INSTALL_PROGRAM}	${WRKSRC}/flashrom ${PREFIX}/bin/
+		${INSTALL_DATA_DIR}	${PREFIX}/share/flashrom/
+		${INSTALL_DATA_DIR}	${PREFIX}/share/flashrom/Documentation/
+		${INSTALL_DATA} ${WRKSRC}/{COPYING,ChangeLog,README}	${PREFIX}/share/flashrom/
+		${INSTALL_DATA} ${WRKSRC}/Documentation/*	${PREFIX}/share/flashrom/Documentation/
 
 .include <bsd.port.mk>
