@@ -2,7 +2,7 @@
 
 COMMENT=	Perl interface to the Twitter API
 
-DISTNAME=	Net-Twitter-4.00004
+DISTNAME=	Net-Twitter-4.00006
 CATEGORIES=	net
 
 MAINTAINER=	Andrew Fresh <andrew@cpan.org>
@@ -32,6 +32,6 @@ RUN_DEPENDS=	converters/p5-JSON \
 		www/p5-URI \
 		www/p5-libwww
 
-TEST_DEPENDS=	devel/p5-Test-Fatal
+REGRESS_DEPENDS=	devel/p5-Test-Fatal
 
 .include <bsd.port.mk>

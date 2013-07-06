@@ -6,11 +6,14 @@ ${P5SITE}/Net/Twitter.pod
 ${P5SITE}/Net/Twitter/API.pm
 ${P5SITE}/Net/Twitter/Core.pm
 ${P5SITE}/Net/Twitter/Error.pm
+${P5SITE}/Net/Twitter/Manual/
+${P5SITE}/Net/Twitter/Manual/MigratingToV1_1.pod
 ${P5SITE}/Net/Twitter/OAuth.pm
 ${P5SITE}/Net/Twitter/Role/
 ${P5SITE}/Net/Twitter/Role/API/
 ${P5SITE}/Net/Twitter/Role/API/Lists.pm
 ${P5SITE}/Net/Twitter/Role/API/REST.pm
+${P5SITE}/Net/Twitter/Role/API/RESTv1_1.pm
 ${P5SITE}/Net/Twitter/Role/API/Search/
 ${P5SITE}/Net/Twitter/Role/API/Search.pm
 ${P5SITE}/Net/Twitter/Role/API/Search/Trends.pm
@@ -30,9 +33,11 @@ ${P5SITE}/Net/Twitter/Search.pm
 @man man/man3p/Net::Twitter::API.3p
 @man man/man3p/Net::Twitter::Core.3p
 @man man/man3p/Net::Twitter::Error.3p
+@man man/man3p/Net::Twitter::Manual::MigratingToV1_1.3p
 @man man/man3p/Net::Twitter::OAuth.3p
 @man man/man3p/Net::Twitter::Role::API::Lists.3p
 @man man/man3p/Net::Twitter::Role::API::REST.3p
+@man man/man3p/Net::Twitter::Role::API::RESTv1_1.3p
 @man man/man3p/Net::Twitter::Role::API::Search.3p
 @man man/man3p/Net::Twitter::Role::API::Search::Trends.3p
 @man man/man3p/Net::Twitter::Role::API::TwitterVision.3p
