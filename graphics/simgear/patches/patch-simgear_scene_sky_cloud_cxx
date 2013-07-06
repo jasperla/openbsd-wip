@@ -1,14 +1,12 @@
 $OpenBSD$
---- simgear/scene/sky/cloud.cxx.orig	Mon Jan 28 18:02:28 2013
-+++ simgear/scene/sky/cloud.cxx	Fri Jul  5 11:18:56 2013
-@@ -72,6 +72,10 @@ using namespace osg;
- // #  endif
- // #endif
- 
-+extern "C" {
-+	inline int isnan(double r) { return !(r <= 0 || r >= 0); }
-+}
-+
- static osg::ref_ptr<osg::StateSet> layer_states[SGCloudLayer::SG_MAX_CLOUD_COVERAGES];
- static osg::ref_ptr<osg::StateSet> layer_states2[SGCloudLayer::SG_MAX_CLOUD_COVERAGES];
- static osg::ref_ptr<osg::TextureCubeMap> cubeMap;
+--- simgear/scene/sky/cloud.cxx.orig	Sat Jul  6 14:13:13 2013
++++ simgear/scene/sky/cloud.cxx	Sat Jul  6 14:14:02 2013
+@@ -736,7 +736,7 @@ bool SGCloudLayer::reposition( const SGVec3f& p, const
+             // this happens, lets just use the last known good course.
+             // This is a hack, and it would probably be better to make
+             // calc_gc_course_dist() more robust.
+-            if ( isnan(course) ) {
++            if ( std::isnan(course) ) {
+                 course = last_course;
+             } else {
+                 last_course = course;

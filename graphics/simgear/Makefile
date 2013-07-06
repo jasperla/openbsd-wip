@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =		simulations library
+COMMENT =		library set for simulations, games and visualizations
 
 DISTNAME =		simgear-2.10.0
 
@@ -10,6 +10,8 @@ SHARED_LIBS +=  SimGearScene              0.0 # 2.10
 CATEGORIES =		graphics
 
 MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+
+HOMEPAGE =		http://simgear.sourceforge.net/
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM =	Yes
