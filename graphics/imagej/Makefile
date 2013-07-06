@@ -1,6 +1,6 @@
 # $OpenBSD  $
 
-COMMENT=	POP/IMAP/SMTP/CalDAV/CardDAV/LDAP Exchange Gateway
+COMMENT=	image processing and analysis utility
 
 V=		145
 DISTNAME=	ij${V}
@@ -8,6 +8,8 @@ PKGNAME= 	imagej-${V}
 CATEGORIES=	graphics misc
 
 HOMEPAGE=	http://rsbweb.nih.gov/ij/
+
+MAINTAINER=	Sergey Bronnikov <estetus@gmail.com>
 
 EXTRACT_SUFX =         .zip
 
