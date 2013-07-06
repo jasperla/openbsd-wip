@@ -1,9 +1,3 @@
 @comment $OpenBSD$
-@bin bin/flashrom
-share/flashrom/
-share/flashrom/COPYING
-share/flashrom/ChangeLog
-share/flashrom/Documentation/
-share/flashrom/Documentation/mysteries_intel.txt
-share/flashrom/Documentation/serprog-protocol.txt
-share/flashrom/README
+@man man/man8/flashrom.8
+@bin sbin/flashrom
