@@ -1,9 +1,1 @@
-$ sudo flashrom --programmer internal
-flashrom v0.9.6.1-r1564 on OpenBSD 5.3 (amd64)
-flashrom is free software, get the source code at http://www.flashrom.org
-
-Calibrating delay loop... OK.
-Critical error: open(/dev/mem): Operation not permitted
-
-
 See http://patchwork.coreboot.org/patch/1538/
