@@ -1,34 +1,39 @@
-# $OpenBSD $
+# $OpenBSD: Makefile.template,v 1.54 2008/01/13 16:43:57 espie Exp $
 
-COMMENT =		utility for manipulations with flash chips
-V=				0.9.6.1
-DISTNAME =		flashrom-${V}
+ONLY_FOR_ARCHS=	i386 amd64
 
-EXTRACT_SUFX = 	.tar.bz2
+COMMENT=	flash-ROM programmer for BIOS etc
 
-CATEGORIES =		sysutils
-HOMEPAGE =			http://flashrom.org
+V=          0.9.6.1
+DISTNAME=	flashrom-${V}
+EXTRACT_SUFX=	.tar.bz2
 
-MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
+#SHARED_LIBS=	
 
-PERMIT_PACKAGE_CDROM =	Yes
+CATEGORIES=	sysutils
 
-MASTER_SITES =		http://download.flashrom.org/releases/
+HOMEPAGE=	http://www.flashrom.org
 
-BUILD_DEPENDS =		devel/gmake
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
-LIB_DEPENDS =		sysutils/pciutils \
-					devel/libftdi
+# GPLv2
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB += c m stdc++
+WANTLIB=	c usb z
 
-USE_GMAKE =  			Yes
+MASTER_SITES =          http://download.flashrom.org/releases/
 
-post-install:
-		${INSTALL_PROGRAM}	${WRKSRC}/flashrom ${PREFIX}/bin/
-		${INSTALL_DATA_DIR}	${PREFIX}/share/flashrom/
-		${INSTALL_DATA_DIR}	${PREFIX}/share/flashrom/Documentation/
-		${INSTALL_DATA} ${WRKSRC}/{COPYING,ChangeLog,README}	${PREFIX}/share/flashrom/
-		${INSTALL_DATA} ${WRKSRC}/Documentation/*	${PREFIX}/share/flashrom/Documentation/
+RUN_DEPENDS=	sysutils/dmidecode
+LIB_DEPENDS=	sysutils/pciutils \
+				devel/libftdi
+
+USE_GMAKE=	Yes
+NO_TEST=	Yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+#MAKE_FLAGS=	SVNVERSION=1060
+FAKE_FLAGS=	PREFIX="${PREFIX}" MANDIR="${PREFIX}/man"
 
 .include <bsd.port.mk>
