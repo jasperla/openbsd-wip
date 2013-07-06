@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		https://forge.ocamlcore.org/frs/download.php/1169/
 
 CONFIGURE_STYLE =	oasis
+CONFIGURE_ARGS +=	--enable-tests
 
 MODULES =		lang/ocaml
 BUILD_DEPENDS =		devel/ocaml-lambda-term \
