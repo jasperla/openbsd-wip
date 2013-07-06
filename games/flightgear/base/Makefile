@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =		flight simulator
+COMMENT =		modern, open-source flight simulator
 
 DISTNAME =		flightgear-${V}
 
