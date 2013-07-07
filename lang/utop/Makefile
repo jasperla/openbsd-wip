@@ -1,32 +1,32 @@
 # $OpenBSD: $
 
-COMMENT =	improved toplevel for OCaml
+COMMENT =		enhanced OCaml toplevel
+DISTNAME =		utop-1.5
 CATEGORIES =	lang
 
-DISTNAME =	utop-1.2.1
+HOMEPAGE =		https://forge.ocamlcore.org/projects/utop/
+MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
-# The last url component (the number) changes every release, too.
-MASTER_SITES =	http://forge.ocamlcore.org/frs/download.php/951/
+# 3-clause BSD
+PERMIT_PACKAGE_CDROM =	Yes
 
-HOMEPAGE =	http://ounit.forge.ocamlcore.org/
-MAINTAINER =	Christopher Zimmermann <madroach@gmerlin.de>
-
-# BSD3
-PERMIT_PACKAGE_CDROM =		Yes
-
-MODULES =		lang/ocaml
-
-BUILD_DEPENDS =		devel/ocaml-lwt \
-			devel/ocaml-camomile \
-			devel/ocaml-lambda-term
-RUN_DEPENDS +=		${BUILD_DEPENDS}
+MASTER_SITES =		https://forge.ocamlcore.org/frs/download.php/1169/
 
 CONFIGURE_STYLE =	oasis
+CONFIGURE_ARGS +=	--enable-tests
+
+MODULES =		lang/ocaml
+BUILD_DEPENDS =		devel/ocaml-lambda-term
+RUN_DEPENDS =		${BUILD_DEPENDS}
 
 post-install:
 	${INSTALL_DATA} \
-		${WRKDIST}/{LICENSE,CHANGES,README} \
+		${WRKDIST}/{LICENSE,CHANGES.md,README.md} \
 		${PREFIX}/share/doc/utop/
 
+# silence a warning
+pre-build:
+	# already shipped by the OCaml package
+	rm ${WRKBUILD}/src/lib/errors.mli
 
 .include <bsd.port.mk>
