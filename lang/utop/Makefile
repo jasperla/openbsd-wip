@@ -16,8 +16,8 @@ CONFIGURE_STYLE =	oasis
 CONFIGURE_ARGS +=	--enable-tests
 
 MODULES =		lang/ocaml
-BUILD_DEPENDS =		devel/ocaml-lambda-term
-RUN_DEPENDS =		${BUILD_DEPENDS}
+RUN_DEPENDS =		devel/ocaml-lambda-term
+BUILD_DEPENDS =		${RUN_DEPENDS}
 
 post-install:
 	${INSTALL_DATA} \
