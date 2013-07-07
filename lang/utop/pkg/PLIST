@@ -15,10 +15,11 @@ lib/ocaml/utop/utop.cma
 @man man/man1/utop-full.1.gz
 @man man/man1/utop.1.gz
 @man man/man5/utoprc.5.gz
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/utop/
-share/doc/utop/CHANGES
+share/doc/utop/CHANGES.md
 share/doc/utop/LICENSE
-share/doc/utop/README
+share/doc/utop/README.md
 share/doc/utop/api/
 share/doc/utop/api/UTop.html
 share/doc/utop/api/UTop_main.html
@@ -37,6 +38,4 @@ share/doc/utop/api/type_UTop.html
 share/doc/utop/api/type_UTop_main.html
 share/doc/utop/utoprc-dark
 share/doc/utop/utoprc-light
-share/emacs/
-share/emacs/site-lisp/
 share/emacs/site-lisp/utop.el
