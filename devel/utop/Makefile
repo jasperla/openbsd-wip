@@ -2,7 +2,7 @@
 
 COMMENT =		enhanced OCaml toplevel
 DISTNAME =		utop-1.5
-CATEGORIES =	lang
+CATEGORIES =		devel
 
 HOMEPAGE =		https://forge.ocamlcore.org/projects/utop/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
