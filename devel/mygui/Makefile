@@ -14,6 +14,7 @@ PKGNAME-tools = 	mygui-tools-${V}
 MULTI_PACKAGES = 	-main -demo -tools
 
 SHARED_LIBS +=		MyGUIEngine 0.0
+SHARED_LIBS +=		MyGUI.OgrePlatform 0.0
 
 CATEGORIES =		devel x11
 
