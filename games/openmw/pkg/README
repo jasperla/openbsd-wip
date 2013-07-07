@@ -14,7 +14,7 @@ configuring OpenMW to use the existing installation.
 
 Mount original CD if you have it or, if you have ISO image, read
 vnconfig.8 manual to mount it.  After you have mounted either disk or
-it's image you need to unpack data1.cab with archivers/unshield into
+its image you need to unpack data1.cab with archivers/unshield into
 /path/to/morrowind/data dir.  Or you can copy data files from Windows
 installation.  You also need to copy directory Video from disk to
 /path/to/morrowind/data.
