@@ -12,6 +12,6 @@ PERMIT_PACKAGE_CDROM=   Yes
 MODULES=	cpan
 CPAN_AUTHOR=	ANDREW
 
-RUN_DEPENDS=    palm/p5-Palm
+RUN_DEPENDS=    databases/p5-Palm
 
 .include <bsd.port.mk>
