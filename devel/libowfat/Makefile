@@ -2,7 +2,7 @@
 
 COMMENT =		general purpose library
 
-DISTNAME =		libowfat-0.28
+DISTNAME =		libowfat-0.29
 
 CATEGORIES =		devel
 

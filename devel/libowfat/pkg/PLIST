@@ -10,11 +10,13 @@ include/libowfat/dns.h
 include/libowfat/errmsg.h
 include/libowfat/fmt.h
 include/libowfat/havealloca.h
+include/libowfat/iarray.h
 include/libowfat/io.h
 include/libowfat/iob.h
 include/libowfat/iopause.h
 include/libowfat/ip4.h
 include/libowfat/ip6.h
+include/libowfat/isset.h
 include/libowfat/mmap.h
 include/libowfat/ndelay.h
 include/libowfat/open.h
@@ -32,6 +34,7 @@ include/libowfat/textcode.h
 include/libowfat/uint16.h
 include/libowfat/uint32.h
 include/libowfat/uint64.h
+include/libowfat/va_narg.h
 lib/libowfat.a
 @man man/man3/array.3
 @man man/man3/array_allocate.3
@@ -91,6 +94,7 @@ lib/libowfat.a
 @man man/man3/buffer_putulonglong.3
 @man man/man3/buffer_putxlong.3
 @man man/man3/buffer_seek.3
+@man man/man3/buffer_tosa.3
 @man man/man3/byte_chr.3
 @man man/man3/byte_copy.3
 @man man/man3/byte_copyr.3
@@ -130,6 +134,8 @@ lib/libowfat.a
 @man man/man3/dns_txt.3
 @man man/man3/dns_txt_packet.3
 @man man/man3/fmt_8long.3
+@man man/man3/fmt_asn1derlength.3
+@man man/man3/fmt_asn1dertag.3
 @man man/man3/fmt_double.3
 @man man/man3/fmt_fill.3
 @man man/man3/fmt_httpdate.3
@@ -147,14 +153,20 @@ lib/libowfat.a
 @man man/man3/fmt_pad.3
 @man man/man3/fmt_plusminus.3
 @man man/man3/fmt_str.3
+@man man/man3/fmt_strm.3
 @man man/man3/fmt_strn.3
 @man man/man3/fmt_uint.3
 @man man/man3/fmt_uint0.3
 @man man/man3/fmt_ulong.3
 @man man/man3/fmt_ulong0.3
 @man man/man3/fmt_ulonglong.3
+@man man/man3/fmt_utf8.3
 @man man/man3/fmt_xlong.3
 @man man/man3/fmt_xlonglong.3
+@man man/man3/iarray_allocate.3
+@man man/man3/iarray_free.3
+@man man/man3/iarray_get.3
+@man man/man3/iarray_init.3
 @man man/man3/imult16.3
 @man man/man3/imult32.3
 @man man/man3/imult64.3
@@ -170,6 +182,7 @@ lib/libowfat.a
 @man man/man3/io_dontwantwrite.3
 @man man/man3/io_eagain.3
 @man man/man3/io_fd.3
+@man man/man3/io_fd_canwrite.3
 @man man/man3/io_finishandshutdown.3
 @man man/man3/io_getcookie.3
 @man man/man3/io_nonblock.3
@@ -209,6 +222,7 @@ lib/libowfat.a
 @man man/man3/mmap_private.3
 @man man/man3/mmap_read.3
 @man man/man3/mmap_shared.3
+@man man/man3/mmap_unmap.3
 @man man/man3/ndelay_off.3
 @man man/man3/ndelay_on.3
 @man man/man3/open_append.3
@@ -231,6 +245,8 @@ lib/libowfat.a
 @man man/man3/scan_8int.3
 @man man/man3/scan_8long.3
 @man man/man3/scan_8short.3
+@man man/man3/scan_asn1derlength.3
+@man man/man3/scan_asn1dertag.3
 @man man/man3/scan_charsetnskip.3
 @man man/man3/scan_double.3
 @man man/man3/scan_httpdate.3
@@ -249,6 +265,7 @@ lib/libowfat.a
 @man man/man3/scan_ulong.3
 @man man/man3/scan_ulonglong.3
 @man man/man3/scan_ushort.3
+@man man/man3/scan_utf8.3
 @man man/man3/scan_whitenskip.3
 @man man/man3/scan_xint.3
 @man man/man3/scan_xlong.3
@@ -281,6 +298,10 @@ lib/libowfat.a
 @man man/man3/socket_recv6.3
 @man man/man3/socket_remote4.3
 @man man/man3/socket_remote6.3
+@man man/man3/socket_sctp4.3
+@man man/man3/socket_sctp4b.3
+@man man/man3/socket_sctp6.3
+@man man/man3/socket_sctp6b.3
 @man man/man3/socket_send4.3
 @man man/man3/socket_send6.3
 @man man/man3/socket_tcp4.3
