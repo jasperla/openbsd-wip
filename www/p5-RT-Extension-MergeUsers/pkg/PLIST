@@ -1,6 +1,8 @@
 @comment $OpenBSD$
 bin/rt-merge-users
+bin/rt-merge-users.in
 bin/rt-update-merged-users
+bin/rt-update-merged-users.in
 lib/RT/
 lib/RT/Extension/
 lib/RT/Extension/MergeUsers.pm

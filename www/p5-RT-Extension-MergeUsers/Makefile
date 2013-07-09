@@ -4,7 +4,7 @@ COMMENT= 	Merges two RT users into the same effective user
 
 MODULES=	cpan
 
-DISTNAME=	RT-Extension-MergeUsers-0.06
+DISTNAME=	RT-Extension-MergeUsers-0.09
 CATEGORIES=	www perl5
 
 MAINTAINER=	Andrew Fresh <andrew@cpan.org>
