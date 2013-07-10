@@ -4,7 +4,9 @@
 @bin bin/omwlauncher
 @bin bin/opencs
 @bin bin/openmw
+share/applications/opencs.desktop
 share/applications/openmw.desktop
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/openmw/
 @sample ${SYSCONFDIR}/openmw/
 share/examples/openmw/openmw.cfg
@@ -141,6 +143,7 @@ share/openmw/resources/water/
 share/openmw/resources/water/circle.png
 share/openmw/resources/water/water_nm.png
 share/pixmaps/
+share/pixmaps/opencs.png
 share/pixmaps/openmw.png
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

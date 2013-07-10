@@ -180,7 +180,7 @@ include/MYGUI/MyGUI_Window.h
 include/MYGUI/MyGUI_XmlDocument.h
 include/MYGUI/Plugin.h
 include/MYGUI/StrangeButton.h
-lib/libMyGUI.OgrePlatform.so
+@lib lib/libMyGUI.OgrePlatform.so.${LIBMyGUI.OgrePlatform_VERSION}
 @lib lib/libMyGUIEngine.so.${LIBMyGUIEngine_VERSION}
 lib/libPlugin_StrangeButton.so
 lib/pkgconfig/MYGUI.pc

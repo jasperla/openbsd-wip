@@ -1,17 +1,7 @@
 $OpenBSD$
---- CMakeLists.txt.orig	Wed Apr 24 00:47:57 2013
-+++ CMakeLists.txt	Mon May 13 19:11:02 2013
-@@ -184,6 +184,9 @@ endif()
- # find boost without components so we can use Boost_VERSION
- find_package(Boost REQUIRED)
- 
-+# find X11
-+find_package(X11 REQUIRED)
-+
- set(BOOST_COMPONENTS system filesystem program_options thread date_time)
- 
- if (Boost_VERSION LESS 104900)
-@@ -221,7 +224,7 @@ include_directories("."
+--- CMakeLists.txt.orig	Sun Jun  9 18:59:31 2013
++++ CMakeLists.txt	Thu Jul  4 23:06:02 2013
+@@ -218,7 +218,7 @@ include_directories("."
      ${LIBDIR}
  )
  
@@ -20,8 +10,8 @@ $OpenBSD$
  
  if (APPLE)
      # List used Ogre plugins
-@@ -686,10 +689,10 @@ if (NOT WIN32 AND NOT DPKG_PROGRAM AND NOT APPLE)
-     INSTALL(FILES "${OpenMW_BINARY_DIR}/openmw.desktop" DESTINATION "${DATAROOTDIR}/applications")
+@@ -687,10 +687,10 @@ if (NOT WIN32 AND NOT DPKG_PROGRAM AND NOT APPLE)
+     ENDIF(BUILD_OPENCS)
  
      # Install global configuration files
 -    INSTALL(FILES "${OpenMW_BINARY_DIR}/openmw.cfg.install" DESTINATION "${SYSCONFDIR}" RENAME "openmw.cfg" )

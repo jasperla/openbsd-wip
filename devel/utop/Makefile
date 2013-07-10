@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile.template,v 1.66 2013/06/04 22:58:11 sthen Exp $
+# $OpenBSD: $
 
 COMMENT =		enhanced OCaml toplevel
 DISTNAME =		utop-1.5
-
 CATEGORIES =		devel
+
 HOMEPAGE =		https://forge.ocamlcore.org/projects/utop/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
@@ -16,14 +16,17 @@ CONFIGURE_STYLE =	oasis
 CONFIGURE_ARGS +=	--enable-tests
 
 MODULES =		lang/ocaml
-BUILD_DEPENDS =		devel/ocaml-lambda-term \
-			sysutils/findlib
-RUN_DEPENDS =		${BUILD_DEPENDS}
+RUN_DEPENDS =		devel/ocaml-lambda-term
+BUILD_DEPENDS =		${RUN_DEPENDS}
 
-USE_GMAKE =		Yes
+post-install:
+	${INSTALL_DATA} \
+		${WRKDIST}/{LICENSE,CHANGES.md,README.md} \
+		${PREFIX}/share/doc/utop/
 
 # silence a warning
 pre-build:
+	# already shipped by the OCaml package
 	rm ${WRKBUILD}/src/lib/errors.mli
 
 .include <bsd.port.mk>

@@ -10,7 +10,7 @@ WANTLIB += png pthread ssl startup-notification-1 stdc++ xkbfile
 WANTLIB += z
 
 MODULES =		lang/python \
-			devel/gettext
+			converters/libiconv
 BUILD_DEPENDS =		x11/ede/lib
 LIB_DEPENDS =		devel/startup-notification \
 			graphics/jpeg \
@@ -34,6 +34,9 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 NO_TEST =		Yes
 
 MODPY_ADJ_FILES =	doc/asciidoc/asciidoc.py
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/ede-keyboard-conf/ede-keyboard-conf.cpp
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} jam -d x
