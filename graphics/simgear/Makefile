@@ -24,6 +24,7 @@ WANTLIB += osgDB osgGA osgParticle osgSim osgText osgUtil pthread
 WANTLIB += stdc++ z
 
 MODULES =		devel/cmake
+BUILD_DEPENDS =		devel/boost
 LIB_DEPENDS =		graphics/openscenegraph \
 			audio/openal
 
