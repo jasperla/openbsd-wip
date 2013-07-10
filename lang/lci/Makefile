@@ -9,7 +9,7 @@ PKGNAME =		lci-${V}
 
 CATEGORIES =		lang
 
-HOMEPAGE =		http://www.icanhaslolcode.org/
+HOMEPAGE =		http://lolcode.org/
 
 MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
