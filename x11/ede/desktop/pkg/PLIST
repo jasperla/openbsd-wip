@@ -28,7 +28,6 @@ bin/ede-settings-apply
 @bin bin/evoke
 @bin bin/pekwm
 bin/startede
-share/applications/
 share/applications/ede-about.desktop
 share/applications/ede-calc.desktop
 share/applications/ede-conf.desktop
@@ -39,8 +38,6 @@ share/applications/ede-preferred-applications.desktop
 share/applications/ede-screen-lock.desktop
 share/applications/ede-tip.desktop
 share/applications/ede-xterm.desktop
-share/dbus-1/
-share/dbus-1/services/
 share/dbus-1/services/org.equinoxproject.Launch.service
 share/desktop-directories/
 share/desktop-directories/ede-accessories.directory
