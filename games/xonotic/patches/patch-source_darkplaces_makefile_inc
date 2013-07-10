@@ -1,10 +1,10 @@
 $OpenBSD$
---- source/darkplaces/makefile.inc.orig	Sun Apr 14 21:23:29 2013
-+++ source/darkplaces/makefile.inc	Sun Apr 14 21:24:35 2013
-@@ -218,9 +218,9 @@ LDFLAGS_RELEASE=$(OPTIM_RELEASE) -DSVNREVISION=`{ test
+--- source/darkplaces/makefile.inc.orig	Wed Jun  5 03:03:36 2013
++++ source/darkplaces/makefile.inc	Sun Jul  7 14:45:06 2013
+@@ -219,9 +219,9 @@ LDFLAGS_RELEASE=$(OPTIM_RELEASE) -DSVNREVISION=`{ test
  OBJ_GLX= builddate.c sys_linux.o vid_glx.o thread_pthread.o keysym2ucs.o $(OBJ_SOUND) $(OBJ_CD) $(OBJ_COMMON)
  
- LDFLAGS_UNIXCOMMON=-lm $(LIB_ODE) $(LIB_JPEG) $(LIB_CRYPTO) $(LIB_CRYPTO_RIJNDAEL)
+ LDFLAGS_UNIXCOMMON=-lm $(LIB_ODE) $(LIB_JPEG) $(LIB_CRYPTO) $(LIB_GMP) $(LIB_CRYPTO_RIJNDAEL)
 -LDFLAGS_UNIXCL=-L$(UNIX_X11LIBPATH) -lX11 -lXpm -lXext -lXxf86vm -pthread $(LIB_SOUND)
 +LDFLAGS_UNIXCL=-L$(UNIX_X11LIBPATH) -L$(LOCALBASE)/lib -lX11 -lXpm -lXext -lXxf86vm -pthread $(LIB_SOUND)
  LDFLAGS_UNIXCL_PRELOAD=-lz -ljpeg -lpng -logg -ltheora -lvorbis -lvorbisenc -lvorbisfile -lcurl -lmodplug

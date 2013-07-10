@@ -1,5 +1,7 @@
 # $OpenBSD$
 
+SHARED_ONLY =		Yes
+
 COMMENT =		equinox desktop library
 
 DISTNAME =		edelib-${V}

@@ -15,8 +15,7 @@ MASTER_SITES =	ftp://ftp.de.flightgear.org/pub/fgfs/Source/ \
 
 MODULES =	devel/cmake
 BUILD_DEPENDS =	devel/plib
-LIB_DEPENDS =	graphics/openscenegraph \
-		graphics/freeglut \
+LIB_DEPENDS =	graphics/freeglut \
 		x11/fltk \
 		graphics/simgear>=$V
 RUN_DEPENDS =	games/flightgear/data>=${V}

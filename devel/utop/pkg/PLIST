@@ -1,36 +1,25 @@
-@comment $OpenBSD$
+@comment $OpenBSD: $
+%%native%%
 bin/utop
 bin/utop-full
 lib/ocaml/utop/
 lib/ocaml/utop/META
 lib/ocaml/utop/uTop.cmi
-lib/ocaml/utop/uTop.cmx
 lib/ocaml/utop/uTop.mli
 lib/ocaml/utop/uTop_camlp4.cmi
-lib/ocaml/utop/uTop_camlp4.cmx
 lib/ocaml/utop/uTop_camlp4.mli
-lib/ocaml/utop/uTop_complete.cmx
-lib/ocaml/utop/uTop_lexer.cmx
 lib/ocaml/utop/uTop_main.cmi
-lib/ocaml/utop/uTop_main.cmx
 lib/ocaml/utop/uTop_main.mli
-lib/ocaml/utop/uTop_private.cmx
-lib/ocaml/utop/uTop_styles.cmx
-lib/ocaml/utop/uTop_token.cmx
-lib/ocaml/utop/uTop_version.cmx
-lib/ocaml/utop/utop-camlp4.a
 lib/ocaml/utop/utop-camlp4.cma
-lib/ocaml/utop/utop-camlp4.cmxa
-@bin lib/ocaml/utop/utop-camlp4.cmxs
-lib/ocaml/utop/utop.a
 lib/ocaml/utop/utop.cma
-lib/ocaml/utop/utop.cmxa
-@bin lib/ocaml/utop/utop.cmxs
 @man man/man1/utop-full.1.gz
 @man man/man1/utop.1.gz
 @man man/man5/utoprc.5.gz
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/utop/
+share/doc/utop/CHANGES.md
+share/doc/utop/LICENSE
+share/doc/utop/README.md
 share/doc/utop/api/
 share/doc/utop/api/UTop.html
 share/doc/utop/api/UTop_main.html
