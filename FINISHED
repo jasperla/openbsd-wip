@@ -14,7 +14,6 @@ cad/tkgate:		Ready for import. Sent to ports@ 2008-01-13 and still works (yason)
 games/nexuiz		sent to ports@ Dec 10 2011 (pstumpf)
 devel/py-anita		Ready for import. Sent to ports@ 2012-11-05.
 misc/dvtm		sent to ports@ 2012/12/04. Ready for import.
-net/hotot		Ready for import. Sent to ports@ 2012-12-06.
 lang/utop		ready for import. Waiting for libcharset fix in ocaml-lamda-term
 net/unison/stable	ready for import.
 www/ocaml-tyxml		ready for import.
