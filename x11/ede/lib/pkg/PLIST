@@ -1,5 +1,4 @@
 @comment $OpenBSD$
-%%SHARED%%
 bin/edelib-catchsegv
 bin/edelib-convert-icontheme
 @bin bin/edelib-dbus-introspect
@@ -87,9 +86,14 @@ lib/edelib/sslib/init-2.ss
 lib/edelib/sslib/init.ss
 lib/edelib/sslib/theme.ss
 lib/libedelib.la
+lib/libedelib.so
+@lib lib/libedelib.so.${LIBedelib_VERSION}
 lib/libedelib_dbus.la
+lib/libedelib_dbus.so
+@lib lib/libedelib_dbus.so.${LIBedelib_dbus_VERSION}
 lib/libedelib_gui.la
-lib/pkgconfig/
+lib/libedelib_gui.so
+@lib lib/libedelib_gui.so.${LIBedelib_gui_VERSION}
 lib/pkgconfig/edelib-dbus.pc
 lib/pkgconfig/edelib-gui-no-images.pc
 lib/pkgconfig/edelib-gui.pc
@@ -166,6 +170,7 @@ share/doc/edelib-${FULL_V}/html/XSettingsManager_8h_source.html
 share/doc/edelib-${FULL_V}/html/__conf_8h_source.html
 share/doc/edelib-${FULL_V}/html/annotated.html
 share/doc/edelib-${FULL_V}/html/bc_s.png
+share/doc/edelib-${FULL_V}/html/bdwn.png
 share/doc/edelib-${FULL_V}/html/classTiXmlAttribute-members.html
 share/doc/edelib-${FULL_V}/html/classTiXmlAttribute.html
 share/doc/edelib-${FULL_V}/html/classTiXmlAttribute.png
@@ -203,6 +208,7 @@ share/doc/edelib-${FULL_V}/html/classTiXmlVisitor.html
 share/doc/edelib-${FULL_V}/html/classTiXmlVisitor.png
 share/doc/edelib-${FULL_V}/html/classedelib_1_1AnimateBox-members.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1AnimateBox.html
+share/doc/edelib-${FULL_V}/html/classedelib_1_1AnimateBox.png
 share/doc/edelib-${FULL_V}/html/classedelib_1_1ApplicationBootstrap-members.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1ApplicationBootstrap.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1ColorDb-members.html
@@ -237,6 +243,7 @@ share/doc/edelib-${FULL_V}/html/classedelib_1_1EdbusObjectPath.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1EdbusVariant-members.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1ExpandableGroup-members.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1ExpandableGroup.html
+share/doc/edelib-${FULL_V}/html/classedelib_1_1ExpandableGroup.png
 share/doc/edelib-${FULL_V}/html/classedelib_1_1File-members.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1File.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1FontCache-members.html
@@ -257,6 +264,7 @@ share/doc/edelib-${FULL_V}/html/classedelib_1_1MenuButton.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1MenuButton.png
 share/doc/edelib-${FULL_V}/html/classedelib_1_1MessageBox-members.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1MessageBox.html
+share/doc/edelib-${FULL_V}/html/classedelib_1_1MessageBox.png
 share/doc/edelib-${FULL_V}/html/classedelib_1_1MimeType-members.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1MimeType.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1PTY-members.html
@@ -270,8 +278,10 @@ share/doc/edelib-${FULL_V}/html/classedelib_1_1Resource-members.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1Resource.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1SchemeEditor-members.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1SchemeEditor.html
+share/doc/edelib-${FULL_V}/html/classedelib_1_1SchemeEditor.png
 share/doc/edelib-${FULL_V}/html/classedelib_1_1SevenSeg-members.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1SevenSeg.html
+share/doc/edelib-${FULL_V}/html/classedelib_1_1SevenSeg.png
 share/doc/edelib-${FULL_V}/html/classedelib_1_1SipcClient-members.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1SipcClient.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1SipcServer-members.html
@@ -280,6 +290,7 @@ share/doc/edelib-${FULL_V}/html/classedelib_1_1String-members.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1String.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1TableBase-members.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1TableBase.html
+share/doc/edelib-${FULL_V}/html/classedelib_1_1TableBase.png
 share/doc/edelib-${FULL_V}/html/classedelib_1_1TempFile-members.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1TempFile.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1Theme-members.html
@@ -292,6 +303,7 @@ share/doc/edelib-${FULL_V}/html/classedelib_1_1TimeZone-members.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1TimeZone.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1Window-members.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1Window.html
+share/doc/edelib-${FULL_V}/html/classedelib_1_1Window.png
 share/doc/edelib-${FULL_V}/html/classedelib_1_1XSettingsClient-members.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1XSettingsClient.html
 share/doc/edelib-${FULL_V}/html/classedelib_1_1XSettingsColor-members.html
@@ -306,12 +318,30 @@ share/doc/edelib-${FULL_V}/html/classes.html
 share/doc/edelib-${FULL_V}/html/closed.png
 share/doc/edelib-${FULL_V}/html/dbusdoc.html
 share/doc/edelib-${FULL_V}/html/deprecated.html
+share/doc/edelib-${FULL_V}/html/dir_47202955f1c9b7b638dbc5c25d598dce.html
 share/doc/edelib-${FULL_V}/html/doxygen.css
 share/doc/edelib-${FULL_V}/html/doxygen.png
+share/doc/edelib-${FULL_V}/html/dynsections.js
 share/doc/edelib-${FULL_V}/html/edelib-config_8h_source.html
 share/doc/edelib-${FULL_V}/html/edelib-global_8h_source.html
 share/doc/edelib-${FULL_V}/html/files.html
 share/doc/edelib-${FULL_V}/html/for-each-macro_8h_source.html
+share/doc/edelib-${FULL_V}/html/ftv2blank.png
+share/doc/edelib-${FULL_V}/html/ftv2cl.png
+share/doc/edelib-${FULL_V}/html/ftv2doc.png
+share/doc/edelib-${FULL_V}/html/ftv2folderclosed.png
+share/doc/edelib-${FULL_V}/html/ftv2folderopen.png
+share/doc/edelib-${FULL_V}/html/ftv2lastnode.png
+share/doc/edelib-${FULL_V}/html/ftv2link.png
+share/doc/edelib-${FULL_V}/html/ftv2mlastnode.png
+share/doc/edelib-${FULL_V}/html/ftv2mnode.png
+share/doc/edelib-${FULL_V}/html/ftv2mo.png
+share/doc/edelib-${FULL_V}/html/ftv2node.png
+share/doc/edelib-${FULL_V}/html/ftv2ns.png
+share/doc/edelib-${FULL_V}/html/ftv2plastnode.png
+share/doc/edelib-${FULL_V}/html/ftv2pnode.png
+share/doc/edelib-${FULL_V}/html/ftv2splitbar.png
+share/doc/edelib-${FULL_V}/html/ftv2vertline.png
 share/doc/edelib-${FULL_V}/html/functions.html
 share/doc/edelib-${FULL_V}/html/functions_0x62.html
 share/doc/edelib-${FULL_V}/html/functions_0x63.html
@@ -380,6 +410,7 @@ share/doc/edelib-${FULL_V}/html/group__wm.html
 share/doc/edelib-${FULL_V}/html/hierarchy.html
 share/doc/edelib-${FULL_V}/html/icon_chooser.jpg
 share/doc/edelib-${FULL_V}/html/index.html
+share/doc/edelib-${FULL_V}/html/jquery.js
 share/doc/edelib-${FULL_V}/html/modules.html
 share/doc/edelib-${FULL_V}/html/namespaceedelib.html
 share/doc/edelib-${FULL_V}/html/namespacemembers.html
@@ -413,6 +444,7 @@ share/doc/edelib-${FULL_V}/html/namespacemembers_func.html
 share/doc/edelib-${FULL_V}/html/namespacemembers_type.html
 share/doc/edelib-${FULL_V}/html/namespaces.html
 share/doc/edelib-${FULL_V}/html/nav_f.png
+share/doc/edelib-${FULL_V}/html/nav_g.png
 share/doc/edelib-${FULL_V}/html/nav_h.png
 share/doc/edelib-${FULL_V}/html/open.png
 share/doc/edelib-${FULL_V}/html/pages.html
@@ -428,6 +460,8 @@ share/doc/edelib-${FULL_V}/html/structedelib_1_1XSettingsColor.html
 share/doc/edelib-${FULL_V}/html/structedelib_1_1XSettingsData.html
 share/doc/edelib-${FULL_V}/html/structedelib_1_1XSettingsList.html
 share/doc/edelib-${FULL_V}/html/structedelib_1_1XSettingsSetting.html
+share/doc/edelib-${FULL_V}/html/sync_off.png
+share/doc/edelib-${FULL_V}/html/sync_on.png
 share/doc/edelib-${FULL_V}/html/tab_a.png
 share/doc/edelib-${FULL_V}/html/tab_b.png
 share/doc/edelib-${FULL_V}/html/tab_h.png

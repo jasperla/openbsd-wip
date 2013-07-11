@@ -26,6 +26,9 @@ NO_TEST =			Yes
 WRKSRC = ${WRKDIR}/notebook/
 WRKDIST = ${WRKDIR}/notebook/
 
+pre-configure:
+	perl -pi -e s,/bin/sh,${PREFIX}/bin/tclsh${MODTCL_VERSION},g ${WRKSRC}/notebook.tcl
+
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/notebook/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/notebook/lib/{markupparser,rotext,trycatch}
