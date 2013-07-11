@@ -19,7 +19,8 @@ MASTER_SITES =	https://delaboratory.googlecode.com/files/
 
 MODULES =	converters/libiconv
 
-LIB_DEPENDS =	x11/wxWidgets,-main
+LIB_DEPENDS =	textproc/libxml \
+		x11/wxWidgets,-main
 
 USE_GMAKE =	Yes
 MAKE_FLAGS =	CXX="${CXX}" OPTFLAGS="${CXXFLAGS}"
