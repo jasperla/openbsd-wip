@@ -26,3 +26,4 @@ emulators/vice		ready for import, sent to ports 2013-05-16
 devel/libextractor	sent to ports 2013-06-29
 audio/solfege		ready for import, waiting for me to import textproc/txt2man (bcallah)
 print/birdfont		ready for import, waiting for me to import devel/py-six and devel/py-doit (bcallah)
+textproc/the_silver_searcher	ready for import, sent to @ports some time ago
