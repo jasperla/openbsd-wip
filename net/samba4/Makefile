@@ -192,8 +192,11 @@ post-patch:
 	find ${WRKSRC} -type f | xargs ${MODPY_BIN_ADJ}
 	${SUBST_CMD} ${WRKSRC}/lib/testtools/testtools/tests/test_compat.py
 
+SAMBA_DECONFLICT ?=	Yes
+.if ${SAMBA_DECONFLICT:L} != "no"
 pre-configure: replace-conflicting-symbols
 	@true
+.endif
 
 # Avoid bogus -L/usr/local/lib at the start of linker options
 post-configure:
