@@ -11,17 +11,17 @@ CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.flashrom.org/
 
-# GPLv2
+# GPLv2 (only, for most files)
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=	c usb z
+WANTLIB=	c ftdi usb z
 
-MASTER_SITES =          http://download.flashrom.org/releases/
+MASTER_SITES=	http://download.flashrom.org/releases/
 
 RUN_DEPENDS=	sysutils/dmidecode
-LIB_DEPENDS=	sysutils/pciutils \
-				devel/libftdi
+LIB_DEPENDS=	devel/libftdi
+# static lib
+BUILD_DEPENDS=	sysutils/pciutils
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes
