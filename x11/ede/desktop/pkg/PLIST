@@ -25,7 +25,6 @@ bin/ede-settings-apply
 @bin bin/ede-timedate
 @bin bin/ede-tip
 @bin bin/ede-tip-compiler
-@comment @bin bin/emountd
 @bin bin/evoke
 @bin bin/pekwm
 bin/startede
@@ -61,7 +60,6 @@ share/doc/ede-${FULL_V}/manual/ede-dialog.html
 share/doc/ede-${FULL_V}/manual/ede-help.html
 share/doc/ede-${FULL_V}/manual/ede-notify-daemon.html
 share/doc/ede-${FULL_V}/manual/ede-tip.html
-share/doc/ede-${FULL_V}/manual/emountd.html
 share/doc/ede-${FULL_V}/manual/evoke.html
 share/doc/ede-${FULL_V}/manual/hacking.html
 share/doc/ede-${FULL_V}/manual/index.html
