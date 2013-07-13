@@ -14,3 +14,4 @@ share/enemy-territory/legacy/lmscycle.cfg
 share/enemy-territory/legacy/mapvotecycle.cfg
 share/enemy-territory/legacy/objectivecycle.cfg
 share/enemy-territory/legacy/pak3_2.71rc1-dirty.pk3
+share/enemy-territory/librenderer_opengl1_${MACHINE_ARCH}.a

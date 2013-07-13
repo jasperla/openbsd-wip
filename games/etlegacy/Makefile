@@ -7,9 +7,9 @@ COMMENT=	Wolfenstein Enemy Territory (ET Legacy)
 HOMEPAGE=	http://www.etlegacy.com/
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
-GITREV=		fe18ef60651b7004d15451a208b21f75861e91bb
-DISTNAME=	etlegacy-etlegacy-fe18ef6
-PKGNAME=	etlegacy-20130317
+GITREV=		17f8c5c1c79461f3c6c86cea0e834de9f57cd5de
+DISTNAME=	etlegacy-etlegacy-17f8c5c
+PKGNAME=	etlegacy-20130714
 MASTER_SITES=	https://github.com/etlegacy/etlegacy/tarball/${GITREV}/
 
 LIB_DEPENDS=	devel/sdl \
