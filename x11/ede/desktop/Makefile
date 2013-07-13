@@ -3,7 +3,6 @@
 COMMENT =		Equinox desktop environment
 
 DISTNAME =		ede-${V}
-REVISION =		0
 
 WANTLIB += X11 Xau Xdmcp Xext Xft Xinerama Xpm Xrandr c crypto
 WANTLIB += curl dbus-1 edelib edelib_dbus edelib_gui fltk fltk_images
