@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+@conflict pekwm-*
 @bin bin/ede-about
 @bin bin/ede-autostart
 @bin bin/ede-bell-conf
@@ -24,7 +25,7 @@ bin/ede-settings-apply
 @bin bin/ede-timedate
 @bin bin/ede-tip
 @bin bin/ede-tip-compiler
-@bin bin/emountd
+@comment @bin bin/emountd
 @bin bin/evoke
 @bin bin/pekwm
 bin/startede
@@ -133,7 +134,6 @@ share/examples/ede/xdg/menus/
 @sample ${SYSCONFDIR}/xdg/menus/
 share/examples/ede/xdg/menus/ede-applications.menu
 @sample ${SYSCONFDIR}/xdg/menus/ede-applications.menu
-share/icons/
 share/icons/edeneu/
 share/icons/edeneu/128x128/
 share/icons/edeneu/128x128/actions/
@@ -1479,8 +1479,6 @@ share/icons/kbflags/21x14/yu.png
 share/icons/kbflags/21x14/za.png
 share/icons/kbflags/21x14/zm.png
 share/icons/kbflags/21x14/zw.png
-share/mime/
-share/mime/packages/
 share/mime/packages/x-fluid.xml
 share/pekwm/
 share/pekwm/scripts/
@@ -1547,3 +1545,7 @@ share/xsessions/
 share/xsessions/ede.desktop
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/edeneu
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/edeneu
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/kbflags
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/kbflags
