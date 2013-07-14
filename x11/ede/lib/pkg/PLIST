@@ -86,13 +86,10 @@ lib/edelib/sslib/init-2.ss
 lib/edelib/sslib/init.ss
 lib/edelib/sslib/theme.ss
 lib/libedelib.la
-lib/libedelib.so
 @lib lib/libedelib.so.${LIBedelib_VERSION}
 lib/libedelib_dbus.la
-lib/libedelib_dbus.so
 @lib lib/libedelib_dbus.so.${LIBedelib_dbus_VERSION}
 lib/libedelib_gui.la
-lib/libedelib_gui.so
 @lib lib/libedelib_gui.so.${LIBedelib_gui_VERSION}
 lib/pkgconfig/edelib-dbus.pc
 lib/pkgconfig/edelib-gui-no-images.pc

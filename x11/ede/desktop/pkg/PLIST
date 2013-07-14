@@ -24,9 +24,7 @@ bin/ede-settings-apply
 @bin bin/ede-timedate
 @bin bin/ede-tip
 @bin bin/ede-tip-compiler
-@bin bin/emountd
 @bin bin/evoke
-@bin bin/pekwm
 bin/startede
 share/applications/ede-about.desktop
 share/applications/ede-calc.desktop
@@ -60,7 +58,6 @@ share/doc/ede-${FULL_V}/manual/ede-dialog.html
 share/doc/ede-${FULL_V}/manual/ede-help.html
 share/doc/ede-${FULL_V}/manual/ede-notify-daemon.html
 share/doc/ede-${FULL_V}/manual/ede-tip.html
-share/doc/ede-${FULL_V}/manual/emountd.html
 share/doc/ede-${FULL_V}/manual/evoke.html
 share/doc/ede-${FULL_V}/manual/hacking.html
 share/doc/ede-${FULL_V}/manual/index.html
@@ -102,23 +99,14 @@ share/ede/tips/ede
 share/ede/tips/ede.dat
 share/examples/ede/
 share/examples/ede/pekwm/
-@sample ${SYSCONFDIR}/pekwm/
 share/examples/ede/pekwm/autoproperties
-@sample ${SYSCONFDIR}/pekwm/autoproperties
 share/examples/ede/pekwm/autoproperties_typerules
-@sample ${SYSCONFDIR}/pekwm/autoproperties_typerules
 share/examples/ede/pekwm/config
-@sample ${SYSCONFDIR}/pekwm/config
 share/examples/ede/pekwm/keys
-@sample ${SYSCONFDIR}/pekwm/keys
 share/examples/ede/pekwm/menu
-@sample ${SYSCONFDIR}/pekwm/menu
 share/examples/ede/pekwm/mouse
-@sample ${SYSCONFDIR}/pekwm/mouse
 share/examples/ede/pekwm/start
-@sample ${SYSCONFDIR}/pekwm/start
 share/examples/ede/pekwm/vars
-@sample ${SYSCONFDIR}/pekwm/vars
 share/examples/ede/xdg/
 @sample ${SYSCONFDIR}/xdg/
 share/examples/ede/xdg/ede/
@@ -133,7 +121,6 @@ share/examples/ede/xdg/menus/
 @sample ${SYSCONFDIR}/xdg/menus/
 share/examples/ede/xdg/menus/ede-applications.menu
 @sample ${SYSCONFDIR}/xdg/menus/ede-applications.menu
-share/icons/
 share/icons/edeneu/
 share/icons/edeneu/128x128/
 share/icons/edeneu/128x128/actions/
@@ -1479,33 +1466,26 @@ share/icons/kbflags/21x14/yu.png
 share/icons/kbflags/21x14/za.png
 share/icons/kbflags/21x14/zm.png
 share/icons/kbflags/21x14/zw.png
-share/mime/
-share/mime/packages/
 share/mime/packages/x-fluid.xml
-share/pekwm/
-share/pekwm/scripts/
-share/pekwm/scripts/pekwm_themeset.sh
-share/pekwm/scripts/pekwm_ws_menu.sh
-share/pekwm/themes/
-share/pekwm/themes/default/
-share/pekwm/themes/default/arrow-focus.png
-share/pekwm/themes/default/arrow-sel.png
-share/pekwm/themes/default/border.png
-share/pekwm/themes/default/bottom-menu.png
-share/pekwm/themes/default/close-press.png
-share/pekwm/themes/default/close-unfocus.png
-share/pekwm/themes/default/close.png
-share/pekwm/themes/default/max-press.png
-share/pekwm/themes/default/max-unfocus.png
-share/pekwm/themes/default/max.png
-share/pekwm/themes/default/menuline.png
-share/pekwm/themes/default/min-press.png
-share/pekwm/themes/default/min-unfocus.png
-share/pekwm/themes/default/min.png
-share/pekwm/themes/default/theme
-share/pekwm/themes/default/title-unfocus.png
-share/pekwm/themes/default/title.png
-share/pekwm/themes/default/top-menu.png
+share/pekwm/themes/ede/
+share/pekwm/themes/ede/arrow-focus.png
+share/pekwm/themes/ede/arrow-sel.png
+share/pekwm/themes/ede/border.png
+share/pekwm/themes/ede/bottom-menu.png
+share/pekwm/themes/ede/close-press.png
+share/pekwm/themes/ede/close-unfocus.png
+share/pekwm/themes/ede/close.png
+share/pekwm/themes/ede/max-press.png
+share/pekwm/themes/ede/max-unfocus.png
+share/pekwm/themes/ede/max.png
+share/pekwm/themes/ede/menuline.png
+share/pekwm/themes/ede/min-press.png
+share/pekwm/themes/ede/min-unfocus.png
+share/pekwm/themes/ede/min.png
+share/pekwm/themes/ede/theme
+share/pekwm/themes/ede/title-unfocus.png
+share/pekwm/themes/ede/title.png
+share/pekwm/themes/ede/top-menu.png
 share/pekwm/themes/pekwm/
 share/pekwm/themes/pekwm/arrow.png
 share/pekwm/themes/pekwm/arrow_focus.png
@@ -1547,3 +1527,7 @@ share/xsessions/
 share/xsessions/ede.desktop
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/edeneu
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/edeneu
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/kbflags
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/kbflags
