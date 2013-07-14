@@ -14,6 +14,7 @@ SHARED_LIBS +=		$l	${API_VER}
 WANTLIB += X11 Xau Xdmcp Xext Xft Xinerama c dbus-1 fltk fltk_images
 WANTLIB += fontconfig jpeg m png pthread stdc++ z
 
+MODULES =		lang/python
 BUILD_DEPENDS =		devel/jam \
 			devel/doxygen,-main
 LIB_DEPENDS =		x11/fltk \
@@ -26,6 +27,9 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 CONFIGURE_ENV =		API_VER="${API_VER}"
 
 NO_TEST =		Yes
+
+MODPY_ADJ_FILES =	tools/edelib-convert-icontheme \
+			tools/edelib-mk-indextheme
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} jam -d x

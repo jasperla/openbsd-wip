@@ -3,6 +3,7 @@ share/xonotic/
 share/xonotic/data/
 share/xonotic/data/font-nimbussansl-20130605.pk3
 share/xonotic/data/font-xolonium-20130605.pk3
-share/xonotic/data/xonotic-20130605-data-low.pk3
-share/xonotic/data/xonotic-20130605-maps-low.pk3
-share/xonotic/data/xonotic-20130605-music-low.pk3
+share/xonotic/data/xonotic-20130605-data.pk3
+share/xonotic/data/xonotic-20130605-maps.pk3
+share/xonotic/data/xonotic-20130605-music.pk3
+share/xonotic/data/xonotic-20130605-nexcompat.pk3

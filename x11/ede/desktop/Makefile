@@ -4,23 +4,21 @@ COMMENT =		Equinox desktop environment
 
 DISTNAME =		ede-${V}
 
-WANTLIB += X11 Xau Xdmcp Xext Xft Xinerama Xpm Xrandr c crypto
-WANTLIB += curl dbus-1 fltk fltk_images fontconfig idn jpeg m
-WANTLIB += png pthread ssl startup-notification-1 stdc++ xkbfile
-WANTLIB += z
+WANTLIB += X11 Xau Xdmcp Xext Xft Xinerama Xpm c crypto
+WANTLIB += curl dbus-1 edelib edelib_dbus edelib_gui fltk fltk_images
+WANTLIB += fontconfig idn jpeg m png pthread ssl startup-notification-1
+WANTLIB += stdc++ xkbfile z
 
-MODULES =		lang/python \
-			converters/libiconv
-BUILD_DEPENDS =		x11/ede/lib
+MODULES =		lang/python
 LIB_DEPENDS =		devel/startup-notification \
 			graphics/jpeg \
 			graphics/png \
 			devel/libidn \
-			x11/fltk \
-			x11/dbus \
-			net/curl
-RUN_DEPENDS =		x11/ede/lib \
-			devel/desktop-file-utils
+			net/curl \
+			x11/ede/lib
+RUN_DEPENDS =		devel/desktop-file-utils \
+			x11/gtk+2,-guic \
+			x11/pekwm
 
 FAKE_FLAGS =		sysconfdir="${TRUEPREFIX}/share/examples/ede"
 

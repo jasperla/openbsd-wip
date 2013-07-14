@@ -4,36 +4,30 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT=	flash-ROM programmer for BIOS etc
 
-V=          0.9.6.1
-DISTNAME=	flashrom-${V}
+DISTNAME=	flashrom-0.9.6.1
 EXTRACT_SUFX=	.tar.bz2
-
-#SHARED_LIBS=	
 
 CATEGORIES=	sysutils
 
-HOMEPAGE=	http://www.flashrom.org
+HOMEPAGE=	http://www.flashrom.org/
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
-
-# GPLv2
+# GPLv2 (only, for most files)
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=	c usb z
+WANTLIB=	c ftdi usb z
 
-MASTER_SITES =          http://download.flashrom.org/releases/
+MASTER_SITES=	http://download.flashrom.org/releases/
 
 RUN_DEPENDS=	sysutils/dmidecode
-LIB_DEPENDS=	sysutils/pciutils \
-				devel/libftdi
+LIB_DEPENDS=	devel/libftdi
+# static lib
+BUILD_DEPENDS=	sysutils/pciutils
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-#MAKE_FLAGS=	SVNVERSION=1060
 FAKE_FLAGS=	PREFIX="${PREFIX}" MANDIR="${PREFIX}/man"
 
 .include <bsd.port.mk>
