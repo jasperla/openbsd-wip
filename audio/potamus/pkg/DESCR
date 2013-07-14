@@ -1,0 +1,5 @@
+Potamus is a lightweight GTK-based audio player with a simple interface
+and an emphasis on high audio quality.
+
+It was written to make use of the filesystem for sorting music, unlike
+larger audio players that user a complex database.
