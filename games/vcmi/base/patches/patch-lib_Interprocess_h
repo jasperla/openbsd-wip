@@ -1,0 +1,18 @@
+$OpenBSD$
+--- lib/Interprocess.h.orig	Mon Apr  2 15:14:38 2012
++++ lib/Interprocess.h	Fri Jun 28 19:29:36 2013
+@@ -1,6 +1,7 @@
+ #pragma once
+ 
+ #include <boost/interprocess/sync/scoped_lock.hpp>
++#include <sys/param.h>
+ #include <boost/interprocess/sync/interprocess_mutex.hpp>
+ #include <boost/interprocess/sync/interprocess_condition.hpp>
+ #include <boost/interprocess/mapped_region.hpp>
+@@ -55,4 +56,4 @@ struct SharedMem 
+ 		delete mr;
+ 		boost::interprocess::shared_memory_object::remove("vcmi_memory");
+ 	}
+-};
+\ No newline at end of file
++};
