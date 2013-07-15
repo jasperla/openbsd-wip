@@ -1,0 +1,14 @@
+$OpenBSD$
+--- README.orig	Mon Jul 15 19:41:03 2013
++++ README	Mon Jul 15 19:43:00 2013
+@@ -8,8 +8,8 @@ from either /etc/bashrc or ~/.bashrc (or any other fil
+ can do this by simply using:
+ 
+ # Use bash-completion, if available
+-[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+-    . /usr/share/bash-completion/bash_completion
++[[ $PS1 && -f /usr/local/share/bash-completion/bash_completion ]] && \
++    . /usr/local/share/bash-completion/bash_completion
+ 
+ (if you happen to have *only* bash >= 4.1 installed, see further if not)
+ 
