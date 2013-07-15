@@ -1,0 +1,3 @@
+As yet VCMI is not standalone program, it uses Wake of Gods files and
+graphics. You need WoG data files before running VCMI.
+You can copy Data and Maps from WoG disk to ~/.vcmi/.
