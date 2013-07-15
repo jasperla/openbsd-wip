@@ -1,0 +1,5 @@
+- needs Plugin_CgProgramManager from OGRE which needs binary NVIDIA library
+  supposedly fixed in next release (2.1)
+
+- needs "export STUNTRALLY_DATA_ROOT=/usr/local/share/games/stuntrally/" to
+  find its files currently
