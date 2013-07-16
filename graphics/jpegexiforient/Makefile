@@ -31,8 +31,11 @@ pre-install:
 		cp /usr/ports/distfiles/jpegexiforient.c ${WRKSRC}
 		cp /usr/ports/distfiles/exifautotran.txt ${WRKSRC}
 
+do-build:
+		cd ${WRKSRC} && \
+			${CC} ${CFLAGS} jpegexiforient.c -o jpegexiforient 
+
 do-install:
-		cd ${WRKSRC} && gcc jpegexiforient.c -o jpegexiforient 
 		${INSTALL_PROGRAM}	${WRKSRC}/jpegexiforient ${PREFIX}/bin/
 		${INSTALL_PROGRAM}	${WRKSRC}/exifautotran.txt ${PREFIX}/bin/exifautotran
 
