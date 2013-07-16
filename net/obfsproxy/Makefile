@@ -2,7 +2,8 @@
 
 COMMENT =		obfuscate Tor traffic
 
-DISTNAME =		obfsproxy-0.1.4
+MODPY_EGG_VERSION =	0.2.2
+DISTNAME =		obfsproxy-${MODPY_EGG_VERSION}
 
 CATEGORIES =		net
 
@@ -13,18 +14,13 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 # BSD-like
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c crypto event_core event_extra
-
-MASTER_SITES =		https://archive.torproject.org/tor-package-archive/obfsproxy/
+MASTER_SITES =		https://pypi.python.org/packages/source/o/obfsproxy/
 
 MODULES =		lang/python
-MODPY_RUNDEP =		No
-LIB_DEPENDS =		devel/libevent2
+MODPY_SETUPTOOLS =	Yes
 RUN_DEPENDS =		net/tor
-TEST_DEPENDS =		lang/python/${MODPY_VERSION}
 
-CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV =		ax_cv_check_cflags__Werror__fPIE=no \
-			ax_cv_check_ldflags__Werror__pie=no
+# tries to download and install additional python modules
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

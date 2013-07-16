@@ -1,3 +1,0 @@
-bash-completion is a set of shell scripts to extend the completion
-feature of bash. It comes with various completion scripts preinstalled,
-and several other ports may ship new completion scripts as well.

@@ -1,0 +1,8 @@
+The purpose of VCMI project is to rewrite entire HOMM 3: WoG engine from
+scratch, giving it new and extended possibilities. We hope to support
+mods and new towns already made by fans but abandoned because of game
+code limitations.
+VCMI is fan-made open-source project in progress. We already allow
+support for maps of any sizes, higher resolutions and extended engine
+limits. However, although working, the game is not finished. There are
+still many features and functionalities to add, both old and brand new.

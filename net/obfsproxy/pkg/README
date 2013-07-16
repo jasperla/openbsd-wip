@@ -1,5 +1,17 @@
+$OpenBSD$
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
 To use obfsproxy, put the following lines into your torrc:
 
-UseBridges 1 
-Bridge obfs2 <IP address of bridge supporting obfsproxy>:<port>
-ClientTransportPlugin obfs2 exec /usr/local/bin/obfsproxy --managed
+SocksPort 0
+ORPort 443 # or some other port if you already run a webserver/skype
+BridgeRelay 1
+Exitpolicy reject *:*
+
+Nickname <bridge nickname>
+ContactInfo <your email>
+
+ServerTransportPlugin obfs2,obfs3 exec /usr/local/bin/obfsproxy managed
