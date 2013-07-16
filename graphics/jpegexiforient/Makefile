@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile $
 
-COMMENT =		
+COMMENT =		utility to read or write the Exif Orientation Tag in a JPEG Exif file
 
 DISTNAME =		jpegexiforient-17022002
 PKGNAME =		${DISTNAME}
@@ -24,8 +24,6 @@ NO_BUILD =		Yes
 NO_TEST =		Yes
 
 RUN_DEPENDS = 	graphics/jpeg
-
-INST_DIR = 		${PREFIX}/bin/
 
 pre-install:
 		cp /usr/ports/distfiles/jpegexiforient.c ${WRKSRC}
