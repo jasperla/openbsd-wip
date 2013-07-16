@@ -1,0 +1,25 @@
+$OpenBSD$
+--- CMakeLists.txt.orig	Mon Jul 15 01:39:34 2013
++++ CMakeLists.txt	Mon Jul 15 01:55:20 2013
+@@ -28,6 +28,9 @@ endif()
+ 
+ # Platform specific libs
+ if(UNIX)
++	find_package(X11 REQUIRED QUIET)
++	include_directories(${X11_INCLUDE_DIR})
++	link_directories(${X11_LIBRARY_DIR})
+ 	list(APPEND LIBS "X11" "Xcursor")
+ endif(UNIX)
+ 
+@@ -110,7 +113,10 @@ if(BUILD_GAME OR BUILD_EDITOR)
+ 	endforeach()
+ 
+ 	if(UNIX)
+-		list(APPEND LIBS "rt") # For clock_gettime()
++		check_library_exists(rt clock_gettime "" HAVE_LIBRT)
++		if (HAVE_LIBRT)
++			list(APPEND LIBS "rt") # For clock_gettime()
++		endif()
+ 	endif()
+ endif()
+ 
