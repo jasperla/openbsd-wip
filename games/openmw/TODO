@@ -1,1 +1,2 @@
  - patch default configs
+ - check whether devel/uuid is a RDEP
