@@ -49,4 +49,8 @@ NO_TEST =		Yes
 # Add -pthread to trigger BOOST_HAS_THREADS.
 CFLAGS +=		-pthread
 
+pre-configure:
+	@${SUBST_CMD} ${WRKSRC}/CMake/InstallResources.cmake \
+		${WRKSRC}/Common/Base/Ogre/BaseManager.cpp
+
 .include <bsd.port.mk>
