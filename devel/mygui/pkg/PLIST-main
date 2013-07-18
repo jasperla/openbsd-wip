@@ -184,3 +184,9 @@ include/MYGUI/StrangeButton.h
 @lib lib/libMyGUIEngine.so.${LIBMyGUIEngine_VERSION}
 lib/libPlugin_StrangeButton.so
 lib/pkgconfig/MYGUI.pc
+share/MYGUI/
+@sample ${SYSCONFDIR}/MYGUI/
+share/MYGUI/plugins.cfg
+@sample ${SYSCONFDIR}/MYGUI/plugins.cfg
+share/MYGUI/resources.xml
+@sample ${SYSCONFDIR}/MYGUI/resources.xml
