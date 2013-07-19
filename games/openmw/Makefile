@@ -36,7 +36,7 @@ EXTRACT_CASES = *.tar.gz) \
 MODULES =		gcc4 devel/cmake x11/qt4
 MODGCC4_ARCHS = 	*
 MODGCC4_LANGS += 	c++
-BUILD_DEPENDS = 	devel/uuid,-main
+BUILD_DEPENDS = 	sysutils/e2fsprogs
 LIB_DEPENDS =		audio/openal \
 			devel/bullet \
 			devel/mygui \
