@@ -31,3 +31,4 @@ graphics/opencolorio	sent to ports 2013-07-07
 devel/p5-Object-Event	sent to ports 2013-07-14
 net/p5-Net-Twitter-Lite	sent to ports 2013-07-14
 net/p5-AnyEvent-IRC	sent to ports 2013-07-14
+net/cgo			ready for import... (bcallah)
