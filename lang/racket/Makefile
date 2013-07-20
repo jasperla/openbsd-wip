@@ -25,7 +25,8 @@ MASTER_SITES =		http://download.racket-lang.org/installers/${V}/racket/ \
 			http://racket.infogroep.be/${V}/racket/ \
 			http://pre.racket-lang.org/release/installers/ \
 			http://pre.racket-lang.org/installers/ \
-			http://download.tuxfamily.org/jod/lang/racket/
+			http://download.tuxfamily.org/jod/lang/racket/ \
+			ftp://download.tuxfamily.org/jod/lang/racket/
 EXTRACT_SUFX =		.tgz
 
 MODULES +=		converters/libiconv
