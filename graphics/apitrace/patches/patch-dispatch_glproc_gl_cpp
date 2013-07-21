@@ -1,0 +1,12 @@
+$OpenBSD$
+--- dispatch/glproc_gl.cpp.orig	Sun Jul 21 17:35:27 2013
++++ dispatch/glproc_gl.cpp	Sun Jul 21 17:35:49 2013
+@@ -192,7 +192,7 @@ void * _libgl_sym(const char *symbol)
+                 return result;
+             }
+ 
+-            libgl_filename = "libGL.so.1";
++            libgl_filename = "libGL.so";
+         }
+ 
+         /*
