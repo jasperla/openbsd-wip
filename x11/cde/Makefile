@@ -4,8 +4,8 @@ SHARED_ONLY =		Yes
 
 COMMENT =		Common Deskop Environment
 
-V =			2.2.0c
-DISTNAME =		cde-src-$V-alpha
+V =			2.2.0d
+DISTNAME =		cde-src-$V-beta
 PKGNAME =		cde-$V
 
 CDE_SHVERSION =		0.0
@@ -29,9 +29,9 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cdesktopenv/}
 
 MODULES =		lang/tcl \
 			converters/libiconv
-BUILD_DEPENDS =		lang/gawk \
-			print/xprintproto
-#RUN_DEPENDS =		???
+BUILD_DEPENDS =		print/xprintproto \
+			shells/ksh93
+RUN_DEPENDS =		shells/ksh93
 LIB_DEPENDS =		x11/openmotif
 
 LOCALSTATEDIR =		${BASELOCALSTATEDIR}/dt
@@ -64,7 +64,7 @@ XMKMF =			xmkmf -a -DBOOTSTRAPCFLAGS="\'${BOOTSTRAPCFLAGS}\'"
 NO_TEST =		Yes
 
 CFLAGS =		-g
-WRKDIST =		${WRKDIR}/${PKGNAME}
+WRKDIST =		${WRKDIR}/cde-$V
 
 ALL_TARGET =		World
 
@@ -76,9 +76,6 @@ UDBS =			C DE DEMOS ES FR HELP-C HELP-DE HELP-ES HELP-FR \
 			TT
 
 pre-configure:
-	# this actually makes our awk segfault
-	perl -pi -e "s,/usr/bin/awk,${LOCALBASE}/bin/gawk," \
-		${WRKSRC}/admin/IntegTools/dbTools/udbToAny.ksh
 	# XXX use SUBST_CMD for most of this
 	perl -pi -e "s,/usr/dt/lib,${PREFIX}/lib,g; \
 		     s,/usr/local/dt/lib,${PREFIX}/lib,g; \

@@ -5957,6 +5957,7 @@ dt/share/palettes/desc.de_DE.ISO8859-1
 dt/share/palettes/desc.es_ES.ISO8859-1
 dt/share/palettes/desc.fr_FR.ISO8859-1
 dt/share/palettes/desc.it_IT.ISO8859-1
+@sample ${SYSCONFDIR}/
 @lib lib/libDtHelp.so.${LIBDtHelp_VERSION}
 @lib lib/libDtMrm.so.${LIBDtMrm_VERSION}
 @lib lib/libDtPrint.so.${LIBDtPrint_VERSION}
@@ -5966,6 +5967,4 @@ dt/share/palettes/desc.it_IT.ISO8859-1
 @lib lib/libDtWidget.so.${LIBDtWidget_VERSION}
 @lib lib/libcsa.so.${LIBcsa_VERSION}
 @lib lib/libtt.so.${LIBtt_VERSION}
-@sample ${SYSCONFDIR}/
-@sample ${LOCALSTATEDIR}/
 @rcscript ${RCDIR}/dtlogin
