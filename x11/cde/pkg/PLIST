@@ -4380,7 +4380,9 @@ dt/bin/dtlp
 @bin dt/bin/dtprintinfo
 @bin dt/bin/dtscreen
 @bin dt/bin/dtsearchpath
+@mode 4555
 @bin dt/bin/dtsession
+@mode
 dt/bin/dtsession_res
 @bin dt/bin/dtspcd
 @bin dt/bin/dtsrclean

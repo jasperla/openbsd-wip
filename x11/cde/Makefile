@@ -90,5 +90,6 @@ do-install:
 	-ReleaseStream openbsd ${WRKSRC}/databases/CDE-${_udb}.udb | /bin/sh \
 	${WRKSRC}/admin/IntegTools/dbTools/mkProd -D ${WRKINST} -S ${WRKSRC} -
 .endfor
+	chmod u+s ${WRKINST}${CDEDIR}/bin/dtsession
 
 .include <bsd.port.mk>
