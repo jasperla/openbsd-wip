@@ -30,12 +30,13 @@ WANTLIB += boost_program_options-mt boost_system-mt boost_thread-mt
 WANTLIB += boost_wave-mt c m openal pthread swscale
 
 MASTER_SITES =		http://openmw.googlecode.com/files/
-TAR = 			${LOCALBASE}/bin/gtar
+EXTRACT_CASES = *.tar.gz) \
+	${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf - -C ${WRKDIST};;
 
 MODULES =		gcc4 devel/cmake x11/qt4
 MODGCC4_ARCHS = 	*
 MODGCC4_LANGS += 	c++
-BUILD_DEPENDS = 	archivers/gtar
+BUILD_DEPENDS = 	sysutils/e2fsprogs
 LIB_DEPENDS =		audio/openal \
 			devel/bullet \
 			devel/mygui \
@@ -52,7 +53,9 @@ CONFIGURE_ARGS += 	-DBINDIR=${LOCALBASE}/bin \
 
 NO_TEST =		Yes
 
-WRKDIST = 		${WRKDIR}
 CFLAGS += 		-pthread
+
+pre-extract:
+	@mkdir ${WRKDIST}
 
 .include <bsd.port.mk>

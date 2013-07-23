@@ -40,3 +40,4 @@ security/paperkey  sent to ports 2011-06-07
 sysutils/kyua-cli	sent to ports 2013-06-30
 sysutils/kyua-testers sent to ports 2013-06-30
 textproc/goldendict sent to ports 2013-07-13  and 2011-10-19
+net/cgo			ready for import... (bcallah)

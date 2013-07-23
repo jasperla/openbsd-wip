@@ -7,8 +7,8 @@ $OpenBSD$
  # Use bash-completion, if available
 -[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
 -    . /usr/share/bash-completion/bash_completion
-+[[ $PS1 && -f /usr/local/share/bash-completion/bash_completion ]] && \
-+    . /usr/local/share/bash-completion/bash_completion
++[[ $PS1 && -f ${PREFIX}/share/bash-completion/bash_completion ]] && \
++    . ${PREFIX}/share/bash-completion/bash_completion
  
  (if you happen to have *only* bash >= 4.1 installed, see further if not)
  

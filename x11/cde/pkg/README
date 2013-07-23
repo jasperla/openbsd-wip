@@ -1,0 +1,19 @@
+$OpenBSD$
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+To use CDE, you need to enable portmap.  Put
+
+portmap_flags=""
+
+into /etc/rc.conf.local.  To start dtlogin(1) as your default display
+manager, use:
+
+pkg_scripts='dtlogin'
+
+If you want to be able to exchange calendar data with other users, put
+the following line in your /etc/inetd.conf:
+
+rpc.cmsd/1      dgram   rpc/tcp wait    root    /usr/local/dt/bin/rpc.cmsd rpc.cmsd

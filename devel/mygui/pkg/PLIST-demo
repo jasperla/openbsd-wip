@@ -11,5 +11,3 @@
 @bin bin/Demo_RenderBox
 @bin bin/Demo_ScrollView
 @bin bin/Demo_Themes
-bin/plugins.cfg
-bin/resources.xml
