@@ -1,0 +1,12 @@
+$OpenBSD$
+--- wrappers/trace.py.orig	Sun Jul 21 17:11:00 2013
++++ wrappers/trace.py	Sun Jul 21 17:11:18 2013
+@@ -434,7 +434,7 @@ class Tracer:
+         print '#    define alloca _alloca'
+         print '#  endif'
+         print '#else'
+-        print '#  include <alloca.h> // alloca'
++        print '#  include <stdlib.h> // alloca'
+         print '#endif'
+         print
+         print '#include "trace.hpp"'

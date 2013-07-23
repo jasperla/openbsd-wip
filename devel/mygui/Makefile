@@ -26,7 +26,7 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB-main += OgreMain freetype m pthread stdc++
-WANTLIB-demo += ${WANTLIB-main} MyGUIEngine OIS boost_system-mt c
+WANTLIB-demo += ${WANTLIB-main} MyGUIEngine MyGUI.OgrePlatform OIS boost_system-mt c
 WANTLIB-tools += ${WANTLIB-demo}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=my-gui/}
@@ -48,5 +48,9 @@ NO_TEST =		Yes
 
 # Add -pthread to trigger BOOST_HAS_THREADS.
 CFLAGS +=		-pthread
+
+pre-configure:
+	@${SUBST_CMD} ${WRKSRC}/CMake/InstallResources.cmake \
+		${WRKSRC}/Common/Base/Ogre/BaseManager.cpp
 
 .include <bsd.port.mk>
