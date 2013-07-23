@@ -1,0 +1,12 @@
+$OpenBSD$
+--- tools/xml2c.orig	Tue Jul 23 23:25:07 2013
++++ tools/xml2c	Tue Jul 23 23:25:24 2013
+@@ -6,7 +6,7 @@
+ # it under the terms of the GNU General Public License as published by
+ # the Free Software Foundation; version 2 dated June, 1991.
+ 
+-exec sed \
++exec gsed \
+   -e '/<!--# *\(.*\) *#-->/ { s//\1/; b; }' \
+   -e '/<!--.*-->/ { s///g; b; }' \
+   -e 's/\\\\/\\\\/g' \
