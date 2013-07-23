@@ -31,4 +31,12 @@ graphics/opencolorio	sent to ports 2013-07-07
 devel/p5-Object-Event	sent to ports 2013-07-14
 net/p5-Net-Twitter-Lite	sent to ports 2013-07-14
 net/p5-AnyEvent-IRC	sent to ports 2013-07-14
-graphics/delaboratory	sent to ports 2013-07-13
+graphics/delaboratory	sent to ports 2013-3
+devel/libtap	ready to import
+geo/mtkbabel	sent to ports 2011-03-30
+graphics/jpegexiforient ready to import
+misc/notebook sent to ports 2013-06-29
+security/paperkey  sent to ports 2011-06-07
+sysutils/kyua-cli	sent to ports 2013-06-30
+sysutils/kyua-testers sent to ports 2013-06-30
+textproc/goldendict sent to ports 2013-07-13  and 2011-10-19
