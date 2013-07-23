@@ -5,6 +5,7 @@
 #
 # For example:
 # net/gnaughty:	ready for import, sent to ports@ (jasperla)
+
 net/py-boto:		ready for import, sent to maintainer 2012-04-23 (tamentis)
 devel/p5-Test-Most:	ready for import, depends on the update of p5-Test-Warn, did not sent to ports@(wenheping)
 math/p5-Math-GSL:	ready for import, did not sent to ports@, regress depends on devel/p5-Test-Most (wenheping)
@@ -12,7 +13,7 @@ www/p5-Dancer:		ready for import, has been sent to ports@ some time ago; it depe
 www/p5-HTTP-Server-Simple-PSGI:	ready for import, has been sent to ports@ some time ago
 cad/tkgate:		Ready for import. Sent to ports@ 2008-01-13 and still works (yason)
 games/nexuiz		sent to ports@ Dec 10 2011 (pstumpf)
-devel/py-anita		Ready for import. Sent to ports@ 2012-11-05.
+sysutils/py-anita		Ready for import. Sent to ports@ 2012-11-05.
 misc/dvtm		sent to ports@ 2012/12/04. Ready for import.
 lang/utop		ready for import. Waiting for libcharset fix in ocaml-lamda-term
 net/unison/stable	ready for import.
