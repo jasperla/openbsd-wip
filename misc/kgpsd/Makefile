@@ -4,7 +4,7 @@ COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-x11=		GUI test apps using gpsd
 COMMENT-php=		web-based gpsd monitor in php
 
-VERSION=		3.7
+VERSION=		3.9
 DISTNAME=		gpsd-${VERSION}
 PKGNAME-main=		gpsd-${VERSION}
 PKGNAME-x11=		gpsd-x11-${VERSION}
@@ -39,6 +39,7 @@ MULTI_PACKAGES = 	-main -php -x11
 BUILD_DEPENDS=		textproc/libxslt \
 			textproc/docbook \
 			textproc/docbook-xsl
+TEST_DEPENDS=		misc/gpsd,-main
 
 LIB_DEPENDS-main = 	devel/libusb1
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS}
@@ -54,6 +55,8 @@ WANTLIB-main = 		m ncurses c pthread stdc++ usb-1.0
 PKG_ARCH-php=		*
 RUN_DEPENDS-php=	lang/php/${MODPHP_VERSION},-gd
 PREFIX-php=		/var/www/
+
+SEPARATE_BUILD = 	Yes
 
 SUBST_VARS += 		VERSION
 
