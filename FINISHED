@@ -1,44 +1,44 @@
 # Please add one line per port that is ready to go into OpenBSD.
 # When a port has been committed upstream, remove it from this repository.
 #
-# Format: pkgpath	message (owner)
+# Format: pkgpath       message (owner)
 #
 # For example:
-# net/gnaughty:	ready for import, sent to ports@ (jasperla)
+# net/gnaughty: ready for import, sent to ports@ (jasperla
 
-net/py-boto:		ready for import, sent to maintainer 2012-04-23 (tamentis)
-devel/p5-Test-Most:	ready for import, depends on the update of p5-Test-Warn, did not sent to ports@(wenheping)
-math/p5-Math-GSL:	ready for import, did not sent to ports@, regress depends on devel/p5-Test-Most (wenheping)
-www/p5-Dancer:		ready for import, has been sent to ports@ some time ago; it depends on www/p5-HTTP-Server-Simple-PSGI
-www/p5-HTTP-Server-Simple-PSGI:	ready for import, has been sent to ports@ some time ago
 cad/tkgate:		Ready for import. Sent to ports@ 2008-01-13 and still works (yason)
-games/nexuiz		sent to ports@ Dec 10 2011 (pstumpf)
-sysutils/py-anita		Ready for import. Sent to ports@ 2012-11-05.
-misc/dvtm		sent to ports@ 2012/12/04. Ready for import.
-lang/utop		ready for import. Waiting for libcharset fix in ocaml-lamda-term
-net/unison/stable	ready for import.
-www/ocaml-tyxml		ready for import.
-multimedia/fuzemux	sent to ports 2013-01-13
-multimedia/video4fuze	sent to ports 2013-01-13
-net/tkabber		ready for import, sent to ports 2013-01-30
-net/bitcoin		sent to ports 2013-03-19, and again 2013-06-29
-emulators/vice		ready for import, sent to ports 2013-05-16
 devel/libextractor	sent to ports 2013-06-29
-textproc/the_silver_searcher	ready for import, sent to @ports some time ago
+devel/libtap	ready to import
+devel/p5-Object-Event	sent to ports 2013-07-14
+devel/p5-Test-Most:	ready for import, depends on the update of p5-Test-Warn, did not sent to ports@(wenheping)
+emulators/vice		ready for import, sent to ports 2013-05-16
+games/flightgear	sent to ports 2013-07-05
+games/nexuiz		sent to ports@ Dec 10 2011 (pstumpf)
+geo/mtkbabel	sent to ports 2011-03-30
+graphics/delaboratory	sent to ports 2013-3
+graphics/jpegexiforient ready to import
+graphics/opencolorio	sent to ports 2013-07-07
 graphics/openscenegraph	sent to ports 2013-07-05
 graphics/simgear	sent to ports 2013-07-05
-games/flightgear	sent to ports 2013-07-05
-graphics/opencolorio	sent to ports 2013-07-07
-devel/p5-Object-Event	sent to ports 2013-07-14
-net/p5-Net-Twitter-Lite	sent to ports 2013-07-14
-net/p5-AnyEvent-IRC	sent to ports 2013-07-14
-graphics/delaboratory	sent to ports 2013-3
-devel/libtap	ready to import
-geo/mtkbabel	sent to ports 2011-03-30
-graphics/jpegexiforient ready to import
+lang/utop		ready for import. Waiting for libcharset fix in ocaml-lamda-term
+math/p5-Math-GSL:	ready for import, did not sent to ports@, regress depends on devel/p5-Test-Most (wenheping)
+misc/dvtm		sent to ports@ 2012/12/04. Ready for import.
 misc/notebook sent to ports 2013-06-29
+multimedia/fuzemux	sent to ports 2013-01-13
+multimedia/video4fuze	sent to ports 2013-01-13
+net/bitcoin		sent to ports 2013-03-19, and again 2013-06-29
+net/cgo			ready for import... (bcallah)
+net/p5-AnyEvent-IRC	sent to ports 2013-07-14
+net/p5-Net-Twitter-Lite	sent to ports 2013-07-14
+net/py-boto:		ready for import, sent to maintainer 2012-04-23 (tamentis)
+net/tkabber		ready for import, sent to ports 2013-01-30
+net/unison/stable	ready for import.
 security/paperkey  sent to ports 2011-06-07
 sysutils/kyua-cli	sent to ports 2013-06-30
 sysutils/kyua-testers sent to ports 2013-06-30
+sysutils/py-anita		Ready for import. Sent to ports@ 2012-11-05.
 textproc/goldendict sent to ports 2013-07-13  and 2011-10-19
-net/cgo			ready for import... (bcallah)
+textproc/the_silver_searcher	ready for import, sent to @ports some time ago
+www/ocaml-tyxml		ready for import.
+www/p5-Dancer:		ready for import, has been sent to ports@ some time ago; it depends on www/p5-HTTP-Server-Simple-PSGI
+www/p5-HTTP-Server-Simple-PSGI:	ready for import, has been sent to ports@ some time ago
