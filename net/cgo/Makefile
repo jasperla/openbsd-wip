@@ -1,14 +1,14 @@
 # $OpenBSD$
 
 COMMENT =	simple terminal based gopher client
-DISTNAME =	cgo-20120621
+DISTNAME =	cgo-20130722
 CATEGORIES =	net
 
 HOMEPAGE =	https://github.com/kieselsteini/cgo/
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
-# GPLv3+
+# ISC
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c
