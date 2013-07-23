@@ -23,7 +23,6 @@ MASTER_SITES =		https://pdf2djvu.googlecode.com/files/
 # https://code.google.com/p/pdf2djvu/wiki/BuildDepends
 MODULES =		converters/libiconv \
 			devel/gettext
-BUILD_DEPENDS =		textproc/gsed
 LIB_DEPENDS =		graphics/GraphicsMagick \
 			textproc/libxslt \
 			print/poppler \
