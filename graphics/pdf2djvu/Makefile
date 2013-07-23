@@ -28,6 +28,9 @@ LIB_DEPENDS =		graphics/GraphicsMagick \
 			print/poppler \
 			graphics/djvulibre
 
+# Weird things like "API specificationu[3]d for details"
+USE_GROFF =		Yes
+
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--disable-openmp
