@@ -1,9 +1,7 @@
 * make build with external imake
-* awk segfault
 * upstream problems: dtinfo, makedepend shit
 * better install framework
 * PREFIX cleanliness (currently assumes /usr/dt)
-* dtdocbook memory fault (only with malloc.conf -> S)
 * manpage sections
 * dtmail: convert to lockspool(1) locking
 * dtksh: build with newer ksh93
