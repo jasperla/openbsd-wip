@@ -2,7 +2,7 @@
 
 COMMENT =		file system exerciser
 
-DISTNAME =		fsx-1
+DISTNAME =		fsx-0.1
 PKGNAME =		${DISTNAME}
 
 CATEGORIES =	sysutils devel
