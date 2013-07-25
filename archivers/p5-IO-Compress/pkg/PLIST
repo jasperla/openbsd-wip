@@ -1,0 +1,59 @@
+@comment $OpenBSD$
+bin/zipdetails
+${P5SITE}/Compress/
+${P5SITE}/Compress/Zlib.pm
+${P5SITE}/File/
+${P5SITE}/File/GlobMapper.pm
+${P5SITE}/IO/
+${P5SITE}/IO/Compress/
+${P5SITE}/IO/Compress/Adapter/
+${P5SITE}/IO/Compress/Adapter/Bzip2.pm
+${P5SITE}/IO/Compress/Adapter/Deflate.pm
+${P5SITE}/IO/Compress/Adapter/Identity.pm
+${P5SITE}/IO/Compress/Base/
+${P5SITE}/IO/Compress/Base.pm
+${P5SITE}/IO/Compress/Base/Common.pm
+${P5SITE}/IO/Compress/Bzip2.pm
+${P5SITE}/IO/Compress/Deflate.pm
+${P5SITE}/IO/Compress/FAQ.pod
+${P5SITE}/IO/Compress/Gzip/
+${P5SITE}/IO/Compress/Gzip.pm
+${P5SITE}/IO/Compress/Gzip/Constants.pm
+${P5SITE}/IO/Compress/RawDeflate.pm
+${P5SITE}/IO/Compress/Zip/
+${P5SITE}/IO/Compress/Zip.pm
+${P5SITE}/IO/Compress/Zip/Constants.pm
+${P5SITE}/IO/Compress/Zlib/
+${P5SITE}/IO/Compress/Zlib/Constants.pm
+${P5SITE}/IO/Compress/Zlib/Extra.pm
+${P5SITE}/IO/Uncompress/
+${P5SITE}/IO/Uncompress/Adapter/
+${P5SITE}/IO/Uncompress/Adapter/Bunzip2.pm
+${P5SITE}/IO/Uncompress/Adapter/Identity.pm
+${P5SITE}/IO/Uncompress/Adapter/Inflate.pm
+${P5SITE}/IO/Uncompress/AnyInflate.pm
+${P5SITE}/IO/Uncompress/AnyUncompress.pm
+${P5SITE}/IO/Uncompress/Base.pm
+${P5SITE}/IO/Uncompress/Bunzip2.pm
+${P5SITE}/IO/Uncompress/Gunzip.pm
+${P5SITE}/IO/Uncompress/Inflate.pm
+${P5SITE}/IO/Uncompress/RawInflate.pm
+${P5SITE}/IO/Uncompress/Unzip.pm
+@man man/man1/zipdetails.1
+@man man/man3p/Compress::Zlib.3p
+@man man/man3p/File::GlobMapper.3p
+@man man/man3p/IO::Compress::Base.3p
+@man man/man3p/IO::Compress::Bzip2.3p
+@man man/man3p/IO::Compress::Deflate.3p
+@man man/man3p/IO::Compress::FAQ.3p
+@man man/man3p/IO::Compress::Gzip.3p
+@man man/man3p/IO::Compress::RawDeflate.3p
+@man man/man3p/IO::Compress::Zip.3p
+@man man/man3p/IO::Uncompress::AnyInflate.3p
+@man man/man3p/IO::Uncompress::AnyUncompress.3p
+@man man/man3p/IO::Uncompress::Base.3p
+@man man/man3p/IO::Uncompress::Bunzip2.3p
+@man man/man3p/IO::Uncompress::Gunzip.3p
+@man man/man3p/IO::Uncompress::Inflate.3p
+@man man/man3p/IO::Uncompress::RawInflate.3p
+@man man/man3p/IO::Uncompress::Unzip.3p
