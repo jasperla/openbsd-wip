@@ -4,7 +4,7 @@ COMMENT =		reads/writes lzma files/buffers
 
 DISTNAME =		Compress-Raw-Lzma-2.061
 
-CATEGORIES =		archivers openbsd-wip/archivers
+CATEGORIES =		archivers
 
 MAINTAINER =		Todd T. Fries <todd@OpenBSD.org>
 
