@@ -1,0 +1,12 @@
+$OpenBSD$
+--- CMakeLists.txt.orig	Sat Mar  2 22:46:32 2013
++++ CMakeLists.txt	Sat Mar  2 22:46:54 2013
+@@ -161,7 +161,7 @@ endif (CMAKE_BUILD_TYPE)
+ 
+ #set default flags values for all projects
+ set(CMAKE_C_FLAGS "-pipe ${CMAKE_C_FLAGS}")
+-set(CMAKE_C_FLAGS_RELEASE "-w -Os -fomit-frame-pointer ${CMAKE_C_FLAGS_RELEASE}")
++set(CMAKE_C_FLAGS_RELEASE "-w ${CMAKE_C_FLAGS_RELEASE}")
+ set(CMAKE_C_FLAGS_DEBUG "-Wall -O0 -g -DDEBUG ${CMAKE_C_FLAGS_DEBUG}")
+ set(CMAKE_CXX_FLAGS ${CMAKE_C_FLAGS})
+ set(CMAKE_CXX_FLAGS_RELEASE ${CMAKE_C_FLAGS_RELEASE})
