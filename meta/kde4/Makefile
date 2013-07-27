@@ -26,8 +26,8 @@ MODULES =		x11/kde4
 MODKDE4_USE =
 
 MULTI_PACKAGES =	-main -extras
-MULTI_PACKAGES +=	-accessibility -admin -edu -games -graphics
-MULTI_PACKAGES +=	-multimedia -network
+MULTI_PACKAGES +=	-accessibility -edu -games -graphics -multimedia
+#MULTI_PACKAGES +=	-admin -network
 FLAVOR_EXT =
 
 RUN_DEPENDS-main = \
