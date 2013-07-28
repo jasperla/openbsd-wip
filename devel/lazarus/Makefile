@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		class libraries for FPC that emulate Delphi
 
-V =			1.0.6
+V =			1.0.10
 DISTNAME =		lazarus-${V}-0
 PKGNAME =		lazarus-${V}
 
@@ -32,7 +32,8 @@ LIB_DEPENDS =		x11/gtk+2
 
 MAKE_ENV =		PPC_CONFIG_PATH="${WRKDIR}" MKDIRPROG=/bin/mkdir \
 			ECHO=/bin/echo GINSTALL=/usr/bin/install \
-			DATE=/bin/date TARPROG=/bin/tar
+			DATE=/bin/date TARPROG=/bin/tar \
+			FPCDIR="${LOCALBASE}/lib/fpc/${FPC_V}"
 
 .if ${MACHINE_ARCH} == "amd64"
 CONFIG =                x86_64-openbsd

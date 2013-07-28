@@ -29,7 +29,6 @@ share/lazarus/components/IdeLazLogger/idelazlogger.pas
 share/lazarus/components/IdeLazLogger/idelogger.lfm
 share/lazarus/components/IdeLazLogger/idelogger.pas
 share/lazarus/components/IdeLazLogger/languages/
-share/lazarus/components/IdeLazLogger/languages/idelogger.ar.po
 share/lazarus/components/IdeLazLogger/languages/idelogger.lt.po
 share/lazarus/components/IdeLazLogger/languages/idelogger.po
 share/lazarus/components/IdeLazLogger/languages/idelogger.pt_BR.po
@@ -40,6 +39,9 @@ share/lazarus/components/Makefile.fpc
 share/lazarus/components/README.txt
 share/lazarus/components/aggpas/
 share/lazarus/components/aggpas/Agg2DDemo.dpr
+share/lazarus/components/aggpas/FreeMono.ttf
+share/lazarus/components/aggpas/FreeSans.ttf
+share/lazarus/components/aggpas/FreeSerif.ttf
 share/lazarus/components/aggpas/_debug/
 share/lazarus/components/aggpas/aa_demo.dpr
 share/lazarus/components/aggpas/aa_test.dpr
@@ -47,7 +49,6 @@ share/lazarus/components/aggpas/alpha_gradient.dpr
 share/lazarus/components/aggpas/alpha_mask.dpr
 share/lazarus/components/aggpas/alpha_mask2.dpr
 share/lazarus/components/aggpas/alpha_mask3.dpr
-share/lazarus/components/aggpas/arial.ttf
 share/lazarus/components/aggpas/bezier_div.dpr
 share/lazarus/components/aggpas/blend_color.dpr
 share/lazarus/components/aggpas/blur.dpr
@@ -376,15 +377,12 @@ share/lazarus/components/aggpas/svg/
 share/lazarus/components/aggpas/svg/agg@pas.svg
 share/lazarus/components/aggpas/svg/tiger.svg
 share/lazarus/components/aggpas/svg_test.dpr
-share/lazarus/components/aggpas/times.ttf
-share/lazarus/components/aggpas/timesi.ttf
 share/lazarus/components/aggpas/trans_curve1.dpr
 share/lazarus/components/aggpas/trans_curve1_ft.dpr
 share/lazarus/components/aggpas/trans_curve2.dpr
 share/lazarus/components/aggpas/trans_curve2_ft.dpr
 share/lazarus/components/aggpas/trans_polar.dpr
 share/lazarus/components/aggpas/truetype_test.dpr
-share/lazarus/components/aggpas/verdana.ttf
 share/lazarus/components/anchordocking/
 share/lazarus/components/anchordocking/README.txt
 share/lazarus/components/anchordocking/anchordocking.lpk
@@ -403,7 +401,6 @@ share/lazarus/components/anchordocking/design/registeranchordocking.pas
 share/lazarus/components/anchordocking/doc/
 share/lazarus/components/anchordocking/doc/anchordocking.xml
 share/lazarus/components/anchordocking/languages/
-share/lazarus/components/anchordocking/languages/anchordockstr.ar.po
 share/lazarus/components/anchordocking/languages/anchordockstr.cs.po
 share/lazarus/components/anchordocking/languages/anchordockstr.de.po
 share/lazarus/components/anchordocking/languages/anchordockstr.it.po
@@ -665,7 +662,6 @@ share/lazarus/components/codetools/ide/declarevardlg.lfm
 share/lazarus/components/codetools/ide/declarevardlg.pas
 share/lazarus/components/codetools/ide/doc/
 share/lazarus/components/codetools/ide/languages/
-share/lazarus/components/codetools/ide/languages/codystrconsts.ar.po
 share/lazarus/components/codetools/ide/languages/codystrconsts.de.po
 share/lazarus/components/codetools/ide/languages/codystrconsts.it.po
 share/lazarus/components/codetools/ide/languages/codystrconsts.lt.po
@@ -683,7 +679,6 @@ share/lazarus/components/codetools/identcompletiontool.pas
 share/lazarus/components/codetools/keywordfunclists.pas
 share/lazarus/components/codetools/languages/
 share/lazarus/components/codetools/languages/README.txt
-share/lazarus/components/codetools/languages/codetoolsstrconsts.ar.po
 share/lazarus/components/codetools/languages/codetoolsstrconsts.ca.po
 share/lazarus/components/codetools/languages/codetoolsstrconsts.cs.po
 share/lazarus/components/codetools/languages/codetoolsstrconsts.de.po
@@ -874,7 +869,6 @@ share/lazarus/components/customform/lazcustforms.pas
 share/lazarus/components/customform/lib/
 share/lazarus/components/daemon/
 share/lazarus/components/daemon/languages/
-share/lazarus/components/daemon/languages/reglazdaemon.ar.po
 share/lazarus/components/daemon/languages/reglazdaemon.it.po
 share/lazarus/components/daemon/languages/reglazdaemon.lt.po
 share/lazarus/components/daemon/languages/reglazdaemon.po
@@ -908,7 +902,6 @@ share/lazarus/components/datadict/frmselectcodegenerator.lrs
 share/lazarus/components/datadict/frmselectcodegenerator.pp
 share/lazarus/components/datadict/idedatadict.pp
 share/lazarus/components/datadict/languages/
-share/lazarus/components/datadict/languages/ldd_consts.ar.po
 share/lazarus/components/datadict/languages/ldd_consts.de.po
 share/lazarus/components/datadict/languages/ldd_consts.it.po
 share/lazarus/components/datadict/languages/ldd_consts.lt.po
@@ -962,7 +955,6 @@ share/lazarus/components/dbexport/frmselectexportformat.lfm
 share/lazarus/components/dbexport/frmselectexportformat.lrs
 share/lazarus/components/dbexport/frmselectexportformat.pp
 share/lazarus/components/dbexport/languages/
-share/lazarus/components/dbexport/languages/sdb_consts.ar.po
 share/lazarus/components/dbexport/languages/sdb_consts.de.po
 share/lazarus/components/dbexport/languages/sdb_consts.it.po
 share/lazarus/components/dbexport/languages/sdb_consts.lt.po
@@ -1006,7 +998,6 @@ share/lazarus/components/editortoolbar/images/preferences16.xpm
 share/lazarus/components/editortoolbar/jumpto.pas
 share/lazarus/components/editortoolbar/jumpto_impl.pas
 share/lazarus/components/editortoolbar/languages/
-share/lazarus/components/editortoolbar/languages/editortoolbar_str.ar.po
 share/lazarus/components/editortoolbar/languages/editortoolbar_str.de.po
 share/lazarus/components/editortoolbar/languages/editortoolbar_str.es.po
 share/lazarus/components/editortoolbar/languages/editortoolbar_str.it.po
@@ -1047,7 +1038,6 @@ share/lazarus/components/education/edupropsevents.pas
 share/lazarus/components/education/eduspeedbuttons.lfm
 share/lazarus/components/education/eduspeedbuttons.pas
 share/lazarus/components/education/languages/
-share/lazarus/components/education/languages/eduoptions.ar.po
 share/lazarus/components/education/languages/eduoptions.de.po
 share/lazarus/components/education/languages/eduoptions.it.po
 share/lazarus/components/education/languages/eduoptions.lt.po
@@ -1065,7 +1055,6 @@ share/lazarus/components/externhelp/externhelp.pas
 share/lazarus/components/externhelp/externhelpfrm.lfm
 share/lazarus/components/externhelp/externhelpfrm.pas
 share/lazarus/components/externhelp/languages/
-share/lazarus/components/externhelp/languages/externhelpfrm.ar.po
 share/lazarus/components/externhelp/languages/externhelpfrm.de.po
 share/lazarus/components/externhelp/languages/externhelpfrm.it.po
 share/lazarus/components/externhelp/languages/externhelpfrm.lt.po
@@ -1108,14 +1097,12 @@ share/lazarus/components/fpcunit/ide/fpcunitlazideintf.pas
 share/lazarus/components/fpcunit/ide/fpcunitproject1.inc
 share/lazarus/components/fpcunit/ide/fpcunitproject1.pas
 share/lazarus/components/fpcunit/ide/languages/
-share/lazarus/components/fpcunit/ide/languages/fpcunitlazideintf.ar.po
 share/lazarus/components/fpcunit/ide/languages/fpcunitlazideintf.it.po
 share/lazarus/components/fpcunit/ide/languages/fpcunitlazideintf.lt.po
 share/lazarus/components/fpcunit/ide/languages/fpcunitlazideintf.po
 share/lazarus/components/fpcunit/ide/languages/fpcunitlazideintf.pt_BR.po
 share/lazarus/components/fpcunit/ide/languages/fpcunitlazideintf.ru.po
 share/lazarus/components/fpcunit/ide/languages/fpcunitlazideintf.uk.po
-share/lazarus/components/fpcunit/ide/languages/strtestcaseopts.ar.po
 share/lazarus/components/fpcunit/ide/languages/strtestcaseopts.de.po
 share/lazarus/components/fpcunit/ide/languages/strtestcaseopts.it.po
 share/lazarus/components/fpcunit/ide/languages/strtestcaseopts.lt.po
@@ -1129,7 +1116,6 @@ share/lazarus/components/fpcunit/ide/strtestcaseopts.pas
 share/lazarus/components/fpcunit/ide/testcaseopts.lfm
 share/lazarus/components/fpcunit/ide/testcaseopts.pas
 share/lazarus/components/fpcunit/languages/
-share/lazarus/components/fpcunit/languages/guitestrunner.ar.po
 share/lazarus/components/fpcunit/languages/guitestrunner.de.po
 share/lazarus/components/fpcunit/languages/guitestrunner.it.po
 share/lazarus/components/fpcunit/languages/guitestrunner.lt.po
@@ -1154,7 +1140,6 @@ share/lazarus/components/fppkg/images/lazarus_pkg.png
 share/lazarus/components/fppkg/images/package_manager.png
 share/lazarus/components/fppkg/images/update.png
 share/lazarus/components/fppkg/languages/
-share/lazarus/components/fppkg/languages/fppkg_const.ar.po
 share/lazarus/components/fppkg/languages/fppkg_const.de.po
 share/lazarus/components/fppkg/languages/fppkg_const.lt.po
 share/lazarus/components/fppkg/languages/fppkg_const.po
@@ -1332,7 +1317,6 @@ share/lazarus/components/fpweb/images/tag_tr.png
 share/lazarus/components/fpweb/images/tag_u.png
 share/lazarus/components/fpweb/images/tag_ul.png
 share/lazarus/components/fpweb/languages/
-share/lazarus/components/fpweb/languages/fpwebstrconsts.ar.po
 share/lazarus/components/fpweb/languages/fpwebstrconsts.de.po
 share/lazarus/components/fpweb/languages/fpwebstrconsts.it.po
 share/lazarus/components/fpweb/languages/fpwebstrconsts.lt.po
@@ -1340,7 +1324,6 @@ share/lazarus/components/fpweb/languages/fpwebstrconsts.po
 share/lazarus/components/fpweb/languages/fpwebstrconsts.pt_BR.po
 share/lazarus/components/fpweb/languages/fpwebstrconsts.ru.po
 share/lazarus/components/fpweb/languages/fpwebstrconsts.uk.po
-share/lazarus/components/fpweb/languages/fpwebtoolsunit.ar.po
 share/lazarus/components/fpweb/languages/fpwebtoolsunit.de.po
 share/lazarus/components/fpweb/languages/fpwebtoolsunit.it.po
 share/lazarus/components/fpweb/languages/fpwebtoolsunit.lt.po
@@ -1348,7 +1331,6 @@ share/lazarus/components/fpweb/languages/fpwebtoolsunit.po
 share/lazarus/components/fpweb/languages/fpwebtoolsunit.pt_BR.po
 share/lazarus/components/fpweb/languages/fpwebtoolsunit.ru.po
 share/lazarus/components/fpweb/languages/fpwebtoolsunit.uk.po
-share/lazarus/components/fpweb/languages/frmrpcmoduleoptions.ar.po
 share/lazarus/components/fpweb/languages/frmrpcmoduleoptions.de.po
 share/lazarus/components/fpweb/languages/frmrpcmoduleoptions.it.po
 share/lazarus/components/fpweb/languages/frmrpcmoduleoptions.lt.po
@@ -1356,14 +1338,12 @@ share/lazarus/components/fpweb/languages/frmrpcmoduleoptions.po
 share/lazarus/components/fpweb/languages/frmrpcmoduleoptions.pt_BR.po
 share/lazarus/components/fpweb/languages/frmrpcmoduleoptions.ru.po
 share/lazarus/components/fpweb/languages/frmrpcmoduleoptions.uk.po
-share/lazarus/components/fpweb/languages/reglazwebextra.ar.po
 share/lazarus/components/fpweb/languages/reglazwebextra.it.po
 share/lazarus/components/fpweb/languages/reglazwebextra.lt.po
 share/lazarus/components/fpweb/languages/reglazwebextra.po
 share/lazarus/components/fpweb/languages/reglazwebextra.pt_BR.po
 share/lazarus/components/fpweb/languages/reglazwebextra.ru.po
 share/lazarus/components/fpweb/languages/reglazwebextra.uk.po
-share/lazarus/components/fpweb/languages/weblazideintf.ar.po
 share/lazarus/components/fpweb/languages/weblazideintf.cs.po
 share/lazarus/components/fpweb/languages/weblazideintf.it.po
 share/lazarus/components/fpweb/languages/weblazideintf.lt.po
@@ -1393,7 +1373,6 @@ share/lazarus/components/h2pas/idetextconvlistedit.lfm
 share/lazarus/components/h2pas/idetextconvlistedit.lrs
 share/lazarus/components/h2pas/idetextconvlistedit.pas
 share/lazarus/components/h2pas/languages/
-share/lazarus/components/h2pas/languages/h2passtrconsts.ar.po
 share/lazarus/components/h2pas/languages/h2passtrconsts.cs.po
 share/lazarus/components/h2pas/languages/h2passtrconsts.de.po
 share/lazarus/components/h2pas/languages/h2passtrconsts.id.po
@@ -1431,7 +1410,6 @@ share/lazarus/components/instantfpc/instantfpclaz.lpk
 share/lazarus/components/instantfpc/instantfpclaz.pas
 share/lazarus/components/instantfpc/instantfpcregisterlaz.pas
 share/lazarus/components/instantfpc/languages/
-share/lazarus/components/instantfpc/languages/instantfpcregisterlaz.ar.po
 share/lazarus/components/instantfpc/languages/instantfpcregisterlaz.lt.po
 share/lazarus/components/instantfpc/languages/instantfpcregisterlaz.po
 share/lazarus/components/instantfpc/languages/instantfpcregisterlaz.pt_BR.po
@@ -1471,7 +1449,6 @@ share/lazarus/components/jcf2/IdePlugin/lazarus/jcfideregister.pas
 share/lazarus/components/jcf2/IdePlugin/lazarus/jcfsettings.lpi
 share/lazarus/components/jcf2/IdePlugin/lazarus/jcfuiconsts.pas
 share/lazarus/components/jcf2/IdePlugin/lazarus/languages/
-share/lazarus/components/jcf2/IdePlugin/lazarus/languages/jcfideregister.ar.po
 share/lazarus/components/jcf2/IdePlugin/lazarus/languages/jcfideregister.de.po
 share/lazarus/components/jcf2/IdePlugin/lazarus/languages/jcfideregister.es.po
 share/lazarus/components/jcf2/IdePlugin/lazarus/languages/jcfideregister.fr.po
@@ -1481,7 +1458,6 @@ share/lazarus/components/jcf2/IdePlugin/lazarus/languages/jcfideregister.po
 share/lazarus/components/jcf2/IdePlugin/lazarus/languages/jcfideregister.pt_BR.po
 share/lazarus/components/jcf2/IdePlugin/lazarus/languages/jcfideregister.ru.po
 share/lazarus/components/jcf2/IdePlugin/lazarus/languages/jcfideregister.uk.po
-share/lazarus/components/jcf2/IdePlugin/lazarus/languages/jcfuiconsts.ar.po
 share/lazarus/components/jcf2/IdePlugin/lazarus/languages/jcfuiconsts.de.po
 share/lazarus/components/jcf2/IdePlugin/lazarus/languages/jcfuiconsts.fr.po
 share/lazarus/components/jcf2/IdePlugin/lazarus/languages/jcfuiconsts.it.po
@@ -1905,7 +1881,6 @@ share/lazarus/components/lazreport/samples/editor/db/disco.dbf
 share/lazarus/components/lazreport/samples/editor/db/disco.mdx
 share/lazarus/components/lazreport/samples/editor/frroundrecttester.lrf
 share/lazarus/components/lazreport/samples/editor/languages/
-share/lazarus/components/lazreport/samples/editor/languages/calleditorwithpkg.ar.po
 share/lazarus/components/lazreport/samples/editor/languages/calleditorwithpkg.de.po
 share/lazarus/components/lazreport/samples/editor/languages/calleditorwithpkg.es.po
 share/lazarus/components/lazreport/samples/editor/languages/calleditorwithpkg.fr.po
@@ -2006,7 +1981,6 @@ share/lazarus/components/lazreport/source/addons/pdfexport/tfrtnpdfexport.png
 share/lazarus/components/lazreport/source/barcode.pas
 share/lazarus/components/lazreport/source/fr_pencil.lrs
 share/lazarus/components/lazreport/source/languages/
-share/lazarus/components/lazreport/source/languages/lr_const.ar.po
 share/lazarus/components/lazreport/source/languages/lr_const.de.po
 share/lazarus/components/lazreport/source/languages/lr_const.es.po
 share/lazarus/components/lazreport/source/languages/lr_const.fr.po
@@ -2121,7 +2095,6 @@ share/lazarus/components/lazsvnpkg/images/menu_svn_diff.png
 share/lazarus/components/lazsvnpkg/images/menu_svn_log.png
 share/lazarus/components/lazsvnpkg/images/menu_svn_update.png
 share/lazarus/components/lazsvnpkg/languages/
-share/lazarus/components/lazsvnpkg/languages/svnclasses.ar.po
 share/lazarus/components/lazsvnpkg/languages/svnclasses.de.po
 share/lazarus/components/lazsvnpkg/languages/svnclasses.it.po
 share/lazarus/components/lazsvnpkg/languages/svnclasses.lt.po
@@ -2170,14 +2143,12 @@ share/lazarus/components/lazutils/easylazfreetype.pas
 share/lazarus/components/lazutils/fileutil.inc
 share/lazarus/components/lazutils/fileutil.pas
 share/lazarus/components/lazutils/languages/
-share/lazarus/components/lazutils/languages/lazutilsstrconsts.ar.po
 share/lazarus/components/lazutils/languages/lazutilsstrconsts.de.po
 share/lazarus/components/lazutils/languages/lazutilsstrconsts.lt.po
 share/lazarus/components/lazutils/languages/lazutilsstrconsts.po
 share/lazarus/components/lazutils/languages/lazutilsstrconsts.pt_BR.po
 share/lazarus/components/lazutils/languages/lazutilsstrconsts.ru.po
 share/lazarus/components/lazutils/languages/lazutilsstrconsts.uk.po
-share/lazarus/components/lazutils/languages/luresstrings.ar.po
 share/lazarus/components/lazutils/languages/luresstrings.de.po
 share/lazarus/components/lazutils/languages/luresstrings.lt.po
 share/lazarus/components/lazutils/languages/luresstrings.po
@@ -2347,7 +2318,6 @@ share/lazarus/components/leakview/Makefile.fpc
 share/lazarus/components/leakview/heaptrcview.lfm
 share/lazarus/components/leakview/heaptrcview.pas
 share/lazarus/components/leakview/languages/
-share/lazarus/components/leakview/languages/heaptrcview.ar.po
 share/lazarus/components/leakview/languages/heaptrcview.cs.po
 share/lazarus/components/leakview/languages/heaptrcview.it.po
 share/lazarus/components/leakview/languages/heaptrcview.lt.po
@@ -2355,7 +2325,6 @@ share/lazarus/components/leakview/languages/heaptrcview.po
 share/lazarus/components/leakview/languages/heaptrcview.pt_BR.po
 share/lazarus/components/leakview/languages/heaptrcview.ru.po
 share/lazarus/components/leakview/languages/heaptrcview.uk.po
-share/lazarus/components/leakview/languages/leakinfo.ar.po
 share/lazarus/components/leakview/languages/leakinfo.it.po
 share/lazarus/components/leakview/languages/leakinfo.lt.po
 share/lazarus/components/leakview/languages/leakinfo.po
@@ -2383,7 +2352,6 @@ share/lazarus/components/memds/Makefile.fpc
 share/lazarus/components/memds/frmselectdataset.lfm
 share/lazarus/components/memds/frmselectdataset.pp
 share/lazarus/components/memds/languages/
-share/lazarus/components/memds/languages/frmselectdataset.ar.po
 share/lazarus/components/memds/languages/frmselectdataset.de.po
 share/lazarus/components/memds/languages/frmselectdataset.es.po
 share/lazarus/components/memds/languages/frmselectdataset.fr.po
@@ -2404,7 +2372,6 @@ share/lazarus/components/memds/memdslaz.pas
 share/lazarus/components/memds/tmemdataset.png
 share/lazarus/components/messagecomposer/
 share/lazarus/components/messagecomposer/languages/
-share/lazarus/components/messagecomposer/languages/messagecomposer.ar.po
 share/lazarus/components/messagecomposer/languages/messagecomposer.de.po
 share/lazarus/components/messagecomposer/languages/messagecomposer.it.po
 share/lazarus/components/messagecomposer/languages/messagecomposer.lt.po
@@ -2518,7 +2485,6 @@ share/lazarus/components/pochecker/Proj/pochecker.lpi
 share/lazarus/components/pochecker/Proj/pochecker.lpr
 share/lazarus/components/pochecker/README.txt
 share/lazarus/components/pochecker/languages/
-share/lazarus/components/pochecker/languages/pocheckerconsts.ar.po
 share/lazarus/components/pochecker/languages/pocheckerconsts.de.po
 share/lazarus/components/pochecker/languages/pocheckerconsts.es.po
 share/lazarus/components/pochecker/languages/pocheckerconsts.lt.po
@@ -2560,7 +2526,6 @@ share/lazarus/components/printers/design/Makefile.compiled
 share/lazarus/components/printers/design/Makefile.fpc
 share/lazarus/components/printers/design/ideprinting.pas
 share/lazarus/components/printers/design/languages/
-share/lazarus/components/printers/design/languages/ideprinting.ar.po
 share/lazarus/components/printers/design/languages/ideprinting.de.po
 share/lazarus/components/printers/design/languages/ideprinting.fi.po
 share/lazarus/components/printers/design/languages/ideprinting.fr.po
@@ -2661,7 +2626,6 @@ share/lazarus/components/projecttemplates/frmtemplatevariables.lfm
 share/lazarus/components/projecttemplates/frmtemplatevariables.pas
 share/lazarus/components/projecttemplates/idetemplateproject.pp
 share/lazarus/components/projecttemplates/languages/
-share/lazarus/components/projecttemplates/languages/frmtemplatesettings.ar.po
 share/lazarus/components/projecttemplates/languages/frmtemplatesettings.de.po
 share/lazarus/components/projecttemplates/languages/frmtemplatesettings.it.po
 share/lazarus/components/projecttemplates/languages/frmtemplatesettings.lt.po
@@ -2669,7 +2633,6 @@ share/lazarus/components/projecttemplates/languages/frmtemplatesettings.po
 share/lazarus/components/projecttemplates/languages/frmtemplatesettings.pt_BR.po
 share/lazarus/components/projecttemplates/languages/frmtemplatesettings.ru.po
 share/lazarus/components/projecttemplates/languages/frmtemplatesettings.uk.po
-share/lazarus/components/projecttemplates/languages/frmtemplatevariables.ar.po
 share/lazarus/components/projecttemplates/languages/frmtemplatevariables.de.po
 share/lazarus/components/projecttemplates/languages/frmtemplatevariables.es.po
 share/lazarus/components/projecttemplates/languages/frmtemplatevariables.fr.po
@@ -2682,7 +2645,6 @@ share/lazarus/components/projecttemplates/languages/frmtemplatevariables.pt_BR.p
 share/lazarus/components/projecttemplates/languages/frmtemplatevariables.ru.po
 share/lazarus/components/projecttemplates/languages/frmtemplatevariables.uk.po
 share/lazarus/components/projecttemplates/languages/frmtemplatevariables.zh_CN.po
-share/lazarus/components/projecttemplates/languages/idetemplateproject.ar.po
 share/lazarus/components/projecttemplates/languages/idetemplateproject.de.po
 share/lazarus/components/projecttemplates/languages/idetemplateproject.es.po
 share/lazarus/components/projecttemplates/languages/idetemplateproject.fr.po
@@ -2695,7 +2657,6 @@ share/lazarus/components/projecttemplates/languages/idetemplateproject.pt_BR.po
 share/lazarus/components/projecttemplates/languages/idetemplateproject.ru.po
 share/lazarus/components/projecttemplates/languages/idetemplateproject.uk.po
 share/lazarus/components/projecttemplates/languages/idetemplateproject.zh_CN.po
-share/lazarus/components/projecttemplates/languages/projecttemplates.ar.po
 share/lazarus/components/projecttemplates/languages/projecttemplates.de.po
 share/lazarus/components/projecttemplates/languages/projecttemplates.es.po
 share/lazarus/components/projecttemplates/languages/projecttemplates.id.po
@@ -2832,7 +2793,6 @@ share/lazarus/components/sqldb/design/tsqlscript.png
 share/lazarus/components/sqldb/design/tsqltransaction.png
 share/lazarus/components/sqldb/design/tsybaseconnection.png
 share/lazarus/components/sqldb/languages/
-share/lazarus/components/sqldb/languages/registersqldb.ar.po
 share/lazarus/components/sqldb/languages/registersqldb.de.po
 share/lazarus/components/sqldb/languages/registersqldb.it.po
 share/lazarus/components/sqldb/languages/registersqldb.lt.po
@@ -2841,7 +2801,6 @@ share/lazarus/components/sqldb/languages/registersqldb.pt_BR.po
 share/lazarus/components/sqldb/languages/registersqldb.ru.po
 share/lazarus/components/sqldb/languages/registersqldb.uk.po
 share/lazarus/components/sqldb/languages/registersqldb.zh_CN.po
-share/lazarus/components/sqldb/languages/sqlstringspropertyeditordlg.ar.po
 share/lazarus/components/sqldb/languages/sqlstringspropertyeditordlg.de.po
 share/lazarus/components/sqldb/languages/sqlstringspropertyeditordlg.it.po
 share/lazarus/components/sqldb/languages/sqlstringspropertyeditordlg.lt.po
@@ -2921,7 +2880,6 @@ share/lazarus/components/synedit/docs/xml/synedittextbase.xml
 share/lazarus/components/synedit/docs/xml/synedittextbuffer.xml
 share/lazarus/components/synedit/languages/
 share/lazarus/components/synedit/languages/README.txt
-share/lazarus/components/synedit/languages/syndesignstringconstants.ar.po
 share/lazarus/components/synedit/languages/syndesignstringconstants.he.po
 share/lazarus/components/synedit/languages/syndesignstringconstants.it.po
 share/lazarus/components/synedit/languages/syndesignstringconstants.lt.po
@@ -2929,7 +2887,6 @@ share/lazarus/components/synedit/languages/syndesignstringconstants.po
 share/lazarus/components/synedit/languages/syndesignstringconstants.pt_BR.po
 share/lazarus/components/synedit/languages/syndesignstringconstants.ru.po
 share/lazarus/components/synedit/languages/syndesignstringconstants.uk.po
-share/lazarus/components/synedit/languages/syneditstrconst.ar.po
 share/lazarus/components/synedit/languages/syneditstrconst.ca.po
 share/lazarus/components/synedit/languages/syneditstrconst.cs.po
 share/lazarus/components/synedit/languages/syneditstrconst.de.po
@@ -2946,7 +2903,6 @@ share/lazarus/components/synedit/languages/syneditstrconst.pt_BR.po
 share/lazarus/components/synedit/languages/syneditstrconst.ru.po
 share/lazarus/components/synedit/languages/syneditstrconst.uk.po
 share/lazarus/components/synedit/languages/syneditstrconst.zh_CN.po
-share/lazarus/components/synedit/languages/synhighlighterunixshellscript.ar.po
 share/lazarus/components/synedit/languages/synhighlighterunixshellscript.de.po
 share/lazarus/components/synedit/languages/synhighlighterunixshellscript.he.po
 share/lazarus/components/synedit/languages/synhighlighterunixshellscript.id.po
@@ -2957,7 +2913,6 @@ share/lazarus/components/synedit/languages/synhighlighterunixshellscript.pt_BR.p
 share/lazarus/components/synedit/languages/synhighlighterunixshellscript.ru.po
 share/lazarus/components/synedit/languages/synhighlighterunixshellscript.uk.po
 share/lazarus/components/synedit/languages/synhighlighterunixshellscript.zh_CN.po
-share/lazarus/components/synedit/languages/synmacrorecorder.ar.po
 share/lazarus/components/synedit/languages/synmacrorecorder.ca.po
 share/lazarus/components/synedit/languages/synmacrorecorder.de.po
 share/lazarus/components/synedit/languages/synmacrorecorder.es.po
@@ -3417,7 +3372,6 @@ share/lazarus/components/synunihighlighter/CHANGES.txt
 share/lazarus/components/synunihighlighter/CREDITS.txt
 share/lazarus/components/synunihighlighter/README.txt
 share/lazarus/components/synunihighlighter/languages/
-share/lazarus/components/synunihighlighter/languages/synunidesigner.ar.po
 share/lazarus/components/synunihighlighter/languages/synunidesigner.de.po
 share/lazarus/components/synunihighlighter/languages/synunidesigner.fr.po
 share/lazarus/components/synunihighlighter/languages/synunidesigner.id.po
@@ -3429,7 +3383,6 @@ share/lazarus/components/synunihighlighter/languages/synunidesigner.pt_BR.po
 share/lazarus/components/synunihighlighter/languages/synunidesigner.ru.po
 share/lazarus/components/synunihighlighter/languages/synunidesigner.uk.po
 share/lazarus/components/synunihighlighter/languages/synunidesigner.zh_CN.po
-share/lazarus/components/synunihighlighter/languages/synunireg.ar.po
 share/lazarus/components/synunihighlighter/languages/synunireg.de.po
 share/lazarus/components/synunihighlighter/languages/synunireg.fr.po
 share/lazarus/components/synunihighlighter/languages/synunireg.id.po
@@ -3717,7 +3670,6 @@ share/lazarus/components/tdbf/Makefile.fpc
 share/lazarus/components/tdbf/dbflaz.lpk
 share/lazarus/components/tdbf/dbflaz.pas
 share/lazarus/components/tdbf/languages/
-share/lazarus/components/tdbf/languages/registerdbf.ar.po
 share/lazarus/components/tdbf/languages/registerdbf.de.po
 share/lazarus/components/tdbf/languages/registerdbf.fr.po
 share/lazarus/components/tdbf/languages/registerdbf.id.po
@@ -3737,7 +3689,6 @@ share/lazarus/components/todolist/Makefile
 share/lazarus/components/todolist/Makefile.compiled
 share/lazarus/components/todolist/Makefile.fpc
 share/lazarus/components/todolist/languages/
-share/lazarus/components/todolist/languages/todoliststrconsts.ar.po
 share/lazarus/components/todolist/languages/todoliststrconsts.cs.po
 share/lazarus/components/todolist/languages/todoliststrconsts.de.po
 share/lazarus/components/todolist/languages/todoliststrconsts.es.po
@@ -3805,7 +3756,6 @@ share/lazarus/components/turbopower_ipro/ipmsg.pas
 share/lazarus/components/turbopower_ipro/ipstrms.pas
 share/lazarus/components/turbopower_ipro/iputils.pas
 share/lazarus/components/turbopower_ipro/languages/
-share/lazarus/components/turbopower_ipro/languages/ipconst.ar.po
 share/lazarus/components/turbopower_ipro/languages/ipconst.de.po
 share/lazarus/components/turbopower_ipro/languages/ipconst.fr.po
 share/lazarus/components/turbopower_ipro/languages/ipconst.id.po
@@ -3816,14 +3766,12 @@ share/lazarus/components/turbopower_ipro/languages/ipconst.pt_BR.po
 share/lazarus/components/turbopower_ipro/languages/ipconst.ru.po
 share/lazarus/components/turbopower_ipro/languages/ipconst.uk.po
 share/lazarus/components/turbopower_ipro/languages/ipconst.zh_CN.po
-share/lazarus/components/turbopower_ipro/languages/iphtmlpv.ar.po
 share/lazarus/components/turbopower_ipro/languages/iphtmlpv.it.po
 share/lazarus/components/turbopower_ipro/languages/iphtmlpv.lt.po
 share/lazarus/components/turbopower_ipro/languages/iphtmlpv.po
 share/lazarus/components/turbopower_ipro/languages/iphtmlpv.pt_BR.po
 share/lazarus/components/turbopower_ipro/languages/iphtmlpv.ru.po
 share/lazarus/components/turbopower_ipro/languages/iphtmlpv.uk.po
-share/lazarus/components/turbopower_ipro/languages/iputils.ar.po
 share/lazarus/components/turbopower_ipro/languages/iputils.de.po
 share/lazarus/components/turbopower_ipro/languages/iputils.fr.po
 share/lazarus/components/turbopower_ipro/languages/iputils.id.po
@@ -4180,7 +4128,6 @@ share/lazarus/doceditor/images/styles_formatting24.bmp
 share/lazarus/doceditor/images/treenode_add24.bmp
 share/lazarus/doceditor/images/underline_blue24.bmp
 share/lazarus/doceditor/languages/
-share/lazarus/doceditor/languages/lazde.ar.po
 share/lazarus/doceditor/languages/lazde.de.po
 share/lazarus/doceditor/languages/lazde.es.po
 share/lazarus/doceditor/languages/lazde.it.po
@@ -4219,13 +4166,18 @@ share/lazarus/docs/booth/
 share/lazarus/docs/booth/ProdProgEntwMitOpenSourceSystems2007.odp
 share/lazarus/docs/chm/
 share/lazarus/docs/chm/fcl.chm
+share/lazarus/docs/chm/fcl.xct
 share/lazarus/docs/chm/fpdoc.chm
 share/lazarus/docs/chm/lazutils.chm
+share/lazarus/docs/chm/lazutils.xct
 share/lazarus/docs/chm/lcl.chm
+share/lazarus/docs/chm/lcl.xct
 share/lazarus/docs/chm/prog.chm
+share/lazarus/docs/chm/readmechm.txt
 share/lazarus/docs/chm/ref.chm
 share/lazarus/docs/chm/ref.kwd
 share/lazarus/docs/chm/rtl.chm
+share/lazarus/docs/chm/rtl.xct
 share/lazarus/docs/chm/toc.chm
 share/lazarus/docs/chm/user.chm
 share/lazarus/docs/contributors.utf8
@@ -4652,7 +4604,6 @@ share/lazarus/examples/codepageconverter/filefind/filefindlaz.pas
 share/lazarus/examples/codepageconverter/filefind/tfilesearch.xpm
 share/lazarus/examples/codepageconverter/koi8r
 share/lazarus/examples/codepageconverter/languages/
-share/lazarus/examples/codepageconverter/languages/lazconverter.ar.po
 share/lazarus/examples/codepageconverter/languages/lazconverter.cs.po
 share/lazarus/examples/codepageconverter/languages/lazconverter.de.po
 share/lazarus/examples/codepageconverter/languages/lazconverter.it.po
@@ -5057,7 +5008,6 @@ share/lazarus/examples/lazintfimage/mainunit1.lfm
 share/lazarus/examples/lazintfimage/mainunit1.pas
 share/lazarus/examples/lazresexplorer/
 share/lazarus/examples/lazresexplorer/languages/
-share/lazarus/examples/lazresexplorer/languages/resexplorer.ar.po
 share/lazarus/examples/lazresexplorer/languages/resexplorer.cs.po
 share/lazarus/examples/lazresexplorer/languages/resexplorer.de.po
 share/lazarus/examples/lazresexplorer/languages/resexplorer.it.po
@@ -5786,7 +5736,6 @@ share/lazarus/ideintf/images/propertygrid/issue_win32.png
 share/lazarus/ideintf/images/propertygrid/issue_wince.png
 share/lazarus/ideintf/images/propertygrid/pg_active_row.png
 share/lazarus/ideintf/languages/
-share/lazarus/ideintf/languages/objinspstrconsts.ar.po
 share/lazarus/ideintf/languages/objinspstrconsts.ca.po
 share/lazarus/ideintf/languages/objinspstrconsts.cs.po
 share/lazarus/ideintf/languages/objinspstrconsts.de.po
@@ -6566,13 +6515,11 @@ share/lazarus/install/man/man1/
 @man share/lazarus/install/man/man1/updatepofiles.1
 share/lazarus/languages/
 share/lazarus/languages/README.txt
-share/lazarus/languages/debuggerstrconst.ar.po
 share/lazarus/languages/debuggerstrconst.es.po
 share/lazarus/languages/debuggerstrconst.lt.po
 share/lazarus/languages/debuggerstrconst.po
 share/lazarus/languages/debuggerstrconst.ru.po
 share/lazarus/languages/debuggerstrconst.uk.po
-share/lazarus/languages/gdbmidebugger.ar.po
 share/lazarus/languages/gdbmidebugger.es.po
 share/lazarus/languages/gdbmidebugger.ja.po
 share/lazarus/languages/gdbmidebugger.lt.po
@@ -6580,7 +6527,6 @@ share/lazarus/languages/gdbmidebugger.po
 share/lazarus/languages/gdbmidebugger.pt_BR.po
 share/lazarus/languages/gdbmidebugger.ru.po
 share/lazarus/languages/gdbmidebugger.uk.po
-share/lazarus/languages/installerstrconsts.ar.po
 share/lazarus/languages/installerstrconsts.cs.po
 share/lazarus/languages/installerstrconsts.de.po
 share/lazarus/languages/installerstrconsts.es.po
@@ -6637,7 +6583,7 @@ share/lazarus/lazarus.app/Contents/Resources/startlazarus.app/Contents/MacOS/
 share/lazarus/lazarus.app/Contents/Resources/startlazarus.app/Contents/MacOS/startlazarus
 share/lazarus/lazarus.app/Contents/Resources/startlazarus.app/Contents/PkgInfo
 share/lazarus/lazarus.app/Contents/Resources/startlazarus.app/Contents/Resources/
-share/lazarus/lazbuild
+@bin share/lazarus/lazbuild
 share/lazarus/lcl/
 share/lazarus/lcl/LAYOUT.txt
 share/lazarus/lcl/Makefile
@@ -7513,7 +7459,6 @@ share/lazarus/lcl/interfaces/wince/winext.pas
 share/lazarus/lcl/intfgraphics.pas
 share/lazarus/lcl/languages/
 share/lazarus/lcl/languages/README.txt
-share/lazarus/lcl/languages/lclstrconsts.ar.po
 share/lazarus/lcl/languages/lclstrconsts.ca.po
 share/lazarus/lcl/languages/lclstrconsts.cs.po
 share/lazarus/lcl/languages/lclstrconsts.de.po
@@ -8067,8 +8012,8 @@ share/lazarus/packager/globallinks/lazthread-0.lpl
 share/lazarus/packager/globallinks/lazutils-1.lpl
 share/lazarus/packager/globallinks/lazwebextra-0.9.lpl
 share/lazarus/packager/globallinks/lazwiki-1.0.1.lpl
-share/lazarus/packager/globallinks/lcl-1.0.6.lpl
-share/lazarus/packager/globallinks/lclbase-1.0.6.lpl
+share/lazarus/packager/globallinks/lcl-1.0.10.lpl
+share/lazarus/packager/globallinks/lclbase-1.0.10.lpl
 share/lazarus/packager/globallinks/leakview-1.lpl
 share/lazarus/packager/globallinks/lhelpcontrolpkg-0.1.lpl
 share/lazarus/packager/globallinks/lr_add_function-1.lpl
@@ -8420,6 +8365,7 @@ share/lazarus/tools/install/patches/readme.txt
 share/lazarus/tools/install/patches/windres-2.2.2.patch
 share/lazarus/tools/install/replace_in_files.pl
 share/lazarus/tools/install/rpm/
+share/lazarus/tools/install/rpm/convert_compression.sh
 share/lazarus/tools/install/rpm/create_gtk1_links.sh
 share/lazarus/tools/install/rpm/create_lazarus_rpm.sh
 share/lazarus/tools/install/rpm/create_nonroot_rpmmacros.sh
@@ -8445,6 +8391,7 @@ share/lazarus/tools/install/win/lazarus-cross.iss
 share/lazarus/tools/install/win/lazarus.de.isl
 share/lazarus/tools/install/win/lazarus.def.isl
 share/lazarus/tools/install/win/lazarus.es.isl
+share/lazarus/tools/install/win/lazarus.fr.isl
 share/lazarus/tools/install/win/lazarus.iss
 share/lazarus/tools/install/win/lazarus.pt_BR.isl
 share/lazarus/tools/install/win/lazarus.ru.isl
@@ -8467,7 +8414,6 @@ share/lazarus/tools/jsonviewer/jsonviewer.lpi
 share/lazarus/tools/jsonviewer/jsonviewer.lpr
 share/lazarus/tools/jsonviewer/jsonviewer.res
 share/lazarus/tools/jsonviewer/languages/
-share/lazarus/tools/jsonviewer/languages/jsonviewer.ar.po
 share/lazarus/tools/jsonviewer/languages/jsonviewer.de.po
 share/lazarus/tools/jsonviewer/languages/jsonviewer.es.po
 share/lazarus/tools/jsonviewer/languages/jsonviewer.it.po
@@ -8532,7 +8478,6 @@ share/lazarus/tools/lazdatadesktop/frmselectconnectiontype.pp
 share/lazarus/tools/lazdatadesktop/frmsqlconnect.lfm
 share/lazarus/tools/lazdatadesktop/frmsqlconnect.pp
 share/lazarus/tools/lazdatadesktop/languages/
-share/lazarus/tools/lazdatadesktop/languages/lazdatadesktop.ar.po
 share/lazarus/tools/lazdatadesktop/languages/lazdatadesktop.de.po
 share/lazarus/tools/lazdatadesktop/languages/lazdatadesktop.es.po
 share/lazarus/tools/lazdatadesktop/languages/lazdatadesktop.it.po
