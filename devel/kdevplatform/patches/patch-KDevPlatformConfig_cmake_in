@@ -1,7 +1,7 @@
 $OpenBSD$
---- KDevPlatformConfig.cmake.in.orig	Fri Apr  5 09:00:46 2013
-+++ KDevPlatformConfig.cmake.in	Fri Apr  5 09:02:58 2013
-@@ -26,7 +26,7 @@ if(NOT WIN32)
+--- KDevPlatformConfig.cmake.in.orig	Thu May 30 00:51:33 2013
++++ KDevPlatformConfig.cmake.in	Wed Jul 24 00:31:40 2013
+@@ -27,7 +27,7 @@ if(NOT WIN32)
  # This is needed on non-win32 platforms, as lib-install-dir might be in a 
  # totally different prefix than include-install-dir. So instead hardcode the
  # absolute path during buildtime
