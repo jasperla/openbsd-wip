@@ -16,6 +16,8 @@ Known issues
 - Due to lack of thread-local storage support on OpenBSD, "places" and
   "futures" are disabled.
 
+- ODBC support is highly experimental.
+
 Limitations
 ===========
 
