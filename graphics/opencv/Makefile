@@ -10,7 +10,7 @@ COMMENT-docs =		OpenCV documentation and examples
 COMMENT-main =		library of programming functions for real time cv
 COMMENT-java =		Java bindings for OpenCV
 
-V =			2.4.6
+V =			2.4.6.1
 DISTNAME =		opencv-$V
 PKGNAME-main =		${PKGNAME}
 PKGNAME-docs =		opencv-docs-$V
@@ -63,8 +63,9 @@ FLAVOR ?=
 
 # "nonfree" means containing some patented algorithms, see
 # http://docs.opencv.org/modules/nonfree/doc/nonfree.html
+# Please always build and test this FLAVOR during version updates.
 # As some source modules include this functionality, we couldn't
-# just subpackage it. Other than that problem, here we have a usual
+# just subpackage "nonfree". Excluding this, here we have a usual
 # BSDL
 PERMIT_DISTFILES_FTP =		Yes
 .if ${FLAVOR:Mnonfree}
