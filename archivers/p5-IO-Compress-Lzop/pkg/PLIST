@@ -1,0 +1,9 @@
+@comment $OpenBSD$
+${P5SITE}/IO/Compress/Adapter/LZO.pm
+${P5SITE}/IO/Compress/Lzop/
+${P5SITE}/IO/Compress/Lzop.pm
+${P5SITE}/IO/Compress/Lzop/Constants.pm
+${P5SITE}/IO/Uncompress/Adapter/LZO.pm
+${P5SITE}/IO/Uncompress/UnLzop.pm
+@man man/man3p/IO::Compress::Lzop.3p
+@man man/man3p/IO::Uncompress::UnLzop.3p
