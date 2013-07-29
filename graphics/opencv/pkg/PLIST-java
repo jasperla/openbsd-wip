@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+lib/OpenCV/
+lib/OpenCV/java/
+lib/OpenCV/java/libopencv_java246.so
+lib/OpenCV/java/opencv-246.jar
