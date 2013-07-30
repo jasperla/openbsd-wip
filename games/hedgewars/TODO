@@ -1,0 +1,2 @@
+- relies on unreleased, included version of physfs (2.1.0)
+- server?  (written in Haskell, requires GHC)
