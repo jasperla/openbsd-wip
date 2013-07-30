@@ -1,0 +1,18 @@
+$OpenBSD$
+--- unsupported/test/CMakeLists.txt.orig	Tue Jul 30 16:14:37 2013
++++ unsupported/test/CMakeLists.txt	Tue Jul 30 16:15:30 2013
+@@ -83,9 +83,13 @@ else()
+     ei_add_property(EIGEN_MISSING_BACKENDS "OpenGL, ")
+ endif()
+ 
++find_package(SuperLU)
++if(SUPERLU_FOUND)
++  ei_add_test(kronecker_product)
++endif()
++
+ ei_add_test(polynomialsolver)
+ ei_add_test(polynomialutils)
+-ei_add_test(kronecker_product)
+ ei_add_test(splines)
+ ei_add_test(gmres)
+ ei_add_test(minres)
