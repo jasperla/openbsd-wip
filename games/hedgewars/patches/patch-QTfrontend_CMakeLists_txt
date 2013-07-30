@@ -1,0 +1,12 @@
+$OpenBSD$
+--- QTfrontend/CMakeLists.txt.orig	Tue Jul 30 12:50:01 2013
++++ QTfrontend/CMakeLists.txt	Tue Jul 30 12:54:42 2013
+@@ -55,7 +55,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/util)
+ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/util/platform)
+ include_directories(${SDL_INCLUDE_DIR})
+ include_directories(${SDLMIXER_INCLUDE_DIR})
+-include_directories(${PHYSFS_INCLUDE_DIR})
++include_directories(BEFORE ${PHYSFS_INCLUDE_DIR})
+ include_directories(${PHYSLAYER_INCLUDE_DIR})
+ 
+ 

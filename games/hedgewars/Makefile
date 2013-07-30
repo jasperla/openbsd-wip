@@ -1,11 +1,13 @@
 # $OpenBSD$
 
+VMEM_WARNING =		Yes
+
 SHARED_ONLY =		Yes
 
 COMMENT =		Worms-like strategy game
 
-V =			0.9.18
-DISTNAME =		hedgewars-src-${V}-3
+V =			0.9.19.3
+DISTNAME =		hedgewars-src-${V}
 PKGNAME =		hedgewars-${V}
 
 CATEGORIES =		games
@@ -34,6 +36,8 @@ LIB_DEPENDS =		devel/sdl-image \
 			devel/sdl-net \
 			devel/sdl-mixer \
 			graphics/ffmpeg
+
+CONFIGURE_ARGS +=	-DNOSERVER=ON
 
 NO_TEST =		Yes
 
