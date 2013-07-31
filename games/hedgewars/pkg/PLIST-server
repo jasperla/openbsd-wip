@@ -2,4 +2,4 @@
 @newgroup _hedgewars:722
 @newuser _hedgewars:722:722:daemon:Hedgewars server:/nonexistent:/sbin/nologin
 @bin bin/hedgewars-server
-@rcscript ${RCDIR}/hedgewars-server
+@rcscript ${RCDIR}/hedgewars_server
