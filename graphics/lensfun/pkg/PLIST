@@ -1,4 +1,6 @@
 @comment $OpenBSD: PLIST,v 1.4 2012/12/16 11:39:51 sthen Exp $
+%%SHARED%%
+!%%SHARED%%
 @bin bin/tmod
 @bin bin/trwxml
 include/auxfun/
@@ -6,8 +8,6 @@ include/auxfun/image.h
 include/auxfun/rgbpixel.h
 include/lensfun/
 include/lensfun/lensfun.h
-@lib lib/libauxfun.so.${LIBauxfun_VERSION}
-@lib lib/liblensfun.so.${LIBlensfun_VERSION}
 lib/pkgconfig/lensfun.pc
 share/doc/lensfun/
 share/doc/lensfun/addcamera.html
