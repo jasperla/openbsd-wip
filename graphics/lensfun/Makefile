@@ -1,9 +1,8 @@
 # $OpenBSD: Makefile,v 1.9 2012/12/16 11:39:51 sthen Exp $
 
-SHARED_ONLY=	Yes
-
 COMMENT=	library to adjust for photographic lens characteristics
 DISTNAME=	lensfun-0.2.7
+REVISION=	0
 
 SHARED_LIBS=	lensfun		2.0
 SHARED_LIBS+=	auxfun		0.0
@@ -25,11 +24,18 @@ BUILD_DEPENDS=		devel/doxygen>=1.7.2
 LIB_DEPENDS=		devel/glib2 \
 			graphics/png
 
-CONFIGURE_ARGS+=	-DBUILD_AUXFUN:Bool=Yes \
+CONFIGURE_ARGS=		-DBUILD_AUXFUN:Bool=Yes \
 			-DBUILD_DOC:Bool=Yes \
 			-DBUILD_FOR_SSE:Bool=Yes \
 			-DBUILD_FOR_SSE2:Bool=No \
 			-DDOCDIR:Path=share/doc/lensfun
+
+.include <bsd.port.arch.mk>
+.if ${NO_SHARED_LIBS} == "Yes"
+CONFIGURE_ARGS+=	-DBUILD_STATIC:Bool=Yes
+.else
+CONFIGURE_ARGS+=	-DBUILD_STATIC:Bool=No
+.endif
 
 TEST_PROGS =		example tfun
 
