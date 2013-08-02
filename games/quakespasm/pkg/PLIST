@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+@bin bin/quakespasm
+share/doc/quakespasm/
+share/doc/quakespasm/README.html
+share/doc/quakespasm/README.music
+share/doc/quakespasm/README.txt
