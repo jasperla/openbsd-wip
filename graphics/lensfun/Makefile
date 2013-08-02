@@ -26,9 +26,11 @@ LIB_DEPENDS=		devel/glib2 \
 
 CONFIGURE_ARGS=		-DBUILD_AUXFUN:Bool=Yes \
 			-DBUILD_DOC:Bool=Yes \
-			-DBUILD_FOR_SSE:Bool=Yes \
-			-DBUILD_FOR_SSE2:Bool=No \
 			-DDOCDIR:Path=share/doc/lensfun
+
+# SSE presence is detected at run-time, no forced optimizations
+CONFIGURE_ARGS+=	-DBUILD_FOR_SSE:Bool=Yes \
+			-DBUILD_FOR_SSE2:Bool=Yes
 
 .include <bsd.port.arch.mk>
 .if ${NO_SHARED_LIBS} == "Yes"
