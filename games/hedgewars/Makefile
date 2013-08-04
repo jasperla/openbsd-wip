@@ -46,6 +46,8 @@ LIB_DEPENDS-main =	devel/sdl-image \
 			${MODQT4_LIB_DEPENDS}
 LIB_DEPENDS-server =	converters/libiconv
 
+CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=Debug
+
 PSEUDO_FLAVORS = no_server
 FLAVOR ?=
 
