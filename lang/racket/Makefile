@@ -21,8 +21,9 @@ MAINTAINER =		Juan Francisco Cantero Hurtado <iam@juanfra.info>
 # LGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		http://download.racket-lang.org/installers/${V}/racket/ \
-			http://www.cs.utah.edu/plt/installers/${V}/racket/ \
+MASTER_SITES =		https://download.racket-lang.org/installers/${V}/racket/ \
+			https://www.cs.utah.edu/plt/installers/${V}/racket/ \
+			https://www.eecs.northwestern.edu/racket/${V}/racket/ \
 			http://mirror.csclub.uwaterloo.ca/racket/racket-installers/${V}/racket/ \
 			http://mirror.informatik.uni-tuebingen.de/mirror/racket/${V}/racket/ \
 			http://racket.infogroep.be/${V}/racket/ \
