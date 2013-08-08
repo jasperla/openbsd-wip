@@ -1,5 +1,8 @@
 # $OpenBSD$
 
+# Big endian problem?
+NOT_FOR_ARCHS =	powerpc
+
 COMMENT =	high-level, extensible programming language
 DISTNAME =	seed7_05_20130805
 PKGNAME =	seed7-20130805
