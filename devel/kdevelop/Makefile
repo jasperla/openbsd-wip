@@ -2,11 +2,10 @@
 
 CATEGORIES =	devel x11
 COMMENT =	integrated development environment for KDE 4
-V =		4.4.1
-PLATFORM_V =	1.4.1
+V =		4.5.1
+PLATFORM_V =	1.5.1
 DISTNAME =	kdevelop-$V
 HOMEPAGE =	http://www.kdevelop.org/
-REVISION =	0
 
 SHARED_LIBS =	kdev4cmakecommon	0.0
 SHARED_LIBS +=	kdev4cppduchain		0.0
@@ -47,6 +46,8 @@ MODKDE4_USE =	workspace
 USE_GMAKE =	Yes
 
 BUILD_DEPENDS =	misc/shared-mime-info
+
+RUN_DEPENDS =	${MODKDE4_DEP_DIR}/kate
 
 LIB_DEPENDS = 	devel/kdevplatform>=${PLATFORM_V} \
 		${MODKDE4_DEP_DIR}/sdk

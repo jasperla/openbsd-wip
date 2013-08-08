@@ -7,8 +7,8 @@ DISTNAME=		psutil-${MODPY_EGG_VERSION}
 PKGNAME= 		py-${DISTNAME}
 CATEGORIES=		sysutils
 
-HOMEPAGE=		http://code.google.com/p/psutil/
-MASTER_SITES=		http://psutil.googlecode.com/files/
+HOMEPAGE=		https://code.google.com/p/psutil/
+MASTER_SITES=		https://psutil.googlecode.com/files/
 
 MAINTAINER=		Bertrand Janin <b@grun.gy>
 

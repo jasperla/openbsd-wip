@@ -27,7 +27,6 @@ misc/notebook sent to ports 2013-06-29
 multimedia/fuzemux	sent to ports 2013-01-13
 multimedia/video4fuze	sent to ports 2013-01-13
 net/bitcoin		sent to ports 2013-03-19, and again 2013-06-29
-net/cgo			ready for import... (bcallah)
 net/p5-AnyEvent-IRC	sent to ports 2013-07-14
 net/p5-Net-Twitter-Lite	sent to ports 2013-07-14
 net/py-boto:		ready for import, sent to maintainer 2012-04-23 (tamentis)

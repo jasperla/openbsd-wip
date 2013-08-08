@@ -3,7 +3,7 @@
 CATEGORIES =		devel productivity
 COMMENT =		C library for Google calendar and contacts
 DISTNAME =		libgcal-0.9.6
-HOMEPAGE =		http://code.google.com/p/libgcal/
+HOMEPAGE =		https://code.google.com/p/libgcal/
 
 SHARED_LIBS =		gcal	0.0
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		curl xml2
 
-MASTER_SITES =		http://libgcal.googlecode.com/files/
+MASTER_SITES =		https://libgcal.googlecode.com/files/
 EXTRACT_SUFX =		.tar.bz2
 
 CONFIGURE_STYLE =	gnu

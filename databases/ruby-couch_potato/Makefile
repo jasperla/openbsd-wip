@@ -6,7 +6,7 @@ DISTNAME =	couch_potato-0.2.12
 REVISION =	5
 CATEGORIES =	databases
 
-HOMEPAGE =	http://github.com/langalex/couch_potato/
+HOMEPAGE =	https://github.com/langalex/couch_potato/
 
 # MIT
 PERMIT_PACKAGE_CDROM = Yes

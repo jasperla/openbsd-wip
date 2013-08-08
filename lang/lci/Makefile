@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c m
 
-MASTER_SITES =		http://github.com/justinmeza/lci/tarball/v${V}/
+MASTER_SITES =		https://github.com/justinmeza/lci/tarball/v${V}/
 DIST_SUBDIR =		lci
 
 MODULES =		devel/cmake \

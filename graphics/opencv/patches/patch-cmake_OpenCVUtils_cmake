@@ -1,6 +1,6 @@
 $OpenBSD$
---- cmake/OpenCVUtils.cmake.orig	Sun May 12 20:41:44 2013
-+++ cmake/OpenCVUtils.cmake	Sun May 12 20:45:05 2013
+--- cmake/OpenCVUtils.cmake.orig	Fri Jun 28 19:47:30 2013
++++ cmake/OpenCVUtils.cmake	Sat Jul 27 21:43:25 2013
 @@ -227,11 +227,31 @@ macro(CHECK_MODULE module_name define)
          endif()
        endforeach()
@@ -38,10 +38,3 @@ $OpenBSD$
  
        list(APPEND HIGHGUI_LIBRARIES ${${ALIAS_LIBRARIES}})
      endif()
-@@ -518,4 +538,4 @@ function(ocv_source_group group)
-   cmake_parse_arguments(OCV_SOURCE_GROUP "" "" "GLOB" ${ARGN})
-   file(GLOB srcs ${OCV_SOURCE_GROUP_GLOB})
-   source_group(${group} FILES ${srcs})
--endfunction()
-\ No newline at end of file
-+endfunction()

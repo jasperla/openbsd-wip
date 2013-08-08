@@ -5,7 +5,7 @@ COMMENT=		HTTPish API around the ruby-openid library
 DISTNAME=		rack-openid-1.3.1
 CATEGORIES=		security www
 
-HOMEPAGE=		http://github.com/josh/rack-openid
+HOMEPAGE=		https://github.com/josh/rack-openid
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
