@@ -14,7 +14,7 @@ MAINTAINER =		Kirill Bychkov <yason@linklevel.net>
 # GPLv2/LGPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		http://uniconvertor.googlecode.com/files/
+MASTER_SITES =		https://uniconvertor.googlecode.com/files/
 
 MODULES =		lang/python
 

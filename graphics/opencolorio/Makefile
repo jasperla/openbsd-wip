@@ -21,7 +21,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += GL GLEW GLU ICE OpenImageIO SM X11 Xext Xi Xmu c glut
 WANTLIB += lcms2 m pthread stdc++ tinyxml yaml-cpp
 
-MASTER_SITES =		http://github.com/imageworks/OpenColorIO/tarball/v$V/
+MASTER_SITES =		https://github.com/imageworks/OpenColorIO/tarball/v$V/
 
 MODULES =		devel/cmake \
 			lang/python

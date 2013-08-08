@@ -1,0 +1,18 @@
+@comment $OpenBSD$
+${P5SITE}/IO/
+${P5SITE}/IO/Compress/
+${P5SITE}/IO/Compress/Adapter/
+${P5SITE}/IO/Compress/Adapter/Lzma.pm
+${P5SITE}/IO/Compress/Adapter/Xz.pm
+${P5SITE}/IO/Compress/Lzma.pm
+${P5SITE}/IO/Compress/Xz.pm
+${P5SITE}/IO/Uncompress/
+${P5SITE}/IO/Uncompress/Adapter/
+${P5SITE}/IO/Uncompress/Adapter/UnLzma.pm
+${P5SITE}/IO/Uncompress/Adapter/UnXz.pm
+${P5SITE}/IO/Uncompress/UnLzma.pm
+${P5SITE}/IO/Uncompress/UnXz.pm
+@man man/man3p/IO::Compress::Lzma.3p
+@man man/man3p/IO::Compress::Xz.3p
+@man man/man3p/IO::Uncompress::UnLzma.3p
+@man man/man3p/IO::Uncompress::UnXz.3p

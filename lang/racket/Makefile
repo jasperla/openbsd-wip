@@ -4,9 +4,12 @@ SHARED_ONLY =		Yes
 # Racket only supports i386 and amd64 on OpenBSD
 ONLY_FOR_ARCHS =	i386 amd64
 
+# XXX Change COMMENT and DESCR for racket 6. The core will not include
+# the IDE, gui libs, teaching collects, etc. And probably "descendant of
+# scheme" isn't the best description for racket.
 COMMENT =		descendant of scheme with IDE and teaching resources
 
-V =			5.3.5.900pre201307202348
+V =			5.3.5.900pre201307280220
 PKGNAME =		racket-$V
 # The project uses racket-* for stable and plt-* for development releases
 DISTNAME =		racket-$V-src-unix

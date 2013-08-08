@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 SHARED_ONLY =		Yes
-VERSION =		4.0.6
+VERSION =		4.0.7
 DISTNAME =		samba-${VERSION}
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
@@ -18,16 +18,15 @@ PKGNAME-tdb =		tdb-${TDB_V}
 PKGNAME-tevent =	tevent-${TEVENT_V}
 PKGNAME-util =		samba-util-${TALLOC_V}
 
-LDB_V =			1.1.15
+LDB_V =			1.1.16
 #NTDB_V =		0.9
 TALLOC_V =		2.0.7
 TDB_V =			1.2.11
 TEVENT_V =		0.9.18
 
-REVISION-ldb =		4
-REVISION-tdb =		4
-REVISION-tevent =	4
-REVISION-util =		0
+REVISION-tdb =		5
+REVISION-tevent =	5
+REVISION-util =		1
 
 SHARED_LIBS =		asn1-samba4		0.0 \
 			com_err-samba4		0.0 \
@@ -51,7 +50,7 @@ SHARED_LIBS =		asn1-samba4		0.0 \
 			ndr-krb5pac		0.0 \
 			ndr-nbt			0.0 \
 			ndr-standard		0.0 \
-			netapi			0.0 \
+			netapi			2.0 \
 			nss_wins		0.0 \
 			pdb			0.0 \
 			pyldb-util		0.0 \
@@ -63,17 +62,17 @@ SHARED_LIBS =		asn1-samba4		0.0 \
 			samba-policy		0.0 \
 			samba-util		0.0 \
 			samdb			0.0 \
-			smbclient		0.0 \
+			smbclient		4.0 \
 			smbclient-raw		0.0 \
 			smbconf			0.0 \
 			smbldap			0.0 \
-			smbsharemodes		0.0 \
+			smbsharemodes		2.0 \
 			talloc			1.0 \
 			tdb			4.0 \
 			tevent			0.0 \
 			tevent-util		0.0 \
 			torture			0.0 \
-			wbclient		0.0 \
+			wbclient		2.0 \
 			wind-samba4		0.0 \
 			winbind_krb5_locator	0.0 \
 			nss_wrapper		0.0 \
@@ -193,8 +192,11 @@ post-patch:
 	find ${WRKSRC} -type f | xargs ${MODPY_BIN_ADJ}
 	${SUBST_CMD} ${WRKSRC}/lib/testtools/testtools/tests/test_compat.py
 
+SAMBA_DECONFLICT ?=	Yes
+.if ${SAMBA_DECONFLICT:L} != "no"
 pre-configure: replace-conflicting-symbols
 	@true
+.endif
 
 # Avoid bogus -L/usr/local/lib at the start of linker options
 post-configure:

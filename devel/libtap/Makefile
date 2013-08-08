@@ -12,7 +12,7 @@ MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 PERMIT_PACKAGE_CDROM =	Yes 
 
 WANTLIB += pthread
-MASTER_SITES =		http://people.freebsd.org/~nik/public_distfiles/
+MASTER_SITES =		https://people.freebsd.org/~nik/public_distfiles/
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu	

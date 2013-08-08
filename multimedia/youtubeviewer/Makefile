@@ -6,7 +6,7 @@ VERSION =	3.0.0
 DISTNAME =	youtube-viewer-${VERSION}
 CATEGORIES =	multimedia
 
-HOMEPAGE =	http://trizen.googlecode.com/
+HOMEPAGE =	https://trizen.googlecode.com/
 
 MAINTAINER =	Dennis Herrmann <dhn@FreeBSD.org>
 
