@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 
 WANTLIB =	${MODPY_WANTLIB}
 
-MASTER_SITES =	http://github.com/couchapp/couchapp/downloads/
+MASTER_SITES =	https://github.com/couchapp/couchapp/downloads/
 
 MODULES =	lang/python
 

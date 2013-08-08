@@ -7,14 +7,14 @@ DISTNAME =		video4fuze-${MODPY_EGG_VERSION}
 
 CATEGORIES =		multimedia
 
-HOMEPAGE =		http://code.google.com/p/video4fuze/
+HOMEPAGE =		https://code.google.com/p/video4fuze/
 
 MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		http://video4fuze.googlecode.com/files/
+MASTER_SITES =		https://video4fuze.googlecode.com/files/
 
 MODULES =		lang/python
 BUILD_DEPENDS =		devel/desktop-file-utils

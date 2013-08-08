@@ -29,7 +29,7 @@ WANTLIB += avutil boost_date_time-mt boost_filesystem-mt
 WANTLIB += boost_program_options-mt boost_system-mt boost_thread-mt
 WANTLIB += boost_wave-mt c m openal pthread swscale
 
-MASTER_SITES =		http://openmw.googlecode.com/files/
+MASTER_SITES =		https://openmw.googlecode.com/files/
 EXTRACT_CASES = *.tar.gz) \
 	${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf - -C ${WRKDIST};;
 

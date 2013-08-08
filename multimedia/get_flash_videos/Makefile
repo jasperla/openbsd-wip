@@ -9,7 +9,7 @@ PKGNAME=		get_flash_videos-1.24.20130320
 #WRKDIST=		${WRKDIR}/monsieurvideo-get-flash-videos-c52cdf6
 CATEGORIES=		multimedia
 
-HOMEPAGE=		http://get-flash-videos.googlecode.com/
+HOMEPAGE=		https://get-flash-videos.googlecode.com/
 
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
