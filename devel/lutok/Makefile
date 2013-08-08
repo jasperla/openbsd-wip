@@ -22,7 +22,7 @@ MODLUA_SA=      Yes
 LIB_DEPENDS=    devel/pcre \
                 ${MODLUA_LIB_DEPENDS}
 
-MASTER_SITES            = http://lutok.googlecode.com/files/
+MASTER_SITES =		https://lutok.googlecode.com/files/
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS = LUA_CFLAGS="-I/usr/local/include/lua-5.1" LUA_LIBS="-L/usr/local/lib  -llua5.1 -lm"

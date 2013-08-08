@@ -7,7 +7,7 @@ PKGNAME =		violetland-0.4.3
 
 CATEGORIES =		games x11
 
-HOMEPAGE =		http://code.google.com/p/violetland/
+HOMEPAGE =		https://code.google.com/p/violetland/
 
 MAINTAINER =		Kirill Bychkov <yason@linklevel.net>
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += GL GLU ICE SDL SDL_image SDL_mixer SDL_ttf SM X11 Xext
 WANTLIB += boost_filesystem-mt boost_system-mt c intl m pthread stdc++
 
-MASTER_SITES =		http://violetland.googlecode.com/files/
+MASTER_SITES =		https://violetland.googlecode.com/files/
 EXTRACT_SUFX =		.zip
 
 MODULES =		devel/cmake

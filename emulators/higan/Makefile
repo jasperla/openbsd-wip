@@ -10,7 +10,7 @@ DISTNAME=	${N}_v${V:S/.//}-source
 EXTRACT_SUFX=	.tar.xz
 
 HOMEPAGE=	http://byuu.org/higan/
-MASTER_SITES=	http://higan.googlecode.com/files/
+MASTER_SITES=	https://higan.googlecode.com/files/
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 MODULES=	gcc4

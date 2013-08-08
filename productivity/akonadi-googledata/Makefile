@@ -13,7 +13,7 @@ WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += akonadi-kde kabc kcal kdeui kio kresources
 WANTLIB += gcal
 
-MASTER_SITES =	http://libgcal.googlecode.com/files/
+MASTER_SITES =	https://libgcal.googlecode.com/files/
 EXTRACT_SUFX =	.tar.bz2
 
 # LGPLv2.1+
