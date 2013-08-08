@@ -1,0 +1,2 @@
+Test on another BE arch and see if it fails there.
+On macppc: interpreter builds but is broken. Cannot build the s7c compiler.
