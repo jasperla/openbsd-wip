@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =		reads/writes lzma files/buffers
+COMMENT =		reads/writes zlib files/buffers
 
 DISTNAME =		Compress-Raw-Zlib-2.061
 
