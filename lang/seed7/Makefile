@@ -35,6 +35,7 @@ WRKSRC =	${WRKDIST}/src
 
 post-patch:
 	perl -pi -e "s,-O2,${CFLAGS},g" ${WRKSRC}/makefile
+	perl -pi -e "s,/usr,${LOCALBASE},g" ${WRKDIST}/doc/s7{,c}.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/bin/s7{,c} ${PREFIX}/bin
