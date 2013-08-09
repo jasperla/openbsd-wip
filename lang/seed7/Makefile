@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 # Big endian problem?
-NOT_FOR_ARCHS =	powerpc
+NOT_FOR_ARCHS =	powerpc sparc64
 
 COMMENT =	high-level, extensible programming language
 DISTNAME =	seed7_05_20130805
@@ -22,18 +22,19 @@ WANTLIB += X11 c m ncurses
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=seed7/}
 
 USE_GMAKE =	Yes
-MAKE_FLAGS =	CC="${CC}"
+MAKE_FLAGS =	CC="${CC}" LDFLAGS="-Wl,--gc-sections -L${X11BASE}/lib"
 MAKE_ENV +=	S7_LIB_DIR=${LOCALBASE}/lib/seed7/bin \
 		SEED7_LIBRARY=${LOCALBASE}/lib/seed7/lib
 MAKE_FILE =	makefile
 ALL_TARGET =	depend s7 s7c
+
+CFLAGS +=	-I${X11BASE}/include
 
 WRKDIST =	${WRKDIR}/seed7
 WRKSRC =	${WRKDIST}/src
 
 post-patch:
 	perl -pi -e "s,-O2,${CFLAGS},g" ${WRKSRC}/makefile
-	${SUBST_CMD} ${WRKSRC}/makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/bin/s7{,c} ${PREFIX}/bin
