@@ -1,24 +1,6 @@
 $OpenBSD$
---- src/makefile.orig	Thu Aug  8 02:07:25 2013
-+++ src/makefile	Thu Aug  8 02:08:09 2013
-@@ -12,7 +12,7 @@
- # CFLAGS = -O2 -fomit-frame-pointer -Wall -Wextra -Wswitch-default -Wcast-qual -Waggregate-return -Wwrite-strings -Winline -Wconversion -Wshadow -Wpointer-arith -Wmissing-noreturn -Wno-multichar
- # CFLAGS = -O2 -g -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith -ftrapv
- # CFLAGS = -O2 -g -x c++ -Wall -Winline -Wconversion -Wshadow -Wpointer-arith
--CFLAGS = -O2 -g -ffunction-sections -fdata-sections -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith
-+CFLAGS = -O2 -g -ffunction-sections -fdata-sections -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith -I${X11BASE}/include
- # CFLAGS = -O2 -g -ffunction-sections -fdata-sections -Wall -Winline -Wconversion -Wshadow -Wpointer-arith
- # CFLAGS = -O2 -g -std=c99 -D_POSIX_SOURCE -ffunction-sections -fdata-sections -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith
- # CFLAGS = -O2 -g -Wall -Winline -Wconversion -Wshadow -Wpointer-arith
-@@ -20,7 +20,7 @@ CFLAGS = -O2 -g -ffunction-sections -fdata-sections -W
- # CFLAGS = -O2 -g -pg -Wall -Wstrict-prototypes -Winline -Wconversion -Wshadow -Wpointer-arith
- # CFLAGS = -O2 -fomit-frame-pointer -funroll-loops -Wall
- # CFLAGS = -O2 -funroll-loops -Wall -pg
--LDFLAGS = -Wl,--gc-sections
-+LDFLAGS = -Wl,--gc-sections -L${X11BASE}/lib
- # LDFLAGS = -pg
- # LDFLAGS = -pg -lc_p
- SYSTEM_LIBS = -lm
+--- src/makefile.orig	Thu Aug  8 13:18:09 2013
++++ src/makefile	Thu Aug  8 13:18:39 2013
 @@ -128,7 +128,7 @@ s7c: ../bin/s7c ../prg/s7c
  	ln -s ../bin/s7 ../prg
  

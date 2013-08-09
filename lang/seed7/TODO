@@ -1,2 +1,4 @@
 Test on another BE arch and see if it fails there.
 On macppc: interpreter builds but is broken. Cannot build the s7c compiler.
+Fails on sparc64 too. Interpreter builds but is broken and cannot compile the s7c compiler.
+Anyone got an sgi machine on which to test?
