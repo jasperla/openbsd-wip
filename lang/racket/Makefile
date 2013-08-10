@@ -9,7 +9,7 @@ ONLY_FOR_ARCHS =	i386 amd64
 # scheme" isn't the best description for racket.
 COMMENT =		descendant of scheme with IDE and teaching resources
 
-V =			5.3.5.900pre201307280220
+V =			5.3.6
 PKGNAME =		racket-$V
 # The project uses racket-* for stable and plt-* for development releases
 DISTNAME =		racket-$V-src-unix
