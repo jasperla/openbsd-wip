@@ -1,7 +1,7 @@
 $OpenBSD$
---- source/vdrift/cardynamics_simulate.cpp.orig	Mon Jul 15 03:07:00 2013
-+++ source/vdrift/cardynamics_simulate.cpp	Mon Jul 15 03:07:35 2013
-@@ -100,8 +100,8 @@ MATHVECTOR<Dbl,3> CARDYNAMICS::UpdateSuspension(int i,
+--- source/vdrift/cardynamics_simulate.cpp.orig	Tue Aug  6 05:57:30 2013
++++ source/vdrift/cardynamics_simulate.cpp	Fri Aug  9 17:33:35 2013
+@@ -104,8 +104,8 @@ MATHVECTOR<Dbl,3> CARDYNAMICS::UpdateSuspension(int i,
  	                    suspension[WHEEL_POSITION(otheri)].GetDisplacement() );
  
  	//suspension[WHEEL_POSITION(i)].SetAntiRollInfo(antirollforce);
@@ -12,7 +12,7 @@ $OpenBSD$
  
  	//find the vector direction to apply the suspension force
  #ifdef SUSPENSION_FORCE_DIRECTION
-@@ -221,7 +221,7 @@ void CARDYNAMICS::ApplyWheelTorque(Dbl dt, Dbl drive_t
+@@ -225,7 +225,7 @@ void CARDYNAMICS::ApplyWheelTorque(Dbl dt, Dbl drive_t
  	//set wheel torque due to tire rolling resistance
  	Dbl rolling_resistance = wheel.GetRollingResistance(wheel.GetAngularVelocity(), wheel_contact[i].GetSurface().rollingResist);
  	Dbl tire_rolling_resistance_torque = - rolling_resistance * wheel.GetRadius();  //- tire_friction_torque;
@@ -21,7 +21,7 @@ $OpenBSD$
  	
  		//LogO(fToStr(wheel_torque, 4,9)+" r "+fToStr(tire_rolling_resistance_torque, 4,9));
  	wheel.SetTorque(wheel_torque*0.5 + tire_rolling_resistance_torque);
-@@ -283,7 +283,7 @@ void CARDYNAMICS::ApplyClutchTorque(Dbl engine_drag, D
+@@ -287,7 +287,7 @@ void CARDYNAMICS::ApplyClutchTorque(Dbl engine_drag, D
  void CARDYNAMICS::CalculateDriveTorque(Dbl * wheel_drive_torque, Dbl clutch_torque)
  {
  	Dbl driveshaft_torque = transmission.GetTorque( clutch_torque );
@@ -30,7 +30,7 @@ $OpenBSD$
  
  	for (int i = 0; i < WHEEL_POSITION_SIZE; ++i)
  		wheel_drive_torque[i] = 0;
-@@ -311,7 +311,7 @@ void CARDYNAMICS::CalculateDriveTorque(Dbl * wheel_dri
+@@ -315,7 +315,7 @@ void CARDYNAMICS::CalculateDriveTorque(Dbl * wheel_dri
  		wheel_drive_torque[REAR_RIGHT] = diff_rear.GetSide2Torque();
  	}
  
@@ -39,7 +39,7 @@ $OpenBSD$
  }
  
  Dbl CARDYNAMICS::CalculateDriveshaftSpeed()
-@@ -321,7 +321,7 @@ Dbl CARDYNAMICS::CalculateDriveshaftSpeed()
+@@ -325,7 +325,7 @@ Dbl CARDYNAMICS::CalculateDriveshaftSpeed()
  	Dbl whFR = wheel[FRONT_RIGHT].GetAngularVelocity();
  	Dbl whRL = wheel[REAR_LEFT].GetAngularVelocity();
  	Dbl whRR = wheel[REAR_RIGHT].GetAngularVelocity();
@@ -48,7 +48,7 @@ $OpenBSD$
  
  	if (drive == RWD)
  		driveshaft_speed = diff_rear.CalculateDriveshaftSpeed( whRL, whRR );
-@@ -341,7 +341,7 @@ Dbl CARDYNAMICS::CalculateDriveshaftRPM() const
+@@ -345,7 +345,7 @@ Dbl CARDYNAMICS::CalculateDriveshaftRPM() const
  	Dbl whFR = wheel[FRONT_RIGHT].GetAngularVelocity();
  	Dbl whRL = wheel[REAR_LEFT].GetAngularVelocity();
  	Dbl whRR = wheel[REAR_RIGHT].GetAngularVelocity();
@@ -57,7 +57,7 @@ $OpenBSD$
  	if (drive == RWD)
  		driveshaft_speed = diff_rear.GetDriveshaftSpeed( whRL, whRR );
  	else if (drive == FWD)
-@@ -361,7 +361,7 @@ Dbl CARDYNAMICS::GetSpeedMPS() const
+@@ -365,7 +365,7 @@ Dbl CARDYNAMICS::GetSpeedMPS() const
  	Dbl whFR = wheel[FRONT_RIGHT].GetAngularVelocity();
  	Dbl whRL = wheel[REAR_LEFT].GetAngularVelocity();
  	Dbl whRR = wheel[REAR_RIGHT].GetAngularVelocity();

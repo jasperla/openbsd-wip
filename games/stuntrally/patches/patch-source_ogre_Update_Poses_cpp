@@ -1,7 +1,7 @@
 $OpenBSD$
---- source/ogre/Update_Poses.cpp.orig	Mon Jul 15 01:55:43 2013
-+++ source/ogre/Update_Poses.cpp	Mon Jul 15 01:56:35 2013
-@@ -139,7 +139,7 @@ void App::newPoses(float time)  // time only for camer
+--- source/ogre/Update_Poses.cpp.orig	Tue Aug  6 05:57:30 2013
++++ source/ogre/Update_Poses.cpp	Fri Aug  9 17:33:35 2013
+@@ -171,7 +171,7 @@ void App::newPoses(float time)  // time only for camer
  		q1.FromAngleAxis(-rad,Vector3(axi.z,-axi.x,-axi.y));  pi.rot = q1 * qFixCar;
  		Vector3 vcx,vcz;  q1.ToAxes(vcx,pi.carY,vcz);
  
