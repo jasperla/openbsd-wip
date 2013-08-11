@@ -2,7 +2,7 @@
 
 COMMENT =	adds support for https to p5-libwww
 
-DISTNAME =	LWP-Protocol-https-6.03
+DISTNAME =	LWP-Protocol-https-6.04
 CATEGORIES =	www net security
 CPAN_AUTHOR =	GAAS
 
