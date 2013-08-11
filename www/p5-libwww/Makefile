@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2013/03/11 11:44:47 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2013/08/10 08:44:08 rpe Exp $
 
 COMMENT=	library for WWW access in Perl
 
@@ -10,11 +10,9 @@ CATEGORIES=	www
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=LWP/}
-
 RUN_DEPENDS=	devel/p5-File-Listing>=6.0 \
 		textproc/p5-Encode-Locale \
-		www/p5-URI>1.10 \
+		net/p5-Net-HTTP>=6.0 \
 		www/p5-HTML-Parser>=3.33 \
 		www/p5-HTML-Tagset \
 		www/p5-HTTP-Cookies>=6.0 \
@@ -23,10 +21,11 @@ RUN_DEPENDS=	devel/p5-File-Listing>=6.0 \
 		www/p5-HTTP-Negotiate>=6.0 \
 		www/p5-HTTP-GHTTP \
 		www/p5-LWP-MediaTypes>=6.0 \
-		net/p5-Net-HTTP>=6.0 \
-		www/p5-URI>=1.10 \
+		www/p5-URI>1.10 \
 		www/p5-WWW-RobotRules>=6.0
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
+
+CPAN_AUTHOR=	GAAS
 
 .include <bsd.port.mk>
