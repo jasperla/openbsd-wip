@@ -1,3 +1,0 @@
-This module was mainly written for AnyEvent::XMPP, AnyEvent::IRC,
-AnyEvent::HTTPD and BK to provide a consistent API for registering
-and emitting events.
