@@ -145,7 +145,7 @@ SEPARATE_BUILD =	flavored
 
 CONFIG_ADJ_CMD =	perl -pi
 .for _l _v in ${SHARED_LIBS}
-CONFIG_ADJ_CMD +=	-e 's,lib${_l}.so,lib${_l}.so.${_v},g;'
+CONFIG_ADJ_CMD +=	-e 's,lib${_l}.so([^.]),lib${_l}.so.${_v}$$1,g;'
 .endfor
 
 DOCDIR =		${PREFIX}/share/doc/OpenCV
