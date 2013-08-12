@@ -154,10 +154,6 @@ post-extract:
 	cp ${FILESDIR}/how_to_scan_images.cpp \
 		${WRKSRC}/samples/cpp/tutorial_code/core/how_to_scan_images/how_to_scan_images.cpp
 
-post-configure:
-	find ${WRKSRC} -type f -iname "*.make" -exec \
-		perl -pi -e 's/(CXX_DEFINES =).*/$1/' {} \;
-
 post-install:
 	${CONFIG_ADJ_CMD} ${PREFIX}/share/OpenCV/OpenCVConfig.cmake
 .if ${BUILD_PACKAGES:M-docs}
