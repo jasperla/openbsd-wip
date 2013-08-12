@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/05/03 06:35:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/21 08:45:19 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 ONLY_FOR_ARCHS-java =	i386 amd64
