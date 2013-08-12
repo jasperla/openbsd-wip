@@ -1,7 +1,7 @@
 # $OpenBSD$
 
-# Big endian problem?
-NOT_FOR_ARCHS =	powerpc sparc64
+# Fails for me on macppc, sgi, and sparc64.
+NOT_FOR_ARCHS =	${BE_ARCHS}
 
 COMMENT =	high-level, extensible programming language
 DISTNAME =	seed7_05_20130805
