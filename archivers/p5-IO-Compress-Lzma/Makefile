@@ -15,5 +15,6 @@ MODULES =		cpan
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		archivers/p5-Compress-Raw-Lzma
 RUN_DEPENDS +=		archivers/p5-IO-Compress # until base is updated to 2.061
+TEST_DEPENDS =		archivers/p7zip
 
 .include <bsd.port.mk>
