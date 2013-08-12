@@ -14,6 +14,7 @@ devel/p5-Test-Most:	ready for import, depends on the update of p5-Test-Warn, did
 emulators/vice		ready for import, sent to ports 2013-05-16
 games/flightgear	sent to ports 2013-07-05
 games/nexuiz		sent to ports@ Dec 10 2011 (pstumpf)
+games/supertux		sent to ports@ Aug 12 2013
 geo/mtkbabel	sent to ports 2011-03-30
 graphics/delaboratory	sent to ports 2013-07-13
 graphics/jpegexiforient ready to import
