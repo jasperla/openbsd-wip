@@ -1,12 +1,12 @@
 $OpenBSD$
---- configure.orig	Mon Aug 12 21:20:11 2013
-+++ configure	Mon Aug 12 21:20:19 2013
-@@ -21,7 +21,7 @@ if test -n "$LDFLAGS"; then
+--- configure.orig	Sun Jun 25 16:30:30 2006
++++ configure	Mon Aug 12 21:51:48 2013
+@@ -21,8 +21,6 @@ if test -n "$LDFLAGS"; then
      echo "Adding $ARCHLIBS to ARCHLIBS"
  fi
  
 -prefix=/usr/local
-+#prefix=/usr/local
- 
+-
  for opt in "$@" ; do
  	case $opt in
+ 	--prefix=*)
