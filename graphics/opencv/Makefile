@@ -150,8 +150,8 @@ CONFIG_ADJ_CMD +=	-e 's,lib${_l}.so([^.]),lib${_l}.so.${_v}$$1,g;'
 
 DOCDIR =		${PREFIX}/share/doc/OpenCV
 
-post-extract:
-	cp ${FILESDIR}/how_to_scan_images.cpp \
+post-patch:
+	perl -pi -e 's@^.*(#\s*include)@$$1@' \
 		${WRKSRC}/samples/cpp/tutorial_code/core/how_to_scan_images/how_to_scan_images.cpp
 
 post-install:
