@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/Object/
-${P5SITE}/Object/Event.pm
-@man man/man3p/Object::Event.3p
