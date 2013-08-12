@@ -19,6 +19,7 @@ graphics/jpegexiforient ready to import
 graphics/opencolorio	sent to ports 2013-07-07
 graphics/openscenegraph	sent to ports 2013-07-05
 graphics/simgear	sent to ports 2013-07-05
+lang/seed7		ready for import. (bcallah)
 lang/utop		ready for import. Waiting for libcharset fix in ocaml-lamda-term
 math/p5-Math-GSL:	ready for import, did not sent to ports@, regress depends on devel/p5-Test-Most (wenheping)
 misc/dvtm		sent to ports@ 2012/12/04. Ready for import.
