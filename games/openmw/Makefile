@@ -6,7 +6,7 @@ VMEM_WARNING =		Yes
 
 COMMENT =		open source implementation of TES III: Morrowind
 
-V =			0.24.0
+V =			0.25.0
 DISTNAME =		openmw-$V-source
 PKGNAME =		openmw-$V
 
@@ -24,7 +24,7 @@ PERMIT_DISTFILE_FTP =	Yes
 
 WANTLIB += BulletCollision BulletDynamics BulletSoftBody LinearMath
 WANTLIB += MyGUI.OgrePlatform MyGUIEngine OIS OgreMain OgreTerrain
-WANTLIB += QtGui QtNetwork QtXml QtXmlPatterns Xt avcodec avformat
+WANTLIB += QtGui QtNetwork QtXml QtXmlPatterns SDL2 Xt avcodec avformat
 WANTLIB += avutil boost_date_time-mt boost_filesystem-mt
 WANTLIB += boost_program_options-mt boost_system-mt boost_thread-mt
 WANTLIB += boost_wave-mt c m openal pthread swscale
@@ -41,6 +41,7 @@ LIB_DEPENDS =		audio/openal \
 			devel/bullet \
 			devel/mygui \
 			devel/ois \
+			devel/sdl2 \
 			graphics/ffmpeg \
 			x11/ogre,-main>=1.8.1
 RUN_DEPENDS  = 		devel/desktop-file-utils
