@@ -52,7 +52,6 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-glib \
 			--disable-gnome \
 			--with-gtk-version=3.0.0
-#CONFIGURE_SCRIPT =	${LOCALBASE}/bin/bash configure
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 				  -I${LOCALBASE}/include/poppler" \
