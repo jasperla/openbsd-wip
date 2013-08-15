@@ -1,2 +1,0 @@
-- seems to crash in angelscript function call goop when run on
-amd64 when starting a local game or setting video options

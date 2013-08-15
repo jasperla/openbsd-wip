@@ -12,22 +12,24 @@ MAINTAINER=		Jonathan Gray <jsg@openbsd.org>
 MULTI_PACKAGES =        -main -server -data
 
 N =			warsow
-V =			1.02
+V =			1.03
+V_DATA =		1.02
 PKGNAME-main =		${N}-${V}
 PKGNAME-server =	${N}-server-${V}
-PKGNAME-data =		${N}-data-${V}
+PKGNAME-data =		${N}-data-${V_DATA}
 
 PKG_ARCH-data =		i386,amd64
 
 DISTNAME =		${N}_${V}
-DISTFILES =		${DISTNAME}_sdk.tar.gz ${DISTNAME}.tar.gz
+DISTNAME_DATA =		${N}_${V_DATA}
+DISTFILES =		${DISTNAME}_sdk.tar.gz ${DISTNAME_DATA}.tar.gz
 
 HOMEPAGE =		http://www.warsow.net/
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=warsow.mirror/} \
-			http://www.zcdn.org/dl/${V}/ \
-			http://hangy.warsow.net/
+			http://www.warsow.net:1337/~warsow/${V}/ \
+			http://www.warsow.net:1337/~warsow/${V_DATA}
 
-# GPLv2 (-main and -server) and proprietary licence (-data)
+# GPLv2 (-main and -server) and Warsow Content License (-data, proprietary licence)
 PERMIT_PACKAGE_CDROM =	No
 PERMIT_PACKAGE_FTP =	No
 PERMIT_DISTFILES_FTP =	No
@@ -63,9 +65,10 @@ WANTLIB-data =
 
 LIB_PATH =		${PREFIX}/lib/warsow
 DATA_PATH =		${PREFIX}/share/warsow
-WRKDIST_ENGINE =	${WRKDIR}/${N}_${V}_sdk
+
+WRKDIST_ENGINE =	${WRKDIR}/${DISTNAME}_sdk
 WRKSRC_ENGINE =		${WRKDIST_ENGINE}/source
-WRKDIST_DATA =		${WRKDIR}/${N}_${V}
+WRKDIST_DATA =		${WRKDIR}/${DISTNAME_DATA}
 WRKDIST =		${WRKDIST_ENGINE}
 WRKSRC =		${WRKSRC_ENGINE}
 
