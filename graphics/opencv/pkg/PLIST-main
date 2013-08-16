@@ -1,5 +1,4 @@
-@comment $OpenBSD$
-%%nonfree%%
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2011/06/24 09:30:22 jasper Exp $
 @bin bin/opencv_createsamples
 @bin bin/opencv_haartraining
 @bin bin/opencv_performance
@@ -133,6 +132,11 @@ include/opencv2/legacy/legacy.hpp
 include/opencv2/legacy/streams.hpp
 include/opencv2/ml/
 include/opencv2/ml/ml.hpp
+include/opencv2/nonfree/
+include/opencv2/nonfree/features2d.hpp
+include/opencv2/nonfree/gpu.hpp
+include/opencv2/nonfree/nonfree.hpp
+include/opencv2/nonfree/ocl.hpp
 include/opencv2/objdetect/
 include/opencv2/objdetect/objdetect.hpp
 include/opencv2/opencv.hpp
@@ -190,6 +194,7 @@ include/opencv2/videostab/videostab.hpp
 @lib lib/libopencv_imgproc.so.${LIBopencv_imgproc_VERSION}
 @lib lib/libopencv_legacy.so.${LIBopencv_legacy_VERSION}
 @lib lib/libopencv_ml.so.${LIBopencv_ml_VERSION}
+@lib lib/libopencv_nonfree.so.${LIBopencv_nonfree_VERSION}
 @lib lib/libopencv_objdetect.so.${LIBopencv_objdetect_VERSION}
 @lib lib/libopencv_photo.so.${LIBopencv_photo_VERSION}
 @lib lib/libopencv_stitching.so.${LIBopencv_stitching_VERSION}

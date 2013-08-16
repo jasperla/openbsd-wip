@@ -58,24 +58,16 @@ WANTLIB-java += opencv_photo opencv_video
 
 MULTI_PACKAGES =	-main -docs -java
 PSEUDO_FLAVORS =	no_docs no_java
-FLAVORS =		nonfree
 FLAVOR ?=
 
-# "nonfree" means containing some patented algorithms, see
+# "patents" means containing some patented algorithms, see
 # http://docs.opencv.org/modules/nonfree/doc/nonfree.html
 # Please always build and test this FLAVOR during version updates.
 # As some source modules include this functionality, we couldn't
 # just subpackage "nonfree". Excluding this, here we have a usual
 # BSDL
-PERMIT_DISTFILES_FTP =		Yes
-.if ${FLAVOR:Mnonfree}
-PERMIT_PACKAGE_FTP =		No
-PERMIT_PACKAGE_CDROM =		No
-PERMIT_PACKAGE_FTP-docs =	Yes
-PERMIT_PACKAGE_CDROM-docs =	Yes
-.else
-PERMIT_PACKAGE_CDROM =		Yes
-.endif
+PERMIT_PACKAGE_FTP =		Yes
+PERMIT_PACKAGE_CDROM =		patents
 
 .include <bsd.port.arch.mk>
 
@@ -136,12 +128,6 @@ CONFIGURE_ARGS +=	-DBUILD_DOCS:Bool=Off \
 			-DBUILD_EXAMPLES:Bool=Off \
 			-DINSTALL_PYTHON_EXAMPLES:Bool=Off
 .endif
-
-.if !${FLAVOR:Mnonfree}
-CONFIGURE_ARGS +=	-DBUILD_opencv_nonfree:Bool=Off
-.endif
-
-SEPARATE_BUILD =	flavored
 
 CONFIG_ADJ_CMD =	perl -pi
 .for _l _v in ${SHARED_LIBS}
