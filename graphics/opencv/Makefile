@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/05/03 06:35:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2013/03/21 08:45:19 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 ONLY_FOR_ARCHS-java =	i386 amd64
@@ -58,24 +58,16 @@ WANTLIB-java += opencv_photo opencv_video
 
 MULTI_PACKAGES =	-main -docs -java
 PSEUDO_FLAVORS =	no_docs no_java
-FLAVORS =		nonfree
 FLAVOR ?=
 
-# "nonfree" means containing some patented algorithms, see
+# "patents" means containing some patented algorithms, see
 # http://docs.opencv.org/modules/nonfree/doc/nonfree.html
 # Please always build and test this FLAVOR during version updates.
 # As some source modules include this functionality, we couldn't
 # just subpackage "nonfree". Excluding this, here we have a usual
 # BSDL
-PERMIT_DISTFILES_FTP =		Yes
-.if ${FLAVOR:Mnonfree}
-PERMIT_PACKAGE_FTP =		No
-PERMIT_PACKAGE_CDROM =		No
-PERMIT_PACKAGE_FTP-docs =	Yes
-PERMIT_PACKAGE_CDROM-docs =	Yes
-.else
-PERMIT_PACKAGE_CDROM =		Yes
-.endif
+PERMIT_PACKAGE_FTP =		Yes
+PERMIT_PACKAGE_CDROM =		patents
 
 .include <bsd.port.arch.mk>
 
@@ -137,26 +129,16 @@ CONFIGURE_ARGS +=	-DBUILD_DOCS:Bool=Off \
 			-DINSTALL_PYTHON_EXAMPLES:Bool=Off
 .endif
 
-.if !${FLAVOR:Mnonfree}
-CONFIGURE_ARGS +=	-DBUILD_opencv_nonfree:Bool=Off
-.endif
-
-SEPARATE_BUILD =	flavored
-
 CONFIG_ADJ_CMD =	perl -pi
 .for _l _v in ${SHARED_LIBS}
-CONFIG_ADJ_CMD +=	-e 's,lib${_l}.so,lib${_l}.so.${_v},g;'
+CONFIG_ADJ_CMD +=	-e 's,lib${_l}.so([^.]),lib${_l}.so.${_v}$$1,g;'
 .endfor
 
 DOCDIR =		${PREFIX}/share/doc/OpenCV
 
-post-extract:
-	cp ${FILESDIR}/how_to_scan_images.cpp \
+post-patch:
+	perl -pi -e 's@^.*(#\s*include)@$$1@' \
 		${WRKSRC}/samples/cpp/tutorial_code/core/how_to_scan_images/how_to_scan_images.cpp
-
-post-configure:
-	find ${WRKSRC} -type f -iname "*.make" -exec \
-		perl -pi -e 's/(CXX_DEFINES =).*/$1/' {} \;
 
 post-install:
 	${CONFIG_ADJ_CMD} ${PREFIX}/share/OpenCV/OpenCVConfig.cmake
