@@ -8,21 +8,21 @@ CATEGORIES =		games x11
 
 HOMEPAGE =		http://www.globulation2.org/
 
-MAINTAINER =		Kirill Bychkov <yason@linklevel.net>
+MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL GLU SDL SDL_image SDL_net SDL_ttf boost_thread-mt
-WANTLIB += c fribidi m ogg portaudio pthread speex stdc++ vorbis
-WANTLIB += vorbisfile z
+WANTLIB += c boost_system-mt fribidi m ogg portaudio pthread
+WANTLIB += speex stdc++ vorbis vorbisfile z
 
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=/glob2/0.9.4/}
 
 MODULES =		devel/scons
 
 MODSCONS_ENV += 	CXXFLAGS="-D_POSIX_THREADS -I${LOCALBASE}/include \
-				-I${X11BASE}/include" \
+				-I${X11BASE}/include -pthread" \
 			LINKFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib \
 				-pthread -logg -lvorbis -lstdc++" \
 			BINDIR="${PREFIX}/bin" \
