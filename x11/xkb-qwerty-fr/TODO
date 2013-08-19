@@ -1,2 +1,0 @@
-xkb-qwerty-fr is now installed under "/usr/local/share/X11/xkb/symbols/",
-but setxkbmap(1) doesn't like it.
