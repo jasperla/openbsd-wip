@@ -1,0 +1,12 @@
+$OpenBSD$
+--- indra/llcommon/llthread.h.orig	Thu Feb  8 11:46:37 2007
++++ indra/llcommon/llthread.h	Thu Feb  8 11:46:22 2007
+@@ -31,7 +31,7 @@
+ #include "llapr.h"
+ #include "llapp.h"
+ 
+-#include "apr-1/apr_thread_cond.h"
++#include "apr-1-mt/apr_thread_cond.h"
+ 
+ class LLThread;
+ class LLMutex;

@@ -1,0 +1,85 @@
+$OpenBSD$
+--- indra/newview/llcontroldef.cpp.orig	Wed Jan 31 15:59:55 2007
++++ indra/newview/llcontroldef.cpp	Fri Feb  9 17:59:17 2007
+@@ -45,8 +45,8 @@
+ void declare_settings()
+ {
+ 	// Somewhat under 1024 by 768
+-	const S32 WINDOW_WIDTH = 800;
+-	const S32 WINDOW_HEIGHT = 600;
++	const S32 WINDOW_WIDTH = 320;
++	const S32 WINDOW_HEIGHT = 200;
+ 
+ 	//------------------------------------------------------------------------
+ 	// Color constants
+@@ -347,8 +347,8 @@ void declare_settings()
+ 	gSavedSettings.declareS32("RenderName", 2, "Controls display of names above avatars (0 = never, 1 = fade, 2 = always)");
+ 	gSavedSettings.declareF32("RenderNameShowTime", 10.f, "Fade avatar names after specified time (seconds)");		// seconds
+ 	gSavedSettings.declareF32("RenderNameFadeDuration", 1.f, "Time interval over which to fade avatar names (seconds)");	// seconds
+-	gSavedSettings.declareBOOL("RenderNameHideSelf", FALSE, "Don't display own name above avatar");
+-	gSavedSettings.declareBOOL("RenderHideGroupTitle", FALSE, "Don't show group titles in name labels");
++	gSavedSettings.declareBOOL("RenderNameHideSelf", TRUE, "Don't display own name above avatar");
++	gSavedSettings.declareBOOL("RenderHideGroupTitle", TRUE, "Don't show group titles in name labels");
+ 
+ 	// Camera widget controls
+ 	const S32 CAMERA_LEFT = MOVE_BTN_FLY_RIGHT + 10;
+@@ -645,35 +645,35 @@ void declare_settings()
+ 	gSavedSettings.declareBOOL("AvatarBacklight", TRUE, "Add rim lighting to avatar rendering to approximate shininess of skin");
+ 
+ 	// Startup stuff
+-	gSavedSettings.declareF32("PrecachingDelay", 6.f, "Delay when logging in to load world before showing it (seconds)");	// seconds
++	gSavedSettings.declareF32("PrecachingDelay", 2.f, "Delay when logging in to load world before showing it (seconds)");	// seconds
+ 
+ 	// Rendering stuff
+ 	gSavedSettings.declareF32("RenderGamma",				0.f, "Sets gamma exponent for renderer");
+-	gSavedSettings.declareF32( "RenderNightBrightness",		1.0f, "Brightness multiplier for moon during nighttime" );
++	gSavedSettings.declareF32( "RenderNightBrightness",		2.0f, "Brightness multiplier for moon during nighttime" );
+ 	gSavedSettings.declareBOOL("RenderWater",				TRUE, "Display water" );
+ 	gSavedSettings.declareF32( "RenderFarClip",				256.f, "Distance of far clip plane from camera (meters)" );
+ 	gSavedSettings.declareF32( "RenderFogRatio",			2.0f, "Distance from camera where fog reaches maximum density (fraction or multiple of far clip distance)");
+ 	gSavedSettings.declareBOOL("RenderAnisotropic",			FALSE, "Render textures using anisotropic filtering" );
+ 	gSavedSettings.declareBOOL("RenderLightGlows",			FALSE, "Render glow sprites on top of light sources" );
+ 	gSavedSettings.declareBOOL("ShowXUINames",			    FALSE, "Display XUI Names as Tooltips" );
+-	gSavedSettings.declareS32("RenderLightingDetail",		1, "Amount of detail for lighting objects/avatars/terrain (0=sun/moon only, 1=enable local lights)" );
+-	gSavedSettings.declareS32("RenderTerrainDetail",		2, "Detail applied to terrain texturing (0 = none, 1 or 2 = full)" );
+-	gSavedSettings.declareF32( "RenderVolumeLODFactor",		1.f, "Controls level of detail of primitives (multiplier for current screen area when calculated level of detail)" );
+-	gSavedSettings.declareF32( "RenderFlexTimeFactor",		1.f, "Controls level of detail of flexible objects (multiplier for amount of time spent processing flex objects)" );
++	gSavedSettings.declareS32("RenderLightingDetail",		0, "Amount of detail for lighting objects/avatars/terrain (0=sun/moon only, 1=enable local lights)" );
++	gSavedSettings.declareS32("RenderTerrainDetail",		0, "Detail applied to terrain texturing (0 = none, 1 or 2 = full)" );
++	gSavedSettings.declareF32( "RenderVolumeLODFactor",		0.3f, "Controls level of detail of primitives (multiplier for current screen area when calculated level of detail)" );
++	gSavedSettings.declareF32( "RenderFlexTimeFactor",		0.1f, "Controls level of detail of flexible objects (multiplier for amount of time spent processing flex objects)" );
+ 	gSavedSettings.declareF32( "RenderTreeLODFactor",		0.5f, "Controls level of detail of vegetatopm (multiplier for current screen area when calculated level of detail)" );
+ 	gSavedSettings.declareF32( "RenderAvatarLODFactor",		0.5f, "Controls level of detail of avatars (multiplier for current screen area when calculated level of detail)" );
+ 	gSavedSettings.declareF32( "RenderBumpmapMinDistanceSquared", 100.f, "Maximum distance at which to render bumpmapped primitives (distance in meters, squared)" );
+ 	gSavedSettings.declareS32( "RenderMaxPartCount",		4096, "Maximum number of particles to display on screen");
+ 	gSavedSettings.declareBOOL("RenderUseAGP",				TRUE, "Used AGP for fast transfer of data to graphics card" );
+-	gSavedSettings.declareBOOL("RenderUseVBO",				FALSE, "Use GL Vertex Buffer Objects" );
++	gSavedSettings.declareBOOL("RenderUseVBO",				TRUE, "Use GL Vertex Buffer Objects" );
+ 	//gSavedSettings.declareBOOL("RenderUseTriStrips",		FALSE, "[NOT USED]");
+ 	//gSavedSettings.declareBOOL("RenderCullBySize",			FALSE, "[NOT USED]" );
+-	gSavedSettings.declareF32("RenderTerrainScale",			12.f, "Terrain detail texture scale");
++	gSavedSettings.declareF32("RenderTerrainScale",			1.f, "Terrain detail texture scale");
+ 	gSavedSettings.declareBOOL("VertexShaderEnable",		FALSE, "Enable/disable all GLSL shaders (debug)");
+ 	gSavedSettings.declareBOOL("RenderRippleWater",			FALSE, "Display more realistic water, with refraction (requires pixel shader support on your video card)");
+-	gSavedSettings.declareBOOL("RenderObjectBump",			TRUE, "Show bumpmapping on primitives");
+-	gSavedSettings.declareS32("RenderAvatarMode",			1, "Controls how avatars are rendered (0 = normal, 1 = bump mapped, 2 = bump mapped and wavy cloth)");
+-	gSavedSettings.declareBOOL("RenderAvatarVP",			TRUE, "Use vertex programs to perform hardware skinning of avatar");
++	gSavedSettings.declareBOOL("RenderObjectBump",			FALSE, "Show bumpmapping on primitives");
++	gSavedSettings.declareS32("RenderAvatarMode",			0, "Controls how avatars are rendered (0 = normal, 1 = bump mapped, 2 = bump mapped and wavy cloth)");
++	gSavedSettings.declareBOOL("RenderAvatarVP",			FALSE, "Use vertex programs to perform hardware skinning of avatar");
+ 	gSavedSettings.declareS32("RenderAvatarMaxVisible",		35, "Maximum number of avatars to display at any one time");
+ 	//gSavedSettings.declareBOOL("RenderForceGetTexImage",	FALSE, "[NOT USED]");
+ 	gSavedSettings.declareBOOL("RenderFastUI",				FALSE, "[NOT USED]");
+@@ -707,9 +707,9 @@ void declare_settings()
+ 	gSavedSettings.declareString("StatsFile", "fs.txt", "Filename for stats logging output");
+ 
+ 	// Image pipeline stuff
+-	gSavedSettings.declareS32("GraphicsCardMemorySetting", -1, "Amount of memory on your video card (-1 = autodetect, 0 = 16MB, 1 = 32MB, 2 = 64MB, 3 = 128MB, 4 = 256MB, 5 = 512MB)"); // default to auto-detect
+-	//gSavedSettings.declareS32("ImageRadioTexMem", 0, "Texture memory allocation (0 = <512 megabytes system RAM, 1 = >512 megabytes system RAM)");
+-	//gSavedSettings.declareS32("ImageRadioVidCardMem", 1, "Video card onboard memory (0 = 16MB, 1 = 32MB, 2 = 64MB, 3 = 128MB, 4 = 256MB, 5 = 512MB)");
++	gSavedSettings.declareS32("GraphicsCardMemorySetting", 4, "Amount of memory on your video card (-1 = autodetect, 0 = 16MB, 1 = 32MB, 2 = 64MB, 3 = 128MB, 4 = 256MB, 5 = 512MB)"); // default to auto-detect
++	//gSavedSettings.declareS32("ImageRadioTexMem", 1, "Texture memory allocation (0 = <512 megabytes system RAM, 1 = >512 megabytes system RAM)");
++	//gSavedSettings.declareS32("ImageRadioVidCardMem", 3, "Video card onboard memory (0 = 16MB, 1 = 32MB, 2 = 64MB, 3 = 128MB, 4 = 256MB, 5 = 512MB)");
+ 	//gSavedSettings.declareU32("LastRAMDetected", 0, "[DO NOT MODIFY] Detected system memory (bytes)");  // used to detect RAM changes
+ 
+ 	// Camera control

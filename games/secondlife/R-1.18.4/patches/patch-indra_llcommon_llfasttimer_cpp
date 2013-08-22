@@ -1,0 +1,31 @@
+$OpenBSD$
+--- indra/llcommon/llfasttimer.cpp.orig	Wed Nov  7 20:18:06 2007
++++ indra/llcommon/llfasttimer.cpp	Mon Nov 12 08:36:11 2007
+@@ -41,6 +41,9 @@
+ #include <sched.h>
+ #elif LL_DARWIN
+ #include <sys/time.h>
++#elif defined(__OpenBSD__)
++#include <time.h>
++#include <sys/time.h>
+ #else 
+ #error "architecture not supported"
+ #endif
+@@ -91,7 +94,7 @@ U64 get_cpu_clock_count()
+ #endif // LL_WINDOWS
+ 
+ 
+-#if (LL_LINUX || LL_SOLARIS) && (defined(__i386__) || defined(__amd64__))
++#if (LL_LINUX || LL_SOLARIS || defined(__OpenBSD__)) && (defined(__i386__) || defined(__amd64__))
+ U64 get_cpu_clock_count()
+ {
+ 	U64 x;
+@@ -115,7 +118,7 @@ U64 get_cpu_clock_count()
+ //////////////////////////////////////////////////////////////////////////////
+ 
+ //static
+-#if LL_LINUX || LL_DARWIN || LL_SOLARIS
++#if LL_LINUX || LL_DARWIN || LL_SOLARIS || defined(__OpenBSD__)
+ // Both Linux and Mac use gettimeofday for accurate time
+ U64 LLFastTimer::countsPerSecond()
+ {

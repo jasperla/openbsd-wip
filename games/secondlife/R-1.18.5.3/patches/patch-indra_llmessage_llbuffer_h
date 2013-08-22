@@ -1,0 +1,18 @@
+$OpenBSD$
+--- indra/llmessage/llbuffer.h.orig	Wed Nov  7 20:18:06 2007
++++ indra/llmessage/llbuffer.h	Mon Nov 12 02:11:33 2007
+@@ -34,6 +34,14 @@
+ #ifndef LL_LLBUFFER_H
+ #define LL_LLBUFFER_H
+ 
++#if defined(__OpenBSD__)
++extern "C" {
++#include <sys/types.h>
++#include <stdint.h>
++#include <inttypes.h>
++}
++#endif
++
+ /**
+  * Declaration of classes used for minimizing calls to new[],
+  * memcpy(), and delete[]. Typically, you would create an LLBufferArray,

@@ -1,0 +1,20 @@
+$OpenBSD$
+--- indra/llcommon/llsdserialize_xml.cpp.orig	Wed Jan 31 15:59:46 2007
++++ indra/llcommon/llsdserialize_xml.cpp	Thu Feb  8 12:08:34 2007
+@@ -31,11 +31,15 @@
+ #include <iostream>
+ #include <deque>
+ 
+-#include "apr-1/apr_base64.h"
++#include "apr-1-mt/apr_base64.h"
+ 
+ extern "C"
+ {
++#if defined(__OpenBSD__)
++#include <expat.h>
++#else
+ #include "expat/expat.h"
++#endif
+ }
+ 
+ /**

@@ -1,0 +1,21 @@
+$OpenBSD$
+--- indra/llmath/llrand.h.orig	Thu Jan 25 19:06:04 2007
++++ indra/llmath/llrand.h	Sun Jan 28 21:17:24 2007
+@@ -31,6 +31,17 @@
+ #include "boost/random/lagged_fibonacci.hpp"
+ #include "boost/random/mersenne_twister.hpp"
+ 
++#if defined(__OpenBSD__)
++#include <sys/types.h>
++#define U64L(x) (x##ULL)
++#define S32     int32_t
++#define U32    u_int32_t
++#define S64     int64_t
++#define U64    u_int64_t
++#define F32     float
++#endif
++
++
+ /**
+  * Use the boost random number generators if you want a stateful
+  * random numbers. If you want more random numbers, use the

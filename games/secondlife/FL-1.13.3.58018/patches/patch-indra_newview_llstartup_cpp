@@ -1,0 +1,38 @@
+$OpenBSD$
+--- indra/newview/llstartup.cpp.orig	Fri Feb  9 23:49:33 2007
++++ indra/newview/llstartup.cpp	Sun Feb 11 20:59:12 2007
+@@ -1264,7 +1264,7 @@ BOOL idle_startup()
+ 			}
+ 			else
+ 			{
+-				emsg << "Login failed.\n";
++				emsg << "Login failed\n";
+ 				reason_response = gUserAuthp->getResponse("reason");
+ 				message_response = gUserAuthp->getResponse("message");
+ 
+@@ -2819,6 +2819,16 @@ void update_app(BOOL mandatory, const st
+ 								(void *)mandatoryp);
+ #endif
+ 	}
++#elif defined(__OpenBSD__)
++	if (mandatory) {
++		gViewerWindow->alertXml("DownloadMacMandatory", args,
++								update_dialog_callback,
++								(void *)mandatoryp);
++	} else {
++		gViewerWindow->alertXml("DownloadMac", args,
++								update_dialog_callback,
++								(void *)mandatoryp);
++	}
+ #else
+ 	if (mandatory)
+ 	{
+@@ -2967,7 +2977,7 @@ void update_dialog_callback(S32 option, 
+ 	// Run the auto-updater.
+ 	system(update_exe_path.c_str());		/* Flawfinder: ignore */
+ 	
+-#elif LL_LINUX
++#elif LL_LINUX || defined(__OpenBSD__)
+ 	OSMessageBox("Automatic updating is not yet implemented for Linux.\n"
+ 		"Please download the latest version from www.secondlife.com.",
+ 		NULL, OSMB_OK);

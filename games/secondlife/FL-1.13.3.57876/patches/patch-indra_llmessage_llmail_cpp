@@ -1,0 +1,14 @@
+$OpenBSD$
+--- indra/llmessage/llmail.cpp.orig	Thu Feb  8 12:14:49 2007
++++ indra/llmessage/llmail.cpp	Thu Feb  8 12:15:00 2007
+@@ -40,8 +40,8 @@
+ 
+ #include "llmail.h"
+ 
+-#include "apr-1/apr_pools.h"
+-#include "apr-1/apr_network_io.h"
++#include "apr-1-mt/apr_pools.h"
++#include "apr-1-mt/apr_network_io.h"
+ 
+ #include "llapr.h"
+ #include "llerror.h"

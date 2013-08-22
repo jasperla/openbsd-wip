@@ -1,0 +1,12 @@
+$OpenBSD$
+--- indra/newview/llfloateranimpreview.cpp.orig	Wed Nov  7 20:18:12 2007
++++ indra/newview/llfloateranimpreview.cpp	Mon Nov 12 02:11:36 2007
+@@ -198,7 +198,7 @@ BOOL LLFloaterAnimPreview::postBuild()
+ 	childSetCommitCallback("ease_out_time", onCommitEaseOut, this);
+ 	childSetValidate("ease_out_time", validateEaseOut);
+ 
+-	if (!stricmp(strrchr(mFilename.c_str(), '.'), ".bvh"))
++	if (!strcmp(strrchr(mFilename.c_str(), '.'), ".bvh"))
+ 	{
+ 		// loading a bvh file
+ 

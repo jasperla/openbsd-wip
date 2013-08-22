@@ -1,0 +1,12 @@
+$OpenBSD$
+--- indra/newview/llfilepicker.cpp.orig	Mon Dec  3 02:17:39 2007
++++ indra/newview/llfilepicker.cpp	Mon Dec  3 02:17:26 2007
+@@ -955,7 +955,7 @@ void LLFilePicker::reset()
+ 	mFileVector.clear();
+ }
+ 
+-#elif LL_LINUX
++#elif LL_LINUX || defined(__OpenBSD__)
+ 
+ # if LL_GTK
+ // This caches the previously-accessed path for a given context of the file

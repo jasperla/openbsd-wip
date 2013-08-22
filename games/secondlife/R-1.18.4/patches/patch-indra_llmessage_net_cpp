@@ -1,0 +1,12 @@
+$OpenBSD$
+--- indra/llmessage/net.cpp.orig	Sun Dec  2 20:30:42 2007
++++ indra/llmessage/net.cpp	Sun Dec  2 20:31:10 2007
+@@ -29,6 +29,8 @@
+  * $/LicenseInfo$
+  */
+ 
++#include <unistd.h>
++
+ #include "linden_common.h"
+ 
+ #include "net.h"

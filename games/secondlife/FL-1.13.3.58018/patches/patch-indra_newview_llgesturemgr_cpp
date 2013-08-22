@@ -1,0 +1,12 @@
+$OpenBSD$
+--- indra/newview/llgesturemgr.cpp.orig	Mon Jan  8 23:58:23 2007
++++ indra/newview/llgesturemgr.cpp	Mon Jan  8 23:58:44 2007
+@@ -496,7 +496,7 @@ BOOL LLGestureManager::triggerAndReviseS
+ 				// Gesture asset data might not have arrived yet
+ 				if (!gesture) continue;
+ 
+-				if (!stricmp(gesture->mTrigger.c_str(), cur_token_lower.c_str()))
++				if (!strcasecmp(gesture->mTrigger.c_str(), cur_token_lower.c_str()))
+ 				{
+ 					playGesture(gesture);
+ 

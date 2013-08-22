@@ -1,0 +1,12 @@
+$OpenBSD$
+--- indra/newview/llinventorymodel.cpp.orig	Thu Jan 25 19:06:18 2007
++++ indra/newview/llinventorymodel.cpp	Sun Jan 28 19:10:41 2007
+@@ -2166,7 +2166,7 @@ void LLInventoryModel::processInventoryF
+ 		const char* filename = info->mFilenameAndPath.c_str();
+ 		const char* ext = filename + strlen(filename) - 6;
+ 		char dst_filename[LL_MAX_PATH];
+-		if(0 == strnicmp(ext, "gz", 2))
++		if(0 == strncasecmp(ext, "gz", 2))
+ 		{
+ 			// it's a gz file. decmpress it.
+ 			dst_filename[0] = '\0';

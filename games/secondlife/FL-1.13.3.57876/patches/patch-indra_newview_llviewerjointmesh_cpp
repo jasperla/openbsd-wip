@@ -1,0 +1,12 @@
+$OpenBSD$
+--- indra/newview/llviewerjointmesh.cpp.orig	Fri Feb  9 23:49:31 2007
++++ indra/newview/llviewerjointmesh.cpp	Sun Feb 11 20:22:05 2007
+@@ -54,7 +54,7 @@
+ #include "llsky.h"
+ #include "pipeline.h"
+ 
+-#if !LL_DARWIN && !LL_LINUX
++#if !LL_DARWIN && !LL_LINUX && !defined(__OpenBSD__)
+ extern PFNGLWEIGHTPOINTERARBPROC glWeightPointerARB;
+ extern PFNGLWEIGHTFVARBPROC glWeightfvARB;
+ extern PFNGLVERTEXBLENDARBPROC glVertexBlendARB;

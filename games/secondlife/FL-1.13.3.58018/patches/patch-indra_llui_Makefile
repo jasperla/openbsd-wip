@@ -1,0 +1,31 @@
+$OpenBSD$
+--- indra/llui/Makefile.orig	Sun Jan 28 19:10:35 2007
++++ indra/llui/Makefile	Mon Jan 29 16:56:45 2007
+@@ -0,0 +1,27 @@
++#	$OpenBSD: Makefile,v 1.14 2005/11/24 20:49:23 deraadt Exp $
++
++LIB=	llui
++
++SRCS=	llalertdialog.cpp llbutton.cpp llcheckboxctrl.cpp
++SRCS+=	llclipboard.cpp llcombobox.cpp llctrlselectioninterface.cpp
++SRCS+=	lldraghandle.cpp lleditmenuhandler.cpp llfloater.cpp
++SRCS+=	llfocusmgr.cpp lliconctrl.cpp llkeywords.cpp lllineeditor.cpp
++SRCS+=	llmenugl.cpp llmodaldialog.cpp llpanel.cpp llradiogroup.cpp
++SRCS+=	llresizebar.cpp llresizehandle.cpp llresmgr.cpp llrootview.cpp
++SRCS+=	llscrollbar.cpp llscrollcontainer.cpp llscrollingpanellist.cpp
++SRCS+=	llscrolllistctrl.cpp llslider.cpp llsliderctrl.cpp
++SRCS+=	llspinctrl.cpp llstyle.cpp lltabcontainer.cpp
++SRCS+=	lltabcontainervertical.cpp lltextbox.cpp lltexteditor.cpp
++SRCS+=	llui.cpp lluictrl.cpp lluictrlfactory.cpp lluistring.cpp
++SRCS+=	llundo.cpp llview.cpp llviewborder.cpp llviewquery.cpp
++
++DEBUGLIBS=no
++NOPROFILE=yes
++NOPIC=yes
++
++install:
++	@echo -n
++
++.include <bsd.lib.mk>
++.include <../Makefile.llinc>
++

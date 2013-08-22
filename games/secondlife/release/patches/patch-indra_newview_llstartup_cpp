@@ -1,0 +1,39 @@
+$OpenBSD$
+--- indra/newview/llstartup.cpp.orig	Fri Jan 19 22:26:42 2007
++++ indra/newview/llstartup.cpp	Sun Jan 28 17:48:46 2007
+@@ -1249,7 +1249,7 @@ BOOL idle_startup()
+ 			}
+ 			else
+ 			{
+-				emsg << "Login failed.\n";
++				emsg << "Login failed\n";
+ 				reason_response = gUserAuthp->getResponse("reason");
+ 				message_response = gUserAuthp->getResponse("message");
+ 
+@@ -2835,6 +2835,16 @@ void update_app(BOOL mandatory, const st
+ 								(void *)mandatoryp);
+ #endif
+ 	}
++#elif defined(__OpenBSD__)
++	if (mandatory) {
++		gViewerWindow->alertXml("DownloadMacMandatory", args,
++								update_dialog_callback,
++								(void *)mandatoryp);
++	} else {
++		gViewerWindow->alertXml("DownloadMac", args,
++								update_dialog_callback,
++								(void *)mandatoryp);
++	}
+ #else
+ 	if (mandatory)
+ 	{
+@@ -2990,7 +3000,9 @@ void update_dialog_callback(S32 option, 
+ 	remove_marker_file();
+ 	
+ #endif
++#if !defined(__OpenBSD__)
+ 	app_force_quit(NULL);
++#endif
+ }
+ 
+ void use_circuit_callback(void**, S32 result)

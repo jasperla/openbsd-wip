@@ -1,0 +1,96 @@
+$OpenBSD$
+--- indra/SConstruct.orig	Thu Jan 25 19:06:02 2007
++++ indra/SConstruct	Sun Jan 28 21:18:11 2007
+@@ -123,7 +123,7 @@ for build_target in targets:
+ 	client_external_libs = []
+ 	system_link_flags = ''
+ 
+-	if platform != 'linux' and build_target == 'client':
++	if platform != 'linux' and platform != 'openbsd4' and build_target == 'client':
+ 
+ 		### Mozilla include directories ###
+ 
+@@ -180,7 +180,7 @@ for build_target in targets:
+ 		# Linux-only flags
+ 		flags += '-DLL_LINUX=1 '
+ 		if build_target == 'client':
+-			flags += '-DAPPID=secondlife -DLL_SDL=1 -DLL_X11=1 '
++			flags += '-DAPPID=secondlife -DLL_SDL=1 -DLL_FMOD=0 -DLL_X11=1 '
+ 			flags += '-DLL_GTK=1 '
+ 			client_external_libs += [ 'gtk-x11-2.0', 'elfio' ]
+ 			include_dirs += [ '../libraries/' + system_str + '/include/gtk-2.0' ]
+@@ -190,8 +190,28 @@ for build_target in targets:
+ 			include_dirs += [ '../libraries/' + system_str + '/include/ELFIO' ]
+ 			include_dirs += [ '../libraries/' + system_str + '/include/llfreetype2' ]
+ 	else:
+-		# Mac-only flags
+-		flags += '-x c++ -arch ppc -pipe -Wno-trigraphs -fpascal-strings -faltivec -fasm-blocks -g -O2 -fmessage-length=0 -mtune=G4 -Wno-deprecated-declarations -Wno-invalid-offsetof -mmacosx-version-min=10.3 -DLL_DARWIN=1 -Wmost -Wno-sign-compare -Wno-switch -fpch-preprocess -F./newview/build/Deployment -fconstant-cfstrings -ffor-scope -Wno-reorder -isysroot /Developer/SDKs/MacOSX10.3.9.sdk '
++		if platform == 'openbsd4':
++			# OpenBSD 4.x-only flags
++			flags += '-DAPPID=secondlife -DLL_SDL=1 -DLL_FMOD=0 -DLL_X11=1 '
++			flags += '-DLL_GTK=1 -pthread '
++			system_link_flags += '-L/usr/local/lib -L/usr/X11R6/lib '
++			client_external_libs += [ 'stdc++','gtk-x11-2.0', 'boost_iostreams-mt', 'boost_thread-mt', 'boost_regex-mt' ]
++			include_dirs += [ '/usr/local/include/gtk-2.0' ]
++			include_dirs += [ '/usr/local/lib/gtk-2.0/include' ]
++			include_dirs += [ '/usr/local/include/glib-2.0']
++			include_dirs += [ '/usr/local/lib/glib-2.0/include']
++			include_dirs += [ '/usr/local/include/pango-1.0' ]
++			include_dirs += [ '/usr/local/include/atk-1.0' ]
++			include_dirs += [ '/usr/local/include/ELFIO' ]
++			include_dirs += [ '/usr/X11R6/include/freetype2' ]
++			include_dirs += [ '/usr/local/include/cairo' ]
++			include_dirs += [ '/usr/local/include' ]
++			include_dirs += [ '/usr/X11R6/include' ]
++			include_dirs += [ '/usr/X11R6/include/X11' ]
++		else:
++		
++			# Mac-only flags
++			flags += '-x c++ -arch ppc -pipe -Wno-trigraphs -fpascal-strings -faltivec -fasm-blocks -g -O2 -fmessage-length=0 -mtune=G4 -Wno-deprecated-declarations -Wno-invalid-offsetof -mmacosx-version-min=10.3 -DLL_DARWIN=1 -Wmost -Wno-sign-compare -Wno-switch -fpch-preprocess -F./newview/build/Deployment -fconstant-cfstrings -ffor-scope -Wno-reorder -isysroot /Developer/SDKs/MacOSX10.3.9.sdk '
+ 
+ 	### Build type-specific flags ###
+ 
+@@ -204,7 +224,7 @@ for build_target in targets:
+ 	# ENVIRONMENT  #
+ 	################
+ 
+-	gcc_bin = 'g++-3.4'
++	gcc_bin = 'g++ -s'
+ 	# If you strip more aggressively than -S then the quality of crash-
+ 	# logger backtraces deteriorates.
+ 	strip_cmd = 'strip -S -o $TARGET $SOURCE'
+@@ -379,6 +399,12 @@ for build_target in targets:
+ 			create_executable(output_crashlogger_bin + '-globalsyms', 'linux_crash_logger', internal_libs + external_libs)
+ 			env.Command(output_crashlogger_bin, output_crashlogger_bin + '-globalsyms', hidesyms_cmd)
+ 
++		if platform == 'openbsd4':
++			output_crashlogger_bin = 'linux_crash_logger/linux-crash-logger-' + arch + '-bin'
++			external_libs = net_external_libs + [ 'db', 'gtk-x11-2.0' ]
++			internal_libs = [ 'llvfs', 'llmath', 'llcommon' ]
++			create_executable(output_crashlogger_bin, 'linux_crash_logger', internal_libs + external_libs)
++
+ 		create_static_module('llaudio')
+ 		create_static_module('llmedia')
+ 		create_static_module('llui')
+@@ -392,7 +418,7 @@ for build_target in targets:
+ 		##################
+ 		output_bin = 'newview/secondlife-' + arch + '-bin'
+ 
+-		external_libs = client_external_libs + common_external_libs + [ 'freetype', 'jpeg', 'SDL', 'GL', 'GLU', 'ogg', 'vorbisenc', 'vorbisfile', 'vorbis', 'fmod-3.75', 'db-4.2', 'openjpeg' ]
++		external_libs = client_external_libs + common_external_libs + [ 'freetype', 'jpeg', 'SDL', 'GL', 'GLU', 'ogg', 'vorbisenc', 'vorbisfile', 'vorbis', 'db', 'openjpeg' ]
+ 
+ 		internal_libs = [ 'lscript', 'llwindow', 'llrender', 'llprimitive',
+ 				 'llmedia', 'llinventory', 
+@@ -409,10 +435,10 @@ for build_target in targets:
+ 			# PACKAGE THE CLIENT  #
+ 			#######################
+ 
+-			if platform == 'linux':
++			if platform == 'linux' or platform == 'openbsd4':
+ 				env.Command(output_bin + '-stripped', output_bin, strip_cmd)
+ 				env.Command(output_crashlogger_bin + '-stripped', output_crashlogger_bin, strip_cmd)
+-				manifest_file = 'linux_tools/client-manifest-' + arch
++				manifest_file = 'linux_tools/client-manifest-' + arch + '-bsd'
+ 				product_name = 'SecondLife_' + arch + '_' + version_major + "_" + version_minor + "_" + version_patch + "_" + version_build
+ 				if grid != 'default':
+ 					product_name += "_" + grid.upper()

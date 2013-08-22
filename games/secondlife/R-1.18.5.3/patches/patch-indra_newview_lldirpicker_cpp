@@ -1,0 +1,21 @@
+$OpenBSD$
+--- indra/newview/lldirpicker.cpp.orig	Mon Dec  3 02:09:18 2007
++++ indra/newview/lldirpicker.cpp	Mon Dec  3 02:10:02 2007
+@@ -40,7 +40,7 @@
+ #include "lldir.h"
+ #include "llframetimer.h"
+ 
+-#if LL_LINUX
++#if LL_LINUX || defined(__OpenBSD__)
+ # include "llfilepicker.h"
+ #endif
+ 
+@@ -264,7 +264,7 @@ void LLDirPicker::reset()
+ 	mDir    = NULL;
+ }
+ 
+-#elif LL_LINUX
++#elif LL_LINUX || defined(__OpenBSD__)
+ 
+ LLDirPicker::LLDirPicker() 
+ {

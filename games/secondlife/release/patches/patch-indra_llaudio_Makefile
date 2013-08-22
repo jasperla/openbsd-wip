@@ -1,0 +1,21 @@
+$OpenBSD$
+--- indra/llaudio/Makefile.orig	Sun Jan 28 19:10:31 2007
++++ indra/llaudio/Makefile	Mon Jan 29 16:56:07 2007
+@@ -0,0 +1,17 @@
++#	$OpenBSD: Makefile,v 1.14 2005/11/24 20:49:23 deraadt Exp $
++
++LIB=	llaudio
++
++SRCS=	audioengine.cpp audioengine_fmod.cpp listener.cpp
++SRCS+=	listener_fmod.cpp llaudiodecodemgr.cpp vorbisdecode.cpp
++SRCS+=	vorbisencode.cpp
++
++DEBUGLIBS=no
++NOPROFILE=yes
++NOPIC=yes
++
++install:
++	@echo -n
++
++.include <bsd.lib.mk>
++.include <../Makefile.llinc>

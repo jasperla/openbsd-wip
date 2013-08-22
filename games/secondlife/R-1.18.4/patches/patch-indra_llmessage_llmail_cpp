@@ -1,0 +1,14 @@
+$OpenBSD$
+--- indra/llmessage/llmail.cpp.orig	Wed Nov  7 20:18:06 2007
++++ indra/llmessage/llmail.cpp	Mon Nov 12 02:11:33 2007
+@@ -44,8 +44,8 @@
+ #include <sstream>
+ #include <boost/regex.hpp>
+ 
+-#include "apr-1/apr_pools.h"
+-#include "apr-1/apr_network_io.h"
++#include "apr-1-mt/apr_pools.h"
++#include "apr-1-mt/apr_network_io.h"
+ 
+ #include "llapr.h"
+ #include "llbase32.h"	// IM-to-email address

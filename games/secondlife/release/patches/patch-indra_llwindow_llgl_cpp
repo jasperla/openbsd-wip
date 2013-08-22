@@ -1,0 +1,91 @@
+$OpenBSD$
+--- indra/llwindow/llgl.cpp.orig	Thu Jan 25 19:06:06 2007
++++ indra/llwindow/llgl.cpp	Sun Jan 28 19:10:37 2007
+@@ -64,7 +64,23 @@
+ # define GLH_EXT_GET_PROC_ADDRESS(p) glXGetProcAddressARB((const GLubyte*)(p)) 
+ #endif // LL_LINUX && !LL_MESA_HEADLESS
+ 
++#if defined(__OpenBSD__) && !LL_MESA_HEADLESS
++# define __APPLE__
++# include "GL/glh_extensions.h"
++# undef __APPLE__
+ 
++#define GLX_GLXEXT_PROTOTYPES 1
++
++#include <GL/glx.h>
++#include <GL/glxext.h>
++
++// Use glXGetProcAddressARB instead of glXGetProcAddress - the ARB symbol
++// is considered 'legacy' but works on more machines.
++# define GLH_EXT_GET_PROC_ADDRESS(p) glXGetProcAddressARB((const GLubyte*)(p))
++
++#endif // OpenBSD ..
++
++
+ #ifdef _DEBUG
+ //#define GL_STATE_VERIFY
+ #endif
+@@ -234,7 +250,7 @@ PFNGLGETATTRIBLOCATIONARBPROC glGetAttri
+ PFNWGLSWAPINTERVALEXTPROC			wglSwapIntervalEXT = NULL;
+ #endif
+ 
+-#if LL_LINUX
++#if LL_LINUX || defined(__OpenBSD__)
+ PFNGLCOLORTABLEEXTPROC glColorTableEXT = NULL;
+ #endif // LL_LINUX
+ 
+@@ -562,7 +578,7 @@ void LLGLManager::initExtensions()
+ 	mHasFragmentShader = ExtensionExists("GL_ARB_fragment_shader", gGLHExts.mSysExts) && ExtensionExists("GL_ARB_shading_language_100", gGLHExts.mSysExts);
+ #endif
+ 
+-#if LL_LINUX
++#if LL_LINUX || defined(__OpenBSD__)
+ 	// Our extension support for the Linux Client is very young with some
+ 	// potential driver gotchas, so offer a semi-secret way to turn it off.
+ 	if (getenv("LL_GL_NOEXT"))
+@@ -736,8 +752,9 @@ void LLGLManager::initExtensions()
+ 	}
+ #endif // LL_DARWIN
+ 
+-#if (LL_WINDOWS || LL_LINUX) && !LL_MESA_HEADLESS
++#if (LL_WINDOWS || LL_LINUX || defined(__OpenBSD__)) && !LL_MESA_HEADLESS
+ 	llinfos << "GL Probe: Getting symbols" << llendl;
++#if !defined(__OpenBSD__)
+ 	if (mHasVertexBufferObject)
+ 	{
+ 		glBindBufferARB = (PFNGLBINDBUFFERARBPROC)GLH_EXT_GET_PROC_ADDRESS("glBindBufferARB");
+@@ -770,7 +787,8 @@ void LLGLManager::initExtensions()
+ 		glGetVariantArrayObjectfvATI = (PFNGLGETVARIANTARRAYOBJECTFVATIPROC)GLH_EXT_GET_PROC_ADDRESS("glGetVariantArrayObjectfvATI");
+ 		glGetVariantArrayObjectivATI = (PFNGLGETVARIANTARRAYOBJECTIVATIPROC)GLH_EXT_GET_PROC_ADDRESS("glGetVariantArrayObjectivATI");
+ 	}
+-#if !LL_LINUX
++#endif
++#if !LL_LINUX && !defined(__OpenBSD__)
+ 	// This is expected to be a static symbol on Linux GL implementations
+ 	glDrawRangeElements = (PFNGLDRAWRANGEELEMENTSPROC)GLH_EXT_GET_PROC_ADDRESS("glDrawRangeElements");
+ 	if (!glDrawRangeElements)
+@@ -779,7 +797,7 @@ void LLGLManager::initExtensions()
+ 		mGLMaxIndexRange = 0;
+ 	}
+ #endif // !LL_LINUX
+-#if LL_LINUX
++#if LL_LINUX /* || defined(__OpenBSD__) */
+ 	// On Linux we need to get glColorTableEXT dynamically.
+ 	if (mHasPalettedTextures)
+ 	{
+@@ -862,6 +880,7 @@ void LLGLManager::initExtensions()
+ 		glVertexAttrib3fvARB = (PFNGLVERTEXATTRIB3FVARBPROC) GLH_EXT_GET_PROC_ADDRESS("glVertexAttrib3fvARB");
+ 		glVertexAttrib3sARB = (PFNGLVERTEXATTRIB3SARBPROC) GLH_EXT_GET_PROC_ADDRESS("glVertexAttrib3sARB");
+ 		glVertexAttrib3svARB = (PFNGLVERTEXATTRIB3SVARBPROC) GLH_EXT_GET_PROC_ADDRESS("glVertexAttrib3svARB");
++#if !defined(__OpenBSD__)
+ 		glVertexAttrib4nbvARB = (PFNGLVERTEXATTRIB4NBVARBPROC) GLH_EXT_GET_PROC_ADDRESS("glVertexAttrib4nbvARB");
+ 		glVertexAttrib4nivARB = (PFNGLVERTEXATTRIB4NIVARBPROC) GLH_EXT_GET_PROC_ADDRESS("glVertexAttrib4nivARB");
+ 		glVertexAttrib4nsvARB = (PFNGLVERTEXATTRIB4NSVARBPROC) GLH_EXT_GET_PROC_ADDRESS("glVertexAttrib4nsvARB");
+@@ -869,6 +888,7 @@ void LLGLManager::initExtensions()
+ 		glVertexAttrib4nubvARB = (PFNGLVERTEXATTRIB4NUBVARBPROC) GLH_EXT_GET_PROC_ADDRESS("glVertexAttrib4nubvARB");
+ 		glVertexAttrib4nuivARB = (PFNGLVERTEXATTRIB4NUIVARBPROC) GLH_EXT_GET_PROC_ADDRESS("glVertexAttrib4nuivARB");
+ 		glVertexAttrib4nusvARB = (PFNGLVERTEXATTRIB4NUSVARBPROC) GLH_EXT_GET_PROC_ADDRESS("glVertexAttrib4nusvARB");
++#endif
+ 		glVertexAttrib4bvARB = (PFNGLVERTEXATTRIB4BVARBPROC) GLH_EXT_GET_PROC_ADDRESS("glVertexAttrib4bvARB");
+ 		glVertexAttrib4dARB = (PFNGLVERTEXATTRIB4DARBPROC) GLH_EXT_GET_PROC_ADDRESS("glVertexAttrib4dARB");
+ 		glVertexAttrib4dvARB = (PFNGLVERTEXATTRIB4DVARBPROC) GLH_EXT_GET_PROC_ADDRESS("glVertexAttrib4dvARB");

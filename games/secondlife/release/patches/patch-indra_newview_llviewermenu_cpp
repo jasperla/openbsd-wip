@@ -1,0 +1,14 @@
+$OpenBSD$
+--- indra/newview/llviewermenu.cpp.orig	Thu Jan 25 19:06:20 2007
++++ indra/newview/llviewermenu.cpp	Sun Jan 28 19:10:41 2007
+@@ -5082,8 +5082,8 @@ const char* upload_pick(void* data)
+ 		{
+ 			const char* cur_token = token_iter->c_str();
+ 
+-			if (0 == strnicmp(cur_token, ext, strlen(cur_token)) ||
+-				0 == strnicmp(cur_token, "*.*", strlen(cur_token))) 
++			if (0 == strncasecmp(cur_token, ext, strlen(cur_token)) ||
++				0 == strncasecmp(cur_token, "*.*", strlen(cur_token))) 
+ 			{
+ 				//valid extension
+ 				//or the acceptable extension is any

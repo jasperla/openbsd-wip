@@ -1,0 +1,74 @@
+$OpenBSD$
+--- indra/llcommon/llsys.cpp.orig	Mon Jan  8 15:52:27 2007
++++ indra/llcommon/llsys.cpp	Mon Jan  8 16:12:34 2007
+@@ -30,7 +30,13 @@
+ #include "llsys.h"
+ 
+ #include <iostream>
++#if defined(__OpenBSD__)
++#include <zlib.h>
++#include <sys/param.h>
++#include <sys/sysctl.h>
++#else
+ #include <zlib/zlib.h>
++#endif
+ #include "processor.h"
+ 
+ #if LL_WINDOWS
+@@ -44,6 +50,8 @@
+ #	include <sys/utsname.h>
+ const char MEMINFO_FILE[] = "/proc/meminfo";
+ const char CPUINFO_FILE[] = "/proc/cpuinfo";
++#elif defined(__OpenBSD__)
++#	include <sys/utsname.h>
+ #endif
+ 
+ 
+@@ -368,7 +376,7 @@ void LLCPUInfo::stream(std::ostream& s) 
+ 	{
+ 		s << "Unable to collect processor info";
+ 	}
+-#else
++#elif LL_LINUX
+ 	// *NOTE: This works on linux. What will it do on other systems?
+ 	FILE* cpuinfo = LLFile::fopen(CPUINFO_FILE, "r");		/* Flawfinder: ignore */
+ 	if(cpuinfo)
+@@ -386,6 +394,9 @@ void LLCPUInfo::stream(std::ostream& s) 
+ 	{
+ 		s << "Unable to collect memory information";
+ 	}
++#else
++	// XXX actually do the sysctl
++	s << "Intel(R) Celeron(R) CPU 2.80GHz (\"GenuineIntel\" 686-class)";
+ #endif
+ }
+ 
+@@ -407,7 +418,7 @@ U32 LLMemoryInfo::getPhysicalMemory() co
+ 
+ 	return (U32)state.dwTotalPhys;
+ 
+-#elif LL_DARWIN
++#elif LL_DARWIN || defined(__OpenBSD__)
+ 	// This might work on Linux as well.  Someone check...
+ 	unsigned int phys = 0;
+ 	int mib[2] = { CTL_HW, HW_PHYSMEM };
+@@ -454,7 +465,7 @@ void LLMemoryInfo::stream(std::ostream& 
+ 		s << "Unable to collect memory information";
+ 	}
+ 	
+-#else
++#elif LL_LINUX
+ 	// *NOTE: This works on linux. What will it do on other systems?
+ 	FILE* meminfo = LLFile::fopen(MEMINFO_FILE,"r");		/* Flawfinder: ignore */
+ 	if(meminfo)
+@@ -472,6 +483,10 @@ void LLMemoryInfo::stream(std::ostream& 
+ 	{
+ 		s << "Unable to collect memory information";
+ 	}
++#else
++	/* XXX top like mem info sysctl stuff */
++	s << "Memory: Real: 382M/515M act/tot  Free: 456M  Swap: 0K/2038M used/tot";
++
+ #endif
+ }
+ 

@@ -1,0 +1,12 @@
+$OpenBSD$
+--- indra/llcommon/llsdserialize.cpp.orig	Thu Feb  8 12:06:56 2007
++++ indra/llcommon/llsdserialize.cpp	Thu Feb  8 12:07:06 2007
+@@ -33,7 +33,7 @@
+ #include "llstreamtools.h" // for fullread
+ 
+ #include <iostream>
+-#include "apr-1/apr_base64.h"
++#include "apr-1-mt/apr_base64.h"
+ 
+ #if !LL_WINDOWS
+ #include <netinet/in.h> // htonl & ntohl

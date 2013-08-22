@@ -1,0 +1,12 @@
+$OpenBSD$
+--- indra/llcommon/lldate.cpp.orig	Thu Feb  8 12:07:27 2007
++++ indra/llcommon/lldate.cpp	Thu Feb  8 12:08:11 2007
+@@ -30,7 +30,7 @@
+ #include "linden_common.h"
+ #include "lldate.h"
+ 
+-#include "apr-1/apr_time.h"
++#include "apr-1-mt/apr_time.h"
+ 
+ #include <iomanip>
+ #include <sstream>

@@ -1,0 +1,21 @@
+$OpenBSD$
+--- indra/llimage/Makefile.orig	Sun Jan 28 19:10:33 2007
++++ indra/llimage/Makefile	Mon Jan 29 16:56:19 2007
+@@ -0,0 +1,17 @@
++#	$OpenBSD: Makefile,v 1.14 2005/11/24 20:49:23 deraadt Exp $
++
++LIB=	llimage
++
++SRCS=	llimagebmp.cpp llimage.cpp llimagedxt.cpp llimagej2c.cpp
++SRCS+=	llimagejpeg.cpp llimagetga.cpp
++
++DEBUGLIBS=no
++NOPROFILE=yes
++NOPIC=yes
++
++install:
++	@echo -n
++
++.include <bsd.lib.mk>
++.include <../Makefile.llinc>
++

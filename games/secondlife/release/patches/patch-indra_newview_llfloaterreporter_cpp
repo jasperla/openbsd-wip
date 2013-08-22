@@ -1,0 +1,13 @@
+$OpenBSD$
+--- indra/newview/llfloaterreporter.cpp.orig	Tue Jan 23 21:39:04 2007
++++ indra/newview/llfloaterreporter.cpp	Wed Jan 24 00:58:09 2007
+@@ -683,6 +683,9 @@ void LLFloaterReporter::sendReport()
+ #elif LL_LINUX
+ 	const char* platform = "Lnx";
+ 	const char* short_platform = "O:L";
++#elif defined(__OpenBSD__)
++	const char* platform = "Win";
++	const char* short_platform = "O:L";
+ #else
+ 	const char* platform = "???";
+ 	const char* short_platform = "O:?";

@@ -1,0 +1,40 @@
+$OpenBSD$
+--- indra/newview/linux_tools/wrapper.sh.orig	Thu Mar 22 01:35:19 2007
++++ indra/newview/linux_tools/wrapper.sh	Sat Mar 24 22:20:42 2007
+@@ -1,16 +1,25 @@
+ #!/bin/sh
++
++if [ "$1" = "-grid" -a "$2" ]; then
++	GRID="$2"
++	shift
++	shift
++	GRIDARGS="-settings settings_beta.xml --${GRID} -helperuri http://preview-${GRID}.secondlife.com/helpers/"
++else
++	GRIDARGS="$(cat %PREFIX%/share/secondlife/gridargs.dat)"
++fi
+ ## Here are some configuration options for Linux Client Alpha Testers.
+ ## These options are for self-assisted troubleshooting during this alpha
+ ## testing phase; you should not usually need to touch them.
+ 
+ ## - Avoids using the ESD audio driver.
+-#export LL_BAD_ESD=x
++export LL_BAD_ESD=x
+ 
+ ## - Avoids using the OSS audio driver.
+ #export LL_BAD_OSS=x
+ 
+ ## - Avoids using the ALSA audio driver.
+-#export LL_BAD_ALSA=x
++export LL_BAD_ALSA=x
+ 
+ ## - Avoids the optional OpenGL extensions which have proven most problematic
+ ##   on some hardware.  Disabling this option may cause BETTER PERFORMANCE but
+@@ -21,7 +30,7 @@ export LL_GL_BASICEXT=x
+ ## - Avoids *all* optional OpenGL extensions.  This is the safest and least-
+ ##   exciting option.  Enable this if you experience stability issues, and
+ ##   report whether it helps in the Linux Client Alpha Testers forum.
+-#export LL_GL_NOEXT=x
++export LL_GL_NOEXT=x
+ 
+ ## - For advanced troubleshooters, this lets you disable specific GL
+ ##   extensions, each of which is represented by a letter a-o.  If you can

@@ -1,0 +1,22 @@
+$OpenBSD$
+--- indra/newview/moviemaker.h.orig	Wed Nov  7 20:18:12 2007
++++ indra/newview/moviemaker.h	Mon Nov 12 02:11:37 2007
+@@ -125,7 +125,7 @@ class MovieMaker { (public)
+     bool Snap();
+ };
+ 	
+-#elif LL_LINUX
++#elif LL_LINUX || defined(__OpenBSD__)
+ // *FIX: we need a working implementation on linux.
+ class MovieMaker {
+ public:
+@@ -137,7 +137,8 @@ class MovieMaker { (public)
+     void EndCapture() {}
+     bool Snap() { return false; }
+ };
+-
++#else
++#error Define Movie Maker for your platform
+ #endif
+ 
+ #endif

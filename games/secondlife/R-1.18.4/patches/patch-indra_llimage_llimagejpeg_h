@@ -1,0 +1,12 @@
+$OpenBSD$
+--- indra/llimage/llimagejpeg.h.orig	Wed Nov  7 20:18:06 2007
++++ indra/llimage/llimagejpeg.h	Mon Nov 12 07:58:21 2007
+@@ -37,7 +37,7 @@
+ #include "llimage.h"
+ 
+ extern "C" {
+-#ifdef LL_STANDALONE
++#if defined(LL_STANDALONE) || defined(__OpenBSD__)
+ # include <jpeglib.h>
+ # include <jerror.h>
+ #else

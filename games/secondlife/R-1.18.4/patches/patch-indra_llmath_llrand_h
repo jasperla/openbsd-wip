@@ -1,0 +1,11 @@
+$OpenBSD$
+--- indra/llmath/llrand.h.orig	Wed Nov  7 20:18:06 2007
++++ indra/llmath/llrand.h	Sun Dec  2 21:15:11 2007
+@@ -35,6 +35,7 @@
+ #include <boost/random/lagged_fibonacci.hpp>
+ #include <boost/random/mersenne_twister.hpp>
+ 
++
+ /**
+  * Use the boost random number generators if you want a stateful
+  * random numbers. If you want more random numbers, use the

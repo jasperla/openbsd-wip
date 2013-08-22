@@ -1,0 +1,30 @@
+$OpenBSD$
+--- indra/llcommon/lltimer.cpp.orig	Thu Mar 22 01:34:56 2007
++++ indra/llcommon/lltimer.cpp	Sat Mar 24 22:20:13 2007
+@@ -40,7 +40,7 @@
+ #	include <time.h>
+ #	include <sys/time.h>
+ #	include <sched.h>
+-#elif LL_DARWIN
++#elif LL_DARWIN || defined(__OpenBSD__)
+ #	include <time.h>
+ #	include <sys/time.h>
+ #else 
+@@ -102,7 +102,7 @@ void llyield()
+ {
+ 	sched_yield();
+ }
+-#elif LL_DARWIN
++#elif LL_DARWIN || defined(__OpenBSD__)
+ void ms_sleep(long ms)
+ {
+ 	struct timespec t;
+@@ -149,7 +149,7 @@ F64 calc_clock_frequency(U32 uiMeasureMS
+ #endif // LL_WINDOWS
+ 
+ 
+-#if LL_LINUX || LL_DARWIN
++#if LL_LINUX || LL_DARWIN || defined(__OpenBSD__)
+ // Both Linux and Mac use gettimeofday for accurate time
+ F64 calc_clock_frequency(unsigned int uiMeasureMSecs)
+ {

@@ -1,0 +1,13 @@
+$OpenBSD$
+--- indra/llmath/llmath.h.orig	Wed Nov  7 20:18:06 2007
++++ indra/llmath/llmath.h	Mon Nov 12 08:03:45 2007
+@@ -42,6 +42,9 @@
+ #elif LL_SOLARIS
+ #define llisnan(val)    isnan(val)
+ #define llfinite(val)   (val <= std::numeric_limits<double>::max())
++#elif defined(__OpenBSD__)
++#define llisnan(val)	isnan(val)
++#define llfinite(val)	finite(val)
+ #else
+ #define llisnan(val)	std::isnan(val)
+ #define llfinite(val)	std::isfinite(val)

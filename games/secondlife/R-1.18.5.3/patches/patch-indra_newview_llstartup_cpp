@@ -1,0 +1,68 @@
+$OpenBSD$
+--- indra/newview/llstartup.cpp.orig	Thu Nov 29 16:47:18 2007
++++ indra/newview/llstartup.cpp	Mon Dec  3 04:21:33 2007
+@@ -563,7 +563,7 @@ BOOL idle_startup()
+ 			componentDir += "mozilla";
+ 		#endif
+ 
+-#if LL_LINUX
++#if LL_LINUX || defined(__OpenBSD__) /* ??? */
+ 		// Yuck, Mozilla init plays with the locale - push/pop
+ 		// the locale to protect it, as exotic/non-C locales
+ 		// causes our code lots of general critical weirdness
+@@ -574,7 +574,7 @@ BOOL idle_startup()
+ 		// initialize Mozilla - pass in executable dir, location of extra dirs (chrome/, greprefs/, plugins/ etc.) and path to profile dir)
+ 		LLMozLib::getInstance()->init( gDirUtilp->getExecutableDir(), componentDir, gDirUtilp->getExpandedFilename( LL_PATH_MOZILLA_PROFILE, "" ) );
+ 
+-#if LL_LINUX
++#if LL_LINUX || defined(__OpenBSD__)
+ 		setlocale(LC_ALL, saved_locale.c_str() );
+ #endif // LL_LINUX
+ 
+@@ -1068,7 +1068,7 @@ BOOL idle_startup()
+ 			}
+ 			else
+ 			{
+-				emsg << "Login failed.\n";
++				emsg << "Login failed\n";
+ 				reason_response = gUserAuthp->getResponse("reason");
+ 				message_response = gUserAuthp->getResponse("message");
+ 
+@@ -2618,6 +2618,16 @@ void update_app(BOOL mandatory, const std::string& aut
+ 								mandatoryp);
+ #endif
+ 	}
++#elif defined(__OpenBSD__)
++	if (mandatory) {
++		gViewerWindow->alertXml("DownloadMacMandatory", args,
++								update_dialog_callback,
++								(void *)mandatoryp);
++	} else {
++		gViewerWindow->alertXml("DownloadMac", args,
++								update_dialog_callback,
++								(void *)mandatoryp);
++	}
+ #else
+ 	if (mandatory)
+ 	{
+@@ -2677,7 +2687,7 @@ void update_dialog_callback(S32 option, void *userdata
+ 	query_map["os"] = "win";
+ #elif LL_DARWIN
+ 	query_map["os"] = "mac";
+-#elif LL_LINUX
++#elif LL_LINUX || defined(__OpenBSD__)
+ 	query_map["os"] = "lnx";
+ #endif
+ 	query_map["userserver"] = gUserServerName;
+@@ -2779,6 +2789,11 @@ void update_dialog_callback(S32 option, void *userdata
+ 	
+ #elif LL_LINUX
+ 	OSMessageBox("Automatic updating is not yet implemented for Linux.\n"
++		"Please download the latest version from www.secondlife.com.",
++		NULL, OSMB_OK);
++	remove_marker_file();
++#elif defined(__OpenBSD__)
++	OSMessageBox("Automatic updating is not yet implemented for OpenBSD.\n"
+ 		"Please download the latest version from www.secondlife.com.",
+ 		NULL, OSMB_OK);
+ 	remove_marker_file();
