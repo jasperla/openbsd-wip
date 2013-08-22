@@ -1,0 +1,38 @@
+$OpenBSD$
+--- indra/newview/llcontroldef.cpp.orig	Thu Mar 22 01:35:09 2007
++++ indra/newview/llcontroldef.cpp	Sat Mar 24 22:20:42 2007
+@@ -45,8 +45,8 @@
+ void declare_settings()
+ {
+ 	// Somewhat under 1024 by 768
+-	const S32 WINDOW_WIDTH = 800;
+-	const S32 WINDOW_HEIGHT = 600;
++	const S32 WINDOW_WIDTH = 320;
++	const S32 WINDOW_HEIGHT = 200;
+ 
+ 	//------------------------------------------------------------------------
+ 	// Color constants
+@@ -352,8 +352,8 @@ void declare_settings()
+ 	gSavedSettings.declareS32("RenderName", 2, "Controls display of names above avatars (0 = never, 1 = fade, 2 = always)");
+ 	gSavedSettings.declareF32("RenderNameShowTime", 10.f, "Fade avatar names after specified time (seconds)");		// seconds
+ 	gSavedSettings.declareF32("RenderNameFadeDuration", 1.f, "Time interval over which to fade avatar names (seconds)");	// seconds
+-	gSavedSettings.declareBOOL("RenderNameHideSelf", FALSE, "Don't display own name above avatar");
+-	gSavedSettings.declareBOOL("RenderHideGroupTitle", FALSE, "Don't show group titles in name labels");
++	gSavedSettings.declareBOOL("RenderNameHideSelf", TRUE, "Don't display own name above avatar");
++	gSavedSettings.declareBOOL("RenderHideGroupTitle", TRUE, "Don't show group titles in name labels");
+ 
+ 	// Camera widget controls
+ 	const S32 CAMERA_LEFT = MOVE_BTN_FLY_RIGHT + 10;
+@@ -712,9 +712,9 @@ void declare_settings()
+ 	gSavedSettings.declareString("StatsFile", "fs.txt", "Filename for stats logging output");
+ 
+ 	// Image pipeline stuff
+-	gSavedSettings.declareS32("GraphicsCardMemorySetting", -1, "Amount of memory on your video card (-1 = autodetect, 0 = 16MB, 1 = 32MB, 2 = 64MB, 3 = 128MB, 4 = 256MB, 5 = 512MB)"); // default to auto-detect
+-	//gSavedSettings.declareS32("ImageRadioTexMem", 0, "Texture memory allocation (0 = <512 megabytes system RAM, 1 = >512 megabytes system RAM)");
+-	//gSavedSettings.declareS32("ImageRadioVidCardMem", 1, "Video card onboard memory (0 = 16MB, 1 = 32MB, 2 = 64MB, 3 = 128MB, 4 = 256MB, 5 = 512MB)");
++	gSavedSettings.declareS32("GraphicsCardMemorySetting", 4, "Amount of memory on your video card (-1 = autodetect, 0 = 16MB, 1 = 32MB, 2 = 64MB, 3 = 128MB, 4 = 256MB, 5 = 512MB)"); // default to auto-detect
++	//gSavedSettings.declareS32("ImageRadioTexMem", 1, "Texture memory allocation (0 = <512 megabytes system RAM, 1 = >512 megabytes system RAM)");
++	//gSavedSettings.declareS32("ImageRadioVidCardMem", 3, "Video card onboard memory (0 = 16MB, 1 = 32MB, 2 = 64MB, 3 = 128MB, 4 = 256MB, 5 = 512MB)");
+ 	//gSavedSettings.declareU32("LastRAMDetected", 0, "[DO NOT MODIFY] Detected system memory (bytes)");  // used to detect RAM changes
+ 	gSavedSettings.declareBOOL("ImagePipelineUseHTTP", FALSE, "If TRUE use HTTP GET to fetch textures from the server");
+ 

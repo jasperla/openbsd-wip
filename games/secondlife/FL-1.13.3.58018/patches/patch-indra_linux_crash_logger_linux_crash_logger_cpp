@@ -1,0 +1,15 @@
+$OpenBSD$
+--- indra/linux_crash_logger/linux_crash_logger.cpp.orig	Thu Jan 25 19:06:07 2007
++++ indra/linux_crash_logger/linux_crash_logger.cpp	Sun Jan 28 19:10:31 2007
+@@ -456,7 +456,11 @@ LLFileEncoder::LLFileEncoder(const char 
+ 		if(!gCrashInPreviousExec && isCrashLog)
+ 		{
+ 			// Make sure the file isn't too old.
++#if defined(__OpenBSD__)
++			double age = difftime(gLaunchTime, stat_data.st_mtimespec.tv_sec);
++#else
+ 			double age = difftime(gLaunchTime, stat_data.st_mtim.tv_sec);
++#endif
+ 
+ //			llinfos << "age is " << age << llendl;
+ 

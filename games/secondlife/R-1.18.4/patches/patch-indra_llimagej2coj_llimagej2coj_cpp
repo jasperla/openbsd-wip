@@ -1,0 +1,47 @@
+$OpenBSD$
+--- indra/llimagej2coj/llimagej2coj.cpp.orig	Wed Nov  7 20:18:06 2007
++++ indra/llimagej2coj/llimagej2coj.cpp	Sun Dec  2 19:01:17 2007
+@@ -33,7 +33,7 @@
+ #include "llimagej2coj.h"
+ 
+ // this is defined so that we get static linking.
+-#include "openjpeg/openjpeg.h"
++#include "openjpeg.h"
+ 
+ #include "lltimer.h"
+ #include "llmemory.h"
+@@ -149,7 +149,7 @@ BOOL LLImageJ2COJ::decodeImpl(LLImageJ2C &base, LLImag
+ 	// dereference the array.
+ 	if(!image || !image->numcomps)
+ 	{
+-		fprintf(stderr, "ERROR -> decodeImpl: failed to decode image!\n");
++		//fprintf(stderr, "ERROR -> decodeImpl: failed to decode image!\n");
+ 		if (image)
+ 			opj_image_destroy(image);
+ 
+@@ -354,6 +354,9 @@ BOOL LLImageJ2COJ::getMetadata(LLImageJ2C &base)
+ 	// Only decode what's required to get the size data.
+ 	parameters.cp_limit_decoding=LIMIT_TO_MAIN_HEADER;
+ 
++	// Only decode what's required to get the size data.
++	//parameters.cp_limit_tags=OPJ_LIMIT_FOR_SIZE;
++
+ 	//parameters.cp_reduce = mRawDiscardLevel;
+ 
+ 	/* decode the code-stream */
+@@ -387,7 +390,7 @@ BOOL LLImageJ2COJ::getMetadata(LLImageJ2C &base)
+ 
+ 	if(!image)
+ 	{
+-		fprintf(stderr, "ERROR -> getMetadata: failed to decode image!\n");
++		//fprintf(stderr, "ERROR -> getMetadata: failed to decode image!\n");
+ 		return FALSE;
+ 	}
+ 
+@@ -402,5 +405,6 @@ BOOL LLImageJ2COJ::getMetadata(LLImageJ2C &base)
+ 
+ 	/* free image data structure */
+ 	opj_image_destroy(image);
++	return TRUE;
+ 	return TRUE;
+ }

@@ -1,0 +1,12 @@
+$OpenBSD$
+--- indra/newview/llfloaternamedesc.cpp.orig	Mon Jan  8 23:57:33 2007
++++ indra/newview/llfloaternamedesc.cpp	Mon Jan  8 23:58:23 2007
+@@ -86,7 +86,7 @@ BOOL LLFloaterNameDesc::postBuild()
+ 		end_p = asset_name_str + strlen( asset_name_str );
+ 	}
+ 	else
+-	if( !stricmp( end_p, ".wav") )
++	if( !strcasecmp( end_p, ".wav") )
+ 	{
+ 		mIsAudio = TRUE;
+ 	}

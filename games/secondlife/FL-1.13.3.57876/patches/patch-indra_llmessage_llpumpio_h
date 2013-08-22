@@ -1,0 +1,12 @@
+$OpenBSD$
+--- indra/llmessage/llpumpio.h.orig	Thu Feb  8 12:13:42 2007
++++ indra/llmessage/llpumpio.h	Thu Feb  8 12:13:53 2007
+@@ -35,7 +35,7 @@
+ #include <sys/param.h>
+ #endif
+ 
+-#include "apr-1/apr_pools.h"
++#include "apr-1-mt/apr_pools.h"
+ #include "llbuffer.h"
+ #include "llframetimer.h"
+ #include "lliopipe.h"

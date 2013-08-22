@@ -1,0 +1,12 @@
+$OpenBSD$
+--- indra/newview/llviewerwindow.cpp.orig	Fri Jan 19 22:26:42 2007
++++ indra/newview/llviewerwindow.cpp	Wed Jan 24 08:54:28 2007
+@@ -1197,7 +1197,7 @@ LLViewerWindow::LLViewerWindow(
+ 	if (NULL == mWindow)
+ 	{
+ 		LLSplashScreen::update("Shutting down...");
+-#if LL_LINUX
++#if LL_LINUX || defined(__OpenBSD__)
+ 		llwarns << "Unable to create window, be sure screen is set at 32-bit color and your graphics driver is configured correctly.  See README-linux.txt for further information."
+ 				<< llendl;
+ #else

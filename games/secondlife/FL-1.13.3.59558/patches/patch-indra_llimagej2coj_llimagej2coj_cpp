@@ -1,0 +1,53 @@
+$OpenBSD$
+--- indra/llimagej2coj/llimagej2coj.cpp.orig	Thu Mar 22 01:34:56 2007
++++ indra/llimagej2coj/llimagej2coj.cpp	Sun Mar 25 07:27:06 2007
+@@ -30,7 +30,7 @@
+ 
+ // this is defined so that we get static linking.
+ #define OPJ_STATIC
+-#include "openjpeg/openjpeg.h"
++#include "openjpeg.h"
+ 
+ #include "lltimer.h"
+ #include "llmemory.h"
+@@ -51,20 +51,20 @@ sample error callback expecting a FILE* 
+ */
+ void error_callback(const char *msg, void *client_data) {
+ 	FILE *stream = (FILE*)client_data;
+-	fprintf(stream, "[ERROR] %s", msg);
++	//llinfos << "llimagej2coj: ERROR" << msg << llendl;
+ }
+ /**
+ sample warning callback expecting a FILE* client object
+ */
+ void warning_callback(const char *msg, void *client_data) {
+ 	FILE *stream = (FILE*)client_data;
+-	fprintf(stream, "[WARNING] %s", msg);
++	//llinfos << "llimagej2coj: WARNING" << msg << llendl;
+ }
+ /**
+ sample debug callback expecting no client object
+ */
+ void info_callback(const char *msg, void *client_data) {
+-	fprintf(stdout, "[INFO] %s", msg);
++	//llinfos << "llimagej2coj: INFO" << msg << llendl;
+ }
+ 
+ 
+@@ -343,6 +343,9 @@ BOOL LLImageJ2COJ::getMetadata(LLImageJ2
+ 	// Only decode what's required to get the size data.
+ 	parameters.cp_limit_decoding=LIMIT_TO_MAIN_HEADER;
+ 
++	// Only decode what's required to get the size data.
++	parameters.cp_limit_tags=OPJ_LIMIT_FOR_SIZE;
++
+ 	//parameters.cp_reduce = mRawDiscardLevel;
+ 
+ 	/* decode the code-stream */
+@@ -391,5 +394,6 @@ BOOL LLImageJ2COJ::getMetadata(LLImageJ2
+ 
+ 	/* free image data structure */
+ 	opj_image_destroy(image);
++	return TRUE;
+ 	return TRUE;
+ }

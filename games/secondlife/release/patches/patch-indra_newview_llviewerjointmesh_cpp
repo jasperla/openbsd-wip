@@ -1,0 +1,30 @@
+$OpenBSD$
+--- indra/newview/llviewerjointmesh.cpp.orig	Tue Jan  9 06:33:38 2007
++++ indra/newview/llviewerjointmesh.cpp	Tue Jan  9 06:38:02 2007
+@@ -55,7 +55,7 @@
+ #include "llsky.h"
+ #include "pipeline.h"
+ 
+-#if !LL_DARWIN && !LL_LINUX
++#if !LL_DARWIN && !LL_LINUX && !defined(__OpenBSD__)
+ extern PFNGLWEIGHTPOINTERARBPROC glWeightPointerARB;
+ extern PFNGLWEIGHTFVARBPROC glWeightfvARB;
+ extern PFNGLVERTEXBLENDARBPROC glVertexBlendARB;
+@@ -700,7 +700,7 @@ void blend_SSE_32_32_batch(const int ver
+ 	}
+ }
+ 
+-#elif LL_LINUX
++#elif LL_LINUX || defined(__OpenBSD__)
+ 
+ void blend_SSE_32_32_batch(const int vert_offset, const int vert_count, float* output,
+ 					 LLStrider<LLVector3>& vertices, LLStrider<LLVector2>& texcoords, LLStrider<LLVector3>& normals, LLStrider<F32>& weights)
+@@ -925,7 +925,7 @@ void llDrawElementsBatchBlend(const U32 
+ 		o_texcoords0= (LLVector2*)(gAGPVertices + AVATAR_OFFSET_TEX0);		o_texcoords0.setStride(AVATAR_VERTEX_BYTES);
+ 		o_texcoords1= (LLVector2*)(gAGPVertices + AVATAR_OFFSET_TEX1);		o_texcoords1.setStride(AVATAR_VERTEX_BYTES);
+ 
+-#if !LL_LINUX // !!! *TODO: do the linux implementation
++#if !LL_LINUX && !defined(__OpenBSD__) // !!! *TODO: do the linux implementation
+ 		if (gGLManager.mSoftwareBlendSSE)
+ 		{
+ 			// do SSE blend without binormals or extra texcoords

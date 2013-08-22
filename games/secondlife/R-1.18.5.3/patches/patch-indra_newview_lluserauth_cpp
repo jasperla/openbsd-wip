@@ -1,0 +1,29 @@
+$OpenBSD$
+--- indra/newview/lluserauth.cpp.orig	Wed Nov  7 20:18:12 2007
++++ indra/newview/lluserauth.cpp	Mon Dec  3 02:26:19 2007
+@@ -54,7 +54,7 @@
+ // error if we get compiled for a different platform.
+ // *FIX: This is misreporting on linux. Change this so that linux is
+ // in fact reporting linux.
+-#if LL_WINDOWS || LL_LINUX  
++#if LL_WINDOWS || LL_LINUX  || defined(__OpenBSD__)
+ static const char* PLATFORM_STRING = "Win";
+ #elif LL_DARWIN
+ static const char* PLATFORM_STRING = "Mac";
+@@ -62,6 +62,8 @@ static const char* PLATFORM_STRING = "Mac";
+ static const char* PLATFORM_STRING = "Lnx";
+ #elif LL_SOLARIS
+ static const char* PLATFORM_STRING = "Sol";
++#elif defined(__OpenBSD__)
++static const char* PLATFORM_STRING = "OpenBSD"
+ #else
+ #error("Unknown platform defined!")
+ #endif
+@@ -128,6 +130,7 @@ void LLUserAuth::authenticate(
+ 	XMLRPC_VectorAppendString(params, "channel", gChannelName.c_str(), 0);
+ 	XMLRPC_VectorAppendString(params, "platform", PLATFORM_STRING, 0);
+ 	XMLRPC_VectorAppendString(params, "mac", hashed_mac.c_str(), 0);
++	llinfos << "XMLRPC = '" << buffer << "', platform = '" << PLATFORM_STRING << "'" << llendl;
+ 	// A bit of security through obscurity: id0 is volume_serial
+ 	XMLRPC_VectorAppendString(params, "id0", hashed_volume_serial.c_str(), 0);
+ 	if (skip_optional)

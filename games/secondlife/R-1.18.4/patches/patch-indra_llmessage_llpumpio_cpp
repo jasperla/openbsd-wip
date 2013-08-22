@@ -1,0 +1,12 @@
+$OpenBSD$
+--- indra/llmessage/llpumpio.cpp.orig	Wed Nov  7 20:18:07 2007
++++ indra/llmessage/llpumpio.cpp	Mon Nov 12 02:11:33 2007
+@@ -35,7 +35,7 @@
+ #include "llpumpio.h"
+ 
+ #include <set>
+-#include "apr-1/apr_poll.h"
++#include "apr-1-mt/apr_poll.h"
+ 
+ #include "llapr.h"
+ #include "llmemtype.h"

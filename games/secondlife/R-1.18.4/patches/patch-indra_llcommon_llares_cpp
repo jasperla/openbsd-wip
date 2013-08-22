@@ -1,0 +1,16 @@
+$OpenBSD$
+--- indra/llcommon/llares.cpp.orig	Sat Dec  1 19:44:44 2007
++++ indra/llcommon/llares.cpp	Sat Dec  1 20:45:52 2007
+@@ -50,6 +50,12 @@
+ # define NS_HFIXEDSZ     12      /* #/bytes of fixed data in header */
+ # define NS_QFIXEDSZ     4       /* #/bytes of fixed data in query */
+ # define NS_RRFIXEDSZ    10      /* #/bytes of fixed data in r record */
++#elif defined(__OpenBSD__)
++# define ns_c_in 1
++# define NS_HFIXEDSZ     12      /* #/bytes of fixed data in header */
++# define NS_QFIXEDSZ     4       /* #/bytes of fixed data in query */
++# define NS_RRFIXEDSZ    10      /* #/bytes of fixed data in r record */
++# include <arpa/nameser.h>
+ #else
+ # include <arpa/nameser.h>
+ #endif

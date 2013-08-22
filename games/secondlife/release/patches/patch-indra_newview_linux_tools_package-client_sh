@@ -1,0 +1,20 @@
+$OpenBSD$
+--- indra/newview/linux_tools/package-client.sh.orig	Thu Jan 25 19:06:26 2007
++++ indra/newview/linux_tools/package-client.sh	Sun Jan 28 19:10:39 2007
+@@ -85,7 +85,7 @@ do
+ 		RECURSE="-R"
+ 	fi
+ 	# The -a makes us copy links as links, plus timestamps etc.
+-	cp -a $RECURSE $SOURCE "$PACKAGE_NAME/$DEST"
++	cp -p $RECURSE $SOURCE "$PACKAGE_NAME/$DEST"
+ done
+ 
+ echo Done.
+@@ -128,6 +128,6 @@ fi
+ 
+ echo Creating tarball "newview/$TARBALL"...
+ # --numeric-owner hides the username of the builder for security etc.
+-tar --numeric-owner -cjf $TARBALL $PACKAGE_NAME
++tar -cf - $PACKAGE_NAME | bzip2 -9 > $TARBALL
+ echo Done.
+ 

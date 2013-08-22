@@ -1,0 +1,28 @@
+$OpenBSD$
+--- indra/llcommon/llpreprocessor.h.orig	Wed Jan 17 19:00:04 2007
++++ indra/llcommon/llpreprocessor.h	Sat Jan 20 18:40:12 2007
+@@ -34,12 +34,24 @@
+ #define __ENABLE_WSTRING
+ #include <endian.h>
+ #endif	//	LL_LINUX
++#ifdef __OpenBSD__
++#define __ENABLE_WSTRING
++#include <sys/types.h>
++#include <sys/endian.h>
++# if BYTE_ORDER == LITTLE_ENDIAN
++#  define LL_LITTLE_ENDIAN 1
++# else
++#  define LL_BIG_ENDIAN 1
++# endif
++#else
+ 
+ #if (defined(LL_WINDOWS) || (defined(LL_LINUX) && (__BYTE_ORDER == __LITTLE_ENDIAN)) || (defined(LL_DARWIN) && defined(__LITTLE_ENDIAN__)))
+ #define LL_LITTLE_ENDIAN 1
+ #else
+ #define LL_BIG_ENDIAN 1
+ #endif
++
++#endif /* __OpenBSD__ */
+ 
+ // Per-OS feature switches.
+ 

@@ -1,0 +1,13 @@
+$OpenBSD$
+--- indra/llmath/llmath.h.orig	Mon Jan  8 15:37:23 2007
++++ indra/llmath/llmath.h	Mon Jan  8 15:50:18 2007
+@@ -41,6 +41,9 @@
+ #elif (LL_LINUX && __GNUC__ <= 2)
+ #define llisnan(val)	isnan(val)
+ #define llfinite(val)	isfinite(val)
++#elif defined(__OpenBSD__)
++#define llisnan(val)	isnan(val)
++#define llfinite(val)	finite(val)
+ #else
+ #define llisnan(val)	std::isnan(val)
+ #define llfinite(val)	std::isfinite(val)

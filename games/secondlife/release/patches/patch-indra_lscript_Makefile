@@ -1,0 +1,50 @@
+$OpenBSD$
+--- indra/lscript/Makefile.orig	Sun Jan 28 19:10:38 2007
++++ indra/lscript/Makefile	Mon Jan 29 16:57:05 2007
+@@ -0,0 +1,46 @@
++#	$OpenBSD: Makefile,v 1.14 2005/11/24 20:49:23 deraadt Exp $
++
++LIB=	lscript
++
++SRCS=  indra.l.cpp indra.y.cpp
++SRCS+= lscript_compile/lscript_alloc.cpp
++SRCS+= lscript_library/lscript_alloc.cpp
++SRCS+= lscript_bytecode.cpp
++SRCS+= lscript_error.cpp
++SRCS+= lscript_heap.cpp
++SRCS+= lscript_resource.cpp
++SRCS+= lscript_scope.cpp
++SRCS+= lscript_tree.cpp
++SRCS+= lscript_typecheck.cpp
++SRCS+= lscript_execute.cpp
++SRCS+= lscript_heapruntime.cpp
++SRCS+= lscript_readlso.cpp
++SRCS+= lscript_library.cpp
++SRCS+= lscript_export.cpp
++
++CFLAGS+= -I${.CURDIR}/lscript_compile -I${.CURDIR}
++
++INCDIRS+= llinventory
++
++.PATH: ${.CURDIR} ${.CURDIR}/lscript_compile ${.CURDIR}/lscript_execute ${.CURDIR}/lscript_library
++
++
++DEBUGLIBS=no
++NOPROFILE=yes
++NOPIC=yes
++
++indra.l.cpp: ${.CURDIR}/lscript_compile/indra.l indra.y.cpp
++	flex -t ${.CURDIR}/lscript_compile/indra.l > indra.l.cpp
++
++indra.y.cpp: ${.CURDIR}/lscript_compile/indra.y
++	bison -v -d -o indra.y.c ${.CURDIR}/lscript_compile/indra.y && \
++		mv indra.y.c indra.y.cpp && rm indra.y.output
++
++CLEANFILES+= indra.y.cpp indra.l.cpp indra.y.h
++
++install:
++	@echo -n
++
++.include <bsd.lib.mk>
++.include <../Makefile.llinc>
++

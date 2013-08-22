@@ -1,0 +1,22 @@
+$OpenBSD$
+--- indra/newview/lluserauth.cpp.orig	Thu Mar 22 01:35:09 2007
++++ indra/newview/lluserauth.cpp	Sat Mar 24 22:20:45 2007
+@@ -55,6 +55,10 @@ static const char* PLATFORM_STRING = "Wi
+ static const char* PLATFORM_STRING = "Mac";
+ #elif LL_LINUX
+ static const char* PLATFORM_STRING = "Lnx";
++#elif defined(__OpenBSD__)
++static const char* PLATFORM_STRING = "Win";
++// XXX
++// static const char* PLATFORM_STRING = "OpenBSD";
+ #else
+ #error("Unknown platform defined!")
+ #endif
+@@ -128,6 +132,7 @@ void LLUserAuth::authenticate(
+ 	XMLRPC_VectorAppendString(params, "build", buffer, 0);
+ 	XMLRPC_VectorAppendString(params, "platform", PLATFORM_STRING, 0);
+ 	XMLRPC_VectorAppendString(params, "mac", hashed_mac.c_str(), 0);
++	llinfos << "XMLRPC = '" << buffer << "', platform = '" << PLATFORM_STRING << "'" << llendl;
+ 	// A bit of security through obscurity: id0 is volume_serial
+ 	XMLRPC_VectorAppendString(params, "id0", hashed_volume_serial.c_str(), 0);
+ 	if (skip_optional)

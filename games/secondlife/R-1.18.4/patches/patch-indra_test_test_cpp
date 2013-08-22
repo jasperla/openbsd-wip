@@ -1,0 +1,14 @@
+$OpenBSD$
+--- indra/test/test.cpp.orig	Wed Nov  7 20:18:15 2007
++++ indra/test/test.cpp	Mon Nov 12 02:11:37 2007
+@@ -43,8 +43,8 @@
+ #include "llerrorcontrol.h"
+ #include "lltut.h"
+ 
+-#include <apr-1/apr_pools.h>
+-#include <apr-1/apr_getopt.h>
++#include <apr-1-mt/apr_pools.h>
++#include <apr-1-mt/apr_getopt.h>
+ 
+ // the CTYPE_WORKAROUND is needed for linux dev stations that don't
+ // have the broken libc6 packages needed by our out-of-date static 

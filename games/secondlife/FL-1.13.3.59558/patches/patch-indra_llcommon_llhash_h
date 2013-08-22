@@ -1,0 +1,21 @@
+$OpenBSD$
+--- indra/llcommon/llhash.h.orig	Thu Mar 22 01:34:56 2007
++++ indra/llcommon/llhash.h	Sat Mar 24 22:20:09 2007
+@@ -33,7 +33,7 @@
+ #if (LL_WINDOWS)
+ #include <hash_map>
+ #include <algorithm>
+-#elif LL_DARWIN || LL_LINUX
++#elif LL_DARWIN || LL_LINUX || defined(__OpenBSD__)
+ #  if GCC_VERSION >= 30400 // gcc 3.4 and up
+ #    include <ext/hashtable.h>
+ #  elif __GNUC__ >= 3
+@@ -52,7 +52,7 @@ template<class T> inline size_t llhash(T
+ #elif ( (defined _STLPORT_VERSION) || ((LL_LINUX) && (__GNUC__ <= 2)) )
+ 	std::hash<T> H;
+ 	return H(value);
+-#elif LL_DARWIN || LL_LINUX
++#elif LL_DARWIN || LL_LINUX || defined(__OpenBSD__)
+ 	__gnu_cxx::hash<T> H;
+ 	return H(value);
+ #else

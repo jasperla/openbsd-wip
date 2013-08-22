@@ -1,0 +1,11 @@
+$OpenBSD$
+--- indra/newview/gpu_table.txt.orig	Fri Jan 19 15:46:52 2007
++++ indra/newview/gpu_table.txt	Fri Jan 19 15:47:00 2007
+@@ -14,6 +14,7 @@
+ //   <chip name>	<regexp>	<class>
+ //	
+ 
++Mesa					.*Mesa.*GLX.*Indirect				0
+ 3Dfx							.*3Dfx.*								0
+ 3Dlabs							.*3Dlabs.*								0
+ ATI All-in-Wonder PCI-E			.*ATI.*All-in-Wonder.*PCI-E.*			1

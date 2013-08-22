@@ -1,0 +1,26 @@
+$OpenBSD$
+--- indra/newview/pipeline.cpp.orig	Wed Nov  7 20:18:13 2007
++++ indra/newview/pipeline.cpp	Mon Nov 12 02:11:37 2007
+@@ -237,6 +237,22 @@ void LLPipeline::init()
+ 
+ 	mRenderTypeMask = 0xffffffff;	// All render types start on
+ 	mRenderDebugFeatureMask = 0xffffffff; // All debugging features on
++
++	// XXX Disable some cpu heavy stuff for now by default until we get
++	// the ability to disable this in the overrides.xml file
++	mRenderTypeMask ^= (1<<RENDER_TYPE_STARS);
++	mRenderTypeMask ^= (1<<RENDER_TYPE_PARTICLES);
++	mRenderTypeMask ^= (1<<RENDER_TYPE_BUMP);
++	mRenderTypeMask ^= (1<<RENDER_TYPE_TREE);
++	mRenderTypeMask ^= (1<<RENDER_TYPE_CLOUDS);
++	mRenderTypeMask ^= (1<<RENDER_TYPE_ALPHA);
++	mRenderTypeMask ^= (1<<RENDER_TYPE_GRASS);
++
++	mRenderDebugFeatureMask ^= RENDER_DEBUG_FEATURE_DYNAMIC_TEXTURES;
++	mRenderDebugFeatureMask ^= RENDER_DEBUG_FEATURE_FLEXIBLE;
++	mRenderDebugFeatureMask ^= RENDER_DEBUG_FEATURE_FOG;
++	mRenderDebugFeatureMask ^= RENDER_DEBUG_FEATURE_FR_INFO;
++
+ 	mRenderFeatureMask = 0;	// All features start off
+ 	mRenderDebugMask = 0;	// All debug starts off
+ 

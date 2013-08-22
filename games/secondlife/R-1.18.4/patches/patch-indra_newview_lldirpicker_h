@@ -1,0 +1,12 @@
+$OpenBSD$
+--- indra/newview/lldirpicker.h.orig	Mon Dec  3 02:08:20 2007
++++ indra/newview/lldirpicker.h	Mon Dec  3 02:08:47 2007
+@@ -89,7 +89,7 @@ class LLDirPicker (private)
+ 	
+ #endif
+ 
+-#if LL_LINUX
++#if defined(LL_LINUX) || defined(__OpenBSD__)
+ 	// On Linux we just implement LLDirPicker on top of LLFilePicker
+ 	LLFilePicker *mFilePicker;
+ #endif

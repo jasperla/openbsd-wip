@@ -1,0 +1,12 @@
+$OpenBSD$
+--- indra/llcommon/llstring.h.orig	Wed Jan 10 19:40:13 2007
++++ indra/llcommon/llstring.h	Wed Jan 10 19:40:48 2007
+@@ -51,7 +51,7 @@ class LLUUID;
+ class LLColor4;
+ class LLColor4U;
+ 
+-#if (LL_DARWIN || (LL_LINUX && __GNUC__ > 2))
++#if (LL_DARWIN || (LL_LINUX && __GNUC__ > 2)) || defined(__OpenBSD__)
+ // Template specialization of char_traits for U16s. Only necessary on Mac for now (exists on Windows, unused/broken on Linux/gcc2.95)
+ namespace std
+ {

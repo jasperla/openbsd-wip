@@ -1,0 +1,14 @@
+$OpenBSD$
+--- indra/llimage/llimagej2c.cpp.orig	Thu Mar 22 01:34:56 2007
++++ indra/llimage/llimagej2c.cpp	Sat Mar 24 22:20:14 2007
+@@ -25,8 +25,8 @@
+  */
+ #include "linden_common.h"
+ 
+-#include <apr-1/apr_pools.h>
+-#include <apr-1/apr_dso.h>
++#include <apr-1-mt/apr_pools.h>
++#include <apr-1-mt/apr_dso.h>
+ 
+ #include "lldir.h"
+ #include "llimagej2c.h"

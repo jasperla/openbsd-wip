@@ -1,0 +1,12 @@
+$OpenBSD$
+--- indra/llmessage/llhttpassetstorage.cpp.orig	Wed Nov  7 20:18:07 2007
++++ indra/llmessage/llhttpassetstorage.cpp	Mon Nov 12 08:06:27 2007
+@@ -41,7 +41,7 @@
+ #include "llvfile.h"
+ #include "llvfs.h"
+ 
+-#ifdef LL_STANDALONE
++#if defined(LL_STANDALONE) || defined(__OpenBSD__)
+ # include <zlib.h>
+ #else
+ # include "zlib/zlib.h"

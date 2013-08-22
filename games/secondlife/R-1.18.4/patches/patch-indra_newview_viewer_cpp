@@ -1,0 +1,60 @@
+$OpenBSD$
+--- indra/newview/viewer.cpp.orig	Wed Nov  7 20:18:12 2007
++++ indra/newview/viewer.cpp	Mon Dec  3 02:37:17 2007
+@@ -105,6 +105,11 @@
+ 	    #undef require
+     #endif
+   #endif
++#elif defined(__OpenBSD__)
++  #	include <sys/socket.h>
++  #	include <netinet/in.h>
++  #	include <arpa/inet.h>	// inet_ntoa()
++  #     include <unistd.h>
+ #endif // !LL_WINDOWS
+ 
+ // Support for sending crash reports from the viewer?
+@@ -2212,7 +2217,7 @@ void init_logging()
+ 							     "SecondLife.old");
+ 	LLFile::remove(old_log_file.c_str());
+ 
+-#if LL_LINUX || LL_SOLARIS
++#if LL_LINUX || LL_SOLARIS || defined(__OpenBSD__)
+ 	// Remove the last stack trace, if any
+ 	std::string old_stack_file =
+ 		gDirUtilp->getExpandedFilename(LL_PATH_LOGS,"stack_trace.log");
+@@ -2361,7 +2366,7 @@ std::string get_serial_number()
+ 
+ 	return serial_md5;
+ 
+-#elif LL_LINUX || LL_SOLARIS
++#elif LL_LINUX || LL_SOLARIS || defined(__OpenBSD__)
+ 	// TODO
+ 	return serial_md5;
+ 
+@@ -2572,7 +2577,7 @@ static inline bool being_debugged()
+ 	return debugged == yes;
+ }
+ 
+-#ifdef LL_SOLARIS
++#if defined(LL_SOLARIS) || defined(__OpenBSD__)
+ static inline BOOL do_basic_glibc_backtrace()
+ {
+ 	BOOL success = FALSE;
+@@ -2689,7 +2694,7 @@ void viewer_crash_callback()
+ 	// Sometimes signals don't seem to quit the viewer.  
+ 	// Make sure we exit so as to not totally confuse the user.
+ 	exit(1);
+-#elif LL_LINUX || LL_SOLARIS
++#elif LL_LINUX || LL_SOLARIS || defined(__OpenBSD__)
+ 	// Always generate the report, have the logger do the asking, and
+ 	// don't wait for the logger before exiting (-> total cleanup).
+ 	if (CRASH_BEHAVIOR_NEVER_SEND != gCrashBehavior)
+@@ -5328,7 +5333,7 @@ void signal_handlers(S32 s)
+ 		return;
+ 	}
+ 
+-# if LL_LINUX || LL_SOLARIS
++# if LL_LINUX || LL_SOLARIS || defined(__OpenBSD__)
+ 	// Really useful to know what KIND of crash we got.
+ 	// Might want this on OSX too!
+ 	llwarns << "*** Caught signal " << s << llendl;

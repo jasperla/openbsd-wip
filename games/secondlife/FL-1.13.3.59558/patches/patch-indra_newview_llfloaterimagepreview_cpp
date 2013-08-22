@@ -1,0 +1,22 @@
+$OpenBSD$
+--- indra/newview/llfloaterimagepreview.cpp.orig	Thu Mar 22 01:35:10 2007
++++ indra/newview/llfloaterimagepreview.cpp	Sat Mar 24 22:20:43 2007
+@@ -288,15 +288,15 @@ bool LLFloaterImagePreview::loadImage(co
+ 
+ 	U32 codec = IMG_CODEC_INVALID;
+ 	LLString temp_str;
+-	if( 0 == strnicmp(ext, ".bmp", 4) )
++	if( 0 == strncasecmp(ext, ".bmp", 4) )
+ 	{
+ 		codec = IMG_CODEC_BMP;
+ 	}
+-	else if( 0 == strnicmp(ext, ".tga", 4) )
++	else if( 0 == strncasecmp(ext, ".tga", 4) )
+ 	{
+ 		codec = IMG_CODEC_TGA;
+ 	}
+-	else if( 0 == strnicmp(ext, ".jpg", 4) || 0 == strnicmp(ext, ".jpeg", 5))
++	else if( 0 == strncasecmp(ext, ".jpg", 4) || 0 == strncasecmp(ext, ".jpeg", 5))
+ 	{
+ 		codec = IMG_CODEC_JPEG;
+ 	}

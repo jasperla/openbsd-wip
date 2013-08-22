@@ -1,0 +1,22 @@
+$OpenBSD$
+--- indra/llcommon/llfile.cpp.orig	Sun Feb 11 21:25:56 2007
++++ indra/llcommon/llfile.cpp	Sun Feb 11 21:26:39 2007
+@@ -31,6 +31,9 @@
+ #include "llfile.h"
+ #include "llstring.h"
+ #include "llerror.h"
++#if defined(__OpenBSD__)
++#include <unistd.h>
++#endif
+ 
+ using namespace std;
+ 
+@@ -55,6 +58,8 @@ int	LLFile::rmdir(const	char* dirname)
+ 	std::string utf8dirname = dirname;
+ 	llutf16string utf16dirname = utf8str_to_utf16str(utf8dirname);
+ 	return _wrmdir(utf16dirname.c_str());
++#elif defined(__OpenBSD__)
++	return rmdir(dirname);
+ #else
+ 	return ::rmdir(dirname);
+ #endif

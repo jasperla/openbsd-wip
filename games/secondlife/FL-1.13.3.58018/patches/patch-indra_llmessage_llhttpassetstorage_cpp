@@ -1,0 +1,15 @@
+$OpenBSD$
+--- indra/llmessage/llhttpassetstorage.cpp.orig	Mon Jan  8 17:23:27 2007
++++ indra/llmessage/llhttpassetstorage.cpp	Mon Jan  8 17:23:48 2007
+@@ -34,7 +34,11 @@
+ #include "llvfile.h"
+ #include "llvfs.h"
+ 
++#if defined(__OpenBSD__)
++#include <zlib.h>
++#else
+ #include "zlib/zlib.h"
++#endif
+ 
+ const F32 MAX_PROCESSING_TIME = 0.005f;
+ const S32 CURL_XFER_BUFFER_SIZE = 65536;

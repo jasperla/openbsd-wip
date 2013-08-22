@@ -1,0 +1,42 @@
+$OpenBSD$
+--- indra/newview/viewer.cpp.orig	Wed Jan 31 15:59:55 2007
++++ indra/newview/viewer.cpp	Fri Feb  2 02:27:57 2007
+@@ -91,6 +91,11 @@
+ 	    #undef require
+     #endif
+   #endif
++#elif defined(__OpenBSD__)
++  #	include <sys/socket.h>
++  #	include <netinet/in.h>
++  #	include <arpa/inet.h>	// inet_ntoa()
++  #     include <unistd.h>
+ #endif // !LL_WINDOWS
+ 
+ // Support for sending crash reports from the viewer?
+@@ -1063,7 +1068,7 @@ int main( int argc, char **argv ) 
+ 	gErrorStream.setPrintLocation(FALSE);
+ 	gErrorStream.setErrorCallback(errorCallback);
+ 
+-#if LL_DARWIN || LL_LINUX
++#if LL_DARWIN || LL_LINUX || defined(__OpenBSD__)
+ 	// Disable syslogging - the viewer shouldn't spam there
+ 	gErrorBuffer.enableSyslog(FALSE);
+ #endif
+@@ -2210,7 +2215,7 @@ std::string get_serial_number()
+ 
+ 	return serial_md5;
+ 
+-#elif LL_LINUX
++#elif LL_LINUX || defined(__OpenBSD__)
+ 	// TODO
+ 	return serial_md5;
+ 
+@@ -2465,6 +2470,8 @@ void viewer_crash_callback()
+ 		
+ 	// Sometimes signals don't seem to quit the viewer.  
+ 	// Make sure we exit so as to not totally confuse the user.
++	exit(1);
++#elif defined(__OpenBSD__)
+ 	exit(1);
+ #elif LL_LINUX
+ 	// Always generate the report, have the logger do the asking, and

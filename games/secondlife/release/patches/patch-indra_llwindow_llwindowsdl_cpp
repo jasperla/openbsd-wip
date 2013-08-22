@@ -1,0 +1,64 @@
+$OpenBSD$
+--- indra/llwindow/llwindowsdl.cpp.orig	Wed Jan 17 19:00:11 2007
++++ indra/llwindow/llwindowsdl.cpp	Fri Jan 19 16:05:00 2007
+@@ -44,7 +44,7 @@
+ # include "gtk/gtk.h"
+ #endif // LL_GTK
+ 
+-#if LL_LINUX
++#if LL_LINUX || defined(__OpenBSD__)
+ // not necessarily available on random SDL platforms, so #if LL_LINUX
+ // for execv(), waitpid(), fork()
+ # include <unistd.h>
+@@ -261,7 +261,7 @@ BOOL LLWindowSDL::createContext(int x, i
+ //    const char *gllibname = null;
+ 
+ 	llinfos << "createContext, fullscreen=" << fullscreen <<
+-	    " size=" << width << "x" << height << llendl;
++	    " size=" << width << "x" << height << "@" << bits << llendl;
+ 
+ 	// captures don't survive contexts
+ 	mGrabbyKeyFlags = 0;
+@@ -321,7 +321,8 @@ BOOL LLWindowSDL::createContext(int x, i
+ 	SDL_GL_SetAttribute(SDL_GL_RED_SIZE,  8);
+ 	SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE,8);
+ 	SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 8);
+-        SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, (bits <= 16) ? 16 : 24);
++        //SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, (bits <= 16) ? 16 : 24);
++        SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 16);
+         SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE, (bits <= 16) ? 1 : 8);
+ 
+         // *FIX: try to toggle vsync here?
+@@ -332,6 +333,7 @@ BOOL LLWindowSDL::createContext(int x, i
+ 	int sdlflags = SDL_OPENGL | SDL_RESIZABLE | SDL_ANYFORMAT;
+ 
+ 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
++	//SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 0);
+ 
+     	mSDLFlags = sdlflags;
+ 
+@@ -429,6 +431,7 @@ BOOL LLWindowSDL::createContext(int x, i
+ 		    width = 768;
+ 
+ 		llinfos << "createContext: creating window " << width << "x" << height << "x" << bits << llendl;
++		// sdlflags = SDL_RESIZABLE;
+ 		mWindow = SDL_SetVideoMode(width, height, bits, sdlflags);
+ 
+ 		if (!mWindow)
+@@ -605,6 +608,7 @@ void LLWindowSDL::destroyContext()
+ 
+ LLWindowSDL::~LLWindowSDL()
+ {
++	llinfos << "~LLWindowSDL begins" << llendl;
+ 	quitCursors();
+ 	destroyContext();
+ 
+@@ -2440,7 +2444,7 @@ void spawn_web_browser(const char* escap
+ {
+ 	llinfos << "spawn_web_browser: " << escaped_url << llendl;
+ 	
+-#if LL_LINUX
++#if LL_LINUX || defined(__OpenBSD__)
+ #  if LL_X11
+ 	if (SDL_Display) // Just in case - before forking.
+ 		XSync(SDL_Display, False);

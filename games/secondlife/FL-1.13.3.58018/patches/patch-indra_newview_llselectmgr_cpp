@@ -1,0 +1,97 @@
+$OpenBSD$
+--- indra/newview/llselectmgr.cpp.orig	Wed Feb 14 20:31:07 2007
++++ indra/newview/llselectmgr.cpp	Wed Feb 14 22:33:27 2007
+@@ -4967,9 +4967,11 @@ void LLSelectMgr::updateSilhouettes()
+ 	LLSelectNode *node;
+ 	S32 num_sils_genned = 0;
+ 
++	llinfos << "Begin updateSilhouettes" << llendl;
+ 	LLVector3d	cameraPos = gAgent.getCameraPositionGlobal();
+ 	F32 currentCameraZoom = gAgent.getCurrentCameraBuildOffset();
+ 
++	//llinfos << "Stage 1 updateSilhouettes" << llendl;
+ 	if (!mSilhouetteImagep)
+ 	{
+ 		LLUUID id;
+@@ -4977,6 +4979,7 @@ void LLSelectMgr::updateSilhouettes()
+ 		mSilhouetteImagep = gImageList.getImage(id, TRUE, TRUE);
+ 	}
+ 
++	//llinfos << "Stage 2 updateSilhouettes" << llendl;
+ 
+ 	if((cameraPos - mLastCameraPos).magVecSquared() > SILHOUETTE_UPDATE_THRESHOLD_SQUARED * currentCameraZoom * currentCameraZoom)
+ 	{
+@@ -4990,6 +4993,7 @@ void LLSelectMgr::updateSilhouettes()
+ 		
+ 		mLastCameraPos = gAgent.getCameraPositionGlobal();
+ 	}
++	//llinfos << "Stage 3 updateSilhouettes" << llendl;
+ 	
+ 	LLDynamicArray<LLViewerObject*> changed_objects;
+ 
+@@ -5037,9 +5041,11 @@ void LLSelectMgr::updateSilhouettes()
+ 			}
+ 		}
+ 	}
++	//llinfos << "Stage 4 updateSilhouettes" << llendl;
+ 
+ 	if (mRectSelectedObjects.size() > 0)
+ 	{
++		//llinfos << "Stage 5 updateSilhouettes" << llendl;
+ 		//gGLSPipelineSelection.set();
+ 
+ 		//mSilhouetteImagep->bindTexture();
+@@ -5053,6 +5059,7 @@ void LLSelectMgr::updateSilhouettes()
+ 
+ 		BOOL select_linked_set = gSavedSettings.getBOOL("SelectLinkedSet");
+ 
++		//llinfos << "Stage 6 updateSilhouettes" << llendl;
+ 		// generate list of roots from current object selection
+ 		for (std::set<LLPointer<LLViewerObject> >::iterator iter = mRectSelectedObjects.begin();
+ 			 iter != mRectSelectedObjects.end(); iter++)
+@@ -5069,6 +5076,7 @@ void LLSelectMgr::updateSilhouettes()
+ 			}
+ 		}
+ 
++		//llinfos << "Stage 7 updateSilhouettes" << llendl;
+ 		// remove highlight nodes not in roots list
+ 		LLDynamicArray<LLSelectNode*> remove_these_nodes;
+ 		LLDynamicArray<LLViewerObject*> remove_these_roots;
+@@ -5097,6 +5105,7 @@ void LLSelectMgr::updateSilhouettes()
+ 			}
+ 		}
+ 
++		//llinfos << "Stage 8 updateSilhouettes" << llendl;
+ 		// remove all highlight nodes no longer in rectangle selection
+ 		S32 i;
+ 		for (i = 0; i < remove_these_nodes.count(); i++)
+@@ -5110,6 +5119,7 @@ void LLSelectMgr::updateSilhouettes()
+ 			roots.erase(remove_these_roots[i]);
+ 		}
+ 
++		//llinfos << "Stage 9 updateSilhouettes" << llendl;
+ 		// add all new objects in rectangle selection
+ 		for (std::set<LLViewerObject*>::iterator iter = roots.begin();
+ 			 iter != roots.end(); iter++)
+@@ -5149,6 +5159,7 @@ void LLSelectMgr::updateSilhouettes()
+ 
+ 		num_sils_genned	= 0;
+ 
++		//llinfos << "Stage 9 updateSilhouettes" << llendl;
+ 		// render silhouettes for highlighted objects
+ 		//BOOL subtracting_from_selection = (gKeyboard->currentMask(TRUE) == MASK_CONTROL);
+ 		for (S32 pass = 0; pass < 2; pass++)
+@@ -5205,11 +5216,13 @@ void LLSelectMgr::updateSilhouettes()
+ 		mHighlightedObjects.deleteAllNodes();
+ 	}
+ 
++	//llinfos << "Stage 10 updateSilhouettes" << llendl;
+ 	for (S32 i = 0; i < changed_objects.count(); i++)
+ 	{
+ 		// clear flags after traversing node list (as child objects need to refer to parent flags, etc)
+ 		changed_objects[i]->clearChanged(LLXform::MOVED | LLXform::SILHOUETTE);
+ 	}
++	//llinfos << "Stage 11 updateSilhouettes (THE END)" << llendl;
+ 	
+ 	//glAlphaFunc(GL_GREATER, 0.01f);
+ }

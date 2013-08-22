@@ -1,0 +1,71 @@
+$OpenBSD$
+--- indra/SConstruct.orig	Thu Mar 22 01:34:54 2007
++++ indra/SConstruct	Sat Mar 24 22:19:35 2007
+@@ -183,7 +183,7 @@ for build_target in targets:
+ 		# Linux-only flags
+ 		flags += '-DLL_LINUX=1 '
+ 		if build_target == 'client':
+-			flags += '-DAPPID=secondlife -DLL_SDL=1 -DLL_X11=1 '
++			flags += '-DAPPID=secondlife -DLL_SDL=1 -DLL_FMOD=0 -DLL_X11=1 '
+ 			flags += '-DLL_GTK=1 '
+ 			client_external_libs += [ 'gtk-x11-2.0', 'elfio' ]
+ 			include_dirs += [ '../libraries/' + system_str + '/include/gtk-2.0' ]
+@@ -201,8 +201,28 @@ for build_target in targets:
+ 			else:
+ 				flags += '-DLL_LIBXUL_ENABLED=0 '
+ 	else:
+-		# Mac-only flags
+-		flags += '-x c++ -arch ppc -pipe -Wno-trigraphs -fpascal-strings -faltivec -fasm-blocks -g -O2 -fmessage-length=0 -mtune=G4 -Wno-deprecated-declarations -Wno-invalid-offsetof -mmacosx-version-min=10.3 -DLL_DARWIN=1 -Wmost -Wno-sign-compare -Wno-switch -fpch-preprocess -F./newview/build/Deployment -fconstant-cfstrings -ffor-scope -Wno-reorder -isysroot /Developer/SDKs/MacOSX10.3.9.sdk '
++		if platform == 'openbsd4':
++			# OpenBSD 4.x-only flags
++			flags += '-DAPPID=secondlife -DLL_SDL=1 -DLL_FMOD=0 -DLL_X11=1 '
++			flags += '-DLL_GTK=1 -pthread '
++			system_link_flags += '-L/usr/local/lib -L/usr/X11R6/lib '
++			client_external_libs += [ 'stdc++','gtk-x11-2.0', 'boost_iostreams-mt', 'boost_thread-mt', 'boost_regex-mt' ]
++			include_dirs += [ '/usr/local/include/gtk-2.0' ]
++			include_dirs += [ '/usr/local/lib/gtk-2.0/include' ]
++			include_dirs += [ '/usr/local/include/glib-2.0']
++			include_dirs += [ '/usr/local/lib/glib-2.0/include']
++			include_dirs += [ '/usr/local/include/pango-1.0' ]
++			include_dirs += [ '/usr/local/include/atk-1.0' ]
++			include_dirs += [ '/usr/local/include/ELFIO' ]
++			include_dirs += [ '/usr/X11R6/include/freetype2' ]
++			include_dirs += [ '/usr/local/include/cairo' ]
++			include_dirs += [ '/usr/local/include' ]
++			include_dirs += [ '/usr/X11R6/include' ]
++			include_dirs += [ '/usr/X11R6/include/X11' ]
++		else:
++		
++			# Mac-only flags
++			flags += '-x c++ -arch ppc -pipe -Wno-trigraphs -fpascal-strings -faltivec -fasm-blocks -g -O2 -fmessage-length=0 -mtune=G4 -Wno-deprecated-declarations -Wno-invalid-offsetof -mmacosx-version-min=10.3 -DLL_DARWIN=1 -Wmost -Wno-sign-compare -Wno-switch -fpch-preprocess -F./newview/build/Deployment -fconstant-cfstrings -ffor-scope -Wno-reorder -isysroot /Developer/SDKs/MacOSX10.3.9.sdk '
+ 
+ 	### Build type-specific flags ###
+ 
+@@ -215,7 +235,7 @@ for build_target in targets:
+ 	# ENVIRONMENT  #
+ 	################
+ 
+-	gcc_bin = 'g++-3.4'
++	gcc_bin = 'g++ -s'
+ 	# If you strip more aggressively than -S then the quality of crash-
+ 	# logger backtraces deteriorates.
+ 	strip_cmd = 'strip -S -o $TARGET $SOURCE'
+@@ -396,11 +416,17 @@ for build_target in targets:
+ 			# BUILD LINUX_CRASH_LOGGER  #
+ 			#############################
+ 			output_crashlogger_bin = 'linux_crash_logger/linux-crash-logger-' + arch + '-bin'
+-			external_libs = net_external_libs + [ 'db-4.2', 'gtk-x11-2.0' ]
++			external_libs = net_external_libs + [ 'db', 'gtk-x11-2.0' ]
+ 			external_libs.remove('cares')
+ 			internal_libs = [ 'llvfs', 'llmath', 'llcommon' ]
+ 			create_executable(output_crashlogger_bin + '-globalsyms', 'linux_crash_logger', internal_libs + external_libs)
+ 			env.Command(output_crashlogger_bin, output_crashlogger_bin + '-globalsyms', hidesyms_cmd)
++
++		if platform == 'openbsd4':
++			output_crashlogger_bin = 'linux_crash_logger/linux-crash-logger-' + arch + '-bin'
++			external_libs = net_external_libs + [ 'db', 'gtk-x11-2.0' ]
++			internal_libs = [ 'llvfs', 'llmath', 'llcommon' ]
++			create_executable(output_crashlogger_bin, 'linux_crash_logger', internal_libs + external_libs)
+ 
+ 		create_static_module('llaudio')
+ 		create_static_module('llmedia')
