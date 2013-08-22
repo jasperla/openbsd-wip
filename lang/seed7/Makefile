@@ -3,9 +3,10 @@
 # Fails for me on macppc, sgi, and sparc64.
 NOT_FOR_ARCHS =	${BE_ARCHS}
 
+V =		20130820
 COMMENT =	high-level, extensible programming language
-DISTNAME =	seed7_05_20130805
-PKGNAME =	seed7-20130805
+DISTNAME =	seed7_05_${V}
+PKGNAME =	seed7-${V}
 EXTRACT_SUFX =	.tgz
 CATEGORIES =	lang
 
