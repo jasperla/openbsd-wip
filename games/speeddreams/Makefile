@@ -4,12 +4,16 @@ SHARED_ONLY =		Yes
 
 ONLY_FOR_ARCHS =	amd64 i386
 
-COMMENT =		open source motorsport simulation
+MULTI_PACKAGES =	-main -data
+
+COMMENT-main =		open source motorsport simulation
+COMMENT-data =		open source motorsport simulation, data files
 
 V =			2.0.0
 REV =			r4687
 DISTNAME =		speed-dreams-src-base-$V-${REV}
-PKGNAME =		speeddreams-$V
+PKGNAME-main =		speeddreams-$V
+PKGNAME-data =		speeddreams-data-$V
 
 CATEGORIES =		games
 
@@ -20,8 +24,9 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL GLU ICE SDL SM X11 Xext Xrandr c enet jpeg m openal
-WANTLIB += png pthread stdc++ z
+WANTLIB-main += GL GLU ICE SDL SM X11 Xext Xrandr c enet jpeg m openal
+WANTLIB-main += png pthread stdc++ z
+WANTLIB-data = #empty
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=speed-dreams/}
 EXTRACT_SUFX =		.tar.xz
@@ -38,11 +43,12 @@ DISTFILES = \
 
 MODULES =		devel/cmake
 BUILD_DEPENDS =		devel/plib
-LIB_DEPENDS =		net/enet \
+LIB_DEPENDS-main =	net/enet \
 			devel/sdl \
 			audio/openal \
 			graphics/png \
 			graphics/jpeg
+RUN_DEPENDS-main =	${BASE_PKGPATH},-data
 
 CONFIGURE_ARGS +=	-DOPTION_OFFICIAL_ONLY=ON
 
