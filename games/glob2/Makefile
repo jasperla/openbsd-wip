@@ -38,7 +38,8 @@ LIB_DEPENDS =		devel/sdl-image \
 			audio/portaudio-svn \
 			audio/speex \
 			audio/libvorbis
-RUN_DEPENDS = 		devel/desktop-file-utils
+RUN_DEPENDS = 		devel/desktop-file-utils \
+			x11/gtk+2,-guic
 
 pre-patch:
 	@find ${WRKSRC} -name *.orig -exec rm {} \;
