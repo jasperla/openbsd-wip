@@ -1,0 +1,599 @@
+--- /dev/null	Thu Aug 22 07:43:18 2013
++++ tools/full_dbsetup.pl	Thu Aug 22 07:42:41 2013
+@@ -0,0 +1,596 @@
++#!/usr/bin/perl
++
++# Script can be used by automated scripts, manually with options
++# or with an interactive process.
++
++our $VERSION = 2.5.1;
++
++use warnings;
++use strict;
++
++use File::Basename;
++use File::Spec;
++use Encode;
++use DBI;
++use DBD::Pg qw(:pg_types);
++use Getopt::Long;
++
++# Default variable values section
++my $editor              = $ENV{EDITOR} || "vi";
++my $owner               = 'ledgersmb';
++my $pass                = 'LEDGERSMB';
++my $host                = '127.0.0.1';
++my $port                = '5432';
++my $srcdir              = '/usr/local/share/ledgersmb/web';
++my $dstdir              = '/var/www/htdocs/ledgersmb';
++my $coa                 = "$dstdir/sql/coa/us/chart/General.sql";
++my $countrycode         = 'US';
++my $postgres_username   = 'postgres';
++my $postgres_db         = 'postgres';
++my $pgsql_contrib_dir   = '/usr/local/share/postgresql/extension';
++my $admin_firstname     = 'Default';
++my $admin_middlename    = 'NULL';
++my $admin_lastname      = 'Admin';
++my $admin_username      = 'admin';
++my $admin_password      = 'admin';
++my $httpd_conf_location = '/var/www/conf/modules';
++my $web_server_user     = `id -u`;
++my $web_server_group    = `id -g`;
++my $not_interactive     = 0;
++my $postgres_password;
++my $company_name;
++my $gifi;
++my $uid;
++my $gid;
++my $no_postgres_pass;
++my $verbose;
++my $help;
++my $dbh;
++
++# Get absolute tools directory
++my (undef, $tooldir, undef) = fileparse($0);
++$tooldir =~ s/\/$//;
++$tooldir = File::Spec->rel2abs( $tooldir );
++
++# Usage explanation section
++
++my $usage = qq{
++usage: $0 --company COMPANY --pgsql-contrib DIR [option1 .. optionN]
++
++You will need to have permission to write the new ledgersmb-httpd.conf
++and the postgres password, if it is used.
++Unless you select --no_postgres_pass, you will be asked to enter the
++password of the '$postgres_username' user.
++
++This script creates a '$owner' superuser on the specified PostgreSQL host,
++if it does not exist.  Then it proceeds to load the LedgerSMB database
++structure and content, loading Chart of Accounts data and GIFI data
++as specified in the argument list.
++
++The interactive option will allow you to see a listing of the
++possible charts of accounts, country codes or GIFIs.
++
++Available options:
++ --not_interactive     Does not run interactively. Command line options only
++ --srcdir              The path where the sources for LedgerSMB are located
++                       [$srcdir]
++ --dstdir              The path where the sources will be located when invoked
++                       from the webserver [$dstdir]
++ --host                The PostgreSQL host to connect to (see 'man psql') [$host]
++ --port                The PostgreSQL port to connect to (see 'man psql') [$port]
++ --pgsql_contrib       The directory where the pg_trgm.sql and tablefunc.sql
++                       are located (required for PostgreSQL version < 9.1.x)
++ --company             The name of the database to be created. Use lowercase [*]
++ --countrycode         The name of the 2 character country code. [$countrycode]
++ --owner               The name of the superuser which is to become owner of the
++                       company's database. Use lowercase [$owner]
++ --password            The password for the superuser owner of the company
++                       database. [$pass]
++ --coa                 The path locating the file to be used to load the
++                       Chart of Accounts data
++                       [$dstdir/sql/coa/us/chart/General.sql]
++ --gifi                The path locating the file to be used to load the
++                       GIFI data with the chart of accounts
++ --postgres_username   Postgres username [$postgres_username]
++ --postgres_password   Postgres user password. Defaults to none
++ --no_postgres_pass    No postgres password is needed
++ --postgres_db         Postgres database name. This is not related to the company
++                       database [$postgres_db]
++ --editor              Editor used to edit ledgersmb.conf [$editor]
++ --httpd_conf_location Location for the new ledgersmb-htpd.conf [$httpd_conf_location]
++ --web_server_user     User that web server will use for ledgersmb [$web_server_user]
++ --web_server_group    Group that web server will use for ledgersmb [$web_server_group]
++ --verbose             Echoes the commands executed by the script during setup
++ --help                Shows this help screen
++
++ * These arguments don't have a default, but are required
++};
++
++GetOptions(
++    'help|?|h'                  => \$help,
++    'not_interactive|n'         => \$not_interactive,
++    'srcdir:s'                  => \$srcdir,
++    'dstdir:s'                  => \$dstdir,
++    'host:s'                    => \$host,
++    'port:i'                    => \$port,
++    'pgsql_contrib|pc:s'        => \$pgsql_contrib_dir,
++    'company=s'                 => \$company_name,
++    'owner:s'                   => \$owner,
++    'password:s'                => \$pass,
++    'coa:s'                     => \$coa,
++    'gifi:s'                    => \$gifi,
++    'countrycode:s'             => \$countrycode,
++    'postgres_username|pu:s'    => \$postgres_username,
++    'postgres_password|pp:s'    => \$postgres_password,
++    'no_postgres_pass|nop'      => \$no_postgres_pass,
++    'postgres_db|pdb:s'         => \$postgres_db,
++    'editor|ed:s'               => \$editor,
++    'httpd_conf_location|hcl:s' => \$httpd_conf_location,
++    'web_server_user|wsu:s'     => \$web_server_user,
++    'web_server_group|wsg:s'    => \$web_server_group,
++    'verbose|v'                 => \$verbose,
++);
++if ($help) {
++    print $usage;
++    exit;
++}
++
++unless ($not_interactive) {
++    interactive_setup();
++}
++
++unless ( defined $company_name ) {
++    print $usage;
++    print "\nmissing or empty --company option\n";
++    exit;
++}
++
++unless ( ( defined $postgres_password ) || ($no_postgres_pass) ) {
++    print $usage;
++    print "\nmissing or empty --postgres_password option\n";
++    exit;
++}
++
++# Get languages, which are inserted further below
++my @results
++    = `$tooldir/generate-language-table-contents.pl $dstdir/locale/po`;
++
++unless ( stat "/tmp/ledgersmb" ) {
++    mkdir "/tmp/ledgersmb" or die "unable to mkdir /tmp/ledgersmb $!\n";
++}
++
++if ( $web_server_user =~ /\w+/ ) {
++    ( undef, undef, $uid, undef ) = getpwnam($web_server_user);
++}
++
++if ( $web_server_group =~ /\w+/ ) {
++    ( undef, undef, undef, $gid ) = getpwnam($web_server_group);
++}
++
++if (`mkdir -p $dstdir`) { die "unable to mkdir /tmp/ledgersmb $!\n"; }
++if (`cp -R $srcdir/* $dstdir`) {
++    die "unable to cp -R $srcdir/* $dstdir $!\n";
++}
++
++chdir $dstdir or die "unable to change to $dstdir $!\n";
++
++unless ( stat "$dstdir/ledgersmb.conf" ) {
++    setup_ledgersmb_conf($dstdir);
++}
++
++# This shell function returns 0 for success
++if ( system "chown -R $uid:$gid $dstdir" ) {
++    if ($verbose) {
++        print
++            "\nWARNING:\nUnable to change ownership of $dstdir to \nuserid $uid and \ngroupid $gid\n";
++    }
++    die
++        "Unable to change ownership of $dstdir to \nuserid $uid and \ngroupid $gid\n";
++}
++
++# ENVIRONMENT NECESSARY for psql
++$ENV{PGUSER}     = $owner;
++$ENV{PGPASSWORD} = $pass;
++$ENV{PGDATABASE} = $company_name;
++
++# Create ledgersmb_httpd.conf from default template
++create_ledgersmb_httpd_conf();
++
++# Connect to main database
++if ($verbose) {
++    print "\nConnecting to database $postgres_db\nWorking...\n\n\n";
++}
++if ( defined $postgres_password ) {
++    $dbh = DBI->connect( "DBI:Pg:dbname=$postgres_db;host=$host;port=$port",
++        $postgres_username, $postgres_password,
++        { 'RaiseError' => 0, pg_enable_utf8 => 1 } );
++}
++else {
++    $dbh = DBI->connect( "DBI:Pg:dbname=$postgres_db;host=$host;port=$port",
++        $postgres_username, { 'RaiseError' => 0, pg_enable_utf8 => 1 } );
++}
++if ($verbose) {
++    print "\nConnected to database $postgres_db\nWorking...\n\n\n";
++}
++
++# Check PostgreSQL version. This affects later steps
++my $is_v9_1plus_aref = $dbh->selectcol_arrayref("SELECT version();");
++if ($verbose) {
++    print "$$is_v9_1plus_aref[0]\n";
++}
++unless ( $$is_v9_1plus_aref[0] =~ /PostgreSQL 9\.[1-9]/ ) {
++    unless ($pgsql_contrib_dir) {
++        print "\n\nYou must specify a contrib directory!\n\n";
++        exit;
++    }
++    if ($verbose) {
++        print "PostgreSQL < 9.1.x\n";
++    }
++}
++
++# Create owner role for company database
++$dbh->do(
++    "CREATE ROLE $owner WITH SUPERUSER LOGIN NOINHERIT ENCRYPTED PASSWORD '$pass';"
++) or die "unable to CREATE ROLE $owner\n";
++
++if ($verbose) {
++    print "username = $owner\n";
++    print "company_name = $company_name\n";
++    print "password = $pass\n";
++    print "login = $owner\n";
++}
++
++# Create company database
++my $dbhc = DBI->connect('dbi:Pg:dbname=template1');
++
++$dbhc->{RaiseError} = 1;
++$dbhc->{AutoCommit} = 1;
++my $dbn = $dbhc->quote_identifier( $ENV{PGDATABASE} );
++my $rc  = $dbhc->do(
++    "CREATE DATABASE $dbn WITH TEMPLATE template0 ENCODING 'UTF8'");
++
++if ( !$rc ) {
++    die "Unable to create new database $company_name";
++}
++my $rc2 = 0;
++
++# Add contrib extensions
++my @contrib_scripts = qw(pg_trgm tsearch2 tablefunc);
++my $suffix;
++
++# unpackaged is to bring older postgresql versions up to date
++# 9.1 or newer do not use unpackaged file
++if ( $$is_v9_1plus_aref[0] =~ /PostgreSQL 9\.[1-9]/ ) {
++    $suffix = "--1.0.sql";
++}
++else {
++    $suffix = "--unpackaged--1.0.sql";
++}
++if ($pgsql_contrib_dir) {
++
++    # postgres 9.1 this is done by create extension pg_trgm btree_gist ..
++    for my $contrib (@contrib_scripts) {
++        $rc2 = system("psql -f $pgsql_contrib_dir/$contrib$suffix");
++        $rc ||= $rc2;
++    }
++}
++elsif ($verbose) {
++    print "Skipping contrib_scripts!";
++}
++
++# Begin filling company database with table/roles/functions/etc
++$rc2 = system("psql -f $dstdir/sql/Pg-database.sql");
++my $mc;
++open( my $fh_loader, '<', "$dstdir/sql/modules/LOADORDER" );
++for my $mod (<$fh_loader>) {
++    chomp($mod);
++    $mod =~ s/#.*//;
++    $mod =~ s/^\s*//;
++    $mod =~ s/\s*$//;
++    next if $mod eq '';
++    $mc = system("psql -f $dstdir/sql/modules/$mod");
++}
++close($fh_loader);
++if ($verbose) {
++    print "\$mc = $mc\n";
++}
++open( my $fh_roles, '<', "$dstdir/sql/modules/Roles.sql" )
++    or die "Unable to open $dstdir/sql/modules/Roles.sql $!";
++open( my $fh_temp_roles, '>', "$dstdir/sql/temp_lsmb_roles.sql" )
++    or die "Unable to open $dstdir/sql/temp_lsmb_roles.sql $!";
++
++for my $line (<$fh_roles>) {
++    $line =~ s/<\?lsmb dbname \?>/$company_name/;
++    print $fh_temp_roles $line;
++}
++
++close $fh_roles;
++close $fh_temp_roles;
++system("psql -f $dstdir/sql/temp_lsmb_roles.sql");
++`rm $dstdir/sql/temp_lsmb_roles.sql`;
++
++# Disconnect from database as postgres user
++$dbh->disconnect();
++
++# Connect to database as owner of database
++if ($verbose) {
++    print "\nConnecting to company database $company_name\nWorking...\n\n\n";
++}
++$dbh = DBI->connect( "DBI:Pg:dbname=$company_name;host=$host;port=$port",
++    $owner, $pass, { 'RaiseError' => 0, pg_enable_utf8 => 1 } );
++if ($verbose) {
++    print "\nConnected to database $company_name\nWorking...\n\n\n";
++}
++
++my $psql_args = "-h $host -p $port -U $owner";
++my $psql_cmd  = "psql $psql_args -d $company_name";
++
++# Load a chart of accounts
++
++if ( $coa ne 'none' ) {
++    open( my $psql_ph, "| $psql_cmd >/dev/null 2>&1" )
++        or die "can't run psql: $!";
++    open( my $coa_fh, "<", $coa ) or die "can't open $coa $!";
++    while (<$coa_fh>) {
++        print $psql_ph $_;
++        if ($verbose) {
++            print $_;
++        }
++    }
++    close $coa_fh;
++    close $psql_ph;
++}
++
++# Load a gifi
++
++if ( defined $gifi ) {
++    open( my $psql_ph, "| $psql_cmd >/dev/null 2>&1" )
++        or die "can't run psql: $!";
++    open( my $gifi_fh, "<", $gifi ) or die "can't open $gifi $!";
++    while (<$gifi_fh>) {
++        print $psql_ph $_;
++        if ($verbose) {
++            print $_;
++        }
++    }
++    close $gifi_fh;
++    close $psql_ph;
++}
++
++# Add languages
++
++my $cmd = "SELECT code FROM language;";
++my @languages;
++my $vetor;
++my $sth = $dbh->prepare($cmd);
++$sth->execute;
++while ( $vetor = $sth->fetchrow ) {
++    push @languages, $vetor;
++}
++
++$dbh->do("COPY language FROM STDIN WITH DELIMITER '|'");
++for my $result (@results) {
++    if ( grep( /$result/, @languages ) ) {
++        next;
++    }
++    $dbh->pg_putcopydata($result);
++    if ($verbose) {
++        print "additional lang results = $result";
++    }
++}
++$dbh->pg_putcopyend();
++
++sub create_ledgersmb_httpd_conf {
++    open( my $tmpl_fh, "<", "$dstdir/ledgersmb-httpd.conf.template" )
++        or die "can't open $dstdir/ledgersmb-httpd.conf.template $!";
++    open( my $lhttpconf_fh, ">", "$httpd_conf_location/ledgersmb-httpd.conf" )
++        or die "can't open $httpd_conf_location/ledgersmb-httpd.conf $!";
++
++    my @tmpl = <$tmpl_fh>;
++    if ($verbose) {
++        print "Creating $httpd_conf_location/ledgersmb-httpd.conf\n";
++    }
++    for my $line (@tmpl) {
++        $line =~ s/WORKING_DIR/$dstdir/g;
++        if ($verbose) {
++            print "$line";
++        }
++        print $lhttpconf_fh $line;
++    }
++    close $tmpl_fh;
++    close $lhttpconf_fh;
++}
++
++sub setup_ledgersmb_conf {
++    my $dstdir = shift;
++    print "\n
++        You do not have a copy of ledgersmb.conf.\n
++        Please edit this new copy derived from ledgersmb.conf.default\n";
++    sleep 4;
++    system
++        "cp $dstdir/ledgersmb.conf.default $dstdir/ledgersmb.conf;$editor $dstdir/ledgersmb.conf";
++}
++
++sub interactive_setup {
++    print "Welcome to the interactive database and role setup utility.\n\n";
++    print "Name of company to add?  ";
++    chomp( $_ = <STDIN> );
++    if ($_) { $company_name = $_; }
++    unless ( defined $company_name ) {
++        print "\nmissing or empty --company option\n";
++        print $usage;
++        exit;
++    }
++    print "Username of database owner? [$owner]  ";
++    chomp( $_ = <STDIN> );
++    if ($_) { $owner = $_; }
++    print "Owner's password? [$pass]  ";
++    chomp( $_ = <STDIN> );
++    if ($_) { $pass = $_; }
++    print "Source directory for ledgersmb files? [$srcdir]  ";
++    chomp( $_ = <STDIN> );
++    if ($_) { $srcdir = $_; }
++    print "Destination directory for ledgersmb files? [$dstdir]  ";
++    chomp( $_ = <STDIN> );
++    if ($_) { $dstdir = $_; }
++
++    # Move files to web directory and chdir to directory
++    `mkdir -p $dstdir`;
++    `cp -R $srcdir/* $dstdir`;
++    chdir $dstdir or die "unable to change to $dstdir $!\n";
++
++    print
++        "Destination directory for ledgersmb-httpd.conf? [$httpd_conf_location]  ";
++    chomp( $_ = <STDIN> );
++    if ($_) { $httpd_conf_location = $_; }
++    print
++        "User name or userid that webserver will run ledgersmb as? [$web_server_user]  ";
++    chomp( $_ = <STDIN> );
++    if ($_) { $web_server_user = $_; }
++    print
++        "Group name or groupid that webserver will run ledgersmb as? [$web_server_group]  ";
++    chomp( $_ = <STDIN> );
++    if ($_) { $web_server_group = $_; }
++    print "host? [$host]  ";
++    chomp( $_ = <STDIN> );
++    if ($_) { $host = $_; }
++    print "port? [$port]  ";
++    chomp( $_ = <STDIN> );
++    if ($_) { $port = $_; }
++    print "postgres username? [$postgres_username]  ";
++    chomp( $_ = <STDIN> );
++    if ($_) { $postgres_username = $_; }
++    print "postgres database name? [$postgres_db]  ";
++    chomp( $_ = <STDIN> );
++    if ($_) { $postgres_db = $_; }
++    print "Do you wish to use a $postgres_db password? [y|n]  ";
++    chomp( $_ = <STDIN> );
++
++    if ( $_ =~ /Y|y|yes|Yes/ ) {
++        print "postgres password?  ";
++        chomp( $_ = <STDIN> );
++        if ($_) { $postgres_password = $_; }
++    }
++    else {
++        $no_postgres_pass = 1;
++    }
++    print "Do you wish to see available country codes? [y|n]  ";
++    chomp( $_ = <STDIN> );
++    if ( $_ =~ /Y|y|yes|Yes/ ) {
++        warn "$dstdir/sql/Pg-database.sql";
++        open( my $fh, "<", "$dstdir/sql/Pg-database.sql" )
++            or die "can't open $dstdir/sql/Pg-database.sql $!";
++        while (<$fh>) {
++            if ( $_
++                =~ /INSERT INTO country\(short_name,name\) VALUES \('(.*)','(.*)'\);/
++                )
++            {
++                print "\n$1  $2";
++            }
++        }
++        close $fh;
++    }
++    print "\nCountry code (Two letters)? [$countrycode]  ";
++    chomp( $_ = <STDIN> );
++    if ($_) { $countrycode = $_; }
++    print "Do you wish to see available COA's? [y|n]  ";
++    chomp( $_ = <STDIN> );
++    if ( $_ =~ /Y|y|yes|Yes/ ) {
++        system "ls -1 $dstdir/sql/coa/*/chart/*";
++    }
++    print "\n\nChart of Accounts (COA) to use? [$coa]  ";
++    chomp( $_ = <STDIN> );
++    if ($_) { $coa = $_; }
++    print "Will you be adding a GIFI? [y|n]  ";
++    chomp( $_ = <STDIN> );
++    if ( $_ =~ /Y|y|yes|Yes/ ) {
++        print "Do you wish to see available GIFI's? [y|n]  ";
++        chomp( $_ = <STDIN> );
++        if ( $_ =~ /Y|y|yes|Yes/ ) {
++            system "ls -1 $dstdir/sql/coa/*/gifi/*";
++        }
++        print "\n\nGIFI to use? Type <Enter> for none.  ";
++        chomp( $_ = <STDIN> );
++        if ($_) { $gifi = $_; }
++    }
++    print "\nFile Editor? [$editor]  ";
++    chomp( $_ = <STDIN> );
++    if ($_) { $editor = $_; }
++    print "Verbose?\n";
++    chomp( $_ = <STDIN> );
++    if ($_) { $verbose = $_; }
++
++    if ($verbose) {
++        print "srcdir = $srcdir\n";
++        print "dstdir = $dstdir\n";
++        print "company_name = $company_name\n";
++        print "owner = $owner\n";
++        print "owner's password = $pass\n";
++        print "host = $host\n";
++        print "port = $port\n";
++        print "postgres_username = $postgres_username\n";
++        print "postgres_password = $postgres_password\n";
++        print "postgres_db = $postgres_db\n";
++        print "countrycode = $countrycode\n";
++        print "coa = $coa\n";
++
++        if ( defined $gifi ) {
++            print "gifi = $gifi\n";
++        }
++        else {
++            print "gifi = NONE\n";
++        }
++        print "pgsql_contrib_dir = $pgsql_contrib_dir\n";
++        print "web_server_user = $web_server_user\n";
++        print "web_server_group = $web_server_group\n";
++        print "httpd_conf_location = $httpd_conf_location\n";
++    }
++}
++
++$dbh->disconnect();
++
++=pod
++
++=head1 NAME
++
++full_dbsetup.pl
++
++=head1 VERSION
++
++This documentation refers to full_dbsetup.pl version 2.5.1
++
++=head1 BUGS AND LIMITATIONS
++
++Please report problems to Chris Bennett (chris@bennettconstruction.us)
++
++Patches are welcome.
++
++=head1 AUTHOR
++
++Chris Bennett  (chris@bennettconstruction.us)
++
++=head1 LICENSE AND COPYRIGHT
++
++Copyright (c) 2013 Chris Bennett (chris@bennettconstruction.us).
++
++Permission to use, copy, modify, and distribute this software for any
++purpose with or without fee is hereby granted, provided that the above
++copyright notice and this permission notice appear in all copies.
++
++THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
++WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
++MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
++ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
++WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
++ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
++OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
++
++This script makes use of software developed by the LedgerSMB core team
++and previous sources. The above license only applies to the original work
++present in this script. Any other licenses of the external modules still
++apply to those modules.
++
++=cut
++
++1;
++
