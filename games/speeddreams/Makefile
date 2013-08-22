@@ -11,8 +11,6 @@ REV =			r4687
 DISTNAME =		speed-dreams-src-base-$V-${REV}
 PKGNAME =		speeddreams-$V
 
-#SHARED_LIBS =		???
-
 CATEGORIES =		games
 
 HOMEPAGE =		http://www.speed-dreams.org/
