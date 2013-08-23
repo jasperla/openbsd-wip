@@ -1,0 +1,24 @@
+$OpenBSD$
+
+Use the base m4 at runtime. Note that we use GNU m4 at build time.
+
+--- src/output.c.orig	Wed Jun  5 08:45:05 2013
++++ src/output.c	Thu Aug 22 23:32:24 2013
+@@ -547,7 +547,7 @@ output_skeleton (void)
+   pid_t pid;
+ 
+   /* Compute the names of the package data dir and skeleton files.  */
+-  char const *m4 = (m4 = getenv ("M4")) ? m4 : M4;
++  char const *m4 = (m4 = getenv ("M4")) ? m4 : "/usr/bin/m4";
+   char const *datadir = pkgdatadir ();
+   char *m4sugar = xconcatenated_filename (datadir, "m4sugar/m4sugar.m4", NULL);
+   char *m4bison = xconcatenated_filename (datadir, "bison.m4", NULL);
+@@ -587,6 +587,8 @@ output_skeleton (void)
+        See the thread starting at
+        <http://lists.gnu.org/archive/html/bug-bison/2008-07/msg00000.html>
+        for details.  */
++
++    /* This is OK as both the base m4 and the m4 port (>1.4.12) accept -g */
+     if (*M4_GNU_OPTION)
+       argv[i++] = M4_GNU_OPTION;
+ 
