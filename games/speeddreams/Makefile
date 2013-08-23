@@ -50,11 +50,11 @@ LIB_DEPENDS-main =	net/enet \
 			graphics/jpeg
 RUN_DEPENDS-main =	${BASE_PKGPATH},-data
 
+PKG_ARCH-data =		*
+
 CONFIGURE_ARGS +=	-DOPTION_OFFICIAL_ONLY=ON
 
 NO_TEST =		Yes
-
-CFLAGS =		-I${X11BASE}/include
 
 pre-extract:
 	@mkdir ${WRKDIST}
