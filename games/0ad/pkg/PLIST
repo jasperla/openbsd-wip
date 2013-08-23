@@ -9,6 +9,8 @@ lib/liblowlevel.a
 lib/libmocks_real.a
 lib/libmocks_test.a
 lib/libmongoose.a
+@lib lib/libmozjs185-ps-debug.so.${LIBmozjs185-ps-debug_VERSION}
+@lib lib/libmozjs185-ps-release.so.${LIBmozjs185-ps-release_VERSION}
 lib/libnetwork.a
 lib/libscriptinterface.a
 lib/libsimulation2.a
