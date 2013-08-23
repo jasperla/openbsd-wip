@@ -1,0 +1,12 @@
+$OpenBSD$
+--- gemrb/GemRB.cfg.sample.in.orig	Sat Apr 27 12:43:29 2013
++++ gemrb/GemRB.cfg.sample.in	Tue Aug 20 21:45:26 2013
+@@ -180,7 +180,7 @@ CD5=/mnt/windows/Programmi/Black Isle/BGII - SoA/CD5/
+ #  Cache directory.                                 #
+ #####################################################
+ 
+-CachePath=./Cache2/
++CachePath=~/.cache/gemrb/
+ 
+ #####################################################
+ #  GemRB Save Path [String]                         #
