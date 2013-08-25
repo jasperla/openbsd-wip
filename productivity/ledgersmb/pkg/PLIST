@@ -175,8 +175,14 @@ share/ledgersmb/contrib/replication/configure-replication.sh
 share/ledgersmb/doc/
 share/ledgersmb/doc/API/
 share/ledgersmb/doc/API/Database
+share/ledgersmb/doc/COPYRIGHT
+share/ledgersmb/doc/INSTALL
 share/ledgersmb/doc/LedgerSMB-manual.pdf
 share/ledgersmb/doc/README.git
+share/ledgersmb/doc/README.plack
+share/ledgersmb/doc/README.sql-ledger
+share/ledgersmb/doc/README.translations
+share/ledgersmb/doc/UPGRADE
 share/ledgersmb/doc/coding-standard.pdf
 share/ledgersmb/doc/coding-standard.tex
 share/ledgersmb/doc/database/
@@ -215,8 +221,10 @@ share/ledgersmb/tools/dbsetup.pl
 share/ledgersmb/tools/delete-company-database.sh
 share/ledgersmb/tools/delete-mycompany-roles.sh
 share/ledgersmb/tools/drop-roles.pl
+share/ledgersmb/tools/drop_company_and_roles.pl
 share/ledgersmb/tools/extract_mimes.sh
 share/ledgersmb/tools/extract_role_grants.sh
+share/ledgersmb/tools/full_dbsetup.pl
 share/ledgersmb/tools/generate-language-table-contents.pl
 share/ledgersmb/tools/lsmb_13-fcgi.conf
 share/ledgersmb/tools/pre-release-tests.sh
@@ -614,6 +622,7 @@ share/ledgersmb/web/custom.pl
 share/ledgersmb/web/customer.pl
 share/ledgersmb/web/drafts.pl
 share/ledgersmb/web/employee.pl
+share/ledgersmb/web/favicon.ico
 share/ledgersmb/web/file.pl
 share/ledgersmb/web/gl.pl
 share/ledgersmb/web/ic.pl
@@ -625,6 +634,7 @@ share/ledgersmb/web/images/ledgersmb_small.png
 share/ledgersmb/web/images/logo.eps
 share/ledgersmb/web/images/logo.png
 share/ledgersmb/web/images/logo_small.png
+share/ledgersmb/web/index.html
 share/ledgersmb/web/inventory.pl
 share/ledgersmb/web/ir.pl
 share/ledgersmb/web/is.pl

@@ -43,22 +43,41 @@ TEST_DEPENDS=		devel/p5-Test-Trap \
 					devel/p5-Test-Pod-Coverage \
 					textproc/p5-Template-Plugin-Latex
 
-#TEST_FLAGS=		LSMB_TEST_DB=Yes
-#TEST_FLAGS+=		LSMB_NEW_DB=frog
-#TEST_FLAGS+=		LSMB_ADMIN_USERNAME=root \
-#LSMB_ADMIN_PASSWORD=password \
-#LSMB_ADMIN_FNAME=Adminfirst \
-#LSMB_ADMIN_LNAME=Adminlast \
-#LSMB_COUNTRY_CODE=US
+# LWP tests require installation with Apache and PostgreSQL running.
+# Database tests require PostgreSQL running.
+# Must manually create role LSMB_ADMIN_USERNAME before database tests.
+# CREATE ROLE root WITH SUPERUSER LOGIN NOINHERIT ENCRYPTED PASSWORD 'password';
+TEST_FLAGS=			LSMB_TEST_DB=Yes
+TEST_FLAGS+=		LSMB_NEW_DB=rich_or_poor
+TEST_FLAGS+=		LSMB_ADMIN_USERNAME=root
+TEST_FLAGS+=		LSMB_ADMIN_PASSWORD=password
+TEST_FLAGS+=		LSMB_ADMIN_FNAME=root
+TEST_FLAGS+=		LSMB_ADMIN_LNAME=adminlast
+TEST_FLAGS+=		LSMB_COUNTRY_CODE=US
+TEST_FLAGS+=		PG_CONTRIB_DIR=/usr/local/share/postgresql/extension
+TEST_FLAGS+=		PGUSER=postgres
+TEST_FLAGS+=		PGPASSWORD=password
+TEST_FLAGS+=		LSMB_TEST_LWP=Yes
+TEST_FLAGS+=		LSMB_BASE_URL=http://127.0.0.1/ledgersmb/
+TEST_FLAGS+=		LSMB_USER=root
+TEST_FLAGS+=		LSMB_PASS=password
+TEST_FLAGS+=		LSMB_LOAD_COA=General.sql
+TEST_FLAGS+=		LSMB_LOAD_GIFI=UCOA-Form990.sql
 
 CONFIGURE_STYLE=	perl
 
 # Need to pick and choose files from messy distfiles
 pre-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/ledgersmb/doc
-	cp -R ${WRKSRC}/doc/* ${PREFIX}/share/ledgersmb/doc
-	rm ${PREFIX}/share/ledgersmb/doc/Notes.Ubuntu \
-		${PREFIX}/share/ledgersmb/doc/COPYRIGHT
+	cp -R ${WRKSRC}/doc/* \
+		${WRKSRC}/README.plack \
+		${WRKSRC}/README.sql-ledger \
+		${WRKSRC}/README.translations \
+		${WRKSRC}/INSTALL \
+		${WRKSRC}/COPYRIGHT \
+		${WRKSRC}/UPGRADE \
+		${PREFIX}/share/ledgersmb/doc
+	rm ${PREFIX}/share/ledgersmb/doc/Notes.Ubuntu
 
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/share/ledgersmb/utils
 	chmod -R 0755 ${WRKSRC}/utils/*/*pl
@@ -92,6 +111,8 @@ pre-install:
 		${WRKSRC}/ledgersmb.conf.default \
 		${WRKSRC}/pos.conf.pl.template \
 		${WRKSRC}/sql \
+		${WRKSRC}/favicon.ico \
+		${WRKSRC}/index.html \
 		${PREFIX}/share/ledgersmb/web
 
 	${INSTALL_SCRIPT} ${WRKSRC}/*pl ${PREFIX}/share/ledgersmb/web
