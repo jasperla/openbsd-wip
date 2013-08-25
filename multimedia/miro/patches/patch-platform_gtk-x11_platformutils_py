@@ -1,0 +1,31 @@
+$OpenBSD$
+--- platform/gtk-x11/platformutils.py.orig	Tue Jan 22 20:43:53 2008
++++ platform/gtk-x11/platformutils.py	Tue Jan 22 20:45:26 2008
+@@ -16,7 +16,7 @@
+ # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+ 
+ import os
+-import statvfs
++import miro_openbsd
+ import threading
+ import config
+ import prefs
+@@ -45,8 +45,7 @@ def getAvailableBytesForMovies():
+     except:
+         pass
+     
+-    statinfo = os.statvfs (dir)
+-    return statinfo.f_frsize * statinfo.f_bavail
++    return miro_openbsd.availbytes(dir)
+ 
+ main_thread = None
+ localeInitialized = True
+@@ -115,7 +114,7 @@ def unicodeToFilename(filename, path = None):
+ 
+     # Keep this a little shorter than the max length, so we can run
+     # nextFilename
+-    MAX_LEN = os.statvfs(path)[statvfs.F_NAMEMAX]-5
++    MAX_LEN = miro_openbsd.maxname()-5
+     
+     filename.replace('/','_').replace("\000","_").replace("\\","_").replace(":","_").replace("*","_").replace("?","_").replace("\"","_").replace("<","_").replace(">","_").replace("|","_")
+     try:
