@@ -1,0 +1,21 @@
+$OpenBSD$
+--- platform/gtk-x11/run.sh.orig	Thu Jan 10 14:55:46 2008
++++ platform/gtk-x11/run.sh	Sat Jan 19 14:56:10 2008
+@@ -17,13 +17,13 @@
+ # along with this program; if not, write to the Free Software
+ # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+ 
+-PYTHON=`which python`
+-PYTHON_VERSION=`python -c 'import sys; info=sys.version_info; print "%s.%s" % (info[0], info[1])'`
+-PREFIX=/usr
++PYTHON=$MODPY_BIN
++PYTHON_VERSION=$MODPY_VERSION
++PREFIX=/usr/local
+ export MIRO_SHARE_ROOT=dist/$PREFIX/share/
+ export MIRO_RESOURCE_ROOT=dist/$PREFIX/share/miro/resources/
+ 
+-PYTHON_PATH=dist/$PREFIX/lib/python$PYTHON_VERSION/site-packages/
++PYTHON_PATH=$MODPY_SITEPKG
+ 
+ if [ -d dist/$PREFIX/lib64/ ]
+ then
