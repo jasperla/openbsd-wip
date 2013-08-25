@@ -28,7 +28,7 @@ DISTFILES =		TorChat-$V${EXTRACT_SUFX}{$V${EXTRACT_SUFX}}
 #EXTRACT_SUFX =		.tar.bz2
 
 #MODULES =		???
-#BUILD_DEPENDS =	???
+BUILD_DEPENDS =	lang/fpc
 #RUN_DEPENDS =		???
 #LIB_DEPENDS =		???
 #TEST_DEPENDS =	???
