@@ -1,0 +1,14 @@
+$OpenBSD$
+--- FuzzyOcr.preps.orig	Tue Sep  4 13:31:13 2007
++++ FuzzyOcr.preps	Mon Sep 17 14:21:43 2007
+@@ -33,3 +33,10 @@ preprocessor maketiff {
+     args = -color -truecolor
+ }
+ 
++# Uses pamditherbw with thresholding on the PAM file
++preprocessor pamditherbw {
++    command = pamditherbw
++    args = -threshold
++}
++
++

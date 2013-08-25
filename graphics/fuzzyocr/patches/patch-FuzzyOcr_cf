@@ -1,0 +1,129 @@
+$OpenBSD$
+--- FuzzyOcr.cf.orig	Tue Sep  4 13:31:13 2007
++++ FuzzyOcr.cf	Mon Sep 17 14:22:15 2007
+@@ -1,7 +1,7 @@
+ # Syntax:
+ # loadplugin <Plugin_Name> <Location>
+ #  <Location> path where Plugin resides.
+-loadplugin FuzzyOcr FuzzyOcr.pm
++loadplugin FuzzyOcr
+ 
+ body     FUZZY_OCR                   eval:fuzzyocr_check()
+ body     FUZZY_OCR_WRONG_CTYPE       eval:dummy_check()
+@@ -43,7 +43,7 @@ priority FUZZY_OCR 900
+ 
+ # Logfile (make sure it is writable by the plugin) 
+ # Default value: none
+-#focr_logfile /tmp/FuzzyOcr.log
++focr_logfile /var/db/spamassassin/FuzzyOcr.log
+ 
+ ###
+ ### Wordlists 
+@@ -66,7 +66,7 @@ priority FUZZY_OCR 900
+ # an environment where the users don't have home directories at all.
+ # Default value: 0
+ #
+-#focr_no_homedirs 1
++focr_no_homedirs 1
+ #
+ ## Optionally, disable this option if you want to scan for numbers
+ ## Setting this to 0 will cause FuzzyOcr not to strip numbers from
+@@ -96,12 +96,9 @@ priority FUZZY_OCR 900
+ 
+ # Include additional scanner/preprocessor commands here:
+ #
+-focr_bin_helper pnmnorm, pnminvert, pamthreshold, ppmtopgm, pamtopnm
+-focr_bin_helper tesseract
++focr_bin_helper pnmnorm, pnminvert, pamditherbw, ppmtopgm, pamtopnm
++#focr_bin_helper tesseract
+ 
+-# These helpers must be defined before enabling PDF scanning
+-#focr_bin_helper pdfinfo, pdftops, pstopnm
+-
+ ###
+ ### Step 2:
+ ### Inform the plugin of the search path to find all helper apps.
+@@ -132,11 +129,8 @@ focr_bin_helper tesseract
+ 
+ #focr_bin_pnmnorm /usr/bin/pnmnorm
+ #focr_bin_pnminvert /usr/bin/pnminvert
++#focr_bin_convert /usr/bin/convert
+ 
+-#focr_bin_pdfinfo /usr/bin/pdfinfo
+-#focr_bin_pdftops /usr/bin/pdftops
+-#focr_bin_pstopnm /usr/bin/pstopnm
+-
+ ###
+ ### Scansets 
+ ###
+@@ -183,7 +177,6 @@ focr_bin_helper tesseract
+ 
+ # Minimum image size to scan. Images with dimensions smaller than the
+ # ones specified here will be skipped:
+-# (This parameter does not apply to PDF files)
+ # Default: Height:4 Width:4
+ #
+ #focr_min_height 4
+@@ -191,7 +184,6 @@ focr_bin_helper tesseract
+ 
+ # Maximum image size to scan. Images with dimensions bigger than the
+ # ones specified here will be skipped:
+-# (This parameter does not apply to PDF files)
+ # Default: Height:800 Width:800
+ #
+ #focr_max_height 800
+@@ -214,15 +206,7 @@ focr_bin_helper tesseract
+ #focr_skip_png 1
+ #focr_skip_bmp 1
+ #focr_skip_tiff 1
+-#
+ 
+-# PDF specific options
+-# WARNING: Enable this at your own risk, this might lead to false positives and classify
+-#          important documents as spam. YOU HAVE BEEN WARNED.
+-#focr_scan_pdfs 0
+-# PDFs having more pages than this value will be skipped
+-#focr_pdf_maxpages 1
+-
+ # Default detection treshold (see manual) 
+ # Default value: 0.25 (Can be changed on a per word basis in the wordlist).
+ #focr_threshold 0.20
+@@ -272,7 +256,7 @@ focr_bin_helper tesseract
+ # This is used to disable the OCR engine if the message has 
+ # already more points than this value 
+ # Default value: 10
+-#focr_autodisable_score 30
++focr_autodisable_score 6
+ 
+ # This is used to disable the OCR engine if the message has
+ # already less points than this value 
+@@ -295,7 +279,7 @@ focr_bin_helper tesseract
+ # skip the scans when the image is found in the database, using the score
+ # from the previous scans.
+ #--
+-#focr_enable_image_hashing 3
++focr_enable_image_hashing 2
+ 
+ # Set this to skip updating the hashing database at startup
+ # Default value: 0 (update at startup)
+@@ -314,17 +298,17 @@ focr_bin_helper tesseract
+ # If the image hash database feature is enabled (Type 1 Hashing),
+ # specify the file to use as database
+ # Default value: /etc/mail/spamassassin/FuzzyOcr.hashdb
+-#focr_digest_db /etc/mail/spamassassin/FuzzyOcr.hashdb
++focr_digest_db /var/db/spamassassin/FuzzyOcr.hashdb
+ 
+ # If the image hash db feature is enabled (Type 2 Hashing),
+ # specify the file to use as the SPAM database
+ # Default value: /etc/mail/spamassassin/FuzzyOcr.db
+-#focr_db_hash /etc/mail/spamassassin/FuzzyOcr.db
++focr_db_hash /var/db/spamassassin/FuzzyOcr.db
+ 
+ # If the image hash db feature is enabled (Type 2 Hashing), 
+ # specify the file to use as the HAM database
+ # Default value: /etc/mail/spamassassin/FuzzyOcr.safe.db
+-#focr_db_safe /etc/mail/spamassassin/FuzzyOcr.safe.db
++focr_db_safe /var/db/spamassassin/FuzzyOcr.safe.db
+ 
+ # Auto-prune: Expire records from hasing databases after these many days
+ # Default value: 35

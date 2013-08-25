@@ -1,0 +1,21 @@
+@comment $OpenBSD$
+libdata/perl5/site_perl/FuzzyOcr/
+libdata/perl5/site_perl/FuzzyOcr.pm
+libdata/perl5/site_perl/FuzzyOcr/Config.pm
+libdata/perl5/site_perl/FuzzyOcr/Deanimate.pm
+libdata/perl5/site_perl/FuzzyOcr/Hashing.pm
+libdata/perl5/site_perl/FuzzyOcr/Logging.pm
+libdata/perl5/site_perl/FuzzyOcr/Misc.pm
+libdata/perl5/site_perl/FuzzyOcr/Preprocessor.pm
+libdata/perl5/site_perl/FuzzyOcr/Scanset.pm
+libdata/perl5/site_perl/FuzzyOcr/Scoring.pm
+share/examples/FuzzyOcr/
+share/examples/FuzzyOcr/FuzzyOcr.cf
+@sample ${CONFDIR}/FuzzyOcr.cf
+share/examples/FuzzyOcr/FuzzyOcr.mysql
+share/examples/FuzzyOcr/FuzzyOcr.preps
+@sample ${CONFDIR}/FuzzyOcr.preps
+share/examples/FuzzyOcr/FuzzyOcr.scansets
+@sample ${CONFDIR}/FuzzyOcr.scansets
+share/examples/FuzzyOcr/FuzzyOcr.words
+@sample ${CONFDIR}/FuzzyOcr.words
