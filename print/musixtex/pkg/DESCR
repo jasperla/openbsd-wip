@@ -1,0 +1,9 @@
+MusiXTeX, created by Daniel Taupin, Ross Mitchell, and Andreas Egler,
+is a set of macros and fonts that enables TeX to typeset music. To use
+it, at a minimum you must copy the macro and font files to the right
+directories in your particular TeX file structure, have the binary
+musixflx available to run, and have a TeX input file containing the
+proper commands. It's a three pass system: TeX, musixflx, then TeX
+again.
+
+WWW: ${HOMEPAGE}
