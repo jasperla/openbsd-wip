@@ -1,0 +1,13 @@
+$OpenBSD$
+--- src/veil_datatypes.h.orig	Mon Sep 22 18:14:53 2008
++++ src/veil_datatypes.h	Mon Sep 22 18:15:11 2008
+@@ -254,7 +254,9 @@ typedef struct Range {
+  *
+  * @return The smaller value of a or b.
+  */
++#ifndef MIN
+ #define MIN(a,b) ((a < b)? a: b)
++#endif
+ 
+ 
+ /**
