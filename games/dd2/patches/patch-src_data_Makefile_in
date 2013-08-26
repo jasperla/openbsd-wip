@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/data/Makefile.in.orig	Mon Aug 26 09:31:22 2013
++++ src/data/Makefile.in	Mon Aug 26 09:31:37 2013
+@@ -197,7 +197,7 @@ maintainer-clean-generic clean mostlyclean distclean m
+ 
+ 
+ install-data-hook:
+-	chmod a+rw $(pkgdatadir)/dd2-hiscore
++	chmod a+r $(DESTDIR)$(pkgdatadir)/dd2-hiscore
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
