@@ -163,7 +163,9 @@ CONFIGURE_STYLE =	gnu
 
 # Overrides for default values
 #
-#CFLAGS =		???
+# DD2_SCORE is a new define pointing to a directory writable by the games group
+# to save the scores. The default is PREFIX/share, so we can't write there.
+CFLAGS +=		-DDD2_SCORE=\\\"${VARBASE}/games\\\"
 #LDFLAGS =		???
 #MAKE_FILE =		???
 #PKG_ARCH =		??? (* for arch-independent packages)
@@ -175,5 +177,9 @@ CONFIGURE_STYLE =	gnu
 #ALL_TARGET =		???
 #INSTALL_TARGET =	???
 #TEST_TARGET =		???
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/dd2
+	${INSTALL_DATA} ${WRKSRC}/src/data/dd2-hiscore ${PREFIX}/share/examples/dd2
 
 .include <bsd.port.mk>

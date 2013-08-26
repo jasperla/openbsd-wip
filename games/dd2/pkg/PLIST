@@ -3,7 +3,6 @@
 share/dd2/
 share/dd2/bgm1.xm
 share/dd2/bgm2.xm
-share/dd2/dd2-hiscore
 share/dd2/dd2.cfg
 share/dd2/efx1.wav
 share/dd2/efx2.wav
@@ -22,3 +21,10 @@ share/doc/dd2/ChangeLog
 share/doc/dd2/NEWS
 share/doc/dd2/README
 share/doc/dd2/TODO
+share/examples/dd2/
+share/examples/dd2/dd2-hiscore
+@mode g+w
+@group games
+@sample /var/games/dd2-hiscore
+@mode
+@group
