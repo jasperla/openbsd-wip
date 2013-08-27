@@ -1,0 +1,20 @@
+$OpenBSD$
+--- async/cpp/AsyncCppDnsLookupWorker.cpp.orig	Tue Aug 27 12:45:23 2013
++++ async/cpp/AsyncCppDnsLookupWorker.cpp	Tue Aug 27 12:49:37 2013
+@@ -277,8 +277,16 @@ void *CppDnsLookupWorker::workerFunc(void *w)
+   {
+     worker->buf = (char *)realloc(worker->buf, bufsize);
+     int h_errnop;
++#if defined(__OpenBSD__)
++    worker->result = gethostbyname(worker->label.c_str());
++    ret - 1;
++    if (worker->result == NULL) {
++      ret = 0;
++    }
++#else
+     ret = gethostbyname_r(worker->label.c_str(), &worker->he_buf, worker->buf,
+       	      	      	  bufsize, &worker->result, &h_errnop);
++#endif
+     bufsize *= 2;
+   } while (ret == ERANGE);
+   
