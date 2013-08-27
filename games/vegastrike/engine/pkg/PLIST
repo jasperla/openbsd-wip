@@ -3,15 +3,15 @@
 @bin bin/base_maker
 @bin bin/mesh_xml
 @bin bin/mesher
-@bin bin/replace
 @bin bin/tempgen
 @bin bin/trisort
 @bin bin/vegaserver
 @bin bin/vegastrike
+@bin bin/vsreplace
 @bin bin/vsrextract
 @bin bin/vsrmake
 @bin bin/vssetup
-@comment objconv/
-@comment objconv/3ds2xml
-@comment objconv/obj2xml
-@comment objconv/wcp2xml
+share/vegastrike/objconv/
+share/vegastrike/objconv/3ds2xml
+share/vegastrike/objconv/obj2xml
+share/vegastrike/objconv/wcp2xml

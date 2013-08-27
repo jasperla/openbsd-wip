@@ -48,4 +48,9 @@ CONFIGURE_ENV =	\
 	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 	LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/vegastrike
+	mv ${PREFIX}/objconv ${PREFIX}/share/vegastrike
+	mv ${PREFIX}/bin/replace ${PREFIX}/bin/vsreplace
+
 .include <bsd.port.mk>
