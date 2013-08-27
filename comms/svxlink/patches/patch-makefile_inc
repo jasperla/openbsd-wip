@@ -1,0 +1,76 @@
+$OpenBSD$
+--- makefile.inc.orig	Sun Mar  3 03:07:30 2013
++++ makefile.inc	Tue Aug 27 15:02:46 2013
+@@ -245,7 +245,7 @@ DIRSPEC = \
+ 	    target_dir=$${dir}; \
+ 	  fi; \
+ 	  if [ "$@" = "install-extras" ]; then \
+-	    $(MKDIR) $${target_dir} -p; \
++	    $(MKDIR) -p $${target_dir}; \
+ 	    [ -n "$$perm" -a "$$perm" != '-' ] \
+ 	        && chmod $$perm $${target_dir}; \
+ 	    [ -z "$$NO_CHOWN" -a -n "$$owner" -a "$$owner" != '-' ] \
+@@ -329,14 +329,14 @@ else
+ endif
+ CCOMP		:= $(CC)
+ CXXCOMP		:= $(CXX)
+-CC		= $(ECHO) --- Compiling $(BOLD)$(@:.o=.c)$(NBOLD)...; $(CCOMP) $(CFLAGS)
+-CXX		= $(ECHO) --- Compiling $(BOLD)$(@:.o=.cpp)$(NBOLD)...; $(CXXCOMP) $(CXXFLAGS)
++CC		= $(ECHO) --- Compiling $(BOLD)$(CCOMP) $(CFLAGS) $(@:.o=.c)$(NBOLD)...; $(CCOMP) $(CFLAGS)
++CXX		= $(ECHO) --- Compiling $(BOLD)$(CXXCOM) $(CXXFLAGS) $(@:.o=.cpp)$(NBOLD)...; $(CXXCOMP) $(CXXFLAGS)
+ 
+ 
+ # Linker
+ LDFLAGS		+= -rdynamic -Wl,-rpath-link,$(LIB)
+-LINK		= $(ECHO) --- Linking $(BOLD)$@$(NBOLD)...; $(CCOMP) $(LIBPATH) $(LDFLAGS)
+-CPPLINK		= $(ECHO) --- Linking $(BOLD)$@$(NBOLD)...; $(CXXCOMP) $(LIBPATH) $(LDFLAGS)
++LINK		= $(ECHO) --- Linking $(BOLD)$(CCOMP) $(LIBPATH) $(LDFLAGS) $@$(NBOLD)...; $(CCOMP) $(LIBPATH) $(LDFLAGS)
++CPPLINK		= $(ECHO) --- Linking $(BOLD)$(CXXCOMP) $(LIBPATH) $(LDFLAGS) $@$(NBOLD)...; $(CXXCOMP) $(LIBPATH) $(LDFLAGS)
+ 
+ # QtMoc
+ #QTMOC		= $(QTDIR)/bin/moc
+@@ -408,7 +408,7 @@ moc_%.cpp:	%.h
+ ifdef PROGS
+ $(PROGS):	$(notdir $(PROGS:%=%.o)) $(PRGOBJS) $(LIBDEP)
+ 	if [ -n "$(BIN)" -a ! -d "$(BIN)" ]; then \
+-	  $(MKDIR) $(BIN) -p; \
++	  $(MKDIR) -p $(BIN); \
+ 	fi
+ 	BASENAME=`basename $@`_version; \
+ 	if [ -r $${BASENAME}.h -a -r $${BASENAME}.c ]; then \
+@@ -429,7 +429,7 @@ endif
+ ifdef CPPPROGS
+ $(CPPPROGS):	$(notdir $(CPPPROGS:%=%.o)) $(PRGOBJS) $(LIBDEP)
+ 	if [ -n "$(BIN)" -a ! -d "$(BIN)" ]; then \
+-	  $(MKDIR) $(BIN) -p; \
++	  $(MKDIR) -p $(BIN); \
+ 	fi
+ 	BASENAME=`basename $@`_version; \
+ 	if [ -r $${BASENAME}.h -a -r $${BASENAME}.c ]; then \
+@@ -522,7 +522,7 @@ expinc:	$(EXPINC:%=$(INC)/%)
+ $(EXPINC:%=$(INC)/%):
+ 	$(ECHO) --- Creating $(BOLD)$@$(NBOLD)...
+ 	if [ -n "$(INC)" -a ! -d "$(INC)" ]; then \
+-	  $(MKDIR) $(INC) -p; \
++	  $(MKDIR) -p $(INC); \
+ 	fi
+ 	$(RM) $@
+ 	ln -s $$($(REVPATH) $$(dirname $@))/$$(basename $@) $@
+@@ -535,7 +535,7 @@ $(LIBFILE):	$(LIBOBJS) $(STATIC_LIBS:%=$(LIB)/lib%.a)
+ 	$(RM) $(LIBFILE)
+ 	$(ECHO) --- Creating archive $(BOLD)$@$(NBOLD)...
+ 	if [ -n "$(LIB)" -a ! -d "$(LIB)" ]; then \
+-	  $(MKDIR) $(LIB) -p; \
++	  $(MKDIR) -p $(LIB); \
+       	fi
+ 	$(AR) cq $(LIBFILE) $(LIBOBJS)
+ 	if [ -n "$(STATIC_LIBS)" ]; then \
+@@ -815,7 +815,7 @@ $(ROOT)/.config:	$(ROOT)/create_config.sh
+ # Generate version files
+ version/%.h: $(ROOT)/versions
+ 	if [ ! -d version ]; then \
+-	  $(MKDIR) version -p; \
++	  $(MKDIR) -p version; \
+ 	fi; \
+ 	. $(ROOT)/versions; \
+ 	if [ -n "$${$*}" ]; then \
