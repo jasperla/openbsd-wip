@@ -1,6 +1,7 @@
---- vt.c.orig	Wed Aug  1 13:28:26 2012
-+++ vt.c	Sat Nov 10 22:21:48 2012
-@@ -46,6 +46,10 @@
+$OpenBSD$
+--- vt.c.orig	Wed Aug 28 10:54:11 2013
++++ vt.c	Wed Aug 28 10:54:46 2013
+@@ -47,6 +47,10 @@
  # include "forkpty-aix.c"
  #endif
  
@@ -11,12 +12,3 @@
  #ifndef NCURSES_ATTR_SHIFT
  # define NCURSES_ATTR_SHIFT 8
  #endif
-@@ -1452,7 +1456,7 @@
- static void send_curs(Vt *t)
- {
- 	char keyseq[16];
--	sprintf(keyseq, "\e[%d;%dR", (int)(t->curs_row - t->lines), t->curs_col);
-+	printf(keyseq, "\e[%d;%dR", (int)(t->curs_row - t->lines), t->curs_col);
- 	vt_write(t, keyseq, strlen(keyseq));
- }
- 

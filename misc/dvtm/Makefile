@@ -2,7 +2,7 @@
 
 COMMENT=		tiling window management for the console
 
-DISTNAME=		dvtm-0.8
+DISTNAME=		dvtm-0.9
 CATEGORIES=		misc
 
 HOMEPAGE=		http://www.brain-dump.org/projects/dvtm/

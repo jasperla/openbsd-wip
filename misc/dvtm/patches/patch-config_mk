@@ -1,23 +1,22 @@
---- config.mk.orig	Sat Nov 10 21:51:59 2012
-+++ config.mk	Sat Nov 10 21:53:26 2012
-@@ -3,11 +3,12 @@
+--- config.mk.orig	Wed Aug 28 10:42:49 2013
++++ config.mk	Wed Aug 28 10:44:26 2013
+@@ -3,11 +3,11 @@
  
  # Customize below to fit your system
  
 -PREFIX = /usr/local
 -MANPREFIX = ${PREFIX}/share/man
-+#PREFIX = /usr/local
-+MANPREFIX = ${PREFIX}/man
++# PREFIX = /usr/local
++# MANPREFIX = ${PREFIX}/share/man
  
 -INCS = -I. -I/usr/include -I/usr/local/include
 -LIBS = -lc -lutil -lncursesw
 +INCS = -I. -I/usr/include
-+#LIBS = -lc -lutil -lncursesw
 +LIBS = -lc -lutil -lncurses
  # NetBSD
  #LIBS = -lc -lutil -lcurses
  # AIX
-@@ -15,9 +16,9 @@
+@@ -15,9 +15,9 @@
  # Cygwin
  #INCS += -I/usr/include/ncurses
  
@@ -26,7 +25,7 @@
 +CFLAGS += -std=c99 ${INCS} -DVERSION=\"${VERSION}\" -DNDEBUG
 +LDFLAGS += -L/usr/lib ${LIBS}
  
- DEBUG_CFLAGS = ${CFLAGS} -UNDEBUG -O0 -g -ggdb -Wall
+ DEBUG_CFLAGS = ${CFLAGS} -UNDEBUG -O0 -g -ggdb -Wall -Wextra -Wno-missing-field-initializers -Wno-unused-parameter
  
 -CC = cc
 +CC ?= cc
