@@ -1,5 +1,7 @@
 # $OpenBSD$
 
+SHARED_ONLY =		Yes
+
 COMMENT =		secure P2P framework
 
 DISTNAME =		gnunet-${V}
@@ -27,10 +29,9 @@ SHARED_LIBS +=  gnunettun                 0.0 # 0.0
 SHARED_LIBS +=  gnunetutil                0.0 # 5.0
 SHARED_LIBS +=  gnunetlockmanager         0.0 # 0.0
 SHARED_LIBS +=  gnunettestbed             0.0 # 0.0
-SHARED_LIBS +=  gnunetmeshblock           0.0 # 2.0
 SHARED_LIBS +=  gnunetregex               0.0 # 0.0
+SHARED_LIBS +=  gnunetregexblock          0.0 # 1.0
 SHARED_LIBS +=  gnunetstream              0.0 # 0.0
-SHARED_LIBS +=  gnunettesting_old         0.0 # 0.1
 SHARED_LIBS +=  gnunetdns                 0.0 # 0.0
 SHARED_LIBS +=  gnunetdnsparser           0.0 # 0.0
 SHARED_LIBS +=  gnunetdnsstub             0.0 # 0.0
@@ -40,7 +41,7 @@ SHARED_LIBS +=  gnunetvpn                 0.0 # 0.0
 
 WANTLIB += bz2 c crypto curl expat extractor fontconfig freetype
 WANTLIB += gcrypt gpg-error idn ltdl m pthread sqlite3 ssl unistring
-WANTLIB += z ogg
+WANTLIB += z ogg pthread-stubs
 
 MODULES =		devel/gettext
 LIB_DEPENDS =		devel/libextractor \
@@ -57,5 +58,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--without-postgres \
 			--with-daemon-home-dir=/var/gnunet \
 			--with-sudo=/usr/bin/sudo
+
+LIBTOOL_FLAGS =		--tag=disable-static
 
 .include <bsd.port.mk>
