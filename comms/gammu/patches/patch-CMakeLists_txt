@@ -1,0 +1,15 @@
+$OpenBSD$
+--- CMakeLists.txt.orig	Sat Sep  1 19:10:58 2012
++++ CMakeLists.txt	Sat Sep  1 19:11:41 2012
+@@ -250,10 +250,7 @@ if (PYTHON_EXECUTABLE)
+ endif (PYTHON_EXECUTABLE)
+ 
+ # Packages in sources
+-macro_optional_find_package (MySQL)
+-macro_optional_find_package (ODBC)
+-macro_optional_find_package (Postgres)
+-macro_optional_find_package (LibDBI)
++# Remove DB support for now
+ macro_optional_find_package (Libintl)
+ macro_optional_find_package (Iconv)
+ macro_optional_find_package (CURL)
