@@ -83,6 +83,7 @@ share/doc/gammu/examples/Makefile
 share/doc/gammu/examples/config/
 share/doc/gammu/examples/config/gammurc
 share/doc/gammu/examples/config/smsdrc
+@sample ${SYSCONFDIR}/gammu-smsdrc
 share/doc/gammu/examples/custom-config.c
 share/doc/gammu/examples/long-sms.c
 share/doc/gammu/examples/media/
@@ -291,6 +292,8 @@ share/locale/pl/LC_MESSAGES/gammu.mo
 share/locale/pl/LC_MESSAGES/libgammu.mo
 share/locale/pt_BR/LC_MESSAGES/gammu.mo
 share/locale/pt_BR/LC_MESSAGES/libgammu.mo
+share/locale/ro/LC_MESSAGES/gammu.mo
+share/locale/ro/LC_MESSAGES/libgammu.mo
 share/locale/ru/LC_MESSAGES/gammu.mo
 share/locale/ru/LC_MESSAGES/libgammu.mo
 share/locale/sk/LC_MESSAGES/gammu.mo
@@ -303,6 +306,8 @@ share/locale/sw/LC_MESSAGES/gammu.mo
 share/locale/sw/LC_MESSAGES/libgammu.mo
 share/locale/tr/LC_MESSAGES/gammu.mo
 share/locale/tr/LC_MESSAGES/libgammu.mo
+share/locale/uk/LC_MESSAGES/gammu.mo
+share/locale/uk/LC_MESSAGES/libgammu.mo
 share/locale/zh_CN/LC_MESSAGES/gammu.mo
 share/locale/zh_CN/LC_MESSAGES/libgammu.mo
 share/locale/zh_TW/LC_MESSAGES/gammu.mo
