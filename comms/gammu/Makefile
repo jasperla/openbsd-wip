@@ -2,7 +2,7 @@
 
 COMMENT =		Gnu All Mobile Management Utilities
 
-DISTNAME =		gammu-1.32.0
+DISTNAME =		gammu-1.33.0
 
 SHARED_LIBS += 		Gammu 0.0 # 7.1
 SHARED_LIBS += 		gsmsd 0.0 # 7.1
