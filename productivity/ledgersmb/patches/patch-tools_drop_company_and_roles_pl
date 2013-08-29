@@ -1,13 +1,13 @@
---- /dev/null	Wed Aug 21 17:48:16 2013
-+++ tools/drop_company_and_roles.pl	Wed Aug 21 17:07:34 2013
-@@ -0,0 +1,303 @@
+--- /dev/null	Tue Aug 27 17:45:39 2013
++++ tools/drop_company_and_roles.pl	Mon Aug 26 16:17:34 2013
+@@ -0,0 +1,356 @@
 +#!/usr/bin/perl
 +
 +# Script can be used by automated scripts
-+# or manually with options
-+# defaults to interactive process.
++# Manually with command line options
++# Defaults to interactive process.
 +
-+our $VERSION = 1.3.1;
++our $VERSION = 1.3.4;
 +
 +use warnings;
 +use strict;
@@ -16,21 +16,27 @@
 +use DBI;
 +use DBD::Pg qw(:pg_types);
 +use Getopt::Long;
-+my @company_roles;
-+my $role;
++
 +my $host              = '127.0.0.1';
 +my $port              = '5432';
 +my $postgres_username = 'postgres';
-+my $postgres_password;
 +my $postgres_db       = 'postgres';
 +my $no_postgres_pass;
-+my $company_name;
++my $postgres_password;
++my $company_name; # Note company_name is same as database name
++my @company_roles;
++my $role;
 +my @other_roles;
 +my $not_interactive;
 +my $verbose;
++my $rolname;
 +my $help;
 +my $dbh;
-+my $rolname;
++my $statement;
++my $sth;
++my $rv;
++my $rc;
++
 +my $usage = qq{
 +usage: $0 --company COMPANY --postgres_password PASS [options]
 +Available options:
@@ -43,16 +49,17 @@
 + --postgres_db      postgres database name. Defaults to [$postgres_db].
 + --owner            The superuser owner of database. [optional]
 + --role             Additional roles to be dropped, such as 'admin'.
-+ --host             The PostgreSQL host to connect to (see 'man psql'). [$host]
-+ --port             The PostgreSQL port to connect to (see 'man psql'). [$port]
++ --host             The Postgrestatement host to connect to (see 'man psql'). [$host]
++ --port             The Postgrestatement port to connect to (see 'man psql'). [$port]
 + --verbose          Verbose.
 +
 + * These arguments don't have a default, but are required
 +Roles like 'lsmb_"company_name"__%' within the database are removed.
 +};
++
 +GetOptions(
-+    'help|?|h'          => \$help,
-+    'not_interactive|n' => \$not_interactive,
++    'help|?|h'               => \$help,
++    'not_interactive|n'      => \$not_interactive,
 +    'host:s'                 => \$host,
 +    'port:i'                 => \$port,
 +    'company|c=s'            => \$company_name,
@@ -71,59 +78,73 @@
 +}
 +
 +if ($not_interactive) {
-+unless ($company_name) {
-+    print $usage;
-+    print "\nmissing or empty --company option\n";
-+    exit;
-+}
-+unless ( ($postgres_password) || ($no_postgres_pass) ) {
-+    print $usage;
-+    print "\nmissing or empty --postgres_password option\n";
-+    exit;
-+}
 +
-+if ($postgres_password) {
-+    $dbh = DBI->connect( "DBI:Pg:dbname=$postgres_db;host=$host;port=$port",
-+        $postgres_username, $postgres_password,
-+        { 'AutoCommit' => 1, 'RaiseError' => 1, pg_enable_utf8 => 1 } );
-+}
-+else {
-+    $dbh = DBI->connect( "DBI:Pg:dbname=$postgres_db;host=$host;port=$port",
-+        $postgres_username, { 'AutoCommit' => 1, 'RaiseError' => 1, pg_enable_utf8 => 1 } );
-+}
-+
-+if ($verbose) {
-+    print qq{DROP DATABASE "$company_name";};
-+}
-+$dbh->do(qq{DROP DATABASE "$company_name";});
-+
-+$company_name .= '__';
-+my $SQL
-+    = "SELECT rolname FROM pg_roles WHERE rolname SIMILAR TO 'lsmb_$company_name%';";
-+
-+my $sth = $dbh->prepare($SQL);
-+$sth->execute;
-+while ( $role = $sth->fetchrow ) {
-+    if ($verbose) {
-+        print qq{$role};
++    if ( !$company_name ) {
++        print $usage;
++        print "\nmissing or empty --company option\n";
++        exit;
 +    }
-+    push @company_roles, $role;
-+}
 +
-+for my $role (@company_roles) {
-+    if ($verbose) {
-+        print qq{DROP ROLE "$role";};
++    if ( !($postgres_password) && !($no_postgres_pass) ) {
++        print $usage;
++        print "\nPlease enter postgres password or select no_postgres_pass\n";
++        exit;
 +    }
-+    $dbh->do(qq{DROP ROLE "$role";});
-+}
 +
-+for my $role (@other_roles) {
-+    if ($verbose) {
-+        print qq{Other role to drop:\n};
-+        print qq{DROP ROLE "$role";\n};
++    # Connect to database
++    if ($postgres_password) {
++        $dbh = DBI->connect(
++            "DBI:Pg:dbname=$postgres_db;host=$host;port=$port",
++            $postgres_username,
++            $postgres_password,
++            { 'AutoCommit' => 1, 'RaiseError' => 1, pg_enable_utf8 => 1 }
++            )
++            or die "unable to connect to database $postgres_db. $DBI::errstr";
 +    }
-+    $dbh->do(qq{DROP ROLE "$role";});
-+}
++    else {
++        $dbh = DBI->connect(
++            "DBI:Pg:dbname=$postgres_db;host=$host;port=$port",
++            $postgres_username,
++            { 'AutoCommit' => 1, 'RaiseError' => 1, pg_enable_utf8 => 1 }
++            )
++            or die "unable to connect to database $postgres_db. $DBI::errstr";
++    }
++
++    # Drop company database
++    if ($verbose) {
++        print qq{DROP DATABASE "$company_name";};
++    }
++    $rv = $dbh->do(qq{DROP DATABASE "$company_name";});
++
++    # Change company_name to match existing company_name in roles
++    $company_name .= '__';
++    $statement
++        = "SELECT rolname FROM pg_roles WHERE rolname SIMILAR TO 'lsmb_$company_name%';";
++
++    $sth = $dbh->prepare($statement);
++    $rv  = $sth->execute();
++    while ( $role = $sth->fetchrow ) {
++        if ($verbose) {
++            print qq{$role};
++        }
++        push @company_roles, $role;
++    }
++
++    # Drop company roles
++    for my $role (@company_roles) {
++        if ($verbose) {
++            print qq{DROP ROLE "$role";};
++        }
++        $rv = $dbh->do(qq{DROP ROLE "$role";});
++    }
++
++    # Drop any additional roles selected
++    for my $role (@other_roles) {
++        if ($verbose) {
++            print qq{Other role to drop: DROP ROLE "$role";\n};
++        }
++        $rv = $dbh->do(qq{DROP ROLE "$role";});
++    }
 +
 +}
 +else {
@@ -132,112 +153,129 @@
 +
 +sub interactive_setup {
 +    print "Welcome to the interactive database and role drop utility.\n\n";
++
 +    print "Name of company database to drop?  ";
 +    chomp( $_ = <STDIN> );
 +    if ($_) { $company_name = $_; }
-+    unless ($company_name) {
++    if ( !$company_name ) {
 +        print $usage;
 +        print "\nmissing or empty --company option\n";
 +        exit;
 +    }
++
 +    print "host? [$host]  ";
 +    chomp( $_ = <STDIN> );
 +    if ($_) { $host = $_; }
++
 +    print "port? [$port]  ";
 +    chomp( $_ = <STDIN> );
 +    if ($_) { $port = $_; }
++
 +    print "postgres username? [$postgres_username]  ";
 +    chomp( $_ = <STDIN> );
 +    if ($_) { $postgres_username = $_; }
-+    print "Do you wish to use a $postgres_db password? [y|n]  ";
-+    chomp ($_ = <STDIN>);
-+    if ($_ =~ /Y|y|yes|Yes/) {
-+        print "postgres password?  ";
-+        chomp ($_ = <STDIN>);
-+        if ($_) {$postgres_password = $_;}
-+    } else {
++
++    print
++        "Please enter a $postgres_db password. Type <Enter> for no password.  ";
++    chomp( $_ = <STDIN> );
++    if ($_) {
++        $postgres_password = $_;
++    }
++    else {
 +        $no_postgres_pass = 1;
 +    }
-+    unless ( ($postgres_password) || ($no_postgres_pass) ) {
++
++    if ( !($postgres_password) && !($no_postgres_pass) ) {
 +        print $usage;
-+        print "\nmissing or empty --postgres_password option\n";
++        print "\nPlease enter postgres password or select no_postgres_pass\n";
 +        exit;
 +    }
 +
 +    print "postgres database name? [$postgres_db]  ";
 +    chomp( $_ = <STDIN> );
 +    if ($_) { $postgres_db = $_; }
-+        if ($postgres_password) {
-+            $dbh = DBI->connect(
-+                "DBI:Pg:dbname=$postgres_db;host=$host;port=$port",
-+                $postgres_username,
-+                $postgres_password,
-+                { 'RaiseError' => 1, pg_enable_utf8 => 1 }
-+            );
-+        }
-+        else {
-+            $dbh
-+                = DBI->connect(
-+                "DBI:Pg:dbname=$postgres_db;host=$host;port=$port",
-+                $postgres_username,
-+                { 'RaiseError' => 1, pg_enable_utf8 => 1 } );
-+        }
 +
-+    print "Do you wish to see available roles to drop? [y|n]  ";
++    # Connect to database
++    if ($postgres_password) {
++        $dbh = DBI->connect(
++            "DBI:Pg:dbname=$postgres_db;host=$host;port=$port",
++            $postgres_username,
++            $postgres_password,
++            { 'AutoCommit' => 1, 'RaiseError' => 1, pg_enable_utf8 => 1 } )
++            or die "unable to connect to database $postgres_db. $DBI::errstr";
++    }
++    else {
++        $dbh
++            = DBI->connect(
++            "DBI:Pg:dbname=$postgres_db;host=$host;port=$port",
++            $postgres_username,
++            { 'AutoCommit' => 1, 'RaiseError' => 1, pg_enable_utf8 => 1 } )
++            or die "unable to connect to database $postgres_db. $DBI::errstr";
++    }
++
++    print
++        "Do you wish to see available roles to drop? Enter [Y|y]. Type <Enter> for no.  ";
 +    chomp( $_ = <STDIN> );
-+    if ( $_ =~ /Y|y|yes|Yes/ ) {
-+        my $sth
++    if ( $_ =~ /Y|y/ ) {
++        $sth
 +            = $dbh->prepare(
 +            "SELECT rolname FROM pg_roles WHERE rolname NOT SIMILAR TO 'lsmb_$company_name%';"
 +            );
-+        my $num_rows = $sth->execute();
++        $rv = $sth->execute();
 +        while ( ($rolname) = $sth->fetchrow ) {
 +            print "\n$rolname";
 +        }
 +    }
++
 +    print "\n\nRole to drop? You may add more than one after this entry
 + or type <Enter> to skip roles.\n\n";
-+    do {
++    while (1) {
 +        local $| = 1;
-+        $_ = <STDIN>;
-+        chomp $_;
++        chomp( $_ = <STDIN> );
 +        if ($_) {
 +            push( @other_roles, $_ );
 +        }
-+    } while ($_);
++        else {
++            last;
++        }
++    }
 +
-+    print "Verbose?\n";
++    print "Verbose? Enter [Y|y]. Type <Enter> for no.\n";
 +    chomp( $_ = <STDIN> );
-+    if ( $_ =~ /Y|y|yes|Yes/ ) { $verbose = 1; }
++    if ( $_ =~ /Y|y/ ) { $verbose = 1; }
 +
 +    if ($verbose) {
-+        print "$company_name = $company_name\n";
-+        print "$host = $host\n";
-+        print "$port = $port\n";
-+        print "$postgres_username = $postgres_username\n";
-+        print "$postgres_password = $postgres_password\n";
-+        print "$postgres_db = $postgres_db\n";
++        print "Company Name (Database Name) = $company_name\n";
++        print "Host = $host\n";
++        print "Port = $port\n";
++        print "Postgres Username = $postgres_username\n";
++        print "Postgres Password = $postgres_password\n";
++        print "Postgres Database = $postgres_db\n";
 +        if (@other_roles) {
 +            print "Roles to drop are:\n";
 +            for my $i ( 0 .. $#other_roles ) {
-+                print "Role = $other_roles[$i]\n";
++                print "Role to drop: $other_roles[$i]\n";
 +            }
 +        }
 +    }
 +
-+    print qq{DROP DATABASE "$company_name";\n};
-+    $dbh->do(qq{DROP DATABASE "$company_name";});
++    # Drop company database
++    if ($verbose) {
++        print qq{DROP DATABASE "$company_name";\n};
++    }
++    $rv = $dbh->do(qq{DROP DATABASE "$company_name";});
 +
++    # Change company_name to match existing company_name in roles
 +    $company_name .= '__';
 +    if ($verbose) {
 +        print
-+        "SELECT rolname FROM pg_roles WHERE rolname SIMILAR TO 'lsmb_$company_name%';\n";
++            "SELECT rolname FROM pg_roles WHERE rolname SIMILAR TO 'lsmb_$company_name%';\n";
 +    }
-+    my $SQL
++    $statement
 +        = "SELECT rolname FROM pg_roles WHERE rolname SIMILAR TO 'lsmb_$company_name%';";
 +
-+    my $sth = $dbh->prepare($SQL);
-+    $sth->execute;
++    $sth = $dbh->prepare($statement);
++    $rv  = $sth->execute();
 +    while ( $role = $sth->fetchrow ) {
 +        if ($verbose) {
 +            print "$role\n";
@@ -245,26 +283,28 @@
 +        push @company_roles, $role;
 +    }
 +
++    # Drop company roles
 +    for my $role (@company_roles) {
 +        if ($verbose) {
 +            print qq{DROP ROLE "$role";\n};
 +        }
-+        $dbh->do(qq{DROP ROLE "$role";});
++        $rv = $dbh->do(qq{DROP ROLE "$role";});
 +    }
 +
++    # Drop any additional roles selected
 +    for my $role (@other_roles) {
 +        if ($verbose) {
-+            print qq{Other role to drop:\n};
-+            print qq{DROP ROLE "$role";\n};
++            print qq{Other role to drop: DROP ROLE "$role";\n};
 +        }
-+        $dbh->do(qq{DROP ROLE "$role";});
++        $rv = $dbh->do(qq{DROP ROLE "$role";});
 +    }
 +    if ($verbose) {
 +        print "Done!\n";
 +    }
 +}
 +
-+$dbh->disconnect();
++$rc = $dbh->disconnect();
++
 +=pod
 +
 +=head1 NAME
@@ -273,9 +313,22 @@
 +
 +=head1 VERSION
 +
-+This documentation refers to drop_company_and_roles.pl version 1.2.2
++This documentation refers to drop_company_and_roles.pl version 1.3.4
++
++=head1 SYNOPSIS
++
++Deletes company database and associated roles.
++May also delete any additional chosen roles.
++
++=head1 DESCRIPTION
++
++Script can be used by automated scripts.
++Manually with command line options.
++Defaults to interactive process.
 +
 +=head1 BUGS AND LIMITATIONS
++
++A company database must be chosen or script exits.
 +
 +Please report problems to Chris Bennett (chris@bennettconstruction.us)
 +
