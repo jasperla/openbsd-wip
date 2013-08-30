@@ -35,6 +35,22 @@ CONFIGURE_ARGS +=	-DINSTALL_MAN_DIR:STRING=man \
 			-DINSTALL_BASH_COMPLETION=OFF \
 			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib -liconv -lintl"
 
+FLAVORS += 		mysql pgsql
+FLAVOR ?=
+SEPARATE_BUILD = 	flavored
+
+.if ${FLAVOR:Mmysql}
+CONFIGURE_ARGS += 	-DMYSQL_BACKEND=ON
+LIB_DEPENDS += 		databases/mysql
+WANTLIB += 		crypto mysqlclient ssl z
+.endif
+
+.if ${FLAVOR:Mpgsql}
+CONFIGURE_ARGS += 	-DPSQL_BACKEND=ON
+LIB_DEPENDS += 		databases/postgresql
+WANTLIB += 		pq
+.endif
+
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gammu	
