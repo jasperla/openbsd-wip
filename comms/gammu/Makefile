@@ -28,6 +28,7 @@ RUN_DEPENDS =		misc/dialog
 LIB_DEPENDS =		devel/glib2 \
 			devel/libusb1 \
 			net/curl
+TEST_DEPENDS = 		devel/cmake
 
 USE_LIBTOOL =		Yes
 CONFIGURE_ARGS +=	-DINSTALL_MAN_DIR:STRING=man \
