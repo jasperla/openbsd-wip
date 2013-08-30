@@ -82,10 +82,13 @@ do-install:
 	${INSTALL_DATA_DIR} ${WEBFONTS_DIR}/${font}
 	${INSTALL_DATA} ${WRKDIR}/${font}-*/webfonts/* ${WEBFONTS_DIR}/${font}
 .endfor
-	${INSTALL_DATA_DIR} ${DOCS_DIR}/ostrich-sans/images
-	${INSTALL_DATA} ${WRKDIR}/ostrich-sans/*.markdown ${DOCS_DIR}/ostrich-sans
-	${INSTALL_DATA} ${WRKDIR}/ostrich-sans/images/* ${DOCS_DIR}/ostrich-sans/images
-	${INSTALL_DATA_DIR} ${WEBFONTS_DIR}/ostrich-sans
-	${INSTALL_DATA} ${WRKDIR}/ostrich-sans/webfonts/* ${WEBFONTS_DIR}/ostrich-sans
+	${INSTALL_DATA_DIR} ${DOCS_DIR}/theleagueof-ostrich-sans/images
+	${INSTALL_DATA} ${WRKDIR}/ostrich-sans/*.markdown \
+		${DOCS_DIR}/theleagueof-ostrich-sans
+	${INSTALL_DATA} ${WRKDIR}/ostrich-sans/images/* \
+		${DOCS_DIR}/theleagueof-ostrich-sans/images
+	${INSTALL_DATA_DIR} ${WEBFONTS_DIR}/theleagueof-ostrich-sans
+	${INSTALL_DATA} ${WRKDIR}/ostrich-sans/webfonts/* \
+		${WEBFONTS_DIR}/theleagueof-ostrich-sans
 
 .include <bsd.port.mk>

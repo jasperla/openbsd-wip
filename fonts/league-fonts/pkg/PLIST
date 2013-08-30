@@ -51,16 +51,6 @@ lib/X11/fonts/league-fonts/knewave-outline.ttf
 lib/X11/fonts/league-fonts/knewave.otf
 lib/X11/fonts/league-fonts/knewave.ttf
 share/doc/league-fonts/
-share/doc/league-fonts/ostrich-sans/
-share/doc/league-fonts/ostrich-sans/Open Font License FAQ.markdown
-share/doc/league-fonts/ostrich-sans/Open Font License.markdown
-share/doc/league-fonts/ostrich-sans/images/
-share/doc/league-fonts/ostrich-sans/images/ostrich-sans-1.jpeg
-share/doc/league-fonts/ostrich-sans/images/ostrich-sans-2.jpeg
-share/doc/league-fonts/ostrich-sans/images/ostrich-sans-3.jpeg
-share/doc/league-fonts/ostrich-sans/images/ostrich-sans-4.jpeg
-share/doc/league-fonts/ostrich-sans/images/ostrich-sans-5.jpeg
-share/doc/league-fonts/ostrich-sans/readme.markdown
 share/doc/league-fonts/theleagueof-blackout/
 share/doc/league-fonts/theleagueof-blackout/Open Font License FAQ.markdown
 share/doc/league-fonts/theleagueof-blackout/Open Font License.markdown
@@ -147,6 +137,16 @@ share/doc/league-fonts/theleagueof-orbitron/images/orbitron-3.png
 share/doc/league-fonts/theleagueof-orbitron/images/orbitron-4.png
 share/doc/league-fonts/theleagueof-orbitron/images/orbitron-5.jpeg
 share/doc/league-fonts/theleagueof-orbitron/readme.markdown
+share/doc/league-fonts/theleagueof-ostrich-sans/
+share/doc/league-fonts/theleagueof-ostrich-sans/Open Font License FAQ.markdown
+share/doc/league-fonts/theleagueof-ostrich-sans/Open Font License.markdown
+share/doc/league-fonts/theleagueof-ostrich-sans/images/
+share/doc/league-fonts/theleagueof-ostrich-sans/images/ostrich-sans-1.jpeg
+share/doc/league-fonts/theleagueof-ostrich-sans/images/ostrich-sans-2.jpeg
+share/doc/league-fonts/theleagueof-ostrich-sans/images/ostrich-sans-3.jpeg
+share/doc/league-fonts/theleagueof-ostrich-sans/images/ostrich-sans-4.jpeg
+share/doc/league-fonts/theleagueof-ostrich-sans/images/ostrich-sans-5.jpeg
+share/doc/league-fonts/theleagueof-ostrich-sans/readme.markdown
 share/doc/league-fonts/theleagueof-prociono/
 share/doc/league-fonts/theleagueof-prociono/Open Font License FAQ.markdown
 share/doc/league-fonts/theleagueof-prociono/Open Font License.markdown
@@ -179,40 +179,6 @@ share/doc/league-fonts/theleagueof-sorts-mill-goudy/images/sorts-mill-goudy-2.pn
 share/doc/league-fonts/theleagueof-sorts-mill-goudy/images/sorts-mill-goudy-3.png
 share/doc/league-fonts/theleagueof-sorts-mill-goudy/readme.markdown
 share/league-fonts/
-share/league-fonts/ostrich-sans/
-share/league-fonts/ostrich-sans/ostrich-black.eot
-share/league-fonts/ostrich-sans/ostrich-black.svg
-share/league-fonts/ostrich-sans/ostrich-black.ttf
-share/league-fonts/ostrich-sans/ostrich-black.woff
-share/league-fonts/ostrich-sans/ostrich-bold.eot
-share/league-fonts/ostrich-sans/ostrich-bold.svg
-share/league-fonts/ostrich-sans/ostrich-bold.ttf
-share/league-fonts/ostrich-sans/ostrich-bold.woff
-share/league-fonts/ostrich-sans/ostrich-dashed.eot
-share/league-fonts/ostrich-sans/ostrich-dashed.svg
-share/league-fonts/ostrich-sans/ostrich-dashed.ttf
-share/league-fonts/ostrich-sans/ostrich-dashed.woff
-share/league-fonts/ostrich-sans/ostrich-light.eot
-share/league-fonts/ostrich-sans/ostrich-light.svg
-share/league-fonts/ostrich-sans/ostrich-light.ttf
-share/league-fonts/ostrich-sans/ostrich-light.woff
-share/league-fonts/ostrich-sans/ostrich-regular.eot
-share/league-fonts/ostrich-sans/ostrich-regular.svg
-share/league-fonts/ostrich-sans/ostrich-regular.ttf
-share/league-fonts/ostrich-sans/ostrich-regular.woff
-share/league-fonts/ostrich-sans/ostrich-rounded.eot
-share/league-fonts/ostrich-sans/ostrich-rounded.svg
-share/league-fonts/ostrich-sans/ostrich-rounded.ttf
-share/league-fonts/ostrich-sans/ostrich-rounded.woff
-share/league-fonts/ostrich-sans/ostrich-sans-inline-italic.eot
-share/league-fonts/ostrich-sans/ostrich-sans-inline-italic.svg
-share/league-fonts/ostrich-sans/ostrich-sans-inline-italic.ttf
-share/league-fonts/ostrich-sans/ostrich-sans-inline-italic.woff
-share/league-fonts/ostrich-sans/ostrich-sans-inline-regular.eot
-share/league-fonts/ostrich-sans/ostrich-sans-inline-regular.svg
-share/league-fonts/ostrich-sans/ostrich-sans-inline-regular.ttf
-share/league-fonts/ostrich-sans/ostrich-sans-inline-regular.woff
-share/league-fonts/ostrich-sans/ostrich-sans.css
 share/league-fonts/theleagueof-blackout/
 share/league-fonts/theleagueof-blackout/blackout_midnight-webfont.eot
 share/league-fonts/theleagueof-blackout/blackout_midnight-webfont.svg
@@ -317,6 +283,40 @@ share/league-fonts/theleagueof-orbitron/orbitron-medium-webfont.eot
 share/league-fonts/theleagueof-orbitron/orbitron-medium-webfont.svg
 share/league-fonts/theleagueof-orbitron/orbitron-medium-webfont.ttf
 share/league-fonts/theleagueof-orbitron/orbitron-medium-webfont.woff
+share/league-fonts/theleagueof-ostrich-sans/
+share/league-fonts/theleagueof-ostrich-sans/ostrich-black.eot
+share/league-fonts/theleagueof-ostrich-sans/ostrich-black.svg
+share/league-fonts/theleagueof-ostrich-sans/ostrich-black.ttf
+share/league-fonts/theleagueof-ostrich-sans/ostrich-black.woff
+share/league-fonts/theleagueof-ostrich-sans/ostrich-bold.eot
+share/league-fonts/theleagueof-ostrich-sans/ostrich-bold.svg
+share/league-fonts/theleagueof-ostrich-sans/ostrich-bold.ttf
+share/league-fonts/theleagueof-ostrich-sans/ostrich-bold.woff
+share/league-fonts/theleagueof-ostrich-sans/ostrich-dashed.eot
+share/league-fonts/theleagueof-ostrich-sans/ostrich-dashed.svg
+share/league-fonts/theleagueof-ostrich-sans/ostrich-dashed.ttf
+share/league-fonts/theleagueof-ostrich-sans/ostrich-dashed.woff
+share/league-fonts/theleagueof-ostrich-sans/ostrich-light.eot
+share/league-fonts/theleagueof-ostrich-sans/ostrich-light.svg
+share/league-fonts/theleagueof-ostrich-sans/ostrich-light.ttf
+share/league-fonts/theleagueof-ostrich-sans/ostrich-light.woff
+share/league-fonts/theleagueof-ostrich-sans/ostrich-regular.eot
+share/league-fonts/theleagueof-ostrich-sans/ostrich-regular.svg
+share/league-fonts/theleagueof-ostrich-sans/ostrich-regular.ttf
+share/league-fonts/theleagueof-ostrich-sans/ostrich-regular.woff
+share/league-fonts/theleagueof-ostrich-sans/ostrich-rounded.eot
+share/league-fonts/theleagueof-ostrich-sans/ostrich-rounded.svg
+share/league-fonts/theleagueof-ostrich-sans/ostrich-rounded.ttf
+share/league-fonts/theleagueof-ostrich-sans/ostrich-rounded.woff
+share/league-fonts/theleagueof-ostrich-sans/ostrich-sans-inline-italic.eot
+share/league-fonts/theleagueof-ostrich-sans/ostrich-sans-inline-italic.svg
+share/league-fonts/theleagueof-ostrich-sans/ostrich-sans-inline-italic.ttf
+share/league-fonts/theleagueof-ostrich-sans/ostrich-sans-inline-italic.woff
+share/league-fonts/theleagueof-ostrich-sans/ostrich-sans-inline-regular.eot
+share/league-fonts/theleagueof-ostrich-sans/ostrich-sans-inline-regular.svg
+share/league-fonts/theleagueof-ostrich-sans/ostrich-sans-inline-regular.ttf
+share/league-fonts/theleagueof-ostrich-sans/ostrich-sans-inline-regular.woff
+share/league-fonts/theleagueof-ostrich-sans/ostrich-sans.css
 share/league-fonts/theleagueof-prociono/
 share/league-fonts/theleagueof-prociono/Prociono-Regular-webfont.eot
 share/league-fonts/theleagueof-prociono/Prociono-Regular-webfont.svg
