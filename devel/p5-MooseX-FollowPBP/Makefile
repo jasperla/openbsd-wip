@@ -1,4 +1,4 @@
-#$OpenBSD:Makefile.template,v1.602010/10/2420:41:23ajacoutotExp$
+# $OpenBSD: Makefile.template,v 1.67 2013/07/10 15:22:23 bcallah Exp $
 
 COMMENT=				name accessors get_foo(), set_foo()
 
@@ -11,8 +11,8 @@ CATEGORIES=				devel
 #Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-BUILD_DEPENDS=			${RUN_DEPENDS}
-
 RUN_DEPENDS=			devel/p5-Moose
+
+BUILD_DEPENDS=			${RUN_DEPENDS}
 
 .include<bsd.port.mk>
