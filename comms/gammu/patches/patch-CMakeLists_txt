@@ -1,15 +1,29 @@
 $OpenBSD$
---- CMakeLists.txt.orig	Sat Sep  1 19:10:58 2012
-+++ CMakeLists.txt	Sat Sep  1 19:11:41 2012
-@@ -250,10 +250,7 @@ if (PYTHON_EXECUTABLE)
+--- CMakeLists.txt.orig	Wed May 29 13:49:13 2013
++++ CMakeLists.txt	Fri Aug 30 21:55:44 2013
+@@ -25,6 +25,9 @@ option (MYSQL_TESTING "Enable testing of MySQL SMSD ba
+ option (ODBC_TESTING "Enable testing of ODBC MySQL SMSD backend" OFF)
+ option (BUILD_SHARED_LIBS "Build shared libraries" ON)
+ 
++option (MYSQL_BACKEND "Enable MySQL SMSD backend" OFF)
++option (PSQL_BACKEND "Enable PostgreSQL SMSD backend" OFF)
++
+ option (LARGE_FILES "Support for large files" ON)
+ if (LARGE_FILES)
+     add_definitions(-D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64)
+@@ -229,9 +232,12 @@ if (PYTHON_EXECUTABLE)
  endif (PYTHON_EXECUTABLE)
  
  # Packages in sources
 -macro_optional_find_package (MySQL)
 -macro_optional_find_package (ODBC)
 -macro_optional_find_package (Postgres)
--macro_optional_find_package (LibDBI)
-+# Remove DB support for now
++if (MYSQL_BACKEND)
++   find_package (MySQL)
++endif (MYSQL_BACKEND)
++if (PSQL_BACKEND)
++   find_package (Postgres)
++endif (PSQL_BACKEND)
+ macro_optional_find_package (LibDBI)
  macro_optional_find_package (Libintl)
  macro_optional_find_package (Iconv)
- macro_optional_find_package (CURL)

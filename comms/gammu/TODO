@@ -1,4 +1,3 @@
- - create FLAVORS for BD backends
  - Try to fix regress tests:
   99% tests passed, 12 tests failed out of 1107
   Total Test time (real) = 458.13 sec
