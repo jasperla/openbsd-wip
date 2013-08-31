@@ -14,9 +14,8 @@ SHARED_LIBS +=  mozjs185-ps-release       1.0 # 1.0
 # GPLv2+, MIT for libs, CC-BY-SA for data
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL SDL X11 Xcursor boost_system c curl enet
-WANTLIB += jpeg m nvtt openal png pthread stdc++
-WANTLIB += z
+WANTLIB += GL SDL X11 Xcursor boost_filesystem c curl enet execinfo
+WANTLIB += jpeg m openal png pthread stdc++ vorbisfile xml2 z
 
 MASTER_SITES =		http://releases.wildfiregames.com/ \
 			${MASTER_SITE_SOURCEFORGE:=zero-ad/}
@@ -24,12 +23,16 @@ DISTFILES =		${PKGNAME}-alpha-unix-build.tar.gz \
 			${PKGNAME}-alpha-unix-data.tar.gz
 
 BUILD_DEPENDS =		shells/bash
+
+# XXX for spidermonkey
+BUILD_DEPENDS +=	archivers/zip
 LIB_DEPENDS =		audio/libvorbis \
 			audio/openal \
 			devel/boost \
 			devel/libexecinfo \
 			devel/sdl \
-			graphics/nvtt \
+			graphics/jpeg \
+			graphics/png \
 			net/curl \
 			net/enet \
 			textproc/libxml
@@ -40,13 +43,13 @@ MAKE_FLAGS =		SILENT= \
 PATCHORIG =		.orig.port
 
 USE_GMAKE =		Yes
-CONFIGURE_ARGS +=	--with-system-nvtt \
+CONFIGURE_ARGS +=	--without-nvtt \
 			--with-system-enet \
 			--datadir=${PREFIX}/share/0ad \
 			--libdir=${PREFIX}/lib
 CONFIGURE_ENV =		MAKE=${MAKE_PROGRAM}
 
-# atlas (the level editor) requires threaded libxml
+# XXX atlas (the level editor) requires threaded libxml
 CONFIGURE_ARGS +=	--disable-atlas
 
 
