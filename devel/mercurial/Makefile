@@ -1,11 +1,15 @@
 # $OpenBSD: Makefile,v 1.55 2013/07/09 10:00:00 rpointel Exp $
 
-COMMENT =		fast, lightweight source control management
+COMMENT-main =		fast, lightweight source control management
+COMMENT-x11 =		graphical tooling for mercurial
 
 MODPY_EGG_VERSION =	2.6.3
 DISTNAME =		mercurial-${MODPY_EGG_VERSION}
 CATEGORIES =     	devel
-REVISION =		0
+REVISION-main =		0
+
+PKGNAME-main =		${DISTNAME}
+PKGNAME-x11 =		mercurial-x11-${MODPY_EGG_VERSION}
 
 HOMEPAGE =		http://www.selenic.com/mercurial/
 
@@ -19,10 +23,14 @@ MASTER_SITES =		http://mercurial.selenic.com/release/
 MODULES =		lang/python x11/tk
 USE_GROFF =		Yes
 
+MULTI_PACKAGES =	-main -x11
+
 BUILD_DEPENDS =		devel/gettext
 TEST_DEPENDS =	${RUN_DEPENDS} \
 			archivers/unzip \
 			devel/git
+RUN_DEPENDS-x11 +=	${BASE_PKGPATH},-main \
+			${MODTK_RUN_DEPENDS}
 
 FILES =			hgeditor hgweb.cgi
 
@@ -35,7 +43,9 @@ SCRIPTS =		convert-repo hg-ssh hgk \
 			tcsh_completion_build.sh dumprevlog \
 			undumprevlog simplemerge
 
-WANTLIB +=		${MODPY_WANTLIB} pthread
+WANTLIB-main +=		${MODPY_WANTLIB} pthread
+WANTLIB-x11 =
+PKG_ARCH-x11 =		*
 
 MODPY_ADJ_FILES =	hgweb.cgi \
 			contrib/convert-repo \
