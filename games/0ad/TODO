@@ -1,10 +1,8 @@
-Pyrogenesis has to be run from /usr/local/bin
+Pyrogenesis has to be run from /usr/local/bin (wrapper script?)
 
-Not linked with libogg or libvorbis, needs LD_PRELOAD
-
-(wrapper script?)
-
-Horrible build system (doesn't respect CXX, etc.)
+Doesn't respect CXXFLAGS, etc.
 
 Doesn't (yet) work with spidermonkey-17, see:
 http://www.wildfiregames.com/forum/index.php?showtopic=17289
+
+Not linked properly against internal spidermonkey, needs LD_PRELOAD
