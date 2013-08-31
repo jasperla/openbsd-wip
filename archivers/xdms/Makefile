@@ -24,4 +24,13 @@ ALL_TARGET =		xdms
 
 NO_TEST =		Yes
 
+DOCDIR =	${PREFIX}/share/doc/xdms
+do-install:
+	${INSTALL_PROGRAM} ${WRKBUILD}/src/xdms ${PREFIX}/bin/
+	${INSTALL_DATA} ${WRKBUILD}/xdms.1 ${PREFIX}/man/man1/
+	${INSTALL_DATA_DIR} ${DOCDIR}
+	${INSTALL_DATA} ${WRKBUILD}/COPYING ${DOCDIR}/
+	${INSTALL_DATA} ${WRKBUILD}/ChangeLog.txt ${DOCDIR}/
+	${INSTALL_DATA} ${WRKBUILD}/xdms.txt ${DOCDIR}/
+
 .include <bsd.port.mk>
