@@ -60,7 +60,7 @@ LIB_DEPENDS-text= ${LIB_DEPENDS} \
 		security/libgcrypt
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
-		tshark-${VER}:${BUILD_PKGPATH:S/,$//},-text \
+		tshark18-${VER}:${BUILD_PKGPATH:S/,$//},-text \
 		audio/portaudio-svn \
 		devel/pango \
 		graphics/cairo
