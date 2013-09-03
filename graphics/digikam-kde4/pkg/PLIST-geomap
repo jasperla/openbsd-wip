@@ -12,8 +12,8 @@ include/kde4/libkgeomap/lookup_factory.h
 include/kde4/libkgeomap/modelhelper.h
 include/kde4/libkgeomap/tileindex.h
 include/kde4/libkgeomap/version.h
-lib/pkgconfig/libkgeomap.pc
 @lib lib/libkgeomap.so.${LIBkgeomap_VERSION}
+lib/pkgconfig/libkgeomap.pc
 share/apps/cmake/modules/FindKGeoMap.cmake
 share/apps/gpssync/
 share/apps/gpssync/bookmarks-marker.png
@@ -55,8 +55,6 @@ share/apps/libkgeomap/marker-ffff00-selected.png
 share/apps/libkgeomap/marker-ffff00-someselected.png
 share/apps/libkgeomap/marker-ffff00.png
 share/apps/libkgeomap/marker-icon-16x16.png
-share/icons/hicolor/16x16/actions/gpsimagetag.png
-share/icons/hicolor/32x32/actions/gpsimagetag.png
 share/locale/bg/LC_MESSAGES/libkgeomap.mo
 share/locale/bs/LC_MESSAGES/libkgeomap.mo
 share/locale/ca/LC_MESSAGES/libkgeomap.mo
@@ -85,6 +83,7 @@ share/locale/pl/LC_MESSAGES/libkgeomap.mo
 share/locale/pt/LC_MESSAGES/libkgeomap.mo
 share/locale/pt_BR/LC_MESSAGES/libkgeomap.mo
 share/locale/ro/LC_MESSAGES/libkgeomap.mo
+share/locale/ru/LC_MESSAGES/libkgeomap.mo
 share/locale/sk/LC_MESSAGES/libkgeomap.mo
 share/locale/sl/LC_MESSAGES/libkgeomap.mo
 share/locale/sv/LC_MESSAGES/libkgeomap.mo

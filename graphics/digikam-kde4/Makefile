@@ -9,20 +9,20 @@ COMMENT-vkontakte =	KIPI interface for VK.com
 
 CATEGORIES =		graphics
 HOMEPAGE =		http://www.digikam.org/
-VERSION =		3.1.0
+VERSION =		3.3.0
 DISTNAME =		digikam-${VERSION}
 
-PKGNAME-face =		libkface-2.0.0
+PKGSPEC-main =		digikam->=1
+PKGSPEC-kipi =		kipi-plugins->=1
+
+PKGNAME-face =		libkface-3.0.0
 PKGNAME-geomap =	libkgeomap-${VERSION}
 PKGNAME-kipi =		kipi-plugins-${VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 PKGNAME-vkontakte =	libkvkontakte-1.0.0
 
-REVISION-main =		2
 REVISION-face =		2
-REVISION-geomap =	3
-REVISION-kipi =		4
 REVISION-mediawiki =	2
 REVISION-vkontakte =	3
 
@@ -55,10 +55,11 @@ WANTLIB-common += ${KDE4LIB}/kdeui
 WANTLIB-opencv =  opencv_calib3d opencv_contrib opencv_core
 WANTLIB-opencv += opencv_features2d opencv_flann opencv_gpu
 WANTLIB-opencv += opencv_highgui opencv_imgproc opencv_legacy opencv_ml
-WANTLIB-opencv += opencv_nonfree  opencv_objdetect opencv_photo
-WANTLIB-opencv += opencv_stitching  opencv_ts opencv_video opencv_videostab
+WANTLIB-opencv += opencv_objdetect opencv_photo opencv_stitching
+WANTLIB-opencv += opencv_superres opencv_ts opencv_video opencv_videostab
 
 WANTLIB-face =	${WANTLIB-common} ${WANTLIB-opencv}
+WANTLIB-face +=	lib/qt4/QtSql lib/qt4/QtXml
 
 WANTLIB-geomap =  ${WANTLIB-common} ${MODPHONON_WANTLIB}
 WANTLIB-geomap += lib/qt4/QtNetwork lib/qt4/QtXml
@@ -75,7 +76,7 @@ WANTLIB-kipi += lib/qt4/QtTest lib/qt4/QtXml
 WANTLIB-kipi += ${KDE4LIB}/kcalcore ${KDE4LIB}/kdcraw ${KDE4LIB}/kexiv2
 WANTLIB-kipi += ${KDE4LIB}/kfile ${KDE4LIB}/khtml
 WANTLIB-kipi += ${KDE4LIB}/kio ${KDE4LIB}/kipi ${KDE4LIB}/kjs ${KDE4LIB}/kparts
-WANTLIB-kipi += ${KDE4LIB}/ksane
+WANTLIB-kipi += ${KDE4LIB}/ksane 
 WANTLIB-kipi += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils ${KDE4LIB}/solid
 WANTLIB-kipi += ${KDE4LIB}/threadweaver
 WANTLIB-kipi += exslt gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpod
@@ -86,7 +87,7 @@ WANTLIB-kipi += tiff xml2 xslt z
 WANTLIB-main =  ${WANTLIB-common} ${WANTLIB-opencv} ${MODPHONON_WANTLIB}
 WANTLIB-main += c ICE SM X11 Xext z
 WANTLIB-main += lib/qt4/Qt3Support lib/qt4/QtNetwork lib/qt4/QtSql
-WANTLIB-main += lib/qt4/QtXml lib/qt4/QtXmlPatterns
+WANTLIB-main += lib/qt4/QtTest lib/qt4/QtXml
 WANTLIB-main += ${KDE4LIB}/kabc ${KDE4LIB}/kcmutils ${KDE4LIB}/kdcraw
 WANTLIB-main += ${KDE4LIB}/kemoticons ${KDE4LIB}/kexiv2
 WANTLIB-main += ${KDE4LIB}/kfile ${KDE4LIB}/khtml
@@ -114,6 +115,7 @@ WANTLIB-vkontakte += qjson soprano
 BUILD_DEPENDS =		devel/boost \
 			devel/doxygen \
 			databases/mysql,-server \
+			math/eigen3 \
 			misc/shared-desktop-ontologies
 
 RUN_DEPENDS-face =	${MODKDE4_RUN_DEPENDS}
@@ -138,7 +140,7 @@ LIBS_DEPENDS-common =	${MODQT4_LIB_DEPENDS} \
 			${MODKDE4_LIB_DEPENDS}
 
 LIB_DEPENDS-face =	${LIB_DEPENDS-common} \
-			graphics/opencv>=2.4.1
+			graphics/opencv>=2.4.4
 
 LIB_DEPENDS-geomap =	${LIB_DEPENDS-common} \
 			${MODPHONON_LIB_DEPENDS} \
@@ -154,7 +156,7 @@ LIB_DEPENDS-kipi =	${LIB_DEPENDS-common} \
 			devel/glib2 \
 			devel/qjson \
 			graphics/gdk-pixbuf2 \
-			graphics/opencv>=2.4.1 \
+			graphics/opencv \
 			graphics/png \
 			graphics/tiff \
 			security/qca2 \
@@ -177,6 +179,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS-common} \
 			graphics/libgphoto2 \
 			graphics/liblqr \
 			graphics/libpgf \
+			graphics/opencv \
 			graphics/png \
 			graphics/tiff \
 			${MODKDE4_DEP_DIR}/libkdcraw \
@@ -189,13 +192,15 @@ LIB_DEPENDS-mediawiki =	${LIB_DEPENDS-common}
 LIB_DEPENDS-vkontakte = ${LIB_DEPENDS-common} \
 			devel/qjson
 
-CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_CLAPACK:Bool=Yes \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Hupnp:Bool=Yes \
+CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Hupnp:Bool=Yes \
 			-DCMAKE_DISABLE_FIND_PACKAGE_QtGStreamer:Bool=Yes \
 			-DDIGIKAMSC_USE_PRIVATE_KDEGRAPHICS:Bool=No \
 			-DENABLE_LCMS2:Bool=Yes \
 			-DENABLE_INTERNALMYSQL:Bool=No \
 			-DWITH_OpenMP:Bool=No
+
+# Not ported yet
+#CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Eigen3:Bool=Yes
 
 FLAVOR ?=
 
