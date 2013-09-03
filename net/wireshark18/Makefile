@@ -33,7 +33,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c glib-2.0 m pcap pthread z
 
 WANTLIB-text += ${WANTLIB} ${MODLUA_WANTLIB} GeoIP cares gcrypt gmodule-2.0
-WANTLIB-text += gpg-error krb5 smi
+WANTLIB-text += gnutls gpg-error krb5 smi
 
 WANTLIB-main += ${WANTLIB} wireshark wiretap wsutil
 WANTLIB-main += cairo gdk_pixbuf-2.0 gmodule-2.0 gobject-2.0
@@ -57,6 +57,7 @@ LIB_DEPENDS-text= ${LIB_DEPENDS} \
 		net/libcares \
 		net/libsmi \
 		net/GeoIP  \
+		security/gnutls \
 		security/libgcrypt
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
