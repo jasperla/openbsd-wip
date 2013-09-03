@@ -1,5 +1,3 @@
-Wants valgrind as optional (build-time?) dependency.
-
 libkgeomap crashes when trying to use Google Maps. And Marble widget isn't usable (looks like, Marble bug).
 
 Crashes when importing from directories with a lot of items.
@@ -8,9 +6,8 @@ Crashes when accessing libkdcraw routines. Probably, related to PIC and/or speci
 To trigger: put any non-graphic file (say, .avi) in album and make Digikam scan it (open the album).
 
 The following tests FAILED:
-          1 - mediawiki-logintest (Failed)
-          8 - mediawiki-queryrevisiontest (Failed)
-         10 - mediawiki-edittest (Failed)
-         11 - mediawiki-uploadtest (Failed)
-         30 - dimagehistorytest (Failed)
-         31 - dimagehistorygraphtest (Failed)
+31/33 Test #31: dimagehistorytest .......................***Failed    3.32 sec
+      Start 32: dimagehistorygraphtest
+32/33 Test #32: dimagehistorygraphtest ..................***Timeout 12523.53 sec
+      Start 33: dimagefilteractiontest
+33/33 Test #33: dimagefilteractiontest ..................***Failed  124.85 sec

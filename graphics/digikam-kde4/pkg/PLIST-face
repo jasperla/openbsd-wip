@@ -1,17 +1,20 @@
 @comment $OpenBSD$
 @conflict digikam4-<2.5.0p0
 include/kde4/libkface/
-include/kde4/libkface/database.h
-include/kde4/libkface/face.h
+include/kde4/libkface/dataproviders.h
 include/kde4/libkface/facedetector.h
-include/kde4/libkface/image.h
+include/kde4/libkface/identity.h
 include/kde4/libkface/libkface_export.h
 include/kde4/libkface/recognitiondatabase.h
 include/kde4/libkface/version.h
-lib/pkgconfig/libkface.pc
 @lib lib/libkface.so.${LIBkface_VERSION}
+lib/pkgconfig/libkface.pc
 share/apps/cmake/modules/FindKface.cmake
 share/apps/libkface/
+share/apps/libkface/alignment-congealing/
+share/apps/libkface/alignment-congealing/face-funnel.data
+share/apps/libkface/database/
+share/apps/libkface/database/dbconfig.xml
 share/apps/libkface/haarcascades/
 share/apps/libkface/haarcascades/haarcascade_frontalface_alt.xml
 share/apps/libkface/haarcascades/haarcascade_frontalface_alt2.xml

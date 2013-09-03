@@ -1,8 +1,9 @@
 $OpenBSD$
 Unbreak compilation.
---- core/libs/3rdparty/kmemoryinfo/kmemoryinfo_backend.cpp.orig	Mon Mar 11 12:24:30 2013
-+++ core/libs/3rdparty/kmemoryinfo/kmemoryinfo_backend.cpp	Sun Mar 31 13:15:01 2013
-@@ -22,5 +22,7 @@
+--- core/libs/3rdparty/kmemoryinfo/kmemoryinfo_backend.cpp.orig	Mon Aug  5 02:40:28 2013
++++ core/libs/3rdparty/kmemoryinfo/kmemoryinfo_backend.cpp	Wed Aug 14 23:43:32 2013
+@@ -21,6 +21,8 @@
+  * $Id: memory_stats.c,v 1.36 2010/02/21 10:04:26 tdb Exp $
   */
  
 +#include <unistd.h>
