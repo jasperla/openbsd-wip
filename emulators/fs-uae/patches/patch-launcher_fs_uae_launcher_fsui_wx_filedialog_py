@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Allow device nodes to appear in file choosers.
+
+--- launcher/fs_uae_launcher/fsui/wx/filedialog.py.orig	Wed Sep  4 09:51:41 2013
++++ launcher/fs_uae_launcher/fsui/wx/filedialog.py	Wed Sep  4 09:51:50 2013
+@@ -7,7 +7,7 @@ import wx
+ 
+ class FileDialog():
+     def __init__(self, parent, message="", directory="", file="",
+-            pattern="*.*", multiple=False, dir_mode=False):
++            pattern="*", multiple=False, dir_mode=False):
+         #if parent:
+         #    p = parent.get_real_parent()
+         #    parent = p._container
