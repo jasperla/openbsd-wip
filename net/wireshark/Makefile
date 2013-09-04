@@ -3,7 +3,7 @@
 COMMENT-main=	graphical network protocol analyzer
 COMMENT-text=	network protocol analyzer
 
-VER=		1.8.9
+VER=		1.10.1
 WVER=		${VER}
 DISTNAME=	wireshark-${WVER}
 PKGNAME-main=	wireshark-${VER}
@@ -96,7 +96,6 @@ LIB_DEPENDS-main +=		x11/gtk+2
 NO_TEST=	Yes
 
 post-extract:
-	${INSTALL} -m 555 ${FILESDIR}/krb5-config ${WRKDIR}/bin
 .if !${FLAVOR:L:Mno_python}
 	ln -s /usr/local/bin/python${MODPY_VERSION}-config ${WRKDIR}/bin/python-config
 .endif
