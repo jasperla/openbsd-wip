@@ -3,7 +3,7 @@
 COMMENT-main=	graphical network protocol analyzer
 COMMENT-text=	network protocol analyzer
 
-WVER=		1.6.14
+WVER=		1.6.16
 DISTNAME=	wireshark-${WVER}
 PKGNAME-main=	wireshark16-${WVER}
 PKGNAME-text=	tshark16-${WVER}
