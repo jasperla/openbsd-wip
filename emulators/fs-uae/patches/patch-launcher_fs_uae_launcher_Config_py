@@ -1,28 +1,19 @@
 $OpenBSD$
 
-Fix hang when using device node as a hard disk. Committed upstream.
+Don't checksum device nodes (which report as size 0)
 
---- launcher/fs_uae_launcher/Config.py.orig	Tue Sep  3 20:46:48 2013
-+++ launcher/fs_uae_launcher/Config.py	Tue Sep  3 20:49:13 2013
-@@ -478,11 +478,20 @@ class Config:
+--- launcher/fs_uae_launcher/Config.py.orig	Tue Jun 25 20:21:16 2013
++++ launcher/fs_uae_launcher/Config.py	Wed Sep  4 10:11:48 2013
+@@ -477,12 +477,7 @@ class Config:
+                 # could set a fake checksum here or something, to indicate
                  # that it isn't supposed to be set..
                  return
-             print("checksumming", repr(path))
+-            print("checksumming", repr(path))
 -            if os.path.getsize(path) > 64 * 1024 * 1024:
-+            size = os.path.getsize(path)
-+            if size > 64 * 1024 * 1024:
-                 # not checksumming large files righ now
-                 print("not checksumming large file")
-                 return
+-                # not checksumming large files righ now
+-                print("not checksumming large file")
+-                return
 -            if is_rom:
-+
-+            if size == 0:
-+                # either a real 0-byte file or a device node on a BSD          
-+                # system (could be large). To reliably get the size we could   
-+                # use ioctl, but we simply return the checksum for a 0-byte    
-+                # file anyway                                                  
-+                print("Not checksumming zero sized file")
-+                sha1 = "da39a3ee5e6b4b0d3255bfef95601890afd80709"
 +            elif is_rom:
                  sha1 = checksum_tool.checksum_rom(path)
              else:
