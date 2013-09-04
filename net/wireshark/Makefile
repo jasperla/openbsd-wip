@@ -20,7 +20,9 @@ HOMEPAGE=	http://www.wireshark.org/
 
 EXTRACT_SUFX=	.tar.bz2
 
-FLAVORS=	gtk2 no_python
+FLAVORS=	gtk2
+#FLAVORS=	gtk2 no_python
+# Python is Broken only avail in dev version
 FLAVOR?=
 
 USE_GMAKE=	Yes
@@ -39,6 +41,7 @@ WANTLIB-main += ${WANTLIB} wireshark wiretap wsutil
 WANTLIB-main += cairo gdk_pixbuf-2.0 gmodule-2.0 gobject-2.0
 WANTLIB-main += pango-1.0 pangocairo-1.0 portaudio
 
+MODLUA_VERSION=	5.2
 MODULES=	lang/lua
 MODLUA_SA=	Yes
 
@@ -70,35 +73,36 @@ LIBTOOL_FLAGS+= --tag=disable-static
 
 CONFIGURE_STYLE= gnu
 SEPARATE_BUILD=	Yes
-CFLAGS+=	-I${LOCALBASE}/include/lua-5.1
+CFLAGS+=	-I${LOCALBASE}/include/lua-${MODLUA_VERSION}
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-dumpcap-group=_wireshark \
 		--with-ssl
 
-.if !${FLAVOR:L:Mno_python}
-MODULES +=		lang/python
-WANTLIB-text +=		${MODPY_WANTLIB}
-LIB_DEPENDS-text +=	${MODPY_LIB_DEPENDS}
-CONFIGURE_ARGS +=	--with-python
-.endif
+#.if !${FLAVOR:L:Mno_python}
+#MODULES +=		lang/python
+#WANTLIB-text +=		${MODPY_WANTLIB}
+#LIB_DEPENDS-text +=	${MODPY_LIB_DEPENDS}
+#CONFIGURE_ARGS +=	--with-python
+#.endif
 
 .if !${FLAVOR:L:Mgtk2}
 CONFIGURE_ARGS +=	--with-gtk3=yes \
-			CPPFLAGS="-DGDK_VERSION_MIN_REQUIRED=GDK_VERSION_3_0"
+			CPPFLAGS="-DGDK_VERSION_MIN_REQUIRED=GDK_VERSION_3_0 -I${LOCALBASE}/include/lua-${MODLUA_VERSION}"
 WANTLIB-main +=		gdk-3 gtk-3
 LIB_DEPENDS-main +=		x11/gtk+3
 .else
+CONFIGURE_ARGS +=	CPPFLAGS="-I${LOCALBASE}/include/lua-${MODLUA_VERSION}"
 WANTLIB-main +=		gdk-x11-2.0 gtk-x11-2.0
 LIB_DEPENDS-main +=		x11/gtk+2
 .endif
 
 NO_TEST=	Yes
 
-post-extract:
-.if !${FLAVOR:L:Mno_python}
-	ln -s /usr/local/bin/python${MODPY_VERSION}-config ${WRKDIR}/bin/python-config
-.endif
+#post-extract:
+#.if !${FLAVOR:L:Mno_python}
+#	ln -s /usr/local/bin/python${MODPY_VERSION}-config ${WRKDIR}/bin/python-config
+#.endif
 
 post-install:
 	@find ${PREFIX}/lib/wireshark -name '*.la' -print0 | xargs -r0 rm
