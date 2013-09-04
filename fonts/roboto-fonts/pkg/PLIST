@@ -1,0 +1,28 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/12 16:06:03 rpe Exp $
+lib/X11/fonts/
+@fontdir lib/X11/fonts/roboto/
+lib/X11/fonts/roboto/Roboto-Black.ttf
+lib/X11/fonts/roboto/Roboto-BlackItalic.ttf
+lib/X11/fonts/roboto/Roboto-Bold.ttf
+lib/X11/fonts/roboto/Roboto-BoldItalic.ttf
+lib/X11/fonts/roboto/Roboto-Italic.ttf
+lib/X11/fonts/roboto/Roboto-Light.ttf
+lib/X11/fonts/roboto/Roboto-LightItalic.ttf
+lib/X11/fonts/roboto/Roboto-Medium.ttf
+lib/X11/fonts/roboto/Roboto-MediumItalic.ttf
+lib/X11/fonts/roboto/Roboto-Regular.ttf
+lib/X11/fonts/roboto/Roboto-Thin.ttf
+lib/X11/fonts/roboto/Roboto-ThinItalic.ttf
+lib/X11/fonts/roboto/RobotoCondensed-Bold.ttf
+lib/X11/fonts/roboto/RobotoCondensed-BoldItalic.ttf
+lib/X11/fonts/roboto/RobotoCondensed-Italic.ttf
+lib/X11/fonts/roboto/RobotoCondensed-Light.ttf
+lib/X11/fonts/roboto/RobotoCondensed-LightItalic.ttf
+lib/X11/fonts/roboto/RobotoCondensed-Regular.ttf
+share/doc/roboto-fonts/
+share/doc/roboto-fonts/AUTHORS.txt
+share/doc/roboto-fonts/CONTRIBUTORS.txt
+share/doc/roboto-fonts/COPYRIGHT.txt
+share/doc/roboto-fonts/LICENSE.txt
+share/doc/roboto-fonts/README.md
+share/doc/roboto-fonts/RobotoSpecimenBook.pdf
