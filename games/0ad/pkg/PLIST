@@ -1,5 +1,6 @@
 @comment $OpenBSD$
 %%SHARED%%
+bin/0ad
 @bin bin/pyrogenesis
 lib/libatlas.a
 lib/libengine.a
