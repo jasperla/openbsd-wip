@@ -2,7 +2,7 @@
 
 COMMENT =		historical real-time strategy game
 
-PKGNAME =		0ad-0.0.13
+PKGNAME =		0ad-0.0.14
 
 CATEGORIES =		games
 
