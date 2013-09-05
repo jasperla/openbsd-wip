@@ -72,6 +72,7 @@ do-install:
 	cp -R ${WRKDIST}/binaries/data/* ${PREFIX}/share/0ad
 	${INSTALL_DATA} ${WRKDIST}/binaries/system/lib* ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKDIST}/binaries/system/pyrogenesis ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKDIST}/build/resources/0ad.sh ${PREFIX}/bin/0ad
 
 do-test:
 	cd ${WRKDIST}/binaries/system && ./test
