@@ -17,7 +17,7 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # Multi license, including GPLv2, angband license, CC, freeware...
 # The angband license contains the line "other copyrights may also apply"
 PERMIT_PACKAGE_CDROM=	unclear license
-PERMIT_PACKAGE_FTP =	Yes
+PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB=		c m ncursesw
 
@@ -29,7 +29,7 @@ CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS +=	--with-setgid=games \
 			--bindir=${PREFIX}/bin
 
-CONFIGURE_ENV=          TRUEPREFIX=${TRUEPREFIX}
+CONFIGURE_ENV=          TRUEPREFIX="${TRUEPREFIX}"
 CONFIGURE_ENV +=	LDFLAGS=-L${LOCALBASE}/lib
 USE_GMAKE =		Yes
 
