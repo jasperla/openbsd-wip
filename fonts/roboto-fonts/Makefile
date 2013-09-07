@@ -4,6 +4,7 @@ COMMENT =	sans-serif typeface family of Android OS
 
 # 2013-07-30 Version 1.100141 (from README.md)
 V =		1.100141
+EPOCH =		0
 DISTNAME =	roboto-${V}
 PKGNAME =	roboto-fonts-${V}
 
