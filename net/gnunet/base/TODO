@@ -1,2 +1,3 @@
 - _gnunet user?
 - rc script?
+- gnunet-download-manager.scm no workee with current guile.
