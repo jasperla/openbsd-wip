@@ -27,7 +27,6 @@ misc/notebook sent to ports 2013-06-29
 multimedia/fuzemux	sent to ports 2013-01-13
 multimedia/video4fuze	sent to ports 2013-01-13
 net/bitcoin		sent to ports 2013-03-19, and again 2013-06-29
-net/livestreamer	sent to ports 2013-08-11 (bcallah)
 net/py-boto:		ready for import, sent to maintainer 2012-04-23 (tamentis)
 net/tkabber		ready for import, sent to ports 2013-01-30
 net/unison/stable	ready for import.
