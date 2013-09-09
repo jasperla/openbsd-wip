@@ -1,0 +1,7 @@
+@comment $OpenBSD$
+%%SHARED%%
+include/lzlib.h
+lib/liblz.a
+@lib lib/liblz.so.${LIBlz_VERSION}
+share/info/
+@info share/info/lzlib.info
