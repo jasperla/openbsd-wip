@@ -50,10 +50,9 @@ MODPY_ADJ_FILES =	texk/texlive/linked_scripts/de-macro/de-macro \
 			texk/texlive/linked_scripts/texliveonfly/texliveonfly.py
 
 MODRUBY_ADJ_FILES =	convbkmk.rb \
-			epspdf.rb \
 			match_parens
 
-MODPERL_ADJ_FILES =	texk/tetex/updmap.pl \
+MODPERL_ADJ_FILES =	texk/texlive/linked_scripts/texlive/updmap.pl \
 			texk/tetex/updmap-single.pl \
 			texk/tex4htk/mk4ht.pl \
 			texk/texlive/linked_scripts/authorindex/authorindex \
@@ -81,29 +80,47 @@ MODPERL_ADJ_FILES =	texk/tetex/updmap.pl \
 			texk/texlive/linked_scripts/purifyeps/purifyeps \
 			texk/texlive/linked_scripts/sty2dtx/sty2dtx.pl \
 			texk/texlive/linked_scripts/tetex/e2pall.pl \
-			texk/texlive/linked_scripts/tetex/texdoctk.pl \
+			utils/texdoctk/texdoctk.pl \
 			texk/texlive/linked_scripts/texcount/texcount.pl \
 			texk/texlive/linked_scripts/texdef/texdef.pl \
 			texk/texlive/linked_scripts/texdiff/texdiff \
 			texk/texlive/linked_scripts/texlive/tlmgr.pl \
+			texk/texlive/tl_scripts/e2pall.pl \
 			texk/texlive/linked_scripts/texloganalyser/texloganalyser \
 			utils/xindy/xindy-2.4/user-commands/texindy.in \
-			utils/xindy/xindy-2.4/user-commands/xindy.in
+			utils/xindy/xindy-2.4/user-commands/xindy.in \
+			texk/texlive/linked_scripts/jfontmaps/kanji-fontmap-creator.pl \
+			texk/texlive/linked_scripts/jfontmaps/kanji-config-updmap.pl \
+			texk/texlive/linked_scripts/latexdiff/latexdiff.pl \
+			texk/texlive/linked_scripts/latexdiff/latexdiff-vc.pl \
+			texk/texlive/linked_scripts/latexdiff/latexrevise.pl
 
-LUA_ADJ_SCRIPTS =	utils/mtx/m-tx.lua
+# None this year, but there have been in the past.
+LUA_ADJ_SCRIPTS =
 
-# XXX mtxrun has gone?
-#TEXLUA_ADJ_SCRIPTS =	texk/texlive/context/mtxrun
-TEXLUA_ADJ_SCRIPTS =	texk/texlive/linked_scripts/checkcites/checkcites.lua \
-			texk/texlive/linked_scripts/cachepic/cachepic.tlu \
+TEXLUA_ADJ_SCRIPTS =	texk/texlive/linked_scripts/cachepic/cachepic.tlu \
+			texk/texlive/linked_scripts/checkcites/checkcites.lua \
+			texk/texlive/linked_scripts/context/stubs/unix/mtxrun \
+			texk/texlive/linked_scripts/epspdf/epspdf.tlu \
+			texk/texlive/linked_scripts/luaotfload/luaotfload-tool.lua \
 			texk/texlive/linked_scripts/luaotfload/mkluatexfontdb.lua \
 			texk/texlive/linked_scripts/musixtex/musixflx.lua \
 			texk/texlive/linked_scripts/musixtex/musixtex.lua \
+			texk/texlive/linked_scripts/pfarrei/a5toa4.tlu \
+			texk/texlive/linked_scripts/pfarrei/pfarrei.tlu \
+			texk/texlive/linked_scripts/pmx/pmx2pdf.lua \
+			texk/texlive/linked_scripts/ptex2pdf/ptex2pdf.lua \
 			texk/texlive/linked_scripts/texdoc/texdoc.tlu \
 			texk/texlive/linked_scripts/texlive/rungs.tlu \
-			utils/pmx/pmx2pdf.lua
+			utils/pmx/pmx2pdf.lua \
 
-SH_ADJ_SCRIPTS =	texk/texlive/linked_scripts/typeoutfileinfo/typeoutfileinfo.sh
+SH_ADJ_SCRIPTS =	texk/texlive/linked_scripts/typeoutfileinfo/typeoutfileinfo.sh \
+			texk/texlive/linked_scripts/lua2dox/lua2dox_filter \
+			texk/texlive/linked_scripts/ltxfileinfo/ltxfileinfo \
+			texk/texlive/linked_scripts/arara/arara.sh \
+			texk/texlive/linked_scripts/dtxgen/dtxgen \
+			texk/texlive/linked_scripts/listbib/listbib
+
 
 # Never set SEPARATE_BUILD
 CONFIGURE_STYLE =	gnu
@@ -208,8 +225,7 @@ pre-configure:
 	    for F in ${SH_ADJ_SCRIPTS}; do \
 	        perl -pi -e '($$. == 1) && s@^.*$$@#!/bin/sh@' $$F; \
 	    done
-	# XXX mtxrun has gone?
-	#${SUBST_CMD} ${WRKSRC}/texk/texlive/context/mtxrun
+	${SUBST_CMD} ${WRKSRC}/texk/texlive/linked_scripts/context/stubs/unix/mtxrun
 
 # just to silence error - never used
 pre-install:
