@@ -1,0 +1,12 @@
+$OpenBSD: patch-util_prosodyctl_lua,v 1.2 2012/01/26 10:27:15 sthen Exp $
+--- util/prosodyctl.lua.orig	Tue May  3 19:43:53 2011
++++ util/prosodyctl.lua	Tue May  3 19:44:19 2011
+@@ -218,7 +218,7 @@ function start()
+ 	if not CFG_SOURCEDIR then
+ 		os.execute("./prosody");
+ 	else
+-		os.execute(CFG_SOURCEDIR.."/../../bin/prosody");
++		os.execute(CFG_SOURCEDIR.."/../../sbin/prosody");
+ 	end
+ 	return true;
+ end
