@@ -3,10 +3,9 @@
 SHARED_ONLY=	Yes
 
 COMMENT=	communications server for Jabber/XMPP written in Lua
-DISTNAME=	prosody-0.8.2
+DISTNAME=	prosody-0.9.1
 CATEGORIES=	net
 MASTER_SITES=	http://prosody.im/downloads/source/
-REVISION=	9
 
 HOMEPAGE=	http://prosody.im/
 
