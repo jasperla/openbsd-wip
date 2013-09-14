@@ -16,7 +16,7 @@ Known issues
 - Due to lack of thread-local storage support on OpenBSD, "places" and
   "futures" are disabled.
 
-- ODBC support is highly experimental.
+- ODBC doesn't work on OpenBSD. Fixed on Racket 6.
 
 Limitations
 ===========
