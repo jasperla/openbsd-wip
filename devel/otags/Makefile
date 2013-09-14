@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--mandir ${PREFIX}/man
 USE_GMAKE=	yes
 
 post-install:
-	env -i ${MAKE_ENV} ${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} \
+	${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} \
 	  -C ${WRKSRC}/contrib ${INSTALL_TARGET}
 
 

@@ -40,7 +40,7 @@ PATCH_LIST ?=	${TDE_PORTS_DIR}/cmakepatches/patch-* patch-*
 .endif
 AUTOCONF_VERSION ?= 2.61
 AUTOMAKE_VERSION ?= 1.10
-AUTOCONF ?=	/bin/sh -c "cd ${WRKSRC} && env -i \
+AUTOCONF ?=	/bin/sh -c "cd ${WRKSRC} && ${SETENV} \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		${MAKE_PROGRAM} -f admin/Makefile.common"

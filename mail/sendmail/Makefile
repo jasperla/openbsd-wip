@@ -40,7 +40,7 @@ INSTALL_TARGET =	install install-docs
 
 post-install:
 	cd ${WRKSRC}/obj.OpenBSD.${OSREV}.${MACHINE_ARCH}/mail.local && \
-		env -i ${MAKE_ENV} ${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} \
+		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} \
 		force-install
 	${INSTALL_DATA_DIR} ${PREFIX}/share/sendmail
 	cd ${WRKSRC}/cf && pax -rw . ${PREFIX}/share/sendmail
