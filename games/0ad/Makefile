@@ -62,9 +62,9 @@ do-configure:
 
 do-build:
 	cd ${WRKDIST}/libraries/source/fcollada/src && \
-		env -i ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS}
+		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS}
 	cd ${WRKSRC} &&\
-		env -i ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
+		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
 			-f ${MAKE_FILE} ${ALL_TARGET}
 
 do-install:
