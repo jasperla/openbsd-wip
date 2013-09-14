@@ -44,7 +44,7 @@ MODGCC4_LANGS =		c c++
 
 USE_GMAKE =		Yes
 BUILD_DEPENDS =		textproc/py-sphinx ${MODTK_BUILD_DEPENDS}
-RUN_DEPENDS =		${MODTK_BUILD_DEPENDS}
+RUN_DEPENDS =		${MODTK_RUN_DEPENDS}
 
 WRKDIST =		${WRKDIR}/pypy-${V}-src
 
@@ -91,7 +91,6 @@ do-build:
 .endif
 	cd ${WRKDIR}/usession/testing_1 && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM}
 
-
 do-install:
 	mkdir -p ${PREFIX}/pypy/bin
 	${INSTALL_PROGRAM} ${WRKDIR}/usession/testing_1/pypy-c ${PREFIX}/pypy/bin/pypy
@@ -121,7 +120,6 @@ do-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/pypy/lib_pypy
 	chown -R ${SHAREOWN}:${SHAREGRP}  ${PREFIX}/pypy/lib-python/2.7
 	cd ${PREFIX}/bin && ln -s ../pypy/bin/pypy
-	
 
 PYPY_PKG = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${FULLPKGNAME}.tgz
 
