@@ -104,10 +104,11 @@ post-fake:
 		touch -t 201306180906 search-context.html && \
 		touch -t 201306180906 search.js
 
+# Due to a bug on i386, racket doesn't generate all the images in doc/images.
 .if ${MACHINE_ARCH} == "amd64"
-PKG_ARGS+=-Damd64=1 -Di386=0
-.elif ${MACHINE_ARCH} == "i386"
-PKG_ARGS+=-Damd64=0 -Di386=1
+PKG_ARGS+=-Damd64=1
+.else
+PKG_ARGS+=-Damd64=0
 .endif
 
 .include <bsd.port.mk>
