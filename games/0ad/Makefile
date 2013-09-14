@@ -58,7 +58,7 @@ WRKSRC =		${WRKDIST}/build/workspaces/gcc
 
 do-configure:
 	cd ${WRKDIST}/build/workspaces && \
-		env -i ${CONFIGURE_ENV} ./update-workspaces.sh ${CONFIGURE_ARGS}
+		${SETENV} ${CONFIGURE_ENV} ./update-workspaces.sh ${CONFIGURE_ARGS}
 
 do-build:
 	cd ${WRKDIST}/libraries/source/fcollada/src && \

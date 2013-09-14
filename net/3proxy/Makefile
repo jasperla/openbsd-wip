@@ -32,7 +32,7 @@ post-extract:
 	perl -pi -e 's/\015//g' ${WRKSRC}/Makefile.unix-install
 
 do-install:
-	cd ${WRKSRC} && env -i ${MAKE_ENV} ${MAKE_PROGRAM} ${FAKE_FLAGS} \
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${FAKE_FLAGS} \
 		-f Makefile.unix-install install
 	${INSTALL_DATA} ${WRKSRC}/cfg/3proxy.cfg.sample \
 		${PREFIX}/share/examples/3proxy

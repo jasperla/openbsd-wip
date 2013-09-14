@@ -110,10 +110,10 @@ post-extract:
 	cp ${WRKDIST}/swt/make_{linux,openbsd}.mak
 
 do-build:
-	env -i ${MAKE_ENV} gmake -C ${WRKDIST}/launcher/bundles/org.eclipse.equinox.executable/library/gtk -f make_openbsd.mak
-	env -i ${MAKE_ENV} gmake -C ${WRKDIST}/libgnomeproxy/bundles/org.eclipse.core.net/natives/unix/openbsd
-	env -i ${MAKE_ENV} gmake -C ${WRKDIST}/libunixfile/bundles/org.eclipse.core.filesystem/natives/unix/openbsd
-	env -i ${MAKE_ENV} gmake -C ${WRKDIST}/swt -f make_openbsd.mak make_{swt,cairo,awt,atk,gnome,mozilla,xulrunner,xpcominit,webkit,glx}
+	${SETENV} ${MAKE_ENV} gmake -C ${WRKDIST}/launcher/bundles/org.eclipse.equinox.executable/library/gtk -f make_openbsd.mak
+	${SETENV} ${MAKE_ENV} gmake -C ${WRKDIST}/libgnomeproxy/bundles/org.eclipse.core.net/natives/unix/openbsd
+	${SETENV} ${MAKE_ENV} gmake -C ${WRKDIST}/libunixfile/bundles/org.eclipse.core.filesystem/natives/unix/openbsd
+	${SETENV} ${MAKE_ENV} gmake -C ${WRKDIST}/swt -f make_openbsd.mak make_{swt,cairo,awt,atk,gnome,mozilla,xulrunner,xpcominit,webkit,glx}
 
 post-build:
 	mkdir -p ${WRKDIST}/libunixfile/bundles/org.eclipse.core.filesystem/natives/unix/openbsd/os/linux/${ECLIPSE_ARCH}
