@@ -58,18 +58,15 @@ post-extract:
 	chmod +x ${WRKDIR}/bin/pypy
 .endif
 
-# be careful when running 'make update-patch'
 SUBST_VARS +=	MODTK_INCDIR MODTCL_INCDIR
-
-# To prevent MODPY_VERSION from being subsituted
-# XXX does not work due to recursion, workaround?
-#SUBST_VARS =	${SUBST_VARS:N:MODPY_VERSION}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/lib_pypy/_tkinter/tklib.py
 	# prevent crap in the plist
-	rm ${WRKSRC}/lib_pypy/_tkinter/tklib.py${PATCHORIG}
-	rm ${WRKSRC}/lib_pypy/_tkinter/tklib.py.beforesubst
+	rm ${WRKSRC}/lib_pypy/_tkinter/tklib.py${PATCHORIG} \
+		${WRKSRC}/lib_pypy/_tkinter/tklib.py.beforesubst \
+		${WRKSRC}/lib_pypy/_tkinter/__init__.py${PATCHORIG} \
+		${WRKSRC}/lib_pypy/_tkinter/app.py${PATCHORIG}
 
 # When updating the port, see pypy/tool/release/package.py and check for
 # new modules which require a cffi cache.
