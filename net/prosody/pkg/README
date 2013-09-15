@@ -20,6 +20,8 @@ Using Prosody in an OpenBSD environment
    be generated. A Makefile is located in ${SYSCONFDIR}/prosody/certs/.
    Please note that if you wish to use this file, the 'gmake' package
    needs to be installed.
+   Another way is to use '${TRUEPREFIX}/sbin/prosodyctl cert' as
+   described at https://prosody.im/doc/certificates
 
 3) Prosody includes an rc script for starting and stopping. You can
    start it by running:
