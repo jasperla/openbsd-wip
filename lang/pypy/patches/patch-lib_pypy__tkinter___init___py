@@ -1,6 +1,6 @@
 $OpenBSD$
 
-Allow tkinter to use a single threaded Python.
+Allow tkinter to use a single threaded TCL.
 From upstream a2cfb94ccff5
 
 --- lib_pypy/_tkinter/__init__.py.orig	Thu Aug  1 10:57:52 2013
