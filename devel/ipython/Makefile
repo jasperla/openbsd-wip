@@ -20,7 +20,8 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			net/py-zmq \
 			graphics/py-matplotlib>=1.2.0 \
 			textproc/py-pygments \
-			www/py-tornado
+			www/py-tornado \
+			www/py-jinja2
 TEST_DEPENDS =		devel/py-nose
 BUILD_DEPENDS =		textproc/py-sphinx \
 			graphics/py-matplotlib>=1.2.0 \
