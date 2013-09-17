@@ -13,6 +13,9 @@ V =			5.3.6
 PKGNAME =		racket-$V
 # The project uses racket-* for stable and plt-* for development releases
 DISTNAME =		racket-$V-src-unix
+
+SHARED_LIBS +=		racket3m	5.3 # 5.3
+
 CATEGORIES =		lang
 DPB_PROPERTIES =	parallel
 HOMEPAGE =		http://racket-lang.org/

@@ -1,0 +1,15 @@
+$OpenBSD$
+
+XXX Add the proper variables to version-info
+
+--- src/configure.orig	Mon Sep 16 19:44:58 2013
++++ src/configure	Mon Sep 16 19:45:39 2013
+@@ -8878,7 +8878,7 @@ if test "${enable_shared}" = "yes" ; then
+     plt_lib_version=`grep " MZSCHEME_VERSION " ${srcdir}/racket/src/schvers.h | cut -d '"' -f 2`
+   fi
+ 
+-  AR="${LIBTOOLPROG} --mode=link --tag=CC $CC${need_gcc_static_libgcc}${ar_libtool_no_undefined} -release ${plt_lib_version} -rpath ${abslibdir} \$(ARLIBFLAGS) -o"
++  AR="${LIBTOOLPROG} --mode=link --tag=CC $CC${need_gcc_static_libgcc}${ar_libtool_no_undefined} -version-info 5:3:6 -rpath ${abslibdir} \$(ARLIBFLAGS) -o"
+   STATIC_AR="${LIBTOOLPROG} --mode=link --tag=CC $CC -o"
+   ARFLAGS=""
+   RANLIB=":"
