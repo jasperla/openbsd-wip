@@ -40,10 +40,9 @@ include/racket/schvers.h
 include/racket/sconfig.h
 include/racket/stypes.h
 include/racket/uconfig.h
-lib/libracket3m-5.3.6.so
 lib/libracket3m.a
 lib/libracket3m.la
-lib/libracket3m.so
+@lib lib/libracket3m.so.${LIBracket3m_VERSION}
 lib/racket/
 lib/racket/buildinfo
 lib/racket/collects/
