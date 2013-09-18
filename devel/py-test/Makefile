@@ -22,7 +22,7 @@ MODPY_SETUPTOOLS=	Yes
 FLAVORS=		python3
 FLAVOR?=
 
-RUN_DEPENDS=		devel/py-py${MODPY_FLAVOR}>=1.4.15
+RUN_DEPENDS =		devel/py-py${MODPY_FLAVOR}>=1.4.15
 TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR}>=${MODPY_EGG_VERSION}
 
 do-test:
