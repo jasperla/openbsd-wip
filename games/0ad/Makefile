@@ -73,6 +73,12 @@ do-install:
 	${INSTALL_DATA} ${WRKDIST}/binaries/system/lib* ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKDIST}/binaries/system/pyrogenesis ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKDIST}/build/resources/0ad.sh ${PREFIX}/bin/0ad
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKDIST}/build/resources/0ad.desktop \
+		${PREFIX}/share/applications/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKDIST}/build/resources/0ad.png \
+		${PREFIX}/share/pixmaps/
 
 do-test:
 	cd ${WRKDIST}/binaries/system && ./test
