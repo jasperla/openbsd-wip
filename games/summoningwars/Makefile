@@ -1,5 +1,7 @@
 # $OpenBSD$
 
+BROKEN =		does not work with CEGUI >0.8
+
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		role playing game
