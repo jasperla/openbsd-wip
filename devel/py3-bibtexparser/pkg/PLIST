@@ -1,0 +1,14 @@
+@comment $OpenBSD$
+lib/python${MODPY_VERSION}/site-packages/bibtexparser/
+lib/python${MODPY_VERSION}/site-packages/bibtexparser-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/bibtexparser/__init__.py
+lib/python${MODPY_VERSION}/site-packages/bibtexparser/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bibtexparser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bibtexparser/${MODPY_PYCACHE}bparser.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bibtexparser/${MODPY_PYCACHE}customization.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bibtexparser/${MODPY_PYCACHE}info.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bibtexparser/${MODPY_PYCACHE}latexenc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bibtexparser/bparser.py
+lib/python${MODPY_VERSION}/site-packages/bibtexparser/customization.py
+lib/python${MODPY_VERSION}/site-packages/bibtexparser/info.py
+lib/python${MODPY_VERSION}/site-packages/bibtexparser/latexenc.py
