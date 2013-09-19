@@ -14,7 +14,10 @@ PKGNAME =		racket-$V
 # The project uses racket-* for stable and plt-* for development releases
 DISTNAME =		racket-$V-src-unix
 
-SHARED_LIBS +=		racket3m	5.3 # 5.3
+# Each new version of racket is incompatible with the previous one.
+# Increase always the major number.
+# http://article.gmane.org/gmane.comp.lang.racket.devel/9872
+SHARED_LIBS +=		racket3m	0.0 # 5.3.6
 
 CATEGORIES =		lang
 DPB_PROPERTIES =	parallel
@@ -56,7 +59,7 @@ WRKSRC =		${WRKDIST}/src
 
 NO_TEST =		Yes
 VMEM_WARNING =		Yes
-SEPARATE_BUILD =	simple
+SEPARATE_BUILD =	Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
@@ -82,7 +85,9 @@ CONFIGURE_ARGS +=	--disable-backtrace \
 # "-msse -mfpmath=sse" required by extflonum on i386.
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			CFLAGS="${CFLAGS} -msse -mfpmath=sse"
+			CFLAGS="${CFLAGS} -msse -mfpmath=sse" \
+			LIBracket3m_MAJOR=${LIBracket3m_VERSION:R} \
+			LIBracket3m_MINOR=${LIBracket3m_VERSION:E} \
 
 # MAKE_JOBS: If "places" is enabled, racket uses "places channels". When
 # "places" is disabled, racket uses multiple racket processes and pipes.
