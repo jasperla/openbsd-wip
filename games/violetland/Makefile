@@ -20,7 +20,7 @@ WANTLIB += boost_filesystem-mt boost_system-mt c intl m pthread stdc++
 MASTER_SITES =		https://violetland.googlecode.com/files/
 EXTRACT_SUFX =		.zip
 
-MODULES =		devel/cmake
+MODULES =		devel/gettext devel/cmake
 LIB_DEPENDS =		devel/boost \
 			devel/gettext \
 			devel/sdl-image \
