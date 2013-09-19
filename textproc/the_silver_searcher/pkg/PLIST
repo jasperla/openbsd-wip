@@ -1,6 +1,6 @@
 @comment $OpenBSD$
 @bin bin/ag
 @man man/man1/ag.1
-share/the_silver_searcher/
-share/the_silver_searcher/completions/
-share/the_silver_searcher/completions/ag.bashcomp.sh
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/ag.bashcomp.sh
