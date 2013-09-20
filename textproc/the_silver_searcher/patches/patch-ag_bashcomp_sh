@@ -1,8 +1,0 @@
-$OpenBSD$
---- ag.bashcomp.sh.orig	Thu Sep 19 19:56:28 2013
-+++ ag.bashcomp.sh	Thu Sep 19 19:55:01 2013
-@@ -1,4 +1,3 @@
--have ag &&
- _ag() {
-   local lngopt shtopt split=false
-   local cur prev
