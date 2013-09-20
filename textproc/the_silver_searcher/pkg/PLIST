@@ -1,6 +1,0 @@
-@comment $OpenBSD$
-@bin bin/ag
-@man man/man1/ag.1
-share/bash-completion/
-share/bash-completion/completions/
-share/bash-completion/completions/ag.bashcomp.sh
