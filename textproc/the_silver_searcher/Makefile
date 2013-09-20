@@ -11,13 +11,15 @@ MAINTAINER =	Florian Stinglmayr <fstinglmayr@gmail.com>
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c pcre pthread z
+WANTLIB += c lzma pcre pthread z
 
 MASTER_SITES =	http://pub.n0la.org/
 
-LIB_DEPENDS =	devel/pcre
+LIB_DEPENDS =	archivers/xz \
+		devel/pcre
 
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
 
 NO_TEST =	YES
 
