@@ -2,7 +2,7 @@
 
 COMMENT =		public domain implementation of the lzip data compressor
 
-V =			1.4
+V =			1.5
 DISTNAME =		pdlzip-${V}
 
 HOMEPAGE =		http://lzip.nongnu.org/pdlzip.html
