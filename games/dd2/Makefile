@@ -2,8 +2,7 @@
 
 COMMENT =		arcade game for one or two players
 
-V =			0.2.2
-DISTNAME =		dd2-${V}
+DISTNAME =		dd2-0.2.2
 
 CATEGORIES =		games
 
