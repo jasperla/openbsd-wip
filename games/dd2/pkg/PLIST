@@ -1,5 +1,9 @@
 @comment $OpenBSD$
+@mode 2555
+@group games
 @bin bin/dd2
+@mode
+@group
 share/dd2/
 share/dd2/bgm1.xm
 share/dd2/bgm2.xm
