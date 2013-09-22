@@ -10,9 +10,8 @@ DISTNAME =		texlive-${DIST_V}-texmf
 #			http://theunixzoo.co.uk/distfiles/
 MASTER_SITES0 =		http://theunixzoo.co.uk/distfiles/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
-			texmf-var-pregen-${V}${EXTRACT_SUFX}:0
-REVISION-main =		0
+			texlive-${DIST_V}-extra${EXTRACT_SUFX}
+#			texmf-var-pregen-${V}${EXTRACT_SUFX}:0
 
 PKGNAME-main =		texlive_texmf-minimal-${V}
 PKGNAME-full =		texlive_texmf-full-${V}
@@ -50,6 +49,7 @@ MULTI_PACKAGES =	-context -docs -full -main
 # The BEGIN/END ensure that each real entry has a space either side
 # of it. Grep uses this to ensure we don't accidentally pick up
 # a path which is a subset of one of the following:
+# XXX update these
 NOT_A_MANUAL = BEGIN \
 	${PREFIX}/share/texmf-dist/tex/latex/tabvar/tabvar.1 \
 	${PREFIX}/share/texmf-dist/tex/latex/tabvar/tabvar.2 \
@@ -86,14 +86,16 @@ do-install:
 	# Collect all the manual pages that are *everywhere* for
 	# some reason. I wanted to use file(1) to detect if files
 	# are manual pages, but it gets it wrong (sigh).
-	for i in `find  ${PREFIX} -type f | grep -e '.*\.[1-9]$$'`; do \
-		if [ "`echo ${NOT_A_MANUAL} | grep -e \" $$i "`" = "" ]; then \
-			mv $$i ${PREFIX}/man/man$${i#$${i%?}}/ ; \
-		fi \
-	done
+	# XXX re-enable
+	#for i in `find  ${PREFIX} -type f | grep -e '.*\.[1-9]$$'`; do \
+	#	if [ "`echo ${NOT_A_MANUAL} | grep -e \" $$i "`" = "" ]; then \
+	#		mv $$i ${PREFIX}/man/man$${i#$${i%?}}/ ; \
+	#	fi \
+	#done
 
 	# plug in my pregenerated map and formats
-	mv ${WRKDIR}/texmf-var ${PREFIX}/share
+	# XXX re-enable
+	#mv ${WRKDIR}/texmf-var ${PREFIX}/share
 
 	# adjust permissions
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/{share/texmf*,man/man*/*}
