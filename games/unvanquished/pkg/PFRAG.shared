@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+Unvanquished/librendererGL.so
+Unvanquished/librendererGL3.so
+Unvanquished/main/cgame.so
+Unvanquished/main/game.so
+Unvanquished/main/ui.so

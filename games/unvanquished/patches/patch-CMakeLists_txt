@@ -1,0 +1,33 @@
+$OpenBSD$
+--- CMakeLists.txt.orig	Sun Sep  1 14:30:20 2013
++++ CMakeLists.txt	Sun Sep 22 02:17:17 2013
+@@ -185,7 +185,9 @@ if( WIN32 )
+   set( PLATFORM "win32" )
+   set( CONSOLE "win32" )
+ elseif( UNIX )
+-  if( ${CMAKE_SYSTEM_NAME} MATCHES "Darwin" )
++  if( ${CMAKE_SYSTEM_NAME} MATCHES "Linux" )
++    add_definitions( -D_FILE_OFFSET_BITS=64 )
++  elseif( ${CMAKE_SYSTEM_NAME} MATCHES "Darwin" )
+     add_definitions( -DMACOS_X -DMACOS_X_ACCELERATION_HACK -DUSE_FILE32API -DMACOS_X_CURSOR_HACK )
+   endif()
+   set( PLATFORM "unix" )
+@@ -416,9 +418,6 @@ if(NOT MINIMAL_FLAGS)
+   if( NOT MSVC )
+     # Can we get rid of unneeded external libraries?
+     try_linker_flag( HAVE_AS_NEEDED -Wl,--as-needed )
+-
+-    # If we can, fail if there are unresolved symbols
+-    try_linker_flag( HAVE_Z_DEFS -Wl,-z,defs )
+   endif()
+ 
+   if( ENABLE_FSTACKPROT )
+@@ -1322,6 +1321,8 @@ if( WIN32 )
+   endif()
+ elseif( UNIX )
+   if( CMAKE_SYSTEM_NAME STREQUAL "FreeBSD" )
++    set( OS_LIBRARIES m z )
++  elseif( CMAKE_SYSTEM_NAME STREQUAL "OpenBSD" )
+     set( OS_LIBRARIES m z )
+   elseif( CMAKE_SYSTEM_NAME STREQUAL "Darwin" )
+     set( OS_LIBRARIES dl m z )
