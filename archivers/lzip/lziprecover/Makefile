@@ -2,8 +2,7 @@
 
 COMMENT =		data recovery tool and decompressor for lzip files
 
-V =			1.15
-DISTNAME =		lziprecover-${V}
+DISTNAME =		lziprecover-1.15
 
 HOMEPAGE =		http://lzip.nongnu.org/lziprecover.html
 
