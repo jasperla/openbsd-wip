@@ -2,8 +2,7 @@
 
 COMMENT =		lossless data compressor
 
-V =			1.14
-DISTNAME =		lzip-${V}
+DISTNAME =		lzip-1.14
 
 HOMEPAGE =		http://lzip.nongnu.org/lzip.html
 

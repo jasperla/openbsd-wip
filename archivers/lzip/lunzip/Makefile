@@ -2,8 +2,7 @@
 
 COMMENT =		decompressor written in C for lzip files
 
-V =			1.3
-DISTNAME =		lunzip-${V}
+DISTNAME =		lunzip-1.3
 
 HOMEPAGE =		http://lzip.nongnu.org/lunzip.html
 
