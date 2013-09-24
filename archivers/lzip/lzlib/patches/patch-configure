@@ -1,14 +1,12 @@
 $OpenBSD$
 --- configure.orig	Tue May 28 00:32:57 2013
-+++ configure	Sun Sep  8 19:30:27 2013
-@@ -6,8 +6,8 @@
++++ configure	Tue Sep 24 19:09:28 2013
+@@ -6,7 +6,7 @@
  # to copy, distribute and modify it.
  
  pkgname=lzlib
 -pkgversion=1.4
--soversion=1
 +pkgversion=${LIBlz_VERSION}
-+soversion=${LIBlz_VERSION}
+ soversion=1
  progname=minilzip
  progname_shared=
- libname=lz
