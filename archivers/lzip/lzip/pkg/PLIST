@@ -1,7 +1,4 @@
 @comment $OpenBSD$
 @bin bin/lzip
-share/info/
-@info share/info/lzip.info
-share/man/
-share/man/man1/
-@man share/man/man1/lzip.1
+@info info/lzip.info
+@man man/man1/lzip.1
