@@ -1,7 +1,4 @@
 @comment $OpenBSD$
 @bin bin/lziprecover
-share/info/
-@info share/info/lziprecover.info
-share/man/
-share/man/man1/
-@man share/man/man1/lziprecover.1
+@info info/lziprecover.info
+@man man/man1/lziprecover.1

@@ -16,9 +16,13 @@ DIST_SUBDIR =		lzip
 USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	simple
-CONFIGURE_ARGS =	${CONFIGURE_SHARED} CC="${CC}" CXX="${CXX}" \
+CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
+			CC="${CC}" CXX="${CXX}" \
 			CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
-			CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
+			CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
+			--prefix=${PREFIX} \
+			--infodir=${PREFIX}/info \
+			--mandir=${PREFIX}/man
 
 TEST_TARGET =		check
