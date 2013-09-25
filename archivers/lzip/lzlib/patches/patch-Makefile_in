@@ -1,7 +1,7 @@
 $OpenBSD$
---- Makefile.in.orig	Sun Sep  8 19:47:48 2013
-+++ Makefile.in	Sun Sep  8 19:51:51 2013
-@@ -86,16 +86,10 @@ install-bin : all
+--- Makefile.in.orig	Thu May  9 01:30:09 2013
++++ Makefile.in	Thu Sep 26 00:47:35 2013
+@@ -86,11 +86,6 @@ install-bin : all
  	$(INSTALL_DATA) ./lib$(libname).a "$(DESTDIR)$(libdir)/lib$(libname).a"
  	if [ -n "$(progname_shared)" ] ; then \
  	  $(INSTALL_PROGRAM) ./lib$(libname).so.$(pkgversion) "$(DESTDIR)$(libdir)/lib$(libname).so.$(pkgversion)" ; \
@@ -13,8 +13,3 @@ $OpenBSD$
  	  if [ -e "$(DESTDIR)$(libdir)/lib$(libname).so" ] ; then \
  	    rm -f "$(DESTDIR)$(libdir)/lib$(libname).so" ; \
  	  fi ; \
- 	  cd "$(DESTDIR)$(libdir)" && ln -s lib$(libname).so.$(pkgversion) lib$(libname).so ; \
--	  cd "$(DESTDIR)$(libdir)" && ln -s lib$(libname).so.$(pkgversion) lib$(libname).so.$(soversion) ; \
- 	  if [ $${run_ldconfig} = yes ] && [ -x "$(LDCONFIG)" ] ; then "$(LDCONFIG)" -n "$(DESTDIR)$(libdir)" ; fi ; \
- 	fi
- 
