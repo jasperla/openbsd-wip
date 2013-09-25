@@ -12,6 +12,5 @@ HOMEPAGE =		http://lzip.nongnu.org/lzlib.html
 PERMIT_PACKAGE_CDROM =	Yes
 
 CONFIGURE_ENV +=	LIBlz_VERSION=${LIBlz_VERSION}
-CFLAGS +=		-DLIBlz_VERSION=\\\"${LIBlz_VERSION}\\\"
 
 .include <bsd.port.mk>
