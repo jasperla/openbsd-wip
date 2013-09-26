@@ -1,3 +1,5 @@
+@man man/man1/mtx-context.1
+@man man/man1/context.1
 share/texmf-dist/bibtex/bst/context/cont-ab.bst
 share/texmf-dist/bibtex/bst/context/cont-au.bst
 share/texmf-dist/bibtex/bst/context/cont-no.bst

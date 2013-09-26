@@ -21,6 +21,8 @@ TeX Live 2013 - Porting progress
    -> asymptote					
  * Remove windows junk				
  * Get basic texmf packaging:			
+   -> tlpkg/ stuff not needed (and wont be present)
+   -> beware errors in the tlpdb (yay)
  * Re-add depenedencies:			
  * Hack texmf.cnf				OK
  * Implement @xxx in plists			
