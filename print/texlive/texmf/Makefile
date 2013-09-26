@@ -23,8 +23,8 @@ NO_TEST =		Yes
 PKG_ARCH =		*
 
 BUILD_DEPENDS =		archivers/xz
-RUN_DEPENDS-full =	texlive_texmf-minimal-${V}:print/texlive/texmf,-main \
-			texlive_base-${V}:print/texlive/base
+#RUN_DEPENDS-full =	texlive_texmf-minimal-${V}:print/texlive/texmf,-main \
+#			texlive_base-${V}:print/texlive/base
 # We dont use auto module deps for these, as MODULES is not per SUBPACKAGE
 MODULES +=		lang/ruby lang/python
 MODRUBY_REV =		1.8
@@ -32,14 +32,14 @@ MODRUBY_BUILDDEP =	No
 MODRUBY_RUNDEP =	No
 MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
-RUN_DEPENDS-full +=	lang/python/${MODPY_VERSION}
+#RUN_DEPENDS-full +=	lang/python/${MODPY_VERSION}
 
-RUN_DEPENDS-context +=	texlive_base-${V}:print/texlive/base \
-			lang/ruby/${MODRUBY_REV}
-RUN_DEPENDS-context +=	lang/ruby/${MODRUBY_REV}
-RUN_DEPENDS-docs +=	texlive_base-${V}:print/texlive/base \
-			x11/p5-Tk
-RUN_DEPENDS-docs +=	x11/p5-Tk
+#RUN_DEPENDS-context +=	texlive_base-${V}:print/texlive/base \
+#			lang/ruby/${MODRUBY_REV}
+#RUN_DEPENDS-context +=	lang/ruby/${MODRUBY_REV}
+#RUN_DEPENDS-docs +=	texlive_base-${V}:print/texlive/base \
+#			x11/p5-Tk
+#RUN_DEPENDS-docs +=	x11/p5-Tk
 
 MULTI_PACKAGES =	-context -docs -full -main
 
@@ -79,19 +79,17 @@ NOT_A_MANUAL = BEGIN \
 
 do-install:
 
-	# The rest goes in share/texmf*
-	mv ${WRKDIST}/texmf ${PREFIX}/share
+	# The rest goes in share/texmf-dist
 	mv ${WRKDIST}/texmf-dist ${PREFIX}/share
 
 	# Collect all the manual pages that are *everywhere* for
 	# some reason. I wanted to use file(1) to detect if files
 	# are manual pages, but it gets it wrong (sigh).
-	# XXX re-enable
-	#for i in `find  ${PREFIX} -type f | grep -e '.*\.[1-9]$$'`; do \
-	#	if [ "`echo ${NOT_A_MANUAL} | grep -e \" $$i "`" = "" ]; then \
-	#		mv $$i ${PREFIX}/man/man$${i#$${i%?}}/ ; \
-	#	fi \
-	#done
+	for i in `find  ${PREFIX} -type f | grep -e '.*\.[1-9]$$'`; do \
+		if [ "`echo ${NOT_A_MANUAL} | grep -e \" $$i "`" = "" ]; then \
+			mv $$i ${PREFIX}/man/man$${i#$${i%?}}/ ; \
+		fi \
+	done
 
 	# plug in my pregenerated map and formats
 	# XXX re-enable
@@ -102,7 +100,7 @@ do-install:
 
 # selfauto does not work with our legacy texmf paths, patch in paths.
 post-install:
-	${SUBST_CMD} ${PREFIX}/share/texmf/web2c/texmf.cnf
-	${SUBST_CMD} ${PREFIX}/share/texmf/web2c/texmfcnf.lua
+	${SUBST_CMD} ${PREFIX}/share/texmf-dist/web2c/texmf.cnf
+	${SUBST_CMD} ${PREFIX}/share/texmf-dist/web2c/texmfcnf.lua
 
 .include <bsd.port.mk>
