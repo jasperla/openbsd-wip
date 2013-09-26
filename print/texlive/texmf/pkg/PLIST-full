@@ -403,7 +403,6 @@ share/texmf-dist/bibtex/csf/dk-bib/utf8-dk.csf
 share/texmf-dist/bibtex/csf/persian-bib/cp1256fa.csf
 share/texmf-dist/chktex/chktexrc
 share/texmf-dist/doc/man/man1/lacheck.1
-share/texmf-dist/doc/man/man1/lacheck.man1.pdf
 share/texmf-dist/dvips/brushscr/config.pbsi
 share/texmf-dist/dvips/colorsep/colorsep.pro
 share/texmf-dist/dvips/countriesofeurope/config.CountriesOfEurope
