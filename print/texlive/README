@@ -6,14 +6,14 @@ TeX Live 2013 - Porting progress
 ================================
 
  * Get base compilers working:			building atleast
- * Check *_ADJ					
+ * Check *_ADJ					OK
  * Test build works.				
    -> amd64					OK
    -> i386					
    -> sparc64					
- * Do texmf split (with new texscythe tool)
- * Split out conTeXt (use grep)			
- * Move manuals and pdf manuals			
+ * Do texmf split (with new texscythe tool)	OK
+ * Split out conTeXt (use grep)			OK
+ * Move manuals and remove pdf manuals
    -> All texmf manuals in -minimal		
  * Remove external deps				
    -> texworks					
@@ -22,7 +22,7 @@ TeX Live 2013 - Porting progress
  * Remove windows junk				
  * Get basic texmf packaging:			
  * Re-add depenedencies:			
- * Hack texmf.cnf				
+ * Hack texmf.cnf				OK
  * Implement @xxx in plists			
  * emulate texlinks				
  * patch in ruby/python versions for texexec	
