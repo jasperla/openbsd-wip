@@ -10,8 +10,7 @@ include/lutok/state.ipp
 include/lutok/test_utils.hpp
 lib/liblutok.a
 lib/liblutok.la
-@lib lib/liblutok.so.1.0
-lib/pkgconfig/
+@lib lib/liblutok.so.2.0
 lib/pkgconfig/lutok.pc
 share/doc/lutok/
 share/doc/lutok/AUTHORS
@@ -68,6 +67,7 @@ share/doc/lutok/classes.html
 share/doc/lutok/closed.png
 share/doc/lutok/doxygen.css
 share/doc/lutok/doxygen.png
+share/doc/lutok/dynsections.js
 share/doc/lutok/examples/
 share/doc/lutok/examples/Makefile
 share/doc/lutok/examples/bindings.cpp
@@ -75,6 +75,22 @@ share/doc/lutok/examples/hello.cpp
 share/doc/lutok/examples/interpreter.cpp
 share/doc/lutok/examples/raii.cpp
 share/doc/lutok/files.html
+share/doc/lutok/ftv2blank.png
+share/doc/lutok/ftv2cl.png
+share/doc/lutok/ftv2doc.png
+share/doc/lutok/ftv2folderclosed.png
+share/doc/lutok/ftv2folderopen.png
+share/doc/lutok/ftv2lastnode.png
+share/doc/lutok/ftv2link.png
+share/doc/lutok/ftv2mlastnode.png
+share/doc/lutok/ftv2mnode.png
+share/doc/lutok/ftv2mo.png
+share/doc/lutok/ftv2node.png
+share/doc/lutok/ftv2ns.png
+share/doc/lutok/ftv2plastnode.png
+share/doc/lutok/ftv2pnode.png
+share/doc/lutok/ftv2splitbar.png
+share/doc/lutok/ftv2vertline.png
 share/doc/lutok/functions.html
 share/doc/lutok/functions_func.html
 share/doc/lutok/functions_vars.html
@@ -87,6 +103,7 @@ share/doc/lutok/namespacemembers.html
 share/doc/lutok/namespacemembers_func.html
 share/doc/lutok/namespaces.html
 share/doc/lutok/nav_f.png
+share/doc/lutok/nav_g.png
 share/doc/lutok/nav_h.png
 share/doc/lutok/open.png
 share/doc/lutok/search/
@@ -208,10 +225,10 @@ share/doc/lutok/search/variables_6f.html
 share/doc/lutok/search/variables_6f.js
 share/doc/lutok/search/variables_73.html
 share/doc/lutok/search/variables_73.js
+share/doc/lutok/sync_off.png
+share/doc/lutok/sync_on.png
 share/doc/lutok/tab_a.png
 share/doc/lutok/tab_b.png
 share/doc/lutok/tab_h.png
 share/doc/lutok/tab_s.png
 share/doc/lutok/tabs.css
-tests/
-tests/lutok/
