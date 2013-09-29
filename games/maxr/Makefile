@@ -3,7 +3,6 @@
 COMMENT =		Mechanized Assault & eXploration Reloaded
 
 DISTNAME =		maxr-0.2.8
-REVISION = 		0
 
 CATEGORIES =		games x11
 
@@ -14,11 +13,12 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 # GPLv2, GNU FDL
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += FLAC SDL SDL_mixer SDL_net c iconv m mikmod ogg pthread
+WANTLIB += FLAC SDL SDL_mixer SDL_net c m mikmod ogg pthread
 WANTLIB += smpeg sndio stdc++ usbhid vorbis vorbisfile
 
 MASTER_SITES =		http://www.maxr.org/downloads/
 
+MODULES = 		converters/libiconv
 LIB_DEPENDS =		devel/sdl-mixer \
 			devel/sdl-net
 
