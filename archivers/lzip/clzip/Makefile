@@ -2,7 +2,7 @@
 
 COMMENT =		C implementation of lzip
 
-DISTNAME =		clzip-1.4
+DISTNAME =		clzip-1.5
 
 HOMEPAGE =		http://lzip.nongnu.org/clzip.html
 
