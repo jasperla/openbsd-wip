@@ -31,7 +31,7 @@ $OpenBSD$
  install: $(BIN)
 -	install -m 0755 -p -D $(BIN) $(DESTDIR)$(BINPREFIX)/$(BIN)
 +	@mkdir -p ${PREFIX}/bin
-+	@mkdir -p ${MANPREFIX}/man1
++	@mkdir -p ${PREFIX}/man/man1
 +	install $(BIN) ${PREFIX}/bin
 +	install $(BIN).1 ${PREFIX}/man/man1
  
