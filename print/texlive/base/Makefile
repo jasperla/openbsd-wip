@@ -137,6 +137,7 @@ CPPFLAGS =	-I${X11BASE}/include \
 
 # Big endian ICU bug
 # http://tug.org/pipermail/tlbuild/2012q2/002266.html
+# XXX still needed?
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mbe}
 CPPFLAGS +=	-DU_IS_BIG_ENDIAN=1
@@ -266,6 +267,7 @@ post-install:
 		${PREFIX}/libdata/perl5/site_perl/TeXLive/
 
 	# emulate texlinks
+	# XXX redo
 	for i in ${ALEPH_LN}; do \
 		ln -s ${TRUEPREFIX}/bin/aleph ${PREFIX}/bin/$$i; \
 	done
@@ -287,7 +289,6 @@ post-install:
 	for i in ${EUPTEX_LN}; do \
 		ln -s ${TRUEPREFIX}/bin/euptex ${PREFIX}/bin/$$i; \
 	done
-
 
 .include <bsd.port.mk>
 
