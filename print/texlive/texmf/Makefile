@@ -92,8 +92,7 @@ do-install:
 	done
 
 	# plug in my pregenerated map and formats
-	# XXX re-enable
-	#mv ${WRKDIR}/texmf-var ${PREFIX}/share
+	mv ${WRKDIR}/texmf-var ${PREFIX}/share
 
 	# adjust permissions
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/{share/texmf*,man/man*/*}
