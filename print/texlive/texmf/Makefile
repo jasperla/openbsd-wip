@@ -6,12 +6,12 @@ COMMENT-full =		texlive texmf for extra macros
 COMMENT-main =		texlive texmf for basic functionality
 
 DISTNAME =		texlive-${DIST_V}-texmf
-#MASTER_SITES0 =	http://spacehopper.org/mirrors/ \
-#			http://theunixzoo.co.uk/distfiles/
+MASTER_SITES0 =		http://spacehopper.org/mirrors/ \
+			http://theunixzoo.co.uk/distfiles/
 MASTER_SITES0 =		http://theunixzoo.co.uk/distfiles/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			texlive-${DIST_V}-extra${EXTRACT_SUFX}
-#			texmf-var-pregen-${V}${EXTRACT_SUFX}:0
+			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
+			texmf-var-pregen-${V}${EXTRACT_SUFX}:0
 
 PKGNAME-main =		texlive_texmf-minimal-${V}
 PKGNAME-full =		texlive_texmf-full-${V}

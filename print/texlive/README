@@ -31,7 +31,8 @@ TeX Live 2013 - Porting progress
  * Take perl modules from extra texmf needed for updmap	OK
  * Generate texmf-var pregen			
    (all as root) 'mktexlsr', 'fmtutil-sys --all',
-     'updmap-sys', rm ls-R and tar up texmf-var
+     'updmap-sys', remove ls-R and logs from texmf-var,
+     then tar up.
  * Apply any security/reliability patches	OK
    Search here: http://tug.org/pipermail/tldistro/ OK
  * Remove manpages conflicting with t1utils	OK
