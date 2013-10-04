@@ -399,6 +399,9 @@ lib/libkpathsea.a
 lib/libkpathsea.la
 lib/libptexenc.a
 lib/libptexenc.la
+libdata/perl5/site_perl/TeXLive/
+libdata/perl5/site_perl/TeXLive/TLUtils.pm
+libdata/perl5/site_perl/TeXLive/TLConfig.pm
 @exec mktexlsr > /dev/null 2>&1
 @unexec-delete rm %D/share/texmf/ls-R
 @unexec-delete rm %D/share/texmf-dist/ls-R
