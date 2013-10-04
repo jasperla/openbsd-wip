@@ -5,7 +5,7 @@ Note: This is not a README for users.
 TeX Live 2013 - Porting progress
 ================================
 
- * Get base compilers working:			building atleast
+ * Get base compilers working:			OK
  * Check *_ADJ					OK
  * Test build works.				
    -> amd64					OK
@@ -13,28 +13,28 @@ TeX Live 2013 - Porting progress
    -> sparc64					
  * Do texmf split (with new texscythe tool)	OK
  * Split out conTeXt (use grep)			OK
- * Move manuals and remove pdf manuals
-   -> All texmf manuals in -minimal		
+ * Move manuals and remove pdf manuals		OK
+   -> All texmf manuals in -minimal		OK
  * Remove external deps				
    -> texworks					
    -> latexmk					
    -> asymptote					
- * Remove windows junk				
- * Get basic texmf packaging:			
-   -> tlpkg/ stuff not needed (and wont be present)
-   -> beware errors in the tlpdb (yay)
+ * Remove windows junk				OK
+ * Get basic texmf packaging:			OK
+   -> tlpkg/ stuff not needed (and wont be present) OK
+   -> beware errors in the tlpdb (yay)		OK
  * Re-add depenedencies:			
  * Hack texmf.cnf				OK
  * Implement @xxx in plists			
- * emulate texlinks				
- * patch in ruby/python versions for texexec	
- * Take perl modules from extra texmf needed for updmap
+ * emulate texlinks				OK
+ * patch in interpreter paths			OK
+ * Take perl modules from extra texmf needed for updmap	OK
  * Generate texmf-var pregen			
    (all as root) 'mktexlsr', 'fmtutil-sys --all',
      'updmap-sys', rm ls-R and tar up texmf-var
- * Apply any security/reliability patches	
-   Search here: http://tug.org/pipermail/tldistro/
- * @comment manpages conflicting with t1utils
+ * Apply any security/reliability patches	OK
+   Search here: http://tug.org/pipermail/tldistro/ OK
+ * Remove manpages conflicting with t1utils	OK
 
 Known Issues
 ============
