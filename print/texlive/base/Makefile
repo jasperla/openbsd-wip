@@ -16,15 +16,14 @@ WANTLIB +=		fontconfig freetype gd jpeg lcms2 m
 WANTLIB +=		openjpeg png>=3 poppler pthread pthread-stubs stdc++
 WANTLIB +=		t1>=4 tiff ttf xcb z
 
-# XXX put these back later
-#RUN_DEPENDS =		print/ghostscript/gnu \
-#			print/detex \
-#			print/dvi2tty \
-#			print/ps2eps \
-#			print/psutils \
-#			print/t1utils \
-#			print/latex-mk \
-#			texlive_texmf-minimal-${V}:print/texlive/texmf,-main
+RUN_DEPENDS =		print/ghostscript/gnu \
+			print/detex \
+			print/dvi2tty \
+			print/ps2eps \
+			print/psutils \
+			print/t1utils \
+			print/latex-mk \
+			texlive_texmf-minimal-${V}:print/texlive/texmf,-main
 
 LIB_DEPENDS =		devel/t1lib \
 			graphics/png \
@@ -133,10 +132,10 @@ CPPFLAGS =	-I${X11BASE}/include \
 # Big endian ICU bug
 # http://tug.org/pipermail/tlbuild/2012q2/002266.html
 # XXX still needed?
-.include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mbe}
-CPPFLAGS +=	-DU_IS_BIG_ENDIAN=1
-.endif
+#.include <bsd.port.arch.mk>
+#.if ${PROPERTIES:Mbe}
+#CPPFLAGS +=	-DU_IS_BIG_ENDIAN=1
+#.endif
 
 CONFIGURE_ENV +=	TL_MAKE=${GMAKE} \
 			CPPFLAGS="${CPPFLAGS}"
