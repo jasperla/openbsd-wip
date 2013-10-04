@@ -240,8 +240,6 @@ bin/pedigree
 bin/perltex
 bin/pfarrei
 @bin bin/pfb2pfa
-bin/physe
-bin/phyzzx
 @bin bin/pk2bm
 bin/pkfix
 bin/pkfix-helper

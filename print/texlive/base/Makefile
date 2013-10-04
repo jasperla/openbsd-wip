@@ -232,15 +232,16 @@ pre-configure:
 pre-install:
 	mkdir -p ${WRKSRC}/inst
 
-# symlinks that would have been installed by texlinks.
+# Symlinks that would have been installed by texlinks.
 # texlinks can not do this itself in the fake dir, as it requires
 # a fully hashed texmf tree and working kpse configuration.
+# Run 'texlinks -u' and then observe the output of 
+# 'texlinks -v'. Don't forget to check the links are in the PLIST.
 ALEPH_LN =	lamed
 LUATEX_LN =	dvilualatex dviluatex lualatex
-PDFTEX_LN =	amstex cslatex csplain eplain etex jadetex latex mex \
-		mllatex mltex pdfcslatex pdfcsplain pdfetex pdfjadetex \
-		pdflatex pdfmex pdfxmltex physe phyzzx texsis utf8mex \
-		xmltex
+PDFTEX_LN =	amstex cslatex pdfcslatex csplain pdfcsplain eplain jadetex \
+		pdfjadetex latex pdflatex mex pdfmex utf8mex mllatex mltex \
+		etex pdfetex texsis xmltex pdfxmltex
 EPTEX_LN =	platex
 XETEX_LN =	xelatex
 EUPTEX_LN =	uplatex
@@ -267,7 +268,6 @@ post-install:
 		${PREFIX}/libdata/perl5/site_perl/TeXLive/
 
 	# emulate texlinks
-	# XXX redo
 	for i in ${ALEPH_LN}; do \
 		ln -s ${TRUEPREFIX}/bin/aleph ${PREFIX}/bin/$$i; \
 	done
