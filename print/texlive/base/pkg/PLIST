@@ -146,7 +146,6 @@ bin/latex2man
 bin/latexdiff
 bin/latexdiff-vc
 bin/latexfileversion
-bin/latexmk
 bin/latexpand
 bin/latexrevise
 bin/listbib
