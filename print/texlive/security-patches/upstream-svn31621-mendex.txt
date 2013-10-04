@@ -1,0 +1,93 @@
+upstream svn31621 fix for mendex
+---
+ texk/mendexk/ChangeLog         |    9 +++++++++
+ texk/mendexk/Makefile.am       |    9 +++++++++
+ texk/mendexk/fwrite.c          |    4 ++--
+ texk/mendexk/tests/foo.idx     |    3 +++
+ texk/mendexk/tests/foo.ind     |    5 +++++
+ texk/mendexk/tests/mendex.test |   16 ++++++++++++++++
+ 6 files changed, 44 insertions(+), 2 deletions(-)
+
+--- texlive-bin.orig/texk/mendexk/ChangeLog
++++ texlive-bin/texk/mendexk/ChangeLog
+@@ -1,3 +1,12 @@
++2013-09-10  Peter Breitenlohner  <peb@mppmu.mpg.de>
++
++	* fwrite.c: Bug fix as suggested by Akira, Karl, and Norbert.
++
++	* tests/mendex.test (new): Shell script for a test case.
++	* tests/foo.idx (new): Test input.
++	* tests/foo.ind (new): Expected output.
++	* Makefile.am: Adapted.
++
+ 2012-11-19  Peter Breitenlohner  <peb@mppmu.mpg.de>
+ 
+ 	* Makefile.am: Avoid use of deprecated INCLUDES.
+--- texlive-bin.orig/texk/mendexk/Makefile.am
++++ texlive-bin/texk/mendexk/Makefile.am
+@@ -50,3 +50,12 @@
+ 	indexsty \
+ 	mendex.doc
+ 
++## Tests
++##
++TESTS = tests/mendex.test
++EXTRA_DIST += $(TESTS)
++
++## tests/mendex.test
++EXTRA_DIST += tests/foo.idx tests/foo.ind
++DISTCLEANFILES = foo.*
++
+--- texlive-bin.orig/texk/mendexk/fwrite.c
++++ texlive-bin/texk/mendexk/fwrite.c
+@@ -15,7 +15,7 @@
+ static void linecheck(char *lbuff, char *tmpbuff);
+ static void crcheck(char *lbuff, FILE *fp);
+ 
+-#define TAIL(x) (x+strlen(x))
++#define TAIL(x) ((x)+strlen(x))
+ 
+ /* if we don't have vsnprintf() */
+ /* #define vsnprintf(buff,len,format,argptr) vsprintf(buff,format,argptr) */
+@@ -385,7 +385,7 @@
+ 					}
+ 					if (strlen(ind.p[j].enc)>0) {
+ 						sprintf(tmpbuff,"%s%s%s",encap_prefix,ind.p[j].enc,encap_infix);
+-						sprintf(tmpbuff,"%s%s%s",ind.p[j].page,encap_suffix,delim_n);
++						sprintf(TAIL(tmpbuff),"%s%s%s",ind.p[j].page,encap_suffix,delim_n);
+ 						linecheck(lbuff,tmpbuff);
+ 					}
+ 				}
+--- /dev/null
++++ texlive-bin/texk/mendexk/tests/foo.idx
+@@ -0,0 +1,3 @@
++\indexentry{foo|(}{1}
++\indexentry{foo|mac}{1}
++\indexentry{foo|)}{1}
+--- /dev/null
++++ texlive-bin/texk/mendexk/tests/foo.ind
+@@ -0,0 +1,5 @@
++\begin{theindex}
++
++  \item foo, \mac{1}, 1
++
++\end{theindex}
+--- /dev/null
++++ texlive-bin/texk/mendexk/tests/mendex.test
+@@ -0,0 +1,16 @@
++#! /bin/sh
++
++# Copyright (C) 2013 Peter Breitenlohner <tex-live@tug.org>
++# You may freely use, modify and/or distribute this file.
++
++TEXMFCNF=$srcdir/../kpathsea
++export TEXMFCNF
++
++rm -f foo.*
++
++./mendex $srcdir/tests/foo.idx -o foo.ind1 -t foo.ilg1 \
++	&& diff $srcdir/tests/foo.ind foo.ind1 || exit 1
++
++cat $srcdir/tests/foo.idx | ./mendex >foo.ind2 2>foo.ilg2 \
++	&& diff $srcdir/tests/foo.ind foo.ind2 || exit 1
++
