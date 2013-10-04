@@ -101,7 +101,6 @@
 @man man/man1/latex2man.1
 @man man/man1/latexdiff-vc.1
 @man man/man1/latexdiff.1
-@man man/man1/latexmk.1
 @man man/man1/latexrevise.1
 @man man/man1/luaotfload-tool.1
 @man man/man1/luatex.1
