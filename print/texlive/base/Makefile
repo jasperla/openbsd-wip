@@ -130,11 +130,6 @@ CONFIGURE_STYLE =	gnu
 CPPFLAGS =	-I${X11BASE}/include \
 		-I${TRUEPREFIX}/include/poppler
 
-# Bug in ICU build system
-# http://tug.org/pipermail/tlbuild/2012q2/002348.html
-# XXX still needed?
-#CPPFLAGS +=	-DU_PLATFORM=U_PF_BSD
-
 # Big endian ICU bug
 # http://tug.org/pipermail/tlbuild/2012q2/002266.html
 # XXX still needed?
