@@ -1,0 +1,31 @@
+$OpenBSD$
+Make it compile with real FFmpeg.
+--- csrc/com/xuggle/xuggler/Codec.h.orig	Tue Oct  1 23:19:50 2013
++++ csrc/com/xuggle/xuggler/Codec.h	Tue Oct  1 23:20:05 2013
+@@ -31,7 +31,7 @@ namespace com { namespace xuggle { namespace xuggler
+   {
+     VS_JNIUTILS_REFCOUNTED_OBJECT_PRIVATE_MAKE(Codec)
+   public:
+-    static Codec * make(AVCodec *);
++    static Codec * make(const AVCodec *);
+     virtual const char * getName();
+     virtual int getIDAsInt();
+     virtual Type getType();
+@@ -56,7 +56,7 @@ namespace com { namespace xuggle { namespace xuggler
+     }
+ 
+     // For calling from with C++, not Java.
+-    AVCodec * getAVCodec() { return mCodec; }
++    const AVCodec * getAVCodec() { return mCodec; }
+ 
+     static Codec *findEncodingCodec(const ICodec::ID);
+     static Codec *findEncodingCodecByIntID(const int);
+@@ -100,7 +100,7 @@ namespace com { namespace xuggle { namespace xuggler
+     Codec();
+     virtual ~Codec();
+ 
+-    AVCodec *mCodec;
++    const AVCodec *mCodec;
+   };
+ 
+ }}}

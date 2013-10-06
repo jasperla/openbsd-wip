@@ -1,0 +1,13 @@
+$OpenBSD$
+Make it compile with real FFmpeg.
+--- csrc/com/xuggle/xuggler/Stream.cpp.orig	Tue Oct  1 23:28:08 2013
++++ csrc/com/xuggle/xuggler/Stream.cpp	Tue Oct  1 23:28:17 2013
+@@ -69,7 +69,7 @@ namespace com { namespace xuggle { namespace xuggler
+     mContainer = 0;
+   }
+   Stream*
+-  Stream :: make(Container *container, AVStream * aStream, Direction direction, AVCodec* avCodec)
++  Stream :: make(Container *container, AVStream * aStream, Direction direction, const AVCodec* avCodec)
+   {
+     // note: make will acquire this for us.
+     Stream *newStream = 0;

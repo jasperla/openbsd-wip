@@ -1,0 +1,12 @@
+$OpenBSD$
+--- configure.orig	Tue Oct  1 16:36:29 2013
++++ configure	Wed Oct  2 00:30:22 2013
+@@ -16280,7 +16280,7 @@ fi
+ VS_CPPFLAGS=
+ VS_CFLAGS=
+ VS_CXXFLAGS=
+-VS_LDFLAGS=
++VS_LDFLAGS="-Wl,-rpath,${X11BASE:-/usr/X11R6}/lib"
+ 
+ # Check whether --enable-optimizations was given.
+ if test "${enable_optimizations+set}" = set; then :

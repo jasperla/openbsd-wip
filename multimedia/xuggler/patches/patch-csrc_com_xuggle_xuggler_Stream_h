@@ -1,0 +1,13 @@
+$OpenBSD$
+Make it compile with real FFmpeg.
+--- csrc/com/xuggle/xuggler/Stream.h.orig	Tue Oct  1 23:27:55 2013
++++ csrc/com/xuggle/xuggler/Stream.h	Tue Oct  1 23:28:03 2013
+@@ -52,7 +52,7 @@ namespace com { namespace xuggle { namespace xuggler
+     virtual int64_t getNumFrames();
+ 
+     // Not for calling from Java
+-    static Stream * make(Container* container, AVStream *, Direction direction, AVCodec*);
++    static Stream * make(Container* container, AVStream *, Direction direction, const AVCodec*);
+ 
+     // The StreamCoder will call this if it needs to
+     virtual void setTimeBase(IRational *);

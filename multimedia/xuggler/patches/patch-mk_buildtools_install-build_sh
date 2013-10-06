@@ -1,0 +1,14 @@
+$OpenBSD$
+Make it respect DESTDIR.
+--- mk/buildtools/install-build.sh.orig	Thu Oct  3 22:09:13 2013
++++ mk/buildtools/install-build.sh	Thu Oct  3 22:10:29 2013
+@@ -32,6 +32,6 @@
+ # then won't work with <copy/>
+ 
+ STAGEDIR="$1"
+-DESTDIR="$2"
+-echo "Installing $STAGEDIR/* to $DESTDIR"
+-cp -rf "$STAGEDIR"/* $DESTDIR
++INSTDIR="$2"
++echo "Installing $STAGEDIR/* to ${DESTDIR}$INSTDIR"
++cp -rf "$STAGEDIR"/* "${DESTDIR}$INSTDIR"

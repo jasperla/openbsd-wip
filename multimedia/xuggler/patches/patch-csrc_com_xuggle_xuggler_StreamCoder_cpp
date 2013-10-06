@@ -1,0 +1,58 @@
+$OpenBSD$
+Make it compile with real FFmpeg.
+--- csrc/com/xuggle/xuggler/StreamCoder.cpp.orig	Tue Oct  1 23:04:09 2013
++++ csrc/com/xuggle/xuggler/StreamCoder.cpp	Tue Oct  1 23:21:33 2013
+@@ -20,8 +20,6 @@
+ #include <stdexcept>
+ #include <cstring>
+ 
+-#define attribute_deprecated
+-
+ #include <com/xuggle/ferry/Logger.h>
+ #include <com/xuggle/ferry/RefPointer.h>
+ 
+@@ -124,7 +122,7 @@ StreamCoder :: readyAVContexts(
+     Stream* aStream,
+     Codec *aCodec,
+     AVCodecContext *avContext,
+-    AVCodec *avCodec)
++    const AVCodec *avCodec)
+ {
+   int retval = -1;
+   if (!avContext)
+@@ -193,7 +191,7 @@ void
+ StreamCoder::setCodec(ICodec * aCodec)
+ {
+   Codec* codec = dynamic_cast<Codec*>(aCodec);
+-  AVCodec* avCodec = 0;
++  const AVCodec* avCodec = 0;
+ 
+   if (!codec) {
+     VS_LOG_INFO("Cannot set codec to null codec");
+@@ -286,7 +284,7 @@ StreamCoder :: make (Direction direction, Codec* codec
+   try
+   {
+     AVCodecContext* codecCtx=0;
+-    AVCodec* avCodec = 0;
++    const AVCodec* avCodec = 0;
+ 
+     if (codec)
+       avCodec = codec->getAVCodec();
+@@ -387,7 +385,7 @@ StreamCoder::make(Direction direction, IStreamCoder* a
+ 
+ StreamCoder *
+ StreamCoder::make(Direction direction, AVCodecContext * codecCtx,
+-    AVCodec* avCodec, Stream* stream)
++    const AVCodec* avCodec, Stream* stream)
+ {
+   StreamCoder *retval = 0;
+   RefPointer<Codec> codec;
+@@ -775,7 +773,7 @@ StreamCoder::open(IMetaData* aOptions, IMetaData* aUns
+        * value we had been using, and we check after the open call and log
+        * an error if it changed for some reason.
+        */
+-      AVCodec* cachedCodec = mCodecContext->codec;
++      const AVCodec* cachedCodec = mCodecContext->codec;
+       mCodecContext->codec = 0;
+       retval = avcodec_open2(mCodecContext, mCodec->getAVCodec(), &tmp);
+ 

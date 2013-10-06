@@ -1,0 +1,3 @@
+Xuggler is the easy way to uncompress, modify, and re-compress any
+media file (or stream) from Java. It's basically a JNI wrapper for
+FFmpeg.
