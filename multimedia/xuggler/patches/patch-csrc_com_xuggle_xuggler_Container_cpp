@@ -1,0 +1,13 @@
+$OpenBSD$
+Make it compile with real FFmpeg.
+--- csrc/com/xuggle/xuggler/Container.cpp.orig	Tue Oct  1 23:24:24 2013
++++ csrc/com/xuggle/xuggler/Container.cpp	Tue Oct  1 23:24:35 2013
+@@ -1389,7 +1389,7 @@ namespace com { namespace xuggle { namespace xuggler
+     Stream *retval=0;
+     try
+     {
+-      AVCodec* avCodec = codec ? codec->getAVCodec() : 0;
++      const AVCodec* avCodec = codec ? codec->getAVCodec() : 0;
+ 
+       if (!mFormatContext)
+         throw std::runtime_error("no format context");

@@ -1,0 +1,68 @@
+$OpenBSD$
+--- mk/buildtools/buildhelper.xml.orig	Fri Oct  4 16:40:17 2013
++++ mk/buildtools/buildhelper.xml	Fri Oct  4 16:43:54 2013
+@@ -1270,9 +1270,14 @@
+       </else>
+     </if>
+     <!-- first copy the already built captive directories -->
+-    <copy todir="${dist.unix.dir}/stage/${xuggle.os}">
+-      <fileset dir="${build-native.dir}/captive/stage" />
+-    </copy>
++    <if>
++      <available file="${build-native.dir}/captive/stage" />
++      <then>
++        <copy todir="${dist.unix.dir}/stage/${xuggle.os}">
++          <fileset dir="${build-native.dir}/captive/stage" />
++        </copy>
++      </then>
++    </if>
+     <!-- now, just install the non-captive code to the same location -->
+     <exec executable="${build.native.make}"
+         dir="${build-native.dir}/csrc"
+@@ -1282,20 +1287,32 @@
+     </exec>
+     <!-- copy all dynamic libraries to the class path to get bundled into the java jar file made with stage-java -->
+     <mkdir dir="${classes.dir}${app.nativeclasspath}/${xuggle.os}" />
+-    <copy todir="${classes.dir}${app.nativeclasspath}/${xuggle.os}" verbose="true">
+-       <fileset dir="${dist.unix.dir}/stage/${xuggle.os}${xuggle.dir}/lib">
+-          <include name="*.so" />
+-          <exclude name="*.*.*" />
+-       </fileset>
+-       <fileset dir="${dist.unix.dir}/stage/${xuggle.os}${xuggle.dir}/lib">
+-          <include name="*.dylib" />
+-          <exclude name="*.*.*" />
+-       </fileset>
+-       <fileset dir="${dist.unix.dir}/stage/${xuggle.os}${xuggle.dir}/bin">
+-          <include name="*.dll"/>
+-          <exclude name="*.*.*" />
+-       </fileset>
+-    </copy>
++    <if>
++      <available file="${dist.unix.dir}/stage/${xuggle.os}${xuggle.dir}/lib" />
++      <then>
++        <copy todir="${classes.dir}${app.nativeclasspath}/${xuggle.os}" verbose="true">
++          <fileset dir="${dist.unix.dir}/stage/${xuggle.os}${xuggle.dir}/lib">
++            <include name="*.so" />
++            <exclude name="*.*.*" />
++          </fileset>
++          <fileset dir="${dist.unix.dir}/stage/${xuggle.os}${xuggle.dir}/lib">
++            <include name="*.dylib" />
++            <exclude name="*.*.*" />
++          </fileset>
++        </copy>
++      </then>
++    </if>
++    <if>
++      <available file="${dist.unix.dir}/stage/${xuggle.os}${xuggle.dir}/bin" />
++      <then>
++        <copy todir="${classes.dir}${app.nativeclasspath}/${xuggle.os}" verbose="true">
++          <fileset dir="${dist.unix.dir}/stage/${xuggle.os}${xuggle.dir}/bin">
++            <include name="*.dll"/>
++            <exclude name="*.*.*" />
++          </fileset>
++        </copy>
++      </then>
++    </if>
+   </target>
+   <target name="stage-native"
+       depends="setup-native, compile-native, stage-native-do"

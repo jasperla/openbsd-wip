@@ -1,0 +1,17 @@
+$OpenBSD$
+Make local repo go first, to avoid accessing the network at build time.
+--- mk/buildtools/ivysettings.xml.orig	Thu Oct  3 19:45:49 2013
++++ mk/buildtools/ivysettings.xml	Thu Oct  3 19:48:45 2013
+@@ -73,10 +73,10 @@ for some of the concepts heree.
+     </filesystem>
+  
+     <chain name="default" changingPattern=".*SNAPSHOT">
++      <resolver ref="local-m2"/>
++      <resolver ref="share_libs"/>
+       <resolver ref="public"/>
+       <resolver ref="xugglecode-m2"/>
+-      <resolver ref="share_libs"/>
+-      <resolver ref="local-m2"/>
+     </chain>
+   </resolvers>
+ </ivysettings>

@@ -1,0 +1,12 @@
+$OpenBSD$
+Make it compile with real FFmpeg.
+--- mk/buildtools/Makefile.global.in.orig	Tue Oct  1 16:36:31 2013
++++ mk/buildtools/Makefile.global.in	Tue Oct  1 23:25:59 2013
+@@ -48,6 +48,7 @@ AM_CXXFLAGS+=-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURC
+ ifdef VS_WARN_ISERROR
+   AM_CXXFLAGS+=-Werror
+ endif
++AM_CXXFLAGS+=-Wno-error=deprecated-declarations -Wno-error=unused
+ ifdef VS_OS_WINDOWS
+   AM_CPPFLAGS+=-DVS_OS_WINDOWS=1
+ endif

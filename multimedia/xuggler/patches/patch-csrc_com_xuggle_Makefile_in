@@ -1,0 +1,24 @@
+$OpenBSD$
+Avoid playing dirty games with static linking and versioning.
+--- csrc/com/xuggle/Makefile.in.orig	Tue Oct  1 16:36:30 2013
++++ csrc/com/xuggle/Makefile.in	Thu Oct  3 20:26:08 2013
+@@ -55,7 +55,7 @@ noinst_PROGRAMS = xuggle-xuggler-main$(EXEEXT)
+ @VS_OS_WINDOWS_TRUE@	-XCClinker -lkernel32
+ 
+ @VS_OS_LINUX_TRUE@@VS_OS_WINDOWS_FALSE@am__append_2 = \
+-@VS_OS_LINUX_TRUE@@VS_OS_WINDOWS_FALSE@	-nostdlib -static-libtool-libs -XCClinker -static-libgcc
++@VS_OS_LINUX_TRUE@@VS_OS_WINDOWS_FALSE@	-module -avoid-version
+ 
+ @VS_OS_LINUX_FALSE@@VS_OS_WINDOWS_FALSE@am__append_3 = \
+ @VS_OS_LINUX_FALSE@@VS_OS_WINDOWS_FALSE@	-nostdlib -static-libtool-libs -XCClinker -static-libgcc
+@@ -343,8 +343,8 @@ libxuggle_la_LIBADD = $(builddir)/xuggler/libxuggle-xu
+ 	$(builddir)/xuggler/io/libxuggle-xuggler-io.la \
+ 	$(builddir)/ferry/libxuggle-ferry.la
+ 
+-libxuggle_la_LDFLAGS = -no-undefined -shared -version-number \
+-	@LIB_MAJOR_VERSION@:@LIB_MINOR_VERSION@:0 $(VS_LDFLAGS) \
++libxuggle_la_LDFLAGS = -no-undefined -shared \
++	$(VS_LDFLAGS) \
+ 	$(VS_PKG_LIBRARIES) $(am__append_1) $(am__append_2) \
+ 	$(am__append_3)
+ all: all-recursive

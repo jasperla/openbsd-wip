@@ -1,0 +1,58 @@
+$OpenBSD$
+Make it compile with real FFmpeg.
+--- csrc/com/xuggle/xuggler/Codec.cpp.orig	Tue Oct  1 21:05:32 2013
++++ csrc/com/xuggle/xuggler/Codec.cpp	Tue Oct  1 23:20:29 2013
+@@ -68,7 +68,7 @@ namespace com { namespace xuggle { namespace xuggler
+   }
+ 
+   Codec *
+-  Codec :: make(AVCodec *aCodec)
++  Codec :: make(const AVCodec *aCodec)
+   {
+     Codec *retval = 0;
+     if (aCodec)
+@@ -89,7 +89,7 @@ namespace com { namespace xuggle { namespace xuggler
+   Codec :: findEncodingCodecByIntID(const int id)
+   {
+     Codec *retval = 0;
+-    AVCodec *codec = 0;
++    const AVCodec *codec = 0;
+     enum CodecID ffmpeg_id = (enum CodecID) id;
+     Global::lock();
+     codec = avcodec_find_encoder(ffmpeg_id);
+@@ -104,7 +104,7 @@ namespace com { namespace xuggle { namespace xuggler
+   Codec :: findEncodingCodecByName(const char* name)
+   {
+     Codec *retval = 0;
+-    AVCodec *codec = 0;
++    const AVCodec *codec = 0;
+     if (name && *name)
+     {
+       Global::lock();
+@@ -126,7 +126,7 @@ namespace com { namespace xuggle { namespace xuggler
+   Codec :: findDecodingCodecByIntID(const int id)
+   {
+     Codec *retval = 0;
+-    AVCodec *codec = 0;
++    const AVCodec *codec = 0;
+ 
+     Global::lock();
+     codec = avcodec_find_decoder((enum CodecID) id);
+@@ -141,7 +141,7 @@ namespace com { namespace xuggle { namespace xuggler
+   Codec :: findDecodingCodecByName(const char* name)
+   {
+     Codec *retval = 0;
+-    AVCodec *codec = 0;
++    const AVCodec *codec = 0;
+     if (name && *name)
+     {
+       Global::lock();
+@@ -161,7 +161,7 @@ namespace com { namespace xuggle { namespace xuggler
+   bool
+   Codec :: canEncode()
+   {
+-    return mCodec ? mCodec->encode || mCodec->encode2 : false;
++    return mCodec ? mCodec->encode2 : false;
+   }
+ 
+   Codec*
