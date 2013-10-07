@@ -2,7 +2,7 @@
 
 COMMENT =		bibtex parser for python3
 
-MODPY_EGG_VERSION =	0.3
+MODPY_EGG_VERSION =	0.4
 DISTNAME =		bibtexparser-${MODPY_EGG_VERSION}
 PKGNAME =		py3-${DISTNAME}
 CATEGORIES =		devel print
