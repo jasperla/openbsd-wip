@@ -8,7 +8,7 @@ HOMEPAGE =	http://blockrage.sourceforge.net/
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += SDL c m pthread
