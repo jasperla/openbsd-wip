@@ -1,15 +1,16 @@
 $OpenBSD$
---- Makefile.in.orig	Thu May  9 01:30:09 2013
-+++ Makefile.in	Thu Sep 26 00:47:35 2013
-@@ -86,11 +86,6 @@ install-bin : all
- 	$(INSTALL_DATA) ./lib$(libname).a "$(DESTDIR)$(libdir)/lib$(libname).a"
- 	if [ -n "$(progname_shared)" ] ; then \
- 	  $(INSTALL_PROGRAM) ./lib$(libname).so.$(pkgversion) "$(DESTDIR)$(libdir)/lib$(libname).so.$(pkgversion)" ; \
--	  if [ -e "$(DESTDIR)$(libdir)/lib$(libname).so.$(soversion)" ] ; then \
--	    rm -f "$(DESTDIR)$(libdir)/lib$(libname).so.$(soversion)" ; \
--	    run_ldconfig=no ; \
--	  else run_ldconfig=yes ; \
--	  fi ; \
- 	  if [ -e "$(DESTDIR)$(libdir)/lib$(libname).so" ] ; then \
- 	    rm -f "$(DESTDIR)$(libdir)/lib$(libname).so" ; \
+
+Backport from lzlib-1.6-pre1.
+
+--- Makefile.in.orig	Tue Oct  8 01:31:22 2013
++++ Makefile.in	Tue Oct  8 01:31:27 2013
+@@ -95,7 +95,8 @@ install-bin : all
  	  fi ; \
+ 	  cd "$(DESTDIR)$(libdir)" && ln -s lib$(libname).so.$(pkgversion) lib$(libname).so ; \
+ 	  cd "$(DESTDIR)$(libdir)" && ln -s lib$(libname).so.$(pkgversion) lib$(libname).so.$(soversion) ; \
+-	  if [ $${run_ldconfig} = yes ] && [ -x "$(LDCONFIG)" ] ; then "$(LDCONFIG)" -n "$(DESTDIR)$(libdir)" ; fi ; \
++	  if [ "${disable_ldconfig}" != yes ] && [ $${run_ldconfig} = yes ] && \
++	     [ -x "$(LDCONFIG)" ] ; then "$(LDCONFIG)" -n "$(DESTDIR)$(libdir)" || true ; fi ; \
+ 	fi
+ 
+ install-info :
