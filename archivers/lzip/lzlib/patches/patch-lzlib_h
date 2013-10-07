@@ -1,11 +1,11 @@
 $OpenBSD$
---- lzlib.h.orig	Tue Sep 24 19:09:48 2013
-+++ lzlib.h	Tue Sep 24 19:11:01 2013
+--- lzlib.h.orig	Tue Oct  8 01:33:14 2013
++++ lzlib.h	Tue Oct  8 01:33:31 2013
 @@ -29,7 +29,7 @@
  extern "C" {
  #endif
  
--static const char * const LZ_version_string = "1.4";
+-static const char * const LZ_version_string = "1.5";
 +static const char * const LZ_version_string = "0.0";
  
  enum LZ_Errno { LZ_ok = 0,         LZ_bad_argument, LZ_mem_error,

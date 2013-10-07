@@ -2,9 +2,9 @@
 
 COMMENT =		lzip compression library
 
-DISTNAME =		lzlib-1.4
+DISTNAME =		lzlib-1.5
 
-SHARED_LIBS +=		lz	0.0 # 1.4
+SHARED_LIBS +=		lz	0.0 # 1.5
 
 HOMEPAGE =		http://lzip.nongnu.org/lzlib.html
 
