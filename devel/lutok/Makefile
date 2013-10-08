@@ -3,9 +3,9 @@
 COMMENT =		lightweight C++ API for Lua
 DISTNAME =		lutok-0.3
 
-SHARED_LIBS += ct                   5.0      # .4.0
+SHARED_LIBS += ct	5.0      # .4.0
 CATEGORIES =		devel sysutils
-HOMEPAGE =			https://code.google.com/p/lutok/
+HOMEPAGE =		https://code.google.com/p/lutok/
 
 MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
@@ -25,6 +25,6 @@ LIB_DEPENDS=    devel/pcre \
 MASTER_SITES =		https://lutok.googlecode.com/files/
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS = LUA_CFLAGS="-I/usr/local/include/lua-5.1" LUA_LIBS="-L/usr/local/lib  -llua5.1 -lm"
+CONFIGURE_ARGS = 	LUA_CFLAGS="-I/usr/local/include/lua-5.1" LUA_LIBS="-L/usr/local/lib  -llua5.1 -lm"
 
 .include <bsd.port.mk>
