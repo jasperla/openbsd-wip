@@ -4,7 +4,6 @@ COMMENT-context =	texlive texmf for conTeXt
 COMMENT-docs =		texlive documentation
 COMMENT-full =		texlive texmf for extra macros
 COMMENT-main =		texlive texmf for basic functionality
-#COMMENT-tiny =		a tiny texlive texmf
 
 DISTNAME =		texlive-${DIST_V}-texmf
 MASTER_SITES0 =		http://spacehopper.org/mirrors/ \
@@ -18,7 +17,6 @@ PKGNAME-main =		texlive_texmf-minimal-${V}
 PKGNAME-full =		texlive_texmf-full-${V}
 PKGNAME-docs =		texlive_texmf-docs-${V}
 PKGNAME-context =	texlive_texmf-context-${V}
-#PKGNAME-tiny =		texlive_texmf-tiny-${V}
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
@@ -42,11 +40,8 @@ RUN_DEPENDS-context +=	lang/ruby/${MODRUBY_REV}
 RUN_DEPENDS-docs +=	texlive_base-${V}:print/texlive/base \
 			x11/p5-Tk
 RUN_DEPENDS-docs +=	x11/p5-Tk
-#RUN_DEPENDS-tiny +=	texlive_base-${V}:print/texlive/base
 
-#MULTI_PACKAGES =	-context -docs -full -main
-# XXX testing if scheme-basic is enough to build most ports
-MULTI_PACKAGES =	-main
+MULTI_PACKAGES =	-context -docs -full -main
 
 # Files which are named *.[1-9] which are not manuals. This list
 # is shorter than the list of files which *are* manuals scattered
