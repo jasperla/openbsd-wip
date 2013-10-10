@@ -3,6 +3,7 @@
 COMMENT =		versatile Commodore emulator
 
 DISTNAME =		vice-2.4
+REVISION =		0
 
 CATEGORIES =		emulators
 
@@ -19,8 +20,8 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=vice-emu/}
 
 BUILD_DEPENDS =		print/texlive/base
 LIB_DEPENDS =		devel/sdl \
-			graphics/jpeg \
-			graphics/libungif
+			graphics/giflib \
+			graphics/jpeg
 
 CONFIGURE_STYLE =	gnu autoconf
 

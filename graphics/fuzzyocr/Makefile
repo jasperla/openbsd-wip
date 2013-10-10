@@ -5,6 +5,7 @@ COMMENT=	Detect image spam with SpamAssassin
 V=		svn133
 DISTNAME=	fuzzyocr-${V}
 PKGNAME=	fuzzyocr-3.5.1${V}
+REVISION=	0
 CATEGORIES=    	mail
 WRKDIST=	${WRKDIR}/devel
 
@@ -13,15 +14,15 @@ MASTER_SITES=	http://openbsd.rutgers.edu/
 
 MAINTAINER=	Michael Erdely <merdely@openbsd.org>
 
-RUN_DEPENDS=	::devel/p5-MLDBM-Sync \
-		::graphics/gocr \
-		::graphics/libungif \
-		::graphics/netpbm \
-		::graphics/ocrad \
-		::graphics/ImageMagick \
-		::graphics/gifsicle,no_x11 \
-		::mail/p5-Mail-SpamAssassin \
-		::textproc/p5-String-Approx
+RUN_DEPENDS=	devel/p5-MLDBM-Sync \
+		graphics/giflib \
+		graphics/gocr \
+		graphics/netpbm \
+		graphics/ocrad \
+		graphics/ImageMagick \
+		graphics/gifsicle,no_x11 \
+		mail/p5-Mail-SpamAssassin \
+		textproc/p5-String-Approx
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

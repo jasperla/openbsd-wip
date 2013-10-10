@@ -4,7 +4,7 @@ CATEGORIES =	editors
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	http://www.calligra-suite.org/
 DISTNAME =	calligra-2.5.3
-REVISION =	6
+REVISION =	7
 
 EXTRACT_SUFX =	.tar.bz2
 
@@ -105,10 +105,10 @@ LIB_DEPENDS =	databases/freetds \
 		devel/libgsf \
 		graphics/dcmtk>=3.5.4p2 \
 		graphics/exiv2 \
+		graphics/giflib \
 		graphics/glew \
 		graphics/jpeg \
 		graphics/lcms2 \
-		graphics/libungif \
 		graphics/openjpeg \
 		graphics/png \
 		graphics/tiff \
