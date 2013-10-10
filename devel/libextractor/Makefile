@@ -5,6 +5,7 @@ SHARED_ONLY =		Yes
 COMMENT =		extract metadata from arbitrary file types
 
 DISTNAME =		libextractor-1.1
+REVISION =		0
 
 SHARED_LIBS +=		extractor		0.0 # 3.2
 SHARED_LIBS +=		extractor_common	0.0 # 0.0
@@ -42,7 +43,7 @@ LIB_DEPENDS =		devel/libtool,-ltdl \
 			graphics/exiv2 \
 			audio/flac \
 			archivers/libarchive \
-			graphics/libungif \
+			graphics/giflib \
 			devel/libmagic \
 			devel/libgsf
 

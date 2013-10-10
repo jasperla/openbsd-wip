@@ -7,6 +7,7 @@ COMMENT =		3D graphics toolkit
 V =			3.0.1
 DISTNAME =		OpenSceneGraph-${V}
 PKGNAME =		openscenegraph-${V}
+REVISION =		0
 
 SUBST_VARS +=		V
 
@@ -53,7 +54,7 @@ MODULES =		devel/cmake \
 LIB_DEPENDS =		graphics/openexr \
 			graphics/ffmpeg \
 			graphics/gdk-pixbuf2 \
-			graphics/libungif \
+			graphics/giflib \
 			net/curl \
 			print/poppler \
 			x11/gnome/librsvg
