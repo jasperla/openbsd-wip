@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_ui_dialog_print_cpp,v 1.2 2010/10/05 08:57:47 armani Exp $
+--- src/ui/dialog/print.cpp.orig	Wed Sep 15 20:24:17 2010
++++ src/ui/dialog/print.cpp	Wed Sep 15 20:24:39 2010
+@@ -17,6 +17,7 @@
+ #endif
+ 
+ #include <gtkmm/stock.h>
++#include <unistd.h>
+ #include "print.h"
+ 
+ #include "extension/internal/cairo-render-context.h"
