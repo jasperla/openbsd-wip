@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Hardcoded -dl.
+
+--- configure.ac.orig	Thu Oct 10 14:50:45 2013
++++ configure.ac	Thu Oct 10 14:51:10 2013
+@@ -780,7 +780,7 @@ if test "x$cairo_pdf" = "xyes"; then
+ fi
+ 
+ dnl Shouldn't we test for libpng and libz?
+-INKSCAPE_LIBS="$INKSCAPE_LIBS -lpng -lz -lxml2 -ldl"
++INKSCAPE_LIBS="$INKSCAPE_LIBS -lpng -lz -lxml2 $lt_cv_dlopen_libs"
+ if test "x$openmp_ok" = "xyes"; then
+ 	INKSCAPE_LIBS="$INKSCAPE_LIBS -lgomp"
+ fi
