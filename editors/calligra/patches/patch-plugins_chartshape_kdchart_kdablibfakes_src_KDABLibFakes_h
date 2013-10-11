@@ -1,4 +1,5 @@
 $OpenBSD$
+XXX
 --- plugins/chartshape/kdchart/kdablibfakes/src/KDABLibFakes.h.orig	Wed Dec  7 16:06:41 2011
 +++ plugins/chartshape/kdchart/kdablibfakes/src/KDABLibFakes.h	Wed Dec  7 16:07:01 2011
 @@ -56,8 +56,8 @@
