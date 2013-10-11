@@ -187,8 +187,11 @@ share/apps/kdevgdb/kdevgdbui.rc
 share/apps/kdevgdb/printers/
 share/apps/kdevgdb/printers/gdbinit
 share/apps/kdevgdb/printers/kde4.py
+share/apps/kdevgdb/printers/kde4.pyc
 share/apps/kdevgdb/printers/libstdcxx.py
+share/apps/kdevgdb/printers/libstdcxx.pyc
 share/apps/kdevgdb/printers/qt4.py
+share/apps/kdevgdb/printers/qt4.pyc
 share/apps/kdevokteta/
 share/apps/kdevokteta/kdevokteta.rc
 share/apps/plasma/plasmoids/kdevelopsessions/

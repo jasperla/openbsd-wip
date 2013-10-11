@@ -4,6 +4,7 @@ CATEGORIES =	devel
 COMMENT =	IDE creation toolkit for KDE 4
 V =		1.5.1
 DISTNAME =	kdevplatform-$V
+REVISION =	0
 HOMEPAGE =	http://www.kdevelop.org/
 
 EXTRACT_SUFX =	.tar.bz2
@@ -42,9 +43,11 @@ WANTLIB += apr-1 aprutil-1 qjson soprano svn_client-1 svn_fs-1 svn_ra-1
 WANTLIB += svn_repos-1 svn_subr-1 svn_wc-1
 WANTLIB += grantlee_core
 
-MODULES =	x11/kde4
+MODULES =	devel/gettext x11/kde4
 
 BUILD_DEPENDS =	devel/boost
+
+RUN_DEPENDS =	x11/gtk+2,-guic
 
 LIB_DEPENDS = 	devel/apr \
 		devel/apr-util \
