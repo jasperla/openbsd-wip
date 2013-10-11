@@ -5,6 +5,7 @@ COMMENT =	integrated development environment for KDE 4
 V =		4.5.1
 PLATFORM_V =	1.5.1
 DISTNAME =	kdevelop-$V
+REVISION =	0
 HOMEPAGE =	http://www.kdevelop.org/
 
 SHARED_LIBS =	kdev4cmakecommon	0.0
@@ -39,7 +40,7 @@ WANTLIB += kdevplatformoutputview kdevplatformproject kdevplatformshell
 WANTLIB += kdevplatformutil kdevplatformvcs
 WANTLIB += processcore processui soprano sublime
 
-MODULES =	x11/kde4
+MODULES =	devel/gettext lang/python x11/kde4
 MODKDE4_USE =	workspace
 
 # Uses files with "{...}" in names
@@ -47,9 +48,16 @@ USE_GMAKE =	Yes
 
 BUILD_DEPENDS =	misc/shared-mime-info
 
-RUN_DEPENDS =	${MODKDE4_DEP_DIR}/kate
+RUN_DEPENDS =	${MODKDE4_DEP_DIR}/kate \
+		devel/desktop-file-utils \
+		misc/shared-mime-info \
+		x11/gtk+2,-guic
 
 LIB_DEPENDS = 	devel/kdevplatform>=${PLATFORM_V} \
-		${MODKDE4_DEP_DIR}/sdk
+		${MODKDE4_DEP_DIR}/sdk>=${MODKDE4_DEP_VERSION}
+
+# XXX Should those go under ${PREFIX}/lib/?
+post-install:
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/share/apps/kdevgdb/printers
 
 .include <bsd.port.mk>
