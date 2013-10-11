@@ -2,7 +2,7 @@
 
 COMMENT =	organizer for book/music/video collections for KDE4
 DISTNAME =	tellico-2.3.7
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	productivity x11
 HOMEPAGE =	http://tellico-project.org/
@@ -25,7 +25,7 @@ WANTLIB += soprano tag xml2 xslt yaz
 MASTER_SITES =	http://tellico-project.org/files/
 EXTRACT_SUFX =	.tar.bz2
 
-MODULES =	devel/gettext lang/python x11/kde4
+MODULES =	devel/gettext x11/kde4 lang/python
 MODKDE4_USE =	pim
 
 BUILD_DEPENDS =	${MODKDE4_DEP_DIR}/libkcompactdisc
