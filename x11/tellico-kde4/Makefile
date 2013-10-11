@@ -2,6 +2,7 @@
 
 COMMENT =	organizer for book/music/video collections for KDE4
 DISTNAME =	tellico-2.3.7
+REVISION =	0
 
 CATEGORIES =	productivity x11
 HOMEPAGE =	http://tellico-project.org/
@@ -12,7 +13,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =  c m pthread stdc++ z
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
-WANTLIB += lib/qt4/QtXml 
+WANTLIB += lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kabc ${KDE4LIB}/kcal ${KDE4LIB}/kcddb
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/khtml ${KDE4LIB}/kio ${KDE4LIB}/kjs
 WANTLIB += ${KDE4LIB}/knewstuff3 ${KDE4LIB}/kparts ${KDE4LIB}/kresources
@@ -24,7 +25,7 @@ WANTLIB += soprano tag xml2 xslt yaz
 MASTER_SITES =	http://tellico-project.org/files/
 EXTRACT_SUFX =	.tar.bz2
 
-MODULES =	devel/gettext x11/kde4 multimedia/phonon
+MODULES =	devel/gettext lang/python x11/kde4
 MODKDE4_USE =	pim
 
 BUILD_DEPENDS =	${MODKDE4_DEP_DIR}/libkcompactdisc
@@ -43,5 +44,9 @@ LIB_DEPENDS =	audio/taglib \
 		${MODKDE4_DEP_DIR}/libkcddb
 
 TEST_IS_INTERACTIVE =	X11
+
+# XXX Should those go under ${PREFIX}/lib/ ?
+post-install:
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/share/apps/tellico/data-sources
 
 .include <bsd.port.mk>
