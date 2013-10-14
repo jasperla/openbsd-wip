@@ -37,13 +37,11 @@ LIB_DEPENDS=	devel/boehm-gc \
 		x11/gtk2mm>=2.24.4
 RUN_DEPENDS=	devel/desktop-file-utils \
 		textproc/py-lxml \
-		x11/gtk+2,-guic \
-		x11/gnome/icon-theme
+		x11/gtk+2,-guic
 
 USE_GMAKE=	Yes
-USE_GROFF=	Yes
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.68
+AUTOCONF_VERSION= 2.69
 CONFIGURE_ARGS=	--without-gnome-vfs
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/ImageMagick \
 			  -I${LOCALBASE}/include -I${X11BASE}/include" \
