@@ -28,7 +28,7 @@ LIB_DEPENDS=	devel/boehm-gc \
 		devel/gsl \
 		devel/popt \
 		graphics/ImageMagick \
-		graphics/lcms \
+		graphics/lcms2 \
 		graphics/png \
 		print/poppler \
 		textproc/aspell/core \
@@ -48,5 +48,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/ImageMagick \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 NO_TEST=	Yes
+
+# As discussed with Ingo Schwarze, remove internationalised manual
+# pages, as our mandoc implementation does not yet deal with them.
+RM_MANS=	man/el man/fr man/ja man/man1/inkscape.*.1 \
+		man/sk man/zh_TW
+
+post-install:
 
 .include <bsd.port.mk>
