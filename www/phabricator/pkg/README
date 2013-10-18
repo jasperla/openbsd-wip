@@ -1,0 +1,61 @@
+$OpenBSD: README,v 1.1 2012/09/10 09:16:36 jasper Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Phabricator has been installed into ${INSTDIR}
+
+Phabricator requires a /dev/urandom device in /var/www, to do this, you will have to edit /etc/fstab and make sure /var/www (or /var) is not set to nodev, remount that filesystem, and then run:
+
+# cd /var/www/dev
+# /dev/MAKEDEV urandom
+
+You should create a vhost for Phabricator (must be on a subdomain or full domain) 
+
+Vhost example for nginx: 
+
+# phabricator
+server {
+  server_name phabricator.my.domain;
+
+  root      /var/www/phabricator/webroot;
+  try_files $uri $uri/ /index.php;
+
+  location / {
+    index   index.php;
+
+    if ( !-f $request_filename )
+    {
+      rewrite ^/(.*)$ /index.php?__path__=/$1 last;
+      break;
+    }
+  }
+
+  location /index.php {
+    fastcgi_pass   localhost:9000;
+    fastcgi_index   index.php;
+
+    #required if PHP was built with --enable-force-cgi-redirect
+    fastcgi_param  REDIRECT_STATUS    200;
+
+    #variables to make the $_SERVER populate in PHP
+    fastcgi_param  SCRIPT_FILENAME    $document_root$fastcgi_script_name;
+    fastcgi_param  QUERY_STRING       $query_string;
+    fastcgi_param  REQUEST_METHOD     $request_method;
+    fastcgi_param  CONTENT_TYPE       $content_type;
+    fastcgi_param  CONTENT_LENGTH     $content_length;
+    fastcgi_param  SCRIPT_NAME        $fastcgi_script_name;
+    fastcgi_param  GATEWAY_INTERFACE  CGI/1.1;
+    fastcgi_param  SERVER_SOFTWARE    nginx/$nginx_version;
+    fastcgi_param  REMOTE_ADDR        $remote_addr;
+  }
+}
+
+Restart nginx, start php-fpm, and browse to phabricator.my.domain and follow the setup instructions provided. 
+
+If you are using phabricator in production, it is highly recommended that you also install pecl-php
+
+# pkg_add pecl-php
+
+For more information, visit: http://www.phabricator.com/docs/phabricator/article/Configuration_Guide.html
