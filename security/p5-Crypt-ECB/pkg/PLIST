@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/Crypt/
+${P5SITE}/Crypt/ECB.pm
+@man man/man3p/Crypt::ECB.3p
