@@ -1,0 +1,12 @@
+$OpenBSD$
+--- Makefile.in.orig	Sun Oct 20 20:45:47 2013
++++ Makefile.in	Sun Oct 20 20:47:00 2013
+@@ -329,7 +329,7 @@ install: all
+ 	$(INSTALL_PROGRAM) $(PROG) $(DESTDIR)$(sbindir)/$(PROG).`cat ${srcdir}/VERSION`
+ 	[ -d $(DESTDIR)$(mandir)/man1 ] || \
+ 	    (mkdir -p $(DESTDIR)$(mandir)/man1; chmod 755 $(DESTDIR)$(mandir)/man1)
+-	$(INSTALL_DATA) $(PROG).1 $(DESTDIR)$(mandir)/man1/$(PROG).1
++	$(INSTALL_DATA) tcpdump.1 $(DESTDIR)$(mandir)/man1/$(PROG).1
+ 
+ uninstall:
+ 	rm -f $(DESTDIR)$(sbindir)/$(PROG)
