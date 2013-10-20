@@ -1,0 +1,16 @@
+@comment $OpenBSD$
+${P5SITE}/Crypt/PWSafe3/
+${P5SITE}/Crypt/PWSafe3.pm
+${P5SITE}/Crypt/PWSafe3/Databaseformat.pm
+${P5SITE}/Crypt/PWSafe3/Field.pm
+${P5SITE}/Crypt/PWSafe3/HeaderField.pm
+${P5SITE}/Crypt/PWSafe3/PasswordPolicy.pm
+${P5SITE}/Crypt/PWSafe3/Record.pm
+${P5SITE}/Crypt/PWSafe3/SHA256.pm
+@man man/man3p/Crypt::PWSafe3.3p
+@man man/man3p/Crypt::PWSafe3::Databaseformat.3p
+@man man/man3p/Crypt::PWSafe3::Field.3p
+@man man/man3p/Crypt::PWSafe3::HeaderField.3p
+@man man/man3p/Crypt::PWSafe3::PasswordPolicy.3p
+@man man/man3p/Crypt::PWSafe3::Record.3p
+@man man/man3p/Crypt::PWSafe3::SHA256.3p
