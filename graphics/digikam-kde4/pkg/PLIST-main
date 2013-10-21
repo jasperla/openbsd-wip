@@ -30,13 +30,6 @@ share/apps/digikam/about/digikam.css
 share/apps/digikam/about/main.html
 share/apps/digikam/about/top-left-digikam.png
 share/apps/digikam/data/
-share/apps/digikam/data/assistant-collection.png
-share/apps/digikam/data/assistant-metadata.png
-share/apps/digikam/data/assistant-openfile.png
-share/apps/digikam/data/assistant-preview.png
-share/apps/digikam/data/assistant-rawimport.png
-share/apps/digikam/data/assistant-scancollection.png
-share/apps/digikam/data/assistant-tooltips.png
 share/apps/digikam/data/banner-digikam.png
 share/apps/digikam/data/bluejean-texture.png
 share/apps/digikam/data/bothhorz.png
@@ -543,7 +536,7 @@ share/apps/showfoto/showfotoui.rc
 share/apps/solid/
 share/apps/solid/actions/
 share/apps/solid/actions/digikam-opencamera.desktop
-share/config.kcfg/PLEConfigSkeleton.kcfgc
+share/config.kcfg/photolayoutseditor.kcfg
 share/doc/HTML/en/digikam/
 share/doc/HTML/en/digikam/2Greens.png
 share/doc/HTML/en/digikam/542px-CIExy1931_sRGB_svg.png

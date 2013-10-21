@@ -9,7 +9,7 @@ COMMENT-vkontakte =	KIPI interface for VK.com
 
 CATEGORIES =		graphics
 HOMEPAGE =		http://www.digikam.org/
-VERSION =		3.3.0
+VERSION =		3.5.0
 DISTNAME =		digikam-${VERSION}
 
 PKGSPEC-main =		digikam->=1
@@ -22,7 +22,6 @@ PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 PKGNAME-vkontakte =	libkvkontakte-1.0.0
 
-REVISION-main =		0
 REVISION-face =		2
 REVISION-mediawiki =	2
 REVISION-vkontakte =	3
@@ -53,14 +52,9 @@ WANTLIB-common += m pthread stdc++
 WANTLIB-common += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg
 WANTLIB-common += ${KDE4LIB}/kdeui
 
-WANTLIB-opencv =  opencv_calib3d opencv_contrib opencv_core
-WANTLIB-opencv += opencv_features2d opencv_flann opencv_gpu
-WANTLIB-opencv += opencv_highgui opencv_imgproc opencv_legacy opencv_ml
-WANTLIB-opencv += opencv_objdetect opencv_photo opencv_stitching
-WANTLIB-opencv += opencv_superres opencv_ts opencv_video opencv_videostab
-
-WANTLIB-face =	${WANTLIB-common} ${WANTLIB-opencv}
+WANTLIB-face =	${WANTLIB-common}
 WANTLIB-face +=	lib/qt4/QtSql lib/qt4/QtXml
+WANTLIB-face += opencv_contrib opencv_core opencv_highgui
 
 WANTLIB-geomap =  ${WANTLIB-common} ${MODPHONON_WANTLIB}
 WANTLIB-geomap += lib/qt4/QtNetwork lib/qt4/QtXml
@@ -69,7 +63,7 @@ WANTLIB-geomap += ${KDE4LIB}/marblewidget ${KDE4LIB}/nepomuk
 WANTLIB-geomap += ${KDE4LIB}/nepomukutils
 WANTLIB-geomap += soprano
 
-WANTLIB-kipi =  ${WANTLIB-common} ${WANTLIB-opencv}
+WANTLIB-kipi =  ${WANTLIB-common}
 WANTLIB-kipi += ${MODGETTEXT_WANTLIB} ${MODPHONON_WANTLIB}
 WANTLIB-kipi += c GL GLU ICE SM X11 Xext Xrandr expat
 WANTLIB-kipi += lib/qt4/QtNetwork lib/qt4/QtOpenGL lib/qt4/QtXmlPatterns
@@ -80,12 +74,13 @@ WANTLIB-kipi += ${KDE4LIB}/kio ${KDE4LIB}/kipi ${KDE4LIB}/kjs ${KDE4LIB}/kparts
 WANTLIB-kipi += ${KDE4LIB}/ksane 
 WANTLIB-kipi += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils ${KDE4LIB}/solid
 WANTLIB-kipi += ${KDE4LIB}/threadweaver
+WANTLIB-kipi += opencv_core opencv_highgui opencv_legacy
 WANTLIB-kipi += exslt gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpod
 WANTLIB-kipi += gthread-2.0 jpeg
 WANTLIB-kipi += qjson kgeomap kqoauth kvkontakte mediawiki png qca2 soprano
 WANTLIB-kipi += tiff xml2 xslt z
 
-WANTLIB-main =  ${WANTLIB-common} ${WANTLIB-opencv} ${MODPHONON_WANTLIB}
+WANTLIB-main =  ${WANTLIB-common} ${MODPHONON_WANTLIB}
 WANTLIB-main += c ICE SM X11 Xext z
 WANTLIB-main += lib/qt4/Qt3Support lib/qt4/QtNetwork lib/qt4/QtSql
 WANTLIB-main += lib/qt4/QtTest lib/qt4/QtXml
@@ -97,6 +92,7 @@ WANTLIB-main += ${KDE4LIB}/knotifyconfig ${KDE4LIB}/kparts ${KDE4LIB}/kprintutil
 WANTLIB-main += ${KDE4LIB}/kresources ${KDE4LIB}/kutils ${KDE4LIB}/nepomuk
 WANTLIB-main += ${KDE4LIB}/nepomukutils ${KDE4LIB}/solid
 WANTLIB-main += ${KDE4LIB}/threadweaver
+WANTLIB-main += opencv_core opencv_highgui
 WANTLIB-main += exif glib-2.0 gphoto2 gphoto2_port jasper jpeg kface kgeomap
 WANTLIB-main += lcms2 lensfun lqr-1 pgf png soprano sqlite tiff usb
 
