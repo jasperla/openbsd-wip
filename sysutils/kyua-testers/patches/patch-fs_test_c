@@ -1,0 +1,12 @@
+$OpenBSD$
+--- fs_test.c.orig	Sat Oct 19 14:14:51 2013
++++ fs_test.c	Sat Oct 19 14:15:01 2013
+@@ -197,7 +197,7 @@ static bool
+ lchmod_fails(void)
+ {
+     ATF_REQUIRE(mkdir("test", 0755) != -1);
+-    return lchmod("test", 0700) == -1 && chmod("test", 0700) != -1;
++    return chmod("test", 0700) != -1;
+ }
+ 
+ 
