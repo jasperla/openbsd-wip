@@ -1,13 +1,13 @@
 @comment $OpenBSD$
 bin/nvpy
 lib/python${MODPY_VERSION}/site-packages/nvpy/
-lib/python${MODPY_VERSION}/site-packages/nvpy-0.9.4-py2.7.egg-info/
-lib/python${MODPY_VERSION}/site-packages/nvpy-0.9.4-py2.7.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/nvpy-0.9.4-py2.7.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/nvpy-0.9.4-py2.7.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/nvpy-0.9.4-py2.7.egg-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/nvpy-0.9.4-py2.7.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/nvpy-0.9.4-py2.7.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME\-}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME\-}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME\-}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME\-}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME\-}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME\-}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME\-}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/nvpy/__init__.py
 lib/python${MODPY_VERSION}/site-packages/nvpy/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/nvpy/__main__.py
