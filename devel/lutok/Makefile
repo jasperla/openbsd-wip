@@ -19,6 +19,8 @@ WANTLIB=        c crypto m ssl pcre ${MODLUA_WANTLIB}
 MODULES=        lang/lua
 MODLUA_SA=      Yes
 
+BUILD_DEPENDS	= lang/lua/5.1
+
 LIB_DEPENDS=    devel/pcre \
                 ${MODLUA_LIB_DEPENDS}
 
