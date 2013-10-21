@@ -2,7 +2,7 @@
 
 COMMENT=		enhanced interactive Python shell
 
-MODPY_EGG_VERSION=	1.0.0
+MODPY_EGG_VERSION =	1.1.0
 DISTNAME=		ipython-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
 
@@ -72,6 +72,6 @@ post-install:
 	rmdir ${DOCS_DIR}/extensions
 
 do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} ${MODPY_SETUP} check
+	${MODPY_BIN} ${WRKBUILD}/scripts-2.7/iptest
 
 .include <bsd.port.mk>
