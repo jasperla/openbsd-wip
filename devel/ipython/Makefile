@@ -33,8 +33,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PYPI:=i/ipython/}
 
-USE_GROFF =	Yes
-
 pre-patch:
 	ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 
