@@ -2,7 +2,7 @@
 
 COMMENT =	simple CalDAV calendar server
 
-MODPY_EGG_VERSION = 0.7.1
+MODPY_EGG_VERSION = 0.8
 DISTNAME =	Radicale-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:L}
 CATEGORIES =	productivity net
