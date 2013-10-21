@@ -3,7 +3,6 @@
 COMMENT =		scriptable interfaces to interact with test programs
 DISTNAME =		kyua-testers-0.1
 
-SHARED_LIBS += ct                   5.0      # .4.0
 CATEGORIES =		devel sysutils
 HOMEPAGE =		https://code.google.com/p/kyua/
 
