@@ -14,9 +14,10 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		https://pypi.python.org/packages/source/n/nvpy/
 
-MODULES =			lang/python
-BUILD_DEPENDS =     devel/py-pip \
-					textproc/markdown
+MODULES =		lang/python
+BUILD_DEPENDS =     	devel/py-pip \
+			textproc/markdown \
+			lang/python/2.7,-tkinter
 
 MODPY_SETUPTOOLS =      Yes
 
