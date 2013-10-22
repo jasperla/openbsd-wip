@@ -8,6 +8,7 @@ include/atf-c++/build.hpp
 include/atf-c++/check.hpp
 include/atf-c++/config.hpp
 include/atf-c++/macros.hpp
+include/atf-c++/noncopyable.hpp
 include/atf-c++/tests.hpp
 include/atf-c++/utils.hpp
 include/atf-c.h
@@ -23,8 +24,10 @@ include/atf-c/tp.h
 include/atf-c/utils.h
 lib/libatf-c++.a
 lib/libatf-c++.la
+@lib lib/libatf-c++.so.${LIBatf-c++_VERSION}
 lib/libatf-c.a
 lib/libatf-c.la
+@lib lib/libatf-c.so.${LIBatf-c_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/atf-c++.pc
 lib/pkgconfig/atf-c.pc
@@ -64,6 +67,7 @@ tests/atf/atf-c++/detail/
 tests/atf/atf-c++/detail/Atffile
 tests/atf/atf-c++/detail/Kyuafile
 @bin tests/atf/atf-c++/detail/application_test
+@bin tests/atf/atf-c++/detail/auto_array_test
 @bin tests/atf/atf-c++/detail/env_test
 @bin tests/atf/atf-c++/detail/exceptions_test
 @bin tests/atf/atf-c++/detail/expand_test
