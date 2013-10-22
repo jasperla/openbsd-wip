@@ -22,7 +22,7 @@ WANTLIB += c m stdc++
 USE_GMAKE =  			Yes
 
 pre-build:
-		cd ${WRKSRC} && ksh ./configure.sh
+		cd ${WRKSRC} && bash ./configure.sh
 
 post-install:
 		${INSTALL_DATA_DIR} ${PREFIX}/share/doc/trinity/
