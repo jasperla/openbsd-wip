@@ -25,6 +25,8 @@ lib/python${MODPY_VERSION}/site-packages/salt/_compat.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/auth/
 lib/python${MODPY_VERSION}/site-packages/salt/auth/__init__.py
 lib/python${MODPY_VERSION}/site-packages/salt/auth/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/auth/auto.py
+lib/python${MODPY_VERSION}/site-packages/salt/auth/auto.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/auth/keystone.py
 lib/python${MODPY_VERSION}/site-packages/salt/auth/keystone.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/auth/ldap.py
@@ -861,6 +863,13 @@ lib/python${MODPY_VERSION}/site-packages/salt/utils/thin.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/thin.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/timed_subprocess.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/timed_subprocess.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/utils/validate/
+lib/python${MODPY_VERSION}/site-packages/salt/utils/validate/__init__.py
+lib/python${MODPY_VERSION}/site-packages/salt/utils/validate/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/utils/validate/net.py
+lib/python${MODPY_VERSION}/site-packages/salt/utils/validate/net.pyc
+lib/python${MODPY_VERSION}/site-packages/salt/utils/validate/path.py
+lib/python${MODPY_VERSION}/site-packages/salt/utils/validate/path.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/verify.py
 lib/python${MODPY_VERSION}/site-packages/salt/utils/verify.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/utils/virt.py
