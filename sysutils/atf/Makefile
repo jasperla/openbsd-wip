@@ -10,7 +10,7 @@ SHARED_LIBS +=  atf-c                     0.0 # 0.0
 CATEGORIES =		devel sysutils
 HOMEPAGE =		https://code.google.com/p/kyua/
 
-MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
 PERMIT_PACKAGE_CDROM =	Yes
 
