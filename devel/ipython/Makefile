@@ -2,7 +2,7 @@
 
 COMMENT=		enhanced interactive Python shell
 
-MODPY_EGG_VERSION=	1.0.0
+MODPY_EGG_VERSION =	1.1.0
 DISTNAME=		ipython-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
 
@@ -32,8 +32,6 @@ BUILD_DEPENDS =		textproc/py-sphinx \
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PYPI:=i/ipython/}
-
-USE_GROFF =	Yes
 
 pre-patch:
 	ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
@@ -72,6 +70,6 @@ post-install:
 	rmdir ${DOCS_DIR}/extensions
 
 do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} ${MODPY_SETUP} check
+	${MODPY_BIN} ${WRKBUILD}/scripts-2.7/iptest
 
 .include <bsd.port.mk>
