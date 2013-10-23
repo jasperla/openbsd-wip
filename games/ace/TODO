@@ -1,0 +1,3 @@
+F1 crashes instead of bringing up help, because the files are not installed.
+If files are installed, bringing up help a second time also crashes.
+See lib/help.c.
