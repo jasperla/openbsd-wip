@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile.template,v 1.66 2013/06/04 22:58:11 sthen Exp $
 
-COMMENT =		real-time web log analyzer and interactive viewer
+COMMENT =		real-time console web log analyzer and viewer
 
 DISTNAME =		goaccess-0.6
 
@@ -8,12 +8,13 @@ CATEGORIES =		www
 
 HOMEPAGE =		http://goaccess.prosoftcorp.com/
 
-MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
+MAINTAINER =		Kirill Bychkov <kirby@openbsd.org> \
+			William Yodlowsky <william@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += 		GeoIP c glib-2.0 m ncurses pthread
+WANTLIB += 		GeoIP c glib-2.0 m ncursesw pthread
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=goaccess/}
 
@@ -22,8 +23,12 @@ LIB_DEPENDS =		devel/glib2 \
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--enable-geoip
+CONFIGURE_ARGS +=	--enable-geoip \
+			--enable-utf8
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+pre-build:
+	@perl -pi -e s,ncursesw/curses.h,curses.h, ${WRKSRC}/*.[ch]
 
 .include <bsd.port.mk>
