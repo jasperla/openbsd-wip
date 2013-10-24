@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@bin bin/goaccess
-@man man/man1/goaccess.1
