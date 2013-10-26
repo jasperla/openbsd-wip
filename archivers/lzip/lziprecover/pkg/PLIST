@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-@bin bin/lziprecover
-@info info/lziprecover.info
-@man man/man1/lziprecover.1

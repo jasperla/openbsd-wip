@@ -1,5 +1,0 @@
-@comment $OpenBSD$
-include/lzlib.h
-@info info/lzlib.info
-lib/liblz.a
-@lib lib/liblz.so.${LIBlz_VERSION}
