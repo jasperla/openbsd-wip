@@ -7,7 +7,7 @@ Allow tests to build.
  endif()
  
 -ei_add_test(sparse_extra   "" "")
-+# ei_add_test(sparse_extra   "" "")
++ ei_add_test(sparse_extra   "" "")
  
  find_package(FFTW)
  if(FFTW_FOUND)
