@@ -1,5 +1,5 @@
 $OpenBSD$
-Allow those tests to build.
+Allow tests to build.
 --- unsupported/test/CMakeLists.txt.orig	Wed Jul 24 05:48:35 2013
 +++ unsupported/test/CMakeLists.txt	Sun Oct 27 03:24:02 2013
 @@ -52,7 +52,7 @@ else()

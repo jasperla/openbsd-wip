@@ -1,4 +1,6 @@
 $OpenBSD$
+This test fails, and we actually DO provide min() and max() correctly,
+so disable it.
 --- test/main.h.orig	Wed Oct 23 04:05:35 2013
 +++ test/main.h	Wed Oct 23 04:06:14 2013
 @@ -24,8 +24,8 @@
