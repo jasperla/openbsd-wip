@@ -1,4 +1,5 @@
 $OpenBSD$
+Fix configure check.
 --- cmake/FindGoogleHash.cmake.orig	Tue Jul 30 15:24:36 2013
 +++ cmake/FindGoogleHash.cmake	Tue Jul 30 15:24:20 2013
 @@ -1,4 +1,7 @@
