@@ -29,7 +29,7 @@ MODULES =		devel/cmake x11/qt4
 CONFIGURE_STYLE =	cmake
 
 # Needs Fortran support
-USE_NINJA =		No
+#USE_NINJA =		No
 
 # Unported stuff, mostly needed for tests
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Adolc=Yes \
@@ -49,6 +49,8 @@ BUILD_DEPENDS +=	devel/gmp \
 			math/fftw
 
 TEST_DEPENDS =		shells/bash
+
+VMEM_WARNING =		Yes
 .else
 NO_TEST =		Yes
 CONFIGURE_ARGS +=	-DEIGEN_FAILTEST=No \
