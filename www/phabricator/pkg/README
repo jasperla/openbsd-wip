@@ -1,9 +1,12 @@
-$OpenBSD: README,v 1.1 2012/09/10 09:16:36 jasper Exp $
+------------------------8<------------------------
+$OpenBSD: README.template,v 1.4 2011/06/02 13:44:40 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
+Phabricator and chroot
+======================
 Phabricator has been installed into ${INSTDIR}
 
 Phabricator requires a /dev/urandom device in /var/www, to do this, you will have to edit /etc/fstab and make sure /var/www (or /var) is not set to nodev, remount that filesystem, and then run:
@@ -11,9 +14,12 @@ Phabricator requires a /dev/urandom device in /var/www, to do this, you will hav
 # cd /var/www/dev
 # /dev/MAKEDEV urandom
 
+
+Nginx VHost
+===========
 You should create a vhost for Phabricator (must be on a subdomain or full domain) 
 
-Vhost example for nginx: 
+Example: 
 
 # phabricator
 server {
@@ -54,8 +60,11 @@ server {
 
 Restart nginx, start php-fpm, and browse to phabricator.my.domain and follow the setup instructions provided. 
 
+Production
+==========
 If you are using phabricator in production, it is highly recommended that you also install pecl-php
 
 # pkg_add pecl-php
 
 For more information, visit: http://www.phabricator.com/docs/phabricator/article/Configuration_Guide.html
+------------------------8<------------------------
