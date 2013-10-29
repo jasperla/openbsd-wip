@@ -1,0 +1,78 @@
+$OpenBSD$
+--- src/afs/sysincludes.h.orig	Mon Mar 26 18:03:34 2012
++++ src/afs/sysincludes.h	Thu Jul  4 11:49:55 2013
+@@ -7,19 +7,16 @@
+  * directory or online at http://www.openafs.org/dl/license10.html
+  */
+ 
+-#ifdef UKERNEL
+-# include <UKERNEL/sysincludes.h>
+-#else
++#ifndef _SRC_AFS_SYSINCLUDES_H_
++#define _SRC_AFS_SYSINCLUDES_H_
+ 
+-#ifndef __AFS_SYSINCLUDESH__
+-#define __AFS_SYSINCLUDESH__ 1
+-
+ #ifdef AFS_OBSD_ENV
+ # include <sys/errno.h>
+ # include <sys/types.h>
+ # include <sys/param.h>
+ # include <sys/lock.h>
+ # include <sys/queue.h>
++# include <sys/resource.h>
+ # include <sys/resourcevar.h>
+ # include <sys/kernel.h>
+ # include <sys/proc.h>
+@@ -33,6 +30,27 @@
+ # include <sys/uio.h>
+ # include <sys/buf.h>
+ # include <sys/stat.h>
++
++/* below required for mount.h taken from mount.h under ifdef _KERNEL */
++# ifdef UKERNEL
++#  include <net/radix.h>
++/*
++ * Network address lookup element
++ */
++struct netcred {
++        struct  radix_node netc_rnodes[2];
++        int     netc_exflags;
++        struct  ucred netc_anon;
++};
++
++/*
++ * Network export information
++ */
++struct netexport {
++        struct  netcred ne_defexported;               /* Default export */
++        struct  radix_node_head *ne_rtable[AF_MAX+1]; /* Individual exports */
++};
++# endif
+ # include <sys/mount.h>
+ # include <sys/vnode.h>
+ # include <sys/malloc.h>
+@@ -50,7 +68,18 @@
+ # include <sys/protosw.h>
+ # include <sys/ioctl.h>
+ # include <sys/timeout.h>
++# include <netinet/in.h>
++#endif
+ 
++#ifdef UKERNEL
++# include <UKERNEL/sysincludes.h>
++#else
++
++#ifndef __AFS_SYSINCLUDESH__
++#define __AFS_SYSINCLUDESH__ 1
++
++#ifdef AFS_OBSD_ENV
++
+ #elif defined(AFS_NBSD40_ENV)
+ # include <sys/errno.h>
+ # include <sys/types.h>
+@@ -456,3 +485,4 @@ MALLOC_DECLARE(M_AFS);
+ #endif /* __AFS_SYSINCLUDESH__  so idempotent */
+ 
+ #endif
++#endif /* _SRC_AFS_SYSINCLUDES_H_ */

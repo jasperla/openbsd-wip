@@ -14,13 +14,10 @@ MODULES +=	apache-module
 
 # Apache
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODAPACHE_NAME =	rpaf
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 APXS =			/usr/sbin/apxs
 
 do-build:

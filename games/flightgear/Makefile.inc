@@ -1,6 +1,8 @@
 # $OpenBSD$
 
-V =			2.6.0
+ONLY_FOR_ARCHS =	amd64 i386
+
+V =			2.10.0
 
 CATEGORIES =		games
 
@@ -10,8 +12,5 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 EXTRACT_SUFX =		.tar.bz2

@@ -1,5 +1,4 @@
 @comment $OpenBSD$
-%%SHARED%%
 @bin bin/gnunet-fs-gtk
 @bin bin/gnunet-peerinfo-gtk
 @bin bin/gnunet-setup
@@ -8,6 +7,7 @@ include/gnunet-gtk/
 include/gnunet-gtk/gnunet_gtk.h
 lib/libgnunetgtk.a
 lib/libgnunetgtk.la
+@lib lib/libgnunetgtk.so.${LIBgnunetgtk_VERSION}
 @man man/man1/gnunet-fs-gtk.1
 @man man/man1/gnunet-peerinfo-gtk.1
 @man man/man1/gnunet-setup.1
@@ -287,6 +287,18 @@ share/gnunet-gtk/gnunet_logo.png
 share/gnunet-gtk/gnunet_peerinfo_gtk_about_window.glade
 share/gnunet-gtk/gnunet_peerinfo_gtk_main_window.glade
 share/gnunet-gtk/gnunet_setup_calendar_dialog.glade
+share/gnunet-gtk/gnunet_setup_gns_edit_a.glade
+share/gnunet-gtk/gnunet_setup_gns_edit_aaaa.glade
+share/gnunet-gtk/gnunet_setup_gns_edit_cname.glade
+share/gnunet-gtk/gnunet_setup_gns_edit_leho.glade
+share/gnunet-gtk/gnunet_setup_gns_edit_mx.glade
+share/gnunet-gtk/gnunet_setup_gns_edit_ns.glade
+share/gnunet-gtk/gnunet_setup_gns_edit_pkey.glade
+share/gnunet-gtk/gnunet_setup_gns_edit_ptr.glade
+share/gnunet-gtk/gnunet_setup_gns_edit_soa.glade
+share/gnunet-gtk/gnunet_setup_gns_edit_srv.glade
+share/gnunet-gtk/gnunet_setup_gns_edit_txt.glade
+share/gnunet-gtk/gnunet_setup_gns_edit_vpn.glade
 share/gnunet-gtk/gnunet_setup_gtk_main_window.glade
 share/gnunet-gtk/gnunet_setup_qr_save_as_dialog.glade
 share/gnunet-gtk/gnunet_statistics_gtk_about_window.glade
@@ -299,22 +311,10 @@ share/gnunet-gtk/red.png
 share/gnunet-gtk/searching_sources.gif
 share/gnunet/config.d/
 share/gnunet/config.d/gnunet-fs-gtk.conf
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/gnunet-fs-gtk.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/gnunet-fs-gtk.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/gnunet-fs-gtk.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/gnunet-fs-gtk.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/gnunet-fs-gtk.svg
 share/locale/da/LC_MESSAGES/gnunet-gtk.mo
 share/locale/de/LC_MESSAGES/gnunet-gtk.mo

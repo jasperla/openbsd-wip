@@ -1,0 +1,71 @@
+$OpenBSD$
+--- indra/Makefile.inc.orig	Sat Mar 24 22:19:34 2007
++++ indra/Makefile.inc	Sat Mar 24 22:19:34 2007
+@@ -0,0 +1,67 @@
++#
++
++LOCALBASE?= /usr/local
++X11BASE?= /usr/X11R6
++BINDIR=${LOCALBASE}/bin
++
++INCDIRS+= llmath llcommon llimage llmessage llvfs llxml llwindow llrender llaudio
++
++DEBUG?= -s
++CFLAGS+= -pthread
++CFLAGS+= -Wall -Wno-trigraphs 
++CFLAGS+= -falign-loops=16 -fno-math-errno -fexceptions -fsigned-char 
++CFLAGS+= -fno-strict-aliasing -ffast-math 
++CFLAGS+= -DLL_USE_KDU=0 -DLL_GSTREAMER_ENABLED=1 -DLL_LIBXUL_ENABLED=1
++CFLAGS+= -DLL_MESA_HEADLESS=0 -DLL_MESA=0 -DAPPID=secondlife 
++CFLAGS+= -DLL_SDL=1 -DLL_FMOD=0 -DLL_X11=1 -DLL_GTK=1 
++CFLAGS+= -DNDEBUG -DLL_RELEASE=1 -DLL_RELEASE_FOR_DOWNLOAD=1
++.for _d in ${INCDIRS}
++CFLAGS+= -I${.CURDIR}/../${_d}
++.endfor
++CFLAGS+= -I${LOCALBASE}/include/gtk-2.0 -I${LOCALBASE}/lib/gtk-2.0/include 
++CFLAGS+= -I${LOCALBASE}/include/glib-2.0 -I${LOCALBASE}/lib/glib-2.0/include
++CFLAGS+= -I${LOCALBASE}/include/pango-1.0 -I${LOCALBASE}/include/atk-1.0
++CFLAGS+= -I${X11BASE}/include/freetype2 -I${LOCALBASE}/include/cairo
++CFLAGS+= -I${LOCALBASE}/include -I${X11BASE}/include -I${X11BASE}/include/X11
++CFLAGS+= -I${.CURDIR}/../../libraries/include -I${LOCALBASE}/include/libxml2
++CFLAGS+= -I${.CURDIR}/../../libraries/include/havok -I${LOCALBASE}/include/gstreamer-0.10
++
++LDFLAGS+= -pthread
++
++
++
++# patterned after bsd.lib.mk
++
++.SUFFIXES: .out .o .go .po .so .S .s .c .cc .C .cxx .f .y .l .ln .m4 .m .cpp
++
++.cpp.o:
++	@echo "${COMPILE.cc} ${.IMPSRC} -o ${.TARGET}"
++	@${COMPILE.cc} ${.IMPSRC} -o ${.TARGET}.o
++	@${LD} -X -r ${.TARGET}.o -o ${.TARGET}
++	@rm -f ${.TARGET}.o
++
++.cpp.go:
++	@echo "${COMPILE.cc} -g ${.IMPSRC} -o ${.TARGET}"
++	@${COMPILE.cc} -g ${.IMPSRC} -o ${.TARGET}.o
++	@${LD} -X -r ${.TARGET}.o -o ${.TARGET}
++	@rm -f ${.TARGET}.o
++
++.cpp.po:
++	@echo "${COMPILE.cc} -p ${.IMPSRC} -o ${.TARGET}"
++	@${COMPILE.cc} -p ${.IMPSRC} -o ${.TARGET}.o
++	@${LD} -X -r ${.TARGET}.o -o ${.TARGET}
++	@rm -f ${.TARGET}.o
++
++.cpp.so:
++	@echo "${COMPILE.cc} ${PICFLAG} -DPIC ${.IMPSRC} -o ${.TARGET}"
++	@${COMPILE.cc} ${PICFLAG} -DPIC ${.IMPSRC} -o ${.TARGET}.o
++	@${LD} -X -r ${.TARGET}.o -o ${.TARGET}
++	@rm -f ${.TARGET}.o
++
++depend:
++	@files="${SRCS:M*.cpp}"; \
++	if [ "$$files" != "  " ]; then \
++	  echo mkdep -a ${MKDEP} ${CXXFLAGS:M-[ID]*} ${CPPFLAGS} $$files; \
++	  mkdep -a ${MKDEP} ${CXXFLAGS:M-[ID]*} ${CPPFLAGS} $$files; \
++	fi
++

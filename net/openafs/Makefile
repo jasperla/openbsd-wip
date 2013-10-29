@@ -16,11 +16,10 @@ MAINTAINER=		Todd T. Fries <todd@openbsd.org>
 
 # IBM Public License 1.0
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c
+WANTLIB=		c asn1 com_err crypto krb5 ncurses
+WANTLIB+=		pthread
+
 
 SHARED_LIBS +=  afsauthent                1.1
 SHARED_LIBS +=  afsrpc                    1.5
@@ -30,17 +29,20 @@ SHARED_LIBS +=  kopenafs                  1.1
 MASTER_SITES=		http://www.openafs.org/dl/openafs/${VERSION}/
 MASTER_SITES0=		http://grand.central.org/dl/cellservdb/
 
-EXTRACT_SUFX=		.tar.gz
 DOC_DISTFILE=		openafs-${VERSION}-doc
-CELLSRVDB=		CellServDB.2011-08-14
+CELLSRVDB=		CellServDB.2013-01-28
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} ${DOC_DISTFILE}${EXTRACT_SUFX} ${CELLSRVDB}:0
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX} ${DOC_DISTFILE}${EXTRACT_SUFX}
 
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 AUTOCONF_VERSION=	2.68
 AUTOMAKE_VERSION=	1.10
 CONFIGURE_STYLE=	automake autoconf
+
+.if defined(SUDO)
+MAKE_ENV+=		SUDO=sudo
+.endif
 
 CONFIGURE_ENV+=		INSTALL_DATA="install -c -m 444"
 CONFIGURE_ARGS+=	KRB5CFLAGS="-I/usr/include/kerberosV" \
@@ -52,24 +54,44 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-afs-sysname=${ARCH}_obsd${OSrev} \
 			--disable-transarc-paths \
 			--enable-namei-fileserver \
-			--enable-largefile-fileserver \
-			--enable-supergroups
+			--enable-supergroups \
+			--enable-pthreaded-ubik \
+			--enable-kernel-module
 
-FLAVORS=	debug withcache
+
+FLAVORS=	debug fuse
 FLAVOR?=
 
 WRKDIST=	${WRKDIR}/openafs-${VERSION}
 
-.if ${FLAVOR:L:Mwithcache}
-CONFIGURE_ARGS+=	--enable-kernel-module
-.else
-CONFIGURE_ARGS+=	--disable-kernel-module
-.endif
+post-patch:
+	@sed "s/%OSrev%/${OSrev}/g;s/%ARCH%/${ARCH}/g" \
+		${FILESDIR}/param.obsd.h \
+		> ${WRKSRC}/src/config/param.${ARCH}_obsd${OSrev}.h
+
+post-install:
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openafs
+	${SUBST_CMD} -c \
+		${FILESDIR}/krb5.conf \
+		${WRKSRC}/obsd.krb5.conf
+	${INSTALL_DATA} -m 755 ${WRKSRC}/obsd.krb5.conf \
+		${PREFIX}/share/examples/openafs/krb5.conf
+	${SUBST_CMD} -c \
+		${FILESDIR}/openafs-setup \
+		${WRKSRC}/obsd.openafs-setup
+	${INSTALL_PROGRAM} -m 755 ${WRKSRC}/obsd.openafs-setup \
+		${PREFIX}/sbin/openafs-setup
 
 .if ${FLAVOR:L:Mdebug}
 CONFIGURE_ARGS+=	--enable-debug
 CONFIGURE_ARGS+=	--enable-debug-kernel
 CONFIGURE_ARGS+=	--enable-debug-lwp
+.endif
+
+.if ${FLAVOR:L:Mfuse}
+CONFIGURE_ARGS+=	--enable-fuse-client
+.else
+CONFIGURE_ARGS+=	--disable-fuse-client
 .endif
 
 .include <bsd.port.arch.mk>

@@ -1,0 +1,20 @@
+$OpenBSD$
+--- indra/llmessage/Makefile.orig	Mon Nov 12 08:32:38 2007
++++ indra/llmessage/Makefile	Mon Nov 12 08:43:00 2007
+@@ -0,0 +1,16 @@
++#
++
++LIB=	llmessage
++
++SRCS!=	sed 's/llmessage\///g' files.lst
++
++DEBUGLIBS=no
++NOPROFILE=yes
++NOPIC=yes
++
++install:
++	@echo -n
++
++.include <bsd.lib.mk>
++.include <../Makefile.llinc>
++

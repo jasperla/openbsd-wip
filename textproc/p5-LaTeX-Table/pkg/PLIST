@@ -1,7 +1,6 @@
 @comment $OpenBSD$
 bin/csv2pdf
 bin/ltpretty
-${P5SITE}/LaTeX/
 ${P5SITE}/LaTeX/Table/
 ${P5SITE}/LaTeX/Table.pm
 ${P5SITE}/LaTeX/Table/Themes/
@@ -29,3 +28,7 @@ ${P5SITE}/LaTeX/Table/Types/Xtab.pm
 @man man/man3p/LaTeX::Table::Types::Std.3p
 @man man/man3p/LaTeX::Table::Types::TypeI.3p
 @man man/man3p/LaTeX::Table::Types::Xtab.3p
+share/examples/p5-LaTeX-Table/
+share/examples/p5-LaTeX-Table/examples.pdf
+share/examples/p5-LaTeX-Table/generate_examples.pl
+share/examples/p5-LaTeX-Table/imdbtop40.dat

@@ -1,0 +1,44 @@
+@comment $OpenBSD$
+@bin bin/notmuch
+include/notmuch.h
+@lib lib/libnotmuch.so.${LIBnotmuch_VERSION}
+@man man/man1/notmuch-config.1
+@man man/man1/notmuch-count.1
+@man man/man1/notmuch-dump.1
+@man man/man1/notmuch-new.1
+@man man/man1/notmuch-reply.1
+@man man/man1/notmuch-restore.1
+@man man/man1/notmuch-search.1
+@man man/man1/notmuch-setup.1
+@man man/man1/notmuch-show.1
+@man man/man1/notmuch-tag.1
+@man man/man1/notmuch.1
+@man man/man5/notmuch-hooks.5
+@man man/man7/notmuch-search-terms.7
+share/emacs/
+share/emacs/site-lisp/
+share/emacs/site-lisp/coolj.el
+share/emacs/site-lisp/notmuch-address.el
+share/emacs/site-lisp/notmuch-crypto.el
+share/emacs/site-lisp/notmuch-hello.el
+share/emacs/site-lisp/notmuch-lib.el
+share/emacs/site-lisp/notmuch-logo.png
+share/emacs/site-lisp/notmuch-maildir-fcc.el
+share/emacs/site-lisp/notmuch-message.el
+share/emacs/site-lisp/notmuch-mua.el
+share/emacs/site-lisp/notmuch-print.el
+share/emacs/site-lisp/notmuch-query.el
+share/emacs/site-lisp/notmuch-show.el
+share/emacs/site-lisp/notmuch-tag.el
+share/emacs/site-lisp/notmuch-wash.el
+share/emacs/site-lisp/notmuch.el
+share/notmuch/
+share/notmuch/bash_completion.d/
+@sample ${SYSCONFDIR}/bash_completion.d/
+share/notmuch/bash_completion.d/notmuch
+@sample ${SYSCONFDIR}/bash_completion.d/notmuch-bash-completion
+share/zsh/
+share/zsh/functions/
+share/zsh/functions/Completion/
+share/zsh/functions/Completion/Unix/
+share/zsh/functions/Completion/Unix/_notmuch

@@ -1,0 +1,12 @@
+$OpenBSD$
+--- indra/llcommon/llerrorbuffer.cpp.orig	Fri Feb  2 09:41:54 2007
++++ indra/llcommon/llerrorbuffer.cpp	Fri Feb  2 09:42:30 2007
+@@ -55,7 +55,7 @@ LLErrorBuffer::LLErrorBuffer()
+     mErrorActive(TRUE),
+ 	mErrorTimestamp(TRUE),
+     mFileActive(FALSE),
+-    mSyslogActive(TRUE),
++    mSyslogActive(FALSE),
+ 	mWinDebugActive(TRUE),
+ 	mElevatedRemote(FALSE),
+ 	mIsUTC(TRUE),

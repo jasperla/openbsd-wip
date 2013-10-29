@@ -1,0 +1,33 @@
+$OpenBSD$
+--- Makefile.in.orig	Tue Sep 24 19:32:52 2013
++++ Makefile.in	Tue Sep 24 19:35:58 2013
+@@ -38,7 +38,7 @@ install-po:	install-po-@USE_NLS@
+ install-po-no:
+ install-po-yes:	$(CATALOGS)
+ 		for cat in $(CATALOGS); do \
+-		  dir=$(localedir)/`basename $$cat .mo`/LC_MESSAGES; \
++		  dir=$(DESTDIR)$(localedir)/`basename $$cat .mo`/LC_MESSAGES; \
+ 		  [ -d $$dir ] || @INSTALL@ -m 755 -d $$dir; \
+ 		  @INSTALL@ -m 644 $$cat $$dir/bas.mo; \
+ 		done
+@@ -47,13 +47,13 @@ check:		bas
+ 		for i in test/test*; do ./$$i || break; done
+ 
+ install:	all
+-		@INSTALL@ -m 755 -d @bindir@
+-		@INSTALL@ bas @bindir@/bas
+-		@INSTALL@ -m 755 -d @libdir@
+-		@INSTALL@ -m 644 libbas.a @libdir@/libbas.a
+-		@RANLIB@ @libdir@/libbas.a
+-		@INSTALL@ -m 755 -d @mandir@/man1
+-		@INSTALL@ -m 644 bas.1 @mandir@/man1/bas.1
++		@INSTALL@ -m 755 -d $(DESTDIR)@bindir@
++		@INSTALL@ bas $(DESTDIR)@bindir@/bas
++		@INSTALL@ -m 755 -d $(DESTDIR)@libdir@
++		@INSTALL@ -m 644 libbas.a $(DESTDIR)@libdir@/libbas.a
++		@RANLIB@ $(DESTDIR)@libdir@/libbas.a
++		@INSTALL@ -m 755 -d $(DESTDIR)@mandir@/man1
++		@INSTALL@ -m 644 bas.1 $(DESTDIR)@mandir@/man1/bas.1
+ 		make install-po
+ 
+ .c.o:

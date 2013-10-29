@@ -1,0 +1,5 @@
+This library provides an inotify-compatible interface for applications
+that need to monitor changes happening in a filesystem. It can be useful
+when porting Linux applications, which often use the inotify interface.
+
+Not all events are implemented, relevant tests are known to fail.

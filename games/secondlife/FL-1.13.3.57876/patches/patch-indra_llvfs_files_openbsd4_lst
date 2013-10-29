@@ -1,0 +1,5 @@
+$OpenBSD$
+--- indra/llvfs/files.openbsd4.lst.orig	Tue Jan  9 15:08:33 2007
++++ indra/llvfs/files.openbsd4.lst	Tue Jan  9 15:08:25 2007
+@@ -0,0 +1 @@
++llvfs/lldir_linux.cpp

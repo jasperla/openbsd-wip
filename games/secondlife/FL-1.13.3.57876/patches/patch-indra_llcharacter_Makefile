@@ -1,0 +1,26 @@
+$OpenBSD$
+--- indra/llcharacter/Makefile.orig	Sun Jan 28 19:10:31 2007
++++ indra/llcharacter/Makefile	Mon Jan 29 16:56:12 2007
+@@ -0,0 +1,22 @@
++#	$OpenBSD: Makefile,v 1.14 2005/11/24 20:49:23 deraadt Exp $
++
++LIB=	llcharacter
++
++SRCS=	llanimationstates.cpp llbvhloader.cpp llcharacter.cpp
++SRCS+=	lleditingmotion.cpp llgesture.cpp llhandmotion.cpp
++SRCS+=	llheadrotmotion.cpp lljoint.cpp lljointsolverrp3.cpp
++SRCS+=	llkeyframefallmotion.cpp llkeyframemotion.cpp llkeyframemotionparam.cpp
++SRCS+=	llkeyframestandmotion.cpp llkeyframewalkmotion.cpp llmotioncontroller.cpp
++SRCS+=	llmotion.cpp llmultigesture.cpp llpose.cpp llstatemachine.cpp
++SRCS+=	lltargetingmotion.cpp llvisualparam.cpp
++
++DEBUGLIBS=no
++NOPROFILE=yes
++NOPIC=yes
++
++install:
++	@echo -n
++
++.include <bsd.lib.mk>
++.include <../Makefile.llinc>
++

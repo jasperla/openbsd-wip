@@ -1,0 +1,11 @@
+$OpenBSD$
+--- testcases/badcode/badcode.c.orig	Sat Mar  2 15:03:39 2013
++++ testcases/badcode/badcode.c	Sat Mar  2 15:03:49 2013
+@@ -24,7 +24,6 @@ This code is based on crashme.c
+ */
+ 
+ #include <sys/cdefs.h>
+-__FBSDID("$FreeBSD: projects/stress2/testcases/badcode/badcode.c 187224 2009-01-14 16:03:10Z pho $");
+ 
+ #include <sys/param.h>
+ #include <sys/types.h>

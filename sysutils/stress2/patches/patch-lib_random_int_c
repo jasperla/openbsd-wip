@@ -1,0 +1,11 @@
+$OpenBSD$
+--- lib/random_int.c.orig	Sat Mar  2 14:47:22 2013
++++ lib/random_int.c	Sat Mar  2 14:47:34 2013
+@@ -26,7 +26,6 @@
+  */
+ 
+ #include <sys/cdefs.h>
+-__FBSDID("$FreeBSD: projects/stress2/lib/random_int.c 187224 2009-01-14 16:03:10Z pho $");
+ 
+ #include <stdlib.h>
+ 

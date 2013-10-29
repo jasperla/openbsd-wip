@@ -12,9 +12,6 @@ HOMEPAGE =		http://www.openwall.com/john/
 
 # GPL & Public Domain
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += c crypto glib-2.0 gobject-2.0 gsf-1 iconv intl m nspr4
 WANTLIB += nss3 pcap plc4 plds4 pthread smime3 softokn3 ssl ssl3
@@ -36,7 +33,7 @@ MAKE_FLAGS =		CC="${CC}" \
 			LDFLAGS="${LDFLAGS} -lssl -lcrypto -lm -lz `pkg-config --libs nss`" \
 			HAVE_NSS="-DHAVE_NSS"
 
-REGRESS_TARGET =	check
+TEST_TARGET =		check
 
 .if ${MACHINE_ARCH} == "i386"
 ALL_TARGET=		openbsd-x86-mmx

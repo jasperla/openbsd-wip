@@ -1,0 +1,16 @@
+@comment $OpenBSD$
+@newgroup _trinity:717
+@newuser _trinity:717:_trinity:daemon:Trinity user:/nonexistent:/sbin/nologin
+@bin bin/trinity
+share/doc/trinity/
+share/doc/trinity/COPYING
+share/doc/trinity/Documentation/
+share/doc/trinity/Documentation/HACKING.txt
+share/doc/trinity/Documentation/Known-bugs.txt
+share/doc/trinity/Documentation/TODO
+share/doc/trinity/README
+share/trinity/
+share/trinity/test-all-syscalls-parallel.sh
+share/trinity/test-all-syscalls-sequentially.sh
+share/trinity/test-random.sh
+share/trinity/test-vm.sh

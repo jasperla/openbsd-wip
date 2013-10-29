@@ -1,0 +1,129 @@
+$OpenBSD$
+--- sockaddr.c.orig	Tue Jan 22 20:43:08 2013
++++ sockaddr.c	Sat Mar  2 22:27:39 2013
+@@ -2,6 +2,8 @@
+ #include <sys/socket.h>
+ #include <sys/un.h>
+ #include <netinet/in.h>
++#include <sys/param.h>
++#ifdef __LINUX__
+ #include <linux/x25.h>
+ #include <linux/ax25.h>
+ #include <linux/ipx.h>
+@@ -22,10 +24,16 @@
+ #include <linux/if_alg.h>
+ #include <linux/phonet.h>
+ #include <linux/netlink.h>
++#endif
++#ifdef __OpenBSD__
++#include <string.h>
++#endif
+ #include <stdlib.h>
+ #include "trinity.h"
+ #include "sanitise.h"
++#ifdef __LINUX__
+ #include "compat.h"
++#endif
+ #include "config.h"
+ 
+ static in_addr_t random_ipv4_address(void)
+@@ -92,7 +100,7 @@ static void gen_unixsock(unsigned long *addr, unsigned
+ 
+ 	unixsock->sun_family = PF_UNIX;
+ 	len = rand() % 20;
+-	memset(&page_rand[len], 0, 1);
++	/* FIXME memset(&page_rand[len], 0, 1); */
+ 	strncpy(unixsock->sun_path, page_rand, len);
+ 	*addr = (unsigned long) unixsock;
+ 	*addrlen = sizeof(struct sockaddr_un);
+@@ -113,6 +121,7 @@ static void gen_ipv4(unsigned long *addr, unsigned lon
+ 	*addrlen = sizeof(struct sockaddr_in);
+ }
+ 
++#ifdef __LINUX__
+ static void gen_ax25(unsigned long *addr, unsigned long *addrlen)
+ {
+ 	struct sockaddr_ax25 *ax25;
+@@ -147,6 +156,7 @@ static void gen_ipx(unsigned long *addr, unsigned long
+ 	*addr = (unsigned long) ipx;
+ 	*addrlen = sizeof(struct sockaddr_ipx);
+ }
++#endif
+ 
+ static void gen_ipv6(unsigned long *addr, unsigned long *addrlen)
+ {
+@@ -155,7 +165,7 @@ static void gen_ipv6(unsigned long *addr, unsigned lon
+ 	ipv6 = malloc(sizeof(struct sockaddr_in6));
+ 	if (ipv6 == NULL)
+ 		return;
+-
++#ifdef __LINUX__
+ 	ipv6->sin6_family = PF_INET6;
+ 	ipv6->sin6_addr.s6_addr32[0] = 0;
+ 	ipv6->sin6_addr.s6_addr32[1] = 0;
+@@ -164,8 +174,18 @@ static void gen_ipv6(unsigned long *addr, unsigned lon
+ 	ipv6->sin6_port = rand() % 65535;
+ 	*addr = (unsigned long) ipv6;
+ 	*addrlen = sizeof(struct sockaddr_in6);
++#endif
++	ipv6->sin6_family = PF_INET6;
++	ipv6->sin6_addr.s6_addr[0] = 0;
++	ipv6->sin6_addr.s6_addr[1] = 0;
++	ipv6->sin6_addr.s6_addr[2] = 0;
++	ipv6->sin6_addr.s6_addr[3] = htonl(1);
++	ipv6->sin6_port = rand() % 65535;
++	*addr = (unsigned long) ipv6;
++	*addrlen = sizeof(struct sockaddr_in6);
+ }
+ 
++#ifdef __LINUX__
+ static void gen_appletalk(unsigned long *addr, unsigned long *addrlen)
+ {
+ 	struct sockaddr_at *atalk;
+@@ -209,7 +229,7 @@ static void gen_x25(unsigned long *addr, unsigned long
+ 
+ 	x25->sx25_family = PF_X25;
+ 	len = rand() % 15;
+-	memset(&page_rand[len], 0, 1);
++	/* FIXME memset(&page_rand[len], 0, 1); */
+ 	strncpy(x25->sx25_addr.x25_addr, page_rand, len);
+ 	*addr = (unsigned long) x25;
+ 	*addrlen = sizeof(struct sockaddr_x25);
+@@ -631,6 +651,7 @@ static void gen_nfc(unsigned long *addr, unsigned long
+ 	*addr = (unsigned long) nfc;
+ 	*addrlen = sizeof(struct sockaddr_nfc);
+ }
++#endif
+ 
+ void generate_sockaddr(unsigned long *addr, unsigned long *addrlen, int pf)
+ {
+@@ -656,6 +677,7 @@ void generate_sockaddr(unsigned long *addr, unsigned l
+ 		gen_ipv4(addr, addrlen);
+ 		break;
+ 
++#ifdef  __LINUX__
+ 	case PF_AX25:
+ 		gen_ax25(addr, addrlen);
+ 		break;
+@@ -683,11 +705,13 @@ void generate_sockaddr(unsigned long *addr, unsigned l
+ 	case PF_X25:
+ 		gen_x25(addr, addrlen);
+ 		break;
++#endif
+ 
+ 	case PF_INET6:
+ 		gen_ipv6(addr, addrlen);
+ 		break;
+ 
++#ifdef  __LINUX__
+ 	case PF_ROSE:
+ 		gen_rose(addr, addrlen);
+ 		break;
+@@ -794,6 +818,7 @@ void generate_sockaddr(unsigned long *addr, unsigned l
+ 	case PF_NFC:
+ 		gen_nfc(addr, addrlen);
+ 		break;
++#endif
+ 
+ 	default:
+ 		break;

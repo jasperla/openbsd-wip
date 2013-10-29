@@ -9,16 +9,13 @@ MAINTAINER=	Andrew Fresh <andrew@afresh1.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 HOMEPAGE=		http://www.escape.de/~tolot/mutt/
 MASTER_SITES=		${HOMEPAGE}/t-prot/downloads/
 
 CONFIGURE_STYLE=	none
 NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_TEST=		Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/t-prot ${PREFIX}/bin

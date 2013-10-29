@@ -1,4 +1,11 @@
-# $Id: UPDATE,v 1.2 2012/11/11 10:29:47 dhn Exp $
+# $Id: UPDATE,v 1.4 2013/08/28 11:32:52 dhn Exp $
+
+2013-08-28 Dennis Herrmann <dhn@FreeBSD.org>
+
+ * Update to 0.9
+ * Update/Remove some patches
+   - Update: patches/patch-vt_c
+   - Remove: patches/patch-dvtm_c
 
 2012-11-11 Dennis Herrmann <dhn@FreeBSD.org>
 

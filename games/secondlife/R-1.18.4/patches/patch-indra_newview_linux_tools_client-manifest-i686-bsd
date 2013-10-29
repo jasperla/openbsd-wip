@@ -1,0 +1,36 @@
+$OpenBSD$
+--- indra/newview/linux_tools/client-manifest-i686-bsd.orig	Sat Mar 24 22:20:27 2007
++++ indra/newview/linux_tools/client-manifest-i686-bsd	Sat Mar 24 22:20:27 2007
+@@ -0,0 +1,32 @@
++# This file defines which files to include in the linux tarball.
++# Each line is a comma-separated definition of source,destination
++# pairs.  The packaging script will read all source files 
++# from indra/newview/<source>, and place them in the package
++# located at <Package_dir>/<dest>.
++#
++# If no comma is used, the destination name is assumed to be
++# the same as the source name.
++#
++# A 'file' ending with a '/' defines an empty directory to create.
++# A '*' wildcard in the source will recursively copy everything
++# in that directory (except CVS directories)
++
++featuretable.txt
++licenses-linux.txt,licenses.txt
++releasenotes.txt
++lsl_guide.html
++gpu_table.txt
++res/ll_icon.ico,secondlife.ico
++linux_tools/client-readme.txt,README-linux.txt
++linux_tools/wrapper.sh,secondlife
++secondlife-i686-bin-stripped,bin/do-not-directly-run-secondlife-bin
++../linux_crash_logger/linux-crash-logger-i686-bin-stripped,linux-crash-logger.bin
++linux_tools/unicode.ttf,unicode.ttf
++linux_tools/launch_url.sh,launch_url.sh
++app_settings/*
++character/*
++fonts/*
++help/*
++skins/*
++res-sdl/*
++../../scripts/messages/message_template.msg,app_settings/message_template.msg

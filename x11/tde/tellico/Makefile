@@ -14,12 +14,12 @@ MASTER_SITES =		${MASTER_SITE_TDE:=applications/}
 #BUILD_DEPENDS =	???
 #RUN_DEPENDS =		???
 #LIB_DEPENDS =		???
-#REGRESS_DEPENDS =	???
+#TEST_DEPENDS =		???
 
 #MAKE_FLAGS =		???
 #MAKE_ENV =		???
 #FAKE_FLAGS =		???
-#REGRESS_FLAGS =	???
+#TEST_FLAGS =		???
 
 #USE_GMAKE =		Yes
 #USE_GROFF =		Yes
@@ -30,7 +30,7 @@ CONFIGURE_STYLE =	autoconf
 #CONFIGURE_ENV =	???
 
 #NO_BUILD =		Yes
-#NO_REGRESS =		Yes
+#NO_TEST =		Yes
 
 #CFLAGS =		???
 #LDFLAGS =		???
@@ -43,6 +43,6 @@ WRKDIST =		${WRKDIR}/applications/tellico
 
 #ALL_TARGET =		???
 #INSTALL_TARGET =	???
-#REGRESS_TARGET =	???
+#TEST_TARGET =		???
 
 .include <bsd.port.mk>

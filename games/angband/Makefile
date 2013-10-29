@@ -18,8 +18,6 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # The angband license contains the line "other copyrights may also apply"
 PERMIT_PACKAGE_CDROM=	unclear license
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= unclear license
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m ncursesw
 
@@ -31,7 +29,7 @@ CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS +=	--with-setgid=games \
 			--bindir=${PREFIX}/bin
 
-CONFIGURE_ENV=          TRUEPREFIX=${TRUEPREFIX}
+CONFIGURE_ENV=          TRUEPREFIX="${TRUEPREFIX}"
 CONFIGURE_ENV +=	LDFLAGS=-L${LOCALBASE}/lib
 USE_GMAKE =		Yes
 
@@ -59,7 +57,7 @@ CONFIGURE_ARGS +=	--disable-sdl-mixer	# defaults to ON
 PKG_ARGS +=		-Dsdl=0
 .endif
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 pre-configure:
 	@perl -pi -e "s,/usr/share,${TRUEPREFIX}/share," \

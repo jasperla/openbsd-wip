@@ -2,7 +2,7 @@
 
 COMMENT =	adds support for https to p5-libwww
 
-DISTNAME =	LWP-Protocol-https-6.03
+DISTNAME =	LWP-Protocol-https-6.04
 CATEGORIES =	www net security
 CPAN_AUTHOR =	GAAS
 
@@ -10,9 +10,6 @@ MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =	cpan
 

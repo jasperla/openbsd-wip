@@ -1,0 +1,16 @@
+$OpenBSD$
+--- syscalls/futex.c.orig	Sat Mar  2 18:46:11 2013
++++ syscalls/futex.c	Sat Mar  2 18:46:36 2013
+@@ -2,6 +2,7 @@
+  * SYSCALL_DEFINE6(futex, u32 __user *, uaddr, int, op, u32, val,
+ 	 struct timespec __user *, utime, u32 __user *, uaddr2, u32, val3)
+  */
++#ifdef __LINUX__
+ #include <linux/futex.h>
+ 
+ #include "trinity.h"
+@@ -37,3 +38,4 @@ struct syscall syscall_futex = {
+ 	.rettype = RET_FD,		// FIXME: Needs to mutate depending on 'op' value
+ 	.flags = NEED_ALARM,
+ };
++#endif

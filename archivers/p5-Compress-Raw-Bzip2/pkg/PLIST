@@ -1,0 +1,13 @@
+@comment $OpenBSD$
+%%SHARED%%
+${P5ARCH}/
+${P5ARCH}/Compress/
+${P5ARCH}/Compress/Raw/
+${P5ARCH}/Compress/Raw/Bzip2.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Compress/
+${P5ARCH}/auto/Compress/Raw/
+${P5ARCH}/auto/Compress/Raw/Bzip2/
+${P5ARCH}/auto/Compress/Raw/Bzip2/Bzip2.bs
+${P5ARCH}/auto/Compress/Raw/Bzip2/autosplit.ix
+@man man/man3p/Compress::Raw::Bzip2.3p

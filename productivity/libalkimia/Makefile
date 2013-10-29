@@ -9,9 +9,6 @@ SHARED_LIBS =	alkimia			0.0 # 4.3
 
 # LGPL
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		lib/qt4/QtDBus c gmp m stdc++
 
@@ -22,18 +19,18 @@ MODULES =		x11/kde4
 MODKDE4_USE =
 
 BUILD_DEPENDS =		devel/doxygen \
-			x11/kde4/libs
+			${MODKDE4_DEP_DIR}/libs
 LIB_DEPENDS =		devel/gmp
 
-#REGRESS_DEPENDS =	???
+#TEST_DEPENDS =		???
 
 #MAKE_FLAGS =		???
 #MAKE_ENV =		???
 #FAKE_FLAGS =		???
-#REGRESS_FLAGS =	???
+#TEST_FLAGS =		???
 
-#REGRESS_IS_INTERACTIVE =	Yes
-#NO_REGRESS =		Yes
-#REGRESS_TARGET =	???
+#TEST_IS_INTERACTIVE =	Yes
+#NO_TEST =		Yes
+#TEST_TARGET =		???
 
 .include <bsd.port.mk>

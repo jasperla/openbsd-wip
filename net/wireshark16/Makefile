@@ -3,7 +3,7 @@
 COMMENT-main=	graphical network protocol analyzer
 COMMENT-text=	network protocol analyzer
 
-WVER=		1.6.12
+WVER=		1.6.16
 DISTNAME=	wireshark-${WVER}
 PKGNAME-main=	wireshark16-${WVER}
 PKGNAME-text=	tshark16-${WVER}
@@ -28,9 +28,6 @@ USE_GROFF=	Yes
 # Mostly GPLv2 or later. Some files are less restrictive.
 # tools/pidl is GPLv3 or later. See COPYING.
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c glib-2.0 m pcap pthread z
 
@@ -65,7 +62,6 @@ LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		audio/portaudio-svn \
 		x11/gtk+2 \
 
-USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+= --tag=disable-static
 
 CONFIGURE_STYLE= gnu
@@ -92,10 +88,9 @@ WANTLIB-main +=		gtk-3
 LIB_DEPENDS-main +=		x11/gtk+3
 .endif
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 post-extract:
-	${INSTALL} -m 555 ${FILESDIR}/krb5-config ${WRKDIR}/bin
 .if !${FLAVOR:L:Mno_python}
 	ln -s /usr/local/bin/python${MODPY_VERSION}-config ${WRKDIR}/bin/python-config
 .endif

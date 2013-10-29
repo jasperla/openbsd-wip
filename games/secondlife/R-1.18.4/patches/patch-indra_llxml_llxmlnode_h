@@ -1,0 +1,12 @@
+$OpenBSD$
+--- indra/llxml/llxmlnode.h.orig	Wed Nov  7 20:18:07 2007
++++ indra/llxml/llxmlnode.h	Mon Nov 12 08:12:59 2007
+@@ -33,7 +33,7 @@
+ #define LL_LLXMLNODE_H
+ 
+ #define XML_STATIC
+-#ifdef LL_STANDALONE
++#if defined(LL_STANDALONE) || defined(__OpenBSD__)
+ #include <expat.h>
+ #else
+ #include "expat/expat.h"

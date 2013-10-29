@@ -2,37 +2,35 @@
 
 COMMENT =		LOLCODE interpreter
 
-V =			0.9.2
-REV =			c95d6f7
-DISTNAME =		justinmeza-lci-v${V}-0-g${REV}
+V =			0.10.4
+REV =			e309811
+DISTNAME =		v$V
 PKGNAME =		lci-${V}
 
 CATEGORIES =		lang
 
-HOMEPAGE =		http://www.icanhaslolcode.org/
+HOMEPAGE =		http://lolcode.org/
 
 MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c m
 
-MASTER_SITES =		http://github.com/justinmeza/lci/tarball/v${V}/
+MASTER_SITES =		https://github.com/justinmeza/lci/tarball/v${V}/
+DIST_SUBDIR =		lci
 
 MODULES =		devel/cmake \
 			lang/python
 MODPY_RUNDEP =		No
 MODPY_BUILDDEP =	No
-REGRESS_DEPENDS =	devel/cmake \
+TEST_DEPENDS =		devel/cmake \
 			lang/python/${MODPY_VERSION}
 
 WRKDIST =		${WRKDIR}/justinmeza-lci-${REV}
 
-pre-regress:
-	ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
+post-extract:
+	perl -pi -e 's,python,${MODPY_BIN},' ${WRKSRC}/cmake/AddLolTest.cmake
 
 .include <bsd.port.mk>

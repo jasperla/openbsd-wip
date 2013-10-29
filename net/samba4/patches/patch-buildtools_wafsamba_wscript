@@ -1,0 +1,16 @@
+$OpenBSD$
+Add a hack to force addition of -I/usr/include before any other include path discovered.
+--- buildtools/wafsamba/wscript.orig	Tue May 14 21:45:22 2013
++++ buildtools/wafsamba/wscript	Tue May 14 21:51:01 2013
+@@ -83,6 +83,11 @@ def set_options(opt):
+                    action='store', dest='gettext_location', default='/usr/local',
+                    match = ['Checking for library intl', 'Checking for header libintl.h'])
+ 
++    opt.add_option('--with-dummy',
++                   help='dummy option to inject /usr/include',
++                   action='store', dest='libc_location', default='/usr',
++                   match = ['Checking for header sys/types.h'])
++
+     gr = opt.option_group('developer options')
+ 
+     gr.add_option('-C',

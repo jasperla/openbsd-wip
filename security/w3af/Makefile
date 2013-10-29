@@ -26,9 +26,6 @@ MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
 # GPL v2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 # "make port-lib-depends-check" can help
 #WANTLIB =		???
@@ -69,12 +66,12 @@ RUN_DEPENDS =		devel/py-SOAPpy \
 			x11/py-gtk2 \
 
 #LIB_DEPENDS =		???
-#REGRESS_DEPENDS =	???
+#TEST_DEPENDS =		???
 
 #MAKE_FLAGS =		???
 #MAKE_ENV =		???
 #FAKE_FLAGS =		???
-#REGRESS_FLAGS =	???
+#TEST_FLAGS =		???
 
 # build/configuration variables
 #
@@ -109,8 +106,8 @@ RUN_DEPENDS =		devel/py-SOAPpy \
 
 # Is the build automagic or is it interactive
 #
-#IS_INTERACTIVE =		Yes
-#REGRESS_IS_INTERACTIVE =	Yes
+#IS_INTERACTIVE =	Yes
+#TEST_IS_INTERACTIVE =	Yes
 
 # Assume you have one multiple choice flavor: 1 2 3 and switches a b.
 # You would write
@@ -142,7 +139,7 @@ RUN_DEPENDS =		devel/py-SOAPpy \
 # The time gained is not worth it.
 #
 #NO_BUILD =		Yes
-#NO_REGRESS =		Yes
+#NO_TEST =		Yes
 
 # Overrides for default values
 #
@@ -157,6 +154,6 @@ RUN_DEPENDS =		devel/py-SOAPpy \
 
 #ALL_TARGET =		???
 #INSTALL_TARGET =	???
-#REGRESS_TARGET =	???
+#TEST_TARGET =		???
 
 .include <bsd.port.mk>

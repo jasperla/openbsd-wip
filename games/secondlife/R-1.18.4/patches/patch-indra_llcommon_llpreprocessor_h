@@ -1,0 +1,62 @@
+$OpenBSD$
+--- indra/llcommon/llpreprocessor.h.orig	Wed Nov  7 20:18:06 2007
++++ indra/llcommon/llpreprocessor.h	Sun Dec  2 23:15:41 2007
+@@ -38,12 +38,23 @@
+ #define __ENABLE_WSTRING
+ #include <endian.h>
+ #endif	//	LL_LINUX
++#ifdef __OpenBSD__
++#define __ENABLE_WSTRING
++#include <sys/types.h>
++#include <sys/endian.h>
++# if BYTE_ORDER == LITTLE_ENDIAN
++#  define LL_LITTLE_ENDIAN 1
++# else
++#  define LL_BIG_ENDIAN 1
++# endif
++#else
+ 
+ #if (defined(LL_WINDOWS) || (defined(LL_LINUX) && (__BYTE_ORDER == __LITTLE_ENDIAN)) || (defined(LL_DARWIN) && defined(__LITTLE_ENDIAN__)))
+ #define LL_LITTLE_ENDIAN 1
+ #else
+ #define LL_BIG_ENDIAN 1
+ #endif
++#endif /* __OpenBSD__ */
+ 
+ // Per-compiler switches
+ #ifdef __GNUC__
+@@ -52,6 +63,7 @@
+ #define LL_FORCE_INLINE __forceinline
+ #endif
+ 
++
+ // Per-OS feature switches.
+ 
+ #if LL_DARWIN
+@@ -60,11 +72,16 @@
+ #elif LL_WINDOWS
+ 	#define LL_QUICKTIME_ENABLED	1
+ 	#define LL_LIBXUL_ENABLED		1
+-#elif LL_LINUX
++#elif LL_LINUX || defined(__OpenBSD__)
+ 	#define LL_QUICKTIME_ENABLED	0
+         #ifndef LL_LIBXUL_ENABLED
+                 #define LL_LIBXUL_ENABLED		1
+         #endif // def LL_LIBXUL_ENABLED
++#elif defined(__OpenBSD__)
++	#define LL_QUICKTIME_ENABLED	0
++        #ifndef LL_LIBXUL_ENABLED
++                #define LL_LIBXUL_ENABLED		1
++        #endif // def LL_LIBXUL_ENABLED
+ #elif LL_SOLARIS
+ 	#define LL_QUICKTIME_ENABLED    0
+ 	#ifndef LL_LIBXUL_ENABLED
+@@ -94,7 +111,7 @@
+ #endif
+ 
+ // Deal with minor differences on Unixy OSes.
+-#if LL_DARWIN || LL_LINUX
++#if LL_DARWIN || LL_LINUX || __OpenBSD__
+ 	// Different name, same functionality.
+ 	#define stricmp strcasecmp
+ 	#define strnicmp strncasecmp

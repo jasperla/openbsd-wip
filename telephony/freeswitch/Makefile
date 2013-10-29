@@ -16,9 +16,6 @@ MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # MPL
 PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
 
 MODULES =	lang/python
 WANTLIB =	c crypto m ncurses pthread ssl stdc++
@@ -44,7 +41,7 @@ CONFIGURE_ARGS =	--with-modinstdir=${LOCALBASE}/lib/freeswitch \
 # The 'erl -version' test in configure needs HOME to be set.
 CONFIGURE_ENV +=	HOME=${PORTHOME}
 
-#NO_REGRESS=		Yes
+#NO_TEST=		Yes
 #EXAMPLEDIR=		${PREFIX}/share/examples/asterisk
 #EXAMPLEFILES=		extensions.ael extensions.conf logger.conf modules.conf musiconhold.conf sip.conf voicemail.conf
 

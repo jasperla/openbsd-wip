@@ -1,0 +1,23 @@
+$OpenBSD$
+--- Makefile.orig	Tue Jan 22 20:43:08 2013
++++ Makefile	Sun Apr 28 18:10:41 2013
+@@ -8,7 +8,7 @@ CFLAGS = -Wall -W -g -O2 -I. -Wimplicit -D_FORTIFY_SOU
+ CFLAGS += -Wdeclaration-after-statement
+ CFLAGS += -Wformat=2
+ CFLAGS += -Winit-self
+-CFLAGS += -Wlogical-op
++#CFLAGS += -Wlogical-op
+ CFLAGS += -Wnested-externs
+ CFLAGS += -Wpacked
+ CFLAGS += -Wshadow
+@@ -87,8 +87,8 @@ tarball:
+ 	git archive --format=tar.gz --prefix=trinity-$(VERSION)/ HEAD > trinity-$(VERSION).tgz
+ 
+ install:
+-	install -d -m 755 $(INSTALL_PREFIX)/bin
+-	install trinity $(INSTALL_PREFIX)/bin
++	install -d -m 755 $(PREFIX)/bin
++	install trinity $(PREFIX)/bin
+ 
+ tags:
+ 	@ctags -R --exclude=tmp

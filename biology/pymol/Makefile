@@ -13,7 +13,6 @@ MAINTAINER=	Rafael Sadowski <rafael@sizeofvoid.org>
 # OSS (C) Schrodinger, LLC.
 PERMIT_PACKAGE_CDROM=	NO
 PERMIT_PACKAGE_FTP=	NO
-PERMIT_DISTFILES_CDROM=	NO
 PERMIT_DISTFILES_FTP=	NO
 
 # build tarball from svn-repo rev. 3946
@@ -23,7 +22,7 @@ EXTRACT_SUFX=	.tar.bz2
 WANTLIB= GL GLU glut png z freetype GLEW
 
 USE_GMAKE=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 VMEM_WARNING=	Yes
 
 BUILD_DEPENDS=	math/py-Numeric \

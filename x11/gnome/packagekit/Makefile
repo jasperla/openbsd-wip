@@ -5,15 +5,14 @@ COMMENT=		PackageKit GNOME Client Tools
 GNOME_PROJECT=		gnome-packagekit
 GNOME_VERSION=		3.2.1
 
+DIST_SUBDIR=		gnome
+
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://www.packagekit.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		devel/dconf \
 			devel/gettext \

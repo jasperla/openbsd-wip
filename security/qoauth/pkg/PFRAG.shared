@@ -1,2 +1,0 @@
-@comment $OpenBSD$
-@lib lib/libqoauth.so.${LIBqoauth_VERSION}

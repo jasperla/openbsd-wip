@@ -1,0 +1,12 @@
+$OpenBSD$
+--- lib/logging/CLogger.cpp.orig	Fri Jun 28 19:30:43 2013
++++ lib/logging/CLogger.cpp	Fri Jun 28 19:31:01 2013
+@@ -197,7 +197,7 @@ void CLogger::callTargets(const LogRecord & record) co
+ 	TLockGuard _(mx);
+ 	for(const CLogger * logger = this; logger != nullptr; logger = logger->parent)
+ 	{
+-		BOOST_FOREACH(auto & target, logger->targets)
++		for (auto & target : logger->targets)
+ 		{
+ 			target->write(record);
+ 		}

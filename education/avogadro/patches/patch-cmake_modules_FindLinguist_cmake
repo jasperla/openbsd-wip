@@ -1,0 +1,24 @@
+$OpenBSD$
+--- cmake/modules/FindLinguist.cmake.orig	Mon Sep  3 21:07:00 2012
++++ cmake/modules/FindLinguist.cmake	Thu Jan 10 01:22:58 2013
+@@ -80,7 +80,7 @@ MACRO (QT4_WRAP_TS outfiles)
+     SET(outfile ${CMAKE_CURRENT_BINARY_DIR}/${outfile}.qm)
+     ADD_CUSTOM_COMMAND(OUTPUT ${outfile}
+                        COMMAND ${QT_LRELEASE_EXECUTABLE}
+-                       ARGS -compress -removeidentical -silent ${it} -qm ${outfile}
++                       ARGS  ${it} -qm ${outfile}
+                        DEPENDS ${it}
+     )
+ 
+@@ -124,9 +124,9 @@ MACRO (QT4_WRAP_PO outfiles)
+                          COMMAND ${QT_LCONVERT_EXECUTABLE}
+                          ARGS -i ${it} -o ${tsfile}
+                          COMMAND ${QT_LUPDATE_EXECUTABLE}
+-                         ARGS ${CMAKE_CURRENT_SOURCE_DIR} -silent -noobsolete -ts ${tsfile}
++                         ARGS ${CMAKE_CURRENT_SOURCE_DIR} -ts ${tsfile}
+                          COMMAND ${QT_LRELEASE_EXECUTABLE}
+-                         ARGS -compress -removeidentical -silent ${tsfile} -qm ${qmfile}
++                         ARGS  ${tsfile} -qm ${qmfile}
+                          DEPENDS ${it}
+                          )
+ 

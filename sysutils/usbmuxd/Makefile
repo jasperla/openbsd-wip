@@ -14,9 +14,6 @@ HOMEPAGE =		http://marcansoft.com/blog/iphonelinux/usbmuxd/
 
 # GPLv2/3, library is LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c plist pthread usb-1.0
 
@@ -29,6 +26,6 @@ LIB_DEPENDS =		devel/libusb1 \
 
 CONFIGURE_ENV =		CFLAGS="${CFLAGS} -pthread"
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

@@ -1,0 +1,48 @@
+$OpenBSD$
+--- indra/llcommon/llstring.h.orig	Thu Mar 22 01:34:55 2007
++++ indra/llcommon/llstring.h	Sat Mar 24 22:20:12 2007
+@@ -38,7 +38,7 @@
+ #include <stdlib.h>
+ #include <errno.h>
+ #include <math.h>
+-#if LL_LINUX
++#if LL_LINUX || defined(__OpenBSD__)
+ #include <wctype.h>
+ #include <wchar.h>
+ #endif
+@@ -52,7 +52,7 @@ class LLUUID;
+ class LLColor4;
+ class LLColor4U;
+ 
+-#if (LL_DARWIN || (LL_LINUX && __GNUC__ > 2))
++#if (LL_DARWIN || (LL_LINUX && __GNUC__ > 2)) || defined(__OpenBSD__)
+ // Template specialization of char_traits for U16s. Only necessary on Mac for now (exists on Windows, unused/broken on Linux/gcc2.95)
+ namespace std
+ {
+@@ -203,7 +203,7 @@ public:
+ 	LLStringBase(const T* s, size_type n);
+ 	LLStringBase(const T* s, size_type pos, size_type n );
+ 	
+-#if LL_LINUX
++#if LL_LINUX || defined(__OpenBSD__)
+ 	void clear() { assign(null); }
+ 	
+ 	LLStringBase<T>& assign(const T* s);
+@@ -692,7 +692,7 @@ LLStringBase<T>::LLStringBase(const T* s
+ 	}
+ }
+ 
+-#if LL_LINUX
++#if LL_LINUX || defined(__OpenBSD__)
+ template<class T> 
+ LLStringBase<T>& LLStringBase<T>::assign(const T* s)
+ {
+@@ -1066,7 +1066,7 @@ BOOL LLStringBase<T>::isHead( const std:
+ template<class T> 
+ BOOL LLStringBase<T>::read(std::basic_string<T>& string, const char* filename)	 /*Flawfinder: ignore*/
+ {
+-#ifdef LL_LINUX
++#if defined(LL_LINUX)
+     printf("STUBBED: LLStringBase<T>::read at %s:%d\n", __FILE__, __LINE__);
+ #else
+ 	llifstream ifs(filename, llifstream::binary);

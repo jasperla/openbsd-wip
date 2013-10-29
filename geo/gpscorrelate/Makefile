@@ -6,15 +6,12 @@ DISTNAME =		gpscorrelate-1.6.1
 
 CATEGORIES =		geo x11
 
-HOMEPAGE =		http://www.freefoote.com/linux_gpscorr.html
+HOMEPAGE =		http://www.freefoote.com/linux/gpscorrelate
 
 MAINTAINER =		Kirill Bychkov <yason@linklevel.net>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo exiv2 expat fontconfig
@@ -43,7 +40,7 @@ RUN_DEPENDS = 		devel/desktop-file-utils
 USE_GMAKE =		Yes
 FAKE_FLAGS += 		mandir="${PREFIX}/man"
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications

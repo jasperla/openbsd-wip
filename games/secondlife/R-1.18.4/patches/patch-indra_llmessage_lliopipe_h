@@ -1,0 +1,12 @@
+$OpenBSD$
+--- indra/llmessage/lliopipe.h.orig	Wed Nov  7 20:18:06 2007
++++ indra/llmessage/lliopipe.h	Mon Nov 12 02:11:33 2007
+@@ -36,7 +36,7 @@
+ 
+ #include <boost/intrusive_ptr.hpp>
+ #include <boost/shared_ptr.hpp>
+-#include "apr-1/apr_poll.h"
++#include "apr-1-mt/apr_poll.h"
+ 
+ #include "llsd.h"
+ 

@@ -1,0 +1,24 @@
+$OpenBSD$
+--- indra/llcommon/linden_common.h.orig	Wed Nov  7 20:18:06 2007
++++ indra/llcommon/linden_common.h	Sun Dec  2 20:03:56 2007
+@@ -33,6 +33,7 @@
+ #define LL_LINDEN_COMMON_H
+ 
+ #include "llpreprocessor.h"
++#include <stdio.h>
+ 
+ #include <cstring>
+ #include <cfloat>
+@@ -59,6 +60,12 @@
+ #ifdef LL_WINDOWS
+ #pragma warning (3 : 4702) // we like level 3, not 4
+ #endif	//	LL_WINDOWS
++
++#if defined(__OpenBSD__)
++#include <sys/types.h>
++#include <sys/param.h>
++#define MAX_PATH PATH_MAX
++#endif
+ 
+ // Linden only libs in alpha-order other than stdtypes.h
+ #include "stdtypes.h"

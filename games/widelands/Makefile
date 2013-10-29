@@ -15,12 +15,9 @@ MASTER_SITES =	https://launchpad.net/widelands/build${V}/build-${V}/+download/
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
 # GPLv2+
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
 
-BUILD_DEPENDS =	devel/doxygen
+BUILD_DEPENDS =	devel/boost
 
 WANTLIB +=	GL GLEW SDL SDL_gfx SDL_image SDL_mixer SDL_net SDL_ttf
 WANTLIB +=	c m png pthread stdc++ z execinfo ${MODLUA_WANTLIB}
@@ -49,6 +46,6 @@ CONFIGURE_ENV =	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include \
 		LDFLAGS="${LDFLAGS} -lexecinfo -lintl -liconv \
 			-L${LOCALBASE}/lib"
 
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

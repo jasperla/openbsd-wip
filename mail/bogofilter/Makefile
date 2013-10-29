@@ -11,10 +11,7 @@ HOMEPAGE =	http://bogofilter.sourceforge.net/
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=bogofilter/}
 
 # GPLv2/GPLv3
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
 
 WANTLIB =		c m
 MODULES =		converters/libiconv

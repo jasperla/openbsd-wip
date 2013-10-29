@@ -1,0 +1,19 @@
+Text::FIGlet reproduces its input using large characters made up
+of other characters; usually ASCII, but not necessarily. The output
+is similar to that of many banner programs--although it is not
+oriented sideways--and reminiscent of the sort of signatures many
+people like to put at the end of e-mail and UseNet messages.
+
+Text::FIGlet can print in a variety of fonts, both left-to-right
+and right-to-left, with adjacent characters kerned and smushed
+together in various ways. FIGlet fonts are stored in separate files,
+which can be identified by the suffix .flf. Most FIGlet font files
+will be stored in FIGlet's default font directory /usr/games/lib/figlet.
+Support for TOIlet fonts *.tlf, which are typically in the same
+location, has also been added.
+
+Text::FIGlet can also use control files, which tell it to map input
+characters to others, similar to the Unix tr command. Control files
+can be identified by the suffix .flc. Most control files will be
+stored with the system fonts, as some fonts use control files to
+provide access to foreign character sets.

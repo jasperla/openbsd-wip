@@ -2,34 +2,37 @@
 
 COMMENT =		historical real-time strategy game
 
-PKGNAME =		0ad-0.0.12
+PKGNAME =		0ad-0.0.14
 
 CATEGORIES =		games
 
 HOMEPAGE =		http://play0ad.com/
 
+SHARED_LIBS +=  mozjs185-ps-debug         1.0 # 1.0
+SHARED_LIBS +=  mozjs185-ps-release       1.0 # 1.0
+
 # GPLv2+, MIT for libs, CC-BY-SA for data
-PERMIT_PACKAGE_CDROM =		Yes
-PERMIT_PACKAGE_FTP =		Yes
-PERMIT_DISTFILES_CDROM =	Yes
-PERMIT_DISTFILES_FTP =		Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		GL SDL X11 Xcursor boost_system c curl enet execinfo
-WANTLIB +=		jpeg m mozjs185 nvtt openal png pthread stdc++
-WANTLIB +=		vorbisfile xml2 z
+WANTLIB += GL SDL X11 Xcursor boost_filesystem c curl enet execinfo
+WANTLIB += jpeg m openal png pthread stdc++ vorbisfile xml2 z
 
-MASTER_SITES =		http://releases.wildfiregames.com/
+MASTER_SITES =		http://releases.wildfiregames.com/ \
+			${MASTER_SITE_SOURCEFORGE:=zero-ad/}
 DISTFILES =		${PKGNAME}-alpha-unix-build.tar.gz \
 			${PKGNAME}-alpha-unix-data.tar.gz
 
 BUILD_DEPENDS =		shells/bash
+
+# XXX for spidermonkey
+BUILD_DEPENDS +=	archivers/zip
 LIB_DEPENDS =		audio/libvorbis \
 			audio/openal \
 			devel/boost \
 			devel/libexecinfo \
 			devel/sdl \
-			devel/spidermonkey \
-			graphics/nvtt \
+			graphics/jpeg \
+			graphics/png \
 			net/curl \
 			net/enet \
 			textproc/libxml
@@ -37,15 +40,16 @@ LIB_DEPENDS =		audio/libvorbis \
 MAKE_FLAGS =		SILENT= \
 			CXX="${CXX}"
 
+PATCHORIG =		.orig.port
+
 USE_GMAKE =		Yes
-CONFIGURE_ARGS +=	--with-system-nvtt \
+CONFIGURE_ARGS +=	--without-nvtt \
 			--with-system-enet \
 			--datadir=${PREFIX}/share/0ad \
-			--with-system-mozjs185 \
 			--libdir=${PREFIX}/lib
 CONFIGURE_ENV =		MAKE=${MAKE_PROGRAM}
 
-# atlas (the level editor) requires threaded libxml
+# XXX atlas (the level editor) requires threaded libxml
 CONFIGURE_ARGS +=	--disable-atlas
 
 
@@ -54,30 +58,13 @@ WRKSRC =		${WRKDIST}/build/workspaces/gcc
 
 do-configure:
 	cd ${WRKDIST}/build/workspaces && \
-		${CONFIGURE_ENV} ./update-workspaces.sh ${CONFIGURE_ARGS}
-
-pre-build:
-	perl -pi -e 's#"js/#"js-1.8.5/#' \
-		${WRKDIST}/source/scriptinterface/ScriptTypes.h \
-		${WRKDIST}/source/scriptinterface/ScriptInterface.h \
-		${WRKDIST}/source/scriptinterface/AutoRooters.h \
-		${WRKDIST}/source/simulation2/system/InterfaceScripted.h \
-		${WRKDIST}/source/simulation2/scripting/MessageTypeConversions.cpp \
-		${WRKDIST}/source/scriptinterface/ScriptExtraHeaders.h \
-		${WRKDIST}/source/simulation2/serialization/StdDeserializer.cpp \
-		${WRKDIST}/source/simulation2/system/ParamNode.cpp \
-		${WRKDIST}/source/scriptinterface/ScriptStats.cpp \
-		${WRKDIST}/source/scriptinterface/ScriptVal.cpp \
-		${WRKDIST}/source/gui/scripting/GuiScriptConversions.cpp \
-		${WRKDIST}/source/gui/scripting/ScriptFunctions.cpp \
-		${WRKDIST}/source/scriptinterface/tests/test_ScriptConversions.h \
-		${WRKDIST}/source/scriptinterface/tests/test_ScriptVal.h
+		${SETENV} ${CONFIGURE_ENV} ./update-workspaces.sh ${CONFIGURE_ARGS}
 
 do-build:
-	cd ${WRKDIST}/libraries/fcollada/src && \
-		env -i ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS}
+	cd ${WRKDIST}/libraries/source/fcollada/src && \
+		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS}
 	cd ${WRKSRC} &&\
-		env -i ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
+		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
 			-f ${MAKE_FILE} ${ALL_TARGET}
 
 do-install:
@@ -85,8 +72,15 @@ do-install:
 	cp -R ${WRKDIST}/binaries/data/* ${PREFIX}/share/0ad
 	${INSTALL_DATA} ${WRKDIST}/binaries/system/lib* ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKDIST}/binaries/system/pyrogenesis ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKDIST}/build/resources/0ad.sh ${PREFIX}/bin/0ad
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKDIST}/build/resources/0ad.desktop \
+		${PREFIX}/share/applications/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKDIST}/build/resources/0ad.png \
+		${PREFIX}/share/pixmaps/
 
-do-regress:
+do-test:
 	cd ${WRKDIST}/binaries/system && ./test
 
 .include <bsd.port.mk>

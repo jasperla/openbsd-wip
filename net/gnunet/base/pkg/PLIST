@@ -1,12 +1,10 @@
 @comment $OpenBSD$
-%%SHARED%%
 @bin bin/gnunet-arm
 @bin bin/gnunet-ats
 @bin bin/gnunet-auto-share
 @bin bin/gnunet-config
 @bin bin/gnunet-core
 @bin bin/gnunet-directory
-@bin bin/gnunet-dns2gns
 @bin bin/gnunet-download
 bin/gnunet-download-manager.scm
 @bin bin/gnunet-ecc
@@ -14,6 +12,7 @@ bin/gnunet-download-manager.scm
 @bin bin/gnunet-gns
 bin/gnunet-gns-import.sh
 bin/gnunet-gns-proxy-setup-ca
+@bin bin/gnunet-mesh
 @bin bin/gnunet-namestore
 @bin bin/gnunet-nat-server
 @bin bin/gnunet-peerinfo
@@ -96,7 +95,6 @@ include/gnunet/gnunet_statistics_service.h
 include/gnunet/gnunet_stream_lib.h
 include/gnunet/gnunet_strings_lib.h
 include/gnunet/gnunet_testbed_service.h
-include/gnunet/gnunet_testing_lib-new.h
 include/gnunet/gnunet_testing_lib.h
 include/gnunet/gnunet_time_lib.h
 include/gnunet/gnunet_transport_plugin.h
@@ -112,6 +110,7 @@ lib/gnunet/libexec/
 @bin lib/gnunet/libexec/gnunet-daemon-hostlist
 @bin lib/gnunet/libexec/gnunet-daemon-pt
 @bin lib/gnunet/libexec/gnunet-daemon-topology
+@bin lib/gnunet/libexec/gnunet-dns2gns
 @bin lib/gnunet/libexec/gnunet-helper-fs-publish
 @bin lib/gnunet/libexec/gnunet-helper-testbed
 @bin lib/gnunet/libexec/gnunet-service-arm
@@ -135,111 +134,114 @@ lib/gnunet/libexec/
 @bin lib/gnunet/libexec/gnunet-service-transport
 @bin lib/gnunet/libexec/gnunet-service-vpn
 @bin lib/gnunet/libexec/mockup-service
-lib/gnunet/libgnunet_plugin_block_dht.a
 lib/gnunet/libgnunet_plugin_block_dht.la
-lib/gnunet/libgnunet_plugin_block_dns.a
+lib/gnunet/libgnunet_plugin_block_dht.so
 lib/gnunet/libgnunet_plugin_block_dns.la
-lib/gnunet/libgnunet_plugin_block_fs.a
+lib/gnunet/libgnunet_plugin_block_dns.so
 lib/gnunet/libgnunet_plugin_block_fs.la
-lib/gnunet/libgnunet_plugin_block_gns.a
+lib/gnunet/libgnunet_plugin_block_fs.so
 lib/gnunet/libgnunet_plugin_block_gns.la
-lib/gnunet/libgnunet_plugin_block_mesh.a
+lib/gnunet/libgnunet_plugin_block_gns.so
 lib/gnunet/libgnunet_plugin_block_mesh.la
-lib/gnunet/libgnunet_plugin_block_template.a
+lib/gnunet/libgnunet_plugin_block_mesh.so
+lib/gnunet/libgnunet_plugin_block_regex.la
+lib/gnunet/libgnunet_plugin_block_regex.so
 lib/gnunet/libgnunet_plugin_block_template.la
-lib/gnunet/libgnunet_plugin_block_test.a
+lib/gnunet/libgnunet_plugin_block_template.so
 lib/gnunet/libgnunet_plugin_block_test.la
-lib/gnunet/libgnunet_plugin_datacache_sqlite.a
+lib/gnunet/libgnunet_plugin_block_test.so
+lib/gnunet/libgnunet_plugin_datacache_heap.la
+lib/gnunet/libgnunet_plugin_datacache_heap.so
 lib/gnunet/libgnunet_plugin_datacache_sqlite.la
-lib/gnunet/libgnunet_plugin_datacache_template.a
+lib/gnunet/libgnunet_plugin_datacache_sqlite.so
 lib/gnunet/libgnunet_plugin_datacache_template.la
-lib/gnunet/libgnunet_plugin_datastore_sqlite.a
+lib/gnunet/libgnunet_plugin_datacache_template.so
+lib/gnunet/libgnunet_plugin_datastore_heap.la
+lib/gnunet/libgnunet_plugin_datastore_heap.so
 lib/gnunet/libgnunet_plugin_datastore_sqlite.la
-lib/gnunet/libgnunet_plugin_datastore_template.a
+lib/gnunet/libgnunet_plugin_datastore_sqlite.so
 lib/gnunet/libgnunet_plugin_datastore_template.la
-lib/gnunet/libgnunet_plugin_namestore_sqlite.a
+lib/gnunet/libgnunet_plugin_datastore_template.so
 lib/gnunet/libgnunet_plugin_namestore_sqlite.la
-lib/gnunet/libgnunet_plugin_test.a
+lib/gnunet/libgnunet_plugin_namestore_sqlite.so
 lib/gnunet/libgnunet_plugin_test.la
-lib/gnunet/libgnunet_plugin_transport_http_client.a
+lib/gnunet/libgnunet_plugin_test.so
 lib/gnunet/libgnunet_plugin_transport_http_client.la
-lib/gnunet/libgnunet_plugin_transport_https_client.a
+lib/gnunet/libgnunet_plugin_transport_http_client.so
 lib/gnunet/libgnunet_plugin_transport_https_client.la
-lib/gnunet/libgnunet_plugin_transport_tcp.a
+lib/gnunet/libgnunet_plugin_transport_https_client.so
 lib/gnunet/libgnunet_plugin_transport_tcp.la
-lib/gnunet/libgnunet_plugin_transport_template.a
+lib/gnunet/libgnunet_plugin_transport_tcp.so
 lib/gnunet/libgnunet_plugin_transport_template.la
-lib/gnunet/libgnunet_plugin_transport_udp.a
+lib/gnunet/libgnunet_plugin_transport_template.so
 lib/gnunet/libgnunet_plugin_transport_udp.la
-lib/gnunet/libgnunet_plugin_transport_unix.a
+lib/gnunet/libgnunet_plugin_transport_udp.so
 lib/gnunet/libgnunet_plugin_transport_unix.la
-lib/libgnunetarm.a
+lib/gnunet/libgnunet_plugin_transport_unix.so
 lib/libgnunetarm.la
-lib/libgnunetats.a
+@lib lib/libgnunetarm.so.${LIBgnunetarm_VERSION}
 lib/libgnunetats.la
-lib/libgnunetblock.a
+@lib lib/libgnunetats.so.${LIBgnunetats_VERSION}
 lib/libgnunetblock.la
-lib/libgnunetcore.a
+@lib lib/libgnunetblock.so.${LIBgnunetblock_VERSION}
 lib/libgnunetcore.la
-lib/libgnunetdatacache.a
+@lib lib/libgnunetcore.so.${LIBgnunetcore_VERSION}
 lib/libgnunetdatacache.la
-lib/libgnunetdatastore.a
+@lib lib/libgnunetdatacache.so.${LIBgnunetdatacache_VERSION}
 lib/libgnunetdatastore.la
-lib/libgnunetdht.a
+@lib lib/libgnunetdatastore.so.${LIBgnunetdatastore_VERSION}
 lib/libgnunetdht.la
-lib/libgnunetdns.a
+@lib lib/libgnunetdht.so.${LIBgnunetdht_VERSION}
 lib/libgnunetdns.la
-lib/libgnunetdnsparser.a
+@lib lib/libgnunetdns.so.${LIBgnunetdns_VERSION}
 lib/libgnunetdnsparser.la
-lib/libgnunetdnsstub.a
+@lib lib/libgnunetdnsparser.so.${LIBgnunetdnsparser_VERSION}
 lib/libgnunetdnsstub.la
-lib/libgnunetfragmentation.a
+@lib lib/libgnunetdnsstub.so.${LIBgnunetdnsstub_VERSION}
 lib/libgnunetfragmentation.la
-lib/libgnunetfs.a
+@lib lib/libgnunetfragmentation.so.${LIBgnunetfragmentation_VERSION}
 lib/libgnunetfs.la
-lib/libgnunetgns.a
+@lib lib/libgnunetfs.so.${LIBgnunetfs_VERSION}
 lib/libgnunetgns.la
-lib/libgnunetgns_common.a
+@lib lib/libgnunetgns.so.${LIBgnunetgns_VERSION}
 lib/libgnunetgns_common.la
-lib/libgnunethello.a
+@lib lib/libgnunetgns_common.so.${LIBgnunetgns_common_VERSION}
 lib/libgnunethello.la
-lib/libgnunetlockmanager.a
+@lib lib/libgnunethello.so.${LIBgnunethello_VERSION}
 lib/libgnunetlockmanager.la
-lib/libgnunetmesh.a
+@lib lib/libgnunetlockmanager.so.${LIBgnunetlockmanager_VERSION}
 lib/libgnunetmesh.la
-lib/libgnunetmeshblock.a
-lib/libgnunetmeshblock.la
-lib/libgnunetnamestore.a
+@lib lib/libgnunetmesh.so.${LIBgnunetmesh_VERSION}
 lib/libgnunetnamestore.la
-lib/libgnunetnat.a
+@lib lib/libgnunetnamestore.so.${LIBgnunetnamestore_VERSION}
 lib/libgnunetnat.la
-lib/libgnunetnse.a
+@lib lib/libgnunetnat.so.${LIBgnunetnat_VERSION}
 lib/libgnunetnse.la
-lib/libgnunetpeerinfo.a
+@lib lib/libgnunetnse.so.${LIBgnunetnse_VERSION}
 lib/libgnunetpeerinfo.la
-lib/libgnunetregex.a
+@lib lib/libgnunetpeerinfo.so.${LIBgnunetpeerinfo_VERSION}
 lib/libgnunetregex.la
-lib/libgnunetstatistics.a
+@lib lib/libgnunetregex.so.${LIBgnunetregex_VERSION}
+lib/libgnunetregexblock.la
+@lib lib/libgnunetregexblock.so.${LIBgnunetregexblock_VERSION}
 lib/libgnunetstatistics.la
-lib/libgnunetstream.a
+@lib lib/libgnunetstatistics.so.${LIBgnunetstatistics_VERSION}
 lib/libgnunetstream.la
-lib/libgnunettestbed.a
+@lib lib/libgnunetstream.so.${LIBgnunetstream_VERSION}
 lib/libgnunettestbed.la
-lib/libgnunettesting.a
+@lib lib/libgnunettestbed.so.${LIBgnunettestbed_VERSION}
 lib/libgnunettesting.la
-lib/libgnunettesting_old.a
-lib/libgnunettesting_old.la
-lib/libgnunettransport.a
+@lib lib/libgnunettesting.so.${LIBgnunettesting_VERSION}
 lib/libgnunettransport.la
-lib/libgnunettransporttesting.a
+@lib lib/libgnunettransport.so.${LIBgnunettransport_VERSION}
 lib/libgnunettransporttesting.la
-lib/libgnunettun.a
+@lib lib/libgnunettransporttesting.so.${LIBgnunettransporttesting_VERSION}
 lib/libgnunettun.la
-lib/libgnunetutil.a
+@lib lib/libgnunettun.so.${LIBgnunettun_VERSION}
 lib/libgnunetutil.la
-lib/libgnunetvpn.a
+@lib lib/libgnunetutil.so.${LIBgnunetutil_VERSION}
 lib/libgnunetvpn.la
-lib/pkgconfig/
+@lib lib/libgnunetvpn.so.${LIBgnunetvpn_VERSION}
 lib/pkgconfig/gnunetarm.pc
 lib/pkgconfig/gnunetats.pc
 lib/pkgconfig/gnunetblock.pc
@@ -301,8 +303,6 @@ lib/pkgconfig/gnunetvpn.pc
 share/doc/gnunet/
 share/doc/gnunet/COPYING
 share/doc/gnunet/README
-share/doc/gnunet/README.mysql
-share/doc/gnunet/README.postgres
 share/gnunet/
 share/gnunet/config.d/
 share/gnunet/config.d/arm.conf
@@ -328,7 +328,6 @@ share/gnunet/config.d/statistics.conf
 share/gnunet/config.d/template.conf
 share/gnunet/config.d/testbed.conf
 share/gnunet/config.d/testing.conf
-share/gnunet/config.d/testing_old.conf
 share/gnunet/config.d/topology.conf
 share/gnunet/config.d/transport.conf
 share/gnunet/config.d/util.conf
@@ -349,6 +348,7 @@ share/gnunet/hellos/R69Q
 share/gnunet/hellos/R6OV
 share/gnunet/hellos/RL7P
 share/gnunet/testing_hostkeys.dat
+share/gnunet/testing_hostkeys.ecc
 share/locale/de/LC_MESSAGES/gnunet.mo
 share/locale/es/LC_MESSAGES/gnunet.mo
 share/locale/sv/LC_MESSAGES/gnunet.mo

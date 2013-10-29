@@ -2,7 +2,7 @@
 
 COMMENT =		program to connect to Texas Instruments calculators
 
-TILP_VERSION =		2-1.16
+TILP_VERSION =		2-1.17
 TILP_PROJECT =		tilp
 
 CATEGORIES =		comms
@@ -10,24 +10,27 @@ CATEGORIES =		comms
 MODULES =		converters/libiconv \
 			textproc/intltool
 
-LIB_DEPENDS =		comms/tilp/libticables \
+RUN_DEPENDS =		devel/desktop-file-utils \
+			misc/shared-mime-info
+LIB_DEPENDS =		archivers/libarchive \
+			comms/tilp/libticables \
 			comms/tilp/libtifiles \
 			comms/tilp/libticonv \
 			comms/tilp/libticalcs \
-			devel/libglade2 \
 			devel/pango \
 			devel/libusb1 \
 			devel/pcre \
 			devel/glib2 \
 			x11/gtk+2
 
-WANTLIB +=	GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB +=	Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
-WANTLIB +=	drm expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB +=	gio-2.0 glade-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB +=	gthread-2.0 gtk-x11-2.0 intl m pango-1.0 pangocairo-1.0
-WANTLIB +=	pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB +=	stdc++ ticables2 ticalcs2 ticonv tifiles2 usb usb-1.0
-WANTLIB +=	xcb xcb-render xcb-shm xml2 z
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender archive atk-1.0 bz2 c cairo expat ffi
+WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
+WANTLIB += gtk-x11-2.0 harfbuzz icudata icule icuuc intl lzma
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread pthread-stubs stdc++ ticables2 ticalcs2
+WANTLIB += ticonv tifiles2 usb usb-1.0 xcb xcb-render xcb-shm
+WANTLIB += z
 
 .include <bsd.port.mk>

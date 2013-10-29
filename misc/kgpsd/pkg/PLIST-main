@@ -17,8 +17,6 @@ bin/gpsprof
 include/gps.h
 include/gpsd_config.h
 include/libgpsmm.h
-lib/libgps.a
-lib/libgpsd.a
 lib/pkgconfig/libgps.pc
 lib/pkgconfig/libgpsd.pc
 lib/python${MODPY_VERSION}/site-packages/gps/
@@ -58,6 +56,7 @@ lib/python${MODPY_VERSION}/site-packages/gps/packet.so
 @man man/man5/srec.5
 @man man/man8/gpsd.8
 @man man/man8/gpsdctl.8
+@man man/man8/gpsinit.8
 @bin sbin/gpsd
 @bin sbin/gpsdctl
 share/applications/

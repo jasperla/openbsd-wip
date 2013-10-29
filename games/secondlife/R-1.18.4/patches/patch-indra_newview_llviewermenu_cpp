@@ -1,0 +1,12 @@
+$OpenBSD$
+--- indra/newview/llviewermenu.cpp.orig	Mon Dec  3 02:28:22 2007
++++ indra/newview/llviewermenu.cpp	Mon Dec  3 02:27:50 2007
+@@ -2576,7 +2576,7 @@ void load_url_local_file(const char* file_name)
+ 		gAgent.changeCameraToDefault();
+ 	}
+ 
+-#if LL_DARWIN || LL_LINUX || LL_SOLARIS
++#if LL_DARWIN || LL_LINUX || LL_SOLARIS || defined(__OpenBSD__)
+ 	// MBW -- If the Mac client is in fullscreen mode, it needs to go windowed so the browser will be visible.
+ 	if(gViewerWindow->mWindow->getFullscreen())
+ 	{

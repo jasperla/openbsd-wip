@@ -40,12 +40,12 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 LIB_DEPENDS-cal =	${LIB_DEPENDS} \
 			x11/tde/pim \
 			x11/tde/kipi-plugins,-main
-#REGRESS_DEPENDS =	???
+#TEST_DEPENDS =		???
 
 #MAKE_FLAGS =		???
 #MAKE_ENV =		???
 #FAKE_FLAGS =		???
-#REGRESS_FLAGS =	???
+#TEST_FLAGS =		???
 
 #USE_GMAKE =		Yes
 #USE_GROFF =		Yes
@@ -56,7 +56,7 @@ CONFIGURE_STYLE =	autoconf
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include/kde"
 
 #NO_BUILD =		Yes
-#NO_REGRESS =		Yes
+#NO_TEST =		Yes
 
 #CFLAGS =		???
 #LDFLAGS =		???
@@ -69,7 +69,7 @@ WRKDIST =		${WRKDIR}/libraries/kipi-plugins
 
 #ALL_TARGET =		???
 #INSTALL_TARGET =	???
-#REGRESS_TARGET =	???
+#TEST_TARGET =		???
 
 post-install:
 .for l in de en es et it nl pt_BR sv

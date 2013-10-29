@@ -1,0 +1,53 @@
+$OpenBSD$
+--- config/database.yml.example.orig	Wed Mar 20 00:32:31 2013
++++ config/database.yml.example	Thu Mar 21 14:35:28 2013
+@@ -1,23 +1,14 @@
+-# Default setup is given for MySQL with ruby1.9. If you're running Redmine
+-# with MySQL and ruby1.8, replace the adapter name with `mysql`.
+-# Examples for PostgreSQL, SQLite3 and SQL Server can be found at the end.
++# Default setup is given for SQLite.
++# Examples for PostgreSQL, MySQL and SQL Server can be found at the end.
+ # Line indentation must be 2 spaces (no tabs).
+ 
+ production:
+-  adapter: mysql2
+-  database: redmine
+-  host: localhost
+-  username: root
+-  password: ""
+-  encoding: utf8
++  adapter: sqlite3
++  database: ${LOCALSTATEDIR}/redmine.db
+ 
+ development:
+-  adapter: mysql2
+-  database: redmine_development
+-  host: localhost
+-  username: root
+-  password: ""
+-  encoding: utf8
++  adapter: sqlite3
++  database: ${LOCALSTATEDIR}/redmine_dev.db
+ 
+ # Warning: The database defined as "test" will be erased and
+ # re-generated from your development database when you run "rake".
+@@ -38,10 +29,16 @@ test:
+ #  username: postgres
+ #  password: "postgres"
+ 
+-# SQLite3 configuration example
++# MySQL configuration example.
++# Default setup is given for MySQL with ruby1.9. If you're running Redmine
++# with MySQL and ruby1.8, replace the adapter name with `mysql`.
+ #production:
+-#  adapter: sqlite3
+-#  database: db/redmine.sqlite3
++#  adapter: mysql2
++#  database: redmine
++#  host: localhost
++#  username: root
++#  password: ""
++#  encoding: utf8
+ 
+ # SQL Server configuration example
+ #production:

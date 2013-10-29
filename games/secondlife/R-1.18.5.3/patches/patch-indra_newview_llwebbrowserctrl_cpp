@@ -1,0 +1,21 @@
+$OpenBSD$
+--- indra/newview/llwebbrowserctrl.cpp.orig	Thu Nov 29 16:47:18 2007
++++ indra/newview/llwebbrowserctrl.cpp	Mon Dec  3 04:21:36 2007
+@@ -71,7 +71,7 @@ LLWebBrowserCtrl::LLWebBrowserCtrl( const std::string&
+ 
+ 	// create a new browser window
+ 	{
+-#if LL_LINUX
++#if LL_LINUX || defined(__OpenBSD__)
+ 		// Yuck, Mozilla init plays with the locale - push/pop
+ 		// the locale to protect it, as exotic/non-C locales
+ 		// causes our code lots of general critical weirdness
+@@ -79,7 +79,7 @@ LLWebBrowserCtrl::LLWebBrowserCtrl( const std::string&
+ 		std::string saved_locale = setlocale(LC_ALL, NULL);
+ #endif // LL_LINUX
+ 		mEmbeddedBrowserWindowId = LLMozLib::getInstance()->createBrowserWindow( gViewerWindow->getPlatformWindow(), screen_width, screen_height );
+-#if LL_LINUX
++#if LL_LINUX || defined(__OpenBSD__)
+ 		setlocale(LC_ALL, saved_locale.c_str() );
+ #endif // LL_LINUX
+ 	}

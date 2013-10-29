@@ -1,0 +1,12 @@
+$OpenBSD$
+--- indra/llmath/lluuid.cpp.orig	Thu Mar 22 01:34:57 2007
++++ indra/llmath/lluuid.cpp	Sat Mar 24 22:20:17 2007
+@@ -607,7 +607,7 @@ S32 LLUUID::getNodeID(unsigned char *nod
+ #define HAVE_NETINET_IN_H
+ #ifdef HAVE_NETINET_IN_H
+ #include <netinet/in.h>
+-#if !LL_DARWIN
++#if !LL_DARWIN && !defined(__OpenBSD__)
+ #include <linux/sockios.h>
+ #endif
+ #endif

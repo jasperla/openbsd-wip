@@ -1,0 +1,16 @@
+$OpenBSD$
+--- syscalls/clock_nanosleep.c.orig	Sat Mar  2 18:45:30 2013
++++ syscalls/clock_nanosleep.c	Sat Mar  2 18:46:00 2013
+@@ -8,6 +8,7 @@
+  *  then it returns one of the positive error number listed in ERRORS.
+  */
+ 
++#ifdef __LINUX__
+ #include <time.h>
+ 
+ #include "trinity.h"
+@@ -35,3 +36,4 @@ struct syscall syscall_clock_nanosleep = {
+ 	.rettype = RET_ZERO_SUCCESS,
+ 	.flags = NEED_ALARM,
+ };
++#endif

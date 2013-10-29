@@ -22,9 +22,6 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 # zlib/libpng
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB = GL X11 Xrandr freetype m openal sndfile stdc++
 
@@ -41,7 +38,7 @@ MAKE_FLAGS +=		LIB${l}_VERSION=${v}
 
 USE_GMAKE =		Yes
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/SFML-${V}
 

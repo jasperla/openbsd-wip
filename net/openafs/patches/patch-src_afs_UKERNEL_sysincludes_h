@@ -1,0 +1,95 @@
+$OpenBSD$
+--- src/afs/UKERNEL/sysincludes.h.orig	Mon Mar 26 18:03:34 2012
++++ src/afs/UKERNEL/sysincludes.h	Thu Jul  4 11:52:05 2013
+@@ -11,7 +11,7 @@
+ #define __AFS_SYSINCLUDESH__ 1
+ 
+ #include  <stdio.h>
+-#if !defined(AFS_USR_DARWIN_ENV) && !defined(AFS_USR_FBSD_ENV) && !defined(AFS_USR_DFBSD_ENV) /* must be included after KERNEL undef'd */
++#if !defined(AFS_USR_DARWIN_ENV) && !defined(AFS_USR_FBSD_ENV) && !defined(AFS_USR_DFBSD_ENV) && !defined(AFS_USR_OBSD_ENV) /* must be included after KERNEL undef'd */
+ #include  <errno.h>
+ #endif
+ #include  <stdlib.h>
+@@ -24,7 +24,7 @@
+ #endif
+ #include  <stdarg.h>
+ 
+-#if !defined(AFS_USR_DARWIN_ENV) && !defined(AFS_USR_FBSD_ENV) && !defined(AFS_USR_DFBSD_ENV) /* must be included after KERNEL undef'd */
++#if !defined(AFS_USR_DARWIN_ENV) && !defined(AFS_USR_FBSD_ENV) && !defined(AFS_USR_DFBSD_ENV) && !defined(AFS_USR_OBSD_ENV) /* must be included after KERNEL undef'd */
+ #include  <unistd.h>
+ #include  <ctype.h>
+ #include  <sys/types.h>
+@@ -118,7 +118,7 @@
+ #define FREAD			0x0001
+ #endif /* AFS_USR_LINUX22_ENV */
+ 
+-#if defined(AFS_USR_DARWIN_ENV) || defined(AFS_USR_FBSD_ENV) || defined(AFS_USR_DFBSD_ENV)
++#if defined(AFS_USR_DARWIN_ENV) || defined(AFS_USR_FBSD_ENV) || defined(AFS_USR_DFBSD_ENV) || defined(AFS_USR_OBSD_ENV)
+ #ifdef _KERNEL
+ #undef _KERNEL
+ #endif
+@@ -1085,6 +1085,7 @@ struct usr_vattr {
+ struct usr_vnode {
+     unsigned short v_flag;
+     unsigned long v_count;
++    unsigned long v_usecount;
+     struct usr_vnodeops *v_op;
+     struct usr_vfs *v_vfsp;
+     long v_type;
+@@ -1093,19 +1094,19 @@ struct usr_vnode {
+ };
+ 
+ struct usr_inode {
+-    daddr_t i_db[NDADDR];
+-    struct usr_vnode *i_devvp;
++    daddr_t ii_db[NDADDR];
++    struct usr_vnode *ii_devvp;
+     unsigned long i_dev;
+     long i_flag;
+     struct usr_inode *i_freef;
+     struct usr_inode **i_freeb;
+-    long i_gid;
+-    daddr_t i_ib[NIADDR];
+-    unsigned short i_mode;
+-    short i_nlink;
++    long ii_gid;
++    daddr_t ii_ib[NIADDR];
++    unsigned short ii_mode;
++    short ii_nlink;
+     unsigned long i_number;
+-    long i_size;
+-    long i_uid;
++    long ii_size;
++    long ii_uid;
+     struct usr_vnode i_vnode;
+     struct {
+ 	unsigned long ic_spare[4];
+@@ -1161,7 +1162,7 @@ struct usr_proc {
+     unsigned long p_flag;
+     pid_t p_pid;
+     pid_t p_ppid;
+-    struct usr_ucred *p_ucred;
++    struct usr_ucred *pp_ucred;
+     char p_cursig;
+ };
+ 
+@@ -1264,7 +1265,7 @@ struct usr_fs {
+ };
+ 
+ struct usr_mount {
+-    char m_flags;
++    char mm_flags;
+     unsigned long m_dev;
+     struct usr_inode *m_inodp;
+     struct usr_buf *m_bufp;
+@@ -1297,8 +1298,8 @@ struct usr_vfs {
+ struct usr_ifnet {
+     struct usr_ifnet *if_next;
+     short if_flags;
+-    u_int if_mtu;
+-    u_int if_metric;
++    u_int iif_mtu;
++    u_int iif_metric;
+     struct usr_ifaddr *if_addrlist;
+ };
+ extern struct usr_ifnet *usr_ifnet;

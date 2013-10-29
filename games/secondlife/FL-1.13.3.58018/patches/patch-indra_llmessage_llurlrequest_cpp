@@ -1,0 +1,11 @@
+$OpenBSD$
+--- indra/llmessage/llurlrequest.cpp.orig	Tue Jan 23 22:19:51 2007
++++ indra/llmessage/llurlrequest.cpp	Tue Jan 23 22:21:43 2007
+@@ -168,6 +168,7 @@ void LLURLRequest::setURL(const std::str
+ void LLURLRequest::addHeader(const char* header)
+ {
+ 	LLMemType m1(LLMemType::MTYPE_IO_URL_REQUEST);
++	llinfos << "Header being added: " << header << llendl;
+ 	mDetail->mHeaders = curl_slist_append(mDetail->mHeaders, header);
+ }
+ 

@@ -1,0 +1,88 @@
+#!/usr/bin/perl
+# $OpenBSD$
+#
+# Copyright (c) 2013 Vadim Zhukov <persgray@gmail.com>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+use strict;
+use warnings;
+
+use OpenBSD::PackageName;
+use POSIX qw/strftime/;
+
+$\ = "\n";
+my $pager = $ENV{'PAGER'} // 'more';
+my $readmesdir = $ENV{'PKG_READMEDIR'} //
+    '/usr/local/share/doc/pkg-readmes';
+chdir($readmesdir) or die "cannot chdir: $!";
+
+my ($stemlookup, $listcount);
+if ($#ARGV == -1) {
+	$stemlookup = 0;
+} elsif ($#ARGV == 0 and $ARGV[0] =~ /^[0-9]+$/) {
+	$stemlookup = 0;
+	$listcount = int($ARGV[0]);
+	exit(0) if $listcount == 0;
+} else {
+	$stemlookup = 1;
+}
+
+opendir(my $dirh, ".") or
+    die "cannot open directory $readmesdir: $!";
+if ($stemlookup) {
+	my @allreadmes = grep { -f $_ } readdir $dirh;
+	closedir $dirh;
+
+	my $stems = OpenBSD::PackageName::compile_stemlist(@allreadmes);
+	my @pkglist;
+	foreach (@ARGV) {
+		if (OpenBSD::PackageName::is_stem $_) {
+			push @pkglist, $stems->find_partial($_);
+		} elsif (!/\// and -f $_) {
+			push @pkglist, $_;
+		} else {
+			print STDERR "wrong package name or no readme file: $_";
+		}
+	}
+
+	if (@pkglist) {
+		exec { $pager } $pager, @pkglist;
+		die "exec failed: $!";
+	}
+} else {
+	my $maxlen = 0;
+	my %readmes;
+	while (readdir $dirh) {
+		next unless -f $_;
+		my @stat = stat($_);
+		next unless @stat;
+		$readmes{$_} = $stat[9];    # mtime
+		$maxlen = length($_) if length($_) > $maxlen;
+	}
+	closedir $dirh;
+
+	my @sorted = sort { $readmes{$a} <=> $readmes{$b} } keys %readmes;
+	if ($listcount) {
+		$listcount = @sorted if @sorted < $listcount;
+		exec { $pager } $pager, @sorted[@sorted - $listcount .. @sorted - 1];
+		die "exec failed: $!";
+	} else {
+		foreach (@sorted) {
+			my $time = strftime "%c", localtime($readmes{$_});
+			printf "%-${maxlen}s  %s\n", $_, $time;
+		}
+	}
+}
+
+exit(0);

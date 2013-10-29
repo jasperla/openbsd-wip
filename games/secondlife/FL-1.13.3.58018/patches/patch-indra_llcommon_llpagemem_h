@@ -1,0 +1,12 @@
+$OpenBSD$
+--- indra/llcommon/llpagemem.h.orig	Mon Jan  8 21:37:21 2007
++++ indra/llcommon/llpagemem.h	Mon Jan  8 21:37:36 2007
+@@ -27,7 +27,7 @@
+ #define LL_LLPAGEMEM_H
+ 
+ #if !LL_DARWIN
+-#include "malloc.h"
++#include <stdlib.h>
+ #endif
+ 
+ #include "llrand.h"

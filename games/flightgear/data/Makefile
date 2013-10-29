@@ -5,11 +5,13 @@ COMMENT =		data files for flightgear
 DISTNAME =		FlightGear-data-${V}
 PKGNAME =		flightgear-data-${V}
 
-MASTER_SITES =	http://ftp.linux.kiev.ua/pub/fgfs/Shared/ \
+MASTER_SITES =	http://ftp.igh.cnrs.fr/pub/flightgear/ftp/Shared/ \
+		http://ftp.linux.kiev.ua/pub/fgfs/Shared/ \
 		ftp://ftp.kingmont.com/flightsims/flightgear/Shared/
+		
 
 NO_BUILD =		Yes
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 PKG_ARCH =		*
 

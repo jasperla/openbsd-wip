@@ -1,0 +1,494 @@
+===>  Verifying update for boost-* in devel/boost
+===> Returning to build of secondlife-viewer-1.18.5.3
+===>  secondlife-viewer-1.18.5.3 depends on: boost-* - found
+===>  Verifying update for apr-util-mt-* in devel/apr-util
+===>  Checking files for apr-util-mt-1.2.10p0
+`/afs/fries.net/ftp/pub/OpenBSD/distfiles/apr-util-1.2.10.tar.gz' is up to date.
+>> (SHA256) apr-util-1.2.10.tar.gz: OK
+===>  Verifying update for metaauto-* in devel/metaauto
+===> Returning to build of apr-util-mt-1.2.10p0
+===>  apr-util-mt-1.2.10p0 depends on: metaauto-* - not found
+===>  Verifying install for metaauto-* in devel/metaauto
+`/afs/fries.net/rel/20080330/i386/bulk/metaauto-0.8' is up to date.
+===>  Installing metaauto-0.8 from /afs/fries.net/rel/20080330/i386/all/
+Adding metaauto-0.8
+===> Returning to build of apr-util-mt-1.2.10p0
+===>  Verifying update for metaauto-* in devel/metaauto
+===> Returning to build of apr-util-mt-1.2.10p0
+===>  apr-util-mt-1.2.10p0 depends on: metaauto-* - found
+===>  Verifying update for autoconf-2.59 in devel/autoconf/2.59
+===> Returning to build of apr-util-mt-1.2.10p0
+===>  apr-util-mt-1.2.10p0 depends on: autoconf-2.59 - not found
+===>  Verifying install for autoconf-2.59 in devel/autoconf/2.59
+`/afs/fries.net/rel/20080330/i386/bulk/autoconf-2.59p2' is up to date.
+===>  Verifying update for help2man-* in devel/help2man
+===> Returning to build of autoconf-2.59p2
+===>  autoconf-2.59p2 depends on: help2man-* - not found
+===>  Verifying install for help2man-* in devel/help2man
+`/afs/fries.net/rel/20080330/i386/bulk/help2man-1.29p0' is up to date.
+===>  Installing help2man-1.29p0 from /afs/fries.net/rel/20080330/i386/all/
+Adding help2man-1.29p0
+===> Returning to build of autoconf-2.59p2
+===>  Verifying update for help2man-* in devel/help2man
+===> Returning to build of autoconf-2.59p2
+===>  autoconf-2.59p2 depends on: help2man-* - found
+===>  Installing autoconf-2.59p2 from /afs/fries.net/rel/20080330/i386/all/
+Adding autoconf-2.59p2
+===> Returning to build of apr-util-mt-1.2.10p0
+===>  Verifying update for autoconf-2.59 in devel/autoconf/2.59
+===> Returning to build of apr-util-mt-1.2.10p0
+===>  apr-util-mt-1.2.10p0 depends on: autoconf-2.59 - found
+===>  Verifying update for libtool-* in devel/libtool
+===> Returning to build of apr-util-mt-1.2.10p0
+===>  apr-util-mt-1.2.10p0 depends on: libtool-* - found
+===>  Verifying update for db-4.* in databases/db/v4
+===> Returning to build of apr-util-mt-1.2.10p0
+===>  apr-util-mt-1.2.10p0 depends on: db-4.* - found
+===>  Verifying update for apr-mt-1.2.11 in devel/apr
+===>  Checking files for apr-mt-1.2.11p1
+`/afs/fries.net/ftp/pub/OpenBSD/distfiles/apr-1.2.11.tar.gz' is up to date.
+>> (SHA256) apr-1.2.11.tar.gz: OK
+===>  Verifying update for libtool-* in devel/libtool
+===> Returning to build of apr-mt-1.2.11p1
+===>  apr-mt-1.2.11p1 depends on: libtool-* - found
+===>  Extracting for apr-mt-1.2.11p1
+===>  Patching for apr-mt-1.2.11p1
+===>  Configuring for apr-mt-1.2.11p1
+configure: loading site script /usr/ports/infrastructure/db/config.site
+checking build system type... i386-unknown-openbsd4.3
+checking host system type... i386-unknown-openbsd4.3
+checking target system type... i386-unknown-openbsd4.3
+Configuring APR library
+Platform: i386-unknown-openbsd4.3
+checking for working mkdir -p... yes
+APR Version: 1.2.11
+checking for chosen layout... apr
+checking for gcc... cc
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... (cached) o
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether cc accepts -g... (cached) yes
+checking for cc option to accept ANSI C... none needed
+Applying APR hints file rules for i386-unknown-openbsd4.3
+  setting apr_lock_method to "USE_FLOCK_SERIALIZE"
+  setting CPPFLAGS to "-D_POSIX_THREADS"
+  setting ac_cv_o_nonblock_inherited to "yes"
+(Default will be unix)
+checking whether make sets $(MAKE)... (cached) yes
+checking how to run the C preprocessor... cc -E
+checking for gawk... (cached) nawk
+checking whether ln -s works... yes
+checking for ranlib... (cached) ranlib
+checking for a BSD-compatible install... /usr/bin/install -c -o root -g bin
+checking for rm... rm
+checking for as... as
+checking for cpp... cpp
+checking for ar... (cached) ar
+checking for egrep... (cached) grep -E
+checking for AIX... no
+checking for library containing strerror... none required
+checking for ANSI C header files... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether system uses EBCDIC... no
+performing libtool configuration...
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for ld used by cc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for /usr/bin/ld option to reload object files... -r
+checking for BSD-compatible nm... /usr/bin/nm -B
+checking how to recognise dependent libraries... match_pattern /lib[^/]+(\.so\.[0-9]+\.[0-9]+|\.so|_pic\.a)$
+checking for dlfcn.h... (cached) yes
+checking whether we are using the GNU C++ compiler... (cached) yes
+checking whether c++ accepts -g... (cached) yes
+checking how to run the C++ preprocessor... c++ -E
+checking for g77... g77
+checking whether we are using the GNU Fortran 77 compiler... (cached) yes
+checking whether g77 accepts -g... (cached) yes
+checking the maximum length of command line arguments... (cached) 131072
+checking command to parse /usr/bin/nm -B output from cc object... ok
+checking for objdir... .libs
+checking for ar... (cached) ar
+checking for ranlib... (cached) ranlib
+checking for strip... (cached) strip
+checking if cc static flag  works... yes
+checking if cc supports -fno-rtti -fno-exceptions... no
+checking for cc option to produce PIC... -fPIC
+checking if cc PIC flag -fPIC works... yes
+checking if cc supports -c -o file.o... yes
+checking whether the cc linker (/usr/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... yes
+checking dynamic linker characteristics... openbsd4.3 ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+configure: creating libtool
+appending configuration tag "CXX" to libtool
+checking for ld used by c++... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking whether the c++ linker (/usr/bin/ld) supports shared libraries... yes
+checking for c++ option to produce PIC... -fPIC
+checking if c++ PIC flag -fPIC works... yes
+checking if c++ supports -c -o file.o... yes
+checking whether the c++ linker (/usr/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... openbsd4.3 ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+appending configuration tag "F77" to libtool
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for g77 option to produce PIC... -fPIC
+checking if g77 PIC flag -fPIC works... yes
+checking if g77 supports -c -o file.o... yes
+checking whether the g77 linker (/usr/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... openbsd4.3 ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+
+Check for compiler flags...
+checking whether to enable -D_LARGEFILE64_SOURCE... no
+
+Checking for libraries...
+checking for library containing gethostbyname... none required
+checking for library containing gethostname... none required
+checking for library containing socket... none required
+checking for library containing crypt... none required
+checking for main in -ltruerand... no
+checking for library containing modf... none required
+
+Checking for Threads...
+checking for CFLAGS needed for pthreads... -pthread
+  adding "-pthread" to CFLAGS
+checking for LIBS needed for pthreads... -pthread
+  setting LIBS to "-pthread"
+checking for pthread.h... (cached) yes
+checking whether pthread_getspecific takes two arguments... no
+checking whether pthread_attr_getdetachstate takes one argument... no
+checking for recursive mutex support... yes
+checking for pthread_key_delete... yes
+checking for pthread_rwlock_init... yes
+checking for pthread_attr_setguardsize... no
+checking for pthread_rwlock_t... yes
+APR will use threads
+checking for readdir in -lc_r... no
+checking for gethostbyname in -lc_r... no
+checking for gethostbyaddr in -lc_r... no
+checking for gethostbyname_r... no
+checking for gethostbyaddr_r... no
+checking for sigsuspend... (cached) yes
+checking for sigwait... yes
+checking for poll... (cached) yes
+checking for kqueue... (cached) yes
+checking for port_create... no
+checking for epoll support... no
+checking for getpwnam_r... no
+checking for getpwuid_r... no
+checking for getgrnam_r... (cached) yes
+checking for getgrgid_r... (cached) yes
+
+Checking for Shared Memory Support...
+checking for library containing shm_open... no
+checking for sys/types.h... (cached) yes
+checking for sys/mman.h... (cached) yes
+checking for sys/ipc.h... (cached) yes
+checking for sys/mutex.h... (cached) yes
+checking for sys/shm.h... (cached) yes
+checking for sys/file.h... (cached) yes
+checking kernel/OS.h usability... no
+checking kernel/OS.h presence... no
+checking for kernel/OS.h... no
+checking os2.h usability... no
+checking os2.h presence... no
+checking for os2.h... no
+checking for mmap... (cached) yes
+checking for munmap... (cached) yes
+checking for shm_open... no
+checking for shm_unlink... no
+checking for shmget... (cached) yes
+checking for shmat... (cached) yes
+checking for shmdt... (cached) yes
+checking for shmctl... (cached) yes
+checking for create_area... no
+checking for MAP_ANON in sys/mman.h... yes
+checking for /dev/zero... yes
+checking for mmap that can map /dev/zero... yes
+decision on anonymous shared memory allocation method... 4.4BSD-style mmap() via MAP_ANON
+decision on namebased memory allocation method... SysV IPC shmget()
+checking for alloca... (cached) yes
+checking for calloc... (cached) yes
+checking for setsid... (cached) yes
+checking for isinf... (cached) yes
+checking for isnan... (cached) yes
+checking for getenv... (cached) yes
+checking for putenv... (cached) yes
+checking for setenv... (cached) yes
+checking for unsetenv... (cached) yes
+checking for writev... (cached) yes
+checking for getifaddrs... (cached) yes
+checking for utime... (cached) yes
+checking for utimes... (cached) yes
+checking for setrlimit... (cached) yes
+checking for getrlimit... (cached) yes
+checking for sendfilev in -lsendfile... no
+checking for sendfile... no
+checking for send_file... no
+checking for sendfilev... no
+checking for sigaction... (cached) yes
+checking whether sys_siglist is declared... yes
+checking for fork... (cached) yes
+checking for inet_addr... (cached) yes
+checking for inet_network... (cached) yes
+checking for _getch... no
+checking for strerror_r... (cached) yes
+checking for type of return code from strerror_r... int
+checking for mmap... (cached) yes
+checking for memmove... (cached) yes
+checking for getpass... (cached) yes
+checking for getpassphrase... no
+checking for gmtime_r... (cached) yes
+checking for localtime_r... (cached) yes
+checking for mkstemp... (cached) yes
+checking whether sigwait takes one argument... no
+checking for inode member of struct dirent... d_fileno
+checking for file type member of struct dirent... d_type
+checking for ANSI C header files... (cached) yes
+checking alloca.h usability... no
+checking alloca.h presence... no
+checking for alloca.h... no
+checking ByteOrder.h usability... no
+checking ByteOrder.h presence... no
+checking for ByteOrder.h... no
+checking conio.h usability... no
+checking conio.h presence... no
+checking for conio.h... no
+checking crypt.h usability... no
+checking crypt.h presence... no
+checking for crypt.h... no
+checking for ctype.h... (cached) yes
+checking dir.h usability... no
+checking dir.h presence... no
+checking for dir.h... no
+checking for dirent.h... (cached) yes
+checking dl.h usability... no
+checking dl.h presence... no
+checking for dl.h... no
+checking for dlfcn.h... (cached) yes
+checking for errno.h... (cached) yes
+checking for fcntl.h... (cached) yes
+checking for grp.h... (cached) yes
+checking io.h usability... no
+checking io.h presence... no
+checking for io.h... no
+checking for limits.h... (cached) yes
+checking mach-o/dyld.h usability... no
+checking mach-o/dyld.h presence... no
+checking for mach-o/dyld.h... no
+checking for malloc.h... (cached) no
+checking for memory.h... (cached) yes
+checking for netdb.h... (cached) yes
+checking osreldate.h usability... no
+checking osreldate.h presence... no
+checking for osreldate.h... no
+checking for poll.h... (cached) yes
+checking process.h usability... no
+checking process.h presence... no
+checking for process.h... no
+checking for pwd.h... (cached) yes
+checking for semaphore.h... (cached) yes
+checking for signal.h... (cached) yes
+checking for stdarg.h... (cached) yes
+checking for stddef.h... (cached) yes
+checking for stdio.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for strings.h... (cached) yes
+checking sysapi.h usability... no
+checking sysapi.h presence... no
+checking for sysapi.h... no
+checking sysgtime.h usability... no
+checking sysgtime.h presence... no
+checking for sysgtime.h... no
+checking for termios.h... (cached) yes
+checking for time.h... (cached) yes
+checking tpfeq.h usability... no
+checking tpfeq.h presence... no
+checking for tpfeq.h... no
+checking tpfio.h usability... no
+checking tpfio.h presence... no
+checking for tpfio.h... no
+checking for unistd.h... (cached) yes
+checking unix.h usability... no
+checking unix.h presence... no
+checking for unix.h... no
+checking for arpa/inet.h... (cached) yes
+checking for kernel/OS.h... (cached) no
+checking net/errno.h usability... no
+checking net/errno.h presence... no
+checking for net/errno.h... no
+checking for netinet/in.h... (cached) yes
+checking netinet/sctp.h usability... no
+checking netinet/sctp.h presence... no
+checking for netinet/sctp.h... no
+checking netinet/sctp_uio.h usability... no
+checking netinet/sctp_uio.h presence... no
+checking for netinet/sctp_uio.h... no
+checking for sys/file.h... (cached) yes
+checking for sys/ioctl.h... (cached) yes
+checking for sys/mman.h... (cached) yes
+checking for sys/poll.h... (cached) yes
+checking for sys/resource.h... (cached) yes
+checking for sys/select.h... (cached) yes
+checking sys/sem.h usability... yes
+checking sys/sem.h presence... yes
+checking for sys/sem.h... yes
+checking sys/sendfile.h usability... no
+checking sys/sendfile.h presence... no
+checking for sys/sendfile.h... no
+checking for sys/signal.h... (cached) yes
+checking for sys/socket.h... (cached) yes
+checking for sys/sockio.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for sys/sysctl.h... (cached) yes
+checking sys/syslimits.h usability... yes
+checking sys/syslimits.h presence... yes
+checking for sys/syslimits.h... yes
+checking for sys/time.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/uio.h... (cached) yes
+checking for sys/un.h... (cached) yes
+checking for sys/wait.h... (cached) yes
+checking for netinet/tcp.h... yes
+checking for h_errno in netdb.h... yes
+checking for off_t... (cached) yes
+checking for pid_t... (cached) yes
+checking for size_t... (cached) yes
+checking for uid_t in sys/types.h... (cached) yes
+checking for ssize_t... (cached) yes
+checking for inline... inline
+checking for an ANSI C-conforming const... (cached) yes
+checking whether setpgrp takes no argument... no
+checking for socklen_t... (cached) socklen_t
+checking for void*... yes
+checking size of void*... 4
+checking for char... (cached) yes
+checking size of char... (cached) 1
+checking for int... (cached) yes
+checking size of int... 4
+checking for long... (cached) yes
+checking size of long... 4
+checking for short... (cached) yes
+checking size of short... (cached) 2
+checking for long long... (cached) yes
+checking size of long long... (cached) 8
+checking for INT64_C... yes
+checking size of ssize_t... 4
+checking size of size_t... 4
+checking size of off_t... 8
+checking which type to use for apr_off_t... off_t
+checking size of pid_t... 4
+checking whether byte ordering is bigendian... no
+checking for strnicmp... no
+checking for strncasecmp... (cached) yes
+checking for stricmp... no
+checking for strcasecmp... (cached) yes
+checking for strdup... (cached) yes
+checking for strstr... (cached) yes
+checking for memchr... (cached) yes
+checking for strtoll... (cached) yes
+
+Checking for DSO...
+checking for NSLinkModule... no
+checking for shl_load in -ldld... no
+checking for dlopen... yes
+checking for dlsym... (cached) yes
+
+Checking for Processes...
+checking for waitpid... (cached) yes
+checking for Variable Length Arrays... yes
+checking struct rlimit... yes
+
+Checking for Locking...
+checking for semget... yes
+checking for semctl... yes
+checking for flock... (cached) yes
+checking for semaphore.h... (cached) yes
+checking OS.h usability... no
+checking OS.h presence... no
+checking for OS.h... no
+checking for library containing sem_open... none required
+checking for sem_close... yes
+checking for sem_unlink... yes
+checking for sem_post... yes
+checking for sem_wait... yes
+checking for create_sem... no
+checking for working sem_open... no
+checking for union semun in sys/sem.h... yes
+checking for LOCK_EX in sys/file.h... yes
+checking for F_SETLK in fcntl.h... yes
+checking for SEM_UNDO in sys/sem.h... yes
+checking for POLLIN in poll.h sys/poll.h... yes
+checking for PTHREAD_PROCESS_SHARED in pthread.h... yes
+checking for pthread_mutexattr_setpshared... no
+decision on apr_lock implementation method... 4.2BSD-style flock()
+checking if all interprocess locks affect threads... no
+checking if POSIX sems affect threads in the same process... no
+checking if SysV sems affect threads in the same process... no
+checking if fcntl locks affect threads in the same process... no
+checking if flock locks affect threads in the same process... no
+checking for entropy source... /dev/arandom
+
+Checking for OS UUID Support...
+checking uuid.h usability... no
+checking uuid.h presence... no
+checking for uuid.h... no
+checking uuid/uuid.h usability... no
+checking uuid/uuid.h presence... no
+checking for uuid/uuid.h... no
+checking sys/uuid.h usability... no
+checking sys/uuid.h presence... no
+checking for sys/uuid.h... no
+checking for library containing uuid_create... no
+checking for library containing uuid_generate... no
+checking for uuid_create... no
+checking for uuid_generate... no
+checking for os uuid usability... no
+
+Checking for Time Support...
+checking for struct tm.tm_gmtoff... yes
+checking for struct tm.__tm_gmtoff... no
+
+Checking for Networking support...
+checking for in_addr in netinet/in.h... yes
+checking if fd == socket on this platform... yes
+checking if TCP_NODELAY setting is inherited from listening sockets... no
+checking if O_NONBLOCK setting is inherited from listening sockets... (cached) yes
+checking whether TCP_NODELAY and TCP_CORK can both be enabled... no
+checking for TCP_CORK in netinet/tcp.h... no
+checking for TCP_NOPUSH in netinet/tcp.h... no
+checking for SO_ACCEPTFILTER in sys/socket.h... no
+checking whether SCTP is supported... no
+checking for struct ip_mreq... yes
+checking for set_h_errno... no
+
+Checking for IPv6 Networking support...
+checking for library containing getaddrinfo... none required
+checking for library containing gai_strerror... none required
+checking for library containing getnameinfo... none required
+checking for gai_strerror... (cached) yes
+checking for working getaddrinfo... 

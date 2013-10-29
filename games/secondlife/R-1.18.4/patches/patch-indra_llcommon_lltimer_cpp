@@ -1,0 +1,30 @@
+$OpenBSD$
+--- indra/llcommon/lltimer.cpp.orig	Wed Nov  7 20:18:06 2007
++++ indra/llcommon/lltimer.cpp	Mon Nov 12 07:57:07 2007
+@@ -42,7 +42,7 @@
+ #elif LL_LINUX || LL_SOLARIS
+ #	include <sys/time.h>
+ #	include <sched.h>
+-#elif LL_DARWIN
++#elif LL_DARWIN || defined(__OpenBSD__)
+ #	include <sys/time.h>
+ #else 
+ #	error "architecture not supported"
+@@ -103,7 +103,7 @@ void llyield()
+ {
+ 	sched_yield();
+ }
+-#elif LL_DARWIN
++#elif LL_DARWIN || defined(__OpenBSD__)
+ void ms_sleep(long ms)
+ {
+ 	struct timespec t;
+@@ -150,7 +150,7 @@ F64 calc_clock_frequency(U32 uiMeasureMSecs)
+ #endif // LL_WINDOWS
+ 
+ 
+-#if LL_LINUX || LL_DARWIN || LL_SOLARIS
++#if LL_LINUX || LL_DARWIN || LL_SOLARIS || defined(__OpenBSD__)
+ // Both Linux and Mac use gettimeofday for accurate time
+ F64 calc_clock_frequency(unsigned int uiMeasureMSecs)
+ {

@@ -1,7 +1,7 @@
 # $OpenBSD$
 COMMENT =		application that aims to provide a workflow for HDR imaging
 
-DISTNAME =		luminance-hdr-2.3.0
+DISTNAME =		luminance-hdr-2.3.1
 
 CATEGORIES =		graphics
 
@@ -11,16 +11,15 @@ MAINTAINER =		Kirill Bychkov <yason@linklevel.net>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=qtpfsgui/}
 EXTRACT_SUFX = 		.tar.bz2
+EXTRACT_CASES += *.tar.bz2) \
+        ${BZIP2} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf - -C ${WRKDIST};;
 
-WANTLIB += Half Iex IlmImf QtGui QtSql QtWebKit QtXml c exiv2
-WANTLIB += fftw3f fftw3f_threads gsl gslcblas jpeg lcms2 m png
-WANTLIB += pthread raw_r stdc++ tiff
+WANTLIB += Half Iex IlmImf QtGui QtNetwork QtSql QtWebKit QtXml c
+WANTLIB += exiv2 fftw3f fftw3f_threads gsl gslcblas jpeg lcms2 m
+WANTLIB += png pthread raw_r stdc++ tiff z
 
 MODULES =		devel/cmake x11/qt4
 LIB_DEPENDS =		devel/gsl \
@@ -32,13 +31,23 @@ LIB_DEPENDS =		devel/gsl \
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/qt4
 
-CONFIGURE_ARGS += 	-DCMAKE_BUILD_TYPE=Release \
-			-DCMAKE_EXE_LINKER_FLAGS=-pthread \
-			-DLIBPNG_INCLUDE_DIR=${LOCALBASE}/include/libpng
+CONFIGURE_ARGS += 	-DCMAKE_BUILD_TYPE=Release
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 pre-extract:
 	mkdir ${WRKDIST}
+
+pre-configure:
+# Allow builds from release distfile to display correct git hash in "About"
+# dialog window.
+	@perl -pi -e \
+		's,@GIT_SHA1@,17472000c439bc5724771acfb7080145794a7fed,' \
+			${WRKSRC}/src/Common/GitSHA1.cpp.in
+# Point to the right location of GPL license text.
+	${SUBST_CMD} ${WRKSRC}/src/Common/archs.h
+	@perl -pi -e \
+		's,share/doc/luminance-hdr,share/luminance-hdr,' \
+			${WRKSRC}/src/UI/UMessageBox.cpp
 
 .include <bsd.port.mk>

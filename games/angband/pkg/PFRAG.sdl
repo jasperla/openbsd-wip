@@ -53,4 +53,4 @@ share/angband/xtra/sound/shutdoor.wav
 share/angband/xtra/sound/sound.cfg
 share/angband/xtra/sound/thump.wav
 share/angband/xtra/sound/vomit.wav
-share/applications/angband${FLAVORS}.desktop
+share/applications/angband-sdl.desktop

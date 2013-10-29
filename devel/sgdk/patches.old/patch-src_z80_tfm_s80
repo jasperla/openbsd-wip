@@ -1,0 +1,105 @@
+$OpenBSD$
+--- src/z80_tfm.s80.orig	Sun May  5 23:30:14 2013
++++ src/z80_tfm.s80	Sun May  5 23:34:35 2013
+@@ -225,12 +225,12 @@ regsX
+ 
+ 
+  
+-    MACRO processChannel _chn,_kchn,_skip,_addr
++    MACRO processChannel chn,kchn,skip,addr
+ 
+-    LD A,(_skip)
++    LD A,(skip)
+     INC A
+     jp nz,.skiperA
+-    LD HL,(_addr)
++    LD HL,(addr)
+ .blkcntA=$+1
+     OR 0
+     jr z,.tfmframeA
+@@ -248,7 +248,7 @@ regsX
+     jr z,.endA
+     CP #bf
+     jr nc,.HLskiperA
+-    ld c,#00+_kchn
++    ld c,#00+kchn
+     call m,keyOff
+     OR A
+     PUSH AF
+@@ -257,14 +257,14 @@ regsX
+     jr nc,.nofrqXA
+     ex af,af
+     WaitStatus
+-    ld (ix),#A4+_chn
++    ld (ix),#A4+chn
+     LD A,(HL)
+     INC HL
+     LD (.tfmhighA),A
+     WaitStatus
+     ld (ix+1),a
+     WaitStatus
+-    ld (ix),#A0+_chn
++    ld (ix),#A0+chn
+     LD A,(HL)
+     INC HL
+     LD (.tfmlowA),A
+@@ -274,10 +274,10 @@ regsX
+ .nofrqXA
+  
+     call outRegs
+-    LD (_addr),HL
++    LD (addr),HL
+     POP AF
+     RET P
+-    ld a,#f0+_kchn
++    ld a,#f0+kchn
+     jp keyOn    ;call:ret
+  
+ .beginA
+@@ -309,7 +309,7 @@ regsX
+     ADD HL,BC
+     CALL .tfmframeA
+     POP HL
+-    LD (_addr),HL
++    LD (addr),HL
+     RET
+ .HLskiperA
+     jr z,.OLDfarA
+@@ -318,9 +318,9 @@ regsX
+     LD B,A
+     CP #FF
+     jr z,.OLDnearA
+-    LD (_addr),HL
++    LD (addr),HL
+ .skiperA
+-    LD (_skip),A
++    LD (skip),A
+     RET
+ .slideA
+     ADD A,48
+@@ -328,15 +328,15 @@ regsX
+ .tfmlowA=$+1
+     ADD A,0
+     LD (.tfmlowA),A
+-    LD (_addr),HL
++    LD (addr),HL
+ 
+     WaitStatus
+-    ld (ix),#A4+_chn
++    ld (ix),#A4+chn
+     WaitStatus
+ .tfmhighA=$+3
+     ld (ix+1),0
+     WaitStatus
+-    ld (ix),#A0+_chn
++    ld (ix),#A0+chn
+     WaitStatus
+     ld (ix+1),a
+     RET
+@@ -372,4 +372,4 @@ tfminitab
+     DW addrC
+     DW addrD
+     DW addrE
+-    DW addrF
+\ No newline at end of file
++    DW addrF

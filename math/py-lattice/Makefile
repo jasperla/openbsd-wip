@@ -9,15 +9,12 @@ PKGNAME =		py-lattice-${MODPY_EGG_VERSION}
 
 CATEGORIES =		math
 
-HOMEPAGE =		http://python-lattice.googlecode.com/
+HOMEPAGE =		https://python-lattice.googlecode.com/
 
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/files/
 

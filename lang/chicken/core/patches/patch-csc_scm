@@ -1,0 +1,19 @@
+Index: csc.scm
+==================================================================
+--- csc.scm
++++ csc.scm
+@@ -967,12 +967,11 @@
+ 	      (target-lib-path) 
+ 	      libchicken
+ 	      (cond (osx "dylib")
+ 		    ((or win cygwin) "dll")
+ 		    (else (string-append
+-                           "so."
+-                           (number->string BINARY_VERSION)))))))
++                           "so.${LIBchicken_VERSION}"))))))
+     (copy-files lib targetdir)))
+ 
+ (define (copy-files from to)
+   (command
+    (sprintf "~a ~a ~a"
+

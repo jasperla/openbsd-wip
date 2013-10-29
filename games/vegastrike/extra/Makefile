@@ -7,7 +7,7 @@ DISTNAME =	vegastrike-extra-${V}
 RUN_DEPENDS =	games/vegastrike/data>=${V}
 
 NO_BUILD =	Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 
 PKG_ARCH =	*
 

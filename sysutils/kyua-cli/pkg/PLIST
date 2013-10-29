@@ -1,0 +1,23 @@
+@comment $OpenBSD$
+@bin bin/kyua
+@info info/kyua-cli.info
+@man man/man1/kyua.1
+share/doc/kyua-cli/
+share/doc/kyua-cli/AUTHORS
+share/doc/kyua-cli/COPYING
+share/doc/kyua-cli/NEWS
+share/doc/kyua-cli/README
+share/kyua-cli/
+share/kyua-cli/examples/
+share/kyua-cli/examples/Kyuafile.top
+share/kyua-cli/examples/kyua.conf
+share/kyua-cli/lua/
+share/kyua-cli/lua/init.lua
+share/kyua-cli/lua/kyuafile_1.lua
+share/kyua-cli/misc/
+share/kyua-cli/misc/context.html
+share/kyua-cli/misc/index.html
+share/kyua-cli/misc/report.css
+share/kyua-cli/misc/test_result.html
+share/kyua-cli/store/
+share/kyua-cli/store/schema.sql

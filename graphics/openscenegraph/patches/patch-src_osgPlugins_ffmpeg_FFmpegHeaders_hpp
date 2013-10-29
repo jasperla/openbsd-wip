@@ -1,0 +1,32 @@
+$OpenBSD$
+
+https://github.com/openscenegraph/osg/commit/876cb95fada9a2ea5821e6473c185338ec28a914
+
+--- src/osgPlugins/ffmpeg/FFmpegHeaders.hpp.orig	Fri Jun 17 10:41:56 2011
++++ src/osgPlugins/ffmpeg/FFmpegHeaders.hpp	Fri Jul  5 10:24:31 2013
+@@ -5,16 +5,20 @@
+ 
+ extern "C"
+ {
+-#define __STDC_CONSTANT_MACROS
+ #define FF_API_OLD_SAMPLE_FMT 0
+ #include <errno.h>    // for error codes defined in avformat.h
+ #include <stdint.h>
+-#include <avcodec.h>
+-#include <avformat.h>
+-#include <avdevice.h>
++#include <libavcodec/avcodec.h>
++#include <libavformat/avformat.h>
+ 
++#ifndef ANDROID
++#include <libavdevice/avdevice.h>
++#endif
++
++#include <libavutil/mathematics.h>
++
+ #ifdef USE_SWSCALE    
+-    #include <swscale.h>
++    #include <libswscale/swscale.h>
+ #endif
+ 
+ }

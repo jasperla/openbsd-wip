@@ -1,0 +1,8 @@
+$OpenBSD$
+--- indra/llwindow/files.openbsd4.lst.orig	Tue Jan  9 15:06:47 2007
++++ indra/llwindow/files.openbsd4.lst	Tue Jan  9 15:06:35 2007
+@@ -0,0 +1,4 @@
++llwindow/llkeyboardsdl.cpp
++llwindow/llwindowsdl.cpp
++llwindow/llwindowlinux.cpp
++llwindow/llwindowmesaheadless.cpp

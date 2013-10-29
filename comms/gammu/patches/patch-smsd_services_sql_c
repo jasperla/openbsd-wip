@@ -1,0 +1,12 @@
+$OpenBSD$
+--- smsd/services/sql.c.orig	Wed Jun 27 12:02:28 2012
++++ smsd/services/sql.c	Sat Sep  1 17:30:23 2012
+@@ -9,7 +9,7 @@
+  * Licensed under GNU GPL version 2 or later
+  */
+ 
+-#define _XOPEN_SOURCE
++/* Fix implicit declatarion of strptime */
+ #define _BSD_SOURCE
+ #include <time.h>
+ #include <gammu.h>

@@ -1,0 +1,11 @@
+@comment $OpenBSD$
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/LICENSE
+${GEM_LIB}/gems/${DISTNAME}/README.rdoc
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/rack/
+${GEM_LIB}/gems/${DISTNAME}/lib/rack/openid/
+${GEM_LIB}/gems/${DISTNAME}/lib/rack/openid.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rack/openid/simple_auth.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec

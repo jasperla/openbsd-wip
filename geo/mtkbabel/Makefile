@@ -12,13 +12,10 @@ MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		perl
 NO_BUILD =		Yes
-NO_REGRESS =	Yes
+NO_TEST =	Yes
 PKG_ARCH =		*
 
 RUN_DEPENDS =	devel/p5-Time-Format \

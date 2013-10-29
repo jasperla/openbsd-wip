@@ -1,8 +1,8 @@
 $OpenBSD$
---- src/Makefile.in.orig	Mon Nov 19 21:16:15 2012
-+++ src/Makefile.in	Mon Nov 19 21:18:48 2012
-@@ -346,7 +346,7 @@ top_srcdir = @top_srcdir@
- @HAVE_EXPERIMENTAL_TRUE@EXP_DIR = chat dv 
+--- src/Makefile.in.orig	Tue Feb  5 21:15:48 2013
++++ src/Makefile.in	Wed Aug 28 11:32:29 2013
+@@ -357,7 +357,7 @@ top_srcdir = @top_srcdir@
+ @HAVE_EXPERIMENTAL_TRUE@EXP_DIR = chat dv consensus sysmon
  
  # All of these currently only work on GNU/Linux
 -@LINUX_TRUE@LINUX_DIR = dns exit vpn gns pt

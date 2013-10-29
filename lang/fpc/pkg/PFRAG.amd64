@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-bin/ppcx64
-lib/fpc/${V}/ppcx64
-@man man/man1/ppcx64.1

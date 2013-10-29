@@ -3,7 +3,7 @@
 COMMENT=		DICOM toolkit
 
 DISTNAME=		dcmtk-3.5.4
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		graphics
 
@@ -28,9 +28,6 @@ MASTER_SITES=		ftp://dicom.offis.de/pub/dicom/offis/software/dcmtk/dcmtk354/
 # Several ISC and BSDish
 # ftp://dicom.offis.de/pub/dicom/offis/software/dcmtk/dcmtk354/COPYRIGHT
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto m ssl stdc++ wrap z jpeg>=62 png>=4 \
 			tiff>=36 xml2>=9
 
@@ -60,13 +57,10 @@ FAKE_FLAGS=		DESTDIR=${WRKINST} \
 
 USE_GROFF =		Yes
 
-# based on MODPY_BIN_ADJ from python.port.mk
-PERL_BIN_ADJ=	perl -pi \
-		-e '$$. == 1 && s|^.*env perl.*$$|\#!/usr/bin/perl|;' \
-		-e '$$. == 1 && s|^.*bin/perl.*$$|\#!/usr/bin/perl|;' \
-		-e 'close ARGV if eof;'
+MODPERL_ADJ_FILES =	dcmpstat/tests/dcmpsprt.pl \
+			dcmtls/tests/dcmtk_ca.pl
 
-REGRESS_IS_INTERACTIVE =	X11
+TEST_IS_INTERACTIVE =	X11
 
 .include <bsd.port.arch.mk>
 
@@ -75,7 +69,7 @@ COPTS =			-fPIC
 
 # Add paths to all directories where we have libraries built
 .for l v in ${SHARED_LIBS}
-REGRESS_LD_PATH +=	${WRKBUILD}/$l/libsrc
+TEST_LD_PATH +=	${WRKBUILD}/$l/libsrc
 .endfor
 
 post-configure:
@@ -88,15 +82,12 @@ post-configure:
 .endfor
 .endif    # ${NO_SHARED_LIBS:L} != "yes"
 
-do-regress:
-	${PERL_BIN_ADJ} \
-		${WRKSRC}/dcmpstat/tests/dcmpsprt.pl \
-		${WRKSRC}/dcmtls/tests/dcmtk_ca.pl
+do-test:
 	${MODTCL_WISH_ADJ} \
 		${WRKSRC}/dcmdata/tests/dcmpsdmp.tcl \
 		${WRKSRC}/dcmpstat/tests/dcmpschk.tcl
 	cd ${WRKBUILD} && \
-		LD_LIBRARY_PATH="`echo '${REGRESS_LD_PATH}' | sed -e 's/ /:/g'`" \
+		LD_LIBRARY_PATH="`echo '${TEST_LD_PATH}' | sed -e 's/ /:/g'`" \
 		sh ${FILESDIR}/regress.sh
 
 .include <bsd.port.mk>

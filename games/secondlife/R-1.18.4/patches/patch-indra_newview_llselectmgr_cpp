@@ -1,0 +1,31 @@
+$OpenBSD$
+--- indra/newview/llselectmgr.cpp.orig	Wed Nov  7 20:18:13 2007
++++ indra/newview/llselectmgr.cpp	Mon Nov 12 02:11:36 2007
+@@ -4409,9 +4409,11 @@ void LLSelectMgr::updateSilhouettes()
+ {
+ 	S32 num_sils_genned = 0;
+ 
++	llinfos << "Begin updateSilhouettes" << llendl;
+ 	LLVector3d	cameraPos = gAgent.getCameraPositionGlobal();
+ 	F32 currentCameraZoom = gAgent.getCurrentCameraBuildOffset();
+ 
++	//llinfos << "Stage 1 updateSilhouettes" << llendl;
+ 	if (!mSilhouetteImagep)
+ 	{
+ 		LLUUID id;
+@@ -4991,6 +4993,7 @@ void LLSelectNode::saveTextureScaleRatios()
+ 	}
+ }
+ 
++	//llinfos << "Stage 2 updateSilhouettes" << llendl;
+ 
+ // This implementation should be similar to LLTask::allowOperationOnTask
+ BOOL LLSelectNode::allowOperationOnNode(PermissionBit op, U64 group_proxy_power) const
+@@ -5120,6 +5123,7 @@ void LLSelectNode::renderOneSilhouette(const LLColor4 
+ 		glLoadIdentity();
+ 		glMultMatrixd(gGLModelView);
+ 	}
++	//llinfos << "Stage 3 updateSilhouettes" << llendl;
+ 	
+ 	
+ 	if (drawable->isActive())

@@ -1,0 +1,30 @@
+$OpenBSD$
+--- platform/gtk-x11/setup.py.orig	Thu Jan 10 14:55:46 2008
++++ platform/gtk-x11/setup.py	Sat Jan 19 14:56:10 2008
+@@ -46,6 +46,9 @@ def use_xine_hack_default():
+ ###############################################################################
+ 
+ BOOST_LIB = 'boost_python'
++BOOST_LIB_PATH = '/usr/local/lib'
++BOOST_INCLUDE_PATH = '/usr/local/include'
++X11_INCLUDE_PATH = '/usr/X11R6/include'
+ 
+ USE_XINE_HACK = True #use_xine_hack_default()
+ 
+@@ -209,6 +212,8 @@ fasttypes_ext = \
+     Extension("miro.fasttypes", 
+         sources = [os.path.join(portable_dir, 'fasttypes.cpp')],
+         libraries = [BOOST_LIB],
++        library_dirs = [BOOST_LIB_PATH],
++        include_dirs = [BOOST_INCLUDE_PATH],
+     )
+ 
+ ##### The libtorrent extension ####
+@@ -299,6 +304,7 @@ xlib_ext = \
+         [ os.path.join(frontend_implementation_dir,'xlibhelper.pyx') ],
+         library_dirs = ['/usr/X11R6/lib'],
+         libraries = ['X11'],
++        include_dirs = [X11_INCLUDE_PATH],
+     )
+ 
+ #### Xine Extension ####

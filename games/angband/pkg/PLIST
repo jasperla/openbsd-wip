@@ -93,8 +93,6 @@ share/examples/angband/etc/pref/font-gcu.prf
 @sample ${SYSCONFDIR}/angband/pref/font-gcu.prf
 share/examples/angband/etc/pref/font-mac.prf
 @sample ${SYSCONFDIR}/angband/pref/font-mac.prf
-share/examples/angband/etc/pref/font${FLAVORS}.prf
-@sample ${SYSCONFDIR}/angband/pref/font${FLAVORS}.prf
 share/examples/angband/etc/pref/font-win.prf
 @sample ${SYSCONFDIR}/angband/pref/font-win.prf
 share/examples/angband/etc/pref/font-x11.prf

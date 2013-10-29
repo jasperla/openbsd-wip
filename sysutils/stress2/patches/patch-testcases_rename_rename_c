@@ -1,0 +1,11 @@
+$OpenBSD$
+--- testcases/rename/rename.c.orig	Wed Dec  8 20:33:55 2010
++++ testcases/rename/rename.c	Fri Jun 14 15:57:58 2013
+@@ -26,7 +26,6 @@
+  */
+ 
+ #include <sys/cdefs.h>
+-__FBSDID("$FreeBSD: projects/stress2/testcases/rename/rename.c 187224 2009-01-14 16:03:10Z pho $");
+ 
+ #include <unistd.h>
+ #include <stdio.h>

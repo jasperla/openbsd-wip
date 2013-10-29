@@ -1,0 +1,10 @@
+@comment $OpenBSD$
+%%SHARED%%
+Unvanquished/
+@bin Unvanquished/daemon
+@bin Unvanquished/daemonded
+Unvanquished/main/
+Unvanquished/main/vm/
+Unvanquished/main/vm/cgame.qvm
+Unvanquished/main/vm/game.qvm
+Unvanquished/main/vm/ui.qvm

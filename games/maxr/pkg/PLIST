@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+@owner root
 @bin bin/maxr
 share/maxr/
 share/maxr/MANUAL
@@ -1322,3 +1323,4 @@ share/maxr/vehicles/trans_oil/store.pcx
 share/maxr/vehicles/trans_oil/video.flc
 share/maxr/vehicles/vehicles.xml
 share/maxr/voices/
+@owner

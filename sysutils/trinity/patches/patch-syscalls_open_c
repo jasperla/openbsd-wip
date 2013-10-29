@@ -1,0 +1,58 @@
+$OpenBSD$
+--- syscalls/open.c.orig	Sat Mar  2 19:04:50 2013
++++ syscalls/open.c	Sat Mar  2 19:11:01 2013
+@@ -7,7 +7,9 @@
+ 
+ #include "trinity.h"
+ #include "sanitise.h"
++#ifdef __LINUX__
+ #include "compat.h"
++#endif
+ 
+ struct syscall syscall_open = {
+ 	.name = "open",
+@@ -18,13 +20,37 @@ struct syscall syscall_open = {
+ 	.arg2type = ARG_LIST,
+ 	.arg2list = {
+ 		.num = 19,
+-		.values = { O_RDONLY, O_WRONLY, O_RDWR,
+-				O_CREAT, O_EXCL, O_NOCTTY,
+-				O_TRUNC, O_APPEND, O_NONBLOCK,
+-				O_SYNC, O_ASYNC,
+-				O_DIRECTORY, O_NOFOLLOW, O_CLOEXEC,
+-				O_DIRECT, O_NOATIME, O_PATH,
+-				O_DSYNC, O_LARGEFILE },
++		.values = {
++				O_RDONLY,
++				O_WRONLY,
++				O_RDWR,
++				O_CREAT,
++				O_EXCL,
++#ifdef __LINUX__
++				O_NOCTTY,
++#endif
++				O_TRUNC,
++				O_APPEND,
++				O_NONBLOCK,
++				O_SYNC,
++#ifdef __LINUX__
++				O_ASYNC,
++#endif
++				O_DIRECTORY,
++				O_NOFOLLOW,
++				O_CLOEXEC,
++#ifdef __LINUX__
++				O_DIRECT,
++				O_NOATIME,
++				O_PATH,
++				O_DSYNC,
++				O_LARGEFILE
++#endif
++#ifdef OpenBSD
++				O_SHLOCK,
++				O_EXLOCK
++#endif
++		},
+ 	},
+ 	.arg3name = "mode",
+ };

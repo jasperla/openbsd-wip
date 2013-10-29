@@ -1,0 +1,12 @@
+$OpenBSD$
+--- indra/newview/llviewerobjectlist.cpp.orig	Wed Nov  7 20:18:13 2007
++++ indra/newview/llviewerobjectlist.cpp	Wed Nov 21 10:48:24 2007
+@@ -64,7 +64,7 @@
+ #include "u64.h"
+ #include "llviewerimagelist.h"
+ #include "lldatapacker.h"
+-#ifdef LL_STANDALONE
++#if defined(LL_STANDALONE) || defined(__OpenBSD__)
+ #include <zlib.h>
+ #else
+ #include "zlib/zlib.h"

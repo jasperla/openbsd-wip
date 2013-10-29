@@ -1,0 +1,8 @@
+@comment $OpenBSD$
+lib/python${MODPY_VERSION}/site-packages/miro/MozillaBrowser.so
+lib/python${MODPY_VERSION}/site-packages/miro/database.so
+lib/python${MODPY_VERSION}/site-packages/miro/fasttypes.so
+lib/python${MODPY_VERSION}/site-packages/miro/libtorrent.so
+lib/python${MODPY_VERSION}/site-packages/miro/sorts.so
+lib/python${MODPY_VERSION}/site-packages/miro/xine.so
+lib/python${MODPY_VERSION}/site-packages/miro/xlibhelper.so

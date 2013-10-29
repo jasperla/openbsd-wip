@@ -2,7 +2,7 @@
 
 COMMENT=	an OpenPGP key archiver
 
-DISTNAME=	paperkey-1.2
+DISTNAME=	paperkey-1.3
 CATEGORIES=	security
 
 HOMEPAGE=	http://www.jabberwocky.com/software/paperkey/
@@ -10,14 +10,11 @@ MAINTAINER=	Sergey Bronnikov <estetus@gmail.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c
 
 FAKE_FLAGS=	PREFIX=${PREFIX}
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 MASTER_SITES=   ${HOMEPAGE}
 

@@ -15,9 +15,6 @@ SHARED_LIBS +=           rpm                       1.0 \
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =   Yes
-PERMIT_PACKAGE_FTP =     Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =   Yes
 
 MASTER_SITES =           http://rpm.org/releases/rpm-4.9.x/
 
@@ -39,7 +36,6 @@ MODPY_SETUPTOOLS =       No
 
 SEPARATE_BUILD =         simple
 USE_GMAKE =              Yes
-USE_LIBTOOL =            Yes
 AUTOCONF_VERSION =       2.68
 AUTOMAKE_VERSION =       1.11
 CONFIGURE_STYLE =        automake autoconf gnu
@@ -71,8 +67,8 @@ MAKE_ENV +=              PATH=${WRKDIR}/test/bin:${PATH}
 # NOTE: rpm and rpmdb are picky about the option order.  rcfile and dbpath
 # must come *before* defines.  This is not normally a problem for users as
 # it is very uncommon to override rcfile and dbpath.  We are only doing it
-# here for the regression tests.
-pre-regress:
+# here for the tests.
+pre-test:
 	mkdir -p ${WRKDIR}/test/bin
 	mkdir -p ${WRKDIR}/test/db
 	echo "#!/bin/sh -x" > ${WRKDIR}/test/bin/rpm

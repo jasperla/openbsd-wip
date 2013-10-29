@@ -14,9 +14,6 @@ MAINTAINER=		Sideris Michael <msid@daemons.gr>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 # This project moved from sourceforge to it's own platfrom and provides crappy PHP-download system's
 # links which aren't acceptable by OpenBSD ports system. So using handy-made mirror for download.

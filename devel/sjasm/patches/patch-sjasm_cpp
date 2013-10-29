@@ -1,0 +1,12 @@
+$OpenBSD$
+--- sjasm.cpp.orig	Mon May  6 21:54:39 2013
++++ sjasm.cpp	Mon May  6 21:55:07 2013
+@@ -28,6 +28,8 @@
+ 
+ #include "sjasm.h"
+ 
++#include <sys/param.h> /* MAXPATHLEN */
++
+ char destfilename[LINEMAX],listfilename[LINEMAX],expfilename[LINEMAX],sourcefilename[LINEMAX],symfilename[LINEMAX];
+ 
+ char filename[LINEMAX],*lp,line[LINEMAX],temp[LINEMAX],*tp,pline[LINEMAX*2],eline[LINEMAX*2],*bp;

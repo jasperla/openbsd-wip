@@ -1,0 +1,13 @@
+$OpenBSD$
+There are some pre-mastered GNU Make-specific files out there.
+--- mk/buildtools/build.properties.orig	Thu Oct  3 17:23:39 2013
++++ mk/buildtools/build.properties	Thu Oct  3 17:23:50 2013
+@@ -35,7 +35,7 @@
+ build.compiler=modern
+ 
+ # must be GNU make
+-build.native.make=make
++build.native.make=gmake
+ 
+ # generic compiler options
+ build.verbose=no

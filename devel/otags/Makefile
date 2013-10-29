@@ -10,23 +10,20 @@ MAINTAINER=	Christopher Zimmermann <madroach@gmerlin.de>
 HOMEPAGE=	http://askra.de/software/otags/
 
 # GPLv3
-PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
 
 MODULES=	lang/ocaml
 
 BUILD_DEPENDS=  sysutils/findlib
 
-#NO_REGRESS= 	Yes
+#NO_TEST= 	Yes
 ALL_TARGET=	all
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS=	--mandir ${PREFIX}/man
 USE_GMAKE=	yes
 
 post-install:
-	env -i ${MAKE_ENV} ${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} \
+	${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} \
 	  -C ${WRKSRC}/contrib ${INSTALL_TARGET}
 
 

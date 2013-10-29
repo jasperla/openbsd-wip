@@ -1,0 +1,11 @@
+$OpenBSD$
+--- portable/libtorrent/include/libtorrent/asio/ip/host_name.hpp.orig	Sat Jan 19 15:24:13 2008
++++ portable/libtorrent/include/libtorrent/asio/ip/host_name.hpp	Sat Jan 19 15:24:28 2008
+@@ -19,6 +19,7 @@
+ 
+ #include "asio/detail/push_options.hpp"
+ #include <string>
++#include <unistd.h>
+ #include "asio/detail/pop_options.hpp"
+ 
+ #include "asio/error.hpp"

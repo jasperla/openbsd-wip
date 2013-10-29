@@ -1,0 +1,12 @@
+$OpenBSD$
+--- indra/llmessage/llfiltersd2xmlrpc.cpp.orig	Thu Feb  8 12:14:38 2007
++++ indra/llmessage/llfiltersd2xmlrpc.cpp	Thu Feb  8 12:14:43 2007
+@@ -77,7 +77,7 @@
+ #include <sstream>
+ #include <iterator>
+ #include <xmlrpc-epi/xmlrpc.h>
+-#include "apr-1/apr_base64.h"
++#include "apr-1-mt/apr_base64.h"
+ 
+ #include "llbuffer.h"
+ #include "llbufferstream.h"

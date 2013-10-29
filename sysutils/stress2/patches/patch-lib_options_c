@@ -1,0 +1,11 @@
+$OpenBSD$
+--- lib/options.c.orig	Wed Dec  8 20:33:54 2010
++++ lib/options.c	Fri Jun 14 16:18:18 2013
+@@ -26,7 +26,6 @@
+  */
+ 
+ #include <sys/cdefs.h>
+-__FBSDID("$FreeBSD: projects/stress2/lib/options.c 208415 2010-05-22 11:38:06Z pho $");
+ 
+ #include <stdio.h>
+ #include <stdlib.h>

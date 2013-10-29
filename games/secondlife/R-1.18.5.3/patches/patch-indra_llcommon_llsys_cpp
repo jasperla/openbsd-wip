@@ -1,0 +1,72 @@
+$OpenBSD$
+--- indra/llcommon/llsys.cpp.orig	Wed Nov  7 20:18:06 2007
++++ indra/llcommon/llsys.cpp	Sun Dec  2 08:03:39 2007
+@@ -36,6 +36,10 @@
+ #include <iostream>
+ #ifdef LL_STANDALONE
+ # include <zlib.h>
++#elif defined(__OpenBSD__)
++#include <zlib.h>
++#include <sys/param.h>
++#include <sys/sysctl.h>
+ #else
+ # include "zlib/zlib.h"
+ #endif
+@@ -58,6 +62,8 @@
+ #	include <sys/sysinfo.h>
+ const char MEMINFO_FILE[] = "/proc/meminfo";
+ const char CPUINFO_FILE[] = "/proc/cpuinfo";
++#elif defined(__OpenBSD__)
++#	include <sys/utsname.h>
+ #endif
+ 
+ 
+@@ -455,7 +461,7 @@ void LLCPUInfo::stream(std::ostream& s) const
+ 	{
+ 		s << "Unable to collect processor information" << std::endl;
+ 	}
+-#else
++#elif LL_LINUX
+ 	// *NOTE: This works on linux. What will it do on other systems?
+ 	FILE* cpuinfo = LLFile::fopen(CPUINFO_FILE, "rb");
+ 	if(cpuinfo)
+@@ -515,7 +521,9 @@ U32 LLMemoryInfo::getPhysicalMemoryKB() const
+ 
+ 	return LLMemoryAdjustKBResult((U32)(state.ullTotalPhys >> 10));
+ 
+-#elif LL_DARWIN
++#elif defined(__OpenBSD__) /* XXX */
++	return (U32)(1024);
++#elif defined(LL_DARWIN)
+ 	// This might work on Linux as well.  Someone check...
+ 	uint64_t phys = 0;
+ 	int mib[2] = { CTL_HW, HW_MEMSIZE };
+@@ -584,13 +592,16 @@ void LLMemoryInfo::stream(std::ostream& s) const
+ 	{
+ 		s << "Unable to collect memory information";
+ 	}
++#elif defined(__OpenBSD__)
++	// XXX actually do the sysctl
++	s << "Intel(R) Celeron(R) CPU 2.80GHz (\"GenuineIntel\" 686-class)";
+ #elif LL_SOLARIS
+         U64 phys = 0;
+ 
+         phys = (U64)(sysconf(_SC_PHYS_PAGES)) * (U64)(sysconf(_SC_PAGESIZE)/1024);
+ 
+         s << "Total Physical KB:  " << phys << std::endl;
+-#else
++#elif LL_LINUX
+ 	// *NOTE: This works on linux. What will it do on other systems?
+ 	FILE* meminfo = LLFile::fopen(MEMINFO_FILE,"rb");
+ 	if(meminfo)
+@@ -608,6 +619,10 @@ void LLMemoryInfo::stream(std::ostream& s) const
+ 	{
+ 		s << "Unable to collect memory information";
+ 	}
++#else
++	/* XXX top like mem info sysctl stuff */
++	s << "Memory: Real: 382M/515M act/tot  Free: 456M  Swap: 0K/2038M used/tot";
++
+ #endif
+ }
+ 

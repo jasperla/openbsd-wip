@@ -54,7 +54,12 @@
 #define AFS_GCPAGS	        0	/* if nonzero, garbage collect PAGs */
 #define AFS_USE_GETTIMEOFDAY    1	/* use gettimeofday to implement rx clock */
 
+#include <sys/endian.h>
+#if _BYTE_ORDER == _LITTLE_ENDIAN
 #define AFSLITTLE_ENDIAN	1
+#else
+#define AFSBIG_ENDIAN		1
+#endif
 
 #ifndef IGNORE_STDS_H
 #include <afs/afs_sysnames.h>
@@ -77,5 +82,45 @@ enum vcexcl { NONEXCL, EXCL };
 
 #endif /* ! ASSEMBLER & ! __LANGUAGE_ASSEMBLY__ */
 #endif /* _KERNEL */
+
+#if defined(UKERNEL)
+
+#define AFS_USR_OBSD_ENV	1
+
+#include <afs/afs_sysnames.h>
+
+#define AFS_USERSPACE_IP_ADDR	1
+#define RXK_LISTENER_ENV	1
+#define AFS_GCPAGS		0 /* if nonzero, garbage collect PAGs */
+
+#define afsio_iov       uio_iov
+#define afsio_iovcnt    uio_iovcnt
+#define afsio_offset    uio_offset
+#define afsio_seg       uio_segflg
+#define afsio_fmode     uio_fmode
+#define afsio_resid     uio_resid
+#define AFS_UIOSYS      UIO_SYSSPACE
+#define AFS_UIOUSER     UIO_USERSPACE
+#define AFS_CLBYTES     MCLBYTES
+#define AFS_MINCHANGE   2
+#define VATTR_NULL      usr_vattr_null
+
+#define AFS_DIRENT
+#ifndef CMSERVERPREF
+#define CMSERVERPREF
+#endif
+
+#if     !defined(ASSEMBLER) && !defined(__LANGUAGE_ASSEMBLY__) && !defined(IGNORE_STDS_H)
+#include <limits.h>
+#include <sys/param.h>
+#include <sys/types.h>
+#include <sys/mount.h>
+#include <sys/fcntl.h>
+#include <netinet/in.h>
+#include <sys/uio.h>
+#include <sys/socket.h>
+#endif
+
+#endif /* defined(UKERNEL) */
 
 #endif /* AFS_PARAM_H */

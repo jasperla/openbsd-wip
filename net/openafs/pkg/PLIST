@@ -1,6 +1,7 @@
 @comment $OpenBSD: PLIST,v 1.5 2010/11/15 08:11:17 jasper Exp $
 %%SHARED%%
-%%withcache%%
+@owner root
+@group wheel
 @bin bin/afs_compile_et
 @bin bin/afsio
 @bin bin/afsmonitor
@@ -217,6 +218,10 @@ lib/librx.a
 lib/librxkad.a
 lib/librxstat.a
 lib/libubik.a
+lib/libubik_pthread.a
+@owner root
+@group wheel
+lib/openafs/
 libexec/openafs/
 @bin libexec/openafs/buserver
 @bin libexec/openafs/dafileserver
@@ -229,6 +234,7 @@ libexec/openafs/
 @bin libexec/openafs/upserver
 @bin libexec/openafs/vlserver
 @bin libexec/openafs/volserver
+@owner
 @man man/man1/afs.1
 @man man/man1/afs_compile_et.1
 @man man/man1/afsmonitor.1
@@ -573,6 +579,7 @@ libexec/openafs/
 @man man/man8/volserver.8
 @man man/man8/vsys.8
 @man man/man8/xfs_size_check.8
+@owner root
 @bin sbin/backup
 @bin sbin/bos_util
 @bin sbin/bosserver

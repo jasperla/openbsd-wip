@@ -1,0 +1,24 @@
+$OpenBSD$
+--- indra/llwindow/Makefile.orig	Sun Jan 28 19:10:37 2007
++++ indra/llwindow/Makefile	Mon Jan 29 16:56:52 2007
+@@ -0,0 +1,20 @@
++#	$OpenBSD: Makefile,v 1.14 2005/11/24 20:49:23 deraadt Exp $
++
++LIB=	llwindow
++
++SRCS=	lldxhardware.cpp llgl.cpp llkeyboard.cpp llwindow.cpp
++SRCS+=	llwindowheadless.cpp
++SRCS+=	llwindowsdl.cpp llkeyboardsdl.cpp
++SRCS+=	llwindowlinux.cpp llwindowmesaheadless.cpp
++
++
++DEBUGLIBS=no
++NOPROFILE=yes
++NOPIC=yes
++
++install:
++	@echo -n
++
++.include <bsd.lib.mk>
++.include <../Makefile.llinc>
++

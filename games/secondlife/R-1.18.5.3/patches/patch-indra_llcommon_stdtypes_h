@@ -1,0 +1,33 @@
+$OpenBSD$
+--- indra/llcommon/stdtypes.h.orig	Sun Dec  2 19:17:43 2007
++++ indra/llcommon/stdtypes.h	Sun Dec  2 19:20:58 2007
+@@ -31,6 +31,21 @@
+ #ifndef LL_STDTYPES_H
+ #define LL_STDTYPES_H
+ 
++#if defined(__OpenBSD__)
++typedef u_int8_t			U8;
++typedef u_int16_t			U16;
++typedef u_int32_t			U32;
++typedef u_int64_t			U64;
++
++typedef int8_t				S8;
++typedef int16_t				S16;
++typedef int32_t				S32;
++typedef int64_t				S64;
++typedef wchar_t				llwchar;
++#define S64L(a)				(a##LL)
++#define U64L(a)				(a##ULL)
++#else
++
+ typedef signed char			S8;
+ typedef unsigned char			U8;
+ typedef signed short			S16;
+@@ -57,6 +72,7 @@ typedef long long unsigned int		U64;
+ #if LL_DARWIN || LL_LINUX || LL_SOLARIS
+ #define S64L(a)				(a##LL)
+ #define U64L(a)				(a##ULL)
++#endif
+ #endif
+ #endif
+ 

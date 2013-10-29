@@ -2,18 +2,16 @@
 
 COMMENT=	Perl interface to the Twitter API
 
-DISTNAME=	Net-Twitter-3.18003
+DISTNAME=	Net-Twitter-4.00004
 CATEGORIES=	net
 
 MAINTAINER=	Andrew Fresh <andrew@cpan.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=   Yes
-PERMIT_PACKAGE_FTP=     Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=	cpan
+CONFIGURE_STYLE=modbuild
 
 CONFIGURE_ARGS=--skipdeps
 
@@ -34,6 +32,6 @@ RUN_DEPENDS=	converters/p5-JSON \
 		www/p5-URI \
 		www/p5-libwww
 
-REGRESS_DEPENDS=devel/p5-Test-Fatal
+TEST_DEPENDS=	devel/p5-Test-Fatal
 
 .include <bsd.port.mk>

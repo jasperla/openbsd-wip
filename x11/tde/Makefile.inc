@@ -19,7 +19,6 @@ PORTHOME ?=	${WRKDIST}
 MAINTAINER ?=	Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 # GPL
-PERMIT_DISTFILES_CDROM ?=       Yes
 PERMIT_DISTFILES_FTP ?=         Yes
 PERMIT_PACKAGE_CDROM ?=         Yes
 PERMIT_PACKAGE_FTP ?=           Yes
@@ -62,7 +61,7 @@ MAKE_FLAGS +=		${MODTDE_MAKE_FLAGS}
 USE_LIBTOOL =		gnu
 .endif
 
-NO_REGRESS ?=	Yes
+NO_TEST ?=	Yes
 
 post_install_libs = mkdir -p ${PREFIX}/${TDE}; cd ${PREFIX}/${TDE}
 .for l v in ${SHARED_LIBS}

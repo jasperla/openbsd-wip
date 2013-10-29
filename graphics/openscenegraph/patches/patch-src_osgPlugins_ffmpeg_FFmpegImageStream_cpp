@@ -1,0 +1,24 @@
+$OpenBSD$
+
+https://github.com/openscenegraph/osg/commit/876cb95fada9a2ea5821e6473c185338ec28a914
+
+--- src/osgPlugins/ffmpeg/FFmpegImageStream.cpp.orig	Tue Apr 19 13:40:22 2011
++++ src/osgPlugins/ffmpeg/FFmpegImageStream.cpp	Fri Jul  5 10:25:17 2013
+@@ -69,7 +69,7 @@ bool FFmpegImageStream::open(const std::string & filen
+         return false;
+ 
+     setImage(
+-        m_decoder->video_decoder().width(), m_decoder->video_decoder().height(), 1, GL_RGBA, GL_BGRA, GL_UNSIGNED_BYTE,
++        m_decoder->video_decoder().width(), m_decoder->video_decoder().height(), 1, GL_RGB, GL_RGB, GL_UNSIGNED_BYTE,
+         const_cast<unsigned char *>(m_decoder->video_decoder().image()), NO_DELETE
+     );
+ 
+@@ -324,7 +324,7 @@ void FFmpegImageStream::publishNewFrame(const FFmpegDe
+ 
+ #if 1
+     this_->setImage(
+-        this_->m_decoder->video_decoder().width(), this_->m_decoder->video_decoder().height(), 1, GL_RGBA, GL_BGRA, GL_UNSIGNED_BYTE,
++        this_->m_decoder->video_decoder().width(), this_->m_decoder->video_decoder().height(), 1, GL_RGB, GL_RGB, GL_UNSIGNED_BYTE,
+         const_cast<unsigned char *>(this_->m_decoder->video_decoder().image()), NO_DELETE
+     );
+ #else

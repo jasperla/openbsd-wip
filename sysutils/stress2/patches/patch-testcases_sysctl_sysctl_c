@@ -1,0 +1,11 @@
+$OpenBSD$
+--- testcases/sysctl/sysctl.c.orig	Sat Mar  2 15:17:06 2013
++++ testcases/sysctl/sysctl.c	Sat Mar  2 15:17:50 2013
+@@ -28,7 +28,6 @@
+ /* Call sysctl(8) and fstat(1) a few times */
+ 
+ #include <sys/cdefs.h>
+-__FBSDID("$FreeBSD: projects/stress2/testcases/sysctl/sysctl.c 187224 2009-01-14 16:03:10Z pho $");
+ 
+ #include <stdio.h>
+ #include <stdlib.h>

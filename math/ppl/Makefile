@@ -22,9 +22,6 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB-main =		gmp gmpxx m stdc++ ${WANTLIB} c glpk z
 WANTLIB-java =		gmp gmpxx m stdc++ ${WANTLIB} ppl
@@ -49,7 +46,6 @@ LIB_DEPENDS-java =	math/ppl,-main
 RUN_DEPENDS-java =	${MODJAVA_RUN_DEPENDS}
 
 USE_GMAKE =		Yes
-USE_LIBTOOL =		Yes
 
 CONFIGURE_STYLE =	gnu
 
@@ -69,10 +65,10 @@ PKG_ARGS +=		-Djava=0
 CONFIGURE_ENV +=	CPPFLAGS=-I${LOCALBASE}/include
 CONFIGURE_ENV +=	LDFLAGS=-L${LOCALBASE}/lib
 
-# should a regression test fail, this gives more info
+# should a test fail, this gives more info
 MAKE_ENV +=		PPL_NOISY_TESTS=yes
 
-pre-regress:
+pre-test:
 	@# subst in LIBppl_VERSION
 	${SUBST_CMD} ${WRKBUILD}/interfaces/OCaml/tests/Makefile
 

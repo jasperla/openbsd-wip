@@ -20,12 +20,12 @@ SHARED_LIBS +=  kvoctraincore             2.0 # 0.0
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+2,-guic
 LIB_DEPENDS =		x11/tde/libs
-#REGRESS_DEPENDS =	???
+#TEST_DEPENDS =		???
 
 #MAKE_FLAGS =		???
 #MAKE_ENV =		???
 #FAKE_FLAGS =		???
-#REGRESS_FLAGS =	???
+#TEST_FLAGS =		???
 
 #USE_GMAKE =		Yes
 #USE_GROFF =		Yes
@@ -38,7 +38,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread"
 
 #NO_BUILD =		Yes
-#NO_REGRESS =		Yes
+#NO_TEST =		Yes
 
 #CFLAGS =		???
 #LDFLAGS =		???
@@ -51,6 +51,6 @@ WRKDIST =		${WRKDIR}/kdeedu
 
 #ALL_TARGET =		???
 #INSTALL_TARGET =	???
-#REGRESS_TARGET =	???
+#TEST_TARGET =		???
 
 .include <bsd.port.mk>

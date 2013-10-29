@@ -10,12 +10,9 @@ MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
 # BSD License
 PERMIT_PACKAGE_CDROM =	Yes 
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += pthread
-MASTER_SITES =		http://people.freebsd.org/~nik/public_distfiles/
+MASTER_SITES =		https://people.freebsd.org/~nik/public_distfiles/
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu	

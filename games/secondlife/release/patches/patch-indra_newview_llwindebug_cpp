@@ -1,0 +1,14 @@
+$OpenBSD$
+--- indra/newview/llwindebug.cpp.orig	Mon Jan  8 23:58:50 2007
++++ indra/newview/llwindebug.cpp	Mon Jan  8 23:59:15 2007
+@@ -215,8 +215,8 @@ LONG LLWinDebug::handleException(struct 
+ 	gEmergencyMemoryReserve.release();
+ 
+ 	BOOL userWantsMaxiDump =
+-		(stricmp(gSavedSettings.getString("LastName").c_str(), "linden") == 0)
+-		|| (stricmp(gSavedSettings.getString("LastName").c_str(), "tester") == 0);
++		(strcasecmp(gSavedSettings.getString("LastName").c_str(), "linden") == 0)
++		|| (strcasecmp(gSavedSettings.getString("LastName").c_str(), "tester") == 0);
+ 
+ 	BOOL alsoSaveMaxiDump = userWantsMaxiDump && !gInProductionGrid;
+ 

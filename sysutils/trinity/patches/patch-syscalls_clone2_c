@@ -1,0 +1,16 @@
+$OpenBSD$
+--- syscalls/clone2.c.orig	Sat Mar  2 20:07:23 2013
++++ syscalls/clone2.c	Sat Mar  2 20:07:43 2013
+@@ -5,6 +5,7 @@
+  * On failure, -1 is returned in the caller's context, no child process will be created, and errno will be set appropriately.
+  */
+ 
++#ifdef __LINUX__
+ #include <linux/sched.h>
+ 
+ #include "trinity.h"
+@@ -38,3 +39,4 @@ struct syscall syscall_clone2 = {
+ 	.arg6type = ARG_ADDRESS,
+ 	.rettype = RET_PID_T,
+ };
++#endif

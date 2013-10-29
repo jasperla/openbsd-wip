@@ -4,8 +4,8 @@ SHARED_ONLY =		Yes
 
 COMMENT =		Common Deskop Environment
 
-V =			2.2.0c
-DISTNAME =		cde-src-$V-alpha
+V =			2.2.0d
+DISTNAME =		cde-src-$V-beta
 PKGNAME =		cde-$V
 
 CDE_SHVERSION =		0.0
@@ -21,9 +21,6 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 # LGPLv2.0+, CC-BY-SA 3.0
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += ICE Mrm SM Uil X11 Xau Xdmcp Xext Xm Xmu Xp Xt c
 WANTLIB += m stdc++ util
@@ -32,14 +29,17 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cdesktopenv/}
 
 MODULES =		lang/tcl \
 			converters/libiconv
-BUILD_DEPENDS =		lang/gawk \
-			print/xprintproto
-#RUN_DEPENDS =		???
+BUILD_DEPENDS =		print/xprintproto \
+			shells/ksh93
+RUN_DEPENDS =		shells/ksh93
 LIB_DEPENDS =		x11/openmotif
 
 LOCALSTATEDIR =		${BASELOCALSTATEDIR}/dt
 SYSCONFDIR =		${BASESYSCONFDIR}/dt
 CDEDIR =		${TRUEPREFIX}/dt
+
+SUBST_VARS +=		LOCALSTATEDIR
+
 BOOTSTRAPCFLAGS =	${CFLAGS} -I${X11BASE}/include -I${X11BASE}/include/X11
 MAKE_FLAGS =		BOOTSTRAPCFLAGS="${BOOTSTRAPCFLAGS}" \
 			IMAKE_DEFINES="-DX11ProjectRoot=${X11BASE} \
@@ -64,10 +64,10 @@ USE_GROFF =		Yes
 XMKMF =			xmkmf -a -DBOOTSTRAPCFLAGS="\'${BOOTSTRAPCFLAGS}\'"
 #CONFIGURE_ENV =
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 CFLAGS =		-g
-WRKDIST =		${WRKDIR}/${PKGNAME}
+WRKDIST =		${WRKDIR}/cde-$V
 
 ALL_TARGET =		World
 
@@ -79,9 +79,6 @@ UDBS =			C DE DEMOS ES FR HELP-C HELP-DE HELP-ES HELP-FR \
 			TT
 
 pre-configure:
-	# this actually makes our awk segfault
-	perl -pi -e "s,/usr/bin/awk,${LOCALBASE}/bin/gawk," \
-		${WRKSRC}/admin/IntegTools/dbTools/udbToAny.ksh
 	# XXX use SUBST_CMD for most of this
 	perl -pi -e "s,/usr/dt/lib,${PREFIX}/lib,g; \
 		     s,/usr/local/dt/lib,${PREFIX}/lib,g; \
@@ -96,5 +93,6 @@ do-install:
 	-ReleaseStream openbsd ${WRKSRC}/databases/CDE-${_udb}.udb | /bin/sh \
 	${WRKSRC}/admin/IntegTools/dbTools/mkProd -D ${WRKINST} -S ${WRKSRC} -
 .endfor
+	chmod u+s ${WRKINST}${CDEDIR}/bin/dtsession
 
 .include <bsd.port.mk>

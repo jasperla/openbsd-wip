@@ -12,9 +12,6 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 # Beerware; linking exception for libowfat
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 FLAVORS+=		accesslist_white accesslist_black
 FLAVORS+=		sync_live ip_from_query_string
@@ -35,7 +32,7 @@ WRKDIST =		${WRKDIR}/opentracker
 
 ALL_TARGET =		opentracker
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .if ${FLAVOR:Maccesslist_white} && ${FLAVOR:Maccesslist_black}
 ERRORS+="Fatal: accesslist_white and accesslist_black flavors are mutually exclusive"

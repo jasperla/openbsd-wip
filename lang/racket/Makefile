@@ -1,101 +1,122 @@
 # $OpenBSD$
 
-BROKEN-i386 =		segfault in gui-debugger
-
 SHARED_ONLY =		Yes
-
-# "sconfig.h" only supports i386 and amd64 on OpenBSD
+# Racket only supports i386 and amd64 on OpenBSD
 ONLY_FOR_ARCHS =	i386 amd64
 
-COMMENT =		scheme dialect often used for teaching programming
+# XXX Change COMMENT and DESCR for racket 6. The core will not include
+# the IDE, gui libs, teaching collects, etc. And probably "descendant of
+# scheme" isn't the best description for racket.
+COMMENT =		descendant of scheme with IDE and teaching resources
 
-V =			5.3.1
+V =			5.3.6
 PKGNAME =		racket-$V
+# The project uses racket-* for stable and plt-* for development releases
 DISTNAME =		racket-$V-src-unix
-#DISTNAME =		plt-$V-src-unix
+
+# Each new version of racket is incompatible with the previous one.
+# Increase always the major number.
+# http://article.gmane.org/gmane.comp.lang.racket.devel/9872
+SHARED_LIBS +=		racket3m	0.0 # 5.3.6
+
 CATEGORIES =		lang
+DPB_PROPERTIES =	parallel
 HOMEPAGE =		http://racket-lang.org/
 MAINTAINER =		Juan Francisco Cantero Hurtado <iam@juanfra.info>
 
-# LGPLv2+
+# LGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =		http://download.racket-lang.org/installers/${V}/racket/ \
-			http://www.eecs.northwestern.edu/racket/${V}/racket/ \
-			http://www.cs.utah.edu/plt/installers/${V}/racket/ \
+MASTER_SITES =		https://download.racket-lang.org/installers/${V}/racket/ \
+			https://www.cs.utah.edu/plt/installers/${V}/racket/ \
+			https://www.eecs.northwestern.edu/racket/${V}/racket/ \
 			http://mirror.csclub.uwaterloo.ca/racket/racket-installers/${V}/racket/ \
 			http://mirror.informatik.uni-tuebingen.de/mirror/racket/${V}/racket/ \
 			http://racket.infogroep.be/${V}/racket/ \
 			http://pre.racket-lang.org/release/installers/ \
-			http://download.tuxfamily.org/jod/lang/racket/
+			http://pre.racket-lang.org/installers/ \
+			http://download.tuxfamily.org/jod/lang/racket/ \
+			ftp://download.tuxfamily.org/jod/lang/racket/
 EXTRACT_SUFX =		.tgz
 
-# base gcc fails on "foreign" folder (due to threads problems)
-MODULES +=		converters/libiconv \
-			gcc4
+MODULES +=		converters/libiconv
 
-MODGCC4_VERSION =	4.6
-MODGCC4_LANGS =		c
-MODGCC4_ARCHS =		*
-
-# XXX: it seems gtk+2 would merely be a BUILD/RUN_DEPENDS, need to check
-LIB_DEPENDS =		devel/libffi
-BUILD_DEPENDS =		graphics/cairo \
-			devel/pango \
+# http://docs.racket-lang.org/draw/libs.html
+# http://docs.racket-lang.org/gui/libs.html
+# Some deps are listed in the README, others in the doc and others
+# are called by ffi.
+LIB_DEPENDS =		devel/libffi>=3.0.9p2
+BUILD_DEPENDS =		devel/pango \
 			graphics/jpeg
-RUN_DEPENDS =		x11/gtk+2
+RUN_DEPENDS =		x11/gtkglext \
+			devel/libunique \
+			databases/iodbc,-main
 
-WANTLIB += GL GLU X11 Xdamage Xext Xfixes Xxf86vm c crypto drm
-WANTLIB += ffi m pthread stdc++ xcb
+WANTLIB += c m pthread ffi
 
 WRKDIST =		${WRKDIR}/racket-$V
 WRKSRC =		${WRKDIST}/src
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 VMEM_WARNING =		Yes
-SEPARATE_BUILD =	simple
-
-USE_GROFF =		Yes
-USE_LIBTOOL =		Yes
+SEPARATE_BUILD =	Yes
 
 CONFIGURE_STYLE =	gnu
-# --enable-libffi needs LDFLAGS="-pthread"
-# -DMZ_USE_JIT_SSE enables use of SSE floating point
-# plt-games needs GLU
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--enable-libffi \
 			--enable-gracket \
 			--enable-jit \
 			--enable-foreign \
-			--enable-places \
 			--enable-float \
 			--enable-docs \
 			--enable-pthread \
-			--enable-lt=${LIBTOOL} \
-			--enable-futures
+			--enable-lt=${LIBTOOL}
 # "backtrace" is expensive.
 # http://article.gmane.org/gmane.comp.lang.racket.devel/6700
-CONFIGURE_ARGS +=	--disable-backtrace
+# "places" and "futures" require thread-local storage.
+# http://article.gmane.org/gmane.comp.lang.racket.user/16723
+CONFIGURE_ARGS +=	--disable-backtrace \
+			--disable-places \
+			--disable-futures
 
-CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread -lcrypto -lGLU -lGL" \
-			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include -DMZ_USE_JIT_SSE"
+# Since 5.3.4 if __SSE_MATH__ is defined (C_COMPILER_USES_SSE) and
+# MZ_TRY_EXTFLONUMS enabled, MZ_LONG_DOUBLE (extflonum) is turned on. Also
+# C_COMPILER_USES_SSE turn on MZ_USE_JIT_SSE.
+# "-msse -mfpmath=sse" required by extflonum on i386.
+CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+			CFLAGS="${CFLAGS} -msse -mfpmath=sse" \
+			LIBracket3m_MAJOR=${LIBracket3m_VERSION:R} \
+			LIBracket3m_MINOR=${LIBracket3m_VERSION:E} \
 
-# -- Racket with futures disabled. 5.2 vs 5.3 --
-# Racket 5.2 (with futures disabled) compiles OK with the default limits of the
-# shell but for Racket 5.3 I need increase the limits. These problems occur
-# only when this port is compiled with sudo, when is compiled from the root
-# account all is OK.
-#
-# -- Racket + futures crash because the various make jobs --
-# It's necessary to use only one job for the make install. Racket uses various
-# jobs by default when futures is enabled, so Racket reaches the limits again
-# and crash.
+# MAKE_JOBS: If "places" is enabled, racket uses "places channels". When
+# "places" is disabled, racket uses multiple racket processes and pipes.
+# http://permalink.gmane.org/gmane.comp.lang.racket.user/17281
+# https://github.com/plt/racket/commit/2295d16074b9538ce500cf9bf9de65265ce5531c
+# Default limit in file descriptors isn't enough for compile as root. The
+# "rendering" phase of scribble reaches the limit in some big documents.
 do-install:
-	@cd ${WRKBUILD} && ulimit -s 8192 && ${SETENV} ${MAKE_ENV} \
-		PLT_SETUP_OPTIONS="-j 1" ${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} \
-		-f ${MAKE_FILE} ${FAKE_TARGET}
+	@cd ${WRKBUILD} && ulimit -n 512 && ${SETENV} ${MAKE_ENV} \
+		PLT_SETUP_OPTIONS="-j ${MAKE_JOBS}" ${MAKE_PROGRAM} \
+		${ALL_FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
+
+# Something in the ports framework or the racket installation modify the
+# timestamp of two files. When raco sees a newer file than make-search.rkt,
+# recompiles again the files but raco fails because the user doesn't have write
+# permission in /usr. The easiest fix is to change the timestamp after "fake".
+# This bug affects to "raco pkg install -u" and "raco pkg install -s". It will
+# be fixed in the next version.
+# A simple test: raco pkg install -u github://github.com/takikawa/dummy-pkg/master
+post-fake:
+	@cd ${WRKINST}/${PREFIX}/lib/racket/collects/scribblings/main/private && \
+		touch -t 201306180906 search-context.html && \
+		touch -t 201306180906 search.js
+
+# Due to a bug on i386, racket doesn't generate all the images in doc/images.
+.if ${MACHINE_ARCH} == "amd64"
+PKG_ARGS+=-Damd64=1
+.else
+PKG_ARGS+=-Damd64=0
+.endif
 
 .include <bsd.port.mk>

@@ -1,0 +1,12 @@
+$OpenBSD$
+--- Gemfile.dist.orig	Wed Mar 20 00:32:37 2013
++++ Gemfile.dist	Fri Apr  5 09:55:08 2013
+@@ -14,7 +14,7 @@ end
+ 
+ # Optional gem for OpenID authentication
+ group :openid do
+-  gem "ruby-openid", "~> 2.1.4", :require => "openid"
++  gem "ruby-openid", "~> 2.2.2", :require => "openid"
+   gem "rack-openid"
+ end
+ 

@@ -4,9 +4,8 @@ VMEM_WARNING =		Yes
 
 COMMENT =		P2P payment system
 
-V =			0.7.1
-REV =			eb49457
-DISTNAME =		bitcoin-bitcoin-v${V}-0-g${REV}
+V =			0.8.5
+DISTNAME =		bitcoin-bitcoin-v${V}
 PKGNAME =		bitcoin-${V}
 
 DIFF_ARGS =		-a
@@ -19,30 +18,27 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += boost_filesystem-mt boost_program_options-mt boost_system-mt
 WANTLIB += boost_thread-mt c crypto db_cxx m miniupnpc pthread
-WANTLIB += ssl stdc++ z
+WANTLIB += ssl stdc++ z leveldb
 
 MASTER_SITES =		https://github.com/bitcoin/bitcoin/tarball/v${V}/
 
-LIB_DEPENDS =		devel/boost \
+LIB_DEPENDS =		devel/boost>=1.53 \
 			databases/db/v4 \
-			net/miniupnp/miniupnpc
+			net/miniupnp/miniupnpc \
+			databases/leveldb
 
-MAKE_FLAGS =		USE_UPNP=0 CXX="${CXX}" BOOST_LIB_SUFFIX=-mt \
-			LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/db4" \
-			CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/db4"
+MAKE_FLAGS =		USE_UPNP=0 CXX="${CXX}" \
+			BOOST_LIB_SUFFIX=-mt LDFLAGS="-L${LOCALBASE}/lib \
+			-L${LOCALBASE}/lib/db4" CXXFLAGS="${CXXFLAGS} \
+			-I${LOCALBASE}/include -I${LOCALBASE}/include/db4"
 
 USE_GMAKE =		Yes
 
-NO_REGRESS =		Yes
-
 MAKE_FILE =		makefile.unix
-WRKDIST =		${WRKDIR}/bitcoin-bitcoin-d082365
+WRKDIST =		${WRKDIR}/bitcoin-bitcoin-8090e11
 WRKSRC =		${WRKDIST}/src
 
 ALL_TARGET =		bitcoind

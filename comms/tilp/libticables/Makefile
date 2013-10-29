@@ -2,7 +2,7 @@
 
 COMMENT =		cables library for Texas Instruments calculators
 
-TILP_VERSION =		2-1.3.3
+TILP_VERSION =		2-1.3.4
 TILP_PROJECT =		libticables
 EXTRACT_SUFX =		.tar.bz2
 
@@ -16,7 +16,7 @@ MODULES =		converters/libiconv \
 LIB_DEPENDS =		devel/libusb-compat \
 			devel/glib2
 
-WANTLIB +=		iconv intl glib-2.0 pcre usb usb-1.0
+WANTLIB += glib-2.0 intl pcre pthread usb usb-1.0
 
 CONFIGURE_ARGS =	--enable-static
 

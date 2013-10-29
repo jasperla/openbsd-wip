@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 CATEGORIES=		devel
-COMMENT=		A library of C++ classes for flexible logging
+COMMENT=		library of C++ classes for flexible logging
 VERSION=		1.0
 DISTNAME=		log4cpp-${VERSION}
 HOMEPAGE=		http://log4cpp.sourceforge.net/
@@ -13,10 +13,7 @@ MAINTAINER=		Rafael Sadowski <rafael@sizeofvoid.org>
 # LGPL
 PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
-PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
-
-EXTRACT_SUFX=		.tar.gz
 
 MASTER_SITES=		http://www.sizeofvoid.org/pub/OpenBSD/distfiles/
 
@@ -24,10 +21,9 @@ CONFIGURE_ARGS+=	--with-pthreads --disable-html-docs
 
 CONFIGURE_STYLE=	gnu
 
-USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 
-SEPARATE_BUILD=		simple
+SEPARATE_BUILD=		Yes
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

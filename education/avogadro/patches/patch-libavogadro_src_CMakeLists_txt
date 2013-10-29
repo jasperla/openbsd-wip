@@ -1,7 +1,7 @@
 $OpenBSD$
---- libavogadro/src/CMakeLists.txt.orig	Sat Sep 10 21:35:08 2011
-+++ libavogadro/src/CMakeLists.txt	Sat Sep 10 21:35:26 2011
-@@ -16,6 +16,7 @@ include_directories(
+--- libavogadro/src/CMakeLists.txt.orig	Mon Sep  3 21:07:01 2012
++++ libavogadro/src/CMakeLists.txt	Thu Jan 10 01:22:58 2013
+@@ -13,6 +13,7 @@ include_directories(
    ${CMAKE_CURRENT_BINARY_DIR}
    ${EIGEN2_INCLUDE_DIR}
    ${OPENBABEL2_INCLUDE_DIR}

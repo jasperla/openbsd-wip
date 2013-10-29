@@ -1,10 +1,10 @@
 Index: Makefile
 ===================================================================
-RCS file: /cvs/ports/x11/openmotif/Makefile,v
-retrieving revision 1.56
-diff -u -p -r1.56 Makefile
---- Makefile	29 Oct 2012 12:16:48 -0000	1.56
-+++ Makefile	18 Nov 2012 17:13:26 -0000
+RCS file: /home/pascal/cvs/ports/x11/openmotif/Makefile,v
+retrieving revision 1.59
+diff -u -p -r1.59 Makefile
+--- Makefile	4 Jun 2013 18:41:59 -0000	1.59
++++ Makefile	22 Jun 2013 11:18:36 -0000
 @@ -4,7 +4,7 @@ COMMENT-main=		Motif toolkit
  COMMENT-demos=		Motif toolkit demos
  
@@ -22,21 +22,21 @@ diff -u -p -r1.56 Makefile
 +
  # LGPLv2.1
  PERMIT_PACKAGE_CDROM=	Yes
- PERMIT_DISTFILES_CDROM=	Yes
-@@ -35,10 +37,10 @@ AUTOMAKE_VERSION=	1.12
+ 
+@@ -32,10 +34,10 @@ AUTOMAKE_VERSION=	1.12
  CONFIGURE_ARGS=		--enable-themes \
  			--enable-xft \
  			--enable-jpeg \
 -			--disable-printing \
 +			--enable-printing \
  			--enable-png
- CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+ CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 -			LDFLAGS="-L${LOCALBASE}/lib -lm"
-+			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lm"
++			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm"
  MAKE_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
  			AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
  
-@@ -53,16 +55,18 @@ MODULES=		converters/libiconv
+@@ -49,16 +51,18 @@ MODULES=		converters/libiconv
  
  BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
  			${MODGNU_AUTOMAKE_DEPENDS} \

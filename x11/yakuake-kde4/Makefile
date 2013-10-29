@@ -11,10 +11,7 @@ MASTER_SITES =	${MASTER_SITE_KDE:=stable/yakuake/${VERSION}/src/}
 EXTRACT_SUFX =	.tar.xz
 
 # GPLv2+
-PERMIT_DISTFILES_CDROM =        Yes
-PERMIT_DISTFILES_FTP =          Yes
 PERMIT_PACKAGE_CDROM =          Yes
-PERMIT_PACKAGE_FTP =            Yes
 
 MODULES =	x11/kde4
 
@@ -23,7 +20,7 @@ WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml kdeui kio knewstuff3 knotifyconfig kparts nepomuk
 WANTLIB += nepomukutils soprano
 
-RUN_DEPENDS =	x11/kde4/konsole
+RUN_DEPENDS =	${MODKDE4_DEP_DIR}/konsole
 
 SUBST_VARS =	PKGNAME
 

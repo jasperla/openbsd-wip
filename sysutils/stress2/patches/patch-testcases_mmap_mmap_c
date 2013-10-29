@@ -1,0 +1,11 @@
+$OpenBSD$
+--- testcases/mmap/mmap.c.orig	Wed Dec  8 20:33:55 2010
++++ testcases/mmap/mmap.c	Fri Jun 14 15:56:40 2013
+@@ -26,7 +26,6 @@
+  */
+ 
+ #include <sys/cdefs.h>
+-__FBSDID("$FreeBSD: projects/stress2/testcases/mmap/mmap.c 187224 2009-01-14 16:03:10Z pho $");
+ 
+ #include <unistd.h>
+ #include <stdio.h>

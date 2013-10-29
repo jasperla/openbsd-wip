@@ -1,0 +1,7 @@
+This code is a Perl language implementation of the Automated Password
+Generator standard, like the program described in "A Random Word
+Generator For Pronounceable Passwords" (not available on-line).
+This code is a re-engineering of the program contained in Appendix
+A of FIPS Publication 181, "Standard for Automated Password Generator".
+In accordance with the standard, the results obtained from this
+program are logically equivalent to those produced by the standard.

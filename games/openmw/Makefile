@@ -2,11 +2,13 @@
 
 ONLY_FOR_ARCHS =	amd64 i386
 
+VMEM_WARNING =		Yes
+
 COMMENT =		open source implementation of TES III: Morrowind
 
-V =			0.12.0
-DISTNAME =		openmw-${V}-source
-PKGNAME =		openmw-${V}
+V =			0.25.0
+DISTNAME =		openmw-$V-source
+PKGNAME =		openmw-$V
 
 CATEGORIES =		games
 
@@ -14,45 +16,47 @@ HOMEPAGE =		http://openmw.com
 
 MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
-# GPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+# GPLv3 / OFLv1.1 / Daedric font not for sale!
+PERMIT_PACKAGE_CDROM =	not for sale
 PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
+PERMIT_DISTFILE_CDROM =	not for sale
+PERMIT_DISTFILE_FTP =	Yes
 
 WANTLIB += BulletCollision BulletDynamics BulletSoftBody LinearMath
-WANTLIB += OIS OgreMain QtGui boost_filesystem-mt boost_program_options-mt
-WANTLIB += boost_system-mt boost_thread-mt c e2fs-uuid freetype
-WANTLIB += m mpg123 openal png pthread sndfile stdc++
+WANTLIB += MyGUI.OgrePlatform MyGUIEngine OIS OgreMain OgreTerrain
+WANTLIB += QtGui QtNetwork QtXml QtXmlPatterns SDL2 Xt avcodec avformat
+WANTLIB += avutil boost_date_time-mt boost_filesystem-mt
+WANTLIB += boost_program_options-mt boost_system-mt boost_thread-mt
+WANTLIB += boost_wave-mt c m openal pthread swscale
 
-MASTER_SITES =		http://openmw.googlecode.com/files/
-EXTRACT_SUFX =		.tar.bz2
+MASTER_SITES =		https://openmw.googlecode.com/files/
+EXTRACT_CASES = *.tar.gz) \
+	${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf - -C ${WRKDIST};;
 
-MODULES =		devel/cmake \
-			x11/qt4
-LIB_DEPENDS =		x11/ogre \
-			devel/boost \
-			audio/openal \
-			audio/mpg123 \
-			audio/libsndfile \
-			sysutils/e2fsprogs \
+MODULES =		gcc4 devel/cmake x11/qt4
+MODGCC4_ARCHS = 	*
+MODGCC4_LANGS += 	c++
+BUILD_DEPENDS = 	sysutils/e2fsprogs
+LIB_DEPENDS =		audio/openal \
 			devel/bullet \
-			graphics/png \
-			devel/ois
+			devel/mygui \
+			devel/ois \
+			devel/sdl2 \
+			graphics/ffmpeg \
+			x11/ogre,-main>=1.8.1
+RUN_DEPENDS  = 		devel/desktop-file-utils
 
-NO_REGRESS =		Yes
+CONFIGURE_ARGS += 	-DBINDIR=${LOCALBASE}/bin \
+			-DMANDIR:PATH=${LOCALBASE}/man \
+			-DDATADIR:PATH=${LOCALBASE}/share/openmw \
+			-DSYSCONFDIR=${SYSCONFDIR}/openmw \
+			-DCMAKE_EXE_LINKER_FLAGS="-L${X11BASE}/lib"
 
-CFLAGS +=		-pthread
+NO_TEST =		Yes
 
-do-install:
-.	for f in esmtool omwlauncher openmw
-	${INSTALL_PROGRAM} ${WRKBUILD}/${f} ${PREFIX}/bin
-.	endfor
-	${INSTALL_DATA_DIR} ${PREFIX}/share/openmw
-	cd ${WRKBUILD} && pax -rw resources ${PREFIX}/share/openmw/
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openmw
-.	for c in launcher.cfg openmw.cfg
-	${INSTALL_DATA} ${WRKBUILD}/${c} ${PREFIX}/share/examples/openmw/
-.	endfor
+CFLAGS += 		-pthread
+
+pre-extract:
+	@mkdir ${WRKDIST}
 
 .include <bsd.port.mk>

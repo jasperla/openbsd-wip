@@ -1,24 +1,41 @@
 # Please add one line per port that is ready to go into OpenBSD.
 # When a port has been committed upstream, remove it from this repository.
 #
-# Format: pkgpath	message (owner)
+# Format: pkgpath       message (owner)
 #
 # For example:
-# net/gnaughty:	ready for import, sent to ports@ (jasperla)
-sysutils/entr			ready for import.
-net/py-boto:		ready for import, sent to maintainer 2012-04-23 (tamentis)
+# net/gnaughty: ready for import, sent to ports@ (jasperla)
+
+sysutils/pv		sent to ports@ 2013/08/31. Ready for import. (dhn)
+net/sic			sent to ports@ 2013/08/28. Ready for import. (dhn)
+cad/tkgate:		Ready for import. Sent to ports@ 2008-01-13 and still works (yason)
+devel/libextractor	sent to ports 2013-06-29
+devel/libtap	ready to import
 devel/p5-Test-Most:	ready for import, depends on the update of p5-Test-Warn, did not sent to ports@(wenheping)
+emulators/vice		ready for import, sent to ports 2013-05-16
+games/bluemoon		ready to import (bcallah)
+games/flightgear	sent to ports 2013-07-05
+games/nexuiz		sent to ports@ Dec 10 2011 (pstumpf)
+geo/mtkbabel	sent to ports 2011-03-30
+graphics/jpegexiforient ready to import
+graphics/opencolorio	sent to ports 2013-07-07
+graphics/openscenegraph	sent to ports 2013-07-05
+graphics/simgear	sent to ports 2013-07-05
+lang/utop		ready for import. Waiting for libcharset fix in ocaml-lamda-term
 math/p5-Math-GSL:	ready for import, did not sent to ports@, regress depends on devel/p5-Test-Most (wenheping)
+misc/dvtm		sent to ports@ 2012/12/04. Ready for import.
+misc/notebook sent to ports 2013-06-29
+multimedia/fuzemux	sent to ports 2013-01-13
+multimedia/video4fuze	sent to ports 2013-01-13
+net/bitcoin		sent to ports 2013-03-19, and again 2013-06-29
+net/py-boto:		ready for import, sent to maintainer 2012-04-23 (tamentis)
+net/tkabber		ready for import, sent to ports 2013-01-30
+net/unison/stable	ready for import.
+security/paperkey  sent to ports 2011-06-07
+sysutils/kyua-cli	sent to ports 2013-06-30
+sysutils/kyua-testers sent to ports 2013-06-30
+sysutils/py-anita		Ready for import. Sent to ports@ 2012-11-05.
+textproc/goldendict sent to ports 2013-07-13  and 2011-10-19
+www/ocaml-tyxml		ready for import.
 www/p5-Dancer:		ready for import, has been sent to ports@ some time ago; it depends on www/p5-HTTP-Server-Simple-PSGI
 www/p5-HTTP-Server-Simple-PSGI:	ready for import, has been sent to ports@ some time ago
-audio/liblastfm:	sent to ports@ Sep 06 2011. Ready for import. (grayed)
-audio/clementine:	sent to ports@ Sep 06 2011. Ready for import. (grayed)
-cad/tkgate:		Ready for import. Sent to ports@ 2008-01-13 and still works (yason)
-games/nexuiz		sent to ports@ Dec 10 2011 (pstumpf)
-sysutils/conky		Ready for import. Sent to maintainer 2012-07-24, similar update sent to ports@ 2012-05-06
-devel/py-anita		Ready for import. Sent to ports@ 2012-11-05.
-misc/dvtm		sent to ports@ 2012/12/04. Ready for import.
-net/hotot		Ready for import. Sent to ports@ 2012-12-06.
-lang/utop		ready for import. Waiting for libcharset fix in ocaml-lamda-term
-net/unison/stable	ready for import.
-www/ocaml-tyxml		ready for import.

@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+${P5SITE}/Bundle/
+${P5SITE}/Bundle/IO/
+${P5SITE}/Bundle/IO/Compress/
+${P5SITE}/Bundle/IO/Compress/Bzip2.pm
+@man man/man3p/Bundle::IO::Compress::Bzip2.3p

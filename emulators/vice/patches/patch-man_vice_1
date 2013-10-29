@@ -1,6 +1,6 @@
 $OpenBSD$
 --- man/vice.1.orig	Tue Feb 15 13:43:14 2011
-+++ man/vice.1	Fri Oct 26 23:22:33 2012
++++ man/vice.1	Sun Mar 31 14:03:47 2013
 @@ -43,7 +43,7 @@ a Commodore BASIC de-tokenizer;
  .PP
  The whole documentation for these programs is available in HTML

@@ -1,0 +1,12 @@
+$OpenBSD$
+--- indra/llmath/lluuid.cpp.orig	Wed Nov  7 20:18:06 2007
++++ indra/llmath/lluuid.cpp	Mon Nov 12 08:05:37 2007
+@@ -612,7 +612,7 @@ S32 LLUUID::getNodeID(unsigned char *node_id)
+ #include <netinet/in.h>
+ #if LL_SOLARIS
+ #include <sys/sockio.h>
+-#elif !LL_DARWIN
++#elif LL_LINUX
+ #include <linux/sockios.h>
+ #endif
+ #endif

@@ -1,6 +1,6 @@
 # $OpenBSD  $
 
-COMMENT=	POP/IMAP/SMTP/CalDAV/CardDAV/LDAP Exchange Gateway
+COMMENT=	image processing and analysis utility
 
 V=		145
 DISTNAME=	ij${V}
@@ -9,13 +9,12 @@ CATEGORIES=	graphics misc
 
 HOMEPAGE=	http://rsbweb.nih.gov/ij/
 
+MAINTAINER=	Sergey Bronnikov <estetus@gmail.com>
+
 EXTRACT_SUFX =         .zip
 
 # Public Domain
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/download/zips/
 
@@ -26,7 +25,7 @@ MAKE_ENV+=              JAVA_HOME=${JAVA_HOME}
 RUN_DEPENDS=            java/javaPathHelper
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 PKG_ARCH=	*
 

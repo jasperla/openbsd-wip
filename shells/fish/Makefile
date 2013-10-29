@@ -12,9 +12,6 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c m ncurses pthread stdc++
 
@@ -35,7 +32,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 AUTOCONF_VERSION= 2.69
 
-REGRESS_TARGET=	test
+TEST_TARGET=	test
 
 WRKDIST=	${WRKDIR}/fish-shell-master
 

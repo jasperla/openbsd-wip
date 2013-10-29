@@ -1,0 +1,71 @@
+$OpenBSD$
+--- lib/resources.c.orig	Wed Dec  8 20:33:54 2010
++++ lib/resources.c	Fri Jun 14 16:25:13 2013
+@@ -28,7 +28,6 @@
+ /* Get various resource limits for the tests */
+ 
+ #include <sys/cdefs.h>
+-__FBSDID("$FreeBSD: projects/stress2/lib/resources.c 187224 2009-01-14 16:03:10Z pho $");
+ 
+ #include <sys/types.h>
+ #include <sys/sysctl.h>
+@@ -41,11 +40,9 @@ __FBSDID("$FreeBSD: projects/stress2/lib/resources.c 1
+ #include <sys/param.h>
+ #include <sys/mount.h>
+ #include <kvm.h>
+-#include <vm/vm_param.h>
+ #include <errno.h>
+ #include <err.h>
+ #include <stdarg.h>
+-#include <libutil.h>
+ 
+ #include "stress.h"
+ 
+@@ -103,6 +100,7 @@ df(void)
+ int64_t
+ swap(void)
+ {
++/*
+ 	struct xswdev xsw;
+ 	size_t mibsize, size;
+ 	int mib[16], n;
+@@ -131,11 +129,14 @@ swap(void)
+ 			sz * getpagesize() / 1024 / 1024);
+ 
+ 	return (sz * getpagesize());
++*/
++	return 0;
+ }
+ 
+ unsigned long
+ usermem(void)
+ {
++/*
+ 	unsigned long mem;
+ 	size_t nlen = sizeof(mem);
+ 
+@@ -147,6 +148,8 @@ usermem(void)
+ 			mem / 1024 / 1024);
+ 
+ 	return (mem);
++*/
++	return 0;
+ }
+ 
+ void cleanupdf()
+@@ -242,6 +245,7 @@ err:
+ static void
+ vpr(int code, const char *fmt, va_list ap)
+ {
++/*
+ 	char path[MAXPATHLEN+1];
+ 	char siz[5], ino[5];
+ 	int64_t s, i;
+@@ -271,6 +275,7 @@ vpr(int code, const char *fmt, va_list ap)
+ 		fprintf(stderr, ": ");
+ 	}
+ 	fprintf(stderr, "%s\n", strerror(code));
++*/
+ }
+ 
+ void

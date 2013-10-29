@@ -1,0 +1,12 @@
+$OpenBSD$
+--- hostfs.c.orig	Tue May 21 01:20:18 2013
++++ hostfs.c	Tue May 21 01:22:50 2013
+@@ -35,7 +35,7 @@
+ #include <dirent.h>
+ #include <unistd.h>
+ #endif
+-#if defined __unix || defined __MACH__ || defined __riscos__
++#if defined __unix || defined __MACH__ || defined __riscos__ || defined __OpenBSD__
+ #include <utime.h>
+ #else
+ #include <sys/utime.h>

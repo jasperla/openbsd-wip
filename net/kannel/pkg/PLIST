@@ -1,6 +1,6 @@
 @comment $OpenBSD$
-@newgroup _kannel:693
-@newuser _kannel:693:693:daemon:Kannel:/nonexistent:/sbin/nologin
+@newgroup _kannel:712
+@newuser _kannel:712:712:daemon:Kannel:/nonexistent:/sbin/nologin
 @bin bin/decode_emimsg
 bin/gw-config
 @bin bin/mtbatch

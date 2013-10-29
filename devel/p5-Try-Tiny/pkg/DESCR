@@ -1,2 +1,0 @@
-This module provides bare bones try/catch statements that are designed
-to minimize common mistakes with eval blocks, and NOTHING else.

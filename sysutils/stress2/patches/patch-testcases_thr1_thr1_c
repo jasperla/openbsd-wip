@@ -1,0 +1,11 @@
+$OpenBSD$
+--- testcases/thr1/thr1.c.orig	Sat Mar  2 15:18:30 2013
++++ testcases/thr1/thr1.c	Sat Mar  2 15:18:48 2013
+@@ -26,7 +26,6 @@
+  */
+ 
+ #include <sys/cdefs.h>
+-__FBSDID("$FreeBSD: projects/stress2/testcases/thr1/thr1.c 187224 2009-01-14 16:03:10Z pho $");
+ 
+ #include <pthread.h>
+ #include <stdio.h>

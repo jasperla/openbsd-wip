@@ -1,0 +1,12 @@
+$OpenBSD$
+--- indra/llcommon/llbase64.cpp.orig	Sat Mar 24 23:59:18 2007
++++ indra/llcommon/llbase64.cpp	Sat Mar 24 23:59:42 2007
+@@ -32,7 +32,7 @@
+ 
+ #include <string>
+ 
+-#include "apr-1/apr_base64.h"
++#include "apr-1-mt/apr_base64.h"
+ 
+ 
+ // static

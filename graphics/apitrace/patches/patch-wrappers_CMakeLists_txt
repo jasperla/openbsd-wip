@@ -1,0 +1,45 @@
+$OpenBSD$
+--- wrappers/CMakeLists.txt.orig	Sun Jul 21 16:57:53 2013
++++ wrappers/CMakeLists.txt	Sun Jul 21 17:05:49 2013
+@@ -379,7 +379,6 @@ elseif (APPLE)
+         ${ZLIB_LIBRARIES}
+         ${SNAPPY_LIBRARIES}
+         ${CMAKE_THREAD_LIBS_INIT}
+-        dl
+     )
+ 
+     install (TARGETS cgltrace LIBRARY DESTINATION ${WRAPPER_INSTALL_DIR})
+@@ -412,7 +411,7 @@ elseif (X11_FOUND)
+         PREFIX ""
+         # Prevent symbol relocations internal to our wrapper library to be
+         # overwritten by the application.
+-        LINK_FLAGS "-Wl,-Bsymbolic -Wl,-Bsymbolic-functions"
++#        LINK_FLAGS "-Wl,-Bsymbolic -Wl,-Bsymbolic-functions"
+     )
+ 
+     target_link_libraries (glxtrace
+@@ -422,7 +421,6 @@ elseif (X11_FOUND)
+         ${ZLIB_LIBRARIES}
+         ${SNAPPY_LIBRARIES}
+         ${CMAKE_THREAD_LIBS_INIT}
+-        dl
+     )
+ 
+     install (TARGETS glxtrace LIBRARY DESTINATION ${WRAPPER_INSTALL_DIR})
+@@ -460,7 +458,7 @@ if (ENABLE_EGL AND NOT WIN32 AND NOT APPLE)
+         PREFIX ""
+         # Prevent symbol relocations internal to our wrapper library to be
+         # overwritten by the application.
+-        LINK_FLAGS "-Wl,-Bsymbolic -Wl,-Bsymbolic-functions"
++#        LINK_FLAGS "-Wl,-Bsymbolic -Wl,-Bsymbolic-functions"
+     )
+ 
+     target_link_libraries (egltrace
+@@ -470,7 +468,6 @@ if (ENABLE_EGL AND NOT WIN32 AND NOT APPLE)
+         ${ZLIB_LIBRARIES}
+         ${SNAPPY_LIBRARIES}
+         ${CMAKE_THREAD_LIBS_INIT}
+-        dl
+     )
+ 
+     install (TARGETS egltrace LIBRARY DESTINATION ${WRAPPER_INSTALL_DIR})

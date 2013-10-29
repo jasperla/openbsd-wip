@@ -1,0 +1,12 @@
+$OpenBSD$
+--- indra/llcommon/llprocessor.cpp.orig	Wed Nov  7 20:18:06 2007
++++ indra/llcommon/llprocessor.cpp	Mon Nov 12 02:11:31 2007
+@@ -96,7 +96,7 @@ static	void	_Delay(unsigned int ms)
+ 	}while(c2.QuadPart-c1.QuadPart < x);
+ 	// Loop while (second-first < x)	
+ }
+-#endif
++#endif // PROCESSOR_FREQUENCY_MEASURE_AVAILABLE
+ 
+ // CProcessor::CProcessor
+ // ======================

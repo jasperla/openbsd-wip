@@ -14,9 +14,6 @@ HOMEPAGE=	http://activityworkshop.net/software/gpsprune/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	GPL
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	GPL
-PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
@@ -27,7 +24,7 @@ MAKE_ENV+=              JAVA_HOME=${JAVA_HOME}
 RUN_DEPENDS=            java/javaPathHelper
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_TEST=	Yes
 
 PKG_ARCH=	*
 

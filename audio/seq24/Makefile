@@ -13,9 +13,6 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # XXX
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 atkmm-1.6 c cairo cairomm-1.0
@@ -36,6 +33,6 @@ AUTOMAKE_VERSION =	1.11
 CONFIGURE_ARGS =	--disable-jack-support
 MAKE_FLAGS =		ALSA_LIBS= ALSA_CFLAGS=
 
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>

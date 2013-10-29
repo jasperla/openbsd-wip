@@ -1,0 +1,25 @@
+$OpenBSD$
+--- indra/llmath/Makefile.orig	Sat Mar 24 22:20:16 2007
++++ indra/llmath/Makefile	Sat Mar 24 22:20:16 2007
+@@ -0,0 +1,21 @@
++#
++
++LIB=	llmath
++
++SRCS=	llbboxlocal.cpp llcamera.cpp llcoordframe.cpp llcrc.cpp
++SRCS+=	llmd5.cpp llperlin.cpp llquaternion.cpp llrand.cpp
++SRCS+=	llrect.cpp lluuid.cpp llvolume.cpp llvolumemgr.cpp
++SRCS+=	m3math.cpp m4math.cpp raytrace.cpp v2math.cpp
++SRCS+=	v3color.cpp v3dmath.cpp v3math.cpp v4color.cpp
++SRCS+=	v4coloru.cpp v4math.cpp xform.cpp
++
++DEBUGLIBS=no
++NOPROFILE=yes
++NOPIC=yes
++
++install:
++	@echo -n
++
++.include <bsd.lib.mk>
++.include <../Makefile.llinc>
++

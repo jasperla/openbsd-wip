@@ -1,5 +1,6 @@
 @comment $OpenBSD$
 %%SHARED%%
+bin/0ad
 @bin bin/pyrogenesis
 lib/libatlas.a
 lib/libengine.a
@@ -9,6 +10,8 @@ lib/liblowlevel.a
 lib/libmocks_real.a
 lib/libmocks_test.a
 lib/libmongoose.a
+@lib lib/libmozjs185-ps-debug.so.${LIBmozjs185-ps-debug_VERSION}
+@lib lib/libmozjs185-ps-release.so.${LIBmozjs185-ps-release_VERSION}
 lib/libnetwork.a
 lib/libscriptinterface.a
 lib/libsimulation2.a
@@ -190,4 +193,10 @@ share/0ad/tools/fontbuilder/fonts/GUST-FONT-LICENSE.txt
 share/0ad/tools/fontbuilder/fonts/LICENSE.txt
 share/0ad/tools/fontbuilder/fonts/texgyrepagella-bold.otf
 share/0ad/tools/fontbuilder/fonts/texgyrepagella-regular.otf
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+share/applications/
+share/applications/0ad.desktop
 share/doc/pkg-readmes/${FULLPKGNAME}
+share/pixmaps/
+share/pixmaps/0ad.png

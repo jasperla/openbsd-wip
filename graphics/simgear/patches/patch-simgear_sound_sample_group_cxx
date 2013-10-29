@@ -1,8 +1,8 @@
 $OpenBSD$
---- simgear/sound/sample_group.cxx.orig	Sat Feb 25 00:58:18 2012
-+++ simgear/sound/sample_group.cxx	Sat Feb 25 00:58:49 2012
-@@ -30,7 +30,7 @@
- #include "sample_group.hxx"
+--- simgear/sound/sample_group.cxx.orig	Mon Feb 18 15:58:14 2013
++++ simgear/sound/sample_group.cxx	Fri Jul  5 11:18:56 2013
+@@ -36,7 +36,7 @@
+ using std::string;
  
  bool isNaN(float *v) {
 -   return (isnan(v[0]) || isnan(v[1]) || isnan(v[2]));

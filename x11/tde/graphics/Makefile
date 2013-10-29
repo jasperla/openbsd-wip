@@ -51,12 +51,12 @@ LIB_DEPENDS-kamera =	${LIB_DEPENDS} \
 			graphics/libgphoto2
 LIB_DEPENDS-sane =	${LIB_DEPENDS} \
 			graphics/sane-backends
-#REGRESS_DEPENDS =	???
+#TEST_DEPENDS =		???
 
 #MAKE_FLAGS =		???
 #MAKE_ENV =		???
 #FAKE_FLAGS =		???
-#REGRESS_FLAGS =	???
+#TEST_FLAGS =		???
 
 #USE_GMAKE =		Yes
 #USE_GROFF =		Yes
@@ -72,7 +72,7 @@ CONFIGURE_ARGS +=	-DBUILD_ALL=ON \
 #CONFIGURE_ENV =	???
 
 #NO_BUILD =		Yes
-#NO_REGRESS =		Yes
+#NO_TEST =		Yes
 
 #CFLAGS =		???
 #LDFLAGS =		???
@@ -85,7 +85,7 @@ WRKDIST =		${WRKDIR}/kdegraphics
 
 #ALL_TARGET =		???
 #INSTALL_TARGET =	???
-#REGRESS_TARGET =	???
+#TEST_TARGET =		???
 
 post-install:
 	${INSTALL_DATA_DIR} ${TDE_HTML_DIR}/en/common

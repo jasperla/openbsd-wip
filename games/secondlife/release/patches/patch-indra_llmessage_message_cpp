@@ -1,0 +1,16 @@
+$OpenBSD$
+--- indra/llmessage/message.cpp.orig	Thu Feb  8 12:15:31 2007
++++ indra/llmessage/message.cpp	Thu Feb  8 12:15:38 2007
+@@ -46,9 +46,9 @@
+ #include <sstream>
+ 
+ #include "llapr.h"
+-#include "apr-1/apr_portable.h"
+-#include "apr-1/apr_network_io.h"
+-#include "apr-1/apr_poll.h"
++#include "apr-1-mt/apr_portable.h"
++#include "apr-1-mt/apr_network_io.h"
++#include "apr-1-mt/apr_poll.h"
+ 
+ // linden library headers
+ #include "indra_constants.h"

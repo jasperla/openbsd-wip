@@ -1,0 +1,42 @@
+$OpenBSD$
+--- syscalls/mprotect.c.orig	Sat Mar  2 20:42:38 2013
++++ syscalls/mprotect.c	Sat Mar  2 20:51:06 2013
+@@ -1,8 +1,15 @@
+ /*
+  * sys_mprotect(unsigned long start, size_t len, unsigned long prot)
+  */
++
++#ifdef __LINUX__
+ #include <asm/mman.h>
++#endif
+ 
++#ifdef OpenBSD
++#include <sys/types.h>
++#include <sys/mman.h>
++#endif
+ #include "trinity.h"
+ #include "sanitise.h"
+ #include "arch.h"
+@@ -39,7 +46,21 @@ struct syscall syscall_mprotect = {
+ 	.arg3type = ARG_LIST,
+ 	.arg3list = {
+ 		.num = 6,
+-		.values = { PROT_READ, PROT_WRITE, PROT_EXEC, PROT_SEM, PROT_GROWSDOWN, PROT_GROWSUP },
++		.values = {
++#ifdef __LINUX__
++				PROT_READ,
++				PROT_WRITE,
++				PROT_EXEC,
++#endif
++#ifdef OpenBSD
++				PROT_NONE,
++#endif
++#ifdef __LINUX__
++				PROT_SEM,
++				PROT_GROWSDOWN,
++				PROT_GROWSUP
++#endif
++		},
+ 	},
+ 	.sanitise = sanitise_mprotect,
+ 	.group = GROUP_VM,

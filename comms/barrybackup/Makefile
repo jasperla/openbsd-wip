@@ -21,9 +21,6 @@ MAINTAINER=		Ian Darwin <ian@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=Yes
-PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		pthread stdc++ m c
 
 BUILD_DEPENDS=		comms/barry \
@@ -34,7 +31,6 @@ RUN_DEPENDS=		${BUILD_DEPENDS}
 
 CONFIGURE_STYLE=	gnu
 USE_GMAKE=			Yes
-USE_LIBTOOL=		Yes
-NO_REGRESS=			Yes
+NO_TEST=			Yes
 
 .include <bsd.port.mk>

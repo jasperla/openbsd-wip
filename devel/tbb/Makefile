@@ -20,26 +20,23 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 # GPLv2 with runtime exception
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 #WANTLIB =		???
 
-MASTER_SITES =		${HOMEPAGE}/uploads/77/182/${V}%20update%20${U}/
+MASTER_SITES =		${HOMEPAGE}/sites/default/files/software_releases/source/
 EXTRACT_SUFX =		.tgz
 
 #MODULES =		???
 #BUILD_DEPENDS =	???
 #RUN_DEPENDS =		???
 #LIB_DEPENDS =		???
-#REGRESS_DEPENDS =	???
+#TEST_DEPENDS =		???
 
 #MAKE_FLAGS =		???
 MAKE_ENV =		CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
 			CXXFLAGS="${CXXFLAGS}" tbb_build_prefix=""
 #FAKE_FLAGS =		???
-#REGRESS_FLAGS =	???
+#TEST_FLAGS =		???
 
 USE_GMAKE =		Yes
 #USE_GROFF =		Yes
@@ -50,7 +47,7 @@ USE_GMAKE =		Yes
 #CONFIGURE_ENV =	???
 
 #NO_BUILD =		Yes
-#NO_REGRESS =		Yes
+#NO_TEST =		Yes
 
 #CFLAGS =		???
 #LDFLAGS =		???
@@ -63,7 +60,7 @@ WRKDIST =		${WRKDIR}/${DISTNAME:S/_src//}
 
 ALL_TARGET =		tbb tbbmalloc tbbproxy
 #INSTALL_TARGET =	???
-#REGRESS_TARGET =	???
+#TEST_TARGET =		???
 
 do-install:
 .	for l in tbb tbbmalloc

@@ -1,0 +1,216 @@
+@comment $OpenBSD$
+local/
+local/share/
+local/share/doc/
+local/share/doc/stress2/
+local/share/doc/stress2/README
+local/share/doc/stress2/linuxforum06.pdf
+local/share/doc/stress2/stress.pdf
+local/share/stress2/
+local/share/stress2/all.cfg
+local/share/stress2/creat.cfg
+local/share/stress2/default.cfg
+local/share/stress2/df.cfg
+local/share/stress2/disk.cfg
+local/share/stress2/io.cfg
+local/share/stress2/jeff.cfg
+local/share/stress2/link.cfg
+local/share/stress2/load.cfg
+local/share/stress2/lockf.cfg
+local/share/stress2/marcus.cfg
+local/share/stress2/misc/
+local/share/stress2/misc/README
+local/share/stress2/misc/all.sh
+local/share/stress2/misc/altbufferflushes.sh
+local/share/stress2/misc/alternativeFlushPath.sh
+local/share/stress2/misc/backingstore.sh
+local/share/stress2/misc/backingstore2.sh
+local/share/stress2/misc/backingstore3.sh
+local/share/stress2/misc/cdevsw.sh
+local/share/stress2/misc/cleanup.sh
+local/share/stress2/misc/core.sh
+local/share/stress2/misc/crossmp.sh
+local/share/stress2/misc/crossmp2.sh
+local/share/stress2/misc/datamove.sh
+local/share/stress2/misc/datamove2.sh
+local/share/stress2/misc/datamove3.sh
+local/share/stress2/misc/devfs.sh
+local/share/stress2/misc/devfs2.sh
+local/share/stress2/misc/extattr.sh
+local/share/stress2/misc/extattrctl.sh
+local/share/stress2/misc/fdescfs.sh
+local/share/stress2/misc/fpclone.sh
+local/share/stress2/misc/fpclone2.sh
+local/share/stress2/misc/fpu.sh
+local/share/stress2/misc/fragments.sh
+local/share/stress2/misc/fs.sh
+local/share/stress2/misc/fullpath.sh
+local/share/stress2/misc/fuzz.sh
+local/share/stress2/misc/inversion.sh
+local/share/stress2/misc/isofs.sh
+local/share/stress2/misc/jail.sh
+local/share/stress2/misc/jail2.sh
+local/share/stress2/misc/jail3.sh
+local/share/stress2/misc/jail4.sh
+local/share/stress2/misc/kevent.sh
+local/share/stress2/misc/kevent2.sh
+local/share/stress2/misc/kevent3.sh
+local/share/stress2/misc/kevent4.sh
+local/share/stress2/misc/kevent5.sh
+local/share/stress2/misc/kinfo.sh
+local/share/stress2/misc/kinfo2.sh
+local/share/stress2/misc/kinfo3.sh
+local/share/stress2/misc/ldt.sh
+local/share/stress2/misc/ldt2.sh
+local/share/stress2/misc/libMicro.sh
+local/share/stress2/misc/lockf.sh
+local/share/stress2/misc/lookup_shared.sh
+local/share/stress2/misc/mac.sh
+local/share/stress2/misc/mac_chkexec.sh
+local/share/stress2/misc/md.sh
+local/share/stress2/misc/md2.sh
+local/share/stress2/misc/md3.sh
+local/share/stress2/misc/mlockall.sh
+local/share/stress2/misc/mmap.sh
+local/share/stress2/misc/mmap2.sh
+local/share/stress2/misc/mmap3.sh
+local/share/stress2/misc/mmap4.sh
+local/share/stress2/misc/mount.sh
+local/share/stress2/misc/mount2.sh
+local/share/stress2/misc/mountro.sh
+local/share/stress2/misc/mountro2.sh
+local/share/stress2/misc/mountro3.sh
+local/share/stress2/misc/msdos.sh
+local/share/stress2/misc/msdos2.sh
+local/share/stress2/misc/msdos3.sh
+local/share/stress2/misc/msdos4.sh
+local/share/stress2/misc/namecache.sh
+local/share/stress2/misc/nbufkv.sh
+local/share/stress2/misc/newfs.sh
+local/share/stress2/misc/newfs2.sh
+local/share/stress2/misc/newfs3.sh
+local/share/stress2/misc/newfs4.sh
+local/share/stress2/misc/nfs.sh
+local/share/stress2/misc/nfs2.sh
+local/share/stress2/misc/nfs3.sh
+local/share/stress2/misc/nfs4.sh
+local/share/stress2/misc/nfs5.sh
+local/share/stress2/misc/nfs6.sh
+local/share/stress2/misc/nfs7.sh
+local/share/stress2/misc/nfs8.sh
+local/share/stress2/misc/nfs9.sh
+local/share/stress2/misc/nfsrename.sh
+local/share/stress2/misc/nullfs.sh
+local/share/stress2/misc/nullfs2.sh
+local/share/stress2/misc/nullfs3.sh
+local/share/stress2/misc/nullfs4.sh
+local/share/stress2/misc/nullfs5.sh
+local/share/stress2/misc/nullfs6.sh
+local/share/stress2/misc/pmc.sh
+local/share/stress2/misc/procfs.sh
+local/share/stress2/misc/procfs2.sh
+local/share/stress2/misc/pthread.sh
+local/share/stress2/misc/quota1.sh
+local/share/stress2/misc/quota10.sh
+local/share/stress2/misc/quota2.sh
+local/share/stress2/misc/quota3.sh
+local/share/stress2/misc/quota4.sh
+local/share/stress2/misc/quota5.sh
+local/share/stress2/misc/quota6.sh
+local/share/stress2/misc/quota7.sh
+local/share/stress2/misc/quota8.sh
+local/share/stress2/misc/quota9.sh
+local/share/stress2/misc/recursiveflushes.sh
+local/share/stress2/misc/rename.sh
+local/share/stress2/misc/rename2.sh
+local/share/stress2/misc/rename3.sh
+local/share/stress2/misc/rename4.sh
+local/share/stress2/misc/revoke.sh
+local/share/stress2/misc/sem.sh
+local/share/stress2/misc/sendfile.sh
+local/share/stress2/misc/snap.sh
+local/share/stress2/misc/snap2-1.sh
+local/share/stress2/misc/snap2.sh
+local/share/stress2/misc/snap3.sh
+local/share/stress2/misc/snap4.sh
+local/share/stress2/misc/snap5-1.sh
+local/share/stress2/misc/snap5.sh
+local/share/stress2/misc/snap6.sh
+local/share/stress2/misc/snap7.sh
+local/share/stress2/misc/snap8.sh
+local/share/stress2/misc/snapbackup.sh
+local/share/stress2/misc/softupdate.sh
+local/share/stress2/misc/statfs.sh
+local/share/stress2/misc/suj.sh
+local/share/stress2/misc/suj2.sh
+local/share/stress2/misc/suj3.sh
+local/share/stress2/misc/suj4.sh
+local/share/stress2/misc/suj5.sh
+local/share/stress2/misc/suj6.sh
+local/share/stress2/misc/suj7.sh
+local/share/stress2/misc/symlink.sh
+local/share/stress2/misc/symlink2.sh
+local/share/stress2/misc/syscall.sh
+local/share/stress2/misc/syscall2.sh
+local/share/stress2/misc/tmpfs.sh
+local/share/stress2/misc/tmpfs2.sh
+local/share/stress2/misc/tmpfs3.sh
+local/share/stress2/misc/tmpfs4.sh
+local/share/stress2/misc/truncate.sh
+local/share/stress2/misc/truncate2.sh
+local/share/stress2/misc/truncate3.sh
+local/share/stress2/misc/truncate4.sh
+local/share/stress2/misc/truncate5.sh
+local/share/stress2/misc/ucom.sh
+local/share/stress2/misc/umount.sh
+local/share/stress2/misc/umountf.sh
+local/share/stress2/misc/umountf2.sh
+local/share/stress2/misc/umountf3.sh
+local/share/stress2/misc/umountf4.sh
+local/share/stress2/misc/union.sh
+local/share/stress2/misc/unionfs.sh
+local/share/stress2/misc/unionfs2.sh
+local/share/stress2/misc/unionfs3.sh
+local/share/stress2/misc/vunref.sh
+local/share/stress2/misc/vunref2.sh
+local/share/stress2/misc/zfs.sh
+local/share/stress2/misc/zfs2.sh
+local/share/stress2/misc/zfs3.sh
+local/share/stress2/misc/zfs4.sh
+local/share/stress2/misc/zfs5.sh
+local/share/stress2/mkdir.cfg
+local/share/stress2/mkfifo.cfg
+local/share/stress2/norw.cfg
+local/share/stress2/noswap.cfg
+local/share/stress2/pty.cfg
+local/share/stress2/rw.cfg
+local/share/stress2/syscall.cfg
+local/share/stress2/sysctl.cfg
+local/share/stress2/testcases/
+@bin local/share/stress2/testcases/badcode
+@bin local/share/stress2/testcases/creat
+@bin local/share/stress2/testcases/fts
+@bin local/share/stress2/testcases/link
+@bin local/share/stress2/testcases/lockf
+@bin local/share/stress2/testcases/lockf2
+@bin local/share/stress2/testcases/mkdir
+@bin local/share/stress2/testcases/mkfifo
+@bin local/share/stress2/testcases/mmap
+@bin local/share/stress2/testcases/openat
+@bin local/share/stress2/testcases/pty
+@bin local/share/stress2/testcases/rename
+@bin local/share/stress2/testcases/run
+@bin local/share/stress2/testcases/rw
+@bin local/share/stress2/testcases/shm
+@bin local/share/stress2/testcases/socket
+@bin local/share/stress2/testcases/swap
+@bin local/share/stress2/testcases/symlink
+@bin local/share/stress2/testcases/syscall
+@bin local/share/stress2/testcases/sysctl
+@bin local/share/stress2/testcases/tcp
+@bin local/share/stress2/testcases/thr1
+@bin local/share/stress2/testcases/thr2
+@bin local/share/stress2/testcases/udp
+local/share/stress2/tools/
+local/share/stress2/udp.cfg
+local/share/stress2/vfs.cfg

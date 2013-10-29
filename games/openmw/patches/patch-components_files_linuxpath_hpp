@@ -1,7 +1,7 @@
 $OpenBSD$
---- components/files/linuxpath.hpp.orig	Tue Mar  6 00:41:13 2012
-+++ components/files/linuxpath.hpp	Tue Mar  6 00:41:26 2012
-@@ -23,7 +23,7 @@
+--- components/files/linuxpath.hpp.orig	Wed Apr 24 00:47:57 2013
++++ components/files/linuxpath.hpp	Sun May 12 20:45:25 2013
+@@ -1,7 +1,7 @@
  #ifndef COMPONENTS_FILES_LINUXPATH_H
  #define COMPONENTS_FILES_LINUXPATH_H
  

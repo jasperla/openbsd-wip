@@ -1,0 +1,12 @@
+$OpenBSD$
+--- indra/newview/llxmlrpctransaction.cpp.orig	Mon Dec  3 02:32:38 2007
++++ indra/newview/llxmlrpctransaction.cpp	Mon Dec  3 02:33:12 2007
+@@ -448,7 +448,7 @@ void LLXMLRPCTransaction::Impl::setStatus(Status statu
+ 					"C:\\Documents and Settings\\<name>\\Application Data\\SecondLife\\logs\n"
+ #elif LL_DARWIN
+ 					"~/Library/Application Support/SecondLife/logs\n"
+-#elif LL_LINUX
++#elif LL_LINUX || defined(__OpenBSD__)
+ 					"~/.secondlife/logs\n"
+ #else
+ #error "Need platform here."

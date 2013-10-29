@@ -1,0 +1,14 @@
+$OpenBSD$
+--- indra/llmessage/lliosocket.h.orig	Wed Nov  7 20:18:06 2007
++++ indra/llmessage/lliosocket.h	Mon Nov 12 02:11:33 2007
+@@ -43,8 +43,8 @@
+  */
+ 
+ #include "lliopipe.h"
+-#include "apr-1/apr_pools.h"
+-#include "apr-1/apr_network_io.h"
++#include "apr-1-mt/apr_pools.h"
++#include "apr-1-mt/apr_network_io.h"
+ #include "llchainio.h"
+ 
+ class LLHost;

@@ -4,9 +4,11 @@ CATEGORIES =	editors
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	http://www.calligra-suite.org/
 DISTNAME =	calligra-2.5.3
-REVISION =	6
+REVISION =	7
 
 EXTRACT_SUFX =	.tar.bz2
+
+DIST_SUBDIR =	kde
 
 SHARED_LIBS =	flake			0.0 # 8.0
 SHARED_LIBS +=	kokross			0.0 # 8.0
@@ -54,10 +56,7 @@ VMEM_WARNING =	Yes
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/${DISTNAME}/}
 
 # GPLv2+, LGPLv2+ and GNU FDLv1.2
-PERMIT_DISTFILES_CDROM =        Yes
-PERMIT_DISTFILES_FTP =          Yes
 PERMIT_PACKAGE_CDROM =          Yes
-PERMIT_PACKAGE_FTP =            Yes
 
 MODULES =	x11/kde4
 
@@ -106,10 +105,10 @@ LIB_DEPENDS =	databases/freetds \
 		devel/libgsf \
 		graphics/dcmtk>=3.5.4p2 \
 		graphics/exiv2 \
+		graphics/giflib \
 		graphics/glew \
 		graphics/jpeg \
 		graphics/lcms2 \
-		graphics/libungif \
 		graphics/openjpeg \
 		graphics/png \
 		graphics/tiff \
@@ -120,9 +119,9 @@ LIB_DEPENDS =	databases/freetds \
 		security/qca2 \
 		textproc/libxml \
 		textproc/libxslt \
-		x11/kde4/libkdcraw \
-		x11/kde4/marble \
-		x11/kde4/okular
+		${MODKDE4_DEP_DIR}/libkdcraw \
+		${MODKDE4_DEP_DIR}/marble \
+		${MODKDE4_DEP_DIR}/okular
 
 # Stuff we don't have ATM. Do not bother about CreateResources, it's
 # pure optional run-time dependency.

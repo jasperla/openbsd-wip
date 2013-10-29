@@ -13,13 +13,10 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # custom, see fractsrc.txt
 PERMIT_PACKAGE_CDROM =	 Yes
-PERMIT_PACKAGE_FTP =	 Yes
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP =	 Yes
 
 WANTLIB += X11 Xft c fontconfig m
 
-MASTER_SITES = ${HOMEPAGE}ftp/current/linux/
+MASTER_SITES = ${HOMEPAGE}ftp/old/linux/
 
 MAKE_FLAGS = \
 	XFTHFD="${X11BASE}/include/freetype2" \
@@ -33,7 +30,7 @@ MAKE_FLAGS = \
 	MANDIR="${WRKINST}${PREFIX}/man/man1"
 
 USE_GMAKE =		Yes
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 ALL_TARGET =		xfractint
 
 .include <bsd.port.mk>

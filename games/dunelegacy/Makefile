@@ -2,20 +2,17 @@
 
 COMMENT =		first-ever real-time strategy game
 
-DISTNAME =		dunelegacy-0.96.2-src
+DISTNAME =		dunelegacy-0.96.3-src
 PKGNAME =		${DISTNAME:S/-src//}
 
 CATEGORIES =		games x11
 
-HOMEPAGE =		http://sourceforge.net/apps/mediawiki/dunelegacy/index.php
+HOMEPAGE =		http://dunelegacy.sourceforge.net/
 
 MAINTAINER =		Kirill Bychkov <yason@linklevel.net>
 
 # GPLv2/CC-BY-SA
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		SDL SDL_mixer c m pthread stdc++
 
@@ -25,6 +22,7 @@ EXTRACT_SUFX =		.tar.bz2
 
 LIB_DEPENDS =		devel/sdl-mixer
 RUN_DEPENDS = 		devel/desktop-file-utils
+TEST_DEPENDS = 		devel/cppunit
 
 MAKE_FLAGS +=		CXXFLAGS="${CXXFLAGS} -DXTHREADS"
 
@@ -32,8 +30,6 @@ CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ENV += 	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL \
 			-I${X11BASE}/include"
-
-NO_REGRESS =		Yes
 
 WRKDIST =		${WRKDIR}/${PKGNAME}
 

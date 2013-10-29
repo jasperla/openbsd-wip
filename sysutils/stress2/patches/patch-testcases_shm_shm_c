@@ -1,0 +1,11 @@
+$OpenBSD$
+--- testcases/shm/shm.c.orig	Sat Mar  2 15:13:34 2013
++++ testcases/shm/shm.c	Sat Mar  2 15:13:55 2013
+@@ -28,7 +28,6 @@
+ /* Test shared memory */
+ 
+ #include <sys/cdefs.h>
+-__FBSDID("$FreeBSD: projects/stress2/testcases/shm/shm.c 187224 2009-01-14 16:03:10Z pho $");
+ 
+ #include <stdio.h>
+ #include <stdlib.h>

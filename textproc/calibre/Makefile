@@ -3,6 +3,7 @@
 COMMENT =		ebook management application
 
 DISTNAME =		calibre-0.8.37
+REVISION =		0
 CATEGORIES =		textproc
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calibre/}
 EXTRACT_SUFX =		.tar.xz
@@ -11,14 +12,11 @@ HOMEPAGE =		http://calibre-ebook.com/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/python \
 			x11/qt4
 
-WANTLIB +=		MagickCore MagickWand QtGui X11 Xext c fontconfig m
+WANTLIB +=		MagickCore MagickWand lib/qt4/QtGui X11 Xext c fontconfig m
 WANTLIB +=		stdc++ chm icudata icui18n icuio icuuc poppler png
 WANTLIB +=		ICE SM Xi Xinerama Xrender freetype
 WANTLIB +=		${MODPY_WANTLIB}
@@ -27,13 +25,16 @@ LIB_DEPENDS=		devel/chmlib \
 			graphics/ImageMagick \
 			graphics/libwmf \
 			graphics/png \
-			print/poppler,-qt4 \
+			print/poppler,,-qt4 \
 			print/poppler \
 			textproc/icu4c
-RUN_DEPENDS =		devel/py-dateutil \
+
+RUN_DEPENDS =		devel/desktop-file-utils \
+			devel/py-dateutil \
 			devel/xdg-utils \
 			graphics/ImageMagick \
 			graphics/py-Imaging \
+			misc/shared-mime-info \
 			net/py-dnspython \
 			textproc/py-cssutils>=0.9.7 \
 			textproc/py-lxml>=2.2.8 \
@@ -41,8 +42,8 @@ RUN_DEPENDS =		devel/py-dateutil \
 			www/py-beautifulsoup \
 			www/py-CherryPy \
 			www/py-mechanize \
-			x11/gtk+2,-guic \
 			x11/py-qt4>=4.8.2p1
+
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
 CFLAGS +=		"-I${LOCALBASE}/include"
@@ -59,7 +60,7 @@ MAKE_ENV +=		WITH_USB=no
 
 WRKDIST =		${WRKDIR}/calibre
 PORTHOME =		${WRKDIR}
-NO_REGRESS =		Yes
+NO_TEST =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 ## setup.py doesn't like the options in our python module
