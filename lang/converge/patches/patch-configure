@@ -1,0 +1,12 @@
+$OpenBSD$
+--- configure.orig	Wed Oct 30 13:39:53 2013
++++ configure	Wed Oct 30 13:40:06 2013
+@@ -47,7 +47,7 @@ echo $PYTHON
+ 
+ echo -n "Checking for RPython translate.py... "
+ if [ "X$PYPY_SRC" != "X" ]; then
+-    TRANSLATE_PY=$PYPY_SRC/pypy/translator/goal/translate.py
++    TRANSLATE_PY=$PYPY_SRC/rpython/translator/translator.py
+     if [ ! -f $TRANSLATE_PY ]; then
+         TRANSLATE_PY=""
+     fi
