@@ -86,6 +86,7 @@ libphutil/src/auth/PhutilAuthAdapterOAuthGoogle.php
 libphutil/src/auth/PhutilAuthAdapterOAuthJIRA.php
 libphutil/src/auth/PhutilAuthAdapterOAuthTwitch.php
 libphutil/src/auth/PhutilAuthAdapterOAuthTwitter.php
+libphutil/src/auth/PhutilAuthAdapterPersona.php
 libphutil/src/auth/exception/
 libphutil/src/auth/exception/PhutilAuthException.php
 libphutil/src/auth/exception/PhutilAuthUserAbortedException.php
@@ -318,6 +319,7 @@ libphutil/src/markup/PhutilSafeHTML.php
 libphutil/src/markup/PhutilSafeHTMLProducerInterface.php
 libphutil/src/markup/__tests__/
 libphutil/src/markup/__tests__/PhutilMarkupTestCase.php
+libphutil/src/markup/__tests__/PhutilSafeHTMLTestCase.php
 libphutil/src/markup/engine/
 libphutil/src/markup/engine/PhutilRemarkupEngine.php
 libphutil/src/markup/engine/__tests__/
@@ -570,6 +572,7 @@ libphutil/src/utils/PhutilBufferedIterator.php
 libphutil/src/utils/PhutilBufferedIteratorExample.php
 libphutil/src/utils/PhutilCallbackFilterIterator.php
 libphutil/src/utils/PhutilChunkedIterator.php
+libphutil/src/utils/PhutilDirectedScalarGraph.php
 libphutil/src/utils/PhutilEditDistanceMatrix.php
 libphutil/src/utils/PhutilLunarPhase.php
 libphutil/src/utils/__tests__/

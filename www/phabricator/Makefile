@@ -2,8 +2,8 @@
 
 COMMENT =	code review, repository browser, bug tracker and wiki
 
-COMMIT_ID =     68c854b9673e0e51296daccfeb41884e79ebf77b
-DUMMY_VER =	0.20131007
+COMMIT_ID =     f68d67530aef062310252264e10a9666144c2637
+DUMMY_VER =	0.20131107
 DISTNAME =	phabricator-${DUMMY_VER}
 DISTFILES = 	phabricator-${DUMMY_VER}{${COMMIT_ID}.tar.gz}
 CATEGORIES =	www devel

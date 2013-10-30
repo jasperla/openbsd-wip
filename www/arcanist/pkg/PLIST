@@ -40,6 +40,7 @@ arcanist/src/__phutil_library_init__.php
 arcanist/src/__phutil_library_map__.php
 arcanist/src/configuration/
 arcanist/src/configuration/ArcanistConfiguration.php
+arcanist/src/configuration/ArcanistConfigurationManager.php
 arcanist/src/configuration/ArcanistSettings.php
 arcanist/src/configuration/__tests__/
 arcanist/src/configuration/__tests__/ArcanistBritishTestCase.php
@@ -50,6 +51,7 @@ arcanist/src/difference/__tests__/ArcanistDiffUtilsTestCase.php
 arcanist/src/differential/
 arcanist/src/differential/ArcanistDifferentialCommitMessage.php
 arcanist/src/differential/ArcanistDifferentialCommitMessageParserException.php
+arcanist/src/differential/ArcanistDifferentialDependencyGraph.php
 arcanist/src/differential/constants/
 arcanist/src/differential/constants/ArcanistDifferentialRevisionHash.php
 arcanist/src/differential/constants/ArcanistDifferentialRevisionStatus.php
@@ -352,6 +354,7 @@ arcanist/src/repository/parser/__tests__/
 arcanist/src/repository/parser/__tests__/ArcanistMercurialParserTestCase.php
 arcanist/src/repository/parser/__tests__/mercurial/
 arcanist/src/repository/parser/__tests__/mercurial/branches-basic.txt
+arcanist/src/repository/parser/__tests__/mercurial/branches-empty.txt
 arcanist/src/repository/parser/__tests__/mercurial/branches-with-spaces.txt
 arcanist/src/repository/parser/__tests__/mercurial/log-basic.txt
 arcanist/src/repository/parser/__tests__/mercurial/log-empty.txt

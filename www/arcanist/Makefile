@@ -2,8 +2,8 @@
 
 COMMENT =	cli to phabricator
 
-COMMIT_ID =     13e422e123fed10cfa7e4962ae19ccd39f712e1c
-DUMMY_VER =	0.20131007
+COMMIT_ID =     9310df9615402aea3bdc07971096a3296ba5dae2
+DUMMY_VER =	0.20131107
 DISTNAME =	arcanist-${DUMMY_VER}
 DISTFILES = 	arcanist-${DUMMY_VER}{${COMMIT_ID}.tar.gz}
 CATEGORIES =	www devel

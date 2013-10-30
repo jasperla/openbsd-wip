@@ -2,8 +2,8 @@
 
 COMMENT =	collection of PHP utility classes for phabricator
 
-COMMIT_ID =     944738bdf93751d11f20f6aa6dc2e4e62d86a308
-DUMMY_VER =	0.20131007
+COMMIT_ID =     13ad06352d84fbae42c89711450381713a492aaa
+DUMMY_VER =	0.20131107
 DISTNAME =	libphutil-${DUMMY_VER}
 DISTFILES = 	libphutil-${DUMMY_VER}{${COMMIT_ID}.tar.gz}
 CATEGORIES =	www devel
