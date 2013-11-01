@@ -2,8 +2,8 @@
 
 COMMENT =	sans-serif typeface family of Android OS
 
-# 2013-07-30 Version 1.100141 (from README.md)
-V =		1.100141
+# 2013-10-31 Version 1.2 (the date in the specimen filename in the website)
+V =		1.2
 EPOCH =		0
 DISTNAME =	roboto-${V}
 PKGNAME =	roboto-fonts-${V}
@@ -24,14 +24,14 @@ NO_BUILD =	Yes
 NO_TEST =	Yes
 
 PKG_ARCH =	*
+WRKDIST =	${WRKDIR}/Roboto_v${V}
 
 FONTDIR =	${PREFIX}/lib/X11/fonts/roboto
 DOCDIR =	${PREFIX}/share/doc/roboto-fonts
 
 do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKDIST}/*.ttf ${FONTDIR}
-	${INSTALL_DATA} ${WRKDIST}/*.pdf ${WRKDIST}/*.md ${WRKDIST}/*.txt \
-		${DOCDIR}
+	${INSTALL_DATA} ${WRKDIST}/*/*.ttf ${FONTDIR}
+	${INSTALL_DATA} ${WRKDIST}/*.pdf ${WRKDIST}/*/*.txt ${DOCDIR}
 
 .include <bsd.port.mk>
