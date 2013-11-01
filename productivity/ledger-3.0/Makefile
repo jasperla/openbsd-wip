@@ -32,13 +32,13 @@ CONFIGURE_STYLE=	simple
 CONFIGURE_SCRIPT=	acprep
 CONFIGURE_ARGS=		opt make
 
-SEPARATE_BUILD=	Yes
+#SEPARATE_BUILD=	Yes
 
 WRKSRC=${WRKDIR}/ledger-next
 WRKDIST=${WRKDIR}/ledger-next
 
 pre-configure:
-	cd ${WRKSRC} && mkdir build
+	cd ${WRKSRC} && mkdir -p build
 
 pre-build:
 	cd build/ledger/opt && make install
