@@ -20,9 +20,5 @@ lib/X11/fonts/roboto/RobotoCondensed-Light.ttf
 lib/X11/fonts/roboto/RobotoCondensed-LightItalic.ttf
 lib/X11/fonts/roboto/RobotoCondensed-Regular.ttf
 share/doc/roboto-fonts/
-share/doc/roboto-fonts/AUTHORS.txt
-share/doc/roboto-fonts/CONTRIBUTORS.txt
-share/doc/roboto-fonts/COPYRIGHT.txt
 share/doc/roboto-fonts/LICENSE.txt
-share/doc/roboto-fonts/README.md
 share/doc/roboto-fonts/RobotoSpecimenBook.pdf
