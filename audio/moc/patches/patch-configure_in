@@ -13,7 +13,7 @@ Add sndio support.
 +	-a "$ac_cv_lib_sndio_sio_open" = "yes"
 +then
 +	AC_DEFINE([HAVE_SNDIO], 1, [Define if you have sndio.])
-+	EXTRA_OBJS="$EXTRA_OBJS moc_sndio.o"
++	EXTRA_OBJS="$EXTRA_OBJS sndio_out.o"
 +	EXTRA_LIBS="$EXTRA_LIBS -lsndio"
 +	COMPILE_SNDIO="yes"
 +fi

@@ -7,7 +7,7 @@ Add sndio support.
  #include "log.h"
  
 +#ifdef HAVE_SNDIO
-+# include "moc_sndio.h"
++# include "sndio_out.h"
 +#endif
  #ifdef HAVE_OSS
  # include "oss.h"
