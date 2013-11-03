@@ -34,7 +34,7 @@
 static struct sound_params moc_params;
 static struct sio_par sndio_params;
 static struct sio_hdl *sndio_dev = NULL;
-static int sndio_volume = -1;
+static int sndio_volume = 100;
 
 static void sndio_close ()
 {
@@ -43,7 +43,6 @@ static void sndio_close ()
 		sndio_dev = NULL;
 		logit ("Audio device closed");
 	}
-	sndio_volume = -1;
 }
 
 static int sndio_open_dev ()
