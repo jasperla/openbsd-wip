@@ -34,22 +34,8 @@
 static struct sound_params moc_params;
 static struct sio_par sndio_params;
 static struct sio_hdl *sndio_dev = NULL;
-static int left_to_play = 0;
+static int free_in_buf = 0;    /* in bytes */
 static int sndio_volume = -1;
-
-static int open_dev ()
-{
-	const char *devname = SIO_DEVANY, *t;
-
-	if ((t = options_get_str("SndioDevice")) != NULL)
-		devname = t;
-	if ((sndio_dev = sio_open(devname, SIO_PLAY, 0)) == NULL) {
-		error ("Can't open %s, %s", devname, strerror(errno));
-		return (0);
-	}
-	logit ("Audio device opened");
-	return (1);
-}
 
 static void sndio_close ()
 {
@@ -59,7 +45,22 @@ static void sndio_close ()
 		logit ("Audio device closed");
 	}
 	sndio_volume = -1;
-	left_to_play = 0;
+	free_in_buf = 0;
+}
+
+static int sndio_open_dev ()
+{
+	const char *devname = SIO_DEVANY, *t;
+
+	sndio_close();
+	if ((t = options_get_str("SndioDevice")) != NULL)
+		devname = t;
+	if ((sndio_dev = sio_open(devname, SIO_PLAY, 0)) == NULL) {
+		error ("Can't open %s, %s", devname, strerror(errno));
+		return (0);
+	}
+	logit ("Audio device opened");
+	return (1);
 }
 
 static void sndio_onvol_cb(void *arg, unsigned int newvol) {
@@ -73,7 +74,7 @@ static void sndio_onvol_cb(void *arg, unsigned int newvol) {
 }
 
 static void sndio_onmove_cb(void *arg, int delta) {
-	left_to_play -= (delta * sndio_params.bps);
+	free_in_buf += (delta * sndio_params.bps);
 }
 
 /* Fill caps with the device capabilities. Return 0 on error. */
@@ -82,7 +83,7 @@ static int sndio_init (struct output_driver_caps *caps)
 	struct sio_cap sndio_caps;
 	int i;
 
-	if (!open_dev()) {
+	if (!sndio_open_dev()) {
 		error ("Can't open the device.");
 		return (0);
 	}
@@ -131,9 +132,6 @@ static void sndio_shutdown ()
 }
 
 static int sndio_set_params() {
-	if (!open_dev())
-		return (0);
-
 	sio_initpar(&sndio_params);
 
 	if ((moc_params.fmt & (SFMT_S8|SFMT_U8)) != 0)
@@ -147,7 +145,7 @@ static int sndio_set_params() {
 			SFMT_MASK_FORMAT & moc_params.fmt);
 		return (0);
 	}
-	sndio_params.le = (moc_params.fmt & SFMT_LE);
+	sndio_params.le = (moc_params.fmt & SFMT_LE) ? 1 : 0;
 	sndio_params.msb = 1;
 	sndio_params.pchan = (unsigned) moc_params.channels;
 	sndio_params.rate = (unsigned) moc_params.rate;
@@ -159,24 +157,33 @@ static int sndio_set_params() {
 		error("Cannot get actual audio parameters");
 		return (0);
 	}
+	free_in_buf = sndio_params.appbufsz;
 
-	/* XXX
-	logit ("Audio parameters set to: %s, %d channels, %dHz",
-			sfmt_str(params.fmt, fmt_name, sizeof(fmt_name)),
-			moc_params.channels, moc_params.rate);
-	*/
+	logit ("Audio parameters set to: %u bits/sample (%u bytes, %s), %u channels, %uHz",
+			sndio_params.bits,
+			sndio_params.bps,
+			(sndio_params.le ? "LE" : "BE"),
+			sndio_params.pchan,
+			sndio_params.rate);
 	return (1);
 }
 
 /* Return 0 on fail */
 static int sndio_open (struct sound_params *new_params)
 {
-	if (!open_dev())
+	if (!sndio_open_dev())
 		return (0);
 	if (new_params != NULL)
 		memcpy(&moc_params, new_params, sizeof(struct sound_params));
-	if (!sndio_set_params())
+	if (!sndio_set_params()) {
+		sndio_close();
 		return (0);
+	}
+	if (!sio_start(sndio_dev)) {
+		error("Cannot start playing");
+		sndio_close();
+		return (0);
+	}
 
 	return (1);
 }
@@ -198,7 +205,7 @@ static int sndio_play (const char *buff, const size_t size)
 		}
 		logit("written %zu bytes to device", rv);
 		nwritten += rv;
-		left_to_play += (int)rv;
+		free_in_buf -= rv;
 	} while (nwritten < size);
 	return ((int)nwritten);    /* XXX */
 }
@@ -215,10 +222,9 @@ static void sndio_set_mixer (int vol)
 	sio_setvol(sndio_dev, (unsigned)vol);
 }
 
-/* Return number of bytes in device buffer */
 static int sndio_get_buff_fill ()
 {
-	return left_to_play;
+	return free_in_buf;
 }
 
 static int sndio_reset ()
