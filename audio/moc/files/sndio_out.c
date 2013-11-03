@@ -34,7 +34,6 @@
 static struct sound_params moc_params;
 static struct sio_par sndio_params;
 static struct sio_hdl *sndio_dev = NULL;
-static int free_in_buf = 0;    /* in bytes */
 static int sndio_volume = -1;
 
 static void sndio_close ()
@@ -45,7 +44,6 @@ static void sndio_close ()
 		logit ("Audio device closed");
 	}
 	sndio_volume = -1;
-	free_in_buf = 0;
 }
 
 static int sndio_open_dev ()
@@ -64,17 +62,11 @@ static int sndio_open_dev ()
 }
 
 static void sndio_onvol_cb(void *arg, unsigned int newvol) {
-	/*
-	 * sndio uses 0..255, so map it to 0..100. There should be
-	 * enough room in the "int" for simple algorithm.
-	 */
-	newvol *= 100;
-	newvol /= 256;
-	sndio_volume = (int) newvol;
+	sndio_volume = newvol * 100 / SIO_MAXVOL;
 }
 
 static void sndio_onmove_cb(void *arg, int delta) {
-	free_in_buf += (delta * sndio_params.bps);
+	return (0);
 }
 
 /* Fill caps with the device capabilities. Return 0 on error. */
@@ -121,6 +113,13 @@ static int sndio_init (struct output_driver_caps *caps)
 	return (1);
 }
 
+static void sndio_update_volume () {
+	int vol = sndio_volume;
+	vol *= SIO_MAXVOL;
+	vol /= 100;
+	sio_setvol(sndio_dev, (unsigned) vol);
+}
+
 static int sndio_read_mixer ()
 {
 	return sndio_volume;
@@ -157,7 +156,7 @@ static int sndio_set_params() {
 		error("Cannot get actual audio parameters");
 		return (0);
 	}
-	free_in_buf = sndio_params.appbufsz;
+	sndio_update_volume();
 
 	logit ("Audio parameters set to: %u bits/sample (%u bytes, %s), %u channels, %uHz",
 			sndio_params.bits,
@@ -165,6 +164,7 @@ static int sndio_set_params() {
 			(sndio_params.le ? "LE" : "BE"),
 			sndio_params.pchan,
 			sndio_params.rate);
+
 	return (1);
 }
 
@@ -188,7 +188,6 @@ static int sndio_open (struct sound_params *new_params)
 	return (1);
 }
 
-/* Return -errno on error, number of bytes played when ok */
 static int sndio_play (const char *buff, const size_t size)
 {
 	size_t nwritten = 0, rv;
@@ -205,32 +204,25 @@ static int sndio_play (const char *buff, const size_t size)
 		}
 		logit("written %zu bytes to device", rv);
 		nwritten += rv;
-		free_in_buf -= rv;
 	} while (nwritten < size);
 	return ((int)nwritten);    /* XXX */
 }
 
-/* Set PCM volume */
 static void sndio_set_mixer (int vol)
 {
-	/*
-	 * sndio uses 0..255, so map it from 0..100. There should be
-	 * enough room in the "int" for simple algorithm.
-	 */
-	vol *= 256;
-	vol /= 100;
-	sio_setvol(sndio_dev, (unsigned)vol);
+	sndio_volume = vol;
+	if (sndio_dev != NULL)
+		sndio_update_volume();
 }
 
 static int sndio_get_buff_fill ()
 {
-	return free_in_buf;
+	return (0);
 }
 
 static int sndio_reset ()
 {
 	/* do not use sio_stop(), it doesn't discard buffered data */
-	sndio_close();
 	if (!sndio_open(NULL))
 		return (0);
 	return (1);

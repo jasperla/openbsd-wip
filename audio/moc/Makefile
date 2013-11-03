@@ -49,6 +49,6 @@ CONFIGURE_ENV =		CFLAGS=-I${LOCALBASE}/include \
 			LDFLAGS=-L${LOCALBASE}/lib
 
 post-extract:
-	cp ${FILESDIR}/moc_sndio.[ch] ${WRKSRC}
+	cp ${FILESDIR}/sndio_out.[ch] ${WRKSRC}
 
 .include <bsd.port.mk>
