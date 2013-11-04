@@ -2,6 +2,8 @@
 
 VMEM_WARNING = 		Yes
 
+SHARED_ONLY = 		Yes
+
 COMMENT =		rewrite of the HoMM3 engine
 
 DISTNAME = 		vcmi-${V}

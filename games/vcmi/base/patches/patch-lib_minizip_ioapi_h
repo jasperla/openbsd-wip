@@ -1,0 +1,12 @@
+$OpenBSD$
+--- lib/minizip/ioapi.h.orig	Mon Nov  4 12:25:28 2013
++++ lib/minizip/ioapi.h	Mon Nov  4 12:26:24 2013
+@@ -29,7 +29,7 @@
+ #  endif
+ #endif
+ 
+-#if (!defined(_WIN32)) && (!defined(WIN32)) && (!defined(__APPLE__))
++#if (!defined(_WIN32)) && (!defined(WIN32)) && (!defined(__APPLE__)) && (!defined(__OpenBSD__))
+ 
+   // Linux needs this to support file operation on files larger then 4+GB
+   // But might need better if/def to select just the platforms that needs them.
