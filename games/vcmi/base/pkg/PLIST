@@ -8,8 +8,10 @@ lib/vcmi/AI/libBattleAI.so
 lib/vcmi/AI/libEmptyAI.so
 lib/vcmi/AI/libStupidAI.so
 lib/vcmi/AI/libVCAI.so
+lib/vcmi/libminizip.so
 @lib lib/vcmi/libvcmi.so.${LIBvcmi_VERSION}
 share/applications/vcmiclient.desktop
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/icons/
 share/icons/hicolor/
 share/icons/hicolor/256x256/
@@ -24,8 +26,6 @@ share/icons/hicolor/48x48/apps/vcmiclient.png
 share/icons/hicolor/64x64/
 share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/vcmiclient.png
-share/vcmi/
-share/vcmi/Mods/
 share/vcmi/Mods/WoG/
 share/vcmi/Mods/WoG/config/
 share/vcmi/Mods/WoG/config/defaultMods.json
@@ -35,12 +35,8 @@ share/vcmi/Mods/WoG/config/wog/creatures.json
 share/vcmi/Mods/WoG/config/wog/factions.json
 share/vcmi/Mods/WoG/config/wogFileOverrides.json
 share/vcmi/Mods/WoG/mod.json
-share/vcmi/Mods/vcmi/
-share/vcmi/Mods/vcmi/Data/
-share/vcmi/Mods/vcmi/Data/s/
 @comment share/vcmi/Mods/vcmi/Data/s/std.verm
 @comment share/vcmi/Mods/vcmi/Data/s/testy.erm
-share/vcmi/Mods/vcmi/Sprites/
 share/vcmi/Mods/vcmi/Sprites/PortraitsLarge.json
 share/vcmi/Mods/vcmi/Sprites/PortraitsSmall.json
 share/vcmi/Mods/vcmi/Sprites/itpa.json
