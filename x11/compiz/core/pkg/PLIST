@@ -32,6 +32,7 @@ lib/compiz/libresize.so
 lib/compiz/librotate.so
 lib/compiz/libscale.so
 lib/compiz/libscreenshot.so
+lib/compiz/libsvg.so
 lib/compiz/libswitcher.so
 lib/compiz/libvideo.so
 lib/compiz/libwater.so
@@ -141,7 +142,7 @@ share/locale/xh/LC_MESSAGES/compiz.mo
 share/locale/zh_CN/LC_MESSAGES/compiz.mo
 share/locale/zh_TW/LC_MESSAGES/compiz.mo
 share/locale/zu/LC_MESSAGES/compiz.mo
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1 
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/compiz-annotate.schemas
 ${SCHEMAS_INSTDIR}/compiz-blur.schemas
