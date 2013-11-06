@@ -4,13 +4,14 @@ CATEGORIES =		productivity x11
 HOMEPAGE =		http://kmymoney2.sourceforge.net
 MAINTAINER =		Vadim Zhukov <persgray@gmail.com>
 DISTNAME =		libalkimia-4.3.2
+REVISION =		0
 
-SHARED_LIBS =	alkimia			0.0 # 4.3
+SHARED_LIBS =		alkimia		0.0 # 4.3
 
-# LGPL
+# LGPLv2.1+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		lib/qt4/QtDBus c gmp m stdc++
+WANTLIB =		lib/qt4/QtDBus gmp m stdc++
 
 MASTER_SITES =		http://kde-apps.org/CONTENT/content-files/137323-
 EXTRACT_SUFX =		.tar.bz2
@@ -22,15 +23,7 @@ BUILD_DEPENDS =		devel/doxygen \
 			${MODKDE4_DEP_DIR}/libs
 LIB_DEPENDS =		devel/gmp
 
-#TEST_DEPENDS =		???
-
-#MAKE_FLAGS =		???
-#MAKE_ENV =		???
-#FAKE_FLAGS =		???
-#TEST_FLAGS =		???
-
-#TEST_IS_INTERACTIVE =	Yes
-#NO_TEST =		Yes
-#TEST_TARGET =		???
+do-test:
+	cd ${WRKBUILD} && ./libalkimia/alkcompanytest
 
 .include <bsd.port.mk>
