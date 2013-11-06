@@ -7,10 +7,10 @@ DISTNAME =	compiz-plugins-main-${V}
 
 MASTER_SITES =	http://releases.compiz.org/${V}/
 
-WANTLIB =	GLU ICE SM X11 X11-xcb Xcomposite Xdamage Xext Xfixes \
+WANTLIB =	GL GLU ICE SM X11 X11-xcb Xcomposite Xdamage Xext Xfixes \
 		Xinerama Xrandr Xrender cairo expat ffi fontconfig \
-		freetype glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
-		harfbuzz icudata icule icuuc jpeg m pango-1.0 pangocairo-1.0 \
+		freetype glib-2.0 gmodule-2.0 gobject-2.0 graphite2 \
+		gthread-2.0 harfbuzz jpeg m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs \
 		startup-notification-1 xcb xcb-aux xcb-render xcb-shm \
 		xml2 xslt z
