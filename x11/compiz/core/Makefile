@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/02/06 14:23:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2013/09/27 17:49:10 ajacoutot Exp $
 
 COMMENT =	OpenGL window and compositing manager
 
@@ -7,17 +7,20 @@ DISTNAME =	compiz-${V}
 
 SHARED_LIBS =	decoration	1.0
 
-MASTER_SITES =	http://releases.compiz.org/${V}/
+# MIT, GPL and LGPL
+PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	GL GLU ICE SM X11 X11-xcb XRes Xcomposite Xcursor Xdamage \
-		Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 \
-		c cairo dbus-1 dbus-glib-1 drm expat ffi fontconfig \
-		freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
-		gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 harfbuzz \
-		icudata icule icuuc m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre pixman-1 png pthread pthread-stubs \
-		startup-notification-1 stdc++ wnck-1 xcb xcb-aux xcb-render \
-		xcb-shm xml2 xslt z
+WANTLIB +=	GL GLU ICE SM X11 X11-xcb XRes Xau Xcomposite Xcursor \
+		Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender \
+		Xxf86vm atk-1.0 c cairo croco-0.6 dbus-1 dbus-glib-1 \
+		drm expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
+		gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0 graphite2 \
+		gthread-2.0 gtk-x11-2.0 harfbuzz m pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs \
+		rsvg-2 startup-notification-1 stdc++ wnck-1 xcb xcb-aux \
+		xcb-dri2 xcb-glx xcb-render xcb-shm xml2 xslt z
+
+MASTER_SITES =	http://releases.compiz.org/${V}/
 
 MODULES =	devel/gconf2 \
 		devel/gettext \
@@ -29,6 +32,7 @@ LIB_DEPENDS =	devel/startup-notification \
 		devel/libwnck \
 		textproc/libxml \
 		textproc/libxslt \
+		x11/gnome/librsvg \
 		x11/gtk+2
 
 USE_GMAKE =	Yes
@@ -37,9 +41,8 @@ LIBTOOL_FLAGS =	--tag=disable-static
 
 CONFIGURE_STYLE	= gnu
 CONFIGURE_ARGS = --disable-static \
-		 --disable-inotify \
 		 --disable-fuse \
-		 --disable-librsvg \
+		 --disable-inotify \
 		 --disable-metacity \
 		 --disable-gnome \
 		 --disable-gnome-keybindings \
