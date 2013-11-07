@@ -1,5 +1,4 @@
 # $OpenBSD$
-SHARED_ONLY =		Yes
 COMMENT =		console background audio player
 DISTNAME =		moc-2.4.4
 CATEGORIES =		audio
