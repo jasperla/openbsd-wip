@@ -1,25 +1,20 @@
 @comment $OpenBSD$
+%%SHARED%%
 @bin bin/mocp
 lib/moc/
 lib/moc/decoder_plugins/
-@comment lib/moc/decoder_plugins/libflac_decoder.a
-@comment lib/moc/decoder_plugins/libflac_decoder.la
-lib/moc/decoder_plugins/libflac_decoder.so
-@comment lib/moc/decoder_plugins/libmp3_decoder.a
-@comment lib/moc/decoder_plugins/libmp3_decoder.la
-lib/moc/decoder_plugins/libmp3_decoder.so
-@comment lib/moc/decoder_plugins/libmusepack_decoder.a
-@comment lib/moc/decoder_plugins/libmusepack_decoder.la
-lib/moc/decoder_plugins/libmusepack_decoder.so
-@comment lib/moc/decoder_plugins/libsndfile_formats_decoder.a
-@comment lib/moc/decoder_plugins/libsndfile_formats_decoder.la
-lib/moc/decoder_plugins/libsndfile_formats_decoder.so
-@comment lib/moc/decoder_plugins/libspeex_decoder.a
-@comment lib/moc/decoder_plugins/libspeex_decoder.la
-lib/moc/decoder_plugins/libspeex_decoder.so
-@comment lib/moc/decoder_plugins/libvorbis_decoder.a
-@comment lib/moc/decoder_plugins/libvorbis_decoder.la
-lib/moc/decoder_plugins/libvorbis_decoder.so
+lib/moc/decoder_plugins/libflac_decoder.a
+lib/moc/decoder_plugins/libflac_decoder.la
+lib/moc/decoder_plugins/libmp3_decoder.a
+lib/moc/decoder_plugins/libmp3_decoder.la
+lib/moc/decoder_plugins/libmusepack_decoder.a
+lib/moc/decoder_plugins/libmusepack_decoder.la
+lib/moc/decoder_plugins/libsndfile_formats_decoder.a
+lib/moc/decoder_plugins/libsndfile_formats_decoder.la
+lib/moc/decoder_plugins/libspeex_decoder.a
+lib/moc/decoder_plugins/libspeex_decoder.la
+lib/moc/decoder_plugins/libvorbis_decoder.a
+lib/moc/decoder_plugins/libvorbis_decoder.la
 @man man/man1/mocp.1
 share/doc/moc/
 share/doc/moc/README
