@@ -444,6 +444,7 @@ lib/python${MODPY_VERSION}/site-packages/kivy/vector.py
 lib/python${MODPY_VERSION}/site-packages/kivy/vector.pyc
 lib/python${MODPY_VERSION}/site-packages/kivy/weakmethod.py
 lib/python${MODPY_VERSION}/site-packages/kivy/weakmethod.pyc
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/kivy-examples/
 share/kivy-examples/3Drendering/
 share/kivy-examples/3Drendering/main.py
