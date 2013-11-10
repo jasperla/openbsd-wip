@@ -1,4 +1,7 @@
 $OpenBSD$
+
+Taken from FreeBSD.
+
 --- modplug/snd_gm.c.orig	Sun Nov 10 15:37:40 2013
 +++ modplug/snd_gm.c	Sun Nov 10 15:37:58 2013
 @@ -10,13 +10,14 @@
