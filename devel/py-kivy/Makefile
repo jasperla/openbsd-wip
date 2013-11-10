@@ -19,15 +19,17 @@ WANTLIB +=		GL m pthread python2.7
 # Couldn't find any source distfiles, rolled my own from git tag.
 MASTER_SITES =		http://theunixzoo.co.uk/distfiles/
 
+# Uses setuptools indirectly
+# XXX Pick up any extra stuff?
 MODULES =		lang/python
-BUILD_DEPENDS +=	lang/cython
-TEST_DEPENDS =		devel/py-nose \
+MODPY_SETUPTOOLS =	No
+BUILD_DEPENDS +=	lang/cython \
+			devel/py-setuptools
+TEST_DEPENDS +=		devel/py-nose \
 			lang/cython \
-			devel/py-coverage \
-			${FULLPKGNAME}:${FULLPKGPATH} # needs to be installed
+			devel/py-coverage
 
-# Tests broken XXX
-# tests write to home
+# Tests write to ${HOME}
 PORTHOME =		${WRKDIR}
 
 .include <bsd.port.mk>
