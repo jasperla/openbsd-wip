@@ -17,9 +17,8 @@ MAINTAINER=		Todd T. Fries <todd@openbsd.org>
 # IBM Public License 1.0
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c asn1 com_err crypto krb5 ncurses
-WANTLIB+=		pthread
-
+WANTLIB += asn1 c com_err crypto heimbase krb5 ncurses pthread
+WANTLIB += roken wind
 
 SHARED_LIBS +=  afsauthent                1.1
 SHARED_LIBS +=  afsrpc                    1.5
@@ -64,24 +63,6 @@ FLAVOR?=
 
 WRKDIST=	${WRKDIR}/openafs-${VERSION}
 
-post-patch:
-	@sed "s/%OSrev%/${OSrev}/g;s/%ARCH%/${ARCH}/g" \
-		${FILESDIR}/param.obsd.h \
-		> ${WRKSRC}/src/config/param.${ARCH}_obsd${OSrev}.h
-
-post-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openafs
-	${SUBST_CMD} -c \
-		${FILESDIR}/krb5.conf \
-		${WRKSRC}/obsd.krb5.conf
-	${INSTALL_DATA} -m 755 ${WRKSRC}/obsd.krb5.conf \
-		${PREFIX}/share/examples/openafs/krb5.conf
-	${SUBST_CMD} -c \
-		${FILESDIR}/openafs-setup \
-		${WRKSRC}/obsd.openafs-setup
-	${INSTALL_PROGRAM} -m 755 ${WRKSRC}/obsd.openafs-setup \
-		${PREFIX}/sbin/openafs-setup
-
 .if ${FLAVOR:L:Mdebug}
 CONFIGURE_ARGS+=	--enable-debug
 CONFIGURE_ARGS+=	--enable-debug-kernel
@@ -90,6 +71,7 @@ CONFIGURE_ARGS+=	--enable-debug-lwp
 
 .if ${FLAVOR:L:Mfuse}
 CONFIGURE_ARGS+=	--enable-fuse-client
+PATCH_LIST =		fuse-patch-* patch-*
 .else
 CONFIGURE_ARGS+=	--disable-fuse-client
 .endif

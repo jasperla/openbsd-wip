@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/aklog/aklog.c.orig	Sun Nov 10 17:25:54 2013
++++ src/aklog/aklog.c	Sun Nov 10 17:24:37 2013
+@@ -244,6 +244,8 @@ Done:
+ 
+ #ifdef AFS_DARWIN110_ENV
+ #define HAVE_NO_KRB5_524 /* MITKerberosShim logs but returns success */
++#elif AFS_OBSD_ENV
++#define HAVE_NO_KRB5_524
+ #elif !defined(HAVE_KRB5_524_CONVERT_CREDS) && defined(HAVE_KRB524_CONVERT_CREDS_KDC)
+ #define krb5_524_convert_creds krb524_convert_creds_kdc
+ #elif !defined(HAVE_KRB5_524_CONVERT_CREDS) && !defined(HAVE_KRB524_CONVERT_CREDS_KDC)

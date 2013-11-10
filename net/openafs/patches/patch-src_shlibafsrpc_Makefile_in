@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/shlibafsrpc/Makefile.in.orig	Sun Nov 10 17:06:06 2013
++++ src/shlibafsrpc/Makefile.in	Sun Nov 10 17:05:25 2013
+@@ -399,7 +399,7 @@ syscall.o: ${SYS}/syscall.s
+ 		${AS} -P ${CFLAGS} -D_NO_PROTO -DMACH -DOSF -nostdinc -traditional -DASSEMBLER ${SYS}/syscall.s; \
+ 		${AS} -o syscall.o syscall.i; \
+ 		$(RM) -f syscall.ss syscall.i;; \
+-	 *fbsd* ) \
++	 *fbsd* | *obsd* ) \
+ 		touch syscall.c ; \
+                 ${CC} ${CFLAGS} -c syscall.c;; \
+ 	 *) \
