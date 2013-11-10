@@ -1,0 +1,21 @@
+$OpenBSD$
+
+Seems like shared libs are put in ${WRKSRC}/lib.openbsd-5.4-amd64-2.7
+without this patch. Something in the ports environment causes this but I
+have not yet figured out what.
+
+That said, *with* this patch the shared objects are not installed, so its a no
+win situation all round?!
+
+--- setup.py.orig	Sun Nov 10 11:18:03 2013
++++ setup.py	Sun Nov 10 22:05:42 2013
+@@ -88,6 +88,9 @@ class KivyBuildExt(build_ext):
+             for k, v in c_options.iteritems():
+                 fd.write('DEF %s = %d\n' % (k.upper(), int(v)))
+ 
++        # prevent shared objects from being output into wrong dir
++        self.build_lib = ""
++
+         build_ext.build_extensions(self)
+ 
+ 
