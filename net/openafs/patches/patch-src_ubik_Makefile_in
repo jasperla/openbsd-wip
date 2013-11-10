@@ -1,0 +1,20 @@
+$OpenBSD$
+--- src/ubik/Makefile.in.orig	Sun Nov 10 15:06:24 2013
++++ src/ubik/Makefile.in	Sun Nov 10 15:07:31 2013
+@@ -38,13 +38,13 @@ depinstall: \
+ 	${TOP_INCDIR}/ubik_int.h
+ 
+ ${TOP_LIBDIR}/libubik.a: libubik.a
+-	${INSTALL_DATA} $? $@
++	cp $? $@
+ 
+ ${TOP_INCDIR}/ubik.h: ubik.h
+-	${INSTALL_DATA} $? $@
++	cp $? $@
+ 
+ ${TOP_INCDIR}/ubik_int.h: ubik_int.h
+-	${INSTALL_DATA} $? $@
++	cp $? $@
+ 
+ utst_server: utst_server.o utst_int.ss.o utst_int.xdr.o libubik.a 
+ 	${CC} ${CFLAGS} -o utst_server utst_server.o utst_int.ss.o utst_int.xdr.o libubik.a $(LIBS)

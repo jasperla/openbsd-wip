@@ -1,7 +1,4 @@
 @comment $OpenBSD: PLIST,v 1.5 2010/11/15 08:11:17 jasper Exp $
-%%SHARED%%
-@owner root
-@group wheel
 @bin bin/afs_compile_et
 @bin bin/afsio
 @bin bin/afsmonitor
@@ -207,21 +204,23 @@ lib/afs/libxstat_fs.a
 lib/afs/util.a
 lib/afs/vlib.a
 lib/libafsauthent.a
+@lib lib/libafsauthent.so.${LIBafsauthent_VERSION}
 lib/libafsauthent_pic.a
 lib/libafscp.a
 lib/libafsrpc.a
+@lib lib/libafsrpc.so.${LIBafsrpc_VERSION}
 lib/libafsrpc_pic.a
 lib/libdes.a
 lib/libkopenafs.a
+@lib lib/libkopenafs.so.${LIBkopenafs_VERSION}
 lib/liblwp.a
 lib/librx.a
 lib/librxkad.a
 lib/librxstat.a
 lib/libubik.a
 lib/libubik_pthread.a
-@owner root
-@group wheel
 lib/openafs/
+lib/openafs/libafs.o
 libexec/openafs/
 @bin libexec/openafs/buserver
 @bin libexec/openafs/dafileserver
@@ -234,7 +233,6 @@ libexec/openafs/
 @bin libexec/openafs/upserver
 @bin libexec/openafs/vlserver
 @bin libexec/openafs/volserver
-@owner
 @man man/man1/afs.1
 @man man/man1/afs_compile_et.1
 @man man/man1/afsmonitor.1
@@ -579,7 +577,7 @@ libexec/openafs/
 @man man/man8/volserver.8
 @man man/man8/vsys.8
 @man man/man8/xfs_size_check.8
-@owner root
+@bin sbin/afsd
 @bin sbin/backup
 @bin sbin/bos_util
 @bin sbin/bosserver
