@@ -31,5 +31,8 @@ TEST_DEPENDS +=		devel/py-nose \
 
 # Tests write to ${HOME}
 PORTHOME =		${WRKDIR}
+LIBTOOL =		No
+
+TEST_IS_INTERACTIVE =	x11
 
 .include <bsd.port.mk>
