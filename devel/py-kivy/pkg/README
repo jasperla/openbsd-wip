@@ -1,0 +1,23 @@
+$OpenBSD: README.template,v 1.4 2011/06/02 13:44:40 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Optional Dependencies
+=====================
+
+Kivy has a number of optional (runtime) dependencies:
+
+ * Pygame
+ * Gst-Python
+ * Enchant
+ * OpenCV
+ * PIL
+ * PyCairo
+ * PyEnchant
+ * PyGST
+
+For more information, see here:
+http://kivy.org/docs/installation/installation.html
+
