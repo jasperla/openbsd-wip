@@ -1,4 +1,2 @@
 @comment $OpenBSD$
-@conflict kde4-*
-@pkgpath meta/kde4,-main
 share/doc/pkg-readmes/${FULLPKGNAME}
