@@ -6,8 +6,8 @@ COMMENT-minimal =	KDE4 desktop meta-package (minimal installation)
 COMMENT-main =		KDE4 desktop meta-package (full installation)
 COMMENT-extras =	non-SC KDE4 applications
 COMMENT-accessibility =	KDE SC accessibility applications
-COMMENT-bindings =	KDE SC bindings for languages other than C++
 COMMENT-admin =		KDE SC system administrator tools
+COMMENT-bindings =	KDE SC bindings for languages other than C++
 COMMENT-edu =		KDE SC educational applications
 COMMENT-games =		KDE SC games
 COMMENT-graphics =	KDE SC graphics applications
@@ -20,8 +20,8 @@ COMMENT-utils =		KDE SC tool application
 PKGNAME-minimal =	kde4-minimal-${MODKDE4_VERSION}
 PKGNAME-main =		kde4-${MODKDE4_VERSION}
 PKGNAME-extras =	kde4-extras-${MODKDE4_VERSION}
-PKGNAME-admin =		kdeadmin-${MODKDE4_VERSION}
 PKGNAME-accessibility =	kdeaccessibility-${MODKDE4_VERSION}
+PKGNAME-admin =		kdeadmin-${MODKDE4_VERSION}
 PKGNAME-bindings =	kdebindings-${MODKDE4_VERSION}
 PKGNAME-edu =		kdeedu-${MODKDE4_VERSION}
 PKGNAME-games =		kdegames-${MODKDE4_VERSION}
@@ -54,12 +54,13 @@ RUN_DEPENDS-minimal = \
 	${MODKDE4_DEP_DIR}/workspace
 
 RUN_DEPENDS-main = \
+	${BUILD_PKGPATH},-minimal=${MODKDE4_VERSION} \
 	${BUILD_PKGPATH},-accessibility=${MODKDE4_VERSION} \
 	${BUILD_PKGPATH},-bindings>=${MODKDE4_VERSION}	\
 	${BUILD_PKGPATH},-edu>=${MODKDE4_VERSION}	\
 	${BUILD_PKGPATH},-games=${MODKDE4_VERSION}	\
 	${BUILD_PKGPATH},-graphics>=${MODKDE4_VERSION}	\
-	${BUILD_PKGPATH},-multimedia>=${MODKDE4_VERSION}	\
+	${BUILD_PKGPATH},-multimedia>=${MODKDE4_VERSION} \
 	${BUILD_PKGPATH},-utils>=${MODKDE4_VERSION}	\
 	${MODKDE4_DEP_DIR}/admin	\
 	${MODKDE4_DEP_DIR}/artwork	\
@@ -245,7 +246,6 @@ RUN_DEPENDS-utils = \
 	${MODKDE4_DEP_DIR}/superkaramba		\
 	${MODKDE4_DEP_DIR}/sweeper
 
-NO_BUILD =		Yes
 MODULES =		x11/kde4
 MODKDE4_NO_QT =		Yes
 MODKDE4_USE =

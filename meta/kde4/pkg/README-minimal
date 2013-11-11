@@ -14,7 +14,7 @@ There is also a kde4-extras package that contains other KDE4
 applications that are not included in KDE4 SC.
 
 
-Starting KDE4 [REVIEW]
+Starting KDE4
 ==============
 Before running startkde(1), a system-wide D-Bus daemon needs to be
 running ("dbus_daemon" needs to be added to the "pkg_scripts" variable
@@ -39,4 +39,4 @@ To make use of it multicasting should be enabled, and "avahi_daemon"
 needs to be added to the "pkg_scripts" variable _after_ "dbus_daemon":
 
   # echo 'multicast_host=YES' >>/etc/rc.conf.local
-  # echo 'pkg_scripts="$pkg_scripts avahi_daemon"' >>/etc/rc.conf.local
+  # echo 'pkg_scripts="$pkg_scripts dbus_daemon avahi_daemon"' >>/etc/rc.conf.local
