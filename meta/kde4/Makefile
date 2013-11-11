@@ -1,76 +1,107 @@
 # $OpenBSD$
 
-COMMENT-main =		KDE4 desktop meta-package (base installation)
-COMMENT-extras =	KDE4 desktop meta-package (full installation)
-COMMENT-accessibility =	KDE4 accessibility meta-package
-COMMENT-admin =		KDE4 system administrator tools
-COMMENT-edu =		KDE4 educational meta-package
-COMMENT-games =		KDE4 games meta-package
-COMMENT-graphics =	KDE4 graphics meta-package
-COMMENT-multimedia =	KDE4 multimedia meta-package
-COMMENT-network =	KDE4 network applications
+PKGNAME =		kde4-${MODKDE4_VERSION}
 
-PKGNAME-main =		kde-${MODKDE4_VERSION}
-PKGNAME-extras =	kde-extras-${MODKDE4_VERSION}
+COMMENT-minimal =	KDE4 desktop meta-package (minimal installation)
+COMMENT-main =		KDE4 desktop meta-package (full installation)
+COMMENT-extras =	non-SC KDE4 applications
+COMMENT-accessibility =	KDE SC accessibility applications
+COMMENT-bindings =	KDE SC bindings for languages other than C++
+COMMENT-admin =		KDE SC system administrator tools
+COMMENT-edu =		KDE SC educational applications
+COMMENT-games =		KDE SC games
+COMMENT-graphics =	KDE SC graphics applications
+COMMENT-multimedia =	KDE SC multimedia applications
+COMMENT-network =	KDE SC network applications
+COMMENT-sdk =		KDE SC development applications
+COMMENT-toys =		KDE SC small funny applications
+COMMENT-utils =		KDE SC tool application
+
+PKGNAME-minimal =	kde4-minimal-${MODKDE4_VERSION}
+PKGNAME-main =		kde4-${MODKDE4_VERSION}
+PKGNAME-extras =	kde4-extras-${MODKDE4_VERSION}
 PKGNAME-admin =		kdeadmin-${MODKDE4_VERSION}
 PKGNAME-accessibility =	kdeaccessibility-${MODKDE4_VERSION}
+PKGNAME-bindings =	kdebindings-${MODKDE4_VERSION}
 PKGNAME-edu =		kdeedu-${MODKDE4_VERSION}
 PKGNAME-games =		kdegames-${MODKDE4_VERSION}
 PKGNAME-graphics =	kdegraphics-${MODKDE4_VERSION}
 PKGNAME-multimedia =	kdemultimedia-${MODKDE4_VERSION}
 PKGNAME-network =	kdenetwork-${MODKDE4_VERSION}
+PKGNAME-sdk =		kdesdk-${MODKDE4_VERSION}
+PKGNAME-toys =		kdetoys-${MODKDE4_VERSION}
+PKGNAME-utils =		kdeutils-${MODKDE4_VERSION}
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 
-MODULES =		x11/kde4
-MODKDE4_USE =
+MULTI_PACKAGES +=	-main -minimal
+MULTI_PACKAGES +=	-accessibility -bindings -edu -games
+MULTI_PACKAGES +=	-graphics -multimedia -utils
 
-MULTI_PACKAGES =	-main -extras
-MULTI_PACKAGES +=	-accessibility -edu -games -graphics -multimedia
-#MULTI_PACKAGES +=	-admin -network
-FLAVOR_EXT =
+# after KDE 4.11
+#MULTI_PACKAGES +=	-admin -network -sdk -toys
+
+# not ready
+#MULTI_PACKAGES +=	-extras
+
+RUN_DEPENDS-minimal = \
+	${BUILD_PKGPATH},-accessibility=${MODKDE4_VERSION} \
+	${MODKDE4_DEP_DIR}/baseapps	\
+	${MODKDE4_DEP_DIR}/kate		\
+	${MODKDE4_DEP_DIR}/kgpg		\
+	${MODKDE4_DEP_DIR}/konsole	\
+	${MODKDE4_DEP_DIR}/kwallet	\
+	${MODKDE4_DEP_DIR}/workspace
 
 RUN_DEPENDS-main = \
-	${BASE_PKGPATH},-accessibility=${MODKDE4_VERSION} \
-	${MODKDE4_DEP_DIR}/ark		\
+	${BUILD_PKGPATH},-accessibility=${MODKDE4_VERSION} \
+	${BUILD_PKGPATH},-bindings>=${MODKDE4_VERSION}	\
+	${BUILD_PKGPATH},-edu>=${MODKDE4_VERSION}	\
+	${BUILD_PKGPATH},-games=${MODKDE4_VERSION}	\
+	${BUILD_PKGPATH},-graphics>=${MODKDE4_VERSION}	\
+	${BUILD_PKGPATH},-multimedia>=${MODKDE4_VERSION}	\
+	${BUILD_PKGPATH},-utils>=${MODKDE4_VERSION}	\
+	${MODKDE4_DEP_DIR}/admin	\
+	${MODKDE4_DEP_DIR}/artwork	\
 	${MODKDE4_DEP_DIR}/base-artwork	\
 	${MODKDE4_DEP_DIR}/kate		\
 	${MODKDE4_DEP_DIR}/kgpg		\
 	${MODKDE4_DEP_DIR}/konsole	\
 	${MODKDE4_DEP_DIR}/kwallet	\
-	${MODKDE4_DEP_DIR}/nepomuk-widgets	\
+	${MODKDE4_DEP_DIR}/network	\
 	${MODKDE4_DEP_DIR}/pim		\
-	${MODKDE4_DEP_DIR}/printer-manager	\
-	${MODKDE4_DEP_DIR}/superkaramba	\
-	${MODKDE4_DEP_DIR}/sweeper	\
+	${MODKDE4_DEP_DIR}/sdk		\
+	${MODKDE4_DEP_DIR}/toys		\
+	${MODKDE4_DEP_DIR}/wallpapers	\
 	${MODKDE4_DEP_DIR}/workspace
 
 RUN_DEPENDS-extras = \
-	${BASE_PKGPATH},-main>=${MODKDE4_VERSION}	\
-	${BASE_PKGPATH},-edu>=${MODKDE4_VERSION}	\
-	${BASE_PKGPATH},-games=${MODKDE4_VERSION}	\
-	${BASE_PKGPATH},-graphics>=${MODKDE4_VERSION}	\
-	${BASE_PKGPATH},-multimedia>=${MODKDE4_VERSION}	\
-	${MODKDE4_DEP_DIR}/artwork	\
-	${MODKDE4_DEP_DIR}/kdf		\
-	${MODKDE4_DEP_DIR}/filelight	\
-	${MODKDE4_DEP_DIR}/kfloppy	\
-	${MODKDE4_DEP_DIR}/kremotecontrol	\
-	${MODKDE4_DEP_DIR}/ktimer		\
-	${MODKDE4_DEP_DIR}/wallpapers	\
-	editors/kile-kde4	\
-	graphics/digikam-kde4,-main \
-	multimedia/k3b-kde4	\
-	multimedia/kdenlive	\
-	net/ktorrent-kde4	\
+	editors/kile-kde4		\
+	graphics/digikam-kde4,-main	\
+	graphics/digikam-kde4,-kipi	\
+	multimedia/k3b-kde4		\
+	multimedia/kdenlive		\
+	net/ktorrent-kde4		\
 	x11/yakuake-kde4
 
 RUN_DEPENDS-accessibility = \
-	${MODKDE4_DEP_DIR}/jovie		\
+	${MODKDE4_DEP_DIR}/jovie	\
 	${MODKDE4_DEP_DIR}/kaccessible	\
 	${MODKDE4_DEP_DIR}/kmag		\
 	${MODKDE4_DEP_DIR}/kmousetool	\
-	${MODKDE4_DEP_DIR}/kmouth	
+	${MODKDE4_DEP_DIR}/kmouth
+
+RUN_DEPENDS-bindings = \
+	${MODKDE4_DEP_DIR}/smokegen	\
+	${MODKDE4_DEP_DIR}/smokeqt	\
+	${MODKDE4_DEP_DIR}/smokekde	\
+	${MODKDE4_DEP_DIR}/p5-qt	\
+	${MODKDE4_DEP_DIR}/p5-kde	\
+	${MODKDE4_DEP_DIR}/py-kde	\
+	${MODKDE4_DEP_DIR}/ruby-qt	\
+	${MODKDE4_DEP_DIR}/korundum	\
+	${MODKDE4_DEP_DIR}/qyoto	\
+	${MODKDE4_DEP_DIR}/kimono
 
 RUN_DEPENDS-admin = \
 	${MODKDE4_DEP_DIR}/kcron	\
@@ -82,7 +113,6 @@ RUN_DEPENDS-edu = \
 	${MODKDE4_DEP_DIR}/cantor	\
 	${MODKDE4_DEP_DIR}/analitza	\
 	${MODKDE4_DEP_DIR}/kalgebra	\
-	${MODKDE4_DEP_DIR}/kalzium	\
 	${MODKDE4_DEP_DIR}/kanagram	\
 	${MODKDE4_DEP_DIR}/kbruch	\
 	${MODKDE4_DEP_DIR}/kgeography	\
@@ -101,26 +131,27 @@ RUN_DEPENDS-edu = \
 	${MODKDE4_DEP_DIR}/parley	\
 	${MODKDE4_DEP_DIR}/rocs		\
 	${MODKDE4_DEP_DIR}/step
+# broken
+#	${MODKDE4_DEP_DIR}/kalzium
 
 RUN_DEPENDS-graphics = \
-	${MODKDE4_DEP_DIR}/graphics-mobipocket		\
-	${MODKDE4_DEP_DIR}/graphics-strigi-analyzer	\
-	${MODKDE4_DEP_DIR}/graphics-thumbnailers	\
-	${MODKDE4_DEP_DIR}/gwenview	\
-	${MODKDE4_DEP_DIR}/kamera	\
+	${MODKDE4_DEP_DIR}/graphics-mobipocket	\
+	${MODKDE4_DEP_DIR}/graphics-strigi-analyzer \
+	${MODKDE4_DEP_DIR}/graphics-thumbnailers \
+	${MODKDE4_DEP_DIR}/gwenview		\
+	${MODKDE4_DEP_DIR}/kamera		\
 	${MODKDE4_DEP_DIR}/kcolorchooser	\
-	${MODKDE4_DEP_DIR}/kgamma	\
-	${MODKDE4_DEP_DIR}/kolourpaint	\
-	${MODKDE4_DEP_DIR}/kruler	\
-	${MODKDE4_DEP_DIR}/ksaneplugin	\
-	${MODKDE4_DEP_DIR}/ksnapshot	\
-	${MODKDE4_DEP_DIR}/libkdcraw	\
-	${MODKDE4_DEP_DIR}/libkexiv2	\
-	${MODKDE4_DEP_DIR}/libkipi	\
-	${MODKDE4_DEP_DIR}/libksane	\
-	${MODKDE4_DEP_DIR}/okular	\
-	${MODKDE4_DEP_DIR}/svgpart	\
-	graphics/digikam-kde4,-kipi
+	${MODKDE4_DEP_DIR}/kgamma		\
+	${MODKDE4_DEP_DIR}/kolourpaint		\
+	${MODKDE4_DEP_DIR}/kruler		\
+	${MODKDE4_DEP_DIR}/ksaneplugin		\
+	${MODKDE4_DEP_DIR}/ksnapshot		\
+	${MODKDE4_DEP_DIR}/libkdcraw		\
+	${MODKDE4_DEP_DIR}/libkexiv2		\
+	${MODKDE4_DEP_DIR}/libkipi		\
+	${MODKDE4_DEP_DIR}/libksane		\
+	${MODKDE4_DEP_DIR}/okular		\
+	${MODKDE4_DEP_DIR}/svgpart
 
 RUN_DEPENDS-games = \
 	${MODKDE4_DEP_DIR}/bomber	\
@@ -160,7 +191,7 @@ RUN_DEPENDS-games = \
 	${MODKDE4_DEP_DIR}/kubrick	\
 	${MODKDE4_DEP_DIR}/libkmahjongg	\
 	${MODKDE4_DEP_DIR}/lskat	\
-	${MODKDE4_DEP_DIR}/picmi	\
+	${MODKDE4_DEP_DIR}/picmi
 
 RUN_DEPENDS-multimedia = \
 	${MODKDE4_DEP_DIR}/audiocd-kio	\
@@ -172,13 +203,51 @@ RUN_DEPENDS-multimedia = \
 	${MODKDE4_DEP_DIR}/mplayerthumbs
 
 RUN_DEPENDS-network = \
-	${MODKDE4_DEP_DIR}/kdenetwork-filesharing \
-	${MODKDE4_DEP_DIR}/kdenetwork-strigi-analyzers \
+	${MODKDE4_DEP_DIR}/network-filesharing \
+	${MODKDE4_DEP_DIR}/network-strigi-analyzers \
 	${MODKDE4_DEP_DIR}/kdnssd	\
 	${MODKDE4_DEP_DIR}/kget		\
 	${MODKDE4_DEP_DIR}/kopete	\
 	${MODKDE4_DEP_DIR}/kppp		\
 	${MODKDE4_DEP_DIR}/krdc		\
 	${MODKDE4_DEP_DIR}/krfb
+
+RUN_DEPENDS-sdk = \
+	${MODKDE4_DEP_DIR}/cervisia		\
+	${MODKDE4_DEP_DIR}/dev-scripts		\
+	${MODKDE4_DEP_DIR}/dev-utils		\
+	${MODKDE4_DEP_DIR}/dolphin-plugins	\
+	${MODKDE4_DEP_DIR}/kapptemplate		\
+	${MODKDE4_DEP_DIR}/kcachegrind		\
+	${MODKDE4_DEP_DIR}/kompare		\
+	${MODKDE4_DEP_DIR}/lokalize		\
+	${MODKDE4_DEP_DIR}/okteta		\
+	${MODKDE4_DEP_DIR}/poxml		\
+	${MODKDE4_DEP_DIR}/sdk-kioslaves	\
+	${MODKDE4_DEP_DIR}/sdk-strigi-analyzers	\
+	${MODKDE4_DEP_DIR}/sdk-thumbnailers	\
+	${MODKDE4_DEP_DIR}/umbrello
+
+RUN_DEPENDS-toys = \
+	${MODKDE4_DEP_DIR}/amor		\
+	${MODKDE4_DEP_DIR}/kteatime	\
+	${MODKDE4_DEP_DIR}/ktux
+
+RUN_DEPENDS-utils = \
+	${MODKDE4_DEP_DIR}/ark			\
+	${MODKDE4_DEP_DIR}/filelight		\
+	${MODKDE4_DEP_DIR}/kdf			\
+	${MODKDE4_DEP_DIR}/kfloppy		\
+	${MODKDE4_DEP_DIR}/kremotecontrol	\
+	${MODKDE4_DEP_DIR}/ktimer		\
+	${MODKDE4_DEP_DIR}/nepomuk-widgets	\
+	${MODKDE4_DEP_DIR}/print-manager	\
+	${MODKDE4_DEP_DIR}/superkaramba		\
+	${MODKDE4_DEP_DIR}/sweeper
+
+NO_BUILD =		Yes
+MODULES =		x11/kde4
+MODKDE4_NO_QT =		Yes
+MODKDE4_USE =
 
 .include <bsd.port.mk>
