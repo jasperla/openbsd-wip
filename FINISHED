@@ -13,7 +13,7 @@ devel/libextractor	sent to ports 2013-06-29
 devel/libtap	ready to import
 devel/p5-Test-Most:	ready for import, depends on the update of p5-Test-Warn, did not sent to ports@(wenheping)
 emulators/vice		ready for import, sent to ports 2013-05-16
-games/bluemoon		ready to import (bcallah)
+games/bluemoon		ready for import, sent to ports 2013-11-12 (bcallah)
 games/flightgear	sent to ports 2013-07-05
 games/nexuiz		sent to ports@ Dec 10 2011 (pstumpf)
 geo/mtkbabel	sent to ports 2011-03-30
