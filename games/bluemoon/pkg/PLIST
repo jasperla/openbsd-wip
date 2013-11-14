@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@bin bin/bluemoon
-@man man/man6/bluemoon.6
