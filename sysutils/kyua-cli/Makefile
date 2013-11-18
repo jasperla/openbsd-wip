@@ -1,9 +1,8 @@
 # $OpenBSD $
 
 COMMENT =		testing framework
-DISTNAME =		kyua-cli-0.5
+DISTNAME =		kyua-cli-0.7
 
-SHARED_LIBS += ct                   5.0      # .4.0
 CATEGORIES =		devel sysutils
 HOMEPAGE =		https://code.google.com/p/kyua/
 
@@ -14,7 +13,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += c m stdc++
 
 BUILD_DEPENDS =		sysutils/atf \
-			devel/lutok
+			devel/lutok \
+			sysutils/kyua-testers
 
 MASTER_SITES =		https://kyua.googlecode.com/files/
 

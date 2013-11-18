@@ -6,7 +6,6 @@ include/lutok/exceptions.hpp
 include/lutok/operations.hpp
 include/lutok/stack_cleaner.hpp
 include/lutok/state.hpp
-include/lutok/state.ipp
 include/lutok/test_utils.hpp
 lib/liblutok.a
 lib/liblutok.la
