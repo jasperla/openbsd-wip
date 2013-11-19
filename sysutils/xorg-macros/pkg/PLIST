@@ -1,0 +1,7 @@
+@comment $OpenBSD$
+share/aclocal/
+share/aclocal/xorg-macros.m4
+share/pkgconfig/
+share/pkgconfig/xorg-macros.pc
+share/util-macros/
+share/util-macros/INSTALL
