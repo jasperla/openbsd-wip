@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+@bin bin/rendercheck
+share/man/
+share/man/man1/
+@man share/man/man1/rendercheck.1
