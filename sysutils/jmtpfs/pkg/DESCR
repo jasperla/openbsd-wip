@@ -1,0 +1,4 @@
+jmtpfs is a FUSE and libmtp based filesystem for accessing MTP (Media
+Transfer Protocol) devices. It was specifically designed for exchaning
+files between Linux (and Mac OS X) systems and newer Android devices
+that support MTP but not USB Mass Storage.

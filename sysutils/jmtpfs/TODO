@@ -1,0 +1,9 @@
+How it behaves with my Galaxy Nexus:
+
+Device 0 (VID=04e8 and PID=685c) is a Samsung Galaxy models (MTP+ADB).
+libusb_detach_kernel_driver() failed, continuing anyway...: Device not configured
+Unable to open ~/.mtpz-data for reading, MTPZ disabled.Android device detected, assigning default bug flags
+jmtpfs in free(): error: bogus pointer (double free?) 0x7f7ffffc0e78
+Abort trap (core dumped) 
+
+Maybe needs USB or FUSE stuff in the kernel?

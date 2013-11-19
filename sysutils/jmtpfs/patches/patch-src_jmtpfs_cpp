@@ -1,0 +1,11 @@
+$OpenBSD$
+--- src/jmtpfs.cpp.orig	Fri May 11 17:17:33 2012
++++ src/jmtpfs.cpp	Tue Nov 19 01:11:42 2013
+@@ -28,6 +28,7 @@
+ 
+ #include <iostream>
+ #include <cstddef>
++#include <unistd.h>
+ #include <errno.h>
+ #include <sstream>
+ #include <iomanip>
