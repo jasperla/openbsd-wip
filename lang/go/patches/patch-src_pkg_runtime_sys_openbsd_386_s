@@ -5,8 +5,8 @@ $OpenBSD: patch-src_pkg_runtime_sys_openbsd_386_s,v 1.5 2013/08/25 11:57:27 jsin
  	INT	$0x80
  	RET
  
--TEXT runtime·usleep(SB),7,$20
-+TEXT runtime·usleep(SB),7,$24
+-TEXT runtime\xc3\x82\xc2\xb7usleep(SB),NOSPLIT,$20
++TEXT runtime\xc3\x82\xc2\xb7usleep(SB),NOSPLIT,$24
  	MOVL	$0, DX
  	MOVL	usec+0(FP), AX
  	MOVL	$1000000, CX
@@ -31,14 +31,14 @@ $OpenBSD: patch-src_pkg_runtime_sys_openbsd_386_s,v 1.5 2013/08/25 11:57:27 jsin
 @@ -106,43 +107,46 @@ TEXT runtime·madvise(SB),7,$-4
  	RET
  
- TEXT runtime·setitimer(SB),7,$-4
+ TEXT runtime\xc3\x82\xc2\xb7setitimer(SB),NOSPLIT,$-4
 -	MOVL	$83, AX
 +	MOVL	$69, AX
  	INT	$0x80
  	RET
  
  // func now() (sec int64, nsec int32)
- TEXT time·now(SB), 7, $32
+ TEXT runtime\xc3\x82\xc2\xb7nanotime(SB),NOSPLIT,$32
 -	MOVL	$232, AX
  	LEAL	12(SP), BX
 -	MOVL	$0, 4(SP)
@@ -93,12 +93,21 @@ $OpenBSD: patch-src_pkg_runtime_sys_openbsd_386_s,v 1.5 2013/08/25 11:57:27 jsin
  
  	MOVL	ret+0(FP), DI
  	MOVL	AX, 0(DI)
-@@ -322,7 +326,7 @@ TEXT runtime·osyield(SB),7,$-4
+@@ -325,7 +329,7 @@ TEXT runtime\xc3\x82\xc2\xb7osyield(SB),NOSPLIT,$-4
  	RET
  
- TEXT runtime·thrsleep(SB),7,$-4
+ TEXT runtime\xc3\x82\xc2\xb7thrsleep(SB),NOSPLIT,$-4
 -	MOVL	$300, AX		// sys___thrsleep
 +	MOVL	$94, AX			// sys___thrsleep
  	INT	$0x80
  	RET
  
+@@ -362,7 +366,7 @@ TEXT runtimeÂ·kqueue(SB),NOSPLIT,$0
+ 
+ // int32 runtimeÂ·kevent(int kq, Kevent *changelist, int nchanges, Kevent *eventlist, int nevents, Timespec *timeout);
+ TEXT runtimeÂ·kevent(SB),NOSPLIT,$0
+-	MOVL	$270, AX
++	MOVL	$72, AX
+ 	INT	$0x80
+ 	JAE	2(PC)
+ 	NEGL	AX

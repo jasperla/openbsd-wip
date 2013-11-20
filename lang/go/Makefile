@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		Go programming language
 
-VERSION =		1.1.2
+VERSION =		1.2rc3
 EXTRACT_SUFX =		.src.tar.gz
 DISTNAME = 		go${VERSION}
 PKGNAME = 		go-${VERSION}
@@ -70,7 +70,7 @@ do-test:
 		PATH=${WRKDIST}/bin:${PATH} GOROOT=${WRKDIST} ./run.bash
 
 do-install:
-	${INSTALL_PROGRAM} -p ${WRKDIST}/bin/go{,doc,fmt} ${PREFIX}/bin
+	${INSTALL_PROGRAM} -p ${WRKDIST}/bin/go{,fmt} ${PREFIX}/bin
 
 	${INSTALL_PROGRAM_DIR} ${GOROOT}
 

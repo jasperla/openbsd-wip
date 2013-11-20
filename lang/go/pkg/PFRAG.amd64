@@ -10,3 +10,5 @@ go/src/pkg/runtime/zsema_openbsd_amd64.c
 go/src/pkg/runtime/zsigqueue_openbsd_amd64.c
 go/src/pkg/runtime/zstring_openbsd_amd64.c
 go/src/pkg/runtime/ztime_openbsd_amd64.c
+go/src/pkg/runtime/znetpoll_openbsd_amd64.c
+go/src/pkg/runtime/zsys_openbsd_amd64.s
