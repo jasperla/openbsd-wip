@@ -4,10 +4,9 @@ SHARED_ONLY =		Yes
 
 COMMENT =		3D graphics toolkit
 
-V =			3.0.1
+V =			3.2.0
 DISTNAME =		OpenSceneGraph-${V}
 PKGNAME =		openscenegraph-${V}
-REVISION =		0
 
 SUBST_VARS +=		V
 
@@ -43,9 +42,9 @@ WANTLIB += GL Half Iex IlmImf IlmThread QtGui QtOpenGL X11 Xrandr
 WANTLIB += avcodec avdevice avformat avutil c cairo curl freetype
 WANTLIB += gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += jasper jpeg m png poppler-glib pthread rsvg-2 stdc++
-WANTLIB += swscale tiff z
+WANTLIB += swscale tiff z SDL
 
-MASTER_SITES =		${HOMEPAGE}/downloads/stable_releases/OpenSceneGraph-${V}/source/
+MASTER_SITES =		${HOMEPAGE}/downloads/developer_releases/
 EXTRACT_SUFX =		.zip
 
 MODULES =		devel/cmake \

@@ -1,7 +1,7 @@
 $OpenBSD$
---- CMakeLists.txt.orig	Tue Aug 30 21:33:36 2011
-+++ CMakeLists.txt	Tue Aug 30 21:34:03 2011
-@@ -586,12 +586,6 @@ IF(CYGWIN)
+--- CMakeLists.txt.orig	Wed Jul 24 16:11:55 2013
++++ CMakeLists.txt	Sat Nov 23 12:56:13 2013
+@@ -686,12 +686,6 @@ IF(CYGWIN)
    SET(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -D_DEBUG")
  ENDIF()
  
