@@ -2,7 +2,7 @@
 
 COMMENT =		library set for simulations, games and visualizations
 
-DISTNAME =		simgear-2.10.0
+DISTNAME =		simgear-2.12.0
 
 SHARED_LIBS +=  SimGearCore               0.0 # 2.10
 SHARED_LIBS +=  SimGearScene              0.0 # 2.10
