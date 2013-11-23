@@ -70,7 +70,6 @@ post-extract:
 
 SUBST_VARS +=	MODTK_INCDIR MODTCL_INCDIR
 
-# XXX check if still needed
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/lib_pypy/_tkinter/tklib.py
 	# prevent crap in the plist
