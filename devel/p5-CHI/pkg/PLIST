@@ -1,0 +1,81 @@
+@comment $OpenBSD$
+${P5SITE}/CHI/
+${P5SITE}/CHI.pm
+${P5SITE}/CHI/Benchmarks.pod
+${P5SITE}/CHI/CacheObject.pm
+${P5SITE}/CHI/Constants.pm
+${P5SITE}/CHI/Driver/
+${P5SITE}/CHI/Driver.pm
+${P5SITE}/CHI/Driver/Base/
+${P5SITE}/CHI/Driver/Base/CacheContainer.pm
+${P5SITE}/CHI/Driver/CacheCache.pm
+${P5SITE}/CHI/Driver/Development.pod
+${P5SITE}/CHI/Driver/FastMmap.pm
+${P5SITE}/CHI/Driver/File.pm
+${P5SITE}/CHI/Driver/Memory.pm
+${P5SITE}/CHI/Driver/Metacache.pm
+${P5SITE}/CHI/Driver/Null.pm
+${P5SITE}/CHI/Driver/RawMemory.pm
+${P5SITE}/CHI/Driver/Role/
+${P5SITE}/CHI/Driver/Role/HasSubcaches.pm
+${P5SITE}/CHI/Driver/Role/IsSizeAware.pm
+${P5SITE}/CHI/Driver/Role/IsSubcache.pm
+${P5SITE}/CHI/Driver/Role/Universal.pm
+${P5SITE}/CHI/Serializer/
+${P5SITE}/CHI/Serializer/JSON.pm
+${P5SITE}/CHI/Serializer/Storable.pm
+${P5SITE}/CHI/Stats.pm
+${P5SITE}/CHI/Test/
+${P5SITE}/CHI/Test.pm
+${P5SITE}/CHI/Test/Class.pm
+${P5SITE}/CHI/Test/Driver/
+${P5SITE}/CHI/Test/Driver/NonMoose.pm
+${P5SITE}/CHI/Test/Driver/Readonly.pm
+${P5SITE}/CHI/Test/Driver/Role/
+${P5SITE}/CHI/Test/Driver/Role/CheckKeyValidity.pm
+${P5SITE}/CHI/Test/Driver/Writeonly.pm
+${P5SITE}/CHI/Test/Util.pm
+${P5SITE}/CHI/Types.pm
+${P5SITE}/CHI/Util.pm
+${P5SITE}/CHI/t/
+${P5SITE}/CHI/t/Bugs.pm
+${P5SITE}/CHI/t/Config.pm
+${P5SITE}/CHI/t/Constants.pm
+${P5SITE}/CHI/t/Driver/
+${P5SITE}/CHI/t/Driver.pm
+${P5SITE}/CHI/t/Driver/CacheCache.pm
+${P5SITE}/CHI/t/Driver/FastMmap.pm
+${P5SITE}/CHI/t/Driver/File/
+${P5SITE}/CHI/t/Driver/File.pm
+${P5SITE}/CHI/t/Driver/File/DepthZero.pm
+${P5SITE}/CHI/t/Driver/Memory.pm
+${P5SITE}/CHI/t/Driver/NonMoose.pm
+${P5SITE}/CHI/t/Driver/RawMemory.pm
+${P5SITE}/CHI/t/Driver/Subcache/
+${P5SITE}/CHI/t/Driver/Subcache.pm
+${P5SITE}/CHI/t/Driver/Subcache/l1_cache.pm
+${P5SITE}/CHI/t/Driver/Subcache/mirror_cache.pm
+${P5SITE}/CHI/t/GetError.pm
+${P5SITE}/CHI/t/Initialize.pm
+${P5SITE}/CHI/t/Null.pm
+${P5SITE}/CHI/t/RequiredModules.pm
+${P5SITE}/CHI/t/Sanity.pm
+${P5SITE}/CHI/t/SetError.pm
+${P5SITE}/CHI/t/Subcache.pm
+${P5SITE}/CHI/t/Subclass.pm
+${P5SITE}/CHI/t/Util.pm
+@man man/man3p/CHI.3p
+@man man/man3p/CHI::Benchmarks.3p
+@man man/man3p/CHI::CacheObject.3p
+@man man/man3p/CHI::Constants.3p
+@man man/man3p/CHI::Driver.3p
+@man man/man3p/CHI::Driver::Base::CacheContainer.3p
+@man man/man3p/CHI::Driver::CacheCache.3p
+@man man/man3p/CHI::Driver::Development.3p
+@man man/man3p/CHI::Driver::FastMmap.3p
+@man man/man3p/CHI::Driver::File.3p
+@man man/man3p/CHI::Driver::Memory.3p
+@man man/man3p/CHI::Driver::Metacache.3p
+@man man/man3p/CHI::Driver::Null.3p
+@man man/man3p/CHI::Driver::RawMemory.3p
+@man man/man3p/CHI::Stats.3p
