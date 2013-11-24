@@ -8,7 +8,7 @@ COMMENT =		fast implementation of the Python language
 
 # To update PyPy to a new version:
 #   * Bump ${V} but set ${BOOTSTRAP_V} to the old ${V}
-#   * FLAVOR=no_bootstrap make update-plist (fix anything along the way)
+#   * FLAVOR=no_bootstrap make plist (fix anything along the way)
 #   * FLAVOR=no_bootstrap make bootstrap
 #   * Set BOOTSTRAP_V=${V}
 #   * Carry on as normal, don't forget to host the bootstrap file
