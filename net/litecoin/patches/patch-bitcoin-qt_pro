@@ -1,0 +1,20 @@
+$OpenBSD$
+--- bitcoin-qt.pro.orig	Wed Sep 11 21:35:18 2013
++++ bitcoin-qt.pro	Thu Nov 14 08:43:04 2013
+@@ -98,7 +98,7 @@ contains(BITCOIN_NEED_QT_PLUGINS, 1) {
+     QTPLUGIN += qcncodecs qjpcodecs qtwcodecs qkrcodecs qtaccessiblewidgets
+ }
+ 
+-INCLUDEPATH += src/leveldb/include src/leveldb/helpers
++INCLUDEPATH += src/leveldb/include src/leveldb/helpers $(LOCALBASE)/include/db4
+ LIBS += $$PWD/src/leveldb/libleveldb.a $$PWD/src/leveldb/libmemenv.a
+ !win32 {
+     # we use QMAKE_CXXFLAGS_RELEASE even without RELEASE=1 because we use RELEASE to indicate linking preferences not -O preferences
+@@ -387,7 +387,6 @@ win32:!contains(MINGW_THREAD_BUGFIX, 0) {
+ 
+ !win32:!macx {
+     DEFINES += LINUX
+-    LIBS += -lrt
+     # _FILE_OFFSET_BITS=64 lets 32-bit fopen transparently support large files.
+     DEFINES += _FILE_OFFSET_BITS=64
+ }
