@@ -1,0 +1,12 @@
+@comment $OpenBSD$
+bin/tapper-reports-api
+bin/tapper-reports-api-daemon
+${P5SITE}/Tapper/
+${P5SITE}/Tapper/Reports/
+${P5SITE}/Tapper/Reports/API/
+${P5SITE}/Tapper/Reports/API.pm
+${P5SITE}/Tapper/Reports/API/Daemon.pm
+@man man/man1/tapper-reports-api-daemon.1
+@man man/man1/tapper-reports-api.1
+@man man/man3p/Tapper::Reports::API.3p
+@man man/man3p/Tapper::Reports::API::Daemon.3p
