@@ -4,8 +4,8 @@ COMMENT =	minimalist mailing list manager written in perl
 
 CATEGORIES =	mail
 
-DATE =		20130704
-HASH =		61b2dcb10c63d269a75c3b083d9662049037adf3
+DATE =		20131124
+HASH =		263e7c2e4f291d6530144279c4e4622b762cf6aa
 DISTNAME =	minimalist-${DATE}
 
 DISTFILES =	${HASH}${EXTRACT_SUFX}
@@ -21,8 +21,11 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 SEPARATE_BUILD =	Yes
 
-NO_BUILD =		Yes
-NO_TEST =		Yes
+NO_BUILD =	Yes
+NO_TEST =	Yes
+
+PKG_ARCH =	*
+
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIST}/minimalist.pl ${PREFIX}/sbin/
