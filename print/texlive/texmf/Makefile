@@ -49,60 +49,22 @@ MODPY_RUNDEP =		No
 
 MULTI_PACKAGES =	-context -docs -full -main -buildset
 
-# XXX use linter
-# Files which are named *.[1-9] which are not manuals. This list
-# is shorter than the list of files which *are* manuals scattered
-# all over the texmf.
-# The BEGIN/END ensure that each real entry has a space either side
-# of it. Grep uses this to ensure we don't accidentally pick up
-# a path which is a subset of one of the following:
-#NOT_A_MANUAL = BEGIN \
-#	${PREFIX}/share/texmf-dist/tex/latex/tabvar/tabvar.1 \
-#	${PREFIX}/share/texmf-dist/tex/latex/tabvar/tabvar.2 \
-#	${PREFIX}/share/texmf-dist/tex/latex/tabvar/tabvar.3 \
-#	${PREFIX}/share/texmf-dist/doc/metapost/base/source-manual/figs.1 \
-#	${PREFIX}/share/texmf-dist/doc/latex/feynmf/manpics.1 \
-#	${PREFIX}/share/texmf-dist/doc/pdftex/manual/samplepdf/samplepdf.1 \
-#	${PREFIX}/share/texmf-dist/doc/latex/tablor/Figures/tablor_Tab.1 \
-#	${PREFIX}/share/texmf-dist/doc/latex/tablor/Figures/tablor_Tab.2 \
-#	${PREFIX}/share/texmf-dist/doc/latex/tablor/Figures/tablor_Tab.3 \
-#	${PREFIX}/share/texmf-dist/doc/latex/tablor/Figures/tablor_Tab.4 \
-#	${PREFIX}/share/texmf-dist/doc/latex/tablor/Figures/tablor_Tab.5 \
-#	${PREFIX}/share/texmf-dist/doc/latex/tablor/Figures/tablor_Tab.6 \
-#	${PREFIX}/share/texmf-dist/doc/latex/tablor/Figures/tablor_Tab.7 \
-#	${PREFIX}/share/texmf-dist/doc/latex/tablor/Figures/tablor_Tab.8 \
-#	${PREFIX}/share/texmf-dist/doc/latex/tablor/Figures/tablor_Tab.9 \
-#	${PREFIX}/share/texmf-dist/doc/latex/flashmovie/flv-player-license/MPL-1.1 \
-#	${PREFIX}/share/texmf-dist/doc/fonts/wasy/wasyfont.2 \
-#	${PREFIX}/share/texmf-dist/doc/latex/acmconf/THIS-IS-VERSION-1.3 \
-#	${PREFIX}/share/texmf-dist/doc/latex/rcsinfo/README-1.9 \
-#	${PREFIX}/share/texmf-dist/doc/pdftex/Announcement-1.40.2 \
-#	${PREFIX}/share/texmf-dist/source/latex/koma-script/ChangeLog.2 \
-#	${PREFIX}/share/texmf-dist/doc/latex/feynmf/manpics.2 \
-#	${PREFIX}/share/texmf-dist/doc/latex/feynmf/manpics.3 \
-#	${PREFIX}/share/texmf-dist/doc/latex/webguide/expeg.6 \
-#	END
+# XXX use linter to find man pages in right path but not docfiles.
 
+# I am told by upstream that any manual page not under texmf-dist/doc/man is
+# intentionally this way and should not be moved into the system manual path.
 do-install:
 	mv ${WRKDIST}/texmf-dist ${PREFIX}/share
-
-	# XXX Put manuals in the right place
-	# Collect all the manual pages that are *everywhere* for
-	# some reason. I wanted to use file(1) to detect if files
-	# are manual pages, but it gets it wrong (sigh).
-	#for i in `find  ${PREFIX} -type f | grep -e '.*\.[1-9]$$'`; do \
-	#	if [ "`echo ${NOT_A_MANUAL} | grep -e \" $$i "`" = "" ]; then \
-	#		mv $$i ${PREFIX}/man/man$${i#$${i%?}}/ ; \
-	#	fi \
-	#done
 
 	# plug in my pregenerated map and formats
 	mv ${WRKDIR}/texmf-var ${PREFIX}/share
 
+	# XXX put manuals in the right place.
+
 	# adjust permissions
 	# XXX put back when manuals done
 	#chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/{share/texmf*,man/man*/*}
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/{share/texmf*}
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/texmf*
 
 # selfauto does not work with our legacy texmf paths, patch in paths.
 post-install:
