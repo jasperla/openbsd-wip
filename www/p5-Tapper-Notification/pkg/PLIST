@@ -1,0 +1,10 @@
+@comment $OpenBSD$
+bin/tapper-notify-daemon
+${P5SITE}/Tapper/
+${P5SITE}/Tapper/Notification/
+${P5SITE}/Tapper/Notification.pm
+${P5SITE}/Tapper/Notification/Plugin/
+${P5SITE}/Tapper/Notification/Plugin/Mail.pm
+@man man/man1/tapper-notify-daemon.1
+@man man/man3p/Tapper::Notification.3p
+@man man/man3p/Tapper::Notification::Plugin::Mail.3p
