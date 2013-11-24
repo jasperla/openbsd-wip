@@ -1,0 +1,9 @@
+@comment $OpenBSD$
+${P5SITE}/Devel/
+${P5SITE}/Devel/Backtrace/
+${P5SITE}/Devel/Backtrace.pm
+${P5SITE}/Devel/Backtrace/Point.pm
+${P5SITE}/Devel/DollarAt.pm
+@man man/man3p/Devel::Backtrace.3p
+@man man/man3p/Devel::Backtrace::Point.3p
+@man man/man3p/Devel::DollarAt.3p
