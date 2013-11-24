@@ -8,10 +8,8 @@ COMMENT =		fast implementation of the Python language
 
 # To update PyPy to a new version:
 #   * Bump ${V} but set ${BOOTSTRAP_V} to the old ${V}
-#   * export FLAVOR=no_bootstrap
-#   * make update-plist (fix anything along the way)
-#   * make bootstrap
-#   * unset FLAVOR
+#   * FLAVOR=no_bootstrap make update-plist (fix anything along the way)
+#   * FLAVOR=no_bootstrap make bootstrap
 #   * Set BOOTSTRAP_V=${V}
 #   * Carry on as normal, don't forget to host the bootstrap file
 V =			2.2
@@ -29,8 +27,8 @@ MAINTAINER =		Laurence Tratt <laurie@tratt.net>
 # PyPy is MIT; the Python libs it comes with have the same license as Python
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		bz2 c crypto curses expat ffi m ncurses panel 
-WANTLIB +=		pthread sqlite3 ssl tcl85 tk85 util z
+WANTLIB +=		bz2 c crypto curses expat ffi m ncurses panel
+WANTLIB +=		pthread sqlite3 ssl ${MODTCL_LIB} ${MODTK_LIB} util z
 
 MASTER_SITES =		https://bitbucket.org/pypy/pypy/downloads/
 MASTER_SITES0 =		http://spacehopper.org/mirrors/
@@ -68,7 +66,7 @@ post-extract:
 	chmod +x ${WRKDIR}/bin/pypy
 .endif
 
-SUBST_VARS +=	MODTK_INCDIR MODTCL_INCDIR
+SUBST_VARS +=	MODTK_INCDIR MODTCL_INCDIR MODTK_LIB MODTCL_LIB
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/lib_pypy/_tkinter/tklib.py
