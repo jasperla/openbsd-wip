@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.18 2009/10/14 15:26:06 pea Exp $
+bin/tapper-action
+bin/tapper-action-daemon
+${P5SITE}/Tapper/
+${P5SITE}/Tapper/Action/
+${P5SITE}/Tapper/Action.pm
+${P5SITE}/Tapper/Action/Plugin/
+${P5SITE}/Tapper/Action/Plugin/resume/
+${P5SITE}/Tapper/Action/Plugin/resume/OSRC.pm
+${P5SITE}/Tapper/Action/Plugin/updategrub/
+${P5SITE}/Tapper/Action/Plugin/updategrub/OSRC.pm
+${P5SITE}/Tapper/Base.pm
+@man man/man1/tapper-action-daemon.1
+@man man/man1/tapper-action.1
+@man man/man3p/Tapper::Action.3p
+@man man/man3p/Tapper::Action::Plugin::resume::OSRC.3p
+@man man/man3p/Tapper::Action::Plugin::updategrub::OSRC.3p
+@man man/man3p/Tapper::Base.3p
