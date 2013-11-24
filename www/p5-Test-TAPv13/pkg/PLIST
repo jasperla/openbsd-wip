@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/Test/
+${P5SITE}/Test/TAPv13.pm
+@man man/man3p/Test::TAPv13.3p
