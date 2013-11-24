@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/Tapper/
+${P5SITE}/Tapper/Base.pm
+@man man/man3p/Tapper::Base.3p
