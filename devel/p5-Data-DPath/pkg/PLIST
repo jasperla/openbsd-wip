@@ -1,0 +1,17 @@
+@comment $OpenBSD$
+${P5SITE}/Data/
+${P5SITE}/Data/DPath/
+${P5SITE}/Data/DPath.pm
+${P5SITE}/Data/DPath/Attrs.pm
+${P5SITE}/Data/DPath/Context.pm
+${P5SITE}/Data/DPath/Filters.pm
+${P5SITE}/Data/DPath/Path.pm
+${P5SITE}/Data/DPath/Point.pm
+${P5SITE}/Data/DPath/Step.pm
+@man man/man3p/Data::DPath.3p
+@man man/man3p/Data::DPath::Attrs.3p
+@man man/man3p/Data::DPath::Context.3p
+@man man/man3p/Data::DPath::Filters.3p
+@man man/man3p/Data::DPath::Path.3p
+@man man/man3p/Data::DPath::Point.3p
+@man man/man3p/Data::DPath::Step.3p
