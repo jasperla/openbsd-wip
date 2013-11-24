@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/String/
+${P5SITE}/String/Escape.pm
+@man man/man3p/String::Escape.3p
