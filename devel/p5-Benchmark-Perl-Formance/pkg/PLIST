@@ -1,0 +1,68 @@
+@comment $OpenBSD$
+bin/benchmark-perlformance
+${P5SITE}/Benchmark/
+${P5SITE}/Benchmark/Perl/
+${P5SITE}/Benchmark/Perl/Formance/
+${P5SITE}/Benchmark/Perl/Formance.pm
+${P5SITE}/Benchmark/Perl/Formance/Plugin/
+${P5SITE}/Benchmark/Perl/Formance/Plugin/DPath.pm
+${P5SITE}/Benchmark/Perl/Formance/Plugin/Fib.pm
+${P5SITE}/Benchmark/Perl/Formance/Plugin/FibMXDeclare.pm
+${P5SITE}/Benchmark/Perl/Formance/Plugin/FibMoose.pm
+${P5SITE}/Benchmark/Perl/Formance/Plugin/FibMouse.pm
+${P5SITE}/Benchmark/Perl/Formance/Plugin/FibOO.pm
+${P5SITE}/Benchmark/Perl/Formance/Plugin/Incubator.pm
+${P5SITE}/Benchmark/Perl/Formance/Plugin/Mem.pm
+${P5SITE}/Benchmark/Perl/Formance/Plugin/P6STD.pm
+${P5SITE}/Benchmark/Perl/Formance/Plugin/PerlCritic.pm
+${P5SITE}/Benchmark/Perl/Formance/Plugin/Prime.pm
+${P5SITE}/Benchmark/Perl/Formance/Plugin/RegexpCommonTS.pm
+${P5SITE}/Benchmark/Perl/Formance/Plugin/Rx.pm
+${P5SITE}/Benchmark/Perl/Formance/Plugin/RxCmp.pm
+${P5SITE}/Benchmark/Perl/Formance/Plugin/Shootout/
+${P5SITE}/Benchmark/Perl/Formance/Plugin/Shootout.pm
+${P5SITE}/Benchmark/Perl/Formance/Plugin/Shootout/binarytrees.pm
+${P5SITE}/Benchmark/Perl/Formance/Plugin/Shootout/fannkuch.pm
+${P5SITE}/Benchmark/Perl/Formance/Plugin/Shootout/fasta.pm
+${P5SITE}/Benchmark/Perl/Formance/Plugin/Shootout/knucleotide.pm
+${P5SITE}/Benchmark/Perl/Formance/Plugin/Shootout/mandelbrot.pm
+${P5SITE}/Benchmark/Perl/Formance/Plugin/Shootout/nbody.pm
+${P5SITE}/Benchmark/Perl/Formance/Plugin/Shootout/pidigits.pm
+${P5SITE}/Benchmark/Perl/Formance/Plugin/Shootout/regexdna.pm
+${P5SITE}/Benchmark/Perl/Formance/Plugin/Shootout/revcomp.pm
+${P5SITE}/Benchmark/Perl/Formance/Plugin/Shootout/spectralnorm.pm
+${P5SITE}/Benchmark/Perl/Formance/Plugin/Skeleton.pm
+${P5SITE}/Benchmark/Perl/Formance/Plugin/SpamAssassin.pm
+${P5SITE}/Benchmark/Perl/Formance/Plugin/Threads.pm
+${P5SITE}/Benchmark/Perl/Formance/Plugin/ThreadsShared.pm
+@man man/man1/benchmark-perlformance.1
+@man man/man3p/Benchmark::Perl::Formance.3p
+@man man/man3p/Benchmark::Perl::Formance::Plugin::DPath.3p
+@man man/man3p/Benchmark::Perl::Formance::Plugin::Fib.3p
+@man man/man3p/Benchmark::Perl::Formance::Plugin::FibMXDeclare.3p
+@man man/man3p/Benchmark::Perl::Formance::Plugin::FibMoose.3p
+@man man/man3p/Benchmark::Perl::Formance::Plugin::FibMouse.3p
+@man man/man3p/Benchmark::Perl::Formance::Plugin::FibOO.3p
+@man man/man3p/Benchmark::Perl::Formance::Plugin::Incubator.3p
+@man man/man3p/Benchmark::Perl::Formance::Plugin::Mem.3p
+@man man/man3p/Benchmark::Perl::Formance::Plugin::P6STD.3p
+@man man/man3p/Benchmark::Perl::Formance::Plugin::PerlCritic.3p
+@man man/man3p/Benchmark::Perl::Formance::Plugin::Prime.3p
+@man man/man3p/Benchmark::Perl::Formance::Plugin::RegexpCommonTS.3p
+@man man/man3p/Benchmark::Perl::Formance::Plugin::Rx.3p
+@man man/man3p/Benchmark::Perl::Formance::Plugin::RxCmp.3p
+@man man/man3p/Benchmark::Perl::Formance::Plugin::Shootout.3p
+@man man/man3p/Benchmark::Perl::Formance::Plugin::Shootout::binarytrees.3p
+@man man/man3p/Benchmark::Perl::Formance::Plugin::Shootout::fannkuch.3p
+@man man/man3p/Benchmark::Perl::Formance::Plugin::Shootout::fasta.3p
+@man man/man3p/Benchmark::Perl::Formance::Plugin::Shootout::knucleotide.3p
+@man man/man3p/Benchmark::Perl::Formance::Plugin::Shootout::mandelbrot.3p
+@man man/man3p/Benchmark::Perl::Formance::Plugin::Shootout::nbody.3p
+@man man/man3p/Benchmark::Perl::Formance::Plugin::Shootout::pidigits.3p
+@man man/man3p/Benchmark::Perl::Formance::Plugin::Shootout::regexdna.3p
+@man man/man3p/Benchmark::Perl::Formance::Plugin::Shootout::revcomp.3p
+@man man/man3p/Benchmark::Perl::Formance::Plugin::Shootout::spectralnorm.3p
+@man man/man3p/Benchmark::Perl::Formance::Plugin::Skeleton.3p
+@man man/man3p/Benchmark::Perl::Formance::Plugin::SpamAssassin.3p
+@man man/man3p/Benchmark::Perl::Formance::Plugin::Threads.3p
+@man man/man3p/Benchmark::Perl::Formance::Plugin::ThreadsShared.3p
