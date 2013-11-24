@@ -1,0 +1,14 @@
+@comment $OpenBSD$
+bin/tapper-testsuite-netperf-client
+bin/tapper-testsuite-netperf-server
+${P5SITE}/Tapper/
+${P5SITE}/Tapper/TestSuite/
+${P5SITE}/Tapper/TestSuite/Netperf/
+${P5SITE}/Tapper/TestSuite/Netperf.pm
+${P5SITE}/Tapper/TestSuite/Netperf/Client.pm
+${P5SITE}/Tapper/TestSuite/Netperf/Server.pm
+@man man/man1/tapper-testsuite-netperf-client.1
+@man man/man1/tapper-testsuite-netperf-server.1
+@man man/man3p/Tapper::TestSuite::Netperf.3p
+@man man/man3p/Tapper::TestSuite::Netperf::Client.3p
+@man man/man3p/Tapper::TestSuite::Netperf::Server.3p
