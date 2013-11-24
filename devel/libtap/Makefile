@@ -5,10 +5,10 @@ DISTNAME =		tap-1.01
 PKGNAME =		${DISTNAME}
 
 CATEGORIES =		devel
-HOMEPAGE =			http://jc.ngo.org.uk/trac-bin/trac.cgi/wiki/LibTap
+HOMEPAGE =		http://jc.ngo.org.uk/trac-bin/trac.cgi/wiki/LibTap
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
-# BSD License
+# BSD
 PERMIT_PACKAGE_CDROM =	Yes 
 
 WANTLIB += pthread
