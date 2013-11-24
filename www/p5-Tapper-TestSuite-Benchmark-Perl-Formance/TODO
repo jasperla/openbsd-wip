@@ -1,0 +1,2 @@
+$ /usr/local/bin/tapper-testsuite-benchmark-perlformance 
+Can't locate Devel/Platform/Info.pm 
