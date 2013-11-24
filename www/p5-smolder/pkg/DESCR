@@ -1,0 +1,4 @@
+Smoke Test Aggregator used by developers and testers to upload
+(automated or manually) and view smoke/regression tests using the
+Test Anything Protocol. Details and trends are graphed and notifications
+provided via email or Atom feeds.
