@@ -1,0 +1,14 @@
+@comment $OpenBSD$
+${P5SITE}/App/
+${P5SITE}/App/Rad/
+${P5SITE}/App/Rad.pm
+${P5SITE}/App/Rad/Config.pm
+${P5SITE}/App/Rad/Exclude.pm
+${P5SITE}/App/Rad/Help.pm
+${P5SITE}/App/Rad/Include.pm
+${P5SITE}/App/Rad/Plugin.pod
+@man man/man3p/App::Rad.3p
+@man man/man3p/App::Rad::Exclude.3p
+@man man/man3p/App::Rad::Help.3p
+@man man/man3p/App::Rad::Include.3p
+@man man/man3p/App::Rad::Plugin.3p
