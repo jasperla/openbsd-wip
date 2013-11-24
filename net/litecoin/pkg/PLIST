@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+@bin bin/litecoin-qt
+@man man/man1/litecoind.1
+@man man/man5/litecoin.conf.5
