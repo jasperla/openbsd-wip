@@ -1,0 +1,5 @@
+Sysadm::Install executes shell-like commands performing typical
+installation tasks: Copying files, extracting tarballs, calling
+make. It has a fail once and die policy, meticulously checking the
+result of every operation and calling die() immediately if anything
+fails.
