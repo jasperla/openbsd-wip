@@ -1,0 +1,4 @@
+Module provides a flexible calling interface to some frequently-performed
+string conversion functions, including applying and removing backslash
+escapes like \n and \t, wrapping and removing double-quotes, and
+truncating to fit within a desired length.
