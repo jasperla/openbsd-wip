@@ -1,0 +1,9 @@
+@comment $OpenBSD$
+${P5SITE}/Data/
+${P5SITE}/Data/YAML/
+${P5SITE}/Data/YAML.pm
+${P5SITE}/Data/YAML/Reader.pm
+${P5SITE}/Data/YAML/Writer.pm
+@man man/man3p/Data::YAML.3p
+@man man/man3p/Data::YAML::Reader.3p
+@man man/man3p/Data::YAML::Writer.3p
