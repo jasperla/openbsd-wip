@@ -1,0 +1,17 @@
+@comment $OpenBSD$
+bin/tapper-reports-receiver
+bin/tapper-reports-receiver-daemon
+${P5SITE}/Tapper/
+${P5SITE}/Tapper/Reports/
+${P5SITE}/Tapper/Reports/Receiver/
+${P5SITE}/Tapper/Reports/Receiver.pm
+${P5SITE}/Tapper/Reports/Receiver/Daemon.pm
+${P5SITE}/Tapper/Reports/Receiver/Level2/
+${P5SITE}/Tapper/Reports/Receiver/Level2/Codespeed.pm
+${P5SITE}/Tapper/Reports/Receiver/Util.pm
+@man man/man1/tapper-reports-receiver-daemon.1
+@man man/man1/tapper-reports-receiver.1
+@man man/man3p/Tapper::Reports::Receiver.3p
+@man man/man3p/Tapper::Reports::Receiver::Daemon.3p
+@man man/man3p/Tapper::Reports::Receiver::Level2::Codespeed.3p
+@man man/man3p/Tapper::Reports::Receiver::Util.3p
