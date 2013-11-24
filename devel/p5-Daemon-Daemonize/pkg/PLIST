@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/Daemon/
+${P5SITE}/Daemon/Daemonize.pm
+@man man/man3p/Daemon::Daemonize.3p
