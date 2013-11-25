@@ -1,3 +1,60 @@
+@man man/man1/a2ping.1
+@man man/man1/arlatex.1
+@man man/man1/asy.1
+@man man/man1/bundledoc.1
+@man man/man1/chktex.1
+@man man/man1/chkweb.1
+@man man/man1/ctanify.1
+@man man/man1/deweb.1
+@man man/man1/dvigif.1
+@man man/man1/dvipng.1
+@man man/man1/dvipos.1
+@man man/man1/dvisvgm.1
+@man man/man1/dvitype.1
+@man man/man1/findhyph.1
+@man man/man1/lacheck.1
+@man man/man1/latexdiff-vc.1
+@man man/man1/latexdiff.1
+@man man/man1/latexmk.1
+@man man/man1/latexrevise.1
+@man man/man1/luaotfload-tool.1
+@man man/man1/m-tx.1
+@man man/man1/mkjobtexmf.1
+@man man/man1/musixflx.1
+@man man/man1/musixtex.1
+@man man/man1/pdf180.1
+@man man/man1/pdf270.1
+@man man/man1/pdf90.1
+@man man/man1/pdfbook.1
+@man man/man1/pdfflip.1
+@man man/man1/pdfjam-pocketmod.1
+@man man/man1/pdfjam-slides3up.1
+@man man/man1/pdfjam-slides6up.1
+@man man/man1/pdfjam.1
+@man man/man1/pdfjoin.1
+@man man/man1/pdfnup.1
+@man man/man1/pdfpun.1
+@man man/man1/perltex.1
+@man man/man1/pkfix-helper.1
+@man man/man1/pmx2pdf.1
+@man man/man1/pmxab.1
+@man man/man1/pooltype.1
+@man man/man1/prepmx.1
+@man man/man1/purifyeps.1
+@man man/man1/scor2prt.1
+@man man/man1/splitindex.1
+@man man/man1/sty2dtx.1
+@man man/man1/synctex.1
+@man man/man1/tex2xindy.1
+@man man/man1/texdiff.1
+@man man/man1/texdirflatten.1
+@man man/man1/texdoc.1
+@man man/man1/texdoctk.1
+@man man/man1/texindy.1
+@man man/man1/tpic2pdftex.1
+@man man/man1/xasy.1
+@man man/man1/xindy.1
+@man man/man5/synctex.5
 share/texmf-dist/
 share/texmf-dist/asymptote/
 share/texmf-dist/asymptote/CAD.asy
@@ -527,67 +584,6 @@ share/texmf-dist/bibtex/csf/persian-bib/cp1256fa.csf
 share/texmf-dist/chktex/
 share/texmf-dist/chktex/chktexrc
 share/texmf-dist/doc/
-share/texmf-dist/doc/man/
-share/texmf-dist/doc/man/man1/
-share/texmf-dist/doc/man/man1/a2ping.1
-share/texmf-dist/doc/man/man1/arlatex.1
-share/texmf-dist/doc/man/man1/asy.1
-share/texmf-dist/doc/man/man1/bundledoc.1
-share/texmf-dist/doc/man/man1/chktex.1
-share/texmf-dist/doc/man/man1/chkweb.1
-share/texmf-dist/doc/man/man1/ctanify.1
-share/texmf-dist/doc/man/man1/deweb.1
-share/texmf-dist/doc/man/man1/dvigif.1
-share/texmf-dist/doc/man/man1/dvipng.1
-share/texmf-dist/doc/man/man1/dvipos.1
-share/texmf-dist/doc/man/man1/dvisvgm.1
-share/texmf-dist/doc/man/man1/dvitype.1
-share/texmf-dist/doc/man/man1/findhyph.1
-share/texmf-dist/doc/man/man1/lacheck.1
-share/texmf-dist/doc/man/man1/lacheck.1
-share/texmf-dist/doc/man/man1/latexdiff-vc.1
-share/texmf-dist/doc/man/man1/latexdiff.1
-share/texmf-dist/doc/man/man1/latexmk.1
-share/texmf-dist/doc/man/man1/latexrevise.1
-share/texmf-dist/doc/man/man1/luaotfload-tool.1
-share/texmf-dist/doc/man/man1/m-tx.1
-share/texmf-dist/doc/man/man1/mkjobtexmf.1
-share/texmf-dist/doc/man/man1/musixflx.1
-share/texmf-dist/doc/man/man1/musixtex.1
-share/texmf-dist/doc/man/man1/pdf180.1
-share/texmf-dist/doc/man/man1/pdf270.1
-share/texmf-dist/doc/man/man1/pdf90.1
-share/texmf-dist/doc/man/man1/pdfbook.1
-share/texmf-dist/doc/man/man1/pdfflip.1
-share/texmf-dist/doc/man/man1/pdfjam-pocketmod.1
-share/texmf-dist/doc/man/man1/pdfjam-slides3up.1
-share/texmf-dist/doc/man/man1/pdfjam-slides6up.1
-share/texmf-dist/doc/man/man1/pdfjam.1
-share/texmf-dist/doc/man/man1/pdfjoin.1
-share/texmf-dist/doc/man/man1/pdfnup.1
-share/texmf-dist/doc/man/man1/pdfpun.1
-share/texmf-dist/doc/man/man1/perltex.1
-share/texmf-dist/doc/man/man1/pkfix-helper.1
-share/texmf-dist/doc/man/man1/pmx2pdf.1
-share/texmf-dist/doc/man/man1/pmxab.1
-share/texmf-dist/doc/man/man1/pooltype.1
-share/texmf-dist/doc/man/man1/prepmx.1
-share/texmf-dist/doc/man/man1/purifyeps.1
-share/texmf-dist/doc/man/man1/scor2prt.1
-share/texmf-dist/doc/man/man1/splitindex.1
-share/texmf-dist/doc/man/man1/sty2dtx.1
-share/texmf-dist/doc/man/man1/synctex.1
-share/texmf-dist/doc/man/man1/tex2xindy.1
-share/texmf-dist/doc/man/man1/texdiff.1
-share/texmf-dist/doc/man/man1/texdirflatten.1
-share/texmf-dist/doc/man/man1/texdoc.1
-share/texmf-dist/doc/man/man1/texdoctk.1
-share/texmf-dist/doc/man/man1/texindy.1
-share/texmf-dist/doc/man/man1/tpic2pdftex.1
-share/texmf-dist/doc/man/man1/xasy.1
-share/texmf-dist/doc/man/man1/xindy.1
-share/texmf-dist/doc/man/man5/
-share/texmf-dist/doc/man/man5/synctex.5
 share/texmf-dist/dvips/
 share/texmf-dist/dvips/brushscr/
 share/texmf-dist/dvips/brushscr/config.pbsi

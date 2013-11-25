@@ -1,3 +1,39 @@
+@man man/man1/context.1
+@man man/man1/ctxtools.1
+@man man/man1/luatools.1
+@man man/man1/mtx-babel.1
+@man man/man1/mtx-base.1
+@man man/man1/mtx-cache.1
+@man man/man1/mtx-chars.1
+@man man/man1/mtx-check.1
+@man man/man1/mtx-colors.1
+@man man/man1/mtx-context.1
+@man man/man1/mtx-epub.1
+@man man/man1/mtx-fcd.1
+@man man/man1/mtx-flac.1
+@man man/man1/mtx-fonts.1
+@man man/man1/mtx-grep.1
+@man man/man1/mtx-interface.1
+@man man/man1/mtx-metapost.1
+@man man/man1/mtx-metatex.1
+@man man/man1/mtx-modules.1
+@man man/man1/mtx-package.1
+@man man/man1/mtx-patterns.1
+@man man/man1/mtx-pdf.1
+@man man/man1/mtx-profile.1
+@man man/man1/mtx-rsync.1
+@man man/man1/mtx-scite.1
+@man man/man1/mtx-server.1
+@man man/man1/mtx-texworks.1
+@man man/man1/mtx-timing.1
+@man man/man1/mtx-tools.1
+@man man/man1/mtx-unzip.1
+@man man/man1/mtx-update.1
+@man man/man1/mtx-watch.1
+@man man/man1/mtxrun.1
+@man man/man1/pstopdf.1
+@man man/man1/texexec.1
+@man man/man1/texmfstart.1
 share/texmf-dist/
 share/texmf-dist/bibtex/
 share/texmf-dist/bibtex/bst/
@@ -78,44 +114,6 @@ share/texmf-dist/context/data/texworks/configuration/tools.ini
 share/texmf-dist/context/data/texworks/texworks-context.rme
 share/texmf-dist/context/data/texworks/texworks-setup.ini
 share/texmf-dist/doc/
-share/texmf-dist/doc/man/
-share/texmf-dist/doc/man/man1/
-share/texmf-dist/doc/man/man1/context.1
-share/texmf-dist/doc/man/man1/ctxtools.1
-share/texmf-dist/doc/man/man1/luatools.1
-share/texmf-dist/doc/man/man1/mtx-babel.1
-share/texmf-dist/doc/man/man1/mtx-base.1
-share/texmf-dist/doc/man/man1/mtx-cache.1
-share/texmf-dist/doc/man/man1/mtx-chars.1
-share/texmf-dist/doc/man/man1/mtx-check.1
-share/texmf-dist/doc/man/man1/mtx-colors.1
-share/texmf-dist/doc/man/man1/mtx-context.1
-share/texmf-dist/doc/man/man1/mtx-epub.1
-share/texmf-dist/doc/man/man1/mtx-fcd.1
-share/texmf-dist/doc/man/man1/mtx-flac.1
-share/texmf-dist/doc/man/man1/mtx-fonts.1
-share/texmf-dist/doc/man/man1/mtx-grep.1
-share/texmf-dist/doc/man/man1/mtx-interface.1
-share/texmf-dist/doc/man/man1/mtx-metapost.1
-share/texmf-dist/doc/man/man1/mtx-metatex.1
-share/texmf-dist/doc/man/man1/mtx-modules.1
-share/texmf-dist/doc/man/man1/mtx-package.1
-share/texmf-dist/doc/man/man1/mtx-patterns.1
-share/texmf-dist/doc/man/man1/mtx-pdf.1
-share/texmf-dist/doc/man/man1/mtx-profile.1
-share/texmf-dist/doc/man/man1/mtx-rsync.1
-share/texmf-dist/doc/man/man1/mtx-scite.1
-share/texmf-dist/doc/man/man1/mtx-server.1
-share/texmf-dist/doc/man/man1/mtx-texworks.1
-share/texmf-dist/doc/man/man1/mtx-timing.1
-share/texmf-dist/doc/man/man1/mtx-tools.1
-share/texmf-dist/doc/man/man1/mtx-unzip.1
-share/texmf-dist/doc/man/man1/mtx-update.1
-share/texmf-dist/doc/man/man1/mtx-watch.1
-share/texmf-dist/doc/man/man1/mtxrun.1
-share/texmf-dist/doc/man/man1/pstopdf.1
-share/texmf-dist/doc/man/man1/texexec.1
-share/texmf-dist/doc/man/man1/texmfstart.1
 share/texmf-dist/fonts/
 share/texmf-dist/fonts/afm/
 share/texmf-dist/fonts/afm/hoekwater/

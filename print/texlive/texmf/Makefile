@@ -49,22 +49,27 @@ MODPY_RUNDEP =		No
 
 MULTI_PACKAGES =	-context -docs -full -main -buildset
 
-# XXX use linter to find man pages in right path but not docfiles.
-
-# I am told by upstream that any manual page not under texmf-dist/doc/man is
-# intentionally this way and should not be moved into the system manual path.
 do-install:
 	mv ${WRKDIST}/texmf-dist ${PREFIX}/share
 
 	# plug in my pregenerated map and formats
 	mv ${WRKDIR}/texmf-var ${PREFIX}/share
 
-	# XXX put manuals in the right place.
+	# Put manuals in the right place.
+	#
+	# The rest of share/texmf-dist/doc/man does not appear
+	# in the packing list, so the PDF versions will not be installed.
+	# 
+	# I am told by upstream that any manual page not under
+	# texmf-dist/doc/man is intentionally this way and should not be
+	# moved into the system manual path. So be it.
+	mv ${PREFIX}/share/texmf-dist/doc/man/man1/*.1 \
+		${PREFIX}/man/man1/
+	mv ${PREFIX}/share/texmf-dist/doc/man/man5/*.5 \
+		${PREFIX}/man/man5/
 
 	# adjust permissions
-	# XXX put back when manuals done
-	#chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/{share/texmf*,man/man*/*}
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/texmf*
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/{share/texmf*,man/man*/*}
 
 # selfauto does not work with our legacy texmf paths, patch in paths.
 post-install:
