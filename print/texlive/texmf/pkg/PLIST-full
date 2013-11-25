@@ -544,6 +544,7 @@ share/texmf-dist/doc/man/man1/dvisvgm.1
 share/texmf-dist/doc/man/man1/dvitype.1
 share/texmf-dist/doc/man/man1/findhyph.1
 share/texmf-dist/doc/man/man1/lacheck.1
+share/texmf-dist/doc/man/man1/lacheck.1
 share/texmf-dist/doc/man/man1/lacheck.man1.pdf
 share/texmf-dist/doc/man/man1/latexdiff-vc.1
 share/texmf-dist/doc/man/man1/latexdiff.1
