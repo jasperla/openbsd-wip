@@ -1,0 +1,3 @@
+@comment $OpenBSD$
+@man man/man8/mount.exfat-fuse.8
+@bin sbin/mount.exfat-fuse
