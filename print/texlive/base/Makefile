@@ -23,7 +23,7 @@ RUN_DEPENDS =		print/ghostscript/gnu \
 			print/psutils \
 			print/t1utils \
 			print/latex-mk
-# XXX add back
+# XXX add back, but as buildset
 #			texlive_texmf-minimal-${V}:print/texlive/texmf,-main
 
 LIB_DEPENDS =		devel/t1lib \
