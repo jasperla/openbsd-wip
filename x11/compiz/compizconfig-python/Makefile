@@ -7,12 +7,13 @@ DISTNAME =	compizconfig-python-0.8.4
 MASTER_SITES =	http://releases.compiz.org/components/compizconfig-python/
 
 WANTLIB =	ICE SM X11 X11-xcb Xcomposite Xdamage Xext Xfixes Xinerama \
-		Xrandr Xrender compizconfig glib-2.0 iconv intl m pcre \
-		pthread startup-notification-1 xcb xcb-aux xml2 xslt z
+		Xrandr Xrender compizconfig glib-2.0 m pcre pthread \
+		startup-notification-1 xcb xcb-aux xml2 xslt z
 
 LIB_DEPENDS =	x11/compiz/libcompizconfig
 
-MODULES =	lang/python
+MODULES =	devel/gettext \
+		lang/python
 
 BUILD_DEPENDS =	devel/pyrex
 
