@@ -22,9 +22,8 @@ RUN_DEPENDS =		print/ghostscript/gnu \
 			print/ps2eps \
 			print/psutils \
 			print/t1utils \
-			print/latex-mk
-# XXX add back, but as buildset
-#			texlive_texmf-minimal-${V}:print/texlive/texmf,-main
+			print/latex-mk \
+			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset
 
 LIB_DEPENDS =		devel/t1lib \
 			graphics/png \

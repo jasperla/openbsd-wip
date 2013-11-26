@@ -25,8 +25,7 @@ NO_TEST =		Yes
 PKG_ARCH =		*
 
 BUILD_DEPENDS =		archivers/xz
-#RUN_DEPENDS-full =	texlive_texmf-minimal-${V}:print/texlive/texmf,-main \
-#			texlive_base-${V}:print/texlive/base
+
 # We dont use auto module deps for these, as MODULES is not per SUBPACKAGE
 MODULES +=		lang/ruby lang/python
 MODRUBY_REV =		1.8
@@ -35,17 +34,13 @@ MODRUBY_RUNDEP =	No
 MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
 
-# XXX put all this back at a later date
-#RUN_DEPENDS-full +=	lang/python/${MODPY_VERSION}
-
-#RUN_DEPENDS-context +=	texlive_base-${V}:print/texlive/base \
-#			lang/ruby/${MODRUBY_REV}
-#RUN_DEPENDS-context +=	lang/ruby/${MODRUBY_REV}
-#RUN_DEPENDS-docs +=	texlive_base-${V}:print/texlive/base \
-#			x11/p5-Tk
-#RUN_DEPENDS-docs +=	x11/p5-Tk
-
-# XXX RUN_DEPENDS-buildset
+RUN_DEPENDS-main =	texlive_base-${V}:print/texlive/base
+RUN_DEPENDS-full =	texlive_texmf-minimal-${V}:print/texlive/texmf,-main \
+			lang/python/${MODPY_VERSION}
+RUN_DEPENDS-context +=	texlive_base-${V}:print/texlive/base \
+			lang/ruby/${MODRUBY_REV}
+RUN_DEPENDS-docs +=	texlive_base-${V}:print/texlive/base \
+			x11/p5-Tk
 
 MULTI_PACKAGES =	-context -docs -full -main -buildset
 
