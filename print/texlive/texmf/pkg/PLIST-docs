@@ -1,3 +1,11 @@
+@comment $OpenBS$D
+@conflict teTeX_texmf-doc-*
+@conflict texlive_base-<2013
+@conflict texlive_texmf-minimal-<2013
+@conflict texlive_texmf-full-<2013
+@conflict texlive_texmf-buildset-<2013
+@pkgpath print/texlive/texmf-docs
+@pkgpath print/teTeX_texmf,-doc
 share/texmf-dist/
 share/texmf-dist/doc/
 share/texmf-dist/doc/aleph/
@@ -32244,3 +32252,5 @@ share/texmf-dist/tex/generic/
 share/texmf-dist/tex/generic/bibtex/
 share/texmf-dist/tex/generic/bibtex/apalike.sty
 share/texmf-dist/tex/generic/bibtex/apalike.tex
+@exec %D/bin/mktexlsr > /dev/null 2>&1
+@unexec-delete %D/bin/mktexlsr > /dev/null 2>&1
