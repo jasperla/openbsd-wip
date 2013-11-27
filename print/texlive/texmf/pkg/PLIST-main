@@ -1,3 +1,10 @@
+@comment $OpenBSD$
+@conflict teTeX_texmf-*
+@conflict texlive_base-<2013
+@conflict texlive_texmf-docs-<2013
+@conflict texlive_texmf-full-<2013
+@conflict texlive_texmf-buildset-<2013
+@pkgpath print/teTeX/texmf
 @man man/man1/afm2afm.1
 @man man/man1/afm2pl.1
 @man man/man1/aleph.1
@@ -33736,3 +33743,5 @@ share/texmf-dist/tex/xetex/zhspacing/latex/zhulem.sty
 share/texmf-dist/ttf2pk/
 share/texmf-dist/ttf2pk/VPS.rpl
 share/texmf-dist/ttf2pk/ttf2pk.cfg
+@exec %D/bin/mktexlsr > /dev/null 2>&1
+@unexec-delete %D/bin/mktexlsr > /dev/null 2>&1

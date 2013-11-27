@@ -1,3 +1,4 @@
+@comment $OpenBSD$
 @man man/man1/context.1
 @man man/man1/ctxtools.1
 @man man/man1/luatools.1
@@ -2500,3 +2501,8 @@ share/texmf-dist/tex/latex/context/ppchtex/m-ch-de.sty
 share/texmf-dist/tex/latex/context/ppchtex/m-ch-en.sty
 share/texmf-dist/tex/latex/context/ppchtex/m-ch-nl.sty
 share/texmf-dist/tex/latex/context/ppchtex/m-pictex.sty
+@unexec rm -Rf %D/share/texmf-var/luatex-cache
+@exec %D/bin/mtxrun --generate > /dev/null 2>&1
+@comment some of this could be shared with other parts of TL, hash with kpse
+@exec %D/bin/mktexlsr > /dev/null 2>&1
+@unexec-delete %D/bin/mktexlsr > /dev/null 2>&1
