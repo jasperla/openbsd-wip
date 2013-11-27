@@ -37,7 +37,7 @@ MODPY_RUNDEP =		No
 RUN_DEPENDS-main =	texlive_base-${V}:print/texlive/base
 RUN_DEPENDS-full =	texlive_texmf-minimal-${V}:print/texlive/texmf,-main \
 			lang/python/${MODPY_VERSION}
-RUN_DEPENDS-context +=	texlive_base-${V}:print/texlive/base \
+RUN_DEPENDS-context +=	texlive_texmf-full-${V}:print/texlive/texmf,-full \
 			lang/ruby/${MODRUBY_REV}
 RUN_DEPENDS-docs +=	texlive_base-${V}:print/texlive/base \
 			x11/p5-Tk
