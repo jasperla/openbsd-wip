@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-V =		1.22
+V =		1.23
 COMMENT =	user friendy console IRC client
 DISTNAME =	fi-${V}
 PKGNAME =	firc-${V}
@@ -21,6 +21,8 @@ MASTER_SITES =	http://www.vanheusden.com/f-irc/
 MAKE_FLAGS =	CC="${CC}" DEBUG="${CFLAGS}" \
 		DESTDIR= \
 		SYSCONFDIR="${SYSCONFDIR}"
+
+NO_TEST =	Yes
 
 post-patch:
 	perl -pi -e "s,ncursesw/,,g" ${WRKSRC}/*
