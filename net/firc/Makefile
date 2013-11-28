@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-V =		1.23
+V =		1.24
 COMMENT =	user friendy console IRC client
 DISTNAME =	fi-${V}
 PKGNAME =	firc-${V}
