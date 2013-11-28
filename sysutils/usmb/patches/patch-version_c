@@ -1,0 +1,16 @@
+$OpenBSD$
+--- version.c.orig	Thu Nov 28 11:31:31 2013
++++ version.c	Thu Nov 28 11:32:21 2013
+@@ -63,10 +63,10 @@ void show_version (FILE *fp)
+   show_about (fp);
+   fputc ('\n', fp);
+   fprintf (fp, "usmb version: %08x (%s)\n"
+-               "FUSE version: %d.%d\n"
++               "FUSE version: %d (OpenBSD)\n"
+                "Samba version: %s\n",
+            USMB_VERSION, get_status (USMB_VERSION_STATUS),
+-           FUSE_MAJOR_VERSION, FUSE_MINOR_VERSION,
++           FUSE_VERSION,
+            smbc_version());
+ }
+ 
