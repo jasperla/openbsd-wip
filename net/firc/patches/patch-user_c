@@ -1,0 +1,20 @@
+$OpenBSD$
+--- user.c.orig	Wed Nov 27 22:41:23 2013
++++ user.c	Wed Nov 27 22:42:29 2013
+@@ -12,6 +12,7 @@
+ #include <unistd.h>
+ #include <ncursesw/panel.h>
+ #include <ncursesw/ncurses.h>
++#include <wchar.h>
+ 
+ #include "gen.h"
+ #include "error.h"
+@@ -29,6 +30,8 @@
+ #include "config.h"
+ #include "user.h"
+ #include "colors.h"
++
++int waddnwstr(WINDOW *win, const wchar_t *wstr, int n);
+ 
+ void popup_notify(BOOL use_getch, const char *format, ...)
+ {
