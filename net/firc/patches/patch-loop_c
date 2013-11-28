@@ -1,6 +1,6 @@
 $OpenBSD$
---- loop.c.orig	Thu Nov 28 12:10:07 2013
-+++ loop.c	Thu Nov 28 12:10:07 2013
+--- loop.c.orig	Thu Nov 28 12:17:08 2013
++++ loop.c	Thu Nov 28 12:17:08 2013
 @@ -41,6 +41,8 @@
  #include "ansi.h"
  #include "soundex.h"
@@ -10,7 +10,7 @@ $OpenBSD$
  NEWWIN *chat_window_border = NULL, *channel_window_border = NULL, *input_window_border = NULL;
  NEWWIN *chat_window = NULL, *input_window = NULL, *channel_window = NULL, *topic_line_window = NULL;
  visible_channels *vc_list = NULL;
-@@ -567,7 +569,7 @@ int log_channel(int iserver, int channel_nr, const cha
+@@ -566,7 +568,7 @@ int log_channel(int iserver, int channel_nr, const cha
  					*dummy = 0x00;
  			}
  
