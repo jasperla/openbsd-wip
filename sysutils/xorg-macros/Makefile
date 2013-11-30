@@ -18,7 +18,6 @@ BUILD_DEPENDS =         devel/autoconf/${AUTOCONF_VERSION} \
 
 AUTOCONF_VERSION =      2.69
 AUTOMAKE_VERSION=       1.9
-#CONFIGURE_STYLE=        autoconf
 
 USE_GMAKE =             Yes
 
