@@ -19,5 +19,11 @@ BUILD_DEPENDS =		sysutils/atf \
 MASTER_SITES =		https://kyua.googlecode.com/files/
 
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	--with-atf
+
+TEST_DEPENDS =		sysutils/kyua-cli
+
+do-test:
+	kyua test -k ${WRKSRC}/Kyuafile
 
 .include <bsd.port.mk>
