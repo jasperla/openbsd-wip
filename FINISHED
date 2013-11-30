@@ -27,8 +27,11 @@ net/py-boto:		ready for import, sent to maintainer 2012-04-23 (tamentis)
 net/tkabber		ready for import, sent to ports 2013-01-30
 net/unison/stable	ready for import.
 security/paperkey  sent to ports 2011-06-07
-sysutils/kyua-cli	sent to ports 2013-06-30
-sysutils/kyua-testers sent to ports 2013-06-30
+sysutils/kyua-cli	sent to ports 2013-11-27
+sysutils/kyua-testers 	sent to ports 2013-11-27
+sysutils/atf		sent to ports 2013-11-27
+sysutils/rendercheck	sent to ports 2013-11-30
+sysutils/xorg-macros	sent to ports 2013-11-30
 sysutils/py-anita		Ready for import. Sent to ports@ 2012-11-05.
 textproc/goldendict sent to ports 2013-07-13  and 2011-10-19
 www/ocaml-tyxml		ready for import.
