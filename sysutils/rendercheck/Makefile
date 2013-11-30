@@ -11,8 +11,6 @@ MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
 PERMIT_PACKAGE_CDROM =	Yes
 
-#WANTLIB += c m stdc++
-
 MASTER_SITES =		http://cgit.freedesktop.org/xorg/app/rendercheck/snapshot/
 
 BUILD_DEPENDS =         devel/autoconf/${AUTOCONF_VERSION} \
@@ -21,7 +19,6 @@ BUILD_DEPENDS =         devel/autoconf/${AUTOCONF_VERSION} \
 
 AUTOCONF_VERSION =      2.69
 AUTOMAKE_VERSION=       1.9
-#CONFIGURE_STYLE=        autoconf
 
 USE_GMAKE =             Yes
 
