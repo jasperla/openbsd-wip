@@ -2,8 +2,8 @@ $OpenBSD$
 
 Patch in OpenBSD paths.
 
---- texmf-dist/web2c/texmf.cnf.origy	Thu Sep 26 22:51:50 2013
-+++ texmf-dist/web2c/texmf.cnf	Thu Sep 26 22:53:56 2013
+--- texmf-dist/web2c/texmf.cnf.origy	Mon Apr 15 17:58:08 2013
++++ texmf-dist/web2c/texmf.cnf	Mon Dec  2 11:48:46 2013
 @@ -1,6 +1,10 @@
  % original texmf.cnf -- runtime path configuration file for kpathsea.
  % Public domain.
@@ -23,7 +23,7 @@ Patch in OpenBSD paths.
  %  Part 1: Search paths and directories.
  
  % This is the parent directory of our several trees, i.e.,
-@@ -48,10 +51,8 @@
+@@ -48,20 +51,19 @@
  % All trees must be organized according to the TeX Directory Structure
  % (http://tug.org/tds), or files may not be found.
  %
@@ -36,8 +36,12 @@ Patch in OpenBSD paths.
  
  % The main tree of distributed packages and programs:
  TEXMFDIST = $TEXMFROOT/texmf-dist
-@@ -61,7 +62,7 @@ TEXMFDIST = $TEXMFROOT/texmf-dist
- TEXMFMAIN = $TEXMFDIST
+ 
+ % We used to have a separate /texmf tree with some core programs and files.
+ % Keep the variable name.
+-TEXMFMAIN = $TEXMFDIST
++% OpenBSD: Keep this path for now since ports install here.
++TEXMFMAIN = $TEXMFROOT/texmf
  
  % Local additions to the distribution trees.
 -TEXMFLOCAL = $TEXMFROOT/../texmf-local
@@ -45,3 +49,12 @@ Patch in OpenBSD paths.
  
  % TEXMFSYSVAR, where *-sys store cached runtime data.
  TEXMFSYSVAR = $TEXMFROOT/texmf-var
+@@ -91,7 +93,7 @@ TEXMFCONFIG = ~/.texlive2013/texmf-config
+ % should take precedence over distribution files -- although it is
+ % generally a source of confusion to have different versions of a
+ % package installed, whatever the trees, so try to avoid it.
+-TEXMF = {$TEXMFCONFIG,$TEXMFVAR,$TEXMFHOME,!!$TEXMFSYSCONFIG,!!$TEXMFSYSVAR,!!$TEXMFLOCAL,!!$TEXMFDIST}
++TEXMF = {$TEXMFCONFIG,$TEXMFVAR,$TEXMFHOME,!!$TEXMFSYSCONFIG,!!$TEXMFSYSVAR,!!$TEXMFLOCAL,!!$TEXMFDIST, !!$TEXMFMAIN}
+ 
+ % Where to look for ls-R files.  There need not be an ls-R in the
+ % directories in this path, but if there is one, Kpathsea will use it.

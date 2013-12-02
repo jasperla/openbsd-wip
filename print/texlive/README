@@ -44,6 +44,7 @@ Port:
 
  * Move info pages into the right place.
  * Check buildset in bulk.
+ * Check packages under texmf/ work
 
 TexScythe:
 
