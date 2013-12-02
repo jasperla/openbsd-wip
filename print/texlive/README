@@ -15,27 +15,41 @@ TeX Live 2013 - Porting progress
  * Split out conTeXt (use grep)			OK
  * Move manuals and remove pdf manuals		OK
    -> All texmf manuals in -minimal		OK
- * Remove external deps				
-   -> texworks					
-   -> latexmk					
-   -> asymptote					
+ * Remove external deps				OK
+   -> texworks					OK
+   -> latexmk					OK
+   -> asymptote					OK
  * Remove windows junk				OK
  * Get basic texmf packaging:			OK
    -> tlpkg/ stuff not needed (and wont be present) OK
    -> beware errors in the tlpdb (yay)		OK
- * Re-add depenedencies:			
+ * Re-add depenedencies:			OK
  * Hack texmf.cnf				OK
- * Implement @xxx in plists			
+ * Implement @xxx in plists			OK
  * emulate texlinks				OK
  * patch in interpreter paths			OK
  * Take perl modules from extra texmf needed for updmap	OK
- * Generate texmf-var pregen			
-   (all as root) 'mktexlsr', 'fmtutil-sys --all',
-     'updmap-sys', remove ls-R and logs from texmf-var,
-     then tar up.
+ * Generate texmf-var pregen			OK
+   (all as root) 'mktexlsr', 'fmtutil-sys --all', OK
+     'updmap-sys', remove ls-R and logs from texmf-var, OK
+     then tar up.				OK
  * Apply any security/reliability patches	OK
    Search here: http://tug.org/pipermail/tldistro/ OK
  * Remove manpages conflicting with t1utils	OK
+
+TMP:
+----
+
+Port:
+
+ * Move info pages into the right place.
+ * Check buildset in bulk.
+
+TexScythe:
+
+ * Write test for --skip-missing-archpkgs.
+ * Adjust mk_openbsd_plists.py to rm asy, latexmk, texworks automatically.
+ * Adjust mk_openbsd_plists.py to include info files.
 
 Known Issues
 ============
