@@ -31559,8 +31559,6 @@ share/texmf-dist/doc/texlive/texlive-zh-cn/README-live.ZH-CN
 share/texmf-dist/doc/texlive/texlive-zh-cn/tex-live-zh-cn.sty
 share/texmf-dist/doc/texlive/texlive-zh-cn/texlive-zh-cn.pdf
 share/texmf-dist/doc/texlive/texlive-zh-cn/texlive-zh-cn.tex
-share/texmf-dist/doc/texworks/
-share/texmf-dist/doc/texworks/README
 share/texmf-dist/doc/tpic2pdftex/
 share/texmf-dist/doc/tpic2pdftex/Makefile
 share/texmf-dist/doc/tpic2pdftex/beamerexample.pdf
