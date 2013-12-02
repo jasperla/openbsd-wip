@@ -23,7 +23,6 @@
 @man man/man1/lacheck.1
 @man man/man1/latexdiff-vc.1
 @man man/man1/latexdiff.1
-@man man/man1/latexmk.1
 @man man/man1/latexrevise.1
 @man man/man1/luaotfload-tool.1
 @man man/man1/m-tx.1
@@ -25759,8 +25758,6 @@ share/texmf-dist/scripts/latexdiff/latexdiff.pl
 share/texmf-dist/scripts/latexdiff/latexrevise.pl
 share/texmf-dist/scripts/latexfileversion/
 share/texmf-dist/scripts/latexfileversion/latexfileversion
-share/texmf-dist/scripts/latexmk/
-share/texmf-dist/scripts/latexmk/latexmk.pl
 share/texmf-dist/scripts/latexpand/
 share/texmf-dist/scripts/latexpand/latexpand
 share/texmf-dist/scripts/listbib/
