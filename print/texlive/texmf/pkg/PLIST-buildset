@@ -67,6 +67,9 @@
 @man man/man1/xdvi.1
 @man man/man5/fmtutil.cnf.5
 @man man/man5/updmap.cfg.5
+@comment texlive does not use share/texmf any more, but ports will still
+@comment install stuff there.
+share/texmf/
 share/texmf-dist/
 share/texmf-dist/bibtex/
 share/texmf-dist/bibtex/bib/
