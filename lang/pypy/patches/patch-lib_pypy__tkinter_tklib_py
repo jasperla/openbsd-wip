@@ -1,6 +1,6 @@
 $OpenBSD$
---- lib_pypy/_tkinter/tklib.py.orig	Thu Nov 14 09:00:20 2013
-+++ lib_pypy/_tkinter/tklib.py	Sun Nov 24 20:31:54 2013
+--- lib_pypy/_tkinter/tklib.py.orig	Fri Nov 15 19:44:50 2013
++++ lib_pypy/_tkinter/tklib.py	Mon Dec  2 11:23:02 2013
 @@ -109,9 +109,9 @@ int Tk_GetNumMainWindows();
  # XXX find a better way to detect paths
  # XXX pick up CPPFLAGS and LDFLAGS and add to these paths?
@@ -11,6 +11,6 @@ $OpenBSD$
 +    incdirs = ['${MODTCL_INCDIR}', '${MODTK_INCDIR}', '${X11BASE}/include']
 +    linklibs = ['${MODTK_LIB}', '${MODTCL_LIB}']
 +    libdirs = ['${LOCALBASE}/lib', '${X11BASE}/lib']
- else:
-     incdirs=['/usr/include/tcl']
-     linklibs=['tcl', 'tk']
+ elif sys.platform.startswith("freebsd"):
+     incdirs = ['/usr/local/include/tcl8.6', '/usr/local/include/tk8.6', '/usr/local/include/X11', '/usr/local/include']
+     linklibs = ['tk86', 'tcl86']

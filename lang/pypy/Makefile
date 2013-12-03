@@ -8,11 +8,13 @@ COMMENT =		fast implementation of the Python language
 
 # To update PyPy to a new version:
 #   * Bump ${V} but set ${BOOTSTRAP_V} to the old ${V}
+#   * FLAVOR=no_bootstrap make makesum
 #   * FLAVOR=no_bootstrap make plist (fix anything along the way)
-#   * FLAVOR=no_bootstrap make bootstrap
-#   * Set BOOTSTRAP_V=${V}
-#   * Carry on as normal, don't forget to host the bootstrap file
-V =			2.2
+#   * FLAVOR=no_bootstrap make package
+#   * Set BOOTSTRAP_V back to ${V} in the port Makefile
+#   * make bootstrap && make makesum (note, FLAVOR no longer set)
+#   * Try the build using the bootstrap
+V =			2.2.1
 BOOTSTRAP_V =		${V}
 DISTNAME =		pypy-${V}-src
 PKGNAME =		pypy-${V}
