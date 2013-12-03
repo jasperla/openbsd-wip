@@ -1,7 +1,5 @@
 # $OpenBSD: Makefile,v 1.8 2013/09/19 08:39:30 sthen Exp $
 
-VMEM_WARNING =		Yes
-
 ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		fast implementation of the Python language
