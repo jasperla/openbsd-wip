@@ -7,10 +7,10 @@ TeX Live 2013 - Porting progress
 
  * Get base compilers working:			OK
  * Check *_ADJ					OK
- * Test build works.				
+ * Test build works.
    -> amd64					OK
-   -> i386					
-   -> sparc64					
+   -> i386
+   -> sparc64
  * Do texmf split (with new texscythe tool)	OK
  * Split out conTeXt (use grep)			OK
  * Move manuals and remove pdf manuals		OK
@@ -36,15 +36,12 @@ TeX Live 2013 - Porting progress
  * Apply any security/reliability patches	OK
    Search here: http://tug.org/pipermail/tldistro/ OK
  * Remove manpages conflicting with t1utils	OK
+ * Check buildset in bulk.			OK
+ * Move info pages into the right place.
+ * Check various (non-texlive) packages that use the texmf work
 
 TMP:
 ----
-
-Port:
-
- * Move info pages into the right place.
- * Check buildset in bulk.
- * Check packages under texmf/ work
 
 TexScythe:
 
