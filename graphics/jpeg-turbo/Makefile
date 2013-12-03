@@ -2,7 +2,7 @@
 
 COMMENT =	IJG libjpeg compatible, accellerated JPEG (de)compression
 
-V =		1.2.90
+V =		1.3.0
 DISTNAME =	libjpeg-turbo-$V
 SHARED_LIBS +=	jpeg		64.0	# 11.0
 SHARED_LIBS +=	turbojpeg	0.0
