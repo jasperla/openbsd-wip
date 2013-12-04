@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-lib/pkgconfig/compizconfig-python.pc
-lib/python${MODPY_VERSION}/site-packages/compizconfig.so
