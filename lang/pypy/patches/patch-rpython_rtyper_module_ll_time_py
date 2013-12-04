@@ -1,7 +1,21 @@
 $OpenBSD$
 --- rpython/rtyper/module/ll_time.py.orig	Fri Nov 15 19:44:50 2013
-+++ rpython/rtyper/module/ll_time.py	Tue Dec  3 08:50:42 2013
-@@ -86,16 +86,18 @@ class RegisterTime(BaseLazyRegistering):
++++ rpython/rtyper/module/ll_time.py	Wed Dec  4 00:53:54 2013
+@@ -24,8 +24,12 @@ else:
+     FTIME = 'ftime'
+     STRUCT_TIMEB = 'struct timeb'
+     includes = [TIME_H, 'time.h', 'errno.h', 'sys/select.h',
+-                'sys/types.h', 'unistd.h', 'sys/timeb.h',
++                'sys/types.h', 'unistd.h',
+                 'sys/time.h', 'sys/resource.h']
++
++    if not sys.platform.startswith('openbsd'):
++        includes.append('sys/timeb.h')
++
+     need_rusage = True
+ 
+ 
+@@ -86,16 +90,18 @@ class RegisterTime(BaseLazyRegistering):
                  c_gettimeofday = self.llexternal('gettimeofday',
                                   [self.TIMEVALP, rffi.VOIDP], rffi.INT,
                                    _nowrapper=True, releasegil=False)
@@ -27,7 +41,7 @@ $OpenBSD$
  
          c_time = self.llexternal('time', [rffi.VOIDP], rffi.TIME_T,
                                   _nowrapper=True, releasegil=False)
-@@ -115,9 +117,9 @@ class RegisterTime(BaseLazyRegistering):
+@@ -115,9 +121,9 @@ class RegisterTime(BaseLazyRegistering):
                  if rffi.cast(rffi.LONG, errcode) == 0:
                      result = decode_timeval(t)
                  lltype.free(t, flavor='raw')
