@@ -126,10 +126,6 @@
 @bin bin/xdvipdfmx
 @bin bin/xetex
 @comment bin/tlmgr
-@info info/dvipng.info
-@info info/dvips.info
-@info info/kpathsea.info
-@info info/web2c.info
 bin/a2ping
 bin/a5toa4
 bin/adhocfilelist
