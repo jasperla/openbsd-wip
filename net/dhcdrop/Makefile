@@ -21,6 +21,7 @@ EXTRACT_SUFX =		.tar.bz2
 CONFIGURE_STYLE =	gnu
 
 post-extract:
-	perl -pi -e "s,\r\n,\n,g" ${WRKSRC}/man/dhcdrop.8
+	perl -pi -e 's/\r$$//' ${WRKSRC}/man/dhcdrop.8
+	perl -pi -e 's/\s+$$/\n/' ${WRKSRC}/man/dhcdrop.8
 
 .include <bsd.port.mk>
