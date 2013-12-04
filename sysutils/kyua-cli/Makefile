@@ -6,11 +6,11 @@ DISTNAME =		kyua-cli-0.7
 CATEGORIES =		devel sysutils
 HOMEPAGE =		https://code.google.com/p/kyua/
 
-MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c m stdc++
+WANTLIB += 		c sqlite3
 
 BUILD_DEPENDS =		sysutils/atf \
 			devel/lutok \

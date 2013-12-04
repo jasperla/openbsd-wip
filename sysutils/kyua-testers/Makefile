@@ -10,7 +10,11 @@ MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c m stdc++
+WANTLIB += atf-c c
+
+LIB_DEPENDS = sysutils/atf
+
+TEST_DEPENDS = sysutils/kyua-cli
 
 MASTER_SITES =		https://kyua.googlecode.com/files/
 
