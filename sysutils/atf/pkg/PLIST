@@ -1,5 +1,4 @@
 @comment $OpenBSD$
-%%SHARED%%
 @bin bin/atf-sh
 include/atf-c/
 include/atf-c++/
