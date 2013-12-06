@@ -20,6 +20,8 @@ NO_BUILD =		Yes
 
 do-install:
 	cd ${WRKSRC} && perl Makefile.pl -install --prefix=${TRUEPREFIX}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/abi-compliance-checker
+	cd ${WRKSRC}/doc && pax -rw * ${PREFIX}/share/doc/abi-compliance-checker
 
 do-test:
 	cd ${WRKBUILD} && \

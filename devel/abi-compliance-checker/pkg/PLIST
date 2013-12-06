@@ -527,3 +527,12 @@ share/abi-compliance-checker/modules/Targets/unix/descriptors/libxplc.xml
 share/abi-compliance-checker/modules/Targets/unix/descriptors/libxslt.xml
 share/abi-compliance-checker/modules/Targets/unix/descriptors/libzypp.xml
 share/abi-compliance-checker/modules/Targets/unix/descriptors/libzzip.xml
+share/doc/abi-compliance-checker/
+share/doc/abi-compliance-checker/Changes.html
+share/doc/abi-compliance-checker/Descriptor.html
+share/doc/abi-compliance-checker/Options.html
+share/doc/abi-compliance-checker/Readme.html
+share/doc/abi-compliance-checker/SysCheck/
+share/doc/abi-compliance-checker/SysCheck/Descriptor.html
+share/doc/abi-compliance-checker/SysCheck/Examples.html
+share/doc/abi-compliance-checker/SysCheck/Usage.html
