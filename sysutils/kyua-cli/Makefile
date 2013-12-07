@@ -1,13 +1,15 @@
 # $OpenBSD $
 
 COMMENT =		testing framework
-DISTNAME =		kyua-cli-0.7
+VERSION = 		0.7
+DISTNAME =		kyua-cli-${VERSION}
 
 CATEGORIES =		devel sysutils
 HOMEPAGE =		https://code.google.com/p/kyua/
 
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
+# BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += 		c sqlite3

@@ -1,7 +1,8 @@
 # $OpenBSD $
 
 COMMENT =		Automated Testing Framework
-DISTNAME =		atf-0.18
+VERSION =		0.18
+DISTNAME =		atf-${VERSION}
 
 SHARED_LIBS +=  	atf-c++                   0.0 # 0.0
 SHARED_LIBS +=  	atf-c                     0.0 # 0.0
