@@ -1,6 +1,6 @@
 diff -u src/afs/OBSD/osi_machdep.h.orig src/afs/OBSD/osi_machdep.h
---- src/afs/OBSD/osi_machdep.h.orig	Tue Mar 27 01:03:34 2012
-+++ src/afs/OBSD/osi_machdep.h	Tue Dec 11 22:35:23 2012
+--- src/afs/OBSD/osi_machdep.h.orig	Wed Oct  9 16:20:17 2013
++++ src/afs/OBSD/osi_machdep.h	Sun Dec  8 00:18:51 2013
 @@ -216,6 +216,16 @@ extern struct lock afs_global_lock;
  
  #endif /* AFS_OBSD44_ENV */
@@ -18,12 +18,3 @@ diff -u src/afs/OBSD/osi_machdep.h.orig src/afs/OBSD/osi_machdep.h
  #undef SPLVAR
  #define SPLVAR int splvar
  #undef NETPRI
-@@ -234,7 +244,7 @@ extern int (**afs_vnodeop_p) ();
- #define vType(vc)               AFSTOV(vc)->v_type
- #define vSetVfsp(vc, vfsp)      AFSTOV(vc)->v_mount = (vfsp)
- #define vSetType(vc, type)      AFSTOV(vc)->v_type = (type)
--#define IsAfsVnode(v)      ((v)->v_op == afs_vnodeop_p)
-+#define IsAfsVnode(v)      ((v)->v_op == &afs_vops)
- #define SetAfsVnode(v)     /* nothing; done in getnewvnode() */
- 
- #define osi_procname(procname, size) strncpy(procname, curproc->p_comm, size)

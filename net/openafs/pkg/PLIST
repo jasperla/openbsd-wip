@@ -242,6 +242,7 @@ libexec/openafs/
 @man man/man1/dlog.1
 @man man/man1/fs.1
 @man man/man1/fs_apropos.1
+@man man/man1/fs_bypassthreshold.1
 @man man/man1/fs_checkservers.1
 @man man/man1/fs_checkvolumes.1
 @man man/man1/fs_chgrp.1

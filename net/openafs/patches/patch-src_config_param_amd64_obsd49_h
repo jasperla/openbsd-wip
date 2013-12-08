@@ -1,12 +1,10 @@
 $OpenBSD$
---- src/config/param.amd64_obsd49.h.orig	Wed Aug  3 13:20:52 2011
-+++ src/config/param.amd64_obsd49.h	Wed Aug  3 13:20:52 2011
-@@ -0,0 +1,79 @@
-+/*
-+ * Thanks to Jim Rees and University of Michigan CITI, for the initial
-+ * OpenBSD porting work.
-+ */
-+
+--- src/config/param.amd64_obsd49.h.orig	Wed Oct  9 16:20:17 2013
++++ src/config/param.amd64_obsd49.h	Sun Dec  8 00:18:51 2013
+@@ -3,6 +3,85 @@
+  * OpenBSD porting work.
+  */
+ 
 +#ifndef	AFS_PARAM_H
 +#define	AFS_PARAM_H
 +
@@ -81,3 +79,11 @@ $OpenBSD$
 +#endif /* _KERNEL */
 +
 +#endif /* AFS_PARAM_H */
++/*
++ * Thanks to Jim Rees and University of Michigan CITI, for the initial
++ * OpenBSD porting work.
++ */
++
+ #ifndef	AFS_AMD64_PARAM_H
+ #define	AFS_AMD64_PARAM_H
+ 
