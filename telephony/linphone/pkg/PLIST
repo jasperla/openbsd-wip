@@ -1,0 +1,186 @@
+@comment $OpenBSD$
+@bin bin/linphone
+@bin bin/linphonec
+@bin bin/linphonecsh
+@bin bin/lpc2xml_test
+@bin bin/xml2lpc_test
+include/linphone/
+include/linphone/linphonecore.h
+include/linphone/linphonecore_utils.h
+include/linphone/linphonefriend.h
+include/linphone/lpconfig.h
+include/linphone/sipsetup.h
+lib/liblinphone.a
+lib/liblinphone.la
+@lib lib/liblinphone.so.${LIBlinphone_VERSION}
+lib/liblpc2xml.a
+lib/liblpc2xml.la
+@lib lib/liblpc2xml.so.${LIBlpc2xml_VERSION}
+lib/libxml2lpc.a
+lib/libxml2lpc.la
+@lib lib/libxml2lpc.so.${LIBxml2lpc_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/linphone.pc
+man/cs/
+man/cs/man1/
+@man man/cs/man1/linphone.1
+@man man/cs/man1/linphonec.1
+@man man/cs/man1/sipomatic.1
+@man man/man1/linphone.1
+@man man/man1/linphonec.1
+@man man/man1/linphonecsh.1
+@man man/man1/sipomatic.1
+share/applications/linphone.desktop
+share/doc/linphone/
+share/doc/linphone/html/
+share/doc/linphone/html/annotated.html
+share/doc/linphone/html/bc_s.png
+share/doc/linphone/html/bdwn.png
+share/doc/linphone/html/classes.html
+share/doc/linphone/html/closed.png
+share/doc/linphone/html/deprecated.html
+share/doc/linphone/html/dir_40579872d6101d362e48168384007187.html
+share/doc/linphone/html/dir_4ff1f84bc4b6b28e1c0ab671c0bec6a6.html
+share/doc/linphone/html/dir_795b69023ca8e9c07a6875d093e728b8.html
+share/doc/linphone/html/doxygen.css
+share/doc/linphone/html/doxygen.png
+share/doc/linphone/html/dynsections.js
+share/doc/linphone/html/ftv2blank.png
+share/doc/linphone/html/ftv2cl.png
+share/doc/linphone/html/ftv2doc.png
+share/doc/linphone/html/ftv2folderclosed.png
+share/doc/linphone/html/ftv2folderopen.png
+share/doc/linphone/html/ftv2lastnode.png
+share/doc/linphone/html/ftv2link.png
+share/doc/linphone/html/ftv2mlastnode.png
+share/doc/linphone/html/ftv2mnode.png
+share/doc/linphone/html/ftv2mo.png
+share/doc/linphone/html/ftv2node.png
+share/doc/linphone/html/ftv2ns.png
+share/doc/linphone/html/ftv2plastnode.png
+share/doc/linphone/html/ftv2pnode.png
+share/doc/linphone/html/ftv2splitbar.png
+share/doc/linphone/html/ftv2vertline.png
+share/doc/linphone/html/functions.html
+share/doc/linphone/html/functions_vars.html
+share/doc/linphone/html/group__IOS.html
+share/doc/linphone/html/group__authentication.html
+share/doc/linphone/html/group__basic__call__tutorials.html
+share/doc/linphone/html/group__buddy__list.html
+share/doc/linphone/html/group__buddy__tutorials.html
+share/doc/linphone/html/group__call__control.html
+share/doc/linphone/html/group__call__logs.html
+share/doc/linphone/html/group__call__misc.html
+share/doc/linphone/html/group__chatroom.html
+share/doc/linphone/html/group__chatroom__tuto.html
+share/doc/linphone/html/group__conferencing.html
+share/doc/linphone/html/group__initializing.html
+share/doc/linphone/html/group__linphone__address.html
+share/doc/linphone/html/group__media__parameters.html
+share/doc/linphone/html/group__misc.html
+share/doc/linphone/html/group__network__parameters.html
+share/doc/linphone/html/group__port.html
+share/doc/linphone/html/group__proxies.html
+share/doc/linphone/html/group__registration__tutorials.html
+share/doc/linphone/html/group__tunnel.html
+share/doc/linphone/html/group__tutorials.html
+share/doc/linphone/html/index.html
+share/doc/linphone/html/jquery.js
+share/doc/linphone/html/liblinphone_license.html
+share/doc/linphone/html/modules.html
+share/doc/linphone/html/nav_f.png
+share/doc/linphone/html/nav_g.png
+share/doc/linphone/html/nav_h.png
+share/doc/linphone/html/open.png
+share/doc/linphone/html/pages.html
+share/doc/linphone/html/struct__LCSipTransports.html
+share/doc/linphone/html/struct__LinphoneCallStats.html
+share/doc/linphone/html/struct__LinphoneVTable.html
+share/doc/linphone/html/struct__LinphoneVideoPolicy.html
+share/doc/linphone/html/sync_off.png
+share/doc/linphone/html/sync_on.png
+share/doc/linphone/html/tab_a.png
+share/doc/linphone/html/tab_b.png
+share/doc/linphone/html/tab_h.png
+share/doc/linphone/html/tab_s.png
+share/doc/linphone/html/tabs.css
+share/gnome/
+share/gnome/help/
+share/gnome/help/linphone/
+share/gnome/help/linphone/C/
+share/gnome/help/linphone/fr/
+share/gnome/help/linphone/it/
+share/gnome/help/linphone/ja/
+share/linphone/
+share/linphone/COPYING
+share/linphone/about.ui
+share/linphone/buddylookup.ui
+share/linphone/call_logs.ui
+share/linphone/call_statistics.ui
+share/linphone/contact.ui
+share/linphone/dscp_settings.ui
+share/linphone/keypad.ui
+share/linphone/log.ui
+share/linphone/main.ui
+share/linphone/parameters.ui
+share/linphone/password.ui
+share/linphone/rootca.pem
+share/linphone/sip_account.ui
+share/linphone/stock_people.png
+share/linphone/tunnel_config.ui
+share/linphone/waiting.ui
+share/pixmaps/
+share/pixmaps/linphone/
+share/pixmaps/linphone/active_chat.png
+share/pixmaps/linphone/addcall-green.png
+share/pixmaps/linphone/call.png
+share/pixmaps/linphone/call_status_incoming.png
+share/pixmaps/linphone/call_status_outgoing.png
+share/pixmaps/linphone/chat.png
+share/pixmaps/linphone/chat_message_delivered.png
+share/pixmaps/linphone/chat_message_inprogress.png
+share/pixmaps/linphone/chat_message_not_delivered.png
+share/pixmaps/linphone/contact-orange.png
+share/pixmaps/linphone/contact_starred.png
+share/pixmaps/linphone/contact_unstarred.png
+share/pixmaps/linphone/dialer-orange.png
+share/pixmaps/linphone/dialer.png
+share/pixmaps/linphone/history-orange.png
+share/pixmaps/linphone/hold_off.png
+share/pixmaps/linphone/hold_on.png
+share/pixmaps/linphone/linphone-banner.png
+share/pixmaps/linphone/linphone.icns
+share/pixmaps/linphone/linphone.png
+share/pixmaps/linphone/mic_active.png
+share/pixmaps/linphone/mic_muted.png
+share/pixmaps/linphone/notok.png
+share/pixmaps/linphone/ok.png
+share/pixmaps/linphone/speaker.png
+share/pixmaps/linphone/startcall-green.png
+share/pixmaps/linphone/startcall-small.png
+share/pixmaps/linphone/status-green.png
+share/pixmaps/linphone/status-offline.png
+share/pixmaps/linphone/status-orange.png
+share/pixmaps/linphone/status-red.png
+share/pixmaps/linphone/stopcall-red.png
+share/pixmaps/linphone/stopcall-small.png
+share/sounds/
+share/sounds/linphone/
+share/sounds/linphone/hello16000.wav
+share/sounds/linphone/hello8000.wav
+share/sounds/linphone/ringback.wav
+share/sounds/linphone/rings/
+share/sounds/linphone/rings/bigben.wav
+share/sounds/linphone/rings/oldphone-mono-30s.caf
+share/sounds/linphone/rings/oldphone-mono.wav
+share/sounds/linphone/rings/oldphone.wav
+share/sounds/linphone/rings/orig.wav
+share/sounds/linphone/rings/rock.wav
+share/sounds/linphone/rings/sweet.wav
+share/sounds/linphone/rings/synth.wav
+share/sounds/linphone/rings/tapping.wav
+share/sounds/linphone/rings/toy-mono.wav
+share/tutorials/
+share/tutorials/linphone/
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

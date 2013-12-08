@@ -1,0 +1,12 @@
+$OpenBSD$
+Fix linking with libeXosip2 itself (avoid undefined symbol).
+--- src/eXconf.c.orig	Sat Dec  7 17:15:07 2013
++++ src/eXconf.c	Sat Dec  7 17:15:13 2013
+@@ -26,6 +26,7 @@
+ 
+ #include <osip2/osip_mt.h>
+ #include <osip2/osip_condv.h>
++#include <osip2/osip_time.h>
+ 
+ #if defined (_WIN32_WCE)
+ #include "inet_ntop.h"

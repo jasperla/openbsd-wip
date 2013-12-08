@@ -1,0 +1,13 @@
+$OpenBSD$
+Unbreak compilation.
+--- src/audiofilters/oss.c.orig	Mon Jan 14 19:13:45 2013
++++ src/audiofilters/oss.c	Mon Dec  9 01:22:32 2013
+@@ -20,7 +20,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+ #include "mediastreamer2/mssndcard.h"
+ #include "mediastreamer2/msfilter.h"
+ 
+-#include <sys/soundcard.h>
++#include <soundcard.h>
+ 
+ #include <errno.h>
+ #include <assert.h>
