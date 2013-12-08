@@ -1,7 +1,7 @@
 $OpenBSD$
---- src/tubik/Makefile.in.orig	Tue Mar 27 01:03:34 2012
-+++ src/tubik/Makefile.in	Sun Nov 10 15:08:39 2013
-@@ -264,19 +264,19 @@ ${DESTDIR}${libdir}/libubik_pthread.a: libubik_pthread
+--- src/tubik/Makefile.in.orig	Wed Oct  9 16:20:17 2013
++++ src/tubik/Makefile.in	Sun Dec  8 00:31:19 2013
+@@ -262,7 +262,7 @@ ${DESTDIR}${libdir}/libubik_pthread.a: libubik_pthread
  	${INSTALL} $? $@
  
  ${TOP_LIBDIR}/libubik_pthread.a: libubik_pthread.a
@@ -10,17 +10,3 @@ $OpenBSD$
  
  ${DESTDIR}${includedir}/ubik.h: ubik.h
  	${INSTALL} $? $@
- 
- ${TOP_INCDIR}/ubik.h: ubik.h
--	${INSTALL} $? $@
-+	cp $? $@
- 
- ${DESTDIR}${includedir}/ubik_int.h: ubik_int.h
- 	${INSTALL} $? $@
- 
- ${TOP_INCDIR}/ubik_int.h: ubik_int.h
--	${INSTALL} $? $@
-+	cp $? $@
- 
- dest: \
- 	${DEST}/lib/libubik_pthread.a \
