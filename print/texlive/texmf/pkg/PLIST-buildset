@@ -6,6 +6,10 @@
 @conflict texlive_texmf-full-<2013
 @pkgpath print/texlive/texmf-minimal
 @pkgpath print/teTeX/texmf
+@info info/dvips.info
+@info info/kpathsea.info
+@info info/tds.info
+@info info/web2c.info
 @man man/man1/afm2tfm.1
 @man man/man1/allcm.1
 @man man/man1/allec.1

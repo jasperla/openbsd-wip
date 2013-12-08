@@ -5,6 +5,13 @@
 @conflict texlive_texmf-full-<2013
 @conflict texlive_texmf-buildset-<2013
 @pkgpath print/teTeX/texmf
+@info info/eplain.info
+@info info/epspdf.info
+@info info/fontname.info
+@info info/latex2e-es.info
+@info info/latex2e.info
+@info info/mf2pt1.info
+@info info/texdraw.info
 @man man/man1/afm2afm.1
 @man man/man1/afm2pl.1
 @man man/man1/aleph.1
