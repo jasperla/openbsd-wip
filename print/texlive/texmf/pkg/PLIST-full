@@ -6,6 +6,8 @@
 @conflict texlive_texmf-buildset-<2013
 @pkgpath print/texlive/texmf-full
 @pkgpath print/teTeX/texmf
+@info info/dvipng.info
+@info info/latex2man.info
 @man man/man1/a2ping.1
 @man man/man1/arlatex.1
 @man man/man1/asy.1
