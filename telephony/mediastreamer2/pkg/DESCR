@@ -1,0 +1,30 @@
+Mediastreamer2 is a powerful and lightweighted streaming engine
+specialized for voice/video telephony applications.
+
+It is the library that is responsible for all the receiving and
+sending of multimedia streams in linphone, including voice/video
+capture, encoding and decoding, and rendering.
+
+Mediastreamer2 features:
+
+  * Capture and playback from various platform dependent sound
+    architectures (ALSA, AudioUnits, AudioQueue, WaveApi).
+  * Send and receive RTP streams.
+  * Encode and decode the following audio formats: speex, G711, GSM,
+    iLBC, AMR, AMR-WB, G722, SILK, G729, and video formats H263,
+    theora, MPEG4, H264 and VP8.
+  * Read and write from/to a wav file.
+  * Read YUV pictures from a camera based on platform dependents APIs.
+  * Optimized rendering of YUV pictures.
+  * Dual tones generation.
+  * Custom tone detector.
+  * Echo cancelation, based on speex library or webrtc AEC on android.
+  * Audio conferencing.
+  * Audio parametric equalizer.
+  * Volume control, automatic gain control.
+  * ICE for optimized NAT traversal.
+  * Adaptive bitrate control algorithm: for automatic adaption of
+    encoder bitrate based on received RTCP feedback.
+
+Mediastreamer2 can be extended with dynamic plugins, currently H264,
+ILBC, SILK, AMR, AMR-WB and G729 codec plugins are available.

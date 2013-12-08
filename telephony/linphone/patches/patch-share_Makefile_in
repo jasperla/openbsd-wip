@@ -1,0 +1,13 @@
+$OpenBSD$
+Looks like mk-ca-bundle.pl was gone quite a few time ago...
+--- share/Makefile.in.orig	Tue Dec  3 20:24:00 2013
++++ share/Makefile.in	Tue Dec  3 20:27:52 2013
+@@ -832,7 +832,7 @@ uninstall-am: uninstall-linphoneDATA uninstall-linphon
+ 	uninstall-pkgconfigDATA uninstall-ringDATA uninstall-soundDATA
+ 
+ rootca.pem: 
+-	$(top_srcdir)/scripts/mk-ca-bundle.pl rootca.pem
++	cp $(top_srcdir)/share/rootca.pem rootca.pem
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
