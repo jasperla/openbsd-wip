@@ -68,7 +68,7 @@ do-install:
 		${PREFIX}/info/
 
 	# adjust permissions
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/{share/texmf*,man/man*/*}
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/{share/texmf*,man/man*/*,info/*}
 
 # selfauto does not work with our legacy texmf paths, patch in paths.
 post-install:

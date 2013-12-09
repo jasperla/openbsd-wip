@@ -4,6 +4,7 @@
 @conflict texlive_texmf-docs-<2013
 @conflict texlive_texmf-minimal-<2013
 @conflict texlive_texmf-full-<2013
+@conflict texlive_texmf-context-<2013
 @pkgpath print/texlive/texmf-minimal
 @pkgpath print/teTeX/texmf
 @info info/dvips.info
@@ -20,6 +21,7 @@
 @man man/man1/dvipdft.1
 @man man/man1/dvips.1
 @man man/man1/dvired.1
+@man man/man1/dvitomp.1
 @man man/man1/ebb.1
 @man man/man1/etex.1
 @man man/man1/extractbb.1
@@ -52,6 +54,7 @@
 @man man/man1/mktexmf.1
 @man man/man1/mktexpk.1
 @man man/man1/mktextfm.1
+@man man/man1/mpost.1
 @man man/man1/mptopdf.1
 @man man/man1/pdfetex.1
 @man man/man1/pdflatex.1
@@ -71,9 +74,6 @@
 @man man/man1/xdvi.1
 @man man/man5/fmtutil.cnf.5
 @man man/man5/updmap.cfg.5
-@comment texlive does not use share/texmf any more, but ports will still
-@comment install stuff there.
-share/texmf/
 share/texmf-dist/
 share/texmf-dist/bibtex/
 share/texmf-dist/bibtex/bib/
@@ -119,7 +119,6 @@ share/texmf-dist/bibtex/bst/natbib/
 share/texmf-dist/bibtex/bst/natbib/abbrvnat.bst
 share/texmf-dist/bibtex/bst/natbib/plainnat.bst
 share/texmf-dist/bibtex/bst/natbib/unsrtnat.bst
-share/texmf-dist/doc/
 share/texmf-dist/dvipdfmx/
 share/texmf-dist/dvipdfmx/dvipdfmx.cfg
 share/texmf-dist/dvips/
@@ -250,6 +249,10 @@ share/texmf-dist/fonts/afm/ibm/times/ntnb8a.afm
 share/texmf-dist/fonts/afm/ibm/times/ntnbi8a.afm
 share/texmf-dist/fonts/afm/ibm/times/ntnr8a.afm
 share/texmf-dist/fonts/afm/ibm/times/ntnri8a.afm
+share/texmf-dist/fonts/afm/metapost/
+share/texmf-dist/fonts/afm/metapost/freeeuro.afm
+share/texmf-dist/fonts/afm/metapost/psyrgo.afm
+share/texmf-dist/fonts/afm/metapost/zpzdr-reversed.afm
 share/texmf-dist/fonts/afm/public/
 share/texmf-dist/fonts/afm/public/amsfonts/
 share/texmf-dist/fonts/afm/public/amsfonts/cm/
@@ -893,6 +896,8 @@ share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2b.enc
 share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2c.enc
 share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-x2.enc
+share/texmf-dist/fonts/enc/dvips/metapost/
+share/texmf-dist/fonts/enc/dvips/metapost/groff.enc
 share/texmf-dist/fonts/enc/dvips/tetex/
 share/texmf-dist/fonts/enc/dvips/tetex/09fbbfac.enc
 share/texmf-dist/fonts/enc/dvips/tetex/0ef0afca.enc
@@ -933,6 +938,9 @@ share/texmf-dist/fonts/map/dvips/courier/
 share/texmf-dist/fonts/map/dvips/courier/ucr.map
 share/texmf-dist/fonts/map/dvips/helvetic/
 share/texmf-dist/fonts/map/dvips/helvetic/uhv.map
+share/texmf-dist/fonts/map/dvips/metapost/
+share/texmf-dist/fonts/map/dvips/metapost/troff-updmap.map
+share/texmf-dist/fonts/map/dvips/metapost/troff.map
 share/texmf-dist/fonts/map/dvips/mflogo/
 share/texmf-dist/fonts/map/dvips/mflogo/mflogo.map
 share/texmf-dist/fonts/map/dvips/pslatex/
@@ -2728,6 +2736,43 @@ share/texmf-dist/fonts/tfm/jknappen/ec/tcvt2074.tfm
 share/texmf-dist/fonts/tfm/jknappen/ec/tcvt2488.tfm
 share/texmf-dist/fonts/tfm/jknappen/ec/tcvt2986.tfm
 share/texmf-dist/fonts/tfm/jknappen/ec/tcvt3583.tfm
+share/texmf-dist/fonts/tfm/metapost/
+share/texmf-dist/fonts/tfm/metapost/freeeuro.tfm
+share/texmf-dist/fonts/tfm/metapost/pagd8g.tfm
+share/texmf-dist/fonts/tfm/metapost/pagdo8g.tfm
+share/texmf-dist/fonts/tfm/metapost/pagk8g.tfm
+share/texmf-dist/fonts/tfm/metapost/pagko8g.tfm
+share/texmf-dist/fonts/tfm/metapost/pbkd8g.tfm
+share/texmf-dist/fonts/tfm/metapost/pbkdi8g.tfm
+share/texmf-dist/fonts/tfm/metapost/pbkl8g.tfm
+share/texmf-dist/fonts/tfm/metapost/pbkli8g.tfm
+share/texmf-dist/fonts/tfm/metapost/pcrb8g.tfm
+share/texmf-dist/fonts/tfm/metapost/pcrbo8g.tfm
+share/texmf-dist/fonts/tfm/metapost/pcrr8g.tfm
+share/texmf-dist/fonts/tfm/metapost/pcrro8g.tfm
+share/texmf-dist/fonts/tfm/metapost/phvb8g.tfm
+share/texmf-dist/fonts/tfm/metapost/phvb8gn.tfm
+share/texmf-dist/fonts/tfm/metapost/phvbo8g.tfm
+share/texmf-dist/fonts/tfm/metapost/phvbo8gn.tfm
+share/texmf-dist/fonts/tfm/metapost/phvr8g.tfm
+share/texmf-dist/fonts/tfm/metapost/phvr8gn.tfm
+share/texmf-dist/fonts/tfm/metapost/phvro8g.tfm
+share/texmf-dist/fonts/tfm/metapost/phvro8gn.tfm
+share/texmf-dist/fonts/tfm/metapost/pncb8g.tfm
+share/texmf-dist/fonts/tfm/metapost/pncbi8g.tfm
+share/texmf-dist/fonts/tfm/metapost/pncr8g.tfm
+share/texmf-dist/fonts/tfm/metapost/pncri8g.tfm
+share/texmf-dist/fonts/tfm/metapost/pplb8g.tfm
+share/texmf-dist/fonts/tfm/metapost/pplbi8g.tfm
+share/texmf-dist/fonts/tfm/metapost/pplr8g.tfm
+share/texmf-dist/fonts/tfm/metapost/pplri8g.tfm
+share/texmf-dist/fonts/tfm/metapost/psyrgo.tfm
+share/texmf-dist/fonts/tfm/metapost/ptmb8g.tfm
+share/texmf-dist/fonts/tfm/metapost/ptmbi8g.tfm
+share/texmf-dist/fonts/tfm/metapost/ptmr8g.tfm
+share/texmf-dist/fonts/tfm/metapost/ptmri8g.tfm
+share/texmf-dist/fonts/tfm/metapost/pzcmi8g.tfm
+share/texmf-dist/fonts/tfm/metapost/zpzdr-reversed.tfm
 share/texmf-dist/fonts/tfm/monotype/
 share/texmf-dist/fonts/tfm/monotype/helvetic/
 share/texmf-dist/fonts/tfm/monotype/helvetic/arb10u.tfm
@@ -3173,6 +3218,8 @@ share/texmf-dist/fonts/type1/hoekwater/mflogo/logod10.pfb
 share/texmf-dist/fonts/type1/hoekwater/mflogo/logosl10.pfb
 share/texmf-dist/fonts/type1/hoekwater/mflogo/logosl8.pfb
 share/texmf-dist/fonts/type1/hoekwater/mflogo/logosl9.pfb
+share/texmf-dist/fonts/type1/metapost/
+share/texmf-dist/fonts/type1/metapost/freeeuro.pfa
 share/texmf-dist/fonts/type1/public/
 share/texmf-dist/fonts/type1/public/amsfonts/
 share/texmf-dist/fonts/type1/public/amsfonts/cm/
@@ -4256,6 +4303,48 @@ share/texmf-dist/metafont/misc/rtest.mf
 share/texmf-dist/metafont/misc/test.mf
 share/texmf-dist/metafont/misc/waits.mf
 share/texmf-dist/metafont/misc/ztest.mf
+share/texmf-dist/metapost/
+share/texmf-dist/metapost/base/
+share/texmf-dist/metapost/base/TEX.mp
+share/texmf-dist/metapost/base/boxes.mp
+share/texmf-dist/metapost/base/format.mp
+share/texmf-dist/metapost/base/graph.mp
+share/texmf-dist/metapost/base/marith.mp
+share/texmf-dist/metapost/base/mfplain.mp
+share/texmf-dist/metapost/base/mpost.mp
+share/texmf-dist/metapost/base/plain.mp
+share/texmf-dist/metapost/base/rboxes.mp
+share/texmf-dist/metapost/base/sarith.mp
+share/texmf-dist/metapost/base/string.mp
+share/texmf-dist/metapost/base/texnum.mp
+share/texmf-dist/metapost/base/troffnum.mp
+share/texmf-dist/metapost/config/
+share/texmf-dist/metapost/config/mfplain.ini
+share/texmf-dist/metapost/misc/
+share/texmf-dist/metapost/misc/null.mp
+share/texmf-dist/metapost/support/
+share/texmf-dist/metapost/support/charlib/
+share/texmf-dist/metapost/support/charlib/12
+share/texmf-dist/metapost/support/charlib/14
+share/texmf-dist/metapost/support/charlib/34
+share/texmf-dist/metapost/support/charlib/Ao
+share/texmf-dist/metapost/support/charlib/Fi
+share/texmf-dist/metapost/support/charlib/Fl
+share/texmf-dist/metapost/support/charlib/L1
+share/texmf-dist/metapost/support/charlib/LH
+share/texmf-dist/metapost/support/charlib/Lb
+share/texmf-dist/metapost/support/charlib/Sl
+share/texmf-dist/metapost/support/charlib/ao.x
+share/texmf-dist/metapost/support/charlib/bx
+share/texmf-dist/metapost/support/charlib/ci
+share/texmf-dist/metapost/support/charlib/ff
+share/texmf-dist/metapost/support/charlib/lh.x
+share/texmf-dist/metapost/support/charlib/ob
+share/texmf-dist/metapost/support/charlib/rh
+share/texmf-dist/metapost/support/charlib/sq
+share/texmf-dist/metapost/support/charlib/twiddle
+share/texmf-dist/metapost/support/trchars.adj
+share/texmf-dist/metapost/support/trfonts.map
 share/texmf-dist/mft/
 share/texmf-dist/mft/base/
 share/texmf-dist/mft/base/README
@@ -4278,6 +4367,8 @@ share/texmf-dist/scripts/context/
 share/texmf-dist/scripts/context/perl/
 share/texmf-dist/scripts/context/perl/mptopdf.pl
 share/texmf-dist/scripts/context/stubs/
+share/texmf-dist/scripts/context/stubs/mswin/
+share/texmf-dist/scripts/context/stubs/mswin/mptopdf.exe
 share/texmf-dist/scripts/lua-alt-getopt/
 share/texmf-dist/scripts/lua-alt-getopt/alt_getopt.lua
 share/texmf-dist/scripts/oberdiek/
@@ -4966,6 +5057,9 @@ share/texmf-dist/tex/generic/hyphen/hypht1.tex
 share/texmf-dist/tex/generic/hyphen/zerohyph.tex
 share/texmf-dist/tex/generic/ifxetex/
 share/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+share/texmf-dist/tex/generic/metapost/
+share/texmf-dist/tex/generic/metapost/mproof.tex
+share/texmf-dist/tex/generic/metapost/mpsproof.tex
 share/texmf-dist/tex/generic/misc/
 share/texmf-dist/tex/generic/misc/bibnames.sty
 share/texmf-dist/tex/generic/misc/null.tex
@@ -5915,7 +6009,6 @@ share/texmf-dist/xdvi/XDvi
 share/texmf-dist/xdvi/pixmap/
 share/texmf-dist/xdvi/pixmap/toolbar.xpm
 share/texmf-dist/xdvi/pixmap/toolbar2.xpm
-share/texmf-var/
 share/texmf-var/fonts/
 share/texmf-var/fonts/map/
 share/texmf-var/fonts/map/dvipdfmx/

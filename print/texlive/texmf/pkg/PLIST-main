@@ -4,6 +4,7 @@
 @conflict texlive_texmf-docs-<2013
 @conflict texlive_texmf-full-<2013
 @conflict texlive_texmf-buildset-<2013
+@conflict texlive_texmf-context-<2013
 @pkgpath print/teTeX/texmf
 @info info/eplain.info
 @info info/epspdf.info
@@ -42,7 +43,6 @@
 @man man/man1/dvilj6.1
 @man man/man1/dviselect.1
 @man man/man1/dvitodvi.1
-@man man/man1/dvitomp.1
 @man man/man1/e2pall.1
 @man man/man1/eplain.1
 @man man/man1/epstopdf.1
@@ -63,7 +63,6 @@
 @man man/man1/mendex.1
 @man man/man1/mmafm.1
 @man man/man1/mmpfb.1
-@man man/man1/mpost.1
 @man man/man1/odvicopy.1
 @man man/man1/odvitype.1
 @man man/man1/ofm2opl.1
@@ -195,7 +194,6 @@ share/texmf-dist/bibtex/csf/polish-csf/88592pl.csf
 share/texmf-dist/bibtex/csf/polish-csf/cp1250pl.csf
 share/texmf-dist/bibtex/csf/polish-csf/cp852pl.csf
 share/texmf-dist/bibtex/csf/polish-csf/iso8859-7.csf
-share/texmf-dist/doc/
 share/texmf-dist/doc/latex/
 share/texmf-dist/doc/latex/koma-script/
 share/texmf-dist/doc/latex/koma-script/INSTALL.txt
@@ -824,10 +822,6 @@ share/texmf-dist/fonts/afm/jmn/
 share/texmf-dist/fonts/afm/jmn/hans/
 share/texmf-dist/fonts/afm/jmn/hans/hans-sh.afm
 share/texmf-dist/fonts/afm/jmn/hans/hans.afm
-share/texmf-dist/fonts/afm/metapost/
-share/texmf-dist/fonts/afm/metapost/freeeuro.afm
-share/texmf-dist/fonts/afm/metapost/psyrgo.afm
-share/texmf-dist/fonts/afm/metapost/zpzdr-reversed.afm
 share/texmf-dist/fonts/afm/public/
 share/texmf-dist/fonts/afm/public/aramaic-serto/
 share/texmf-dist/fonts/afm/public/aramaic-serto/assy.afm
@@ -2348,8 +2342,6 @@ share/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc
 share/texmf-dist/fonts/enc/dvips/lm/lm-t5.enc
 share/texmf-dist/fonts/enc/dvips/lm/lm-texnansi.enc
 share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
-share/texmf-dist/fonts/enc/dvips/metapost/
-share/texmf-dist/fonts/enc/dvips/metapost/groff.enc
 share/texmf-dist/fonts/enc/dvips/pl/
 share/texmf-dist/fonts/enc/dvips/pl/plin.enc
 share/texmf-dist/fonts/enc/dvips/pl/plit.enc
@@ -2569,9 +2561,6 @@ share/texmf-dist/fonts/map/dvips/lm/lm-ts1.map
 share/texmf-dist/fonts/map/dvips/lm/lm.map
 share/texmf-dist/fonts/map/dvips/marvosym/
 share/texmf-dist/fonts/map/dvips/marvosym/marvosym.map
-share/texmf-dist/fonts/map/dvips/metapost/
-share/texmf-dist/fonts/map/dvips/metapost/troff-updmap.map
-share/texmf-dist/fonts/map/dvips/metapost/troff.map
 share/texmf-dist/fonts/map/dvips/montex/
 share/texmf-dist/fonts/map/dvips/montex/mongolian.map
 share/texmf-dist/fonts/map/dvips/mxedruli/
@@ -7177,43 +7166,6 @@ share/texmf-dist/fonts/tfm/jmn/
 share/texmf-dist/fonts/tfm/jmn/hans/
 share/texmf-dist/fonts/tfm/jmn/hans/hans-sh.tfm
 share/texmf-dist/fonts/tfm/jmn/hans/hans.tfm
-share/texmf-dist/fonts/tfm/metapost/
-share/texmf-dist/fonts/tfm/metapost/freeeuro.tfm
-share/texmf-dist/fonts/tfm/metapost/pagd8g.tfm
-share/texmf-dist/fonts/tfm/metapost/pagdo8g.tfm
-share/texmf-dist/fonts/tfm/metapost/pagk8g.tfm
-share/texmf-dist/fonts/tfm/metapost/pagko8g.tfm
-share/texmf-dist/fonts/tfm/metapost/pbkd8g.tfm
-share/texmf-dist/fonts/tfm/metapost/pbkdi8g.tfm
-share/texmf-dist/fonts/tfm/metapost/pbkl8g.tfm
-share/texmf-dist/fonts/tfm/metapost/pbkli8g.tfm
-share/texmf-dist/fonts/tfm/metapost/pcrb8g.tfm
-share/texmf-dist/fonts/tfm/metapost/pcrbo8g.tfm
-share/texmf-dist/fonts/tfm/metapost/pcrr8g.tfm
-share/texmf-dist/fonts/tfm/metapost/pcrro8g.tfm
-share/texmf-dist/fonts/tfm/metapost/phvb8g.tfm
-share/texmf-dist/fonts/tfm/metapost/phvb8gn.tfm
-share/texmf-dist/fonts/tfm/metapost/phvbo8g.tfm
-share/texmf-dist/fonts/tfm/metapost/phvbo8gn.tfm
-share/texmf-dist/fonts/tfm/metapost/phvr8g.tfm
-share/texmf-dist/fonts/tfm/metapost/phvr8gn.tfm
-share/texmf-dist/fonts/tfm/metapost/phvro8g.tfm
-share/texmf-dist/fonts/tfm/metapost/phvro8gn.tfm
-share/texmf-dist/fonts/tfm/metapost/pncb8g.tfm
-share/texmf-dist/fonts/tfm/metapost/pncbi8g.tfm
-share/texmf-dist/fonts/tfm/metapost/pncr8g.tfm
-share/texmf-dist/fonts/tfm/metapost/pncri8g.tfm
-share/texmf-dist/fonts/tfm/metapost/pplb8g.tfm
-share/texmf-dist/fonts/tfm/metapost/pplbi8g.tfm
-share/texmf-dist/fonts/tfm/metapost/pplr8g.tfm
-share/texmf-dist/fonts/tfm/metapost/pplri8g.tfm
-share/texmf-dist/fonts/tfm/metapost/psyrgo.tfm
-share/texmf-dist/fonts/tfm/metapost/ptmb8g.tfm
-share/texmf-dist/fonts/tfm/metapost/ptmbi8g.tfm
-share/texmf-dist/fonts/tfm/metapost/ptmr8g.tfm
-share/texmf-dist/fonts/tfm/metapost/ptmri8g.tfm
-share/texmf-dist/fonts/tfm/metapost/pzcmi8g.tfm
-share/texmf-dist/fonts/tfm/metapost/zpzdr-reversed.tfm
 share/texmf-dist/fonts/tfm/ptex/
 share/texmf-dist/fonts/tfm/ptex/ascgrp/
 share/texmf-dist/fonts/tfm/ptex/ascgrp/ascgrp.tfm
@@ -21328,8 +21280,6 @@ share/texmf-dist/fonts/type1/jmn/hans/hans-sh.pfb
 share/texmf-dist/fonts/type1/jmn/hans/hans-sh.pfm
 share/texmf-dist/fonts/type1/jmn/hans/hans.pfb
 share/texmf-dist/fonts/type1/jmn/hans/hans.pfm
-share/texmf-dist/fonts/type1/metapost/
-share/texmf-dist/fonts/type1/metapost/freeeuro.pfa
 share/texmf-dist/fonts/type1/ptex/
 share/texmf-dist/fonts/type1/ptex/ascgrp/
 share/texmf-dist/fonts/type1/ptex/ascgrp/ascgrp.pfb
@@ -28635,20 +28585,6 @@ share/texmf-dist/metafont/roex/roex.mf
 share/texmf-dist/metapost/
 share/texmf-dist/metapost/automata/
 share/texmf-dist/metapost/automata/automata.mp
-share/texmf-dist/metapost/base/
-share/texmf-dist/metapost/base/TEX.mp
-share/texmf-dist/metapost/base/boxes.mp
-share/texmf-dist/metapost/base/format.mp
-share/texmf-dist/metapost/base/graph.mp
-share/texmf-dist/metapost/base/marith.mp
-share/texmf-dist/metapost/base/mfplain.mp
-share/texmf-dist/metapost/base/mpost.mp
-share/texmf-dist/metapost/base/plain.mp
-share/texmf-dist/metapost/base/rboxes.mp
-share/texmf-dist/metapost/base/sarith.mp
-share/texmf-dist/metapost/base/string.mp
-share/texmf-dist/metapost/base/texnum.mp
-share/texmf-dist/metapost/base/troffnum.mp
 share/texmf-dist/metapost/bbcard/
 share/texmf-dist/metapost/bbcard/bbcard.mp
 share/texmf-dist/metapost/bbcard/breakwidth.mp
@@ -28759,8 +28695,6 @@ share/texmf-dist/metapost/cmarrows/tgbx0005.mp
 share/texmf-dist/metapost/cmarrows/tgbx0006.mp
 share/texmf-dist/metapost/cmarrows/tgbx0007.mp
 share/texmf-dist/metapost/cmarrows/tgbx0027.mp
-share/texmf-dist/metapost/config/
-share/texmf-dist/metapost/config/mfplain.ini
 share/texmf-dist/metapost/drv/
 share/texmf-dist/metapost/drv/drv.mp
 share/texmf-dist/metapost/dviincl/
@@ -28839,8 +28773,6 @@ share/texmf-dist/metapost/mf2pt1/mf2pt1.mp
 share/texmf-dist/metapost/mfpic/
 share/texmf-dist/metapost/mfpic/dvipsnam.mp
 share/texmf-dist/metapost/mfpic/grafbase.mp
-share/texmf-dist/metapost/misc/
-share/texmf-dist/metapost/misc/null.mp
 share/texmf-dist/metapost/mp3d/
 share/texmf-dist/metapost/mp3d/3d.mp
 share/texmf-dist/metapost/mp3d/3danim.mp
@@ -28872,29 +28804,6 @@ share/texmf-dist/metapost/splines/testsplines.mp
 share/texmf-dist/metapost/suanpan/
 share/texmf-dist/metapost/suanpan/abacus.mp
 share/texmf-dist/metapost/suanpan/suanpan.mp
-share/texmf-dist/metapost/support/
-share/texmf-dist/metapost/support/charlib/
-share/texmf-dist/metapost/support/charlib/12
-share/texmf-dist/metapost/support/charlib/14
-share/texmf-dist/metapost/support/charlib/34
-share/texmf-dist/metapost/support/charlib/Ao
-share/texmf-dist/metapost/support/charlib/Fi
-share/texmf-dist/metapost/support/charlib/Fl
-share/texmf-dist/metapost/support/charlib/L1
-share/texmf-dist/metapost/support/charlib/LH
-share/texmf-dist/metapost/support/charlib/Lb
-share/texmf-dist/metapost/support/charlib/Sl
-share/texmf-dist/metapost/support/charlib/ao.x
-share/texmf-dist/metapost/support/charlib/bx
-share/texmf-dist/metapost/support/charlib/ci
-share/texmf-dist/metapost/support/charlib/ff
-share/texmf-dist/metapost/support/charlib/lh.x
-share/texmf-dist/metapost/support/charlib/ob
-share/texmf-dist/metapost/support/charlib/rh
-share/texmf-dist/metapost/support/charlib/sq
-share/texmf-dist/metapost/support/charlib/twiddle
-share/texmf-dist/metapost/support/trchars.adj
-share/texmf-dist/metapost/support/trfonts.map
 share/texmf-dist/metapost/tabvar/
 share/texmf-dist/metapost/tabvar/tabvar.mp
 share/texmf-dist/metapost/textpath/
@@ -29952,9 +29861,6 @@ share/texmf-dist/tex/generic/kastrup/binhex.tex
 share/texmf-dist/tex/generic/levy/
 share/texmf-dist/tex/generic/levy/greekmacros.tex
 share/texmf-dist/tex/generic/levy/slgreek.sty
-share/texmf-dist/tex/generic/metapost/
-share/texmf-dist/tex/generic/metapost/mproof.tex
-share/texmf-dist/tex/generic/metapost/mpsproof.tex
 share/texmf-dist/tex/generic/mfpic/
 share/texmf-dist/tex/generic/mfpic/mfpic.sty
 share/texmf-dist/tex/generic/mfpic/mfpic.tex
