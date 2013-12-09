@@ -6009,6 +6009,7 @@ share/texmf-dist/xdvi/XDvi
 share/texmf-dist/xdvi/pixmap/
 share/texmf-dist/xdvi/pixmap/toolbar.xpm
 share/texmf-dist/xdvi/pixmap/toolbar2.xpm
+share/texmf-var/
 share/texmf-var/fonts/
 share/texmf-var/fonts/map/
 share/texmf-var/fonts/map/dvipdfmx/
