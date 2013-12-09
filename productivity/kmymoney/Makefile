@@ -3,9 +3,8 @@ COMMENT =		accounting for KDE 4
 CATEGORIES =		productivity x11
 HOMEPAGE =		http://kmymoney2.sourceforge.net
 MAINTAINER =		Vadim Zhukov <persgray@gmail.com>
-VERSION =		4.6.3
+VERSION =		4.6.4
 DISTNAME =		kmymoney-${VERSION}
-REVISION =		0
 
 SHARED_LIBS =		kmm_kdchart		0.0
 SHARED_LIBS +=		kmm_mymoney		0.0
@@ -24,7 +23,6 @@ WANTLIB += kresources kutils m nepomuk nepomukutils ofx osp phonon_s
 WANTLIB += pthread qgpgme soprano stdc++ z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=kmymoney2/KMyMoney-KDE4/${VERSION}/}
-EXTRACT_SUFX =	.tar.bz2
 
 MODULES =	x11/kde4
 MODKDE4_USE =	pim
@@ -36,7 +34,7 @@ RUN_DEPENDS =	devel/boost \
 		misc/shared-mime-info
 
 LIB_DEPENDS =	devel/libofx>=0.9.4 \
-		productivity/libalkimia \
+		productivity/libalkimia,${MODKDE4_FLAVOR} \
 		textproc/libical
 
 #TEST_DEPENDS =	???
