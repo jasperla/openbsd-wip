@@ -232,3 +232,14 @@ share/doc/lutok/tab_b.png
 share/doc/lutok/tab_h.png
 share/doc/lutok/tab_s.png
 share/doc/lutok/tabs.css
+tests/
+tests/lutok/
+tests/lutok/Atffile
+tests/lutok/Kyuafile
+@bin tests/lutok/c_gate_test
+@bin tests/lutok/debug_test
+tests/lutok/examples_test
+@bin tests/lutok/exceptions_test
+@bin tests/lutok/operations_test
+@bin tests/lutok/stack_cleaner_test
+@bin tests/lutok/state_test
