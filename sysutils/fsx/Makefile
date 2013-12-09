@@ -5,17 +5,16 @@ COMMENT =		file system exerciser
 DISTNAME =		fsx-0.1
 PKGNAME =		${DISTNAME}
 
-CATEGORIES =	sysutils devel
+CATEGORIES =		sysutils devel
 
 HOMEPAGE =		http://codemonkey.org.uk/projects/fsx/
 
-MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =	http://codemonkey.org.uk/projects/fsx/
+# APPLE PUBLIC SOURCE LICENSE
+MASTER_SITES =		http://codemonkey.org.uk/projects/fsx/
 
 DISTFILES =		dfly-fsx.c
 EXTRACT_ONLY =
