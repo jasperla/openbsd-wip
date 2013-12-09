@@ -22,9 +22,6 @@ PKGNAME-main =		${PKGNAME}
 PKGNAME-mediawiki =	libmediawiki-1.0.0
 PKGNAME-vkontakte =	libkvkontakte-1.0.0
 
-REVISION-face =		3
-REVISION-mediawiki =	2
-REVISION-vkontakte =	3
 
 EXTRACT_SUFX =		.tar.bz2
 
@@ -71,7 +68,7 @@ WANTLIB-kipi += lib/qt4/QtTest lib/qt4/QtXml
 WANTLIB-kipi += ${KDE4LIB}/kcalcore ${KDE4LIB}/kdcraw ${KDE4LIB}/kexiv2
 WANTLIB-kipi += ${KDE4LIB}/kfile ${KDE4LIB}/khtml
 WANTLIB-kipi += ${KDE4LIB}/kio ${KDE4LIB}/kipi ${KDE4LIB}/kjs ${KDE4LIB}/kparts
-WANTLIB-kipi += ${KDE4LIB}/ksane 
+WANTLIB-kipi += ${KDE4LIB}/ksane
 WANTLIB-kipi += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils ${KDE4LIB}/solid
 WANTLIB-kipi += ${KDE4LIB}/threadweaver
 WANTLIB-kipi += opencv_core opencv_highgui opencv_legacy
@@ -117,7 +114,7 @@ BUILD_DEPENDS =		devel/boost \
 
 RUN_DEPENDS-face =	${MODKDE4_RUN_DEPENDS}
 
-RUN_DEPENDS-geomap =
+RUN_DEPENDS-geomap =	${MODGETTEXT_RUN_DEPENDS}
 
 RUN_DEPENDS-kipi =	${MODGETTEXT_RUN_DEPENDS} \
 			${MODKDE4_RUN_DEPENDS} \
@@ -125,7 +122,8 @@ RUN_DEPENDS-kipi =	${MODGETTEXT_RUN_DEPENDS} \
 			misc/shared-desktop-ontologies \
 			x11/gtk+2,-guic
 
-RUN_DEPENDS-main =	${MODKDE4_RUN_DEPENDS} \
+RUN_DEPENDS-main =	${MODGETTEXT_RUN_DEPENDS} \
+			${MODKDE4_RUN_DEPENDS} \
 			devel/desktop-file-utils \
 			databases/mysql,-server \
 			misc/shared-desktop-ontologies \
