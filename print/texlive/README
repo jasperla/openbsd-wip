@@ -37,18 +37,9 @@ TeX Live 2013 - Porting progress
    Search here: http://tug.org/pipermail/tldistro/ OK
  * Remove manpages conflicting with t1utils	OK
  * Check buildset in bulk.			OK
- * Move info pages into the right place.
+ * Move info pages into the right place.	OK
  * Check various (non-texlive) packages that use the texmf work
  * Install everything and run pkg_check(8)
-
-NOTES:
-------
-
-TexScythe:
-
- * Write test for --skip-missing-archpkgs.
- * Adjust mk_openbsd_plists.py to rm asy, latexmk, texworks automatically.
- * Adjust mk_openbsd_plists.py to include info files.
 
 Known Issues
 ============
