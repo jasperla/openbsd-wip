@@ -225,20 +225,13 @@ share/doc/lutok/search/variables_6f.html
 share/doc/lutok/search/variables_6f.js
 share/doc/lutok/search/variables_73.html
 share/doc/lutok/search/variables_73.js
-share/doc/lutok/sync_off.png
-share/doc/lutok/sync_on.png
 share/doc/lutok/tab_a.png
 share/doc/lutok/tab_b.png
 share/doc/lutok/tab_h.png
 share/doc/lutok/tab_s.png
 share/doc/lutok/tabs.css
 tests/
-tests/
 tests/lutok/
-tests/lutok/
-tests/lutok/Atffile
-tests/lutok/Atffile
-tests/lutok/Kyuafile
 tests/lutok/Kyuafile
 @bin tests/lutok/c_gate_test
 @bin tests/lutok/debug_test
