@@ -4,7 +4,7 @@ COMMENT =		scriptable interfaces to interact with test programs
 VERSION =		0.1
 DISTNAME =		kyua-testers-${VERSION}
 
-CATEGORIES =		devel sysutils
+CATEGORIES =		devel
 HOMEPAGE =		https://code.google.com/p/kyua/
 
 MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
