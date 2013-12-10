@@ -13,15 +13,15 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c m sqlite3 stdc++
 
-BUILD_DEPENDS =		sysutils/atf \
+BUILD_DEPENDS =		devel/atf \
 			devel/lutok \
-			sysutils/kyua-testers
+			devel/kyua-testers
 
 MASTER_SITES =		https://kyua.googlecode.com/files/
 
 CONFIGURE_STYLE =	gnu
 
-TEST_DEPENDS =		sysutils/kyua-cli
+TEST_DEPENDS =		devel/kyua-cli
 
 PORTHOME =		${WRKDIR}
 
