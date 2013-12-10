@@ -3,7 +3,7 @@
 COMMENT =		lightweight C++ API for Lua
 DISTNAME =		lutok-0.3
 
-SHARED_LIBS +=  	lutok                     0.0 # 2.0
+SHARED_LIBS +=		lutok                     0.0 # 2.0
 CATEGORIES =		devel sysutils
 HOMEPAGE =		https://code.google.com/p/lutok/
 
@@ -15,8 +15,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += 		c m stdc++
 
 MODULES =		lang/lua
-
-LIB_DEPENDS=   		${MODLUA_LIB_DEPENDS}
 
 MASTER_SITES =		https://lutok.googlecode.com/files/
 
