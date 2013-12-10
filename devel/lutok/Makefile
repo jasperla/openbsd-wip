@@ -18,13 +18,13 @@ MODULES =		lang/lua
 
 MASTER_SITES =		https://lutok.googlecode.com/files/
 
-TEST_TARGET=		check
+TEST_DEPENDS =          sysutils/kyua-cli
 
 CONFIGURE_STYLE =	gnu
 
-CONFIGURE_ARGS =	--with-atf=auto
-
 CONFIGURE_ENV= 		LUA_CFLAGS="`pkg-config --cflags ${MODLUA_DEP}`" \
                 	LUA_LIBS="`pkg-config --libs ${MODLUA_DEP}`"
+
+PORTHOME =              ${WRKDIR}
 
 .include <bsd.port.mk>
