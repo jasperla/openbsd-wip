@@ -12,9 +12,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += atf-c c
 
-LIB_DEPENDS = sysutils/atf
+LIB_DEPENDS = devel/atf
 
-TEST_DEPENDS = sysutils/kyua-cli
+TEST_DEPENDS = devel/kyua-cli
 
 MASTER_SITES =		https://kyua.googlecode.com/files/
 
