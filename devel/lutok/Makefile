@@ -1,7 +1,7 @@
 # $OpenBSD $
 
 COMMENT =		lightweight C++ API for Lua
-DISTNAME =		lutok-0.3
+DISTNAME =		lutok-0.4
 
 SHARED_LIBS +=		lutok                     0.0 # 2.0
 CATEGORIES =		devel
@@ -18,7 +18,7 @@ MODULES =		lang/lua
 
 MASTER_SITES =		https://lutok.googlecode.com/files/
 
-TEST_DEPENDS =          sysutils/kyua-cli
+TEST_DEPENDS =          devel/kyua-cli
 
 CONFIGURE_STYLE =	gnu
 
