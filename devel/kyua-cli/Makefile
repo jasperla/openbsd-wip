@@ -1,8 +1,7 @@
 # $OpenBSD $
 
 COMMENT =		testing framework
-VERSION = 		0.7
-DISTNAME =		kyua-cli-${VERSION}
+DISTNAME =		kyua-cli-0.7
 
 CATEGORIES =		devel
 HOMEPAGE =		https://code.google.com/p/kyua/

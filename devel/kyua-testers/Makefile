@@ -1,8 +1,7 @@
 # $OpenBSD $
 
 COMMENT =		scriptable interfaces to interact with test programs
-VERSION =		0.1
-DISTNAME =		kyua-testers-${VERSION}
+DISTNAME =		kyua-testers-0.1
 
 CATEGORIES =		devel
 HOMEPAGE =		https://code.google.com/p/kyua/
