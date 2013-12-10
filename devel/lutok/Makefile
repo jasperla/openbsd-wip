@@ -4,7 +4,7 @@ COMMENT =		lightweight C++ API for Lua
 DISTNAME =		lutok-0.3
 
 SHARED_LIBS +=		lutok                     0.0 # 2.0
-CATEGORIES =		devel sysutils
+CATEGORIES =		devel
 HOMEPAGE =		https://code.google.com/p/lutok/
 
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
