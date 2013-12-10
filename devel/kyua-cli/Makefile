@@ -4,7 +4,7 @@ COMMENT =		testing framework
 VERSION = 		0.7
 DISTNAME =		kyua-cli-${VERSION}
 
-CATEGORIES =		devel sysutils
+CATEGORIES =		devel
 HOMEPAGE =		https://code.google.com/p/kyua/
 
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
