@@ -21,4 +21,6 @@ MASTER_SITES =		https://kyua.googlecode.com/files/
 
 CONFIGURE_STYLE =	gnu
 
+PORTHOME =		${WRKDIR}
+
 .include <bsd.port.mk>
