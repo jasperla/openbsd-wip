@@ -1,7 +1,7 @@
 # $OpenBSD $
 
 COMMENT =		testing framework
-DISTNAME =		kyua-cli-0.7
+DISTNAME =		kyua-cli-0.8
 
 CATEGORIES =		devel
 HOMEPAGE =		https://code.google.com/p/kyua/
@@ -19,10 +19,19 @@ BUILD_DEPENDS =		devel/atf \
 
 MASTER_SITES =		https://kyua.googlecode.com/files/
 
+AUTOCONF_VERSION=       2.69
+AUTOMAKE_VERSION =	1.9
 CONFIGURE_STYLE =	gnu
 
 TEST_DEPENDS =		devel/kyua-cli
 
 PORTHOME =		${WRKDIR}
+WRKSRC =		${WRKDIR}/kyua/
+
+pre-configure:
+		@cd ${WRKSRC} && \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		autoreconf -i -s
 
 .include <bsd.port.mk>
