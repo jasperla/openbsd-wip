@@ -1,15 +1,16 @@
-# $OpenBSD$
+# $OpenBSD: Makefile,v 1.4 2013/10/16 19:22:36 juanfra Exp $
 
 SHARED_ONLY =		Yes
-# Racket only supports i386 and amd64 on OpenBSD
+# Racket only supports i386 and amd64 on OpenBSD.
+# Work in progress on other platforms.
 ONLY_FOR_ARCHS =	i386 amd64
 
 # XXX Change COMMENT and DESCR for racket 6. The core will not include
 # the IDE, gui libs, teaching collects, etc. And probably "descendant of
 # scheme" isn't the best description for racket.
-COMMENT =		descendant of scheme with IDE and teaching resources
+COMMENT =		multi-paradigm programming language
 
-V =			5.3.6
+V =			5.91pre201312110442
 PKGNAME =		racket-$V
 # The project uses racket-* for stable and plt-* for development releases
 DISTNAME =		racket-$V-src-unix
@@ -17,12 +18,16 @@ DISTNAME =		racket-$V-src-unix
 # Each new version of racket is incompatible with the previous one.
 # Increase always the major number.
 # http://article.gmane.org/gmane.comp.lang.racket.devel/9872
-SHARED_LIBS +=		racket3m	0.0 # 5.3.6
+SHARED_LIBS +=		racket3m	1.0 # 6.0.0
 
 CATEGORIES =		lang
+# Since racket 6, the build of the package is pretty fast but raco uses a less
+# tested aproach to use more than 1 job on the build, so let enabled the dpb
+# option as a quick test for raco on every platform. When we have TLS support
+# (and places), raco will use a widely tested code to the parallel build.
 DPB_PROPERTIES =	parallel
 HOMEPAGE =		http://racket-lang.org/
-MAINTAINER =		Juan Francisco Cantero Hurtado <iam@juanfra.info>
+MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 
 # LGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
@@ -32,12 +37,11 @@ MASTER_SITES =		https://download.racket-lang.org/installers/${V}/racket/ \
 			https://www.eecs.northwestern.edu/racket/${V}/racket/ \
 			http://mirror.csclub.uwaterloo.ca/racket/racket-installers/${V}/racket/ \
 			http://mirror.informatik.uni-tuebingen.de/mirror/racket/${V}/racket/ \
-			http://racket.infogroep.be/${V}/racket/ \
 			http://pre.racket-lang.org/release/installers/ \
 			http://pre.racket-lang.org/installers/ \
 			http://download.tuxfamily.org/jod/lang/racket/ \
 			ftp://download.tuxfamily.org/jod/lang/racket/
-EXTRACT_SUFX =		.tgz
+EXTRACT_SUFX = .tar.lz
 
 MODULES +=		converters/libiconv
 
@@ -55,10 +59,10 @@ RUN_DEPENDS =		x11/gtkglext \
 WANTLIB += c m pthread ffi
 
 WRKDIST =		${WRKDIR}/racket-$V
-WRKSRC =		${WRKDIST}/src
+WRKSRC =		${WRKDIST}/racket/src
 
+# Install the package "racket-test" with raco to run the tests
 NO_TEST =		Yes
-VMEM_WARNING =		Yes
 SEPARATE_BUILD =	Yes
 
 CONFIGURE_STYLE =	gnu
@@ -79,15 +83,10 @@ CONFIGURE_ARGS +=	--disable-backtrace \
 			--disable-places \
 			--disable-futures
 
-# Since 5.3.4 if __SSE_MATH__ is defined (C_COMPILER_USES_SSE) and
-# MZ_TRY_EXTFLONUMS enabled, MZ_LONG_DOUBLE (extflonum) is turned on. Also
-# C_COMPILER_USES_SSE turn on MZ_USE_JIT_SSE.
-# "-msse -mfpmath=sse" required by extflonum on i386.
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			CFLAGS="${CFLAGS} -msse -mfpmath=sse" \
 			LIBracket3m_MAJOR=${LIBracket3m_VERSION:R} \
-			LIBracket3m_MINOR=${LIBracket3m_VERSION:E} \
+			LIBracket3m_MINOR=${LIBracket3m_VERSION:E}
 
 # MAKE_JOBS: If "places" is enabled, racket uses "places channels". When
 # "places" is disabled, racket uses multiple racket processes and pipes.
@@ -100,23 +99,14 @@ do-install:
 		PLT_SETUP_OPTIONS="-j ${MAKE_JOBS}" ${MAKE_PROGRAM} \
 		${ALL_FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
 
-# Something in the ports framework or the racket installation modify the
-# timestamp of two files. When raco sees a newer file than make-search.rkt,
-# recompiles again the files but raco fails because the user doesn't have write
-# permission in /usr. The easiest fix is to change the timestamp after "fake".
-# This bug affects to "raco pkg install -u" and "raco pkg install -s". It will
-# be fixed in the next version.
-# A simple test: raco pkg install -u github://github.com/takikawa/dummy-pkg/master
-post-fake:
-	@cd ${WRKINST}/${PREFIX}/lib/racket/collects/scribblings/main/private && \
-		touch -t 201306180906 search-context.html && \
-		touch -t 201306180906 search.js
-
-# Due to a bug on i386, racket doesn't generate all the images in doc/images.
-.if ${MACHINE_ARCH} == "amd64"
-PKG_ARGS+=-Damd64=1
-.else
-PKG_ARGS+=-Damd64=0
+# Since 5.3.4 if __SSE_MATH__ is defined (C_COMPILER_USES_SSE) and
+# MZ_TRY_EXTFLONUMS enabled, MZ_LONG_DOUBLE (extflonum) is turned on. Also
+# C_COMPILER_USES_SSE turn on MZ_USE_JIT_SSE.
+# "-msse -mfpmath=sse" required by extflonum on i386.
+# XXX run the test again on i386
+.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
+CFLAGS += "-msse -mfpmath=sse"
+CONFIGURE_ARGS += --enable-extflonum
 .endif
 
 .include <bsd.port.mk>
