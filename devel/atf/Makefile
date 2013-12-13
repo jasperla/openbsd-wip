@@ -11,6 +11,7 @@ HOMEPAGE =		https://code.google.com/p/kyua/
 
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
+# BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=		c m stdc++
