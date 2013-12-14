@@ -61,6 +61,10 @@ WANTLIB += c m pthread ffi
 WRKDIST =		${WRKDIR}/racket-$V
 WRKSRC =		${WRKDIST}/racket/src
 
+# CPU=${MAKE_JOBS} and JOB_OPTIONS="-j ${MAKE_JOBS}" only work
+# with the main Makefile. Use instead the old PLT_SETUP_OPTIONS.
+MAKE_ENV +=		PLT_SETUP_OPTIONS="-j ${MAKE_JOBS}"
+
 # Install the package "racket-test" with raco to run the tests
 NO_TEST =		Yes
 SEPARATE_BUILD =	Yes
@@ -88,6 +92,13 @@ CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			LIBracket3m_MAJOR=${LIBracket3m_VERSION:R} \
 			LIBracket3m_MINOR=${LIBracket3m_VERSION:E}
 
+FLAVORS =		debug
+FLAVOR ?=
+.if ${FLAVOR:Mdebug}
+CONFIGURE_ARGS +=	--disable-strip \
+			--enable-noopt
+.endif
+
 # MAKE_JOBS: If "places" is enabled, racket uses "places channels". When
 # "places" is disabled, racket uses multiple racket processes and pipes.
 # http://permalink.gmane.org/gmane.comp.lang.racket.user/17281
@@ -96,8 +107,10 @@ CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 # "rendering" phase of scribble reaches the limit in some big documents.
 do-install:
 	@cd ${WRKBUILD} && ulimit -n 512 && ${SETENV} ${MAKE_ENV} \
-		PLT_SETUP_OPTIONS="-j ${MAKE_JOBS}" ${MAKE_PROGRAM} \
-		${ALL_FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
+		${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
+
+post-install:
+	@mv ${WRKINST}/etc/racket ${PREFIX}/share/examples
 
 # Since 5.3.4 if __SSE_MATH__ is defined (C_COMPILER_USES_SSE) and
 # MZ_TRY_EXTFLONUMS enabled, MZ_LONG_DOUBLE (extflonum) is turned on. Also

@@ -35,6 +35,10 @@ lib/racket/starter-sh
 share/applications/
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/racket/
+share/examples/racket/
+@sample ${SYSCONFDIR}/racket/
+share/examples/racket/config.rktd
+@sample ${SYSCONFDIR}/racket/config.rktd
 share/racket/
 share/racket/COPYING-libscheme.txt
 share/racket/COPYING.txt
@@ -1254,13 +1258,10 @@ share/racket/collects/setup/private/compiled/lib-roots_rkt.dep
 share/racket/collects/setup/private/compiled/lib-roots_rkt.zo
 share/racket/collects/setup/private/compiled/omitted-paths_rkt.dep
 share/racket/collects/setup/private/compiled/omitted-paths_rkt.zo
-share/racket/collects/setup/private/compiled/path-utils_rkt.dep
-share/racket/collects/setup/private/compiled/path-utils_rkt.zo
 share/racket/collects/setup/private/compiled/pkg-deps_rkt.dep
 share/racket/collects/setup/private/compiled/pkg-deps_rkt.zo
 share/racket/collects/setup/private/lib-roots.rkt
 share/racket/collects/setup/private/omitted-paths.rkt
-share/racket/collects/setup/private/path-utils.rkt
 share/racket/collects/setup/private/pkg-deps.rkt
 share/racket/collects/setup/setup-cmdline.rkt
 share/racket/collects/setup/setup-core.rkt
