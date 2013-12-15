@@ -21,4 +21,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
+post-patch:
+	@rm ${WRKSRC}/test/*.orig
+
 .include <bsd.port.mk>
