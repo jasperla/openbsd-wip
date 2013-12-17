@@ -22,7 +22,7 @@ LIB_DEPENDS =		devel/atf
 
 TEST_DEPENDS =		devel/kyua-cli
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE  =	gnu
 
 CONFIGURE_ENV=		LUA_CFLAGS="`pkg-config --cflags ${MODLUA_DEP}`" \
 			LUA_LIBS="`pkg-config --libs ${MODLUA_DEP}`"
