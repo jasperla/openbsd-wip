@@ -10,7 +10,7 @@ CATEGORIES =		graphics
 
 HOMEPAGE =		http://jwilk.net/software/pdf2djvu
 
-MAINTAINER =		Juan Francisco Cantero Hurtado <iam@juanfra.info>
+MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -33,7 +33,8 @@ USE_GROFF =		Yes
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--disable-openmp
+CONFIGURE_ARGS +=	--disable-openmp \
+			--disable-rpath
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 

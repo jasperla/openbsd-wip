@@ -26,7 +26,6 @@ MODULES =		converters/libiconv devel/cmake lang/python
 LIB_DEPENDS =		devel/sdl-mixer \
 			graphics/png \
 			audio/openal \
-			audio/libvorbis \
 			${MODPY_LIB_DEPENDS}
 RUN_DEPENDS = 		devel/desktop-file-utils \
 			x11/gtk+2,-guic
@@ -42,6 +41,7 @@ NO_TEST =		Yes
 
 post-install:
 	 cd ${PREFIX}/share/gemrb/GUIScripts/ && find * -name \*.py \
-		-exec ${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/share/gemrb/GUIScripts/{} \;
+		-exec ${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${PREFIX}/share/gemrb/GUIScripts/{} \;
 
 .include <bsd.port.mk>

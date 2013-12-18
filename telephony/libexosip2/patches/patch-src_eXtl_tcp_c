@@ -1,0 +1,14 @@
+$OpenBSD$
+--- src/eXtl_tcp.c.orig	Wed Oct  5 20:43:21 2011
++++ src/eXtl_tcp.c	Sat Dec  7 16:51:29 2013
+@@ -29,6 +29,10 @@
+ #include <fcntl.h>
+ #endif
+ 
++#include <stdlib.h>
++#include <string.h>
++#include <unistd.h>
++
+ #ifdef WIN32
+ #include <Mstcpip.h>
+ #endif

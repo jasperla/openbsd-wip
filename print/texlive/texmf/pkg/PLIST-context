@@ -1,4 +1,10 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST-main,v 1.17 2013/10/12 10:23:26 sthen Exp $
+@conflict teTeX_texmf-*
+@conflict texlive_base-<2013
+@conflict texlive_texmf-docs-<2013
+@conflict texlive_texmf-full-<2013
+@conflict texlive_texmf-buildset-<2013
+@conflict texlive_texmf-minimal-<2013
 @man man/man1/context.1
 @man man/man1/ctxtools.1
 @man man/man1/luatools.1
@@ -358,10 +364,6 @@ share/texmf-dist/scripts/context/ruby/texutil.rb
 share/texmf-dist/scripts/context/ruby/tmftools.rb
 share/texmf-dist/scripts/context/ruby/xmltools.rb
 share/texmf-dist/scripts/context/stubs/
-share/texmf-dist/scripts/context/stubs/source/
-share/texmf-dist/scripts/context/stubs/source/mtxrun_dll.c
-share/texmf-dist/scripts/context/stubs/source/mtxrun_exe.c
-share/texmf-dist/scripts/context/stubs/source/readme.txt
 share/texmf-dist/scripts/context/stubs/unix/
 share/texmf-dist/scripts/context/stubs/unix/context
 share/texmf-dist/scripts/context/stubs/unix/ctxtools

@@ -1,1 +1,2 @@
-NFS mail server workload
+NetApp's PostMark benchmark designed to simulate small-file testing
+similar to the tasks endured by web and mail servers.

@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS=		i386 amd64
 
 COMMENT=		OpenAFS distributed filesystem
 
-VERSION=		1.6.1
+VERSION=		1.6.5.1
 DISTNAME=		openafs-${VERSION}-src
 PKGNAME=		openafs-${VERSION}
 
