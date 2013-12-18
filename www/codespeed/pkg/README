@@ -1,0 +1,84 @@
+$OpenBSD: README $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Codespeed has been installed into ${INSTDIR}
+
+You should create a vhost for Codespeed (must be on a subdomain or full domain) 
+
+Vhost example for nginx: 
+
+# codespeed
+}
+
+Restart nginx and browse to codespeed.my.domain and follow the setup instructions provided. 
+
+For more information, visit: http://www.phabricator.com/docs/phabricator/article/Configuration_Guide.html
+
+* To get started, you can use the `sample_project` directory as a starting point 
+for your Django project, which can be normally configured by editing `sample_project/settings.py`.
+* For simplicity, you can use the default sqlite configuration, which will save
+  the data to a database named `data.db`
+* Create the DB by typing from the root directory:
+
+        python manage.py syncdb
+
+* Create an admin user in the process.
+* Migrate to the new DB Schema:
+
+        python manage.py migrate
+
+* For testing purposes, you can now start the development server:
+
+        python manage.py runserver 8000
+
+The codespeed installation can now be accessed by navigating to `http://localhost:8000/`.
+
+**Note**: for production, you should configure a real server like Apache or nginx 
+(refer to the [Django docs](http://docs.djangoproject.com/en/dev/howto/deployment/)).
+You should also modify `sample_project/settings.py` and set `DEBUG = False`.
+
+# Codespeed configuration
+
+## Using the provided test data
+
+If you want to test drive Codespeed, you can use the testdata.json fixtures to have a working data set to browse.
+
+* From the root directory, type:
+
+        ./manage.py loaddata codespeed/fixtures/testdata.json
+
+## Starting from scratch
+
+Before you can start saving (and displaying) data, you need to first create an
+environment and define a default project.
+
+* Go to `http://localhost:8000/admin/codespeed/environment/`
+  and create an environment.
+* Go to `http://localhost:8000/admin/codespeed/project/`
+  and create a project.
+
+Check the field "Track changes" and, in case you want version control
+integration, configure the relevant fields.
+
+**Note**: Only executables associated to projects with a checked "track changes"
+field will be shown in the Changes and Timeline views.
+
+# Saving data
+
+Data is saved POSTing to `http://localhost:8000/result/add/`.
+
+You can use the script `tools/save_single_result.py` as a guide.
+When saving large quantities of data, it is recommended to use the JSON API instead:
+    `http://localhost:8000/result/add/json/`
+
+An example script is located at `tools/save_multiple_results.py`
+
+**Note**: If the given executable, benchmark, project, or
+revision do not yet exist, they will be automatically created, together with the
+actual result entry. The only model which won't be created automatically is the
+environment. It must always exist or the data won't be saved (that is the reason
+it is described as a necessary step in the previous "Codespeed configuration"
+section).
