@@ -2,8 +2,8 @@
 
 COMMENT = run arbitrary commands when files change
 
-DISTNAME = entr-2.3
-REV = 5bd7523558dd
+DISTNAME = entr-2.4
+REV = c0009123230b
 
 CATEGORIES = sysutils
 
@@ -22,6 +22,7 @@ MASTER_SITES = http://entrproject.org/code/ \
 MAKE_FILE = Makefile.bsd
 MAKE_FLAGS = CC="${CC}" LDFLAGS="${LDFLAGS}"
 WRKDIST = ${WRKDIR}/eradman-entr-${REV}
+FAKE_FLAGS = DESTDIR=""
 
 TEST_TARGET = test
 
