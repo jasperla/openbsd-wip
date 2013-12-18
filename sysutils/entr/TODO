@@ -13,4 +13,7 @@ Changes since 2.2:
   saved simultaneously
 * Change process title for blocking events (visible in ps(1))
 * Wait for processes to terminate in restart mode
+* LICENCE file describes the copyright holders for the compatibility libraries
+* Reintroduce ${DESTDIR} for STAGEDIR installation
+
 
