@@ -1,7 +1,7 @@
 diff -u src/afs/afs_osi.h.orig src/afs/afs_osi.h
---- src/afs/afs_osi.h.orig	Mon Mar 26 18:03:34 2012
-+++ src/afs/afs_osi.h	Tue Nov 13 15:04:40 2012
-@@ -129,13 +129,17 @@ struct afs_osi_WaitHandle {
+--- src/afs/afs_osi.h.orig	Wed Oct  9 16:20:17 2013
++++ src/afs/afs_osi.h	Sun Dec  8 00:18:51 2013
+@@ -131,13 +131,17 @@ struct afs_osi_WaitHandle {
   *
   * Darwin, all of the BSDs, and Linux have their own
   */

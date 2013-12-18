@@ -1,9 +1,9 @@
 diff -u src/afs/OBSD/osi_vnodeops.c.orig src/afs/OBSD/osi_vnodeops.c
---- src/afs/OBSD/osi_vnodeops.c.orig	Tue Mar 27 01:03:34 2012
-+++ src/afs/OBSD/osi_vnodeops.c	Tue Dec 11 22:26:09 2012
-@@ -151,56 +151,42 @@ int afs_obsd_advlock(void *);
- 	((int (*) __P((void *)))eopnotsupp)
- #define afs_obsd_reallocblks afs_obsd_opnotsupp
+--- src/afs/OBSD/osi_vnodeops.c.orig	Wed Oct  9 16:20:17 2013
++++ src/afs/OBSD/osi_vnodeops.c	Sun Dec  8 00:18:51 2013
+@@ -191,56 +191,42 @@ struct vops afs_vops = {
+ 
+ #else
  
 -/* Global vfs data structures for AFS. */
 -int (**afs_vnodeop_p) __P((void *));
@@ -91,9 +91,9 @@ diff -u src/afs/OBSD/osi_vnodeops.c.orig src/afs/OBSD/osi_vnodeops.c
 -struct vnodeopv_desc afs_vnodeop_opv_desc =
 -    { &afs_vnodeop_p, afs_vnodeop_entries };
  
- #define GETNAME()	\
-     struct componentname *cnp = ap->a_cnp; \
-@@ -249,7 +235,7 @@ afs_obsd_lookup(void *v)
+ #endif
+ 
+@@ -291,7 +277,7 @@ afs_obsd_lookup(void *v)
      }
      dvp = ap->a_dvp;
      if (afs_debug & AFSDEB_VNLAYER && !(dvp->v_flag & VROOT))
@@ -102,7 +102,7 @@ diff -u src/afs/OBSD/osi_vnodeops.c.orig src/afs/OBSD/osi_vnodeops.c
  	       name, dvp->v_usecount);
      AFS_GLOCK();
      code = afs_lookup(VTOAFS(dvp), name, &vcp, cnp->cn_cred);
-@@ -296,7 +282,7 @@ afs_obsd_lookup(void *v)
+@@ -338,7 +324,7 @@ afs_obsd_lookup(void *v)
  
      DROPNAME();
      if (afs_debug & AFSDEB_VNLAYER && !(dvp->v_flag & VROOT))
@@ -111,7 +111,7 @@ diff -u src/afs/OBSD/osi_vnodeops.c.orig src/afs/OBSD/osi_vnodeops.c
      return code;
  }
  
-@@ -315,7 +301,7 @@ afs_obsd_create(void *v)
+@@ -357,7 +343,7 @@ afs_obsd_create(void *v)
      GETNAME();
  
      if (afs_debug & AFSDEB_VNLAYER)
@@ -120,7 +120,7 @@ diff -u src/afs/OBSD/osi_vnodeops.c.orig src/afs/OBSD/osi_vnodeops.c
  
      /* vnode layer handles excl/nonexcl */
  
-@@ -342,7 +328,7 @@ afs_obsd_create(void *v)
+@@ -384,7 +370,7 @@ afs_obsd_create(void *v)
      vput(dvp);
      DROPNAME();
      if (afs_debug & AFSDEB_VNLAYER)
@@ -128,16 +128,4 @@ diff -u src/afs/OBSD/osi_vnodeops.c.orig src/afs/OBSD/osi_vnodeops.c
 +	printf("obsd_create done dvp %p cnt %d\n", dvp, dvp->v_usecount);
      return code;
  }
- 
-@@ -678,7 +664,11 @@ afs_obsd_rename(void *v)
- 	if ((fcnp->cn_flags & SAVESTART) == 0)
- 	    panic("afs_rename: lost from startdir");
- 	fcnp->cn_nameiop = DELETE;
-+#if defined(AFS_OBSD49_ENV)
-+	(void)vfs_relookup(fdvp, &fvp, fcnp);
-+#else
- 	(void)relookup(fdvp, &fvp, fcnp);
-+#endif
- 	return (VOP_REMOVE(fdvp, fvp, fcnp));
-     }
  

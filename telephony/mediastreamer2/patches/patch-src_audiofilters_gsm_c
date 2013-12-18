@@ -1,0 +1,18 @@
+$OpenBSD$
+audio/gsm installs in ${LOCALBASE}/include - wrong?
+--- src/audiofilters/gsm.c.orig	Fri Jun 14 19:21:26 2013
++++ src/audiofilters/gsm.c	Tue Dec  3 19:57:07 2013
+@@ -21,11 +21,11 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+ #ifdef ANDROID
+ #include "gsm.h"
+ #else
+-#include <gsm/gsm.h>
++#include <gsm.h>
+ #endif
+ 
+ #ifdef _MSC_VER
+-#include <malloc.h>
++#include <stdlib.h>
+ #define alloca _alloca
+ #endif
+ 

@@ -1,0 +1,21 @@
+$OpenBSD$
+--- src/audiofilters/genericplc.c.orig	Mon Jan 14 19:13:46 2013
++++ src/audiofilters/genericplc.c	Mon Dec  9 01:23:14 2013
+@@ -17,6 +17,8 @@
+  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+  */
+ 
++#include <limits.h>
++
+ #include <mediastreamer2/msfilter.h>
+ #include <mediastreamer2/mscodecutils.h>
+ #include <mediastreamer2/msticker.h>
+@@ -28,7 +30,7 @@ typedef struct {
+ 	int nchannels;
+ } generic_plc_struct;
+ 
+-const static unsigned int MAX_PLC_COUNT = UINT32_MAX;
++const static unsigned int MAX_PLC_COUNT = UINT_MAX;
+ 
+ static void generic_plc_init(MSFilter *f) {
+ 	generic_plc_struct *mgps = (generic_plc_struct*) ms_new0(generic_plc_struct, 1);

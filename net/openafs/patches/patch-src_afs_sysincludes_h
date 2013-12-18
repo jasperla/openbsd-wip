@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/afs/sysincludes.h.orig	Mon Mar 26 18:03:34 2012
-+++ src/afs/sysincludes.h	Thu Jul  4 11:49:55 2013
+--- src/afs/sysincludes.h.orig	Wed Oct  9 16:20:17 2013
++++ src/afs/sysincludes.h	Sun Dec  8 00:18:51 2013
 @@ -7,19 +7,16 @@
   * directory or online at http://www.openafs.org/dl/license10.html
   */
@@ -71,7 +71,7 @@ $OpenBSD$
  #elif defined(AFS_NBSD40_ENV)
  # include <sys/errno.h>
  # include <sys/types.h>
-@@ -456,3 +485,4 @@ MALLOC_DECLARE(M_AFS);
+@@ -457,3 +486,4 @@ MALLOC_DECLARE(M_AFS);
  #endif /* __AFS_SYSINCLUDESH__  so idempotent */
  
  #endif

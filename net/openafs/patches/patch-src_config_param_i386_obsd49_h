@@ -1,8 +1,8 @@
 $OpenBSD$
---- src/config/param.i386_obsd49.h.orig	Wed Aug  3 13:20:52 2011
-+++ src/config/param.i386_obsd49.h	Wed Aug  3 13:20:52 2011
-@@ -0,0 +1,79 @@
-+/*
+--- src/config/param.i386_obsd49.h.orig	Wed Oct  9 16:20:17 2013
++++ src/config/param.i386_obsd49.h	Sun Dec  8 00:18:51 2013
+@@ -1,4 +1,83 @@
+ /*
 + * Jim Rees, University of Michigan CITI
 + */
 +
@@ -81,3 +81,7 @@ $OpenBSD$
 +#endif /* _KERNEL */
 +
 +#endif /* AFS_PARAM_H */
++/*
+  * Thanks to Jim Rees and University of Michigan CITI, for the initial
+  * OpenBSD porting work.
+  */

@@ -15,3 +15,6 @@ The primary components of Racket platform are:
   source to bytecode, packaging executables, and packaging installable
   archives.
 
+The OpenBSD port includes the racket core and raco. The other components are
+available as racket packages from pkg.racket-lang.org and directly installable
+by raco.

@@ -1,32 +1,32 @@
 # $OpenBSD $
 
 COMMENT =		lightweight C++ API for Lua
-DISTNAME =		lutok-0.3
+DISTNAME =		lutok-0.4
 
-SHARED_LIBS +=  	lutok                     0.0 # 2.0
-CATEGORIES =		devel sysutils
+SHARED_LIBS +=		lutok                     0.0 # 2.0
+CATEGORIES =		devel
 HOMEPAGE =		https://code.google.com/p/lutok/
 
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
-# New BSD License
+# BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += 		c m stdc++
-
-MODULES =		lang/lua
-
-LIB_DEPENDS=   		${MODLUA_LIB_DEPENDS}
+WANTLIB += atf-c atf-c++ c ${MODLUA_WANTLIB} m stdc++
 
 MASTER_SITES =		https://lutok.googlecode.com/files/
 
-TEST_TARGET=		check
+MODULES =		lang/lua
+
+LIB_DEPENDS =		devel/atf
+
+TEST_DEPENDS =		devel/kyua-cli
 
 CONFIGURE_STYLE =	gnu
 
-CONFIGURE_ARGS =	--with-atf=auto
+CONFIGURE_ENV=		LUA_CFLAGS="`pkg-config --cflags ${MODLUA_DEP}`" \
+			LUA_LIBS="`pkg-config --libs ${MODLUA_DEP}`"
 
-CONFIGURE_ENV= 		LUA_CFLAGS="`pkg-config --cflags ${MODLUA_DEP}`" \
-                	LUA_LIBS="`pkg-config --libs ${MODLUA_DEP}`"
+PORTHOME =		${WRKDIR}
 
 .include <bsd.port.mk>

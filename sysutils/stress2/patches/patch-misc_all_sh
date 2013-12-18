@@ -1,0 +1,37 @@
+$OpenBSD$
+--- misc/all.sh.orig	Wed Dec 11 18:26:05 2013
++++ misc/all.sh	Wed Dec 11 18:35:04 2013
+@@ -125,6 +125,28 @@
+ list=`sed -n '/^# Start of list/,/^# End of list/p' < $0 | awk '$3 ~ /Y/ {print $2}'`
+ [ $# -ne 0 ] && list=$*
+ 
++list = "all.sh altbufferflushes.sh alternativeFlushPath.sh cdevsw.sh \
++	cleanup.sh core.sh crossmp.sh crossmp2.sh datamove.sh \
++	datamove2.sh datamove3.sh devfs.sh devfs2.sh extattr.sh \
++	extattrctl.sh fdescfs.sh fpclone.sh fpclone2.sh fpu.sh \
++	fragments.sh fs.sh fullpath.sh fuzz.sh inversion.sh isofs.sh \
++	kevent.sh kevent2.sh kevent3.sh kevent4.sh kevent5.sh ldt.sh \
++	ldt2.sh libMicro.sh lockf.sh lookup_shared.sh mac.sh mac_chkexec.sh \
++	md.sh md2.sh md3.sh mlockall.sh mmap.sh mmap2.sh mmap3.sh mmap4.sh \
++	mount.sh mount2.sh mountro.sh mountro2.sh mountro3.sh msdos.sh \
++	msdos2.sh msdos3.sh msdos4.sh namecache.sh nbufkv.sh newfs.sh \
++	newfs2.sh newfs3.sh newfs4.sh nfs.sh nfs2.sh nfs3.sh nfs4.sh \
++	nfs5.sh nfs6.sh nfs7.sh nfs8.sh nfs9.sh nfsrename.sh pmc.sh \
++	procfs.sh procfs2.sh pthread.sh quota1.sh quota10.sh quota2.sh \
++	quota3.sh quota4.sh quota5.sh quota6.sh quota7.sh quota8.sh \
++	quota9.sh recursiveflushes.sh rename.sh rename2.sh rename3.sh \
++	rename4.sh revoke.sh sem.sh sendfile.sh snapbackup.sh softupdate.sh \
++	statfs.sh suj.sh suj2.sh suj3.sh suj4.sh suj5.sh suj6.sh suj7.sh \
++	symlink.sh symlink2.sh syscall.sh syscall2.sh tmpfs.sh tmpfs2.sh \
++	tmpfs3.sh tmpfs4.sh truncate.sh truncate2.sh truncate3.sh truncate4.sh \
++	truncate5.sh ucom.sh umount.sh umountf.sh umountf2.sh umountf3.sh \
++	umountf4.sh union.sh unionfs.sh unionfs2.sh unionfs3.sh vunref.sh \
++	vunref2.sh"
+ 
+ rm -f /tmp/misc.log
+ while true; do
+@@ -137,3 +159,4 @@ while true; do
+ 		./$i
+ 	done
+ done
++

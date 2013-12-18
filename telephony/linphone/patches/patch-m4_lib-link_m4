@@ -1,0 +1,21 @@
+$OpenBSD$
+Add support for OpenBSD shared libraries naming policy.
+--- m4/lib-link.m4.orig	Mon Jan 25 12:28:43 2010
++++ m4/lib-link.m4	Tue Dec  3 20:34:56 2013
+@@ -199,11 +199,14 @@ AC_DEFUN([AC_LIB_LINKFLAGS_BODY],
+           found_a=
+           if test $use_additional = yes; then
+             if test -n "$shlibext" \
+-               && { test -f "$additional_libdir/lib$name.$shlibext" \
++               && { test -f "$additional_libdir/lib$name.$shlibext"* \
+                     || { test "$shlibext" = dll \
+                          && test -f "$additional_libdir/lib$name.dll.a"; }; }; then
+               found_dir="$additional_libdir"
+-              if test -f "$additional_libdir/lib$name.$shlibext"; then
++              dnl Check OpenBSD-specific scheme first (no .so symlinks, .MAJOR.MINOR suffix)
++              dnl Do not care about portability for this part: if it fails, just move on
++              found_so="$(ls -1t -- "$additional_libdir/lib$name.$shlibext".+([[0-9]]).+([[0-9]]) 2>/dev/null | head -1)"
++              if test -z "$found_so" -a -f "$additional_libdir/lib$name.$shlibext"; then
+                 found_so="$additional_libdir/lib$name.$shlibext"
+               else
+                 found_so="$additional_libdir/lib$name.dll.a"

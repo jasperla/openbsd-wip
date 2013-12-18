@@ -4,11 +4,13 @@
 @conflict texlive_texmf-docs-<2013
 @conflict texlive_texmf-minimal-<2013
 @conflict texlive_texmf-buildset-<2013
+@conflict texlive_texmf-contextt-<2013
 @pkgpath print/texlive/texmf-full
 @pkgpath print/teTeX/texmf
+@info info/dvipng.info
+@info info/latex2man.info
 @man man/man1/a2ping.1
 @man man/man1/arlatex.1
-@man man/man1/asy.1
 @man man/man1/bundledoc.1
 @man man/man1/chktex.1
 @man man/man1/chkweb.1
@@ -59,7 +61,6 @@
 @man man/man1/texdoctk.1
 @man man/man1/texindy.1
 @man man/man1/tpic2pdftex.1
-@man man/man1/xasy.1
 @man man/man1/xindy.1
 @man man/man5/synctex.5
 share/texmf-dist/
@@ -489,7 +490,6 @@ share/texmf-dist/bibtex/csf/persian-bib/
 share/texmf-dist/bibtex/csf/persian-bib/cp1256fa.csf
 share/texmf-dist/chktex/
 share/texmf-dist/chktex/chktexrc
-share/texmf-dist/doc/
 share/texmf-dist/dvips/
 share/texmf-dist/dvips/brushscr/
 share/texmf-dist/dvips/brushscr/config.pbsi
