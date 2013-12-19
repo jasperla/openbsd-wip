@@ -1,0 +1,10 @@
+@comment $OpenBSD$
+${P5SITE}/Test/
+${P5SITE}/Test/Nginx/
+${P5SITE}/Test/Nginx.pm
+${P5SITE}/Test/Nginx/LWP.pm
+${P5SITE}/Test/Nginx/Socket.pm
+${P5SITE}/Test/Nginx/Util.pm
+@man man/man3p/Test::Nginx.3p
+@man man/man3p/Test::Nginx::LWP.3p
+@man man/man3p/Test::Nginx::Socket.3p
