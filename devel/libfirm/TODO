@@ -1,0 +1,7 @@
+Cannot actually link anything against this library:
+
+$ cc foo.c -L/usr/local/lib -lfirm
+/usr/local/lib/libfirm.so.0.0: undefined reference to `alloca'
+collect2: ld returned 1 exit status
+
+http://pp.info.uni-karlsruhe.de/~firm/bugs/bug_view_advanced_page.php?bug_id=132

@@ -1,0 +1,7 @@
+The Firm library implements the Firm intermediate representation (ir).
+
+libFirm contains algorithms for construction of the SSA form directly
+from the attributed syntax tree. A set of analyses and optimisation
+phases is provided. This version includes a complete backend for the
+IA32 architecture, as well as some unfinished backends for SPARC and
+ARM.
