@@ -16,8 +16,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		QtGui QtNetwork QtXml c m stdc++
 
-VMEM_WARNING =		Yes
-
 MASTER_SITES =		http://www.torproject.org/dist/vidalia/
 
 MODULES =		x11/qt4 \

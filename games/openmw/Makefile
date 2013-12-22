@@ -2,8 +2,6 @@
 
 ONLY_FOR_ARCHS =	amd64 i386
 
-VMEM_WARNING =		Yes
-
 COMMENT =		open source implementation of TES III: Morrowind
 
 V =			0.25.0

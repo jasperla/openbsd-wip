@@ -1,7 +1,5 @@
 # $OpenBSD$
 
-VMEM_WARNING =		Yes
-
 COMMENT =		widgets library for graphics engines
 
 V =			0.8.2

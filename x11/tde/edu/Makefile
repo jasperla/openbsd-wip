@@ -4,8 +4,6 @@ COMMENT =		Trinity Desktop Environment, edutainment
 
 DISTNAME =		kdeedu-${TDE_V}
 
-VMEM_WARNING =		Yes
-
 SHARED_LIBS +=  extdate                   5.0 # 3.0
 SHARED_LIBS +=  kdeeducore                5.0 # 3.0
 SHARED_LIBS +=  kdeeduplot                5.0 # 3.0

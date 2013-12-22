@@ -1,7 +1,5 @@
 # $OpenBSD$
 
-VMEM_WARNING =		Yes
-
 COMMENT =		office suite for TDE
 
 DISTNAME =		koffice-${TDE_V}

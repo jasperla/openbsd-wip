@@ -49,8 +49,6 @@ BUILD_DEPENDS +=	devel/gmp \
 			math/fftw
 
 TEST_DEPENDS =		shells/bash
-
-VMEM_WARNING =		Yes
 .else
 NO_TEST =		Yes
 CONFIGURE_ARGS +=	-DEIGEN_FAILTEST=No \
