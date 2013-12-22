@@ -51,8 +51,6 @@ SHARED_LIBS +=	braindumpcore		9.0 # 9.0
 SHARED_LIBS +=	calligrasheetscommon	9.0 # 9.0
 SHARED_LIBS +=	calligrasheetsodf	9.0 # 9.0
 
-VMEM_WARNING =	Yes
-
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/${DISTNAME}/}
 
 # GPLv2+, LGPLv2+ and GNU FDLv1.2

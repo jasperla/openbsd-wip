@@ -1,7 +1,5 @@
 # $OpenBSD$
 
-VMEM_WARNING =		Yes
-
 COMMENT =		P2P payment system
 
 V =			0.8.5.1

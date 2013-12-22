@@ -1,7 +1,5 @@
 # $OpenBSD: Makefile,v 1.45 2013/06/04 18:41:50 naddy Exp $
 
-VMEM_WARNING=	Yes
-
 COMMENT=	Python charting and plotting API
 
 MODPY_EGG_VERSION =	1.3.1

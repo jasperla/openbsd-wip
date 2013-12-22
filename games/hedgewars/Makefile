@@ -1,7 +1,5 @@
 # $OpenBSD$
 
-VMEM_WARNING =		Yes
-
 SHARED_ONLY =		Yes
 
 COMMENT-main =		Worms-like strategy game
