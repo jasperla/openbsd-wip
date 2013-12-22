@@ -462,7 +462,6 @@ share/texmf-dist/doc/eplain/demo/lscommnt.tex
 share/texmf-dist/doc/eplain/demo/xhyper.tex
 share/texmf-dist/doc/eplain/doc/
 share/texmf-dist/doc/eplain/doc/eplain.html
-share/texmf-dist/doc/eplain/doc/eplain.man1.pdf
 share/texmf-dist/doc/eplain/doc/eplain.pdf
 share/texmf-dist/doc/eplain/doc/lscommnt.jpg
 share/texmf-dist/doc/eplain/doc/xhyper.jpg
@@ -578,18 +577,10 @@ share/texmf-dist/doc/fonts/cmcyr/merge.6i
 share/texmf-dist/doc/fonts/cmcyr/merge.6k
 share/texmf-dist/doc/fonts/cmcyr/merge.6w
 share/texmf-dist/doc/fonts/cmcyr/merge.alt
-share/texmf-dist/doc/fonts/cmcyr/merge.bat
 share/texmf-dist/doc/fonts/cmcyr/merge.iso
 share/texmf-dist/doc/fonts/cmcyr/merge.koi
 share/texmf-dist/doc/fonts/cmcyr/merge.o6w
 share/texmf-dist/doc/fonts/cmcyr/merge.win
-share/texmf-dist/doc/fonts/cmcyr/vf/
-share/texmf-dist/doc/fonts/cmcyr/vf/cmcyr6i/
-share/texmf-dist/doc/fonts/cmcyr/vf/cmcyr6i/merge.bat
-share/texmf-dist/doc/fonts/cmcyr/vf/cmcyr6k/
-share/texmf-dist/doc/fonts/cmcyr/vf/cmcyr6k/merge.bat
-share/texmf-dist/doc/fonts/cmcyr/vf/cmcyr6w/
-share/texmf-dist/doc/fonts/cmcyr/vf/cmcyr6w/merge.bat
 share/texmf-dist/doc/fonts/cmcyr/wncalt
 share/texmf-dist/doc/fonts/cmcyr/wncalte
 share/texmf-dist/doc/fonts/cmcyr/wnciso
@@ -2694,7 +2685,6 @@ share/texmf-dist/doc/generic/t2/etc/mathtext.ins
 share/texmf-dist/doc/generic/t2/etc/rubibtex/
 share/texmf-dist/doc/generic/t2/etc/rubibtex/README
 share/texmf-dist/doc/generic/t2/etc/rubibtex/rubibtex
-share/texmf-dist/doc/generic/t2/etc/rubibtex/rubibtex.bat
 share/texmf-dist/doc/generic/t2/etc/rubibtex/rubibtex.old
 share/texmf-dist/doc/generic/t2/etc/rubibtex/rubibtex.sed
 share/texmf-dist/doc/generic/t2/etc/ruinpenc
@@ -2704,8 +2694,6 @@ share/texmf-dist/doc/generic/t2/etc/rumkidx/rumakeindex
 share/texmf-dist/doc/generic/t2/etc/rumkidx/rumkidx1.sed
 share/texmf-dist/doc/generic/t2/etc/rumkidx/rumkidx2.sed
 share/texmf-dist/doc/generic/t2/etc/rumkidx/rumkidx3.sed
-share/texmf-dist/doc/generic/t2/etc/rumkidx/rumkidxd.bat
-share/texmf-dist/doc/generic/t2/etc/rumkidx/rumkidxw.bat
 share/texmf-dist/doc/generic/t2/etc/t2filter.c
 share/texmf-dist/doc/generic/t2/etc/utf-8/
 share/texmf-dist/doc/generic/t2/etc/utf-8/test-utf8.tex
@@ -2758,7 +2746,6 @@ share/texmf-dist/doc/generic/tex-ps/cmyk-hax/cmyk-doc.pdf
 share/texmf-dist/doc/generic/tex-ps/cmyk-hax/fountain.eps
 share/texmf-dist/doc/generic/tex-ps/cmyk-hax/gdansk.eps
 share/texmf-dist/doc/generic/tex-ps/cmyk-hax/rules.tex
-share/texmf-dist/doc/generic/tex-ps/cmyk-hax/sam1-sep.bat
 share/texmf-dist/doc/generic/tex-ps/cmyk-hax/sample1.tex
 share/texmf-dist/doc/generic/tex-ps/cmyk-hax/sample2.tex
 share/texmf-dist/doc/generic/tex-ps/cmyk-hax/sample3.tex
@@ -3326,8 +3313,6 @@ share/texmf-dist/doc/generic/xypic/xyrefer.pdf
 share/texmf-dist/doc/generic/xypic/xysource.pdf
 share/texmf-dist/doc/hbf2gf/
 share/texmf-dist/doc/hbf2gf/hbf2gf.pdf
-share/texmf-dist/doc/info/
-share/texmf-dist/doc/info/dir
 share/texmf-dist/doc/kpathsea/
 share/texmf-dist/doc/kpathsea/kpathsea.html
 share/texmf-dist/doc/kpathsea/kpathsea.pdf
@@ -4373,7 +4358,6 @@ share/texmf-dist/doc/latex/ctex-faq/ctex-faq.pdf
 share/texmf-dist/doc/latex/ctex-faq/src/
 share/texmf-dist/doc/latex/ctex-faq/src/ctex-faq.sty
 share/texmf-dist/doc/latex/ctex-faq/src/ctex-faq.tex
-share/texmf-dist/doc/latex/ctex-faq/src/make.bat
 share/texmf-dist/doc/latex/ctex/
 share/texmf-dist/doc/latex/ctex/README
 share/texmf-dist/doc/latex/ctex/ctex.pdf
@@ -8906,7 +8890,6 @@ share/texmf-dist/doc/latex/mathpazo/pazofnst.tex
 share/texmf-dist/doc/latex/mathpazo/pazotest.pdf
 share/texmf-dist/doc/latex/mathspic/
 share/texmf-dist/doc/latex/mathspic/HELP.txt
-share/texmf-dist/doc/latex/mathspic/MATHSPIC.BAT
 share/texmf-dist/doc/latex/mathspic/README.txt
 share/texmf-dist/doc/latex/mathspic/grabtexdata.tex
 share/texmf-dist/doc/latex/mathspic/mathsPICfigures.zip
@@ -15774,7 +15757,6 @@ share/texmf-dist/doc/latex/thmbox/thmbox.pdf
 share/texmf-dist/doc/latex/tikz-3dplot/
 share/texmf-dist/doc/latex/tikz-3dplot/CHANGELOG
 share/texmf-dist/doc/latex/tikz-3dplot/README
-share/texmf-dist/doc/latex/tikz-3dplot/externalize_images.bat
 share/texmf-dist/doc/latex/tikz-3dplot/tikz-3dplot_documentation.pdf
 share/texmf-dist/doc/latex/tikz-3dplot/tikz-3dplot_documentation.tex
 share/texmf-dist/doc/latex/tikz-3dplot/tikz-3dplot_documentation_figures.tex
@@ -17459,9 +17441,6 @@ share/texmf-dist/doc/luatex/luatexja/luatexja-ja.pdf
 share/texmf-dist/doc/luatex/luatexja/luatexja-zh.pdf
 share/texmf-dist/doc/luatex/luatexja/luatexja.dtx
 share/texmf-dist/doc/luatex/luatexja/luatexja.ins
-share/texmf-dist/doc/man/
-share/texmf-dist/doc/man/man1/
-share/texmf-dist/doc/man/man5/
 share/texmf-dist/doc/metapost/
 share/texmf-dist/doc/metapost/automata/
 share/texmf-dist/doc/metapost/automata/README
@@ -17595,15 +17574,12 @@ share/texmf-dist/doc/metapost/dviincl/README.pl
 share/texmf-dist/doc/metapost/dviincl/storyx.tex
 share/texmf-dist/doc/metapost/dviincl/test-bop.mp
 share/texmf-dist/doc/metapost/dviincl/test-bop.tex
-share/texmf-dist/doc/metapost/dviincl/testit.bat
 share/texmf-dist/doc/metapost/dviincl/testit.sh
 share/texmf-dist/doc/metapost/epsincl/
 share/texmf-dist/doc/metapost/epsincl/0info.txt
 share/texmf-dist/doc/metapost/epsincl/README
 share/texmf-dist/doc/metapost/epsincl/epsincl.awk
-share/texmf-dist/doc/metapost/epsincl/epsincl.bat
 share/texmf-dist/doc/metapost/epsincl/testinc0.eps
-share/texmf-dist/doc/metapost/epsincl/testincl.bat
 share/texmf-dist/doc/metapost/epsincl/testincl.mp
 share/texmf-dist/doc/metapost/epsincl/testincl.sh
 share/texmf-dist/doc/metapost/expressg/
@@ -18492,8 +18468,6 @@ share/texmf-dist/doc/support/asymptote-by-example-zh-cn/
 share/texmf-dist/doc/support/asymptote-by-example-zh-cn/README
 share/texmf-dist/doc/support/asymptote-by-example-zh-cn/asymptote-by-example-zh-cn.pdf
 share/texmf-dist/doc/support/asymptote-by-example-zh-cn/src/
-share/texmf-dist/doc/support/asymptote-by-example-zh-cn/src/CLEAN.bat
-share/texmf-dist/doc/support/asymptote-by-example-zh-cn/src/MAKEPDF.bat
 share/texmf-dist/doc/support/asymptote-by-example-zh-cn/src/asy.bib
 share/texmf-dist/doc/support/asymptote-by-example-zh-cn/src/asymptote.sty
 share/texmf-dist/doc/support/asymptote-by-example-zh-cn/src/asysyntex.sty
@@ -18593,10 +18567,8 @@ share/texmf-dist/doc/support/asymptote-manual-zh-cn/README
 share/texmf-dist/doc/support/asymptote-manual-zh-cn/asymptote-manual-zh-cn.pdf
 share/texmf-dist/doc/support/asymptote-manual-zh-cn/src/
 share/texmf-dist/doc/support/asymptote-manual-zh-cn/src/CDlabel.asy
-share/texmf-dist/doc/support/asymptote-manual-zh-cn/src/CLEAN.bat
 share/texmf-dist/doc/support/asymptote-manual-zh-cn/src/Coons.asy
 share/texmf-dist/doc/support/asymptote-manual-zh-cn/src/Gouraud.asy
-share/texmf-dist/doc/support/asymptote-manual-zh-cn/src/MAKEPDF.bat
 share/texmf-dist/doc/support/asymptote-manual-zh-cn/src/Pythagoras.asy
 share/texmf-dist/doc/support/asymptote-manual-zh-cn/src/adobefonts.tex
 share/texmf-dist/doc/support/asymptote-manual-zh-cn/src/asycolors.sty
@@ -19000,7 +18972,6 @@ share/texmf-dist/doc/uptex/base/samples/simple-sjis.tex
 share/texmf-dist/doc/uptex/base/samples/simple-u-jis.tex
 share/texmf-dist/doc/uptex/base/samples/simple-u-utf8.tex
 share/texmf-dist/doc/uptex/base/samples/simple-utf8.tex
-share/texmf-dist/doc/uptex/base/samples/testrun.bat
 share/texmf-dist/doc/uptex/base/samples/texxet-jis.tex
 share/texmf-dist/doc/uptex/base/samples/umin10x.tfm
 share/texmf-dist/doc/uptex/base/samples/uotftest-utf8.tex

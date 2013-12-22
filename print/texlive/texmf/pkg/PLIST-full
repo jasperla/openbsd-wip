@@ -25743,13 +25743,11 @@ share/texmf-dist/scripts/fragmaster/fragmaster.pl
 share/texmf-dist/scripts/glossaries/
 share/texmf-dist/scripts/glossaries/glossaries.perl
 share/texmf-dist/scripts/glossaries/makeglossaries
-share/texmf-dist/scripts/glossaries/makeglossaries.bat
 share/texmf-dist/scripts/glossaries/mfirstuc.perl
 share/texmf-dist/scripts/installfont/
 share/texmf-dist/scripts/installfont/installfont-tl
 share/texmf-dist/scripts/jmlr/
 share/texmf-dist/scripts/jmlr/makejmlrbook
-share/texmf-dist/scripts/jmlr/makejmlrbook.bat
 share/texmf-dist/scripts/latex2man/
 share/texmf-dist/scripts/latex2man/latex2man
 share/texmf-dist/scripts/latexdiff/
@@ -25828,7 +25826,6 @@ share/texmf-dist/scripts/pmx/pmx2pdf.lua
 share/texmf-dist/scripts/purifyeps/
 share/texmf-dist/scripts/purifyeps/purifyeps
 share/texmf-dist/scripts/shipunov/
-share/texmf-dist/scripts/shipunov/biokey2html.bat
 share/texmf-dist/scripts/shipunov/biokey2html.sh
 share/texmf-dist/scripts/shipunov/biokey2html1.pl
 share/texmf-dist/scripts/shipunov/biokey2html2.pl
