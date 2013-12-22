@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2013/10/12 10:23:26 sthen Exp $
+@comment $OpenBSD$
 @conflict teTeX_texmf-*
 @conflict texlive_base-<2013
 @conflict texlive_texmf-docs-<2013
@@ -120,7 +120,6 @@ share/texmf-dist/context/data/texworks/configuration/texworks-config.txt
 share/texmf-dist/context/data/texworks/configuration/tools.ini
 share/texmf-dist/context/data/texworks/texworks-context.rme
 share/texmf-dist/context/data/texworks/texworks-setup.ini
-share/texmf-dist/doc/
 share/texmf-dist/fonts/
 share/texmf-dist/fonts/afm/
 share/texmf-dist/fonts/afm/hoekwater/
@@ -2505,6 +2504,5 @@ share/texmf-dist/tex/latex/context/ppchtex/m-ch-nl.sty
 share/texmf-dist/tex/latex/context/ppchtex/m-pictex.sty
 @unexec rm -Rf %D/share/texmf-var/luatex-cache
 @exec %D/bin/mtxrun --generate > /dev/null 2>&1
-@comment some of this could be shared with other parts of TL, hash with kpse
 @exec %D/bin/mktexlsr > /dev/null 2>&1
 @unexec-delete %D/bin/mktexlsr > /dev/null 2>&1
