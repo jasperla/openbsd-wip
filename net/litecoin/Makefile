@@ -2,7 +2,7 @@
 
 COMMENT =		P2P payment system
 
-V =			0.8.5.1
+V =			0.8.6.1
 DISTNAME =		litecoin-project-litecoin-v${V}
 PKGNAME =		litecoin-${V}
 
@@ -38,7 +38,7 @@ MAKE_ENV =		USE_UPNP=0 CXX="${CXX}" \
 QMAKE =			${LOCALBASE}/bin/qmake4
 USE_GMAKE =		Yes
 
-WRKDIST =		${WRKDIR}/litecoin-project-litecoin-6cef39c
+WRKDIST =		${WRKDIR}/litecoin-project-litecoin-dab8fe6
 
 do-configure:
 	@cd ${WRKSRC} && \
