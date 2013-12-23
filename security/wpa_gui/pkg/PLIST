@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+@bin sbin/wpa_gui
