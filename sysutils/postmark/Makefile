@@ -12,6 +12,7 @@ MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
 PERMIT_PACKAGE_CDROM =	Yes
 
+# Artistic License
 MASTER_SITES =		http://fsbench.filesystems.org/bench/
 
 src =			postmark-1_5.c
