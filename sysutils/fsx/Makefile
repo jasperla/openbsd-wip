@@ -25,11 +25,11 @@ NO_TEST =		Yes
 WRKDIST =		${WRKDIR}
 
 do-extract:
-	cp ${FULLDISTDIR}/dfly-fsx.c ${WRKSRC}
+	cp ${FULLDISTDIR}/${DISTFILES} ${WRKSRC}
 
 do-build:
 	cd ${WRKSRC}; \
-	${CC} ${CPPFLAGS} ${CFLAGS} ${LDFLAGS} dfly-fsx.c -o fsx
+	${CC} ${CPPFLAGS} -Wall ${CFLAGS} ${LDFLAGS} ${DISTFILES} -o fsx
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fsx ${PREFIX}/bin/
