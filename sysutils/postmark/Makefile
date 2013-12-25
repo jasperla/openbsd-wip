@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile $
+# $OpenBSD$
 
 COMMENT =		NFS mail server workload
 
-DISTNAME =		postmark-1.5
-PKGNAME =		${DISTNAME}
+PKGNAME =		postmark-1.5
 
 CATEGORIES =		sysutils benchmarks
 
@@ -15,19 +14,23 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		http://fsbench.filesystems.org/bench/
 
-DISTFILES =		postmark-1_5.c	
+src =			postmark-1_5.c
+DISTFILES =		${src}
 EXTRACT_ONLY =
+DIST_SUBDIR =		postmark
 
-NO_BUILD =		Yes
 NO_TEST =		Yes
 
-INST_DIR = 		${PREFIX}/bin/
+WRKDIST =		${WRKDIR}
 
-pre-install:
-		cp /usr/ports/distfiles/postmark-1_5.c	${WRKSRC}
+do-extract:
+	cp ${DISTDIR}/postmark/${src} ${WRKDIR}
+
+do-build:
+	cd ${WRKSRC}; \
+	${CC} ${CPPFLAGS} -Wall ${CFLAGS} ${LDFLAGS} ${src} -o postmark
 
 do-install:
-		cd ${WRKSRC} && gcc postmark-1_5.c -o postmark
-		${INSTALL_PROGRAM}	${WRKSRC}/postmark ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/postmark ${PREFIX}/bin/
 
 .include <bsd.port.mk>
