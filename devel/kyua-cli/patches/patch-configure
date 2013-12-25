@@ -1,0 +1,11 @@
+$OpenBSD$
+--- configure.orig	Wed Dec 25 19:54:02 2013
++++ configure	Wed Dec 25 19:54:09 2013
+@@ -4582,7 +4582,6 @@ fi
+                      -Wcast-qual \
+                      -Wextra \
+                      -Wpointer-arith \
+-                     -Wredundant-decls \
+                      -Wreturn-type \
+                      -Wshadow \
+                      -Wsign-compare \
