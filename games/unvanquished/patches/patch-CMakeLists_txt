@@ -1,33 +1,53 @@
 $OpenBSD$
---- CMakeLists.txt.orig	Sun Sep  1 14:30:20 2013
-+++ CMakeLists.txt	Sun Sep 22 02:17:17 2013
-@@ -185,7 +185,9 @@ if( WIN32 )
-   set( PLATFORM "win32" )
-   set( CONSOLE "win32" )
- elseif( UNIX )
--  if( ${CMAKE_SYSTEM_NAME} MATCHES "Darwin" )
-+  if( ${CMAKE_SYSTEM_NAME} MATCHES "Linux" )
-+    add_definitions( -D_FILE_OFFSET_BITS=64 )
-+  elseif( ${CMAKE_SYSTEM_NAME} MATCHES "Darwin" )
-     add_definitions( -DMACOS_X -DMACOS_X_ACCELERATION_HACK -DUSE_FILE32API -DMACOS_X_CURSOR_HACK )
-   endif()
-   set( PLATFORM "unix" )
-@@ -416,9 +418,6 @@ if(NOT MINIMAL_FLAGS)
-   if( NOT MSVC )
-     # Can we get rid of unneeded external libraries?
-     try_linker_flag( HAVE_AS_NEEDED -Wl,--as-needed )
--
--    # If we can, fail if there are unresolved symbols
--    try_linker_flag( HAVE_Z_DEFS -Wl,-z,defs )
-   endif()
+--- CMakeLists.txt.orig	Sun Dec  1 19:10:53 2013
++++ CMakeLists.txt	Thu Dec 26 09:14:50 2013
+@@ -64,6 +64,8 @@ endif()
+ # When adding a new platform, look at all the places WIN32, APPLE and LINUX are used
+ if( CMAKE_SYSTEM_NAME MATCHES "Linux" )
+   set( LINUX ON )
++elseif( CMAKE_SYSTEM_NAME MATCHES "OpenBSD" )
++  set( OPENBSD ON )
+ elseif( NOT WIN32 AND NOT APPLE )
+   message( FATAL_ERROR "Platform not supported" )
+ endif()
+@@ -215,7 +217,6 @@ else()
+   try_linker_flag( LINKER_O1 "-Wl,-O1" )
+   try_linker_flag( LINKER_SORT_COMMON "-Wl,--sort-common" )
+   try_linker_flag( LINKER_AS_NEEDED "-Wl,--as-needed" )
+-  try_linker_flag( LINKER_NO_UNDEFINED "-Wl,--no-undefined" )
+   try_linker_flag( LINKER_Z_RELRO "-Wl,-z,relro" )
+   try_linker_flag( LINKER_Z_NOW "-Wl,-z,now" )
+   if( WIN32 )
+@@ -911,6 +912,14 @@ if( APPLE )
+     ${LIB_DIR}/nacl/native_client/src/shared/imc/posix/nacl_imc_posix.cc
+     ${LIB_DIR}/nacl/native_client/src/shared/imc/osx/nacl_imc.cc
+   )
++elseif( OPENBSD )
++  set( NACLLIST_NATIVE
++    ${LIB_DIR}/nacl/nacl.cpp
++    ${LIB_DIR}/nacl/native_client/src/shared/imc/nacl_imc_common.cc
++    ${LIB_DIR}/nacl/native_client/src/shared/imc/posix/nacl_imc_posix.cc
++    ${LIB_DIR}/nacl/native_client/src/shared/imc/linux/nacl_imc.cc
++  )
++
+ elseif( LINUX )
+   set( NACLLIST_NATIVE
+     ${LIB_DIR}/nacl/nacl.cpp
+@@ -1034,6 +1043,8 @@ endif()
+ # Native client
+ if( APPLE )
+   add_definitions( -DNACL_WINDOWS=0 -DNACL_LINUX=0 -DNACL_ANDROID=0 -DNACL_OSX=1 )
++elseif( OPENBSD )
++  add_definitions( -DNACL_WINDOWS=0 -DNACL_LINUX=0 -DNACL_ANDROID=0 -DNACL_OSX=0 )
+ elseif( LINUX )
+   add_definitions( -DNACL_WINDOWS=0 -DNACL_LINUX=1 -DNACL_ANDROID=0 -DNACL_OSX=0 )
+ elseif( WIN32 )
+@@ -1186,7 +1197,7 @@ if( BUILD_NEW_RENDERER OR BUILD_OLD_RENDERER )
+ endif()
  
-   if( ENABLE_FSTACKPROT )
-@@ -1322,6 +1321,8 @@ if( WIN32 )
-   endif()
- elseif( UNIX )
-   if( CMAKE_SYSTEM_NAME STREQUAL "FreeBSD" )
-+    set( OS_LIBRARIES m z )
-+  elseif( CMAKE_SYSTEM_NAME STREQUAL "OpenBSD" )
-     set( OS_LIBRARIES m z )
-   elseif( CMAKE_SYSTEM_NAME STREQUAL "Darwin" )
-     set( OS_LIBRARIES dl m z )
+ # X11
+-if( LINUX AND ( BUILD_CLIENT OR BUILD_NEW_RENDERER OR BUILD_OLD_RENDERER ) )
++if( ( LINUX OR OPENBSD ) AND ( BUILD_CLIENT OR BUILD_NEW_RENDERER OR BUILD_OLD_RENDERER ) )
+   find_package( X11 REQUIRED )
+   include_directories( ${X11_INCLUDE_DIRS} )
+   set( LIBS_CLIENT ${LIBS_CLIENT} ${X11_LIBRARIES} )
