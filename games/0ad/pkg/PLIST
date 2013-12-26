@@ -4,8 +4,10 @@ bin/0ad
 @bin bin/pyrogenesis
 lib/libatlas.a
 lib/libengine.a
+lib/libglooxwrapper.a
 lib/libgraphics.a
 lib/libgui.a
+lib/liblobby.a
 lib/liblowlevel.a
 lib/libmocks_real.a
 lib/libmocks_test.a

@@ -2,7 +2,7 @@
 
 COMMENT =		historical real-time strategy game
 
-PKGNAME =		0ad-0.0.14
+PKGNAME =		0ad-0.0.15
 
 CATEGORIES =		games
 
@@ -35,6 +35,8 @@ LIB_DEPENDS =		audio/libvorbis \
 			graphics/png \
 			net/curl \
 			net/enet \
+			net/gloox \
+			net/miniupnp/miniupnpc \
 			textproc/libxml
 
 MAKE_FLAGS =		SILENT= \
@@ -45,6 +47,7 @@ PATCHORIG =		.orig.port
 USE_GMAKE =		Yes
 CONFIGURE_ARGS +=	--without-nvtt \
 			--with-system-enet \
+			--with-system-miniupnpc \
 			--datadir=${PREFIX}/share/0ad \
 			--libdir=${PREFIX}/lib
 CONFIGURE_ENV =		MAKE=${MAKE_PROGRAM}
