@@ -1,0 +1,18 @@
+@comment $OpenBSD$
+${P5SITE}/Sys/
+${P5SITE}/Sys/Info/
+${P5SITE}/Sys/Info/Base.pm
+${P5SITE}/Sys/Info/Constants.pm
+${P5SITE}/Sys/Info/Device/
+${P5SITE}/Sys/Info/Device.pm
+${P5SITE}/Sys/Info/Device/CPU.pm
+${P5SITE}/Sys/Info/Driver.pm
+${P5SITE}/Sys/Info/Helper.pm
+${P5SITE}/Sys/Info/OS.pm
+@man man/man3p/Sys::Info::Base.3p
+@man man/man3p/Sys::Info::Constants.3p
+@man man/man3p/Sys::Info::Device.3p
+@man man/man3p/Sys::Info::Device::CPU.3p
+@man man/man3p/Sys::Info::Driver.3p
+@man man/man3p/Sys::Info::Helper.3p
+@man man/man3p/Sys::Info::OS.3p
