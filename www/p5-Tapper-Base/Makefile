@@ -13,7 +13,8 @@ MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 PERMIT_PACKAGE_CDROM=	Yes
 
 RUN_DEPENDS=    devel/p5-LockFile-Simple \
-		devel/p5-Module-Find
+		devel/p5-Module-Find \
+		devel/p5-MooseX-Log-Log4perl
 
 BUILD_DEPENDS=  ${RUN_DEPENDS}
 
