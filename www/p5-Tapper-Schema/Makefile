@@ -22,9 +22,9 @@ RUN_DEPENDS = 	archivers/p5-Compress-Bzip2 \
 		devel/p5-DateTime-Format-MySQL \
 		devel/p5-DateTime-Format-Pg \
 		devel/p5-MRO-Compat \
+		devel/p5-TAP-DOM \
 		devel/p5-Test-Deep \
 		devel/p5-YAML-Syck \
-		www/p5-TAP-DOM \
 		www/p5-Tapper-Config \
 		www/p5-Tapper-TAP-Harness
 

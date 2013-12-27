@@ -14,10 +14,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 RUN_DEPENDS=    devel/p5-Data-YAML \
 		devel/p5-Sub-Exporter \
+		devel/p5-Test-TAPv13
 		devel/p5-Test-WWW-Mechanize \
 		devel/p5-YAML-Syck \
-                www/p5-Tapper-Base \
-		www/p5-Test-TAPv13
+                www/p5-Tapper-Base
 
 BUILD_DEPENDS=  ${RUN_DEPENDS}
 
