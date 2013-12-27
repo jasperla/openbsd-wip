@@ -1,0 +1,193 @@
+$OpenBSD$
+--- postmark-1_5.c.orig	Wed Dec 25 14:12:14 2013
++++ postmark-1_5.c	Wed Dec 25 18:17:53 2013
+@@ -48,11 +48,14 @@ Versions:
+       Also changed MB definition to 1024KB, tweaked show command
+ */
+ 
++#include <sys/stat.h>
++
+ #include <stdio.h>
+ #include <string.h>
+ #include <stdlib.h>
+ #include <time.h>
+ #include <fcntl.h>
++#include <unistd.h>
+ 
+ #ifdef _WIN32
+ #include <io.h>
+@@ -64,7 +67,7 @@ Versions:
+ #else
+ extern char *getwd();
+ 
+-#define GETWD(x) getwd(x)
++#define GETWD(x) getcwd(x)
+ #define MKDIR(x) mkdir(x,0700)
+ #define SEPARATOR "/"
+ #endif
+@@ -120,7 +123,7 @@ cmd command_list[]={ /* table of CLI commands */
+    {"show",cli_show,"Displays current configuration"},
+    {"help",cli_help,"Prints out available commands"},
+    {"quit",cli_quit,"Exit program"},
+-   NULL
++   {NULL}
+ };
+ 
+ extern void verbose_report();
+@@ -183,12 +186,12 @@ int i;
+    static char buffer[MAX_LINE]; /* storage for current conversion */
+ 
+    if (i/MEGABYTE)
+-      sprintf(buffer,"%.2f megabytes",(float)i/MEGABYTE);
++      snprintf(buffer,sizeof(buffer),"%.2f megabytes",(float)i/MEGABYTE);
+    else
+       if (i/KILOBYTE)
+-         sprintf(buffer,"%.2f kilobytes",(float)i/KILOBYTE);
++         snprintf(buffer,sizeof(buffer),"%.2f kilobytes",(float)i/KILOBYTE);
+       else
+-         sprintf(buffer,"%d bytes",i);
++         snprintf(buffer,sizeof(buffer),"%d bytes",i);
+ 
+    return(buffer);
+ }
+@@ -200,12 +203,12 @@ float i;
+    static char buffer[MAX_LINE]; /* storage for current conversion */
+ 
+    if (i/(float)MEGABYTE>1)
+-      sprintf(buffer,"%.2f megabytes",i/(float)MEGABYTE);
++      snprintf(buffer,sizeof(buffer),"%.2f megabytes",i/(float)MEGABYTE);
+    else
+       if (i/(float)KILOBYTE)
+-         sprintf(buffer,"%.2f kilobytes",i/(float)KILOBYTE);
++         snprintf(buffer,sizeof(buffer),"%.2f kilobytes",i/(float)KILOBYTE);
+       else
+-         sprintf(buffer,"%f bytes",i);
++         snprintf(buffer,sizeof(buffer),"%f bytes",i);
+ 
+    return(buffer);
+ }
+@@ -301,7 +304,7 @@ int weight;
+ 
+    if (new_file_system=(file_system *)calloc(1,sizeof(file_system)))
+       {
+-      strcpy(new_file_system->system.name,params);
++      strlcpy(new_file_system->system.name,params,sizeof(new_file_system->system.name));
+       new_file_system->system.size=weight;
+ 
+       if (file_systems)
+@@ -548,30 +551,30 @@ int deleted; /* files deleted back-to-back */
+    t_elapsed=diff_time(t_end_time,t_start_time);
+ 
+    fprintf(fp,"Time:\n");
+-   fprintf(fp,"\t%d seconds total\n",elapsed);
+-   fprintf(fp,"\t%d seconds of transactions (%d per second)\n",t_elapsed,
+-      transactions/t_elapsed);
++   fprintf(fp,"\t%f seconds total\n",(double)elapsed);
++   fprintf(fp,"\t%f seconds of transactions (%f per second)\n",(double)t_elapsed,
++      transactions/(double)t_elapsed);
+ 
+    fprintf(fp,"\nFiles:\n");
+-   fprintf(fp,"\t%d created (%d per second)\n",files_created,
+-      files_created/elapsed);
++   fprintf(fp,"\t%f created (%f per second)\n",(double)files_created,
++      (double)(files_created/elapsed));
+ 
+    interval=diff_time(t_start_time,start_time);
+    fprintf(fp,"\t\tCreation alone: %d files (%d per second)\n",simultaneous,
+       simultaneous/interval);
+-   fprintf(fp,"\t\tMixed with transactions: %d files (%d per second)\n",
+-      files_created-simultaneous,(files_created-simultaneous)/t_elapsed);
+-   fprintf(fp,"\t%d read (%d per second)\n",files_read,files_read/t_elapsed);
+-   fprintf(fp,"\t%d appended (%d per second)\n",files_appended,
+-      files_appended/t_elapsed);
+-   fprintf(fp,"\t%d deleted (%d per second)\n",files_created,
+-      files_created/elapsed);
++   fprintf(fp,"\t\tMixed with transactions: %f files (%f per second)\n",
++      (double)(files_created-simultaneous),(double)((files_created-simultaneous)/t_elapsed));
++   fprintf(fp,"\t%f read (%f per second)\n",(double)files_read,(double)(files_read/t_elapsed));
++   fprintf(fp,"\t%f appended (%f per second)\n",(double)files_appended,
++      (double)(files_appended/t_elapsed));
++   fprintf(fp,"\t%f deleted (%f per second)\n",(double)files_created,
++      (double)(files_created/elapsed));
+    
+    interval=diff_time(end_time,t_end_time);
+    fprintf(fp,"\t\tDeletion alone: %d files (%d per second)\n",deleted,
+       deleted/interval);
+-   fprintf(fp,"\t\tMixed with transactions: %d files (%d per second)\n",
+-      files_deleted-deleted,(files_deleted-deleted)/t_elapsed);
++   fprintf(fp,"\t\tMixed with transactions: %f files (%f per second)\n",
++      (double)(files_deleted-deleted),(double)((files_deleted-deleted)/t_elapsed));
+ 
+    fprintf(fp,"\nData:\n");
+    fprintf(fp,"\t%s read ",scalef(bytes_read));
+@@ -670,19 +673,19 @@ char *dest;
+    *dest='\0';
+    if (file_system_count)
+       {
+-      strcat(dest,
+-         location_index[(file_system_count==1)?0:RND(file_system_weight)]);
+-      strcat(dest,SEPARATOR);
++      strlcat(dest,
++         location_index[(file_system_count==1)?0:RND(file_system_weight)],sizeof(dest));
++      strlcat(dest,SEPARATOR,sizeof(dest));
+       }
+ 
+    if (subdirectories>1)
+       {
+-      sprintf(conversion,"s%d%s",RND(subdirectories),SEPARATOR);
+-      strcat(dest,conversion);
++      snprintf(conversion,sizeof(conversion),"s%d%s",RND(subdirectories),SEPARATOR);
++      strlcat(dest,conversion,sizeof(dest));
+       }
+ 
+-   sprintf(conversion,"%d",++files_created);
+-   strcat(dest,conversion);
++   snprintf(conversion,sizeof(conversion),"%d",++files_created);
++   strlcat(dest,conversion,sizeof(dest));
+ }
+ 
+ /* creates new file of specified length and fills it with data */
+@@ -927,13 +930,13 @@ int subdirs;
+    else
+       { 
+       if (base_dir)
+-         sprintf(save_dir,"%s%s",base_dir,SEPARATOR);
++         snprintf(save_dir,sizeof(save_dir),"%s%s",base_dir,SEPARATOR);
+       else
+          *save_dir='\0';
+ 
+       for (i=0; i<subdirs; i++)
+          {
+-         sprintf(dir_name,"%ss%d",save_dir,i);
++         snprintf(dir_name,sizeof(dir_name),"%ss%d",save_dir,i);
+          MKDIR(dir_name); 
+          }
+       }
+@@ -956,13 +959,13 @@ int subdirs;
+    else
+       { 
+       if (base_dir)
+-         sprintf(save_dir,"%s%s",base_dir,SEPARATOR);
++         snprintf(save_dir,sizeof(save_dir),"%s%s",base_dir,SEPARATOR);
+       else
+          *save_dir='\0';
+ 
+       for (i=0; i<subdirs; i++)
+          {
+-         sprintf(dir_name,"%ss%d",save_dir,i);
++         snprintf(dir_name,sizeof(dir_name),"%ss%d",save_dir,i);
+          rmdir(dir_name); 
+          }
+       }
+@@ -1167,9 +1170,9 @@ int size;
+       {
+       buffer[strlen(buffer)-1]='\0';    /* delete final CR */
+       if (!strcmp(buffer,"?"))           /* translate aliases */
+-         strcpy(buffer,"help");
++         strlcpy(buffer,"help",sizeof(buffer));
+       if (!strcmp(buffer,"exit"))
+-         strcpy(buffer,"quit");
++         strlcpy(buffer,"quit",sizeof(buffer));
+       }
+ 
+    return(result);                      /* return success of fgets */
