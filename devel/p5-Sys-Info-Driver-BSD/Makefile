@@ -14,9 +14,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 BUILD_DEPENDS=  ${RUN_DEPENDS}
 
-RUN_DEPENDS =	www/p5-Sys-Info-Base \
-		www/p5-Unix-Processors \
-		www/p5-Test-Sys-Info
-#		www/p5-BSD-Sysctl
+RUN_DEPENDS =	devel/p5-Unix-Processors \
+		devel/p5-Sys-Info-Base \
+		devel/p5-Test-Sys-Info \
+#		devel/p5-BSD-Sysctl
 
 .include <bsd.port.mk>
