@@ -1,0 +1,18 @@
+$OpenBSD$
+--- Makefile.PL.orig	Thu Dec 26 20:30:45 2013
++++ Makefile.PL	Thu Dec 26 20:31:34 2013
+@@ -6,9 +6,11 @@ use Config;
+ 
+ my $module_name = 'BSD::Sysctl';
+ 
+-if ($Config{osname} ne 'freebsd') {
+-    die "OS unsupported ($Config{osname}). Here's a nickel, go buy yourself a real OS.\n";
+-}
++/*
++ * if ($Config{osname} ne 'freebsd') {
++ *    die "OS unsupported ($Config{osname}). Here's a nickel, go buy yourself a real OS.\n";
++ * }
++*/
+ 
+ my %define;
+ my $maxlen = 0;
