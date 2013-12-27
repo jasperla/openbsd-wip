@@ -13,4 +13,11 @@ MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
+RUN_DEPENDS=    devel/p5-File-ShareDir \
+                devel/p5-File-Slurp \
+                devel/p5-Hash-Merge-Simple \
+                devel/p5-YAML-Syck
+
+BUILD_DEPENDS=  ${RUN_DEPENDS}
+
 .include <bsd.port.mk>
