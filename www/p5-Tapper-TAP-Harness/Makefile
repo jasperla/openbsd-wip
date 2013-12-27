@@ -15,8 +15,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 RUN_DEPENDS=   	devel/p5-Directory-Scratch \
 		devel/p5-File-Slurp \
 		devel/p5-IO-String \
-		devel/p5-YAML-Tiny \
 		devel/p5-IO-stringy \
+		devel/p5-YAML-Tiny \
 		www/p5-TAP-DOM
 
 BUILD_DEPENDS=  ${RUN_DEPENDS}
