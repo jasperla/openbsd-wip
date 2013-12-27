@@ -12,7 +12,9 @@ MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS=    devel/p5-MooseX-Log-Log4perl
+RUN_DEPENDS=    devel/p5-File-Slurp \
+		devel/p5-MooseX-Log-Log4perl \
+		devel/p5-YAML-Syck
 
 BUILD_DEPENDS=  ${RUN_DEPENDS}
 
