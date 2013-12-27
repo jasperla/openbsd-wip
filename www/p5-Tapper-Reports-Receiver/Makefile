@@ -13,16 +13,22 @@ MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 PERMIT_PACKAGE_CDROM=	Yes
 
 RUN_DEPENDS=    devel/p5-AnyEvent \
+		devel/p5-Data-DPath \
 		devel/p5-DateTime-Format-Natural \
 		devel/p5-DateTime-Format-Mail \
 		devel/p5-Devel-Backtrace \
 		devel/p5-File-MimeInfo \
 		devel/p5-IO-String \
 		devel/p5-LockFile-Simple \
+		devel/p5-MooseX-Log-Log4perl \
 		devel/p5-MooseX-Daemonize \
 		devel/p5-String-Escape \
 		devel/p5-Test-Deep \
-		devel/p5-YAML-Tiny
+		devel/p5-Test-Fixture-DBIC-Schema \
+		devel/p5-YAML-Tiny \
+		www/p5-Tapper-Base \
+		www/p5-Tapper-Model \
+		www/p5-Tapper-Schema \
 		www/p5-Tapper-TAP-Harness
 
 BUILD_DEPENDS=  ${RUN_DEPENDS}
