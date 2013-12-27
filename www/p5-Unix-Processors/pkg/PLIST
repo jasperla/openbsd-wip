@@ -1,0 +1,13 @@
+@comment $OpenBSD$
+%%SHARED%%
+${P5ARCH}/
+${P5ARCH}/Unix/
+${P5ARCH}/Unix/Processors/
+${P5ARCH}/Unix/Processors.pm
+${P5ARCH}/Unix/Processors/Info.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Unix/
+${P5ARCH}/auto/Unix/Processors/
+${P5ARCH}/auto/Unix/Processors/Processors.bs
+@man man/man3p/Unix::Processors.3p
+@man man/man3p/Unix::Processors::Info.3p
