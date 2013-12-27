@@ -12,7 +12,13 @@ MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS=    www/p5-Daemon-Daemonize
+RUN_DEPENDS=    devel/p5-common-sense \
+		devel/p5-Daemon-Daemonize \
+		devel/p5-Log-Log4perl \
+		devel/p5-Moose \
+		devel/p5-Test-MockModule \
+		www/p5-Tapper-Base \
+		www/p5-Tapper-Remote \
 
 BUILD_DEPENDS=  ${RUN_DEPENDS}
 
