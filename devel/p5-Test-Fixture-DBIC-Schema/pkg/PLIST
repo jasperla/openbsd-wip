@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+${P5SITE}/Test/
+${P5SITE}/Test/Fixture/
+${P5SITE}/Test/Fixture/DBIC/
+${P5SITE}/Test/Fixture/DBIC/Schema.pm
+@man man/man3p/Test::Fixture::DBIC::Schema.3p
