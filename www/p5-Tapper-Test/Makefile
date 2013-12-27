@@ -12,4 +12,9 @@ MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
+RUN_DEPENDS=    www/p5-Sys-Info \
+		www/p5-Format-Human-Bytes
+
+BUILD_DEPENDS=  ${RUN_DEPENDS}
+
 .include <bsd.port.mk>

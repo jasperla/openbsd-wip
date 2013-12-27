@@ -1,7 +1,15 @@
 $OpenBSD$
---- dfly-fsx.c.orig	Thu Dec 26 16:26:11 2013
-+++ dfly-fsx.c	Thu Dec 26 16:59:53 2013
-@@ -487,15 +487,15 @@ check_eofpage(char *s, unsigned offset, char *p, int s
+--- dfly-fsx.c.orig	Thu Dec 26 17:41:05 2013
++++ dfly-fsx.c	Thu Dec 26 19:36:35 2013
+@@ -339,7 +339,6 @@ report_failure(int status)
+ 	exit(status);
+ }
+ 
+-
+ #define short_at(cp) ((unsigned short)((*((unsigned char *)(cp)) << 8) | \
+ 					*(((unsigned char *)(cp)) + 1)))
+ 
+@@ -487,15 +486,15 @@ check_eofpage(char *s, unsigned offset, char *p, int s
  	 * beyond the true end of the file mapping
  	 * (as required by mmap def in 1996 posix 1003.1)
  	 */
@@ -11,17 +19,18 @@ $OpenBSD$
  	for (should_be_zero = last_page + (file_size & page_mask);
  	     should_be_zero < last_page + page_size;
  	     should_be_zero++)
- 		if (*(char *)should_be_zero) {
+-		if (*(char *)should_be_zero) {
 -			prt("Mapped %s: non-zero data past EOF (0x%llx) page offset 0x%x is 0x%04x\n",
 -			    s, file_size - 1, should_be_zero & page_mask,
 -			    short_at(should_be_zero));
++		if ((char)should_be_zero) {
 +                        prt("Mapped %s: non-zero data past EOF (0x%llx) page offset 0x%x is 0x%04x\n",
-+                            s, file_size - 1, should_be_zero & page_mask,
-+                            short_at(should_be_zero));
++                           s, file_size - 1, should_be_zero & page_mask,
++                           short_at(should_be_zero));
  			report_failure(205);
  		}
  }
-@@ -689,7 +689,7 @@ domapwrite(unsigned offset, unsigned size)
+@@ -689,7 +688,7 @@ domapwrite(unsigned offset, unsigned size)
  	if (setjmp(jmpbuf) == 0) {
  	    jmpbuf_good = 1;
  	    memcpy(p + pg_offset, good_buf + offset, size);
@@ -30,7 +39,7 @@ $OpenBSD$
  		    prterr("domapwrite: msync");
  		    report_failure(203);
  	    }
-@@ -790,7 +790,7 @@ test(void)
+@@ -790,7 +789,7 @@ test(void)
  {
  	unsigned long	offset;
  	unsigned long	size = maxoplen;
@@ -39,7 +48,7 @@ $OpenBSD$
  	unsigned long	op = rv % (3 + !lite + mapped_writes);
  
  	/* turn off the map read if necessary */
-@@ -820,14 +820,14 @@ test(void)
+@@ -820,14 +819,14 @@ test(void)
  	 * MAPWRITE:    op = 3 or 4
  	 */
  	if (lite ? 0 : op == 3 && style == 0) /* vanilla truncate? */
@@ -57,7 +66,7 @@ $OpenBSD$
  			if (op == 1 || op == (lite ? 3 : 4)) {
  				offset %= maxfilelen;
  				if (offset + size > maxfilelen)
-@@ -1053,9 +1053,9 @@ main(int argc, char **argv)
+@@ -1053,9 +1052,9 @@ main(int argc, char **argv)
  			break;
  		case 'P':
  			strncpy(goodfile, optarg, sizeof(goodfile));
@@ -69,7 +78,7 @@ $OpenBSD$
  			break;
  		case 'R':
  			mapped_reads = 0;
-@@ -1105,14 +1105,14 @@ main(int argc, char **argv)
+@@ -1105,14 +1104,14 @@ main(int argc, char **argv)
  		exit(91);
  	}
  	strncat(goodfile, fname, 256);
@@ -86,7 +95,7 @@ $OpenBSD$
  	fsxlogf = fopen(logfile, "w");
  	if (fsxlogf == NULL) {
  		prterr(logfile);
-@@ -1135,7 +1135,7 @@ main(int argc, char **argv)
+@@ -1135,7 +1134,7 @@ main(int argc, char **argv)
  	}
  	original_buf = (char *) malloc(maxfilelen);
  	for (i = 0; i < maxfilelen; i++)
