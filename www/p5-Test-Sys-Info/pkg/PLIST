@@ -1,0 +1,8 @@
+@comment $OpenBSD$
+${P5SITE}/Test/
+${P5SITE}/Test/Sys/
+${P5SITE}/Test/Sys/Info/
+${P5SITE}/Test/Sys/Info.pm
+${P5SITE}/Test/Sys/Info/Driver.pm
+@man man/man3p/Test::Sys::Info.3p
+@man man/man3p/Test::Sys::Info::Driver.3p
