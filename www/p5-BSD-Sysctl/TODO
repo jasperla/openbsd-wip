@@ -1,0 +1,8 @@
+$ sudo make plist
+===>  Checking files for p5-BSD-Sysctl-0.10
+`/usr/ports/distfiles/BSD-Sysctl-0.10.tar.gz' is up to date.
+>> (SHA256) BSD-Sysctl-0.10.tar.gz: OK
+===>  Extracting for p5-BSD-Sysctl-0.10
+===>  Patching for p5-BSD-Sysctl-0.10
+===>  Configuring for p5-BSD-Sysctl-0.10
+OS unsupported (openbsd). Here's a nickel, go buy yourself a real OS.
