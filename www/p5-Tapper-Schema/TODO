@@ -1,0 +1,7 @@
+#Warning: prerequisite DBIx::Class::Core 0 not found.
+#Warning: prerequisite DBIx::Class::InflateColumn::DateTime 0 not found.
+#Warning: prerequisite DBIx::Class::InflateColumn::Object::Enum 0 not found.
+#Warning: prerequisite DBIx::Class::ResultSet 0 not found.
+#Warning: prerequisite DBIx::Class::Schema 0 not found.
+#Warning: prerequisite DBIx::Class::TimeStamp 0 not found.
+#Warning: prerequisite Test::Fixture::DBIC::Schema 0 not found.
