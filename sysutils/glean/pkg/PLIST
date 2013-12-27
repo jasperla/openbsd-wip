@@ -1,0 +1,27 @@
+@comment $OpenBSD$
+@bin bin/glean
+@bin bin/showvis
+share/doc/glean-1/
+share/doc/glean-1/CHANGES
+share/doc/glean-1/COPYRIGHT
+share/doc/glean-1/JOBS
+share/doc/glean-1/html/
+share/doc/glean-1/html/build.html
+share/doc/glean-1/html/buildcmake.html
+share/doc/glean-1/html/buildgnu.html
+share/doc/glean-1/html/buildwin.html
+share/doc/glean-1/html/changes.html
+share/doc/glean-1/html/cleanup.html
+share/doc/glean-1/html/index.html
+share/doc/glean-1/html/newfeat.html
+share/doc/glean-1/html/newtest.html
+share/doc/glean-1/html/next.html
+share/doc/glean-1/html/overview.html
+share/doc/glean-1/html/port.html
+share/doc/glean-1/html/repo.html
+share/doc/glean-1/html/run.html
+share/doc/glean-1/html/state.html
+share/doc/glean-1/html/whatis.html
+share/doc/glean-1/sgml/
+share/doc/glean-1/sgml/Makefile
+share/doc/glean-1/sgml/glean.sgml
