@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+${P5SITE}/Format/
+${P5SITE}/Format/Human/
+${P5SITE}/Format/Human/Bytes.pm
+@man man/man3p/Format::Human::Bytes.3p
