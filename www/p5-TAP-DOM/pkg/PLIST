@@ -1,0 +1,11 @@
+@comment $OpenBSD$
+${P5SITE}/TAP/
+${P5SITE}/TAP/DOM/
+${P5SITE}/TAP/DOM.pm
+${P5SITE}/TAP/DOM/Config.pm
+${P5SITE}/TAP/DOM/Entry.pm
+${P5SITE}/TAP/DOM/Summary.pm
+@man man/man3p/TAP::DOM.3p
+@man man/man3p/TAP::DOM::Config.3p
+@man man/man3p/TAP::DOM::Entry.3p
+@man man/man3p/TAP::DOM::Summary.3p
