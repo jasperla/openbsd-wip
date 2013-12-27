@@ -1,0 +1,14 @@
+@comment $OpenBSD$
+${P5SITE}/Sys/
+${P5SITE}/Sys/Info/
+${P5SITE}/Sys/Info/Driver/
+${P5SITE}/Sys/Info/Driver/BSD/
+${P5SITE}/Sys/Info/Driver/BSD.pm
+${P5SITE}/Sys/Info/Driver/BSD/Device/
+${P5SITE}/Sys/Info/Driver/BSD/Device.pm
+${P5SITE}/Sys/Info/Driver/BSD/Device/CPU.pm
+${P5SITE}/Sys/Info/Driver/BSD/OS.pm
+@man man/man3p/Sys::Info::Driver::BSD.3p
+@man man/man3p/Sys::Info::Driver::BSD::Device.3p
+@man man/man3p/Sys::Info::Driver::BSD::Device::CPU.3p
+@man man/man3p/Sys::Info::Driver::BSD::OS.3p
