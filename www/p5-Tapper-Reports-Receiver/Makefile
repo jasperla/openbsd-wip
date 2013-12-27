@@ -18,6 +18,7 @@ RUN_DEPENDS=    devel/p5-AnyEvent \
 		devel/p5-DateTime-Format-Mail \
 		devel/p5-Devel-Backtrace \
 		devel/p5-File-MimeInfo \
+		devel/p5-Hash-Merge-Simple \
 		devel/p5-IO-String \
 		devel/p5-LockFile-Simple \
 		devel/p5-MooseX-Log-Log4perl \
