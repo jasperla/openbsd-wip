@@ -12,7 +12,8 @@ MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS=    devel/p5-LockFile-Simple \
+RUN_DEPENDS=    devel/p5-common-sense \
+		devel/p5-LockFile-Simple \
 		devel/p5-Module-Find \
 		devel/p5-MooseX-Log-Log4perl
 
