@@ -16,6 +16,8 @@ RUN_DEPENDS=   	devel/p5-Directory-Scratch \
 		devel/p5-File-Slurp \
 		devel/p5-IO-String \
 		devel/p5-IO-stringy \
+		devel/p5-Moose \
+		devel/p5-Test-Deep \
 		devel/p5-YAML-Tiny \
 		www/p5-TAP-DOM
 
