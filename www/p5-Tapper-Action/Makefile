@@ -21,6 +21,7 @@ RUN_DEPENDS=    databases/p5-DBIx-Class \
                 devel/p5-LockFile-Simple \
 		devel/p5-Log-Log4perl \
                 devel/p5-Moose \
+		devel/p5-MooseX-Log-Log4perl \
                 devel/p5-Try-Tiny \
                 devel/p5-YAML-Syck \
                 www/p5-Tapper-Config \
