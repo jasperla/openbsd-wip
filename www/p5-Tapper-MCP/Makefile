@@ -25,7 +25,7 @@ RUN_DEPENDS=    devel/p5-App-Daemon \
                 devel/p5-MooseX \
                 devel/p5-MRO-Compat \
 		devel/p5-Perl6-Junction \
-		devel/p5-Sysadm-Install \
+#		devel/p5-Sysadm-Install \
                 devel/p5-TAP-DOM \
                 devel/p5-Test-Deep \
                 devel/p5-Test-Fixture-DBIC-Schema \
