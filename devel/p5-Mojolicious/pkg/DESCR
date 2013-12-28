@@ -1,0 +1,3 @@
+A next generation web framework for the Perl programming language.
+The core of Mojolicious is a new implementation of the famous Routes
+concept, utilizing some advanced techniques from Catalyst.
