@@ -14,10 +14,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 RUN_DEPENDS=    devel/p5-Data-DPath \
 		devel/p5-Data-Structure-Util \
-		devel/p5-ExtUtils \
+		devel/p5-Data-YAML \
+#		devel/p5-Devel-Platform-Info \
 		devel/p5-List-MoreUtils \
-		www/p5-Data-YAML \
-		www/p5-Devel-Platform-Info \
 		www/p5-Test-More
 
 BUILD_DEPENDS=  ${RUN_DEPENDS}
