@@ -7,7 +7,7 @@ DISTNAME=	Sysadm-Install-0.43
 PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES=	devel www
 
-CPAN_AUTHOR=	mschilli
+CPAN_AUTHOR=	ivan
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 
