@@ -1,7 +1,7 @@
 $OpenBSD$
---- krita/ui/CMakeLists.txt.orig	Tue Oct 23 16:43:37 2012
-+++ krita/ui/CMakeLists.txt	Tue Oct 23 16:44:00 2012
-@@ -6,6 +6,7 @@ include_directories( ${KOTEXT_INCLUDES}
+--- krita/ui/CMakeLists.txt.orig	Sat Oct 12 10:17:59 2013
++++ krita/ui/CMakeLists.txt	Sun Oct 20 15:12:43 2013
+@@ -8,6 +8,7 @@ include_directories( ${KOTEXT_INCLUDES}
  	${CMAKE_CURRENT_SOURCE_DIR}/widgets/resources
  	${CMAKE_CURRENT_SOURCE_DIR}/openrastertk
  	${CMAKE_SOURCE_DIR}/krita/image/metadata

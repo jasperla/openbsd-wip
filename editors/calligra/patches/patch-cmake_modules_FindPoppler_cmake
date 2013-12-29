@@ -1,7 +1,7 @@
 $OpenBSD$
---- cmake/modules/FindPoppler.cmake.orig	Thu Feb 17 15:10:35 2011
-+++ cmake/modules/FindPoppler.cmake	Wed Oct 12 02:56:25 2011
-@@ -57,6 +57,10 @@ endif(POPPLER_FOUND)
+--- cmake/modules/FindPoppler.cmake.orig	Sat Oct 12 10:17:41 2013
++++ cmake/modules/FindPoppler.cmake	Sun Oct 20 15:12:39 2013
+@@ -60,6 +60,10 @@ endif(POPPLER_FOUND)
  if (POPPLER_FOUND)
    INCLUDE(CheckCXXSourceCompiles)
  
@@ -11,4 +11,4 @@ $OpenBSD$
 +
    # check whether we're using poppler 0.6
    set(CMAKE_REQUIRED_INCLUDES ${POPPLER_INCLUDE_DIR} ${QT_INCLUDE_DIR})
-   set(CMAKE_REQUIRED_LIBRARIES ${POPPLER_LIBRARY} ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${QT_QTXML_LIBRARY})
+   set(CMAKE_REQUIRED_LIBRARIES ${POPPLER_LIBRARY} ${POPPLER_CORE_LIBRARY} ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${QT_QTXML_LIBRARY})
