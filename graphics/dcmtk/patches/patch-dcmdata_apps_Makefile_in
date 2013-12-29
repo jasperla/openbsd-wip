@@ -1,0 +1,12 @@
+$OpenBSD$
+--- dcmdata/apps/Makefile.in.orig	Sat Oct  5 18:40:11 2013
++++ dcmdata/apps/Makefile.in	Sat Oct  5 18:40:28 2013
+@@ -16,7 +16,7 @@ ofstddir = $(top_srcdir)/../ofstd
+ oflogdir = $(top_srcdir)/../oflog
+ 
+ LOCALINCLUDES = -I$(ofstddir)/include -I$(oflogdir)/include
+-LIBDIRS = -L$(top_srcdir)/libi2d -L$(top_srcdir)/libsrc -L$(ofstddir)/libsrc -L$(oflogdir)/libsrc
++LIBDIRS = -L$(top_srcdir)/libi2d -L$(top_srcdir)/libsrc -L$(ofstddir)/libsrc -L$(oflogdir)/libsrc -L${LOCALBASE}/lib
+ LOCALLIBS = -ldcmdata -loflog -lofstd $(ZLIBLIBS)
+ LIBI2D = -li2d
+ 

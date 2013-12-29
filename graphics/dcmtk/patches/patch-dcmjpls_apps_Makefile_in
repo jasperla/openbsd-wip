@@ -1,0 +1,25 @@
+$OpenBSD$
+--- dcmjpls/apps/Makefile.in.orig	Sat Oct  5 23:06:16 2013
++++ dcmjpls/apps/Makefile.in	Sat Oct  5 23:07:57 2013
+@@ -51,7 +51,7 @@ LIBDIRS = -L$(top_srcdir)/libsrc $(dcmjplslibdir) $(li
+ 	$(dcmimglelibdir) $(dcmdatalibdir) $(ofloglibdir) $(ofstdlibdir)
+ LOCALLIBS = $(dcmjplslib) $(dcmimagelib) $(dcmimglelib) $(dcmdatalib) $(ofloglib) $(ofstdlib) \
+ 	$(libcharlslib) $(ZLIBLIBS)
+-PNMLIBS = $(TIFFLIBS) $(PNGLIBS) $(ZLIBLIBS)
++PNMLIBS = -ltiff -lpng -lz
+ 
+ objs = dcmdjpls.o dcmcjpls.o dcml2pnm.o
+ progs = dcmdjpls dcmcjpls dcml2pnm
+@@ -59,10 +59,10 @@ progs = dcmdjpls dcmcjpls dcml2pnm
+ all: $(progs)
+ 
+ dcmdjpls: dcmdjpls.o
+-	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(LIBDIRS) -o $@ $@.o $(LOCALLIBS) $(MATHLIBS) $(LIBS)
++	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(LIBDIRS) -o $@ $@.o $(LOCALLIBS) $(PNMLIBS) $(MATHLIBS) $(LIBS)
+ 
+ dcmcjpls: dcmcjpls.o
+-	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(LIBDIRS) -o $@ $@.o $(LOCALLIBS) $(MATHLIBS) $(LIBS)
++	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(LIBDIRS) -o $@ $@.o $(LOCALLIBS) $(PNMLIBS) $(MATHLIBS) $(LIBS)
+ 
+ dcml2pnm: dcml2pnm.o
+ 	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(LIBDIRS) -o $@ $@.o $(LOCALLIBS) $(PNMLIBS) $(MATHLIBS) $(LIBS)

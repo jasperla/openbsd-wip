@@ -1,0 +1,30 @@
+$OpenBSD$
+--- ofstd/libsrc/ofstd.cc.orig	Sat Oct  5 15:23:20 2013
++++ ofstd/libsrc/ofstd.cc	Sat Oct  5 15:26:26 2013
+@@ -157,6 +157,8 @@ END_EXTERN_C
+ #include <process.h>     /* needed for declaration of getpid() */
+ #endif
+ 
++#include <cmath>
++
+ // --- ftoa() processing flags ---
+ 
+ const unsigned int OFStandard::ftoa_format_e  = 0x01;
+@@ -1717,7 +1719,7 @@ void OFStandard::ftoa(
+ #ifdef HAVE_WINDOWS_H
+   if (_isnan(val))
+ #else
+-  if (isnan(val))
++  if (std::isnan(val))
+ #endif
+   {
+     OFStandard::strlcpy(dst, "nan", siz);
+@@ -1726,7 +1728,7 @@ void OFStandard::ftoa(
+ 
+   // check if val is infinity
+ #ifdef HAVE_ISINF
+-  if (isinf(val))
++  if (std::isinf(val))
+ #else
+   if (my_isinf(val))
+ #endif
