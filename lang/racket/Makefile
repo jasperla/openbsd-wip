@@ -10,7 +10,7 @@ ONLY_FOR_ARCHS =	i386 amd64
 # scheme" isn't the best description for racket.
 COMMENT =		multi-paradigm programming language
 
-V =			5.91pre201312110442
+V =			5.91.0.900pre201312290345
 PKGNAME =		racket-$V
 # The project uses racket-* for stable and plt-* for development releases
 DISTNAME =		racket-$V-src-unix
@@ -43,7 +43,13 @@ MASTER_SITES =		https://download.racket-lang.org/installers/${V}/racket/ \
 			ftp://download.tuxfamily.org/jod/lang/racket/
 EXTRACT_SUFX = .tar.lz
 
-MODULES +=		converters/libiconv
+#MODULES +=		converters/libiconv
+MODULES +=		converters/libiconv \
+			lang/clang
+
+# Racket crashes in the udp test with system and ports gcc
+MODCLANG_ARCHS = *
+MODCLANG_LANGS = c c++
 
 # http://docs.racket-lang.org/draw/libs.html
 # http://docs.racket-lang.org/gui/libs.html
@@ -61,6 +67,10 @@ WANTLIB += c m pthread ffi
 WRKDIST =		${WRKDIR}/racket-$V
 WRKSRC =		${WRKDIST}/racket/src
 
+# MAKE_JOBS: If "places" is enabled, racket uses "places channels". When
+# "places" is disabled, racket uses multiple racket processes and pipes.
+# http://permalink.gmane.org/gmane.comp.lang.racket.user/17281
+# https://github.com/plt/racket/commit/2295d16074b9538ce500cf9bf9de65265ce5531c
 # CPU=${MAKE_JOBS} and JOB_OPTIONS="-j ${MAKE_JOBS}" only work
 # with the main Makefile. Use instead the old PLT_SETUP_OPTIONS.
 MAKE_ENV +=		PLT_SETUP_OPTIONS="-j ${MAKE_JOBS}"
@@ -87,7 +97,7 @@ CONFIGURE_ARGS +=	--disable-backtrace \
 			--disable-places \
 			--disable-futures
 
-CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LIBracket3m_MAJOR=${LIBracket3m_VERSION:R} \
 			LIBracket3m_MINOR=${LIBracket3m_VERSION:E}
@@ -99,16 +109,6 @@ CONFIGURE_ARGS +=	--disable-strip \
 			--enable-noopt
 .endif
 
-# MAKE_JOBS: If "places" is enabled, racket uses "places channels". When
-# "places" is disabled, racket uses multiple racket processes and pipes.
-# http://permalink.gmane.org/gmane.comp.lang.racket.user/17281
-# https://github.com/plt/racket/commit/2295d16074b9538ce500cf9bf9de65265ce5531c
-# Default limit in file descriptors isn't enough for compile as root. The
-# "rendering" phase of scribble reaches the limit in some big documents.
-do-install:
-	@cd ${WRKBUILD} && ulimit -n 512 && ${SETENV} ${MAKE_ENV} \
-		${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
-
 post-install:
 	@mv ${WRKINST}/etc/racket ${PREFIX}/share/examples
 
@@ -118,8 +118,8 @@ post-install:
 # "-msse -mfpmath=sse" required by extflonum on i386.
 # XXX run the test again on i386
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
-CFLAGS += "-msse -mfpmath=sse"
-CONFIGURE_ARGS += --enable-extflonum
+CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -msse -mfpmath=sse"
+CONFIGURE_ARGS +=	--enable-extflonum
 .endif
 
 .include <bsd.port.mk>
