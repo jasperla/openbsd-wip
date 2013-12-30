@@ -1,22 +1,23 @@
 # $OpenBSD: Makefile.template,v 1.61 2012/03/29 13:41:58 sthen Exp $
 
-COMMENT =		SMTP benchmark and stress tool.
+COMMENT =		SMTP benchmark and stress tool
 
 DISTNAME =		postal-0.72
-PKGNAME =		${DISTNAME}
+#PKGNAME =		${DISTNAME}
 
 CATEGORIES =		benchmarks devel
 
 HOMEPAGE =		http://doc.coker.com.au/projects/postal/
 
-MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c m pthread stdc++
+WANTLIB += 		c m pthread stdc++
 
 MASTER_SITES =		http://www.coker.com.au/postal/
 EXTRACT_SUFX =		.tgz
+CFLAGS +=		 -Wno-long-long
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
