@@ -13,6 +13,8 @@ MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 PERMIT_PACKAGE_CDROM=	Yes
 
 RUN_DEPENDS=	devel/p5-Config-General \
+		devel/p5-YAML \
+		devel/p5-YAML-Syck \
 		converters/p5-JSON-XS \
 		security/p5-Crypt-Blowfish \
 		security/p5-Crypt-CBC \
