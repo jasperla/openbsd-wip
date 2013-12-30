@@ -1,0 +1,12 @@
+$OpenBSD$
+--- userlist.cpp.orig	Mon Dec 30 15:10:50 2013
++++ userlist.cpp	Mon Dec 30 15:11:04 2013
+@@ -71,7 +71,7 @@ UserList::~UserList()
+ 
+ const string &UserList::randomUser()
+ {
+-  m_index = random() % m_users->size();
++  m_index = arc4random() % m_users->size();
+   return m_users[0][m_index];
+ }
+ 
