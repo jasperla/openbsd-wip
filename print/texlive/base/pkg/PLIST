@@ -399,3 +399,4 @@ libdata/perl5/site_perl/TeXLive/TLUtils.pm
 @exec mktexlsr > /dev/null 2>&1
 @unexec-delete rm %D/share/texmf-dist/ls-R
 @unexec-delete rm %D/share/texmf-var/ls-R
+@unexec-delete rm %D/share/texmf/ls-R

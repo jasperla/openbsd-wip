@@ -7,6 +7,7 @@
 @conflict texlive_texmf-context-<2013
 @pkgpath print/texlive/texmf-minimal
 @pkgpath print/teTeX/texmf
+share/texmf/
 share/texmf-dist/
 share/texmf-dist/bibtex/
 share/texmf-dist/bibtex/bib/
