@@ -12,4 +12,10 @@ MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
+RUN_DEPENDS=    devel/p5-Path-Class \
+                devel/p5-Sub-Exporter \
+                devel/p5-Test-Most
+
+BUILD_DEPENDS=  ${RUN_DEPENDS}
+
 .include <bsd.port.mk>
