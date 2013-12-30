@@ -1,6 +1,6 @@
 # $OpenBSD $
 
-COMMENT=	retrieve BSD platform metadata
+COMMENT=	unified framework for obtaining common platform metadata
 
 MODULES=	cpan
 DISTNAME=	Devel-Platform-Info-0.10
@@ -9,7 +9,7 @@ CATEGORIES=	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 
-# Perl
+# Artistic License 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
 .include <bsd.port.mk>
