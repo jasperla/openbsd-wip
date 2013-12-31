@@ -95,6 +95,21 @@ As far as I know:
  * lang/ruby/${MODRUBY_LIBREV} is needed for convbkmk, epspdf, and
    other stuff.
 
-If you know more, please mail the package maintainer: <edd@openbsd.org>
+If you know more, please mail the package maintainer.
+
+Notes for Developers
+--------------------
+
+ * If you have a port which needs TeX stuff at build time, then it should
+   BUILD_DEPENDS upon texlive_base which in turn will pull in
+   texlive_texmf-buildset.
+
+ * If the buildset is missing something that your port needs to build, then
+   you can depend temporarily upon texlive_texmf-minimal or texlive_texmf-full.
+   If you have to do this, please send an email to MAINTAINER so that we can
+   have the support you need added to the buildset texmf.
+
+ * If a non-texlive port installs texmf files then they should be installed
+   into share/texmf-local, NOT share/texmf or share/texmf-dist.
 
 Have fun TeXing.
