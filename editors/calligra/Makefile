@@ -4,6 +4,7 @@ CATEGORIES =	editors
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	http://www.calligra-suite.org/
 DISTNAME =	calligra-2.7.5
+REVISION = 	0
 
 EXTRACT_SUFX =	.tar.xz
 
@@ -140,6 +141,7 @@ LIB_DEPENDS =	databases/freetds \
 		security/qca2 \
 		textproc/libxml \
 		textproc/libxslt \
+		textproc/libwpd \
 		textproc/icu4c \
 		productivity/libkgapi \
 		productivity/libkfbapi \
@@ -162,9 +164,5 @@ CONFIGURE_ARGS +=	-DWITH_JNI:BOOL=Off
 
 # Karbon wants SVG support through a shareware plugin for pstoedit
 CONFIGURE_ARGS +=	-DWITH_Pstoedit:BOOL=Off
-
-# Identical to system one anyway but shuts up CMake
-post-extract:
-	rm ${WRKSRC}/cmake/modules/FindIconv.cmake
 
 .include <bsd.port.mk>
