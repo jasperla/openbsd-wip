@@ -1,13 +1,20 @@
 $OpenBSD$
---- x2goclient.pro.orig	Wed Apr  4 11:55:02 2012
-+++ x2goclient.pro	Thu Apr  5 15:24:17 2012
-@@ -103,7 +103,8 @@ SOURCES += sharewidget.cpp \
-            xsettingswidget.cpp \
-            appdialog.cpp
+--- x2goclient.pro.orig	Tue Dec 17 15:39:48 2013
++++ x2goclient.pro	Wed Jan  1 22:06:20 2014
+@@ -105,7 +105,7 @@ SOURCES += sharewidget.cpp \
+            appdialog.cpp \
+            x2goutils.cpp
  
 -LIBS += -lssh
 +LIBS += -lssh -lldap -lcups -lX11 -lXpm
-+INCPATH += /usr/X11R6/include
  
  plugin {
  	TARGET = x2goplugin
+@@ -139,6 +139,7 @@ else:message(No translation files in project)
+ TEMPLATE = app
+ DEPENDPATH += .
+ INCLUDEPATH += .
++INCLUDEPATH += /usr/X11R6/include
+ RESOURCES += resources.rcc
+ 
+ linux-g++ {
