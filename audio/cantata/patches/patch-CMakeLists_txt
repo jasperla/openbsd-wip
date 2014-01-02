@@ -1,0 +1,21 @@
+$OpenBSD$
+--- CMakeLists.txt.orig	Thu Jan  2 18:38:01 2014
++++ CMakeLists.txt	Thu Jan  2 18:39:29 2014
+@@ -421,7 +421,7 @@ if (ENABLE_KDE)
+     qt4_add_resources(CANTATA_RC_SRCS ${CANTATA_RCS})
+     kde4_add_ui_files(CANTATA_UI_HDRS ${CANTATA_UIS})
+     kde4_add_executable(cantata ${CANTATA_SRCS} ${CANTATA_MOC_SRCS} ${CANTATA_RC_SRCS} ${CANTATA_UI_HDRS})
+-    target_link_libraries(cantata ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS} ${KDE4_SOLID_LIBS} ${KDE4_KIO_LIBRARY} X11)
++    target_link_libraries(cantata ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS} ${KDE4_SOLID_LIBS} ${KDE4_KIO_LIBRARY})
+     if (NOT WIN32 AND NOT APPLE AND TAGLIB_FOUND AND ENABLE_REMOTE_DEVICES)
+         target_link_libraries(cantata ${KDE4_KFILE_LIBS})
+     endif (NOT WIN32 AND NOT APPLE AND TAGLIB_FOUND AND ENABLE_REMOTE_DEVICES)
+@@ -498,7 +498,7 @@ else (ENABLE_KDE)
+         target_link_libraries(cantata qxt)
+     endif (WIN32 OR APPLE OR NOT ENABLE_QT5)
+     if (NOT ENABLE_QT5 AND NOT APPLE AND NOT WIN32)
+-        target_link_libraries(cantata X11)
++        target_link_libraries(cantata)
+     endif (NOT ENABLE_QT5 AND NOT APPLE AND NOT WIN32)
+ endif (ENABLE_KDE)
+ 
