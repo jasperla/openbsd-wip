@@ -1,0 +1,32 @@
+@comment $OpenBSD$
+@bin bin/cantata
+lib/cantata/
+@bin lib/cantata/cantata-replaygain
+share/applications/
+share/applications/cantata.desktop
+share/cantata/
+share/cantata/icons/
+share/cantata/icons/podcasts.png
+share/cantata/icons/soundcloud.png
+share/cantata/icons/stream.png
+share/cantata/mpd/
+share/cantata/mpd/mpd.conf.template
+share/cantata/scripts/
+share/cantata/scripts/cantata-dynamic
+share/cantata/streams/
+share/cantata/streams/1.fm/
+share/cantata/streams/1.fm/icon.png
+share/cantata/streams/1.fm/streams.xml.gz
+share/cantata/themes/
+share/cantata/themes/ambiance-dt.css
+share/cantata/themes/ambiance.css
+share/cantata/themes/faience.css
+share/cantata/themes/radiance-dt.css
+share/cantata/themes/radiance.css
+share/icons/hicolor/16x16/apps/cantata.png
+share/icons/hicolor/22x22/apps/cantata.png
+share/icons/hicolor/24x24/apps/cantata.png
+share/icons/hicolor/32x32/apps/cantata.png
+share/icons/hicolor/48x48/apps/cantata.png
+share/icons/hicolor/64x64/apps/cantata.png
+share/icons/hicolor/scalable/apps/cantata.svg
