@@ -1,2 +1,0 @@
-@comment $OpenBSD$
-@lib lib/librcps.so.${LIBrcps_VERSION}
