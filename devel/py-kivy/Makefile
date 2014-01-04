@@ -14,7 +14,7 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		GL m pthread python2.7
+WANTLIB +=		GL m pthread ${MODPY_WANTLIB}
 
 # Couldn't find any source distfiles, rolled my own from git tag.
 MASTER_SITES =		http://theunixzoo.co.uk/distfiles/
