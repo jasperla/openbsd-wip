@@ -44,3 +44,4 @@ www/p5-Dancer:		ready for import, has been sent to ports@ some time ago; it depe
 www/p5-HTTP-Server-Simple-PSGI:	ready for import, has been sent to ports@ some time ago
 sysutils/entr		ready for import 2013-12-16
 audio/pithos		waiting for audio/py-last update (bcallah@)
+misc/toilet		waiting for graphics/libcaca update that I'm sending to ports@ now (bcallah@)
