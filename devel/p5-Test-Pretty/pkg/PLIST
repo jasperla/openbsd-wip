@@ -1,0 +1,23 @@
+@comment $OpenBSD$
+${P5SITE}/App/
+${P5SITE}/App/Prove/
+${P5SITE}/App/Prove/Plugin/
+${P5SITE}/App/Prove/Plugin/Pretty.pm
+${P5SITE}/App/Prove/Plugin/retty.pm
+${P5SITE}/TAP/
+${P5SITE}/TAP/Formatter/
+${P5SITE}/TAP/Formatter/Pretty/
+${P5SITE}/TAP/Formatter/Pretty/Multi/
+${P5SITE}/TAP/Formatter/Pretty/Multi.pm
+${P5SITE}/TAP/Formatter/Pretty/Multi/Session.pm
+${P5SITE}/TAP/Formatter/Pretty/Single/
+${P5SITE}/TAP/Formatter/Pretty/Single.pm
+${P5SITE}/TAP/Formatter/Pretty/Single/Session.pm
+${P5SITE}/Test/
+${P5SITE}/Test/Pretty/
+${P5SITE}/Test/Pretty.pm
+${P5SITE}/Test/Pretty/Harness.pm
+${P5SITE}/Test/Pretty/Parser.pm
+@man man/man3p/App::Prove::Plugin::Pretty.3p
+@man man/man3p/App::Prove::Plugin::retty.3p
+@man man/man3p/Test::Pretty.3p
