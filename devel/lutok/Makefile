@@ -29,4 +29,10 @@ CONFIGURE_ENV=		LUA_CFLAGS="`pkg-config --cflags ${MODLUA_DEP}`" \
 
 PORTHOME =		${WRKDIR}
 
+FLAVOR ?=
+
+.if ${FLAVOR:L:Mlua52}
+MODLUA_VERSION =       5.2
+.endif
+
 .include <bsd.port.mk>

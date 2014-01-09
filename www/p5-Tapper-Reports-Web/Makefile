@@ -12,7 +12,7 @@ MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS=	devel/p5-File-ShareDir \
+RUN_DEPENDS=	#devel/p5-File-ShareDir-Install \
 		devel/p5-Test-WWW-Mechanize-Catalyst \
 		devel/p5-Test-Deep \
 		www/p5-Tapper-Schema
