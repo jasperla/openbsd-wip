@@ -9,14 +9,23 @@ share/applications/openmw.desktop
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/openmw/
 @sample ${SYSCONFDIR}/openmw/
+share/examples/openmw/opencs.cfg
+@sample ${SYSCONFDIR}/openmw/opencs.cfg
 share/examples/openmw/openmw.cfg
 @sample ${SYSCONFDIR}/openmw/openmw.cfg
 share/examples/openmw/settings-default.cfg
 @sample ${SYSCONFDIR}/openmw/settings-default.cfg
 share/examples/openmw/transparency-overrides.cfg
 @sample ${SYSCONFDIR}/openmw/transparency-overrides.cfg
+share/licenses/
+share/licenses/openmw/
+share/licenses/openmw/DejaVu Font License.txt
+share/licenses/openmw/OFL.txt
+share/licenses/openmw/Shiny License.txt
 share/openmw/
+share/openmw/data/
 share/openmw/resources/
+share/openmw/resources/defaultfilters
 share/openmw/resources/materials/
 share/openmw/resources/materials/atmosphere.shader
 share/openmw/resources/materials/atmosphere.shaderset
@@ -62,7 +71,6 @@ share/openmw/resources/materials/watersim_heighttonormal.shader
 share/openmw/resources/mygui/
 share/openmw/resources/mygui/DejaVuLGCSansMono.ttf
 share/openmw/resources/mygui/EBGaramond-Regular.ttf
-share/openmw/resources/mygui/Obliviontt.zip
 share/openmw/resources/mygui/bigbars.png
 share/openmw/resources/mygui/black.png
 share/openmw/resources/mygui/core.skin
