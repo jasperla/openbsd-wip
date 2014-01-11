@@ -9,16 +9,19 @@ NO_TEST =	Yes
 
 PKG_ARCH =	*
 
+EXTRACT_ONLY =
+
+BUILD_DEPENDS =	archivers/bzip2
 RUN_DEPENDS =	devel/desktop-file-utils
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/vegastrike
-	cd ${WRKSRC} && pax -rw . ${PREFIX}/share/vegastrike
+	tar -xjf ${FULLDISTDIR}/${DISTFILES} -C ${PREFIX}/share \
+		-s ",${DISTNAME},vegastrike,"
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons
-	${INSTALL_DATA} ${WRKSRC}/vegastrike.desktop \
+	cp ${PREFIX}/share/vegastrike/vegastrike.desktop \
 		${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/vegastrike.ico \
+	cp ${PREFIX}/share/vegastrike/vegastrike.ico \
 		${PREFIX}/share/icons
 
 .include <bsd.port.mk>
