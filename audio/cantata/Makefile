@@ -2,7 +2,7 @@
 
 COMMENT = 		Qt4 / KDE4 Music Player Client
 
-VERSION = 		1.2.1
+VERSION = 		1.2.2
 DISTNAME = 		cantata-${VERSION}
 PKGNAME-gui = 		cantata-${VERSION}
 
