@@ -31,13 +31,12 @@ BUILD_DEPENDS =	x11/nx/nxproxy \
 		print/cups
 
 pre-configure:
-	find ${WRKSRC} -type f -iname "*.cpp" -exec \
-		perl -pi -e 's,Q_OS_LINUX,Q_OS_OPENBSD,g;' \
+	find ${WRKSRC} -type f -iname "*.cpp"  -exec \
+		perl -pi -e 's,Q_OS_LINUX,Q_OS_UNIX,g;' \
 		-e 's,#include <linux/fs.h>,,g;' {} \;
 	find ${WRKSRC} -type f -iname "*.h" -exec \
-		perl -pi -e 's,Q_OS_LINUX,Q_OS_OPENBSD,g;' \
+		perl -pi -e 's,Q_OS_LINUX,Q_OS_UNIX,g;' \
 		-e 's,#include <linux/fs.h>,,g;' {} \;
-
 do-configure:
 	cd ${WRKSRC} && lrelease x2goclient.pro && qmake4 x2goclient.pro
 
