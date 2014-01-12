@@ -1,7 +1,7 @@
 $OpenBSD$
---- apps/openmw/CMakeLists.txt.orig	Fri Jul 26 16:02:41 2013
-+++ apps/openmw/CMakeLists.txt	Sun Aug  4 17:05:48 2013
-@@ -130,7 +130,7 @@ endif()
+--- apps/openmw/CMakeLists.txt.orig	Wed Nov 27 20:03:11 2013
++++ apps/openmw/CMakeLists.txt	Fri Jan 10 18:05:28 2014
+@@ -135,7 +135,7 @@ endif()
  
  # Workaround for binutil => 2.23 problem when linking, should be fixed eventually upstream
  if (UNIX AND NOT APPLE)

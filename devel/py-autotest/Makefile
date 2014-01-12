@@ -17,6 +17,10 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		https://github.com/autotest/autotest/archive/
 
+RUN_DEPENDS=    	www/py-django
+
+BUILD_DEPENDS +=	lang/python/${MODPY_DEFAULT_VERSION_2}
+
 MODULES =		lang/python
 
 NO_BUILD =		Yes

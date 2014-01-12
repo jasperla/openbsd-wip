@@ -1,0 +1,12 @@
+$OpenBSD$
+--- expand.cpp.orig	Mon Dec 30 15:17:20 2013
++++ expand.cpp	Mon Dec 30 15:17:40 2013
+@@ -168,7 +168,7 @@ int NamePattern::expand(string &output, const string &
+     {
+       if(!sequential)
+       {
+-        output[i] = m_convert[i][random()%m_conv_item_len[i]];
++        output[i] = m_convert[i][arc4random()%m_conv_item_len[i]];
+       }
+       else
+       {
