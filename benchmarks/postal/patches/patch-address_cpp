@@ -1,0 +1,12 @@
+$OpenBSD$
+--- address.cpp.orig	Mon Dec 30 15:10:04 2013
++++ address.cpp	Mon Dec 30 15:10:39 2013
+@@ -96,7 +96,7 @@ sockaddr *address::get_rand_addr()
+ {
+   int ind = 0;
+   if(m_count > 1)
+-    ind = rand() % m_count;
++    ind = arc4random() % m_count;
+   return get_addr(ind);
+ }
+ 

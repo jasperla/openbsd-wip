@@ -1,0 +1,42 @@
+Test::Pretty is a prettifier for Test::More.
+ 
+When you are writing a test case such as following:
+ 
+    use strict;
+    use warnings;
+    use utf8;
+    use Test::More;
+ 
+    subtest 'MessageFilter' => sub {
+        my $filter = MessageFilter->new('foo');
+ 
+        subtest 'should detect message with NG word' => sub {
+            ok($filter->detect('hello from foo'));
+        };
+        subtest 'should not detect message without NG word' => sub {
+            ok(!$filter->detect('hello world!'));
+        };
+    };
+ 
+    done_testing;
+ 
+This code outputs following result:
+ 
+https://raw.github.com/tokuhirom/Test-Pretty/master/img/more.png
+ 
+No, it's not readable. Test::Pretty makes this result to pretty.
+ 
+You can enable Test::Pretty by
+ 
+    use Test::Pretty;
+ 
+Or just add following option to perl interpreter.
+     
+    -MTest::Pretty
+ 
+After this, you can get a following pretty output.
+ 
+https://raw.github.com/tokuhirom/Test-Pretty/master/img/pretty.png
+ 
+And this module outputs TAP when $ENV{HARNESS_ACTIVE} is true or under the win32.
+
