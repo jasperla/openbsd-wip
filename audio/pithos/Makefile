@@ -22,7 +22,7 @@ RUN_DEPENDS =	audio/py-last \
 		devel/desktop-file-utils \
 		devel/py-notify \
 		multimedia/gstreamer-0.10/plugins-good \
-		multimedia/gstreamer-0.10/plugins-bad \
+		multimedia/gstreamer-0.10/plugins-ffmpeg \
 		multimedia/gstreamer-0.10/py-gstreamer \
 		x11/dbus-python \
 		x11/gtk+2,-guic \
