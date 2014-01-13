@@ -42,8 +42,7 @@ USE_GMAKE =		Yes
 USE_GROFF =		Yes
 
 # Don't pick up bash
-MAKE_ENV =		MAKESHELL=/bin/sh \
-			LC_ALL=en_US-UTF-8
+MAKE_ENV =		MAKESHELL=/bin/sh
 
 MAKE_FLAGS =		SONAMEOPT= \
 			SHAREDV=libpl.so.${LIBpl_VERSION}
