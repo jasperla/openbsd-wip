@@ -1,0 +1,3 @@
+Make libraries under ${PREFIX}/lib/httrack really "internal".
+
+Check compiler warnings.
