@@ -128,8 +128,10 @@ share/openmw/resources/mygui/openmw_pointer.xml
 share/openmw/resources/mygui/openmw_progress.skin.xml
 share/openmw/resources/mygui/openmw_quickkeys_menu.layout
 share/openmw/resources/mygui/openmw_quickkeys_menu_assign.layout
+share/openmw/resources/mygui/openmw_recharge_dialog.layout
 share/openmw/resources/mygui/openmw_repair.layout
 share/openmw/resources/mygui/openmw_resources.xml
+share/openmw/resources/mygui/openmw_savegame_dialog.layout
 share/openmw/resources/mygui/openmw_scroll.layout
 share/openmw/resources/mygui/openmw_scroll_skin.xml
 share/openmw/resources/mygui/openmw_settings.xml

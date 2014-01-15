@@ -1,7 +1,7 @@
 $OpenBSD$
---- CMakeLists.txt.orig	Wed Nov 27 20:03:11 2013
-+++ CMakeLists.txt	Fri Jan 10 18:10:22 2014
-@@ -214,6 +214,7 @@ IF(BOOST_STATIC)
+--- CMakeLists.txt.orig	Wed Jan  8 20:27:33 2014
++++ CMakeLists.txt	Wed Jan 15 09:47:56 2014
+@@ -208,6 +208,7 @@ IF(BOOST_STATIC)
      set(Boost_USE_STATIC_LIBS   ON)
  endif()
  
@@ -9,7 +9,7 @@ $OpenBSD$
  find_package(OGRE REQUIRED)
  find_package(MyGUI REQUIRED)
  find_package(Boost REQUIRED COMPONENTS ${BOOST_COMPONENTS})
-@@ -229,6 +230,7 @@ set(OGRE_PLUGIN_INCLUDE_DIRS ${OGRE_Plugin_CgProgramMa
+@@ -223,6 +224,7 @@ set(OGRE_PLUGIN_INCLUDE_DIRS ${OGRE_Plugin_CgProgramMa
  ENDIF(WIN32)
  ENDIF(OGRE_STATIC)
  include_directories("."
@@ -17,7 +17,7 @@ $OpenBSD$
      ${OGRE_INCLUDE_DIR} ${OGRE_INCLUDE_DIR}/Ogre ${OGRE_INCLUDE_DIR}/OGRE ${OGRE_PLUGIN_INCLUDE_DIRS}
      ${SDL2_INCLUDE_DIR}
      ${Boost_INCLUDE_DIR}
-@@ -240,7 +242,7 @@ include_directories("."
+@@ -234,7 +236,7 @@ include_directories("."
      ${LIBDIR}
  )
  
@@ -26,7 +26,7 @@ $OpenBSD$
  
  if (APPLE)
      # List used Ogre plugins
-@@ -396,11 +398,11 @@ IF(NOT WIN32 AND NOT APPLE)
+@@ -397,11 +399,11 @@ IF(NOT WIN32 AND NOT APPLE)
      ENDIF(BUILD_OPENCS)
  
      # Install global configuration files
