@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		open source implementation of TES III: Morrowind
 
-V =			0.27.0
+V =			0.28.0
 DISTNAME =		openmw-$V
 
 CATEGORIES =		games
@@ -19,12 +19,11 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILE_CDROM =	not for sale
 PERMIT_DISTFILE_FTP =	Yes
 
-WANTLIB += BulletCollision BulletDynamics BulletSoftBody LinearMath
-WANTLIB += MyGUI.OgrePlatform MyGUIEngine OgreMain unshield
-WANTLIB += QtGui QtNetwork QtXml QtXmlPatterns SDL2 Xt avcodec avformat
-WANTLIB += avutil boost_date_time-mt boost_filesystem-mt
-WANTLIB += boost_program_options-mt boost_system-mt boost_thread-mt
-WANTLIB += boost_wave-mt c m openal pthread swscale
+WANTLIB += BulletCollision BulletDynamics LinearMath MyGUI.OgrePlatform
+WANTLIB += MyGUIEngine OgreMain QtGui QtNetwork SDL2 avcodec avformat
+WANTLIB += avutil boost_filesystem-mt boost_program_options-mt
+WANTLIB += boost_system-mt boost_thread-mt boost_wave-mt c m openal
+WANTLIB += pthread swscale unshield
 
 MASTER_SITES =		https://github.com/zinnschlag/openmw/archive/
 
