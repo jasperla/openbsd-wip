@@ -1,0 +1,14 @@
+$OpenBSD$
+Fix OpenSSL detection.
+--- configure.ac.orig	Thu Jan 16 00:37:14 2014
++++ configure.ac	Thu Jan 16 00:38:07 2014
+@@ -158,7 +158,8 @@ AC_CHECK_LIB(ssl, SSL_library_init,
+ 	else
+ 	AC_MSG_RESULT([not available])
+ 	fi
+-	]
++	],
++	[-lcrypto]
+ 	)
+ AC_SUBST(OPENSSL_LIBS)
+ fi
