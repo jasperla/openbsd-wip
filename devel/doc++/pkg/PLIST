@@ -50,4 +50,4 @@ share/texmf-local/tex/latex/doc++/docxx-ja.sty
 share/texmf-local/tex/latex/doc++/docxx-ro.sty
 share/texmf-local/tex/latex/doc++/docxx.sty
 @exec mktexlsr > /dev/null 2>&1
-@unexec mktexlsr > /dev/null 2>&1
+@unexec-delete mktexlsr > /dev/null 2>&1
