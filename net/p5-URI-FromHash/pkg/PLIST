@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/URI/
+${P5SITE}/URI/FromHash.pm
+@man man/man3p/URI::FromHash.3p
