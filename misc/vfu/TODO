@@ -1,0 +1,3 @@
+vfu works mostly OK outside of tmux (amd64)
+BACKSPACE (others?) don't work in tmux
+some status bar info looks wrong
