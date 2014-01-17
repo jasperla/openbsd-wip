@@ -1,0 +1,72 @@
+@comment $OpenBSD$
+${P5SITE}/Net/
+${P5SITE}/Net/HTTP/
+${P5SITE}/Net/HTTP/Spore/
+${P5SITE}/Net/HTTP/Spore.pm
+${P5SITE}/Net/HTTP/Spore/Core.pm
+${P5SITE}/Net/HTTP/Spore/Meta/
+${P5SITE}/Net/HTTP/Spore/Meta.pm
+${P5SITE}/Net/HTTP/Spore/Meta/Class.pm
+${P5SITE}/Net/HTTP/Spore/Meta/Method/
+${P5SITE}/Net/HTTP/Spore/Meta/Method.pm
+${P5SITE}/Net/HTTP/Spore/Meta/Method/Spore.pm
+${P5SITE}/Net/HTTP/Spore/Meta/Types.pm
+${P5SITE}/Net/HTTP/Spore/Middleware/
+${P5SITE}/Net/HTTP/Spore/Middleware.pm
+${P5SITE}/Net/HTTP/Spore/Middleware/Auth/
+${P5SITE}/Net/HTTP/Spore/Middleware/Auth.pm
+${P5SITE}/Net/HTTP/Spore/Middleware/Auth/Basic.pm
+${P5SITE}/Net/HTTP/Spore/Middleware/Auth/Header.pm
+${P5SITE}/Net/HTTP/Spore/Middleware/Auth/OAuth.pm
+${P5SITE}/Net/HTTP/Spore/Middleware/DoNotTrack.pm
+${P5SITE}/Net/HTTP/Spore/Middleware/Format/
+${P5SITE}/Net/HTTP/Spore/Middleware/Format.pm
+${P5SITE}/Net/HTTP/Spore/Middleware/Format/Auto.pm
+${P5SITE}/Net/HTTP/Spore/Middleware/Format/JSON.pm
+${P5SITE}/Net/HTTP/Spore/Middleware/Format/XML.pm
+${P5SITE}/Net/HTTP/Spore/Middleware/Format/YAML.pm
+${P5SITE}/Net/HTTP/Spore/Middleware/LogDispatch.pm
+${P5SITE}/Net/HTTP/Spore/Middleware/Mock.pm
+${P5SITE}/Net/HTTP/Spore/Middleware/Redirection.pm
+${P5SITE}/Net/HTTP/Spore/Middleware/Runtime.pm
+${P5SITE}/Net/HTTP/Spore/Middleware/UserAgent.pm
+${P5SITE}/Net/HTTP/Spore/Request.pm
+${P5SITE}/Net/HTTP/Spore/Response.pm
+${P5SITE}/Net/HTTP/Spore/Role/
+${P5SITE}/Net/HTTP/Spore/Role.pm
+${P5SITE}/Net/HTTP/Spore/Role/Debug.pm
+${P5SITE}/Net/HTTP/Spore/Role/Description.pm
+${P5SITE}/Net/HTTP/Spore/Role/Middleware.pm
+${P5SITE}/Net/HTTP/Spore/Role/Request.pm
+${P5SITE}/Net/HTTP/Spore/Role/UserAgent.pm
+@man man/man3p/Net::HTTP::Spore.3p
+@man man/man3p/Net::HTTP::Spore::Core.3p
+@man man/man3p/Net::HTTP::Spore::Meta.3p
+@man man/man3p/Net::HTTP::Spore::Meta::Class.3p
+@man man/man3p/Net::HTTP::Spore::Meta::Method.3p
+@man man/man3p/Net::HTTP::Spore::Meta::Method::Spore.3p
+@man man/man3p/Net::HTTP::Spore::Meta::Types.3p
+@man man/man3p/Net::HTTP::Spore::Middleware.3p
+@man man/man3p/Net::HTTP::Spore::Middleware::Auth.3p
+@man man/man3p/Net::HTTP::Spore::Middleware::Auth::Basic.3p
+@man man/man3p/Net::HTTP::Spore::Middleware::Auth::Header.3p
+@man man/man3p/Net::HTTP::Spore::Middleware::Auth::OAuth.3p
+@man man/man3p/Net::HTTP::Spore::Middleware::DoNotTrack.3p
+@man man/man3p/Net::HTTP::Spore::Middleware::Format.3p
+@man man/man3p/Net::HTTP::Spore::Middleware::Format::Auto.3p
+@man man/man3p/Net::HTTP::Spore::Middleware::Format::JSON.3p
+@man man/man3p/Net::HTTP::Spore::Middleware::Format::XML.3p
+@man man/man3p/Net::HTTP::Spore::Middleware::Format::YAML.3p
+@man man/man3p/Net::HTTP::Spore::Middleware::LogDispatch.3p
+@man man/man3p/Net::HTTP::Spore::Middleware::Mock.3p
+@man man/man3p/Net::HTTP::Spore::Middleware::Redirection.3p
+@man man/man3p/Net::HTTP::Spore::Middleware::Runtime.3p
+@man man/man3p/Net::HTTP::Spore::Middleware::UserAgent.3p
+@man man/man3p/Net::HTTP::Spore::Request.3p
+@man man/man3p/Net::HTTP::Spore::Response.3p
+@man man/man3p/Net::HTTP::Spore::Role.3p
+@man man/man3p/Net::HTTP::Spore::Role::Debug.3p
+@man man/man3p/Net::HTTP::Spore::Role::Description.3p
+@man man/man3p/Net::HTTP::Spore::Role::Middleware.3p
+@man man/man3p/Net::HTTP::Spore::Role::Request.3p
+@man man/man3p/Net::HTTP::Spore::Role::UserAgent.3p
