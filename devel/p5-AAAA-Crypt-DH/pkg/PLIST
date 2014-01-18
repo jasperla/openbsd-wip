@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+${P5SITE}/AAAA/
+${P5SITE}/AAAA/Crypt/
+${P5SITE}/AAAA/Crypt/DH.pm
+@man man/man3p/AAAA::Crypt::DH.3p
