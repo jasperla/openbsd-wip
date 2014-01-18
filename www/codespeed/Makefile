@@ -18,7 +18,8 @@ MASTER_SITES =	https://github.com/tobami/codespeed/archive/
 MODULES =	lang/python
 
 BUILD_DEPENDS=  ${RUN_DEPENDS}
-RUN_DEPENDS=    www/py-django
+RUN_DEPENDS=    www/py-django \
+		devel/py-isodate
 
 NO_BUILD =	Yes
 NO_TEST =	Yes

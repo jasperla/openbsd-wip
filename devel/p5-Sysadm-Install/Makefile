@@ -11,7 +11,6 @@ CPAN_AUTHOR=	MSCHILLI
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 
-
 RUN_DEPENDS=    devel/p5-Log-Log4perl \
 		devel/p5-Term-ReadKey
 

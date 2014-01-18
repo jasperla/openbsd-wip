@@ -17,6 +17,7 @@ WANTLIB += atf-c atf-c++ c ${MODLUA_WANTLIB} m stdc++
 MASTER_SITES =		https://lutok.googlecode.com/files/
 
 MODULES =		lang/lua
+MODLUA_SA =		Yes
 
 LIB_DEPENDS =		devel/atf
 
@@ -28,11 +29,5 @@ CONFIGURE_ENV=		LUA_CFLAGS="`pkg-config --cflags ${MODLUA_DEP}`" \
 			LUA_LIBS="`pkg-config --libs ${MODLUA_DEP}`"
 
 PORTHOME =		${WRKDIR}
-
-FLAVOR ?=
-
-.if ${FLAVOR:L:Mlua52}
-MODLUA_VERSION =       5.2
-.endif
 
 .include <bsd.port.mk>
