@@ -7,6 +7,8 @@ DISTNAME=	Devel-Platform-Info-0.10
 PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES=	devel
 
+CPAN_AUTHOR=    BARBIE
+
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 
 # Artistic License 2.0
