@@ -1,0 +1,8 @@
+@comment $OpenBSD$
+bin/pkwalify
+${P5SITE}/Kwalify.pm
+${P5SITE}/Schema/
+${P5SITE}/Schema/Kwalify.pm
+@man man/man1/pkwalify.1
+@man man/man3p/Kwalify.3p
+@man man/man3p/Schema::Kwalify.3p
