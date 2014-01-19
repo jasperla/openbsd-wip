@@ -1,1 +1,0 @@
-Make this work; currently, F-IRC will launch and do everything specified in /etc/firc.conf but will freeze (CPU spikes) as soon as you try to type anything.
