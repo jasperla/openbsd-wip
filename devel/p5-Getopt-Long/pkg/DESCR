@@ -1,0 +1,3 @@
+The Getopt::Long module implements an extended getopt function called
+GetOptions(). It parses the command line from @ARGV, recognizing and
+removing specified options and their possible values.
