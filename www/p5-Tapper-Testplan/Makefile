@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 RUN_DEPENDS=    devel/p5-CHI \
 		devel/p5-DateTime \
 		devel/p5-DateTime-Format-Strptime \
+		devel/p5-DateTime-Format-Natural \
 		devel/p5-File-ShareDir \
 		devel/p5-File-Slurp \
 		devel/p5-Hash-Merge \

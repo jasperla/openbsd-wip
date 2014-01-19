@@ -1,3 +1,2 @@
 Warning: prerequisite DateTime::Format::DateParse 0 not found.
-Warning: prerequisite DateTime::Format::Natural 0 not found.
 Warning: prerequisite Text::CSV::Slurp 0 not found.
