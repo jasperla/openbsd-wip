@@ -26,7 +26,7 @@ RUN_DEPENDS=	archivers/p5-Compress-Bzip2 \
 		devel/p5-Hash-Merge-Simple \
 		devel/p5-Iterator \
 		devel/p5-Iterator-Util \
-		#devel/p5-Kwalify \
+		devel/p5-Kwalify \
 		devel/p5-LockFile-Simple \
 		devel/p5-Moose \
 		devel/p5-MooseX-Log-Log4perl \

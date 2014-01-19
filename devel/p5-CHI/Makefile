@@ -20,7 +20,9 @@ RUN_DEPENDS=    devel/p5-Carp-Assert \
 		devel/p5-Test-Class \
 		devel/p5-Test-Deep \
 		devel/p5-Test-Exception \
-		devel/p5-Test-Warn
+		devel/p5-Test-Warn \
+		devel/p5-Time-Duration \
+		devel/p5-Try-Tiny
 
 BUILD_DEPENDS=  ${RUN_DEPENDS}
 

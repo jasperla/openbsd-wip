@@ -18,7 +18,7 @@ RUN_DEPENDS=    devel/p5-App-Daemon \
                 devel/p5-Devel-Backtrace \
                 devel/p5-Data-DPath \
                 devel/p5-Hash-Merge-Simple \
-                #devel/p5-Kwalify \
+                devel/p5-Kwalify \
                 devel/p5-LockFile-Simple \
 		devel/p5-Log-Log4perl \
                 devel/p5-Moose \
