@@ -18,7 +18,7 @@ RUN_DEPENDS =	databases/p5-DBI \
 		devel/p5-File-Slurp \
 		devel/p5-File-ShareDir \
 		devel/p5-Hash-Merge-Simple \
-		#devel/p5-Kwalify \
+		devel/p5-Kwalify \
 		devel/p5-Moose \
 		devel/p5-Perl6-Junction \
 		devel/p5-Test-Deep \

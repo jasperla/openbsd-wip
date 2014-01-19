@@ -6,6 +6,4 @@ Warning: prerequisite Log::Any 0.08 not found.
 Warning: prerequisite MooX::Types::MooseLike 0.23 not found.
 Warning: prerequisite MooX::Types::MooseLike::Base 0 not found.
 Warning: prerequisite MooX::Types::MooseLike::Numeric 0 not found.
-Warning: prerequisite Time::Duration 1.06 not found.
 Warning: prerequisite Time::Duration::Parse 0.03 not found.
-Warning: prerequisite Try::Tiny 0.05 not found.

@@ -12,7 +12,7 @@ MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-#RUN_DEPENDS=	devel/p5-Kwalify
+RUN_DEPENDS=	devel/p5-Kwalify
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
