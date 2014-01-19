@@ -1,9 +1,2 @@
-Warning: prerequisite Date::Parse 0 not found.
-Warning: prerequisite Digest::JHash 0 not found.
 Warning: prerequisite Hash::MoreUtils 0 not found.
-Warning: prerequisite JSON 0 not found.
-Warning: prerequisite Log::Any 0.08 not found.
-Warning: prerequisite MooX::Types::MooseLike 0.23 not found.
-Warning: prerequisite MooX::Types::MooseLike::Base 0 not found.
-Warning: prerequisite MooX::Types::MooseLike::Numeric 0 not found.
-Warning: prerequisite Time::Duration::Parse 0.03 not found.
+Writing Makefile for CHI

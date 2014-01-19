@@ -17,7 +17,7 @@ RUN_DEPENDS=    devel/p5-Data-DPath \
 		devel/p5-Data-YAML \
 		devel/p5-Devel-Platform-Info \
 		devel/p5-List-MoreUtils \
-#		www/p5-Test-More
+		devel/p5-Test-More
 
 BUILD_DEPENDS=  ${RUN_DEPENDS}
 
