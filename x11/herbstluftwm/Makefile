@@ -34,7 +34,7 @@ FAKE_FLAGS =	SYSCONFDIR="${BASEDIR}" \
 NO_TEST =	Yes
 
 post-patch:
-	perl -pi -e "s,/bin/bash,${LOCALBASE}/bin/bash,g" \
+	perl -pi -e "s,^#!/bin/bash,#!/usr/bin/env bash,g" \
 		`grep -Rl /bin/bash ${WRKSRC}/*`
 
 .include <bsd.port.mk>

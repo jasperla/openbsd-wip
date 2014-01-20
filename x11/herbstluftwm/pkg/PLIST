@@ -37,10 +37,13 @@ share/examples/herbstluftwm/xdg/
 share/examples/herbstluftwm/xdg/herbstluftwm/
 @sample ${SYSCONFDIR}/xdg/herbstluftwm/
 share/examples/herbstluftwm/xdg/herbstluftwm/autostart
+@mode 755
 @sample ${SYSCONFDIR}/xdg/herbstluftwm/autostart
 share/examples/herbstluftwm/xdg/herbstluftwm/panel.sh
+@mode 755
 @sample ${SYSCONFDIR}/xdg/herbstluftwm/panel.sh
 share/examples/herbstluftwm/xdg/herbstluftwm/restartpanels.sh
+@mode 755
 @sample ${SYSCONFDIR}/xdg/herbstluftwm/restartpanels.sh
 share/examples/herbstluftwm/zsh/
 share/examples/herbstluftwm/zsh/functions/
