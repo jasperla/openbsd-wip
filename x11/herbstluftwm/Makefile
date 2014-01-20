@@ -19,7 +19,8 @@ MODULES =	devel/gettext
 LIB_DEPENDS =	devel/glib2
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		shells/bash
+		shells/bash \
+		x11/dzen2,-gadgets
 
 USE_GMAKE =	Yes
 MAKE_FLAGS =	CC="${CC}" LDFLAGS= VERBOSE= COLOR=0
