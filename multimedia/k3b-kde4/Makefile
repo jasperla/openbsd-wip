@@ -5,8 +5,8 @@ DISTNAME =		k3b-2.0.2
 CATEGORIES =		multimedia
 
 # bump away from KDE3 version
-SHARED_LIBS =		k3blib		5.0
-SHARED_LIBS +=		k3bdevice	5.0
+SHARED_LIBS =		k3blib		50.0
+SHARED_LIBS +=		k3bdevice	50.0
 
 HOMEPAGE =		http://www.k3b.org/
 
@@ -33,6 +33,7 @@ EXTRACT_SUFX =		.tar.bz2
 MODULES =		x11/kde4 devel/gettext
 
 RUN_DEPENDS =		devel/desktop-file-utils \
+			misc/shared-mime-info \
 			x11/gtk+2,-guic
 
 # Optional
