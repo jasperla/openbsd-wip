@@ -4,25 +4,20 @@ CATEGORIES =	editors
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	http://www.calligra-suite.org/
 DISTNAME =	calligra-2.7.5
-REVISION = 	0
-
-EXTRACT_SUFX =	.tar.xz
 
 DIST_SUBDIR =	kde
-
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/${DISTNAME}/}
 
 # GPLv2+, LGPLv2+ and GNU FDLv1.2
 PERMIT_PACKAGE_CDROM =          Yes
 
-MODULES =	x11/kde4 \
-		gcc4
+MODULES =		x11/kde4 gcc4 converters/libiconv multimedia/phonon
 MODGCC4_ARCHS = 	*
-MODGCC4_LANGS += 	c++
+MODGCC4_LANGS = 	c++
 
-MODKDE4_USE =	pim libs
+MODKDE4_USE =	pim
 
-SHARED_LIBS +=  RtfReader                 0.0 # 0.0
+SHARED_LIBS =   RtfReader                 0.0 # 0.0
 SHARED_LIBS +=  basicflakes               0.0 # 0.0
 SHARED_LIBS +=  braindumpcore             0.0 # 9.0
 SHARED_LIBS +=  calligradb                0.0 # 0.0
@@ -80,23 +75,28 @@ SHARED_LIBS +=  textlayout                0.0 # 0.0
 SHARED_LIBS +=  vectorimage               0.0 # 0.0
 SHARED_LIBS +=  wordsprivate              0.0 # 0.0
 
-
-WANTLIB += c m pthread stdc++ X11
+WANTLIB =  c m pthread z
+WANTLIB += GL GLEW GLU Half ICE Iex IlmImf IlmThread Imath SM X11 Xext
 WANTLIB += lib/qt4/QtDeclarative lib/qt4/QtWebKit lib/qt4/QtDBus
 WANTLIB += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg lib/qt4/QtOpenGL
-WANTLIB += lib/qt4/QtScript lib/qt4/QtXmlPatterns lib/qt4/QtXml
+WANTLIB += lib/qt4/QtScript lib/qt4/QtXml
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtSql
-WANTLIB += GL GLEW GLU Half ICE Iex IlmImf IlmThread Imath SM Xext
-WANTLIB += akonadi-contact akonadi-kde exiv2 fftw3 freetype
-WANTLIB += glib-2.0 gsl gslcblas iconv icui18n icuuc jpeg kabc kcal
-WANTLIB += kcalcore kcmutils kdcraw kde3support kdeclarative kdeui
-WANTLIB += kfile khtml kio kjs kmime knewstuff3 knotifyconfig
-WANTLIB += kparts kpimutils kresources krosscore krossui ktexteditor
-WANTLIB += lcms2 marblewidget mysqlclient nepomuk nepomukutils
-WANTLIB += okularcore openjpeg phonon_s png poppler poppler-qt4
-WANTLIB += qca2 soprano sqlite3 sybdb threadweaver tiff z
-WANTLIB += lib/kde4/libs/kdecore estdc++ lib/qt4/QtCore
-WANTLIB += kactivities nepomukcore phononexperimental
+WANTLIB += ${KDE4LIB}/akonadi-contact ${KDE4LIB}/akonadi-kde
+WANTLIB += ${KDE4LIB}/kabc ${KDE4LIB}/kactivities ${KDE4LIB}/kcal
+WANTLIB += ${KDE4LIB}/kcalcore ${KDE4LIB}/kcmutils ${KDE4LIB}/kdcraw
+WANTLIB += ${KDE4LIB}/kde3support ${KDE4LIB}/kdeclarative
+WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kfile ${KDE4LIB}/khtml
+WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kjs ${KDE4LIB}/kmime
+WANTLIB += ${KDE4LIB}/knewstuff3 ${KDE4LIB}/knotifyconfig
+WANTLIB += ${KDE4LIB}/kparts ${KDE4LIB}/kpimutils ${KDE4LIB}/kresources
+WANTLIB += ${KDE4LIB}/krosscore ${KDE4LIB}/krossui
+WANTLIB += ${KDE4LIB}/ktexteditor ${KDE4LIB}/marblewidget
+WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukcore
+WANTLIB += ${KDE4LIB}/nepomukutils ${KDE4LIB}/okularcore
+WANTLIB += ${KDE4LIB}/phononexperimental
+WANTLIB += exiv2 fftw3 freetype glib-2.0 gsl icui18n icuuc jpeg
+WANTLIB += lcms2 mysqlclient png poppler poppler-qt4
+WANTLIB += qca2 soprano sqlite3 sybdb threadweaver tiff
 
 # kexi needs headers in postgresql,{-main,-server}
 # kexi needs all db drivers to be present while building
@@ -125,7 +125,6 @@ LIB_DEPENDS =	databases/freetds \
 		devel/glib \
 		devel/gsl \
 		devel/libgsf \
-		graphics/dcmtk>=3.6.0 \
 		graphics/exiv2 \
 		graphics/giflib \
 		graphics/glew \
@@ -150,17 +149,12 @@ LIB_DEPENDS =	databases/freetds \
 		${MODKDE4_DEP_DIR}/okular \
 		${MODKDE4_DEP_DIR}/pim-runtime
 
-
 # Stuff we don't have ATM. Do not bother about CreateResources, it's
 # pure optional run-time dependency.
-CONFIGURE_ARGS =	-DWITH_OpenCTL:BOOL=Off \
-			-DWITH_Spnav:BOOL=Off \
+CONFIGURE_ARGS =	-DWITH_Spnav:BOOL=Off \
 			-DWITH_WPD:BOOL=Off \
 			-DWITH_WPG:BOOL=Off \
 			-DWITH_XBase:BOOL=Off
-
-# Don't pick up tons of bloatware for rarely needed stuff.
-CONFIGURE_ARGS +=	-DWITH_JNI:BOOL=Off
 
 # Karbon wants SVG support through a shareware plugin for pstoedit
 CONFIGURE_ARGS +=	-DWITH_Pstoedit:BOOL=Off
