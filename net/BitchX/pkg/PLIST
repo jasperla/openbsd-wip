@@ -1,6 +1,6 @@
 @comment $OpenBSD$
 bin/BitchX
-@bin bin/${FULLPKGNAME}-final
+@bin bin/BitchX-1.2-final
 @bin bin/scr-bx
 lib/bx/
 lib/bx/BitchX.help
