@@ -17,4 +17,10 @@ RUN_DEPENDS=	devel/p5-Module-Runtime \
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+TEST_DEPENDS=	devel/p5-Devel-GlobalDestruction \
+		devel/p5-Import-Into \
+		devel/p5-Moo \
+		devel/p5-Module-Runtime \
+		devel/p5-Test-Fatal
+
 .include <bsd.port.mk>

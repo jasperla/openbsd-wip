@@ -31,4 +31,14 @@ RUN_DEPENDS=    devel/p5-CHI \
 
 BUILD_DEPENDS=  ${RUN_DEPENDS}
 
+TEST_DEPENDS=   databases/p5-DBIx-Class-InflateColumn-Object-Enum \
+		databases/p5-DBIx-Class-TimeStamp \
+		devel/p5-Import-Into \
+		devel/p5-Module-Runtime \
+		devel/p5-Moo \
+		devel/p5-Test-Pod \
+		devel/p5-Test-Pod-Coverage \
+		devel/p5-Time-Duration-Parse \
+		textproc/p5-String-RewritePrefix
+
 .include <bsd.port.mk>

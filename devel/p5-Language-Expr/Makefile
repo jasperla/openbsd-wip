@@ -12,4 +12,6 @@ MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
+CONFIGURE_STYLE =    modbuild
+
 .include <bsd.port.mk>
