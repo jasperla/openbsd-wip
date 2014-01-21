@@ -16,4 +16,6 @@ RUN_DEPENDS=
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+CONFIGURE_STYLE= modbuild
+
 .include <bsd.port.mk>

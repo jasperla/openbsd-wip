@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/Directory/
-${P5SITE}/Directory/Scratch.pm
-@man man/man3p/Directory::Scratch.3p

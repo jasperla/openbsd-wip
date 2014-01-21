@@ -5,7 +5,7 @@ COMMENT=	fetch information from the host system
 MODULES=	cpan
 DISTNAME=	Sys-Info-0.78
 PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	www
+CATEGORIES=	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 

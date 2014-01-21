@@ -22,7 +22,9 @@ RUN_DEPENDS=    devel/p5-App-Daemon \
                 devel/p5-LockFile-Simple \
 		devel/p5-Log-Log4perl \
 		devel/p5-Moose \
-		#devel/p5-MooseX \
+		devel/p5-MooseX-Traits \
+		devel/p5-MooseX-Singleton \
+		devel/p5-MooseX-ClassAttribute \
 		devel/p5-MRO-Compat \
 		devel/p5-Perl6-Junction \
 		devel/p5-Sysadm-Install \
@@ -48,5 +50,12 @@ RUN_DEPENDS=    devel/p5-App-Daemon \
 		www/p5-Tapper-Schema
 
 BUILD_DEPENDS=  ${RUN_DEPENDS}
+
+TEST_DEPENDS=   databases/p5-DBIx-Class-InflateColumn-Object-Enum \
+		databases/p5-DBIx-Class-TimeStamp \
+		devel/p5-Test-Fixture-DBIC-Schema \
+		devel/p5-Test-MockModule \
+		net/p5-Net-SSH \
+		textproc/p5-String-Diff
 
 .include <bsd.port.mk>

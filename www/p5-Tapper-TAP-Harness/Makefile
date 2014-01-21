@@ -23,4 +23,6 @@ RUN_DEPENDS=   	devel/p5-Directory-Scratch \
 
 BUILD_DEPENDS=  ${RUN_DEPENDS}
 
+#TEST_DEPENDS= 	devel/p5-TAP-Formatter-HTML
+
 .include <bsd.port.mk>

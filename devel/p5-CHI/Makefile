@@ -12,10 +12,10 @@ MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS=    devel/p5-Carp-Assert \
+RUN_DEPENDS=    converters/p5-JSON \
+		devel/p5-Carp-Assert \
 		devel/p5-Data-UUID \
-		#devel/p5-Hash-MoreUtils \
-		devel/p5-JSON \
+		devel/p5-Hash-MoreUtils \
 		devel/p5-List-MoreUtils \
 		devel/p5-Log-Any \
 		devel/p5-MooX-Types-MooseLike \
@@ -34,5 +34,9 @@ RUN_DEPENDS=    devel/p5-Carp-Assert \
 		textproc/p5-String-RewritePrefix
 
 BUILD_DEPENDS=  ${RUN_DEPENDS}
+
+TEST_DEPENDS=	devel/p5-Import-Into \
+		devel/p5-Moo \
+		devel/p5-Class-Method-Modifiers
 
 .include <bsd.port.mk>
