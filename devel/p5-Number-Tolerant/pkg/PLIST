@@ -1,0 +1,35 @@
+@comment $OpenBSD$
+${P5SITE}/Number/
+${P5SITE}/Number/Tolerant/
+${P5SITE}/Number/Tolerant.pm
+${P5SITE}/Number/Tolerant/Constant.pm
+${P5SITE}/Number/Tolerant/Type/
+${P5SITE}/Number/Tolerant/Type.pm
+${P5SITE}/Number/Tolerant/Type/constant.pm
+${P5SITE}/Number/Tolerant/Type/infinite.pm
+${P5SITE}/Number/Tolerant/Type/less_than.pm
+${P5SITE}/Number/Tolerant/Type/more_than.pm
+${P5SITE}/Number/Tolerant/Type/offset.pm
+${P5SITE}/Number/Tolerant/Type/or_less.pm
+${P5SITE}/Number/Tolerant/Type/or_more.pm
+${P5SITE}/Number/Tolerant/Type/plus_or_minus.pm
+${P5SITE}/Number/Tolerant/Type/plus_or_minus_pct.pm
+${P5SITE}/Number/Tolerant/Type/to.pm
+${P5SITE}/Number/Tolerant/Union.pm
+${P5SITE}/Test/
+${P5SITE}/Test/Tolerant.pm
+@man man/man3p/Number::Tolerant.3p
+@man man/man3p/Number::Tolerant::Constant.3p
+@man man/man3p/Number::Tolerant::Type.3p
+@man man/man3p/Number::Tolerant::Type::constant.3p
+@man man/man3p/Number::Tolerant::Type::infinite.3p
+@man man/man3p/Number::Tolerant::Type::less_than.3p
+@man man/man3p/Number::Tolerant::Type::more_than.3p
+@man man/man3p/Number::Tolerant::Type::offset.3p
+@man man/man3p/Number::Tolerant::Type::or_less.3p
+@man man/man3p/Number::Tolerant::Type::or_more.3p
+@man man/man3p/Number::Tolerant::Type::plus_or_minus.3p
+@man man/man3p/Number::Tolerant::Type::plus_or_minus_pct.3p
+@man man/man3p/Number::Tolerant::Type::to.3p
+@man man/man3p/Number::Tolerant::Union.3p
+@man man/man3p/Test::Tolerant.3p
