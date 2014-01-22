@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/Object/
+${P5SITE}/Object/Enum.pm
+@man man/man3p/Object::Enum.3p
