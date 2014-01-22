@@ -12,8 +12,11 @@ MAINTAINER =    Todd T. Fries <todd@OpenBSD.org>
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-#RUN_DEPENDS=	devel/p5-Test-Refcount
+RUN_DEPENDS=	devel/p5-Test-Refcount \
+		devel/p5-Test-Fatal \
+		devel/p5-Test-Identity \
+		devel/p5-Future
 
-#BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>
