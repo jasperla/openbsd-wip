@@ -1,0 +1,12 @@
+@comment $OpenBSD$
+${P5SITE}/Net/
+${P5SITE}/Net/Async/
+${P5SITE}/Net/Async/WebSocket/
+${P5SITE}/Net/Async/WebSocket.pm
+${P5SITE}/Net/Async/WebSocket/Client.pm
+${P5SITE}/Net/Async/WebSocket/Protocol.pm
+${P5SITE}/Net/Async/WebSocket/Server.pm
+@man man/man3p/Net::Async::WebSocket.3p
+@man man/man3p/Net::Async::WebSocket::Client.3p
+@man man/man3p/Net::Async::WebSocket::Protocol.3p
+@man man/man3p/Net::Async::WebSocket::Server.3p

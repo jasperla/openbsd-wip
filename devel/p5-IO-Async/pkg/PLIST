@@ -1,0 +1,76 @@
+@comment $OpenBSD$
+${P5SITE}/IO/
+${P5SITE}/IO/Async/
+${P5SITE}/IO/Async.pm
+${P5SITE}/IO/Async/Channel.pm
+${P5SITE}/IO/Async/ChildManager.pm
+${P5SITE}/IO/Async/File.pm
+${P5SITE}/IO/Async/FileStream.pm
+${P5SITE}/IO/Async/Function.pm
+${P5SITE}/IO/Async/Future.pm
+${P5SITE}/IO/Async/Handle.pm
+${P5SITE}/IO/Async/Internals/
+${P5SITE}/IO/Async/Internals/Connector.pm
+${P5SITE}/IO/Async/Internals/TimeQueue.pm
+${P5SITE}/IO/Async/Listener.pm
+${P5SITE}/IO/Async/Loop/
+${P5SITE}/IO/Async/Loop.pm
+${P5SITE}/IO/Async/Loop/Poll.pm
+${P5SITE}/IO/Async/Loop/Select.pm
+${P5SITE}/IO/Async/LoopTests.pm
+${P5SITE}/IO/Async/MergePoint.pm
+${P5SITE}/IO/Async/Notifier.pm
+${P5SITE}/IO/Async/OS/
+${P5SITE}/IO/Async/OS.pm
+${P5SITE}/IO/Async/OS/MSWin32.pm
+${P5SITE}/IO/Async/OS/cygwin.pm
+${P5SITE}/IO/Async/PID.pm
+${P5SITE}/IO/Async/Process.pm
+${P5SITE}/IO/Async/Protocol/
+${P5SITE}/IO/Async/Protocol.pm
+${P5SITE}/IO/Async/Protocol/LineStream.pm
+${P5SITE}/IO/Async/Protocol/Stream.pm
+${P5SITE}/IO/Async/Resolver.pm
+${P5SITE}/IO/Async/Routine.pm
+${P5SITE}/IO/Async/Signal.pm
+${P5SITE}/IO/Async/Socket.pm
+${P5SITE}/IO/Async/Stream.pm
+${P5SITE}/IO/Async/Test.pm
+${P5SITE}/IO/Async/Timer/
+${P5SITE}/IO/Async/Timer.pm
+${P5SITE}/IO/Async/Timer/Absolute.pm
+${P5SITE}/IO/Async/Timer/Countdown.pm
+${P5SITE}/IO/Async/Timer/Periodic.pm
+@man man/man3p/IO::Async.3p
+@man man/man3p/IO::Async::Channel.3p
+@man man/man3p/IO::Async::ChildManager.3p
+@man man/man3p/IO::Async::File.3p
+@man man/man3p/IO::Async::FileStream.3p
+@man man/man3p/IO::Async::Function.3p
+@man man/man3p/IO::Async::Future.3p
+@man man/man3p/IO::Async::Handle.3p
+@man man/man3p/IO::Async::Listener.3p
+@man man/man3p/IO::Async::Loop.3p
+@man man/man3p/IO::Async::Loop::Poll.3p
+@man man/man3p/IO::Async::Loop::Select.3p
+@man man/man3p/IO::Async::LoopTests.3p
+@man man/man3p/IO::Async::MergePoint.3p
+@man man/man3p/IO::Async::Notifier.3p
+@man man/man3p/IO::Async::OS.3p
+@man man/man3p/IO::Async::OS::MSWin32.3p
+@man man/man3p/IO::Async::OS::cygwin.3p
+@man man/man3p/IO::Async::PID.3p
+@man man/man3p/IO::Async::Process.3p
+@man man/man3p/IO::Async::Protocol.3p
+@man man/man3p/IO::Async::Protocol::LineStream.3p
+@man man/man3p/IO::Async::Protocol::Stream.3p
+@man man/man3p/IO::Async::Resolver.3p
+@man man/man3p/IO::Async::Routine.3p
+@man man/man3p/IO::Async::Signal.3p
+@man man/man3p/IO::Async::Socket.3p
+@man man/man3p/IO::Async::Stream.3p
+@man man/man3p/IO::Async::Test.3p
+@man man/man3p/IO::Async::Timer.3p
+@man man/man3p/IO::Async::Timer::Absolute.3p
+@man man/man3p/IO::Async::Timer::Countdown.3p
+@man man/man3p/IO::Async::Timer::Periodic.3p
