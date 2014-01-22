@@ -31,15 +31,17 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=kmymoney2/KMyMoney-KDE4/${VERSION}/}
 MODULES =	x11/kde4 devel/gettext multimedia/phonon
 MODKDE4_USE =	pim
 
-BUILD_DEPENDS =	devel/doxygen \
-		misc/shared-mime-info
+BUILD_DEPENDS =	devel/boost \
+		devel/doxygen \
+		misc/shared-mime-info \
+		productivity/aqbanking
 
-RUN_DEPENDS =	devel/boost \
-		misc/shared-mime-info
-
-LIB_DEPENDS =	devel/gwenhywfar \
-		devel/libofx>=0.9.4 \
+RUN_DEPENDS =	devel/desktop-file-utils \
+		misc/shared-mime-info \
 		productivity/aqbanking \
+		x11/gtk+2,-guic
+
+LIB_DEPENDS =	devel/libofx>=0.9.4 \
 		productivity/libalkimia,${MODKDE4_FLAVOR} \
 		textproc/libical
 
