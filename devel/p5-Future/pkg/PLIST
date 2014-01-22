@@ -1,0 +1,8 @@
+@comment $OpenBSD$
+${P5SITE}/Future/
+${P5SITE}/Future.pm
+${P5SITE}/Future/Phrasebook.pod
+${P5SITE}/Future/Utils.pm
+@man man/man3p/Future.3p
+@man man/man3p/Future::Phrasebook.3p
+@man man/man3p/Future::Utils.3p
