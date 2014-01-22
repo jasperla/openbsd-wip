@@ -12,7 +12,7 @@ MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS=	net/p5-Net-SSH-Perl \
+RUN_DEPENDS=	net/p5-Net-SSH \
 		textproc/p5-String-ShellQuote	
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
