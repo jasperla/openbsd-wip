@@ -1,39 +1,35 @@
 $OpenBSD$
 Make it more portable and error-prone.
---- app/kdevelop!.orig	Sat Jul 27 20:01:44 2013
-+++ app/kdevelop!	Sat Jul 27 20:08:43 2013
-@@ -18,36 +18,35 @@
+--- app/kdevelop!.orig	Sat Dec  7 22:51:45 2013
++++ app/kdevelop!	Tue Jan 21 21:02:30 2014
+@@ -18,17 +18,14 @@
  # the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
  # Boston, MA 02110-1301, USA.
  
 -export KDEV_BASEDIR=$(dirname $0)
-+export KDEV_BASEDIR="$(dirname $0)"
++export KDEV_BASEDIR=$(dirname "$0")
  export APPLICATION=KDevelop
  
--if ! [ "$KDEV_ATTACHED_PID" ]; then
--    ARGS=
--    if [[ "$@" ]]; then
--        ARGS="$@"
--    else
+ if ! [ "$KDEV_ATTACHED_PID" ]; then
+-    ARGS=""
+-    if ! [ "$@" ]; then
 -        ARGS="-pss"
-+if [ -z "$KDEV_ATTACHED_PID" ]; then
+-    else
+-        ARGS="$@"
 +    if [ $# -eq 0 ]; then
 +        set -- -pss
      fi
 -    export KDEV_ATTACHED_PID=$($KDEV_BASEDIR/kdevelop $ARGS --pid)
-+    export KDEV_ATTACHED_PID=$($KDEV_BASEDIR/kdevelop "$@" --pid)
++    export KDEV_ATTACHED_PID=$("$KDEV_BASEDIR"/kdevelop "$@" --pid)
  fi
  
--if ! [ "$KDEV_ATTACHED_PID" ]; then
-+if [ -z "$KDEV_ATTACHED_PID" ]; then
-     echo "Error: Failed retrieving a pid."
-     exit 5
- fi
+ if ! [ "$KDEV_ATTACHED_PID" ]; then
+@@ -38,16 +35,16 @@ fi
  
  # Make sure we didn't capture garbage instead of the pid (must be 1 word only)
  # note: keep compatible on FreeBSD: https://bugs.kde.org/show_bug.cgi?id=311186
 -if [ "$(echo $KDEV_ATTACHED_PID | wc -w | sed 's/ //g')" != 1 ]; then
-+if [ "$(echo $KDEV_ATTACHED_PID | wc -w | sed 's/ //g')" -ne 1 ]; then
++if [ 1 -ne "$(echo $KDEV_ATTACHED_PID | wc -w | sed 's/ //g')" ]; then
      echo "Error: Got no valid pid."
      exit 6
  fi
@@ -47,6 +43,4 @@ Make it more portable and error-prone.
  export KDEV_DBUS_ID="org.kdevelop.kdevelop-$KDEV_ATTACHED_PID"
  
 -bash --init-file $KDEV_BASEDIR/kdevplatform_shell_environment.sh -i
-+export KDEV_REAL_ENV="$ENV"
-+export ENV="$KDEV_BASEDIR/kdevplatform_shell_environment.sh"
-+exec /bin/sh -i
++env ENV="$KDEV_BASEDIR/kdevplatform_shell_environment.sh" ksh -i
