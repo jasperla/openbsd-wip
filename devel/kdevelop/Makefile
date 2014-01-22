@@ -2,10 +2,9 @@
 
 CATEGORIES =	devel x11
 COMMENT =	integrated development environment for KDE 4
-V =		4.5.1
-PLATFORM_V =	1.5.1
-DISTNAME =	kdevelop-$V
-REVISION =	0
+KDEV_V =	4.6.0
+KDEVPLAT_V =	1.6.0
+DISTNAME =	kdevelop-${KDEV_V}
 HOMEPAGE =	http://www.kdevelop.org/
 
 SHARED_LIBS =	kdev4cmakecommon	0.0
@@ -13,8 +12,7 @@ SHARED_LIBS +=	kdev4cppduchain		0.0
 SHARED_LIBS +=	kdev4cppparser		0.0
 SHARED_LIBS +=	kdev4cpprpp		0.0
 
-EXTRACT_SUFX =	.tar.bz2
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdevelop/$V/src/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdevelop/${KDEV_V}/src/}
 DIST_SUBDIR =	kde
 
 # GPLv2+, LGPLv2.1+, GNU FDLv1.2
@@ -38,23 +36,21 @@ WANTLIB += kdevplatformdebugger kdevplatformdocumentation
 WANTLIB += kdevplatforminterfaces kdevplatformlanguage
 WANTLIB += kdevplatformoutputview kdevplatformproject kdevplatformshell
 WANTLIB += kdevplatformutil kdevplatformvcs
-WANTLIB += processcore processui soprano sublime
+WANTLIB += processcore processui qjson soprano sublime
 
-MODULES =	devel/gettext lang/python x11/kde4
+MODULES =	x11/kde4 devel/gettext lang/python
 MODKDE4_USE =	workspace
-
-# Uses files with "{...}" in names
-USE_GMAKE =	Yes
 
 BUILD_DEPENDS =	misc/shared-mime-info
 
 RUN_DEPENDS =	${MODKDE4_DEP_DIR}/kate \
 		devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/gtk+2,-guic
+		x11/gtk+2,-guic \
+		x11/kde4/kapptemplate>=${MODKDE4_DEP_VERSION}
 
-LIB_DEPENDS = 	devel/kdevplatform>=${PLATFORM_V} \
-		${MODKDE4_DEP_DIR}/sdk>=${MODKDE4_DEP_VERSION}
+LIB_DEPENDS = 	devel/kdevplatform>=${KDEVPLAT_V} \
+		x11/kde4/okteta>=${MODKDE4_DEP_VERSION}
 
 # XXX Should those go under ${PREFIX}/lib/?
 post-install:

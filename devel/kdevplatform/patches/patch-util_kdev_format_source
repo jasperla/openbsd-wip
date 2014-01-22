@@ -1,7 +1,7 @@
 $OpenBSD$
 Make it more portable and error-prone.
---- util/kdev_format_source.sh.orig	Sat Jul 27 18:14:47 2013
-+++ util/kdev_format_source.sh	Sat Jul 27 18:29:16 2013
+--- util/kdev_format_source.orig	Sat Jul 27 18:14:47 2013
++++ util/kdev_format_source	Sat Jul 27 18:29:16 2013
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
