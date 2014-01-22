@@ -1,0 +1,51 @@
+@comment $OpenBSD$
+${P5SITE}/Data/Rx/
+${P5SITE}/Data/Rx.pm
+${P5SITE}/Data/Rx/CommonType/
+${P5SITE}/Data/Rx/CommonType.pm
+${P5SITE}/Data/Rx/CommonType/EasyNew.pm
+${P5SITE}/Data/Rx/CoreType/
+${P5SITE}/Data/Rx/CoreType.pm
+${P5SITE}/Data/Rx/CoreType/all.pm
+${P5SITE}/Data/Rx/CoreType/any.pm
+${P5SITE}/Data/Rx/CoreType/arr.pm
+${P5SITE}/Data/Rx/CoreType/bool.pm
+${P5SITE}/Data/Rx/CoreType/def.pm
+${P5SITE}/Data/Rx/CoreType/fail.pm
+${P5SITE}/Data/Rx/CoreType/int.pm
+${P5SITE}/Data/Rx/CoreType/map.pm
+${P5SITE}/Data/Rx/CoreType/nil.pm
+${P5SITE}/Data/Rx/CoreType/num.pm
+${P5SITE}/Data/Rx/CoreType/one.pm
+${P5SITE}/Data/Rx/CoreType/rec.pm
+${P5SITE}/Data/Rx/CoreType/seq.pm
+${P5SITE}/Data/Rx/CoreType/str.pm
+${P5SITE}/Data/Rx/Failure.pm
+${P5SITE}/Data/Rx/FailureSet.pm
+${P5SITE}/Data/Rx/TypeBundle/
+${P5SITE}/Data/Rx/TypeBundle.pm
+${P5SITE}/Data/Rx/TypeBundle/Core.pm
+${P5SITE}/Data/Rx/Util.pm
+@man man/man3p/Data::Rx.3p
+@man man/man3p/Data::Rx::CommonType.3p
+@man man/man3p/Data::Rx::CommonType::EasyNew.3p
+@man man/man3p/Data::Rx::CoreType.3p
+@man man/man3p/Data::Rx::CoreType::all.3p
+@man man/man3p/Data::Rx::CoreType::any.3p
+@man man/man3p/Data::Rx::CoreType::arr.3p
+@man man/man3p/Data::Rx::CoreType::bool.3p
+@man man/man3p/Data::Rx::CoreType::def.3p
+@man man/man3p/Data::Rx::CoreType::fail.3p
+@man man/man3p/Data::Rx::CoreType::int.3p
+@man man/man3p/Data::Rx::CoreType::map.3p
+@man man/man3p/Data::Rx::CoreType::nil.3p
+@man man/man3p/Data::Rx::CoreType::num.3p
+@man man/man3p/Data::Rx::CoreType::one.3p
+@man man/man3p/Data::Rx::CoreType::rec.3p
+@man man/man3p/Data::Rx::CoreType::seq.3p
+@man man/man3p/Data::Rx::CoreType::str.3p
+@man man/man3p/Data::Rx::Failure.3p
+@man man/man3p/Data::Rx::FailureSet.3p
+@man man/man3p/Data::Rx::TypeBundle.3p
+@man man/man3p/Data::Rx::TypeBundle::Core.3p
+@man man/man3p/Data::Rx::Util.3p
