@@ -20,7 +20,7 @@ MASTER_SITES =		https://github.com/sickill/asciinema/archive/
 MODULES =		lang/python
 
 NO_BUILD =		Yes
-NO_TEST =		Yes
+#NO_TEST =		Yes
 
 RUN_DEPENDS =		www/py-requests
 
