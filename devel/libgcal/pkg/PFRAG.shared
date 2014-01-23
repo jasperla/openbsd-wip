@@ -1,2 +1,0 @@
-@comment $OpenBSD$
-@lib lib/libgcal.so.${LIBgcal_VERSION}
