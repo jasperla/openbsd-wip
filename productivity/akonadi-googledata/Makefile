@@ -25,6 +25,6 @@ MODKDE4_USE =	pim libs
 BUILD_DEPENDS =	devel/boost \
 		textproc/libxslt
 
-LIB_DEPENDS = 	devel/libgcal
+LIB_DEPENDS = 	productivity/libgcal
 
 .include <bsd.port.mk>
