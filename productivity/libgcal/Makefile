@@ -24,5 +24,6 @@ LIB_DEPENDS =		net/curl \
 			textproc/libxml
 
 SEPARATE_BUILD =	Yes
+DEBUG =			-O0 -ggdb
 
 .include <bsd.port.mk>
