@@ -20,7 +20,7 @@ EXTRACT_SUFX =	.tar.bz2
 PERMIT_PACKAGE_CDROM =          Yes
 
 MODULES =	x11/kde4 devel/gettext
-MODKDE4_USE =	pim libs
+MODKDE4_USE =	pim
 
 BUILD_DEPENDS =	devel/boost \
 		textproc/libxslt

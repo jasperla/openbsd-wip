@@ -1,8 +1,6 @@
 @comment $OpenBSD$
 @bin bin/akonadi_gcal_resource
 @bin bin/akonadi_googledata_resource
-share/akonadi/
-share/akonadi/agents/
 share/akonadi/agents/gcalresource.desktop
 share/akonadi/agents/googledataresource.desktop
 share/locale/bg/LC_MESSAGES/akonadi_gcal_resource.mo
