@@ -103,7 +103,10 @@ WANTLIB += qca2 soprano sqlite3 sybdb threadweaver tiff
 BUILD_DEPENDS =	devel/boost \
 		databases/mysql \
 		databases/postgresql,-main \
-		databases/postgresql,-server
+		databases/postgresql,-server \
+		databases/libpqxx \
+		math/eigen2 \
+		productivity/librcps
 
 # kexi needs all db driver installed to run,
 # assuming sqlite3 is in base...
@@ -112,42 +115,30 @@ RUN_DEPENDS =	databases/mysql \
 		databases/libpqxx \
 		databases/postgresql,-main \
 		databases/postgresql,-server \
-		misc/shared-mime-info
+		devel/desktop-file-utils \
+		misc/shared-mime-info \
+		productivity/librcps \
+		x11/gtk+2,-guic
 
 # Optional run-time dependency, does not affect build
 #RUN_DEPENDS +=	graphics/create-resources
 
-MODKDE4_USE =	pim
-
 LIB_DEPENDS =	databases/freetds \
 		databases/mysql \
-		databases/libpqxx \
-		devel/glib \
 		devel/gsl \
-		devel/libgsf \
 		graphics/exiv2 \
-		graphics/giflib \
 		graphics/glew \
 		graphics/jpeg \
 		graphics/lcms2 \
-		graphics/openjpeg \
 		graphics/png \
 		graphics/tiff \
-		math/eigen2 \
 		math/fftw3,double \
 		print/poppler,,-qt4 \
-		productivity/librcps \
 		security/qca2 \
-		textproc/libxml \
-		textproc/libxslt \
-		textproc/libwpd \
 		textproc/icu4c \
-		productivity/libkgapi \
-		productivity/libkfbapi \
 		${MODKDE4_DEP_DIR}/libkdcraw \
 		${MODKDE4_DEP_DIR}/marble \
-		${MODKDE4_DEP_DIR}/okular \
-		${MODKDE4_DEP_DIR}/pim-runtime
+		${MODKDE4_DEP_DIR}/okular
 
 # Stuff we don't have ATM. Do not bother about CreateResources, it's
 # pure optional run-time dependency.
