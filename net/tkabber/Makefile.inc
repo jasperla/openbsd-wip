@@ -9,9 +9,10 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-VERSION = 		0.11.1
+VERSION = 		1.0
 
 MASTER_SITES =		http://files.jabber.ru/tkabber/
+EXTRACT_SUFX = 		.tar.xz
 
 MODULES =		x11/tk
 
