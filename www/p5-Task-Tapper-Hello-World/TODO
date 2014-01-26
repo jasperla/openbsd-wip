@@ -1,0 +1,3 @@
+Warning: prerequisite IO::Interactive 0 not found.
+Warning: prerequisite Task::Tapper::Client 0 not found.
+Warning: prerequisite Template::Plugin::Autoformat 0 not found.
