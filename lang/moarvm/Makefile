@@ -2,6 +2,7 @@
 
 NOT_FOR_ARCHS =		${BE_ARCHS}
 SHARED_ONLY =		Yes
+BROKEN-arm =		missing atomic ops
 
 COMMENT =		virtual machine for nqp/rakudo
 
