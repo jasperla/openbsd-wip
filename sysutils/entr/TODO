@@ -2,26 +2,15 @@ Ready for import
 
 Changes since 2.2:
 
-* Only emulate fmemopen(3) on MacOS since it's available everywhere else
-* Move platform-specific includes to compat.h
-* Replace the now deprecated usleep(3) with nanosleep(2)
 * Reduce number of attempts to re-open files to 1 second (10 attempts)
-* Unit tests use mock kqueue() instead of triggering events through the
-  filesystem
+* Unit tests use mock kqueue() instead of triggering events through the filesystem
 * Print out detailed instructions if the user provides configure arguments
-* Fixed a flaw in kqueue emulation that caused a segfault if multiple files were
-  saved simultaneously
-* Change process title for blocking events (visible in ps(1))
 * Wait for processes to terminate in restart mode
 * LICENCE file describes the copyright holders for the compatibility libraries
 * Reintroduce ${DESTDIR} for STAGEDIR installation
-* Prevent interactive utilities from paging output by setting PAGER to /bin/cat 
-* Correct the timeout on Linux while consolidating inotify events
+* Prevent interactive utilities from paging output by setting PAGER to `/bin/cat`
 * First match of `/_` provides a shortcut for specifying the first file under
   watch
-* Build supports Debian with FreeBSD kernel
-* Renamed Makefile.linux-lbsd to Makefile.debian
 * New `-c` option invokes `clear` before running the utility
-* `gcc-lint` make target removed; clang's `scan-build` is much better
 * Support Vim's `backup` option by responding to `NOTE_RENAME`
 
