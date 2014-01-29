@@ -5,7 +5,7 @@ SHARED_ONLY =	Yes
 
 COMMENT =	shared library that implements scrypt() functionality
 
-GH_VER =	1.14
+GH_VER =	1.15
 PROJECT =	libscrypt
 DISTNAME =	${PROJECT}-${GH_VER}
 
