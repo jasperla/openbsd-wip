@@ -2,26 +2,9 @@ $OpenBSD$
 Trivial change of strcpy() to strlcpy().
 Size of stack variable mcf and mcf2 is well known.
 `make check` runs fine with it.
-- replace modp_b64 base64 en/decode implementation with ISC one from OpenBSD
---- main.c.orig	Thu Sep 12 00:28:58 2013
-+++ main.c	Thu Jan  9 12:34:11 2014
-@@ -115,13 +115,13 @@ int main()
- 
- 	printf("TEST SEVEN: BASE64 encoding the salt and hash output\n");
- 
--	retval = libscrypt_b64_encode(outbuf, (char*)hashbuf, sizeof(hashbuf));
-+	retval = libscrypt_b64_encode((char*)hashbuf, sizeof(hashbuf), outbuf, sizeof(outbuf));
- 	if(retval == -1)
- 	{
- 		printf("TEST SEVEN FAILED\n");
- 		exit(EXIT_FAILURE);
- 	}
--	retval = libscrypt_b64_encode(saltbuf, "SodiumChloride", strlen("SodiumChloride"));
-+	retval = libscrypt_b64_encode("SodiumChloride", strlen("SodiumChloride"), saltbuf, sizeof(saltbuf));
- 	if(retval == -1)
- 	{
- 		printf("TEST SEVEN FAILED\n");
-@@ -146,7 +146,7 @@ int main()
+--- main.c.orig	Thu Jan 23 02:32:17 2014
++++ main.c	Thu Jan 23 14:32:56 2014
+@@ -147,7 +147,7 @@ int main()
  	printf("TEST EIGHT: SUCCESSFUL, calculated mcf\n%s\n", mcf);
  
  	/* Since later calls to scrypt_check() butcher mcf, make a second */
@@ -30,12 +13,3 @@ Size of stack variable mcf and mcf2 is well known.
  
  	/* Couldn't be simpler - for a given mcf, check is the password is valid
  	* Returns < 0 on failure to calculate hash
-@@ -190,7 +190,7 @@ int main()
- 	/* TODO: I'm not presently sure how this function could fail */
- 	libscrypt_salt_gen(saltbuf, 16);
- 
--	retval = libscrypt_b64_encode(saltbuf, (char*)saltbuf, 16);
-+	retval = libscrypt_b64_encode((char*)saltbuf, 16, saltbuf, sizeof(saltbuf));
- 	if(retval == -1)
- 	{
- 		printf("TEST ELEVEN FAILED\n");
