@@ -27,4 +27,10 @@ RUN_DEPENDS=    devel/p5-common-sense \
 
 BUILD_DEPENDS=  ${RUN_DEPENDS}
 
+TEST_DEPENDS=   databases/p5-DBIx-Class-InflateColumn-Object-Enum \
+		databases/p5-DBIx-Class-TimeStamp \
+		devel/p5-Class-C3 \
+		devel/p5-MooseX-Traits \
+		net/p5-Net-SSH
+
 .include <bsd.port.mk>

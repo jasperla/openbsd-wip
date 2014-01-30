@@ -1,6 +1,7 @@
 $OpenBSD$
---- configure.orig	Wed Dec 25 19:49:20 2013
-+++ configure	Wed Dec 25 19:50:09 2013
+Don't clutter build logs.
+--- configure.orig	Sat Dec  7 20:14:13 2013
++++ configure	Fri Jan 24 16:13:42 2014
 @@ -15377,7 +15377,6 @@ fi
                       -Wcast-qual \
                       -Wextra \

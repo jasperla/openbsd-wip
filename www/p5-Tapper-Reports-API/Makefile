@@ -12,10 +12,9 @@ MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS=    #devel/p5-aliased \
-		#devel/p5-CHI \
+RUN_DEPENDS=    devel/p5-aliased \
+		devel/p5-CHI \
                 devel/p5-Class-C3 \
-		devel/p5-Data-Serializer \
 		devel/p5-File-Slurp \
 		devel/p5-Hash-Merge-Simple \
                 devel/p5-Moose \
@@ -31,6 +30,7 @@ RUN_DEPENDS=    #devel/p5-aliased \
 		www/p5-Tapper-Model \
 		www/p5-Tapper-Reports-DPath \
                 www/p5-Tapper-Schema \
+		#devel/p5-Data-Serializer \
 
 BUILD_DEPENDS=  ${RUN_DEPENDS}
 

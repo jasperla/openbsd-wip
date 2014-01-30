@@ -34,4 +34,7 @@ RUN_DEPENDS=    devel/p5-AnyEvent \
 
 BUILD_DEPENDS=  ${RUN_DEPENDS}
 
+TEST_DEPENDS=   databases/p5-DBIx-Class-InflateColumn-Object-Enum \
+		databases/p5-DBIx-Class-TimeStamp
+
 .include <bsd.port.mk>

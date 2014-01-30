@@ -1,0 +1,11 @@
+@comment $OpenBSD$
+${P5SITE}/Net/
+${P5SITE}/Net/Dropbox/
+${P5SITE}/Net/Dropbox/API.pm
+${P5ARCH}/
+${P5ARCH}/auto/
+${P5ARCH}/common/
+${P5ARCH}/common/sense.pm
+${P5ARCH}/common/sense.pod
+@man man/man3p/Net::Dropbox::API.3p
+@man man/man3p/common::sense.3p

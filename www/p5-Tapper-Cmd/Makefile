@@ -18,7 +18,7 @@ RUN_DEPENDS =	databases/p5-DBI \
 		devel/p5-File-Slurp \
 		devel/p5-File-ShareDir \
 		devel/p5-Hash-Merge-Simple \
-		#devel/p5-Kwalify \
+		devel/p5-Kwalify \
 		devel/p5-Moose \
 		devel/p5-Perl6-Junction \
 		devel/p5-Test-Deep \
@@ -31,9 +31,17 @@ RUN_DEPENDS =	databases/p5-DBI \
 		www/p5-Tapper-Config \
 		www/p5-Tapper-Model \
 		www/p5-Tapper-Base \
-		www/p5-Tapper-Reports \
-		www/p5-Tapper-Schema \
+		www/p5-Tapper-Reports-DPath \
+		www/p5-Tapper-Schema
 
 BUILD_DEPENDS=  ${RUN_DEPENDS}
+
+TEST_DEPENDS=   databases/p5-DBIx-Class-InflateColumn-Object-Enum \
+		databases/p5-DBIx-Class-TimeStamp \
+		devel/p5-Import-Into \
+		devel/p5-Module-Runtime \
+		devel/p5-Moo \
+		devel/p5-Time-Duration-Parse \
+		textproc/p5-String-RewritePrefix
 
 .include <bsd.port.mk>

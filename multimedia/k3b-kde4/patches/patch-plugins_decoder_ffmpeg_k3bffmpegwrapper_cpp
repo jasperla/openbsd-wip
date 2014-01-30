@@ -1,9 +1,24 @@
 $OpenBSD$
 Fixed compilation with new FFMPEG.
-Upstream commit 2f845b34badb614882b7e38ac38b00041ac2832d
+Upstream commits:
+  2f845b34badb614882b7e38ac38b00041ac2832d
+  6f34e14b28d2f9103151c6ba08b3bb40448ffe46
+(last one via Debian)
 --- plugins/decoder/ffmpeg/k3bffmpegwrapper.cpp.orig	Sat Jan 15 23:47:29 2011
-+++ plugins/decoder/ffmpeg/k3bffmpegwrapper.cpp	Mon Feb  4 14:02:40 2013
-@@ -109,7 +109,13 @@ bool K3bFFMpegFile::open()
++++ plugins/decoder/ffmpeg/k3bffmpegwrapper.cpp	Mon Jan 20 14:52:50 2014
+@@ -88,7 +88,11 @@ bool K3bFFMpegFile::open()
+     close();
+ 
+     // open the file
++#if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(53,2,0)
++    int err = ::avformat_open_input( &d->formatContext, m_filename.toLocal8Bit(), 0, 0 );
++#else
+     int err = ::av_open_input_file( &d->formatContext, m_filename.toLocal8Bit(), 0, 0, 0 );
++#endif
+     if( err < 0 ) {
+         kDebug() << "(K3bFFMpegFile) unable to open " << m_filename << " with error " << err;
+         return false;
+@@ -109,7 +113,13 @@ bool K3bFFMpegFile::open()
  #else
      ::AVCodecContext* codecContext =  d->formatContext->streams[0]->codec;
  #endif
@@ -18,7 +33,19 @@ Upstream commit 2f845b34badb614882b7e38ac38b00041ac2832d
          kDebug() << "(K3bFFMpegFile) not a simple audio stream: " << m_filename;
          return false;
      }
-@@ -225,8 +231,11 @@ QString K3bFFMpegFile::typeComment() const
+@@ -137,7 +147,11 @@ bool K3bFFMpegFile::open()
+     }
+ 
+     // dump some debugging info
++#if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(53,2,0)
++    ::av_dump_format( d->formatContext, 0, m_filename.toLocal8Bit(), 0 );
++#else
+     ::dump_format( d->formatContext, 0, m_filename.toLocal8Bit(), 0 );
++#endif
+ 
+     return true;
+ }
+@@ -225,8 +239,11 @@ QString K3bFFMpegFile::typeComment() const
  QString K3bFFMpegFile::title() const
  {
      // FIXME: is this UTF8 or something??
@@ -32,7 +59,7 @@ Upstream commit 2f845b34badb614882b7e38ac38b00041ac2832d
      else
          return QString();
  }
-@@ -235,8 +244,11 @@ QString K3bFFMpegFile::title() const
+@@ -235,8 +252,11 @@ QString K3bFFMpegFile::title() const
  QString K3bFFMpegFile::author() const
  {
      // FIXME: is this UTF8 or something??
@@ -46,7 +73,7 @@ Upstream commit 2f845b34badb614882b7e38ac38b00041ac2832d
      else
          return QString();
  }
-@@ -245,8 +257,11 @@ QString K3bFFMpegFile::author() const
+@@ -245,8 +265,11 @@ QString K3bFFMpegFile::author() const
  QString K3bFFMpegFile::comment() const
  {
      // FIXME: is this UTF8 or something??
@@ -60,7 +87,7 @@ Upstream commit 2f845b34badb614882b7e38ac38b00041ac2832d
      else
          return QString();
  }
-@@ -309,8 +324,13 @@ int K3bFFMpegFile::fillOutputBuffer()
+@@ -309,8 +332,13 @@ int K3bFFMpegFile::fillOutputBuffer()
  #if LIBAVCODEC_VERSION_MAJOR < 52
          int len = ::avcodec_decode_audio(
  #else
@@ -74,7 +101,7 @@ Upstream commit 2f845b34badb614882b7e38ac38b00041ac2832d
  #ifdef FFMPEG_BUILD_PRE_4629
              &d->formatContext->streams[0]->codec,
  #else
-@@ -318,7 +338,11 @@ int K3bFFMpegFile::fillOutputBuffer()
+@@ -318,7 +346,11 @@ int K3bFFMpegFile::fillOutputBuffer()
  #endif
              (short*)d->alignedOutputBuffer,
              &d->outputBufferSize,

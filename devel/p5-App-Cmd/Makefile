@@ -14,7 +14,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 RUN_DEPENDS=	devel/p5-Class-Load \
 		devel/p5-Data-OptList \
+		devel/p5-Getopt-Long \
 		devel/p5-Getopt-Long-Descriptive \
+		devel/p5-IO-TieCombine \
 		devel/p5-Sub-Exporter \
 		devel/p5-Sub-Install \
 		devel/p5-Test-Fatal \

@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@lib lib/libauxfun.so.${LIBauxfun_VERSION}
-@lib lib/liblensfun.so.${LIBlensfun_VERSION}

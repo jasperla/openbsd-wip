@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+bin/one-liner
+${P5SITE}/Sysadm/
+${P5SITE}/Sysadm/Install.pm
+@man man/man3p/Sysadm::Install.3p

@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/File/
+${P5SITE}/File/Pid.pm
+@man man/man3p/File::Pid.3p

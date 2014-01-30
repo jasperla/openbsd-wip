@@ -30,4 +30,9 @@ RUN_DEPENDS=    databases/p5-DBIx-Class \
 
 BUILD_DEPENDS=  ${RUN_DEPENDS}
 
+TEST_DEPENDS=   databases/p5-DBIx-Class-InflateColumn-Object-Enum \
+		devel/p5-App-Daemon \
+		devel/p5-Test-Pod \
+		devel/p5-Test-Pod-Coverage
+
 .include <bsd.port.mk>

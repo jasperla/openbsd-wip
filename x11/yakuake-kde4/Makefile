@@ -5,7 +5,6 @@ COMMENT =	quake-style terminal emulator for KDE 4
 HOMEPAGE =	http://yakuake.kde.org/
 VERSION =	2.9.9
 DISTNAME =	yakuake-${VERSION}
-REVISION =	2
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/yakuake/${VERSION}/src/}
 EXTRACT_SUFX =	.tar.xz

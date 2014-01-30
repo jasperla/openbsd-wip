@@ -1,6 +1,8 @@
 $OpenBSD$
---- fs_test.c.orig	Sun Mar 17 09:54:19 2013
-+++ fs_test.c	Wed Dec 25 19:24:04 2013
+- we have tmpfs
+- but not lchmod
+--- fs_test.c.orig	Sun Mar 17 06:54:19 2013
++++ fs_test.c	Tue Dec 24 00:26:08 2013
 @@ -35,6 +35,7 @@
  #include <dirent.h>
  #include <err.h>
@@ -40,7 +42,7 @@ $OpenBSD$
      ATF_REQUIRE(mkdir("test", 0755) != -1);
 -    return lchmod("test", 0700) == -1 && chmod("test", 0700) != -1;
 +    return fchmodat(AT_FDCWD, "test", 0700, AT_SYMLINK_NOFOLLOW) != -1 &&
-+           chmod("test", 0700) != -1;
++	    chmod("test", 0700) != -1;
  }
  
  
