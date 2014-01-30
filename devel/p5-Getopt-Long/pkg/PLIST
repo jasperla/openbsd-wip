@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+${P5SITE}/Getopt/
+${P5SITE}/Getopt/Long.pm
+${P5SITE}/newgetopt.pl
+@man man/man3p/Getopt::Long.3p

@@ -5,7 +5,7 @@ COMMENT=	interface to processor (CPU) information
 MODULES=	cpan
 DISTNAME=	Unix-Processors-2.042
 PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	www
+CATEGORIES=	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 

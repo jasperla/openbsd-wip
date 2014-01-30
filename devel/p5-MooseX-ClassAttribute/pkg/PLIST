@@ -1,0 +1,29 @@
+@comment $OpenBSD$
+${P5SITE}/MooseX/
+${P5SITE}/MooseX/ClassAttribute/
+${P5SITE}/MooseX/ClassAttribute.pm
+${P5SITE}/MooseX/ClassAttribute/Meta/
+${P5SITE}/MooseX/ClassAttribute/Meta/Role/
+${P5SITE}/MooseX/ClassAttribute/Meta/Role/Attribute.pm
+${P5SITE}/MooseX/ClassAttribute/Trait/
+${P5SITE}/MooseX/ClassAttribute/Trait/Application/
+${P5SITE}/MooseX/ClassAttribute/Trait/Application.pm
+${P5SITE}/MooseX/ClassAttribute/Trait/Application/ToClass.pm
+${P5SITE}/MooseX/ClassAttribute/Trait/Application/ToRole.pm
+${P5SITE}/MooseX/ClassAttribute/Trait/Attribute.pm
+${P5SITE}/MooseX/ClassAttribute/Trait/Class.pm
+${P5SITE}/MooseX/ClassAttribute/Trait/Mixin/
+${P5SITE}/MooseX/ClassAttribute/Trait/Mixin/HasClassAttributes.pm
+${P5SITE}/MooseX/ClassAttribute/Trait/Role/
+${P5SITE}/MooseX/ClassAttribute/Trait/Role.pm
+${P5SITE}/MooseX/ClassAttribute/Trait/Role/Composite.pm
+@man man/man3p/MooseX::ClassAttribute.3p
+@man man/man3p/MooseX::ClassAttribute::Meta::Role::Attribute.3p
+@man man/man3p/MooseX::ClassAttribute::Trait::Application.3p
+@man man/man3p/MooseX::ClassAttribute::Trait::Application::ToClass.3p
+@man man/man3p/MooseX::ClassAttribute::Trait::Application::ToRole.3p
+@man man/man3p/MooseX::ClassAttribute::Trait::Attribute.3p
+@man man/man3p/MooseX::ClassAttribute::Trait::Class.3p
+@man man/man3p/MooseX::ClassAttribute::Trait::Mixin::HasClassAttributes.3p
+@man man/man3p/MooseX::ClassAttribute::Trait::Role.3p
+@man man/man3p/MooseX::ClassAttribute::Trait::Role::Composite.3p

@@ -1,0 +1,20 @@
+@comment $OpenBSD$
+${P5SITE}/Devel/
+${P5SITE}/Devel/Platform/
+${P5SITE}/Devel/Platform/Info/
+${P5SITE}/Devel/Platform/Info.pm
+${P5SITE}/Devel/Platform/Info/BSD.pm
+${P5SITE}/Devel/Platform/Info/Irix.pm
+${P5SITE}/Devel/Platform/Info/Linux.pm
+${P5SITE}/Devel/Platform/Info/Mac.pm
+${P5SITE}/Devel/Platform/Info/SCO.pm
+${P5SITE}/Devel/Platform/Info/Solaris.pm
+${P5SITE}/Devel/Platform/Info/Win32.pm
+@man man/man3p/Devel::Platform::Info.3p
+@man man/man3p/Devel::Platform::Info::BSD.3p
+@man man/man3p/Devel::Platform::Info::Irix.3p
+@man man/man3p/Devel::Platform::Info::Linux.3p
+@man man/man3p/Devel::Platform::Info::Mac.3p
+@man man/man3p/Devel::Platform::Info::SCO.3p
+@man man/man3p/Devel::Platform::Info::Solaris.3p
+@man man/man3p/Devel::Platform::Info::Win32.3p

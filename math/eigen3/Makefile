@@ -4,8 +4,6 @@ PKG_ARCH =	*
 COMMENT =	lightweight C++ template library for linear algebra
 CATEGORIES =	math devel
 HOMEPAGE =	http://eigen.tuxfamily.org/
-MASTER_SITES =	http://spacehopper.org/mirrors/eigen/
-MASTER_SITES =	http://bitbucket.org/eigen/eigen/get/
 DIST_SUBDIR =	eigen
 VERSION =	3.2.0
 DISTNAME =	${VERSION}
@@ -15,9 +13,15 @@ WRKDIST =	${WRKDIR}/eigen-eigen-ffa86ffb5570
 # Mostly MPLv2, also LGPLv2.1, LGPLv2.1+ and BSDL
 PERMIT_PACKAGE_CDROM =	Yes
 
+MASTER_SITES =	http://bitbucket.org/eigen/eigen/get/ \
+		http://spacehopper.org/mirrors/eigen/
+
 # Many dependencies are only needed for tests
 PSEUDO_FLAVORS =	test
 FLAVOR ?=
+
+# avoid for arch-independent package
+WANTLIB- =
 
 BUILD_DEPENDS =		devel/sparsehash \
 			math/umfpack

@@ -5,8 +5,8 @@ DISTNAME =		k3b-2.0.2
 CATEGORIES =		multimedia
 
 # bump away from KDE3 version
-SHARED_LIBS =		k3blib		5.0
-SHARED_LIBS +=		k3bdevice	5.0
+SHARED_LIBS =		k3blib		50.0
+SHARED_LIBS +=		k3bdevice	50.0
 
 HOMEPAGE =		http://www.k3b.org/
 
@@ -16,13 +16,16 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =  c m pthread stdc++
 WANTLIB += ICE SM X11 Xext
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
-WANTLIB += lib/qt4/QtNetwork lib/qt4/QtSvg lib/qt4/QtWebKit
-WANTLIB += lib/qt4/QtXml
-WANTLIB += kcddb kcmutils kde3support kdeui kemoticons kfile
-WANTLIB += kidletime kio knotifyconfig kparts kprintutils kpty
-WANTLIB += kutils nepomuk nepomukutils solid soprano
+WANTLIB += lib/qt4/QtNetwork lib/qt4/QtSql lib/qt4/QtSvg
+WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml
+WANTLIB += ${KDE4LIB}/kcddb ${KDE4LIB}/kcmutils ${KDE4LIB}/kde3support
+WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kemoticons ${KDE4LIB}/kfile
+WANTLIB += ${KDE4LIB}/kidletime ${KDE4LIB}/kio ${KDE4LIB}/knotifyconfig
+WANTLIB += ${KDE4LIB}/kparts ${KDE4LIB}/kprintutils ${KDE4LIB}/kpty
+WANTLIB += ${KDE4LIB}/kutils ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
+WANTLIB += ${KDE4LIB}/solid
 WANTLIB += FLAC FLAC++ avcodec avformat avutil dvdread mad mp3lame
-WANTLIB += mpcdec samplerate sndfile tag vorbis
+WANTLIB += mpcdec samplerate soprano sndfile tag vorbis
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=k3b/}
 EXTRACT_SUFX =		.tar.bz2
@@ -30,6 +33,7 @@ EXTRACT_SUFX =		.tar.bz2
 MODULES =		x11/kde4 devel/gettext
 
 RUN_DEPENDS =		devel/desktop-file-utils \
+			misc/shared-mime-info \
 			x11/gtk+2,-guic
 
 # Optional
@@ -52,5 +56,9 @@ LIB_DEPENDS =		audio/flac \
 			${MODKDE4_DEP_DIR}/libkcddb>=${MODKDE4_DEP_VERSION}
 
 CONFIGURE_ARGS =	-DK3B_ENABLE_MUSICBRAINZ:Bool=No
+
+# systemd stuff, o' really?
+post-install:
+	rm -R ${WRKINST}/etc/dbus-1
 
 .include <bsd.port.mk>

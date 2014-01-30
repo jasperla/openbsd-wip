@@ -20,6 +20,7 @@ RUN_DEPENDS=	devel/p5-Config-General \
 		security/p5-Crypt-CBC \
 		textproc/p5-XML-Dumper \
 		textproc/p5-XML-Simple \
+		www/p5-PHP-Serialization
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 

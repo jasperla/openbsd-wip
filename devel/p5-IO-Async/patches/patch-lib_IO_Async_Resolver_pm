@@ -1,0 +1,12 @@
+$OpenBSD$
+--- lib/IO/Async/Resolver.pm.orig	Wed Jan 22 14:01:38 2014
++++ lib/IO/Async/Resolver.pm	Wed Jan 22 14:14:14 2014
+@@ -12,7 +12,7 @@ use base qw( IO::Async::Function );
+ our $VERSION = '0.61';
+ 
+ # Socket 2.006 fails to getaddrinfo() AI_NUMERICHOST properly on MSWin32
+-use Socket 2.007 qw(
++use Socket 2.001 qw(
+    AI_NUMERICHOST AI_PASSIVE
+    NI_NUMERICHOST NI_NUMERICSERV NI_DGRAM
+    EAI_NONAME

@@ -1,20 +1,16 @@
 $OpenBSD$
---- documentation/qthelp/qthelpqtdoc.cpp.orig	Thu Nov  3 02:23:41 2011
-+++ documentation/qthelp/qthelpqtdoc.cpp	Thu Nov  3 03:26:54 2011
-@@ -47,7 +47,6 @@ QString qtDocsLocation(const QString& qmake)
- 		kDebug() << "failed to execute qmake to retrieve the docs";
- 	
- 	kDebug() << "qtdoc=" << ret;
--	Q_ASSERT(qmake.isEmpty() || !ret.isEmpty());
- 	return QDir::fromNativeSeparators(ret);
- }
- 
-@@ -65,6 +64,8 @@ void QtHelpQtDoc::registerDocumentations()
+--- documentation/qthelp/qthelpqtdoc.cpp.orig	Sat Dec  7 22:51:45 2013
++++ documentation/qthelp/qthelpqtdoc.cpp	Tue Jan 21 18:56:42 2014
+@@ -39,9 +39,10 @@ QtHelpQtDoc::QtHelpQtDoc(QObject *parent, const QVaria
+ void QtHelpQtDoc::registerDocumentations()
+ {
      QStringList qmakes;
-     QStringList tmp;
-     KStandardDirs::findAllExe(tmp, "qmake");
-+    qmakes += tmp;
-+    KStandardDirs::findAllExe(tmp, "qmake4");
-     qmakes += tmp;
-     KStandardDirs::findAllExe(tmp, "qmake-qt4");
-     qmakes += tmp;
+-    qmakes << KStandardDirs::findExe("qmake")
++    qmakes << KStandardDirs::findExe("qmake4")
+            << KStandardDirs::findExe("qmake-qt4")
+-           << KStandardDirs::findExe("qmake-qt5");
++           << KStandardDirs::findExe("qmake-qt5")
++           << KStandardDirs::findExe("qmake");
+     if(!qmakes.isEmpty()) {
+         KProcess *p = new KProcess;
+         p->setOutputChannelMode(KProcess::MergedChannels);

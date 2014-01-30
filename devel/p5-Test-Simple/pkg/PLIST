@@ -1,0 +1,9 @@
+@comment $OpenBSD$
+@man man/man3p/Test::Builder.3p
+@man man/man3p/Test::Builder::IO::Scalar.3p
+@man man/man3p/Test::Builder::Module.3p
+@man man/man3p/Test::Builder::Tester.3p
+@man man/man3p/Test::Builder::Tester::Color.3p
+@man man/man3p/Test::More.3p
+@man man/man3p/Test::Simple.3p
+@man man/man3p/Test::Tutorial.3p

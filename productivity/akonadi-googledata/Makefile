@@ -3,14 +3,14 @@
 CATEGORIES =	productivity
 COMMENT =	Google contacts/calendar connector for Akonadi
 DISTNAME =	akonadi-googledata-1.2.0
-REVISION =	1
 
 HOMEPAGE =	https://code.google.com/p/libgcal/
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
-WANTLIB += akonadi-kde kabc kcal kdeui kio kresources
+WANTLIB += ${KDE4LIB}/akonadi-kde ${KDE4LIB}/kabc ${KDE4LIB}/kcal
+WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/kresources
 WANTLIB += gcal
 
 MASTER_SITES =	https://libgcal.googlecode.com/files/
@@ -19,11 +19,12 @@ EXTRACT_SUFX =	.tar.bz2
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM =          Yes
 
-MODULES =	x11/kde4
-MODKDE4_USE =	libs pim
+MODULES =	x11/kde4 devel/gettext
+MODKDE4_USE =	pim
 
-RUN_DEPENDS =	devel/desktop-file-utils
+BUILD_DEPENDS =	devel/boost \
+		textproc/libxslt
 
-LIB_DEPENDS = 	devel/libgcal
+LIB_DEPENDS = 	productivity/libgcal
 
 .include <bsd.port.mk>

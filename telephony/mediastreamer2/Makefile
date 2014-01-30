@@ -50,7 +50,7 @@ CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--with-gsm=${LOCALBASE}
 
 # not ported
-CONFIGURE_ARGS =	--disable-spandsp
+CONFIGURE_ARGS +=	--disable-spandsp
 
 CONFIGURE_ENV =		CFLAGS="${CFLAGS} -I${X11BASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"

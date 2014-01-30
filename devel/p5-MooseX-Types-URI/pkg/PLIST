@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+${P5SITE}/MooseX/
+${P5SITE}/MooseX/Types/
+${P5SITE}/MooseX/Types/URI.pm
+@man man/man3p/MooseX::Types::URI.3p
