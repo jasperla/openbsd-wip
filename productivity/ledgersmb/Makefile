@@ -2,17 +2,17 @@
 
 COMMENT=		financial accounting for small to medium size business
 
-DISTNAME=		ledgersmb-1.3.35
+DISTNAME=		ledgersmb-1.3.37
 CATEGORIES=		productivity
 HOMEPAGE=		http://ledgersmb.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=		Yes
 
-DISTFILES=		ledgersmb-1.3.35.tar.gz
+DISTFILES=		ledgersmb-1.3.37.tar.gz
 
 MASTER_SITES+= \
-	http://downloads.sourceforge.net/project/ledger-smb/ledgersmb/1.3.35/
+	http://downloads.sourceforge.net/project/ledger-smb/ledgersmb/1.3.37/
 
 WRKSRC=			${WRKDIR}/ledgersmb
 WRKDIST=		${WRKSRC}
