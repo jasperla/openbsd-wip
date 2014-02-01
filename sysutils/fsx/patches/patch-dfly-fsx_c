@@ -1,6 +1,6 @@
 $OpenBSD$
---- dfly-fsx.c.orig	Wed Jan 29 14:55:08 2014
-+++ dfly-fsx.c	Wed Jan 29 15:00:49 2014
+--- dfly-fsx.c.orig	Sat Feb  1 15:24:49 2014
++++ dfly-fsx.c	Sat Feb  1 15:26:19 2014
 @@ -477,7 +477,7 @@ doread(unsigned offset, unsigned size)
  void
  check_eofpage(char *s, unsigned offset, char *p, int size)
@@ -37,3 +37,39 @@ $OpenBSD$
  		    prterr("domapwrite: msync");
  		    report_failure(203);
  	    }
+@@ -790,7 +790,7 @@ test(void)
+ {
+ 	unsigned long	offset;
+ 	unsigned long	size = maxoplen;
+-	unsigned long	rv = random();
++	unsigned long	rv = arc4random();
+ 	unsigned long	op = rv % (3 + !lite + mapped_writes);
+ 
+ 	/* turn off the map read if necessary */
+@@ -820,14 +820,14 @@ test(void)
+ 	 * MAPWRITE:    op = 3 or 4
+ 	 */
+ 	if (lite ? 0 : op == 3 && style == 0) /* vanilla truncate? */
+-		dotruncate(random() % maxfilelen);
++		dotruncate(arc4random() % maxfilelen);
+ 	else {
+ 		if (randomoplen)
+-			size = random() % (maxoplen+1);
++			size = arc4random() % (maxoplen+1);
+ 		if (lite ? 0 : op == 3)
+ 			dotruncate(size);
+ 		else {
+-			offset = random();
++			offset = arc4random();
+ 			if (op == 1 || op == (lite ? 3 : 4)) {
+ 				offset %= maxfilelen;
+ 				if (offset + size > maxfilelen)
+@@ -1135,7 +1135,7 @@ main(int argc, char **argv)
+ 	}
+ 	original_buf = (char *) malloc(maxfilelen);
+ 	for (i = 0; i < maxfilelen; i++)
+-		original_buf[i] = random() % 256;
++		original_buf[i] = arc4random() % 256;
+ 	good_buf = (char *) malloc(maxfilelen);
+ 	memset(good_buf, '\0', maxfilelen);
+ 	temp_buf = (char *) malloc(maxoplen);
