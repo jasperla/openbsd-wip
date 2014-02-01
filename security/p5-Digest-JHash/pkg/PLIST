@@ -1,0 +1,10 @@
+@comment $OpenBSD$
+%%SHARED%%
+${P5ARCH}/
+${P5ARCH}/Digest/
+${P5ARCH}/Digest/JHash.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Digest/
+${P5ARCH}/auto/Digest/JHash/
+${P5ARCH}/auto/Digest/JHash/JHash.bs
+@man man/man3p/Digest::JHash.3p
