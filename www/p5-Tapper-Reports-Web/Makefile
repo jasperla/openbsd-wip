@@ -35,4 +35,8 @@ RUN_DEPENDS=	devel/p5-DateTime-Format-DateParse \
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+TEST_DEPENDS=	devel/p5-Test-WWW-Mechanize-Catalyst \
+		www/p5-Catalyst-Plugin-Session-State-Cookie \
+		www/p5-Catalyst-Plugin-Session-Store-File \
+
 .include <bsd.port.mk>
