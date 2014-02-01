@@ -28,8 +28,7 @@ RUN_DEPENDS=    databases/p5-DBD-SQLite \
 		www/p5-Tapper-TAP-Harness \
 		www/p5-Tapper-TestSuite-AutoTest \
 		www/p5-Tapper-TestSuite-Benchmark-Perl-Formance \
-		www/p5-Tapper-TestSuite-HWTrack \
-		www/p5-Tapper-Client
+		www/p5-Tapper-TestSuite-HWTrack
 
 BUILD_DEPENDS=  ${RUN_DEPENDS}
 
