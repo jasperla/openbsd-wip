@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/String/
+${P5SITE}/String/Diff.pm
+@man man/man3p/String::Diff.3p
