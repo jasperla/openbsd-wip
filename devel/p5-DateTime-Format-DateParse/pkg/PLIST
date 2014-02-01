@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+${P5SITE}/DateTime/Format/
+${P5SITE}/DateTime/Format/DateParse.pm
+${P5SITE}/DateTime/Format/DateParse.pod
+@man man/man3p/DateTime::Format::DateParse.3p
