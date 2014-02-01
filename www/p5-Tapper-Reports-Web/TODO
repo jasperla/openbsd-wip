@@ -1,8 +1,4 @@
-Warning: prerequisite Catalyst::Plugin::ConfigLoader 0 not found.
-Warning: prerequisite Catalyst::Plugin::Static::Simple 0 not found.
 Warning: prerequisite Catalyst::View::HTML::Mason 0 not found.
-Warning: prerequisite FCGI 0 not found.                                                                                                                       
-Warning: prerequisite File::Copy::Recursive 0 not found.
 Warning: prerequisite HTML::FromANSI 0 not found.
 Warning: prerequisite Set::Intersection 0 not found.
 Warning: prerequisite TAP::Formatter::HTML 0 not found.
