@@ -1,36 +1,34 @@
 $OpenBSD$
---- dfly-fsx.c.orig	Thu Dec 26 17:41:05 2013
-+++ dfly-fsx.c	Thu Dec 26 19:36:35 2013
-@@ -339,7 +339,6 @@ report_failure(int status)
- 	exit(status);
- }
+--- dfly-fsx.c.orig	Wed Jan 29 14:55:08 2014
++++ dfly-fsx.c	Wed Jan 29 15:00:49 2014
+@@ -477,7 +477,7 @@ doread(unsigned offset, unsigned size)
+ void
+ check_eofpage(char *s, unsigned offset, char *p, int size)
+ {
+-	unsigned last_page, should_be_zero;
++	u_long last_page, should_be_zero;
  
--
- #define short_at(cp) ((unsigned short)((*((unsigned char *)(cp)) << 8) | \
- 					*(((unsigned char *)(cp)) + 1)))
- 
-@@ -487,15 +486,15 @@ check_eofpage(char *s, unsigned offset, char *p, int s
+ 	if (offset + size <= (file_size & ~page_mask))
+ 		return;
+@@ -487,14 +487,14 @@ check_eofpage(char *s, unsigned offset, char *p, int s
  	 * beyond the true end of the file mapping
  	 * (as required by mmap def in 1996 posix 1003.1)
  	 */
 -	last_page = ((int)p + (offset & page_mask) + size) & ~page_mask;
-+	last_page = (atoi(p) + (offset & page_mask) + size) & ~page_mask;
++	last_page = ((u_long)p + (offset & page_mask) + size) & ~page_mask;
  
  	for (should_be_zero = last_page + (file_size & page_mask);
  	     should_be_zero < last_page + page_size;
  	     should_be_zero++)
--		if (*(char *)should_be_zero) {
+ 		if (*(char *)should_be_zero) {
 -			prt("Mapped %s: non-zero data past EOF (0x%llx) page offset 0x%x is 0x%04x\n",
 -			    s, file_size - 1, should_be_zero & page_mask,
--			    short_at(should_be_zero));
-+		if ((char)should_be_zero) {
-+                        prt("Mapped %s: non-zero data past EOF (0x%llx) page offset 0x%x is 0x%04x\n",
-+                           s, file_size - 1, should_be_zero & page_mask,
-+                           short_at(should_be_zero));
++			prt("Mapped %s: non-zero data past EOF (0x%llx) page offset 0x%lx is 0x%04x\n",
++			    s, (long long)file_size - 1, should_be_zero & page_mask,
+ 			    short_at(should_be_zero));
  			report_failure(205);
  		}
- }
-@@ -689,7 +688,7 @@ domapwrite(unsigned offset, unsigned size)
+@@ -689,7 +689,7 @@ domapwrite(unsigned offset, unsigned size)
  	if (setjmp(jmpbuf) == 0) {
  	    jmpbuf_good = 1;
  	    memcpy(p + pg_offset, good_buf + offset, size);
@@ -39,68 +37,3 @@ $OpenBSD$
  		    prterr("domapwrite: msync");
  		    report_failure(203);
  	    }
-@@ -790,7 +789,7 @@ test(void)
- {
- 	unsigned long	offset;
- 	unsigned long	size = maxoplen;
--	unsigned long	rv = random();
-+	unsigned long	rv = arc4random();
- 	unsigned long	op = rv % (3 + !lite + mapped_writes);
- 
- 	/* turn off the map read if necessary */
-@@ -820,14 +819,14 @@ test(void)
- 	 * MAPWRITE:    op = 3 or 4
- 	 */
- 	if (lite ? 0 : op == 3 && style == 0) /* vanilla truncate? */
--		dotruncate(random() % maxfilelen);
-+		dotruncate(arc4random() % maxfilelen);
- 	else {
- 		if (randomoplen)
--			size = random() % (maxoplen+1);
-+			size = arc4random() % (maxoplen+1);
- 		if (lite ? 0 : op == 3)
- 			dotruncate(size);
- 		else {
--			offset = random();
-+			offset = arc4random();
- 			if (op == 1 || op == (lite ? 3 : 4)) {
- 				offset %= maxfilelen;
- 				if (offset + size > maxfilelen)
-@@ -1053,9 +1052,9 @@ main(int argc, char **argv)
- 			break;
- 		case 'P':
- 			strncpy(goodfile, optarg, sizeof(goodfile));
--			strcat(goodfile, "/");
-+			strlcat(goodfile, "/", sizeof(goodfile));
- 			strncpy(logfile, optarg, sizeof(logfile));
--			strcat(logfile, "/");
-+			strlcat(logfile, "/", sizeof(goodfile));
- 			break;
- 		case 'R':
- 			mapped_reads = 0;
-@@ -1105,14 +1104,14 @@ main(int argc, char **argv)
- 		exit(91);
- 	}
- 	strncat(goodfile, fname, 256);
--	strcat (goodfile, ".fsxgood");
-+	strlcat (goodfile, ".fsxgood", sizeof(goodfile));
- 	fsxgoodfd = open(goodfile, O_RDWR|O_CREAT|O_TRUNC, 0666);
- 	if (fsxgoodfd < 0) {
- 		prterr(goodfile);
- 		exit(92);
- 	}
- 	strncat(logfile, fname, 256);
--	strcat (logfile, ".fsxlog");
-+	strlcat (logfile, ".fsxlog", sizeof(logfile));
- 	fsxlogf = fopen(logfile, "w");
- 	if (fsxlogf == NULL) {
- 		prterr(logfile);
-@@ -1135,7 +1134,7 @@ main(int argc, char **argv)
- 	}
- 	original_buf = (char *) malloc(maxfilelen);
- 	for (i = 0; i < maxfilelen; i++)
--		original_buf[i] = random() % 256;
-+		original_buf[i] = arc4random() % 256;
- 	good_buf = (char *) malloc(maxfilelen);
- 	memset(good_buf, '\0', maxfilelen);
- 	temp_buf = (char *) malloc(maxoplen);
