@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+${P5SITE}/Text/
+${P5SITE}/Text/CSV/
+${P5SITE}/Text/CSV/Slurp.pm
+@man man/man3p/Text::CSV::Slurp.3p
