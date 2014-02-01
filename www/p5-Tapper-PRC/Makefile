@@ -22,4 +22,6 @@ RUN_DEPENDS=    devel/p5-Test-Deep \
 
 BUILD_DEPENDS=  ${RUN_DEPENDS}
 
+TEST_DEPENDS=	www/p5-Tapper-Remote
+
 .include <bsd.port.mk>
