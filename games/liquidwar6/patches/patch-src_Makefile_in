@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Don't run ldconfig.
+
+--- src/Makefile.in.orig	Sun Feb  2 02:28:19 2014
++++ src/Makefile.in	Sun Feb  2 02:28:33 2014
+@@ -894,7 +894,6 @@ uninstall-am: uninstall-binPROGRAMS uninstall-local
+ @LW6_MS_WINDOWS_TRUE@	windres $^ -o $@
+ 
+ install-exec-local:
+-	if which id && which ldconfig && test `id -u` -eq 0 && test "$(prefix)" != "/usr"; then ldconfig; fi # Run ldconfig automatically if we're root
+ 	if test -x $(DESTDIR)$(bindir)/liquidwar6; then mv $(DESTDIR)$(bindir)/liquidwar6 $(DESTDIR)$(bindir)/@PACKAGE_TARNAME@-@LW6_VERSION_BASE@; ln -s @PACKAGE_TARNAME@-@LW6_VERSION_BASE@ $(DESTDIR)$(bindir)/liquidwar6; fi
+ 
+ uninstall-local:

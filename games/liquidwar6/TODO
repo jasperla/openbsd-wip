@@ -1,0 +1,2 @@
+- Seems to segfault on any use
+- disable --enable-allinone ?
