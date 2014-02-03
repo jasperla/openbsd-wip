@@ -1,6 +1,9 @@
 @comment $OpenBSD$
 @bin bin/hedgewars
 @bin bin/hwengine
+@lib lib/libavwrapper.so.${LIBavwrapper_VERSION}
+@lib lib/libhwphysfs.so.${LIBhwphysfs_VERSION}
+@lib lib/libphyslayer.so.${LIBphyslayer_VERSION}
 share/hedgewars/
 share/hedgewars/Data/
 share/hedgewars/Data/Fonts/
@@ -391,6 +394,7 @@ share/hedgewars/Data/Graphics/Hats/Dauber.png
 share/hedgewars/Data/Graphics/Hats/DayAndNight.png
 share/hedgewars/Data/Graphics/Hats/Disguise.png
 share/hedgewars/Data/Graphics/Hats/Dragon.png
+share/hedgewars/Data/Graphics/Hats/Einstein.png
 share/hedgewars/Data/Graphics/Hats/Elvis.png
 share/hedgewars/Data/Graphics/Hats/Eva_00b.png
 share/hedgewars/Data/Graphics/Hats/Eva_00y.png
@@ -476,6 +480,7 @@ share/hedgewars/Data/Graphics/Hats/chuckl.png
 share/hedgewars/Data/Graphics/Hats/clown-copper.png
 share/hedgewars/Data/Graphics/Hats/clown-crossed.png
 share/hedgewars/Data/Graphics/Hats/clown.png
+share/hedgewars/Data/Graphics/Hats/constructor.png
 share/hedgewars/Data/Graphics/Hats/crown.png
 share/hedgewars/Data/Graphics/Hats/cyborg1.png
 share/hedgewars/Data/Graphics/Hats/cyborg2.png
@@ -484,6 +489,7 @@ share/hedgewars/Data/Graphics/Hats/dish_Ladle.png
 share/hedgewars/Data/Graphics/Hats/dish_SauceBoatSilver.png
 share/hedgewars/Data/Graphics/Hats/dish_Teacup.png
 share/hedgewars/Data/Graphics/Hats/dish_Teapot.png
+share/hedgewars/Data/Graphics/Hats/doctor.png
 share/hedgewars/Data/Graphics/Hats/dwarf.png
 share/hedgewars/Data/Graphics/Hats/eastertop.png
 share/hedgewars/Data/Graphics/Hats/flag_french.png
@@ -528,6 +534,7 @@ share/hedgewars/Data/Graphics/Hats/ntd_Falcon.png
 share/hedgewars/Data/Graphics/Hats/ntd_Kirby.png
 share/hedgewars/Data/Graphics/Hats/ntd_Link.png
 share/hedgewars/Data/Graphics/Hats/ntd_Samus.png
+share/hedgewars/Data/Graphics/Hats/nurse.png
 share/hedgewars/Data/Graphics/Hats/pinksunhat.png
 share/hedgewars/Data/Graphics/Hats/pirate_jack.png
 share/hedgewars/Data/Graphics/Hats/pirate_jack_bandana.png
@@ -543,6 +550,7 @@ share/hedgewars/Data/Graphics/Hats/poke_slowpoke.png
 share/hedgewars/Data/Graphics/Hats/poke_squirtle.png
 share/hedgewars/Data/Graphics/Hats/poke_voltorb.png
 share/hedgewars/Data/Graphics/Hats/policecap.png
+share/hedgewars/Data/Graphics/Hats/punkman.png
 share/hedgewars/Data/Graphics/Hats/quotecap.png
 share/hedgewars/Data/Graphics/Hats/rasta.png
 share/hedgewars/Data/Graphics/Hats/royalguard.png
@@ -552,6 +560,8 @@ share/hedgewars/Data/Graphics/Hats/scif_BrainSlug.png
 share/hedgewars/Data/Graphics/Hats/scif_BrainSlug2.png
 share/hedgewars/Data/Graphics/Hats/scif_Geordi.png
 share/hedgewars/Data/Graphics/Hats/scif_SparkssHelmet.png
+share/hedgewars/Data/Graphics/Hats/scif_cosmonaut.png
+share/hedgewars/Data/Graphics/Hats/scif_cyberpunk.png
 share/hedgewars/Data/Graphics/Hats/scif_swDarthvader.png
 share/hedgewars/Data/Graphics/Hats/scif_swStormtrooper.png
 share/hedgewars/Data/Graphics/Hats/sf_balrog.png
@@ -569,6 +579,7 @@ share/hedgewars/Data/Graphics/Hats/sm_mario.png
 share/hedgewars/Data/Graphics/Hats/sm_peach.png
 share/hedgewars/Data/Graphics/Hats/sm_toad.png
 share/hedgewars/Data/Graphics/Hats/sm_wario.png
+share/hedgewars/Data/Graphics/Hats/snorkel.png
 share/hedgewars/Data/Graphics/Hats/snowhog.png
 share/hedgewars/Data/Graphics/Hats/spartan.png
 share/hedgewars/Data/Graphics/Hats/spcartman.png
@@ -587,6 +598,8 @@ share/hedgewars/Data/Graphics/Hats/sth_Super.png
 share/hedgewars/Data/Graphics/Hats/sth_Tails.png
 share/hedgewars/Data/Graphics/Hats/stormcloud.png
 share/hedgewars/Data/Graphics/Hats/swordsmensquire.png
+share/hedgewars/Data/Graphics/Hats/tf_demoman.png
+share/hedgewars/Data/Graphics/Hats/tf_scount.png
 share/hedgewars/Data/Graphics/Hats/thug.png
 share/hedgewars/Data/Graphics/Hats/tiara.png
 share/hedgewars/Data/Graphics/Hats/tophats.png
@@ -598,6 +611,14 @@ share/hedgewars/Data/Graphics/Hats/touhou_suwako.png
 share/hedgewars/Data/Graphics/Hats/touhou_yukari.png
 share/hedgewars/Data/Graphics/Hats/ushanka.png
 share/hedgewars/Data/Graphics/Hats/vampirichog.png
+share/hedgewars/Data/Graphics/Hats/vc_gakupo.png
+share/hedgewars/Data/Graphics/Hats/vc_gumi.png
+share/hedgewars/Data/Graphics/Hats/vc_kaito.png
+share/hedgewars/Data/Graphics/Hats/vc_len.png
+share/hedgewars/Data/Graphics/Hats/vc_luka.png
+share/hedgewars/Data/Graphics/Hats/vc_meiko.png
+share/hedgewars/Data/Graphics/Hats/vc_miku.png
+share/hedgewars/Data/Graphics/Hats/vc_rin.png
 share/hedgewars/Data/Graphics/Hats/war_UNPeacekeeper01.png
 share/hedgewars/Data/Graphics/Hats/war_UNPeacekeeper02.png
 share/hedgewars/Data/Graphics/Hats/war_airwarden02.png
@@ -785,7 +806,9 @@ share/hedgewars/Data/Graphics/WindL.png
 share/hedgewars/Data/Graphics/WindR.png
 share/hedgewars/Data/Graphics/amAirplane.png
 share/hedgewars/Data/Graphics/amGirder.png
+share/hedgewars/Data/Graphics/amRubber.png
 share/hedgewars/Data/Graphics/amTeleport.png
+share/hedgewars/Data/Graphics/boing.png
 share/hedgewars/Data/Graphics/botlevels.png
 share/hedgewars/Data/Graphics/cheese.png
 share/hedgewars/Data/Graphics/cheese@2x.png
@@ -802,6 +825,10 @@ share/hedgewars/Data/Graphics/thinking.png
 share/hedgewars/Data/Locale/
 share/hedgewars/Data/Locale/ar.txt
 share/hedgewars/Data/Locale/bg.txt
+share/hedgewars/Data/Locale/campaigns_de.txt
+share/hedgewars/Data/Locale/campaigns_el.txt
+share/hedgewars/Data/Locale/campaigns_en.txt
+share/hedgewars/Data/Locale/campaigns_pt_BR.txt
 share/hedgewars/Data/Locale/cs.lua
 share/hedgewars/Data/Locale/cs.txt
 share/hedgewars/Data/Locale/da.lua
@@ -855,11 +882,13 @@ share/hedgewars/Data/Locale/lt.lua
 share/hedgewars/Data/Locale/lt.txt
 share/hedgewars/Data/Locale/missions_da.txt
 share/hedgewars/Data/Locale/missions_de.txt
+share/hedgewars/Data/Locale/missions_el.txt
 share/hedgewars/Data/Locale/missions_en.txt
 share/hedgewars/Data/Locale/missions_fr.txt
 share/hedgewars/Data/Locale/missions_it.txt
 share/hedgewars/Data/Locale/missions_pl.txt
 share/hedgewars/Data/Locale/missions_pt.txt
+share/hedgewars/Data/Locale/missions_pt_BR.txt
 share/hedgewars/Data/Locale/missions_ru.txt
 share/hedgewars/Data/Locale/missions_tr.txt
 share/hedgewars/Data/Locale/nl.txt
@@ -877,6 +906,18 @@ share/hedgewars/Data/Locale/sk.txt
 share/hedgewars/Data/Locale/stub.lua
 share/hedgewars/Data/Locale/sv.lua
 share/hedgewars/Data/Locale/sv.txt
+share/hedgewars/Data/Locale/tips_cs.xml
+share/hedgewars/Data/Locale/tips_da.xml
+share/hedgewars/Data/Locale/tips_de.xml
+share/hedgewars/Data/Locale/tips_en.xml
+share/hedgewars/Data/Locale/tips_es.xml
+share/hedgewars/Data/Locale/tips_fi.xml
+share/hedgewars/Data/Locale/tips_fr.xml
+share/hedgewars/Data/Locale/tips_it.xml
+share/hedgewars/Data/Locale/tips_pl.xml
+share/hedgewars/Data/Locale/tips_ru.xml
+share/hedgewars/Data/Locale/tips_sk.xml
+share/hedgewars/Data/Locale/tips_uk.xml
 share/hedgewars/Data/Locale/tr.lua
 share/hedgewars/Data/Locale/tr.txt
 share/hedgewars/Data/Locale/uk.lua
@@ -1111,21 +1152,52 @@ share/hedgewars/Data/Maps/portal/preview.png
 share/hedgewars/Data/Missions/
 share/hedgewars/Data/Missions/Campaign/
 share/hedgewars/Data/Missions/Campaign/01#Boot_Camp.lua
-share/hedgewars/Data/Missions/Campaign/A Classic Fairytale/
-share/hedgewars/Data/Missions/Campaign/A Classic Fairytale/backstab.lua
-share/hedgewars/Data/Missions/Campaign/A Classic Fairytale/campaign.ini
-share/hedgewars/Data/Missions/Campaign/A Classic Fairytale/dragon.lua
-share/hedgewars/Data/Missions/Campaign/A Classic Fairytale/enemy.lua
-share/hedgewars/Data/Missions/Campaign/A Classic Fairytale/epil.lua
-share/hedgewars/Data/Missions/Campaign/A Classic Fairytale/family.lua
-share/hedgewars/Data/Missions/Campaign/A Classic Fairytale/first_blood.hwp
-share/hedgewars/Data/Missions/Campaign/A Classic Fairytale/first_blood.lua
-share/hedgewars/Data/Missions/Campaign/A Classic Fairytale/journey.hwp
-share/hedgewars/Data/Missions/Campaign/A Classic Fairytale/journey.lua
-share/hedgewars/Data/Missions/Campaign/A Classic Fairytale/queen.lua
-share/hedgewars/Data/Missions/Campaign/A Classic Fairytale/shadow.hwp
-share/hedgewars/Data/Missions/Campaign/A Classic Fairytale/shadow.lua
-share/hedgewars/Data/Missions/Campaign/A Classic Fairytale/united.lua
+share/hedgewars/Data/Missions/Campaign/A_Classic_Fairytale/
+share/hedgewars/Data/Missions/Campaign/A_Classic_Fairytale/backstab.lua
+share/hedgewars/Data/Missions/Campaign/A_Classic_Fairytale/campaign.ini
+share/hedgewars/Data/Missions/Campaign/A_Classic_Fairytale/dragon.lua
+share/hedgewars/Data/Missions/Campaign/A_Classic_Fairytale/enemy.lua
+share/hedgewars/Data/Missions/Campaign/A_Classic_Fairytale/epil.lua
+share/hedgewars/Data/Missions/Campaign/A_Classic_Fairytale/family.lua
+share/hedgewars/Data/Missions/Campaign/A_Classic_Fairytale/first_blood.hwp
+share/hedgewars/Data/Missions/Campaign/A_Classic_Fairytale/first_blood.lua
+share/hedgewars/Data/Missions/Campaign/A_Classic_Fairytale/journey.hwp
+share/hedgewars/Data/Missions/Campaign/A_Classic_Fairytale/journey.lua
+share/hedgewars/Data/Missions/Campaign/A_Classic_Fairytale/queen.lua
+share/hedgewars/Data/Missions/Campaign/A_Classic_Fairytale/shadow.hwp
+share/hedgewars/Data/Missions/Campaign/A_Classic_Fairytale/shadow.lua
+share/hedgewars/Data/Missions/Campaign/A_Classic_Fairytale/united.lua
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/campaign.ini
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/cosmos.hwp
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/cosmos.lua
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/death01.hwp
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/death01.lua
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/death02.hwp
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/death02.lua
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/desert01.hwp
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/desert01.lua
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/desert02.hwp
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/desert02.lua
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/desert03.hwp
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/desert03.lua
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/final.hwp
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/final.lua
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/fruit01.hwp
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/fruit01.lua
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/fruit02.hwp
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/fruit02.lua
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/fruit03.hwp
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/fruit03.lua
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/global_functions.lua
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/ice01.hwp
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/ice01.lua
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/ice02.hwp
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/ice02.lua
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/moon01.hwp
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/moon01.lua
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/moon02.hwp
+share/hedgewars/Data/Missions/Campaign/A_Space_Adventure/moon02.lua
 share/hedgewars/Data/Missions/Training/
 share/hedgewars/Data/Missions/Training/Basic_Training_-_Bazooka.lua
 share/hedgewars/Data/Missions/Training/Basic_Training_-_Cluster_Bomb.lua
@@ -1263,6 +1335,8 @@ share/hedgewars/Data/Scripts/Multiplayer/Continental_supplies.cfg
 share/hedgewars/Data/Scripts/Multiplayer/Continental_supplies.lua
 share/hedgewars/Data/Scripts/Multiplayer/Frenzy.cfg
 share/hedgewars/Data/Scripts/Multiplayer/Frenzy.lua
+share/hedgewars/Data/Scripts/Multiplayer/Gravity.cfg
+share/hedgewars/Data/Scripts/Multiplayer/Gravity.lua
 share/hedgewars/Data/Scripts/Multiplayer/Highlander.cfg
 share/hedgewars/Data/Scripts/Multiplayer/Highlander.lua
 share/hedgewars/Data/Scripts/Multiplayer/Mutant.lua
@@ -1527,6 +1601,53 @@ share/hedgewars/Data/Sounds/voices/Default_es/Victory.ogg
 share/hedgewars/Data/Sounds/voices/Default_es/Watchit.ogg
 share/hedgewars/Data/Sounds/voices/Default_es/Yessir.ogg
 share/hedgewars/Data/Sounds/voices/Default_es/Youllregretthat.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/
+share/hedgewars/Data/Sounds/voices/Default_ru/Boring.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Byebye.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Comeonthen.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Coward.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Enemydown.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Firepunch1.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Firepunch2.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Firepunch3.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Firepunch4.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Firepunch5.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Firepunch6.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Firstblood.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Flawless.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Hello.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Hurry.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Illgetyou.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Incoming.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Jump1.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Jump2.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Jump3.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Kamikaze.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Laugh.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Melon.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Missed.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Nooo.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Nutter.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Ooff1.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Ooff2.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Ooff3.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Oops.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Ow1.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Ow2.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Ow3.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Ow4.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/PoisonCough.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/PoisonMoan.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Reinforcements.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Sameteam.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Stupid.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Takecover.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Traitor.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Uh-oh.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Victory.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Watchit.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Yessir.ogg
+share/hedgewars/Data/Sounds/voices/Default_ru/Youllregretthat.ogg
 share/hedgewars/Data/Sounds/voices/Default_uk/
 share/hedgewars/Data/Sounds/voices/Default_uk/Boring.ogg
 share/hedgewars/Data/Sounds/voices/Default_uk/Byebye.ogg
@@ -2371,6 +2492,7 @@ share/hedgewars/Data/Themes/Olympics/Girder.png
 share/hedgewars/Data/Themes/Olympics/LandBackTex.png
 share/hedgewars/Data/Themes/Olympics/LandTex.png
 share/hedgewars/Data/Themes/Olympics/Sky.png
+share/hedgewars/Data/Themes/Olympics/SkyL.png
 share/hedgewars/Data/Themes/Olympics/Statue.png
 share/hedgewars/Data/Themes/Olympics/horizont.png
 share/hedgewars/Data/Themes/Olympics/icon.png
