@@ -22,13 +22,11 @@ SHARED_LIBS += gvplugin_dot_layout	1.0 # 6.0
 SHARED_LIBS += gvplugin_neato_layout	1.0 # 6.0
 SHARED_LIBS += gvplugin_xlib		1.0 # 6.0
 SHARED_LIBS += gvplugin_gtk		1.0 # 6.0
-SHARED_LIBS += gvplugin_gdk_pixbuf	0.0 # 6.0
 SHARED_LIBS += gvplugin_rsvg		0.0 # 6.0
 SHARED_LIBS += gvplugin_gdk		0.0 # 6.0
 SHARED_LIBS += gvplugin_poppler		0.0 # 6.0
 
 SHARED_LIBS += cdt			1.0 # 5.0
-SHARED_LIBS += graph			2.0 # 5.0
 SHARED_LIBS += pathplan			2.0 # 4.0
 SHARED_LIBS += gvc			1.0 # 6.0
 SHARED_LIBS += cgraph			0.0 # 6.0
