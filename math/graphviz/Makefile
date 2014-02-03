@@ -24,6 +24,8 @@ SHARED_LIBS += gvplugin_xlib		1.0 # 6.0
 SHARED_LIBS += gvplugin_gtk		1.0 # 6.0
 SHARED_LIBS += gvplugin_gdk_pixbuf	0.0 # 6.0
 SHARED_LIBS += gvplugin_rsvg		0.0 # 6.0
+SHARED_LIBS += gvplugin_gdk		0.0 # 6.0
+SHARED_LIBS += gvplugin_poppler		0.0 # 6.0
 
 SHARED_LIBS += cdt			1.0 # 5.0
 SHARED_LIBS += graph			2.0 # 5.0
@@ -32,11 +34,11 @@ SHARED_LIBS += gvc			1.0 # 6.0
 SHARED_LIBS += cgraph			0.0 # 6.0
 SHARED_LIBS += gvpr			0.0 # 2.0
 SHARED_LIBS += xdot			0.0 # 4.0
-SHARED_LIBS += gdtclft			2.0 # unknown
-SHARED_LIBS += tcldot			2.0 # unknown
-SHARED_LIBS += tcldot_builtin		2.0 # unknown
-SHARED_LIBS += tclplan			2.0 # unknown
-SHARED_LIBS += tkspline			2.0 # unknown
+SHARED_LIBS += gdtclft			3.0 # unknown
+SHARED_LIBS += tcldot			3.0 # unknown
+SHARED_LIBS += tcldot_builtin		3.0 # unknown
+SHARED_LIBS += tclplan			3.0 # unknown
+SHARED_LIBS += tkspline			3.0 # unknown
 
 HOMEPAGE=	http://www.graphviz.org/
 
@@ -48,27 +50,31 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=	devel/gettext \
 		x11/tk \
 		perl
-LIB_DEPENDS=	graphics/jpeg \
+LIB_DEPENDS =	graphics/jpeg \
 		graphics/png \
 		devel/libtool,-ltdl \
 		graphics/gd>=2.0.34 \
 		x11/gtk+2 \
 		www/libcroco \
 		x11/gnome/librsvg \
-		${_MODTK_SPEC}:x11/tk/${MODTK_VERSION}
+		graphics/graphite2 \
+		devel/harfbuzz \
+		print/poppler \
+		${MODTK_LIB_DEPENDS}
 RUN_DEPENDS=	lang/guile
 BUILD_DEPENDS=	devel/swig \
 		lang/guile
-TEST_DEPENDS=math/graphviz
+TEST_DEPENDS =	${FULLPKGNAME}:math/graphviz
 
-WANTLIB += GL ICE SM X11 Xau Xaw Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xmu Xpm Xrandr Xrender Xt Xxf86vm
-WANTLIB += atk-1.0 c cairo croco-0.6 drm expat ffi fontconfig
+WANTLIB += ICE SM X11 Xau Xaw Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xft Xi Xinerama Xmu Xpm Xrandr Xrender
+WANTLIB += Xss Xt atk-1.0 c cairo croco-0.6 expat ffi fontconfig
 WANTLIB += freetype gd gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg
-WANTLIB += ltdl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs rsvg-2 stdc++ xcb xcb-render
-WANTLIB += xcb-shm xml2 z ${MODTK_LIB} Xft Xss perl util
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
+WANTLIB += harfbuzz jpeg lcms2 ltdl m openjpeg pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre perl pixman-1 png poppler poppler-glib
+WANTLIB += pthread pthread-stubs rsvg-2 stdc++ tiff ${MODTK_LIB} util
+WANTLIB += xcb xcb-render xcb-shm xml2 z
 
 USE_GMAKE =	Yes
 USE_GROFF =	Yes
@@ -150,5 +156,6 @@ do-test:
 #    in the packing list.
 #  * Run 'dot -c' manually and subsitute all hardcoded library versions to
 #    ${LIB_libname_VERSION}. Put the file in files/config6
+#    XXX DO THIS ^^^
 
 .include <bsd.port.mk>
