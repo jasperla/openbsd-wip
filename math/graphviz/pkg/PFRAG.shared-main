@@ -26,6 +26,7 @@ ${P5ARCH}/usr/local/${P5ARCH}/gv.so
 @lib lib/tcl/graphviz/libtcldot_builtin.so.${LIBtcldot_builtin_VERSION}
 @lib lib/tcl/graphviz/libtclplan.so.${LIBtclplan_VERSION}
 @lib lib/tcl/graphviz/libtkspline.so.${LIBtkspline_VERSION}
+lib/graphviz/guile/libgv_guile.so
 lib/graphviz/perl/gv.so
 lib/graphviz/perl/libgv_perl.so
 lib/tcl${MODTK_VERSION}/graphviz/libgv_tcl.so

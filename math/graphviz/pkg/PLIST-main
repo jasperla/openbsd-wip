@@ -122,8 +122,9 @@ include/graphviz/usershape.h
 include/graphviz/xdot.h
 lib/graphviz/
 lib/graphviz/config6
-@comment lib/graphviz/guile/libgv_guile.a
-@comment lib/graphviz/guile/libgv_guile.la
+lib/graphviz/guile/
+lib/graphviz/guile/libgv_guile.a
+lib/graphviz/guile/libgv_guile.la
 lib/graphviz/libgvplugin_core.a
 lib/graphviz/libgvplugin_core.la
 lib/graphviz/libgvplugin_dot_layout.a
@@ -197,6 +198,7 @@ lib/tcl/graphviz/libtkspline.a
 lib/tcl/graphviz/libtkspline.la
 lib/tcl/graphviz/pkgIndex.tcl
 man/man3/gdtclft.3tcl
+man/man3/gv.3guile
 man/man3/gv.3perl
 man/man3/gv.3tcl
 man/man3/tcldot.3tcl
@@ -409,6 +411,7 @@ share/doc/graphviz/pdf/gc.1.pdf
 share/doc/graphviz/pdf/gdtclft.3tcl.pdf
 share/doc/graphviz/pdf/gml2gv.1.pdf
 share/doc/graphviz/pdf/graphml2gv.1.pdf
+share/doc/graphviz/pdf/gv.3guile.pdf
 share/doc/graphviz/pdf/gv.3perl.pdf
 share/doc/graphviz/pdf/gv.3tcl.pdf
 share/doc/graphviz/pdf/gv2gml.1.pdf
