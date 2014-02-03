@@ -1,90 +1,43 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2012/08/22 09:55:01 edd Exp $
+@comment $OpenBSD$
 %%SHARED%%
-${P5ARCH}/
-${P5ARCH}/gv.pm
 @bin bin/acyclic
 @bin bin/bcomps
 @bin bin/ccomps
+bin/circo
 @bin bin/cluster
 @bin bin/diffimg
 @bin bin/dijkstra
 @bin bin/dot
+bin/dot2gxl
 @bin bin/dot_builtins
+bin/dotty
+bin/fdp
 @bin bin/gc
 @bin bin/gml2gv
 @bin bin/graphml2gv
 @bin bin/gv2gml
+bin/gv2gxl
 @bin bin/gvcolor
 @bin bin/gvgen
 @bin bin/gvmap
+bin/gvmap.sh
 @bin bin/gvpack
 @bin bin/gvpr
+bin/gxl2dot
 @bin bin/gxl2gv
 @bin bin/lefty
-@bin bin/mm2gv
-@bin bin/nop
-@bin bin/prune
-@bin bin/sccmap
-@bin bin/tred
-@bin bin/unflatten
-@man man/man1/acyclic.1
-@man man/man1/bcomps.1
-@man man/man1/ccomps.1
-@man man/man1/circo.1
-@man man/man1/cluster.1
-@man man/man1/diffimg.1
-@man man/man1/dijkstra.1
-@man man/man1/dot.1
-@man man/man1/dotty.1
-@man man/man1/fdp.1
-@man man/man1/gc.1
-@man man/man1/gml2gv.1
-@man man/man1/graphml2gv.1
-@man man/man1/gv2gml.1
-@man man/man1/gv2gxl.1
-@man man/man1/gvcolor.1
-@man man/man1/gvgen.1
-@man man/man1/gvmap.1
-@man man/man1/gvmap.sh.1
-@man man/man1/gvpack.1
-@man man/man1/gvpr.1
-@man man/man1/gxl2gv.1
-@man man/man1/lefty.1
-@man man/man1/lneato.1
-@man man/man1/mm2gv.1
-@man man/man1/neato.1
-@man man/man1/nop.1
-@man man/man1/osage.1
-@man man/man1/patchwork.1
-@man man/man1/prune.1
-@man man/man1/sccmap.1
-@man man/man1/sfdp.1
-@man man/man1/tred.1
-@man man/man1/twopi.1
-@man man/man1/unflatten.1
-@man man/man1/vimdot.1
-@man man/man3/cdt.3
-@man man/man3/cgraph.3
-@man man/man3/expr.3
-@man man/man3/gvc.3
-@man man/man3/gvpr.3
-@man man/man3/pack.3
-@man man/man3/pathplan.3
-@man man/man3/xdot.3
-@man man/man7/graphviz.7
-bin/circo
-bin/dot2gxl
-bin/dotty
-bin/fdp
-bin/gv2gxl
-bin/gvmap.sh
-bin/gxl2dot
 bin/lneato
+@bin bin/mm2gv
 bin/neato
+@bin bin/nop
 bin/osage
 bin/patchwork
+@bin bin/prune
+@bin bin/sccmap
 bin/sfdp
+@bin bin/tred
 bin/twopi
+@bin bin/unflatten
 bin/vimdot
 include/graphviz/
 include/graphviz/arith.h
@@ -161,21 +114,6 @@ lib/pkgconfig/libgvc.pc
 lib/pkgconfig/libgvpr.pc
 lib/pkgconfig/libpathplan.pc
 lib/pkgconfig/libxdot.pc
-lib/tcl${MODTK_VERSION}/
-lib/tcl${MODTK_VERSION}/graphviz/
-lib/tcl${MODTK_VERSION}/graphviz/libgdtclft.a
-lib/tcl${MODTK_VERSION}/graphviz/libgdtclft.la
-lib/tcl${MODTK_VERSION}/graphviz/libgv_tcl.a
-lib/tcl${MODTK_VERSION}/graphviz/libgv_tcl.la
-lib/tcl${MODTK_VERSION}/graphviz/libtcldot.a
-lib/tcl${MODTK_VERSION}/graphviz/libtcldot.la
-lib/tcl${MODTK_VERSION}/graphviz/libtcldot_builtin.a
-lib/tcl${MODTK_VERSION}/graphviz/libtcldot_builtin.la
-lib/tcl${MODTK_VERSION}/graphviz/libtclplan.a
-lib/tcl${MODTK_VERSION}/graphviz/libtclplan.la
-lib/tcl${MODTK_VERSION}/graphviz/libtkspline.a
-lib/tcl${MODTK_VERSION}/graphviz/libtkspline.la
-lib/tcl${MODTK_VERSION}/graphviz/pkgIndex.tcl
 lib/tcl/
 lib/tcl/graphviz/
 lib/tcl/graphviz/libgdtclft.a
@@ -191,12 +129,61 @@ lib/tcl/graphviz/libtclplan.la
 lib/tcl/graphviz/libtkspline.a
 lib/tcl/graphviz/libtkspline.la
 lib/tcl/graphviz/pkgIndex.tcl
+lib/tcl${MODTK_VERSION}/
+lib/tcl${MODTK_VERSION}/graphviz
+${P5ARCH}/
+${P5ARCH}/gv.pm
+@man man/man1/acyclic.1
+@man man/man1/bcomps.1
+@man man/man1/ccomps.1
+@man man/man1/circo.1
+@man man/man1/cluster.1
+@man man/man1/diffimg.1
+@man man/man1/dijkstra.1
+@man man/man1/dot.1
+@man man/man1/dotty.1
+@man man/man1/fdp.1
+@man man/man1/gc.1
+@man man/man1/gml2gv.1
+@man man/man1/graphml2gv.1
+@man man/man1/gv2gml.1
+@man man/man1/gv2gxl.1
+@man man/man1/gvcolor.1
+@man man/man1/gvgen.1
+@man man/man1/gvmap.1
+@man man/man1/gvmap.sh.1
+@man man/man1/gvpack.1
+@man man/man1/gvpr.1
+@man man/man1/gxl2gv.1
+@man man/man1/lefty.1
+@man man/man1/lneato.1
+@man man/man1/mm2gv.1
+@man man/man1/neato.1
+@man man/man1/nop.1
+@man man/man1/osage.1
+@man man/man1/patchwork.1
+@man man/man1/prune.1
+@man man/man1/sccmap.1
+@man man/man1/sfdp.1
+@man man/man1/tred.1
+@man man/man1/twopi.1
+@man man/man1/unflatten.1
+@man man/man1/vimdot.1
+@man man/man3/cdt.3
+@man man/man3/cgraph.3
+@man man/man3/expr.3
 man/man3/gdtclft.3tcl
 man/man3/gv.3guile
 man/man3/gv.3perl
 man/man3/gv.3tcl
+@man man/man3/gvc.3
+@man man/man3/gvpr.3
+@man man/man3/pack.3
+@man man/man3/pathplan.3
 man/man3/tcldot.3tcl
 man/man3/tkspline.3tk
+@man man/man3/xdot.3
+@man man/man7/graphviz.7
 share/doc/graphviz/
 share/doc/graphviz/AUTHORS
 share/doc/graphviz/COPYING

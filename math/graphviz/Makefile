@@ -68,11 +68,11 @@ WANTLIB += ICE SM X11 Xau Xaw Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xft Xi Xinerama Xmu Xpm Xrandr Xrender
 WANTLIB += Xss Xt atk-1.0 c cairo croco-0.6 expat ffi fontconfig
 WANTLIB += freetype gd gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
-WANTLIB += harfbuzz jpeg lcms2 ltdl m openjpeg pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre perl pixman-1 png poppler poppler-glib
-WANTLIB += pthread pthread-stubs rsvg-2 stdc++ tiff ${MODTK_LIB} util
-WANTLIB += xcb xcb-render xcb-shm xml2 z
+WANTLIB += gmodule-2.0 gmp gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
+WANTLIB += guile harfbuzz jpeg lcms2 ltdl m openjpeg pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre perl pixman-1 png
+WANTLIB += poppler poppler-glib pthread pthread-stubs rsvg-2 stdc++
+WANTLIB += tiff tk85 util xcb xcb-render xcb-shm xml2 z
 
 USE_GMAKE =	Yes
 USE_GROFF =	Yes
@@ -134,9 +134,16 @@ post-build:
 .endfor
 
 post-install:
-	@# install pre-generated config6 to avoid @exec/@unexec-delete
+# install pre-generated config6 to avoid @exec/@unexec-delete
 	${SUBST_CMD} -c ${FILESDIR}/config6 ${PREFIX}/lib/graphviz/config6
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/graphviz/config6
+# Once upon a time, graphviz used to install the symlink:
+# ${PREFIX}/lib/tcl${MODTCL_VERSION}/graphviz -> ${PREFIX}/lib/tcl/graphviz
+# Now it installs a copy of the dir, however, 'pkg_add -u' can't update a
+# symlink to a dir, so we manually hack back the old symlink.
+	rm -Rf ${PREFIX}/lib/tcl${MODTCL_VERSION}/graphviz
+	ln -s ${TRUEPREFIX}/lib/tcl/graphviz \
+		${PREFIX}/lib/tcl${MODTCL_VERSION}/graphviz
 
 # Local tests for OpenBSD
 # Can't run built in tests, as requires ksh93 (some specific arguments
