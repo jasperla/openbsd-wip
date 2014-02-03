@@ -21,9 +21,8 @@ BUILD_DEPENDS =		textproc/asciidoc \
 			textproc/xmlto \
 			x11/py-qt4	# needed to build GUI
 RUN_DEPENDS =		x11/py-qt4 \
-			editors/py-qscintilla
+			editors/py-qscintilla \
+			devel/py-urwid # XXX check not a BUILD_DEPEND
 #TEST_DEPENDS =		??? # XXX any tests?
-
-# XXX needs a newer py-urwid for -I curses
 
 .include <bsd.port.mk>
