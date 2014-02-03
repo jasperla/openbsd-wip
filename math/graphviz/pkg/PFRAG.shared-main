@@ -1,5 +1,5 @@
 @comment $OpenBSD: PFRAG.shared-main,v 1.2 2012/08/22 09:55:01 edd Exp $
-${P5ARCH}/usr/local/${P5ARCH}/gv.so
+${P5ARCH}/gv.so
 @lib lib/graphviz/libgvplugin_core.so.${LIBgvplugin_core_VERSION}
 @lib lib/graphviz/libgvplugin_dot_layout.so.${LIBgvplugin_dot_layout_VERSION}
 @lib lib/graphviz/libgvplugin_gd.so.${LIBgvplugin_gd_VERSION}

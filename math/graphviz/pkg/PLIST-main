@@ -1,13 +1,7 @@
 @comment $OpenBSD: PLIST-main,v 1.4 2012/08/22 09:55:01 edd Exp $
 %%SHARED%%
 ${P5ARCH}/
-${P5ARCH}/usr/
-${P5ARCH}/usr/local/
-${P5ARCH}/usr/local/${P5ARCH}/
-${P5ARCH}/usr/local/${P5ARCH}/gv.pm
-${P5ARCH}/usr/local/${P5SITE}/
-${P5ARCH}/usr/local/libdata/
-${P5ARCH}/usr/local/libdata/perl5/
+${P5ARCH}/gv.pm
 @bin bin/acyclic
 @bin bin/bcomps
 @bin bin/ccomps
