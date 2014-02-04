@@ -161,6 +161,5 @@ do-test:
 #    in the packing list.
 #  * Run 'dot -c' manually and subsitute all hardcoded library versions to
 #    ${LIB_libname_VERSION}. Put the file in files/config6
-#    XXX DO THIS ^^^
 
 .include <bsd.port.mk>

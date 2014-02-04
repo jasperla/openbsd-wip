@@ -6,6 +6,125 @@
 
 # Manual edits to this file **will be lost** on upgrade.
 
+libgvplugin_gd.so.${LIBgvplugin_gd_VERSION} gd {
+	render {
+		gd 1
+	}
+	render {
+		vrml 1
+	}
+	textlayout {
+		textlayout 2
+	}
+	loadimage {
+		gd:gd 1
+		gd2:gd 1
+		gif:gd 1
+		jpeg:gd 1
+		jpe:gd 1
+		jpg:gd 1
+		png:gd 1
+		gd:ps 1
+#FAILS		gd:lasi 1
+		gd2:ps 1
+#FAILS		gd2:lasi 1
+		gif:ps 1
+#FAILS		gif:lasi 1
+		jpeg:ps 1
+		jpg:ps 1
+		jpe:ps 1
+#FAILS		jpeg:lasi 1
+#FAILS		jpg:lasi 1
+#FAILS		jpe:lasi 1
+		png:ps 1
+#FAILS		png:lasi 1
+		gd:cairo 1
+		gd2:cairo 1
+		gif:cairo 1
+		jpeg:cairo 1
+		jpg:cairo 1
+		jpe:cairo 1
+		png:cairo -1
+	}
+	device {
+		gif:cairo 10
+		wbmp:cairo 5
+		jpe:cairo 5
+		jpeg:cairo 5
+		jpg:cairo 5
+		png:cairo 5
+		gd:cairo 5
+		gd2:cairo 5
+	}
+	device {
+		gif:gd 1
+		wbmp:gd 1
+		jpe:gd 1
+		jpeg:gd 1
+		jpg:gd 1
+		png:gd 1
+		gd:gd 1
+		gd2:gd 1
+	}
+	device {
+		vrml:vrml 1
+	}
+}
+libgvplugin_gdk.so.${LIBgvplugin_gdk_VERSION} gdk {
+	device {
+		bmp:cairo 6
+		ico:cairo 6
+		jpe:cairo 6
+		jpeg:cairo 6
+		jpg:cairo 6
+		png:cairo 6
+		tif:cairo 6
+		tiff:cairo 6
+	}
+	loadimage {
+		bmp:cairo 1
+		jpe:cairo 2
+		jpg:cairo 2
+		jpeg:cairo 2
+		png:cairo -1
+		ico:cairo 1
+	}
+}
+libgvplugin_gtk.so.${LIBgvplugin_gtk_VERSION} gtk {
+	device {
+		gtk:cairo 0
+	}
+}
+libgvplugin_pango.so.${LIBgvplugin_pango_VERSION} cairo {
+	render {
+		cairo 10
+	}
+	textlayout {
+		textlayout 10
+	}
+	loadimage {
+		png:cairo 1
+#FAILS		png:lasi 2
+		png:ps 2
+	}
+	device {
+		png:cairo 10
+		ps:cairo -10
+		pdf:cairo 10
+		svg:cairo -10
+	}
+}
+libgvplugin_poppler.so.${LIBgvplugin_poppler_VERSION} poppler {
+	loadimage {
+		pdf:cairo 1
+	}
+}
+libgvplugin_xlib.so.${LIBgvplugin_xlib_VERSION} xlib {
+	device {
+		xlib:cairo 0
+		x11:cairo 0
+	}
+}
 libgvplugin_core.so.${LIBgvplugin_core_VERSION} core {
 	device {
 		dot:dot 1
@@ -130,110 +249,9 @@ libgvplugin_core.so.${LIBgvplugin_core_VERSION} core {
 		gif:tk 1
 	}
 }
-libgvplugin_gdk_pixbuf.so.${LIBgvplugin_gdk_pixbuf_VERSION} gdk_pixbuf {
-	device {
-		bmp:cairo 4
-		ico:cairo 4
-		jpe:cairo 4
-		jpeg:cairo 4
-		jpg:cairo 4
-		png:cairo 4
-		tif:cairo 4
-		tiff:cairo 4
-	}
-}
 libgvplugin_dot_layout.so.${LIBgvplugin_dot_layout_VERSION} dot_layout {
 	layout {
 		dot 0
-	}
-}
-libgvplugin_gd.so.${LIBgvplugin_gd_VERSION} gd {
-	render {
-		gd 1
-	}
-	render {
-		vrml 1
-	}
-	textlayout {
-		textlayout 2
-	}
-	loadimage {
-		gd:gd 1
-		gd2:gd 1
-		gif:gd 1
-		jpeg:gd 1
-		jpe:gd 1
-		jpg:gd 1
-		png:gd 1
-		gd:ps 1
-#FAILS		gd:lasi 1
-		gd2:ps 1
-#FAILS		gd2:lasi 1
-		gif:ps 1
-#FAILS		gif:lasi 1
-		jpeg:ps 1
-		jpg:ps 1
-		jpe:ps 1
-#FAILS		jpeg:lasi 1
-#FAILS		jpg:lasi 1
-#FAILS		jpe:lasi 1
-		png:ps 1
-#FAILS		png:lasi 1
-		gd:cairo 1
-		gd2:cairo 1
-		gif:cairo 1
-		jpeg:cairo 1
-		jpg:cairo 1
-		jpe:cairo 1
-		png:cairo -1
-	}
-	device {
-		gif:cairo 10
-		wbmp:cairo 5
-		jpe:cairo 5
-		jpeg:cairo 5
-		jpg:cairo 5
-		png:cairo 5
-		gd:cairo 5
-		gd2:cairo 5
-	}
-	device {
-		gif:gd 1
-		wbmp:gd 1
-		jpe:gd 1
-		jpeg:gd 1
-		jpg:gd 1
-		png:gd 1
-		gd:gd 1
-		gd2:gd 1
-	}
-	device {
-		vrml:vrml 1
-	}
-}
-libgvplugin_gdk.so.${LIBgvplugin_gdk_VERSION} gdk {
-	device {
-		bmp:cairo 6
-		ico:cairo 6
-		jpe:cairo 6
-		jpeg:cairo 6
-		jpg:cairo 6
-		png:cairo 6
-		tif:cairo 6
-		tiff:cairo 6
-	}
-	loadimage {
-		bmp:cairo 1
-		jpe:cairo 2
-		jpg:cairo 2
-		jpeg:cairo 2
-		png:cairo -1
-		ico:cairo 1
-	}
-}
-libgvplugin_gtk.so.${LIBgvplugin_gtk_VERSION} gtk {
-	device {
-		gtk:cairo 0
 	}
 }
 libgvplugin_neato_layout.so.${LIBgvplugin_neato_layout_VERSION} neato_layout {
@@ -250,38 +268,8 @@ libgvplugin_neato_layout.so.${LIBgvplugin_neato_layout_VERSION} neato_layout {
 		nop2 0
 	}
 }
-libgvplugin_pango.so.${LIBgvplugin_pango_VERSION} cairo {
-	render {
-		cairo 10
-	}
-	textlayout {
-		textlayout 10
-	}
-	loadimage {
-		png:cairo 1
-#FAILS		png:lasi 2
-		png:ps 2
-	}
-	device {
-		png:cairo 10
-		ps:cairo -10
-		pdf:cairo 10
-		svg:cairo -10
-	}
-}
-libgvplugin_poppler.so.${LIBgvplugin_poppler_VERSION} poppler {
-	loadimage {
-		pdf:cairo 1
-	}
-}
 libgvplugin_rsvg.so.${LIBgvplugin_rsvg_VERSION} rsvg {
 	loadimage {
 		svg:cairo 1
-	}
-}
-libgvplugin_xlib.so.${LIBgvplugin_xlib_VERSION} xlib {
-	device {
-		xlib:cairo 0
-		x11:cairo 0
 	}
 }
