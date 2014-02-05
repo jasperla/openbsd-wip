@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+${P5SITE}/String/
+${P5SITE}/String/Util.pm
+${P5SITE}/String/Util.pod
+@man man/man3p/String::Util.3p
