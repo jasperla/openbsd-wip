@@ -1,4 +1,6 @@
 @comment $OpenBSD$
+@newgroup testsuite-netperf-server-daemon_user:674
+@newuser testsuite-netperf-server-daemon_user:674:674:daemon:Tapper test infrastructure:/var/empty:/sbin/nologin
 bin/tapper-testsuite-netperf-client
 bin/tapper-testsuite-netperf-server
 ${P5SITE}/Tapper/
@@ -12,3 +14,4 @@ ${P5SITE}/Tapper/TestSuite/Netperf/Server.pm
 @man man/man3p/Tapper::TestSuite::Netperf.3p
 @man man/man3p/Tapper::TestSuite::Netperf::Client.3p
 @man man/man3p/Tapper::TestSuite::Netperf::Server.3p
+@rcscript ${RCDIR}/tapper-testsuite-netperf-server
