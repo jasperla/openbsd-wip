@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/DBIx/Class/InflateColumn/Object/
+${P5SITE}/DBIx/Class/InflateColumn/Object/Enum.pm
+@man man/man3p/DBIx::Class::InflateColumn::Object::Enum.3p
