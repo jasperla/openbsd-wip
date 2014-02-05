@@ -1,0 +1,30 @@
+@comment $OpenBSD$
+${P5SITE}/Language/
+${P5SITE}/Language/Expr/
+${P5SITE}/Language/Expr.pm
+${P5SITE}/Language/Expr/Compiler/
+${P5SITE}/Language/Expr/Compiler/Base.pm
+${P5SITE}/Language/Expr/Compiler/JS.pm
+${P5SITE}/Language/Expr/Compiler/PHP.pm
+${P5SITE}/Language/Expr/Compiler/Perl.pm
+${P5SITE}/Language/Expr/Evaluator.pm
+${P5SITE}/Language/Expr/EvaluatorRole.pm
+${P5SITE}/Language/Expr/Interpreter/
+${P5SITE}/Language/Expr/Interpreter/Default.pm
+${P5SITE}/Language/Expr/Interpreter/Dummy.pm
+${P5SITE}/Language/Expr/Interpreter/VarEnumer.pm
+${P5SITE}/Language/Expr/Manual/
+${P5SITE}/Language/Expr/Manual/Syntax.pod
+${P5SITE}/Language/Expr/Parser.pm
+@man man/man3p/Language::Expr.3p
+@man man/man3p/Language::Expr::Compiler::Base.3p
+@man man/man3p/Language::Expr::Compiler::JS.3p
+@man man/man3p/Language::Expr::Compiler::PHP.3p
+@man man/man3p/Language::Expr::Compiler::Perl.3p
+@man man/man3p/Language::Expr::Evaluator.3p
+@man man/man3p/Language::Expr::EvaluatorRole.3p
+@man man/man3p/Language::Expr::Interpreter::Default.3p
+@man man/man3p/Language::Expr::Interpreter::Dummy.3p
+@man man/man3p/Language::Expr::Interpreter::VarEnumer.3p
+@man man/man3p/Language::Expr::Manual::Syntax.3p
+@man man/man3p/Language::Expr::Parser.3p
