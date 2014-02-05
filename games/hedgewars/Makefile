@@ -7,7 +7,12 @@ COMMENT-server =	Worms-like strategy game, server
 
 MULTI_PACKAGES =	-main -server
 
-V =			0.9.19.3
+SHARED_LIBS +=  hwphysfs                  0.0 # 2.1
+SHARED_LIBS +=  avwrapper                 0.0 # 0.0
+SHARED_LIBS +=  physlayer                 0.0 # 0.0
+
+R =			0.9.20
+V =			$R.5
 DISTNAME =		hedgewars-src-$V
 PKGNAME-main =		hedgewars-$V
 PKGNAME-server =	hedgewars-server-$V
@@ -64,6 +69,6 @@ MODGHC_BUILD =		nort
 
 NO_TEST =		Yes
 
-WRKDIST =		${WRKDIR}/hedgewars-src-$V
+WRKDIST =		${WRKDIR}/hedgewars-src-$R
 
 .include <bsd.port.mk>
