@@ -23,10 +23,10 @@ RUN_DEPENDS=    devel/p5-AnyEvent \
 		devel/p5-LockFile-Simple \
 		devel/p5-MooseX-Log-Log4perl \
 		devel/p5-MooseX-Daemonize \
-		devel/p5-String-Escape \
 		devel/p5-Test-Deep \
 		devel/p5-Test-Fixture-DBIC-Schema \
 		devel/p5-YAML-Tiny \
+		textproc/p5-String-Escape \
 		www/p5-Tapper-Base \
 		www/p5-Tapper-Model \
 		www/p5-Tapper-Schema \
