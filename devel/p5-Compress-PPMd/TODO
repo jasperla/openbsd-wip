@@ -1,0 +1,41 @@
+t/0_use.t ...... ok
+t/1_quijote.t .. 
+Failed 30/31 subtests 
+t/2_die.t ...... 
+Failed 1/4 subtests 
+Hexadecimal number > 0xffffffff non-portable at (eval 5) line 1.
+Hexadecimal number > 0xffffffff non-portable at (eval 6) line 1.
+Hexadecimal number > 0xffffffff non-portable at (eval 7) line 1.
+Hexadecimal number > 0xffffffff non-portable at (eval 8) line 1.
+Hexadecimal number > 0xffffffff non-portable at (eval 9) line 1.
+Hexadecimal number > 0xffffffff non-portable at (eval 10) line 1.
+Hexadecimal number > 0xffffffff non-portable at (eval 11) line 1.
+Hexadecimal number > 0xffffffff non-portable at (eval 12) line 1.
+Hexadecimal number > 0xffffffff non-portable at (eval 13) line 1.
+Hexadecimal number > 0xffffffff non-portable at (eval 14) line 1.
+Hexadecimal number > 0xffffffff non-portable at (eval 15) line 1.
+Hexadecimal number > 0xffffffff non-portable at (eval 16) line 1.
+Hexadecimal number > 0xffffffff non-portable at (eval 17) line 1.
+Hexadecimal number > 0xffffffff non-portable at (eval 18) line 1.
+Hexadecimal number > 0xffffffff non-portable at (eval 19) line 1.
+Hexadecimal number > 0xffffffff non-portable at (eval 20) line 1.
+Hexadecimal number > 0xffffffff non-portable at (eval 21) line 1.
+Hexadecimal number > 0xffffffff non-portable at (eval 22) line 1.
+Hexadecimal number > 0xffffffff non-portable at (eval 23) line 1.
+Hexadecimal number > 0xffffffff non-portable at (eval 24) line 1.
+Hexadecimal number > 0xffffffff non-portable at (eval 25) line 1.
+Hexadecimal number > 0xffffffff non-portable at (eval 26) line 1.
+Hexadecimal number > 0xffffffff non-portable at (eval 27) line 1.
+Hexadecimal number > 0xffffffff non-portable at (eval 28) line 1.
+Hexadecimal number > 0xffffffff non-portable at (eval 29) line 1.
+Hexadecimal number > 0xffffffff non-portable at (eval 30) line 1.
+Hexadecimal number > 0xffffffff non-portable at (eval 31) line 1.
+t/3_rubbish.t .. ok
+t/4_pods.t ..... ok
+
+Test Summary Report
+-------------------
+t/1_quijote.t (Wstat: 139 Tests: 1 Failed: 0)
+  Non-zero wait status: 139
+:*** Error 1 in . (/usr/ports/infrastructure/mk/bsd.port.mk:2710 '/usr/ports/pobj/p5-Compress-PPMd-0.11/.test_done')
+*** Error 1 in /usr/ports/openbsd-wip/devel/p5-Compress-PPMd (/usr/ports/infrastructure/mk/bsd.port.mk:2409 'test')

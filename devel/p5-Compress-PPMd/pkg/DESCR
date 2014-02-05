@@ -1,0 +1,2 @@
+Compress::PPMd is compossed of two classes to compress and decompress
+data respectively: Compress::PPMd::Encoder and Compress::PPMd::Decoder.

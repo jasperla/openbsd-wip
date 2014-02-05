@@ -1,0 +1,10 @@
+@comment $OpenBSD$
+%%SHARED%%
+${P5ARCH}/
+${P5ARCH}/Compress/
+${P5ARCH}/Compress/PPMd.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Compress/
+${P5ARCH}/auto/Compress/PPMd/
+${P5ARCH}/auto/Compress/PPMd/PPMd.bs
+@man man/man3p/Compress::PPMd.3p
