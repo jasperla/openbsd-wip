@@ -1,4 +1,6 @@
 @comment $OpenBSD$
+@newgroup reports-receiver-daemon_user:671
+@newuser reports-receiver-daemon_user:671:671:daemon:Tapper test infrastructure:/var/empty:/sbin/nologin
 bin/tapper-reports-receiver
 bin/tapper-reports-receiver-daemon
 ${P5SITE}/Tapper/
@@ -15,3 +17,4 @@ ${P5SITE}/Tapper/Reports/Receiver/Util.pm
 @man man/man3p/Tapper::Reports::Receiver::Daemon.3p
 @man man/man3p/Tapper::Reports::Receiver::Level2::Codespeed.3p
 @man man/man3p/Tapper::Reports::Receiver::Util.3p
+@rcscript ${RCDIR}/tapper-reports-receiver-daemon
