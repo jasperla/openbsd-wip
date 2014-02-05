@@ -1,4 +1,6 @@
 @comment $OpenBSD$
+@newgroup tapper-mcp-messagereceiver-daemon_user:673
+@newuser tapper-mcp-messagereceiver-daemon_user:673:673:daemon:Tapper test infrastructure:/var/empty:/sbin/nologin
 bin/tapper-mcp-messagereceiver
 bin/tapper-mcp-messagereceiver-daemon
 ${P5SITE}/Tapper/
@@ -7,3 +9,4 @@ ${P5SITE}/Tapper/MCP/MessageReceiver.pm
 @man man/man1/tapper-mcp-messagereceiver-daemon.1
 @man man/man1/tapper-mcp-messagereceiver.1
 @man man/man3p/Tapper::MCP::MessageReceiver.3p
+@rcscript ${RCDIR}/tapper-mcp-messagereceiver-daemon
