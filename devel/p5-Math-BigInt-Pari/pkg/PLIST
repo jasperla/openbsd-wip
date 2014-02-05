@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+${P5SITE}/Math/
+${P5SITE}/Math/BigInt/
+${P5SITE}/Math/BigInt/Pari.pm
+@man man/man3p/Math::BigInt::Pari.3p
