@@ -1,0 +1,9 @@
+@comment $OpenBSD$
+${P5SITE}/Debug/
+${P5SITE}/Debug/ShowStuff/
+${P5SITE}/Debug/ShowStuff.pm
+${P5SITE}/Debug/ShowStuff.pod
+${P5SITE}/Debug/ShowStuff/ShowVar.pm
+${P5SITE}/Debug/ShowStuff/ShowVar.pod
+@man man/man3p/Debug::ShowStuff.3p
+@man man/man3p/Debug::ShowStuff::ShowVar.3p
