@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/Hash/
+${P5SITE}/Hash/MoreUtils.pm
+@man man/man3p/Hash::MoreUtils.3p
