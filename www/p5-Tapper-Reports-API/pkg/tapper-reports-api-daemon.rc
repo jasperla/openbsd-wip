@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD$
+
+daemon="${TRUEPREFIX}/bin/tapper-reports-api-daemon -d"
+daemon_flags="-u _tapper-reports-api-daemon"
+
+. /etc/rc.d/rc.subr
+
+pexp="perl: ${daemon}${daemon_flags:+ ${daemon_flags}}"
+rc_reload=NO
+
+rc_cmd $1
