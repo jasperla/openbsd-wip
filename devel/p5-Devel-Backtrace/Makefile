@@ -13,7 +13,7 @@ MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 PERMIT_PACKAGE_CDROM=	Yes
 
 RUN_DEPENDS=    devel/p5-Class-Accessor \
-		devel/p5-String-Escape
+		textproc/p5-String-Escape
 
 BUILD_DEPENDS=  ${RUN_DEPENDS}
 
