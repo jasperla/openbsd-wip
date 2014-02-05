@@ -12,7 +12,12 @@ MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS=	devel/p5-Config-General \
+RUN_DEPENDS=	devel/p5-Bencode \
+		devel/p5-Compress-PPMd \
+		devel/p5-Config-General \
+		devel/p5-Convert-Bencode \
+		devel/p5-Convert-Bencode_XS \
+		devel/p5-Data-Taxi \
 		devel/p5-YAML \
 		devel/p5-YAML-Syck \
 		converters/p5-JSON-XS \

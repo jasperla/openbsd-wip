@@ -1,6 +1,3 @@
-    *  Bencode is not installed
-    *  Compress::PPMd is not installed
-    *  Convert::Bencode is not installed
-    *  Convert::Bencode_XS is not installed
-    *  Data::Denter is not installed
-    *  Data::Taxi is not installed
+Data::Denter is not installed
+
+make-plist: Bogus element outside of every prefix
