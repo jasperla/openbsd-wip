@@ -1,4 +1,6 @@
 @comment $OpenBSD$
+@newgroup mcp-daemon_user:668
+@newuser mcp-daemon_user:668:668:daemon:Tapper test infrastructure:/var/empty:/sbin/nologin
 bin/tapper-mcp
 bin/tapper-mcp-daemon
 ${P5SITE}/Tapper/
@@ -65,3 +67,4 @@ ${P5SITE}/Tapper/MCP/State/Plugin/OSRC.pm
 @man man/man3p/Tapper::MCP::State::Details.3p
 @man man/man3p/Tapper::MCP::State::Plugin::Dummy.3p
 @man man/man3p/Tapper::MCP::State::Plugin::OSRC.3p
+@rcscript ${RCDIR}/tapper-mcp-daemon
