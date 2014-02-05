@@ -1,4 +1,6 @@
 @comment $OpenBSD$
+@newgroup _tapper:666
+@newuser _tapper:666:666:daemon:Tapper test infrastructure:${LOCALSTATEDIR}:/sbin/nologin
 bin/tapper-reports-api
 bin/tapper-reports-api-daemon
 ${P5SITE}/Tapper/
@@ -10,3 +12,4 @@ ${P5SITE}/Tapper/Reports/API/Daemon.pm
 @man man/man1/tapper-reports-api.1
 @man man/man3p/Tapper::Reports::API.3p
 @man man/man3p/Tapper::Reports::API::Daemon.3p
+@rcscript ${RCDIR}/tapper-reports-api-daemon
