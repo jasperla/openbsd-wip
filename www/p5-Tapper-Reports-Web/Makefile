@@ -17,6 +17,7 @@ RUN_DEPENDS=	devel/p5-DateTime-Format-DateParse \
 		devel/p5-DateTime-Format-W3CDTF \
 		devel/p5-File-Copy-Recursive \
 		devel/p5-File-ShareDir-Install \
+		devel/p5-HTML-FromANSI \
 		devel/p5-Perl6-Junction \
 		devel/p5-Test-Deep \
 		devel/p5-Test-Fixture-DBIC-Schema \
