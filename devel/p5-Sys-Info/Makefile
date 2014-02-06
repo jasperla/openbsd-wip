@@ -18,4 +18,6 @@ RUN_DEPENDS = 	devel/p5-Sys-Info-Base \
 		devel/p5-Sys-Info-Driver-BSD \
 		devel/p5-Test-Sys-Info
 
+#TEST_DEPENDS =	devel/p5-BSD-Sysctl
+
 .include <bsd.port.mk>
