@@ -5,7 +5,7 @@ DISTNAME =		lutok-0.4
 
 SHARED_LIBS +=		lutok                     0.0 # 2.0
 CATEGORIES =		devel
-HOMEPAGE =		https://code.google.com/p/lutok/
+HOMEPAGE =		https://github.com/jmmv/lutok/
 
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += atf-c atf-c++ c ${MODLUA_WANTLIB} m stdc++
 
-MASTER_SITES =		https://lutok.googlecode.com/files/
+MASTER_SITES =		https://github.com/jmmv/lutok/releases/download/${DISTNAME}/
 
 MODULES =		lang/lua
 MODLUA_SA =		Yes
