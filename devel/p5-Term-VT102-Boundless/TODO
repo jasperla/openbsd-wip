@@ -1,3 +1,26 @@
-Warning: prerequisite Term::VT102 0 not found.
-
 broken tests
+
+$ sudo make test
+===>  Regression tests for p5-Term-VT102-Boundless-0.03
+PERL_DL_NONLAZY=1 /usr/bin/perl "-MExtUtils::Command::MM" "-e" "test_harness(0, 'blib/lib', 'blib/arch')" t/*.t
+
+#   Failed test '2 rows'
+#   at t/basic.t line 26.
+#          got: '1'
+#     expected: '2'
+# Looks like you failed 1 test of 14.
+t/basic.t .. 
+Dubious, test returned 1 (wstat 256, 0x100)
+Failed 1/14 subtests 
+
+Test Summary Report
+-------------------
+t/basic.t (Wstat: 256 Tests: 14 Failed: 1)
+  Failed test:  10
+  Non-zero exit status: 1
+Files=1, Tests=14,  0 wallclock secs ( 0.09 usr  0.02 sys +  0.16 cusr  0.06 csys =  0.33 CPU)
+Result: FAIL
+Failed 1/1 test programs. 1/14 subtests failed.
+*** Error 1 in /usr/ports/pobj/p5-Term-VT102-Boundless-0.03/Term-VT102-Boundless-0.03 (Makefile:765 'test_dynamic')
+*** Error 1 in . (/usr/ports/infrastructure/mk/bsd.port.mk:2710 '/usr/ports/pobj/p5-Term-VT102-Boundless-0.03/.test_done')
+*** Error 1 in /usr/ports/openbsd-wip/devel/p5-Term-VT102-Boundless (/usr/ports/infrastructure/mk/bsd.port.mk:2409 'test')
