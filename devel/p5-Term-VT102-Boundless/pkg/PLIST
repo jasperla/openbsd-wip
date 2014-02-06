@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+${P5SITE}/Term/
+${P5SITE}/Term/VT102/
+${P5SITE}/Term/VT102/Boundless.pm
+@man man/man3p/Term::VT102::Boundless.3p

@@ -1,0 +1,21 @@
+# $OpenBSD $
+
+COMMENT=	Term::VT102
+
+MODULES=	cpan
+DISTNAME=	Term-VT102-Boundless-0.03
+PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
+CATEGORIES=	devel
+
+MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+
+CPAN_AUTHOR =	NUFFIN
+
+# MIT license or Perl
+PERMIT_PACKAGE_CDROM=	Yes
+
+RUN_DEPENDS=	
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
+
+.include <bsd.port.mk>
