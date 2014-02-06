@@ -1,0 +1,10 @@
+@comment $OpenBSD$
+${P5SITE}/Catalyst/Helper/
+${P5SITE}/Catalyst/Helper/View/
+${P5SITE}/Catalyst/Helper/View/HTML/
+${P5SITE}/Catalyst/Helper/View/HTML/Mason.pm
+${P5SITE}/Catalyst/View/
+${P5SITE}/Catalyst/View/HTML/
+${P5SITE}/Catalyst/View/HTML/Mason.pm
+@man man/man3p/Catalyst::Helper::View::HTML::Mason.3p
+@man man/man3p/Catalyst::View::HTML::Mason.3p
