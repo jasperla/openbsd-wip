@@ -1,0 +1,2 @@
+This small module converts ANSI text sequences to corresponding HTML
+codes, using stylesheets to control color and blinking properties.

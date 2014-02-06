@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+bin/ansi2html
+${P5SITE}/HTML/
+${P5SITE}/HTML/FromANSI.pm
+@man man/man1/ansi2html.1
+@man man/man3p/HTML::FromANSI.3p
