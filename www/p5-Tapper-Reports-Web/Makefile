@@ -26,6 +26,7 @@ RUN_DEPENDS=	devel/p5-DateTime-Format-DateParse \
 		www/p5-Catalyst-Plugin-ConfigLoader \
 		www/p5-Catalyst-Plugin-Session \
 		www/p5-Catalyst-Plugin-Static-Simple \
+		www/p5-Catalyst-View-HTML-Mason \
 		www/p5-Tapper-Cmd \
 		www/p5-Tapper-Model \
 		www/p5-Tapper-Schema \
