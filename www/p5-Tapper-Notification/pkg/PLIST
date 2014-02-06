@@ -1,6 +1,6 @@
 @comment $OpenBSD$
-@newgroup notify-daemon_user:670
-@newuser notify-daemon_user:670:670:daemon:Tapper test infrastructure:/var/empty:/sbin/nologin
+@group tapper:666
+@newuser notify-daemon_user:670:666:daemon:Tapper test infrastructure:/var/empty:/sbin/nologin
 bin/tapper-notify-daemon
 ${P5SITE}/Tapper/
 ${P5SITE}/Tapper/Notification/

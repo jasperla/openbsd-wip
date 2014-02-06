@@ -1,6 +1,6 @@
 @comment $OpenBSD$
-@newgroup tapper_reports_web_server:672
-@newuser tapper_reports_web_server:672:672:daemon:Tapper test infrastructure:/var/empty:/sbin/nologin
+@group tapper:666
+@newuser reports_web_server:672:666:daemon:Tapper test infrastructure:/var/empty:/sbin/nologin
 bin/tapper_reports_web_cgi.pl
 bin/tapper_reports_web_create.pl
 bin/tapper_reports_web_fastcgi.pl

@@ -14,6 +14,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 RUN_DEPENDS=    devel/p5-Data-Visitor \
 		devel/p5-MooseX-Types \
+		devel/p5-MooseX-Types-Structured \
+		devel/p5-namespace-autoclean \
 		sysutils/p5-Capture-Tiny \
 		www/p5-Catalyst-Devel \
 		www/p5-Catalyst-Runtime

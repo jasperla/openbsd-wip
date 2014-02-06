@@ -1,5 +1,5 @@
 @comment $OpenBSD$
-@newgroup reports-api-daemon_user:666
+@group tapper:666
 @newuser reports-api-daemon_user:666:666:daemon:Tapper test infrastructure:/var/empty:/sbin/nologin
 bin/tapper-reports-api
 bin/tapper-reports-api-daemon
