@@ -2,8 +2,7 @@
 
 COMMENT=		search and manage eBay accounts
 
-DISTNAME=		WWW-Ebay-0.094
-REVISION=		2
+DISTNAME=		WWW-Ebay-0.096
 CATEGORIES=		www
 
 # perl

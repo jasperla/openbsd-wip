@@ -8,6 +8,7 @@ share/examples/p5-IO-Socket-Socks/bind.pl
 share/examples/p5-IO-Socket-Socks/chain.pl
 share/examples/p5-IO-Socket-Socks/client4.pl
 share/examples/p5-IO-Socket-Socks/client5.pl
+share/examples/p5-IO-Socket-Socks/multi-client-multi-ver-coro-based-server.pl
 share/examples/p5-IO-Socket-Socks/server4.pl
 share/examples/p5-IO-Socket-Socks/server5.pl
 share/examples/p5-IO-Socket-Socks/udp.pl
