@@ -2,7 +2,7 @@
 
 COMMENT=	client and server-side SOAP implementation
 
-DISTNAME=	SOAP-Lite-0.715
+DISTNAME=	SOAP-Lite-1.10
 CATEGORIES=	www
 
 # perl
@@ -19,6 +19,7 @@ RUN_DEPENDS=	devel/p5-Task-Weaken \
 		security/p5-Crypt-SSLeay \
 		security/p5-IO-Socket-SSL \
 		textproc/p5-XML-Parser \
+		www/p5-IO-SessionData \
 		www/mod_perl \
 		www/p5-URI \
 		www/p5-libwww

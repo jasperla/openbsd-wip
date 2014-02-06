@@ -2,7 +2,7 @@
 
 COMMENT =	create SOCKS v4/v5 client or server
 
-DISTNAME =	IO-Socket-Socks-0.62
+DISTNAME =	IO-Socket-Socks-0.63
 
 CATEGORIES =	net
 CPAN_AUTHOR =	OLEG

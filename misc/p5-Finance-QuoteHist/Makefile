@@ -3,7 +3,7 @@
 COMMENT=	module to obtain historical financial quotes from exchanges
 
 MODULES=	cpan
-DISTNAME=	Finance-QuoteHist-1.19
+DISTNAME=	Finance-QuoteHist-1.20
 CATEGORIES=	misc
 
 # GPL/Artistic License

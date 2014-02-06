@@ -3,7 +3,7 @@
 COMMENT=	pure Perl HTTP proxy
 
 MODULES=	cpan
-DISTNAME=	HTTP-Proxy-0.25
+DISTNAME=	HTTP-Proxy-0.300
 CATEGORIES=	www
 
 MAINTAINER=	Sam Smith <s@msmith.net>
@@ -11,6 +11,7 @@ MAINTAINER=	Sam Smith <s@msmith.net>
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS=	www/p5-libwww
+BUILD_DEPENDS =	www/p5-libwww
+RUN_DEPENDS =	www/p5-libwww
 
 .include <bsd.port.mk>

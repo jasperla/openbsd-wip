@@ -3,8 +3,8 @@ $OpenBSD$
 Use xmltv rather than xmltv-version for docs.
 Remove dvb linux specific.
 
---- Makefile.PL.orig	Thu Jun 14 07:59:46 2012
-+++ Makefile.PL	Fri Jun 15 00:28:43 2012
+--- Makefile.PL.orig	Mon Dec 23 04:42:10 2013
++++ Makefile.PL	Wed Jan  1 16:36:13 2014
 @@ -79,7 +79,7 @@ my $location = '$(DESTDIR)/./$(PREFIX)';
  our %extra_constants;
  %extra_constants
@@ -14,7 +14,7 @@ Remove dvb linux specific.
       INST_SHARE      => 'blib/share',
       INSTALLSHARE    => "$location/share/xmltv",
  
-@@ -454,22 +454,22 @@ my @opt_components
+@@ -540,22 +540,22 @@ my @opt_components
         grab_need_share => [ 'it' ],
       },
  
@@ -51,5 +51,5 @@ Remove dvb linux specific.
 +#                    'Time::HiRes' => 0 } ,
 +#     },
  
-      { name     => 'tv_grab_in',
-        blurb => 'Grabber for India (zipazap.com)',
+ # 2013-05-13 xmltv feed disabled by What's On due to TOS violations. It may come back
+ #     { name     => 'tv_grab_in',

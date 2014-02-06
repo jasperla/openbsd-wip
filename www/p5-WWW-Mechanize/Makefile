@@ -4,7 +4,7 @@ COMMENT=	handy web browsing in a Perl object
 
 MODULES=	cpan
 
-DISTNAME=	WWW-Mechanize-1.72
+DISTNAME=	WWW-Mechanize-1.73
 CATEGORIES=	www perl5
 
 # Artistic + GPL
@@ -19,7 +19,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		devel/p5-Test-Warn>=0.11
 
 RUN_DEPENDS=	www/p5-libwww>=5.829 \
-		devel/p5-Test-LongString \
 		www/p5-LWP-Protocol-https>=6 \
 		www/p5-HTML-Form>=6.0 \
 		www/p5-HTML-Tree \
@@ -27,8 +26,9 @@ RUN_DEPENDS=	www/p5-libwww>=5.829 \
 
 TEST_DEPENDS=	devel/p5-PadWalker \
 		devel/p5-Test-Exception \
-		devel/p5-Test-Pod-Coverage \
 		devel/p5-Test-NoWarnings
+
+MAKE_ENV=	TEST_POD=Yes
 
 # Include Live Tests
 .ifdef LIVE_TEST
