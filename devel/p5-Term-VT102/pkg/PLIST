@@ -1,0 +1,9 @@
+@comment $OpenBSD$
+${P5SITE}/Term/
+${P5SITE}/Term/VT102/
+${P5SITE}/Term/VT102.pm
+${P5SITE}/Term/VT102/examples/
+${P5SITE}/Term/VT102/examples/sanitize-dump.pl
+${P5SITE}/Term/VT102/examples/ssh-usage.pl
+${P5SITE}/Term/VT102/examples/telnet-usage.pl
+@man man/man3p/Term::VT102.3p
