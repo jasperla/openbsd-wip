@@ -1,6 +1,6 @@
 @comment $OpenBSD$
-@newgroup reports-receiver-daemon_user:671
-@newuser reports-receiver-daemon_user:671:671:daemon:Tapper test infrastructure:/var/empty:/sbin/nologin
+@group tapper:666
+@newuser reports-receiver-daemon_user:671:666:daemon:Tapper test infrastructure:/var/empty:/sbin/nologin
 bin/tapper-reports-receiver
 bin/tapper-reports-receiver-daemon
 ${P5SITE}/Tapper/

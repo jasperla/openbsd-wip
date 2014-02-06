@@ -1,7 +1,1 @@
-Warning: prerequisite Catalyst::Action::RenderView 0 not found.
-Warning: prerequisite Catalyst::Controller 0 not found.
-Warning: prerequisite Catalyst::Helper 1.33 not found.
-Warning: prerequisite Catalyst::Test 0 not found.
-Warning: prerequisite Catalyst::View 0 not found.
-Warning: prerequisite MooseX::Types::Structured 0 not found.
-Warning: prerequisite namespace::autoclean 0 not found.
+failed tests

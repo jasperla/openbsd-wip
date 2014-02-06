@@ -1,6 +1,6 @@
 @comment $OpenBSD: PLIST,v 1.18 2009/10/14 15:26:06 pea Exp $
-@newgroup action-daemon_user:667
-@newuser action-daemon_user:667:667:daemon:Tapper test infrastructure:/var/empty:/sbin/nologin
+@group tapper:666
+@newuser action-daemon_user:667:666:daemon:Tapper test infrastructure:/var/empty:/sbin/nologin
 bin/tapper-action
 bin/tapper-action-daemon
 ${P5SITE}/Tapper/
