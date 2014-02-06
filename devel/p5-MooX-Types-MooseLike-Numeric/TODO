@@ -1,0 +1,22 @@
+$ sudo make test
+===> p5-MooX-Types-MooseLike-Numeric-1.02 depends on: p5-Devel-GlobalDestruction-* -> p5-Devel-GlobalDestruction-0.03p1
+===> p5-MooX-Types-MooseLike-Numeric-1.02 depends on: p5-Moo-* -> p5-Moo-1.004002
+===>  Regression tests for p5-MooX-Types-MooseLike-Numeric-1.02
+PERL_DL_NONLAZY=1 /usr/bin/perl "-MExtUtils::Command::MM" "-e" "test_harness(0, 'blib/lib', 'blib/arch')" t/*.t
+error inflating attribute 'a_nonnegative_number' for package 'MooX::Types::MooseLike::Numeric::Test': $TYPE_MAP{CODE(0x1ded749ecfe8)} did not return a valid type constraint' at /usr/local/libdata/perl5/site_perl/Moo/HandleMoose.pm line 126.
+# Tests were run but no plan was declared and done_testing() was not seen.
+t/numeric.t .. 
+Dubious, test returned 255 (wstat 65280, 0xff00)
+All 37 subtests passed 
+
+Test Summary Report
+-------------------
+t/numeric.t (Wstat: 65280 Tests: 37 Failed: 0)
+  Non-zero exit status: 255
+  Parse errors: No plan found in TAP output
+Files=1, Tests=37,  3 wallclock secs ( 0.13 usr  0.06 sys +  1.27 cusr  0.10 csys =  1.56 CPU)
+Result: FAIL
+Failed 1/1 test programs. 0/37 subtests failed.
+*** Error 255 in /usr/ports/pobj/p5-MooX-Types-MooseLike-Numeric-1.02/MooX-Types-MooseLike-Numeric-1.02 (Makefile:765 'test_dynamic')
+*** Error 1 in . (/usr/ports/infrastructure/mk/bsd.port.mk:2710 '/usr/ports/pobj/p5-MooX-Types-MooseLike-Numeric-1.02/.test_done')
+*** Error 1 in /usr/ports/openbsd-wip/devel/p5-MooX-Types-MooseLike-Numeric (/usr/ports/infrastructure/mk/bsd.port.mk:2409 'test')
