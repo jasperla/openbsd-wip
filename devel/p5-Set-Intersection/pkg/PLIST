@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/Set/
+${P5SITE}/Set/Intersection.pm
+@man man/man3p/Set::Intersection.3p
