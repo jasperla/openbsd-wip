@@ -27,7 +27,7 @@ BUILD_DEPENDS =	net/irssi>=0.8.15p5 \
 	security/libgcrypt>=1.2.0 \
 	devel/glib2>=2.22.0 \
 	devel/autoconf/2.69 \
-	devel/automake/1.4
+	devel/automake/1.9
 
 USE_LIBTOOL=		gnu
 CONFIGURE_STYLE =	gnu
