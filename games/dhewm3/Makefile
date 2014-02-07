@@ -42,6 +42,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/dhewm3 ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/dhewm3
 	${INSTALL_DATA_DIR} ${PREFIX}/share/dhewm3/base
-	${INSTALL_DATA} ${WRKBUILD}/*.so ${PREFIX}/share/dhewm3/base
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/dhewm3
+	${INSTALL_DATA} ${WRKBUILD}/*.so ${PREFIX}/lib/dhewm3
 
 .include <bsd.port.mk>
