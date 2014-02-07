@@ -12,8 +12,12 @@ MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS=	
+RUN_DEPENDS=	devel/p5-accessors
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
+
+TEST_DEPENDS=	devel/p5-Test-WWW-Selenium
+
+FAKE_FLAGS=     PREFIX=""
 
 .include <bsd.port.mk>
