@@ -12,7 +12,7 @@ MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 # GNU General Public License or Artistic License
 PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS=	
+RUN_DEPENDS=	devel/p5-Module-Build
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
