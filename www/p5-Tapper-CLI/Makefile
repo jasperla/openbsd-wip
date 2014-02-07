@@ -57,6 +57,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 TEST_DEPENDS=	databases/p5-DBIx-Class-InflateColumn-Object-Enum \
 		databases/p5-DBIx-Class-TimeStamp \
+		devel/p5-strictures \
 		devel/p5-Time-Duration-Parse \
 		devel/p5-Moo \
 		devel/p5-Import-Into
