@@ -1,0 +1,4 @@
+This module is a WWW::Selenium subclass providing some methods useful
+for writing tests. For each Selenium command (open, click, type, ...)
+there is a corresponding <command>_ok method that checks the return
+value (open_ok, click_ok, type_ok).
