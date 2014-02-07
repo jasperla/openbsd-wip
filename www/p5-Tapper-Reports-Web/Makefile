@@ -21,7 +21,7 @@ RUN_DEPENDS=	databases/p5-Catalyst-Model-DBIC-Schema \
 		devel/p5-HTML-FromANSI \
 		devel/p5-Perl6-Junction \
 		devel/p5-Set-Intersection \
-		devel/p5-TAP-Formatter-HTML
+		devel/p5-TAP-Formatter-HTML \
 		devel/p5-Test-Deep \
 		devel/p5-Test-Fixture-DBIC-Schema \
 		devel/p5-Test-WWW-Mechanize-Catalyst \

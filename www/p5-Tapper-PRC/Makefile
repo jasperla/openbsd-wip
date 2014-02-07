@@ -17,8 +17,8 @@ RUN_DEPENDS=    devel/p5-Test-Deep \
 		devel/p5-YAML-Syck \
 		net/p5-Net-TFTP \
 		www/p5-Tapper-Config \
+		www/p5-Tapper-Remote \
 #		www/p5-Tapper-Installer \
-		www/p5-Tapper-Remote
 
 BUILD_DEPENDS=  ${RUN_DEPENDS}
 
