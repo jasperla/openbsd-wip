@@ -12,4 +12,8 @@ MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
+FAKE_FLAGS=	PREFIX=""
+
+TEST_DEPENDS=	archivers/p5-Archive-Zip
+
 .include <bsd.port.mk>
