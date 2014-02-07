@@ -9,6 +9,8 @@ CATEGORIES=	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 
+WANTLIB += m stdc++
+
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 

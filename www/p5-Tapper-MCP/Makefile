@@ -41,6 +41,7 @@ RUN_DEPENDS=    devel/p5-App-Daemon \
 		net/p5-Net-SCP \
 		net/p5-Net-SSH-Perl \
 		security/p5-AAAA-Crypt-DH \
+		textproc/p5-String-Diff \
 		www/p5-LWP-UserAgent-Determined \
 		www/p5-Tapper-Base \
 		www/p5-Tapper-Cmd \
