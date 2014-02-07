@@ -12,7 +12,8 @@ MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS=	devel/p5-DateTime-Format-DateParse \
+RUN_DEPENDS=	databases/p5-Catalyst-Model-DBIC-Schema \
+		devel/p5-DateTime-Format-DateParse \
 		devel/p5-DateTime-Format-Natural \
 		devel/p5-DateTime-Format-W3CDTF \
 		devel/p5-File-Copy-Recursive \
@@ -20,10 +21,10 @@ RUN_DEPENDS=	devel/p5-DateTime-Format-DateParse \
 		devel/p5-HTML-FromANSI \
 		devel/p5-Perl6-Junction \
 		devel/p5-Set-Intersection \
+		devel/p5-TAP-Formatter-HTML
 		devel/p5-Test-Deep \
 		devel/p5-Test-Fixture-DBIC-Schema \
 		devel/p5-Test-WWW-Mechanize-Catalyst \
-		databases/p5-Catalyst-Model-DBIC-Schema \
 		www/p5-Catalyst-Controller-HTML-FormFu \
 		www/p5-Catalyst-Plugin-ConfigLoader \
 		www/p5-Catalyst-Plugin-Session \
@@ -33,8 +34,7 @@ RUN_DEPENDS=	devel/p5-DateTime-Format-DateParse \
 		www/p5-Tapper-Model \
 		www/p5-Tapper-Schema \
 		www/p5-Tapper-Testplan \
-		www/p5-XML-Feed \
-		#devel/p5-TAP-Formatter-HTML
+		www/p5-XML-Feed
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
