@@ -8,6 +8,7 @@ PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES=	databases
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+CPAN_AUTHOR =	JMMILLS
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
