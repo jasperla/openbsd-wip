@@ -3,7 +3,6 @@ bin/tapper
 bin/tapper-api
 bin/tapper-db-deploy
 bin/tapper-testrun
-${P5SITE}/Tapper/
 ${P5SITE}/Tapper/CLI/
 ${P5SITE}/Tapper/CLI.pm
 ${P5SITE}/Tapper/CLI/API/
