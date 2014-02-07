@@ -1,5 +1,3 @@
-broken devel/p5-Data-Serializer
-
 $ sudo /etc/rc.d/tapper-reports-api-daemon -d start
 doing rc_read_runfile
 doing rc_check
