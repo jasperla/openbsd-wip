@@ -1,6 +1,7 @@
 @comment $OpenBSD$
 @bin bin/dhewm3
+lib/dhewm3/
+lib/dhewm3/base.so
+lib/dhewm3/d3xp.so
 share/dhewm3/
 share/dhewm3/base/
-share/dhewm3/base/base.so
-share/dhewm3/base/d3xp.so
