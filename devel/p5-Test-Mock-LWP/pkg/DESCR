@@ -1,0 +1,4 @@
+This package arises from duplicating the same code to mock LWP et al in
+several different modules I've written. This version is very minimalist,
+but works for my needs so far. I'm very open to new suggestions and
+improvements.

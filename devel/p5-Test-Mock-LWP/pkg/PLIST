@@ -1,0 +1,12 @@
+@comment $OpenBSD$
+${P5SITE}/Test/Mock/
+${P5SITE}/Test/Mock/HTTP/
+${P5SITE}/Test/Mock/HTTP/Request.pm
+${P5SITE}/Test/Mock/HTTP/Response.pm
+${P5SITE}/Test/Mock/LWP/
+${P5SITE}/Test/Mock/LWP.pm
+${P5SITE}/Test/Mock/LWP/UserAgent.pm
+@man man/man3p/Test::Mock::HTTP::Request.3p
+@man man/man3p/Test::Mock::HTTP::Response.3p
+@man man/man3p/Test::Mock::LWP.3p
+@man man/man3p/Test::Mock::LWP::UserAgent.3p
