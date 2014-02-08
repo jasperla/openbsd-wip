@@ -1,6 +1,6 @@
 @comment $OpenBSD$
 @group tapper:666
-@newuser testsuite-netperf-server-daemon_user:674:666:daemon:Tapper test infrastructure:/var/empty:/sbin/nologin
+@newuser netperf-server-daemon_user:674:666:daemon:Tapper test infrastructure:/var/empty:/sbin/nologin
 bin/tapper-testsuite-netperf-client
 bin/tapper-testsuite-netperf-server
 ${P5SITE}/Tapper/
