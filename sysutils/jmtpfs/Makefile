@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile.template,v 1.68 2013/10/02 07:34:45 ajacoutot Exp $
 
-COMMENT =		???
+COMMENT =		FUSE filesystem for accessing MTP
 
 DISTNAME =		jmtpfs-0.4
 
