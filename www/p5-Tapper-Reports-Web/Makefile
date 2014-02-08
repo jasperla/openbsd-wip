@@ -24,11 +24,13 @@ RUN_DEPENDS=	databases/p5-Catalyst-Model-DBIC-Schema \
 		devel/p5-TAP-Formatter-HTML \
 		devel/p5-Test-Deep \
 		devel/p5-Test-Fixture-DBIC-Schema \
+		www/fcgi \
 		devel/p5-Test-WWW-Mechanize-Catalyst \
 		www/p5-Catalyst-Controller-HTML-FormFu \
 		www/p5-Catalyst-Plugin-ConfigLoader \
 		www/p5-Catalyst-Plugin-Session \
 		www/p5-Catalyst-Plugin-Static-Simple \
+		www/p5-Catalyst-Plugin-Session-State-Cookie \
 		www/p5-Catalyst-Plugin-Session-Store-File \
 		www/p5-Catalyst-View-HTML-Mason \
 		www/p5-Tapper-Cmd \
