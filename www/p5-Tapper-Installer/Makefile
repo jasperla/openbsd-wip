@@ -9,7 +9,7 @@ CATEGORIES=	www
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 
-# BSD
+# 2-clause BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
 .include <bsd.port.mk>
