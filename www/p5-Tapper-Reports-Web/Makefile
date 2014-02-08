@@ -29,6 +29,7 @@ RUN_DEPENDS=	databases/p5-Catalyst-Model-DBIC-Schema \
 		www/p5-Catalyst-Plugin-ConfigLoader \
 		www/p5-Catalyst-Plugin-Session \
 		www/p5-Catalyst-Plugin-Static-Simple \
+		www/p5-Catalyst-Plugin-Session-Store-File \
 		www/p5-Catalyst-View-HTML-Mason \
 		www/p5-Tapper-Cmd \
 		www/p5-Tapper-Model \
