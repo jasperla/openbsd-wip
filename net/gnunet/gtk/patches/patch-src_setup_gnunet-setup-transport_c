@@ -1,13 +1,13 @@
 $OpenBSD$
---- src/setup/gnunet-setup-transport.c.orig	Mon Nov 19 19:44:36 2012
-+++ src/setup/gnunet-setup-transport.c	Mon Nov 19 19:48:45 2012
-@@ -341,8 +341,7 @@ nipo (void *cls, const char *name, int isDefault, cons
-     return GNUNET_OK;
+--- src/setup/gnunet-setup-transport.c.orig	Thu Dec  5 21:56:28 2013
++++ src/setup/gnunet-setup-transport.c	Sun Feb  9 11:52:51 2014
+@@ -342,8 +342,7 @@ nipo (void *cls, const char *name, int isDefault, cons
    if ( (sizeof (struct sockaddr_in6) == addrlen) &&
-        (0 != memcmp (&in6addr_loopback, addr,
--		     addrlen)) &&
+        (0 != memcmp (&in6addr_loopback,
+                      &((struct sockaddr_in6 *)addr)->sin6_addr,
+-		     sizeof (struct in6_addr))) &&
 -       (! IN6_IS_ADDR_LINKLOCAL(addr)) )
-+		     addrlen)) )
++		     sizeof (struct in6_addr))))
    {
      *have_v6 = GNUNET_YES;
      GNUNET_log (GNUNET_ERROR_TYPE_INFO,

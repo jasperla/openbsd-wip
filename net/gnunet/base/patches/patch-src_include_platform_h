@@ -1,7 +1,7 @@
 $OpenBSD$
---- src/include/platform.h.orig	Mon Nov  5 09:53:30 2012
-+++ src/include/platform.h	Mon Nov 19 19:05:55 2012
-@@ -159,6 +159,9 @@
+--- src/include/platform.h.orig	Tue Dec 24 15:47:55 2013
++++ src/include/platform.h	Sun Feb  9 11:18:05 2014
+@@ -164,6 +164,9 @@
  #if HAVE_UCRED_H
  #include <ucred.h>
  #endif

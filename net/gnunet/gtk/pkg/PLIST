@@ -1,24 +1,54 @@
 @comment $OpenBSD$
 @bin bin/gnunet-fs-gtk
+@bin bin/gnunet-gtk
+@bin bin/gnunet-identity-gtk
+@bin bin/gnunet-namestore-gtk
 @bin bin/gnunet-peerinfo-gtk
 @bin bin/gnunet-setup
 @bin bin/gnunet-statistics-gtk
 include/gnunet-gtk/
 include/gnunet-gtk/gnunet_gtk.h
-lib/libgnunetgtk.a
+include/gnunet-gtk/gnunet_gtk_namestore_plugin.h
+lib/gnunet/libgnunet_plugin_gtk_namestore_a.la
+lib/gnunet/libgnunet_plugin_gtk_namestore_a.so
+lib/gnunet/libgnunet_plugin_gtk_namestore_aaaa.la
+lib/gnunet/libgnunet_plugin_gtk_namestore_aaaa.so
+lib/gnunet/libgnunet_plugin_gtk_namestore_cname.la
+lib/gnunet/libgnunet_plugin_gtk_namestore_cname.so
+lib/gnunet/libgnunet_plugin_gtk_namestore_gns2dns.la
+lib/gnunet/libgnunet_plugin_gtk_namestore_gns2dns.so
+lib/gnunet/libgnunet_plugin_gtk_namestore_leho.la
+lib/gnunet/libgnunet_plugin_gtk_namestore_leho.so
+lib/gnunet/libgnunet_plugin_gtk_namestore_mx.la
+lib/gnunet/libgnunet_plugin_gtk_namestore_mx.so
+lib/gnunet/libgnunet_plugin_gtk_namestore_phone.la
+lib/gnunet/libgnunet_plugin_gtk_namestore_phone.so
+lib/gnunet/libgnunet_plugin_gtk_namestore_pkey.la
+lib/gnunet/libgnunet_plugin_gtk_namestore_pkey.so
+lib/gnunet/libgnunet_plugin_gtk_namestore_ptr.la
+lib/gnunet/libgnunet_plugin_gtk_namestore_ptr.so
+lib/gnunet/libgnunet_plugin_gtk_namestore_soa.la
+lib/gnunet/libgnunet_plugin_gtk_namestore_soa.so
+lib/gnunet/libgnunet_plugin_gtk_namestore_txt.la
+lib/gnunet/libgnunet_plugin_gtk_namestore_txt.so
+lib/gnunet/libgnunet_plugin_gtk_namestore_vpn.la
+lib/gnunet/libgnunet_plugin_gtk_namestore_vpn.so
 lib/libgnunetgtk.la
 @lib lib/libgnunetgtk.so.${LIBgnunetgtk_VERSION}
 @man man/man1/gnunet-fs-gtk.1
+@man man/man1/gnunet-identity-gtk.1
+@man man/man1/gnunet-namestore-gtk.1
 @man man/man1/gnunet-peerinfo-gtk.1
 @man man/man1/gnunet-setup.1
 @man man/man1/gnunet-statistics-gtk.1
 share/applications/gnunet-fs-gtk.desktop
 share/applications/gnunet-setup.desktop
-@comment share/doc/gnunet/
 @comment share/doc/gnunet/COPYING
 @comment share/doc/gnunet/README
-share/gnunet/
 share/gnunet-gtk/
+share/gnunet-gtk/config.d/
+share/gnunet-gtk/config.d/gnunet-fs-gtk.conf
+share/gnunet-gtk/config.d/gnunet-namestore-gtk.conf
 share/gnunet-gtk/downloaded.gif
 share/gnunet-gtk/downloading.gif
 share/gnunet-gtk/downloading_not_receiving.gif
@@ -264,60 +294,78 @@ share/gnunet-gtk/flags/za.png
 share/gnunet-gtk/flags/zm.png
 share/gnunet-gtk/flags/zw.png
 share/gnunet-gtk/found_source.gif
+share/gnunet-gtk/fs.png
+share/gnunet-gtk/fs.svg
+share/gnunet-gtk/gns.png
+share/gnunet-gtk/gns.svg
 share/gnunet-gtk/gnunet-setup-oxygen-cancel.png
 share/gnunet-gtk/gnunet-setup-oxygen-ok.png
 share/gnunet-gtk/gnunet_fs_gtk_about_window.glade
-share/gnunet-gtk/gnunet_fs_gtk_create_namespace_dialog.glade
 share/gnunet-gtk/gnunet_fs_gtk_download_as_dialog.glade
 share/gnunet-gtk/gnunet_fs_gtk_edit_publication.glade
+share/gnunet-gtk/gnunet_fs_gtk_enter_nick_dialog.glade
 share/gnunet-gtk/gnunet_fs_gtk_main_window.glade
-share/gnunet-gtk/gnunet_fs_gtk_namespace_manager.glade
 share/gnunet-gtk/gnunet_fs_gtk_open_directory_dialog.glade
 share/gnunet-gtk/gnunet_fs_gtk_open_url_dialog.glade
 share/gnunet-gtk/gnunet_fs_gtk_progress_dialog.glade
+share/gnunet-gtk/gnunet_fs_gtk_pseu_progress_dialog.glade
 share/gnunet-gtk/gnunet_fs_gtk_publish_dialog.glade
 share/gnunet-gtk/gnunet_fs_gtk_publish_directory_dialog.glade
 share/gnunet-gtk/gnunet_fs_gtk_publish_file_dialog.glade
 share/gnunet-gtk/gnunet_fs_gtk_publish_tab.glade
 share/gnunet-gtk/gnunet_fs_gtk_search_tab.glade
-share/gnunet-gtk/gnunet_fs_gtk_select_pseudonym_dialog.glade
 share/gnunet-gtk/gnunet_fs_gtk_unindex.glade
+share/gnunet-gtk/gnunet_gtk.glade
 share/gnunet-gtk/gnunet_gtk_status_bar_menu.glade
+share/gnunet-gtk/gnunet_identity_gtk_about_window.glade
+share/gnunet-gtk/gnunet_identity_gtk_advertise_dialog.glade
+share/gnunet-gtk/gnunet_identity_gtk_main_window.glade
 share/gnunet-gtk/gnunet_logo.png
+share/gnunet-gtk/gnunet_namestore_edit_a.glade
+share/gnunet-gtk/gnunet_namestore_edit_aaaa.glade
+share/gnunet-gtk/gnunet_namestore_edit_cname.glade
+share/gnunet-gtk/gnunet_namestore_edit_gns2dns.glade
+share/gnunet-gtk/gnunet_namestore_edit_leho.glade
+share/gnunet-gtk/gnunet_namestore_edit_mx.glade
+share/gnunet-gtk/gnunet_namestore_edit_phone.glade
+share/gnunet-gtk/gnunet_namestore_edit_pkey.glade
+share/gnunet-gtk/gnunet_namestore_edit_ptr.glade
+share/gnunet-gtk/gnunet_namestore_edit_soa.glade
+share/gnunet-gtk/gnunet_namestore_edit_srv.glade
+share/gnunet-gtk/gnunet_namestore_edit_txt.glade
+share/gnunet-gtk/gnunet_namestore_edit_vpn.glade
+share/gnunet-gtk/gnunet_namestore_gtk_main_window.glade
+share/gnunet-gtk/gnunet_namestore_gtk_qr_save_as_dialog.glade
 share/gnunet-gtk/gnunet_peerinfo_gtk_about_window.glade
 share/gnunet-gtk/gnunet_peerinfo_gtk_main_window.glade
 share/gnunet-gtk/gnunet_setup_calendar_dialog.glade
-share/gnunet-gtk/gnunet_setup_gns_edit_a.glade
-share/gnunet-gtk/gnunet_setup_gns_edit_aaaa.glade
-share/gnunet-gtk/gnunet_setup_gns_edit_cname.glade
-share/gnunet-gtk/gnunet_setup_gns_edit_leho.glade
-share/gnunet-gtk/gnunet_setup_gns_edit_mx.glade
-share/gnunet-gtk/gnunet_setup_gns_edit_ns.glade
-share/gnunet-gtk/gnunet_setup_gns_edit_pkey.glade
-share/gnunet-gtk/gnunet_setup_gns_edit_ptr.glade
-share/gnunet-gtk/gnunet_setup_gns_edit_soa.glade
-share/gnunet-gtk/gnunet_setup_gns_edit_srv.glade
-share/gnunet-gtk/gnunet_setup_gns_edit_txt.glade
-share/gnunet-gtk/gnunet_setup_gns_edit_vpn.glade
-share/gnunet-gtk/gnunet_setup_gtk_main_window.glade
-share/gnunet-gtk/gnunet_setup_qr_save_as_dialog.glade
+share/gnunet-gtk/gnunet_setup_main_window.glade
 share/gnunet-gtk/gnunet_statistics_gtk_about_window.glade
 share/gnunet-gtk/gnunet_statistics_gtk_main_window.glade
 share/gnunet-gtk/green.png
+share/gnunet-gtk/identity.png
+share/gnunet-gtk/identity.svg
+share/gnunet-gtk/peerinfo.png
+share/gnunet-gtk/peerinfo.svg
 share/gnunet-gtk/published.gif
 share/gnunet-gtk/publishing.gif
 share/gnunet-gtk/qr_dummy.png
 share/gnunet-gtk/red.png
 share/gnunet-gtk/searching_sources.gif
-share/gnunet/config.d/
-share/gnunet/config.d/gnunet-fs-gtk.conf
+share/gnunet-gtk/setup.png
+share/gnunet-gtk/setup.svg
+share/gnunet-gtk/statistics.png
+share/gnunet-gtk/statistics.svg
 share/icons/hicolor/16x16/apps/gnunet-fs-gtk.png
+share/icons/hicolor/16x16/status/gnunet-fs-gtk-ns-association.png
 share/icons/hicolor/22x22/apps/gnunet-fs-gtk.png
 share/icons/hicolor/24x24/apps/gnunet-fs-gtk.png
 share/icons/hicolor/32x32/apps/gnunet-fs-gtk.png
 share/icons/hicolor/scalable/apps/gnunet-fs-gtk.svg
+share/icons/hicolor/scalable/status/gnunet-fs-gtk-ns-association.svg
 share/locale/da/LC_MESSAGES/gnunet-gtk.mo
 share/locale/de/LC_MESSAGES/gnunet-gtk.mo
+share/locale/es/LC_MESSAGES/gnunet-gtk.mo
 share/locale/fr/LC_MESSAGES/gnunet-gtk.mo
 share/locale/sv/LC_MESSAGES/gnunet-gtk.mo
 share/locale/tr/LC_MESSAGES/gnunet-gtk.mo
