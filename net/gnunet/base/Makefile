@@ -27,37 +27,46 @@ SHARED_LIBS +=  gnunettransport           0.0 # 0.0
 SHARED_LIBS +=  gnunettransporttesting    0.0 # 0.0
 SHARED_LIBS +=  gnunettun                 0.0 # 0.0
 SHARED_LIBS +=  gnunetutil                0.0 # 5.0
-SHARED_LIBS +=  gnunetlockmanager         0.0 # 0.0
 SHARED_LIBS +=  gnunettestbed             0.0 # 0.0
 SHARED_LIBS +=  gnunetregex               0.0 # 0.0
 SHARED_LIBS +=  gnunetregexblock          0.0 # 1.0
-SHARED_LIBS +=  gnunetstream              0.0 # 0.0
 SHARED_LIBS +=  gnunetdns                 0.0 # 0.0
 SHARED_LIBS +=  gnunetdnsparser           0.0 # 0.0
 SHARED_LIBS +=  gnunetdnsstub             0.0 # 0.0
 SHARED_LIBS +=  gnunetgns                 0.0 # 0.0
-SHARED_LIBS +=  gnunetgns_common          0.0 # 0.0
 SHARED_LIBS +=  gnunetvpn                 0.0 # 0.0
+SHARED_LIBS +=  gnunetconversation        0.0 # 0.0
+SHARED_LIBS +=  gnunetfriends             0.0 # 0.0
+SHARED_LIBS +=  gnunetgnsrecord           0.0 # 0.0
+SHARED_LIBS +=  gnunetidentity            0.0 # 0.0
+SHARED_LIBS +=  gnunetmicrophone          0.0 # 0.0
+SHARED_LIBS +=  gnunetnamecache           0.0 # 0.0
+SHARED_LIBS +=  gnunetrevocation          0.0 # 0.0
+SHARED_LIBS +=  gnunetset                 0.0 # 0.0
+SHARED_LIBS +=  gnunetspeaker             0.0 # 0.0
+SHARED_LIBS +=  gnunettestbedlogger       0.0 # 0.0
 
-WANTLIB += bz2 c crypto curl expat extractor fontconfig freetype
-WANTLIB += gcrypt gpg-error idn ltdl m pthread sqlite3 ssl unistring
-WANTLIB += z ogg pthread-stubs
+WANTLIB += FLAC ICE SM X11 X11-xcb Xext Xi Xtst bz2 c dbus-1 execinfo
+WANTLIB += expat extractor fontconfig freetype gcrypt gdbm gpg-error
+WANTLIB += idn json-c ltdl m ogg opus pthread pthread-stubs pulse
+WANTLIB += sndfile sqlite3 unistring vorbis vorbisenc xcb z
 
 MODULES =		devel/gettext
 LIB_DEPENDS =		devel/libextractor \
-			net/curl \
 			devel/libidn \
 			security/libgcrypt \
-			converters/libunistring
+			converters/libunistring \
+			audio/pulseaudio
 
 USE_GMAKE =		Yes
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoconf
+AUTOCONF_VERSION =	2.69
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--with-extractor="${LOCALBASE}" \
 			--without-mysql \
 			--without-postgres \
-			--with-daemon-home-dir=/var/gnunet \
 			--with-sudo=/usr/bin/sudo
+CONFIGURE_ENV =		LDFLAGS="-L${X11BASE}/lib"
 
 LIBTOOL_FLAGS =		--tag=disable-static
 
