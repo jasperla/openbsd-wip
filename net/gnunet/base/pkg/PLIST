@@ -3,7 +3,10 @@
 @bin bin/gnunet-ats
 @bin bin/gnunet-auto-share
 @bin bin/gnunet-config
+@bin bin/gnunet-conversation
+@bin bin/gnunet-conversation-test
 @bin bin/gnunet-core
+@bin bin/gnunet-datastore
 @bin bin/gnunet-directory
 @bin bin/gnunet-download
 bin/gnunet-download-manager.scm
@@ -12,19 +15,23 @@ bin/gnunet-download-manager.scm
 @bin bin/gnunet-gns
 bin/gnunet-gns-import.sh
 bin/gnunet-gns-proxy-setup-ca
+@bin bin/gnunet-identity
 @bin bin/gnunet-mesh
+@bin bin/gnunet-namecache
 @bin bin/gnunet-namestore
 @bin bin/gnunet-nat-server
 @bin bin/gnunet-peerinfo
-@bin bin/gnunet-pseudonym
 @bin bin/gnunet-publish
+bin/gnunet-qr
 @bin bin/gnunet-resolver
-@bin bin/gnunet-rsa
+@bin bin/gnunet-revocation
 @bin bin/gnunet-search
+@bin bin/gnunet-set-ibf-profiler
+@bin bin/gnunet-set-profiler
 @bin bin/gnunet-statistics
 @bin bin/gnunet-template
+@bin bin/gnunet-testbed-profiler
 @bin bin/gnunet-testing
-@bin bin/gnunet-testing-run-service
 @bin bin/gnunet-transport
 @bin bin/gnunet-transport-certificate-creation
 @bin bin/gnunet-unindex
@@ -32,22 +39,23 @@ bin/gnunet-gns-proxy-setup-ca
 @bin bin/gnunet-vpn
 include/gnunet/
 include/gnunet/gettext.h
-include/gnunet/gns_protocol.h
 include/gnunet/gnunet_applications.h
 include/gnunet/gnunet_arm_service.h
+include/gnunet/gnunet_ats_plugin.h
 include/gnunet/gnunet_ats_service.h
 include/gnunet/gnunet_bandwidth_lib.h
 include/gnunet/gnunet_bio_lib.h
 include/gnunet/gnunet_block_lib.h
 include/gnunet/gnunet_block_plugin.h
-include/gnunet/gnunet_chat_service.h
 include/gnunet/gnunet_client_lib.h
 include/gnunet/gnunet_common.h
 include/gnunet/gnunet_config.h
 include/gnunet/gnunet_configuration_lib.h
 include/gnunet/gnunet_connection_lib.h
+include/gnunet/gnunet_consensus_service.h
 include/gnunet/gnunet_constants.h
 include/gnunet/gnunet_container_lib.h
+include/gnunet/gnunet_conversation_service.h
 include/gnunet/gnunet_core_service.h
 include/gnunet/gnunet_crypto_lib.h
 include/gnunet/gnunet_datacache_lib.h
@@ -55,22 +63,30 @@ include/gnunet/gnunet_datacache_plugin.h
 include/gnunet/gnunet_datastore_plugin.h
 include/gnunet/gnunet_datastore_service.h
 include/gnunet/gnunet_dht_service.h
-include/gnunet/gnunet_directories.h
 include/gnunet/gnunet_disk_lib.h
 include/gnunet/gnunet_dns_service.h
 include/gnunet/gnunet_dnsparser_lib.h
 include/gnunet/gnunet_dnsstub_lib.h
 include/gnunet/gnunet_dv_service.h
+include/gnunet/gnunet_env_lib.h
 include/gnunet/gnunet_fragmentation_lib.h
+include/gnunet/gnunet_friends_lib.h
 include/gnunet/gnunet_fs_service.h
 include/gnunet/gnunet_getopt_lib.h
 include/gnunet/gnunet_gns_service.h
+include/gnunet/gnunet_gnsrecord_lib.h
+include/gnunet/gnunet_gnsrecord_plugin.h
 include/gnunet/gnunet_hello_lib.h
 include/gnunet/gnunet_helper_lib.h
+include/gnunet/gnunet_identity_service.h
 include/gnunet/gnunet_load_lib.h
-include/gnunet/gnunet_lockmanager_service.h
 include/gnunet/gnunet_mesh_service.h
+include/gnunet/gnunet_microphone_lib.h
+include/gnunet/gnunet_mq_lib.h
+include/gnunet/gnunet_multicast_service.h
 include/gnunet/gnunet_mysql_lib.h
+include/gnunet/gnunet_namecache_plugin.h
+include/gnunet/gnunet_namecache_service.h
 include/gnunet/gnunet_namestore_plugin.h
 include/gnunet/gnunet_namestore_service.h
 include/gnunet/gnunet_nat_lib.h
@@ -83,17 +99,24 @@ include/gnunet/gnunet_plugin_lib.h
 include/gnunet/gnunet_postgres_lib.h
 include/gnunet/gnunet_program_lib.h
 include/gnunet/gnunet_protocols.h
-include/gnunet/gnunet_pseudonym_lib.h
-include/gnunet/gnunet_regex_lib.h
+include/gnunet/gnunet_psyc_service.h
+include/gnunet/gnunet_psycstore_plugin.h
+include/gnunet/gnunet_psycstore_service.h
+include/gnunet/gnunet_regex_service.h
 include/gnunet/gnunet_resolver_service.h
+include/gnunet/gnunet_revocation_service.h
+include/gnunet/gnunet_scalarproduct_service.h
 include/gnunet/gnunet_scheduler_lib.h
+include/gnunet/gnunet_secretsharing_service.h
 include/gnunet/gnunet_server_lib.h
 include/gnunet/gnunet_service_lib.h
+include/gnunet/gnunet_set_service.h
 include/gnunet/gnunet_signal_lib.h
 include/gnunet/gnunet_signatures.h
+include/gnunet/gnunet_speaker_lib.h
 include/gnunet/gnunet_statistics_service.h
-include/gnunet/gnunet_stream_lib.h
 include/gnunet/gnunet_strings_lib.h
+include/gnunet/gnunet_testbed_logger_service.h
 include/gnunet/gnunet_testbed_service.h
 include/gnunet/gnunet_testing_lib.h
 include/gnunet/gnunet_time_lib.h
@@ -107,33 +130,45 @@ include/gnunet/plibc.h
 lib/gnunet/
 lib/gnunet/libexec/
 @bin lib/gnunet/libexec/gnunet-daemon-exit
-@bin lib/gnunet/libexec/gnunet-daemon-hostlist
 @bin lib/gnunet/libexec/gnunet-daemon-pt
+@bin lib/gnunet/libexec/gnunet-daemon-regexprofiler
+@bin lib/gnunet/libexec/gnunet-daemon-testbed-blacklist
 @bin lib/gnunet/libexec/gnunet-daemon-topology
 @bin lib/gnunet/libexec/gnunet-dns2gns
+@bin lib/gnunet/libexec/gnunet-helper-audio-playback
+@bin lib/gnunet/libexec/gnunet-helper-audio-record
 @bin lib/gnunet/libexec/gnunet-helper-fs-publish
 @bin lib/gnunet/libexec/gnunet-helper-testbed
 @bin lib/gnunet/libexec/gnunet-service-arm
 @bin lib/gnunet/libexec/gnunet-service-ats
+@bin lib/gnunet/libexec/gnunet-service-conversation
 @bin lib/gnunet/libexec/gnunet-service-core
 @bin lib/gnunet/libexec/gnunet-service-datastore
 @bin lib/gnunet/libexec/gnunet-service-dht
+@bin lib/gnunet/libexec/gnunet-service-dht-xvine
 @bin lib/gnunet/libexec/gnunet-service-dns
 @bin lib/gnunet/libexec/gnunet-service-fs
 @bin lib/gnunet/libexec/gnunet-service-gns
-@bin lib/gnunet/libexec/gnunet-service-lockmanager
+@bin lib/gnunet/libexec/gnunet-service-identity
 @bin lib/gnunet/libexec/gnunet-service-mesh
-@bin lib/gnunet/libexec/gnunet-service-mesh-new
+@bin lib/gnunet/libexec/gnunet-service-namecache
 @bin lib/gnunet/libexec/gnunet-service-namestore
 @bin lib/gnunet/libexec/gnunet-service-nse
 @bin lib/gnunet/libexec/gnunet-service-peerinfo
+@bin lib/gnunet/libexec/gnunet-service-regex
 @bin lib/gnunet/libexec/gnunet-service-resolver
+@bin lib/gnunet/libexec/gnunet-service-revocation
+@bin lib/gnunet/libexec/gnunet-service-set
 @bin lib/gnunet/libexec/gnunet-service-statistics
 @bin lib/gnunet/libexec/gnunet-service-template
 @bin lib/gnunet/libexec/gnunet-service-testbed
+@bin lib/gnunet/libexec/gnunet-service-testbed-logger
 @bin lib/gnunet/libexec/gnunet-service-transport
 @bin lib/gnunet/libexec/gnunet-service-vpn
-@bin lib/gnunet/libexec/mockup-service
+lib/gnunet/libgnunet_plugin_ats_proportional.la
+lib/gnunet/libgnunet_plugin_ats_proportional.so
+lib/gnunet/libgnunet_plugin_ats_ril.la
+lib/gnunet/libgnunet_plugin_ats_ril.so
 lib/gnunet/libgnunet_plugin_block_dht.la
 lib/gnunet/libgnunet_plugin_block_dht.so
 lib/gnunet/libgnunet_plugin_block_dns.la
@@ -162,14 +197,18 @@ lib/gnunet/libgnunet_plugin_datastore_sqlite.la
 lib/gnunet/libgnunet_plugin_datastore_sqlite.so
 lib/gnunet/libgnunet_plugin_datastore_template.la
 lib/gnunet/libgnunet_plugin_datastore_template.so
+lib/gnunet/libgnunet_plugin_gnsrecord_conversation.la
+lib/gnunet/libgnunet_plugin_gnsrecord_conversation.so
+lib/gnunet/libgnunet_plugin_gnsrecord_dns.la
+lib/gnunet/libgnunet_plugin_gnsrecord_dns.so
+lib/gnunet/libgnunet_plugin_gnsrecord_gns.la
+lib/gnunet/libgnunet_plugin_gnsrecord_gns.so
+lib/gnunet/libgnunet_plugin_namecache_sqlite.la
+lib/gnunet/libgnunet_plugin_namecache_sqlite.so
 lib/gnunet/libgnunet_plugin_namestore_sqlite.la
 lib/gnunet/libgnunet_plugin_namestore_sqlite.so
 lib/gnunet/libgnunet_plugin_test.la
 lib/gnunet/libgnunet_plugin_test.so
-lib/gnunet/libgnunet_plugin_transport_http_client.la
-lib/gnunet/libgnunet_plugin_transport_http_client.so
-lib/gnunet/libgnunet_plugin_transport_https_client.la
-lib/gnunet/libgnunet_plugin_transport_https_client.so
 lib/gnunet/libgnunet_plugin_transport_tcp.la
 lib/gnunet/libgnunet_plugin_transport_tcp.so
 lib/gnunet/libgnunet_plugin_transport_template.la
@@ -184,6 +223,8 @@ lib/libgnunetats.la
 @lib lib/libgnunetats.so.${LIBgnunetats_VERSION}
 lib/libgnunetblock.la
 @lib lib/libgnunetblock.so.${LIBgnunetblock_VERSION}
+lib/libgnunetconversation.la
+@lib lib/libgnunetconversation.so.${LIBgnunetconversation_VERSION}
 lib/libgnunetcore.la
 @lib lib/libgnunetcore.so.${LIBgnunetcore_VERSION}
 lib/libgnunetdatacache.la
@@ -200,18 +241,24 @@ lib/libgnunetdnsstub.la
 @lib lib/libgnunetdnsstub.so.${LIBgnunetdnsstub_VERSION}
 lib/libgnunetfragmentation.la
 @lib lib/libgnunetfragmentation.so.${LIBgnunetfragmentation_VERSION}
+lib/libgnunetfriends.la
+@lib lib/libgnunetfriends.so.${LIBgnunetfriends_VERSION}
 lib/libgnunetfs.la
 @lib lib/libgnunetfs.so.${LIBgnunetfs_VERSION}
 lib/libgnunetgns.la
 @lib lib/libgnunetgns.so.${LIBgnunetgns_VERSION}
-lib/libgnunetgns_common.la
-@lib lib/libgnunetgns_common.so.${LIBgnunetgns_common_VERSION}
+lib/libgnunetgnsrecord.la
+@lib lib/libgnunetgnsrecord.so.${LIBgnunetgnsrecord_VERSION}
 lib/libgnunethello.la
 @lib lib/libgnunethello.so.${LIBgnunethello_VERSION}
-lib/libgnunetlockmanager.la
-@lib lib/libgnunetlockmanager.so.${LIBgnunetlockmanager_VERSION}
+lib/libgnunetidentity.la
+@lib lib/libgnunetidentity.so.${LIBgnunetidentity_VERSION}
 lib/libgnunetmesh.la
 @lib lib/libgnunetmesh.so.${LIBgnunetmesh_VERSION}
+lib/libgnunetmicrophone.la
+@lib lib/libgnunetmicrophone.so.${LIBgnunetmicrophone_VERSION}
+lib/libgnunetnamecache.la
+@lib lib/libgnunetnamecache.so.${LIBgnunetnamecache_VERSION}
 lib/libgnunetnamestore.la
 @lib lib/libgnunetnamestore.so.${LIBgnunetnamestore_VERSION}
 lib/libgnunetnat.la
@@ -224,12 +271,18 @@ lib/libgnunetregex.la
 @lib lib/libgnunetregex.so.${LIBgnunetregex_VERSION}
 lib/libgnunetregexblock.la
 @lib lib/libgnunetregexblock.so.${LIBgnunetregexblock_VERSION}
+lib/libgnunetrevocation.la
+@lib lib/libgnunetrevocation.so.${LIBgnunetrevocation_VERSION}
+lib/libgnunetset.la
+@lib lib/libgnunetset.so.${LIBgnunetset_VERSION}
+lib/libgnunetspeaker.la
+@lib lib/libgnunetspeaker.so.${LIBgnunetspeaker_VERSION}
 lib/libgnunetstatistics.la
 @lib lib/libgnunetstatistics.so.${LIBgnunetstatistics_VERSION}
-lib/libgnunetstream.la
-@lib lib/libgnunetstream.so.${LIBgnunetstream_VERSION}
 lib/libgnunettestbed.la
 @lib lib/libgnunettestbed.so.${LIBgnunettestbed_VERSION}
+lib/libgnunettestbedlogger.la
+@lib lib/libgnunettestbedlogger.so.${LIBgnunettestbedlogger_VERSION}
 lib/libgnunettesting.la
 @lib lib/libgnunettesting.so.${LIBgnunettesting_VERSION}
 lib/libgnunettransport.la
@@ -245,28 +298,39 @@ lib/libgnunetvpn.la
 lib/pkgconfig/gnunetarm.pc
 lib/pkgconfig/gnunetats.pc
 lib/pkgconfig/gnunetblock.pc
+lib/pkgconfig/gnunetconsensus.pc
+lib/pkgconfig/gnunetconversation.pc
 lib/pkgconfig/gnunetcore.pc
 lib/pkgconfig/gnunetdatacache.pc
 lib/pkgconfig/gnunetdatastore.pc
 lib/pkgconfig/gnunetdht.pc
 lib/pkgconfig/gnunetdns.pc
 lib/pkgconfig/gnunetdnsparser.pc
+lib/pkgconfig/gnunetdnsstub.pc
 lib/pkgconfig/gnunetdv.pc
+lib/pkgconfig/gnunetenv.pc
 lib/pkgconfig/gnunetfragmentation.pc
 lib/pkgconfig/gnunetfs.pc
 lib/pkgconfig/gnunetgns.pc
 lib/pkgconfig/gnunethello.pc
-lib/pkgconfig/gnunetlockmanager.pc
+lib/pkgconfig/gnunetidentity.pc
 lib/pkgconfig/gnunetmesh.pc
+lib/pkgconfig/gnunetmicrophone.pc
+lib/pkgconfig/gnunetmulticast.pc
 lib/pkgconfig/gnunetmysql.pc
 lib/pkgconfig/gnunetnamestore.pc
 lib/pkgconfig/gnunetnat.pc
 lib/pkgconfig/gnunetnse.pc
 lib/pkgconfig/gnunetpeerinfo.pc
 lib/pkgconfig/gnunetpostgres.pc
+lib/pkgconfig/gnunetpsyc.pc
+lib/pkgconfig/gnunetpsycstore.pc
 lib/pkgconfig/gnunetregex.pc
+lib/pkgconfig/gnunetrevocation.pc
+lib/pkgconfig/gnunetscalarproduct.pc
+lib/pkgconfig/gnunetset.pc
+lib/pkgconfig/gnunetspeaker.pc
 lib/pkgconfig/gnunetstatistics.pc
-lib/pkgconfig/gnunetstream.pc
 lib/pkgconfig/gnunettestbed.pc
 lib/pkgconfig/gnunettesting.pc
 lib/pkgconfig/gnunettransport.pc
@@ -277,22 +341,27 @@ lib/pkgconfig/gnunetvpn.pc
 @man man/man1/gnunet-ats.1
 @man man/man1/gnunet-auto-share.1
 @man man/man1/gnunet-config.1
+@man man/man1/gnunet-conversation-test.1
+@man man/man1/gnunet-conversation.1
 @man man/man1/gnunet-core.1
+@man man/man1/gnunet-datastore.1
 @man man/man1/gnunet-directory.1
 @man man/man1/gnunet-dns2gns.1
 @man man/man1/gnunet-download-manager.1
 @man man/man1/gnunet-download.1
 @man man/man1/gnunet-ecc.1
 @man man/man1/gnunet-fs.1
-@man man/man1/gnunet-gns-fcfsd.1
 @man man/man1/gnunet-gns-proxy.1
 @man man/man1/gnunet-gns.1
+@man man/man1/gnunet-identity.1
+@man man/man1/gnunet-namecache.1
+@man man/man1/gnunet-namestore-fcfsd.1
 @man man/man1/gnunet-namestore.1
 @man man/man1/gnunet-nat-server.1
 @man man/man1/gnunet-peerinfo.1
-@man man/man1/gnunet-pseudonym.1
 @man man/man1/gnunet-publish.1
-@man man/man1/gnunet-rsa.1
+@man man/man1/gnunet-revocation.1
+@man man/man1/gnunet-scalarproduct.1
 @man man/man1/gnunet-search.1
 @man man/man1/gnunet-statistics.1
 @man man/man1/gnunet-transport.1
@@ -307,6 +376,7 @@ share/gnunet/
 share/gnunet/config.d/
 share/gnunet/config.d/arm.conf
 share/gnunet/config.d/ats.conf
+share/gnunet/config.d/conversation.conf
 share/gnunet/config.d/core.conf
 share/gnunet/config.d/datacache.conf
 share/gnunet/config.d/datastore.conf
@@ -316,14 +386,18 @@ share/gnunet/config.d/exit.conf
 share/gnunet/config.d/fs.conf
 share/gnunet/config.d/gns.conf
 share/gnunet/config.d/hostlist.conf
-share/gnunet/config.d/lockmanager.conf
+share/gnunet/config.d/identity.conf
 share/gnunet/config.d/mesh.conf
+share/gnunet/config.d/namecache.conf
 share/gnunet/config.d/namestore.conf
 share/gnunet/config.d/nat.conf
 share/gnunet/config.d/nse.conf
 share/gnunet/config.d/peerinfo.conf
 share/gnunet/config.d/pt.conf
+share/gnunet/config.d/regex.conf
 share/gnunet/config.d/resolver.conf
+share/gnunet/config.d/revocation.conf
+share/gnunet/config.d/set.conf
 share/gnunet/config.d/statistics.conf
 share/gnunet/config.d/template.conf
 share/gnunet/config.d/testbed.conf
@@ -332,22 +406,13 @@ share/gnunet/config.d/topology.conf
 share/gnunet/config.d/transport.conf
 share/gnunet/config.d/util.conf
 share/gnunet/config.d/vpn.conf
+share/gnunet/gns-bcd.html
+share/gnunet/gns-bcd.tex
 share/gnunet/gnunet-logo-color.png
+share/gnunet/gnunet-logo.pdf
 share/gnunet/hellos/
-share/gnunet/hellos/02UK
-share/gnunet/hellos/1G1M
-share/gnunet/hellos/7RAV
-share/gnunet/hellos/8B4T
-share/gnunet/hellos/94CH
-share/gnunet/hellos/ATF4
-share/gnunet/hellos/F1GT
-share/gnunet/hellos/KD9V
-share/gnunet/hellos/KUPL
-share/gnunet/hellos/LJR8
-share/gnunet/hellos/R69Q
-share/gnunet/hellos/R6OV
-share/gnunet/hellos/RL7P
-share/gnunet/testing_hostkeys.dat
+share/gnunet/hellos/DPQIBOOJV8QBS3FGJ6B0K5NTSQ9SULV45H5KCR4HU7PQ64N8Q9F0
+share/gnunet/hellos/R8TTJ9GAL5VIFOFNM8KNT3D83BVQPBNRHJSSD0IME63V821906EG
 share/gnunet/testing_hostkeys.ecc
 share/locale/de/LC_MESSAGES/gnunet.mo
 share/locale/es/LC_MESSAGES/gnunet.mo
