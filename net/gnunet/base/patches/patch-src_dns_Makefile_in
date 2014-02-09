@@ -2,9 +2,9 @@ $OpenBSD$
 
 WHAT THE ACTUAL FUCK???
 
---- src/dns/Makefile.in.orig	Tue Feb  5 21:15:49 2013
-+++ src/dns/Makefile.in	Wed Aug 28 11:32:29 2013
-@@ -523,8 +523,7 @@ libgnunet_plugin_block_dns_la_SOURCES = \
+--- src/dns/Makefile.in.orig	Tue Dec 24 13:55:02 2013
++++ src/dns/Makefile.in	Sun Feb  9 11:18:05 2014
+@@ -498,8 +498,7 @@ libgnunet_plugin_block_dns_la_SOURCES = \
  libgnunet_plugin_block_dns_la_LIBADD = \
    $(top_builddir)/src/util/libgnunetutil.la
  

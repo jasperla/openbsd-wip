@@ -1,7 +1,7 @@
 $OpenBSD$
---- contrib/Makefile.in.orig	Tue Feb  5 21:15:48 2013
-+++ contrib/Makefile.in	Wed Aug 28 11:32:29 2013
-@@ -475,7 +475,7 @@ clean-noinstPROGRAMS:
+--- contrib/Makefile.in.orig	Tue Dec 24 13:55:01 2013
++++ contrib/Makefile.in	Sun Feb  9 11:18:05 2014
+@@ -484,7 +484,7 @@ clean-noinstPROGRAMS:
  	rm -f $$list
  test_gnunet_prefix$(EXEEXT): $(test_gnunet_prefix_OBJECTS) $(test_gnunet_prefix_DEPENDENCIES) $(EXTRA_test_gnunet_prefix_DEPENDENCIES) 
  	@rm -f test_gnunet_prefix$(EXEEXT)
