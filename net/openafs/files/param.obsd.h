@@ -39,6 +39,10 @@
 #define AFS_OBSD49_ENV		1
 #define AFS_OBSD50_ENV		1
 #define AFS_OBSD51_ENV		1
+#define AFS_OBSD52_ENV		1
+#define AFS_OBSD53_ENV		1
+#define AFS_OBSD54_ENV		1
+#define AFS_OBSD55_ENV		1
 #define AFS_OBSD%OSrev%_ENV		1
 #define AFS_NONFSTRANS		1
 #define AFS_VM_RDWR_ENV		1

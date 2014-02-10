@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/afs/UKERNEL/sysincludes.h.orig	Mon Mar 26 18:03:34 2012
-+++ src/afs/UKERNEL/sysincludes.h	Thu Jul  4 11:52:05 2013
++++ src/afs/UKERNEL/sysincludes.h	Tue Feb  4 17:27:54 2014
 @@ -11,7 +11,7 @@
  #define __AFS_SYSINCLUDESH__ 1
  
@@ -28,7 +28,7 @@ $OpenBSD$
  #ifdef _KERNEL
  #undef _KERNEL
  #endif
-@@ -1085,6 +1085,7 @@ struct usr_vattr {
+@@ -1085,27 +1085,31 @@ struct usr_vattr {
  struct usr_vnode {
      unsigned short v_flag;
      unsigned long v_count;
@@ -36,7 +36,11 @@ $OpenBSD$
      struct usr_vnodeops *v_op;
      struct usr_vfs *v_vfsp;
      long v_type;
-@@ -1093,19 +1094,19 @@ struct usr_vnode {
+     unsigned long v_rdev;
+     char *v_data;
++#if defined(AFS_OBSD_ENV)
++    struct mount *v_mount;
++#endif
  };
  
  struct usr_inode {
@@ -64,7 +68,7 @@ $OpenBSD$
      struct usr_vnode i_vnode;
      struct {
  	unsigned long ic_spare[4];
-@@ -1161,7 +1162,7 @@ struct usr_proc {
+@@ -1161,7 +1165,7 @@ struct usr_proc {
      unsigned long p_flag;
      pid_t p_pid;
      pid_t p_ppid;
@@ -73,7 +77,7 @@ $OpenBSD$
      char p_cursig;
  };
  
-@@ -1264,7 +1265,7 @@ struct usr_fs {
+@@ -1264,7 +1268,7 @@ struct usr_fs {
  };
  
  struct usr_mount {
@@ -82,7 +86,7 @@ $OpenBSD$
      unsigned long m_dev;
      struct usr_inode *m_inodp;
      struct usr_buf *m_bufp;
-@@ -1297,8 +1298,8 @@ struct usr_vfs {
+@@ -1297,8 +1301,8 @@ struct usr_vfs {
  struct usr_ifnet {
      struct usr_ifnet *if_next;
      short if_flags;
