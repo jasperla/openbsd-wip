@@ -1,0 +1,19 @@
+@comment $OpenBSD$
+${P5SITE}/LWP/
+${P5SITE}/LWP/Authen/
+${P5SITE}/LWP/Authen/OAuth2/
+${P5SITE}/LWP/Authen/OAuth2.pm
+${P5SITE}/LWP/Authen/OAuth2/AccessToken/
+${P5SITE}/LWP/Authen/OAuth2/AccessToken.pm
+${P5SITE}/LWP/Authen/OAuth2/AccessToken/Bearer.pm
+${P5SITE}/LWP/Authen/OAuth2/Args.pm
+${P5SITE}/LWP/Authen/OAuth2/Overview.pod
+${P5SITE}/LWP/Authen/OAuth2/ServiceProvider/
+${P5SITE}/LWP/Authen/OAuth2/ServiceProvider.pm
+${P5SITE}/LWP/Authen/OAuth2/ServiceProvider/Google.pm
+@man man/man3p/LWP::Authen::OAuth2.3p
+@man man/man3p/LWP::Authen::OAuth2::AccessToken.3p
+@man man/man3p/LWP::Authen::OAuth2::AccessToken::Bearer.3p
+@man man/man3p/LWP::Authen::OAuth2::Overview.3p
+@man man/man3p/LWP::Authen::OAuth2::ServiceProvider.3p
+@man man/man3p/LWP::Authen::OAuth2::ServiceProvider::Google.3p
