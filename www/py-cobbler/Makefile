@@ -17,17 +17,21 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		https://github.com/cobbler/cobbler/archive/
 
-RUN_DEPENDS=    	devel/py-simplejson \
+RUN_DEPENDS=    	devel/py-cheetah \
+			devel/py-simplejson \
 			net/py-netaddr \
-			textproc/py-yaml
+			textproc/py-yaml \
+			www/py-urlgrabber
 
-BUILD_DEPENDS =    	textproc/py-yaml \
-			lang/python/${MODPY_DEFAULT_VERSION_2}
+BUILD_DEPENDS =    	lang/python/${MODPY_DEFAULT_VERSION_2}
 
 MODULES =		lang/python
-
 NO_TEST =		Yes
-
 WRKSRC =		${WRKDIR}/${PKGNAME}/
+
+
+#post-install:
+#        ${INSTALL_DATA} ${WRKSRC}/include/disorder.h ${PREFIX}/include
+#        ${INSTALL_PROGRAM} ${WRKSRC}/tool/ropy ${PREFIX}/bin
 
 .include <bsd.port.mk>
