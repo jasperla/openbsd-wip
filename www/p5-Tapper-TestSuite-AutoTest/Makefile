@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 RUN_DEPENDS=    devel/p5-File-Slurp \
 		devel/p5-MooseX-Log-Log4perl \
 		devel/p5-YAML-Syck
+#devel/py-autotest
 
 BUILD_DEPENDS=  ${RUN_DEPENDS}
 
