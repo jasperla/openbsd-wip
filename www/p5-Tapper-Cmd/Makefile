@@ -33,6 +33,7 @@ RUN_DEPENDS =	databases/p5-DBI \
 		www/p5-Tapper-Base \
 		www/p5-Tapper-Reports-DPath \
 		www/p5-Tapper-Schema
+#		www/py-cobbler
 
 BUILD_DEPENDS=  ${RUN_DEPENDS}
 
