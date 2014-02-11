@@ -10,3 +10,4 @@ ${P5SITE}/Tapper/MCP/MessageReceiver.pm
 @man man/man1/tapper-mcp-messagereceiver-daemon.1
 @man man/man1/tapper-mcp-messagereceiver.1
 @man man/man3p/Tapper::MCP::MessageReceiver.3p
+@rcscript ${RCDIR}/tapper-mcp-messagereceiver-daemon
