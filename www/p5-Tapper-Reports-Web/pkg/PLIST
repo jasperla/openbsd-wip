@@ -301,3 +301,4 @@ ${P5SITE}/auto/share/dist/Tapper-Reports-Web/tapper/user/logout.mas
 @man man/man3p/Tapper::Reports::Web::Util::Report.3p
 @man man/man3p/Tapper::Reports::Web::Util::Testrun.3p
 @man man/man3p/Tapper::Reports::Web::View::Mason.3p
+@rcscript ${RCDIR}/tapper_reports_web_server.pl
