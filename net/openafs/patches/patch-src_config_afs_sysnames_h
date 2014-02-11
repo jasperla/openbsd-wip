@@ -1,20 +1,32 @@
 $OpenBSD: patch-src_config_afs_sysnames_h,v 1.14 2012/06/21 13:54:14 sthen Exp $
 diff -u src/config/afs_sysnames.h.orig src/config/afs_sysnames.h
---- src/config/afs_sysnames.h.orig	Wed Oct  9 16:20:17 2013
-+++ src/config/afs_sysnames.h	Sun Dec  8 00:29:56 2013
-@@ -281,6 +281,7 @@
- #define SYS_NAME_ID_i386_obsd51         2620
- #define SYS_NAME_ID_i386_obsd52         2621
- #define SYS_NAME_ID_i386_obsd53         2622
+--- src/config/afs_sysnames.h.orig	Mon Mar 26 18:03:34 2012
++++ src/config/afs_sysnames.h	Mon Feb  3 17:07:11 2014
+@@ -269,6 +269,13 @@
+ #define SYS_NAME_ID_i386_obsd46         2615
+ #define SYS_NAME_ID_i386_obsd47         2616
+ #define SYS_NAME_ID_i386_obsd48         2617
++#define SYS_NAME_ID_i386_obsd49         2618
++#define SYS_NAME_ID_i386_obsd50         2619
++#define SYS_NAME_ID_i386_obsd51         2620
++#define SYS_NAME_ID_i386_obsd52         2621
++#define SYS_NAME_ID_i386_obsd53         2622
 +#define SYS_NAME_ID_i386_obsd54         2623
++#define SYS_NAME_ID_i386_obsd55         2624
  
  #define SYS_NAME_ID_amd64_linux2        2700
  #define SYS_NAME_ID_amd64_linux22       2701
-@@ -346,6 +347,7 @@
- #define SYS_NAME_ID_amd64_obsd51        4020
- #define SYS_NAME_ID_amd64_obsd52        4021
- #define SYS_NAME_ID_amd64_obsd53        4022
+@@ -325,6 +332,13 @@
+ #define SYS_NAME_ID_amd64_obsd46        4015
+ #define SYS_NAME_ID_amd64_obsd47        4016
+ #define SYS_NAME_ID_amd64_obsd48        4017
++#define SYS_NAME_ID_amd64_obsd49        4018
++#define SYS_NAME_ID_amd64_obsd50        4019
++#define SYS_NAME_ID_amd64_obsd51        4020
++#define SYS_NAME_ID_amd64_obsd52        4021
++#define SYS_NAME_ID_amd64_obsd53        4022
 +#define SYS_NAME_ID_amd64_obsd54        4023
++#define SYS_NAME_ID_amd64_obsd55        4023
  
  /*
   * Placeholder to keep system-wide standard flags since this file is included by all
