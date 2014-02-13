@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/afs/afs_init.c.orig	Tue Feb  4 17:21:37 2014
++++ src/afs/afs_init.c	Tue Feb  4 17:22:20 2014
+@@ -417,7 +417,7 @@ afs_InitCacheInfo(char *afile)
+ 	if (afs_cacheVfsp && ((st = *(vfs_statfs(afs_cacheVfsp))),1))
+ #elif defined(AFS_FBSD80_ENV)
+ 	if (!VFS_STATFS(filevp->v_mount, &st))
+-#elif defined(AFS_DARWIN_ENV) || defined(AFS_XBSD_ENV)
++#elif defined(AFS_DARWIN_ENV) || (defined(AFS_XBSD_ENV) && !defined(AFS_OBSD_ENV))
+ 	if (!VFS_STATFS(filevp->v_mount, &st, osi_curproc()))
+ #else
+ 	if (!VFS_STATFS(filevp->v_vfsp, &st))
