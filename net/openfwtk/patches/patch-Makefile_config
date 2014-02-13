@@ -1,11 +1,11 @@
 $OpenBSD$
---- Makefile.config.orig	Mon Jul  1 16:19:56 2013
-+++ Makefile.config	Mon Jul  1 16:20:07 2013
+--- Makefile.config.orig	Fri Apr 29 18:23:11 2011
++++ Makefile.config	Sun Feb  9 23:02:21 2014
 @@ -1,6 +1,6 @@
  # Define here one of the supported OS-es:
  # Linux, Linux64, FreeBSD, OpenBSD, Solaris, Solaris64, HP-UX, MacOSX, Interix
 -OSTYPE = Linux
 +OSTYPE = OpenBSD
-
- # Define "branding"
+ 
+ # Define "branding" 
  VENDOR = OpenFWTK
