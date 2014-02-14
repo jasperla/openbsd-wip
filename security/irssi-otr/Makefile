@@ -3,7 +3,7 @@
 
 COMMENT =		OTR (off the record) encryption support for irssi
 
-GH_VER =	v1.0.0-alpha2
+GH_VER =	v1.0.0
 DISTNAME =		irssi-otr-${GH_VER:S/v//}
 
 SHARED_LIBS =		otr 0.0 # v1.0.0-alpha2
