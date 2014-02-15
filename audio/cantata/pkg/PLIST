@@ -2,8 +2,10 @@
 @bin bin/cantata
 lib/cantata/
 @bin lib/cantata/cantata-replaygain
-share/applications/
-share/applications/cantata.desktop
+share/applications/kde4/cantata.desktop
+share/apps/solid/
+share/apps/solid/actions/
+share/apps/solid/actions/cantata-play-audiocd.desktop
 share/cantata/
 share/cantata/icons/
 share/cantata/icons/podcasts.png
@@ -30,3 +32,7 @@ share/icons/hicolor/32x32/apps/cantata.png
 share/icons/hicolor/48x48/apps/cantata.png
 share/icons/hicolor/64x64/apps/cantata.png
 share/icons/hicolor/scalable/apps/cantata.svg
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
