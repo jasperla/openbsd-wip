@@ -12,7 +12,4 @@ MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 # Artistic License 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS=	
-BUILD_DEPENDS=	${RUN_DEPENDS}
-
 .include <bsd.port.mk>
