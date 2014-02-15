@@ -1,7 +1,8 @@
 Ready for import
 
-Changes since 2.2:
+Notable changes since 1.9:
 
+* Support for old architectures without C99 support
 * Reduce number of attempts to re-open files to 1 second (10 attempts)
 * Unit tests use mock kqueue() instead of triggering events through the filesystem
 * Print out detailed instructions if the user provides configure arguments
@@ -9,8 +10,7 @@ Changes since 2.2:
 * LICENCE file describes the copyright holders for the compatibility libraries
 * Reintroduce ${DESTDIR} for STAGEDIR installation
 * Prevent interactive utilities from paging output by setting PAGER to `/bin/cat`
-* First match of `/_` provides a shortcut for specifying the first file under
-  watch
+* First match of `/_` provides a shortcut for specifying the file that changed
 * New `-c` option invokes `clear` before running the utility
 * Support Vim's `backup` option by responding to `NOTE_RENAME`
 
