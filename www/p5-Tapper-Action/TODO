@@ -29,3 +29,7 @@ Failed 1/10 test programs. 1/25 subtests failed.
 *** Error 255 in /usr/ports/pobj/p5-Tapper-Action-4.1.1/Tapper-Action-4.1.1 (Makefile:815 'test_dynamic')
 *** Error 1 in . (/usr/ports/infrastructure/mk/bsd.port.mk:2710 '/usr/ports/pobj/p5-Tapper-Action-4.1.1/.test_done')
 *** Error 1 in /usr/ports/openbsd-wip/www/p5-Tapper-Action (/usr/ports/infrastructure/mk/bsd.port.mk:2409 'test')
+
+
+$ tapper-action-daemon                                                                                                                                   
+Can't open /tmp/tapper-action-daemon.log (Permission denied) at /usr/local/libdata/perl5/site_perl/Log/Log4perl/Appender/File.pm line 103.

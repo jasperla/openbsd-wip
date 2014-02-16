@@ -4,7 +4,7 @@ COMMENT =		an OpenGL test suite
 DISTNAME =		piglit-v1
 
 CATEGORIES =		devel graphics
-HOMEPAGE =		http://cgit.freedesktop.org/piglit/snapshot/
+HOMEPAGE =		http://people.freedesktop.org/~nh/piglit/
 
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
