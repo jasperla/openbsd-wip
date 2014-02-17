@@ -1,19 +1,23 @@
 # $OpenBSD$
 
-CATEGORIES =	editors
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	http://www.calligra-suite.org/
 DISTNAME =	calligra-2.7.5
+CATEGORIES =	editors
 
 DIST_SUBDIR =	kde
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/${DISTNAME}/}
 
 # GPLv2+, LGPLv2+ and GNU FDLv1.2
-PERMIT_PACKAGE_CDROM =          Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =		x11/kde4 gcc4 converters/libiconv multimedia/phonon
-MODGCC4_ARCHS = 	*
-MODGCC4_LANGS = 	c++
+MODULES =	gcc4 \
+		x11/kde4 \
+		converters/libiconv \
+		multimedia/phonon
+
+MODGCC4_ARCHS = *
+MODGCC4_LANGS = c++
 
 MODKDE4_USE =	pim
 
@@ -119,9 +123,6 @@ RUN_DEPENDS =	databases/mysql \
 		misc/shared-mime-info \
 		productivity/librcps \
 		x11/gtk+2,-guic
-
-# Optional run-time dependency, does not affect build
-#RUN_DEPENDS +=	graphics/create-resources
 
 LIB_DEPENDS =	databases/freetds \
 		databases/mysql \
