@@ -26,7 +26,9 @@ WANTLIB += cdda_interface cdda_paranoia cddb mpg123 mtp musicbrainz5
 WANTLIB += z
 
 MODULES =	devel/cmake \
+		multimedia/phonon \
 		x11/kde4
+
 MODKDE4_USE =   libs
 
 NO_TEST =	Yes
