@@ -3,6 +3,7 @@
 # $OpenBSD$
 
 daemon="${TRUEPREFIX}/bin/tapper_reports_web_server.pl"
+daemon_flags="--background"
 
 . /etc/rc.d/rc.subr
 

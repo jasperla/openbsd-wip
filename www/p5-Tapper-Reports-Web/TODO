@@ -1,0 +1,16 @@
+plus.png and others are absent in PLIST
+
+$ sudo make update-plist
+===>  Faking installation for p5-Tapper-Reports-Web-4.1.2
+Skip blib/lib/auto/share/dist/Tapper-Reports-Web/tapper/reports/index.mas (unchanged)
+Skip blib/lib/auto/share/dist/Tapper-Reports-Web/mpc/tests.yml (unchanged)
+Skip blib/lib/auto/share/dist/Tapper-Reports-Web/formfu/label (unchanged)
+Skip blib/lib/auto/share/dist/Tapper-Reports-Web/tapper/static/manual/tapper-manual.pdf (unchanged)
+Skip blib/lib/auto/share/dist/Tapper-Reports-Web/formfu/input_tag (unchanged)
+Skip blib/lib/auto/share/dist/Tapper-Reports-Web/tapper/testplan/index.mas (unchanged)
+Skip blib/lib/auto/share/dist/Tapper-Reports-Web/tapper/static/images_brown/n3.gif (unchanged)
+Skip blib/lib/auto/share/dist/Tapper-Reports-Web/formfu/recaptcha (unchanged)
+Skip blib/lib/auto/share/dist/Tapper-Reports-Web/tapper/static/images_green/n5.gif (unchanged)
+Skip blib/lib/auto/share/dist/Tapper-Reports-Web/tapper/testruns/new_create.mas (unchanged)
+Skip blib/lib/auto/share/dist/Tapper-Reports-Web/tapper/static/css/qtip.css (unchanged)
+...
