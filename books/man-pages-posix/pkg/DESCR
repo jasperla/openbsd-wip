@@ -1,0 +1,3 @@
+This package contains a copy of the POSIX 1003.1-2013 man pages.
+The directories man1p, man3p, man7u contain descriptions of the
+utilities, the functions and the headers documented in that standard.
