@@ -1,9 +1,10 @@
 Tapper HOW-TO
 
-1. Install packages
+
+1. Install required packages
 2. Initialize a ~/.tapper/ with user-config, SQLite databases and examples
 3. Run the central daemons for collecting test reports and the query api
-4. Run the web gui to view reports
+4. Run the web ui to view reports
 
 Essentially it's the test result database without automation.
 
@@ -27,14 +28,9 @@ You need several daemons running, e.g. in several terminals.
 ### Set your environment
 
 Several env vars are used to specify where the central server is, here
-it's about where to send test results. For this hello-world we point
-them to our localhost:
-
-  $ source $HOME/.tapper/hello-world/00-set-environment/local-tapper-env.inc
+it's about where to send test results - $TAPPER_REPORT_SERVER.
 
 ### Run example tests and report results
-
-  $ cd $HOME/.tapper/hello-world/01-executing-tests/
 
 You can execute the scripts with 'prove' (already available in
 OpenBSD) which executes the tests but does **not** report
@@ -46,17 +42,6 @@ results to the server:
     $ prove -rv t/                     # verbose
     $ prove -r  t/basic                # subset only
     $ prove -r  t/complex              # subset only
-
-For running the tests inclusive reporting their results to the Tapper
-server (defined by $TAPPER_REPORT_SERVER) you execute them
-directly:
-
-    $ t/basic/example-01-basic.t
-    $ for t in $(find t/ -name "*.t") ; do $t ; done
-
-Just for later examples let's generate a series of fake benchmarks:
-
-    $ for i in $(seq 1 5) ; do t/basic/example-03-benchmarks.t ; done
 
 ### More info
 
@@ -72,7 +57,7 @@ to fetch values from the test results db.
 ### Simple results
 
   $ cd $HOME/.tapper/hello-world/02-query-api/
-  $ cat hello.tt | netcat localhost 7358
+  $ cat hello.tt | nc localhost 7358
     Planned tests:
        5
        5
@@ -84,7 +69,7 @@ to fetch values from the test results db.
 The mechanism is the same, just the templates are more complex,
 e.g. to select values that are deeper embedded in the test results:
 
-  $ cat benchmarks.tt | netcat localhost 7358
+  $ cat benchmarks.tt | nc localhost 7358
     Benchmarks:
        1995.10
        1995.10
@@ -93,7 +78,7 @@ e.g. to select values that are deeper embedded in the test results:
 
 Now let's generate a gnuplot file with those data:
 
-  $ cat benchmarks-gnuplot.tt | netcat localhost 7358
+  $ cat benchmarks-gnuplot.tt | nc localhost 7358
     #! /usr/bin/env gnuplot
     TITLE = "Example bogomips"
     set title TITLE offset char 0, char -1
@@ -112,13 +97,12 @@ Now let's generate a gnuplot file with those data:
 
 You can also directly pipe such a result into gnuplot:
 
-  $ cat benchmarks-gnuplot.tt | netcat localhost 7358 | gnuplot
+  $ cat benchmarks-gnuplot.tt | nc localhost 7358 | gnuplot
   $ file example-03-benchmarks.png
 	example-03-benchmarks.png: PNG image data, 640 x 92, 8-bit/color RGB, non-interlaced
 
 See http://template-toolkit.org for more information about the
 template language.
-
 
 See:
 	https://github.com/tapper/Tapper/wiki/HelloWorld
