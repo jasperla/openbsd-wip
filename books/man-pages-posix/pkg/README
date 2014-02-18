@@ -1,0 +1,22 @@
+$OpenBSD$
+
++-----------------------------------------------------------------------
+| Using ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Because this package contains pages clashing with the ones provided by OpenBSD,
+it's not put into common search directories for man(1). Instead, you're promised
+to add something like this to your shell startup file:
+
+  alias pman='man -M ${DOCDIR}/man'
+  alias papropos='apropos -M ${DOCDIR}/man'
+  alias pwhatis='whatis -M ${DOCDIR}/man'
+
+Then you can call it like usual "man" command:
+
+  papropos pthread
+  pman 3 chmod
+  pwhatis ldds
+
+Note: OpenBSD does not have category starting with "0", so headers were put into
+the "3" category instead.
