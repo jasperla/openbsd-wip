@@ -1,18 +1,19 @@
-Tapper HOW-TO
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Using Tapper in an OpenBSD environment
 
 
-1. Install required packages
-2. Initialize a ~/.tapper/ with user-config, SQLite databases and examples
-3. Run the central daemons for collecting test reports and the query api
-4. Run the web ui to view reports
+## Run Tapper daemons
 
 Essentially it's the test result database without automation.
 
-$ tapper init --default
+Initialize a ~/.tapper/ with user-config, SQLite databases and examples:
 
-Start Tapper daemons
+  $ tapper init --default
 
-You need several daemons running, e.g. in several terminals.
+Run the central daemons for collecting test reports and the query api:
 
 * Web interface to browse reports:
   $ tapper_reports_web_server.pl
@@ -42,11 +43,6 @@ results to the server:
     $ prove -rv t/                     # verbose
     $ prove -r  t/basic                # subset only
     $ prove -r  t/complex              # subset only
-
-### More info
-
-The utility libraries should be accessible, here we made
-*tapper-autoreport* directly available. See http://github.com/tapper/Tapper-autoreport for more.
 
 ## Evaluate tests
 
@@ -104,6 +100,6 @@ You can also directly pipe such a result into gnuplot:
 See http://template-toolkit.org for more information about the
 template language.
 
-See:
+See also:
 	https://github.com/tapper/Tapper/wiki/HelloWorld
 	https://github.com/tapper/Tapper/wiki/UnobtrusiveAutomation

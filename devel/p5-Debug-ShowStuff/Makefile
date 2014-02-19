@@ -12,7 +12,8 @@ MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS=    textproc/p5-Text-TabularDisplay
+RUN_DEPENDS=    textproc/p5-String-Util \
+		textproc/p5-Text-TabularDisplay
 
 BUILD_DEPENDS=  ${RUN_DEPENDS}
 
