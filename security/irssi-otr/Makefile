@@ -31,13 +31,14 @@ BUILD_DEPENDS =	net/irssi>=0.8.15p5 \
 
 USE_LIBTOOL=		gnu
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--with-libotr-inc-prefix=/usr/local/include \
-	--disable-static
+LIBTOOL_FLAGS =	--tag=disable-static
+CONFIGURE_ARGS +=	--with-libotr-inc-prefix=/usr/local/include
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.9
 
 NO_TEST =		Yes
+SHARED_ONLY =	Yes
 
 pre-configure:
 	@cd ${WRKSRC} && \
