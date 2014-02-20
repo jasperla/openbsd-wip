@@ -15,18 +15,19 @@ MAINTAINER =		Florian Stinglmayr <florian@n0la.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c pthread
+WANTLIB =		gcrypt gpg-error iconv intl otr c pthread
+
+MODULES=	devel/gettext
 
 MASTER_SITES =		${HOMEPAGE}/archive/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}{${GH_VER}${EXTRACT_SUFX}}
 
 BUILD_DEPENDS =	net/irssi>=0.8.15p5 \
-		security/libotr>=4.0.0 \
-		security/libgcrypt \
-		devel/glib2 \
+		devel/libtool \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
-LIB_DEPENDS = devel/glib security/gcrypt iconv intl otr
+LIB_DEPENDS = security/libgcrypt security/libotr>=4.0.0 devel/glib2
+RUN_DEPENDS = net/irssi
 
 CONFIGURE_STYLE =	gnu
 LIBTOOL_FLAGS +=	--tag=disable-static
