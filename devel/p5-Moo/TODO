@@ -1,8 +1,0 @@
-Warning: prerequisite Devel::GlobalDestruction 0.11 not found. We have 0.03.
-Warning: prerequisite Role::Tiny 1.003002 not found.
-Warning: prerequisite strictures 1.004003 not found. We have 1.000000.
-
-tests failed:
-Files=54, Tests=602, 20 wallclock secs ( 0.63 usr  1.21 sys + 15.25 cusr  3.24 csys = 20.33 CPU)
-Result: FAIL
-Failed 4/54 test programs. 1/602 subtests failed.
