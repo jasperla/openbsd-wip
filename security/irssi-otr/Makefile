@@ -6,8 +6,6 @@ COMMENT =		OTR (off the record) encryption support for irssi
 GH_VER =	v1.0.0
 DISTNAME =		irssi-otr-${GH_VER:S/v//}
 
-SHARED_LIBS =		otr 0.0 # v1.0.0-alpha2
-
 CATEGORIES =		security
 
 HOMEPAGE =		https://github.com/cryptodotis/irssi-otr
@@ -23,16 +21,16 @@ MASTER_SITES =		${HOMEPAGE}/archive/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}{${GH_VER}${EXTRACT_SUFX}}
 
 BUILD_DEPENDS =	net/irssi>=0.8.15p5 \
-	security/libotr>=4.0.0 \
-	security/libgcrypt>=1.2.0 \
-	devel/glib2>=2.22.0 \
-	devel/autoconf/2.69 \
-	devel/automake/1.9
+		security/libotr>=4.0.0 \
+		security/libgcrypt \
+		devel/glib2 \
+		${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS}
+LIB_DEPENDS = devel/glib security/gcrypt iconv intl otr
 
-USE_LIBTOOL=		gnu
 CONFIGURE_STYLE =	gnu
-LIBTOOL_FLAGS =	--tag=disable-static
-CONFIGURE_ARGS +=	--with-libotr-inc-prefix=/usr/local/include
+LIBTOOL_FLAGS +=	--tag=disable-static
+CONFIGURE_ARGS +=	--with-libotr-inc-prefix=${LOCALBASE}/include
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.9
