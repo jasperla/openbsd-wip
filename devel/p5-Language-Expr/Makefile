@@ -21,6 +21,5 @@ RUN_DEPENDS =	${BUILD_DEPENDS}
 
 TEST_DEPENDS =	devel/p5-Data-Clone \
 		devel/p5-Data-Rmap
-#    !  experimental is not installed
 
 .include <bsd.port.mk>
