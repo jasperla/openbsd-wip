@@ -1,0 +1,3 @@
+This module adds a small number of new regex constructs that can be used
+within Perl 5.10 patterns to implement complete recursive-descent
+parsing.

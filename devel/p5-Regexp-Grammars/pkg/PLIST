@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+${P5SITE}/Regexp/
+${P5SITE}/Regexp/Grammars.pm
+${P5SITE}/Skip_if_Perl_5_18.pm
+@man man/man3p/Regexp::Grammars.3p
