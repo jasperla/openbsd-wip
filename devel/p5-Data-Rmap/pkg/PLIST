@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/Data/
+${P5SITE}/Data/Rmap.pm
+@man man/man3p/Data::Rmap.3p
