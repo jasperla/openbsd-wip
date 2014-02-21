@@ -4,8 +4,8 @@ COMMENT =	minimalist mailing list manager written in perl
 
 CATEGORIES =	mail
 
-DATE =		20131124
-HASH =		263e7c2e4f291d6530144279c4e4622b762cf6aa
+DATE =		20140221
+HASH =		4a86ebd3214ec92a578d59a89eb61a9b1f427575
 DISTNAME =	minimalist-${DATE}
 
 DISTFILES =	${HASH}${EXTRACT_SUFX}
