@@ -1,0 +1,11 @@
+@comment $OpenBSD$
+%%SHARED%%
+${P5ARCH}/
+${P5ARCH}/Data/
+${P5ARCH}/Data/Clone.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Data/
+${P5ARCH}/auto/Data/Clone/
+${P5ARCH}/auto/Data/Clone/Clone.bs
+${P5ARCH}/auto/Data/Clone/data_clone.h
+@man man/man3p/Data::Clone.3p
