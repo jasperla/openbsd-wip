@@ -14,10 +14,14 @@ PERMIT_PACKAGE_CDROM =          Yes
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtScript lib/qt4/QtSvg lib/qt4/QtXml
-WANTLIB += kdeui kfile khtml kio kjs kparts krosscore ktexteditor
-WANTLIB += nepomuk nepomukutils soprano
+WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kfile ${KDE4LIB}/khtml
+WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kjs ${KDE4LIB}/kparts
+WANTLIB += ${KDE4LIB}/krosscore ${KDE4LIB}/ktexteditor
+WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils soprano
 
-MODULES =	x11/kde4 multimedia/phonon devel/gettext
+MODULES =	x11/kde4 \
+		multimedia/phonon \
+		devel/gettext
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
