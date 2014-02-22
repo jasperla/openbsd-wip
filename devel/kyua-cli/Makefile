@@ -4,7 +4,7 @@ COMMENT =		testing framework
 DISTNAME =		kyua-cli-0.8
 
 CATEGORIES =		devel
-HOMEPAGE =		https://code.google.com/p/kyua/
+HOMEPAGE =		https://github.com/jmmv/kyua
 
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += atf-c atf-c++ c ${MODLUA_WANTLIB} lutok m sqlite3 stdc++
 
-MASTER_SITES =		https://kyua.googlecode.com/files/
+MASTER_SITES =		https://github.com/jmmv/kyua/releases/download/${DISTNAME}/
 
 MODULES =      		lang/lua
 MODLUA_SA = 		Yes

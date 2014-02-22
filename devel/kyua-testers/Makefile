@@ -4,7 +4,7 @@ COMMENT =		scriptable interfaces to interact with test programs
 DISTNAME =		kyua-testers-0.2
 
 CATEGORIES =		devel
-HOMEPAGE =		https://code.google.com/p/kyua/
+HOMEPAGE =		https://github.com/jmmv/kyua
 
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += atf-c c
 
-MASTER_SITES =		https://kyua.googlecode.com/files/
+MASTER_SITES =		https://github.com/jmmv/kyua/releases/download/${DISTNAME}/
 
 LIB_DEPENDS =		devel/atf
 
