@@ -32,4 +32,4 @@ Failed 1/10 test programs. 1/25 subtests failed.
 
 
 $ tapper-action-daemon                                                                                                                                   
-Can't open /tmp/tapper-action-daemon.log (Permission denied) at /usr/local/libdata/perl5/site_perl/Log/Log4perl/Appender/File.pm line 103.
+Can't open /home/estet/.tapper/logs/tapper-debug.log (Permission denied) at /usr/local/libdata/perl5/site_perl/Log/Log4perl/Appender/File.pm line 103.
