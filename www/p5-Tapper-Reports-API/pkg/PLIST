@@ -12,4 +12,4 @@ ${P5SITE}/Tapper/Reports/API/Daemon.pm
 @man man/man1/tapper-reports-api.1
 @man man/man3p/Tapper::Reports::API.3p
 @man man/man3p/Tapper::Reports::API::Daemon.3p
-@rcscript ${RCDIR}/tapper-reports-api-daemon
+@rcscript ${RCDIR}/tapper_reports_api
