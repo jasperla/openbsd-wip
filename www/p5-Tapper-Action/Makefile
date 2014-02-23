@@ -35,4 +35,8 @@ TEST_DEPENDS=   databases/p5-DBIx-Class-InflateColumn-Object-Enum \
 		devel/p5-Test-Pod \
 		devel/p5-Test-Pod-Coverage
 
+post-install:
+		touch /tmp/tapper-action-daemon.log
+		chown -R action-daemon_user:tapper  /tmp/tapper-action-daemon.log
+
 .include <bsd.port.mk>
