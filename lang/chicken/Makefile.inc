@@ -2,7 +2,7 @@
 
 COMMENT=	practical and portable Scheme system
 
-V=		4.8.0.3
+V=		4.8.0.5
 DISTNAME=	chicken-${V}
 
 CATEGORIES=	lang

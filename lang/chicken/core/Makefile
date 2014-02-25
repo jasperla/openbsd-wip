@@ -10,9 +10,9 @@ TEST_DEPENDS=	${BUILD_PKGPATH}
 MAKE_FLAGS+=	CHICKEN=${LOCALBASE}/libexec/chicken-bootstrap \
 		LIBchicken_VERSION="${LIBchicken_VERSION}"
 
-BUILD_DEPENDS=	lang/chicken/bootstrap
+BUILD_DEPENDS=	lang/chicken/bootstrap>=${V}
 
-post-patch:
+pre-configure:
 	${SUBST_CMD} ${WRKSRC}/{csc,eval}.scm
 
 .include <bsd.port.mk>
