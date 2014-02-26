@@ -9,13 +9,9 @@ Codespeed has been installed into ${INSTDIR}
 You should create a vhost for Codespeed (must be on a subdomain or full domain) 
 
 Vhost example for nginx: 
-
-# codespeed
-}
+	https://github.com/tobami/codespeed/tree/master/sample_project/deploy
 
 Restart nginx and browse to codespeed.my.domain and follow the setup instructions provided. 
-
-For more information, visit: http://www.phabricator.com/docs/phabricator/article/Configuration_Guide.html
 
 * To get started, you can use the `sample_project` directory as a starting point 
 for your Django project, which can be normally configured by editing `sample_project/settings.py`.

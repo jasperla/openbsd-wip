@@ -26,4 +26,15 @@ BUILD_DEPENDS=  ${RUN_DEPENDS}
 TEST_DEPENDS=   databases/p5-DBIx-Class-InflateColumn-Object-Enum \
 		databases/p5-DBIx-Class-TimeStamp
 
+LOG=		tapper-debug-mcp-messagereceiver_user.log \
+		tapper_mcp_reset_mcp-messagereceiver_user.log \
+		tapper_message_receiver_daemon_mcp-messagereceiver_user.log \
+		tapper_reports_receiver_daemon_mcp-messagereceiver_user.log
+
+post-install:
+.for l in ${LOG}
+	touch /var/log/${l}
+	chown mcp-messagereceiver_user:tapper /var/log/${l}
+.endfor
+
 .include <bsd.port.mk>
