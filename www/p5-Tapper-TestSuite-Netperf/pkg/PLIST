@@ -15,4 +15,4 @@ ${P5SITE}/Tapper/TestSuite/Netperf/Server.pm
 @man man/man3p/Tapper::TestSuite::Netperf.3p
 @man man/man3p/Tapper::TestSuite::Netperf::Client.3p
 @man man/man3p/Tapper::TestSuite::Netperf::Server.3p
-@rcscript ${RCDIR}/tapper-testsuite-netperf-server
+@rcscript ${RCDIR}/tapper_testsuite_netperf_server

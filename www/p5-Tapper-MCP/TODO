@@ -1,20 +1,4 @@
 warnings in tests: Moose version 2 required--this is only version 1.25
 
 $ tapper-mcp-daemon
-defined(@array) is deprecated at /usr/local/libdata/perl5/site_perl/LockFile/Simple.pm line 135.
-        (Maybe you should just omit the defined()?)
-defined(@array) is deprecated at /usr/local/libdata/perl5/site_perl/LockFile/Simple.pm line 136.
-        (Maybe you should just omit the defined()?)
 Moose version 2 required--this is only version 1.25 at /usr/local/libdata/perl5/site_perl/MooseX/ClassAttribute.pm line 14.
-BEGIN failed--compilation aborted at /usr/local/libdata/perl5/site_perl/MooseX/ClassAttribute.pm line 14.
-Compilation failed in require at /usr/local/libdata/perl5/site_perl/Tapper/MCP/Scheduler/Queue.pm line 13.
-BEGIN failed--compilation aborted at /usr/local/libdata/perl5/site_perl/Tapper/MCP/Scheduler/Queue.pm line 13.
-Compilation failed in require at /usr/local/libdata/perl5/site_perl/Tapper/MCP/Scheduler/ObjectBuilder.pm line 17.
-BEGIN failed--compilation aborted at /usr/local/libdata/perl5/site_perl/Tapper/MCP/Scheduler/ObjectBuilder.pm line 17.
-Compilation failed in require at /usr/local/libdata/perl5/site_perl/Tapper/MCP/Scheduler/Controller.pm line 18.
-BEGIN failed--compilation aborted at /usr/local/libdata/perl5/site_perl/Tapper/MCP/Scheduler/Controller.pm line 18.
-Compilation failed in require at /usr/local/libdata/perl5/site_perl/Tapper/MCP/Master.pm line 27.
-BEGIN failed--compilation aborted at /usr/local/libdata/perl5/site_perl/Tapper/MCP/Master.pm line 27.
-Compilation failed in require at /usr/local/bin/tapper-mcp-daemon line 15.
-BEGIN failed--compilation aborted at /usr/local/bin/tapper-mcp-daemon line 15.
-

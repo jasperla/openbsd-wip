@@ -27,6 +27,7 @@ RUN_DEPENDS=    devel/p5-AnyEvent \
 		devel/p5-Test-Fixture-DBIC-Schema \
 		devel/p5-YAML-Tiny \
 		textproc/p5-String-Escape \
+		www/codespeed \
 		www/p5-Tapper-Base \
 		www/p5-Tapper-Model \
 		www/p5-Tapper-Schema \
@@ -36,5 +37,16 @@ BUILD_DEPENDS=  ${RUN_DEPENDS}
 
 TEST_DEPENDS=   databases/p5-DBIx-Class-InflateColumn-Object-Enum \
 		databases/p5-DBIx-Class-TimeStamp
+
+LOG=		tapper_message_receiver_daemon_reports-receiver_user.log \
+		tapper-debug-reports-receiver_user.log \
+		tapper_mcp_reset_reports-receiver_user.log \
+		tapper_reports_receiver_daemon_reports-receiver_user.log
+
+post-install:
+.for l in ${LOG}
+	touch /var/log/${l}
+        chown mcp-messagereceiver_user:tapper /var/log/${l}
+.endfor
 
 .include <bsd.port.mk>

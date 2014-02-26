@@ -1,3 +1,0 @@
-$ sudo tapper-mcp-messagereceiver-daemon start
-Can't exec "/usr/bin/hypnotoad": No such file or directory at /usr/local/bin/tapper-mcp-messagereceiver-daemon line 16.
-$
