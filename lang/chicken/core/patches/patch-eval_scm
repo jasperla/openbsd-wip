@@ -1,10 +1,7 @@
-Index: eval.scm
-==================================================================
---- eval.scm
-+++ eval.scm
-@@ -1040,12 +1040,11 @@
-   (let ((ext
- 	 (if (and (memq (software-version) '(linux netbsd openbsd freebsd))
+$OpenBSD$
+--- eval.scm.orig	Fri Oct  4 03:44:52 2013
++++ eval.scm	Tue Feb 25 11:32:56 2014
+@@ -1042,8 +1042,7 @@
  		  (not (zero? binary-version))) ; allow "configless" build
  	     (string-append
  	      ##sys#load-library-extension
@@ -14,6 +11,3 @@ Index: eval.scm
  	     ##sys#load-library-extension)))
      (define complete
        (cut ##sys#string-append <> ext))
-     (make-parameter
-      (map complete ##sys#default-dynamic-load-libraries)
-
