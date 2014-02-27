@@ -1,16 +1,16 @@
-# $OpenBSD $
+# $OpenBSD$
 
-COMMENT=	backend functions for CLI and Web	
+COMMENT =	backend functions for CLI and Web
 
-MODULES=	cpan
-DISTNAME=	Tapper-Cmd-4.1.8
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	www
+MODULES =	cpan
+DISTNAME =	Tapper-Cmd-4.1.8
+PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
+CATEGORIES =	www
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 
 # 2-clause BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
 RUN_DEPENDS =	databases/p5-DBI \
 		devel/p5-DateTime \
@@ -35,9 +35,9 @@ RUN_DEPENDS =	databases/p5-DBI \
 		www/p5-Tapper-Schema
 #		www/py-cobbler
 
-BUILD_DEPENDS=  ${RUN_DEPENDS}
+BUILD_DEPENDS =	${RUN_DEPENDS}
 
-TEST_DEPENDS=   databases/p5-DBIx-Class-InflateColumn-Object-Enum \
+TEST_DEPENDS =	databases/p5-DBIx-Class-InflateColumn-Object-Enum \
 		databases/p5-DBIx-Class-TimeStamp \
 		devel/p5-Import-Into \
 		devel/p5-Module-Runtime \
