@@ -1,18 +1,18 @@
-# $OpenBSD $
+# $OpenBSD$
 
-COMMENT=	remote network API for result evaluation
+COMMENT =	remote network API for result evaluation
 
-MODULES=	cpan
-DISTNAME=	Tapper-Reports-API-4.1.2
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	www
+MODULES =	cpan
+DISTNAME =	Tapper-Reports-API-4.1.2
+PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
+CATEGORIES =	www
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 
 # 2-clause BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS=    devel/p5-aliased \
+RUN_DEPENDS = 	devel/p5-aliased \
 		devel/p5-CHI \
 		devel/p5-Data-Serializer \
                 devel/p5-Class-C3 \
@@ -32,6 +32,6 @@ RUN_DEPENDS=    devel/p5-aliased \
 		www/p5-Tapper-Reports-DPath \
                 www/p5-Tapper-Schema
 
-BUILD_DEPENDS=  ${RUN_DEPENDS}
+BUILD_DEPENDS =	${RUN_DEPENDS}
 
 .include <bsd.port.mk>
