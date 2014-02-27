@@ -17,14 +17,13 @@ MASTER_SITES =	https://github.com/tobami/codespeed/archive/
 
 MODULES =	lang/python
 
-BUILD_DEPENDS=  ${RUN_DEPENDS}
+BUILD_DEPENDS =	${RUN_DEPENDS}
 
-RUN_DEPENDS=    devel/py-south \
+RUN_DEPENDS =	devel/py-south \
 		devel/py-isodate \
 		www/py-django
 
 NO_BUILD =	Yes
-#NO_TEST =	Yes
 
 WRKSRC =	${WRKDIR}/${PKGNAME}
 
