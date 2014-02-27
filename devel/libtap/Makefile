@@ -1,4 +1,4 @@
-# $OpenBSD:  $
+# $OpenBSD$
 
 COMMENT =		C library designed to write tests for your software
 DISTNAME =		tap-1.01

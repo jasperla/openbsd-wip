@@ -1,4 +1,4 @@
-# $OpenBSD $
+# $OpenBSD$
 
 COMMENT =		Automated Testing Framework
 DISTNAME =		atf-0.18

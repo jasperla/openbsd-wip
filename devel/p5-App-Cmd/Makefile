@@ -1,18 +1,18 @@
-# $OpenBSD $
+# $OpenBSD$
 
-COMMENT=	set of tools to write CLI programs
+COMMENT =	set of tools to write CLI programs
 
-MODULES=	cpan
-DISTNAME=	App-Cmd-0.322
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	devel
+MODULES =	cpan
+DISTNAME =	App-Cmd-0.322
+PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
+CATEGORIES =	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS=	devel/p5-Class-Load \
+RUN_DEPENDS =	devel/p5-Class-Load \
 		devel/p5-Data-OptList \
 		devel/p5-Getopt-Long \
 		devel/p5-Getopt-Long-Descriptive \
@@ -23,6 +23,6 @@ RUN_DEPENDS=	devel/p5-Class-Load \
 		sysutils/p5-Capture-Tiny \
 		textproc/p5-String-RewritePrefix
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS =	${RUN_DEPENDS}
 
 .include <bsd.port.mk>
