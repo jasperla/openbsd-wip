@@ -1,18 +1,18 @@
-# $OpenBSD $
+# $OpenBSD$
 
-COMMENT=	message receiver for Tapper MCP
+COMMENT =	message receiver for Tapper MCP
 
-MODULES=	cpan
-DISTNAME=	Tapper-MCP-MessageReceiver-4.1.3
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	www
+MODULES =	cpan
+DISTNAME =	Tapper-MCP-MessageReceiver-4.1.3
+PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
+CATEGORIES =	www
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 
 # 2-clause BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS=    devel/p5-Log-Log4perl \
+RUN_DEPENDS =	devel/p5-Log-Log4perl \
 		devel/p5-Module-Find \
 		devel/p5-Test-Fixture-DBIC-Schema \
 		devel/p5-YAML-Syck \
@@ -21,12 +21,12 @@ RUN_DEPENDS=    devel/p5-Log-Log4perl \
 		www/p5-Tapper-Model \
 		www/p5-Tapper-Schema
 
-BUILD_DEPENDS=  ${RUN_DEPENDS}
+BUILD_DEPENDS =	${RUN_DEPENDS}
 
-TEST_DEPENDS=   databases/p5-DBIx-Class-InflateColumn-Object-Enum \
+TEST_DEPENDS =	databases/p5-DBIx-Class-InflateColumn-Object-Enum \
 		databases/p5-DBIx-Class-TimeStamp
 
-LOG=		tapper-debug-mcp-messagereceiver_user.log \
+LOG =		tapper-debug-mcp-messagereceiver_user.log \
 		tapper_mcp_reset_mcp-messagereceiver_user.log \
 		tapper_message_receiver_daemon_mcp-messagereceiver_user.log \
 		tapper_reports_receiver_daemon_mcp-messagereceiver_user.log
