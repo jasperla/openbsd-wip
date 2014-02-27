@@ -1,18 +1,18 @@
 # $OpenBSD $
 
-COMMENT=	tapper-* commandline tools
+COMMENT =	tapper-* commandline tools
 
-MODULES=	cpan
-DISTNAME=	Tapper-CLI-4.1.3
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	www
+MODULES =	cpan
+DISTNAME =	Tapper-CLI-4.1.3
+PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
+CATEGORIES =	www
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 
 # 2-clause BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS=	archivers/p5-Compress-Bzip2 \
+RUN_DEPENDS =	archivers/p5-Compress-Bzip2 \
 		devel/p5-App-Cmd \
 		devel/p5-App-Rad \
 		devel/p5-Class-Load \
@@ -53,9 +53,9 @@ RUN_DEPENDS=	archivers/p5-Compress-Bzip2 \
 		www/p5-Tapper-Schema \
 		www/p5-Tapper-Testplan
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS =	${RUN_DEPENDS}
 
-TEST_DEPENDS=	databases/p5-DBIx-Class-InflateColumn-Object-Enum \
+TEST_DEPENDS =	databases/p5-DBIx-Class-InflateColumn-Object-Enum \
 		databases/p5-DBIx-Class-TimeStamp \
 		devel/p5-strictures \
 		devel/p5-Time-Duration-Parse \
