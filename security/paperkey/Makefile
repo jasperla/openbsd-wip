@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/06/07 20:57:45 Exp $
+# $OpenBSD$
 
 COMMENT=	an OpenPGP key archiver
 
