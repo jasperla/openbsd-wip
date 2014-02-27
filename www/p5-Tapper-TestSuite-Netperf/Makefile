@@ -1,18 +1,18 @@
-# $OpenBSD $
+# $OpenBSD$
 
-COMMENT=	network performance measurements
+COMMENT =	network performance measurements
 
-MODULES=	cpan
-DISTNAME=	Tapper-TestSuite-Netperf-4.1.1
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	www
+MODULES =	cpan
+DISTNAME =	Tapper-TestSuite-Netperf-4.1.1
+PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
+CATEGORIES =	www
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 
 # 2-clause BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS=    benchmarks/netperf \
+RUN_DEPENDS =	benchmarks/netperf \
                 devel/p5-LockFile-Simple \
                 devel/p5-aliased \
                 devel/p5-common-sense \
@@ -23,6 +23,6 @@ RUN_DEPENDS=    benchmarks/netperf \
 		textproc/p5-XML-Simple \
                 www/p5-Tapper-Base
 
-BUILD_DEPENDS=  ${RUN_DEPENDS}
+BUILD_DEPENDS =	${RUN_DEPENDS}
 
 .include <bsd.port.mk>
