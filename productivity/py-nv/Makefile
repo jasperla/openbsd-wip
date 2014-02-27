@@ -1,6 +1,6 @@
-# $OpenBSD $
+# $OpenBSD$
 
-COMMENT =	note-taking tool inspired by Notational Velocity
+COMMENT =		note-taking tool inspired by Notational Velocity
 
 MODPY_EGG_VERSION =     0.9.4
 DISTNAME =              nvpy-${MODPY_EGG_VERSION}
@@ -21,6 +21,6 @@ BUILD_DEPENDS =     	devel/py-pip \
 
 MODPY_SETUPTOOLS =      Yes
 
-NO_TEST =			Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
