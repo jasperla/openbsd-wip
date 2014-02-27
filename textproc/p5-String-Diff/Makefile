@@ -1,23 +1,23 @@
-# $OpenBSD $
+# $OpenBSD$
 
-COMMENT=	simple diff to String
+COMMENT =	simple diff to String
 
-MODULES=	cpan
-DISTNAME=	String-Diff-0.06
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	textproc
+MODULES =	cpan
+DISTNAME =	String-Diff-0.06
+PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
+CATEGORIES =	textproc
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS=	devel/p5-Algorithm-Diff \
+RUN_DEPENDS =	devel/p5-Algorithm-Diff \
 		devel/p5-Test-Base \
 		devel/p5-YAML
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS =	${RUN_DEPENDS}
 
-TEST_DEPENDS=	www/p5-HTML-Parser
+TEST_DEPENDS =	www/p5-HTML-Parser
 
 .include <bsd.port.mk>
