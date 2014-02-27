@@ -1,4 +1,4 @@
-# $OpenBSD:  Exp $
+# $OpenBSD$
 
 COMMENT =		set of tools for testing NFS client or NFS server	
 

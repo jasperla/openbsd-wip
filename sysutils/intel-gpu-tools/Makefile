@@ -12,17 +12,17 @@ MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES= 		http://xorg.freedesktop.org/releases/individual/app/
+MASTER_SITES = 		http://xorg.freedesktop.org/releases/individual/app/
 
-BUILD_DEPENDS=		devel/swig \
+BUILD_DEPENDS =		devel/swig \
 			graphics/cairo \
 			lang/python/3.3,-main \
 			sysutils/pciutils
 
 WANTLIB += 		
 
-CONFIGURE_STYLE=        gnu
-CONFIGURE_ARGS=		--disable-dumper \
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	--disable-dumper \
 			--disable-nouveau \
 			--disable-tests \
 			--disable-selective-werror
