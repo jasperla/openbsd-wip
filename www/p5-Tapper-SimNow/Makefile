@@ -1,18 +1,18 @@
-# $OpenBSD $
+# $OpenBSD$
 
-COMMENT=	support for running SimNow sessions	
+COMMENT =	support for running SimNow sessions
 
-MODULES=	cpan
-DISTNAME=	Tapper-SimNow-4.1.1
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	www
+MODULES =	cpan
+DISTNAME =	Tapper-SimNow-4.1.1
+PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
+CATEGORIES =	www
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 
 # 2-clause BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS=    devel/p5-common-sense \
+RUN_DEPENDS =	devel/p5-common-sense \
 		devel/p5-Daemon-Daemonize \
 		devel/p5-Log-Log4perl \
 		devel/p5-Moose \
@@ -22,6 +22,6 @@ RUN_DEPENDS=    devel/p5-common-sense \
 		www/p5-Tapper-Remote \
 		devel/p5-YAML-Syck
 
-BUILD_DEPENDS=  ${RUN_DEPENDS}
+BUILD_DEPENDS =	${RUN_DEPENDS}
 
 .include <bsd.port.mk>
