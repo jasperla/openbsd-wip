@@ -1,4 +1,4 @@
-# $OpenBSD:  $
+# $OpenBSD$
 
 COMMENT =		command line client for asciinema.org service
 
