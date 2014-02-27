@@ -1,18 +1,18 @@
-# $OpenBSD $
+# $OpenBSD$
 
-COMMENT=	frontend web application based on Catalyst	
+COMMENT =	frontend web application based on Catalyst
 
-MODULES=	cpan
-DISTNAME=	Tapper-Reports-Web-4.1.2
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	www
+MODULES =	cpan
+DISTNAME =	Tapper-Reports-Web-4.1.2
+PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
+CATEGORIES =	www
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 
 # 2-clause BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS= 	databases/p5-Catalyst-Model-DBIC-Schema \
+RUN_DEPENDS = 	databases/p5-Catalyst-Model-DBIC-Schema \
 		devel/catalyst \
 		devel/p5-Data-DPath \
 		devel/p5-DateTime \
@@ -56,9 +56,9 @@ RUN_DEPENDS= 	databases/p5-Catalyst-Model-DBIC-Schema \
 		www/p5-Tapper-Testplan \
 		www/p5-XML-Feed
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS =	${RUN_DEPENDS}
 
-TEST_DEPENDS=	devel/p5-Test-WWW-Mechanize-Catalyst \
+TEST_DEPENDS =	devel/p5-Test-WWW-Mechanize-Catalyst \
 		www/p5-Catalyst-Plugin-Session-State-Cookie \
 		www/p5-Catalyst-Plugin-Session-Store-File \
 
