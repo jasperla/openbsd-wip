@@ -1,20 +1,20 @@
-# $OpenBSD $
+# $OpenBSD$
 
-COMMENT=	modules that serialize data structures	
+COMMENT =	modules that serialize data structures	
 
-MODULES=	cpan
-DISTNAME=	Data-Serializer-0.60
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	devel
+MODULES =	cpan
+DISTNAME =	Data-Serializer-0.60
+PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
+CATEGORIES =	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-FAKE_FLAGS=     PREFIX=""
+FAKE_FLAGS =	PREFIX=""
 
-RUN_DEPENDS=	devel/p5-Bencode \
+RUN_DEPENDS =	devel/p5-Bencode \
 		devel/p5-Compress-PPMd \
 		devel/p5-Config-General \
 		devel/p5-Convert-Bencode \
@@ -29,6 +29,6 @@ RUN_DEPENDS=	devel/p5-Bencode \
 		textproc/p5-XML-Simple \
 		www/p5-PHP-Serialization
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS =	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

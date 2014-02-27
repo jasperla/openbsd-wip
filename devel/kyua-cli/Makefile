@@ -1,4 +1,4 @@
-# $OpenBSD $
+# $OpenBSD$
 
 COMMENT =		testing framework
 DISTNAME =		kyua-cli-0.8

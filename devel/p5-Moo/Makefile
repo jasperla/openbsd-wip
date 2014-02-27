@@ -1,25 +1,25 @@
-# $OpenBSD $
+# $OpenBSD$
 
-COMMENT=	minimalist object orientation (with Moose compatibility)	
+COMMENT =	minimalist object orientation (with Moose compatibility)
 
-MODULES=	cpan
-DISTNAME=	Moo-1.004002
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	devel
+MODULES =	cpan
+DISTNAME =	Moo-1.004002
+PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
+CATEGORIES =	devel
 
-CPAN_AUTHOR=    HAARG
+CPAN_AUTHOR =	HAARG
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS=	devel/p5-Class-Method-Modifiers \
+RUN_DEPENDS =	devel/p5-Class-Method-Modifiers \
 		devel/p5-Devel-GlobalDestruction \
 		devel/p5-Role-Tiny \
 		devel/p5-strictures \
 		devel/p5-Import-Into
 
-BUILD_DEPENDS=  ${RUN_DEPENDS}
+BUILD_DEPENDS =	${RUN_DEPENDS}
 
 .include <bsd.port.mk>
