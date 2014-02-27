@@ -1,18 +1,18 @@
-# $OpenBSD $
+# $OpenBSD$
 
-COMMENT=	easiest start without hassle
+COMMENT =	easiest start without hassle
 
-MODULES=	cpan
-DISTNAME=	Task-Tapper-Hello-World-0.002
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	www
+MODULES =	cpan
+DISTNAME =	Task-Tapper-Hello-World-0.002
+PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
+CATEGORIES =	www
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 
 # 2-clause BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS=    databases/p5-DBD-SQLite \
+RUN_DEPENDS =	databases/p5-DBD-SQLite \
 		databases/p5-DBI \
 		devel/p5-File-Copy-Recursive \
 		devel/p5-File-Slurp \
@@ -30,6 +30,6 @@ RUN_DEPENDS=    databases/p5-DBD-SQLite \
 		www/p5-Tapper-TestSuite-Benchmark-Perl-Formance \
 		www/p5-Tapper-TestSuite-HWTrack
 
-BUILD_DEPENDS=  ${RUN_DEPENDS}
+BUILD_DEPENDS =	${RUN_DEPENDS}
 
 .include <bsd.port.mk>
