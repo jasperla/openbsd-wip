@@ -5,10 +5,10 @@ COMMENT =	lightweight C++ template library for linear algebra
 CATEGORIES =	math devel
 HOMEPAGE =	http://eigen.tuxfamily.org/
 DIST_SUBDIR =	eigen
-VERSION =	3.2.0
+VERSION =	3.2.1
 DISTNAME =	${VERSION}
 PKGNAME =	eigen3-${VERSION}
-WRKDIST =	${WRKDIR}/eigen-eigen-ffa86ffb5570
+WRKDIST =	${WRKDIR}/eigen-eigen-6b38706d90a9
 
 # Mostly MPLv2, also LGPLv2.1, LGPLv2.1+ and BSDL
 PERMIT_PACKAGE_CDROM =	Yes
