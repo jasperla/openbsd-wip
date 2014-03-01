@@ -1,7 +1,8 @@
 # $OpenBSD$
 
 COMMENT =		an OpenGL test suite
-DISTNAME =		piglit-v1
+DISTNAME =		piglit-master
+PKGNAME =		piglit-0.1
 
 CATEGORIES =		devel graphics
 HOMEPAGE =		http://people.freedesktop.org/~nh/piglit/
@@ -14,9 +15,14 @@ MASTER_SITES =		http://cgit.freedesktop.org/piglit/snapshot/
 
 #WANTLIB += c m stdc++
 
-LIB_DEPENDS =		graphics/freeglut \
-			graphics/png
+MODULES =               devel/cmake
 
-CONFIGURE_STYLE = cmake
+BUILD_DEPENDS =		www/py-mako
+
+LIB_DEPENDS =		graphics/freeglut \
+			graphics/png \
+			graphics/tiff
+
+#CONFIGURE_STYLE = 	cmake
 
 .include <bsd.port.mk>
