@@ -1,4 +1,4 @@
-# $OpenBSD:  $
+# $OpenBSD$
 
 COMMENT =		fully automated tests
 

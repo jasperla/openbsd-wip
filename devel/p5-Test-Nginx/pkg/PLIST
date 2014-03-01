@@ -1,5 +1,4 @@
 @comment $OpenBSD$
-${P5SITE}/Test/
 ${P5SITE}/Test/Nginx/
 ${P5SITE}/Test/Nginx.pm
 ${P5SITE}/Test/Nginx/LWP.pm
