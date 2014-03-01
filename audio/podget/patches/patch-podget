@@ -1,9 +1,0 @@
-$OpenBSD$
---- podget.orig	Sun Feb  9 22:58:34 2014
-+++ podget	Sun Feb  9 22:58:45 2014
-@@ -1,4 +1,4 @@
--#!/usr/bin/env bash
-+#!/usr/local/bin/bash
- # ----------------------------------------------------------------------------------------------------------------------------------
- # Filename:      podget                                                                                                          {{{
- # Maintainer:    Dave Vehrs <davevehrs(at)users.sourceforge.net>
