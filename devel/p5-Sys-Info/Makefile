@@ -1,16 +1,16 @@
-# $OpenBSD $
+# $OpenBSD$
 
-COMMENT=	fetch information from the host system	
+COMMENT =	fetch information from the host system
 
-MODULES=	cpan
-DISTNAME=	Sys-Info-0.78
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	devel
+MODULES =	cpan
+DISTNAME =	Sys-Info-0.78
+PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
+CATEGORIES =	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
 BUILD_DEPENDS = ${RUN_DEPENDS}
 

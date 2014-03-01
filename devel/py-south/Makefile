@@ -1,4 +1,4 @@
-# $OpenBSD:  $
+# $OpenBSD$
 
 COMMENT =		schema and data migrations for Django projects
 
@@ -19,8 +19,6 @@ MASTER_SITES=           ${MASTER_SITE_PYPI:=S/South/}
 MODULES =		lang/python
 
 NO_BUILD =		Yes
-NO_TEST =		Yes
-
-#WRKSRC =		${WRKDIR}/${PKGNAME}-master/
+#NO_TEST =		Yes
 
 .include <bsd.port.mk>

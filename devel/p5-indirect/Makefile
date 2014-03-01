@@ -1,6 +1,6 @@
-# $OpenBSD $
+# $OpenBSD$
 
-COMMENT=	
+COMMENT=	lexically warn about using the indirect method call syntax
 
 MODULES=	cpan
 DISTNAME=	indirect-0.31
