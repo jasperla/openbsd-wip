@@ -1,0 +1,7 @@
+@comment $OpenBSD$
+${P5SITE}/Net/
+${P5SITE}/Net/Heroku/
+${P5SITE}/Net/Heroku.pm
+${P5SITE}/Net/Heroku/UserAgent.pm
+@man man/man3p/Net::Heroku.3p
+@man man/man3p/Net::Heroku::UserAgent.3p
