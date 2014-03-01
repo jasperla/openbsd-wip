@@ -1,9 +1,0 @@
-@comment $OpenBSD$
-bin/podget
-@man man/man7/podget.7
-share/doc/podget/
-share/doc/podget/COPYING
-share/doc/podget/Changelog
-share/doc/podget/INSTALL
-share/doc/podget/README
-share/doc/podget/scripts/
