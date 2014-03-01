@@ -1,4 +1,4 @@
 @comment $OpenBSD$
 lib/libhiz-util.so
-lib/lib${FULLPKGNAME}util.so
-lib/lib${FULLPKGNAME}util_gl.so
+lib/libpiglitutil.so
+lib/libpiglitutil_gl.so
