@@ -1,0 +1,37 @@
+$OpenBSD$
+--- src/Lib/terragear/tg_misc.cxx.orig	Fri Feb 28 17:17:12 2014
++++ src/Lib/terragear/tg_misc.cxx	Fri Feb 28 17:19:52 2014
+@@ -102,7 +102,7 @@ double Dist_ToClipper( double dist )
+     return ( (dist / CLIPPER_METERS_PER_DEGREE) * CLIPPER_FIXEDPT );
+ }
+ 
+-#ifdef _MSC_VER
++#if defined(_MSC_VER) || defined(__OpenBSD__)
+ #   define LONG_LONG_MAX LLONG_MAX
+ #   define LONG_LONG_MIN LLONG_MIN
+ #endif
+@@ -174,7 +174,7 @@ SGGeod OffsetPointMiddle( const SGGeod& gPrev, const S
+     cp    = cross( dirCur, dirNext );
+     theta = SGMiscd::rad2deg(CalculateTheta( dirCur, dirNext ) );
+ 
+-    if ( (abs(theta - 180.0) < 0.1) || (abs(theta) < 0.1) || (isnan(theta)) ) {
++    if ( (abs(theta - 180.0) < 0.1) || (abs(theta) < 0.1) || (std::isnan(theta)) ) {
+         // straight line blows up math - offset 90 degree and dist is as given
+         courseOffset = SGMiscd::normalizePeriodic(0, 360, courseNext-90.0);
+         distOffset   = offset_by;
+@@ -275,7 +275,7 @@ void OffsetPointsMiddle( const SGGeod& gPrev, const SG
+     cp    = cross( dirCur, dirNext );
+     theta = SGMiscd::rad2deg(CalculateTheta( dirCur, dirNext ) );
+ 
+-    if ( (abs(theta - 180.0) < 0.1) || (abs(theta) < 0.1) || (isnan(theta)) ) {
++    if ( (abs(theta - 180.0) < 0.1) || (abs(theta) < 0.1) || (std::isnan(theta)) ) {
+         // straight line blows up math - offset 90 degree and dist is as given
+         courseOffset = SGMiscd::normalizePeriodic(0, 360, courseNext-90.0);
+         distOffsetInner  = offset_by+width/2.0f;
+@@ -377,4 +377,4 @@ bool intersection(const SGGeod &p0, const SGGeod &p1, 
+         // handle the no intersection case.
+         return false;
+     }
+-}
+\ No newline at end of file
++}
