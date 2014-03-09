@@ -4,6 +4,7 @@ SHARED_ONLY=	Yes
 
 COMMENT=	jabber client written in pygtk
 DISTNAME=	gajim-0.16-beta2
+REVISION= 	0
 CATEGORIES=	net x11
 
 MASTER_SITES=	${HOMEPAGE}/downloads/0.16/
