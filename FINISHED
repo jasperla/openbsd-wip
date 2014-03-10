@@ -33,11 +33,11 @@ net/p5-Net-SCP		sent to ports 2014-01-24
 net/p5-Net-SSH		sent to ports 2014-01-24
 productivity/py-nv	send to ports 2013-10-21
 net/unison/stable	ready for import.
-sysutils/atf		sent to ports 2013-11-27
+devel/atf		sent to ports 2013-11-27
 sysutils/fsx		sent to ports 2013-12-09
 sysutils/glean		sent to ports 2013-12-09
-sysutils/kyua-cli	sent to ports 2013-11-27
-sysutils/kyua-testers 	sent to ports 2013-11-27
+devel/kyua-cli		sent to ports 2013-11-27
+devel/kyua-testers 	sent to ports 2013-11-27
 security/paperkey  	sent to ports 2011-06-07 and 2011-01-09
 sysutils/postmark	sent to ports 2013-12-09
 sysutils/py-anita	Ready for import. Sent to ports@ 2012-11-05.
@@ -48,3 +48,8 @@ www/p5-HTTP-Server-Simple-PSGI:	ready for import, has been sent to ports@ some t
 sysutils/entr		ready for import 2013-12-16
 x11/herbstluftwm	ready for import (bcallah@)
 audio/paulstretch	ready for import (bcallah@)
+security/p5-Digest-JHash ready for import 2014-03-07
+textproc/p5-String-Escape ready for import 2014-03-07
+textproc/p5-String-Util ready for import 2014-03-07
+net/p5-Net-SCP  	ready for import 2014-03-07
+net/p5-Net-SSH  	ready for import 2014-03-07
