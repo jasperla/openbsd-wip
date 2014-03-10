@@ -16,7 +16,7 @@ MASTER_SITES =		http://cgit.freedesktop.org/mesa/demos/snapshot/
 
 MODULES =		devel/cmake
 
-WANTLIB += 		c m stdc++
+#WANTLIB += 		c m stdc++
 
 LIB_DEPENDS =		graphics/glew
 
