@@ -1,0 +1,18 @@
+@comment $OpenBSD$
+@bin bin/demchop
+@bin bin/fillvoids
+@bin bin/gdalchop
+@bin bin/genapts850
+@bin bin/hgtchop
+@bin bin/ogr-decode
+@bin bin/poly2ogr
+@bin bin/srtmchop
+@bin bin/terrafit
+@bin bin/test_array
+@bin bin/testassem
+@bin bin/tg-construct
+@bin bin/tg-construct-client
+@bin bin/tg-construct-server
+share/TerraGear/
+share/TerraGear/default_priorities.txt
+share/TerraGear/usgsmap.txt
