@@ -29,8 +29,6 @@ multimedia/video4fuze	sent to ports 2013-01-13
 net/bitcoin		sent to ports 2013-03-19, and again 2013-06-29
 net/py-boto:		ready for import, sent to maintainer 2012-04-23 (tamentis)
 net/tkabber		ready for import, sent to ports 2013-01-30
-net/p5-Net-SCP		sent to ports 2014-01-24
-net/p5-Net-SSH		sent to ports 2014-01-24
 productivity/py-nv	send to ports 2013-10-21
 net/unison/stable	ready for import.
 devel/atf		sent to ports 2013-11-27
@@ -48,8 +46,23 @@ www/p5-HTTP-Server-Simple-PSGI:	ready for import, has been sent to ports@ some t
 sysutils/entr		ready for import 2013-12-16
 x11/herbstluftwm	ready for import (bcallah@)
 audio/paulstretch	ready for import (bcallah@)
-security/p5-Digest-JHash ready for import 2014-03-07
-textproc/p5-String-Escape ready for import 2014-03-07
-textproc/p5-String-Util ready for import 2014-03-07
-net/p5-Net-SCP  	ready for import 2014-03-07
-net/p5-Net-SSH  	ready for import 2014-03-07
+security/p5-Digest-JHash ready for import, sent to ports@ 2014-03-07
+textproc/p5-String-Escape ready for import, sent to ports@ 2014-03-07
+textproc/p5-String-Util ready for import, sent to ports@ 2014-03-07
+net/p5-Net-SCP  	ready for import, sent to ports@ 2014-03-07
+net/p5-Net-SSH  	ready for import, sent to ports@ 2014-03-07
+textproc/p5-Text-CSV-Slurp ready for import, sent to ports@ 2014-03-10
+textproc/p5-String-Diff	ready for import, sent to ports@ 2014-03-10
+devel/p5-Math-BigInt-Pari ready for import, sent to ports@ 2014-03-10
+devel/p5-App-Daemon	ready for import, sent to ports@ 2014-03-10
+devel/p5-Sysadm-Install ready for import, sent to ports@ 2014-03-10
+security/p5-AAAA-Crypt-DH	ready for import, sent to ports@ 2014-03-10
+devel/p5-Bencode 	ready for import, sent to ports@ 2014-03-11
+devel/p5-Convert-Bencode ready for import, sent to ports@ 2014-03-11
+devel/p5-Convert-Bencode_XS ready for import, sent to ports@ 2014-03-11
+devel/p5-indirect	ready for import, sent to ports@ 2014-03-11
+devel/p5-Role-Tiny	ready for import, sent to ports@ 2014-03-11
+devel/p5-strictures	ready for import, sent to ports@ 2014-03-11
+devel/p5-Import-Into	ready for import, sent to ports@ 2014-03-11
+devel/p5-Daemon-Daemonize	ready for import, sent to ports@ 2014-03-11
+devel/p5-Data-DPath	ready for import, sent to ports@ 2014-03-11
