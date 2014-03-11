@@ -4,7 +4,6 @@ COMMENT =	receiver for Tapper test reports as TAP or TAP::Archive
 
 MODULES =	cpan
 DISTNAME =	Tapper-Reports-Receiver-4.1.3
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	www
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

@@ -4,7 +4,6 @@ COMMENT =	convert CSV into an array of hashes or vice versa
 
 MODULES =	cpan
 DISTNAME =	Text-CSV-Slurp-1.01
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	textproc
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

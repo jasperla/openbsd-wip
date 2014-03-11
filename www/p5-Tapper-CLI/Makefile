@@ -4,7 +4,6 @@ COMMENT =	tapper-* commandline tools
 
 MODULES =	cpan
 DISTNAME =	Tapper-CLI-4.1.3
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	www
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

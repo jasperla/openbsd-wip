@@ -4,7 +4,6 @@ COMMENT =	support for running SimNow sessions
 
 MODULES =	cpan
 DISTNAME =	Tapper-SimNow-4.1.1
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	www
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

@@ -4,7 +4,6 @@ COMMENT =	allows a DBIx::Class user to define a Object::Enum column
 
 MODULES =	cpan
 DISTNAME =	DBIx-Class-InflateColumn-Object-Enum-0.04
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	databases
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

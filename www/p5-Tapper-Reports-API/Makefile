@@ -4,7 +4,6 @@ COMMENT =	remote network API for result evaluation
 
 MODULES =	cpan
 DISTNAME =	Tapper-Reports-API-4.1.2
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	www
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

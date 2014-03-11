@@ -4,7 +4,6 @@ COMMENT =	network performance measurements
 
 MODULES =	cpan
 DISTNAME =	Tapper-TestSuite-Netperf-4.1.1
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	www
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

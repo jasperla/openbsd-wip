@@ -4,7 +4,6 @@ COMMENT =	daemon and plugins to handle MCP actions
 
 MODULES =	cpan
 DISTNAME =	Tapper-Action-4.1.1
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	www
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

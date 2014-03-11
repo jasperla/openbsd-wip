@@ -4,7 +4,6 @@ COMMENT =	HTML::Mason rendering for Catalyst
 
 MODULES =	cpan
 DISTNAME =	Catalyst-View-HTML-Mason-0.18
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	www
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

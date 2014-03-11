@@ -4,7 +4,6 @@ COMMENT =	alternative 'prove' which reports results to Tapper
 
 MODULES =	cpan
 DISTNAME =	App-Tapper-prove-0.002
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	www
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

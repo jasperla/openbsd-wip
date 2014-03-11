@@ -4,7 +4,6 @@ COMMENT =	Perl extension for secure copy protocol
 
 MODULES =	cpan
 DISTNAME =	Net-SCP-0.08
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	net
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
