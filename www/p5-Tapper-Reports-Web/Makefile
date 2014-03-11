@@ -4,7 +4,6 @@ COMMENT =	frontend web application based on Catalyst
 
 MODULES =	cpan
 DISTNAME =	Tapper-Reports-Web-4.1.2
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	www
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

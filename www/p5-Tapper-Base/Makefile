@@ -4,7 +4,6 @@ COMMENT =	common functions for all Tapper classes
 
 MODULES =	cpan
 DISTNAME =	Tapper-Base-4.1.4
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	www
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

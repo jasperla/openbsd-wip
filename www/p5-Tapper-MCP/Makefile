@@ -4,7 +4,6 @@ COMMENT =	central master control program of Tapper automation
 
 MODULES =	cpan
 DISTNAME =	Tapper-MCP-4.1.2
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	www
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

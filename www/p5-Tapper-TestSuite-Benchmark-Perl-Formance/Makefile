@@ -4,7 +4,6 @@ COMMENT=	wrapper for Benchmark::Perl::Formance
 
 MODULES=	cpan
 DISTNAME=	Tapper-TestSuite-Benchmark-Perl-Formance-4.1.1
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES=	www
 
 # 2-clause BSD

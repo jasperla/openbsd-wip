@@ -4,7 +4,6 @@ COMMENT =	program run control for test program automation
 
 MODULES =	cpan
 DISTNAME =	Tapper-PRC-4.1.2
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	www
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

@@ -4,7 +4,6 @@ COMMENT =	simple diff to String
 
 MODULES =	cpan
 DISTNAME =	String-Diff-0.06
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	textproc
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
