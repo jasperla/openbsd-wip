@@ -4,7 +4,6 @@ COMMENT =	minimalist object orientation (with Moose compatibility)
 
 MODULES =	cpan
 DISTNAME =	Moo-1.004002
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	devel
 
 CPAN_AUTHOR =	HAARG

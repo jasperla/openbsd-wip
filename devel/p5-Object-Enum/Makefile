@@ -4,7 +4,6 @@ COMMENT =	replacement for if ($foo eq 'bar')
 
 MODULES =	cpan
 DISTNAME =	Object-Enum-0.072
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

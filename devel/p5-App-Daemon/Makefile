@@ -4,7 +4,6 @@ COMMENT =	start an application as a daemon
 
 MODULES =	cpan
 DISTNAME =	App-Daemon-0.20
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

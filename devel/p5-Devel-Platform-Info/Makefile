@@ -4,7 +4,6 @@ COMMENT =	unified framework for obtaining common platform metadata
 
 MODULES =	cpan
 DISTNAME =	Devel-Platform-Info-0.10
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	devel
 
 CPAN_AUTHOR =	BARBIE

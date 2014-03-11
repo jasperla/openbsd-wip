@@ -4,7 +4,6 @@ COMMENT =	parses Date::Parse compatible formats
 
 MODULES =	cpan
 DISTNAME =	DateTime-Format-DateParse-0.05
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

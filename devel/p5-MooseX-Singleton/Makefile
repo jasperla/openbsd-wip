@@ -4,7 +4,6 @@ COMMENT =	turn your Moose class into a singleton
 
 MODULES =	cpan
 DISTNAME =	MooseX-Singleton-0.29
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

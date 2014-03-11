@@ -4,7 +4,6 @@ COMMENT =	centralized test suite for Sys::Info
 
 MODULES =	cpan
 DISTNAME =	Test-Sys-Info-0.20
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

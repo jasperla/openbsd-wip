@@ -4,7 +4,6 @@ COMMENT =	testing modules for Nginx C module development
 
 MODULES =	cpan
 DISTNAME =	Test-Nginx-0.22
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	devel www
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

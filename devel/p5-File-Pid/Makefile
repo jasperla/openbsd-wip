@@ -4,7 +4,6 @@ COMMENT =	Pid File Manipulation
 
 MODULES =	cpan
 DISTNAME =	File-Pid-1.01
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

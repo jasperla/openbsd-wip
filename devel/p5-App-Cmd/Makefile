@@ -4,7 +4,6 @@ COMMENT =	set of tools to write CLI programs
 
 MODULES =	cpan
 DISTNAME =	App-Cmd-0.322
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

@@ -4,7 +4,6 @@ COMMENT =	parse string that represents time duration
 
 MODULES =	cpan
 DISTNAME =	Time-Duration-Parse-0.06
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

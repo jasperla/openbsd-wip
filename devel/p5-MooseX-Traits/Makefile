@@ -4,7 +4,6 @@ COMMENT =	automatically apply roles at object creation time
 
 MODULES =	cpan
 DISTNAME =	MooseX-Traits-0.12
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

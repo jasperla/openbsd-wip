@@ -4,7 +4,6 @@ COMMENT =	collection of handy debugging routines
 
 MODULES =	cpan
 DISTNAME =	Debug-ShowStuff-1.16
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

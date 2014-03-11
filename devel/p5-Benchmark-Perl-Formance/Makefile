@@ -4,7 +4,6 @@ COMMENT =	PerlFormance - Benchmark Suite
 
 MODULES =	cpan
 DISTNAME =	Benchmark-Perl-Formance-0.33
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

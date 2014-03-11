@@ -4,7 +4,6 @@ COMMENT=	lexically warn about using the indirect method call syntax
 
 MODULES=	cpan
 DISTNAME=	indirect-0.31
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES=	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

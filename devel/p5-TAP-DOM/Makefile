@@ -4,7 +4,6 @@ COMMENT =	TAP as document data structure
 
 MODULES =	cpan
 DISTNAME =	TAP-DOM-0.10
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
