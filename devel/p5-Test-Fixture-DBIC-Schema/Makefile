@@ -4,7 +4,6 @@ COMMENT =	load fixture data to storage
 
 MODULES =	cpan
 DISTNAME =	Test-Fixture-DBIC-Schema-0.04
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

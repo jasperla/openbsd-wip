@@ -4,7 +4,6 @@ COMMENT =	turn on strict and make all warnings fatal
 
 MODULES =	cpan
 DISTNAME =	strictures-1.000000
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

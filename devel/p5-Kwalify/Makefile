@@ -4,7 +4,6 @@ COMMENT =	kwalify schema for data structures
 
 MODULES =	cpan
 DISTNAME =	Kwalify-1.22
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	devel
 
 CPAN_AUTHOR =    SREZIC

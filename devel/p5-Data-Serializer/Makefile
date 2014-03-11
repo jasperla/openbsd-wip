@@ -4,7 +4,6 @@ COMMENT =	modules that serialize data structures
 
 MODULES =	cpan
 DISTNAME =	Data-Serializer-0.60
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

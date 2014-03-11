@@ -4,7 +4,6 @@ COMMENT =	easy mocking of LWP packages
 
 MODULES =	cpan
 DISTNAME =	Test-Mock-LWP-0.08
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

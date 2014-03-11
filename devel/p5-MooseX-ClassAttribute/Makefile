@@ -4,7 +4,6 @@ COMMENT =	declare class attributes Moose-style
 
 MODULES =	cpan
 DISTNAME =	MooseX-ClassAttribute-0.27
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
