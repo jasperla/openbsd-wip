@@ -1,6 +1,6 @@
 $OpenBSD$
---- Makefile.fpc.orig	Sun Jun 24 21:22:41 2012
-+++ Makefile.fpc	Wed Mar 13 23:48:39 2013
+--- Makefile.fpc.orig	Mon Aug  5 11:19:38 2013
++++ Makefile.fpc	Tue Mar 11 11:19:06 2014
 @@ -29,7 +29,7 @@ destdir=$(BASEDIR)/dist
  RCPP?=$(strip $(firstword cpp$(SRCEXEEXT)))
  #
@@ -10,7 +10,7 @@ $OpenBSD$
  ifneq ($(findstring $(OS_TARGET),win32 win64),)
  LAZARUS_INSTALL_DIR=C:\lazarus
  endif
-@@ -262,9 +262,9 @@ else
+@@ -261,9 +261,9 @@ else
  	ln -sf $(LAZARUS_INSTALL_DIR)/lazarus $(INSTALL_PREFIX)/bin/lazarus-ide
  	ln -sf $(LAZARUS_INSTALL_DIR)/startlazarus $(INSTALL_PREFIX)/bin/startlazarus
  	ln -sf $(LAZARUS_INSTALL_DIR)/lazbuild $(INSTALL_PREFIX)/bin/lazbuild
