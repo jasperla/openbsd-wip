@@ -14,6 +14,4 @@ PERMIT_PACKAGE_CDROM =	Yes
 RUN_DEPENDS =	net/p5-Net-SSH \
 		textproc/p5-String-ShellQuote	
 
-BUILD_DEPENDS =	devel/p5-ExtUtils-MakeMaker
-
 .include <bsd.port.mk>
