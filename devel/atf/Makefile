@@ -11,7 +11,7 @@ HOMEPAGE =		https://github.com/jmmv/atf
 
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
-# 2- and 3-clause BSD
+# BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=		c m stdc++
