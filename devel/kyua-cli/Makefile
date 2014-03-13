@@ -8,7 +8,7 @@ HOMEPAGE =		https://github.com/jmmv/kyua
 
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
-# 3-clause BSD
+# BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += atf-c atf-c++ c ${MODLUA_WANTLIB} lutok m sqlite3 stdc++

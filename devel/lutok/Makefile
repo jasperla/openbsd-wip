@@ -9,7 +9,7 @@ HOMEPAGE =		https://github.com/jmmv/lutok/
 
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
-# 3-clause BSD
+# BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += atf-c atf-c++ c ${MODLUA_WANTLIB} m stdc++
