@@ -21,10 +21,9 @@ The Kickstart ROMs are copyrighted. You should obtain them legally.
 Launcher
 ========
 
-The majority of emulator configuration, including the import of
-Kickstarts, can now be done via the launcher.  To run the launcher:
-
- $ fs-uae-launcher
+The majority of emulator configuration, including the import of Kickstarts,
+can now be done via the launcher. This is now an external package
+(emulators/fs-uae-launcher).
 
 Joysticks
 =========
