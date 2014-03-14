@@ -1,6 +1,7 @@
 @comment $OpenBSD$
 bin/fs-uae-launcher
-lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher-2.4.0-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/
+lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/CDManager.py
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/CDManager.pyc
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/Config.py
@@ -47,8 +48,10 @@ lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/Warnings.py
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/Warnings.pyc
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/__init__.py
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/builtin_configs/
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/builtin_configs/__init__.py
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/builtin_configs/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/editor/
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/editor/EditorGroup.py
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/editor/EditorGroup.pyc
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/editor/GameListView.py
@@ -61,6 +64,7 @@ lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/editor/__init__.py
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/editor/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/fs.py
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/fs.pyc
+lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/netplay/
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/netplay/Channel.py
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/netplay/Channel.pyc
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/netplay/CommandHandler.py
@@ -79,6 +83,7 @@ lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/netplay/Player.py
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/netplay/Player.pyc
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/netplay/__init__.py
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/netplay/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/netplay/oyoyo/
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/netplay/oyoyo/__init__.py
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/netplay/oyoyo/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/netplay/oyoyo/client.py
@@ -93,6 +98,7 @@ lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/netplay/oyoyo/ircevents
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/netplay/oyoyo/ircevents.pyc
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/netplay/oyoyo/parse.py
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/netplay/oyoyo/parse.pyc
+lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/res/
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/res/128/
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/res/128/fs-uae-launcher.png
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/res/16/
@@ -260,6 +266,7 @@ lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/res/user_menu.png
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/res/warning_32.png
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/res/wikipedia_url_16.png
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/res/windowed_16.png
+lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/server/
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/server/Server.py
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/server/Server.pyc
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/server/ServerWindow.py
@@ -268,6 +275,7 @@ lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/server/__init__.py
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/server/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/server/game.py
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/server/game.pyc
+lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/ui/
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/ui/AboutDialog.py
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/ui/AboutDialog.pyc
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/ui/Book.py
@@ -365,6 +373,7 @@ lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/ui/bottombar/WebButton.
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/ui/bottombar/WebButton.pyc
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/ui/bottombar/__init__.py
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/ui/bottombar/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/ui/config/
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/ui/config/ConfigCheckBox.py
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/ui/config/ConfigCheckBox.pyc
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/ui/config/ConfigDialog.py
@@ -393,6 +402,7 @@ lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/ui/config/__init__.py
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/ui/config/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/ui/download.py
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/ui/download.pyc
+lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/ui/imports/
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/ui/imports/ImportDialog.py
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/ui/imports/ImportDialog.pyc
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/ui/imports/ImportGroup.py
@@ -401,6 +411,7 @@ lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/ui/imports/ImportTask.p
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/ui/imports/ImportTask.pyc
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/ui/imports/__init__.py
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/ui/imports/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/ui/settings/
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/ui/settings/AudioSettingsPage.py
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/ui/settings/AudioSettingsPage.pyc
 lib/python${MODPY_VERSION}/site-packages/fs_uae_launcher/ui/settings/CustomSettingsPage.py
