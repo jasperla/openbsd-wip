@@ -71,7 +71,6 @@ post-install:
 # When updating, uncomment these to see if they still fail.
 pre-test:
 	rm -f ${WRKBUILD}/src/Tests/core/test_resource_error.pl
-	rm -f ${WRKBUILD}/src/Tests/core/test_locale.pl
 
 .include <bsd.port.mk>
 
