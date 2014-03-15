@@ -16,7 +16,8 @@ MASTER_SITES =		http://fs-uae.net/fs-uae/stable/${MODPY_EGG_VERSION}/
 MODULES =		lang/python
 RUN_DEPENDS =		emulators/fs-uae \
 			x11/py-wxPython \
-			devel/pygame
+			devel/pygame \
+			x11/py-qt4
 
 NO_TEST =		Yes
 
