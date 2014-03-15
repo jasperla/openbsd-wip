@@ -4,8 +4,8 @@ Turn on verbose reporting.
 
 GMP test appears to use >64MB of stack!?
 
---- src/test.pl.orig	Thu Dec  5 10:59:04 2013
-+++ src/test.pl	Thu Dec  5 11:07:49 2013
+--- src/test.pl.orig	Tue Mar  4 10:37:29 2014
++++ src/test.pl	Sat Mar 15 11:37:08 2014
 @@ -23,6 +23,7 @@
  
  %:- set_prolog_flag(optimise, true).
@@ -14,7 +14,7 @@ GMP test appears to use >64MB of stack!?
  :- asserta(user:file_search_path(library, '../packages/plunit')).
  :- [library(plunit)].
  :- set_test_options([load(always), silent(true), sto(true), cleanup(true)]).
-@@ -587,10 +588,10 @@ gmp(shift-1) :-
+@@ -588,10 +589,10 @@ gmp(shift-1) :-
  gmp(shift-2) :-
  	A is 1<<55, B is A<<8,
  	B =:= 9223372036854775808.
