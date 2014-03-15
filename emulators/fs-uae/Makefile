@@ -31,7 +31,8 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 
 USE_GMAKE =		Yes
 
-MAKE_FLAGS +=		prefix=${PREFIX} CXXFLAGS="${CXXFLAGS}" CFLAGS="${CFLAGS}"
+MAKE_FLAGS +=		prefix=${PREFIX} CXXFLAGS="${CXXFLAGS}"
+MAKE_FLAGS +=		CFLAGS="${CFLAGS}" CXX="${CXX}"
 
 NO_TEST =		Yes
 
