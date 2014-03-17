@@ -6,7 +6,7 @@ BROKEN-sparc64 =	infinite loop or aborts during build
 
 COMMENT =		Prolog for the real world
 
-V =			6.6.1
+V =			6.6.2
 DISTNAME =		pl-$V
 PKGNAME =		swi-prolog-$V
 CATEGORIES =		lang
@@ -71,7 +71,6 @@ post-install:
 # When updating, uncomment these to see if they still fail.
 pre-test:
 	rm -f ${WRKBUILD}/src/Tests/core/test_resource_error.pl
-	rm -f ${WRKBUILD}/src/Tests/core/test_locale.pl
 
 .include <bsd.port.mk>
 

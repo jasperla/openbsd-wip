@@ -1,24 +1,19 @@
 @comment $OpenBSD: PLIST,v 1.12 2013/07/10 09:10:44 edd Exp $
 %%SHARED%%
-@bin bin/xpce-client
-@bin lib/swipl-${V}/bin/${FULLARCH}/swipl
-@bin lib/swipl-${V}/bin/${FULLARCH}/swipl-ld
-@bin lib/swipl-${V}/bin/${FULLARCH}/swipl-rc
-@man man/man1/swipl-ld.1
-@man man/man1/swipl-rc.1
-@man man/man1/swipl.1
-@man man/man1/xpce-client.1
 bin/swipl
 bin/swipl-ld
 bin/swipl-rc
+@bin bin/xpce-client
 lib/pkgconfig/
 lib/pkgconfig/swipl.pc
 lib/swipl-${V}/
-lib/swipl-${V}/${BOOT}.prc
 lib/swipl-${V}/Makefile
 lib/swipl-${V}/bin/
-lib/swipl-${V}/bin/${FULLARCH}/
 lib/swipl-${V}/bin/swipl.home
+lib/swipl-${V}/bin/${FULLARCH}/
+@bin lib/swipl-${V}/bin/${FULLARCH}/swipl
+@bin lib/swipl-${V}/bin/${FULLARCH}/swipl-ld
+@bin lib/swipl-${V}/bin/${FULLARCH}/swipl-rc
 lib/swipl-${V}/boot/
 lib/swipl-${V}/boot/apply.pl
 lib/swipl-${V}/boot/attvar.pl
@@ -40,6 +35,7 @@ lib/swipl-${V}/boot/rc.pl
 lib/swipl-${V}/boot/syspred.pl
 lib/swipl-${V}/boot/toplevel.pl
 lib/swipl-${V}/boot/topvars.pl
+lib/swipl-${V}/${BOOT}.prc
 lib/swipl-${V}/customize/
 lib/swipl-${V}/customize/README
 lib/swipl-${V}/customize/dotplrc
@@ -87,8 +83,8 @@ lib/swipl-${V}/library/charsio.pl
 lib/swipl-${V}/library/check.pl
 lib/swipl-${V}/library/checklast.pl
 lib/swipl-${V}/library/checkselect.pl
-lib/swipl-${V}/library/chr.pl
 lib/swipl-${V}/library/chr/
+lib/swipl-${V}/library/chr.pl
 lib/swipl-${V}/library/chr/README
 lib/swipl-${V}/library/chr/a_star.pl
 lib/swipl-${V}/library/chr/binomialheap.pl
@@ -113,8 +109,8 @@ lib/swipl-${V}/library/clp/bounds.pl
 lib/swipl-${V}/library/clp/clp_distinct.pl
 lib/swipl-${V}/library/clp/clp_events.pl
 lib/swipl-${V}/library/clp/clpfd.pl
-lib/swipl-${V}/library/clp/clpq.pl
 lib/swipl-${V}/library/clp/clpq/
+lib/swipl-${V}/library/clp/clpq.pl
 lib/swipl-${V}/library/clp/clpq/bb_q.pl
 lib/swipl-${V}/library/clp/clpq/bv_q.pl
 lib/swipl-${V}/library/clp/clpq/fourmotz_q.pl
@@ -131,8 +127,8 @@ lib/swipl-${V}/library/clp/clpqr/itf.pl
 lib/swipl-${V}/library/clp/clpqr/ordering.pl
 lib/swipl-${V}/library/clp/clpqr/project.pl
 lib/swipl-${V}/library/clp/clpqr/redund.pl
-lib/swipl-${V}/library/clp/clpr.pl
 lib/swipl-${V}/library/clp/clpr/
+lib/swipl-${V}/library/clp/clpr.pl
 lib/swipl-${V}/library/clp/clpr/bb_r.pl
 lib/swipl-${V}/library/clp/clpr/bv_r.pl
 lib/swipl-${V}/library/clp/clpr/fourmotz_r.pl
@@ -151,11 +147,11 @@ lib/swipl-${V}/library/date.pl
 lib/swipl-${V}/library/dcg/
 lib/swipl-${V}/library/dcg/basics.pl
 lib/swipl-${V}/library/debug.pl
-lib/swipl-${V}/library/dialect.pl
 lib/swipl-${V}/library/dialect/
+lib/swipl-${V}/library/dialect.pl
 lib/swipl-${V}/library/dialect/bim.pl
-lib/swipl-${V}/library/dialect/ciao.pl
 lib/swipl-${V}/library/dialect/ciao/
+lib/swipl-${V}/library/dialect/ciao.pl
 lib/swipl-${V}/library/dialect/ciao/aggregates.pl
 lib/swipl-${V}/library/dialect/ciao/assertions.pl
 lib/swipl-${V}/library/dialect/ciao/basicmodes.pl
@@ -184,8 +180,8 @@ lib/swipl-${V}/library/dialect/ciao/nortchecks.pl
 lib/swipl-${V}/library/dialect/ciao/odd.pl
 lib/swipl-${V}/library/dialect/ciao/prolog_flags.pl
 lib/swipl-${V}/library/dialect/ciao/read.pl
-lib/swipl-${V}/library/dialect/ciao/regtypes.pl
 lib/swipl-${V}/library/dialect/ciao/regtypes/
+lib/swipl-${V}/library/dialect/ciao/regtypes.pl
 lib/swipl-${V}/library/dialect/ciao/regtypes/regtypes_tr.pl
 lib/swipl-${V}/library/dialect/ciao/sockets.pl
 lib/swipl-${V}/library/dialect/ciao/sort.pl
@@ -199,15 +195,15 @@ lib/swipl-${V}/library/dialect/ciao/unittestdecls.pl
 lib/swipl-${V}/library/dialect/ciao/unittestprops.pl
 lib/swipl-${V}/library/dialect/ciao/write.pl
 lib/swipl-${V}/library/dialect/commons.pl
-lib/swipl-${V}/library/dialect/hprolog.pl
 lib/swipl-${V}/library/dialect/hprolog/
+lib/swipl-${V}/library/dialect/hprolog.pl
 lib/swipl-${V}/library/dialect/hprolog/format.pl
-lib/swipl-${V}/library/dialect/ifprolog.pl
 lib/swipl-${V}/library/dialect/ifprolog/
+lib/swipl-${V}/library/dialect/ifprolog.pl
 lib/swipl-${V}/library/dialect/iso/
 lib/swipl-${V}/library/dialect/iso/iso_predicates.pl
-lib/swipl-${V}/library/dialect/sicstus.pl
 lib/swipl-${V}/library/dialect/sicstus/
+lib/swipl-${V}/library/dialect/sicstus.pl
 lib/swipl-${V}/library/dialect/sicstus/arrays.pl
 lib/swipl-${V}/library/dialect/sicstus/block.pl
 lib/swipl-${V}/library/dialect/sicstus/lists.pl
@@ -218,8 +214,8 @@ lib/swipl-${V}/library/dialect/sicstus/terms.pl
 lib/swipl-${V}/library/dialect/sicstus/timeout.pl
 lib/swipl-${V}/library/dialect/swi/
 lib/swipl-${V}/library/dialect/swi/syspred_options.pl
-lib/swipl-${V}/library/dialect/yap.pl
 lib/swipl-${V}/library/dialect/yap/
+lib/swipl-${V}/library/dialect/yap.pl
 lib/swipl-${V}/library/dialect/yap/README.TXT
 lib/swipl-${V}/library/dif.pl
 lib/swipl-${V}/library/doc_files.pl
@@ -318,8 +314,8 @@ lib/swipl-${V}/library/pairs.pl
 lib/swipl-${V}/library/pdt_console.pl
 lib/swipl-${V}/library/persistency.pl
 lib/swipl-${V}/library/pio.pl
-lib/swipl-${V}/library/pldoc.pl
 lib/swipl-${V}/library/pldoc/
+lib/swipl-${V}/library/pldoc.pl
 lib/swipl-${V}/library/pldoc/README
 lib/swipl-${V}/library/pldoc/doc_access.pl
 lib/swipl-${V}/library/pldoc/doc_colour.pl
@@ -441,8 +437,8 @@ lib/swipl-${V}/library/tty.pl
 lib/swipl-${V}/library/udp_broadcast.pl
 lib/swipl-${V}/library/ugraphs.pl
 lib/swipl-${V}/library/uid.pl
-lib/swipl-${V}/library/unicode.pl
 lib/swipl-${V}/library/unicode/
+lib/swipl-${V}/library/unicode.pl
 lib/swipl-${V}/library/unicode/blocks.pl
 lib/swipl-${V}/library/unicode/unicode_data.pl
 lib/swipl-${V}/library/unix.pl
@@ -1477,6 +1473,10 @@ lib/swipl-${V}/xpce/prolog/lib/xref/common.pl
 lib/swipl-${V}/xpce/prolog/lib/xref/mkcommon.pl
 lib/swipl-${V}/xpce/prolog/lib/xref/quintus.pl
 lib/swipl-${V}/xpce/prolog/lib/xref/sicstus.pl
+@man man/man1/swipl-ld.1
+@man man/man1/swipl-rc.1
+@man man/man1/swipl.1
+@man man/man1/xpce-client.1
 share/doc/swipl/
 share/doc/swipl/Manual/
 share/doc/swipl/Manual/64bits.html
