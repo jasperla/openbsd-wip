@@ -11,7 +11,7 @@ MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += atf-c c
+WANTLIB += 		atf-c c
 
 MASTER_SITES =		https://github.com/jmmv/kyua/releases/download/${DISTNAME}/
 
