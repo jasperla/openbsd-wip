@@ -1,0 +1,12 @@
+$OpenBSD$
+--- include/SFML/OpenGL.hpp.orig	Wed Mar 19 23:33:39 2014
++++ include/SFML/OpenGL.hpp	Wed Mar 19 23:33:56 2014
+@@ -46,7 +46,7 @@
+     #include <GL/gl.h>
+     #include <GL/glu.h>
+ 
+-#elif defined(SFML_SYSTEM_LINUX) || defined(SFML_SYSTEM_FREEBSD)
++#elif defined(SFML_SYSTEM_LINUX) || defined(SFML_SYSTEM_FREEBSD) || defined(SFML_SYSTEM_OPENBSD)
+ 
+     #include <GL/gl.h>
+     #include <GL/glu.h>
