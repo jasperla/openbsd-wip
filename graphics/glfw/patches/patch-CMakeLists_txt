@@ -1,0 +1,29 @@
+$OpenBSD$
+
+No -lrt.
+
+--- CMakeLists.txt.orig	Tue Mar 25 12:04:34 2014
++++ CMakeLists.txt	Tue Mar 25 12:04:53 2014
+@@ -196,7 +196,7 @@ if (_GLFW_X11)
+     list(APPEND glfw_INCLUDE_DIRS ${X11_X11_INCLUDE_PATH})
+     list(APPEND glfw_LIBRARIES ${X11_X11_LIB} ${CMAKE_THREAD_LIBS_INIT})
+     if (UNIX AND NOT APPLE)
+-        list(APPEND glfw_LIBRARIES ${RT_LIBRARY})
++        list(APPEND glfw_LIBRARIES)
+     endif()
+ 
+     # Check for XRandR (modern resolution switching and gamma control)
+@@ -244,13 +244,6 @@ if (_GLFW_X11)
+     endif() 
+ 
+     list(APPEND glfw_INCLUDE_DIR ${X11_Xkb_INCLUDE_PATH})
+-
+-    find_library(RT_LIBRARY rt)
+-    mark_as_advanced(RT_LIBRARY)
+-    if (RT_LIBRARY)
+-        list(APPEND glfw_LIBRARIES ${RT_LIBRARY})
+-        set(GLFW_PKG_LIBS "${GLFW_PKG_LIBS} -lrt")
+-    endif()
+ 
+     find_library(MATH_LIBRARY m)
+     mark_as_advanced(MATH_LIBRARY)
