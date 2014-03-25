@@ -20,7 +20,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += m pthread stdc++ tinyxml yaml-cpp
 
-MASTER_SITES =		https://github.com/imageworks/OpenColorIO/tarball/v$V/
+MASTER_SITES =		http://www.linklevel.net/distfiles/
 
 MODULES =		devel/cmake \
 			lang/python
