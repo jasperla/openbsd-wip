@@ -10,7 +10,7 @@ DISTNAME =		gemrb-0.8.0.1
 
 CATEGORIES =		games emulators x11
 
-HOMEPAGE =		http://gemrb.sourceforge.net/
+HOMEPAGE =		http://www.gemrb.org/
 
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
