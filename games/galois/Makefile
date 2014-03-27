@@ -22,6 +22,8 @@ MASTER_SITES =	${MASTER_SITE_SAVANNAH:=galois/source/}
 LIB_DEPENDS =	textproc/libxml++ \
 		x11/gtk2mm
 
+RUN_DEPENDS =	devel/desktop-file-utils
+
 CONFIGURE_STYLE =	gnu
 
 MAKE_FILE =	makefile
