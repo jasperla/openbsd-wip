@@ -1,3 +1,0 @@
-HTML::Lint is a Perl class similar to HTML::Parser, because it inherits
-from it. You can use HTML::Lint to validate HTML code in strings or
-files. The package also comes with a command line tool for validating.
