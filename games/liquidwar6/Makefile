@@ -2,7 +2,9 @@
 
 COMMENT =		original multiplayer wargame
 
-DISTNAME =		liquidwar6-0.2.3551
+V =			0.4
+DISTNAME =		liquidwar6-${V}.3681
+PKGNAME =		liquidwar6-${V}
 
 CATEGORIES =		games
 
