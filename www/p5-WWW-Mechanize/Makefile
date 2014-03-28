@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:44:47 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2014/02/07 22:26:04 bluhm Exp $
 
 COMMENT =		handy web browsing in a Perl object
 
@@ -28,7 +28,7 @@ RUN_DEPENDS = 		www/p5-HTML-Parser>=3.33 \
 			www/p5-HTTP-Server-Simple>=0.30 \
 			www/p5-LWP-Protocol-https>=6 \
 			www/p5-URI>=1.36 \
-			www/p5-libwww>=5.829
+			www/p5-libwww>=5.837
 TEST_DEPENDS =		devel/p5-PadWalker \
 			devel/p5-Test-Exception \
 			devel/p5-Test-NoWarnings
