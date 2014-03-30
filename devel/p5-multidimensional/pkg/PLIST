@@ -1,0 +1,8 @@
+@comment $OpenBSD$
+%%SHARED%%
+${P5ARCH}/
+${P5ARCH}/auto/
+${P5ARCH}/auto/multidimensional/
+${P5ARCH}/auto/multidimensional/multidimensional.bs
+${P5ARCH}/multidimensional.pm
+@man man/man3p/multidimensional.3p
