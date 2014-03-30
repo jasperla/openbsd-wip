@@ -1,0 +1,10 @@
+@comment $OpenBSD$
+%%SHARED%%
+${P5ARCH}/
+${P5ARCH}/auto/
+${P5ARCH}/auto/bareword/
+${P5ARCH}/auto/bareword/filehandles/
+${P5ARCH}/auto/bareword/filehandles/filehandles.bs
+${P5ARCH}/bareword/
+${P5ARCH}/bareword/filehandles.pm
+@man man/man3p/bareword::filehandles.3p
