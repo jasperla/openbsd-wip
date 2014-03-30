@@ -1,0 +1,12 @@
+$OpenBSD$
+--- CMakeLists.txt.orig	Sat Mar 22 20:48:39 2014
++++ CMakeLists.txt	Sat Mar 22 20:48:52 2014
+@@ -183,7 +183,7 @@ if(NOT BIN2DATADIR)
+ endif()
+ 
+ if(NOT MANDIR)
+-	set(MANDIR share/man/man1)
++	set(MANDIR man/man1)
+ endif()
+ 
+ if(NOT DOCDIR)

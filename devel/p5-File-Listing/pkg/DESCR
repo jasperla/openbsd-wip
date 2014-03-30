@@ -1,1 +1,2 @@
-Parse directory listing
+This module exports a single function called parse_dir(), which can be
+used to parse directory listings.

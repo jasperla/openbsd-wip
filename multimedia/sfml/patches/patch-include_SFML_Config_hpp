@@ -1,12 +1,24 @@
 $OpenBSD$
---- include/SFML/Config.hpp.orig	Mon Dec 26 17:48:20 2011
-+++ include/SFML/Config.hpp	Mon Dec 26 17:48:35 2011
-@@ -49,7 +49,7 @@
-     // MacOS
-     #define SFML_SYSTEM_MACOS
- 
--#elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
-+#elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__OpenBSD__)
- 
+--- include/SFML/Config.hpp.orig	Wed Mar 19 23:32:08 2014
++++ include/SFML/Config.hpp	Wed Mar 19 23:33:06 2014
+@@ -59,6 +59,11 @@
      // FreeBSD
      #define SFML_SYSTEM_FREEBSD
+ 
++#elif defined(__OpenBSD__)
++
++    // OpenBSD
++    #define SFML_SYSTEM_OPENBSD
++
+ #else
+ 
+     // Unsupported system
+@@ -95,7 +100,7 @@
+ 
+         #endif
+ 
+-    #else // Linux, FreeBSD, Mac OS X
++    #else // Linux, FreeBSD, OpenBSD, Mac OS X
+ 
+         #if __GNUC__ >= 4
+ 

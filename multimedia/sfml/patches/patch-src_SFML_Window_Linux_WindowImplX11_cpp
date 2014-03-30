@@ -1,0 +1,14 @@
+$OpenBSD$
+--- src/SFML/Window/Linux/WindowImplX11.cpp.orig	Wed Mar 19 23:53:29 2014
++++ src/SFML/Window/Linux/WindowImplX11.cpp	Wed Mar 19 23:54:03 2014
+@@ -41,6 +41,10 @@
+ #include <string>
+ #include <iterator>
+ 
++#if defined(SFML_SYSTEM_OPENBSD)
++#include <libgen.h>
++#endif
++
+ 
+ ////////////////////////////////////////////////////////////
+ // Private data

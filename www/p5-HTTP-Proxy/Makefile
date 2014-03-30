@@ -14,4 +14,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 BUILD_DEPENDS =	www/p5-libwww
 RUN_DEPENDS =	www/p5-libwww
 
+MAKE_ENV +=	TEST_POD=Yes
+
 .include <bsd.port.mk>

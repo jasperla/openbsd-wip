@@ -1,11 +1,12 @@
 $OpenBSD$
---- src/core/Platform.h.orig	Sat Jul  6 00:14:46 2013
-+++ src/core/Platform.h	Sat Jul  6 00:15:24 2013
-@@ -85,7 +85,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY O
+--- src/core/Platform.h.orig	Wed Oct  9 00:59:34 2013
++++ src/core/Platform.h	Mon Mar 24 22:58:05 2014
+@@ -85,7 +85,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY O
  
  // linux/unix/posix
  #include <stdlib.h>
--#include <alloca.h>
+-#if !defined(__FreeBSD__)
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+ #include <alloca.h>
+ #endif
  #include <string.h>
- #include <pthread.h>
- // OS for spinlock

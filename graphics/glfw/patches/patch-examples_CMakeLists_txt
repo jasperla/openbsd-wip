@@ -1,0 +1,22 @@
+$OpenBSD$
+
+Reorder Include dirs to get correct .h files.
+
+--- examples/CMakeLists.txt.orig	Tue Dec 31 14:06:18 2013
++++ examples/CMakeLists.txt	Tue Mar 25 12:19:31 2014
+@@ -8,12 +8,12 @@ else()
+     link_libraries(${glfw_LIBRARIES})
+ endif()
+ 
+-include_directories(${GLFW_SOURCE_DIR}/include
+-                    ${GLFW_SOURCE_DIR}/deps)
++include_directories(${GLFW_SOURCE_DIR}/include)
+ 
+ if (NOT APPLE)
+     # HACK: This is NOTFOUND on OS X 10.8
+-    include_directories(${OPENGL_INCLUDE_DIR})
++    include_directories(${OPENGL_INCLUDE_DIR}
++                    ${GLFW_SOURCE_DIR}/deps)
+ endif()
+ 
+ set(GETOPT ${GLFW_SOURCE_DIR}/deps/getopt.h

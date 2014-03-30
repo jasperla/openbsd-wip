@@ -28,7 +28,6 @@ multimedia/fuzemux	sent to ports 2013-01-13
 multimedia/video4fuze	sent to ports 2013-01-13
 net/bitcoin		sent to ports 2013-03-19, and again 2013-06-29
 net/py-boto:		ready for import, sent to maintainer 2012-04-23 (tamentis)
-net/tkabber		ready for import, sent to ports 2013-01-30
 productivity/py-nv	send to ports 2013-10-21
 net/unison/stable	ready for import.
 devel/atf		sent to ports 2013-11-27
@@ -43,8 +42,6 @@ textproc/goldendict sent to ports 2013-07-13  and 2011-10-19
 www/ocaml-tyxml		ready for import.
 www/p5-Dancer:		ready for import, has been sent to ports@ some time ago; it depends on www/p5-HTTP-Server-Simple-PSGI
 www/p5-HTTP-Server-Simple-PSGI:	ready for import, has been sent to ports@ some time ago
-sysutils/entr		ready for import 2013-12-16
-x11/herbstluftwm	ready for import (bcallah@)
 audio/paulstretch	ready for import (bcallah@)
 security/p5-Digest-JHash ready for import, sent to ports@ 2014-03-07
 textproc/p5-String-Escape ready for import, sent to ports@ 2014-03-07
@@ -67,4 +64,13 @@ devel/p5-Import-Into	ready for import, sent to ports@ 2014-03-11
 devel/p5-Daemon-Daemonize	ready for import, sent to ports@ 2014-03-11
 devel/p5-Data-DPath	ready for import, sent to ports@ 2014-03-11
 devel/p5-Class-Method-Modifiers ready for import, sent to ports@ 2014-03-11
+<<<<<<< HEAD
 devel/p5-Term-VT102 	ready for import, sent to ports@ 2014-03-11, ok from shten@
+=======
+devel/p5-Term-VT102-Boundless	ready for import, sent to ports@ 2014-03-11
+devel/p5-Term-VT102 	ready for import, sent to ports@ 2014-03-11
+games/galois		ready for import (bcallah@)
+graphics/lumee		ready for import (bcallah@)
+net/libstrophe		ready for import (bcallah@)
+net/profanity		ready for import (bcallah@)
+>>>>>>> 1c9fc69743f7c1e52c59069ec6526fdd6cbb5ac4

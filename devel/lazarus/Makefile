@@ -8,7 +8,7 @@ V =			1.2
 DISTNAME =		lazarus-${V}-0
 PKGNAME =		lazarus-${V}
 
-FPC_V =			2.6.2
+FPC_V =			2.6.4
 
 CATEGORIES =		devel
 
