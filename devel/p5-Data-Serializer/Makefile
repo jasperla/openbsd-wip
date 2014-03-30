@@ -22,6 +22,7 @@ RUN_DEPENDS =	devel/p5-Bencode \
 		devel/p5-YAML \
 		devel/p5-YAML-Syck \
 		converters/p5-JSON-XS \
+		converters/p5-JSON \
 		security/p5-Crypt-Blowfish \
 		security/p5-Crypt-CBC \
 		textproc/p5-XML-Dumper \
