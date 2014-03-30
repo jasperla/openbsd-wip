@@ -1,0 +1,13 @@
+$OpenBSD$
+--- configure.ac.orig	Sat Mar 29 23:57:56 2014
++++ configure.ac	Sat Mar 29 23:58:03 2014
+@@ -69,9 +69,6 @@ AM_CPPFLAGS="$AM_CPPFLAGS $PARSER_CFLAGS"
+ LIBS="$LIBS $PARSER_LIBS"
+ 
+ ### Check for libstrophe dependencies
+-AC_CHECK_LIB([resolv], [res_query], [],
+-    [AC_CHECK_LIB([resolv], [__res_query], [],
+-        [AC_MSG_ERROR([libresolv is required for profanity])])])
+ PKG_CHECK_MODULES([openssl], [openssl], [],
+     [AC_MSG_ERROR([openssl is required for profanity])])
+ AM_CPPFLAGS="$AM_CPPFLAGS $openssl_CFLAGS"
