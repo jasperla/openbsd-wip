@@ -3,12 +3,12 @@
 COMMENT =	turn on strict and make all warnings fatal
 
 MODULES =	cpan
-DISTNAME =	strictures-1.000000
+DISTNAME =	strictures-1.005004
 CATEGORIES =	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 
-CPAN_AUTHOR =	MSTROUT
+CPAN_AUTHOR =	HAARG
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
