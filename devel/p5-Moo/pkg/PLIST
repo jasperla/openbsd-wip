@@ -19,6 +19,7 @@ ${P5SITE}/Moo/Role.pm
 ${P5SITE}/Moo/_Utils.pm
 ${P5SITE}/Moo/_mro.pm
 ${P5SITE}/Moo/sification.pm
+${P5SITE}/Sub/
 ${P5SITE}/Sub/Defer.pm
 ${P5SITE}/Sub/Quote.pm
 ${P5SITE}/oo.pm
