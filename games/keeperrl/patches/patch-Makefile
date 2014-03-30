@@ -1,0 +1,12 @@
+$OpenBSD$
+--- Makefile.orig	Sun Mar 23 21:30:37 2014
++++ Makefile	Sun Mar 23 21:30:43 2014
+@@ -17,7 +17,7 @@ GFLAG = -g
+ endif
+ 
+ ifndef OPTFLAGS
+-	OPTFLAGS = -static-libstdc++ ${GFLAG}
++	OPTFLAGS = ${GFLAG}
+ endif
+ 
+ ifdef OPT

@@ -1,0 +1,14 @@
+@comment $OpenBSD$
+@bin bin/lumee
+share/applications/lumee.desktop
+share/glib-2.0/
+share/glib-2.0/schemas/
+share/glib-2.0/schemas/com.github.bmars.Lumee.gschema.xml
+share/lumee/
+share/lumee/app_menu.ui
+share/lumee/main.ui
+share/lumee/style.css
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

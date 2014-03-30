@@ -53,6 +53,6 @@ WANTLIB += 		pq
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gammu	
+		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gammu
 
 .include <bsd.port.mk>

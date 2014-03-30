@@ -1,9 +1,4 @@
 @comment $OpenBSD$
-@bin bin/ociobakelut
-@bin bin/ociocheck
-@bin bin/ocioconvert
-@bin bin/ociodisplay
-@bin bin/ociolutimage
 include/OpenColorIO/
 include/OpenColorIO/OpenColorABI.h
 include/OpenColorIO/OpenColorIO.h

@@ -7,20 +7,23 @@ COMMENT=	Wolfenstein Enemy Territory (ET Legacy)
 HOMEPAGE=	http://www.etlegacy.com/
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
-GITREV=		17f8c5c1c79461f3c6c86cea0e834de9f57cd5de
-DISTNAME=	etlegacy-etlegacy-17f8c5c
-PKGNAME=	etlegacy-20130714
-MASTER_SITES=	https://github.com/etlegacy/etlegacy/tarball/${GITREV}/
+V=		2.71rc3
+DISTNAME=	etlegacy-${V}
+MASTER_SITES=	https://github.com/etlegacy/
+DISTFILES =	etlegacy-{etlegacy/archive/v}${V}${EXTRACT_SUFX}
 
 LIB_DEPENDS=	devel/sdl \
 		graphics/jpeg \
+		graphics/glew \
 		net/curl \
 		audio/libvorbis
 BUILD_DEPENDS=	archivers/zip
-RUN_DEPENDS=	games/enemy-territory-data
+RUN_DEPENDS=	games/enemy-territory-data \
+		devel/desktop-file-utils
 
-WANTLIB=	GL GLU ICE SDL SM X11 Xext c curl jpeg m ogg pthread \
+WANTLIB=	GL GLEW GLU ICE SDL SM X11 Xext c curl jpeg m ogg pthread \
 		vorbis vorbisfile
+WANTLIB+=	${MODLUA_WANTLIB}
 
 MODULES=	devel/cmake \
 		lang/lua
