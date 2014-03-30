@@ -1,0 +1,12 @@
+$OpenBSD$
+--- configure.ac.orig	Sat Mar 29 23:26:44 2014
++++ configure.ac	Sat Mar 29 23:26:51 2014
+@@ -43,7 +43,7 @@ fi
+ AC_MSG_NOTICE([libstrophe will use the $with_parser XML parser])
+ AC_SEARCH_LIBS([socket], [socket])
+ 
+-AC_LINK_IFELSE([AC_LANG_CALL([#include <resolv.h>], [res_query])], [],[LIBS="$LIBS -lresolv"])
++AC_LINK_IFELSE([AC_LANG_CALL([#include <resolv.h>], [res_query])], [],[LIBS="$LIBS"])
+ 
+ AC_CHECK_HEADERS([arpa/nameser_compat.h])
+ 
