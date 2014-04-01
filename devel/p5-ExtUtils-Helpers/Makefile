@@ -3,7 +3,7 @@
 COMMENT =	various portability utilities for module builders
 
 MODULES =	cpan
-DISTNAME =	ExtUtils-Helpers-0.011
+DISTNAME =	ExtUtils-Helpers-0.022
 CATEGORIES =	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
