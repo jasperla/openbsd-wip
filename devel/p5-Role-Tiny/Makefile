@@ -3,7 +3,7 @@
 COMMENT =	minimalist role composition tool
 
 MODULES =	cpan
-DISTNAME =	Role-Tiny-1.003002
+DISTNAME =	Role-Tiny-1.003003
 CATEGORIES =	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
