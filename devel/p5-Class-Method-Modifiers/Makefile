@@ -21,6 +21,5 @@ TEST_DEPENDS =	devel/p5-ExtUtils-BuildRC \
 		devel/p5-File-Slurp \
 		devel/p5-Test-Fatal \
 		converters/p5-JSON
-#devel/p5-Module-Build-Tiny \
 
 .include <bsd.port.mk>
