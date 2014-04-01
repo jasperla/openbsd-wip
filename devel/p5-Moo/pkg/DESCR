@@ -1,10 +1,6 @@
-This module is an extremely light-weight subset of Moose optimised for
-rapid startup and "pay only for what you use".
+This module is an extremely light-weight, high-performance Moose
+replacement. It also avoids depending on any XS modules to allow
+simple deployments. The name Moo is based on the idea that it
+provides almost -but not quite- two thirds of Moose.
 
-It also avoids depending on any XS modules to allow simple deployments.
-The name Moo is based on the idea that it provides almost -- but not
-quite -- two thirds of Moose.
-
-Unlike Mouse this module does not aim at full compatibility with Moose's
-surface syntax, preferring instead of provide full interoperability via
-the metaclass inflation capabilities described in "MOO AND MOOSE".
+Unlike Mouse this module does not aim at full Moose compatibility.
