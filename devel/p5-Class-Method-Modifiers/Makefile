@@ -11,15 +11,13 @@ MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-BUILD_DEPENDS =	devel/p5-Test-Fatal \
-		devel/p5-Try-Tiny
-
 TEST_DEPENDS =	devel/p5-ExtUtils-BuildRC \
 		devel/p5-ExtUtils-Config \
 		devel/p5-ExtUtils-InstallPaths \
 		devel/p5-File-Find-Rule \
 		devel/p5-File-Slurp \
 		devel/p5-Test-Fatal \
+		devel/p5-Try-Tiny \
 		converters/p5-JSON
 
 .include <bsd.port.mk>
