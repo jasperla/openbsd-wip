@@ -12,4 +12,6 @@ CPAN_AUTHOR =	HAARG
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
+TEST_DEPENDS =	devel/p5-Test-Fatal
+
 .include <bsd.port.mk>

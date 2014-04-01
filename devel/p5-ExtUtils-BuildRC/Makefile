@@ -13,6 +13,4 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 RUN_DEPENDS =	devel/p5-ExtUtils-Helpers
 
-BUILD_DEPENDS =	${RUN_DEPENDS}
-
 .include <bsd.port.mk>

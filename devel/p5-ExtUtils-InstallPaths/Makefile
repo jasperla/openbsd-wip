@@ -11,4 +11,6 @@ MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
+RUN_DEPENDS =	devel/p5-ExtUtils-Config
+
 .include <bsd.port.mk>
