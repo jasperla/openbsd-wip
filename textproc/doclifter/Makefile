@@ -17,8 +17,6 @@ MODULES =		lang/python
 MODPY_BUILDDEP =	No
 MODPY_ADJ_FILES =	doclifter manlifter
 
-MAKE_FLAGS =		PREFIX=${PREFIX}
-
 NO_BUILD =		Yes
 
 do-test:
