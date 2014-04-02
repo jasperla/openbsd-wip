@@ -57,20 +57,21 @@ security/p5-AAAA-Crypt-DH	ready for import, sent to ports@ 2014-03-10
 devel/p5-Bencode 	ready for import, sent to ports@ 2014-03-11
 devel/p5-Convert-Bencode ready for import, sent to ports@ 2014-03-11
 devel/p5-Convert-Bencode_XS ready for import, sent to ports@ 2014-03-11
-devel/p5-indirect	ready for import, sent to ports@ 2014-03-11
-devel/p5-Role-Tiny	ready for import, sent to ports@ 2014-03-11
-devel/p5-strictures	ready for import, sent to ports@ 2014-03-11
-devel/p5-Import-Into	ready for import, sent to ports@ 2014-03-11
+devel/p5-indirect	ready for import, sent to ports@ 2014-03-11, 2014-03-30
+devel/p5-Role-Tiny	ready for import, sent to ports@ 2014-03-11, 2014-03-30
+devel/p5-strictures	ready for import, sent to ports@ 2014-03-11, 2014-03-30
+devel/p5-Import-Into	ready for import, sent to ports@ 2014-03-11, 2014-03-30
 devel/p5-Daemon-Daemonize	ready for import, sent to ports@ 2014-03-11
 devel/p5-Data-DPath	ready for import, sent to ports@ 2014-03-11
-devel/p5-Class-Method-Modifiers ready for import, sent to ports@ 2014-03-11
-<<<<<<< HEAD
+devel/p5-Class-Method-Modifiers ready for import, sent to ports@ 2014-03-11, 2014-03-30
 devel/p5-Term-VT102 	ready for import, sent to ports@ 2014-03-11, ok from shten@
-=======
 devel/p5-Term-VT102-Boundless	ready for import, sent to ports@ 2014-03-11
-devel/p5-Term-VT102 	ready for import, sent to ports@ 2014-03-11
 games/galois		ready for import (bcallah@)
 graphics/lumee		ready for import (bcallah@)
 net/libstrophe		ready for import (bcallah@)
 net/profanity		ready for import (bcallah@)
->>>>>>> 1c9fc69743f7c1e52c59069ec6526fdd6cbb5ac4
+devel/p5-ExtUtils-BuildRC	sent to ports@ 2014-03-30
+devel/p5-ExtUtils-Config	sent to ports@ 2014-03-30
+devel/p5-ExtUtils-Helpers	sent to ports@ 2014-03-30
+devel/p5-ExtUtils-InstallPaths	sent to ports@ 2014-03-30
+devel/p5-Moo		sent to ports@ 2014-03-30
