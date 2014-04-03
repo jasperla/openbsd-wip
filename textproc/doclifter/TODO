@@ -1,4 +1,0 @@
-manlifter(1) doesn't work properly on systems with uncompressed manpages.
-The problem lies in sectionfiles(). After the for loop, the 'files'
-variable contains the list of files with incorrect .8.gz (et al)
-extension. This comes from manfile()'s else block.
