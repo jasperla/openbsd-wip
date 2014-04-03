@@ -42,8 +42,6 @@ audio/paulstretch	ready for import (bcallah@)
 security/p5-Digest-JHash ready for import, sent to ports@ 2014-03-07
 textproc/p5-String-Escape ready for import, sent to ports@ 2014-03-07
 textproc/p5-String-Util ready for import, sent to ports@ 2014-03-07
-net/p5-Net-SCP  	ready for import, sent to ports@ 2014-03-07, ok from shten@
-net/p5-Net-SSH  	ready for import, sent to ports@ 2014-03-07, ok from shten@
 textproc/p5-Text-CSV-Slurp ready for import, sent to ports@ 2014-03-10
 textproc/p5-String-Diff	ready for import, sent to ports@ 2014-03-10
 devel/p5-Math-BigInt-Pari ready for import, sent to ports@ 2014-03-10
