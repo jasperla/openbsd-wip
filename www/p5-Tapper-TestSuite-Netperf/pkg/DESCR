@@ -1,3 +1,5 @@
+This distribution provides Tapper with Network performance measurements.
+
 Tapper is an open source infrastructure originating at AMD for all
 aspects of testing including Operating Systems and Virtualization.
 Its goal is to help QA departments to maintain a complete test life
