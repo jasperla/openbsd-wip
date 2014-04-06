@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/Import/
-${P5SITE}/Import/Into.pm
-@man man/man3p/Import::Into.3p
