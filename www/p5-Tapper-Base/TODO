@@ -1,8 +1,0 @@
-Warning: prerequisite LockFile::Simple 0.208 not found. We have 0.207.
-
-===>  Installing p5-Tapper-Base-4.1.4 from /usr/ports/packages/i386/all/
-Collision in p5-Tapper-Base-4.1.4: the following files already exist
-        /usr/local/libdata/perl5/site_perl/Tapper/Base.pm (p5-Tapper-Action-4.1.1 and p5-Tapper-Base-4.1.4)
-        /usr/local/man/man3p/Tapper::Base.3p (p5-Tapper-Action-4.1.1 and p5-Tapper-Base-4.1.4)
-*** Error 1 in . (/usr/ports/infrastructure/mk/bsd.port.mk:1895 '/var/db/pkg/p5-Tapper-Base-4.1.4/+CONTENTS': @if /usr/sbin/pkg_info -e p5-T...)
-*** Error 1 in /usr/ports/openbsd-wip/www/p5-Tapper-Base (/usr/ports/infrastructure/mk/bsd.port.mk:2406 'install')

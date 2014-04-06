@@ -12,10 +12,11 @@ MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 PERMIT_PACKAGE_CDROM =	Yes
 
 RUN_DEPENDS =	devel/p5-common-sense \
+		devel/p5-Moose \
 		devel/p5-LockFile-Simple \
 		devel/p5-Module-Find \
 		devel/p5-MooseX-Log-Log4perl
 
-BUILD_DEPENDS =	${RUN_DEPENDS}
+BUILD_DEPENDS =	devel/p5-Log-Log4perl
 
 .include <bsd.port.mk>

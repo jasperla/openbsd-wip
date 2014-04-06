@@ -22,6 +22,4 @@ RUN_DEPENDS =	benchmarks/netperf \
 		textproc/p5-XML-Simple \
                 www/p5-Tapper-Base
 
-BUILD_DEPENDS =	${RUN_DEPENDS}
-
 .include <bsd.port.mk>
