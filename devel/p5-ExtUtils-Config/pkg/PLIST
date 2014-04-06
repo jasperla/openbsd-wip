@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/ExtUtils/
-${P5SITE}/ExtUtils/Config.pm
-@man man/man3p/ExtUtils::Config.3p
