@@ -1,7 +1,6 @@
 This package contains the version of tcpdump from tcpdump.org.
 
-It is *not recommended* for general use as it does not drop privileges,
-therefore the packet dissectors (which historically have suffered from
-many security bugs) are run as root.
+It is *not recommended* for general use as it does not use privilege
+separation like OpenBSD's tcpdump.
 
 To help you remember this, the binary is named "unsafe_tcpdump".
