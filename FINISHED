@@ -12,13 +12,11 @@ cad/tkgate:		Ready for import. Sent to ports@ 2008-01-13 and still works (yason)
 comms/[gw]ammu		Ready for import. Sent to ports@ 2012-10-09 (yason)
 devel/libextractor	sent to ports 2013-06-29
 devel/libtap		ready to import
-devel/lutok		sent to ports 2013-11-27
 devel/p5-Test-Most:	ready for import, depends on the update of p5-Test-Warn, did not sent to ports@(wenheping)
 emulators/vice		ready for import, sent to ports 2013-05-16
 games/glob2 		sent to ports@ 2010-09-02 and 2009-08-26
 geo/mtkbabel		sent to ports 2011-03-30
 graphics/jpegexiforient ready to import
-graphics/opencolorio	sent to ports 2013-07-07
 lang/utop		ready for import. Waiting for libcharset fix in ocaml-lamda-term
 math/p5-Math-GSL:	ready for import, did not sent to ports@, regress depends on devel/p5-Test-Most (wenheping)
 misc/dvtm		sent to ports@ 2012/12/04. Ready for import.
@@ -30,11 +28,8 @@ net/bitcoin		sent to ports 2013-03-19, and again 2013-06-29
 net/py-boto:		ready for import, sent to maintainer 2012-04-23 (tamentis)
 productivity/py-nv	send to ports 2013-10-21
 net/unison/stable	ready for import.
-devel/atf		sent to ports 2013-11-27
 sysutils/fsx		sent to ports 2013-12-09
 sysutils/glean		sent to ports 2013-12-09
-devel/kyua-cli		sent to ports 2013-11-27
-devel/kyua-testers 	sent to ports 2013-11-27
 security/paperkey  	sent to ports 2011-06-07 and 2011-01-09
 sysutils/postmark	sent to ports 2013-12-09
 sysutils/py-anita	Ready for import. Sent to ports@ 2012-11-05.
@@ -46,8 +41,6 @@ audio/paulstretch	ready for import (bcallah@)
 security/p5-Digest-JHash ready for import, sent to ports@ 2014-03-07
 textproc/p5-String-Escape ready for import, sent to ports@ 2014-03-07
 textproc/p5-String-Util ready for import, sent to ports@ 2014-03-07
-net/p5-Net-SCP  	ready for import, sent to ports@ 2014-03-07
-net/p5-Net-SSH  	ready for import, sent to ports@ 2014-03-07
 textproc/p5-Text-CSV-Slurp ready for import, sent to ports@ 2014-03-10
 textproc/p5-String-Diff	ready for import, sent to ports@ 2014-03-10
 devel/p5-Math-BigInt-Pari ready for import, sent to ports@ 2014-03-10
@@ -57,13 +50,23 @@ security/p5-AAAA-Crypt-DH	ready for import, sent to ports@ 2014-03-10
 devel/p5-Bencode 	ready for import, sent to ports@ 2014-03-11
 devel/p5-Convert-Bencode ready for import, sent to ports@ 2014-03-11
 devel/p5-Convert-Bencode_XS ready for import, sent to ports@ 2014-03-11
-devel/p5-indirect	ready for import, sent to ports@ 2014-03-11
-devel/p5-Role-Tiny	ready for import, sent to ports@ 2014-03-11
-devel/p5-strictures	ready for import, sent to ports@ 2014-03-11
-devel/p5-Import-Into	ready for import, sent to ports@ 2014-03-11
+devel/p5-indirect	ready for import, sent to ports@ 2014-03-11, 2014-03-30
+devel/p5-Role-Tiny	ready for import, sent to ports@ 2014-03-11, 2014-03-30
+devel/p5-strictures	ready for import, sent to ports@ 2014-03-11, 2014-03-30
+devel/p5-Import-Into	ready for import, sent to ports@ 2014-03-11, 2014-03-30
 devel/p5-Daemon-Daemonize	ready for import, sent to ports@ 2014-03-11
 devel/p5-Data-DPath	ready for import, sent to ports@ 2014-03-11
-devel/p5-Class-Method-Modifiers ready for import, sent to ports@ 2014-03-11
+devel/p5-Class-Method-Modifiers ready for import, sent to ports@ 2014-03-11, 2014-03-30
+devel/p5-Term-VT102 	ready for import, sent to ports@ 2014-03-11, ok from shten@
 devel/p5-Term-VT102-Boundless	ready for import, sent to ports@ 2014-03-11
-devel/p5-Term-VT102 	ready for import, sent to ports@ 2014-03-11
 games/galois		ready for import (bcallah@)
+graphics/lumee		ready for import (bcallah@)
+net/libstrophe		ready for import (bcallah@)
+net/profanity		ready for import (bcallah@)
+devel/p5-ExtUtils-BuildRC	sent to ports@ 2014-03-30
+devel/p5-ExtUtils-Config	sent to ports@ 2014-03-30
+devel/p5-ExtUtils-Helpers	sent to ports@ 2014-03-30
+devel/p5-ExtUtils-InstallPaths	sent to ports@ 2014-03-30
+devel/p5-Moo		sent to ports@ 2014-03-30
+devel/p5-Sys-Info-Base	sent to ports@ 2014-04-03
+devel/p5-File-Pid	sent to ports@ 2014-04-03

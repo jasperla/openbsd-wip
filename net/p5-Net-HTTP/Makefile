@@ -16,7 +16,7 @@ MODULES =	cpan
 RUN_DEPENDS=	p5-IO-Socket-SSL-*|p5-Crypt-SSLeay-*:security/p5-IO-Socket-SSL
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-.if LIVE_TEST
+.ifdef LIVE_TEST
 CONFIGURE_ARGS +=--live-tests
 .endif
 

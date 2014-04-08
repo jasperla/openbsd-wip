@@ -1,35 +1,22 @@
 $OpenBSD$
---- Makefile.orig	Mon Aug 19 20:26:03 2013
-+++ Makefile	Wed Oct  2 02:50:15 2013
+--- Makefile.orig	Wed Feb 26 17:33:10 2014
++++ Makefile	Tue Apr  1 00:02:17 2014
 @@ -15,8 +15,8 @@ CUSTOMZLIB ?= ../zlib
  
- CFLAGSOPT ?= -DNDEBUG -O3 -fstrict-aliasing -ffast-math -funroll-loops -fomit-frame-pointer -ffinite-math-only
+ CFLAGSOPT ?= -DNDEBUG -O3 -ffast-math -funroll-loops -fomit-frame-pointer
  
--CFLAGS ?= -Wall -Wno-unknown-pragmas -I. -I$(CUSTOMLIBPNG) -I$(CUSTOMZLIB) -I/usr/local/include/ -I/usr/include/ -I/usr/X11/include/ $(CFLAGSOPT)
+-CFLAGS ?= -Wall -Wno-unknown-pragmas -I. -I/usr/local/include/ -I/usr/include/ $(CFLAGSOPT)
 -CFLAGS += -std=c99 $(CFLAGSADD)
 +CFLAGS ?= -Wall -Wno-unknown-pragmas -I$(CUSTOMLIBPNG) -I$(CUSTOMZLIB) $(CFLAGSOPT)
 +CFLAGS += -std=c99 -I/usr/local/include $(CFLAGSADD)
  
- LDFLAGS ?= -L$(CUSTOMLIBPNG) -L$(CUSTOMZLIB) -L/usr/local/lib/ -L/usr/lib/ -L/usr/X11/lib/
- LDFLAGS += -lpng -lz -lm lib/libimagequant.a -lm $(LDFLAGSADD)
-@@ -40,10 +40,10 @@ BUILD_CONFIGURATION="$(CC) $(CFLAGS) $(LDFLAGS)"
- all: $(BIN)
+ LDFLAGS ?= -L/usr/local/lib/ -L/usr/lib/
  
- lib/libimagequant.a::
--	$(MAKE) -C lib -$(MAKEFLAGS) static
-+	$(MAKE) -C lib static
- 
- openmp::
--	$(MAKE) CFLAGSADD=-fopenmp OPENMPFLAGS="-Bstatic -lgomp" -j8 -$(MAKEFLAGS)
-+	$(MAKE) CFLAGSADD=-fopenmp OPENMPFLAGS="-Bstatic -lgomp" -j8
- 
- $(BIN): $(OBJS) lib/libimagequant.a
- 	$(CC) $(OBJS) $(LDFLAGS) $(OPENMPFLAGS) $(FRAMEWORKS) -o $@
-@@ -54,7 +54,10 @@ rwpng_cocoa.o: rwpng_cocoa.m
+@@ -80,7 +80,10 @@ rwpng_cocoa.o: rwpng_cocoa.m
  $(OBJS): rwpng.h build_configuration
  
  install: $(BIN)
--	install -m 0755 -p -D $(BIN) $(DESTDIR)$(BINPREFIX)/$(BIN)
+-	install -m 0755 -p $(BIN) $(DESTDIR)$(BINPREFIX)/$(BIN)
 +	@mkdir -p ${PREFIX}/bin
 +	@mkdir -p ${PREFIX}/man/man1
 +	install $(BIN) ${PREFIX}/bin
@@ -37,12 +24,3 @@ $OpenBSD$
  
  uninstall:
  	rm -f $(DESTDIR)$(BINPREFIX)/$(BIN)
-@@ -72,7 +75,7 @@ $(TARFILE): $(DISTFILES)
- 
- clean:
- 	rm -f $(BIN) $(OBJS) $(COCOA_OBJS) $(TARFILE) build_configuration
--	$(MAKE) -C lib -$(MAKEFLAGS) clean
-+	$(MAKE) -C lib clean
- 
- build_configuration::
- 	@test -f build_configuration && test $(BUILD_CONFIGURATION) = "`cat build_configuration`" || echo > build_configuration $(BUILD_CONFIGURATION)

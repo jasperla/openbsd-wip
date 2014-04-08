@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =	cpan
 
 RUN_DEPENDS =	net/p5-Net-HTTP>=6 \
-		security/p5-Mozilla-CA>=20110101 \
+		security/p5-Mozilla-CA-Fake>=20110101 \
 		www/p5-libwww>=6.04
 
 # p5-Net-HTTP requires either p5-IO-Socket-SSL

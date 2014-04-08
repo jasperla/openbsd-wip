@@ -1,0 +1,13 @@
+$OpenBSD$
+--- configure.ac.orig	Tue Mar 25 16:18:03 2014
++++ configure.ac	Fri Mar 28 14:20:47 2014
+@@ -10,8 +10,7 @@ GLIB_GSETTINGS
+ PKG_CHECK_MODULES(gtkmm, [gtkmm-3.0 >= 3.10.0])
+ 
+ AC_LANG(C++)
+-AX_CXX_COMPILE_STDCXX_11(noext)
+-AX_APPEND_COMPILE_FLAGS([-Wall -Wextra -Wpedantic -Werror])
++AC_PROG_CXX
+ 
+ # GSettings generates files in `data`, so ensure it exists in VPATH builds.
+ AC_CONFIG_FILES(Makefile, [$MKDIR_P data])

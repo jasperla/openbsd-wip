@@ -1,7 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/Role/
-${P5SITE}/Role/Tiny/
-${P5SITE}/Role/Tiny.pm
-${P5SITE}/Role/Tiny/With.pm
-@man man/man3p/Role::Tiny.3p
-@man man/man3p/Role::Tiny::With.3p
