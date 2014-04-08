@@ -1,5 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/Class/
-${P5SITE}/Class/Method/
-${P5SITE}/Class/Method/Modifiers.pm
-@man man/man3p/Class::Method::Modifiers.3p

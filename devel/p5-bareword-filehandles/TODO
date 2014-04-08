@@ -1,0 +1,17 @@
+Tests failed.
+
+$ sudo make test
+===>  Regression tests for p5-bareword-filehandles-0.003
+PERL_DL_NONLAZY=1 /usr/bin/perl "-MExtUtils::Command::MM" "-e" "test_harness(0, 'blib/lib', 'blib/arch')" t/*.t
+
+#   Failed test 'use bareword::filehandles;'
+#   at t/basic.t line 8.
+#     Tried to use 'bareword::filehandles'.
+#     Error:  Can't locate Lexical/SealRequireHints.pm in @INC (you may need to install the Lexical::SealRequireHints module) (@INC contains: /usr/ports/p
+obj/p5-bareword-filehandles-0.003/bareword-filehandles-0.003/blib/lib /usr/ports/pobj/p5-bareword-filehandles-0.003/bareword-filehandles-0.003/blib/arch /
+usr/local/libdata/perl5/site_perl/amd64-openbsd /usr/libdata/perl5/site_perl/amd64-openbsd /usr/local/libdata/perl5/site_perl /usr/libdata/perl5/site_perl
+ /usr/libdata/perl5/amd64-openbsd/5.18.2 /usr/local/libdata/perl5/amd64-openbsd/5.18.2 /usr/libdata/perl5 /usr/local/libdata/perl5 .) at /usr/ports/pobj/p
+5-bareword-filehandles-0.003/bareword-filehandles-0.003/blib/lib/bareword/filehandles.pm line 11.
+# BEGIN failed--compilation aborted at /usr/ports/pobj/p5-bareword-filehandles-0.003/bareword-filehandles-0.003/blib/lib/bareword/filehandles.pm line 11.
+# Compilation failed in require at (eval 4) line 2.
+# BEGIN failed--compilation aborted at (eval 4) line 2.

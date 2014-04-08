@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+${P5ARCH}/auto/bareword/filehandles/filehandles.so
