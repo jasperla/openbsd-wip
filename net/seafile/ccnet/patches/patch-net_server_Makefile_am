@@ -1,0 +1,12 @@
+$OpenBSD$
+--- net/server/Makefile.am.orig	Tue Jan 21 15:46:56 2014
++++ net/server/Makefile.am	Tue Jan 21 15:47:09 2014
+@@ -99,7 +99,7 @@ ccnet_server_SOURCES = ccnet-server.c \
+ 	server-session.c user-mgr.c group-mgr.c org-mgr.c \
+ 	$(common_srcs)
+ 
+-ccnet_server_LDADD = -levent $(top_builddir)/lib/libccnetd.la \
++ccnet_server_LDADD = -levent_core $(top_builddir)/lib/libccnetd.la \
+            @GLIB2_LIBS@ @GOBJECT_LIBS@ -lssl @LIB_RT@ @LIB_UUID@ -lsqlite3 \
+ 	       -lpthread \
+            @LIB_WS32@ @LIB_INTL@ @LIB_IPHLPAPI@ @SEARPC_LIBS@ @ZDB_LIBS@ \

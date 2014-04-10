@@ -1,0 +1,12 @@
+$OpenBSD$
+--- lib/net.h.orig	Sat Jan 18 14:08:27 2014
++++ lib/net.h	Sat Jan 18 14:08:52 2014
+@@ -19,7 +19,7 @@
+     #include <netinet/tcp.h>
+ #endif
+ 
+-#include <evutil.h>
++#include <event2/util.h>
+ 
+ #ifdef WIN32
+     #define ECONNREFUSED WSAECONNREFUSED

@@ -1,0 +1,14 @@
+$OpenBSD$
+--- lib/mainloop.c.orig	Fri Dec 13 13:36:19 2013
++++ lib/mainloop.c	Fri Dec 13 13:36:42 2013
+@@ -3,7 +3,9 @@
+ #include "include.h"
+ #include <ccnet.h>
+ 
+-#include <event.h>
++#include <event2/event.h>
++#include <event2/event_compat.h>
++#include <event2/event_struct.h>
+ 
+ static int
+ cmdrsp_cb (const char *code, char *content, int clen, void *data)

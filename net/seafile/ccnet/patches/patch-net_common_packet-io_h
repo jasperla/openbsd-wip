@@ -1,0 +1,14 @@
+$OpenBSD$
+--- net/common/packet-io.h.orig	Tue Jan  7 07:33:50 2014
++++ net/common/packet-io.h	Tue Jan 21 13:15:43 2014
+@@ -4,7 +4,9 @@
+ #define CCNET_PACKET_IO_H
+ 
+ #include "packet.h"
+-#include <evutil.h>
++#include <event2/util.h>
++#include <event2/buffer.h>
++#include <event2/buffer_compat.h>
+ 
+ /* struct evbuffer; */
+ /* for libevent2 */

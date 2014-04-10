@@ -1,0 +1,12 @@
+$OpenBSD$
+--- net/common/connect-mgr.h.orig	Sat Jan 18 14:17:06 2014
++++ net/common/connect-mgr.h	Sat Jan 18 14:17:36 2014
+@@ -3,7 +3,7 @@
+ #ifndef CCNET_CONNECTION_MANAGER
+ #define CCNET_CONNECTION_MANAGER
+ 
+-#include <event.h>
++#include <event2/event.h>
+ 
+ #include "timer.h"
+ 
