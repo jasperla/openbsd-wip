@@ -1,0 +1,15 @@
+$OpenBSD$
+--- net/common/peer.c.orig	Tue Jan  7 07:33:50 2014
++++ net/common/peer.c	Tue Jan 21 13:53:16 2014
+@@ -2,7 +2,10 @@
+ 
+ #include "common.h"
+ 
+-#include <event.h>
++#include <event2/event.h>
++#include <event2/bufferevent.h>
++#include <event2/bufferevent_compat.h>
++#include <event2/bufferevent_struct.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ 

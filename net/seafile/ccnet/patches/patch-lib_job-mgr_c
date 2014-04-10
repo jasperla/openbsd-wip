@@ -1,0 +1,12 @@
+$OpenBSD$
+--- lib/job-mgr.c.orig	Fri Dec 13 13:35:38 2013
++++ lib/job-mgr.c	Fri Dec 13 13:36:00 2013
+@@ -1,6 +1,7 @@
+ /* -*- Mode: C; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+ 
+-#include <event.h>
++#include <event2/event.h>
++#include <event2/event_compat.h>
+ 
+ #include <string.h>
+ #include <stdlib.h>

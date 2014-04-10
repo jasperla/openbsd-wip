@@ -1,0 +1,13 @@
+$OpenBSD$
+--- net/daemon/ccnet-daemon.c.orig	Tue Jan  7 07:33:50 2014
++++ net/daemon/ccnet-daemon.c	Tue Jan 21 14:53:31 2014
+@@ -5,7 +5,8 @@
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <getopt.h>
+-#include <evdns.h>
++#include <event2/dns.h>
++#include <event2/dns_compat.h>
+ 
+ #include "daemon-session.h"
+ #include "rpc-service.h"

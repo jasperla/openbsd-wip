@@ -1,0 +1,12 @@
+$OpenBSD$
+--- lib/libccnet_utils.h.orig	Sat Jan 18 13:28:25 2014
++++ lib/libccnet_utils.h	Sat Jan 18 13:56:55 2014
+@@ -14,7 +14,7 @@
+ #include <glib.h>
+ #include <glib-object.h>
+ #include <stdlib.h>
+-#include <evutil.h>
++#include <event2/util.h>
+ 
+ #ifdef WIN32
+     #include <errno.h>

@@ -1,0 +1,13 @@
+$OpenBSD$
+--- server/listen-mgr.c.orig	Tue Apr  8 18:52:25 2014
++++ server/listen-mgr.c	Tue Apr  8 18:58:43 2014
+@@ -2,6 +2,9 @@
+ 
+ #include <event2/event.h>
+ #include <event2/listener.h>
++#include <event2/bufferevent.h>
++#include <event2/buffer_compat.h>
++#include <event2/bufferevent_struct.h>
+ 
+ #include "seafile-session.h"
+ #include "utils.h"
