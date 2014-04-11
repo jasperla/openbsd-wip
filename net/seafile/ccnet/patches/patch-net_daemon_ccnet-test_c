@@ -1,0 +1,12 @@
+$OpenBSD$
+--- net/daemon/ccnet-test.c.orig	Tue Jan 21 13:29:42 2014
++++ net/daemon/ccnet-test.c	Tue Jan 21 13:30:06 2014
+@@ -4,7 +4,7 @@
+ #include "common.h"
+ 
+ #include <stdio.h>
+-#include <evdns.h>
++#include <event2/dns.h>
+ 
+ #include "utils.h"
+ 

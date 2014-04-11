@@ -29,7 +29,7 @@ MODULES=	lang/python \
 
 RUN_DEPENDS=	devel/py-tz \
 		devel/py-dateutil \
-		graphics/py-Imaging \
+		graphics/py-Pillow \
 		lang/python/${MODPY_VERSION},-tkinter \
 		math/py-numpy \
 		x11/py-gtk2

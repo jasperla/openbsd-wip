@@ -1,0 +1,14 @@
+$OpenBSD$
+--- net/common/session.h.orig	Fri Dec 13 15:11:27 2013
++++ net/common/session.h	Fri Dec 13 15:11:50 2013
+@@ -4,7 +4,9 @@
+ #define CCNET_SESSION_H
+ 
+ 
+-#include <event.h>
++#include <event2/event.h>
++#include <event2/event_compat.h>
++#include <event2/event_struct.h>
+ #include <glib.h>
+ #include <glib/gstdio.h>
+ #include "ccnet-session-base.h"

@@ -1,7 +1,7 @@
 $OpenBSD$
---- Makefile.in.orig	Sun Oct 20 20:45:47 2013
-+++ Makefile.in	Sun Oct 20 20:47:00 2013
-@@ -329,7 +329,7 @@ install: all
+--- Makefile.in.orig	Thu Nov  7 23:22:54 2013
++++ Makefile.in	Mon Feb 10 13:15:12 2014
+@@ -334,7 +334,7 @@ install: all
  	$(INSTALL_PROGRAM) $(PROG) $(DESTDIR)$(sbindir)/$(PROG).`cat ${srcdir}/VERSION`
  	[ -d $(DESTDIR)$(mandir)/man1 ] || \
  	    (mkdir -p $(DESTDIR)$(mandir)/man1; chmod 755 $(DESTDIR)$(mandir)/man1)

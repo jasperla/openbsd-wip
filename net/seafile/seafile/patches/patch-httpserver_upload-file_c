@@ -1,0 +1,14 @@
+$OpenBSD$
+--- httpserver/upload-file.c.orig	Tue Jan 21 18:32:06 2014
++++ httpserver/upload-file.c	Tue Jan 21 18:32:32 2014
+@@ -6,8 +6,8 @@
+ #include <getopt.h>
+ #include <fcntl.h>
+ 
+-#include <event.h>
+-#include <evhtp.h>
++#include <event2/event.h>
++#include <event2/http.h>
+ 
+ #include <jansson.h>
+ 

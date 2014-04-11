@@ -1,0 +1,14 @@
+$OpenBSD$
+--- httpserver/httpserver.c.orig	Tue Jan 21 18:32:54 2014
++++ httpserver/httpserver.c	Tue Jan 21 18:33:14 2014
+@@ -5,8 +5,8 @@
+ 
+ #include <getopt.h>
+ 
+-#include <event.h>
+-#include <evhtp.h>
++#include <event2/event.h>
++#include <event2/http.h>
+ 
+ #include <ccnet.h>
+ 
