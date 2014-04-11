@@ -1,0 +1,62 @@
+@comment $OpenBSD$
+bin/seaf-cli
+@bin bin/seaf-daemon
+@bin bin/seafile
+include/seafile/
+include/seafile/monitor-rpc.h
+include/seafile/seafile-object.h
+include/seafile/seafile-rpc.h
+include/seafile/seafile.h
+lib/libseafile.a
+lib/libseafile.la
+@lib lib/libseafile.so.${LIBseafile_VERSION}
+lib/pkgconfig/libseafile.pc
+lib/python${MODPY_VERSION}/site-packages/seafile/
+lib/python${MODPY_VERSION}/site-packages/seafile/__init__.py
+lib/python${MODPY_VERSION}/site-packages/seafile/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/seafile/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/seafile/rpcclient.py
+lib/python${MODPY_VERSION}/site-packages/seafile/rpcclient.pyc
+lib/python${MODPY_VERSION}/site-packages/seafile/rpcclient.pyo
+lib/python${MODPY_VERSION}/site-packages/seaserv/
+lib/python${MODPY_VERSION}/site-packages/seaserv/__init__.py
+lib/python${MODPY_VERSION}/site-packages/seaserv/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/seaserv/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/seaserv/api.py
+lib/python${MODPY_VERSION}/site-packages/seaserv/api.pyc
+lib/python${MODPY_VERSION}/site-packages/seaserv/api.pyo
+lib/python${MODPY_VERSION}/site-packages/seaserv/service.py
+lib/python${MODPY_VERSION}/site-packages/seaserv/service.pyc
+lib/python${MODPY_VERSION}/site-packages/seaserv/service.pyo
+@man man/man1/ccnet.1
+@man man/man1/seaf-cli.1
+@man man/man1/seaf-daemon.1
+@man man/man1/seafile-applet.1
+share/applications/
+share/applications/seafile.desktop
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/128x128/
+share/icons/hicolor/128x128/apps/
+share/icons/hicolor/128x128/apps/seafile.png
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
+share/icons/hicolor/16x16/apps/seafile.png
+share/icons/hicolor/22x22/
+share/icons/hicolor/22x22/apps/
+share/icons/hicolor/22x22/apps/seafile.png
+share/icons/hicolor/24x24/
+share/icons/hicolor/24x24/apps/
+share/icons/hicolor/24x24/apps/seafile.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
+share/icons/hicolor/32x32/apps/seafile.png
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/seafile.png
+share/pixmaps/
+share/pixmaps/seafile.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

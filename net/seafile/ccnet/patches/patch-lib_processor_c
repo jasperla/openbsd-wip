@@ -1,0 +1,12 @@
+$OpenBSD$
+--- lib/processor.c.orig	Sat Jan 18 12:39:35 2014
++++ lib/processor.c	Sat Jan 18 12:41:10 2014
+@@ -3,7 +3,7 @@
+ #include "include.h"
+ 
+ #include <pthread.h>
+-#include <event.h>
++#include <event2/event.h>
+ 
+ #include "ccnet-client.h"
+ #include "processor.h"

@@ -1,0 +1,12 @@
+$OpenBSD$
+--- daemon/Makefile.am.orig	Tue Apr  8 20:40:50 2014
++++ daemon/Makefile.am	Tue Apr  8 20:41:11 2014
+@@ -136,7 +136,7 @@ seaf_daemon_SOURCES = seaf-daemon.c $(common_src)
+ 
+ seaf_daemon_LDADD = $(top_builddir)/lib/libseafile_common.la \
+ 	@LIB_INTL@ \
+-	@GLIB2_LIBS@  @GOBJECT_LIBS@ -lssl @LIB_RT@ @LIB_UUID@ -lsqlite3 -levent \
++	@GLIB2_LIBS@  @GOBJECT_LIBS@ -lssl @LIB_RT@ @LIB_UUID@ -lsqlite3 \
+ 	$(top_builddir)/common/cdc/libcdc.la \
+ 	$(top_builddir)/common/index/libindex.la ${LIB_WS32} \
+ 	@SEARPC_LIBS@ @CCNET_LIBS@ @GNOME_KEYRING_LIBS@

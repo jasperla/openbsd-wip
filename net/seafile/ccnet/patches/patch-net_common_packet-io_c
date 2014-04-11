@@ -1,0 +1,16 @@
+$OpenBSD$
+--- net/common/packet-io.c.orig	Tue Jan  7 07:33:50 2014
++++ net/common/packet-io.c	Tue Jan 21 13:50:17 2014
+@@ -13,8 +13,10 @@
+ 
+ #include <unistd.h>
+ 
+-#include <event.h>
+-/* #include <event2/event.h> */
++#include <event2/event.h>
++#include <event2/bufferevent.h>
++#include <event2/bufferevent_struct.h>
++
+ #include <glib.h>
+ #include <errno.h>
+ #include <string.h>

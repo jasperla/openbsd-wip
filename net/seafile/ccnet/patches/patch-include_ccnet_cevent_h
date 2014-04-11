@@ -1,0 +1,14 @@
+$OpenBSD$
+--- include/ccnet/cevent.h.orig	Fri Dec 13 13:34:35 2013
++++ include/ccnet/cevent.h	Fri Dec 13 13:35:23 2013
+@@ -6,7 +6,9 @@
+ #ifndef CEVENT_H
+ #define CEVENT_H
+ 
+-#include <event.h>
++#include <event2/event.h>
++#include <event2/event_compat.h>
++#include <event2/event_struct.h>
+ #include <glib.h>
+ 
+ #include <pthread.h>

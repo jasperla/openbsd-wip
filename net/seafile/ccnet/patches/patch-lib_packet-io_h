@@ -1,0 +1,12 @@
+$OpenBSD$
+--- lib/packet-io.h.orig	Tue Jan 21 13:07:13 2014
++++ lib/packet-io.h	Tue Jan 21 13:07:29 2014
+@@ -4,7 +4,7 @@
+ #define CCNET_CLI_IO_H
+ 
+ #include <packet.h>
+-#include <evutil.h>
++#include <event2/util.h>
+ 
+ struct buffer;
+ 

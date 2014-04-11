@@ -1,0 +1,21 @@
+$OpenBSD$
+--- lib/Makefile.am.orig	Tue Jan 21 16:06:16 2014
++++ lib/Makefile.am	Tue Jan 21 16:06:36 2014
+@@ -49,7 +49,7 @@ EXTRA_DIST = ccnetobj.vala rpc_table.py
+ libccnet_la_LDFLAGS = -no-undefined -version-info 0:0:0
+ libccnet_la_LIBADD = -lpthread @GLIB2_LIBS@  @GOBJECT_LIBS@ -lssl -lcrypto @LIB_GDI32@ \
+ 				     @LIB_UUID@ @LIB_WS32@ @LIB_PSAPI@ -lsqlite3 \
+-					 -levent @SEARPC_LIBS@ @LIB_SHELL32@
++					 -levent_core @SEARPC_LIBS@ @LIB_SHELL32@
+ 
+ 
+ noinst_LTLIBRARIES = libccnetd.la
+@@ -60,7 +60,7 @@ libccnetd_la_SOURCES = utils.c db.c job-mgr.c \
+ 
+ libccnetd_la_LDFLAGS = -no-undefined
+ libccnetd_la_LIBADD = @GLIB2_LIBS@  @GOBJECT_LIBS@ -lssl -lcrypto @LIB_GDI32@ \
+-	                  -lsqlite3 -levent @LIB_WS32@ @LIB_UUID@ \
++	                  -lsqlite3 -levent_core @LIB_WS32@ @LIB_UUID@ \
+ 					  @LIB_SHELL32@ @LIB_PSAPI@ @SEARPC_LIBS@
+ 
+ 
