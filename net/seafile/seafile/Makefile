@@ -11,7 +11,8 @@ WANTLIB += gmodule-2.0 gobject-2.0 iconv inotify intl jansson
 WANTLIB += pcre pthread searpc sqlite3 ssl uuid z
 
 MODULES =		lang/python
-BUILD_DEPENDS =		lang/vala
+BUILD_DEPENDS =		devel/libtool \
+			lang/vala
 RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/py-simplejson \
 			x11/gtk+2,-guic

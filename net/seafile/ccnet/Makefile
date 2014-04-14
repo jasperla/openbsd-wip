@@ -14,7 +14,8 @@ WANTLIB += gmodule-2.0 gobject-2.0 iconv intl jansson pcre pthread
 WANTLIB += searpc sqlite3 ssl uuid z
 
 MODULES =		lang/python
-BUILD_DEPENDS =		lang/vala
+BUILD_DEPENDS =		devel/libtool \
+			lang/vala
 LIB_DEPENDS =		devel/libevent2 \
 			sysutils/e2fsprogs \
 			net/seafile/searpc
