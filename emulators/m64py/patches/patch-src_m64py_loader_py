@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/m64py/loader.py.orig	Wed Apr 16 00:51:47 2014
++++ src/m64py/loader.py	Wed Apr 16 00:52:11 2014
+@@ -146,7 +146,7 @@ class DarwinLibraryLoader(LibraryLoader):
+         dyld_fallback_library_path = _environ_path("DYLD_FALLBACK_LIBRARY_PATH")
+         if not dyld_fallback_library_path:
+             dyld_fallback_library_path = [os.path.expanduser('~/lib'),
+-                                          '/usr/local/lib', '/usr/lib']
++                                          '${LOCALBASE}/lib', '/usr/lib']
+ 
+         dirs = []
+         if '/' in libname:

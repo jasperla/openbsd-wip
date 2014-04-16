@@ -13,6 +13,7 @@ WANTLIB += ffi glib-2.0 gobject-2.0 jansson pcre pthread
 
 MODULES =		devel/gettext \
 			lang/python
+BUILD_DEPENDS = 	devel/libtool
 LIB_DEPENDS =		devel/glib2 \
 			devel/jansson
 

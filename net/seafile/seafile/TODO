@@ -1,1 +1,5 @@
-server requires https://github.com/ellzey/libevhtp
+ - switch linking from base levent to levent_core from devel/libevent2
+ - split into daemon and server subpackages
+ - add README
+ - add rc script
+ - test, test, test

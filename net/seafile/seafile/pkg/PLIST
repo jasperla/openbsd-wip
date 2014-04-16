@@ -1,7 +1,15 @@
 @comment $OpenBSD$
+@bin bin/httpserver
 bin/seaf-cli
 @bin bin/seaf-daemon
+@bin bin/seaf-fsck
+@bin bin/seaf-server
+@bin bin/seaf-server-init
 @bin bin/seafile
+bin/seafile-admin
+@bin bin/seafile-controller
+@bin bin/seafserv-gc
+@bin bin/seafserv-tool
 include/seafile/
 include/seafile/monitor-rpc.h
 include/seafile/seafile-object.h
@@ -32,27 +40,12 @@ lib/python${MODPY_VERSION}/site-packages/seaserv/service.pyo
 @man man/man1/seaf-cli.1
 @man man/man1/seaf-daemon.1
 @man man/man1/seafile-applet.1
-share/applications/
 share/applications/seafile.desktop
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/seafile.png
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/seafile.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/seafile.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/seafile.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/seafile.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/seafile.png
 share/pixmaps/
 share/pixmaps/seafile.png
