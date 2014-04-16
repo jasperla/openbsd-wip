@@ -1,0 +1,27 @@
+$OpenBSD$
+--- CMakeLists.txt.orig	Sun Mar 23 15:50:50 2014
++++ CMakeLists.txt	Wed Apr 16 14:16:09 2014
+@@ -178,7 +178,7 @@ include_directories(
+ )
+ 
+ set(LIBEVHTP_EXTERNAL_LIBS
+-		${LIBEVENT_LIBRARY}
++		${LIBEVENT_CORE_LIBRARY}
+ 		${LIBEVENT_PTHREADS_LIBRARY}
+ 		${LIBEVENT_OPENSSL_LIBRARY}
+ 		${OPENSSL_LIBRARIES}
+@@ -210,12 +210,12 @@ IF (WIN32)
+ 	find_library (LIB_WS32 ws2_32)
+ 	set (SYS_LIBS ${SYS_LIBS} ${LIB_WS32})
+ ELSE ()
+-	if (NOT ${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
++	if (NOT ${CMAKE_SYSTEM_NAME} STREQUAL "OpenBSD")
+ 		find_library (LIB_DL dl)
+ 		set (SYS_LIBS ${LIB_DL})
+ 	endif()
+ 
+-	if (NOT APPLE)
++	if (NOT ${CMAKE_SYSTEM_NAME} STREQUAL "OpenBSD")
+ 		find_library (LIB_RT rt)
+ 		set (SYS_LIBS ${SYS_LIBS} ${LIB_RT})
+ 	endif()
