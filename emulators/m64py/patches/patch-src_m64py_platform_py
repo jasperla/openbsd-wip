@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/m64py/platform.py.orig	Wed Apr 16 00:53:12 2014
++++ src/m64py/platform.py	Wed Apr 16 00:52:32 2014
+@@ -37,7 +37,7 @@ elif sys.platform.startswith("openbsd"):
+     DLL_FILTER = ""
+     DEFAULT_DYNLIB = "libmupen64plus.so"
+     SEARCH_DIRS = [
+-        "/usr/local/lib/mupen64plus",
++        "${LOCALBASE}/lib/mupen64plus",
+         "."
+     ]
+ elif sys.platform == "darwin":
