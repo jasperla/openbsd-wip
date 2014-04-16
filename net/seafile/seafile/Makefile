@@ -17,12 +17,14 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/py-simplejson \
 			x11/gtk+2,-guic
 LIB_DEPENDS =		devel/libinotify \
-			net/seafile/ccnet
+			net/seafile/ccnet \
+			databases/libzdb \
+			devel/libevhtp
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	automake
 CONFIGURE_ARGS +=	--disable-fuse \
-			--disable-server
+			--enable-server
 CONFIGURE_ENV +=	CPPFLAGS=-I${LOCALBASE}/include \
 			LDFLAGS="-L${LOCALBASE}/lib -linotify"
 
