@@ -1,14 +1,12 @@
 $OpenBSD$
---- httpserver/access-file.c.orig	Tue Jan 21 18:30:51 2014
-+++ httpserver/access-file.c	Tue Jan 21 18:31:37 2014
-@@ -3,8 +3,8 @@
+--- httpserver/access-file.c.orig	Tue Mar  4 14:35:38 2014
++++ httpserver/access-file.c	Thu Apr 10 21:37:24 2014
+@@ -3,7 +3,7 @@
  #define DEBUG_FLAG SEAFILE_DEBUG_HTTP
  #include "log.h"
  
 -#include <event.h>
--#include <evhtp.h>
 +#include <event2/event.h>
-+#include <event2/http.h>
+ #include <evhtp.h>
  
  #include <sys/stat.h>
- #include <sys/types.h>
