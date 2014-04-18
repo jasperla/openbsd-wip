@@ -1,7 +1,7 @@
 # $OpenBSD: Makefile.template,v 1.68 2013/10/02 07:34:45 ajacoutot Exp $
 
 V ?= 			2.1.2
-DISTNAME = 		${NAME}-${V}
+DISTNAME = 		${NAME}-${V:S/-server//}
 
 CATEGORIES =		net net/seafile
 
@@ -22,5 +22,7 @@ DISTFILES = 		${DISTNAME}${EXTRACT_SUFX}{v$V${EXTRACT_SUFX}}
 #TEST_DEPENDS =		???
 
 #SEPARATE_BUILD =	Yes (build in a directory other than WRKSRC)
+
+WRKDIST = 		${WRKDIR}/${NAME}-${V}
 
 #.include <bsd.port.mk>
