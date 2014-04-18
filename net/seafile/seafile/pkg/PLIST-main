@@ -1,15 +1,7 @@
 @comment $OpenBSD$
-@bin bin/httpserver
 bin/seaf-cli
 @bin bin/seaf-daemon
-@bin bin/seaf-fsck
-@bin bin/seaf-server
-@bin bin/seaf-server-init
 @bin bin/seafile
-bin/seafile-admin
-@bin bin/seafile-controller
-@bin bin/seafserv-gc
-@bin bin/seafserv-tool
 include/seafile/
 include/seafile/monitor-rpc.h
 include/seafile/seafile-object.h
