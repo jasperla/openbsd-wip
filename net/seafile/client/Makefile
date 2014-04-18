@@ -2,6 +2,7 @@
 
 COMMENT =		seafile client
 
+V = 			2.1.2
 NAME =			seafile-client
 
 WANTLIB += QtGui QtNetwork X11 c ccnet crypto gio-2.0 glib-2.0

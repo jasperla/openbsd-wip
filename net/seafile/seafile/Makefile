@@ -3,7 +3,6 @@
 COMMENT-main =		seafile daemon
 COMMENT-server = 	seafile server
 
-V = 			2.1.5-server
 NAME =			seafile
 PKGNAME-main = 		seafile-daemon-${V:S/-server//}
 PKGNAME-server = 	seafile-server-${V:S/-server//}

@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile.template,v 1.68 2013/10/02 07:34:45 ajacoutot Exp $
 
-V ?= 			2.1.2
+V ?= 			2.1.5-server
 DISTNAME = 		${NAME}-${V:S/-server//}
 
 CATEGORIES =		net net/seafile
