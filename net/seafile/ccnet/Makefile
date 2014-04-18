@@ -11,12 +11,13 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c crypto event_core event_extra ffi gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 iconv intl jansson pcre pthread
-WANTLIB += searpc sqlite3 ssl uuid z
+WANTLIB += searpc sqlite3 ssl uuid z zdb
 
 MODULES =		lang/python
 BUILD_DEPENDS =		devel/libtool \
 			lang/vala
-LIB_DEPENDS =		devel/libevent2 \
+LIB_DEPENDS =		databases/libzdb \
+			devel/libevent2 \
 			sysutils/e2fsprogs \
 			net/seafile/searpc
 
@@ -24,7 +25,7 @@ USE_GMAKE =		Yes
 CONFIGURE_STYLE =	automake
 CONFIGURE_ENV +=	CPPFLAGS=-I${LOCALBASE}/include \
 			LDFLAGS=-L${LOCALBASE}/lib
-
+CONFIGURE_ARGS += 	--enable-server
 
 AUTOCONF_VERSION =	2.63
 AUTOMAKE_VERSION =	1.11

@@ -3,6 +3,7 @@
 @bin bin/ccnet-demo-client
 @bin bin/ccnet-demo-server
 @bin bin/ccnet-init
+@bin bin/ccnet-server
 @bin bin/ccnet-servtool
 @bin bin/ccnet-tool
 include/ccnet/
