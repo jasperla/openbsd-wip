@@ -2,4 +2,5 @@
  - fix depends
  - add README
  - add rc script
+ - create directory layout in /var/seafile
  - test, test, test
