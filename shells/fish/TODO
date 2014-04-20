@@ -1,8 +1,13 @@
-- fixit. this seems to happen for any if statement using the output
-from an external command :
+Lots of errors/warnings surrounding each command invocation:
 
-sthen@ > if test (uname) = OpenBSD
-             echo open
-         end
-test: Missing argument at index 2
+fish: Unknown command 'prompt_pwd'
+/usr/local/share/fish/functions/fish_prompt.fish (line 6): prompt_pwd
 
+fish: Unknown command '__fish_pwd'
+Standard input: echo $_ " "; __fish_pwd
+
+
+"make test" seems to gobble up a ton of memory.
+
+
+Manpages need checking against mandoc/groff.

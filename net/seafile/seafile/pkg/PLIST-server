@@ -1,0 +1,9 @@
+@comment $OpenBSD$
+@bin bin/httpserver
+@bin bin/seaf-fsck
+@bin bin/seaf-server
+@bin bin/seaf-server-init
+bin/seafile-admin
+@bin bin/seafile-controller
+@bin bin/seafserv-gc
+@bin bin/seafserv-tool
