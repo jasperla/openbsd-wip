@@ -1,5 +1,6 @@
  - switch linking from base levent to levent_core from devel/libevent2
- - split into daemon and server subpackages
+ - fix depends
  - add README
  - add rc script
+ - create directory layout in /var/seafile
  - test, test, test
