@@ -32,7 +32,7 @@ share/vcmi/Mods/WoG/config/defaultMods.json
 share/vcmi/Mods/WoG/config/wog/
 share/vcmi/Mods/WoG/config/wog/artifacts.json
 share/vcmi/Mods/WoG/config/wog/creatures.json
-share/vcmi/Mods/WoG/config/wog/factions.json
+share/vcmi/Mods/WoG/config/wog/heroClasses.json
 share/vcmi/Mods/WoG/config/wogFileOverrides.json
 share/vcmi/Mods/WoG/mod.json
 @comment share/vcmi/Mods/vcmi/Data/s/std.verm
@@ -52,6 +52,7 @@ share/vcmi/config/bonuses.json
 share/vcmi/config/bonuses_texts.json
 share/vcmi/config/buildings5.json
 share/vcmi/config/campaignMedia.json
+share/vcmi/config/campaignSets.json
 share/vcmi/config/campaign_regions.json
 share/vcmi/config/commanders.json
 share/vcmi/config/creatures/
@@ -95,6 +96,7 @@ share/vcmi/config/heroes/special.json
 share/vcmi/config/heroes/stronghold.json
 share/vcmi/config/heroes/tower.json
 share/vcmi/config/mainmenu.json
+share/vcmi/config/mapOverrides.json
 share/vcmi/config/obstacles.json
 share/vcmi/config/resolutions.json
 share/vcmi/config/resources.json
@@ -106,6 +108,7 @@ share/vcmi/config/schemas/creature.json
 share/vcmi/config/schemas/faction.json
 share/vcmi/config/schemas/hero.json
 share/vcmi/config/schemas/heroClass.json
+share/vcmi/config/schemas/mapHeader.json
 share/vcmi/config/schemas/mod.json
 share/vcmi/config/schemas/settings.json
 share/vcmi/config/schemas/townBuilding.json
@@ -116,8 +119,8 @@ share/vcmi/config/spell_info.json
 share/vcmi/config/startres.json
 share/vcmi/config/terrainViewPatterns.json
 share/vcmi/config/terrains.json
-share/vcmi/config/threatlevel.txt
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+share/vcmi/config/translate.json

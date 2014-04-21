@@ -49,16 +49,12 @@ share/vcmi/Mods/vcmi/Data/zvs/Lib1.res/
 share/vcmi/Mods/vcmi/Data/zvs/Lib1.res/Catapult.bmp
 share/vcmi/Mods/vcmi/Data/zvs/Lib1.res/ChargeImmune.bmp
 share/vcmi/Mods/vcmi/Data/zvs/Lib1.res/DrainLife.bmp
-share/vcmi/Mods/vcmi/Data/zvs/Lib1.res/FireShield.bmp
 share/vcmi/Mods/vcmi/Data/zvs/Lib1.res/Healer.bmp
 share/vcmi/Mods/vcmi/Data/zvs/Lib1.res/MagicDamper.bmp
-share/vcmi/Mods/vcmi/Data/zvs/Lib1.res/MagicMirror.bmp
 share/vcmi/Mods/vcmi/Data/zvs/Lib1.res/ManaChannel.bmp
 share/vcmi/Mods/vcmi/Data/zvs/Lib1.res/ManaDrain.bmp
-share/vcmi/Mods/vcmi/Data/zvs/Lib1.res/NonLiving.bmp
 share/vcmi/Mods/vcmi/Data/zvs/Lib1.res/RandomBoost.bmp
 share/vcmi/Mods/vcmi/Data/zvs/Lib1.res/RiseDemons.bmp
-share/vcmi/Mods/vcmi/Data/zvs/Lib1.res/SpellLikeAttack.bmp
 share/vcmi/Mods/vcmi/Data/zvs/Lib1.res/ThreeHeaded.bmp
 share/vcmi/Mods/vcmi/Maps/
 share/vcmi/Mods/vcmi/Maps/VCMI_Tests_2011b.h3m
@@ -73,4 +69,5 @@ share/vcmi/Mods/vcmi/Sprites/IAM008L.DEF
 share/vcmi/Mods/vcmi/Sprites/IAM009L.DEF
 share/vcmi/Mods/vcmi/Sprites/IAM010L.DEF
 share/vcmi/Mods/vcmi/Sprites/IAM011L.DEF
+share/vcmi/Mods/vcmi/Sprites/SYSOB12.DEF
 share/vcmi/Mods/vcmi/Sprites/chftke.def
