@@ -1,6 +1,7 @@
 @comment $OpenBSD$
 bin/seaf-cli
 @bin bin/seaf-daemon
+@bin bin/seaf-migrate
 @bin bin/seafile
 include/seafile/
 include/seafile/monitor-rpc.h
