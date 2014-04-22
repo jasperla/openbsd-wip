@@ -1,0 +1,23 @@
+$OpenBSD$
+--- tests/Makefile.am.orig	Mon Apr 21 20:01:32 2014
++++ tests/Makefile.am	Mon Apr 21 20:01:54 2014
+@@ -1,8 +1,7 @@
+ generated_sources = searpc-signature.h searpc-marshal.h
+ 
+ AM_CFLAGS = @GLIB_CFLAGS@ \
+-	-I${top_srcdir}/lib \
+-	-I${top_srcdir}/json-glib
++	-I${top_srcdir}/lib
+ 
+ # we need to generate the first
+ BUILT_SOURCES = gensource
+@@ -11,8 +10,7 @@ check_PROGRAMS = test-searpc
+ 
+ test_searpc_SOURCES = test-searpc.c
+ test_searpc_LDADD = @GLIB_LIBS@  \
+-    $(top_builddir)/lib/libsearpc.la \
+-    ${top_builddir}/json-glib/json-glib/libsearpc-json-glib.la
++    $(top_builddir)/lib/libsearpc.la
+ test_searpc_LDFLAGS = -static
+ 
+ TESTS = test-searpc
