@@ -2,14 +2,13 @@
 
 COMMENT =		seafile client
 
-V = 			2.1.2
 NAME =			seafile-client
 
-WANTLIB += QtGui QtNetwork X11 c ccnet crypto gio-2.0 glib-2.0
+WANTLIB += QtGui QtNetwork c ccnet crypto gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 intl jansson m pthread seafile searpc sqlite3
-WANTLIB += ssl
+WANTLIB += ssl stdc++
 
-MODULES =		devel/cmake x11/qt4
+MODULES =		devel/cmake devel/gettext x11/qt4
 #BUILD_DEPENDS =	???
 #RUN_DEPENDS =		???
 LIB_DEPENDS =		net/seafile/ccnet \

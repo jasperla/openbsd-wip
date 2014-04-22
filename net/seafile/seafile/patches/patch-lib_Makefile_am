@@ -1,16 +1,16 @@
 $OpenBSD$
---- lib/Makefile.am.orig	Tue Mar  4 14:35:38 2014
-+++ lib/Makefile.am	Tue Apr  8 20:41:30 2014
+--- lib/Makefile.am.orig	Mon Apr 21 15:11:37 2014
++++ lib/Makefile.am	Tue Apr 22 12:20:50 2014
 @@ -55,7 +55,7 @@ libseafile_common_la_SOURCES = ${seafile_object_gen} $
  libseafile_common_la_LDFLAGS = -no-undefined
  libseafile_common_la_LIBADD = @GLIB2_LIBS@  @GOBJECT_LIBS@ -lssl -lcrypto @LIB_GDI32@ \
  				     @LIB_UUID@ @LIB_WS32@ @LIB_PSAPI@ -lsqlite3 \
--					 -levent @SEARPC_LIBS@ @LIB_SHELL32@
-+					 @SEARPC_LIBS@ @LIB_SHELL32@
+-					 -levent @SEARPC_LIBS@ @LIB_SHELL32@ \
++					 -levent_core @SEARPC_LIBS@ @LIB_SHELL32@ \
+ 	@ZLIB_LIBS@
  
  searpc_gen = searpc-signature.h searpc-marshal.h
- 
-@@ -74,5 +74,5 @@ install-data-local:
+@@ -75,5 +75,5 @@ install-data-local:
  if MACOS
  	${SED} -i '' -e "s|(DESTDIR)|${DESTDIR}|g" $(pcfiles)
  else
