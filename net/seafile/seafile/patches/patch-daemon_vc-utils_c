@@ -1,7 +1,7 @@
 $OpenBSD$
---- daemon/vc-utils.c.orig	Tue Apr  8 19:19:36 2014
-+++ daemon/vc-utils.c	Tue Apr  8 19:31:12 2014
-@@ -244,7 +244,7 @@ compare_file_content (const char *path, SeafStat *st, 
+--- daemon/vc-utils.c.orig	Mon Apr 21 15:11:37 2014
++++ daemon/vc-utils.c	Tue Apr 22 12:19:07 2014
+@@ -274,7 +274,7 @@ compare_file_content (const char *path, SeafStat *st, 
      return hashcmp (sha1, ce_sha1);
  }
  

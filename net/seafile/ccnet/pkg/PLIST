@@ -1,7 +1,5 @@
 @comment $OpenBSD$
 @bin bin/ccnet
-@bin bin/ccnet-demo-client
-@bin bin/ccnet-demo-server
 @bin bin/ccnet-init
 @bin bin/ccnet-server
 @bin bin/ccnet-servtool

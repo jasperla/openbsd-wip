@@ -24,13 +24,10 @@ CONFIGURE_STYLE =	automake
 AUTOCONF_VERSION =	2.63
 AUTOMAKE_VERSION =	1.11
 
-NO_TEST = 		Yes
-
 MODPY_ADJ_FILES = 	lib/searpc-codegen.py pysearpc/pygencode.py
 
 pre-configure:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf --install
-
 
 .include <bsd.port.mk>

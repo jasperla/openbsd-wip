@@ -4,18 +4,18 @@ COMMENT-main =		seafile daemon
 COMMENT-server = 	seafile server
 
 NAME =			seafile
-PKGNAME-main = 		seafile-daemon-${V:S/-server//}
-PKGNAME-server = 	seafile-server-${V:S/-server//}
+PKGNAME-main = 		seafile-daemon-${V:S/-server//:S/-testing//}
+PKGNAME-server = 	seafile-server-${V:S/-server//:S/-testing//}
 
 SHARED_LIBS =		seafile 0.0
 
 WANTLIB += c ccnet event_core crypto ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += inotify jansson pcre pthread searpc sqlite3 ssl uuid z
+WANTLIB += inotify jansson pcre pthread searpc sqlite3 ssl uuid z zdb
 
 WANTLIB-main += ${MODGETTEXT_WANTLIB} ${WANTLIB}
 
-WANTLIB-server += archive bz2 event event_openssl event_pthreads evhtp expat lzma
-WANTLIB-server += onig seafile zdb ${WANTLIB}
+WANTLIB-server += archive bz2 event_openssl event_pthreads evhtp expat lzma
+WANTLIB-server += onig seafile ${WANTLIB}
 
 MODULES =		devel/gettext lang/python
 BUILD_DEPENDS =		devel/libtool \
