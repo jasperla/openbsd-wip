@@ -1,0 +1,25 @@
+@comment $OpenBSD$
+@conflict php-<5.4p6
+@conflict php->=5.5,<5.5p0
+bin/boris
+boris/
+boris/bin/
+boris/bin/boris
+boris/box.json
+boris/composer.json
+boris/lib/
+boris/lib/Boris/
+boris/lib/Boris/Boris.php
+boris/lib/Boris/CLIOptionsHandler.php
+boris/lib/Boris/ColoredInspector.php
+boris/lib/Boris/Config.php
+boris/lib/Boris/DumpInspector.php
+boris/lib/Boris/EvalWorker.php
+boris/lib/Boris/ExportInspector.php
+boris/lib/Boris/Inspector.php
+boris/lib/Boris/ReadlineClient.php
+boris/lib/Boris/ShallowParser.php
+boris/lib/autoload.php
+share/doc/boris/
+share/doc/boris/LICENSE
+share/doc/boris/README.md

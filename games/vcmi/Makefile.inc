@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-V ?= 			0.94
+V ?= 			0.95
 
 CATEGORIES =		games games/vcmi
 
@@ -11,7 +11,8 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES = 		http://download.vcmi.eu/
+MASTER_SITES = 		http://download.vcmi.eu/ \
+			http://www.linklevel.net/distfiles/
 DIST_SUBDIR = 		vcmi
 
 NO_TEST =		Yes
