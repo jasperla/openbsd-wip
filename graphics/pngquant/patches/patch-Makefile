@@ -1,26 +1,19 @@
 $OpenBSD$
 --- Makefile.orig	Wed Feb 26 17:33:10 2014
-+++ Makefile	Tue Apr  1 00:02:17 2014
-@@ -15,8 +15,8 @@ CUSTOMZLIB ?= ../zlib
++++ Makefile	Wed Apr 23 11:44:56 2014
+@@ -9,13 +9,9 @@ BIN ?= pngquant
+ PREFIX ?= /usr/local
+ BINPREFIX = $(PREFIX)/bin
  
- CFLAGSOPT ?= -DNDEBUG -O3 -ffast-math -funroll-loops -fomit-frame-pointer
+-# Alternatively, build libpng and zlib in these directories:
+-CUSTOMLIBPNG ?= ../libpng
+-CUSTOMZLIB ?= ../zlib
++CFLAGSOPT ?= -ffast-math -funroll-loops -fomit-frame-pointer
  
+-CFLAGSOPT ?= -DNDEBUG -O3 -ffast-math -funroll-loops -fomit-frame-pointer
+-
 -CFLAGS ?= -Wall -Wno-unknown-pragmas -I. -I/usr/local/include/ -I/usr/include/ $(CFLAGSOPT)
--CFLAGS += -std=c99 $(CFLAGSADD)
-+CFLAGS ?= -Wall -Wno-unknown-pragmas -I$(CUSTOMLIBPNG) -I$(CUSTOMZLIB) $(CFLAGSOPT)
-+CFLAGS += -std=c99 -I/usr/local/include $(CFLAGSADD)
++CFLAGS += -Wall -Wno-unknown-pragmas -I. -I/usr/local/include/ -I/usr/include/ $(CFLAGSOPT)
+ CFLAGS += -std=c99 $(CFLAGSADD)
  
  LDFLAGS ?= -L/usr/local/lib/ -L/usr/lib/
- 
-@@ -80,7 +80,10 @@ rwpng_cocoa.o: rwpng_cocoa.m
- $(OBJS): rwpng.h build_configuration
- 
- install: $(BIN)
--	install -m 0755 -p $(BIN) $(DESTDIR)$(BINPREFIX)/$(BIN)
-+	@mkdir -p ${PREFIX}/bin
-+	@mkdir -p ${PREFIX}/man/man1
-+	install $(BIN) ${PREFIX}/bin
-+	install $(BIN).1 ${PREFIX}/man/man1
- 
- uninstall:
- 	rm -f $(DESTDIR)$(BINPREFIX)/$(BIN)
