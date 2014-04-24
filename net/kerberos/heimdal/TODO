@@ -1,0 +1,5 @@
+- login_krb5
+
+- install conf files
+- README (/var/heimdal, /etc/heimdal, ...)
+- subpackage ?
