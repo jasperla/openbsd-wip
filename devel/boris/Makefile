@@ -1,5 +1,4 @@
 # $OpenBSD: Makefile.template,v 1.68 2013/10/02 07:34:45 ajacoutot Exp $
-
 COMMENT =		REPL for PHP
 
 V =			1.0.8
@@ -17,7 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		https://github.com/d11wtq/boris/archive/
 
 MODULES =		lang/php
-RUN_DEPENDS =		lang/php/${MODPHP_VERSION},-pcntl
+RUN_DEPENDS +=		lang/php/${MODPHP_VERSION},-pcntl
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
@@ -34,3 +33,11 @@ do-install:
 		${PREFIX}/boris/.gitignore
 
 .include <bsd.port.mk>
+
+.if ${MODPHP_VERSION} == 5.3
+BROKEN =		Readline support broken in PHP-5.3
+.elif ${MODPHP_VERSION} == 5.4
+RUN_DEPENDS +=		php->=5.4.27p2:lang/php/${MODPHP_VERSION}
+.elif ${MODPHP_VERSION} == 5.5
+RUN_DEPENDS +=		php->=5.5.11p2:lang/php/${MODPHP_VERSION}
+.endif
