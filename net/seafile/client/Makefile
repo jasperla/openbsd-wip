@@ -9,10 +9,7 @@ WANTLIB += gobject-2.0 intl jansson m pthread seafile searpc sqlite3
 WANTLIB += ssl stdc++
 
 MODULES =		devel/cmake devel/gettext x11/qt4
-#BUILD_DEPENDS =	???
-#RUN_DEPENDS =		???
-LIB_DEPENDS =		net/seafile/ccnet \
-			net/seafile/seafile
+LIB_DEPENDS =		net/seafile/seafile
 
 CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=Release
 

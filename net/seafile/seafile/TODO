@@ -2,4 +2,6 @@
  - add README
  - add rc script ?
  - create directory layout in /var/seafile ???
+ - seaf-server-init just creates 4 line config. I think we can ship our config in ${FILESDIR}
+ - install default server config and feed it to server
  - test, test, test

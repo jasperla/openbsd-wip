@@ -1,6 +1,4 @@
 @comment $OpenBSD$
-@conflict php-<5.4p6
-@conflict php->=5.5,<5.5p0
 bin/boris
 boris/
 boris/bin/
