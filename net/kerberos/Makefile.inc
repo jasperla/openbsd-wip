@@ -1,0 +1,3 @@
+# $OpenBSD$
+
+CATEGORIES +=		net/kerberos
