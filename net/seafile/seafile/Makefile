@@ -4,8 +4,8 @@ COMMENT-main =		seafile daemon
 COMMENT-server = 	seafile server
 
 NAME =			seafile
-PKGNAME-main = 		seafile-daemon-${V:S/-server//:S/-testing//}
-PKGNAME-server = 	seafile-server-${V:S/-server//:S/-testing//}
+PKGNAME-main = 		seafile-daemon-${V}
+PKGNAME-server = 	seafile-server-${V}
 
 SHARED_LIBS =		seafile 0.0
 
