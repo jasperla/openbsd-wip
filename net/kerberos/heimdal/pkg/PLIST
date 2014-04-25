@@ -97,9 +97,6 @@ heimdal/include/sl.h
 heimdal/include/wind.h
 heimdal/include/wind_err.h
 heimdal/include/xdbm.h
-heimdal/info/
-@info heimdal/info/heimdal.info
-@info heimdal/info/hx509.info
 heimdal/lib/
 heimdal/lib/libasn1.a
 heimdal/lib/libasn1.la
@@ -1341,6 +1338,15 @@ heimdal/sbin/
 @bin heimdal/sbin/kadmin
 @bin heimdal/sbin/kstash
 @bin heimdal/sbin/ktutil
+@mode 0700
+@sample /var/heimdal
+@mode
+@info info/heimdal.info
+@info info/hx509.info
+share/examples/heimdal/
+@sample ${SYSCONFDIR}/
+share/examples/heimdal/krb5.conf
+@sample ${SYSCONFDIR}/krb5.conf
 @rcscript ${RCDIR}/ipropd_master
 @rcscript ${RCDIR}/ipropd_slave
 @rcscript ${RCDIR}/kadmind
