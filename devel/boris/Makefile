@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile.template,v 1.68 2013/10/02 07:34:45 ajacoutot Exp $
 
-COMMENT =		REPL for PHP
+COMMENT =		read–eval–print loop for PHP
 
 V =			1.0.8
 DISTNAME =		boris-$V
