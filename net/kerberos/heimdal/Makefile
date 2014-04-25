@@ -52,6 +52,13 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-otp \
 			--without-x
 
+# install bins, libs and includes under a non-default PATH/PREFIX
+CONFIGURE_ARGS +=	--bindir=${PREFIX}/heimdal/bin \
+			--sbindir=${PREFIX}/heimdal/sbin \
+			--libexecdir=${PREFIX}/heimdal/libexec \
+			--libdir=${PREFIX}/heimdal/lib \
+			--includedir=${PREFIX}/heimdal/include
+
 RM_BIN=			bin/afslog \
 			bin/ftp \
 			bin/login \
@@ -84,6 +91,9 @@ RM_MAN=			man/man1/afslog.1 \
 			man/man8/telnetd.8
 
 post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/heimdal
+	${INSTALL_DATA} ${FILESDIR}/krb5.conf \
+		${PREFIX}/share/examples/heimdal/
 	# fix bogus symlink
 	cd ${PREFIX}/heimdal/man/man5/ && \
 		ln -sf mech.5 qop.5
@@ -94,6 +104,5 @@ post-install:
 
 .include <bsd.port.mk>
 
-CONFIGURE_ARGS +=	--prefix=${PREFIX}/heimdal
+# install mans under a non-default PATH/PREFIX
 CONFIGURE_ARGS +=	--mandir=${PREFIX}/heimdal/man
-CONFIGURE_ARGS +=	--infodir=${PREFIX}/heimdal/info
