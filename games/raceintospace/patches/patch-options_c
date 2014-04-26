@@ -1,0 +1,15 @@
+$OpenBSD$
+--- options.c.orig	Thu Apr 18 06:18:51 2013
++++ options.c	Fri Apr 18 22:48:57 2014
+@@ -36,10 +36,7 @@
+ #if CONFIG_WIN32
+ #  define DEFAULT_DATADIR ("c:/" PACKAGE_TARNAME )
+ #  define DEFAULT_SAVEDIR ("c:/" PACKAGE_TARNAME "/savedat")
+-#elif CONFIG_LINUX
+-#  define DEFAULT_DATADIR CONFIG_DATADIR
+-#  define DEFAULT_SAVEDIR (".")
+-#elif CONFIG_MACOSX
++#else
+ #  define DEFAULT_DATADIR CONFIG_DATADIR
+ #  define DEFAULT_SAVEDIR (".")
+ #endif

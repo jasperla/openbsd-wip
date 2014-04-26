@@ -1,9 +1,0 @@
-$OpenBSD$
---- bin/boris.orig	Mon Apr 21 23:56:20 2014
-+++ bin/boris	Mon Apr 21 23:56:30 2014
-@@ -1,4 +1,4 @@
--#!/usr/bin/env php
-+#!${MODPHP_BIN}
- <?php
- 
- /* vim: set shiftwidth=2 expandtab softtabstop=2: */
