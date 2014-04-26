@@ -1338,15 +1338,15 @@ heimdal/sbin/
 @bin heimdal/sbin/kadmin
 @bin heimdal/sbin/kstash
 @bin heimdal/sbin/ktutil
-@mode 0700
-@sample /var/heimdal
-@mode
 @info info/heimdal.info
 @info info/hx509.info
 share/examples/heimdal/
 @sample ${SYSCONFDIR}/
 share/examples/heimdal/krb5.conf
 @sample ${SYSCONFDIR}/krb5.conf
+@mode 0700
+@sample /var/heimdal/
+@mode
 @rcscript ${RCDIR}/ipropd_master
 @rcscript ${RCDIR}/ipropd_slave
 @rcscript ${RCDIR}/kadmind
