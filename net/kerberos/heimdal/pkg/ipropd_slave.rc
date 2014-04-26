@@ -2,7 +2,7 @@
 #
 # $OpenBSD: ipropd_slave,v 1.1 2013/08/09 16:24:54 ajacoutot Exp $
 
-daemon="${TRUEPREFIX}/libexec/ipropd-slave --detach"
+daemon="${TRUEPREFIX}/heimdal/libexec/ipropd-slave --detach"
 
 . /etc/rc.d/rc.subr
 
