@@ -1,0 +1,24 @@
+$OpenBSD$
+--- put-data.orig	Sat Jun 25 14:47:36 2011
++++ put-data	Fri Apr 18 21:59:18 2014
+@@ -63,7 +63,7 @@ fi
+ (
+     cd ${gamedata_dir}
+     mkdir -p ${DATA_DIR}/gamedata
+-    cp --parents `cat gamedata-files` ${DATA_DIR}/gamedata
++    cp `cat gamedata-files` ${DATA_DIR}/gamedata
+     sed "s:^:${DATA_DIR}/gamedata/:" < gamedata-files | xargs chmod a=r,u+w
+ )
+ 
+@@ -98,7 +98,10 @@ fi
+ 
+ ( 
+     cd ${avdata_dir}
+-    cp --parents `cat avdata-files` ${DATA_DIR}
++    for f in `cat avdata-files`; do
++        mkdir -p ${DATA_DIR}/$(dirname $f)
++        cp $f ${DATA_DIR}/$(dirname $f)
++    done
+     sed "s:^:${DATA_DIR}/:" < avdata-files | xargs chmod a=r,u+w
+ )
+ 
