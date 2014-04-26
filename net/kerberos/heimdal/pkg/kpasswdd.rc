@@ -2,7 +2,7 @@
 #
 # $OpenBSD: kpasswdd,v 1.1 2011/07/07 18:17:50 ajacoutot Exp $
 
-daemon="${TRUEPREFIX}/libexec/kpasswdd"
+daemon="${TRUEPREFIX}/heimdal/libexec/kpasswdd"
 
 . /etc/rc.d/rc.subr
 

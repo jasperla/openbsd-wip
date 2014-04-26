@@ -2,7 +2,7 @@
 #
 # $OpenBSD: kdc,v 1.2 2013/06/17 19:23:24 ajacoutot Exp $
 
-daemon="${TRUEPREFIX}/libexec/kdc --detach"
+daemon="${TRUEPREFIX}/heimdal/libexec/kdc --detach"
 
 . /etc/rc.d/rc.subr
 
