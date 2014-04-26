@@ -35,9 +35,6 @@ WANTLIB += c crypto curses pthread termcap util
 
 MASTER_SITES=		http://www.h5l.org/dist/src/
 
-USE_GROFF=		Yes
-MAKE_ENV=		INSTALL_CATPAGES=no
-
 BUILD_DEPENDS=		devel/bison
 
 SYSCONFDIR=		${BASESYSCONFDIR}/heimdal
@@ -58,6 +55,8 @@ CONFIGURE_ARGS +=	--bindir=${PREFIX}/heimdal/bin \
 			--libexecdir=${PREFIX}/heimdal/libexec \
 			--libdir=${PREFIX}/heimdal/lib \
 			--includedir=${PREFIX}/heimdal/include
+
+MAKE_ENV=		INSTALL_CATPAGES=no
 
 RM_BIN=			bin/afslog \
 			bin/ftp \
@@ -95,14 +94,14 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/krb5.conf \
 		${PREFIX}/share/examples/heimdal/
 	# fix bogus symlink
-	cd ${PREFIX}/heimdal/man/man5/ && \
+	cd ${PREFIX}/man/man5/ && \
 		ln -sf mech.5 qop.5
 	# remove until proven useful
-.for i in ${RM_BIN} ${RM_MAN}
+.for i in ${RM_BIN}
 	rm ${PREFIX}/heimdal/$i
+.endfor
+.for i in ${RM_MAN}
+	rm ${PREFIX}/$i
 .endfor
 
 .include <bsd.port.mk>
-
-# install mans under a non-default PATH/PREFIX
-CONFIGURE_ARGS +=	--mandir=${PREFIX}/heimdal/man
