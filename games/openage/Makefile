@@ -32,7 +32,7 @@ HOMEPAGE =		https://github.com/SFTtech/openage/
 # If you no longer use the port, or are unwilling/unable to handle issues
 # in a timely manner, *leave the field blank*.
 # Default value is ports@openbsd.org, no need to fill in
-#MAINTAINER =		???
+MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
 # Licensing:  This determines what we can distribute.
 # When you determine the license type, make sure to look at ALL distfiles.
@@ -46,6 +46,7 @@ HOMEPAGE =		https://github.com/SFTtech/openage/
 # if someone wants to double-check licensing.
 # In case of GPL, version number must be appended (e.g. v2, v2+, v3).
 # Setting PERMIT_PACKAGE_CDROM=Yes defaults other PERMIT_* variables to Yes.
+# GNU GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
 # "make port-lib-depends-check" can help
@@ -72,22 +73,23 @@ MODGCC4_LANGS=          c++
 #PATCHFILES =		???
 #PATCH_DIST_STRIP =	-p0
 
-# Dependencies
-#
 MODULES =		devel/cmake \
 			gcc4
-BUILD_DEPENDS =		graphics/glew \
+BUILD_DEPENDS =		audio/opus \
 			devel/doxygen,-main \
 			devel/llvm \
-			devel/sdl \
-			print/freetype,-main \
+			devel/sdl2 \
+			devel/sdl2-image \
+			graphics/freeglut \
 			graphics/ftgl \
-			devel/sdl-image \
-			audio/opus \
-			lang/gcc/4.8,-main
+			graphics/glew \
+			lang/gcc/4.6,-c++ \
+			lang/gcc/4.8,-main \
+			print/freetype,-main
+
 #RUN_DEPENDS =		???
 LIB_DEPENDS =		graphics/glew \
-			devel/sdl
+			devel/sdl2
 #TEST_DEPENDS =		???
 
 #MAKE_FLAGS =		???
@@ -119,8 +121,11 @@ LIB_DEPENDS =		graphics/glew \
 #CONFIGURE_SCRIPT =	??? (if other than configure)
 #CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 #CONFIGURE_ENV =	???
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+			CFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 
-# for gnu stuff
+
 #AUTOCONF_VERSION =	??? (defaults to 2.13)
 #AUTOMAKE_VERSION =	??? (defaults to 1.4)
 # config.guess and others are copied here
@@ -165,7 +170,12 @@ LIB_DEPENDS =		graphics/glew \
 
 # Overrides for default values
 #
+CPPFLAGS +=		-I${LOCALBASE}/include -I${X11BASE}/include
+LDFLAGS +=		-L${LOCALBASE}/lib -L${X11BASE}/lib
+CFLAGS +=		-I${LOCALBASE}/include -I${X11BASE}/include
+
 #CFLAGS =		???
+#CFLAGS +=		-I${LOCALBASE}/include -I${X11BASE}/include
 #LDFLAGS =		???
 #MAKE_FILE =		???
 #PKG_ARCH =		??? (* for arch-independent packages)
