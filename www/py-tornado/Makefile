@@ -16,15 +16,20 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		${MASTER_SITE_PYPI:=t/tornado/}
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
-
+RUN_DEPENDS +=		devel/py-backports-ssl-match-hostname
 WANTLIB +=		pthread python2.7
 
-# XXX wont run, since it needs the backports module
+MODPY_SETUPTOOLS =	Yes
 
-# XXX tests fail
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/runtests.sh
+
+TEST_DEPENDS +=		devel/py-twisted/names \
+			devel/py-twisted/web \
+			devel/py-mock \
+			net/py-curl \
+			devel/py-futures
 do-test:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} PYTHONPATH=.\
-		${MODPY_BIN} ./tornado/test/runtests.py
+	@cd ${WRKSRC} && sh runtests.sh
 
 .include <bsd.port.mk>
