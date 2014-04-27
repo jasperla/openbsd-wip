@@ -1,0 +1,12 @@
+$OpenBSD: patch-racket_src_configure,v 1.1 2014/04/09 03:34:48 juanfra Exp $
+--- src/configure.orig	Sat Jan 11 19:20:47 2014
++++ src/configure	Sun Jan 26 02:08:24 2014
+@@ -9164,7 +9164,7 @@ if test "${enable_shared}" = "yes" ; then
+     plt_lib_version=`grep " MZSCHEME_VERSION " ${srcdir}/racket/src/schvers.h | cut -d '"' -f 2`
+   fi
+ 
+-  AR="${LIBTOOLPROG} --mode=link --tag=CC $CC${need_gcc_static_libgcc}${ar_libtool_no_undefined} -release ${plt_lib_version} -rpath ${abslibdir} \$(ARLIBFLAGS) -o"
++  AR="${LIBTOOLPROG} --mode=link --tag=CC $CC${need_gcc_static_libgcc}${ar_libtool_no_undefined} -version-info ${LIBracket3m_MAJOR}:${LIBracket3m_MINOR} -rpath ${abslibdir} \$(ARLIBFLAGS) -o"
+   STATIC_AR="${LIBTOOLPROG} --mode=link --tag=CC $CC -o"
+   ARFLAGS=""
+   RANLIB=":"
