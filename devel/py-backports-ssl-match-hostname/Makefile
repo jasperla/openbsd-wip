@@ -14,7 +14,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		${MASTER_SITE_PYPI:=b/backports.ssl_match_hostname/}
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
 RUN_DEPENDS =		python-<3.2:lang/python/${MODPY_VERSION} # comes built in after 3.2
+
+MODPY_SETUPTOOLS =	Yes
 
 .include <bsd.port.mk>
