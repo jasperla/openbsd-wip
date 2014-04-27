@@ -44,6 +44,7 @@ pre-patch:
 MAKE_ENV +=	PYTHONPATH=${WRKSRC}
 post-build:
 	cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
+	${SUBST_CMD} ${WRKBUILD}/IPython/core/tests/test_interactiveshell.py
 
 # Despite the fact that setupbase.py defines paths for examples to
 # be installed into, we still have to do it manually for some reason.
@@ -74,7 +75,7 @@ pre-build:
 	${SUBST_CMD} ${WRKBUILD}/IPython/core/tests/test_interactiveshell.py
 
 do-test:
-	PYTHONIOENCODING='utf-8' ${LOCALBASE}/bin/iptest -vvs
+	PYTHONIOENCODING='utf-8' ${LOCALBASE}/bin/iptest
 
 # A couple of test failures, reported, but upstream think these are bugs
 # in the test harness. They refuse to fix since the 1.x branch is about to
