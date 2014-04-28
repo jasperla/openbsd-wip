@@ -1,0 +1,42 @@
+$OpenBSD$
+--- port.c.orig	Tue Jun 22 15:11:47 2010
++++ port.c	Sun Apr 27 21:08:07 2014
+@@ -61,13 +61,13 @@ PORTOUTLINE *pPortOutlineRestore;
+ 
+ struct FHead {
+   char Text[28];  /**< File Copyright Notice */
+-  long oMObj;     /**< Offset to MObj data table */
+-  long oTab;      /**< Offset to Table of data */
+-  long oPal;      /**< Offset to Palette */
+-  long oPort;     /**< Offset to start of Port Images */
+-  long oMse;      /**< Offset to Mouse Objects */
+-  long oOut;      /**< Offset to port Outlines */
+-  long oAnim;     /**< Offset to start of Port Anims */
++  int32_t oMObj;     /**< Offset to MObj data table */
++  int32_t oTab;      /**< Offset to Table of data */
++  int32_t oPal;      /**< Offset to Palette */
++  int32_t oPort;     /**< Offset to start of Port Images */
++  int32_t oMse;      /**< Offset to Mouse Objects */
++  int32_t oOut;      /**< Offset to port Outlines */
++  int32_t oAnim;     /**< Offset to start of Port Anims */
+    } PHead;
+ 
+ typedef struct cBoxx {
+@@ -75,7 +75,7 @@ typedef struct cBoxx {
+    } BOUND;
+ 
+ typedef struct Img {
+-  long Size;         /**<  Size of Image (bytes) */
++  int32_t Size;         /**<  Size of Image (bytes) */
+   char Comp;         /**<  Type of Compression Used */
+   i16 Width;         /**<  Width of Image */
+   i16 Height;        /**<  Height of Image */
+@@ -413,7 +413,7 @@ void PortPal(char plr)
+ 
+ void DrawSpaceport(char plr)
+ {
+-  long table[S_QTY];
++  int32_t table[S_QTY];
+   int i,fm,idx;
+   FILE *fin;
+   GXHEADER local,local2;
