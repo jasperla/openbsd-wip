@@ -1,5 +1,6 @@
 @comment $OpenBSD$
 @bin bin/raceintospace
+@man man/man6/raceintospace.6
 share/doc/raceintospace/
 share/doc/raceintospace/README
 share/raceintospace/
