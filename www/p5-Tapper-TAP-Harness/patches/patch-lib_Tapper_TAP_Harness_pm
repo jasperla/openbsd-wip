@@ -1,0 +1,12 @@
+$OpenBSD$
+--- lib/Tapper/TAP/Harness.pm.orig	Mon Apr 28 19:20:12 2014
++++ lib/Tapper/TAP/Harness.pm	Mon Apr 28 19:20:33 2014
+@@ -561,7 +561,7 @@ sub generate_html
+         # unix shell level
+         my $prove = _get_prove();
+ 
+-        my $cmd = qq{cd $temp/section ; $^X $prove -vm --exec 'cat' --formatter=TAP::Formatter::HTML `find -type f | sed -e 's,^\./,,' | sort`};
++        my $cmd = qq{cd $temp/section ; $^X $prove -vm --exec 'cat' --formatter=TAP::Formatter::HTML `find . -type f | sed -e 's,^\./,,' | sort`};
+         #say STDERR $cmd;
+         my $html = qx( $cmd );
+ 
