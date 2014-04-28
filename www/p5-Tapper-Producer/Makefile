@@ -12,7 +12,11 @@ MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 PERMIT_PACKAGE_CDROM =	Yes
 
 RUN_DEPENDS =	devel/p5-aliased \
-		security/p5-AAAA-Crypt-DH
+		devel/p5-Moose \
+		devel/p5-Try-Tiny \
+		devel/p5-YAML \
+		security/p5-AAAA-Crypt-DH \
+		www/p5-Tapper-Config
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 
