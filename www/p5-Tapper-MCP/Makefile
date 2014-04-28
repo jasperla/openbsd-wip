@@ -6,7 +6,7 @@ MODULES =	cpan
 DISTNAME =	Tapper-MCP-4.1.2
 CATEGORIES =	www
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # 2-clause BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -14,11 +14,11 @@ PERMIT_PACKAGE_CDROM =	Yes
 RUN_DEPENDS =	devel/p5-App-Daemon \
 		devel/p5-Class-C3 \
 		devel/p5-Class-Load \
-                devel/p5-Devel-Backtrace \
-                devel/p5-Data-DPath \
-                devel/p5-Hash-Merge-Simple \
-                devel/p5-Kwalify \
-                devel/p5-LockFile-Simple \
+		devel/p5-Devel-Backtrace \
+		devel/p5-Data-DPath \
+		devel/p5-Hash-Merge-Simple \
+		devel/p5-Kwalify \
+		devel/p5-LockFile-Simple \
 		devel/p5-Log-Log4perl \
 		devel/p5-Moose \
 		devel/p5-MooseX-Traits \

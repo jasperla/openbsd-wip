@@ -6,7 +6,7 @@ MODULES =	cpan
 DISTNAME =	Task-Tapper-Hello-World-0.002
 CATEGORIES =	www
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # 2-clause BSD
 PERMIT_PACKAGE_CDROM =	Yes

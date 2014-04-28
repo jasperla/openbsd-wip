@@ -6,7 +6,7 @@ MODULES =	cpan
 DISTNAME =	Tapper-TAP-Harness-4.1.1
 CATEGORIES =	www
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # 2-clause BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -22,6 +22,6 @@ RUN_DEPENDS =	devel/p5-Directory-Scratch \
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 
-TEST_DEPENDS = 	devel/p5-TAP-Formatter-HTML
+TEST_DEPENDS =	devel/p5-TAP-Formatter-HTML
 
 .include <bsd.port.mk>
