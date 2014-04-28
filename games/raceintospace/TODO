@@ -1,7 +1,2 @@
-Crashes when loading spaceports.
-
-port.c line 460:
-fseek(fin,table[0],SEEK_SET);
-seeks to the beginning of the file, interpreting the copyright header as
-graphics data, leading to predictably bad results. Presumably table[0] is
-somehow set to 0 when it shouldn't be.
+Doesn't show outlines when hovering over destinations in spaceports.
+Crashes when hovering over flagpole in US spaceport.
