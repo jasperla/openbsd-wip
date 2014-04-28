@@ -6,7 +6,7 @@ MODULES =	cpan
 DISTNAME =	Term-VT102-Boundless-0.03
 CATEGORIES =	devel
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 CPAN_AUTHOR =	NUFFIN
 

@@ -6,9 +6,9 @@ MODULES =	cpan
 DISTNAME =	Kwalify-1.22
 CATEGORIES =	devel
 
-CPAN_AUTHOR =    SREZIC
+CPAN_AUTHOR =	SREZIC
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

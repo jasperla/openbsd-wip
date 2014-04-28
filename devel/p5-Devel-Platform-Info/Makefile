@@ -8,7 +8,7 @@ CATEGORIES =	devel
 
 CPAN_AUTHOR =	BARBIE
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # Artistic License 2.0
 PERMIT_PACKAGE_CDROM =	Yes

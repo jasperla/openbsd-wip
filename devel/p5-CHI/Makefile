@@ -6,7 +6,7 @@ MODULES =	cpan
 DISTNAME =	CHI-0.58
 CATEGORIES =	devel
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

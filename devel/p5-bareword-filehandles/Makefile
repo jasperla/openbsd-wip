@@ -6,7 +6,7 @@ MODULES =	cpan
 DISTNAME =	bareword-filehandles-0.003
 CATEGORIES =	devel
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 CPAN_AUTHOR =	ILMARI
 

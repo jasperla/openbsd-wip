@@ -6,7 +6,7 @@ MODULES =	cpan
 DISTNAME =	Convert-Bencode-1.03
 CATEGORIES =	devel
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

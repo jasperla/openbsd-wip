@@ -6,7 +6,7 @@ MODULES =	cpan
 DISTNAME =	B-Hooks-OP-Check-0.19
 CATEGORIES =	devel
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 #CPAN_AUTHOR =	ILMARI
 

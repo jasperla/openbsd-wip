@@ -6,7 +6,7 @@ MODULES =	cpan
 DISTNAME =	experimental-0.006
 CATEGORIES =	devel
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 CPAN_AUTHOR =	LEONT
 

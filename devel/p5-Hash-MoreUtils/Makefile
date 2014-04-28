@@ -6,7 +6,7 @@ MODULES =	cpan
 DISTNAME =	Hash-MoreUtils-0.05
 CATEGORIES =	devel
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # GNU General Public License or Artistic License
 PERMIT_PACKAGE_CDROM =	Yes

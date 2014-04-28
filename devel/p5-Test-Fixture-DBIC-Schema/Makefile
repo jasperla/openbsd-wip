@@ -6,7 +6,7 @@ MODULES =	cpan
 DISTNAME =	Test-Fixture-DBIC-Schema-0.04
 CATEGORIES =	devel
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

@@ -6,7 +6,7 @@ MODULES =	cpan
 DISTNAME =	MooseX-ClassAttribute-0.27
 CATEGORIES =	devel
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # Artistic License 2.0
 PERMIT_PACKAGE_CDROM =	Yes

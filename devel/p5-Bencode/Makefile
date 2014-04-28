@@ -6,7 +6,7 @@ MODULES =	cpan
 DISTNAME =	Bencode-1.4
 CATEGORIES =	devel
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 CPAN_AUTHOR =	ARISTOTLE
 
