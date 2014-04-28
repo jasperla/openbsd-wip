@@ -6,7 +6,7 @@ MODULES =	cpan
 DISTNAME =	AAAA-Crypt-DH-0.04
 CATEGORIES =	security
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 CPAN_AUTHOR =	BINGOS
 

@@ -6,7 +6,7 @@ MODULES =	cpan
 DISTNAME =	File-ShareDir-Install-0.05
 CATEGORIES =	devel
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

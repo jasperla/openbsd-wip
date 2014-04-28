@@ -6,7 +6,7 @@ MODULES =	cpan
 DISTNAME =	App-Rad-1.05
 CATEGORIES =	devel www
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

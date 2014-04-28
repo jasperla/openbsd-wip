@@ -6,7 +6,7 @@ MODULES =	cpan
 DISTNAME =	DBIx-Class-InflateColumn-Object-Enum-0.04
 CATEGORIES =	databases
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 CPAN_AUTHOR =	JMMILLS
 
 # Perl

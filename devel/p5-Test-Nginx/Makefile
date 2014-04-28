@@ -6,7 +6,7 @@ MODULES =	cpan
 DISTNAME =	Test-Nginx-0.22
 CATEGORIES =	devel www
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
