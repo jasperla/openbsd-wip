@@ -6,7 +6,7 @@ MODULES =	cpan
 DISTNAME =	Tapper-Reports-Receiver-4.1.3
 CATEGORIES =	www
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # 2-clause BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -45,7 +45,7 @@ LOG=		tapper_message_receiver_daemon_reports-receiver_user.log \
 post-install:
 .for l in ${LOG}
 	touch /var/log/${l}
-        chown mcp-messagereceiver_user:tapper /var/log/${l}
+	chown mcp-messagereceiver_user:tapper /var/log/${l}
 .endfor
 
 .include <bsd.port.mk>

@@ -6,7 +6,7 @@ MODULES =	cpan
 DISTNAME =	Tapper-Producer-4.1.3
 CATEGORIES =	www
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # 2-clause BSD
 PERMIT_PACKAGE_CDROM =	Yes
