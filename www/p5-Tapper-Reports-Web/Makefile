@@ -31,7 +31,6 @@ RUN_DEPENDS = 	databases/p5-Catalyst-Model-DBIC-Schema \
 		devel/p5-Moose \
 		devel/p5-Perl6-Junction \
 		devel/p5-Set-Intersection \
-		devel/p5-TAP-Formatter-HTML \
 		devel/p5-Test-Deep \
 		devel/p5-Test-Fixture-DBIC-Schema \
 		devel/p5-Test-WWW-Mechanize-Catalyst \
@@ -53,6 +52,7 @@ RUN_DEPENDS = 	databases/p5-Catalyst-Model-DBIC-Schema \
 		www/p5-Tapper-Model \
 		www/p5-Tapper-Schema \
 		www/p5-Tapper-Testplan \
+		www/p5-TAP-Formatter-HTML \
 		www/p5-XML-Feed
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
