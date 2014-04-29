@@ -1,0 +1,26 @@
+@comment $OpenBSD$
+@bin bin/c2xml
+bin/cgcc
+@bin bin/sparse
+include/sparse/
+include/sparse/allocate.h
+include/sparse/bitmap.h
+include/sparse/compat.h
+include/sparse/dissect.h
+include/sparse/expression.h
+include/sparse/flow.h
+include/sparse/ident-list.h
+include/sparse/lib.h
+include/sparse/linearize.h
+include/sparse/parse.h
+include/sparse/ptrlist.h
+include/sparse/scope.h
+include/sparse/storage.h
+include/sparse/symbol.h
+include/sparse/target.h
+include/sparse/token.h
+lib/libsparse.a
+lib/pkgconfig/
+lib/pkgconfig/sparse.pc
+@man man/man1/cgcc.1
+@man man/man1/sparse.1
