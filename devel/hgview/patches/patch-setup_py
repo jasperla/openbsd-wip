@@ -1,19 +1,10 @@
 $OpenBSD$
 
-Needs Gmake and is generally broken.
+Fix calls to gmake.
 
 --- setup.py.orig	Fri Jan 31 19:40:05 2014
-+++ setup.py	Wed Apr 30 13:56:01 2014
-@@ -34,6 +34,8 @@ from distutils.command.install import install as _inst
- from distutils.command.install_lib import install_lib
- from distutils.command.install_data import install_data as _install_data
- 
-+DIR = os.path.dirname(os.path.abspath(__file__))
-+
- py2exe, innosetup = None, None
- try:
-     import py2exe
-@@ -41,6 +43,13 @@ try:
++++ setup.py	Wed Apr 30 14:10:28 2014
+@@ -41,6 +41,13 @@ try:
  except ImportError:
      pass
  
@@ -27,7 +18,7 @@ Needs Gmake and is generally broken.
  # import required features
  from hgviewlib.__pkginfo__ import modname, version, license, description, \
       web, author, author_email
-@@ -163,13 +172,10 @@ class build_doc(_build):
+@@ -163,13 +170,9 @@ class build_doc(_build):
      def run(self):
          # be sure to compile man page
          self.mkpath(self.build_dir)
@@ -39,21 +30,11 @@ Needs Gmake and is generally broken.
          try:
 -            check_call([make_cmd, '-C', self.build_dir,
 -                        '-f', '../../doc/Makefile', 'VPATH=../../doc'])
-+            os.chdir(os.path.join(DIR, "doc"))
-+            check_call([make_cmd])
++            check_call([make_cmd, "-C", "doc"])
          except:
              if not py2exe:
                  # does not make sense (either because of windows vs toolchain
-@@ -177,6 +183,8 @@ class build_doc(_build):
-                 print ('we cannot build the doc,'
-                        ' you may want to use --no-doc')
-                 raise
-+        finally:
-+            os.chdir(DIR)
- 
- class build_fullhgext(_build):
-     """XXX ugly hack to include hgext in standalone hgview.exe"""
-@@ -275,12 +283,10 @@ class install_doc(_install_data):
+@@ -275,12 +278,8 @@ class install_doc(_install_data):
          self.set_undefined_options('install', ('install_base', 'install_dir'))
  
      def run(self):
@@ -64,9 +45,7 @@ Needs Gmake and is generally broken.
 -                    'PREFIX=%s' % self.install_dir])
 -
 +        make_cmd = get_make_cmd()
-+        os.chdir(os.path.join(DIR, "doc"))
-+        check_call([make_cmd, "install", "PREFIX=%s" % self.install_dir])
-+        os.chdir(DIR)
++        check_call([make_cmd, "-C", "doc", "install", "PREFIX=%s" % self.install_dir])
  
  class install(_install):
      user_options = [
