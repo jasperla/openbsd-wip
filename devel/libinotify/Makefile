@@ -19,7 +19,8 @@ MASTER_SITES = 		http://ftp.vim.org/pub/ftp/os/BSD/FreeBSD/ports/local-distfiles
 			http://www.linklevel.net/distfiles/
 EXTRACT_SUFX = 		.tar.xz
 
-BUILD_DEPENDS =		devel/libtool
+BUILD_DEPENDS =		devel/libtool \
+			${MODGNU_AUTOCONF_DEPENDS}
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	automake
