@@ -22,4 +22,6 @@ RUN_DEPENDS =		x11/py-qt4 \
 			editors/py-qscintilla \
 			devel/py-urwid
 
+USE_GMAKE =		Yes
+
 .include <bsd.port.mk>
