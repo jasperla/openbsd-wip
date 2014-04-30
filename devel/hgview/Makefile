@@ -17,11 +17,14 @@ MASTER_SITES =		http://download.logilab.org/pub/hgview/
 MODULES =		lang/python
 BUILD_DEPENDS =		textproc/asciidoc \
 			textproc/xmlto \
-			x11/py-qt4
+			x11/py-qt4 \
+			devel/mercurial
 RUN_DEPENDS =		x11/py-qt4 \
 			editors/py-qscintilla \
-			devel/py-urwid
+			devel/py-urwid \
+			devel/mercurial
 
 USE_GMAKE =		Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
