@@ -1,0 +1,39 @@
+sparse is a c frontend and a static analysis backend.
+
+With the following diff to cdefs.h it can be used in a similiar
+way to scan-build by setting CC=cgcc.
+
+Index: cdefs.h
+===================================================================
+RCS file: /cvs/src/sys/sys/cdefs.h,v
+retrieving revision 1.38
+diff -u -p -r1.38 cdefs.h
+--- cdefs.h	19 Mar 2014 05:11:06 -0000	1.38
++++ cdefs.h	14 Apr 2014 08:34:18 -0000
+@@ -137,7 +137,7 @@
+  * even local variables need to be in memory across such a call.
+  * Example: setjmp()
+  */
+-#if __GNUC_PREREQ__(4, 1)
++#if __GNUC_PREREQ__(4, 1) && !defined(__CHECKER__)
+ #define __returns_twice	__attribute__((returns_twice))
+ #else
+ #define __returns_twice
+@@ -151,7 +151,7 @@
+  * the function to handle those references.  c.f. ctype.h
+  */
+ #ifdef __GNUC__
+-#  if __GNUC_PREREQ__(4, 2)
++#  if __GNUC_PREREQ__(4, 2) && !defined(__CHECKER__)
+ #define __only_inline	extern __inline __attribute__((__gnu_inline__))
+ #  else
+ #define __only_inline	extern __inline
+@@ -243,7 +243,7 @@
+ #define	__END_EXTERN_C
+ #endif
+ 
+-#if __GNUC_PREREQ__(4, 0)
++#if __GNUC_PREREQ__(4, 0) && !defined(__CHECKER__)
+ #define	__dso_public	__attribute__((__visibility__("default")))
+ #define	__dso_hidden	__attribute__((__visibility__("hidden")))
+ #define	__BEGIN_PUBLIC_DECLS \

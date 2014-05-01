@@ -32,7 +32,7 @@ LIB_DEPENDS-server = 	archivers/libarchive \
 			net/seafile/seafile,-main \
 			${LIB_DEPENDS-main}
 RUN_DEPENDS-server = 	devel/py-simplejson \
-			graphics/py-Imaging
+			graphics/py-Pillow
 #			www/py-djblets
 
 USE_GMAKE =		Yes

@@ -70,7 +70,6 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--enable-foreign \
 			--enable-float \
 			--enable-docs \
-			--enable-pthread \
 			--enable-lt=${LIBTOOL}
 # "backtrace" is expensive.
 # http://article.gmane.org/gmane.comp.lang.racket.devel/6700

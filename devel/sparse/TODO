@@ -1,0 +1,11 @@
+as noted by sthen:
+
+The tough one - this is rather unfortunate:
+
+./lib.c:static const char *gcc_base_dir = GCC_BASE;
+
+GCC_BASE = $(shell $(CC) --print-file-name=)
+
+.. because it will need bumping at release time, but it doesn't
+make it anywhere that would trigger PLIST_DB into noticing.
+Not sure the best way to handle this..

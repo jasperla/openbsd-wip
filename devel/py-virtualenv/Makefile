@@ -2,12 +2,10 @@
 
 COMMENT =		virtual Python environment builder
 
-MODPY_EGG_VERSION =	1.10.1
+MODPY_EGG_VERSION =	1.11.4
 DISTNAME =		virtualenv-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-
-MAINTAINER =		Wen Heping <wenheping@gmail.com>
 
 HOMEPAGE =		http://www.virtualenv.org/
 
@@ -18,9 +16,19 @@ MASTER_SITES =		${MASTER_SITE_PYPI:=v/virtualenv/}
 
 MODULES =		lang/python
 
-TEST_DEPENDS =	devel/py-nose \
-			devel/py-mock
-
 MODPY_SETUPTOOLS =	Yes
+
+# the pypi archive does not contain the tests
+NO_TEST =		Yes
+
+MAKE_ENV +=	PYTHONPATH=${WRKSRC}
+post-build:
+	cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
+
+DOCS =		${PREFIX}/share/doc/py-virtualenv
+
+post-install:
+	${INSTALL_DATA_DIR} ${DOCS}
+	cd ${WRKSRC}/docs/_build/html && pax -rw * ${DOCS}
 
 .include <bsd.port.mk>
