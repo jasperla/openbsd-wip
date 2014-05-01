@@ -2,8 +2,9 @@
 
 COMMENT =		free open source clone of the Age of Empires II engine
 
-DISTNAME =		milestone02
+DISTNAME =		master
 PKGNAME =		openage-${DISTNAME}
+REVISION = 1
 
 # for libtool-based ports, have a look at WRKBUILD/shared_libs.log
 #SHARED_LIBS =		???
@@ -27,6 +28,7 @@ MODGCC4_LANGS=          c++
 MODULES =		devel/cmake \
 			gcc4
 BUILD_DEPENDS =		audio/opus \
+			audio/opusfile \
 			devel/doxygen,-main \
 			devel/llvm \
 			devel/sdl2 \
@@ -34,10 +36,12 @@ BUILD_DEPENDS =		audio/opus \
 			graphics/freeglut \
 			graphics/ftgl \
 			graphics/glew \
-			lang/gcc/4.6,-c++ \
-			lang/gcc/4.8,-main
+			lang/gcc/4.8,-main \
+			lang/python/3.3
+#			math/graphviz,-main
+#			lang/gcc/4.6,-c++
 
-RUN_DEPENDS =		graphics/py-Imaging,-main
+#RUN_DEPENDS =		graphics/py-Imaging,-main
 LIB_DEPENDS =		graphics/glew \
 			devel/sdl2
 #TEST_DEPENDS =		???
@@ -56,12 +60,14 @@ LIB_DEPENDS =		graphics/glew \
 #CONFIGURE_ARGS =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 #			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 #			CFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
-#CONFIGURE_ENV +=	-DCMAKE_INCLUDE_PATH=${X11BASE}/include \
-#			-DCMAKE_LIBRARY_PATH=${X11BASE}/lib \
-#			-DFREETYPE_INCLUDE_DIR=${X11BASE}/include/freetype2
+CONFIGURE_ENV +=	-DCMAKE_INCLUDE_PATH=${X11BASE}/include \
+			-DCMAKE_LIBRARY_PATH=${X11BASE}/lib \
+			-DFREETYPE_INCLUDE_DIR=${X11BASE}/include/freetype2 \
+			-DOPUSFILE_INCLUDE_DIR=${LOCALBASE}/include/opus
 CONFIGURE_ARGS +=	-DCMAKE_INCLUDE_PATH=${X11BASE}/include \
 			-DCMAKE_LIBRARY_PATH=${X11BASE}/lib \
-			-DFREETYPE_INCLUDE_DIR=${X11BASE}/include/freetype2
+			-DFREETYPE_INCLUDE_DIR=${X11BASE}/include/freetype2 \
+			-DOPUSFILE_INCLUDE_DIR=${LOCALBASE}/include/opus
 
 #CPPFLAGS +=		-I${LOCALBASE}/include -I${X11BASE}/include
 #LDFLAGS +=		-L${LOCALBASE}/lib -L${X11BASE}/lib
@@ -72,8 +78,8 @@ CONFIGURE_ARGS +=	-DCMAKE_INCLUDE_PATH=${X11BASE}/include \
 #LDFLAGS =		???
 #MAKE_FILE =		???
 #PKG_ARCH =		??? (* for arch-independent packages)
-WRKDIST =		${WRKDIR}/openage-milestone02/
-WRKSRC =		${WRKDIR}/openage-milestone02/
+WRKDIST =		${WRKDIR}/openage-master/
+WRKSRC =		${WRKDIR}/openage-master/
 #WRKBUILD =		??? if other than ${WRKSRC}
 #WRKCONF =		??? if other than ${WRKBUILD}
 

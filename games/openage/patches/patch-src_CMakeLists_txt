@@ -1,9 +1,0 @@
-$OpenBSD$
---- src/CMakeLists.txt.orig	Sun Apr 27 18:40:01 2014
-+++ src/CMakeLists.txt	Sun Apr 27 18:40:13 2014
-@@ -1,4 +1,5 @@
- #include_directories(${CMAKEDEMO_SOURCE_DIR}/src)
-+include_directories(${OPENGL_INCLUDE_DIR})
- #link_directories(${CMAKEDEMO_BINARY_DIR}/src)
- 
- find_package(OpenGL)
