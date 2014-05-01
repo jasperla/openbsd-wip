@@ -1,9 +1,9 @@
 $OpenBSD$
 
-Needs Gmake and is generally broken.
+Fix calls to gmake.
 
 --- setup.py.orig	Fri Jan 31 19:40:05 2014
-+++ setup.py	Mon Feb  3 13:50:04 2014
++++ setup.py	Wed Apr 30 14:10:28 2014
 @@ -41,6 +41,13 @@ try:
  except ImportError:
      pass
@@ -30,7 +30,7 @@ Needs Gmake and is generally broken.
          try:
 -            check_call([make_cmd, '-C', self.build_dir,
 -                        '-f', '../../doc/Makefile', 'VPATH=../../doc'])
-+            os.system("cd doc && %s" % make_cmd)
++            check_call([make_cmd, "-C", "doc"])
          except:
              if not py2exe:
                  # does not make sense (either because of windows vs toolchain
@@ -45,7 +45,7 @@ Needs Gmake and is generally broken.
 -                    'PREFIX=%s' % self.install_dir])
 -
 +        make_cmd = get_make_cmd()
-+        os.system("cd doc && gmake install PREFIX=%s" % self.install_dir)
++        check_call([make_cmd, "-C", "doc", "install", "PREFIX=%s" % self.install_dir])
  
  class install(_install):
      user_options = [
