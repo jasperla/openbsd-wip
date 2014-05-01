@@ -4,13 +4,12 @@ COMMENT =		free open source clone of the Age of Empires II engine
 
 DISTNAME =		master
 PKGNAME =		openage-${DISTNAME}
-REVISION = 1
 
 # for libtool-based ports, have a look at WRKBUILD/shared_libs.log
 #SHARED_LIBS =		???
 
 CATEGORIES =		games
-HOMEPAGE =		http://openage.sft.mx
+HOMEPAGE =		http://openage.sft.mx/
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
 # GNU GPLv3
@@ -37,8 +36,9 @@ BUILD_DEPENDS =		audio/opus \
 			graphics/ftgl \
 			graphics/glew \
 			lang/gcc/4.8,-main \
-			lang/python/3.3
-#			math/graphviz,-main
+			lang/python/3.4 \
+			devel/libinotify \
+			math/graphviz,-main
 #			lang/gcc/4.6,-c++
 
 #RUN_DEPENDS =		graphics/py-Imaging,-main
