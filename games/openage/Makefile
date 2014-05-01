@@ -62,12 +62,11 @@ LIB_DEPENDS =		graphics/glew \
 #			CFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 CONFIGURE_ENV +=	-DCMAKE_INCLUDE_PATH=${X11BASE}/include \
 			-DCMAKE_LIBRARY_PATH=${X11BASE}/lib \
-			-DFREETYPE_INCLUDE_DIR=${X11BASE}/include/freetype2 \
 			-DOPUSFILE_INCLUDE_DIR=${LOCALBASE}/include/opus
 CONFIGURE_ARGS +=	-DCMAKE_INCLUDE_PATH=${X11BASE}/include \
 			-DCMAKE_LIBRARY_PATH=${X11BASE}/lib \
-			-DFREETYPE_INCLUDE_DIR=${X11BASE}/include/freetype2 \
 			-DOPUSFILE_INCLUDE_DIR=${LOCALBASE}/include/opus
+#			-DFREETYPE_INCLUDE_DIR=${X11BASE}/include/freetype2 \
 
 #CPPFLAGS +=		-I${LOCALBASE}/include -I${X11BASE}/include
 #LDFLAGS +=		-L${LOCALBASE}/lib -L${X11BASE}/lib
