@@ -2,7 +2,7 @@
 
 COMMENT =		command line client for asciinema.org service
 
-VERSION =		0.9.7
+VERSION =		0.9.8
 DISTNAME =		v${VERSION}
 PKGNAME =		asciinema-${VERSION}
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://asciinema.org
 
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>	
 
-# BSD
+# MIT License
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		https://github.com/sickill/asciinema/archive/
