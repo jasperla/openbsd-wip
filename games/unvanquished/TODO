@@ -1,6 +1,0 @@
-- Package for data files? (upstream instructions are to install under ~)
-- Crash on startup
-- CMake module for Opus doesn't work correctly... shouldn't need
-  CONFIGURE_ARGS += -DOPUSfoo=bar or CPPFLAGS=-I${LOCALBASE}/include
-  or LDFLAGS=-lopusfile
-- Newer versions (starting with unvanquished-0.24) require Native Client
