@@ -1,11 +1,11 @@
 $OpenBSD$
---- share/genbuild.sh.orig	Sun Mar 24 14:31:42 2013
-+++ share/genbuild.sh	Sun Mar 24 14:31:50 2013
-@@ -11,17 +11,6 @@ else
-     exit 1
- fi
+--- share/genbuild.sh.orig	Tue Apr 29 15:18:02 2014
++++ share/genbuild.sh	Tue Apr 29 15:20:42 2014
+@@ -15,16 +15,6 @@ fi
  
--if [ -e "$(which git)" ]; then
+ DESC=""
+ LAST_COMMIT_DATE=""
+-if [ -e "$(which git)" -a -d ".git" ]; then
 -    # clean 'dirty' status of touched files that haven't been modified
 -    git diff >/dev/null 2>/dev/null 
 -
@@ -13,9 +13,8 @@ $OpenBSD$
 -    DESC="$(git describe --dirty 2>/dev/null)"
 -
 -    # get a string like "2012-04-10 16:27:19 +0200"
--    TIME="$(git log -n 1 --format="%ci")"
+-    LAST_COMMIT_DATE="$(git log -n 1 --format="%ci")"
 -fi
--
+ 
  if [ -n "$DESC" ]; then
      NEWINFO="#define BUILD_DESC \"$DESC\""
- else

@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD:$
+
+daemon="${TRUEPREFIX}/bin/bitcoind"
+daemon_flags="-daemon -conf=${SYSCONFDIR}/bitcoin.conf -datadir=/var/bitcoin"
+daemon_user="_bitcoind"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1
