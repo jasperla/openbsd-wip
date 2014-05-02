@@ -1,0 +1,15 @@
+- remove --with-incompatible-bdb and related patches as soon as bdb is updated
+  to 4.8 in ports
+- enable tests
+    - fix build with FLAVOR=no_x11 / disable tests with FLAVOR=no_x11?
+    - fix broken testcases
+- build with system leveldb
+    - check if any leveldb patches from bitcoin are relevant to OpenBSD
+
+- fix with SEPARATE_BUILD = Yes
+    - related to leveldb
+    - should work if we switch to system leveldb
+
+- could bitcoind / bitcoinqt running simultan?
+- check rpcssl setup
+

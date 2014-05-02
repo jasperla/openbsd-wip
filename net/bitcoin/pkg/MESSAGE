@@ -1,0 +1,2 @@
+Remember to change rpcuser/rpcpassword in ${SYSCONFDIR}/bitcoin.conf
+before starting bitcoind via the rc.d script.
