@@ -78,8 +78,6 @@ post-patch:
 post-install:
 	${INSTALL_MAN} ${BTCCONTRIBDIR}/manpages/bitcoind.1 \
 		${PREFIX}/man/man1
-	${INSTALL_MAN} ${BTCCONTRIBDIR}/manpages/bitcoin-qt.1 \
-		${PREFIX}/man/man1
 	${INSTALL_MAN} ${BTCCONTRIBDIR}/manpages/bitcoin.conf.5 \
 		${PREFIX}/man/man5
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/bitcoin
@@ -87,6 +85,8 @@ post-install:
 	    ${PREFIX}/share/examples/bitcoin
 
 .if ! ${FLAVOR:Mno_x11}
+	${INSTALL_MAN} ${BTCCONTRIBDIR}/manpages/bitcoin-qt.1 \
+		${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -m ${SHAREMODE} -c \
 		${BTCCONTRIBDIR}/bitcoin-qt.desktop \
