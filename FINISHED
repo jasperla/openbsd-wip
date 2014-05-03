@@ -37,7 +37,6 @@ textproc/goldendict sent to ports 2013-07-13  and 2011-10-19
 www/ocaml-tyxml		ready for import.
 www/p5-Dancer:		ready for import, has been sent to ports@ some time ago; it depends on www/p5-HTTP-Server-Simple-PSGI
 www/p5-HTTP-Server-Simple-PSGI:	ready for import, has been sent to ports@ some time ago
-audio/paulstretch	ready for import (bcallah@)
 security/p5-Digest-JHash ready for import, sent to ports@ 2014-03-07
 textproc/p5-String-Escape ready for import, sent to ports@ 2014-03-07
 textproc/p5-String-Util ready for import, sent to ports@ 2014-03-07
