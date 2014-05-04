@@ -37,7 +37,7 @@ BUILD_DEPENDS =	${RUN_DEPENDS}
 TEST_DEPENDS =	databases/p5-DBIx-Class-InflateColumn-Object-Enum \
 		databases/p5-DBIx-Class-TimeStamp
 
-LOG=		tapper_message_receiver_daemon_reports-receiver_user.log \
+LOG =		tapper_message_receiver_daemon_reports-receiver_user.log \
 		tapper-debug-reports-receiver_user.log \
 		tapper_mcp_reset_reports-receiver_user.log \
 		tapper_reports_receiver_daemon_reports-receiver_user.log

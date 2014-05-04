@@ -16,6 +16,6 @@ RUN_DEPENDS =	databases/p5-DBIx-Class \
 		devel/p5-Params-Validate \
 		devel/p5-YAML-Syck
 
-BUILD_DEPENDS =	${RUN_DEPENDS}
+TEST_DEPENDS =	databases/p5-DBD-SQLite
 
 .include <bsd.port.mk>

@@ -15,7 +15,7 @@ RUN_DEPENDS =	devel/p5-Sub-Install \
 		devel/p5-Sub-Exporter \
 		devel/p5-Test-Simple \
 		devel/p5-Class-Data-Inheritable \
-		devel/p5-Class-Accessor-Fast
+		devel/p5-Class-Accessor
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 

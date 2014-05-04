@@ -30,6 +30,7 @@ BUILD_DEPENDS =		audio/opus \
 			audio/opusfile \
 			devel/doxygen,-main \
 			devel/llvm \
+			devel/glib \
 			devel/sdl2 \
 			devel/sdl2-image \
 			graphics/freeglut \
@@ -37,7 +38,6 @@ BUILD_DEPENDS =		audio/opus \
 			graphics/glew \
 			lang/gcc/4.8,-main \
 			lang/python/3.4 \
-			devel/libinotify \
 			math/graphviz,-main
 #			lang/gcc/4.6,-c++
 
@@ -62,10 +62,12 @@ LIB_DEPENDS =		graphics/glew \
 #			CFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 CONFIGURE_ENV +=	-DCMAKE_INCLUDE_PATH=${X11BASE}/include \
 			-DCMAKE_LIBRARY_PATH=${X11BASE}/lib \
+			-DOPUSFILE_INCLUDE_DIR=${LOCALBASE}/include \
 			-DOPUSFILE_INCLUDE_DIR=${LOCALBASE}/include/opus
 CONFIGURE_ARGS +=	-DCMAKE_INCLUDE_PATH=${X11BASE}/include \
 			-DCMAKE_LIBRARY_PATH=${X11BASE}/lib \
-			-DOPUSFILE_INCLUDE_DIR=${LOCALBASE}/include/opus
+			-DOPUSFILE_INCLUDE_DIR=${LOCALBASE}/include/opus \
+			-DOPUSFILE_INCLUDE_DIR=${LOCALBASE}/include
 #			-DFREETYPE_INCLUDE_DIR=${X11BASE}/include/freetype2 \
 
 #CPPFLAGS +=		-I${LOCALBASE}/include -I${X11BASE}/include

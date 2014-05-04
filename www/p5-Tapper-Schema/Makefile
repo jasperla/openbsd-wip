@@ -19,9 +19,9 @@ RUN_DEPENDS = 	archivers/p5-Compress-Bzip2 \
 		devel/p5-common-sense \
 		devel/p5-Class-C3 \
 		devel/p5-DateTime \
-		devel/p5-DateTime-Format-SQLite \
 		devel/p5-DateTime-Format-MySQL \
 		devel/p5-DateTime-Format-Pg \
+		devel/p5-DateTime-Format-SQLite \
 		devel/p5-MRO-Compat \
 		devel/p5-TAP-DOM \
 		devel/p5-Test-Deep \
@@ -30,7 +30,7 @@ RUN_DEPENDS = 	archivers/p5-Compress-Bzip2 \
 		www/p5-Tapper-Config \
 		www/p5-Tapper-TAP-Harness
 
-BUILD_DEPENDS =	${RUN_DEPENDS}
+#BUILD_DEPENDS =	${RUN_DEPENDS}
 
 TEST_DEPENDS =	devel/p5-Class-Load \
 		devel/p5-Module-Runtime
