@@ -24,7 +24,6 @@ RUN_DEPENDS = 	devel/p5-aliased \
 		devel/p5-Test-Deep \
 		devel/p5-Test-Fixture-DBIC-Schema \
 		devel/p5-Test-MockModule \
-		devel/p5-Net-Server \
 		www/p5-HTML-Mason \
 		www/p5-Tapper-Config \
 		www/p5-Tapper-Model \

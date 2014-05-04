@@ -11,9 +11,8 @@ MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 # GNU General Public License or Artistic License
 PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS =	devel/p5-Module-Build
-
-BUILD_DEPENDS =	${RUN_DEPENDS}
+BUILD_DEPENDS =	devel/p5-Module-Build \
+		devel/p5-Test-Simple
 
 CONFIGURE_STYLE = modbuild
 

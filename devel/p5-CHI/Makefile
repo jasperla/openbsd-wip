@@ -32,7 +32,7 @@ RUN_DEPENDS =	converters/p5-JSON \
 		security/p5-Digest-JHash \
 		textproc/p5-String-RewritePrefix
 
-BUILD_DEPENDS =	${RUN_DEPENDS}
+#BUILD_DEPENDS =	${RUN_DEPENDS}
 
 TEST_DEPENDS =	devel/p5-Import-Into \
 		devel/p5-Moo \
