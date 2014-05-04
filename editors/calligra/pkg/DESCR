@@ -1,8 +1,17 @@
-KOffice is and integrated easy-to-use office suite consisting of:
-  * Artwork - for drawing vector graphics.
-  * KCells - fully-featured spreadsheet application.
-  * Kexi - database manipulation tool.
-  * Kivio - for diagramming and flowcharting.
-  * Krita - for digital painting and illustration.
-  * KWord - word processor with desktop publishing features.
-  * Showcase - presentation application.
+Calligra is an integrated suite of KDE applications that cover office,
+creative and management needs.
+
+Office productivity:
+- Words for text processing;
+- Sheets for computations;
+- Stage for presentations;
+- Flow for diagrams and flowcharts;
+- Kexi for database management;
+- Braindump for note taking.
+
+Graphics:
+- Krita for advanced drawing and image manipulation;
+- Karbon for vector graphics.
+
+Management:
+- Plan for project planning.
