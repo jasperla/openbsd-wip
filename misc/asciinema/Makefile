@@ -19,7 +19,7 @@ MODULES =		lang/python
 NO_BUILD =		Yes
 RUN_DEPENDS =		www/py-requests
 
-MODPY_SETUPTOOLS = 	Yes
+MODPY_SETUPTOOLS =	Yes
 
 WRKSRC =		${WRKDIR}/${PKGNAME}/
 

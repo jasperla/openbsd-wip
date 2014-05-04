@@ -1,1 +1,2 @@
-start an application as a daemon
+Load this module via load_components and utilize is_enum and values
+property to define Enumuration columns via Object::Enum.
