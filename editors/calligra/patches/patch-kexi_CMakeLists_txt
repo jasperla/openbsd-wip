@@ -1,8 +1,8 @@
 $OpenBSD$
 Upstream bug?
---- kexi/CMakeLists.txt.orig	Thu Jan  9 15:16:13 2014
-+++ kexi/CMakeLists.txt	Thu Jan  9 15:16:46 2014
-@@ -99,7 +99,7 @@ set (PQXX_MAX_VERSION "4.0.0")
+--- kexi/CMakeLists.txt.orig	Mon Mar 24 15:38:42 2014
++++ kexi/CMakeLists.txt	Sun May  4 13:19:27 2014
+@@ -88,7 +88,7 @@ set (PQXX_MAX_VERSION "5.0.0")
  macro_optional_find_package(PostgreSQL)
  macro_log_feature(POSTGRESQL_FOUND "libpq" "C application programmer's interface to PostgreSQL" "http://www.postgresql.org" FALSE "" "Required by Kexi PostgreSQL driver")
  

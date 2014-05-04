@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	http://www.calligra-suite.org/
-DISTNAME =	calligra-2.7.5
+DISTNAME =	calligra-2.8.1
 CATEGORIES =	editors
 
 DIST_SUBDIR =	kde
@@ -47,7 +47,6 @@ SHARED_LIBS +=  keximigrate               0.0 # 0.0
 SHARED_LIBS +=  kexirelationsview         0.0 # 0.0
 SHARED_LIBS +=  kexiutils                 0.0 # 0.0
 SHARED_LIBS +=  kformdesigner             0.0 # 0.0
-SHARED_LIBS +=  kformulalib               0.0 # 0.0
 SHARED_LIBS +=  kokross                   0.0 # 0.0
 SHARED_LIBS +=  komain                    0.0 # 0.0
 SHARED_LIBS +=  koodf                     0.0 # 0.0
@@ -78,6 +77,13 @@ SHARED_LIBS +=  rcps_plan                 0.0 # 0.0
 SHARED_LIBS +=  textlayout                0.0 # 0.0
 SHARED_LIBS +=  vectorimage               0.0 # 0.0
 SHARED_LIBS +=  wordsprivate              0.0 # 0.0
+SHARED_LIBS +=  kformula                  13.0 # 13.0
+SHARED_LIBS +=  komsooxml                 13.0 # 13.0
+SHARED_LIBS +=  koodf2                    13.0 # 13.0
+SHARED_LIBS +=  koodfreader               13.0 # 13.0
+SHARED_LIBS +=  kotextlayout              13.0 # 13.0
+SHARED_LIBS +=  kovectorimage             13.0 # 13.0
+
 
 WANTLIB =  c m pthread z
 WANTLIB += GL GLEW GLU Half ICE Iex IlmImf IlmThread Imath SM X11 Xext
