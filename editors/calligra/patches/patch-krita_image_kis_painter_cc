@@ -1,7 +1,7 @@
 $OpenBSD$
---- krita/image/kis_painter.cc.orig	Sat Oct 12 10:17:59 2013
-+++ krita/image/kis_painter.cc	Sun Oct 20 15:12:43 2013
-@@ -1335,7 +1335,7 @@ void KisPainter::drawLine(const QPointF& start, const 
+--- krita/image/kis_painter.cc.orig	Sun Mar  2 15:46:08 2014
++++ krita/image/kis_painter.cc	Wed Mar  5 21:20:39 2014
+@@ -1393,7 +1393,7 @@ void KisPainter::drawLine(const QPointF& start, const 
      int dstX = x2-x1;
      int dstY = y2-y1;
  
@@ -10,7 +10,7 @@ $OpenBSD$
      qreal projectionDenominator = 1.0 / (pow((double)dstX, 2) + pow((double)dstY, 2));
  
      qreal subPixel;
-@@ -1381,7 +1381,7 @@ void KisPainter::drawLine(const QPointF& start, const 
+@@ -1439,7 +1439,7 @@ void KisPainter::drawLine(const QPointF& start, const 
                  AA_ = qMin( sqrt( pow((double)x - X1_, 2) + pow((double)y - Y1_, 2) ),
                              sqrt( pow((double)x - X2_, 2) + pow((double)y - Y2_, 2) ));
              }else{
