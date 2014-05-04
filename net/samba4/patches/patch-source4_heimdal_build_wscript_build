@@ -7,7 +7,7 @@ BUG: https://bugzilla.samba.org/show_bug.cgi?id=9774
  
      features = 'cc cshlib symlink_lib install_lib'
  
-+    # OpenBSD-like error handling
++    # OpenBSD-like library version handling
 +    osvnum = os.getenv('LIB' + bundled_name.replace('-', '_') + '_VERSION')
 +    if osvnum:
 +        vnum = osvnum
