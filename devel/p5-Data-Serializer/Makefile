@@ -11,7 +11,7 @@ MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-FAKE_FLAGS =	PREFIX=""
+#FAKE_FLAGS =	PREFIX=""
 
 RUN_DEPENDS =	devel/p5-Bencode \
 		devel/p5-Compress-PPMd \

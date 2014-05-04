@@ -1,0 +1,9 @@
+Sorting out destdir files
+make-plist: Bogus element outside of every prefix: /usr/libdata/perl5/amd64-openbsd/Data
+make-plist: Bogus element outside of every prefix: /usr/libdata/perl5/amd64-openbsd/Data/Dumper.pm
+make-plist: Bogus element outside of every prefix: /usr/libdata/perl5/amd64-openbsd/auto
+make-plist: Bogus element outside of every prefix: /usr/libdata/perl5/amd64-openbsd/auto/Data
+make-plist: Bogus element outside of every prefix: /usr/libdata/perl5/amd64-openbsd/auto/Data/Dumper
+make-plist: Bogus element outside of every prefix: /usr/libdata/perl5/amd64-openbsd/auto/Data/Dumper/.packlist
+make-plist: Bogus element outside of every prefix: /usr/libdata/perl5/amd64-openbsd/auto/Data/Dumper/Dumper.bs
+make-plist: Bogus element outside of every prefix: /usr/libdata/perl5/amd64-openbsd/auto/Data/Dumper/Dumper.so
