@@ -8,6 +8,8 @@ CATEGORIES =	editors
 DIST_SUBDIR =	kde
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/${DISTNAME}/}
 
+MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
+
 # GPLv2+, LGPLv2+ and GNU FDLv1.2
 PERMIT_PACKAGE_CDROM =	Yes
 
