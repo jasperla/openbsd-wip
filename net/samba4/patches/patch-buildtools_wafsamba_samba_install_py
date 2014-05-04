@@ -1,9 +1,9 @@
 $OpenBSD$
 Make Samba4 WAF respect OpenBSD shared libraries versioning conventions.
 BUG: https://bugzilla.samba.org/show_bug.cgi?id=9774
---- buildtools/wafsamba/samba_install.py.orig	Tue May 14 15:17:30 2013
-+++ buildtools/wafsamba/samba_install.py	Tue May 14 20:17:22 2013
-@@ -67,17 +67,20 @@ def install_library(self):
+--- buildtools/wafsamba/samba_install.py.orig	Thu May  1 16:31:00 2014
++++ buildtools/wafsamba/samba_install.py	Thu May  1 16:31:00 2014
+@@ -67,6 +67,11 @@ def install_library(self):
          self.env.RPATH = build_ldflags
          return
  
@@ -15,9 +15,7 @@ BUG: https://bugzilla.samba.org/show_bug.cgi?id=9774
      # setup the install path, expanding variables
      install_path = getattr(self, 'samba_inst_path', None)
      if install_path is None:
-         if getattr(self, 'private_library', False):
-             install_path = '${PRIVATELIBDIR}'
-         else:
+@@ -76,8 +81,6 @@ def install_library(self):
              install_path = '${LIBDIR}'
      install_path = bld.EXPAND_VARIABLES(install_path)
  
