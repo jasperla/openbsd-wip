@@ -12,10 +12,8 @@ CPAN_AUTHOR =	JMMILLS
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS =	databases/p5-DBIx-Class \
+BUILD_DEPENDS =	databases/p5-DBIx-Class \
 		databases/p5-DBICx-TestDatabase \
 		devel/p5-Object-Enum
-
-BUILD_DEPENDS =	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

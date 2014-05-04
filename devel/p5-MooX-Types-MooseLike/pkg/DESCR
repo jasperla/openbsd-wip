@@ -1,2 +1,1 @@
-Moo attributes (like Moose) have an 'isa' property. This module provides
-some basic types for this property.
+MooX::Types::MooseLike provides some Moosish types and a typer builder.

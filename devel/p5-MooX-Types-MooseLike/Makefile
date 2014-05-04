@@ -11,15 +11,10 @@ MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS =	devel/p5-Module-Runtime \
-		devel/p5-Test-Fatal	
+RUN_DEPENDS =	devel/p5-Module-Runtime
 
-BUILD_DEPENDS =	${RUN_DEPENDS}
-
-TEST_DEPENDS =	devel/p5-Devel-GlobalDestruction \
-		devel/p5-Import-Into \
+BUILD_DEPENDS =	devel/p5-Test-Fatal \
 		devel/p5-Moo \
-		devel/p5-Module-Runtime \
-		devel/p5-Test-Fatal
+		devel/p5-Test-Simple
 
 .include <bsd.port.mk>
