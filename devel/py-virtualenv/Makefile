@@ -15,6 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		${MASTER_SITE_PYPI:=v/virtualenv/}
 
 MODULES =		lang/python
+BUILD_DEPENDS =		textproc/py-sphinx
 
 MODPY_SETUPTOOLS =	Yes
 
