@@ -24,9 +24,6 @@ TALLOC_V =		2.0.7
 TDB_V =			1.2.11
 TEVENT_V =		0.9.18
 
-REVISION-tdb =		5
-REVISION-tevent =	5
-REVISION-util =		1
 
 SHARED_LIBS =		asn1-samba4		0.0 \
 			dcerpc			0.0 \
