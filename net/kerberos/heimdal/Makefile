@@ -1,15 +1,19 @@
 # $OpenBSD$
 
-COMMENT=		Kerberos 5 implementation
+COMMENT-main=		Kerberos 5 implementation
+COMMENT-libs=		Heimdal libraries and headers
 
-DISTNAME=		heimdal-1.5.3
+V=			1.5.3
+DISTNAME=		heimdal-${V}
+
+PKGNAME-main=		${DISTNAME}
+PKGNAME-libs=		heimdal-libs-${V}
 
 CATEGORIES=		security
 
 SHARED_LIBS +=  heimbase             1.0      # 1.0
 SHARED_LIBS +=  roken                2.0      # 19.0
 SHARED_LIBS +=  heimedit             0.0      # 0.36
-SHARED_LIBS +=  com_err              21.0     # 2.3
 SHARED_LIBS +=  sl                   0.0      # 2.1
 SHARED_LIBS +=  wind                 2.0      # 0.0
 SHARED_LIBS +=  asn1                 21.0     # 8.0
@@ -31,7 +35,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c crypto curses pthread termcap util
+MULTI_PACKAGES=		-main -libs
 
 MASTER_SITES=		http://www.h5l.org/dist/src/
 
@@ -39,15 +43,48 @@ BUILD_DEPENDS=		devel/bison
 
 SYSCONFDIR=		${BASESYSCONFDIR}/heimdal
 
+WANTLIB += c crypto curses pthread termcap
+
+WANTLIB-main=		${WANTLIB} com_err util
+WANTLIB-main +=		heimdal/lib/asn1
+WANTLIB-main +=		heimdal/lib/gssapi
+WANTLIB-main +=		heimdal/lib/hdb
+WANTLIB-main +=		heimdal/lib/heimbase
+WANTLIB-main +=		heimdal/lib/heimedit
+WANTLIB-main +=		heimdal/lib/heimntlm
+WANTLIB-main +=		heimdal/lib/heimsqlite
+WANTLIB-main +=		heimdal/lib/hx509
+WANTLIB-main +=		heimdal/lib/kadm5clnt
+WANTLIB-main +=		heimdal/lib/kadm5srv
+WANTLIB-main +=		heimdal/lib/kafs
+WANTLIB-main +=		heimdal/lib/kdc
+WANTLIB-main +=		heimdal/lib/krb5
+WANTLIB-main +=		heimdal/lib/roken
+WANTLIB-main +=		heimdal/lib/sl
+WANTLIB-main +=		heimdal/lib/wind
+LIB_DEPENDS-main=	${BASE_PKGPATH},-libs=${V}
+
+WANTLIB-libs=		${WANTLIB} com_err
+WANTLIB-libs +=		com_err
+LIB_DEPENDS-libs=	sysutils/e2fsprogs
+
 MODGNU_CONFIG_GUESS_DIRS= \
 			${WRKSRC} \
 			${WRKSRC}/lib/libedit
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
+			CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-afs-support \
 			--disable-otp \
 			--without-x
+
+# make sure we only pickup db from base
+CONFIGURE_ENV +=	ac_cv_funclib_db_create=no \
+			ac_cv_header_db3_db_h=no \
+			ac_cv_header_db4_db_h=no \
+			ac_cv_header_db5_db_h=no
 
 # install bins, libs and includes under a non-default PATH/PREFIX
 CONFIGURE_ARGS +=	--bindir=${PREFIX}/heimdal/bin \
