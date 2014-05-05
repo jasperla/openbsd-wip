@@ -38,7 +38,6 @@ heimdal/sbin/
 @man man/man1/kinit.1
 @man man/man1/klist.1
 @man man/man1/kpasswd.1
-@man man/man1/krb5-config.1
 @man man/man1/kswitch.1
 @man man/man1/kx.1
 @man man/man1/pagsh.1
