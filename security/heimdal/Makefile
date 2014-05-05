@@ -9,7 +9,7 @@ DISTNAME=		heimdal-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-libs=		heimdal-libs-${V}
 
-CATEGORIES=		security
+CATEGORIES=		security net
 
 SHARED_LIBS +=  heimbase             1.0      # 1.0
 SHARED_LIBS +=  roken                2.0      # 19.0
