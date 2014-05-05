@@ -2,6 +2,9 @@ $OpenBSD$
 
 OpenBSD's sed has no -i option
 
+MERGED UPSTREAM
+https://github.com/bitcoin/bitcoin/pull/4120
+
 --- src/qt/Makefile.am.orig	Wed Apr 30 20:24:04 2014
 +++ src/qt/Makefile.am	Wed Apr 30 20:25:39 2014
 @@ -371,7 +371,7 @@ translate: bitcoinstrings.cpp $(QT_FORMS_UI) $(QT_FORM
