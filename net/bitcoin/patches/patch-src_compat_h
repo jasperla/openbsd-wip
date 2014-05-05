@@ -5,8 +5,11 @@ reorder includes. From getifaddr(3) manual:
 "If both <net/if.h> and <ifaddrs.h> are being 
 included, <net/if.h> must be included before <ifaddrs.h>"
 
---- src/compat.h.orig	Sun Apr 27 21:04:47 2014
-+++ src/compat.h	Sun Apr 27 21:06:37 2014
+MERGED UPSTREAM 
+https://github.com/bitcoin/bitcoin/pull/4119
+
+--- src/compat.h.orig	Tue Apr  8 12:04:06 2014
++++ src/compat.h	Fri May  2 19:55:15 2014
 @@ -28,16 +28,16 @@
  #include <windows.h>
  #include <ws2tcpip.h>
@@ -17,12 +20,11 @@ included, <net/if.h> must be included before <ifaddrs.h>"
  #include <sys/types.h>
 +#include <net/if.h>
 +#include <netinet/in.h>
-+#include <netdb.h>
  #include <arpa/inet.h>
  #include <ifaddrs.h>
  #include <limits.h>
 -#include <net/if.h>
--#include <netdb.h>
+ #include <netdb.h>
 -#include <netinet/in.h>
 -#include <sys/fcntl.h>
 -#include <sys/mman.h>

@@ -2,6 +2,9 @@ $OpenBSD$
 
 OpenBSD's sed has no -i option
 
+MERGED UPSTREAM
+https://github.com/bitcoin/bitcoin/pull/4120
+
 --- src/Makefile.include.orig	Wed Apr 30 20:27:41 2014
 +++ src/Makefile.include	Wed Apr 30 20:30:45 2014
 @@ -40,18 +40,18 @@ $(LIBBITCOINQT):
