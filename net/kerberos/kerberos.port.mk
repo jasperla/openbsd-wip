@@ -1,30 +1,32 @@
 # $OpenBSD$
 
-MOD_KERBEROS_IMPL ?=
+MODKERBEROS_IMPL ?=
 
-.if empty(MOD_KERBEROS_IMPL)
-MOD_KERBEROS_IMPL =	heimdal
+.if empty(MODKERBEROS_IMPL)
+MODKERBEROS_IMPL =	heimdal
 .endif
 
-.if ${MOD_KERBEROS_IMPL:L} != "heimdal" # && ${MOD_KERBEROS_IMPL:L} != "krb5-mit"
-ERRORS += "Fatal: unknown Kerberos implementation: ${MOD_KERBEROS_IMPL}"
+.if ${MODKERBEROS_IMPL:L} != "heimdal" # && ${MODKERBEROS_IMPL:L} != "krb5-mit"
+ERRORS += "Fatal: unknown Kerberos implementation: ${MODKERBEROS_IMPL}"
 .endif
 
-.if ${MOD_KERBEROS_IMPL:L} == "heimdal"
-MOD_KERBEROS_WANTLIB +=	com_err crypto
-MOD_KERBEROS_WANTLIB +=	heimdal/lib/asn1
-MOD_KERBEROS_WANTLIB +=	heimdal/lib/heimbase
-MOD_KERBEROS_WANTLIB +=	heimdal/lib/heimsqlite
-MOD_KERBEROS_WANTLIB +=	heimdal/lib/hx509
-MOD_KERBEROS_WANTLIB +=	heimdal/lib/krb5
-MOD_KERBEROS_WANTLIB +=	heimdal/lib/roken
-MOD_KERBEROS_WANTLIB +=	heimdal/lib/wind
+.if ${MODKERBEROS_IMPL:L} == "heimdal"
+MODKERBEROS_WANTLIB +=	com_err crypto
+MODKERBEROS_WANTLIB +=	heimdal/lib/asn1
+MODKERBEROS_WANTLIB +=	heimdal/lib/heimbase
+MODKERBEROS_WANTLIB +=	heimdal/lib/heimsqlite
+MODKERBEROS_WANTLIB +=	heimdal/lib/hx509
+MODKERBEROS_WANTLIB +=	heimdal/lib/krb5
+MODKERBEROS_WANTLIB +=	heimdal/lib/roken
+MODKERBEROS_WANTLIB +=	heimdal/lib/wind
 .endif
 
-MOD_KERBEROS_LIB_DEPENDS = \
-			net/kerberos/${MOD_KERBEROS_IMPL},-libs
+MODKERBEROS_LIB_DEPENDS = \
+			net/kerberos/${MODKERBEROS_IMPL},-libs
 
-KRB5_CONFIG =		${LOCALBASE}/${MOD_KERBEROS_IMPL}/bin/krb5-config
-CONFIGURE_ENV +=	KRB5_CONFIG=${KRB5_CONFIG}
-LIB_DEPENDS +=		${MOD_KERBEROS_LIB_DEPENDS}
-WANTLIB +=		${MOD_KERBEROS_WANTLIB}
+KRB5_CONFIG =		${LOCALBASE}/${MODKERBEROS_IMPL}/bin/krb5-config
+LIB_DEPENDS +=		${MODKERBEROS_LIB_DEPENDS}
+WANTLIB +=		${MODKERBEROS_WANTLIB}
+
+MODKERBEROS_post-patch += \
+			ln -sf ${KRB5_CONFIG} ${WRKDIR}/bin/krb5-config
