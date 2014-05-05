@@ -139,6 +139,7 @@ heimdal/libexec/heimdal/
 @bin heimdal/libexec/heimdal/asn1_compile
 @bin heimdal/libexec/heimdal/asn1_print
 @bin heimdal/libexec/heimdal/slc
+@man man/man1/krb5-config.1
 share/examples/heimdal/
 @sample ${SYSCONFDIR}/
 share/examples/heimdal/krb5.conf
