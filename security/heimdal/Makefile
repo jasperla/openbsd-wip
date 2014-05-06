@@ -1,12 +1,14 @@
 # $OpenBSD$
 
 COMMENT-main=		Kerberos 5 implementation
+COMMENT-devel-docs=	Heimdal C functions documentation
 COMMENT-libs=		Heimdal libraries and headers
 
 V=			1.5.3
 DISTNAME=		heimdal-${V}
 
 PKGNAME-main=		${DISTNAME}
+PKGNAME-devel-docs=	heimdal-devel-docs-${V}
 PKGNAME-libs=		heimdal-libs-${V}
 
 CATEGORIES=		security net
@@ -35,7 +37,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MULTI_PACKAGES=		-main -libs
+MULTI_PACKAGES=		-main -devel-docs -libs
 
 MASTER_SITES=		http://www.h5l.org/dist/src/
 
@@ -63,6 +65,9 @@ WANTLIB-main +=		heimdal/lib/roken
 WANTLIB-main +=		heimdal/lib/sl
 WANTLIB-main +=		heimdal/lib/wind
 LIB_DEPENDS-main=	${BASE_PKGPATH},-libs=${V}
+
+PKG_ARCH-devel-docs=	*
+WANTLIB-devel-docs=	# empty
 
 WANTLIB-libs=		${WANTLIB} com_err
 WANTLIB-libs +=		com_err
