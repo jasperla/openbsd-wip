@@ -1,0 +1,16 @@
+$OpenBSD$
+--- version.h.orig	Thu Oct  9 00:17:18 2008
++++ version.h	Thu Oct  9 00:19:30 2008
+@@ -5,10 +5,10 @@
+ 
+ /* Defines used for different versions */
+ 
+-//#define SPEAR
++#define SPEAR
+ //#define SPEARDEMO
+ //#define UPLOAD
+-#define GOODTIMES
++//#define GOODTIMES
+ #define CARMACIZED
+ //#define APOGEE_1_0
+ //#define APOGEE_1_1
