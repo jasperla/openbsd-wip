@@ -11,7 +11,6 @@ MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-FAKE_FLAGS =	PREFIX="/usr/local/libdata" \
-		DESTDIR="/usr/local/libdata"
+#FAKE_FLAGS =	PREFIX="/usr/local/libdata"
 
 .include <bsd.port.mk>
