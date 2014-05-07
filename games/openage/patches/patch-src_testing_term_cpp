@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/testing/term.cpp.orig	Wed May  7 20:51:36 2014
++++ src/testing/term.cpp	Wed May  7 20:51:19 2014
+@@ -1,7 +1,7 @@
+ #include "term.h"
+ 
+ #include <unistd.h>
+-#include <pty.h>
++#include <util.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <fcntl.h>
