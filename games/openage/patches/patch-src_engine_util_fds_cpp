@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/engine/util/fds.cpp.orig	Wed May  7 20:50:28 2014
++++ src/engine/util/fds.cpp	Wed May  7 20:50:41 2014
+@@ -6,7 +6,7 @@
+ #include <string.h>
+ 
+ #include <fcntl.h>
+-#include <pty.h>
++#include <util.h>
+ #include <unistd.h>
+ 
+ #include "unicode.h"
