@@ -4,7 +4,7 @@ COMMENT =		kevent based inotify
 
 DISTNAME =		libinotify-20120419
 
-SHARED_LIBS =		inotify 0.0
+SHARED_LIBS =		kinotify 0.0
 
 CATEGORIES =		devel
 
@@ -30,6 +30,12 @@ AUTOMAKE_VERSION =	1.11
 
 TEST_TARGET = 		test
 
+post-extract:
+	mv ${WRKSRC}/sys/inotify.h ${WRKSRC}/sys/kinotify.h
+.for i in tests/core/platform.hh controller.c conversions.c test.c \
+	utils.c watch.c worker-sets.c worker-thread.c worker.c
+		perl -pi -e 's/inotify.h/kinotify.h/g' ${WRKSRC}/$i
+.endfor
 pre-configure:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} libtoolize --force --copy

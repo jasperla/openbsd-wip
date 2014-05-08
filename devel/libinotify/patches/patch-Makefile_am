@@ -1,17 +1,40 @@
 $OpenBSD$
 --- Makefile.am.orig	Mon Mar 11 18:55:06 2013
-+++ Makefile.am	Wed Apr 30 14:28:56 2014
-@@ -19,7 +19,7 @@ libinotify_la_SOURCES = \
++++ Makefile.am	Sun May  4 10:21:59 2014
+@@ -3,11 +3,11 @@
+ #-----------------------------------------------------------
+ 
+ if BUILD_LIBRARY
+-lib_LTLIBRARIES = libinotify.la
++lib_LTLIBRARIES = libkinotify.la
+ 
+-nobase_include_HEADERS = sys/inotify.h
++nobase_include_HEADERS = sys/kinotify.h
+ 
+-libinotify_la_SOURCES = \
++libkinotify_la_SOURCES = \
+     utils.c \
+     barriers.c \
+     conversions.c \
+@@ -18,9 +18,9 @@ libinotify_la_SOURCES = \
+     worker.c \
      controller.c
  
- libinotify_la_CFLAGS = -I. -DNDEBUG
+-libinotify_la_CFLAGS = -I. -DNDEBUG
 -if FREEBSD
+-libinotify_la_LDFLAGS = -pthread
++libkinotify_la_CFLAGS = -I. -DNDEBUG
 +if OPENBSD
- libinotify_la_LDFLAGS = -pthread
++libkinotify_la_LDFLAGS = -pthread
  else
  libinotify_la_LDFLAGS = -lpthread
-@@ -67,7 +67,7 @@ if BUILD_LIBRARY
- check_libinotify_LDADD = libinotify.la
+ endif
+@@ -64,10 +64,10 @@ check_libinotify_SOURCES += barriers.c
+ endif
+ 
+ if BUILD_LIBRARY
+-check_libinotify_LDADD = libinotify.la
++check_libinotify_LDADD = libkinotify.la
  endif
  
 -if FREEBSD
