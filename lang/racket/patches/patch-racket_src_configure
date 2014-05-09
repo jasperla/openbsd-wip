@@ -5,9 +5,9 @@ without CAS)
 
 https://github.com/plt/racket/commit/2ff4802a14b7b03c80d0caee785f5b3699c3a01e
 
---- src/configure.orig	Sat Jan 11 19:20:47 2014
-+++ src/configure	Mon Apr 28 22:13:23 2014
-@@ -4137,7 +4137,7 @@ case "$host_os" in
+--- src/configure.orig	Thu Apr 17 21:58:55 2014
++++ src/configure	Fri May  9 01:24:28 2014
+@@ -4442,7 +4442,7 @@ case "$host_os" in
      ;;
    openbsd*)
      LIBS="$LIBS -Wl,--export-dynamic"
@@ -16,7 +16,7 @@ https://github.com/plt/racket/commit/2ff4802a14b7b03c80d0caee785f5b3699c3a01e
      try_kqueue_syscall=yes
      ;;
    dragonfly*)
-@@ -8855,6 +8855,12 @@ fi
+@@ -6215,6 +6215,12 @@ fi
  
  ############### pthread ###################
  
@@ -29,7 +29,7 @@ https://github.com/plt/racket/commit/2ff4802a14b7b03c80d0caee785f5b3699c3a01e
  if test "${enable_pthread}" = "yes" ; then
    if test "${use_flag_pthread}" = "yes" ; then
      PREFLAGS="$PREFLAGS -pthread"
-@@ -9164,7 +9170,7 @@ if test "${enable_shared}" = "yes" ; then
+@@ -6492,7 +6498,7 @@ if test "${enable_shared}" = "yes" ; then
      plt_lib_version=`grep " MZSCHEME_VERSION " ${srcdir}/racket/src/schvers.h | cut -d '"' -f 2`
    fi
  
