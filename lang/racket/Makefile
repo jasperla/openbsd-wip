@@ -1,20 +1,20 @@
 # $OpenBSD: Makefile,v 1.12 2014/04/09 21:20:33 kili Exp $
 
-BROKEN-hppa =		MZ_CAS_AVAILABLE is not defined (compare-and-swap)
+BROKEN-hppa =		error: struct Scheme_Cont has no member named buf (setjmpup.c)
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	i386 amd64 hppa
 
 COMMENT =		multi-paradigm programming language
 
-V =			6.0
+V =			6.0.1
 PKGNAME =		racket-$V
-DISTNAME =		racket-$V-src-builtpkgs-unix
+DISTNAME =		racket-$V-src-builtpkgs
 
 # Each new version of racket is incompatible with the previous one.
 # Increase always the major number.
 # http://article.gmane.org/gmane.comp.lang.racket.devel/9872
-SHARED_LIBS +=		racket3m	1.0 # 6.0
+SHARED_LIBS +=		racket3m	2.0 # 6.0.1
 
 CATEGORIES =		lang
 HOMEPAGE =		http://racket-lang.org/
@@ -24,7 +24,7 @@ MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		https://www.cs.utah.edu/plt/installers/${V}/ \
-			http://download.racket-lang.org/installers/${V}/ \
+			http://mirror.racket-lang.org/installers/${V}/ \
 			http://www.eecs.northwestern.edu/racket/${V}/ \
 			http://mirror.informatik.uni-tuebingen.de/mirror/racket/${V}/ \
 			http://racket.infogroep.be/${V}/ \
@@ -34,12 +34,7 @@ MASTER_SITES =		https://www.cs.utah.edu/plt/installers/${V}/ \
 			ftp://download.tuxfamily.org/jod/lang/racket/
 EXTRACT_SUFX =		.tgz
 
-MODULES +=		converters/libiconv \
-			lang/clang
-
-# The test udp.rktl crashes when racket is compiled with any version of gcc
-MODCLANG_ARCHS =	amd64
-MODCLANG_LANGS =	c
+MODULES +=		converters/libiconv
 
 # http://docs.racket-lang.org/draw/libs.html
 # http://docs.racket-lang.org/gui/libs.html
@@ -73,7 +68,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--enable-lt=${LIBTOOL}
 # "backtrace" is expensive.
 # http://article.gmane.org/gmane.comp.lang.racket.devel/6700
-# "places" and "futures" require thread-local storage.
+# "places" and "futures" require thread-local storage and atomic CAS
 # http://article.gmane.org/gmane.comp.lang.racket.user/16723
 CONFIGURE_ARGS +=	--disable-backtrace \
 			--disable-places \
