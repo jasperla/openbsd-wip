@@ -1,3 +1,5 @@
+absent port for p5-DBIx-Class-Schema
+
 too many warninigs in tests:
 
 t/tapper-cmd-queue.t ......... ok

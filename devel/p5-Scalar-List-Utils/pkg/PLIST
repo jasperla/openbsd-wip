@@ -1,0 +1,16 @@
+@comment $OpenBSD$
+%%SHARED%%
+${P5ARCH}/
+${P5ARCH}/List/
+${P5ARCH}/List/Util/
+${P5ARCH}/List/Util.pm
+${P5ARCH}/List/Util/XS.pm
+${P5ARCH}/Scalar/
+${P5ARCH}/Scalar/Util.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/List/
+${P5ARCH}/auto/List/Util/
+${P5ARCH}/auto/List/Util/Util.bs
+@man man/man3p/List::Util.3p
+@man man/man3p/List::Util::XS.3p
+@man man/man3p/Scalar::Util.3p
