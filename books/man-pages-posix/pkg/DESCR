@@ -1,3 +1,5 @@
-This package contains a copy of the POSIX 1003.1-2013 man pages.
-The directories man1p, man3p, man7u contain descriptions of the
-utilities, the functions and the headers documented in that standard.
+This package contains the IEEE Std 1003.1-2008 (POSIX.1) manual
+pages including the corrections contained in the first Technical
+Corrigendum, IEEE Std 1003.1-2008/Cor 1-2013. It include manuals
+for utilities in section 1, and for functions and headers in
+section 3.
