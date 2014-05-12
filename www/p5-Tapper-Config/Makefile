@@ -16,6 +16,6 @@ RUN_DEPENDS =	devel/p5-File-ShareDir \
 		devel/p5-Hash-Merge-Simple \
 		devel/p5-YAML-Syck
 
-BUILD_DEPENDS =	${RUN_DEPENDS}
+BUILD_DEPENDS =	devel/p5-Test-Simple
 
 .include <bsd.port.mk>
