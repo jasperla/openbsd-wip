@@ -1,5 +1,4 @@
 @comment $OpenBSD$
-${P5SITE}/Tapper/
 ${P5SITE}/Tapper/Schema/
 ${P5SITE}/Tapper/Schema.pm
 ${P5SITE}/Tapper/Schema/ReportsDB/
@@ -53,8 +52,6 @@ ${P5SITE}/Tapper/Schema/TestrunDB/ResultSet/Precondition.pm
 ${P5SITE}/Tapper/Schema/TestrunDB/ResultSet/Queue.pm
 ${P5SITE}/Tapper/Schema/TestrunDB/ResultSet/Testrun.pm
 ${P5SITE}/Tapper/Schema/TestrunDB/ResultSet/TestrunScheduling.pm
-${P5SITE}/auto/
-${P5SITE}/auto/Tapper/
 ${P5SITE}/auto/Tapper/Schema/
 ${P5SITE}/auto/Tapper/Schema/Tapper-Schema-ReportsDB-1.001-2.010009-MySQL.sql
 ${P5SITE}/auto/Tapper/Schema/Tapper-Schema-ReportsDB-1.001-2.010009-SQLite.sql
