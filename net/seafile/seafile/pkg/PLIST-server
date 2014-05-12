@@ -1,5 +1,4 @@
 @comment $OpenBSD$
-@sample /var/seafile/seafile-server
 @bin bin/httpserver
 @bin bin/seaf-fsck
 @bin bin/seaf-server
