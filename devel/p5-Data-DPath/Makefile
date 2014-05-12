@@ -15,9 +15,11 @@ RUN_DEPENDS =	devel/p5-Class-XSAccessor \
 		devel/p5-Data-Dumper-Simple \
 		devel/p5-Iterator-Util \
 		devel/p5-List-MoreUtils \
+		devel/p5-Scalar-List-Utils \
 		devel/p5-Sub-Exporter \
 		devel/p5-Test-Deep \
-		devel/p5-aliased
+		devel/p5-aliased \
+		textproc/p5-Text-Balanced
 
 BUILD_DEPENDS =	devel/p5-Test-Deep \
 		devel/p5-Test-Simple
