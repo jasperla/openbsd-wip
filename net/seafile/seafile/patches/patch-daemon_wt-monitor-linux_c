@@ -1,0 +1,12 @@
+$OpenBSD$
+--- daemon/wt-monitor-linux.c.orig	Mon May 12 23:43:27 2014
++++ daemon/wt-monitor-linux.c	Mon May 12 23:43:54 2014
+@@ -2,7 +2,7 @@
+ #include "common.h"
+ 
+ #include <sys/select.h>
+-#include <sys/inotify.h>
++#include <sys/kinotify.h>
+ #include <sys/ioctl.h>
+ #include <dirent.h>
+ 

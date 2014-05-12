@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile.template,v 1.68 2013/10/02 07:34:45 ajacoutot Exp $
 
-VERSION ?= 		3.0.2
+VERSION ?= 		3.0.4
 V = 			${VERSION:S/-server//:S/-testing//}
 DISTNAME = 		${NAME}-${V}
 

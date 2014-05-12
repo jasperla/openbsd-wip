@@ -1,6 +1,6 @@
 $OpenBSD$
---- fuse/Makefile.am.orig	Tue Apr 22 12:58:13 2014
-+++ fuse/Makefile.am	Tue Apr 22 12:58:29 2014
+--- fuse/Makefile.am.orig	Mon May 12 13:20:13 2014
++++ fuse/Makefile.am	Mon May 12 23:56:28 2014
 @@ -41,7 +41,7 @@ seaf_fuse_SOURCES = seaf-fuse.c \
  seaf_fuse_LDADD = @CCNET_LIBS@ \
  				  $(top_builddir)/lib/libseafile.la \
@@ -8,5 +8,5 @@ $OpenBSD$
 -                  -lsqlite3 -levent \
 +                  -lsqlite3 -levent_core \
  				  $(top_builddir)/common/cdc/libcdc.la \
- 				  @SEARPC_LIBS@ @ZDB_LIBS@ @FUSE_LIBS@ @ZLIB_LIBS@
+ 				  @SEARPC_LIBS@ @JANSSON_LIBS@ @ZDB_LIBS@ @FUSE_LIBS@ @ZLIB_LIBS@
  

@@ -1,13 +1,13 @@
 $OpenBSD$
---- server/gc/Makefile.am.orig	Tue Apr 22 12:40:32 2014
-+++ server/gc/Makefile.am	Tue Apr 22 12:41:42 2014
+--- server/gc/Makefile.am.orig	Mon May 12 13:20:13 2014
++++ server/gc/Makefile.am	Mon May 12 23:59:14 2014
 @@ -50,7 +50,7 @@ seafserv_gc_SOURCES = \
  seafserv_gc_LDADD = @CCNET_LIBS@ \
  	$(top_builddir)/common/cdc/libcdc.la \
  	$(top_builddir)/lib/libseafile_common.la \
 -	@GLIB2_LIBS@ @GOBJECT_LIBS@ -lssl @LIB_RT@ @LIB_UUID@ -lsqlite3 -levent \
 +	@GLIB2_LIBS@ @GOBJECT_LIBS@ -lssl @LIB_RT@ @LIB_UUID@ -lsqlite3 -levent_core \
- 	@SEARPC_LIBS@ @ZDB_LIBS@ @CURL_LIBS@ ${LIB_WS32} @ZLIB_LIBS@
+ 	@SEARPC_LIBS@ @JANSSON_LIBS@ @ZDB_LIBS@ @CURL_LIBS@ ${LIB_WS32} @ZLIB_LIBS@
  
  seafserv_gc_LDFLAGS = @STATIC_COMPILE@ @SERVER_PKG_RPATH@
 @@ -63,7 +63,7 @@ seaf_fsck_SOURCES = \
@@ -16,7 +16,7 @@ $OpenBSD$
  	$(top_builddir)/lib/libseafile_common.la \
 -	@GLIB2_LIBS@ @GOBJECT_LIBS@ -lssl @LIB_RT@ @LIB_UUID@ -lsqlite3 -levent \
 +	@GLIB2_LIBS@ @GOBJECT_LIBS@ -lssl @LIB_RT@ @LIB_UUID@ -lsqlite3 -levent_core \
- 	@SEARPC_LIBS@ @ZDB_LIBS@ @CURL_LIBS@ ${LIB_WS32} @ZLIB_LIBS@
+ 	@SEARPC_LIBS@ @JANSSON_LIBS@ @ZDB_LIBS@ @CURL_LIBS@ ${LIB_WS32} @ZLIB_LIBS@
  
  seaf_fsck_LDFLAGS = @STATIC_COMPILE@ @SERVER_PKG_RPATH@
 @@ -75,7 +75,7 @@ seaf_migrate_SOURCES = \
@@ -25,6 +25,6 @@ $OpenBSD$
  	$(top_builddir)/lib/libseafile_common.la \
 -	@GLIB2_LIBS@ @GOBJECT_LIBS@ -lssl @LIB_RT@ @LIB_UUID@ -lsqlite3 -levent \
 +	@GLIB2_LIBS@ @GOBJECT_LIBS@ -lssl @LIB_RT@ @LIB_UUID@ -lsqlite3 -levent_core \
- 	@SEARPC_LIBS@ @ZDB_LIBS@ @CURL_LIBS@ ${LIB_WS32} @ZLIB_LIBS@
+ 	@SEARPC_LIBS@ @JANSSON_LIBS@ @ZDB_LIBS@ @CURL_LIBS@ ${LIB_WS32} @ZLIB_LIBS@
  
  seaf_migrate_LDFLAGS = @STATIC_COMPILE@ @SERVER_PKG_RPATH@
