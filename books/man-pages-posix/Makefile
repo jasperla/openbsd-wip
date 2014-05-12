@@ -9,14 +9,14 @@ PKG_ARCH =	*
 MASTER_SITES =	https://www.kernel.org/pub/linux/docs/man-pages/man-pages-posix/
 EXTRACT_SUFX =	.tar.xz
 
-# permissive, see POSIX-COPYRIGHT
+# custom copyleft license, see POSIX-COPYRIGHT
 PERMIT_PACKAGE_CDROM =	Yes
 
 USE_GROFF =	Yes
 NO_BUILD =	Yes
 NO_TEST =	Yes
 
-DOCDIR =	${PREFIX}/share/doc/${PKGNAME:C/-[0-9].*$//}
+DOCDIR =	${PREFIX}/share/doc/posix
 SUBST_VARS =	DOCDIR
 
 # mapping of categories: source => destination
@@ -42,5 +42,9 @@ do-install:
 		${DOCDIR}/man/man${_dst}/*.${_dst}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/POSIX-COPYRIGHT ${DOCDIR}
+# Install original package until mandoc(1) receive tbl(7) support,
+# to obey the license rules
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} \
+		${DOCDIR}
 
 .include <bsd.port.mk>
