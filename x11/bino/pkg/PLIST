@@ -42,28 +42,19 @@ share/doc/bino/output-type-red-green.png
 share/doc/bino/output-type-stereo.png
 share/doc/bino/output-type-top-bottom-half.png
 share/doc/bino/output-type-top-bottom.png
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/bino.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/bino.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/bino.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/bino.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/bino.svg
 share/locale/bg/LC_MESSAGES/bino.mo
 share/locale/de/LC_MESSAGES/bino.mo
 share/locale/fr/LC_MESSAGES/bino.mo
 share/locale/ru/LC_MESSAGES/bino.mo
+share/locale/zh_cn/
+share/locale/zh_cn/LC_MESSAGES/
+share/locale/zh_cn/LC_MESSAGES/bino.mo
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
