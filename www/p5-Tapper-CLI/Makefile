@@ -34,8 +34,7 @@ BUILD_DEPENDS =	devel/p5-Class-C3 \
 		devel/p5-MRO-Compat \
 		devel/p5-Test-Deep \
 		devel/p5-Test-Fixture-DBIC-Schema \
-		devel/p5-Test-Simple \
-		www/p5-Tapper-Schema
+		devel/p5-Test-Simple
 
 TEST_DEPENDS =	databases/p5-DBD-SQLite \
 		devel/p5-Object-Enum \
