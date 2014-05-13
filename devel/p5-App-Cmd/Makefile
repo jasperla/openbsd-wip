@@ -3,7 +3,7 @@
 COMMENT =	set of tools to write CLI programs
 
 MODULES =	cpan
-DISTNAME =	App-Cmd-0.322
+DISTNAME =	App-Cmd-0.323
 CATEGORIES =	devel
 
 MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
@@ -20,8 +20,17 @@ RUN_DEPENDS =	devel/p5-Class-Load \
 		devel/p5-Sub-Install \
 		devel/p5-Test-Fatal \
 		sysutils/p5-Capture-Tiny \
-		textproc/p5-String-RewritePrefix
+		textproc/p5-String-RewritePrefix \
+		devel/p5-Module-Pluggable
 
-BUILD_DEPENDS =	${RUN_DEPENDS}
+# requires:
+#  Text::Abbrev: 0
+
+BUILD_DEPENDS =	devel/p5-Data-Dumper-Simple
+		devel/p5-Test-Fatal
+		devel/p5-Test-Simple
+
+# TODO: IPC-Cmd-0.92
+
 
 .include <bsd.port.mk>
