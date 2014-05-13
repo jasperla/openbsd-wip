@@ -6,7 +6,7 @@ MODULES =	cpan
 DISTNAME =	String-Diff-0.06
 CATEGORIES =	textproc
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
