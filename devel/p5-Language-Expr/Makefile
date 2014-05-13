@@ -3,15 +3,13 @@
 COMMENT =	simple minilanguage for use in expression
 
 MODULES =	cpan
-DISTNAME =	Language-Expr-0.21
+DISTNAME =	Language-Expr-0.23
 CATEGORIES =	devel
 
 MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
-
-CONFIGURE_STYLE =	modbuild
 
 BUILD_DEPENDS =	devel/p5-Regexp-Grammars \
 		devel/p5-UUID-Tiny
