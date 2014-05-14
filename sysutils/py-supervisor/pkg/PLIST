@@ -176,6 +176,9 @@ lib/python${MODPY_VERSION}/site-packages/supervisor/scripts/sample_eventlistener
 lib/python${MODPY_VERSION}/site-packages/supervisor/scripts/sample_eventlistener.pyc
 lib/python${MODPY_VERSION}/site-packages/supervisor/scripts/sample_exiting_eventlistener.py
 lib/python${MODPY_VERSION}/site-packages/supervisor/scripts/sample_exiting_eventlistener.pyc
+lib/python${MODPY_VERSION}/site-packages/supervisor/skel/
+lib/python${MODPY_VERSION}/site-packages/supervisor/skel/sample.conf
+@sample ${SYSCONFDIR}/supervisord.conf
 lib/python${MODPY_VERSION}/site-packages/supervisor/socket_manager.py
 lib/python${MODPY_VERSION}/site-packages/supervisor/socket_manager.pyc
 lib/python${MODPY_VERSION}/site-packages/supervisor/states.py
@@ -252,9 +255,24 @@ lib/python${MODPY_VERSION}/site-packages/supervisor/web.py
 lib/python${MODPY_VERSION}/site-packages/supervisor/web.pyc
 lib/python${MODPY_VERSION}/site-packages/supervisor/xmlrpc.py
 lib/python${MODPY_VERSION}/site-packages/supervisor/xmlrpc.pyc
-lib/python${MODPY_VERSION}/site-packages/supervisor/skel/
-lib/python${MODPY_VERSION}/site-packages/supervisor/skel/sample.conf
-@sample ${SYSCONFDIR}/supervisord.conf
+share/doc/supervisor/
+share/doc/supervisor/Makefile
+share/doc/supervisor/api.rst
+share/doc/supervisor/conf.py
+share/doc/supervisor/configuration.rst
+share/doc/supervisor/development.rst
+share/doc/supervisor/events.rst
+share/doc/supervisor/faq.rst
+share/doc/supervisor/glossary.rst
+share/doc/supervisor/index.rst
+share/doc/supervisor/installing.rst
+share/doc/supervisor/introduction.rst
+share/doc/supervisor/logging.rst
+share/doc/supervisor/running.rst
+share/doc/supervisor/subprocess-transitions.png
+share/doc/supervisor/subprocess.rst
+share/doc/supervisor/upgrading.rst
+share/doc/supervisor/xmlrpc.rst
 @sample ${SYSCONFDIR}/supervisord.d/
 @sample ${VARBASE}/run/supervisor/
 @rcscript ${RCDIR}/supervisord
