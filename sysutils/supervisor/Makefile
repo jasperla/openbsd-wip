@@ -4,7 +4,6 @@ COMMENT=		system to monitor and control processes
 
 MODPY_EGG_VERSION=	3.0
 DISTNAME=		supervisor-${MODPY_EGG_VERSION}
-PKGNAME=		py-${DISTNAME}
 
 CATEGORIES=		sysutils
 
