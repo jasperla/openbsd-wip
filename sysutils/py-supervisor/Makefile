@@ -19,8 +19,13 @@ MODULES=		lang/python
 
 MODPY_SETUPTOOLS=	Yes
 
-#TEST_DEPENDS=	devel/py-minimock \
-#			sysutils/py-lockfile
+TEST_DEPENDS=		devel/py-mock \
+			www/py-meld3
+
+SUBST_VARS+=		VARBASE
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/supervisor/skel/sample.conf
 
 #post-install:
 #	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-daemon/
