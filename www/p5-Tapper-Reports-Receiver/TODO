@@ -1,1 +1,6 @@
 use --background for daemon script?
+
+add
+# HTTP-Daemon
+# http://search.cpan.org/~saper/Sys-Syslog-0.33/Syslog.pm
+to RUN_DEPENDS

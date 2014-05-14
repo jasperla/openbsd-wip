@@ -1,35 +1,32 @@
 # $OpenBSD $
 
 COMMENT =		encode, inspect, and decode Opus files
-
 DISTNAME =		opusfile-0.5
+CATEGORIES =		audio
+
+SHARED_ONLY =		Yes
 
 SHARED_LIBS +=		opusfile                  0.0 # 3.0
 SHARED_LIBS +=		opusurl                   0.0 # 3.0
 
-CATEGORIES =		audio
-
 HOMEPAGE =		http://opus-codec.org/
-
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
-# GPLv2
+# BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += m ogg opus crypto ssl
+WANTLIB += crypto m ogg opus ssl
 
 MASTER_SITES =		http://downloads.xiph.org/releases/opus/ \
 			https://ftp.mozilla.org/pub/mozilla.org/opus/
 
-LIB_DEPENDS =		audio/libogg audio/opus
+LIB_DEPENDS =		audio/libogg \
+			audio/opus
 
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
-CONFIGURE_STYLE =	automake
+CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--disable-doc
-
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.11
 
 FLAVORS =		debug
 FLAVOR ?=
