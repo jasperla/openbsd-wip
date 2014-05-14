@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:41:32 espie Exp $
+# $OpenBSD$
 
 COMMENT=		system to monitor and control processes
 
 MODPY_EGG_VERSION=	3.0
 DISTNAME=		supervisor-${MODPY_EGG_VERSION}
-PKGNAME=		py-supervisor-${MODPY_EGG_VERSION}
-#REVISION=		1
+PKGNAME=		py-${DISTNAME}
 
 CATEGORIES=		sysutils
 
-HOMEPAGE=		http://pypi.python.org/pypi/supervisor/
+HOMEPAGE=		http://supervisord.org/
 
 # BSD-derived
 PERMIT_PACKAGE_CDROM =	Yes
