@@ -27,8 +27,8 @@ SUBST_VARS+=		VARBASE
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/supervisor/skel/sample.conf
 
-#post-install:
-#	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-daemon/
-#	${INSTALL_DATA} ${WRKSRC}/doc/FAQ ${PREFIX}/share/doc/py-daemon/
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/supervisor/
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${PREFIX}/share/doc/supervisor/
 
 .include <bsd.port.mk>
