@@ -2,7 +2,7 @@
 
 SHARED_ONLY =		Yes
 
-COMMENT-main =		ibrary for creating GUIs for games and 3D applications
+COMMENT-main =		library for creating GUIs for games and 3D applications
 COMMENT-demo =		MyGUI demos
 COMMENT-tools = 	MyGUI tools
 
@@ -48,6 +48,9 @@ NO_TEST =		Yes
 
 # Add -pthread to trigger BOOST_HAS_THREADS.
 CFLAGS +=		-pthread
+
+post-extract:
+	rm ${WRKSRC}/CMake/Packages/FindFreetype.cmake
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/CMake/InstallResources.cmake \
