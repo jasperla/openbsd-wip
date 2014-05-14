@@ -2,7 +2,7 @@
 #
 # $OpenBSD: supervisord.rc,v 1.1.1.1 2013/08/10 13:39:27 landry Exp $
 
-daemon="${TRUEPREFIX}/bin/supervisorid"
+daemon="${TRUEPREFIX}/bin/supervisord"
 daemon_flags="-c ${SYSCONFDIR}/supervisord.conf --pidfile /var/run/supervisor/supervisord.pid"
 
 . /etc/rc.d/rc.subr
