@@ -1,5 +1,4 @@
 @comment $OpenBSD$
-@sample /var/run/supervisor/
 bin/echo_supervisord_conf
 bin/pidproxy
 bin/supervisorctl
@@ -257,4 +256,5 @@ lib/python${MODPY_VERSION}/site-packages/supervisor/skel/
 lib/python${MODPY_VERSION}/site-packages/supervisor/skel/sample.conf
 @sample ${SYSCONFDIR}/supervisord.conf
 @sample ${SYSCONFDIR}/supervisord.d/
+@sample ${VARBASE}/run/supervisor/
 @rcscript ${RCDIR}/supervisord
