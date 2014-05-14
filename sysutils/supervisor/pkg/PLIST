@@ -274,5 +274,4 @@ share/doc/supervisor/subprocess.rst
 share/doc/supervisor/upgrading.rst
 share/doc/supervisor/xmlrpc.rst
 @sample ${SYSCONFDIR}/supervisord.d/
-@sample ${VARBASE}/run/supervisor/
 @rcscript ${RCDIR}/supervisord
