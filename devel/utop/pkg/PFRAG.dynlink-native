@@ -1,3 +1,0 @@
-@comment $OpenBSD: $
-@bin lib/ocaml/utop/utop-camlp4.cmxs
-@bin lib/ocaml/utop/utop.cmxs
