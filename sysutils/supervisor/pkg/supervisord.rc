@@ -10,4 +10,8 @@ daemon_flags="-c ${SYSCONFDIR}/supervisord.conf --pidfile /var/run/supervisor/su
 pexp="${MODPY_BIN} ${daemon}${daemon_flags:+ ${daemon_flags}}"
 rc_reload=YES
 
+rc_pre() {
+	install -d /var/run/supervisor
+}
+
 rc_cmd $1

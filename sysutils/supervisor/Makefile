@@ -18,6 +18,7 @@ MODULES=		lang/python
 
 MODPY_SETUPTOOLS=	Yes
 
+RUN_DEPENDS=		www/py-meld3
 TEST_DEPENDS=		devel/py-mock \
 			www/py-meld3
 
