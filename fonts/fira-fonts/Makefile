@@ -8,7 +8,7 @@ CATEGORIES =		fonts x11
 
 HOMEPAGE =		http://www.mozilla.org/en-US/styleguide/products/firefox-os/typeface/
 
-MAINTAINER =		Juan Francisco Cantero Hurtado <iam@juanfra.info>
+MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 
 # SIL OPEN FONT LICENSE Version 1.1
 PERMIT_PACKAGE_CDROM =	Yes
