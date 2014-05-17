@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@lib lib/libopusfile.so.${LIBopusfile_VERSION}
-@lib lib/libopusurl.so.${LIBopusurl_VERSION}
