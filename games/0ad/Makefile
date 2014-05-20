@@ -10,9 +10,6 @@ CATEGORIES =		games
 
 HOMEPAGE =		http://play0ad.com/
 
-#SHARED_LIBS +=  mozjs185-ps-debug         1.0 # 1.0
-#SHARED_LIBS +=  mozjs185-ps-release       1.0 # 1.0
-
 # GPLv2+, MIT for libs, CC-BY-SA for data
 PERMIT_PACKAGE_CDROM =	Yes
 
