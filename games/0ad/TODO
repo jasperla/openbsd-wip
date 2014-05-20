@@ -1,9 +1,3 @@
-Pyrogenesis has to be run from /usr/local/bin (wrapper script?)
-
 Doesn't respect CXXFLAGS, etc.
 
-Doesn't (yet) work with spidermonkey-17, see:
-http://www.wildfiregames.com/forum/index.php?showtopic=17289
-http://trac.wildfiregames.com/ticket/1886
-
-Not linked properly against internal spidermonkey, needs LD_PRELOAD
+FCollada build is not verbose enough.
