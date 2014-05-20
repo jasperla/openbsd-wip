@@ -12,15 +12,31 @@ lib/liblowlevel.a
 lib/libmocks_real.a
 lib/libmocks_test.a
 lib/libmongoose.a
-@lib lib/libmozjs185-ps-debug.so.${LIBmozjs185-ps-debug_VERSION}
-@lib lib/libmozjs185-ps-release.so.${LIBmozjs185-ps-release_VERSION}
 lib/libnetwork.a
 lib/libscriptinterface.a
 lib/libsimulation2.a
+lib/libtinygettext.a
 share/0ad/
 share/0ad/config/
 share/0ad/config/default.cfg
 share/0ad/config/keys.txt
+share/0ad/l10n/
+share/0ad/l10n/.tx/
+share/0ad/l10n/.tx/config
+share/0ad/l10n/ca.engine.po
+share/0ad/l10n/cs.engine.po
+share/0ad/l10n/de.engine.po
+share/0ad/l10n/en_GB.engine.po
+share/0ad/l10n/engine.pot
+share/0ad/l10n/es.engine.po
+share/0ad/l10n/fr.engine.po
+share/0ad/l10n/gd.engine.po
+share/0ad/l10n/gl.engine.po
+share/0ad/l10n/it.engine.po
+share/0ad/l10n/messages.json
+share/0ad/l10n/nl.engine.po
+share/0ad/l10n/pt_BR.engine.po
+share/0ad/l10n/pt_PT.engine.po
 share/0ad/mods/
 share/0ad/mods/_test.dae/
 share/0ad/mods/_test.dae/art/
@@ -189,10 +205,21 @@ share/0ad/tools/atlas/toolbar/undo.png
 share/0ad/tools/fontbuilder/
 share/0ad/tools/fontbuilder/fonts/
 share/0ad/tools/fontbuilder/fonts/DejaVu-LICENSE.txt
-share/0ad/tools/fontbuilder/fonts/DejaVuSans.ttf
 share/0ad/tools/fontbuilder/fonts/DejaVuSansMono.ttf
+share/0ad/tools/fontbuilder/fonts/FreeFont-LICENSE.txt
+share/0ad/tools/fontbuilder/fonts/FreeMono.ttf
+share/0ad/tools/fontbuilder/fonts/FreeSans.ttf
+share/0ad/tools/fontbuilder/fonts/FreeSansBold.ttf
+share/0ad/tools/fontbuilder/fonts/FreeSansOblique.ttf
+share/0ad/tools/fontbuilder/fonts/FreeSerif.ttf
+share/0ad/tools/fontbuilder/fonts/FreeSerifBold.ttf
 share/0ad/tools/fontbuilder/fonts/GUST-FONT-LICENSE.txt
 share/0ad/tools/fontbuilder/fonts/LICENSE.txt
+share/0ad/tools/fontbuilder/fonts/LibBiolinum-LICENSE.txt
+share/0ad/tools/fontbuilder/fonts/LinBiolinum_Kah.ttf
+share/0ad/tools/fontbuilder/fonts/LinBiolinum_RBah.ttf
+share/0ad/tools/fontbuilder/fonts/LinBiolinum_RIah.ttf
+share/0ad/tools/fontbuilder/fonts/LinBiolinum_Rah.ttf
 share/0ad/tools/fontbuilder/fonts/texgyrepagella-bold.otf
 share/0ad/tools/fontbuilder/fonts/texgyrepagella-regular.otf
 @exec %D/bin/update-desktop-database
