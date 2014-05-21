@@ -1,0 +1,12 @@
+$OpenBSD$
+--- utilities/texstudio.desktop.orig	Wed May 21 13:59:22 2014
++++ utilities/texstudio.desktop	Wed May 21 13:59:57 2014
+@@ -6,7 +6,7 @@ GenericName=LaTeX Editor
+ GenericName[fr]=Editeur LaTeX
+ Comment=LaTeX development environment
+ Comment[fr]=Environnement de développement LaTeX
+-Icon=/usr/share/texstudio/texstudio.svg
++Icon=/usr/local/share/texstudio/texstudio.svg
+ MimeType=text/x-tex;
+ Name=TeXstudio
+ StartupNotify=false
