@@ -6,7 +6,7 @@ $OpenBSD$
  AllTarget(ProgramTargetName($(PROGRAM)))
  NormalProgramTarget($(PROGRAM),$(OBJS),$(DEPLIB),$(LOCAL_LIBRARIES),)
 -InstallProgram($(PROGRAM),$(HOMEDIR)/libexec)
-+InstallProgram($(PROGRAM),!!PREFIX!!/libexec)
++InstallProgram($(PROGRAM),${PREFIX}/libexec)
  DependTarget()
  LintTarget()
  

@@ -51,7 +51,6 @@ devel/p5-Daemon-Daemonize	ready for import, sent to ports@ 2014-03-11
 devel/p5-Data-DPath	ready for import, sent to ports@ 2014-03-11
 devel/p5-Term-VT102 	ready for import, sent to ports@ 2014-03-11, ok from shten@
 devel/p5-Term-VT102-Boundless	ready for import, sent to ports@ 2014-03-11
-games/galois		ready for import (bcallah@)
 graphics/lumee		ready for import (bcallah@)
 net/libstrophe		ready for import (bcallah@)
 net/profanity		ready for import (bcallah@)

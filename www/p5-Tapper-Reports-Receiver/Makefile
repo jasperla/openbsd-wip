@@ -33,10 +33,6 @@ RUN_DEPENDS =	devel/p5-AnyEvent \
 		www/p5-Tapper-Schema \
 		www/p5-Tapper-TAP-Harness
 
-# HTTP-Daemon
-# http://search.cpan.org/~saper/Sys-Syslog-0.33/Syslog.pm
-
-
 BUILD_DEPENDS =	devel/p5-Class-C3 \
 		devel/p5-DateTime-Format-Mail \
 		devel/p5-File-Slurp \
