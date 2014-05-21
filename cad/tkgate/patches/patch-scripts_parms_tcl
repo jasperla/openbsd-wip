@@ -6,7 +6,7 @@ $OpenBSD$
  # Executable for simulator
  #
 -set simExec "${tkg_gateHome}/libexec/gsim"
-+set simExec "!!PREFIX!!/libexec/gsim"
++set simExec "${PREFIX}/libexec/gsim"
  
  set tkg_simCustomDelay 0
  set tkg_simDefaultDelayFile "${tkg_gateHome}/gdf/default.gdf"
