@@ -39,6 +39,10 @@ NO_TEST =		Yes
 
 MAKE_FLAGS =		IRSSI_DIST="$(LOCALBASE)/include/irssi"
 
+# libtool.m4 required for build, but also loading the module into irssi
+# fails with /usr/bin/libtool as of 20140521
+USE_LIBTOOL =		gnu
+
 LIBTOOL_FLAGS +=	--tag=disable-static
 CONFIGURE_ARGS +=	--with-libotr-inc-prefix=${LOCALBASE}/include
 
