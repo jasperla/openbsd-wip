@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-lib/irssi/modules/libotr.so
-share/doc/pkg-readmes/${FULLPKGNAME}
-share/irssi/help/otr
