@@ -13,7 +13,7 @@ HOMEPAGE =	https://github.com/cryptodotis/irssi-otr
 
 MAINTAINER =	Florian Stinglmayr <florian@n0la.org>
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c gcrypt gpg-error otr pthread
