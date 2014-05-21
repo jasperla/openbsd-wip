@@ -7,8 +7,8 @@ $OpenBSD$
  InstallMultiple($(SCRIPTS),$(HOMEDIR)/scripts)
 -InstallMultiple($(DOCS),$(HOMEDIR)/doc)
 -InstallMultiple($(DOCFIGS),$(HOMEDIR)/doc/fig)
-+InstallMultiple($(DOCS),!!PREFIX!!/share/doc/tkgate)
-+InstallMultiple($(DOCFIGS),!!PREFIX!!/share/doc/tkgate/fig)
++InstallMultiple($(DOCS),${PREFIX}/share/doc/tkgate)
++InstallMultiple($(DOCFIGS),${PREFIX}/share/doc/tkgate/fig)
  InstallManPage(tkgate,$(MANDIR))
  InstallManPage(gmac,$(MANDIR))
  
