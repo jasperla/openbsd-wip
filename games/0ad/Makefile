@@ -1,15 +1,14 @@
 # $OpenBSD: Makefile.template,v 1.60 2010/10/24 20:41:23 ajacoutot Exp $
 
+SHARED_ONLY =		Yes
+
 COMMENT =		historical real-time strategy game
 
-PKGNAME =		0ad-0.0.15
+PKGNAME =		0ad-0.0.16
 
 CATEGORIES =		games
 
 HOMEPAGE =		http://play0ad.com/
-
-SHARED_LIBS +=  mozjs185-ps-debug         1.0 # 1.0
-SHARED_LIBS +=  mozjs185-ps-release       1.0 # 1.0
 
 # GPLv2+, MIT for libs, CC-BY-SA for data
 PERMIT_PACKAGE_CDROM =	Yes
@@ -24,13 +23,13 @@ DISTFILES =		${PKGNAME}-alpha-unix-build.tar.gz \
 
 BUILD_DEPENDS =		shells/bash
 
-# XXX for spidermonkey
 BUILD_DEPENDS +=	archivers/zip
 LIB_DEPENDS =		audio/libvorbis \
 			audio/openal \
 			devel/boost \
 			devel/libexecinfo \
 			devel/sdl \
+			devel/spidermonkey \
 			graphics/jpeg \
 			graphics/png \
 			net/curl \
@@ -38,6 +37,12 @@ LIB_DEPENDS =		audio/libvorbis \
 			net/gloox \
 			net/miniupnp/miniupnpc \
 			textproc/libxml
+MODULES =		gcc4 \
+			lang/python
+MODPY_RUNDEP =		No
+MODPY_ADJ_FILES =	../../../libraries/source/cxxtest-4.3/bin/cxxtestgen
+MODGCC4_ARCHS =		*
+MODGCC4_LANGS =		c c++
 
 MAKE_FLAGS =		SILENT= \
 			CXX="${CXX}"
@@ -48,6 +53,7 @@ USE_GMAKE =		Yes
 CONFIGURE_ARGS +=	--without-nvtt \
 			--with-system-enet \
 			--with-system-miniupnpc \
+			--with-system-mozjs24 \
 			--datadir=${PREFIX}/share/0ad \
 			--libdir=${PREFIX}/lib
 CONFIGURE_ENV =		MAKE=${MAKE_PROGRAM}
