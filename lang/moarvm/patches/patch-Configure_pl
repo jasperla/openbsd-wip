@@ -1,7 +1,7 @@
 $OpenBSD$
---- Configure.pl.orig	Thu Jan 23 01:40:35 2014
-+++ Configure.pl	Sun Jan 26 00:36:51 2014
-@@ -172,6 +172,10 @@ $config{ldflags} = join ' ', @ldflags;
+--- Configure.pl.orig	Thu May 22 20:46:53 2014
++++ Configure.pl	Fri May 23 23:36:57 2014
+@@ -197,6 +197,10 @@ $config{ldflags} = join ' ', @ldflags;
  $config{moarlib} = sprintf $config{lib}, $NAME;
  $config{moardll} = sprintf $config{dll}, $NAME;
  
