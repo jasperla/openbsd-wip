@@ -1,12 +1,11 @@
 # $OpenBSD$
 
-NOT_FOR_ARCHS =		${BE_ARCHS}
 SHARED_ONLY =		Yes
 BROKEN-arm =		missing atomic ops
 
 COMMENT =		virtual machine for nqp/rakudo
 
-V =			2014.01
+V =			2014.05
 DISTNAME =		MoarVM-$V
 PKGNAME =		moarvm-$V
 
@@ -14,7 +13,7 @@ SHARED_LIBS =		moar	0.0
 
 CATEGORIES =		lang
 
-HOMEPAGE =		https://github.com/MoarVM/MoarVM/
+HOMEPAGE =		http://moarvm.org/
 
 MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
@@ -23,7 +22,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c kvm m pthread
 
-MASTER_SITES =		http://jnthn.net/MoarVM/
+MASTER_SITES =		http://moarvm.org/releases/
 
 MAKE_FLAGS =		NOISY=1
 
