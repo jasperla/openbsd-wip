@@ -1,7 +1,6 @@
 #	$OpenBSD$
 
 COMMENT=	source port for Wolfenstein 3D and Spear of Destiny
-DISTNAME=	1.2.3
 V=		1.2.3
 DISTNAME=	ecwolf-${V}-src
 PKGNAME=	ecwolf-${V}
