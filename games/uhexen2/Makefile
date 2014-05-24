@@ -55,11 +55,11 @@ BINS =	engine/hexen2/glhexen2 \
 	hw_utils/hwmquery/hwmquery \
 	hw_utils/hwrcon/hwrcon
 
-DATA =	${PREFIX}/uhexen2
-TRUEDATA = ${TRUEPREFIX}/uhexen2
+DATA =	${PREFIX}/share/uhexen2
+TRUEDATA = ${TRUEPREFIX}/share/uhexen2
 do-install:
 	cp -r ${WRKDIR}/hexen2-${V} ${DATA}
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/uhexen2
+	chown -R ${SHAREOWN}:${SHAREGRP} ${DATA}
 	mv ${DATA}/docs ${PREFIX}/share/doc/uhexen2
 
 # Grr. Need to run out of data dir.
