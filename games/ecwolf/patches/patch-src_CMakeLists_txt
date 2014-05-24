@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/CMakeLists.txt.orig	Sat May 24 14:23:37 2014
++++ src/CMakeLists.txt	Sat May 24 14:24:01 2014
+@@ -48,7 +48,7 @@ if(NOT ATOLL_EXISTS)
+ endif(NOT ATOLL_EXISTS)
+ 
+ if(CMAKE_COMPILER_IS_GNUCXX AND NOT APPLE)
+-	set(CMAKE_CXX_FLAGS "-Wall -Wno-unused -Wno-unused-result -Wno-ignored-qualifiers -Wextra -Wno-missing-field-initializers ${CMAKE_CXX_FLAGS}")
++	set(CMAKE_CXX_FLAGS "-Wall -Wno-unused -Wextra -Wno-missing-field-initializers ${CMAKE_CXX_FLAGS}")
+ endif(CMAKE_COMPILER_IS_GNUCXX AND NOT APPLE)
+ 
+ if(WIN32)

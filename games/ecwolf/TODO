@@ -1,0 +1,15 @@
+- find ecwolf.pk3 by default, currently it has to be copied
+  to the game data dir
+- spear of destiny seems to segfault, wolf3d works though...
+(gdb) bt
+#0  0x000009e27c732bcf in FVSwapSound::FillCache () from /usr/local/bin/ecwolf
+#1  0x000009e27c72a3b5 in FResourceLump::CacheLump () from /usr/local/bin/ecwolf
+#2  0x000009e27c7bdcd8 in FWadLump::FWadLump () from /usr/local/bin/ecwolf
+#3  0x000009e27c7bdd79 in FWadCollection::OpenLumpNum () from /usr/local/bin/ecwolf
+#4  0x000009e27c7bddd2 in FString::FString () from /usr/local/bin/ecwolf
+#5  0x000009e27c7bdeae in FWadCollection::ReadLump () from /usr/local/bin/ecwolf
+#6  0x000009e27c79c8ee in SD_PrepareSound () from /usr/local/bin/ecwolf
+#7  0x000009e27c7b4165 in SoundInformation::ParseSoundInformation () from /usr/local/bin/ecwolf
+#8  0x000009e27c7b438a in SoundInformation::Init () from /usr/local/bin/ecwolf
+#9  0x000009e27c7d6655 in InitGame () from /usr/local/bin/ecwolf
+#10 0x000009e27c7d6be9 in main () from /usr/local/bin/ecwolf
