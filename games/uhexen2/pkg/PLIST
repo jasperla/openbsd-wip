@@ -1,0 +1,90 @@
+@comment $OpenBSD$
+bin/glhexen2
+bin/glhwcl
+bin/h2launcher
+bin/h2patch
+bin/hwmaster
+bin/hwmquery
+bin/hwrcon
+bin/hwsv
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/uhexen2/
+share/doc/uhexen2/ABOUT
+share/doc/uhexen2/AUTHORS
+share/doc/uhexen2/BUGS
+share/doc/uhexen2/CHANGES
+share/doc/uhexen2/CHANGES.old
+share/doc/uhexen2/COMPILE
+share/doc/uhexen2/COPYING
+share/doc/uhexen2/Features
+share/doc/uhexen2/README
+share/doc/uhexen2/README.3dfx
+share/doc/uhexen2/README.AoT
+share/doc/uhexen2/README.launcher
+share/doc/uhexen2/README.music
+share/doc/uhexen2/ReleaseNotes
+share/doc/uhexen2/ReleaseNotes.old
+share/doc/uhexen2/SrcNotes.txt
+share/doc/uhexen2/TODO
+uhexen2/
+uhexen2/LICENSE.txt
+uhexen2/README.deps
+uhexen2/cdrip_hexen2.sh
+uhexen2/cdrip_hexen2_matroxm3d.sh
+uhexen2/cdrip_hexen2_xplosiv.sh
+uhexen2/cdrip_missionpack.sh
+uhexen2/data1/
+uhexen2/data1/autoexec.cfg
+uhexen2/data1/default.cfg
+uhexen2/data1/demo1.dem
+uhexen2/data1/demo2.dem
+uhexen2/data1/demo3.dem
+uhexen2/data1/hexen.rc
+uhexen2/data1/maps/
+uhexen2/data1/maps/README.txt
+uhexen2/data1/maps/cath.ent
+uhexen2/data1/maps/cath.txt
+uhexen2/data1/maps/demo2.ent
+uhexen2/data1/maps/demo2.txt
+uhexen2/data1/maps/egypt4.ent
+uhexen2/data1/maps/egypt4.txt
+uhexen2/data1/maps/egypt5.ent
+uhexen2/data1/maps/egypt5.txt
+uhexen2/data1/maps/romeric5.ent
+uhexen2/data1/maps/romeric5.txt
+uhexen2/data1/maps/tower.ent
+uhexen2/data1/maps/tower.txt
+uhexen2/data1/progs.dat
+uhexen2/data1/progs2.dat
+uhexen2/data1/strings.txt
+@bin uhexen2/glhexen2
+@bin uhexen2/glhwcl
+uhexen2/h2ded
+@bin uhexen2/h2launcher
+@bin uhexen2/h2patch
+uhexen2/hexen2
+uhexen2/hexen2.png
+uhexen2/hexen2.svga
+@bin uhexen2/hwmaster
+@bin uhexen2/hwmquery
+@bin uhexen2/hwrcon
+@bin uhexen2/hwsv
+uhexen2/patchdat/
+uhexen2/patchdat.txt
+uhexen2/patchdat/data1/
+uhexen2/patchdat/data1/data1pk0.xd3
+uhexen2/patchdat/data1/data1pk1.xd3
+uhexen2/portals/
+uhexen2/portals/default.cfg
+uhexen2/portals/hexen.rc
+uhexen2/portals/infolist.txt
+uhexen2/portals/maplist.txt
+uhexen2/portals/maps/
+uhexen2/portals/maps/README.txt
+uhexen2/portals/maps/tibet2.ent
+uhexen2/portals/maps/tibet2.txt
+uhexen2/portals/maps/tibet9.ent
+uhexen2/portals/maps/tibet9.txt
+uhexen2/portals/progs.dat
+uhexen2/portals/puzzles.txt
+uhexen2/portals/strings.txt
