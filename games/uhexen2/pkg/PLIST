@@ -1,6 +1,7 @@
 @comment $OpenBSD$
 bin/glhexen2
 bin/glhwcl
+bin/h2ded
 bin/h2launcher
 bin/h2patch
 bin/hwmaster
@@ -59,7 +60,7 @@ uhexen2/data1/progs2.dat
 uhexen2/data1/strings.txt
 @bin uhexen2/glhexen2
 @bin uhexen2/glhwcl
-uhexen2/h2ded
+@bin uhexen2/h2ded
 @bin uhexen2/h2launcher
 @bin uhexen2/h2patch
 uhexen2/hexen2
