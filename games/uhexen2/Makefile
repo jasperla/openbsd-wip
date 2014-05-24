@@ -36,6 +36,7 @@ MAKE_FLAGS +=		CC=${CC}
 DOMAKE =		${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS}
 do-build:
 	cd ${WRKBUILD}/engine/hexen2 && ${DOMAKE} glh2
+	cd ${WRKBUILD}/engine/hexen2/server && ${DOMAKE}
 	cd ${WRKBUILD}/engine/hexenworld/server && ${DOMAKE}
 	cd ${WRKBUILD}/engine/hexenworld/client && ${DOMAKE} glhw
 	cd ${WRKBUILD}/launcher && ${DOMAKE}
@@ -45,6 +46,7 @@ do-build:
 	cd ${WRKBUILD}/hw_utils/hwrcon && ${DOMAKE}
 
 BINS =	engine/hexen2/glhexen2 \
+	engine/hexen2/server/h2ded \
 	engine/hexenworld/client/glhwcl \
 	engine/hexenworld/server/hwsv \
 	launcher/h2launcher \
