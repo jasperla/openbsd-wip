@@ -1,0 +1,11 @@
+@comment $OpenBSD$
+@bin bin/rott
+@man man/man6/rott.6
+share/doc/rott/
+share/doc/rott/13todo.txt
+share/doc/rott/README
+share/doc/rott/cheats.txt
+share/doc/rott/cmdline.txt
+share/doc/rott/hacker.txt
+share/doc/rott/readme.txt
+share/doc/rott/wad.txt
