@@ -14,13 +14,14 @@ MAINTAINER =		Kirill Bychkov <yason@linklevel.net>
 # GPLv2/CC-BY-SA
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		SDL SDL_mixer c m pthread stdc++
+WANTLIB =		SDL SDL_mixer c enet m pthread stdc++
 
 MASTER_SITES = 		${MASTER_SITE_SOURCEFORGE:=dunelegacy/}
 MASTER_SITES0 =		http://www.myway.de/richieland/
 EXTRACT_SUFX =		.tar.bz2
 
-LIB_DEPENDS =		devel/sdl-mixer
+LIB_DEPENDS =		devel/sdl-mixer \
+			net/enet
 RUN_DEPENDS = 		devel/desktop-file-utils
 TEST_DEPENDS = 		devel/cppunit
 
