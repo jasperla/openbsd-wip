@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =		first-ever real-time strategy game
+COMMENT =		improved opensource version of Dune 2
 
 DISTNAME =		dunelegacy-0.96.3-src
 PKGNAME =		${DISTNAME:S/-src//}
