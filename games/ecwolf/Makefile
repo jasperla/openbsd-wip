@@ -10,10 +10,9 @@ HOMEPAGE=	http://maniacsvault.net/ecwolf/
 MASTER_SITES=	${HOMEPAGE}/files/ecwolf/1.x/
 EXTRACT_SUFX=	.7z
 
-# The original 'LICENSE.DOC' does not grant (m)any rights
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	No
-PERMIT_DISTFILES_FTP=	Yes
+# wolf3d was relicensed under GPLv2 after release
+# cmake flag picks the DOSBox OPL instead of the MAME one
+PERMIT_PACKAGE_CDROM=	Yes
 
 BUILD_DEPENDS=	archivers/p7zip
 LIB_DEPENDS=	devel/sdl-mixer \
@@ -23,7 +22,7 @@ LIB_DEPENDS=	devel/sdl-mixer \
 WANTLIB=	SDL SDL_mixer bz2 c jpeg m pthread stdc++ z
 
 MODULES=	devel/cmake
-CONFIGURE_ARGS=	-DNO_GTK:Bool=True
+CONFIGURE_ARGS=	-DNO_GTK:Bool=True -DGPL:Bool=True
 
 pre-extract:
 		mkdir -p ${WRKSRC}
