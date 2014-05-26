@@ -76,3 +76,9 @@ www/p5-Tapper-Config					ready to import, sent to ports@ 2014-05-13
 database/p5-Test-Fixture-DBIC-Schema			ready to import, sent to ports@ 2014-05-13
 devel/p5-Kwalify					ready to import, sent to ports@ 2014-05-13
 database/p5-DBIx-Class-InflateColumn-Object-Enum	ready to import, sent to ports@ 2014-05-13
+devel/p5-Object-Enum	ready to import, sent to ports@ 2014-05-23
+devel/p5-Data-Serializer	ready to import, sent to ports@ 2014-05-23
+www/p5-Tapper-Reports-DPath	ready to import, sent to ports@ 2014-05-23
+www/p5-Tapper-Reports-API	ready to import, sent to ports@ 2014-05-23
+www/p5-Tapper-Model		ready to import, sent to ports@ 2014-05-23
+textproc/p5-Text-Balanced	ready to import, sent to ports@ 2014-05-23
