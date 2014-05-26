@@ -9,7 +9,7 @@ CATEGORIES =		games x11
 
 HOMEPAGE =		http://dunelegacy.sourceforge.net/
 
-MAINTAINER =		Kirill Bychkov <yason@linklevel.net>
+MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
 # GPLv2/CC-BY-SA
 PERMIT_PACKAGE_CDROM =	Yes
@@ -34,11 +34,12 @@ CONFIGURE_ENV += 	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL \
 
 WRKDIST =		${WRKDIR}/${PKGNAME}
 
+post-extract:
+	rm -r ${WRKSRC}/include/enet
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dunelegacy/
-.for f in COPYING README
-	${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/share/doc/dunelegacy/
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/dunelegacy/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/dunelegacy.desktop ${PREFIX}/share/applications/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
