@@ -1,0 +1,60 @@
+$OpenBSD$
+--- configure.orig	Wed May 28 17:54:54 2014
++++ configure	Wed May 28 17:59:10 2014
+@@ -6029,10 +6029,7 @@ $as_echo "#define PROCESSOR_INTEL 1" >>confdefs.h
+ 
+            ALIGNLONGS=0
+ 	   proc_i386=true
+-		CFLAGS="$CFLAGS -O3 -fstrength-reduce -frerun-loop-opt -Wall -Wno-unused -funroll-loops \
+-                    -ffast-math -falign-functions=2 -falign-jumps=2 -fexpensive-optimizations \
+-                    -falign-loops=2 -fschedule-insns2 -malign-double -fomit-frame-pointer -g \
+-		    -fno-strict-aliasing -pipe -mtune=$target_cpu -DCPU=$target_cpu"
++		CFLAGS="$CFLAGS -Wall -Wno-unused -fomit-frame-pointer"
+            ;;
+      x86_64)
+ 	   { $as_echo "$as_me:${as_lineno-$LINENO}: result: Turning on x86_64 processor optimisations" >&5
+@@ -6042,10 +6039,7 @@ $as_echo "#define PROCESSOR_ADM64 1" >>confdefs.h
+ 
+            ALIGNLONGS=0
+ 	   proc_x64=true
+-		CFLAGS="$CFLAGS -O3 -fstrength-reduce -frerun-loop-opt -Wall -Wno-unused -funroll-loops \
+-                    -ffast-math  -fexpensive-optimizations \
+-                     -malign-double -fomit-frame-pointer -g \
+-		    -fno-strict-aliasing -pipe -DCPU=$target_cpu"
++		CFLAGS="$CFLAGS -Wall -Wno-unused -fomit-frame-pointer"
+            ;;
+     sparc*) { $as_echo "$as_me:${as_lineno-$LINENO}: result: Turning on sparc processor optimisations" >&5
+ $as_echo "Turning on sparc processor optimisations" >&6; }
+@@ -6055,10 +6049,9 @@ $as_echo "#define PROCESSOR_SPARC 1" >>confdefs.h
+ 	   ALIGNLONGS=1
+ 	   proc_sparc=true
+ 	   if test $target_cpu = sparc64 && test $CC_MAJOR -ge 3 ; then
+-		CFLAGS="$CFLAGS -mcpu=v9"
++		CFLAGS="$CFLAGS"
+ 	   fi
+-	   CFLAGS="$CFLAGS -O3 -Wall -Wno-unused -funroll-loops \
+-                    -ffast-math -fomit-frame-pointer -g"
++	   CFLAGS="$CFLAGS -Wall -Wno-unused -fomit-frame-pointer"
+            ;;
+     arm)   { $as_echo "$as_me:${as_lineno-$LINENO}: result: Turning on arm processor optimisations" >&5
+ $as_echo "Turning on arm processor optimisations" >&6; }
+@@ -6067,17 +6060,14 @@ $as_echo "#define PROCESSOR_ARM 1" >>confdefs.h
+ 
+            ALIGNLONGS=1
+ 	   proc_arm=true
+-	   CFLAGS="$CFLAGS -O3 -Wall -ftracer -fstrength-reduce -Wno-unused -funroll-loops \
+-                    -fomit-frame-pointer -fstrict-aliasing -ffast-math \
+-	   	    "
++	   CFLAGS="$CFLAGS -Wall -Wno-unused -fomit-frame-pointer"
+ 
+ 	   	    ;;
+     *)     { $as_echo "$as_me:${as_lineno-$LINENO}: result: Processor type unknown - Use generic optimisations" >&5
+ $as_echo "Processor type unknown - Use generic optimisations" >&6; }
+            ALIGNLONGS=1
+            optimum=no
+-	   CFLAGS="$CFLAGS -O3 -Wall -Wno-unused -funroll-loops \
+-                    -ffast-math -g"
++	   CFLAGS="$CFLAGS -Wall -Wno-unused"
+            ;;
+   esac
+ 
