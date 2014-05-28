@@ -70,7 +70,7 @@ WANTLIB =		c m pthread z SDL
 
 # where the source files and patches can be fetched
 #
-MASTER_SITES =		https://gngeo.googlecode.com/files/
+MASTER_SITES =		http://download.tuxfamily.org/jod/emulators/gngeo/
 #MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=subdir/}
 #MASTER_SITES =		${MASTER_SITE_foo:=subdir/}
 # if more master sites are needed...
@@ -78,7 +78,7 @@ MASTER_SITES =		https://gngeo.googlecode.com/files/
 # ...
 #DISTFILES =		???
 #EXTRACT_ONLY =		???
-#EXTRACT_SUFX =		.tar.bz2
+EXTRACT_SUFX =		.tar.lz
 
 #DIST_SUBDIR =		???
 
