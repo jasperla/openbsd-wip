@@ -18,7 +18,7 @@ RUN_DEPENDS =	devel/p5-AnyEvent \
 		devel/p5-Devel-Backtrace \
 		devel/p5-File-MimeInfo \
 		devel/p5-IO-String \
-		devel/p5-LockFile-Simple>=0.208 \
+		devel/p5-LockFile-Simple \
 		devel/p5-Log-Log4perl \
 		devel/p5-Module-Find>=0.11 \
 		devel/p5-Moose \
