@@ -11,6 +11,7 @@ net/sic			sent to ports@ 2013/08/28. Ready for import. (dhn)
 cad/tkgate:		Ready for import. Sent to ports@ 2008-01-13 and still works (yason)
 comms/[gw]ammu		Ready for import. Sent to ports@ 2012-10-09 (yason)
 devel/libextractor	sent to ports 2013-06-29
+devel/libinotify	sent to ports 2014-05-04
 devel/libtap		ready to import
 devel/p5-Test-Most:	ready for import, depends on the update of p5-Test-Warn, did not sent to ports@(wenheping)
 emulators/vice		ready for import, sent to ports 2013-05-16
@@ -24,6 +25,7 @@ misc/py-asciinema	sent to ports 2014-01-24
 multimedia/fuzemux	sent to ports 2013-01-13
 multimedia/video4fuze	sent to ports 2013-01-13
 net/bitcoin		sent to ports 2013-03-19, and again 2013-06-29
+net/mirall		sent to ports 2014-05-04
 net/py-boto:		ready for import, sent to maintainer 2012-04-23 (tamentis)
 productivity/py-nv	send to ports 2013-10-21
 net/unison/stable	ready for import.
