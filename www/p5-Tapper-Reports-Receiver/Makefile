@@ -27,6 +27,7 @@ RUN_DEPENDS =	devel/p5-AnyEvent \
 		devel/p5-Scalar-List-Utils \
 		devel/p5-Try-Tiny \
 		devel/p5-YAML-Syck \
+		sysutils/p5-Sys-Syslog \
 		www/p5-Tapper-Base \
 		www/p5-Tapper-Config \
 		www/p5-Tapper-Model \
@@ -40,10 +41,8 @@ BUILD_DEPENDS =	devel/p5-Class-C3 \
 		devel/p5-Test-Deep \
 		devel/p5-Test-Simple \
 		devel/p5-Test-Fixture-DBIC-Schema \
+		www/p5-HTTP-Daemon \
 		www/p5-Tapper-Schema
-
-#TEST_DEPENDS =	databases/p5-DBIx-Class-InflateColumn-Object-Enum \
-#		databases/p5-DBIx-Class-TimeStamp
 
 LOG =		tapper_message_receiver_daemon_reports-receiver_user.log \
 		tapper-debug-reports-receiver_user.log \
@@ -53,7 +52,7 @@ LOG =		tapper_message_receiver_daemon_reports-receiver_user.log \
 post-install:
 .for l in ${LOG}
 	touch /var/log/${l}
-#	chown mcp-messagereceiver_user:tapper /var/log/${l}
+	chown mcp-messagereceiver_user:tapper /var/log/${l}
 .endfor
 
 .include <bsd.port.mk>
