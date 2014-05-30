@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/mirall/inotify.cpp.orig	Sun May  4 10:33:59 2014
++++ src/mirall/inotify.cpp	Sun May  4 10:34:10 2014
+@@ -16,7 +16,7 @@
+  */
+ #include "config.h"
+ 
+-#include <sys/inotify.h>
++#include <sys/kinotify.h>
+ 
+ #include "inotify.h"
+ #include "mirall/folder.h"

@@ -1,0 +1,14 @@
+$OpenBSD$
+--- src/mirall/utility.cpp.orig	Mon Apr 21 22:19:39 2014
++++ src/mirall/utility.cpp	Mon Apr 21 22:20:38 2014
+@@ -321,8 +321,8 @@ qint64 Utility::freeDiskSpace(const QString &path, boo
+     return (qint64) stat.f_bavail * stat.f_frsize;
+ #elif defined(Q_OS_UNIX)
+     Q_UNUSED(ok)
+-    struct statvfs64 stat;
+-    statvfs64(path.toUtf8().data(), &stat);
++    struct statvfs stat;
++    statvfs(path.toUtf8().data(), &stat);
+     return (qint64) stat.f_bavail * stat.f_frsize;
+ #elif defined(Q_OS_WIN)
+     ULARGE_INTEGER freeBytes;
