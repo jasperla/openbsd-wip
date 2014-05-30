@@ -1,0 +1,10 @@
+$OpenBSD$
+--- CMakeLists.txt.orig	Tue Apr 29 15:36:39 2014
++++ CMakeLists.txt	Tue Apr 29 15:37:09 2014
+@@ -106,5 +106,5 @@ endif(UNIT_TESTING)
+ if(BUILD_OWNCLOUD_OSX_BUNDLE)
+     configure_file(sync-exclude.lst ${OWNCLOUD_OSX_BUNDLE}/Contents/Resources/sync-exclude.lst COPYONLY)
+ else()
+-    install( FILES sync-exclude.lst DESTINATION ${SYSCONFDIR}/${APPLICATION_SHORTNAME} )
++    install( FILES sync-exclude.lst DESTINATION ${DATADIR}/owncloud )
+ endif()
