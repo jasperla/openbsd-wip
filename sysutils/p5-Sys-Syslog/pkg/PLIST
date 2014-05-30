@@ -1,0 +1,10 @@
+@comment $OpenBSD$
+%%SHARED%%
+${P5ARCH}/
+${P5ARCH}/Sys/
+${P5ARCH}/Sys/Syslog.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Sys/
+${P5ARCH}/auto/Sys/Syslog/
+${P5ARCH}/auto/Sys/Syslog/Syslog.bs
+@man man/man3p/Sys::Syslog.3p
