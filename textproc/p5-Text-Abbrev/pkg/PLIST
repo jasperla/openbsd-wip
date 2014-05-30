@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/Text/
+${P5SITE}/Text/Abbrev.pm
+@man man/man3p/Text::Abbrev.3p
