@@ -1,10 +1,11 @@
 $OpenBSD$
---- src/wl_iwad_picker.cpp.orig	Sat May 24 14:27:59 2014
-+++ src/wl_iwad_picker.cpp	Sat May 24 14:28:34 2014
-@@ -1,5 +1,6 @@
- // From ZDoom!
+--- src/wl_iwad_picker.cpp.orig	Sun May 25 17:17:58 2014
++++ src/wl_iwad_picker.cpp	Fri May 30 19:24:47 2014
+@@ -2,6 +2,7 @@
+ 
+ #include <algorithm>
  
 +#include <sys/wait.h>
  #include "zdoomsupport.h"
  
- #ifndef NO_GTK
+ #ifdef USE_TEXTSCREEN
