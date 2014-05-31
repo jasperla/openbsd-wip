@@ -1,30 +1,32 @@
 # $OpenBSD$
 
-CATEGORIES =		x11
-COMMENT =		x2go qt4 client
-VERSION =		4.0.1.2
-PKGNAME =		x2goclient-${VERSION}
-DISTNAME =		x2goclient-${VERSION}
-HOMEPAGE =		http://www.x2go.org
+CATEGORIES =	x11
+COMMENT =	Qt client for the X2Go system
+VERSION =	4.0.2.0
+PKGNAME =	x2goclient-${VERSION}
+DISTNAME =	x2goclient-${VERSION}
+HOMEPAGE =	http://www.x2go.org
 
-MAINTAINER =		Rafael Sadowski <rafael@sizeofvoid.org>
+MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
 
-# GPL2
+# GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES=		http://code.x2go.org/releases/source/x2goclient/
+WANTLIB += ICE SM X11 Xext Xi Xinerama Xpm Xrender c fontconfig
+WANTLIB += freetype m pthread stdc++ lib/qt4/QtCore lib/qt4/QtGui
+WANTLIB += lib/qt4/QtNetwork lib/qt4/QtSvg
 
-WANTLIB =  ICE SM X11 Xext Xi Xinerama Xpm Xrender fontconfig freetype
-WANTLIB += c cups ldap m pthread ssh stdc++
-WANTLIB += lib/qt4/QtCore lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
+MASTER_SITES=	http://code.x2go.org/releases/source/x2goclient/
 
-LIB_DEPENDS =	x11/nx/nxproxy \
+LIB_DEPENDS =	x11/nx/nxcomp \
+		x11/nx/nxproxy \
 		security/libssh \
 		x11/qt4 \
 		databases/openldap \
 		print/cups
 
-BUILD_DEPENDS =	x11/nx/nxproxy \
+BUILD_DEPENDS =	x11/nx/nxcomp \
+		x11/nx/nxproxy \
 		security/libssh \
 		x11/qt4 \
 		databases/openldap \
@@ -41,6 +43,6 @@ do-configure:
 	cd ${WRKSRC} && lrelease x2goclient.pro && qmake4 x2goclient.pro
 
 do-install:
-	${INSTALL} ${WRKSRC}/x2goclient ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/x2goclient ${PREFIX}/bin
 
 .include <bsd.port.mk>
