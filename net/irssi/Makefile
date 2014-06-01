@@ -4,8 +4,7 @@ SHARED_ONLY=	Yes
 
 COMMENT=	modular IRC client with many features (ipv6,socks,proxy)
 
-DISTNAME=	irssi-0.8.15
-REVISION=	5
+DISTNAME=	irssi-0.8.16
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.irssi.org/
