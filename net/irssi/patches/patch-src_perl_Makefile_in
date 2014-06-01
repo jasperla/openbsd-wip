@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_perl_Makefile_in,v 1.5 2010/05/19 15:04:28 sthen Exp $
+--- src/perl/Makefile.in.orig	Sat Apr  3 18:21:29 2010
++++ src/perl/Makefile.in	Sun Apr  4 16:31:38 2010
+@@ -275,7 +275,7 @@ INCLUDES = \
+ 	-I$(top_srcdir)/src/core \
+ 	-I$(top_srcdir)/src/fe-common/core \
+ 	$(GLIB_CFLAGS) \
+-	-DSCRIPTDIR=\""$(datadir)/irssi/scripts"\" \
++	-DSCRIPTDIR=\""$(sysconfdir)/irssi/scripts"\" \
+ 	-DPERL_USE_LIB=\""$(PERL_USE_LIB)"\" \
+ 	-DPERL_STATIC_LIBS=$(PERL_STATIC_LIBS) \
+ 	$(PERL_CFLAGS)

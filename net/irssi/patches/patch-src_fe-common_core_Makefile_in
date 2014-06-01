@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_fe-common_core_Makefile_in,v 1.5 2010/05/19 15:04:28 sthen Exp $
+--- src/fe-common/core/Makefile.in.orig	Sat Apr  3 18:21:28 2010
++++ src/fe-common/core/Makefile.in	Sun Apr  4 16:31:38 2010
+@@ -258,7 +258,7 @@ INCLUDES = \
+ 	-I$(top_srcdir)/src -I$(top_srcdir)/src/core/ \
+ 	$(GLIB_CFLAGS) \
+ 	-DHELPDIR=\""$(datadir)/irssi/help"\" \
+-	-DTHEMESDIR=\""$(datadir)/irssi/themes"\"
++	-DTHEMESDIR=\""$(sysconfdir)/irssi/themes"\"
+ 
+ libfe_common_core_a_SOURCES = \
+ 	chat-completion.c \
