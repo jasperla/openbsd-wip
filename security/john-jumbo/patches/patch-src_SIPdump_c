@@ -1,11 +1,11 @@
 $OpenBSD$
---- src/SIPdump.c.orig	Tue Apr 17 15:53:09 2012
-+++ src/SIPdump.c	Tue Apr 17 15:53:33 2012
-@@ -15,6 +15,7 @@
+--- src/SIPdump.c.orig	Mon Jun  2 20:44:08 2014
++++ src/SIPdump.c	Mon Jun  2 20:44:14 2014
+@@ -14,6 +14,7 @@
+ #include <errno.h>
  #include <sys/types.h>
  #include <sys/socket.h>
- #include <netinet/in.h>
 +#include <netinet/in_systm.h>
+ #include <netinet/in.h>
  #include <netinet/ip.h>
  #include <netinet/ip6.h>
- #define __FAVOR_BSD

@@ -1,4 +1,5 @@
 @comment $OpenBSD: PLIST,v 1.15 2011/01/07 16:26:30 benoit Exp $
+@conflict john-*
 @bin bin/SIPdump
 @bin bin/calc_stat
 bin/cracf2john.py
@@ -13,6 +14,7 @@ bin/mailer
 bin/mozilla2john
 bin/netntlm.pl
 bin/netscreen.py
+bin/odf2john.py
 @bin bin/office2john
 bin/pass_gen.pl
 bin/pdf2john
@@ -30,11 +32,14 @@ bin/ssh2john
 @bin bin/unshadow
 @bin bin/vncpcap2john
 share/doc/john/
+share/doc/john/BUGS
 share/doc/john/CHANGES
 share/doc/john/CHANGES-jumbo
+share/doc/john/CHANGES-jumbo.git
 share/doc/john/CONFIG
 share/doc/john/CONTACT
 @comment share/doc/john/CREDITS
+share/doc/john/CREDITS-jumbo
 share/doc/john/DYNAMIC
 share/doc/john/DYNAMIC_SCRIPTING
 share/doc/john/ENCODINGS
@@ -49,11 +54,15 @@ share/doc/john/LICENSE.mpi
 share/doc/john/MARKOV
 share/doc/john/MODES
 share/doc/john/NETNTLM_README
+share/doc/john/OFFICE
 share/doc/john/OPTIONS
 share/doc/john/README
 share/doc/john/README-CUDA
+share/doc/john/README.bash-completion
+share/doc/john/README.mozilla
 share/doc/john/README.mpi
 share/doc/john/README.opencl
+share/doc/john/README.pwsafe
 share/doc/john/RULES
 share/doc/john/SIPcrack-LICENSE
 share/doc/john/pass_gen.Manifest
