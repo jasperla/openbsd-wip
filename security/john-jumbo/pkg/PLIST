@@ -69,12 +69,26 @@ share/doc/john/pass_gen.Manifest
 share/doc/john/pdfcrack_README
 share/doc/john/pdfcrack_TODO
 share/examples/john/
+@sample ${SYSCONFDIR}/john/
+share/examples/john/all.chr
+@sample ${SYSCONFDIR}/john/all.chr
+share/examples/john/alnum.chr
+@sample ${SYSCONFDIR}/john/alnum.chr
+share/examples/john/alpha.chr
+@sample ${SYSCONFDIR}/john/alpha.chr
+share/examples/john/digits.chr
+@sample ${SYSCONFDIR}/john/digits.chr
+share/examples/john/dumb16.conf
+@sample ${SYSCONFDIR}/john/dumb16.conf
+share/examples/john/dumb32.conf
+@sample ${SYSCONFDIR}/john/dumb32.conf
+share/examples/john/dynamic.conf
+@sample ${SYSCONFDIR}/john/dynamic.conf
 share/examples/john/john.conf
 @sample ${SYSCONFDIR}/john.conf
-share/john/
-share/john/all.chr
-share/john/alnum.chr
-share/john/alpha.chr
-share/john/digits.chr
-share/john/lanman.chr
-share/john/password.lst
+share/examples/john/john.local.conf
+@sample ${SYSCONFDIR}/john/john.local.conf
+share/examples/john/lanman.chr
+@sample ${SYSCONFDIR}/john/lanman.chr
+share/examples/john/password.lst
+@sample ${SYSCONFDIR}/john/password.lst

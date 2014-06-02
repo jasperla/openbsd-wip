@@ -27,15 +27,19 @@ USE_GMAKE =		Yes
 
 WRKSRC =		${WRKDIST}/src
 
-MAKE_FLAGS =		CC="${CC}" \
-			CFLAGS="${CFLAGS} -c -DHAVE_NSS `pkg-config --cflags nss`" \
-			LDFLAGS="${LDFLAGS} -lssl -lcrypto -lm -lz `pkg-config --libs nss`" \
+CFLAGS +=		-c -DHAVE_NSS `pkg-config --cflags nss` \
+			-DJOHN_SYSTEMWIDE=1 \
+			-DJOHN_SYSTEMWIDE_HOME='\"${SYSCONFDIR}/john\"'
+LDFLAGS +=		-lssl -lcrypto -lm -lz `pkg-config --libs nss`
+
+MAKE_FLAGS =		CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
 			HAVE_NSS="-DHAVE_NSS"
 
 TEST_TARGET =		check
 
 .if ${MACHINE_ARCH} == "i386"
-ALL_TARGET=		openbsd-x86-mmx
+# there is actually a fallback method, see -DCPU_FALLBACK=1.
+ALL_TARGET=		openbsd-x86-sse2
 .elif ${MACHINE_ARCH} == "amd64"
 ALL_TARGET=		openbsd-x86-64
 .elif ${MACHINE_ARCH} == "sparc"
@@ -64,12 +68,8 @@ do-configure:
 	rm ${WRKSRC}/KRB4_*_plug.c # undefined reference to `des_set_odd_parity'
 
 do-install:
-	-@grep -h -v '^#!comment:' ${WRKDIST}/run/password.lst \
-		/usr/share/dict/words | \
-		${WRKDIST}/run/unique ${WRKDIST}/run/words.lst
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/john
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/john
-	${INSTALL_DATA_DIR} ${PREFIX}/share/john
 	${INSTALL_PROGRAM} ${WRKDIST}/run/john ${PREFIX}/bin
 .for i in ${BINS} calc_stat genmkvpwd mkvcalcproba tgtsnarf unafs unique unshadow
 	${INSTALL_PROGRAM} ${WRKDIST}/run/$i ${PREFIX}/bin
@@ -78,9 +78,7 @@ do-install:
 .for i in mozilla2john pdf2john racf2john rar2john ssh2john
 	ln -sf john ${PREFIX}/bin/$i
 .endfor
-	${INSTALL_DATA} ${WRKDIST}/run/john.conf ${PREFIX}/share/examples/john
+	${INSTALL_DATA} ${WRKDIST}/run/*.{chr,conf,lst} ${PREFIX}/share/examples/john
 	${INSTALL_DATA} ${WRKDIST}/doc/* ${PREFIX}/share/doc/john
-	${INSTALL_DATA} ${WRKDIST}/run/*.chr ${PREFIX}/share/john
-	${INSTALL_DATA} ${WRKDIST}/run/words.lst ${PREFIX}/share/john/password.lst
 
 .include <bsd.port.mk>
