@@ -2,7 +2,7 @@
 
 COMMENT=	mount SMB shares from userland via FUSE
 
-DISTNAME=	usmb-20100212
+DISTNAME=	usmb-20130204
 
 CATEGORIES=	sysutils
 
@@ -13,7 +13,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c fuse glib-2.0 smbclient xml2
 
-MASTER_SITES=	http://ametros.net/downloads/
+# http://repo.or.cz/w/usmb.git/snapshot/aa94e132c12faf1a00f547ea4a96b5728612dea6.tar.gz
+MASTER_SITES=	http://spacehopper.org/mirrors/
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	textproc/gsed
@@ -23,13 +24,12 @@ LIB_DEPENDS=	devel/glib2 \
 
 SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--with-samba=${LOCALBASE}
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS+= --with-samba=${LOCALBASE}
 
 NO_TEST=	Yes
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/usmb ${PREFIX}/bin
+post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/usmb/
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/usmb/
 	${INSTALL_DATA} ${WRKSRC}/usmb.conf ${PREFIX}/share/examples/usmb/
