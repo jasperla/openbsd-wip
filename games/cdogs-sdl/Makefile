@@ -1,9 +1,8 @@
 # $OpenBSD$
 
-GH_VER =	0.5.5.1
+V =		0.5.5.1
 COMMENT =	open source, classic overhead run-and-gun game
-DISTNAME =	cdogs-sdl-${GH_VER}
-
+DISTNAME =	cdogs-sdl-${V}
 CATEGORIES =	games x11
 
 HOMEPAGE =	http://cxong.github.io/cdogs-sdl/
