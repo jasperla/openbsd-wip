@@ -1,9 +1,0 @@
-The Mana project builds a complete 2D MMORPG platform. This includes a
-client, server, and web component, as well as a library of free content
-that you can use under the terms of the GPL.
-
-While this project started in 2009, the Mana client, server, and web
-components were formerly being developed as part of The Mana World since
-2004. By separating server/client development from a single player
-community, we hope to achieve better cooperation with alternative Mana
-server based projects.
