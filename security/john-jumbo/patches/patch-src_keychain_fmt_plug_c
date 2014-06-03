@@ -1,0 +1,11 @@
+$OpenBSD$
+--- src/keychain_fmt_plug.c.orig	Mon Jun  2 18:20:56 2014
++++ src/keychain_fmt_plug.c	Mon Jun  2 18:23:11 2014
+@@ -11,6 +11,7 @@
+ 
+ #include <string.h>
+ #include <assert.h>
++#include <des.h>
+ #include <errno.h>
+ #include "arch.h"
+ #include "misc.h"
