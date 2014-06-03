@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile,v 1.45 2011/11/26 10:31:37 benoit Exp $
 
-COMMENT =		extremely fast password cracker
+COMMENT =		extremely fast password cracker, with community patches
 
 V =			1.7.9
 JV =			7
@@ -35,11 +35,12 @@ LDFLAGS +=		-lssl -lcrypto -lm -lz `pkg-config --libs nss`
 MAKE_FLAGS =		CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
 			HAVE_NSS="-DHAVE_NSS"
 
-TEST_TARGET =		check
-
 .if ${MACHINE_ARCH} == "i386"
-# there is actually a fallback method, see -DCPU_FALLBACK=1.
-ALL_TARGET=		openbsd-x86-sse2
+# there is actually a fallback method to allow use of sse where available and
+# fall back to mmx/non-cpu-specific code, but it requires building multiple
+# times with various targets (openbsd-x86-sse2 openbsd-x86-mmx openbsd-x86-any);
+# see -DCPU_FALLBACK=1.
+ALL_TARGET=		openbsd-x86-any
 .elif ${MACHINE_ARCH} == "amd64"
 ALL_TARGET=		openbsd-x86-64
 .elif ${MACHINE_ARCH} == "sparc"
@@ -71,14 +72,19 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/john
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/john
 	${INSTALL_PROGRAM} ${WRKDIST}/run/john ${PREFIX}/bin
-.for i in ${BINS} calc_stat genmkvpwd mkvcalcproba tgtsnarf unafs unique unshadow
-	${INSTALL_PROGRAM} ${WRKDIST}/run/$i ${PREFIX}/bin
-.endfor
-	${INSTALL_SCRIPT} ${WRKDIST}/run/mailer ${WRKDIST}/run/*.{pl,py,rb} ${PREFIX}/bin
+	cd ${WRKDIST}/run; ${INSTALL_PROGRAM} ${BINS} calc_stat genmkvpwd \
+	     mkvcalcproba tgtsnarf unafs unique unshadow ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIST}/run/mailer \
+	    ${WRKDIST}/run/*.{pl,py,rb} ${PREFIX}/bin
 .for i in mozilla2john pdf2john racf2john rar2john ssh2john
 	ln -sf john ${PREFIX}/bin/$i
 .endfor
-	${INSTALL_DATA} ${WRKDIST}/run/*.{chr,conf,lst} ${PREFIX}/share/examples/john
+	${INSTALL_DATA} ${WRKDIST}/run/*.{chr,conf,lst} \
+	    ${PREFIX}/share/examples/john
 	${INSTALL_DATA} ${WRKDIST}/doc/* ${PREFIX}/share/doc/john
+
+# not using TEST_TARGET as it gets confused by the quotes in CFLAGS
+do-test:
+	cd ${WRKSRC}; ${MAKE_PROGRAM} check
 
 .include <bsd.port.mk>
