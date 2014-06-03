@@ -1,0 +1,11 @@
+@comment $OpenBSD$
+@bin bin/taskd
+bin/taskdctl
+@man man/man1/taskd.1
+@man man/man5/taskdrc.5
+share/taskd/
+share/taskd/AUTHORS
+share/taskd/COPYING
+share/taskd/ChangeLog
+share/taskd/INSTALL
+share/taskd/NEWS
