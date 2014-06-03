@@ -1,0 +1,25 @@
+$OpenBSD$
+
+XXX
+
+well, this is fun. half my shares don't return anything in a dir listing
+unless there's a delay of some kind here....
+
+--- usmb_dir.c.orig	Mon Feb  4 19:32:17 2013
++++ usmb_dir.c	Tue Jun  3 21:52:54 2014
+@@ -30,6 +30,7 @@
+ #include "usmb.h"
+ #include "utils.h"
+ 
++#include <unistd.h>
+ 
+ int usmb_mkdir (const char *dirname, mode_t mode)
+ {
+@@ -131,6 +132,7 @@ int usmb_readdir (const char *path, void *h, fuse_fill
+       }
+ 
+       DEBUG (fprintf (stderr, "  %s\n", dirent->name));
++      usleep(1);
+       if (1 == filler (h, dirent->name, &stbuf, 0))  /* if error */
+       {
+         ret = -1;
