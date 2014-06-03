@@ -1,0 +1,10 @@
+$OpenBSD$
+--- tests/Makefile.am.orig	Mon Jun  2 21:29:43 2014
++++ tests/Makefile.am	Mon Jun  2 21:29:51 2014
+@@ -2,5 +2,5 @@ check_PROGRAMS = time_stamp
+ time_stamp_SOURCES = time_stamp.cpp
+ time_stamp_CPPFLAGS = -I$(top_srcdir)/src -I$(top_srcdir)/src/generated
+ time_stamp_CXXFLAGS = $(EXPAT_CXXFLAGS)
+-time_stamp_LDADD = $(top_builddir)/src/liblcf.la $(EXPAT_LIBS)
++time_stamp_LDADD = $(top_builddir)/src/liblcf.la $(EXPAT_LIBS) -lintl
+ TESTS = time_stamp
