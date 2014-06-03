@@ -3,6 +3,7 @@
 COMMENT = 		Tcl/Tk based digital circuit editor and simulator
 
 DISTNAME = 		tkgate-1.8.7
+
 CATEGORIES = 		cad
 
 HOMEPAGE = 		http://www.tkgate.org/
@@ -18,19 +19,18 @@ MODULES = 		x11/tk
 BUILD_DEPENDS = 	devel/imake
 LIB_DEPENDS = 		${MODTK_LIB_DEPENDS}
 
-CONFIGURE_STYLE = 	gnu
+CONFIGURE_STYLE = 	simple
 
 NO_TEST = 		Yes
+
+SUBST_VARS += 		CFLAGS
 
 post-extract:
 	@find ${WRKSRC} -name *.orig -exec rm {} \;
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Imakefile ${WRKSRC}/src/gsim/Imakefile \
-		${WRKSRC}/scripts/parms.tcl
-	@perl -pi -e 's,!!CFLAGS!!,${CFLAGS},g;' \
-		-e 's,!!LOCALBASE!!,${LOCALBASE},g;' \
-		-e 's,!!PREFIX!!,${PREFIX},g;' ${WRKSRC}/config.h
+		${WRKSRC}/scripts/parms.tcl ${WRKSRC}/config.h
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/tkgate.man ${PREFIX}/man/man1/tkgate.1
