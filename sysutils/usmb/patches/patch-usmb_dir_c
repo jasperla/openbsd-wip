@@ -1,12 +1,9 @@
 $OpenBSD$
 
-XXX
+allow readdir to work.
 
-well, this is fun. half my shares don't return anything in a dir listing
-unless there's a delay of some kind here....
-
---- usmb_dir.c.orig	Mon Feb  4 19:32:17 2013
-+++ usmb_dir.c	Tue Jun  3 21:52:54 2014
+--- usmb_dir.c.orig	Mon Feb  4 20:32:17 2013
++++ usmb_dir.c	Thu Jun  5 16:35:40 2014
 @@ -30,6 +30,7 @@
  #include "usmb.h"
  #include "utils.h"
@@ -15,11 +12,28 @@ unless there's a delay of some kind here....
  
  int usmb_mkdir (const char *dirname, mode_t mode)
  {
-@@ -131,6 +132,7 @@ int usmb_readdir (const char *path, void *h, fuse_fill
-       }
+@@ -111,19 +112,21 @@ int usmb_readdir (const char *path, void *h, fuse_fill
+     while (NULL != (dirent = smbc_getFunctionReaddir (ctx_) (ctx_, file)))
+     {
+       struct stat stbuf;
++      memset(&stbuf, 0, sizeof(&stbuf));
++      stbuf.st_ino = arc4random();
  
-       DEBUG (fprintf (stderr, "  %s\n", dirent->name));
-+      usleep(1);
-       if (1 == filler (h, dirent->name, &stbuf, 0))  /* if error */
+       switch (dirent->smbc_type)
        {
-         ret = -1;
+         case SMBC_DIR:
+-          stbuf.st_mode = DT_DIR << 12;
++          stbuf.st_mode = S_IFDIR;
+           break;
+ 
+         case SMBC_FILE:
+-          stbuf.st_mode = DT_REG << 12;
++          stbuf.st_mode = S_IFREG;
+           break;
+ 
+         case SMBC_LINK:
+-          stbuf.st_mode = DT_LNK << 12;
++          stbuf.st_mode = S_IFLNK;
+           break;
+ 
+         default:
