@@ -1,7 +1,0 @@
-- first readdir results in "no talloc stackframe around, leaking memory"
-
-- see horrible hack in patch-usmb_dir_c; without it, some (but not all)
-of my shares don't return any results in readdir (e.g. ls /tmp/share),
-though fetching known filenames does work (ls /tmp/share/foo,
-cat /tmp/share/foo).
-
