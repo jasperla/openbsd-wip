@@ -2,6 +2,8 @@
 %%SHARED%%
 @bin bin/hexchat
 include/hexchat-plugin.h
+lib/hexchat/
+lib/hexchat/plugins/
 @comment lib/hexchat/plugins/checksum.a
 @comment lib/hexchat/plugins/checksum.la
 @comment lib/hexchat/plugins/doat.a
