@@ -190,3 +190,5 @@ share/locale/zh_CN/LC_MESSAGES/hexchat.mo
 share/locale/zh_TW/
 share/locale/zh_TW/LC_MESSAGES/
 share/locale/zh_TW/LC_MESSAGES/hexchat.mo
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
