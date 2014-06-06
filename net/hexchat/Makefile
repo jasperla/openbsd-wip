@@ -26,7 +26,8 @@ WANTLIB +=		notify ssl stdc++ util xcb xcb-render xcb-shm z
 MODULES =	devel/gettext \
 		devel/gconf2
 
-RUN_DEPENDS =	devel/desktop-file-utils
+RUN_DEPENDS =	devel/desktop-file-utils \
+	x11/gtk+2,-guic
 LIB_DEPENDS =	devel/libnotify \
 		net/libproxy \
 		x11/gtk+2 \
