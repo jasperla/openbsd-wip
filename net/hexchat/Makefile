@@ -15,7 +15,6 @@ MAINTAINER =		Florian Stinglmayr <florian@n0la.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-# "make port-lib-depends-check" can help
 WANTLIB +=		X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB +=		Xrandr Xrender atk-1.0 c cairo crypto dbus-1 dbus-glib-1 ffi
 WANTLIB +=		gdk-x11-2.0 expat fontconfig freetype gdk_pixbuf-2.0 gio-2.0
