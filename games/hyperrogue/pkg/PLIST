@@ -1,0 +1,19 @@
+@comment $OpenBSD$
+bin/hyperrogue
+share/doc/hyperrogue/
+share/doc/hyperrogue/COPYING
+share/hyperrogue/
+share/hyperrogue/VeraBd.ttf
+share/hyperrogue/hr3-caves.ogg
+share/hyperrogue/hr3-crossroads.ogg
+share/hyperrogue/hr3-desert.ogg
+share/hyperrogue/hr3-graveyard.ogg
+share/hyperrogue/hr3-hell.ogg
+share/hyperrogue/hr3-icyland.ogg
+share/hyperrogue/hr3-jungle.ogg
+share/hyperrogue/hr3-laboratory.ogg
+share/hyperrogue/hr3-mirror.ogg
+share/hyperrogue/hr3-motion.ogg
+share/hyperrogue/hr3-rlyeh.ogg
+@bin share/hyperrogue/hyper
+share/hyperrogue/hyperrogue-music.txt
