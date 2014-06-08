@@ -47,4 +47,6 @@ USE_GMAKE =	Yes
 MODGCONF2_SCHEMAS_DIR =	hexchat
 MODGCONF2_LIBDEP =	No
 
+NO_TEST =	Yes
+
 .include <bsd.port.mk>
