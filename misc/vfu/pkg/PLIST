@@ -1,7 +1,0 @@
-@comment $OpenBSD$
-@bin bin/vfu
-@man man/man1/vfu.1
-share/doc/vfu/
-share/doc/vfu/FAQ
-share/examples/vfu/
-share/examples/vfu/vfu.conf
