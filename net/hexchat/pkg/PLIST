@@ -18,7 +18,6 @@ lib/hexchat/plugins/perl.so
 lib/hexchat/plugins/python.so
 lib/pkgconfig/hexchat-plugin.pc
 @man man/man1/hexchat.1
-share/appdata/
 share/appdata/hexchat.appdata.xml
 share/applications/hexchat.desktop
 share/dbus-1/services/org.hexchat.service.service
@@ -47,8 +46,6 @@ share/locale/hi/LC_MESSAGES/hexchat.mo
 share/locale/hu/LC_MESSAGES/hexchat.mo
 share/locale/id/LC_MESSAGES/hexchat.mo
 share/locale/it/LC_MESSAGES/hexchat.mo
-share/locale/ja_JP/
-share/locale/ja_JP/LC_MESSAGES/
 share/locale/ja_JP/LC_MESSAGES/hexchat.mo
 share/locale/kn/LC_MESSAGES/hexchat.mo
 share/locale/ko/LC_MESSAGES/hexchat.mo
