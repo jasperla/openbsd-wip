@@ -1,5 +1,0 @@
-@comment $OpenBSD$
-lib/hexchat/plugins/checksum.so
-lib/hexchat/plugins/doat.so
-lib/hexchat/plugins/fishlim.so
-lib/hexchat/plugins/perl.so

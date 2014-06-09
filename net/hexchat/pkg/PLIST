@@ -1,17 +1,20 @@
 @comment $OpenBSD$
-%%SHARED%%
 @bin bin/hexchat
 include/hexchat-plugin.h
 lib/hexchat/
 lib/hexchat/plugins/
 @comment lib/hexchat/plugins/checksum.a
 @comment lib/hexchat/plugins/checksum.la
+lib/hexchat/plugins/checksum.so
 @comment lib/hexchat/plugins/doat.a
 @comment lib/hexchat/plugins/doat.la
+lib/hexchat/plugins/doat.so
 @comment lib/hexchat/plugins/fishlim.a
 @comment lib/hexchat/plugins/fishlim.la
+lib/hexchat/plugins/fishlim.so
 @comment lib/hexchat/plugins/perl.a
 @comment lib/hexchat/plugins/perl.la
+lib/hexchat/plugins/perl.so
 lib/pkgconfig/hexchat-plugin.pc
 @man man/man1/hexchat.1
 share/appdata/hexchat.appdata.xml
