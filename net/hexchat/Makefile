@@ -23,12 +23,15 @@ WANTLIB += xcb-shm z
 MASTER_SITES =	http://dl.hexchat.net/hexchat/
 
 MODULES =	devel/gettext \
-		devel/gconf2
+		devel/gconf2 \
+		lang/python
 
 LIB_DEPENDS =	devel/libnotify \
 		net/libproxy \
 		x11/gtk+2 \
 		x11/dbus-glib
+
+MODPY_BUILD_DEP =	No
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+2,-guic
@@ -38,7 +41,6 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--enable-ipv6 \
 			--enable-dbus \
 			--enable-socks \
-			--disable-python \
 			--disable-libcanberra
 CONFIGURE_ENV =		GCONF_SCHEMA_FILE_DIR=${LOCALBASE}/${SCHEMAS_INSTDIR}
 
