@@ -1,8 +1,0 @@
-dxirc is a simple yet capable cross-platform IRC client written in C++
-and FOX toolkit.
-
-Features: fully customizable look independent of system-wide settings,
-automated join to specified channels on selected servers, support for
-multiple simultaneously connected servers, well-arranged and flexible
-configuration dialog (no need to edit the configuration files by hand at
-all).

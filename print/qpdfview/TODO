@@ -1,1 +1,0 @@
-Figure out why the binary looks in /usr/lib/qpdfview and not /usr/local/lib/qpdfview for plugins.
