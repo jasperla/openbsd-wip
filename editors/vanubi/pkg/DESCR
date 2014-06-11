@@ -1,0 +1,3 @@
+Vanubi is an Emacs-like editor implemented in Vala. It is designed to be
+simple, complete, keyboard based, and implement only what users really
+use and expect.
