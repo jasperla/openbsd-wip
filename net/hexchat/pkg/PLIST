@@ -1,23 +1,21 @@
 @comment $OpenBSD$
 @bin bin/hexchat
 include/hexchat-plugin.h
-@comment lib/hexchat/plugins/checksum.a
+lib/hexchat/
+lib/hexchat/plugins/
 @comment lib/hexchat/plugins/checksum.la
 lib/hexchat/plugins/checksum.so
-@comment lib/hexchat/plugins/doat.a
 @comment lib/hexchat/plugins/doat.la
 lib/hexchat/plugins/doat.so
-@comment lib/hexchat/plugins/fishlim.a
 @comment lib/hexchat/plugins/fishlim.la
 lib/hexchat/plugins/fishlim.so
-@comment lib/hexchat/plugins/perl.a
 @comment lib/hexchat/plugins/perl.la
 lib/hexchat/plugins/perl.so
-@comment lib/hexchat/plugins/python.a
 @comment lib/hexchat/plugins/python.la
 lib/hexchat/plugins/python.so
 lib/pkgconfig/hexchat-plugin.pc
 @man man/man1/hexchat.1
+share/appdata/
 share/appdata/hexchat.appdata.xml
 share/applications/hexchat.desktop
 share/dbus-1/services/org.hexchat.service.service
@@ -46,6 +44,8 @@ share/locale/hi/LC_MESSAGES/hexchat.mo
 share/locale/hu/LC_MESSAGES/hexchat.mo
 share/locale/id/LC_MESSAGES/hexchat.mo
 share/locale/it/LC_MESSAGES/hexchat.mo
+share/locale/ja_JP/
+share/locale/ja_JP/LC_MESSAGES/
 share/locale/ja_JP/LC_MESSAGES/hexchat.mo
 share/locale/kn/LC_MESSAGES/hexchat.mo
 share/locale/ko/LC_MESSAGES/hexchat.mo
