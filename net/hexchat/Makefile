@@ -36,7 +36,7 @@ LIB_DEPENDS =		devel/libnotify \
 			x11/dbus-glib \
 			${MODPY_LIB_DEPENDS}
 
-MODPY_BUILD_DEP =	No
+MODPY_BUILDDEP =	No
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/iso-codes \
