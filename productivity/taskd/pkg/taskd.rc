@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# $OpenBSD: rc.template,v 1.5 2011/03/10 13:46:59 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/bin/taskd server --daemon --data /var/taskd"
+daemon_user="_taskd"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1

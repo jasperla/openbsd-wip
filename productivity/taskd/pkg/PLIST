@@ -24,3 +24,7 @@ share/taskd/NEWS
 @owner _taskd
 @group _taskd
 @sample /var/taskd/
+@mode
+@owner
+@group
+@rcscript ${RCDIR}/taskd
