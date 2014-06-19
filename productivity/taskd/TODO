@@ -1,0 +1,3 @@
+* Describe and possibly automate initial steps described at http://taskwarrior.org/docs/server_configure.html
+* Describe steps to add users http://taskwarrior.org/docs/server_user.html
+* Test adding users, and then syncing with taskwarrior: http://taskwarrior.org/docs/server_taskwarrior.html http://taskwarrior.org/docs/server_sync.html http://taskwarrior.org/docs/troubleshooting-sync.html
