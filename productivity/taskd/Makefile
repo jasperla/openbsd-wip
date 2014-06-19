@@ -38,12 +38,14 @@ CONFIGURE_ENV +=	CFLAGS="-I${LOCALBASE}/include" \
 NO_TEST =		Yes
 
 pre-configure:
-	@perl -pi -e 's|share/doc/task/|share/taskwarrior/|g' \
-		${WRKSRC}/doc/man/task-color.5.in \
-		${WRKSRC}/doc/man/task-tutorial.5.in \
-		${WRKSRC}/doc/man/taskrc.5.in \
-		${WRKSRC}/src/Config.cpp
-	@perl -pi -e 's|share/doc/task-VERSION/|share/taskwarrior/|g' \
-		${WRKSRC}/scripts/vim/README
+	@perl -pi -e 's|/bin/bash|/bin/sh|g' \
+		${WRKSRC}/pki/generate*
+	@perl -pi -e 's/which gnutls-certtool \|\| //g' \
+		${WRKSRC}/pki/generate*
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/taskd/pki/
+	${INSTALL_DATA} ${WRKSRC}/pki/!(*.orig) \
+		${PREFIX}/share/examples/taskd/pki/
 
 .include <bsd.port.mk>
