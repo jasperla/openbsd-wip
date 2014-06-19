@@ -45,7 +45,7 @@ pre-configure:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/taskd/pki/
-	${INSTALL_DATA} ${WRKSRC}/pki/!(*.orig) \
+	${INSTALL_SCRIPT} ${WRKSRC}/pki/!(*.orig) \
 		${PREFIX}/share/examples/taskd/pki/
 
 .include <bsd.port.mk>
