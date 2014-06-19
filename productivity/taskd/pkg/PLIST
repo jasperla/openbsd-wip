@@ -1,11 +1,26 @@
 @comment $OpenBSD$
+@newgroup _taskd:734
+@newuser _taskd:732:734:daemon:Taskwarrior Sync Server:/var/taskd:/sbin/nologin
+@extraunexec rm -rf /var/taskd
 @bin bin/taskd
 bin/taskdctl
 @man man/man1/taskd.1
 @man man/man5/taskdrc.5
+share/examples/taskd/
+share/examples/taskd/pki/
+share/examples/taskd/pki/README
+share/examples/taskd/pki/generate
+share/examples/taskd/pki/generate.ca
+share/examples/taskd/pki/generate.client
+share/examples/taskd/pki/generate.crl
+share/examples/taskd/pki/generate.server
 share/taskd/
 share/taskd/AUTHORS
 share/taskd/COPYING
 share/taskd/ChangeLog
 share/taskd/INSTALL
 share/taskd/NEWS
+@mode 0750
+@owner _taskd
+@group _taskd
+@sample /var/taskd/
