@@ -1,0 +1,11 @@
+$OpenBSD$
+--- pki/vars.orig	Fri Jun 20 22:27:33 2014
++++ pki/vars	Fri Jun 20 21:58:33 2014
+@@ -0,0 +1,7 @@
++bits=4096
++expiration_days=365
++organization=G\xc3\xb6teborg Bit Factory
++cn=G\xc3\xb6teborg Bit Factory
++country=SE
++state=V\xc3\xa4stra G\xc3\xb6taland
++locality=Göteborg
