@@ -37,11 +37,8 @@ CONFIGURE_ENV +=	CFLAGS="-I${LOCALBASE}/include" \
 
 NO_TEST =		Yes
 
-pre-configure:
-	@perl -pi -e 's|/bin/bash|/bin/sh|g' \
-		${WRKSRC}/pki/generate*
-	@perl -pi -e 's/which gnutls-certtool \|\| //g' \
-		${WRKSRC}/pki/generate*
+post-extract:
+	cp ${FILESDIR}/vars ${WRKSRC}/pki
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/taskd/pki/
