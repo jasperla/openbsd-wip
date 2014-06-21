@@ -5,14 +5,14 @@ $OpenBSD: README.template,v 1.4 2011/06/02 13:44:40 ajacoutot Exp $
 +-----------------------------------------------------------------------
 
 Generate certificates
-==============
+=====================
 Before starting taskd you need to generate certificates for it to use.
 The procedure is described at
 http://taskwarrior.org/docs/server_configure.html but has been somewhat
 simplified on OpenBSD:
 
 Generate certificate files
--------------------
+--------------------------
 In ${PREFIX}/share/examples/taskd/pki/ is a set of scripts that can be
 used to generate necessary files. Copy that directory somewhere safe and
 adjust vars to your liking.
@@ -25,7 +25,7 @@ Once you're satisfied with settings, run:
 
 
 Copy certificates in place
--------------------
+--------------------------
 Copy resulting certificates into taskd's directory:
 
   $ sudo cp {client,server}.{cert,key}.pem server.crl.pem ca.cert.pem \
@@ -34,7 +34,7 @@ Copy resulting certificates into taskd's directory:
 
 
 Running taskd
-==============
+=============
 taskd by default listens on all interfaces on port 53589. You can change
 this with a command like:
 
@@ -52,7 +52,7 @@ To start taskd, reboot or start it manually:
 
 
 Adding users
-==============
+============
 As described at http://taskwarrior.org/docs/server_user.html
 
 For most operations here you'll either have to
@@ -64,7 +64,7 @@ taskd with '--data /var/taskd' appended to it's options. Both examples
 below.
 
 Create organization and user
--------------------
+----------------------------
 First you need to create an organization to put user(s) into:
 
   $ sudo -u _taskd taskd add org Public --data /var/taskd
@@ -79,7 +79,7 @@ Then you can proceed with creating a user:
 
 
 Create user certificate
--------------------
+-----------------------
 Go again to the directory where you copied the pki scripts, and run:
 
   $ ./generate.client first_last
@@ -90,7 +90,7 @@ just that it is something unique, and valid for use in a file name.
 
 
 Configure taskwarrior
-==============
+=====================
 As described at http://taskwarrior.org/docs/server_taskwarrior.html
 
 You will need following information from above processes:
@@ -113,7 +113,7 @@ You will need following information from above processes:
 
 
 Syncing Taskwarrior
-==============
+===================
 As described at http://taskwarrior.org/docs/server_sync.html
 
 First time sync is special, and needs to be done only once:
