@@ -2,11 +2,33 @@
 @newgroup _taskd:734
 @newuser _taskd:732:734:daemon:Taskwarrior Sync Server:/var/taskd:/sbin/nologin
 @extraunexec rm -rf /var/taskd
+@extraunexec rm -rf /var/run/taskd
+@extraunexec rm -rf /var/log/taskd
+@mode 0750
+@owner _taskd
+@group _taskd
+@sample /var/taskd/
+@sample /var/log/taskd/
+@mode 0700
+@sample /var/taskd/orgs/
+@mode
+@sample /var/run/taskd/
+@mode
+@owner
+@group
 @bin bin/taskd
 bin/taskdctl
 @man man/man1/taskd.1
 @man man/man5/taskdrc.5
 share/examples/taskd/
+share/examples/taskd/config
+@mode 0600
+@owner _taskd
+@group _taskd
+@sample /var/taskd/config
+@mode
+@owner
+@group
 share/examples/taskd/pki/
 share/examples/taskd/pki/README
 share/examples/taskd/pki/generate
@@ -21,11 +43,4 @@ share/taskd/COPYING
 share/taskd/ChangeLog
 share/taskd/INSTALL
 share/taskd/NEWS
-@mode 0750
-@owner _taskd
-@group _taskd
-@sample /var/taskd/
-@mode
-@owner
-@group
 @rcscript ${RCDIR}/taskd
