@@ -9,17 +9,12 @@ CATEGORIES =	productivity net
 
 HOMEPAGE =	http://www.taskwarrior.org/
 
-#MAINTAINER=	Aaron Bieber <abieber@openbsd.org>
-
 MASTER_SITES =	${HOMEPAGE}/download/
 
-# GPLv2
+# MIT
 PERMIT_PACKAGE_CDROM =		Yes
 
 MODULES =		devel/cmake
-#MODULES =		devel/cmake \
-#			lang/lua
-#MODLUA_SA =		Yes
 
 WANTLIB += c gnutls m pthread stdc++ uuid
 
