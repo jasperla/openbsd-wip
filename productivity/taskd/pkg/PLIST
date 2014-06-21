@@ -29,6 +29,7 @@ share/examples/taskd/config
 @mode
 @owner
 @group
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/taskd/pki/
 share/examples/taskd/pki/README
 share/examples/taskd/pki/generate
