@@ -1,16 +1,14 @@
 # $OpenBSD: Makefile,v 1.3 2014/01/17 19:46:21 juanfra Exp $
 
-BROKEN = the lazy maintainer needs to update the patches
-
 COMMENT =		lzip compression library
 
-DISTNAME =		lzlib-1.6-rc1
+DISTNAME =		lzlib-1.6-rc2
 
 SHARED_LIBS +=		lz	1.0 # 1.5
 
 HOMEPAGE =		http://lzip.nongnu.org/lzlib.html
 
-# GPLv3+ with special exception
+# GPLv2+ with link exception
 PERMIT_PACKAGE_CDROM =	Yes
 
 MAKE_ENV +=		LIBlz_VERSION=${LIBlz_VERSION}
