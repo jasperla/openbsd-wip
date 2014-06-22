@@ -1,6 +1,6 @@
 $OpenBSD$
---- pki/generate.server.orig	Fri Jun 20 22:26:36 2014
-+++ pki/generate.server	Fri Jun 20 22:01:46 2014
+--- pki/generate.server.orig	Wed Jan 15 23:47:49 2014
++++ pki/generate.server	Sun Jun 22 20:59:32 2014
 @@ -1,26 +1,31 @@
 -#!/bin/bash
 +#!/bin/sh
@@ -33,7 +33,7 @@ $OpenBSD$
 +organization = $organization
 +cn = $cn
 +dns_name = "`hostname`"
-+$(for ip in `ifconfig -A|grep inet | awk '{print $2}' | egrep -v '(^::1$|^fe80:|^127\.)'` ; do
++$(for ip in `ifconfig -A | awk '/inet/ {print $2}' | egrep -v '(^::1$|^fe80:|^127\.)'` ; do
 +	echo ip_address = "$ip"
 +done)
  tls_www_server
