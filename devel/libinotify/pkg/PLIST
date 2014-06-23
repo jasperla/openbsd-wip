@@ -1,6 +1,8 @@
 @comment $OpenBSD$
-include/sys/
-include/sys/kinotify.h
-lib/libkinotify.a
-lib/libkinotify.la
-@lib lib/libkinotify.so.${LIBkinotify_VERSION}
+include/inotify/
+include/inotify/sys/
+include/inotify/sys/inotify.h
+lib/inotify/
+lib/inotify/libinotify.a
+lib/inotify/libinotify.la
+@lib lib/inotify/libinotify.so.${LIBinotify_VERSION}
