@@ -1,0 +1,9 @@
+dns_name="tasktools.org"
+ip_address="97.107.141.107"
+bits=4096
+expiration_days=365
+organization=Göteborg Bit Factory
+cn=Göteborg Bit Factory
+country=SE
+state=Västra Götaland
+locality=Göteborg

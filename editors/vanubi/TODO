@@ -1,0 +1,2 @@
+C-x C-c doesn't work if a file has been modified (save&quit check appears to not be implemented in the program)
+Test on something !amd64

@@ -1,0 +1,41 @@
+$OpenBSD$
+--- pki/generate.server.orig	Wed Jan 15 23:47:49 2014
++++ pki/generate.server	Sun Jun 22 20:59:32 2014
+@@ -1,26 +1,31 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # Take the correct binary to create the certificates
+-CERTTOOL=$(which gnutls-certtool || which certtool)
++CERTTOOL=$(which certtool)
+ if [[ -z "${CERTTOOL}" ]]
+ then
+   echo "ERROR: No certtool found" >&2
+   exit 1
+ fi
+ 
++. ./vars
++
+ # Create a server key.
+ ${CERTTOOL} \
+   --generate-privkey \
++  --bits=$bits \
+   --outfile server.key.pem
+ 
+ chmod 600 server.key.pem
+ 
+ # Sign a server cert using the key.
+ cat <<EOF >server.info
+-organization = Göteborg Bit Factory
+-cn = Göteborg Bit Factory
+-dns_name = "tasktools.org"
+-ip_address = "97.107.141.107"
++organization = $organization
++cn = $cn
++dns_name = "`hostname`"
++$(for ip in `ifconfig -A | awk '/inet/ {print $2}' | egrep -v '(^::1$|^fe80:|^127\.)'` ; do
++	echo ip_address = "$ip"
++done)
+ tls_www_server
+ encryption_key
+ signing_key
