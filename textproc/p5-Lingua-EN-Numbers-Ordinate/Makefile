@@ -2,9 +2,8 @@
 
 COMMENT =	go from cardinal (3) to ordinal (3rd)
 
-DISTNAME =	Lingua-EN-Numbers-Ordinate-1.02
+DISTNAME =	Lingua-EN-Numbers-Ordinate-1.03
 CATEGORIES =	textproc
-CPAN_AUTHOR =	SBURKE
 
 MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
