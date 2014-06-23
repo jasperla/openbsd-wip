@@ -3,7 +3,7 @@
 COMMENT =	install shared files
 
 MODULES =	cpan
-DISTNAME =	File-ShareDir-Install-0.05
+DISTNAME =	File-ShareDir-Install-0.08
 CATEGORIES =	devel
 
 MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
