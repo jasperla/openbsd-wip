@@ -16,7 +16,7 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += QtDBus QtGui QtNetwork QtTest QtWebKit QtXml QtXmlPatterns
-WANTLIB += X11 c kinotify m ocsync pthread sqlite3
+WANTLIB += X11 c m ocsync pthread sqlite3 lib/inotify/inotify
 
 MASTER_SITES =		http://download.owncloud.com/desktop/stable/
 EXTRACT_SUFX =		.tar.bz2
@@ -31,8 +31,13 @@ LIB_DEPENDS =		devel/libinotify \
 			net/ocsync
 
 CONFIGURE_ARGS +=	-DBUILD_TYPE=Release \
-			-DCSYNC_INCLUDE_PATH=${LOCALBASE}/include/ocsync
+			-DCSYNC_INCLUDE_PATH=${LOCALBASE}/include/ocsync \
+			-DINOTIFY_INCLUDE_DIR=${LOCALBASE}/include/inotify
 
 NO_TEST =		Yes
+
+post-install:
+	@mv ${PREFIX}/etc/ownCloud/sync-exclude.lst ${PREFIX}/share/owncloud/
+	@rm -r ${PREFIX}/etc
 
 .include <bsd.port.mk>
