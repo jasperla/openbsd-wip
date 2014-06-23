@@ -2,7 +2,8 @@
 
 COMMENT =		pic-like interpreter for producing line graphics
 
-DISTNAME =		dpic-2013.03.10
+DISTNAME =		dpic-2014.Jan.01
+PKGNAME =		${DISTNAME:S/Jan/01/}
 
 CATEGORIES =		graphics
 
