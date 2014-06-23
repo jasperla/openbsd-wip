@@ -1,12 +1,12 @@
 $OpenBSD$
 --- src/CMakeLists.txt.orig	Mon Oct 21 16:05:25 2013
-+++ src/CMakeLists.txt	Sun May  4 10:46:18 2014
++++ src/CMakeLists.txt	Mon Jun 23 16:27:28 2014
 @@ -140,7 +140,7 @@ qt4_wrap_cpp(syncMoc ${libsync_HEADERS})
  list(APPEND libsync_LINK_TARGETS
      ${QT_LIBRARIES}
      ${CSYNC_LIBRARY}
 -    dl
-+    kinotify
++    ${INOTIFY_LIBRARY}
  )
  
  if(QTKEYCHAIN_FOUND)

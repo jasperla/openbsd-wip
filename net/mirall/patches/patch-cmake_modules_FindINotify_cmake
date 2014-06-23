@@ -1,12 +1,12 @@
 $OpenBSD$
---- cmake/modules/FindINotify.cmake.orig	Sun May  4 10:31:44 2014
-+++ cmake/modules/FindINotify.cmake	Sun May  4 10:31:58 2014
-@@ -4,7 +4,7 @@
- # also defined, but not for general use are
- #  INOTIFY_LIBRARY, where to find the inotify library.
- 
--find_path(INOTIFY_INCLUDE_DIR sys/inotify.h 
-+find_path(INOTIFY_INCLUDE_DIR sys/kinotify.h 
+--- cmake/modules/FindINotify.cmake.orig	Mon Jun 23 16:36:04 2014
++++ cmake/modules/FindINotify.cmake	Mon Jun 23 16:51:10 2014
+@@ -8,6 +8,8 @@ find_path(INOTIFY_INCLUDE_DIR sys/inotify.h 
            HINTS /usr/include/${CMAKE_LIBRARY_ARCHITECTURE})
  mark_as_advanced(INOTIFY_INCLUDE_DIR)
  
++find_library(INOTIFY_LIBRARY inotify PATH_SUFFIXES lib/inotify)
++
+ # all listed variables are TRUE
+ # handle the QUIETLY and REQUIRED arguments and set INOTIFY_FOUND to TRUE if
+ include(FindPackageHandleStandardArgs)
