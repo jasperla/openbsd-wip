@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:44:47 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2014/04/13 01:01:39 naddy Exp $
 
 COMMENT= 	creating and updating Bugzilla bugs
 
