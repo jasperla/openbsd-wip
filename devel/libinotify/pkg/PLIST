@@ -1,8 +1,0 @@
-@comment $OpenBSD$
-include/inotify/
-include/inotify/sys/
-include/inotify/sys/inotify.h
-lib/inotify/
-lib/inotify/libinotify.a
-lib/inotify/libinotify.la
-@lib lib/inotify/libinotify.so.${LIBinotify_VERSION}
