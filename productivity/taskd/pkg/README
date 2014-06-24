@@ -29,7 +29,7 @@ Copy certificates in place
 Copy resulting certificates into taskd's directory:
 
   $ sudo cp {client,server}.{cert,key}.pem server.crl.pem ca.cert.pem \
-      /tmp/taskd
+      /var/taskd
   $ sudo chown -R _taskd:_taskd /var/taskd
 
 
