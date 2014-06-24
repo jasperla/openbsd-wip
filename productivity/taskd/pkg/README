@@ -17,8 +17,8 @@ In ${PREFIX}/share/examples/taskd/pki/ is a set of scripts that can be
 used to generate necessary files. Copy that directory somewhere safe and
 adjust vars to your liking.
 generate.server will automatically generate certificate with the
-hostname and IPs of machine it is ran on, adjust it if that's not
-desired.
+hostname and IPs of machine it is ran on, adjust the vars file to
+override this.
 Once you're satisfied with settings, run:
 
   $ ./generate
