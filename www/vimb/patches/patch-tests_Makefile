@@ -1,0 +1,15 @@
+$OpenBSD$
+
+No -Wpedantic with base gcc.
+
+--- tests/Makefile.orig	Sat Jun 28 19:42:58 2014
++++ tests/Makefile	Sat Jun 28 19:43:05 2014
+@@ -1,7 +1,7 @@
+ include ../config.mk
+ 
+ CPPFLAGS += -I ../
+-CFLAGS   += -fPIC -Wpedantic
++CFLAGS   += -fPIC
+ 
+ TEST_PROGS = test-handlers \
+ 			 test-map      \
