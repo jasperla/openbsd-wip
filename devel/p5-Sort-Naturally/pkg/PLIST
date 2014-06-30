@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/Sort/
+${P5SITE}/Sort/Naturally.pm
+@man man/man3p/Sort::Naturally.3p
