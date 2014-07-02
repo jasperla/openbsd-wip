@@ -1,5 +1,5 @@
 confirmation=1
-extensions=/usr/local/libexec/taskd
+extensions=${TRUEPREFIX}/libexec/taskd
 log=/var/log/taskd/taskd.log
 log=/var/log/taskd/taskd.log
 pid.file=/var/run/taskd/taskd.pid

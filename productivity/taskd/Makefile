@@ -2,9 +2,7 @@
 
 COMMENT =	lightweight server providing access to task data
 
-VERSION =	1.0.0
-DISTNAME =	taskd-${VERSION}
-PKGNAME =	taskd-${VERSION}
+DISTNAME =	taskd-1.0.0
 CATEGORIES =	productivity net
 
 HOMEPAGE =	http://www.taskwarrior.org/
@@ -36,7 +34,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/taskd/pki/
 	${INSTALL_SCRIPT} ${WRKSRC}/pki/!(*.orig) \
 		${PREFIX}/share/examples/taskd/pki/
-	${INSTALL_DATA} ${FILESDIR}/config ${PREFIX}/share/examples/taskd/
+	${SUBST_CMD} -c ${FILESDIR}/config ${PREFIX}/share/examples/taskd/config
 	${INSTALL_DATA} ${FILESDIR}/vars.dist ${PREFIX}/share/examples/taskd/pki/
 
 .include <bsd.port.mk>
