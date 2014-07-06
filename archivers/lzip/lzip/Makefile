@@ -2,11 +2,11 @@
 
 COMMENT =		lossless data compressor
 
-DISTNAME =		lzip-1.16-pre2
+DISTNAME =		lzip-1.16-rc1
 
 HOMEPAGE =		http://lzip.nongnu.org/lzip.html
 
-# GPLv3+
+# GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c m stdc++

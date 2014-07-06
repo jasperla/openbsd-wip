@@ -2,11 +2,11 @@
 
 COMMENT =		C implementation of lzip
 
-DISTNAME =		clzip-1.6-pre2
+DISTNAME =		clzip-1.6-rc1
 
 HOMEPAGE =		http://lzip.nongnu.org/clzip.html
 
-# GPLv3+
+# GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c
