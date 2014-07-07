@@ -1,0 +1,5 @@
+PyFilesystem is an abstraction layer for filesystems. In the same way that
+Python's file-like objects provide a common way of accessing files,
+PyFilesystem provides a common way of accessing entire filesystems. You can
+write platform-independent code to work with local files, that also works
+with any of the supported filesystems (zip, ftp, S3 etc.).
