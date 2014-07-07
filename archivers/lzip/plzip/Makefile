@@ -2,11 +2,11 @@
 
 COMMENT =		multi-threaded data compressor based on lzlib
 
-DISTNAME =		plzip-1.2-rc1
+DISTNAME =		plzip-1.2-rc2
 
 HOMEPAGE =		http://lzip.nongnu.org/plzip.html
 
-# GPLv3+
+# GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c lz m pthread stdc++
