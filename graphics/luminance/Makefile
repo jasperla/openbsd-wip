@@ -14,8 +14,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=qtpfsgui/}
 EXTRACT_SUFX = 		.tar.bz2
-EXTRACT_CASES += *.tar.bz2) \
-        ${BZIP2} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf - -C ${WRKDIST};;
 
 WANTLIB += Half Iex IlmImf QtGui QtNetwork QtSql QtWebKit QtXml c
 WANTLIB += exiv2 fftw3f fftw3f_threads gsl gslcblas jpeg lcms2 m
@@ -34,9 +32,6 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 CONFIGURE_ARGS += 	-DCMAKE_BUILD_TYPE=Release
 
 NO_TEST =		Yes
-
-pre-extract:
-	mkdir ${WRKDIST}
 
 pre-configure:
 # Allow builds from release distfile to display correct git hash in "About"
