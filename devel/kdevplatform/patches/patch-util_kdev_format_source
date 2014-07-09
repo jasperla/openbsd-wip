@@ -1,5 +1,6 @@
 $OpenBSD$
 Make it more portable and error-prone.
+REVIEW: https://git.reviewboard.kde.org/r/119192/
 --- util/kdev_format_source.orig	Sat Jul 27 18:14:47 2013
 +++ util/kdev_format_source	Sat Jul 27 18:29:16 2013
 @@ -1,4 +1,4 @@
