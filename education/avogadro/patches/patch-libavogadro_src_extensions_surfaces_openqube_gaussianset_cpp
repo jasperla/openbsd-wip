@@ -1,0 +1,12 @@
+$OpenBSD$
+Unbreak compilation.
+--- libavogadro/src/extensions/surfaces/openqube/gaussianset.cpp.orig	Mon Jun 30 23:32:00 2014
++++ libavogadro/src/extensions/surfaces/openqube/gaussianset.cpp	Tue Jul  1 00:37:26 2014
+@@ -25,6 +25,7 @@
+ #include "cube.h"
+ 
+ #include <cmath>
++#include <iostream>
+ 
+ #include <QtCore/QtConcurrentMap>
+ #include <QtCore/QFuture>
