@@ -7,7 +7,7 @@ HOMEPAGE =		https://code.google.com/p/libgcal/
 
 SHARED_LIBS =		gcal	0.0
 
-# BSD
+# BSDL
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		crypto curl idn m ssl xml2 z
@@ -24,6 +24,5 @@ LIB_DEPENDS =		net/curl \
 			textproc/libxml
 
 SEPARATE_BUILD =	Yes
-DEBUG =			-O0 -ggdb
 
 .include <bsd.port.mk>

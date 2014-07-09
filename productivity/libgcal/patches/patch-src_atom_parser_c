@@ -1,4 +1,5 @@
 $OpenBSD$
+BUG: https://code.google.com/p/libgcal/issues/detail?id=95
 --- src/atom_parser.c.orig	Fri Jan 24 15:26:28 2014
 +++ src/atom_parser.c	Fri Jan 24 15:45:30 2014
 @@ -235,7 +235,7 @@ static int extract_and_check_multi(xmlDoc *doc, char *
