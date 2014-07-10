@@ -1,12 +1,32 @@
 $OpenBSD$
-Fix configure check.
---- cmake/FindUmfpack.cmake.orig	Tue Jul 30 02:19:08 2013
-+++ cmake/FindUmfpack.cmake	Tue Jul 30 02:19:22 2013
-@@ -14,6 +14,7 @@ find_path(UMFPACK_INCLUDES
+1. Allow to find UMFPACK headers.
+2. Make sure AMD (math/amd) headers location is also picked up.
+--- cmake/FindUmfpack.cmake.orig	Wed Feb 26 19:35:18 2014
++++ cmake/FindUmfpack.cmake	Mon Jun 30 12:13:02 2014
+@@ -5,7 +5,7 @@ if (UMFPACK_INCLUDES AND UMFPACK_LIBRARIES)
+   set(UMFPACK_FIND_QUIETLY TRUE)
+ endif (UMFPACK_INCLUDES AND UMFPACK_LIBRARIES)
+ 
+-find_path(UMFPACK_INCLUDES
++find_path(UMFPACK_INCLUDE_DIR
+   NAMES
+   umfpack.h
+   PATHS
+@@ -14,7 +14,17 @@ find_path(UMFPACK_INCLUDES
    PATH_SUFFIXES
    suitesparse
    ufsparse
 +  umfpack
  )
++
++find_path(AMD_INCLUDE_DIR
++  NAMES
++  amd/amd.h
++)
++
++if(UMFPACK_INCLUDE_DIR)
++  set(UMFPACK_INCLUDES ${UMFPACK_INCLUDE_DIR} ${AMD_INCLUDE_DIR})
++endif()
  
  find_library(UMFPACK_LIBRARIES umfpack PATHS $ENV{UMFPACKDIR} ${LIB_INSTALL_DIR})
+ 
