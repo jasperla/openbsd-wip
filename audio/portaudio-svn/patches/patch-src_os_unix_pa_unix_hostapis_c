@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_os_unix_pa_unix_hostapis_c,v 1.2 2013/03/12 00:59:50 brad Exp $
+--- src/os/unix/pa_unix_hostapis.c.orig	Thu Jul  5 23:44:45 2012
++++ src/os/unix/pa_unix_hostapis.c	Thu Jul  5 23:49:33 2012
+@@ -44,6 +44,7 @@
+ 
+ PaError PaJack_Initialize( PaUtilHostApiRepresentation **hostApi, PaHostApiIndex index );
+ PaError PaAlsa_Initialize( PaUtilHostApiRepresentation **hostApi, PaHostApiIndex index );
++PaError PaSndio_Initialize( PaUtilHostApiRepresentation **hostApi, PaHostApiIndex index );
+ PaError PaOSS_Initialize( PaUtilHostApiRepresentation **hostApi, PaHostApiIndex index );
+ /* Added for IRIX, Pieter, oct 2, 2003: */
+ PaError PaSGI_Initialize( PaUtilHostApiRepresentation **hostApi, PaHostApiIndex index );
+@@ -78,6 +79,10 @@ PaUtilHostApiInitializer *paHostApiInitializers[] =
+ #endif
+ 
+ #endif  /* __linux__ */
++
++#ifdef PA_USE_SNDIO
++	PaSndio_Initialize,
++#endif
+ 
+ #if PA_USE_JACK
+         PaJack_Initialize,
