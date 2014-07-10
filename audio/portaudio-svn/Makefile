@@ -5,10 +5,10 @@ COMMENT=		portable cross-platform audio API
 DISTNAME =		pa_stable_v19_20140130
 PKGNAME =		portaudio-svn-1919
 CATEGORIES=		audio
-MASTER_SITES=		http://www.portaudio.com/archives/
-EXTRACT_SUFX=		.tgz
+MASTER_SITES =		http://www.portaudio.com/archives/
+EXTRACT_SUFX =		.tgz
 
-SHARED_LIBS=		portaudio	1.1
+SHARED_LIBS =		portaudio	1.1
 
 HOMEPAGE=		http://www.portaudio.com/
 
