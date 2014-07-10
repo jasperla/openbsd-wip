@@ -2,13 +2,12 @@
 
 COMMENT=	free audio editor
 
-V=		1.3.9
+V =		2.0.5
 DISTNAME=	audacity-minsrc-${V}
 PKGNAME=	audacity-${V}
-REVISION=	5
 CATEGORIES=	audio
 
-EXTRACT_SUFX=	.tar.bz2
+EXTRACT_SUFX=	.tar.xz
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=audacity/}
 
@@ -32,12 +31,13 @@ LIB_DEPENDS=	x11/wxWidgets>=2.8.6 \
 		audio/libvorbis \
 		audio/libid3tag \
 		audio/libmad \
-		audio/portaudio-svn>=1406p1 \
+		audio/portaudio-svn>=1919 \
 		audio/soundtouch \
 		audio/vamp-plugin-sdk \
 		audio/taglib
 RUN_DEPENDS=	devel/desktop-file-utils \
-		misc/shared-mime-info
+		misc/shared-mime-info \
+		x11/gtk+2,-guic
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
@@ -73,6 +73,7 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--without-redland \
 			--without-slv2 \
 			--without-liblrdf \
+			--with-portaudio=system \
 			--with-portmixer=no
 
 MAKE_FLAGS=		CC="${CC}"

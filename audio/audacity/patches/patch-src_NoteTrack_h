@@ -1,0 +1,13 @@
+$OpenBSD$
+Avoid conflicts with games/allegro's allegro.h.
+--- src/NoteTrack.h.orig	Thu Jul 10 03:25:44 2014
++++ src/NoteTrack.h	Thu Jul 10 03:24:30 2014
+@@ -19,7 +19,7 @@
+ 
+ #if defined(USE_MIDI)
+ 
+-#include "allegro.h"
++#include "../lib-src/portsmf/allegro.h"
+ 
+ // define this switch to play MIDI during redisplay to sonify run times
+ // Note that if SONIFY is defined, the default MIDI device will be opened
