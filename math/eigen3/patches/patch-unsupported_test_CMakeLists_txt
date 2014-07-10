@@ -1,16 +1,7 @@
 $OpenBSD$
 Allow tests to build.
---- unsupported/test/CMakeLists.txt.orig	Wed Jul 24 05:48:35 2013
-+++ unsupported/test/CMakeLists.txt	Sun Oct 27 03:24:02 2013
-@@ -52,7 +52,7 @@ else()
-   ei_add_property(EIGEN_MISSING_BACKENDS "MPFR C++, ")
- endif()
- 
--ei_add_test(sparse_extra   "" "")
-+ ei_add_test(sparse_extra   "" "")
- 
- find_package(FFTW)
- if(FFTW_FOUND)
+--- unsupported/test/CMakeLists.txt.orig	Wed Feb 26 16:35:18 2014
++++ unsupported/test/CMakeLists.txt	Thu Jul 10 10:38:58 2014
 @@ -75,6 +75,7 @@ if(NOT EIGEN_TEST_NO_OPENGL)
    if(OPENGL_FOUND AND GLUT_FOUND AND GLEW_FOUND)
      ei_add_property(EIGEN_TESTED_BACKENDS "OpenGL, ")
