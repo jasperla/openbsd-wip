@@ -17,12 +17,15 @@ HOMEPAGE=	http://audacity.sourceforge.net/
 PERMIT_PACKAGE_CDROM=   Yes
 
 WANTLIB += c expat glib-2.0 gobject-2.0 gtk-x11-2.0 m ogg pthread
-WANTLIB += sndfile sndio stdc++ wx_base_xml wx_base_odbc wx_gtk2_aui
+WANTLIB += sndfile stdc++ wx_base_xml wx_base_odbc wx_gtk2_aui
 WANTLIB += wx_gtk2_html wx_gtk2_adv wx_gtk2_xrc wx_base_net wx_gtk2_dbgrid
 WANTLIB += wx_gtk2_qa wx_base wx_gtk2_core wx_gtk2_richtext samplerate>=1
 WANTLIB += FLAC>=8 FLAC++>=7 vorbis>=5 vorbisfile>=4 vorbisenc>=2
 WANTLIB += id3tag>=2 mad>=2 portaudio>=1 SoundTouch vamp-hostsdk>=1
-WANTLIB += tag
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 cairo fontconfig freetype gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 intl pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 z
 
 BUILD_DEPENDS=	archivers/zip
 LIB_DEPENDS=	x11/wxWidgets>=2.8.6 \
