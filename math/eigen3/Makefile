@@ -10,6 +10,8 @@ DISTNAME =	${VERSION}
 PKGNAME =	eigen3-${VERSION}
 WRKDIST =	${WRKDIR}/eigen-eigen-6b38706d90a9
 
+MAINTAINER =	Vadim Zhukov <persgray@gmail.com>
+
 # Mostly MPLv2, also LGPLv2.1, LGPLv2.1+ and BSDL
 PERMIT_PACKAGE_CDROM =	Yes
 
