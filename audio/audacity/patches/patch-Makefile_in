@@ -1,15 +1,14 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2009/03/14 03:49:43 jakemsr Exp $
---- Makefile.in.orig	Tue Jan 27 12:52:00 2009
-+++ Makefile.in	Tue Feb 10 03:21:24 2009
-@@ -30,17 +30,11 @@ install: audacity $(EXTRAINSTALLTARGETS)
+$OpenBSD$
+--- Makefile.in.orig	Thu Jul 10 00:10:38 2014
++++ Makefile.in	Thu Jul 10 00:11:05 2014
+@@ -32,16 +32,11 @@ install: audacity $(EXTRAINSTALLTARGETS)
  	$(INSTALL) -d $(DESTDIR)$(BINDIR)
  	$(INSTALL) -m 755 audacity $(DESTDIR)$(BINDIR)/$(AUDACITY_NAME)
  
 -	# install docs
--	$(INSTALL) -d $(DESTDIR)$(DATADIR)/$(AUDACITY_NAME)
--	$(INSTALL) -d $(DESTDIR)$(DATADIR)/doc/$(AUDACITY_NAME)
--	$(INSTALL) -m 644 README.txt $(DESTDIR)$(DATADIR)/doc/$(AUDACITY_NAME)/README.txt
--	$(INSTALL) -m 644 LICENSE.txt $(DESTDIR)$(DATADIR)/doc/$(AUDACITY_NAME)/LICENSE.txt
+-	$(INSTALL) -d $(DESTDIR)$(DOCDIR)/
+-	$(INSTALL) -m 644 README.txt $(DESTDIR)$(DOCDIR)/README.txt
+-	$(INSTALL) -m 644 LICENSE.txt $(DESTDIR)$(DOCDIR)/LICENSE.txt
 -
  	# install manpage
  	$(INSTALL) -d $(DESTDIR)$(MANDIR)/man1

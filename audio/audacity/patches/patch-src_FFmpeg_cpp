@@ -1,27 +1,25 @@
-$OpenBSD: patch-src_FFmpeg_cpp,v 1.3 2009/10/28 18:40:13 jakemsr Exp $
---- src/FFmpeg.cpp.orig	Mon Aug 31 03:45:39 2009
-+++ src/FFmpeg.cpp	Sat Oct 17 14:29:54 2009
-@@ -485,11 +485,13 @@ class FindFFmpegDialog : public wxDialog (public)
+$OpenBSD$
+Disable "download ffmpeg" buttons in GUI, since ffmpeg is provided by packages.
+--- src/FFmpeg.cpp.orig	Thu Jul 10 02:51:43 2014
++++ src/FFmpeg.cpp	Thu Jul 10 02:52:46 2014
+@@ -649,12 +649,6 @@ class FindFFmpegDialog : public wxDialog (public)
        }
     }
  
-+#if 0
-    void OnDownload(wxCommandEvent & event)
-    {
-       wxString page = wxT("http://www.audacityteam.org/manual/index.php?title=FAQ:Installation_and_Plug-Ins%23installffmpeg");
-       ::OpenInDefaultBrowser(page);
-    }
-+#endif
- 
+-   void OnDownload(wxCommandEvent & WXUNUSED(event))
+-   {
+-      wxString page = wxT("http://manual.audacityteam.org/o/man/faq_installation_and_plug_ins.html#ffdown");
+-      ::OpenInDefaultBrowser(page);
+-   }
+-
     wxString GetLibPath()
     {
-@@ -511,7 +513,9 @@ class FindFFmpegDialog : public wxDialog (public)
+       return mLibPath.GetFullPath();
+@@ -675,7 +669,6 @@ class FindFFmpegDialog : public wxDialog (public)
  
  BEGIN_EVENT_TABLE(FindFFmpegDialog, wxDialog)
     EVT_BUTTON(ID_FFMPEG_BROWSE, FindFFmpegDialog::OnBrowse)
-+#if 0
-    EVT_BUTTON(ID_FFMPEG_DLOAD,  FindFFmpegDialog::OnDownload)
-+#endif
+-   EVT_BUTTON(ID_FFMPEG_DLOAD,  FindFFmpegDialog::OnDownload)
  END_EVENT_TABLE()
  
  
