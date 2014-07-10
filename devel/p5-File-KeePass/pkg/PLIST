@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/File/
+${P5SITE}/File/KeePass.pm
+@man man/man3p/File::KeePass.3p
