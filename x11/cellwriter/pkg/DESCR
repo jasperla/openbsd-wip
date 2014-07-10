@@ -1,5 +1,0 @@
-CellWriter is a grid-entry natural handwriting input panel.
-Writer-dependent, CellWriter learns your handwriting for reliable
-recognition. Correcting preprocessor algorithms account for digitizer
-noise, differing stroke order, direction, and number of strokes. Unicode
-support enables you to write in any language.
