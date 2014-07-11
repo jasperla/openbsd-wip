@@ -1,7 +1,5 @@
 # $OpenBSD: Makefile.template,v 1.60 2010/10/24 20:41:23 ajacoutot Exp $
 
-SHARED_ONLY =		Yes
-
 COMMENT =		historical real-time strategy game
 
 DISTNAME =		0ad-${V}-alpha-unix-build
@@ -32,7 +30,6 @@ RUN_DEPENDS =		games/0ad/data
 MODULES =		gcc4 \
 			lang/python
 MODPY_RUNDEP =		No
-MODPY_ADJ_FILES =	../../../libraries/source/cxxtest-4.3/bin/cxxtestgen
 MODGCC4_ARCHS =		*
 MODGCC4_LANGS =		c c++
 
