@@ -30,6 +30,7 @@ RUN_DEPENDS =		games/0ad/data
 MODULES =		gcc4 \
 			lang/python
 MODPY_RUNDEP =		No
+MODPY_ADJ_FILES =	../../../libraries/source/cxxtest-4.3/bin/cxxtestgen
 MODGCC4_ARCHS =		*
 MODGCC4_LANGS =		c c++
 
