@@ -162,7 +162,6 @@ share/0ad/tests/collada/sphere.pmd
 share/0ad/tests/test_setup.js
 share/applications/
 share/applications/0ad.desktop
-share/doc/pkg-readmes/${FULLPKGNAME}
 share/pixmaps/
 share/pixmaps/0ad.png
 @exec %D/bin/update-desktop-database
