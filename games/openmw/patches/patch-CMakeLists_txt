@@ -1,7 +1,7 @@
 $OpenBSD$
---- CMakeLists.txt.orig	Wed Jan  8 20:27:33 2014
-+++ CMakeLists.txt	Wed Jan 15 09:47:56 2014
-@@ -208,6 +208,7 @@ IF(BOOST_STATIC)
+--- CMakeLists.txt.orig	Fri May 23 13:55:47 2014
++++ CMakeLists.txt	Fri Jul 11 23:45:50 2014
+@@ -239,6 +239,7 @@ IF(BOOST_STATIC)
      set(Boost_USE_STATIC_LIBS   ON)
  endif()
  
@@ -9,7 +9,7 @@ $OpenBSD$
  find_package(OGRE REQUIRED)
  find_package(MyGUI REQUIRED)
  find_package(Boost REQUIRED COMPONENTS ${BOOST_COMPONENTS})
-@@ -223,6 +224,7 @@ set(OGRE_PLUGIN_INCLUDE_DIRS ${OGRE_Plugin_CgProgramMa
+@@ -254,6 +255,7 @@ set(OGRE_PLUGIN_INCLUDE_DIRS ${OGRE_Plugin_CgProgramMa
  ENDIF(WIN32)
  ENDIF(OGRE_STATIC)
  include_directories("."
@@ -17,7 +17,7 @@ $OpenBSD$
      ${OGRE_INCLUDE_DIR} ${OGRE_INCLUDE_DIR}/Ogre ${OGRE_INCLUDE_DIR}/OGRE ${OGRE_PLUGIN_INCLUDE_DIRS}
      ${SDL2_INCLUDE_DIR}
      ${Boost_INCLUDE_DIR}
-@@ -234,7 +236,7 @@ include_directories("."
+@@ -264,7 +266,7 @@ include_directories("."
      ${LIBDIR}
  )
  
@@ -26,19 +26,3 @@ $OpenBSD$
  
  if (APPLE)
      # List used Ogre plugins
-@@ -397,11 +399,11 @@ IF(NOT WIN32 AND NOT APPLE)
-     ENDIF(BUILD_OPENCS)
- 
-     # Install global configuration files
--    INSTALL(FILES "${OpenMW_BINARY_DIR}/settings-default.cfg" DESTINATION "${SYSCONFDIR}" PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ COMPONENT "openmw")
--    INSTALL(FILES "${OpenMW_BINARY_DIR}/transparency-overrides.cfg" DESTINATION "${SYSCONFDIR}" PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ COMPONENT "openmw")
--    INSTALL(FILES "${OpenMW_BINARY_DIR}/openmw.cfg.install" DESTINATION "${SYSCONFDIR}" RENAME "openmw.cfg" PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ COMPONENT "openmw")
-+    INSTALL(FILES "${OpenMW_BINARY_DIR}/settings-default.cfg" DESTINATION "${DATAROOTDIR}/examples/openmw" PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ COMPONENT "openmw")
-+    INSTALL(FILES "${OpenMW_BINARY_DIR}/transparency-overrides.cfg" DESTINATION "${DATAROOTDIR}/examples/openmw" PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ COMPONENT "openmw")
-+    INSTALL(FILES "${OpenMW_BINARY_DIR}/openmw.cfg.install" DESTINATION "${DATAROOTDIR}/examples/openmw" RENAME "openmw.cfg" PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ COMPONENT "openmw")
-     IF(BUILD_OPENCS)
--        INSTALL(FILES "${OpenMW_BINARY_DIR}/opencs.cfg" DESTINATION "${SYSCONFDIR}" PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ COMPONENT "opencs")
-+        INSTALL(FILES "${OpenMW_BINARY_DIR}/opencs.cfg" DESTINATION "${DATAROOTDIR}/examples/openmw" PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ COMPONENT "opencs")
-     ENDIF(BUILD_OPENCS)
- 
-     # Install resources

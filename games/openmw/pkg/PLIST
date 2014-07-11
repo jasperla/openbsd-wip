@@ -9,8 +9,8 @@ share/applications/openmw.desktop
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/openmw/
 @sample ${SYSCONFDIR}/openmw/
-share/examples/openmw/opencs.cfg
-@sample ${SYSCONFDIR}/openmw/opencs.cfg
+share/examples/openmw/opencs.ini
+@sample ${SYSCONFDIR}/openmw/opencs.ini
 share/examples/openmw/openmw.cfg
 @sample ${SYSCONFDIR}/openmw/openmw.cfg
 share/examples/openmw/settings-default.cfg
@@ -20,7 +20,6 @@ share/examples/openmw/transparency-overrides.cfg
 share/licenses/
 share/licenses/openmw/
 share/licenses/openmw/DejaVu Font License.txt
-share/licenses/openmw/OFL.txt
 share/licenses/openmw/Shiny License.txt
 share/openmw/
 share/openmw/data/
@@ -70,8 +69,6 @@ share/openmw/resources/materials/watersim_heightmap.shader
 share/openmw/resources/materials/watersim_heighttonormal.shader
 share/openmw/resources/mygui/
 share/openmw/resources/mygui/DejaVuLGCSansMono.ttf
-share/openmw/resources/mygui/EBGaramond-Regular.ttf
-share/openmw/resources/mygui/bigbars.png
 share/openmw/resources/mygui/black.png
 share/openmw/resources/mygui/core.skin
 share/openmw/resources/mygui/core.xml
@@ -149,7 +146,6 @@ share/openmw/resources/mygui/openmw_travel_window.layout
 share/openmw/resources/mygui/openmw_wait_dialog.layout
 share/openmw/resources/mygui/openmw_wait_dialog_progressbar.layout
 share/openmw/resources/mygui/openmw_windows.skin.xml
-share/openmw/resources/mygui/smallbars.png
 share/openmw/resources/water/
 share/openmw/resources/water/circle.png
 share/openmw/resources/water/water_nm.png
