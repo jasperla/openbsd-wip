@@ -8,6 +8,8 @@ V ?= 			0.0.16
 
 HOMEPAGE = 		http://play0ad.com/
 
+MAINTAINER =		Anthony J. Bentley <anthony@cathet.us>
+
 MASTER_SITES =		http://releases.wildfiregames.com/ \
 			${MASTER_SITE_SOURCEFORGE:=zero-ad/}
 
