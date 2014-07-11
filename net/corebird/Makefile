@@ -22,7 +22,7 @@ COMMENT =		corebird
 #
 # What port/package will be created
 #
-GH_VER =		0.7
+GH_VER =		0.8
 DISTNAME =		corebird-${GH_VER}
 #PKGNAME =		???
 #PKGNAME-foo =		???	for multi packages
@@ -94,8 +94,11 @@ DISTFILES =		${DISTNAME}{${GH_VER}}${EXTRACT_SUFX}
 
 # Dependencies
 #
-MODULES =		devel/cmake
-#BUILD_DEPENDS =	???
+#MODULES =		devel/cmake
+BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool
+
 #RUN_DEPENDS =		???
 LIB_DEPENDS =		x11/gtk+3 \
 			devel/glib2 \
@@ -104,7 +107,8 @@ LIB_DEPENDS =		x11/gtk+3 \
 			devel/libnotify \
 			devel/libsoup \
 			devel/libgee \
-			lang/vala
+			lang/vala \
+			multimedia/gstreamer1/core
 #TEST_DEPENDS =		???
 
 #MAKE_FLAGS =		???
@@ -114,10 +118,10 @@ LIB_DEPENDS =		x11/gtk+3 \
 
 # build/configuration variables
 #
-SEPARATE_BUILD =	No
+#SEPARATE_BUILD =	No
 #SEPARATE_BUILD =	flavored (distinct flavors may share a common WRKSRC)
 USE_GMAKE =		Yes
-USE_NINJA = No
+#USE_NINJA = No
 #USE_GROFF =		Yes
 # Programs that require GNU libtool to build instead of the OpenBSD one
 # should use this option.
@@ -133,7 +137,10 @@ USE_NINJA = No
 # 	  imake [noman]: port uses imake for configuration.
 #	  (noman: no man page installation)
 # 	  simple: port has its own configure script
-#CONFIGURE_STYLE =	
+
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.14
+CONFIGURE_STYLE =	gnu
 #CONFIGURE_SCRIPT =	??? (if other than configure)
 #CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 #CONFIGURE_ENV =	???
@@ -195,5 +202,10 @@ USE_NINJA = No
 #ALL_TARGET =		???
 #INSTALL_TARGET =	???
 #TEST_TARGET =		???
+
+post-patch:
+		@cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+			AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
+
 
 .include <bsd.port.mk>
