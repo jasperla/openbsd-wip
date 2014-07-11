@@ -1,9 +1,0 @@
-@comment $OpenBSD$
-@bin bin/lynx
-@man man/man1/lynx.1
-share/lynx/
-@sample ${SYSCONFDIR}/lynx-devel/
-share/lynx/lynx.cfg
-@sample ${SYSCONFDIR}/lynx-devel/lynx.cfg
-share/lynx/lynx.lss
-@sample ${SYSCONFDIR}/lynx-devel/lynx.lss
