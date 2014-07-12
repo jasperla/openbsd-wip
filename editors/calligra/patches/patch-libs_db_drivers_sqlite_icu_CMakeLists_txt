@@ -1,4 +1,5 @@
 $OpenBSD$
+Unbreak build.
 --- libs/db/drivers/sqlite/icu/CMakeLists.txt.orig	Thu Jan  9 18:22:40 2014
 +++ libs/db/drivers/sqlite/icu/CMakeLists.txt	Thu Jan  9 18:23:03 2014
 @@ -1,5 +1,7 @@
