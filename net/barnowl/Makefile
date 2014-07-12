@@ -2,7 +2,7 @@
 
 COMMENT =		IM client
 
-V =			1.8.1
+V =			1.9
 DISTNAME =		barnowl-${V}-src
 PKGNAME =		barnowl-${V}
 
@@ -22,7 +22,7 @@ MASTER_SITES =		${HOMEPAGE}/dist/
 EXTRACT_SUFX =		.tgz
 
 MODULES =		perl devel/gettext
-BUILD_DEPENDS =		devel/p5-Glib2
+BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/p5-Glib2 \
 			devel/p5-AnyEvent \
 			devel/p5-Class-Accessor \
