@@ -1,7 +1,7 @@
 $OpenBSD$
---- samples_framework/src/CEGuiOgreBaseApplication.cpp.orig	Wed Jul 10 07:49:33 2013
-+++ samples_framework/src/CEGuiOgreBaseApplication.cpp	Wed Jul 10 07:49:49 2013
-@@ -29,7 +29,7 @@
+--- samples_framework/src/CEGuiOgreBaseApplication.cpp.orig.port	Mon Jul  7 09:06:18 2014
++++ samples_framework/src/CEGuiOgreBaseApplication.cpp	Sat Jul 12 22:00:56 2014
+@@ -28,7 +28,7 @@
  #   include "config.h"
  #endif
  
