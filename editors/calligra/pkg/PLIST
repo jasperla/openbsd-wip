@@ -102,7 +102,7 @@ include/kde4/calligra/KoEmbeddedDocumentSaver.h
 include/kde4/calligra/KoEventActionAddCommand.h
 include/kde4/calligra/KoEventActionRemoveCommand.h
 include/kde4/calligra/KoFallBackColorTransformation.h
-include/kde4/calligra/KoFileDialogHelper.h
+include/kde4/calligra/KoFileDialog.h
 include/kde4/calligra/KoFillConfigWidget.h
 include/kde4/calligra/KoFilter.h
 include/kde4/calligra/KoFilterChain.h
@@ -789,6 +789,7 @@ lib/kde4/calligra_filter_karbon1x2karbon.so
 lib/kde4/calligra_filter_karbon2image.so
 lib/kde4/calligra_filter_karbon2svg.so
 lib/kde4/calligra_filter_karbon2wmf.so
+lib/kde4/calligra_filter_kpr2odp.so
 lib/kde4/calligra_filter_kspread2tex.so
 lib/kde4/calligra_filter_mpxj2plan.so
 lib/kde4/calligra_filter_odt2ascii.so
@@ -849,6 +850,7 @@ lib/kde4/karbonfiltereffects.so
 lib/kde4/karbonpart.so
 lib/kde4/karbontools.so
 lib/kde4/kexidb_mysqldriver.so
+lib/kde4/kexidb_pqxxsqldriver.so
 lib/kde4/kexidb_sqlite3_icu.so
 lib/kde4/kexidb_sqlite3driver.so
 lib/kde4/kexidb_sybasedriver.so
@@ -861,6 +863,7 @@ lib/kde4/kexihandler_script.so
 lib/kde4/kexihandler_table.so
 lib/kde4/keximigrate_mdb.so
 lib/kde4/keximigrate_mysql.so
+lib/kde4/keximigrate_pqxx.so
 lib/kde4/keximigrate_spreadsheet.so
 lib/kde4/keximigrate_sybase.so
 lib/kde4/keximigrate_txt.so
@@ -933,10 +936,13 @@ lib/kde4/kritaimagedocker.so
 lib/kde4/kritaimageenhancement.so
 lib/kde4/kritaimagesize.so
 lib/kde4/kritaimagesplit.so
+lib/kde4/kritajp2export.so
+lib/kde4/kritajp2import.so
 lib/kde4/kritajpegexport.so
 lib/kde4/kritajpegimport.so
 lib/kde4/kritalayergroupswitcher.so
 lib/kde4/kritalevelfilter.so
+lib/kde4/kritalutdocker.so
 lib/kde4/kritametadataeditor.so
 lib/kde4/kritamodifyselection.so
 lib/kde4/kritanoisefilter.so
@@ -1098,6 +1104,7 @@ share/applications/kde4/krita.desktop
 share/applications/kde4/krita_bmp.desktop
 share/applications/kde4/krita_exr.desktop
 share/applications/kde4/krita_flipbook.desktop
+share/applications/kde4/krita_jp2.desktop
 share/applications/kde4/krita_jpeg.desktop
 share/applications/kde4/krita_odg.desktop
 share/applications/kde4/krita_ora.desktop
@@ -7249,6 +7256,7 @@ share/kde4/services/calligra_filter_karbon2jpg.desktop
 share/kde4/services/calligra_filter_karbon2png.desktop
 share/kde4/services/calligra_filter_karbon2svg.desktop
 share/kde4/services/calligra_filter_karbon2wmf.desktop
+share/kde4/services/calligra_filter_kpr2odp.desktop
 share/kde4/services/calligra_filter_kspread2tex.desktop
 share/kde4/services/calligra_filter_mpp2plan.desktop
 share/kde4/services/calligra_filter_mpx2plan.desktop
@@ -7320,10 +7328,12 @@ share/kde4/services/kexi/kexireporthandler.desktop
 share/kde4/services/kexi/kexiscripthandler.desktop
 share/kde4/services/kexi/kexitablehandler.desktop
 share/kde4/services/kexidb_mysqldriver.desktop
+share/kde4/services/kexidb_pqxxsqldriver.desktop
 share/kde4/services/kexidb_sqlite3driver.desktop
 share/kde4/services/kexidb_sybasedriver.desktop
 share/kde4/services/keximigrate_mdb.desktop
 share/kde4/services/keximigrate_mysql.desktop
+share/kde4/services/keximigrate_pqxx.desktop
 share/kde4/services/keximigrate_spreadsheet.desktop
 share/kde4/services/keximigrate_sybase.desktop
 share/kde4/services/keximigrate_txt.desktop
@@ -7362,9 +7372,12 @@ share/kde4/services/krita_digitalmixer.desktop
 share/kde4/services/krita_exr_export.desktop
 share/kde4/services/krita_exr_import.desktop
 share/kde4/services/krita_flipbook_import.desktop
+share/kde4/services/krita_jp2_export.desktop
+share/kde4/services/krita_jp2_import.desktop
 share/kde4/services/krita_jpeg_export.desktop
 share/kde4/services/krita_jpeg_import.desktop
 share/kde4/services/krita_kra_thumbnail.desktop
+share/kde4/services/krita_lutdocker.desktop
 share/kde4/services/krita_odg_import.desktop
 share/kde4/services/krita_ora_export.desktop
 share/kde4/services/krita_ora_import.desktop
@@ -7487,6 +7500,7 @@ share/kde4/services/sheets_xlsx_thumbnail.desktop
 share/kde4/services/sheetspart.desktop
 share/kde4/services/sheetsscripting.desktop
 share/kde4/services/sheetssolver.desktop
+share/kde4/services/stage_kpr_thumbnail.desktop
 share/kde4/services/stage_odp_thumbnail.desktop
 share/kde4/services/stage_powerpoint_thumbnail.desktop
 share/kde4/services/stage_pptx_thumbnail.desktop
