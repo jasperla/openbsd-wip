@@ -141,7 +141,7 @@ LIB_DEPENDS =	databases/freetds \
 		${MODKDE4_DEP_DIR}/marble \
 		${MODKDE4_DEP_DIR}/okular
 
-# XXX
+# XXX FindPqxx.cmake should be fixed instead of hardcoding version here
 CONFIGURE_ARGS =	-DPQXX_VERSION=4.0.1 \
 	-DOPENJPEG_INCLUDE_DIR=${LOCALBASE}/include/openjpeg-1.5
 
