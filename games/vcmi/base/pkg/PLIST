@@ -33,6 +33,7 @@ share/vcmi/Mods/WoG/config/wog/
 share/vcmi/Mods/WoG/config/wog/artifacts.json
 share/vcmi/Mods/WoG/config/wog/creatures.json
 share/vcmi/Mods/WoG/config/wog/heroClasses.json
+share/vcmi/Mods/WoG/config/wog/spells.json
 share/vcmi/Mods/WoG/config/wogFileOverrides.json
 share/vcmi/Mods/WoG/mod.json
 @comment share/vcmi/Mods/vcmi/Data/s/std.verm
@@ -68,7 +69,6 @@ share/vcmi/config/creatures/special.json
 share/vcmi/config/creatures/stronghold.json
 share/vcmi/config/creatures/tower.json
 share/vcmi/config/defaultMods.json
-share/vcmi/config/dwellings.json
 share/vcmi/config/factions/
 share/vcmi/config/factions/castle.json
 share/vcmi/config/factions/conflux.json
@@ -97,6 +97,12 @@ share/vcmi/config/heroes/stronghold.json
 share/vcmi/config/heroes/tower.json
 share/vcmi/config/mainmenu.json
 share/vcmi/config/mapOverrides.json
+share/vcmi/config/objects/
+share/vcmi/config/objects/creatureBanks.json
+share/vcmi/config/objects/dwellings.json
+share/vcmi/config/objects/generic.json
+share/vcmi/config/objects/moddables.json
+share/vcmi/config/objects/rewardable.json
 share/vcmi/config/obstacles.json
 share/vcmi/config/resolutions.json
 share/vcmi/config/resources.json
@@ -110,12 +116,21 @@ share/vcmi/config/schemas/hero.json
 share/vcmi/config/schemas/heroClass.json
 share/vcmi/config/schemas/mapHeader.json
 share/vcmi/config/schemas/mod.json
+share/vcmi/config/schemas/object.json
+share/vcmi/config/schemas/objectTemplate.json
+share/vcmi/config/schemas/objectType.json
 share/vcmi/config/schemas/settings.json
+share/vcmi/config/schemas/spell.json
 share/vcmi/config/schemas/townBuilding.json
 share/vcmi/config/schemas/townSiege.json
 share/vcmi/config/schemas/townStructure.json
 share/vcmi/config/sp_sounds.json
-share/vcmi/config/spell_info.json
+share/vcmi/config/spells/
+share/vcmi/config/spells/ability.json
+share/vcmi/config/spells/adventure.json
+share/vcmi/config/spells/offensive.json
+share/vcmi/config/spells/other.json
+share/vcmi/config/spells/timed.json
 share/vcmi/config/startres.json
 share/vcmi/config/terrainViewPatterns.json
 share/vcmi/config/terrains.json

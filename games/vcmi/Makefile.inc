@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-V ?= 			0.95
+V ?= 			0.96
 
 CATEGORIES =		games games/vcmi
 
