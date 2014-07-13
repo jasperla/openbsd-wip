@@ -52,7 +52,6 @@ CONFIGURE_ARGS +=	--without-nvtt \
 			--datadir=${PREFIX}/share/0ad \
 			--libdir=${PREFIX}/lib \
 			--minimal-flags
-CONFIGURE_ENV =		MAKE=${MAKE_PROGRAM}
 
 # XXX atlas (the level editor) requires threaded libxml
 CONFIGURE_ARGS +=	--disable-atlas
