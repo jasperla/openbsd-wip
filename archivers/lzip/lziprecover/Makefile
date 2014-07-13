@@ -2,11 +2,11 @@
 
 COMMENT =		data recovery tool and decompressor for lzip files
 
-DISTNAME =		lziprecover-1.16-pre2
+DISTNAME =		lziprecover-1.16-rc1
 
 HOMEPAGE =		http://lzip.nongnu.org/lziprecover.html
 
-# GPLv3+
+# GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c m stdc++
