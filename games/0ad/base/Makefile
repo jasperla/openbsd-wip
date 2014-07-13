@@ -5,9 +5,10 @@ COMMENT =		historical real-time strategy game
 DISTNAME =		0ad-${V}-alpha-unix-build
 PKGNAME =		0ad-${V}
 
-WANTLIB += GL SDL X11 Xcursor boost_filesystem c curl enet execinfo
-WANTLIB += gloox iconv icui18n icuuc jpeg m miniupnpc mozjs-24
-WANTLIB += openal png pthread vorbisfile xml2 z
+WANTLIB += GL SDL X11 Xcursor boost_filesystem boost_system c
+WANTLIB += curl enet execinfo gloox icui18n icuuc jpeg m miniupnpc
+WANTLIB += mozjs-24 nspr4 ogg openal plc4 plds4 png pthread vorbis
+WANTLIB += vorbisfile xml2 z
 
 BUILD_DEPENDS =		shells/bash
 
@@ -28,14 +29,18 @@ LIB_DEPENDS =		audio/libvorbis \
 			textproc/libxml
 RUN_DEPENDS =		games/0ad/data
 MODULES =		gcc4 \
-			lang/python
+			lang/python \
+			converters/libiconv
 MODPY_RUNDEP =		No
 MODPY_ADJ_FILES =	../../../libraries/source/cxxtest-4.3/bin/cxxtestgen
 MODGCC4_ARCHS =		*
 MODGCC4_LANGS =		c c++
 
-MAKE_FLAGS =		SILENT= \
-			CXX="${CXX}"
+MAKE_FLAGS =		SILENT=
+MAKE_ENV =		CC="${CC}" \
+			CXX="${CXX}" \
+			CFLAGS="${CFLAGS}" \
+			CXXFLAGS="${CXXFLAGS}"
 
 PATCHORIG =		.orig.port
 
@@ -57,11 +62,14 @@ WRKSRC =		${WRKDIST}/build/workspaces/gcc
 
 do-configure:
 	cd ${WRKDIST}/build/workspaces && \
-		${SETENV} ${CONFIGURE_ENV} ./update-workspaces.sh ${CONFIGURE_ARGS}
+		${SETENV} CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
+		CXXFLAGS="${CXXFLAGS}" ${CONFIGURE_ENV} verbose=1 \
+		./update-workspaces.sh ${CONFIGURE_ARGS}
 
 do-build:
 	cd ${WRKDIST}/libraries/source/fcollada/src && \
-		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS}
+		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
+			-f ${MAKE_FILE} ${ALL_TARGET}
 	cd ${WRKSRC} &&\
 		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
 			-f ${MAKE_FILE} ${ALL_TARGET}
