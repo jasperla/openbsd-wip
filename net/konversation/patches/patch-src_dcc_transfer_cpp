@@ -1,5 +1,6 @@
 $OpenBSD$
 Remove stupid cruft.
+REVIEW: https://git.reviewboard.kde.org/r/119256/
 --- src/dcc/transfer.cpp.orig	Mon Jan 20 02:55:27 2014
 +++ src/dcc/transfer.cpp	Mon Jan 20 03:00:16 2014
 @@ -23,20 +23,6 @@
