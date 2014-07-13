@@ -1,8 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	organizer for book/music/video collections for KDE4
-DISTNAME =	tellico-2.3.7
-REVISION =	1
+DISTNAME =	tellico-2.3.9
 
 CATEGORIES =	productivity x11
 HOMEPAGE =	http://tellico-project.org/
@@ -11,7 +10,7 @@ MAINTAINER =	KDE porting team <openbsd-kde@googlegroups.com>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =  c m pthread stdc++ z
+WANTLIB =  c m pthread z
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kabc ${KDE4LIB}/kcal ${KDE4LIB}/kcddb
@@ -25,7 +24,7 @@ WANTLIB += soprano tag xml2 xslt yaz
 MASTER_SITES =	http://tellico-project.org/files/
 EXTRACT_SUFX =	.tar.bz2
 
-MODULES =	devel/gettext x11/kde4 lang/python
+MODULES =	devel/gettext x11/kde4 multimedia/phonon lang/python
 MODKDE4_USE =	pim
 
 BUILD_DEPENDS =	${MODKDE4_DEP_DIR}/libkcompactdisc
@@ -40,13 +39,13 @@ LIB_DEPENDS =	audio/taglib \
 		net/yaz \
 		print/poppler,,-qt4 \
 		textproc/exempi \
-		${MODKDE4_DEP_DIR}/libksane>=4.10.1p0 \
+		${MODKDE4_DEP_DIR}/libksane>=4.11.5p0 \
 		${MODKDE4_DEP_DIR}/libkcddb
 
 TEST_IS_INTERACTIVE =	X11
 
-# XXX Should those go under ${PREFIX}/lib/ ?
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/share/apps/tellico/data-sources
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${PREFIX}/share/apps/tellico/data-sources
 
 .include <bsd.port.mk>

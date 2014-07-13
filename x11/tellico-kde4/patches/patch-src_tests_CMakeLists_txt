@@ -1,31 +1,17 @@
 $OpenBSD$
 Allow at least some tests to compile.
-Looks like binutils (2.15 only?) bug.
---- src/tests/CMakeLists.txt.orig	Sat Mar 30 13:27:21 2013
-+++ src/tests/CMakeLists.txt	Sat Mar 30 13:49:03 2013
-@@ -59,48 +59,49 @@ set(TELLICO_TEST_LIBS
-    ${QT_QTTEST_LIBRARY}
-    ${KDE4_KDEUI_LIBS}
-    ${KDE4_KIO_LIBS}
--   tellicotest
--   collections
-    translators
--   utils
-    core
--   images
--   core
-    gui
-+   images
-    tellicotest
+--- src/tests/CMakeLists.txt.orig	Mon Jan 20 16:03:59 2014
++++ src/tests/CMakeLists.txt	Tue Jan 21 22:28:46 2014
+@@ -47,7 +47,7 @@ SET(tellicotest_SRCS
+    ../progressmanager.cpp
     )
-+#   collections
-+#   utils
-+#   core
-+#   tellicotest
-+#   )
  
- # for some of these, the libraries seem to require being repeated so
- # that the order of linking works...no idea why...
+-KDE4_ADD_LIBRARY(tellicotest STATIC ${tellicotest_SRCS})
++ADD_LIBRARY(tellicotest STATIC ${tellicotest_SRCS})
+ 
+ ADD_DEPENDENCIES(tellicotest tellico_config)
+ 
+@@ -72,47 +72,47 @@ set(TELLICO_TEST_LIBS
  KDE4_ADD_UNIT_TEST(collectiontest NOGUI collectiontest.cpp)
  TARGET_LINK_LIBRARIES(collectiontest ${TELLICO_TEST_LIBS})
  
@@ -34,34 +20,38 @@ Looks like binutils (2.15 only?) bug.
 +#KDE4_ADD_UNIT_TEST(filtertest NOGUI filtertest.cpp)
 +#TARGET_LINK_LIBRARIES(filtertest ${TELLICO_TEST_LIBS})
  
- KDE4_ADD_UNIT_TEST(adstest NOGUI adstest.cpp)
- TARGET_LINK_LIBRARIES(adstest ${TELLICO_TEST_LIBS})
+-KDE4_ADD_UNIT_TEST(adstest NOGUI adstest.cpp)
+-TARGET_LINK_LIBRARIES(adstest ${TELLICO_TEST_LIBS})
++#KDE4_ADD_UNIT_TEST(adstest NOGUI adstest.cpp)
++#TARGET_LINK_LIBRARIES(adstest ${TELLICO_TEST_LIBS})
  
 -KDE4_ADD_UNIT_TEST(alexandriatest NOGUI alexandriatest.cpp ../progressmanager.cpp)
 -TARGET_LINK_LIBRARIES(alexandriatest ${TELLICO_TEST_LIBS})
 +#KDE4_ADD_UNIT_TEST(alexandriatest NOGUI alexandriatest.cpp ../progressmanager.cpp)
 +#TARGET_LINK_LIBRARIES(alexandriatest ${TELLICO_TEST_LIBS})
-+#
-+#KDE4_ADD_UNIT_TEST(amctest NOGUI amctest.cpp)
-+#TARGET_LINK_LIBRARIES(amctest ${TELLICO_TEST_LIBS})
-+#
+ 
+ KDE4_ADD_UNIT_TEST(amctest NOGUI amctest.cpp)
+ TARGET_LINK_LIBRARIES(amctest ${TELLICO_TEST_LIBS})
+ 
+-KDE4_ADD_UNIT_TEST(bibtextest NOGUI bibtextest.cpp)
+-TARGET_LINK_LIBRARIES(bibtextest ${TELLICO_TEST_LIBS})
 +#KDE4_ADD_UNIT_TEST(bibtextest NOGUI bibtextest.cpp)
 +#TARGET_LINK_LIBRARIES(bibtextest ${TELLICO_TEST_LIBS})
-+#
+ 
+-KDE4_ADD_UNIT_TEST(bibtexmltest NOGUI bibtexmltest.cpp)
+-TARGET_LINK_LIBRARIES(bibtexmltest ${TELLICO_TEST_LIBS})
 +#KDE4_ADD_UNIT_TEST(bibtexmltest NOGUI bibtexmltest.cpp)
 +#TARGET_LINK_LIBRARIES(bibtexmltest ${TELLICO_TEST_LIBS})
  
--KDE4_ADD_UNIT_TEST(amctest NOGUI amctest.cpp)
--TARGET_LINK_LIBRARIES(amctest ${TELLICO_TEST_LIBS})
--
--KDE4_ADD_UNIT_TEST(bibtextest NOGUI bibtextest.cpp)
--TARGET_LINK_LIBRARIES(bibtextest ${TELLICO_TEST_LIBS})
--
--KDE4_ADD_UNIT_TEST(bibtexmltest NOGUI bibtexmltest.cpp)
--TARGET_LINK_LIBRARIES(bibtexmltest ${TELLICO_TEST_LIBS})
--
- KDE4_ADD_UNIT_TEST(ciwtest NOGUI ciwtest.cpp)
- TARGET_LINK_LIBRARIES(ciwtest ${TELLICO_TEST_LIBS})
+-KDE4_ADD_UNIT_TEST(ciwtest NOGUI ciwtest.cpp)
+-TARGET_LINK_LIBRARIES(ciwtest ${TELLICO_TEST_LIBS})
++#KDE4_ADD_UNIT_TEST(ciwtest NOGUI ciwtest.cpp)
++#TARGET_LINK_LIBRARIES(ciwtest ${TELLICO_TEST_LIBS})
+ 
+-KDE4_ADD_UNIT_TEST(csvtest NOGUI csvtest.cpp)
+-TARGET_LINK_LIBRARIES(csvtest csv ${TELLICO_TEST_LIBS})
++#KDE4_ADD_UNIT_TEST(csvtest NOGUI csvtest.cpp)
++#TARGET_LINK_LIBRARIES(csvtest csv ${TELLICO_TEST_LIBS})
  
  KDE4_ADD_UNIT_TEST(delicioustest NOGUI delicioustest.cpp)
  TARGET_LINK_LIBRARIES(delicioustest ${TELLICO_TEST_LIBS})
@@ -71,16 +61,18 @@ Looks like binutils (2.15 only?) bug.
 +#KDE4_ADD_UNIT_TEST(gcstartest NOGUI gcstartest.cpp)
 +#TARGET_LINK_LIBRARIES(gcstartest ${TELLICO_TEST_LIBS})
  
- KDE4_ADD_UNIT_TEST(referencertest NOGUI referencertest.cpp)
- TARGET_LINK_LIBRARIES(referencertest ${TELLICO_TEST_LIBS})
-@@ -108,11 +109,11 @@ TARGET_LINK_LIBRARIES(referencertest ${TELLICO_TEST_LI
- KDE4_ADD_UNIT_TEST(ristest NOGUI ristest.cpp)
- TARGET_LINK_LIBRARIES(ristest ${TELLICO_TEST_LIBS})
+-KDE4_ADD_UNIT_TEST(referencertest NOGUI referencertest.cpp)
+-TARGET_LINK_LIBRARIES(referencertest ${TELLICO_TEST_LIBS})
++#KDE4_ADD_UNIT_TEST(referencertest NOGUI referencertest.cpp)
++#TARGET_LINK_LIBRARIES(referencertest ${TELLICO_TEST_LIBS})
  
--KDE4_ADD_UNIT_TEST(tellicoreadtest NOGUI tellicoreadtest.cpp)
--TARGET_LINK_LIBRARIES(tellicoreadtest tellicomodels ${TELLICO_TEST_LIBS})
-+#KDE4_ADD_UNIT_TEST(tellicoreadtest NOGUI tellicoreadtest.cpp)
-+#TARGET_LINK_LIBRARIES(tellicoreadtest tellicomodels ${TELLICO_TEST_LIBS})
+-KDE4_ADD_UNIT_TEST(ristest NOGUI ristest.cpp)
+-TARGET_LINK_LIBRARIES(ristest ${TELLICO_TEST_LIBS})
++#KDE4_ADD_UNIT_TEST(ristest NOGUI ristest.cpp)
++#TARGET_LINK_LIBRARIES(ristest ${TELLICO_TEST_LIBS})
+ 
+ KDE4_ADD_UNIT_TEST(tellicoreadtest NOGUI tellicoreadtest.cpp)
+ TARGET_LINK_LIBRARIES(tellicoreadtest tellicomodels ${TELLICO_TEST_LIBS})
  
 -KDE4_ADD_UNIT_TEST(vinoxmltest NOGUI vinoxmltest.cpp)
 -TARGET_LINK_LIBRARIES(vinoxmltest ${TELLICO_TEST_LIBS})
