@@ -1,0 +1,18 @@
+$OpenBSD$
+--- apps/openmw/crashcatcher.cpp.orig	Fri May 23 13:55:47 2014
++++ apps/openmw/crashcatcher.cpp	Fri Jul 11 23:46:54 2014
+@@ -5,11 +5,14 @@
+ #include <sys/stat.h>
+ #include <sys/wait.h>
+ #include <sys/param.h>
++#ifndef __OpenBSD__
+ #include <sys/ucontext.h>
++#endif
+ #include <sys/utsname.h>
+ #include <string.h>
+ #include <errno.h>
+ #include <limits.h>
++#include <signal.h>
+ 
+ 
+ #include <pthread.h>
