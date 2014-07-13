@@ -1,5 +1,7 @@
 # $OpenBSD: Makefile.template,v 1.60 2010/10/24 20:41:23 ajacoutot Exp $
 
+ONLY_FOR_ARCHS =	amd64 i386
+
 COMMENT =		historical real-time strategy game
 
 DISTNAME =		0ad-${V}-alpha-unix-build
@@ -56,6 +58,9 @@ CONFIGURE_ARGS +=	--without-nvtt \
 # XXX atlas (the level editor) requires threaded libxml
 CONFIGURE_ARGS +=	--disable-atlas
 
+.if ${MACHINE_ARCH} == "i386"
+CFLAGS +=		-march=i586
+.endif
 
 WRKSRC =		${WRKDIST}/build/workspaces/gcc
 
