@@ -1,4 +1,6 @@
 $OpenBSD$
+Unbreak build.
+REVIEW: https://git.reviewboard.kde.org/r/119260/
 --- src/gui/CMakeLists.txt.orig	Sat Mar 30 12:46:34 2013
 +++ src/gui/CMakeLists.txt	Sat Mar 30 12:46:54 2013
 @@ -40,3 +40,5 @@ IF(${KDE_VERSION} VERSION_LESS "4.6.99" AND ${KDE_VERS
