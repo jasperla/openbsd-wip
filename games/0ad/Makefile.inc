@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile.inc,v 1.5 2013/08/07 07:47:28 kirby Exp $
 
-SHARED_ONLY =		Yes
+ONLY_FOR_ARCHS =	amd64 i386
 
 CATEGORIES = 		games
 

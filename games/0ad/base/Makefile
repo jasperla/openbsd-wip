@@ -1,7 +1,5 @@
 # $OpenBSD: Makefile.template,v 1.60 2010/10/24 20:41:23 ajacoutot Exp $
 
-ONLY_FOR_ARCHS =	amd64 i386
-
 COMMENT =		historical real-time strategy game
 
 DISTNAME =		0ad-${V}-alpha-unix-build
