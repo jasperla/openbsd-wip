@@ -7,7 +7,7 @@ DISTNAME =	konversation-$V
 MAINTAINER =	KDE porting team <openbsd-kde@googlegroups.com>
 HOMEPAGE =	http://konversation.kde.org/
 
-WANTLIB =  c m pthread stdc++
+WANTLIB =  c m pthread
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtSql lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kabc ${KDE4LIB}/kde3support ${KDE4LIB}/kdeui
@@ -24,7 +24,6 @@ PERMIT_PACKAGE_CDROM =          Yes
 
 MODULES =	x11/kde4 multimedia/phonon devel/gettext lang/python
 MODKDE4_USE =	pim
-MODPY_BDEP =	No
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+2,-guic
