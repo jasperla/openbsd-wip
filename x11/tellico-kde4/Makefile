@@ -46,6 +46,6 @@ TEST_IS_INTERACTIVE =	X11
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/apps/tellico/data-sources
+		${PREFIX}/share/apps/tellico
 
 .include <bsd.port.mk>

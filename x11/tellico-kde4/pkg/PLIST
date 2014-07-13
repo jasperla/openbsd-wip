@@ -49,6 +49,7 @@ share/apps/tellico/gcstar2tellico.xsl
 share/apps/tellico/giantbomb2tellico.xsl
 share/apps/tellico/goodreads2tellico.xsl
 share/apps/tellico/griffith2tellico.py
+share/apps/tellico/griffith2tellico.pyc
 share/apps/tellico/hddvd-logo.png
 share/apps/tellico/isbndb2tellico.xsl
 share/apps/tellico/mods2tellico.xsl
