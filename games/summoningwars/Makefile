@@ -21,24 +21,27 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 # GPLv3+ / CC-by-sa 3.0 for data
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += CEGUIBase-0 CEGUIOgreRenderer-0 OgreMain OgreRTShaderSystem
+WANTLIB += CEGUIBase-0 CEGUIOgreRenderer-0 OIS OgreMain OgreRTShaderSystem
 WANTLIB += OgreTerrain X11 Xrandr alut boost_chrono-mt boost_date_time-mt
 WANTLIB += boost_filesystem-mt boost_system-mt boost_thread-mt
-WANTLIB += c m ogg openal physfs pthread vorbis vorbisfile
+WANTLIB += c m ogg openal physfs pthread vorbis vorbisfile ${MODLUA_WANTLIB}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=sumwars/}
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		devel/cmake \
 			devel/gettext \
+			lang/lua \
 			gcc4
+MODLUA_VERSION =	5.2
 MODGCC4_ARCHS =		*
 MODGCC4_LANGS +=	c++
 
 LIB_DEPENDS =		x11/cegui \
 			audio/freealut \
 			audio/libvorbis \
-			devel/physfs
+			devel/physfs \
+			devel/ois
 
 CONFIGURE_ARGS += \
 	-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib -liconv -lintl" \
