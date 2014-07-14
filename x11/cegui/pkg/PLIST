@@ -235,12 +235,6 @@ include/cegui-0/CEGUI/XMLParserModules/
 include/cegui-0/CEGUI/XMLParserModules/Expat/
 include/cegui-0/CEGUI/XMLParserModules/Expat/XMLParser.h
 include/cegui-0/CEGUI/XMLParserModules/Expat/XMLParserModule.h
-include/cegui-0/CEGUI/XMLParserModules/Libxml2/
-include/cegui-0/CEGUI/XMLParserModules/Libxml2/XMLParser.h
-include/cegui-0/CEGUI/XMLParserModules/Libxml2/XMLParserModule.h
-include/cegui-0/CEGUI/XMLParserModules/TinyXML/
-include/cegui-0/CEGUI/XMLParserModules/TinyXML/XMLParser.h
-include/cegui-0/CEGUI/XMLParserModules/TinyXML/XMLParserModule.h
 include/cegui-0/CEGUI/XMLSerializer.h
 include/cegui-0/CEGUI/falagard/
 include/cegui-0/CEGUI/falagard/ComponentBase.h
@@ -320,8 +314,6 @@ lib/cegui-0.8/
 lib/cegui-0.8/libCEGUICoreWindowRendererSet.so
 @lib lib/cegui-0.8/libCEGUIExpatParser.so.${LIBCEGUIExpatParser_VERSION}
 @lib lib/cegui-0.8/libCEGUIFreeImageImageCodec.so.${LIBCEGUIFreeImageImageCodec_VERSION}
-lib/cegui-0.8/libCEGUILibXMLParser.so
-lib/cegui-0.8/libCEGUITinyXMLParser.so
 @lib lib/libCEGUIBase-0.so.${LIBCEGUIBase-0_VERSION}
 @lib lib/libCEGUICommonDialogs-0.so.${LIBCEGUICommonDialogs-0_VERSION}
 @lib lib/libCEGUIIrrlichtRenderer-0.so.${LIBCEGUIIrrlichtRenderer-0_VERSION}
