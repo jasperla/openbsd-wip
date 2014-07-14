@@ -10,9 +10,8 @@ WANTLIB += curl enet execinfo gloox icui18n icuuc jpeg m miniupnpc
 WANTLIB += mozjs-24 nspr4 ogg openal plc4 plds4 png pthread vorbis
 WANTLIB += vorbisfile xml2 z
 
-BUILD_DEPENDS =		shells/bash
-
-BUILD_DEPENDS +=	archivers/zip
+BUILD_DEPENDS =		archivers/zip \
+			shells/bash
 LIB_DEPENDS =		audio/libvorbis \
 			audio/openal \
 			devel/boost \
