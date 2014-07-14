@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/mlt++/Makefile.orig	Thu Nov 15 07:05:11 2012
-+++ src/mlt++/Makefile	Sun Feb  3 16:09:00 2013
+--- src/mlt++/Makefile.orig	Sun Jun 29 22:23:17 2014
++++ src/mlt++/Makefile	Wed Jul  9 09:43:49 2014
 @@ -12,6 +12,10 @@ NAME = libmlt++$(LIBSUF)
  TARGET = libmlt++-$(soversion)$(LIBSUF)
  CXXFLAGS += -DMLTPP_EXPORTS
@@ -12,7 +12,7 @@ $OpenBSD$
  else
  NAME = libmlt++$(LIBSUF)
  TARGET = $(NAME).$(version)
-@@ -53,10 +57,12 @@ all:		$(TARGET)
+@@ -56,10 +60,12 @@ all:		$(TARGET)
  
  $(TARGET):	$(OBJS)
  	$(CXX) $(LIBFLAGS) -o $@ $(OBJS) $(LDFLAGS)
@@ -28,7 +28,7 @@ $OpenBSD$
  
  depend:	$(SRCS)
  	$(CXX) -MM $(CXXFLAGS) $^ 1>.depend
-@@ -72,6 +78,8 @@ install:
+@@ -75,6 +81,8 @@ install:
  		$(INSTALL) -m 755 $(TARGET) $(DESTDIR)$(prefix) ; \
  		$(INSTALL) -m 755 $(TARGET) $(DESTDIR)$(libdir)/libmlt++.dll ; \
  		$(INSTALL) -m 644 libmlt++.def $(DESTDIR)$(libdir) ; \

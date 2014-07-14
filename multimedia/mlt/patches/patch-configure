@@ -1,14 +1,14 @@
 $OpenBSD$
---- configure.orig	Sat Feb 16 20:47:36 2013
-+++ configure	Sat Feb 16 21:33:01 2013
-@@ -116,6 +116,11 @@ build_config()
+--- configure.orig	Sun Jun 29 22:23:17 2014
++++ configure	Wed Jul  9 09:43:49 2014
+@@ -122,6 +122,11 @@ build_config()
  		echo "RDYNAMIC=-rdynamic"
  		echo "LDFLAGS+=-Wl,--no-undefined -Wl,--as-needed"
  		;;
 +		OpenBSD)
 +		echo "SHFLAGS=-shared"
 +		echo "RDYNAMIC=-rdynamic"
-+		echo "LDFLAGS+=-Wl,--no-undefined -Wl,--as-needed"
++		echo "LDFLAGS+=-Wl,--as-needed"
 +		;;
  		MinGW)
  		[ "$optimisations" = "true" ] &&
