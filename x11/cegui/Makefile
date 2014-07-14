@@ -25,8 +25,7 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL GLEW GLU ICE Irrlicht OgreMain SM X11 Xext boost_system-mt
-WANTLIB += boost_thread-mt expat freeimage freetype fribidi m
-WANTLIB += pcre pthread tinyxml xml2
+WANTLIB += boost_thread-mt expat freeimage freetype m pcre pthread
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=crayzedsgui/}
 EXTRACT_SUFX =		.tar.bz2
@@ -40,12 +39,22 @@ BUILD_DEPENDS =		graphics/glm
 LIB_DEPENDS =		x11/ogre \
 			x11/irrlicht \
 			devel/pcre \
-			graphics/glew \
-			textproc/tinyxml \
-			textproc/libxml \
-			devel/fribidi
+			graphics/glew
 
-CONFIGURE_ARGS +=	-DCEGUI_BUILD_PYTHON_MODULES=OFF
+CONFIGURE_ARGS +=	-DCEGUI_BUILD_PYTHON_MODULES=OFF \
+			-DCEGUI_BUILD_XMLPARSER_XERCES=OFF \
+			-DCEGUI_BUILD_XMLPARSER_LIBXML2=OFF \
+			-DCEGUI_BUILD_XMLPARSER_RAPIDXML=OFF \
+			-DCEGUI_BUILD_XMLPARSER_TINYXML=OFF \
+			-DCEGUI_BUILD_IMAGECODEC_SILLY=OFF \
+			-DCEGUI_BUILD_IMAGECODEC_DEVIL=OFF \
+			-DCEGUI_BUILD_IMAGECODEC_CORONA=OFF \
+			-DCEGUI_BUILD_IMAGECODEC_STB=OFF \
+			-DCEGUI_BUILD_IMAGECODEC_TGA=OFF \
+			-DCEGUI_BUILD_IMAGECODEC_PVR=OFF \
+			-DCEGUI_USE_FRIBIDI=OFF \
+			-DCEGUI_BUILD_LUA_MODULE=OFF
+			
 
 CFLAGS +=		-pthread -I${X11BASE}/include -I${LOCALBASE}/include
 
