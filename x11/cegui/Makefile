@@ -7,13 +7,13 @@ DISTNAME =		cegui-${V}
 
 PATCHORIG =		.orig.port
 
-SHARED_LIBS +=  CEGUIBase-0               0.0 # 3.1
-SHARED_LIBS +=  CEGUICommonDialogs-0      0.0 # 3.1
-SHARED_LIBS +=  CEGUIIrrlichtRenderer-0   0.0 # 3.1
-SHARED_LIBS +=  CEGUIOgreRenderer-0       0.0 # 3.1
-SHARED_LIBS +=  CEGUIOpenGLRenderer-0     0.0 # 3.1
-SHARED_LIBS +=	CEGUIFreeImageImageCodec 0.0
-SHARED_LIBS +=	CEGUIExpatParser	0.0
+SHARED_LIBS +=  CEGUIBase-0			0.0 # 3.1
+SHARED_LIBS +=  CEGUICommonDialogs-0		0.0 # 3.1
+SHARED_LIBS +=  CEGUIIrrlichtRenderer-0		0.0 # 3.1
+SHARED_LIBS +=  CEGUIOgreRenderer-0		0.0 # 3.1
+SHARED_LIBS +=  CEGUIOpenGLRenderer-0		0.0 # 3.1
+SHARED_LIBS +=	CEGUIFreeImageImageCodec	0.0
+SHARED_LIBS +=	CEGUIExpatParser		0.0
 
 CATEGORIES =		x11
 
@@ -54,7 +54,7 @@ CONFIGURE_ARGS +=	-DCEGUI_BUILD_PYTHON_MODULES=OFF \
 			-DCEGUI_BUILD_IMAGECODEC_PVR=OFF \
 			-DCEGUI_USE_FRIBIDI=OFF \
 			-DCEGUI_BUILD_LUA_MODULE=OFF
-			
+
 
 CFLAGS +=		-pthread -I${X11BASE}/include -I${LOCALBASE}/include
 
