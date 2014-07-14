@@ -86,3 +86,5 @@ www/uget		ready to import (bcallah@)
 productivity/taskd      should be ready, waiting for feedback at ports@ 2014-06-24 (viq)
 www/lynx		ready to import (bcallah@)
 games/residualvm	ready to import (bentley@), sent to ports@ 2014-07-11
+x11/cegui		ready to import (pascal@), sent to ports 2014-07-14
+games/summoningwars	ready to import (pascal@), sent to ports 2014-07-14
