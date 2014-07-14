@@ -1,12 +1,12 @@
 # $OpenBSD$
 
-BROKEN =		does not work with CEGUI >0.8
+#BROKEN =		does not work with CEGUI >0.8
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		role playing game
 
-V =			0.5.6
+V =			0.5.8
 DISTNAME =		sumwars-${V}-src
 PKGNAME =		summoningwars-${V}
 
@@ -21,20 +21,24 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 # GPLv3+ / CC-by-sa 3.0 for data
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += CEGUIBase CEGUIOgreRenderer OIS OgreMain OgreRTShaderSystem
-WANTLIB += OgreTerrain PocoFoundation X11 Xrandr alut c lua m
-WANTLIB += ogg openal physfs pthread stdc++ vorbis vorbisfile
+WANTLIB += CEGUIBase-0 CEGUIOgreRenderer-0 OgreMain OgreRTShaderSystem
+WANTLIB += OgreTerrain X11 Xrandr alut boost_chrono-mt boost_date_time-mt
+WANTLIB += boost_filesystem-mt boost_system-mt boost_thread-mt
+WANTLIB += c m ogg openal physfs pthread vorbis vorbisfile
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=sumwars/}
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		devel/cmake \
-			devel/gettext
+			devel/gettext \
+			gcc4
+MODGCC4_ARCHS =		*
+MODGCC4_LANGS +=	c++
+
 LIB_DEPENDS =		x11/cegui \
 			audio/freealut \
 			audio/libvorbis \
-			devel/physfs \
-			net/poco
+			devel/physfs
 
 CONFIGURE_ARGS += \
 	-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib -liconv -lintl" \
