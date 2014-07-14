@@ -81,8 +81,8 @@ TEST_FLAGS =		-e
 # LFLAGS is not a typo
 TEST_ENV =		COPTS="${CXXFLAGS}" LFLAGS="${LDFLAGS} -pthread"
 do-test:
-	cd ${WRKSRC}/src/tests; ${SETENV} ${TEST_ENV} qmake4 tests.pro
-	cd ${WRKSRC}/src/tests; ${SETENV} ${TEST_ENV} ${MAKE_PROGRAM} \
+	cd ${WRKSRC}/src/tests; ${SETENV} ${ALL_TEST_ENV} qmake4 tests.pro
+	cd ${WRKSRC}/src/tests; ${SETENV} ${ALL_TEST_ENV} ${MAKE_PROGRAM} \
 	    ${ALL_TEST_FLAGS} clean all check
 
 .include <bsd.port.mk>
