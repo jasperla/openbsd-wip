@@ -28,6 +28,7 @@ include/mlt++/MltTransition.h
 include/mlt++/config.h
 include/mlt/framework/
 include/mlt/framework/mlt.h
+include/mlt/framework/mlt_animation.h
 include/mlt/framework/mlt_cache.h
 include/mlt/framework/mlt_consumer.h
 include/mlt/framework/mlt_deque.h
@@ -53,11 +54,12 @@ include/mlt/framework/mlt_tractor.h
 include/mlt/framework/mlt_transition.h
 include/mlt/framework/mlt_types.h
 include/mlt/framework/mlt_version.h
+@lib lib/libmlt++.so.${LIBmlt++_VERSION}
+@lib lib/libmlt.so.${LIBmlt_VERSION}
 lib/mlt/
 lib/mlt/libmltavformat.so
 lib/mlt/libmltcore.so
 lib/mlt/libmltdecklink.so
-lib/mlt/libmltdv.so
 lib/mlt/libmltgtk2.so
 lib/mlt/libmltjackrack.so
 lib/mlt/libmltkdenlive.so
@@ -67,10 +69,7 @@ lib/mlt/libmltsdl.so
 lib/mlt/libmltsox.so
 lib/mlt/libmltswfdec.so
 lib/mlt/libmltvmfx.so
-lib/mlt/libmltvorbis.so
 lib/mlt/libmltxml.so
-@lib lib/libmlt++.so.${LIBmlt++_VERSION}
-@lib lib/libmlt.so.${LIBmlt_VERSION}
 lib/pkgconfig/mlt++.pc
 lib/pkgconfig/mlt-framework.pc
 share/mlt/
@@ -92,6 +91,7 @@ share/mlt/core/filter_luma.yml
 share/mlt/core/filter_mirror.yml
 share/mlt/core/filter_mono.yml
 share/mlt/core/filter_obscure.yml
+share/mlt/core/filter_panner.yml
 share/mlt/core/filter_region.yml
 share/mlt/core/filter_rescale.yml
 share/mlt/core/filter_resize.yml
@@ -108,14 +108,12 @@ share/mlt/core/producer_melt_file.yml
 share/mlt/core/producer_noise.yml
 share/mlt/core/transition_composite.yml
 share/mlt/core/transition_luma.yml
+share/mlt/core/transition_matte.yml
 share/mlt/core/transition_mix.yml
 share/mlt/core/transition_region.yml
 share/mlt/decklink/
 share/mlt/decklink/consumer_decklink.yml
 share/mlt/decklink/producer_decklink.yml
-share/mlt/dv/
-share/mlt/dv/consumer_libdv.yml
-share/mlt/dv/producer_libdv.yml
 share/mlt/feeds/
 share/mlt/feeds/NTSC/
 share/mlt/feeds/NTSC/data_fx.properties
@@ -129,7 +127,6 @@ share/mlt/feeds/PAL/example.properties
 share/mlt/feeds/PAL/obscure.properties
 share/mlt/gtk2/
 share/mlt/gtk2/consumer_gtk2_preview.yml
-share/mlt/gtk2/filter_dynamictext.yml
 share/mlt/gtk2/filter_rescale.yml
 share/mlt/gtk2/producer_pango.yml
 share/mlt/gtk2/producer_pixbuf.yml
@@ -138,6 +135,7 @@ share/mlt/jackrack/blacklist.txt
 share/mlt/jackrack/consumer_jack.yml
 share/mlt/jackrack/filter_jackrack.yml
 share/mlt/jackrack/filter_ladspa.yml
+share/mlt/jackrack/producer_ladspa.yml
 share/mlt/kdenlive/
 share/mlt/kdenlive/filter_boxblur.yml
 share/mlt/kdenlive/filter_freeze.yml
@@ -210,10 +208,17 @@ share/mlt/oldfilm/oldfilm.svg
 share/mlt/oldfilm/tcolor.svg
 share/mlt/oldfilm/vignette.svg
 share/mlt/plus/
+share/mlt/plus/consumer_blipflash.yml
 share/mlt/plus/filter_affine.yml
 share/mlt/plus/filter_charcoal.yml
+share/mlt/plus/filter_dynamictext.yml
 share/mlt/plus/filter_invert.yml
+share/mlt/plus/filter_lift_gamma_gain.yml
+share/mlt/plus/filter_loudness.yml
+share/mlt/plus/filter_rgblut.yml
 share/mlt/plus/filter_sepia.yml
+share/mlt/plus/producer_blipflash.yml
+share/mlt/plus/producer_count.yml
 share/mlt/plus/transition_affine.yml
 share/mlt/presets/
 share/mlt/presets/consumer/
@@ -309,6 +314,7 @@ share/mlt/presets/consumer/avformat/stills/PNG
 share/mlt/presets/consumer/avformat/stills/PPM
 share/mlt/presets/consumer/avformat/stills/TGA
 share/mlt/presets/consumer/avformat/stills/TIFF
+share/mlt/presets/consumer/avformat/vp9
 share/mlt/presets/consumer/avformat/webm
 share/mlt/presets/consumer/avformat/x264-medium
 share/mlt/presets/consumer/avformat/x264-medium-baseline
@@ -318,6 +324,14 @@ share/mlt/presets/filter/
 share/mlt/presets/filter/brightness/
 share/mlt/presets/filter/brightness/from_black
 share/mlt/presets/filter/brightness/to_black
+share/mlt/presets/filter/movit.blur/
+share/mlt/presets/filter/movit.blur/blur_in
+share/mlt/presets/filter/movit.blur/blur_in_out
+share/mlt/presets/filter/movit.blur/blur_out
+share/mlt/presets/filter/movit.opacity/
+share/mlt/presets/filter/movit.opacity/fade_in
+share/mlt/presets/filter/movit.opacity/fade_in_out
+share/mlt/presets/filter/movit.opacity/fade_out
 share/mlt/presets/filter/volume/
 share/mlt/presets/filter/volume/fade_in
 share/mlt/presets/filter/volume/fade_out
@@ -395,10 +409,9 @@ share/mlt/vmfx/filter_chroma_hold.yml
 share/mlt/vmfx/filter_mono.yml
 share/mlt/vmfx/filter_shape.yml
 share/mlt/vmfx/producer_pgm.yml
-share/mlt/vorbis/
-share/mlt/vorbis/producer_vorbis.yml
 share/mlt/xml/
 share/mlt/xml/consumer_xml.yml
 share/mlt/xml/mlt-xml.dtd
+share/mlt/xml/producer_xml-nogl.yml
 share/mlt/xml/producer_xml-string.yml
 share/mlt/xml/producer_xml.yml
