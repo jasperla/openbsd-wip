@@ -22,7 +22,7 @@ WANTLIB += mlt mlt++
 MASTER_SITES =		${MASTER_SITE_KDE:=stable/kdenlive/${VERSION}/src/}
 EXTRACT_SUFX =		.tar.bz2
 
-MODULES =		x11/kde4
+MODULES =		x11/kde4 devel/gettext
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
@@ -34,6 +34,7 @@ LIB_DEPENDS =		devel/qjson \
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_LibV4L2=Yes
 
+# upstream bug, putting all l10n files at the same place
 post-patch:
 	cd ${WRKSRC}/po; for lc in */CMakeLists.txt; do \
 		l=$${lc%/CMakeLists.txt}; \
