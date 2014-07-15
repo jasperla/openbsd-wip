@@ -23,4 +23,10 @@ TEST_DEPENDS=	${RUN_DEPENDS}
 do-test: install
 	@cd ${WRKSRC}/test && ${MODPY_BIN} /usr/local/bin/pytest
 
+# A load of files in ${WRKBUILD} are for some reason root:wheel after install,
+# so it won't clean as a normal user. I can't see why this is. Work around.
+# XXX horrible.
+#post-install:
+#	chmod -R 777 ${WRKBUILD}
+
 .include <bsd.port.mk>
