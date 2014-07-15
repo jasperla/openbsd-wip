@@ -29,7 +29,7 @@ MODULES =		lang/ruby
 
 # XXX Dependency too strong. Any flavor with ruby will suffice.
 # Is there a way to express that?
-BUILD_DEPENDS =		editors/vim,ruby,gtk2,python,perl
+BUILD_DEPENDS =		editors/vim,ruby
 RUN_DEPENDS =		${BUILD_DEPENDS}
 
 NO_TEST =		Yes
