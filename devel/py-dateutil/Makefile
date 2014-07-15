@@ -1,0 +1,32 @@
+# $OpenBSD: Makefile,v 1.18 2013/03/17 20:42:29 benoit Exp $
+
+COMMENT =		Python API for advanced date calculations
+
+MODPY_EGG_VERSION =	2.2
+DISTNAME =		python-dateutil-${MODPY_EGG_VERSION}
+PKGNAME =		${DISTNAME:S/^python-/py-/}
+CATEGORIES =    	devel
+
+HOMEPAGE =		http://labix.org/python-dateutil
+MAINTAINER =		frantisek holop <minusf@obiit.org>
+
+# BSD
+PERMIT_PACKAGE_CDROM =	Yes
+
+MASTER_SITES =		${MASTER_SITE_PYPI:=p/python-dateutil/}
+
+MODULES =		lang/python
+MODPY_SETUPTOOLS =	Yes
+RUN_DEPENDS +=		devel/py-six
+TEST_DEPENDS +=		${RUN_DEPENDS} \
+			devel/py-six
+
+# ${WRKSRC} has 600 files in.
+post-install:
+	chmod -R 755 ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/
+
+do-test: fake
+		@cd ${WRKSRC} && ${MAKE_ENV} \
+		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} ./test.py
+
+.include <bsd.port.mk>
