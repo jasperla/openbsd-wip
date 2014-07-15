@@ -2,22 +2,22 @@
 
 COMMENT =		lightweight scientific IDE for Python
 
-MODPY_EGG_VERSION =	2.2.5
+MODPY_EGG_VERSION =	2.3.0
 DISTNAME =		spyder-${MODPY_EGG_VERSION}
-PKGNAME =		py-spyder-${MODPY_EGG_VERSION}
+PKGNAME =		spyder-${MODPY_EGG_VERSION}
 CATEGORIES =		editors devel
 HOMEPAGE =		https://code.google.com/p/spyderlib/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	https://spyderlib.googlecode.com/files/
+MASTER_SITES = https://bitbucket.org/spyder-ide/spyderlib/downloads/
 EXTRACT_SUFX =	.zip
 
 MODULES = lang/python
 
-BUILD_DEPENDS =	textproc/py-sphinx
-RUN_DEPENDS =	x11/py-qt4
+BUILD_DEPENDS +=	textproc/py-sphinx
+RUN_DEPENDS +=		x11/py-qt4
 
 NO_TEST =	Yes
 
