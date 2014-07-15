@@ -1,0 +1,26 @@
+@comment $OpenBSD$
+bin/jrnl
+lib/python${MODPY_VERSION}/site-packages/jrnl/
+lib/python${MODPY_VERSION}/site-packages/jrnl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/jrnl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/jrnl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/jrnl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/jrnl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/jrnl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/jrnl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/jrnl/DayOneJournal.py
+lib/python${MODPY_VERSION}/site-packages/jrnl/DayOneJournal.pyc
+lib/python${MODPY_VERSION}/site-packages/jrnl/Entry.py
+lib/python${MODPY_VERSION}/site-packages/jrnl/Entry.pyc
+lib/python${MODPY_VERSION}/site-packages/jrnl/Journal.py
+lib/python${MODPY_VERSION}/site-packages/jrnl/Journal.pyc
+lib/python${MODPY_VERSION}/site-packages/jrnl/__init__.py
+lib/python${MODPY_VERSION}/site-packages/jrnl/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/jrnl/cli.py
+lib/python${MODPY_VERSION}/site-packages/jrnl/cli.pyc
+lib/python${MODPY_VERSION}/site-packages/jrnl/exporters.py
+lib/python${MODPY_VERSION}/site-packages/jrnl/exporters.pyc
+lib/python${MODPY_VERSION}/site-packages/jrnl/install.py
+lib/python${MODPY_VERSION}/site-packages/jrnl/install.pyc
+lib/python${MODPY_VERSION}/site-packages/jrnl/util.py
+lib/python${MODPY_VERSION}/site-packages/jrnl/util.pyc
