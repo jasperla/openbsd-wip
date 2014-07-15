@@ -19,7 +19,7 @@ MODPY_SETUPTOOLS =	Yes
 MODULES =		lang/python
 TEST_DEPENDS =		devel/py-nose \
 			net/py-ftpdlib \
-			www/py-mako \
+			www/py-mako
 RUN_DEPENDS =		devel/py-six
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
