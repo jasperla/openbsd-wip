@@ -1,7 +1,0 @@
-@comment $OpenBSD$
-lib/wireshark/python/
-lib/wireshark/python/${WVER}/
-lib/wireshark/python/${WVER}/homeplug.py.sample
-lib/wireshark/python/${WVER}/register-dissector.py
-lib/wireshark/python/${WVER}/wspy_dissector.py
-lib/wireshark/python/${WVER}/wspy_libws.py
