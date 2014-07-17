@@ -1,8 +1,0 @@
-v1.6.13
-Testing libsmi SNMP decoding
-python disectors
-GTK3 is broken expected in next release some gtk3 compiles
-on the mail lists.
-Which way on flavors python or no_python?
-default is with python, but considered experimental feature.
-wireshark dumpcap broken when using pipe since v1.6.4
