@@ -54,8 +54,8 @@ CONFIGURE_ARGS +=	-DCEGUI_BUILD_PYTHON_MODULES=OFF \
 			-DCEGUI_BUILD_IMAGECODEC_PVR=OFF \
 			-DCEGUI_USE_FRIBIDI=OFF \
 			-DCEGUI_BUILD_LUA_MODULE=OFF \
-			-DFREETYPE_H_PATH_ft2build=${X11BASE}/include/freetype2/ft2build.h \
-			-DFREETYPE_H_PATH_ftconfig=${X11BASE}/include/freetype2/config/ftconfig.h
+			-DFREETYPE_H_PATH_ft2build=${X11BASE}/include/freetype2 \
+			-DFREETYPE_H_PATH_ftconfig=${X11BASE}/include/freetype2/config
 
 
 CFLAGS +=		-pthread -I${X11BASE}/include -I${LOCALBASE}/include
