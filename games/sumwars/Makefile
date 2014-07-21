@@ -6,7 +6,7 @@ COMMENT =		role playing game
 
 V =			0.5.8
 DISTNAME =		sumwars-${V}-src
-PKGNAME =		summoningwars-${V}
+PKGNAME =		sumwars-${V}
 
 SUBST_VARS +=		V
 
