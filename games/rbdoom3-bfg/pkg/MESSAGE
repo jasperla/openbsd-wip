@@ -1,0 +1,10 @@
+To play the BFG Edition of Doom3 on OpenBSD you need
+the original game.  And in order to get the game data
+it must first be installed with the Windows version of Steam.
+Copy the game data from
+C:\Program Files (x86)\Steam\SteamApps\common\Doom 3 BFG Edition\base
+to ${TRUEPREFIX}/share/RBDoom3BFG/base/ change directory to
+${TRUEPREFIX}/share/RBDoom3BFG and run 'RBDoom3BFG'.
+
+To play the original 2004 release of Doom3 see games/dhewm3,
+this port is only for the 2012 'BFG Edition' release.

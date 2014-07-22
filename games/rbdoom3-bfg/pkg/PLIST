@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+@bin bin/RBDoom3BFG
+share/RBDoom3BFG/
+share/RBDoom3BFG/base/
