@@ -1,0 +1,12 @@
+$OpenBSD$
+--- neo/sys/sys_local.cpp.orig	Mon Jul 21 18:04:12 2014
++++ neo/sys/sys_local.cpp	Mon Jul 21 20:01:32 2014
+@@ -66,7 +66,7 @@ double idSysLocal::ClockTicksPerSecond()
+ 	return Sys_ClockTicksPerSecond();
+ }
+ 
+-cpuid_t idSysLocal::GetProcessorId()
++xcpuid_t idSysLocal::GetProcessorId()
+ {
+ 	return Sys_GetProcessorId();
+ }

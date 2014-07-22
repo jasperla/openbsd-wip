@@ -1,0 +1,12 @@
+$OpenBSD$
+--- neo/sys/posix/platform_osx.cpp.orig	Mon Jul 21 18:04:12 2014
++++ neo/sys/posix/platform_osx.cpp	Mon Jul 21 20:01:32 2014
+@@ -73,7 +73,7 @@ const char* Sys_EXEPath()
+ Sys_GetProcessorId
+ ===============
+ */
+-cpuid_t Sys_GetProcessorId()
++xcpuid_t Sys_GetProcessorId()
+ {
+ 	return CPUID_GENERIC;
+ }

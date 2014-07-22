@@ -1,0 +1,12 @@
+$OpenBSD$
+--- neo/idlib/math/Simd.h.orig	Mon Jul 21 18:04:12 2014
++++ neo/idlib/math/Simd.h	Mon Jul 21 20:01:32 2014
+@@ -92,7 +92,7 @@ class idSIMDProcessor (public)
+ 		cpuid = CPUID_NONE;
+ 	}
+ 	
+-	cpuid_t							cpuid;
++	xcpuid_t							cpuid;
+ 	
+ 	virtual const char* VPCALL		GetName() const = 0;
+ 	
