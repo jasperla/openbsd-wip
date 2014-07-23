@@ -77,6 +77,9 @@ CONFIGURE_ARGS +=	--disable-backtrace \
 			--disable-places \
 			--disable-futures
 
+# Enable Senora GC by default.
+CONFIGURE_ARGS +=	--enable-sgc
+
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LIBracket3m_MAJOR=${LIBracket3m_VERSION:R} \
