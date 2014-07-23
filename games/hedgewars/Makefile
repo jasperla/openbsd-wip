@@ -27,7 +27,7 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB-main += QtGui QtNetwork SDL SDL_image SDL_mixer SDL_net SDL_ttf
-WANTLIB-main += avcodec avformat avutil c m png pthread stdc++
+WANTLIB-main += avcodec avformat avutil c m png pthread stdc++ glut
 WANTLIB-main += z ${MODLUA_WANTLIB} ${MODQT4_WANTLIB}
 
 WANTLIB-server = c m pthread util ${MODLIBICONV_WANTLIB}
@@ -46,6 +46,7 @@ LIB_DEPENDS-main =	devel/sdl-image \
 			devel/sdl-net \
 			devel/sdl-mixer \
 			graphics/ffmpeg \
+			graphics/freeglut \
 			${MODQT4_LIB_DEPENDS}
 LIB_DEPENDS-server =	converters/libiconv
 
