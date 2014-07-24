@@ -23,7 +23,6 @@ misc/py-asciinema	sent to ports 2014-01-24
 multimedia/fuzemux	sent to ports 2013-01-13
 multimedia/video4fuze	sent to ports 2013-01-13
 net/bitcoin		sent to ports 2013-03-19, and again 2013-06-29
-net/py-boto:		ready for import, sent to maintainer 2012-04-23 (tamentis)
 productivity/py-nv	send to ports 2013-10-21
 net/unison/stable	ready for import.
 sysutils/fsx		sent to ports 2013-12-09
