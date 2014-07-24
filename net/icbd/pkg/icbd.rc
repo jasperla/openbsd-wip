@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD$
+
+daemon="${TRUEPREFIX}/sbin/icbd"
+
+. /etc/rc.d/rc.subr
+
+pexp="icbd: icbd.*"
+
+rc_cmd $1
