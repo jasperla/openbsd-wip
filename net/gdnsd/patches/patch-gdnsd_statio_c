@@ -1,0 +1,16 @@
+$OpenBSD$
+
+XXX:
+OpenBSD doesn't define EPROTO (yet), so pick the closest thing.
+
+--- gdnsd/statio.c.orig	Sat Jul 26 02:40:21 2014
++++ gdnsd/statio.c	Sat Jul 26 02:40:30 2014
+@@ -527,7 +527,7 @@ static void accept_cb(struct ev_loop* loop, ev_io* io,
+             case ENONET:
+ #endif
+             case ENETDOWN:
+-            case EPROTO:
++            case EOPNOTSUPP:
+             case EHOSTDOWN:
+             case EHOSTUNREACH:
+             case ENETUNREACH:
