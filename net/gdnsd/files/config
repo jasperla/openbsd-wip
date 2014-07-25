@@ -1,0 +1,6 @@
+# $OpenBSD$
+#
+# Minimal configuration file to drop privileges.
+options = {
+	username = _gdnsd,
+}
