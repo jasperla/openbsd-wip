@@ -23,24 +23,29 @@ BUILD_DEPENDS=		devel/libtool \
 			devel/ragel \
 			${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS}
-LIB_DEPENDS=		devel/libev
-RUN_DEPENDS=		archivers/xz \
+# used for tests
+BUILD_DEPENDS=		archivers/xz \
 			net/curl
-TEST_DEPENDS=		net/p5-IO-Socket-INET6 \
-			www/p5-libwww
-
-USE_GMAKE=		Yes
+LIB_DEPENDS=		devel/libev
+RUN_DEPENDS=		net/GeoIP
+TEST_DEPENDS=		${BUILD_DEPENDS} \
+			www/p5-libwww \
+			net/p5-Socket6 \
+			net/p5-IO-Socket-INET6 \
+			net/p5-Net-DNS
 
 AUTOCONF_VERSION=	2.63
 AUTOMAKE_VERSION=	1.11
 
+LIBTOOL_FLAGS=		--tag=disable-static
+
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-rundir=${VARBASE}/run/ \
 			--with-rootdir=${VARBASE}/gdnsd/
-CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
-			CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV=		LIBEV_LIBS="-L${LOCALBASE}/lib -lev" \
+			LIBEV_CFLAGS="-I${LOCALBASE}/include"
 
-SUBST_VARS += VARBASE
+SUBST_VARS+=		VARBASE
 
 # XXX: At least one of these hangs, though doesn't seem to be gdnsd's fault
 post-extract:
@@ -51,7 +56,7 @@ pre-configure:
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
 
 post-install:
-	rm ${PREFIX}/lib/gdnsd/*.{a,la}
+	rm ${PREFIX}/lib/gdnsd/*.la
 	rm ${PREFIX}/share/doc/gdnsd/*.pod
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gdnsd/
 	${INSTALL_DATA} ${FILESDIR}/config ${PREFIX}/share/examples/gdnsd/
