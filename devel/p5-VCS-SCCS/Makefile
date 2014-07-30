@@ -1,0 +1,14 @@
+# $OpenBSD$
+
+COMMENT=	convert SCCS files
+MODULES=	cpan
+
+DISTNAME=	VCS-SCCS-0.21
+CATEGORIES=	devel
+CPAN_AUTHOR=	HMBRAND
+EXTRACT_SUFX=	.tgz
+
+# perl
+PERMIT_PACKAGE_CDROM=	Yes
+
+.include <bsd.port.mk>
