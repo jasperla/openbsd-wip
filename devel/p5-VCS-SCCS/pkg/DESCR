@@ -1,0 +1,7 @@
+SCCS (Source Code Control System) is a historical and maybe even
+obsolete VCS (Version Control System).
+
+This interface aims at the possibility to read those files,
+without the need of the sccs utility set, and open up to the
+possibility of scripts that use it to convert to more modern
+VCSs like git, Mercurial, or subversion.

@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/VCS/
+${P5SITE}/VCS/SCCS.pm
+@man man/man3p/VCS::SCCS.3p
