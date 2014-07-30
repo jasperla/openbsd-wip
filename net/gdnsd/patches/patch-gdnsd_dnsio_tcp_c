@@ -1,16 +1,19 @@
 $OpenBSD$
 
-XXX:
-OpenBSD doesn't define EPROTO (yet), so pick the closest thing.
+OpenBSD doesn't define EPROTO (yet)
 
---- gdnsd/dnsio_tcp.c.orig	Sat Jul 26 02:37:00 2014
-+++ gdnsd/dnsio_tcp.c	Sat Jul 26 02:40:00 2014
-@@ -246,7 +246,7 @@ static void accept_handler(struct ev_loop* loop, ev_io
+--- gdnsd/dnsio_tcp.c.orig	Wed Jul 30 09:49:44 2014
++++ gdnsd/dnsio_tcp.c	Wed Jul 30 09:49:57 2014
+@@ -246,8 +246,10 @@ static void accept_handler(struct ev_loop* loop, ev_io
              case ENONET:
  #endif
              case ENETDOWN:
 -            case EPROTO:
-+            case EOPNOTSUPP:
-             case EHOSTDOWN:
+-            case EHOSTDOWN:
++#ifdef EPROTO
++	    case EPROTO:
++#endif
++	    case EHOSTDOWN:
              case EHOSTUNREACH:
              case ENETUNREACH:
+                 log_debug("TCP DNS: early tcp socket death: %s", logf_errno());

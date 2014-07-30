@@ -1,16 +1,19 @@
 $OpenBSD$
 
-XXX:
-OpenBSD doesn't define EPROTO (yet), so pick the closest thing.
+OpenBSD doesn't define EPROTO (yet)
 
---- gdnsd/statio.c.orig	Sat Jul 26 02:40:21 2014
-+++ gdnsd/statio.c	Sat Jul 26 02:40:30 2014
-@@ -527,7 +527,7 @@ static void accept_cb(struct ev_loop* loop, ev_io* io,
+--- gdnsd/statio.c.orig	Wed Jul 30 09:49:19 2014
++++ gdnsd/statio.c	Wed Jul 30 09:53:08 2014
+@@ -527,8 +527,10 @@ static void accept_cb(struct ev_loop* loop, ev_io* io,
              case ENONET:
  #endif
              case ENETDOWN:
 -            case EPROTO:
-+            case EOPNOTSUPP:
-             case EHOSTDOWN:
+-            case EHOSTDOWN:
++#ifdef EPROTO
++	    case EPROTO:
++#endif
++	    case EHOSTDOWN:
              case EHOSTUNREACH:
              case ENETUNREACH:
+                 log_debug("HTTP: early tcp socket death: %s", logf_errno());
