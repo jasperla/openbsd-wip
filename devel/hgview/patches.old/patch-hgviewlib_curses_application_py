@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-hgviewlib_curses_application_py,v 1.1.1.1 2014/05/01 08:48:19 edd Exp $
 
 Detect urwid properly. From here:
 https://www.logilab.org/ticket/182147
