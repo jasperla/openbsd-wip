@@ -1,12 +1,16 @@
 $OpenBSD$
---- net/daemon/ccnet-test.c.orig	Tue Jan 21 13:29:42 2014
-+++ net/daemon/ccnet-test.c	Tue Jan 21 13:30:06 2014
-@@ -4,7 +4,7 @@
+--- net/daemon/ccnet-test.c.orig	Mon Apr 21 11:28:18 2014
++++ net/daemon/ccnet-test.c	Thu May 15 13:09:43 2014
+@@ -4,7 +4,12 @@
  #include "common.h"
  
  #include <stdio.h>
--#include <evdns.h>
++
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
 +#include <event2/dns.h>
++#else
+ #include <evdns.h>
++#endif
  
  #include "utils.h"
  

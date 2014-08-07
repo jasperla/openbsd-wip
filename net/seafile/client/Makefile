@@ -4,12 +4,15 @@ COMMENT =		seafile client
 
 NAME =			seafile-client
 
-WANTLIB += QtGui QtNetwork c ccnet crypto gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 intl jansson m pthread seafile searpc sqlite3
-WANTLIB += ssl stdc++
+WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtWebKit
+WANTLIB += lib/qt4/QtXml lib/qt4/QtXmlPatterns c ccnet crypto gio-2.0
+WANTLIB += glib-2.0 gobject-2.0 intl jansson m pthread seafile searpc
+WANTLIB += sqlite3 ssl stdc++
 
 MODULES =		devel/cmake devel/gettext x11/qt4
-LIB_DEPENDS =		net/seafile/seafile
+LIB_DEPENDS =		net/seafile/seafile,-main
+RUN_DEPENDS = 		devel/desktop-file-utils \
+			x11/gtk+2,-guic
 
 CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=Release
 

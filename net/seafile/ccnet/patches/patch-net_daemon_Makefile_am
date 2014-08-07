@@ -1,13 +1,13 @@
 $OpenBSD$
---- net/daemon/Makefile.am.orig	Tue Jan  7 07:33:50 2014
-+++ net/daemon/Makefile.am	Tue Jan 21 16:00:42 2014
+--- net/daemon/Makefile.am.orig	Thu Jul 31 14:20:28 2014
++++ net/daemon/Makefile.am	Wed Aug  6 18:52:51 2014
 @@ -93,7 +93,7 @@ ccnet_SOURCES = ccnet-daemon.c \
  	$(common_srcs)
  
  
 -ccnet_LDADD = -levent $(top_builddir)/lib/libccnetd.la \
 +ccnet_LDADD = -levent_core -levent_extra $(top_builddir)/lib/libccnetd.la \
-            @GLIB2_LIBS@ @GOBJECT_LIBS@ -lssl @LIB_RT@ @LIB_UUID@ -lsqlite3 \
+            @GLIB2_LIBS@ @GOBJECT_LIBS@ @SSL_LIBS@ @LIB_RT@ @LIB_UUID@ -lsqlite3 \
             @LIB_WS32@ @LIB_INTL@ @LIB_IPHLPAPI@ @SEARPC_LIBS@
  
 @@ -104,7 +104,7 @@ noinst_PROGRAMS = ccnet-test
@@ -16,6 +16,6 @@ $OpenBSD$
  
 -ccnet_test_LDADD = -levent $(top_builddir)/lib/libccnetd.la \
 +ccnet_test_LDADD = -levent_core -levent_extra $(top_builddir)/lib/libccnetd.la \
- 	@GLIB2_LIBS@ @GOBJECT_LIBS@  -lssl @LIB_RT@ @LIB_UUID@ -lsqlite3 \
+ 	@GLIB2_LIBS@ @GOBJECT_LIBS@ @SSL_LIBS@ @LIB_RT@ @LIB_UUID@ -lsqlite3 \
  	@LIB_WS32@ @LIB_INTL@ @LIB_IPHLPAPI@ @SEARPC_LIBS@
  

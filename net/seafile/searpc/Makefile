@@ -3,6 +3,7 @@
 COMMENT =		simple RPC framework based on GObject system
 
 NAME = 			libsearpc
+VERSION = 		3.0-latest
 
 SHARED_LIBS += 		searpc			0.0 # 1.2
 
@@ -19,7 +20,7 @@ LIB_DEPENDS =		devel/glib2 \
 
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
-CONFIGURE_STYLE =	automake
+CONFIGURE_STYLE =	gnu
 
 AUTOCONF_VERSION =	2.63
 AUTOMAKE_VERSION =	1.11
@@ -28,6 +29,6 @@ MODPY_ADJ_FILES = 	lib/searpc-codegen.py pysearpc/pygencode.py
 
 pre-configure:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf --install
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -fi
 
 .include <bsd.port.mk>
