@@ -1,15 +1,18 @@
 $OpenBSD$
---- net/common/packet-io.c.orig	Tue Jan  7 07:33:50 2014
-+++ net/common/packet-io.c	Tue Jan 21 13:50:17 2014
-@@ -13,8 +13,10 @@
+--- net/common/packet-io.c.orig	Mon Apr 21 11:28:18 2014
++++ net/common/packet-io.c	Thu May 15 13:02:25 2014
+@@ -13,8 +13,14 @@
  
  #include <unistd.h>
  
--#include <event.h>
--/* #include <event2/event.h> */
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
 +#include <event2/event.h>
 +#include <event2/bufferevent.h>
 +#include <event2/bufferevent_struct.h>
++#else
+ #include <event.h>
+-/* #include <event2/event.h> */
++#endif
 +
  #include <glib.h>
  #include <errno.h>

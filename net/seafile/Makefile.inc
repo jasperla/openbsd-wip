@@ -1,8 +1,9 @@
 # $OpenBSD: Makefile.template,v 1.68 2013/10/02 07:34:45 ajacoutot Exp $
 
-VERSION ?= 		3.0.4
-V = 			${VERSION:S/-server//:S/-testing//}
-DISTNAME = 		${NAME}-${V}
+VERSION ?= 		3.1.4
+V = 			${VERSION:S/-server//:S/-testing//:S/-latest//}
+DISTNAME = 		${NAME}-${VERSION}
+PKGNAME = 		${NAME}-${V}
 
 CATEGORIES =		net net/seafile
 

@@ -1,12 +1,15 @@
 $OpenBSD$
---- lib/net.h.orig	Sat Jan 18 14:08:27 2014
-+++ lib/net.h	Sat Jan 18 14:08:52 2014
-@@ -19,7 +19,7 @@
+--- lib/net.h.orig	Mon Apr 21 11:28:18 2014
++++ lib/net.h	Thu May 15 12:50:58 2014
+@@ -19,7 +19,11 @@
      #include <netinet/tcp.h>
  #endif
  
--#include <evutil.h>
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
 +#include <event2/util.h>
++#else
+ #include <evutil.h>
++#endif
  
  #ifdef WIN32
      #define ECONNREFUSED WSAECONNREFUSED

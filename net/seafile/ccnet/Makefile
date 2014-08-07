@@ -22,7 +22,7 @@ LIB_DEPENDS =		databases/libzdb \
 			net/seafile/searpc
 
 USE_GMAKE =		Yes
-CONFIGURE_STYLE =	automake
+CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	CPPFLAGS=-I${LOCALBASE}/include \
 			LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS += 	--enable-server \
@@ -35,14 +35,6 @@ MODPY_ADJ_FILES = 	tools/ccnet-admin.py
 
 pre-configure:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} libtoolize --force --copy
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} aclocal --force
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoheader -f
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} automake --add-missing
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoconf -f
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -fi
 
 .include <bsd.port.mk>

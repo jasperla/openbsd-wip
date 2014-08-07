@@ -9,38 +9,35 @@ PKGNAME-server = 	seafile-server-${V}
 
 SHARED_LIBS =		seafile 0.0
 
-WANTLIB += c ccnet event_core crypto ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += kinotify jansson pcre pthread searpc sqlite3 ssl uuid z zdb
+cWANTLIB += c ccnet event_core crypto ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+cWANTLIB += jansson pcre pthread searpc sqlite3 ssl uuid z zdb ${MODGETTEXT_WANTLIB}
 
-WANTLIB-main += ${MODGETTEXT_WANTLIB} ${WANTLIB}
+WANTLIB-main += lib/inotify/inotify ${cWANTLIB}
 
 WANTLIB-server += archive bz2 event_openssl event_pthreads evhtp expat lzma
-WANTLIB-server += onig seafile ${WANTLIB}
+WANTLIB-server += onig seafile ${cWANTLIB}
 
 MODULES =		devel/gettext lang/python
 BUILD_DEPENDS =		devel/libtool \
 			lang/vala
-RUN_DEPENDS-main =	devel/desktop-file-utils \
-			devel/py-simplejson \
-			x11/gtk+2,-guic
+RUN_DEPENDS-main =	devel/py-simplejson
 LIB_DEPENDS-main =	devel/libinotify \
 			net/seafile/ccnet
 LIB_DEPENDS-server = 	archivers/libarchive \
 			archivers/xz \
 			databases/libzdb \
 			devel/libevhtp \
-			net/seafile/seafile,-main \
-			${LIB_DEPENDS-main}
+			net/seafile/seafile,-main
 RUN_DEPENDS-server = 	devel/py-simplejson \
 			graphics/py-Pillow
 #			www/py-djblets
 
 USE_GMAKE =		Yes
-CONFIGURE_STYLE =	automake
+CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--disable-fuse \
 			--enable-server
-CONFIGURE_ENV +=	CPPFLAGS=-I${LOCALBASE}/include \
-			LDFLAGS="-L${LOCALBASE}/lib -lkinotify"
+CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/inotify" \
+			LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/inotify"
 
 AUTOCONF_VERSION =	2.63
 AUTOMAKE_VERSION =	1.11
@@ -55,14 +52,9 @@ MODPY_ADJ_FILES = 	scripts/*.py scripts/build/*.py scripts/upgrade/*.py \
 
 pre-configure:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} libtoolize --force --copy
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} aclocal --force
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoheader -f
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} automake --add-missing
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoconf -f
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -fi
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/seafile/
+	${INSTALL_DATA} ${FILESDIR}/seafile.conf ${PREFIX}/share/examples/seafile/
 
 .include <bsd.port.mk>

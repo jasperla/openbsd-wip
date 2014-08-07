@@ -1,12 +1,16 @@
 $OpenBSD$
---- lib/utils.h.orig	Sat Jan 18 14:09:48 2014
-+++ lib/utils.h	Sat Jan 18 14:10:22 2014
-@@ -10,7 +10,7 @@
+--- lib/utils.h.orig	Mon Apr 21 11:28:18 2014
++++ lib/utils.h	Thu May 15 12:58:23 2014
+@@ -10,7 +10,12 @@
  #include <glib.h>
  #include <glib-object.h>
  #include <stdlib.h>
--#include <evutil.h>
++
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
 +#include <event2/util.h>
++#else
+ #include <evutil.h>
++#endif
  
  #ifdef WIN32
  #include <errno.h>

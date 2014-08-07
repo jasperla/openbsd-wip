@@ -1,12 +1,16 @@
 $OpenBSD$
---- net/server/ccnet-server.c.orig	Tue Jan 21 13:31:08 2014
-+++ net/server/ccnet-server.c	Tue Jan 21 13:31:33 2014
-@@ -5,7 +5,7 @@
+--- net/server/ccnet-server.c.orig	Mon Apr 21 11:28:18 2014
++++ net/server/ccnet-server.c	Thu May 15 13:10:50 2014
+@@ -5,7 +5,12 @@
  #include <stdlib.h>
  #include <stdio.h>
  #include <getopt.h>
--#include <evdns.h>
++
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
 +#include <event2/dns.h>
++#else
+ #include <evdns.h>
++#endif
  
  #include "server-session.h"
  #include "user-mgr.h"

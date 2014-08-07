@@ -1,15 +1,19 @@
 $OpenBSD$
---- net/common/peer.c.orig	Tue Jan  7 07:33:50 2014
-+++ net/common/peer.c	Tue Jan 21 13:53:16 2014
-@@ -2,7 +2,10 @@
+--- net/common/peer.c.orig	Mon Apr 21 11:28:18 2014
++++ net/common/peer.c	Thu May 15 13:06:02 2014
+@@ -2,7 +2,15 @@
  
  #include "common.h"
  
--#include <event.h>
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
 +#include <event2/event.h>
 +#include <event2/bufferevent.h>
 +#include <event2/bufferevent_compat.h>
 +#include <event2/bufferevent_struct.h>
++#else
+ #include <event.h>
++#endif
++
  #include <stdio.h>
  #include <stdlib.h>
  

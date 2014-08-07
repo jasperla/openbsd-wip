@@ -1,13 +1,17 @@
 $OpenBSD$
---- lib/timer.c.orig	Fri Dec 13 13:38:39 2013
-+++ lib/timer.c	Fri Dec 13 13:39:02 2013
-@@ -1,6 +1,8 @@
+--- lib/timer.c.orig	Mon Apr 21 11:28:18 2014
++++ lib/timer.c	Thu May 15 12:55:07 2014
+@@ -1,6 +1,13 @@
  /* -*- Mode: C; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
  
--#include <event.h>
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
 +#include <event2/event.h>
 +#include <event2/event_compat.h>
 +#include <event2/event_struct.h>
++#else
+ #include <event.h>
++#endif
++
  #include <sys/time.h>
  
  #ifdef CCNET_LIB
