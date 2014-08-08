@@ -23,6 +23,7 @@ DISTFILES=		# empty
 EXTRACT_ONLY=		# empty
 WRKDIST=		${WRKDIR}/systemd-utl
 
+# XXX would be nice to have regression tests
 NO_TEST=		Yes
 
 LIB_DEPENDS=		devel/glib2
@@ -31,14 +32,15 @@ RUN_DEPENDS=		sysutils/consolekit \
 			sysutils/polkit \
 			x11/dbus
 
-MAKE_FLAGS=		CC=${CC} \
-			PREFIX=${PREFIX} \
-			SYSCONFDIR=${SYSCONFDIR}
-
-FAKE_FLAGS=		SYSCONFDIR=${PREFIX}/share/examples/systemd-utl
+FAKE_FLAGS=		PREFIX=${TRUEPREFIX} \
+			SYSCONFDIR=${PREFIX}/share/examples/systemd-utl
 
 do-extract:
 	cd ${WRKDIR} && \
 		${LOCALBASE}/bin/git clone git://uglyman.kremlin.cc/git/systemd-utl.git
+
+pre-configure:
+	perl -pi -e "s,/usr/local,${PREFIX}," \
+		${WRKSRC}/conf/service-files/*.service
 
 .include <bsd.port.mk>
