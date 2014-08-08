@@ -17,14 +17,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		https://github.com/haiwen/${NAME}/archive/
 DISTFILES = 		${DISTNAME}${EXTRACT_SUFX}{v${VERSION}${EXTRACT_SUFX}}
 
-#MODULES =		???
-#BUILD_DEPENDS =	???
-#RUN_DEPENDS =		???
-#LIB_DEPENDS =		???
-#TEST_DEPENDS =		???
-
-#SEPARATE_BUILD =	Yes (build in a directory other than WRKSRC)
-
 WRKDIST = 		${WRKDIR}/${NAME}-${VERSION}
 
 #.include <bsd.port.mk>

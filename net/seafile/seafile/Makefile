@@ -9,8 +9,9 @@ PKGNAME-server = 	seafile-server-${V}
 
 SHARED_LIBS =		seafile 0.0
 
-cWANTLIB += c ccnet event_core crypto ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-cWANTLIB += jansson pcre pthread searpc sqlite3 ssl uuid z zdb ${MODGETTEXT_WANTLIB}
+cWANTLIB += c ccnet event_core crypto ffi gio-2.0 glib-2.0 gmodule-2.0
+cWANTLIB += gobject-2.0 jansson pcre pthread searpc sqlite3 ssl uuid
+cWANTLIB += z zdb ${MODGETTEXT_WANTLIB}
 
 WANTLIB-main += lib/inotify/inotify ${cWANTLIB}
 
@@ -48,13 +49,14 @@ MODPY_ADJ_FILES = 	scripts/*.py scripts/build/*.py scripts/upgrade/*.py \
 			tests/test-share.py tests/test-transfer.py \
 			tools/seafile-admin app/seaf-cli
 
-#CFLAGS += 		-DDEBUG
+SUBST_VARS += 		VARBASE
 
 pre-configure:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -fi
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/seafile/
-	${INSTALL_DATA} ${FILESDIR}/seafile.conf ${PREFIX}/share/examples/seafile/
+	${INSTALL_DATA} ${FILESDIR}/seafile.conf \
+		${PREFIX}/share/examples/seafile/
 
 .include <bsd.port.mk>
