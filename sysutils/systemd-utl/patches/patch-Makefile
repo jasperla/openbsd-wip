@@ -1,0 +1,45 @@
+$OpenBSD$
+--- Makefile.orig	Fri Aug  8 09:24:38 2014
++++ Makefile	Fri Aug  8 09:31:34 2014
+@@ -1,7 +1,7 @@
+ .PHONY: all
+ 
+-CC=/usr/bin/cc
+-CFLAGS=-Wall -Wextra -Werror -std=c89
++CC?=/usr/bin/cc
++CFLAGS+=-Wall -Wextra -Werror -std=c89
+ DEBUGF=-O0 -g
+ 
+ LINKGN=bin/obj/hostnamed-gen.o bin/obj/localed-gen.o bin/obj/timedated-gen.o bin/obj/logind-gen.o
+@@ -12,10 +12,10 @@ GLIBOF=`pkg-config --cflags        glib-2.0 gobject-2.
+ 
+ SANITY=-Wno-unused-variable -Wno-unused-parameter # -Wno-comment
+ 
+-PREFIX=/usr/local
++PREFIX?=/usr/local
+ LIBDIR=$(PREFIX)/lib
+ OUR_LIBDIR=$(LIBDIR)/systemd-compat
+-SYSCONFDIR=/etc
++SYSCONFDIR?=/etc
+ 
+ SRCDIR=src
+ CONFDIR=conf
+@@ -75,10 +75,13 @@ _generate_genfiles:
+ 	$(INVOKE_GENFILE_SCRIPT) logind
+ 
+ _install_conf:
+-	cp $(POLICYDIR)/*-dbus.conf       $(DBUS_POLICYDIR)/
+-	cp $(SERVICEFDIR)/*.service       $(DBUS_CONFIGDIR)/
+-	cp $(CONFDIR)/systemd_compat.conf $(SYSCONFDIR)/
++	install -d                        $(DESTDIR)/$(DBUS_POLICYDIR)
++	install -d                        $(DESTDIR)/$(DBUS_CONFIGDIR)
++	install -d                        $(DESTDIR)/$(SYSCONFDIR)
++	cp $(POLICYDIR)/*-dbus.conf       $(DESTDIR)/$(DBUS_POLICYDIR)/
++	cp $(SERVICEFDIR)/*.service       $(DESTDIR)/$(DBUS_CONFIGDIR)/
++	cp $(CONFDIR)/systemd_compat.conf $(DESTDIR)/$(SYSCONFDIR)/
+ 
+ _install_interface_binaries: $(LINKHN)
+-	mkdir -p $(OUR_LIBDIR)
+-	cp bin/systemd-* $(OUR_LIBDIR)/ 
++	install -d       $(DESTDIR)/$(OUR_LIBDIR)
++	cp bin/systemd-* $(DESTDIR)/$(OUR_LIBDIR)/ 
