@@ -1,0 +1,9 @@
+$OpenBSD$
+--- conf/service-files/org.freedesktop.hostname1.service.orig	Fri Aug  8 10:20:19 2014
++++ conf/service-files/org.freedesktop.hostname1.service	Fri Aug  8 10:20:35 2014
+@@ -1,4 +1,4 @@
+ [D-BUS Service]
+ Names=org.freedesktop.hostname1i
+-Exec=/usr/local/bin/systemd-compat/systemd-hostnamed
++Exec=/usr/local/libexec/systemd-hostnamed
+ User=root

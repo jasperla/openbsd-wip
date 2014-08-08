@@ -1,45 +1,90 @@
 $OpenBSD$
---- Makefile.orig	Fri Aug  8 09:24:38 2014
-+++ Makefile	Fri Aug  8 09:31:34 2014
-@@ -1,7 +1,7 @@
+--- Makefile.orig	Fri Aug  8 10:22:31 2014
++++ Makefile	Fri Aug  8 10:23:50 2014
+@@ -1,35 +1,46 @@
  .PHONY: all
  
 -CC=/usr/bin/cc
 -CFLAGS=-Wall -Wextra -Werror -std=c89
-+CC?=/usr/bin/cc
-+CFLAGS+=-Wall -Wextra -Werror -std=c89
- DEBUGF=-O0 -g
+-DEBUGF=-O0 -g
++CC?=		/usr/bin/cc
++CFLAGS+=	-Wall -Wextra -Werror -std=c89
++DEBUGF=		-O0 -g
++SANITY=		-Wno-unused-variable -Wno-unused-parameter # -Wno-comment
  
- LINKGN=bin/obj/hostnamed-gen.o bin/obj/localed-gen.o bin/obj/timedated-gen.o bin/obj/logind-gen.o
-@@ -12,10 +12,10 @@ GLIBOF=`pkg-config --cflags        glib-2.0 gobject-2.
+-LINKGN=bin/obj/hostnamed-gen.o bin/obj/localed-gen.o bin/obj/timedated-gen.o bin/obj/logind-gen.o
+-LINKHN=bin/systemd-hostnamed bin/systemd-localed bin/systemd-timedated bin/systemd-logind
++PREFIX?=	/usr/local
++BINDIR=		$(PREFIX)/libexec
++SYSCONFDIR?=	/etc
  
- SANITY=-Wno-unused-variable -Wno-unused-parameter # -Wno-comment
+-GLIBEF=`pkg-config --cflags --libs glib-2.0 gobject-2.0 gio-2.0 gio-unix-2.0`
+-GLIBOF=`pkg-config --cflags        glib-2.0 gobject-2.0 gio-2.0 gio-unix-2.0`
++INSTALL_PROGRAM=	install -c -s -o root -g bin -m 555
++INSTALL_PROGRAM_DIR=	install -d -o root -g bin -m 755
++INSTALL_DATA=		install -c -o root -g bin -m 444
++INSTALL_DATA_DIR=	install -d -o root -g bin -m 755
+ 
+-SANITY=-Wno-unused-variable -Wno-unused-parameter # -Wno-comment
++LINKGN=		bin/obj/hostnamed-gen.o \
++		bin/obj/localed-gen.o \
++		bin/obj/timedated-gen.o \
++		bin/obj/logind-gen.o
  
 -PREFIX=/usr/local
-+PREFIX?=/usr/local
- LIBDIR=$(PREFIX)/lib
- OUR_LIBDIR=$(LIBDIR)/systemd-compat
+-LIBDIR=$(PREFIX)/lib
+-OUR_LIBDIR=$(LIBDIR)/systemd-compat
 -SYSCONFDIR=/etc
-+SYSCONFDIR?=/etc
++LINKHN=		bin/systemd-hostnamed \
++		bin/systemd-localed \
++		bin/systemd-timedated \
++		bin/systemd-logind
  
- SRCDIR=src
- CONFDIR=conf
-@@ -75,10 +75,13 @@ _generate_genfiles:
+-SRCDIR=src
+-CONFDIR=conf
+-POLICYDIR=$(CONFDIR)/sysbus-policy
+-ISPECTDIR=$(CONFDIR)/introspect-xml
+-SERVICEFDIR=$(CONFDIR)/service-files
++GLIBEF=		`pkg-config --cflags --libs glib-2.0 gobject-2.0 gio-2.0 gio-unix-2.0`
++GLIBOF=		`pkg-config --cflags glib-2.0 gobject-2.0 gio-2.0 gio-unix-2.0`
+ 
+-INTFDIR=$(SRCDIR)/interfaces
++SRCDIR=		src
++CONFDIR=	conf
++POLICYDIR=	$(CONFDIR)/sysbus-policy
++ISPECTDIR=	$(CONFDIR)/introspect-xml
++SERVICEFDIR=	$(CONFDIR)/service-files
+ 
+-DBUS_POLICYDIR=$(SYSCONFDIR)/dbus-1/system.d
+-DBUS_CONFIGDIR=$(PREFIX)/share/dbus-1/system-services
++INTFDIR=	$(SRCDIR)/interfaces
+ 
+-INVOKE_GENFILE_SCRIPT=./scripts/gen-gdbus-interfaces.sh 
++DBUS_POLICYDIR=	$(SYSCONFDIR)/dbus-1/system.d
++DBUS_CONFIGDIR=	$(PREFIX)/share/dbus-1/system-services
+ 
++INVOKE_GENFILE_SCRIPT= \
++		./scripts/gen-gdbus-interfaces.sh 
++
+ all: build
+ 
+ build: _build_interface_objs_debug 
+@@ -75,10 +86,13 @@ _generate_genfiles:
  	$(INVOKE_GENFILE_SCRIPT) logind
  
  _install_conf:
 -	cp $(POLICYDIR)/*-dbus.conf       $(DBUS_POLICYDIR)/
 -	cp $(SERVICEFDIR)/*.service       $(DBUS_CONFIGDIR)/
 -	cp $(CONFDIR)/systemd_compat.conf $(SYSCONFDIR)/
-+	install -d                        $(DESTDIR)/$(DBUS_POLICYDIR)
-+	install -d                        $(DESTDIR)/$(DBUS_CONFIGDIR)
-+	install -d                        $(DESTDIR)/$(SYSCONFDIR)
-+	cp $(POLICYDIR)/*-dbus.conf       $(DESTDIR)/$(DBUS_POLICYDIR)/
-+	cp $(SERVICEFDIR)/*.service       $(DESTDIR)/$(DBUS_CONFIGDIR)/
-+	cp $(CONFDIR)/systemd_compat.conf $(DESTDIR)/$(SYSCONFDIR)/
++	${INSTALL_DATA_DIR} $(DESTDIR)$(DBUS_POLICYDIR)
++	${INSTALL_DATA_DIR} $(DESTDIR)$(DBUS_CONFIGDIR)
++	${INSTALL_DATA_DIR} $(DESTDIR)$(SYSCONFDIR)
++	${INSTALL_DATA} $(POLICYDIR)/*-dbus.conf $(DESTDIR)$(DBUS_POLICYDIR)/
++	${INSTALL_DATA} $(SERVICEFDIR)/*.service $(DESTDIR)$(DBUS_CONFIGDIR)/
++	${INSTALL_DATA} $(CONFDIR)/systemd_compat.conf $(DESTDIR)$(SYSCONFDIR)/
  
  _install_interface_binaries: $(LINKHN)
 -	mkdir -p $(OUR_LIBDIR)
 -	cp bin/systemd-* $(OUR_LIBDIR)/ 
-+	install -d       $(DESTDIR)/$(OUR_LIBDIR)
-+	cp bin/systemd-* $(DESTDIR)/$(OUR_LIBDIR)/ 
++	${INSTALL_PROGRAM_DIR} $(DESTDIR)$(BINDIR)
++	${INSTALL_PROGRAM} bin/systemd-* $(DESTDIR)$(BINDIR)/ 
