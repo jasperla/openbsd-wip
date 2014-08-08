@@ -39,8 +39,9 @@ do-extract:
 	cd ${WRKDIR} && \
 		${LOCALBASE}/bin/git clone git://uglyman.kremlin.cc/git/systemd-utl.git
 
-pre-configure:
-	perl -pi -e "s,/usr/local,${PREFIX}," \
-		${WRKSRC}/conf/service-files/*.service
+	cd ${WRKSRC}/conf/service-files && \
+		for i in *.service; do \
+			mv $$i $$i.in; \
+		done
 
 .include <bsd.port.mk>
