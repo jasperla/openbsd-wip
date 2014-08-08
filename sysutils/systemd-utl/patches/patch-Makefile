@@ -1,7 +1,7 @@
 $OpenBSD$
---- Makefile.orig	Fri Aug  8 10:22:31 2014
-+++ Makefile	Fri Aug  8 10:23:50 2014
-@@ -1,35 +1,46 @@
+--- Makefile.orig	Fri Aug  8 10:59:41 2014
++++ Makefile	Fri Aug  8 11:00:37 2014
+@@ -1,43 +1,64 @@
  .PHONY: all
  
 -CC=/usr/bin/cc
@@ -9,80 +9,147 @@ $OpenBSD$
 -DEBUGF=-O0 -g
 +CC?=		/usr/bin/cc
 +CFLAGS+=	-Wall -Wextra -Werror -std=c89
-+DEBUGF=		-O0 -g
-+SANITY=		-Wno-unused-variable -Wno-unused-parameter # -Wno-comment
  
 -LINKGN=bin/obj/hostnamed-gen.o bin/obj/localed-gen.o bin/obj/timedated-gen.o bin/obj/logind-gen.o
 -LINKHN=bin/systemd-hostnamed bin/systemd-localed bin/systemd-timedated bin/systemd-logind
-+PREFIX?=	/usr/local
-+BINDIR=		$(PREFIX)/libexec
-+SYSCONFDIR?=	/etc
++DEBUG=		1
++.ifdef DEBUG
++CFLAGS+=	-O0 -g
++.endif
  
 -GLIBEF=`pkg-config --cflags --libs glib-2.0 gobject-2.0 gio-2.0 gio-unix-2.0`
 -GLIBOF=`pkg-config --cflags        glib-2.0 gobject-2.0 gio-2.0 gio-unix-2.0`
-+INSTALL_PROGRAM=	install -c -s -o root -g bin -m 555
-+INSTALL_PROGRAM_DIR=	install -d -o root -g bin -m 755
-+INSTALL_DATA=		install -c -o root -g bin -m 444
-+INSTALL_DATA_DIR=	install -d -o root -g bin -m 755
++SANITY=		1
++.ifdef SANITY
++CFLAGS+=	-Wno-unused-variable -Wno-unused-parameter # -Wno-comment
++.endif
  
 -SANITY=-Wno-unused-variable -Wno-unused-parameter # -Wno-comment
-+LINKGN=		bin/obj/hostnamed-gen.o \
-+		bin/obj/localed-gen.o \
-+		bin/obj/timedated-gen.o \
-+		bin/obj/logind-gen.o
++PREFIX?=	/usr/local
++BINDIR=		$(PREFIX)/libexec
++SYSCONFDIR?=	/etc
  
 -PREFIX=/usr/local
 -LIBDIR=$(PREFIX)/lib
 -OUR_LIBDIR=$(LIBDIR)/systemd-compat
 -SYSCONFDIR=/etc
-+LINKHN=		bin/systemd-hostnamed \
-+		bin/systemd-localed \
-+		bin/systemd-timedated \
-+		bin/systemd-logind
++INSTALL_PROGRAM=	install -c -s -o root -g bin -m 555
++INSTALL_PROGRAM_DIR=	install -d -o root -g bin -m 755
++INSTALL_DATA=		install -c -o root -g bin -m 444
++INSTALL_DATA_DIR=	install -d -o root -g bin -m 755
  
 -SRCDIR=src
 -CONFDIR=conf
 -POLICYDIR=$(CONFDIR)/sysbus-policy
 -ISPECTDIR=$(CONFDIR)/introspect-xml
 -SERVICEFDIR=$(CONFDIR)/service-files
++LINKGN=		bin/obj/hostnamed-gen.o \
++		bin/obj/localed-gen.o \
++		bin/obj/timedated-gen.o \
++		bin/obj/logind-gen.o
+ 
+-INTFDIR=$(SRCDIR)/interfaces
++LINKHN=		bin/systemd-hostnamed \
++		bin/systemd-localed \
++		bin/systemd-timedated \
++		bin/systemd-logind
+ 
+-DBUS_POLICYDIR=$(SYSCONFDIR)/dbus-1/system.d
+-DBUS_CONFIGDIR=$(PREFIX)/share/dbus-1/system-services
++DBUS_SERVICES=	org.freedesktop.hostname1.service \
++		org.freedesktop.locale1.service \
++		org.freedesktop.login1.service \
++		org.freedesktop.timedate1.service
+ 
+-INVOKE_GENFILE_SCRIPT=./scripts/gen-gdbus-interfaces.sh 
 +GLIBEF=		`pkg-config --cflags --libs glib-2.0 gobject-2.0 gio-2.0 gio-unix-2.0`
 +GLIBOF=		`pkg-config --cflags glib-2.0 gobject-2.0 gio-2.0 gio-unix-2.0`
  
--INTFDIR=$(SRCDIR)/interfaces
+-all: build
 +SRCDIR=		src
 +CONFDIR=	conf
 +POLICYDIR=	$(CONFDIR)/sysbus-policy
 +ISPECTDIR=	$(CONFDIR)/introspect-xml
 +SERVICEFDIR=	$(CONFDIR)/service-files
  
--DBUS_POLICYDIR=$(SYSCONFDIR)/dbus-1/system.d
--DBUS_CONFIGDIR=$(PREFIX)/share/dbus-1/system-services
+-build: _build_interface_objs_debug 
+-	$(CC) -o bin/out.bin $(DEBUGF) $(GLIBEF) $(SANITY) $(SRCDIR)/main.c
 +INTFDIR=	$(SRCDIR)/interfaces
  
--INVOKE_GENFILE_SCRIPT=./scripts/gen-gdbus-interfaces.sh 
+-publish: _build_interface_objs 
+-	$(CC) -o bin/out.bin $(CFLAGS) $(GLIBEF) $(SANITY) $(SRCDIR)/main.c
 +DBUS_POLICYDIR=	$(SYSCONFDIR)/dbus-1/system.d
 +DBUS_CONFIGDIR=	$(PREFIX)/share/dbus-1/system-services
  
 +INVOKE_GENFILE_SCRIPT= \
 +		./scripts/gen-gdbus-interfaces.sh 
 +
- all: build
++all: build
++
++build: _build_interface_objs
++	$(CC) -o bin/out.bin $(CFLAGS) $(GLIBEF) $(SRCDIR)/main.c
++
+ clean:
+ 	find ./bin -type f -exec rm {} \;
+ 	find $(INTFDIR)/ -type f -iname *-gen.* -exec rm {} \;
+@@ -45,40 +66,36 @@ clean:
+ install: _install_conf _install_interface_binaries
  
- build: _build_interface_objs_debug 
-@@ -75,10 +86,13 @@ _generate_genfiles:
+ _build_interface_objs: _build_genfile_objs
+-	$(CC) -o bin/systemd-hostnamed $(CFLAGS) $(GLIBEF) $(SANITY) $(INTFDIR)/hostnamed/hostnamed.c bin/obj/hostnamed-gen.o 
+-	$(CC) -o bin/systemd-localed   $(CFLAGS) $(GLIBEF) $(SANITY) $(INTFDIR)/localed/localed.c     bin/obj/localed-gen.o
+-	$(CC) -o bin/systemd-timedated $(CFLAGS) $(GLIBEF) $(SANITY) $(INTFDIR)/timedated/timedated.c bin/obj/timedated-gen.o
+-	$(CC) -o bin/systemd-logind    $(CFLAGS) $(GLIBEF) $(SANITY) $(INTFDIR)/logind/logind.c       bin/obj/logind-gen.o
++	$(CC) -o bin/systemd-hostnamed $(CFLAGS) $(GLIBEF) $(INTFDIR)/hostnamed/hostnamed.c bin/obj/hostnamed-gen.o 
++	$(CC) -o bin/systemd-localed   $(CFLAGS) $(GLIBEF) $(INTFDIR)/localed/localed.c     bin/obj/localed-gen.o
++	$(CC) -o bin/systemd-timedated $(CFLAGS) $(GLIBEF) $(INTFDIR)/timedated/timedated.c bin/obj/timedated-gen.o
++	$(CC) -o bin/systemd-logind    $(CFLAGS) $(GLIBEF) $(INTFDIR)/logind/logind.c       bin/obj/logind-gen.o
+ 
+-_build_interface_objs_debug: _build_genfile_objs_debug
+-	$(CC) -o bin/systemd-hostnamed $(DEBUGF) $(GLIBEF) $(SANITY) $(INTFDIR)/hostnamed/hostnamed.c bin/obj/hostnamed-gen.o  
+-	$(CC) -o bin/systemd-localed   $(DEBUGF) $(GLIBEF) $(SANITY) $(INTFDIR)/localed/localed.c     bin/obj/localed-gen.o
+-	$(CC) -o bin/systemd-timedated $(DEBUGF) $(GLIBEF) $(SANITY) $(INTFDIR)/timedated/timedated.c bin/obj/timedated-gen.o
+-	$(CC) -o bin/systemd-logind    $(DEBUGF) $(GLIBEF) $(SANITY) $(INTFDIR)/logind/logind.c       bin/obj/logind-gen.o
+-
+ _build_genfile_objs: _generate_genfiles
+-	$(CC) -o bin/obj/hostnamed-gen.o $(CFLAGS) $(GLIBOF) $(SANITY) -c $(INTFDIR)/hostnamed/hostnamed-gen.c
+-	$(CC) -o bin/obj/localed-gen.o   $(CFLAGS) $(GLIBOF) $(SANITY) -c $(INTFDIR)/localed/localed-gen.c
+-	$(CC) -o bin/obj/timedated-gen.o $(CFLAGS) $(GLIBOF) $(SANITY) -c $(INTFDIR)/timedated/timedated-gen.c
+-	$(CC) -o bin/obj/logind-gen.o    $(CFLAGS) $(GLIBOF) $(SANITY) -c $(INTFDIR)/logind/logind-gen.c
++	$(CC) -o bin/obj/hostnamed-gen.o $(CFLAGS) $(GLIBOF) -c $(INTFDIR)/hostnamed/hostnamed-gen.c
++	$(CC) -o bin/obj/localed-gen.o   $(CFLAGS) $(GLIBOF) -c $(INTFDIR)/localed/localed-gen.c
++	$(CC) -o bin/obj/timedated-gen.o $(CFLAGS) $(GLIBOF) -c $(INTFDIR)/timedated/timedated-gen.c
++	$(CC) -o bin/obj/logind-gen.o    $(CFLAGS) $(GLIBOF) -c $(INTFDIR)/logind/logind-gen.c
+ 
+-_build_genfile_objs_debug: _generate_genfiles
+-	$(CC) -o bin/obj/hostnamed-gen.o $(DEBUGF) $(GLIBOF) $(SANITY) -c $(INTFDIR)/hostnamed/hostnamed-gen.c
+-	$(CC) -o bin/obj/localed-gen.o   $(DEBUGF) $(GLIBOF) $(SANITY) -c $(INTFDIR)/localed/localed-gen.c
+-	$(CC) -o bin/obj/timedated-gen.o $(DEBUGF) $(GLIBOF) $(SANITY) -c $(INTFDIR)/timedated/timedated-gen.c
+-	$(CC) -o bin/obj/logind-gen.o    $(DEBUGF) $(GLIBOF) $(SANITY) -c $(INTFDIR)/logind/logind-gen.c
+-
+ _generate_genfiles:
+ 	$(INVOKE_GENFILE_SCRIPT) hostnamed
+ 	$(INVOKE_GENFILE_SCRIPT) localed
+ 	$(INVOKE_GENFILE_SCRIPT) timedated
  	$(INVOKE_GENFILE_SCRIPT) logind
  
- _install_conf:
+-_install_conf:
 -	cp $(POLICYDIR)/*-dbus.conf       $(DBUS_POLICYDIR)/
 -	cp $(SERVICEFDIR)/*.service       $(DBUS_CONFIGDIR)/
 -	cp $(CONFDIR)/systemd_compat.conf $(SYSCONFDIR)/
++_generate_servicefiles:
++	for svc in $(DBUS_SERVICES); do \
++		sed -e 's,@BINDIR@,${BINDIR},' $(SERVICEFDIR)/$$svc.in > $(SERVICEFDIR)/$$svc; \
++	done
+ 
++_install_conf: _generate_servicefiles
 +	${INSTALL_DATA_DIR} $(DESTDIR)$(DBUS_POLICYDIR)
 +	${INSTALL_DATA_DIR} $(DESTDIR)$(DBUS_CONFIGDIR)
 +	${INSTALL_DATA_DIR} $(DESTDIR)$(SYSCONFDIR)
 +	${INSTALL_DATA} $(POLICYDIR)/*-dbus.conf $(DESTDIR)$(DBUS_POLICYDIR)/
 +	${INSTALL_DATA} $(SERVICEFDIR)/*.service $(DESTDIR)$(DBUS_CONFIGDIR)/
 +	${INSTALL_DATA} $(CONFDIR)/systemd_compat.conf $(DESTDIR)$(SYSCONFDIR)/
- 
++
  _install_interface_binaries: $(LINKHN)
 -	mkdir -p $(OUR_LIBDIR)
 -	cp bin/systemd-* $(OUR_LIBDIR)/ 
