@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/posix/OSPosix.cpp.orig	Sat Aug  9 08:56:41 2014
++++ src/posix/OSPosix.cpp	Sat Aug  9 08:56:45 2014
+@@ -111,7 +111,7 @@ const std::string GetOSInfoString()
+ 	}
+ 
+ 	char infoString[2048];
+-#if defined(__APPLE__)
++#if defined(__APPLE__) || defined(__OpenBSD__)
+ 	snprintf(infoString, 2048, "System Name: %s\nHost Name: %s\nRelease(Kernel) Version: %s\nKernel Build Timestamp: %s\nMachine Arch: %s\n",
+ 		uts.sysname, uts.nodename, uts.release, uts.version, uts.machine);
+ #else

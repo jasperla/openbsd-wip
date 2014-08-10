@@ -1,0 +1,17 @@
+Depends on SDL2, which is currently marked BROKEN.
+
+Related: crashes on startup due to SDL2 ld.so issues.
+
+Test failure:
+
+c++ -I/usr/X11R6/include/freetype2 -I/usr/X11R6/include -I/usr/include/dev/pci/drm -DLUA_USE_POSIX -DLUA_USE_APICHECK -I/usr/local/include/SDL2 -I/usr/X11R6/include -D_REENTRANT -I/usr/local/include/sigc++-2.0 -I/usr/local/lib/sigc++-2.0/include   -I/usr/local/include -std=c++11 -Wall -Wformat -Wstrict-aliasing=2 -Wmissing-format-attribute -Wmissing-noreturn -Wdisabled-optimization -Wfloat-equal -Wshadow -Wcast-qual -Wcast-align -Wformat-security -Wstrict-null-sentinel -Wold-style-cast -Wsign-promo -O2 -pipe -g   -L/usr/local/lib -L/usr/X11R6/lib -o tests StringF.o tests.o test_Frame.o test_StringF.o FileSystem.o FileSourceZip.o test_FileSystem.o test_Random.o collider/libcollider.a gui/libgui.a graphics/libgraphics.a terrain/libterrain.a posix/libposix.a ../contrib/PicoDDS/libpicodds.a ../contrib/jenkins/libjenkins.a -L/usr/local/lib -lsigc-2.0 
+FileSourceZip.o(.text+0x267a): In function `FileSystem::FileSourceZip::ReadFile(std::string const&)':
+/usr/ports/pobj/pioneer-0.20140804/pioneer-20140804/src/FileSourceZip.cpp:130: undefined reference to `Output(char const*, ...)'
+FileSourceZip.o(.text+0x3783): In function `FileSystem::FileSourceZip::FileSourceZip(FileSystem::FileSourceFS&, std::string const&)':
+/usr/ports/pobj/pioneer-0.20140804/pioneer-20140804/src/FileSourceZip.cpp:23: undefined reference to `Output(char const*, ...)'
+posix/libposix.a(FileSystemPosix.o)(.text+0x368): In function `_ZN10FileSystemL13absolute_pathERKSs':
+../../src/FileSystem.h:63: undefined reference to `Output(char const*, ...)'
+posix/libposix.a(FileSystemPosix.o)(.text+0x476): In function `FileSystem::FileSourceFS::ReadFile(std::string const&)':
+/usr/local/include/c++/4.8.3/bits/stl_algo.h:2247: undefined reference to `Output(char const*, ...)'
+posix/libposix.a(FileSystemPosix.o)(.text+0x5ed):/usr/local/include/c++/4.8.3/bits/stl_algo.h:94: undefined reference to `Output(char const*, ...)'
+collect2: error: ld returned 1 exit status
