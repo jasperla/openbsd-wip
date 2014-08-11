@@ -1,0 +1,428 @@
+Untested for real.
+
+Tests fail:
+
+======================================================================
+ERROR: test_unicode_set (libbe.storage.base.HgStorage_get_set_TestCase)
+Set should define the value returned by get.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 844, in test_unicode_set
+    self.s.set(self.id, val)
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 359, in set
+    value = value.encode(self.encoding)
+  File "/usr/local/lib/python2.7/encodings/koi8_r.py", line 12, in encode
+    return codecs.charmap_encode(input,errors,encoding_table)
+UnicodeEncodeError: 'charmap' codec can't encode character u'\xe7' in position 4: character maps to <undefined>
+
+======================================================================
+ERROR: test_unicode_set (libbe.storage.base.ExecGitStorage_get_set_TestCase)
+Set should define the value returned by get.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 844, in test_unicode_set
+    self.s.set(self.id, val)
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 359, in set
+    value = value.encode(self.encoding)
+  File "/usr/local/lib/python2.7/encodings/koi8_r.py", line 12, in encode
+    return codecs.charmap_encode(input,errors,encoding_table)
+UnicodeEncodeError: 'charmap' codec can't encode character u'\xe7' in position 4: character maps to <undefined>
+
+======================================================================
+ERROR: test_recursive_remove (libbe.storage.base.PygitGitStorage_add_remove_TestCase)
+Recursive remove should empty the tree.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 779, in test_recursive_remove
+    self.s.recursive_remove('parent')
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 286, in recursive_remove
+    self._recursive_remove(*args, **kwargs)
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/vcs/base.py", line 779, in _recursive_remove
+    self._vcs_remove(self._u_rel_path(fullpath))
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/vcs/git.py", line 157, in _vcs_remove
+    del self._pygit_repository.index[path]
+TypeError: '_pygit2.Index' object does not support item deletion
+
+======================================================================
+ERROR: test_remove_directory_not_empty (libbe.storage.base.PygitGitStorage_add_remove_TestCase)
+Removing a non-empty directory entry should raise exception.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 761, in test_remove_directory_not_empty
+    self.s.remove(ids.pop()) # empty directory removal succeeds
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 272, in remove
+    self._remove(*args, **kwargs)
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/vcs/base.py", line 763, in _remove
+    self._vcs_remove(self._u_rel_path(path))
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/vcs/git.py", line 157, in _vcs_remove
+    del self._pygit_repository.index[path]
+TypeError: '_pygit2.Index' object does not support item deletion
+
+======================================================================
+ERROR: test_remove_nonrooted (libbe.storage.base.PygitGitStorage_add_remove_TestCase)
+Removing entries should decrease the number of children (nonrooted).
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 746, in test_remove_nonrooted
+    self.s.remove(ids.pop())
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 272, in remove
+    self._remove(*args, **kwargs)
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/vcs/base.py", line 763, in _remove
+    self._vcs_remove(self._u_rel_path(path))
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/vcs/git.py", line 157, in _vcs_remove
+    del self._pygit_repository.index[path]
+TypeError: '_pygit2.Index' object does not support item deletion
+
+======================================================================
+ERROR: test_remove_rooted (libbe.storage.base.PygitGitStorage_add_remove_TestCase)
+Removing entries should decrease the number of children (rooted).
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 733, in test_remove_rooted
+    self.s.remove(ids.pop())
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 272, in remove
+    self._remove(*args, **kwargs)
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/vcs/base.py", line 763, in _remove
+    self._vcs_remove(self._u_rel_path(path))
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/vcs/git.py", line 157, in _vcs_remove
+    del self._pygit_repository.index[path]
+TypeError: '_pygit2.Index' object does not support item deletion
+
+======================================================================
+ERROR: test_unicode_set (libbe.storage.base.PygitGitStorage_get_set_TestCase)
+Set should define the value returned by get.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 844, in test_unicode_set
+    self.s.set(self.id, val)
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 359, in set
+    value = value.encode(self.encoding)
+  File "/usr/local/lib/python2.7/encodings/koi8_r.py", line 12, in encode
+    return codecs.charmap_encode(input,errors,encoding_table)
+UnicodeEncodeError: 'charmap' codec can't encode character u'\xe7' in position 4: character maps to <undefined>
+
+======================================================================
+ERROR: test_changed (libbe.storage.base.PygitGitVersionedStorage_changed_TestCase)
+Changed lists should reflect past activity
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 1071, in test_changed
+    self.s.remove('moved')
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 272, in remove
+    self._remove(*args, **kwargs)
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/vcs/base.py", line 763, in _remove
+    self._vcs_remove(self._u_rel_path(path))
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/vcs/git.py", line 157, in _vcs_remove
+    del self._pygit_repository.index[path]
+TypeError: '_pygit2.Index' object does not support item deletion
+
+======================================================================
+ERROR: test_avoid_previous_grandchildren (libbe.storage.base.PygitGitVersionedStorage_commit_TestCase)
+Previous grandchildren should not be returned as children.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 1047, in test_avoid_previous_grandchildren
+    self.commit_body))
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 489, in commit
+    return self._commit(*args, **kwargs)
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/vcs/base.py", line 881, in _commit
+    revision = self._vcs_commit(filename, allow_empty=allow_empty)
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/vcs/git.py", line 227, in _vcs_commit
+    parents = [self._pygit_repository.head.oid]
+AttributeError: '_pygit2.Reference' object has no attribute 'oid'
+
+======================================================================
+ERROR: test_commit_revision_ids (libbe.storage.base.PygitGitVersionedStorage_commit_TestCase)
+Commit / revision_id should agree on revision ids.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 972, in test_commit_revision_ids
+    self.commit_body))
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 489, in commit
+    return self._commit(*args, **kwargs)
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/vcs/base.py", line 881, in _commit
+    revision = self._vcs_commit(filename, allow_empty=allow_empty)
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/vcs/git.py", line 227, in _vcs_commit
+    parents = [self._pygit_repository.head.oid]
+AttributeError: '_pygit2.Reference' object has no attribute 'oid'
+
+======================================================================
+ERROR: test_empty_commit_allowed (libbe.storage.base.PygitGitVersionedStorage_commit_TestCase)
+Empty commit should _not_ raise exception if allow_empty=True.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 960, in test_empty_commit_allowed
+    allow_empty=True)
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 489, in commit
+    return self._commit(*args, **kwargs)
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/vcs/base.py", line 881, in _commit
+    revision = self._vcs_commit(filename, allow_empty=allow_empty)
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/vcs/git.py", line 227, in _vcs_commit
+    parents = [self._pygit_repository.head.oid]
+AttributeError: '_pygit2.Reference' object has no attribute 'oid'
+
+======================================================================
+ERROR: test_empty_commit_raises_exception (libbe.storage.base.PygitGitVersionedStorage_commit_TestCase)
+Empty commit should raise exception.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 948, in test_empty_commit_raises_exception
+    self.s.commit(self.commit_msg, self.commit_body)
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 489, in commit
+    return self._commit(*args, **kwargs)
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/vcs/base.py", line 881, in _commit
+    revision = self._vcs_commit(filename, allow_empty=allow_empty)
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/vcs/git.py", line 227, in _vcs_commit
+    parents = [self._pygit_repository.head.oid]
+AttributeError: '_pygit2.Reference' object has no attribute 'oid'
+
+======================================================================
+ERROR: test_get_previous_children (libbe.storage.base.PygitGitVersionedStorage_commit_TestCase)
+Children list should be revision dependent.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 1013, in test_get_previous_children
+    self.commit_body))
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 489, in commit
+    return self._commit(*args, **kwargs)
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/vcs/base.py", line 881, in _commit
+    revision = self._vcs_commit(filename, allow_empty=allow_empty)
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/vcs/git.py", line 227, in _vcs_commit
+    parents = [self._pygit_repository.head.oid]
+AttributeError: '_pygit2.Reference' object has no attribute 'oid'
+
+======================================================================
+ERROR: test_get_previous_version (libbe.storage.base.PygitGitVersionedStorage_commit_TestCase)
+Get should be able to return the previous version.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 994, in test_get_previous_version
+    self.commit_body))
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 489, in commit
+    return self._commit(*args, **kwargs)
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/vcs/base.py", line 881, in _commit
+    revision = self._vcs_commit(filename, allow_empty=allow_empty)
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/vcs/git.py", line 227, in _vcs_commit
+    parents = [self._pygit_repository.head.oid]
+AttributeError: '_pygit2.Reference' object has no attribute 'oid'
+
+======================================================================
+ERROR: test_unicode_set (libbe.storage.base.VCSStorage_get_set_TestCase)
+Set should define the value returned by get.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 844, in test_unicode_set
+    self.s.set(self.id, val)
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 359, in set
+    value = value.encode(self.encoding)
+  File "/usr/local/lib/python2.7/encodings/koi8_r.py", line 12, in encode
+    return codecs.charmap_encode(input,errors,encoding_table)
+UnicodeEncodeError: 'charmap' codec can't encode character u'\xe7' in position 4: character maps to <undefined>
+
+======================================================================
+FAIL: Status (libbe.command.status)
+Doctest: libbe.command.status.Status
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/doctest.py", line 2226, in runTest
+    raise self.failureException(self.format_failure(new.getvalue()))
+AssertionError: Failed doctest test for libbe.command.status.Status
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/command/status.py", line 30, in Status
+
+----------------------------------------------------------------------
+File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/command/status.py", line 47, in libbe.command.status.Status
+Failed example:
+    bd.bug_from_uuid('a').status
+Expected:
+    'closed'
+Got:
+    u'closed'
+
+
+======================================================================
+FAIL: Init (libbe.command.init)
+Doctest: libbe.command.init.Init
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/doctest.py", line 2226, in runTest
+    raise self.failureException(self.format_failure(new.getvalue()))
+AssertionError: Failed doctest test for libbe.command.init.Init
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/command/init.py", line 28, in Init
+
+----------------------------------------------------------------------
+File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/command/init.py", line 65, in libbe.command.init.Init
+Failed example:
+    if vcs.name in libbe.storage.vcs.base.VCS_ORDER:
+        ui.run(cmd) # doctest: +ELLIPSIS
+    else:
+        vcs.init()
+        vcs.connect()
+        print 'Using ... for revision control.\nDirectory initialized.'
+Expected:
+    Using ... for revision control.
+    BE repository initialized.
+Got:
+    Using ... for revision control.
+    Directory initialized.
+----------------------------------------------------------------------
+File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/command/init.py", line 75, in libbe.command.init.Init
+Failed example:
+    bugdir = libbe.bugdir.BugDir(vcs, from_storage=True)
+Exception raised:
+    Traceback (most recent call last):
+      File "/usr/local/lib/python2.7/doctest.py", line 1315, in __run
+        compileflags, 1) in test.globs
+      File "<doctest libbe.command.init.Init[29]>", line 1, in <module>
+        bugdir = libbe.bugdir.BugDir(vcs, from_storage=True)
+      File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/bugdir.py", line 173, in __init__
+        if c != 'version'][0]
+    IndexError: list index out of range
+
+
+======================================================================
+FAIL: Subscribe (libbe.command.subscribe)
+Doctest: libbe.command.subscribe.Subscribe
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/doctest.py", line 2226, in runTest
+    raise self.failureException(self.format_failure(new.getvalue()))
+AssertionError: Failed doctest test for libbe.command.subscribe.Subscribe
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/command/subscribe.py", line 35, in Subscribe
+
+----------------------------------------------------------------------
+File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/command/subscribe.py", line 55, in libbe.command.subscribe.Subscribe
+Failed example:
+    print a.extra_strings
+Expected:
+    ['SUBSCRIBE:John Doe <j@doe.com>\tall\t*']
+Got:
+    [u'SUBSCRIBE:John Doe <j@doe.com>\tall\t*']
+
+
+======================================================================
+FAIL: Assign (libbe.command.assign)
+Doctest: libbe.command.assign.Assign
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/doctest.py", line 2226, in runTest
+    raise self.failureException(self.format_failure(new.getvalue()))
+AssertionError: Failed doctest test for libbe.command.assign.Assign
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/command/assign.py", line 29, in Assign
+
+----------------------------------------------------------------------
+File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/command/assign.py", line 51, in libbe.command.assign.Assign
+Failed example:
+    bd.bug_from_uuid('a').assigned
+Expected:
+    'someone'
+Got:
+    u'someone'
+----------------------------------------------------------------------
+File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/command/assign.py", line 53, in libbe.command.assign.Assign
+Failed example:
+    bd.bug_from_uuid('b').assigned
+Expected:
+    'someone'
+Got:
+    u'someone'
+
+
+======================================================================
+FAIL: Severity (libbe.command.severity)
+Doctest: libbe.command.severity.Severity
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/doctest.py", line 2226, in runTest
+    raise self.failureException(self.format_failure(new.getvalue()))
+AssertionError: Failed doctest test for libbe.command.severity.Severity
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/command/severity.py", line 30, in Severity
+
+----------------------------------------------------------------------
+File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/command/severity.py", line 46, in libbe.command.severity.Severity
+Failed example:
+    bd.bug_from_uuid('a').severity
+Expected:
+    'wishlist'
+Got:
+    u'wishlist'
+
+
+======================================================================
+FAIL: Tag (libbe.command.tag)
+Doctest: libbe.command.tag.Tag
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/doctest.py", line 2226, in runTest
+    raise self.failureException(self.format_failure(new.getvalue()))
+AssertionError: Failed doctest test for libbe.command.tag.Tag
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/command/tag.py", line 85, in Tag
+
+----------------------------------------------------------------------
+File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/command/tag.py", line 105, in libbe.command.tag.Tag
+Failed example:
+    print a.extra_strings
+Expected:
+    ['TAG:GUI']
+Got:
+    [u'TAG:GUI']
+----------------------------------------------------------------------
+File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/command/tag.py", line 125, in libbe.command.tag.Tag
+Failed example:
+    print a.extra_strings
+Expected:
+    ['TAG:Alphabetically first', 'TAG:GUI', 'TAG:later']
+Got:
+    [u'TAG:Alphabetically first', u'TAG:GUI', u'TAG:later']
+
+
+======================================================================
+FAIL: test_empty_commit_raises_exception (libbe.storage.base.HgVersionedStorage_commit_TestCase)
+Empty commit should raise exception.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 951, in test_empty_commit_raises_exception
+    % vars(self.Class))
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/base.py", line 567, in fail
+    '({0}) {1}'.format(self._classname(), msg))
+AssertionError: (Hg:3.0) Empty hg.commit() didn't raise EmptyCommit.
+
+======================================================================
+FAIL: test_installed (libbe.storage.vcs.base.DarcsVCS_installed_TestCase)
+See if the VCS is installed.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/vcs/base.py", line 1134, in test_installed
+    '%(name)s VCS not found' % vars(self.Class))
+AssertionError: darcs VCS not found
+
+======================================================================
+FAIL: test_installed (libbe.storage.vcs.base.MonotoneVCS_installed_TestCase)
+See if the VCS is installed.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/vcs/base.py", line 1134, in test_installed
+    '%(name)s VCS not found' % vars(self.Class))
+AssertionError: monotone VCS not found
+
+======================================================================
+FAIL: test_installed (libbe.storage.vcs.base.ArchVCS_installed_TestCase)
+See if the VCS is installed.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/vcs/base.py", line 1134, in test_installed
+    '%(name)s VCS not found' % vars(self.Class))
+AssertionError: arch VCS not found
+
+======================================================================
+FAIL: test_installed (libbe.storage.vcs.base.BzrVCS_installed_TestCase)
+See if the VCS is installed.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/obj/p/be-1.1.1/be-1.1.1/libbe/storage/vcs/base.py", line 1134, in test_installed
+    '%(name)s VCS not found' % vars(self.Class))
+AssertionError: bzr VCS not found
+
+----------------------------------------------------------------------
+Ran 379 tests in 34.098s
+
+FAILED (failures=11, errors=15)
