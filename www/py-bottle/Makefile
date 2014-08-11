@@ -1,5 +1,6 @@
 # $OpenBSD$
 
+PKG_ARCH=		*
 COMMENT=		simple WSGI framework for small web applications
 
 MODPY_EGG_VERSION=	0.12.7
