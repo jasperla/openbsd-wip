@@ -1,0 +1,32 @@
+$OpenBSD$
+Fix documentation, bmake actually searches in three directories.
+--- bmake.1.orig	Sat Feb 15 22:57:36 2014
++++ bmake.1	Wed Feb 19 17:36:21 2014
+@@ -276,7 +276,8 @@ include statement.
+ The
+ .Fl m
+ option can be used multiple times to form a search path.
+-This path will override the default system include path: /usr/share/mk.
++This path will override the default system include path:
++.Pa ${PREFIX}/share/mk .
+ Furthermore the system include path will be appended to the search path used
+ for
+ .Qo Ar file Qc Ns -style
+@@ -2106,7 +2107,7 @@ see the description of
+ .Ql Va .OBJDIR
+ for more details.
+ .Sh FILES
+-.Bl -tag -width /usr/share/mk -compact
++.Bl -tag -width ${PREFIX}/share/mk -compact
+ .It .depend
+ list of dependencies
+ .It Makefile
+@@ -2115,7 +2116,7 @@ list of dependencies
+ list of dependencies
+ .It sys.mk
+ system makefile
+-.It /usr/share/mk
++.It ${PREFIX}/share/mk
+ system makefile directory
+ .El
+ .Sh COMPATIBILITY

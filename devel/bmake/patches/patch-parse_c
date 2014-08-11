@@ -1,0 +1,15 @@
+$OpenBSD$
+Avoid failing on OpenBSD /etc/mk.conf, e.g., when the latter
+includes mk.conf.template.
+--- parse.c.orig	Sat Feb 15 04:31:21 2014
++++ parse.c	Wed Feb 19 17:32:58 2014
+@@ -1265,6 +1265,9 @@ ParseDoDependency(char *line)
+ 	}
+ 	*cp = '\0';
+ 
++	if (strcmp(line, ".poison") == 0)
++	    goto out;
++
+ 	/*
+ 	 * Have a word in line. See if it's a special target and set
+ 	 * specType to match it.
