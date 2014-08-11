@@ -1,5 +1,6 @@
 # $OpenBSD$
 
+PKG_ARCH=		*
 COMMENT=		small expressive ORM
 
 MODPY_EGG_VERSION=	2.2.5
