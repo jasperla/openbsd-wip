@@ -1,4 +1,5 @@
 $OpenBSD$
+Fix SSL library detection.
 --- configure.ac.ports.orig	Tue Jul 29 01:02:04 2014
 +++ configure.ac	Thu Aug  7 07:55:14 2014
 @@ -160,7 +160,8 @@ AC_CHECK_LIB(ssl, SSL_library_init,
