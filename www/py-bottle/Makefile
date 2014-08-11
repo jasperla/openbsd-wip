@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/08/07 21:32:54 naddy Exp $
+# $OpenBSD$
 
 COMMENT=		simple WSGI framework for small web applications
 
@@ -6,11 +6,11 @@ MODPY_EGG_VERSION=	0.12.7
 DISTNAME=		bottle-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
-CATEGORIES=		www
+CATEGORIES=		devel www
 
 HOMEPAGE=		http://bottlepy.org/docs/dev/
 
-# GPLv2
+# MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${MASTER_SITE_PYPI:=b/bottle/}
