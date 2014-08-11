@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =		offline browser
-DISTNAME =		httrack-3.47.27
+DISTNAME =		httrack-3.48.19
 
 SHARED_LIBS +=  baselinks                 0.0 # 1.0
 SHARED_LIBS +=  changecontent             0.0 # 1.0
@@ -27,7 +27,8 @@ WANTLIB =  c crypto pthread ssl z
 
 MASTER_SITES =		http://mirror.httrack.com/
 
-MODULES =		converters/libiconv
+MODULES =		converters/libiconv lang/clang
+MODCLANG_ARCHS =	*
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+2,-guic
@@ -41,6 +42,8 @@ CONFIGURE_ENV =		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 AUTOCONF_VERSION =	2.69
+
+PATCHORIG =		.ports.orig
 
 pre-configure:
 	perl -pi \

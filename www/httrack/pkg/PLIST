@@ -5,13 +5,17 @@
 bin/webhttrack
 include/httrack/
 include/httrack/config.h
+include/httrack/htsarrays.h
 include/httrack/htsbasenet.h
 include/httrack/htsbauth.h
 include/httrack/htsconfig.h
 include/httrack/htsdefines.h
 include/httrack/htsglobal.h
 include/httrack/htsmodules.h
+include/httrack/htsnet.h
 include/httrack/htsopt.h
+include/httrack/htssafe.h
+include/httrack/htsstrings.h
 include/httrack/htswrap.h
 include/httrack/httrack-library.h
 lib/httrack/
@@ -186,6 +190,7 @@ share/httrack/lang/Castellano.txt
 share/httrack/lang/Cesky.txt
 share/httrack/lang/Chinese-BIG5.txt
 share/httrack/lang/Chinese-Simplified.txt
+share/httrack/lang/Croatian.txt
 share/httrack/lang/Dansk.txt
 share/httrack/lang/Deutsch.txt
 share/httrack/lang/Eesti.txt
@@ -220,8 +225,8 @@ share/httrack/libtest/callbacks-example-filenameiisbug.c
 share/httrack/libtest/callbacks-example-listlinks.c
 share/httrack/libtest/callbacks-example-log.c
 share/httrack/libtest/callbacks-example-simple.c
-share/httrack/libtest/example.c
-share/httrack/libtest/example.h
+share/httrack/libtest/example-main.c
+share/httrack/libtest/example-main.h
 share/httrack/libtest/readme.txt
 share/httrack/templates/
 share/httrack/templates/index-body.html
