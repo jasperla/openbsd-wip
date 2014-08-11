@@ -3,9 +3,9 @@
 COMMENT-main =		seafile daemon
 COMMENT-server = 	seafile server
 
-NAME =			seafile
-PKGNAME-main = 		seafile-daemon-${V}
-PKGNAME-server = 	seafile-server-${V}
+GH_PROJECT =		seafile
+PKGNAME-main = 		${GH_PROJECT}-daemon-${V}
+PKGNAME-server = 	${GH_PROJECT}-server-${V}
 
 SHARED_LIBS =		seafile 0.0
 

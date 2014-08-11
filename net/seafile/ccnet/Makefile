@@ -2,7 +2,7 @@
 
 COMMENT =		framework for writing networked applications in C
 
-NAME = 			ccnet
+GH_PROJECT = 		ccnet
 
 SHARED_LIBS =		ccnet 0.0
 

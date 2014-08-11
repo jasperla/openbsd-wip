@@ -2,8 +2,8 @@
 
 COMMENT =		simple RPC framework based on GObject system
 
-NAME = 			libsearpc
-VERSION = 		3.0-latest
+GH_PROJECT = 		libsearpc
+GH_TAGNAME = 		v3.0-latest
 
 SHARED_LIBS += 		searpc			0.0 # 1.2
 

@@ -1,9 +1,8 @@
 # $OpenBSD: Makefile.template,v 1.68 2013/10/02 07:34:45 ajacoutot Exp $
 
-VERSION ?= 		3.1.4
-V = 			${VERSION:S/-server//:S/-testing//:S/-latest//}
-DISTNAME = 		${NAME}-${VERSION}
-PKGNAME = 		${NAME}-${V}
+GH_TAGNAME ?= 		v3.1.4
+V = 			${GH_TAGNAME:S/v//:S/-server//:S/-testing//:S/-latest//}
+DISTNAME = 		${GH_PROJECT}-${V}
 
 CATEGORIES =		net net/seafile
 
@@ -14,9 +13,6 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		https://github.com/haiwen/${NAME}/archive/
-DISTFILES = 		${DISTNAME}${EXTRACT_SUFX}{v${VERSION}${EXTRACT_SUFX}}
-
-WRKDIST = 		${WRKDIR}/${NAME}-${VERSION}
+GH_ACCOUNT = 		haiwen
 
 #.include <bsd.port.mk>

@@ -2,7 +2,7 @@
 
 COMMENT =		seafile client
 
-NAME =			seafile-client
+GH_PROJECT = 		seafile-client
 
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtWebKit
 WANTLIB += lib/qt4/QtXml lib/qt4/QtXmlPatterns c ccnet crypto gio-2.0
