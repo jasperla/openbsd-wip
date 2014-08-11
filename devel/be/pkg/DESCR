@@ -1,0 +1,21 @@
+Bugs Everywhere is a distributed bugtracker, designed to complement
+distributed revision control systems. By using distributed revision
+control as a backend for bug state, several convenient features are
+gained:
+
+  * Bugs and code that live on branches are tracked together when
+    a branch is merged, both the code changes and bug changes that
+    the branch contains are merged alongside each other. We no
+    longer have to be confused about whether a fix that is applied
+    to the development branch but not yet present in the production
+    branch means that our bug is fixed.
+
+  * Users can fully modify bug state while offline, unlike with
+    many centralized bugtrackers.
+
+  * When a user checks out your source code, she gets the current
+    bug state for free.
+
+  * We can still provide access to a friendly web interface for
+    users in this model, a web interface becomes just another client
+    that merges with the main repository.
