@@ -1,0 +1,22 @@
+$OpenBSD$
+Fix build.
+--- src/htslib.c.ports.orig	Thu Aug  7 07:56:00 2014
++++ src/htslib.c	Thu Aug  7 07:58:27 2014
+@@ -71,7 +71,17 @@ static long int  timezone = 0;
+ #endif
+ #include <stdarg.h>
+ 
++#ifndef HTS_DO_NOT_USE_FTIME
++#ifdef _WIN32
++#include <sys/utime.h>
++#else
++#include <utime.h>
++#endif
+ #include <sys/timeb.h>
++#else
++#include <utime.h>
++#endif
++
+ #include <fcntl.h>
+ 
+ // pour utimbuf
