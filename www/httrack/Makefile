@@ -3,6 +3,11 @@
 COMMENT =		offline browser
 DISTNAME =		httrack-3.48.19
 
+# "main" application libraries
+SHARED_LIBS +=  htsjava                   0.0 # 2.47
+SHARED_LIBS +=  httrack                   0.0 # 2.47
+
+# sample libraries, provided in a separate directory
 SHARED_LIBS +=  baselinks                 0.0 # 1.0
 SHARED_LIBS +=  changecontent             0.0 # 1.0
 SHARED_LIBS +=  contentfilter             0.0 # 1.0
@@ -13,8 +18,6 @@ SHARED_LIBS +=  filenameiisbug            0.0 # 1.0
 SHARED_LIBS +=  listlinks                 0.0 # 1.0
 SHARED_LIBS +=  log                       0.0 # 1.0
 SHARED_LIBS +=  simple                    0.0 # 1.0
-SHARED_LIBS +=  htsjava                   0.0 # 2.47
-SHARED_LIBS +=  httrack                   0.0 # 2.47
 
 CATEGORIES =		www
 
@@ -27,8 +30,7 @@ WANTLIB =  c crypto pthread ssl z
 
 MASTER_SITES =		http://mirror.httrack.com/
 
-MODULES =		converters/libiconv lang/clang
-MODCLANG_ARCHS =	*
+MODULES =		converters/libiconv
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+2,-guic
