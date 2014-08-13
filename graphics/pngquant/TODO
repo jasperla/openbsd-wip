@@ -1,5 +1,0 @@
-2.0.0: Sent changes to the Makefile upstream
-       https://github.com/pornel/pngquant/issues/52
-2.1.0: Simplified build based on improvements
-       Modified build based on input from bcallah@
-

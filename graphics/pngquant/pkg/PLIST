@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@bin bin/pngquant
-@man man/man1/pngquant.1
