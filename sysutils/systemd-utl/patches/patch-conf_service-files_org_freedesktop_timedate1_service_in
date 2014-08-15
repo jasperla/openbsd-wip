@@ -1,9 +1,0 @@
-$OpenBSD$
---- conf/service-files/org.freedesktop.timedate1.service.in.orig	Fri Aug  8 10:31:27 2014
-+++ conf/service-files/org.freedesktop.timedate1.service.in	Fri Aug  8 10:32:20 2014
-@@ -1,4 +1,4 @@
- [D-BUS Service]
- Names=org.freedesktop.timedate1
--Exec=/usr/local/bin/systemd-compat/systemd-timedated
-+Exec=@BINDIR@/systemd-timedated
- User=root

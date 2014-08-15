@@ -13,7 +13,8 @@ HOMEPAGE=		https://uglyman.kremlin.cc/gitweb/gitweb.cgi?p=systemd-utl.git
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 pcre pthread
+WANTLIB += c gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 pcre polkit-agent-1
+WANTLIB += polkit-gobject-1 pthread
 
 MODULES=		devel/gettext
 
@@ -26,11 +27,10 @@ WRKDIST=		${WRKDIR}/systemd-utl
 # XXX would be nice to have regression tests
 NO_TEST=		Yes
 
-LIB_DEPENDS=		devel/glib2
+LIB_DEPENDS=		sysutils/polkit
 
-RUN_DEPENDS=		sysutils/consolekit \
-			sysutils/polkit \
-			x11/dbus
+# polkit(8) almost always needs to know the "active" session
+RUN_DEPENDS +=		sysutils/consolekit
 
 FAKE_FLAGS=		PREFIX=${TRUEPREFIX} \
 			SYSCONFDIR=${PREFIX}/share/examples/systemd-utl
@@ -38,10 +38,5 @@ FAKE_FLAGS=		PREFIX=${TRUEPREFIX} \
 do-extract:
 	cd ${WRKDIR} && \
 		${LOCALBASE}/bin/git clone git://uglyman.kremlin.cc/git/systemd-utl.git
-
-	cd ${WRKSRC}/conf/service-files && \
-		for i in *.service; do \
-			mv $$i $$i.in; \
-		done
 
 .include <bsd.port.mk>
