@@ -35,8 +35,14 @@ RUN_DEPENDS +=		sysutils/consolekit
 FAKE_FLAGS=		PREFIX=${TRUEPREFIX} \
 			SYSCONFDIR=${PREFIX}/share/examples/systemd-utl
 
+SUBST_VARS=		OSREV
+
 do-extract:
 	cd ${WRKDIR} && \
 		${LOCALBASE}/bin/git clone git://uglyman.kremlin.cc/git/systemd-utl.git
+
+post-install:
+	${SUBST_CMD} -c -o root -g wheel ${FILESDIR}/os-release.in \
+		${PREFIX}/share/examples/systemd-utl/os-release
 
 .include <bsd.port.mk>

@@ -19,8 +19,10 @@ share/examples/systemd-utl/dbus-1/system.d/logind-dbus.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/logind-dbus.conf
 share/examples/systemd-utl/dbus-1/system.d/timedated-dbus.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/timedated-dbus.conf
-share/examples/systemd-utl/systemd_compat.conf
-@sample ${SYSCONFDIR}/systemd_compat.conf
+share/examples/systemd-utl/machine-info
+@sample ${SYSCONFDIR}/machine-info
+share/examples/systemd-utl/os-release
+@sample ${SYSCONFDIR}/os-release
 share/polkit-1/actions/org.freedesktop.hostname1.policy
 share/polkit-1/actions/org.freedesktop.locale1.policy
 share/polkit-1/actions/org.freedesktop.login1.policy
