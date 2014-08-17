@@ -1,0 +1,9 @@
+@comment $OpenBSD$
+bin/cdiff
+bin/colordiff
+@man man/man1/cdiff.1
+@man man/man1/colordiff.1
+share/examples/colordiff/
+share/examples/colordiff/colordiffrc
+@sample ${SYSCONFDIR}/colordiffrc
+share/examples/colordiff/colordiffrc-lightbg
