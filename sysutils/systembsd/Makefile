@@ -2,13 +2,13 @@
 
 COMMENT=		systemd interfaces implementation
 
-DISTNAME=		systemd-utl-0.0.1
+DISTNAME=		systembsd-0.0.1
 
 CATEGORIES=		sysutils
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-HOMEPAGE=		https://uglyman.kremlin.cc/gitweb/gitweb.cgi?p=systemd-utl.git
+HOMEPAGE=		https://uglyman.kremlin.cc/gitweb/gitweb.cgi?p=systembsd.git
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,7 +22,7 @@ MODULES=		devel/gettext
 BUILD_DEPENDS +=	devel/git
 DISTFILES=		# empty
 EXTRACT_ONLY=		# empty
-WRKDIST=		${WRKDIR}/systemd-utl
+WRKDIST=		${WRKDIR}/systembsd
 
 # XXX would be nice to have regression tests
 NO_TEST=		Yes
@@ -33,16 +33,16 @@ LIB_DEPENDS=		sysutils/polkit
 RUN_DEPENDS +=		sysutils/consolekit
 
 FAKE_FLAGS=		PREFIX=${TRUEPREFIX} \
-			SYSCONFDIR=${PREFIX}/share/examples/systemd-utl
+			SYSCONFDIR=${PREFIX}/share/examples/systembsd
 
 SUBST_VARS=		OSREV
 
 do-extract:
 	cd ${WRKDIR} && \
-		${LOCALBASE}/bin/git clone git://uglyman.kremlin.cc/git/systemd-utl.git
+		${LOCALBASE}/bin/git clone git://uglyman.kremlin.cc/git/systembsd.git
 
 post-install:
 	${SUBST_CMD} -c -o root -g wheel ${FILESDIR}/os-release.in \
-		${PREFIX}/share/examples/systemd-utl/os-release
+		${PREFIX}/share/examples/systembsd/os-release
 
 .include <bsd.port.mk>
