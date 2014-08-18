@@ -9,14 +9,14 @@ ONLY_FOR_ARCHS =	i386 amd64 hppa mips64el powerpc
 
 COMMENT =		multi-paradigm programming language
 
-V =			6.0.900.900
+V =			6.1
 PKGNAME =		racket-$V
 DISTNAME =		racket-$V-src-builtpkgs
 
 # Each new version of racket is incompatible with the previous one.
 # Increase always the major number.
 # http://article.gmane.org/gmane.comp.lang.racket.devel/9872
-SHARED_LIBS +=		racket3m	3.0 # 6.0.1
+SHARED_LIBS +=		racket3m	3.0 # 6.1
 
 CATEGORIES =		lang
 HOMEPAGE =		http://racket-lang.org/
@@ -77,7 +77,10 @@ CONFIGURE_ARGS +=	--disable-backtrace \
 			--disable-places \
 			--disable-futures
 
-# Enable Senora GC by default.
+# Enable Senora GC by default. Racket uses an old version of Boehm GC with some
+# local changes for the first step of the bootstrap. Senora is an alternative,
+# more simple (and slightly more slow) GC. With this enabled, we avoid possible
+# bugs of the old version of Boehm with the modern versions of OpenBSD.
 CONFIGURE_ARGS +=	--enable-sgc
 
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
