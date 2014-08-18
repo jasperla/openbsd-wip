@@ -1,0 +1,13 @@
+$OpenBSD$
+--- SCCS.pm.orig	Mon Aug 18 04:43:13 2014
++++ SCCS.pm	Mon Aug 18 04:43:16 2014
+@@ -321,6 +321,9 @@ sub translate
+     my $Y = exists $self->{flags}{"t"} ? $self->{flags}{"t"} : "";
+     $tran{SCCS}{"%U%"} = $delta{"time"};
+     $tran{SCCS}{"%E%"} = $delta{"date"};
++    my $G = $delta{"date"};
++    $G =~ s/(\d*)\/(\d*)\/(\d*)/$2\/$3\/$1/;
++    $tran{SCCS}{"%G%"} = $G;
+     $tran{SCCS}{"%R%"} = $delta{"release"};
+     $tran{SCCS}{"%L%"} = $delta{"level"};
+     $tran{SCCS}{"%B%"} = $delta{"branch"};
