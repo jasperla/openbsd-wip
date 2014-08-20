@@ -36,6 +36,7 @@ CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=Release \
 			-DEXAMPLE_CONF_DIR=${PREFIX}/share/examples/gemrb/ \
 			-DMAN_DIR=${PREFIX}/man/man6 \
 			-DCMAKE_MODULE_LINKER_FLAGS=-lc \
+			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -DSYSCONFDIR=\\\"\${SYSCONFDIR}/gemrb\\\"" \
 			-DDISABLE_WERROR=1
 
 NO_TEST =		Yes

@@ -506,7 +506,7 @@ share/examples/gemrb/
 @sample ${SYSCONFDIR}/gemrb/
 share/examples/gemrb/GemRB.cfg.noinstall.sample
 share/examples/gemrb/GemRB.cfg.sample
-@sample ${SYSCONFDIR}/gemrb/gemrb.cfg
+@sample ${SYSCONFDIR}/gemrb/GemRB.cfg
 share/gemrb/
 share/gemrb/GUIScripts/
 share/gemrb/GUIScripts/Actor.py
