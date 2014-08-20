@@ -8,7 +8,7 @@ HOMEPAGE =		http://forum.vcmi.eu/portal.php
 
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES = 		http://download.vcmi.eu/ \
