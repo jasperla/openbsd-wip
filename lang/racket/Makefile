@@ -9,9 +9,10 @@ ONLY_FOR_ARCHS =	i386 amd64 hppa mips64el powerpc
 
 COMMENT =		multi-paradigm programming language
 
-V =			6.1
+V =			6.1.0.5pre201408210419
 PKGNAME =		racket-$V
-DISTNAME =		racket-$V-src-builtpkgs
+#DISTNAME =		racket-$V-src-builtpkgs
+DISTNAME =		racket-$V-src-unix
 
 # Each new version of racket is incompatible with the previous one.
 # Increase always the major number.
@@ -35,7 +36,7 @@ MASTER_SITES =		https://www.cs.utah.edu/plt/installers/${V}/ \
 			http://pre.racket-lang.org/installers/ \
 			http://download.tuxfamily.org/jod/lang/racket/ \
 			ftp://download.tuxfamily.org/jod/lang/racket/
-EXTRACT_SUFX =		.tgz
+EXTRACT_SUFX = .tar.lz
 
 MODULES +=		converters/libiconv
 
@@ -53,7 +54,8 @@ RUN_DEPENDS =		devel/desktop-file-utils
 
 WANTLIB += c m pthread ffi iodbc unique-1.0 gtkglext-x11-1.0 gdkglext-x11-1.0
 
-WRKDIST =		${WRKDIR}/racket-$V
+#WRKDIST =		${WRKDIR}/racket-$V
+WRKDIST =		${WRKDIR}/racket-$V/racket
 WRKSRC =		${WRKDIST}/src
 
 # The tests are installed from raco as a package
