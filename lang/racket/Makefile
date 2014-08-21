@@ -79,12 +79,6 @@ CONFIGURE_ARGS +=	--disable-backtrace \
 			--disable-places \
 			--disable-futures
 
-# Enable Senora GC by default. Racket uses an old version of Boehm GC with some
-# local changes for the first step of the bootstrap. Senora is an alternative,
-# more simple (and slightly more slow) GC. With this enabled, we avoid possible
-# bugs of the old version of Boehm with the modern versions of OpenBSD.
-CONFIGURE_ARGS +=	--enable-sgc
-
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LIBracket3m_MAJOR=${LIBracket3m_VERSION:R} \
