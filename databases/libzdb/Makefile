@@ -36,7 +36,7 @@ CONFIGURE_ARGS+= --with-mysql
 .if ${FLAVOR:Mpostgresql}
 LIB_DEPENDS+=   databases/postgresql
 WANTLIB += pq
-WANTLIB+= asn1 com_err crypto heimbase krb5 roken ssl wind
+WANTLIB+= crypto ssl
 CONFIGURE_ARGS+= --with-postgresql
 .endif
 
