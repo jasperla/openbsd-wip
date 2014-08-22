@@ -4,7 +4,7 @@ COMMENT-main =		seafile daemon
 COMMENT-server = 	seafile server
 
 GH_PROJECT =		seafile
-GH_COMMIT = 		ac581096886e7e0ae5482deec2337611b77aec58
+GH_COMMIT = 		8e60cc2877632e4bf52ad0a08ddcb664c78c1416
 PKGNAME-main = 		${GH_PROJECT}-daemon-${V}
 PKGNAME-server = 	${GH_PROJECT}-server-${V}
 
