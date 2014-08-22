@@ -16,8 +16,6 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-#WANTLIB =		???
-
 MASTER_SITES =		http://www.digip.org/jansson/releases/
 
 MODULES = 		devel/cmake
