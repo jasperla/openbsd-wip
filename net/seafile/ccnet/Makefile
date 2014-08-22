@@ -3,7 +3,7 @@
 COMMENT =		framework for writing networked applications in C
 
 GH_PROJECT = 		ccnet
-GH_COMMIT = 		6b55658280da8c74d9a41fee7d0d0bc1cb7c8c5f
+GH_COMMIT = 		dc08b273b3996d7e1fc2b766b9d037d6d5253e3f
 
 SHARED_LIBS =		ccnet 0.0
 
@@ -20,7 +20,7 @@ BUILD_DEPENDS =		devel/libtool \
 LIB_DEPENDS =		databases/libzdb \
 			devel/libevent2 \
 			sysutils/e2fsprogs \
-			net/seafile/searpc
+			net/seafile/libsearpc
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu

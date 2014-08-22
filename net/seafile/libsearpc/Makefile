@@ -4,7 +4,7 @@ COMMENT =		simple RPC framework based on GObject system
 
 GH_PROJECT = 		libsearpc
 GH_TAGNAME = 		v3.0-latest
-GH_COMMIT = 		80b73555924bc780b69da8b5974338fff1441829
+GH_COMMIT = 		8998e7b2c5587f0b94c48db24e2952d08def5add
 
 SHARED_LIBS += 		searpc			0.0 # 1.2
 

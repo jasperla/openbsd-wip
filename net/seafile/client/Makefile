@@ -3,7 +3,7 @@
 COMMENT =		seafile client
 
 GH_PROJECT = 		seafile-client
-GH_COMMIT = 		eb25fff743ad9ac7a978146451ec3e7653cf1262
+GH_COMMIT = 		ce808dbc60a8c731b888bc2ce38fa70e650296af
 
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtWebKit
 WANTLIB += lib/qt4/QtXml lib/qt4/QtXmlPatterns c ccnet crypto gio-2.0
