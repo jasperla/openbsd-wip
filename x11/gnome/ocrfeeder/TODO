@@ -1,0 +1,5 @@
+* python core dumps on
+
+    def run(self):
+        gtk.gdk.threads_init()
+        gtk.main()

@@ -1,0 +1,40 @@
+$OpenBSD$
+# from Debian
+--- src/ocrfeeder/studio/widgetPresenter.py.orig	Fri Feb  8 08:57:12 2013
++++ src/ocrfeeder/studio/widgetPresenter.py	Wed Jan  1 18:03:14 2014
+@@ -39,7 +39,6 @@ import sys
+ import threading
+ import Queue
+ import time
+-import gtkspell
+ pygtk.require('2.0')
+ _ = gettext.gettext
+ 
+@@ -159,7 +158,7 @@ class MainWindow:
+                                    menu_items['copy_to_clipboard']),
+                                   ('SpellChecker', None,
+                                    _('Spell_checker'),
+-                                   '<shift>F7',
++                                   None,
+                                    _("Spell Check Recognized Text"),
+                                    menu_items['spell_checker']),
+                                   ])
+@@ -189,6 +188,7 @@ class MainWindow:
+         self.action_group = action_group
+         self.spellchecker_menu = ui_manager.get_widget('/MenuBar/Tools/SpellChecker')
+         self.spellchecker_menu.set_sensitive(False)
++        self.spellchecker_menu.set_visible(False)
+ 
+     def setDestroyEvent(self, function):
+         self.window.connect('delete-event', function)
+@@ -557,10 +557,6 @@ class BoxEditor(gtk.ScrolledWindow, gobject.GObject):
+         text_properties_notebook.set_tab_pos(gtk.POS_TOP)
+         # Textview widget
+         self.text_widget = gtk.TextView()
+-        try:
+-            gtkspell.Spell(self.text_widget, OCRFEEDER_DEFAULT_LOCALE)
+-        except:
+-            pass # The locale was not found by GTKSpell, ignoring...
+         self.text_widget.set_wrap_mode(gtk.WRAP_WORD)
+         self.text_content = self.text_widget.get_buffer()
+         self.text_content.connect('changed', self.editedByUser)
