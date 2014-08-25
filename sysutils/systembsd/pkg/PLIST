@@ -1,13 +1,13 @@
 @comment $OpenBSD$
 @option always-update
+libexec/systemd/
 @bin libexec/systemd/systemd-hostnamed
 @bin libexec/systemd/systemd-localed
 @bin libexec/systemd/systemd-logind
 @bin libexec/systemd/systemd-timedated
 share/dbus-1/system-services/org.freedesktop.hostname1.service
-@comment share/dbus-1/system-services/org.freedesktop.locale1.service
-@comment share/dbus-1/system-services/org.freedesktop.login1.service
-@comment share/dbus-1/system-services/org.freedesktop.timedate1.service
+share/dbus-1/system-services/org.freedesktop.locale1.service
+share/dbus-1/system-services/org.freedesktop.timedate1.service
 share/examples/systembsd/
 share/examples/systembsd/dbus-1/
 share/examples/systembsd/dbus-1/system.d/
