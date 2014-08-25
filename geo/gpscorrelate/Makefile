@@ -2,8 +2,11 @@
 
 COMMENT =		EXIF geotagging
 
-V = 			1.6.1
-DISTNAME =		gpscorrelate-${V}
+GH_ACCOUNT = 		freefoote
+GH_PROJECT = 		gpscorrelate
+GH_TAGNAME = 		1.6.1
+GH_COMMIT = 		ea60215d88eaab43a8cdd8a15755b72af6c533d2
+DISTNAME =		gpscorrelate-${GH_TAGNAME}
 
 CATEGORIES =		geo x11
 
@@ -20,9 +23,6 @@ WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread pthread-stubs
 WANTLIB += stdc++ xcb xcb-render xcb-shm xml2 z
-
-MASTER_SITES = 		https://github.com/freefoote/gpscorrelate/archive/
-DISTFILES = 		${DISTNAME}${EXTRACT_SUFX}{${V}${EXTRACT_SUFX}}
 
 MODULES =		devel/gettext \
 			textproc/intltool
