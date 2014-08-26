@@ -4,18 +4,19 @@ COMMENT =	common functions for all Tapper classes
 
 MODULES =	cpan
 DISTNAME =	Tapper-Base-4.1.4
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	www
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # 2-clause BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
 RUN_DEPENDS =	devel/p5-common-sense \
+		devel/p5-Moose \
+		devel/p5-Log-Log4perl \
 		devel/p5-LockFile-Simple \
 		devel/p5-Module-Find \
-		devel/p5-MooseX-Log-Log4perl
+		devel/p5-MooseX-Log-Log4perl \
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 

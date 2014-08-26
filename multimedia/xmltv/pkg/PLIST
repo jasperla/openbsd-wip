@@ -9,10 +9,13 @@ bin/tv_find_grabbers
 bin/tv_grab_ar
 bin/tv_grab_ch_search
 bin/tv_grab_combiner
+bin/tv_grab_dk_dr
+bin/tv_grab_dtv_la
 bin/tv_grab_es_laguiatv
 bin/tv_grab_eu_egon
 bin/tv_grab_eu_epgdata
 bin/tv_grab_fi
+bin/tv_grab_fi_sv
 bin/tv_grab_fr
 bin/tv_grab_fr_kazer
 bin/tv_grab_hr
@@ -22,7 +25,9 @@ bin/tv_grab_is
 bin/tv_grab_it
 bin/tv_grab_na_dd
 bin/tv_grab_na_dtv
+bin/tv_grab_nl
 bin/tv_grab_no_gfeed
+bin/tv_grab_pt
 bin/tv_grab_pt_meo
 bin/tv_grab_se_swedb
 bin/tv_grab_se_tvzon
@@ -56,6 +61,9 @@ ${P5SITE}/XMLTV/Configure/
 ${P5SITE}/XMLTV/Configure.pm
 ${P5SITE}/XMLTV/Configure/Writer.pm
 ${P5SITE}/XMLTV/DST.pm
+${P5SITE}/XMLTV/Data/
+${P5SITE}/XMLTV/Data/Recursive/
+${P5SITE}/XMLTV/Data/Recursive/Encode.pm
 ${P5SITE}/XMLTV/Date.pm
 ${P5SITE}/XMLTV/Description.pm
 ${P5SITE}/XMLTV/GUI.pm
@@ -90,10 +98,12 @@ ${P5SITE}/XMLTV/Version.pm
 @man man/man1/tv_grab_ar.1
 @man man/man1/tv_grab_ch_search.1
 @man man/man1/tv_grab_combiner.1
+@man man/man1/tv_grab_dtv_la.1
 @man man/man1/tv_grab_es_laguiatv.1
 @man man/man1/tv_grab_eu_egon.1
 @man man/man1/tv_grab_eu_epgdata.1
 @man man/man1/tv_grab_fi.1
+@man man/man1/tv_grab_fi_sv.1
 @man man/man1/tv_grab_fr.1
 @man man/man1/tv_grab_fr_kazer.1
 @man man/man1/tv_grab_hr.1
@@ -103,7 +113,9 @@ ${P5SITE}/XMLTV/Version.pm
 @man man/man1/tv_grab_it.1
 @man man/man1/tv_grab_na_dd.1
 @man man/man1/tv_grab_na_dtv.1
+@man man/man1/tv_grab_nl.1
 @man man/man1/tv_grab_no_gfeed.1
+@man man/man1/tv_grab_pt.1
 @man man/man1/tv_grab_pt_meo.1
 @man man/man1/tv_grab_se_swedb.1
 @man man/man1/tv_grab_se_tvzon.1
@@ -126,6 +138,7 @@ ${P5SITE}/XMLTV/Version.pm
 @man man/man1/tv_validate_grabber.1
 @man man/man3p/Configure.3
 @man man/man3p/Configure::Writer.3
+@man man/man3p/Data::Recursive::Encode.3
 @man man/man3p/Options.3
 @man man/man3p/PreferredMethod.3
 @man man/man3p/ValidateFile.3
@@ -159,10 +172,6 @@ share/xmltv/tv_grab_huro/jobmap
 share/xmltv/tv_grab_it/
 share/xmltv/tv_grab_it/channel_ids
 share/xmltv/tv_grab_uk_atlas/
-share/xmltv/tv_grab_uk_atlas/CHANGELOG
-share/xmltv/tv_grab_uk_atlas/FAQ
-share/xmltv/tv_grab_uk_atlas/INSTALL
-share/xmltv/tv_grab_uk_atlas/TODO
 share/xmltv/tv_grab_uk_atlas/cgi-bin/
 share/xmltv/tv_grab_uk_atlas/cgi-bin/getatlas.pl
 share/xmltv/tv_grab_uk_atlas/tv_grab_uk_atlas.map.channels.conf
@@ -172,10 +181,6 @@ share/xmltv/tv_grab_uk_atlas/tv_grab_uk_atlas.user.map.conf
 share/xmltv/tv_grab_uk_bleb/
 share/xmltv/tv_grab_uk_bleb/icon_urls
 share/xmltv/tv_grab_uk_guardian/
-share/xmltv/tv_grab_uk_guardian/CHANGELOG
-share/xmltv/tv_grab_uk_guardian/DISCLAIMER
-share/xmltv/tv_grab_uk_guardian/INSTALL
-share/xmltv/tv_grab_uk_guardian/TODO
 share/xmltv/tv_grab_uk_guardian/tv_grab_uk_guardian.map.conf
 share/xmltv/tv_grab_uk_rt/
 share/xmltv/tv_grab_uk_rt/channel_icons
@@ -203,10 +208,6 @@ share/xmltv/tv_grab_uk_rt/prog_titles_to_process
 share/xmltv/tv_grab_uk_rt/regional_channels_by_postcode
 share/xmltv/tv_grab_uk_rt/utf8_fixups
 share/xmltv/tv_grab_uk_tvguide/
-share/xmltv/tv_grab_uk_tvguide/CHANGELOG
-share/xmltv/tv_grab_uk_tvguide/DISCLAIMER
-share/xmltv/tv_grab_uk_tvguide/INSTALL
-share/xmltv/tv_grab_uk_tvguide/TODO
 share/xmltv/tv_grab_uk_tvguide/tv_grab_uk_tvguide.map.conf
 share/xmltv/xmltv-lineups.xsd
 share/xmltv/xmltv.dtd

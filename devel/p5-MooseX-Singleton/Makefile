@@ -1,24 +1,23 @@
-# $OpenBSD $
+# $OpenBSD$
 
-COMMENT=	turn your Moose class into a singleton
+COMMENT =	turn your Moose class into a singleton
 
-MODULES=	cpan
-DISTNAME=	MooseX-Singleton-0.29
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	devel
+MODULES =	cpan
+DISTNAME =	MooseX-Singleton-0.29
+CATEGORIES =	devel
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS=	devel/p5-Moose \
+RUN_DEPENDS =	devel/p5-Moose \
 		devel/p5-Test-Fatal \
 		devel/p5-Test-Requires
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS =	${RUN_DEPENDS}
 
-TEST_DEPENDS=	devel/p5-Class-Load \
+TEST_DEPENDS =	devel/p5-Class-Load \
 		devel/p5-Module-Runtime \
 		devel/p5-Test-Warn
 

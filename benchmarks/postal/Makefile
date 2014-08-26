@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.61 2012/03/29 13:41:58 sthen Exp $
+# $OpenBSD$
 
 COMMENT =		SMTP benchmark and stress tool
 

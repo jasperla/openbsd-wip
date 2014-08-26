@@ -1,8 +1,8 @@
 $OpenBSD$
 Use more generic check for OpenBSD.
---- source3/wscript.orig	Sat May 11 13:11:06 2013
-+++ source3/wscript	Sat May 11 13:11:12 2013
-@@ -68,7 +68,7 @@ def configure(conf):
+--- source3/wscript.orig	Thu May  1 16:31:03 2014
++++ source3/wscript	Thu May  1 16:31:03 2014
+@@ -69,7 +69,7 @@ def configure(conf):
      if Options.options.with_swat:
          conf.env['build_swat'] = True
  

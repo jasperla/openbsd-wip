@@ -1,0 +1,23 @@
+$OpenBSD$
+--- Makefile.in.orig	Thu Jul 10 00:10:38 2014
++++ Makefile.in	Thu Jul 10 00:11:05 2014
+@@ -32,16 +32,11 @@ install: audacity $(EXTRAINSTALLTARGETS)
+ 	$(INSTALL) -d $(DESTDIR)$(BINDIR)
+ 	$(INSTALL) -m 755 audacity $(DESTDIR)$(BINDIR)/$(AUDACITY_NAME)
+ 
+-	# install docs
+-	$(INSTALL) -d $(DESTDIR)$(DOCDIR)/
+-	$(INSTALL) -m 644 README.txt $(DESTDIR)$(DOCDIR)/README.txt
+-	$(INSTALL) -m 644 LICENSE.txt $(DESTDIR)$(DOCDIR)/LICENSE.txt
+-
+ 	# install manpage
+ 	$(INSTALL) -d $(DESTDIR)$(MANDIR)/man1
+-	-test -f help/audacity.1.gz && \
+-		$(INSTALL) -m 644 help/audacity.1.gz \
+-		$(DESTDIR)$(MANDIR)/man1/$(AUDACITY_NAME).1.gz
++	-test -f help/audacity.1 && \
++		$(INSTALL) -m 644 help/audacity.1 \
++		$(DESTDIR)$(MANDIR)/man1/$(AUDACITY_NAME).1
+ 
+ 	# install nyquist
+ 	$(INSTALL) -d $(DESTDIR)$(DATADIR)/$(AUDACITY_NAME)/nyquist

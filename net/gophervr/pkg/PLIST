@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+@bin bin/gophervr
+share/doc/gophervr/
+share/doc/gophervr/gophervr.help
+share/gophervr/
+share/gophervr/futura.hfont

@@ -1,0 +1,7 @@
+ - fix depends
+ - add README
+ - add rc script ?
+ - create directory layout in /var/seafile ???
+ - feed seafile.conf to server
+ - add user for seafile server ???
+ - test, test, test

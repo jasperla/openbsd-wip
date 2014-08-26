@@ -12,14 +12,10 @@ cad/tkgate:		Ready for import. Sent to ports@ 2008-01-13 and still works (yason)
 comms/[gw]ammu		Ready for import. Sent to ports@ 2012-10-09 (yason)
 devel/libextractor	sent to ports 2013-06-29
 devel/libtap		ready to import
-devel/lutok		sent to ports 2013-11-27
 devel/p5-Test-Most:	ready for import, depends on the update of p5-Test-Warn, did not sent to ports@(wenheping)
-emulators/vice		ready for import, sent to ports 2013-05-16
 games/glob2 		sent to ports@ 2010-09-02 and 2009-08-26
 geo/mtkbabel		sent to ports 2011-03-30
 graphics/jpegexiforient ready to import
-graphics/opencolorio	sent to ports 2013-07-07
-lang/utop		ready for import. Waiting for libcharset fix in ocaml-lamda-term
 math/p5-Math-GSL:	ready for import, did not sent to ports@, regress depends on devel/p5-Test-Most (wenheping)
 misc/dvtm		sent to ports@ 2012/12/04. Ready for import.
 misc/notebook 		sent to ports 2013-06-29
@@ -27,17 +23,10 @@ misc/py-asciinema	sent to ports 2014-01-24
 multimedia/fuzemux	sent to ports 2013-01-13
 multimedia/video4fuze	sent to ports 2013-01-13
 net/bitcoin		sent to ports 2013-03-19, and again 2013-06-29
-net/py-boto:		ready for import, sent to maintainer 2012-04-23 (tamentis)
-net/tkabber		ready for import, sent to ports 2013-01-30
-net/p5-Net-SCP		sent to ports 2014-01-24
-net/p5-Net-SSH		sent to ports 2014-01-24
 productivity/py-nv	send to ports 2013-10-21
 net/unison/stable	ready for import.
-sysutils/atf		sent to ports 2013-11-27
 sysutils/fsx		sent to ports 2013-12-09
 sysutils/glean		sent to ports 2013-12-09
-sysutils/kyua-cli	sent to ports 2013-11-27
-sysutils/kyua-testers 	sent to ports 2013-11-27
 security/paperkey  	sent to ports 2011-06-07 and 2011-01-09
 sysutils/postmark	sent to ports 2013-12-09
 sysutils/py-anita	Ready for import. Sent to ports@ 2012-11-05.
@@ -45,6 +34,55 @@ textproc/goldendict sent to ports 2013-07-13  and 2011-10-19
 www/ocaml-tyxml		ready for import.
 www/p5-Dancer:		ready for import, has been sent to ports@ some time ago; it depends on www/p5-HTTP-Server-Simple-PSGI
 www/p5-HTTP-Server-Simple-PSGI:	ready for import, has been sent to ports@ some time ago
-sysutils/entr		ready for import 2013-12-16
-x11/herbstluftwm	ready for import (bcallah@)
-audio/paulstretch	ready for import (bcallah@)
+textproc/p5-String-Escape ready for import, sent to ports@ 2014-03-07
+textproc/p5-String-Util ready for import, sent to ports@ 2014-03-07
+textproc/p5-Text-CSV-Slurp ready for import, sent to ports@ 2014-03-10
+textproc/p5-String-Diff	ready for import, sent to ports@ 2014-03-10
+devel/p5-Math-BigInt-Pari ready for import, sent to ports@ 2014-03-10
+devel/p5-App-Daemon	ready for import, sent to ports@ 2014-03-10
+devel/p5-Sysadm-Install ready for import, sent to ports@ 2014-03-10
+security/p5-AAAA-Crypt-DH	ready for import, sent to ports@ 2014-03-10
+devel/p5-Bencode 	ready for import, sent to ports@ 2014-03-11
+devel/p5-Convert-Bencode ready for import, sent to ports@ 2014-03-11
+devel/p5-Convert-Bencode_XS ready for import, sent to ports@ 2014-03-11
+devel/p5-Daemon-Daemonize	ready for import, sent to ports@ 2014-03-11
+devel/p5-Data-DPath	ready for import, sent to ports@ 2014-03-11
+devel/p5-Term-VT102 	ready for import, sent to ports@ 2014-03-11, ok from shten@
+devel/p5-Term-VT102-Boundless	ready for import, sent to ports@ 2014-03-11
+graphics/lumee		ready for import (bcallah@)
+net/libstrophe		ready for import (bcallah@)
+net/profanity		ready for import (bcallah@)
+devel/p5-Sys-Info-Base	sent to ports@ 2014-04-03
+devel/p5-File-Pid	sent to ports@ 2014-04-03
+devel/p5-Hash-Merge-Simple	ready to import, sent to ports@ 2014-04-28
+devel/p5-TAP-DOM	ready to import, sent to ports@ 2014-04-28
+devel/p5-Test-Mock-LWP	ready to import, sent to ports@ 2014-04-28
+www/p5-Tapper-Base	ready to import, sent to ports@ 2014-04-28
+www/p5-Tapper-Config	ready to import, sent to ports@ 2014-04-28
+www/p5-Tapper-TAP-Harness	ready to import, sent to ports@ 2014-04-28
+www/p5-Tapper-Producer		ready to import, sent to ports@ 2014-04-28
+www/p5-TAP-Formatter-HTML	ready to import, sent to ports@ 2014-04-28
+www/p5-Test-WWW-Selenium	ready to import, sent to ports@ 2014-04-28
+devel/p5-CHI					ready to import, sent to ports@ 2014-05-04
+devel/p5-Hash-MoreUtils				ready to import, sent to ports@ 2014-05-04
+devel/p5-Test-Simple				ready to import, sent to ports@ 2014-05-04
+devel/p5-MooX-Types-MooseLike				ready to import, sent to ports@ 2014-05-04
+devel/p5-MooX-Types-MooseLike-Numeric			ready to import, sent to ports@ 2014-05-04
+security/p5-Digest-JHash				ready to import, sent to ports@ 2014-05-04, 2014-03-07
+www/p5-Tapper-Config					ready to import, sent to ports@ 2014-05-13
+database/p5-Test-Fixture-DBIC-Schema			ready to import, sent to ports@ 2014-05-13
+devel/p5-Kwalify					ready to import, sent to ports@ 2014-05-13
+database/p5-DBIx-Class-InflateColumn-Object-Enum	ready to import, sent to ports@ 2014-05-13
+devel/p5-Object-Enum	ready to import, sent to ports@ 2014-05-23
+devel/p5-Data-Serializer	ready to import, sent to ports@ 2014-05-23
+www/p5-Tapper-Reports-DPath	ready to import, sent to ports@ 2014-05-23
+www/p5-Tapper-Reports-API	ready to import, sent to ports@ 2014-05-23
+www/p5-Tapper-Model		ready to import, sent to ports@ 2014-05-23
+textproc/p5-Text-Balanced	ready to import, sent to ports@ 2014-05-23
+games/hyperrogue	ready to import (bcallah@)
+www/uget		ready to import (bcallah@)
+productivity/taskd      should be ready, waiting for feedback at ports@ 2014-06-24 (viq)
+games/residualvm	ready to import (bentley@), sent to ports@ 2014-07-11
+x11/cegui		ready to import (pascal@), sent to ports 2014-07-14
+games/summoningwars	ready to import (pascal@), sent to ports 2014-07-14
+net/gophervr		ready to import (bcallah@)

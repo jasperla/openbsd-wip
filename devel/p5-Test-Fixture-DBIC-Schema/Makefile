@@ -1,22 +1,21 @@
-# $OpenBSD $
+# $OpenBSD$
 
-COMMENT=	load fixture data to storage
+COMMENT =	load fixture data to storage
 
-MODULES=	cpan
-DISTNAME=	Test-Fixture-DBIC-Schema-0.04
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	devel
+MODULES =	cpan
+DISTNAME =	Test-Fixture-DBIC-Schema-0.04
+CATEGORIES =	devel
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS=	databases/p5-DBIx-Class \
+RUN_DEPENDS =	databases/p5-DBIx-Class \
 		devel/p5-Kwalify \
 		devel/p5-Params-Validate \
 		devel/p5-YAML-Syck
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS =	databases/p5-DBD-SQLite
 
 .include <bsd.port.mk>

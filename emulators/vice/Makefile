@@ -3,7 +3,6 @@
 COMMENT =		versatile Commodore emulator
 
 DISTNAME =		vice-2.4
-REVISION =		0
 
 CATEGORIES =		emulators
 
@@ -13,15 +12,15 @@ HOMEPAGE =		http://viceteam.org/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ICE SDL SM X11 Xaw Xext Xmu Xpm Xrandr Xt Xv Xxf86vm
-WANTLIB += c jpeg m pthread readline stdc++ termcap ungif usbhid
+WANTLIB += c gif jpeg png m pthread readline stdc++ termcap usbhid
 WANTLIB += z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=vice-emu/}
 
-BUILD_DEPENDS =		print/texlive/base
 LIB_DEPENDS =		devel/sdl \
 			graphics/giflib \
-			graphics/jpeg
+			graphics/jpeg \
+			graphics/png
 
 CONFIGURE_STYLE =	gnu autoconf
 
@@ -31,7 +30,7 @@ CONFIGURE_ARGS +=	--without-oss \
 			--without-pulse \
 			--with-sdlsound
 
-# XXX broken with ffmpeg-20130319
+# XXX broken with ffmpeg-20131216
 CONFIGURE_ARGS +=	--disable-ffmpeg
 
 pre-configure:

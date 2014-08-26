@@ -1,21 +1,22 @@
-# $OpenBSD $
+# $OpenBSD$
 
 COMMENT =		collection of OpenGL / Mesa demos and test programs
-V=				8.1.0
-DISTNAME =		mesa-demos-${V}
+DISTNAME =		mesa-demos-8.1.0
 
-EXTRACT_SUFX = 	.tar.gz
+EXTRACT_SUFX =		.tar.gz
 
 CATEGORIES =		devel graphics
-HOMEPAGE =			http://www.mesa3d.org
+HOMEPAGE =		http://www.mesa3d.org
 
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES            = http://cgit.freedesktop.org/mesa/demos/snapshot/
+MASTER_SITES =		http://cgit.freedesktop.org/mesa/demos/snapshot/
 
-WANTLIB += c m stdc++
+MODULES =		devel/cmake
+
+#WANTLIB += 		c m stdc++
 
 LIB_DEPENDS =		graphics/glew
 

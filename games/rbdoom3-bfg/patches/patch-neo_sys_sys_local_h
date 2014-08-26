@@ -1,0 +1,12 @@
+$OpenBSD$
+--- neo/sys/sys_local.h.orig	Mon Jul 21 18:04:12 2014
++++ neo/sys/sys_local.h	Mon Jul 21 20:01:32 2014
+@@ -45,7 +45,7 @@ class idSysLocal : public idSys (public)
+ 	
+ 	virtual double			GetClockTicks();
+ 	virtual double			ClockTicksPerSecond();
+-	virtual cpuid_t			GetProcessorId();
++	virtual xcpuid_t			GetProcessorId();
+ 	virtual const char* 	GetProcessorString();
+ 	virtual const char* 	FPU_GetState();
+ 	virtual bool			FPU_StackIsEmpty();

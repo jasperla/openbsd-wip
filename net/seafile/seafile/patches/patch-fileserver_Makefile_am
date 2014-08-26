@@ -1,0 +1,12 @@
+$OpenBSD$
+--- fileserver/Makefile.am.orig	Wed Aug  6 19:52:51 2014
++++ fileserver/Makefile.am	Wed Aug  6 19:53:15 2014
+@@ -44,7 +44,7 @@ fileserver_SOURCES = \
+ 	../common/seafile-crypt.c
+ 
+ # XXX: -levent_openssl must be behind in -levhtp
+-fileserver_LDADD = -levent -levhtp -lssl -levent_openssl \
++fileserver_LDADD = -levent_core -levhtp -lssl -levent_openssl \
+ 	@GLIB2_LIBS@ @GOBJECT_LIBS@ @LIB_RT@ \
+ 	@CCNET_LIBS@ \
+ 	$(top_builddir)/lib/libseafile.la \

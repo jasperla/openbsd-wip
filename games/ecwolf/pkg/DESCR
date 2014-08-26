@@ -1,0 +1,26 @@
+ECWolf is an advanced source port for Wolfenstein 3D and Spear of
+Destiny based off of the Wolf4SDL code base. ECWolf pulls a substantial
+amount of code from ZDoom and aims to provide a wide array of mod
+editing capabilities without the need to modify the source code. Most
+importantly you will no longer need to replace entire data sets. With
+ECWolf you could for example add a weapon without needing to distribute
+every sprite in the game along with it. Mods will be neatly packaged
+into a single file just like they are for Doom.
+
+For players, ECWolf provides many useful features such as better control
+binding, support for wide screen resolutions, and unlimited save slots.
+ECWolf allows you to keep all of your game data in one directory as one
+binary plays both Wolfenstein 3D and Spear of Destiny. Support for even
+more Wolfenstein engine games is planned for the future! (I know you're
+all waiting for Blake Stone support.) In terms of accuracy to vanilla
+Wolf, it is about the same as the accuracy of ZDoom to vanilla Doom.
+
+To run through some of the highlights:
+One binary plays both Wolfenstein 3D and Spear of Destiny.
+Runs on all popular operating systems.
+Modern control schemes supported.
+Widescreen and tall screen support with aspect ratio correction.
+Soft-moding (no need to deal with compilers)!
+Unrestricted map size with support for non-square maps.
+Support for high resolution textures and mixed definition.
+Support for additional image formats and archive formats.

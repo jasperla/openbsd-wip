@@ -1,0 +1,29 @@
+@comment $OpenBSD$
+@option always-update
+libexec/systemd/
+@bin libexec/systemd/systemd-hostnamed
+@bin libexec/systemd/systemd-localed
+@bin libexec/systemd/systemd-logind
+@bin libexec/systemd/systemd-timedated
+share/dbus-1/system-services/org.freedesktop.hostname1.service
+share/dbus-1/system-services/org.freedesktop.locale1.service
+share/dbus-1/system-services/org.freedesktop.timedate1.service
+share/examples/systembsd/
+share/examples/systembsd/dbus-1/
+share/examples/systembsd/dbus-1/system.d/
+share/examples/systembsd/dbus-1/system.d/hostnamed-dbus.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/hostnamed-dbus.conf
+share/examples/systembsd/dbus-1/system.d/localed-dbus.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/localed-dbus.conf
+share/examples/systembsd/dbus-1/system.d/logind-dbus.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/logind-dbus.conf
+share/examples/systembsd/dbus-1/system.d/timedated-dbus.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/timedated-dbus.conf
+share/examples/systembsd/machine-info
+@sample ${SYSCONFDIR}/machine-info
+share/examples/systembsd/os-release
+@sample ${SYSCONFDIR}/os-release
+share/polkit-1/actions/org.freedesktop.hostname1.policy
+share/polkit-1/actions/org.freedesktop.locale1.policy
+share/polkit-1/actions/org.freedesktop.login1.policy
+share/polkit-1/actions/org.freedesktop.timedate1.policy

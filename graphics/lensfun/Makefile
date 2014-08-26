@@ -7,14 +7,14 @@ SHARED_LIBS=	lensfun		2.0
 SHARED_LIBS+=	auxfun		0.0
 
 CATEGORIES=	graphics
-HOMEPAGE=	http://lensfun.berlios.de/
+HOMEPAGE=	http://sourceforge.net/projects/lensfun/
 
 # library LGPLv3, lens db CC-BY-SA, build infrastructure/applications GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c glib-2.0 m png pthread stdc++ z
 
-MASTER_SITES=		${MASTER_SITE_BERLIOS:=lensfun/}
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=lensfun/}
 
 MODULES=		devel/cmake
 

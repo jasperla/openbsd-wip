@@ -14,6 +14,6 @@ PERMIT_PACKAGE_CDROM =	 Yes
 MODULES =	cpan
 
 RUN_DEPENDS =	www/p5-HTTP-Date>=6.00
-BUILD_DEPENDS =	${RUN_DEPEDNS}
+BUILD_DEPENDS =	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

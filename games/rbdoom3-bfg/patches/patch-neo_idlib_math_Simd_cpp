@@ -1,0 +1,21 @@
+$OpenBSD$
+--- neo/idlib/math/Simd.cpp.orig	Mon Jul 21 18:04:12 2014
++++ neo/idlib/math/Simd.cpp	Mon Jul 21 20:01:32 2014
+@@ -61,7 +61,7 @@ idSIMD::InitProcessor
+ */
+ void idSIMD::InitProcessor( const char* module, bool forceGeneric )
+ {
+-	cpuid_t cpuid;
++	xcpuid_t cpuid;
+ 	idSIMDProcessor* newProcessor;
+ 	
+ 	cpuid = idLib::sys->GetProcessorId();
+@@ -1384,7 +1384,7 @@ void idSIMD::Test_f( const idCmdArgs& args )
+ 	
+ 	if( idStr::Length( args.Argv( 1 ) ) != 0 )
+ 	{
+-		cpuid_t cpuid = idLib::sys->GetProcessorId();
++		xcpuid_t cpuid = idLib::sys->GetProcessorId();
+ 		idStr argString = args.Args();
+ 		
+ 		argString.Replace( " ", "" );

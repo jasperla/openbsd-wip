@@ -6,7 +6,7 @@ $OpenBSD$
    Tcl/Tk Version numbers to use.
  */
 -#define TKGATE_TCLTK_VERSIONS		"8.4 8.3 8.2 8.1 8.0"
-+#define TKGATE_TCLTK_VERSIONS		"8.5 8.4 8.3 8.2 8.1 8.0"
++#define TKGATE_TCLTK_VERSIONS		"${MODTK_VERSION}"
  
  /*
    Japanese Tcl/Tk Version numbers to use.
@@ -15,14 +15,14 @@ $OpenBSD$
    find X11, tcl and tk.
  */
 -#define TKGATE_INCDIRS		"/usr/X11R6/include /usr/X11/include /pkgs/include /usr/local/include /usr/openwin/include /usr/X/include /usr/include /sw/include"
-+#define TKGATE_INCDIRS		"/usr/X11R6/include /usr/X11/include /pkgs/include !!LOCALBASE!!/include /usr/openwin/include /usr/X/include /usr/include /sw/include"
++#define TKGATE_INCDIRS		"${X11BASE}/include ${LOCALBASE}/include"
  
  /*
    List of directories to search for tcl library.  The list must be in 
    double quotes and should be all one one line.
  */
 -#define TKGATE_LIBDIRS		"/usr/X11R6/lib /usr/X11/lib /pkgs/lib /usr/local/lib /usr/lib /sw/lib"
-+#define TKGATE_LIBDIRS		"/usr/X11R6/lib /usr/X11/lib /pkgs/lib !!LOCALBASE!!/lib /usr/lib /sw/lib"
++#define TKGATE_LIBDIRS		"${X11BASE}/lib ${LOCALBASE}/lib"
  
  /*
    Required libraries.  TkGate will not compile unless these libraries are found.
@@ -31,21 +31,21 @@ $OpenBSD$
    uncommenting the defintion of TKGATE_HOMEDIR below.
   */
 -#define TKGATE_HOMEDIRBASE	"/usr/X11R6/lib"
-+#define TKGATE_HOMEDIRBASE	"!!PREFIX!!/share"
++#define TKGATE_HOMEDIRBASE	"${PREFIX}/share"
  
  /*
    The location of the tkgate and gmac executables.  If you change this, you will
    need to run the configure script again.
   */
 -#define TKGATE_BINDIR		/usr/X11R6/bin
-+#define TKGATE_BINDIR		"!!PREFIX!!/bin"
++#define TKGATE_BINDIR		"${PREFIX}/bin"
  
  /*
    The location of the tkgate and gmac man pages.  If you change this, you will
    need to run the configure script again.
   */
 -#define TKGATE_MANDIR		/usr/X11R6/man/man1
-+#define TKGATE_MANDIR		"!!PREFIX!!/man/man1"
++#define TKGATE_MANDIR		"${PREFIX}/man/man1"
  
  /*
    Digital circuit editor and simulator.
@@ -54,7 +54,7 @@ $OpenBSD$
    URL for local documentation
   */
 -#define TKGATE_LOCALDOC		"file:/usr/X11R6/lib/tkgate-" TKGATE_VERSION "/doc/index.html"
-+#define TKGATE_LOCALDOC		"file:!!PREFIX!!/share/doc/tkgate/index.html"
++#define TKGATE_LOCALDOC		"file:${PREFIX}/share/doc/tkgate/index.html"
  
  /*
    The TkGate Copyright message.
@@ -63,14 +63,14 @@ $OpenBSD$
    need to run the configure script again.
   */
 -#define TKGATE_GCCFLAGS		-O
-+#define TKGATE_GCCFLAGS	!!CFLAGS!!	
++#define TKGATE_GCCFLAGS	${CFLAGS}
  
  /*
    compile flags to use for cc.  If you change this, you will
    need to run the configure script again.
   */
 -#define TKGATE_CCFLAGS		
-+#define TKGATE_CCFLAGS	!!CFLAGS!!	
++#define TKGATE_CCFLAGS	${CFLAGS}
  
  /*
    Set this to '1' if you get an error about Tk_ConfigureWidget
@@ -79,14 +79,14 @@ $OpenBSD$
   * Set this to the list of library directories to search
   *
 - * #define TKGATE_LPATH		-L/usr/local/lib -L/usr/X11R6/lib -L/usr/lib
-+ * #define TKGATE_LPATH		-L!!PREFIX!!/lib -L/usr/X11R6/lib -L/usr/lib
++ * #define TKGATE_LPATH		-L${LOCALBASE}/lib -L${X11BASE}/lib -L/usr/lib
   */
  
  /*
   * Set this to the list of include file directories to search
   *
 - * #define TKGATE_IPATH		-I/usr/local/include/tk8.0 -I/usr/local/include/tcl8.0 -I/usr/X11R6/include
-+ * #define TKGATE_IPATH		-I!!PREFIX!!/include/tk8.0 -I!!PREFIX!!/include/tcl8.0 -I/usr/X11R6/include
++ * #define TKGATE_IPATH		-I${MODTK_INCDIR} -I${MODTCL_INCDIR} -I${X11BASE}/include
   */
  
  /*
@@ -95,7 +95,7 @@ $OpenBSD$
   * setting the TCL_LIBRARY envornment variable.
   *
 - * #define TCL_LIBRARY		"/usr/local/lib/tcl8.0"
-+ * #define TCL_LIBRARY		"!!PREFIX!!/lib/tcl8.0"
++ * #define TCL_LIBRARY		"${MODTCL_LIBDIR}/${MODTCL_LIB}"
   */
  
  /*
@@ -104,7 +104,7 @@ $OpenBSD$
   * setting the TK_LIBRARY envornment variable.
   *
 - * #define TK_LIBRARY		"/usr/local/lib/tk8.0"
-+ * #define TK_LIBRARY		"!!PREFIX!!/lib/tk8.0"
++ * #define TK_LIBRARY		"${MODTK_LIBDIR}/${MODTK_LIB}"
   */
  
  /*****************************************************************************/
@@ -113,20 +113,20 @@ $OpenBSD$
  
  #ifndef TKGATE_LPATH
 -#define TKGATE_LPATH		 -L/usr/local/lib -L/usr/X11R6/lib -L/usr/lib
-+#define TKGATE_LPATH		 -L!!PREFIX!!/lib -L/usr/X11R6/lib -L/usr/lib
++#define TKGATE_LPATH		 -L${LOCALBASE}/lib -L${X11BASE}/lib
  #endif
  #ifndef TKGATE_IPATH
 -#define TKGATE_IPATH		 -I/usr/local/include/tk8.4 -I/usr/local/include/tcl8.4 -I/usr/X11R6/include
-+#define TKGATE_IPATH		 -I!!PREFIX!!/include/tk${MODTK_VERSION} -I!!PREFIX!!/include/tcl${MODTK_VERSION} -I/usr/X11R6/include
++#define TKGATE_IPATH		 -I${MODTK_INCDIR} -I${MODTCL_INCDIR} -I${X11BASE}/include
  #endif
  #ifndef TKGATE_LIBS
 -#define TKGATE_LIBS		 -ltk84 -ltcl84 -lX11 -lm
-+#define TKGATE_LIBS		 -ltk85 -ltcl85 -lX11 -lm
++#define TKGATE_LIBS		 -l${MODTK_LIB} -l${MODTCL_LIB} -lX11 -lm
  #endif
  
  #ifndef TKGATE_HOMEDIR
 -#define TKGATE_HOMEDIR		"/usr/X11R6/lib/tkgate-1.8.7"
-+#define TKGATE_HOMEDIR		"!!PREFIX!!/share/tkgate"
++#define TKGATE_HOMEDIR		"${PREFIX}/share/tkgate"
  #endif
  
  #ifndef TKGATE_SECONDARYHOME

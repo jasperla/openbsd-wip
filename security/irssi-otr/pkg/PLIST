@@ -1,7 +1,0 @@
-@comment $OpenBSD$
-lib/irssi/
-lib/irssi/modules/
-lib/irssi/modules/libotr.so
-share/irssi/
-share/irssi/help/
-share/irssi/help/otr

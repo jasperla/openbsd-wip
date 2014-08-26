@@ -1,8 +1,13 @@
 # $OpenBSD$
 
 COMMENT =		offline browser
-DISTNAME =		httrack-3.47.27
+DISTNAME =		httrack-3.48.19
 
+# "main" application libraries
+SHARED_LIBS +=  htsjava                   0.0 # 2.47
+SHARED_LIBS +=  httrack                   0.0 # 2.47
+
+# sample libraries, provided in a separate directory
 SHARED_LIBS +=  baselinks                 0.0 # 1.0
 SHARED_LIBS +=  changecontent             0.0 # 1.0
 SHARED_LIBS +=  contentfilter             0.0 # 1.0
@@ -13,8 +18,6 @@ SHARED_LIBS +=  filenameiisbug            0.0 # 1.0
 SHARED_LIBS +=  listlinks                 0.0 # 1.0
 SHARED_LIBS +=  log                       0.0 # 1.0
 SHARED_LIBS +=  simple                    0.0 # 1.0
-SHARED_LIBS +=  htsjava                   0.0 # 2.47
-SHARED_LIBS +=  httrack                   0.0 # 2.47
 
 CATEGORIES =		www
 
@@ -41,6 +44,8 @@ CONFIGURE_ENV =		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 AUTOCONF_VERSION =	2.69
+
+PATCHORIG =		.ports.orig
 
 pre-configure:
 	perl -pi \

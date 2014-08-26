@@ -41,6 +41,7 @@ share/barnowl/lib/Module/
 share/barnowl/lib/Module/Install/
 share/barnowl/lib/Module/Install/BarnOwl.pm
 share/barnowl/modules/
+share/barnowl/modules/Facebook.par
 share/barnowl/modules/IRC.par
 share/barnowl/modules/Jabber.par
 share/barnowl/modules/Twitter.par

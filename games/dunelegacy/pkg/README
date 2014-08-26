@@ -1,9 +1,0 @@
-$OpenBSD: README-main,v 1.1 2013/03/22 15:00:29 kirby Exp $
-
-+-----------------------------------------------------------------------
-| Running ${FULLPKGNAME} on OpenBSD
-+-----------------------------------------------------------------------
-
-PAK-files from the original Dune 2 are needed to play Dune Legacy.  Data
-files and music files should be placed in ${PREFIX}/share/dunelegacy/ or
-~/.config/dunelegacy/data/.

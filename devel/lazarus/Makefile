@@ -4,11 +4,11 @@ ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		class libraries for FPC that emulate Delphi
 
-V =			1.0.10
+V =			1.2
 DISTNAME =		lazarus-${V}-0
 PKGNAME =		lazarus-${V}
 
-FPC_V =			2.6.2
+FPC_V =			2.6.4
 
 CATEGORIES =		devel
 

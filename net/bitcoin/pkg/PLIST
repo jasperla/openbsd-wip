@@ -1,4 +1,18 @@
 @comment $OpenBSD$
+@newgroup _bitcoind:733
+@newuser _bitcoind:733:733:daemon:Bitcoind Account:/var/empty:/sbin/nologin
+@bin bin/bitcoin-cli
 @bin bin/bitcoind
+@comment @bin bin/test_bitcoin
+@comment @bin bin/test_bitcoin-qt
 @man man/man1/bitcoind.1
 @man man/man5/bitcoin.conf.5
+share/examples/bitcoin/
+share/examples/bitcoin/bitcoin.conf
+@sample ${SYSCONFDIR}/bitcoin.conf
+!%%no_x11%%
+@rcscript ${RCDIR}/bitcoind
+@mode 750
+@owner _bitcoind
+@group _bitcoind
+@sample /var/bitcoin/

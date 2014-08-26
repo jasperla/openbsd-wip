@@ -1,0 +1,18 @@
+$ sudo make plist
+===>  Faking installation for p5-Text-Balanced-2.02
+Installing /usr/ports/pobj/p5-Text-Balanced-2.02/fake-amd64/usr/libdata/perl5/Text/Balanced.pm
+Installing /usr/ports/pobj/p5-Text-Balanced-2.02/fake-amd64/usr/local/man/man3p/Text::Balanced.3p
+Appending installation info to /usr/ports/pobj/p5-Text-Balanced-2.02/fake-amd64/usr/./libdata/perl5/amd64-openbsd/perllocal.pod
+===>  Updating plist for p5-Text-Balanced-2.02
+Scanning destdir
+Getting old lists
+1st pass identifying files
+Attaching annotations
+Sorting out destdir files
+make-plist: Bogus element outside of every prefix: /usr/libdata/perl5/Text
+make-plist: Bogus element outside of every prefix: /usr/libdata/perl5/Text/Balanced.pm
+make-plist: Bogus element outside of every prefix: /usr/libdata/perl5/amd64-openbsd/auto
+make-plist: Bogus element outside of every prefix: /usr/libdata/perl5/amd64-openbsd/auto/Text
+make-plist: Bogus element outside of every prefix: /usr/libdata/perl5/amd64-openbsd/auto/Text/Balanced
+make-plist: Bogus element outside of every prefix: /usr/libdata/perl5/amd64-openbsd/auto/Text/Balanced/.packlist
+pkg/PLIST is new

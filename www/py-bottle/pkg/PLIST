@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+bin/bottle.py
+lib/python${MODPY_VERSION}/site-packages/bottle-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/bottle.py
+lib/python${MODPY_VERSION}/site-packages/bottle.pyc

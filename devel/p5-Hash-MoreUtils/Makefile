@@ -1,21 +1,19 @@
-# $OpenBSD $
+# $OpenBSD$
 
-COMMENT=	Perl extension to provide the stuff missing in Hash::Util
+COMMENT =	Perl extension to provide the stuff missing in Hash::Util
 
-MODULES=	cpan
-DISTNAME=	Hash-MoreUtils-0.05
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	devel
+MODULES =	cpan
+DISTNAME =	Hash-MoreUtils-0.05
+CATEGORIES =	devel
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # GNU General Public License or Artistic License
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS=	devel/p5-Module-Build
+BUILD_DEPENDS =	devel/p5-Module-Build \
+		devel/p5-Test-Simple
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-
-CONFIGURE_STYLE= modbuild
+CONFIGURE_STYLE = modbuild
 
 .include <bsd.port.mk>

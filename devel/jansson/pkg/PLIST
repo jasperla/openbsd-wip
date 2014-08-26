@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+include/jansson.h
+include/jansson_config.h
+@lib lib/libjansson.so.${LIBjansson_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/jansson.pc

@@ -1,0 +1,12 @@
+@comment $OpenBSD$
+%%SHARED%%
+${INSTALLSITELIB}/
+${INSTALLSITELIB}/${MACHINE_ARCH}-openbsd/
+${INSTALLSITELIB}/${MACHINE_ARCH}-openbsd/Lexical/
+${INSTALLSITELIB}/${MACHINE_ARCH}-openbsd/Lexical/SealRequireHints.pm
+${INSTALLSITELIB}/${MACHINE_ARCH}-openbsd/auto/
+${INSTALLSITELIB}/${MACHINE_ARCH}-openbsd/auto/Lexical/
+${INSTALLSITELIB}/${MACHINE_ARCH}-openbsd/auto/Lexical/SealRequireHints/
+${INSTALLSITELIB}/${MACHINE_ARCH}-openbsd/auto/Lexical/SealRequireHints/.packlist
+${INSTALLSITELIB}/${MACHINE_ARCH}-openbsd/auto/Lexical/SealRequireHints/SealRequireHints.bs
+@man man/man3p/Lexical::SealRequireHints.3p

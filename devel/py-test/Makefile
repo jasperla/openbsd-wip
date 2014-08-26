@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/05/30 13:09:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2014/06/03 11:34:24 rpointel Exp $
 
 COMMENT=		cross-project testing tool for Python
 
-MODPY_EGG_VERSION =	2.3.5
+MODPY_EGG_VERSION=	2.6.1
 DISTNAME=		pytest-${MODPY_EGG_VERSION}
 PKGNAME=		py-test-${MODPY_EGG_VERSION}
 
@@ -22,11 +22,9 @@ MODPY_SETUPTOOLS=	Yes
 FLAVORS=		python3
 FLAVOR?=
 
-RUN_DEPENDS =		devel/py-py${MODPY_FLAVOR}>=1.4.15
-TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR}>=${MODPY_EGG_VERSION}
-
-do-test:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/py.test${MODPY_BIN_SUFFIX} testing
+RUN_DEPENDS=		devel/py-py${MODPY_FLAVOR}
+TEST_DEPENDS=		devel/py-test${MODPY_FLAVOR}>=${MODPY_EGG_VERSION} \
+			devel/py-nose${MODPY_FLAVOR}
 
 .if ${FLAVOR:Mpython3}
 post-install:

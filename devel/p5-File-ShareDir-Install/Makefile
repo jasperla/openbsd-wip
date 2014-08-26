@@ -1,16 +1,15 @@
-# $OpenBSD $
+# $OpenBSD$
 
-COMMENT=	install shared files
+COMMENT =	install shared files
 
-MODULES=	cpan
-DISTNAME=	File-ShareDir-Install-0.05
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	devel
+MODULES =	cpan
+DISTNAME =	File-ShareDir-Install-0.08
+CATEGORIES =	devel
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
 TEST_DEPENDS = devel/p5-Test-Pod
 

@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/CMakeLists.txt.orig	Sat Mar 22 20:42:38 2014
++++ src/CMakeLists.txt	Sat Mar 22 20:42:46 2014
+@@ -130,7 +130,7 @@ if(ENABLE_OSX_BUNDLE)
+ 	install(TARGETS previous BUNDLE DESTINATION /Applications)
+ else()
+ 	install(TARGETS previous RUNTIME DESTINATION ${BINDIR})
+-	install(FILES previous-icon.bmp DESTINATION ${DATADIR})
++	install(FILES hatari-icon.bmp DESTINATION ${DATADIR})
+ 	file(GLOB TOS_IMG_FILE tos.img)
+ 	if(TOS_IMG_FILE)
+ 		install(FILES tos.img DESTINATION ${DATADIR})

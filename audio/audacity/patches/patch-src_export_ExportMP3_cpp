@@ -1,0 +1,24 @@
+$OpenBSD$
+Disable "download lame" buttons in GUI, since lame is provided by packages.
+--- src/export/ExportMP3.cpp.orig	Thu Jul 10 02:04:22 2014
++++ src/export/ExportMP3.cpp	Thu Jul 10 02:06:45 2014
+@@ -616,10 +616,6 @@ class FindDialog : public wxDialog (public)
+                mPathText = S.AddTextBox(wxT(""), mLibPath.GetFullPath(), 0);
+             }
+             S.Id(ID_BROWSE).AddButton(_("Browse..."), wxALIGN_RIGHT);
+-            /* i18n-hint: There is a  button to the right of the arrow.*/
+-            S.AddVariableText(_("To get a free copy of Lame, click here -->"), true);
+-            /* i18n-hint: (verb)*/
+-            S.Id(ID_DLOAD).AddButton(_("Download"), wxALIGN_RIGHT);
+          }
+          S.EndMultiColumn();
+ 
+@@ -1460,7 +1456,7 @@ wxString MP3Exporter::GetLibraryName()
+ 
+ wxString MP3Exporter::GetLibraryTypeString()
+ {
+-   return wxString(_("Only libmp3lame.so.0|libmp3lame.so.0|Primary Shared Object files (*.so)|*.so|Extended Libraries (*.so*)|*.so*|All Files (*)|*"));
++   return wxString(_("libmp3lame.so.X.Y|libmp3lame.so.*|Primary Shared Object files (*.so)|*.so|Extended Libraries (*.so*)|*.so*|All Files (*)|*"));
+ }
+ #endif
+ 

@@ -4,12 +4,12 @@ ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		open source implementation of TES III: Morrowind
 
-V =			0.28.0
+V =			0.30.0
 DISTNAME =		openmw-$V
 
 CATEGORIES =		games
 
-HOMEPAGE =		http://openmw.com
+HOMEPAGE =		https://openmw.org/en/
 
 MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
@@ -25,7 +25,7 @@ WANTLIB += avutil boost_filesystem-mt boost_program_options-mt
 WANTLIB += boost_system-mt boost_thread-mt boost_wave-mt c m openal
 WANTLIB += pthread swscale unshield
 
-MASTER_SITES =		https://github.com/zinnschlag/openmw/archive/
+MASTER_SITES =		https://github.com/OpenMW/openmw/archive/
 
 MODULES =		gcc4 devel/cmake x11/qt4
 MODGCC4_ARCHS = 	*
@@ -42,7 +42,7 @@ RUN_DEPENDS  = 		devel/desktop-file-utils
 
 CONFIGURE_ARGS += 	-DBINDIR=${LOCALBASE}/bin \
 			-DDATADIR:PATH=${LOCALBASE}/share/openmw \
-			-DSYSCONFDIR=${SYSCONFDIR}/openmw \
+			-DSYSCONFDIR=${PREFIX}/share/examples/openmw \
 			-DCMAKE_EXE_LINKER_FLAGS="-L${X11BASE}/lib" \
 			-DMORROWIND_DATA_FILES="${LOCALBASE}/share/openmw/data" \
 			-DMORROWIND_RESOURCE_FILES="${LOCALBASE}/share/openmw/resources"

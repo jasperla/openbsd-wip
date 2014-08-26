@@ -1,0 +1,78 @@
+@comment $OpenBSD$
+bin/instmodsh
+${P5SITE}/CPAN/
+${P5SITE}/CPAN/Meta/
+${P5SITE}/CPAN/Meta/YAML.pm
+${P5SITE}/ExtUtils/
+${P5SITE}/ExtUtils/Command/
+${P5SITE}/ExtUtils/Command/MM.pm
+${P5SITE}/ExtUtils/Liblist/
+${P5SITE}/ExtUtils/Liblist.pm
+${P5SITE}/ExtUtils/Liblist/Kid.pm
+${P5SITE}/ExtUtils/MM.pm
+${P5SITE}/ExtUtils/MM_AIX.pm
+${P5SITE}/ExtUtils/MM_Any.pm
+${P5SITE}/ExtUtils/MM_BeOS.pm
+${P5SITE}/ExtUtils/MM_Cygwin.pm
+${P5SITE}/ExtUtils/MM_DOS.pm
+${P5SITE}/ExtUtils/MM_Darwin.pm
+${P5SITE}/ExtUtils/MM_MacOS.pm
+${P5SITE}/ExtUtils/MM_NW5.pm
+${P5SITE}/ExtUtils/MM_OS2.pm
+${P5SITE}/ExtUtils/MM_QNX.pm
+${P5SITE}/ExtUtils/MM_UWIN.pm
+${P5SITE}/ExtUtils/MM_Unix.pm
+${P5SITE}/ExtUtils/MM_VMS.pm
+${P5SITE}/ExtUtils/MM_VOS.pm
+${P5SITE}/ExtUtils/MM_Win32.pm
+${P5SITE}/ExtUtils/MM_Win95.pm
+${P5SITE}/ExtUtils/MY.pm
+${P5SITE}/ExtUtils/MakeMaker/
+${P5SITE}/ExtUtils/MakeMaker.pm
+${P5SITE}/ExtUtils/MakeMaker/Config.pm
+${P5SITE}/ExtUtils/MakeMaker/FAQ.pod
+${P5SITE}/ExtUtils/MakeMaker/Tutorial.pod
+${P5SITE}/ExtUtils/Mkbootstrap.pm
+${P5SITE}/ExtUtils/Mksymlists.pm
+${P5SITE}/ExtUtils/testlib.pm
+${P5SITE}/JSON/
+${P5SITE}/JSON/PP/
+${P5SITE}/JSON/PP.pm
+${P5SITE}/JSON/PP/Boolean.pm
+${P5SITE}/JSON/PP/Compat5006.pm
+${P5SITE}/Parse/
+${P5SITE}/Parse/CPAN/
+${P5SITE}/Parse/CPAN/Meta.pm
+@man man/man1/instmodsh.1
+@man man/man3p/CPAN::Meta::YAML.3p
+@man man/man3p/ExtUtils::Command::MM.3p
+@man man/man3p/ExtUtils::Liblist.3p
+@man man/man3p/ExtUtils::MM.3p
+@man man/man3p/ExtUtils::MM_AIX.3p
+@man man/man3p/ExtUtils::MM_Any.3p
+@man man/man3p/ExtUtils::MM_BeOS.3p
+@man man/man3p/ExtUtils::MM_Cygwin.3p
+@man man/man3p/ExtUtils::MM_DOS.3p
+@man man/man3p/ExtUtils::MM_Darwin.3p
+@man man/man3p/ExtUtils::MM_MacOS.3p
+@man man/man3p/ExtUtils::MM_NW5.3p
+@man man/man3p/ExtUtils::MM_OS2.3p
+@man man/man3p/ExtUtils::MM_QNX.3p
+@man man/man3p/ExtUtils::MM_UWIN.3p
+@man man/man3p/ExtUtils::MM_Unix.3p
+@man man/man3p/ExtUtils::MM_VMS.3p
+@man man/man3p/ExtUtils::MM_VOS.3p
+@man man/man3p/ExtUtils::MM_Win32.3p
+@man man/man3p/ExtUtils::MM_Win95.3p
+@man man/man3p/ExtUtils::MY.3p
+@man man/man3p/ExtUtils::MakeMaker.3p
+@man man/man3p/ExtUtils::MakeMaker::Config.3p
+@man man/man3p/ExtUtils::MakeMaker::FAQ.3p
+@man man/man3p/ExtUtils::MakeMaker::Tutorial.3p
+@man man/man3p/ExtUtils::Mkbootstrap.3p
+@man man/man3p/ExtUtils::Mksymlists.3p
+@man man/man3p/ExtUtils::testlib.3p
+@man man/man3p/JSON::PP.3p
+@man man/man3p/JSON::PP::Boolean.3p
+@man man/man3p/JSON::PP::Compat5006.3p
+@man man/man3p/Parse::CPAN::Meta.3p

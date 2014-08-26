@@ -1,0 +1,16 @@
+$OpenBSD: patch-test_unittest_lint_py,v 1.2 2011/08/31 12:42:24 mpi Exp $
+--- test/unittest_lint.py.orig	Tue Apr 22 10:11:27 2014
++++ test/unittest_lint.py	Tue May 13 14:31:29 2014
+@@ -391,6 +391,12 @@ class ConfigTC(TestCase):
+         os.environ.pop('PYLINTRC', None)
+ 
+     def test_pylint_home(self):
++        if os.environ.has_key('PYLINTHOME'):
++            pylintd = os.environ['PYLINTHOME']
++            reload(config)
++            self.assertEquals(config.PYLINT_HOME, pylintd)
++            return
++
+         uhome = os.path.expanduser('~')
+         if uhome == '~':
+             expected = '.pylint.d'

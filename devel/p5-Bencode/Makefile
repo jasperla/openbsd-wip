@@ -1,17 +1,16 @@
-# $OpenBSD $
+# $OpenBSD$
 
-COMMENT=	BitTorrent serialisation format
+COMMENT =	BitTorrent serialisation format
 
-MODULES=	cpan
-DISTNAME=	Bencode-1.4
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	devel
+MODULES =	cpan
+DISTNAME =	Bencode-1.4
+CATEGORIES =	devel
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
-CPAN_AUTHOR=    ARISTOTLE
+CPAN_AUTHOR =	ARISTOTLE
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
 .include <bsd.port.mk>

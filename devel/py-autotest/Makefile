@@ -1,4 +1,4 @@
-# $OpenBSD:  $
+# $OpenBSD$
 
 COMMENT =		fully automated tests
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		https://github.com/autotest/autotest/archive/
 
-RUN_DEPENDS=    	www/py-django
+RUN_DEPENDS =		www/py-django
 
 BUILD_DEPENDS +=	lang/python/${MODPY_DEFAULT_VERSION_2}
 

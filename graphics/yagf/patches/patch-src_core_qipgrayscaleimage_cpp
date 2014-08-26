@@ -1,0 +1,37 @@
+$OpenBSD$
+Could be zapped if it causes havoc later; used to debug issue #45.
+--- src/core/qipgrayscaleimage.cpp.orig	Thu Aug  7 00:03:21 2014
++++ src/core/qipgrayscaleimage.cpp	Fri Aug  8 22:29:36 2014
+@@ -196,6 +196,18 @@ void QIPGrayscaleImage::histogramInternal(qreal * resu
+ 
+ void QIPGrayscaleImage::copyInternal(const IntRect &r, uint *image) const
+ {
++    Q_ASSERT(r.y1 >= 0);
++    Q_ASSERT(r.y1 <= height());
++    Q_ASSERT(r.y2 >= 0);
++    Q_ASSERT(r.y2 <= height());
++    Q_ASSERT(r.y1 < r.y2);
++
++    Q_ASSERT(r.x1 >= 0);
++    Q_ASSERT(r.x1 <= width());
++    Q_ASSERT(r.x2 >= 0);
++    Q_ASSERT(r.x2 <= width());
++    Q_ASSERT(r.x1 < r.x2);
++
+     for (uint y = r.y1; y < r.y2; y++) {
+         quint8 * line = scanLine(y);
+         uint * lineout = &image[y*w];
+@@ -318,6 +330,13 @@ quint32 QIPGrayscaleImage::height() const
+ 
+ QIPGrayscaleImage QIPGrayscaleImage::copy(quint32 x1, quint32 x2, quint32 y1, quint32 y2) const
+ {
++    Q_ASSERT(x1 >= 0);
++    Q_ASSERT(x1 <  x2);
++    Q_ASSERT(x2 <= width());
++    Q_ASSERT(y1 >= 0);
++    Q_ASSERT(y1 <  y2);
++    Q_ASSERT(y2 <= height());
++
+     QIPGrayscaleImage result(x2 - x1, y2 - y1);
+     for (uint y = y1; y < y2; y ++) {
+         quint8 * src = &scanLine(y)[x1];

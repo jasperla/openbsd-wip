@@ -1,7 +1,6 @@
 @comment $OpenBSD$
 bin/tapper-automatic-test.pl
 bin/tapper-client
-${P5SITE}/Tapper/
 ${P5SITE}/Tapper/PRC/
 ${P5SITE}/Tapper/PRC.pm
 ${P5SITE}/Tapper/PRC/Testcontrol.pm

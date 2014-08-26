@@ -1,0 +1,83 @@
+@comment $OpenBSD$
+@bin bin/corebird
+man/corebird.1
+share/appdata/
+share/appdata/corebird.appdata.xml
+share/applications/
+share/applications/org.baedert.corebird.desktop
+share/corebird/
+share/corebird/assets/
+share/corebird/assets/hicolor/
+share/corebird/assets/hicolor/scalable/
+share/corebird/assets/hicolor/scalable/actions/
+share/corebird/assets/hicolor/scalable/actions/corebird-conversation-symbolic.svg
+share/corebird/assets/hicolor/scalable/actions/corebird-dms-symbolic.svg
+share/corebird/assets/hicolor/scalable/actions/corebird-down-symbolic.svg
+share/corebird/assets/hicolor/scalable/actions/corebird-favorite-symbolic.svg
+share/corebird/assets/hicolor/scalable/actions/corebird-filter-symbolic.svg
+share/corebird/assets/hicolor/scalable/actions/corebird-lists-symbolic.svg
+share/corebird/assets/hicolor/scalable/actions/corebird-location-symbolic.svg
+share/corebird/assets/hicolor/scalable/actions/corebird-mentions-symbolic.svg
+share/corebird/assets/hicolor/scalable/actions/corebird-reply-symbolic.svg
+share/corebird/assets/hicolor/scalable/actions/corebird-retweet-symbolic.svg
+share/corebird/assets/hicolor/scalable/actions/corebird-search-symbolic.svg
+share/corebird/assets/hicolor/scalable/actions/corebird-stream-symbolic.svg
+share/corebird/no_avatar.png
+share/corebird/no_banner.png
+share/corebird/sql/
+share/corebird/sql/accounts/
+share/corebird/sql/accounts/Create.1.sql
+share/corebird/sql/accounts/Create.2.sql
+share/corebird/sql/init/
+share/corebird/sql/init/Create.1.sql
+share/corebird/ui/
+share/corebird/ui/style.css
+share/corebird/verified.png
+share/glib-2.0/
+share/glib-2.0/schemas/
+share/glib-2.0/schemas/org.baedert.corebird.gschema.xml
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/128x128/
+share/icons/hicolor/128x128/apps/
+share/icons/hicolor/128x128/apps/corebird.png
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
+share/icons/hicolor/16x16/apps/corebird.png
+share/icons/hicolor/24x24/
+share/icons/hicolor/24x24/apps/
+share/icons/hicolor/24x24/apps/corebird.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
+share/icons/hicolor/32x32/apps/corebird.png
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/corebird.png
+share/icons/hicolor/64x64/
+share/icons/hicolor/64x64/apps/
+share/icons/hicolor/64x64/apps/corebird.png
+share/icons/hicolor/96x96/
+share/icons/hicolor/96x96/apps/
+share/icons/hicolor/96x96/apps/corebird.png
+share/locale/
+share/locale/de/
+share/locale/de/LC_MESSAGES/
+share/locale/de/LC_MESSAGES/corebird.mo
+share/locale/en_AU/
+share/locale/en_AU/LC_MESSAGES/
+share/locale/en_AU/LC_MESSAGES/corebird.mo
+share/locale/es/
+share/locale/es/LC_MESSAGES/
+share/locale/es/LC_MESSAGES/corebird.mo
+share/locale/nl/
+share/locale/nl/LC_MESSAGES/
+share/locale/nl/LC_MESSAGES/corebird.mo
+share/locale/zh_CN/
+share/locale/zh_CN/LC_MESSAGES/
+share/locale/zh_CN/LC_MESSAGES/corebird.mo
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

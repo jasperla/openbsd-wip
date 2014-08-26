@@ -4,10 +4,9 @@ COMMENT =	daemon and plugins to handle MCP notifications
 
 MODULES =	cpan
 DISTNAME =	Tapper-Notification-4.1.1
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	www
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # 2-clause BSD
 PERMIT_PACKAGE_CDROM =	Yes

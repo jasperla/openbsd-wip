@@ -1,18 +1,15 @@
-# $OpenBSD $
+# $OpenBSD$
 
-COMMENT=	simple minilanguage for use in expression
+COMMENT =	simple minilanguage for use in expression
 
-MODULES=	cpan
-DISTNAME=	Language-Expr-0.21
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	devel
+MODULES =	cpan
+DISTNAME =	Language-Expr-0.23
+CATEGORIES =	devel
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
-
-CONFIGURE_STYLE =    modbuild
+PERMIT_PACKAGE_CDROM =	Yes
 
 BUILD_DEPENDS =	devel/p5-Regexp-Grammars \
 		devel/p5-UUID-Tiny

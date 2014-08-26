@@ -1,2 +1,1 @@
  - Fix bogus characters in date field
- Pango-WARNING **: Invalid UTF-8 string passed to pango_layout_set_text()

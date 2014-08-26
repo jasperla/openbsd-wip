@@ -1,0 +1,16 @@
+$OpenBSD$
+--- include/ccnet/ccnet-client.h.orig	Mon Apr 21 11:28:18 2014
++++ include/ccnet/ccnet-client.h	Thu May 15 12:13:24 2014
+@@ -9,7 +9,12 @@
+ 
+ #include <glib.h>
+ #include <glib-object.h>
++
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
++#include <event2/util.h>
++#else
+ #include <evutil.h>
++#endif
+ 
+ #include "ccnet-session-base.h"
+ 

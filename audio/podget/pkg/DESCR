@@ -1,4 +1,0 @@
-Podget is a simple podcast aggregator optimized for running as a
-scheduled background job (i.e. cron), with support for categories &
-folders, importing servers from OPML lists & iTunes PCAST files,
-exporting an OPML file, automatic playlist creation and cleanup.

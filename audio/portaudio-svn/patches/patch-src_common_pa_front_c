@@ -1,0 +1,51 @@
+$OpenBSD$
+--- src/common/pa_front.c.orig	Wed Jul  9 23:07:49 2014
++++ src/common/pa_front.c	Wed Jul  9 23:10:28 2014
+@@ -1216,8 +1216,10 @@ PaError Pa_OpenStream( PaStream** stream,
+                                   hostApiInputParametersPtr, hostApiOutputParametersPtr,
+                                   sampleRate, framesPerBuffer, streamFlags, streamCallback, userData );
+ 
+-    if( result == paNoError )
++    if( result == paNoError ) {
+         AddOpenStream( *stream );
++        PA_STREAM_REP(*stream)->hostApiType = hostApi->info.type;
++    }
+ 
+ 
+     PA_LOGAPI(("Pa_OpenStream returned:\n" ));
+@@ -1725,6 +1727,35 @@ signed long Pa_GetStreamWriteAvailable( PaStream* stre
+         PA_LOGAPI(("\tPaError: %d ( %s )\n", result, Pa_GetErrorText( result ) ));
+ 
+     }
++
++    return result;
++}
++
++
++PaHostApiTypeId Pa_GetStreamHostApiType( PaStream* stream )
++{
++    PaError error = PaUtil_ValidateStreamPointer( stream );
++    PaHostApiTypeId result;
++
++#ifdef PA_LOG_API_CALLS
++    PaUtil_DebugPrint("Pa_GetStreamHostApiType called:\n" );
++    PaUtil_DebugPrint("\tPaStream* stream: 0x%p\n", stream );
++#endif
++
++    if( error == paNoError )
++    {
++        result = PA_STREAM_REP(stream)->hostApiType;
++    }
++    else
++    {
++        result = (PaHostApiTypeId) error;
++    }
++
++#ifdef PA_LOG_API_CALLS
++    PaUtil_DebugPrint("Pa_GetStreamHostApiType returned:\n" );
++    PaUtil_DebugPrint("\tPaError: %d ( %s )\n\n", result, Pa_GetErrorText( resu
++lt ) );
++#endif
+ 
+     return result;
+ }

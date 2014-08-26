@@ -1,0 +1,3 @@
+Stores all unambiguous truncations of each element of LIST as keys in
+the associative array referenced by $hashref. The values are the
+original list elements.

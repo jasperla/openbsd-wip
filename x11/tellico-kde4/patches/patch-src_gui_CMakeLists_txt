@@ -1,9 +1,0 @@
-$OpenBSD$
---- src/gui/CMakeLists.txt.orig	Sat Mar 30 12:46:34 2013
-+++ src/gui/CMakeLists.txt	Sat Mar 30 12:46:54 2013
-@@ -40,3 +40,5 @@ IF(${KDE_VERSION} VERSION_LESS "4.6.99" AND ${KDE_VERS
- ENDIF(${KDE_VERSION} VERSION_LESS "4.6.99" AND ${KDE_VERSION} VERSION_GREATER "4.5.99")
- 
- KDE4_ADD_LIBRARY(gui STATIC ${gui_STAT_SRCS})
-+
-+ADD_DEPENDENCIES(gui tellico_config)

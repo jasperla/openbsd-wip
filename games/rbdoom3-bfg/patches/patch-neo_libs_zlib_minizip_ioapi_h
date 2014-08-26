@@ -1,0 +1,12 @@
+$OpenBSD$
+--- neo/libs/zlib/minizip/ioapi.h.orig	Mon Jul 21 18:04:12 2014
++++ neo/libs/zlib/minizip/ioapi.h	Mon Jul 21 20:01:32 2014
+@@ -53,7 +53,7 @@
+ #define ftello64 ftell
+ #define fseeko64 fseek
+ #else
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #define fopen64 fopen
+ #define ftello64 ftello
+ #define fseeko64 fseeko

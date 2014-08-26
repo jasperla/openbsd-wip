@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/06 05:04:40 bentley Exp $
+# $OpenBSD $
 
 COMMENT=		command line double-entry accounting ledger
 
@@ -10,27 +10,27 @@ HOMEPAGE=		http://www.ledger-cli.org
 
 MAINTAINER=		Sergey Bronnikov <estetus@gmail.com>
 
-#SHARED_LIBS=	amounts	0.0
+#SHARED_LIBS=		amounts	0.0
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		https://github.com/ledger/ledger/archive/
+MASTER_SITES =		https://github.com/ledger/ledger/archive/
 
-EXTRACT_SUFX =  .zip
+EXTRACT_SUFX =		.zip
 
-WANTLIB=		c gmp>=4 m pcre stdc++
+WANTLIB =		c gmp>=4 m pcre stdc++
 
-MODULES =       devel/cmake \
-				lang/python
+MODULES =		devel/cmake \
+			lang/python
 
-LIB_DEPENDS=	devel/gmp \
-				devel/pcre \
-				devel/boost
+LIB_DEPENDS =		devel/gmp \
+			devel/pcre \
+			devel/boost
 
-CONFIGURE_STYLE=	simple
-CONFIGURE_SCRIPT=	acprep
-CONFIGURE_ARGS=		opt make
+CONFIGURE_STYLE =	simple
+CONFIGURE_SCRIPT =	acprep
+CONFIGURE_ARGS =	opt make
 
 #SEPARATE_BUILD=	Yes
 

@@ -4,10 +4,9 @@ COMMENT =	testplan support with TaskJuggler interoperability
 
 MODULES =	cpan
 DISTNAME =	Tapper-Testplan-4.1.2
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	www
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # 2-clause BSD
 PERMIT_PACKAGE_CDROM =	Yes

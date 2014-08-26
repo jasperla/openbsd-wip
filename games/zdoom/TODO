@@ -1,0 +1,37 @@
+- find zdoom.pk3 by default, currently it has to be copied
+  to the game dir
+
+- seems to require gstreamer-plugins-bad to be build with timidity
+  support for midi which the package currently doesn't do
+
+memory abuse on exit:
+
+zdoom(20452) in free(): error: bogus pointer 0x3a1c317008
+Abort trap (core dumped)
+#0  0x0000003a1a04700a in kill () at <stdin>:2
+#1  0x0000003a1a0a9369 in abort () at /usr/src/lib/libc/stdlib/abort.c:53
+#2  0x0000003a1a07db20 in wrterror (msg=0x3a1a1b0d6f "bogus pointer", 
+    p=0x3a1c317008) at /usr/src/lib/libc/stdlib/malloc.c:270
+#3  0x0000003a1a07f0fe in free (ptr=0x3a1c317008)
+    at /usr/src/lib/libc/stdlib/malloc.c:1262
+#4  0x0000003819c18531 in R_DrawMaskedColumn () from /usr/local/bin/zdoom
+#5  0x0000003819c0378a in R_DrawMaskedColumnHoriz () from /usr/local/bin/zdoom
+#6  0x0000003819ab5864 in __register_frame_info () from /usr/local/bin/zdoom
+#7  0x0000003a1a0a5d47 in __cxa_finalize (dso=0x0)
+    at /usr/src/lib/libc/stdlib/atexit.c:138
+#8  0x0000003a1a08176e in exit (status=0) at /usr/src/lib/libc/stdlib/exit.c:57
+#9  0x0000003819ab8420 in I_Quit () from /usr/local/bin/zdoom
+#10 0x0000003819ceae7c in AF_A_Punch () from /usr/local/bin/zdoom
+#11 0x0000003819ceaaa2 in AF_A_Punch () from /usr/local/bin/zdoom
+#12 0x0000003819ceb299 in AF_A_Punch () from /usr/local/bin/zdoom
+#13 0x0000003819cddfed in AF_A_Punch () from /usr/local/bin/zdoom
+#14 0x0000003819ceab75 in AF_A_Punch () from /usr/local/bin/zdoom
+#15 0x0000003819cdf46f in AF_A_Punch () from /usr/local/bin/zdoom
+#16 0x0000003819ae99c1 in C_DeinitConsole () from /usr/local/bin/zdoom
+#17 0x0000003819af3538 in D_QuitNetGame () from /usr/local/bin/zdoom
+#18 0x0000003819af4090 in D_QuitNetGame () from /usr/local/bin/zdoom
+#19 0x0000003819aec455 in C_DeinitConsole () from /usr/local/bin/zdoom
+#20 0x0000003819aee6cb in C_DeinitConsole () from /usr/local/bin/zdoom
+#21 0x0000003819ab5dde in __register_frame_info () from /usr/local/bin/zdoom
+#22 0x0000003819ab23b1 in ?? () from /usr/local/bin/zdoom
+#23 0x0000000000000000 in ?? ()

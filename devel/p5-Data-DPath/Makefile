@@ -1,24 +1,27 @@
-# $OpenBSD $
+# $OpenBSD$
 
-COMMENT=	DPath module
+COMMENT =	DPath module
 
-MODULES=	cpan
-DISTNAME=	Data-DPath-0.49
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	devel
+MODULES =	cpan
+DISTNAME =	Data-DPath-0.49
+CATEGORIES =	devel
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS=    devel/p5-Class-XSAccessor \
+RUN_DEPENDS =	devel/p5-Class-XSAccessor \
+		devel/p5-Data-Dumper-Simple \
 		devel/p5-Iterator-Util \
+		devel/p5-List-MoreUtils \
+		devel/p5-Scalar-List-Utils \
 		devel/p5-Sub-Exporter \
 		devel/p5-Test-Deep \
-		devel/p5-List-MoreUtils \
-                devel/p5-aliased
+		devel/p5-aliased \
+		textproc/p5-Text-Balanced
 
-BUILD_DEPENDS=  ${RUN_DEPENDS}
+BUILD_DEPENDS =	devel/p5-Test-Deep \
+		devel/p5-Test-Simple
 
 .include <bsd.port.mk>

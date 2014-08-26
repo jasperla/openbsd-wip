@@ -1,4 +1,4 @@
-# $OpenBSD:  $
+# $OpenBSD$
 
 COMMENT =		modern HTTP benchmarking tool
 
@@ -20,9 +20,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		https://github.com/wg/wrk/releases/
 
-MODULES=        	lang/lua
+MODULES =        	lang/lua
 
-MAKE_ENV+=      	LUA_LIBDIR=${MODLUA_LIBDIR} LUA_INC=${MODLUA_INCL_DIR}
+MAKE_ENV +=      	LUA_LIBDIR=${MODLUA_LIBDIR} LUA_INC=${MODLUA_INCL_DIR}
 
 #MODULES =		???
 #BUILD_DEPENDS =	???

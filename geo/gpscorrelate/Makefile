@@ -2,13 +2,17 @@
 
 COMMENT =		EXIF geotagging
 
-DISTNAME =		gpscorrelate-1.6.1
+GH_ACCOUNT = 		freefoote
+GH_PROJECT = 		gpscorrelate
+GH_TAGNAME = 		1.6.1
+GH_COMMIT = 		ea60215d88eaab43a8cdd8a15755b72af6c533d2
+DISTNAME =		gpscorrelate-${GH_TAGNAME}
 
 CATEGORIES =		geo x11
 
-HOMEPAGE =		http://www.freefoote.com/linux/gpscorrelate
+HOMEPAGE =		https://github.com/freefoote/gpscorrelate
 
-MAINTAINER =		Kirill Bychkov <yason@linklevel.net>
+MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -20,22 +24,19 @@ WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread pthread-stubs
 WANTLIB += stdc++ xcb xcb-render xcb-shm xml2 z
 
-MASTER_SITES =		http://www.freefoote.com/linux/
-
 MODULES =		devel/gettext \
 			textproc/intltool
 
 BUILD_DEPENDS =		converters/xmltoman \
-			textproc/docbook \
-			textproc/docbook-xsl \
-			textproc/libxslt
+			textproc/docbook-xsl
 
 LIB_DEPENDS =		graphics/cairo \
 			graphics/exiv2 \
 			textproc/libxml \
 			x11/gtk+2
 
-RUN_DEPENDS = 		devel/desktop-file-utils
+RUN_DEPENDS = 		devel/desktop-file-utils \
+			x11/gtk+2,-guic
 
 USE_GMAKE =		Yes
 FAKE_FLAGS += 		mandir="${PREFIX}/man"

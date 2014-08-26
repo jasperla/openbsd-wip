@@ -2,7 +2,7 @@
 
 COMMENT =		Grab TV Listings in XML format
 
-DISTNAME =		xmltv-0.5.64
+DISTNAME =		xmltv-0.5.65
 CATEGORIES =		multimedia
 
 HOMEPAGE =		http://wiki.xmltv.org/index.php/Main_Page

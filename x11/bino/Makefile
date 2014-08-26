@@ -2,7 +2,7 @@
 
 COMMENT =		stereoscopic 3D video player
 
-DISTNAME =		bino-1.4.2
+DISTNAME =		bino-1.4.4
 
 CATEGORIES =		x11
 
@@ -20,7 +20,8 @@ MASTER_SITES =		${MASTER_SITE_SAVANNAH:=bino/}
 EXTRACT_SUFX =		.tar.xz
 
 MODULES =		devel/gettext x11/qt4
-RUN_DEPENDS =		devel/desktop-file-utils
+RUN_DEPENDS =		devel/desktop-file-utils \
+			x11/gtk+2,-guic
 LIB_DEPENDS =		audio/openal \
 			graphics/ffmpeg>=20111126 \
 			graphics/glew \

@@ -1,23 +1,22 @@
-# $OpenBSD $
+# $OpenBSD$
 
-COMMENT=	object-oriented backtrace
+COMMENT =	object-oriented backtrace
 
-MODULES=	cpan
-DISTNAME=	Devel-Backtrace-0.12
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	devel
+MODULES =	cpan
+DISTNAME =	Devel-Backtrace-0.12
+CATEGORIES =	devel
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS=    devel/p5-Class-Accessor \
+RUN_DEPENDS =	devel/p5-Class-Accessor \
 		textproc/p5-String-Escape
 
-BUILD_DEPENDS=  ${RUN_DEPENDS}
+BUILD_DEPENDS =	${RUN_DEPENDS}
 
-TEST_DEPENDS=	devel/p5-Test-Pod \
+TEST_DEPENDS =	devel/p5-Test-Pod \
 		devel/p5-Test-Pod-Coverage
 
 .include <bsd.port.mk>

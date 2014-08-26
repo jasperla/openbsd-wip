@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+@bin bin/ecwolf
+share/ecwolf/
+share/ecwolf/ecwolf.pk3

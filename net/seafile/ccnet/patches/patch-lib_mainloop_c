@@ -1,0 +1,17 @@
+$OpenBSD$
+--- lib/mainloop.c.orig	Mon Apr 21 11:28:18 2014
++++ lib/mainloop.c	Thu May 15 12:40:55 2014
+@@ -3,7 +3,13 @@
+ #include "include.h"
+ #include <ccnet.h>
+ 
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
++#include <event2/event.h>
++#include <event2/event_compat.h>
++#include <event2/event_struct.h>
++#else
+ #include <event.h>
++#endif
+ 
+ static int
+ cmdrsp_cb (const char *code, char *content, int clen, void *data)

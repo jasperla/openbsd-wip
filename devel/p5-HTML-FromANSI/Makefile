@@ -1,19 +1,18 @@
-# $OpenBSD $
+# $OpenBSD$
 
-COMMENT=	mark up ANSI sequences as HTML
+COMMENT =	mark up ANSI sequences as HTML
 
-MODULES=	cpan
-DISTNAME=	HTML-FromANSI-2.03
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	devel
+MODULES =	cpan
+DISTNAME =	HTML-FromANSI-2.03
+CATEGORIES =	devel
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # MIT license or Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS=	devel/p5-Term-VT102-Boundless
+RUN_DEPENDS =	devel/p5-Term-VT102-Boundless
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS =	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

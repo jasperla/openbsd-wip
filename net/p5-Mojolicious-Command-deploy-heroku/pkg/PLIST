@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+${P5SITE}/Mojolicious/Command/deploy/
+${P5SITE}/Mojolicious/Command/deploy/heroku.pm
+${P5SITE}/Mojolicious/Command/generate/heroku.pm
+@man man/man3p/Mojolicious::Command::deploy::heroku.3p
+@man man/man3p/Mojolicious::Command::generate::heroku.3p

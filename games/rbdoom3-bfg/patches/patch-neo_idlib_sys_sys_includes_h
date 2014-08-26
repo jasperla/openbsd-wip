@@ -1,0 +1,12 @@
+$OpenBSD$
+--- neo/idlib/sys/sys_includes.h.orig	Mon Jul 21 18:04:12 2014
++++ neo/idlib/sys/sys_includes.h	Mon Jul 21 20:01:32 2014
+@@ -109,7 +109,7 @@ If you have questions concerning this license or the a
+ 
+ #include <windows.h>						// for gl.h
+ 
+-#elif defined(__linux__) || defined(__FreeBSD__)
++#elif defined(__unix__)
+ 
+ #include <signal.h>
+ #include <pthread.h>

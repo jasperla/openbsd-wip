@@ -13,7 +13,6 @@
 @bin bin/xplus4
 @bin bin/xvic
 @info info/vice.info
-info/vice.pdf
 info/vice.txt
 lib/vice/
 lib/vice/C128/

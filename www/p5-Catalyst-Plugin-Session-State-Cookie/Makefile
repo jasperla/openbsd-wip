@@ -4,7 +4,6 @@ COMMENT =	maintain session IDs using cookies
 
 MODULES =	cpan
 DISTNAME =	Catalyst-Plugin-Session-State-Cookie-0.17
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	www
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

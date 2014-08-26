@@ -1,6 +1,7 @@
 @comment $OpenBSD$
-@pkgpath net/samba4
-@pkgpath net/samba
+@pkgpath net/samba,ldap,-main
+@pkgpath net/samba,ads,-main
+@pkgpath net/samba,,-main
 @bin bin/cifsdd
 @bin bin/dbwrap_tool
 @bin bin/eventlogadm
@@ -33,6 +34,7 @@ bin/samba-tool
 @bin bin/smbspool
 @bin bin/smbstatus
 @bin bin/smbta-util
+@bin bin/smbtar
 @bin bin/smbtorture
 @bin bin/smbtree
 @bin bin/testparm
@@ -767,7 +769,6 @@ lib/python${MODPY_VERSION}/site-packages/samba/xattr_tdb.so
 lib/samba/
 lib/samba/auth/
 lib/samba/auth/script.so
-lib/samba/auth/skel.so
 lib/samba/bind9/
 lib/samba/bind9/dlz_bind9.so
 lib/samba/bind9/dlz_bind9_9.so
@@ -850,7 +851,6 @@ lib/samba/libcli_spoolss.so
 lib/samba/libcliauth.so
 lib/samba/libcluster.so
 lib/samba/libcmdline-credentials.so
-@lib lib/samba/libcom_err-samba4.so.${LIBcom_err-samba4_VERSION}
 lib/samba/libdb-glue.so
 lib/samba/libdbwrap.so
 lib/samba/libdcerpc-samba.so
@@ -922,10 +922,6 @@ lib/samba/libwinbind-client.so
 lib/samba/libxattr_tdb.so
 lib/samba/nss_info/
 lib/samba/nss_info/hash.so
-lib/samba/pdb/
-lib/samba/pdb/test.so
-lib/samba/perfcount/
-lib/samba/perfcount/test.so
 lib/samba/process_model/
 lib/samba/process_model/onefork.so
 lib/samba/process_model/prefork.so
@@ -975,9 +971,6 @@ lib/samba/vfs/recycle.so
 lib/samba/vfs/scannedonly.so
 lib/samba/vfs/shadow_copy.so
 lib/samba/vfs/shadow_copy2.so
-lib/samba/vfs/shadow_copy_test.so
-lib/samba/vfs/skel_opaque.so
-lib/samba/vfs/skel_transparent.so
 lib/samba/vfs/smb_traffic_analyzer.so
 lib/samba/vfs/streams_depot.so
 lib/samba/vfs/streams_xattr.so
@@ -986,40 +979,40 @@ lib/samba/vfs/time_audit.so
 lib/samba/vfs/xattr_tdb.so
 lib/security/pam_smbpass.so
 lib/security/pam_winbind.so
-libdata/perl5/Parse/
-libdata/perl5/Parse/Pidl/
-libdata/perl5/Parse/Pidl.pm
-libdata/perl5/Parse/Pidl/CUtil.pm
-libdata/perl5/Parse/Pidl/Compat.pm
-libdata/perl5/Parse/Pidl/Dump.pm
-libdata/perl5/Parse/Pidl/Expr.pm
-libdata/perl5/Parse/Pidl/IDL.pm
-libdata/perl5/Parse/Pidl/NDR.pm
-libdata/perl5/Parse/Pidl/ODL.pm
-libdata/perl5/Parse/Pidl/Samba3/
-libdata/perl5/Parse/Pidl/Samba3/ClientNDR.pm
-libdata/perl5/Parse/Pidl/Samba3/ServerNDR.pm
-libdata/perl5/Parse/Pidl/Samba4/
-libdata/perl5/Parse/Pidl/Samba4.pm
-libdata/perl5/Parse/Pidl/Samba4/COM/
-libdata/perl5/Parse/Pidl/Samba4/COM/Header.pm
-libdata/perl5/Parse/Pidl/Samba4/COM/Proxy.pm
-libdata/perl5/Parse/Pidl/Samba4/COM/Stub.pm
-libdata/perl5/Parse/Pidl/Samba4/Header.pm
-libdata/perl5/Parse/Pidl/Samba4/NDR/
-libdata/perl5/Parse/Pidl/Samba4/NDR/Client.pm
-libdata/perl5/Parse/Pidl/Samba4/NDR/Parser.pm
-libdata/perl5/Parse/Pidl/Samba4/NDR/Server.pm
-libdata/perl5/Parse/Pidl/Samba4/Python.pm
-libdata/perl5/Parse/Pidl/Samba4/TDR.pm
-libdata/perl5/Parse/Pidl/Samba4/Template.pm
-libdata/perl5/Parse/Pidl/Typelist.pm
-libdata/perl5/Parse/Pidl/Util.pm
-libdata/perl5/Parse/Pidl/Wireshark/
-libdata/perl5/Parse/Pidl/Wireshark/Conformance.pm
-libdata/perl5/Parse/Pidl/Wireshark/NDR.pm
-libdata/perl5/Parse/Yapp/
-libdata/perl5/Parse/Yapp/Driver.pm
+${P5SITE}/Parse/
+${P5SITE}/Parse/Pidl/
+${P5SITE}/Parse/Pidl.pm
+${P5SITE}/Parse/Pidl/CUtil.pm
+${P5SITE}/Parse/Pidl/Compat.pm
+${P5SITE}/Parse/Pidl/Dump.pm
+${P5SITE}/Parse/Pidl/Expr.pm
+${P5SITE}/Parse/Pidl/IDL.pm
+${P5SITE}/Parse/Pidl/NDR.pm
+${P5SITE}/Parse/Pidl/ODL.pm
+${P5SITE}/Parse/Pidl/Samba3/
+${P5SITE}/Parse/Pidl/Samba3/ClientNDR.pm
+${P5SITE}/Parse/Pidl/Samba3/ServerNDR.pm
+${P5SITE}/Parse/Pidl/Samba4/
+${P5SITE}/Parse/Pidl/Samba4.pm
+${P5SITE}/Parse/Pidl/Samba4/COM/
+${P5SITE}/Parse/Pidl/Samba4/COM/Header.pm
+${P5SITE}/Parse/Pidl/Samba4/COM/Proxy.pm
+${P5SITE}/Parse/Pidl/Samba4/COM/Stub.pm
+${P5SITE}/Parse/Pidl/Samba4/Header.pm
+${P5SITE}/Parse/Pidl/Samba4/NDR/
+${P5SITE}/Parse/Pidl/Samba4/NDR/Client.pm
+${P5SITE}/Parse/Pidl/Samba4/NDR/Parser.pm
+${P5SITE}/Parse/Pidl/Samba4/NDR/Server.pm
+${P5SITE}/Parse/Pidl/Samba4/Python.pm
+${P5SITE}/Parse/Pidl/Samba4/TDR.pm
+${P5SITE}/Parse/Pidl/Samba4/Template.pm
+${P5SITE}/Parse/Pidl/Typelist.pm
+${P5SITE}/Parse/Pidl/Util.pm
+${P5SITE}/Parse/Pidl/Wireshark/
+${P5SITE}/Parse/Pidl/Wireshark/Conformance.pm
+${P5SITE}/Parse/Pidl/Wireshark/NDR.pm
+${P5SITE}/Parse/Yapp/
+${P5SITE}/Parse/Yapp/Driver.pm
 @man man/man1/dbwrap_tool.1
 @man man/man1/findsmb.1
 @man man/man1/gentest.1

@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+lib/libhiz-util.so
+lib/libpiglitutil.so
+lib/libpiglitutil_gl.so

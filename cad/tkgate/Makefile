@@ -3,6 +3,7 @@
 COMMENT = 		Tcl/Tk based digital circuit editor and simulator
 
 DISTNAME = 		tkgate-1.8.7
+
 CATEGORIES = 		cad
 
 HOMEPAGE = 		http://www.tkgate.org/
@@ -18,19 +19,18 @@ MODULES = 		x11/tk
 BUILD_DEPENDS = 	devel/imake
 LIB_DEPENDS = 		${MODTK_LIB_DEPENDS}
 
-CONFIGURE_STYLE = 	gnu
+CONFIGURE_STYLE = 	simple
 
 NO_TEST = 		Yes
+
+SUBST_VARS += 		CFLAGS
 
 post-extract:
 	@find ${WRKSRC} -name *.orig -exec rm {} \;
 
 pre-configure:
-	@perl -pi -e 's,!!PREFIX!!,${PREFIX},g' ${WRKSRC}/Imakefile \
-		${WRKSRC}/src/gsim/Imakefile ${WRKSRC}/scripts/parms.tcl
-	@perl -pi -e 's,!!CFLAGS!!,${CFLAGS},g;' \
-		-e 's,!!LOCALBASE!!,${LOCALBASE},g;' \
-		-e 's,!!PREFIX!!,${PREFIX},g;' ${WRKSRC}/config.h
+	${SUBST_CMD} ${WRKSRC}/Imakefile ${WRKSRC}/src/gsim/Imakefile \
+		${WRKSRC}/scripts/parms.tcl ${WRKSRC}/config.h
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/tkgate.man ${PREFIX}/man/man1/tkgate.1
@@ -38,7 +38,9 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/tkgate/
 	${INSTALL_DATA} ${WRKSRC}/doc/license.txt ${PREFIX}/share/tkgate/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/tkgate/locale/
-	@cd ${WRKSRC}/locale/ && tar cf - . | \
-		tar xf - -C ${PREFIX}/share/tkgate/locale/
+	@cd ${WRKSRC}/locale/ && find * -type d -exec ${INSTALL_DATA_DIR} \
+		"${PREFIX}/share/tkgate/locale/{}" \;
+	cd ${WRKSRC}/locale && find * -type f -exec ${INSTALL_DATA} \
+		"{}" "${PREFIX}/share/tkgate/locale/{}" \;
 
 .include <bsd.port.mk>

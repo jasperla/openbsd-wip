@@ -1,17 +1,16 @@
-# $OpenBSD $
+# $OpenBSD$
 
-COMMENT=	PPMd compression
+COMMENT =	PPMd compression
 
-MODULES=	cpan
-DISTNAME=	Compress-PPMd-0.11
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	devel
+MODULES =	cpan
+DISTNAME =	Compress-PPMd-0.11
+CATEGORIES =	devel
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
-WANTLIB += m stdc++
+WANTLIB +=	m stdc++
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
 .include <bsd.port.mk>

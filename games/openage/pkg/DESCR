@@ -1,0 +1,5 @@
+We are rewriting its engine in C++11 from scratch (GPLv3+). Including
+"modern" technologies like OpenGL and GLSL, we aim to create an exact
+clone (for now), using the original media files. This allows people
+using GNU/Linux to play the game natively, minus features, plus
+additional epic bugs (or was it vice versa?).

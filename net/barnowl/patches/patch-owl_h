@@ -1,6 +1,6 @@
 $OpenBSD$
---- owl.h.orig	Tue Apr 16 21:51:00 2013
-+++ owl.h	Tue Apr 16 21:52:11 2013
+--- owl.h.orig	Mon Dec  2 08:23:18 2013
++++ owl.h	Sat Jul 12 21:49:57 2014
 @@ -17,8 +17,8 @@
  
  #ifndef OWL_PERL
@@ -11,4 +11,4 @@ $OpenBSD$
 +#include <panel.h>
  #endif
  #include <sys/param.h>
- #include <EXTERN.h>
+ #include <sys/types.h>

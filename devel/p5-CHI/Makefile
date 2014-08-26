@@ -1,18 +1,17 @@
-# $OpenBSD $
+# $OpenBSD$
 
-COMMENT=	unified cache handling interface
+COMMENT =	unified cache handling interface
 
-MODULES=	cpan
-DISTNAME=	CHI-0.58
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	devel
+MODULES =	cpan
+DISTNAME =	CHI-0.58
+CATEGORIES =	devel
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS=    converters/p5-JSON \
+RUN_DEPENDS =	converters/p5-JSON \
 		devel/p5-Carp-Assert \
 		devel/p5-Data-UUID \
 		devel/p5-Hash-MoreUtils \
@@ -33,9 +32,9 @@ RUN_DEPENDS=    converters/p5-JSON \
 		security/p5-Digest-JHash \
 		textproc/p5-String-RewritePrefix
 
-BUILD_DEPENDS=  ${RUN_DEPENDS}
+#BUILD_DEPENDS =	${RUN_DEPENDS}
 
-TEST_DEPENDS=	devel/p5-Import-Into \
+TEST_DEPENDS =	devel/p5-Import-Into \
 		devel/p5-Moo \
 		devel/p5-Class-Method-Modifiers
 

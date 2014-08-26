@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/engine/util/fds.h.orig	Wed May  7 20:47:52 2014
++++ src/engine/util/fds.h	Wed May  7 20:48:04 2014
+@@ -3,7 +3,7 @@
+ 
+ #include <stdlib.h>
+ #include <unistd.h>
+-#include <termio.h>
++#include <termios.h>
+ 
+ namespace engine {
+ namespace util {

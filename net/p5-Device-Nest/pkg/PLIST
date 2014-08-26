@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/Device/
+${P5SITE}/Device/Nest.pm
+@man man/man3p/Device::Nest.3p

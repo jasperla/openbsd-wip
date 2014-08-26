@@ -1,18 +1,17 @@
-# $OpenBSD $
+# $OpenBSD$
 
-COMMENT=	BSD driver for Sys::Info
+COMMENT =	BSD driver for Sys::Info
 
-MODULES=	cpan
-DISTNAME=	Sys-Info-Driver-BSD-0.7801
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	devel
+MODULES =	cpan
+DISTNAME =	Sys-Info-Driver-BSD-0.7801
+CATEGORIES =	devel
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-BUILD_DEPENDS=  ${RUN_DEPENDS}
+BUILD_DEPENDS =	${RUN_DEPENDS}
 
 RUN_DEPENDS =	devel/p5-Unix-Processors \
 		devel/p5-Sys-Info-Base \

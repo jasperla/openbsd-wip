@@ -4,7 +4,6 @@ COMMENT =	backslash escapes, quoted phrase, word elision, etc.
 
 MODULES =	cpan
 DISTNAME =	String-Escape-2010.002
-PKGNAME =	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES =	textproc
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>

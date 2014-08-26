@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/09/19 14:55:56 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/05/14 17:51:41 juanfra Exp $
 @bin bin/racket
 bin/raco
 include/racket/
@@ -32,7 +32,6 @@ lib/racket/mzdyn3m.o
 lib/racket/starter-sh
 @man man/man1/racket.1
 @man man/man1/raco.1
-share/applications/
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/racket/
 share/examples/racket/
@@ -52,12 +51,15 @@ share/racket/collects/acks/compiled/acks_rkt.zo
 share/racket/collects/compiler/
 share/racket/collects/compiler/cm-accomplice.rkt
 share/racket/collects/compiler/cm.rkt
+share/racket/collects/compiler/compilation-path.rkt
 share/racket/collects/compiler/compile-file.rkt
 share/racket/collects/compiler/compiled/
 share/racket/collects/compiler/compiled/cm-accomplice_rkt.dep
 share/racket/collects/compiler/compiled/cm-accomplice_rkt.zo
 share/racket/collects/compiler/compiled/cm_rkt.dep
 share/racket/collects/compiler/compiled/cm_rkt.zo
+share/racket/collects/compiler/compiled/compilation-path_rkt.dep
+share/racket/collects/compiler/compiled/compilation-path_rkt.zo
 share/racket/collects/compiler/compiled/compile-file_rkt.dep
 share/racket/collects/compiler/compiled/compile-file_rkt.zo
 share/racket/collects/compiler/compiled/compiler_rkt.dep
@@ -338,15 +340,19 @@ share/racket/collects/openssl/compiled/libssl_rkt.dep
 share/racket/collects/openssl/compiled/libssl_rkt.zo
 share/racket/collects/openssl/compiled/main_rkt.dep
 share/racket/collects/openssl/compiled/main_rkt.zo
+share/racket/collects/openssl/compiled/md5_rkt.dep
+share/racket/collects/openssl/compiled/md5_rkt.zo
 share/racket/collects/openssl/compiled/mzssl_rkt.dep
 share/racket/collects/openssl/compiled/mzssl_rkt.zo
 share/racket/collects/openssl/compiled/openssl_rkt.dep
 share/racket/collects/openssl/compiled/openssl_rkt.zo
 share/racket/collects/openssl/compiled/sha1_rkt.dep
 share/racket/collects/openssl/compiled/sha1_rkt.zo
+share/racket/collects/openssl/dh4096.pem
 share/racket/collects/openssl/libcrypto.rkt
 share/racket/collects/openssl/libssl.rkt
 share/racket/collects/openssl/main.rkt
+share/racket/collects/openssl/md5.rkt
 share/racket/collects/openssl/mzssl.rkt
 share/racket/collects/openssl/openssl.rkt
 share/racket/collects/openssl/private/
@@ -598,6 +604,8 @@ share/racket/collects/racket/compiled/trait_rkt.dep
 share/racket/collects/racket/compiled/trait_rkt.zo
 share/racket/collects/racket/compiled/udp_rkt.dep
 share/racket/collects/racket/compiled/udp_rkt.zo
+share/racket/collects/racket/compiled/undefined_rkt.dep
+share/racket/collects/racket/compiled/undefined_rkt.zo
 share/racket/collects/racket/compiled/unit-exptime_rkt.dep
 share/racket/collects/racket/compiled/unit-exptime_rkt.zo
 share/racket/collects/racket/compiled/unit_rkt.dep
@@ -619,21 +627,34 @@ share/racket/collects/racket/contract/compiled/region_rkt.dep
 share/racket/collects/racket/contract/compiled/region_rkt.zo
 share/racket/collects/racket/contract/parametric.rkt
 share/racket/collects/racket/contract/private/
+share/racket/collects/racket/contract/private/application-arity-checking.rkt
+share/racket/collects/racket/contract/private/arity-checking.rkt
 share/racket/collects/racket/contract/private/arr-i-parse.rkt
 share/racket/collects/racket/contract/private/arr-i.rkt
 share/racket/collects/racket/contract/private/arr-util.rkt
+share/racket/collects/racket/contract/private/arrow-higher-order.rkt
+share/racket/collects/racket/contract/private/arrow-val-first.rkt
 share/racket/collects/racket/contract/private/arrow.rkt
 share/racket/collects/racket/contract/private/base.rkt
 share/racket/collects/racket/contract/private/basic-opters.rkt
 share/racket/collects/racket/contract/private/blame.rkt
 share/racket/collects/racket/contract/private/box.rkt
+share/racket/collects/racket/contract/private/case-arrow.rkt
 share/racket/collects/racket/contract/private/compiled/
+share/racket/collects/racket/contract/private/compiled/application-arity-checking_rkt.dep
+share/racket/collects/racket/contract/private/compiled/application-arity-checking_rkt.zo
+share/racket/collects/racket/contract/private/compiled/arity-checking_rkt.dep
+share/racket/collects/racket/contract/private/compiled/arity-checking_rkt.zo
 share/racket/collects/racket/contract/private/compiled/arr-i-parse_rkt.dep
 share/racket/collects/racket/contract/private/compiled/arr-i-parse_rkt.zo
 share/racket/collects/racket/contract/private/compiled/arr-i_rkt.dep
 share/racket/collects/racket/contract/private/compiled/arr-i_rkt.zo
 share/racket/collects/racket/contract/private/compiled/arr-util_rkt.dep
 share/racket/collects/racket/contract/private/compiled/arr-util_rkt.zo
+share/racket/collects/racket/contract/private/compiled/arrow-higher-order_rkt.dep
+share/racket/collects/racket/contract/private/compiled/arrow-higher-order_rkt.zo
+share/racket/collects/racket/contract/private/compiled/arrow-val-first_rkt.dep
+share/racket/collects/racket/contract/private/compiled/arrow-val-first_rkt.zo
 share/racket/collects/racket/contract/private/compiled/arrow_rkt.dep
 share/racket/collects/racket/contract/private/compiled/arrow_rkt.zo
 share/racket/collects/racket/contract/private/compiled/base_rkt.dep
@@ -644,6 +665,8 @@ share/racket/collects/racket/contract/private/compiled/blame_rkt.dep
 share/racket/collects/racket/contract/private/compiled/blame_rkt.zo
 share/racket/collects/racket/contract/private/compiled/box_rkt.dep
 share/racket/collects/racket/contract/private/compiled/box_rkt.zo
+share/racket/collects/racket/contract/private/compiled/case-arrow_rkt.dep
+share/racket/collects/racket/contract/private/compiled/case-arrow_rkt.zo
 share/racket/collects/racket/contract/private/compiled/ds-helpers_rkt.dep
 share/racket/collects/racket/contract/private/compiled/ds-helpers_rkt.zo
 share/racket/collects/racket/contract/private/compiled/ds_rkt.dep
@@ -662,6 +685,8 @@ share/racket/collects/racket/contract/private/compiled/hash_rkt.dep
 share/racket/collects/racket/contract/private/compiled/hash_rkt.zo
 share/racket/collects/racket/contract/private/compiled/helpers_rkt.dep
 share/racket/collects/racket/contract/private/compiled/helpers_rkt.zo
+share/racket/collects/racket/contract/private/compiled/kwd-info-struct_rkt.dep
+share/racket/collects/racket/contract/private/compiled/kwd-info-struct_rkt.zo
 share/racket/collects/racket/contract/private/compiled/legacy_rkt.dep
 share/racket/collects/racket/contract/private/compiled/legacy_rkt.zo
 share/racket/collects/racket/contract/private/compiled/misc_rkt.dep
@@ -674,6 +699,8 @@ share/racket/collects/racket/contract/private/compiled/opt_rkt.dep
 share/racket/collects/racket/contract/private/compiled/opt_rkt.zo
 share/racket/collects/racket/contract/private/compiled/opters_rkt.dep
 share/racket/collects/racket/contract/private/compiled/opters_rkt.zo
+share/racket/collects/racket/contract/private/compiled/orc_rkt.dep
+share/racket/collects/racket/contract/private/compiled/orc_rkt.zo
 share/racket/collects/racket/contract/private/compiled/out_rkt.dep
 share/racket/collects/racket/contract/private/compiled/out_rkt.zo
 share/racket/collects/racket/contract/private/compiled/parametric_rkt.dep
@@ -701,12 +728,14 @@ share/racket/collects/racket/contract/private/generate.rkt
 share/racket/collects/racket/contract/private/guts.rkt
 share/racket/collects/racket/contract/private/hash.rkt
 share/racket/collects/racket/contract/private/helpers.rkt
+share/racket/collects/racket/contract/private/kwd-info-struct.rkt
 share/racket/collects/racket/contract/private/legacy.rkt
 share/racket/collects/racket/contract/private/misc.rkt
 share/racket/collects/racket/contract/private/object.rkt
 share/racket/collects/racket/contract/private/opt-guts.rkt
 share/racket/collects/racket/contract/private/opt.rkt
 share/racket/collects/racket/contract/private/opters.rkt
+share/racket/collects/racket/contract/private/orc.rkt
 share/racket/collects/racket/contract/private/out.rkt
 share/racket/collects/racket/contract/private/parametric.rkt
 share/racket/collects/racket/contract/private/prop.rkt
@@ -800,6 +829,8 @@ share/racket/collects/racket/match/compiled/struct_rkt.dep
 share/racket/collects/racket/match/compiled/struct_rkt.zo
 share/racket/collects/racket/match/compiled/stxtime_rkt.dep
 share/racket/collects/racket/match/compiled/stxtime_rkt.zo
+share/racket/collects/racket/match/compiled/syntax-local-match-introduce_rkt.dep
+share/racket/collects/racket/match/compiled/syntax-local-match-introduce_rkt.zo
 share/racket/collects/racket/match/compiler.rkt
 share/racket/collects/racket/match/define-forms.rkt
 share/racket/collects/racket/match/gen-match.rkt
@@ -816,6 +847,7 @@ share/racket/collects/racket/match/runtime.rkt
 share/racket/collects/racket/match/split-rows.rkt
 share/racket/collects/racket/match/struct.rkt
 share/racket/collects/racket/match/stxtime.rkt
+share/racket/collects/racket/match/syntax-local-match-introduce.rkt
 share/racket/collects/racket/math.rkt
 share/racket/collects/racket/path.rkt
 share/racket/collects/racket/performance-hint.rkt
@@ -841,7 +873,11 @@ share/racket/collects/racket/private/
 share/racket/collects/racket/private/base.rkt
 share/racket/collects/racket/private/case.rkt
 share/racket/collects/racket/private/cert.rkt
+share/racket/collects/racket/private/class-c-new.rkt
+share/racket/collects/racket/private/class-c-old.rkt
 share/racket/collects/racket/private/class-internal.rkt
+share/racket/collects/racket/private/class-undef.rkt
+share/racket/collects/racket/private/class-wrapped.rkt
 share/racket/collects/racket/private/classidmap.rkt
 share/racket/collects/racket/private/compiled/
 share/racket/collects/racket/private/compiled/base_rkt.dep
@@ -850,8 +886,16 @@ share/racket/collects/racket/private/compiled/case_rkt.dep
 share/racket/collects/racket/private/compiled/case_rkt.zo
 share/racket/collects/racket/private/compiled/cert_rkt.dep
 share/racket/collects/racket/private/compiled/cert_rkt.zo
+share/racket/collects/racket/private/compiled/class-c-new_rkt.dep
+share/racket/collects/racket/private/compiled/class-c-new_rkt.zo
+share/racket/collects/racket/private/compiled/class-c-old_rkt.dep
+share/racket/collects/racket/private/compiled/class-c-old_rkt.zo
 share/racket/collects/racket/private/compiled/class-internal_rkt.dep
 share/racket/collects/racket/private/compiled/class-internal_rkt.zo
+share/racket/collects/racket/private/compiled/class-undef_rkt.dep
+share/racket/collects/racket/private/compiled/class-undef_rkt.zo
+share/racket/collects/racket/private/compiled/class-wrapped_rkt.dep
+share/racket/collects/racket/private/compiled/class-wrapped_rkt.zo
 share/racket/collects/racket/private/compiled/classidmap_rkt.dep
 share/racket/collects/racket/private/compiled/classidmap_rkt.zo
 share/racket/collects/racket/private/compiled/cond_rkt.dep
@@ -948,8 +992,12 @@ share/racket/collects/racket/private/compiled/set-types_rkt.dep
 share/racket/collects/racket/private/compiled/set-types_rkt.zo
 share/racket/collects/racket/private/compiled/set_rkt.dep
 share/racket/collects/racket/private/compiled/set_rkt.zo
+share/racket/collects/racket/private/compiled/shared-body_rkt.dep
+share/racket/collects/racket/private/compiled/shared-body_rkt.zo
 share/racket/collects/racket/private/compiled/small-scheme_rkt.dep
 share/racket/collects/racket/private/compiled/small-scheme_rkt.zo
+share/racket/collects/racket/private/compiled/so-search_rkt.dep
+share/racket/collects/racket/private/compiled/so-search_rkt.zo
 share/racket/collects/racket/private/compiled/sort_rkt.dep
 share/racket/collects/racket/private/compiled/sort_rkt.zo
 share/racket/collects/racket/private/compiled/stream-cons_rkt.dep
@@ -1045,8 +1093,9 @@ share/racket/collects/racket/private/serialize-structs.rkt
 share/racket/collects/racket/private/serialize.rkt
 share/racket/collects/racket/private/set-types.rkt
 share/racket/collects/racket/private/set.rkt
-share/racket/collects/racket/private/shared-body.rktl
+share/racket/collects/racket/private/shared-body.rkt
 share/racket/collects/racket/private/small-scheme.rkt
+share/racket/collects/racket/private/so-search.rkt
 share/racket/collects/racket/private/sort.rkt
 share/racket/collects/racket/private/stream-cons.rkt
 share/racket/collects/racket/private/streams.rkt
@@ -1109,6 +1158,7 @@ share/racket/collects/racket/tcp.rkt
 share/racket/collects/racket/trace.rkt
 share/racket/collects/racket/trait.rkt
 share/racket/collects/racket/udp.rkt
+share/racket/collects/racket/undefined.rkt
 share/racket/collects/racket/unit/
 share/racket/collects/racket/unit-exptime.rkt
 share/racket/collects/racket/unit.rkt
@@ -1125,7 +1175,10 @@ share/racket/collects/racket/unsafe/
 share/racket/collects/racket/unsafe/compiled/
 share/racket/collects/racket/unsafe/compiled/ops_rkt.dep
 share/racket/collects/racket/unsafe/compiled/ops_rkt.zo
+share/racket/collects/racket/unsafe/compiled/undefined_rkt.dep
+share/racket/collects/racket/unsafe/compiled/undefined_rkt.zo
 share/racket/collects/racket/unsafe/ops.rkt
+share/racket/collects/racket/unsafe/undefined.rkt
 share/racket/collects/racket/vector.rkt
 share/racket/collects/raco/
 share/racket/collects/raco/all-tools.rkt
@@ -1189,6 +1242,8 @@ share/racket/collects/setup/compiled/main-collects_rkt.dep
 share/racket/collects/setup/compiled/main-collects_rkt.zo
 share/racket/collects/setup/compiled/main-doc_rkt.dep
 share/racket/collects/setup/compiled/main-doc_rkt.zo
+share/racket/collects/setup/compiled/matching-platform_rkt.dep
+share/racket/collects/setup/compiled/matching-platform_rkt.zo
 share/racket/collects/setup/compiled/option_rkt.dep
 share/racket/collects/setup/compiled/option_rkt.zo
 share/racket/collects/setup/compiled/pack_rkt.dep
@@ -1239,6 +1294,7 @@ share/racket/collects/setup/main-collects.rkt
 share/racket/collects/setup/main-doc.rkt
 share/racket/collects/setup/main.lch
 share/racket/collects/setup/main.rkt
+share/racket/collects/setup/matching-platform.rkt
 share/racket/collects/setup/option.rkt
 share/racket/collects/setup/pack.rkt
 share/racket/collects/setup/parallel-build.rkt
@@ -1340,6 +1396,8 @@ share/racket/collects/syntax/compiled/toplevel_rkt.dep
 share/racket/collects/syntax/compiled/toplevel_rkt.zo
 share/racket/collects/syntax/compiled/trusted-xforms_rkt.dep
 share/racket/collects/syntax/compiled/trusted-xforms_rkt.zo
+share/racket/collects/syntax/compiled/wrap-modbeg_rkt.dep
+share/racket/collects/syntax/compiled/wrap-modbeg_rkt.zo
 share/racket/collects/syntax/context.rkt
 share/racket/collects/syntax/datum.rkt
 share/racket/collects/syntax/define.rkt
@@ -1510,6 +1568,7 @@ share/racket/collects/syntax/unsafe/compiled/
 share/racket/collects/syntax/unsafe/compiled/for-transform_rkt.dep
 share/racket/collects/syntax/unsafe/compiled/for-transform_rkt.zo
 share/racket/collects/syntax/unsafe/for-transform.rkt
+share/racket/collects/syntax/wrap-modbeg.rkt
 share/racket/collects/unstable/
 share/racket/collects/unstable/compiled/
 share/racket/collects/unstable/compiled/custom-write_rkt.dep
@@ -1590,3 +1649,5 @@ share/racket/collects/xml/private/xexpr-core.rkt
 share/racket/collects/xml/private/xexpr.rkt
 share/racket/collects/xml/xexpr.rkt
 share/racket/collects/xml/xml.rkt
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

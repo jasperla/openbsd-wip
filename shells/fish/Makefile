@@ -1,44 +1,36 @@
-# $OpenBSD$
+# $OpenBSD: Makefile.template,v 1.68 2013/10/02 07:34:45 ajacoutot Exp $
 
-COMMENT=	friendly interactive shell
+COMMENT =		friendly interactive shell
 
-DISTNAME=	fish-2.0pre20121215
+DISTNAME =		fish-2.1.0
 
-CATEGORIES=	shells
+CATEGORIES =		shells
 
-HOMEPAGE=	http://ridiculousfish.com/shell/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+HOMEPAGE =		http://fishshell.com/
 
 # GPLv2 only
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c m ncurses pthread stdc++
 
-# blech github tarballs https://github.com/fish-shell/fish-shell
-MASTER_SITES=	http://spacehopper.org/mirrors/
+MASTER_SITES =		http://fishshell.com/files/2.1.0/
 
-MODULES=	devel/gettext \
-		lang/python
-RUN_DEPENDS=	misc/gnugetopt
+MODULES =		devel/gettext \
+			lang/python
+RUN_DEPENDS =		misc/gnugetopt
 
-FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples
+MODPY_ADJ_FILES =	create_wajig_completions.py \
+			share/tools/create_manpage_completions.py \
+			share/tools/deroff.py \
+			share/tools/web_config/webconfig.py
 
-USE_GMAKE=	Yes
-CONFIGURE_STYLE= autoconf
-CONFIGURE_ARGS+= --without-xsel
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
-AUTOCONF_VERSION= 2.69
+USE_GMAKE =		Yes
+CONFIGURE_STYLE =	gnu
 
-TEST_TARGET=	test
-
-WRKDIST=	${WRKDIR}/fish-shell-master
+TEST_TARGET =		test
 
 pre-configure:
-	perl -pi -e 's,^#!/usr/bin/env python,#!${MODPY_BIN},' \
-	    `find ${WRKSRC} -name '*.py'`
 	perl -pi -e 's,getopt,gnugetopt,' ${WRKSRC}/share/functions/*.fish
 
 .include <bsd.port.mk>

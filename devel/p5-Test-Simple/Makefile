@@ -1,15 +1,14 @@
-# $OpenBSD $
+# $OpenBSD$
 
-COMMENT=	yet another framework for writing test scripts
+COMMENT =	yet another framework for writing test scripts
 
-MODULES=	cpan
-DISTNAME=	Test-Simple-1.001002
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	devel
+MODULES =	cpan
+DISTNAME =	Test-Simple-1.001002
+CATEGORIES =	devel
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
 .include <bsd.port.mk>

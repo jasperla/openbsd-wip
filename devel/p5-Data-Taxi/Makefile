@@ -1,19 +1,18 @@
-# $OpenBSD $
+# $OpenBSD$
 
-COMMENT=	taint-aware, XML-ish data serialization
+COMMENT =	taint-aware, XML-ish data serialization
 
-MODULES=	cpan
-DISTNAME=	Data-Taxi-0.96
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	devel
+MODULES =	cpan
+DISTNAME =	Data-Taxi-0.96
+CATEGORIES =	devel
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-BUILD_DEPENDS=	devel/p5-Debug-ShowStuff
+BUILD_DEPENDS =	devel/p5-Debug-ShowStuff
 
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS =	${BUILD_DEPENDS}
 
 .include <bsd.port.mk>

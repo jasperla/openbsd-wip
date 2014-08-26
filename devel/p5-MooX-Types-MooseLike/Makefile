@@ -1,26 +1,20 @@
-# $OpenBSD $
+# $OpenBSD$
 
-COMMENT=	Moose like types for Moo
+COMMENT =	Moose like types for Moo
 
-MODULES=	cpan
-DISTNAME=	MooX-Types-MooseLike-0.25
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	devel
+MODULES =	cpan
+DISTNAME =	MooX-Types-MooseLike-0.25
+CATEGORIES =	devel
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS=	devel/p5-Module-Runtime \
-		devel/p5-Test-Fatal	
+RUN_DEPENDS =	devel/p5-Module-Runtime
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-
-TEST_DEPENDS=	devel/p5-Devel-GlobalDestruction \
-		devel/p5-Import-Into \
+BUILD_DEPENDS =	devel/p5-Test-Fatal \
 		devel/p5-Moo \
-		devel/p5-Module-Runtime \
-		devel/p5-Test-Fatal
+		devel/p5-Test-Simple
 
 .include <bsd.port.mk>

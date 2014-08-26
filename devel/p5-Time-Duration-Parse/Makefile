@@ -1,21 +1,20 @@
-# $OpenBSD $
+# $OpenBSD$
 
-COMMENT=	parse string that represents time duration
+COMMENT =	parse string that represents time duration
 
-MODULES=	cpan
-DISTNAME=	Time-Duration-Parse-0.06
-PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
-CATEGORIES=	devel
+MODULES =	cpan
+DISTNAME =	Time-Duration-Parse-0.06
+CATEGORIES =	devel
 
-MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS=	devel/p5-Exporter-Lite
+RUN_DEPENDS =	devel/p5-Exporter-Lite
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS =	${RUN_DEPENDS}
 
-USE_GROFF=	Yes
+USE_GROFF =	Yes
 
 .include <bsd.port.mk>
