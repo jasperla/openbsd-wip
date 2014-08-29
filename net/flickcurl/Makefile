@@ -4,7 +4,7 @@ COMMENT =		flickr API library and utility
 
 DISTNAME =		flickcurl-1.26
 
-SHARED_LIBS +=  	flickcurl   2.0
+SHARED_LIBS +=  	flickcurl   1.2
 CATEGORIES =		net
 
 HOMEPAGE =		http://librdf.org/flickcurl/
