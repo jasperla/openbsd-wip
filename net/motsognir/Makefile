@@ -18,7 +18,6 @@ NO_TEST =	Yes
 
 pre-configure:
 	perl -pi -e "s,-O3,,g" ${WRKSRC}/Makefile
-	@cp ${WRKSRC}/rc_d_motsognir ${WRKSRC}/motsognir.rc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/motsognir ${PREFIX}/sbin
