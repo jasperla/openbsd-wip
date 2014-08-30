@@ -14,11 +14,6 @@ PKGNAME =		racket-$V
 #DISTNAME =		racket-$V-src-builtpkgs
 DISTNAME =		racket-$V-src-unix
 
-# Each new version of racket is incompatible with the previous one.
-# Increase always the major number.
-# http://article.gmane.org/gmane.comp.lang.racket.devel/9872
-SHARED_LIBS +=		racket3m	3.0 # 6.1
-
 CATEGORIES =		lang
 HOMEPAGE =		http://racket-lang.org/
 MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
@@ -63,8 +58,7 @@ NO_TEST =		Yes
 SEPARATE_BUILD =	Yes
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--enable-libffi \
+CONFIGURE_ARGS +=	--enable-libffi \
 			--enable-gracket \
 			--enable-jit \
 			--enable-foreign \
