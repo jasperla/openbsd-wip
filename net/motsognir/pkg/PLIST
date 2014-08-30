@@ -1,0 +1,19 @@
+@comment $OpenBSD$
+@newgroup _motsognir:742
+@newuser _motsognir:742:_motsognir:daemon:Motsognir Gopher Server:/nonexistent:/sbin/nologin
+@man man/man8/motsognir.8
+@bin sbin/motsognir
+share/doc/motsognir/
+share/doc/motsognir/changes.txt
+share/doc/motsognir/manual.pdf
+@mode 755
+@owner root
+@group daemon
+@sample /var/gopher/
+@mode
+@owner
+@group
+share/examples/motsognir/
+share/examples/motsognir/motsognir.conf
+@sample ${SYSCONFDIR}/motsognir.conf
+@rcscript ${RCDIR}/motsognir
