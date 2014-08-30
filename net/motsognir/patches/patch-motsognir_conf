@@ -1,0 +1,12 @@
+$OpenBSD$
+--- motsognir.conf.orig	Sat Aug 30 10:36:22 2014
++++ motsognir.conf	Sat Aug 30 10:37:30 2014
+@@ -54,7 +54,7 @@ GopherPhpSupport=0
+ # unless you already run Motsognir as a non-root user.
+ # To do so, provide here the username of the user that Motsognir should run
+ # as. Default = no value.
+-RunAsUser=
++RunAsUser=_motsognir
+ 
+ ## Default gophermap #
+ # If you wish that your server would use a default gophermap when displaying
