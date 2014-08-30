@@ -1,6 +1,6 @@
 @comment $OpenBSD: PLIST,v 1.7 2013/09/18 20:53:15 edd Exp $
 lib/python${MODPY_VERSION}/site-packages/py/
-${MODPY_COMMENT} lib/python${MODPY_VERSION}/site-packages/py/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/py/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/py-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/py-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/py-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -16,7 +16,7 @@ lib/python${MODPY_VERSION}/site-packages/py/${MODPY_PYCACHE}_apipkg.${MODPY_PYC_
 lib/python${MODPY_VERSION}/site-packages/py/_builtin.py
 lib/python${MODPY_VERSION}/site-packages/py/${MODPY_PYCACHE}_builtin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/py/_code/
-${MODPY_COMMENT} lib/python${MODPY_VERSION}/site-packages/py/_code/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/py/_code/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/py/_code/__init__.py
 lib/python${MODPY_VERSION}/site-packages/py/_code/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/py/_code/_assertionnew.py
@@ -36,7 +36,7 @@ lib/python${MODPY_VERSION}/site-packages/py/${MODPY_PYCACHE}_error.${MODPY_PYC_M
 lib/python${MODPY_VERSION}/site-packages/py/_iniconfig.py
 lib/python${MODPY_VERSION}/site-packages/py/${MODPY_PYCACHE}_iniconfig.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/py/_io/
-${MODPY_COMMENT} lib/python${MODPY_VERSION}/site-packages/py/_io/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/py/_io/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/py/_io/__init__.py
 lib/python${MODPY_VERSION}/site-packages/py/_io/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/py/_io/capture.py
@@ -46,7 +46,7 @@ lib/python${MODPY_VERSION}/site-packages/py/_io/${MODPY_PYCACHE}saferepr.${MODPY
 lib/python${MODPY_VERSION}/site-packages/py/_io/terminalwriter.py
 lib/python${MODPY_VERSION}/site-packages/py/_io/${MODPY_PYCACHE}terminalwriter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/py/_log/
-${MODPY_COMMENT} lib/python${MODPY_VERSION}/site-packages/py/_log/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/py/_log/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/py/_log/__init__.py
 lib/python${MODPY_VERSION}/site-packages/py/_log/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/py/_log/log.py
@@ -54,7 +54,7 @@ lib/python${MODPY_VERSION}/site-packages/py/_log/${MODPY_PYCACHE}log.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/py/_log/warning.py
 lib/python${MODPY_VERSION}/site-packages/py/_log/${MODPY_PYCACHE}warning.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/py/_path/
-${MODPY_COMMENT} lib/python${MODPY_VERSION}/site-packages/py/_path/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/py/_path/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/py/_path/__init__.py
 lib/python${MODPY_VERSION}/site-packages/py/_path/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/py/_path/cacheutil.py
@@ -68,7 +68,7 @@ lib/python${MODPY_VERSION}/site-packages/py/_path/${MODPY_PYCACHE}svnurl.${MODPY
 lib/python${MODPY_VERSION}/site-packages/py/_path/svnwc.py
 lib/python${MODPY_VERSION}/site-packages/py/_path/${MODPY_PYCACHE}svnwc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/py/_process/
-${MODPY_COMMENT} lib/python${MODPY_VERSION}/site-packages/py/_process/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/py/_process/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/py/_process/__init__.py
 lib/python${MODPY_VERSION}/site-packages/py/_process/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/py/_process/cmdexec.py
