@@ -22,9 +22,11 @@ MODPY_SETUPTOOLS=	Yes
 FLAVORS=		python3
 FLAVOR?=
 
-RUN_DEPENDS=		devel/py-py${MODPY_FLAVOR}
-TEST_DEPENDS=		devel/py-test${MODPY_FLAVOR}>=${MODPY_EGG_VERSION} \
-			devel/py-nose${MODPY_FLAVOR}
+RUN_DEPENDS=		devel/py-py${MODPY_FLAVOR}>=1.4.23
+TEST_DEPENDS=		${RUN_DEPENDS} \
+			devel/py-test${MODPY_FLAVOR}>=${MODPY_EGG_VERSION} \
+			devel/py-nose${MODPY_FLAVOR} \
+			devel/py-twisted/core
 
 .if ${FLAVOR:Mpython3}
 post-install:
