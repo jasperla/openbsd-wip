@@ -24,6 +24,9 @@ MODPY_SETUPTOOLS=	Yes
 FLAVORS=		python3
 FLAVOR?=
 
-NO_TEST=		Yes
+TEST_DEPENDS +=		devel/py-test${MODPY_FLAVOR}
+
+do-test:
+	cd ${WRKBUILD} && ${LOCALBASE}/bin/py.test testing
 
 .include <bsd.port.mk>
