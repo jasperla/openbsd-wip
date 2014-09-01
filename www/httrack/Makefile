@@ -40,6 +40,7 @@ CONFIGURE_STYLE =	gnu autoconf
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--enable-online-unit-tests=no \
 			ICONV_LIBS="-liconv"
+
 CONFIGURE_ENV =		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
@@ -47,10 +48,15 @@ AUTOCONF_VERSION =	2.69
 
 PATCHORIG =		.ports.orig
 
+# The online tests rely on bash features, but we don't want
+# interactive tests that much.
+BASH_FILES =		${WRKSRC}/tests/*.{sh,test} \
+			${WRKSRC}/src/webhttrack
+
 pre-configure:
-	perl -pi \
-		-e '$$. == 1 && s|/bin/bash|/bin/sh|;' \
+	perl -pi.bashfix \
+		-e 's,\bbash\b,sh,g;' \
 		-e 'close ARGV if eof;' \
-		${WRKSRC}/tests/*.test
+		${BASH_FILES}
 
 .include <bsd.port.mk>
