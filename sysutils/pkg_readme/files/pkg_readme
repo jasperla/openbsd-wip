@@ -24,7 +24,7 @@ use POSIX qw/strftime/;
 $\ = "\n";
 my $pager = $ENV{'PAGER'} // 'more';
 my $readmesdir = $ENV{'PKG_READMEDIR'} //
-    '/usr/local/share/doc/pkg-readmes';
+    '${PREFIX}/share/doc/pkg-readmes';
 chdir($readmesdir) or die "cannot chdir: $!";
 
 my ($stemlookup, $listcount);
