@@ -15,8 +15,12 @@ NO_CHECKSUM =	Yes
 NO_BUILD =	Yes
 NO_TEST =	Yes
 
+SUBST_VARS =	PREFIX
+
+pre-configure:
+
 do-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/pkg_readme ${PREFIX}/bin/
-	${INSTALL_DATA} ${FILESDIR}/pkg_readme.1 ${PREFIX}/man/man1/
+	${SUBST_PROGRAM} ${FILESDIR}/pkg_readme ${PREFIX}/bin/pkg_readme
+	${SUBST_DATA} ${FILESDIR}/pkg_readme.1 ${PREFIX}/man/man1/pkg_readme.1
 
 .include <bsd.port.mk>
