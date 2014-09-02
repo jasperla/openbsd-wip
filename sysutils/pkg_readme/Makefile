@@ -15,9 +15,7 @@ NO_CHECKSUM =	Yes
 NO_BUILD =	Yes
 NO_TEST =	Yes
 
-SUBST_VARS =	PREFIX
-
-pre-configure:
+SUBST_VARS =	LOCALBASE
 
 do-install:
 	${SUBST_PROGRAM} ${FILESDIR}/pkg_readme ${PREFIX}/bin/pkg_readme
