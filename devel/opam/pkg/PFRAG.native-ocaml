@@ -1,9 +1,0 @@
-@comment $OpenBSD$
-lib/ocaml/opam/opam-client.a
-lib/ocaml/opam/opam-client.cmxa
-lib/ocaml/opam/opam-core.a
-lib/ocaml/opam/opam-core.cmxa
-lib/ocaml/opam/opam-repositories.a
-lib/ocaml/opam/opam-repositories.cmxa
-lib/ocaml/opam/opam-solver.a
-lib/ocaml/opam/opam-solver.cmxa

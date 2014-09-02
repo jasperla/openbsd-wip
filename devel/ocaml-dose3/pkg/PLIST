@@ -4,12 +4,13 @@
 @bin bin/ceve
 @bin bin/challenged
 @bin bin/deb-buildcheck
-bin/debcheck
+@bin bin/deb-coinstall
+@bin bin/debcheck
 @bin bin/distcheck
 @bin bin/dominators-graph
-bin/eclipsecheck
+@bin bin/eclipsecheck
 @bin bin/outdated
-bin/rpmcheck
+@bin bin/rpmcheck
 @bin bin/smallworld
 @bin bin/strong-deps
 lib/ocaml/dose3/
@@ -30,12 +31,14 @@ lib/ocaml/dose3/debcudf.mli
 lib/ocaml/dose3/debian.cma
 lib/ocaml/dose3/debian.cmi
 lib/ocaml/dose3/depsolver.mli
+lib/ocaml/dose3/diagnostic.mli
 lib/ocaml/dose3/eclipse.cma
 lib/ocaml/dose3/eclipse.cmi
 lib/ocaml/dose3/edosSolver.mli
 lib/ocaml/dose3/format822_parser.mli
 lib/ocaml/dose3/input.mli
 lib/ocaml/dose3/packages_parser.mli
+lib/ocaml/dose3/release.mli
 lib/ocaml/dose3/rpm.cma
 lib/ocaml/dose3/rpm.cmi
 lib/ocaml/dose3/strongdeps.mli
@@ -46,6 +49,7 @@ lib/ocaml/dose3/version.mli
 @man man/man1/buildcheck.1
 @man man/man1/ceve.1
 @man man/man1/challenged.1
+@man man/man1/debcoinstall.1
 @man man/man1/distcheck.1
 @man man/man1/outdated.1
 @man man/man1/smallworld.1
@@ -54,5 +58,6 @@ lib/ocaml/dose3/version.mli
 @man man/man8/apt-cudf-get.8
 share/doc/ocaml-dose3/
 share/doc/ocaml-dose3/CHANGES
+share/doc/ocaml-dose3/CREDITS
 share/doc/ocaml-dose3/README.architecture
 share/doc/ocaml-dose3/TODO

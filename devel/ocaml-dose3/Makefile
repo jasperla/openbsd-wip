@@ -2,10 +2,9 @@
 
 COMMENT =		software repository analysis in OCaml
 
-# MASTER_SITES should be updated along with VERSION
-VERSION =		3.1.3
+VERSION =		3.2.2
 DISTNAME =		dose3-${VERSION}
-PKGNAME =		ocaml-dose3-${VERSION}
+PKGNAME =		ocaml-dose-${VERSION}
 
 CATEGORIES =		devel
 
@@ -14,27 +13,31 @@ HOMEPAGE =		http://dose.gforge.inria.fr/public_html/
 # LGPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		https://gforge.inria.fr/frs/download.php/31681/
+MASTER_SITES =		https://gforge.inria.fr/frs/download.php/file/33677/
 
 MODULES =		lang/ocaml
 
-WANTLIB =		c m pcre
-OCAML_DEPS =		devel/ocaml-extlib \
-			devel/ocaml-ocamlgraph \
-			devel/ocaml-pcre \
-			devel/cudf,-main
+WANTLIB =		c m
 BUILD_DEPENDS =		sysutils/findlib \
-			${OCAML_DEPS}
-RUN_DEPENDS =		${OCAML_DEPS}
+			devel/ounit \
+			devel/ocaml-extlib \
+			devel/ocaml-graph \
+			devel/ocaml-pcre \
+			devel/cudf,-main \
+			devel/ocaml-re
+
 
 FAKE_FLAGS =		BINDIR=${WRKINST}/${PREFIX}/bin
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--with-ocamlgraph
+CONFIGURE_ARGS =	--with-ocamlgraph --with-oUnit
 
 ALL_TARGET =		all #doc seems broken, needs texlive_texmf-full, graphviz and hevea
 
+
+post-extract:
+	#rm ${WRKSRC}/doseparse/boilerplateNoRpm.ml
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/manpages/*.1 ${PREFIX}/man/man1
@@ -42,7 +45,7 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/manpages/*.8 ${PREFIX}/man/man8
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml-dose3
 	${INSTALL_DATA} \
-		${WRKSRC}/{CHANGES,README.architecture,TODO} \
+		${WRKSRC}/{CHANGES,CREDITS,README.architecture,TODO} \
 		${PREFIX}/share/doc/ocaml-dose3/
 
 
