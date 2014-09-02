@@ -1,8 +1,0 @@
-$OpenBSD$
---- Makefile.config.in.orig	Mon Mar 18 06:50:54 2013
-+++ Makefile.config.in	Mon Mar 18 06:51:27 2013
-@@ -3,3 +3,4 @@ prefix=@prefix@
- mandir=@mandir@
- version=@PACKAGE_VERSION@
- FETCH=@fetch@
-+OCAMLBEST=@OCAMLBEST@

@@ -1,10 +1,11 @@
 0;95;0c$OpenBSD$
 - OpenBSD doesn't need libdl
 - use pkg-config to find glib libs
+- make sure libcamlrun.a is writable after copying it from system libs
 - don't attempt to overwrite an optimized library with a non-existant one
 - fix .pc datarootdir
---- c-lib/Makefile.orig	Fri Aug  3 12:44:51 2012
-+++ c-lib/Makefile	Sat Apr 13 15:27:07 2013
+--- c-lib/Makefile.orig	Tue Apr 29 20:52:44 2014
++++ c-lib/Makefile	Tue Sep  2 20:17:50 2014
 @@ -9,7 +9,7 @@ PROG_CFLAGS = -Wall
  OCAML_LIBDIR := $(shell ocamlc -where)
  INCLUDES = -I . -I $(OCAML_LIBDIR) $(shell pkg-config --cflags glib-2.0)
@@ -14,7 +15,19 @@
  OCAMLC = ocamlfind ocamlc -package unix,extlib
  OCAMLOPT = ocamlfind ocamlopt -package unix,extlib
  
-@@ -49,6 +49,7 @@ cudf.pc: cudf.pc.in
+@@ -17,9 +17,11 @@ INSTALL_STUFF = libcudf.a cudf.h cudf.pc
+ 
+ libcudf.a: cudf-caml.o cudf.o
+ 	cp $(OCAML_LIBDIR)/libcamlrun.a $@
++	chmod 644 $@
+ 	ar r $@ $^
+ libcudf-opt.a: cudf-caml-opt.o cudf.o
+ 	cp $(OCAML_LIBDIR)/libasmrun.a $@
++	chmod 644 $@
+ 	ar r $@ $^
+ 
+ ../_build/%:
+@@ -49,6 +51,7 @@ cudf.pc: cudf.pc.in
  			-e "s,@VERSION@,$(VERSION),g" \
  			-e "s,@LIBDIR@,$(LIBDIR),g" \
  			-e "s,@INCDIR@,$(INCDIR),g" \
@@ -22,7 +35,7 @@
  		> $@
  
  %.o: %.c
-@@ -68,7 +69,6 @@ install: cudf.pc
+@@ -68,7 +71,6 @@ install: cudf.pc
  	else \
  		cp libcudf.a $(DESTDIR)/$(LIBDIR)/libcudf.a ; \
  	fi

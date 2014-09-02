@@ -1,10 +1,10 @@
 $OpenBSD$
 - subdirs need gmake too
---- Makefile.orig	Mon Mar 18 04:15:41 2013
-+++ Makefile	Mon Mar 18 04:16:05 2013
-@@ -35,12 +35,12 @@ $(RESULTS_OPT): $(SOURCES)
+--- Makefile.orig	Tue Apr 29 20:52:44 2014
++++ Makefile	Tue Sep  2 19:57:12 2014
+@@ -39,13 +39,13 @@ doc/cudf-check.1: doc/cudf-check.pod
  
- .PHONY: c-lib c-lib-opt
+ .PHONY: c-lib c-lib-opt doc
  c-lib:
 -	make -C $(C_LIB_DIR) all
 +	$(MAKE) -C $(C_LIB_DIR) all
@@ -14,16 +14,18 @@ $OpenBSD$
  
  clean:
 -	make -C $(C_LIB_DIR) clean
+-	make -C doc/ clean
 +	$(MAKE) -C $(C_LIB_DIR) clean
++	$(MAKE) -C doc/ clean
  	$(OCAMLBUILD) $(OBFLAGS) -clean
  	rm -rf $(NAME)-*.gz $(NAME)_*.gz $(NAME)-*/
  
-@@ -59,7 +59,7 @@ test: _build/test.byte
- 	$< -verbose
+@@ -64,7 +64,7 @@ test: test.byte
+ 	./$< -verbose
  	@echo
  c-lib-test:
 -	make -C $(C_LIB_DIR) test
 +	$(MAKE) -C $(C_LIB_DIR) test
- _build/test.byte: $(SOURCES)
+ test.byte: $(SOURCES)
+ 	ocamlbuild $@
  
- tags: TAGS

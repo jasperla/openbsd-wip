@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-lib/ocaml/ocamlgraph/graph.cmx
-lib/ocaml/ocamlgraph/graph.cmxa

@@ -1,9 +1,0 @@
-$OpenBSD$
---- doc/debcheck.primer/Makefile.orig	Thu Oct 25 16:48:55 2012
-+++ doc/debcheck.primer/Makefile	Sat Apr 13 17:12:27 2013
-@@ -1,5 +1,4 @@
- MAIN=debcheck-primer
--SHELL=/bin/bash
- HEVEA=hevea -exec xxdate.exe
- DEPS = $(wildcard *.tex) version.tex mancoosi.bib
- 

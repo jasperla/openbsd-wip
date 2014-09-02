@@ -25,7 +25,7 @@ lib/ocaml/re/re_str.cmi
 lib/ocaml/re/re_str.mli
 share/doc/ocaml-re/
 share/doc/ocaml-re/CHANGES
-share/doc/ocaml-re/README
+share/doc/ocaml-re/README.md
 share/doc/ocaml-re/TODO.txt
 share/doc/ocaml-re/api/
 share/doc/ocaml-re/api/Re.html
@@ -40,6 +40,7 @@ share/doc/ocaml-re/api/index_attributes.html
 share/doc/ocaml-re/api/index_class_types.html
 share/doc/ocaml-re/api/index_classes.html
 share/doc/ocaml-re/api/index_exceptions.html
+share/doc/ocaml-re/api/index_extensions.html
 share/doc/ocaml-re/api/index_methods.html
 share/doc/ocaml-re/api/index_module_types.html
 share/doc/ocaml-re/api/index_modules.html

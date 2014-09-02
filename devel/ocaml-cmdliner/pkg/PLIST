@@ -6,7 +6,8 @@ lib/ocaml/cmdliner/cmdliner.cma
 lib/ocaml/cmdliner/cmdliner.cmi
 lib/ocaml/cmdliner/cmdliner.mli
 share/doc/ocaml-cmdliner/
-share/doc/ocaml-cmdliner/CHANGES
+share/doc/ocaml-cmdliner/CHANGES.md
+share/doc/ocaml-cmdliner/README.md
 share/doc/ocaml-cmdliner/api/
 share/doc/ocaml-cmdliner/api/Cmdliner.Arg.html
 share/doc/ocaml-cmdliner/api/Cmdliner.Manpage.html
@@ -28,11 +29,3 @@ share/doc/ocaml-cmdliner/api/type_Cmdliner.Arg.html
 share/doc/ocaml-cmdliner/api/type_Cmdliner.Manpage.html
 share/doc/ocaml-cmdliner/api/type_Cmdliner.Term.html
 share/doc/ocaml-cmdliner/api/type_Cmdliner.html
-share/examples/ocaml-cmdliner/
-share/examples/ocaml-cmdliner/chorus.ml
-share/examples/ocaml-cmdliner/cp_ex.ml
-share/examples/ocaml-cmdliner/darcs_ex.ml
-share/examples/ocaml-cmdliner/revolt.ml
-share/examples/ocaml-cmdliner/rm_ex.ml
-share/examples/ocaml-cmdliner/tail_ex.ml
-share/examples/ocaml-cmdliner/tests.itarget

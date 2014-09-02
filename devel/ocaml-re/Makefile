@@ -1,17 +1,20 @@
 # $OpenBSD$
 
 COMMENT =		regular expression library for OCaml
-
-DISTNAME =		ocaml-re-1.2.1
-
 CATEGORIES =		devel
 
-HOMEPAGE =		https://github.com/ocaml/ocaml-re/
+V =		1.2.2
+GH_ACCOUNT =	ocaml
+GH_PROJECT =	ocaml-re
+GH_TAGNAME =	${GH_PROJECT}-${V}
+GH_COMMIT =	dcfb60b7f1a34e7c1c51e6660fe2d5cb7ed3685b
+DISTNAME =	${GH_PROJECT}-${V}
+WRKDIST =	${WRKDIR}/${GH_PROJECT}-${GH_COMMIT}
 
-# LGPLv2.1
+HOMEPAGE =	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/
+
+# LGPLv2.1+
 PERMIT_PACKAGE_CDROM =	Yes
-
-MASTER_SITES =		${HOMEPAGE:=archive/}
 
 MODULES =		lang/ocaml
 
@@ -19,12 +22,10 @@ USE_GMAKE =		Yes
 CONFIGURE_STYLE =	oasis
 CONFIGURE_ARGS =	--enable-tests
 
-WRKDIST =		${WRKDIR}/ocaml-re-${DISTNAME}
-
 
 post-install:
 	${INSTALL_DATA} \
-		${WRKSRC}/{CHANGES,README,TODO.txt} \
+		${WRKSRC}/{CHANGES,README.md,TODO.txt} \
 		${PREFIX}/share/doc/ocaml-re/
 
 
