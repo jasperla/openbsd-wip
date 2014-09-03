@@ -1,0 +1,15 @@
+$OpenBSD$
+
+use gmake
+
+--- boot/make-ocpbuild-run.sh.orig	Tue Sep  2 12:47:00 2014
++++ boot/make-ocpbuild-run.sh	Tue Sep  2 12:47:10 2014
+@@ -9,7 +9,7 @@ LIBRUNTIME=
+ case ${OCAMLV} in
+   4.02*ocp*) LIBRUNTIME="";;
+   4.02*)
+-	(cd ocamlrun-4.02; ./configure; cd byterun; make)
++	(cd ocamlrun-4.02; ./configure; cd byterun; ${MAKE})
+ 	LIBRUNTIME="-I ocamlrun-4.02/byterun -cclib -lbyterun402";;
+   *) LIBRUNTIME="";;
+ esac
