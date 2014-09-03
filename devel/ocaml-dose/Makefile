@@ -19,7 +19,9 @@ MODULES =		lang/ocaml
 
 WANTLIB =		c m
 BUILD_DEPENDS =		sysutils/findlib \
+			lang/ocaml-camlp4 \
 			devel/ounit \
+			devel/cudf,-ocaml \
 			devel/ocaml-extlib \
 			devel/ocaml-graph \
 			devel/ocaml-pcre \

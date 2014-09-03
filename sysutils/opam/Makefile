@@ -29,7 +29,7 @@ BUILD_DEPENDS =		devel/git \
 			sysutils/findlib \
 			devel/cudf,-ocaml \
 			devel/ocaml-cmdliner \
-			devel/ocaml-dose3 \
+			devel/ocaml-dose \
 			devel/ocaml-graph \
 			devel/ocaml-re
 

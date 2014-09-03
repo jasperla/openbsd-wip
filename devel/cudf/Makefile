@@ -34,19 +34,16 @@ FAKE_FLAGS =		PREFIX=${PREFIX} BINDIR=${PREFIX}/bin \
 
 USE_GMAKE =		Yes
 
-ALL_TARGET =		all doc
+ALL_TARGET =		all doc c-lib
 TEST_TARGET =		test
 
 .include <bsd.port.arch.mk>
 
 .if ${PROPERTIES:Mocaml_native}
-ALL_TARGET +=		opt
+ALL_TARGET +=		opt c-lib-opt
 .endif
 
-.if ${BUILD_PACKAGES:M-main}
-ALL_TARGET +=		c-lib c-lib-opt
 TEST_TARGET +=		c-lib-test
-.endif
 
 docdir =		${PREFIX}/share/doc/cudf/
 
