@@ -1,0 +1,7 @@
+@comment $OpenBSD: $
+lib/ocaml/ocp-indent/lexer/ocp-indent.lexer.a
+lib/ocaml/ocp-indent/lexer/ocp-indent.lexer.cmxa
+lib/ocaml/ocp-indent/lib/ocp-indent.lib.a
+lib/ocaml/ocp-indent/lib/ocp-indent.lib.cmxa
+lib/ocaml/ocp-indent/utils/ocp-indent.utils.a
+lib/ocaml/ocp-indent/utils/ocp-indent.utils.cmxa
