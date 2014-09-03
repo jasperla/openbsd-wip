@@ -16,16 +16,17 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/ocaml
 
-BUILD_DEPENDS =		sysutils/findlib
+BUILD_DEPENDS =		sysutils/findlib x11/lablgtk2
 
 CONFIGURE_STYLE =	gnu
 
 USE_GMAKE =		Yes
 
-INSTALL_TARGET =	install-findlib
+ALL_TARGET =		all META
 
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/META ${PREFIX}/lib/ocaml/ocamlgraph/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ocaml-graph
 	${INSTALL_DATA} \
 		${WRKSRC}/examples/* \

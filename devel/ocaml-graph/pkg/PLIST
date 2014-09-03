@@ -1,5 +1,9 @@
 @comment $OpenBSD$
 %%native%%
+bin/graph-editor
+bin/graph-editor.byte
+bin/graph-viewer
+bin/graph-viewer.byte
 lib/ocaml/ocamlgraph/
 lib/ocaml/ocamlgraph/META
 lib/ocaml/ocamlgraph/builder.mli
