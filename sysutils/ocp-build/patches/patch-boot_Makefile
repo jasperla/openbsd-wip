@@ -1,0 +1,19 @@
+$OpenBSD$
+
+tell make-ocpbuild-run.sh to use gmake
+
+--- boot/Makefile.orig	Tue Aug 26 13:45:12 2014
++++ boot/Makefile	Wed Sep  3 15:12:10 2014
+@@ -2,10 +2,10 @@ PREFIX=/usr/local/
+ 
+ ocp-build: primitives ocp-build.boot win32_c.c
+ 	awk '{ print "external "$$1": unit -> unit = \"" $$1 "\"" }' primitives > primitives.ml
+-	./make-ocpbuild-run.sh
++	MAKE=$(MAKE) ./make-ocpbuild-run.sh
+ 	cat ocp-build.run ocp-build.boot > ocp-build
+ 	chmod +x ocp-build
+-	./ocp-build -help >/dev/null 2>&1
++	./ocp-build -help && echo true || echo false
+ 
+ install: ocp-build
+ 	cp ocp-build $(PREFIX)/bin/ocp-build
