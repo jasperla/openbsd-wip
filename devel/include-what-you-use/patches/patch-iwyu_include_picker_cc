@@ -1,0 +1,79 @@
+$OpenBSD$
+--- iwyu_include_picker.cc.orig	Wed Jan 22 04:17:20 2014
++++ iwyu_include_picker.cc	Thu Sep  4 20:40:02 2014
+@@ -215,7 +215,7 @@ const IncludeMapEntry libstdcpp_symbol_map[] = {
+ };
+ 
+ // Private -> public include mappings for GNU libc
+-const IncludeMapEntry libc_include_map[] = {
++const IncludeMapEntry glibc_include_map[] = {
+   // ( cd /usr/include && grep '^ *# *include' {sys/,net/,}* | perl -nle 'm/^([^:]+).*<([^>]+)>/ && print qq@    { "<$2>", kPrivate, "<$1>", kPublic },@' | grep bits/ | sort )
+   // When I saw more than one mapping for these, I typically picked
+   // what I thought was the "best" one.
+@@ -393,6 +393,66 @@ const IncludeMapEntry libc_include_map[] = {
+   // assert.h with cassert, you'd change it to a public->private
+   // mapping.)  Here is how I identified the files to map:
+   // $ for i in /usr/include/c++/4.4/c* ; do ls /usr/include/`basename $i | cut -b2-`.h /usr/lib/gcc/*/4.4/include/`basename $i | cut -b2-`.h 2>/dev/null ; done
++  { "<assert.h>", kPublic, "<cassert>", kPublic },
++  { "<complex.h>", kPublic, "<ccomplex>", kPublic },
++  { "<ctype.h>", kPublic, "<cctype>", kPublic },
++  { "<errno.h>", kPublic, "<cerrno>", kPublic },
++  { "<fenv.h>", kPublic, "<cfenv>", kPublic },
++  { "<float.h>", kPublic, "<cfloat>", kPublic },
++  { "<inttypes.h>", kPublic, "<cinttypes>", kPublic },
++  { "<iso646.h>", kPublic, "<ciso646>", kPublic },
++  { "<limits.h>", kPublic, "<climits>", kPublic },
++  { "<locale.h>", kPublic, "<clocale>", kPublic },
++  { "<math.h>", kPublic, "<cmath>", kPublic },
++  { "<setjmp.h>", kPublic, "<csetjmp>", kPublic },
++  { "<signal.h>", kPublic, "<csignal>", kPublic },
++  { "<stdarg.h>", kPublic, "<cstdarg>", kPublic },
++  { "<stdbool.h>", kPublic, "<cstdbool>", kPublic },
++  { "<stddef.h>", kPublic, "<cstddef>", kPublic },
++  { "<stdint.h>", kPublic, "<cstdint>", kPublic },
++  { "<stdio.h>", kPublic, "<cstdio>", kPublic },
++  { "<stdlib.h>", kPublic, "<cstdlib>", kPublic },
++  { "<string.h>", kPublic, "<cstring>", kPublic },
++  { "<tgmath.h>", kPublic, "<ctgmath>", kPublic },
++  { "<time.h>", kPublic, "<ctime>", kPublic },
++  { "<wchar.h>", kPublic, "<cwchar>", kPublic },
++  { "<wctype.h>", kPublic, "<cwctype>", kPublic },
++};
++
++
++// Private -> public include mappings for OpenBSD libc
++const IncludeMapEntry libc_include_map[] = {
++  { "<machine/_float.h>", kPrivate, "<float.h>", kPublic },
++  { "<machine/_types.h>", kPrivate, "<sys/_types.h>", kPrivate },
++  { "<machine/atomic.h>", kPrivate, "<sys/atomic.h>", kPublic },
++  { "<machine/cdefs.h>", kPrivate, "<sys/cdefs.h>", kPublic },
++  { "<machine/disklabel.h>", kPrivate, "<sys/disklabel.h>", kPublic },
++  { "<machine/endian.h>", kPrivate, "<sys/endian.h>", kPrivate },
++  { "<machine/limits.h>", kPrivate, "<sys/limits.h>", kPrivate },
++  { "<machine/param.h>", kPrivate, "<sys/param.h>", kPublic },
++  { "<machine/ptrace.h>", kPrivate, "<sys/ptrace.h>", kPublic },
++  { "<machine/signal.h>", kPrivate, "<sys/signal.h>", kPrivate },
++  { "<machine/stdarg.h>", kPrivate, "<sys/stdarg.h>", kPrivate },
++  { "<machine/stdint.h>", kPrivate, "<sys/stdint.h>", kPrivate },
++  { "<machine/varargs.h>", kPrivate, "<sys/varags.h>", kPrivate },
++  { "<sys/_endian.h>", kPrivate, "<sys/endian.h>", kPrivate },
++  { "<sys/_time.h>", kPrivate, "<time.h>", kPublic },
++  { "<sys/_types.h>", kPrivate, "<sys/types.h>", kPublic },
++  { "<sys/endian.h>", kPrivate, "<endian.h>", kPublic },
++  { "<sys/dirent.h>", kPrivate, "<dirent.h>", kPublic },
++  { "<sys/errno.h>", kPrivate, "<errno.h>", kPublic },
++  { "<sys/fcntl.h>", kPrivate, "<fcntl.h>", kPublic },
++  { "<sys/limits.h>", kPrivate, "<limits.h>", kPublic },
++  { "<sys/poll.h>", kPrivate, "<poll.h>", kPublic },
++  { "<sys/signal.h>", kPrivate, "<signal.h>", kPublic },
++  { "<sys/stdarg.h>", kPrivate, "<stdarg.h>", kPublic },
++  { "<sys/stdint.h>", kPrivate, "<stdint.h>", kPublic },
++  { "<sys/syslimits.h>", kPrivate, "<limits.h>", kPublic },
++  { "<sys/syslog.h>", kPrivate, "<syslog.h>", kPublic },
++  { "<sys/termios.h>", kPrivate, "<termios.h>", kPublic },
++  { "<sys/unistd.h>", kPrivate, "<unistd.h>", kPublic },
++  { "<sys/uuid.h>", kPrivate, "<uuid.h>", kPublic },
++  { "<sys/varargs.h>", kPrivate, "<varargs.h>", kPublic },
+   { "<assert.h>", kPublic, "<cassert>", kPublic },
+   { "<complex.h>", kPublic, "<ccomplex>", kPublic },
+   { "<ctype.h>", kPublic, "<cctype>", kPublic },
