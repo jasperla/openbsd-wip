@@ -1307,12 +1307,15 @@ share/racket/collects/setup/private/compiled/cc-struct_rkt.dep
 share/racket/collects/setup/private/compiled/cc-struct_rkt.zo
 share/racket/collects/setup/private/compiled/command-name_rkt.dep
 share/racket/collects/setup/private/compiled/command-name_rkt.zo
+share/racket/collects/setup/private/compiled/dylib_rkt.dep
+share/racket/collects/setup/private/compiled/dylib_rkt.zo
 share/racket/collects/setup/private/compiled/lib-roots_rkt.dep
 share/racket/collects/setup/private/compiled/lib-roots_rkt.zo
 share/racket/collects/setup/private/compiled/omitted-paths_rkt.dep
 share/racket/collects/setup/private/compiled/omitted-paths_rkt.zo
 share/racket/collects/setup/private/compiled/pkg-deps_rkt.dep
 share/racket/collects/setup/private/compiled/pkg-deps_rkt.zo
+share/racket/collects/setup/private/dylib.rkt
 share/racket/collects/setup/private/lib-roots.rkt
 share/racket/collects/setup/private/omitted-paths.rkt
 share/racket/collects/setup/private/pkg-deps.rkt
