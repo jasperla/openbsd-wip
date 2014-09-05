@@ -1,4 +1,7 @@
 @comment $OpenBSD$
+%%dynlink%%
+@bin bin/graph-editor.opt
+@bin bin/graph-viewer.opt
 lib/ocaml/ocamlgraph/dgraph.cmx
 lib/ocaml/ocamlgraph/dgraph.o
 lib/ocaml/ocamlgraph/graph.a
