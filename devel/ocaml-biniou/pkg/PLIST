@@ -1,0 +1,35 @@
+@comment $OpenBSD$
+%%native%%
+@bin bin/bdump
+lib/ocaml/biniou/
+lib/ocaml/biniou/META
+lib/ocaml/biniou/bi_dump.cmi
+lib/ocaml/biniou/bi_dump.cmo
+lib/ocaml/biniou/bi_inbuf.cmi
+lib/ocaml/biniou/bi_inbuf.cmo
+lib/ocaml/biniou/bi_inbuf.mli
+lib/ocaml/biniou/bi_io.cmi
+lib/ocaml/biniou/bi_io.cmo
+lib/ocaml/biniou/bi_io.mli
+lib/ocaml/biniou/bi_outbuf.cmi
+lib/ocaml/biniou/bi_outbuf.cmo
+lib/ocaml/biniou/bi_outbuf.mli
+lib/ocaml/biniou/bi_share.cmi
+lib/ocaml/biniou/bi_share.cmo
+lib/ocaml/biniou/bi_share.mli
+lib/ocaml/biniou/bi_stream.cmi
+lib/ocaml/biniou/bi_stream.cmo
+lib/ocaml/biniou/bi_stream.mli
+lib/ocaml/biniou/bi_util.cmi
+lib/ocaml/biniou/bi_util.cmo
+lib/ocaml/biniou/bi_util.mli
+lib/ocaml/biniou/bi_vint.cmi
+lib/ocaml/biniou/bi_vint.cmo
+lib/ocaml/biniou/bi_vint.mli
+lib/ocaml/biniou/biniou.cma
+share/doc/ocaml-biniou/
+share/doc/ocaml-biniou/Changes
+share/doc/ocaml-biniou/README.md
+share/doc/ocaml-biniou/biniou-format.txt
+share/examples/ocaml-biniou/
+share/examples/ocaml-biniou/test_biniou.ml
