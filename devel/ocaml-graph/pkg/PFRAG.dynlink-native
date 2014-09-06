@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+@bin lib/ocaml/ocamlgraph/graph.cmxs
