@@ -22,11 +22,9 @@ WANTLIB =		c m
 BUILD_DEPENDS =		devel/ocaml-yojson \
 			sysutils/findlib
 
-VIMDIR =		vim/vim74
-
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	simple
-CONFIGURE_ARGS =	--vimdir ${LOCALBASE}/${VIMDIR}
+CONFIGURE_ARGS =	--vimdir ${LOCALBASE}/share/vim/vimfiles
 
 
 post-install:
