@@ -1,0 +1,36 @@
+@comment $OpenBSD$
+@bin bin/ocamlmerlin
+share/doc/ocaml-merlin/
+share/doc/ocaml-merlin/CHANGELOG
+share/doc/ocaml-merlin/DEVELOP.md
+share/doc/ocaml-merlin/PROTOCOL.md
+share/doc/ocaml-merlin/README.md
+share/doc/ocaml-merlin/TODO.md
+share/emacs/
+share/emacs/site-lisp/
+share/emacs/site-lisp/merlin-iedit.el
+share/emacs/site-lisp/merlin.el
+vim/
+vim/vim74/
+vim/vim74/README.md
+vim/vim74/autoload/
+vim/vim74/autoload/merlin.py
+vim/vim74/autoload/merlin.vim
+vim/vim74/autoload/vimbufsync.py
+vim/vim74/autoload/vimbufsync.vim
+vim/vim74/doc/
+vim/vim74/doc/merlin.txt
+vim/vim74/ftdetect/
+vim/vim74/ftdetect/merlin.vim
+vim/vim74/ftplugin/
+vim/vim74/ftplugin/ocaml.vim
+vim/vim74/ftplugin/omlet.vim
+vim/vim74/plugin/
+vim/vim74/plugin/merlin.vim
+vim/vim74/syntax/
+vim/vim74/syntax/merlin.vim
+vim/vim74/syntax_checkers/
+vim/vim74/syntax_checkers/ocaml/
+vim/vim74/syntax_checkers/ocaml/merlin.vim
+vim/vim74/syntax_checkers/omlet/
+vim/vim74/syntax_checkers/omlet/merlin.vim
