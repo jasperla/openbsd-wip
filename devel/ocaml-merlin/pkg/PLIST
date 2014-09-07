@@ -20,9 +20,13 @@ share/vim/vimfiles/autoload/vimbufsync.py
 share/vim/vimfiles/autoload/vimbufsync.vim
 share/vim/vimfiles/doc/
 share/vim/vimfiles/doc/merlin.txt
-@exec-always rm -f %B/tags; vim --cmd helptags\ %B --cmd q 2>/dev/null || true
-@comment vim won't create the tags file if the doc dir is empty.
-@unexec-delete rm -f %B/tags; vim --cmd helptags\ %B --cmd q 2>/dev/null || true
+share/vim/vimfiles/doc/ocaml-merlin.tags
+@comment merge tagfiles of plugin documentation
+@exec-always sort -mo %D/share/vim/vimfiles/doc/tags %D/share/vim/vimfiles/doc/*.tags 2>/dev/null || true
+@comment remove tags, so that the vimfiles dir can be deleted if necessary
+@unexec-delete rm -f %D/share/vim/vimfiles/doc/tags
+@comment if there still is plugin documentation left, recreate tags file
+@unexec-delete sort -mo %D/share/vim/vimfiles/doc/tags %D/share/vim/vimfiles/doc/*.tags 2>/dev/null || true
 share/vim/vimfiles/ftdetect/
 share/vim/vimfiles/ftdetect/merlin.vim
 share/vim/vimfiles/ftplugin/
