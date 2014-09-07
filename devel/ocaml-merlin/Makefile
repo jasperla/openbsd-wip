@@ -19,7 +19,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/ocaml
 
 WANTLIB =		c m
-BUILD_DEPENDS =		devel/ocaml-yojson \
+BUILD_DEPENDS =		editors/vim \
+			devel/ocaml-yojson \
 			sysutils/findlib
 
 USE_GMAKE =		Yes
@@ -32,6 +33,11 @@ post-install:
 	${INSTALL_DATA} \
 		${WRKSRC}/{CHANGELOG,*.md} \
 		${PREFIX}/share/doc/ocaml-merlin/
+	vim	--cmd helptags\ ${PREFIX}/share/vim/vimfiles/doc/ \
+		--cmd q
+	sort -c	${PREFIX}/share/vim/vimfiles/doc/tags
+	mv	${PREFIX}/share/vim/vimfiles/doc/tags \
+		${PREFIX}/share/vim/vimfiles/doc/ocaml-merlin.tags
 
 
 .include <bsd.port.mk>
