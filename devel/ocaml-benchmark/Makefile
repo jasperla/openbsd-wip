@@ -5,8 +5,8 @@ CATEGORIES =	devel
 
 GH_ACCOUNT =	Chris00
 GH_PROJECT =	ocaml-benchmark
-GH_TAGNAME =	1.3
-GH_COMMIT =	b39acd20d8f3f72284c734068863a5bd470534bf
+GH_TAGNAME =	1.3.1
+GH_COMMIT =	ef2e48f1e9f74bb9a085cc7c22a873bf1e62d1d8
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 
 HOMEPAGE =	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}
@@ -21,13 +21,30 @@ BUILD_DEPENDS =		sysutils/oasis \
 			sysutils/findlib \
 			devel/ocaml-pcre
 
-CONFIGURE_STYLE =	oasis
+ALL_TARGET =		api.docdir/index.html benchmark.cma
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mocaml_native}
+ALL_TARGET +=		benchmark.cmxa
+.if ${PROPERTIES:Mocaml_native_dynlink}
+ALL_TARGET +=		benchmark.cmxs
+.endif
+.endif
 
 
-pre-configure:
-	cd ${WRKSRC} && oasis setup
+post-extract:
+	echo Benchmark >${WRKSRC}/api.odocl
 
-post-install:
+do-build:
+	cd ${WRKSRC} && env -i ${MAKE_ENV} ocamlbuild ${ALL_TARGET}
+
+do-install:
+	env -i ${MAKE_ENV} ocamlfind install -patch-version ${GH_TAGNAME} \
+		benchmark \
+		${FILESDIR}/META ${WRKSRC}/_build/benchmark.{a,o,cm*,mli}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml-benchmark/api
+	${INSTALL_DATA} \
+		${WRKSRC}/_build/api.docdir/* \
+		${PREFIX}/share/doc/ocaml-benchmark/api/
 	${INSTALL_DATA} \
 		${WRKSRC}/ChangeLog \
 		${PREFIX}/share/doc/ocaml-benchmark/
