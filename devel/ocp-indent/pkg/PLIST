@@ -33,6 +33,6 @@ share/emacs/site-lisp/
 share/emacs/site-lisp/ocp-indent.el
 share/ocp-indent/
 share/vim/
-share/vim/vim74/
-share/vim/vim74/syntax/
-share/vim/vim74/syntax/ocp-indent.vim
+share/vim/vimfiles/
+share/vim/vimfiles/indent/
+share/vim/vimfiles/indent/ocaml.vim
