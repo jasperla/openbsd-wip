@@ -37,8 +37,6 @@ ALL_TARGET +=	native
 ALL_TARGET +=	byte
 .endif
 
-VIMDIR=share/vim/vim74
-
 
 .if ! ${PROPERTIES:Mocaml_native}
 post-extract:
@@ -54,8 +52,9 @@ do-regress:
 
 post-install:
 	mv ${PREFIX}/lib/${GH_PROJECT} ${PREFIX}/lib/ocaml/
-	${INSTALL_DATA_DIR} ${PREFIX}/${VIMDIR}
-	mv ${PREFIX}/share/vim/syntax ${PREFIX}/${VIMDIR}/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/vim/vimfiles/indent
+	rm -R ${PREFIX}/share/vim/syntax
+	${INSTALL_DATA} ${FILESDIR}/ocaml.vim ${PREFIX}/share/vim/vimfiles/indent/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${GH_PROJECT}
 	${INSTALL_DATA} \
 		${WRKDIST}/{README.md,CHANGELOG} \
