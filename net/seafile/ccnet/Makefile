@@ -34,6 +34,14 @@ AUTOMAKE_VERSION =	1.11
 
 MODPY_ADJ_FILES = 	tools/ccnet-admin.py
 
+post-extract:
+	cd ${WRKSRC} && perl -pi -e 's,-levent ,\@LIBEVENT_LIBS\@ ,g' \
+		lib/Makefile.am \
+		net/cluster/Makefile.am \
+		net/daemon/Makefile.am \
+		net/server/Makefile.am
+
+
 pre-configure:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -fi
