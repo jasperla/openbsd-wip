@@ -11,3 +11,5 @@ share/examples/seafile/
 @sample ${VARBASE}/seafile/
 share/examples/seafile/seafile.conf
 @sample ${VARBASE}/seafile/seafile.conf
+@sample ${VARBASE}/seafile/seafile-server/
+@sample ${VARBASE}/seafile/seafile-server/seahub/

@@ -5,8 +5,8 @@ $OpenBSD$
  
  test_seafile_fmt_LDADD = @CCNET_LIBS@ \
  	$(top_builddir)/lib/libseafile_common.la \
--	-lssl -levent @GLIB2_LIBS@
-+	-lssl -levent_core @GLIB2_LIBS@
+-	@SSL_LIBS@ -levent @GLIB2_LIBS@
++	@SSL_LIBS@ -levent_core @GLIB2_LIBS@
  
  test_cdc_SOURCES = test-cdc.c
  

@@ -3,7 +3,7 @@
 COMMENT =		framework for writing networked applications in C
 
 GH_PROJECT = 		ccnet
-GH_COMMIT = 		dc08b273b3996d7e1fc2b766b9d037d6d5253e3f
+GH_COMMIT = 		dd3f1fab491dfcec8b8ca30dbcc75b890cb3529a
 
 SHARED_LIBS =		ccnet 0.0
 
