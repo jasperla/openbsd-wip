@@ -52,6 +52,17 @@ MODPY_ADJ_FILES = 	scripts/*.py scripts/build/*.py scripts/upgrade/*.py \
 
 SUBST_VARS += 		VARBASE
 
+post-extract:
+	cd ${WRKSRC} && perl -pi -e 's,-levent ,\@LIBEVENT_LIBS\@ ,g' \
+		controller/Makefile.am \
+		daemon/Makefile.am \
+		fileserver/Makefile.am \
+		fuse/Makefile.am \
+		lib/Makefile.am \
+		server/Makefile.am \
+		server/gc/Makefile.am \
+		tests/Makefile.am
+
 pre-configure:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -fi
