@@ -3,6 +3,7 @@
 COMMENT =		seafile client
 
 GH_PROJECT = 		seafile-client
+GH_TAGNAME = 		v3.1.5
 GH_COMMIT = 		ce808dbc60a8c731b888bc2ce38fa70e650296af
 
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtWebKit

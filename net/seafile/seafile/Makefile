@@ -4,7 +4,7 @@ COMMENT-main =		seafile daemon
 COMMENT-server = 	seafile server
 
 GH_PROJECT =		seafile
-GH_COMMIT = 		8e60cc2877632e4bf52ad0a08ddcb664c78c1416
+GH_COMMIT = 		0b580ad06db81c8bc9586e45e7435a9fdfbbf17f
 PKGNAME-main = 		${GH_PROJECT}-daemon-${V}
 PKGNAME-server = 	${GH_PROJECT}-server-${V}
 
@@ -55,6 +55,7 @@ SUBST_VARS += 		VARBASE
 pre-configure:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -fi
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/seafile/
 	${INSTALL_DATA} ${FILESDIR}/seafile.conf \
