@@ -22,9 +22,8 @@ QStringList LOS::ExternalDevicePaths(){
       QString type = devs[i].section(" on ",0,0);
 	type.remove("/dev/");
       //Determine the type of hardware device based on the dev node
-      if(type.startsWith("da")){ type = "USB"; }
-      else if(type.startsWith("ada")){ type = "HDRIVE"; }
-      else if(type.startsWith("mmsd")){ type = "SDCARD"; }
+      if(type.startsWith("sd")){ type = "HDRIVE"; }
+      else if(type.startsWith("wd")){ type = "HDRIVE"; }
       else if(type.startsWith("cd")||type.startsWith("acd")){ type="DVD"; }
       else{ type = "UNKNOWN"; }
       //Now put the device in the proper output format
@@ -55,10 +54,9 @@ void LOS::setScreenBrightness(int percent){
   //ensure bounds
   if(percent<0){percent=0;}
   else if(percent>100){ percent=100; }
-  float pf = percent/100.0; //convert to a decimel
   //Run the command
-  QString cmd = "xbrightness  %1";
-  cmd = cmd.arg( QString::number( int(65535*pf) ) );
+  QString cmd = "xbacklight -set %1";
+  cmd = cmd.arg( QString::number(percent) );
   int ret = LUtils::runCmd(cmd);
   //Save the result for later
   if(ret!=0){ screenbrightness = -1; }
@@ -68,63 +66,32 @@ void LOS::setScreenBrightness(int percent){
 
 //Read the current volume
 int LOS::audioVolume(){ //Returns: audio volume as a percentage (0-100, with -1 for errors)
-  QString info = LUtils::getCmdOutput("mixer -S vol").join(":").simplified(); //ignores any other lines
-  int out = -1;
-  if(!info.isEmpty()){
-    int L = info.section(":",1,1).toInt();
-    int R = info.section(":",2,2).toInt();
-    if(L>R){ out = L; }
-    else{ out = R; }
-  }
-  return out;
+  return -1; //Not implemented yet for OpenBSD
 }
 
 //Set the current volume
 void LOS::setAudioVolume(int percent){
-  if(percent<0){percent=0;}
-  else if(percent>100){percent=100;}
-  QString info = LUtils::getCmdOutput("mixer -S vol").join(":").simplified(); //ignores any other lines
-  if(!info.isEmpty()){
-    int L = info.section(":",1,1).toInt();
-    int R = info.section(":",2,2).toInt();
-    int diff = L-R;
-    if(diff<0){ R=percent; L=percent+diff; } //R Greater
-    else{ L=percent; R=percent-diff; } //L Greater or equal
-    //Check bounds
-    if(L<0){L=0;}else if(L>100){L=100;}
-    if(R<0){R=0;}else if(R>100){R=100;}
-    //Run Command
-    LUtils::runCmd("mixer vol "+QString::number(L)+":"+QString::number(R));
-  }	
+  //Not implemented yet for OpenBSD
 }
 
 //Change the current volume a set amount (+ or -)
 void LOS::changeAudioVolume(int percentdiff){
-  QString info = LUtils::getCmdOutput("mixer -S vol").join(":").simplified(); //ignores any other lines
-  if(!info.isEmpty()){
-    int L = info.section(":",1,1).toInt() + percentdiff;
-    int R = info.section(":",2,2).toInt() + percentdiff;
-    //Check bounds
-    if(L<0){L=0;}else if(L>100){L=100;}
-    if(R<0){R=0;}else if(R>100){R=100;}
-    //Run Command
-    LUtils::runCmd("mixer vol "+QString::number(L)+":"+QString::number(R));
-  }	
+  //not implemented yet for OpenBSD
 }
 
 //Check if a graphical audio mixer is installed
 bool LOS::hasMixerUtility(){
-  return QFile::exists("/usr/local/bin/pc-mixer");
+  return false; //not implemented yet for OpenBSD
 }
 
 //Launch the graphical audio mixer utility
 void LOS::startMixerUtility(){
-  QProcess::startDetached("pc-mixer -notray");
+  //Not implemented yet for OpenBSD
 }
 
 //System Shutdown
 void LOS::systemShutdown(){ //start poweroff sequence
-  QProcess::startDetached("shutdown -p now");
+  QProcess::startDetached("shutdown -hp now");
 }
 
 //System Restart
@@ -152,7 +119,8 @@ bool LOS::batteryIsCharging(){
 
 //Battery Time Remaining
 int LOS::batterySecondsLeft(){ //Returns: estimated number of seconds remaining
-  return LUtils::getCmdOutput("apm -t").join("").toInt();
+  int min = LUtils::getCmdOutput("apm -m").join("").toInt();
+  return (min % 60);
 }
 
 #endif
