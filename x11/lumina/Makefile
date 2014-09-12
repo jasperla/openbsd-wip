@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT=	XXX
+COMMENT=	Lumina Desktop Environment
 
 GITV=		1409847349
 DISTNAME=	lumina-${GITV}
@@ -8,16 +8,15 @@ PKGNAME=	lumina-0.6.2.${GITV}
 EXTRACT_SUFX=	.tar.bz2
 WRKDIST=	${WRKDIR}/lumina
 
-SHARED_LIBS +=  LuminaUtils               1.0 # 1.0
+SHARED_LIBS +=  LuminaUtils               0.0 # 1.0
 
 CATEGORIES=	x11
 
-HOMEPAGE=	XXX
-#MASTER_SITES=
+HOMEPAGE=	https://github.com/pcbsd/lumina
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# XXX
+# BSD
 PERMIT_PACKAGE_CDROM =   Yes
 
 WANTLIB += ICE QtDBus QtGui QtNetwork QtSolutions_SingleApplication-head
@@ -33,7 +32,6 @@ BUILD_DEPENDS=	multimedia/phonon
 
 LIB_DEPENDS=	devel/qt4-qtsolutions-singleinstance
 
-# XXX xbrightness
 RUN_DEPENDS=	devel/desktop-file-utils \
 		phonon-gstreamer-*|phonon-vlc-*:multimedia/phonon-backend/gstreamer \
 		x11/kde4/oxygen-icons \
@@ -45,15 +43,18 @@ NO_TEST=	Yes
 
 MAKE_FLAGS=	CXXFLAGS="${CXXFLAGS} \
 			-I${X11BASE}/include \
-			-I${LOCALBASE}/include/kde4/KDE"
+			-I${LOCALBASE}/include/kde4/KDE" \
+		LIBLuminaUtils_VERSION=${LIBLuminaUtils_VERSION}
 
 FAKE_FLAGS=	INSTALL_ROOT=${DESTDIR}
 
 pre-configure:
-# XXX
 	cp ${FILESDIR}/LuminaOS-OpenBSD.cpp \
 		${WRKSRC}/libLumina/LuminaOS-OpenBSD.cpp
-
+	perl -pi -e 's,/usr/local,${LOCALBASE},g' \
+		${WRKSRC}/libLumina/LuminaXDG.cpp \
+		${WRKSRC}/lumina-config/mainUI.cpp \
+		${WRKSRC}/lumina-desktop/SettingsMenu.cpp
 .for i in lumina-config lumina-desktop lumina-fm lumina-open lumina-screenshot
 	perl -pi -e 's,lrelease-qt4,lrelease4,g' ${WRKSRC}/$i/$i.pro
 .endfor
