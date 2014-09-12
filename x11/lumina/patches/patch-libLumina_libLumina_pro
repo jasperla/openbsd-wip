@@ -1,0 +1,13 @@
+$OpenBSD$
+--- libLumina/libLumina.pro.orig	Tue Sep  9 16:23:07 2014
++++ libLumina/libLumina.pro	Tue Sep  9 16:23:18 2014
+@@ -19,7 +19,8 @@ SOURCES	+= LuminaXDG.cpp \
+ 	LuminaUtils.cpp \
+ 	LuminaX11.cpp \ 
+ 	LuminaOS-FreeBSD.cpp \
+-	LuminaOS-Linux.cpp
++	LuminaOS-Linux.cpp \
++	LuminaOS-OpenBSD.cpp
+ #       new OS support can be added here
+ 
+ INCLUDEPATH += /usr/local/include
