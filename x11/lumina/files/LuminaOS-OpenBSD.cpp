@@ -119,7 +119,7 @@ bool LOS::batteryIsCharging(){
 //Battery Time Remaining
 int LOS::batterySecondsLeft(){ //Returns: estimated number of seconds remaining
   int min = LUtils::getCmdOutput("apm -m").join("").toInt();
-  return (min % 60);
+  return (min * 60);
 }
 
 #endif
