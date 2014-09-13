@@ -39,6 +39,9 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/numlockx \
 		x11/xscreensaver
 
+# sndio(7)
+RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-good
+
 NO_TEST=	Yes
 
 MAKE_FLAGS=	CXXFLAGS="${CXXFLAGS} \
