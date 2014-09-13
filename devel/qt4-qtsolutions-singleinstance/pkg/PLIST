@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-include/qtsingleapplication.h
-include/qtsinglecoreapplication.h
-@lib lib/libQtSolutions_SingleApplication-head.so.${LIBQtSolutions_SingleApplication-head_VERSION}
