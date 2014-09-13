@@ -6,8 +6,8 @@ COMMENT=		geographically-aware, authoritative-only DNS server
 
 GH_ACCOUNT=		blblack
 GH_PROJECT=		gdnsd
-GH_TAGNAME=		v1.11.4
-GH_COMMENT=		60870303ed7aeb1aaec708cc1283ca39641e007b
+GH_TAGNAME=		v1.11.5
+GH_COMMENT=		094e7afac546693856aba0364c3dcf6e7511a0e8
 
 DISTNAME=		${GH_PROJECT}-${GH_TAGNAME:S/v//g}
 CATEGORIES=		net
