@@ -45,6 +45,7 @@ MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
 SUBST_VARS +=		MODRUBY_BINREV MODPY_VERSION MODTK_VERSION
 
+# XXX regen
 MODPY_ADJ_FILES =	texk/texlive/linked_scripts/de-macro/de-macro \
 			texk/texlive/linked_scripts/dviasm/dviasm.py \
 			texk/texlive/linked_scripts/ebong/ebong.py \
@@ -204,6 +205,7 @@ CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--disable-multiplatform \
 			--disable-native-texlive-build \
 			--with-banner-add="-OpenBSD_Ports" \
+			--disable-luajittex \
 			--with-system-xpdf #link poppler
 
 SUBST_VARS +=		TRUEPREFIX LOCALBASE
@@ -247,6 +249,12 @@ EXTRA_ROOT =	${WRKDIR}/texlive-${DIST_V}-extra
 
 post-install:
 	rm -Rf ${WRKSRC}/inst
+
+	# Following upstream's process, we don't install any texmf
+	# files from texlive_base. These will be installed from the
+	# texlive_temxf-* ports. Similarly for manuals and infos.
+	rm -Rf ${PREFIX}/share/texmf-dist/
+	rm -Rf ${PREFIX}/{man,info}
 
 	# translate some sylinks from ../texmf* to ../share/texmf*
 	for link in `find ${PREFIX}/bin -type l`; do \
