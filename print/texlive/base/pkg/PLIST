@@ -1,0 +1,581 @@
+@comment $OpenBSD$
+${P5SITE}/TeXLive/
+${P5SITE}/TeXLive/TLConfig.pm
+${P5SITE}/TeXLive/TLUtils.pm
+@bin bin/afm2pl
+@bin bin/afm2tfm
+@bin bin/aleph
+@bin bin/bg5conv
+@bin bin/bibtex
+@bin bin/bibtex8
+@bin bin/bibtexu
+@bin bin/cef5conv
+@bin bin/cefconv
+@bin bin/cefsconv
+@bin bin/cfftot1
+@bin bin/chktex
+@bin bin/ctangle
+@bin bin/ctie
+@bin bin/cweave
+@bin bin/devnag
+@bin bin/dt2dv
+@bin bin/dv2dt
+@bin bin/dvibook
+@bin bin/dviconcat
+@bin bin/dvicopy
+@bin bin/dvidvi
+@bin bin/dvilj
+@bin bin/dvilj2p
+@bin bin/dvilj4
+@bin bin/dvilj4l
+@bin bin/dvipdfmx
+@bin bin/dvipng
+@bin bin/dvipos
+@bin bin/dvips
+@bin bin/dviselect
+@bin bin/dvisvgm
+@bin bin/dvitodvi
+@bin bin/dvitype
+@bin bin/eptex
+@bin bin/euptex
+@bin bin/extconv
+@bin bin/gftodvi
+@bin bin/gftopk
+@bin bin/gftype
+@bin bin/gsftopk
+@bin bin/hbf2gf
+@bin bin/kpseaccess
+@bin bin/kpsereadlink
+@bin bin/kpsestat
+@bin bin/kpsewhich
+@bin bin/lacheck
+@bin bin/luajittex
+@bin bin/luatex
+@bin bin/mag
+@bin bin/makeindex
+@bin bin/makejvf
+@bin bin/mendex
+@bin bin/mf
+@bin bin/mf-nowin
+@bin bin/mft
+@bin bin/mmafm
+@bin bin/mmpfb
+@bin bin/mpost
+@bin bin/odvicopy
+@bin bin/odvitype
+@bin bin/omfonts
+@bin bin/otangle
+@bin bin/otfinfo
+@bin bin/otftotfm
+@bin bin/otp2ocp
+@bin bin/outocp
+@bin bin/patgen
+@bin bin/pbibtex
+@bin bin/pdfclose
+@bin bin/pdfopen
+@bin bin/pdftex
+@bin bin/pdftosrc
+@bin bin/pdvitype
+@bin bin/pfb2pfa
+@bin bin/pk2bm
+@bin bin/pktogf
+@bin bin/pktype
+@bin bin/pltotf
+@bin bin/pmxab
+@bin bin/pooltype
+@bin bin/ppltotf
+@bin bin/prepmx
+@bin bin/ps2pk
+@bin bin/ptex
+@bin bin/ptftopl
+@bin bin/scor2prt
+@bin bin/sjisconv
+@bin bin/synctex
+@bin bin/t1dotlessj
+@bin bin/t1lint
+@bin bin/t1rawafm
+@bin bin/t1reencode
+@bin bin/t1testpage
+@bin bin/t4ht
+@bin bin/tangle
+@bin bin/teckit_compile
+@bin bin/tex
+@bin bin/tex2xindy
+@bin bin/tex4ht
+@bin bin/tftopl
+@bin bin/tie
+@bin bin/ttf2afm
+@bin bin/ttf2pk
+@bin bin/ttf2tfm
+@bin bin/ttfdump
+@bin bin/ttftotype42
+@bin bin/upbibtex
+@bin bin/updvitype
+@bin bin/uppltotf
+@bin bin/uptex
+@bin bin/uptftopl
+@bin bin/vftovp
+@bin bin/vlna
+@bin bin/vptovf
+@bin bin/weave
+@bin bin/wofm2opl
+@bin bin/wopl2ofm
+@bin bin/wovf2ovp
+@bin bin/wovp2ovf
+@bin bin/xdvi-xaw
+@bin bin/xdvipdfmx
+@bin bin/xetex
+@info info/dvipng.info
+@info info/dvips.info
+@info info/kpathsea.info
+@info info/tlbuild.info
+@info info/web2c.info
+@lib lib/libkpathsea.so.${LIBkpathsea_VERSION}
+@lib lib/libptexenc.so.${LIBptexenc_VERSION}
+@man man/man1/afm2pl.1
+@man man/man1/afm2tfm.1
+@man man/man1/aleph.1
+@man man/man1/allcm.1
+@man man/man1/allec.1
+@man man/man1/allneeded.1
+@man man/man1/amstex.1
+@man man/man1/bg5conv.1
+@man man/man1/bibtex.1
+@man man/man1/cef5conv.1
+@man man/man1/cefconv.1
+@man man/man1/cefsconv.1
+@man man/man1/cfftot1.1
+@man man/man1/chktex.1
+@man man/man1/chkweb.1
+@man man/man1/ctangle.1
+@man man/man1/ctie.1
+@man man/man1/cweave.1
+@man man/man1/cweb.1
+@man man/man1/deweb.1
+@man man/man1/dt2dv.1
+@man man/man1/dv2dt.1
+@man man/man1/dvi2fax.1
+@man man/man1/dvibook.1
+@man man/man1/dviconcat.1
+@man man/man1/dvicopy.1
+@man man/man1/dvidvi.1
+@man man/man1/dvigif.1
+@man man/man1/dvihp.1
+@man man/man1/dvilj.1
+@man man/man1/dvilj2p.1
+@man man/man1/dvilj4.1
+@man man/man1/dvilj4l.1
+@man man/man1/dvilj6.1
+@man man/man1/dvipdfm.1
+@man man/man1/dvipdfmx.1
+@man man/man1/dvipdft.1
+@man man/man1/dvipng.1
+@man man/man1/dvipos.1
+@man man/man1/dvips.1
+@man man/man1/dvired.1
+@man man/man1/dviselect.1
+@man man/man1/dvisvgm.1
+@man man/man1/dvitodvi.1
+@man man/man1/dvitomp.1
+@man man/man1/dvitype.1
+@man man/man1/e2pall.1
+@man man/man1/ebb.1
+@man man/man1/extconv.1
+@man man/man1/extractbb.1
+@man man/man1/fmtutil-sys.1
+@man man/man1/fmtutil.1
+@man man/man1/fontinst.1
+@man man/man1/gftodvi.1
+@man man/man1/gftopk.1
+@man man/man1/gftype.1
+@man man/man1/gsftopk.1
+@man man/man1/hbf2gf.1
+@man man/man1/kpseaccess.1
+@man man/man1/kpsepath.1
+@man man/man1/kpsereadlink.1
+@man man/man1/kpsestat.1
+@man man/man1/kpsetool.1
+@man man/man1/kpsewhere.1
+@man man/man1/kpsewhich.1
+@man man/man1/kpsexpand.1
+@man man/man1/lacheck.1
+@man man/man1/lamed.1
+@man man/man1/latex.1
+@man man/man1/luatex.1
+@man man/man1/mag.1
+@man man/man1/makeindex.1
+@man man/man1/mendex.1
+@man man/man1/mf-nowin.1
+@man man/man1/mf.1
+@man man/man1/mft.1
+@man man/man1/mkindex.1
+@man man/man1/mkocp.1
+@man man/man1/mkofm.1
+@man man/man1/mktexfmt.1
+@man man/man1/mktexlsr.1
+@man man/man1/mktexmf.1
+@man man/man1/mktexpk.1
+@man man/man1/mktextfm.1
+@man man/man1/mmafm.1
+@man man/man1/mmpfb.1
+@man man/man1/mpost.1
+@man man/man1/odvicopy.1
+@man man/man1/odvitype.1
+@man man/man1/ofm2opl.1
+@man man/man1/opl2ofm.1
+@man man/man1/otangle.1
+@man man/man1/otfinfo.1
+@man man/man1/otftotfm.1
+@man man/man1/otp2ocp.1
+@man man/man1/outocp.1
+@man man/man1/ovf2ovp.1
+@man man/man1/ovp2ovf.1
+@man man/man1/patgen.1
+@man man/man1/pdfclose.1
+@man man/man1/pdfetex.1
+@man man/man1/pdflatex.1
+@man man/man1/pdfopen.1
+@man man/man1/pdftex.1
+@man man/man1/pdftosrc.1
+@man man/man1/pfb2pfa.1
+@man man/man1/pk2bm.1
+@man man/man1/pktogf.1
+@man man/man1/pktype.1
+@man man/man1/pltotf.1
+@man man/man1/pmxab.1
+@man man/man1/pooltype.1
+@man man/man1/prepmx.1
+@man man/man1/ps2frag.1
+@man man/man1/ps2pk.1
+@man man/man1/pslatex.1
+@man man/man1/rubibtex.1
+@man man/man1/rumakeindex.1
+@man man/man1/scor2prt.1
+@man man/man1/sjisconv.1
+@man man/man1/synctex.1
+@man man/man1/t1dotlessj.1
+@man man/man1/t1lint.1
+@man man/man1/t1rawafm.1
+@man man/man1/t1reencode.1
+@man man/man1/t1testpage.1
+@man man/man1/tangle.1
+@man man/man1/tex.1
+@man man/man1/tex2xindy.1
+@man man/man1/texconfig-sys.1
+@man man/man1/texconfig.1
+@man man/man1/texdoctk.1
+@man man/man1/texhash.1
+@man man/man1/texindy.1
+@man man/man1/texlinks.1
+@man man/man1/texlua.1
+@man man/man1/texluac.1
+@man man/man1/tftopl.1
+@man man/man1/tie.1
+@man man/man1/tpic2pdftex.1
+@man man/man1/ttf2afm.1
+@man man/man1/ttf2pk.1
+@man man/man1/ttf2tfm.1
+@man man/man1/ttfdump.1
+@man man/man1/ttftotype42.1
+@man man/man1/updmap-sys.1
+@man man/man1/updmap.1
+@man man/man1/vftovp.1
+@man man/man1/vlna.1
+@man man/man1/vptovf.1
+@man man/man1/weave.1
+@man man/man1/xdvi.1
+@man man/man1/xdvipdfmx.1
+@man man/man1/xindy.1
+@man man/man5/fmtutil.cnf.5
+@man man/man5/synctex.5
+@man man/man5/updmap.cfg.5
+bin/a2ping
+bin/a5toa4
+bin/adhocfilelist
+bin/afm2afm
+bin/allcm
+bin/allec
+bin/allneeded
+bin/amstex
+bin/arara
+bin/arlatex
+bin/authorindex
+bin/autoinst
+bin/bg5+latex
+bin/bg5+pdflatex
+bin/bg5latex
+bin/bg5pdflatex
+bin/bibexport
+bin/bundledoc
+bin/cachepic
+bin/cef5latex
+bin/cef5pdflatex
+bin/ceflatex
+bin/cefpdflatex
+bin/cefslatex
+bin/cefspdflatex
+bin/checkcites
+bin/chkweb
+bin/context
+bin/contextjit
+bin/convbkmk
+bin/cslatex
+bin/csplain
+bin/ctanify
+bin/ctanupload
+bin/de-macro
+bin/depythontex
+bin/deweb
+bin/dosepsbin
+bin/dtxgen
+bin/dvi2fax
+bin/dviasm
+bin/dvigif
+bin/dvihp
+bin/dvilj6
+bin/dvilualatex
+bin/dviluatex
+bin/dvipdfm
+bin/dvipdft
+bin/dvired
+bin/dvitomp
+bin/e2pall
+bin/ebb
+bin/ebong
+bin/eplain
+bin/epspdf
+bin/epspdftk
+bin/epstopdf
+bin/etex
+bin/exceltex
+bin/extractbb
+bin/fig4latex
+bin/findhyph
+bin/fmtutil
+bin/fmtutil-sys
+bin/fontinst
+bin/fragmaster
+bin/gbklatex
+bin/gbkpdflatex
+bin/ht
+bin/htcontext
+bin/htlatex
+bin/htmex
+bin/httex
+bin/httexi
+bin/htxelatex
+bin/htxetex
+bin/inimf
+bin/initex
+bin/installfont-tl
+bin/jadetex
+bin/jamo-normalize
+bin/kanji-config-updmap
+bin/kanji-config-updmap-sys
+bin/kanji-fontmap-creator
+bin/komkindex
+bin/kpsepath
+bin/kpsetool
+bin/kpsewhere
+bin/kpsexpand
+bin/lamed
+bin/latex
+bin/latex-git-log
+bin/latex2man
+bin/latexdiff
+bin/latexdiff-vc
+bin/latexfileversion
+bin/latexindent
+bin/latexmk
+bin/latexpand
+bin/latexrevise
+bin/lily-glyph-commands
+bin/lily-image-commands
+bin/lily-rebuild-pdfs
+bin/listbib
+bin/listings-ext.sh
+bin/ltxfileinfo
+bin/ltximg
+bin/lua2dox_filter
+bin/lualatex
+bin/luaotfload-tool
+bin/luatools
+bin/m-tx
+bin/makeglossaries
+bin/match_parens
+bin/mathspic
+bin/mex
+bin/mf2pt1
+bin/mfplain
+bin/mk4ht
+bin/mkgrkindex
+bin/mkindex
+bin/mkjobtexmf
+bin/mkluatexfontdb
+bin/mkocp
+bin/mkofm
+bin/mkpic
+bin/mkt1font
+bin/mktexfmt
+bin/mktexlsr
+bin/mktexmf
+bin/mktexpk
+bin/mktextfm
+bin/mllatex
+bin/mltex
+bin/mptopdf
+bin/mtxrun
+bin/mtxrunjit
+bin/multibibliography
+bin/musixflx
+bin/musixtex
+bin/ofm2opl
+bin/opl2ofm
+bin/ot2kpx
+bin/ovf2ovp
+bin/ovp2ovf
+bin/pdf${MODRUBY_BINREV}0
+bin/pdf270
+bin/pdf90
+bin/pdfannotextractor
+bin/pdfatfi
+bin/pdfbook
+bin/pdfcrop
+bin/pdfcslatex
+bin/pdfcsplain
+bin/pdfetex
+bin/pdfflip
+bin/pdfjadetex
+bin/pdfjam
+bin/pdfjam-pocketmod
+bin/pdfjam-slides3up
+bin/pdfjam-slides6up
+bin/pdfjoin
+bin/pdflatex
+bin/pdfmex
+bin/pdfnup
+bin/pdfpun
+bin/pdfxmltex
+bin/pedigree
+bin/perltex
+bin/pfarrei
+bin/pkfix
+bin/pkfix-helper
+bin/platex
+bin/pmx2pdf
+bin/pmxchords
+bin/ps2frag
+bin/ps4pdf
+bin/pslatex
+bin/pst2pdf
+bin/ptex2pdf
+bin/purifyeps
+bin/pythontex
+bin/repstopdf
+bin/rpdfcrop
+bin/rubibtex
+bin/rubikrotation
+bin/rumakeindex
+bin/rungs
+bin/simpdftex
+bin/sjislatex
+bin/sjispdflatex
+bin/splitindex
+bin/sty2dtx
+bin/svn-multi
+bin/texconfig
+bin/texconfig-dialog
+bin/texconfig-sys
+bin/texcount
+bin/texdef
+bin/texdiff
+bin/texdirflatten
+bin/texdoc
+bin/texdoctk
+bin/texexec
+bin/texfot
+bin/texhash
+bin/texindy
+bin/texlinks
+bin/texliveonfly
+bin/texloganalyser
+bin/texlua
+bin/texluac
+bin/texluajit
+bin/texluajitc
+bin/texmfstart
+bin/texsis
+bin/thumbpdf
+bin/tlmgr
+bin/tpic2pdftex
+bin/ttf2kotexfont
+bin/typeoutfileinfo
+bin/ulqda
+bin/updmap
+bin/updmap-sys
+bin/uplatex
+bin/urlbst
+bin/utf8mex
+bin/vpe
+bin/vpl2ovp
+bin/vpl2vpl
+bin/xdvi
+bin/xelatex
+bin/xindy
+bin/xindy.mem
+bin/xmltex
+include/kpathsea/
+include/kpathsea/absolute.h
+include/kpathsea/c-auto.h
+include/kpathsea/c-ctype.h
+include/kpathsea/c-dir.h
+include/kpathsea/c-errno.h
+include/kpathsea/c-fopen.h
+include/kpathsea/c-limits.h
+include/kpathsea/c-memstr.h
+include/kpathsea/c-minmax.h
+include/kpathsea/c-namemx.h
+include/kpathsea/c-pathch.h
+include/kpathsea/c-pathmx.h
+include/kpathsea/c-proto.h
+include/kpathsea/c-stat.h
+include/kpathsea/c-std.h
+include/kpathsea/c-unistd.h
+include/kpathsea/cnf.h
+include/kpathsea/concatn.h
+include/kpathsea/config.h
+include/kpathsea/debug.h
+include/kpathsea/expand.h
+include/kpathsea/getopt.h
+include/kpathsea/hash.h
+include/kpathsea/knj.h
+include/kpathsea/kpathsea.h
+include/kpathsea/lib.h
+include/kpathsea/line.h
+include/kpathsea/magstep.h
+include/kpathsea/mingw32.h
+include/kpathsea/paths.h
+include/kpathsea/pathsearch.h
+include/kpathsea/proginit.h
+include/kpathsea/progname.h
+include/kpathsea/readable.h
+include/kpathsea/simpletypes.h
+include/kpathsea/str-list.h
+include/kpathsea/str-llist.h
+include/kpathsea/systypes.h
+include/kpathsea/tex-file.h
+include/kpathsea/tex-glyph.h
+include/kpathsea/tex-hush.h
+include/kpathsea/tex-make.h
+include/kpathsea/types.h
+include/kpathsea/variable.h
+include/kpathsea/version.h
+include/kpathsea/win32lib.h
+include/ptexenc/
+include/ptexenc/ptexenc.h
+include/ptexenc/unicode.h
+lib/libkpathsea.a
+lib/libkpathsea.la
+lib/libptexenc.a
+lib/libptexenc.la
+share/doc/pkg-readmes/${FULLPKGNAME}

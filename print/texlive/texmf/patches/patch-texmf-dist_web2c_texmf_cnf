@@ -1,0 +1,39 @@
+$OpenBSD: patch-texmf-dist_web2c_texmf_cnf,v 1.2 2014/01/20 21:34:44 edd Exp $
+
+Patch in OpenBSD paths.
+
+--- texmf-dist/web2c/texmf.cnf.origy	Mon Apr 15 17:58:08 2013
++++ texmf-dist/web2c/texmf.cnf	Mon Jan 20 16:27:08 2014
+@@ -1,6 +1,10 @@
+ % original texmf.cnf -- runtime path configuration file for kpathsea.
+ % Public domain.
+ % 
++% ************************
++% HACKED FOR OPENBSD PORTS
++% ************************
++% 
+ % If you modify this original file, YOUR CHANGES WILL BE LOST when it is
+ % updated.  Instead, put your changes -- and only your changes, not an
+ % entire copy! -- in ../../texmf.cnf.  That is, if this file is
+@@ -48,10 +52,8 @@
+ % All trees must be organized according to the TeX Directory Structure
+ % (http://tug.org/tds), or files may not be found.
+ %
+-% Redistributors will probably want $SELFAUTODIR/share, i.e., /usr/share.
+-% Kpathsea sets SELFAUTOLOC (the directory with the binary),
+-% SELFAUTODIR (its parent), and SELFAUTOPARENT (its grandparent).
+-TEXMFROOT = $SELFAUTOPARENT
++% We use the old teTeX paths in OpenBSD, respect the legacy.
++TEXMFROOT = ${TRUEPREFIX}/share
+ 
+ % The main tree of distributed packages and programs:
+ TEXMFDIST = $TEXMFROOT/texmf-dist
+@@ -61,7 +63,7 @@ TEXMFDIST = $TEXMFROOT/texmf-dist
+ TEXMFMAIN = $TEXMFDIST
+ 
+ % Local additions to the distribution trees.
+-TEXMFLOCAL = $TEXMFROOT/../texmf-local
++TEXMFLOCAL = $TEXMFROOT/texmf-local
+ 
+ % TEXMFSYSVAR, where *-sys store cached runtime data.
+ TEXMFSYSVAR = $TEXMFROOT/texmf-var
