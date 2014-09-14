@@ -12,7 +12,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL GLU ICE SM X11 Xext c fribidi m pthread sfml-audio
+WANTLIB += GL GLU ICE SM X11 Xext Xrandr c fribidi m pthread sfml-audio
 WANTLIB += sfml-graphics sfml-system sfml-window stdc++ tag
 
 MASTER_SITES =	https://github.com/downloads/thelaui/M.A.R.S./
