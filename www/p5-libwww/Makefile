@@ -3,7 +3,7 @@
 COMMENT=	library for WWW access in Perl
 
 MODULES=	cpan
-DISTNAME=	libwww-perl-6.05
+DISTNAME=	libwww-perl-6.08
 PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES=	www
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 RUN_DEPENDS=	devel/p5-File-Listing>=6.0 \
 		textproc/p5-Encode-Locale \
-		net/p5-Net-HTTP>=6.0 \
+		net/p5-Net-HTTP>=6.07 \
 		www/p5-HTML-Parser>=3.33 \
 		www/p5-HTML-Tagset \
 		www/p5-HTTP-Cookies>=6.0 \
@@ -25,7 +25,7 @@ RUN_DEPENDS=	devel/p5-File-Listing>=6.0 \
 		www/p5-WWW-RobotRules>=6.0
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
+CPAN_AUTHOR=	MSCHILLI
 
-CPAN_AUTHOR=	GAAS
 
 .include <bsd.port.mk>
