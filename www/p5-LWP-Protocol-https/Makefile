@@ -2,9 +2,8 @@
 
 COMMENT =	adds support for https to p5-libwww
 
-DISTNAME =	LWP-Protocol-https-6.04
+DISTNAME =	LWP-Protocol-https-6.06
 CATEGORIES =	www net security
-CPAN_AUTHOR =	GAAS
 
 MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
@@ -15,7 +14,7 @@ MODULES =	cpan
 
 RUN_DEPENDS =	net/p5-Net-HTTP>=6 \
 		security/p5-Mozilla-CA-Fake>=20110101 \
-		www/p5-libwww>=6.04
+		www/p5-libwww>=6.06
 
 # p5-Net-HTTP requires either p5-IO-Socket-SSL
 # or p5-Crypt-SSLeay ensure p5-IO-Socket-SSL
