@@ -2,7 +2,7 @@
 
 COMMENT =		fast, intuitive file opening in VIM
 
-V =			1.9.1
+V =			1.11.2
 DISTNAME =		command-t-${V}
 PKGNAME =		vim-command-t-${V}
 EXTRACT_SUFX =		.vba
