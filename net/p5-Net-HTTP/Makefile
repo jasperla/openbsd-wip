@@ -2,9 +2,8 @@
 
 COMMENT =	Perl HTTP connection client
 
-DISTNAME =	Net-HTTP-6.06
+DISTNAME =	Net-HTTP-6.07
 CATEGORIES =	net
-CPAN_AUTHOR =	GAAS
 
 MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
@@ -13,7 +12,8 @@ PERMIT_PACKAGE_CDROM =	 Yes
 
 MODULES =	cpan
 
-RUN_DEPENDS=	p5-IO-Socket-SSL-*|p5-Crypt-SSLeay-*:security/p5-IO-Socket-SSL
+RUN_DEPENDS=	p5-IO-Socket-SSL-*|p5-Crypt-SSLeay-*:security/p5-IO-Socket-SSL \
+		www/p5-URI
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .ifdef LIVE_TEST
