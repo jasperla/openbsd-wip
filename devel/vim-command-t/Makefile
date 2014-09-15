@@ -3,9 +3,8 @@
 COMMENT =		fast, intuitive file opening in VIM
 
 V =			1.11.2
-DISTNAME =		command-t-${V}
-PKGNAME =		vim-command-t-${V}
-EXTRACT_SUFX =		.vba
+DISTNAME =		vim-command-t-${V}
+EXTRACT_SUFX =		.tar.gz
 
 CATEGORIES =		devel editors
 
@@ -18,7 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=		c m ruby18
 
-MASTER_SITES =		http://s3.wincent.com/command-t/releases/
+MASTER_SITES =		http://spacehopper.org/mirrors/
 
 SHARED_ONLY =		Yes
 
@@ -32,14 +31,23 @@ BUILD_DEPENDS =		${RUN_DEPENDS}
 NO_TEST =		Yes
 WRKDIST =		${WRKDIR}/.vim
 
-# Convoluted way to extract a vimball in an automated fashion.
-do-extract:
+# We don't like vimballs as DISTFILES.
+# This target converts the upstream vimball to a tarball which we then
+# host ourselves.
+VIMBALL_ARCHIVE = command-t-${V}.vba
+VIMBALL_PATH = http://s3.wincent.com/command-t/releases/${VIMBALL_ARCHIVE}
+vim2tar:
+	cd ${DISTDIR} && ftp ${VIMBALL_PATH}
+	mkdir -p ${WRKDIR}
 	HOME=${WRKDIR} ${LOCALBASE}/bin/vim \
 	     --cmd ":set nocp" \
 	     --cmd ":runtime vimballPlugin.vim" \
 	     -c ":silent so %" \
 	     -c ":qa" \
-	     ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
+	     ${DISTDIR}/${VIMBALL_ARCHIVE}
+	rm ${DISTDIR}/${VIMBALL_ARCHIVE}
+	cd ${WRKDIR} && \
+		tar zcf ${DISTDIR}/vim-command-t-${V}${EXTRACT_SUFX} .vim
 
 # Some parts written in C for speed. Builds a ruby extension.
 do-build:
