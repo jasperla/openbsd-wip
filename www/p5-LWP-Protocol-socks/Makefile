@@ -2,7 +2,7 @@
 
 COMMENT =	adds support for SOCKS to p5-libwww
 
-DISTNAME =	LWP-Protocol-socks-1.6
+DISTNAME =	LWP-Protocol-socks-1.7
 CATEGORIES =	www
 CPAN_AUTHOR =	SCR
 
@@ -13,10 +13,11 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	cpan
 
-RUN_DEPENDS =	security/p5-IO-Socket-SSL \
-		net/p5-IO-Socket-Socks
+RUN_DEPENDS =	security/p5-IO-Socket-SSL>=0.96 \
+		net/p5-IO-Socket-Socks>=0.2 \
+		www/p5-libwww>=6.02 \
+		www/p5-LWP-Protocol-https>=6.02
 BUILD_DEPENDS =	${RUN_DEPENDS}
 
-TEST_DEPENDS =	www/p5-libwww
 
 .include <bsd.port.mk>
