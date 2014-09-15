@@ -2,9 +2,10 @@
 
 COMMENT =		multi-threaded data compressor based on lzlib
 
-DISTNAME =		plzip-1.2-rc2
+DISTNAME =		plzip-1.2
 
 HOMEPAGE =		http://lzip.nongnu.org/plzip.html
+MASTER_SITES =		${MASTER_SITE_SAVANNAH:=lzip/plzip/}
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
