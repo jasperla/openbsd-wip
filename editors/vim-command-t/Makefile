@@ -22,15 +22,12 @@ MASTER_SITES =		http://s3.wincent.com/command-t/releases/
 
 SHARED_ONLY =		Yes
 
-# NB: Keep in sync with the version editors/vim uses
-# Is there an automatic way (short of making a vim.port.mk)? XXX
+# Must stay in synv with the version vim is using!
 MODRUBY_REV =		1.8
 MODULES =		lang/ruby
 
-# XXX Dependency too strong. Any flavor with ruby will suffice.
-# Is there a way to express that?
-BUILD_DEPENDS =		editors/vim,ruby
-RUN_DEPENDS =		${BUILD_DEPENDS}
+RUN_DEPENDS =		vim-*-ruby:editors/vim,no_x11,ruby
+BUILD_DEPENDS =		${RUN_DEPENDS}
 
 NO_TEST =		Yes
 WRKDIST =		${WRKDIR}/.vim
@@ -49,18 +46,16 @@ do-build:
 	cd ${WRKBUILD}/ruby/command-t && ${RUBY} extconf.rb && \
 		${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS}
 
-# XXX hardcoded vim runtime path, i.e. vim74
-# XXX We remove the helptags because the file is owned by editors/vim.
-#     If we were to change the file we would screw up checksums.
-#     Perhaps remove the helptags from the vim ports and generate them
-#     at install time using an @exec?
-RUNTIMEDIR =	${PREFIX}/share/vim/vim74
+# This is hardcoded for now. If a vim.port.mk appears, move there.
+RUNTIMEDIR =	${PREFIX}/share/vim/vimfiles
+
 do-install:
 	rm ${WRKBUILD}/ruby/command-t/watchman.c${PATCHORIG} \
 		${WRKBUILD}/.VimballRecord \
-		${WRKBUILD}/doc/tags \
 		${WRKBUILD}/ruby/command-t/*.{o,h,c}
 	${INSTALL_DATA_DIR} ${RUNTIMEDIR}
 	cd ${WRKBUILD} && tar -cf - . | tar -C ${RUNTIMEDIR} -xf -
+	mv ${PREFIX}/share/vim/vimfiles/doc/tags \
+		${PREFIX}/share/vim/vimfiles/doc/vim-command-t.tags
 
 .include <bsd.port.mk>
