@@ -7,7 +7,7 @@ DISTNAME =		command-t-${V}
 PKGNAME =		vim-command-t-${V}
 EXTRACT_SUFX =		.vba
 
-CATEGORIES =		editors devel
+CATEGORIES =		devel editors
 
 HOMEPAGE =		https://wincent.com/products/command-t
 
