@@ -22,7 +22,7 @@ MASTER_SITES =		http://s3.wincent.com/command-t/releases/
 
 SHARED_ONLY =		Yes
 
-# Must stay in synv with the version vim is using!
+# Must stay in sync with the version vim is using!
 MODRUBY_REV =		1.8
 MODULES =		lang/ruby
 
