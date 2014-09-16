@@ -3,7 +3,7 @@
 COMMENT=	module to obtain financial quotes from exchanges
 
 MODULES=	cpan
-DISTNAME=	Finance-Quote-1.28
+DISTNAME=	Finance-Quote-1.35
 CATEGORIES=	misc
 
 HOMEPAGE=	http://finance-quote.sourceforge.net
