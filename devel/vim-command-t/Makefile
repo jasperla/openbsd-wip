@@ -63,7 +63,7 @@ do-install:
 		${WRKBUILD}/ruby/command-t/*.{o,h,c}
 	${INSTALL_DATA_DIR} ${RUNTIMEDIR}
 	cd ${WRKBUILD} && pax -rw . ${RUNTIMEDIR}
-	mv ${PREFIX}/share/vim/vimfiles/doc/tags \
-		${PREFIX}/share/vim/vimfiles/doc/vim-command-t.tags
+	sort -c ${RUNTIMEDIR}/doc/tags
+	mv ${RUNTIMEDIR}/doc/tags ${RUNTIMEDIR}/doc/vim-command-t.tags
 
 .include <bsd.port.mk>
