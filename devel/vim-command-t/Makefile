@@ -12,10 +12,10 @@ HOMEPAGE =		https://wincent.com/products/command-t
 
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
-# BSD
+# BSD2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		c m ruby18
+WANTLIB +=		c m ${MODRUBY_WANTLIB}
 
 MASTER_SITES =		http://spacehopper.org/mirrors/
 
@@ -62,7 +62,7 @@ do-install:
 		${WRKBUILD}/.VimballRecord \
 		${WRKBUILD}/ruby/command-t/*.{o,h,c}
 	${INSTALL_DATA_DIR} ${RUNTIMEDIR}
-	cd ${WRKBUILD} && tar -cf - . | tar -C ${RUNTIMEDIR} -xf -
+	cd ${WRKBUILD} && pax -rw . ${RUNTIMEDIR}
 	mv ${PREFIX}/share/vim/vimfiles/doc/tags \
 		${PREFIX}/share/vim/vimfiles/doc/vim-command-t.tags
 
