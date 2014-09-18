@@ -26,7 +26,7 @@ endif
 let s:indents = []
 let s:buffer = -1
 let s:tick = -1
-let s:line = -1
+let s:lnum = -1
 "let s:settings = {}
 "let s:settings['base'] = 1
 "let s:settings['type'] = 1
@@ -37,17 +37,17 @@ let s:line = -1
 "let s:settings['max_indent'] = 2
 
 function! GetOcpIndent(lnum)
-  if s:buffer != bufnr('') || s:tick != b:changedtick || s:line > a:lnum
-    let cmdline = "ocp-indent --numeric --lines " . a:lnum . '-'
+  if s:buffer != bufnr('') || s:tick != b:changedtick || s:lnum > a:lnum
+    let cmdline = "ocp-indent --numeric --indent-empty --lines " . a:lnum . '-'
     let s:indents = systemlist(cmdline, getline('1','$'))
     let s:buffer = bufnr('')
     let s:tick = b:changedtick
-    let s:line = a:lnum
-  elseif s:line < a:lnum
-    call remove(s:indents, 0, a:lnum - s:line - 1)
-    let s:line = a:lnum
+    let s:lnum = a:lnum
+  elseif s:lnum < a:lnum
+    call remove(s:indents, 0, a:lnum - s:lnum - 1)
+    let s:lnum = a:lnum
   endif
 
-  let s:line = s:line + 1
+  let s:lnum = s:lnum + 1
   return remove(s:indents, 0)
 endfunction
