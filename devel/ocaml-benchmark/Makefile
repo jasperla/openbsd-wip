@@ -17,8 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/ocaml
 
-BUILD_DEPENDS =		sysutils/oasis \
-			sysutils/findlib \
+BUILD_DEPENDS =		sysutils/findlib \
 			devel/ocaml-pcre
 
 ALL_TARGET =		api.docdir/index.html benchmark.cma
