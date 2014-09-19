@@ -4,7 +4,7 @@ COMMENT-main =		seafile daemon
 COMMENT-server = 	seafile server
 
 GH_PROJECT =		seafile
-GH_COMMIT = 		088a0afa91dfdad2fc55e50b98f3f65cda4f7e59
+GH_COMMIT = 		cfbcd85d13c2fafb5e01d862a9536eb5de896114
 PKGNAME-main = 		${GH_PROJECT}-daemon-${V}
 PKGNAME-server = 	${GH_PROJECT}-server-${V}
 
@@ -16,8 +16,8 @@ cWANTLIB += z zdb ${MODGETTEXT_WANTLIB}
 
 WANTLIB-main += lib/inotify/inotify ${cWANTLIB}
 
-WANTLIB-server += archive bz2 event_openssl event_pthreads evhtp expat lzma
-WANTLIB-server += onig seafile ${cWANTLIB}
+WANTLIB-server += archive bz2 event_extra event_openssl event_pthreads evhtp
+WANTLIB-server += expat lzma onig seafile ${cWANTLIB}
 
 MODULES =		devel/gettext lang/python
 BUILD_DEPENDS =		devel/libtool \
