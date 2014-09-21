@@ -1,10 +1,12 @@
 # $OpenBSD$
 
-GH_VER =	0.0.14
 COMMENT =	programming editor written in vala
-DISTNAME =	vanubi-${GH_VER}
-DISTFILES =	${DISTNAME}{v${GH_VER}}${EXTRACT_SUFX}
+DISTNAME =	vanubi-0.0.14
 CATEGORIES =	editors x11
+
+GH_ACCOUNT =	vanubi
+GH_PROJECT =	vanubi
+GH_COMMIT =	d4f8678f444842b54bf9bac3afbc8a66b726ea93
 
 SHARED_LIBS +=  vanubi-0.1                0.0 # 0.0
 
@@ -23,8 +25,6 @@ WANTLIB += gtksourceview-3.0 harfbuzz m ncurses pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += startup-notification-1 util vte2_90 wnck-3 xcb xcb-render
 WANTLIB += xcb-shm xcb-util xml2 z
-
-MASTER_SITES =	https://github.com/vanubi/vanubi/archive/
 
 MODULES =	devel/gettext
 
