@@ -14,7 +14,7 @@ setlocal indentexpr=GetOcpIndent(v:lnum)
 if !exists("no_ocaml_comments")
  if (has("comments"))
    setlocal comments=sr:(*,mb:*,ex:*)
-   setlocal fo=cqort
+   setlocal fo+=cqor
  endif
 endif
 
@@ -48,6 +48,5 @@ function! GetOcpIndent(lnum)
     let s:lnum = a:lnum
   endif
 
-  let s:lnum = s:lnum + 1
-  return remove(s:indents, 0)
+  return s:indents[0]
 endfunction
