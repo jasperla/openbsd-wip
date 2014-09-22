@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/ocaml
 
 WANTLIB =		c m
-#BUILD_DEPENDS =		sysutils/findlib
+BUILD_DEPENDS =		sysutils/findlib
 
 USE_GMAKE =		Yes
 
@@ -26,6 +26,8 @@ ALL_TARGET =		all
 .if ! ${PROPERTIES:Mocaml_native}
 MAKE_FLAGS +=		TARGET=byte
 .endif
+
+NO_TEST =		Yes
 
 
 post-install:
