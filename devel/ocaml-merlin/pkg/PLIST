@@ -12,12 +12,27 @@ share/emacs/site-lisp/merlin-iedit.el
 share/emacs/site-lisp/merlin.el
 share/vim/
 share/vim/vimfiles/
-share/vim/vimfiles/README.md
-share/vim/vimfiles/autoload/
-share/vim/vimfiles/autoload/merlin.py
-share/vim/vimfiles/autoload/merlin.vim
-share/vim/vimfiles/autoload/vimbufsync.py
-share/vim/vimfiles/autoload/vimbufsync.vim
+share/vim/vimfiles/after/
+share/vim/vimfiles/after/README.md
+share/vim/vimfiles/after/autoload/
+share/vim/vimfiles/after/autoload/merlin.py
+share/vim/vimfiles/after/autoload/merlin.vim
+share/vim/vimfiles/after/autoload/vimbufsync.py
+share/vim/vimfiles/after/autoload/vimbufsync.vim
+share/vim/vimfiles/after/ftdetect/
+share/vim/vimfiles/after/ftdetect/merlin.vim
+share/vim/vimfiles/after/ftplugin/
+share/vim/vimfiles/after/ftplugin/ocaml.vim
+share/vim/vimfiles/after/ftplugin/omlet.vim
+share/vim/vimfiles/after/plugin/
+share/vim/vimfiles/after/plugin/merlin.vim
+share/vim/vimfiles/after/syntax/
+share/vim/vimfiles/after/syntax/merlin.vim
+share/vim/vimfiles/after/syntax_checkers/
+share/vim/vimfiles/after/syntax_checkers/ocaml/
+share/vim/vimfiles/after/syntax_checkers/ocaml/merlin.vim
+share/vim/vimfiles/after/syntax_checkers/omlet/
+share/vim/vimfiles/after/syntax_checkers/omlet/merlin.vim
 share/vim/vimfiles/doc/
 share/vim/vimfiles/doc/merlin.txt
 share/vim/vimfiles/doc/ocaml-merlin.tags
@@ -27,17 +42,3 @@ share/vim/vimfiles/doc/ocaml-merlin.tags
 @unexec-delete rm -f %D/share/vim/vimfiles/doc/tags
 @comment if there still is plugin documentation left, recreate tags file
 @unexec-delete sort -mo %D/share/vim/vimfiles/doc/tags %D/share/vim/vimfiles/doc/*.tags 2>/dev/null || true
-share/vim/vimfiles/ftdetect/
-share/vim/vimfiles/ftdetect/merlin.vim
-share/vim/vimfiles/ftplugin/
-share/vim/vimfiles/ftplugin/ocaml.vim
-share/vim/vimfiles/ftplugin/omlet.vim
-share/vim/vimfiles/plugin/
-share/vim/vimfiles/plugin/merlin.vim
-share/vim/vimfiles/syntax/
-share/vim/vimfiles/syntax/merlin.vim
-share/vim/vimfiles/syntax_checkers/
-share/vim/vimfiles/syntax_checkers/ocaml/
-share/vim/vimfiles/syntax_checkers/ocaml/merlin.vim
-share/vim/vimfiles/syntax_checkers/omlet/
-share/vim/vimfiles/syntax_checkers/omlet/merlin.vim
