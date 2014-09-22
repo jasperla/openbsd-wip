@@ -25,7 +25,7 @@ BUILD_DEPENDS =		editors/vim \
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	simple
-CONFIGURE_ARGS =	--vimdir ${LOCALBASE}/share/vim/vimfiles
+CONFIGURE_ARGS =	--vimdir ${LOCALBASE}/share/vim/vimfiles/after
 
 
 post-install:
@@ -33,8 +33,10 @@ post-install:
 	${INSTALL_DATA} \
 		${WRKSRC}/{CHANGELOG,*.md} \
 		${PREFIX}/share/doc/ocaml-merlin/
-	vim	--cmd helptags\ ${PREFIX}/share/vim/vimfiles/doc/ \
+	vim	--cmd helptags\ ${PREFIX}/share/vim/vimfiles/after/doc/ \
 		--cmd q
+	mv	${PREFIX}/share/vim/vimfiles/after/doc \
+		${PREFIX}/share/vim/vimfiles/
 	sort -c	${PREFIX}/share/vim/vimfiles/doc/tags
 	mv	${PREFIX}/share/vim/vimfiles/doc/tags \
 		${PREFIX}/share/vim/vimfiles/doc/ocaml-merlin.tags
