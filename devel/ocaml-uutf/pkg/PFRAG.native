@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+%%dynlink%%
+lib/ocaml/uutf/uutf.a
+lib/ocaml/uutf/uutf.cmx
+lib/ocaml/uutf/uutf.cmxa
