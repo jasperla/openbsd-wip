@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/client/opamState.ml.orig	Wed Sep 24 15:45:55 2014
++++ src/client/opamState.ml	Wed Sep 24 15:45:57 2014
+@@ -1853,7 +1853,7 @@ let get_opam_env ~force_path t =
+ 
+ let get_full_env ?opam t =
+   let env0 = OpamMisc.env () in
+-  add_to_env t ?opam env0 (env_updates ~opamswitch:true t)
++  add_to_env t ?opam env0 (env_updates ~force_path:true ~opamswitch:true t)
+ 
+ let mem_pattern_in_string ~pattern ~string =
+   let pattern = Re.compile (Re.str pattern) in

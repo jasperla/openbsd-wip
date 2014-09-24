@@ -1,0 +1,12 @@
+$OpenBSD$
+--- m4/ocaml.m4.orig	Wed Sep 24 14:58:30 2014
++++ m4/ocaml.m4	Wed Sep 24 14:58:36 2014
+@@ -178,7 +178,7 @@ AC_DEFUN([AC_CHECK_OCAML_PKG],
+   done
+   if test "$found" = "no" ; then
+     AC_MSG_RESULT([not found])
+-    AS_TR_SH([OCAML_PKG_$1])=no
++    AS_TR_SH([OCAML_PKG_$1])=
+   fi
+ 
+   AC_SUBST(AS_TR_SH([OCAML_PKG_$1]))
