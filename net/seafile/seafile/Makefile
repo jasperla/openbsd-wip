@@ -35,7 +35,7 @@ RUN_DEPENDS-server = 	devel/py-simplejson \
 #			www/py-djblets
 
 USE_GMAKE =		Yes
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoconf automake
 CONFIGURE_ARGS +=	--disable-fuse \
 			--enable-server
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/inotify" \
