@@ -23,7 +23,7 @@ LIB_DEPENDS =		databases/libzdb \
 			net/seafile/libsearpc
 
 USE_GMAKE =		Yes
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoconf automake
 CONFIGURE_ENV +=	CPPFLAGS=-I${LOCALBASE}/include \
 			LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS += 	--enable-server \
