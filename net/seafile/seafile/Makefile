@@ -41,8 +41,8 @@ CONFIGURE_ARGS +=	--disable-fuse \
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/inotify" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/inotify"
 
-AUTOCONF_VERSION =	2.63
-AUTOMAKE_VERSION =	1.11
+AUTOCONF_VERSION =	2.61
+AUTOMAKE_VERSION =	1.9
 
 MULTI_PACKAGES = 	-main -server
 
@@ -63,7 +63,7 @@ post-extract:
 		server/gc/Makefile.am \
 		tests/Makefile.am
 
-pre-configure:
+pre-patch:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -fi
 
