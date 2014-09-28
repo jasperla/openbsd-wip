@@ -17,7 +17,7 @@ WANTLIB += freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glade-2.0 glib-2.0 gmodule-2.0 gnome-2 gnomecanvas-2
 WANTLIB += gnomeui-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 popt pthread
-WANTLIB += python2.7 xml2 z
+WANTLIB += xml2 z ${MODPY_WANTLIB}
 
 MASTER_SITES =	http://www.jejik.com/files/gnome-hearts/
 
