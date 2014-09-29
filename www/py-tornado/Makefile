@@ -17,7 +17,7 @@ MASTER_SITES =		${MASTER_SITE_PYPI:=t/tornado/}
 
 MODULES =		lang/python
 RUN_DEPENDS +=		devel/py-backports-ssl-match-hostname
-WANTLIB +=		pthread python2.7
+WANTLIB +=		pthread ${MODPY_WANTLIB}
 
 MODPY_SETUPTOOLS =	Yes
 
