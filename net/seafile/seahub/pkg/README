@@ -1,0 +1,1 @@
+ - run ccnet-init --config-dir=/var/seafile/ccnet --name=humppa --host=10.0.3.169

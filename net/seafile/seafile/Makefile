@@ -67,6 +67,9 @@ pre-patch:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -fi
 
+pre-configure:
+	perl -pi -e 's,manage.py,${PREFIX}/bin/seahub-manage,g' \
+		${WRKSRC}/tools/seafile-admin
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/seafile/
 	${INSTALL_DATA} ${FILESDIR}/seafile.conf \
