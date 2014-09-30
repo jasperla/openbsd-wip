@@ -3,8 +3,6 @@
  - add rc script ?
  - feed seafile.conf to server
  - add user for seafile server ???
- - seafile-controller doesn't start:
-** (process:11902): WARNING **: seafile-controller.c(279): failed to readlink: Failed to read the symbolic link '/proc/self/exe': No such file or directory
-** (process:11902): WARNING **: seafile-controller.c(621): failed to create pid dir : No such file or directory
-** (process:11902): WARNING **: seafile-controller.c(56): seaf-controller exited with code 1
+ - cleanup KERN_PROC in seafile-controller.c
+ - fix pathc to pids directory in seafile-controller.c
  - test, test, test
