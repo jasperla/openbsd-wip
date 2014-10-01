@@ -1,0 +1,3 @@
+srandrd is a simple daemon that executes a command when the xorg output
+changes, i.e. a monitor is plugged or unplugged. By default srandrd
+forks to background and exits when the xserver exits.
