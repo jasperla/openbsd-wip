@@ -7,3 +7,4 @@
  - create sqliter db in /var/seafile
  - install avatars to /var/seafile/seafile-server/seahub/media/avatars
  - split into data and pyhton parts to use different prefixes?
+ - set PROJECT_ROOT in seahub/settings.py
