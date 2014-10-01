@@ -1,0 +1,18 @@
+@comment $OpenBSD$
+bin/xprofile
+lib/python${MODPY_VERSION}/site-packages/xprofile/
+lib/python${MODPY_VERSION}/site-packages/xprofile-1.1.5-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/xprofile-1.1.5-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/xprofile-1.1.5-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/xprofile-1.1.5-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/xprofile-1.1.5-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/xprofile-1.1.5-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/xprofile-1.1.5-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/xprofile/__init__.py
+lib/python${MODPY_VERSION}/site-packages/xprofile/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/xprofile/__main__.py
+lib/python${MODPY_VERSION}/site-packages/xprofile/__main__.pyc
+lib/python${MODPY_VERSION}/site-packages/xprofile/xrandr.py
+lib/python${MODPY_VERSION}/site-packages/xprofile/xrandr.pyc
+@man man/man1/xprofile.1
+@man man/man5/xprofilerc.5
