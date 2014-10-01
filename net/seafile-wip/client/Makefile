@@ -11,7 +11,7 @@ WANTLIB += glib-2.0 gobject-2.0 intl jansson m pthread seafile searpc
 WANTLIB += sqlite3 ssl stdc++
 
 MODULES =		devel/cmake devel/gettext x11/qt4
-LIB_DEPENDS =		net/seafile/seafile
+LIB_DEPENDS =		net/seafile/seafile,-main
 RUN_DEPENDS = 		devel/desktop-file-utils \
 			x11/gtk+2,-guic
 
