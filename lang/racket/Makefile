@@ -41,13 +41,12 @@ MODULES +=		converters/libiconv
 # are called by ffi.
 LIB_DEPENDS =		databases/iodbc,-main \
 			devel/libffi>=3.0.9p2 \
-			devel/libunique \
-			x11/gtkglext
+			devel/libunique
 BUILD_DEPENDS =		devel/pango \
 			graphics/jpeg
 RUN_DEPENDS =		devel/desktop-file-utils
 
-WANTLIB += c m pthread ffi iodbc unique-1.0 gtkglext-x11-1.0 gdkglext-x11-1.0
+WANTLIB += c m pthread ffi iodbc unique-1.0
 
 #WRKDIST =		${WRKDIR}/racket-$V
 WRKDIST =		${WRKDIR}/racket-$V/racket
