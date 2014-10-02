@@ -16,13 +16,16 @@ WANTLIB += lib/inotify/inotify ${cWANTLIB}
 
 MODULES =		devel/gettext lang/python
 BUILD_DEPENDS =		devel/libtool \
-			lang/vala
+			lang/vala \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			${MODGNU_AUTOCONF_DEPENDS}
+
 RUN_DEPENDS = 		devel/py-simplejson
 LIB_DEPENDS = 		devel/libinotify \
 			net/seafile/ccnet
 
 USE_GMAKE =		Yes
-CONFIGURE_STYLE =	autoconf automake
+CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--disable-fuse \
 			--disable-server
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/inotify" \
@@ -46,12 +49,8 @@ post-extract:
 		server/gc/Makefile.am \
 		tests/Makefile.am
 
-pre-patch:
+pre-configure:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -fi
-
-pre-configure:
-	perl -pi -e 's,manage.py,${PREFIX}/bin/seahub-manage,g' \
-		${WRKSRC}/tools/seafile-admin
 
 .include <bsd.port.mk>

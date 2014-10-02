@@ -16,14 +16,17 @@ WANTLIB += searpc sqlite3 ssl uuid z zdb
 
 MODULES =		devel/gettext lang/python
 BUILD_DEPENDS =		devel/libtool \
-			lang/vala
+			lang/vala \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			${MODGNU_AUTOCONF_DEPENDS}
+
 LIB_DEPENDS =		databases/libzdb \
 			devel/libevent2 \
 			sysutils/e2fsprogs \
 			net/seafile/libsearpc
 
 USE_GMAKE =		Yes
-CONFIGURE_STYLE =	autoconf automake
+CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	CPPFLAGS=-I${LOCALBASE}/include \
 			LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS += 	--enable-server \
@@ -42,7 +45,7 @@ post-extract:
 		net/server/Makefile.am
 
 
-pre-patch:
+pre-configure:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -fi
 
