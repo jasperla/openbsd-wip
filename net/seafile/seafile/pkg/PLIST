@@ -28,7 +28,7 @@ lib/python${MODPY_VERSION}/site-packages/seaserv/api.pyo
 lib/python${MODPY_VERSION}/site-packages/seaserv/service.py
 lib/python${MODPY_VERSION}/site-packages/seaserv/service.pyc
 lib/python${MODPY_VERSION}/site-packages/seaserv/service.pyo
-@man man/man1/ccnet.1
+@comment man/man1/ccnet.1
 @man man/man1/seaf-cli.1
 @man man/man1/seaf-daemon.1
 @comment man/man1/seafile-applet.1
