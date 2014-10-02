@@ -27,9 +27,9 @@ FLAVORS =	mysql postgresql
 FLAVOR ?=
 
 .if ${FLAVOR:Mmysql}
-LIB_DEPENDS+=   databases/mysql
+LIB_DEPENDS+=   databases/mariadb
 WANTLIB += lib/mysql/mysqlclient
-WANTLIB += crypto m ssl z
+WANTLIB += crypto m ssl stdc++ z
 CONFIGURE_ARGS+= --with-mysql
 .endif
 
@@ -42,8 +42,9 @@ CONFIGURE_ARGS+= --with-postgresql
 
 do-test:
 	${WRKBUILD}/test/exception
-#	${WRKBUILD}/test/pool interactive test
 	${WRKBUILD}/test/select
 	${WRKBUILD}/test/unit
+# Next test requires manual steps for SQL server configuration.
+#	${WRKBUILD}/test/pool interactive test
 
 .include <bsd.port.mk>
