@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	${GH_TAGNAME}
 COMMENT =	tool to manage and automatically apply xrandr configurations
 DISTNAME =	xprofile-${GH_TAGNAME}
 CATEGORIES =	x11
+REVISION =	0
 
 HOMEPAGE =	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}
 
@@ -19,6 +20,8 @@ GH_COMMIT =	9b65bd0b681d6df1b7aadb01e4587e840f48c7c1
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes
+
+RUN_DEPENDS =	textproc/py-docutils
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/xprofile.1 ${PREFIX}/man/man1
