@@ -13,18 +13,21 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ffi glib-2.0 gobject-2.0 jansson pcre pthread
 
-MODULES =		devel/gettext \
-			lang/python
-BUILD_DEPENDS = 	devel/libtool
+MODULES =		devel/gettext lang/python
+
+BUILD_DEPENDS = 	devel/libtool \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			${MODGNU_AUTOCONF_DEPENDS}
+
 LIB_DEPENDS =		devel/glib2 \
 			devel/jansson
 
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
-CONFIGURE_STYLE =	autoconf automake
+CONFIGURE_STYLE =	gnu
 
-AUTOCONF_VERSION =	2.63
-AUTOMAKE_VERSION =	1.11
+AUTOCONF_VERSION =	2.61
+AUTOMAKE_VERSION =	1.9
 
 MODPY_ADJ_FILES = 	lib/searpc-codegen.py pysearpc/pygencode.py
 
