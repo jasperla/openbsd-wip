@@ -24,7 +24,7 @@ BUILD_DEPENDS=		devel/libtool \
 			${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS}
 # used for tests
-BUILD_DEPENDS=		archivers/xz \
+BUILD_DEPENDS+=		archivers/xz \
 			net/curl
 LIB_DEPENDS=		devel/libev
 RUN_DEPENDS=		net/GeoIP
