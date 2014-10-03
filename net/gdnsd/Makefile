@@ -41,7 +41,7 @@ LIBTOOL_FLAGS=		--tag=disable-static
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-rundir=${VARBASE}/run/ \
-			--with-rootdir=${VARBASE}/gdnsd/
+			--with-rootdir=${VARBASE}/gdnsd
 CONFIGURE_ENV=		LIBEV_LIBS="-L${LOCALBASE}/lib -lev" \
 			LIBEV_CFLAGS="-I${LOCALBASE}/include"
 
@@ -59,6 +59,5 @@ post-install:
 	rm ${PREFIX}/lib/gdnsd/*.la
 	rm ${PREFIX}/share/doc/gdnsd/*.pod
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gdnsd/
-	${INSTALL_DATA} ${FILESDIR}/config ${PREFIX}/share/examples/gdnsd/
 
 .include <bsd.port.mk>
