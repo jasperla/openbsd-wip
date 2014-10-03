@@ -60,10 +60,6 @@ share/doc/gdnsd/gdnsd.txt
 share/doc/gdnsd/gdnsd.zonefile.txt
 share/doc/gdnsd/gdnsd_geoip_test.txt
 share/doc/gdnsd/gdnsd_manual.txt
-@unexec-delete rm -rf ${VARBASE}/gdnsd/
 share/examples/gdnsd/
 @sample ${VARBASE}/gdnsd/
-@sample ${VARBASE}/gdnsd/etc/
-share/examples/gdnsd/config
-@sample ${VARBASE}/gdnsd/etc/config
 @rcscript ${RCDIR}/gdnsd
