@@ -1,0 +1,14 @@
+$OpenBSD: patch-designer_designer_pro,v 1.2 2010/11/07 00:26:13 merdely Exp $
+Make sure local directory comes before system ones, to
+make sure that plugin is linked against the right library.
+ISSUE: http://sourceforge.net/p/qwt/patches/49
+--- designer/designer.pro.orig	Thu Sep 18 18:59:46 2014
++++ designer/designer.pro	Sun Oct  5 20:21:16 2014
+@@ -94,6 +94,7 @@ contains(QWT_CONFIG, QwtDesigner) {
+         else {
+ 
+             LIBS      += -L$${QWT_OUT_ROOT}/lib
++            QMAKE_LIBDIR = $${QWT_OUT_ROOT}/lib $$QMAKE_LIBDIR
+         }
+ 
+         qwtAddLibrary(qwt)
