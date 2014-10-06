@@ -21,10 +21,11 @@ MASTER_SITES =		${MASTER_SITE_PYPI:=d/dulwich/}
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
-TEST_DEPENDS =	devel/py-nose \
-		devel/py-gevent \
+TEST_DEPENDS =	${RUN_DEPENDS} \
+		devel/py-nose \
 		devel/git,-main
-RUN_DEPENDS =   devel/py-gevent
+RUN_DEPENDS =   devel/py-gevent \
+		net/py-geventhttpclient
 
 WANTLIB +=	${MODPY_WANTLIB}
 
