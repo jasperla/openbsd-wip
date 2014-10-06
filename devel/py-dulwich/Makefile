@@ -11,23 +11,22 @@ CATEGORIES =		devel
 HOMEPAGE =		http://samba.org/~jelmer/dulwich/
 
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
+
 # GPLv2
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB = pthread
+WANTLIB += pthread ${MODPY_WANTLIB}
 
 MASTER_SITES =		${MASTER_SITE_PYPI:=d/dulwich/}
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
-TEST_DEPENDS =	${RUN_DEPENDS} \
-		devel/py-nose \
-		devel/git,-main
-RUN_DEPENDS =   devel/py-gevent \
-		net/py-geventhttpclient
-
-WANTLIB +=	${MODPY_WANTLIB}
+TEST_DEPENDS =		${RUN_DEPENDS} \
+			devel/py-nose \
+			devel/git,-main
+RUN_DEPENDS =   	devel/py-gevent \
+			net/py-geventhttpclient
 
 do-test:
 	cd ${WRKSRC} && nosetests
