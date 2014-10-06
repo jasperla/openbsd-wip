@@ -2,7 +2,7 @@
 
 COMMENT =		stereoscopic 3D video player
 
-DISTNAME =		bino-1.4.4
+DISTNAME =		bino-1.6.0
 
 CATEGORIES =		x11
 
@@ -13,7 +13,7 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL GLEWmx QtGui QtOpenGL X11 ass avcodec avdevice avformat
+WANTLIB += GL GLEWmx GLU QtGui QtOpenGL X11 ass avcodec avdevice avformat
 WANTLIB += avutil c m openal pthread stdc++ swscale
 
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=bino/}
