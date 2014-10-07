@@ -20,7 +20,8 @@ MODULES =		lang/ocaml
 
 WANTLIB +=		c m
 
-BUILD_DEPENDS =		devel/ocaml-uutf
+RUN_DEPENDS =		devel/ocaml-uutf
+BUILD_DEPENDS =		${RUN_DEPENDS}
 
 CONFIGURE_STYLE =	oasis
 
