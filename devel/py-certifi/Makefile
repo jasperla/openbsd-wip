@@ -9,7 +9,7 @@ CATEGORIES =		devel security
 
 HOMEPAGE =		http://python-requests.org
 
-MAINTAINER =		Dmitrij D. Czarkoff
+MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
 
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes
