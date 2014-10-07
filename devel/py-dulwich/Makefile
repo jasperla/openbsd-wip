@@ -22,11 +22,15 @@ MASTER_SITES =		${MASTER_SITE_PYPI:=d/dulwich/}
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
+RUN_DEPENDS =		devel/py-gevent \
+			net/py-geventhttpclient
+
+# One test fails due to the lack of OpenStack SWIFT.
+# The other failed tests are related to this bug:
+# https://github.com/surfly/gevent/issues/446
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/py-nose \
 			devel/git,-main
-RUN_DEPENDS =		devel/py-gevent \
-			net/py-geventhttpclient
 
 do-test:
 	cd ${WRKSRC} && nosetests
