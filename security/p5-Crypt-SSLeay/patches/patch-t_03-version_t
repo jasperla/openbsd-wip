@@ -1,0 +1,12 @@
+$OpenBSD$
+--- t/03-version.t.orig	Tue Apr 22 15:32:52 2014
++++ t/03-version.t	Thu Oct  9 12:23:07 2014
+@@ -63,7 +63,7 @@ use Crypt::SSLeay::Version qw(
+     note $version;
+     like(
+         $version,
+-        qr/\AOpenSSL/,
++        qr/\A(Libre|Open)SSL/,
+         'openssl_version return value looks valid',
+     );
+ }
