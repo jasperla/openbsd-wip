@@ -4,8 +4,7 @@ SHARED_ONLY =		Yes
 
 COMMENT =		library to provide LWP https support via OpenSSL
 
-DISTNAME =		Crypt-SSLeay-0.64
-REVISION =		1
+DISTNAME =		Crypt-SSLeay-0.72
 
 CATEGORIES =		security
 
@@ -22,17 +21,18 @@ MODULES =		cpan
 # dependency for p5-Net-HTTP must be before
 # p5-LWP-Protcol-https must be present and
 # in this order to avoid looping dependencies
-BUILD_DEPENDS =		devel/p5-Try-Tiny>=0.9 \
+BUILD_DEPENDS =		devel/p5-Path-Class>=0.26 \
+			devel/p5-Try-Tiny>=0.19 \
 			security/p5-IO-Socket-SSL \
 			www/p5-LWP-Protocol-https>=6.02
 
-CONFIGURE_ARGS +=	--default --lib=/usr
+CONFIGURE_ARGS +=	--lib=/usr
 
 # Use make -D LIVE_TEST regress to run regression with live tests
+# --live_tests configure argument doesn't work.
+pre-test:
 .ifdef	LIVE_TEST
-CONFIGURE_ARGS +=	--live-tests
-.else
-CONFIGURE_ARGS +=	--no-live-tests
+	echo "network_tests	1" >${WRKSRC}/test.config
 .endif
 
 MODCPAN_EXAMPLES =	Yes
