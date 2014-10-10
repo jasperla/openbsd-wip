@@ -53,7 +53,7 @@ CONFIGURE_ARGS+=	--without-pgsql
 
 NO_TEST=		Yes
 
-post-patch:
+pre-configure:
 	perl -pi -e s,/usr/local/etc,${SYSCONFDIR},g \
 		${WRKSRC}/motion-dist.conf.in
 
