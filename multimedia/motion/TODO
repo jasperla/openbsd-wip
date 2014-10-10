@@ -1,0 +1,23 @@
+Default config (input is AFAIK set correctly for OpenBSD in the patched config
+file) and run "motion -s" - v4l2_select_input gets ENOTTY:
+
+[0] [NTC] [ALL] main: Thread 1 is device: /dev/video0 input 0
+[0] [NTC] [ALL] main: Stream port 8081
+[1] [NTC] [ALL] motion_init: Thread 1 started , motion detection Enabled
+[0] [NTC] [ALL] main: Waiting for threads to finish, pid: 25650
+[1] [ERR] [VID] BBBBB -885821122. conf 0. w 0 h 640
+[1] [NTC] [VID] vid_v4lx_start: Using videodevice /dev/video0 and input 0
+[1] [ERR] [VID] BCBCBC -885821122. dev 0.
+[1] [ERR] [VID] CCCCC -885821122. dev 0.
+[1] [NTC] [VID] v4l2_get_capability: 
+------------------------
+cap.driver: "uvideo0"
+cap.card: "Generic USB video class device"
+cap.bus_info: "usb"
+cap.capabilities=0x05000001
+------------------------
+[1] [NTC] [VID] v4l2_get_capability: - VIDEO_CAPTURE
+[1] [NTC] [VID] v4l2_get_capability: - READWRITE
+[1] [NTC] [VID] v4l2_get_capability: - STREAMING
+[1] [ERR] [VID] v4l2_select_input: Unable to query input 0. VIDIOC_ENUMINPUT, if you use a WEBCAM change input value in conf by -1: Inappropriate ioctl for device
+
