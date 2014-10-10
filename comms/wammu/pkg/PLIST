@@ -14,6 +14,8 @@ lib/python${MODPY_VERSION}/site-packages/Wammu/Calendar.py
 lib/python${MODPY_VERSION}/site-packages/Wammu/Calendar.pyc
 lib/python${MODPY_VERSION}/site-packages/Wammu/Composer.py
 lib/python${MODPY_VERSION}/site-packages/Wammu/Composer.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/ContactsXML.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/ContactsXML.pyc
 lib/python${MODPY_VERSION}/site-packages/Wammu/Data.py
 lib/python${MODPY_VERSION}/site-packages/Wammu/Data.pyc
 lib/python${MODPY_VERSION}/site-packages/Wammu/Displayer.py
@@ -99,18 +101,37 @@ man/cs/
 man/cs/man1/
 @man man/cs/man1/wammu-configure.1
 @man man/cs/man1/wammu.1
+man/da/
+man/da/man1/
+@man man/da/man1/wammu-configure.1
+@man man/da/man1/wammu.1
 man/de/
 man/de/man1/
 @man man/de/man1/wammu-configure.1
 @man man/de/man1/wammu.1
+man/en_GB/
+man/en_GB/man1/
+@man man/en_GB/man1/wammu-configure.1
+@man man/en_GB/man1/wammu.1
 man/es/
 man/es/man1/
 @man man/es/man1/wammu-configure.1
 @man man/es/man1/wammu.1
+man/et/
+man/et/man1/
+@man man/et/man1/wammu-configure.1
+@man man/et/man1/wammu.1
 man/fr/
 man/fr/man1/
 @man man/fr/man1/wammu-configure.1
 @man man/fr/man1/wammu.1
+man/hu/
+man/hu/man1/
+@man man/hu/man1/wammu.1
+man/id/
+man/id/man1/
+@man man/id/man1/wammu-configure.1
+@man man/id/man1/wammu.1
 man/it/
 man/it/man1/
 @man man/it/man1/wammu-configure.1
@@ -133,6 +154,14 @@ man/sk/
 man/sk/man1/
 @man man/sk/man1/wammu-configure.1
 @man man/sk/man1/wammu.1
+man/tr/
+man/tr/man1/
+@man man/tr/man1/wammu-configure.1
+@man man/tr/man1/wammu.1
+man/uk/
+man/uk/man1/
+@man man/uk/man1/wammu-configure.1
+@man man/uk/man1/wammu.1
 share/Wammu/
 share/Wammu/images/
 share/Wammu/images/icons/
@@ -156,10 +185,13 @@ share/Wammu/images/misc/downarrow.png
 share/Wammu/images/misc/error.png
 share/Wammu/images/misc/phonewizard.png
 share/Wammu/images/misc/uparrow.png
+share/appdata/
+share/appdata/wammu.appdata.xml
 share/applications/wammu.desktop
 share/locale/af/LC_MESSAGES/wammu.mo
 share/locale/ar/LC_MESSAGES/wammu.mo
 share/locale/bg/LC_MESSAGES/wammu.mo
+share/locale/bn/LC_MESSAGES/wammu.mo
 share/locale/ca/LC_MESSAGES/wammu.mo
 share/locale/cs/LC_MESSAGES/wammu.mo
 share/locale/da/LC_MESSAGES/wammu.mo
@@ -179,11 +211,13 @@ share/locale/ko/LC_MESSAGES/wammu.mo
 share/locale/nl/LC_MESSAGES/wammu.mo
 share/locale/pl/LC_MESSAGES/wammu.mo
 share/locale/pt_BR/LC_MESSAGES/wammu.mo
+share/locale/ro/LC_MESSAGES/wammu.mo
 share/locale/ru/LC_MESSAGES/wammu.mo
 share/locale/sk/LC_MESSAGES/wammu.mo
 share/locale/sv/LC_MESSAGES/wammu.mo
 share/locale/sw/LC_MESSAGES/wammu.mo
 share/locale/tr/LC_MESSAGES/wammu.mo
+share/locale/uk/LC_MESSAGES/wammu.mo
 share/locale/zh_CN/LC_MESSAGES/wammu.mo
 share/locale/zh_TW/LC_MESSAGES/wammu.mo
 share/pixmaps/
