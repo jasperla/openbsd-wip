@@ -12,7 +12,9 @@ PERMIT_PACKAGE_CDROM =	 Yes
 
 MODULES =	cpan
 
-RUN_DEPENDS=	p5-IO-Socket-SSL-*|p5-Crypt-SSLeay-*:security/p5-IO-Socket-SSL \
+# security/p5-Crypt-SSLeay cannot verify hostnames.
+# IO-Socket-SSL should be used in most cases.
+RUN_DEPENDS=	security/p5-IO-Socket-SSL \
 		www/p5-URI
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
