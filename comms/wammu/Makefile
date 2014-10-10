@@ -2,7 +2,7 @@
 
 COMMENT =		Gnu All Mobile Management Utilities GUI
 
-MODPY_EGG_VERSION = 	0.36
+MODPY_EGG_VERSION = 	0.37
 DISTNAME =		wammu-${MODPY_EGG_VERSION}
 
 CATEGORIES =		comms x11
