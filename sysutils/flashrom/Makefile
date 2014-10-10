@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT=	flash-ROM programmer for BIOS etc
 
-DISTNAME=	flashrom-0.9.6.1
+DISTNAME=	flashrom-0.9.7
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	sysutils
@@ -14,7 +14,7 @@ HOMEPAGE=	http://www.flashrom.org/
 # GPLv2 (only, for most files)
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c ftdi usb z
+WANTLIB=	c ftdi pthread usb z
 
 MASTER_SITES=	http://download.flashrom.org/releases/
 
