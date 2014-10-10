@@ -1,1 +1,51 @@
 See http://patchwork.coreboot.org/patch/1538/
+
+Index: sysutils/pciutils/patches/patch-lib_obsd-device_c
+===================================================================
+RCS file: /cvs/ports/sysutils/pciutils/patches/patch-lib_obsd-device_c,v
+retrieving revision 1.5
+diff -u -p -r1.5 patch-lib_obsd-device_c
+--- sysutils/pciutils/patches/patch-lib_obsd-device_c	21 Aug 2014 08:02:56 -0000	1.5
++++ sysutils/pciutils/patches/patch-lib_obsd-device_c	10 Oct 2014 20:29:24 -0000
+@@ -51,3 +51,40 @@ $OpenBSD: patch-lib_obsd-device_c,v 1.5 
+        break;
+      }
+    return 1;
++@@ -113,19 +106,31 @@ obsd_write(struct pci_dev *d, int pos, byte *buf, int 
++   pi.pi_sel.pc_dev = d->dev;
++   pi.pi_sel.pc_func = d->func;
++ 
++-  pi.pi_reg = pos;
++-  pi.pi_width = len;
+++  pi.pi_reg = pos - (pos % 4);
+++  pi.pi_width = 4;
+++  pi.pi_data = 0xffffffff;
++ 
+++  /* Questionable read-modify-write cycle for non-32-bit writes */
+++  if (len != 4)
+++    if (ioctl(d->access->fd, PCIOCREAD, &pi) < 0)
+++      {
+++	/* Abort on any error because the write will contain garbage */
+++	d->access->error("obsd_read: ioctl(PCIOCREAD) failed");
+++	return 0;
+++      }
+++
++   switch (len)
++     {
++     case 1:
++-      pi.pi_data = buf[0];
+++      pi.pi_data &= ~(0xff << ((pos % 4) * 8));
+++      pi.pi_data |= buf[0] << ((pos % 4) * 8);
++       break;
++     case 2:
++-      pi.pi_data = ((u16 *) buf)[0];
+++      pi.pi_data &= ~(0xffff << ((pos % 4) * 8));
+++      pi.pi_data |= htole16(((u16 *) buf)[0]) << ((pos % 4) * 8);
++       break;
++     case 4:
++-      pi.pi_data = ((u32 *) buf)[0];
+++      pi.pi_data = htole32(((u32 *) buf)[0]);
++       break;
++     }
++ 
+
