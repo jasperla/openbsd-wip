@@ -6,19 +6,17 @@ GH_ACCOUNT=	Mr-Dave
 GH_PROJECT=	motion
 GH_COMMIT=	7cfdf13cd63378e45589650f7d20195cb7bf9936
 DISTNAME=	motion-0.20140910
-#DISTNAME=	sackmotion-motion-0fb31d6
-#WRKDIST=	${WRKDIR}/${DISTNAME}
 
 CATEGORIES=	multimedia
 
 HOMEPAGE=	http://www.lavrsen.dk/foswiki/bin/view/Motion/
 
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+
 # GPL (according to source files, v2 only. website says v2+).
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += SDL avcodec avformat avutil c jpeg m pthread sqlite3 swscale z
-
-#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=motion/}
 
 FLAVOR?=
 FLAVORS=		mysql pgsql
