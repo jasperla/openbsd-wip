@@ -1,6 +1,6 @@
 $OpenBSD$
---- motion-dist.conf.in.orig	Fri Oct 10 12:31:19 2014
-+++ motion-dist.conf.in	Fri Oct 10 12:31:57 2014
+--- motion-dist.conf.in.orig	Wed Sep 10 03:53:41 2014
++++ motion-dist.conf.in	Fri Oct 10 12:47:41 2014
 @@ -73,7 +73,10 @@ v4l2_palette 17
  
  # The video input to be used (default: -1)
