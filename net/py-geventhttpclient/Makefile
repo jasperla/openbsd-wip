@@ -2,8 +2,8 @@
 
 COMMENT =		high performance, concurrent HTTP client library
 
-V =			1.1.0
-DISTNAME =		py-geventhttpclient-${V}
+MODPY_EGG_VERSION =	1.1.0
+DISTNAME =		py-geventhttpclient-${MODPY_EGG_VERSION}
 CATEGORIES =		net devel
 
 HOMEPAGE =		https://github.com/gwik/geventhttpclient
@@ -17,7 +17,7 @@ WANTLIB += pthread ${MODPY_WANTLIB}
 
 GH_ACCOUNT =		gwik
 GH_PROJECT =		geventhttpclient
-GH_TAGNAME =		v${V}
+GH_TAGNAME =		v${MODPY_EGG_VERSION}
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
