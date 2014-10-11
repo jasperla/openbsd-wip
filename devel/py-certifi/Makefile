@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =		python package for providing Mozilla CA Bundle
+COMMENT =		python package to check certificates using the OpenBSD CA
 
 MODPY_EGG_VERSION =	14.05.14
 DISTNAME =		certifi-${MODPY_EGG_VERSION}
