@@ -2,14 +2,13 @@
 
 COMMENT=		search and manage eBay accounts
 
-DISTNAME=		WWW-Ebay-0.096
+DISTNAME=		WWW-Ebay-1.003
 CATEGORIES=		www
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
-#USE_GROFF =		Yes
 
 RUN_DEPENDS=		security/p5-Crypt-SSLeay \
 			www/p5-HTML-Form \
