@@ -3,7 +3,7 @@
 COMMENT=	pure Perl HTTP proxy
 
 MODULES=	cpan
-DISTNAME=	HTTP-Proxy-0.300
+DISTNAME=	HTTP-Proxy-0.301
 CATEGORIES=	www
 
 MAINTAINER=	Sam Smith <s@msmith.net>
