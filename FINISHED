@@ -83,7 +83,7 @@ games/summoningwars	ready to import (pascal@), sent to ports 2014-07-14
 games/mars		ready to import (bcallah@)
 games/gnome-hearts	ready to import (bcallah@)
 editors/ne		ready to import (bcallah@)
-multimedia/p5-AMF-Connect		sent to ports@ 2014-10-07 (nigel)
+multimedia/p5-AMF-Connection		sent to ports@ 2014-10-07 (nigel)
 multimedia/p5-Storable-AMF		sent to ports@ 2014-10-07 (nigel)
 www/p5-IO-HTML		sent to ports@ 2014-10-07 (nigel)
 sysutils/sleuthkit		sent to ports@ 2014-10-08 (nigel)
