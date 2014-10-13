@@ -2,12 +2,14 @@
 
 COMMENT=	tool for extracting and gluing pcap (tcpdump) files
 
-DISTNAME=	tcpslice-2014.05.01
-PKGNAME=        ${DISTNAME:S/.//g}
+GH_ACCOUNT=	the-tcpdump-group
+GH_PROJECT=	tcpslice
+GH_COMMIT=	2837b722f0a6150971b327a252a59c64b24b9640
+
+DISTNAME=	tcpslice-20140501
 CATEGORIES=	net
 
 HOME_PAGE=	https://github.com/the-tcpdump-group/tcpslice
-MASTER_SITES=	http://www.tcpdump.org/weekly/
 
 MAINTAINER=	Nigel Taylor <nigel@openbsd.org>
 
