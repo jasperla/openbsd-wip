@@ -18,7 +18,7 @@ RUN_DEPENDS =	net/p5-Net-HTTP>=6 \
 
 # p5-Net-HTTP requires either p5-IO-Socket-SSL
 # or p5-Crypt-SSLeay ensure p5-IO-Socket-SSL
-# is first
+# is present
 BUILD_DEPENDS =	security/p5-IO-Socket-SSL>=1.54 \
 		${RUN_DEPENDS}
 
