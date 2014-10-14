@@ -26,6 +26,8 @@ BUILD_DEPENDS =		devel/p5-Path-Class>=0.26 \
 			security/p5-IO-Socket-SSL \
 			www/p5-LWP-Protocol-https>=6.02
 
+RUN_DEPENDS =		www/p5-LWP-Protocol-https>=6.02
+
 CONFIGURE_ARGS +=	--lib=/usr
 
 # Use make -D LIVE_TEST regress to run regression with live tests
