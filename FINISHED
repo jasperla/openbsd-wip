@@ -81,9 +81,7 @@ games/residualvm	ready to import (bentley@), sent to ports@ 2014-07-11
 x11/cegui		ready to import (pascal@), sent to ports 2014-07-14
 games/summoningwars	ready to import (pascal@), sent to ports 2014-07-14
 games/gnome-hearts	ready to import (bcallah@), sent to ports 2014-10-09
-editors/ne		ready to import (bcallah@), sent to ports 2014-10-12
 multimedia/p5-AMF-Connection		sent to ports@ 2014-10-07 (nigel)
 multimedia/p5-Storable-AMF		sent to ports@ 2014-10-07 (nigel)
 www/p5-IO-HTML		sent to ports@ 2014-10-07 (nigel)
 sysutils/sleuthkit		sent to ports@ 2014-10-08 (nigel)
-
