@@ -1,13 +1,5 @@
 @comment $OpenBSD$
 @bin bin/california
-share/doc/
-share/doc/california/
-share/doc/california/AUTHORS
-share/doc/california/COPYING
-share/doc/california/ChangeLog
-share/doc/california/INSTALL
-share/doc/california/NEWS
-share/doc/california/README
 share/appdata/
 share/appdata/california.appdata.xml
 share/applications/california.desktop
@@ -17,6 +9,13 @@ share/california/icons/Adwaita/
 share/california/icons/Adwaita/scalable/
 share/california/icons/Adwaita/scalable/actions/
 share/california/icons/Adwaita/scalable/actions/edit-symbolic.svg
+share/doc/california/
+share/doc/california/AUTHORS
+share/doc/california/COPYING
+share/doc/california/ChangeLog
+share/doc/california/INSTALL
+share/doc/california/NEWS
+share/doc/california/README
 share/glib-2.0/schemas/org.yorba.california.gschema.xml
 share/help/
 share/help/C/
