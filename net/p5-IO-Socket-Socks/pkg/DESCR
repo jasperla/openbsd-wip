@@ -1,2 +1,0 @@
-This module seeks to provide a full implementation of the SOCKS protocol
-while behaving like a regular socket as much as possible.
