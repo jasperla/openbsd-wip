@@ -256,6 +256,9 @@ post-install:
 	rm -Rf ${PREFIX}/share/texmf-dist/
 	rm -Rf ${PREFIX}/{man,info}
 
+	# Users should not use tlmgr (tex live package manager)
+	rm ${PREFIX}/bin/tlmgr
+
 	# translate some sylinks from ../texmf* to ../share/texmf*
 	for link in `find ${PREFIX}/bin -type l`; do \
 		dest=`stat -f %Y $${link}`; \
