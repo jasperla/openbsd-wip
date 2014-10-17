@@ -2,29 +2,31 @@ $OpenBSD: README,v 1.7 2014/01/11 18:46:52 edd Exp $
 
 Note: This is not a README for users.
 
+This needs to be rewritten.
+
 TeX Live 2014 - Porting progress
 ================================
 
  * Get base compilers working:			OK
  * Check *_ADJ					
  * Test build works.
-   -> amd64					
-   -> i386
+   -> amd64					OK
+   -> i386					OK
    -> sparc64
- * Do texmf split (use texscythe tool)	
- * Split out conTeXt (use grep)			
- * Move manuals and remove pdf manuals		
+ * Do texmf split (use texscythe tool)		OK
+ * Split out conTeXt (use grep)			I think not needed.
+ * Move manuals and remove pdf manuals		modify mk_openbsd_plists
    -> All texmf manuals in -minimal		
- * Remove external deps				
+ * Remove external deps				mk_openbsd_plists should do these
    -> texworks					
    -> latexmk					
    -> asymptote					
- * Remove windows junk				
+ * Remove windows junk				and this
  * Get basic texmf packaging:			
    -> tlpkg/ stuff not needed (and wont be present)
    -> beware errors in the tlpdb (yay)		
  * Re-add depenedencies:			
- * Hack texmf.cnf				
+ * Hack texmf.cnf				and texmfcnf.lua OK
  * Implement @xxx in plists			
  * emulate texlinks				
  * patch in interpreter paths			

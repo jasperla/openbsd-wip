@@ -9,8 +9,6 @@ COMMENT-buildset =	smallest texlive texmf for building ports
 # If you move things out of another texmf into the buildset, don't forget to:
 #   * Update the buildset conflict markers in PLIST-buildset.
 #   * Add a more restrictive RUN_DEPEND upon the buildset.
-REVISION-buildset =	2
-REVISION-main =		1
 
 DISTNAME =		texlive-${DIST_V}-texmf
 MASTER_SITES0 =		http://spacehopper.org/mirrors/ \
@@ -42,7 +40,7 @@ MODPY_RUNDEP =		No
 
 RUN_DEPENDS-main =	texlive_base-${V}:print/texlive/base
 # Some fonts moved from PLIST-main to PLIST-buildset
-RUN_DEPENDS-main +=	texlive_texmf-buildset->=2013p2:print/texlive/texmf,-buildset
+RUN_DEPENDS-main +=	texlive_texmf-buildset->=${V}:print/texlive/texmf,-buildset
 
 RUN_DEPENDS-full =	texlive_texmf-minimal-${V}:print/texlive/texmf,-main \
 			lang/python/${MODPY_VERSION}
