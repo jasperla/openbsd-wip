@@ -1,7 +1,13 @@
-@comment $OpenBSD$
-${P5SITE}/TeXLive/
-${P5SITE}/TeXLive/TLConfig.pm
-${P5SITE}/TeXLive/TLUtils.pm
+@comment $OpenBSD: PLIST,v 1.23 2014/01/11 18:46:52 edd Exp $
+@conflict teTeX_base-*
+@conflict pdfjam-*
+@conflict ht-<2
+@conflict texlive_texmf-buildset-<2013
+@pkgpath print/teTeX/base
+@pkgpath print/pdfjam
+@pkgpath print/teTeX/base,-fmt
+%%SHARED%%
+%%xindy%%
 @bin bin/afm2pl
 @bin bin/afm2tfm
 @bin bin/aleph
@@ -99,7 +105,6 @@ ${P5SITE}/TeXLive/TLUtils.pm
 @bin bin/tangle
 @bin bin/teckit_compile
 @bin bin/tex
-@bin bin/tex2xindy
 @bin bin/tex4ht
 @bin bin/tftopl
 @bin bin/tie
@@ -124,8 +129,6 @@ ${P5SITE}/TeXLive/TLUtils.pm
 @bin bin/xdvi-xaw
 @bin bin/xdvipdfmx
 @bin bin/xetex
-@lib lib/libkpathsea.so.${LIBkpathsea_VERSION}
-@lib lib/libptexenc.so.${LIBptexenc_VERSION}
 bin/a2ping
 bin/a5toa4
 bin/adhocfilelist
@@ -332,7 +335,6 @@ bin/texdoctk
 bin/texexec
 bin/texfot
 bin/texhash
-bin/texindy
 bin/texlinks
 bin/texliveonfly
 bin/texloganalyser
@@ -341,7 +343,6 @@ bin/texluac
 bin/texmfstart
 bin/texsis
 bin/thumbpdf
-bin/tlmgr
 bin/tpic2pdftex
 bin/ttf2kotexfont
 bin/typeoutfileinfo
@@ -356,8 +357,6 @@ bin/vpl2ovp
 bin/vpl2vpl
 bin/xdvi
 bin/xelatex
-bin/xindy
-bin/xindy.mem
 bin/xmltex
 include/kpathsea/
 include/kpathsea/absolute.h
@@ -414,3 +413,11 @@ lib/libkpathsea.la
 lib/libptexenc.a
 lib/libptexenc.la
 share/doc/pkg-readmes/${FULLPKGNAME}
+${P5SITE}/TeXLive/
+${P5SITE}/TeXLive/TLConfig.pm
+${P5SITE}/TeXLive/TLUtils.pm
+@exec mktexlsr > /dev/null 2>&1
+@unexec-delete rm -f %D/share/texmf-dist/ls-R
+@unexec-delete rm -f %D/share/texmf-var/ls-R
+@unexec-delete rm -f %D/share/texmf/ls-R
+@unexec-delete rm -f %D/share/texmf-local/ls-R
