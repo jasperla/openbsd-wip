@@ -9,10 +9,9 @@ ONLY_FOR_ARCHS =	i386 amd64 hppa mips64el powerpc
 
 COMMENT =		multi-paradigm programming language
 
-V =			6.1.0.8pre201409180241
+V =			6.1.0.900
 PKGNAME =		racket-$V
-#DISTNAME =		racket-$V-src-builtpkgs
-DISTNAME =		racket-$V-src-unix
+DISTNAME =		racket-$V-src-builtpkgs
 
 CATEGORIES =		lang
 HOMEPAGE =		http://racket-lang.org/
@@ -29,9 +28,11 @@ MASTER_SITES =		https://www.cs.utah.edu/plt/installers/${V}/ \
 			http://pre-release.racket-lang.org/installers/ \
 			http://pre.racket-lang.org/release/installers/ \
 			http://pre.racket-lang.org/installers/ \
+			https://www.cs.utah.edu/plt/snapshots/current/installers/ \
+			http://plt.eecs.northwestern.edu/snapshots/current/installers/ \
 			http://download.tuxfamily.org/jod/lang/racket/ \
 			ftp://download.tuxfamily.org/jod/lang/racket/
-EXTRACT_SUFX = .tar.lz
+EXTRACT_SUFX =		.tgz
 
 MODULES +=		converters/libiconv
 
@@ -48,8 +49,7 @@ RUN_DEPENDS =		devel/desktop-file-utils
 
 WANTLIB += c m pthread ffi iodbc unique-1.0
 
-#WRKDIST =		${WRKDIR}/racket-$V
-WRKDIST =		${WRKDIR}/racket-$V/racket
+WRKDIST =		${WRKDIR}/racket-$V
 WRKSRC =		${WRKDIST}/src
 
 # The tests are installed from raco as a package

@@ -1,2 +1,0 @@
-Dependency for net/geventhttpclient. Ready to be committed, although useless
-without net/geventhttpclient and devel/py-dulwich.
