@@ -10,7 +10,7 @@ the effort to port racket to other platforms.
     If any of these macros are left undefined for a particular CPU,
     C macros are used.  */
  
-+/* These days only i386 and amd64 are tested */
++/* These days only i386 and amd64 are widely tested */
 +#if !defined(__i386__) || !defined(__x86_64__)
 +# define MZ_GMP_NO_ASM 1
 +# define NO_ASM 1
