@@ -1,9 +1,0 @@
-@comment $OpenBSD$
-@bin bin/lookat
-@man man/man1/lookat.1
-share/doc/lookat/
-share/doc/lookat/README
-share/examples/lookat/
-share/examples/lookat/blue_config.cfg
-share/examples/lookat/lookat.conf.default
-@sample ${SYSCONFDIR}/lookat.conf
