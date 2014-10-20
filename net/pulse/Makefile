@@ -1,6 +1,7 @@
 # $OpenBSD: Makefile.template,v 1.71 2014/07/10 12:33:17 sthen Exp $
 
-# XXX this build downloads moving target dependencies during the build.
+# XXX This uses godep to statically build in go libs:
+# http://www.goinggo.net/2013/10/manage-dependencies-with-godep.html
 
 COMMENT =		distributed file synchroniser
 V =			0.10.2
