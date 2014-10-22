@@ -2,7 +2,7 @@
 
 COMMENT =		Grab TV Listings in XML format
 
-DISTNAME =		xmltv-0.5.65
+DISTNAME =		xmltv-0.5.66
 CATEGORIES =		multimedia
 
 HOMEPAGE =		http://wiki.xmltv.org/index.php/Main_Page
@@ -35,6 +35,7 @@ RUN_DEPENDS =	archivers/p5-Archive-Zip \
 		textproc/p5-XML-LibXML \
 		textproc/p5-XML-LibXSLT \
 		textproc/p5-XML-Simple \
+		textproc/p5-XML-TreePP \
 		p5-XML-Parser->=2.34:textproc/p5-XML-Parser \
 		p5-XML-Twig->=3.10:textproc/p5-XML-Twig \
 		p5-XML-Writer->=0.46:textproc/p5-XML-Writer \
