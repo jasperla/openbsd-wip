@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.5 2014/04/24 11:15:30 sthen Exp $
+bin/inline2test
+${P5SITE}/Test/Inline/
+${P5SITE}/Test/Inline.pm
+${P5SITE}/Test/Inline/Content/
+${P5SITE}/Test/Inline/Content.pm
+${P5SITE}/Test/Inline/Content/Default.pm
+${P5SITE}/Test/Inline/Content/Legacy.pm
+${P5SITE}/Test/Inline/Content/Simple.pm
+${P5SITE}/Test/Inline/Extract.pm
+${P5SITE}/Test/Inline/IO/
+${P5SITE}/Test/Inline/IO/File.pm
+${P5SITE}/Test/Inline/Script.pm
+${P5SITE}/Test/Inline/Section.pm
+${P5SITE}/Test/Inline/Util.pm
+@man man/man1/inline2test.1
+@man man/man3p/Test::Inline.3p
+@man man/man3p/Test::Inline::Content.3p
+@man man/man3p/Test::Inline::Content::Default.3p
+@man man/man3p/Test::Inline::Content::Legacy.3p
+@man man/man3p/Test::Inline::Content::Simple.3p
+@man man/man3p/Test::Inline::Extract.3p
+@man man/man3p/Test::Inline::IO::File.3p
+@man man/man3p/Test::Inline::Script.3p
+@man man/man3p/Test::Inline::Section.3p
