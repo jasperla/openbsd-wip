@@ -9,7 +9,6 @@ CATEGORIES=		www
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
-#USE_GROFF =		Yes
 
 RUN_DEPENDS=		converters/p5-DateManip \
 			devel/p5-File-Slurp \
