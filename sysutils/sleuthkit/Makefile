@@ -5,7 +5,7 @@ COMMENT=		forensic toolkit based on TCT
 DISTNAME=		sleuthkit-4.1.3
 CATEGORIES=		sysutils security
 
-SHARED_LIBS=		tsk 11.1
+SHARED_LIBS=		tsk	0.0	# 12.0
 
 HOMEPAGE=		http://www.sleuthkit.org/
 
