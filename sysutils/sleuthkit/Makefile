@@ -24,7 +24,6 @@ CONFIGURE_ARGS =	--mandir=${PREFIX}/man \
 			--disable-java \
 			--without-afflib \
 			--without-libewf
-#USE_GROFF =		Yes
 
 RUN_DEPENDS=		converters/p5-DateManip
 
