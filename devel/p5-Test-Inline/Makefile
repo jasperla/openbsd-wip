@@ -6,11 +6,10 @@ MODULES=	cpan
 DISTNAME=	Test-Inline-2.213
 CATEGORIES=	devel
 
-# Artistic
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 
 RUN_DEPENDS=	devel/p5-Algorithm-Dependency \
-		devel/p5-Class-Autouse \
 		devel/p5-Config-Tiny \
 		devel/p5-File-chmod \
 		devel/p5-File-Find-Rule \
