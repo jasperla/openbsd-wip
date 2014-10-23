@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT=	Implements symbolic and ls chmod modes
+COMMENT=	implements symbolic and ls chmod modes
 
 MODULES=	cpan
 DISTNAME=	File-chmod-0.40
