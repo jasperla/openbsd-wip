@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-@conflict p5-libwww-<6.0
-${P5SITE}/HTTP/Negotiate.pm
-@man man/man3p/HTTP::Negotiate.3p
