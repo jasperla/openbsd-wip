@@ -11,12 +11,12 @@ MAINTAINER=	Sean Comeau <scomeau@obscurity.org>
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS=	www/p5-libwww \
-		textproc/p5-XML-Parser
+RUN_DEPENDS=		www/p5-libwww \
+			textproc/p5-XML-Parser
 TEST_DEPENDS=	www/mod_perl \
-		devel/p5-DateTime-Format-ISO8601 \
-		devel/p5-Net-Server \
-		devel/p5-Test-Pod \
-		devel/p5-Test-Pod-Coverage
+			devel/p5-DateTime-Format-ISO8601 \
+			devel/p5-Net-Server \
+			devel/p5-Test-Pod \
+			devel/p5-Test-Pod-Coverage
 
 .include <bsd.port.mk>
