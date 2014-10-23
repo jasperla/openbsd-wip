@@ -6,7 +6,7 @@
 @bin bin/blkstat
 @comment bin/disk_sreset
 @comment bin/disk_stat
-@bin bin/fcat
+@comment bin bin/fcat
 @bin bin/ffind
 @bin bin/fiwalk
 @bin bin/fls
