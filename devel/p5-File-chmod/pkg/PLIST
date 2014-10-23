@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/File/
-${P5SITE}/File/chmod.pm
-@man man/man3p/File::chmod.3p

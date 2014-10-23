@@ -1,3 +1,0 @@
-Embedding tests allows tests to be placed near the code its testing.
-This is a nice supplement to the traditional .t files. It's like XUnit,
-Perl-style.
