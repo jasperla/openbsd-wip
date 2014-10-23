@@ -79,8 +79,4 @@ textproc/p5-Text-Balanced	ready to import, sent to ports@ 2014-05-23
 productivity/taskd      should be ready, waiting for feedback at ports@ 2014-06-24 (viq)
 games/residualvm	ready to import (bentley@), sent to ports@ 2014-07-11
 games/gnome-hearts	ready to import (bcallah@), sent to ports 2014-10-09
-multimedia/p5-AMF-Connection		sent to ports@ 2014-10-07 (nigel)
-multimedia/p5-Storable-AMF		sent to ports@ 2014-10-07 (nigel)
-www/p5-IO-HTML		sent to ports@ 2014-10-07 (nigel)
 sysutils/sleuthkit		sent to ports@ 2014-10-08 (nigel)
-graphics/dpic		sent to ports@ 2014-10-14 (nigel)
