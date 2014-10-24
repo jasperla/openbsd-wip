@@ -35,7 +35,8 @@ USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-ocamlgraph --with-oUnit
 
-ALL_TARGET =		all #doc seems broken, needs texlive_texmf-full, graphviz and hevea
+#doc seems broken, needs texlive_texmf-full, graphviz and hevea
+ALL_TARGET =		all
 
 
 post-extract:

@@ -39,7 +39,9 @@ do-install:
 		${WRKSRC}/pkg/META \
 		${ALL_TARGET:S|^|${WRKSRC}/_build/src/|}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml-${NAME}/api
-	${INSTALL_DATA} ${WRKDIST}/{README,CHANGES}.md ${PREFIX}/share/doc/ocaml-${NAME}/
+	${INSTALL_DATA} \
+		${WRKDIST}/{README,CHANGES}.md \
+		${PREFIX}/share/doc/ocaml-${NAME}/
 	${INSTALL_DATA} ${WRKDIST}/doc/* ${PREFIX}/share/doc/ocaml-${NAME}/api/
 
 

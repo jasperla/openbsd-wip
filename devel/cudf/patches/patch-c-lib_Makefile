@@ -1,4 +1,4 @@
-0;95;0c$OpenBSD$
+$OpenBSD$
 - OpenBSD doesn't need libdl
 - use pkg-config to find glib libs
 - make sure libcamlrun.a is writable after copying it from system libs
