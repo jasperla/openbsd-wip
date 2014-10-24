@@ -30,4 +30,4 @@ consequence is that you can define your own data structure
 for graphs and yet re-use all the algorithms from this
 library -- you only need to provide a few operations such as
 iterating over all vertices, over the successors of a
-vertex, etc. See module Path for an example. 
+vertex, etc. See module Path for an example.
