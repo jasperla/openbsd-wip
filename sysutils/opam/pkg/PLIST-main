@@ -5,7 +5,6 @@ bin/opam-admin.top
 @bin bin/opam-installer
 @man man/man1/opam-admin-check.1
 @man man/man1/opam-admin-depexts.1
-@man man/man1/opam-admin-libs.1
 @man man/man1/opam-admin-make.1
 @man man/man1/opam-admin-stats.1
 @man man/man1/opam-admin.1
