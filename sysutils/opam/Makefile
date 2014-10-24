@@ -7,11 +7,10 @@ COMMENT-lib =		OPAM library
 
 CATEGORIES =		sysutils devel
 
-V =			1.2.0rc3
+V =			1.2.0
 GH_ACCOUNT =		ocaml
 GH_PROJECT =		opam
-GH_TAGNAME =		1.2.0-rc2
-GH_COMMIT =		3527946ba13a02aa08ed07e175c5c617d83f66f6
+GH_TAGNAME =		${V}
 DISTNAME =		${GH_PROJECT}-${V}
 
 PKGNAME-main =		opam-${V}

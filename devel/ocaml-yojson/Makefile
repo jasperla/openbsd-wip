@@ -19,7 +19,8 @@ MODULES =		lang/ocaml
 WANTLIB =		c m
 BUILD_DEPENDS =		sysutils/findlib \
 			devel/ocaml-cppo \
-			devel/ocaml-biniou
+			devel/ocaml-biniou \
+			devel/ocaml-easy-format
 
 #CONFIGURE_STYLE =	gnu
 
