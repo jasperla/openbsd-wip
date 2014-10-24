@@ -1,12 +1,13 @@
 @comment $OpenBSD: PLIST,v 1.7 2009/01/05 22:15:56 rui Exp $
 @conflict ja-jvim-*
+@conflict freeze-*
 @bin bin/blkcalc
 @bin bin/blkcat
 @bin bin/blkls
 @bin bin/blkstat
 @comment bin/disk_sreset
 @comment bin/disk_stat
-@comment bin/fcat
+@bin bin/fcat
 @bin bin/ffind
 @bin bin/fiwalk
 @bin bin/fls
