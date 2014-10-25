@@ -1,5 +1,0 @@
-@comment $OpenBSD$
-%%dynlink%%
-lib/ocaml/cmdliner/cmdliner.a
-lib/ocaml/cmdliner/cmdliner.cmx
-lib/ocaml/cmdliner/cmdliner.cmxa

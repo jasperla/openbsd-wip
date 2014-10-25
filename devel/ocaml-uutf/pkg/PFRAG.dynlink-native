@@ -1,2 +1,0 @@
-@comment $OpenBSD$
-@bin lib/ocaml/uutf/uutf.cmxs

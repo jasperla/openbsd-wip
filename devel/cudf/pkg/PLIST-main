@@ -1,6 +1,0 @@
-@comment $OpenBSD$
-@bin bin/cudf-check
-@bin bin/cudf-parse-822
-include/cudf.h
-lib/libcudf.a
-lib/pkgconfig/cudf.pc
