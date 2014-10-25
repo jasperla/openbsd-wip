@@ -18,6 +18,8 @@ PERMIT_PACKAGE_CDROM =		Yes
 
 MODULES =	lang/ocaml
 
+BUILD_DEPENDS =	sysutils/findlib
+
 ALL_TARGET =	${NAME}.{cma,cmi,mli}
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mocaml_native}
