@@ -1,11 +1,11 @@
 # $OpenBSD$
 
+SHARED_LIBS =	microhttpd	0.0	# 33.0
+
 COMMENT =	small http server library
 
-VERSION =	0.9.22
+VERSION =	0.9.34
 DISTNAME =	libmicrohttpd-${VERSION}
-
-SHARED_LIBS =	microhttpd 0.4
 
 CATEGORIES =	www
 
@@ -16,17 +16,20 @@ MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM =	 Yes
 
-WANTLIB +=	gcrypt gmp gnutls gpg-error hogweed nettle p11-kit
-WANTLIB +=	pthread tasn1 z
+WANTLIB +=	ffi gcrypt gmp gnutls gpg-error hogweed nettle 
+WANTLIB +=	p11-kit pthread tasn1 z
 
 MASTER_SITES =	${MASTER_SITE_GNU:=libmicrohttpd/}
 
 MODULES =	devel/gettext
 
-LIB_DEPENDS +=	security/libgcrypt \
+LIB_DEPENDS +=	devel/libffi \
+		security/libgcrypt \
 		security/gnutls \
 		security/libgpg-error \
-		security/libtasn1
+		security/libnettle \
+		security/libtasn1 \
+		security/p11-kit
 
 BUILD_DEPENDS =	misc/zzuf \
 		net/curl \
@@ -37,7 +40,7 @@ CONFIGURE_ARGS +=	--with-gnutls
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-# should be 2.67
-AUTOCONF_VERSION =	2.67
+# should be 2.69
+AUTOCONF_VERSION =	2.69
 
 .include <bsd.port.mk>

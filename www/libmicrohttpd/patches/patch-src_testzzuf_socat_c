@@ -1,7 +1,7 @@
 $OpenBSD$
---- src/testzzuf/socat.c.orig	Mon Dec 20 20:16:56 2010
-+++ src/testzzuf/socat.c	Mon Mar  7 23:35:42 2011
-@@ -82,7 +82,7 @@ zzuf_socat_start ()
+--- src/testzzuf/socat.c.orig	Tue Feb 18 18:44:45 2014
++++ src/testzzuf/socat.c	Sun Oct 26 23:27:43 2014
+@@ -89,7 +89,7 @@ zzuf_socat_start ()
          }
        return;
      }

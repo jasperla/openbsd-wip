@@ -1,4 +1,4 @@
-Check for later version, this works
-appart from some tests, had problem with gnutls.
-Later version gnutls fails completely. See if newer versions
-have resolved this.
+Needs testing in use more.
+Latest version resolved some past issues.
+SSLv3 might be supported either disable, or
+gnutls might disable in later version.
