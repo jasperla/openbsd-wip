@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@bin bin/OpenVAS-Client
-@man man/man1/OpenVAS-Client.1

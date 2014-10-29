@@ -1,8 +1,0 @@
-OpenVAS security scanner client
-
-OpenVAS is a Network Security Scanner, a fork of the Nessus v2.
-
-The OpenVAS client can be used either as a gui interface or directly
-from the command line or batch mode. The client connects to the
-OpenVAS server which it gives instructions on the targets and which
-scans are to be performs.
