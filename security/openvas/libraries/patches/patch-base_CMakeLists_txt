@@ -1,12 +1,30 @@
 $OpenBSD$
---- base/CMakeLists.txt.orig	Thu Aug  9 11:07:32 2012
-+++ base/CMakeLists.txt	Wed Aug 22 15:14:10 2012
+--- base/CMakeLists.txt.orig	Thu Jul 31 07:40:13 2014
++++ base/CMakeLists.txt	Wed Oct 29 22:54:28 2014
 @@ -24,7 +24,7 @@
  
  ## Library
  
 -set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2 -fstack-protector -Wl,-z,relro -Wl,-z,now")
-+set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2 -fstack-protector") 
++set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2 -fstack-protector")
  
  if (NOT MINGW)
-   set (CMAKE_C_FLAGS_DEBUG        "${CMAKE_C_FLAGS_DEBUG}")
+   set (CMAKE_C_FLAGS_DEBUG        "${CMAKE_C_FLAGS_DEBUG} -Werror")
+@@ -104,7 +104,7 @@ add_custom_indent_targets (${FILES})
+ if (BUILD_SHARED)
+   add_executable (test-hosts test-hosts.c)
+   target_link_libraries (test-hosts openvas_base_shared ${GLIB_LDFLAGS} -lgcrypt
+-    "${GPGME_LDFLAGS}" -lgnutls "${PCAP_LDFLAGS}" -lresolv -lm ${WMI_LIBS}
++    "${GPGME_LDFLAGS}" -lgnutls "${PCAP_LDFLAGS}" -lm ${WMI_LIBS}
+     ${GPGME_LDFLAGS} ${LIBSSH_LDFLAGS} ${KSBA_LDFLAGS} ${WINCMD_LIBS}) 
+   set_target_properties (test-hosts PROPERTIES COMPILE_FLAGS
+     "${GLIB_CFLAGS} ${GPGME_CFLAGS} ${LIBSSH_CFLAGS} ${KSBA_CFLAGS}")
+@@ -112,7 +112,7 @@ endif (BUILD_SHARED)
+ if (BUILD_STATIC)
+   add_executable (test-hosts test-hosts.c)
+   target_link_libraries (test-hosts openvas_base_static ${GLIB_LDFLAGS} -lgcrypt
+-    "${GPGME_LDFLAGS}" -lgnutls "${PCAP_LDFLAGS}" -lresolv -lm ${WMI_LIBS}
++    "${GPGME_LDFLAGS}" -lgnutls "${PCAP_LDFLAGS}" -lm ${WMI_LIBS}
+     ${GPGME_LDFLAGS} ${LIBSSH_LDFLAGS} ${KSBA_LDFLAGS} ${WINCMD_LIBS}) 
+   set_target_properties (test-hosts PROPERTIES COMPILE_FLAGS
+     "${GLIB_CFLAGS} ${GPGME_CFLAGS} ${LIBSSH_CFLAGS} ${KSBA_CFLAGS}")
