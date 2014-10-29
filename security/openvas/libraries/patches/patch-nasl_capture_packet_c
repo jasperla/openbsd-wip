@@ -1,6 +1,6 @@
 $OpenBSD$
---- nasl/capture_packet.c.orig	Wed May 19 10:56:18 2010
-+++ nasl/capture_packet.c	Tue Nov 30 23:31:37 2010
+--- nasl/capture_packet.c.orig	Thu Jul 31 07:40:12 2014
++++ nasl/capture_packet.c	Wed Oct 29 22:36:13 2014
 @@ -17,8 +17,11 @@
   *
   */
@@ -14,11 +14,3 @@ $OpenBSD$
  
  #include "bpf_share.h"          /* for bpf_datalink */
  #include "pcap_openvas.h"       /* for get_datalink_size */
-@@ -27,6 +30,7 @@
- #include <pcap.h>
- 
- #include "capture_packet.h"
-+#include <netinet/in_systm.h>
- #include <netinet/ip.h>
- 
- extern int islocalhost (struct in_addr *);

@@ -1,23 +1,23 @@
 @comment $OpenBSD$
-%%SHARED%%
 @bin bin/openvas-nasl
+@bin bin/openvas-nasl-lint
 include/openvas/
 include/openvas/base/
 include/openvas/base/array.h
-include/openvas/base/certificate.h
 include/openvas/base/credentials.h
+include/openvas/base/cvss.h
 include/openvas/base/drop_privileges.h
-include/openvas/base/hash_table_util.h
+include/openvas/base/gpgme_util.h
 include/openvas/base/nvti.h
-include/openvas/base/openvas_certificate_file.h
+include/openvas/base/nvticache.h
+include/openvas/base/openvas_compress.h
 include/openvas/base/openvas_file.h
+include/openvas/base/openvas_hosts.h
+include/openvas/base/openvas_networking.h
 include/openvas/base/openvas_string.h
 include/openvas/base/pidfile.h
+include/openvas/base/pwpolicy.h
 include/openvas/base/settings.h
-include/openvas/base/severity_filter.h
-include/openvas/hg/
-include/openvas/hg/hg_utils.h
-include/openvas/hg/hosts_gatherer.h
 include/openvas/misc/
 include/openvas/misc/arglists.h
 include/openvas/misc/bpf_share.h
@@ -29,22 +29,15 @@ include/openvas/misc/network.h
 include/openvas/misc/nvt_categories.h
 include/openvas/misc/openvas_auth.h
 include/openvas/misc/openvas_logging.h
+include/openvas/misc/openvas_proctitle.h
 include/openvas/misc/openvas_server.h
 include/openvas/misc/openvas_ssh_login.h
 include/openvas/misc/openvas_uuid.h
-include/openvas/misc/otp.h
 include/openvas/misc/pcap_openvas.h
 include/openvas/misc/plugutils.h
 include/openvas/misc/popen.h
-include/openvas/misc/proctitle.h
-include/openvas/misc/rand.h
-include/openvas/misc/resolve.h
 include/openvas/misc/resource_request.h
 include/openvas/misc/scanners_utils.h
-include/openvas/misc/services.h
-include/openvas/misc/services1.h
-include/openvas/misc/share_fd.h
-include/openvas/misc/store.h
 include/openvas/misc/system.h
 include/openvas/misc/www_funcs.h
 include/openvas/nasl/
@@ -52,16 +45,12 @@ include/openvas/nasl/nasl.h
 include/openvas/omp/
 include/openvas/omp/omp.h
 include/openvas/omp/xml.h
-lib/libopenvas_base.a
-lib/libopenvas_hg.a
-lib/libopenvas_misc.a
-lib/libopenvas_nasl.a
-lib/libopenvas_omp.a
-lib/pkgconfig/
+@lib lib/libopenvas_base.so.${LIBopenvas_base_VERSION}
+@lib lib/libopenvas_misc.so.${LIBopenvas_misc_VERSION}
+@lib lib/libopenvas_nasl.so.${LIBopenvas_nasl_VERSION}
+@lib lib/libopenvas_omp.so.${LIBopenvas_omp_VERSION}
 lib/pkgconfig/libopenvas.pc
 share/man/
 share/man/man1/
 @man share/man/man1/openvas-nasl.1
 share/openvas/
-share/openvas/openvas-lsc-rpm-creator.sh
-share/openvas/openvas-services

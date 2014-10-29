@@ -1,7 +1,7 @@
 $OpenBSD$
---- CMakeLists.txt.orig	Thu Aug  9 11:07:32 2012
-+++ CMakeLists.txt	Wed Aug 22 15:05:15 2012
-@@ -162,7 +162,7 @@ endif (NOT DATADIR)
+--- CMakeLists.txt.orig	Thu Jul 31 13:06:37 2014
++++ CMakeLists.txt	Wed Oct 29 19:43:16 2014
+@@ -177,7 +177,7 @@ endif (NOT DATADIR)
  #endif (NOT SYSCONFDIR)
  
  set (OPENVAS_DATA_DIR    "${DATADIR}/openvas")
@@ -10,12 +10,3 @@ $OpenBSD$
  set (OPENVAS_LOG_DIR     "${LOCALSTATEDIR}/log/openvas")
  set (OPENVAS_CACHE_DIR   "${LOCALSTATEDIR}/cache/openvas")
  set (OPENVAS_PID_DIR     "${LOCALSTATEDIR}/run")
-@@ -363,7 +363,7 @@ configure_file (libopenvas.pc.in ${CMAKE_CURRENT_BINAR
- 
- ## Program
- 
--set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2 -fstack-protector -Wl,-z,relro -Wl,-z,now")
-+set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2 -fstack-protector")
- 
- set (CMAKE_C_FLAGS_DEBUG        "${CMAKE_C_FLAGS_DEBUG}")
- set (CMAKE_C_FLAGS              "${CMAKE_C_FLAGS} ${HARDENING_FLAGS} -Wall -Werror")
