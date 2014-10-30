@@ -1,4 +1,6 @@
 # $OpenBSD: Makefile,v 1.74 2014/03/17 23:22:02 sthen Exp $
+#
+# XXX apply diff to remove internal libs, see tl2013 in cvs
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
