@@ -26,5 +26,7 @@ post-install:
 				${WRKBUILD}/README.OpenBSD
 		${INSTALL_DATA} ${WRKBUILD}/README.OpenBSD \
 				${PREFIX}/share/doc/openvas
+		${INSTALL_SCRIPT} ${FILESDIR}/openvas-check-setup \
+				${PREFIX}/sbin
 
 .include <bsd.port.mk>
