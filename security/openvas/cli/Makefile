@@ -1,13 +1,13 @@
 # $OpenBSD$
 
 COMMENT =		OpenVAS security scanner cli
-DISTNAME =		openvas-cli-1.1.5
+DISTNAME =		openvas-cli-1.3.0
 # PKGNAME =		${DISTNAME}
 
-MASTER_SITES =		${MASTER_SITES_OPENVAS:=1131/}
+MASTER_SITES =		${MASTER_SITES_OPENVAS:=1633/}
 
 WANTLIB += assuan c glib-2.0 gnutls gpg-error gpgme openvas_base
-WANTLIB += openvas_hg openvas_misc openvas_nasl openvas_omp pthread
+WANTLIB += openvas_misc openvas_nasl openvas_omp pthread
 
 RUN_DEPENDS +=		print/htmldoc
 LIB_DEPENDS +=		security/openvas/libraries \

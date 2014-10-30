@@ -1,13 +1,12 @@
 $OpenBSD$
---- CMakeLists.txt.orig	Thu Jul 19 19:43:25 2012
-+++ CMakeLists.txt	Wed Aug 22 15:30:14 2012
-@@ -189,7 +189,8 @@ configure_file (VERSION.in VERSION)
+--- CMakeLists.txt.orig	Thu Apr 10 20:22:31 2014
++++ CMakeLists.txt	Thu Oct 30 00:07:25 2014
+@@ -210,7 +210,7 @@ configure_file (VERSION.in VERSION)
+ if (MINGW)
+   set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2")
+ else (MINGW)
+-  set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2 -fstack-protector -Wl,-z,relro -Wl,-z,now")
++  set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2 -fstack-protector ")
+ endif (MINGW)
  
- ## Program
- 
--set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2 -fstack-protector -Wl,-z,relro -Wl,-z,now")
-+## set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2 -fstack-protector -Wl,-z,relro -Wl,-z,now")
-+set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2 -fstack-protector")
- 
- set (CMAKE_C_FLAGS_DEBUG        "${CMAKE_C_FLAGS_DEBUG}")
- set (CMAKE_C_FLAGS              "${CMAKE_C_FLAGS} ${HARDENING_FLAGS} -Wall -Werror")
+ set (CMAKE_C_FLAGS_DEBUG        "${CMAKE_C_FLAGS_DEBUG} -Werror")
