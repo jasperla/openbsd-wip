@@ -1,7 +1,7 @@
 $OpenBSD$
---- tools/openvas-nvt-sync.in.orig	Wed Jun  8 13:22:08 2011
-+++ tools/openvas-nvt-sync.in	Wed Jun  8 22:42:43 2011
-@@ -118,7 +118,7 @@ do_help () {
+--- tools/openvas-nvt-sync.in.orig	Fri Jun  6 12:42:15 2014
++++ tools/openvas-nvt-sync.in	Thu Oct 30 00:23:38 2014
+@@ -140,7 +140,7 @@ do_help () {
  }
  
  CMD_RSYNC=`which rsync`
@@ -9,8 +9,8 @@ $OpenBSD$
 +CMD_MD5SUM=`which md5`
  CMD_WGET=`which wget`
  CMD_CURL=`which curl`
- TMP_NVT="$SYNC_TMP_DIR/openvas-feed-`date +%F`-$$.tar.bz2"
-@@ -149,7 +149,7 @@ chk_system_tools () {
+ CMD_GPG=`which gpg` # May become obsolete when migrate-to-private is removed
+@@ -177,7 +177,7 @@ chk_system_tools () {
  
    echo "[i] If you did not get any warnings, that means you have all tools required"
  
@@ -19,7 +19,7 @@ $OpenBSD$
  }
  
  do_rsync () {
-@@ -201,7 +201,7 @@ do_curl () {
+@@ -260,7 +260,7 @@ do_curl () {
  
  do_check_md5 () {
    if [ -z "CMD_MD5SUM" ]; then
@@ -28,7 +28,7 @@ $OpenBSD$
    else
      echo -n "[i] Checking dir: "
      eval "cd \"$NVT_DIR\""
-@@ -213,7 +213,7 @@ do_check_md5 () {
+@@ -272,7 +272,7 @@ do_check_md5 () {
        echo "ok"
      fi
      echo -n "[i] Checking MD5 checksum: "
