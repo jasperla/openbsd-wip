@@ -1,0 +1,12 @@
+$OpenBSD$
+--- tools/greenbone-certdata-sync.orig	Thu Jul 31 13:24:43 2014
++++ tools/greenbone-certdata-sync	Thu Oct 30 22:11:07 2014
+@@ -486,7 +486,7 @@ update_cert_db() {
+   then
+     for certfile in `ls $CERT_DIR/dfn-cert-*.xml`
+     do
+-      filedate=`stat -c "%Y" $certfile | cut -d " " -f 1 | tr -d "-"`
++      filedate=`stat -f "%m" $certfile | cut -d " " -f 1 | tr -d "-"`
+       filedate=$(( $filedate - ( $filedate % 60 ) ))
+       if [ $filedate -gt $DB_LASTUPDATE ]
+       then
