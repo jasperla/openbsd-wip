@@ -1,7 +1,7 @@
 $OpenBSD$
---- CMakeLists.txt.orig	Thu Aug  9 20:50:51 2012
-+++ CMakeLists.txt	Wed Aug 22 15:32:52 2012
-@@ -149,7 +149,7 @@ endif (NOT INCLUDEDIR)
+--- CMakeLists.txt.orig	Fri Aug  1 13:39:23 2014
++++ CMakeLists.txt	Thu Oct 30 01:12:07 2014
+@@ -159,7 +159,7 @@ endif (NOT INCLUDEDIR)
  #endif (NOT SYSCONFDIR)
  
  set (OPENVAS_DATA_DIR     "${DATADIR}/openvas")
@@ -10,21 +10,24 @@ $OpenBSD$
  set (OPENVAS_LOG_DIR      "${LOCALSTATEDIR}/log/openvas")
  set (OPENVAS_PID_DIR      "${LOCALSTATEDIR}/run")
  set (OPENVAS_SYSCONF_DIR  "${SYSCONFDIR}/openvas")
-@@ -243,7 +243,7 @@ configure_file (tools/openvas-scapdata-sync.in tools/o
+@@ -249,9 +249,9 @@ configure_file (tools/openvas-certdata-sync.in tools/o
  
  ## Program
  
 -set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2 -fstack-protector -Wl,-z,relro -Wl,-z,now")
 +set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2 -fstack-protector")
  
- set (CMAKE_C_FLAGS_DEBUG        "${CMAKE_C_FLAGS_DEBUG}")
- set (CMAKE_C_FLAGS              "${CMAKE_C_FLAGS} ${HARDENING_FLAGS} -Wall -Werror -D_BSD_SOURCE -D_ISOC99_SOURCE -D_SVID_SOURCE -D_FILE_OFFSET_BITS=64")
-@@ -263,7 +263,7 @@ enable_testing ()
- install (CODE "file (MAKE_DIRECTORY \$ENV{DESTDIR}${OPENVAS_STATE_DIR}/openvasmd/report_formats)")
+-set (CMAKE_C_FLAGS_DEBUG        "${CMAKE_C_FLAGS_DEBUG} -Werror")
++set (CMAKE_C_FLAGS_DEBUG        "${CMAKE_C_FLAGS_DEBUG} ")
+ set (CMAKE_C_FLAGS              "${CMAKE_C_FLAGS} ${HARDENING_FLAGS} -Wall -D_BSD_SOURCE -D_ISOC99_SOURCE -D_SVID_SOURCE -D_FILE_OFFSET_BITS=64")
+ 
+ add_subdirectory (src)
+@@ -266,7 +266,7 @@ install (CODE "file (MAKE_DIRECTORY \$ENV{DESTDIR}${OP
  
  install (FILES ${CMAKE_BINARY_DIR}/src/openvasmd_log.conf
+                ${CMAKE_SOURCE_DIR}/src/pwpolicy.conf
 -         DESTINATION ${OPENVAS_SYSCONF_DIR})
 +         DESTINATION ${OPENVAS_DATA_DIR})
  
- install (FILES src/report_formats/CPE/generate
-                src/report_formats/CPE/CPE.xsl
+ install (FILES src/report_formats/ARF/generate
+                src/report_formats/ARF/ARF.xsl

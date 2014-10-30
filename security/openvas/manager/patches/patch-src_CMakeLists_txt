@@ -1,7 +1,7 @@
 $OpenBSD$
---- src/CMakeLists.txt.orig	Mon Mar 26 10:08:16 2012
-+++ src/CMakeLists.txt	Tue Mar 27 01:31:37 2012
-@@ -25,7 +25,7 @@
+--- src/CMakeLists.txt.orig	Wed Apr 30 11:41:28 2014
++++ src/CMakeLists.txt	Thu Oct 30 00:50:15 2014
+@@ -26,7 +26,7 @@
  ## Libraries
  
  add_library (ovas-mngr-comm STATIC ovas-mngr-comm.c)

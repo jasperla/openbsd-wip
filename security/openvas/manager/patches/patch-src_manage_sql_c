@@ -1,7 +1,7 @@
 $OpenBSD$
---- src/manage_sql.c.orig	Mon Mar 26 10:08:16 2012
-+++ src/manage_sql.c	Tue Mar 27 01:49:45 2012
-@@ -38,7 +38,6 @@
+--- src/manage_sql.c.orig	Mon Sep  8 15:01:24 2014
++++ src/manage_sql.c	Thu Oct 30 00:59:39 2014
+@@ -40,7 +40,6 @@
  #include "sql.h"
  #include "tracef.h"
  
@@ -9,7 +9,7 @@ $OpenBSD$
  #include <assert.h>
  #include <ctype.h>
  #include <dirent.h>
-@@ -50,6 +49,9 @@
+@@ -54,6 +53,9 @@
  #include <string.h>
  #include <sys/stat.h>
  #include <sys/types.h>
@@ -19,7 +19,7 @@ $OpenBSD$
  #include <sys/wait.h>
  #include <unistd.h>
  #include <sys/time.h>
-@@ -917,12 +919,6 @@ iso_time (time_t *epoch_time)
+@@ -908,15 +910,6 @@ iso_time_internal (time_t *epoch_time, const char **ab
    static char time_string[100];
  
    tm = localtime (epoch_time);
@@ -27,6 +27,9 @@ $OpenBSD$
 -    {
 -      if (strftime (time_string, 98, "%FT%TZ", tm) == 0)
 -        return NULL;
+-
+-      if (abbrev)
+-        *abbrev = "UTC";
 -    }
 -  else
      {

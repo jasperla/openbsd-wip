@@ -1,7 +1,7 @@
 $OpenBSD$
---- src/manage.c.orig	Thu Aug  9 20:50:51 2012
-+++ src/manage.c	Tue Aug 21 14:22:14 2012
-@@ -37,7 +37,7 @@
+--- src/manage.c.orig	Mon Sep  8 15:01:24 2014
++++ src/manage.c	Thu Oct 30 00:50:15 2014
+@@ -38,7 +38,7 @@
   */
  
  /* time.h in glibc2 needs this for strptime. */
@@ -9,4 +9,4 @@ $OpenBSD$
 +#define _XOPEN_SOURCE 700
  
  #include "manage.h"
- #include "manage_sql.h"
+ #include "sql.h"
