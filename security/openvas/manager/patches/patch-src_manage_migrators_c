@@ -1,0 +1,11 @@
+$OpenBSD$
+--- src/manage_migrators.c.orig	Fri May 23 07:26:02 2014
++++ src/manage_migrators.c	Thu Oct 30 01:21:58 2014
+@@ -131,6 +131,7 @@
+ #include <sys/stat.h>
+ #include <ctype.h>
+ #include <dirent.h>
++#include <sys/wait.h>
+ 
+ #include "manage_sql.h"
+ #include "sql.h"
