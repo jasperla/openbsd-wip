@@ -1,5 +1,6 @@
 @comment $OpenBSD$
 sbin/greenbone-nvt-sync
+sbin/openvas-check-setup
 sbin/openvas-mkcert
 sbin/openvas-mkcert-client
 sbin/openvas-nvt-sync
