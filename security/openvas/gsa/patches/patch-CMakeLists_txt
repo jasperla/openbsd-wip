@@ -1,7 +1,7 @@
 $OpenBSD$
---- CMakeLists.txt.orig	Tue Aug  7 22:34:13 2012
-+++ CMakeLists.txt	Sun Oct  7 13:49:19 2012
-@@ -259,7 +259,7 @@ if (NOT DATADIR)
+--- CMakeLists.txt.orig	Fri Aug  1 13:45:25 2014
++++ CMakeLists.txt	Thu Oct 30 01:45:12 2014
+@@ -270,7 +270,7 @@ if (NOT DATADIR)
    set (DATADIR "${CMAKE_INSTALL_PREFIX}/share")
  endif (NOT DATADIR)
  
@@ -10,12 +10,21 @@ $OpenBSD$
  set (OPENVAS_LOG_DIR   "${LOCALSTATEDIR}/log/openvas")
  set (GSAD_PID_DIR   "${LOCALSTATEDIR}/run")
  set (GSA_DATA_DIR "${DATADIR}/openvas/gsa")
-@@ -393,7 +393,7 @@ install (FILES  src/html/img/os_aix.png
-          DESTINATION ${GSA_DATA_DIR}/img)
+@@ -492,7 +492,7 @@ install (FILES src/html/classic/img/cpe/other.png
+          DESTINATION ${GSA_DATA_DIR}/classic/img/cpe)
  
  install (FILES ${CMAKE_BINARY_DIR}/src/gsad_log.conf
 -         DESTINATION ${GSA_CONFIG_DIR})
 +         DESTINATION ${DATADIR}/openvas)
  
- ## Program
+ install (FILES ${CMAKE_CURRENT_BINARY_DIR}/cpe-icons.xml
+          DESTINATION ${GSA_DATA_DIR}/classic)
+@@ -501,7 +501,7 @@ install (FILES ${CMAKE_CURRENT_BINARY_DIR}/cpe-icons.x
  
+ set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2 -fstack-protector -Wl,-z,relro -Wl,-z,now")
+ 
+-set (CMAKE_C_FLAGS_DEBUG        "${CMAKE_C_FLAGS_DEBUG} -Werror")
++set (CMAKE_C_FLAGS_DEBUG        "${CMAKE_C_FLAGS_DEBUG} ")
+ set (CMAKE_C_FLAGS              "${CMAKE_C_FLAGS} ${HARDENING_FLAGS} -Wall")
+ 
+ add_subdirectory (src)

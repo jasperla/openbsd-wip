@@ -1,9 +1,9 @@
 $OpenBSD$
---- src/gsad.c.orig	Tue Aug  7 22:34:13 2012
-+++ src/gsad.c	Sun Oct  7 14:04:34 2012
-@@ -53,14 +53,14 @@
- #undef G_LOG_FATAL_MASK
- #define G_LOG_FATAL_MASK G_LOG_LEVEL_ERROR
+--- src/gsad.c.orig	Thu Aug  7 10:05:30 2014
++++ src/gsad.c	Thu Oct 30 01:51:08 2014
+@@ -55,14 +55,14 @@
+ 
+ #define _GNU_SOURCE /* for strcasecmp */
  
 -#include <arpa/inet.h>
  #include <assert.h>
@@ -16,9 +16,9 @@ $OpenBSD$
  #include <locale.h>
 -#include <netinet/in.h>
  #include <openvas/misc/openvas_logging.h>
+ #include <openvas/base/openvas_file.h>
  #include <openvas/base/pidfile.h>
- #include <openvas/misc/openvas_uuid.h>
-@@ -71,9 +71,11 @@
+@@ -73,9 +73,11 @@
  #include <stdio.h>
  #include <stdlib.h>
  #include <string.h>
@@ -31,7 +31,7 @@ $OpenBSD$
  #include <unistd.h>
  /* This must follow the system includes. */
  #include <microhttpd.h>
-@@ -87,12 +89,12 @@
+@@ -93,12 +95,12 @@
  /**
   * @brief Fallback GSAD port for HTTPS.
   */
@@ -46,7 +46,7 @@ $OpenBSD$
  
  /**
   * @brief Fallback unprivileged GSAD port.
-@@ -102,7 +104,7 @@
+@@ -108,7 +110,7 @@
  /**
   * @brief Fallback GSAD port.
   */
@@ -54,14 +54,14 @@ $OpenBSD$
 +#define DEFAULT_GSAD_REDIRECT_PORT 8080
  
  /**
-  * @brief Fallback Administrator port.
-@@ -3062,9 +3064,6 @@ gsad_init (void)
-   tracef ("Initializing the Greenbone Security Assistant...\n");
+  * @brief Fallback Manager port.
+@@ -143,7 +145,9 @@
+ /**
+  * @brief Libgcrypt thread callback definition.
+  */
++#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+ GCRY_THREAD_OPTION_PTHREAD_IMPL;
++#pragma GCC diagnostic error "-Wdeprecated-declarations"
  
-   /* Init Glib. */
--  if (!g_thread_supported ()) g_thread_init (NULL);
--  if (mutex == NULL)
--    mutex = g_mutex_new ();
-   users = g_ptr_array_new ();
- 
-   /* Check for required files. */
+ /**
+  * @brief Last resort HTML on failure to open "default_file".
