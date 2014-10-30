@@ -1,0 +1,66 @@
+$OpenBSD$
+--- tools/openvas-scapdata-sync.in.orig	Thu Jul 31 13:24:43 2014
++++ tools/openvas-scapdata-sync.in	Thu Oct 30 23:32:27 2014
+@@ -693,7 +693,7 @@ update_sec_db_private () {
+       then
+         for ovalfile in $oval_files_sorted_private
+         do
+-          filedate=`stat -c "%Y" "$ovalfile" | cut -d " " -f 1 | tr -d "-"`
++          filedate=`stat -f "%m" "$ovalfile" | cut -d " " -f 1 | tr -d "-"`
+           filedate=$(( $filedate - ( $filedate % 60 ) ))
+           if [ $filedate -gt $DB_LASTUPDATE ] || [ 1 = "$REBUILD_OVAL" ]
+           then
+@@ -795,7 +795,8 @@ update_sec_db_private () {
+     fi
+ 
+     # TODO: This is not quite accurate as it uses the timestamp of the non-private data.
+-    LAST_UPDATE_TIMESTAMP=`sed 's/^\(.\{8\}\)/\1 /' $TIMESTAMP | date +%s -f -`
++    tt=`cat $TIMESTAMP`
++    LAST_UPDATE_TIMESTAMP=`date -j %s $tt`
+ 
+     reset_sql_tries
+     until [ "$try_sql" -eq 0 ]
+@@ -814,7 +815,7 @@ update_sec_db () {
+   CPEBASE="$SCAP_DIR/official-cpe-dictionary_v2.2.xml"
+   if [ -e $CPEBASE ]
+   then
+-    filedate=`stat -c "%Y" "$CPEBASE" | cut -d " " -f 1 | tr -d "-"`
++    filedate=`stat -f "%m" "$CPEBASE" | cut -d " " -f 1 | tr -d "-"`
+     filedate=$(( $filedate - ( $filedate % 60 ) ))
+     if [ $filedate -gt $DB_LASTUPDATE ]
+     then
+@@ -848,13 +849,13 @@ update_sec_db () {
+   then
+     for cvefile in `ls $SCAP_DIR/nvdcve-2.0-*.xml`
+     do
+-      filedate=`stat -c "%Y" "$cvefile" | cut -d " " -f 1 | tr -d "-"`
++      filedate=`stat -f "%m" "$cvefile" | cut -d " " -f 1 | tr -d "-"`
+       filedate=$(( $filedate - ( $filedate % 60 ) ))
+       if [ $filedate -gt $DB_LASTUPDATE ]
+       then
+         echo "[i] Updating $cvefile"
+ 
+-        filesize=`stat -c "%s" "$cvefile"`
++        filesize=`stat -f "%z" "$cvefile"`
+         if [ "0" -ne "$SPLIT_PART_SIZE" ] && [ "$filesize" -gt $(($SPLIT_PART_SIZE * 1024))  ]
+         then
+           echo "[i] File is larger than ${SPLIT_PART_SIZE}k. Splitting into multiple parts"
+@@ -924,7 +925,7 @@ update_sec_db () {
+ 
+     for ovalfile in $oval_files_sorted
+     do
+-      filedate=`stat -c "%Y" "$ovalfile" | cut -d " " -f 1 | tr -d "-"`
++      filedate=`stat -f "%m" "$ovalfile" | cut -d " " -f 1 | tr -d "-"`
+       filedate=$(( $filedate - ( $filedate % 60 ) ))
+       if [ $filedate -gt $DB_LASTUPDATE ] || [ 1 = "$REBUILD_OVAL" ]
+       then
+@@ -978,7 +979,8 @@ update_sec_db () {
+   update_sec_db_private
+   update_cvss
+ 
+-  LAST_UPDATE_TIMESTAMP=`sed 's/^\(.\{8\}\)/\1 /' $TIMESTAMP | env TZ="UTC" date +%s -f -`
++  tt=`cat $TIMESTAMP`
++  LAST_UPDATE_TIMESTAMP=`env TZ="UTC" date -j +%s $tt`
+   reset_sql_tries
+   until [ "$try_sql" -eq 0 ]
+   do

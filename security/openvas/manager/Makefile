@@ -10,7 +10,9 @@ WANTLIB +=		c m pthread \
 			openvas_base openvas_misc openvas_nasl openvas_omp
 
 BUILD_DEPENDS +=	devel/doxygen
-RUN_DEPENDS +=		print/htmldoc
+RUN_DEPENDS +=		print/htmldoc \
+			net/rsync
+
 LIB_DEPENDS +=		security/openvas/libraries \
 			devel/glib2 \
 			security/gnutls \
