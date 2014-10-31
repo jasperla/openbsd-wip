@@ -20,4 +20,8 @@ LIB_DEPENDS +=		security/openvas/libraries \
 			security/libgpg-error \
 			security/gpgme
 
+# patch can't handle training binary....
+post-patch:
+			perl -i -pe 's/tty -s/test -t 0/g' ${WRKSRC}/tools/openvas-lsc-rpm-creator.sh
+
 .include <bsd.port.mk>
