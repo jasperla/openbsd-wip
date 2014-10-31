@@ -1,6 +1,15 @@
 $OpenBSD$
 --- tools/greenbone-scapdata-sync.orig	Thu Jul 31 13:24:43 2014
-+++ tools/greenbone-scapdata-sync	Thu Oct 30 22:13:19 2014
++++ tools/greenbone-scapdata-sync	Fri Oct 31 11:05:23 2014
+@@ -764,7 +764,7 @@ update_scap_db_private () {
+         fi
+       done
+ 
+-      for non_xml_file in `find "$SCAP_PRIVATE_DIR/oval/" -type f -and -not -name "*.xml" 2> /dev/null`
++      for non_xml_file in `find "$SCAP_PRIVATE_DIR/oval/" -type f -and ! -name "*.xml" 2> /dev/null`
+       do
+         if [ "${non_xml_file%%.asc}" = "${non_xml_file}" ] || ! [ -f "${non_xml_file%%.asc}" ]
+         then
 @@ -776,7 +776,7 @@ update_scap_db_private () {
        then
          for ovalfile in $oval_files_sorted_private

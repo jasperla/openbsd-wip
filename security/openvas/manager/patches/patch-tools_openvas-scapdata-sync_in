@@ -1,6 +1,15 @@
 $OpenBSD$
 --- tools/openvas-scapdata-sync.in.orig	Thu Jul 31 13:24:43 2014
-+++ tools/openvas-scapdata-sync.in	Thu Oct 30 23:32:27 2014
++++ tools/openvas-scapdata-sync.in	Fri Oct 31 11:04:43 2014
+@@ -681,7 +681,7 @@ update_sec_db_private () {
+         fi
+       done
+ 
+-      for non_xml_file in `find "$SCAP_PRIVATE_DIR/oval/" -type f -and -not -name "*.xml" 2> /dev/null`
++      for non_xml_file in `find "$SCAP_PRIVATE_DIR/oval/" -type f -and ! -name "*.xml" 2> /dev/null`
+       do
+         if [ "${non_xml_file%%.asc}" = "${non_xml_file}" ] || ! [ -f "${non_xml_file%%.asc}" ]
+         then
 @@ -693,7 +693,7 @@ update_sec_db_private () {
        then
          for ovalfile in $oval_files_sorted_private
