@@ -1,6 +1,6 @@
 $OpenBSD$
 --- tools/openvas-nvt-sync.in.orig	Fri Jun  6 12:42:15 2014
-+++ tools/openvas-nvt-sync.in	Thu Oct 30 00:23:38 2014
++++ tools/openvas-nvt-sync.in	Fri Oct 31 11:10:43 2014
 @@ -140,7 +140,7 @@ do_help () {
  }
  
@@ -19,6 +19,15 @@ $OpenBSD$
  }
  
  do_rsync () {
+@@ -191,7 +191,7 @@ do_rsync () {
+     # migration will become obsolete when OpenVAS 5 is retired
+     if [ ! -d "$NVT_DIR/$PRIVATE_SUBDIR" ]
+     then
+-      tty -s
++      test -t 0 
+       if [ 0 -eq "$?" ]
+       then
+         # interactive
 @@ -260,7 +260,7 @@ do_curl () {
  
  do_check_md5 () {
@@ -37,3 +46,12 @@ $OpenBSD$
      if [ $? -ne 0 ] ; then
        echo "not ok"
        echo "Error: md5sums not correct. Your NVT collection might be broken now."
+@@ -407,7 +407,7 @@ do_migrate_to_private () {
+   for fname in `find "$NVT_DIR/" -path "$NVT_DIR/$PRIVATE_SUBDIR/*" -prune \
+                                  -o \( \
+                                       -type f \
+-                                      -not \( \
++                                      ! \( \
+                                               -name "*.asc" \
+                                               -o -path "$NVT_DIR/md5sums" \
+                                               -o -path "$NVT_DIR/COPYING*" \
