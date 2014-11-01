@@ -28,6 +28,7 @@
 
 LOG=/tmp/openvas-check-setup.log
 CHECKVERSION=2.2.6
+OS=`uname -s`
 
 if [ "$1" = "--server" -o "$2" = "--server" ]
 then
@@ -157,7 +158,12 @@ check_failed ()
 # LOG start
 echo "openvas-check-setup $CHECKVERSION" > $LOG
 echo "  Mode:  $MODE" >> $LOG
-echo "  Date: " `date +"%a,%d %b %Y %H:%M:%S %z"` >> $LOG
+if [ $OS == "OpenBSD" ]
+then 
+  echo "  Date: " `env LC_TIME=en_US date +"%a, %d %b %Y %H:%M:%S %z"` >> $LOG
+else
+  echo "  Date: " `date -R"` >> $LOG
+fi
 echo "" >> $LOG
 
 
@@ -311,7 +317,12 @@ then
   log_and_print "ERROR: No OpenVAS Manager database found. (Tried: $TASKSDB)"
   log_and_print "FIX: Run 'openvasmd --rebuild' while OpenVAS Scanner is running."
 
-  OPENVASSD_RUNNING=`ps -Ax | grep "openvassd: [Ww]aiting for incoming connections" | grep -v grep | wc -l`
+  if [ $OS == "OpenBSD"]
+  then
+    OPENVASSD_RUNNING=`ps -Ax | grep "openvassd: [Ww]aiting for incoming connections" | grep -v grep | wc -l`
+  else
+    OPENVASSD_RUNNING=`ps -Af | grep "openvassd: [Ww]aiting for incoming connections" | grep -v grep | wc -l`
+  fi
   if [ $OPENVASSD_RUNNING -eq 0 ]
   then
     log_and_print "WARNING: OpenVAS Scanner is NOT running!" ;
@@ -325,8 +336,13 @@ echo "" >> $LOG
 log_and_print "OK: OpenVAS Manager database found in $TASKSDB."
 
 echo "Checking access rights of OpenVAS Manager database ..." >> $LOG
-TASKSDBPERMS=`stat -f "%p" "$TASKSDB"`
-if [ "$TASKSDBPERMS" != "100600" ]
+if [ $OS == "OpenBSD" ]
+then
+  TASKSDBPERMS=`stat -f "%0Lp" "$TASKSDB"`
+else
+  TASKSDBPERMS=`stat -c "%a" "$TASKSDB"`
+fi
+if [ "$TASKSDBPERMS" != "600" ]
 then
   log_and_print "ERROR: The access rights of the OpenVAS Manager database are incorrect."
   log_and_print "FIX: Run 'chmod 600 $TASKSDB'."
@@ -386,7 +402,12 @@ then
     log_and_print "ERROR: The number of NVTs in the OpenVAS Manager database is too low."
     log_and_print "FIX: Make sure OpenVAS Scanner is running with an up-to-date NVT collection and run 'openvasmd --rebuild'."
 
-    OPENVASSD_RUNNING=`ps -Ax | grep "openvassd: [Ww]aiting for incoming connections" | grep -v grep | wc -l`
+    if [ $OS == "OpenBSD" ]
+    then
+      OPENVASSD_RUNNING=`ps -Ax | grep "openvassd: [Ww]aiting for incoming connections" | grep -v grep | wc -l`
+    else
+      OPENVASSD_RUNNING=`ps -Af | grep "openvassd: [Ww]aiting for incoming connections" | grep -v grep | wc -l`
+    fi
     if [ $OPENVASSD_RUNNING -eq 0 ]
     then
       log_and_print "WARNING: OpenVAS Scanner is NOT running!" ;
@@ -638,7 +659,7 @@ echo "" >> $LOG
 
 if [ $HAVE_NETSTAT -eq 1 ]
 then
-  if [ uname == "OpenBSD" ]
+  if [ $OS == "OpenBSD" ]
   then
     fstat -n | grep 'internet stream tcp.*:[1-9]' | grep -v -e '--' 2>/dev/null >>$LOG
     OPENVASSD_HOST=`fstat -n | perl -n -e 'if (/openvassd .* tcp 0x0 ([*0-9][0-9\.]*):([1-9]\d+)$/) { print "$1\n"; }'' 
@@ -662,10 +683,13 @@ then
   fi
 
   case "$OPENVASSD_HOST" in
-    "*") log_and_print "OK: OpenVAS Scanner is running and listening on all interfaces." ;;
-    "0.0.0.0") log_and_print "OK: OpenVAS Scanner is running and listening on all interfaces." ;;
+    "0.0.0.0"|"*") log_and_print "OK: OpenVAS Scanner is running and listening on all interfaces." ;;
     "127.0.0.1") log_and_print "OK: OpenVAS Scanner is running and listening only on the local interface." ;;
-    "") OPENVASSD_PROC=`ps -Ax | grep "openvassd: [Ww]aiting for incoming connections" | grep -v grep | wc -l`
+    "") if [ $OS == "OpenBSD" ] 
+          OPENVASSD_PROC=`ps -Ax | grep "openvassd: [Ww]aiting for incoming connections" | grep -v grep | wc -l`
+        else
+          OPENVASSD_PROC=`ps -Af | grep "openvassd: [Ww]aiting for incoming connections" | grep -v grep | wc -l`
+        fi
         if [ $OPENVASSD_PROC -eq 0 ]
         then
           log_and_print "ERROR: OpenVAS Scanner is NOT running!" ;
@@ -687,8 +711,7 @@ then
   esac
 
   case "$OPENVASMD_HOST" in
-    "*") log_and_print "OK: OpenVAS Manager is running and listening on all interfaces." ;;
-    "0.0.0.0") log_and_print "OK: OpenVAS Manager is running and listening on all interfaces." ;;
+    "0.0.0.0"|*) log_and_print "OK: OpenVAS Manager is running and listening on all interfaces." ;;
     "127.0.0.1") log_and_print "WARNING: OpenVAS Manager is running and listening only on the local interface."
                  log_and_print "This means that you will not be able to access the OpenVAS Manager from the"
                  log_and_print "outside using GSD or OpenVAS CLI."
@@ -708,8 +731,7 @@ then
   if [ $ADMINISTRATOR_MAJOR != "0" ]
   then
     case "$OPENVASAD_HOST" in
-      "*") log_and_print "OK: OpenVAS Administrator is running and listening on all interfaces." ;;
-      "0.0.0.0") log_and_print "OK: OpenVAS Administrator is running and listening on all interfaces." ;;
+      "0.0.0.0"|*) log_and_print "OK: OpenVAS Administrator is running and listening on all interfaces." ;;
       "127.0.0.1") log_and_print "OK: OpenVAS Administrator is running and listening only on the local interface." ;;
       "") log_and_print "ERROR: OpenVAS Administrator is NOT running!"
           log_and_print "FIX: Start OpenVAS Administrator (openvasad)."
@@ -726,8 +748,7 @@ then
   fi
 
   case "$GSAD_HOST" in
-    "*") log_and_print "OK: Greenbone Security Assistant is running and listening on all interfaces." ;;
-    "0.0.0.0") log_and_print "OK: Greenbone Security Assistant is running and listening on all interfaces." ;;
+    "0.0.0.0"|*) log_and_print "OK: Greenbone Security Assistant is running and listening on all interfaces." ;;
     "127.0.0.1") log_and_print "WARNING: Greenbone Security Assistant is running and listening only on the local interface."
                  log_and_print "This means that you will not be able to access the Greenbone Security Assistant from the"
                  log_and_print "outside using a web browser."
