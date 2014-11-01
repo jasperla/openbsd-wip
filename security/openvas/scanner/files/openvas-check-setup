@@ -311,7 +311,7 @@ then
   log_and_print "ERROR: No OpenVAS Manager database found. (Tried: $TASKSDB)"
   log_and_print "FIX: Run 'openvasmd --rebuild' while OpenVAS Scanner is running."
 
-  OPENVASSD_RUNNING=`ps -Af | grep "openvassd: [Ww]aiting for incoming connections" | grep -v grep | wc -l`
+  OPENVASSD_RUNNING=`ps -Ax | grep "openvassd: [Ww]aiting for incoming connections" | grep -v grep | wc -l`
   if [ $OPENVASSD_RUNNING -eq 0 ]
   then
     log_and_print "WARNING: OpenVAS Scanner is NOT running!" ;
@@ -386,7 +386,7 @@ then
     log_and_print "ERROR: The number of NVTs in the OpenVAS Manager database is too low."
     log_and_print "FIX: Make sure OpenVAS Scanner is running with an up-to-date NVT collection and run 'openvasmd --rebuild'."
 
-    OPENVASSD_RUNNING=`ps -Af | grep "openvassd: waiting for incoming connections" | grep -v grep | wc -l`
+    OPENVASSD_RUNNING=`ps -Ax | grep "openvassd: [Ww]aiting for incoming connections" | grep -v grep | wc -l`
     if [ $OPENVASSD_RUNNING -eq 0 ]
     then
       log_and_print "WARNING: OpenVAS Scanner is NOT running!" ;
@@ -638,20 +638,34 @@ echo "" >> $LOG
 
 if [ $HAVE_NETSTAT -eq 1 ]
 then
-  netstat -A inet -ntlp 2> /dev/null >> $LOG
-  OPENVASSD_HOST=`netstat -A inet -ntlp 2> /dev/null | grep openvassd | awk -F\  '{print $4}' | awk -F: '{print $1}'`
-  OPENVASSD_PORT=`netstat -A inet -ntlp 2> /dev/null | grep openvassd | awk -F\  '{print $4}' | awk -F: '{print $2}'`
-  OPENVASMD_HOST=`netstat -A inet -ntlp 2> /dev/null | grep openvasmd | awk -F\  '{print $4}' | awk -F: '{print $1}'`
-  OPENVASMD_PORT=`netstat -A inet -ntlp 2> /dev/null | grep openvasmd | awk -F\  '{print $4}' | awk -F: '{print $2}'`
-  OPENVASAD_HOST=`netstat -A inet -ntlp 2> /dev/null | grep openvasad | awk -F\  '{print $4}' | awk -F: '{print $1}'`
-  OPENVASAD_PORT=`netstat -A inet -ntlp 2> /dev/null | grep openvasad | awk -F\  '{print $4}' | awk -F: '{print $2}'`
-  GSAD_HOST=`netstat -A inet -ntlp 2> /dev/null | grep gsad | awk -F\  '{print $4}' | awk -F: '{print $1}'`
-  GSAD_PORT=`netstat -A inet -ntlp 2> /dev/null | grep gsad | awk -F\  '{print $4}' | awk -F: '{print $2}'`
+  if [ uname == "OpenBSD" ]
+  then
+    fstat -n | grep 'internet stream tcp.*:[1-9]' | grep -v -e '--' 2>/dev/null >>$LOG
+    OPENVASSD_HOST=`fstat -n | perl -n -e 'if (/openvassd .* tcp 0x0 ([*0-9][0-9\.]*):([1-9]\d+)$/) { print "$1\n"; }'' 
+    OPENVASSD_PORT=`fstat -n | perl -n -e 'if (/openvassd .* tcp 0x0 ([*0-9][0-9\.]*):([1-9]\d+)$/) { print "$2\n"; }'' 
+    OPENVASMD_HOST=`fstat -n | perl -n -e 'if (/openvasmd .* tcp 0x0 ([*0-9][0-9\.]*):([1-9]\d+)$/) { print "$1\n"; }'' 
+    OPENVASMD_PORT=`fstat -n | perl -n -e 'if (/openvasmd .* tcp 0x0 ([*0-9][0-9\.]*):([1-9]\d+)$/) { print "$2\n"; }'' 
+    OPENVASAD_HOST=`fstat -n | perl -n -e 'if (/openvasad .* tcp 0x0 ([*0-9][0-9\.]*):([1-9]\d+)$/) { print "$1\n"; }'' 
+    OPENVASAD_PORT=`fstat -n | perl -n -e 'if (/openvasad .* tcp 0x0 ([*0-9][0-9\.]*):([1-9]\d+)$/) { print "$2\n"; }'' 
+    GSAD_HOST=`fstat -n | perl -n -e 'if (/gsad .* tcp 0x0 ([*0-9][0-9\.]*):([1-9]\d+)$/) { print "$1\n"; }'' 
+    GSAD_PORT=`fstat -n | perl -n -e 'if (/gsad .* tcp 0x0 ([*0-9][0-9\.]*):([1-9]\d+)$/) { print "$2\n"; }'' 
+  else
+    netstat -A inet -ntlp 2> /dev/null >> $LOG
+    OPENVASSD_HOST=`netstat -A inet -ntlp 2> /dev/null | grep openvassd | awk -F\  '{print $4}' | awk -F: '{print $1}'`
+    OPENVASSD_PORT=`netstat -A inet -ntlp 2> /dev/null | grep openvassd | awk -F\  '{print $4}' | awk -F: '{print $2}'`
+    OPENVASMD_HOST=`netstat -A inet -ntlp 2> /dev/null | grep openvasmd | awk -F\  '{print $4}' | awk -F: '{print $1}'`
+    OPENVASMD_PORT=`netstat -A inet -ntlp 2> /dev/null | grep openvasmd | awk -F\  '{print $4}' | awk -F: '{print $2}'`
+    OPENVASAD_HOST=`netstat -A inet -ntlp 2> /dev/null | grep openvasad | awk -F\  '{print $4}' | awk -F: '{print $1}'`
+    OPENVASAD_PORT=`netstat -A inet -ntlp 2> /dev/null | grep openvasad | awk -F\  '{print $4}' | awk -F: '{print $2}'`
+    GSAD_HOST=`netstat -A inet -ntlp 2> /dev/null | grep gsad | awk -F\  '{print $4}' | awk -F: '{print $1}'`
+    GSAD_PORT=`netstat -A inet -ntlp 2> /dev/null | grep gsad | awk -F\  '{print $4}' | awk -F: '{print $2}'`
+  fi
 
   case "$OPENVASSD_HOST" in
+    "*") log_and_print "OK: OpenVAS Scanner is running and listening on all interfaces." ;;
     "0.0.0.0") log_and_print "OK: OpenVAS Scanner is running and listening on all interfaces." ;;
     "127.0.0.1") log_and_print "OK: OpenVAS Scanner is running and listening only on the local interface." ;;
-    "") OPENVASSD_PROC=`ps -Af | grep "openvassd: waiting for incoming connections" | grep -v grep | wc -l`
+    "") OPENVASSD_PROC=`ps -Ax | grep "openvassd: [Ww]aiting for incoming connections" | grep -v grep | wc -l`
         if [ $OPENVASSD_PROC -eq 0 ]
         then
           log_and_print "ERROR: OpenVAS Scanner is NOT running!" ;
@@ -673,6 +687,7 @@ then
   esac
 
   case "$OPENVASMD_HOST" in
+    "*") log_and_print "OK: OpenVAS Manager is running and listening on all interfaces." ;;
     "0.0.0.0") log_and_print "OK: OpenVAS Manager is running and listening on all interfaces." ;;
     "127.0.0.1") log_and_print "WARNING: OpenVAS Manager is running and listening only on the local interface."
                  log_and_print "This means that you will not be able to access the OpenVAS Manager from the"
@@ -693,6 +708,7 @@ then
   if [ $ADMINISTRATOR_MAJOR != "0" ]
   then
     case "$OPENVASAD_HOST" in
+      "*") log_and_print "OK: OpenVAS Administrator is running and listening on all interfaces." ;;
       "0.0.0.0") log_and_print "OK: OpenVAS Administrator is running and listening on all interfaces." ;;
       "127.0.0.1") log_and_print "OK: OpenVAS Administrator is running and listening only on the local interface." ;;
       "") log_and_print "ERROR: OpenVAS Administrator is NOT running!"
@@ -710,6 +726,7 @@ then
   fi
 
   case "$GSAD_HOST" in
+    "*") log_and_print "OK: Greenbone Security Assistant is running and listening on all interfaces." ;;
     "0.0.0.0") log_and_print "OK: Greenbone Security Assistant is running and listening on all interfaces." ;;
     "127.0.0.1") log_and_print "WARNING: Greenbone Security Assistant is running and listening only on the local interface."
                  log_and_print "This means that you will not be able to access the Greenbone Security Assistant from the"
@@ -721,6 +738,7 @@ then
   esac
   case $GSAD_PORT in
     -1) ;;
+    8080|8443) log_and_print "OK: Greenbone Security Assistant is listening on port $GSAD_PORT, which is the default port." ;;
     80|443|9392) log_and_print "OK: Greenbone Security Assistant is listening on port $GSAD_PORT, which is the default port." ;;
     *) log_and_print "WARNING: Greenbone Security Assistant is listening on port $GSAD_PORT, which is NOT the default port!"
        log_and_print "SUGGEST: Ensure Greenbone Security Assistant is listening on one of the following ports: 80, 443, 9392." ;;
