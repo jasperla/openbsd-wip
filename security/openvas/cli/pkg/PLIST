@@ -2,6 +2,4 @@
 @bin bin/check_omp
 @bin bin/omp
 bin/omp-dialog
-share/man/
-share/man/man8/
-@man share/man/man8/omp.8
+@man man/man8/omp.8
