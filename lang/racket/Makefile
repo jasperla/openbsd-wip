@@ -9,7 +9,7 @@ ONLY_FOR_ARCHS =	i386 amd64 hppa mips64el powerpc
 
 COMMENT =		multi-paradigm programming language
 
-V =			6.1.0.900
+V =			6.1.1
 PKGNAME =		racket-$V
 DISTNAME =		racket-$V-src-builtpkgs
 
