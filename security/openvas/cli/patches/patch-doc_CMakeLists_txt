@@ -1,0 +1,9 @@
+$OpenBSD$
+--- doc/CMakeLists.txt.orig	Thu Oct 16 07:35:36 2014
++++ doc/CMakeLists.txt	Tue Nov  4 23:09:24 2014
+@@ -97,4 +97,4 @@ else (XMLMANTOHTML_EXECUTABLE)
+ endif (XMLMANTOHTML_EXECUTABLE)
+ 
+ install (FILES omp.8
+-  DESTINATION ${DATADIR}/man/man8 )
++  DESTINATION ${MANDIR}/man8 )

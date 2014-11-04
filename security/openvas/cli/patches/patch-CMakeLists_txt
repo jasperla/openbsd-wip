@@ -1,7 +1,18 @@
 $OpenBSD$
---- CMakeLists.txt.orig	Thu Apr 10 20:22:31 2014
-+++ CMakeLists.txt	Thu Oct 30 00:07:25 2014
-@@ -210,7 +210,7 @@ configure_file (VERSION.in VERSION)
+--- CMakeLists.txt.orig	Thu Oct 16 07:35:36 2014
++++ CMakeLists.txt	Tue Nov  4 23:08:08 2014
+@@ -141,6 +141,10 @@ if (NOT DATADIR)
+   set (DATADIR "${CMAKE_INSTALL_PREFIX}/share")
+ endif (NOT DATADIR)
+ 
++if (NOT MANDIR)
++  set (MANDIR "${CMAKE_INSTALL_PREFIX}/man")
++endif (NOT MANDIR)
++
+ if (NOT INCLUDEDIR)
+   set (INCLUDEDIR "${CMAKE_INSTALL_PREFIX}/include")
+ endif (NOT INCLUDEDIR)
+@@ -210,7 +214,7 @@ configure_file (VERSION.in VERSION)
  if (MINGW)
    set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2")
  else (MINGW)

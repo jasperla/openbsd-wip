@@ -50,7 +50,5 @@ include/openvas/omp/xml.h
 @lib lib/libopenvas_nasl.so.${LIBopenvas_nasl_VERSION}
 @lib lib/libopenvas_omp.so.${LIBopenvas_omp_VERSION}
 lib/pkgconfig/libopenvas.pc
-share/man/
-share/man/man1/
-@man share/man/man1/openvas-nasl.1
+@man man/man1/openvas-nasl.1
 share/openvas/
