@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/gsad.c.orig	Thu Aug  7 10:05:30 2014
-+++ src/gsad.c	Thu Oct 30 01:51:08 2014
+--- src/gsad.c.orig	Wed Oct 15 08:02:31 2014
++++ src/gsad.c	Tue Nov  4 12:35:52 2014
 @@ -55,14 +55,14 @@
  
  #define _GNU_SOURCE /* for strcasecmp */
@@ -18,7 +18,7 @@ $OpenBSD$
  #include <openvas/misc/openvas_logging.h>
  #include <openvas/base/openvas_file.h>
  #include <openvas/base/pidfile.h>
-@@ -73,9 +73,11 @@
+@@ -74,9 +74,11 @@
  #include <stdio.h>
  #include <stdlib.h>
  #include <string.h>
@@ -31,7 +31,7 @@ $OpenBSD$
  #include <unistd.h>
  /* This must follow the system includes. */
  #include <microhttpd.h>
-@@ -93,12 +95,12 @@
+@@ -94,12 +96,12 @@
  /**
   * @brief Fallback GSAD port for HTTPS.
   */
@@ -46,7 +46,7 @@ $OpenBSD$
  
  /**
   * @brief Fallback unprivileged GSAD port.
-@@ -108,7 +110,7 @@
+@@ -109,7 +111,7 @@
  /**
   * @brief Fallback GSAD port.
   */
@@ -55,7 +55,7 @@ $OpenBSD$
  
  /**
   * @brief Fallback Manager port.
-@@ -143,7 +145,9 @@
+@@ -144,7 +146,9 @@
  /**
   * @brief Libgcrypt thread callback definition.
   */

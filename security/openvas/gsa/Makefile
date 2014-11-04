@@ -1,11 +1,11 @@
 # $OpenBSD$
 
 COMMENT =		greenbone security assistant
-VERSION =		5.0.3
+VERSION =		5.0.4
 DISTNAME =		greenbone-security-assistant-${VERSION}
 PKGNAME =		openvas-gsa-${VERSION}
 
-MASTER_SITES =		${MASTER_SITES_OPENVAS:=1734/}
+MASTER_SITES =		${MASTER_SITES_OPENVAS:=1799/}
 
 WANTLIB +=		c m pthread z \
 			assuan exslt gcrypt glib-2.0 gthread-2.0 gnutls gpg-error \
