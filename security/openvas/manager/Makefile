@@ -1,9 +1,9 @@
 # $OpenBSD$
 
 COMMENT =		OpenVAS security scanner manager
-DISTNAME =		openvas-manager-5.0.4
+DISTNAME =		openvas-manager-5.0.5
 
-MASTER_SITES =		${MASTER_SITES_OPENVAS:=1730/}
+MASTER_SITES =		${MASTER_SITES_OPENVAS:=1795/}
 
 WANTLIB +=		c m pthread \
 			assuan glib-2.0 gnutls gpg-error gpgme sqlite3 \
