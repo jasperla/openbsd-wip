@@ -1,14 +1,14 @@
 # $OpenBSD$
 
 COMMENT =		OpenVAS server security scanner
-DISTNAME =		openvas-scanner-4.0.3
+DISTNAME =		openvas-scanner-4.0.4
 
 WANTLIB =		c pthread gcrypt glib-2.0
 WANTLIB +=		openvas_base openvas_misc openvas_nasl \
 			openvas_omp \
 			gnutls gpg-error gpgme assuan
 
-MASTER_SITES =		${MASTER_SITES_OPENVAS:=1726/}
+MASTER_SITES =		${MASTER_SITES_OPENVAS:=1791/}
 
 RUN_DEPENDS =		net/rsync
 

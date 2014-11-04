@@ -27,7 +27,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
 
 LOG=/tmp/openvas-check-setup.log
-CHECKVERSION=2.2.6
+CHECKVERSION=2.2.6 (Modified for OpenBSD)
 OS=`uname -s`
 
 if [ "$1" = "--server" -o "$2" = "--server" ]
