@@ -1,0 +1,35 @@
+@comment $OpenBSD$
+bin/s3cmd
+lib/python${MODPY_VERSION}/site-packages/S3/
+lib/python${MODPY_VERSION}/site-packages/S3/ACL.py
+lib/python${MODPY_VERSION}/site-packages/S3/ACL.pyc
+lib/python${MODPY_VERSION}/site-packages/S3/BidirMap.py
+lib/python${MODPY_VERSION}/site-packages/S3/BidirMap.pyc
+lib/python${MODPY_VERSION}/site-packages/S3/CloudFront.py
+lib/python${MODPY_VERSION}/site-packages/S3/CloudFront.pyc
+lib/python${MODPY_VERSION}/site-packages/S3/Config.py
+lib/python${MODPY_VERSION}/site-packages/S3/Config.pyc
+lib/python${MODPY_VERSION}/site-packages/S3/Exceptions.py
+lib/python${MODPY_VERSION}/site-packages/S3/Exceptions.pyc
+lib/python${MODPY_VERSION}/site-packages/S3/PkgInfo.py
+lib/python${MODPY_VERSION}/site-packages/S3/PkgInfo.pyc
+lib/python${MODPY_VERSION}/site-packages/S3/Progress.py
+lib/python${MODPY_VERSION}/site-packages/S3/Progress.pyc
+lib/python${MODPY_VERSION}/site-packages/S3/S3.py
+lib/python${MODPY_VERSION}/site-packages/S3/S3.pyc
+lib/python${MODPY_VERSION}/site-packages/S3/S3Uri.py
+lib/python${MODPY_VERSION}/site-packages/S3/S3Uri.pyc
+lib/python${MODPY_VERSION}/site-packages/S3/SimpleDB.py
+lib/python${MODPY_VERSION}/site-packages/S3/SimpleDB.pyc
+lib/python${MODPY_VERSION}/site-packages/S3/SortedDict.py
+lib/python${MODPY_VERSION}/site-packages/S3/SortedDict.pyc
+lib/python${MODPY_VERSION}/site-packages/S3/Utils.py
+lib/python${MODPY_VERSION}/site-packages/S3/Utils.pyc
+lib/python${MODPY_VERSION}/site-packages/S3/__init__.py
+lib/python${MODPY_VERSION}/site-packages/S3/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/s3cmd-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+@man man/man1/s3cmd.1
+share/doc/s3cmd/
+share/doc/s3cmd/INSTALL
+share/doc/s3cmd/NEWS
+share/doc/s3cmd/README

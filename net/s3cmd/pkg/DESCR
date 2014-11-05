@@ -1,0 +1,4 @@
+S3cmd is a command line tool for uploading, retrieving and managing
+data in Amazon S3. It is best suited for power users who don't fear
+command line. It is also ideal for scripts, automated backups
+triggered from cron, etc.
