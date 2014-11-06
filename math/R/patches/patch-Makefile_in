@@ -1,0 +1,38 @@
+$OpenBSD: patch-Makefile_in,v 1.5 2014/09/02 14:55:37 dcoppa Exp $
+
+Do not build PDF versions of the R manuals
+
+--- Makefile.in.orig	Wed May 21 00:15:03 2014
++++ Makefile.in	Tue Sep  2 16:24:02 2014
+@@ -80,8 +80,6 @@ vignettes: stamp-recommended
+ ## This needs packages built, hence 'R' dependence on 'javaconf'
+ ## javareconf gets remade often.
+ stamp-java : etc/javaconf $(srcdir)/src/scripts/javareconf.in
+-	@$(ECHO) "configuring Java ..."
+-	@-bin/R CMD javareconf
+ 	@touch stamp-java
+ 
+ javaconf: R
+@@ -121,7 +119,7 @@ svnonly:
+ 	  fi \
+ 	fi
+ 
+-@WANT_R_STATIC_FALSE@libR_la = libR$(DYLIB_EXT)
++@WANT_R_STATIC_FALSE@libR_la = libR.so.$(LIBR_VERSION)
+ @WANT_R_STATIC_TRUE@libR_la = libR.a
+ install-libR:
+ 	@if test -f lib$(R_ARCH)/$(libR_la); then $(MAKE) install-libR-exists; fi
+@@ -216,13 +214,6 @@ distdir: $(DISTFILES) vignettes
+ 	  cp library/$${d}/doc/*.pdf $(distdir)/src/library/$${d}/inst/doc; \
+ 	done
+ 	@(cd $(distdir); tools/link-recommended)
+-
+-info pdf:
+-	-@(cd doc && $(MAKE) $@)
+-install-info install-pdf:
+-	-@(cd doc/manual && $(MAKE) $@)
+-uninstall-info uninstall-pdf:
+-	-@(cd doc/manual && $(MAKE) $@)
+ 
+ install-tests:
+ 	-@(cd tests && $(MAKE) $@)
