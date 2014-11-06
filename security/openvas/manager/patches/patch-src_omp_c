@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/omp.c.orig	Wed Aug  6 11:58:33 2014
-+++ src/omp.c	Thu Oct 30 01:09:40 2014
+--- src/omp.c.orig	Mon Nov  3 11:29:12 2014
++++ src/omp.c	Thu Nov  6 00:02:30 2014
 @@ -97,18 +97,18 @@
  #include "otp.h"
  #include "tracef.h"
@@ -23,7 +23,7 @@ $OpenBSD$
  #include <sys/wait.h>
  
  #include <openvas/base/nvti.h>
-@@ -15103,10 +15103,10 @@ omp_xml_handle_end_element (/*@unused@*/ GMarkupParseC
+@@ -15104,10 +15104,10 @@ omp_xml_handle_end_element (/*@unused@*/ GMarkupParseC
                    SENDF_TO_CLIENT_OR_FAIL
                     ("<first_time>%s</first_time>"
                      "<next_time>%s</next_time>"

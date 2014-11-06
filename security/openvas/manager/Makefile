@@ -9,7 +9,8 @@ WANTLIB +=		c m pthread \
 			assuan glib-2.0 gnutls gpg-error gpgme sqlite3 \
 			openvas_base openvas_misc openvas_nasl openvas_omp
 
-BUILD_DEPENDS +=	devel/doxygen
+BUILD_DEPENDS +=	converters/xmltoman \
+			devel/doxygen
 RUN_DEPENDS +=		print/htmldoc \
 			net/rsync
 
