@@ -1,0 +1,10 @@
+$OpenBSD$
+--- doc/CMakeLists.txt.orig	Wed Oct 15 08:02:25 2014
++++ doc/CMakeLists.txt	Wed Nov  5 23:34:50 2014
+@@ -102,5 +102,5 @@ endif (XMLMANTOHTML_EXECUTABLE)
+ ## Install
+ 
+ install (FILES gsad.8
+-  DESTINATION ${DATADIR}/man/man8 )
++  DESTINATION ${MANDIR}/man8 )
+ 

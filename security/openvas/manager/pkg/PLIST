@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+@man man/man8/openvasmd.8
 sbin/greenbone-certdata-sync
 sbin/greenbone-scapdata-sync
 sbin/openvas-certdata-sync
@@ -8,9 +9,6 @@ sbin/openvas-scapdata-sync
 share/doc/openvas-manager/
 share/doc/openvas-manager/html/
 share/doc/openvas-manager/html/omp.html
-share/man/
-share/man/man8/
-@man share/man/man8/openvasmd.8
 share/openvas/
 share/openvas/cert/
 share/openvas/cert/cert_db_init.sql

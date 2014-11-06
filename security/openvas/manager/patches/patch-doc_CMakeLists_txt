@@ -1,0 +1,10 @@
+$OpenBSD$
+--- doc/CMakeLists.txt.orig	Mon Nov  3 11:28:59 2014
++++ doc/CMakeLists.txt	Thu Nov  6 00:11:35 2014
+@@ -164,5 +164,5 @@ install (FILES omp.html
+          COMPONENT doc)
+ 
+ install (FILES openvasmd.8
+-  DESTINATION share/man/man8/
++  DESTINATION ${MANDIR}/man8/
+   COMPONENT doc)

@@ -1,4 +1,8 @@
 @comment $OpenBSD$
+@man man/man8/greenbone-nvt-sync.8
+@man man/man8/openvas-mkcert.8
+@man man/man8/openvas-nvt-sync.8
+@man man/man8/openvassd.8
 sbin/greenbone-nvt-sync
 sbin/openvas-check-setup
 sbin/openvas-mkcert
@@ -21,9 +25,3 @@ sbin/openvas-nvt-sync
 @bin sbin/openvassd
 share/doc/openvas/
 share/doc/openvas/README.OpenBSD
-share/man/
-share/man/man8/
-@man share/man/man8/greenbone-nvt-sync.8
-@man share/man/man8/openvas-mkcert.8
-@man share/man/man8/openvas-nvt-sync.8
-@man share/man/man8/openvassd.8

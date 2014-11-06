@@ -1,8 +1,6 @@
 @comment $OpenBSD$
+@man man/man8/gsad.8
 @bin sbin/gsad
-share/man/
-share/man/man8/
-@man share/man/man8/gsad.8
 share/openvas/
 share/openvas/gsa/
 share/openvas/gsa/classic/

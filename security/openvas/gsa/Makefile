@@ -8,7 +8,7 @@ PKGNAME =		openvas-gsa-${VERSION}
 MASTER_SITES =		${MASTER_SITES_OPENVAS:=1799/}
 
 WANTLIB +=		c m pthread z \
-			assuan exslt gcrypt glib-2.0 gthread-2.0 gnutls gpg-error \
+			assuan exslt gcrypt glib-2.0 gnutls gpg-error \
 			gpgme microhttpd xml2 xslt \
 			openvas_base openvas_misc openvas_nasl openvas_omp
 
@@ -22,6 +22,8 @@ LIB_DEPENDS +=		security/libgcrypt \
 			security/openvas/libraries \
 			textproc/libxml \
 			textproc/libxslt
+
+BUILD_DEPENDS +=	converters/xmltoman
 
 SEPARATE_BUILD = 	No
 
