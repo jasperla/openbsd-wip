@@ -1,6 +1,6 @@
 $OpenBSD$
 --- CMakeLists.txt.orig	Wed Oct 15 08:04:27 2014
-+++ CMakeLists.txt	Wed Nov  5 23:36:59 2014
++++ CMakeLists.txt	Fri Nov  7 18:08:53 2014
 @@ -289,7 +289,11 @@ if (NOT DATADIR)
    set (DATADIR "${CMAKE_INSTALL_PREFIX}/share")
  endif (NOT DATADIR)
@@ -14,7 +14,7 @@ $OpenBSD$
  set (OPENVAS_LOG_DIR   "${LOCALSTATEDIR}/log/openvas")
  set (GSAD_PID_DIR   "${LOCALSTATEDIR}/run")
  set (GSA_DATA_DIR "${DATADIR}/openvas/gsa")
-@@ -511,7 +515,7 @@ install (FILES src/html/classic/img/cpe/other.png
+@@ -511,17 +515,18 @@ install (FILES src/html/classic/img/cpe/other.png
           DESTINATION ${GSA_DATA_DIR}/classic/img/cpe)
  
  install (FILES ${CMAKE_BINARY_DIR}/src/gsad_log.conf
@@ -23,12 +23,15 @@ $OpenBSD$
  
  install (FILES ${CMAKE_CURRENT_BINARY_DIR}/cpe-icons.xml
           DESTINATION ${GSA_DATA_DIR}/classic)
-@@ -520,7 +524,7 @@ install (FILES ${CMAKE_CURRENT_BINARY_DIR}/cpe-icons.x
  
- set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2 -fstack-protector -Wl,-z,relro -Wl,-z,now")
+ ## Program
  
--set (CMAKE_C_FLAGS_DEBUG        "${CMAKE_C_FLAGS_DEBUG} -Werror")
-+set (CMAKE_C_FLAGS_DEBUG        "${CMAKE_C_FLAGS_DEBUG} ")
+-set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2 -fstack-protector -Wl,-z,relro -Wl,-z,now")
++set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2 -fstack-protector")
+ 
+ set (CMAKE_C_FLAGS_DEBUG        "${CMAKE_C_FLAGS_DEBUG} -Werror")
  set (CMAKE_C_FLAGS              "${CMAKE_C_FLAGS} ${HARDENING_FLAGS} -Wall")
++set (CMAKE_EXT_LINKER_FLAGS	"-Wl,-z,relro -Wl,-z,now" )
  
  add_subdirectory (src)
+ 
