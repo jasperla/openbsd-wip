@@ -3,7 +3,7 @@
 COMMENT =		modernized troff implementation
 
 V =			141029
-DISTNAME =		heirloom-doctools-141029
+DISTNAME =		heirloom-doctools-$V
 
 CATEGORIES =		textproc print
 
