@@ -1,16 +1,14 @@
 $OpenBSD$
 --- src/gsad.c.orig	Wed Oct 15 08:02:31 2014
-+++ src/gsad.c	Tue Nov  4 12:35:52 2014
-@@ -55,14 +55,14 @@
++++ src/gsad.c	Fri Nov  7 17:53:05 2014
+@@ -55,14 +55,12 @@
  
  #define _GNU_SOURCE /* for strcasecmp */
  
 -#include <arpa/inet.h>
  #include <assert.h>
  #include <errno.h>
-+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
  #include <gcrypt.h>
-+#pragma GCC diagnostic error "-Wdeprecated-declarations"
  #include <glib.h>
  #include <gnutls/gnutls.h>
  #include <locale.h>
@@ -18,7 +16,7 @@ $OpenBSD$
  #include <openvas/misc/openvas_logging.h>
  #include <openvas/base/openvas_file.h>
  #include <openvas/base/pidfile.h>
-@@ -74,9 +74,11 @@
+@@ -74,9 +72,11 @@
  #include <stdio.h>
  #include <stdlib.h>
  #include <string.h>
@@ -31,7 +29,7 @@ $OpenBSD$
  #include <unistd.h>
  /* This must follow the system includes. */
  #include <microhttpd.h>
-@@ -94,12 +96,12 @@
+@@ -94,12 +94,12 @@
  /**
   * @brief Fallback GSAD port for HTTPS.
   */
@@ -46,7 +44,7 @@ $OpenBSD$
  
  /**
   * @brief Fallback unprivileged GSAD port.
-@@ -109,7 +111,7 @@
+@@ -109,7 +109,7 @@
  /**
   * @brief Fallback GSAD port.
   */
@@ -55,13 +53,24 @@ $OpenBSD$
  
  /**
   * @brief Fallback Manager port.
-@@ -144,7 +146,9 @@
+@@ -144,7 +144,9 @@
  /**
   * @brief Libgcrypt thread callback definition.
   */
-+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
- GCRY_THREAD_OPTION_PTHREAD_IMPL;
-+#pragma GCC diagnostic error "-Wdeprecated-declarations"
+-GCRY_THREAD_OPTION_PTHREAD_IMPL;
++#if GCRYPT_VERSION_NUMBER < 0x010600
++  GCRY_THREAD_OPTION_PTHEAD_IMPL;
++#endif
  
  /**
   * @brief Last resort HTML on failure to open "default_file".
+@@ -3959,7 +3961,9 @@ gsad_init ()
+     }
+ 
+   /* Init GCRYPT. */
++#if GCRYPT_VERSION_NUMBER < 0x010600
+   gcry_control (GCRYCTL_SET_THREAD_CBS, &gcry_threads_pthread);
++#endif
+ 
+   /* Version check should be the very first call because it makes sure that
+    * important subsystems are intialized.

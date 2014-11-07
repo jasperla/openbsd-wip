@@ -23,7 +23,8 @@ LIB_DEPENDS +=		security/libgcrypt \
 			textproc/libxml \
 			textproc/libxslt
 
-BUILD_DEPENDS +=	converters/xmltoman
+BUILD_DEPENDS +=	converters/xmltoman \
+			devel/doxygen
 
 SEPARATE_BUILD = 	No
 
