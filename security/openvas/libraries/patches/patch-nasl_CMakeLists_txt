@@ -1,19 +1,17 @@
 $OpenBSD$
---- nasl/CMakeLists.txt.orig	Thu Jul 31 07:40:12 2014
-+++ nasl/CMakeLists.txt	Wed Oct 29 22:56:48 2014
-@@ -33,9 +33,9 @@ endif (POLICY CMP0015)
+--- nasl/CMakeLists.txt.orig	Thu Oct 16 08:09:39 2014
++++ nasl/CMakeLists.txt	Fri Nov  7 22:50:10 2014
+@@ -33,7 +33,8 @@ endif (POLICY CMP0015)
  
  ## Library
  
 -set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2 -fstack-protector -Wl,-z,relro -Wl,-z,now")
 +set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2 -fstack-protector")
++set (CMAKE_SHARED_LINKER_FLAGS	"-Wl,-z,relro -Wl,-z,now")
  
--set (CMAKE_C_FLAGS_DEBUG        "${CMAKE_C_FLAGS_DEBUG} -Werror")
-+set (CMAKE_C_FLAGS_DEBUG        "${CMAKE_C_FLAGS_DEBUG} ")
+ set (CMAKE_C_FLAGS_DEBUG        "${CMAKE_C_FLAGS_DEBUG} -Werror")
  # The "-D_FILE_OFFSET_BITS=64 -DLARGEFILE_SOURCE=1" is necessary for GPGME!
- # The "-fno-strict-aliasing" silences warnings caused by macros defined in byteorder.h.
- # Once the warnings have been addressed this flag should be removed.
-@@ -132,7 +132,7 @@ if (BUILD_STATIC)
+@@ -132,7 +133,7 @@ if (BUILD_STATIC)
    add_executable (openvas-nasl nasl.c)
    target_link_libraries (openvas-nasl openvas_misc_static openvas_nasl_static
      openvas_base_static ${GLIB_LDFLAGS} -lgcrypt
@@ -22,7 +20,7 @@ $OpenBSD$
      ${GPGME_LDFLAGS} ${LIBSSH_LDFLAGS} ${KSBA_LDFLAGS} ${WINCMD_LIBS}) 
    set_target_properties (openvas-nasl PROPERTIES COMPILE_FLAGS
      "${GLIB_CFLAGS} ${GPGME_CFLAGS} ${LIBSSH_CFLAGS} ${KSBA_CFLAGS}")
-@@ -141,7 +141,7 @@ if (BUILD_SHARED)
+@@ -141,7 +142,7 @@ if (BUILD_SHARED)
    add_executable (openvas-nasl nasl.c)
    target_link_libraries (openvas-nasl openvas_misc_shared openvas_nasl_shared
      openvas_base_shared ${GLIB_LDFLAGS} -lgcrypt
@@ -31,7 +29,7 @@ $OpenBSD$
      ${GPGME_LDFLAGS} ${LIBSSH_LDFLAGS} ${KSBA_LDFLAGS} ${WINCMD_LIBS}) 
    set_target_properties (openvas-nasl PROPERTIES COMPILE_FLAGS
      "${GLIB_CFLAGS} ${GPGME_CFLAGS} ${LIBSSH_CFLAGS} ${KSBA_CFLAGS}")
-@@ -152,7 +152,7 @@ if (BUILD_STATIC)
+@@ -152,7 +153,7 @@ if (BUILD_STATIC)
    add_executable (openvas-nasl-lint nasl-lint.c)
    target_link_libraries (openvas-nasl-lint openvas_misc_static openvas_nasl_static
      openvas_base_static ${GLIB_LDFLAGS} -lgcrypt
@@ -40,7 +38,7 @@ $OpenBSD$
      ${GPGME_LDFLAGS} ${LIBSSH_LDFLAGS} ${KSBA_LDFLAGS} ${WINCMD_LIBS}) 
    set_target_properties (openvas-nasl-lint PROPERTIES COMPILE_FLAGS
      "${GLIB_CFLAGS} ${GPGME_CFLAGS} ${LIBSSH_CFLAGS} ${KSBA_CFLAGS}")
-@@ -161,7 +161,7 @@ if (BUILD_SHARED)
+@@ -161,7 +162,7 @@ if (BUILD_SHARED)
    add_executable (openvas-nasl-lint nasl-lint.c)
    target_link_libraries (openvas-nasl-lint openvas_misc_shared openvas_nasl_shared
      openvas_base_shared ${GLIB_LDFLAGS} -lgcrypt
