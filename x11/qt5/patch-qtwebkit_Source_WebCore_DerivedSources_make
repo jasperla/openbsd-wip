@@ -1,0 +1,39 @@
+$OpenBSD$
+Allow path to Python interpreter to be overwritten via make flags.
+--- qtwebkit/Source/WebCore/DerivedSources.make.ports.orig	Wed Nov  5 00:02:05 2014
++++ qtwebkit/Source/WebCore/DerivedSources.make	Wed Nov  5 00:02:50 2014
+@@ -658,6 +658,8 @@ JS_DOM_HEADERS=$(filter-out JSMediaQueryListListener.h
+ 
+ WEB_DOM_HEADERS :=
+ 
++PYTHON =	python
++
+ all : \
+     $(SUPPLEMENTAL_DEPENDENCY_FILE) \
+     $(WINDOW_CONSTRUCTORS_FILE) \
+@@ -775,7 +777,7 @@ XMLViewerJS.h : xml/XMLViewer.js
+ # HTML entity names
+ 
+ HTMLEntityTable.cpp : html/parser/HTMLEntityNames.in $(WebCore)/html/parser/create-html-entity-table
+-	python $(WebCore)/html/parser/create-html-entity-table -o HTMLEntityTable.cpp $(WebCore)/html/parser/HTMLEntityNames.in
++	$(PYTHON) $(WebCore)/html/parser/create-html-entity-table -o HTMLEntityTable.cpp $(WebCore)/html/parser/HTMLEntityNames.in
+ 
+ # --------
+ 
+@@ -1034,14 +1036,14 @@ JS%.h : %.idl $(JS_BINDINGS_SCRIPTS) $(IDL_ATTRIBUTES_
+ all : InspectorProtocolVersion.h
+ 
+ InspectorProtocolVersion.h : Inspector.json inspector/generate-inspector-protocol-version
+-	python $(WebCore)/inspector/generate-inspector-protocol-version -o InspectorProtocolVersion.h $(WebCore)/inspector/Inspector.json
++	$(PYTHON) $(WebCore)/inspector/generate-inspector-protocol-version -o InspectorProtocolVersion.h $(WebCore)/inspector/Inspector.json
+ 
+ all : InspectorFrontend.h
+ 
+ INSPECTOR_GENERATOR_SCRIPTS = inspector/CodeGeneratorInspector.py
+ 
+ InspectorFrontend.h : Inspector.json $(INSPECTOR_GENERATOR_SCRIPTS)
+-	python $(WebCore)/inspector/CodeGeneratorInspector.py $(WebCore)/inspector/Inspector.json --output_h_dir . --output_cpp_dir .
++	$(PYTHON) $(WebCore)/inspector/CodeGeneratorInspector.py $(WebCore)/inspector/Inspector.json --output_h_dir . --output_cpp_dir .
+ 
+ all : InspectorOverlayPage.h
+ 
