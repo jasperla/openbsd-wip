@@ -27,7 +27,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
 
 LOG=/tmp/openvas-check-setup.log
-CHECKVERSION=2.2.6 (Modified for OpenBSD)
+CHECKVERSION="2.2.6 (Modified for OpenBSD)"
 OS=`uname -s`
 
 if [ "$1" = "--server" -o "$2" = "--server" ]
@@ -662,14 +662,14 @@ then
   if [ $OS == "OpenBSD" ]
   then
     fstat -n | grep 'internet stream tcp.*:[1-9]' | grep -v -e '--' 2>/dev/null >>$LOG
-    OPENVASSD_HOST=`fstat -n | perl -n -e 'if (/openvassd .* tcp 0x0 ([*0-9][0-9\.]*):([1-9]\d+)$/) { print "$1\n"; }'' 
-    OPENVASSD_PORT=`fstat -n | perl -n -e 'if (/openvassd .* tcp 0x0 ([*0-9][0-9\.]*):([1-9]\d+)$/) { print "$2\n"; }'' 
-    OPENVASMD_HOST=`fstat -n | perl -n -e 'if (/openvasmd .* tcp 0x0 ([*0-9][0-9\.]*):([1-9]\d+)$/) { print "$1\n"; }'' 
-    OPENVASMD_PORT=`fstat -n | perl -n -e 'if (/openvasmd .* tcp 0x0 ([*0-9][0-9\.]*):([1-9]\d+)$/) { print "$2\n"; }'' 
-    OPENVASAD_HOST=`fstat -n | perl -n -e 'if (/openvasad .* tcp 0x0 ([*0-9][0-9\.]*):([1-9]\d+)$/) { print "$1\n"; }'' 
-    OPENVASAD_PORT=`fstat -n | perl -n -e 'if (/openvasad .* tcp 0x0 ([*0-9][0-9\.]*):([1-9]\d+)$/) { print "$2\n"; }'' 
-    GSAD_HOST=`fstat -n | perl -n -e 'if (/gsad .* tcp 0x0 ([*0-9][0-9\.]*):([1-9]\d+)$/) { print "$1\n"; }'' 
-    GSAD_PORT=`fstat -n | perl -n -e 'if (/gsad .* tcp 0x0 ([*0-9][0-9\.]*):([1-9]\d+)$/) { print "$2\n"; }'' 
+    OPENVASSD_HOST=`fstat -n | perl -n -e 'if (/openvassd .* tcp 0x[0-9a-f]+ ([*0-9][0-9\.]*):([1-9]\d+)$/) { print "$1\n"; }'`
+    OPENVASSD_PORT=`fstat -n | perl -n -e 'if (/openvassd .* tcp 0x[0-9a-f]+ ([*0-9][0-9\.]*):([1-9]\d+)$/) { print "$2\n"; }'`
+    OPENVASMD_HOST=`fstat -n | perl -n -e 'if (/openvasmd .* tcp 0x[0-9a-f]+ ([*0-9][0-9\.]*):([1-9]\d+)$/) { print "$1\n"; }'`
+    OPENVASMD_PORT=`fstat -n | perl -n -e 'if (/openvasmd .* tcp 0x[0-9a-f]+ ([*0-9][0-9\.]*):([1-9]\d+)$/) { print "$2\n"; }'`
+    OPENVASAD_HOST=`fstat -n | perl -n -e 'if (/openvasad .* tcp 0x[0-9a-f]+ ([*0-9][0-9\.]*):([1-9]\d+)$/) { print "$1\n"; }'`
+    OPENVASAD_PORT=`fstat -n | perl -n -e 'if (/openvasad .* tcp 0x[0-9a-f]+ ([*0-9][0-9\.]*):([1-9]\d+)$/) { print "$2\n"; }'`
+    GSAD_HOST=`fstat -n | perl -n -e 'if (/gsad .* tcp 0x[0-9a-f]+ ([*0-9][0-9\.]*):([1-9]\d+)$/) { print "$1\n"; }'`
+    GSAD_PORT=`fstat -n | perl -n -e 'if (/gsad .* tcp 0x[0-9a-f]+ ([*0-9][0-9\.]*):([1-9]\d+)$/) { print "$2\n"; }'`
   else
     netstat -A inet -ntlp 2> /dev/null >> $LOG
     OPENVASSD_HOST=`netstat -A inet -ntlp 2> /dev/null | grep openvassd | awk -F\  '{print $4}' | awk -F: '{print $1}'`
@@ -686,6 +686,7 @@ then
     "0.0.0.0"|"*") log_and_print "OK: OpenVAS Scanner is running and listening on all interfaces." ;;
     "127.0.0.1") log_and_print "OK: OpenVAS Scanner is running and listening only on the local interface." ;;
     "") if [ $OS == "OpenBSD" ] 
+        then
           OPENVASSD_PROC=`ps -Ax | grep "openvassd: [Ww]aiting for incoming connections" | grep -v grep | wc -l`
         else
           OPENVASSD_PROC=`ps -Af | grep "openvassd: [Ww]aiting for incoming connections" | grep -v grep | wc -l`
@@ -711,12 +712,12 @@ then
   esac
 
   case "$OPENVASMD_HOST" in
-    "0.0.0.0"|*) log_and_print "OK: OpenVAS Manager is running and listening on all interfaces." ;;
-    "127.0.0.1") log_and_print "WARNING: OpenVAS Manager is running and listening only on the local interface."
-                 log_and_print "This means that you will not be able to access the OpenVAS Manager from the"
-                 log_and_print "outside using GSD or OpenVAS CLI."
-                 log_and_print "SUGGEST: Ensure that OpenVAS Manager listens on all interfaces unless you want"
-                 log_and_print "a local service only." ;;
+    "0.0.0.0"|"*") log_and_print "WARNING: OpenVAS Manager is running and listening on all interfaces." 
+                 log_and_print "This means that you will be able to access the OpenVAS Manager from the"
+                 log_and_print "outside using GSAD or OpenVAS CLI."
+                 log_and_print "SUGGEST: Ensure that OpenVAS Manager listens on local interfaces, if you want"
+                 log_and_print "access from elsewhere use something like ssh port forwarding." ;;
+    "127.0.0.1") log_and_print "OK: OpenVAS Manager is running and listening only on the local interface." ;;
     "") log_and_print "ERROR: OpenVAS Manager is NOT running!"
         log_and_print "FIX: Start OpenVAS Manager (openvasmd)."
         OPENVASMD_PORT=-1 ;;
@@ -731,7 +732,7 @@ then
   if [ $ADMINISTRATOR_MAJOR != "0" ]
   then
     case "$OPENVASAD_HOST" in
-      "0.0.0.0"|*) log_and_print "OK: OpenVAS Administrator is running and listening on all interfaces." ;;
+      "0.0.0.0"|"*") log_and_print "OK: OpenVAS Administrator is running and listening on all interfaces." ;;
       "127.0.0.1") log_and_print "OK: OpenVAS Administrator is running and listening only on the local interface." ;;
       "") log_and_print "ERROR: OpenVAS Administrator is NOT running!"
           log_and_print "FIX: Start OpenVAS Administrator (openvasad)."
@@ -748,11 +749,12 @@ then
   fi
 
   case "$GSAD_HOST" in
-    "0.0.0.0"|*) log_and_print "OK: Greenbone Security Assistant is running and listening on all interfaces." ;;
-    "127.0.0.1") log_and_print "WARNING: Greenbone Security Assistant is running and listening only on the local interface."
-                 log_and_print "This means that you will not be able to access the Greenbone Security Assistant from the"
-                 log_and_print "outside using a web browser."
-                 log_and_print "SUGGEST: Ensure that Greenbone Security Assistant listens on all interfaces." ;;
+    "0.0.0.0"|"*") log_and_print "WARNING: Greenbone Security Assistant is running and listening on all interfaces."
+                 log_and_print "This means that you will be able to access the Greenbone Security Assistant from the"
+                 log_and_print "outside using a browser."
+                 log_and_print "SUGGEST: Ensure that OpenVAS Manager listens on local interfaces, if you want"
+                 log_and_print "access from elsewhere use something like ssh port forwarding." ;;
+    "127.0.0.1") log_and_print "OK: Greenbone Security Assistant is running and listening only on the local interface." ;;
     "") log_and_print "ERROR: Greenbone Security Assistant is NOT running!"
         log_and_print "FIX: Start Greenbone Security Assistant (gsad)."
         GSAD_PORT=-1 ;;
@@ -765,7 +767,7 @@ then
        log_and_print "SUGGEST: Ensure Greenbone Security Assistant is listening on one of the following ports: 80, 443, 9392." ;;
   esac
 
-if [ $OPENVASSD_PORT -eq -1 ] || [ $OPENVASMD_PORT -eq -1 ] || [ $OPENVASAD_PORT -eq -1 ] || [ $GSAD_PORT -eq -1 ]
+  if [ $OPENVASSD_PORT -eq -1 ] || [ $OPENVASMD_PORT -eq -1 ] || [ $OPENVASAD_PORT -eq -1 ] || [ $GSAD_PORT -eq -1 ]
   then
     check_failed
   fi
