@@ -1,0 +1,26 @@
+$OpenBSD$
+1. Tests fail due to incorrect _POSIX_TIMERS value in <unistd.h>.
+   Allow functions to be actually used.
+2. Unbreak disabling build parts.
+--- qtbase/configure.ports.orig	Mon Nov  3 22:44:22 2014
++++ qtbase/configure	Tue Nov  4 18:08:26 2014
+@@ -686,8 +686,8 @@ CFG_IWMMXT=no
+ CFG_NEON=auto
+ CFG_MIPS_DSP=auto
+ CFG_MIPS_DSPR2=auto
+-CFG_CLOCK_GETTIME=auto
+-CFG_CLOCK_MONOTONIC=auto
++CFG_CLOCK_GETTIME=yes
++CFG_CLOCK_MONOTONIC=yes
+ CFG_POSIX_FALLOCATE=auto
+ CFG_MREMAP=auto
+ CFG_GETADDRINFO=auto
+@@ -3339,7 +3339,7 @@ if [ -z "$CFG_BUILD_PARTS" ]; then
+     fi
+ fi
+ for nobuild in $CFG_NOBUILD_PARTS; do
+-    CFG_BUILD_PARTS=`echo "$CFG_BUILD_PARTS" | sed "s, $nobuild,,g"`
++    CFG_BUILD_PARTS=`echo " $CFG_BUILD_PARTS" | sed "s, $nobuild,,g"`
+ done
+ if echo $CFG_BUILD_PARTS | grep -v libs >/dev/null 2>&1; then
+ #    echo
