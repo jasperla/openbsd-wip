@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/manage_sql.c.orig	Mon Sep  8 15:01:24 2014
-+++ src/manage_sql.c	Thu Oct 30 00:59:39 2014
+--- src/manage_sql.c.orig	Mon Nov  3 11:29:13 2014
++++ src/manage_sql.c	Sat Nov  8 02:14:18 2014
 @@ -40,7 +40,6 @@
  #include "sql.h"
  #include "tracef.h"
@@ -9,7 +9,7 @@ $OpenBSD$
  #include <assert.h>
  #include <ctype.h>
  #include <dirent.h>
-@@ -54,6 +53,9 @@
+@@ -54,9 +53,13 @@
  #include <string.h>
  #include <sys/stat.h>
  #include <sys/types.h>
@@ -19,12 +19,16 @@ $OpenBSD$
  #include <sys/wait.h>
  #include <unistd.h>
  #include <sys/time.h>
-@@ -908,15 +910,6 @@ iso_time_internal (time_t *epoch_time, const char **ab
++#include <libgen.h>
+ 
+ #include <openvas/base/openvas_string.h>
+ #include <openvas/base/openvas_file.h>
+@@ -908,16 +911,7 @@ iso_time_internal (time_t *epoch_time, const char **ab
    static char time_string[100];
  
    tm = localtime (epoch_time);
 -  if (timezone == 0)
--    {
+     {
 -      if (strftime (time_string, 98, "%FT%TZ", tm) == 0)
 -        return NULL;
 -
@@ -32,6 +36,37 @@ $OpenBSD$
 -        *abbrev = "UTC";
 -    }
 -  else
-     {
+-    {
        int len;
+ 
+       if (strftime (time_string, 98, "%FT%T%z", tm) == 0)
+@@ -38290,12 +38284,12 @@ modify_schedule (const char *schedule_id, const char *
+   if (duration == -1)
+     duration_string = NULL;
+   else
+-    duration_string = g_strdup_printf ("%li", duration);
++    duration_string = g_strdup_printf ("%lli", duration);
+ 
+   if (first_time == -1)
+     first_time_string = NULL;
+   else
+-    first_time_string = g_strdup_printf ("%li", first_time);
++    first_time_string = g_strdup_printf ("%lli", first_time);
+ 
+   if ((period_months == -1) || (period_months == 0))
+     {
+@@ -38307,12 +38301,12 @@ modify_schedule (const char *schedule_id, const char *
+       else
+         {
+           period_months_string = g_strdup ("0");
+-          period_string = g_strdup_printf ("%li", period);
++          period_string = g_strdup_printf ("%lli", period);
+         }
+     }
+   else
+     {
+-      period_months_string = g_strdup_printf ("%li", period_months);
++      period_months_string = g_strdup_printf ("%lli", period_months);
+       period_string = g_strdup ("0");
+     }
  
