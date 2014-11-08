@@ -1,6 +1,15 @@
 $OpenBSD$
---- src/manage_migrators.c.orig	Fri May 23 07:26:02 2014
-+++ src/manage_migrators.c	Thu Oct 30 01:21:58 2014
+--- src/manage_migrators.c.orig	Mon Nov  3 11:29:13 2014
++++ src/manage_migrators.c	Sat Nov  8 02:09:28 2014
+@@ -120,7 +120,7 @@
+  */
+ 
+ /* time.h in glibc2 needs this for strptime. */
+-#define _XOPEN_SOURCE
++#define _XOPEN_SOURCE 700
+ 
+ #include <time.h>
+ #include <stdlib.h>
 @@ -131,6 +131,7 @@
  #include <sys/stat.h>
  #include <ctype.h>

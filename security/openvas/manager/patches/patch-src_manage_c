@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/manage.c.orig	Mon Sep  8 15:01:24 2014
-+++ src/manage.c	Thu Oct 30 00:50:15 2014
+--- src/manage.c.orig	Mon Nov  3 11:29:13 2014
++++ src/manage.c	Sat Nov  8 01:32:19 2014
 @@ -38,7 +38,7 @@
   */
  
@@ -10,3 +10,12 @@ $OpenBSD$
  
  #include "manage.h"
  #include "sql.h"
+@@ -2031,7 +2031,7 @@ slave_setup (slave_t slave, gnutls_session_t *session,
+              lsc_credential_t target_smb_credential,
+              report_t last_stopped_report)
+ {
+-  int ret, next_result;
++  int ret=0, next_result;
+   iterator_t credentials, targets;
+   gchar *slave_ssh_credential_uuid = NULL, *slave_smb_credential_uuid = NULL;
+   gchar *slave_target_uuid, *slave_config_uuid;
