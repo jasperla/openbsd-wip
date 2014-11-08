@@ -1,6 +1,6 @@
 $OpenBSD$
---- tools/greenbone-scapdata-sync.orig	Thu Jul 31 13:24:43 2014
-+++ tools/greenbone-scapdata-sync	Fri Oct 31 11:05:23 2014
+--- tools/greenbone-scapdata-sync.orig	Mon Nov  3 11:28:56 2014
++++ tools/greenbone-scapdata-sync	Sat Nov  8 21:37:20 2014
 @@ -764,7 +764,7 @@ update_scap_db_private () {
          fi
        done
@@ -10,7 +10,7 @@ $OpenBSD$
        do
          if [ "${non_xml_file%%.asc}" = "${non_xml_file}" ] || ! [ -f "${non_xml_file%%.asc}" ]
          then
-@@ -776,7 +776,7 @@ update_scap_db_private () {
+@@ -776,11 +776,12 @@ update_scap_db_private () {
        then
          for ovalfile in $oval_files_sorted_private
          do
@@ -19,7 +19,23 @@ $OpenBSD$
            filedate=$(( $filedate - ( $filedate % 60 ) ))
            if [ $filedate -gt $DB_LASTUPDATE ] || [ 1 = "$REBUILD_OVAL" ]
            then
-@@ -898,7 +898,7 @@ update_scap_db() {
+-            oval_timestamp=`xsltproc "$SCAP_RES_DIR/oval_timestamp.xsl" "$ovalfile" | date "+%s" -f -`
++            tt=`xsltproc "$SCAP_RES_DIR/oval_timestamp.xsl" "$ovalfile"`
++            oval_timestamp=`date -j "+%s" $tt`
+ 
+             if [ 1 = "$REBUILD_OVAL" ]
+             then
+@@ -876,7 +877,8 @@ update_scap_db_private () {
+     fi
+ 
+     # TODO: This is not quite accurate as it uses the timestamp of the non-private data.
+-    LAST_UPDATE_TIMESTAMP=`sed 's/^\(.\{8\}\)/\1 /' $TIMESTAMP | date +%s -f -`
++    tt=`sed 's/^\(.\{8\}\)/\1 /' $TIMESTAMP`
++    LAST_UPDATE_TIMESTAMP=`date -j +%s $tt`
+ 
+     reset_sql_tries
+     until [ "$try_sql" -eq 0 ]
+@@ -898,7 +900,7 @@ update_scap_db() {
      CPEBASE="$SCAP_DIR/official-cpe-dictionary_v2.2.xml"
      if [ -e $CPEBASE ]
      then
@@ -28,7 +44,7 @@ $OpenBSD$
        filedate=$(( $filedate - ( $filedate % 60 ) ))
        if [ $filedate -gt $DB_LASTUPDATE ]
        then
-@@ -932,13 +932,13 @@ update_scap_db() {
+@@ -932,13 +934,13 @@ update_scap_db() {
      then
        for cvefile in `ls $SCAP_DIR/nvdcve-2.0-*.xml`
        do
@@ -44,7 +60,7 @@ $OpenBSD$
            if [ "0" -ne "$SPLIT_PART_SIZE" ] && [ "$filesize" -gt $(($SPLIT_PART_SIZE * 1024)) ]
            then
              log_info "File is larger than ${SPLIT_PART_SIZE}k. Splitting into multiple parts"
-@@ -1008,7 +1008,7 @@ update_scap_db() {
+@@ -1008,11 +1010,12 @@ update_scap_db() {
  
        for ovalfile in $oval_files_sorted
        do
@@ -53,3 +69,19 @@ $OpenBSD$
          filedate=$(( $filedate - ( $filedate % 60 ) ))
          if [ $filedate -gt $DB_LASTUPDATE ] || [ 1 = "$REBUILD_OVAL" ]
          then
+-          oval_timestamp=`xsltproc "$SCAP_RES_DIR/oval_timestamp.xsl" "$ovalfile" | date "+%s" -f -`
++          tt=`xsltproc "$SCAP_RES_DIR/oval_timestamp.xsl" "$ovalfile"`
++          oval_timestamp=`date -j "+%s" $tt`
+ 
+           if [ 1 = "$REBUILD_OVAL" ]
+           then
+@@ -1063,7 +1066,8 @@ update_scap_db() {
+   update_scap_db_private
+   update_cvss
+ 
+-  LAST_UPDATE_TIMESTAMP=`sed 's/^\(.\{8\}\)/\1 /' $TIMESTAMP | env TZ="UTC" date +%s -f -`
++  tt=`sed 's/^\(.\{8\}\)/\1 /' $TIMESTAMP`
++  LAST_UPDATE_TIMESTAMP=`env TZ="UTC" date -j +%s $tt`
+ 
+   reset_sql_tries
+   until [ "$try_sql" -eq 0 ]

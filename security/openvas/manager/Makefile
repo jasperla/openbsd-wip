@@ -12,6 +12,7 @@ WANTLIB +=		c m pthread \
 BUILD_DEPENDS +=	converters/xmltoman \
 			devel/doxygen
 RUN_DEPENDS +=		print/htmldoc \
+			print/texlive/texmf,-full \
 			net/rsync
 
 LIB_DEPENDS +=		security/openvas/libraries \

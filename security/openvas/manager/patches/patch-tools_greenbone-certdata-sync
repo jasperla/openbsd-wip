@@ -1,6 +1,6 @@
 $OpenBSD$
---- tools/greenbone-certdata-sync.orig	Thu Jul 31 13:24:43 2014
-+++ tools/greenbone-certdata-sync	Thu Oct 30 22:11:07 2014
+--- tools/greenbone-certdata-sync.orig	Mon Nov  3 11:28:56 2014
++++ tools/greenbone-certdata-sync	Sat Nov  8 21:33:47 2014
 @@ -486,7 +486,7 @@ update_cert_db() {
    then
      for certfile in `ls $CERT_DIR/dfn-cert-*.xml`
@@ -10,3 +10,13 @@ $OpenBSD$
        filedate=$(( $filedate - ( $filedate % 60 ) ))
        if [ $filedate -gt $DB_LASTUPDATE ]
        then
+@@ -516,7 +516,8 @@ update_cert_db() {
+ 
+   update_cvss
+ 
+-  LAST_UPDATE_TIMESTAMP=`sed 's/^\(.\{8\}\)/\1 /' $TIMESTAMP | env TZ="UTC" date +%s -f -`
++  tt=`sed 's/^\(.\{8\}\)/\1 /' $TIMESTAMP`
++  LAST_UPDATE_TIMESTAMP=`env TZ="UTC" date -j +%s $tt`
+ 
+   reset_sql_tries
+   until [ "$try_sql" -eq 0 ]
