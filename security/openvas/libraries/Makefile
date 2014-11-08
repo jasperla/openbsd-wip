@@ -9,7 +9,7 @@ SHARED_LIBS =		openvas_base    0.17 \
                         openvas_omp     0.17 #
 
 WANTLIB +=		assuan c gcrypt gio-2.0 glib-2.0 gnutls gobject-2.0
-WANTLIB +=		gpg-error gpgme ksba lber ldap m pcap pthread ssh uuid z
+WANTLIB +=		gpg-error gpgme ksba lber ldap m pcap pthread ssh z
 
 LIB_DEPENDS +=		security/libgcrypt \
 			devel/glib2 \
@@ -19,14 +19,15 @@ LIB_DEPENDS +=		security/libgcrypt \
 			security/libksba \
                         security/libassuan \
 			security/libgpg-error \
-			security/libssh \
-			sysutils/e2fsprogs
+			security/libssh
 
 BUILD_DEPENDS +=	devel/bison
 
 MASTER_SITES =		${MASTER_SITES_OPENVAS:=1787/}
 
 CFLAGS = 		-I ${PREFIX}/include
+
+CONFIGURE_ARGS +=	-D LIBCUUID=1
 
 SEPARATE_BUILD =	No
 
