@@ -6,4 +6,5 @@ lib/libmicrohttpd.a
 lib/libmicrohttpd.la
 @lib lib/libmicrohttpd.so.${LIBmicrohttpd_VERSION}
 lib/pkgconfig/libmicrohttpd.pc
+@comment lib/pkgconfig/libmicrospdy.pc
 @man man/man3/libmicrohttpd.3
