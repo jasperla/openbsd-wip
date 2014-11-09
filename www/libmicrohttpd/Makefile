@@ -1,10 +1,10 @@
 # $OpenBSD$
 
-SHARED_LIBS =	microhttpd	0.0	# 33.0
+SHARED_LIBS +=	microhttpd	0.0	# 38.0
 
 COMMENT =	small http server library
 
-VERSION =	0.9.34
+VERSION =	0.9.38
 DISTNAME =	libmicrohttpd-${VERSION}
 
 CATEGORIES =	www
@@ -31,12 +31,15 @@ LIB_DEPENDS +=	devel/libffi \
 		security/libtasn1 \
 		security/p11-kit
 
+# Note this includes test dependencies as configure checks
 BUILD_DEPENDS =	misc/zzuf \
 		net/curl \
 		net/socat
 
 CONFIGURE_STYLE =	autoconf
-CONFIGURE_ARGS +=	--with-gnutls
+# dont include spdy not ready yet...
+CONFIGURE_ARGS +=	--with-gnutls \
+			--enable-spdy=no
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
