@@ -72,12 +72,16 @@ LIB_DEPENDS =		databases/iodbc \
 			x11/xkbcommon
 
 # version change requires adjusting patches (at least)
-LIB_DEPENDS +=		devel/libsoup>=2.4,<2.5
+LIB_DEPENDS +=		devel/libsoup
 
 BUILD_DEPENDS =		devel/flex \
 			devel/bison
 
 # no leveldb dependency, requires -lmemenv
+
+# (at least) qtwebkit plays dirty games with inter-target dependencies,
+# we'd better use default rather than something explicit here.
+ALL_TARGET =
 
 MAKE_ENV =		PYTHON=${MODPY_BIN} \
 			RUBY=${RUBY} \
@@ -211,6 +215,7 @@ pre-configure:
 		ln -sf $$f; \
 	done;
 
+foo:
 	@for td in ${WRKSRC}/{,build/}qtwebkit/Source; do \
 		cd $$td; \
 		for d in *; do \
