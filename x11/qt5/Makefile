@@ -24,6 +24,7 @@ PKGNAME-postgresql =	qt5-postgresql-${VERSION}
 PKGNAME-sqlite2 =	qt5-sqlite2-${VERSION}
 PKGNAME-tds =		qt5-postgresql-${VERSION}
 
+SHARED_LIBS =		Enginio			0.0
 SHARED_LIBS +=		Qt5Bluetooth		0.0
 SHARED_LIBS +=		Qt5CLucene		0.0
 SHARED_LIBS +=		Qt5Concurrent		0.0
@@ -61,6 +62,7 @@ SHARED_LIBS +=		Qt5Widgets		0.0
 SHARED_LIBS +=		Qt5X11Extras		0.0
 SHARED_LIBS +=		Qt5Xml			0.0
 SHARED_LIBS +=		Qt5XmlPatterns		0.0
+SHARED_LIBS +=		qgsttools_p		0.0
 
 CATEGORIES =		x11 devel
 HOMEPAGE =		http://www.qt-project.org/
@@ -175,6 +177,9 @@ post-extract:
 	rm -f ${WRKDIST}/qtbase/tests/tests.pro
 .endif
 
+post-install:
+	rm -f share/qt5/mkspecs/openbsd-g++/qmake.conf${PATCHORIG}
+
 IGNORE_LINK_HEADERS_DIRS =	os-win32 win
 pre-configure:
 	# Python and Ruby are used for building only, those paths
@@ -233,33 +238,5 @@ pre-configure:
 		echo ln -sf $$f >&2; \
 		ln -sf $$f; \
 	done;
-
-foo:
-	@for td in ${WRKSRC}/{,build/}qtwebkit/Source; do \
-		cd $$td; \
-		for d in *; do \
-			test -d "$$d" || continue; \
-			find "$$d" -name '*.h' -type f -mindepth 2 | \
-			while read h; do \
-				dst="$$d/$${h##*/}"; \
-				if [ -h "$$dst" ]; then \
-					echo rm -- "$$dst"; \
-					rm -- "$$dst"; \
-				elif [ -f "$$dst" ]; then \
-					cmp -- "$$dst" "$$h"; \
-					continue; \
-				fi; \
-				h=$${h#$$d/}; \
-				for id in ${IGNORE_LINK_HEADERS_DIRS}; do \
-					if [ X"$${h#?(*/)$$id/}" != X"$$h" ]; then \
-						echo "    ignoring $$h"; \
-						continue 2; \
-					fi; \
-				done; \
-				echo ln -s -- "$$h" "$$dst"; \
-				ln -s -- "$$h" "$$dst"; \
-			done; \
-		done; \
-	done
 
 .include <bsd.port.mk>
