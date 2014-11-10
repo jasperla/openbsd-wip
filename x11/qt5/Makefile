@@ -24,22 +24,39 @@ PKGNAME-postgresql =	qt5-postgresql-${VERSION}
 PKGNAME-sqlite2 =	qt5-sqlite2-${VERSION}
 PKGNAME-tds =		qt5-postgresql-${VERSION}
 
+SHARED_LIBS +=		Qt5Bluetooth		0.0
+SHARED_LIBS +=		Qt5CLucene		0.0
 SHARED_LIBS +=		Qt5Concurrent		0.0
 SHARED_LIBS +=		Qt5Core			0.0
 SHARED_LIBS +=		Qt5DBus			0.0
+SHARED_LIBS +=		Qt5Declarative		0.0
+SHARED_LIBS +=		Qt5Designer		0.0
+SHARED_LIBS +=		Qt5DesignerComponents	0.0
 SHARED_LIBS +=		Qt5Gui			0.0
+SHARED_LIBS +=		Qt5Help			0.0
+SHARED_LIBS +=		Qt5Multimedia		0.0
+SHARED_LIBS +=		Qt5MultimediaQuick_p	0.0
+SHARED_LIBS +=		Qt5MultimediaWidgets	0.0
 SHARED_LIBS +=		Qt5Network		0.0
+SHARED_LIBS +=		Qt5Nfc			0.0
 SHARED_LIBS +=		Qt5OpenGL		0.0
+SHARED_LIBS +=		Qt5Positioning		0.0
 SHARED_LIBS +=		Qt5PrintSupport		0.0
 SHARED_LIBS +=		Qt5Qml			0.0
 SHARED_LIBS +=		Qt5Quick		0.0
 SHARED_LIBS +=		Qt5QuickParticles	0.0
 SHARED_LIBS +=		Qt5QuickTest		0.0
 SHARED_LIBS +=		Qt5QuickWidgets		0.0
+SHARED_LIBS +=		Qt5Script		0.0
+SHARED_LIBS +=		Qt5ScriptTools		0.0
+SHARED_LIBS +=		Qt5Sensors		0.0
 SHARED_LIBS +=		Qt5SerialPort		0.0
 SHARED_LIBS +=		Qt5Sql			0.0
 SHARED_LIBS +=		Qt5Svg			0.0
 SHARED_LIBS +=		Qt5Test			0.0
+SHARED_LIBS +=		Qt5WebKit		0.0
+SHARED_LIBS +=		Qt5WebKitWidgets	0.0
+SHARED_LIBS +=		Qt5WebSockets		0.0
 SHARED_LIBS +=		Qt5Widgets		0.0
 SHARED_LIBS +=		Qt5X11Extras		0.0
 SHARED_LIBS +=		Qt5Xml			0.0
@@ -82,6 +99,8 @@ BUILD_DEPENDS =		devel/flex \
 # (at least) qtwebkit plays dirty games with inter-target dependencies,
 # we'd better use default rather than something explicit here.
 ALL_TARGET =
+
+DESTDIRNAME =		INSTALL_ROOT
 
 MAKE_ENV =		PYTHON=${MODPY_BIN} \
 			RUBY=${RUBY} \
