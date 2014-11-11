@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD:$
+
+daemon="/usr/local/sbin/openvassd"
+daemon_flags="--listen=127.0.0.1"
+
+. /etc/rc.d/rc.subr
+
+# ps arg change as loading nvt's.
+pexp="^openvassd"
+
+rc_cmd $1

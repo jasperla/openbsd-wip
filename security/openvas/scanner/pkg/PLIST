@@ -25,3 +25,4 @@ sbin/openvas-nvt-sync
 @bin sbin/openvassd
 share/doc/openvas/
 share/doc/openvas/README.OpenBSD
+@rcscript ${RCDIR}/openvassd
