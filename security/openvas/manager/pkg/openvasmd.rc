@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $OpenBSD:$
+
+daemon="/usr/local/sbin/openvasmd"
+daemon_flags="--listen=127.0.0.1 --slisten=127.0.0.1"
+
+. /etc/rc.d/rc.subr
+
+pexp="^openvasmd"
+
+rc_cmd $1
