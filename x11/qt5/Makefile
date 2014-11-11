@@ -24,6 +24,8 @@ PKGNAME-postgresql =	qt5-postgresql-${VERSION}
 PKGNAME-sqlite2 =	qt5-sqlite2-${VERSION}
 PKGNAME-tds =		qt5-postgresql-${VERSION}
 
+PKG_ARCH-html =		*
+
 SHARED_LIBS =		Enginio			0.0
 SHARED_LIBS +=		Qt5Bluetooth		0.0
 SHARED_LIBS +=		Qt5CLucene		0.0
@@ -64,6 +66,10 @@ SHARED_LIBS +=		Qt5Xml			0.0
 SHARED_LIBS +=		Qt5XmlPatterns		0.0
 SHARED_LIBS +=		qgsttools_p		0.0
 
+# -examples or -tests?
+SHARED_LIBS +=		fftreal			0.0
+SHARED_LIBS +=		gruesensor		0.0
+
 CATEGORIES =		x11 devel
 HOMEPAGE =		http://www.qt-project.org/
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
@@ -83,29 +89,28 @@ MODGCC4_ARCHS =		*
 MODPY_RUNDEP =		No
 MODRUBY_RUNDEP =	No
 
+# no leveldb dependency, requires -lmemenv; QtWebKit uses internal version
 LIB_DEPENDS =		databases/iodbc \
 			devel/gperf \
+			devel/libsoup \
 			graphics/libwebp \
 			print/cups,-libs \
 			textproc/icu4c \
 			x11/xkbcommon
 
-# version change requires adjusting patches (at least)
-LIB_DEPENDS +=		devel/libsoup
+# Not used in Qt itself (implementation considered unstable),
+# but used in QtWebKit.
+LIB_DEPENDS +=		devel/harfbuzz
 
+# QtWebKit & Co. requirements
 BUILD_DEPENDS =		devel/flex \
 			devel/bison
-
-# no leveldb dependency, requires -lmemenv
-
-# (at least) qtwebkit plays dirty games with inter-target dependencies,
-# we'd better use default rather than something explicit here.
-ALL_TARGET =
 
 DESTDIRNAME =		INSTALL_ROOT
 
 MAKE_ENV =		PYTHON=${MODPY_BIN} \
 			RUBY=${RUBY} \
+			REAL_BUILD_ROOT=${WRKBUILD} \
 			OPENBSD_CPPFLAGS="-isystem ${WRKDIR}/gcc-include"
 
 MAKE_FLAGS =		-j ${MAKE_JOBS} \
@@ -121,12 +126,41 @@ MAKE_FLAGS =		-j ${MAKE_JOBS} \
 SEPARATE_BUILD =	Yes
 WRKBUILD =		${WRKSRC}/build
 
+# (at least) qtwebkit plays dirty games with inter-target dependencies,
+# we'd better use default rather than something explicit here.
+ALL_TARGET =
+
 CONFIGURE_STYLE =	simple
+
+# readability macros
+QT_BASEDIR =	${PREFIX}/lib/qt5
+QT_INCDIR =	${PREFIX}/include/X11/qt5
+QT_EXAMPLES =	${QT_BASEDIR}/examples
+QT_DOC =	${PREFIX}/share/doc/qt5
+QT_PLUGINSDIR =	${QT_BASEDIR}/plugins
+QT_BINDIR =	${QT_BASEDIR}/bin
+QT_PKGCFGDIR =	${QT_BASEDIR}/pkgconfig
+
+# generic args
 CONFIGURE_ARGS =	-confirm-license \
 			-force-debug-info \
-			-opensource \
-			-prefix ${PREFIX} \
-			-rpath \
+			-opensource
+
+# paths
+CONFIGURE_ARGS +=	-sysconfdir ${SYSCONFDIR} \
+			-prefix ${QT_BASEDIR} \
+			-plugindir ${QT_PLUGINSDIR} \
+			-libdir ${QT_BASEDIR} \
+			-headerdir ${QT_INCDIR} \
+			-examplesdir ${QT_EXAMPLES} \
+			-docdir ${QT_DOC} \
+			-datadir ${QT_BASEDIR} \
+			-bindir ${QT_BINDIR} \
+			-R${X11BASE}/lib \
+			-L${X11BASE}/lib
+
+# other options
+CONFIGURE_ARGS +=	-rpath \
 			-shared \
 			-verbose \
 			-no-c++11 \
@@ -136,11 +170,9 @@ CONFIGURE_ARGS =	-confirm-license \
 			-opengl desktop \
 			-system-sqlite \
 			-system-xcb \
-			-L${X11BASE}/lib \
-			-R${X11BASE}/lib
 
-CONFIGURE_ENV =		MAKEFLAGS="-j ${MAKE_JOBS}" \
-			PKG_CONFIG_PATH=${WRKDIR} \
+CONFIGURE_ENV =		MAKE=make \
+			MAKEFLAGS="-j ${MAKE_JOBS}" \
 			EXTRA_CPPFLAGS="-DLOCALBASE=\\\"${LOCALBASE}\\\" -DX11BASE=\\\"${X11BASE}\\\""
 
 PSEUDO_FLAVORS =	no_examples no_tests
@@ -154,7 +186,34 @@ NO_TEST =		Yes
 CONFIGURE_ARGS +=	-nomake tests
 .endif
 
-PKG_ARCH-html =		*
+PROGRAMS5 =	assistant designer linguist lrelease lupdate moc pixeltool \
+		qdbus qdoc qmake qml qtdiag rcc uic
+
+# still need to check if those should get it into ${PREFIX}/bin
+PROGRAMS_IGN =	lconvert \
+		qcollectiongenerator \
+		qdbuscpp2xml \
+		qdbusviewer \
+		qdbusxml2cpp \
+		qdoc \
+		qhelpconverter \
+		qhelpgenerator \
+		qlalr \
+		qml \
+		qml1plugindump \
+		qmlbundle \
+		qmlimportscanner \
+		qmlmin \
+		qmlplugindump \
+		qmlprofiler \
+		qmlscene \
+		qmltestrunner \
+		qmlviewer \
+		qtdiag \
+		qtpaths \
+		syncqt.pl \
+		xmlpatterns \
+		xmlpatternsvalidator
 
 # See qtbase/tests/README for details
 TEST_IS_INTERACTIVE =	X11
@@ -165,7 +224,6 @@ TEST_DEPENDS =		kde4-*|kdebase-*:meta/kde4 \
 # TODO:
 # 1. Support for OpenBSD sensors, using dummy sensors for now.
 # 2. V4L2 support (look at the fswebcam for patched videodev2.h?).
-# 3. MAKEFLAGS hack doesn't work for building qmake.
 
 PATCHORIG =		.ports.orig
 
@@ -178,11 +236,23 @@ post-extract:
 .endif
 
 post-install:
+	# programs
+.for p in ${PROGRAMS5}
+	ln -sf ../lib/qt5/bin/$p ${PREFIX}/bin/$p-qt5
+.endfor
+	# this helps qdbuscpp2xml
+	#cd ${QT_BINDIR} && ln -sf moc moc-qt5
+.for l v in ${SHARED_LIBS}
+	! test -f ${PREFIX}/lib/qt5/lib$l.so.$v || \
+	    ln -sf qt5/lib$l.so.$v ${PREFIX}/lib
+.endfor
+	# cleanup
 	rm -f share/qt5/mkspecs/openbsd-g++/qmake.conf${PATCHORIG}
+	cd ${PREFIX}/lib/qt4 && ln -sf ../../include/X11/qt4 include
 
 IGNORE_LINK_HEADERS_DIRS =	os-win32 win
 pre-configure:
-	# Python and Ruby are used for building only, those paths
+	# Python and Ruby are used for building mainly, those paths
 	# do not get into final packages.
 	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	ln -sf ${RUBY} ${WRKDIR}/bin/ruby
