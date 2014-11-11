@@ -1,9 +1,10 @@
 $OpenBSD$
 1. Always prepend project directory to list of linking directories,
    to avoid picking up wrong library from system.
-2. Respect OpenBSD shared library naming rules.
---- qtbase/qmake/generators/unix/unixmake.cpp.ports.orig	Sun Nov  2 20:15:58 2014
-+++ qtbase/qmake/generators/unix/unixmake.cpp	Tue Nov  4 14:45:02 2014
+2. Don't special case GNU make, BSD make isn't that bad, too.
+3. Respect OpenBSD shared library naming rules.
+--- qtbase/qmake/generators/unix/unixmake.cpp.ports.orig	Thu Sep 11 14:48:00 2014
++++ qtbase/qmake/generators/unix/unixmake.cpp	Tue Nov 11 12:07:49 2014
 @@ -150,6 +150,10 @@ UnixMakefileGenerator::init()
                : project->isActiveConfig("ti_linker") ? "--search_path="
                : "-L");
@@ -15,6 +16,15 @@ $OpenBSD$
      if(!project->isEmpty("QMAKE_LIBDIR")) {
          const ProStringList &libdirs = project->values("QMAKE_LIBDIR");
          for(int i = 0; i < libdirs.size(); ++i) {
+@@ -184,7 +188,7 @@ UnixMakefileGenerator::init()
+         }
+     }
+ 
+-    if(project->isActiveConfig("GNUmake") && !project->isEmpty("QMAKE_CFLAGS_DEPS"))
++    if(!project->isEmpty("QMAKE_CFLAGS_DEPS"))
+         include_deps = true; //do not generate deps
+     if(project->isActiveConfig("compile_libtool"))
+         Option::obj_ext = ".lo"; //override the .o
 @@ -748,7 +752,8 @@ UnixMakefileGenerator::defaultInstall(const QString &t
      } else if(project->first("TEMPLATE") == "app") {
          target = "$(QMAKE_TARGET)";
