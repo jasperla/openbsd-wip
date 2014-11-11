@@ -227,6 +227,8 @@ TEST_DEPENDS =		kde4-*|kdebase-*:meta/kde4 \
 
 PATCHORIG =		.ports.orig
 
+SUBST_VARS =		VERSION
+
 post-extract:
 .if ${FLAVOR:Mno_examples}
 	rm -f ${WRKDIST}/qtbase/examples/examples.pro
