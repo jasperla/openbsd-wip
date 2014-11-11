@@ -177,3 +177,4 @@ share/openvas/gsa/classic/po/zh.xml
 share/openvas/gsa/classic/rnc.xsl
 share/openvas/gsa/classic/wizard.xsl
 share/openvas/gsad_log.conf
+@rcscript ${RCDIR}/gsad
