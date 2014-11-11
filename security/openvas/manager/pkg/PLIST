@@ -101,3 +101,4 @@ share/openvas/scap/oval_verify.xsl
 share/openvas/scap/ovaldef_getbyname.xsl
 share/openvas/scap/ovaldef_list_ids.xsl
 share/openvas/scap/scap_db_init.sql
+@rcscript ${RCDIR}/openvasmd
