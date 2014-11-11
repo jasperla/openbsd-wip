@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $OpenBSD:$
+
+daemon="/usr/local/sbin/gsad"
+daemon_flags="--listen=127.0.0.1 --mlisten=127.0.0.1"
+
+. /etc/rc.d/rc.subr
+
+pexp="^${daemon}"
+
+rc_cmd $1
