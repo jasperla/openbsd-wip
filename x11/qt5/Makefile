@@ -262,7 +262,6 @@ post-install:
 	rm -f share/qt5/mkspecs/openbsd-g++/qmake.conf${PATCHORIG}
 	cd ${PREFIX}/lib/qt4 && ln -sf ../../include/X11/qt4 include
 
-IGNORE_LINK_HEADERS_DIRS =	os-win32 win
 pre-configure:
 	# Python and Ruby are used for building mainly, those paths
 	# do not get into final packages.
