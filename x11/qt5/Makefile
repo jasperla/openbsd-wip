@@ -226,8 +226,10 @@ PROGRAMS_IGN =	lconvert \
 # See qtbase/tests/README for details
 TEST_IS_INTERACTIVE =	X11
 TEST_TARGET =		check
-TEST_DEPENDS =		kde4-*|kdebase-*:meta/kde4 \
-			audio/sox
+TEST_DEPENDS =		${MODPY_RUN_DEPENDS} \
+			${MODRUBY_RUN_DEPENDS} \
+			audio/sox \
+			kde4-*|kdebase-*:meta/kde4
 
 # TODO:
 # 1. Support for OpenBSD sensors, using dummy sensors for now.
