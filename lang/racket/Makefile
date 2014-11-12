@@ -10,6 +10,7 @@ ONLY_FOR_ARCHS =	i386 amd64 hppa mips64el powerpc
 COMMENT =		multi-paradigm programming language
 
 V =			6.1.1
+REVISION =		0
 PKGNAME =		racket-$V
 DISTNAME =		racket-$V-src-builtpkgs
 
@@ -47,7 +48,9 @@ BUILD_DEPENDS =		devel/pango \
 			graphics/jpeg
 RUN_DEPENDS =		devel/desktop-file-utils
 
-WANTLIB += c m pthread ffi iodbc unique-1.0
+WANTLIB += c m pthread ffi
+# Loaded using FFI
+WANTLIB += GL X11 iodbc unique-1.0
 
 WRKDIST =		${WRKDIR}/racket-$V
 WRKSRC =		${WRKDIST}/src
