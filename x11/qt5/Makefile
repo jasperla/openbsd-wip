@@ -2,6 +2,7 @@
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
+IGNORE-html =		qdoc segfaults
 
 VERSION =		5.3.2
 DISTNAME =		qt-everywhere-opensource-src-${VERSION}
@@ -126,10 +127,6 @@ MAKE_FLAGS =		-j ${MAKE_JOBS} \
 SEPARATE_BUILD =	Yes
 WRKBUILD =		${WRKSRC}/build
 
-# (at least) qtwebkit plays dirty games with inter-target dependencies,
-# we'd better use default rather than something explicit here.
-ALL_TARGET =
-
 CONFIGURE_STYLE =	simple
 
 # readability macros
@@ -175,12 +172,23 @@ CONFIGURE_ENV =		MAKE=make \
 			MAKEFLAGS="-j ${MAKE_JOBS}" \
 			EXTRA_CPPFLAGS="-DLOCALBASE=\\\"${LOCALBASE}\\\" -DX11BASE=\\\"${X11BASE}\\\""
 
-PSEUDO_FLAVORS =	no_examples no_tests
-FLAVOR ?=		no_examples no_tests
+PSEUDO_FLAVORS =	no_examples no_html no_tests
+FLAVOR ?=		no_html
 
-.if ${FLAVOR:Mno_examples}
+.include <bsd.port.arch.mk>
+
+# QtWebkit (at least, maybe others) plays dirty games with inter-target
+# dependencies, so we'd better use the target qmake always creates
+# first, named "first".
+ALL_TARGET =		first
+.if ${BUILD_PACKAGES:M-html}
+ALL_TARGET +=		html_docs
+.endif
+
+.if !${BUILD_PACKAGES:M-examples}
 CONFIGURE_ARGS +=	-nomake examples
 .endif
+
 .if ${FLAVOR:Mno_tests}
 NO_TEST =		Yes
 CONFIGURE_ARGS +=	-nomake tests
