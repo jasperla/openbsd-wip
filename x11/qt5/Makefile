@@ -91,7 +91,7 @@ MODPY_RUNDEP =		No
 MODRUBY_RUNDEP =	No
 
 # no leveldb dependency, requires -lmemenv; QtWebKit uses internal version
-LIB_DEPENDS =		databases/iodbc \
+LIB_DEPENDS-main =	databases/iodbc \
 			devel/gperf \
 			devel/libsoup \
 			graphics/libwebp \
@@ -103,9 +103,19 @@ LIB_DEPENDS =		databases/iodbc \
 # but used in QtWebKit.
 LIB_DEPENDS +=		devel/harfbuzz
 
+LIB_DEPENDS-mysql =	databases/mariadb
+LIB_DEPENDS-postgresql =databases/postgresql
+LIB_DEPENDS-sqlite2 =	databases/sqlite
+LIB_DEPENDS-tds =
+
 # QtWebKit & Co. requirements
 BUILD_DEPENDS =		devel/flex \
 			devel/bison
+
+RUN_DEPENDS-mysql =
+RUN_DEPENDS-postgresql =
+RUN_DEPENDS-sqlite2 =
+RUN_DEPENDS-tds =
 
 DESTDIRNAME =		INSTALL_ROOT
 
