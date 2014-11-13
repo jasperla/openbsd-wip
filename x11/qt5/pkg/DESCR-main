@@ -16,11 +16,11 @@ People who want to use Qt5 to compile applications outside the ports tree
 should note that Qt5's installation conforms to OpenBSD habits, not
 TrollTech's recommendations. Accordingly:
 - libs are separated from includes.
-- moc is installed as ${PREFIX}/bin/moc-qt5, in order not to conflict 
+- moc is installed as ${PREFIX}/bin/moc-qt5, in order not to conflict
   with other Qt versions.
 - uic is installed as ${PREFIX}/bin/uic-qt5
 
-Generally, it's just a question of invoking 
+Generally, it's just a question of invoking:
 
   env MOC=moc-qt5 UIC=uic-qt5 configure \
 	--with-qt-includes=${PREFIX}/include/X11/qt5 \
