@@ -89,7 +89,13 @@ WANTLIB-main += webp xcb xcb-glx xcb-icccm xcb-image xcb-keysyms xcb-randr
 WANTLIB-main += xcb-render xcb-render-util xcb-shape xcb-shm xcb-sync
 WANTLIB-main += xcb-xfixes xcb-xkb xkbcommon xkbcommon-x11 xml2 xslt z
 
-WANTLIB-examples =	${MODGCC4_CPPWANTLIB} GL c m pthread
+WANTLIB-examples =  ${MODGCC4_CPPWANTLIB} GL c m pthread
+WANTLIB-examples += Qt5Bluetooth Qt5Concurrent Qt5Core Qt5DBus Qt5Declarative
+WANTLIB-examples += Qt5Gui Qt5Help Qt5Multimedia Qt5MultimediaWidgets Qt5Network
+WANTLIB-examples += Qt5Nfc Qt5OpenGL Qt5Positioning Qt5PrintSupport Qt5Qml
+WANTLIB-examples += Qt5Quick Qt5QuickTest Qt5Script Qt5ScriptTools Qt5Sensors
+WANTLIB-examples += Qt5Sql Qt5Svg Qt5Test Qt5WebKit Qt5WebKitWidgets Qt5Widgets
+WANTLIB-examples += Qt5Xml Qt5XmlPatterns
 
 WANTLIB-html =
 
@@ -143,20 +149,25 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			x11/gtk+2 \
 			x11/xkbcommon
 
-LIB_DEPENDS-examples =	${BUILD_PKGPATH},-main
+LIB_DEPENDS-examples =	${BUILD_PKGPATH},-main \
+			${MODGCC4_CPPLIBDEP}
 
 LIB_DEPENDS-html =
 
 LIB_DEPENDS-mysql =	${BUILD_PKGPATH},-main \
+			${MODGCC4_CPPLIBDEP} \
 			databases/mariadb
 
 LIB_DEPENDS-psql =	${BUILD_PKGPATH},-main \
+			${MODGCC4_CPPLIBDEP} \
 			databases/postgresql
 
 LIB_DEPENDS-sqlite2 =	${BUILD_PKGPATH},-main \
+			${MODGCC4_CPPLIBDEP} \
 			databases/sqlite
 
 LIB_DEPENDS-tds =	${BUILD_PKGPATH},-main \
+			${MODGCC4_CPPLIBDEP} \
 			databases/freetds
 
 # QtWebKit & Co. requirements
@@ -307,6 +318,11 @@ TEST_DEPENDS =		${MODPY_RUN_DEPENDS} \
 # TODO:
 # 1. Support for OpenBSD sensors, using dummy sensors for now.
 # 2. V4L2 support (look at the fswebcam for patched videodev2.h?).
+# 3. No HTML docs due to qdoc segfault.
+# 4. The libfftreal and libgruesensor libs ignore overwritten versions.
+# 5. No -debug - yet?
+# 6. COMMENT and DESCR in subpackages could be improved.
+# 7. Check placement of CMake and pkg-config helpers.
 
 PATCHORIG =		.ports.orig
 
@@ -330,12 +346,12 @@ post-install:
 .for l v in ${SHARED_LIBS}
 	cd ${PREFIX}/lib; \
 	f=qt5/lib$l.so.$v; \
-	! test -f $f || ln -sf ${f} .
+	! test -f $$f || ln -sf $$f .
 .endfor
 .for l v in ${SHARED_LIBS-examples}
 	cd ${PREFIX}/lib; \
 	f=qt5/examples/*/*/lib$l.so.$v; \
-	! test -f $f || ln -sf ${f} .
+	! test -f $$f || ln -sf $$f .
 .endfor
 	# cleanup
 	rm -f share/qt5/mkspecs/openbsd-g++/qmake.conf${PATCHORIG}
