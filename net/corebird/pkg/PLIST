@@ -11,8 +11,10 @@ share/corebird/assets/hicolor/
 share/corebird/assets/hicolor/scalable/
 share/corebird/assets/hicolor/scalable/actions/
 share/corebird/assets/hicolor/scalable/actions/corebird-compose-symbolic.svg
+share/corebird/assets/hicolor/scalable/actions/corebird-conversation-symbolic.svg
 share/corebird/assets/hicolor/scalable/actions/corebird-filter-symbolic.svg
 share/corebird/assets/hicolor/scalable/actions/corebird-mentions-symbolic.svg
+share/corebird/assets/hicolor/scalable/actions/corebird-new-window-symbolic.svg
 share/corebird/assets/hicolor/scalable/actions/corebird-retweet-symbolic.svg
 share/corebird/no_avatar.png
 share/corebird/no_banner.png
@@ -26,6 +28,7 @@ share/corebird/sql/init/Create.1.sql
 share/corebird/ui/
 share/corebird/ui/style.css
 share/corebird/verified.png
+share/corebird/verified_24.png
 share/glib-2.0/
 share/glib-2.0/schemas/
 share/glib-2.0/schemas/org.baedert.corebird.gschema.xml
