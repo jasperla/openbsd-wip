@@ -12,7 +12,7 @@ COMMENT-main =		C++ general-purpose toolkit
 COMMENT-examples =	examples for Qt5
 COMMENT-html =		offline HTML documentation for Qt5
 COMMENT-mysql =		MySQL plugin for Qt5
-COMMENT-postgresql =	PostgresSQL plugin for Qt5
+COMMENT-psql =		PostgresSQL plugin for Qt5
 COMMENT-sqlite2 =	SQLite 2.x plugin for Qt5
 COMMENT-tds =		TDS plugin for Qt5
 
@@ -21,9 +21,9 @@ PKGNAME-main =		qt5-${VERSION}
 PKGNAME-examples =	qt5-examples-${VERSION}
 PKGNAME-html =		qt5-html-${VERSION}
 PKGNAME-mysql =		qt5-mysql-${VERSION}
-PKGNAME-postgresql =	qt5-postgresql-${VERSION}
+PKGNAME-psql =		qt5-postgresql-${VERSION}
 PKGNAME-sqlite2 =	qt5-sqlite2-${VERSION}
-PKGNAME-tds =		qt5-postgresql-${VERSION}
+PKGNAME-tds =		qt5-tds-${VERSION}
 
 PKG_ARCH-html =		*
 
@@ -67,20 +67,53 @@ SHARED_LIBS +=		Qt5Xml			0.0
 SHARED_LIBS +=		Qt5XmlPatterns		0.0
 SHARED_LIBS +=		qgsttools_p		0.0
 
-# -examples or -tests?
-SHARED_LIBS +=		fftreal			0.0
-SHARED_LIBS +=		gruesensor		0.0
+SHARED_LIBS-examples =	fftreal			0.0
+SHARED_LIBS-examples +=	gruesensor		0.0
+SHARED_LIBS +=		${SHARED_LIBS-examples}
 
 CATEGORIES =		x11 devel
 HOMEPAGE =		http://www.qt-project.org/
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 
-# LGPLv2.1 for code; FDLv1.3 for documentation
+
+WANTLIB-main =  ${WANTLIB}
+WANTLIB-main += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
+WANTLIB-main += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo
+WANTLIB-main += cups dbus-1 fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB-main += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gstapp-1.0
+WANTLIB-main += gstaudio-1.0 gstbase-1.0 gstpbutils-1.0 gstreamer-1.0
+WANTLIB-main += gstvideo-1.0 gthread-2.0 gtk-x11-2.0 icudata icui18n
+WANTLIB-main += icuuc iodbc jasper jpeg m mng openal pango-1.0 pangocairo-1.0
+WANTLIB-main += pangoft2-1.0 pcre16 png pthread pulse sqlite3 tiff
+WANTLIB-main += webp xcb xcb-glx xcb-icccm xcb-image xcb-keysyms xcb-randr
+WANTLIB-main += xcb-render xcb-render-util xcb-shape xcb-shm xcb-sync
+WANTLIB-main += xcb-xfixes xcb-xkb xkbcommon xkbcommon-x11 xml2 xslt z
+
+WANTLIB-examples =	${MODGCC4_CPPWANTLIB} GL c m pthread
+
+WANTLIB-html =
+
+WANTLIB-mysql =		${MODGCC4_CPPWANTLIB} Qt5Core Qt5Sql
+WANTLIB-mysql +=	crypto m pthread mysqlclient_r ssl z
+
+WANTLIB-psql =		${MODGCC4_CPPWANTLIB} Qt5Core Qt5Sql
+WANTLIB-psql +=		m pthread pq
+
+WANTLIB-sqlite2 =	${MODGCC4_CPPWANTLIB} Qt5Core Qt5Sql
+WANTLIB-sqlite2 +=	m pthread sqlite
+
+WANTLIB-tds =		${MODGCC4_CPPWANTLIB} Qt5Core Qt5Sql
+WANTLIB-tds +=		m pthread sybdb
+
+
+# Mostly LGPLv2.1 for code; FDLv1.3 for documentation.
+# Some third-party parts are BSD-licensed.
+# Also, many parts have are dual-licensed having either commercial, GPL,
+# Apache 2.0 or other type of license as an alternative option.
 PERMIT_PACKAGE_CDROM =	Yes
 
-#WANTLIB =		???
-
-MULTI_PACKAGES =	-main -debug -examples -html -mysql -postgresql -sqlite2 -tds
+MULTI_PACKAGES =	-main -examples -html -mysql -psql -sqlite2 -tds
+#MULTI_PACKAGES +=	-debug
 
 MASTER_SITES =		http://master.qt-project.org/archive/qt/${VERSION:R}/${VERSION}/single/
 
@@ -91,31 +124,61 @@ MODPY_RUNDEP =		No
 MODRUBY_RUNDEP =	No
 
 # no leveldb dependency, requires -lmemenv; QtWebKit uses internal version
-LIB_DEPENDS-main =	databases/iodbc \
-			devel/gperf \
-			devel/libsoup \
+LIB_DEPENDS-main =	${LIB_DEPENDS} \
+			audio/openal \
+			audio/pulseaudio \
+			databases/iodbc \
+			devel/atk \
+			devel/pango \
+			graphics/cairo \
+			graphics/gdk-pixbuf2 \
+			graphics/jasper \
+			graphics/libmng \
 			graphics/libwebp \
+			multimedia/gstreamer1/core \
+			multimedia/gstreamer1/plugins-base \
 			print/cups,-libs \
 			textproc/icu4c \
+			textproc/libxslt \
+			x11/gtk+2 \
 			x11/xkbcommon
 
-# Not used in Qt itself (implementation considered unstable),
-# but used in QtWebKit.
-LIB_DEPENDS +=		devel/harfbuzz
+LIB_DEPENDS-examples =	${BUILD_PKGPATH},-main
 
-LIB_DEPENDS-mysql =	databases/mariadb
-LIB_DEPENDS-postgresql =databases/postgresql
-LIB_DEPENDS-sqlite2 =	databases/sqlite
-LIB_DEPENDS-tds =
+LIB_DEPENDS-html =
+
+LIB_DEPENDS-mysql =	${BUILD_PKGPATH},-main \
+			databases/mariadb
+
+LIB_DEPENDS-psql =	${BUILD_PKGPATH},-main \
+			databases/postgresql
+
+LIB_DEPENDS-sqlite2 =	${BUILD_PKGPATH},-main \
+			databases/sqlite
+
+LIB_DEPENDS-tds =	${BUILD_PKGPATH},-main \
+			databases/freetds
 
 # QtWebKit & Co. requirements
 BUILD_DEPENDS =		devel/flex \
 			devel/bison
 
+RUN_DEPENDS-main =
+RUN_DEPENDS-examples =
+RUN_DEPENDS-html =
 RUN_DEPENDS-mysql =
-RUN_DEPENDS-postgresql =
+RUN_DEPENDS-psql =
 RUN_DEPENDS-sqlite2 =
 RUN_DEPENDS-tds =
+
+# Not used in Qt itself (implementation considered unstable),
+# but used in QtWebKit.
+BUILD_DEPENDS +=	devel/gperf \
+			devel/harfbuzz \
+			devel/libsoup
+RUN_DEPENDS-main +=	devel/gperf \
+			devel/harfbuzz \
+			devel/libsoup
 
 DESTDIRNAME =		INSTALL_ROOT
 
@@ -265,12 +328,18 @@ post-install:
 	# this helps qdbuscpp2xml
 	#cd ${QT_BINDIR} && ln -sf moc moc-qt5
 .for l v in ${SHARED_LIBS}
-	! test -f ${PREFIX}/lib/qt5/lib$l.so.$v || \
-	    ln -sf qt5/lib$l.so.$v ${PREFIX}/lib
+	cd ${PREFIX}/lib; \
+	f=qt5/lib$l.so.$v; \
+	! test -f $f || ln -sf ${f} .
+.endfor
+.for l v in ${SHARED_LIBS-examples}
+	cd ${PREFIX}/lib; \
+	f=qt5/examples/*/*/lib$l.so.$v; \
+	! test -f $f || ln -sf ${f} .
 .endfor
 	# cleanup
 	rm -f share/qt5/mkspecs/openbsd-g++/qmake.conf${PATCHORIG}
-	cd ${PREFIX}/lib/qt4 && ln -sf ../../include/X11/qt4 include
+	cd ${PREFIX}/lib/qt5 && ln -sf ../../include/X11/qt5 include
 
 pre-configure:
 	# Python and Ruby are used for building mainly, those paths
