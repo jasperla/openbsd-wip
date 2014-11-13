@@ -24,11 +24,11 @@ COMMENT =		corebird
 #
 #GH_VER =		0.8
 #DISTNAME =		corebird-${GH_VER}
-DISTNAME =		corebird-0.9pre20141007
+DISTNAME =		corebird-0.9pre20141113
 GH_ACCOUNT =		baedert
 GH_PROJECT =		corebird
 #GH_TAGNAME =           1.0
-GH_COMMIT =		ed41d0492d89abf7b3217be83b000bfe882e6664
+GH_COMMIT =		998fb150e4089f4e82f9b10fab3795aacb766123
 
 #PKGNAME =		???
 #PKGNAME-foo =		???	for multi packages
