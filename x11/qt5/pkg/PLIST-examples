@@ -1,4 +1,6 @@
 @comment $OpenBSD$
+@lib lib/libfftreal.so.${LIBfftreal_VERSION}
+@lib lib/libgruesensor.so.${LIBgruesensor_VERSION}
 lib/qt5/examples/
 lib/qt5/examples/README
 lib/qt5/examples/assistant/

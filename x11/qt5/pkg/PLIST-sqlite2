@@ -1,3 +1,2 @@
 @comment $OpenBSD$
-include/X11/qt5/QtSql/5.3.2/QtSql/private/qsql_sqlite2_p.h
 lib/qt5/plugins/sqldrivers/libqsqlite2.so
