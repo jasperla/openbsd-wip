@@ -4,4 +4,3 @@
 4. The libfftreal and libgruesensor libs ignore overwritten versions.
 5. No -debug - yet?
 6. COMMENT and DESCR in subpackages could be improved.
-7. Check placement of CMake and pkg-config helpers.
