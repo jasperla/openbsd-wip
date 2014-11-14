@@ -221,6 +221,7 @@ QT_DOC =	${PREFIX}/share/doc/qt5
 QT_PLUGINSDIR =	${QT_BASEDIR}/plugins
 QT_BINDIR =	${QT_BASEDIR}/bin
 QT_PKGCFGDIR =	${QT_BASEDIR}/pkgconfig
+QT_CMAKEDIR =	${QT_BASEDIR}/cmake
 
 # generic args
 CONFIGURE_ARGS =	-confirm-license \
@@ -344,6 +345,16 @@ post-install:
 	f=qt5/examples/*/*/lib$l.so.$v; \
 	! test -f $$f || ln -sf $$f .
 .endfor
+	# pkg-config files
+	@if [ -d ${QT_PKGCFGDIR} ]; then \
+		for f in ${QT_PKGCFGDIR}/*; do \
+			echo "mv -- $$f ${PREFIX}/lib/pkgconfig"; \
+			mv -- "$$f" ${PREFIX}/lib/pkgconfig; \
+		done; \
+	fi
+	# CMake files
+	rm -Rf ${PREFIX}/lib/cmake
+	mv ${QT_CMAKEDIR} ${PREFIX}/lib/cmake
 	# cleanup
 	rm -f share/qt5/mkspecs/openbsd-g++/qmake.conf${PATCHORIG}
 	cd ${PREFIX}/lib/qt5 && ln -sf ../../include/X11/qt5 include
