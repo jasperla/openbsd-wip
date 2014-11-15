@@ -1,8 +1,8 @@
 $OpenBSD$
 Not supported on OpenBSD.
---- src/upnp/upnp_igd.c.orig	Tue Dec  3 01:06:09 2013
-+++ src/upnp/upnp_igd.c	Tue Dec  3 01:07:02 2013
-@@ -1040,11 +1040,7 @@ upnp_igd_context* upnp_igd_create(upnp_igd_callback_fu
+--- src/upnp/upnp_igd.c.orig	Tue Aug 13 20:03:29 2013
++++ src/upnp/upnp_igd.c	Mon Oct 27 18:36:06 2014
+@@ -1050,11 +1050,7 @@ upnp_igd_context* upnp_igd_create(upnp_igd_callback_fu
  
  	/* Initialize timer stuff */
  	{

@@ -1,7 +1,7 @@
 $OpenBSD$
---- configure.orig	Wed Jun 12 18:22:38 2013
-+++ configure	Mon Dec  9 01:22:32 2013
-@@ -741,6 +741,7 @@ BUILD_ALSA_TRUE
+--- configure.orig	Wed Feb 19 18:31:46 2014
++++ configure	Mon Oct 27 18:36:06 2014
+@@ -747,6 +747,7 @@ BUILD_ALSA_TRUE
  ALSA_LIBS
  BUILD_OSS_FALSE
  BUILD_OSS_TRUE
@@ -9,7 +9,7 @@ $OpenBSD$
  MSPLUGINS_LIBS
  MSPLUGINS_CFLAGS
  PKG_CONFIG_LIBDIR
-@@ -19828,10 +19829,13 @@ fi
+@@ -20563,10 +20564,13 @@ fi
   if test x$oss = xtrue; then
    BUILD_OSS_TRUE=
    BUILD_OSS_FALSE='#'
@@ -23,7 +23,7 @@ $OpenBSD$
  
  
  # Check whether --enable-alsa was given.
-@@ -20726,7 +20730,7 @@ if test x"$gsmdir" != xno ; then
+@@ -21544,7 +21548,7 @@ if test x"$gsmdir" != xno ; then
  	dep_name=GSM
  	dep_headersdir=${gsmdir}/include
  	dep_libsdir=${gsmdir}/lib

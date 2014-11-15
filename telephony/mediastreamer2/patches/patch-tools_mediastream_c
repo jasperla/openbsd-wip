@@ -1,7 +1,7 @@
 $OpenBSD$
-How did that supposed to work, ever?
---- tools/mediastream.c.orig	Fri Jun 14 19:21:26 2013
-+++ tools/mediastream.c	Tue Dec  3 19:57:07 2013
+Unbreak compilation.
+--- tools/mediastream.c.orig	Wed Jan 29 00:21:48 2014
++++ tools/mediastream.c	Mon Oct 27 18:36:06 2014
 @@ -37,7 +37,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
  #include <unistd.h>
  #include <poll.h>
@@ -11,17 +11,3 @@ How did that supposed to work, ever?
  #endif
  #include <stdio.h>
  #include <stdlib.h>
-@@ -773,11 +773,11 @@ static void mediastream_tool_iterate(MediastreamDatas*
- 	
- 	if (args->interactive){
- 		pfd.fd=STDIN_FILENO;
--		pfd.events=POLL_IN;
-+		pfd.events=POLLIN;
- 		pfd.revents=0;
- 	
- 		err=poll(&pfd,1,10);
--		if (err==1 && (pfd.revents & POLL_IN)){
-+		if (err==1 && (pfd.revents & POLLIN)){
- 			char commands[128];
- 			int intarg;
- 			commands[127]='\0';
