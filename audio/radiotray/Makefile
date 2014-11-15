@@ -1,8 +1,8 @@
 # $OpenBSD$
 
 COMMENT =			radio streaming player
-VERSION =			0.7.3
-DISTNAME =			radiotray-${VERSION}
+MODPY_EGG_VERSION =		0.7.3
+DISTNAME =			radiotray-${MODPY_EGG_VERSION}
 CATEGORIES =		audio 
 HOMEPAGE =			http://radiotray.sourceforge.net/
 
@@ -26,6 +26,8 @@ RUN_DEPENDS =	devel/py-gobject${MODPY_FLAVOR} \
 		multimedia/gstreamer-0.10/py-gstreamer \
 		textproc/py-lxml \
 		x11/dbus-python
+
+BUILD_DEPENDS = devel/py-xdg${MODPY_FLAVOR}
 
 NO_TEST =		Yes
 
