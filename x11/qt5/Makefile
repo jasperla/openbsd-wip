@@ -314,7 +314,7 @@ TEST_TARGET =		check
 TEST_DEPENDS =		${MODPY_RUN_DEPENDS} \
 			${MODRUBY_RUN_DEPENDS} \
 			audio/sox \
-			kde4-*|kdebase-*:meta/kde4
+			kde4-minimal-*|kdebase-*:meta/kde4,-minimal
 
 PATCHORIG =		.ports.orig
 
