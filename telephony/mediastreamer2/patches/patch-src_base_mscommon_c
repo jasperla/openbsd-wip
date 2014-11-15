@@ -1,0 +1,13 @@
+$OpenBSD$
+Unbreak build by defining a way to detect host CPU count.
+--- src/base/mscommon.c.orig	Mon Oct 27 20:55:34 2014
++++ src/base/mscommon.c	Mon Oct 27 22:02:46 2014
+@@ -512,7 +512,7 @@ void ms_base_init(){
+ 	GetSystemInfo( &sysinfo );
+ 
+ 	num_cpu = sysinfo.dwNumberOfProcessors;
+-#elif __APPLE__ || __linux
++#elif __APPLE__ || __linux || __OpenBSD__
+ 	num_cpu = sysconf( _SC_NPROCESSORS_ONLN );
+ #elif __QNX__
+ 	num_cpu = _syspage_ptr->num_cpu;

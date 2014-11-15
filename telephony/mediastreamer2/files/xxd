@@ -1,0 +1,46 @@
+#!/usr/bin/perl
+
+use strict;
+#use warnings;
+
+if ($ARGV[0] ne "-i") {
+	print STDERR "unsupported mode, only -i is supported\n";
+	exit 1;
+}
+shift @ARGV;
+
+my ($lastfile, $lastfiletrans, $len, $linelen, @chars, @chars2, $i);
+
+sub finish($) {
+	my $awaitnext = shift;
+
+	if (defined($lastfile)) {
+		print "\n};\n";
+		print "unsigned int ${lastfiletrans}_len = $len;\n";
+	}
+	if ($awaitnext) {
+		$lastfile = $ARGV;
+		$lastfiletrans = $lastfile;
+		$lastfiletrans =~ s@[.-/]@_@g;
+		$len = 0;
+		print "unsigned char ${lastfiletrans}[] = {\n";
+	}
+}
+
+while (<>) {
+	if ($lastfile ne $ARGV) {
+		finish 1;
+	} else {
+		print ",\n";
+	}
+	$linelen = length $_;
+	$len += $linelen;
+	@chars = unpack '(h)*', $_;
+	@chars2 = unpack '(H)*', $_;
+	print "\t";
+	for (my $i = 0; $i < $linelen-1; $i++) {
+		print "0x".$chars2[$i].$chars[$i].", ";
+	}
+	print "0x".$chars2[$i].$chars[$i];
+}
+finish 0;

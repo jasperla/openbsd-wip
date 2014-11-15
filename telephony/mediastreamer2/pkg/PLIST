@@ -42,7 +42,6 @@ lib/libmediastreamer_base.la
 lib/libmediastreamer_voip.a
 lib/libmediastreamer_voip.la
 @lib lib/libmediastreamer_voip.so.${LIBmediastreamer_voip_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/mediastreamer.pc
 share/doc/mediastreamer2/
 share/doc/mediastreamer2/html/
@@ -50,9 +49,8 @@ share/doc/mediastreamer2/html/bc_s.png
 share/doc/mediastreamer2/html/bdwn.png
 share/doc/mediastreamer2/html/closed.png
 share/doc/mediastreamer2/html/dir_68267d1309a1af8e8297ef4c3efbcdba.html
-share/doc/mediastreamer2/html/dir_68267d1309a1af8e8297ef4c3efbcdba_dep.map
+share/doc/mediastreamer2/html/dir_68267d1309a1af8e8297ef4c3efbcdba_dep.dot
 share/doc/mediastreamer2/html/dir_68267d1309a1af8e8297ef4c3efbcdba_dep.md5
-share/doc/mediastreamer2/html/dir_68267d1309a1af8e8297ef4c3efbcdba_dep.png
 share/doc/mediastreamer2/html/doxygen.css
 share/doc/mediastreamer2/html/doxygen.png
 share/doc/mediastreamer2/html/dynsections.js
@@ -72,9 +70,9 @@ share/doc/mediastreamer2/html/ftv2plastnode.png
 share/doc/mediastreamer2/html/ftv2pnode.png
 share/doc/mediastreamer2/html/ftv2splitbar.png
 share/doc/mediastreamer2/html/ftv2vertline.png
+share/doc/mediastreamer2/html/graph_legend.dot
 share/doc/mediastreamer2/html/graph_legend.html
 share/doc/mediastreamer2/html/graph_legend.md5
-share/doc/mediastreamer2/html/graph_legend.png
 share/doc/mediastreamer2/html/index.html
 share/doc/mediastreamer2/html/jquery.js
 share/doc/mediastreamer2/html/nav_f.png
