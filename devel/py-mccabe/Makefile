@@ -13,11 +13,14 @@ HOMEPAGE =		https://github.com/flintwork/mccabe
 MAINTAINER =		Bertrand Janin <b@janin.com>
 
 # MIT 
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${MASTER_SITE_PYPI:=m/mccabe/}
 
 MODULES =		lang/python
+
 MODPY_SETUPTOOLS =	Yes
+
+NO_TEST = 		Yes
 
 .include <bsd.port.mk>
