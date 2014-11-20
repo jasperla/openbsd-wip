@@ -2,25 +2,22 @@
 
 # XXX This uses godep to statically build in go libs:
 # http://www.goinggo.net/2013/10/manage-dependencies-with-godep.html
+# Pulse is now a fork or syncthing
 
 COMMENT =		distributed file synchroniser
-V =			0.10.2
+V =			0.1.1
 
-GH_ACCOUNT =		syncthing
-GH_PROJECT =		syncthing
-GH_TAGNAME =		v${V}
-GH_COMMIT =		9d348319fd507acea15d6fc4905c6edbd6af9a39
 DISTNAME =		pulse-${V}
 
-#PKGNAME =		pulse-${V} # previously "syncthing"
+MASTER_SITES = https://source.ind.ie/project/pulse/repository/archive.tar.gz?ref=${V}
 
 CATEGORIES =		net
 HOMEPAGE =		https://ind.ie/pulse/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
-# XXX
+# GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
-
+	
 WANTLIB =		c pthread
 
 BUILD_DEPENDS =		lang/go>=1.3
