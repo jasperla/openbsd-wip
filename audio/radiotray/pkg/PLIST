@@ -146,7 +146,9 @@ share/pixmaps/
 share/pixmaps/radiotray.png
 share/radiotray/
 share/radiotray/bookmarks.xml
+@mode 644
 share/radiotray/config.xml
+@mode
 share/radiotray/configBookmarks.glade
 share/radiotray/configGui.glade
 share/radiotray/configPlugins.glade
