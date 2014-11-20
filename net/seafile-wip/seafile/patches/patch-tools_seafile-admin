@@ -1,0 +1,12 @@
+$OpenBSD$
+--- tools/seafile-admin.orig	Fri Aug 22 18:05:12 2014
++++ tools/seafile-admin	Fri Aug 22 18:06:12 2014
+@@ -42,7 +42,7 @@ SEAHUB_DOWNLOAD_URL = 'https://seafile.com.cn/download
+ ####################
+ ### Global variables
+ ####################
+-cwd = os.getcwd()
++cwd = '/var/seafile'
+ SCRIPT_NAME = os.path.basename(sys.argv[0])
+ 
+ PYTHON = sys.executable

@@ -1,0 +1,20 @@
+@comment $OpenBSD$
+%%dynlink%%
+lib/ocaml/biniou/bi_dump.cmx
+lib/ocaml/biniou/bi_dump.o
+lib/ocaml/biniou/bi_inbuf.cmx
+lib/ocaml/biniou/bi_inbuf.o
+lib/ocaml/biniou/bi_io.cmx
+lib/ocaml/biniou/bi_io.o
+lib/ocaml/biniou/bi_outbuf.cmx
+lib/ocaml/biniou/bi_outbuf.o
+lib/ocaml/biniou/bi_share.cmx
+lib/ocaml/biniou/bi_share.o
+lib/ocaml/biniou/bi_stream.cmx
+lib/ocaml/biniou/bi_stream.o
+lib/ocaml/biniou/bi_util.cmx
+lib/ocaml/biniou/bi_util.o
+lib/ocaml/biniou/bi_vint.cmx
+lib/ocaml/biniou/bi_vint.o
+lib/ocaml/biniou/biniou.a
+lib/ocaml/biniou/biniou.cmxa

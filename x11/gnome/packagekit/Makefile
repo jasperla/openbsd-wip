@@ -39,8 +39,7 @@ RUN_DEPENDS=		x11/gnome/settings-daemon
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 
-CONFIGURE_ARGS+=	--disable-gudev \
-			--disable-gtk-doc
+CONFIGURE_ARGS+=	--disable-gudev
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

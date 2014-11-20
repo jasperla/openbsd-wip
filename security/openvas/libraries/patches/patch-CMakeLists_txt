@@ -1,7 +1,16 @@
 $OpenBSD$
---- CMakeLists.txt.orig	Thu Aug  9 11:07:32 2012
-+++ CMakeLists.txt	Wed Aug 22 15:05:15 2012
-@@ -162,7 +162,7 @@ endif (NOT DATADIR)
+--- CMakeLists.txt.orig	Fri Oct 24 08:50:07 2014
++++ CMakeLists.txt	Tue Nov  4 22:52:45 2014
+@@ -172,12 +172,16 @@ if (NOT DATADIR)
+   set (DATADIR "${CMAKE_INSTALL_PREFIX}/share")
+ endif (NOT DATADIR)
+ 
++if (NOT MANDIR)
++  set (MANDIR "${CMAKE_INSTALL_PREFIX}/man")
++endif (NOT MANDIR)
++
+ #if (NOT SYSCONFDIR)
+ #  set (SYSCONFDIR "${CMAKE_INSTALL_PREFIX}/etc")
  #endif (NOT SYSCONFDIR)
  
  set (OPENVAS_DATA_DIR    "${DATADIR}/openvas")
@@ -10,12 +19,12 @@ $OpenBSD$
  set (OPENVAS_LOG_DIR     "${LOCALSTATEDIR}/log/openvas")
  set (OPENVAS_CACHE_DIR   "${LOCALSTATEDIR}/cache/openvas")
  set (OPENVAS_PID_DIR     "${LOCALSTATEDIR}/run")
-@@ -363,7 +363,7 @@ configure_file (libopenvas.pc.in ${CMAKE_CURRENT_BINAR
+@@ -323,7 +327,7 @@ add_subdirectory (doc)
+ ## Install
  
- ## Program
+ install (FILES doc/openvas-nasl.1
+-         DESTINATION ${DATADIR}/man/man1 )
++         DESTINATION ${MANDIR}/man1 )
  
--set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2 -fstack-protector -Wl,-z,relro -Wl,-z,now")
-+set (HARDENING_FLAGS            "-Wformat -Wformat-security -O2 -D_FORTIFY_SOURCE=2 -fstack-protector")
- 
- set (CMAKE_C_FLAGS_DEBUG        "${CMAKE_C_FLAGS_DEBUG}")
- set (CMAKE_C_FLAGS              "${CMAKE_C_FLAGS} ${HARDENING_FLAGS} -Wall -Werror")
+ install (FILES ${CMAKE_BINARY_DIR}/libopenvas.pc
+          DESTINATION ${LIBDIR}/pkgconfig)

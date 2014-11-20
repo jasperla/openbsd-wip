@@ -4,9 +4,9 @@
     SUBDIR += scanner
     SUBDIR += cli
     SUBDIR += manager
-    SUBDIR += administrator
+#    SUBDIR += administrator
     SUBDIR += gsa
-    SUBDIR += gsd
+#    SUBDIR += gsd
 # gnutls v3 no longer builds
 #    SUBDIR += client
 

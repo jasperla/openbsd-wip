@@ -22,8 +22,14 @@ COMMENT =		corebird
 #
 # What port/package will be created
 #
-GH_VER =		0.8
-DISTNAME =		corebird-${GH_VER}
+#GH_VER =		0.8
+#DISTNAME =		corebird-${GH_VER}
+DISTNAME =		corebird-0.9pre20141113
+GH_ACCOUNT =		baedert
+GH_PROJECT =		corebird
+#GH_TAGNAME =           1.0
+GH_COMMIT =		998fb150e4089f4e82f9b10fab3795aacb766123
+
 #PKGNAME =		???
 #PKGNAME-foo =		???	for multi packages
 
@@ -69,14 +75,20 @@ PERMIT_PACKAGE_CDROM =	Yes
 #WANTLIB =		???
 WANTLIB += atk-1.0 c cairo cairo-gobject fontconfig freetype gdk-3
 WANTLIB += gdk_pixbuf-2.0 gee-0.8 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += gtk-3 intl json-glib-1.0 m notify pango-1.0 pangocairo-1.0
+WANTLIB += gtk-3 intl json-glib-1.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pthread rest-0.7 soup-2.4 sqlite3 xml2
 WANTLIB += z
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender atk-bridge-2.0 atspi dbus-1
+WANTLIB += expat ffi gmodule-2.0 graphite2 gstbase-1.0 gstreamer-1.0
+WANTLIB += gthread-2.0 harfbuzz iconv pcre pixman-1 png pthread-stubs
+WANTLIB += soup-gnome-2.4 xcb xcb-render xcb-shm
+WANTLIB += gstvideo-1.0 orc-0.4
 
 # where the source files and patches can be fetched
 #
-MASTER_SITES =		https://github.com/baedert/corebird/archive/
-DISTFILES =		${DISTNAME}{${GH_VER}}${EXTRACT_SUFX}
+#MASTER_SITES =		https://github.com/baedert/corebird/archive/
+#DISTFILES =		${DISTNAME}{${GH_VER}}${EXTRACT_SUFX}
 #MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=subdir/}
 #MASTER_SITES =		${MASTER_SITE_foo:=subdir/}
 # if more master sites are needed...
@@ -97,18 +109,17 @@ DISTFILES =		${DISTNAME}{${GH_VER}}${EXTRACT_SUFX}
 #MODULES =		devel/cmake
 BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool
+			devel/libtool \
+			lang/vala
 
 #RUN_DEPENDS =		???
 LIB_DEPENDS =		x11/gtk+3 \
 			devel/glib2 \
 			net/librest \
 			devel/json-glib \
-			devel/libnotify \
 			devel/libsoup \
 			devel/libgee \
-			lang/vala \
-			multimedia/gstreamer1/core
+			multimedia/gstreamer1/plugins-base
 #TEST_DEPENDS =		???
 
 #MAKE_FLAGS =		???

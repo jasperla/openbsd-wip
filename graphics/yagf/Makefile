@@ -2,12 +2,10 @@
 
 SHARED_ONLY =		Yes
 COMMENT =		GUI wrapper for tesseract and cuneiform
-DISTNAME =		yagf-0.9.4
+DISTNAME =		yagf-0.9.4.3
 
 CATEGORIES =		graphics
-
 HOMEPAGE =		http://symmetrica.net/cuneiform-linux/yagf-en.html
-
 MAINTAINER =		Vadim Zhukov <zhuk@openbsd.org>
 
 # GPLv3
@@ -29,6 +27,6 @@ LIB_DEPENDS =		textproc/aspell/core
 
 CONFIGURE_ARGS =	-DCMAKE_INSTALL_PREFIX=${TRUEPREFIX}
 
-WRKDIST =		${WRKDIR}/yagf-538f3d9144ff
+WRKDIST =		${WRKDIR}/yagf-${DISTNAME}
 
 .include <bsd.port.mk>

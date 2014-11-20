@@ -1,5 +1,0 @@
-@comment $OpenBSD$
-include/cudf.h
-lib/libcudf.a
-lib/pkgconfig/
-lib/pkgconfig/cudf.pc

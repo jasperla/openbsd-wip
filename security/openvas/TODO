@@ -1,3 +1,4 @@
 Testing ensure all directories changed
 Feed from greenbone requires subscription - see if there is a test account.
 test all the functionality.
+gnutls 3.x breaks OpenVAS waitr on fix or fix.

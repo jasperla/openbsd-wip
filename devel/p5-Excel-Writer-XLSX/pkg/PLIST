@@ -1,0 +1,68 @@
+@comment $OpenBSD$
+bin/extract_vba
+${P5SITE}/Excel/
+${P5SITE}/Excel/Writer/
+${P5SITE}/Excel/Writer/XLSX/
+${P5SITE}/Excel/Writer/XLSX.pm
+${P5SITE}/Excel/Writer/XLSX/Chart/
+${P5SITE}/Excel/Writer/XLSX/Chart.pm
+${P5SITE}/Excel/Writer/XLSX/Chart/Area.pm
+${P5SITE}/Excel/Writer/XLSX/Chart/Bar.pm
+${P5SITE}/Excel/Writer/XLSX/Chart/Column.pm
+${P5SITE}/Excel/Writer/XLSX/Chart/Line.pm
+${P5SITE}/Excel/Writer/XLSX/Chart/Pie.pm
+${P5SITE}/Excel/Writer/XLSX/Chart/Radar.pm
+${P5SITE}/Excel/Writer/XLSX/Chart/Scatter.pm
+${P5SITE}/Excel/Writer/XLSX/Chart/Stock.pm
+${P5SITE}/Excel/Writer/XLSX/Chartsheet.pm
+${P5SITE}/Excel/Writer/XLSX/Drawing.pm
+${P5SITE}/Excel/Writer/XLSX/Examples.pm
+${P5SITE}/Excel/Writer/XLSX/Format.pm
+${P5SITE}/Excel/Writer/XLSX/Package/
+${P5SITE}/Excel/Writer/XLSX/Package/App.pm
+${P5SITE}/Excel/Writer/XLSX/Package/Comments.pm
+${P5SITE}/Excel/Writer/XLSX/Package/ContentTypes.pm
+${P5SITE}/Excel/Writer/XLSX/Package/Core.pm
+${P5SITE}/Excel/Writer/XLSX/Package/Packager.pm
+${P5SITE}/Excel/Writer/XLSX/Package/Relationships.pm
+${P5SITE}/Excel/Writer/XLSX/Package/SharedStrings.pm
+${P5SITE}/Excel/Writer/XLSX/Package/Styles.pm
+${P5SITE}/Excel/Writer/XLSX/Package/Table.pm
+${P5SITE}/Excel/Writer/XLSX/Package/Theme.pm
+${P5SITE}/Excel/Writer/XLSX/Package/VML.pm
+${P5SITE}/Excel/Writer/XLSX/Package/XMLwriter.pm
+${P5SITE}/Excel/Writer/XLSX/Shape.pm
+${P5SITE}/Excel/Writer/XLSX/Utility.pm
+${P5SITE}/Excel/Writer/XLSX/Workbook.pm
+${P5SITE}/Excel/Writer/XLSX/Worksheet.pm
+@man man/man1/extract_vba.1
+@man man/man3p/Excel::Writer::XLSX.3p
+@man man/man3p/Excel::Writer::XLSX::Chart.3p
+@man man/man3p/Excel::Writer::XLSX::Chart::Area.3p
+@man man/man3p/Excel::Writer::XLSX::Chart::Bar.3p
+@man man/man3p/Excel::Writer::XLSX::Chart::Column.3p
+@man man/man3p/Excel::Writer::XLSX::Chart::Line.3p
+@man man/man3p/Excel::Writer::XLSX::Chart::Pie.3p
+@man man/man3p/Excel::Writer::XLSX::Chart::Radar.3p
+@man man/man3p/Excel::Writer::XLSX::Chart::Scatter.3p
+@man man/man3p/Excel::Writer::XLSX::Chart::Stock.3p
+@man man/man3p/Excel::Writer::XLSX::Chartsheet.3p
+@man man/man3p/Excel::Writer::XLSX::Drawing.3p
+@man man/man3p/Excel::Writer::XLSX::Examples.3p
+@man man/man3p/Excel::Writer::XLSX::Format.3p
+@man man/man3p/Excel::Writer::XLSX::Package::App.3p
+@man man/man3p/Excel::Writer::XLSX::Package::Comments.3p
+@man man/man3p/Excel::Writer::XLSX::Package::ContentTypes.3p
+@man man/man3p/Excel::Writer::XLSX::Package::Core.3p
+@man man/man3p/Excel::Writer::XLSX::Package::Packager.3p
+@man man/man3p/Excel::Writer::XLSX::Package::Relationships.3p
+@man man/man3p/Excel::Writer::XLSX::Package::SharedStrings.3p
+@man man/man3p/Excel::Writer::XLSX::Package::Styles.3p
+@man man/man3p/Excel::Writer::XLSX::Package::Table.3p
+@man man/man3p/Excel::Writer::XLSX::Package::Theme.3p
+@man man/man3p/Excel::Writer::XLSX::Package::VML.3p
+@man man/man3p/Excel::Writer::XLSX::Package::XMLwriter.3p
+@man man/man3p/Excel::Writer::XLSX::Shape.3p
+@man man/man3p/Excel::Writer::XLSX::Utility.3p
+@man man/man3p/Excel::Writer::XLSX::Workbook.3p
+@man man/man3p/Excel::Writer::XLSX::Worksheet.3p

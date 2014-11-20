@@ -1,2 +1,0 @@
-@comment $OpenBSD$
-@lib lib/libmicrohttpd.so.${LIBmicrohttpd_VERSION}

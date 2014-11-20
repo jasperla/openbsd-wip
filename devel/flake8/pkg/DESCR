@@ -1,3 +1,0 @@
-Flake8 is a wrapper around source code checked tools such as
-PyFlakes, pep9 and Net Batchelder's McCabe script. It displays
-the warnings in a per-file, merged output and is configurable.

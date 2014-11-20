@@ -1,0 +1,45 @@
+$OpenBSD: patch-src_scripts_javareconf_in,v 1.3 2014/09/02 14:55:37 dcoppa Exp $
+--- src/scripts/javareconf.in.orig	Mon May 19 00:15:04 2014
++++ src/scripts/javareconf.in	Sat Jun 14 16:14:58 2014
+@@ -6,7 +6,7 @@ fi
+ ## pick up configure-time settings
+ . "${R_HOME}/etc${R_ARCH}/javaconf"
+ 
+-DYLIB_EXT=`${R_HOME}/bin/R CMD config DYLIB_EXT`
++SHLIB_EXT=`${R_HOME}/bin/R CMD config SHLIB_EXT`
+ tools_classpath=${R_SHARE_DIR}/java
+ 
+ revision='$Rev: 65645 $'
+@@ -218,30 +218,18 @@ if test "${JAVA_LIBS}" = "~autodetect~"; then
+ 	LD_LIBRARY_PATH=
+ 	export LD_LIBRARY_PATH
+ 	# remove trailing/leading : (if any)
+-	java_library_path=`"$JAVA" -classpath "${tools_classpath}" getsp java.library.path| ${SED-sed} -e 's/:$//' -e 's/^://'`
+-	## see if libjvm is on this path: it is not for recent Oracle Java
++	boot_path=`"$JAVA" -classpath "${tools_classpath}" getsp sun.boot.library.path| ${SED-sed} -e 's/:$//' -e 's/^://'`
+ 	has_libjvm=no
+ 	save_IFS=$IFS; IFS=:
+-	for dir in ${java_library_path}; do
+-	    if test -f "$dir/libjvm${DYLIB_EXT}"; then
+-		has_libjvm=yes
+-		java_library_path="${dir}"
+-		break
+-	    fi
+-	done
+-	# Then try some heuristics using sun.boot.library.path
+-	if test ${has_libjvm} = no; then
+-	    boot_path=`"$JAVA" -classpath "${tools_classpath}" getsp sun.boot.library.path| ${SED-sed} -e 's/:$//' -e 's/^://'`
+ 	    if test -n "${boot_path}"; then
+ 		for dir in "${boot_path}" "${boot_path}/client" "${boot_path}/server"; do
+-		    if test -f "$dir/libjvm${DYLIB_EXT}"; then
++	            if test -f "$dir/libjvm${SHLIB_EXT}"; then
+ 			has_libjvm=yes
+ 			java_library_path="${dir}"
+ 			break
+ 		    fi
+ 		done
+ 	    fi
+-	fi	
+ 	IFS=${save_IFS}
+ 	# replace occurrences of JAVA_HOME with $(JAVA_HOME)
+ 	# If JAVA_HOME was a link, it will be the canonical path we

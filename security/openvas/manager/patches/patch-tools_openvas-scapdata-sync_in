@@ -1,0 +1,87 @@
+$OpenBSD$
+--- tools/openvas-scapdata-sync.in.orig	Mon Nov  3 11:28:55 2014
++++ tools/openvas-scapdata-sync.in	Sat Nov  8 21:39:06 2014
+@@ -681,7 +681,7 @@ update_sec_db_private () {
+         fi
+       done
+ 
+-      for non_xml_file in `find "$SCAP_PRIVATE_DIR/oval/" -type f -and -not -name "*.xml" 2> /dev/null`
++      for non_xml_file in `find "$SCAP_PRIVATE_DIR/oval/" -type f -and ! -name "*.xml" 2> /dev/null`
+       do
+         if [ "${non_xml_file%%.asc}" = "${non_xml_file}" ] || ! [ -f "${non_xml_file%%.asc}" ]
+         then
+@@ -693,11 +693,12 @@ update_sec_db_private () {
+       then
+         for ovalfile in $oval_files_sorted_private
+         do
+-          filedate=`stat -c "%Y" "$ovalfile" | cut -d " " -f 1 | tr -d "-"`
++          filedate=`stat -f "%m" "$ovalfile" | cut -d " " -f 1 | tr -d "-"`
+           filedate=$(( $filedate - ( $filedate % 60 ) ))
+           if [ $filedate -gt $DB_LASTUPDATE ] || [ 1 = "$REBUILD_OVAL" ]
+           then
+-            oval_timestamp=`xsltproc "$SCAP_RES_DIR/oval_timestamp.xsl" "$ovalfile" | date "+%s" -f -`
++            tt=`xsltproc "$SCAP_RES_DIR/oval_timestamp.xsl" "$ovalfile"`
++            oval_timestamp=`date -j "+%s" $tt`
+ 
+             if [ 1 = "$REBUILD_OVAL" ]
+             then
+@@ -795,7 +796,8 @@ update_sec_db_private () {
+     fi
+ 
+     # TODO: This is not quite accurate as it uses the timestamp of the non-private data.
+-    LAST_UPDATE_TIMESTAMP=`sed 's/^\(.\{8\}\)/\1 /' $TIMESTAMP | date +%s -f -`
++    tt=`cat $TIMESTAMP`
++    LAST_UPDATE_TIMESTAMP=`date -j %s $tt`
+ 
+     reset_sql_tries
+     until [ "$try_sql" -eq 0 ]
+@@ -814,7 +816,7 @@ update_sec_db () {
+   CPEBASE="$SCAP_DIR/official-cpe-dictionary_v2.2.xml"
+   if [ -e $CPEBASE ]
+   then
+-    filedate=`stat -c "%Y" "$CPEBASE" | cut -d " " -f 1 | tr -d "-"`
++    filedate=`stat -f "%m" "$CPEBASE" | cut -d " " -f 1 | tr -d "-"`
+     filedate=$(( $filedate - ( $filedate % 60 ) ))
+     if [ $filedate -gt $DB_LASTUPDATE ]
+     then
+@@ -848,13 +850,13 @@ update_sec_db () {
+   then
+     for cvefile in `ls $SCAP_DIR/nvdcve-2.0-*.xml`
+     do
+-      filedate=`stat -c "%Y" "$cvefile" | cut -d " " -f 1 | tr -d "-"`
++      filedate=`stat -f "%m" "$cvefile" | cut -d " " -f 1 | tr -d "-"`
+       filedate=$(( $filedate - ( $filedate % 60 ) ))
+       if [ $filedate -gt $DB_LASTUPDATE ]
+       then
+         echo "[i] Updating $cvefile"
+ 
+-        filesize=`stat -c "%s" "$cvefile"`
++        filesize=`stat -f "%z" "$cvefile"`
+         if [ "0" -ne "$SPLIT_PART_SIZE" ] && [ "$filesize" -gt $(($SPLIT_PART_SIZE * 1024))  ]
+         then
+           echo "[i] File is larger than ${SPLIT_PART_SIZE}k. Splitting into multiple parts"
+@@ -924,11 +926,12 @@ update_sec_db () {
+ 
+     for ovalfile in $oval_files_sorted
+     do
+-      filedate=`stat -c "%Y" "$ovalfile" | cut -d " " -f 1 | tr -d "-"`
++      filedate=`stat -f "%m" "$ovalfile" | cut -d " " -f 1 | tr -d "-"`
+       filedate=$(( $filedate - ( $filedate % 60 ) ))
+       if [ $filedate -gt $DB_LASTUPDATE ] || [ 1 = "$REBUILD_OVAL" ]
+       then
+-        oval_timestamp=`xsltproc "$SCAP_RES_DIR/oval_timestamp.xsl" "$ovalfile" | date "+%s" -f -`
++        tt=`xsltproc "$SCAP_RES_DIR/oval_timestamp.xsl" "$ovalfile"`
++        oval_timestamp=`date -j "+%s" $tt`
+ 
+         if [ 1 = "$REBUILD_OVAL" ]
+         then
+@@ -978,7 +981,8 @@ update_sec_db () {
+   update_sec_db_private
+   update_cvss
+ 
+-  LAST_UPDATE_TIMESTAMP=`sed 's/^\(.\{8\}\)/\1 /' $TIMESTAMP | env TZ="UTC" date +%s -f -`
++  tt=`cat $TIMESTAMP`
++  LAST_UPDATE_TIMESTAMP=`env TZ="UTC" date -j +%s $tt`
+   reset_sql_tries
+   until [ "$try_sql" -eq 0 ]
+   do

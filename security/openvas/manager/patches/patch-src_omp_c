@@ -1,7 +1,7 @@
 $OpenBSD$
---- src/omp.c.orig	Mon Mar 26 10:08:16 2012
-+++ src/omp.c	Tue Mar 27 01:25:18 2012
-@@ -96,18 +96,18 @@
+--- src/omp.c.orig	Mon Nov  3 11:29:12 2014
++++ src/omp.c	Thu Nov  6 00:02:30 2014
+@@ -97,18 +97,18 @@
  #include "otp.h"
  #include "tracef.h"
  
@@ -22,4 +22,18 @@ $OpenBSD$
 -#include <sys/types.h>
  #include <sys/wait.h>
  
- #include <openvas/base/certificate.h>
+ #include <openvas/base/nvti.h>
+@@ -15104,10 +15104,10 @@ omp_xml_handle_end_element (/*@unused@*/ GMarkupParseC
+                   SENDF_TO_CLIENT_OR_FAIL
+                    ("<first_time>%s</first_time>"
+                     "<next_time>%s</next_time>"
+-                    "<period>%ld</period>"
+-                    "<period_months>%ld</period_months>"
++                    "<period>%lld</period>"
++                    "<period_months>%lld</period_months>"
+                     "<simple_period>%i<unit>%s</unit></simple_period>"
+-                    "<duration>%ld</duration>"
++                    "<duration>%lld</duration>"
+                     "<simple_duration>%i<unit>%s</unit></simple_duration>"
+                     "<timezone>%s</timezone>"
+                     "<timezone_abbrev>%s</timezone_abbrev>",

@@ -9,15 +9,10 @@ ONLY_FOR_ARCHS =	i386 amd64 hppa mips64el powerpc
 
 COMMENT =		multi-paradigm programming language
 
-V =			6.1.0.5pre201408210419
+V =			6.1.1
+REVISION =		0
 PKGNAME =		racket-$V
-#DISTNAME =		racket-$V-src-builtpkgs
-DISTNAME =		racket-$V-src-unix
-
-# Each new version of racket is incompatible with the previous one.
-# Increase always the major number.
-# http://article.gmane.org/gmane.comp.lang.racket.devel/9872
-SHARED_LIBS +=		racket3m	3.0 # 6.1
+DISTNAME =		racket-$V-src-builtpkgs
 
 CATEGORIES =		lang
 HOMEPAGE =		http://racket-lang.org/
@@ -34,9 +29,11 @@ MASTER_SITES =		https://www.cs.utah.edu/plt/installers/${V}/ \
 			http://pre-release.racket-lang.org/installers/ \
 			http://pre.racket-lang.org/release/installers/ \
 			http://pre.racket-lang.org/installers/ \
+			https://www.cs.utah.edu/plt/snapshots/current/installers/ \
+			http://plt.eecs.northwestern.edu/snapshots/current/installers/ \
 			http://download.tuxfamily.org/jod/lang/racket/ \
 			ftp://download.tuxfamily.org/jod/lang/racket/
-EXTRACT_SUFX = .tar.lz
+EXTRACT_SUFX =		.tgz
 
 MODULES +=		converters/libiconv
 
@@ -46,16 +43,16 @@ MODULES +=		converters/libiconv
 # are called by ffi.
 LIB_DEPENDS =		databases/iodbc,-main \
 			devel/libffi>=3.0.9p2 \
-			devel/libunique \
-			x11/gtkglext
+			devel/libunique
 BUILD_DEPENDS =		devel/pango \
 			graphics/jpeg
 RUN_DEPENDS =		devel/desktop-file-utils
 
-WANTLIB += c m pthread ffi iodbc unique-1.0 gtkglext-x11-1.0 gdkglext-x11-1.0
+WANTLIB += c m pthread ffi
+# Loaded using FFI
+WANTLIB += GL X11 iodbc unique-1.0
 
-#WRKDIST =		${WRKDIR}/racket-$V
-WRKDIST =		${WRKDIR}/racket-$V/racket
+WRKDIST =		${WRKDIR}/racket-$V
 WRKSRC =		${WRKDIST}/src
 
 # The tests are installed from raco as a package
@@ -63,8 +60,7 @@ NO_TEST =		Yes
 SEPARATE_BUILD =	Yes
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--enable-libffi \
+CONFIGURE_ARGS +=	--enable-libffi \
 			--enable-gracket \
 			--enable-jit \
 			--enable-foreign \

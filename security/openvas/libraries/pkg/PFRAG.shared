@@ -1,6 +1,0 @@
-@comment $OpenBSD$
-@lib lib/libopenvas_base.so.${LIBopenvas_base_VERSION}
-@lib lib/libopenvas_hg.so.${LIBopenvas_hg_VERSION}
-@lib lib/libopenvas_misc.so.${LIBopenvas_misc_VERSION}
-@lib lib/libopenvas_nasl.so.${LIBopenvas_nasl_VERSION}
-@lib lib/libopenvas_omp.so.${LIBopenvas_omp_VERSION}

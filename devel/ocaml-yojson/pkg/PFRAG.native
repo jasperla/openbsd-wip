@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+%%dynlink%%
+lib/ocaml/yojson/yojson.cmx
+lib/ocaml/yojson/yojson.o
+lib/ocaml/yojson/yojson_biniou.cmx
+lib/ocaml/yojson/yojson_biniou.o

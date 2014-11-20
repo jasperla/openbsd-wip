@@ -1,0 +1,43 @@
+$OpenBSD$
+--- src/indentArgs.ml.orig	Wed Sep 17 11:57:35 2014
++++ src/indentArgs.ml	Wed Sep 17 11:59:44 2014
+@@ -56,6 +56,11 @@ let options =
+     let doc = "Re-indent files in-place." in
+     Arg.(value & flag & info ["i";"inplace"] ~doc)
+   in
++  let indent_empty =
++    let doc = "Return indent for empty lines, too. Especially usefull \
++               with $(--numeric)." in
++    Arg.(value & flag & info ["indent-empty"] ~doc)
++  in
+   let lines =
+     let doc = "Only re-indent the lines in $(docv) (eg. 10-12), \
+                adapting to the current indentation of surrounding lines. \
+@@ -132,7 +137,7 @@ let options =
+     Term.(pure f $ arg)
+   in
+   let build_t
+-      indent_config debug inplace lines
++      indent_config debug inplace indent_empty lines
+       numeric file_out print_config syntax_exts load_pkgs load_mods files
+     =
+     if inplace && (file_out <> None || numeric)
+@@ -150,7 +155,8 @@ let options =
+     else `Ok (
+       {
+         file_out; numeric; indent_config; debug; inplace;
+-        indent_empty = (match lines with
++        indent_empty = indent_empty ||
++                       (match lines with
+                         | Some fst, Some lst when fst = lst -> true
+                         | _ -> false);
+         in_lines = (match lines with
+@@ -180,7 +186,7 @@ let options =
+   in
+   let t =
+     Term.(pure build_t
+-          $ config $ debug $ inplace $ lines $ numeric
++          $ config $ debug $ inplace $ indent_empty $ lines $ numeric
+           $ output $ print_config $ syntax
+           $ load_pkgs $ load_mods $ files)
+   in

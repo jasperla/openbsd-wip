@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+@bin lib/ocaml/easy-format/easy_format.cmxs

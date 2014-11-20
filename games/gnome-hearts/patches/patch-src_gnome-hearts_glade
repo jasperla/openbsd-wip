@@ -1,0 +1,27 @@
+$OpenBSD$
+
+Remove Help menu item since we don't install help files.
+
+--- src/gnome-hearts.glade.orig	Sat Sep 27 23:03:12 2014
++++ src/gnome-hearts.glade	Sat Sep 27 23:04:20 2014
+@@ -223,20 +223,6 @@
+                 <child>
+                   <widget class="GtkMenu" id="menuitem4_menu">
+                     <child>
+-                      <widget class="GtkImageMenuItem" id="help">
+-                        <property name="visible">True</property>
+-                        <property name="label">gtk-help</property>
+-                        <property name="use_underline">True</property>
+-                        <property name="use_stock">True</property>
+-                        <signal name="activate" handler="on_help"/>
+-                      </widget>
+-                    </child>
+-                    <child>
+-                      <widget class="GtkSeparatorMenuItem" id="separator2">
+-                        <property name="visible">True</property>
+-                      </widget>
+-                    </child>
+-                    <child>
+                       <widget class="GtkImageMenuItem" id="about">
+                         <property name="visible">True</property>
+                         <property name="label">gtk-about</property>

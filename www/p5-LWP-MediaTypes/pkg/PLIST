@@ -1,6 +1,0 @@
-@comment $OpenBSD$
-@conflict p5-libwww-<6.0
-${P5SITE}/LWP/
-${P5SITE}/LWP/MediaTypes.pm
-${P5SITE}/LWP/media.types
-@man man/man3p/LWP::MediaTypes.3p

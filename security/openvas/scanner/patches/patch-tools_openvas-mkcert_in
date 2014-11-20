@@ -1,0 +1,12 @@
+$OpenBSD$
+--- tools/openvas-mkcert.in.orig	Fri Jun  6 12:42:15 2014
++++ tools/openvas-mkcert.in	Fri Oct 31 17:32:24 2014
+@@ -131,7 +131,7 @@ echo
+ # We need openssl
+ #
+ case `openssl version` in 
+- OpenSSL*)
++ OpenSSL*|LibreSSL*)
+      ;;
+  *)
+    gettext "OpenSSL is not properly installed: The 'openssl' command line utility could not be found (is your \$PATH set properly?)"; echo

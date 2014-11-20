@@ -1,21 +1,29 @@
 $OpenBSD$
---- misc/pcap.c.orig	Sun Mar 25 18:23:00 2012
-+++ misc/pcap.c	Mon Mar 26 22:28:26 2012
-@@ -16,9 +16,11 @@
+--- misc/pcap.c.orig	Thu Jul 31 07:40:10 2014
++++ misc/pcap.c	Wed Oct 29 20:31:52 2014
+@@ -16,6 +16,10 @@
   * Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
   */
  
 +#include <stdlib.h>
 +#include <string.h>
 +#include <unistd.h>
-+#include <sys/socket.h>
++#include <sys/types.h>
  #include <netinet/in.h>
--#include <resolv.h>
--#include <pcap.h>
- #include <net/if.h>
+ #include <resolv.h>
+ #include <pcap.h>
+@@ -23,10 +27,6 @@
  #include <arpa/inet.h>
  #include <sys/ioctl.h>
-@@ -770,10 +772,10 @@ getinterfaces (int *howmany)
+ #include <netdb.h>
+-#include <stdlib.h>
+-#include <string.h>
+-#include <unistd.h>
+-#include <sys/types.h>
+ #include <ifaddrs.h>
+ 
+ 
+@@ -655,10 +655,10 @@ getinterfaces (int *howmany)
      printf
        ("getinterfaces: SIOCGIFCONF claims you have no network interfaces!\n");
  

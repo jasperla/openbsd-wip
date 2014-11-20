@@ -1,0 +1,49 @@
+$OpenBSD: README,v 1.7 2014/01/11 18:46:52 edd Exp $
+
+Note: This is not a README for users.
+
+This needs to be rewritten.
+
+TeX Live 2014 - Porting progress
+================================
+
+ * Get base compilers working:			OK
+ * Check *_ADJ					
+ * Test build works.
+   -> amd64					OK
+   -> i386					OK
+   -> sparc64
+ * Do texmf split (use texscythe tool)		OK
+ * Split out conTeXt (use grep)			I think not needed.
+ * Move manuals and remove pdf manuals		modify mk_openbsd_plists
+   -> All texmf manuals in -minimal		
+ * Remove external deps				mk_openbsd_plists should do these
+   -> texworks					
+   -> latexmk					
+   -> asymptote					
+ * Remove windows junk				and this
+ * Get basic texmf packaging:			
+   -> tlpkg/ stuff not needed (and wont be present)
+   -> beware errors in the tlpdb (yay)		
+ * Re-add depenedencies:			
+ * Hack texmf.cnf				and texmfcnf.lua OK
+ * Implement @xxx in plists			
+ * emulate texlinks				
+ * patch in interpreter paths			
+ * Take perl modules from extra texmf needed for updmap
+ * Generate texmf-var pregen			
+   (all as root) 'mktexlsr', 'fmtutil-sys --all',
+     'updmap-sys', remove ls-R and logs from texmf-var,
+     then tar up.				
+ * Apply any security/reliability patches	
+   Search here: http://tug.org/pipermail/tldistro/
+ * Remove manpages conflicting with t1utils	
+ * Check buildset in bulk.			
+ * Move info pages into the right place.	
+ * Check various (non-texlive) packages that use the texmf work
+ * Install everything and run pkg_check(8)	
+
+Known Issues
+============
+
+None *yet*

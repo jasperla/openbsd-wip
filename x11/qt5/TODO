@@ -1,0 +1,5 @@
+1. Support for OpenBSD sensors, using dummy sensors for now.
+2. V4L2 support (look at the fswebcam for patched videodev2.h?).
+3. No HTML docs due to qdoc segfault.
+4. No -debug - yet?
+5. COMMENT and DESCR in subpackages could be improved.

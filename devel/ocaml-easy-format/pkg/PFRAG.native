@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+%%dynlink%%
+lib/ocaml/easy-format/easy_format.cmx
+lib/ocaml/easy-format/easy_format.o

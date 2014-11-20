@@ -63,7 +63,6 @@ AUTOMAKE_VERSION=	1.11
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--localstatedir=/var \
-			--disable-gtk-doc \
 			--disable-device-rebind \
 			--disable-cron \
 			--disable-command-not-found \

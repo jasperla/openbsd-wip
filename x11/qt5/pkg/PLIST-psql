@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+lib/qt5/plugins/sqldrivers/libqsqlpsql.so

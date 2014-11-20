@@ -1,10 +1,10 @@
 @comment $OpenBSD$
-%%SHARED%%
 include/microhttpd.h
-@info info/microhttpd-tutorial.info
-@info info/microhttpd.info
+@info info/libmicrohttpd-tutorial.info
+@info info/libmicrohttpd.info
 lib/libmicrohttpd.a
 lib/libmicrohttpd.la
-lib/pkgconfig/
+@lib lib/libmicrohttpd.so.${LIBmicrohttpd_VERSION}
 lib/pkgconfig/libmicrohttpd.pc
+@comment lib/pkgconfig/libmicrospdy.pc
 @man man/man3/libmicrohttpd.3

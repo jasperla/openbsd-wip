@@ -1,0 +1,38 @@
+@comment $OpenBSD: $
+%%native%%
+@bin bin/ocp-indent
+lib/ocaml/ocp-indent/
+lib/ocaml/ocp-indent/META
+lib/ocaml/ocp-indent/lexer/
+lib/ocaml/ocp-indent/lexer/approx_lexer.cmi
+lib/ocaml/ocp-indent/lexer/approx_lexer.cmt
+lib/ocaml/ocp-indent/lexer/approx_tokens.cmi
+lib/ocaml/ocp-indent/lexer/approx_tokens.cmt
+lib/ocaml/ocp-indent/lexer/ocp-indent.lexer.cma
+lib/ocaml/ocp-indent/lib/
+lib/ocaml/ocp-indent/lib/indentBlock.cmi
+lib/ocaml/ocp-indent/lib/indentBlock.cmti
+lib/ocaml/ocp-indent/lib/indentConfig.cmi
+lib/ocaml/ocp-indent/lib/indentConfig.cmti
+lib/ocaml/ocp-indent/lib/indentPrinter.cmi
+lib/ocaml/ocp-indent/lib/indentPrinter.cmti
+lib/ocaml/ocp-indent/lib/ocp-indent.lib.cma
+lib/ocaml/ocp-indent/utils/
+lib/ocaml/ocp-indent/utils/nstream.cmi
+lib/ocaml/ocp-indent/utils/nstream.cmti
+lib/ocaml/ocp-indent/utils/ocp-indent.utils.cma
+lib/ocaml/ocp-indent/utils/pos.cmi
+lib/ocaml/ocp-indent/utils/pos.cmti
+@man man/man1/ocp-indent.1
+share/doc/ocp-indent/
+share/doc/ocp-indent/CHANGELOG
+share/doc/ocp-indent/README.md
+share/doc/ocp-indent/tuareg-indent
+share/emacs/
+share/emacs/site-lisp/
+share/emacs/site-lisp/ocp-indent.el
+share/ocp-indent/
+share/vim/
+share/vim/vimfiles/
+share/vim/vimfiles/indent/
+share/vim/vimfiles/indent/ocaml.vim

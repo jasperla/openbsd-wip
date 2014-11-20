@@ -1,0 +1,14 @@
+@comment $OpenBSD$
+%%native%%
+lib/ocaml/easy-format/
+lib/ocaml/easy-format/META
+lib/ocaml/easy-format/easy_format.cmi
+lib/ocaml/easy-format/easy_format.cmo
+lib/ocaml/easy-format/easy_format.mli
+share/doc/ocaml-easy-format/
+share/doc/ocaml-easy-format/Changes
+share/doc/ocaml-easy-format/README.md
+share/examples/ocaml-easy-format/
+share/examples/ocaml-easy-format/lambda_example.ml
+share/examples/ocaml-easy-format/simple_example.ml
+share/examples/ocaml-easy-format/test_easy_format.ml

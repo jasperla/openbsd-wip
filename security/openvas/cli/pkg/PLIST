@@ -1,5 +1,5 @@
 @comment $OpenBSD$
+@bin bin/check_omp
 @bin bin/omp
-share/man/
-share/man/man8/
-@man share/man/man8/omp.8
+bin/omp-dialog
+@man man/man8/omp.8

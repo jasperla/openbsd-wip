@@ -1,0 +1,27 @@
+$OpenBSD$
+
+fix bytecode only compilation
+
+--- Makefile.orig	Tue Aug 26 18:41:01 2014
++++ Makefile	Wed Sep  3 18:41:24 2014
+@@ -24,9 +24,9 @@ $(native) native asm: ocp-build.root ALWAYS
+ 
+ .PHONY: man
+ man: $(manpage)
+-$(manpage): ocp-indent
++$(manpage): $(byte)
+ 	mkdir -p $(@D)
+-	./ocp-indent --help=groff >$@
++	$(byte) --help=groff >$@
+ 
+ bootstrap: ocp-indent
+ 	./ocp-indent -c match_clause=4 --inplace src/*.mli src/*.ml
+@@ -45,7 +45,7 @@ distclean:
+ 	rm -f configure Makefile.config config.* ocp-build.root* version.ocp
+ 
+ .PHONY: install
+-install: ocp-indent $(manpage)
++install: $(manpage)
+ 	opam-installer --prefix $(prefix) ocp-indent.install
+ 	@echo
+ 	@echo

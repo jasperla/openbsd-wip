@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-@conflict p5-libwww-<6.0
-${P5SITE}/HTML/Form.pm
-@man man/man3p/HTML::Form.3p

@@ -1,14 +1,6 @@
 $OpenBSD: patch-Makefile_in,v 1.2 2013/11/08 20:34:32 juanfra Exp $
 --- Makefile.in.orig	Fri Apr 25 20:50:01 2014
 +++ Makefile.in	Sun Jun 22 15:18:13 2014
-@@ -7,6 +7,7 @@ INSTALL_DATA = $(INSTALL) -m 644
- INSTALL_DIR = $(INSTALL) -d -m 755
- LDCONFIG = /sbin/ldconfig
- SHELL = /bin/sh
-+disable_ldconfig = yes
- 
- objs = carg_parser.o main.o
- 
 @@ -20,14 +21,14 @@ all : $(progname_static) $(progname_shared)
  lib$(libname).a : lzlib.o
  	$(AR) -rcs $@ $<

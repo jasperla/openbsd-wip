@@ -1,0 +1,19 @@
+@comment $OpenBSD$
+%%native%%
+@bin bin/ydump
+lib/ocaml/yojson/
+lib/ocaml/yojson/META
+lib/ocaml/yojson/yojson.cmi
+lib/ocaml/yojson/yojson.cmo
+lib/ocaml/yojson/yojson.mli
+lib/ocaml/yojson/yojson_biniou.cmi
+lib/ocaml/yojson/yojson_biniou.cmo
+lib/ocaml/yojson/yojson_biniou.mli
+share/doc/ocaml-yojson/
+share/doc/ocaml-yojson/Changes
+share/doc/ocaml-yojson/README.md
+share/examples/ocaml-yojson/
+share/examples/ocaml-yojson/Makefile
+share/examples/ocaml-yojson/filtering.json
+share/examples/ocaml-yojson/filtering.ml
+share/examples/ocaml-yojson/run-examples.sh

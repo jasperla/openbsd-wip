@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =		telephony streaming engine
-VERSION =		2.9.0
+VERSION =		2.10.0
 DISTNAME =		mediastreamer-${VERSION}
 HOMEPAGE =		http://www.linphone.org/
 CATEGORIES =		telephony net multimedia
@@ -17,15 +17,19 @@ WANTLIB += Xext Xfixes Xi Xmu Xt Xtst Xv Xxf86vm avcodec avutil
 WANTLIB += c crypto dbus-1 drm execinfo gdbm glapi gsm
 WANTLIB += ixml json-c m mp3lame ogg opus orc-0.4 ortp ossaudio
 WANTLIB += pthread pthread-stubs pulse schroedinger-1.0 sndfile
-WANTLIB += speex speexdsp stdc++ swscale theora theoradec theoraenc
-WANTLIB += threadutil upnp vorbis vorbisenc vpx x264 xcb xcb-dri2
-WANTLIB += xcb-glx xvidcore z
+WANTLIB += speex speexdsp stdc++ swscale swresample theora theoradec
+WANTLIB += theoraenc threadutil upnp vorbis vorbisenc vpx x264 x265 xcb
+WANTLIB += xcb-dri2 xcb-glx xvidcore z
 
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=linphone/mediastreamer/}
 
-MODULES =		devel/gettext
+MODULES =		devel/gettext textproc/intltool
 
-RUN_DEPENDS =		devel/desktop-file-utils
+BUILD_DEPENDS =		devel/doxygen \
+			security/libsrtp
+
+RUN_DEPENDS =		devel/desktop-file-utils \
+			security/libsrtp
 
 LIB_DEPENDS =		audio/flac \
 			audio/gsm \
@@ -41,6 +45,7 @@ LIB_DEPENDS =		audio/flac \
 			net/libupnp \
 			net/ortp
 
+# creates files in source directory!
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
@@ -54,6 +59,9 @@ CONFIGURE_ARGS +=	--disable-spandsp
 
 CONFIGURE_ENV =		CFLAGS="${CFLAGS} -I${X11BASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
+
+post-extract:
+	install -m 0555 ${FILESDIR}/xxd ${WRKDIR}/bin
 
 pre-configure:
 	find ${WRKSRC} -type f \( -name '*.h' -or -name '*.c' \) | \

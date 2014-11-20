@@ -1,5 +1,0 @@
-@comment $OpenBSD$
-@conflict p5-libwww-<6.0
-${P5SITE}/File/
-${P5SITE}/File/Listing.pm
-@man man/man3p/File::Listing.3p

@@ -3,7 +3,7 @@
 COMMENT=	Otags Reloaded: Emacs and vi Tag Generation for OCaml
 CATEGORIES=	devel
 
-DISTNAME=	otags-4.00.1
+DISTNAME=	otags-4.01.1
 MASTER_SITES=	http://askra.de/software/otags/
 
 MAINTAINER=	Christopher Zimmermann <madroach@gmerlin.de>
@@ -14,7 +14,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	lang/ocaml
 
-BUILD_DEPENDS=  sysutils/findlib
+BUILD_DEPENDS=  sysutils/findlib \
+		lang/ocaml-camlp4
 
 #NO_TEST= 	Yes
 ALL_TARGET=	all

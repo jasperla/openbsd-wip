@@ -1,0 +1,26 @@
+$OpenBSD$
+
+don't use git to find WRKSRC.
+
+--- tests/test.sh.orig	Tue Aug 26 18:41:01 2014
++++ tests/test.sh	Tue Sep  2 10:10:07 2014
+@@ -1,4 +1,4 @@
+-#!/bin/bash -ue
++#!/usr/local/bin/bash -ue
+ #
+ # Copyright 2012-2013 OCamlPro
+ #
+@@ -11,11 +11,10 @@
+ # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ # Lesser GNU General Public License for more details.
+ #
+-
+ shopt -s nullglob
+ 
+-ROOT=$(git rev-parse --show-toplevel)
+-OCP_INDENT="$ROOT"/ocp-indent
++ROOT=${WRKDIST}
++OCP_INDENT=${WRKBUILD}/src/indentMain.byte
+ cd $ROOT/tests
+ 
+ UPDATE=

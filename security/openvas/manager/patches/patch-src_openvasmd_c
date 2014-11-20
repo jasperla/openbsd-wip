@@ -1,7 +1,7 @@
 $OpenBSD$
---- src/openvasmd.c.orig	Wed Mar  2 14:21:27 2011
-+++ src/openvasmd.c	Sun Mar  6 18:27:02 2011
-@@ -82,9 +82,6 @@
+--- src/openvasmd.c.orig	Wed Aug  6 11:58:33 2014
++++ src/openvasmd.c	Thu Oct 30 01:30:03 2014
+@@ -77,9 +77,6 @@
   * \htmlinclude doc/openvasmd.html
   */
  
@@ -11,7 +11,7 @@ $OpenBSD$
  #include <assert.h>
  #include <dirent.h>
  #include <errno.h>
-@@ -93,17 +90,17 @@
+@@ -88,17 +85,17 @@
  #include <glib/gstdio.h>
  #include <gnutls/gnutls.h>
  #include <netdb.h>
@@ -29,8 +29,17 @@ $OpenBSD$
 +#include <sys/socket.h>
 +#ifndef S_SPLINT_S
 +#include <netinet/in.h>
-+#include <arpa/inet.h>
++#include <netinet/ip.h>
 +#endif
+ #include <sys/wait.h>
  #include <unistd.h>
  
- #include <openvas/misc/openvas_logging.h>
+@@ -117,6 +114,8 @@
+ #ifdef S_SPLINT_S
+ #include "splint.h"
+ #endif
++
++#define NDEBUG /* why??? */
+ 
+ /**
+  * @brief The name of this program.

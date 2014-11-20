@@ -49,9 +49,6 @@ devel/p5-Daemon-Daemonize	ready for import, sent to ports@ 2014-03-11
 devel/p5-Data-DPath	ready for import, sent to ports@ 2014-03-11
 devel/p5-Term-VT102 	ready for import, sent to ports@ 2014-03-11, ok from shten@
 devel/p5-Term-VT102-Boundless	ready for import, sent to ports@ 2014-03-11
-graphics/lumee		ready for import (bcallah@)
-net/libstrophe		ready for import (bcallah@)
-net/profanity		ready for import (bcallah@)
 devel/p5-Sys-Info-Base	sent to ports@ 2014-04-03
 devel/p5-File-Pid	sent to ports@ 2014-04-03
 devel/p5-Hash-Merge-Simple	ready to import, sent to ports@ 2014-04-28
@@ -79,10 +76,7 @@ www/p5-Tapper-Reports-DPath	ready to import, sent to ports@ 2014-05-23
 www/p5-Tapper-Reports-API	ready to import, sent to ports@ 2014-05-23
 www/p5-Tapper-Model		ready to import, sent to ports@ 2014-05-23
 textproc/p5-Text-Balanced	ready to import, sent to ports@ 2014-05-23
-games/hyperrogue	ready to import (bcallah@)
-www/uget		ready to import (bcallah@)
 productivity/taskd      should be ready, waiting for feedback at ports@ 2014-06-24 (viq)
 games/residualvm	ready to import (bentley@), sent to ports@ 2014-07-11
-x11/cegui		ready to import (pascal@), sent to ports 2014-07-14
-games/summoningwars	ready to import (pascal@), sent to ports 2014-07-14
-net/gophervr		ready to import (bcallah@)
+games/gnome-hearts	ready to import (bcallah@), sent to ports 2014-10-09
+sysutils/sleuthkit		sent to ports@ 2014-10-08 (nigel)

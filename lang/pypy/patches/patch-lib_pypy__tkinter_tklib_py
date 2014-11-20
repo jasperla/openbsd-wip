@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_pypy__tkinter_tklib_py,v 1.2 2013/12/04 21:56:21 edd Exp $
+--- lib_pypy/_tkinter/tklib.py.orig	Mon Sep 22 18:34:11 2014
++++ lib_pypy/_tkinter/tklib.py	Fri Oct 10 13:16:29 2014
+@@ -118,9 +118,9 @@ void Tcl_FindExecutable(char *argv0);
+ # XXX find a better way to detect paths
+ # XXX pick up CPPFLAGS and LDFLAGS and add to these paths?
+ if sys.platform.startswith("openbsd"):
+-    incdirs = ['/usr/local/include/tcl8.5', '/usr/local/include/tk8.5', '/usr/X11R6/include']
+-    linklibs = ['tk85', 'tcl85']
+-    libdirs = ['/usr/local/lib', '/usr/X11R6/lib']
++    incdirs = ['${MODTCL_INCDIR}', '${MODTK_INCDIR}', '${X11BASE}/include']
++    linklibs = ['${MODTK_LIB}', '${MODTCL_LIB}']
++    libdirs = ['${LOCALBASE}/lib', '${X11BASE}/lib']
+ elif sys.platform.startswith("freebsd"):
+     incdirs = ['/usr/local/include/tcl8.6', '/usr/local/include/tk8.6', '/usr/local/include/X11', '/usr/local/include']
+     linklibs = ['tk86', 'tcl86']

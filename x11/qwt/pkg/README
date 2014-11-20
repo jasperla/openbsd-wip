@@ -1,0 +1,15 @@
+$OpenBSD: README,v 1.2 2011/06/02 13:41:42 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Building QWT Examples on OpenBSD
+
+To build the qwt examples:
+  cd ${TRUEPREFIX}/share/examples/qwt
+  make
+
+A qwt example binary will be built in each subdirectory of
+${TRUEPREFIX}/share/examples/qwt.
+
