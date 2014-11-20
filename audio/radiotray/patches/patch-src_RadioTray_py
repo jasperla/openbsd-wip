@@ -1,8 +1,8 @@
 $OpenBSD$
-The file permission need to allow writing otherwise radiotray fails to start
+The file permission needs to allow writing otherwise radiotray fails to start
 
---- lib/radiotray/RadioTray.py.orig	Thu Nov 20 23:18:29 2014
-+++ lib/radiotray/RadioTray.py	Thu Nov 20 23:19:31 2014
+--- src/radiotray/RadioTray.py.orig	Thu Nov 20 23:18:29 2014
++++ src/radiotray/RadioTray.py	Thu Nov 20 23:19:31 2014
 @@ -162,6 +162,7 @@ class RadioTray(object):
  
              self.logger.warn('Configuration file not found. Copying default configuration file to user directory')
