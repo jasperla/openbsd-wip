@@ -198,7 +198,7 @@ MAKE_ENV =		PYTHON=${MODPY_BIN} \
 			REAL_BUILD_ROOT=${WRKBUILD} \
 			OPENBSD_CPPFLAGS="-isystem ${WRKDIR}/gcc-include"
 
-MAKE_FLAGS =		-j ${MAKE_JOBS} \
+MAKE_FLAGS =		-B -j ${MAKE_JOBS} \
 			PYTHON=${MODPY_BIN} \
 			RUBY=${RUBY}
 .for _l _v in ${SHARED_LIBS}
