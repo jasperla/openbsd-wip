@@ -7,7 +7,6 @@ IGNORE-html =		qdoc segfaults
 VERSION =		5.3.2
 DISTNAME =		qt-everywhere-opensource-src-${VERSION}
 
-COMMENT-debug =		debugging additions for Qt5
 COMMENT-main =		C++ general-purpose toolkit
 COMMENT-examples =	examples for Qt5
 COMMENT-html =		offline HTML documentation for Qt5
@@ -16,7 +15,6 @@ COMMENT-psql =		PostgresSQL plugin for Qt5
 COMMENT-sqlite2 =	SQLite 2.x plugin for Qt5
 COMMENT-tds =		TDS plugin for Qt5
 
-PKGNAME-debug =		qt5-debug-${VERSION}
 PKGNAME-main =		qt5-${VERSION}
 PKGNAME-examples =	qt5-examples-${VERSION}
 PKGNAME-html =		qt5-html-${VERSION}
@@ -119,7 +117,6 @@ WANTLIB-tds +=		m pthread sybdb
 PERMIT_PACKAGE_CDROM =	Yes
 
 MULTI_PACKAGES =	-main -examples -html -mysql -psql -sqlite2 -tds
-#MULTI_PACKAGES +=	-debug
 
 MASTER_SITES =		http://master.qt-project.org/archive/qt/${VERSION:R}/${VERSION}/single/
 
@@ -226,7 +223,10 @@ QT_CMAKEDIR =	${QT_BASEDIR}/cmake
 # generic args
 CONFIGURE_ARGS =	-confirm-license \
 			-force-debug-info \
-			-opensource
+			-opensource \
+			-rpath \
+			-shared \
+			-verbose
 
 # paths
 CONFIGURE_ARGS +=	-sysconfdir ${SYSCONFDIR} \
@@ -242,10 +242,7 @@ CONFIGURE_ARGS +=	-sysconfdir ${SYSCONFDIR} \
 			-L${X11BASE}/lib
 
 # other options
-CONFIGURE_ARGS +=	-rpath \
-			-shared \
-			-verbose \
-			-no-c++11 \
+CONFIGURE_ARGS +=	-no-c++11 \
 			-no-alsa \
 			-no-journald \
 			-no-mtdev \
