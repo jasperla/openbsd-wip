@@ -6,7 +6,7 @@ DISTNAME =			radiotray-${MODPY_EGG_VERSION}
 CATEGORIES =		audio 
 HOMEPAGE =			http://radiotray.sourceforge.net/
 
-MAINTAINER =		<ports@openbsd.org>
+MAINTAINER =		Fred Crowson<openbsd@crowsons.com>
 
 # GPLv1
 PERMIT_PACKAGE_CDROM =	Yes
