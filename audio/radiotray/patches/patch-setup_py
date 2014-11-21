@@ -1,10 +1,9 @@
 $OpenBSD$
 
 For option --single-version-externally-managed
-Adding datadir so files are installed in the correct location
 
 --- setup.py.orig	Mon Mar 19 22:36:08 2012
-+++ setup.py	Fri Nov 21 10:09:46 2014
++++ setup.py	Fri Nov 21 11:07:44 2014
 @@ -1,7 +1,6 @@
  #!/usr/bin/env python
  
@@ -14,21 +13,11 @@ Adding datadir so files are installed in the correct location
  from distutils.command.install_data import install_data
  from distutils.dist import Distribution
  from distutils.command.build import build
-@@ -13,7 +12,7 @@ import sys
- import subprocess
- import platform
- 
--from src.lib.common import APPNAME, APPVERSION
-+from src.lib.common import APPNAME, APPVERSION, datadir
- 
- PO_DIR = 'po'
- MO_DIR = os.path.join('build', 'mo')
-@@ -75,6 +74,8 @@ if platform.system() == 'FreeBSD':
+@@ -74,7 +73,6 @@ if platform.system() == 'FreeBSD':
+   man_dir = 'man'
  else:
    man_dir = 'share/man'
- 
-+if platform.system() == 'OpenBSD':
-+  datadir = '/usr/local/share'
+-
  
  setup(name='radiotray',
      version=APPVERSION,
