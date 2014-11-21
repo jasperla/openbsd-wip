@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =			radio streaming player
+COMMENT =			streaming radio player
 MODPY_EGG_VERSION =		0.7.3
 DISTNAME =			radiotray-${MODPY_EGG_VERSION}
 CATEGORIES =		audio 
