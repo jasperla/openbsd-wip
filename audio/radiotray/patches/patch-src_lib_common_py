@@ -1,0 +1,26 @@
+$OpenBSD$
+
+Set datadir on OpenBSD
+
+--- src/lib/common.py.orig	Tue Jun 12 01:29:21 2012
++++ src/lib/common.py	Fri Nov 21 11:13:34 2014
+@@ -1,6 +1,7 @@
+ # -*- coding: utf-8 -*-
+ 
+ import os
++import platform
+ import i18n
+ from xdg.BaseDirectory import xdg_data_home
+ 
+@@ -8,7 +9,10 @@ try:
+     from defs import *
+ except:
+     APPVERSION = "0.7.3"
+-    datadir = "/usr/share"
++    if platform.system() == 'OpenBSD':
++      datadir = '/usr/local/share'
++    else:
++      datadir = '/usr/share'
+ 
+ # Application info
+ APPNAME = "Radio Tray"
