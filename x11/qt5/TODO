@@ -4,3 +4,5 @@
 4. No -debug - yet?
 5. COMMENT and DESCR in subpackages could be improved.
 6. "Unsupported NFC platform, will not build a working QtNfc library".
+7. -L/usr/local/* could come before -L${WRKBUILD/* when linking is done
+   across Qt module boundaries.
