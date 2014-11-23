@@ -1,6 +1,4 @@
 # $OpenBSD: Makefile,v 1.74 2014/03/17 23:22:02 sthen Exp $
-#
-# XXX apply diff to remove internal libs, see tl2013 in cvs
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -14,10 +12,12 @@ DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 SHARED_LIBS =		kpathsea	7.0
 SHARED_LIBS +=		ptexenc		4.0
 
-WANTLIB +=		ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c expat
-WANTLIB +=		fontconfig freetype gd jpeg lcms2 m
-WANTLIB +=		openjpeg png>=3 poppler pthread pthread-stubs stdc++
-WANTLIB +=		t1>=4 tiff ttf vpx xcb z
+WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xi Xmu Xpm Xrender Xt
+WANTLIB += c cairo expat fontconfig freetype gd glib-2.0 graphite2
+WANTLIB += harfbuzz harfbuzz-icu icudata icui18n icuio icuuc intl
+WANTLIB += jpeg lcms2 m openjpeg paper pcre pixman-1 png poppler
+WANTLIB += pthread pthread-stubs stdc++ tiff vpx xcb xcb-render
+WANTLIB += xcb-shm z zzip
 
 # XXX re-enable later
 #RUN_DEPENDS =		print/ghostscript/gnu \
@@ -33,7 +33,13 @@ LIB_DEPENDS =		devel/t1lib \
 			graphics/png \
 			graphics/gd \
 			print/freetype \
-			print/poppler
+			print/poppler \
+			graphics/cairo \
+			textproc/icu4c \
+			graphics/graphite2 \
+			devel/harfbuzz,-icu \
+			print/libpaper \
+			archivers/zziplib
 
 MODULES =		textproc/intltool converters/libiconv
 # These following modules are mostly for variable substitution in patches
@@ -132,18 +138,16 @@ CONFIGURE_STYLE =	gnu
 # Don't put ${PREFIX}/include in CPPFLAGS or system icu .h's are picked up
 # TeX Live uses a modified version of icu.
 CPPFLAGS =	-I${X11BASE}/include \
-		-I${TRUEPREFIX}/include/poppler
+		-I${LOCALBASE}/include \
+		-I${LOCALBASE}/include/poppler \
+		-I${LOCALBASE}/include/freetype1/freetype
 
-# Big endian ICU bug
-# http://tug.org/pipermail/tlbuild/2012q2/002266.html
-# XXX still needed
-.include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mbe}
-CPPFLAGS +=	-DU_IS_BIG_ENDIAN=1
-.endif
+LDFLAGS =	-L${LOCALBASE}/lib \
+		-L${X11BASE}/lib
 
 CONFIGURE_ENV +=	TL_MAKE=${GMAKE} \
-			CPPFLAGS="${CPPFLAGS}"
+			CPPFLAGS="${CPPFLAGS}" \
+			LDFLAGS="${LDFLAGS}"
 
 # Can't build in same dir
 WRKBUILD =              ${WRKSRC}/Work
@@ -172,28 +176,14 @@ PKG_ARGS +=		-Dxindy=0
 
 # Do not link with system icu. TeXLive ICU is not vanilla (Yet)!
 CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
-			--x-includes=${X11BASE}/include \
-			--x-libraries=${X11BASE}/lib \
 			--with-system-freetype2 \
 			--with-system-freetype \
-			--with-freetype-includes=${LOCALBASE}/include/freetype1/freetype \
-			--with-freetype-libdir=${LOCALBASE}/lib \
 			--with-system-gd \
-			--with-gd-libdir=${LOCALBASE}/lib \
-			--with-gd-includes=${LOCALBASE}/include \
 			--with-system-libpng \
-			--with-libpng-includes=${LOCALBASE}/include \
-			--with-libpng-libdir=${LOCALBASE}/lib \
 			--with-system-ncurses \
 			--with-system-pnglib \
-			--with-pnglib-libdir=${LOCALBASE}/lib \
-			--with-pnglib-include=${LOCALBASE}/include \
 			--with-system-zlib \
 			--with-system-t1lib \
-			--with-t1lib-libdir=${LOCALBASE}/lib \
-			--with-t1lib-includes=${LOCALBASE}/include \
-			--with-xpdf-includes=${LOCALBASE}/include/poppler \
-			--with-xpdf-libdir=${LOCALBASE}/lib \
 			--enable-texinfo=no \
 			--with-xdvi-x-toolkit=xaw \
 			--enable-texi2html=no \
@@ -208,7 +198,18 @@ CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--disable-native-texlive-build \
 			--with-banner-add="-OpenBSD_Ports" \
 			--disable-luajittex \
-			--with-system-xpdf #link poppler
+			--with-system-xpdf \
+			--with-system-icu \
+			--with-system-cairo \
+			--with-system-harfbuzz \
+			--with-system-graphite2 \
+			--with-system-poppler \
+			--with-system-libpaper \
+			--with-system-zziplib
+# XXX need to hack graphics/potrace to emit a library and header.
+# Looks like you add --with-libpotrace to its CONFIGURE_ARGS. Then add a
+# LIB_DEPENDS obviously.
+#--with-system-potrace
 
 SUBST_VARS +=		TRUEPREFIX LOCALBASE
 
