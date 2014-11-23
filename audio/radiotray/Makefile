@@ -18,6 +18,7 @@ MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =	devel/py-gobject${MODPY_FLAVOR} \
 		devel/py-notify${MODPY_FLAVOR} \
+		devel/desktop-file-utils \
 		multimedia/gstreamer-0.10/plugins-base \
 		multimedia/gstreamer-0.10/plugins-good \
 		multimedia/gstreamer-0.10/plugins-bad \

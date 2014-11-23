@@ -1,11 +1,11 @@
 @comment $OpenBSD$
 bin/radiotray
 lib/python${MODPY_VERSION}/site-packages/radiotray/
-lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/radiotray-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/radiotray-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/radiotray-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/radiotray-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/radiotray-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/radiotray/AppIndicatorGui.py
 lib/python${MODPY_VERSION}/site-packages/radiotray/AppIndicatorGui.pyc
 lib/python${MODPY_VERSION}/site-packages/radiotray/AsfPlaylistDecoder.py
@@ -96,6 +96,7 @@ lib/python${MODPY_VERSION}/site-packages/radiotray/radiotray.py
 lib/python${MODPY_VERSION}/site-packages/radiotray/radiotray.pyc
 lib/python${MODPY_VERSION}/site-packages/radiotray/testdbus.py
 lib/python${MODPY_VERSION}/site-packages/radiotray/testdbus.pyc
+share/applications/
 share/applications/radiotray.desktop
 share/doc/${FULLPKGNAME}/
 share/doc/${FULLPKGNAME}/AUTHORS
@@ -172,3 +173,5 @@ share/radiotray/plugins/matemediakeys.plugin
 share/radiotray/plugins/notification.plugin
 share/radiotray/plugins/sleeptimer.config
 share/radiotray/plugins/sleeptimer.plugin
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
