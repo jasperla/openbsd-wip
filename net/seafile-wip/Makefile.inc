@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile.template,v 1.68 2013/10/02 07:34:45 ajacoutot Exp $
 
-GH_TAGNAME ?= 		v3.1.6
+GH_TAGNAME ?= 		v3.1.11
 V = 			${GH_TAGNAME:S/v//:S/-server//:S/-testing//:S/-latest//}
 DISTNAME = 		${GH_PROJECT}-${V}
 
