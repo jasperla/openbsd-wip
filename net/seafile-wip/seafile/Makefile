@@ -4,7 +4,7 @@ COMMENT-main =		seafile daemon
 COMMENT-server = 	seafile server
 
 GH_PROJECT =		seafile
-GH_COMMIT = 		cfbcd85d13c2fafb5e01d862a9536eb5de896114
+GH_COMMIT = 		e2ec7141503a7035868cf7b9ab72627c906e00bc
 PKGNAME-main = 		${GH_PROJECT}-daemon-${V}
 PKGNAME-server = 	${GH_PROJECT}-server-${V}
 
@@ -63,11 +63,10 @@ post-extract:
 		server/gc/Makefile.am \
 		tests/Makefile.am
 
-pre-patch:
+pre-configure:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -fi
-
-pre-configure:
+	
 	perl -pi -e 's,manage.py,${PREFIX}/bin/seahub-manage,g' \
 		${WRKSRC}/tools/seafile-admin
 post-install:
