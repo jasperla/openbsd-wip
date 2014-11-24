@@ -29,14 +29,13 @@ BUILD_DEPENDS =	textproc/py-docutils
 RUN_DEPENDS =	devel/desktop-file-utils
 LIB_DEPENDS =	graphics/gdk-pixbuf2 \
 		devel/libmagic \
-		x11/girara
+		x11/girara>=0.2.3
 
 MAKE_FLAGS =	MANPREFIX=${PREFIX}/man \
 		DESKTOPPREFIX=${PREFIX}/share/applications \
 		TPUT=true \
 		CC="${CC}" \
 		VERBOSE=1
-
 FAKE_FLAGS =	PREFIX=${TRUEPREFIX}
 
 USE_GMAKE =	Yes
