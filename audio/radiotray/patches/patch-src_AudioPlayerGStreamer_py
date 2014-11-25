@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Typo /slef/self/ - this has already been patched upstream - this patch
+will not be needed on next release.
+
+--- src/AudioPlayerGStreamer.py.orig	Tue Nov 25 20:25:42 2014
++++ src/AudioPlayerGStreamer.py	Tue Nov 25 20:25:54 2014
+@@ -124,7 +124,7 @@ class AudioPlayerGStreamer:
+         if(stru != None):
+             name = stru.get_name()
+             if(name == 'redirect'):
+-                slef.log.info("redirect received")
++                self.log.info("redirect received")
+                 self.player.set_state(gst.STATE_NULL)
+                 stru.foreach(self.redirect, None)
+ 

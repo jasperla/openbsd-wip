@@ -1,0 +1,23 @@
+$OpenBSD$
+
+For option --single-version-externally-managed
+
+--- setup.py.orig	Mon Mar 19 22:36:08 2012
++++ setup.py	Fri Nov 21 11:07:44 2014
+@@ -1,7 +1,6 @@
+ #!/usr/bin/env python
+ 
+-from distutils.core import setup
+-from distutils.core import setup
++from setuptools import setup
+ from distutils.command.install_data import install_data
+ from distutils.dist import Distribution
+ from distutils.command.build import build
+@@ -74,7 +73,6 @@ if platform.system() == 'FreeBSD':
+   man_dir = 'man'
+ else:
+   man_dir = 'share/man'
+-
+ 
+ setup(name='radiotray',
+     version=APPVERSION,
