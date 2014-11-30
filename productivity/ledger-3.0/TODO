@@ -1,14 +1,3 @@
-- resolve compilation problem below:
-  1%] Building CXX object src/CMakeFiles/libledger.dir/stats.cc.o
-In file included from /usr/ports/pobj/ledger-3.0/ledger-next/src/stats.cc:32:
-/usr/ports/pobj/ledger-3.0/ledger-next/build/ledger-next/opt/system.hh:164:18: error: utf8.h: No such file or directory
-In file included from /usr/ports/pobj/ledger-3.0/ledger-next/src/format.h:46,
-                 from /usr/ports/pobj/ledger-3.0/ledger-next/src/report.h:53,
-                 from /usr/ports/pobj/ledger-3.0/ledger-next/src/stats.cc:38:
-/usr/ports/pobj/ledger-3.0/ledger-next/src/unistring.h: In constructor 'ledger::unistring::unistring(const std::string&)':
-/usr/ports/pobj/ledger-3.0/ledger-next/src/unistring.h:72: error: 'utf8' has not been declared
-/usr/ports/pobj/ledger-3.0/ledger-next/src/unistring.h: In member function 'std::string ledger::unistring::extract(size_t, size_t) const':
-/usr/ports/pobj/ledger-3.0/ledger-next/src/unistring.h:94: error: 'utf8' has not been declared
-*** Error 1 in . (src/CMakeFiles/libledger.dir/build.make:59 'src/CMakeFiles/libledger.dir/stats.
-
+- port utfcpp https://github.com/jasperla/openbsd-wip/tree/master/devel/utfcpp
 - decide how to run acprep
+- replace MASTER_SITES to GH_*
