@@ -16,7 +16,8 @@ MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		https://github.com/ledger/ledger/archive/
+GH_ACCOUNT =		ledger
+GH_PROJECT =		ledger
 
 WANTLIB =		c gmp>=4 m pcre stdc++
 
