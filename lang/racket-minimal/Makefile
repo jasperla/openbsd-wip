@@ -10,7 +10,7 @@ ONLY_FOR_ARCHS =	i386 amd64 hppa mips64el powerpc
 COMMENT =		multi-paradigm programming language
 
 V =			6.1.1.5
-PKGNAME =		racket-$V
+PKGNAME =		racket-minimal-$V
 DISTNAME =		min-racket-$V-src
 
 CATEGORIES =		lang
