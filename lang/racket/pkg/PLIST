@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/05/14 17:51:41 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/11/11 23:51:51 juanfra Exp $
 bin/drracket
 bin/gracket
 bin/gracket-text
@@ -5546,8 +5546,6 @@ share/racket/collects/xml/private/xexpr-core.rkt
 share/racket/collects/xml/private/xexpr.rkt
 share/racket/collects/xml/xexpr.rkt
 share/racket/collects/xml/xml.rkt
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
 share/racket/drracket-exe-icon.png
 share/racket/info-cache.rktd
 share/racket/links.rktd
@@ -24069,3 +24067,5 @@ share/racket/shares.rktd
 share/racket/slatex.py
 share/racket/slatex.sty
 share/racket/slideshow-exe-icon.ico
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

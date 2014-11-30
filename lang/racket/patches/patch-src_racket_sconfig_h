@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_racket_sconfig_h,v 1.6 2014/07/15 00:13:16 juanfra Exp $
+$OpenBSD: patch-src_racket_sconfig_h,v 1.7 2014/08/19 22:51:20 juanfra Exp $
 --- src/racket/sconfig.h.orig	Thu Jul 17 19:37:10 2014
 +++ src/racket/sconfig.h	Sat Jul 19 21:50:27 2014
 @@ -327,6 +327,8 @@
