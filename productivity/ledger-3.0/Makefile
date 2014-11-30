@@ -2,7 +2,7 @@
 
 COMMENT=		command line double-entry accounting ledger
 
-PKGNAME=		ledger-3.0
+PKGNAME=		ledger-3.1
 CATEGORIES=		productivity
 DISTNAME = 		next
 
@@ -16,8 +16,6 @@ MAINTAINER=		Sergey Bronnikov <estetus@gmail.com>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES =		https://github.com/ledger/ledger/archive/
-
-EXTRACT_SUFX =		.zip
 
 WANTLIB =		c gmp>=4 m pcre stdc++
 
