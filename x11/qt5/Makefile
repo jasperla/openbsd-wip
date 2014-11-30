@@ -190,7 +190,8 @@ RUN_DEPENDS-main +=	devel/gperf \
 
 DESTDIRNAME =		INSTALL_ROOT
 
-MAKE_ENV =		PYTHON=${MODPY_BIN} \
+MAKE_ENV =		LD_LIBRARY_PATH=${WRKBUILD}/qtbase/lib \
+			PYTHON=${MODPY_BIN} \
 			RUBY=${RUBY} \
 			REAL_BUILD_ROOT=${WRKBUILD} \
 			OPENBSD_CPPFLAGS="-isystem ${WRKDIR}/gcc-include"
@@ -324,6 +325,15 @@ post-extract:
 .if ${FLAVOR:Mno_tests}
 	rm -f ${WRKDIST}/qtbase/tests/tests.pro
 .endif
+
+post-configure:
+	# Fake qdoc configuration to make sure no Makefile will
+	# try to use /usr/local/lib/qt5/bin/qdoc instead of
+	# ${WRKBUILD}/qtbase/bin/qdoc.
+	mkdir -p ${WRKBUILD}/qtbase/mkspecs/modules
+	(   echo "QT_TOOL.qdoc.binary  = ${WRKBUILD}/qtbase/bin/qdoc"; \
+	    echo "QT_TOOL.qdoc.depends = core xml") \
+	    >>${WRKBUILD}/qtbase/mkspecs/modules/qt_tool_qdoc.pri
 
 post-install:
 	# programs
