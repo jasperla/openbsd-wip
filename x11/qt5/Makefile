@@ -256,7 +256,7 @@ CONFIGURE_ENV =		MAKE=make \
 			EXTRA_CPPFLAGS="-DLOCALBASE=\\\"${LOCALBASE}\\\" -DX11BASE=\\\"${X11BASE}\\\""
 
 PSEUDO_FLAVORS =	no_examples no_html no_tests
-FLAVOR ?=		no_html
+FLAVOR ?=
 
 .include <bsd.port.arch.mk>
 
@@ -265,7 +265,7 @@ FLAVOR ?=		no_html
 # first, named "first".
 ALL_TARGET =		first
 .if ${BUILD_PACKAGES:M-html}
-ALL_TARGET +=		html_docs
+ALL_TARGET +=		docs
 .endif
 
 .if !${BUILD_PACKAGES:M-examples}
