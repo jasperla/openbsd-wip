@@ -8,3 +8,7 @@ previously).
 - Add "gui-pkg-manager" to README.
 
 - Remove unused depends.
+
+- Change the name to racket-minimal. Add the entry to devel/quirks.
+
+- "Why there is not a full version of racket?".

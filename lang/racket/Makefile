@@ -11,7 +11,7 @@ COMMENT =		multi-paradigm programming language
 
 V =			6.1.1.5
 PKGNAME =		racket-$V
-DISTNAME =		racket-$V-src
+DISTNAME =		min-racket-$V-src
 
 CATEGORIES =		lang
 HOMEPAGE =		http://racket-lang.org/
