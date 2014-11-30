@@ -1,0 +1,10 @@
+- Change from builtpkg to core. Upstream is splitting the packages in
+individual git repos and I can't follow every change easily (as I did
+previously).
+
+- Add instructions to README about how to install packages and add
+.racket/version/bin to the PATH. Use drracket as an example.
+
+- Add "gui-pkg-manager" to README.
+
+- Remove unused depends.
