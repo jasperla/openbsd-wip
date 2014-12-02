@@ -21,22 +21,21 @@ GH_PROJECT =		ledger
 
 WANTLIB =		c gmp>=4 m pcre stdc++
 
-MODGCC4_ARCHS =		*
-MODGCC4_LANGS =		c++
-MODGCC4_VERSION =	4.9
+CONFIGURE_STYLE =	cmake
+CONFIGURE_ARGS =	-DCMAKE_C_COMPILER=/usr/local/bin/clang \
+			-DCMAKE_CXX_COMPILER=/usr/local/bin/clang++
 
 MODULES =		devel/cmake \
 			lang/python \
-			gcc4
+			lang/clang
+
+MODCLANG_ARCHS =	*
+MODCLANG_LANGS =	c++
 
 LIB_DEPENDS =		devel/gmp  \
 			devel/mpfr \
 			devel/pcre \
 			devel/boost
-
-#CONFIGURE_STYLE =	simple
-#CONFIGURE_SCRIPT =	acprep
-#CONFIGURE_ARGS =	opt make
 
 WRKDIST =		${WRKDIR}/ledger-${VERSION}
 

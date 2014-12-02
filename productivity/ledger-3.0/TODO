@@ -1,2 +1,1 @@
 - port utfcpp https://github.com/jasperla/openbsd-wip/tree/master/devel/utfcpp
-- switch to gcc-4.9.3, gcc-4.8.3 or clang
