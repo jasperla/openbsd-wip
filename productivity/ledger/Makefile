@@ -32,10 +32,11 @@ MODULES =		devel/cmake \
 MODCLANG_ARCHS =	*
 MODCLANG_LANGS =	c++
 
-LIB_DEPENDS =		devel/gmp  \
-			devel/mpfr \
-			devel/pcre \
-			devel/boost
+LIB_DEPENDS =		devel/boost \
+			devel/gmp   \
+			devel/mpfr  \
+			devel/pcre  \
+			devel/utfcpp
 
 WRKDIST =		${WRKDIR}/ledger-${VERSION}
 
