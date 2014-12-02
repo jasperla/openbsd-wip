@@ -39,9 +39,18 @@ LIB_DEPENDS =		devel/boost \
 
 WRKDIST =		${WRKDIR}/ledger-${VERSION}
 
+FILES =			LICENSE 	\
+			ledger.1 	\
+			GLOSSARY.md 	\
+			NEWS 		\
+			ledger-mode.texi \
+			ledger3.texi
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ledger
-	${INSTALL_DATA} ${WRKDIST}/doc/* ${PREFIX}/share/doc/ledger
+.for f in ${FILES}
+	${INSTALL_DATA} ${WRKDIST}/doc/${f} ${PREFIX}/share/doc/ledger
+.endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ledger
 	${INSTALL_DATA} ${WRKDIST}/contrib/* ${PREFIX}/share/examples/ledger
 
