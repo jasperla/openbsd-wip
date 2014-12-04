@@ -17,7 +17,7 @@ EXTRACT_SUFX =		.tar.bz2
 
 RUN_DEPENDS =	archivers/p5-Archive-Zip \
 		archivers/p5-PerlIO-gzip \
-		p5-DateManip->=5.42:converters/p5-DateManip \
+		converters/p5-DateManip>=5.42 \
 		converters/p5-Unicode-String \
                 converters/p5-Unicode-UTF8simple \
 		converters/p5-JSON \
@@ -29,20 +29,20 @@ RUN_DEPENDS =	archivers/p5-Archive-Zip \
 		devel/p5-File-Slurp \
 		devel/p5-Parse-RecDescent \
 		japanese/p5-Text-Kakasi \
-		p5-Lingua-Preferred-0.2.4:textproc/p5-Lingua-Preferred \
+		textproc/p5-Lingua-Preferred>=0.2.4 \
 		textproc/p5-Lingua-EN-Numbers-Ordinate \
 		textproc/p5-XML-DOM \
 		textproc/p5-XML-LibXML \
 		textproc/p5-XML-LibXSLT \
 		textproc/p5-XML-Simple \
 		textproc/p5-XML-TreePP \
-		p5-XML-Parser->=2.34:textproc/p5-XML-Parser \
-		p5-XML-Twig->=3.10:textproc/p5-XML-Twig \
-		p5-XML-Writer->=0.46:textproc/p5-XML-Writer \
+		textproc/p5-XML-Parser>=2.34 \
+		textproc/p5-XML-Twig>=3.10 \
+		textproc/p5-XML-Writer>=0.46 \
 		www/p5-HTTP-Cache-Transparent \
-		p5-HTML-Parser->=3.34:www/p5-HTML-Parser \
+		www/p5-HTML-Parser>=3.34 \
 		www/p5-HTML-TableExtract \
-		p5-libwww->=5.65:www/p5-libwww \
+		www/p5-libwww>=5.65 \
 		www/p5-SOAP-Lite \
 		www/p5-WWW-Mechanize \
 		x11/p5-Tk \
