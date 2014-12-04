@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =		libraries for OpenVAS security scanner
-DISTNAME =		openvas-libraries-7.0.5
+DISTNAME =		openvas-libraries-7.0.6
 
 SHARED_LIBS =		openvas_base    0.17 \
                         openvas_misc    0.17 \
@@ -23,7 +23,7 @@ LIB_DEPENDS +=		security/libgcrypt \
 
 BUILD_DEPENDS +=	devel/bison
 
-MASTER_SITES =		${MASTER_SITES_OPENVAS:=1787/}
+MASTER_SITES =		${MASTER_SITES_OPENVAS:=1833/}
 
 CFLAGS = 		-I ${PREFIX}/include
 
