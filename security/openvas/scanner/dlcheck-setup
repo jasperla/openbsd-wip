@@ -1,0 +1,1 @@
+ftp -S dont -o files/openvas-check-setup https://svn.wald.intevation.org/svn/openvas/trunk/tools/openvas-check-setup

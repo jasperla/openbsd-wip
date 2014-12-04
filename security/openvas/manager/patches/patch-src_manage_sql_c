@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/manage_sql.c.orig	Mon Nov  3 11:29:13 2014
-+++ src/manage_sql.c	Sat Nov  8 02:14:18 2014
+--- src/manage_sql.c.orig	Fri Nov 28 18:54:20 2014
++++ src/manage_sql.c	Thu Dec  4 13:58:30 2014
 @@ -40,7 +40,6 @@
  #include "sql.h"
  #include "tracef.h"
@@ -40,7 +40,7 @@ $OpenBSD$
        int len;
  
        if (strftime (time_string, 98, "%FT%T%z", tm) == 0)
-@@ -38290,12 +38284,12 @@ modify_schedule (const char *schedule_id, const char *
+@@ -38340,12 +38334,12 @@ modify_schedule (const char *schedule_id, const char *
    if (duration == -1)
      duration_string = NULL;
    else
@@ -55,7 +55,7 @@ $OpenBSD$
  
    if ((period_months == -1) || (period_months == 0))
      {
-@@ -38307,12 +38301,12 @@ modify_schedule (const char *schedule_id, const char *
+@@ -38357,12 +38351,12 @@ modify_schedule (const char *schedule_id, const char *
        else
          {
            period_months_string = g_strdup ("0");
