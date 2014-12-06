@@ -2,7 +2,7 @@
 
 COMMENT =		stereoscopic 3D video player
 
-DISTNAME =		bino-1.6.0
+DISTNAME =		bino-1.6.1
 
 CATEGORIES =		x11
 
