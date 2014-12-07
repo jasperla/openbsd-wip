@@ -1,0 +1,12 @@
+$OpenBSD: patch-ui_base_webui_web_ui_util_cc,v 1.2 2014/09/11 19:04:53 robert Exp $
+--- ui/base/webui/web_ui_util.cc.orig.port	Wed Sep 10 01:47:14 2014
++++ ui/base/webui/web_ui_util.cc	Wed Sep 10 22:05:41 2014
+@@ -141,7 +141,7 @@ void SetFontAndTextDirection(base::DictionaryValue* lo
+ 
+ // TODO(dnicoara) Remove Ozone check when PlatformFont support is introduced
+ // into Ozone: crbug.com/320050
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(USE_OZONE)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS) && !defined(USE_OZONE)
+   font_family = ui::ResourceBundle::GetSharedInstance().GetFont(
+       ui::ResourceBundle::BaseFont).GetFontName() + ", " + font_family;
+ #endif

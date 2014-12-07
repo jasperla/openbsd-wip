@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_ui_views_tabs_tab_strip_cc,v 1.8 2014/10/13 06:49:19 robert Exp $
+--- chrome/browser/ui/views/tabs/tab_strip.cc.orig.port	Thu Oct  2 19:39:46 2014
++++ chrome/browser/ui/views/tabs/tab_strip.cc	Fri Oct 10 16:10:30 2014
+@@ -281,7 +281,7 @@ NewTabButton::NewTabButton(TabStrip* tab_strip, views:
+     : views::ImageButton(listener),
+       tab_strip_(tab_strip),
+       destroyed_(NULL) {
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+   set_triggerable_event_flags(triggerable_event_flags() |
+                               ui::EF_MIDDLE_MOUSE_BUTTON);
+ #endif

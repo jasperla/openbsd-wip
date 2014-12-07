@@ -1,0 +1,17 @@
+$OpenBSD: patch-chrome_browser_media_galleries_media_file_system_registry_cc,v 1.8 2014/11/19 21:27:32 robert Exp $
+--- chrome/browser/media_galleries/media_file_system_registry.cc.orig.port	Wed Dec  3 03:32:11 2014
++++ chrome/browser/media_galleries/media_file_system_registry.cc	Sat Dec  6 11:34:25 2014
+@@ -736,7 +736,12 @@ class MediaFileSystemRegistry::MediaFileSystemContextI
+ // Constructor in 'private' section because depends on private class definition.
+ MediaFileSystemRegistry::MediaFileSystemRegistry()
+     : file_system_context_(new MediaFileSystemContextImpl) {
+-  StorageMonitor::GetInstance()->AddObserver(this);
++  /*
++   * This conditional is needed for shutdown.  Destructors
++   * try to get the media file system registry.
++   */
++  if (StorageMonitor::GetInstance())
++    StorageMonitor::GetInstance()->AddObserver(this);
+ }
+ 
+ MediaFileSystemRegistry::~MediaFileSystemRegistry() {

@@ -1,0 +1,24 @@
+$OpenBSD: patch-chrome_chrome_browser_extensions_gypi,v 1.15 2014/11/19 21:27:32 robert Exp $
+--- chrome/chrome_browser_extensions.gypi.orig.port	Wed Dec  3 03:32:11 2014
++++ chrome/chrome_browser_extensions.gypi	Sat Dec  6 11:34:26 2014
+@@ -964,6 +964,11 @@
+         '<@(chrome_browser_extensions_enabled_sources)',
+       ],
+       'conditions': [
++        ['os_bsd==1', {
++          'sources/': [
++            ['exclude', '^browser/extensions/api/image_writer_private/removable_storage_provider_linux.cc'],
++          ],
++        }],
+         ['chromeos==1', {
+           'conditions': [
+             ['use_x11==1', {
+@@ -1008,7 +1013,7 @@
+         }, {
+           'sources': ['<@(chrome_browser_extensions_non_athena_sources)'],
+         }],
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="openbsd"', {
+           'conditions': [
+             ['use_aura==1', {
+               'dependencies': [
