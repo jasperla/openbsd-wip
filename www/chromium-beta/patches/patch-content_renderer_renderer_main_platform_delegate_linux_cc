@@ -1,0 +1,19 @@
+$OpenBSD: patch-content_renderer_renderer_main_platform_delegate_linux_cc,v 1.10 2014/09/11 19:04:52 robert Exp $
+--- content/renderer/renderer_main_platform_delegate_linux.cc.orig.port	Wed Sep 10 22:19:32 2014
++++ content/renderer/renderer_main_platform_delegate_linux.cc	Wed Sep 10 22:20:09 2014
+@@ -44,6 +44,7 @@ bool RendererMainPlatformDelegate::EnableSandbox() {
+   // http://code.google.com/p/chromium/wiki/LinuxSUIDSandbox
+   //
+   // Anything else is started in InitializeSandbox().
++#if !defined(OS_BSD)
+   LinuxSandbox::InitializeSandbox();
+   // about:sandbox uses a value returned from LinuxSandbox::GetStatus() before
+   // any renderer has been started.
+@@ -70,6 +71,7 @@ bool RendererMainPlatformDelegate::EnableSandbox() {
+     CHECK_EQ(errno, EPERM);
+   }
+ #endif  // __x86_64__
++#endif
+ 
+   return true;
+ }
