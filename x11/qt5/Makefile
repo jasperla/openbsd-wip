@@ -211,6 +211,10 @@ WRKBUILD =		${WRKSRC}/build
 
 CONFIGURE_STYLE =	simple
 
+FLAVORS =		debug
+PSEUDO_FLAVORS =	no_examples no_html no_tests
+FLAVOR ?=
+
 # readability macros
 QT_BASEDIR =	${PREFIX}/lib/qt5
 QT_INCDIR =	${PREFIX}/include/X11/qt5
@@ -223,11 +227,16 @@ QT_CMAKEDIR =	${QT_BASEDIR}/cmake
 
 # generic args
 CONFIGURE_ARGS =	-confirm-license \
-			-force-debug-info \
 			-opensource \
 			-rpath \
 			-shared \
 			-verbose
+
+.if ${FLAVOR:Mdebug}
+CONFIGURE_ARGS +=	-debug
+.else
+CONFIGURE_ARGS +=	-release
+.endif
 
 # paths
 CONFIGURE_ARGS +=	-sysconfdir ${SYSCONFDIR} \
@@ -254,9 +263,6 @@ CONFIGURE_ARGS +=	-no-c++11 \
 CONFIGURE_ENV =		MAKE=make \
 			MAKEFLAGS="-j ${MAKE_JOBS}" \
 			EXTRA_CPPFLAGS="-DLOCALBASE=\\\"${LOCALBASE}\\\" -DX11BASE=\\\"${X11BASE}\\\""
-
-PSEUDO_FLAVORS =	no_examples no_html no_tests
-FLAVOR ?=
 
 .include <bsd.port.arch.mk>
 
