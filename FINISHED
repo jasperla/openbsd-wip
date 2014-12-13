@@ -6,8 +6,6 @@
 # For example:
 # net/gnaughty: ready for import, sent to ports@ (jasperla)
 
-sysutils/pv		sent to ports@ 2013/08/31. Ready for import. (dhn)
-net/sic			sent to ports@ 2013/08/28. Ready for import. (dhn)
 cad/tkgate:		Ready for import. Sent to ports@ 2008-01-13 and still works (yason)
 comms/[gw]ammu		Ready for import. Sent to ports@ 2012-10-09 (yason)
 devel/libextractor	sent to ports 2013-06-29
