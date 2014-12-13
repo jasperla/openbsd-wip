@@ -21,4 +21,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/python
 
+do-test:
+	@cd ${WRKSRC} && ${MODPY_BIN} ./testall.py
+
 .include <bsd.port.mk>
