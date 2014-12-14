@@ -24,6 +24,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/python
+
 MODPY_SETUPTOOLS =		Yes
 
 do-test:
