@@ -1,5 +1,9 @@
 # $OpenBSD: Makefile.template,v 1.71 2014/07/10 12:33:17 sthen Exp $
 
+# optional dependencies
+# py-asn1-modules
+# py-dnspython
+
 COMMENT =		Python XMPP and Jabber implementation
 
 MODPY_EGG_VERSION =	1.3.1
@@ -20,6 +24,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/python
+MODPY_SETUPTOOLS =		Yes
 
 do-test:
 	@cd ${WRKSRC} && ${MODPY_BIN} ./testall.py
