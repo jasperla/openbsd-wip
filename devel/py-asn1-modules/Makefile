@@ -21,8 +21,7 @@ MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =	devel/py-asn1
 
-pre-configure:
-	perl -pi -e 's,/usr/bin/python,${MODPY_BIN},g' ${WRKSRC}/tools/*.py
+MODPY_ADJ_FILES =	tools/*.py
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/* ${PREFIX}/bin
