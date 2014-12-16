@@ -17,6 +17,9 @@ MAINTAINER=	Rafael Sadowski <rafael@sizeofvoid.org>
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
+FLAVORS=        java
+FLAVOR?=
+
 WANTLIB=	ICE SM X11 Xext Xmu Xss Xt bz2 c cairo \
 		ereadline fontconfig freetype glib-2.0 \
 		gobject-2.0 icui18n icuuc jpeg lzma m \
@@ -52,6 +55,7 @@ BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS} \
 		archivers/unzip \
 		archivers/zip \
 		devel/xdg-utils
+
 LIB_DEPENDS=	${MODFORTRAN_LIB_DEPENDS} \
 		${MODTK_LIB_DEPENDS} \
 		archivers/bzip2 \
@@ -64,6 +68,7 @@ LIB_DEPENDS=	${MODFORTRAN_LIB_DEPENDS} \
 		graphics/png \
 		graphics/tiff \
 		textproc/icu4c
+
 RUN_DEPENDS=	archivers/gtar \
 		archivers/unzip \
 		archivers/zip \
@@ -85,8 +90,8 @@ CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
 		--with-system-bzlib \
 		--with-system-pcre \
 		--with-system-xz \
-		--with-tcltk \
 		--with-tcl-config=${MODTCL_CONFIG} \
+		--with-tcltk \
 		--with-tk-config=${MODTK_CONFIG}
 
 CONFIGURE_ENV=	FFLAGS="${FFLAGS}" \
@@ -113,9 +118,16 @@ USE_GMAKE=	Yes
 
 TEXMFLOCAL=	${PREFIX}/share/texmf-local
 
+# Will update both ${TRUEPREFIX}/lib/R/etc/Makeconf and
+# ${TRUEPREFIX}/lib/R/etc/ldpaths with the right settings.
+.if ${FLAVOR:Mjava}
+MODULES +=      java
+MODJAVA_VER =    1.7+
+CONFIGURE_ENV +=  JAVA_HOME="${LOCALBASE}/jdk-1.7.0"
+.endif
+
 post-install:
 	mv ${WRKINST}/${LOCALBASE}/lib/R/share/texmf ${TEXMFLOCAL}
 	@perl -i -pe 's:^R_HOME_DIR=.*:R_HOME_DIR=${TRUEPREFIX}/lib/R:' \
 		${PREFIX}/bin/R
-
 .include <bsd.port.mk>
