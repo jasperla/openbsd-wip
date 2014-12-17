@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
+lib/python${MODPY_VERSION}/site-packages/uwsgidecorators.py
+lib/python${MODPY_VERSION}/site-packages/uwsgidecorators.pyc
+lib/uwsgi/python_plugin.so

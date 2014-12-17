@@ -1,0 +1,16 @@
+The uWSGI project aims at developing a full stack for building hosting
+services. Application servers (for various programming languages and
+protocols), proxies, process managers and monitors are all implemented
+using a common api and a common configuration style. It has a pluggable
+architecture and can support a range of platforms and languages.
+
+The "WSGI" part in the name is a tribute to the namesake Python
+standard, as it has been the first developed plugin for the project.
+
+Versatility, performance, low-resource usage and reliability are the
+strengths of the project (and the only rules followed).
+
+This package contains the core uWSGI program, upstream's standard
+set of embedded plugins, and a couple of additional plugins with light
+dependencies. Other plugins are packaged separately, e.g.
+uwsgi-plugin-python2.7 and uwsgi-plugin-lua.

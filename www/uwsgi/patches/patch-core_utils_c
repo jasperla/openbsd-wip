@@ -1,0 +1,50 @@
+$OpenBSD$
+--- core/utils.c.orig	Sun Oct 26 04:30:44 2014
++++ core/utils.c	Tue Dec 16 21:31:40 2014
+@@ -1,4 +1,5 @@
+ #include <uwsgi.h>
++#include <uuid.h>
+ 
+ 
+ extern struct uwsgi_server uwsgi;
+@@ -3987,32 +3988,14 @@ char *uwsgi_strip(char *src) {
+ }
+ 
+ void uwsgi_uuid(char *buf) {
+-#ifdef UWSGI_UUID
+-	uuid_t uuid_value;
+-	uuid_generate(uuid_value);
+-	uuid_unparse(uuid_value, buf);
+-#else
+-	int i, r[11];
+-	if (!uwsgi_file_exists("/dev/urandom"))
+-		goto fallback;
+-	int fd = open("/dev/urandom", O_RDONLY);
+-	if (fd < 0)
+-		goto fallback;
+-	for (i = 0; i < 11; i++) {
+-		if (read(fd, &r[i], 4) != 4) {
+-			close(fd);
+-			goto fallback;
+-		}
+-	}
+-	close(fd);
+-	goto done;
+-fallback:
+-	for (i = 0; i < 11; i++) {
+-		r[i] = rand();
+-	}
+-done:
+-	snprintf(buf, 37, "%08x-%04x-%04x-%02x%02x-%02x%02x%02x%02x%02x%02x", r[0], r[1], r[2], r[3], r[4], r[5], r[6], r[7], r[8], r[9], r[10]);
+-#endif
++	uuid_t uuid;
++	char *tmp_uuid;
++	uint32_t status;
++
++	uuid_create(&uuid, &status);
++	uuid_to_string(&uuid, &tmp_uuid, &status);
++	memcpy(buf, tmp_uuid, 37);
++	free(tmp_uuid);
+ }
+ 
+ int uwsgi_uuid_cmp(char *x, char *y) {

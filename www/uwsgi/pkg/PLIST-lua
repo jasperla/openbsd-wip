@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+lib/uwsgi/lua_plugin.so
