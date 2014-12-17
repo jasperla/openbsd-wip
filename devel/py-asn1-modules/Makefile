@@ -19,11 +19,18 @@ MODULES =		lang/python
 
 MODPY_SETUPTOOLS =	Yes
 
-RUN_DEPENDS =	devel/py-asn1
+RUN_DEPENDS =		devel/py-asn1
+TEST_DEPENDS =		devel/py-asn1
 
 MODPY_ADJ_FILES =	tools/*.py
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/* ${PREFIX}/bin
+
+do-test:
+	cd ${WRKSRC}/test && for f in *.sh; do \
+	    ${SETENV} ${MAKE_ENV} PATH=${WRKSRC}/tools:${PATH} \
+	        PYTHONPATH=${WRKSRC} sh "$$f" || exit 1; \
+	done
 
 .include <bsd.port.mk>
