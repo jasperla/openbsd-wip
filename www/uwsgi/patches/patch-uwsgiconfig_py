@@ -1,0 +1,12 @@
+$OpenBSD$
+--- uwsgiconfig.py.orig	Tue Dec 16 22:00:20 2014
++++ uwsgiconfig.py	Tue Dec 16 22:01:25 2014
+@@ -1277,7 +1277,7 @@ class uConf(object):
+                 report['xml'] = 'expat'
+ 
+         if self.get('plugin_dir'):
+-            self.cflags.append('-DUWSGI_PLUGIN_DIR="\\"%s\\""' % self.get('plugin_dir'))
++            self.cflags.append('-DUWSGI_PLUGIN_DIR="\\"/usr/local/lib/uwsgi\\""')
+             report['plugin_dir'] = self.get('plugin_dir')
+ 
+         if self.get('debug'):
