@@ -1,32 +1,33 @@
 # $OpenBSD: Makefile,v 1.11 2013/07/01 10:39:18 sthen Exp $
 
-COMMENT=		common base representation of Python source code
+COMMENT =		common base representation of Python source code
 
-MODPY_EGG_VERSION =	1.1.1
-DISTNAME=		astroid-${MODPY_EGG_VERSION}
-PKGNAME=		py-${DISTNAME}
-CATEGORIES=		devel
+MODPY_EGG_VERSION =	1.3.2
+DISTNAME =		astroid-${MODPY_EGG_VERSION}
+PKGNAME =		py-${DISTNAME}
+CATEGORIES =		devel
 
-HOMEPAGE=		http://www.logilab.org/projects/astng/
+HOMEPAGE =		http://www.astroid.org/
 
 # LGPLv2.1+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-#https://pypi.python.org/packages/source/a/astroid/astroid-1.1.1.tar.gz
 MASTER_SITES =		${MASTER_SITE_PYPI:=a/astroid/}
 
-MODULES=		lang/python
-RUN_DEPENDS=		devel/py-logilab-common
-TEST_DEPENDS=	${RUN_DEPENDS}
+MODULES =		lang/python
+RUN_DEPENDS =		devel/py-logilab-common${MODPY_FLAVOR} \
+			devel/py-six${MODPY_FLAVOR}
+TEST_DEPENDS =		${RUN_DEPENDS}
+
+FLAVORS =	python3
+FLAVOR ?=
+
+MODPY_SETUPTOOLS =	Yes
 
 # Note: This is not pytest as in devel/py-test.
-do-test: install
-	@cd ${WRKSRC}/test && ${MODPY_BIN} /usr/local/bin/pytest
-
-# A load of files in ${WRKBUILD} are for some reason root:wheel after install,
-# so it won't clean as a normal user. I can't see why this is. Work around.
-# XXX horrible.
-#post-install:
-#	chmod -R 777 ${WRKBUILD}
+do-test: fake
+	@cd ${WRKSRC}/astroid/tests && \
+	    env PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
+	    ${MODPY_BIN} /usr/local/bin/pytest${MODPY_BIN_SUFFIX}
 
 .include <bsd.port.mk>
