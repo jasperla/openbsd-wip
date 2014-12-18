@@ -76,7 +76,9 @@ RUN_DEPENDS=	archivers/gtar \
 		devel/xdg-utils
 
 CONFIGURE_STYLE=gnu
+
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/tools
+
 CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
 		--enable-BLAS-shlib \
 		--enable-R-shlib \
@@ -118,12 +120,11 @@ USE_GMAKE=	Yes
 
 TEXMFLOCAL=	${PREFIX}/share/texmf-local
 
-# Will update both ${TRUEPREFIX}/lib/R/etc/Makeconf and
-# ${TRUEPREFIX}/lib/R/etc/ldpaths with the right settings.
+# see README-java
 .if ${FLAVOR:Mjava}
-MODULES +=      java
-MODJAVA_VER =    1.7+
-CONFIGURE_ENV +=  JAVA_HOME="${LOCALBASE}/jdk-1.7.0"
+MODULES+=	java
+MODJAVA_VER=	1.7+
+RUN_DEPENDS+=	java/javaPathHelper
 .endif
 
 post-install:
