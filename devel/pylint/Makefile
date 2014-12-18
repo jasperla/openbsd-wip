@@ -40,6 +40,10 @@ MODPY_ADJ_FILES =	bin/epylint \
 
 # Note: pytest here is not the same as in devel/py-test
 do-test: fake
+.if ${FLAVOR:Mpython3}
+	cp -R ${WRKINST}${MODPY_SITEPKG}/pylint/test ${WRKSRC}
+	rm ${WRKSRC}/test/functional/invalid_encoded_data.{py,txt}
+.endif
 	cd ${WRKSRC}/test && env \
 		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
 		PYLINTHOME=${WRKINST} \
