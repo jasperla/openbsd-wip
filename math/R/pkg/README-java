@@ -1,0 +1,18 @@
+$OpenBSD$
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Configuring Java support
+========================
+To enable Java support, R needs to know where the JVM and the Java
+libraries are located.
+
+Running:
+
+# env JAVA_HOME=`${TRUEPREFIX}/bin/javaPathHelper -h R`
+# ${TRUEPREFIX}/bin/R CMD javareconf
+
+as root, will update both ${TRUEPREFIX}/lib/R/etc/Makeconf and
+${TRUEPREFIX}/lib/R/etc/ldpaths with the right settings.
