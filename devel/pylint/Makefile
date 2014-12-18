@@ -3,38 +3,54 @@
 COMMENT-main=		lint-like code checker for Python code
 COMMENT-gui=		GUI for pylint
 
-VERSION=		1.2.0
+VERSION=		1.4.0
 DISTNAME=		pylint-${VERSION}
 PKGNAME-main=		pylint-${VERSION}
 PKGNAME-gui=		pylint-gui-${VERSION}
 CATEGORIES=		devel
 
-HOMEPAGE=		http://www.logilab.org/projects/pylint/
+HOMEPAGE=		http://www.pylint.org/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://download.logilab.org/pub/pylint/
+MASTER_SITES=		${MASTER_SITE_PYPI:=p/pylint/}
 
 MULTI_PACKAGES=		-main -gui
 
 MODULES=		lang/python
-RUN_DEPENDS=		devel/py-astroid
+RUN_DEPENDS=		devel/py-logilab-common${MODPY_FLAVOR} \
+			devel/py-astroid${MODPY_FLAVOR} \
+			devel/py-six${MODPY_FLAVOR}
 RUN_DEPENDS-gui=	${MODPY_TKINTER_DEPENDS} \
 			devel/pylint=${VERSION}
 TEST_DEPENDS=	${RUN_DEPENDS}
 
 SUBST_VARS+=		VERSION
 
+FLAVORS =	python3
+FLAVOR ?=
+
+MODPY_SETUPTOOLS =	Yes
+MODPY_ADJ_FILES =	bin/epylint \
+			bin/pylint \
+			bin/pylint-gui \
+			bin/pyreverse \
+			bin/symilar
+
 # Note: pytest here is not the same as in devel/py-test
 do-test: fake
 	cd ${WRKSRC}/test && env \
-		PYTHONPATH=${WRKINST}${MODPY_SITEPKG}:${MODPY_SITEPKG} \
+		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
 		PYLINTHOME=${WRKINST} \
-		USER_HOME=${WRKSRC} \
-		${MODPY_BIN} /usr/local/bin/pytest
+		${MODPY_BIN} /usr/local/bin/pytest${MODPY_BIN_SUFFIX}
 
 post-install:
-	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/pylint/test/unittest_lint.py.orig
+	rm ${WRKINST}${MODPY_SITEPKG}/pylint/test/unittest_lint.py.orig
+.if ${FLAVOR:Mpython3}
+.for i in epylint pylint pylint-gui pyreverse symilar
+	mv ${PREFIX}/bin/$i ${PREFIX}/bin/$i${MODPY_BIN_SUFFIX}
+.endfor
+.endif
 
 .include <bsd.port.mk>
