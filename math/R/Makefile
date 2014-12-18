@@ -73,7 +73,8 @@ RUN_DEPENDS=	archivers/gtar \
 		archivers/unzip \
 		archivers/zip \
 		devel/gmake \
-		devel/xdg-utils
+		devel/xdg-utils \
+		print/texlive/base
 
 CONFIGURE_STYLE=gnu
 
