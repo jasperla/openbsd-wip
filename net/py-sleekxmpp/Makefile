@@ -1,9 +1,5 @@
 # $OpenBSD: Makefile.template,v 1.71 2014/07/10 12:33:17 sthen Exp $
 
-# optional dependencies
-# py-asn1-modules
-# py-dnspython
-
 COMMENT =		Python XMPP and Jabber implementation
 
 MODPY_EGG_VERSION =	1.3.1
@@ -20,14 +16,20 @@ HOMEPAGE =		http://sleekxmpp.com/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/python
 
-MODPY_SETUPTOOLS =		Yes
+MODPY_SETUPTOOLS =	Yes
+
+RUN_DEPENDS =		devel/py-asn1-modules \
+			net/py-dnspython \
+			security/py-gnupg \
+			devel/py-dateutil
+
+TEST_DEPENDS =		devel/py-asn1-modules \
+			net/py-dnspython
 
 do-test:
-	@cd ${WRKSRC} && ${MODPY_BIN} ./testall.py
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} ./testall.py
 
 .include <bsd.port.mk>
