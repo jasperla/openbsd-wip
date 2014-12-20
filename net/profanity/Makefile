@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	console based XMPP client
-DISTNAME =	profanity-0.4.0
+DISTNAME =	profanity-0.4.5
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.profanity.im/
