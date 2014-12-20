@@ -22,6 +22,8 @@ MODULES=	lang/python
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	security/gnupg
 
-NO_TEST=	Yes
+do-test:
+	cd ${WRKSRC} && \
+		${MODPY_BIN} test_gnupg.py
 
 .include <bsd.port.mk>
