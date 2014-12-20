@@ -23,11 +23,11 @@ MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =		devel/py-asn1-modules \
 			net/py-dnspython \
-			security/py-gnupg \
-			devel/py-dateutil
+			security/py-pygnupg \
+			devel/py-dateutil \
+			net/py-socks
 
-TEST_DEPENDS =		devel/py-asn1-modules \
-			net/py-dnspython
+TEST_DEPENDS =		${RUN_DEPENDS}
 
 do-test:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} ./testall.py
