@@ -1,0 +1,21 @@
+$OpenBSD$
+--- sleekxmpp/thirdparty/__init__.py.orig	Mon Jun  9 15:30:31 2014
++++ sleekxmpp/thirdparty/__init__.py	Sat Dec 20 22:13:38 2014
+@@ -1,12 +1,5 @@
+-try:
+-    from collections import OrderedDict
+-except:
+-    from sleekxmpp.thirdparty.ordereddict import OrderedDict
+-
+-try:
+-    from gnupg import GPG
+-except:
+-    from sleekxmpp.thirdparty.gnupg import GPG
+-
+-from sleekxmpp.thirdparty import socks
+-from sleekxmpp.thirdparty.mini_dateutil import tzutc, tzoffset, parse_iso
++from collections import OrderedDict
++from gnupg import GPG
++import socks
++from dateutil.tz import tzutc, tzoffset
++from dateutil.parser import parse as parse_iso

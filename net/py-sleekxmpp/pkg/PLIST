@@ -662,14 +662,14 @@ lib/python${MODPY_VERSION}/site-packages/sleekxmpp/test/sleektest.pyc
 lib/python${MODPY_VERSION}/site-packages/sleekxmpp/thirdparty/
 lib/python${MODPY_VERSION}/site-packages/sleekxmpp/thirdparty/__init__.py
 lib/python${MODPY_VERSION}/site-packages/sleekxmpp/thirdparty/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/sleekxmpp/thirdparty/gnupg.py
-lib/python${MODPY_VERSION}/site-packages/sleekxmpp/thirdparty/gnupg.pyc
-lib/python${MODPY_VERSION}/site-packages/sleekxmpp/thirdparty/mini_dateutil.py
-lib/python${MODPY_VERSION}/site-packages/sleekxmpp/thirdparty/mini_dateutil.pyc
-lib/python${MODPY_VERSION}/site-packages/sleekxmpp/thirdparty/ordereddict.py
-lib/python${MODPY_VERSION}/site-packages/sleekxmpp/thirdparty/ordereddict.pyc
-lib/python${MODPY_VERSION}/site-packages/sleekxmpp/thirdparty/socks.py
-lib/python${MODPY_VERSION}/site-packages/sleekxmpp/thirdparty/socks.pyc
+@comment lib/python${MODPY_VERSION}/site-packages/sleekxmpp/thirdparty/gnupg.py
+@comment lib/python${MODPY_VERSION}/site-packages/sleekxmpp/thirdparty/gnupg.pyc
+@comment lib/python${MODPY_VERSION}/site-packages/sleekxmpp/thirdparty/mini_dateutil.py
+@comment lib/python${MODPY_VERSION}/site-packages/sleekxmpp/thirdparty/mini_dateutil.pyc
+@comment lib/python${MODPY_VERSION}/site-packages/sleekxmpp/thirdparty/ordereddict.py
+@comment lib/python${MODPY_VERSION}/site-packages/sleekxmpp/thirdparty/ordereddict.pyc
+@comment lib/python${MODPY_VERSION}/site-packages/sleekxmpp/thirdparty/socks.py
+@comment lib/python${MODPY_VERSION}/site-packages/sleekxmpp/thirdparty/socks.pyc
 lib/python${MODPY_VERSION}/site-packages/sleekxmpp/thirdparty/statemachine.py
 lib/python${MODPY_VERSION}/site-packages/sleekxmpp/thirdparty/statemachine.pyc
 lib/python${MODPY_VERSION}/site-packages/sleekxmpp/util/
