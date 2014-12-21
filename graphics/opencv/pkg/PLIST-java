@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-java,v 1.2 2014/06/03 20:41:36 zhuk Exp $
+lib/OpenCV/
+lib/OpenCV/java/
+lib/OpenCV/java/libopencv_java2410.so
+lib/OpenCV/java/opencv-2410.jar
