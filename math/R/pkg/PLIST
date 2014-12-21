@@ -4226,6 +4226,7 @@ share/doc/R/manual/images/fig11.png
 share/doc/R/manual/images/fig12.png
 share/doc/R/manual/images/hist.png
 share/doc/R/manual/images/ice.png
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/texmf-local/
 share/texmf-local/bibtex/
 share/texmf-local/bibtex/bib/
