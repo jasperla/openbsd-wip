@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =		GNU Backgammon
-V =			1.03.000
+V =			1.04.000
 DISTNAME =		gnubg-${V}
 
 CATEGORIES =		games x11
@@ -27,8 +27,10 @@ WANTLIB += xcb xcb-dri2 xcb-glx xcb-render xcb-shm z
 MASTER_SITES =		${HOMEPAGE:=media/sources/}
 DISTFILES =		gnubg-${V}{gnubg-release-${V}-sources}.tar.gz
 
-LIB_DEPENDS =		audio/libcanberra,-gtk \
-			x11/gtkglext
+MODULES +=		lang/python
+LIB_DEPENDS +=		x11/gtkglext \
+			audio/libcanberra,-gtk \
+			${MODPY_LIB_DEPENDS}
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
