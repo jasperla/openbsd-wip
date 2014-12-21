@@ -29,19 +29,19 @@ WANTLIB=	ICE SM X11 Xext Xmu Xss Xt bz2 c cairo \
 
 MASTER_SITES=	http://cran.r-project.org/src/base/R-3/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-3/ \
+		ftp://ftp.u-aizu.ac.jp/pub/lang/R/CRAN/src/base/R-3/ \
 		http://cran.at.r-project.org/src/base/R-3/ \
 		http://cran.au.r-project.org/src/base/R-3/ \
 		http://cran.br.r-project.org/src/base/R-3/ \
 		http://cran.ch.r-project.org/src/base/R-3/ \
-		http://cran.es.r-project.org/src/base/R-3/ \
 		http://cran.dk.r-project.org/src/base/R-3/ \
+		http://cran.es.r-project.org/src/base/R-3/ \
 		http://cran.hu.r-project.org/src/base/R-3/ \
+		http://cran.stat.ucla.edu/src/base/R-3/ \
 		http://cran.uk.r-project.org/src/base/R-3/ \
 		http://cran.us.r-project.org/src/base/R-3/ \
 		http://cran.za.r-project.org/src/base/R-3/ \
-		ftp://ftp.u-aizu.ac.jp/pub/lang/R/CRAN/src/base/R-3/ \
 		http://lib.stat.cmu.edu/R/CRAN/src/base/R-3/ \
-		http://cran.stat.ucla.edu/src/base/R-3/ \
 		http://probability.ca/cran/src/base/R-3/
 
 MODULES=	fortran \
@@ -81,6 +81,7 @@ CONFIGURE_STYLE=gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/tools
 
 CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
+		rdocdir="${LOCALBASE}/share/doc/R" \
 		--enable-BLAS-shlib \
 		--enable-R-shlib \
 		--enable-prebuilt-html \
@@ -126,6 +127,7 @@ TEXMFLOCAL=	${PREFIX}/share/texmf-local
 MODULES+=	java
 MODJAVA_VER=	1.7+
 RUN_DEPENDS+=	java/javaPathHelper
+CONFIGURE_ENV+= JAVA_HOME=`${TRUEPREFIX}/bin/javaPathHelper -h R`
 .endif
 
 post-install:
