@@ -1,6 +1,6 @@
 $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.15 2014/11/19 21:27:32 robert Exp $
---- chrome/browser/chrome_content_browser_client.cc.orig.port	Wed Dec  3 03:32:11 2014
-+++ chrome/browser/chrome_content_browser_client.cc	Sat Dec  6 11:34:25 2014
+--- chrome/browser/chrome_content_browser_client.cc.orig.port	Thu Dec 18 10:40:59 2014
++++ chrome/browser/chrome_content_browser_client.cc	Sun Dec 21 15:30:57 2014
 @@ -166,7 +166,7 @@
  #include "chrome/browser/chrome_browser_main_posix.h"
  #endif
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.15 2014/11/1
    if (breakpad::IsCrashReporterEnabled()) {
      scoped_ptr<metrics::ClientInfo> client_info =
          GoogleUpdateSettings::LoadMetricsClientInfo();
-@@ -2454,7 +2454,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+@@ -2455,7 +2455,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
    }
  }
  
