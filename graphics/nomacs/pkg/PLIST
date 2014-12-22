@@ -1,0 +1,27 @@
+@comment $OpenBSD$
+@bin bin/nomacs
+@man man/man1/nomacs.1
+share/applications/
+share/applications/nomacs.desktop
+share/nomacs/
+share/nomacs/translations/
+share/nomacs/translations/nomacs_als.qm
+share/nomacs/translations/nomacs_az.qm
+share/nomacs/translations/nomacs_cs.qm
+share/nomacs/translations/nomacs_de.qm
+share/nomacs/translations/nomacs_en.qm
+share/nomacs/translations/nomacs_es.qm
+share/nomacs/translations/nomacs_fr.qm
+share/nomacs/translations/nomacs_it.qm
+share/nomacs/translations/nomacs_ja.qm
+share/nomacs/translations/nomacs_pl.qm
+share/nomacs/translations/nomacs_pt.qm
+share/nomacs/translations/nomacs_ru.qm
+share/nomacs/translations/nomacs_sk.qm
+share/nomacs/translations/nomacs_sl.qm
+share/nomacs/translations/nomacs_sr.qm
+share/nomacs/translations/nomacs_zh.qm
+share/pixmaps/
+share/pixmaps/nomacs.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
