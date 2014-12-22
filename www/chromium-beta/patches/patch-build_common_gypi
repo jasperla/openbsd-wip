@@ -1,0 +1,65 @@
+$OpenBSD$
+--- build/common.gypi.orig.port	Thu Dec 18 10:40:58 2014
++++ build/common.gypi	Sun Dec 21 15:30:56 2014
+@@ -94,7 +94,7 @@
+ 
+           'conditions': [
+             # ChromeOS and Windows use Aura and Ash.
+-            ['chromeos==1 or OS=="win" or OS=="linux"', {
++            ['chromeos==1 or OS=="win" or OS=="linux" or OS=="openbsd"', {
+               'use_ash%': 1,
+               'use_aura%': 1,
+             }],
+@@ -827,7 +827,7 @@
+ 
+         # Use GPU accelerated cross process image transport by default
+         # on linux builds with the Aura window manager
+-        ['use_aura==1 and OS=="linux"', {
++        ['use_aura==1 and (OS=="linux" or OS=="openbsd")', {
+           'ui_compositor_image_transport%': 1,
+         }, {
+           'ui_compositor_image_transport%': 0,
+@@ -952,7 +952,7 @@
+         # --help for more information. Meant to be overriden with GYP_DEFINES.
+         # TODO(maruel): Remove the conditions as more configurations are
+         # supported.
+-        ['OS!="ios" and OS!="android" and chromeos==0', {
++        ['OS!="ios" and OS!="android" and chromeos==0 and OS!="openbsd"', {
+           'test_isolation_mode%': 'check',
+         }, {
+           'test_isolation_mode%': 'noop',
+@@ -968,7 +968,7 @@
+         }, {
+           'use_openmax_dl_fft%': 0,
+         }],
+-        ['OS=="win" or OS=="linux"', {
++        ['OS=="win" or OS=="linux" or OS=="openbsd"', {
+             'enable_mdns%' : 1,
+         }],
+ 
+@@ -3520,6 +3520,14 @@
+     },
+   },
+   'conditions': [
++    ['OS=="openbsd"', {
++      'target_defaults': {
++        'cflags': [
++          '-fno-stack-protector',
++          '-Wno-unknown-warning-option',
++        ],
++      },
++    }],
+     ['os_posix==1', {
+       'target_defaults': {
+         'ldflags': [
+@@ -5778,8 +5786,8 @@
+     ['clang==1 and ((OS!="mac" and OS!="ios") or clang_xcode==0) '
+         'and OS!="win"', {
+       'make_global_settings': [
+-        ['CC', '<(make_clang_dir)/bin/clang'],
+-        ['CXX', '<(make_clang_dir)/bin/clang++'],
++        ['CC', '/usr/local/bin/clang'],
++        ['CXX', '/usr/local/bin/clang++'],
+         ['CC.host', '$(CC)'],
+         ['CXX.host', '$(CXX)'],
+       ],

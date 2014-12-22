@@ -1,0 +1,15 @@
+$OpenBSD$
+--- skia/skia_chrome.gypi.orig.port	Sat Dec  6 11:49:01 2014
++++ skia/skia_chrome.gypi	Sat Dec  6 11:49:25 2014
+@@ -87,6 +87,11 @@
+     'ext/vector_platform_device_skia.h',
+   ],
+   'conditions': [
++    [ 'use_cairo == 1', {
++      'dependencies': [
++        '../build/linux/system.gyp:pangocairo',
++      ],
++    }],
+     [ 'OS == "android" and '
+       'enable_basic_printing==0 and enable_print_preview==0', {
+       'sources!': [
