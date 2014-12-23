@@ -2,12 +2,12 @@
 
 COMMENT =		Python API for advanced date calculations
 
-MODPY_EGG_VERSION =	2.2
+MODPY_EGG_VERSION =	2.3
 DISTNAME =		python-dateutil-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/^python-/py-/}
 CATEGORIES =    	devel
 
-HOMEPAGE =		http://labix.org/python-dateutil
+HOMEPAGE =		https://dateutil.readthedocs.org/
 MAINTAINER =		frantisek holop <minusf@obiit.org>
 
 # BSD
@@ -17,16 +17,10 @@ MASTER_SITES =		${MASTER_SITE_PYPI:=p/python-dateutil/}
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
-RUN_DEPENDS +=		devel/py-six
-TEST_DEPENDS +=		${RUN_DEPENDS} \
-			devel/py-six
+RUN_DEPENDS +=		devel/py-six${MODPY_FLAVOR}
+TEST_DEPENDS +=		${RUN_DEPENDS}
 
-# ${WRKSRC} has 600 files in.
-post-install:
-	chmod -R 755 ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/
-
-do-test: fake
-		@cd ${WRKSRC} && ${MAKE_ENV} \
-		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} ./test.py
+FLAVORS =	python3
+FLAVOR ?=
 
 .include <bsd.port.mk>
