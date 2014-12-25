@@ -1,0 +1,9 @@
+WalCommander is a multi-platform open source file manager (Windows,
+Linux, FreeBSD, OS X) mimicking the look-n-feel of Far Manager.
+
+Features:
+  * built-in terminal
+  * built-in text editor with syntax highlighting
+  * built-in text viewer
+  * virtual file system (smb, ftp, sftp)
+  * very fast user interface

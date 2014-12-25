@@ -1,0 +1,13 @@
+$OpenBSD$
+--- src/vfs.cpp.orig	Tue Dec 23 17:01:49 2014
++++ src/vfs.cpp	Tue Dec 23 17:02:09 2014
+@@ -1082,6 +1082,9 @@ FSWin32Net::~FSWin32Net()
+ #elif defined __FreeBSD__
+ #  include <sys/param.h>
+ #  include <sys/mount.h>
++#elif defined __OpenBSD__
++#  include <sys/param.h>
++#  include <sys/mount.h>
+ #endif
+ 
+ #ifdef __linux__

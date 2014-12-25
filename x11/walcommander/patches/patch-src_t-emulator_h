@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/t-emulator.h.orig	Tue Dec 23 16:55:44 2014
++++ src/t-emulator.h	Tue Dec 23 16:55:55 2014
+@@ -191,7 +191,7 @@ class Emulator
+ 	int _utf8count;
+ 	int _utf8char;
+ 	int _state;
+-	NumberList<> _N;
++	NumberList<> _NL;
+ 	ccollect<char, 0x100> _TXT;
+ 
+ 	EmulatorAttr _savedAttr;
