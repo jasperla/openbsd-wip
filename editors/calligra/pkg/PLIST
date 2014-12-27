@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/11/11 07:05:08 zhuk Exp $
-@conflict koffice-*
+@comment $OpenBSD$
 @bin bin/braindump
 @bin bin/calligra
 @bin bin/calligraactive
@@ -618,7 +617,6 @@ lib/kde4/karbonfiltereffects.so
 lib/kde4/karbonpart.so
 lib/kde4/karbontools.so
 lib/kde4/kexidb_mysqldriver.so
-lib/kde4/kexidb_pqxxsqldriver.so
 lib/kde4/kexidb_sqlite3_icu.so
 lib/kde4/kexidb_sqlite3driver.so
 lib/kde4/kexidb_sybasedriver.so
@@ -631,7 +629,6 @@ lib/kde4/kexihandler_script.so
 lib/kde4/kexihandler_table.so
 lib/kde4/keximigrate_mdb.so
 lib/kde4/keximigrate_mysql.so
-lib/kde4/keximigrate_pqxx.so
 lib/kde4/keximigrate_spreadsheet.so
 lib/kde4/keximigrate_sybase.so
 lib/kde4/keximigrate_txt.so
@@ -709,8 +706,6 @@ lib/kde4/kritaimageenhancement.so
 lib/kde4/kritaimagesize.so
 lib/kde4/kritaimagesplit.so
 lib/kde4/kritaindexcolors.so
-lib/kde4/kritajp2export.so
-lib/kde4/kritajp2import.so
 lib/kde4/kritajpegexport.so
 lib/kde4/kritajpegimport.so
 lib/kde4/kritalayergroupswitcher.so
@@ -893,7 +888,6 @@ share/applications/kde4/calligra/krita.desktop
 share/applications/kde4/calligra/krita_bmp.desktop
 share/applications/kde4/calligra/krita_exr.desktop
 share/applications/kde4/calligra/krita_heightmap.desktop
-share/applications/kde4/calligra/krita_jp2.desktop
 share/applications/kde4/calligra/krita_jpeg.desktop
 share/applications/kde4/calligra/krita_odg.desktop
 share/applications/kde4/calligra/krita_ora.desktop
@@ -7580,13 +7574,11 @@ share/kde4/services/calligra/karbontools.desktop
 share/kde4/services/calligra/karbonwhirlpinchplugin.desktop
 share/kde4/services/calligra/kexicsv_importexporthandler.desktop
 share/kde4/services/calligra/kexidb_mysqldriver.desktop
-share/kde4/services/calligra/kexidb_pqxxsqldriver.desktop
 share/kde4/services/calligra/kexidb_sqlite3driver.desktop
 share/kde4/services/calligra/kexidb_sybasedriver.desktop
 share/kde4/services/calligra/kexiformhandler.desktop
 share/kde4/services/calligra/keximigrate_mdb.desktop
 share/kde4/services/calligra/keximigrate_mysql.desktop
-share/kde4/services/calligra/keximigrate_pqxx.desktop
 share/kde4/services/calligra/keximigrate_spreadsheet.desktop
 share/kde4/services/calligra/keximigrate_sybase.desktop
 share/kde4/services/calligra/keximigrate_txt.desktop
@@ -7633,8 +7625,6 @@ share/kde4/services/calligra/krita_exr_export.desktop
 share/kde4/services/calligra/krita_exr_import.desktop
 share/kde4/services/calligra/krita_heightmap_export.desktop
 share/kde4/services/calligra/krita_heightmap_import.desktop
-share/kde4/services/calligra/krita_jp2_export.desktop
-share/kde4/services/calligra/krita_jp2_import.desktop
 share/kde4/services/calligra/krita_jpeg_export.desktop
 share/kde4/services/calligra/krita_jpeg_import.desktop
 share/kde4/services/calligra/krita_lutdocker.desktop
