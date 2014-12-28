@@ -1,0 +1,39 @@
+$OpenBSD: patch-chrome_browser_ui_browser_command_controller_cc,v 1.4 2014/11/19 21:27:32 robert Exp $
+--- chrome/browser/ui/browser_command_controller.cc.orig.port	Wed Dec 17 06:42:52 2014
++++ chrome/browser/ui/browser_command_controller.cc	Sat Dec 27 15:34:11 2014
+@@ -68,7 +68,7 @@
+ #include "chrome/browser/ui/ash/multi_user/multi_user_window_manager.h"
+ #endif
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+ #include "ui/events/linux/text_edit_key_bindings_delegate_auralinux.h"
+ #endif
+ 
+@@ -280,7 +280,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
+   if (window()->IsFullscreen() && command_id == IDC_FULLSCREEN)
+     return true;
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+   // If this key was registered by the user as a content editing hotkey, then
+   // it is not reserved.
+   ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
+@@ -468,7 +468,7 @@ void BrowserCommandController::ExecuteCommandWithDispo
+       break;
+ #endif
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+     case IDC_USE_SYSTEM_TITLE_BAR: {
+       PrefService* prefs = browser_->profile()->GetPrefs();
+       prefs->SetBoolean(prefs::kUseCustomChromeFrame,
+@@ -892,7 +892,7 @@ void BrowserCommandController::InitCommandState() {
+   command_updater_.UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_2, true);
+   command_updater_.UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_3, true);
+ #endif
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+   command_updater_.UpdateCommandEnabled(IDC_USE_SYSTEM_TITLE_BAR, true);
+ #endif
+ 

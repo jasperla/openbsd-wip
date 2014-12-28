@@ -1,0 +1,44 @@
+$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.32 2014/11/19 21:27:32 robert Exp $
+--- chrome/chrome_browser.gypi.orig.port	Wed Dec 17 07:05:21 2014
++++ chrome/chrome_browser.gypi	Sat Dec 27 15:34:11 2014
+@@ -3257,7 +3257,7 @@
+             '../device/media_transfer_protocol/media_transfer_protocol.gyp:device_media_transfer_protocol',
+           ],
+         }],
+-        ['OS=="linux" and chromeos==0', {
++        ['OS=="linux" and chromeos==0 or os_bsd==1', {
+           'dependencies': [
+             '../build/linux/system.gyp:libspeechd',
+           ],
+@@ -3314,7 +3314,7 @@
+             }],
+           ],
+         }],
+-        ['os_posix == 1 and OS != "mac" and OS != "ios"', {
++        ['os_posix == 1 and OS != "mac" and OS != "ios" and os_bsd != 1', {
+           'sources': [
+             'app/chrome_crash_reporter_client.cc',
+             'app/chrome_crash_reporter_client.h',
+@@ -3403,6 +3403,13 @@
+           ],
+           'sources': [ '<@(chrome_browser_android_sources)' ],
+         }],
++        ['os_bsd==1', {
++          'sources/': [
++            ['exclude', '^browser/chrome_browser_main_linux.cc'],
++            ['exclude', '^browser/chrome_browser_main_linux.h'],
++            ['exclude', '^browser/media_galleries/linux/'],
++          ],
++        }],
+         ['OS=="mac"', {
+           'dependencies': [
+             '../third_party/google_toolbox_for_mac/google_toolbox_for_mac.gyp:google_toolbox_for_mac',
+@@ -3486,7 +3493,7 @@
+             }],
+           ],
+         }],
+-        ['OS=="linux"', {
++        ['OS=="linux" or os_bsd==1', {
+           'sources': [ '<@(chrome_browser_linux_sources)' ],
+           'conditions': [
+             ['use_aura==1', {

@@ -1,0 +1,12 @@
+$OpenBSD$
+--- third_party/WebKit/Source/platform/heap/ThreadState.h.orig.port	Wed Dec 17 07:24:25 2014
++++ third_party/WebKit/Source/platform/heap/ThreadState.h	Sat Dec 27 15:34:12 2014
+@@ -401,7 +401,7 @@ class PLATFORM_EXPORT ThreadState { (public)
+ 
+     static ThreadState* current()
+     {
+-#if defined(__GLIBC__) || OS(ANDROID) || OS(FREEBSD)
++#if defined(__GLIBC__) || OS(ANDROID) || OS(FREEBSD) || OS(OPENBSD)
+         // TLS lookup is fast in these platforms.
+         return **s_threadSpecific;
+ #else

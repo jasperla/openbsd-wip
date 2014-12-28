@@ -1,0 +1,21 @@
+$OpenBSD: patch-content_browser_renderer_host_render_widget_host_view_aura_cc,v 1.4 2014/11/19 21:27:32 robert Exp $
+--- content/browser/renderer_host/render_widget_host_view_aura.cc.orig.port	Wed Dec 17 06:42:55 2014
++++ content/browser/renderer_host/render_widget_host_view_aura.cc	Sat Dec 27 15:34:11 2014
+@@ -89,7 +89,7 @@
+ #include "ui/gfx/win/dpi.h"
+ #endif
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+ #include "content/common/input_messages.h"
+ #include "ui/events/linux/text_edit_command_auralinux.h"
+ #include "ui/events/linux/text_edit_key_bindings_delegate_auralinux.h"
+@@ -2488,7 +2488,7 @@ void RenderWidgetHostViewAura::DetachFromInputMethod()
+ 
+ void RenderWidgetHostViewAura::ForwardKeyboardEvent(
+     const NativeWebKeyboardEvent& event) {
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+   ui::TextEditKeyBindingsDelegateAuraLinux* keybinding_delegate =
+       ui::GetTextEditKeyBindingsDelegate();
+   std::vector<ui::TextEditCommandAuraLinux> commands;

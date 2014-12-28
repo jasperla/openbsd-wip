@@ -1,0 +1,27 @@
+$OpenBSD: patch-content_content_common_gypi,v 1.17 2014/11/19 21:27:32 robert Exp $
+--- content/content_common.gypi.orig.port	Wed Dec 17 07:05:21 2014
++++ content/content_common.gypi	Sat Dec 27 15:34:11 2014
+@@ -690,6 +690,23 @@
+         'content.gyp:common_aidl',
+       ],
+     }],
++    ['os_bsd==1', {
++      'sources!': [
++        'common/sandbox_linux.cc',
++        'common/sandbox_linux.h',
++        'common/sandbox_init_linux.cc',
++        'common/sandbox_seccomp_bpf_linux.cc',
++        'common/sandbox_seccomp_bpf_linux.h',
++        'common/sandbox_linux/bpf_cros_arm_gpu_policy_linux.cc',
++        'common/sandbox_linux/bpf_gpu_policy_linux.cc',
++        'common/sandbox_linux/bpf_ppapi_policy_linux.cc',
++        'common/sandbox_linux/bpf_renderer_policy_linux.cc',
++        'common/sandbox_linux/sandbox_bpf_base_policy_linux.cc',
++        'common/sandbox_linux/sandbox_seccomp_bpf_linux.cc',
++        'common/sandbox_linux/sandbox_linux.cc',
++        'common/sandbox_linux/sandbox_linux.h',
++      ],
++    }],
+     ['use_pango == 1', {
+       'dependencies': [
+         '../build/linux/system.gyp:pangocairo',
