@@ -1,0 +1,33 @@
+$OpenBSD$
+--- ejabberd.yml.example.orig	Sun Dec 28 22:12:06 2014
++++ ejabberd.yml.example	Sun Dec 28 22:15:50 2014
+@@ -110,7 +110,7 @@ listen: 
+     ## certificate, specify the full path to the
+     ## file and uncomment these lines:
+     ##
+-    ## certfile: "/path/to/ssl.pem"
++    ## certfile: "${SYSCONFDIR}/ejabberd/ssl.pem"
+     ## starttls: true
+     ##
+     ## To enforce TLS encryption for client connections,
+@@ -179,7 +179,7 @@ listen: 
+ ##
+ ## s2s_certfile: Specify a certificate file.
+ ##
+-## s2s_certfile: "/path/to/ssl.pem"
++## s2s_certfile: "${SYSCONFDIR}/ejabberd/ssl.pem"
+ 
+ ## Custom OpenSSL options
+ ##
+@@ -192,9 +192,9 @@ listen: 
+ ##
+ ## host_config:
+ ##   "example.org":
+-##     domain_certfile: "/path/to/example_org.pem"
++##     domain_certfile: "${SYSCONFDIR}/example_org.pem"
+ ##   "example.com":
+-##     domain_certfile: "/path/to/example_com.pem"
++##     domain_certfile: "${SYSCONFDIR}/example_com.pem"
+ 
+ ##
+ ## S2S whitelist or blacklist
