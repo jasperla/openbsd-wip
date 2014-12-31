@@ -4,7 +4,7 @@
 @conflict texlive_texmf-docs-<2014
 @conflict texlive_texmf-minimal-<2014
 @conflict texlive_texmf-buildset-<2014
-@conflict texlive_texmf-contextt-<2014
+@conflict texlive_texmf-context-<2014
 @pkgpath print/texlive/texmf-full
 @pkgpath print/teTeX/texmf
 @info info/dvipng.info

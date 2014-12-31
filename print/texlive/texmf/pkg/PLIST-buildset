@@ -5663,3 +5663,4 @@ share/texmf-var/web2c/xetex/pdfcsplain.fmt
 share/texmf-var/web2c/xetex/xelatex.fmt
 share/texmf-var/web2c/xetex/xelollipop.fmt
 share/texmf-var/web2c/xetex/xetex.fmt
+@exec-update if [ -e "%D/bin/mktexlsr" ]; then %D/bin/mktexlsr > /dev/null 2>&1; fi
