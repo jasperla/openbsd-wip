@@ -234,10 +234,12 @@ bin/lily-image-commands
 bin/lily-rebuild-pdfs
 bin/listbib
 bin/listings-ext.sh
+bin/lollipop
 bin/ltxfileinfo
 bin/ltximg
 bin/lua2dox_filter
 bin/lualatex
+bin/lualollipop
 bin/luaotfload-tool
 bin/luatools
 bin/m-tx
@@ -357,6 +359,7 @@ bin/vpl2ovp
 bin/vpl2vpl
 bin/xdvi
 bin/xelatex
+bin/xelollipop
 bin/xmltex
 include/kpathsea/
 include/kpathsea/absolute.h
