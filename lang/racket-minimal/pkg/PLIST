@@ -29,6 +29,7 @@ lib/racket/mzdyn3m.o
 lib/racket/starter-sh
 @man man/man1/racket.1
 @man man/man1/raco.1
+share/applications/
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/racket/
 share/examples/racket/

@@ -1,4 +1,4 @@
-- Change from builtpkg to core. Upstream is splitting the packages in
+- Change from builtpkg to minimal. Upstream is splitting the packages in
 individual git repos and I can't follow every change easily (as I did
 previously).
 
@@ -7,8 +7,8 @@ previously).
 
 - Add "gui-pkg-manager" to README.
 
-- Remove unused depends.
-
 - Change the name to racket-minimal. Add the entry to devel/quirks.
 
 - "Why there is not a full version of racket?".
+
+- raco pkg install --jobs 2 --auto --binary-lib drracket
