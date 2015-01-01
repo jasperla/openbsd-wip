@@ -9,7 +9,7 @@ ONLY_FOR_ARCHS =	i386 amd64 hppa mips64el powerpc
 
 COMMENT =		multi-paradigm programming language
 
-V =			6.1.1.5
+V =			6.1.1.6
 PKGNAME =		racket-minimal-$V
 DISTNAME =		min-racket-$V-src
 
@@ -40,16 +40,11 @@ MODULES +=		converters/libiconv
 # http://docs.racket-lang.org/gui/libs.html
 # Some deps are listed in the README, others in the doc and others
 # are called by ffi.
-LIB_DEPENDS =		databases/iodbc,-main \
-			devel/libffi>=3.0.9p2 \
-			devel/libunique
-BUILD_DEPENDS =		devel/pango \
-			graphics/jpeg
-RUN_DEPENDS =		devel/desktop-file-utils
+LIB_DEPENDS =		devel/libffi>=3.0.9p2
 
 WANTLIB += c m pthread ffi
 # Loaded using FFI
-WANTLIB += GL X11 iodbc unique-1.0
+WANTLIB +=
 
 WRKDIST =		${WRKDIR}/racket-$V
 WRKSRC =		${WRKDIST}/src
@@ -61,10 +56,7 @@ SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--enable-libffi \
 			--enable-gracket \
-			--enable-jit \
 			--enable-foreign \
-			--enable-float \
-			--enable-docs \
 			--enable-lt=${LIBTOOL}
 # "backtrace" is expensive.
 # http://article.gmane.org/gmane.comp.lang.racket.devel/6700
@@ -95,7 +87,8 @@ post-install:
 # "-msse -mfpmath=sse" required by extflonum on i386.
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -msse -mfpmath=sse"
-CONFIGURE_ARGS +=	--enable-extflonum
+CONFIGURE_ARGS +=	--enable-extflonum \
+			--enable-jit
 .endif
 
 .include <bsd.port.mk>

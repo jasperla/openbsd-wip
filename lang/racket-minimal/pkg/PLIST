@@ -376,6 +376,8 @@ share/racket/collects/pkg/compiled/commands_rkt.dep
 share/racket/collects/pkg/compiled/commands_rkt.zo
 share/racket/collects/pkg/compiled/db_rkt.dep
 share/racket/collects/pkg/compiled/db_rkt.zo
+share/racket/collects/pkg/compiled/dirs-catalog_rkt.dep
+share/racket/collects/pkg/compiled/dirs-catalog_rkt.zo
 share/racket/collects/pkg/compiled/info_rkt.dep
 share/racket/collects/pkg/compiled/info_rkt.zo
 share/racket/collects/pkg/compiled/lib_rkt.dep
@@ -391,6 +393,7 @@ share/racket/collects/pkg/compiled/raco_rkt.zo
 share/racket/collects/pkg/compiled/strip_rkt.dep
 share/racket/collects/pkg/compiled/strip_rkt.zo
 share/racket/collects/pkg/db.rkt
+share/racket/collects/pkg/dirs-catalog.rkt
 share/racket/collects/pkg/info.rkt
 share/racket/collects/pkg/lib.rkt
 share/racket/collects/pkg/main.rkt
@@ -443,6 +446,8 @@ share/racket/collects/pkg/private/compiled/get-info_rkt.dep
 share/racket/collects/pkg/private/compiled/get-info_rkt.zo
 share/racket/collects/pkg/private/compiled/git_rkt.dep
 share/racket/collects/pkg/private/compiled/git_rkt.zo
+share/racket/collects/pkg/private/compiled/info-to-desc_rkt.dep
+share/racket/collects/pkg/private/compiled/info-to-desc_rkt.zo
 share/racket/collects/pkg/private/compiled/install_rkt.dep
 share/racket/collects/pkg/private/compiled/install_rkt.zo
 share/racket/collects/pkg/private/compiled/lock_rkt.dep
@@ -475,6 +480,8 @@ share/racket/collects/pkg/private/compiled/stage_rkt.dep
 share/racket/collects/pkg/private/compiled/stage_rkt.zo
 share/racket/collects/pkg/private/compiled/suggestions_rkt.dep
 share/racket/collects/pkg/private/compiled/suggestions_rkt.zo
+share/racket/collects/pkg/private/compiled/trash_rkt.dep
+share/racket/collects/pkg/private/compiled/trash_rkt.zo
 share/racket/collects/pkg/private/config.rkt
 share/racket/collects/pkg/private/content.rkt
 share/racket/collects/pkg/private/create.rkt
@@ -484,6 +491,7 @@ share/racket/collects/pkg/private/dirs.rkt
 share/racket/collects/pkg/private/download.rkt
 share/racket/collects/pkg/private/get-info.rkt
 share/racket/collects/pkg/private/git.rkt
+share/racket/collects/pkg/private/info-to-desc.rkt
 share/racket/collects/pkg/private/install.rkt
 share/racket/collects/pkg/private/lock.rkt
 share/racket/collects/pkg/private/metadata.rkt
@@ -500,6 +508,7 @@ share/racket/collects/pkg/private/repo-path.rkt
 share/racket/collects/pkg/private/show.rkt
 share/racket/collects/pkg/private/stage.rkt
 share/racket/collects/pkg/private/suggestions.rkt
+share/racket/collects/pkg/private/trash.rkt
 share/racket/collects/pkg/raco.rkt
 share/racket/collects/pkg/strip.rkt
 share/racket/collects/planet/
