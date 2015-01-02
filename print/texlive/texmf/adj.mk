@@ -129,10 +129,7 @@ TEXLUA_ADJ_SCRIPTS =	${SCRIPTS_DIR}/cachepic/cachepic.tlu \
 			${SCRIPTS_DIR}/tlgs/gswin32/ps2pdf14.tlu
 
 BASH_ADJ_SCRIPTS =	${SCRIPTS_DIR}/arara/arara.sh \
-			${SCRIPTS_DIR}/bibexport/bibexport.sh \
 			${SCRIPTS_DIR}/dtxgen/dtxgen \
-			${SCRIPTS_DIR}/installfont/installfont-tl \
-			${SCRIPTS_DIR}/latexfileversion/latexfileversion \
 			${SCRIPTS_DIR}/listbib/listbib \
 			${SCRIPTS_DIR}/logicpuzzle/createlpsudoku \
 			${SCRIPTS_DIR}/logicpuzzle/lpsmag \
