@@ -94,6 +94,7 @@ As far as I know:
  * x11/tk/${MODTK_VERSION} is needed for epspdftk
  * lang/ruby/${MODRUBY_LIBREV} is needed for convbkmk, epspdf, and
    other stuff.
+ * Some scripts need bash.
 
 If you know more, please mail the package maintainer.
 

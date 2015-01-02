@@ -31,6 +31,7 @@ PKG_ARCH =		*
 BUILD_DEPENDS =		archivers/xz
 
 # We dont use auto module deps for these, as MODULES is not per SUBPACKAGE
+.include "adj.mk"
 MODULES +=		lang/ruby lang/python
 MODRUBY_REV =		1.8
 MODRUBY_BUILDDEP =	No
@@ -43,13 +44,44 @@ RUN_DEPENDS-main =	texlive_base-${V}:print/texlive/base
 RUN_DEPENDS-main +=	texlive_texmf-buildset->=${V}:print/texlive/texmf,-buildset
 
 RUN_DEPENDS-full =	texlive_texmf-minimal-${V}:print/texlive/texmf,-main \
-			lang/python/${MODPY_VERSION}
+			${MODPY_RUN_DEPENDS} \
+			${_MODLUA_RUNDEPENDS}
 RUN_DEPENDS-context +=	texlive_texmf-full-${V}:print/texlive/texmf,-full \
-			lang/ruby/${MODRUBY_REV}
+			${MODRUBY_RUNDEPENDS}
 RUN_DEPENDS-docs +=	texlive_base-${V}:print/texlive/base \
 			x11/p5-Tk
 
 MULTI_PACKAGES =	-context -docs -full -main -buildset
+
+MODULES +=		lang/lua lang/ruby lang/python x11/tk perl
+MODLUA_RUNDEP =		No
+MODLUA_BUILDDEP =	No
+MODRUBY_REV =		1.8
+MODRUBY_BUILDDEP =	No
+MODRUBY_RUNDEP =	No
+MODPY_BUILDDEP =	No
+MODPY_RUNDEP =		No
+
+# Substitute correct interpreter paths into scripts.
+# Some are done automatically by MODULES
+pre-configure:
+	@# Don't use builtin ruby.port.mk substitution. It uses
+	@# find, which takes an age on such a large directory.
+	for F in ${RUBY_ADJ_SCRIPTS}; do \
+	    perl -pi -e '($$. == 1) && s@^.*$$@#!${RUBY}@' ${WRKSRC}/$$F; \
+	done
+	for F in ${WISH_ADJ_SCRIPTS}; do \
+	    ${MODTCL_WISH_ADJ} ${WRKSRC}/$$F; \
+	done
+	for F in ${LUA_ADJ_SCRIPTS}; do \
+	    perl -pi -e '($$. == 1) && s@^.*$$@#!${MODLUA_BIN}@' ${WRKSRC}/$$F; \
+	done
+	for F in ${TEXLUA_ADJ_SCRIPTS}; do \
+	    perl -pi -e '($$. == 1) && s@^.*$$@#!${PREFIX}/bin/texlua@' ${WRKSRC}/$$F; \
+	done
+	for F in ${BASH_ADJ_SCRIPTS}; do \
+	    perl -pi -e '($$. == 1) && s@^.*$$@#!${LOCALBASE}/bin/bash@' ${WRKSRC}/$$F; \
+	done
 
 do-install:
 	mv ${WRKDIST}/texmf-dist ${PREFIX}/share
