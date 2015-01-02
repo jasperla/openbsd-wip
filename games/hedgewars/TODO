@@ -1,4 +1,3 @@
-- relies on unreleased, included version of physfs (2.1.0)
 - Problem on startup: Crash in the startup code loading the OpenGL unit:
   crashes in ld.so in _dl_load_shlib because second argument is NULL.
   Somehow, _dl_objects must be set to NULL along the way.  Setting a watchpoint
