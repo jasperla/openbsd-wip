@@ -1,6 +1,6 @@
 $OpenBSD$
 
-*dirty* remove Q_WS_X11 section
+No sys/sysinfo.h under OpenBSD. Remove Q_WS_X11 sections.
 
 --- src/DkUtils.cpp.orig	Mon Dec 22 08:41:46 2014
 +++ src/DkUtils.cpp	Mon Dec 22 08:42:32 2014

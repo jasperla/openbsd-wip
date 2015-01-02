@@ -32,4 +32,6 @@ LIB_DEPENDS =		graphics/exiv2 \
 
 WRKDIST =		${WRKDIR}/${PKGNAME}
 
+NO_TEST =		Yes
+
 .include <bsd.port.mk>
