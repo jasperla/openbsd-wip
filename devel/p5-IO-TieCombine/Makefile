@@ -3,7 +3,7 @@
 COMMENT =	produce tied (and other) separate but combined variables
 
 MODULES =	cpan
-DISTNAME =	IO-TieCombine-1.003
+DISTNAME =	IO-TieCombine-1.004
 CATEGORIES =	devel
 
 MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
