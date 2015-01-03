@@ -1,32 +1,28 @@
 # $OpenBSD$
 
-COMMENT =	set of tools to write CLI programs
+COMMENT =		write command line apps with less suffering
 
-MODULES =	cpan
-DISTNAME =	App-Cmd-0.323
-CATEGORIES =	devel
+MODULES =		cpan
+DISTNAME =		App-Cmd-0.326
+CATEGORIES =		devel
 
-MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
+
+BUILD_DEPENDS =		${RUN_DEPENDS}
+
+RUN_DEPENDS =		sysutils/p5-Capture-Tiny>=0.13 \
+			devel/p5-Class-Load \
+			devel/p5-Data-OptList \
+			devel/p5-Getopt-Long-Descriptive>=0.084 \
+			devel/p5-IO-TieCombine \
+			devel/p5-Module-Pluggable \
+			textproc/p5-String-RewritePrefix \
+			devel/p5-Sub-Exporter \
+			devel/p5-Sub-Install
+
+TEST_DEPENDS =		devel/p5-Test-Fatal
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
-
-RUN_DEPENDS =	devel/p5-Class-Load \
-		devel/p5-Data-OptList \
-		devel/p5-Getopt-Long \
-		devel/p5-Getopt-Long-Descriptive \
-		devel/p5-IO-TieCombine \
-		devel/p5-Sub-Exporter \
-		devel/p5-Sub-Install \
-		devel/p5-Test-Fatal \
-		sysutils/p5-Capture-Tiny \
-		textproc/p5-String-RewritePrefix \
-		textproc/p5-Text-Abbrev \
-		devel/p5-Module-Pluggable
-
-BUILD_DEPENDS =	devel/p5-Data-Dumper-Simple \
-		devel/p5-IPC-Cmd \
-		devel/p5-Test-Fatal \
-		devel/p5-Test-Simple
 
 .include <bsd.port.mk>
