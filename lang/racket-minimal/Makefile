@@ -11,7 +11,7 @@ COMMENT =		multi-paradigm programming language
 
 V =			6.1.1.6
 PKGNAME =		racket-minimal-$V
-DISTNAME =		min-racket-$V-src
+DISTNAME =		min-racket-$V-src-builtpkgs
 
 CATEGORIES =		lang
 HOMEPAGE =		http://racket-lang.org/
@@ -60,9 +60,11 @@ CONFIGURE_ARGS +=	--enable-libffi \
 			--enable-lt=${LIBTOOL}
 # "backtrace" is expensive.
 # http://article.gmane.org/gmane.comp.lang.racket.devel/6700
+# disable "docs" to reduce the number of deps and the build time
 # "places" and "futures" require thread-local storage and atomic CAS
 # http://article.gmane.org/gmane.comp.lang.racket.user/16723
 CONFIGURE_ARGS +=	--disable-backtrace \
+			--disable-docs \
 			--disable-places \
 			--disable-futures
 
