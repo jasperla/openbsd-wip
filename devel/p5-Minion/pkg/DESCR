@@ -1,0 +1,2 @@
+Minion is a job queue for the Mojolicious real-time web framework with support
+for multiple backends, such as DBM::Deep and PostgreSQL.

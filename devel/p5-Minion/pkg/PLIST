@@ -1,0 +1,25 @@
+@comment $OpenBSD$
+${P5SITE}/Minion/
+${P5SITE}/Minion.pm
+${P5SITE}/Minion/Backend/
+${P5SITE}/Minion/Backend.pm
+${P5SITE}/Minion/Backend/File.pm
+${P5SITE}/Minion/Backend/Pg.pm
+${P5SITE}/Minion/Command/
+${P5SITE}/Minion/Command/minion/
+${P5SITE}/Minion/Command/minion.pm
+${P5SITE}/Minion/Command/minion/job.pm
+${P5SITE}/Minion/Command/minion/worker.pm
+${P5SITE}/Minion/Job.pm
+${P5SITE}/Minion/Worker.pm
+${P5SITE}/Mojolicious/Plugin/Minion.pm
+@man man/man3p/Minion.3p
+@man man/man3p/Minion::Backend.3p
+@man man/man3p/Minion::Backend::File.3p
+@man man/man3p/Minion::Backend::Pg.3p
+@man man/man3p/Minion::Command::minion.3p
+@man man/man3p/Minion::Command::minion::job.3p
+@man man/man3p/Minion::Command::minion::worker.3p
+@man man/man3p/Minion::Job.3p
+@man man/man3p/Minion::Worker.3p
+@man man/man3p/Mojolicious::Plugin::Minion.3p
