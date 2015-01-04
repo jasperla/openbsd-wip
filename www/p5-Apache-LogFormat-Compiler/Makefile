@@ -10,6 +10,8 @@ MAINTAINER =		Cesare Gargano <gar@plusiagamma.org>
 
 CONFIGURE_STYLE =	modbuild
 
+RUN_DEPENDS =		devel/p5-POSIX-strftime-Compiler
+
 TEST_DEPENDS =		devel/p5-Test-MockTime
 
 # Perl
