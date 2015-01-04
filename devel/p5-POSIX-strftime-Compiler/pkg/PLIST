@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+${P5SITE}/POSIX/
+${P5SITE}/POSIX/strftime/
+${P5SITE}/POSIX/strftime/Compiler.pm
+@man man/man3p/POSIX::strftime::Compiler.3p
