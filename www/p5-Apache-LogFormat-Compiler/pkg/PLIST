@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+${P5SITE}/Apache/
+${P5SITE}/Apache/LogFormat/
+${P5SITE}/Apache/LogFormat/Compiler.pm
+@man man/man3p/Apache::LogFormat::Compiler.3p
