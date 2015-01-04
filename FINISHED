@@ -61,7 +61,7 @@ www/p5-Test-WWW-Selenium	ready to import, sent to ports@ 2014-04-28
 devel/p5-CHI					ready to import, sent to ports@ 2014-05-04
 devel/p5-Hash-MoreUtils				ready to import, sent to ports@ 2014-05-04
 devel/p5-Test-Simple				ready to import, sent to ports@ 2014-05-04
-devel/p5-MooX-Types-MooseLike				ready to import, sent to ports@ 2014-05-04
+devel/p5-MooX-Types-MooseLike				ready to import, sent to ports@ 2014-05-04, 2015-01-04
 devel/p5-MooX-Types-MooseLike-Numeric			ready to import, sent to ports@ 2014-05-04
 security/p5-Digest-JHash				ready to import, sent to ports@ 2014-05-04, 2014-03-07
 www/p5-Tapper-Config					ready to import, sent to ports@ 2014-05-13
@@ -79,3 +79,13 @@ games/residualvm	ready to import (bentley@), sent to ports@ 2014-07-11
 games/gnome-hearts	ready to import (bcallah@), sent to ports 2014-10-09
 sysutils/sleuthkit		sent to ports@ 2014-10-08 (nigel)
 games/liberalcrimesquad	ready to import (bcallah@)
+www/p5-Apache-LogFormat-Compiler        ready to import, sent to ports@ 2015-01-04 (garcer)
+textproc/p5-Template-Tiny               ready to import, sent to ports@ 2015-01-04 (garcer)
+devel/p5-Stream-Buffered                ready to import, sent to ports@ 2015-01-04 (garcer)
+devel/p5-Safe-Isa                       ready to import, sent to ports@ 2015-01-04 (garcer)
+devel/p5-Return-MultiLevel              ready to import, sent to ports@ 2015-01-04 (garcer)
+devel/p5-POSIX-strftime-Compiler        ready to import, sent to ports@ 2015-01-04 (garcer)
+devel/p5-Data-Munge                     ready to import, sent to ports@ 2015-01-04 (garcer)
+devel/p5-App-Cmd                        ready to import, sent to ports@ 2015-01-04 (garcer)
+devel/p5-IO-TieCombine                  ready to import, sent to ports@ 2015-01-04 (garcer)
+
