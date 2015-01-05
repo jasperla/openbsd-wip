@@ -8,6 +8,9 @@ CATEGORIES =		devel
 
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
+# Perl
+PERMIT_PACKAGE_CDROM =	Yes
+
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
 RUN_DEPENDS =		sysutils/p5-Capture-Tiny>=0.13 \
@@ -21,8 +24,5 @@ RUN_DEPENDS =		sysutils/p5-Capture-Tiny>=0.13 \
 			devel/p5-Sub-Install
 
 TEST_DEPENDS =		devel/p5-Test-Fatal
-
-# Perl
-PERMIT_PACKAGE_CDROM =	Yes
 
 .include <bsd.port.mk>

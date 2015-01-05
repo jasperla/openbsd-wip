@@ -8,9 +8,9 @@ CATEGORIES =	devel
 
 MAINTAINER =	Cesare Gargano <gar@plusiagamma.org>
 
-CONFIGURE_STYLE =	modbuild
-
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
+
+CONFIGURE_STYLE =	modbuild
 
 .include <bsd.port.mk>

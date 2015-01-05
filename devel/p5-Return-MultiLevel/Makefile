@@ -8,15 +8,15 @@ CATEGORIES =		devel
 
 MAINTAINER =		Cesare Gargano <gar@plusiagamma.org>
 
+# Perl
+PERMIT_PACKAGE_CDROM =	Yes
+
+CPAN_AUTHOR =		MAUKE
+
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
 RUN_DEPENDS =		devel/p5-Data-Munge
 
 TEST_DEPENDS =		devel/p5-Test-Fatal
-
-CPAN_AUTHOR =		MAUKE
-
-# Perl
-PERMIT_PACKAGE_CDROM =	Yes
 
 .include <bsd.port.mk>
