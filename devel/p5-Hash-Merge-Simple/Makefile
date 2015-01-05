@@ -11,9 +11,9 @@ MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS =	devel/p5-Clone \
-		devel/p5-Test-Most
+RUN_DEPENDS =	devel/p5-Clone
 
-BUILD_DEPENDS =	${RUN_DEPENDS}
+TEST_DEPENDS =	devel/p5-Test-Deep \
+		devel/p5-Test-Most
 
 .include <bsd.port.mk>
