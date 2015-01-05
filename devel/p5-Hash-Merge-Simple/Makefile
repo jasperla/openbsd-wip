@@ -11,6 +11,8 @@ MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
+BUILD_DEPENDS =	devel/p5-Test-Most
+
 RUN_DEPENDS =	devel/p5-Clone
 
 TEST_DEPENDS =	devel/p5-Test-Deep \
