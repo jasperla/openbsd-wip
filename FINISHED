@@ -49,7 +49,7 @@ devel/p5-Term-VT102 	ready for import, sent to ports@ 2014-03-11, ok from shten@
 devel/p5-Term-VT102-Boundless	ready for import, sent to ports@ 2014-03-11
 devel/p5-Sys-Info-Base	sent to ports@ 2014-04-03
 devel/p5-File-Pid	sent to ports@ 2014-04-03
-devel/p5-Hash-Merge-Simple	ready to import, sent to ports@ 2014-04-28
+devel/p5-Hash-Merge-Simple	ready to import, sent to ports@ 2014-04-28,2015-01-05 (garcer)
 devel/p5-TAP-DOM	ready to import, sent to ports@ 2014-04-28
 devel/p5-Test-Mock-LWP	ready to import, sent to ports@ 2014-04-28
 www/p5-Tapper-Base	ready to import, sent to ports@ 2014-04-28
