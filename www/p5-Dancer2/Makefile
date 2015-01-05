@@ -11,8 +11,7 @@ MAINTAINER =		Cesare Gargano <gar@plusiagamma.org>
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-BUILD_DEPENDS = 	${RUN_DEPENDS} \
-			devel/p5-File-ShareDir-Install
+BUILD_DEPENDS =		devel/p5-File-ShareDir-Install>=0.06
 
 RUN_DEPENDS = 		devel/p5-App-Cmd \
 			devel/p5-Class-Load \
@@ -36,6 +35,9 @@ RUN_DEPENDS = 		devel/p5-App-Cmd \
 
 TEST_DEPENDS =		sysutils/p5-Capture-Tiny \
 			www/p5-HTTP-Body \
+			www/p5-HTTP-Cookies \
+			www/p5-HTTP-Message \
+			www/p5-Plack>=1.0029 \
 			devel/p5-Test-Fatal \
 			devel/p5-Test-Memory-Cycle>=1.04 \
 			devel/p5-Test-MockTime \
