@@ -21,9 +21,11 @@ MODULES =		lang/python
 
 MODPY_SETUPTOOLS =	Yes
 
+BUILD_DEPENDS =	devel/py-dateutil
+
 RUN_DEPENDS =		devel/py-asn1-modules \
 			net/py-dnspython \
-			security/py-pygnupg \
+			security/py-gnupg \
 			devel/py-dateutil \
 			net/py-socks
 
