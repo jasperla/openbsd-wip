@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-lib/python${MODPY_VERSION}/site-packages/PySocks-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
-lib/python${MODPY_VERSION}/site-packages/socks.py
-lib/python${MODPY_VERSION}/site-packages/socks.pyc
