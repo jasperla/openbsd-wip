@@ -11,7 +11,8 @@ MAINTAINER =		Cesare Gargano <gar@plusiagamma.org>
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-BUILD_DEPENDS =		devel/p5-File-ShareDir-Install>=0.06
+BUILD_DEPENDS =		devel/p5-File-ShareDir-Install>=0.06 \
+			${RUN_DEPENDS}
 
 RUN_DEPENDS = 		devel/p5-App-Cmd \
 			devel/p5-Class-Load \
