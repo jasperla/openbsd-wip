@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+@bin bin/mgba
+@bin bin/mgba-qt
+@lib lib/libmgba.so.${LIBmgba_VERSION}
