@@ -1,7 +1,7 @@
 $OpenBSD: patch-chrome_common_pref_names_h,v 1.10 2014/11/19 21:27:32 robert Exp $
---- chrome/common/pref_names.h.orig.port	Wed Dec 17 06:42:52 2014
-+++ chrome/common/pref_names.h	Sat Dec 27 15:34:11 2014
-@@ -298,7 +298,7 @@ extern const char kForceYouTubeSafetyMode[];
+--- chrome/common/pref_names.h.orig.port	Tue Jan  6 01:17:31 2015
++++ chrome/common/pref_names.h	Wed Jan  7 21:41:25 2015
+@@ -295,7 +295,7 @@ extern const char kForceYouTubeSafetyMode[];
  extern const char kRecordHistory[];
  extern const char kDeleteTimePeriod[];
  extern const char kLastClearBrowsingDataTime[];
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_common_pref_names_h,v 1.10 2014/11/19 21:27:32 robert Exp
  extern const char kUsesSystemTheme[];
  #endif
  extern const char kCurrentThemePackFilename[];
-@@ -490,7 +490,7 @@ extern const char kAppWindowPlacement[];
+@@ -487,7 +487,7 @@ extern const char kAppWindowPlacement[];
  extern const char kDownloadDefaultDirectory[];
  extern const char kDownloadExtensionsToOpen[];
  extern const char kDownloadDirUpgraded[];

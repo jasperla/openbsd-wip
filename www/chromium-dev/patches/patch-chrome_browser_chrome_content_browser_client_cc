@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.15 2014/11/19 21:27:32 robert Exp $
---- chrome/browser/chrome_content_browser_client.cc.orig.port	Wed Dec 17 06:42:51 2014
-+++ chrome/browser/chrome_content_browser_client.cc	Sat Dec 27 15:34:11 2014
+$OpenBSD$
+--- chrome/browser/chrome_content_browser_client.cc.orig.port	Wed Jan  7 21:41:42 2015
++++ chrome/browser/chrome_content_browser_client.cc	Wed Jan  7 21:42:50 2015
 @@ -163,7 +163,7 @@
  #include "chrome/browser/chrome_browser_main_posix.h"
  #endif
@@ -19,21 +19,21 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.15 2014/11/1
  breakpad::CrashHandlerHostLinux* CreateCrashHandlerHost(
      const std::string& process_type) {
    base::FilePath dumps_path;
-@@ -1224,7 +1224,7 @@ bool IsAutoReloadVisibleOnlyEnabled() {
- 
+@@ -1228,7 +1228,7 @@ bool IsAutoReloadVisibleOnlyEnabled() {
  void ChromeContentBrowserClient::AppendExtraCommandLineSwitches(
-     CommandLine* command_line, int child_process_id) {
+     base::CommandLine* command_line,
+     int child_process_id) {
 -#if defined(OS_POSIX)
 +#if defined(OS_POSIX) && !defined(OS_BSD)
    if (breakpad::IsCrashReporterEnabled()) {
      scoped_ptr<metrics::ClientInfo> client_info =
          GoogleUpdateSettings::LoadMetricsClientInfo();
-@@ -2429,7 +2429,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+@@ -2436,7 +2436,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
    }
  }
  
 -#if defined(OS_POSIX) && !defined(OS_MACOSX)
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
  void ChromeContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
-     const CommandLine& command_line,
+     const base::CommandLine& command_line,
      int child_process_id,

@@ -1,6 +1,6 @@
 $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.17 2014/11/19 21:27:32 robert Exp $
---- chrome/app/chrome_main_delegate.cc.orig.port	Wed Dec 17 06:42:50 2014
-+++ chrome/app/chrome_main_delegate.cc	Sat Dec 27 15:34:11 2014
+--- chrome/app/chrome_main_delegate.cc.orig.port	Tue Jan  6 01:17:28 2015
++++ chrome/app/chrome_main_delegate.cc	Wed Jan  7 21:41:25 2015
 @@ -98,11 +98,11 @@
  #include "ui/base/x/x11_util.h"
  #endif
@@ -33,7 +33,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.17 2014/11/19 21:27:32 ro
        // The zygote process opens the resources for the renderers.
        process_type == switches::kZygoteProcess ||
  #endif
-@@ -288,7 +288,7 @@ void HandleHelpSwitches(const CommandLine& command_lin
+@@ -288,7 +288,7 @@ void HandleHelpSwitches(const base::CommandLine& comma
  }
  #endif
  
@@ -51,7 +51,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.17 2014/11/19 21:27:32 ro
    // On Linux, Chrome does not support running multiple copies under different
    // DISPLAYs, so the profile directory can be specified in the environment to
    // support the virtual desktop use-case.
-@@ -649,7 +649,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -651,7 +651,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
    std::string process_type =
        command_line.GetSwitchValueASCII(switches::kProcessType);
  
@@ -60,7 +60,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.17 2014/11/19 21:27:32 ro
    crash_reporter::SetCrashReporterClient(g_chrome_crash_client.Pointer());
  #endif
  
-@@ -776,7 +776,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -778,7 +778,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
  #endif
    }
  
@@ -69,7 +69,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.17 2014/11/19 21:27:32 ro
    // Zygote needs to call InitCrashReporter() in RunZygote().
    if (process_type != switches::kZygoteProcess) {
  #if defined(OS_ANDROID)
-@@ -899,7 +899,7 @@ bool ChromeMainDelegate::DelaySandboxInitialization(
+@@ -901,7 +901,7 @@ bool ChromeMainDelegate::DelaySandboxInitialization(
  #endif
    return process_type == switches::kRelauncherProcess;
  }

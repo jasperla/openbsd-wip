@@ -5,7 +5,7 @@ DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			41.0.2251.0
+V=			41.0.2267.0
 DISTNAME=		chromium-dev-${V}
 DISTFILES=		chromium-${V}.tar.xz
 WRKDIST=		${WRKDIR}/chromium-${V}

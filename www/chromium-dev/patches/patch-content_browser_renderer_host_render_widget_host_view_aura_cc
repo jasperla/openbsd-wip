@@ -1,6 +1,6 @@
 $OpenBSD: patch-content_browser_renderer_host_render_widget_host_view_aura_cc,v 1.4 2014/11/19 21:27:32 robert Exp $
---- content/browser/renderer_host/render_widget_host_view_aura.cc.orig.port	Wed Dec 17 06:42:55 2014
-+++ content/browser/renderer_host/render_widget_host_view_aura.cc	Sat Dec 27 15:34:11 2014
+--- content/browser/renderer_host/render_widget_host_view_aura.cc.orig.port	Tue Jan  6 01:17:33 2015
++++ content/browser/renderer_host/render_widget_host_view_aura.cc	Wed Jan  7 21:41:25 2015
 @@ -89,7 +89,7 @@
  #include "ui/gfx/win/dpi.h"
  #endif
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_browser_renderer_host_render_widget_host_view_aura_cc,v 
  #include "content/common/input_messages.h"
  #include "ui/events/linux/text_edit_command_auralinux.h"
  #include "ui/events/linux/text_edit_key_bindings_delegate_auralinux.h"
-@@ -2488,7 +2488,7 @@ void RenderWidgetHostViewAura::DetachFromInputMethod()
+@@ -2570,7 +2570,7 @@ void RenderWidgetHostViewAura::DetachFromInputMethod()
  
  void RenderWidgetHostViewAura::ForwardKeyboardEvent(
      const NativeWebKeyboardEvent& event) {

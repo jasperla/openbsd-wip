@@ -105,6 +105,7 @@ chrome/resources/inspector/Images/localStorage.png
 chrome/resources/inspector/Images/navigationControls.png
 chrome/resources/inspector/Images/navigationControls_2x.png
 chrome/resources/inspector/Images/paneAddButtons.png
+chrome/resources/inspector/Images/paneAnimationsButtons.png
 chrome/resources/inspector/Images/paneElementStateButtons.png
 chrome/resources/inspector/Images/paneFilterButtons.png
 chrome/resources/inspector/Images/paneRefreshButtons.png
@@ -150,7 +151,6 @@ chrome/resources/inspector/devtools.css
 chrome/resources/inspector/devtools.html
 chrome/resources/inspector/devtools.js
 chrome/resources/inspector/devtools_extension_api.js
-chrome/resources/inspector/documentation_module.js
 chrome/resources/inspector/elements_module.js
 chrome/resources/inspector/heap_snapshot_worker_module.js
 chrome/resources/inspector/inspector.css

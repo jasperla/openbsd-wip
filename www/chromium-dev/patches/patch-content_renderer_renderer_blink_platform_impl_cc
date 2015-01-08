@@ -1,6 +1,6 @@
 $OpenBSD$
---- content/renderer/renderer_blink_platform_impl.cc.orig.port	Wed Dec 17 06:42:55 2014
-+++ content/renderer/renderer_blink_platform_impl.cc	Sat Dec 27 15:34:11 2014
+--- content/renderer/renderer_blink_platform_impl.cc.orig.port	Tue Jan  6 01:17:33 2015
++++ content/renderer/renderer_blink_platform_impl.cc	Wed Jan  7 21:41:25 2015
 @@ -96,7 +96,7 @@
  
  #if defined(OS_POSIX)
@@ -28,7 +28,7 @@ $OpenBSD$
    // WebKit doesn't use WebSandboxSupport on android.
    return NULL;
  #else
-@@ -577,7 +577,7 @@ bool RendererBlinkPlatformImpl::SandboxSupport::loadFo
+@@ -578,7 +578,7 @@ bool RendererBlinkPlatformImpl::SandboxSupport::loadFo
    return FontLoader::CGFontRefFromBuffer(font_data, font_data_size, out);
  }
  

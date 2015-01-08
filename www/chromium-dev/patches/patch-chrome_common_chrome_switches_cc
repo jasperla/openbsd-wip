@@ -1,7 +1,7 @@
 $OpenBSD: patch-chrome_common_chrome_switches_cc,v 1.9 2014/10/13 06:49:19 robert Exp $
---- chrome/common/chrome_switches.cc.orig.port	Wed Dec 17 06:42:52 2014
-+++ chrome/common/chrome_switches.cc	Sat Dec 27 15:34:11 2014
-@@ -1294,7 +1294,7 @@ const char kOpenAsh[]                       = "open-as
+--- chrome/common/chrome_switches.cc.orig.port	Tue Jan  6 01:42:06 2015
++++ chrome/common/chrome_switches.cc	Wed Jan  7 21:41:25 2015
+@@ -1297,7 +1297,7 @@ const char kOpenAsh[]                       = "open-as
  const char kPasswordStore[]                 = "password-store";
  #endif
  
