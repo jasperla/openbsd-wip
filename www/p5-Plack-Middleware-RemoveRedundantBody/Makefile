@@ -15,4 +15,7 @@ BUILD_DEPENDS =		${RUN_DEPENDS}
 
 RUN_DEPENDS =		www/p5-Plack
 
+TEST_DEPENDS =		www/p5-HTTP-Message \
+			www/p5-Plack
+
 .include <bsd.port.mk>
