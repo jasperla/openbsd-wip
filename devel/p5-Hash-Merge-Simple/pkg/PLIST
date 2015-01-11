@@ -1,5 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/Hash/
-${P5SITE}/Hash/Merge/
-${P5SITE}/Hash/Merge/Simple.pm
-@man man/man3p/Hash::Merge::Simple.3p
