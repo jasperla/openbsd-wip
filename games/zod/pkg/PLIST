@@ -1,5 +1,6 @@
 @comment $OpenBSD$
 bin/zod
+bin/zod_launcher
 bin/zod_map_editor
 share/zod/
 share/zod/assets/
@@ -10169,6 +10170,8 @@ share/zod/assets/units/vehicles/track_spark_r315_n00.png
 share/zod/assets/units/vehicles/track_spark_r315_n01.png
 share/zod/assets/units/vehicles/track_spark_r315_n02.png
 share/zod/assets/units/vehicles/track_spark_r315_n03.png
+share/zod/default_settings.txt
+share/zod/map_editor_help.txt
 share/zod/map_list.txt
 share/zod/mp3_map_list.txt
 share/zod/mp4_map_list.txt
@@ -10229,5 +10232,8 @@ share/zod/p04_bb_p04m09.map
 share/zod/p04_bb_p04m10.map
 share/zod/p08_bb_p08m01.map
 share/zod/p08_sc_hunters.map
+share/zod/readme_linux.txt
 @bin share/zod/zod
+share/zod/zod_engine_help.txt
+@bin share/zod/zod_launcher
 @bin share/zod/zod_map_editor
