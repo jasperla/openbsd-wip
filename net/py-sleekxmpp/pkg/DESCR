@@ -1,25 +1,3 @@
-SleekXMPP is an MIT licensed XMPP library for Python 2.6/3.1+, and is
-featured in examples in XMPP: The Definitive Guide by Kevin Smith, Remko
-Tronçon, and Peter Saint-Andre.
-
-SleekXMPP's design goals and philosphy are:
-
-Low number of dependencies
-
-    Installing and using SleekXMPP should be as simple as possible,
-    without having to deal with long dependency chains.
-
-    As part of reducing the number of dependencies, some third party
-    modules are included with SleekXMPP in the thirdparty directory.
-    Imports from this module first try to import an existing installed
-    version before loading the packaged version, when possible.
-Every XEP as a plugin
-    Following Python's "batteries included" approach, the goal is to
-    provide support for all currently active XEPs (final and draft).
-    Since adding XEP support is done through easy to create plugins, the
-    hope is to also provide a solid base for implementing and creating
-    experimental XEPs.
-Rewarding to work with
-    As much as possible, SleekXMPP should allow things to "just work"
-    using sensible defaults and appropriate abstractions. XML can be
-    ugly to work with, but it doesn't have to be that way.
+SleekXMPP attempts to provide a "batteries included" XMPP library,
+with sensible defaults and support for all XEPs as plugins.  It is
+featured in examples of the "XMPP: The Definitive Guide" book.
