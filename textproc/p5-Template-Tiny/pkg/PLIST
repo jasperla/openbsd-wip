@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/Template/
-${P5SITE}/Template/Tiny.pm
-@man man/man3p/Template::Tiny.3p
