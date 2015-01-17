@@ -1,7 +1,6 @@
 @comment $OpenBSD$
 @bin bin/nomacs
 @man man/man1/nomacs.1
-share/applications/
 share/applications/nomacs.desktop
 share/nomacs/
 share/nomacs/translations/
