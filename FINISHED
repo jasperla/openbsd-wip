@@ -81,3 +81,4 @@ sysutils/sleuthkit		sent to ports@ 2014-10-08 (nigel)
 devel/p5-Parallel-Prefork				ready to import, sent to ports@ 2015-01-08 (garcer)
 www/p5-Starlet						ready to import, sent to ports@ 2015-01-08 (garcer)
 www/p5-Plack-Middleware-MethodOverride			ready to import
+devel/p5-JSON-MaybeXS					ready to import
