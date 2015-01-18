@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/CGI/
+${P5SITE}/CGI/Struct.pm
+@man man/man3p/CGI::Struct.3p
