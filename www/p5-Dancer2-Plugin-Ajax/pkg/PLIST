@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/Dancer2/Plugin/
+${P5SITE}/Dancer2/Plugin/Ajax.pm
+@man man/man3p/Dancer2::Plugin::Ajax.3p

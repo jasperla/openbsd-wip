@@ -83,3 +83,4 @@ www/p5-Plack-Middleware-MethodOverride			ready to import
 devel/p5-JSON-MaybeXS					ready to import
 www/p5-CGI-Struct					ready to import
 www/p5-URI-ws						ready to import
+www/p5-Dancer2-Plugin-Ajax				ready to import
