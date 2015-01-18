@@ -86,3 +86,5 @@ www/p5-URI-ws						ready to import
 www/p5-Dancer2-Plugin-Ajax				ready to import
 www/p5-Dancer2-Plugin-Auth-Tiny				ready to import
 www/p5-Dancer2-Plugin-DBIC				ready to import
+www/p5-Dancer-Plugin-Database-Core			ready to import
+www/p5-Dancer2-Plugin-Database				ready to import

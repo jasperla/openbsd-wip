@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/Dancer2/Plugin/
+${P5SITE}/Dancer2/Plugin/DBIC.pm
+@man man/man3p/Dancer2::Plugin::DBIC.3p
