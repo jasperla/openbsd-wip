@@ -1,3 +1,2 @@
-This plugin makes it very easy to create Dancer2 applications that interface
-with databases. It automatically exports the keyword schema which returns a
-DBIx::Class::Schema object. 
+Dancer2 plugin which provides an easy way to obtain a connected DBI database
+handle by simply calling the database keyword within your application.

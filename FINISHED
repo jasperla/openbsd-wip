@@ -83,8 +83,8 @@ www/p5-Plack-Middleware-MethodOverride			ready to import
 devel/p5-JSON-MaybeXS					ready to import
 www/p5-CGI-Struct					ready to import
 www/p5-URI-ws						ready to import
-www/p5-Dancer2-Plugin-Ajax				ready to import
-www/p5-Dancer2-Plugin-Auth-Tiny				ready to import
-www/p5-Dancer2-Plugin-DBIC				ready to import
-www/p5-Dancer-Plugin-Database-Core			ready to import
-www/p5-Dancer2-Plugin-Database				ready to import
+www/p5-Dancer2-Plugin-Ajax				ready to import, sent to ports@ 2015-01-18 (garcer)
+www/p5-Dancer2-Plugin-Auth-Tiny				ready to import, sent to ports@ 2015-01-18 (garcer)
+www/p5-Dancer2-Plugin-DBIC				ready to import, sent to ports@ 2015-01-18 (garcer)
+www/p5-Dancer-Plugin-Database-Core			ready to import, sent to ports@ 2015-01-18 (garcer)
+www/p5-Dancer2-Plugin-Database				ready to import, sent to ports@ 2015-01-18 (garcer)

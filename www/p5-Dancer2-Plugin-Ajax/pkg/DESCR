@@ -1,2 +1,2 @@
-The ajax keyword which is exported by this Dancer2 plugin allow you to
-define a route handler optimized for Ajax queries.
+Dancer2 plugin which allow to define a route handler optimized for
+Ajax queries.
