@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =	use Cpanel::JSON::XS with a fallback to JSON::XS and JSON::PP
+COMMENT =	use Cpanel::JSON::XS or fallback to JSON::XS and JSON::PP
 
 MODULES =	cpan
 DISTNAME =	JSON-MaybeXS-1.003003
