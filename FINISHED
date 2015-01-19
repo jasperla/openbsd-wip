@@ -91,3 +91,4 @@ www/p5-Dancer2-Plugin-Database				ready to import, sent to ports@ 2015-01-18 (ga
 devel/p5-String-Compare-ConstantTime			ready to import
 security/p5-Crypt-URandom				ready to import
 devel/p5-Sereal-Encoder					ready to import
+devel/p5-Sereal-Decoder					ready to import
