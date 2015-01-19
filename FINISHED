@@ -89,3 +89,4 @@ www/p5-Dancer2-Plugin-DBIC				ready to import, sent to ports@ 2015-01-18 (garcer
 www/p5-Dancer-Plugin-Database-Core			ready to import, sent to ports@ 2015-01-18 (garcer)
 www/p5-Dancer2-Plugin-Database				ready to import, sent to ports@ 2015-01-18 (garcer)
 devel/p5-String-Compare-ConstantTime			ready to impport
+security/p5-Crypt-URandom				ready to import
