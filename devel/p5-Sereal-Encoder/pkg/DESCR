@@ -1,0 +1,2 @@
+This library implements a serializer for an efficient, compact-output, and
+feature-rich binary protocol called Sereal.
