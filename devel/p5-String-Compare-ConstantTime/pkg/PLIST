@@ -1,0 +1,11 @@
+@comment $OpenBSD$
+${P5ARCH}/
+${P5ARCH}/String/
+${P5ARCH}/String/Compare/
+${P5ARCH}/String/Compare/ConstantTime.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/String/
+${P5ARCH}/auto/String/Compare/
+${P5ARCH}/auto/String/Compare/ConstantTime/
+${P5ARCH}/auto/String/Compare/ConstantTime/ConstantTime.so
+@man man/man3p/String::Compare::ConstantTime.3p

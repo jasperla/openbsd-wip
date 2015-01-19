@@ -1,0 +1,1 @@
+This module compares strings avoiding a "timing side-channel".
