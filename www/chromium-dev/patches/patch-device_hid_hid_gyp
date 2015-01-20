@@ -1,7 +1,7 @@
 $OpenBSD: patch-device_hid_hid_gyp,v 1.4 2014/11/19 21:27:32 robert Exp $
---- device/hid/hid.gyp.orig.port	Wed Nov 19 05:53:04 2014
-+++ device/hid/hid.gyp	Wed Nov 19 15:56:27 2014
-@@ -63,6 +63,18 @@
+--- device/hid/hid.gyp.orig.port	Wed Jan 14 03:22:55 2015
++++ device/hid/hid.gyp	Thu Jan 15 22:53:27 2015
+@@ -66,6 +66,18 @@
              'input_service_linux.h',
            ],
          }],

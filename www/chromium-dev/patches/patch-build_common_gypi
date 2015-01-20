@@ -1,6 +1,6 @@
 $OpenBSD$
---- build/common.gypi.orig.port	Tue Jan  6 01:42:06 2015
-+++ build/common.gypi	Wed Jan  7 21:41:24 2015
+--- build/common.gypi.orig.port	Wed Jan 14 03:22:55 2015
++++ build/common.gypi	Thu Jan 15 22:53:27 2015
 @@ -94,7 +94,7 @@
  
            'conditions': [
@@ -10,7 +10,7 @@ $OpenBSD$
                'use_ash%': 1,
                'use_aura%': 1,
              }],
-@@ -805,7 +805,7 @@
+@@ -800,7 +800,7 @@
  
          # Use GPU accelerated cross process image transport by default
          # on linux builds with the Aura window manager
@@ -19,7 +19,7 @@ $OpenBSD$
            'ui_compositor_image_transport%': 1,
          }, {
            'ui_compositor_image_transport%': 0,
-@@ -930,7 +930,7 @@
+@@ -925,7 +925,7 @@
          # --help for more information. Meant to be overriden with GYP_DEFINES.
          # TODO(maruel): Remove the conditions as more configurations are
          # supported.
@@ -28,7 +28,7 @@ $OpenBSD$
            'test_isolation_mode%': 'check',
          }, {
            'test_isolation_mode%': 'noop',
-@@ -946,7 +946,7 @@
+@@ -941,7 +941,7 @@
          }, {
            'use_openmax_dl_fft%': 0,
          }],
@@ -37,7 +37,7 @@ $OpenBSD$
              'enable_mdns%' : 1,
          }],
  
-@@ -3513,6 +3513,14 @@
+@@ -3507,6 +3507,14 @@
      },
    },
    'conditions': [
@@ -52,7 +52,7 @@ $OpenBSD$
      ['os_posix==1', {
        'target_defaults': {
          'ldflags': [
-@@ -5694,8 +5702,8 @@
+@@ -5693,8 +5701,8 @@
      ['clang==1 and ((OS!="mac" and OS!="ios") or clang_xcode==0) '
          'and OS!="win"', {
        'make_global_settings': [
