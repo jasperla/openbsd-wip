@@ -3,7 +3,7 @@
 COMMENT=	tolerance ranges for inexact numbers
 
 MODULES=	cpan
-DISTNAME=	Number-Tolerant-1.702
+DISTNAME=	Number-Tolerant-1.705
 PKGNAME=	p5-${DISTNAME}
 CATEGORIES=	devel
 

@@ -94,3 +94,4 @@ devel/p5-Sereal-Encoder					ready to import
 devel/p5-Sereal-Decoder					ready to import
 devel/p5-Sereal						ready to import
 math/p5-Math-Random-ISAAC-XS				ready to import
+devel/p5-Number-Tolerant				ready to import (todd@)
