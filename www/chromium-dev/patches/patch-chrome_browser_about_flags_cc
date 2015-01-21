@@ -1,7 +1,7 @@
 $OpenBSD: patch-chrome_browser_about_flags_cc,v 1.14 2014/11/19 21:27:32 robert Exp $
---- chrome/browser/about_flags.cc.orig.port	Tue Jan  6 01:42:06 2015
-+++ chrome/browser/about_flags.cc	Wed Jan  7 21:41:25 2015
-@@ -1434,7 +1434,7 @@ const Experiment kExperiments[] = {
+--- chrome/browser/about_flags.cc.orig.port	Wed Jan 14 03:22:55 2015
++++ chrome/browser/about_flags.cc	Thu Jan 15 22:53:27 2015
+@@ -1426,7 +1426,7 @@ const Experiment kExperiments[] = {
      SINGLE_VALUE_TYPE(switches::kResetAppListInstallState)
    },
  #if defined(ENABLE_APP_LIST)

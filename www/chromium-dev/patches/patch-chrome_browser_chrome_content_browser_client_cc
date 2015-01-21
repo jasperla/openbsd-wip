@@ -1,7 +1,7 @@
 $OpenBSD$
---- chrome/browser/chrome_content_browser_client.cc.orig.port	Wed Jan  7 21:41:42 2015
-+++ chrome/browser/chrome_content_browser_client.cc	Wed Jan  7 21:42:50 2015
-@@ -163,7 +163,7 @@
+--- chrome/browser/chrome_content_browser_client.cc.orig.port	Wed Jan 14 03:22:55 2015
++++ chrome/browser/chrome_content_browser_client.cc	Thu Jan 15 22:53:27 2015
+@@ -167,7 +167,7 @@
  #include "chrome/browser/chrome_browser_main_posix.h"
  #endif
  
@@ -10,7 +10,7 @@ $OpenBSD$
  #include "base/debug/leak_annotations.h"
  #include "components/crash/app/breakpad_linux.h"
  #include "components/crash/browser/crash_handler_host_linux.h"
-@@ -439,7 +439,7 @@ bool CertMatchesFilter(const net::X509Certificate& cer
+@@ -443,7 +443,7 @@ bool CertMatchesFilter(const net::X509Certificate& cer
    return false;
  }
  
@@ -19,7 +19,7 @@ $OpenBSD$
  breakpad::CrashHandlerHostLinux* CreateCrashHandlerHost(
      const std::string& process_type) {
    base::FilePath dumps_path;
-@@ -1228,7 +1228,7 @@ bool IsAutoReloadVisibleOnlyEnabled() {
+@@ -1232,7 +1232,7 @@ bool IsAutoReloadVisibleOnlyEnabled() {
  void ChromeContentBrowserClient::AppendExtraCommandLineSwitches(
      base::CommandLine* command_line,
      int child_process_id) {
@@ -28,7 +28,7 @@ $OpenBSD$
    if (breakpad::IsCrashReporterEnabled()) {
      scoped_ptr<metrics::ClientInfo> client_info =
          GoogleUpdateSettings::LoadMetricsClientInfo();
-@@ -2436,7 +2436,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+@@ -2434,7 +2434,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
    }
  }
  
