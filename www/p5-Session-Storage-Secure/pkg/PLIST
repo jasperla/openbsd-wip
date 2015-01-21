@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+${P5SITE}/Session/
+${P5SITE}/Session/Storage/
+${P5SITE}/Session/Storage/Secure.pm
+@man man/man3p/Session::Storage::Secure.3p
