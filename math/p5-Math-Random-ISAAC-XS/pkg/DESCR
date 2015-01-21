@@ -1,0 +1,6 @@
+The ISAAC algorithm is designed to take some seed information and produce
+seemingly random results as output.
+
+This module implements the same interface as Math::Random::ISAAC and can be
+used as a drop-in replacement. This is the recommended implementation of the
+module, based on Bob Jenkins' reference implementation in C.

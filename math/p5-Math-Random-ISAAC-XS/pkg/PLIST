@@ -1,0 +1,14 @@
+@comment $OpenBSD$
+${P5ARCH}/
+${P5ARCH}/Math/
+${P5ARCH}/Math/Random/
+${P5ARCH}/Math/Random/ISAAC/
+${P5ARCH}/Math/Random/ISAAC/XS.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Math/
+${P5ARCH}/auto/Math/Random/
+${P5ARCH}/auto/Math/Random/ISAAC/
+${P5ARCH}/auto/Math/Random/ISAAC/XS/
+${P5ARCH}/auto/Math/Random/ISAAC/XS/XS.bs
+${P5ARCH}/auto/Math/Random/ISAAC/XS/XS.so
+@man man/man3p/Math::Random::ISAAC::XS.3p
