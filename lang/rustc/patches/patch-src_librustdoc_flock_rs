@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/librustdoc/flock.rs.orig	Wed Jan 21 08:42:33 2015
++++ src/librustdoc/flock.rs	Wed Jan 21 08:39:23 2015
+@@ -63,7 +63,7 @@ mod imp {
+         pub const F_SETLKW: libc::c_int = 13;
+     }
+ 
+-    #[cfg(target_os = "dragonfly")]
++    #[cfg(any(target_os = "dragonfly", target_os = "openbsd"))]
+     mod os {
+         use libc;
+ 

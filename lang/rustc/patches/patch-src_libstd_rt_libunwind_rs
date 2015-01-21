@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/libstd/rt/libunwind.rs.orig	Wed Jan 21 14:18:01 2015
++++ src/libstd/rt/libunwind.rs	Wed Jan 21 14:26:41 2015
+@@ -101,7 +101,7 @@ pub type _Unwind_Exception_Cleanup_Fn =
+ #[link(name = "gcc_s")]
+ extern {}
+ 
+-#[cfg(target_os = "android")]
++#[cfg(any(target_os = "android", target_os = "openbsd"))]
+ #[link(name = "gcc")]
+ extern {}
+ 

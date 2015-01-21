@@ -1,0 +1,13 @@
+$OpenBSD$
+--- src/libstd/sys/unix/process.rs.orig	Wed Jan 21 14:18:01 2015
++++ src/libstd/sys/unix/process.rs	Wed Jan 21 14:26:41 2015
+@@ -604,7 +604,8 @@ fn translate_status(status: c_int) -> ProcessExit {
+     #[cfg(any(target_os = "macos",
+               target_os = "ios",
+               target_os = "freebsd",
+-              target_os = "dragonfly"))]
++              target_os = "dragonfly",
++              target_os = "openbsd"))]
+     mod imp {
+         pub fn WIFEXITED(status: i32) -> bool { (status & 0x7f) == 0 }
+         pub fn WEXITSTATUS(status: i32) -> i32 { status >> 8 }

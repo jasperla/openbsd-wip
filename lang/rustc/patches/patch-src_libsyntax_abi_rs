@@ -1,0 +1,21 @@
+$OpenBSD$
+--- src/libsyntax/abi.rs.orig	Wed Jan 21 14:17:40 2015
++++ src/libsyntax/abi.rs	Wed Jan 21 14:26:41 2015
+@@ -24,6 +24,7 @@ pub enum Os {
+     OsFreebsd,
+     OsiOS,
+     OsDragonfly,
++    OsOpenbsd,
+ }
+ 
+ #[derive(PartialEq, Eq, Hash, RustcEncodable, RustcDecodable, Clone, Copy)]
+@@ -146,7 +147,8 @@ impl fmt::String for Os {
+             OsiOS => "ios".fmt(f),
+             OsAndroid => "android".fmt(f),
+             OsFreebsd => "freebsd".fmt(f),
+-            OsDragonfly => "dragonfly".fmt(f)
++            OsDragonfly => "dragonfly".fmt(f),
++            OsOpenbsd => "openbsd".fmt(f),
+         }
+     }
+ }

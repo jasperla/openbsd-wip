@@ -1,0 +1,11 @@
+$OpenBSD$
+--- src/test/run-pass/out-of-stack-new-thread-no-split.rs.orig	Wed Jan 21 08:42:33 2015
++++ src/test/run-pass/out-of-stack-new-thread-no-split.rs	Wed Jan 21 08:39:23 2015
+@@ -12,6 +12,7 @@
+ //ignore-freebsd
+ //ignore-ios
+ //ignore-dragonfly
++//ignore-openbsd
+ 
+ #![feature(asm)]
+ 

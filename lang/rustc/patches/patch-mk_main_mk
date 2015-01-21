@@ -1,0 +1,12 @@
+$OpenBSD$
+--- mk/main.mk.orig	Wed Jan 21 14:18:11 2015
++++ mk/main.mk	Wed Jan 21 14:26:41 2015
+@@ -410,7 +410,7 @@ CFG_VALGRIND_COMPILE$(1) = $$(CFG_VALGRIND_COMPILE)
+ endif
+ 
+ # Add RUSTFLAGS_STAGEN values to the build command
+-EXTRAFLAGS_STAGE$(1) = $$(RUSTFLAGS_STAGE$(1))
++EXTRAFLAGS_STAGE$(1) = --sysroot $$(HROOT$(1)_H_$(3)) $$(RUSTFLAGS_STAGE$(1)) 
+ 
+ CFGFLAG$(1)_T_$(2)_H_$(3) = stage$(1)
+ 

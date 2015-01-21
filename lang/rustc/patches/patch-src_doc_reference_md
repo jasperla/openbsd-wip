@@ -1,0 +1,13 @@
+$OpenBSD$
+--- src/doc/reference.md.orig	Wed Jan 21 14:18:11 2015
++++ src/doc/reference.md	Wed Jan 21 14:26:41 2015
+@@ -2177,7 +2177,8 @@ The following configurations must be defined by the im
+   `"unix"` or `"windows"`. The value of this configuration option is defined
+   as a configuration itself, like `unix` or `windows`.
+ * `target_os = "..."`. Operating system of the target, examples include
+-  `"win32"`, `"macos"`, `"linux"`, `"android"`, `"freebsd"` or `"dragonfly"`.
++  `"win32"`, `"macos"`, `"linux"`, `"android"`, `"freebsd"`, `"dragonfly"` or
++  `"openbsd"`.
+ * `target_word_size = "..."`. Target word size in bits. This is set to `"32"`
+   for targets with 32-bit pointers, and likewise set to `"64"` for 64-bit
+   pointers.

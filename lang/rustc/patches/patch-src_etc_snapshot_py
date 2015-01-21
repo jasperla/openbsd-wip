@@ -1,0 +1,20 @@
+$OpenBSD$
+--- src/etc/snapshot.py.orig	Wed Jan 21 08:42:33 2015
++++ src/etc/snapshot.py	Wed Jan 21 08:39:23 2015
+@@ -38,6 +38,7 @@ snapshot_files = {
+     "winnt": ["bin/rustc.exe"],
+     "freebsd": ["bin/rustc"],
+     "dragonfly": ["bin/rustc"],
++    "openbsd": ["bin/rustc"],
+     }
+ 
+ winnt_runtime_deps_32 = ["libgcc_s_dw2-1.dll",
+@@ -89,6 +90,8 @@ def get_kernel(triple):
+         return "freebsd"
+     if os_name == "dragonfly":
+         return "dragonfly"
++    if os_name == "openbsd":
++        return "openbsd"
+     return "linux"
+ 
+ def get_cpu(triple):

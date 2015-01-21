@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/etc/local_stage0.sh.orig	Wed Jan 21 08:42:33 2015
++++ src/etc/local_stage0.sh	Wed Jan 21 08:39:23 2015
+@@ -18,7 +18,7 @@ LIB_PREFIX=lib
+ 
+ OS=`uname -s`
+ case $OS in
+-    ("Linux"|"FreeBSD"|"DragonFly")
++    ("Linux"|"FreeBSD"|"DragonFly"|"OpenBSD")
+     BIN_SUF=
+     LIB_SUF=.so
+     break

@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/libbacktrace/configure.orig	Wed Jan 21 08:42:33 2015
++++ src/libbacktrace/configure	Wed Jan 21 08:39:23 2015
+@@ -9332,7 +9332,7 @@ if test -z "$aix_libpath"; then aix_libpath="/usr/lib:
+       ;;
+ 
+     # FreeBSD 3 and greater uses gcc -shared to do shared libraries.
+-    freebsd* | dragonfly*)
++    freebsd* | dragonfly* | openbsd*)
+       archive_cmds='$CC -shared -o $lib $libobjs $deplibs $compiler_flags'
+       hardcode_libdir_flag_spec='-R$libdir'
+       hardcode_direct=yes

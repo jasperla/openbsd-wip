@@ -1,0 +1,13 @@
+$OpenBSD$
+--- src/test/run-pass/rec-align-u64.rs.orig	Wed Jan 21 08:42:33 2015
++++ src/test/run-pass/rec-align-u64.rs	Wed Jan 21 08:39:23 2015
+@@ -39,7 +39,8 @@ struct Outer {
+ #[cfg(any(target_os = "linux",
+           target_os = "macos",
+           target_os = "freebsd",
+-          target_os = "dragonfly"))]
++          target_os = "dragonfly",
++          target_os = "openbsd"))]
+ mod m {
+     #[cfg(target_arch = "x86")]
+     pub mod m {

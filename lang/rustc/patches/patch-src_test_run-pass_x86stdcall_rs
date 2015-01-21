@@ -1,0 +1,10 @@
+$OpenBSD$
+--- src/test/run-pass/x86stdcall.rs.orig	Wed Jan 21 08:42:33 2015
++++ src/test/run-pass/x86stdcall.rs	Wed Jan 21 08:39:23 2015
+@@ -34,5 +34,6 @@ pub fn main() {
+           target_os = "linux",
+           target_os = "freebsd",
+           target_os = "dragonfly",
++          target_os = "openbsd",
+           target_os = "android"))]
+ pub fn main() { }

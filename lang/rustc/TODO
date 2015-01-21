@@ -1,0 +1,34 @@
+Packaging
+---------
+- bootstrap: need to have a really static bootstrapper
+- check if -Wl,--as-needed is ok (has been removed at initial bootstrapping from linux)
+	https://github.com/semarie/rust/commit/03cf086c07824e2cb1244dda98ef64cb8de983af
+
+- python module
+   lib/rustlib/etc/gdb_load_rust_pretty_printers.py
+   lib/rustlib/etc/gdb_rust_pretty_printing.py
+
+- manpage path under ${PREFIX}/man/
+
+- install
+  - move lib to lib/rustc ?
+  - keep extrafilename ? (libs are like lib/libarena-4e7c5e5c.so)
+  - provide a rustc shell script as wrapper
+    it is need due to us poor load_self implementation (realpath(argv[0])).
+    rustc normally use it for infer the default sysroot.
+    but when started from PATH, argv[0] = "rustc", so no sysroot, so panic.
+
+- clean ${BUILDDIR}/config.mk for not needed program ? (git, curl, ...)
+
+- see any others TODO in Makefile
+
+
+Bugs
+----
+- provide a complete load_self function (src/libstd/sys/unix/os.rs)
+  - need for backtrace support (read the symbols from executable file)
+  - need for rustc --sysroot default value (infer rustlib from rustc location)
+
+- stack-overflow not detected
+  see tests/run-pass/out-of-stack.rs
+

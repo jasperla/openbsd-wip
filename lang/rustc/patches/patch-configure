@@ -1,0 +1,14 @@
+$OpenBSD$
+--- configure.orig	Wed Jan 21 08:42:33 2015
++++ configure	Wed Jan 21 08:39:23 2015
+@@ -373,6 +373,10 @@ case $CFG_OSTYPE in
+         CFG_OSTYPE=unknown-dragonfly
+         ;;
+ 
++    OpenBSD)
++	CFG_OSTYPE=unknown-openbsd
++       ;;
++
+     Darwin)
+         CFG_OSTYPE=apple-darwin
+         ;;

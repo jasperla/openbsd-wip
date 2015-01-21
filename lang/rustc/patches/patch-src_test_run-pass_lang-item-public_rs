@@ -1,0 +1,14 @@
+$OpenBSD$
+--- src/test/run-pass/lang-item-public.rs.orig	Wed Jan 21 08:42:33 2015
++++ src/test/run-pass/lang-item-public.rs	Wed Jan 21 08:39:23 2015
+@@ -37,6 +37,10 @@ extern {}
+ #[link(name = "c")]
+ extern {}
+ 
++#[cfg(target_os = "openbsd")]
++#[link(name = "c")]
++extern {}
++
+ #[cfg(target_os = "macos")]
+ #[link(name = "System")]
+ extern {}

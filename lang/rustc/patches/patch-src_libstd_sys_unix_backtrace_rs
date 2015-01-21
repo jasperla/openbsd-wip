@@ -1,0 +1,13 @@
+$OpenBSD$
+--- src/libstd/sys/unix/backtrace.rs.orig	Wed Jan 21 08:42:33 2015
++++ src/libstd/sys/unix/backtrace.rs	Wed Jan 21 08:39:23 2015
+@@ -318,7 +318,8 @@ fn print(w: &mut Writer, idx: int, addr: *mut libc::c_
+         static mut LAST_FILENAME: [libc::c_char; 256] = [0; 256];
+         if !STATE.is_null() { return STATE }
+         let selfname = if cfg!(target_os = "freebsd") ||
+-                          cfg!(target_os = "dragonfly") {
++                          cfg!(target_os = "dragonfly") ||
++                          cfg!(target_os = "openbsd") {
+             os::self_exe_name()
+         } else {
+             None
