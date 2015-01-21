@@ -1,7 +1,57 @@
 $OpenBSD$
 --- iwyu_include_picker.cc.orig	Wed Jan 22 04:17:20 2014
-+++ iwyu_include_picker.cc	Thu Sep  4 20:40:02 2014
-@@ -215,7 +215,7 @@ const IncludeMapEntry libstdcpp_symbol_map[] = {
++++ iwyu_include_picker.cc	Thu Sep  4 22:07:05 2014
+@@ -100,8 +100,6 @@ const IncludeMapEntry libc_symbol_map[] = {
+   { "gid_t", kPrivate, "<unistd.h>", kPublic },
+   { "id_t", kPrivate, "<sys/types.h>", kPublic },
+   { "id_t", kPrivate, "<sys/resource.h>", kPublic },
+-  { "ino64_t", kPrivate, "<sys/types.h>", kPublic },
+-  { "ino64_t", kPrivate, "<dirent.h>", kPublic },
+   { "ino_t", kPrivate, "<sys/types.h>", kPublic },
+   { "ino_t", kPrivate, "<dirent.h>", kPublic },
+   { "ino_t", kPrivate, "<sys/stat.h>", kPublic },
+@@ -117,8 +115,6 @@ const IncludeMapEntry libc_symbol_map[] = {
+   { "mode_t", kPrivate, "<sys/mman.h>", kPublic },
+   { "nlink_t", kPrivate, "<sys/types.h>", kPublic },
+   { "nlink_t", kPrivate, "<sys/stat.h>", kPublic },
+-  { "off64_t", kPrivate, "<sys/types.h>", kPublic },
+-  { "off64_t", kPrivate, "<unistd.h>", kPublic },
+   { "off_t", kPrivate, "<sys/types.h>", kPublic },
+   { "off_t", kPrivate, "<unistd.h>", kPublic },
+   { "off_t", kPrivate, "<sys/stat.h>", kPublic },
+@@ -132,11 +128,8 @@ const IncludeMapEntry libc_symbol_map[] = {
+   { "pid_t", kPrivate, "<time.h>", kPublic },
+   { "pid_t", kPrivate, "<utmpx.h>", kPublic },
+   { "sigset_t", kPrivate, "<signal.h>", kPublic },
+-  { "sigset_t", kPrivate, "<sys/epoll.h>", kPublic },
+   { "sigset_t", kPrivate, "<sys/select.h>", kPublic },
+-  { "socklen_t", kPrivate, "<bits/socket.h>", kPrivate },
+-  { "socklen_t", kPrivate, "<unistd.h>", kPublic },
+-  { "socklen_t", kPrivate, "<arpa/inet.h>", kPublic },
++  { "socklen_t", kPrivate, "<sys/socket.h>", kPublic },
+   { "ssize_t", kPrivate, "<sys/types.h>", kPublic },
+   { "ssize_t", kPrivate, "<unistd.h>", kPublic },
+   { "ssize_t", kPrivate, "<monetary.h>", kPublic },
+@@ -157,6 +150,7 @@ const IncludeMapEntry libc_symbol_map[] = {
+   { "useconds_t", kPrivate, "<unistd.h>", kPublic },
+   // glob.h seems to define size_t if necessary, but it should come from stddef.
+   { "size_t", kPrivate, "<stddef.h>", kPublic },
++  { "size_t", kPrivate, "<sys/types.h>", kPublic },
+   // Macros that can be defined in more than one file, don't have the
+   // same __foo_defined guard that other types do, so the grep above
+   // doesn't discover them.  Until I figure out a better way, I just
+@@ -170,6 +164,10 @@ const IncludeMapEntry libc_symbol_map[] = {
+   { "calloc", kPrivate, "<stdlib.h>", kPublic },
+   { "realloc", kPrivate, "<stdlib.h>", kPublic },
+   { "free", kPrivate, "<stdlib.h>", kPublic },
++  { "htonl", kPrivate, "<arpa/inet.h>", kPublic },
++  { "htons", kPrivate, "<arpa/inet.h>", kPublic },
++  { "ntohl", kPrivate, "<arpa/inet.h>", kPublic },
++  { "ntohs", kPrivate, "<arpa/inet.h>", kPublic },
+   // Entries for NULL
+   { "NULL", kPrivate, "<stddef.h>", kPublic },  // 'canonical' location for NULL
+   { "NULL", kPrivate, "<clocale>", kPublic },
+@@ -215,7 +213,7 @@ const IncludeMapEntry libstdcpp_symbol_map[] = {
  };
  
  // Private -> public include mappings for GNU libc
@@ -10,7 +60,7 @@ $OpenBSD$
    // ( cd /usr/include && grep '^ *# *include' {sys/,net/,}* | perl -nle 'm/^([^:]+).*<([^>]+)>/ && print qq@    { "<$2>", kPrivate, "<$1>", kPublic },@' | grep bits/ | sort )
    // When I saw more than one mapping for these, I typically picked
    // what I thought was the "best" one.
-@@ -393,6 +393,66 @@ const IncludeMapEntry libc_include_map[] = {
+@@ -393,6 +391,67 @@ const IncludeMapEntry libc_include_map[] = {
    // assert.h with cassert, you'd change it to a public->private
    // mapping.)  Here is how I identified the files to map:
    // $ for i in /usr/include/c++/4.4/c* ; do ls /usr/include/`basename $i | cut -b2-`.h /usr/lib/gcc/*/4.4/include/`basename $i | cut -b2-`.h 2>/dev/null ; done
@@ -56,6 +106,7 @@ $OpenBSD$
 +  { "<machine/stdarg.h>", kPrivate, "<sys/stdarg.h>", kPrivate },
 +  { "<machine/stdint.h>", kPrivate, "<sys/stdint.h>", kPrivate },
 +  { "<machine/varargs.h>", kPrivate, "<sys/varags.h>", kPrivate },
++  { "<netinet6/in6.h>", kPrivate, "<netinet/in.h>", kPublic },
 +  { "<sys/_endian.h>", kPrivate, "<sys/endian.h>", kPrivate },
 +  { "<sys/_time.h>", kPrivate, "<time.h>", kPublic },
 +  { "<sys/_types.h>", kPrivate, "<sys/types.h>", kPublic },

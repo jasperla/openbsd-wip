@@ -4,6 +4,7 @@ COMMENT=	tool to analyse #includes in C and C++ source files
 CATEGORIES=	devel
 DISTNAME=	include-what-you-use-3.4.src
 PKGNAME=	include-what-you-use-3.4
+REVISION=	0
 HOMEPAGE=	https://code.google.com/p/include-what-you-use/
 MASTER_SITES=	http://include-what-you-use.com/downloads/
 WRKDIST=	${WRKDIR}/include-what-you-use
