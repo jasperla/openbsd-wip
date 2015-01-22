@@ -16,6 +16,9 @@ BOOTSTRAP_V =		${V}
 SOURCE_V =		1.0.0-dev
 DISTNAME =		rustc-${V}
 
+# PKGNAME without commit-id
+PKGNAME =		${DISTNAME:C/\.[^.]*$//}
+
 BOOTSTRAP-amd64 =	rust-stage0-${BOOTSTRAP_V}-openbsd-${MACHINE_ARCH}.tar.gz
 
 # TODO: complete this
