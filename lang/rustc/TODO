@@ -31,4 +31,6 @@ Bugs
 
 - stack-overflow not detected
   see tests/run-pass/out-of-stack.rs
+  IRC: eddyb: (guard page) it's not platform dependent, and it's in something called by whatever #[lang="start"] is now
+              it may be std::rt now
 

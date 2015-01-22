@@ -74,12 +74,10 @@ lib/rustlib/x86_64-unknown-openbsd/lib/libterm-4e7c5e5c.so
 lib/rustlib/x86_64-unknown-openbsd/lib/libtest-4e7c5e5c.rlib
 lib/rustlib/x86_64-unknown-openbsd/lib/libtest-4e7c5e5c.so
 lib/rustlib/x86_64-unknown-openbsd/lib/libunicode-4e7c5e5c.rlib
+@man man/man1/rustc.1
+@man man/man1/rustdoc.1
 share/doc/rust/
 share/doc/rust/COPYRIGHT
 share/doc/rust/LICENSE-APACHE
 share/doc/rust/LICENSE-MIT
 share/doc/rust/README.md
-share/man/
-share/man/man1/
-@man share/man/man1/rustc.1
-@man share/man/man1/rustdoc.1

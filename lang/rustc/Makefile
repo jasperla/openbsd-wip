@@ -90,8 +90,8 @@ CONFIGURE_ARGS +=	--disable-valgrind-rpass \
 			--disable-jemalloc \
 			--enable-local-rust \
 			--local-rust-root="${WRKDIR}/rust-stage0" \
-			--prefix="${LOCALBASE}"
-# TODO: manpath
+			--prefix="${LOCALBASE}" \
+			--mandir="${LOCALBASE}/man"
 
 # need for libbacktrace
 USE_LIBTOOL =		gnu
