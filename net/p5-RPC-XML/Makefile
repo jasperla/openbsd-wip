@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:35:54 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2014/12/10 14:36:20 benoit Exp $
 
 COMMENT=	perl implementation of XML-RPC
 
 MODULES=	cpan
 DISTNAME=	RPC-XML-0.77
 CATEGORIES=	net devel
-
-MAINTAINER=	Sean Comeau <scomeau@obscurity.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
