@@ -12,7 +12,7 @@ COMMENT =		compiler for Rust Language
 # TODO: should be changed when 1.0.0-stable will be issue
 #       (see post-extract target too)
 V =			0.0.0.20150115.9ade482
-BOOTSTRAP_V =		0.0.0.20150107.9e4e524-linux
+BOOTSTRAP_V =		${V}
 SOURCE_V =		1.0.0-dev
 DISTNAME =		rustc-${V}
 
@@ -117,13 +117,17 @@ post-extract:
 		chmod +x ${WRKDIR}/rust-stage0/bin/rustc; fi
 	mv ${WRKDIR}/rustc-${SOURCE_V} ${WRKDIR}/rustc-${V}
 
+# When rebuilding a rustc version with a bootstrap of same version
+# we should skip stage0 flags, and use stage1, because stage0 contains
+# tricks for previous snapshots.
+.if "${V}" == "${BOOTSTRAP_V}"
+post-patch:
+	perl -pi -e 's|^ifneq \(\$$\(strip .\(CFG_BUILD\)\),.\(strip .\(3\)\)\)|ifeq (1,1)|' \
+		${WRKSRC}/mk/main.mk
+.endif
 
 # Create a bootstrapper.
 # The archive in ${WRKDIR}/bootstrap should be suitable for bootstrapping.
-# NOTE: you *must* test rebuilding with any new bootstrap: stage0
-# 	contains tricks for previous version compiler to build a stage1.
-# 	So a bootstrap is only able to build a *specific* version from
-# 	stage0 to stage3 !
 # NOTE: currently, the rustc.bin is *dynamically linked*
 #       so, include needed system libraries.
 #	a wrapper will be create at post-extract, if need
