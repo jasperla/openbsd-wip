@@ -1,0 +1,18 @@
+$OpenBSD$
+
+Continue script even if git rev-parse fails.
+
+PULL REQUEST:
+https://github.com/github/hub/pull/778
+
+--- script/version.orig	Thu Jan 22 13:53:29 2015
++++ script/version	Thu Jan 22 13:53:41 2015
+@@ -6,7 +6,7 @@ version="$(git describe --tags HEAD 2>/dev/null || tru
+ 
+ if [ -z "$version" ]; then
+   version="$(grep Version commands/version.go | head -1 | cut -d '"' -f2)"
+-  sha="$(git rev-parse --short HEAD 2>/dev/null)"
++  sha="$(git rev-parse --short HEAD 2>/dev/null || true)"
+   [ -z "$sha" ] || version="${version}-g${sha}"
+ fi
+ 
