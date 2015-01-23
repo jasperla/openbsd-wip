@@ -38,8 +38,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB +=		c m pthread
 
 #MASTER_SITES =		https://static.rust-lang.org/dist/
-MASTER_SITES =		http://rhaalovely.net/stuff/
-MASTER_SITES0 =		http://rhaalovely.net/stuff/
+MASTER_SITES =		http://semarie.free.fr/rust/
+MASTER_SITES0 =		http://semarie.free.fr/rust/
 #MASTER_SITES =		http://localhost/~semarie/rust/
 #MASTER_SITES0 =		http://localhost/~semarie/rust/
 
