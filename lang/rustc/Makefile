@@ -110,12 +110,6 @@ CONFIGURE_ARGS +=	--llvm-root="${LOCAL_LLVM_FOR_RUST}"
 
 TEST_TARGET =		check
 
-# Check datasize limit before configuring (and building)
-pre-configure:
-	@if [ `ulimit -d` -lt 1572864 ]; then \
-		echo datasize limit is too low - amd64 build takes approx 1.5GB; \
-		exit 1; fi
-
 # Create a wrapper for bootstrap (if needed)
 post-extract:
 	if [ ! -x ${WRKDIR}/rust-stage0/bin/rustc ] ; then \
@@ -132,6 +126,12 @@ post-patch:
 	perl -pi -e 's|^ifneq \(\$$\(strip .\(CFG_BUILD\)\),.\(strip .\(3\)\)\)|ifeq (1,1)|' \
 		${WRKSRC}/mk/main.mk
 .endif
+
+# Check datasize limit before configuring (and building)
+pre-configure:
+	@if [ `ulimit -d` -lt 1572864 ]; then \
+		echo datasize limit is too low - amd64 build takes approx 1.5GB; \
+		exit 1; fi
 
 # Create a bootstrapper.
 # The archive in ${WRKDIR}/bootstrap should be suitable for bootstrapping.
