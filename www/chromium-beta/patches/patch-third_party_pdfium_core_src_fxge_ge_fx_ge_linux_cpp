@@ -1,7 +1,7 @@
 $OpenBSD: patch-third_party_pdfium_core_src_fxge_ge_fx_ge_linux_cpp,v 1.1 2014/09/11 19:04:52 robert Exp $
---- third_party/pdfium/core/src/fxge/ge/fx_ge_linux.cpp.orig.port	Thu Sep 11 10:35:19 2014
-+++ third_party/pdfium/core/src/fxge/ge/fx_ge_linux.cpp	Thu Sep 11 10:37:11 2014
-@@ -239,9 +239,9 @@ IFX_SystemFontInfo* IFX_SystemFontInfo::CreateDefault(
+--- third_party/pdfium/core/src/fxge/ge/fx_ge_linux.cpp.orig.port	Wed Dec 17 07:05:48 2014
++++ third_party/pdfium/core/src/fxge/ge/fx_ge_linux.cpp	Sat Dec 27 15:34:12 2014
+@@ -214,9 +214,9 @@ IFX_SystemFontInfo* IFX_SystemFontInfo::CreateDefault(
      }
      if (!pInfo->ParseFontCfg()) {
          pInfo->AddPath("/usr/share/fonts");

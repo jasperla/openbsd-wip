@@ -1,7 +1,7 @@
 $OpenBSD: patch-chrome_chrome_browser_extensions_gypi,v 1.15 2014/11/19 21:27:32 robert Exp $
---- chrome/chrome_browser_extensions.gypi.orig.port	Wed Dec  3 03:32:11 2014
-+++ chrome/chrome_browser_extensions.gypi	Sat Dec  6 11:34:26 2014
-@@ -964,6 +964,11 @@
+--- chrome/chrome_browser_extensions.gypi.orig.port	Tue Jan  6 01:17:30 2015
++++ chrome/chrome_browser_extensions.gypi	Wed Jan  7 21:41:25 2015
+@@ -971,6 +971,11 @@
          '<@(chrome_browser_extensions_enabled_sources)',
        ],
        'conditions': [
@@ -11,9 +11,9 @@ $OpenBSD: patch-chrome_chrome_browser_extensions_gypi,v 1.15 2014/11/19 21:27:32
 +          ],
 +        }],
          ['chromeos==1', {
-           'conditions': [
-             ['use_x11==1', {
-@@ -1008,7 +1013,7 @@
+           'include_dirs': [
+             '../third_party/libjingle/source',
+@@ -1009,7 +1014,7 @@
          }, {
            'sources': ['<@(chrome_browser_extensions_non_athena_sources)'],
          }],

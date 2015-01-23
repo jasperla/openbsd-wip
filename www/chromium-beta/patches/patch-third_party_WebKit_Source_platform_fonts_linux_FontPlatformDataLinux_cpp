@@ -1,7 +1,7 @@
 $OpenBSD$
---- third_party/WebKit/Source/platform/fonts/linux/FontPlatformDataLinux.cpp.orig.port	Sun Dec  7 21:53:07 2014
-+++ third_party/WebKit/Source/platform/fonts/linux/FontPlatformDataLinux.cpp	Sun Dec  7 21:53:47 2014
-@@ -102,7 +102,7 @@ void FontPlatformData::setupPaint(SkPaint* paint, Grap
+--- third_party/WebKit/Source/platform/fonts/linux/FontPlatformDataLinux.cpp.orig.port	Wed Dec 17 07:24:24 2014
++++ third_party/WebKit/Source/platform/fonts/linux/FontPlatformDataLinux.cpp	Sat Dec 27 15:34:12 2014
+@@ -101,7 +101,7 @@ void FontPlatformData::setupPaint(SkPaint* paint, Grap
  void FontPlatformData::querySystemForRenderStyle(bool useSkiaSubpixelPositioning)
  {
      WebFontRenderStyle style;

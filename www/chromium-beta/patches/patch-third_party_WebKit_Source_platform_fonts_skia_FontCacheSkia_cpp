@@ -1,6 +1,6 @@
 $OpenBSD$
---- third_party/WebKit/Source/platform/fonts/skia/FontCacheSkia.cpp.orig.port	Thu Dec 18 10:59:05 2014
-+++ third_party/WebKit/Source/platform/fonts/skia/FontCacheSkia.cpp	Sun Dec 21 22:34:27 2014
+--- third_party/WebKit/Source/platform/fonts/skia/FontCacheSkia.cpp.orig.port	Tue Jan  6 02:03:28 2015
++++ third_party/WebKit/Source/platform/fonts/skia/FontCacheSkia.cpp	Wed Jan  7 21:41:25 2015
 @@ -30,7 +30,7 @@
  
  #include "config.h"
@@ -32,7 +32,7 @@ $OpenBSD$
  PassRefPtr<SimpleFontData> FontCache::getLastResortFallbackFont(const FontDescription& description, ShouldRetain shouldRetain)
  {
      const FontFaceCreationParams fallbackCreationParams(getFallbackFontFamily(description));
-@@ -184,7 +187,7 @@ COMPILE_ASSERT(static_cast<int>(FontStretchUltraExpand
+@@ -184,7 +187,7 @@ static_assert(static_cast<int>(FontStretchUltraExpande
  
  PassRefPtr<SkTypeface> FontCache::createTypeface(const FontDescription& fontDescription, const FontFaceCreationParams& creationParams, CString& name)
  {

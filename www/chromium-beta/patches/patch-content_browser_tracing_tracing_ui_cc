@@ -1,7 +1,7 @@
 $OpenBSD: patch-content_browser_tracing_tracing_ui_cc,v 1.2 2014/11/19 21:27:32 robert Exp $
---- content/browser/tracing/tracing_ui.cc.orig.port	Wed Nov 19 06:13:09 2014
-+++ content/browser/tracing/tracing_ui.cc	Wed Nov 19 08:38:26 2014
-@@ -330,6 +330,8 @@ void TracingUI::DoUpload(const base::ListValue* args) 
+--- content/browser/tracing/tracing_ui.cc.orig.port	Wed Dec 17 06:42:55 2014
++++ content/browser/tracing/tracing_ui.cc	Sat Dec 27 15:34:11 2014
+@@ -350,6 +350,8 @@ void TracingUI::DoUpload(const base::ListValue* args) 
    const char product[] = "Chrome_Android";
  #elif defined(OS_CHROMEOS)
    const char product[] = "Chrome_ChromeOS";

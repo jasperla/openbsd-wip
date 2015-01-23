@@ -1,7 +1,7 @@
 $OpenBSD$
---- chrome/browser/chrome_content_browser_client.h.orig.port	Thu Dec 18 10:40:59 2014
-+++ chrome/browser/chrome_content_browser_client.h	Sun Dec 21 15:30:57 2014
-@@ -262,7 +262,7 @@ class ChromeContentBrowserClient : public content::Con
+--- chrome/browser/chrome_content_browser_client.h.orig.port	Wed Dec 17 06:42:51 2014
++++ chrome/browser/chrome_content_browser_client.h	Sat Dec 27 15:34:11 2014
+@@ -258,7 +258,7 @@ class ChromeContentBrowserClient : public content::Con
    net::CookieStore* OverrideCookieStoreForRenderProcess(
        int render_process_id) override;
  

@@ -1,7 +1,7 @@
 $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.32 2014/11/19 21:27:32 robert Exp $
---- chrome/chrome_browser.gypi.orig.port	Wed Dec  3 03:32:11 2014
-+++ chrome/chrome_browser.gypi	Sat Dec  6 11:34:26 2014
-@@ -3174,7 +3174,7 @@
+--- chrome/chrome_browser.gypi.orig.port	Wed Jan 14 03:22:55 2015
++++ chrome/chrome_browser.gypi	Thu Jan 15 22:53:27 2015
+@@ -3246,7 +3246,7 @@
              '../device/media_transfer_protocol/media_transfer_protocol.gyp:device_media_transfer_protocol',
            ],
          }],
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.32 2014/11/19 21:27:32 robert Exp
            'dependencies': [
              '../build/linux/system.gyp:libspeechd',
            ],
-@@ -3231,7 +3231,7 @@
+@@ -3303,7 +3303,7 @@
              }],
            ],
          }],
@@ -19,9 +19,9 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.32 2014/11/19 21:27:32 robert Exp
            'sources': [
              'app/chrome_crash_reporter_client.cc',
              'app/chrome_crash_reporter_client.h',
-@@ -3322,6 +3322,13 @@
-         }, {  # Non-Android.
-           'sources': [ '<@(chrome_browser_non_android_sources)' ],
+@@ -3392,6 +3392,13 @@
+           ],
+           'sources': [ '<@(chrome_browser_android_sources)' ],
          }],
 +        ['os_bsd==1', {
 +          'sources/': [
@@ -33,7 +33,7 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.32 2014/11/19 21:27:32 robert Exp
          ['OS=="mac"', {
            'dependencies': [
              '../third_party/google_toolbox_for_mac/google_toolbox_for_mac.gyp:google_toolbox_for_mac',
-@@ -3404,7 +3411,7 @@
+@@ -3475,7 +3482,7 @@
              }],
            ],
          }],

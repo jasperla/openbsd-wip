@@ -1,8 +1,8 @@
 $OpenBSD$
---- skia/skia_chrome.gypi.orig.port	Sat Dec  6 11:49:01 2014
-+++ skia/skia_chrome.gypi	Sat Dec  6 11:49:25 2014
-@@ -87,6 +87,11 @@
-     'ext/vector_platform_device_skia.h',
+--- skia/skia_chrome.gypi.orig.port	Wed Dec 17 06:42:58 2014
++++ skia/skia_chrome.gypi	Sat Dec 27 15:34:12 2014
+@@ -82,6 +82,11 @@
+     'ext/vector_platform_device_emf_win.h',
    ],
    'conditions': [
 +    [ 'use_cairo == 1', {

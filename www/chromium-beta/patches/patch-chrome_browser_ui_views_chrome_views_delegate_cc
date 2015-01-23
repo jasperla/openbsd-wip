@@ -1,6 +1,6 @@
 $OpenBSD: patch-chrome_browser_ui_views_chrome_views_delegate_cc,v 1.4 2014/11/19 21:27:32 robert Exp $
---- chrome/browser/ui/views/chrome_views_delegate.cc.orig.port	Wed Dec  3 03:32:11 2014
-+++ chrome/browser/ui/views/chrome_views_delegate.cc	Sat Dec  6 11:34:25 2014
+--- chrome/browser/ui/views/chrome_views_delegate.cc.orig.port	Wed Dec 17 06:42:52 2014
++++ chrome/browser/ui/views/chrome_views_delegate.cc	Sat Dec 27 15:34:11 2014
 @@ -44,7 +44,7 @@
  #include "ui/views/widget/native_widget_aura.h"
  #endif
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_ui_views_chrome_views_delegate_cc,v 1.4 2014/11/1
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
  
-@@ -234,7 +234,7 @@ bool ChromeViewsDelegate::IsWindowInMetro(gfx::NativeW
+@@ -238,7 +238,7 @@ bool ChromeViewsDelegate::IsWindowInMetro(gfx::NativeW
    return chrome::IsNativeViewInAsh(window);
  }
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_ui_views_chrome_views_delegate_cc,v 1.4 2014/11/1
  gfx::ImageSkia* ChromeViewsDelegate::GetDefaultWindowIcon() const {
    ui::ResourceBundle& rb = ui::ResourceBundle::GetSharedInstance();
    return rb.GetImageSkiaNamed(IDR_PRODUCT_LOGO_64);
-@@ -373,7 +373,7 @@ void ChromeViewsDelegate::OnBeforeWidgetInit(
+@@ -377,7 +377,7 @@ void ChromeViewsDelegate::OnBeforeWidgetInit(
  #endif
  }
  

@@ -1,7 +1,7 @@
 $OpenBSD$
---- third_party/WebKit/Source/platform/heap/ThreadState.h.orig.port	Fri Dec 26 18:07:56 2014
-+++ third_party/WebKit/Source/platform/heap/ThreadState.h	Fri Dec 26 18:08:03 2014
-@@ -417,7 +417,7 @@ class PLATFORM_EXPORT ThreadState { (public)
+--- third_party/WebKit/Source/platform/heap/ThreadState.h.orig.port	Wed Jan 14 03:41:33 2015
++++ third_party/WebKit/Source/platform/heap/ThreadState.h	Thu Jan 15 22:53:27 2015
+@@ -280,7 +280,7 @@ class PLATFORM_EXPORT ThreadState { (public)
  
      static ThreadState* current()
      {
