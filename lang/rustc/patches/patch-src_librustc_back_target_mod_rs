@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/librustc_back/target/mod.rs.orig	Wed Jan 21 14:18:01 2015
-+++ src/librustc_back/target/mod.rs	Wed Jan 21 14:26:41 2015
++++ src/librustc_back/target/mod.rs	Fri Jan 23 06:43:31 2015
 @@ -56,6 +56,7 @@ mod apple_base;
  mod apple_ios_base;
  mod freebsd_base;

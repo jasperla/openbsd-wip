@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/test/run-pass/x86stdcall.rs.orig	Wed Jan 21 08:42:33 2015
-+++ src/test/run-pass/x86stdcall.rs	Wed Jan 21 08:39:23 2015
+--- src/test/run-pass/x86stdcall.rs.orig	Wed Jan 21 14:16:32 2015
++++ src/test/run-pass/x86stdcall.rs	Fri Jan 23 06:43:31 2015
 @@ -34,5 +34,6 @@ pub fn main() {
            target_os = "linux",
            target_os = "freebsd",

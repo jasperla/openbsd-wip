@@ -1,0 +1,95 @@
+From f9abf7b9bb8ceacc80b5d101a46e451f3943f0af Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?S=C3=A9bastien=20Marie?= <semarie@users.noreply.github.com>
+Date: Mon, 19 Jan 2015 16:09:27 +0100
+Subject: [PATCH 20/22] openbsd: simple implementation of load_self
+
+---
+ src/libstd/sys/unix/os.rs | 12 +++++++++++-
+ src/rt/rust_builtin.c     | 48 +++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 59 insertions(+), 1 deletion(-)
+
+diff --git a/src/libstd/sys/unix/os.rs b/src/libstd/sys/unix/os.rs
+index bcf04ab..407f15d 100644
+--- a/src/libstd/sys/unix/os.rs
++++ b/src/libstd/sys/unix/os.rs
+@@ -217,7 +217,17 @@ pub fn load_self() -> Option<Vec<u8>> {
+ 
+ #[cfg(target_os = "openbsd")]
+ pub fn load_self() -> Option<Vec<u8>> {
+-    None // TODO-openbsd need implementation
++    extern {
++        fn __load_self() -> *const c_char;
++    }
++    unsafe {
++        let v = __load_self();
++        if v.is_null() {
++            None
++        } else {
++            Some(ffi::c_str_to_bytes(&v).to_vec())
++        }
++    }
+ }
+ 
+ #[cfg(any(target_os = "linux", target_os = "android"))]
+diff --git a/src/rt/rust_builtin.c b/src/rt/rust_builtin.c
+index c121712..cc4ebbd 100644
+--- a/src/rt/rust_builtin.c
++++ b/src/rt/rust_builtin.c
+@@ -337,6 +337,54 @@ rust_unset_sigprocmask() {
+ int *__dfly_error(void) { return __error(); }
+ #endif
+ 
++#if defined(__OpenBSD__)
++#include <sys/param.h>
++#include <sys/sysctl.h>
++#include <limits.h>
++
++const char * __load_self() {
++    static char *self = NULL;
++
++    if (self == NULL) {
++        int mib[4];
++        char **argv = NULL;
++        size_t argv_len;
++
++        /* initialize mib */
++        mib[0] = CTL_KERN;
++        mib[1] = KERN_PROC_ARGS;
++        mib[2] = getpid();
++        mib[3] = KERN_PROC_ARGV;
++
++        /* request KERN_PROC_ARGV size */
++        argv_len = 0;
++        if (sysctl(mib, 4, NULL, &argv_len, NULL, 0) == -1)
++            return (NULL);
++
++        /* allocate size */
++        if ((argv = malloc(argv_len)) == NULL)
++            return (NULL);
++
++        /* request KERN_PROC_ARGV */
++        if (sysctl(mib, 4, argv, &argv_len, NULL, 0) == -1) {
++            free(argv);
++            return (NULL);
++        }
++
++        /* get realpath if possible */
++        if ((argv[0] != NULL) && (*argv[0] == '.' || *argv[0] == '/'))
++            self = realpath(argv[0], NULL);
++        else
++            self = NULL;
++
++        /* cleanup */
++        free(argv);
++    }
++
++    return (self);
++}
++#endif
++
+ //
+ // Local Variables:
+ // mode: C++
+-- 
+2.2.2
+

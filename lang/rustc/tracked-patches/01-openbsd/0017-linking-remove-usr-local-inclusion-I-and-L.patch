@@ -1,0 +1,41 @@
+From da1eafc9e25525801b52086f9f96e658746cf0fe Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?S=C3=A9bastien=20Marie?= <semarie@users.noreply.github.com>
+Date: Sat, 17 Jan 2015 13:58:44 +0100
+Subject: [PATCH 17/22] linking: remove /usr/local inclusion (-I and -L)
+
+---
+ mk/cfg/x86_64-unknown-openbsd.mk         | 4 ++--
+ src/librustc_back/target/openbsd_base.rs | 2 --
+ 2 files changed, 2 insertions(+), 4 deletions(-)
+
+diff --git a/mk/cfg/x86_64-unknown-openbsd.mk b/mk/cfg/x86_64-unknown-openbsd.mk
+index a3ccdc9..582d75c 100644
+--- a/mk/cfg/x86_64-unknown-openbsd.mk
++++ b/mk/cfg/x86_64-unknown-openbsd.mk
+@@ -7,8 +7,8 @@ CFG_LIB_NAME_x86_64-unknown-openbsd=lib$(1).so
+ CFG_STATIC_LIB_NAME_x86_64-unknown-openbsd=lib$(1).a
+ CFG_LIB_GLOB_x86_64-unknown-openbsd=lib$(1)-*.so
+ CFG_LIB_DSYM_GLOB_x86_64-unknown-openbsd=$(1)-*.dylib.dSYM
+-CFG_JEMALLOC_CFLAGS_x86_64-unknown-openbsd := -m64 -I/usr/include -I/usr/local/include $(CFLAGS)
+-CFG_GCCISH_CFLAGS_x86_64-unknown-openbsd := -Wall -Werror -g -fPIC -m64 -I/usr/include -I/usr/local/include $(CFLAGS)
++CFG_JEMALLOC_CFLAGS_x86_64-unknown-openbsd := -m64 -I/usr/include $(CFLAGS)
++CFG_GCCISH_CFLAGS_x86_64-unknown-openbsd := -Wall -Werror -g -fPIC -m64 -I/usr/include $(CFLAGS)
+ CFG_GCCISH_LINK_FLAGS_x86_64-unknown-openbsd := -shared -fPIC -g -pthread -m64
+ CFG_GCCISH_DEF_FLAG_x86_64-unknown-openbsd := -Wl,--export-dynamic,--dynamic-list=
+ CFG_GCCISH_PRE_LIB_FLAGS_x86_64-unknown-openbsd := -Wl,-whole-archive
+diff --git a/src/librustc_back/target/openbsd_base.rs b/src/librustc_back/target/openbsd_base.rs
+index 920f9b6..452298d 100644
+--- a/src/librustc_back/target/openbsd_base.rs
++++ b/src/librustc_back/target/openbsd_base.rs
+@@ -20,8 +20,6 @@ pub fn opts() -> TargetOptions {
+         linker_is_gnu: true,
+         has_rpath: true,
+         pre_link_args: vec!(
+-            "-L/usr/local/lib".to_string(),
+-            "-L/usr/lib/gcc".to_string(),
+         ),
+         position_independent_executables: true,
+         .. Default::default()
+-- 
+2.2.2
+

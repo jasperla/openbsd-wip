@@ -1,0 +1,25 @@
+From 037e3463a538b338add6f3325a24e1105f053780 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?S=C3=A9bastien=20Marie?= <semarie@users.noreply.github.com>
+Date: Thu, 15 Jan 2015 16:33:28 +0100
+Subject: [PATCH 14/22] liblibc: MAP_STACK isn't defined under openbsd
+
+---
+ src/liblibc/lib.rs | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/liblibc/lib.rs b/src/liblibc/lib.rs
+index efa726a..97a77ea 100644
+--- a/src/liblibc/lib.rs
++++ b/src/liblibc/lib.rs
+@@ -292,7 +292,7 @@ pub use types::os::arch::extra::{sockaddr_ll};
+ #[cfg(any(target_os = "linux", target_os = "android"))]
+ pub use consts::os::extra::{AF_PACKET};
+ 
+-#[cfg(all(unix, not(target_os = "freebsd")))]
++#[cfg(all(unix, not(any(target_os = "freebsd", target_os = "openbsd"))))]
+ pub use consts::os::extra::{MAP_STACK};
+ 
+ #[cfg(any(target_os = "freebsd", target_os = "dragonfly"))]
+-- 
+2.2.2
+

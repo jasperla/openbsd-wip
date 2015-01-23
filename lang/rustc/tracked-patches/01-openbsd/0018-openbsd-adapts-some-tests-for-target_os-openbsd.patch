@@ -1,0 +1,95 @@
+From 00baf375a6a266aa69916a2351f1c4135f1b05f8 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?S=C3=A9bastien=20Marie?= <semarie@users.noreply.github.com>
+Date: Sun, 18 Jan 2015 10:16:03 +0100
+Subject: [PATCH 18/22] openbsd: adapts some tests for target_os="openbsd"
+
+---
+ src/test/run-pass/intrinsic-alignment.rs              | 3 ++-
+ src/test/run-pass/lang-item-public.rs                 | 4 ++++
+ src/test/run-pass/out-of-stack-new-thread-no-split.rs | 1 +
+ src/test/run-pass/out-of-stack-no-split.rs            | 1 +
+ src/test/run-pass/rec-align-u64.rs                    | 3 ++-
+ src/test/run-pass/x86stdcall.rs                       | 1 +
+ 6 files changed, 11 insertions(+), 2 deletions(-)
+
+diff --git a/src/test/run-pass/intrinsic-alignment.rs b/src/test/run-pass/intrinsic-alignment.rs
+index 52fcaf5..8ab8ee3 100644
+--- a/src/test/run-pass/intrinsic-alignment.rs
++++ b/src/test/run-pass/intrinsic-alignment.rs
+@@ -20,7 +20,8 @@ mod rusti {
+ #[cfg(any(target_os = "linux",
+           target_os = "macos",
+           target_os = "freebsd",
+-          target_os = "dragonfly"))]
++          target_os = "dragonfly",
++          target_os = "openbsd"))]
+ mod m {
+     #[main]
+     #[cfg(target_arch = "x86")]
+diff --git a/src/test/run-pass/lang-item-public.rs b/src/test/run-pass/lang-item-public.rs
+index 81774c7..3b84ae0 100644
+--- a/src/test/run-pass/lang-item-public.rs
++++ b/src/test/run-pass/lang-item-public.rs
+@@ -37,6 +37,10 @@ extern {}
+ #[link(name = "c")]
+ extern {}
+ 
++#[cfg(target_os = "openbsd")]
++#[link(name = "c")]
++extern {}
++
+ #[cfg(target_os = "macos")]
+ #[link(name = "System")]
+ extern {}
+diff --git a/src/test/run-pass/out-of-stack-new-thread-no-split.rs b/src/test/run-pass/out-of-stack-new-thread-no-split.rs
+index ce6604d..e08a475 100644
+--- a/src/test/run-pass/out-of-stack-new-thread-no-split.rs
++++ b/src/test/run-pass/out-of-stack-new-thread-no-split.rs
+@@ -12,6 +12,7 @@
+ //ignore-freebsd
+ //ignore-ios
+ //ignore-dragonfly
++//ignore-openbsd
+ 
+ #![feature(asm)]
+ 
+diff --git a/src/test/run-pass/out-of-stack-no-split.rs b/src/test/run-pass/out-of-stack-no-split.rs
+index 7992677..8c32159 100644
+--- a/src/test/run-pass/out-of-stack-no-split.rs
++++ b/src/test/run-pass/out-of-stack-no-split.rs
+@@ -13,6 +13,7 @@
+ //ignore-freebsd
+ //ignore-ios
+ //ignore-dragonfly
++//ignore-openbsd
+ 
+ #![feature(asm)]
+ 
+diff --git a/src/test/run-pass/rec-align-u64.rs b/src/test/run-pass/rec-align-u64.rs
+index 2794154..dfc9a15 100644
+--- a/src/test/run-pass/rec-align-u64.rs
++++ b/src/test/run-pass/rec-align-u64.rs
+@@ -39,7 +39,8 @@ struct Outer {
+ #[cfg(any(target_os = "linux",
+           target_os = "macos",
+           target_os = "freebsd",
+-          target_os = "dragonfly"))]
++          target_os = "dragonfly",
++          target_os = "openbsd"))]
+ mod m {
+     #[cfg(target_arch = "x86")]
+     pub mod m {
+diff --git a/src/test/run-pass/x86stdcall.rs b/src/test/run-pass/x86stdcall.rs
+index 15d1852..63d2fa9 100644
+--- a/src/test/run-pass/x86stdcall.rs
++++ b/src/test/run-pass/x86stdcall.rs
+@@ -34,5 +34,6 @@ pub fn main() {
+           target_os = "linux",
+           target_os = "freebsd",
+           target_os = "dragonfly",
++          target_os = "openbsd",
+           target_os = "android"))]
+ pub fn main() { }
+-- 
+2.2.2
+

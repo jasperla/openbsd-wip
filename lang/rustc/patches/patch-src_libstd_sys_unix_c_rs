@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/libstd/sys/unix/c.rs.orig	Wed Jan 21 14:18:11 2015
-+++ src/libstd/sys/unix/c.rs	Wed Jan 21 14:26:41 2015
++++ src/libstd/sys/unix/c.rs	Fri Jan 23 06:43:31 2015
 @@ -23,7 +23,8 @@ use libc;
  #[cfg(any(target_os = "macos",
            target_os = "ios",

@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/libstd/dynamic_lib.rs.orig	Wed Jan 21 08:42:33 2015
-+++ src/libstd/dynamic_lib.rs	Wed Jan 21 08:39:23 2015
+--- src/libstd/dynamic_lib.rs.orig	Wed Jan 21 14:18:11 2015
++++ src/libstd/dynamic_lib.rs	Fri Jan 23 06:43:31 2015
 @@ -180,7 +180,8 @@ mod test {
      #[cfg(any(target_os = "linux",
                target_os = "macos",

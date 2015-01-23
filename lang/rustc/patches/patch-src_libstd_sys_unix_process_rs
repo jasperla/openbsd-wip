@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/libstd/sys/unix/process.rs.orig	Wed Jan 21 14:18:01 2015
-+++ src/libstd/sys/unix/process.rs	Wed Jan 21 14:26:41 2015
++++ src/libstd/sys/unix/process.rs	Fri Jan 23 06:43:31 2015
 @@ -604,7 +604,8 @@ fn translate_status(status: c_int) -> ProcessExit {
      #[cfg(any(target_os = "macos",
                target_os = "ios",

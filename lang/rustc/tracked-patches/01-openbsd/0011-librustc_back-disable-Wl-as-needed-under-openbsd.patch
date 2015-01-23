@@ -1,0 +1,29 @@
+From 03cf086c07824e2cb1244dda98ef64cb8de983af Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?S=C3=A9bastien=20Marie?= <semarie@users.noreply.github.com>
+Date: Tue, 13 Jan 2015 11:10:11 +0100
+Subject: [PATCH 11/22] librustc_back: disable "-Wl,--as-needed" under openbsd
+
+ld.so seems to crash "lazy binding failed!" in sometime
+---
+ src/librustc_back/target/openbsd_base.rs | 5 -----
+ 1 file changed, 5 deletions(-)
+
+diff --git a/src/librustc_back/target/openbsd_base.rs b/src/librustc_back/target/openbsd_base.rs
+index aecf892..920f9b6 100644
+--- a/src/librustc_back/target/openbsd_base.rs
++++ b/src/librustc_back/target/openbsd_base.rs
+@@ -22,11 +22,6 @@ pub fn opts() -> TargetOptions {
+         pre_link_args: vec!(
+             "-L/usr/local/lib".to_string(),
+             "-L/usr/lib/gcc".to_string(),
+-            // GNU-style linkers will use this to omit linking to libraries
+-            // which don't actually fulfill any relocations, but only for
+-            // libraries which follow this flag.  Thus, use it before
+-            // specifying libraries to link to.
+-            "-Wl,--as-needed".to_string(),
+         ),
+         position_independent_executables: true,
+         .. Default::default()
+-- 
+2.2.2
+

@@ -1,0 +1,40 @@
+From b07dfb56b85667e1191f1c8afe91a6c95f7b8cfc Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?S=C3=A9bastien=20Marie?= <semarie@users.noreply.github.com>
+Date: Thu, 22 Jan 2015 06:22:46 +0100
+Subject: [PATCH 21/22] openbsd: ensure sysroot is correctly determined
+
+pass --sysroot to build and test process.
+---
+ mk/main.mk  | 2 +-
+ mk/tests.mk | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/mk/main.mk b/mk/main.mk
+index a97e68a..c2d145e 100644
+--- a/mk/main.mk
++++ b/mk/main.mk
+@@ -399,7 +399,7 @@ CFG_VALGRIND_COMPILE$(1) = $$(CFG_VALGRIND_COMPILE)
+ endif
+ 
+ # Add RUSTFLAGS_STAGEN values to the build command
+-EXTRAFLAGS_STAGE$(1) = $$(RUSTFLAGS_STAGE$(1))
++EXTRAFLAGS_STAGE$(1) = --sysroot $$(HROOT$(1)_H_$(3)) $$(RUSTFLAGS_STAGE$(1))
+ 
+ CFGFLAG$(1)_T_$(2)_H_$(3) = stage$(1)
+ 
+diff --git a/mk/tests.mk b/mk/tests.mk
+index 714a9f8..b5e9ef4 100644
+--- a/mk/tests.mk
++++ b/mk/tests.mk
+@@ -594,7 +594,7 @@ TEST_SREQ$(1)_T_$(2)_H_$(3) = \
+ 
+ # The tests select when to use debug configuration on their own;
+ # remove directive, if present, from CFG_RUSTC_FLAGS (issue #7898).
+-CTEST_RUSTC_FLAGS := $$(subst --cfg ndebug,,$$(CFG_RUSTC_FLAGS))
++CTEST_RUSTC_FLAGS := --sysroot $$(HROOT$(1)_H_$(3)) $$(subst --cfg ndebug,,$$(CFG_RUSTC_FLAGS))
+ 
+ # The tests cannot be optimized while the rest of the compiler is optimized, so
+ # filter out the optimization (if any) from rustc and then figure out if we need
+-- 
+2.2.2
+

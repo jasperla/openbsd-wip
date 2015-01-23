@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/libstd/sys/unix/thread_local.rs.orig	Wed Jan 21 14:17:40 2015
-+++ src/libstd/sys/unix/thread_local.rs	Wed Jan 21 14:28:18 2015
++++ src/libstd/sys/unix/thread_local.rs	Fri Jan 23 06:43:31 2015
 @@ -42,13 +42,15 @@ pub unsafe fn destroy(key: Key) {
  type pthread_key_t = ::libc::c_ulong;
  

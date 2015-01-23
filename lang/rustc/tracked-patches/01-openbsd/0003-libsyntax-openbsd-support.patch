@@ -1,0 +1,34 @@
+From cc87b267f9ce609e6d9cc867bf90f0fb41a9d993 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?S=C3=A9bastien=20Marie?= <semarie@users.noreply.github.com>
+Date: Wed, 7 Jan 2015 11:52:50 +0100
+Subject: [PATCH 03/22] libsyntax: openbsd support
+
+---
+ src/libsyntax/abi.rs | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/src/libsyntax/abi.rs b/src/libsyntax/abi.rs
+index 09235ee..0c50003 100644
+--- a/src/libsyntax/abi.rs
++++ b/src/libsyntax/abi.rs
+@@ -24,6 +24,7 @@ pub enum Os {
+     OsFreebsd,
+     OsiOS,
+     OsDragonfly,
++    OsOpenbsd,
+ }
+ 
+ #[derive(PartialEq, Eq, Hash, RustcEncodable, RustcDecodable, Clone, Copy)]
+@@ -146,7 +147,8 @@ impl fmt::String for Os {
+             OsiOS => "ios".fmt(f),
+             OsAndroid => "android".fmt(f),
+             OsFreebsd => "freebsd".fmt(f),
+-            OsDragonfly => "dragonfly".fmt(f)
++            OsDragonfly => "dragonfly".fmt(f),
++            OsOpenbsd => "openbsd".fmt(f),
+         }
+     }
+ }
+-- 
+2.2.2
+

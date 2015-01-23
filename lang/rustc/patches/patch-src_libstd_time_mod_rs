@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/libstd/time/mod.rs.orig	Wed Jan 21 08:42:33 2015
-+++ src/libstd/time/mod.rs	Wed Jan 21 08:39:23 2015
+--- src/libstd/time/mod.rs.orig	Wed Jan 21 14:18:11 2015
++++ src/libstd/time/mod.rs	Fri Jan 23 06:43:31 2015
 @@ -68,7 +68,8 @@ mod imp {
      use libc::{c_int, timespec};
  
