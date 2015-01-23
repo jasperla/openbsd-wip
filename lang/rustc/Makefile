@@ -123,7 +123,8 @@ post-extract:
 # tricks for previous snapshots.
 .if "${V}" == "${BOOTSTRAP_V}"
 post-patch:
-	perl -pi -e 's|^ifneq \(\$$\(strip .\(CFG_BUILD\)\),.\(strip .\(3\)\)\)|ifeq (1,1)|' \
+	perl -pi -e \
+		's|^ifneq \(\$$\(strip .\(CFG_BUILD\)\),.\(strip .\(3\)\)\)|ifeq (1,1)|' \
 		${WRKSRC}/mk/main.mk
 .endif
 
@@ -132,6 +133,17 @@ pre-configure:
 	@if [ `ulimit -d` -lt 1572864 ]; then \
 		echo datasize limit is too low - amd64 build takes approx 1.5GB; \
 		exit 1; fi
+
+# Install a wrapper for rustc
+#   TODO: need because of too simplist os::load_self implementation
+# Compile python gdb helper
+post-install:
+	${INSTALL_PROGRAM_DIR} ${PREFIX}/lib/rustlib/x86_64-unknown-openbsd/bin
+	mv ${PREFIX}/bin/rustc ${PREFIX}/lib/rustlib/x86_64-unknown-openbsd/bin
+	${SUBST_PROGRAM} -c \
+		files/rustc ${PREFIX}/bin/rustc
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${PREFIX}/lib/rustlib/etc
 
 # Create a bootstrapper.
 # The archive in ${WRKDIR}/bootstrap should be suitable for bootstrapping.

@@ -4,17 +4,13 @@ Packaging
 - check if -Wl,--as-needed is ok (has been removed at initial bootstrapping from linux)
 	https://github.com/semarie/rust/commit/03cf086c07824e2cb1244dda98ef64cb8de983af
 
-- python module
-   lib/rustlib/etc/gdb_load_rust_pretty_printers.py
-   lib/rustlib/etc/gdb_rust_pretty_printing.py
-
 - install
   - move lib to lib/rustc ?
   - keep extrafilename ? (libs are like lib/libarena-4e7c5e5c.so)
-  - provide a rustc shell script as wrapper
-    it is need due to us poor load_self implementation (realpath(argv[0])).
-    rustc normally use it for infer the default sysroot.
-    but when started from PATH, argv[0] = "rustc", so no sysroot, so panic.
+  - rustdoc need to known sysroot, but don't have any option to pass it
+      if you want use it, you should pass the complete path
+      (invoke it like: $ /usr/local/bin/rustdoc bla-bla)
+  - rust-gdb is a shell script that require a more recent gdb than base
 
 - clean ${BUILDDIR}/config.mk for not needed program ? (git, curl, ...)
 

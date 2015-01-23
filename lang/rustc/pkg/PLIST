@@ -1,6 +1,6 @@
 @comment $OpenBSD$
 bin/rust-gdb
-@bin bin/rustc
+bin/rustc
 @bin bin/rustdoc
 lib/libarena-4e7c5e5c.so
 lib/libflate-4e7c5e5c.so
@@ -28,10 +28,14 @@ lib/rustlib/
 lib/rustlib/components
 lib/rustlib/etc/
 lib/rustlib/etc/gdb_load_rust_pretty_printers.py
+lib/rustlib/etc/gdb_load_rust_pretty_printers.pyc
 lib/rustlib/etc/gdb_rust_pretty_printing.py
+lib/rustlib/etc/gdb_rust_pretty_printing.pyc
 lib/rustlib/manifest-rustc
 lib/rustlib/rust-installer-version
 lib/rustlib/x86_64-unknown-openbsd/
+lib/rustlib/x86_64-unknown-openbsd/bin/
+@bin lib/rustlib/x86_64-unknown-openbsd/bin/rustc
 lib/rustlib/x86_64-unknown-openbsd/lib/
 lib/rustlib/x86_64-unknown-openbsd/lib/liballoc-4e7c5e5c.rlib
 lib/rustlib/x86_64-unknown-openbsd/lib/libarena-4e7c5e5c.rlib
