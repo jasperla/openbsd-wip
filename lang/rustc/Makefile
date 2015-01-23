@@ -99,10 +99,14 @@ USE_LIBTOOL =		gnu
 # TODO: nodoc for now
 CONFIGURE_ARGS +=	--disable-docs
 
-# TODO: rebuild llvm if a shame
+.ifdef LOCAL_LLVM_FOR_RUST
+# TODO: rebuild llvm is a shame
 # 	but the llvm in ports not seems to work for this purpose
 #CONFIGURE_ARGS +=	--llvm-root="${LOCALBASE}"
 #BUILD_DEPENDS +=	devel/llvm
+
+CONFIGURE_ARGS +=	--llvm-root="${LOCAL_LLVM_FOR_RUST}"
+.endif
 
 TEST_TARGET =		check
 
