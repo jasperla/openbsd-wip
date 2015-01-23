@@ -144,6 +144,7 @@ post-install:
 		files/rustc ${PREFIX}/bin/rustc
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/lib/rustlib/etc
+	rm ${PREFIX}/lib/rustlib/{components,manifest-rustc,rust-installer-version}
 
 # Create a bootstrapper.
 # The archive in ${WRKDIR}/bootstrap should be suitable for bootstrapping.
