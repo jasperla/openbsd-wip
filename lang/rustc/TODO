@@ -8,8 +8,6 @@ Packaging
    lib/rustlib/etc/gdb_load_rust_pretty_printers.py
    lib/rustlib/etc/gdb_rust_pretty_printing.py
 
-- manpage path under ${PREFIX}/man/
-
 - install
   - move lib to lib/rustc ?
   - keep extrafilename ? (libs are like lib/libarena-4e7c5e5c.so)
