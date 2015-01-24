@@ -1,2 +1,6 @@
-This Dancer2 plugin provides an extremely simple way of requiring that a
-user be logged in before allowing access to certain routes.
+This module implements a session factory for Dancer 2 that stores session
+state within a browser cookie. Features include: data serialization and
+compression using Sereal, data encryption using AES with a unique derived
+key per cookie enforced expiration timestamp (independent of cookie
+expiration), cookie integrity protected with a message authentication
+code.
