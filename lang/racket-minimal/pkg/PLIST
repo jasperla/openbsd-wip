@@ -82,6 +82,8 @@ share/racket/collects/compiler/private/compiled/collects-path_rkt.dep
 share/racket/collects/compiler/private/compiled/collects-path_rkt.zo
 share/racket/collects/compiler/private/compiled/configdir_rkt.dep
 share/racket/collects/compiler/private/compiled/configdir_rkt.zo
+share/racket/collects/compiler/private/compiled/dep_rkt.dep
+share/racket/collects/compiler/private/compiled/dep_rkt.zo
 share/racket/collects/compiler/private/compiled/elf_rkt.dep
 share/racket/collects/compiler/private/compiled/elf_rkt.zo
 share/racket/collects/compiler/private/compiled/embed_rkt.dep
@@ -99,6 +101,7 @@ share/racket/collects/compiler/private/compiled/winutf16_rkt.zo
 share/racket/collects/compiler/private/compiled/xform_rkt.dep
 share/racket/collects/compiler/private/compiled/xform_rkt.zo
 share/racket/collects/compiler/private/configdir.rkt
+share/racket/collects/compiler/private/dep.rkt
 share/racket/collects/compiler/private/elf.rkt
 share/racket/collects/compiler/private/embed.rkt
 share/racket/collects/compiler/private/macfw.rkt
