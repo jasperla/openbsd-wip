@@ -9,11 +9,12 @@ The directories tracks patchs from:
  - 02-ports: local patches
 
 Git export:
-$ git format-patch -N snap-XXX..openbsd-XXX
+$ git diff --no-prefix snap-XXX..openbsd-XXX
 
 Regen patches with:
+$ rm -f patches/*
 $ make clean extract
-$ cat ./tracked-patches/*/* | patch --batch -V t -d $(make show=WRKSRC) -p1
+$ cat ./tracked-patches/*/* | patch --quiet --batch -V t -d $(make show=WRKSRC) -p0
 $ find $(make show=WRKSRC) -name '*.~1~' -execdir $PWD/tracked-patches/rename-patch.sh {} \;
 $ make update-patches
 

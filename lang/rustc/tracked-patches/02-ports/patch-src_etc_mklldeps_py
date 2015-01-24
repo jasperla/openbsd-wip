@@ -1,7 +1,7 @@
 $OpenBSD$
 LLVM is linked to esdtc++ instead of stdc++
---- a/src/etc/mklldeps.py.orig	Wed Jan 21 08:42:33 2015
-+++ b/src/etc/mklldeps.py	Wed Jan 21 08:39:23 2015
+--- src/etc/mklldeps.py.orig	Wed Jan 21 08:42:33 2015
++++ src/etc/mklldeps.py	Wed Jan 21 08:39:23 2015
 @@ -80,12 +80,12 @@ for lib in out.strip().split(' '):
  out = run([llconfig, '--cxxflags'])
  if enable_static == '1':
