@@ -1,1 +1,3 @@
-Rx schema system.
+Number::Tolerant creates a number-like object whose value refers to a range of
+possible values, each equally acceptable. It overloads comparison operations
+to reflect this.
