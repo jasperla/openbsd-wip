@@ -1,7 +1,7 @@
 From 774e9f6b8afa3a7dfef3c721ab6008823d196558 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?S=C3=A9bastien=20Marie?= <semarie@users.noreply.github.com>
 Date: Sun, 18 Jan 2015 13:53:37 +0100
-Subject: [PATCH 19/22] libbacktrace under openbsd need filename
+Subject: [PATCH] libbacktrace under openbsd need filename
 
 passing NULL to libbacktrace under openbsd results:
  - libbacktrace could not find executable to open

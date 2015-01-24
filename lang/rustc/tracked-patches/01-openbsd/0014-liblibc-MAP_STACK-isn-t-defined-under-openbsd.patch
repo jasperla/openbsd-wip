@@ -1,7 +1,7 @@
 From 037e3463a538b338add6f3325a24e1105f053780 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?S=C3=A9bastien=20Marie?= <semarie@users.noreply.github.com>
 Date: Thu, 15 Jan 2015 16:33:28 +0100
-Subject: [PATCH 14/22] liblibc: MAP_STACK isn't defined under openbsd
+Subject: [PATCH] liblibc: MAP_STACK isn't defined under openbsd
 
 ---
  src/liblibc/lib.rs | 2 +-

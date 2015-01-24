@@ -1,7 +1,7 @@
 From f9abf7b9bb8ceacc80b5d101a46e451f3943f0af Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?S=C3=A9bastien=20Marie?= <semarie@users.noreply.github.com>
 Date: Mon, 19 Jan 2015 16:09:27 +0100
-Subject: [PATCH 20/22] openbsd: simple implementation of load_self
+Subject: [PATCH] openbsd: simple implementation of load_self
 
 ---
  src/libstd/sys/unix/os.rs | 12 +++++++++++-

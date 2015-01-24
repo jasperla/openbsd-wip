@@ -1,7 +1,7 @@
 From f1f1702ccfd51f819a18f63afffbf1f30978fc5b Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?S=C3=A9bastien=20Marie?= <semarie@users.noreply.github.com>
 Date: Thu, 22 Jan 2015 08:57:43 +0100
-Subject: [PATCH 22/22] openbsd: adapt the struct change
+Subject: [PATCH] openbsd: adapt the struct change
 
 ---
  src/librustc_back/target/x86_64_unknown_openbsd.rs | 2 +-

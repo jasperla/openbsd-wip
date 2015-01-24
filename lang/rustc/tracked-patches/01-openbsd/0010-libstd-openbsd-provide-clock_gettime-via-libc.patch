@@ -1,7 +1,7 @@
 From 48ae17c97ac7043e23ccae294cf0dbd7a85746ea Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?S=C3=A9bastien=20Marie?= <semarie@users.noreply.github.com>
 Date: Tue, 13 Jan 2015 11:09:08 +0100
-Subject: [PATCH 10/22] libstd: openbsd provide clock_gettime via libc
+Subject: [PATCH] libstd: openbsd provide clock_gettime via libc
 
 ---
  src/libstd/time/mod.rs | 3 ++-

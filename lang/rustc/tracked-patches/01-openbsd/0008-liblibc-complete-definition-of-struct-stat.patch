@@ -1,7 +1,7 @@
 From d064bf44d877be88c8e4325a2adffd211e4871c4 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?S=C3=A9bastien=20Marie?= <semarie@users.noreply.github.com>
 Date: Sun, 11 Jan 2015 12:35:31 +0100
-Subject: [PATCH 08/22] liblibc: complete definition of struct stat
+Subject: [PATCH] liblibc: complete definition of struct stat
 
 ---
  src/liblibc/lib.rs | 6 ++----

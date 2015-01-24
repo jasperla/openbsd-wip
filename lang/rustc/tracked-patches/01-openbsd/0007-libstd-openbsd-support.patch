@@ -1,7 +1,7 @@
 From 2aaac7eede1d3bc23964d2fdcbd21644fe8f16af Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?S=C3=A9bastien=20Marie?= <semarie@users.noreply.github.com>
 Date: Wed, 7 Jan 2015 11:54:05 +0100
-Subject: [PATCH 07/22] libstd: openbsd support
+Subject: [PATCH] libstd: openbsd support
 
 ---
  src/libstd/dynamic_lib.rs      |  6 ++++--

@@ -1,7 +1,7 @@
 From 03cf086c07824e2cb1244dda98ef64cb8de983af Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?S=C3=A9bastien=20Marie?= <semarie@users.noreply.github.com>
 Date: Tue, 13 Jan 2015 11:10:11 +0100
-Subject: [PATCH 11/22] librustc_back: disable "-Wl,--as-needed" under openbsd
+Subject: [PATCH] librustc_back: disable "-Wl,--as-needed" under openbsd
 
 ld.so seems to crash "lazy binding failed!" in sometime
 ---

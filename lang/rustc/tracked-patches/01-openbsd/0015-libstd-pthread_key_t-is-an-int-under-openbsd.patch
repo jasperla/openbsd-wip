@@ -1,7 +1,7 @@
 From 83c554ca67b87c5e1bd6be3dc10105be65e01408 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?S=C3=A9bastien=20Marie?= <semarie@users.noreply.github.com>
 Date: Fri, 16 Jan 2015 06:54:26 +0100
-Subject: [PATCH 15/22] libstd: pthread_key_t is an int under openbsd
+Subject: [PATCH] libstd: pthread_key_t is an int under openbsd
 
 ---
  src/libstd/sys/unix/thread_local.rs | 6 ++++--

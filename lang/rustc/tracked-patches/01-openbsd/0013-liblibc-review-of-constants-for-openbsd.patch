@@ -1,7 +1,7 @@
 From c34785c76a518b311b4f4b38102df51db93d4e9f Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?S=C3=A9bastien=20Marie?= <semarie@users.noreply.github.com>
 Date: Thu, 15 Jan 2015 14:54:41 +0100
-Subject: [PATCH 13/22] liblibc: review of constants for openbsd
+Subject: [PATCH] liblibc: review of constants for openbsd
 
 ---
  src/liblibc/lib.rs | 396 ++++++++++++++++++++++++++++++++++++++++++++++++++++-

@@ -1,7 +1,7 @@
 From 984035ada8e5b634ee3c1d07bdce6315367499aa Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?S=C3=A9bastien=20Marie?= <semarie@users.noreply.github.com>
 Date: Wed, 7 Jan 2015 11:53:23 +0100
-Subject: [PATCH 05/22] librustc_back: openbsd support
+Subject: [PATCH] librustc_back: openbsd support
 
 ---
  src/librustc_back/arm.rs                           |  2 +-

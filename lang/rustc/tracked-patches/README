@@ -8,6 +8,9 @@ The directories tracks patchs from:
  - 01-openbsd : https://github.com/semarie/rust/tree/openbsd/
  - 02-ports: local patches
 
+Git export:
+$ git format-patch -N snap-XXX..openbsd-XXX
+
 Regen patches with:
 $ make clean extract
 $ cat ./tracked-patches/*/* | patch --batch -V t -d $(make show=WRKSRC) -p1

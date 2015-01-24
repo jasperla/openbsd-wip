@@ -1,7 +1,7 @@
 From 50580cc532970aaa093a301412e4306adfe4752c Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?S=C3=A9bastien=20Marie?= <semarie@users.noreply.github.com>
 Date: Tue, 13 Jan 2015 11:23:06 +0100
-Subject: [PATCH 12/22] libstd: dl* come from libc under openbsd
+Subject: [PATCH] libstd: dl* come from libc under openbsd
 
 ---
  src/libstd/dynamic_lib.rs | 11 +++++++++++

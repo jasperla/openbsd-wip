@@ -1,7 +1,7 @@
 From 7a3be2b28d6d4f41831be6ffbd94245ce962a3e9 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?S=C3=A9bastien=20Marie?= <semarie@users.noreply.github.com>
 Date: Wed, 7 Jan 2015 11:52:28 +0100
-Subject: [PATCH 02/22] librustdoc: openbsd support
+Subject: [PATCH] librustdoc: openbsd support
 
 ---
  src/librustdoc/flock.rs | 2 +-

@@ -1,7 +1,7 @@
 From 00baf375a6a266aa69916a2351f1c4135f1b05f8 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?S=C3=A9bastien=20Marie?= <semarie@users.noreply.github.com>
 Date: Sun, 18 Jan 2015 10:16:03 +0100
-Subject: [PATCH 18/22] openbsd: adapts some tests for target_os="openbsd"
+Subject: [PATCH] openbsd: adapts some tests for target_os="openbsd"
 
 ---
  src/test/run-pass/intrinsic-alignment.rs              | 3 ++-

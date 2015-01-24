@@ -1,7 +1,7 @@
 From da1eafc9e25525801b52086f9f96e658746cf0fe Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?S=C3=A9bastien=20Marie?= <semarie@users.noreply.github.com>
 Date: Sat, 17 Jan 2015 13:58:44 +0100
-Subject: [PATCH 17/22] linking: remove /usr/local inclusion (-I and -L)
+Subject: [PATCH] linking: remove /usr/local inclusion (-I and -L)
 
 ---
  mk/cfg/x86_64-unknown-openbsd.mk         | 4 ++--

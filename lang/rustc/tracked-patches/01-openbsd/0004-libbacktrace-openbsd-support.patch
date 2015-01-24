@@ -1,7 +1,7 @@
 From 35fb4c5eaa2db928420bda53e4eed577cae8db8f Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?S=C3=A9bastien=20Marie?= <semarie@users.noreply.github.com>
 Date: Wed, 7 Jan 2015 11:53:11 +0100
-Subject: [PATCH 04/22] libbacktrace: openbsd support
+Subject: [PATCH] libbacktrace: openbsd support
 
 ---
  src/libbacktrace/configure | 2 +-

@@ -1,7 +1,7 @@
 From 3eb8d25e23054b43693f83f19b7ea256c2de93ee Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?S=C3=A9bastien=20Marie?= <semarie@users.noreply.github.com>
 Date: Wed, 7 Jan 2015 11:53:37 +0100
-Subject: [PATCH 06/22] liblibc: openbsd support
+Subject: [PATCH] liblibc: openbsd support
 
 ---
  src/liblibc/lib.rs | 258 +++++++++++++++++++++++++++++++++++++++++++++++++++--

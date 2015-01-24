@@ -1,7 +1,7 @@
 From b07dfb56b85667e1191f1c8afe91a6c95f7b8cfc Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?S=C3=A9bastien=20Marie?= <semarie@users.noreply.github.com>
 Date: Thu, 22 Jan 2015 06:22:46 +0100
-Subject: [PATCH 21/22] openbsd: ensure sysroot is correctly determined
+Subject: [PATCH] openbsd: ensure sysroot is correctly determined
 
 pass --sysroot to build and test process.
 ---
