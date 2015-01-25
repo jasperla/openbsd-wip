@@ -1,7 +1,7 @@
 $OpenBSD$
---- src/libstd/dynamic_lib.rs.orig	Wed Jan 21 14:18:11 2015
-+++ src/libstd/dynamic_lib.rs	Fri Jan 23 06:43:31 2015
-@@ -180,7 +180,8 @@ mod test {
+--- src/libstd/dynamic_lib.rs.orig	Thu Jan 22 17:08:22 2015
++++ src/libstd/dynamic_lib.rs	Sat Jan 24 09:31:38 2015
+@@ -173,7 +173,8 @@ mod test {
      #[cfg(any(target_os = "linux",
                target_os = "macos",
                target_os = "freebsd",
@@ -11,18 +11,18 @@ $OpenBSD$
      fn test_errors_do_not_crash() {
          // Open /dev/null as a library to get an error, and make sure
          // that only causes an error, and not a crash.
-@@ -197,7 +198,8 @@ mod test {
+@@ -190,7 +191,8 @@ mod test {
            target_os = "macos",
            target_os = "ios",
            target_os = "freebsd",
 -          target_os = "dragonfly"))]
 +          target_os = "dragonfly",
 +          target_os = "openbsd"))]
- pub mod dl {
-     pub use self::Rtld::*;
+ mod dl {
      use prelude::v1::*;
-@@ -257,7 +259,18 @@ pub mod dl {
-         Local = 0,
+ 
+@@ -254,7 +256,18 @@ mod dl {
+         dlclose(handle as *mut libc::c_void); ()
      }
  
 +    #[cfg(not(target_os = "openbsd"))]

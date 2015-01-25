@@ -1,5 +1,5 @@
 diff --git configure configure
-index 86ed88c..f74a2c7 100755
+index 712db84..71caea5 100755
 --- configure
 +++ configure
 @@ -373,6 +373,10 @@ case $CFG_OSTYPE in
@@ -46,10 +46,10 @@ index 0000000..582d75c
 +CFG_RUN_TARG_x86_64-unknown-openbsd=$(call CFG_RUN_x86_64-unknown-openbsd,,$(2))
 +CFG_GNU_TRIPLE_x86_64-unknown-openbsd := x86_64-unknown-openbsd
 diff --git mk/main.mk mk/main.mk
-index 334647d..8dfd573 100644
+index 8c910f4..2175396 100644
 --- mk/main.mk
 +++ mk/main.mk
-@@ -410,7 +410,7 @@ CFG_VALGRIND_COMPILE$(1) = $$(CFG_VALGRIND_COMPILE)
+@@ -409,7 +409,7 @@ CFG_VALGRIND_COMPILE$(1) = $$(CFG_VALGRIND_COMPILE)
  endif
  
  # Add RUSTFLAGS_STAGEN values to the build command
@@ -84,10 +84,10 @@ index a116cc3..934d94f 100644
  
  pub fn get_os(triple: &str) -> &'static str {
 diff --git src/doc/reference.md src/doc/reference.md
-index 1c9f079..fec215b 100644
+index a27d6c6..9788a69 100644
 --- src/doc/reference.md
 +++ src/doc/reference.md
-@@ -2177,7 +2177,8 @@ The following configurations must be defined by the implementation:
+@@ -2196,7 +2196,8 @@ The following configurations must be defined by the implementation:
    `"unix"` or `"windows"`. The value of this configuration option is defined
    as a configuration itself, like `unix` or `windows`.
  * `target_os = "..."`. Operating system of the target, examples include
@@ -145,10 +145,10 @@ index f4f9d05..14a9fd4 100755
        hardcode_libdir_flag_spec='-R$libdir'
        hardcode_direct=yes
 diff --git src/liblibc/lib.rs src/liblibc/lib.rs
-index deab0ca..79d2f77 100644
+index d010615..2de0cfd 100644
 --- src/liblibc/lib.rs
 +++ src/liblibc/lib.rs
-@@ -276,7 +276,8 @@ pub use funcs::bsd43::{shutdown};
+@@ -277,7 +277,8 @@ pub use funcs::bsd43::{shutdown};
  #[cfg(any(target_os = "linux",
            target_os = "android",
            target_os = "freebsd",
@@ -158,7 +158,7 @@ index deab0ca..79d2f77 100644
  pub use consts::os::posix01::{CLOCK_REALTIME, CLOCK_MONOTONIC};
  
  #[cfg(any(target_os = "linux", target_os = "android"))]
-@@ -286,7 +287,7 @@ pub use types::os::arch::extra::{sockaddr_ll};
+@@ -287,7 +288,7 @@ pub use types::os::arch::extra::{sockaddr_ll};
  #[cfg(any(target_os = "linux", target_os = "android"))]
  pub use consts::os::extra::{AF_PACKET};
  
@@ -167,7 +167,7 @@ index deab0ca..79d2f77 100644
  pub use consts::os::extra::{MAP_STACK};
  
  #[cfg(any(target_os = "freebsd", target_os = "dragonfly"))]
-@@ -1322,6 +1323,233 @@ pub mod types {
+@@ -1323,6 +1324,233 @@ pub mod types {
          }
      }
  
@@ -401,7 +401,7 @@ index deab0ca..79d2f77 100644
      #[cfg(target_os = "windows")]
      pub mod os {
          pub mod common {
-@@ -3249,7 +3477,8 @@ pub mod consts {
+@@ -3250,7 +3478,8 @@ pub mod consts {
          }
      }
  
@@ -411,7 +411,7 @@ index deab0ca..79d2f77 100644
      pub mod os {
          pub mod c95 {
              use types::os::arch::c95::{c_int, c_uint};
-@@ -3519,6 +3748,9 @@ pub mod consts {
+@@ -3520,6 +3749,9 @@ pub mod consts {
              #[cfg(target_os = "dragonfly")]
              pub const PTHREAD_STACK_MIN: size_t = 1024;
  
@@ -421,7 +421,7 @@ index deab0ca..79d2f77 100644
              pub const CLOCK_REALTIME: c_int = 0;
              pub const CLOCK_MONOTONIC: c_int = 4;
          }
-@@ -3658,7 +3890,7 @@ pub mod consts {
+@@ -3659,7 +3891,7 @@ pub mod consts {
          }
      }
  
@@ -430,7 +430,7 @@ index deab0ca..79d2f77 100644
      pub mod os {
          pub mod c95 {
              use types::os::arch::c95::{c_int, c_uint};
-@@ -3746,14 +3978,11 @@ pub mod consts {
+@@ -3747,14 +3979,11 @@ pub mod consts {
              pub const MCL_CURRENT : c_int = 0x0001;
              pub const MCL_FUTURE : c_int = 0x0002;
  
@@ -448,7 +448,7 @@ index deab0ca..79d2f77 100644
              pub const ENOENT : c_int = 2;
              pub const ESRCH : c_int = 3;
              pub const EINTR : c_int = 4;
-@@ -3788,7 +4017,7 @@ pub mod consts {
+@@ -3789,7 +4018,7 @@ pub mod consts {
              pub const EDOM : c_int = 33;
              pub const ERANGE : c_int = 34;
              pub const EAGAIN : c_int = 35;
@@ -457,7 +457,7 @@ index deab0ca..79d2f77 100644
              pub const EINPROGRESS : c_int = 36;
              pub const EALREADY : c_int = 37;
              pub const ENOTSOCK : c_int = 38;
-@@ -3798,7 +4027,7 @@ pub mod consts {
+@@ -3799,7 +4028,7 @@ pub mod consts {
              pub const ENOPROTOOPT : c_int = 42;
              pub const EPROTONOSUPPORT : c_int = 43;
              pub const ESOCKTNOSUPPORT : c_int = 44;
@@ -466,7 +466,7 @@ index deab0ca..79d2f77 100644
              pub const EPFNOSUPPORT : c_int = 46;
              pub const EAFNOSUPPORT : c_int = 47;
              pub const EADDRINUSE : c_int = 48;
-@@ -3835,28 +4064,424 @@ pub mod consts {
+@@ -3836,28 +4065,424 @@ pub mod consts {
              pub const EFTYPE : c_int = 79;
              pub const EAUTH : c_int = 80;
              pub const ENEEDAUTH : c_int = 81;
@@ -912,7 +912,7 @@ index deab0ca..79d2f77 100644
              pub const ENOTRECOVERABLE : c_int = 104;
              pub const EOWNERDEAD : c_int = 105;
              pub const EQFULL : c_int = 106;
-@@ -4354,7 +4979,8 @@ pub mod funcs {
+@@ -4376,7 +5001,8 @@ pub mod funcs {
                target_os = "macos",
                target_os = "ios",
                target_os = "freebsd",
@@ -922,7 +922,7 @@ index deab0ca..79d2f77 100644
      pub mod posix88 {
          pub mod stat_ {
              use types::os::arch::c95::{c_char, c_int};
-@@ -4368,6 +4994,7 @@ pub mod funcs {
+@@ -4390,6 +5016,7 @@ pub mod funcs {
                  #[cfg(any(target_os = "linux",
                            target_os = "freebsd",
                            target_os = "dragonfly",
@@ -930,7 +930,7 @@ index deab0ca..79d2f77 100644
                            target_os = "android",
                            target_os = "ios"))]
                  pub fn fstat(fildes: c_int, buf: *mut stat) -> c_int;
-@@ -4382,6 +5009,7 @@ pub mod funcs {
+@@ -4404,6 +5031,7 @@ pub mod funcs {
                  #[cfg(any(target_os = "linux",
                            target_os = "freebsd",
                            target_os = "dragonfly",
@@ -938,7 +938,7 @@ index deab0ca..79d2f77 100644
                            target_os = "android",
                            target_os = "ios"))]
                  pub fn stat(path: *const c_char, buf: *mut stat) -> c_int;
-@@ -4574,7 +5202,8 @@ pub mod funcs {
+@@ -4596,7 +5224,8 @@ pub mod funcs {
                target_os = "macos",
                target_os = "ios",
                target_os = "freebsd",
@@ -948,7 +948,7 @@ index deab0ca..79d2f77 100644
      pub mod posix01 {
          pub mod stat_ {
              use types::os::arch::c95::{c_char, c_int};
-@@ -4584,6 +5213,7 @@ pub mod funcs {
+@@ -4606,6 +5235,7 @@ pub mod funcs {
                  #[cfg(any(target_os = "linux",
                            target_os = "freebsd",
                            target_os = "dragonfly",
@@ -956,7 +956,7 @@ index deab0ca..79d2f77 100644
                            target_os = "android",
                            target_os = "ios"))]
                  pub fn lstat(path: *const c_char, buf: *mut stat) -> c_int;
-@@ -4691,7 +5321,8 @@ pub mod funcs {
+@@ -4713,7 +5343,8 @@ pub mod funcs {
                target_os = "macos",
                target_os = "ios",
                target_os = "freebsd",
@@ -966,7 +966,7 @@ index deab0ca..79d2f77 100644
      pub mod posix08 {
          pub mod unistd {
          }
-@@ -4777,7 +5408,8 @@ pub mod funcs {
+@@ -4799,7 +5430,8 @@ pub mod funcs {
      #[cfg(any(target_os = "macos",
                target_os = "ios",
                target_os = "freebsd",
@@ -976,7 +976,7 @@ index deab0ca..79d2f77 100644
      pub mod bsd44 {
          use types::common::c95::{c_void};
          use types::os::arch::c95::{c_char, c_uchar, c_int, c_uint, c_ulong, size_t};
-@@ -4840,7 +5472,9 @@ pub mod funcs {
+@@ -4862,7 +5494,9 @@ pub mod funcs {
          }
      }
  
@@ -988,7 +988,7 @@ index deab0ca..79d2f77 100644
      }
  
 diff --git src/librustc_back/arm.rs src/librustc_back/arm.rs
-index 7e28cd6..b5ca687 100644
+index 7e28cd6..e225171 100644
 --- src/librustc_back/arm.rs
 +++ src/librustc_back/arm.rs
 @@ -61,7 +61,7 @@ pub fn get_target_strs(target_triple: String, target_os: abi::Os) -> target_strs
@@ -996,7 +996,7 @@ index 7e28cd6..b5ca687 100644
            }
  
 -          abi::OsFreebsd | abi::OsDragonfly => {
-+          abi::OsFreebsd | abi::OsDragonfly | abi::OsOpenbsd=> {
++          abi::OsFreebsd | abi::OsDragonfly | abi::OsOpenbsd => {
              "e-p:32:32:32\
                  -i1:8:8-i8:8:8-i16:16:16-i32:32:32-i64:64:64\
                  -f32:32:32-f64:64:64\
@@ -1169,10 +1169,10 @@ index cbb288a..5ed41d4 100644
          },
  
 diff --git src/librustdoc/flock.rs src/librustdoc/flock.rs
-index dcc9011..a5ae6ea 100644
+index 0084acd..0749229 100644
 --- src/librustdoc/flock.rs
 +++ src/librustdoc/flock.rs
-@@ -63,7 +63,7 @@ mod imp {
+@@ -64,7 +64,7 @@ mod imp {
          pub const F_SETLKW: libc::c_int = 13;
      }
  
@@ -1182,10 +1182,10 @@ index dcc9011..a5ae6ea 100644
          use libc;
  
 diff --git src/libstd/dynamic_lib.rs src/libstd/dynamic_lib.rs
-index 3eeb09b..f44e8a6 100644
+index db1239a..bb44727 100644
 --- src/libstd/dynamic_lib.rs
 +++ src/libstd/dynamic_lib.rs
-@@ -180,7 +180,8 @@ mod test {
+@@ -173,7 +173,8 @@ mod test {
      #[cfg(any(target_os = "linux",
                target_os = "macos",
                target_os = "freebsd",
@@ -1195,25 +1195,25 @@ index 3eeb09b..f44e8a6 100644
      fn test_errors_do_not_crash() {
          // Open /dev/null as a library to get an error, and make sure
          // that only causes an error, and not a crash.
-@@ -197,7 +198,8 @@ mod test {
+@@ -190,7 +191,8 @@ mod test {
            target_os = "macos",
            target_os = "ios",
            target_os = "freebsd",
 -          target_os = "dragonfly"))]
 +          target_os = "dragonfly",
 +          target_os = "openbsd"))]
- pub mod dl {
-     pub use self::Rtld::*;
+ mod dl {
      use prelude::v1::*;
-@@ -257,6 +259,7 @@ pub mod dl {
-         Local = 0,
+ 
+@@ -254,6 +256,7 @@ mod dl {
+         dlclose(handle as *mut libc::c_void); ()
      }
  
 +    #[cfg(not(target_os = "openbsd"))]
      #[link_name = "dl"]
      extern {
          fn dlopen(filename: *const libc::c_char,
-@@ -266,6 +269,16 @@ pub mod dl {
+@@ -263,6 +266,16 @@ mod dl {
                   symbol: *const libc::c_char) -> *mut libc::c_void;
          fn dlclose(handle: *mut libc::c_void) -> libc::c_int;
      }
@@ -1231,7 +1231,7 @@ index 3eeb09b..f44e8a6 100644
  
  #[cfg(target_os = "windows")]
 diff --git src/libstd/os.rs src/libstd/os.rs
-index fc0c838..3bc768c 100644
+index fc0c838..4b16afc 100644
 --- src/libstd/os.rs
 +++ src/libstd/os.rs
 @@ -691,7 +691,8 @@ fn real_args_as_bytes() -> Vec<Vec<u8>> {
@@ -1255,7 +1255,7 @@ index fc0c838..3bc768c 100644
 +    pub const FAMILY: &'static str = "unix";
 +
 +    /// A string describing the specific operating system in use: in this
-+    /// case, `dragonfly`.
++    /// case, `openbsd`.
 +    pub const SYSNAME: &'static str = "openbsd";
 +
 +    /// Specifies the filename prefix used for shared libraries on this
@@ -1386,7 +1386,7 @@ index 7164931..ae28076 100644
          } else {
              None
 diff --git src/libstd/sys/unix/c.rs src/libstd/sys/unix/c.rs
-index fed700c..ca6ab83 100644
+index 9016d1a..4fd7218 100644
 --- src/libstd/sys/unix/c.rs
 +++ src/libstd/sys/unix/c.rs
 @@ -23,7 +23,8 @@ use libc;
@@ -1552,12 +1552,12 @@ index ea1e9c2..153801a 100644
  type pthread_key_t = ::libc::c_uint;
  
  extern {
-diff --git src/libstd/time/mod.rs src/libstd/time/mod.rs
-index d6c94f2..9ae9458 100644
---- src/libstd/time/mod.rs
-+++ src/libstd/time/mod.rs
-@@ -68,7 +68,8 @@ mod imp {
-     use libc::{c_int, timespec};
+diff --git src/libstd/sys/unix/time.rs src/libstd/sys/unix/time.rs
+index cc1e23f..bddf7b0 100644
+--- src/libstd/sys/unix/time.rs
++++ src/libstd/sys/unix/time.rs
+@@ -80,7 +80,8 @@ mod inner {
+     }
  
      // Apparently android provides this in some other library?
 -    #[cfg(not(target_os = "android"))]
@@ -1657,7 +1657,7 @@ index 5dc07f8..cc4ebbd 100644
  // Local Variables:
  // mode: C++
 diff --git src/test/run-pass/intrinsic-alignment.rs src/test/run-pass/intrinsic-alignment.rs
-index 52fcaf5..8ab8ee3 100644
+index da07e95..07f021e 100644
 --- src/test/run-pass/intrinsic-alignment.rs
 +++ src/test/run-pass/intrinsic-alignment.rs
 @@ -20,7 +20,8 @@ mod rusti {
@@ -1671,7 +1671,7 @@ index 52fcaf5..8ab8ee3 100644
      #[main]
      #[cfg(target_arch = "x86")]
 diff --git src/test/run-pass/lang-item-public.rs src/test/run-pass/lang-item-public.rs
-index 81774c7..3b84ae0 100644
+index f94f648..c877507 100644
 --- src/test/run-pass/lang-item-public.rs
 +++ src/test/run-pass/lang-item-public.rs
 @@ -37,6 +37,10 @@ extern {}

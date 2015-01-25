@@ -1,8 +1,8 @@
 $OpenBSD$
---- src/libstd/time/mod.rs.orig	Wed Jan 21 14:18:11 2015
-+++ src/libstd/time/mod.rs	Fri Jan 23 06:43:31 2015
-@@ -68,7 +68,8 @@ mod imp {
-     use libc::{c_int, timespec};
+--- src/libstd/sys/unix/time.rs.orig	Thu Jan 22 17:08:22 2015
++++ src/libstd/sys/unix/time.rs	Sat Jan 24 09:31:38 2015
+@@ -80,7 +80,8 @@ mod inner {
+     }
  
      // Apparently android provides this in some other library?
 -    #[cfg(not(target_os = "android"))]

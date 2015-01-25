@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/librustc_back/target/x86_64_unknown_openbsd.rs.orig	Fri Jan 23 06:43:31 2015
-+++ src/librustc_back/target/x86_64_unknown_openbsd.rs	Fri Jan 23 06:43:31 2015
+--- src/librustc_back/target/x86_64_unknown_openbsd.rs.orig	Sat Jan 24 09:31:38 2015
++++ src/librustc_back/target/x86_64_unknown_openbsd.rs	Sat Jan 24 09:31:38 2015
 @@ -0,0 +1,28 @@
 +// Copyright 2014 The Rust Project Developers. See the COPYRIGHT
 +// file at the top-level directory of this distribution and at

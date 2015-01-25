@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/test/run-pass/out-of-stack-no-split.rs.orig	Wed Jan 21 14:16:32 2015
-+++ src/test/run-pass/out-of-stack-no-split.rs	Fri Jan 23 06:43:31 2015
+--- src/test/run-pass/out-of-stack-no-split.rs.orig	Thu Jan 22 17:08:22 2015
++++ src/test/run-pass/out-of-stack-no-split.rs	Sat Jan 24 09:31:38 2015
 @@ -13,6 +13,7 @@
  //ignore-freebsd
  //ignore-ios

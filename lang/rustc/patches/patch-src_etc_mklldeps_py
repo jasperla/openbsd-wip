@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/etc/mklldeps.py.orig	Wed Jan 21 14:16:31 2015
-+++ src/etc/mklldeps.py	Fri Jan 23 06:43:31 2015
+--- src/etc/mklldeps.py.orig	Thu Jan 22 17:08:22 2015
++++ src/etc/mklldeps.py	Sat Jan 24 09:31:38 2015
 @@ -80,12 +80,12 @@ for lib in out.strip().split(' '):
  out = run([llconfig, '--cxxflags'])
  if enable_static == '1':

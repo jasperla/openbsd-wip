@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/test/run-pass/lang-item-public.rs.orig	Wed Jan 21 14:18:11 2015
-+++ src/test/run-pass/lang-item-public.rs	Fri Jan 23 06:43:31 2015
+--- src/test/run-pass/lang-item-public.rs.orig	Thu Jan 22 17:08:22 2015
++++ src/test/run-pass/lang-item-public.rs	Sat Jan 24 09:31:38 2015
 @@ -37,6 +37,10 @@ extern {}
  #[link(name = "c")]
  extern {}

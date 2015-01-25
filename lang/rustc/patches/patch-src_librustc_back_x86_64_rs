@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/librustc_back/x86_64.rs.orig	Wed Jan 21 14:17:40 2015
-+++ src/librustc_back/x86_64.rs	Fri Jan 23 06:43:31 2015
+--- src/librustc_back/x86_64.rs.orig	Thu Jan 22 17:08:22 2015
++++ src/librustc_back/x86_64.rs	Sat Jan 24 09:31:38 2015
 @@ -57,6 +57,11 @@ pub fn get_target_strs(target_triple: String, target_o
                  f32:32:32-f64:64:64-v64:64:64-v128:128:128-a:0:64-\
                  s0:64:64-f80:128:128-n8:16:32:64-S128".to_string()

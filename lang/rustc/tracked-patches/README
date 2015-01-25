@@ -7,6 +7,7 @@ Track separately:
 The directories tracks patchs from:
  - 01-openbsd : https://github.com/semarie/rust/tree/openbsd/
  - 02-ports: local patches
+ - 03-jemalloc: patches for jemalloc
 
 Git export:
 $ git diff --no-prefix snap-XXX..openbsd-XXX

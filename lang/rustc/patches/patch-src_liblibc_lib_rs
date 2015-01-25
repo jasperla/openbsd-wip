@@ -1,7 +1,7 @@
 $OpenBSD$
---- src/liblibc/lib.rs.orig	Wed Jan 21 14:18:11 2015
-+++ src/liblibc/lib.rs	Fri Jan 23 06:43:31 2015
-@@ -276,7 +276,8 @@ pub use funcs::bsd43::{shutdown};
+--- src/liblibc/lib.rs.orig	Thu Jan 22 17:08:32 2015
++++ src/liblibc/lib.rs	Sat Jan 24 09:31:38 2015
+@@ -277,7 +277,8 @@ pub use funcs::bsd43::{shutdown};
  #[cfg(any(target_os = "linux",
            target_os = "android",
            target_os = "freebsd",
@@ -11,7 +11,7 @@ $OpenBSD$
  pub use consts::os::posix01::{CLOCK_REALTIME, CLOCK_MONOTONIC};
  
  #[cfg(any(target_os = "linux", target_os = "android"))]
-@@ -286,7 +287,7 @@ pub use types::os::arch::extra::{sockaddr_ll};
+@@ -287,7 +288,7 @@ pub use types::os::arch::extra::{sockaddr_ll};
  #[cfg(any(target_os = "linux", target_os = "android"))]
  pub use consts::os::extra::{AF_PACKET};
  
@@ -20,7 +20,7 @@ $OpenBSD$
  pub use consts::os::extra::{MAP_STACK};
  
  #[cfg(any(target_os = "freebsd", target_os = "dragonfly"))]
-@@ -1322,6 +1323,233 @@ pub mod types {
+@@ -1323,6 +1324,233 @@ pub mod types {
          }
      }
  
@@ -254,7 +254,7 @@ $OpenBSD$
      #[cfg(target_os = "windows")]
      pub mod os {
          pub mod common {
-@@ -3249,7 +3477,8 @@ pub mod consts {
+@@ -3250,7 +3478,8 @@ pub mod consts {
          }
      }
  
@@ -264,7 +264,7 @@ $OpenBSD$
      pub mod os {
          pub mod c95 {
              use types::os::arch::c95::{c_int, c_uint};
-@@ -3519,6 +3748,9 @@ pub mod consts {
+@@ -3520,6 +3749,9 @@ pub mod consts {
              #[cfg(target_os = "dragonfly")]
              pub const PTHREAD_STACK_MIN: size_t = 1024;
  
@@ -274,7 +274,7 @@ $OpenBSD$
              pub const CLOCK_REALTIME: c_int = 0;
              pub const CLOCK_MONOTONIC: c_int = 4;
          }
-@@ -3658,6 +3890,399 @@ pub mod consts {
+@@ -3659,6 +3891,399 @@ pub mod consts {
          }
      }
  
@@ -674,7 +674,7 @@ $OpenBSD$
      #[cfg(any(target_os = "macos", target_os = "ios"))]
      pub mod os {
          pub mod c95 {
-@@ -4354,7 +4979,8 @@ pub mod funcs {
+@@ -4376,7 +5001,8 @@ pub mod funcs {
                target_os = "macos",
                target_os = "ios",
                target_os = "freebsd",
@@ -684,7 +684,7 @@ $OpenBSD$
      pub mod posix88 {
          pub mod stat_ {
              use types::os::arch::c95::{c_char, c_int};
-@@ -4368,6 +4994,7 @@ pub mod funcs {
+@@ -4390,6 +5016,7 @@ pub mod funcs {
                  #[cfg(any(target_os = "linux",
                            target_os = "freebsd",
                            target_os = "dragonfly",
@@ -692,7 +692,7 @@ $OpenBSD$
                            target_os = "android",
                            target_os = "ios"))]
                  pub fn fstat(fildes: c_int, buf: *mut stat) -> c_int;
-@@ -4382,6 +5009,7 @@ pub mod funcs {
+@@ -4404,6 +5031,7 @@ pub mod funcs {
                  #[cfg(any(target_os = "linux",
                            target_os = "freebsd",
                            target_os = "dragonfly",
@@ -700,7 +700,7 @@ $OpenBSD$
                            target_os = "android",
                            target_os = "ios"))]
                  pub fn stat(path: *const c_char, buf: *mut stat) -> c_int;
-@@ -4574,7 +5202,8 @@ pub mod funcs {
+@@ -4596,7 +5224,8 @@ pub mod funcs {
                target_os = "macos",
                target_os = "ios",
                target_os = "freebsd",
@@ -710,7 +710,7 @@ $OpenBSD$
      pub mod posix01 {
          pub mod stat_ {
              use types::os::arch::c95::{c_char, c_int};
-@@ -4584,6 +5213,7 @@ pub mod funcs {
+@@ -4606,6 +5235,7 @@ pub mod funcs {
                  #[cfg(any(target_os = "linux",
                            target_os = "freebsd",
                            target_os = "dragonfly",
@@ -718,7 +718,7 @@ $OpenBSD$
                            target_os = "android",
                            target_os = "ios"))]
                  pub fn lstat(path: *const c_char, buf: *mut stat) -> c_int;
-@@ -4691,7 +5321,8 @@ pub mod funcs {
+@@ -4713,7 +5343,8 @@ pub mod funcs {
                target_os = "macos",
                target_os = "ios",
                target_os = "freebsd",
@@ -728,7 +728,7 @@ $OpenBSD$
      pub mod posix08 {
          pub mod unistd {
          }
-@@ -4777,7 +5408,8 @@ pub mod funcs {
+@@ -4799,7 +5430,8 @@ pub mod funcs {
      #[cfg(any(target_os = "macos",
                target_os = "ios",
                target_os = "freebsd",
@@ -738,7 +738,7 @@ $OpenBSD$
      pub mod bsd44 {
          use types::common::c95::{c_void};
          use types::os::arch::c95::{c_char, c_uchar, c_int, c_uint, c_ulong, size_t};
-@@ -4840,7 +5472,9 @@ pub mod funcs {
+@@ -4862,7 +5494,9 @@ pub mod funcs {
          }
      }
  

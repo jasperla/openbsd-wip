@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/libstd/os.rs.orig	Wed Jan 21 14:18:11 2015
-+++ src/libstd/os.rs	Fri Jan 23 06:43:31 2015
+--- src/libstd/os.rs.orig	Thu Jan 22 17:08:32 2015
++++ src/libstd/os.rs	Sat Jan 24 09:31:38 2015
 @@ -691,7 +691,8 @@ fn real_args_as_bytes() -> Vec<Vec<u8>> {
  #[cfg(any(target_os = "linux",
            target_os = "android",
@@ -44,7 +44,7 @@ $OpenBSD$
 +    pub const FAMILY: &'static str = "unix";
 +
 +    /// A string describing the specific operating system in use: in this
-+    /// case, `dragonfly`.
++    /// case, `openbsd`.
 +    pub const SYSNAME: &'static str = "openbsd";
  
      /// Specifies the filename prefix used for shared libraries on this

@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/libsyntax/abi.rs.orig	Wed Jan 21 14:17:40 2015
-+++ src/libsyntax/abi.rs	Fri Jan 23 06:43:31 2015
+--- src/libsyntax/abi.rs.orig	Thu Jan 22 17:08:32 2015
++++ src/libsyntax/abi.rs	Sat Jan 24 09:31:38 2015
 @@ -24,6 +24,7 @@ pub enum Os {
      OsFreebsd,
      OsiOS,

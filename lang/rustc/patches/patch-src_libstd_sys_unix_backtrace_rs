@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/libstd/sys/unix/backtrace.rs.orig	Wed Jan 21 14:18:11 2015
-+++ src/libstd/sys/unix/backtrace.rs	Fri Jan 23 06:43:31 2015
+--- src/libstd/sys/unix/backtrace.rs.orig	Thu Jan 22 17:08:32 2015
++++ src/libstd/sys/unix/backtrace.rs	Sat Jan 24 09:31:38 2015
 @@ -318,7 +318,8 @@ fn print(w: &mut Writer, idx: int, addr: *mut libc::c_
          static mut LAST_FILENAME: [libc::c_char; 256] = [0; 256];
          if !STATE.is_null() { return STATE }
