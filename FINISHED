@@ -88,12 +88,12 @@ www/p5-Dancer2-Plugin-Auth-Tiny				ready to import, sent to ports@ 2015-01-18 (g
 www/p5-Dancer2-Plugin-DBIC				ready to import, sent to ports@ 2015-01-18 (garcer)
 www/p5-Dancer-Plugin-Database-Core			ready to import, sent to ports@ 2015-01-18 (garcer)
 www/p5-Dancer2-Plugin-Database				ready to import, sent to ports@ 2015-01-18 (garcer)
-devel/p5-String-Compare-ConstantTime			ready to import
-security/p5-Crypt-URandom				ready to import
-devel/p5-Sereal-Encoder					ready to import
-devel/p5-Sereal-Decoder					ready to import
-devel/p5-Sereal						ready to import
-math/p5-Math-Random-ISAAC-XS				ready to import
-devel/p5-Number-Tolerant				ready to import
-www/p5-Session-Storage-Secure				ready to import
-www/p5-Dancer2-Session-Cookie				ready to import
+devel/p5-String-Compare-ConstantTime			ready to import, sent to ports@ 2015-01-24 (garcer)
+security/p5-Crypt-URandom				ready to import, sent to ports@ 2015-01-24 (garcer)
+devel/p5-Sereal-Encoder					ready to import, sent to ports@ 2015-01-24 (garcer)
+devel/p5-Sereal-Decoder					ready to import, sent to ports@ 2015-01-24 (garcer)
+devel/p5-Sereal						ready to import, sent to ports@ 2015-01-24 (garcer)
+math/p5-Math-Random-ISAAC-XS				ready to import, sent to ports@ 2015-01-24 (garcer)
+devel/p5-Number-Tolerant				ready to import, sent to ports@ 2015-01-24 (garcer)
+www/p5-Session-Storage-Secure				ready to import, sent to ports@ 2015-01-24 (garcer)
+www/p5-Dancer2-Session-Cookie				ready to import, sent to ports@ 2015-01-24 (garcer)
