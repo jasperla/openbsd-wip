@@ -839,6 +839,8 @@ share/gemrb/GUIScripts/iwd2/GUIWORLD.py
 share/gemrb/GUIScripts/iwd2/GUIWORLD.pyc
 share/gemrb/GUIScripts/iwd2/Gender.py
 share/gemrb/GUIScripts/iwd2/Gender.pyc
+share/gemrb/GUIScripts/iwd2/IDLUCommon.py
+share/gemrb/GUIScripts/iwd2/IDLUCommon.pyc
 share/gemrb/GUIScripts/iwd2/ImportFile.py
 share/gemrb/GUIScripts/iwd2/ImportFile.pyc
 share/gemrb/GUIScripts/iwd2/LoadScreen.py
@@ -863,6 +865,8 @@ share/gemrb/GUIScripts/iwd2/Skills.py
 share/gemrb/GUIScripts/iwd2/Skills.pyc
 share/gemrb/GUIScripts/iwd2/Songs.py
 share/gemrb/GUIScripts/iwd2/Songs.pyc
+share/gemrb/GUIScripts/iwd2/Spells.py
+share/gemrb/GUIScripts/iwd2/Spells.pyc
 share/gemrb/GUIScripts/iwd2/Start.py
 share/gemrb/GUIScripts/iwd2/Start.pyc
 share/gemrb/GUIScripts/iwd2/SubRaces.py
@@ -950,6 +954,7 @@ share/gemrb/override/bg1/CMakeLists.txt
 share/gemrb/override/bg1/efftext.2da
 share/gemrb/override/bg1/minorglb.vvc
 share/gemrb/override/bg2/
+share/gemrb/override/bg2/clearair.2da
 share/gemrb/override/bg2/efftext.2da
 share/gemrb/override/bg2/minorglb.vvc
 share/gemrb/override/bg2/spells.2da
@@ -964,6 +969,7 @@ share/gemrb/override/iwd/efftext.2da
 share/gemrb/override/iwd2/
 share/gemrb/override/iwd2/drmtxt2.2da
 share/gemrb/override/iwd2/efftext.2da
+share/gemrb/override/iwd2/skillrac.2da
 share/gemrb/override/pst/
 share/gemrb/override/pst/drmtxt2.2da
 share/gemrb/override/pst/efftext.2da
@@ -1154,6 +1160,7 @@ share/gemrb/unhardcoded/bg2/comet.pro
 share/gemrb/unhardcoded/bg2/damage.2da
 share/gemrb/unhardcoded/bg2/defsound.2da
 share/gemrb/unhardcoded/bg2/denyspl.2da
+share/gemrb/unhardcoded/bg2/difflvls.2da
 share/gemrb/unhardcoded/bg2/dsclass.2da
 share/gemrb/unhardcoded/bg2/dsrace.2da
 share/gemrb/unhardcoded/bg2/dstable.2da
@@ -1382,6 +1389,7 @@ share/gemrb/unhardcoded/how/entangle.pro
 share/gemrb/unhardcoded/how/equake.pro
 share/gemrb/unhardcoded/how/exaltah.pro
 share/gemrb/unhardcoded/how/factioh.pro
+share/gemrb/unhardcoded/how/fatiimm.spl
 share/gemrb/unhardcoded/how/findtrap.pro
 share/gemrb/unhardcoded/how/fireball.pro
 share/gemrb/unhardcoded/how/fireblic.pro
@@ -1470,6 +1478,7 @@ share/gemrb/unhardcoded/how/pathfind.2da
 share/gemrb/unhardcoded/how/pdolls.2da
 share/gemrb/unhardcoded/how/pfire.pro
 share/gemrb/unhardcoded/how/pictures.2da
+share/gemrb/unhardcoded/how/poisimm.spl
 share/gemrb/unhardcoded/how/poisonh.pro
 share/gemrb/unhardcoded/how/pomab.2da
 share/gemrb/unhardcoded/how/portal.pro
