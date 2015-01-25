@@ -1,6 +1,6 @@
 # $OpenBSD: $
 
-COMMENT =		Small and fast Qt image viewer
+COMMENT =		small and fast Qt image viewer
 
 V = 			2.2.0
 DISTNAME =		nomacs-${V}-source
@@ -24,11 +24,13 @@ EXTRACT_SUFX =		.tar.bz2
 MODULES =		devel/cmake \
 			x11/qt4
 
+RUN_DEPENDS =		devel/desktop-file-utils
+
 LIB_DEPENDS =		graphics/exiv2 \
 			graphics/lcms2 \
 			graphics/libraw \
 			graphics/opencv \
-			graphics/tiff \
+			graphics/tiff
 
 WRKDIST =		${WRKDIR}/${PKGNAME}
 

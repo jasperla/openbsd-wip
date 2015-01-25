@@ -1,0 +1,26 @@
+$OpenBSD$
+Unbreak build due to conflict between OpenCVs and tiffs APIs.
+--- src/DkBasicLoader.h.orig	Tue Jan 20 20:15:35 2015
++++ src/DkBasicLoader.h	Tue Jan 20 20:16:43 2015
+@@ -71,17 +71,17 @@
+ #include "tif_config.h"	
+ #endif
+ 
+-#ifdef Q_WS_MAC
++#if defined(Q_WS_MAC) || defined(Q_OS_OPENBSD)
+ #define uint64 uint64_hack_
+ #define int64 int64_hack_
+-#endif // Q_WS_MAC
++#endif // defined(Q_WS_MAC) || defined(Q_OS_OPENBSD)
+ 
+ #include "tiffio.h"
+ 
+-#ifdef Q_WS_MAC
++#if defined(Q_WS_MAC) || defined(Q_OS_OPENBSD)
+ #undef uint64
+ #undef int64
+-#endif // Q_WS_MAC
++#endif // defined(Q_WS_MAC) || defined(Q_OS_OPENBSD)
+ #endif
+ 
+ #endif
