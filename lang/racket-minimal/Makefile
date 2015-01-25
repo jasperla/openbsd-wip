@@ -78,6 +78,7 @@ FLAVOR ?=
 .if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS +=	--disable-strip \
 			--enable-noopt
+CFLAGS += -ggdb3
 .endif
 
 post-install:
