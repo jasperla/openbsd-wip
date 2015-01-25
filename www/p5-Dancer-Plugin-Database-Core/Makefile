@@ -15,4 +15,6 @@ BUILD_DEPENDS =		${RUN_DEPENDS}
 
 RUN_DEPENDS =		databases/p5-DBI
 
+MAKE_ENV +=		TEST_POD=1
+
 .include <bsd.port.mk>
