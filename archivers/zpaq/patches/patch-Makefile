@@ -1,0 +1,7 @@
+$OpenBSD$
+--- Makefile.orig	Mon Jan 26 20:26:41 2015
++++ Makefile	Mon Jan 26 20:27:26 2015
+@@ -1,2 +1,2 @@
+ zpaq: zpaq.cpp libzpaq.cpp libzpaq.h
+-	g++ -O3 -march=native -Dunix zpaq.cpp libzpaq.cpp -pthread -o zpaq
++	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -Dunix zpaq.cpp libzpaq.cpp -pthread -o zpaq
