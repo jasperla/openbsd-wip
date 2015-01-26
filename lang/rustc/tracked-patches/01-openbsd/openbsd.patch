@@ -1589,7 +1589,7 @@ index 09235ee..0c50003 100644
      }
  }
 diff --git src/rt/rust_builtin.c src/rt/rust_builtin.c
-index 5dc07f8..cc4ebbd 100644
+index 5dc07f8..fdfeeb0 100644
 --- src/rt/rust_builtin.c
 +++ src/rt/rust_builtin.c
 @@ -70,7 +70,7 @@ extern char **environ;
@@ -1601,7 +1601,7 @@ index 5dc07f8..cc4ebbd 100644
  extern char **environ;
  #endif
  
-@@ -337,6 +337,54 @@ rust_unset_sigprocmask() {
+@@ -337,6 +337,56 @@ rust_unset_sigprocmask() {
  int *__dfly_error(void) { return __error(); }
  #endif
  
@@ -1640,7 +1640,9 @@ index 5dc07f8..cc4ebbd 100644
 +        }
 +
 +        /* get realpath if possible */
-+        if ((argv[0] != NULL) && (*argv[0] == '.' || *argv[0] == '/'))
++        if ((argv[0] != NULL) && ((*argv[0] == '.') || (*argv[0] == '/')
++				|| (strstr(argv[0], "/") != NULL)))
++
 +            self = realpath(argv[0], NULL);
 +        else
 +            self = NULL;

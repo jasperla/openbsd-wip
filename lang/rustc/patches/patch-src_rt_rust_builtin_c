@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/rt/rust_builtin.c.orig	Thu Jan 22 17:08:32 2015
-+++ src/rt/rust_builtin.c	Sat Jan 24 09:31:38 2015
++++ src/rt/rust_builtin.c	Mon Jan 26 06:18:06 2015
 @@ -70,7 +70,7 @@ extern char **environ;
  #endif
  #endif
@@ -10,7 +10,7 @@ $OpenBSD$
  extern char **environ;
  #endif
  
-@@ -335,6 +335,54 @@ rust_unset_sigprocmask() {
+@@ -335,6 +335,56 @@ rust_unset_sigprocmask() {
  // In DragonFly __error() is an inline function and as such
  // no symbol exists for it.
  int *__dfly_error(void) { return __error(); }
@@ -51,7 +51,9 @@ $OpenBSD$
 +        }
 +
 +        /* get realpath if possible */
-+        if ((argv[0] != NULL) && (*argv[0] == '.' || *argv[0] == '/'))
++        if ((argv[0] != NULL) && ((*argv[0] == '.') || (*argv[0] == '/')
++				|| (strstr(argv[0], "/") != NULL)))
++
 +            self = realpath(argv[0], NULL);
 +        else
 +            self = NULL;
