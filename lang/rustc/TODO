@@ -34,15 +34,10 @@ Tests failures
     [run-pass] run-pass/out-of-stack.rs
       the test check if stack-overflow are detected.
 
-  * os::self_exe_name badly implemented
-    [run-pass] run-pass/backtrace.rs
-      for correctly show the backtrace, libbacktrace *must* read executable file, and so find it
-
-    [run-pass] run-pass/issue-15149.rs
-    [run-pass] run-pass/issue-16272.rs
-    [run-pass] run-pass/issue-20091.rs
-    [run-pass] run-pass/process-spawn-with-unicode-params.rs
-      suppose os::self_exe_name always return something... fail
-
   * [run-pass] run-pass/tcp-stress.rs
+      intermittent failure
       "Too many open files"
+
+  * seems to be unrelated bugs
+    [run-pass] run-pass/coerce-match-calls.rs
+    [run-pass] run-pass/coerce-match.rs
