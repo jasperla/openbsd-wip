@@ -1,5 +1,5 @@
 #!/bin/sh
-ARGS="$@"
+ARGS="x $@"
 if [ "${ARGS}" = "${ARGS#* --sysroot }" ]; then
   EXTRA="--sysroot ${TRUEPREFIX}"
 fi
