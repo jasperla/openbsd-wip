@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/rt/rust_builtin.c.orig	Thu Jan 22 17:08:32 2015
-+++ src/rt/rust_builtin.c	Mon Jan 26 06:18:06 2015
++++ src/rt/rust_builtin.c	Thu Jan 29 08:35:51 2015
 @@ -70,7 +70,7 @@ extern char **environ;
  #endif
  #endif

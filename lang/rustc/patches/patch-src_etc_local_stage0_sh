@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/etc/local_stage0.sh.orig	Thu Jan 22 17:08:22 2015
-+++ src/etc/local_stage0.sh	Sat Jan 24 09:31:38 2015
++++ src/etc/local_stage0.sh	Thu Jan 29 08:35:51 2015
 @@ -18,7 +18,7 @@ LIB_PREFIX=lib
  
  OS=`uname -s`

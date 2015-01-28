@@ -87,6 +87,7 @@ USE_GMAKE =		Yes
 #USE_GROFF =		Yes
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--disable-valgrind-rpass \
+			--disable-jemalloc \
 			--enable-local-rust \
 			--local-rust-root="${WRKDIR}/rust-stage0" \
 			--prefix="${LOCALBASE}" \

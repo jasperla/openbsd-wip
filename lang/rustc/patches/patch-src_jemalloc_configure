@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/jemalloc/configure.orig	Sun Jan 25 14:12:58 2015
-+++ src/jemalloc/configure	Sun Jan 25 14:13:15 2015
+--- src/jemalloc/configure.orig	Thu Jan 22 17:10:06 2015
++++ src/jemalloc/configure	Thu Jan 29 08:35:51 2015
 @@ -4879,7 +4879,13 @@ case "${host}" in
  	CFLAGS="$CFLAGS"
  	abi="elf"

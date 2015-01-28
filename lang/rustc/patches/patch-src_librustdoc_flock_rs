@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/librustdoc/flock.rs.orig	Thu Jan 22 17:08:32 2015
-+++ src/librustdoc/flock.rs	Sat Jan 24 09:31:38 2015
++++ src/librustdoc/flock.rs	Thu Jan 29 08:35:51 2015
 @@ -64,7 +64,7 @@ mod imp {
          pub const F_SETLKW: libc::c_int = 13;
      }

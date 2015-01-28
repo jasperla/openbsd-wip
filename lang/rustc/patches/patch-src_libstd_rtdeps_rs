@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/libstd/rtdeps.rs.orig	Thu Jan 22 17:08:22 2015
-+++ src/libstd/rtdeps.rs	Sat Jan 24 09:31:38 2015
++++ src/libstd/rtdeps.rs	Thu Jan 29 08:35:51 2015
 @@ -39,7 +39,7 @@ extern {}
  #[link(name = "pthread")]
  extern {}

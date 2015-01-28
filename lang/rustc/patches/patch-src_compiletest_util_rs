@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/compiletest/util.rs.orig	Thu Jan 22 17:08:22 2015
-+++ src/compiletest/util.rs	Sat Jan 24 09:31:38 2015
++++ src/compiletest/util.rs	Thu Jan 29 08:35:51 2015
 @@ -23,6 +23,7 @@ static OS_TABLE: &'static [(&'static str, &'static str
      ("linux", "linux"),
      ("freebsd", "freebsd"),

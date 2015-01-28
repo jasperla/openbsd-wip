@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/libstd/sys/unix/sync.rs.orig	Thu Jan 22 17:08:22 2015
-+++ src/libstd/sys/unix/sync.rs	Sat Jan 24 09:31:38 2015
++++ src/libstd/sys/unix/sync.rs	Thu Jan 29 08:35:51 2015
 @@ -44,7 +44,9 @@ extern {
      pub fn pthread_rwlock_unlock(lock: *mut pthread_rwlock_t) -> libc::c_int;
  }

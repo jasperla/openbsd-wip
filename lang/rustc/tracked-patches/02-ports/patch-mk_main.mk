@@ -1,7 +1,9 @@
 $OpenBSD$
---- mk/main.mk.orig	Thu Jan 22 17:08:22 2015
-+++ mk/main.mk	Thu Jan 29 08:35:51 2015
-@@ -409,7 +409,7 @@ CFG_VALGRIND_COMPILE$(1) = $$(CFG_VALGRIND_COMPILE)
+Always specify --sysroot to build process.
+This is need for the current bootstrap system to work.
+--- mk/main.mk
++++ mk/main.mk
+@@ -399,7 +399,7 @@ CFG_VALGRIND_COMPILE$(1) = $$(CFG_VALGRIND_COMPILE)
  endif
  
  # Add RUSTFLAGS_STAGEN values to the build command

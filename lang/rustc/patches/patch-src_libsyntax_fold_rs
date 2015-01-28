@@ -1,0 +1,11 @@
+$OpenBSD$
+--- src/libsyntax/fold.rs.orig	Thu Jan 22 17:08:32 2015
++++ src/libsyntax/fold.rs	Thu Jan 29 08:35:51 2015
+@@ -1163,6 +1163,7 @@ pub fn noop_fold_item<T: Folder>(i: P<Item>, folder: &
+ // fold one item into exactly one item
+ pub fn noop_fold_item_simple<T: Folder>(Item {id, ident, attrs, node, vis, span}: Item,
+                                         folder: &mut T) -> Item {
++    debug!("noop_fold_item_simple");
+     let id = folder.new_id(id);
+     let node = folder.fold_item_underscore(node);
+     let ident = match node {

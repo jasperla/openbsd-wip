@@ -45,32 +45,6 @@ index 0000000..582d75c
 +CFG_RUN_x86_64-unknown-openbsd=$(2)
 +CFG_RUN_TARG_x86_64-unknown-openbsd=$(call CFG_RUN_x86_64-unknown-openbsd,,$(2))
 +CFG_GNU_TRIPLE_x86_64-unknown-openbsd := x86_64-unknown-openbsd
-diff --git mk/main.mk mk/main.mk
-index 8c910f4..2175396 100644
---- mk/main.mk
-+++ mk/main.mk
-@@ -409,7 +409,7 @@ CFG_VALGRIND_COMPILE$(1) = $$(CFG_VALGRIND_COMPILE)
- endif
- 
- # Add RUSTFLAGS_STAGEN values to the build command
--EXTRAFLAGS_STAGE$(1) = $$(RUSTFLAGS_STAGE$(1))
-+EXTRAFLAGS_STAGE$(1) = --sysroot $$(HROOT$(1)_H_$(3)) $$(RUSTFLAGS_STAGE$(1))
- 
- CFGFLAG$(1)_T_$(2)_H_$(3) = stage$(1)
- 
-diff --git mk/tests.mk mk/tests.mk
-index c8c4beb..5c5542d 100644
---- mk/tests.mk
-+++ mk/tests.mk
-@@ -606,7 +606,7 @@ TEST_SREQ$(1)_T_$(2)_H_$(3) = \
- 
- # The tests select when to use debug configuration on their own;
- # remove directive, if present, from CFG_RUSTC_FLAGS (issue #7898).
--CTEST_RUSTC_FLAGS := $$(subst --cfg ndebug,,$$(CFG_RUSTC_FLAGS))
-+CTEST_RUSTC_FLAGS := --sysroot $$(HROOT$(1)_H_$(3)) $$(subst --cfg ndebug,,$$(CFG_RUSTC_FLAGS))
- 
- # The tests cannot be optimized while the rest of the compiler is optimized, so
- # filter out the optimization (if any) from rustc and then figure out if we need
 diff --git src/compiletest/util.rs src/compiletest/util.rs
 index a116cc3..934d94f 100644
 --- src/compiletest/util.rs
@@ -1515,6 +1489,76 @@ index 36bf696..5e63f5a 100644
      mod imp {
          pub fn WIFEXITED(status: i32) -> bool { (status & 0x7f) == 0 }
          pub fn WEXITSTATUS(status: i32) -> i32 { status >> 8 }
+diff --git src/libstd/sys/unix/stack_overflow.rs src/libstd/sys/unix/stack_overflow.rs
+index 2b5ced5..55aadee 100644
+--- src/libstd/sys/unix/stack_overflow.rs
++++ src/libstd/sys/unix/stack_overflow.rs
+@@ -32,7 +32,9 @@ impl Drop for Handler {
+     }
+ }
+ 
+-#[cfg(any(target_os = "linux", target_os = "macos"))]
++#[cfg(any(target_os = "linux",
++          target_os = "macos",
++          target_os = "openbsd"))]
+ mod imp {
+     use core::prelude::*;
+     use sys_common::stack;
+@@ -203,7 +205,7 @@ mod imp {
+ 
+     }
+ 
+-    #[cfg(target_os = "macos")]
++    #[cfg(any(target_os = "macos", target_os = "openbsd"))]
+     mod signal {
+         use libc;
+         use super::sighandler_t;
+@@ -212,7 +214,10 @@ mod imp {
+         pub const SA_SIGINFO: libc::c_int = 0x0040;
+         pub const SIGBUS: libc::c_int = 10;
+ 
++        #[cfg(target_os = "macos")]
+         pub const SIGSTKSZ: libc::size_t = 131072;
++        #[cfg(target_os = "openbsd")]
++        pub const SIGSTKSZ: libc::size_t = 40960;
+ 
+         pub const SIG_DFL: sighandler_t = 0i as sighandler_t;
+ 
+@@ -220,6 +225,7 @@ mod imp {
+ 
+         // This structure has more fields, but we're not all that interested in
+         // them.
++        #[cfg(target_os = "macos")]
+         #[repr(C)]
+         pub struct siginfo {
+             pub si_signo: libc::c_int,
+@@ -231,6 +237,16 @@ mod imp {
+             pub si_addr: *mut libc::c_void
+         }
+ 
++        #[cfg(target_os = "openbsd")]
++        #[repr(C)]
++        pub struct siginfo {
++            pub si_signo: libc::c_int,
++            pub si_code: libc::c_int,
++            pub si_errno: libc::c_int,
++            // union
++            pub si_addr: *mut libc::c_void,
++        }
++
+         #[repr(C)]
+         pub struct sigaltstack {
+             pub ss_sp: *mut libc::c_void,
+@@ -260,7 +276,8 @@ mod imp {
+ }
+ 
+ #[cfg(not(any(target_os = "linux",
+-              target_os = "macos")))]
++              target_os = "macos",
++              target_os = "openbsd")))]
+ mod imp {
+     use libc;
+ 
 diff --git src/libstd/sys/unix/sync.rs src/libstd/sys/unix/sync.rs
 index c1e3fc8..bc93513 100644
 --- src/libstd/sys/unix/sync.rs
@@ -1530,6 +1574,95 @@ index c1e3fc8..bc93513 100644
  mod os {
      use libc;
  
+diff --git src/libstd/sys/unix/thread.rs src/libstd/sys/unix/thread.rs
+index ac51b68..6d5da829 100644
+--- src/libstd/sys/unix/thread.rs
++++ src/libstd/sys/unix/thread.rs
+@@ -30,7 +30,9 @@ pub extern fn thread_start(main: *mut libc::c_void) -> rust_thread_return {
+     return start_thread(main);
+ }
+ 
+-#[cfg(all(not(target_os = "linux"), not(target_os = "macos")))]
++#[cfg(all(not(target_os = "linux"),
++          not(target_os = "macos"),
++          not(target_os = "openbsd")))]
+ pub mod guard {
+     pub unsafe fn current() -> uint {
+         0
+@@ -44,10 +46,15 @@ pub mod guard {
+     }
+ }
+ 
+-#[cfg(any(target_os = "linux", target_os = "macos"))]
++
++#[cfg(any(target_os = "linux",
++          target_os = "macos",
++          target_os = "openbsd"))]
+ pub mod guard {
+     use super::*;
+-    #[cfg(any(target_os = "linux", target_os = "android"))]
++    #[cfg(any(target_os = "linux",
++              target_os = "android",
++              target_os = "openbsd"))]
+     use mem;
+     #[cfg(any(target_os = "linux", target_os = "android"))]
+     use ptr;
+@@ -63,7 +70,7 @@ pub mod guard {
+     static mut PAGE_SIZE: uint = 0;
+     static mut GUARD_PAGE: uint = 0;
+ 
+-    #[cfg(target_os = "macos")]
++    #[cfg(any(target_os = "macos", target_os = "openbsd"))]
+     unsafe fn get_stack_start() -> *mut libc::c_void {
+         current() as *mut libc::c_void
+     }
+@@ -140,6 +147,23 @@ pub mod guard {
+          pthread_get_stacksize_np(pthread_self())) as uint
+     }
+ 
++    #[cfg(target_os = "openbsd")]
++    pub unsafe fn current() -> uint {
++        let mut current_stack: stack_t = mem::zeroed();
++        if pthread_stackseg_np(pthread_self(), &mut current_stack) != 0 {
++            panic!("failed to get current stack: pthread_stackseg_np")
++        }
++
++        if pthread_main_np() == 1 {
++            // main thread
++            current_stack.ss_sp as uint - current_stack.ss_size as uint + 3 * PAGE_SIZE as uint
++
++        } else {
++            // new thread
++            current_stack.ss_sp as uint - current_stack.ss_size as uint
++        }
++    }
++
+     #[cfg(any(target_os = "linux", target_os = "android"))]
+     pub unsafe fn current() -> uint {
+         let mut attr: libc::pthread_attr_t = mem::zeroed();
+@@ -265,6 +289,22 @@ extern {
+     pub fn pthread_get_stacksize_np(thread: libc::pthread_t) -> libc::size_t;
+ }
+ 
++#[cfg(target_os = "openbsd")]
++extern {
++        pub fn pthread_self() -> libc::pthread_t;
++        pub fn pthread_stackseg_np(thread: libc::pthread_t,
++                                   sinfo: *mut stack_t) -> libc::c_uint;
++        pub fn pthread_main_np() -> libc::c_uint;
++}
++
++#[cfg(target_os = "openbsd")]
++#[repr(C)]
++pub struct stack_t {
++    pub ss_sp: *mut libc::c_void,
++    pub ss_size: libc::size_t,
++    pub ss_flags: libc::c_int,
++}
++
+ extern {
+     fn pthread_create(native: *mut libc::pthread_t,
+                       attr: *const libc::pthread_attr_t,
 diff --git src/libstd/sys/unix/thread_local.rs src/libstd/sys/unix/thread_local.rs
 index ea1e9c2..153801a 100644
 --- src/libstd/sys/unix/thread_local.rs
@@ -1687,30 +1820,6 @@ index f94f648..c877507 100644
  #[cfg(target_os = "macos")]
  #[link(name = "System")]
  extern {}
-diff --git src/test/run-pass/out-of-stack-new-thread-no-split.rs src/test/run-pass/out-of-stack-new-thread-no-split.rs
-index ce6604d..e08a475 100644
---- src/test/run-pass/out-of-stack-new-thread-no-split.rs
-+++ src/test/run-pass/out-of-stack-new-thread-no-split.rs
-@@ -12,6 +12,7 @@
- //ignore-freebsd
- //ignore-ios
- //ignore-dragonfly
-+//ignore-openbsd
- 
- #![feature(asm)]
- 
-diff --git src/test/run-pass/out-of-stack-no-split.rs src/test/run-pass/out-of-stack-no-split.rs
-index 7992677..8c32159 100644
---- src/test/run-pass/out-of-stack-no-split.rs
-+++ src/test/run-pass/out-of-stack-no-split.rs
-@@ -13,6 +13,7 @@
- //ignore-freebsd
- //ignore-ios
- //ignore-dragonfly
-+//ignore-openbsd
- 
- #![feature(asm)]
- 
 diff --git src/test/run-pass/rec-align-u64.rs src/test/run-pass/rec-align-u64.rs
 index 2794154..dfc9a15 100644
 --- src/test/run-pass/rec-align-u64.rs
@@ -1725,6 +1834,18 @@ index 2794154..dfc9a15 100644
  mod m {
      #[cfg(target_arch = "x86")]
      pub mod m {
+diff --git src/test/run-pass/tcp-stress.rs src/test/run-pass/tcp-stress.rs
+index 0109d64..0b4273a 100644
+--- src/test/run-pass/tcp-stress.rs
++++ src/test/run-pass/tcp-stress.rs
+@@ -10,6 +10,7 @@
+ 
+ // ignore-linux see joyent/libuv#1189
+ // ignore-android needs extra network permissions
++// ignore-openbsd system ulimit (Too many open files)
+ // exec-env:RUST_LOG=debug
+ 
+ #[macro_use]
 diff --git src/test/run-pass/x86stdcall.rs src/test/run-pass/x86stdcall.rs
 index 15d1852..63d2fa9 100644
 --- src/test/run-pass/x86stdcall.rs

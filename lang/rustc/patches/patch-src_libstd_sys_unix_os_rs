@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/libstd/sys/unix/os.rs.orig	Thu Jan 22 17:08:32 2015
-+++ src/libstd/sys/unix/os.rs	Sat Jan 24 09:31:38 2015
++++ src/libstd/sys/unix/os.rs	Thu Jan 29 08:35:51 2015
 @@ -50,6 +50,16 @@ pub fn errno() -> int {
          }
      }

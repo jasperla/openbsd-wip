@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/liblibc/lib.rs.orig	Thu Jan 22 17:08:32 2015
-+++ src/liblibc/lib.rs	Sat Jan 24 09:31:38 2015
++++ src/liblibc/lib.rs	Thu Jan 29 08:35:51 2015
 @@ -277,7 +277,8 @@ pub use funcs::bsd43::{shutdown};
  #[cfg(any(target_os = "linux",
            target_os = "android",

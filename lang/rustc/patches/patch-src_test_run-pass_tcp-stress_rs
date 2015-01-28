@@ -1,0 +1,11 @@
+$OpenBSD$
+--- src/test/run-pass/tcp-stress.rs.orig	Thu Jan 22 17:08:22 2015
++++ src/test/run-pass/tcp-stress.rs	Thu Jan 29 08:35:51 2015
+@@ -10,6 +10,7 @@
+ 
+ // ignore-linux see joyent/libuv#1189
+ // ignore-android needs extra network permissions
++// ignore-openbsd system ulimit (Too many open files)
+ // exec-env:RUST_LOG=debug
+ 
+ #[macro_use]

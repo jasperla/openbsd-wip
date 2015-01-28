@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/librustc_back/arm.rs.orig	Thu Jan 22 17:08:22 2015
-+++ src/librustc_back/arm.rs	Sat Jan 24 09:31:38 2015
++++ src/librustc_back/arm.rs	Thu Jan 29 08:35:51 2015
 @@ -61,7 +61,7 @@ pub fn get_target_strs(target_triple: String, target_o
                  -a:0:64-n32".to_string()
            }

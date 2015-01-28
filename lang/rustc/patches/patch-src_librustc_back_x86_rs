@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/librustc_back/x86.rs.orig	Thu Jan 22 17:08:22 2015
-+++ src/librustc_back/x86.rs	Sat Jan 24 09:31:38 2015
++++ src/librustc_back/x86.rs	Thu Jan 29 08:35:51 2015
 @@ -51,6 +51,9 @@ pub fn get_target_strs(target_triple: String, target_o
            abi::OsDragonfly => {
              "e-p:32:32-f64:32:64-i64:32:64-f80:32:32-n8:16:32".to_string()

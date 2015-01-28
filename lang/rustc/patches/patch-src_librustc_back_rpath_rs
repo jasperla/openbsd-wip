@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/librustc_back/rpath.rs.orig	Thu Jan 22 17:08:22 2015
-+++ src/librustc_back/rpath.rs	Sat Jan 24 09:31:38 2015
++++ src/librustc_back/rpath.rs	Thu Jan 29 08:35:51 2015
 @@ -215,7 +215,9 @@ mod test {
      }
  
