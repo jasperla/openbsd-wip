@@ -23,21 +23,14 @@ Bugs
   - need for backtrace support (read the symbols from executable file)
   - need for rustc --sysroot default value (infer rustlib from rustc location)
 
-- stack-overflow not detected
-  see tests/run-pass/out-of-stack.rs
-  IRC: eddyb: (guard page) it's not platform dependent, and it's in something called by whatever #[lang="start"] is now
-              it may be std::rt now
 
 Tests failures
 --------------
-  * stack-overflow detection
-    [run-pass] run-pass/out-of-stack.rs
-      the test check if stack-overflow are detected.
-
   * [run-pass] run-pass/tcp-stress.rs
       intermittent failure
       "Too many open files"
+      => may be be a problem in compiletest, as the test is ok when run manually.
 
-  * seems to be unrelated bugs
+  * seems to be unrelated bugs (not trigged without jemalloc)
     [run-pass] run-pass/coerce-match-calls.rs
     [run-pass] run-pass/coerce-match.rs
