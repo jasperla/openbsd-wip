@@ -97,3 +97,4 @@ math/p5-Math-Random-ISAAC-XS				ready to import, sent to ports@ 2015-01-24 (garc
 devel/p5-Number-Tolerant				ready to import, sent to ports@ 2015-01-24 (garcer)
 www/p5-Session-Storage-Secure				ready to import, sent to ports@ 2015-01-24 (garcer)
 www/p5-Dancer2-Session-Cookie				ready to import, sent to ports@ 2015-01-24 (garcer)
+x11/cool-retro-term					ready to import, need to wait until after lock (bcallah@)
