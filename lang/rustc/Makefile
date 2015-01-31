@@ -11,7 +11,7 @@ COMMENT =		compiler for Rust Language
 # we use a fake version number for indexing the date (and commitid)
 # TODO: should be changed when 1.0.0-stable will be issue
 #       (see post-extract target too)
-V =			0.0.0.20150120.9006c3c
+V =			0.0.0.20150127.7774359
 BOOTSTRAP_V =		${V}
 SOURCE_V =		1.0.0-dev
 DISTNAME =		rustc-${V}

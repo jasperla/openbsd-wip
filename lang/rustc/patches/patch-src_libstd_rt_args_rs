@@ -1,6 +1,12 @@
 $OpenBSD$
---- src/libstd/rt/args.rs.orig	Thu Jan 22 17:08:22 2015
-+++ src/libstd/rt/args.rs	Thu Jan 29 08:35:51 2015
+--- src/libstd/rt/args.rs.orig	Fri Jan 30 15:01:40 2015
++++ src/libstd/rt/args.rs	Fri Jan 30 16:08:07 2015
+@@ -1,4 +1,4 @@
+-// Copyright 2012-2013 The Rust Project Developers. See the COPYRIGHT
++// Copyright 2012-2015 The Rust Project Developers. See the COPYRIGHT
+ // file at the top-level directory of this distribution and at
+ // http://rust-lang.org/COPYRIGHT.
+ //
 @@ -42,7 +42,8 @@ pub fn clone() -> Option<Vec<Vec<u8>>> { imp::clone() 
  #[cfg(any(target_os = "linux",
            target_os = "android",

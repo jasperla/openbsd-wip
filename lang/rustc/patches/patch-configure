@@ -1,7 +1,7 @@
 $OpenBSD$
---- configure.orig	Thu Jan 22 17:08:32 2015
-+++ configure	Thu Jan 29 08:35:51 2015
-@@ -373,6 +373,10 @@ case $CFG_OSTYPE in
+--- configure.orig	Fri Jan 30 15:03:23 2015
++++ configure	Fri Jan 30 16:08:07 2015
+@@ -374,6 +374,10 @@ case $CFG_OSTYPE in
          CFG_OSTYPE=unknown-dragonfly
          ;;
  

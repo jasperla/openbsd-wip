@@ -1,8 +1,8 @@
 diff --git configure configure
-index 712db84..71caea5 100755
+index 7b7eac8..2127f2c 100755
 --- configure
 +++ configure
-@@ -373,6 +373,10 @@ case $CFG_OSTYPE in
+@@ -374,6 +374,10 @@ case $CFG_OSTYPE in
          CFG_OSTYPE=unknown-dragonfly
          ;;
  
@@ -46,9 +46,15 @@ index 0000000..582d75c
 +CFG_RUN_TARG_x86_64-unknown-openbsd=$(call CFG_RUN_x86_64-unknown-openbsd,,$(2))
 +CFG_GNU_TRIPLE_x86_64-unknown-openbsd := x86_64-unknown-openbsd
 diff --git src/compiletest/util.rs src/compiletest/util.rs
-index a116cc3..934d94f 100644
+index a116cc3..533ff9d 100644
 --- src/compiletest/util.rs
 +++ src/compiletest/util.rs
+@@ -1,4 +1,4 @@
+-// Copyright 2012 The Rust Project Developers. See the COPYRIGHT
++// Copyright 2012-2015 The Rust Project Developers. See the COPYRIGHT
+ // file at the top-level directory of this distribution and at
+ // http://rust-lang.org/COPYRIGHT.
+ //
 @@ -23,6 +23,7 @@ static OS_TABLE: &'static [(&'static str, &'static str)] = &[
      ("linux", "linux"),
      ("freebsd", "freebsd"),
@@ -58,10 +64,10 @@ index a116cc3..934d94f 100644
  
  pub fn get_os(triple: &str) -> &'static str {
 diff --git src/doc/reference.md src/doc/reference.md
-index a27d6c6..9788a69 100644
+index 59ac173..c6c9744 100644
 --- src/doc/reference.md
 +++ src/doc/reference.md
-@@ -2196,7 +2196,8 @@ The following configurations must be defined by the implementation:
+@@ -2195,7 +2195,8 @@ The following configurations must be defined by the implementation:
    `"unix"` or `"windows"`. The value of this configuration option is defined
    as a configuration itself, like `unix` or `windows`.
  * `target_os = "..."`. Operating system of the target, examples include
@@ -72,9 +78,16 @@ index a27d6c6..9788a69 100644
    for targets with 32-bit pointers, and likewise set to `"64"` for 64-bit
    pointers.
 diff --git src/etc/local_stage0.sh src/etc/local_stage0.sh
-index 56ebd4f..ff339ac 100755
+index 56ebd4f..850aea7 100755
 --- src/etc/local_stage0.sh
 +++ src/etc/local_stage0.sh
+@@ -1,5 +1,5 @@
+ #!/bin/sh
+-# Copyright 2014 The Rust Project Developers. See the COPYRIGHT
++# Copyright 2014-2015 The Rust Project Developers. See the COPYRIGHT
+ # file at the top-level directory of this distribution and at
+ # http://rust-lang.org/COPYRIGHT.
+ #
 @@ -18,7 +18,7 @@ LIB_PREFIX=lib
  
  OS=`uname -s`
@@ -85,18 +98,24 @@ index 56ebd4f..ff339ac 100755
      LIB_SUF=.so
      break
 diff --git src/etc/snapshot.py src/etc/snapshot.py
-index 8f45f7f..b224a16 100644
+index 698c3a5..264af5f 100644
 --- src/etc/snapshot.py
 +++ src/etc/snapshot.py
-@@ -38,6 +38,7 @@ snapshot_files = {
-     "winnt": ["bin/rustc.exe"],
-     "freebsd": ["bin/rustc"],
-     "dragonfly": ["bin/rustc"],
-+    "openbsd": ["bin/rustc"],
-     }
+@@ -1,4 +1,4 @@
+-# Copyright 2011-2014 The Rust Project Developers. See the COPYRIGHT
++# Copyright 2011-2015 The Rust Project Developers. See the COPYRIGHT
+ # file at the top-level directory of this distribution and at
+ # http://rust-lang.org/COPYRIGHT.
+ #
+@@ -46,6 +46,7 @@ snapshot_files = {
+         "winnt": ["bin/rustc.exe"],
+         "freebsd": ["bin/rustc"],
+         "dragonfly": ["bin/rustc"],
++        "openbsd": ["bin/rustc"],
+         }
  
- winnt_runtime_deps_32 = ["libgcc_s_dw2-1.dll",
-@@ -89,6 +90,8 @@ def get_kernel(triple):
+ winnt_runtime_deps_32 = ["libgcc_s_dw2-1.dll", "libstdc++-6.dll"]
+@@ -100,6 +101,8 @@ def get_kernel(triple):
          return "freebsd"
      if os_name == "dragonfly":
          return "dragonfly"
@@ -104,7 +123,7 @@ index 8f45f7f..b224a16 100644
 +        return "openbsd"
      return "linux"
  
- def get_cpu(triple):
+ 
 diff --git src/libbacktrace/configure src/libbacktrace/configure
 index f4f9d05..14a9fd4 100755
 --- src/libbacktrace/configure
@@ -119,10 +138,10 @@ index f4f9d05..14a9fd4 100755
        hardcode_libdir_flag_spec='-R$libdir'
        hardcode_direct=yes
 diff --git src/liblibc/lib.rs src/liblibc/lib.rs
-index d010615..2de0cfd 100644
+index 5487822..c5cbd9b 100644
 --- src/liblibc/lib.rs
 +++ src/liblibc/lib.rs
-@@ -277,7 +277,8 @@ pub use funcs::bsd43::{shutdown};
+@@ -279,7 +279,8 @@ pub use funcs::bsd43::{shutdown};
  #[cfg(any(target_os = "linux",
            target_os = "android",
            target_os = "freebsd",
@@ -132,7 +151,7 @@ index d010615..2de0cfd 100644
  pub use consts::os::posix01::{CLOCK_REALTIME, CLOCK_MONOTONIC};
  
  #[cfg(any(target_os = "linux", target_os = "android"))]
-@@ -287,7 +288,7 @@ pub use types::os::arch::extra::{sockaddr_ll};
+@@ -289,7 +290,7 @@ pub use types::os::arch::extra::{sockaddr_ll};
  #[cfg(any(target_os = "linux", target_os = "android"))]
  pub use consts::os::extra::{AF_PACKET};
  
@@ -141,7 +160,7 @@ index d010615..2de0cfd 100644
  pub use consts::os::extra::{MAP_STACK};
  
  #[cfg(any(target_os = "freebsd", target_os = "dragonfly"))]
-@@ -1323,6 +1324,233 @@ pub mod types {
+@@ -1325,6 +1326,233 @@ pub mod types {
          }
      }
  
@@ -375,7 +394,7 @@ index d010615..2de0cfd 100644
      #[cfg(target_os = "windows")]
      pub mod os {
          pub mod common {
-@@ -3250,7 +3478,8 @@ pub mod consts {
+@@ -3253,7 +3481,8 @@ pub mod consts {
          }
      }
  
@@ -385,17 +404,7 @@ index d010615..2de0cfd 100644
      pub mod os {
          pub mod c95 {
              use types::os::arch::c95::{c_int, c_uint};
-@@ -3520,6 +3749,9 @@ pub mod consts {
-             #[cfg(target_os = "dragonfly")]
-             pub const PTHREAD_STACK_MIN: size_t = 1024;
- 
-+            #[cfg(target_os = "openbsd")]
-+            pub const PTHREAD_STACK_MIN: size_t = 2048;
-+
-             pub const CLOCK_REALTIME: c_int = 0;
-             pub const CLOCK_MONOTONIC: c_int = 4;
-         }
-@@ -3659,7 +3891,7 @@ pub mod consts {
+@@ -3662,7 +3891,7 @@ pub mod consts {
          }
      }
  
@@ -404,7 +413,7 @@ index d010615..2de0cfd 100644
      pub mod os {
          pub mod c95 {
              use types::os::arch::c95::{c_int, c_uint};
-@@ -3747,14 +3979,11 @@ pub mod consts {
+@@ -3750,14 +3979,11 @@ pub mod consts {
              pub const MCL_CURRENT : c_int = 0x0001;
              pub const MCL_FUTURE : c_int = 0x0002;
  
@@ -422,7 +431,7 @@ index d010615..2de0cfd 100644
              pub const ENOENT : c_int = 2;
              pub const ESRCH : c_int = 3;
              pub const EINTR : c_int = 4;
-@@ -3789,7 +4018,7 @@ pub mod consts {
+@@ -3792,7 +4018,7 @@ pub mod consts {
              pub const EDOM : c_int = 33;
              pub const ERANGE : c_int = 34;
              pub const EAGAIN : c_int = 35;
@@ -431,7 +440,7 @@ index d010615..2de0cfd 100644
              pub const EINPROGRESS : c_int = 36;
              pub const EALREADY : c_int = 37;
              pub const ENOTSOCK : c_int = 38;
-@@ -3799,7 +4028,7 @@ pub mod consts {
+@@ -3802,7 +4028,7 @@ pub mod consts {
              pub const ENOPROTOOPT : c_int = 42;
              pub const EPROTONOSUPPORT : c_int = 43;
              pub const ESOCKTNOSUPPORT : c_int = 44;
@@ -440,7 +449,7 @@ index d010615..2de0cfd 100644
              pub const EPFNOSUPPORT : c_int = 46;
              pub const EAFNOSUPPORT : c_int = 47;
              pub const EADDRINUSE : c_int = 48;
-@@ -3836,28 +4065,424 @@ pub mod consts {
+@@ -3839,30 +4065,428 @@ pub mod consts {
              pub const EFTYPE : c_int = 79;
              pub const EAUTH : c_int = 80;
              pub const ENEEDAUTH : c_int = 81;
@@ -468,6 +477,8 @@ index d010615..2de0cfd 100644
 -            pub const ETIME : c_int = 101;
 -            pub const EOPNOTSUPP : c_int = 102;
 -            pub const ENOPOLICY : c_int = 103;
+-            pub const ENOTRECOVERABLE : c_int = 104;
+-            pub const EOWNERDEAD : c_int = 105;
 +            pub const ECANCELED : c_int = 85;
 +            pub const EILSEQ : c_int = 86;
 +            pub const ENOATTR : c_int = 87;
@@ -591,8 +602,10 @@ index d010615..2de0cfd 100644
 +            pub const IP_HDRINCL: c_int = 2;
 +            pub const IP_ADD_MEMBERSHIP: c_int = 12;
 +            pub const IP_DROP_MEMBERSHIP: c_int = 13;
-+            pub const IPV6_ADD_MEMBERSHIP: c_int = 12; // don't exist, keep same as IP_ADD_MEMBERSHIP
-+            pub const IPV6_DROP_MEMBERSHIP: c_int = 13; // don't exist, keep same as IP_DROP_MEMBERSHIP
++            // don't exist, keep same as IP_ADD_MEMBERSHIP
++            pub const IPV6_ADD_MEMBERSHIP: c_int = 12;
++            // don't exist, keep same as IP_DROP_MEMBERSHIP
++            pub const IPV6_DROP_MEMBERSHIP: c_int = 13;
 +
 +            pub const TCP_NODELAY: c_int = 1;
 +            //pub const TCP_KEEPIDLE: c_int = ;
@@ -883,10 +896,12 @@ index d010615..2de0cfd 100644
 +            pub const ETIME : c_int = 101;
 +            pub const EOPNOTSUPP : c_int = 102;
 +            pub const ENOPOLICY : c_int = 103;
-             pub const ENOTRECOVERABLE : c_int = 104;
-             pub const EOWNERDEAD : c_int = 105;
++            pub const ENOTRECOVERABLE : c_int = 104;
++            pub const EOWNERDEAD : c_int = 105;
              pub const EQFULL : c_int = 106;
-@@ -4376,7 +5001,8 @@ pub mod funcs {
+             pub const ELAST : c_int = 106;
+         }
+@@ -4379,7 +5003,8 @@ pub mod funcs {
                target_os = "macos",
                target_os = "ios",
                target_os = "freebsd",
@@ -896,7 +911,7 @@ index d010615..2de0cfd 100644
      pub mod posix88 {
          pub mod stat_ {
              use types::os::arch::c95::{c_char, c_int};
-@@ -4390,6 +5016,7 @@ pub mod funcs {
+@@ -4393,6 +5018,7 @@ pub mod funcs {
                  #[cfg(any(target_os = "linux",
                            target_os = "freebsd",
                            target_os = "dragonfly",
@@ -904,7 +919,7 @@ index d010615..2de0cfd 100644
                            target_os = "android",
                            target_os = "ios"))]
                  pub fn fstat(fildes: c_int, buf: *mut stat) -> c_int;
-@@ -4404,6 +5031,7 @@ pub mod funcs {
+@@ -4407,6 +5033,7 @@ pub mod funcs {
                  #[cfg(any(target_os = "linux",
                            target_os = "freebsd",
                            target_os = "dragonfly",
@@ -912,7 +927,7 @@ index d010615..2de0cfd 100644
                            target_os = "android",
                            target_os = "ios"))]
                  pub fn stat(path: *const c_char, buf: *mut stat) -> c_int;
-@@ -4596,7 +5224,8 @@ pub mod funcs {
+@@ -4599,7 +5226,8 @@ pub mod funcs {
                target_os = "macos",
                target_os = "ios",
                target_os = "freebsd",
@@ -922,7 +937,7 @@ index d010615..2de0cfd 100644
      pub mod posix01 {
          pub mod stat_ {
              use types::os::arch::c95::{c_char, c_int};
-@@ -4606,6 +5235,7 @@ pub mod funcs {
+@@ -4609,6 +5237,7 @@ pub mod funcs {
                  #[cfg(any(target_os = "linux",
                            target_os = "freebsd",
                            target_os = "dragonfly",
@@ -930,7 +945,7 @@ index d010615..2de0cfd 100644
                            target_os = "android",
                            target_os = "ios"))]
                  pub fn lstat(path: *const c_char, buf: *mut stat) -> c_int;
-@@ -4713,7 +5343,8 @@ pub mod funcs {
+@@ -4716,7 +5345,8 @@ pub mod funcs {
                target_os = "macos",
                target_os = "ios",
                target_os = "freebsd",
@@ -940,7 +955,7 @@ index d010615..2de0cfd 100644
      pub mod posix08 {
          pub mod unistd {
          }
-@@ -4799,7 +5430,8 @@ pub mod funcs {
+@@ -4802,7 +5432,8 @@ pub mod funcs {
      #[cfg(any(target_os = "macos",
                target_os = "ios",
                target_os = "freebsd",
@@ -950,7 +965,7 @@ index d010615..2de0cfd 100644
      pub mod bsd44 {
          use types::common::c95::{c_void};
          use types::os::arch::c95::{c_char, c_uchar, c_int, c_uint, c_ulong, size_t};
-@@ -4862,7 +5494,9 @@ pub mod funcs {
+@@ -4865,7 +5496,9 @@ pub mod funcs {
          }
      }
  
@@ -962,9 +977,15 @@ index d010615..2de0cfd 100644
      }
  
 diff --git src/librustc_back/arm.rs src/librustc_back/arm.rs
-index 7e28cd6..e225171 100644
+index 7e28cd6..a4417b4 100644
 --- src/librustc_back/arm.rs
 +++ src/librustc_back/arm.rs
+@@ -1,4 +1,4 @@
+-// Copyright 2012 The Rust Project Developers. See the COPYRIGHT
++// Copyright 2012-2015 The Rust Project Developers. See the COPYRIGHT
+ // file at the top-level directory of this distribution and at
+ // http://rust-lang.org/COPYRIGHT.
+ //
 @@ -61,7 +61,7 @@ pub fn get_target_strs(target_triple: String, target_os: abi::Os) -> target_strs
                  -a:0:64-n32".to_string()
            }
@@ -975,9 +996,15 @@ index 7e28cd6..e225171 100644
                  -i1:8:8-i8:8:8-i16:16:16-i32:32:32-i64:64:64\
                  -f32:32:32-f64:64:64\
 diff --git src/librustc_back/mips.rs src/librustc_back/mips.rs
-index bc77321..5bcf8f6 100644
+index bc77321..cb44fe1 100644
 --- src/librustc_back/mips.rs
 +++ src/librustc_back/mips.rs
+@@ -1,4 +1,4 @@
+-// Copyright 2012 The Rust Project Developers. See the COPYRIGHT
++// Copyright 2012-2015 The Rust Project Developers. See the COPYRIGHT
+ // file at the top-level directory of this distribution and at
+ // http://rust-lang.org/COPYRIGHT.
+ //
 @@ -56,7 +56,7 @@ pub fn get_target_strs(target_triple: String, target_os: abi::Os) -> target_strs
                  -a:0:64-n32".to_string()
            }
@@ -988,9 +1015,15 @@ index bc77321..5bcf8f6 100644
                  -i1:8:8-i8:8:8-i16:16:16-i32:32:32-i64:64:64\
                  -f32:32:32-f64:64:64\
 diff --git src/librustc_back/mipsel.rs src/librustc_back/mipsel.rs
-index 3eea0a0..58b2e6b 100644
+index 3eea0a0..7ee357f 100644
 --- src/librustc_back/mipsel.rs
 +++ src/librustc_back/mipsel.rs
+@@ -1,4 +1,4 @@
+-// Copyright 2012 The Rust Project Developers. See the COPYRIGHT
++// Copyright 2012-2015 The Rust Project Developers. See the COPYRIGHT
+ // file at the top-level directory of this distribution and at
+ // http://rust-lang.org/COPYRIGHT.
+ //
 @@ -56,7 +56,7 @@ pub fn get_target_strs(target_triple: String, target_os: abi::Os) -> target_strs
                  -a:0:64-n32".to_string()
            }
@@ -1001,9 +1034,15 @@ index 3eea0a0..58b2e6b 100644
                  -i1:8:8-i8:8:8-i16:16:16-i32:32:32-i64:64:64\
                  -f32:32:32-f64:64:64\
 diff --git src/librustc_back/rpath.rs src/librustc_back/rpath.rs
-index d24fd6a..e3a89f8 100644
+index bafd5fb..c058087 100644
 --- src/librustc_back/rpath.rs
 +++ src/librustc_back/rpath.rs
+@@ -1,4 +1,4 @@
+-// Copyright 2012-2013 The Rust Project Developers. See the COPYRIGHT
++// Copyright 2012-2015 The Rust Project Developers. See the COPYRIGHT
+ // file at the top-level directory of this distribution and at
+ // http://rust-lang.org/COPYRIGHT.
+ //
 @@ -215,7 +215,9 @@ mod test {
      }
  
@@ -1016,7 +1055,7 @@ index d24fd6a..e3a89f8 100644
          let config = &mut RPathConfig {
              used_crates: Vec::new(),
 diff --git src/librustc_back/target/mod.rs src/librustc_back/target/mod.rs
-index f8eabb4..0289f79 100644
+index a63e823..0e971f9 100644
 --- src/librustc_back/target/mod.rs
 +++ src/librustc_back/target/mod.rs
 @@ -56,6 +56,7 @@ mod apple_base;
@@ -1027,7 +1066,7 @@ index f8eabb4..0289f79 100644
  
  mod armv7_apple_ios;
  mod armv7s_apple_ios;
-@@ -79,6 +80,7 @@ mod x86_64_pc_windows_gnu;
+@@ -80,6 +81,7 @@ mod x86_64_pc_windows_gnu;
  mod x86_64_unknown_freebsd;
  mod x86_64_unknown_dragonfly;
  mod x86_64_unknown_linux_gnu;
@@ -1035,7 +1074,7 @@ index f8eabb4..0289f79 100644
  
  /// Everything `rustc` knows about how to compile for a specific target.
  ///
-@@ -351,6 +353,8 @@ impl Target {
+@@ -352,6 +354,8 @@ impl Target {
              i686_unknown_dragonfly,
              x86_64_unknown_dragonfly,
  
@@ -1046,11 +1085,11 @@ index f8eabb4..0289f79 100644
  
 diff --git src/librustc_back/target/openbsd_base.rs src/librustc_back/target/openbsd_base.rs
 new file mode 100644
-index 0000000..452298d
+index 0000000..42220a8
 --- /dev/null
 +++ src/librustc_back/target/openbsd_base.rs
 @@ -0,0 +1,28 @@
-+// Copyright 2014 The Rust Project Developers. See the COPYRIGHT
++// Copyright 2014-2015 The Rust Project Developers. See the COPYRIGHT
 +// file at the top-level directory of this distribution and at
 +// http://rust-lang.org/COPYRIGHT.
 +//
@@ -1080,11 +1119,11 @@ index 0000000..452298d
 +
 diff --git src/librustc_back/target/x86_64_unknown_openbsd.rs src/librustc_back/target/x86_64_unknown_openbsd.rs
 new file mode 100644
-index 0000000..be04162
+index 0000000..d2667dc
 --- /dev/null
 +++ src/librustc_back/target/x86_64_unknown_openbsd.rs
 @@ -0,0 +1,28 @@
-+// Copyright 2014 The Rust Project Developers. See the COPYRIGHT
++// Copyright 2014-2015 The Rust Project Developers. See the COPYRIGHT
 +// file at the top-level directory of this distribution and at
 +// http://rust-lang.org/COPYRIGHT.
 +//
@@ -1113,9 +1152,15 @@ index 0000000..be04162
 +    }
 +}
 diff --git src/librustc_back/x86.rs src/librustc_back/x86.rs
-index 52c0716..f6fdd21 100644
+index 52c0716..9d1b734 100644
 --- src/librustc_back/x86.rs
 +++ src/librustc_back/x86.rs
+@@ -1,4 +1,4 @@
+-// Copyright 2012 The Rust Project Developers. See the COPYRIGHT
++// Copyright 2012-2015 The Rust Project Developers. See the COPYRIGHT
+ // file at the top-level directory of this distribution and at
+ // http://rust-lang.org/COPYRIGHT.
+ //
 @@ -51,6 +51,9 @@ pub fn get_target_strs(target_triple: String, target_os: abi::Os)
            abi::OsDragonfly => {
              "e-p:32:32-f64:32:64-i64:32:64-f80:32:32-n8:16:32".to_string()
@@ -1127,9 +1172,15 @@ index 52c0716..f6fdd21 100644
          },
  
 diff --git src/librustc_back/x86_64.rs src/librustc_back/x86_64.rs
-index cbb288a..5ed41d4 100644
+index cbb288a..2f13bb3 100644
 --- src/librustc_back/x86_64.rs
 +++ src/librustc_back/x86_64.rs
+@@ -1,4 +1,4 @@
+-// Copyright 2012 The Rust Project Developers. See the COPYRIGHT
++// Copyright 2012-2015 The Rust Project Developers. See the COPYRIGHT
+ // file at the top-level directory of this distribution and at
+ // http://rust-lang.org/COPYRIGHT.
+ //
 @@ -57,6 +57,11 @@ pub fn get_target_strs(target_triple: String, target_os: abi::Os) -> target_strs
                  f32:32:32-f64:64:64-v64:64:64-v128:128:128-a:0:64-\
                  s0:64:64-f80:128:128-n8:16:32:64-S128".to_string()
@@ -1143,9 +1194,15 @@ index cbb288a..5ed41d4 100644
          },
  
 diff --git src/librustdoc/flock.rs src/librustdoc/flock.rs
-index 0084acd..0749229 100644
+index ede71d1..a7cf5eb 100644
 --- src/librustdoc/flock.rs
 +++ src/librustdoc/flock.rs
+@@ -1,4 +1,4 @@
+-// Copyright 2014 The Rust Project Developers. See the COPYRIGHT
++// Copyright 2014-2015 The Rust Project Developers. See the COPYRIGHT
+ // file at the top-level directory of this distribution and at
+ // http://rust-lang.org/COPYRIGHT.
+ //
 @@ -64,7 +64,7 @@ mod imp {
          pub const F_SETLKW: libc::c_int = 13;
      }
@@ -1156,9 +1213,15 @@ index 0084acd..0749229 100644
          use libc;
  
 diff --git src/libstd/dynamic_lib.rs src/libstd/dynamic_lib.rs
-index db1239a..bb44727 100644
+index f35f631..c401762 100644
 --- src/libstd/dynamic_lib.rs
 +++ src/libstd/dynamic_lib.rs
+@@ -1,4 +1,4 @@
+-// Copyright 2013-2014 The Rust Project Developers. See the COPYRIGHT
++// Copyright 2013-2015 The Rust Project Developers. See the COPYRIGHT
+ // file at the top-level directory of this distribution and at
+ // http://rust-lang.org/COPYRIGHT.
+ //
 @@ -173,7 +173,8 @@ mod test {
      #[cfg(any(target_os = "linux",
                target_os = "macos",
@@ -1179,36 +1242,19 @@ index db1239a..bb44727 100644
  mod dl {
      use prelude::v1::*;
  
-@@ -254,6 +256,7 @@ mod dl {
+@@ -254,7 +256,6 @@ mod dl {
          dlclose(handle as *mut libc::c_void); ()
      }
  
-+    #[cfg(not(target_os = "openbsd"))]
-     #[link_name = "dl"]
+-    #[link_name = "dl"]
      extern {
          fn dlopen(filename: *const libc::c_char,
-@@ -263,6 +266,16 @@ mod dl {
-                  symbol: *const libc::c_char) -> *mut libc::c_void;
-         fn dlclose(handle: *mut libc::c_void) -> libc::c_int;
-     }
-+
-+    #[cfg(target_os = "openbsd")]
-+    extern {
-+        fn dlopen(filename: *const libc::c_char,
-+                  flag: libc::c_int) -> *mut libc::c_void;
-+        fn dlerror() -> *mut libc::c_char;
-+        fn dlsym(handle: *mut libc::c_void,
-+                 symbol: *const libc::c_char) -> *mut libc::c_void;
-+        fn dlclose(handle: *mut libc::c_void) -> libc::c_int;
-+    }
- }
- 
- #[cfg(target_os = "windows")]
+                   flag: libc::c_int) -> *mut libc::c_void;
 diff --git src/libstd/os.rs src/libstd/os.rs
-index fc0c838..4b16afc 100644
+index 979a61d..cce1967 100644
 --- src/libstd/os.rs
 +++ src/libstd/os.rs
-@@ -691,7 +691,8 @@ fn real_args_as_bytes() -> Vec<Vec<u8>> {
+@@ -693,7 +693,8 @@ fn real_args_as_bytes() -> Vec<Vec<u8>> {
  #[cfg(any(target_os = "linux",
            target_os = "android",
            target_os = "freebsd",
@@ -1218,7 +1264,7 @@ index fc0c838..4b16afc 100644
  fn real_args_as_bytes() -> Vec<Vec<u8>> {
      use rt;
      rt::args::clone().unwrap_or_else(|| vec![])
-@@ -1330,6 +1331,37 @@ pub mod consts {
+@@ -1326,6 +1327,37 @@ pub mod consts {
      pub const EXE_EXTENSION: &'static str = "";
  }
  
@@ -1257,9 +1303,15 @@ index fc0c838..4b16afc 100644
  pub mod consts {
      pub use os::arch_consts::ARCH;
 diff --git src/libstd/rt/args.rs src/libstd/rt/args.rs
-index 86abacb..da4d709 100644
+index 86abacb..72ddff5 100644
 --- src/libstd/rt/args.rs
 +++ src/libstd/rt/args.rs
+@@ -1,4 +1,4 @@
+-// Copyright 2012-2013 The Rust Project Developers. See the COPYRIGHT
++// Copyright 2012-2015 The Rust Project Developers. See the COPYRIGHT
+ // file at the top-level directory of this distribution and at
+ // http://rust-lang.org/COPYRIGHT.
+ //
 @@ -42,7 +42,8 @@ pub fn clone() -> Option<Vec<Vec<u8>>> { imp::clone() }
  #[cfg(any(target_os = "linux",
            target_os = "android",
@@ -1284,9 +1336,15 @@ index dd99233..43e3a43 100644
  extern {}
  
 diff --git src/libstd/rtdeps.rs src/libstd/rtdeps.rs
-index f4fbd37..f640e41 100644
+index 06b6816..1392bc8 100644
 --- src/libstd/rtdeps.rs
 +++ src/libstd/rtdeps.rs
+@@ -1,4 +1,4 @@
+-// Copyright 2013 The Rust Project Developers. See the COPYRIGHT
++// Copyright 2013-2015 The Rust Project Developers. See the COPYRIGHT
+ // file at the top-level directory of this distribution and at
+ // http://rust-lang.org/COPYRIGHT.
+ //
 @@ -39,7 +39,7 @@ extern {}
  #[link(name = "pthread")]
  extern {}
@@ -1297,9 +1355,15 @@ index f4fbd37..f640e41 100644
  extern {}
  
 diff --git src/libstd/sys/common/net.rs src/libstd/sys/common/net.rs
-index 4cf891a..286afae 100644
+index e42db42..918e14a 100644
 --- src/libstd/sys/common/net.rs
 +++ src/libstd/sys/common/net.rs
+@@ -1,4 +1,4 @@
+-// Copyright 2013-2014 The Rust Project Developers. See the COPYRIGHT
++// Copyright 2013-2015 The Rust Project Developers. See the COPYRIGHT
+ // file at the top-level directory of this distribution and at
+ // http://rust-lang.org/COPYRIGHT.
+ //
 @@ -694,10 +694,16 @@ impl TcpStream {
          setsockopt(self.fd(), libc::IPPROTO_TCP, libc::TCP_KEEPIDLE,
                     seconds as libc::c_int)
@@ -1319,36 +1383,77 @@ index 4cf891a..286afae 100644
          Ok(())
      }
 diff --git src/libstd/sys/common/stack.rs src/libstd/sys/common/stack.rs
-index 88bb939..cd5458a 100644
+index 88bb939..8dd2f15 100644
 --- src/libstd/sys/common/stack.rs
 +++ src/libstd/sys/common/stack.rs
-@@ -241,6 +241,11 @@ pub unsafe fn record_sp_limit(limit: uint) {
-     #[cfg(all(target_arch = "arm", target_os = "ios"))] #[inline(always)]
+@@ -227,18 +227,13 @@ pub unsafe fn record_sp_limit(limit: uint) {
+     }
+ 
+     // aarch64 - FIXME(AARCH64): missing...
+-    #[cfg(target_arch = "aarch64")]
+-    unsafe fn target_record_sp_limit(_: uint) {
+-    }
+-
+     // powerpc - FIXME(POWERPC): missing...
+-    #[cfg(target_arch = "powerpc")]
+-    unsafe fn target_record_sp_limit(_: uint) {
+-    }
+-
+-
+-    // iOS segmented stack is disabled for now, see related notes
+-    #[cfg(all(target_arch = "arm", target_os = "ios"))] #[inline(always)]
++    // arm-ios - iOS segmented stack is disabled for now, see related notes
++    // openbsd - segmented stack is disabled
++    #[cfg(any(target_arch = "aarch64",
++              target_arch = "powerpc",
++              all(target_arch = "arm", target_os = "ios"),
++              target_os = "openbsd"))]
      unsafe fn target_record_sp_limit(_: uint) {
      }
-+
-+    #[cfg(target_os = "openbsd")] #[inline(always)]
-+    unsafe fn target_record_sp_limit(_: uint) {
-+        // segmented stack is disabled
-+    }
  }
+@@ -327,21 +322,17 @@ pub unsafe fn get_sp_limit() -> uint {
+     }
  
- /// The counterpart of the function above, this function will fetch the current
-@@ -345,4 +350,10 @@ pub unsafe fn get_sp_limit() -> uint {
+     // aarch64 - FIXME(AARCH64): missing...
+-    #[cfg(target_arch = "aarch64")]
+-    unsafe fn target_get_sp_limit() -> uint {
+-        1024
+-    }
+-
+-    // powepc - FIXME(POWERPC): missing...
+-    #[cfg(target_arch = "powerpc")]
+-    unsafe fn target_get_sp_limit() -> uint {
+-        1024
+-    }
+-
+-    // iOS doesn't support segmented stacks yet. This function might
+-    // be called by runtime though so it is unsafe to mark it as
+-    // unreachable, let's return a fixed constant.
+-    #[cfg(all(target_arch = "arm", target_os = "ios"))] #[inline(always)]
++    // powerpc - FIXME(POWERPC): missing...
++    // arm-ios - iOS doesn't support segmented stacks yet.
++    // openbsd - OpenBSD doesn't support segmented stacks.
++    //
++    // This function might be called by runtime though
++    // so it is unsafe to unreachable, let's return a fixed constant.
++    #[cfg(any(target_arch = "aarch64",
++              target_arch = "powerpc",
++              all(target_arch = "arm", target_os = "ios"),
++              target_os = "openbsd"))]
++    #[inline(always)]
      unsafe fn target_get_sp_limit() -> uint {
          1024
      }
-+
-+    #[cfg(target_os = "openbsd")] #[inline(always)]
-+    unsafe fn target_get_sp_limit() -> uint {
-+        // segmented stack is disabled
-+        1024
-+    }
- }
 diff --git src/libstd/sys/unix/backtrace.rs src/libstd/sys/unix/backtrace.rs
-index 7164931..ae28076 100644
+index ca1a16d..2cfe8de 100644
 --- src/libstd/sys/unix/backtrace.rs
 +++ src/libstd/sys/unix/backtrace.rs
+@@ -1,4 +1,4 @@
+-// Copyright 2014 The Rust Project Developers. See the COPYRIGHT
++// Copyright 2014-2015 The Rust Project Developers. See the COPYRIGHT
+ // file at the top-level directory of this distribution and at
+ // http://rust-lang.org/COPYRIGHT.
+ //
 @@ -318,7 +318,8 @@ fn print(w: &mut Writer, idx: int, addr: *mut libc::c_void) -> IoResult<()> {
          static mut LAST_FILENAME: [libc::c_char; 256] = [0; 256];
          if !STATE.is_null() { return STATE }
@@ -1423,9 +1528,15 @@ index 9016d1a..4fd7218 100644
      #[cfg(any(target_os = "freebsd", target_os = "dragonfly"))]
      #[repr(C)]
 diff --git src/libstd/sys/unix/os.rs src/libstd/sys/unix/os.rs
-index 175c4e2..407f15d 100644
+index 5d5cda0..3ca2771 100644
 --- src/libstd/sys/unix/os.rs
 +++ src/libstd/sys/unix/os.rs
+@@ -1,4 +1,4 @@
+-// Copyright 2014 The Rust Project Developers. See the COPYRIGHT
++// Copyright 2014-2015 The Rust Project Developers. See the COPYRIGHT
+ // file at the top-level directory of this distribution and at
+ // http://rust-lang.org/COPYRIGHT.
+ //
 @@ -50,6 +50,16 @@ pub fn errno() -> int {
          }
      }
@@ -1453,17 +1564,24 @@ index 175c4e2..407f15d 100644
      fn strerror_r(errnum: c_int, buf: *mut c_char, buflen: libc::size_t)
                    -> c_int {
          extern {
-@@ -204,6 +215,21 @@ pub fn load_self() -> Option<Vec<u8>> {
+@@ -204,6 +215,28 @@ pub fn load_self() -> Option<Vec<u8>> {
      }
  }
  
 +#[cfg(target_os = "openbsd")]
 +pub fn load_self() -> Option<Vec<u8>> {
++    use sync::{StaticMutex, MUTEX_INIT};
++
++    static LOCK: StaticMutex = MUTEX_INIT;
++
 +    extern {
-+        fn __load_self() -> *const c_char;
++        fn rust_load_self() -> *const c_char;
 +    }
++
++    let _guard = LOCK.lock();
++
 +    unsafe {
-+        let v = __load_self();
++        let v = rust_load_self();
 +        if v.is_null() {
 +            None
 +        } else {
@@ -1474,11 +1592,17 @@ index 175c4e2..407f15d 100644
 +
  #[cfg(any(target_os = "linux", target_os = "android"))]
  pub fn load_self() -> Option<Vec<u8>> {
-     use std::io;
+     use old_io;
 diff --git src/libstd/sys/unix/process.rs src/libstd/sys/unix/process.rs
-index 36bf696..5e63f5a 100644
+index 6e12432..91357e2 100644
 --- src/libstd/sys/unix/process.rs
 +++ src/libstd/sys/unix/process.rs
+@@ -1,4 +1,4 @@
+-// Copyright 2014 The Rust Project Developers. See the COPYRIGHT
++// Copyright 2014-2015 The Rust Project Developers. See the COPYRIGHT
+ // file at the top-level directory of this distribution and at
+ // http://rust-lang.org/COPYRIGHT.
+ //
 @@ -604,7 +604,8 @@ fn translate_status(status: c_int) -> ProcessExit {
      #[cfg(any(target_os = "macos",
                target_os = "ios",
@@ -1575,9 +1699,15 @@ index c1e3fc8..bc93513 100644
      use libc;
  
 diff --git src/libstd/sys/unix/thread.rs src/libstd/sys/unix/thread.rs
-index ac51b68..6d5da829 100644
+index ac51b68..41dd8df 100644
 --- src/libstd/sys/unix/thread.rs
 +++ src/libstd/sys/unix/thread.rs
+@@ -1,4 +1,4 @@
+-// Copyright 2014 The Rust Project Developers. See the COPYRIGHT
++// Copyright 2014-2015 The Rust Project Developers. See the COPYRIGHT
+ // file at the top-level directory of this distribution and at
+ // http://rust-lang.org/COPYRIGHT.
+ //
 @@ -30,7 +30,9 @@ pub extern fn thread_start(main: *mut libc::c_void) -> rust_thread_return {
      return start_thread(main);
  }
@@ -1664,9 +1794,15 @@ index ac51b68..6d5da829 100644
      fn pthread_create(native: *mut libc::pthread_t,
                        attr: *const libc::pthread_attr_t,
 diff --git src/libstd/sys/unix/thread_local.rs src/libstd/sys/unix/thread_local.rs
-index ea1e9c2..153801a 100644
+index ea1e9c2..62d9a33 100644
 --- src/libstd/sys/unix/thread_local.rs
 +++ src/libstd/sys/unix/thread_local.rs
+@@ -1,4 +1,4 @@
+-// Copyright 2014 The Rust Project Developers. See the COPYRIGHT
++// Copyright 2014-2015 The Rust Project Developers. See the COPYRIGHT
+ // file at the top-level directory of this distribution and at
+ // http://rust-lang.org/COPYRIGHT.
+ //
 @@ -42,13 +42,15 @@ pub unsafe fn destroy(key: Key) {
  type pthread_key_t = ::libc::c_ulong;
  
@@ -1699,10 +1835,40 @@ index cc1e23f..bddf7b0 100644
      #[link(name = "rt")]
      extern {}
  
+diff --git src/libstd/sys/unix/tty.rs src/libstd/sys/unix/tty.rs
+index d414f70..3a79047 100644
+--- src/libstd/sys/unix/tty.rs
++++ src/libstd/sys/unix/tty.rs
+@@ -21,7 +21,8 @@ pub struct TTY {
+ }
+ 
+ #[cfg(any(target_os = "macos",
+-          target_os = "freebsd"))]
++          target_os = "freebsd",
++          target_os = "openbsd"))]
+ const TIOCGWINSZ: c_ulong = 0x40087468;
+ 
+ #[cfg(any(target_os = "linux", target_os = "android"))]
+@@ -53,7 +54,8 @@ impl TTY {
+     #[cfg(any(target_os = "linux",
+               target_os = "android",
+               target_os = "macos",
+-              target_os = "freebsd"))]
++              target_os = "freebsd",
++              target_os = "openbsd"))]
+     pub fn get_winsize(&mut self) -> IoResult<(int, int)> {
+         unsafe {
+             #[repr(C)]
 diff --git src/libsyntax/abi.rs src/libsyntax/abi.rs
-index 09235ee..0c50003 100644
+index 5f593ac..5be29a9 100644
 --- src/libsyntax/abi.rs
 +++ src/libsyntax/abi.rs
+@@ -1,4 +1,4 @@
+-// Copyright 2012-2014 The Rust Project Developers. See the COPYRIGHT
++// Copyright 2012-2015 The Rust Project Developers. See the COPYRIGHT
+ // file at the top-level directory of this distribution and at
+ // http://rust-lang.org/COPYRIGHT.
+ //
 @@ -24,6 +24,7 @@ pub enum Os {
      OsFreebsd,
      OsiOS,
@@ -1710,8 +1876,8 @@ index 09235ee..0c50003 100644
 +    OsOpenbsd,
  }
  
- #[derive(PartialEq, Eq, Hash, RustcEncodable, RustcDecodable, Clone, Copy)]
-@@ -146,7 +147,8 @@ impl fmt::String for Os {
+ #[derive(PartialEq, Eq, Hash, RustcEncodable, RustcDecodable, Clone, Copy, Show)]
+@@ -134,7 +135,8 @@ impl fmt::Display for Os {
              OsiOS => "ios".fmt(f),
              OsAndroid => "android".fmt(f),
              OsFreebsd => "freebsd".fmt(f),
@@ -1722,10 +1888,16 @@ index 09235ee..0c50003 100644
      }
  }
 diff --git src/rt/rust_builtin.c src/rt/rust_builtin.c
-index 5dc07f8..fdfeeb0 100644
+index 03cd3fd..382cbf0 100644
 --- src/rt/rust_builtin.c
 +++ src/rt/rust_builtin.c
-@@ -70,7 +70,7 @@ extern char **environ;
+@@ -1,4 +1,4 @@
+-// Copyright 2012 The Rust Project Developers. See the COPYRIGHT
++// Copyright 2012-2015 The Rust Project Developers. See the COPYRIGHT
+ // file at the top-level directory of this distribution and at
+ // http://rust-lang.org/COPYRIGHT.
+ //
+@@ -47,7 +47,7 @@ extern char **environ;
  #endif
  #endif
  
@@ -1734,7 +1906,7 @@ index 5dc07f8..fdfeeb0 100644
  extern char **environ;
  #endif
  
-@@ -337,6 +337,56 @@ rust_unset_sigprocmask() {
+@@ -199,6 +199,56 @@ rust_unset_sigprocmask() {
  int *__dfly_error(void) { return __error(); }
  #endif
  
@@ -1743,7 +1915,7 @@ index 5dc07f8..fdfeeb0 100644
 +#include <sys/sysctl.h>
 +#include <limits.h>
 +
-+const char * __load_self() {
++const char * rust_load_self() {
 +    static char *self = NULL;
 +
 +    if (self == NULL) {
@@ -1791,6 +1963,25 @@ index 5dc07f8..fdfeeb0 100644
  //
  // Local Variables:
  // mode: C++
+diff --git src/test/run-make/tools.mk src/test/run-make/tools.mk
+index 1c791f0..accb2f7 100644
+--- src/test/run-make/tools.mk
++++ src/test/run-make/tools.mk
+@@ -59,11 +59,14 @@ ifeq ($(shell uname),Darwin)
+ else
+ ifeq ($(shell uname),FreeBSD)
+ 	EXTRACFLAGS := -lm -lpthread -lgcc_s
++ifeq ($(shell uname),OpenBSD)
++	EXTRACFLAGS := -lm -lpthread	
+ else
+ 	EXTRACFLAGS := -lm -lrt -ldl -lpthread
+ endif
+ endif
+ endif
++endif
+ 
+ REMOVE_DYLIBS     = rm $(TMPDIR)/$(call DYLIB_GLOB,$(1))
+ REMOVE_RLIBS      = rm $(TMPDIR)/$(call RLIB_GLOB,$(1))
 diff --git src/test/run-pass/intrinsic-alignment.rs src/test/run-pass/intrinsic-alignment.rs
 index da07e95..07f021e 100644
 --- src/test/run-pass/intrinsic-alignment.rs
@@ -1806,9 +1997,15 @@ index da07e95..07f021e 100644
      #[main]
      #[cfg(target_arch = "x86")]
 diff --git src/test/run-pass/lang-item-public.rs src/test/run-pass/lang-item-public.rs
-index f94f648..c877507 100644
+index f94f648..2d70fa0 100644
 --- src/test/run-pass/lang-item-public.rs
 +++ src/test/run-pass/lang-item-public.rs
+@@ -1,4 +1,4 @@
+-// Copyright 2014 The Rust Project Developers. See the COPYRIGHT
++// Copyright 2014-2015 The Rust Project Developers. See the COPYRIGHT
+ // file at the top-level directory of this distribution and at
+ // http://rust-lang.org/COPYRIGHT.
+ //
 @@ -37,6 +37,10 @@ extern {}
  #[link(name = "c")]
  extern {}
@@ -1821,7 +2018,7 @@ index f94f648..c877507 100644
  #[link(name = "System")]
  extern {}
 diff --git src/test/run-pass/rec-align-u64.rs src/test/run-pass/rec-align-u64.rs
-index 2794154..dfc9a15 100644
+index eaf76ef..5330490 100644
 --- src/test/run-pass/rec-align-u64.rs
 +++ src/test/run-pass/rec-align-u64.rs
 @@ -39,7 +39,8 @@ struct Outer {
@@ -1835,9 +2032,15 @@ index 2794154..dfc9a15 100644
      #[cfg(target_arch = "x86")]
      pub mod m {
 diff --git src/test/run-pass/tcp-stress.rs src/test/run-pass/tcp-stress.rs
-index 0109d64..0b4273a 100644
+index e23d1a6..dc19905 100644
 --- src/test/run-pass/tcp-stress.rs
 +++ src/test/run-pass/tcp-stress.rs
+@@ -1,4 +1,4 @@
+-// Copyright 2012-2014 The Rust Project Developers. See the COPYRIGHT
++// Copyright 2012-2015 The Rust Project Developers. See the COPYRIGHT
+ // file at the top-level directory of this distribution and at
+ // http://rust-lang.org/COPYRIGHT.
+ //
 @@ -10,6 +10,7 @@
  
  // ignore-linux see joyent/libuv#1189
@@ -1847,9 +2050,15 @@ index 0109d64..0b4273a 100644
  
  #[macro_use]
 diff --git src/test/run-pass/x86stdcall.rs src/test/run-pass/x86stdcall.rs
-index 15d1852..63d2fa9 100644
+index 15d1852..75a8f60 100644
 --- src/test/run-pass/x86stdcall.rs
 +++ src/test/run-pass/x86stdcall.rs
+@@ -1,4 +1,4 @@
+-// Copyright 2012-2013 The Rust Project Developers. See the COPYRIGHT
++// Copyright 2012-2015 The Rust Project Developers. See the COPYRIGHT
+ // file at the top-level directory of this distribution and at
+ // http://rust-lang.org/COPYRIGHT.
+ //
 @@ -34,5 +34,6 @@ pub fn main() {
            target_os = "linux",
            target_os = "freebsd",

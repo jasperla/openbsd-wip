@@ -1,6 +1,12 @@
 $OpenBSD$
---- src/libstd/sys/unix/os.rs.orig	Thu Jan 22 17:08:32 2015
-+++ src/libstd/sys/unix/os.rs	Thu Jan 29 08:35:51 2015
+--- src/libstd/sys/unix/os.rs.orig	Fri Jan 30 15:03:23 2015
++++ src/libstd/sys/unix/os.rs	Fri Jan 30 16:08:08 2015
+@@ -1,4 +1,4 @@
+-// Copyright 2014 The Rust Project Developers. See the COPYRIGHT
++// Copyright 2014-2015 The Rust Project Developers. See the COPYRIGHT
+ // file at the top-level directory of this distribution and at
+ // http://rust-lang.org/COPYRIGHT.
+ //
 @@ -50,6 +50,16 @@ pub fn errno() -> int {
          }
      }
@@ -28,8 +34,8 @@ $OpenBSD$
      fn strerror_r(errnum: c_int, buf: *mut c_char, buflen: libc::size_t)
                    -> c_int {
          extern {
-@@ -201,6 +212,21 @@ pub fn load_self() -> Option<Vec<u8>> {
-     match io::fs::readlink(&Path::new("/proc/curproc/file")) {
+@@ -201,6 +212,28 @@ pub fn load_self() -> Option<Vec<u8>> {
+     match old_io::fs::readlink(&Path::new("/proc/curproc/file")) {
          Ok(path) => Some(path.into_vec()),
          Err(..) => None
 +    }
@@ -37,11 +43,18 @@ $OpenBSD$
 +
 +#[cfg(target_os = "openbsd")]
 +pub fn load_self() -> Option<Vec<u8>> {
++    use sync::{StaticMutex, MUTEX_INIT};
++
++    static LOCK: StaticMutex = MUTEX_INIT;
++
 +    extern {
-+        fn __load_self() -> *const c_char;
++        fn rust_load_self() -> *const c_char;
 +    }
++
++    let _guard = LOCK.lock();
++
 +    unsafe {
-+        let v = __load_self();
++        let v = rust_load_self();
 +        if v.is_null() {
 +            None
 +        } else {

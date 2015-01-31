@@ -1,8 +1,8 @@
 $OpenBSD$
---- src/librustc_back/target/openbsd_base.rs.orig	Thu Jan 29 08:35:51 2015
-+++ src/librustc_back/target/openbsd_base.rs	Thu Jan 29 08:35:51 2015
+--- src/librustc_back/target/openbsd_base.rs.orig	Fri Jan 30 16:08:07 2015
++++ src/librustc_back/target/openbsd_base.rs	Fri Jan 30 16:08:07 2015
 @@ -0,0 +1,28 @@
-+// Copyright 2014 The Rust Project Developers. See the COPYRIGHT
++// Copyright 2014-2015 The Rust Project Developers. See the COPYRIGHT
 +// file at the top-level directory of this distribution and at
 +// http://rust-lang.org/COPYRIGHT.
 +//

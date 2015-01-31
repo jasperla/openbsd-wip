@@ -1,6 +1,12 @@
 $OpenBSD$
---- src/libstd/sys/unix/process.rs.orig	Thu Jan 22 17:08:32 2015
-+++ src/libstd/sys/unix/process.rs	Thu Jan 29 08:35:51 2015
+--- src/libstd/sys/unix/process.rs.orig	Fri Jan 30 15:03:23 2015
++++ src/libstd/sys/unix/process.rs	Fri Jan 30 16:08:08 2015
+@@ -1,4 +1,4 @@
+-// Copyright 2014 The Rust Project Developers. See the COPYRIGHT
++// Copyright 2014-2015 The Rust Project Developers. See the COPYRIGHT
+ // file at the top-level directory of this distribution and at
+ // http://rust-lang.org/COPYRIGHT.
+ //
 @@ -604,7 +604,8 @@ fn translate_status(status: c_int) -> ProcessExit {
      #[cfg(any(target_os = "macos",
                target_os = "ios",

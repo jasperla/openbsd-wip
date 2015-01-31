@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/libstd/rt/libunwind.rs.orig	Thu Jan 22 17:08:22 2015
-+++ src/libstd/rt/libunwind.rs	Thu Jan 29 08:35:51 2015
+--- src/libstd/rt/libunwind.rs.orig	Fri Jan 30 15:01:40 2015
++++ src/libstd/rt/libunwind.rs	Fri Jan 30 16:08:07 2015
 @@ -101,7 +101,7 @@ pub type _Unwind_Exception_Cleanup_Fn =
  #[link(name = "gcc_s")]
  extern {}

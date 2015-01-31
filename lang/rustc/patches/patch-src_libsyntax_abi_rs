@@ -1,6 +1,12 @@
 $OpenBSD$
---- src/libsyntax/abi.rs.orig	Thu Jan 22 17:08:32 2015
-+++ src/libsyntax/abi.rs	Thu Jan 29 08:35:51 2015
+--- src/libsyntax/abi.rs.orig	Fri Jan 30 15:03:23 2015
++++ src/libsyntax/abi.rs	Fri Jan 30 16:08:08 2015
+@@ -1,4 +1,4 @@
+-// Copyright 2012-2014 The Rust Project Developers. See the COPYRIGHT
++// Copyright 2012-2015 The Rust Project Developers. See the COPYRIGHT
+ // file at the top-level directory of this distribution and at
+ // http://rust-lang.org/COPYRIGHT.
+ //
 @@ -24,6 +24,7 @@ pub enum Os {
      OsFreebsd,
      OsiOS,
@@ -8,8 +14,8 @@ $OpenBSD$
 +    OsOpenbsd,
  }
  
- #[derive(PartialEq, Eq, Hash, RustcEncodable, RustcDecodable, Clone, Copy)]
-@@ -146,7 +147,8 @@ impl fmt::String for Os {
+ #[derive(PartialEq, Eq, Hash, RustcEncodable, RustcDecodable, Clone, Copy, Show)]
+@@ -134,7 +135,8 @@ impl fmt::Display for Os {
              OsiOS => "ios".fmt(f),
              OsAndroid => "android".fmt(f),
              OsFreebsd => "freebsd".fmt(f),

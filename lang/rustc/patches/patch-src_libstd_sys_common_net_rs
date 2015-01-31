@@ -1,6 +1,12 @@
 $OpenBSD$
---- src/libstd/sys/common/net.rs.orig	Thu Jan 22 17:08:22 2015
-+++ src/libstd/sys/common/net.rs	Thu Jan 29 08:35:51 2015
+--- src/libstd/sys/common/net.rs.orig	Fri Jan 30 15:03:23 2015
++++ src/libstd/sys/common/net.rs	Fri Jan 30 16:08:07 2015
+@@ -1,4 +1,4 @@
+-// Copyright 2013-2014 The Rust Project Developers. See the COPYRIGHT
++// Copyright 2013-2015 The Rust Project Developers. See the COPYRIGHT
+ // file at the top-level directory of this distribution and at
+ // http://rust-lang.org/COPYRIGHT.
+ //
 @@ -694,10 +694,16 @@ impl TcpStream {
          setsockopt(self.fd(), libc::IPPROTO_TCP, libc::TCP_KEEPIDLE,
                     seconds as libc::c_int)

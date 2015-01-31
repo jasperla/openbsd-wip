@@ -9,7 +9,6 @@ lib/libgetopts-4e7c5e5c.so
 lib/libgraphviz-4e7c5e5c.so
 lib/liblog-4e7c5e5c.so
 lib/librbml-4e7c5e5c.so
-lib/libregex-4e7c5e5c.so
 lib/librustc-4e7c5e5c.so
 lib/librustc_back-4e7c5e5c.so
 lib/librustc_borrowck-4e7c5e5c.so
@@ -55,8 +54,6 @@ lib/rustlib/x86_64-unknown-openbsd/lib/libmorestack.a
 lib/rustlib/x86_64-unknown-openbsd/lib/librand-4e7c5e5c.rlib
 lib/rustlib/x86_64-unknown-openbsd/lib/librbml-4e7c5e5c.rlib
 lib/rustlib/x86_64-unknown-openbsd/lib/librbml-4e7c5e5c.so
-lib/rustlib/x86_64-unknown-openbsd/lib/libregex-4e7c5e5c.rlib
-lib/rustlib/x86_64-unknown-openbsd/lib/libregex-4e7c5e5c.so
 lib/rustlib/x86_64-unknown-openbsd/lib/librustc-4e7c5e5c.so
 lib/rustlib/x86_64-unknown-openbsd/lib/librustc_back-4e7c5e5c.so
 lib/rustlib/x86_64-unknown-openbsd/lib/librustc_bitflags-4e7c5e5c.rlib
