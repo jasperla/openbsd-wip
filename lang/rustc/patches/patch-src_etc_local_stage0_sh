@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/etc/local_stage0.sh.orig	Fri Jan 30 15:01:40 2015
-+++ src/etc/local_stage0.sh	Fri Jan 30 16:08:07 2015
+--- src/etc/local_stage0.sh.orig	Tue Feb  3 10:43:06 2015
++++ src/etc/local_stage0.sh	Tue Feb  3 10:56:32 2015
 @@ -1,5 +1,5 @@
  #!/bin/sh
 -# Copyright 2014 The Rust Project Developers. See the COPYRIGHT
@@ -16,4 +16,4 @@ $OpenBSD$
 +    ("Linux"|"FreeBSD"|"DragonFly"|"OpenBSD")
      BIN_SUF=
      LIB_SUF=.so
-     break
+     ;;

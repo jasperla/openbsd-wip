@@ -1,13 +1,13 @@
 $OpenBSD$
---- src/librustc_back/rpath.rs.orig	Fri Jan 30 15:03:23 2015
-+++ src/librustc_back/rpath.rs	Fri Jan 30 16:08:07 2015
+--- src/librustc_back/rpath.rs.orig	Tue Feb  3 10:43:06 2015
++++ src/librustc_back/rpath.rs	Tue Feb  3 10:56:32 2015
 @@ -1,4 +1,4 @@
 -// Copyright 2012-2013 The Rust Project Developers. See the COPYRIGHT
 +// Copyright 2012-2015 The Rust Project Developers. See the COPYRIGHT
  // file at the top-level directory of this distribution and at
  // http://rust-lang.org/COPYRIGHT.
  //
-@@ -215,7 +215,9 @@ mod test {
+@@ -214,7 +214,9 @@ mod test {
      }
  
      #[test]

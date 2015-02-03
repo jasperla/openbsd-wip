@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/doc/reference.md.orig	Fri Jan 30 15:03:23 2015
-+++ src/doc/reference.md	Fri Jan 30 16:08:07 2015
+--- src/doc/reference.md.orig	Tue Feb  3 10:43:06 2015
++++ src/doc/reference.md	Tue Feb  3 10:56:32 2015
 @@ -2195,7 +2195,8 @@ The following configurations must be defined by the im
    `"unix"` or `"windows"`. The value of this configuration option is defined
    as a configuration itself, like `unix` or `windows`.

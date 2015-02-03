@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/test/run-pass/rec-align-u64.rs.orig	Fri Jan 30 15:03:23 2015
-+++ src/test/run-pass/rec-align-u64.rs	Fri Jan 30 16:08:08 2015
++++ src/test/run-pass/rec-align-u64.rs	Tue Feb  3 10:56:32 2015
 @@ -39,7 +39,8 @@ struct Outer {
  #[cfg(any(target_os = "linux",
            target_os = "macos",

@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/libstd/os.rs.orig	Fri Jan 30 15:03:23 2015
-+++ src/libstd/os.rs	Fri Jan 30 16:08:07 2015
+--- src/libstd/os.rs.orig	Tue Feb  3 10:43:06 2015
++++ src/libstd/os.rs	Tue Feb  3 10:56:32 2015
 @@ -693,7 +693,8 @@ fn real_args_as_bytes() -> Vec<Vec<u8>> {
  #[cfg(any(target_os = "linux",
            target_os = "android",

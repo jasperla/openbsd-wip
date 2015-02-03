@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/libstd/sys/common/stack.rs.orig	Fri Jan 30 15:01:40 2015
-+++ src/libstd/sys/common/stack.rs	Fri Jan 30 16:08:07 2015
++++ src/libstd/sys/common/stack.rs	Tue Feb  3 10:56:32 2015
 @@ -227,20 +227,15 @@ pub unsafe fn record_sp_limit(limit: uint) {
      }
  

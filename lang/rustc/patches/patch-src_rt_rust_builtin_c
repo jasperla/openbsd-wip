@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/rt/rust_builtin.c.orig	Fri Jan 30 15:03:23 2015
-+++ src/rt/rust_builtin.c	Fri Jan 30 16:08:08 2015
++++ src/rt/rust_builtin.c	Tue Feb  3 10:56:32 2015
 @@ -1,4 +1,4 @@
 -// Copyright 2012 The Rust Project Developers. See the COPYRIGHT
 +// Copyright 2012-2015 The Rust Project Developers. See the COPYRIGHT

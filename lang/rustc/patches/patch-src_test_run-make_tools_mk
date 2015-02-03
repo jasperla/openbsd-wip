@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/test/run-make/tools.mk.orig	Fri Jan 30 15:03:23 2015
-+++ src/test/run-make/tools.mk	Fri Jan 30 16:08:08 2015
++++ src/test/run-make/tools.mk	Tue Feb  3 10:56:32 2015
 @@ -59,8 +59,11 @@ ifeq ($(shell uname),Darwin)
  else
  ifeq ($(shell uname),FreeBSD)

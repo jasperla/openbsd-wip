@@ -1,6 +1,6 @@
 $OpenBSD$
 --- mk/main.mk.orig	Fri Jan 30 15:03:23 2015
-+++ mk/main.mk	Fri Jan 30 16:08:08 2015
++++ mk/main.mk	Tue Feb  3 10:56:32 2015
 @@ -409,7 +409,7 @@ CFG_VALGRIND_COMPILE$(1) = $$(CFG_VALGRIND_COMPILE)
  endif
  

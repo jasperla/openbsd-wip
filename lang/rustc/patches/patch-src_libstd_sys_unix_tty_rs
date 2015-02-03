@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/libstd/sys/unix/tty.rs.orig	Fri Jan 30 15:03:23 2015
-+++ src/libstd/sys/unix/tty.rs	Fri Jan 30 16:08:08 2015
++++ src/libstd/sys/unix/tty.rs	Tue Feb  3 10:56:32 2015
 @@ -21,7 +21,8 @@ pub struct TTY {
  }
  

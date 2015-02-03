@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/librustc_back/x86_64.rs.orig	Fri Jan 30 15:01:40 2015
-+++ src/librustc_back/x86_64.rs	Fri Jan 30 16:08:07 2015
++++ src/librustc_back/x86_64.rs	Tue Feb  3 10:56:32 2015
 @@ -1,4 +1,4 @@
 -// Copyright 2012 The Rust Project Developers. See the COPYRIGHT
 +// Copyright 2012-2015 The Rust Project Developers. See the COPYRIGHT

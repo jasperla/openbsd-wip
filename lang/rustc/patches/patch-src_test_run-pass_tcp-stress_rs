@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/test/run-pass/tcp-stress.rs.orig	Fri Jan 30 15:03:23 2015
-+++ src/test/run-pass/tcp-stress.rs	Fri Jan 30 16:08:08 2015
+--- src/test/run-pass/tcp-stress.rs.orig	Tue Feb  3 10:43:06 2015
++++ src/test/run-pass/tcp-stress.rs	Tue Feb  3 10:56:32 2015
 @@ -1,4 +1,4 @@
 -// Copyright 2012-2014 The Rust Project Developers. See the COPYRIGHT
 +// Copyright 2012-2015 The Rust Project Developers. See the COPYRIGHT

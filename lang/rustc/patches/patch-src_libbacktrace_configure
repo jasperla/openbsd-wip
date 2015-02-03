@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/libbacktrace/configure.orig	Fri Jan 30 15:01:40 2015
-+++ src/libbacktrace/configure	Fri Jan 30 16:08:07 2015
++++ src/libbacktrace/configure	Tue Feb  3 10:56:32 2015
 @@ -9332,7 +9332,7 @@ if test -z "$aix_libpath"; then aix_libpath="/usr/lib:
        ;;
  

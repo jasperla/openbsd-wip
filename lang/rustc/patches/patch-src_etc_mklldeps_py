@@ -1,7 +1,7 @@
 $OpenBSD$
---- src/etc/mklldeps.py.orig	Fri Jan 30 15:01:40 2015
-+++ src/etc/mklldeps.py	Fri Jan 30 16:08:08 2015
-@@ -80,12 +80,12 @@ for lib in out.strip().split(' '):
+--- src/etc/mklldeps.py.orig	Tue Feb  3 10:43:06 2015
++++ src/etc/mklldeps.py	Tue Feb  3 10:56:32 2015
+@@ -79,12 +79,12 @@ for lib in out.strip().split(' '):
  out = run([llconfig, '--cxxflags'])
  if enable_static == '1':
      assert('stdlib=libc++' not in out)

@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/libstd/sys/unix/stack_overflow.rs.orig	Fri Jan 30 15:01:40 2015
-+++ src/libstd/sys/unix/stack_overflow.rs	Fri Jan 30 16:08:08 2015
+--- src/libstd/sys/unix/stack_overflow.rs.orig	Tue Feb  3 10:43:06 2015
++++ src/libstd/sys/unix/stack_overflow.rs	Tue Feb  3 10:56:32 2015
 @@ -32,7 +32,9 @@ impl Drop for Handler {
      }
  }
@@ -30,7 +30,7 @@ $OpenBSD$
 +        #[cfg(target_os = "openbsd")]
 +        pub const SIGSTKSZ: libc::size_t = 40960;
  
-         pub const SIG_DFL: sighandler_t = 0i as sighandler_t;
+         pub const SIG_DFL: sighandler_t = 0 as sighandler_t;
  
 @@ -220,6 +225,7 @@ mod imp {
  
