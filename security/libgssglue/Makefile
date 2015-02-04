@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	http://www.citi.umich.edu/projects/nfsv4/linux/libgssglue/
 
-# dlopen()
+# dlopen() ... XXX maybe better not to enforce the dep?
 RUN_DEPENDS=	security/heimdal
 
 USE_GMAKE=	Yes
