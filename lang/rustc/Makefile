@@ -53,6 +53,12 @@ DISTFILES +=            ${BOOTSTRAP-${MACHINE_ARCH}}:0
 
 SUPDISTFILES =		${BOOTSTRAP-amd64}:0
 
+# MACHINE_ARCH to TRIPLE_ARCH conversion
+.if "${MACHINE_ARCH}" == "amd64"
+TRIPLE_ARCH =		x86_64-unknown-openbsd
+.endif
+SUBST_VARS +=		TRIPLE_ARCH
+
 MODULES +=		gcc4 \
 			lang/python
 
