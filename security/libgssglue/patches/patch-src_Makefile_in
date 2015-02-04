@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/Makefile.in.orig	Wed Feb  4 16:24:54 2015
++++ src/Makefile.in	Wed Feb  4 16:24:58 2015
+@@ -234,7 +234,7 @@ libgssglue_la_SOURCES = \
+ 	g_wrap.c g_unwrap.c g_get_mic.c g_verify_mic.c g_ccache_name.c \
+ 	mglueP.h mechglue.h
+ 
+-libgssglue_la_LIBADD = -ldl
++libgssglue_la_LIBADD =
+ EXTRA_DIST = $(srcdir)/gssglue/gssapi/gssapi.h.in $(srcdir)/symbol_versions
+ DISTCLEANFILES = $(top_builddir)/src/gssglue/gssapi/gssapi.h
+ BUILT_SOURCES = $(top_builddir)/src/gssglue/gssapi/gssapi.h

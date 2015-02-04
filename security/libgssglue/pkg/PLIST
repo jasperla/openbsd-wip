@@ -1,0 +1,11 @@
+@comment $OpenBSD$
+include/gssglue/
+include/gssglue/gssapi/
+include/gssglue/gssapi/gssapi.h
+lib/libgssglue.a
+lib/libgssglue.la
+@lib lib/libgssglue.so.${LIBgssglue_VERSION}
+lib/pkgconfig/libgssglue.pc
+share/examples/libgssglue/
+share/examples/libgssglue/gssapi_mech.conf
+@sample ${SYSCONFDIR}/gssapi_mech.conf

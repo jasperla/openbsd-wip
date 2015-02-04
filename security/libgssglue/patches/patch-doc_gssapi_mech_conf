@@ -1,0 +1,12 @@
+$OpenBSD$
+--- doc/gssapi_mech.conf.orig	Wed Feb  4 16:37:45 2015
++++ doc/gssapi_mech.conf	Wed Feb  4 16:37:56 2015
+@@ -15,7 +15,7 @@
+ # library                               initialization function
+ # ================================	==========================
+ # The MIT K5 gssapi library, use special function for initialization.
+-/usr/lib/libgssapi_krb5.so		mechglue_internal_krb5_init
++${LOCALBASE}/heimdal/lib/libgssapi.so		mechglue_internal_krb5_init
+ #
+ # The SPKM3 gssapi library function.  Use the function spkm3_gss_initialize.
+ # /usr/local/gss_mechs/spkm/spkm3/libgssapi_spkm3.so    spkm3_gss_initialize
