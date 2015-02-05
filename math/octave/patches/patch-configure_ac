@@ -1,0 +1,12 @@
+$OpenBSD$
+--- configure.ac.orig	Thu Feb  5 21:25:10 2015
++++ configure.ac	Thu Feb  5 21:25:20 2015
+@@ -84,7 +84,7 @@ AC_SUBST(config_opts)
+ 
+ ### Set default file locations
+ 
+-OCTAVE_SET_DEFAULT([octlibdir], '$(libdir)/octave/$(version)')
++OCTAVE_SET_DEFAULT([octlibdir], '$(libdir)')
+ OCTAVE_SET_DEFAULT([archlibdir],
+   '$(libexecdir)/octave/$(version)/exec/$(canonical_host_type)')
+ OCTAVE_SET_DEFAULT([localarchlibdir],
