@@ -1,6 +1,7 @@
 $OpenBSD$
+Configure linking to estdc++ (stdc++ library from devel/gcc, not from base)
 --- src/etc/mklldeps.py.orig	Tue Feb  3 10:43:06 2015
-+++ src/etc/mklldeps.py	Tue Feb  3 10:56:32 2015
++++ src/etc/mklldeps.py	Fri Feb  6 06:09:45 2015
 @@ -79,12 +79,12 @@ for lib in out.strip().split(' '):
  out = run([llconfig, '--cxxflags'])
  if enable_static == '1':

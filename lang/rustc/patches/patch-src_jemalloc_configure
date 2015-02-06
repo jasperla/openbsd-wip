@@ -1,6 +1,8 @@
 $OpenBSD$
+jemalloc support for OpenBSD
+see https://github.com/jemalloc/jemalloc/pull/188
 --- src/jemalloc/configure.orig	Fri Jan 30 15:04:25 2015
-+++ src/jemalloc/configure	Tue Feb  3 10:56:32 2015
++++ src/jemalloc/configure	Fri Feb  6 06:09:54 2015
 @@ -4879,7 +4879,13 @@ case "${host}" in
  	CFLAGS="$CFLAGS"
  	abi="elf"
