@@ -1,4 +1,7 @@
 $OpenBSD$
+We need this patch because leak of really static boostrapper. As the rustc
+file in bootstrap is a shell script (see post-extract), the sysroot is badly
+infered. Use this patch to always have the good sysroot during build.
 --- mk/main.mk.orig	Fri Jan 30 15:03:23 2015
 +++ mk/main.mk	Fri Feb  6 06:09:45 2015
 @@ -409,7 +409,7 @@ CFG_VALGRIND_COMPILE$(1) = $$(CFG_VALGRIND_COMPILE)

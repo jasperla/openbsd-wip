@@ -26,6 +26,9 @@ Bugs
 
 Tests failures
 --------------
+  * [run-pass] run-pass/out-of-stack.rs
+      the page guard for stack-overflow detection don't work very well...
+
   * [run-pass] run-pass/tcp-stress.rs
       intermittent failure
       "Too many open files"
