@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	graphical gopher client
-DISTNAME =	gophervr-0.4.3
+DISTNAME =	gophervr-0.5.0
 CATEGORIES =	net x11
 
 HOMEPAGE =	http://www.floodgap.com/software/gophervr/
@@ -26,6 +26,7 @@ MAKE_FLAGS =	CC="${CC}" \
 ALL_TARGET =	openbsd
 
 NO_TEST =	Yes
+WRKDIST =	${WRKDIR}/gophervr
 
 pre-configure:
 	perl -pi -e "s,/usr/local/lib/hershey,${PREFIX}/share/gophervr,g" ${WRKSRC}/libvogl/hershey/src/htext.c
