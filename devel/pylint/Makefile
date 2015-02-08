@@ -3,7 +3,7 @@
 COMMENT-main=		lint-like code checker for Python code
 COMMENT-gui=		GUI for pylint
 
-VERSION=		1.4.0
+VERSION=		1.4.1
 DISTNAME=		pylint-${VERSION}
 PKGNAME-main=		pylint-${VERSION}
 PKGNAME-gui=		pylint-gui-${VERSION}

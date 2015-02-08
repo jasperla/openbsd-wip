@@ -89,9 +89,11 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pylint/reporters/${MODP
 lib/python${MODPY_VERSION}/site-packages/pylint/reporters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylint/reporters/${MODPY_PYCACHE}guireporter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylint/reporters/${MODPY_PYCACHE}html.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pylint/reporters/${MODPY_PYCACHE}json.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylint/reporters/${MODPY_PYCACHE}text.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylint/reporters/guireporter.py
 lib/python${MODPY_VERSION}/site-packages/pylint/reporters/html.py
+lib/python${MODPY_VERSION}/site-packages/pylint/reporters/json.py
 lib/python${MODPY_VERSION}/site-packages/pylint/reporters/text.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/
 lib/python${MODPY_VERSION}/site-packages/pylint/test/data/
@@ -113,6 +115,12 @@ lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/abstract_class_i
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/abstract_class_instantiated_py34.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/abstract_class_instantiated_py34.rc
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/abstract_class_instantiated_py34.txt
+lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/abstract_method_py2.py
+lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/abstract_method_py2.rc
+lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/abstract_method_py2.txt
+lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/abstract_method_py3.py
+lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/abstract_method_py3.rc
+lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/abstract_method_py3.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/access_to__name__.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/access_to__name__.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/access_to_protected_members.py
@@ -131,7 +139,11 @@ lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/bad_inline_optio
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/bad_inline_option.rc
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/bad_inline_option.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/bad_open_mode.py
+lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/bad_open_mode.rc
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/bad_open_mode.txt
+lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/bad_open_mode_py3.py
+lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/bad_open_mode_py3.rc
+lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/bad_open_mode_py3.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/bad_reversed_sequence.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/bad_reversed_sequence.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/boolean_datetime.py
@@ -222,8 +234,13 @@ lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/pygtk_enum_crash
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/pygtk_enum_crash.rc
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/pygtk_import.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/pygtk_import.rc
+lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/raising_non_exception_py3.py
+lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/raising_non_exception_py3.rc
+lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/raising_non_exception_py3.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/redefined_builtin.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/redefined_builtin.txt
+lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/redundant_unittest_assert.py
+lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/redundant_unittest_assert.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/slots_checks.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/slots_checks.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/socketerror_import.py
@@ -420,7 +437,6 @@ lib/python${MODPY_VERSION}/site-packages/pylint/test/input/func_w0151.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/input/func_w0152.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/input/func_w0202.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/input/func_w0205.py
-lib/python${MODPY_VERSION}/site-packages/pylint/test/input/func_w0223.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/input/func_w0233.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/input/func_w0302.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/input/func_w0312.py
@@ -572,7 +588,6 @@ lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func_w0152_py29.tx
 lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func_w0152_py30.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func_w0202.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func_w0205.txt
-lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func_w0223.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func_w0233.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func_w0302.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func_w0312.txt
@@ -632,6 +647,7 @@ lib/python${MODPY_VERSION}/site-packages/pylint/test/test_regr.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/test_self.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/unittest_checker_base.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/unittest_checker_classes.py
+lib/python${MODPY_VERSION}/site-packages/pylint/test/unittest_checker_exceptions.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/unittest_checker_format.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/unittest_checker_logging.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/unittest_checker_misc.py
@@ -644,6 +660,7 @@ lib/python${MODPY_VERSION}/site-packages/pylint/test/unittest_checkers_utils.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/unittest_lint.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/unittest_pyreverse_diadefs.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/unittest_pyreverse_writer.py
+lib/python${MODPY_VERSION}/site-packages/pylint/test/unittest_reporters_json.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/unittest_reporting.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/unittest_utils.py
 lib/python${MODPY_VERSION}/site-packages/pylint/testutils.py
