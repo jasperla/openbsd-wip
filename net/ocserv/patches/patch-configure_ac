@@ -1,0 +1,12 @@
+$OpenBSD$
+--- configure.ac.orig	Fri Feb 13 12:01:56 2015
++++ configure.ac	Fri Feb 13 12:02:10 2015
+@@ -144,7 +144,7 @@ if test "$test_for_libnl" = yes;then
+ fi
+ 
+ have_readline=no
+-AC_LIB_HAVE_LINKFLAGS(readline,, [
++AC_LIB_HAVE_LINKFLAGS(readline,ncurses, [
+ #include <stdio.h>
+ #include <readline/readline.h>], [rl_replace_line(0,0);])
+   if test x$ac_cv_libreadline = xyes; then

@@ -1,0 +1,14 @@
+$OpenBSD$
+--- src/system.c.orig	Fri Feb 13 11:33:34 2015
++++ src/system.c	Fri Feb 13 11:34:03 2015
+@@ -29,9 +29,9 @@
+ #include <sys/socket.h>
+ #include <sys/un.h>
+ #include <sys/uio.h>
+-#include <sys/errno.h>
+ #include <sys/syslog.h>
+ 
++#include <errno.h>
+ #include <signal.h>
+ 
+ void kill_on_parent_kill(int sig)
