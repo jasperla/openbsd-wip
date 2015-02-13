@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/worker-vpn.c.orig	Fri Feb 13 23:55:14 2015
++++ src/worker-vpn.c	Fri Feb 13 23:56:10 2015
+@@ -378,6 +378,8 @@ void vpn_server(struct worker_st *ws)
+ 	/* parse as we go */
+ 	do {
+ 		nrecvd = cstp_recv(ws, buf, sizeof(buf));
++		if (nrecvd == GNUTLS_E_AGAIN)
++	       		continue;
+ 		if (nrecvd <= 0) {
+ 			if (nrecvd == 0)
+ 				goto finish;
