@@ -63,8 +63,7 @@ MODULES +=		gcc4 \
 			lang/python
 
 # rustllvm need c++11
-# TODO: need c ? or just c++ ?
-MODGCC4_LANGS =		c c++
+MODGCC4_LANGS =		c++
 MODGCC4_ARCHS =		*
 
 #BUILD_DEPENDS =	???
@@ -83,14 +82,16 @@ MAKE_ENV =		VERBOSE=1 \
 			RUST_LOG="${RUST_LOG}"
 
 #FAKE_FLAGS =		???
-#TEST_FLAGS =		???
+
+# note: helper, set RUST_TEST_TASKS=1 to not run tests in parallel
+TEST_FLAGS =		RUST_TEST_TASKS="${RUST_TEST_TASKS}"
 
 
 # build/configuration variables
 #
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
-#USE_GROFF =		Yes
+
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--disable-valgrind-rpass \
 			--disable-jemalloc \

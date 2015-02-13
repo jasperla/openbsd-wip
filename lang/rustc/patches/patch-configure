@@ -1,0 +1,70 @@
+$OpenBSD$
+Remove unneeded probes.
+--- configure.orig	Thu Feb  5 19:38:32 2015
++++ configure	Fri Feb 13 20:00:07 2015
+@@ -621,7 +621,7 @@ putvar CFG_BOOTSTRAP_KEY
+ 
+ step_msg "looking for build programs"
+ 
+-probe_need CFG_CURLORWGET  curl wget
++#probe_need CFG_CURLORWGET  curl wget
+ probe_need CFG_PYTHON      python2.7 python2.6 python2 python
+ 
+ python_version=$($CFG_PYTHON -V 2>&1)
+@@ -633,31 +633,31 @@ fi
+ # and shouldn't attempt to load submodules
+ if [ ! -e ${CFG_SRC_DIR}.git ]
+ then
+-    probe CFG_GIT          git
++    #probe CFG_GIT          git
+     msg "git: no git directory. disabling submodules"
+     CFG_DISABLE_MANAGE_SUBMODULES=1
+ else
+     probe_need CFG_GIT     git
+ fi
+ 
+-probe CFG_CLANG            clang++
++#probe CFG_CLANG            clang++
+ probe CFG_CCACHE           ccache
+ probe CFG_GCC              gcc
+ probe CFG_LD               ld
+-probe CFG_VALGRIND         valgrind
+-probe CFG_PERF             perf
+-probe CFG_ISCC             iscc
+-probe CFG_JAVAC            javac
+-probe CFG_ANTLR4           antlr4
+-probe CFG_GRUN             grun
+-probe CFG_FLEX             flex
+-probe CFG_BISON            bison
+-probe CFG_PANDOC           pandoc
+-probe CFG_PDFLATEX         pdflatex
+-probe CFG_XELATEX          xelatex
+-probe CFG_LUALATEX         lualatex
+-probe CFG_GDB              gdb
+-probe CFG_LLDB             lldb
++#probe CFG_VALGRIND         valgrind
++#probe CFG_PERF             perf
++#probe CFG_ISCC             iscc
++#probe CFG_JAVAC            javac
++#probe CFG_ANTLR4           antlr4
++#probe CFG_GRUN             grun
++#probe CFG_FLEX             flex
++#probe CFG_BISON            bison
++#probe CFG_PANDOC           pandoc
++#probe CFG_PDFLATEX         pdflatex
++#probe CFG_XELATEX          xelatex
++#probe CFG_LUALATEX         lualatex
++#probe CFG_GDB              gdb
++#probe CFG_LLDB             lldb
+ 
+ if [ ! -z "$CFG_GDB" ]
+ then
+@@ -690,7 +690,7 @@ fi
+ 
+ step_msg "looking for target specific programs"
+ 
+-probe CFG_ADB        adb
++#probe CFG_ADB        adb
+ 
+ if [ ! -z "$CFG_PANDOC" ]
+ then
