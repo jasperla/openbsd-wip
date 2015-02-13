@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/tun.c.orig	Sat Jan 10 23:45:51 2015
-+++ src/tun.c	Fri Feb 13 16:15:17 2015
++++ src/tun.c	Fri Feb 13 23:40:22 2015
 @@ -45,10 +45,13 @@
  #include <main.h>
  #include <ccan/list/list.h>
@@ -25,73 +25,61 @@ $OpenBSD$
  
  	ret = ioctl(fd, SIOCSIFFLAGS, &ifr);
  	if (ret != 0) {
-@@ -318,9 +321,39 @@ static int set_network_info(main_server_st * s, struct
+@@ -318,6 +321,44 @@ static int set_network_info(main_server_st * s, struct
  
  #include <ccan/hash/hash.h>
  
-+#ifndef __linux
-+# ifdef SIOCIFCREATE
-+static int bsd_open_tun(char *tun_name)
++#ifndef __linux__
++static int bsd_open_tun(void)
 +{
 +        int fd;
 +        int s;
++	char tun_name[80];
 +        struct ifreq ifr;
++	int unit_nr = 0;
 +
-+        fd = open(tun_name, O_RDWR);
++        fd = open("/dev/tun", O_RDWR);
 +        if (fd == -1) {
-+                s = socket(AF_INET, SOCK_DGRAM, 0);
-+                if (s < 0)
-+                        return -1;
++        	/* try iterating */
++		for (unit_nr = 0; unit_nr < 255; unit_nr++) {
++			snprintf(tun_name, sizeof(tun_name), "/dev/tun%d", unit_nr);
++			fd = open(tun_name, O_RDWR);
++# ifdef SIOCIFCREATE
++			if (fd == -1) {
++				/* cannot open tunXX, try creating it */
++		                s = socket(AF_INET, SOCK_DGRAM, 0);
++		                if (s < 0)
++		                        return -1;
 +
-+                memset(&ifr, 0, sizeof(ifr));
-+                strncpy(ifr.ifr_name, tun_name + 5, sizeof(ifr.ifr_name) - 1);
-+                if (!ioctl(s, SIOCIFCREATE, &ifr))
-+                        fd = open(tun_name, O_RDWR);
-+
-+                close(s);
++		                memset(&ifr, 0, sizeof(ifr));
++		                strncpy(ifr.ifr_name, tun_name + 5, sizeof(ifr.ifr_name) - 1);
++		                if (!ioctl(s, SIOCIFCREATE, &ifr))
++                		        fd = open(tun_name, O_RDWR);
++		                close(s);
++			}
++# endif
++			if (fd >= 0)
++				break;
++		}
 +        }
++
 +        return fd;
 +}
-+# else
-+#  define bsd_open_tun(tun_name) open(tun_name, O_RDWR)
-+# endif
 +#endif
 +
  int open_tun(main_server_st * s, struct proc_st *proc)
  {
  	int tunfd, ret, e;
-+	static char tun_name[80];
-+	int unit_nr = 0;
- 	struct ifreq ifr;
- 	unsigned int t;
- 
-@@ -391,12 +424,20 @@ int open_tun(main_server_st * s, struct proc_st *proc)
+@@ -391,7 +432,7 @@ int open_tun(main_server_st * s, struct proc_st *proc)
  	}
  #endif
  #else				/* freebsd */
 -	tunfd = open("/dev/tun", O_RDWR);
-+	tunfd = bsd_open_tun("/dev/tun");
++	tunfd = bsd_open_tun();
  	if (tunfd < 0) {
--		int e = errno;
--		mslog(s, NULL, LOG_ERR, "Can't open /dev/tun: %s\n",
--		      strerror(e));
--		return -1;
-+		for (unit_nr = 0; unit_nr < 255; unit_nr++) {
-+			sprintf(tun_name, "/dev/tun%d", unit_nr);
-+			tunfd = bsd_open_tun(tun_name);
-+			if (tunfd >= 0)
-+				break;
-+		}
-+		if (tunfd < 0) {
-+			int e = errno;
-+			mslog(s, NULL, LOG_ERR, "Can't open /dev/tun: %s\n",
-+			      strerror(e));
-+			return -1;
-+		}
- 	}
- 
- 	/* find device name */
-@@ -445,13 +486,17 @@ void close_tun(main_server_st * s, struct proc_st *pro
+ 		int e = errno;
+ 		mslog(s, NULL, LOG_ERR, "Can't open /dev/tun: %s\n",
+@@ -445,7 +486,7 @@ void close_tun(main_server_st * s, struct proc_st *pro
  	}
  
  #ifdef SIOCIFDESTROY
@@ -100,15 +88,3 @@ $OpenBSD$
  	struct ifreq ifr;
  
  	if (proc->tun_lease.name[0] != 0) {
- 		fd = socket(AF_INET, SOCK_DGRAM, 0);
--		if (fd == -1)
--			return -1;
-+		if (fd == -1) {
-+			e = errno;
-+			mslog(s, NULL, LOG_ERR, "%s: Error destroying interface: socket(): %s\n",
-+				proc->tun_lease.name, strerror(e));
-+			return;
-+		}
- 
- 		memset(&ifr, 0, sizeof(struct ifreq));
- 		strlcpy(ifr.ifr_name, proc->tun_lease.name, IFNAMSIZ);
