@@ -36,7 +36,10 @@ USE_GROFF=	Yes # missing flags
 # .NOP \f\*[B-Font]\-s\f[] \f\*[I-Font]file\f[], \f\*[B-Font]\-\-socket\-file\f[]=\f\*[I-Font]file\f[]
 # There's also "ERROR: skipping unknown macro: .an-trap" but this is probably unimportant
 CONFIGURE_ARGS=	--enable-local-libopts \
+		--without-http-parser \
+		--without-pcl-lib \
 		--without-radius
+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
