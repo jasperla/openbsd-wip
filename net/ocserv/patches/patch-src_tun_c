@@ -1,7 +1,18 @@
 $OpenBSD$
 --- src/tun.c.orig	Sat Jan 10 23:45:51 2015
-+++ src/tun.c	Fri Feb 13 23:40:22 2015
-@@ -45,10 +45,13 @@
++++ src/tun.c	Sat Feb 14 17:05:36 2015
+@@ -25,7 +25,10 @@
+ #include <arpa/inet.h>
+ #include <sys/socket.h>
+ #include <net/if.h>
++#include <netinet/in.h>
++#include <netinet/ip.h>
+ #include <sys/ioctl.h>
++#include <sys/uio.h>
+ #include <stdio.h>
+ #include <string.h>
+ #include <stdlib.h>
+@@ -45,10 +48,13 @@
  #include <main.h>
  #include <ccan/list/list.h>
  
@@ -16,7 +27,7 @@ $OpenBSD$
  
  #ifdef __linux__
  
-@@ -177,7 +180,7 @@ int set_ipv6_addr(main_server_st * s, struct proc_st *
+@@ -177,7 +183,7 @@ int set_ipv6_addr(main_server_st * s, struct proc_st *
  	memset(&ifr, 0, sizeof(ifr));
  	ifr.ifr_addr.sa_family = AF_INET6;
  	ifr.ifr_flags |= IFF_UP | IFF_RUNNING;
@@ -25,7 +36,7 @@ $OpenBSD$
  
  	ret = ioctl(fd, SIOCSIFFLAGS, &ifr);
  	if (ret != 0) {
-@@ -318,6 +321,44 @@ static int set_network_info(main_server_st * s, struct
+@@ -318,6 +324,44 @@ static int set_network_info(main_server_st * s, struct
  
  #include <ccan/hash/hash.h>
  
@@ -70,7 +81,7 @@ $OpenBSD$
  int open_tun(main_server_st * s, struct proc_st *proc)
  {
  	int tunfd, ret, e;
-@@ -391,7 +432,7 @@ int open_tun(main_server_st * s, struct proc_st *proc)
+@@ -391,7 +435,7 @@ int open_tun(main_server_st * s, struct proc_st *proc)
  	}
  #endif
  #else				/* freebsd */
@@ -79,7 +90,7 @@ $OpenBSD$
  	if (tunfd < 0) {
  		int e = errno;
  		mslog(s, NULL, LOG_ERR, "Can't open /dev/tun: %s\n",
-@@ -445,7 +486,7 @@ void close_tun(main_server_st * s, struct proc_st *pro
+@@ -445,7 +489,7 @@ void close_tun(main_server_st * s, struct proc_st *pro
  	}
  
  #ifdef SIOCIFDESTROY
@@ -88,3 +99,69 @@ $OpenBSD$
  	struct ifreq ifr;
  
  	if (proc->tun_lease.name[0] != 0) {
+@@ -469,4 +513,65 @@ void close_tun(main_server_st * s, struct proc_st *pro
+ 		close(fd);
+ 
+ 	return;
++}
++
++#if defined(__OpenBSD__) || defined(TUNSIFHEAD)
++# define TUN_AF_PREFIX 1
++#endif
++ssize_t tun_write(int sockfd, const void *buf, size_t len)
++{
++#ifdef TUN_AF_PREFIX
++	struct ip *iph = (void *)buf;
++	uint32_t head;
++	const uint8_t *data = buf;
++	static int complained = 0;
++	struct iovec iov[2];
++	int ret;
++
++	if (iph->ip_v == 6)
++		head = htonl(AF_INET6);
++	else if (iph->ip_v == 4)
++		head = htonl(AF_INET); 
++	else {
++		if (!complained) {
++			complained = 1;
++			syslog(LOG_ERR, "tun_write: Unknown packet (len %d) received %02x %02x %02x %02x...\n",
++				(int)len, data[0], data[1], data[2], data[3]);
++		}
++		return -1;
++	}
++
++	iov[0].iov_base = &head;
++	iov[0].iov_len = sizeof(head);
++	iov[1].iov_base = (void*)buf;
++	iov[1].iov_len = len;
++
++	ret = writev(sockfd, iov, 2);
++	if (ret >= sizeof(uint32_t))
++		ret -= sizeof(uint32_t);
++	return ret;
++#else
++	return force_write(sockfd, buf, len);
++#endif
++}
++
++ssize_t tun_read(int sockfd, void *buf, size_t len)
++{
++#ifdef TUN_AF_PREFIX
++	uint32_t head;
++	struct iovec iov[2];
++	int ret;
++
++	iov[0].iov_base = &head;
++	iov[0].iov_len = sizeof(head);
++	iov[1].iov_base = buf;
++	iov[1].iov_len = len;
++
++	ret = readv(sockfd, iov, 2);
++	if (ret >= sizeof(uint32_t))
++		ret -= sizeof(uint32_t);
++	return ret;
++#else
++	return read(sockfd, buf, len);
++#endif
+ }

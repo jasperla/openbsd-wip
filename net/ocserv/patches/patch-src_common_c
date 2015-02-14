@@ -1,7 +1,22 @@
 $OpenBSD$
---- src/common.c.orig	Fri Feb 13 11:27:43 2015
-+++ src/common.c	Fri Feb 13 11:33:20 2015
-@@ -505,7 +505,7 @@ struct msghdr mh = {
+--- src/common.c.orig	Sun Jan 11 10:24:57 2015
++++ src/common.c	Sat Feb 14 16:40:29 2015
+@@ -177,6 +177,14 @@ int val;
+ 	fcntl(fd, F_SETFL, val | O_NONBLOCK);
+ }
+ 
++void set_block(int fd)
++{
++int val;
++
++	val = fcntl(fd, F_GETFL, 0);
++	fcntl(fd, F_SETFL, val & (~O_NONBLOCK));
++}
++
+ ssize_t recv_timeout(int sockfd, void *buf, size_t len, unsigned sec)
+ {
+ int ret;
+@@ -505,7 +513,7 @@ struct msghdr mh = {
  				return -1;
  
  			a->sin_family = AF_INET;
@@ -10,3 +25,11 @@ $OpenBSD$
  			a->sin_port = htons(def_port);
  			*our_addrlen = sizeof(struct sockaddr_in);
  			break;
+@@ -527,6 +535,7 @@ struct msghdr mh = {
+ 		}
+ #endif
+ 	}
++	*addrlen = mh.msg_namelen;
+ 
+ 	return ret;
+ }
