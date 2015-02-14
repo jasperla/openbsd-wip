@@ -1,7 +1,5 @@
 # $OpenBSD$
 
-BROKEN= XXX update @newuser and @newgroup lines for unique values
-
 COMMENT=	server implementing the AnyConnect SSL VPN protocol
 
 DISTNAME=	ocserv-0.9.0.1

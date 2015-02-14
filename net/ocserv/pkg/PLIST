@@ -1,6 +1,6 @@
 @comment $OpenBSD$
-@newgroup _ocserv:668
-@newuser _ocserv:668:_ocserv:daemon:ocserv user:/nonexistent:/sbin/nologin
+@newgroup _ocserv:749
+@newuser _ocserv:749:_ocserv:daemon:ocserv user:/nonexistent:/sbin/nologin
 @bin bin/occtl
 @bin bin/ocpasswd
 @man man/man8/occtl.8
