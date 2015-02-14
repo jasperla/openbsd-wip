@@ -145,8 +145,8 @@ pre-configure:
 #   TODO: need because of too simplist os::load_self implementation
 # Compile python gdb helper
 post-install:
-	${INSTALL_PROGRAM_DIR} ${PREFIX}/lib/rustlib/x86_64-unknown-openbsd/bin
-	mv ${PREFIX}/bin/rustc ${PREFIX}/lib/rustlib/x86_64-unknown-openbsd/bin
+	${INSTALL_PROGRAM_DIR} ${PREFIX}/lib/rustlib/${TRIPLE_ARCH}/bin
+	mv ${PREFIX}/bin/rustc ${PREFIX}/lib/rustlib/${TRIPLE_ARCH}/bin
 	${SUBST_PROGRAM} -c \
 		files/rustc ${PREFIX}/bin/rustc
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
@@ -163,7 +163,7 @@ bootstrap: build
 		-f ${MAKE_FILE} rustc-stage3
 	rm -rf ${WRKDIR}/bootstrap
 	${INSTALL_PROGRAM_DIR} ${WRKDIR}/bootstrap/rust-stage0/{bin,lib}
-	${INSTALL_PROGRAM} ${WRKBUILD}/x86_64-unknown-openbsd/stage3/bin/rustc \
+	${INSTALL_PROGRAM} ${WRKBUILD}/${TRIPLE_ARCH}/stage3/bin/rustc \
 		${WRKDIR}/bootstrap/rust-stage0/bin/rustc.bin
 	ldd ${WRKDIR}/bootstrap/rust-stage0/bin/rustc.bin \
 		| sed -ne 's,^.* rlib [^/]*,,p' \
