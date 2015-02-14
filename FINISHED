@@ -58,14 +58,14 @@ www/p5-Tapper-TAP-Harness	ready to import, sent to ports@ 2014-04-28
 www/p5-Tapper-Producer		ready to import, sent to ports@ 2014-04-28
 www/p5-TAP-Formatter-HTML	ready to import, sent to ports@ 2014-04-28
 www/p5-Test-WWW-Selenium	ready to import, sent to ports@ 2014-04-28
-devel/p5-CHI					ready to import, sent to ports@ 2014-05-04
-devel/p5-Hash-MoreUtils				ready to import, sent to ports@ 2014-05-04
-devel/p5-Test-Simple				ready to import, sent to ports@ 2014-05-04
-devel/p5-MooX-Types-MooseLike-Numeric			ready to import, sent to ports@ 2014-05-04
-security/p5-Digest-JHash				ready to import, sent to ports@ 2014-05-04, 2014-03-07
-www/p5-Tapper-Config					ready to import, sent to ports@ 2014-05-13
-database/p5-Test-Fixture-DBIC-Schema			ready to import, sent to ports@ 2014-05-13
-devel/p5-Kwalify					ready to import, sent to ports@ 2014-05-13
+devel/p5-CHI			ready to import, sent to ports@ 2014-05-04
+devel/p5-Hash-MoreUtils		ready to import, sent to ports@ 2014-05-04
+devel/p5-Test-Simple		ready to import, sent to ports@ 2014-05-04
+devel/p5-MooX-Types-MooseLike-Numeric	ready to import, sent to ports@ 2014-05-04
+security/p5-Digest-JHash	ready to import, sent to ports@ 2014-05-04, 2014-03-07
+www/p5-Tapper-Config		ready to import, sent to ports@ 2014-05-13
+database/p5-Test-Fixture-DBIC-Schema	ready to import, sent to ports@ 2014-05-13
+devel/p5-Kwalify		ready to import, sent to ports@ 2014-05-13
 database/p5-DBIx-Class-InflateColumn-Object-Enum	ready to import, sent to ports@ 2014-05-13
 devel/p5-Object-Enum	ready to import, sent to ports@ 2014-05-23
 devel/p5-Data-Serializer	ready to import, sent to ports@ 2014-05-23
@@ -77,25 +77,26 @@ productivity/taskd      should be ready, waiting for feedback at ports@ 2014-06-
 games/residualvm	ready to import (bentley@), sent to ports@ 2014-07-11
 games/gnome-hearts	ready to import (bcallah@), sent to ports 2014-10-09
 sysutils/sleuthkit		sent to ports@ 2014-10-08 (nigel)
-devel/p5-Parallel-Prefork				ready to import, sent to ports@ 2015-01-08 (garcer)
-www/p5-Starlet						ready to import, sent to ports@ 2015-01-08 (garcer)
-www/p5-Plack-Middleware-MethodOverride			ready to import
-devel/p5-JSON-MaybeXS					ready to import
-www/p5-CGI-Struct					ready to import
-www/p5-URI-ws						ready to import
-www/p5-Dancer2-Plugin-Ajax				ready to import, sent to ports@ 2015-01-18 (garcer)
-www/p5-Dancer2-Plugin-Auth-Tiny				ready to import, sent to ports@ 2015-01-18 (garcer)
-www/p5-Dancer2-Plugin-DBIC				ready to import, sent to ports@ 2015-01-18 (garcer)
-www/p5-Dancer-Plugin-Database-Core			ready to import, sent to ports@ 2015-01-18 (garcer)
-www/p5-Dancer2-Plugin-Database				ready to import, sent to ports@ 2015-01-18 (garcer)
-devel/p5-String-Compare-ConstantTime			ready to import, sent to ports@ 2015-01-24 (garcer)
-security/p5-Crypt-URandom				ready to import, sent to ports@ 2015-01-24 (garcer)
-devel/p5-Sereal-Encoder					ready to import, sent to ports@ 2015-01-24 (garcer)
-devel/p5-Sereal-Decoder					ready to import, sent to ports@ 2015-01-24 (garcer)
-devel/p5-Sereal						ready to import, sent to ports@ 2015-01-24 (garcer)
-math/p5-Math-Random-ISAAC-XS				ready to import, sent to ports@ 2015-01-24 (garcer)
-devel/p5-Number-Tolerant				ready to import, sent to ports@ 2015-01-24 (garcer)
-www/p5-Session-Storage-Secure				ready to import, sent to ports@ 2015-01-24 (garcer)
-www/p5-Dancer2-Session-Cookie				ready to import, sent to ports@ 2015-01-24 (garcer)
-x11/cool-retro-term					ready to import, need to wait until after lock (bcallah@)
-net/gophervr						ready to import, need to wait until after lock (bcallah@)
+devel/p5-Parallel-Prefork		ready to import, sent to ports@ 2015-01-08 (garcer)
+www/p5-Starlet				ready to import, sent to ports@ 2015-01-08 (garcer)
+www/p5-Plack-Middleware-MethodOverride	ready to import
+devel/p5-JSON-MaybeXS			ready to import
+www/p5-CGI-Struct			ready to import
+www/p5-URI-ws				ready to import
+www/p5-Dancer2-Plugin-Ajax		ready to import, sent to ports@ 2015-01-18 (garcer)
+www/p5-Dancer2-Plugin-Auth-Tiny		ready to import, sent to ports@ 2015-01-18 (garcer)
+www/p5-Dancer2-Plugin-DBIC		ready to import, sent to ports@ 2015-01-18 (garcer)
+www/p5-Dancer-Plugin-Database-Core	ready to import, sent to ports@ 2015-01-18 (garcer)
+www/p5-Dancer2-Plugin-Database		ready to import, sent to ports@ 2015-01-18 (garcer)
+devel/p5-String-Compare-ConstantTime	ready to import, sent to ports@ 2015-01-24 (garcer)
+security/p5-Crypt-URandom		ready to import, sent to ports@ 2015-01-24 (garcer)
+devel/p5-Sereal-Encoder			ready to import, sent to ports@ 2015-01-24 (garcer)
+devel/p5-Sereal-Decoder			ready to import, sent to ports@ 2015-01-24 (garcer)
+devel/p5-Sereal				ready to import, sent to ports@ 2015-01-24 (garcer)
+math/p5-Math-Random-ISAAC-XS		ready to import, sent to ports@ 2015-01-24 (garcer)
+devel/p5-Number-Tolerant		ready to import, sent to ports@ 2015-01-24 (garcer)
+www/p5-Session-Storage-Secure		ready to import, sent to ports@ 2015-01-24 (garcer)
+www/p5-Dancer2-Session-Cookie		ready to import, sent to ports@ 2015-01-24 (garcer)
+x11/cool-retro-term			ready to import, need to wait until after lock (bcallah@)
+net/gophervr				ready to import, need to wait until after lock (bcallah@)
+net/ocserv				ready, waiting for unlock -sthen
