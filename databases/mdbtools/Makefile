@@ -19,8 +19,8 @@ HOMEPAGE=		http://mdbtools.sourceforge.net/
 
 MULTI_PACKAGES= 	-main -gmdb
 
-SHARED_LIBS +=  mdb                  1.0      # 1.0
-SHARED_LIBS +=  mdbsql               1.0      # 1.0
+SHARED_LIBS +=  mdb                  2.0
+SHARED_LIBS +=  mdbsql               2.0
 
 # GPLv2+, LGPL v2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -73,9 +73,12 @@ LIB_DEPENDS-gmdb=	${LIB_DEPENDS} \
 CONFIGURE_ENV =		YACC="bison -y"
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS =	--with-iodbc=${LOCALBASE}
-USE_LIBTOOL=		gnu
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
+
+# This is an ugly hack to force build system use newly built libraries instead
+# of those installed from packages or previous port build
+#LDFLAGS +=		"-L${WRKSRC}/src/libmdb/.libs"
 
 pre-configure:
 	cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \

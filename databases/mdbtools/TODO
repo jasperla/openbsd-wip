@@ -1,15 +1,6 @@
 Several issues with the port:
 
- 1. Libraries from "pkg/PFRAG.shared-main" are not treated as libraries
+  * Libraries from "pkg/PFRAG.shared-main" are not treated as libraries
     (suffixes).
- 2. SHARED_LIBS need to be bumped; I didn't look into API changes
- 3. Port fails to build if previous version of mdbtools is installed.  Some
-    automake magic is needed to force automake to place -L../* before
-    -L/usr/local/lib.
- 4. Something probably depends on this port.  Something should probably depend.
-    (editors/calligra?)  Didn't look into that.
- 5. Architectures.  Tested only on amd64.  Probably gcc-from-ports dependency
+  * Architectures.  Tested only on amd64.  Probably gcc-from-ports dependency
     may be patched away.  Didn't look into that.
- 6. Patches from current version of port.  Builds without patches, but some of
-    those in databases/mdbtools/snapshot/patches seem cosmetical, so they may
-    still be needed.
