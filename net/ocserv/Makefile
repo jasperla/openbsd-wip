@@ -2,8 +2,7 @@
 
 COMMENT=	server implementing the AnyConnect SSL VPN protocol
 
-DISTNAME=	ocserv-0.9.0.1
-WRKDIST=	${WRKDIR}/ocserv-0.9.0
+DISTNAME=	ocserv-0.9.1
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	net
@@ -28,7 +27,7 @@ LIB_DEPENDS=	archivers/lz4 \
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
-SEPARATE_BUILD=	Yes
+#SEPARATE_BUILD= Yes # nearly; problem with ocserv-args.c
 USE_GMAKE=	Yes
 USE_GROFF=	Yes # missing flags
 # .NOP \f\*[B-Font]\-s\f[] \f\*[I-Font]file\f[], \f\*[B-Font]\-\-socket\-file\f[]=\f\*[I-Font]file\f[]

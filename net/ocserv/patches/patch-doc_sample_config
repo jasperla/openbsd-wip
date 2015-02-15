@@ -1,23 +1,23 @@
 $OpenBSD$
 
 no freeradius-client in ports yet (also disabled in autoconf)
+no seccomp
 
---- doc/sample.config.orig	Tue Jan 20 19:55:49 2015
-+++ doc/sample.config	Fri Feb 13 14:31:21 2015
+--- doc/sample.config.orig	Sat Feb 14 10:14:07 2015
++++ doc/sample.config	Sun Feb 15 10:56:02 2015
 @@ -1,7 +1,7 @@
  # User authentication method. Could be set multiple times and in 
  # that case all should succeed. To enable multiple methods use
- # multiple auth directives. Available options: certificate, certificate[optional],
+ # multiple auth directives. Available options: certificate,
 -# plain, pam, radius[configfile,groupconfig]. 
-+# plain, pam
++# plain, pam.
  
  # certificate:
  #  This indicates that all connecting users must present a certificate.
-@@ -21,28 +21,13 @@
- # "username:groupname1,groupname2:encoded-password"
+@@ -17,26 +17,11 @@
  # One entry must be listed per line, and 'ocpasswd' should be used
  # to generate password entries.
--#
+ #
 -# radius[/etc/radiusclient/radiusclient.conf,groupconfig]:
 -#  The radius option requires specifying freeradius-client configuration
 -# file. If the groupconfig option is set, then config-per-user will be overriden,
@@ -25,14 +25,12 @@ no freeradius-client in ports yet (also disabled in autoconf)
 -# radius configuration are:
 -# Group-Name, Framed-IPv6-Address, Framed-IPv6-Prefix, DNS-Server-IPv6-Address,
 -# Framed-IP-Address, Framed-IP-Netmask, MS-Primary-DNS-Server, MS-Secondary-DNS-Server
- 
+-
  #auth = "certificate"
- #auth = "certificate[optional]"
  #auth = "pam"
  #auth = "pam[gid-min=1000]"
--auth = "plain[./sample.passwd]"
+ auth = "plain[./sample.passwd]"
 -#auth = "radius[/etc/radiusclient/radiusclient.conf,groupconfig]"
-+auth = "plain[${SYSCONFDIR}/ocserv/passwd]"
  
 -# Whether to enable seccomp/Linux namespaces worker isolation. That restricts the number of 
 -# system calls allowed to a worker process, in order to reduce damage from a
@@ -43,7 +41,7 @@ no freeradius-client in ports yet (also disabled in autoconf)
  # A banner to be displayed on clients
  #banner = "Welcome"
  
-@@ -113,8 +98,8 @@ try-mtu-discovery = false
+@@ -107,8 +92,8 @@ try-mtu-discovery = false
  #
  # There may be multiple server-cert and server-key directives,
  # but each key should correspond to the preceding certificate.
@@ -54,7 +52,7 @@ no freeradius-client in ports yet (also disabled in autoconf)
  
  # Diffie-Hellman parameters. Only needed if you require support
  # for the DHE ciphersuites (by default this server supports ECDHE).
-@@ -256,16 +241,16 @@ use-occtl = true
+@@ -250,16 +235,16 @@ use-occtl = true
  pid-file = /var/run/ocserv.pid
  
  # The default server directory. Does not require any devices present.
