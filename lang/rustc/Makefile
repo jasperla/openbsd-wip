@@ -4,8 +4,8 @@
 ONLY_FOR_ARCHS =	amd64
 #SHARED_ONLY =		???
 
-COMMENT =		compiler for Rust Language
-# COMMENT-doc =		???
+COMMENT-main =		compiler for Rust Language
+COMMENT-doc =		html documentation for rustc
 
 # source is currently based on snapshots build
 # we use a fake version number for indexing the date (and commitid)
@@ -16,13 +16,40 @@ BOOTSTRAP_V =		${V}
 SOURCE_V =		1.0.0-dev
 DISTNAME =		rustc-${V}
 
+MULTI_PACKAGES =	-main
+PSEUDO_FLAVORS =	no_doc
+FLAVOR ?=
+
 # PKGNAME without commit-id
-PKGNAME =		${DISTNAME:C/\.[^.]*$//}
+PKGNAME =		rustc-${V:C/\.[^.]*$//}
+PKGNAME-main =		${PKGNAME}
+PKGNAME-doc =		rustc-doc-${V:C/\.[^.]*$//}
 
 BOOTSTRAP-amd64 =	rust-stage0-${BOOTSTRAP_V}-openbsd-${MACHINE_ARCH}.tar.gz
 
-# TODO: complete this
-#SHARED_LIBS =		???
+# TODO: see how "4e7c5e5c" would evolve after 1.0.0
+SHARED_LIBS =		arena-4e7c5e5c		0.0 \
+			flate-4e7c5e5c		0.0 \
+			fmt_macros-4e7c5e5c	0.0 \
+			getopts-4e7c5e5c	0.0 \
+			graphviz-4e7c5e5c	0.0 \
+			log-4e7c5e5c		0.0 \
+			rbml-4e7c5e5c		0.0 \
+			rustc-4e7c5e5c		0.0 \
+			rustc_back-4e7c5e5c	0.0 \
+			rustc_borrowck-4e7c5e5c	0.0 \
+			rustc_driver-4e7c5e5c	0.0 \
+			rustc_llvm-4e7c5e5c	0.0 \
+			rustc_privacy-4e7c5e5c	0.0 \
+			rustc_resolve-4e7c5e5c	0.0 \
+			rustc_trans-4e7c5e5c	0.0 \
+			rustc_typeck-4e7c5e5c	0.0 \
+			rustdoc-4e7c5e5c	0.0 \
+			serialize-4e7c5e5c	0.0 \
+			std-4e7c5e5c		0.0 \
+			syntax-4e7c5e5c		0.0 \
+			term-4e7c5e5c		0.0 \
+			test-4e7c5e5c		0.0
 
 CATEGORIES =		lang
 
@@ -73,7 +100,7 @@ MODGCC4_ARCHS =		*
 
 #MAKE_FLAGS =		???
 
-# note: VERBOSE  permit to unhide Makefile processing
+# note: VERBOSE permit to unhide Makefile processing
 # 	RUSTFLAGS extra flags passed to rust
 # 		-Z print-link-args : unhide link call
 #       RUST_LOG helper
@@ -94,7 +121,6 @@ USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--disable-valgrind-rpass \
-			--disable-jemalloc \
 			--enable-local-rust \
 			--local-rust-root="${WRKDIR}/rust-stage0" \
 			--prefix="${LOCALBASE}" \
@@ -103,8 +129,12 @@ CONFIGURE_ARGS +=	--disable-valgrind-rpass \
 # need for libbacktrace
 USE_LIBTOOL =		gnu
 
-# TODO: nodoc for now
+# documentation package
+.if ${FLAVOR:L:Mno_doc}
 CONFIGURE_ARGS +=	--disable-docs
+.else
+MULTI_PACKAGES += -doc
+.endif
 
 .ifdef LOCAL_LLVM_FOR_RUST
 # TODO: rebuild llvm is a shame
@@ -141,9 +171,12 @@ pre-configure:
 		echo datasize limit is too low - amd64 build takes approx 1.5GB; \
 		exit 1; fi
 
-# Install a wrapper for rustc
-#   TODO: need because of too simplist os::load_self implementation
-# Compile python gdb helper
+# Post-install
+#  - install a wrapper for rustc (for setting --sysroot)
+#  - compile python gdb helper
+#  - remove unneeded files
+#  - do versioning of lib
+#  - reduce size by linking lib to rustlib
 post-install:
 	${INSTALL_PROGRAM_DIR} ${PREFIX}/lib/rustlib/${TRIPLE_ARCH}/bin
 	mv ${PREFIX}/bin/rustc ${PREFIX}/lib/rustlib/${TRIPLE_ARCH}/bin
@@ -151,7 +184,14 @@ post-install:
 		files/rustc ${PREFIX}/bin/rustc
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/lib/rustlib/etc
-	rm ${PREFIX}/lib/rustlib/{components,manifest-rustc,rust-installer-version}
+	rm ${PREFIX}/lib/rustlib/{components,rust-installer-version} \
+		${PREFIX}/lib/rustlib/manifest-{rustc,rust-docs}
+.for libname libver in ${SHARED_LIBS}
+	mv ${PREFIX}/lib/rustlib/${TRIPLE_ARCH}/lib/lib${libname}.so{,.${libver}}
+	rm ${PREFIX}/lib/lib${libname}.so
+	ln -fs ./rustlib/${TRIPLE_ARCH}/lib/lib${libname}.so.${libver} \
+		${PREFIX}/lib
+.endfor
 
 # Create a bootstrapper.
 # The archive in ${WRKDIR}/bootstrap should be suitable for bootstrapping.
@@ -171,5 +211,5 @@ bootstrap: build
 	umask 022 && cd ${WRKDIR}/bootstrap \
 		&& tar zcf rust-stage0-${V}-openbsd-${MACHINE_ARCH}.tar.gz \
 			rust-stage0
-	
+
 .include <bsd.port.mk>

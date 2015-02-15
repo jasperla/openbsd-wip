@@ -1,0 +1,84 @@
+@comment $OpenBSD$
+bin/rust-gdb
+bin/rustc
+@bin bin/rustdoc
+@lib lib/libarena-4e7c5e5c.so.${LIBarena-4e7c5e5c_VERSION}
+@lib lib/libflate-4e7c5e5c.so.${LIBflate-4e7c5e5c_VERSION}
+@lib lib/libfmt_macros-4e7c5e5c.so.${LIBfmt_macros-4e7c5e5c_VERSION}
+@lib lib/libgetopts-4e7c5e5c.so.${LIBgetopts-4e7c5e5c_VERSION}
+@lib lib/libgraphviz-4e7c5e5c.so.${LIBgraphviz-4e7c5e5c_VERSION}
+@lib lib/liblog-4e7c5e5c.so.${LIBlog-4e7c5e5c_VERSION}
+@lib lib/librbml-4e7c5e5c.so.${LIBrbml-4e7c5e5c_VERSION}
+@lib lib/librustc-4e7c5e5c.so.${LIBrustc-4e7c5e5c_VERSION}
+@lib lib/librustc_back-4e7c5e5c.so.${LIBrustc_back-4e7c5e5c_VERSION}
+@lib lib/librustc_borrowck-4e7c5e5c.so.${LIBrustc_borrowck-4e7c5e5c_VERSION}
+@lib lib/librustc_driver-4e7c5e5c.so.${LIBrustc_driver-4e7c5e5c_VERSION}
+@lib lib/librustc_llvm-4e7c5e5c.so.${LIBrustc_llvm-4e7c5e5c_VERSION}
+@lib lib/librustc_privacy-4e7c5e5c.so.${LIBrustc_privacy-4e7c5e5c_VERSION}
+@lib lib/librustc_resolve-4e7c5e5c.so.${LIBrustc_resolve-4e7c5e5c_VERSION}
+@lib lib/librustc_trans-4e7c5e5c.so.${LIBrustc_trans-4e7c5e5c_VERSION}
+@lib lib/librustc_typeck-4e7c5e5c.so.${LIBrustc_typeck-4e7c5e5c_VERSION}
+@lib lib/librustdoc-4e7c5e5c.so.${LIBrustdoc-4e7c5e5c_VERSION}
+@lib lib/libserialize-4e7c5e5c.so.${LIBserialize-4e7c5e5c_VERSION}
+@lib lib/libstd-4e7c5e5c.so.${LIBstd-4e7c5e5c_VERSION}
+@lib lib/libsyntax-4e7c5e5c.so.${LIBsyntax-4e7c5e5c_VERSION}
+@lib lib/libterm-4e7c5e5c.so.${LIBterm-4e7c5e5c_VERSION}
+@lib lib/libtest-4e7c5e5c.so.${LIBtest-4e7c5e5c_VERSION}
+lib/rustlib/
+lib/rustlib/etc/
+lib/rustlib/etc/gdb_load_rust_pretty_printers.py
+lib/rustlib/etc/gdb_load_rust_pretty_printers.pyc
+lib/rustlib/etc/gdb_rust_pretty_printing.py
+lib/rustlib/etc/gdb_rust_pretty_printing.pyc
+lib/rustlib/${TRIPLE_ARCH}/
+lib/rustlib/${TRIPLE_ARCH}/bin/
+@bin lib/rustlib/${TRIPLE_ARCH}/bin/rustc
+lib/rustlib/${TRIPLE_ARCH}/lib/
+lib/rustlib/${TRIPLE_ARCH}/lib/liballoc-4e7c5e5c.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libarena-4e7c5e5c.rlib
+@lib lib/rustlib/${TRIPLE_ARCH}/lib/libarena-4e7c5e5c.so.${LIBarena-4e7c5e5c_VERSION}
+lib/rustlib/${TRIPLE_ARCH}/lib/libcollections-4e7c5e5c.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libcompiler-rt.a
+lib/rustlib/${TRIPLE_ARCH}/lib/libcore-4e7c5e5c.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/libflate-4e7c5e5c.rlib
+@lib lib/rustlib/${TRIPLE_ARCH}/lib/libflate-4e7c5e5c.so.${LIBflate-4e7c5e5c_VERSION}
+@lib lib/rustlib/${TRIPLE_ARCH}/lib/libfmt_macros-4e7c5e5c.so.${LIBfmt_macros-4e7c5e5c_VERSION}
+lib/rustlib/${TRIPLE_ARCH}/lib/libgetopts-4e7c5e5c.rlib
+@lib lib/rustlib/${TRIPLE_ARCH}/lib/libgetopts-4e7c5e5c.so.${LIBgetopts-4e7c5e5c_VERSION}
+lib/rustlib/${TRIPLE_ARCH}/lib/libgraphviz-4e7c5e5c.rlib
+@lib lib/rustlib/${TRIPLE_ARCH}/lib/libgraphviz-4e7c5e5c.so.${LIBgraphviz-4e7c5e5c_VERSION}
+lib/rustlib/${TRIPLE_ARCH}/lib/liblibc-4e7c5e5c.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/liblog-4e7c5e5c.rlib
+@lib lib/rustlib/${TRIPLE_ARCH}/lib/liblog-4e7c5e5c.so.${LIBlog-4e7c5e5c_VERSION}
+lib/rustlib/${TRIPLE_ARCH}/lib/libmorestack.a
+lib/rustlib/${TRIPLE_ARCH}/lib/librand-4e7c5e5c.rlib
+lib/rustlib/${TRIPLE_ARCH}/lib/librbml-4e7c5e5c.rlib
+@lib lib/rustlib/${TRIPLE_ARCH}/lib/librbml-4e7c5e5c.so.${LIBrbml-4e7c5e5c_VERSION}
+@lib lib/rustlib/${TRIPLE_ARCH}/lib/librustc-4e7c5e5c.so.${LIBrustc-4e7c5e5c_VERSION}
+@lib lib/rustlib/${TRIPLE_ARCH}/lib/librustc_back-4e7c5e5c.so.${LIBrustc_back-4e7c5e5c_VERSION}
+lib/rustlib/${TRIPLE_ARCH}/lib/librustc_bitflags-4e7c5e5c.rlib
+@lib lib/rustlib/${TRIPLE_ARCH}/lib/librustc_borrowck-4e7c5e5c.so.${LIBrustc_borrowck-4e7c5e5c_VERSION}
+@lib lib/rustlib/${TRIPLE_ARCH}/lib/librustc_driver-4e7c5e5c.so.${LIBrustc_driver-4e7c5e5c_VERSION}
+@lib lib/rustlib/${TRIPLE_ARCH}/lib/librustc_llvm-4e7c5e5c.so.${LIBrustc_llvm-4e7c5e5c_VERSION}
+@lib lib/rustlib/${TRIPLE_ARCH}/lib/librustc_privacy-4e7c5e5c.so.${LIBrustc_privacy-4e7c5e5c_VERSION}
+@lib lib/rustlib/${TRIPLE_ARCH}/lib/librustc_resolve-4e7c5e5c.so.${LIBrustc_resolve-4e7c5e5c_VERSION}
+@lib lib/rustlib/${TRIPLE_ARCH}/lib/librustc_trans-4e7c5e5c.so.${LIBrustc_trans-4e7c5e5c_VERSION}
+@lib lib/rustlib/${TRIPLE_ARCH}/lib/librustc_typeck-4e7c5e5c.so.${LIBrustc_typeck-4e7c5e5c_VERSION}
+@lib lib/rustlib/${TRIPLE_ARCH}/lib/librustdoc-4e7c5e5c.so.${LIBrustdoc-4e7c5e5c_VERSION}
+lib/rustlib/${TRIPLE_ARCH}/lib/libserialize-4e7c5e5c.rlib
+@lib lib/rustlib/${TRIPLE_ARCH}/lib/libserialize-4e7c5e5c.so.${LIBserialize-4e7c5e5c_VERSION}
+lib/rustlib/${TRIPLE_ARCH}/lib/libstd-4e7c5e5c.rlib
+@lib lib/rustlib/${TRIPLE_ARCH}/lib/libstd-4e7c5e5c.so.${LIBstd-4e7c5e5c_VERSION}
+@lib lib/rustlib/${TRIPLE_ARCH}/lib/libsyntax-4e7c5e5c.so.${LIBsyntax-4e7c5e5c_VERSION}
+lib/rustlib/${TRIPLE_ARCH}/lib/libterm-4e7c5e5c.rlib
+@lib lib/rustlib/${TRIPLE_ARCH}/lib/libterm-4e7c5e5c.so.${LIBterm-4e7c5e5c_VERSION}
+lib/rustlib/${TRIPLE_ARCH}/lib/libtest-4e7c5e5c.rlib
+@lib lib/rustlib/${TRIPLE_ARCH}/lib/libtest-4e7c5e5c.so.${LIBtest-4e7c5e5c_VERSION}
+lib/rustlib/${TRIPLE_ARCH}/lib/libunicode-4e7c5e5c.rlib
+@man man/man1/rustc.1
+@man man/man1/rustdoc.1
+share/doc/rust/
+share/doc/rust/COPYRIGHT
+share/doc/rust/LICENSE-APACHE
+share/doc/rust/LICENSE-MIT
+share/doc/rust/README.md

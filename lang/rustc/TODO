@@ -27,13 +27,31 @@ Bugs
 Tests failures
 --------------
   * [run-pass] run-pass/out-of-stack.rs
-      the page guard for stack-overflow detection don't work very well...
+      the last commits about stack in base seems to have resolve the issue :)
+      just need to review the offset used (should be not need)
 
   * [run-pass] run-pass/tcp-stress.rs
       intermittent failure
       "Too many open files"
       => may be be a problem in compiletest, as the test is ok when run manually.
 
-  * seems to be unrelated bugs (not trigged without jemalloc)
-    [run-pass] run-pass/coerce-match-calls.rs
-    [run-pass] run-pass/coerce-match.rs
+  * [stdlib]
+     - *::bind_error
+	error when tests run as root (the test check if bind(1) is PermissionDenied)
+
+     - *::connect_error
+	test check if connect("0.0.0.0:1") return ConnectionRefused
+	under openbsd it is InvalidArgument
+
+     - old_io::process::tests::signal_reported_right
+	test check waitpid return status when sending signal 1 is sended to /bin/sh
+	it expects a WTERMSIG(status)=1
+	but under openbsd /bin/sh catch the signal and exit...
+
+     - sys::fs::tests::test_file_desc
+	test blocking without timeout
+	it plays with pipe(2) for test file descriptor (read/write)
+
+  * [debuginfo-gdb] all the testsuite
+	seems that gdb in base don't do what expected here
+
