@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 # bootstrap only available for amd64, for now
-ONLY_FOR_ARCHS =	amd64
+ONLY_FOR_ARCHS-main =	amd64
 #SHARED_ONLY =		???
 
 COMMENT-main =		compiler for Rust Language
@@ -62,7 +62,7 @@ MAINTAINER =		Sebastien Marie <semarie-openbsd@latrappe.fr>
 PERMIT_PACKAGE_CDROM =	Yes
 
 # "make port-lib-depends-check" can help
-WANTLIB +=		c m pthread
+WANTLIB-main +=		c m pthread
 
 #MASTER_SITES =		https://static.rust-lang.org/dist/
 MASTER_SITES =		http://semarie.free.fr/rust/
