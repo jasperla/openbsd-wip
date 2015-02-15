@@ -28,28 +28,7 @@ PKGNAME-doc =		rustc-doc-${V:C/\.[^.]*$//}
 BOOTSTRAP-amd64 =	rust-stage0-${BOOTSTRAP_V}-openbsd-${MACHINE_ARCH}.tar.gz
 
 # TODO: see how "4e7c5e5c" would evolve after 1.0.0
-SHARED_LIBS =		arena-4e7c5e5c		0.0 \
-			flate-4e7c5e5c		0.0 \
-			fmt_macros-4e7c5e5c	0.0 \
-			getopts-4e7c5e5c	0.0 \
-			graphviz-4e7c5e5c	0.0 \
-			log-4e7c5e5c		0.0 \
-			rbml-4e7c5e5c		0.0 \
-			rustc-4e7c5e5c		0.0 \
-			rustc_back-4e7c5e5c	0.0 \
-			rustc_borrowck-4e7c5e5c	0.0 \
-			rustc_driver-4e7c5e5c	0.0 \
-			rustc_llvm-4e7c5e5c	0.0 \
-			rustc_privacy-4e7c5e5c	0.0 \
-			rustc_resolve-4e7c5e5c	0.0 \
-			rustc_trans-4e7c5e5c	0.0 \
-			rustc_typeck-4e7c5e5c	0.0 \
-			rustdoc-4e7c5e5c	0.0 \
-			serialize-4e7c5e5c	0.0 \
-			std-4e7c5e5c		0.0 \
-			syntax-4e7c5e5c		0.0 \
-			term-4e7c5e5c		0.0 \
-			test-4e7c5e5c		0.0
+#SHARED_LIBS =
 
 CATEGORIES =		lang
 
@@ -62,7 +41,8 @@ MAINTAINER =		Sebastien Marie <semarie-openbsd@latrappe.fr>
 PERMIT_PACKAGE_CDROM =	Yes
 
 # "make port-lib-depends-check" can help
-WANTLIB-main +=		c m pthread
+WANTLIB-main +=		c m pthread ${MODGCC4_CPPWANTLIB}
+WANTLIB-doc =
 
 #MASTER_SITES =		https://static.rust-lang.org/dist/
 MASTER_SITES =		http://semarie.free.fr/rust/
@@ -175,8 +155,6 @@ pre-configure:
 #  - install a wrapper for rustc (for setting --sysroot)
 #  - compile python gdb helper
 #  - remove unneeded files
-#  - do versioning of lib
-#  - reduce size by linking lib to rustlib
 post-install:
 	${INSTALL_PROGRAM_DIR} ${PREFIX}/lib/rustlib/${TRIPLE_ARCH}/bin
 	mv ${PREFIX}/bin/rustc ${PREFIX}/lib/rustlib/${TRIPLE_ARCH}/bin
@@ -186,12 +164,6 @@ post-install:
 		${PREFIX}/lib/rustlib/etc
 	rm ${PREFIX}/lib/rustlib/{components,rust-installer-version} \
 		${PREFIX}/lib/rustlib/manifest-{rustc,rust-docs}
-.for libname libver in ${SHARED_LIBS}
-	mv ${PREFIX}/lib/rustlib/${TRIPLE_ARCH}/lib/lib${libname}.so{,.${libver}}
-	rm ${PREFIX}/lib/lib${libname}.so
-	ln -fs ./rustlib/${TRIPLE_ARCH}/lib/lib${libname}.so.${libver} \
-		${PREFIX}/lib
-.endfor
 
 # Create a bootstrapper.
 # The archive in ${WRKDIR}/bootstrap should be suitable for bootstrapping.
