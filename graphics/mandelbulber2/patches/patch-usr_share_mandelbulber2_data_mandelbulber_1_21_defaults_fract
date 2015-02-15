@@ -1,0 +1,16 @@
+$OpenBSD$
+--- usr/share/mandelbulber2/data/mandelbulber_1.21_defaults.fract.orig	Sun Feb 15 00:50:34 2015
++++ usr/share/mandelbulber2/data/mandelbulber_1.21_defaults.fract	Sun Feb 15 00:51:02 2015
+@@ -412,9 +412,9 @@ fake_lights_max_iter 2;
+ frame_no 0;
+ tile_no 0;
+ file_destination images/image;
+-file_background /usr/share/mandelbulber/textures/background.jpg;
+-file_envmap /usr/share/mandelbulber/textures/envmap.jpg;
+-file_lightmap /usr/share/mandelbulber/textures/lightmap.jpg;
++file_background ${LOCALBASE}/share/mandelbulber2/textures/background.jpg;
++file_envmap ${LOCALBASE}/share/mandelbulber2/textures/envmap.jpg;
++file_lightmap ${LOCALBASE}/share/mandelbulber2/textures/lightmap.jpg;
+ file_animation_path paths/path.txt;
+ file_keyframes keyframes/keyframe;
+ palette 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ;

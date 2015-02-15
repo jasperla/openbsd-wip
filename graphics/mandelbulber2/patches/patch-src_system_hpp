@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/system.hpp.orig	Sun Feb 15 00:51:32 2015
++++ src/system.hpp	Sun Feb 15 00:51:43 2015
+@@ -33,7 +33,7 @@
+ 
+ #ifndef SHARED_DIR
+ 	#ifndef WIN32
+-		#define SHARED_DIR "/usr/share/mandelbulber2"
++		#define SHARED_DIR "${LOCALBASE}/share/mandelbulber2"
+ 	#endif
+ #endif
+ 

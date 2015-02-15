@@ -1,0 +1,96 @@
+@comment $OpenBSD$
+@bin bin/mandelbulber2
+share/applications/mandelbulber2.desktop
+share/mandelbulber2/
+share/mandelbulber2/data/
+share/mandelbulber2/data/mandelbulber_1.21_defaults.fract
+share/mandelbulber2/examples/
+share/mandelbulber2/examples/IFS_001.fract
+share/mandelbulber2/examples/IFS_002.fract
+share/mandelbulber2/examples/aexion001.fract
+share/mandelbulber2/examples/aexion002.fract
+share/mandelbulber2/examples/bristorbrot001.fract
+share/mandelbulber2/examples/hybrid001.fract
+share/mandelbulber2/examples/hybrid002.fract
+share/mandelbulber2/examples/hybrid003.fract
+share/mandelbulber2/examples/hybrid004.fract
+share/mandelbulber2/examples/hybrid005.fract
+share/mandelbulber2/examples/hybrid006.fract
+share/mandelbulber2/examples/mandelbox001.fract
+share/mandelbulber2/examples/mandelbox002.fract
+share/mandelbulber2/examples/mandelbox003.fract
+share/mandelbulber2/examples/mandelbulb001.fract
+share/mandelbulber2/examples/mandelbulb002.fract
+share/mandelbulber2/examples/primitives001.fract
+share/mandelbulber2/examples/primitives002.fract
+share/mandelbulber2/icons/
+share/mandelbulber2/icons/mandelbulber.png
+share/mandelbulber2/language/
+share/mandelbulber2/language/de.qm
+share/mandelbulber2/language/de.ts
+share/mandelbulber2/language/en.qm
+share/mandelbulber2/language/en.ts
+share/mandelbulber2/language/pl.qm
+share/mandelbulber2/language/pl.ts
+share/mandelbulber2/language/qt_data_de.qm
+share/mandelbulber2/language/qt_data_de.ts
+share/mandelbulber2/language/qt_data_en.qm
+share/mandelbulber2/language/qt_data_en.ts
+share/mandelbulber2/language/qt_data_pl.qm
+share/mandelbulber2/language/qt_data_pl.ts
+share/mandelbulber2/qt_data/
+share/mandelbulber2/qt_data/fractal_aexion.ui
+share/mandelbulber2/qt_data/fractal_benesi.ui
+share/mandelbulber2/qt_data/fractal_boxfold_bulbpow2.ui
+share/mandelbulber2/qt_data/fractal_bristorbrot.ui
+share/mandelbulber2/qt_data/fractal_hypercomplex.ui
+share/mandelbulber2/qt_data/fractal_ifs.ui
+share/mandelbulber2/qt_data/fractal_mandelbox.ui
+share/mandelbulber2/qt_data/fractal_mandelbox_vary_scale_4d.ui
+share/mandelbulber2/qt_data/fractal_mandelbulb.ui
+share/mandelbulber2/qt_data/fractal_mandelbulb2.ui
+share/mandelbulber2/qt_data/fractal_mandelbulb3.ui
+share/mandelbulber2/qt_data/fractal_mandelbulb4.ui
+share/mandelbulber2/qt_data/fractal_mandelbulb_power_2.ui
+share/mandelbulber2/qt_data/fractal_menger_sponge.ui
+share/mandelbulber2/qt_data/fractal_quaternion.ui
+share/mandelbulber2/qt_data/fractal_smooth_mandelbox.ui
+share/mandelbulber2/qt_data/fractal_xenodreambuie.ui
+share/mandelbulber2/qt_data/primitive_box.ui
+share/mandelbulber2/qt_data/primitive_circle.ui
+share/mandelbulber2/qt_data/primitive_cone.ui
+share/mandelbulber2/qt_data/primitive_cylinder.ui
+share/mandelbulber2/qt_data/primitive_plane.ui
+share/mandelbulber2/qt_data/primitive_rectangle.ui
+share/mandelbulber2/qt_data/primitive_sphere.ui
+share/mandelbulber2/qt_data/primitive_torus.ui
+share/mandelbulber2/qt_data/primitive_water.ui
+share/mandelbulber2/textures/
+share/mandelbulber2/textures/.directory
+share/mandelbulber2/textures/background.jpg
+share/mandelbulber2/textures/background2.jpg
+share/mandelbulber2/textures/background3.jpg
+share/mandelbulber2/textures/background4.jpg
+share/mandelbulber2/textures/colour palette.jpg
+share/mandelbulber2/textures/envmap.jpg
+share/mandelbulber2/textures/envmap2.jpg
+share/mandelbulber2/textures/envmap3.jpg
+share/mandelbulber2/textures/envmap4.JPG
+share/mandelbulber2/textures/envmap5.JPG
+share/mandelbulber2/textures/envmap6.jpg
+share/mandelbulber2/textures/lightmap.jpg
+share/mandelbulber2/textures/lightmap2.jpg
+share/mandelbulber2/textures/lightmap3.jpg
+share/mandelbulber2/textures/lightmap4.jpg
+share/mandelbulber2/toolbar/
+share/mandelbulber2/toolbar/dodecahedron.fract
+share/mandelbulber2/toolbar/icosahedron.fract
+share/mandelbulber2/toolbar/mandelbox scale -2.fract
+share/mandelbulber2/toolbar/mandelbox scale 2.fract
+share/mandelbulber2/toolbar/mandelbulb_power_2.fract
+share/mandelbulber2/toolbar/mandelbulb_power_9.fract
+share/mandelbulber2/toolbar/menger sponge.fract
+share/mandelbulber2/toolbar/octahedron.fract
+share/mandelbulber2/toolbar/quaternion.fract
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
