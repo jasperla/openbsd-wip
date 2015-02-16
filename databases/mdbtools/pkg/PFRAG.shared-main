@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-lib/libmdbodbc.so
-lib/libmdbodbcW.so
