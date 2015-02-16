@@ -1,10 +1,7 @@
 # $OpenBSD$
 
-# sync with lang/go
-ONLY_FOR_ARCHS =	amd64 i386
-
 COMMENT =		wraps git in order to extend it with extra features
-V =			2.2.0-rc1
+V =			2.2.0
 DISTNAME =		hub-$V
 CATEGORIES =		devel
 
