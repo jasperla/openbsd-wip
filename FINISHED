@@ -8,6 +8,7 @@
 
 cad/tkgate:		Ready for import. Sent to ports@ 2008-01-13 and still works (yason)
 comms/[gw]ammu		Ready for import. Sent to ports@ 2012-10-09 (yason)
+devel/hub		ready, waiting for unlock (Mischi)
 devel/libextractor	sent to ports 2013-06-29
 devel/libtap		ready to import
 devel/p5-Test-Most:	ready for import, depends on the update of p5-Test-Warn, did not sent to ports@(wenheping)
