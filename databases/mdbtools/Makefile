@@ -1,5 +1,7 @@
 # $OpenBSD: Makefile,v 1.39 2014/09/07 18:11:07 jasper Exp $
 
+ONLY_FOR_ARCHS =	alpha amd64 i386 powerpc mips64 mips64el sparc64
+
 COMMENT-main =		read microsoft Access MDB
 COMMENT-gmdb =		graphical interface to MDB tools
 
@@ -15,6 +17,8 @@ EPOCH =			0
 CATEGORIES =		databases converters
 HOMEPAGE =		http://mdbtools.sourceforge.net/
 
+MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
+
 MULTI_PACKAGES = 	-main
 PSEUDO_FLAVORS =	no_x11
 FLAVOR ?=
@@ -28,6 +32,7 @@ SHARED_LIBS +=  mdbodbcW             0.0
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c glib-2.0 intl pthread
+
 WANTLIB-main += ${WANTLIB} iconv iodbcinst pcre readline
 
 WANTLIB-gmdb += ${WANTLIB} gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0 gnome-2
@@ -37,8 +42,7 @@ MODULES =		gcc4 \
 			devel/gettext \
 			x11/gnome
 
-# Copied from lang/gcc/4.8/Makefile, only amd64 tested
-MODGCC4_ARCHS =		alpha amd64 i386 powerpc mips64 mips64el sparc64
+MODGCC4_ARCHS =		${ONLY_FOR_ARCHS}
 MODGNOME_TOOLS +=	yelp
 
 BUILD_DEPENDS =		devel/bison \
@@ -57,6 +61,7 @@ RUN_DEPENDS-main =	${MODGETTEXT_RUN_DEPENDS}
 CONFIGURE_ENV =		YACC="bison -y"
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-iodbc=${LOCALBASE}
+
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
 

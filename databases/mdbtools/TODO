@@ -1,4 +1,0 @@
-Several issues with the port:
-
-  * Architectures.  Tested only on amd64.  Probably gcc-from-ports dependency
-    may be patched away.  Didn't look into that.
