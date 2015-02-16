@@ -10,11 +10,12 @@ GH_TAGNAME =		0.7.1
 DISTNAME =		mdbtools-${GH_TAGNAME}
 PKGNAME-main =		mdbtools-${GH_TAGNAME}
 PKGNAME-gmdb =		gmdb-${GH_TAGNAME}
+EPOCH =			0
 
 CATEGORIES =		databases converters
 HOMEPAGE =		http://mdbtools.sourceforge.net/
 
-MULTI_PACKAGES = 	-main -gmdb
+MULTI_PACKAGES = 	-main
 PSEUDO_FLAVORS =	no_x11
 FLAVOR ?=
 
@@ -44,13 +45,11 @@ BUILD_DEPENDS =		devel/bison \
 			textproc/txt2man
 
 LIB_DEPENDS =		devel/glib2
-
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			databases/iodbc,-main \
 			devel/pcre
-
 LIB_DEPENDS-gmdb =	${LIB_DEPENDS} \
-			databases/mdbtools,-main \
+			databases/mdbtools,-main>=0.7.1v0 \
 			x11/gnome/libgnomeui
 
 RUN_DEPENDS-main =	${MODGETTEXT_RUN_DEPENDS}
@@ -63,6 +62,8 @@ AUTOMAKE_VERSION =	1.15
 
 .if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS +=	--disable-gmdb2
+.else
+MULTI_PACKAGES += 	-gmdb
 .endif
 
 pre-configure:
