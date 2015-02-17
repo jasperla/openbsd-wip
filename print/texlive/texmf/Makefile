@@ -62,6 +62,8 @@ MODRUBY_RUNDEP =	No
 MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
 
+SUBST_VARS +=		RUBY
+
 # Substitute correct interpreter paths into scripts.
 # Some are done automatically by MODULES
 pre-configure:
@@ -82,6 +84,7 @@ pre-configure:
 	for F in ${BASH_ADJ_SCRIPTS}; do \
 	    perl -pi -e '($$. == 1) && s@^.*$$@#!${LOCALBASE}/bin/bash@' ${WRKSRC}/$$F; \
 	done
+	${SUBST_CMD} ${WRKSRC}/texmf-dist/scripts/context/stubs/unix/mtxrun
 
 do-install:
 	mv ${WRKDIST}/texmf-dist ${PREFIX}/share
