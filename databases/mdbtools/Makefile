@@ -19,8 +19,8 @@ HOMEPAGE =		http://mdbtools.sourceforge.net/
 
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
 
-MULTI_PACKAGES = 	-main
-PSEUDO_FLAVORS =	no_x11
+MULTI_PACKAGES = 	-main -gmdb
+PSEUDO_FLAVORS =	no_gmdb
 FLAVOR ?=
 
 SHARED_LIBS +=  mdb                  2.0
@@ -39,14 +39,14 @@ WANTLIB-gmdb += ${WANTLIB} gdk-x11-2.0 gdk_pixbuf-2.0 glade-2.0 gnome-2
 WANTLIB-gmdb += gnomeui-2 gobject-2.0 gtk-x11-2.0 mdb mdbsql pango-1.0
 
 MODULES =		gcc4 \
-			devel/gettext \
-			x11/gnome
+			devel/gettext
 
 MODGCC4_ARCHS =		${ONLY_FOR_ARCHS}
-MODGNOME_TOOLS +=	yelp
 
 BUILD_DEPENDS =		devel/bison \
-			textproc/txt2man
+			textproc/txt2man \
+			${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
 
 LIB_DEPENDS =		devel/glib2
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
@@ -65,15 +65,22 @@ CONFIGURE_ARGS =	--with-iodbc=${LOCALBASE}
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
 
-.if ${FLAVOR:Mno_x11}
-CONFIGURE_ARGS +=	--disable-gmdb2
+.include <bsd.port.arch.mk>
+
+.if ${BUILD_PACKAGES:M-gmdb}
+MODULES +=		x11/gnome
+MODGNOME_TOOLS +=	yelp desktop-file-utils
 .else
-MULTI_PACKAGES += 	-gmdb
+CONFIGURE_ARGS +=	--disable-gmdb2
 .endif
 
 pre-configure:
 	cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 			AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 			autoreconf -i -f
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${SUBST_CMD} -c ${FILESDIR}/gmdb2.desktop ${PREFIX}/share/applications/gmdb2.desktop
 
 .include <bsd.port.mk>
