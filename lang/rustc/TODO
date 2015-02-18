@@ -7,6 +7,8 @@ Packaging
 - install
   - move lib to lib/rustc ?
   - keep extrafilename ? (libs are like lib/libarena-4e7c5e5c.so)
+      it is used for ABI
+      the use of SHARED_LIBS in ports should superseed it (we have MAJOR/MINOR)
   - rustdoc need to known sysroot, but don't have any option to pass it
       if you want use it, you should pass the complete path
       (invoke it like: $ /usr/local/bin/rustdoc bla-bla)
@@ -34,6 +36,7 @@ Tests failures
       intermittent failure
       "Too many open files"
       => may be be a problem in compiletest, as the test is ok when run manually.
+      NOTE: the test is disabled
 
   * [stdlib]
      - *::bind_error
@@ -43,15 +46,5 @@ Tests failures
 	test check if connect("0.0.0.0:1") return ConnectionRefused
 	under openbsd it is InvalidArgument
 
-     - old_io::process::tests::signal_reported_right
-	test check waitpid return status when sending signal 1 is sended to /bin/sh
-	it expects a WTERMSIG(status)=1
-	but under openbsd /bin/sh catch the signal and exit...
-
-     - sys::fs::tests::test_file_desc
-	test blocking without timeout
-	it plays with pipe(2) for test file descriptor (read/write)
-
   * [debuginfo-gdb] all the testsuite
 	seems that gdb in base don't do what expected here
-

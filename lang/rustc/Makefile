@@ -11,7 +11,7 @@ COMMENT-doc =		html documentation for rustc
 # we use a fake version number for indexing the date (and commitid)
 # TODO: should be changed when 1.0.0-stable will be issue
 #       (see post-extract target too)
-V =			0.0.0.20150204.ac134f7
+V =			0.0.0.20150217.f1bb6c2
 BOOTSTRAP_V =		${V}
 SOURCE_V =		1.0.0-dev
 DISTNAME =		rustc-${V}
@@ -28,7 +28,28 @@ PKGNAME-doc =		rustc-doc-${V:C/\.[^.]*$//}
 BOOTSTRAP-amd64 =	rust-stage0-${BOOTSTRAP_V}-openbsd-${MACHINE_ARCH}.tar.gz
 
 # TODO: see how "4e7c5e5c" would evolve after 1.0.0
-#SHARED_LIBS =
+#SHARED_LIBS =		arena-4e7c5e5c		0.0 \
+#			flate-4e7c5e5c		0.0 \
+#			fmt_macros-4e7c5e5c	0.0 \
+#			getopts-4e7c5e5c	0.0 \
+#			graphviz-4e7c5e5c	0.0 \
+#			log-4e7c5e5c		0.0 \
+#			rbml-4e7c5e5c		0.0 \
+#			rustc-4e7c5e5c		0.0 \
+#			rustc_back-4e7c5e5c	0.0 \
+#			rustc_borrowck-4e7c5e5c	0.0 \
+#			rustc_driver-4e7c5e5c	0.0 \
+#			rustc_llvm-4e7c5e5c	0.0 \
+#			rustc_privacy-4e7c5e5c	0.0 \
+#			rustc_resolve-4e7c5e5c	0.0 \
+#			rustc_trans-4e7c5e5c	0.0 \
+#			rustc_typeck-4e7c5e5c	0.0 \
+#			rustdoc-4e7c5e5c	0.0 \
+#			serialize-4e7c5e5c	0.0 \
+#			std-4e7c5e5c		0.0 \
+#			syntax-4e7c5e5c		0.0 \
+#			term-4e7c5e5c		0.0 \
+#			test-4e7c5e5c		0.0
 
 CATEGORIES =		lang
 
@@ -41,14 +62,12 @@ MAINTAINER =		Sebastien Marie <semarie-openbsd@latrappe.fr>
 PERMIT_PACKAGE_CDROM =	Yes
 
 # "make port-lib-depends-check" can help
-WANTLIB-main +=		c m pthread ${MODGCC4_CPPWANTLIB}
+WANTLIB-main =		${WANTLIB} c m pthread
 WANTLIB-doc =
 
 #MASTER_SITES =		https://static.rust-lang.org/dist/
 MASTER_SITES =		http://semarie.free.fr/rust/
 MASTER_SITES0 =		http://semarie.free.fr/rust/
-#MASTER_SITES =		http://localhost/~semarie/rust/
-#MASTER_SITES0 =		http://localhost/~semarie/rust/
 
 EXTRACT_SUFX =		-src.tar.gz
 
@@ -88,10 +107,9 @@ MAKE_ENV =		VERBOSE=1 \
 			RUSTFLAGS="-Z print-link-args" \
 			RUST_LOG="${RUST_LOG}"
 
-#FAKE_FLAGS =		???
-
-# note: helper, set RUST_TEST_TASKS=1 to not run tests in parallel
-TEST_FLAGS =		RUST_TEST_TASKS="${RUST_TEST_TASKS}"
+#.for _n _v in ${SHARED_LIBS}
+#MAKE_ENV +=		RUSTFLAGS_${_n:C/-[^-]*$//}="-C extra-dylib=.${_v}"
+#.endfor
 
 
 # build/configuration variables
@@ -113,7 +131,7 @@ USE_LIBTOOL =		gnu
 .if ${FLAVOR:L:Mno_doc}
 CONFIGURE_ARGS +=	--disable-docs
 .else
-MULTI_PACKAGES += -doc
+MULTI_PACKAGES +=	-doc
 .endif
 
 .ifdef LOCAL_LLVM_FOR_RUST
@@ -150,6 +168,13 @@ pre-configure:
 	@if [ `ulimit -d` -lt 1572864 ]; then \
 		echo datasize limit is too low - amd64 build takes approx 1.5GB; \
 		exit 1; fi
+
+# Remove autodetected programs
+post-configure:
+.for _v in CFG_CURLORWGET CFG_GIT CFG_CLANG CFG_VALGRIND CFG_PERF CFG_ISCC CFG_JAVAC \
+	CFG_ANTLR4 CFG_BISON CFG_PANDOC CFG_GDB CFG_LLDB CFG_GDB_VERSION CFG_ADB
+	perl -pi -e 's/^${_v} .*/${_v} := /' ${WRKBUILD}/config.mk
+.endfor
 
 # Post-install
 #  - install a wrapper for rustc (for setting --sysroot)
