@@ -1,6 +1,5 @@
 @comment $OpenBSD: PLIST-main,v 1.3 2013/08/10 13:15:37 ajacoutot Exp $
 @pkgpath databases/mdbtools/snapshot
-%%SHARED%%
 @bin bin/mdb-array
 @bin bin/mdb-export
 @bin bin/mdb-header
@@ -20,8 +19,10 @@ lib/libmdb.la
 @lib lib/libmdb.so.${LIBmdb_VERSION}
 lib/libmdbodbc.a
 lib/libmdbodbc.la
+@lib lib/libmdbodbc.so.${LIBmdbodbc_VERSION}
 lib/libmdbodbcW.a
 lib/libmdbodbcW.la
+@lib lib/libmdbodbcW.so.${LIBmdbodbcW_VERSION}
 lib/libmdbsql.a
 lib/libmdbsql.la
 @lib lib/libmdbsql.so.${LIBmdbsql_VERSION}

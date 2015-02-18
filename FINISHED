@@ -8,6 +8,7 @@
 
 cad/tkgate:		Ready for import. Sent to ports@ 2008-01-13 and still works (yason)
 comms/[gw]ammu		Ready for import. Sent to ports@ 2012-10-09 (yason)
+devel/hub		ready, waiting for unlock (Mischi)
 devel/libextractor	sent to ports 2013-06-29
 devel/libtap		ready to import
 devel/p5-Test-Most:	ready for import, depends on the update of p5-Test-Warn, did not sent to ports@(wenheping)
@@ -104,3 +105,5 @@ net/py-pafy (may change category)	ready to import, waiting for unlock (bcallah@)
 multimedia/mps-youtube			ready to import, waiting for unlock (bcallah@)
 graphics/glfw				ready to import, waiting for unlock (bcallah@)
 graphics/mandelbulber2			ready to import, waiting for unlock (bcallah@)
+databases/mdbtools			ready to import, sent to ports@ 2015-02-16 (czarkoff)
+textproc/txt2man			ready to import, sent to ports@ 2015-02-16 (czarkoff)

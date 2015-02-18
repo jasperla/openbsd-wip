@@ -1,0 +1,20 @@
+$OpenBSD$
+--- texmf-dist/scripts/context/stubs/unix/mtxrun.origy	Wed May 21 23:13:59 2014
++++ texmf-dist/scripts/context/stubs/unix/mtxrun	Tue Feb 17 21:00:09 2015
+@@ -17190,11 +17190,11 @@ messages = messages or { } -- for the moment
+ runners = runners  or { } -- global (might become local)
+ 
+ runners.applications = {
+-    ["lua"] = "luatex --luaonly",
+-    ["luc"] = "luatex --luaonly",
+-    ["pl"] = "perl",
+-    ["py"] = "python",
+-    ["rb"] = "ruby",
++    ["lua"] = "${LOCALBASE}/bin/luatex --luaonly",
++    ["luc"] = "${LOCALBASE}/bin/luatex --luaonly",
++    ["pl"] = "/usr/bin/perl",
++    ["py"] = "${MODPY_BIN}",
++    ["rb"] = "${RUBY}",
+ }
+ 
+ runners.suffixes = {

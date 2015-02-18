@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-MODPY_EGG_VERSION =	0.2.2
+MODPY_EGG_VERSION =	0.2.3
 COMMENT =	terminal based YouTube player and downloader
 DISTNAME =	mps-youtube-${MODPY_EGG_VERSION}
 CATEGORIES =	multimedia x11
