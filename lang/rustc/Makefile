@@ -2,7 +2,6 @@
 
 # bootstrap only available for amd64, for now
 ONLY_FOR_ARCHS-main =	amd64
-#SHARED_ONLY =		???
 
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
@@ -27,7 +26,8 @@ PKGNAME-doc =		rustc-doc-${V:C/\.[^.]*$//}
 
 BOOTSTRAP-amd64 =	rust-stage0-${BOOTSTRAP_V}-openbsd-${MACHINE_ARCH}.tar.gz
 
-# TODO: see how "4e7c5e5c" would evolve after 1.0.0
+# TODO: wip
+# "4e7c5e5c" as same meaning as MAJOR
 #SHARED_LIBS =		arena-4e7c5e5c		0.0 \
 #			flate-4e7c5e5c		0.0 \
 #			fmt_macros-4e7c5e5c	0.0 \
@@ -97,8 +97,6 @@ MODGCC4_ARCHS =		*
 #LIB_DEPENDS =		???
 #TEST_DEPENDS =		???
 
-#MAKE_FLAGS =		???
-
 # note: VERBOSE permit to unhide Makefile processing
 # 	RUSTFLAGS extra flags passed to rust
 # 		-Z print-link-args : unhide link call
@@ -107,6 +105,7 @@ MAKE_ENV =		VERBOSE=1 \
 			RUSTFLAGS="-Z print-link-args" \
 			RUST_LOG="${RUST_LOG}"
 
+# TODO: wip
 #.for _n _v in ${SHARED_LIBS}
 #MAKE_ENV +=		RUSTFLAGS_${_n:C/-[^-]*$//}="-C extra-dylib=.${_v}"
 #.endfor
@@ -135,17 +134,12 @@ MULTI_PACKAGES +=	-doc
 .endif
 
 .ifdef LOCAL_LLVM_FOR_RUST
-# TODO: rebuild llvm is a shame
-# 	but the llvm in ports not seems to work for this purpose
-#CONFIGURE_ARGS +=	--llvm-root="${LOCALBASE}"
-#BUILD_DEPENDS +=	devel/llvm
-
 CONFIGURE_ARGS +=	--llvm-root="${LOCAL_LLVM_FOR_RUST}"
 .endif
 
-TEST_TARGET =		check
+TEST_TARGET ?=		check
 
-# Create a wrapper for bootstrap (if needed)
+# create a wrapper for bootstrap (if needed)
 post-extract:
 	if [ ! -x ${WRKDIR}/rust-stage0/bin/rustc ] ; then \
 		echo '#!/bin/sh' > ${WRKDIR}/rust-stage0/bin/rustc; \
@@ -153,23 +147,20 @@ post-extract:
 		chmod +x ${WRKDIR}/rust-stage0/bin/rustc; fi
 	mv ${WRKDIR}/rustc-${SOURCE_V} ${WRKDIR}/rustc-${V}
 
-# When rebuilding a rustc version with a bootstrap of same version
-# we should skip stage0 flags, and use stage1, because stage0 contains
-# tricks for previous snapshots.
+# - check datasize limit before configuring (and building)
+# - when rebuilding a rustc version with a bootstrap of same version, skip stage0 flags
+#   and use stage1, because stage0 contains tricks for previous snapshots.
+pre-configure:
+	@if [ `ulimit -d` -lt 1572864 ]; then \
+		echo datasize limit is too low - amd64 build takes approx 1.5GB; \
+		exit 1; fi
 .if "${V}" == "${BOOTSTRAP_V}"
-post-patch:
 	perl -pi -e \
 		's|^ifneq \(\$$\(strip .\(CFG_BUILD\)\),.\(strip .\(3\)\)\)|ifeq (1,1)|' \
 		${WRKSRC}/mk/main.mk
 .endif
 
-# Check datasize limit before configuring (and building)
-pre-configure:
-	@if [ `ulimit -d` -lt 1572864 ]; then \
-		echo datasize limit is too low - amd64 build takes approx 1.5GB; \
-		exit 1; fi
-
-# Remove autodetected programs
+# remove autodetected programs
 post-configure:
 .for _v in CFG_CURLORWGET CFG_GIT CFG_CLANG CFG_VALGRIND CFG_PERF CFG_ISCC CFG_JAVAC \
 	CFG_ANTLR4 CFG_BISON CFG_PANDOC CFG_GDB CFG_LLDB CFG_GDB_VERSION CFG_ADB
