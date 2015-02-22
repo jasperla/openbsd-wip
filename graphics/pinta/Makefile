@@ -11,7 +11,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-# These tarballs have a proper configure. GH checkout does not...
+# The tarballs have a proper configure. GH checkout does not...
 MASTER_SITES =	https://github.com/PintaProject/Pinta/releases/download/${V}/
 
 MODULES =	devel/gettext \
@@ -21,8 +21,8 @@ MODULES =	devel/gettext \
 BUILD_DEPENDS =	devel/mono-addins \
 		x11/mono-gtk2
 
-RUN_DEPENDS =	devel/mono-addins \
-		devel/desktop-file-utils \
+RUN_DEPENDS =	devel/desktop-file-utils \
+		devel/mono-addins \
 		x11/gtk+2,-guic \
 		x11/mono-gtk2
 
