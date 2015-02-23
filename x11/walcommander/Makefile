@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-V =		0.18.1
+V =		0.19.0
 COMMENT =	free multi-platform file manager inspired by Far Manager
 DISTNAME =	${GH_PROJECT}-${V}
 PKGNAME =	walcommander-${V}
@@ -9,7 +9,7 @@ CATEGORIES =	x11
 GH_ACCOUNT =	corporateshark
 GH_PROJECT =	WalCommander
 GH_TAGNAME =	release-${V}
-GH_COMMIT =	3103626ad209ec0bbe7413eb4ed4e466949fdcca
+GH_COMMIT =	000e93b0aad4a05a9b06b8ffa0536c26699dd642
 
 HOMEPAGE =	https://github.com/corporateshark/WalCommander
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

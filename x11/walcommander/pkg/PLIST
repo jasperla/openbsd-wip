@@ -1,7 +1,8 @@
 @comment $OpenBSD$
 @bin bin/wcm
-share/applications/
 share/applications/wcm.desktop
+share/pixmaps/
+share/pixmaps/wcm.png
 share/wcm/
 share/wcm/config.default
 share/wcm/fonts/
@@ -14,8 +15,6 @@ share/wcm/fonts/DejaVuSerif.ttf
 share/wcm/fonts/DejaVuSerifCondensed-Bold.ttf
 share/wcm/fonts/DejaVuSerifCondensed.ttf
 share/wcm/fonts/LiberationMono-Regular.ttf
-share/wcm/icon/
-share/wcm/icon/wcm.png
 share/wcm/lang/
 share/wcm/lang/help.ru
 share/wcm/lang/list
