@@ -1,2 +1,0 @@
-Update is mostly finished, but devel/py-dulwich dependency requires some
-changes, so keeping this here until dulwich is ready for submission.
