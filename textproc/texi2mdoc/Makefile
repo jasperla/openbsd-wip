@@ -18,6 +18,8 @@ WANTLIB += c
 MASTER_SITES =		http://mdocml.bsd.lv/texi2mdoc/snapshots/
 EXTRACT_SUFX =		.tgz
 
+MAKE_FLAGS =		CC="${CC}"
+
 NO_TEST =		Yes
 
 .include <bsd.port.mk>
