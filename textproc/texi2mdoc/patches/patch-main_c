@@ -1,0 +1,35 @@
+$OpenBSD$
+--- main.c.orig	Mon Feb 23 14:52:56 2015
++++ main.c	Mon Feb 23 14:53:24 2015
+@@ -1061,10 +1061,10 @@ dosymbol(struct texi *p, enum texicmd cmd, 
+ 	case (TEXICMD_SQUIGGLE_RIGHT):
+ 		texiputchars(p, "}");
+ 		break;
+-	case (TEXICMD_TIE):
++	case (TEXICMD_TEXSYM):
+ 		texiputchars(p, "TeX");
+ 		break;
+-	case (TEXICMD_TEXSYM):
++	case (TEXICMD_TIE):
+ 		texiputchars(p, "\\ ");
+ 		break;
+ 	case (TEXICMD_COLON):
+@@ -1209,15 +1209,15 @@ dolink(struct texi *p, enum texicmd cmd, 
+ 		break;
+ 	case (TEXICMD_XREF):
+ 		texiputchars(p, "See Section");
+-		teximacroopen(p, "Qq");
++		teximacroopen(p, "Dq");
+ 		break;
+ 	case (TEXICMD_PXREF):
+ 		texiputchars(p, "see Section");
+-		teximacroopen(p, "Qq");
++		teximacroopen(p, "Dq");
+ 		break;
+ 	case (TEXICMD_INFOREF):
+ 		texiputchars(p, "See Info file node");
+-		teximacroopen(p, "Qq");
++		teximacroopen(p, "Dq");
+ 		break;
+ 	default:
+ 		abort();
