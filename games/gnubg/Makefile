@@ -25,7 +25,7 @@ WANTLIB += python2.7 readline sqlite3 stdc++ util vorbis vorbisfile
 WANTLIB += xcb xcb-dri2 xcb-glx xcb-render xcb-shm z
 
 MASTER_SITES =		${HOMEPAGE:=media/sources/}
-DISTFILES =		gnubg-${V}{gnubg-release-${V}-sources}.tar.gz
+DISTFILES =		gnubg-${V}{gnubg-release-${V}-sources}${EXTRACT_SUFX}
 
 MODULES +=		lang/python
 LIB_DEPENDS +=		x11/gtkglext \
