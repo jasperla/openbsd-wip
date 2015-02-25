@@ -9,6 +9,7 @@ lib/ocaml/benchmark/benchmark.mli
 share/doc/ocaml-benchmark/
 share/doc/ocaml-benchmark/ChangeLog
 share/doc/ocaml-benchmark/api/
+share/doc/ocaml-benchmark/api/Benchmark.Tree.html
 share/doc/ocaml-benchmark/api/Benchmark.html
 share/doc/ocaml-benchmark/api/html.stamp
 share/doc/ocaml-benchmark/api/index.html
@@ -23,4 +24,5 @@ share/doc/ocaml-benchmark/api/index_modules.html
 share/doc/ocaml-benchmark/api/index_types.html
 share/doc/ocaml-benchmark/api/index_values.html
 share/doc/ocaml-benchmark/api/style.css
+share/doc/ocaml-benchmark/api/type_Benchmark.Tree.html
 share/doc/ocaml-benchmark/api/type_Benchmark.html

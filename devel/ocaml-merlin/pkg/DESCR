@@ -1,1 +1,6 @@
-Editor helper for OCaml
+Merlin is an assistant for editing OCaml code. It aims to
+provide the features available in modern IDEs : error
+reporting, auto completion, source browsing and much more.
+
+Merlin is editor independant, but support already exists for
+acme, vim and emacs. 

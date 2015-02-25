@@ -3,16 +3,15 @@
 COMMENT =	A simple tool to indent OCaml programs
 CATEGORIES =	devel
 
-V =		1.4.2
+V =		1.4.2b
 GH_ACCOUNT =	OCamlPro
 GH_PROJECT =	ocp-indent
 GH_TAGNAME =	${V}
-GH_COMMIT =	3837f33adcb8d05f4aac7481be769781ceeff69a
 DISTNAME =	${GH_PROJECT}-${V}
 PKGNAME =	${DISTNAME}
 
-HOMEPAGE =	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}
-MAINTAINER =	Christopher Zimmermann <madroach@gmerlin.de>
+HOMEPAGE =	https://github.com/OCamlPro/ocp-indent
+MAINTAINER =	Christopher Zimmermann <chrisz@openbsd.org>
 
 # GPL >=3.0
 PERMIT_PACKAGE_CDROM =	Yes

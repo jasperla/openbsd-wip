@@ -1,17 +1,16 @@
 # $OpenBSD$
 
-COMMENT =		regular expression library for OCaml
-CATEGORIES =		devel
+COMMENT =	coding assistant for editing OCaml code
+CATEGORIES =	devel
 
-V =		2.0.0
+V =		2.1.1
 GH_ACCOUNT =	the-lambda-church
 GH_PROJECT =	merlin
-GH_TAGNAME =	merlin2
-GH_COMMIT =	38e39140bae729604698066231f60eee8323c028
+GH_TAGNAME =	v${V}
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME =	ocaml-merlin-${V}
 
-HOMEPAGE =	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/
+HOMEPAGE =	https://github.com/the-lambda-church/merlin
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

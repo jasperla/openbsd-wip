@@ -3,16 +3,13 @@
 COMMENT =	build tool for OCaml
 CATEGORIES =	sysutils
 
-V =		1.99.8beta
-GH_ACCOUNT =	OCamlPro
-GH_PROJECT =	ocp-build
-GH_TAGNAME =	ocp-build.1.99.8-beta
-GH_COMMIT =	2e576ce4903635da55e1bb9373aee352bc83da27
-DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
-PKGNAME =	${GH_PROJECT}-${V}
+PKGNAME =	ocp-build-1.99.9-beta
+DISTNAME =	ocp-build.1.99.8-beta
 
-HOMEPAGE =	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}
-MAINTAINER =	Christopher Zimmermann <madroach@gmerlin.de>
+MASTER_SITES =	http://www.typerex.org/pub/ocp-build/
+
+HOMEPAGE =	http://www.typerex.org/ocp-build.html
+MAINTAINER =	Christopher Zimmermann <chrisz@openbsd.org>
 
 # GPL >=3.0
 PERMIT_PACKAGE_CDROM =	Yes

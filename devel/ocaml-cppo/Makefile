@@ -3,7 +3,7 @@
 COMMENT =	OCaml preprocessor
 CATEGORIES =	devel
 
-V =		1.0.1
+V =		1.1.2
 DISTNAME =	cppo-${V}
 PKGNAME =	ocaml-${DISTNAME}
 MASTER_SITES =	http://mjambon.com/releases/cppo/

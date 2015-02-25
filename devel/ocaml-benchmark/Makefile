@@ -5,11 +5,10 @@ CATEGORIES =	devel
 
 GH_ACCOUNT =	Chris00
 GH_PROJECT =	ocaml-benchmark
-GH_TAGNAME =	1.3.1
-GH_COMMIT =	ef2e48f1e9f74bb9a085cc7c22a873bf1e62d1d8
+GH_TAGNAME =	1.4
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 
-HOMEPAGE =	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}
+HOMEPAGE =	https://github.com/Chris00/ocaml-benchmark
 MAINTAINER =	Christopher Zimmermann <chrisz@openbsd.org>
 
 # LGPL >=3.0
