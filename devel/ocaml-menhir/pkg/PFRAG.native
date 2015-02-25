@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-lib/ocaml/menhirLib/menhirLib.cmx
-lib/ocaml/menhirLib/menhirLib.o
