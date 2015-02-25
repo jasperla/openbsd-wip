@@ -1,0 +1,15 @@
+$OpenBSD$
+--- tortoisehg/util/paths.py.orig	Wed Feb 25 10:47:50 2015
++++ tortoisehg/util/paths.py	Wed Feb 25 10:48:38 2015
+@@ -7,9 +7,9 @@
+ 
+ try:
+     from tortoisehg.util.config import (icon_path, bin_path, license_path,
+-                                        locale_path)
++                                        htmlhelp_path, locale_path)
+ except ImportError:
+-    icon_path, bin_path, license_path, locale_path = None, None, None, None
++    icon_path, bin_path, license_path, htmlhelp_path, locale_path = None, None, None, None, None
+ 
+ import os, sys
+ import mercurial

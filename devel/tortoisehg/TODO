@@ -1,0 +1,3 @@
+Thg is patched to use local documentation, although the change fills to dirty to
+be proposed upstream.  Probably more generalized approach, eg. getting rid of
+Makefile in doc/, should be taken.

@@ -2,7 +2,7 @@
 
 COMMENT =		series of applications for Mercurial
 
-MODPY_EGG_VERSION =    3.3
+MODPY_EGG_VERSION =	3.3
 DISTNAME =		tortoisehg-${MODPY_EGG_VERSION}
 
 CATEGORIES =		devel
@@ -17,15 +17,28 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		https://bitbucket.org/tortoisehg/targz/downloads/
 
 MODULES =		lang/python
-BUILD_DEPENDS =		x11/py-qt4 \
-			editors/qscintilla \
-			devel/py-sip
 
-RUN_DEPENDS =		${BUILD_DEPENDS} \
+DEPENDS =		devel/py-sip \
+			editors/qscintilla \
+			x11/py-qt4
+
+BUILD_DEPENDS =		${DEPENDS} \
+			textproc/py-sphinx
+
+RUN_DEPENDS =		${DEPENDS} \
 			editors/py-qscintilla \
-			devel/mercurial>=3.0 \
+			devel/mercurial>=3.2,<3.4 \
 			devel/py-iniparse
 
 NO_TEST =		Yes
+
+post-build:
+	cd ${WRKSRC}/doc && make html
+	echo "htmlhelp_path =\"${PREFIX}/share/doc/tortoisehg/html/\"" >> \
+		${WRKSRC}/tortoisehg/util/config.py
+
+post-install:
+	cp -R ${WRKSRC}/doc/build/html ${PREFIX}/share/doc/tortoisehg
+	rm ${PREFIX}/share/doc/tortoisehg/html/.buildinfo
 
 .include <bsd.port.mk>
