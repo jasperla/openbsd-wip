@@ -1,5 +1,0 @@
-@comment $OpenBSD$
-@bin lib/ocaml/tyxml/simplexmlparser.cmxs
-@bin lib/ocaml/tyxml/tyxml.cmxs
-@bin lib/ocaml/tyxml/tyxml_f.cmxs
-@bin lib/ocaml/tyxml/xmllexer.cmxs
