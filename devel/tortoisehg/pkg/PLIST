@@ -4,7 +4,7 @@ lib/nautilus/
 lib/nautilus/extensions-3.0/
 lib/nautilus/extensions-3.0/nautilus-thg.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/
-lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/tortoisehg-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/__init__.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/
