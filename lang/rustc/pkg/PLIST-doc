@@ -207,8 +207,6 @@ share/doc/rust/html/collections/fmt/trait.LowerExp.html
 share/doc/rust/html/collections/fmt/trait.LowerHex.html
 share/doc/rust/html/collections/fmt/trait.Octal.html
 share/doc/rust/html/collections/fmt/trait.Pointer.html
-share/doc/rust/html/collections/fmt/trait.Show.html
-share/doc/rust/html/collections/fmt/trait.String.html
 share/doc/rust/html/collections/fmt/trait.UpperExp.html
 share/doc/rust/html/collections/fmt/trait.UpperHex.html
 share/doc/rust/html/collections/fmt/trait.Write.html
@@ -284,6 +282,7 @@ share/doc/rust/html/collections/std/ops/trait.Shl.html
 share/doc/rust/html/collections/std/ops/trait.Shr.html
 share/doc/rust/html/collections/std/ops/trait.Sub.html
 share/doc/rust/html/collections/str/
+share/doc/rust/html/collections/str/enum.SearchStep.html
 share/doc/rust/html/collections/str/enum.Utf8Error.html
 share/doc/rust/html/collections/str/fn.from_c_str.html
 share/doc/rust/html/collections/str/fn.from_utf8.html
@@ -309,7 +308,11 @@ share/doc/rust/html/collections/str/struct.SplitTerminator.html
 share/doc/rust/html/collections/str/struct.Utf16Units.html
 share/doc/rust/html/collections/str/struct.Words.html
 share/doc/rust/html/collections/str/trait.CharEq.html
+share/doc/rust/html/collections/str/trait.DoubleEndedSearcher.html
 share/doc/rust/html/collections/str/trait.FromStr.html
+share/doc/rust/html/collections/str/trait.Pattern.html
+share/doc/rust/html/collections/str/trait.ReverseSearcher.html
+share/doc/rust/html/collections/str/trait.Searcher.html
 share/doc/rust/html/collections/str/trait.Str.html
 share/doc/rust/html/collections/str/trait.StrExt.html
 share/doc/rust/html/collections/string/
@@ -520,8 +523,6 @@ share/doc/rust/html/core/fmt/trait.LowerExp.html
 share/doc/rust/html/core/fmt/trait.LowerHex.html
 share/doc/rust/html/core/fmt/trait.Octal.html
 share/doc/rust/html/core/fmt/trait.Pointer.html
-share/doc/rust/html/core/fmt/trait.Show.html
-share/doc/rust/html/core/fmt/trait.String.html
 share/doc/rust/html/core/fmt/trait.UpperExp.html
 share/doc/rust/html/core/fmt/trait.UpperHex.html
 share/doc/rust/html/core/fmt/trait.Write.html
@@ -810,6 +811,8 @@ share/doc/rust/html/core/iter/trait.IteratorExt.html
 share/doc/rust/html/core/iter/trait.MultiplicativeIterator.html
 share/doc/rust/html/core/iter/trait.RandomAccessIterator.html
 share/doc/rust/html/core/iter/type.Iterate.html
+share/doc/rust/html/core/macro.__impl_slice_eq1!.html
+share/doc/rust/html/core/macro.__impl_slice_eq2!.html
 share/doc/rust/html/core/macro.assert!.html
 share/doc/rust/html/core/macro.assert_eq!.html
 share/doc/rust/html/core/macro.debug_assert!.html
@@ -1010,13 +1013,22 @@ share/doc/rust/html/core/slice/trait.SliceExt.html
 share/doc/rust/html/core/stability.html
 share/doc/rust/html/core/stability.json
 share/doc/rust/html/core/str/
+share/doc/rust/html/core/str/enum.SearchStep.html
 share/doc/rust/html/core/str/enum.Utf8Error.html
 share/doc/rust/html/core/str/fn.char_range_at_raw.html
 share/doc/rust/html/core/str/fn.from_c_str.html
 share/doc/rust/html/core/str/fn.from_utf8.html
 share/doc/rust/html/core/str/fn.from_utf8_unchecked.html
 share/doc/rust/html/core/str/fn.next_code_point.html
+share/doc/rust/html/core/str/fn.next_code_point_reverse.html
 share/doc/rust/html/core/str/index.html
+share/doc/rust/html/core/str/pattern/
+share/doc/rust/html/core/str/pattern/enum.SearchStep.html
+share/doc/rust/html/core/str/pattern/index.html
+share/doc/rust/html/core/str/pattern/trait.DoubleEndedSearcher.html
+share/doc/rust/html/core/str/pattern/trait.Pattern.html
+share/doc/rust/html/core/str/pattern/trait.ReverseSearcher.html
+share/doc/rust/html/core/str/pattern/trait.Searcher.html
 share/doc/rust/html/core/str/struct.Bytes.html
 share/doc/rust/html/core/str/struct.CharIndices.html
 share/doc/rust/html/core/str/struct.CharRange.html
@@ -1031,7 +1043,11 @@ share/doc/rust/html/core/str/struct.SplitN.html
 share/doc/rust/html/core/str/struct.SplitStr.html
 share/doc/rust/html/core/str/struct.SplitTerminator.html
 share/doc/rust/html/core/str/trait.CharEq.html
+share/doc/rust/html/core/str/trait.DoubleEndedSearcher.html
 share/doc/rust/html/core/str/trait.FromStr.html
+share/doc/rust/html/core/str/trait.Pattern.html
+share/doc/rust/html/core/str/trait.ReverseSearcher.html
+share/doc/rust/html/core/str/trait.Searcher.html
 share/doc/rust/html/core/str/trait.Str.html
 share/doc/rust/html/core/str/trait.StrExt.html
 share/doc/rust/html/core/str/traits/
@@ -1164,7 +1180,11 @@ share/doc/rust/html/implementors/collections/slice/trait.SliceConcatExt.js
 share/doc/rust/html/implementors/collections/slice/trait.SliceExt.js
 share/doc/rust/html/implementors/collections/str/
 share/doc/rust/html/implementors/collections/str/trait.CharEq.js
+share/doc/rust/html/implementors/collections/str/trait.DoubleEndedSearcher.js
 share/doc/rust/html/implementors/collections/str/trait.FromStr.js
+share/doc/rust/html/implementors/collections/str/trait.Pattern.js
+share/doc/rust/html/implementors/collections/str/trait.ReverseSearcher.js
+share/doc/rust/html/implementors/collections/str/trait.Searcher.js
 share/doc/rust/html/implementors/collections/str/trait.Str.js
 share/doc/rust/html/implementors/collections/str/trait.StrExt.js
 share/doc/rust/html/implementors/collections/string/
@@ -1264,6 +1284,7 @@ share/doc/rust/html/implementors/core/slice/trait.SplitIter.js
 share/doc/rust/html/implementors/core/str/
 share/doc/rust/html/implementors/core/str/trait.CharEq.js
 share/doc/rust/html/implementors/core/str/trait.FromStr.js
+share/doc/rust/html/implementors/core/str/trait.Pattern.js
 share/doc/rust/html/implementors/core/str/trait.Str.js
 share/doc/rust/html/implementors/core/str/trait.StrExt.js
 share/doc/rust/html/implementors/graphviz/
@@ -1647,7 +1668,11 @@ share/doc/rust/html/implementors/std/slice/trait.SliceConcatExt.js
 share/doc/rust/html/implementors/std/slice/trait.SliceExt.js
 share/doc/rust/html/implementors/std/str/
 share/doc/rust/html/implementors/std/str/trait.CharEq.js
+share/doc/rust/html/implementors/std/str/trait.DoubleEndedSearcher.js
 share/doc/rust/html/implementors/std/str/trait.FromStr.js
+share/doc/rust/html/implementors/std/str/trait.Pattern.js
+share/doc/rust/html/implementors/std/str/trait.ReverseSearcher.js
+share/doc/rust/html/implementors/std/str/trait.Searcher.js
 share/doc/rust/html/implementors/std/str/trait.Str.js
 share/doc/rust/html/implementors/std/str/trait.StrExt.js
 share/doc/rust/html/implementors/std/string/
@@ -1783,20 +1808,29 @@ share/doc/rust/html/libc/consts/os/extra/constant.IPPROTO_RAW.html
 share/doc/rust/html/libc/consts/os/extra/constant.KERN_PROC.html
 share/doc/rust/html/libc/consts/os/extra/constant.MAP_COPY.html
 share/doc/rust/html/libc/consts/os/extra/constant.MAP_HASSEMAPHORE.html
+share/doc/rust/html/libc/consts/os/extra/constant.MAP_NOEXTEND.html
 share/doc/rust/html/libc/consts/os/extra/constant.MAP_NORESERVE.html
 share/doc/rust/html/libc/consts/os/extra/constant.MAP_RENAME.html
+share/doc/rust/html/libc/consts/os/extra/constant.O_DSYNC.html
 share/doc/rust/html/libc/consts/os/extra/constant.O_NONBLOCK.html
 share/doc/rust/html/libc/consts/os/extra/constant.O_SYNC.html
+share/doc/rust/html/libc/consts/os/extra/constant.PATH_MAX.html
 share/doc/rust/html/libc/consts/os/extra/index.html
 share/doc/rust/html/libc/consts/os/index.html
 share/doc/rust/html/libc/consts/os/posix01/
 share/doc/rust/html/libc/consts/os/posix01/constant.CLOCK_MONOTONIC.html
 share/doc/rust/html/libc/consts/os/posix01/constant.CLOCK_REALTIME.html
 share/doc/rust/html/libc/consts/os/posix01/constant.F_DUPFD.html
+share/doc/rust/html/libc/consts/os/posix01/constant.F_DUPFD_CLOEXEC.html
 share/doc/rust/html/libc/consts/os/posix01/constant.F_GETFD.html
 share/doc/rust/html/libc/consts/os/posix01/constant.F_GETFL.html
+share/doc/rust/html/libc/consts/os/posix01/constant.F_GETLK.html
+share/doc/rust/html/libc/consts/os/posix01/constant.F_GETOWN.html
 share/doc/rust/html/libc/consts/os/posix01/constant.F_SETFD.html
 share/doc/rust/html/libc/consts/os/posix01/constant.F_SETFL.html
+share/doc/rust/html/libc/consts/os/posix01/constant.F_SETLK.html
+share/doc/rust/html/libc/consts/os/posix01/constant.F_SETLKW.html
+share/doc/rust/html/libc/consts/os/posix01/constant.F_SETOWN.html
 share/doc/rust/html/libc/consts/os/posix01/constant.GLOB_ABORTED.html
 share/doc/rust/html/libc/consts/os/posix01/constant.GLOB_APPEND.html
 share/doc/rust/html/libc/consts/os/posix01/constant.GLOB_DOOFFS.html
@@ -1807,6 +1841,7 @@ share/doc/rust/html/libc/consts/os/posix01/constant.GLOB_NOESCAPE.html
 share/doc/rust/html/libc/consts/os/posix01/constant.GLOB_NOMATCH.html
 share/doc/rust/html/libc/consts/os/posix01/constant.GLOB_NOSORT.html
 share/doc/rust/html/libc/consts/os/posix01/constant.GLOB_NOSPACE.html
+share/doc/rust/html/libc/consts/os/posix01/constant.GLOB_NOSYS.html
 share/doc/rust/html/libc/consts/os/posix01/constant.POSIX_MADV_DONTNEED.html
 share/doc/rust/html/libc/consts/os/posix01/constant.POSIX_MADV_NORMAL.html
 share/doc/rust/html/libc/consts/os/posix01/constant.POSIX_MADV_RANDOM.html
@@ -1815,7 +1850,6 @@ share/doc/rust/html/libc/consts/os/posix01/constant.POSIX_MADV_WILLNEED.html
 share/doc/rust/html/libc/consts/os/posix01/constant.PTHREAD_CREATE_DETACHED.html
 share/doc/rust/html/libc/consts/os/posix01/constant.PTHREAD_CREATE_JOINABLE.html
 share/doc/rust/html/libc/consts/os/posix01/constant.PTHREAD_STACK_MIN.html
-share/doc/rust/html/libc/consts/os/posix01/constant.SIGPIPE.html
 share/doc/rust/html/libc/consts/os/posix01/constant.SIGTRAP.html
 share/doc/rust/html/libc/consts/os/posix01/constant.SIG_IGN.html
 share/doc/rust/html/libc/consts/os/posix01/constant._SC_ATEXIT_MAX.html
@@ -1854,10 +1888,8 @@ share/doc/rust/html/libc/consts/os/posix88/constant.EADDRNOTAVAIL.html
 share/doc/rust/html/libc/consts/os/posix88/constant.EAFNOSUPPORT.html
 share/doc/rust/html/libc/consts/os/posix88/constant.EAGAIN.html
 share/doc/rust/html/libc/consts/os/posix88/constant.EALREADY.html
-share/doc/rust/html/libc/consts/os/posix88/constant.EASYNC.html
 share/doc/rust/html/libc/consts/os/posix88/constant.EAUTH.html
 share/doc/rust/html/libc/consts/os/posix88/constant.EBADF.html
-share/doc/rust/html/libc/consts/os/posix88/constant.EBADMSG.html
 share/doc/rust/html/libc/consts/os/posix88/constant.EBADRPC.html
 share/doc/rust/html/libc/consts/os/posix88/constant.EBUSY.html
 share/doc/rust/html/libc/consts/os/posix88/constant.ECANCELED.html
@@ -1868,7 +1900,6 @@ share/doc/rust/html/libc/consts/os/posix88/constant.ECONNRESET.html
 share/doc/rust/html/libc/consts/os/posix88/constant.EDEADLK.html
 share/doc/rust/html/libc/consts/os/posix88/constant.EDESTADDRREQ.html
 share/doc/rust/html/libc/consts/os/posix88/constant.EDOM.html
-share/doc/rust/html/libc/consts/os/posix88/constant.EDOOFUS.html
 share/doc/rust/html/libc/consts/os/posix88/constant.EDQUOT.html
 share/doc/rust/html/libc/consts/os/posix88/constant.EEXIST.html
 share/doc/rust/html/libc/consts/os/posix88/constant.EFAULT.html
@@ -1882,14 +1913,15 @@ share/doc/rust/html/libc/consts/os/posix88/constant.EINPROGRESS.html
 share/doc/rust/html/libc/consts/os/posix88/constant.EINTR.html
 share/doc/rust/html/libc/consts/os/posix88/constant.EINVAL.html
 share/doc/rust/html/libc/consts/os/posix88/constant.EIO.html
+share/doc/rust/html/libc/consts/os/posix88/constant.EIPSEC.html
 share/doc/rust/html/libc/consts/os/posix88/constant.EISCONN.html
 share/doc/rust/html/libc/consts/os/posix88/constant.EISDIR.html
 share/doc/rust/html/libc/consts/os/posix88/constant.ELAST.html
 share/doc/rust/html/libc/consts/os/posix88/constant.ELOOP.html
+share/doc/rust/html/libc/consts/os/posix88/constant.EMEDIUMTYPE.html
 share/doc/rust/html/libc/consts/os/posix88/constant.EMFILE.html
 share/doc/rust/html/libc/consts/os/posix88/constant.EMLINK.html
 share/doc/rust/html/libc/consts/os/posix88/constant.EMSGSIZE.html
-share/doc/rust/html/libc/consts/os/posix88/constant.EMULTIHOP.html
 share/doc/rust/html/libc/consts/os/posix88/constant.ENAMETOOLONG.html
 share/doc/rust/html/libc/consts/os/posix88/constant.ENEEDAUTH.html
 share/doc/rust/html/libc/consts/os/posix88/constant.ENETDOWN.html
@@ -1902,7 +1934,6 @@ share/doc/rust/html/libc/consts/os/posix88/constant.ENODEV.html
 share/doc/rust/html/libc/consts/os/posix88/constant.ENOENT.html
 share/doc/rust/html/libc/consts/os/posix88/constant.ENOEXEC.html
 share/doc/rust/html/libc/consts/os/posix88/constant.ENOLCK.html
-share/doc/rust/html/libc/consts/os/posix88/constant.ENOLINK.html
 share/doc/rust/html/libc/consts/os/posix88/constant.ENOMEDIUM.html
 share/doc/rust/html/libc/consts/os/posix88/constant.ENOMEM.html
 share/doc/rust/html/libc/consts/os/posix88/constant.ENOMSG.html
@@ -1914,6 +1945,7 @@ share/doc/rust/html/libc/consts/os/posix88/constant.ENOTCONN.html
 share/doc/rust/html/libc/consts/os/posix88/constant.ENOTDIR.html
 share/doc/rust/html/libc/consts/os/posix88/constant.ENOTEMPTY.html
 share/doc/rust/html/libc/consts/os/posix88/constant.ENOTSOCK.html
+share/doc/rust/html/libc/consts/os/posix88/constant.ENOTSUP.html
 share/doc/rust/html/libc/consts/os/posix88/constant.ENOTTY.html
 share/doc/rust/html/libc/consts/os/posix88/constant.ENXIO.html
 share/doc/rust/html/libc/consts/os/posix88/constant.EOPNOTSUPP.html
@@ -1925,7 +1957,6 @@ share/doc/rust/html/libc/consts/os/posix88/constant.EPROCLIM.html
 share/doc/rust/html/libc/consts/os/posix88/constant.EPROCUNAVAIL.html
 share/doc/rust/html/libc/consts/os/posix88/constant.EPROGMISMATCH.html
 share/doc/rust/html/libc/consts/os/posix88/constant.EPROGUNAVAIL.html
-share/doc/rust/html/libc/consts/os/posix88/constant.EPROTO.html
 share/doc/rust/html/libc/consts/os/posix88/constant.EPROTONOSUPPORT.html
 share/doc/rust/html/libc/consts/os/posix88/constant.EPROTOTYPE.html
 share/doc/rust/html/libc/consts/os/posix88/constant.ERANGE.html
@@ -1940,11 +1971,6 @@ share/doc/rust/html/libc/consts/os/posix88/constant.ESTALE.html
 share/doc/rust/html/libc/consts/os/posix88/constant.ETIMEDOUT.html
 share/doc/rust/html/libc/consts/os/posix88/constant.ETOOMANYREFS.html
 share/doc/rust/html/libc/consts/os/posix88/constant.ETXTBSY.html
-share/doc/rust/html/libc/consts/os/posix88/constant.EUNUSED94.html
-share/doc/rust/html/libc/consts/os/posix88/constant.EUNUSED95.html
-share/doc/rust/html/libc/consts/os/posix88/constant.EUNUSED96.html
-share/doc/rust/html/libc/consts/os/posix88/constant.EUNUSED97.html
-share/doc/rust/html/libc/consts/os/posix88/constant.EUNUSED98.html
 share/doc/rust/html/libc/consts/os/posix88/constant.EUSERS.html
 share/doc/rust/html/libc/consts/os/posix88/constant.EWOULDBLOCK.html
 share/doc/rust/html/libc/consts/os/posix88/constant.EXDEV.html
@@ -2084,6 +2110,7 @@ share/doc/rust/html/libc/funcs/bsd44/fn.getdtablesize.html
 share/doc/rust/html/libc/funcs/bsd44/fn.ioctl.html
 share/doc/rust/html/libc/funcs/bsd44/fn.madvise.html
 share/doc/rust/html/libc/funcs/bsd44/fn.mincore.html
+share/doc/rust/html/libc/funcs/bsd44/fn.realpath.html
 share/doc/rust/html/libc/funcs/bsd44/fn.sysctl.html
 share/doc/rust/html/libc/funcs/bsd44/fn.sysctlbyname.html
 share/doc/rust/html/libc/funcs/bsd44/fn.sysctlnametomib.html
@@ -2366,7 +2393,6 @@ share/doc/rust/html/libc/types/os/arch/posix88/
 share/doc/rust/html/libc/types/os/arch/posix88/index.html
 share/doc/rust/html/libc/types/os/arch/posix88/type.dev_t.html
 share/doc/rust/html/libc/types/os/arch/posix88/type.gid_t.html
-share/doc/rust/html/libc/types/os/arch/posix88/type.ino_t.html
 share/doc/rust/html/libc/types/os/arch/posix88/type.mode_t.html
 share/doc/rust/html/libc/types/os/arch/posix88/type.off_t.html
 share/doc/rust/html/libc/types/os/arch/posix88/type.pid_t.html
@@ -3280,7 +3306,7 @@ share/doc/rust/html/rustc/lint/builtin/struct.RawPointerDerive.html
 share/doc/rust/html/rustc/lint/builtin/struct.Stability.html
 share/doc/rust/html/rustc/lint/builtin/struct.TypeLimits.html
 share/doc/rust/html/rustc/lint/builtin/struct.UnconditionalRecursion.html
-share/doc/rust/html/rustc/lint/builtin/struct.UnsafeBlocks.html
+share/doc/rust/html/rustc/lint/builtin/struct.UnsafeCode.html
 share/doc/rust/html/rustc/lint/builtin/struct.UnstableFeatures.html
 share/doc/rust/html/rustc/lint/builtin/struct.UnusedAllocation.html
 share/doc/rust/html/rustc/lint/builtin/struct.UnusedAttributes.html
@@ -4153,14 +4179,15 @@ share/doc/rust/html/rustc/metadata/csearch/fn.get_supertraits.html
 share/doc/rust/html/rustc/metadata/csearch/fn.get_symbol.html
 share/doc/rust/html/rustc/metadata/csearch/fn.get_trait_def.html
 share/doc/rust/html/rustc/metadata/csearch/fn.get_trait_item_def_ids.html
-share/doc/rust/html/rustc/metadata/csearch/fn.get_trait_item_name_and_kind.html
 share/doc/rust/html/rustc/metadata/csearch/fn.get_trait_name.html
 share/doc/rust/html/rustc/metadata/csearch/fn.get_trait_of_item.html
 share/doc/rust/html/rustc/metadata/csearch/fn.get_tuple_struct_definition_if_ctor.html
 share/doc/rust/html/rustc/metadata/csearch/fn.get_type.html
 share/doc/rust/html/rustc/metadata/csearch/fn.get_type_name_if_impl.html
 share/doc/rust/html/rustc/metadata/csearch/fn.is_associated_type.html
+share/doc/rust/html/rustc/metadata/csearch/fn.is_default_trait.html
 share/doc/rust/html/rustc/metadata/csearch/fn.is_staged_api.html
+share/doc/rust/html/rustc/metadata/csearch/fn.is_static_method.html
 share/doc/rust/html/rustc/metadata/csearch/fn.is_typedef.html
 share/doc/rust/html/rustc/metadata/csearch/fn.maybe_get_item_ast.html
 share/doc/rust/html/rustc/metadata/csearch/index.html
@@ -4215,13 +4242,14 @@ share/doc/rust/html/rustc/metadata/decoder/fn.get_supertraits.html
 share/doc/rust/html/rustc/metadata/decoder/fn.get_symbol.html
 share/doc/rust/html/rustc/metadata/decoder/fn.get_trait_def.html
 share/doc/rust/html/rustc/metadata/decoder/fn.get_trait_item_def_ids.html
-share/doc/rust/html/rustc/metadata/decoder/fn.get_trait_item_name_and_kind.html
 share/doc/rust/html/rustc/metadata/decoder/fn.get_trait_name.html
 share/doc/rust/html/rustc/metadata/decoder/fn.get_trait_of_item.html
 share/doc/rust/html/rustc/metadata/decoder/fn.get_tuple_struct_definition_if_ctor.html
 share/doc/rust/html/rustc/metadata/decoder/fn.get_type.html
 share/doc/rust/html/rustc/metadata/decoder/fn.get_type_name_if_impl.html
 share/doc/rust/html/rustc/metadata/decoder/fn.is_associated_type.html
+share/doc/rust/html/rustc/metadata/decoder/fn.is_default_trait.html
+share/doc/rust/html/rustc/metadata/decoder/fn.is_static_method.html
 share/doc/rust/html/rustc/metadata/decoder/fn.is_typedef.html
 share/doc/rust/html/rustc/metadata/decoder/fn.item_type.html
 share/doc/rust/html/rustc/metadata/decoder/fn.list_crate_metadata.html
@@ -4303,6 +4331,7 @@ share/doc/rust/html/rustc/metadata/tyencode/fn.enc_closure_ty.html
 share/doc/rust/html/rustc/metadata/tyencode/fn.enc_existential_bounds.html
 share/doc/rust/html/rustc/metadata/tyencode/fn.enc_predicate.html
 share/doc/rust/html/rustc/metadata/tyencode/fn.enc_region.html
+share/doc/rust/html/rustc/metadata/tyencode/fn.enc_region_bounds.html
 share/doc/rust/html/rustc/metadata/tyencode/fn.enc_substs.html
 share/doc/rust/html/rustc/metadata/tyencode/fn.enc_trait_ref.html
 share/doc/rust/html/rustc/metadata/tyencode/fn.enc_ty.html
@@ -4317,6 +4346,7 @@ share/doc/rust/html/rustc/middle/astconv_util/constant.NO_REGIONS.html
 share/doc/rust/html/rustc/middle/astconv_util/constant.NO_TPS.html
 share/doc/rust/html/rustc/middle/astconv_util/fn.ast_ty_to_prim_ty.html
 share/doc/rust/html/rustc/middle/astconv_util/fn.check_path_args.html
+share/doc/rust/html/rustc/middle/astconv_util/fn.prim_ty_to_ty.html
 share/doc/rust/html/rustc/middle/astconv_util/index.html
 share/doc/rust/html/rustc/middle/astencode/
 share/doc/rust/html/rustc/middle/astencode/fn.decode_inlined_item.html
@@ -4326,6 +4356,7 @@ share/doc/rust/html/rustc/middle/astencode/index.html
 share/doc/rust/html/rustc/middle/astencode/trait.vtable_decoder_helpers.html
 share/doc/rust/html/rustc/middle/astencode/type.Encoder.html
 share/doc/rust/html/rustc/middle/cfg/
+share/doc/rust/html/rustc/middle/cfg/enum.CFGNodeData.html
 share/doc/rust/html/rustc/middle/cfg/graphviz/
 share/doc/rust/html/rustc/middle/cfg/graphviz/index.html
 share/doc/rust/html/rustc/middle/cfg/graphviz/struct.LabelledCFG.html
@@ -4334,7 +4365,6 @@ share/doc/rust/html/rustc/middle/cfg/graphviz/type.Node.html
 share/doc/rust/html/rustc/middle/cfg/index.html
 share/doc/rust/html/rustc/middle/cfg/struct.CFG.html
 share/doc/rust/html/rustc/middle/cfg/struct.CFGEdgeData.html
-share/doc/rust/html/rustc/middle/cfg/struct.CFGNodeData.html
 share/doc/rust/html/rustc/middle/cfg/type.CFGEdge.html
 share/doc/rust/html/rustc/middle/cfg/type.CFGGraph.html
 share/doc/rust/html/rustc/middle/cfg/type.CFGIndex.html
@@ -4391,10 +4421,9 @@ share/doc/rust/html/rustc/middle/dead/index.html
 share/doc/rust/html/rustc/middle/def/
 share/doc/rust/html/rustc/middle/def/enum.Def.html
 share/doc/rust/html/rustc/middle/def/enum.MethodProvenance.html
-share/doc/rust/html/rustc/middle/def/enum.TraitItemKind.html
-share/doc/rust/html/rustc/middle/def/enum.TyParamProvenance.html
 share/doc/rust/html/rustc/middle/def/index.html
 share/doc/rust/html/rustc/middle/def/struct.Export.html
+share/doc/rust/html/rustc/middle/def/struct.PathResolution.html
 share/doc/rust/html/rustc/middle/def/type.DefMap.html
 share/doc/rust/html/rustc/middle/def/type.ExportMap.html
 share/doc/rust/html/rustc/middle/dependency_format/
@@ -4578,6 +4607,7 @@ share/doc/rust/html/rustc/middle/pat_util/
 share/doc/rust/html/rustc/middle/pat_util/fn.def_to_path.html
 share/doc/rust/html/rustc/middle/pat_util/fn.pat_bindings.html
 share/doc/rust/html/rustc/middle/pat_util/fn.pat_contains_bindings.html
+share/doc/rust/html/rustc/middle/pat_util/fn.pat_contains_bindings_or_wild.html
 share/doc/rust/html/rustc/middle/pat_util/fn.pat_id_map.html
 share/doc/rust/html/rustc/middle/pat_util/fn.pat_is_binding.html
 share/doc/rust/html/rustc/middle/pat_util/fn.pat_is_binding_or_wild.html
@@ -4594,7 +4624,6 @@ share/doc/rust/html/rustc/middle/privacy/enum.PrivateDep.html
 share/doc/rust/html/rustc/middle/privacy/index.html
 share/doc/rust/html/rustc/middle/privacy/type.ExportedItems.html
 share/doc/rust/html/rustc/middle/privacy/type.ExternalExports.html
-share/doc/rust/html/rustc/middle/privacy/type.LastPrivateMap.html
 share/doc/rust/html/rustc/middle/privacy/type.PublicItems.html
 share/doc/rust/html/rustc/middle/reachable/
 share/doc/rust/html/rustc/middle/reachable/fn.find_reachable.html
@@ -4707,6 +4736,7 @@ share/doc/rust/html/rustc/middle/traits/struct.SelectionCache.html
 share/doc/rust/html/rustc/middle/traits/struct.SelectionContext.html
 share/doc/rust/html/rustc/middle/traits/struct.Supertraits.html
 share/doc/rust/html/rustc/middle/traits/struct.VtableBuiltinData.html
+share/doc/rust/html/rustc/middle/traits/struct.VtableDefaultImplData.html
 share/doc/rust/html/rustc/middle/traits/struct.VtableImplData.html
 share/doc/rust/html/rustc/middle/traits/struct.VtableObjectData.html
 share/doc/rust/html/rustc/middle/traits/type.Obligations.html
@@ -4780,7 +4810,6 @@ share/doc/rust/html/rustc/middle/ty/fn.array_element_ty.html
 share/doc/rust/html/rustc/middle/ty/fn.associated_type_parameter_index.html
 share/doc/rust/html/rustc/middle/ty/fn.binds_late_bound_regions.html
 share/doc/rust/html/rustc/middle/ty/fn.can_type_implement_copy.html
-share/doc/rust/html/rustc/middle/ty/fn.close_type.html
 share/doc/rust/html/rustc/middle/ty/fn.closure_upvars.html
 share/doc/rust/html/rustc/middle/ty/fn.construct_free_substs.html
 share/doc/rust/html/rustc/middle/ty/fn.construct_parameter_environment.html
@@ -4809,6 +4838,7 @@ share/doc/rust/html/rustc/middle/ty/fn.get_tydesc_ty.html
 share/doc/rust/html/rustc/middle/ty/fn.has_attr.html
 share/doc/rust/html/rustc/middle/ty/fn.has_dtor.html
 share/doc/rust/html/rustc/middle/ty/fn.hash_crate_independent.html
+share/doc/rust/html/rustc/middle/ty/fn.impl_id_to_trait_ref.html
 share/doc/rust/html/rustc/middle/ty/fn.impl_of_method.html
 share/doc/rust/html/rustc/middle/ty/fn.impl_or_trait_item.html
 share/doc/rust/html/rustc/middle/ty/fn.impl_or_trait_item_idx.html
@@ -4852,7 +4882,6 @@ share/doc/rust/html/rustc/middle/ty/fn.mk_mut_ptr.html
 share/doc/rust/html/rustc/middle/ty/fn.mk_mut_rptr.html
 share/doc/rust/html/rustc/middle/ty/fn.mk_nil.html
 share/doc/rust/html/rustc/middle/ty/fn.mk_nil_ptr.html
-share/doc/rust/html/rustc/middle/ty/fn.mk_open.html
 share/doc/rust/html/rustc/middle/ty/fn.mk_param.html
 share/doc/rust/html/rustc/middle/ty/fn.mk_param_from_def.html
 share/doc/rust/html/rustc/middle/ty/fn.mk_projection.html
@@ -4872,7 +4901,6 @@ share/doc/rust/html/rustc/middle/ty/fn.mk_vec.html
 share/doc/rust/html/rustc/middle/ty/fn.named_element_ty.html
 share/doc/rust/html/rustc/middle/ty/fn.no_late_bound_regions.html
 share/doc/rust/html/rustc/middle/ty/fn.node_id_item_substs.html
-share/doc/rust/html/rustc/middle/ty/fn.node_id_to_trait_ref.html
 share/doc/rust/html/rustc/middle/ty/fn.node_id_to_type.html
 share/doc/rust/html/rustc/middle/ty/fn.node_id_to_type_opt.html
 share/doc/rust/html/rustc/middle/ty/fn.note_and_explain_type_err.html
@@ -4884,6 +4912,7 @@ share/doc/rust/html/rustc/middle/ty/fn.predicates.html
 share/doc/rust/html/rustc/middle/ty/fn.predicates_for_trait_ref.html
 share/doc/rust/html/rustc/middle/ty/fn.provided_source.html
 share/doc/rust/html/rustc/middle/ty/fn.provided_trait_methods.html
+share/doc/rust/html/rustc/middle/ty/fn.record_default_trait_implementation.html
 share/doc/rust/html/rustc/middle/ty/fn.record_trait_implementation.html
 share/doc/rust/html/rustc/middle/ty/fn.region_existential_bound.html
 share/doc/rust/html/rustc/middle/ty/fn.replace_late_bound_regions.html
@@ -4896,6 +4925,8 @@ share/doc/rust/html/rustc/middle/ty/fn.sort_bounds_list.html
 share/doc/rust/html/rustc/middle/ty/fn.stmt_node_id.html
 share/doc/rust/html/rustc/middle/ty/fn.struct_fields.html
 share/doc/rust/html/rustc/middle/ty/fn.substd_enum_variants.html
+share/doc/rust/html/rustc/middle/ty/fn.trait_default_impl.html
+share/doc/rust/html/rustc/middle/ty/fn.trait_has_default_impl.html
 share/doc/rust/html/rustc/middle/ty/fn.trait_id_of_impl.html
 share/doc/rust/html/rustc/middle/ty/fn.trait_impl_polarity.html
 share/doc/rust/html/rustc/middle/ty/fn.trait_item.html
@@ -4958,7 +4989,6 @@ share/doc/rust/html/rustc/middle/ty/fn.type_needs_infer.html
 share/doc/rust/html/rustc/middle/ty/fn.type_needs_subst.html
 share/doc/rust/html/rustc/middle/ty/fn.type_of_adjust.html
 share/doc/rust/html/rustc/middle/ty/fn.type_trait_info.html
-share/doc/rust/html/rustc/middle/ty/fn.unopen_type.html
 share/doc/rust/html/rustc/middle/ty/fn.unsize_ty.html
 share/doc/rust/html/rustc/middle/ty/fn.walk_ty.html
 share/doc/rust/html/rustc/middle/ty/fn.with_freevars.html
@@ -6878,7 +6908,7 @@ share/doc/rust/html/rustc_trans/lint/builtin/struct.RawPointerDerive.html
 share/doc/rust/html/rustc_trans/lint/builtin/struct.Stability.html
 share/doc/rust/html/rustc_trans/lint/builtin/struct.TypeLimits.html
 share/doc/rust/html/rustc_trans/lint/builtin/struct.UnconditionalRecursion.html
-share/doc/rust/html/rustc_trans/lint/builtin/struct.UnsafeBlocks.html
+share/doc/rust/html/rustc_trans/lint/builtin/struct.UnsafeCode.html
 share/doc/rust/html/rustc_trans/lint/builtin/struct.UnstableFeatures.html
 share/doc/rust/html/rustc_trans/lint/builtin/struct.UnusedAllocation.html
 share/doc/rust/html/rustc_trans/lint/builtin/struct.UnusedAttributes.html
@@ -7052,14 +7082,15 @@ share/doc/rust/html/rustc_trans/metadata/csearch/fn.get_supertraits.html
 share/doc/rust/html/rustc_trans/metadata/csearch/fn.get_symbol.html
 share/doc/rust/html/rustc_trans/metadata/csearch/fn.get_trait_def.html
 share/doc/rust/html/rustc_trans/metadata/csearch/fn.get_trait_item_def_ids.html
-share/doc/rust/html/rustc_trans/metadata/csearch/fn.get_trait_item_name_and_kind.html
 share/doc/rust/html/rustc_trans/metadata/csearch/fn.get_trait_name.html
 share/doc/rust/html/rustc_trans/metadata/csearch/fn.get_trait_of_item.html
 share/doc/rust/html/rustc_trans/metadata/csearch/fn.get_tuple_struct_definition_if_ctor.html
 share/doc/rust/html/rustc_trans/metadata/csearch/fn.get_type.html
 share/doc/rust/html/rustc_trans/metadata/csearch/fn.get_type_name_if_impl.html
 share/doc/rust/html/rustc_trans/metadata/csearch/fn.is_associated_type.html
+share/doc/rust/html/rustc_trans/metadata/csearch/fn.is_default_trait.html
 share/doc/rust/html/rustc_trans/metadata/csearch/fn.is_staged_api.html
+share/doc/rust/html/rustc_trans/metadata/csearch/fn.is_static_method.html
 share/doc/rust/html/rustc_trans/metadata/csearch/fn.is_typedef.html
 share/doc/rust/html/rustc_trans/metadata/csearch/fn.maybe_get_item_ast.html
 share/doc/rust/html/rustc_trans/metadata/csearch/index.html
@@ -7114,13 +7145,14 @@ share/doc/rust/html/rustc_trans/metadata/decoder/fn.get_supertraits.html
 share/doc/rust/html/rustc_trans/metadata/decoder/fn.get_symbol.html
 share/doc/rust/html/rustc_trans/metadata/decoder/fn.get_trait_def.html
 share/doc/rust/html/rustc_trans/metadata/decoder/fn.get_trait_item_def_ids.html
-share/doc/rust/html/rustc_trans/metadata/decoder/fn.get_trait_item_name_and_kind.html
 share/doc/rust/html/rustc_trans/metadata/decoder/fn.get_trait_name.html
 share/doc/rust/html/rustc_trans/metadata/decoder/fn.get_trait_of_item.html
 share/doc/rust/html/rustc_trans/metadata/decoder/fn.get_tuple_struct_definition_if_ctor.html
 share/doc/rust/html/rustc_trans/metadata/decoder/fn.get_type.html
 share/doc/rust/html/rustc_trans/metadata/decoder/fn.get_type_name_if_impl.html
 share/doc/rust/html/rustc_trans/metadata/decoder/fn.is_associated_type.html
+share/doc/rust/html/rustc_trans/metadata/decoder/fn.is_default_trait.html
+share/doc/rust/html/rustc_trans/metadata/decoder/fn.is_static_method.html
 share/doc/rust/html/rustc_trans/metadata/decoder/fn.is_typedef.html
 share/doc/rust/html/rustc_trans/metadata/decoder/fn.item_type.html
 share/doc/rust/html/rustc_trans/metadata/decoder/fn.list_crate_metadata.html
@@ -7202,6 +7234,7 @@ share/doc/rust/html/rustc_trans/metadata/tyencode/fn.enc_closure_ty.html
 share/doc/rust/html/rustc_trans/metadata/tyencode/fn.enc_existential_bounds.html
 share/doc/rust/html/rustc_trans/metadata/tyencode/fn.enc_predicate.html
 share/doc/rust/html/rustc_trans/metadata/tyencode/fn.enc_region.html
+share/doc/rust/html/rustc_trans/metadata/tyencode/fn.enc_region_bounds.html
 share/doc/rust/html/rustc_trans/metadata/tyencode/fn.enc_substs.html
 share/doc/rust/html/rustc_trans/metadata/tyencode/fn.enc_trait_ref.html
 share/doc/rust/html/rustc_trans/metadata/tyencode/fn.enc_ty.html
@@ -7216,6 +7249,7 @@ share/doc/rust/html/rustc_trans/middle/astconv_util/constant.NO_REGIONS.html
 share/doc/rust/html/rustc_trans/middle/astconv_util/constant.NO_TPS.html
 share/doc/rust/html/rustc_trans/middle/astconv_util/fn.ast_ty_to_prim_ty.html
 share/doc/rust/html/rustc_trans/middle/astconv_util/fn.check_path_args.html
+share/doc/rust/html/rustc_trans/middle/astconv_util/fn.prim_ty_to_ty.html
 share/doc/rust/html/rustc_trans/middle/astconv_util/index.html
 share/doc/rust/html/rustc_trans/middle/astencode/
 share/doc/rust/html/rustc_trans/middle/astencode/fn.decode_inlined_item.html
@@ -7225,6 +7259,7 @@ share/doc/rust/html/rustc_trans/middle/astencode/index.html
 share/doc/rust/html/rustc_trans/middle/astencode/trait.vtable_decoder_helpers.html
 share/doc/rust/html/rustc_trans/middle/astencode/type.Encoder.html
 share/doc/rust/html/rustc_trans/middle/cfg/
+share/doc/rust/html/rustc_trans/middle/cfg/enum.CFGNodeData.html
 share/doc/rust/html/rustc_trans/middle/cfg/graphviz/
 share/doc/rust/html/rustc_trans/middle/cfg/graphviz/index.html
 share/doc/rust/html/rustc_trans/middle/cfg/graphviz/struct.LabelledCFG.html
@@ -7233,7 +7268,6 @@ share/doc/rust/html/rustc_trans/middle/cfg/graphviz/type.Node.html
 share/doc/rust/html/rustc_trans/middle/cfg/index.html
 share/doc/rust/html/rustc_trans/middle/cfg/struct.CFG.html
 share/doc/rust/html/rustc_trans/middle/cfg/struct.CFGEdgeData.html
-share/doc/rust/html/rustc_trans/middle/cfg/struct.CFGNodeData.html
 share/doc/rust/html/rustc_trans/middle/cfg/type.CFGEdge.html
 share/doc/rust/html/rustc_trans/middle/cfg/type.CFGGraph.html
 share/doc/rust/html/rustc_trans/middle/cfg/type.CFGIndex.html
@@ -7290,10 +7324,9 @@ share/doc/rust/html/rustc_trans/middle/dead/index.html
 share/doc/rust/html/rustc_trans/middle/def/
 share/doc/rust/html/rustc_trans/middle/def/enum.Def.html
 share/doc/rust/html/rustc_trans/middle/def/enum.MethodProvenance.html
-share/doc/rust/html/rustc_trans/middle/def/enum.TraitItemKind.html
-share/doc/rust/html/rustc_trans/middle/def/enum.TyParamProvenance.html
 share/doc/rust/html/rustc_trans/middle/def/index.html
 share/doc/rust/html/rustc_trans/middle/def/struct.Export.html
+share/doc/rust/html/rustc_trans/middle/def/struct.PathResolution.html
 share/doc/rust/html/rustc_trans/middle/def/type.DefMap.html
 share/doc/rust/html/rustc_trans/middle/def/type.ExportMap.html
 share/doc/rust/html/rustc_trans/middle/dependency_format/
@@ -7471,6 +7504,7 @@ share/doc/rust/html/rustc_trans/middle/pat_util/
 share/doc/rust/html/rustc_trans/middle/pat_util/fn.def_to_path.html
 share/doc/rust/html/rustc_trans/middle/pat_util/fn.pat_bindings.html
 share/doc/rust/html/rustc_trans/middle/pat_util/fn.pat_contains_bindings.html
+share/doc/rust/html/rustc_trans/middle/pat_util/fn.pat_contains_bindings_or_wild.html
 share/doc/rust/html/rustc_trans/middle/pat_util/fn.pat_id_map.html
 share/doc/rust/html/rustc_trans/middle/pat_util/fn.pat_is_binding.html
 share/doc/rust/html/rustc_trans/middle/pat_util/fn.pat_is_binding_or_wild.html
@@ -7487,7 +7521,6 @@ share/doc/rust/html/rustc_trans/middle/privacy/enum.PrivateDep.html
 share/doc/rust/html/rustc_trans/middle/privacy/index.html
 share/doc/rust/html/rustc_trans/middle/privacy/type.ExportedItems.html
 share/doc/rust/html/rustc_trans/middle/privacy/type.ExternalExports.html
-share/doc/rust/html/rustc_trans/middle/privacy/type.LastPrivateMap.html
 share/doc/rust/html/rustc_trans/middle/privacy/type.PublicItems.html
 share/doc/rust/html/rustc_trans/middle/reachable/
 share/doc/rust/html/rustc_trans/middle/reachable/fn.find_reachable.html
@@ -7570,6 +7603,7 @@ share/doc/rust/html/rustc_trans/middle/traits/struct.SelectionCache.html
 share/doc/rust/html/rustc_trans/middle/traits/struct.SelectionContext.html
 share/doc/rust/html/rustc_trans/middle/traits/struct.Supertraits.html
 share/doc/rust/html/rustc_trans/middle/traits/struct.VtableBuiltinData.html
+share/doc/rust/html/rustc_trans/middle/traits/struct.VtableDefaultImplData.html
 share/doc/rust/html/rustc_trans/middle/traits/struct.VtableImplData.html
 share/doc/rust/html/rustc_trans/middle/traits/struct.VtableObjectData.html
 share/doc/rust/html/rustc_trans/middle/traits/type.Obligations.html
@@ -7634,7 +7668,6 @@ share/doc/rust/html/rustc_trans/middle/ty/fn.array_element_ty.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.associated_type_parameter_index.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.binds_late_bound_regions.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.can_type_implement_copy.html
-share/doc/rust/html/rustc_trans/middle/ty/fn.close_type.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.closure_upvars.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.construct_free_substs.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.construct_parameter_environment.html
@@ -7663,6 +7696,7 @@ share/doc/rust/html/rustc_trans/middle/ty/fn.get_tydesc_ty.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.has_attr.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.has_dtor.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.hash_crate_independent.html
+share/doc/rust/html/rustc_trans/middle/ty/fn.impl_id_to_trait_ref.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.impl_of_method.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.impl_or_trait_item.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.impl_or_trait_item_idx.html
@@ -7706,7 +7740,6 @@ share/doc/rust/html/rustc_trans/middle/ty/fn.mk_mut_ptr.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.mk_mut_rptr.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.mk_nil.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.mk_nil_ptr.html
-share/doc/rust/html/rustc_trans/middle/ty/fn.mk_open.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.mk_param.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.mk_param_from_def.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.mk_projection.html
@@ -7726,7 +7759,6 @@ share/doc/rust/html/rustc_trans/middle/ty/fn.mk_vec.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.named_element_ty.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.no_late_bound_regions.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.node_id_item_substs.html
-share/doc/rust/html/rustc_trans/middle/ty/fn.node_id_to_trait_ref.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.node_id_to_type.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.node_id_to_type_opt.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.note_and_explain_type_err.html
@@ -7738,6 +7770,7 @@ share/doc/rust/html/rustc_trans/middle/ty/fn.predicates.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.predicates_for_trait_ref.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.provided_source.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.provided_trait_methods.html
+share/doc/rust/html/rustc_trans/middle/ty/fn.record_default_trait_implementation.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.record_trait_implementation.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.region_existential_bound.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.replace_late_bound_regions.html
@@ -7750,6 +7783,8 @@ share/doc/rust/html/rustc_trans/middle/ty/fn.sort_bounds_list.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.stmt_node_id.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.struct_fields.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.substd_enum_variants.html
+share/doc/rust/html/rustc_trans/middle/ty/fn.trait_default_impl.html
+share/doc/rust/html/rustc_trans/middle/ty/fn.trait_has_default_impl.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.trait_id_of_impl.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.trait_impl_polarity.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.trait_item.html
@@ -7812,7 +7847,6 @@ share/doc/rust/html/rustc_trans/middle/ty/fn.type_needs_infer.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.type_needs_subst.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.type_of_adjust.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.type_trait_info.html
-share/doc/rust/html/rustc_trans/middle/ty/fn.unopen_type.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.unsize_ty.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.walk_ty.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.with_freevars.html
@@ -8143,7 +8177,6 @@ share/doc/rust/html/rustc_typeck/coherence/unsafety/
 share/doc/rust/html/rustc_typeck/coherence/unsafety/index.html
 share/doc/rust/html/rustc_typeck/collect/
 share/doc/rust/html/rustc_typeck/collect/index.html
-share/doc/rust/html/rustc_typeck/collect/trait.ToTy.html
 share/doc/rust/html/rustc_typeck/diagnostics/
 share/doc/rust/html/rustc_typeck/diagnostics/index.html
 share/doc/rust/html/rustc_typeck/diagnostics/static.DIAGNOSTICS.html
@@ -8193,7 +8226,7 @@ share/doc/rust/html/rustc_typeck/lint/builtin/struct.RawPointerDerive.html
 share/doc/rust/html/rustc_typeck/lint/builtin/struct.Stability.html
 share/doc/rust/html/rustc_typeck/lint/builtin/struct.TypeLimits.html
 share/doc/rust/html/rustc_typeck/lint/builtin/struct.UnconditionalRecursion.html
-share/doc/rust/html/rustc_typeck/lint/builtin/struct.UnsafeBlocks.html
+share/doc/rust/html/rustc_typeck/lint/builtin/struct.UnsafeCode.html
 share/doc/rust/html/rustc_typeck/lint/builtin/struct.UnstableFeatures.html
 share/doc/rust/html/rustc_typeck/lint/builtin/struct.UnusedAllocation.html
 share/doc/rust/html/rustc_typeck/lint/builtin/struct.UnusedAttributes.html
@@ -8367,14 +8400,15 @@ share/doc/rust/html/rustc_typeck/metadata/csearch/fn.get_supertraits.html
 share/doc/rust/html/rustc_typeck/metadata/csearch/fn.get_symbol.html
 share/doc/rust/html/rustc_typeck/metadata/csearch/fn.get_trait_def.html
 share/doc/rust/html/rustc_typeck/metadata/csearch/fn.get_trait_item_def_ids.html
-share/doc/rust/html/rustc_typeck/metadata/csearch/fn.get_trait_item_name_and_kind.html
 share/doc/rust/html/rustc_typeck/metadata/csearch/fn.get_trait_name.html
 share/doc/rust/html/rustc_typeck/metadata/csearch/fn.get_trait_of_item.html
 share/doc/rust/html/rustc_typeck/metadata/csearch/fn.get_tuple_struct_definition_if_ctor.html
 share/doc/rust/html/rustc_typeck/metadata/csearch/fn.get_type.html
 share/doc/rust/html/rustc_typeck/metadata/csearch/fn.get_type_name_if_impl.html
 share/doc/rust/html/rustc_typeck/metadata/csearch/fn.is_associated_type.html
+share/doc/rust/html/rustc_typeck/metadata/csearch/fn.is_default_trait.html
 share/doc/rust/html/rustc_typeck/metadata/csearch/fn.is_staged_api.html
+share/doc/rust/html/rustc_typeck/metadata/csearch/fn.is_static_method.html
 share/doc/rust/html/rustc_typeck/metadata/csearch/fn.is_typedef.html
 share/doc/rust/html/rustc_typeck/metadata/csearch/fn.maybe_get_item_ast.html
 share/doc/rust/html/rustc_typeck/metadata/csearch/index.html
@@ -8429,13 +8463,14 @@ share/doc/rust/html/rustc_typeck/metadata/decoder/fn.get_supertraits.html
 share/doc/rust/html/rustc_typeck/metadata/decoder/fn.get_symbol.html
 share/doc/rust/html/rustc_typeck/metadata/decoder/fn.get_trait_def.html
 share/doc/rust/html/rustc_typeck/metadata/decoder/fn.get_trait_item_def_ids.html
-share/doc/rust/html/rustc_typeck/metadata/decoder/fn.get_trait_item_name_and_kind.html
 share/doc/rust/html/rustc_typeck/metadata/decoder/fn.get_trait_name.html
 share/doc/rust/html/rustc_typeck/metadata/decoder/fn.get_trait_of_item.html
 share/doc/rust/html/rustc_typeck/metadata/decoder/fn.get_tuple_struct_definition_if_ctor.html
 share/doc/rust/html/rustc_typeck/metadata/decoder/fn.get_type.html
 share/doc/rust/html/rustc_typeck/metadata/decoder/fn.get_type_name_if_impl.html
 share/doc/rust/html/rustc_typeck/metadata/decoder/fn.is_associated_type.html
+share/doc/rust/html/rustc_typeck/metadata/decoder/fn.is_default_trait.html
+share/doc/rust/html/rustc_typeck/metadata/decoder/fn.is_static_method.html
 share/doc/rust/html/rustc_typeck/metadata/decoder/fn.is_typedef.html
 share/doc/rust/html/rustc_typeck/metadata/decoder/fn.item_type.html
 share/doc/rust/html/rustc_typeck/metadata/decoder/fn.list_crate_metadata.html
@@ -8517,6 +8552,7 @@ share/doc/rust/html/rustc_typeck/metadata/tyencode/fn.enc_closure_ty.html
 share/doc/rust/html/rustc_typeck/metadata/tyencode/fn.enc_existential_bounds.html
 share/doc/rust/html/rustc_typeck/metadata/tyencode/fn.enc_predicate.html
 share/doc/rust/html/rustc_typeck/metadata/tyencode/fn.enc_region.html
+share/doc/rust/html/rustc_typeck/metadata/tyencode/fn.enc_region_bounds.html
 share/doc/rust/html/rustc_typeck/metadata/tyencode/fn.enc_substs.html
 share/doc/rust/html/rustc_typeck/metadata/tyencode/fn.enc_trait_ref.html
 share/doc/rust/html/rustc_typeck/metadata/tyencode/fn.enc_ty.html
@@ -8531,6 +8567,7 @@ share/doc/rust/html/rustc_typeck/middle/astconv_util/constant.NO_REGIONS.html
 share/doc/rust/html/rustc_typeck/middle/astconv_util/constant.NO_TPS.html
 share/doc/rust/html/rustc_typeck/middle/astconv_util/fn.ast_ty_to_prim_ty.html
 share/doc/rust/html/rustc_typeck/middle/astconv_util/fn.check_path_args.html
+share/doc/rust/html/rustc_typeck/middle/astconv_util/fn.prim_ty_to_ty.html
 share/doc/rust/html/rustc_typeck/middle/astconv_util/index.html
 share/doc/rust/html/rustc_typeck/middle/astencode/
 share/doc/rust/html/rustc_typeck/middle/astencode/fn.decode_inlined_item.html
@@ -8540,6 +8577,7 @@ share/doc/rust/html/rustc_typeck/middle/astencode/index.html
 share/doc/rust/html/rustc_typeck/middle/astencode/trait.vtable_decoder_helpers.html
 share/doc/rust/html/rustc_typeck/middle/astencode/type.Encoder.html
 share/doc/rust/html/rustc_typeck/middle/cfg/
+share/doc/rust/html/rustc_typeck/middle/cfg/enum.CFGNodeData.html
 share/doc/rust/html/rustc_typeck/middle/cfg/graphviz/
 share/doc/rust/html/rustc_typeck/middle/cfg/graphviz/index.html
 share/doc/rust/html/rustc_typeck/middle/cfg/graphviz/struct.LabelledCFG.html
@@ -8548,7 +8586,6 @@ share/doc/rust/html/rustc_typeck/middle/cfg/graphviz/type.Node.html
 share/doc/rust/html/rustc_typeck/middle/cfg/index.html
 share/doc/rust/html/rustc_typeck/middle/cfg/struct.CFG.html
 share/doc/rust/html/rustc_typeck/middle/cfg/struct.CFGEdgeData.html
-share/doc/rust/html/rustc_typeck/middle/cfg/struct.CFGNodeData.html
 share/doc/rust/html/rustc_typeck/middle/cfg/type.CFGEdge.html
 share/doc/rust/html/rustc_typeck/middle/cfg/type.CFGGraph.html
 share/doc/rust/html/rustc_typeck/middle/cfg/type.CFGIndex.html
@@ -8605,10 +8642,9 @@ share/doc/rust/html/rustc_typeck/middle/dead/index.html
 share/doc/rust/html/rustc_typeck/middle/def/
 share/doc/rust/html/rustc_typeck/middle/def/enum.Def.html
 share/doc/rust/html/rustc_typeck/middle/def/enum.MethodProvenance.html
-share/doc/rust/html/rustc_typeck/middle/def/enum.TraitItemKind.html
-share/doc/rust/html/rustc_typeck/middle/def/enum.TyParamProvenance.html
 share/doc/rust/html/rustc_typeck/middle/def/index.html
 share/doc/rust/html/rustc_typeck/middle/def/struct.Export.html
+share/doc/rust/html/rustc_typeck/middle/def/struct.PathResolution.html
 share/doc/rust/html/rustc_typeck/middle/def/type.DefMap.html
 share/doc/rust/html/rustc_typeck/middle/def/type.ExportMap.html
 share/doc/rust/html/rustc_typeck/middle/dependency_format/
@@ -8786,6 +8822,7 @@ share/doc/rust/html/rustc_typeck/middle/pat_util/
 share/doc/rust/html/rustc_typeck/middle/pat_util/fn.def_to_path.html
 share/doc/rust/html/rustc_typeck/middle/pat_util/fn.pat_bindings.html
 share/doc/rust/html/rustc_typeck/middle/pat_util/fn.pat_contains_bindings.html
+share/doc/rust/html/rustc_typeck/middle/pat_util/fn.pat_contains_bindings_or_wild.html
 share/doc/rust/html/rustc_typeck/middle/pat_util/fn.pat_id_map.html
 share/doc/rust/html/rustc_typeck/middle/pat_util/fn.pat_is_binding.html
 share/doc/rust/html/rustc_typeck/middle/pat_util/fn.pat_is_binding_or_wild.html
@@ -8802,7 +8839,6 @@ share/doc/rust/html/rustc_typeck/middle/privacy/enum.PrivateDep.html
 share/doc/rust/html/rustc_typeck/middle/privacy/index.html
 share/doc/rust/html/rustc_typeck/middle/privacy/type.ExportedItems.html
 share/doc/rust/html/rustc_typeck/middle/privacy/type.ExternalExports.html
-share/doc/rust/html/rustc_typeck/middle/privacy/type.LastPrivateMap.html
 share/doc/rust/html/rustc_typeck/middle/privacy/type.PublicItems.html
 share/doc/rust/html/rustc_typeck/middle/reachable/
 share/doc/rust/html/rustc_typeck/middle/reachable/fn.find_reachable.html
@@ -8885,6 +8921,7 @@ share/doc/rust/html/rustc_typeck/middle/traits/struct.SelectionCache.html
 share/doc/rust/html/rustc_typeck/middle/traits/struct.SelectionContext.html
 share/doc/rust/html/rustc_typeck/middle/traits/struct.Supertraits.html
 share/doc/rust/html/rustc_typeck/middle/traits/struct.VtableBuiltinData.html
+share/doc/rust/html/rustc_typeck/middle/traits/struct.VtableDefaultImplData.html
 share/doc/rust/html/rustc_typeck/middle/traits/struct.VtableImplData.html
 share/doc/rust/html/rustc_typeck/middle/traits/struct.VtableObjectData.html
 share/doc/rust/html/rustc_typeck/middle/traits/type.Obligations.html
@@ -8949,7 +8986,6 @@ share/doc/rust/html/rustc_typeck/middle/ty/fn.array_element_ty.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.associated_type_parameter_index.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.binds_late_bound_regions.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.can_type_implement_copy.html
-share/doc/rust/html/rustc_typeck/middle/ty/fn.close_type.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.closure_upvars.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.construct_free_substs.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.construct_parameter_environment.html
@@ -8978,6 +9014,7 @@ share/doc/rust/html/rustc_typeck/middle/ty/fn.get_tydesc_ty.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.has_attr.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.has_dtor.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.hash_crate_independent.html
+share/doc/rust/html/rustc_typeck/middle/ty/fn.impl_id_to_trait_ref.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.impl_of_method.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.impl_or_trait_item.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.impl_or_trait_item_idx.html
@@ -9021,7 +9058,6 @@ share/doc/rust/html/rustc_typeck/middle/ty/fn.mk_mut_ptr.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.mk_mut_rptr.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.mk_nil.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.mk_nil_ptr.html
-share/doc/rust/html/rustc_typeck/middle/ty/fn.mk_open.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.mk_param.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.mk_param_from_def.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.mk_projection.html
@@ -9041,7 +9077,6 @@ share/doc/rust/html/rustc_typeck/middle/ty/fn.mk_vec.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.named_element_ty.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.no_late_bound_regions.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.node_id_item_substs.html
-share/doc/rust/html/rustc_typeck/middle/ty/fn.node_id_to_trait_ref.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.node_id_to_type.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.node_id_to_type_opt.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.note_and_explain_type_err.html
@@ -9053,6 +9088,7 @@ share/doc/rust/html/rustc_typeck/middle/ty/fn.predicates.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.predicates_for_trait_ref.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.provided_source.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.provided_trait_methods.html
+share/doc/rust/html/rustc_typeck/middle/ty/fn.record_default_trait_implementation.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.record_trait_implementation.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.region_existential_bound.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.replace_late_bound_regions.html
@@ -9065,6 +9101,8 @@ share/doc/rust/html/rustc_typeck/middle/ty/fn.sort_bounds_list.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.stmt_node_id.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.struct_fields.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.substd_enum_variants.html
+share/doc/rust/html/rustc_typeck/middle/ty/fn.trait_default_impl.html
+share/doc/rust/html/rustc_typeck/middle/ty/fn.trait_has_default_impl.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.trait_id_of_impl.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.trait_impl_polarity.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.trait_item.html
@@ -9127,7 +9165,6 @@ share/doc/rust/html/rustc_typeck/middle/ty/fn.type_needs_infer.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.type_needs_subst.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.type_of_adjust.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.type_trait_info.html
-share/doc/rust/html/rustc_typeck/middle/ty/fn.unopen_type.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.unsize_ty.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.walk_ty.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.with_freevars.html
@@ -9445,6 +9482,7 @@ share/doc/rust/html/rustdoc/doctree/enum.TypeBound.html
 share/doc/rust/html/rustdoc/doctree/fn.struct_type_from_def.html
 share/doc/rust/html/rustdoc/doctree/index.html
 share/doc/rust/html/rustdoc/doctree/struct.Constant.html
+share/doc/rust/html/rustdoc/doctree/struct.DefaultImpl.html
 share/doc/rust/html/rustdoc/doctree/struct.Enum.html
 share/doc/rust/html/rustdoc/doctree/struct.ExternCrate.html
 share/doc/rust/html/rustdoc/doctree/struct.Function.html
@@ -9660,6 +9698,7 @@ share/doc/rust/html/src/core/cell.rs.html
 share/doc/rust/html/src/core/char.rs.html
 share/doc/rust/html/src/core/clone.rs.html
 share/doc/rust/html/src/core/cmp.rs.html
+share/doc/rust/html/src/core/cmp_macros.rs.html
 share/doc/rust/html/src/core/default.rs.html
 share/doc/rust/html/src/core/error.rs.html
 share/doc/rust/html/src/core/finally.rs.html
@@ -9705,6 +9744,7 @@ share/doc/rust/html/src/core/simd.rs.html
 share/doc/rust/html/src/core/slice.rs.html
 share/doc/rust/html/src/core/str/
 share/doc/rust/html/src/core/str/mod.rs.html
+share/doc/rust/html/src/core/str/pattern.rs.html
 share/doc/rust/html/src/core/tuple.rs.html
 share/doc/rust/html/src/flate/
 share/doc/rust/html/src/flate/lib.rs.html
@@ -9991,7 +10031,6 @@ share/doc/rust/html/src/std/num/i16.rs.html
 share/doc/rust/html/src/std/num/i32.rs.html
 share/doc/rust/html/src/std/num/i64.rs.html
 share/doc/rust/html/src/std/num/i8.rs.html
-share/doc/rust/html/src/std/num/int.rs.html
 share/doc/rust/html/src/std/num/isize.rs.html
 share/doc/rust/html/src/std/num/mod.rs.html
 share/doc/rust/html/src/std/num/strconv.rs.html
@@ -9999,7 +10038,6 @@ share/doc/rust/html/src/std/num/u16.rs.html
 share/doc/rust/html/src/std/num/u32.rs.html
 share/doc/rust/html/src/std/num/u64.rs.html
 share/doc/rust/html/src/std/num/u8.rs.html
-share/doc/rust/html/src/std/num/uint.rs.html
 share/doc/rust/html/src/std/num/usize.rs.html
 share/doc/rust/html/src/std/old_io/
 share/doc/rust/html/src/std/old_io/buffered.rs.html
@@ -10569,8 +10607,6 @@ share/doc/rust/html/std/fmt/trait.LowerExp.html
 share/doc/rust/html/std/fmt/trait.LowerHex.html
 share/doc/rust/html/std/fmt/trait.Octal.html
 share/doc/rust/html/std/fmt/trait.Pointer.html
-share/doc/rust/html/std/fmt/trait.Show.html
-share/doc/rust/html/std/fmt/trait.String.html
 share/doc/rust/html/std/fmt/trait.UpperExp.html
 share/doc/rust/html/std/fmt/trait.UpperHex.html
 share/doc/rust/html/std/fmt/trait.Write.html
@@ -10631,12 +10667,6 @@ share/doc/rust/html/std/i8/constant.MAX.html
 share/doc/rust/html/std/i8/constant.MIN.html
 share/doc/rust/html/std/i8/index.html
 share/doc/rust/html/std/index.html
-share/doc/rust/html/std/int/
-share/doc/rust/html/std/int/constant.BITS.html
-share/doc/rust/html/std/int/constant.BYTES.html
-share/doc/rust/html/std/int/constant.MAX.html
-share/doc/rust/html/std/int/constant.MIN.html
-share/doc/rust/html/std/int/index.html
 share/doc/rust/html/std/intrinsics/
 share/doc/rust/html/std/intrinsics/fn.abort.html
 share/doc/rust/html/std/intrinsics/fn.assume.html
@@ -11651,6 +11681,7 @@ share/doc/rust/html/std/slice/trait.SliceExt.html
 share/doc/rust/html/std/stability.html
 share/doc/rust/html/std/stability.json
 share/doc/rust/html/std/str/
+share/doc/rust/html/std/str/enum.SearchStep.html
 share/doc/rust/html/std/str/enum.Utf8Error.html
 share/doc/rust/html/std/str/fn.from_c_str.html
 share/doc/rust/html/std/str/fn.from_utf8.html
@@ -11676,7 +11707,11 @@ share/doc/rust/html/std/str/struct.SplitTerminator.html
 share/doc/rust/html/std/str/struct.Utf16Units.html
 share/doc/rust/html/std/str/struct.Words.html
 share/doc/rust/html/std/str/trait.CharEq.html
+share/doc/rust/html/std/str/trait.DoubleEndedSearcher.html
 share/doc/rust/html/std/str/trait.FromStr.html
+share/doc/rust/html/std/str/trait.Pattern.html
+share/doc/rust/html/std/str/trait.ReverseSearcher.html
+share/doc/rust/html/std/str/trait.Searcher.html
 share/doc/rust/html/std/str/trait.Str.html
 share/doc/rust/html/std/str/trait.StrExt.html
 share/doc/rust/html/std/string/
@@ -11903,12 +11938,6 @@ share/doc/rust/html/std/u8/constant.BYTES.html
 share/doc/rust/html/std/u8/constant.MAX.html
 share/doc/rust/html/std/u8/constant.MIN.html
 share/doc/rust/html/std/u8/index.html
-share/doc/rust/html/std/uint/
-share/doc/rust/html/std/uint/constant.BITS.html
-share/doc/rust/html/std/uint/constant.BYTES.html
-share/doc/rust/html/std/uint/constant.MAX.html
-share/doc/rust/html/std/uint/constant.MIN.html
-share/doc/rust/html/std/uint/index.html
 share/doc/rust/html/std/unit/
 share/doc/rust/html/std/unit/index.html
 share/doc/rust/html/std/usize/
@@ -12093,7 +12122,7 @@ share/doc/rust/html/syntax/ast/struct.Pat.html
 share/doc/rust/html/syntax/ast/struct.Path.html
 share/doc/rust/html/syntax/ast/struct.PathSegment.html
 share/doc/rust/html/syntax/ast/struct.PolyTraitRef.html
-share/doc/rust/html/syntax/ast/struct.QPath.html
+share/doc/rust/html/syntax/ast/struct.QSelf.html
 share/doc/rust/html/syntax/ast/struct.SequenceRepetition.html
 share/doc/rust/html/syntax/ast/struct.StructDef.html
 share/doc/rust/html/syntax/ast/struct.StructField_.html
@@ -12554,7 +12583,6 @@ share/doc/rust/html/syntax/fold/fn.noop_fold_pat.html
 share/doc/rust/html/syntax/fold/fn.noop_fold_path.html
 share/doc/rust/html/syntax/fold/fn.noop_fold_path_parameters.html
 share/doc/rust/html/syntax/fold/fn.noop_fold_poly_trait_ref.html
-share/doc/rust/html/syntax/fold/fn.noop_fold_qpath.html
 share/doc/rust/html/syntax/fold/fn.noop_fold_stmt.html
 share/doc/rust/html/syntax/fold/fn.noop_fold_struct_def.html
 share/doc/rust/html/syntax/fold/fn.noop_fold_struct_field.html
@@ -12886,7 +12914,6 @@ share/doc/rust/html/syntax/visit/fn.walk_path.html
 share/doc/rust/html/syntax/visit/fn.walk_path_parameters.html
 share/doc/rust/html/syntax/visit/fn.walk_path_segment.html
 share/doc/rust/html/syntax/visit/fn.walk_poly_trait_ref.html
-share/doc/rust/html/syntax/visit/fn.walk_qpath.html
 share/doc/rust/html/syntax/visit/fn.walk_stmt.html
 share/doc/rust/html/syntax/visit/fn.walk_struct_def.html
 share/doc/rust/html/syntax/visit/fn.walk_struct_field.html
