@@ -123,6 +123,7 @@ lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/qscilib.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/qtapp.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/qtapp.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/qtlib.py
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/qtlib.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/quickop.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/quickop.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/rebase.py
@@ -235,6 +236,7 @@ lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/partialcommit.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/patchctx.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/patchctx.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/paths.py
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/paths.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/pipeui.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/pipeui.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/shlib.py
