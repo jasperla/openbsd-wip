@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/racket/src/setjmpup.c.orig	Sun Mar  1 08:54:09 2015
++++ src/racket/src/setjmpup.c	Sun Mar  1 08:57:03 2015
+@@ -355,7 +355,7 @@ void scheme_uncopy_stack(int ok, Scheme_Jumpup_Buf *b,
+     if (c->cont) {
+ #ifdef STACK_GROWS_UP
+       top_delta = (((uintptr_t)c->cont->buf_ptr->buf.stack_from
+-		    + c->cont->buf.stack_size)
++		    + c->stack_size)
+ 		   - (uintptr_t)c->stack_from);
+ #else
+       bottom_delta = ((uintptr_t)c->stack_from 

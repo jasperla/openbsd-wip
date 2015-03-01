@@ -34,9 +34,7 @@ MASTER_SITES =		https://www.cs.utah.edu/plt/installers/${V}/ \
 			ftp://download.tuxfamily.org/jod/lang/racket/
 EXTRACT_SUFX =		.tgz
 
-MODULES +=		converters/libiconv lang/clang
-MODCLANG_LANGS = c c++
-MODCLANG_ARCHS = *
+MODULES +=		converters/libiconv
 
 # http://docs.racket-lang.org/draw/libs.html
 # http://docs.racket-lang.org/gui/libs.html
