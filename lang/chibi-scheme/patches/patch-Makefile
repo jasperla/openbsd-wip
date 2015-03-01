@@ -1,0 +1,20 @@
+$OpenBSD$
+--- Makefile.orig	Sun Nov 16 12:10:46 2014
++++ Makefile	Sun Mar  1 10:52:59 2015
+@@ -332,16 +332,12 @@ install: all
+ 	$(MKDIR) $(DESTDIR)$(LIBDIR)
+ 	$(MKDIR) $(DESTDIR)$(SOLIBDIR)
+ 	$(INSTALL) -m0755 libchibi-scheme$(SO_VERSIONED_SUFFIX) $(DESTDIR)$(SOLIBDIR)/
+-	$(LN) -s -f libchibi-scheme$(SO_VERSIONED_SUFFIX) $(DESTDIR)$(SOLIBDIR)/libchibi-scheme$(SO_MAJOR_VERSIONED_SUFFIX)
+-	$(LN) -s -f libchibi-scheme$(SO_VERSIONED_SUFFIX) $(DESTDIR)$(SOLIBDIR)/libchibi-scheme$(SO)
+-	-$(INSTALL) -m0644 libchibi-scheme.a $(DESTDIR)$(SOLIBDIR)/
+ 	$(MKDIR) $(DESTDIR)$(SOLIBDIR)/pkgconfig
+ 	$(INSTALL) -m0644 chibi-scheme.pc $(DESTDIR)$(SOLIBDIR)/pkgconfig/
+ 	$(MKDIR) $(DESTDIR)$(MANDIR)
+ 	$(INSTALL) -m0644 doc/chibi-scheme.1 $(DESTDIR)$(MANDIR)/
+ 	$(INSTALL) -m0644 doc/chibi-ffi.1 $(DESTDIR)$(MANDIR)/
+ 	$(INSTALL) -m0644 doc/chibi-doc.1 $(DESTDIR)$(MANDIR)/
+-	-if type ldconfig >/dev/null 2>/dev/null; then ldconfig; fi
+ 
+ uninstall:
+ 	-$(RM) $(DESTDIR)$(BINDIR)/chibi-scheme$(EXE)
