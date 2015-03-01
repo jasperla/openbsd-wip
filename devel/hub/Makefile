@@ -2,7 +2,10 @@
 
 COMMENT =		wraps git in order to extend it with extra features
 V =			2.2.0
-DISTNAME =		hub-$V
+GH_ACCOUNT =		github
+GH_PROJECT =		hub
+GH_TAGNAME =		v$V
+DISTNAME =		${GH_PROJECT}-$V
 CATEGORIES =		devel
 
 HOMEPAGE =		https://hub.github.com
@@ -13,10 +16,6 @@ MAINTAINER =		Fabian Raetz <fabian.raetz@gmail.com>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c pthread
-
-GH_ACCOUNT =		github
-GH_PROJECT =		hub
-GH_TAGNAME =		v$V
 
 BUILD_DEPENDS =		lang/go \
 			shells/bash
