@@ -1,0 +1,63 @@
+$OpenBSD: patch-configure,v 1.43 2015/01/10 10:46:37 brad Exp $
+--- configure.orig	Wed Jan  7 04:31:28 2015
++++ configure	Wed Jan  7 04:42:09 2015
+@@ -3992,7 +3992,7 @@ case $target_os in
+     openbsd|bitrig)
+         disable symver
+         SHFLAGS='-shared'
+-        SLIB_INSTALL_NAME='$(SLIBNAME).$(LIBMAJOR).$(LIBMINOR)'
++        SLIB_INSTALL_NAME='$(SLIBNAME).$(LIBVERSION)'
+         SLIB_INSTALL_LINKS=
+         oss_indev_extralibs="-lossaudio"
+         oss_outdev_extralibs="-lossaudio"
+@@ -4323,7 +4323,7 @@ die_license_disabled version3 libvo_amrwbenc
+ 
+ enabled version3 && { enabled gpl && enable gplv3 || enable lgplv3; }
+ 
+-disabled optimizations || check_cflags -fomit-frame-pointer
++enabled x86_32 && check_cflags -fomit-frame-pointer
+ 
+ enable_weak_pic() {
+     disabled pic && return
+@@ -5054,7 +5054,6 @@ check_disable_warning -Wno-pointer-sign
+ check_ldflags -Wl,--warn-common
+ check_ldflags -Wl,-rpath-link=libpostproc:libswresample:libswscale:libavfilter:libavdevice:libavformat:libavcodec:libavutil:libavresample
+ enabled rpath && add_ldexeflags -Wl,-rpath,$libdir
+-test_ldflags -Wl,-Bsymbolic && append SHFLAGS -Wl,-Bsymbolic
+ 
+ # add some strip flags
+ # -wN '..@*' is more selective than -x, but not available everywhere.
+@@ -5675,8 +5674,8 @@ pkgconfig_generate(){
+     comment=$2
+     version=$3
+     libs=$4
+-    requires=$(map 'lib_version $v' $(eval echo \$${name#lib}_deps))
+-    requires=${requires%, }
++    requires=$5
++    linkflags=$6
+     enabled ${name#lib} || return 0
+     mkdir -p $name
+     cat <<EOF > $name/$name${build_suffix}.pc
+@@ -5691,7 +5690,7 @@ Version: $version
+ Requires: $(enabled shared || echo $requires)
+ Requires.private: $(enabled shared && echo $requires)
+ Conflicts:
+-Libs: -L\${libdir} $(enabled rpath && echo "-Wl,-rpath,\${libdir}") -l${shortname} $(enabled shared || echo $libs)
++Libs: -L\${libdir} $(enabled rpath && echo "-Wl,-rpath,\${libdir}") -l${shortname} $(enabled shared || echo $libs) $linkflags
+ Libs.private: $(enabled shared && echo $libs)
+ Cflags: -I\${includedir}
+ EOF
+@@ -5724,3 +5723,13 @@ pkgconfig_generate libpostproc   "FFmpeg postprocessin
+ pkgconfig_generate libavresample "Libav audio resampling library"       "$LIBAVRESAMPLE_VERSION" "$LIBM"
+ pkgconfig_generate libswscale    "FFmpeg image rescaling library"       "$LIBSWSCALE_VERSION"    "$LIBM"
+ pkgconfig_generate libswresample "FFmpeg audio resampling library"      "$LIBSWRESAMPLE_VERSION" "$LIBM"
++
++pkgconfig_generate libavutil     "FFmpeg utility library"               "$LIBAVUTIL_VERSION"     "$LIBavutil_EXTRALIBS"     "$LIBavutil_REQUIRES"     "$LIBavutil_LINKFLAGS"
++pkgconfig_generate libavcodec    "FFmpeg codec library"                 "$LIBAVCODEC_VERSION"    "$LIBavcodec_EXTRALIBS"    "$LIBavcodec_REQUIRES"    "$LIBavcodec_LINKFLAGS"
++pkgconfig_generate libavformat   "FFmpeg container format library"      "$LIBAVFORMAT_VERSION"   "$LIBavformat_EXTRALIBS"   "$LIBavformat_REQUIRES"   "$LIBavformat_LINKFLAGS"
++pkgconfig_generate libavdevice   "FFmpeg device handling library"       "$LIBAVDEVICE_VERSION"   "$LIBavdevice_EXTRALIBS"   "$LIBavdevice_REQUIRES"   "$LIBavdevice_LINKFLAGS"
++pkgconfig_generate libavfilter   "FFmpeg audio/video filtering library" "$LIBAVFILTER_VERSION"   "$LIBavfilter_EXTRALIBS"   "$LIBavfilter_REQUIRES"   "$LIBavfilter_LINKFLAGS"
++pkgconfig_generate libpostproc   "FFmpeg postprocessing library"        "$LIBPOSTPROC_VERSION"   "$LIBpostproc_EXTRALIBS"   "$LIBpostproc_REQUIRES"   "$LIBpostproc_LINKFLAGS"
++pkgconfig_generate libavresample "Libav audio resampling library"       "$LIBAVRESAMPLE_VERSION" "$LIBreavsample_EXTRALIBS" "$LIBavresample_REQUIRES" "$LIBavresample_LINKFLAGS"
++pkgconfig_generate libswscale    "FFmpeg image rescaling library"       "$LIBSWSCALE_VERSION"    "$LIBswscale_EXTRALIBS"    "$LIBswscale_REQUIRES"    "$LIBswscale_LINKFLAGS"
++pkgconfig_generate libswresample "FFmpeg audio rescaling library"       "$LIBSWRESAMPLE_VERSION" "$LIBswresample_EXTRALIBS" "$LIBswresample_REQUIRES" "$LIBswresample_LINKFLAGS"
