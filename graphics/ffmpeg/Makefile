@@ -102,6 +102,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-armv6 \
 		--disable-armv6t2 \
 		--disable-debug \
+		--disable-encoder=aac \
 		--disable-iconv \
 		--disable-indev=jack \
 		--disable-indev=oss \
