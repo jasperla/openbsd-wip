@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD$
+
+daemon="${TRUEPREFIX}/bin/godoc"
+daemon_flags="-http=:6060 -v=true"
+daemon_user=www
+rc_bg=YES
+rc_reload=NO
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1
