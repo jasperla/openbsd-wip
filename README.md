@@ -87,6 +87,10 @@ or set the following option in `.git/config` in your local openbsd-wip repo
 
 	git config branch.master.rebase true
 
+Users of `py-hg-git` may update the tree issuing:
+
+	hg pull --rebase
+
 How to contribute
 ==================================
 
