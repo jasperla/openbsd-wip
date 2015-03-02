@@ -6,7 +6,7 @@ CATEGORIES =		audio
 HOMEPAGE =		http://sourceforge.net/projects/opencore-amr/
 MAINTAINER =		Dmitrij D. Czarkoff <czakoff@gmail.com>
 
-# Custom copyleft license with no patent grant
+# Apache 2
 PERMIT_PACKAGE_CDROM =	Yes
 
 SHARED_LIBS =		fdk-aac                   0.0 # 0.4
