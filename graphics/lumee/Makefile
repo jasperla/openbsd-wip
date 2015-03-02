@@ -18,6 +18,8 @@ WANTLIB += gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gobject-2.0 gtk-3
 WANTLIB += gtkmm-3.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pangomm-1.4 pthread sigc-2.0 z
 
+# These tarballs have properly generated configure files.
+# The GitHub checkouts do not.
 MASTER_SITES =	http://github.com/bmars/lumee/releases/download/v${V}/
 
 MODULES =	devel/dconf \
