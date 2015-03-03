@@ -22,15 +22,18 @@ SHARED_LIBS=	avcodec		21.1 \
 
 HOMEPAGE=	http://ffmpeg.org/
 
-MAINTAINER=	Brad Smith <brad@comstyle.com>
+MAINTAINER=	Brad Smith <brad@c,omstyle.com>
 
-# LGPLv2.1 and GPLv2
+FLAVORS=	gpl3
+FLAVOR?=
+
+# GPLv2+ (GPLv3+ for "gpl3" flavor)
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=	SDL X11 Xext Xfixes Xv bz2 c crypto fdk-aac gsm m mp3lame opus \
-		pthread schroedinger-1.0 sndio speex ssl theoradec theoraenc \
-		vorbis vorbisenc vpx>=5 x264 xvidcore z
+WANTLIB=	SDL X11 Xext Xfixes Xv bz2 c crypto gsm m mp3lame opus pthread \
+		schroedinger-1.0 sndio speex ssl theoradec theoraenc vorbis \
+		vorbisenc vpx>=5 x264 xvidcore z
 
 MODULES=	lang/clang
 
@@ -42,7 +45,6 @@ BUILD_DEPENDS=	textproc/texi2html
 BUILD_DEPENDS+=	devel/yasm
 .endif
 LIB_DEPENDS=	archivers/bzip2 \
-		audio/fdk-aac \
 		audio/lame \
 		audio/libvorbis \
 		audio/opus \
@@ -56,7 +58,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 		multimedia/xvidcore
 
 # inter-library dependencies for the current configuration
-LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -lfdk-aac -lgsm -lmp3lame -lopus -lschroedinger-1.0 -lspeex -ltheoradec -ltheoraenc -lvorbis -lvorbisenc -lvpx -lx264 -lxvidcore -lz -pthread
+LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -lgsm -lmp3lame -lopus -lschroedinger-1.0 -lspeex -ltheoradec -ltheoraenc -lvorbis -lvorbisenc -lvpx -lx264 -lxvidcore -lz -pthread
 LIBavdevice_EXTRALIBS=-L${X11BASE}/lib -lX11 -lXext -lXfixes -lXv -lsndio
 LIBavfilter_EXTRALIBS=
 LIBavformat_EXTRALIBS=-L${LOCALBASE}/lib -lbz2 -lssl -lcrypto -pthread
@@ -102,7 +104,6 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-armv6 \
 		--disable-armv6t2 \
 		--disable-debug \
-		--disable-encoder=aac \
 		--disable-iconv \
 		--disable-indev=jack \
 		--disable-indev=oss \
@@ -191,6 +192,13 @@ FAKE_FLAGS=	${VERSION_FLAGS} \
 
 .ifdef DEBUG
 CONFIGURE_ARGS+=--disable-stripping
+.endif
+
+.if ${FLAVOR:L:Mgpl3}
+WANTLIB+=	fdk-aac
+LIB_DEPENDS+=	audio/fdk-aac
+LIBavcodec_EXTRALIBS+=-lfdk-aac
+CONFIGURE_ARGS+=--disable-encoder=aac --enable-version3
 .endif
 
 ALL_TARGET=	all tools/qt-faststart
