@@ -1,0 +1,3 @@
+Needs some more testing:
+	- built on amd64 with no issues and minimal testing.
+	- basic apps / modules build with fsharpc and run with "mono appname.exe"
