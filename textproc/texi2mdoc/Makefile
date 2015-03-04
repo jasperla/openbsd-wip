@@ -2,7 +2,7 @@
 
 COMMENT =		convert Texinfo data to mdoc input
 
-DISTNAME =		texi2mdoc-0.1.1
+DISTNAME =		texi2mdoc-0.1.2
 
 CATEGORIES =		textproc
 
