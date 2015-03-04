@@ -2,7 +2,7 @@
 
 COMMENT =		Game Boy Advance emulator
 
-V = 0.1.0
+V = 0.1.1
 DISTNAME =		mgba-$V
 
 SHARED_LIBS +=  mgba                      0.0 # 0.1
