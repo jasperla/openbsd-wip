@@ -1,46 +1,54 @@
 # $OpenBSD$
 
-COMMENT = 		Tcl/Tk based digital circuit editor and simulator
+COMMENT =		Tcl/Tk based digital circuit editor and simulator
 
-DISTNAME = 		tkgate-1.8.7
+DISTNAME =		tkgate-2.0-rc1
 
-CATEGORIES = 		cad
+CATEGORIES =		cad x11
 
-HOMEPAGE = 		http://www.tkgate.org/
-MASTER_SITES = 		http://www.tkgate.org/downloads/
-EXTRACT_SUFX = 		.tgz
+HOMEPAGE =		http://www.tkgate.org/
 
-# GPLv2
-PERMIT_PACKAGE_CDROM = 	Yes
+MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
-WANTLIB = 		X11 c m ${MODTK_WANTLIB}
+MASTER_SITES =		https://bitbucket.org/starling13/tkgate/downloads/
 
-MODULES = 		x11/tk
-BUILD_DEPENDS = 	devel/imake
-LIB_DEPENDS = 		${MODTK_LIB_DEPENDS}
+# GPLv2+
+PERMIT_PACKAGE_CDROM =	Yes
 
-CONFIGURE_STYLE = 	simple
+WANTLIB += ICE SM X11 c m pthread ${MODTK_WANTLIB}
 
-NO_TEST = 		Yes
+MODULES =		converters/libiconv \
+			x11/tk
 
-SUBST_VARS += 		CFLAGS
+BUILD_DEPENDS = 	${MODTK_BUILD_DEPENDS}
+RUN_DEPENDS = 		${MODTK_RUN_DEPENDS} \
+			devel/desktop-file-utils
+
+SEPARATE_BUILD = 	Yes
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ENV += 	TKGATE_LIBDIRS="${MODTCL_LIBDIR} ${MODTK_LIBDIR} \
+				${LOCALBASE}/lib ${X11BASE}/lib" \
+			TKGATE_INCDIRS="${MODTCL_INCDIR} ${MODTK_INCDIR} \
+				${LOCALBASE}/include ${X11BASE}/include" \
+			TKGATE_TCLTK_VERSIONS=${MODTK_VERSION}
+CFLAGS += 		-DDEBUG -pthread
 
 post-extract:
-	@find ${WRKSRC} -name *.orig -exec rm {} \;
-
+	@rm -f ${WRKSRC}/src/gmac/luthor.c
+	@rm -f ${WRKSRC}/src/gmac/vgrammar.c
+	@rm -f ${WRKSRC}/src/gmac/vgrammar.h
+	@rm -f ${WRKSRC}/src/verga/luthor.c
+	@rm -f ${WRKSRC}/src/verga/vgrammar.c
+	@rm -f ${WRKSRC}/src/verga/vgrammar.h
+	@rm -f ${WRKSRC}/src/tkgate/luthor.c
+	@rm -f ${WRKSRC}/src/tkgate/vgrammar.c
+	@rm -f ${WRKSRC}/src/tkgate/vgrammar.h
+			
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/Imakefile ${WRKSRC}/src/gsim/Imakefile \
-		${WRKSRC}/scripts/parms.tcl ${WRKSRC}/config.h
+	${SUBST_CMD} ${WRKSRC}/scripts/parms.tcl ${WRKSRC}/src/tkgate/verilog_out.c
+	${MODTCL_WISH_ADJ} ${WRKSRC}/scripts/tree.tcl
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/tkgate.man ${PREFIX}/man/man1/tkgate.1
-	${INSTALL_MAN} ${WRKSRC}/gmac.man ${PREFIX}/man/man1/gmac.1
-	${INSTALL_DATA_DIR} ${PREFIX}/share/tkgate/
-	${INSTALL_DATA} ${WRKSRC}/doc/license.txt ${PREFIX}/share/tkgate/
-	${INSTALL_DATA_DIR} ${PREFIX}/share/tkgate/locale/
-	@cd ${WRKSRC}/locale/ && find * -type d -exec ${INSTALL_DATA_DIR} \
-		"${PREFIX}/share/tkgate/locale/{}" \;
-	cd ${WRKSRC}/locale && find * -type f -exec ${INSTALL_DATA} \
-		"{}" "${PREFIX}/share/tkgate/locale/{}" \;
+	rm ${PREFIX}/share/tkgate/scripts/parms.tcl.*
 
 .include <bsd.port.mk>

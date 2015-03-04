@@ -1,8 +1,0 @@
-$OpenBSD$
---- src/tkgate/Imakefile.orig	Fri Jan  4 23:33:06 2008
-+++ src/tkgate/Imakefile	Fri Jan  4 23:33:12 2008
-@@ -63,4 +63,3 @@ NormalProgramTarget($(PROGRAM),$(OBJS),$(DEPLIB),$(LOC
- InstallProgram($(PROGRAM),TKGATE_BINDIR)
- DependTarget()
- LintTarget()
--InstallProgram($(PROGRAM),$(HOMEDIR)/libexec)

@@ -1,12 +1,12 @@
 $OpenBSD$
---- scripts/parms.tcl.orig	Sun Jan 13 13:22:41 2008
-+++ scripts/parms.tcl	Sun Jan 13 13:23:19 2008
-@@ -38,7 +38,7 @@ set tkg_initialHeight 590
+--- scripts/parms.tcl.orig	Sun Mar  1 00:30:59 2015
++++ scripts/parms.tcl	Mon Mar  2 22:47:25 2015
+@@ -55,7 +55,7 @@ set tkg_borderSize		2
  #
  # Executable for simulator
  #
--set simExec "${tkg_gateHome}/libexec/gsim"
-+set simExec "${PREFIX}/libexec/gsim"
+-set simExec "${tkg_gateHome}/libexec/verga"
++set simExec "${PREFIX}/bin/verga"
  
- set tkg_simCustomDelay 0
- set tkg_simDefaultDelayFile "${tkg_gateHome}/gdf/default.gdf"
+ ######################################################################
+ #

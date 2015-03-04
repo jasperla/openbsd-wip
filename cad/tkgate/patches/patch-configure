@@ -1,43 +1,21 @@
 $OpenBSD$
---- configure.orig	Fri Jan 26 04:12:13 2007
-+++ configure	Thu Feb  5 23:03:04 2009
-@@ -32,7 +32,7 @@
- # Note: All options (except list of compilers) are now set in config.h
- 
- # List of possible compliers
--compilers="gcc cc"
-+compilers=${CC}
- 
- ##################################################################
+--- configure.orig	Sun Mar  1 00:34:32 2015
++++ configure	Mon Mar  2 22:49:15 2015
+@@ -2784,7 +2784,7 @@ $as_echo "#define TKGATE_HOMEPAGE \"http://www.tkgate.
  #
-@@ -68,9 +68,9 @@ done
+ # Tcl/Tk version we will try to use (from most favored to least favored)
  #
- # Initialize some variables (add to these as we find what we need)
+-TKGATE_TCLTK_VERSIONS="8.6 8.5 8.4 8.3"
++#TKGATE_TCLTK_VERSIONS="8.6 8.5 8.4 8.3"
+ 
  #
--LPATH=""
--IPATH=""
--LIBS=""
-+LPATH=${LDFLAGS}
-+IPATH=${CFLAGS}
-+LIBS=${LIBS}
- TCLTKOK=1
+ # Directories to search for include files
+@@ -2794,7 +2794,7 @@ TKGATE_INCDIRS="/usr/X11R6/include /usr/X11/include /p
+ #
+ # Directories to search for library files
+ #
+-TKGATE_LIBDIRS="/usr/X11R6/lib /usr/X11/lib /pkgs/lib /usr/local/lib /usr/lib /sw/lib /opt/local/lib /usr/local/lib/tcl /usr/lib64"
++#TKGATE_LIBDIRS="/usr/X11R6/lib /usr/X11/lib /pkgs/lib /usr/local/lib /usr/lib /sw/lib /opt/local/lib /usr/local/lib/tcl /usr/lib64"
  
- ##################################################################
-@@ -823,7 +823,7 @@ domkdep()
- doAutoLang()
- {
-   if [ X$lang = Xauto ]; then
--    if [ \( X$LANG \> Xja -o X$LANG = Xja \) -a X$LANG \< Xjb ]; then
-+    if [ X$LANG = Xja ]; then
-       echo "Auto-configuring language to 'ujp' (LANG=$LANG)."
-       lang=ujp
-     else
-@@ -864,7 +864,7 @@ if [ $notests = 0 ]; then 
-     setconfigvar tcltk_versions TKGATE_TCLTK_VERSIONS
-     setconfigvar jp_tcltk_versions TKGATE_JP_TCLTK_VERSIONS
- 
--    homedir="${homedirbase}/tkgate-$gateversion"
-+    homedir="${homedirbase}/tkgate"
-     find_tcltk_version
-     tcltk_ok_check
-     langsetup
+ #
+ # Libraries we may need if available.
