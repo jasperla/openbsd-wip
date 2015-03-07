@@ -118,8 +118,6 @@ USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--disable-valgrind-rpass \
-			--enable-local-rust \
-			--local-rust-root="${WRKDIR}/rust-stage0" \
 			--prefix="${LOCALBASE}" \
 			--mandir="${LOCALBASE}/man"
 
@@ -160,12 +158,16 @@ pre-configure:
 		${WRKSRC}/mk/main.mk
 .endif
 
-# remove autodetected programs
+# - remove autodetected programs
+# - copy bootstrapper in stage0/bin (avoid downloading a snapshot)
 post-configure:
 .for _v in CFG_CURLORWGET CFG_GIT CFG_CLANG CFG_VALGRIND CFG_PERF CFG_ISCC CFG_JAVAC \
 	CFG_ANTLR4 CFG_BISON CFG_PANDOC CFG_GDB CFG_LLDB CFG_GDB_VERSION CFG_ADB
 	perl -pi -e 's/^${_v} .*/${_v} := /' ${WRKBUILD}/config.mk
 .endfor
+	cp ${WRKDIR}/rust-stage0/bin/rustc \
+		${WRKBUILD}/${TRIPLE_ARCH}/stage0/bin
+
 
 # Post-install
 #  - install a wrapper for rustc (for setting --sysroot)

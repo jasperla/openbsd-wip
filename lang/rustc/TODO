@@ -1,8 +1,6 @@
 Packaging
 ---------
 - bootstrap: need to have a really static bootstrapper
-- check if -Wl,--as-needed is ok (has been removed at initial bootstrapping from linux)
-	https://github.com/semarie/rust/commit/03cf086c07824e2cb1244dda98ef64cb8de983af
 
 - install
   - move lib to lib/rustc ?
@@ -14,37 +12,23 @@ Packaging
       (invoke it like: $ /usr/local/bin/rustdoc bla-bla)
   - rust-gdb is a shell script that require a more recent gdb than base
 
-- clean ${BUILDDIR}/config.mk for not needed program ? (git, curl, ...)
-
 - see any others TODO in Makefile
 
 
 Bugs
 ----
-- provide a complete load_self function (src/libstd/sys/unix/os.rs)
+- provide a complete current_exe function (src/libstd/sys/unix/os.rs)
   - need for backtrace support (read the symbols from executable file)
   - need for rustc --sysroot default value (infer rustlib from rustc location)
 
 
 Tests failures
 --------------
-  * [run-pass] run-pass/out-of-stack.rs
-      the last commits about stack in base seems to have resolve the issue :)
-      just need to review the offset used (should be not need)
-
   * [run-pass] run-pass/tcp-stress.rs
       intermittent failure
       "Too many open files"
       => may be be a problem in compiletest, as the test is ok when run manually.
       NOTE: the test is disabled
-
-  * [stdlib]
-     - *::bind_error
-	error when tests run as root (the test check if bind(1) is PermissionDenied)
-
-     - *::connect_error
-	test check if connect("0.0.0.0:1") return ConnectionRefused
-	under openbsd it is InvalidArgument
 
   * [debuginfo-gdb] all the testsuite
 	seems that gdb in base don't do what expected here
