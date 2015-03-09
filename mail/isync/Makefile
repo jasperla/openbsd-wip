@@ -2,8 +2,7 @@
 
 COMMENT=	synchronize IMAP4 and maildir mailboxes
 
-DISTNAME=	isync-1.0.6
-EPOCH=		0
+DISTNAME=	isync-1.1.2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=isync/}
 
@@ -19,8 +18,7 @@ LIB_DEPENDS=		databases/db/v4
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV+=		 CFLAGS="${CFLAGS} -I${LOCALBASE}/include/db4"	\
-			 LDFLAGS=-L${LOCALBASE}/lib/db4			\
-			 LDADD=-ldb
+			 LDFLAGS=-L${LOCALBASE}/lib/db4
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/isync
