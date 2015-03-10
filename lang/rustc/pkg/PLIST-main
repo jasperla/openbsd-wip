@@ -13,6 +13,7 @@ lib/librustc-4e7c5e5c.so
 lib/librustc_back-4e7c5e5c.so
 lib/librustc_borrowck-4e7c5e5c.so
 lib/librustc_driver-4e7c5e5c.so
+lib/librustc_lint-4e7c5e5c.so
 lib/librustc_llvm-4e7c5e5c.so
 lib/librustc_privacy-4e7c5e5c.so
 lib/librustc_resolve-4e7c5e5c.so
@@ -59,6 +60,7 @@ lib/rustlib/${TRIPLE_ARCH}/lib/librustc_back-4e7c5e5c.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_bitflags-4e7c5e5c.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_borrowck-4e7c5e5c.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_driver-4e7c5e5c.so
+lib/rustlib/${TRIPLE_ARCH}/lib/librustc_lint-4e7c5e5c.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_llvm-4e7c5e5c.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_privacy-4e7c5e5c.so
 lib/rustlib/${TRIPLE_ARCH}/lib/librustc_resolve-4e7c5e5c.so

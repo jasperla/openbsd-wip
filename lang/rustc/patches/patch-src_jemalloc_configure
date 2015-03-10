@@ -1,18 +1,13 @@
 $OpenBSD$
 jemalloc support for OpenBSD
 see https://github.com/jemalloc/jemalloc/pull/188
---- src/jemalloc/configure.orig	Fri Jan 30 15:04:25 2015
-+++ src/jemalloc/configure	Fri Feb  6 06:09:54 2015
-@@ -4879,7 +4879,13 @@ case "${host}" in
+--- src/jemalloc/configure.orig	Sat Mar  7 20:23:37 2015
++++ src/jemalloc/configure	Sun Mar  8 07:03:30 2015
+@@ -4885,7 +4885,7 @@ case "${host}" in
  	CFLAGS="$CFLAGS"
  	abi="elf"
  	$as_echo "#define JEMALLOC_PURGE_MADVISE_FREE  " >>confdefs.h
-+	;;
-+  *-*-openbsd*)
-+	CFLAGS="$CFLAGS"
-+	abi="elf"
-+	$as_echo "#define JEMALLOC_PURGE_MADVISE_FREE  " >>confdefs.h
- 
+-
 +	force_tls="0"
  	;;
    *-*-linux*)
