@@ -4005,7 +4005,6 @@ share/texmf-dist/scripts/texlive/texconfig.sh
 share/texmf-dist/scripts/texlive/texlinks.sh
 share/texmf-dist/scripts/texlive/tlmgr.pl
 share/texmf-dist/scripts/texlive/tlmgrgui.pl
-share/texmf-dist/scripts/texlive/uninstall-win32.pl
 share/texmf-dist/scripts/texlive/updmap-sys.sh
 share/texmf-dist/scripts/texlive/updmap.pl
 share/texmf-dist/scripts/texlive/var/

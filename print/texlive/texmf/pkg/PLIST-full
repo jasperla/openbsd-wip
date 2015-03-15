@@ -54239,8 +54239,6 @@ share/texmf-dist/tex4ht/
 share/texmf-dist/tex4ht/base/
 share/texmf-dist/tex4ht/base/unix/
 share/texmf-dist/tex4ht/base/unix/tex4ht.env
-share/texmf-dist/tex4ht/base/win32/
-share/texmf-dist/tex4ht/base/win32/tex4ht.env
 share/texmf-dist/tex4ht/bin/
 share/texmf-dist/tex4ht/bin/tex4ht.jar
 share/texmf-dist/tex4ht/ht-fonts/
@@ -57904,7 +57902,6 @@ share/texmf-dist/tex4ht/xtpipes/xtpipes.dtd
 share/texmf-dist/texdoc/
 share/texmf-dist/texdoc/texdoc.cnf
 share/texmf-dist/texdoctk/
-share/texmf-dist/texdoctk/texdocrc-win32.defaults
 share/texmf-dist/texdoctk/texdocrc.defaults
 share/texmf-dist/texdoctk/texdoctk.dat
 share/texmf-dist/xindy/
