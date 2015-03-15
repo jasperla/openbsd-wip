@@ -78,7 +78,6 @@ MODPERL_ADJ_FILES =	${SCRIPTS_DIR}/a2ping/a2ping.pl \
 			${SCRIPTS_DIR}/texfot/texfot.pl \
 			${SCRIPTS_DIR}/texlive/updmap.pl \
 			${SCRIPTS_DIR}/texlive/e2pall.pl \
-			${SCRIPTS_DIR}/texlive/uninstall-win32.pl \
 			${SCRIPTS_DIR}/texlive/tlmgrgui.pl \
 			${SCRIPTS_DIR}/texlive/tlmgr.pl \
 			${SCRIPTS_DIR}/texloganalyser/texloganalyser \
@@ -87,10 +86,8 @@ MODPERL_ADJ_FILES =	${SCRIPTS_DIR}/a2ping/a2ping.pl \
 
 LUA_ADJ_SCRIPTS =
 
-# XXX gswin32 is junk
 TEXLUA_ADJ_SCRIPTS =	${SCRIPTS_DIR}/cachepic/cachepic.tlu \
 			${SCRIPTS_DIR}/checkcites/checkcites.lua \
-			${SCRIPTS_DIR}/context/stubs/mswin/mtxrun.lua \
 			${SCRIPTS_DIR}/context/stubs/unix/mtxrun \
 			${SCRIPTS_DIR}/context/stubs/win64/mtxrun.lua \
 			${SCRIPTS_DIR}/context/lua/mtxrun.lua \
@@ -116,17 +113,7 @@ TEXLUA_ADJ_SCRIPTS =	${SCRIPTS_DIR}/cachepic/cachepic.tlu \
 			${SCRIPTS_DIR}/texlive/test-tlpdb.tlu \
 			${SCRIPTS_DIR}/texlive/texconf.tlu \
 			${SCRIPTS_DIR}/texlive/lua/texlive/getopt.tlu \
-			${SCRIPTS_DIR}/texlive/lua/texlive/tlpdb.tlu \
-			${SCRIPTS_DIR}/tlgs/gswin32/eps2eps.tlu \
-			${SCRIPTS_DIR}/tlgs/gswin32/ps2pdf13.tlu \
-			${SCRIPTS_DIR}/tlgs/gswin32/ps2ps2.tlu \
-			${SCRIPTS_DIR}/tlgs/gswin32/pdf2dsc.tlu \
-			${SCRIPTS_DIR}/tlgs/gswin32/ps2ps.tlu \
-			${SCRIPTS_DIR}/tlgs/gswin32/ps2pdf12.tlu \
-			${SCRIPTS_DIR}/tlgs/gswin32/pdfopt.tlu \
-			${SCRIPTS_DIR}/tlgs/gswin32/ps2ascii.tlu \
-			${SCRIPTS_DIR}/tlgs/gswin32/ps2pdf.tlu \
-			${SCRIPTS_DIR}/tlgs/gswin32/ps2pdf14.tlu
+			${SCRIPTS_DIR}/texlive/lua/texlive/tlpdb.tlu
 
 BASH_ADJ_SCRIPTS =	${SCRIPTS_DIR}/arara/arara.sh \
 			${SCRIPTS_DIR}/dtxgen/dtxgen \
