@@ -15,7 +15,7 @@ HOMEPAGE=	http://fsharp.org/
 
 MAINTAINER=	Aaron Bieber <abieber@openbsd.org>
 
-# Apache
+# Apache 2
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		lang/mono
@@ -33,7 +33,7 @@ NO_TEST=		Yes
 USE_GMAKE=		Yes
 
 post-patch:
-	@cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+	@cd ${WRKSRC} && ${SETENV} AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh --prefix=${LOCALBASE}
 
 
