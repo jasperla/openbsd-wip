@@ -74,7 +74,6 @@ www/p5-Tapper-Reports-API	ready to import, sent to ports@ 2014-05-23
 www/p5-Tapper-Model		ready to import, sent to ports@ 2014-05-23
 textproc/p5-Text-Balanced	ready to import, sent to ports@ 2014-05-23
 productivity/taskd      should be ready, waiting for feedback at ports@ 2014-06-24 (viq)
-games/residualvm	ready to import (bentley@), sent to ports@ 2014-07-11
 games/gnome-hearts	ready to import (bcallah@), sent to ports 2014-10-09
 sysutils/sleuthkit		sent to ports@ 2014-10-08 (nigel)
 devel/p5-Parallel-Prefork		ready to import, sent to ports@ 2015-01-08 (garcer)
@@ -106,10 +105,8 @@ graphics/glfw				ready to import, waiting for unlock (bcallah@)
 graphics/mandelbulber2			ready to import, waiting for unlock (bcallah@)
 databases/mdbtools			ready to import, waiting for unlock (czarkoff)
 textproc/txt2man			ready to import, waiting for unlock (czarkoff)
-net/megatools				ready to import, waiting for unlock (bentley@)
 comms/ems-flasher			ready to import, waiting for unlock (bentley@)
 x11/walcommander			ready to import, waiting for unlock (bcallah@)
-textproc/texi2mdoc			ready to import, waiting for unlock (bentley@)
 graphics/lumee				ready to import, waiting for unlock (bcallah@)
 devel/godoc				ready to import, waiting for unlock (czarkoff)
 games/pysol				ready to import, waiting for unlock (czarkoff)
