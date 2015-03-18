@@ -10,7 +10,7 @@ COMMENT-doc =		html documentation for rustc
 # we use a fake version number for indexing the date (and commitid)
 # TODO: should be changed when 1.0.0-stable will be issue
 #       (see post-extract target too)
-V =			0.0.0.20150307.270a677
+V =			0.0.0.20150317.c64d671
 BOOTSTRAP_V =		${V}
 SOURCE_V =		1.0.0-dev
 DISTNAME =		rustc-${V}
