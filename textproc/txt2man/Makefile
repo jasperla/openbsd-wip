@@ -17,4 +17,6 @@ RUN_DEPENDS =		archivers/bzip2 \
 			lang/gawk \
 			textproc/groff
 
+NO_TEST =		Yes
+
 .include <bsd.port.mk>
