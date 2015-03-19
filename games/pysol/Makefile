@@ -22,6 +22,8 @@ RUN_DEPENDS =		${MODPY_TKINTER_DEPENDS} \
 			devel/pygame \
 			graphics/py-Pillow
 
+NO_TEST =		Yes
+
 post-install:
 	@mv ${PREFIX}/bin/pysol{.py,}
 
