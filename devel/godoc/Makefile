@@ -29,6 +29,9 @@ WRKSRC =		${WRKDIST}/src/golang.org/x/tools
 do-build:
 	cd ${WRKSRC}/cmd/godoc && GOPATH="${WRKDIST}" go build -v
 
+do-test:
+	cd ${WRKSRC}/cmd/godoc && GOPATH="${WRKDIST}" go test -v
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cmd/godoc/godoc ${PREFIX}/bin/godoc
 
