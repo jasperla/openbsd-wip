@@ -8,6 +8,7 @@
 share/applications/tkgate.desktop
 share/doc/tkgate/
 share/doc/tkgate/COPYING
+share/doc/tkgate/ChangeLog
 share/doc/tkgate/README
 share/doc/tkgate/README.verga
 share/doc/tkgate/TODO
@@ -1366,6 +1367,9 @@ share/tkgate/test/verga/fibonacci.out
 share/tkgate/test/verga/fibonacci.v
 share/tkgate/test/verga/fork1.out
 share/tkgate/test/verga/fork1.v
+share/tkgate/test/verga/gatelevel.out
+share/tkgate/test/verga/gatelevel.v
+share/tkgate/test/verga/gatelevel1.v
 share/tkgate/test/verga/grammar.out
 share/tkgate/test/verga/grammar.v
 share/tkgate/test/verga/loops.out
@@ -1448,6 +1452,8 @@ share/tkgate/test/verga/trireg1.out
 share/tkgate/test/verga/trireg1.v
 share/tkgate/test/verga/tristate1.out
 share/tkgate/test/verga/tristate1.v
+share/tkgate/test/verga/tristate2.out
+share/tkgate/test/verga/tristate2.v
 share/tkgate/test/verga/uops.out
 share/tkgate/test/verga/uops.v
 share/tkgate/test/verga/verga.out
@@ -1455,7 +1461,9 @@ share/tkgate/test/verga/wire1.out
 share/tkgate/test/verga/wire1.v
 share/tkgate/vlib/
 share/tkgate/vlib/74xx.v
+share/tkgate/vlib/74xxGateLevel.v
 share/tkgate/vlib/coke.v
+share/tkgate/vlib/m68xx.v
 share/tkgate/vlib/timer.v
 share/tkgate/vlib/timer.xv
 share/tkgate/vlib/tty.v

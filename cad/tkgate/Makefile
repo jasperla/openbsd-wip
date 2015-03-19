@@ -2,7 +2,8 @@
 
 COMMENT =		Tcl/Tk based digital circuit editor and simulator
 
-DISTNAME =		tkgate-2.0-rc1
+DISTNAME =		tkgate-2.0-rc3
+PKGNAME = 		tkgate-2.0rc3
 
 CATEGORIES =		cad x11
 
@@ -31,7 +32,6 @@ CONFIGURE_ENV += 	TKGATE_LIBDIRS="${MODTCL_LIBDIR} ${MODTK_LIBDIR} \
 			TKGATE_INCDIRS="${MODTCL_INCDIR} ${MODTK_INCDIR} \
 				${LOCALBASE}/include ${X11BASE}/include" \
 			TKGATE_TCLTK_VERSIONS=${MODTK_VERSION}
-CFLAGS += 		-DDEBUG -pthread
 
 post-extract:
 	@rm -f ${WRKSRC}/src/gmac/luthor.c
