@@ -15,8 +15,10 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=pysolfc/}
 EXTRACT_SUFX =		.tar.bz2
 
-MODULES =		lang/python
+MODULES =		lang/python \
+			x11/gnome
 MODPY_VERSION =		2.7
+MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache
 
 RUN_DEPENDS =		${MODPY_TKINTER_DEPENDS} \
 			devel/pygame \
