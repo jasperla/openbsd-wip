@@ -1,9 +1,8 @@
 # $OpenBSD$
 
 COMMENT =		go documentation tool
-V =			1.4
-DISTNAME =		godoc-${V}
-CATEGORIES =		devel
+DISTNAME =		godoc-1.4
+CATEGORIES =		textproc devel
 HOMEPAGE =		http://golang.org/
 
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
@@ -13,10 +12,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c pthread
 
-MASTER_SITES =		https://go.googlesource.com/tools/+archive/
-
-COMMIT =		abf43428cc239218424c7a44dc9b5987cd351c3e
-DISTFILES =		${DISTNAME}{${COMMIT}}${EXTRACT_SUFX}
+MASTER_SITES =		http://spacehopper.org/mirrors/
 
 EXTRACT_CASES =		${DISTNAME}${EXTRACT_SUFX}) mkdir -p ${WRKSRC}; \
 			tar -xzf ${FULLDISTDIR}/$$archive -C ${WRKSRC};;
