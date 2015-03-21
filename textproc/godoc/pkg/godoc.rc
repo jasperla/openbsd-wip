@@ -3,7 +3,7 @@
 # $OpenBSD$
 
 daemon="${TRUEPREFIX}/bin/godoc"
-daemon_flags="-http=:6060 -v=true"
+daemon_flags="-http=localhost:6060 -v=true"
 daemon_user=www
 rc_bg=YES
 rc_reload=NO
