@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@bin bin/godoc
-@rcscript ${RCDIR}/godoc
