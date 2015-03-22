@@ -22,7 +22,7 @@ COMMENT =		zpaq
 #
 # What port/package will be created
 #
-V =			660
+V =			703
 DISTNAME =		zpaq$V
 PKGNAME =		zpaq-$V
 #PKGNAME-foo =		???	for multi packages
@@ -60,7 +60,7 @@ MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 # if someone wants to double-check licensing.
 # For GPL, all applicable versions must be included (e.g. v2+, v2 only, v3+).
 # Setting PERMIT_PACKAGE_CDROM=Yes defaults other PERMIT_* variables to Yes.
-# GPLv3 and Public Domain
+# Public Domain
 PERMIT_PACKAGE_CDROM =	Yes
 #PERMIT_PACKAGE_FTP =	Yes | Reason if No
 #PERMIT_DISTFILES_FTP =	Yes | Reason if No
