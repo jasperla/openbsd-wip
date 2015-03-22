@@ -9,7 +9,7 @@ ONLY_FOR_ARCHS =	i386 amd64 hppa mips64el powerpc
 
 COMMENT =		multi-paradigm programming language
 
-V =			6.1.1.8
+V =			6.2.0.2
 PKGNAME =		racket-minimal-$V
 DISTNAME =		min-racket-$V-src-builtpkgs
 
@@ -82,6 +82,7 @@ CFLAGS += -ggdb3
 .endif
 
 post-install:
+	@perl -i -pe 's/installation-name . "snapshot"/installation-name . "$V"/g' ${WRKINST}/etc/racket/config.rktd
 	@mv ${WRKINST}/etc/racket ${PREFIX}/share/examples
 
 # Since 5.3.4 if __SSE_MATH__ is defined (C_COMPILER_USES_SSE) and
