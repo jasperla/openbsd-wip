@@ -23,8 +23,6 @@ WANTLIB =		c pthread
 
 BUILD_DEPENDS =		lang/go
 
-NO_TEST =		Yes
-
 GOPATH =		"$(WRKSRC):$(LOCALBASE)/go"
 
 post-extract:
@@ -33,6 +31,9 @@ post-extract:
 
 do-build:
 	GOPATH=$(GOPATH) go install golang.org/x/net/websocket
+
+do-test:
+	GOPATH=$(GOPATH) go test golang.org/x/net/websocket
 
 do-install:
 	$(INSTALL_DATA_DIR) $(PREFIX)/go/pkg/openbsd_amd64/golang.org/x/net
