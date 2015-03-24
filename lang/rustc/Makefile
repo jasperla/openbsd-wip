@@ -100,9 +100,12 @@ MODGCC4_ARCHS =		*
 # note: VERBOSE permit to unhide Makefile processing
 # 	RUSTFLAGS extra flags passed to rust
 # 		-Z print-link-args : unhide link call
+#       RUSTFLAGS_STAGE0 extra flags passed to stage0
+#       	--sysroot force sysroot (due to limitation of us bootstrapper)
 #       RUST_LOG helper
 MAKE_ENV =		VERBOSE=1 \
 			RUSTFLAGS="-Z print-link-args" \
+			RUSTFLAGS_STAGE0="--sysroot ${WRKBUILD}/${TRIPLE_ARCH}/stage0" \
 			RUST_LOG="${RUST_LOG}"
 
 # TODO: wip
@@ -146,8 +149,9 @@ post-extract:
 	mv ${WRKDIR}/rustc-${SOURCE_V} ${WRKDIR}/rustc-${V}
 
 # - check datasize limit before configuring (and building)
-# - when rebuilding a rustc version with a bootstrap of same version, skip stage0 flags
-#   and use stage1, because stage0 contains tricks for previous snapshots.
+# - when rebuilding a rustc version with a bootstrap of same version, skip
+#   stage0 flags and use stage1, because stage0 contains tricks for previous
+#   snapshots.
 pre-configure:
 	@if [ `ulimit -d` -lt 1572864 ]; then \
 		echo datasize limit is too low - amd64 build takes approx 1.5GB; \
@@ -161,8 +165,9 @@ pre-configure:
 # - remove autodetected programs
 # - copy bootstrapper in stage0/bin (avoid downloading a snapshot)
 post-configure:
-.for _v in CFG_CURLORWGET CFG_GIT CFG_CLANG CFG_VALGRIND CFG_PERF CFG_ISCC CFG_JAVAC \
-	CFG_ANTLR4 CFG_BISON CFG_PANDOC CFG_GDB CFG_LLDB CFG_GDB_VERSION CFG_ADB
+.for _v in CFG_CURLORWGET CFG_GIT CFG_CLANG CFG_VALGRIND CFG_PERF CFG_ISCC \
+	CFG_JAVAC CFG_ANTLR4 CFG_BISON CFG_PANDOC CFG_GDB CFG_LLDB \
+	CFG_GDB_VERSION CFG_ADB
 	perl -pi -e 's/^${_v} .*/${_v} := /' ${WRKBUILD}/config.mk
 .endfor
 	cp ${WRKDIR}/rust-stage0/bin/rustc \
