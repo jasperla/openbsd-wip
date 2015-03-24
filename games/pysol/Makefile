@@ -17,7 +17,7 @@ EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		lang/python \
 			x11/gnome
-MODPY_VERSION =		2.7
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_2}
 MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache
 
 RUN_DEPENDS =		${MODPY_TKINTER_DEPENDS} \
