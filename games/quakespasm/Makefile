@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT=	quake
-DISTNAME=	quakespasm-0.85.9
+DISTNAME=	quakespasm-0.90.0
 EXTRACT_SUFX=	.tgz
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=quakespasm/}
@@ -21,7 +21,7 @@ WRKDIST=	${WRKDIR}/${DISTNAME}/Quake
 USE_GMAKE=	Yes
 ALL_TARGET=	release
 
-DOCS=	README.html README.music README.txt
+DOCS=	Quakespasm.html Quakespasm-Music.txt Quakespasm.txt
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/quakespasm ${PREFIX}/bin

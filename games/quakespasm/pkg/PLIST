@@ -1,6 +1,6 @@
 @comment $OpenBSD$
 @bin bin/quakespasm
 share/doc/quakespasm/
-share/doc/quakespasm/README.html
-share/doc/quakespasm/README.music
-share/doc/quakespasm/README.txt
+share/doc/quakespasm/Quakespasm-Music.txt
+share/doc/quakespasm/Quakespasm.html
+share/doc/quakespasm/Quakespasm.txt
