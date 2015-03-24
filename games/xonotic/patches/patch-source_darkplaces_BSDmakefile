@@ -1,0 +1,12 @@
+$OpenBSD$
+--- source/darkplaces/BSDmakefile.orig	Tue Mar 24 15:55:13 2015
++++ source/darkplaces/BSDmakefile	Tue Mar 24 15:56:16 2015
+@@ -158,7 +158,7 @@ LIB_SOUND=$(LIB_SND_BSD)
+ 
+ CFLAGS_MAKEDEP=-MD
+ .ifdef DP_FS_BASEDIR
+-CFLAGS_FS=-DDP_FS_BASEDIR='\"$(DP_FS_BASEDIR)\"'
++CFLAGS_FS=-DDP_FS_BASEDIR=\""$(DP_FS_BASEDIR)"\"
+ .else
+ CFLAGS_FS=
+ .endif

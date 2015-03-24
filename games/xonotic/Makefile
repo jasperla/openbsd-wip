@@ -9,8 +9,7 @@ COMMENT-server=	fast-paced first person shooter, server
 MULTI_PACKAGES=	-main -data -server
 
 N=		xonotic
-V=		0.7.0
-REVISION=	0
+V=		0.8.0
 DISTNAME=	${N}-${V}
 PKGNAME-main=	${N}-${V}
 PKGNAME-data=	${N}-data-${V}
@@ -30,13 +29,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c curl jpeg m png z
 
-WANTLIB-main=	${WANTLIB} SDL X11 modplug
+WANTLIB-main=	${WANTLIB} SDL X11
 WANTLIB-main+=	ogg png pthread theora vorbis vorbisenc vorbisfile
 
 WANTLIB-data=	# empty
 
-LIB_DEPENDS-main=	audio/libmodplug \
-			net/curl \
+LIB_DEPENDS-main=	net/curl \
 			audio/libvorbis \
 			multimedia/libtheora \
 			graphics/png \
