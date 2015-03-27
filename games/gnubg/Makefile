@@ -2,10 +2,9 @@
 
 COMMENT =		GNU Backgammon
 V =			1.04.000
-DISTNAME =		gnubg-${V}
-
+DISTNAME =		gnubg-release-${V}-sources
+PKGNAME =		gnubg-${V}
 CATEGORIES =		games x11
-
 HOMEPAGE =		http://gnubg.org/
 
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
@@ -24,15 +23,21 @@ WANTLIB += pangoft2-1.0 pangox-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += python2.7 readline sqlite3 stdc++ util vorbis vorbisfile
 WANTLIB += xcb xcb-dri2 xcb-glx xcb-render xcb-shm z
 
-MASTER_SITES =		${HOMEPAGE:=media/sources/}
-DISTFILES =		gnubg-${V}{gnubg-release-${V}-sources}${EXTRACT_SUFX}
+MASTER_SITES =		http://gnubg.org/media/sources/
 
-MODULES +=		lang/python
-LIB_DEPENDS +=		x11/gtkglext \
-			audio/libcanberra,-gtk \
-			${MODPY_LIB_DEPENDS}
+MODULES =		devel/gettext \
+			lang/python
+LIB_DEPENDS =		${MODPY_LIB_DEPENDS}
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	--disable-cputest
+WRKDIST =		${WRKDIR}/${PKGNAME}
+
+.if ${MACHINE_ARCH} == amd64
+CONFIGURE_ARGS +=	--enable-simd=sse2
+.else
+CONFIGURE_ARGS +=	--enable-simd=no
+.endif
 
 .include <bsd.port.mk>
