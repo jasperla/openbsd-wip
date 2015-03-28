@@ -69,9 +69,7 @@ CONFIGURE_ARGS +=	--disable-backtrace \
 			--disable-futures
 
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LIBracket3m_MAJOR=${LIBracket3m_VERSION:R} \
-			LIBracket3m_MINOR=${LIBracket3m_VERSION:E}
+			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 
 FLAVORS =		debug
 FLAVOR ?=

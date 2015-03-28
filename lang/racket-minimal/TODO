@@ -12,3 +12,5 @@ previously).
 - "Why there is not a full version of racket?".
 
 - raco pkg install --jobs 2 --auto --binary-lib drracket
+
+- raco pkg install --jobs 2 --auto --binary main-distribution
