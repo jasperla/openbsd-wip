@@ -1,0 +1,139 @@
+$OpenBSD$
+
+fix bytecode-only builds and several other improvements
+
+--- Makefile.orig	Sun Jan 19 09:18:48 2014
++++ Makefile	Fri Feb 27 09:50:23 2015
+@@ -1,26 +1,37 @@
+ VERSION = 1.1.8
+ 
++FLAGS = -g -annot -bin-annot
++
+ ifeq "$(shell ocamlc -config |grep os_type)" "os_type: Win32"
+ EXE=.exe
+ else
+ EXE=
+ endif
+ 
++BEST != if ocamlfind ocamlopt 2>/dev/null; then echo .native; else echo .byte; fi
++NATDYNLINK != if [ -f `ocamlfind ocamlc -where`/dynlink.cmxa ]; then echo YES; else echo NO; fi
+ 
+-NATDYNLINK := $(shell if [ -f `ocamlc -where`/dynlink.cmxa ]; then echo YES; else echo NO; fi)
+-
+-FLAGS = -dtypes -g
+-CMO = yojson.cmo yojson_biniou.cmo
+-CMX = yojson.cmx yojson_biniou.cmx
++ML = yojson.ml yojson_biniou.ml
++MLI = $(ML:.ml=.mli)
++CMI = $(MLI:.mli=.cmi)
++CMT = $(MLI:.mli=.cmt)
++ANNOT = $(MLI:.mli=.annot)
++CMO = $(ML:.ml=.cmo)
++CMX = $(ML:.ml=.cmx)
++O = $(ML:.ml=.o)
+ ifeq "${NATDYNLINK}" "YES"
+-CMXS = yojson.cmxs yojson_biniou.cmxs
++CMXS = $(ML:.ml=.cmxs)
+ endif
+ PACKS = easy-format,biniou
+ 
+-.PHONY: default all opt install uninstall reinstall doc install-doc
+-default: META all opt
+-all: $(CMO)
+-opt: $(CMX) $(CMXS) ydump$(EXE)
++.PHONY: all byte opt install uninstall reinstall doc install-doc
++ifeq "$(BEST)" ".native"
++all: $(CMI) byte doc META opt
++else
++all: $(CMI) byte doc META
++endif
++byte: $(CMO) ydump.byte
++opt: $(CMX) $(CMXS) ydump.native
+ 
+ ifndef PREFIX
+   PREFIX = $(shell dirname $$(dirname $$(which ocamlfind)))
+@@ -36,17 +47,18 @@ META: META.in Makefile
+ 	sed -e 's:@@VERSION@@:$(VERSION):' META.in > META
+ 
+ install: META
+-	test ! -f ydump || cp ydump $(BINDIR)/
+-	test ! -f ydump.exe || cp ydump.exe $(BINDIR)/
++	if [ -f ydump.native ]; then \
++		cp ydump.native $(BINDIR)/ydump$(EXE); \
++	else \
++		cp ydump.byte $(BINDIR)/ydump$(EXE); \
++	fi
+ 	ocamlfind install yojson META \
+-          $$(ls yojson.mli yojson_biniou.mli \
+-		yojson.cmi yojson_biniou.cmi \
+-		$(CMO) $(CMX) $(CMXS) \
+-		yojson.o yojson_biniou.o)
++          $(MLI) $(CMI) $(CMT) $(ANNOT) $(CMO) \
++	  -optional $(CMX) $(O) $(CMXS)
+ 
+ uninstall:
+-	test ! -f $(BINDIR)/ydump || rm $(BINDIR)/ydump
+-	test ! -f $(BINDIR)/ydump.exe || rm $(BINDIR)/ydump.exe
++	test -f $(BINDIR)/ydump && rm $(BINDIR)/ydump
++	test -f $(BINDIR)/ydump.exe && rm $(BINDIR)/ydump.exe
+ 	ocamlfind remove yojson
+ 
+ reinstall:
+@@ -66,34 +78,27 @@ yojson.ml: yojson.ml.cppo \
+            read.ml util.ml
+ 	cppo -D "VERSION $(VERSION)" yojson.ml.cppo -o yojson.ml
+ 
+-yojson.cmi: yojson.mli
+-	ocamlfind ocamlc -c $(FLAGS) -package $(PACKS) yojson.mli
++%.cmi: %.mli
++	ocamlfind ocamlc -c $(FLAGS) -package $(PACKS) $<
+ 
+-yojson.cmo: yojson.cmi yojson.ml
+-	ocamlfind ocamlc -c $(FLAGS) -package $(PACKS) yojson.ml
++%.cmo: %.ml %.cmi
++	ocamlfind ocamlc -c $(FLAGS) -package $(PACKS) $<
+ 
+-yojson.cmx: yojson.cmi yojson.ml
+-	ocamlfind ocamlopt -c $(FLAGS) -package $(PACKS) yojson.ml
++%.cmx: %.ml %.cmi
++	ocamlfind ocamlopt -c $(FLAGS) -package $(PACKS) $<
+ 
+-yojson.cmxs: yojson.cmx
+-	ocamlopt -shared -linkall -I . -o yojson.cmxs yojson.cmx
++%.cmxs: %.cmx
++	ocamlopt -shared -linkall -I . -o $@ $<
+ 
+-yojson_biniou.cmi: yojson_biniou.mli
+-	ocamlfind ocamlc -c $(FLAGS) -package $(PACKS) yojson_biniou.mli
++%.byte: $(CMO) %.ml
++	ocamlfind ocamlc -o $@ $(FLAGS) -package $(PACKS) -linkpkg $^
+ 
+-yojson_biniou.cmo: yojson_biniou.cmi yojson_biniou.ml
+-	ocamlfind ocamlc -c $(FLAGS) -package $(PACKS) yojson_biniou.ml
++%.native: $(CMX) %.ml
++	ocamlfind ocamlopt -o $@ $(FLAGS) -package $(PACKS) -linkpkg $^
+ 
+-yojson_biniou.cmx: yojson_biniou.cmi yojson_biniou.ml
+-	ocamlfind ocamlopt -c $(FLAGS) -package $(PACKS) yojson_biniou.ml
++%$(EXE): %$(BEST)
++	cp $< $@
+ 
+-yojson_biniou.cmxs: yojson_biniou.cmx
+-	ocamlopt -shared -linkall -I . -o yojson_biniou.cmxs yojson_biniou.cmx
+-
+-ydump$(EXE): yojson.cmx yojson_biniou.cmx ydump.ml
+-	ocamlfind ocamlopt -o ydump$(EXE) $(FLAGS) -package $(PACKS) -linkpkg \
+-		$(CMX) ydump.ml
+-
+ doc: doc/index.html
+ doc/index.html: yojson.mli yojson_biniou.mli
+ 	mkdir -p doc
+@@ -110,7 +115,7 @@ bench: bench.ml yojson.cmx META
+ .PHONY: clean
+ 
+ clean:
+-	rm -f *.o *.a *.cm* *~ *.annot ydump ydump.exe \
++	rm -f *.o *.a *.cm* *~ *.annot ydump{.exe,.native,.byte,} \
+ 		read.ml yojson.mli yojson.ml META
+ 	rm -rf doc
+ 	cd examples; $(MAKE) clean

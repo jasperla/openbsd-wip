@@ -17,30 +17,26 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/ocaml
 
 WANTLIB =		c m
-BUILD_DEPENDS =		sysutils/findlib \
+RUN_DEPENDS =		devel/ocaml-biniou
+BUILD_DEPENDS =		${RUN_DEPENDS} \
+			sysutils/findlib \
 			devel/ocaml-cppo \
-			devel/ocaml-biniou \
 			devel/ocaml-easy-format
-
-#CONFIGURE_STYLE =	gnu
 
 USE_GMAKE =		Yes
 
 TEST_DEPENDS =		devel/ocaml-yojson
 TEST_TARGET =		bench
 
-ALL_TARGET =		all
-.include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mocaml_native}
-ALL_TARGET +=		opt
-.endif
-
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml-yojson
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml-yojson/api
 	${INSTALL_DATA} \
 		${WRKSRC}/{Changes,README.md} \
-		${PREFIX}/share/doc/ocaml-yojson
+		${PREFIX}/share/doc/ocaml-yojson/
+	${INSTALL_DATA} \
+		${WRKSRC}/doc/* \
+		${PREFIX}/share/doc/ocaml-yojson/api/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ocaml-yojson
 	${INSTALL_DATA} \
 		${WRKSRC}/examples/* \
