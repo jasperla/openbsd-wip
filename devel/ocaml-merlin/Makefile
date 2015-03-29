@@ -17,7 +17,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/ocaml
 
-WANTLIB =		c m
 BUILD_DEPENDS =		editors/vim \
 			sysutils/findlib \
 			devel/ocaml-yojson
