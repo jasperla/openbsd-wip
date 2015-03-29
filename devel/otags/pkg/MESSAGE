@@ -1,2 +1,0 @@
-Tag files for installed ocaml libaries can be found in /var/db/otags.
-To update these tag files, run update-otags as root.

@@ -1,8 +1,0 @@
-Otags can be used to build TAGS tables for emacs and vi, like
-etags does, but for OCaml code source files. It is based on
-the camlp4 parsers, which makes it more accurate than versions
-based on regexps: otags finds references to constructors of
-sum types, fields of records, etc. The downside of the camlp4
-approach is that you can only tag syntactically correct files
-and that otags only accepts what camlp4 thinks is correct
-(which is sometimes different from ocamlc).
