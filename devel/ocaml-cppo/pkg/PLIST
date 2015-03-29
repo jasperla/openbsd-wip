@@ -1,6 +1,6 @@
 @comment $OpenBSD$
 %%native%%
-bin/cppo
+@bin bin/cppo
 lib/ocaml/cppo_ocamlbuild/
 lib/ocaml/cppo_ocamlbuild/META
 lib/ocaml/cppo_ocamlbuild/ocamlbuild_cppo.cma

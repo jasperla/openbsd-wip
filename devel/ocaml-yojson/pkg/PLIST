@@ -1,6 +1,6 @@
 @comment $OpenBSD$
 %%native%%
-bin/ydump
+@bin bin/ydump
 lib/ocaml/yojson/
 lib/ocaml/yojson/META
 lib/ocaml/yojson/yojson.annot

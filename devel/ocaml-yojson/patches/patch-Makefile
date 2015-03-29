@@ -2,10 +2,10 @@ $OpenBSD$
 
 fix bytecode-only builds and several other improvements
 
---- Makefile.orig	Sun Jan 19 09:18:48 2014
-+++ Makefile	Fri Feb 27 09:50:23 2015
+--- Makefile.orig	Fri Dec 26 11:30:42 2014
++++ Makefile	Sun Mar 29 12:09:56 2015
 @@ -1,26 +1,37 @@
- VERSION = 1.1.8
+ VERSION = 1.2.0
  
 +FLAGS = -g -annot -bin-annot
 +

@@ -4,11 +4,13 @@ COMMENT =	Biniou binary data format for OCaml
 CATEGORIES =	devel
 
 V =		1.0.9
-DISTNAME =	biniou-${V}
+GH_ACCOUNT =	mjambon
+GH_PROJECT =	biniou
+GH_TAGNAME =	v${V}
+DISTNAME =	${GH_PROJECT}-${V}
 PKGNAME =	ocaml-${DISTNAME}
-MASTER_SITES =	http://mjambon.com/releases/biniou/
 
-HOMEPAGE =	http://mjambon.com/biniou.html
+HOMEPAGE =	https://github.com/mjambon/biniou
 MAINTAINER =	Christopher Zimmermann <chrisz@openbsd.org>
 
 # BSD 3

@@ -1,6 +1,6 @@
 @comment $OpenBSD$
 %%native%%
-bin/bdump
+@bin bin/bdump
 lib/ocaml/biniou/
 lib/ocaml/biniou/META
 lib/ocaml/biniou/bi_dump.annot

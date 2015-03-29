@@ -4,16 +4,19 @@ COMMENT =	OCaml preprocessor
 CATEGORIES =	devel
 
 V =		1.1.2
-DISTNAME =	cppo-${V}
+GH_ACCOUNT =	mjambon
+GH_PROJECT =	cppo
+GH_TAGNAME =	v${V}
+DISTNAME =	${GH_PROJECT}-${V}
 PKGNAME =	ocaml-${DISTNAME}
-MASTER_SITES =	http://mjambon.com/releases/cppo/
 
-HOMEPAGE =	http://mjambon.com/cppo.html
+HOMEPAGE =	https://github.com/mjambon/cppo
 MAINTAINER =	Christopher Zimmermann <chrisz@openbsd.org>
 
 # BSD 3
 PERMIT_PACKAGE_CDROM =	Yes
 
+WANTLIB =		c m
 MODULES =		lang/ocaml
 
 BUILD_DEPENDS =		sysutils/findlib

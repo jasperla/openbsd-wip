@@ -3,12 +3,14 @@
 COMMENT =	OCaml JSON parsing and printing library
 CATEGORIES =	devel
 
-V =		1.1.8
-DISTNAME =	yojson-${V}
+V =		1.2.0
+GH_ACCOUNT =	mjambon
+GH_PROJECT =	yojson
+GH_TAGNAME =	v${V}
+DISTNAME =	${GH_PROJECT}-${V}
 PKGNAME =	ocaml-${DISTNAME}
-MASTER_SITES =	http://mjambon.com/releases/yojson/
 
-HOMEPAGE =	http://mjambon.com/yojson.html
+HOMEPAGE =	https://github.com/mjambon/yojson
 MAINTAINER =	Christopher Zimmermann <chrisz@openbsd.org>
 
 # BSD 3
@@ -17,11 +19,11 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/ocaml
 
 WANTLIB =		c m
-RUN_DEPENDS =		devel/ocaml-biniou
+RUN_DEPENDS =		devel/ocaml-biniou \
+			devel/ocaml-easy-format
 BUILD_DEPENDS =		${RUN_DEPENDS} \
 			sysutils/findlib \
-			devel/ocaml-cppo \
-			devel/ocaml-easy-format
+			devel/ocaml-cppo
 
 USE_GMAKE =		Yes
 

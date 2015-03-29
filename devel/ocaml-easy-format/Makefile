@@ -4,11 +4,13 @@ COMMENT =	Functional interface to the OCaml stdlib Format module
 CATEGORIES =	devel
 
 V =		1.0.2
-DISTNAME =	easy-format-${V}
+GH_ACCOUNT =	mjambon
+GH_PROJECT =	easy-format
+GH_TAGNAME =	v${V}
+DISTNAME =	${GH_PROJECT}-${V}
 PKGNAME =	ocaml-${DISTNAME}
-MASTER_SITES =	http://mjambon.com/releases/easy-format/
 
-HOMEPAGE =	http://mjambon.com/easy-format.html
+HOMEPAGE =	https://github.com/mjambon/easy-format
 MAINTAINER =	Christopher Zimmermann <chrisz@openbsd.org>
 
 # BSD 3
