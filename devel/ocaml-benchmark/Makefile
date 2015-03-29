@@ -16,36 +16,18 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/ocaml
 
+CONFIGURE_STYLE =	oasis
+
 BUILD_DEPENDS =		sysutils/findlib \
+			sysutils/oasis \
 			devel/ocaml-pcre
 
-ALL_TARGET =		api.docdir/index.html benchmark.cma
-.include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mocaml_native}
-ALL_TARGET +=		benchmark.cmxa
-.if ${PROPERTIES:Mocaml_native_dynlink}
-ALL_TARGET +=		benchmark.cmxs
-.endif
-.endif
 
+pre-configure:
+	cd ${WRKSRC} && oasis setup
 
-post-extract:
-	echo Benchmark >${WRKSRC}/api.odocl
-
-do-build:
-	cd ${WRKSRC} && env -i ${MAKE_ENV} ocamlbuild ${ALL_TARGET}
-
-do-install:
-	env -i ${MAKE_ENV} ocamlfind install -patch-version ${GH_TAGNAME} \
-		benchmark \
-		${FILESDIR}/META ${WRKSRC}/_build/benchmark.{a,o,cm*,mli}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml-benchmark/api
-	${INSTALL_DATA} \
-		${WRKSRC}/_build/api.docdir/* \
-		${PREFIX}/share/doc/ocaml-benchmark/api/
-	${INSTALL_DATA} \
-		${WRKSRC}/ChangeLog \
-		${PREFIX}/share/doc/ocaml-benchmark/
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${PREFIX}/share/doc/ocaml-benchmark/
 
 
 .include <bsd.port.mk>
