@@ -3,7 +3,7 @@
 COMMENT =	coding assistant for editing OCaml code
 CATEGORIES =	devel
 
-V =		2.1.1
+V =		2.1.2
 GH_ACCOUNT =	the-lambda-church
 GH_PROJECT =	merlin
 GH_TAGNAME =	v${V}
@@ -20,8 +20,7 @@ MODULES =		lang/ocaml
 WANTLIB =		c m
 BUILD_DEPENDS =		editors/vim \
 			sysutils/findlib \
-			devel/ocaml-yojson \
-			devel/ocaml-easy-format
+			devel/ocaml-yojson
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	simple

@@ -1,5 +1,5 @@
 @comment $OpenBSD$
-bin/ocamlmerlin
+@bin bin/ocamlmerlin
 share/doc/ocaml-merlin/
 share/doc/ocaml-merlin/CHANGELOG
 share/doc/ocaml-merlin/DEVELOP.md
