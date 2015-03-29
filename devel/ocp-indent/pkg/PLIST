@@ -31,7 +31,6 @@ share/doc/ocp-indent/tuareg-indent
 share/emacs/
 share/emacs/site-lisp/
 share/emacs/site-lisp/ocp-indent.el
-share/ocp-indent/
 share/vim/
 share/vim/vimfiles/
 share/vim/vimfiles/indent/

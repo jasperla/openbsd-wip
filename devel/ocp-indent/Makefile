@@ -3,7 +3,7 @@
 COMMENT =	A simple tool to indent OCaml programs
 CATEGORIES =	devel
 
-V =		1.4.2b
+V =		1.5
 GH_ACCOUNT =	OCamlPro
 GH_PROJECT =	ocp-indent
 GH_TAGNAME =	${V}
