@@ -20,7 +20,12 @@ BUILD_DEPENDS =		sysutils/findlib
 
 USE_GMAKE =		Yes
 
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mocaml_native}
+ALL_TARGET =		ocamlbuild opt
+.else
 ALL_TARGET =		ocamlbuild all
+.endif
 
 
 post-install:

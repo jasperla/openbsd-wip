@@ -1,0 +1,24 @@
+$OpenBSD$
+
+Fix bytecode-only building
+
+--- Makefile.orig	Thu Feb 26 20:40:56 2015
++++ Makefile	Thu Feb 26 20:40:59 2015
+@@ -24,7 +24,7 @@ export BINDIR
+ 
+ 
+ 
+-BEST := opt
++BEST != if ocamlopt 2>/dev/null; then echo .native; else echo .byte; fi
+ NATDYNLINK ?= $(shell if [ -f `ocamlc -where`/dynlink.cmxa ]; then \
+                         echo YES; \
+                       else \
+@@ -33,7 +33,7 @@ NATDYNLINK ?= $(shell if [ -f `ocamlc -where`/dynlink.
+ 
+ OCAMLBUILD_IMPL := ocamlbuild_cppo.cma
+ 
+-ifeq "${BEST}" "opt"
++ifeq "${BEST}" ".native"
+ OCAMLBUILD_IMPL += ocamlbuild_cppo.cmxa ocamlbuild_cppo.a
+ ifeq "${NATDYNLINK}" "YES"
+ OCAMLBUILD_IMPL += ocamlbuild_cppo.cmxs
