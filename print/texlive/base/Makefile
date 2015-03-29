@@ -41,8 +41,7 @@ LIB_DEPENDS =		devel/t1lib \
 			print/libpaper \
 			archivers/zziplib
 
-MODULES =		textproc/intltool converters/libiconv
-
+MODULES =		textproc/intltool converters/libiconv perl
 
 # Never set SEPARATE_BUILD
 CONFIGURE_STYLE =	gnu

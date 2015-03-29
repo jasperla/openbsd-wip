@@ -276,7 +276,7 @@ bin/opl2ofm
 bin/ot2kpx
 bin/ovf2ovp
 bin/ovp2ovf
-bin/pdf${MODRUBY_BINREV}0
+bin/pdf180
 bin/pdf270
 bin/pdf90
 bin/pdfannotextractor
