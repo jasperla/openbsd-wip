@@ -18,43 +18,28 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/ocaml
 
-WANTLIB =		c m
 BUILD_DEPENDS =		sysutils/findlib \
 			lang/ocaml-camlp4 \
-			sysutils/ocp-build>=1.99 \
-			sysutils/opam \
 			devel/ocaml-cmdliner
 
-CONFIGURE_STYLE =	gnu dest
-USE_GMAKE =		yes
-
-ALL_TARGET =	man
+MAKE_FILE =		Makefile.simple
 
 .include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mocaml_native}
-ALL_TARGET +=	native
-.else
-ALL_TARGET +=	byte
-.endif
-
-
-.if ! ${PROPERTIES:Mocaml_native}
-post-extract:
-	sed -nE \
-		-e 's/ocp-indent.asm/ocp-indent.byte/' \
-		-e '/\.cmxa|\.a[[:>:]]/!p' \
-		${WRKSRC}/ocp-indent.install >${WRKSRC}/ocp-indent.installbyte
-	mv ${WRKSRC}/ocp-indent.installbyte ${WRKSRC}/ocp-indent.install
-.endif
 
 do-regress:
 	env -i WRKDIST=${WRKDIST} WRKBUILD=${WRKBUILD} ${WRKDIST}/tests/test.sh
 
 post-install:
-	mv ${PREFIX}/lib/${GH_PROJECT} ${PREFIX}/lib/ocaml/
+.if ${PROPERTIES:Mocaml_native}
+	ln -s ${LOCALBASE}/lib/ocaml/ocp-indent/ocp-indent.native ${PREFIX}/bin/ocp-indent
+.else
+	ln -s ${LOCALBASE}/lib/ocaml/ocp-indent/ocp-indent.byte ${PREFIX}/bin/ocp-indent
+.endif
+	$(INSTALL_MAN) ${WRKDIST}/ocp-indent.1 ${PREFIX}/man/man1/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/vim/vimfiles/indent
-	rm -R ${PREFIX}/share/vim/syntax
-	${INSTALL_DATA} ${FILESDIR}/ocaml.vim ${PREFIX}/share/vim/vimfiles/indent/
+	${INSTALL_DATA} ${WRKDIST}/tools/ocp-indent.vim ${PREFIX}/share/vim/vimfiles/indent/ocaml.vim
+	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp/
+	${INSTALL_DATA} ${WRKDIST}/tools/ocp-indent.el ${PREFIX}/share/emacs/site-lisp/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${GH_PROJECT}
 	${INSTALL_DATA} \
 		${WRKDIST}/{README.md,CHANGELOG} \

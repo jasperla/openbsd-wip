@@ -1,0 +1,101 @@
+$OpenBSD$
+
+fix simple Makefile for bytecode builds
+
+--- Makefile.simple.orig	Sat Feb 28 15:02:30 2015
++++ Makefile.simple	Sun Mar 29 22:57:38 2015
+@@ -1,17 +1,43 @@
+ # -*- makefile -*-
+ 
+-GENERATED = src/indentVersion.ml src/approx_common.ml src/compat.ml
++GENERATED = src/indentVersion.ml src/compat.ml
+ 
+-VERSION = $(shell awk -F'[(,)]' '/AC_INIT/ { print $$3 }' configure.ac)
++NAME = 'ocp-indent'
++VERSION != awk -F'[(,)]' '/AC_INIT/ { print $$3 }' configure.ac
+ 
+-OCAML_MAJOR = $(shell ocaml -vnum | sed 's/\..*//')
++BEST != if ocamlopt 2>/dev/null; then echo native; else echo byte; fi
++OCAML_MAJOR != ocaml -vnum | sed 's/\..*//'
+ COMPAT_DIR = src/ocaml_$(OCAML_MAJOR)/
+ 
++OCAMLBUILD = ocamlbuild -use-ocamlfind
++
+ LIB = ocp-indent-lib
+ 
+-all: $(LIB).cma $(LIB).cmxa $(LIB).cmxs
++BINS = ocp-indent.byte
++LIBS = $(LIB).cma
++.if $(BEST) == "native"
++LIBS += $(LIB).cmxa $(LIB).a $(LIB).cmxs
++BINS += ocp-indent.native
++.endif
+ 
+-src/compat.ml: ALWAYS
++.PHONY: all
++all: $(LIBS) $(BINS) ocp-indent.1
++
++.PHONY: man
++man: ocp-indent.1
++
++ocp-indent.1: ocp-indent.$(BEST)
++	./ocp-indent.$(BEST) --help=groff >$@
++
++ocp-indent.byte:
++	$(OCAMLBUILD) indentMain.byte
++	ln -f _build/src/indentMain.byte $@
++
++ocp-indent.native:
++	$(OCAMLBUILD) indentMain.native
++	ln -f _build/src/indentMain.native $@
++
++src/compat.ml:
+ 	cp $(COMPAT_DIR)/compat.ml src/
+ 
+ src/indentVersion.ml:
+@@ -20,34 +46,24 @@ src/indentVersion.ml:
+ src/approx_common.ml: src/approx_common.mli
+ 	cp $< $@
+ 
+-ALWAYS:
++$(LIB).cma $(LIB).cmxa $(LIB).a $(LIB).cmxs: $(GENERATED)
++	$(OCAMLBUILD) -use-ocamlfind $@
+ 
+-%.cma: ALWAYS $(GENERATED)
+-	ocamlbuild src/$@
+-
+-%.cmxa: ALWAYS $(GENERATED)
+-	ocamlbuild src/$@
+-
+-%.cmxs: ALWAYS $(GENERATED)
+-   ocamlbuild src/$@
+-
+ .PHONY: clean
+ clean:
+ 	rm -rf $(GENERATED) META _build
++	rm -rf $(BINS) ocp-indent.1
+ 
+-_build/src/META:
++META:
+ 	mkdir -p _build/src
+-	echo 'version = "'$(VERSION)'"' > $@
++	echo 'name = "'$(NAME)'"' >$@
++	echo 'version = "'$(VERSION)'"' >> $@
+ 	echo 'archive(byte) = "'$(LIB)'.cma"' >> $@
+ 	echo 'archive(native) = "'$(LIB)'.cmxa"' >> $@
+ 
+-INTERFACES = approx_lexer pos util indentConfig indentBlock indentPrinter nstream
+-
+ .PHONY: install
+-install: _build/src/META $(LIB).cma $(LIB).cmxa
+-	ocamlfind remove ${LIB} || true
+-	cd _build/src && ocamlfind install $(LIB) META \
+-	  $(INTERFACES:=.cmi) \
+-	  $(INTERFACES:=.mli) \
+-	  $(INTERFACES:=.cmx) \
+-	  $(LIB).cma $(LIB).cmxa $(LIB).cmxs $(LIB).a
++install: META $(LIBS) $(BINS)
++	ocamlfind remove $(NAME) || true
++	ocamlfind install $(NAME) \
++	  $(LIBS:%=_build/src/%) $(BINS) META \
++	  _build/src/*.{mli,cmi,cmt,cmti,annot}

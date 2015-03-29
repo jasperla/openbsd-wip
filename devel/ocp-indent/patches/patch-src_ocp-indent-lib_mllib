@@ -1,0 +1,11 @@
+$OpenBSD$
+
+fix builds using Makefile.simple
+
+--- src/ocp-indent-lib.mllib.orig	Sun Mar 29 20:10:03 2015
++++ src/ocp-indent-lib.mllib	Sun Mar 29 20:10:10 2015
+@@ -1,4 +1,3 @@
+-Approx_common
+ Approx_tokens
+ Approx_lexer
+ Compat
