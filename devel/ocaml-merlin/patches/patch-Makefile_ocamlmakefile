@@ -1,0 +1,17 @@
+$OpenBSD$
+
+allow bytecode only builds.
+
+--- Makefile.ocamlmakefile.orig	Thu Feb 26 23:14:47 2015
++++ Makefile.ocamlmakefile	Thu Feb 26 23:20:11 2015
+@@ -185,6 +185,10 @@ SOURCES = \
+ 
+ PACKS = str findlib yojson unix
+ 
++ifeq "$(NATIVE)" "true"
+ ocamlmerlin $(RESULT): native-code
++else
++ocamlmerlin $(RESULT): byte-code
++endif
+ 
+ -include OCamlMakefile

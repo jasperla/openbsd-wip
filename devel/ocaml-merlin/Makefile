@@ -19,8 +19,9 @@ MODULES =		lang/ocaml
 
 WANTLIB =		c m
 BUILD_DEPENDS =		editors/vim \
+			sysutils/findlib \
 			devel/ocaml-yojson \
-			sysutils/findlib
+			devel/ocaml-easy-format
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	simple
