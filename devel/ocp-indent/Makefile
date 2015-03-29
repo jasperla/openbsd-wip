@@ -19,10 +19,11 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/ocaml
 
 WANTLIB =		c m
-BUILD_DEPENDS =		devel/ocaml-cmdliner \
+BUILD_DEPENDS =		sysutils/findlib \
 			lang/ocaml-camlp4 \
 			sysutils/ocp-build>=1.99 \
-			sysutils/opam
+			sysutils/opam \
+			devel/ocaml-cmdliner
 
 CONFIGURE_STYLE =	gnu dest
 USE_GMAKE =		yes
