@@ -1,5 +1,7 @@
 # $OpenBSD$
 
+ONLY_FOR_ARCHS =	${GO_ARCHS}
+
 COMMENT =		wraps git in order to extend it with extra features
 V =			2.2.0
 GH_ACCOUNT =		github
