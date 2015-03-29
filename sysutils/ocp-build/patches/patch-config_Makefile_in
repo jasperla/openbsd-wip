@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Allow bytecode-only builds.
+
+--- config/Makefile.in.orig	Wed Mar 11 17:03:39 2015
++++ config/Makefile.in	Sun Mar 29 11:43:01 2015
+@@ -7,6 +7,8 @@ MANDIR=@mandir@
+ TYPEREXDIR=@datadir@
+ VERSION=@PACKAGE_VERSION@
+ 
++OCAMLBEST=@OCAMLBEST@
++BEST=${OCAMLBEST:opt=asm}
+ OCAMLC=ocamlc.opt
+ OCAMLOPT=ocamlopt.opt
+ OCAMLDEP=ocamldep.opt

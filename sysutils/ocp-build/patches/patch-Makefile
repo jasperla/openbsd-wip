@@ -1,18 +1,32 @@
 $OpenBSD$
 
-use DESTDIR
+Allow bytecode-only builds.
 
---- Makefile.orig	Tue Sep  2 13:18:05 2014
-+++ Makefile	Tue Sep  2 13:19:06 2014
-@@ -59,9 +59,11 @@ uninstall:
- installed:
- 	$(OCPBUILD) installed
+--- Makefile.orig	Wed Mar 11 17:03:39 2015
++++ Makefile	Sun Mar 29 11:44:52 2015
+@@ -104,14 +104,14 @@ OCP_BUILD_OS= $(OCP_BUILD_STUBS) $(OCP_BUILD_CMXS:.cmx
+ INCLUDES= -I src/ocplib/debug -I src/ocplib/lang -I src/ocplib/system	\
+    -I src/ocplib/unix -I src/ocp-build
  
-+DESTDIR?="/"
+-all: ocp-build.asm
++all: ocp-build.$(BEST)
+ 
+ depend: $(OCP_BUILD_MLS) $(OCP_BUILD_TMPS)
+ 	ocamldep.opt $(INCLUDES) $(OCP_BUILD_MLS) $(OCP_BUILD_MLIS) > .depend
+ 
+ native: ocp-build.asm
+ ocp-build.asm: $(OCP_BUILD_MLS) $(OCP_BUILD_CMXS) $(OCP_BUILD_STUBS)
+-	ocamlopt.opt -o ocp-build.asm unix.cmxa $(OCP_BUILD_CMXS) $(OCP_BUILD_STUBS)
++	$(OCAMLOPT) -o ocp-build.asm unix.cmxa $(OCP_BUILD_CMXS) $(OCP_BUILD_STUBS)
+ 
+ byte: ocp-build.byte
+ ocp-build.byte: $(OCP_BUILD_MLS) $(OCP_BUILD_CMOS) $(OCP_BUILD_STUBS)
+@@ -144,7 +144,7 @@ doc:
+ 	cd docs/user-manual; $(MAKE)
+ 
  install:
- 	$(OCPBUILD) install \
- 	  -install-bundle ocp-build-bundle \
-+	  -install-destdir $(DESTDIR) \
-           -install-lib $(LIBDIR) \
-           -install-bin $(BINDIR) \
-           -install-data $(TYPEREXDIR)
+-	cp -f ocp-build.asm $(BINDIR)/ocp-build
++	cp -f ocp-build.$(BEST) $(BINDIR)/ocp-build
+ 	mkdir -p $(LIBDIR)/ocp-build
+ 	cp -f boot/ocaml.ocp $(LIBDIR)/ocp-build/
+ 	cp -f boot/camlp4.ocp $(LIBDIR)/ocp-build/
