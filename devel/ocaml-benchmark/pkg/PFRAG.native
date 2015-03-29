@@ -1,5 +1,0 @@
-@comment $OpenBSD$
-%%dynlink%%
-lib/ocaml/benchmark/benchmark.a
-lib/ocaml/benchmark/benchmark.cmx
-lib/ocaml/benchmark/benchmark.cmxa

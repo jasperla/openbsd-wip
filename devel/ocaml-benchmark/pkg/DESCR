@@ -1,3 +1,0 @@
-Benchmark provides functions to measure and compare the
-run-time of functions. It is inspired by the Perl module of
-the same name.
