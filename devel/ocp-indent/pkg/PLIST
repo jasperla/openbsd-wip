@@ -1,6 +1,6 @@
 @comment $OpenBSD: $
 %%native%%
-@bin bin/ocp-indent
+bin/ocp-indent
 lib/ocaml/ocp-indent/
 lib/ocaml/ocp-indent/META
 lib/ocaml/ocp-indent/approx_lexer.annot

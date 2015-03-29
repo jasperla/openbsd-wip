@@ -2,8 +2,8 @@ $OpenBSD$
 
 fix builds using Makefile.simple
 
---- _tags.orig	Sun Mar 29 21:42:04 2015
-+++ _tags	Sun Mar 29 21:51:27 2015
+--- _tags.orig	Sun Mar 29 23:25:45 2015
++++ _tags	Sun Mar 29 23:27:02 2015
 @@ -0,0 +1,8 @@
 +<src>: include
 +
@@ -12,4 +12,4 @@ fix builds using Makefile.simple
 +<src/indentArgs.*>: package(cmdliner)
 +<src/indentMain.ml>: package(cmdliner)
 +<src/indentLoader.ml>: package(findlib)
-+<src/indentMain.byte> or <src/indentMain.byte>: package(cmdliner), package(findlib), package(dynlink)
++<src/indentMain.byte> or <src/indentMain.native>: package(cmdliner), package(findlib), package(dynlink)
