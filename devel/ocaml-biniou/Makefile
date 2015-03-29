@@ -32,14 +32,17 @@ ALL_TARGET +=		opt
 
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml-biniou
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml-biniou/api
 	${INSTALL_DATA} \
 		${WRKSRC}/{Changes,README.md,biniou-format.txt} \
-		${PREFIX}/share/doc/ocaml-biniou
+		${PREFIX}/share/doc/ocaml-biniou/
+	${INSTALL_DATA} \
+		${WRKSRC}/doc/* \
+		${PREFIX}/share/doc/ocaml-biniou/api/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ocaml-biniou
 	${INSTALL_DATA} \
 		${WRKSRC}/test_biniou.ml \
-		${PREFIX}/share/examples/ocaml-biniou
+		${PREFIX}/share/examples/ocaml-biniou/
 
 
 .include <bsd.port.mk>
