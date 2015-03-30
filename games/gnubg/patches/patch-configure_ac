@@ -1,0 +1,23 @@
+$OpenBSD$
+--- configure.ac.orig	Tue Oct 21 20:26:33 2014
++++ configure.ac	Sun Mar 29 10:03:55 2015
+@@ -132,6 +132,8 @@ PKG_CHECK_MODULES(CAIRO, [cairo >= 1.2], have_cairo="yes", [AC_MSG_WARN([no cairo support])])
+ PKG_CHECK_MODULES(PANGOCAIRO, [pangocairo >= 1.0], have_pangocairo="yes", [AC_MSG_WARN([no pangocairo support])])
+ PKG_CHECK_MODULES(SQLITE, [sqlite3], have_sqlite="yes", AC_MSG_WARN([no sqlite support]))
+ 
++AC_ARG_WITH(canberra,[  --with-canberra         use canberra (Default if found)])
++
+ if test "x$win32" == "xyes"; then
+     have_canberra="no"
+     have_glu="yes"
+@@ -139,7 +141,9 @@ else
+     if test "x$darwin" == "xyes"; then
+         have_canberra="no"
+     else
+-        PKG_CHECK_MODULES(CANBERRA, [libcanberra-gtk], have_canberra="yes", AC_MSG_WARN([no libcanberra-gtk support]))
++	if test "$with_canberra" != "no"; then
++		PKG_CHECK_MODULES(CANBERRA, [libcanberra-gtk], have_canberra="yes", AC_MSG_WARN([no libcanberra-gtk support]))
++	fi
+     fi
+     PKG_CHECK_MODULES(GLU, [glu], have_glu="yes", AC_MSG_WARN([no glu support]))
+ fi
