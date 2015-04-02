@@ -78,14 +78,19 @@ share/doc/rust/html/book/hello-cargo.html
 share/doc/rust/html/book/hello-world.html
 share/doc/rust/html/book/if.html
 share/doc/rust/html/book/index.html
+share/doc/rust/html/book/inline-assembly.html
 share/doc/rust/html/book/installing-rust.html
 share/doc/rust/html/book/intermediate.html
+share/doc/rust/html/book/intrinsics.html
 share/doc/rust/html/book/iterators.html
+share/doc/rust/html/book/lang-items.html
+share/doc/rust/html/book/link-args.html
 share/doc/rust/html/book/looping.html
 share/doc/rust/html/book/macros.html
 share/doc/rust/html/book/match.html
 share/doc/rust/html/book/method-syntax.html
 share/doc/rust/html/book/more-strings.html
+share/doc/rust/html/book/no-stdlib.html
 share/doc/rust/html/book/ownership.html
 share/doc/rust/html/book/patterns.html
 share/doc/rust/html/book/plugins.html
@@ -97,6 +102,7 @@ share/doc/rust/html/book/strings.html
 share/doc/rust/html/book/testing.html
 share/doc/rust/html/book/traits.html
 share/doc/rust/html/book/unsafe.html
+share/doc/rust/html/book/unstable.html
 share/doc/rust/html/book/variable-bindings.html
 share/doc/rust/html/collections/
 share/doc/rust/html/collections/binary_heap/
@@ -760,6 +766,7 @@ share/doc/rust/html/core/intrinsics/fn.i8_add_with_overflow.html
 share/doc/rust/html/core/intrinsics/fn.i8_mul_with_overflow.html
 share/doc/rust/html/core/intrinsics/fn.i8_sub_with_overflow.html
 share/doc/rust/html/core/intrinsics/fn.init.html
+share/doc/rust/html/core/intrinsics/fn.init_dropped.html
 share/doc/rust/html/core/intrinsics/fn.log10f32.html
 share/doc/rust/html/core/intrinsics/fn.log10f64.html
 share/doc/rust/html/core/intrinsics/fn.log2f32.html
@@ -915,15 +922,21 @@ share/doc/rust/html/core/marker/struct.PhantomData.html
 share/doc/rust/html/core/marker/trait.Copy.html
 share/doc/rust/html/core/marker/trait.MarkerTrait.html
 share/doc/rust/html/core/marker/trait.PhantomFn.html
+share/doc/rust/html/core/marker/trait.Reflect.html
 share/doc/rust/html/core/marker/trait.Send.html
 share/doc/rust/html/core/marker/trait.Sized.html
 share/doc/rust/html/core/marker/trait.Sync.html
 share/doc/rust/html/core/mem/
+share/doc/rust/html/core/mem/constant.POST_DROP_U32.html
+share/doc/rust/html/core/mem/constant.POST_DROP_U64.html
+share/doc/rust/html/core/mem/constant.POST_DROP_U8.html
+share/doc/rust/html/core/mem/constant.POST_DROP_USIZE.html
 share/doc/rust/html/core/mem/fn.align_of.html
 share/doc/rust/html/core/mem/fn.align_of_val.html
 share/doc/rust/html/core/mem/fn.copy_lifetime.html
 share/doc/rust/html/core/mem/fn.copy_mut_lifetime.html
 share/doc/rust/html/core/mem/fn.drop.html
+share/doc/rust/html/core/mem/fn.dropped.html
 share/doc/rust/html/core/mem/fn.min_align_of.html
 share/doc/rust/html/core/mem/fn.min_align_of_val.html
 share/doc/rust/html/core/mem/fn.replace.html
@@ -1042,6 +1055,7 @@ share/doc/rust/html/core/ptr/externfnpointers/sidebar-items.js
 share/doc/rust/html/core/ptr/fn.null.html
 share/doc/rust/html/core/ptr/fn.null_mut.html
 share/doc/rust/html/core/ptr/fn.read.html
+share/doc/rust/html/core/ptr/fn.read_and_drop.html
 share/doc/rust/html/core/ptr/fn.read_and_zero.html
 share/doc/rust/html/core/ptr/fn.replace.html
 share/doc/rust/html/core/ptr/fn.swap.html
@@ -5017,6 +5031,7 @@ share/doc/rust/html/rustc/middle/traits/fn.evaluate_builtin_bound.html
 share/doc/rust/html/rustc/middle/traits/fn.fully_normalize.html
 share/doc/rust/html/rustc/middle/traits/fn.get_vtable_index_of_object_method.html
 share/doc/rust/html/rustc/middle/traits/fn.is_object_safe.html
+share/doc/rust/html/rustc/middle/traits/fn.is_vtable_safe_method.html
 share/doc/rust/html/rustc/middle/traits/fn.normalize.html
 share/doc/rust/html/rustc/middle/traits/fn.normalize_param_env_or_error.html
 share/doc/rust/html/rustc/middle/traits/fn.object_safety_violations.html
@@ -5026,6 +5041,7 @@ share/doc/rust/html/rustc/middle/traits/fn.predicates_for_generics.html
 share/doc/rust/html/rustc/middle/traits/fn.report_fulfillment_errors.html
 share/doc/rust/html/rustc/middle/traits/fn.report_overflow_error.html
 share/doc/rust/html/rustc/middle/traits/fn.suggest_new_overflow_limit.html
+share/doc/rust/html/rustc/middle/traits/fn.supertrait_def_ids.html
 share/doc/rust/html/rustc/middle/traits/fn.supertraits.html
 share/doc/rust/html/rustc/middle/traits/fn.trait_ref_for_builtin_bound.html
 share/doc/rust/html/rustc/middle/traits/fn.transitive_bounds.html
@@ -5041,6 +5057,7 @@ share/doc/rust/html/rustc/middle/traits/object_safety/
 share/doc/rust/html/rustc/middle/traits/object_safety/enum.MethodViolationCode.html
 share/doc/rust/html/rustc/middle/traits/object_safety/enum.ObjectSafetyViolation.html
 share/doc/rust/html/rustc/middle/traits/object_safety/fn.is_object_safe.html
+share/doc/rust/html/rustc/middle/traits/object_safety/fn.is_vtable_safe_method.html
 share/doc/rust/html/rustc/middle/traits/object_safety/fn.object_safety_violations.html
 share/doc/rust/html/rustc/middle/traits/object_safety/index.html
 share/doc/rust/html/rustc/middle/traits/object_safety/sidebar-items.js
@@ -5068,6 +5085,7 @@ share/doc/rust/html/rustc/middle/traits/struct.ObligationCause.html
 share/doc/rust/html/rustc/middle/traits/struct.RegionObligation.html
 share/doc/rust/html/rustc/middle/traits/struct.SelectionCache.html
 share/doc/rust/html/rustc/middle/traits/struct.SelectionContext.html
+share/doc/rust/html/rustc/middle/traits/struct.SupertraitDefIds.html
 share/doc/rust/html/rustc/middle/traits/struct.VtableBuiltinData.html
 share/doc/rust/html/rustc/middle/traits/struct.VtableDefaultImplData.html
 share/doc/rust/html/rustc/middle/traits/struct.VtableImplData.html
@@ -5083,6 +5101,7 @@ share/doc/rust/html/rustc/middle/traits/type.TraitObligations.html
 share/doc/rust/html/rustc/middle/traits/util/
 share/doc/rust/html/rustc/middle/traits/util/fn.elaborate_predicates.html
 share/doc/rust/html/rustc/middle/traits/util/fn.get_vtable_index_of_object_method.html
+share/doc/rust/html/rustc/middle/traits/util/fn.supertrait_def_ids.html
 share/doc/rust/html/rustc/middle/traits/util/fn.supertraits.html
 share/doc/rust/html/rustc/middle/traits/util/fn.trait_ref_for_builtin_bound.html
 share/doc/rust/html/rustc/middle/traits/util/fn.transitive_bounds.html
@@ -5090,6 +5109,7 @@ share/doc/rust/html/rustc/middle/traits/util/fn.upcast.html
 share/doc/rust/html/rustc/middle/traits/util/index.html
 share/doc/rust/html/rustc/middle/traits/util/sidebar-items.js
 share/doc/rust/html/rustc/middle/traits/util/struct.FilterToTraits.html
+share/doc/rust/html/rustc/middle/traits/util/struct.SupertraitDefIds.html
 share/doc/rust/html/rustc/middle/traits/util/type.Supertraits.html
 share/doc/rust/html/rustc/middle/ty/
 share/doc/rust/html/rustc/middle/ty/constant.HAS_PARAMS.html
@@ -5165,6 +5185,7 @@ share/doc/rust/html/rustc/middle/ty/fn.expr_ty.html
 share/doc/rust/html/rustc/middle/ty/fn.expr_ty_adjusted.html
 share/doc/rust/html/rustc/middle/ty/fn.expr_ty_opt.html
 share/doc/rust/html/rustc/middle/ty/fn.field_idx_strict.html
+share/doc/rust/html/rustc/middle/ty/fn.flatten_late_bound_regions.html
 share/doc/rust/html/rustc/middle/ty/fn.fn_is_variadic.html
 share/doc/rust/html/rustc/middle/ty/fn.fold_ty.html
 share/doc/rust/html/rustc/middle/ty/fn.free_region_from_def.html
@@ -6530,6 +6551,7 @@ share/doc/rust/html/rustc_lint/middle/traits/fn.evaluate_builtin_bound.html
 share/doc/rust/html/rustc_lint/middle/traits/fn.fully_normalize.html
 share/doc/rust/html/rustc_lint/middle/traits/fn.get_vtable_index_of_object_method.html
 share/doc/rust/html/rustc_lint/middle/traits/fn.is_object_safe.html
+share/doc/rust/html/rustc_lint/middle/traits/fn.is_vtable_safe_method.html
 share/doc/rust/html/rustc_lint/middle/traits/fn.normalize.html
 share/doc/rust/html/rustc_lint/middle/traits/fn.normalize_param_env_or_error.html
 share/doc/rust/html/rustc_lint/middle/traits/fn.object_safety_violations.html
@@ -6539,6 +6561,7 @@ share/doc/rust/html/rustc_lint/middle/traits/fn.predicates_for_generics.html
 share/doc/rust/html/rustc_lint/middle/traits/fn.report_fulfillment_errors.html
 share/doc/rust/html/rustc_lint/middle/traits/fn.report_overflow_error.html
 share/doc/rust/html/rustc_lint/middle/traits/fn.suggest_new_overflow_limit.html
+share/doc/rust/html/rustc_lint/middle/traits/fn.supertrait_def_ids.html
 share/doc/rust/html/rustc_lint/middle/traits/fn.supertraits.html
 share/doc/rust/html/rustc_lint/middle/traits/fn.trait_ref_for_builtin_bound.html
 share/doc/rust/html/rustc_lint/middle/traits/fn.transitive_bounds.html
@@ -6556,6 +6579,7 @@ share/doc/rust/html/rustc_lint/middle/traits/struct.ObligationCause.html
 share/doc/rust/html/rustc_lint/middle/traits/struct.RegionObligation.html
 share/doc/rust/html/rustc_lint/middle/traits/struct.SelectionCache.html
 share/doc/rust/html/rustc_lint/middle/traits/struct.SelectionContext.html
+share/doc/rust/html/rustc_lint/middle/traits/struct.SupertraitDefIds.html
 share/doc/rust/html/rustc_lint/middle/traits/struct.VtableBuiltinData.html
 share/doc/rust/html/rustc_lint/middle/traits/struct.VtableDefaultImplData.html
 share/doc/rust/html/rustc_lint/middle/traits/struct.VtableImplData.html
@@ -6642,6 +6666,7 @@ share/doc/rust/html/rustc_lint/middle/ty/fn.expr_ty.html
 share/doc/rust/html/rustc_lint/middle/ty/fn.expr_ty_adjusted.html
 share/doc/rust/html/rustc_lint/middle/ty/fn.expr_ty_opt.html
 share/doc/rust/html/rustc_lint/middle/ty/fn.field_idx_strict.html
+share/doc/rust/html/rustc_lint/middle/ty/fn.flatten_late_bound_regions.html
 share/doc/rust/html/rustc_lint/middle/ty/fn.fn_is_variadic.html
 share/doc/rust/html/rustc_lint/middle/ty/fn.fold_ty.html
 share/doc/rust/html/rustc_lint/middle/ty/fn.free_region_from_def.html
@@ -9307,6 +9332,7 @@ share/doc/rust/html/rustc_trans/middle/traits/fn.evaluate_builtin_bound.html
 share/doc/rust/html/rustc_trans/middle/traits/fn.fully_normalize.html
 share/doc/rust/html/rustc_trans/middle/traits/fn.get_vtable_index_of_object_method.html
 share/doc/rust/html/rustc_trans/middle/traits/fn.is_object_safe.html
+share/doc/rust/html/rustc_trans/middle/traits/fn.is_vtable_safe_method.html
 share/doc/rust/html/rustc_trans/middle/traits/fn.normalize.html
 share/doc/rust/html/rustc_trans/middle/traits/fn.normalize_param_env_or_error.html
 share/doc/rust/html/rustc_trans/middle/traits/fn.object_safety_violations.html
@@ -9316,6 +9342,7 @@ share/doc/rust/html/rustc_trans/middle/traits/fn.predicates_for_generics.html
 share/doc/rust/html/rustc_trans/middle/traits/fn.report_fulfillment_errors.html
 share/doc/rust/html/rustc_trans/middle/traits/fn.report_overflow_error.html
 share/doc/rust/html/rustc_trans/middle/traits/fn.suggest_new_overflow_limit.html
+share/doc/rust/html/rustc_trans/middle/traits/fn.supertrait_def_ids.html
 share/doc/rust/html/rustc_trans/middle/traits/fn.supertraits.html
 share/doc/rust/html/rustc_trans/middle/traits/fn.trait_ref_for_builtin_bound.html
 share/doc/rust/html/rustc_trans/middle/traits/fn.transitive_bounds.html
@@ -9333,6 +9360,7 @@ share/doc/rust/html/rustc_trans/middle/traits/struct.ObligationCause.html
 share/doc/rust/html/rustc_trans/middle/traits/struct.RegionObligation.html
 share/doc/rust/html/rustc_trans/middle/traits/struct.SelectionCache.html
 share/doc/rust/html/rustc_trans/middle/traits/struct.SelectionContext.html
+share/doc/rust/html/rustc_trans/middle/traits/struct.SupertraitDefIds.html
 share/doc/rust/html/rustc_trans/middle/traits/struct.VtableBuiltinData.html
 share/doc/rust/html/rustc_trans/middle/traits/struct.VtableDefaultImplData.html
 share/doc/rust/html/rustc_trans/middle/traits/struct.VtableImplData.html
@@ -9419,6 +9447,7 @@ share/doc/rust/html/rustc_trans/middle/ty/fn.expr_ty.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.expr_ty_adjusted.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.expr_ty_opt.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.field_idx_strict.html
+share/doc/rust/html/rustc_trans/middle/ty/fn.flatten_late_bound_regions.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.fn_is_variadic.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.fold_ty.html
 share/doc/rust/html/rustc_trans/middle/ty/fn.free_region_from_def.html
@@ -9791,6 +9820,7 @@ share/doc/rust/html/rustc_trans/trans/_match/sidebar-items.js
 share/doc/rust/html/rustc_trans/trans/adt/
 share/doc/rust/html/rustc_trans/trans/adt/index.html
 share/doc/rust/html/rustc_trans/trans/adt/sidebar-items.js
+share/doc/rust/html/rustc_trans/trans/adt/trait.GetDtorType.html
 share/doc/rust/html/rustc_trans/trans/asm/
 share/doc/rust/html/rustc_trans/trans/asm/index.html
 share/doc/rust/html/rustc_trans/trans/asm/sidebar-items.js
@@ -10708,6 +10738,7 @@ share/doc/rust/html/rustc_typeck/middle/traits/fn.evaluate_builtin_bound.html
 share/doc/rust/html/rustc_typeck/middle/traits/fn.fully_normalize.html
 share/doc/rust/html/rustc_typeck/middle/traits/fn.get_vtable_index_of_object_method.html
 share/doc/rust/html/rustc_typeck/middle/traits/fn.is_object_safe.html
+share/doc/rust/html/rustc_typeck/middle/traits/fn.is_vtable_safe_method.html
 share/doc/rust/html/rustc_typeck/middle/traits/fn.normalize.html
 share/doc/rust/html/rustc_typeck/middle/traits/fn.normalize_param_env_or_error.html
 share/doc/rust/html/rustc_typeck/middle/traits/fn.object_safety_violations.html
@@ -10717,6 +10748,7 @@ share/doc/rust/html/rustc_typeck/middle/traits/fn.predicates_for_generics.html
 share/doc/rust/html/rustc_typeck/middle/traits/fn.report_fulfillment_errors.html
 share/doc/rust/html/rustc_typeck/middle/traits/fn.report_overflow_error.html
 share/doc/rust/html/rustc_typeck/middle/traits/fn.suggest_new_overflow_limit.html
+share/doc/rust/html/rustc_typeck/middle/traits/fn.supertrait_def_ids.html
 share/doc/rust/html/rustc_typeck/middle/traits/fn.supertraits.html
 share/doc/rust/html/rustc_typeck/middle/traits/fn.trait_ref_for_builtin_bound.html
 share/doc/rust/html/rustc_typeck/middle/traits/fn.transitive_bounds.html
@@ -10734,6 +10766,7 @@ share/doc/rust/html/rustc_typeck/middle/traits/struct.ObligationCause.html
 share/doc/rust/html/rustc_typeck/middle/traits/struct.RegionObligation.html
 share/doc/rust/html/rustc_typeck/middle/traits/struct.SelectionCache.html
 share/doc/rust/html/rustc_typeck/middle/traits/struct.SelectionContext.html
+share/doc/rust/html/rustc_typeck/middle/traits/struct.SupertraitDefIds.html
 share/doc/rust/html/rustc_typeck/middle/traits/struct.VtableBuiltinData.html
 share/doc/rust/html/rustc_typeck/middle/traits/struct.VtableDefaultImplData.html
 share/doc/rust/html/rustc_typeck/middle/traits/struct.VtableImplData.html
@@ -10820,6 +10853,7 @@ share/doc/rust/html/rustc_typeck/middle/ty/fn.expr_ty.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.expr_ty_adjusted.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.expr_ty_opt.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.field_idx_strict.html
+share/doc/rust/html/rustc_typeck/middle/ty/fn.flatten_late_bound_regions.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.fn_is_variadic.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.fold_ty.html
 share/doc/rust/html/rustc_typeck/middle/ty/fn.free_region_from_def.html
@@ -12719,6 +12753,7 @@ share/doc/rust/html/std/intrinsics/fn.i8_add_with_overflow.html
 share/doc/rust/html/std/intrinsics/fn.i8_mul_with_overflow.html
 share/doc/rust/html/std/intrinsics/fn.i8_sub_with_overflow.html
 share/doc/rust/html/std/intrinsics/fn.init.html
+share/doc/rust/html/std/intrinsics/fn.init_dropped.html
 share/doc/rust/html/std/intrinsics/fn.log10f32.html
 share/doc/rust/html/std/intrinsics/fn.log10f64.html
 share/doc/rust/html/std/intrinsics/fn.log2f32.html
@@ -12984,15 +13019,21 @@ share/doc/rust/html/std/marker/struct.PhantomData.html
 share/doc/rust/html/std/marker/trait.Copy.html
 share/doc/rust/html/std/marker/trait.MarkerTrait.html
 share/doc/rust/html/std/marker/trait.PhantomFn.html
+share/doc/rust/html/std/marker/trait.Reflect.html
 share/doc/rust/html/std/marker/trait.Send.html
 share/doc/rust/html/std/marker/trait.Sized.html
 share/doc/rust/html/std/marker/trait.Sync.html
 share/doc/rust/html/std/mem/
+share/doc/rust/html/std/mem/constant.POST_DROP_U32.html
+share/doc/rust/html/std/mem/constant.POST_DROP_U64.html
+share/doc/rust/html/std/mem/constant.POST_DROP_U8.html
+share/doc/rust/html/std/mem/constant.POST_DROP_USIZE.html
 share/doc/rust/html/std/mem/fn.align_of.html
 share/doc/rust/html/std/mem/fn.align_of_val.html
 share/doc/rust/html/std/mem/fn.copy_lifetime.html
 share/doc/rust/html/std/mem/fn.copy_mut_lifetime.html
 share/doc/rust/html/std/mem/fn.drop.html
+share/doc/rust/html/std/mem/fn.dropped.html
 share/doc/rust/html/std/mem/fn.forget.html
 share/doc/rust/html/std/mem/fn.min_align_of.html
 share/doc/rust/html/std/mem/fn.min_align_of_val.html
@@ -13014,12 +13055,15 @@ share/doc/rust/html/std/net/addr/sidebar-items.js
 share/doc/rust/html/std/net/addr/struct.SocketAddrV4.html
 share/doc/rust/html/std/net/addr/struct.SocketAddrV6.html
 share/doc/rust/html/std/net/addr/trait.ToSocketAddrs.html
+share/doc/rust/html/std/net/enum.IpAddr.html
 share/doc/rust/html/std/net/enum.Ipv6MulticastScope.html
 share/doc/rust/html/std/net/enum.Shutdown.html
 share/doc/rust/html/std/net/enum.SocketAddr.html
+share/doc/rust/html/std/net/fn.lookup_addr.html
 share/doc/rust/html/std/net/fn.lookup_host.html
 share/doc/rust/html/std/net/index.html
 share/doc/rust/html/std/net/ip/
+share/doc/rust/html/std/net/ip/enum.IpAddr.html
 share/doc/rust/html/std/net/ip/enum.Ipv6MulticastScope.html
 share/doc/rust/html/std/net/ip/index.html
 share/doc/rust/html/std/net/ip/sidebar-items.js
@@ -13513,6 +13557,7 @@ share/doc/rust/html/std/ptr/fn.copy_nonoverlapping.html
 share/doc/rust/html/std/ptr/fn.null.html
 share/doc/rust/html/std/ptr/fn.null_mut.html
 share/doc/rust/html/std/ptr/fn.read.html
+share/doc/rust/html/std/ptr/fn.read_and_drop.html
 share/doc/rust/html/std/ptr/fn.read_and_zero.html
 share/doc/rust/html/std/ptr/fn.replace.html
 share/doc/rust/html/std/ptr/fn.swap.html
@@ -13977,6 +14022,7 @@ share/doc/rust/html/std/sys_common/wtf8/
 share/doc/rust/html/std/sys_common/wtf8/index.html
 share/doc/rust/html/std/sys_common/wtf8/sidebar-items.js
 share/doc/rust/html/std/thread/
+share/doc/rust/html/std/thread/fn.catch_panic.html
 share/doc/rust/html/std/thread/fn.current.html
 share/doc/rust/html/std/thread/fn.panicking.html
 share/doc/rust/html/std/thread/fn.park.html
@@ -14981,6 +15027,7 @@ share/doc/rust/html/syntax/print/pprust/fn.tts_to_string.html
 share/doc/rust/html/syntax/print/pprust/fn.ty_to_string.html
 share/doc/rust/html/syntax/print/pprust/fn.variant_to_string.html
 share/doc/rust/html/syntax/print/pprust/fn.visibility_qualified.html
+share/doc/rust/html/syntax/print/pprust/fn.where_clause_to_string.html
 share/doc/rust/html/syntax/print/pprust/index.html
 share/doc/rust/html/syntax/print/pprust/sidebar-items.js
 share/doc/rust/html/syntax/print/pprust/struct.CurrentCommentAndLiteral.html
@@ -15014,6 +15061,7 @@ share/doc/rust/html/syntax/print/pprust/with_hygiene/fn.tt_to_string.html
 share/doc/rust/html/syntax/print/pprust/with_hygiene/fn.tts_to_string.html
 share/doc/rust/html/syntax/print/pprust/with_hygiene/fn.ty_to_string.html
 share/doc/rust/html/syntax/print/pprust/with_hygiene/fn.variant_to_string.html
+share/doc/rust/html/syntax/print/pprust/with_hygiene/fn.where_clause_to_string.html
 share/doc/rust/html/syntax/print/pprust/with_hygiene/index.html
 share/doc/rust/html/syntax/print/pprust/with_hygiene/sidebar-items.js
 share/doc/rust/html/syntax/print/sidebar-items.js
