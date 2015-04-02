@@ -8,7 +8,6 @@ PKGNAME =		texlive_base-${V}
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
 
-# XXX really needed a bump?
 SHARED_LIBS =		kpathsea	7.0
 SHARED_LIBS +=		ptexenc		4.0
 
@@ -19,15 +18,14 @@ WANTLIB += jpeg lcms2 m openjpeg paper pcre pixman-1 png poppler
 WANTLIB += pthread pthread-stubs stdc++ tiff vpx xcb xcb-render
 WANTLIB += xcb-shm z zzip
 
-# XXX re-enable later
-#RUN_DEPENDS =		print/ghostscript/gnu \
-#			print/detex \
-#			print/dvi2tty \
-#			print/ps2eps \
-#			print/psutils \
-#			print/t1utils \
-#			print/latex-mk \
-#			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset
+RUN_DEPENDS =		print/ghostscript/gnu \
+			print/detex \
+			print/dvi2tty \
+			print/ps2eps \
+			print/psutils \
+			print/t1utils \
+			print/latex-mk \
+			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset
 
 LIB_DEPENDS =		devel/t1lib \
 			graphics/png \

@@ -39,9 +39,8 @@ MODRUBY_RUNDEP =	No
 MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
 
-RUN_DEPENDS-main =	texlive_base-${V}:print/texlive/base
-# Some fonts moved from PLIST-main to PLIST-buildset
-RUN_DEPENDS-main +=	texlive_texmf-buildset->=${V}:print/texlive/texmf,-buildset
+RUN_DEPENDS-main +=	texlive_base-${V}:print/texlive/base \
+			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset
 
 RUN_DEPENDS-full =	texlive_texmf-minimal-${V}:print/texlive/texmf,-main \
 			${MODPY_RUN_DEPENDS} \
@@ -100,17 +99,15 @@ do-install:
 	# I am told by upstream that any manual page not under
 	# texmf-dist/doc/man is intentionally this way and should not be
 	# moved into the system manual path. So be it.
-	mv ${PREFIX}/share/texmf-dist/doc/man/man1/*.1 \
-		${PREFIX}/man/man1/
-	mv ${PREFIX}/share/texmf-dist/doc/man/man5/*.5 \
-		${PREFIX}/man/man5/
+	mv ${PREFIX}/share/texmf-dist/doc/man/man1/*.1 ${PREFIX}/man/man1/
+	mv ${PREFIX}/share/texmf-dist/doc/man/man5/*.5 ${PREFIX}/man/man5/
 
 	# Info pages
-	mv ${PREFIX}/share/texmf-dist/doc/info/*.info \
-		${PREFIX}/info/
+	mv ${PREFIX}/share/texmf-dist/doc/info/*.info ${PREFIX}/info/
 
 	# adjust permissions
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/{share/texmf*,man/man*/*,info/*}
+	chown -R ${SHAREOWN}:${SHAREGRP} \
+		${PREFIX}/{share/texmf*,man/man*/*,info/*}
 
 # selfauto does not work with our legacy texmf paths, patch in paths.
 post-install:

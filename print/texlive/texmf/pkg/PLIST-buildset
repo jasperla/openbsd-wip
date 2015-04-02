@@ -118,6 +118,8 @@ share/texmf-dist/dvips/tetex/config.pk
 share/texmf-dist/dvips/tetex/config.www
 share/texmf-dist/dvips/times/
 share/texmf-dist/dvips/times/config.utm
+share/texmf-dist/dvips/xcolor/
+share/texmf-dist/dvips/xcolor/xcolor.pro
 share/texmf-dist/dvips/xdvi/
 share/texmf-dist/dvips/xdvi/config.xdvi
 share/texmf-dist/fonts/
@@ -4986,6 +4988,8 @@ share/texmf-dist/tex/latex/cm-super/
 share/texmf-dist/tex/latex/cm-super/type1ec.sty
 share/texmf-dist/tex/latex/colortbl/
 share/texmf-dist/tex/latex/colortbl/colortbl.sty
+share/texmf-dist/tex/latex/comment/
+share/texmf-dist/tex/latex/comment/comment.sty
 share/texmf-dist/tex/latex/courier/
 share/texmf-dist/tex/latex/courier/8rucr.fd
 share/texmf-dist/tex/latex/courier/omlucr.fd
@@ -5477,6 +5481,10 @@ share/texmf-dist/tex/latex/wasysym/
 share/texmf-dist/tex/latex/wasysym/uwasy.fd
 share/texmf-dist/tex/latex/wasysym/uwasyvar.fd
 share/texmf-dist/tex/latex/wasysym/wasysym.sty
+share/texmf-dist/tex/latex/xcolor/
+share/texmf-dist/tex/latex/xcolor/svgnam.def
+share/texmf-dist/tex/latex/xcolor/x11nam.def
+share/texmf-dist/tex/latex/xcolor/xcolor.sty
 share/texmf-dist/tex/luatex/
 share/texmf-dist/tex/luatex/hyph-utf8/
 share/texmf-dist/tex/luatex/hyph-utf8/etex.src
