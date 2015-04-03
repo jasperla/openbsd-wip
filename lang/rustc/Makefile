@@ -24,7 +24,7 @@ PKGNAME =		rustc-${V:C/\.[^.]*$//}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-doc =		rustc-doc-${V:C/\.[^.]*$//}
 
-BOOTSTRAP-amd64 =	rust-stage0-${BOOTSTRAP_V}-openbsd-${MACHINE_ARCH}.tar.gz
+BOOTSTRAP-amd64 =	rust-stage0-${BOOTSTRAP_V}-openbsd-amd64.tar.gz
 
 # TODO: wip
 # "4e7c5e5c" as same meaning as MAJOR
