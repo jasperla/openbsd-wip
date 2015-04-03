@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=	--disable-xml \
 			--disable-pulse \
 			--enable-dbus
 
-# XXX: Disabled for now as workrave isn't ported to libpanel-applet-4.0 yet
+# gnome support requires libpanelapplet
 CONFIGURE_ARGS+=	--disable-gnome
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
