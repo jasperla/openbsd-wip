@@ -1,12 +1,11 @@
 @comment $OpenBSD: PLIST,v 1.8 2013/08/20 22:05:58 zhuk Exp $
 @bin bin/workrave
+lib/girepository-1.0/Workrave-1.0.typelib
+lib/libworkrave-private-1.0.a
+lib/libworkrave-private-1.0.la
 share/applications/workrave.desktop
 share/dbus-1/services/org.workrave.Workrave.service
-share/examples/workrave/
-share/examples/workrave/sound/
-@sample ${SYSCONFDIR}/sound/
-share/examples/workrave/sound/events/
-@sample ${SYSCONFDIR}/sound/events/
+share/gir-1.0/Workrave-1.0.gir
 share/gnome-shell/
 share/gnome-shell/extensions/
 share/gnome-shell/extensions/workrave@workrave.org/

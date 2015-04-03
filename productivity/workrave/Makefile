@@ -11,14 +11,17 @@ HOMEPAGE=		http://www.workrave.org/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender Xss Xtst atk-1.0 atkmm-1.6 c cairo
-WANTLIB += cairomm-1.0 dbus-1 dbus-glib-1 expat ffi fontconfig
-WANTLIB += freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gdkmm-2.4
-WANTLIB += gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gstreamer-0.10 gthread-2.0 gtk-x11-2.0 gtkmm-2.4
-WANTLIB += harfbuzz lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
-WANTLIB += pcre pixman-1 png pthread pthread-stubs sigc-2.0 stdc++
-WANTLIB += xcb xcb-render xcb-shm xml2 z
+WANTLIB += Xinerama Xrandr Xrender Xss Xtst atk-1.0 atk-bridge-2.0
+WANTLIB += atkmm-1.6 atspi c cairo cairo-gobject cairomm-1.0 dbus-1
+WANTLIB += dbus-glib-1 epoxy expat ffi fontconfig freetype gconf-2
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0
+WANTLIB += glibmm-2.4 gmodule-2.0 gobject-2.0 graphite2 gstreamer-0.10
+WANTLIB += gthread-2.0 gtk-3 gtkmm-3.0 harfbuzz lzma m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre pixman-1
+WANTLIB += png pthread pthread-stubs sigc-2.0 stdc++ xcb xcb-render
+WANTLIB += xcb-shm xml2 z
+
+SHARED_LIBS +=		workrave-private-1.0      0.0
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=workrave/}
 
@@ -31,7 +34,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 LIB_DEPENDS=		devel/gconf2 \
 			multimedia/gstreamer-0.10/core \
 			x11/dbus-glib \
-			x11/gtk2mm>=2.24.4
+			x11/gtk3mm
 
 MODULES=		devel/gettext \
 			lang/python \
@@ -47,7 +50,8 @@ CONFIGURE_ARGS+=	--disable-xml \
 			--enable-dbus
 
 # gnome support requires libpanelapplet
-CONFIGURE_ARGS+=	--disable-gnome
+CONFIGURE_ARGS+=	--disable-gnome2 \
+			--disable-gnome3
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
