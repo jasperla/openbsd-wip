@@ -9,7 +9,6 @@ include/fdk-aac/machine_type.h
 lib/libfdk-aac.a
 lib/libfdk-aac.la
 @lib lib/libfdk-aac.so.${LIBfdk-aac_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/fdk-aac.pc
 share/doc/fdk-aac/
 share/doc/fdk-aac/NOTICE
