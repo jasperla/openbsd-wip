@@ -44,5 +44,6 @@ pre-configure:
 	@perl -pi -e \
 		's,share/doc/luminance-hdr,share/luminance-hdr,' \
 			${WRKSRC}/src/UI/UMessageBox.cpp
+	@perl -pi -e 's,-lrt,,g' ${WRKSRC}/test/CMakeLists.txt
 
 .include <bsd.port.mk>
