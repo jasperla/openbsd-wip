@@ -44,8 +44,7 @@ AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.11
 CONFIGURE_ARGS+=	--disable-xml \
 			--disable-pulse \
-			--enable-dbus \
-			--enable-monitors=record,screensaver,x11events
+			--enable-dbus
 
 # XXX: Disabled for now as workrave isn't ported to libpanel-applet-4.0 yet
 CONFIGURE_ARGS+=	--disable-gnome
