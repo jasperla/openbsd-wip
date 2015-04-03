@@ -131,9 +131,7 @@
 @man man/man1/pltotf.1
 @man man/man1/ps2frag.1
 @man man/man1/ps2pk.1
-@man man/man1/psjoin.1
 @man man/man1/pslatex.1
-@man man/man1/psutils.1
 @man man/man1/repstopdf.1
 @man man/man1/rubibtex.1
 @man man/man1/rumakeindex.1
