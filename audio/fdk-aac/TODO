@@ -1,2 +1,0 @@
-I only tested its ability to encode audio on amd64 and to play it back with
-third-party decoders.  So additional testing would be appreciated.
