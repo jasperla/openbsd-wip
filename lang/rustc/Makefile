@@ -7,7 +7,7 @@ COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
 V =			1.0.0-beta
-BOOTSTRAP_V =		${V}
+BOOTSTRAP_V =		0.0.0.20150327.5520801
 DISTNAME =		rustc-${V}
 
 MULTI_PACKAGES =	-main
