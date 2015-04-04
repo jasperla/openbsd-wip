@@ -32,6 +32,9 @@ LIB_DEPENDS=		sysutils/polkit
 # polkit(8) almost always needs to know the "active" session
 RUN_DEPENDS +=		sysutils/consolekit
 
+# /usr/local/share/dbus-1/system-services/
+RUN_DEPENDS +=		x11/dbus,-suid
+
 FAKE_FLAGS=		PREFIX=${TRUEPREFIX} \
 			SYSCONFDIR=${PREFIX}/share/examples/systembsd
 
