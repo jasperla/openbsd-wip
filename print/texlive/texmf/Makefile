@@ -68,20 +68,22 @@ SUBST_VARS +=		RUBY
 pre-configure:
 	@# Don't use builtin ruby.port.mk substitution. It uses
 	@# find, which takes an age on such a large directory.
-	for F in ${RUBY_ADJ_SCRIPTS}; do \
+	for F in ${RUBY_ADJ_FILES}; do \
 	    perl -pi -e '($$. == 1) && s@^.*$$@#!${RUBY}@' ${WRKSRC}/$$F; \
 	done
-	for F in ${WISH_ADJ_SCRIPTS}; do \
+	for F in ${WISH_ADJ_FILES}; do \
 	    ${MODTCL_WISH_ADJ} ${WRKSRC}/$$F; \
 	done
-	for F in ${LUA_ADJ_SCRIPTS}; do \
+	for F in ${TEXLUA_ADJ_FILES}; do \
+	    perl -pi -e '($$. == 1) && s@^.*$$@#!${PREFIX}/bin/texlua@' \
+	    ${WRKSRC}/$$F; \
+	done
+	for F in ${LUA_ADJ_FILES}; do \
 	    perl -pi -e '($$. == 1) && s@^.*$$@#!${MODLUA_BIN}@' ${WRKSRC}/$$F; \
 	done
-	for F in ${TEXLUA_ADJ_SCRIPTS}; do \
-	    perl -pi -e '($$. == 1) && s@^.*$$@#!${PREFIX}/bin/texlua@' ${WRKSRC}/$$F; \
-	done
-	for F in ${BASH_ADJ_SCRIPTS}; do \
-	    perl -pi -e '($$. == 1) && s@^.*$$@#!${LOCALBASE}/bin/bash@' ${WRKSRC}/$$F; \
+	for F in ${BASH_ADJ_FILES}; do \
+	    perl -pi -e '($$. == 1) && s@^.*$$@#!${LOCALBASE}/bin/bash@' \
+	    ${WRKSRC}/$$F; \
 	done
 	${SUBST_CMD} ${WRKSRC}/texmf-dist/scripts/context/stubs/unix/mtxrun
 
@@ -103,11 +105,11 @@ do-install:
 	mv ${PREFIX}/share/texmf-dist/doc/man/man5/*.5 ${PREFIX}/man/man5/
 
 	# Info pages
-	mv ${PREFIX}/share/texmf-dist/doc/info/*.info ${PREFIX}/info/
+	mv ${PREFIX}/share/texmf-dist/doc/info/*.info \
+		${PREFIX}/info/
 
 	# adjust permissions
-	chown -R ${SHAREOWN}:${SHAREGRP} \
-		${PREFIX}/{share/texmf*,man/man*/*,info/*}
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/{share/texmf*,man/man*/*,info/*}
 
 # selfauto does not work with our legacy texmf paths, patch in paths.
 post-install:

@@ -1,5 +1,4 @@
 # $OpenBSD$
-#SCRIPTS_DIR_ABS =	${WRKSRC}/texmf-dist/scripts
 SCRIPTS_DIR =	texmf-dist/scripts
 
 MODPY_ADJ_FILES =	${SCRIPTS_DIR}/de-macro/de-macro \
@@ -16,7 +15,7 @@ MODPY_ADJ_FILES =	${SCRIPTS_DIR}/de-macro/de-macro \
 			${SCRIPTS_DIR}/pythontex/pythontex2.py \
 			${SCRIPTS_DIR}/texliveonfly/texliveonfly.py
 
-RUBY_ADJ_SCRIPTS =	${SCRIPTS_DIR}/context/ruby/textools.rb \
+RUBY_ADJ_FILES =	${SCRIPTS_DIR}/context/ruby/textools.rb \
 			${SCRIPTS_DIR}/context/ruby/texmfstart.rb \
 			${SCRIPTS_DIR}/context/ruby/texexec.rb \
 			${SCRIPTS_DIR}/context/ruby/rlxtools.rb \
@@ -84,9 +83,9 @@ MODPERL_ADJ_FILES =	${SCRIPTS_DIR}/a2ping/a2ping.pl \
 			${SCRIPTS_DIR}/xindy/texindy.pl \
 			${SCRIPTS_DIR}/xindy/xindy.pl
 
-LUA_ADJ_SCRIPTS =
+LUA_ADJ_FILES =
 
-TEXLUA_ADJ_SCRIPTS =	${SCRIPTS_DIR}/cachepic/cachepic.tlu \
+TEXLUA_ADJ_FILES =	${SCRIPTS_DIR}/cachepic/cachepic.tlu \
 			${SCRIPTS_DIR}/checkcites/checkcites.lua \
 			${SCRIPTS_DIR}/context/stubs/unix/mtxrun \
 			${SCRIPTS_DIR}/context/stubs/win64/mtxrun.lua \
@@ -115,7 +114,7 @@ TEXLUA_ADJ_SCRIPTS =	${SCRIPTS_DIR}/cachepic/cachepic.tlu \
 			${SCRIPTS_DIR}/texlive/lua/texlive/getopt.tlu \
 			${SCRIPTS_DIR}/texlive/lua/texlive/tlpdb.tlu
 
-BASH_ADJ_SCRIPTS =	${SCRIPTS_DIR}/arara/arara.sh \
+BASH_ADJ_FILES =	${SCRIPTS_DIR}/arara/arara.sh \
 			${SCRIPTS_DIR}/dtxgen/dtxgen \
 			${SCRIPTS_DIR}/listbib/listbib \
 			${SCRIPTS_DIR}/logicpuzzle/createlpsudoku \
@@ -124,4 +123,4 @@ BASH_ADJ_SCRIPTS =	${SCRIPTS_DIR}/arara/arara.sh \
 			${SCRIPTS_DIR}/lua2dox/lua2dox_filter \
 			${SCRIPTS_DIR}/shipunov/biokey2html.sh
 
-WISH_ADJ_SCRIPTS =	${SCRIPTS_DIR}/epspdf/epspdftk.tcl
+WISH_ADJ_FILES =	${SCRIPTS_DIR}/epspdf/epspdftk.tcl
