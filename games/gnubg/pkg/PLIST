@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+!%%no_x11%%
 @bin bin/bearoffdump
 @bin bin/gnubg
 @bin bin/makebearoff
@@ -130,25 +131,6 @@ share/doc/gnubg/images/tutor.png
 share/doc/gnubg/images/tutorwarning.png
 share/gnubg/
 share/gnubg/boards.xml
-share/gnubg/flags/
-share/gnubg/flags/czech.png
-share/gnubg/flags/denmark.png
-share/gnubg/flags/england.png
-share/gnubg/flags/france.png
-share/gnubg/flags/germany.png
-share/gnubg/flags/iceland.png
-share/gnubg/flags/italy.png
-share/gnubg/flags/japan.png
-share/gnubg/flags/romania.png
-share/gnubg/flags/russia.png
-share/gnubg/flags/spain.png
-share/gnubg/flags/turkey.png
-share/gnubg/flags/usa.png
-share/gnubg/fonts/
-share/gnubg/fonts/COPYRIGHT.TXT.gz
-share/gnubg/fonts/Vera.ttf
-share/gnubg/fonts/VeraBd.ttf
-share/gnubg/fonts/VeraSeBd.ttf
 share/gnubg/gnubg.gtkrc
 share/gnubg/gnubg.sql
 share/gnubg/gnubg.wd
@@ -172,16 +154,6 @@ share/gnubg/met/ortega.xml
 share/gnubg/met/snowie.xml
 share/gnubg/met/woolsey.xml
 share/gnubg/met/zadeh.xml
-share/gnubg/pixmaps/
-share/gnubg/pixmaps/gnubg-big.png
-share/gnubg/scripts/
-share/gnubg/scripts/batch.py
-share/gnubg/scripts/batch_win.py
-share/gnubg/scripts/database.py
-share/gnubg/scripts/db_import.py
-share/gnubg/scripts/gnubg.py
-share/gnubg/scripts/matchseries.py
-share/gnubg/scripts/query_player.sh
 share/gnubg/sounds/
 share/gnubg/sounds/chequer.wav
 share/gnubg/sounds/dance.wav
@@ -195,32 +167,3 @@ share/gnubg/sounds/move.wav
 share/gnubg/sounds/resign.wav
 share/gnubg/sounds/roll.wav
 share/gnubg/sounds/take.wav
-share/gnubg/textures/
-share/gnubg/textures.txt
-share/gnubg/textures/EarthSand01.png
-share/gnubg/textures/Grass01.png
-share/gnubg/textures/Water01.png
-share/gnubg/textures/alder.png
-share/gnubg/textures/ash.png
-share/gnubg/textures/berch.png
-share/gnubg/textures/checkered.png
-share/gnubg/textures/felt.png
-share/gnubg/textures/hinge.png
-share/gnubg/textures/hinge2.png
-share/gnubg/textures/logo.png
-share/gnubg/textures/maple.png
-share/gnubg/textures/marble.png
-share/gnubg/textures/oak.png
-share/gnubg/textures/pine.png
-share/gnubg/textures/pine2.png
-share/gnubg/textures/redwood.png
-share/gnubg/textures/stain.png
-share/gnubg/textures/suede.png
-share/gnubg/textures/swirl.png
-share/gnubg/textures/wavesand01.png
-share/gnubg/textures/wood.png
-share/icons/hicolor/16x16/apps/gnubg.png
-share/icons/hicolor/22x22/apps/gnubg.png
-share/icons/hicolor/24x24/apps/gnubg.png
-share/icons/hicolor/32x32/apps/gnubg.png
-share/icons/hicolor/48x48/apps/gnubg.png
