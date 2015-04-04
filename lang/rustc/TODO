@@ -3,7 +3,6 @@ Packaging
 - bootstrap: need to have a really static bootstrapper
 
 - install
-  - move lib to lib/rustc ?
   - keep extrafilename ? (libs are like lib/libarena-4e7c5e5c.so)
       it is used for ABI
       the use of SHARED_LIBS in ports should superseed it (we have MAJOR/MINOR)

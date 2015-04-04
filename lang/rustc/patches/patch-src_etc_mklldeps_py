@@ -1,8 +1,8 @@
 $OpenBSD$
 Configure linking to estdc++ (stdc++ library from devel/gcc, not from base)
---- src/etc/mklldeps.py.orig	Tue Feb  3 10:43:06 2015
-+++ src/etc/mklldeps.py	Fri Feb  6 06:09:45 2015
-@@ -79,12 +79,12 @@ for lib in out.strip().split(' '):
+--- src/etc/mklldeps.py.orig	Thu Apr  2 18:29:13 2015
++++ src/etc/mklldeps.py	Fri Apr  3 20:04:01 2015
+@@ -88,12 +88,12 @@ for lib in out.strip().split(' '):
  out = run([llconfig, '--cxxflags'])
  if enable_static == '1':
      assert('stdlib=libc++' not in out)
