@@ -3,8 +3,8 @@
 SHARED_ONLY=	Yes
 
 COMMENT=	jabber client written in pygtk
-DISTNAME=	gajim-0.16-beta2
-REVISION= 	0
+DISTNAME=	gajim-0.16.1
+EXTRACT_SUFX =	.tar.bz2
 CATEGORIES=	net x11
 
 MASTER_SITES=	${HOMEPAGE}/downloads/0.16/
@@ -43,6 +43,6 @@ BUILD_DEPENDS=	${COMMON_DEPENDS}
 RUN_DEPENDS=	${COMMON_DEPENDS} \
 		devel/desktop-file-utils \
 		devel/py-asn1 \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 .include <bsd.port.mk>
