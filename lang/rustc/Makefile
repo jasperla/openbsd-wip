@@ -1,13 +1,12 @@
 # $OpenBSD$
 
-# bootstrap only available for amd64, for now
+# snapshots are only available for amd64, for now
 ONLY_FOR_ARCHS-main =	amd64
 
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
 V =			1.0.0-beta
-BOOTSTRAP_V =		0.0.0.20150327.5520801
 DISTNAME =		rustc-${V}
 
 MULTI_PACKAGES =	-main
@@ -16,7 +15,8 @@ FLAVOR ?=
 
 PKGNAME-main =		${PKGNAME}
 
-BOOTSTRAP-amd64 =	rust-stage0-${BOOTSTRAP_V}-openbsd-amd64.tar.gz
+# the snapshot version should be the version in src/snapshots.txt
+SNAPSHOT-amd64 =	rust-stage0-2015-03-27-5520801-openbsd-x86_64-afab969e747a3fc72c357155ca82891d2b485b36.tar.bz2
 
 CATEGORIES =		lang
 
@@ -33,17 +33,17 @@ WANTLIB-main =		${WANTLIB} c m pthread
 WANTLIB-doc =
 
 MASTER_SITES =		https://static.rust-lang.org/dist/
-MASTER_SITES0 =		http://semarie.free.fr/rust/
+MASTER_SITES0 =		http://semarie.free.fr/rustc/
 
 EXTRACT_SUFX =		-src.tar.gz
 
 DIST_SUBDIR =		rustc
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
-.if defined(BOOTSTRAP-${MACHINE_ARCH})
-DISTFILES +=            ${BOOTSTRAP-${MACHINE_ARCH}}:0
+.if defined(SNAPSHOT-${MACHINE_ARCH})
+DISTFILES +=            ${SNAPSHOT-${MACHINE_ARCH}}:0
 .endif
 
-SUPDISTFILES =		${BOOTSTRAP-amd64}:0
+SUPDISTFILES =		${SNAPSHOT-amd64}:0
 
 # MACHINE_ARCH to TRIPLE_ARCH conversion
 .if "${MACHINE_ARCH}" == "amd64"
@@ -102,29 +102,14 @@ ALL_TARGET +=		rustc-stage3 \
 			${TRIPLE_ARCH}/stage3/bin/rustdoc
 TEST_TARGET ?=		check
 
-# create a wrapper for bootstrap (if needed)
-post-extract:
-	if [ ! -x ${WRKDIR}/rust-stage0/bin/rustc ] ; then \
-		echo '#!/bin/sh' > ${WRKDIR}/rust-stage0/bin/rustc; \
-		echo 'LD_LIBRARY_PATH="${WRKDIR}/rust-stage0/lib:$${LD_LIBRARY_PATH}" exec ${WRKDIR}/rust-stage0/bin/rustc.bin "$${@}"' >> ${WRKDIR}/rust-stage0/bin/rustc; \
-		chmod +x ${WRKDIR}/rust-stage0/bin/rustc; fi
-
 # - check datasize limit before configuring (and building)
-# - when rebuilding a rustc version with a bootstrap of same version, skip
-#   stage0 flags and use stage1, because stage0 contains tricks for previous
-#   snapshots.
 pre-configure:
 	@if [ `ulimit -d` -lt 1572864 ]; then \
 		echo datasize limit is too low - amd64 build takes approx 1.5GB; \
 		exit 1; fi
-.if "${V}" == "${BOOTSTRAP_V}"
-	perl -pi -e \
-		's|^ifneq \(\$$\(strip .\(CFG_BUILD\)\),.\(strip .\(3\)\)\)|ifeq (1,1)|' \
-		${WRKSRC}/mk/main.mk
-.endif
 
 # - remove autodetected programs
-# - copy bootstrapper in stage0/bin (avoid downloading a snapshot)
+# - copy snapshot in stage0 (avoid downloading a snapshot)
 post-configure:
 .for _v in CFG_CURLORWGET CFG_GIT CFG_CLANG CFG_VALGRIND CFG_PERF CFG_ISCC \
 	CFG_JAVAC CFG_ANTLR4 CFG_BISON CFG_PANDOC CFG_GDB CFG_LLDB \
@@ -133,6 +118,8 @@ post-configure:
 .endfor
 	cp ${WRKDIR}/rust-stage0/bin/rustc \
 		${WRKBUILD}/${TRIPLE_ARCH}/stage0/bin
+	cp ${WRKDIR}/rust-stage0/lib/lib*.so* \
+		${WRKBUILD}/${TRIPLE_ARCH}/stage0/lib
 
 
 # do-install: don't use the default install target
@@ -165,23 +152,5 @@ do-install:
 	cp -R ${WRKBUILD}/doc ${PREFIX}/share/doc/rust/html
 	chmod -R a+rX ${PREFIX}/share/doc/rust/html
 .endif
-
-
-# Create a bootstrapper.
-# The archive in ${WRKDIR}/bootstrap should be suitable for bootstrapping.
-# NOTE: currently, the rustc.bin is *dynamically linked*
-#       so, include needed system libraries.
-#	a wrapper will be create at post-extract, if need
-bootstrap: build
-	rm -rf ${WRKDIR}/bootstrap
-	${INSTALL_PROGRAM_DIR} ${WRKDIR}/bootstrap/rust-stage0/{bin,lib}
-	${INSTALL_PROGRAM} ${WRKBUILD}/${TRIPLE_ARCH}/stage3/bin/rustc \
-		${WRKDIR}/bootstrap/rust-stage0/bin/rustc.bin
-	ldd ${WRKDIR}/bootstrap/rust-stage0/bin/rustc.bin \
-		| sed -ne 's,^.* rlib [^/]*,,p' \
-		| xargs -J % -- cp % ${WRKDIR}/bootstrap/rust-stage0/lib
-	umask 022 && cd ${WRKDIR}/bootstrap \
-		&& tar zcf rust-stage0-${V}-openbsd-${MACHINE_ARCH}.tar.gz \
-			rust-stage0
 
 .include <bsd.port.mk>
