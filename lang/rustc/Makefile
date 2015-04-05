@@ -100,7 +100,7 @@ CONFIGURE_ARGS +=	--llvm-root="${LOCAL_LLVM_FOR_RUST}"
 
 ALL_TARGET +=		rustc-stage3 \
 			${TRIPLE_ARCH}/stage3/bin/rustdoc
-TEST_TARGET ?=		check
+TEST_TARGET =		check
 
 # - check datasize limit before configuring (and building)
 pre-configure:
@@ -155,7 +155,8 @@ do-install:
 
 # - disable core generation
 do-test:
-	ulimit -c 0 && env -i ${ALL_TEST_ENV} ${MAKE_PROGRAM} \
+	ulimit -c 0 && cd ${WRKBUILD} && \
+		env -i ${ALL_TEST_ENV} ${MAKE_PROGRAM} \
 		${ALL_TEST_FLAGS} -f ${MAKE_FILE} \
 		${TEST_TARGET} ${TEST_LOG}
 
