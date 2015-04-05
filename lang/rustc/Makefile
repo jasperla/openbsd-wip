@@ -153,4 +153,10 @@ do-install:
 	chmod -R a+rX ${PREFIX}/share/doc/rust/html
 .endif
 
+# - disable core generation
+do-test:
+	ulimit -c 0 && env -i ${ALL_TEST_ENV} ${MAKE_PROGRAM} \
+		${ALL_TEST_FLAGS} -f ${MAKE_FILE} \
+		${TEST_TARGET} ${TEST_LOG}
+
 .include <bsd.port.mk>
