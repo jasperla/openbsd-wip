@@ -1759,6 +1759,8 @@ share/arduino/libraries/WiFi/src/utility/wifi_drv.h
 share/arduino/libraries/WiFi/src/utility/wifi_spi.h
 share/arduino/libraries/WiFi/src/utility/wl_definitions.h
 share/arduino/libraries/WiFi/src/utility/wl_types.h
+share/arduino/mk/
+share/arduino/mk/alibs.mk
 share/arduino/sam/
 share/arduino/sam/boards.txt
 share/arduino/sam/cores/

@@ -92,18 +92,25 @@ VARIANT = standard
 #
 # To use the SD library:
 # LIBRARIES=SD File utility/SdFile utility/SdVolume utility/Sd2Card
-LIBRARIES=
+LIBRARIES=LiquidCrystal
 
 ############################################################################
 # Below here nothing should be changed...
 
-ARDUINO = /usr/local/share/arduino/
-.PATH: $(ARDUINO)/avr/cores/arduino ${LIBRARIES:S|^|$(ARDUINO)/avr/libraries/|g}
+ARDUINO = arduino-support
 AVR_TOOLS_PATH = /usr/local/bin
-SRC = wiring.c wiring_analog.c wiring_digital.c \
-wiring_pulse.c wiring_shift.c WInterrupts.c hooks.c
-CXXSRC = HardwareSerial.cpp WMath.cpp Print.cpp WString.cpp \
-	${LIBRARIES:S|$|.cpp|g}
+SRC = arduino-support/avr/cores/arduino/wiring.c \
+      arduino-support/avr/cores/arduino/wiring_analog.c \
+      arduino-support/avr/cores/arduino/wiring_digital.c \
+      arduino-support/avr/cores/arduino/wiring_pulse.c \
+      arduino-support/avr/cores/arduino/wiring_shift.c \
+      arduino-support/avr/cores/arduino/WInterrupts.c \
+      arduino-support/avr/cores/arduino/hooks.c
+CXXSRC = arduino-support/avr/cores/arduino/HardwareSerial.cpp \
+	 arduino-support/avr/cores/arduino/WMath.cpp \
+	 arduino-support/avr/cores/arduino/Print.cpp \
+	 arduino-support/avr/cores/arduino/WString.cpp
+
 FORMAT = ihex
 
 
@@ -117,8 +124,9 @@ DEBUG = stabs
 
 # C options
 COPT = s
-CDEFS = -DF_CPU=$(F_CPU) -DARDUINO=100
-CINCS = -I$(ARDUINO)/avr/cores/arduino $(LIBINC) \
+CDEFS = -DF_CPU=$(F_CPU) -DARDUINO=100 -DARDUINO_ARCH_AVR
+CINCS = $(LIBINC) \
+	-I${ARDUINO}/avr/cores/arduino \
 	-I$(ARDUINO)/avr/variants/$(VARIANT)
 CSTANDARD = -std=gnu99
 CDEBUG = -g$(DEBUG)
@@ -131,7 +139,7 @@ CFLAGS = $(CDEBUG) $(CDEFS) $(CINCS) -O$(OPT) $(CWARN) \
 
 # C++ options
 CXXOPT = ${COPT}
-CXXDEFS = -DF_CPU=$(F_CPU) -DARDUINO=100
+CXXDEFS = -DF_CPU=$(F_CPU) -DARDUINO=100 -DARDUINO_ARCH_AVR
 CXXINCS = ${CINCS}
 CXXSTANDARD =
 CXXDEBUG = ${CDEBUG}
@@ -143,9 +151,9 @@ CXXFLAGS = $(CXXDEBUG) $(CXXDEFS) $(CXXINCS) -O$(CXXOPT) $(CXXWARN) \
 
 # Linker stuff
 LDFLAGS = -lm -Wl,--gc-sections
-ROOTLIBINCS=${LIBRARIES:S|^|-I$(ARDUINO)/avr/libraries/|g}
-UTILITYLIBINCS=${ROOTLIBINCS:S|$|/utility/|g}
-LIBINC=${ROOTLIBINCS} ${UTILITYLIBINCS}
+#ROOTLIBINCS=${LIBRARIES:S|^|-I$(ARDUINO)/avr/libraries/|g}
+#UTILITYLIBINCS=${ROOTLIBINCS:S|$|/utility/|g}
+#LIBINC=${ROOTLIBINCS} ${UTILITYLIBINCS}
 
 # Assembler stuff
 #ASFLAGS = -Wa,-adhlns=$(<:.S=.lst),-gstabs
@@ -170,6 +178,7 @@ REMOVE = rm -f
 REMOVEDIR = rmdir
 MKDIR = mkdir -p
 MV = mv -f
+LNDIR = lndir
 
 # Define all object files.
 OBJ = $(SRC:.c=.o) $(CXXSRC:.cpp=.o) $(ASRC:.S=.o)
@@ -190,7 +199,10 @@ all: applet_files build sizeafter
 build: mkdirs elf hex
 
 mkdirs:
-	$(MKDIR) utility
+	if [ ! -d ${ARDUINO} ]; then \
+		mkdir -p ${ARDUINO}; \
+		${LNDIR} /usr/local/share/arduino ${ARDUINO}; \
+	fi
 
 # Here is the "preprocessing".
 # It creates a .cpp file based with the same name as the .ino file.
@@ -201,7 +213,7 @@ mkdirs:
 # Then the .cpp file will be compiled. Errors during compile will
 # refer to this new, automatically generated, file.
 # Not the original .ino file you actually edit...
-applet_files: $(TARGET).ino
+applet_files: $(TARGET).ino mkdirs
 	test -d applet || mkdir applet
 	echo '#include "Arduino.h"' > applet/$(TARGET).cpp
 	echo '#ifdef __cplusplus' >> applet/$(TARGET).cpp
@@ -304,8 +316,8 @@ applet/core.a: $(OBJ)
 clean:
 	$(REMOVE) applet/$(TARGET).hex applet/$(TARGET).eep applet/$(TARGET).cof applet/$(TARGET).elf \
 	applet/$(TARGET).map applet/$(TARGET).sym applet/$(TARGET).lss applet/core.a \
-	$(OBJ) $(LST) $(SRC:.c=.s) $(SRC:.c=.d) $(CXXSRC:.cpp=.s) $(CXXSRC:.cpp=.d) utility/*
-	if [ -d utility ]; then $(REMOVEDIR) utility; fi
+	$(OBJ) $(LST) $(SRC:.c=.s) $(SRC:.c=.d) $(CXXSRC:.cpp=.s) $(CXXSRC:.cpp=.d)
+	if [ -d arduino-support ]; then $(REMOVE) -rf arduino-support; fi
 
 .PHONY:	all build elf hex eep lss sym program coff extcoff clean applet_files sizebefore sizeafter
 

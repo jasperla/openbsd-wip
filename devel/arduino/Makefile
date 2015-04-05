@@ -60,5 +60,9 @@ do-install:
 	#	${WRKSRC}/build/shared/reference.zip
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share
 	@find ${PREFIX} -type f -name \*.orig -exec rm '{}' \;
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/arduino/mk
+	@${SUBST_CMD} -c ${FILESDIR}/alibs.mk ${PREFIX}/share/arduino/mk/alibs.mk
+	@chown ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/arudino/mk/alibs.mk
+
 
 .include <bsd.port.mk>
