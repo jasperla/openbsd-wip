@@ -1,0 +1,21 @@
+$OpenBSD$
+--- server/CVCMIServer.cpp.orig	Sun Nov  2 10:21:25 2014
++++ server/CVCMIServer.cpp	Thu Nov  6 20:54:51 2014
+@@ -559,7 +559,7 @@ static void handleCommandOptions(int argc, char *argv[
+ 	}
+ }
+ 
+-#if defined(__GNUC__) && !defined (__MINGW32__) && !defined(VCMI_ANDROID)
++#if defined(__GNUC__) && !defined (__MINGW32__) && !defined(VCMI_ANDROID) && !defined (VCMI_BSD)
+ void handleLinuxSignal(int sig)
+ {
+ 	const int STACKTRACE_SIZE = 100;
+@@ -590,7 +590,7 @@ int main(int argc, char** argv)
+ {
+ 	// Installs a sig sev segmentation violation handler
+ 	// to log stacktrace
+-	#if defined(__GNUC__) && !defined (__MINGW32__) && !defined(VCMI_ANDROID)
++	#if defined(__GNUC__) && !defined (__MINGW32__) && !defined(VCMI_ANDROID) && !defined (VCMI_BSD)
+ 	signal(SIGSEGV, handleLinuxSignal);
+ 	#endif
+ 

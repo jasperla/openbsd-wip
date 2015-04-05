@@ -1,0 +1,12 @@
+$OpenBSD$
+--- Global.h.orig	Wed Apr  1 10:34:22 2015
++++ Global.h	Sun Apr  5 13:16:44 2015
+@@ -57,7 +57,7 @@ static_assert(sizeof(bool) == 1, "Bool needs to be 1 b
+ #  ifdef __ANDROID__
+ #    define VCMI_ANDROID 
+ #  endif
+-#elif defined(__FreeBSD_kernel__) || defined(__FreeBSD__)
++#elif defined(__FreeBSD_kernel__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ #  define VCMI_UNIX
+ #  define VCMI_XDG
+ #  define VCMI_FREEBSD
