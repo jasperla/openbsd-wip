@@ -53,25 +53,31 @@ TARGET = ${.CURDIR:C/.*\///g}
 # Below are some known working hardware configurations. If you find other
 # working configurations, please feed them back to the OpenBSD porting team.
 
-## you might use this for newer boards like the UNO
-UPLOAD_RATE = 115200
 PORT = /dev/cuaU0
+
+## Arduino Uno
+UPLOAD_RATE = 115200
 AVRDUDE_PROGRAMMER = arduino
 MCU = atmega328p
 F_CPU = 16000000
 VARIANT = standard
 
-## for an arduino mega
+# Arduino Duemilanove
 #UPLOAD_RATE = 57600
-#PORT = /dev/cuaU0
+#AVRDUDE_PROGRAMMER = arduino
+#MCU = atmega328p
+#F_CPU = 16000000
+#VARIANT = standard
+
+## Arduino Mega
+#UPLOAD_RATE = 57600
 #AVRDUDE_PROGRAMMER = arduino
 #MCU = atmega1280
 #F_CPU = 16000000
 #VARIANT = mega
 
-## or this for an older arduino
+## older Arduino
 #UPLOAD_RATE = 19200
-#PORT = /dev/cuaU0
 #AVRDUDE_PROGRAMMER = stk500
 #MCU = atmega328p
 #F_CPU = 16000000
@@ -95,7 +101,7 @@ ARDUINO = /usr/local/share/arduino/
 .PATH: $(ARDUINO)/avr/cores/arduino ${LIBRARIES:S|^|$(ARDUINO)/avr/libraries/|g}
 AVR_TOOLS_PATH = /usr/local/bin
 SRC = wiring.c wiring_analog.c wiring_digital.c \
-wiring_pulse.c wiring_shift.c WInterrupts.c
+wiring_pulse.c wiring_shift.c WInterrupts.c hooks.c
 CXXSRC = HardwareSerial.cpp WMath.cpp Print.cpp WString.cpp \
 	${LIBRARIES:S|$|.cpp|g}
 FORMAT = ihex
