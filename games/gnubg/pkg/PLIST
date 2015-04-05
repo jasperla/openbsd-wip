@@ -10,6 +10,7 @@
 @man man/man6/makebearoff.6.gz
 @man man/man6/makehyper.6.gz
 @man man/man6/makeweights.6.gz
+share/applications/gnubg.desktop
 share/doc/gnubg/
 share/doc/gnubg/allabout.html
 share/doc/gnubg/gnubg.html
@@ -167,3 +168,17 @@ share/gnubg/sounds/move.wav
 share/gnubg/sounds/resign.wav
 share/gnubg/sounds/roll.wav
 share/gnubg/sounds/take.wav
+share/locale/cs/LC_MESSAGES/gnubg.mo
+share/locale/da/LC_MESSAGES/gnubg.mo
+share/locale/de/LC_MESSAGES/gnubg.mo
+share/locale/en_US/
+share/locale/en_US/LC_MESSAGES/
+share/locale/en_US/LC_MESSAGES/gnubg.mo
+share/locale/es/LC_MESSAGES/gnubg.mo
+share/locale/fr/LC_MESSAGES/gnubg.mo
+share/locale/is/LC_MESSAGES/gnubg.mo
+share/locale/it/LC_MESSAGES/gnubg.mo
+share/locale/ja/LC_MESSAGES/gnubg.mo
+share/locale/ro/LC_MESSAGES/gnubg.mo
+share/locale/ru/LC_MESSAGES/gnubg.mo
+share/locale/tr/LC_MESSAGES/gnubg.mo

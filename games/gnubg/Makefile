@@ -50,11 +50,18 @@ WANTLIB += pangox-1.0 pixman-1 png pthread-stubs python2.7 stdc++
 WANTLIB += util vorbis vorbisfile xcb xcb-dri2 xcb-glx xcb-render
 WANTLIB += xcb-shm z
 
-MODULES +=		lang/python
+MODULES +=		lang/python \
+			x11/gnome
+MODGNOME_TOOLS =	desktop-file-utils \
+			gtk-update-icon-cache
 
 LIB_DEPENDS +=		${MODPY_LIB_DEPENDS} \
 			audio/libcanberra,-gtk \
 			x11/gtkglext
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
+	${INSTALL_DATA} ${FILESDIR}/gnubg.desktop ${PREFIX}/share/applications/
 .endif
 
 .include <bsd.port.mk>
