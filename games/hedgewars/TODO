@@ -1,5 +1,1 @@
-- Problem on startup: Crash in the startup code loading the OpenGL unit:
-  crashes in ld.so in _dl_load_shlib because second argument is NULL.
-  Somehow, _dl_objects must be set to NULL along the way.  Setting a watchpoint
-  in GDB works neither for base nor ports gdb.  Using a simple test program
-  that just loads the opengl unit works just fine.  No clue how to proceed. :(
+- crashes every time when trying to fire a weapon

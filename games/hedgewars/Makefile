@@ -7,12 +7,11 @@ COMMENT-server =	Worms-like strategy game, server
 
 MULTI_PACKAGES =	-main -server
 
-SHARED_LIBS +=  hwphysfs                  0.0 # 2.1
 SHARED_LIBS +=  avwrapper                 0.0 # 0.0
 SHARED_LIBS +=  physlayer                 0.0 # 0.0
 
-R =			0.9.20
-V =			$R.5
+V =			0.9.21
+#V =			$R.5
 DISTNAME =		hedgewars-src-$V
 PKGNAME-main =		hedgewars-$V
 PKGNAME-server =	hedgewars-server-$V
@@ -27,10 +26,13 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB-main += QtGui QtNetwork SDL SDL_image SDL_mixer SDL_net SDL_ttf
-WANTLIB-main += avcodec avformat avutil c m png pthread stdc++ glut
-WANTLIB-main += z ${MODLUA_WANTLIB} ${MODQT4_WANTLIB}
+WANTLIB-main += avcodec avformat avutil c m png pthread stdc++
+WANTLIB-main += physfs z ${MODLUA_WANTLIB} ${MODQT4_WANTLIB}
 
-WANTLIB-server = c m pthread util ${MODLIBICONV_WANTLIB}
+# dlopen()ed; do not remove.
+WANTLIB-main += GL GLU glut
+
+WANTLIB-server = c m pthread z ${MODLIBICONV_WANTLIB}
 
 MASTER_SITES =		http://download.gna.org/hedgewars/
 EXTRACT_SUFX =		.tar.bz2
@@ -45,6 +47,7 @@ LIB_DEPENDS-main =	devel/sdl-image \
 			devel/sdl-ttf \
 			devel/sdl-net \
 			devel/sdl-mixer \
+			devel/physfs \
 			graphics/ffmpeg \
 			graphics/freeglut \
 			${MODQT4_LIB_DEPENDS}
@@ -64,12 +67,15 @@ BUILD_DEPENDS +=	devel/hs-vector \
 			devel/hs-dataenc \
 			devel/hs-random \
 			devel/hs-hslogger \
-			textproc/hs-bytestring-show
+			security/hs-SHA \
+			security/hs-entropy \
+			textproc/hs-bytestring-show \
+			archivers/hs-zlib
 MODGHC_BUILD =		nort
 .endif
 
 NO_TEST =		Yes
 
-WRKDIST =		${WRKDIR}/hedgewars-src-$R
+WRKDIST =		${WRKDIR}/hedgewars-src-$V
 
 .include <bsd.port.mk>

@@ -2,8 +2,9 @@
 @bin bin/hedgewars
 @bin bin/hwengine
 @lib lib/libavwrapper.so.${LIBavwrapper_VERSION}
-@lib lib/libhwphysfs.so.${LIBhwphysfs_VERSION}
 @lib lib/libphyslayer.so.${LIBphyslayer_VERSION}
+share/appdata/
+share/appdata/hedgewars.appdata.xml
 share/hedgewars/
 share/hedgewars/Data/
 share/hedgewars/Data/Fonts/
@@ -481,6 +482,7 @@ share/hedgewars/Data/Graphics/Hats/clown-copper.png
 share/hedgewars/Data/Graphics/Hats/clown-crossed.png
 share/hedgewars/Data/Graphics/Hats/clown.png
 share/hedgewars/Data/Graphics/Hats/constructor.png
+share/hedgewars/Data/Graphics/Hats/cratehider.png
 share/hedgewars/Data/Graphics/Hats/crown.png
 share/hedgewars/Data/Graphics/Hats/cyborg1.png
 share/hedgewars/Data/Graphics/Hats/cyborg2.png
@@ -502,6 +504,7 @@ share/hedgewars/Data/Graphics/Hats/fr_banana.png
 share/hedgewars/Data/Graphics/Hats/fr_lemon.png
 share/hedgewars/Data/Graphics/Hats/fr_orange.png
 share/hedgewars/Data/Graphics/Hats/fr_pumpkin.png
+share/hedgewars/Data/Graphics/Hats/fr_tomato.png
 share/hedgewars/Data/Graphics/Hats/hair_blue.png
 share/hedgewars/Data/Graphics/Hats/hair_green.png
 share/hedgewars/Data/Graphics/Hats/hair_grey.png
@@ -550,6 +553,7 @@ share/hedgewars/Data/Graphics/Hats/poke_slowpoke.png
 share/hedgewars/Data/Graphics/Hats/poke_squirtle.png
 share/hedgewars/Data/Graphics/Hats/poke_voltorb.png
 share/hedgewars/Data/Graphics/Hats/policecap.png
+share/hedgewars/Data/Graphics/Hats/policegirl.png
 share/hedgewars/Data/Graphics/Hats/punkman.png
 share/hedgewars/Data/Graphics/Hats/quotecap.png
 share/hedgewars/Data/Graphics/Hats/rasta.png
@@ -747,6 +751,14 @@ share/hedgewars/Data/Graphics/Missions/Training/Basic_Training_-_Grenade@2x.png
 share/hedgewars/Data/Graphics/Missions/Training/Basic_Training_-_Rope@2x.png
 share/hedgewars/Data/Graphics/Missions/Training/Basic_Training_-_Shotgun@2x.png
 share/hedgewars/Data/Graphics/Missions/Training/Basic_Training_-_Sniper_Rifle@2x.png
+share/hedgewars/Data/Graphics/Missions/Training/ClimbHome@2x.png
+share/hedgewars/Data/Graphics/Missions/Training/Target_Practice_-_Bazooka_easy@2x.png
+share/hedgewars/Data/Graphics/Missions/Training/Target_Practice_-_Bazooka_hard@2x.png
+share/hedgewars/Data/Graphics/Missions/Training/Target_Practice_-_Cluster_Bomb@2x.png
+share/hedgewars/Data/Graphics/Missions/Training/Target_Practice_-_Grenade_easy@2x.png
+share/hedgewars/Data/Graphics/Missions/Training/Target_Practice_-_Grenade_hard@2x.png
+share/hedgewars/Data/Graphics/Missions/Training/Target_Practice_-_Homing_Bee@2x.png
+share/hedgewars/Data/Graphics/Missions/Training/Target_Practice_-_Shotgun@2x.png
 share/hedgewars/Data/Graphics/Missions/Training/User_Mission_-_Bamboo_Thicket@2x.png
 share/hedgewars/Data/Graphics/Missions/Training/User_Mission_-_Dangerous_Ducklings@2x.png
 share/hedgewars/Data/Graphics/Missions/Training/User_Mission_-_Diver@2x.png
@@ -813,6 +825,8 @@ share/hedgewars/Data/Graphics/botlevels.png
 share/hedgewars/Data/Graphics/cheese.png
 share/hedgewars/Data/Graphics/cheese@2x.png
 share/hedgewars/Data/Graphics/cleaver.png
+share/hedgewars/Data/Graphics/custom1.png
+share/hedgewars/Data/Graphics/custom2.png
 share/hedgewars/Data/Graphics/dynamite.png
 share/hedgewars/Data/Graphics/hhMask.png
 share/hedgewars/Data/Graphics/hwengine.png
@@ -829,6 +843,7 @@ share/hedgewars/Data/Locale/campaigns_de.txt
 share/hedgewars/Data/Locale/campaigns_el.txt
 share/hedgewars/Data/Locale/campaigns_en.txt
 share/hedgewars/Data/Locale/campaigns_pt_BR.txt
+share/hedgewars/Data/Locale/campaigns_uk.txt
 share/hedgewars/Data/Locale/cs.lua
 share/hedgewars/Data/Locale/cs.txt
 share/hedgewars/Data/Locale/da.lua
@@ -891,6 +906,7 @@ share/hedgewars/Data/Locale/missions_pt.txt
 share/hedgewars/Data/Locale/missions_pt_BR.txt
 share/hedgewars/Data/Locale/missions_ru.txt
 share/hedgewars/Data/Locale/missions_tr.txt
+share/hedgewars/Data/Locale/missions_uk.txt
 share/hedgewars/Data/Locale/nl.txt
 share/hedgewars/Data/Locale/pl.lua
 share/hedgewars/Data/Locale/pl.txt
@@ -938,9 +954,12 @@ share/hedgewars/Data/Maps/Basketball/
 share/hedgewars/Data/Maps/Basketball/desc.txt
 share/hedgewars/Data/Maps/Basketball/map.cfg
 share/hedgewars/Data/Maps/Basketball/map.lua
-share/hedgewars/Data/Maps/Basketball/map.png
-share/hedgewars/Data/Maps/Basketball/mask.png
 share/hedgewars/Data/Maps/Basketball/preview.png
+share/hedgewars/Data/Maps/BasketballField/
+share/hedgewars/Data/Maps/BasketballField/map.cfg
+share/hedgewars/Data/Maps/BasketballField/map.png
+share/hedgewars/Data/Maps/BasketballField/mask.png
+share/hedgewars/Data/Maps/BasketballField/preview.png
 share/hedgewars/Data/Maps/Bath/
 share/hedgewars/Data/Maps/Bath/map.cfg
 share/hedgewars/Data/Maps/Bath/map.png
@@ -989,6 +1008,11 @@ share/hedgewars/Data/Maps/Cheese/map.cfg
 share/hedgewars/Data/Maps/Cheese/map.png
 share/hedgewars/Data/Maps/Cheese/mask.png
 share/hedgewars/Data/Maps/Cheese/preview.png
+share/hedgewars/Data/Maps/ClimbHome/
+share/hedgewars/Data/Maps/ClimbHome/map.cfg
+share/hedgewars/Data/Maps/ClimbHome/map.lua
+share/hedgewars/Data/Maps/ClimbHome/mask.png
+share/hedgewars/Data/Maps/ClimbHome/preview.png
 share/hedgewars/Data/Maps/Cogs/
 share/hedgewars/Data/Maps/Cogs/map.cfg
 share/hedgewars/Data/Maps/Cogs/map.png
@@ -1205,6 +1229,14 @@ share/hedgewars/Data/Missions/Training/Basic_Training_-_Grenade.lua
 share/hedgewars/Data/Missions/Training/Basic_Training_-_Rope.lua
 share/hedgewars/Data/Missions/Training/Basic_Training_-_Shotgun.lua
 share/hedgewars/Data/Missions/Training/Basic_Training_-_Sniper_Rifle.lua
+share/hedgewars/Data/Missions/Training/ClimbHome.lua
+share/hedgewars/Data/Missions/Training/Target_Practice_-_Bazooka_easy.lua
+share/hedgewars/Data/Missions/Training/Target_Practice_-_Bazooka_hard.lua
+share/hedgewars/Data/Missions/Training/Target_Practice_-_Cluster_Bomb.lua
+share/hedgewars/Data/Missions/Training/Target_Practice_-_Grenade_easy.lua
+share/hedgewars/Data/Missions/Training/Target_Practice_-_Grenade_hard.lua
+share/hedgewars/Data/Missions/Training/Target_Practice_-_Homing_Bee.lua
+share/hedgewars/Data/Missions/Training/Target_Practice_-_Shotgun.lua
 share/hedgewars/Data/Missions/Training/User_Mission_-_Bamboo_Thicket.lua
 share/hedgewars/Data/Missions/Training/User_Mission_-_Dangerous_Ducklings.lua
 share/hedgewars/Data/Missions/Training/User_Mission_-_Diver.lua
@@ -1331,8 +1363,13 @@ share/hedgewars/Data/Scripts/Multiplayer/Balanced_Random_Weapon.cfg
 share/hedgewars/Data/Scripts/Multiplayer/Balanced_Random_Weapon.lua
 share/hedgewars/Data/Scripts/Multiplayer/Capture_the_Flag.cfg
 share/hedgewars/Data/Scripts/Multiplayer/Capture_the_Flag.lua
+share/hedgewars/Data/Scripts/Multiplayer/Construction_Mode.cfg
+share/hedgewars/Data/Scripts/Multiplayer/Construction_Mode.hwp
+share/hedgewars/Data/Scripts/Multiplayer/Construction_Mode.lua
 share/hedgewars/Data/Scripts/Multiplayer/Continental_supplies.cfg
 share/hedgewars/Data/Scripts/Multiplayer/Continental_supplies.lua
+share/hedgewars/Data/Scripts/Multiplayer/DiagonalMaze.cfg
+share/hedgewars/Data/Scripts/Multiplayer/DiagonalMaze.lua
 share/hedgewars/Data/Scripts/Multiplayer/Frenzy.cfg
 share/hedgewars/Data/Scripts/Multiplayer/Frenzy.lua
 share/hedgewars/Data/Scripts/Multiplayer/Gravity.cfg
@@ -1350,6 +1387,9 @@ share/hedgewars/Data/Scripts/Multiplayer/ShoppaMap.cfg
 share/hedgewars/Data/Scripts/Multiplayer/ShoppaMap.lua
 share/hedgewars/Data/Scripts/Multiplayer/Space_Invasion.cfg
 share/hedgewars/Data/Scripts/Multiplayer/Space_Invasion.lua
+share/hedgewars/Data/Scripts/Multiplayer/TechRacer.cfg
+share/hedgewars/Data/Scripts/Multiplayer/TechRacer.hwp
+share/hedgewars/Data/Scripts/Multiplayer/TechRacer.lua
 share/hedgewars/Data/Scripts/Multiplayer/The_Specialists.cfg
 share/hedgewars/Data/Scripts/Multiplayer/The_Specialists.lua
 share/hedgewars/Data/Scripts/Multiplayer/Tumbler.cfg
@@ -1358,6 +1398,9 @@ share/hedgewars/Data/Scripts/Multiplayer/Tunnels.cfg
 share/hedgewars/Data/Scripts/Multiplayer/Tunnels.lua
 share/hedgewars/Data/Scripts/Multiplayer/WxW.cfg
 share/hedgewars/Data/Scripts/Multiplayer/WxW.lua
+share/hedgewars/Data/Scripts/OfficialChallenges.lua
+share/hedgewars/Data/Scripts/Params.lua
+share/hedgewars/Data/Scripts/TargetPractice.lua
 share/hedgewars/Data/Scripts/Tracker.lua
 share/hedgewars/Data/Scripts/Utils.lua
 share/hedgewars/Data/Sounds/
@@ -2092,14 +2135,31 @@ share/hedgewars/Data/Themes/Brick/theme.cfg
 share/hedgewars/Data/Themes/Cake/
 share/hedgewars/Data/Themes/Cake/BlueWater.png
 share/hedgewars/Data/Themes/Cake/Border.png
+share/hedgewars/Data/Themes/Cake/CandyCane.png
 share/hedgewars/Data/Themes/Cake/Cherry.png
+share/hedgewars/Data/Themes/Cake/Chunk.png
+share/hedgewars/Data/Themes/Cake/Clouds.png
+share/hedgewars/Data/Themes/Cake/CupCake.png
 share/hedgewars/Data/Themes/Cake/Droplet.png
 share/hedgewars/Data/Themes/Cake/Flake.png
+share/hedgewars/Data/Themes/Cake/Gingerbread.png
+share/hedgewars/Data/Themes/Cake/Girder.png
+share/hedgewars/Data/Themes/Cake/IceCream.png
 share/hedgewars/Data/Themes/Cake/LandBackTex.png
 share/hedgewars/Data/Themes/Cake/LandTex.png
+share/hedgewars/Data/Themes/Cake/Lollipop.png
+share/hedgewars/Data/Themes/Cake/Oreo.png
+share/hedgewars/Data/Themes/Cake/Oreo2.png
+share/hedgewars/Data/Themes/Cake/SDDroplet.png
+share/hedgewars/Data/Themes/Cake/SDSplash.png
+share/hedgewars/Data/Themes/Cake/SDWater.png
 share/hedgewars/Data/Themes/Cake/Sky.png
+share/hedgewars/Data/Themes/Cake/Snowball.png
 share/hedgewars/Data/Themes/Cake/Splash.png
+share/hedgewars/Data/Themes/Cake/amSnowball.png
 share/hedgewars/Data/Themes/Cake/horizont.png
+share/hedgewars/Data/Themes/Cake/icon.png
+share/hedgewars/Data/Themes/Cake/icon@2x.png
 share/hedgewars/Data/Themes/Cake/plant1.png
 share/hedgewars/Data/Themes/Cake/plant2.png
 share/hedgewars/Data/Themes/Cake/plant3.png
@@ -2415,6 +2475,35 @@ share/hedgewars/Data/Themes/Hell/plant2.png
 share/hedgewars/Data/Themes/Hell/plant3.png
 share/hedgewars/Data/Themes/Hell/plant4.png
 share/hedgewars/Data/Themes/Hell/theme.cfg
+share/hedgewars/Data/Themes/Hoggywood/
+share/hedgewars/Data/Themes/Hoggywood/Border.png
+share/hedgewars/Data/Themes/Hoggywood/Clouds.png
+share/hedgewars/Data/Themes/Hoggywood/Flake.png
+share/hedgewars/Data/Themes/Hoggywood/Girder.png
+share/hedgewars/Data/Themes/Hoggywood/LandBackTex.png
+share/hedgewars/Data/Themes/Hoggywood/LandTex.png
+share/hedgewars/Data/Themes/Hoggywood/SDClouds.png
+share/hedgewars/Data/Themes/Hoggywood/SignL.png
+share/hedgewars/Data/Themes/Hoggywood/SignR.png
+share/hedgewars/Data/Themes/Hoggywood/Sky.png
+share/hedgewars/Data/Themes/Hoggywood/SkyL.png
+share/hedgewars/Data/Themes/Hoggywood/SkyR.png
+share/hedgewars/Data/Themes/Hoggywood/camera.png
+share/hedgewars/Data/Themes/Hoggywood/clapper.png
+share/hedgewars/Data/Themes/Hoggywood/hogscar.png
+share/hedgewars/Data/Themes/Hoggywood/horizont.png
+share/hedgewars/Data/Themes/Hoggywood/horizontL.png
+share/hedgewars/Data/Themes/Hoggywood/icon.png
+share/hedgewars/Data/Themes/Hoggywood/icon@2x.png
+share/hedgewars/Data/Themes/Hoggywood/palm.png
+share/hedgewars/Data/Themes/Hoggywood/reel.png
+share/hedgewars/Data/Themes/Hoggywood/reel2.png
+share/hedgewars/Data/Themes/Hoggywood/star1.png
+share/hedgewars/Data/Themes/Hoggywood/star2.png
+share/hedgewars/Data/Themes/Hoggywood/star3.png
+share/hedgewars/Data/Themes/Hoggywood/star4.png
+share/hedgewars/Data/Themes/Hoggywood/star5.png
+share/hedgewars/Data/Themes/Hoggywood/theme.cfg
 share/hedgewars/Data/Themes/Island/
 share/hedgewars/Data/Themes/Island/Border.png
 share/hedgewars/Data/Themes/Island/Chunk.png
@@ -2605,3 +2694,5 @@ share/hedgewars/Data/Themes/Underwater/theme.cfg
 share/hedgewars/Data/misc/
 share/hedgewars/Data/misc/hedgewars-mimeinfo.xml
 share/hedgewars/Data/misc/hedgewars.desktop
+share/pixmaps/
+share/pixmaps/hedgewars.xpm
