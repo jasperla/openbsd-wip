@@ -12,6 +12,11 @@ EPOCH=		0
 CATEGORIES=	devel
 HOMEPAGE=	http://www.arduino.cc/
 
+# Docs
+MASTER_SITES0 =	http://arduino.cc/download.php?f=/
+DISTFILES +=	${DISTNAME}${EXTRACT_SUFX} \
+		reference-1.6.0.zip:0
+
 GH_ACCOUNT =           arduino
 GH_PROJECT =           Arduino
 GH_TAGNAME =           1.6.3
@@ -48,21 +53,13 @@ do-install:
 	@chmod	a+r ${PREFIX}/share/examples/arduino/*
 	@cp -r	${WRKSRC}/build/shared/examples/* \
 		${PREFIX}/share/examples/arduino
-	@cp -r	${WRKSRC}/hardware/arduino/* \
+	@cp -r	${WRKSRC}/hardware/arduino/* ${WRKSRC}/libraries \
 		${PREFIX}/share/arduino
-	@cp -r	${WRKSRC}/libraries \
-		${PREFIX}/share/arduino
-	@cp -r	${WRKSRC}/license.txt \
+	@cp -r	${WRKSRC}/license.txt ${WRKSRC}/README.md ${WRKDIR}/reference \
 		${PREFIX}/share/doc/arduino
-	@cp -r	${WRKSRC}/README.md \
-		${PREFIX}/share/doc/arduino
-	#@unzip	-qnd ${PREFIX}/share/doc/arduino \
-	#	${WRKSRC}/build/shared/reference.zip
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share
 	@find ${PREFIX} -type f -name \*.orig -exec rm '{}' \;
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/arduino/mk
-	@${SUBST_CMD} -c ${FILESDIR}/alibs.mk ${PREFIX}/share/arduino/mk/alibs.mk
-	@chown ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/arudino/mk/alibs.mk
-
+	@${INSTALL_DATA} -c ${FILESDIR}/alibs.mk ${PREFIX}/share/arduino/mk/
 
 .include <bsd.port.mk>

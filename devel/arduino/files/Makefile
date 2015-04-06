@@ -1,42 +1,19 @@
 # $OpenBSD: Makefile,v 1.3 2014/10/30 21:44:30 edd Exp $
 # Arduino Makefile
 # Arduino adaptation by mellis, eighthave, oli.keller
-#
 # Adapted for BSD make(1) by Seth Wright (seth@crosse.org)
 # Adapted for OpenBSD ports by Chris Kuethe (ckuethe@openbsd.org)
 # Later maintained by the OpenBSD ports team (ports@openbsd.org)
+# Later overhauled by Edd Barrett (edd@openbsd.org)
 #
 # This makefile allows you to build sketches from the command line
 # without the Arduino environment (or Java).
 #
-# Detailed instructions for using the makefile:
+# Usage:
+#  1) Define your target and libraries below.
+#  2) make
+#  3) make upload (with appropriate permissions for PORT)
 #
-#  1. Copy this file into the folder with your sketch. There should be a
-#     file with the same name as the folder and with the extension .ino
-#     (e.g. foo.ino in the foo/ folder).
-#
-#  2. Modify the line containing "PORT" to refer to the filename
-#     representing the USB or serial connection to your Arduino board
-#     (e.g. PORT = /dev/tty.USB0).  If the exact name of this file
-#     changes, you can use * as a wildcard (e.g. PORT = /dev/tty.usb*).
-#
-#  3. Set the line containing "MCU" to match your board's processor.
-#     Older one's are atmega8 based, newer ones like Arduino Mini, Bluetooth
-#     or Diecimila have the atmega168.  If you're using a LilyPad Arduino,
-#     change F_CPU to 8000000.
-#
-#  4. At the command line, change to the directory containing your
-#     program's file and the makefile.
-#
-#  5. Type "make" and press enter to compile/verify your program.
-#
-#  6. Type "make upload", reset your Arduino board, and press enter to
-#     upload your program to the Arduino board.
-#
-# $Id: Makefile,v 1.3 2014/10/30 21:44:30 edd Exp $
-
-TARGET = ${.CURDIR:C/.*\///g}
-
 # Target options.
 #
 # You will need to specify the following options to compile and upload
@@ -49,13 +26,16 @@ TARGET = ${.CURDIR:C/.*\///g}
 # F_CPU: CPU frequency. Usually 16000000.
 # VARIANT: Arduino peripheral configuration, one of:
 #          {eightanaloginputs, leonardo, mega, micro, standard}
-
+# ARDUINO_ARCH: Arduino architecture. 'avr' or 'sam' (aka ARM).
+#               Note that sam is not yet supported.
+#
 # Below are some known working hardware configurations. If you find other
-# working configurations, please feed them back to the OpenBSD porting team.
+# working configurations, please feed them back to the OpenBSD port maintainer.
 
 PORT = /dev/cuaU0
 
 ## Arduino Uno
+ARDUINO_ARCH=avr
 UPLOAD_RATE = 115200
 AVRDUDE_PROGRAMMER = arduino
 MCU = atmega328p
@@ -63,6 +43,7 @@ F_CPU = 16000000
 VARIANT = standard
 
 # Arduino Duemilanove
+#ARDUINO_ARCH=avr
 #UPLOAD_RATE = 57600
 #AVRDUDE_PROGRAMMER = arduino
 #MCU = atmega328p
@@ -70,6 +51,7 @@ VARIANT = standard
 #VARIANT = standard
 
 ## Arduino Mega
+#ARDUINO_ARCH=avr
 #UPLOAD_RATE = 57600
 #AVRDUDE_PROGRAMMER = arduino
 #MCU = atmega1280
@@ -77,42 +59,45 @@ VARIANT = standard
 #VARIANT = mega
 
 ## older Arduino
+#ARDUINO_ARCH=avr
 #UPLOAD_RATE = 19200
 #AVRDUDE_PROGRAMMER = stk500
 #MCU = atmega328p
 #F_CPU = 16000000
 #VARIANT = standard
 
-# If your sketch uses any libraries, list them here, eg.
-# LIBRARIES=EEPROM LiquidCrystal Wire
+# If your sketch uses any libraries, list them here.
 #
-# If you want to use the Ethernet library, use:
-# LIBRARIES=SPI Ethernet IPAddress Dhcp Dns EthernetClient EthernetServer \
-#		EthernetUdp utility/w5100 utility/socket new
+# E.g.:
+#LIBRARIES=LiquidCrystal
 #
-# To use the SD library:
-# LIBRARIES=SD File utility/SdFile utility/SdVolume utility/Sd2Card
-LIBRARIES=LiquidCrystal
+# Or for ethernet support (which depends upon SPI support)
+#LIBRARIES=Ethernet SPI
+#
+# For a full list see ${LOCALBASE}/share/arduino/mk/alibs.mk
+
+LIBRARIES=
 
 ############################################################################
 # Below here nothing should be changed...
 
+TARGET = ${.CURDIR:C/.*\///g}
+
 ARDUINO = arduino-support
-AVR_TOOLS_PATH = /usr/local/bin
-SRC = arduino-support/avr/cores/arduino/wiring.c \
-      arduino-support/avr/cores/arduino/wiring_analog.c \
-      arduino-support/avr/cores/arduino/wiring_digital.c \
-      arduino-support/avr/cores/arduino/wiring_pulse.c \
-      arduino-support/avr/cores/arduino/wiring_shift.c \
-      arduino-support/avr/cores/arduino/WInterrupts.c \
-      arduino-support/avr/cores/arduino/hooks.c
-CXXSRC = arduino-support/avr/cores/arduino/HardwareSerial.cpp \
-	 arduino-support/avr/cores/arduino/WMath.cpp \
-	 arduino-support/avr/cores/arduino/Print.cpp \
-	 arduino-support/avr/cores/arduino/WString.cpp
+AVR_TOOLS_PATH = ${LOCALBASE}/bin
+SRC =	${ARDUINO}/${ARDUINO_ARCH}/cores/arduino/wiring.c \
+	${ARDUINO}/${ARDUINO_ARCH}/cores/arduino/wiring_analog.c \
+	${ARDUINO}/${ARDUINO_ARCH}/cores/arduino/wiring_digital.c \
+	${ARDUINO}/${ARDUINO_ARCH}/cores/arduino/wiring_pulse.c \
+	${ARDUINO}/${ARDUINO_ARCH}/cores/arduino/wiring_shift.c \
+	${ARDUINO}/${ARDUINO_ARCH}/cores/arduino/WInterrupts.c \
+	${ARDUINO}/${ARDUINO_ARCH}/cores/arduino/hooks.c
+CXXSRC =${ARDUINO}/${ARDUINO_ARCH}/cores/arduino/HardwareSerial.cpp \
+	${ARDUINO}/${ARDUINO_ARCH}/cores/arduino/WMath.cpp \
+	${ARDUINO}/${ARDUINO_ARCH}/cores/arduino/Print.cpp \
+	${ARDUINO}/${ARDUINO_ARCH}/cores/arduino/WString.cpp
 
 FORMAT = ihex
-
 
 # Name of this Makefile (used for "make depend").
 MAKEFILE = Makefile
@@ -126,8 +111,8 @@ DEBUG = stabs
 COPT = s
 CDEFS = -DF_CPU=$(F_CPU) -DARDUINO=100 -DARDUINO_ARCH_AVR
 CINCS = $(LIBINC) \
-	-I${ARDUINO}/avr/cores/arduino \
-	-I$(ARDUINO)/avr/variants/$(VARIANT)
+	-I${ARDUINO}/${ARDUINO_ARCH}/cores/arduino \
+	-I$(ARDUINO)/${ARDUINO_ARCH}/variants/$(VARIANT)
 CSTANDARD = -std=gnu99
 CDEBUG = -g$(DEBUG)
 CWARN = -Wall -Wstrict-prototypes
@@ -151,9 +136,6 @@ CXXFLAGS = $(CXXDEBUG) $(CXXDEFS) $(CXXINCS) -O$(CXXOPT) $(CXXWARN) \
 
 # Linker stuff
 LDFLAGS = -lm -Wl,--gc-sections
-#ROOTLIBINCS=${LIBRARIES:S|^|-I$(ARDUINO)/avr/libraries/|g}
-#UTILITYLIBINCS=${ROOTLIBINCS:S|$|/utility/|g}
-#LIBINC=${ROOTLIBINCS} ${UTILITYLIBINCS}
 
 # Assembler stuff
 #ASFLAGS = -Wa,-adhlns=$(<:.S=.lst),-gstabs
@@ -201,7 +183,7 @@ build: mkdirs elf hex
 mkdirs:
 	if [ ! -d ${ARDUINO} ]; then \
 		mkdir -p ${ARDUINO}; \
-		${LNDIR} /usr/local/share/arduino ${ARDUINO}; \
+		${LNDIR} ${LOCALBASE}/share/arduino ${ARDUINO}; \
 	fi
 
 # Here is the "preprocessing".
@@ -221,7 +203,7 @@ applet_files: $(TARGET).ino mkdirs
 		>> applet/$(TARGET).cpp
 	echo '#endif\n' >> applet/$(TARGET).cpp
 	cat $(TARGET).ino >> applet/$(TARGET).cpp
-	cat $(ARDUINO)/avr/cores/arduino/main.cpp >> applet/$(TARGET).cpp
+	cat $(ARDUINO)/${ARDUINO_ARCH}/cores/arduino/main.cpp >> applet/$(TARGET).cpp
 
 elf: applet/$(TARGET).elf
 hex: applet/$(TARGET).hex
@@ -317,7 +299,6 @@ clean:
 	$(REMOVE) applet/$(TARGET).hex applet/$(TARGET).eep applet/$(TARGET).cof applet/$(TARGET).elf \
 	applet/$(TARGET).map applet/$(TARGET).sym applet/$(TARGET).lss applet/core.a \
 	$(OBJ) $(LST) $(SRC:.c=.s) $(SRC:.c=.d) $(CXXSRC:.cpp=.s) $(CXXSRC:.cpp=.d)
-	if [ -d arduino-support ]; then $(REMOVE) -rf arduino-support; fi
 
 .PHONY:	all build elf hex eep lss sym program coff extcoff clean applet_files sizebefore sizeafter
 

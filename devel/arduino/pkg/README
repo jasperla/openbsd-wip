@@ -15,19 +15,25 @@ Typical Usage
 
 * Use ${TRUEPREFIX}/bin/arduinoproject to create a new project directory.
 * Hack the .ino file.
+* Hack the project Makefile
 * `make` will build the project.
-* `make upload` flashes the program to your arduino.
+* `make upload` flashes the program to your Arduino.
 
 Before you can upload your programs, you should review the AVRdude
-variables in the Makefile. Different arduino models require different
+variables in the Makefile. Different Arduino models require different
 parameters; pay particular attention to UPLOAD_RATE and
 AVRDUDE_PROGRAMMER.
 
 If you do not know which parameters you need, take a peek at:
-${TRUEPREFIX}/share/arduino/boards.txt
+${TRUEPREFIX}/share/arduino/avr/boards.txt
 
 Syntax Highlighting
 ===================
 
 * vim:   http://www.vim.org/scripts/script.php?script_id=2654
 * emacs: https://github.com/bookest/arduino-mode
+
+Sam (ARM) support
+=================
+
+The Makefile does not yet support Sam (ARM) Arduino boards.
