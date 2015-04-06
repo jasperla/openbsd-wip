@@ -4,9 +4,6 @@ COMMENT=	open-source electronics prototyping platform
 
 V=		1.6.3
 PKGNAME=	arduino-${V}
-# Arduino uses the ARDUINO macro to control the renaming scheme they did
-# on 1.0.x, from WProgram.h to Arduino.h, this is defined in files/Makefile.
-# If updating the port, check whether this needs to be adjusted.
 DISTNAME=	arduino-${V}-src
 EPOCH=		0
 CATEGORIES=	devel
