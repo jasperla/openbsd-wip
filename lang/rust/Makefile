@@ -6,13 +6,14 @@ ONLY_FOR_ARCHS-main =	amd64
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
+V =			1.0.0beta
 DISTNAME =		rustc-1.0.0-beta-src
-PKGNAME =		rust-1.0.0beta
-PKGNAME-main =		${PKGNAME}
 
-MULTI_PACKAGES =	-main
-PSEUDO_FLAVORS =	no_doc
-FLAVOR ?=
+PKGNAME =		rust-${V}
+PKGNAME-main =		rust-${V}
+PKGNAME-doc =		rust-${V}-doc
+
+MULTI_PACKAGES =	-main -doc
 
 # the snapshot version should be the version in src/snapshots.txt
 SNAPSHOT-amd64 =	rust-stage0-2015-03-27-5520801-openbsd-x86_64-afab969e747a3fc72c357155ca82891d2b485b36.tar.bz2
@@ -41,6 +42,8 @@ DISTFILES +=            ${SNAPSHOT-${MACHINE_ARCH}}:0
 .endif
 
 SUPDISTFILES =		${SNAPSHOT-amd64}:0
+
+WRKDIST =		${WRKDIR}/${DISTNAME:S/-src//}
 
 # MACHINE_ARCH to TRIPLE_ARCH conversion
 .if "${MACHINE_ARCH}" == "amd64"
@@ -83,20 +86,13 @@ CONFIGURE_ARGS +=	--disable-valgrind-rpass \
 # need for libbacktrace
 USE_LIBTOOL =		gnu
 
-# documentation package
-.if ${FLAVOR:L:Mno_doc}
-CONFIGURE_ARGS +=	--disable-docs
-.else
-MULTI_PACKAGES +=	-doc
-ALL_TARGET +=		docs
-.endif
-
 .ifdef LOCAL_LLVM_FOR_RUST
 CONFIGURE_ARGS +=	--llvm-root="${LOCAL_LLVM_FOR_RUST}"
 .endif
 
 ALL_TARGET +=		rustc-stage3 \
-			${TRIPLE_ARCH}/stage3/bin/rustdoc
+			${TRIPLE_ARCH}/stage3/bin/rustdoc \
+			docs
 TEST_TARGET =		check
 TEST_ENV +=		ALLOW_NONZERO_RLIMIT_CORE=1
 
@@ -145,10 +141,8 @@ do-install:
 		${WRKBUILD}/${TRIPLE_ARCH}/stage3/lib/rustlib/${TRIPLE_ARCH}/lib/lib* \
 		${PREFIX}/lib/rustlib/${TRIPLE_ARCH}/lib
 	
-.if !${FLAVOR:L:Mno_doc}
 	# html documentation
 	cp -R ${WRKBUILD}/doc ${PREFIX}/share/doc/rust/html
 	chmod -R a+rX ${PREFIX}/share/doc/rust/html
-.endif
 
 .include <bsd.port.mk>
