@@ -2,6 +2,7 @@
 
 # snapshots are only available for amd64, for now
 ONLY_FOR_ARCHS-main =	amd64
+PKG_ARCH-docs =		*
 
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
@@ -11,7 +12,7 @@ DISTNAME =		rustc-1.0.0-beta-src
 
 PKGNAME =		rust-${V}
 PKGNAME-main =		rust-${V}
-PKGNAME-doc =		rust-${V}-doc
+PKGNAME-doc =		rust-doc-${V}
 
 MULTI_PACKAGES =	-main -doc
 
