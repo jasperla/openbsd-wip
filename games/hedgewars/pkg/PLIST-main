@@ -1,7 +1,6 @@
 @comment $OpenBSD$
 @bin bin/hedgewars
 @bin bin/hwengine
-@lib lib/libavwrapper.so.${LIBavwrapper_VERSION}
 @lib lib/libphyslayer.so.${LIBphyslayer_VERSION}
 share/appdata/
 share/appdata/hedgewars.appdata.xml

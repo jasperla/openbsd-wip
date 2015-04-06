@@ -7,11 +7,12 @@ COMMENT-server =	Worms-like strategy game, server
 
 MULTI_PACKAGES =	-main -server
 
-SHARED_LIBS +=  avwrapper                 0.0 # 0.0
+#SHARED_LIBS +=  avwrapper                 0.0 # 0.0
+#SHARED_LIBS +=  hwphysfs                  0.0 # 2.1
 SHARED_LIBS +=  physlayer                 0.0 # 0.0
 
-V =			0.9.21
-#V =			$R.5
+R =			0.9.21
+V =			$R.1
 DISTNAME =		hedgewars-src-$V
 PKGNAME-main =		hedgewars-$V
 PKGNAME-server =	hedgewars-server-$V
@@ -26,8 +27,8 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB-main += QtGui QtNetwork SDL SDL_image SDL_mixer SDL_net SDL_ttf
-WANTLIB-main += avcodec avformat avutil c m png pthread stdc++
-WANTLIB-main += physfs z ${MODLUA_WANTLIB} ${MODQT4_WANTLIB}
+WANTLIB-main += c m physfs png pthread stdc++ z
+WANTLIB-main += ${MODLUA_WANTLIB} ${MODQT4_WANTLIB}
 
 # dlopen()ed; do not remove.
 WANTLIB-main += GL GLU glut
@@ -41,6 +42,8 @@ MODULES =		devel/cmake \
 			x11/qt4 \
 			lang/lua \
 			converters/libiconv
+#MODCLANG_LANGS =	c c++
+#MODCLANG_ARCHS =	*
 USE_NINJA =		No
 BUILD_DEPENDS =		lang/fpc
 LIB_DEPENDS-main =	devel/sdl-image \
@@ -48,12 +51,11 @@ LIB_DEPENDS-main =	devel/sdl-image \
 			devel/sdl-net \
 			devel/sdl-mixer \
 			devel/physfs \
-			graphics/ffmpeg \
 			graphics/freeglut \
 			${MODQT4_LIB_DEPENDS}
 LIB_DEPENDS-server =	converters/libiconv
 
-CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=Debug
+CONFIGURE_ARGS +=	-DNOVIDEOREC=ON
 
 PSEUDO_FLAVORS = no_server
 FLAVOR ?=
@@ -74,8 +76,10 @@ BUILD_DEPENDS +=	devel/hs-vector \
 MODGHC_BUILD =		nort
 .endif
 
+#CFLAGS +=		-I${X11BASE}/include
+
 NO_TEST =		Yes
 
-WRKDIST =		${WRKDIR}/hedgewars-src-$V
+WRKDIST =		${WRKDIR}/hedgewars-src-$R
 
 .include <bsd.port.mk>
