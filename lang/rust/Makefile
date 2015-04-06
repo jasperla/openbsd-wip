@@ -6,14 +6,13 @@ ONLY_FOR_ARCHS-main =	amd64
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.0.0-beta
-DISTNAME =		rustc-${V}
+DISTNAME =		rustc-1.0.0-beta-src
+PKGNAME =		rust-1.0.0beta
+PKGNAME-main =		${PKGNAME}
 
 MULTI_PACKAGES =	-main
 PSEUDO_FLAVORS =	no_doc
 FLAVOR ?=
-
-PKGNAME-main =		${PKGNAME}
 
 # the snapshot version should be the version in src/snapshots.txt
 SNAPSHOT-amd64 =	rust-stage0-2015-03-27-5520801-openbsd-x86_64-afab969e747a3fc72c357155ca82891d2b485b36.tar.bz2
@@ -33,11 +32,9 @@ WANTLIB-main =		${WANTLIB} c m pthread
 WANTLIB-doc =
 
 MASTER_SITES =		https://static.rust-lang.org/dist/
-MASTER_SITES0 =		http://semarie.free.fr/rustc/
+MASTER_SITES0 =		http://semarie.free.fr/rust/
 
-EXTRACT_SUFX =		-src.tar.gz
-
-DIST_SUBDIR =		rustc
+DIST_SUBDIR =		rust
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 .if defined(SNAPSHOT-${MACHINE_ARCH})
 DISTFILES +=            ${SNAPSHOT-${MACHINE_ARCH}}:0
