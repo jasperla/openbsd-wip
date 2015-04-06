@@ -2,7 +2,7 @@
 
 # snapshots are only available for amd64, for now
 ONLY_FOR_ARCHS-main =	amd64
-PKG_ARCH-docs =		*
+PKG_ARCH-doc =		*
 
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
