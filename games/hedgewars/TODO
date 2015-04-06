@@ -1,1 +1,6 @@
-- crashes every time when trying to fire a weapon
+Two distinct crashes:
+
+* crash when firing a weapon; "fixed" by turning off sound effects
+* crash when entering any training mission
+
+perhaps both related to sound problems?
