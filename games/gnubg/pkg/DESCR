@@ -10,4 +10,4 @@ First Internet Backgammon Server - at its best, it is in the top 5 of over
 6000 rated players there). GNU Backgammon can be played on numerous other
 on-line backgammon servers.
 
-The "minimal" flavor of GNU Backgammon lacks GUI and python scripting support.
+The "no_x11" flavor of GNU Backgammon lacks GUI and python scripting support.
