@@ -34,15 +34,13 @@ CONFIGURE_ENV += 	TKGATE_LIBDIRS="${MODTCL_LIBDIR} ${MODTK_LIBDIR} \
 			TKGATE_TCLTK_VERSIONS=${MODTK_VERSION}
 
 post-extract:
-	@rm -f ${WRKSRC}/src/gmac/luthor.c
-	@rm -f ${WRKSRC}/src/gmac/vgrammar.c
-	@rm -f ${WRKSRC}/src/gmac/vgrammar.h
-	@rm -f ${WRKSRC}/src/verga/luthor.c
-	@rm -f ${WRKSRC}/src/verga/vgrammar.c
-	@rm -f ${WRKSRC}/src/verga/vgrammar.h
-	@rm -f ${WRKSRC}/src/tkgate/luthor.c
-	@rm -f ${WRKSRC}/src/tkgate/vgrammar.c
-	@rm -f ${WRKSRC}/src/tkgate/vgrammar.h
+	rm ${WRKSRC}/src/gmac/luthor.c
+	rm ${WRKSRC}/src/verga/luthor.c
+	rm ${WRKSRC}/src/verga/vgrammar.c
+	rm ${WRKSRC}/src/verga/vgrammar.h
+	rm ${WRKSRC}/src/tkgate/luthor.c
+	rm ${WRKSRC}/src/tkgate/vgrammar.c
+	rm ${WRKSRC}/src/tkgate/vgrammar.h
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/scripts/parms.tcl ${WRKSRC}/src/tkgate/verilog_out.c
