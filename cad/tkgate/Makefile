@@ -43,7 +43,7 @@ post-extract:
 	@rm -f ${WRKSRC}/src/tkgate/luthor.c
 	@rm -f ${WRKSRC}/src/tkgate/vgrammar.c
 	@rm -f ${WRKSRC}/src/tkgate/vgrammar.h
-			
+
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/scripts/parms.tcl ${WRKSRC}/src/tkgate/verilog_out.c
 	${MODTCL_WISH_ADJ} ${WRKSRC}/scripts/tree.tcl
