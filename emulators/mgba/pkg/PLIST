@@ -2,3 +2,6 @@
 @bin bin/mgba
 @bin bin/mgba-qt
 @lib lib/libmgba.so.${LIBmgba_VERSION}
+share/doc/mGBA/
+share/doc/mGBA/CHANGES
+share/doc/mGBA/README.md
