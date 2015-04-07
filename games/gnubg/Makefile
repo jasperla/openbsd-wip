@@ -50,6 +50,11 @@ WANTLIB += pangox-1.0 pixman-1 png pthread-stubs python2.7 stdc++
 WANTLIB += util vorbis vorbisfile xcb xcb-dri2 xcb-glx xcb-render
 WANTLIB += xcb-shm z
 
+FONTSDIR =		"${X11BASE}/lib/X11/fonts/TTF"
+CFLAGS +=	-DFONT_VERA=\\\"${FONTSDIR}/DejaVuSans.ttf\\\" \
+		-DFONT_VERA_SERIF_BOLD=\\\"${FONTSDIR}/DejaVuSerif-Bold.ttf\\\"
+CFLAGS += "-g" # XXX DEBUG
+
 MODULES +=		lang/python \
 			x11/gnome
 MODGNOME_TOOLS =	desktop-file-utils \
@@ -60,6 +65,7 @@ LIB_DEPENDS +=		${MODPY_LIB_DEPENDS} \
 			x11/gtkglext
 
 post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/gnubg ${PREFIX}/bin/gnubg # XXX DEBUG
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
 	${INSTALL_DATA} ${FILESDIR}/gnubg.desktop ${PREFIX}/share/applications/
 .endif

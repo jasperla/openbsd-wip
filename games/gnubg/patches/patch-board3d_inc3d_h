@@ -1,0 +1,13 @@
+$OpenBSD$
+--- board3d/inc3d.h.orig	Tue Apr  7 11:20:27 2015
++++ board3d/inc3d.h	Tue Apr  7 11:20:41 2015
+@@ -78,9 +78,6 @@ typedef enum _BoardState {
+ #define CUBE_FONT_SIZE (base_unit / 24.0f)
+ #define CUBE_FONT_HEIGHT_RATIO 1.25f
+ 
+-#define FONT_VERA "fonts/Vera.ttf"
+-#define FONT_VERA_SERIF_BOLD "fonts/VeraSeBd.ttf"
+-
+ /* Animation paths */
+ #define MAX_PATHS 3
+ typedef enum _PathType {
