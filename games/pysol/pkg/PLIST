@@ -2797,7 +2797,5 @@ share/locale/ru_RU/LC_MESSAGES/pysol.mo
 share/pixmaps/
 share/pixmaps/pysol.xbm
 share/pixmaps/pysol.xpm
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/$icon-theme
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/$icon-theme
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
