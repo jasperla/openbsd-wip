@@ -1,23 +1,20 @@
 $OpenBSD: patch-bin_duplicity,v 1.6 2014/11/14 07:49:33 brad Exp $
---- bin/duplicity.orig	Tue Apr  7 21:19:19 2015
-+++ bin/duplicity	Tue Apr  7 21:21:07 2015
-@@ -1248,9 +1248,16 @@ def check_resources(action):
+--- bin/duplicity.orig	Wed Mar 11 12:33:38 2015
++++ bin/duplicity	Fri Apr 10 18:02:47 2015
+@@ -1248,10 +1248,12 @@ def check_resources(action):
                             log.ErrorCode.get_ulimit_failed)
          maxopen = min([l for l in (soft, hard) if l > -1])
          if maxopen < 1024:
 -            log.FatalError(_("Max open files of %s is too low, should be >= 1024.\n"
 -                             "Use 'ulimit -n 1024' or higher to correct.\n") % (maxopen,),
 -                           log.ErrorCode.maxopen_too_low)
+-
 +            try:
 +              resource.setrlimit(resource.RLIMIT_NOFILE, (1024, hard))
 +            except resource.error:
 +                log.FatalError(_("Max open files of %s is too low, should be >= 1024.\n"
 +                               "Use 'ulimit -n 1024' or higher to correct.\n") % (maxopen,),
 +                               log.ErrorCode.maxopen_too_low)
-+ 
-+
-+ def log_startup_parms(verbosity=log.INFO):
-+     """
- 
  
  def log_startup_parms(verbosity=log.INFO):
+     """
