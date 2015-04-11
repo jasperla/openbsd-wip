@@ -17,7 +17,6 @@ DISTFILES +=	${DISTNAME}${EXTRACT_SUFX} \
 GH_ACCOUNT =           arduino
 GH_PROJECT =           Arduino
 GH_TAGNAME =           1.6.3
-GH_COMMIT =            9d2034a3c29e4c8f9df2804249e1e8dedc3e8c60
 
 # arduino core + libraries: LGPLv2.1
 # frontend application: GPLv2 (not shipped yet)
