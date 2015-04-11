@@ -97,6 +97,11 @@ CXXSRC =${ARDUINO}/${ARDUINO_ARCH}/cores/arduino/HardwareSerial.cpp \
 	${ARDUINO}/${ARDUINO_ARCH}/cores/arduino/Print.cpp \
 	${ARDUINO}/${ARDUINO_ARCH}/cores/arduino/WString.cpp
 
+.include "${LOCALBASE}/share/arduino/mk/alibs.mk"
+.for l in ${LIBRARIES}
+CXXSRC +=	${${l}_${ARDUINO_ARCH}_CPPS}
+LIBINC +=	${${l}_${ARDUINO_ARCH}_INC_DIRS}
+.endfor
 FORMAT = ihex
 
 # Name of this Makefile (used for "make depend").
