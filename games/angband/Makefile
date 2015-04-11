@@ -4,7 +4,7 @@
 COMMENT=		rogue-like game with X11 support
 COMMENT-no_x11=		rogue-like game
 
-V =			3.4.1
+V =			3.5.1
 V_DLDIR =		${V:C/\.[0-9]$//}
 DISTNAME=		angband-v${V}
 PKGNAME=		angband-${V}
@@ -23,7 +23,7 @@ WANTLIB=		c m ncursesw
 
 MASTER_SITES =		${HOMEPAGE}/downloads/${V_DLDIR}/
 
-AUTOCONF_VERSION =	2.68
+AUTOCONF_VERSION =	2.69
 CONFIGURE_STYLE=	autoconf
 
 CONFIGURE_ARGS +=	--with-setgid=games \
@@ -59,6 +59,8 @@ PKG_ARGS +=		-Dsdl=0
 
 NO_TEST =		Yes
 
+WRKDIST =		${WRKDIR}/angband-${V}
+
 pre-configure:
 	@perl -pi -e "s,/usr/share,${TRUEPREFIX}/share," \
 		${WRKSRC}/lib/xtra/icon/angband*.desktop
@@ -69,5 +71,6 @@ post-install:
 		${PREFIX}/share/applications
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/angband/
 	mv ${WRKINST}/etc/angband ${PREFIX}/share/examples/angband/etc
+	chmod 775 ${WRKINST}/var/games/angband/save
 
 .include <bsd.port.mk>

@@ -4,9 +4,9 @@ Pick up ncursesw on OpenBSD. We do not deal with ncursesw via pkg-config
 (as it is in openbsd base), which is what the build system appears to
 expect.
 
---- configure.ac.orig	Fri Oct 19 20:47:23 2012
-+++ configure.ac	Tue Dec 18 00:05:58 2012
-@@ -199,17 +199,19 @@ AC_ARG_ENABLE(sdl_mixer,
+--- configure.ac.orig	Sat Jan  3 23:45:00 2015
++++ configure.ac	Mon Apr  6 14:12:11 2015
+@@ -224,17 +224,19 @@ AC_ARG_ENABLE(sdl_mixer,
  
  MAINFILES="\$(BASEMAINFILES)"
  

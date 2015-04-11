@@ -2,8 +2,8 @@ $OpenBSD$
 
 Show what the compiler is doing.
 
---- mk/buildsys.mk.in.orig	Fri Oct 19 20:47:23 2012
-+++ mk/buildsys.mk.in	Tue Dec 18 00:22:26 2012
+--- mk/buildsys.mk.in.orig	Sat Jan  3 23:45:00 2015
++++ mk/buildsys.mk.in	Mon Apr  6 14:12:10 2015
 @@ -151,6 +151,7 @@ pre-depend:
  
  ${PROG} ${PROG_NOINST}: ${EXT_DEPS} ${OBJS}
@@ -132,7 +132,7 @@ Show what the compiler is doing.
  		if ${MKDIR_P} $$(dirname ${DESTDIR}${configdir}/${PACKAGE}/$$i) && ${INSTALL} -m 644 $$i ${DESTDIR}${configdir}/${PACKAGE}/$$i; then \
  			${INSTALL_OK}; \
  		else \
-@@ -480,6 +496,7 @@ install: ${SHARED_LIB} ${STATIC_LIB} ${STATIC_PIC_LIB}
+@@ -493,6 +509,7 @@ install: ${SHARED_LIB} ${STATIC_LIB} ${STATIC_PIC_LIB}
  
  	for i in ${PROG}; do \
  		${INSTALL_STATUS}; \
@@ -140,7 +140,7 @@ Show what the compiler is doing.
  		if ${MKDIR_P} ${DESTDIR}${bindir} && ${INSTALL} -m 755 $$i ${DESTDIR}${bindir}/$$i; then \
  			${INSTALL_OK}; \
  		else \
-@@ -489,6 +506,7 @@ install: ${SHARED_LIB} ${STATIC_LIB} ${STATIC_PIC_LIB}
+@@ -502,6 +519,7 @@ install: ${SHARED_LIB} ${STATIC_LIB} ${STATIC_PIC_LIB}
  
  	for i in ${INCLUDES}; do \
  		${INSTALL_STATUS}; \
@@ -148,7 +148,7 @@ Show what the compiler is doing.
  		if ${MKDIR_P} ${DESTDIR}${includedir}/${includesubdir} && ${INSTALL} -m 644 $$i ${DESTDIR}${includedir}/${includesubdir}/$$i; then \
  			${INSTALL_OK}; \
  		else \
-@@ -507,6 +525,7 @@ install: ${SHARED_LIB} ${STATIC_LIB} ${STATIC_PIC_LIB}
+@@ -520,6 +538,7 @@ install: ${SHARED_LIB} ${STATIC_LIB} ${STATIC_PIC_LIB}
  
  	for i in ${MAN}; do \
  		${INSTALL_STATUS}; \

@@ -1,10 +1,10 @@
 @comment $OpenBSD$
 %%sdl%%
-@extraunexec rm /var/games/angband/*/* 2>/dev/null || true
 @mode g+s
 @group games
 @bin bin/angband
 @mode
+@group
 share/angband/
 share/angband/file/
 share/angband/file/crown.txt
@@ -20,7 +20,6 @@ share/angband/help/general.txt
 share/angband/help/help.hlp
 share/angband/help/option.txt
 share/angband/help/playing.txt
-share/angband/help/readme.txt
 share/angband/help/version.txt
 share/angband/info/
 share/angband/info/readme.txt
@@ -31,6 +30,7 @@ share/angband/xtra/icon/att-16.png
 share/angband/xtra/icon/att-256.png
 share/angband/xtra/icon/att-32.png
 share/angband/xtra/icon/att-512.png
+share/applications/
 share/applications/angband-x11.desktop
 share/examples/angband/
 share/examples/angband/etc/
@@ -67,8 +67,8 @@ share/examples/angband/etc/edit/pain.txt
 @sample ${SYSCONFDIR}/angband/edit/pain.txt
 share/examples/angband/etc/edit/pit.txt
 @sample ${SYSCONFDIR}/angband/edit/pit.txt
-share/examples/angband/etc/edit/shop_own.txt
-@sample ${SYSCONFDIR}/angband/edit/shop_own.txt
+share/examples/angband/etc/edit/room_template.txt
+@sample ${SYSCONFDIR}/angband/edit/room_template.txt
 share/examples/angband/etc/edit/spell.txt
 @sample ${SYSCONFDIR}/angband/edit/spell.txt
 share/examples/angband/etc/edit/store.txt
@@ -91,10 +91,7 @@ share/examples/angband/etc/pref/flvr-xxx.prf
 @sample ${SYSCONFDIR}/angband/pref/flvr-xxx.prf
 share/examples/angband/etc/pref/font-gcu.prf
 @sample ${SYSCONFDIR}/angband/pref/font-gcu.prf
-share/examples/angband/etc/pref/font-mac.prf
-@sample ${SYSCONFDIR}/angband/pref/font-mac.prf
-share/examples/angband/etc/pref/font-win.prf
-@sample ${SYSCONFDIR}/angband/pref/font-win.prf
+@comment share/examples/angband/etc/pref/font-win.prf
 share/examples/angband/etc/pref/font-x11.prf
 @sample ${SYSCONFDIR}/angband/pref/font-x11.prf
 share/examples/angband/etc/pref/font-xxx.prf
@@ -113,6 +110,8 @@ share/examples/angband/etc/pref/graf-xxx.prf
 @sample ${SYSCONFDIR}/angband/pref/graf-xxx.prf
 share/examples/angband/etc/pref/graf.prf
 @sample ${SYSCONFDIR}/angband/pref/graf.prf
+share/examples/angband/etc/pref/keys-gcu.prf
+@sample ${SYSCONFDIR}/angband/pref/keys-gcu.prf
 share/examples/angband/etc/pref/message.prf
 @sample ${SYSCONFDIR}/angband/pref/message.prf
 share/examples/angband/etc/pref/pref.prf
@@ -129,6 +128,7 @@ share/examples/angband/etc/pref/xtra-shb.prf
 @sample ${SYSCONFDIR}/angband/pref/xtra-shb.prf
 share/examples/angband/etc/pref/xtra-xxx.prf
 @sample ${SYSCONFDIR}/angband/pref/xtra-xxx.prf
+@group games
 @mode 775
 @sample /var/games/angband/
 @sample /var/games/angband/apex/
