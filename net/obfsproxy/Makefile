@@ -14,10 +14,9 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 # BSD-like
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		https://pypi.python.org/packages/source/o/obfsproxy/
-
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
+MODPY_PI =		Yes
 RUN_DEPENDS =		net/tor
 
 # tries to download and install additional python modules
