@@ -3,7 +3,7 @@
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 COMMENT =		wraps git in order to extend it with extra features
-V =			2.2.0
+V =			2.2.1
 GH_ACCOUNT =		github
 GH_PROJECT =		hub
 GH_TAGNAME =		v$V
