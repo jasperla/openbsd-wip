@@ -22,12 +22,9 @@ SHARED_LIBS=	avcodec		21.1 \
 
 HOMEPAGE=	http://ffmpeg.org/
 
-MAINTAINER=	Brad Smith <brad@c,omstyle.com>
+MAINTAINER=	Brad Smith <brad@comstyle.com>
 
-FLAVORS=	gpl3
-FLAVOR?=
-
-# GPLv2+ (GPLv3+ for "gpl3" flavor)
+# LGPLv2.1 and GPLv2
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 
@@ -87,6 +84,14 @@ WANTLIB+=		x265>=2
 CONFIGURE_ARGS+=	--enable-libx265
 LIBavcodec_REQUIRES+=	x265
 LIBavcodec_EXTRALIBS+=	-lx265
+.endif
+
+# fdk-aac is known to build on these platforms
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+WANTLIB+=	fdk-aac
+LIB_DEPENDS+=	audio/fdk-aac
+LIBavcodec_EXTRALIBS+=-lfdk-aac
+CONFIGURE_ARGS+=--disable-encoder=aac --enable-version3
 .endif
 
 OPTFLAGS=	${CFLAGS}
@@ -192,13 +197,6 @@ FAKE_FLAGS=	${VERSION_FLAGS} \
 
 .ifdef DEBUG
 CONFIGURE_ARGS+=--disable-stripping
-.endif
-
-.if ${FLAVOR:L:Mgpl3}
-WANTLIB+=	fdk-aac
-LIB_DEPENDS+=	audio/fdk-aac
-LIBavcodec_EXTRALIBS+=-lfdk-aac
-CONFIGURE_ARGS+=--disable-encoder=aac --enable-version3
 .endif
 
 ALL_TARGET=	all tools/qt-faststart

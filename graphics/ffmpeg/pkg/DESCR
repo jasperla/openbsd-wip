@@ -1,5 +1,2 @@
 FFmpeg is a complete solution to record, convert and stream audio and
 video.  It includes libavcodec, the leading audio/video codec library.
-
-"gtk3" flavor comes with high quality AAC encoder at the price of
-GPLv3 license.
