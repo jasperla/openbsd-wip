@@ -14,3 +14,7 @@ previously).
 - raco pkg install --jobs 2 --auto --binary-lib drracket
 
 - raco pkg install --jobs 2 --auto --binary main-distribution
+
+- Racket is transitioning to a small core + packages model. The traditional "big
+package" is now just an distribution. In fact, you can create your own
+distribution mixing private and public packages.

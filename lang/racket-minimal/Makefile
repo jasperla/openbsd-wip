@@ -1,17 +1,22 @@
 # $OpenBSD: Makefile,v 1.20 2014/11/12 02:35:29 juanfra Exp $
 
-BROKEN-hppa =		segfault while racket compiles XFORMS (at xsrc)
-BROKEN-mips64el =	sigbus while racket compiles XFORMS (at xsrc)
-BROKEN-powerpc =	racket builds but does not pass the tests (with or without JIT)
+# Racket devs use something like "6.1.90.900" for pre-release versions
+PORTROACH =		limit:!.*\.[0-9][0-9][0-9]-src-builtpkgs$$
 
 SHARED_ONLY =		Yes
-ONLY_FOR_ARCHS =	i386 amd64 hppa mips64el powerpc
+
+# Racket includes C fallback code for architectures without JIT support but
+# nobody tests regularly this code outside of amd64 (Linux/OSX). The code
+# is buggy and the devs can't fix the problems because they have not access
+# to these architectures. In addition, the C code is extremely slow compared
+# with the JIT.
+ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		multi-paradigm programming language
 
-V =			6.2.0.2
+V =			6.1.90.900
 PKGNAME =		racket-minimal-$V
-DISTNAME =		min-racket-$V-src-builtpkgs
+DISTNAME =		racket-minimal-$V-src-builtpkgs
 
 CATEGORIES =		lang
 HOMEPAGE =		http://racket-lang.org/
@@ -79,16 +84,24 @@ CONFIGURE_ARGS +=	--disable-strip \
 CFLAGS += -ggdb3
 .endif
 
+# The LOCKpkgs.rktd line (apparently) fixes this bug:
+# $ raco pkg show
+# Installation-wide:
+# open-output-file: cannot open output file
+#   path: /usr/local/share/racket/pkgs/.LOCKpkgs.rktd
+#     system error: Permission denied; errno=13
 post-install:
 	@perl -i -pe 's/installation-name . "snapshot"/installation-name . "$V"/g' ${WRKINST}/etc/racket/config.rktd
 	@mv ${WRKINST}/etc/racket ${PREFIX}/share/examples
+	@touch ${PREFIX}/share/racket/pkgs/.LOCKpkgs.rktd
 
 # Since 5.3.4 if __SSE_MATH__ is defined (C_COMPILER_USES_SSE) and
 # MZ_TRY_EXTFLONUMS enabled, MZ_LONG_DOUBLE (extflonum) is turned on. Also
 # C_COMPILER_USES_SSE turn on MZ_USE_JIT_SSE.
 # "-msse -mfpmath=sse" required by extflonum on i386.
+# The GNU Lightning minimum requirement is SSE2.
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
-CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -msse -mfpmath=sse"
+CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -msse -msse2 -mfpmath=sse"
 CONFIGURE_ARGS +=	--enable-extflonum \
 			--enable-jit
 .endif
