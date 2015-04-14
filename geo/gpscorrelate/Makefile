@@ -5,7 +5,6 @@ COMMENT =		EXIF geotagging
 GH_ACCOUNT = 		freefoote
 GH_PROJECT = 		gpscorrelate
 GH_TAGNAME = 		1.6.1
-GH_COMMIT = 		ea60215d88eaab43a8cdd8a15755b72af6c533d2
 DISTNAME =		gpscorrelate-${GH_TAGNAME}
 
 CATEGORIES =		geo x11
