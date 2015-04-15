@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=		m pthread python2.7 stdc++
 
-MASTER_SITES =		https://pypi.python.org/packages/source/p/pandas/
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 BUILD_DEPENDS =		math/py-numpy
