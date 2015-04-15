@@ -18,7 +18,7 @@ WANTLIB +=		m pthread python2.7 stdc++
 MODPY_PI =		Yes
 
 MODULES =		lang/python
-BUILD_DEPENDS =		math/py-numpy
+BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/py-tz \
 			devel/py-dateutil \
 			math/py-numpy
