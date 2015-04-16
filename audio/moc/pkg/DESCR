@@ -9,18 +9,18 @@ current file is playing.
 Internet streams (Icecast, Shoutcast) are supported. Key mapping
 can be fully customized.
 
-Supported file formats include: MP3, Ogg Vorbis, FLAC, Musepack,
-Speex, WAVE (and other less popular formats supported by Sndfile),
-MOD, WavPack, AAC, SID, MIDI. Moreover most audio formats recognized
-by FFMpeg/LibAV are also supported (e.g. MP4, Opus, WMA, APE, AC3,
-DTS - even embedded in video files).
+Supported file formats are: MP3, Ogg Vorbis, FLAC, Musepack (mpc),
+Speex, Opus, WAVE, those supported by FFmpeg/LibAV (e.g., WMA,
+RealAudio, AAC, MP4), AIFF, AU, SVX, Sphere Nist WAV, IRCAM SF,
+Creative VOC, SID, wavpack, MIDI and modplug.
 
 Other features:
-  * Mixer (both software and hardware) and simple equalizer
-  * Color themes
-  * Searching playlist or a directory
-  * Configurable title creation from filenames and file tags
-  * Optional character set conversion for file tags using iconv()
-  * OSS, ALSA, JACK and SNDIO output
-  * User defined keys
-  * Cache for files' tags
+
+  - Simple mixer
+  - Color themes
+  - Menu searching (playlist or directory) like M-s in Midnight Commander
+  - The way MOC creates titles from tags is configurable
+  - Optional character set conversion for file tags using iconv()
+  - OSS, ALSA, SNDIO and JACK output
+  - User defined keys
+  - Cache for files' tags

@@ -1,24 +1,56 @@
 # $OpenBSD$
-COMMENT =		console background audio player
-DISTNAME =		moc-2.4.4
-CATEGORIES =		audio
-HOMEPAGE =		http://moc.daper.net/
 
-#MAINTAINER =		[poor pinokkio]
+COMMENT = console audio player
 
-WANTLIB =  FLAC c crypto curl id3tag idn intl ltdl m mad mpcdec
-WANTLIB += ncursesw ogg ossaudio pthread samplerate sndfile sndio
-WANTLIB += speex ssl tag_c vorbis vorbisenc vorbisfile z
+VERSION = 2.5.0
+DISTNAME = moc-${VERSION}
+CATEGORIES = audio
 
-# GPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+HOMEPAGE = http://moc.daper.net/
 
-MASTER_SITES =		http://ftp.daper.net/pub/soft/moc/stable/
-EXTRACT_SUFX =		.tar.bz2
+MAINTAINER = ports@openbsd.org
 
-MODULES =		converters/libiconv
+MASTER_SITES = http://ftp.daper.net/pub/soft/moc/stable/
+EXTRACT_SUFX = .tar.bz2
 
-LIB_DEPENDS =		audio/flac \
+# License: GPLv2 (or later version)
+PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE_FTP = Yes
+PERMIT_DISTFILES_FTP = Yes
+
+
+WANTLIB =  c crypto m ncursesw pthread ssl sndio z
+WANTLIB += curl ltdl idn samplerate magic
+WANTLIB += intl # gettext
+WANTLIB += db>=4 # berkely db, for tag caching.
+# aac decoder
+WANTLIB += id3tag
+WANTLIB += faad
+# ffmpeg decoder
+WANTLIB += avcodec
+WANTLIB += avformat
+WANTLIB += avutil
+# vorbis decoder
+WANTLIB += ogg vorbis vorbisfile vorbisenc
+# flac decoder
+WANTLIB += FLAC
+# mp3 decoder
+WANTLIB += mad
+# musepack decoder
+WANTLIB += mpcdec
+WANTLIB += tag_c
+# sndfile decoder
+WANTLIB += sndfile
+# speex decoder
+WANTLIB += speex
+# wavpack decoder
+WANTLIB += wavpack
+
+MODULES = converters/libiconv
+
+LIB_DEPENDS = \
+			audio/faad \
+			audio/flac \
 			audio/libid3tag \
 			audio/libmad \
 			audio/libsamplerate \
@@ -27,27 +59,31 @@ LIB_DEPENDS =		audio/flac \
 			audio/musepack \
 			audio/speex \
 			audio/taglib \
+			audio/wavpack \
+			databases/db/v4 \
+			devel/gettext \
 			devel/libidn \
 			devel/libtool,-ltdl \
+			graphics/ffmpeg \
 			net/curl
 
-SEPARATE_BUILD =	Yes
-USE_LIBTOOL=		gnu
+SEPARATE_BUILD = Yes
+USE_LIBTOOL = gnu
 
-AUTOCONF_VERSION =	2.61
-CONFIGURE_STYLE =	gnu autoconf
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--without-rcc \
-			--without-ffmpeg \
+AUTOCONF_VERSION =	2.69
+CONFIGURE_STYLE = gnu autoconf
+CONFIGURE_ARGS += ${CONFIGURE_SHARED} \
+			--with-sndio \
 			--without-jack \
+			--without-oss \
+			--without-alsa \
+			--without-rcc \
 			--without-included-ltdl \
+			--without-timidity \
 			--with-ltdl-include=${LOCALBASE}/include \
 			--with-ltdl-lib=${LOCALBASE}/lib
-
-CONFIGURE_ENV =		CFLAGS=-I${LOCALBASE}/include \
+CONFIGURE_ENV = \
+			CFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/db4" \
 			LDFLAGS=-L${LOCALBASE}/lib
-
-post-extract:
-	cp ${FILESDIR}/sndio_out.[ch] ${WRKSRC}
 
 .include <bsd.port.mk>
