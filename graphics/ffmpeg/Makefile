@@ -2,23 +2,22 @@
 
 COMMENT=	audio/video converter and streamer
 
-V=		20150107
+V=		20150412
 DISTNAME=	ffmpeg-git-${V}
 PKGNAME=	ffmpeg-${V}
-REVISION=	1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	avcodec		21.1 \
-		avdevice	9.0 \
-		avfilter	7.0 \
-		avformat	19.1 \
+SHARED_LIBS=	avcodec		22.0 \
+		avdevice	10.0 \
+		avfilter	7.1 \
+		avformat	19.2 \
 		avresample	1.0 \
-		avutil		12.1 \
-		postproc	16.0 \
+		avutil		12.2 \
+		postproc	16.1 \
 		swresample	1.1 \
-		swscale		6.0
+		swscale		6.1
 
 HOMEPAGE=	http://ffmpeg.org/
 
@@ -28,9 +27,9 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=	SDL X11 Xext Xfixes Xv bz2 c crypto gsm m mp3lame opus pthread \
-		schroedinger-1.0 sndio speex ssl theoradec theoraenc vorbis \
-		vorbisenc vpx>=5 x264 xvidcore z
+WANTLIB=	SDL X11 Xext Xv bz2 c crypto gsm m mp3lame opus pthread \
+		sndio speex ssl vorbis vorbisenc vpx>=5 x264 xcb xcb-shape \
+		xcb-shm xcb-xfixes xvidcore z \
 
 MODULES=	lang/clang
 
@@ -48,15 +47,13 @@ LIB_DEPENDS=	archivers/bzip2 \
 		audio/speex \
 		audio/gsm \
 		devel/sdl \
-		multimedia/libtheora \
 		multimedia/libvpx>=1.3.0 \
-		multimedia/schroedinger \
 		multimedia/x264 \
 		multimedia/xvidcore
 
 # inter-library dependencies for the current configuration
-LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -lgsm -lmp3lame -lopus -lschroedinger-1.0 -lspeex -ltheoradec -ltheoraenc -lvorbis -lvorbisenc -lvpx -lx264 -lxvidcore -lz -pthread
-LIBavdevice_EXTRALIBS=-L${X11BASE}/lib -lX11 -lXext -lXfixes -lXv -lsndio
+LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -lgsm -lmp3lame -lopus -lspeex -lvorbis -lvorbisenc -lvpx -lx264 -lxvidcore -lz -pthread
+LIBavdevice_EXTRALIBS=-L${X11BASE}/lib -lX11 -lXext -lXv -lxcb-render -lxcb-shape -lxcb-shm -lxcb-xfixes -lxcb -lsndio
 LIBavfilter_EXTRALIBS=
 LIBavformat_EXTRALIBS=-L${LOCALBASE}/lib -lbz2 -lssl -lcrypto -pthread
 LIBavresample_EXTRALIBS=
@@ -65,7 +62,7 @@ LIBpostproc_EXTRALIBS=
 LIBswresample_EXTRALIBS=-lm
 LIBswscale_EXTRALIBS=-lm
 
-LIBavcodec_REQUIRES=libavutil libswresample opus schroedinger-1.0 speex theoraenc vpx x264
+LIBavcodec_REQUIRES=libavutil libswresample opus speex vpx x264
 
 # configure wants a directory it can execute files in 
 WRKTMP=		${WRKDIR}/tmp
@@ -113,7 +110,6 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-indev=jack \
 		--disable-indev=oss \
 		--disable-lzma \
-		--disable-mips32r2 \
 		--disable-mipsdspr1 \
 		--disable-mipsdspr2 \
 		--disable-neon \
@@ -126,16 +122,13 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--enable-libgsm \
 		--enable-libmp3lame \
 		--enable-libopus \
-		--enable-libschroedinger \
 		--enable-libspeex \
-		--enable-libtheora \
 		--enable-libvorbis \
 		--enable-libvpx \
 		--enable-libx264 \
 		--enable-libxvid \
 		--enable-nonfree \
 		--enable-openssl \
-		--enable-x11grab \
 		--extra-cflags="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		--extra-libs="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		--mandir=${PREFIX}/man \
