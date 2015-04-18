@@ -1,3 +1,9 @@
+$OpenBSD: README.template,v 1.4 2011/06/02 13:44:40 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
 As yet VCMI is not standalone program, it uses Wake of Gods files and
 graphics. You need WoG data files before running VCMI.
-You can copy Data and Maps from WoG disk to ~/.vcmi/.
+You can copy Data and Maps from WoG disk to ~/.local/share/vcmi/

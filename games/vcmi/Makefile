@@ -28,10 +28,10 @@ WANTLIB += boost_thread-mt boost_locale-mt c execinfo m pthread swscale z
 MODULES =		devel/cmake gcc4
 MODGCC4_ARCHS = 	*
 MODGCC4_LANGS +=        c++
-USE_LIBTOOL = 		gnu
 
 BUILD_DEPENDS = 	devel/libexecinfo
-RUN_DEPENDS =		devel/desktop-file-utils
+RUN_DEPENDS =		devel/desktop-file-utils \
+			x11/gtk+3,-guic
 LIB_DEPENDS =		devel/boost \
 			devel/libexecinfo \
 			devel/sdl-image \
@@ -44,8 +44,6 @@ CONFIGURE_ARGS +=	-DCMAKE_CXX_FLAGS="${CXXFLAGS} -pthread" \
 			-DCMAKE_SHARED_LINKER_FLAGS=-lexecinfo \
 			-DENABLE_LAUNCHER=OFF \
 			-DENABLE_SDL2=OFF
-#			-DCMAKE_SKIP_RPATH=OFF \
-#			-DFL_CPP11=OFF
 
 NO_TEST =		Yes
 
