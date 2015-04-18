@@ -4,12 +4,8 @@
  * Port is now in working state (for me at least, amd64).
 
 TODO:
+Test gettext with other languages
 Optional libtimidity for MIDI
-Optional audio/modplug (?)
-Optional audio/libsidplay,sidutils (?)
-
-This port could stream and play files from untrusted sources, however
-most (all?) of this is pushed to libraries that moc depends on.
 
 Check insecure functions:
 server.o(.text+0xbff): In function `server_init':

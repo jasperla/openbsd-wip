@@ -2,13 +2,10 @@
 
 COMMENT = console audio player
 
-VERSION = 2.5.0
-DISTNAME = moc-${VERSION}
+DISTNAME = moc-2.5.0
 CATEGORIES = audio
 
 HOMEPAGE = http://moc.daper.net/
-
-MAINTAINER = ports@openbsd.org
 
 MASTER_SITES = http://ftp.daper.net/pub/soft/moc/stable/
 EXTRACT_SUFX = .tar.bz2
@@ -18,35 +15,15 @@ PERMIT_PACKAGE_CDROM = Yes
 PERMIT_PACKAGE_FTP = Yes
 PERMIT_DISTFILES_FTP = Yes
 
+WANTLIB = db>=4
+WANTLIB += FLAC avcodec avformat avutil bz2 c crypto curl faad
+WANTLIB += gsm id3tag idn ltdl m mad mp3lame mpcdec ncursesw ogg
+WANTLIB += opus orc-0.4 pthread samplerate schroedinger-1.0 sndfile
+WANTLIB += sndio speex ssl stdc++ swresample tag tag_c theoradec
+WANTLIB += theoraenc vorbis vorbisenc vorbisfile vpx wavpack x264
+WANTLIB += x265 xvidcore z
 
-WANTLIB =  c crypto m ncursesw pthread ssl sndio z
-WANTLIB += curl ltdl idn samplerate magic
-WANTLIB += intl # gettext
-WANTLIB += db>=4 # berkely db, for tag caching.
-# aac decoder
-WANTLIB += id3tag
-WANTLIB += faad
-# ffmpeg decoder
-WANTLIB += avcodec
-WANTLIB += avformat
-WANTLIB += avutil
-# vorbis decoder
-WANTLIB += ogg vorbis vorbisfile vorbisenc
-# flac decoder
-WANTLIB += FLAC
-# mp3 decoder
-WANTLIB += mad
-# musepack decoder
-WANTLIB += mpcdec
-WANTLIB += tag_c
-# sndfile decoder
-WANTLIB += sndfile
-# speex decoder
-WANTLIB += speex
-# wavpack decoder
-WANTLIB += wavpack
-
-MODULES = converters/libiconv
+MODULES = devel/gettext
 
 LIB_DEPENDS = \
 			audio/faad \
@@ -61,14 +38,12 @@ LIB_DEPENDS = \
 			audio/taglib \
 			audio/wavpack \
 			databases/db/v4 \
-			devel/gettext \
 			devel/libidn \
 			devel/libtool,-ltdl \
 			graphics/ffmpeg \
 			net/curl
 
 SEPARATE_BUILD = Yes
-USE_LIBTOOL = gnu
 
 AUTOCONF_VERSION =	2.69
 CONFIGURE_STYLE = gnu autoconf
