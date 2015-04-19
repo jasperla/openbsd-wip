@@ -83,7 +83,7 @@ LIBRARIES=
 
 TARGET = ${.CURDIR:C/.*\///g}
 
-ARDUINO = arduino-support
+ARDUINO_SUPPORT = arduino-support
 AVR_TOOLS_PATH = ${LOCALBASE}/bin
 
 .include "${LOCALBASE}/share/arduino/mk/acores.mk"
@@ -111,7 +111,7 @@ DEBUG = stabs
 COPT = s
 CDEFS = -DF_CPU=$(F_CPU) -DARDUINO=100 -DARDUINO_ARCH_AVR
 CINCS = $(LIBINC) ${COREINC} \
-	-I$(ARDUINO)/${ARDUINO_ARCH}/variants/$(VARIANT)
+	-I$(ARDUINO_SUPPORT)/${ARDUINO_ARCH}/variants/$(VARIANT)
 CSTANDARD = -std=gnu99
 CDEBUG = -g$(DEBUG)
 CWARN = -Wall -Wstrict-prototypes
@@ -156,6 +156,7 @@ SIZE = $(AVR_TOOLS_PATH)/avr-size
 NM = $(AVR_TOOLS_PATH)/avr-nm
 AVRDUDE = $(AVR_TOOLS_PATH)/avrdude
 REMOVE = rm -f
+FORCE_REMOVE_DIR = rm -rf
 REMOVEDIR = rmdir
 MKDIR = mkdir -p
 MV = mv -f
@@ -180,9 +181,9 @@ all: applet_files build sizeafter
 build: mkdirs elf hex
 
 mkdirs:
-	if [ ! -d ${ARDUINO} ]; then \
-		mkdir -p ${ARDUINO}; \
-		${LNDIR} ${LOCALBASE}/share/arduino ${ARDUINO}; \
+	if [ ! -d ${ARDUINO_SUPPORT} ]; then \
+		mkdir -p ${ARDUINO_SUPPORT}; \
+		${LNDIR} ${LOCALBASE}/share/arduino ${ARDUINO_SUPPORT}; \
 	fi
 
 # Here is the "preprocessing".
@@ -202,7 +203,7 @@ applet_files: $(TARGET).ino mkdirs
 		>> applet/$(TARGET).cpp
 	echo '#endif\n' >> applet/$(TARGET).cpp
 	cat $(TARGET).ino >> applet/$(TARGET).cpp
-	cat $(ARDUINO)/${ARDUINO_ARCH}/cores/arduino/main.cpp >> applet/$(TARGET).cpp
+	cat $(ARDUINO_SUPPORT)/${ARDUINO_ARCH}/cores/arduino/main.cpp >> applet/$(TARGET).cpp
 
 elf: applet/$(TARGET).elf
 hex: applet/$(TARGET).hex
@@ -295,9 +296,7 @@ applet/core.a: $(OBJ)
 
 # Target: clean project.
 clean:
-	$(REMOVE) applet/$(TARGET).hex applet/$(TARGET).eep applet/$(TARGET).cof applet/$(TARGET).elf \
-	applet/$(TARGET).map applet/$(TARGET).sym applet/$(TARGET).lss applet/core.a \
-	$(OBJ) $(LST) $(SRC:.c=.s) $(SRC:.c=.d) $(CXXSRC:.cpp=.s) $(CXXSRC:.cpp=.d)
+	${FORCE_REMOVE_DIR} applet ${ARDUINO_SUPPORT}
 
 .PHONY:	all build elf hex eep lss sym program coff extcoff clean applet_files sizebefore sizeafter
 
