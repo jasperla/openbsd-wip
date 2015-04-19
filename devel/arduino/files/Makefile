@@ -86,6 +86,11 @@ TARGET = ${.CURDIR:C/.*\///g}
 ARDUINO = arduino-support
 AVR_TOOLS_PATH = ${LOCALBASE}/bin
 
+.include "${LOCALBASE}/share/arduino/mk/acores.mk"
+SRC =   ${${ARDUINO_ARCH}_CORE_C_SRC}
+CXXSRC =${${ARDUINO_ARCH}_CORE_CXX_SRC}
+COREINC=${${ARDUINO_ARCH}_CORE_INC_DIRS:S/^/-I/}
+
 .include "${LOCALBASE}/share/arduino/mk/alibs.mk"
 .for l in ${LIBRARIES}
 CXXSRC +=	${${l}_${ARDUINO_ARCH}_CXX_SRC}
