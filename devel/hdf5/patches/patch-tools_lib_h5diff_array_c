@@ -1,0 +1,13 @@
+$OpenBSD$
+--- tools/lib/h5diff_array.c.orig	Thu Apr 16 15:43:40 2015
++++ tools/lib/h5diff_array.c	Thu Apr 16 15:46:17 2015
+@@ -15,7 +15,9 @@
+ 
+ #include <math.h>
+ #include <time.h>
++#ifdef HAVE_FTIME
+ #include <sys/timeb.h>
++#endif
+ 
+ #include "H5private.h"
+ #include "h5tools.h"

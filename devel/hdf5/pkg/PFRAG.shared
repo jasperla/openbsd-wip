@@ -1,0 +1,3 @@
+@comment $OpenBSD$
+@lib lib/libhdf5.so.${LIBhdf5_VERSION}
+@lib lib/libhdf5_hl.so.${LIBhdf5_hl_VERSION}
