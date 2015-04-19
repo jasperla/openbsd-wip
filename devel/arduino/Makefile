@@ -57,5 +57,6 @@ do-install:
 	@find ${PREFIX} -type f -name \*.orig -exec rm '{}' \;
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/arduino/mk
 	@${INSTALL_DATA} -c ${FILESDIR}/alibs.mk ${PREFIX}/share/arduino/mk/
+	@${INSTALL_DATA} -c ${FILESDIR}/acores.mk ${PREFIX}/share/arduino/mk/
 
 .include <bsd.port.mk>

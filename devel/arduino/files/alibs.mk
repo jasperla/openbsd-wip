@@ -26,776 +26,831 @@
 #	Wire
 
 # Audio for avr
-Audio_avr_CPPS = \
-	arduino-support/libraries/Audio/src/DAC.cpp \
-	arduino-support/libraries/Audio/src/Audio.cpp
+Audio_avr_CXX_SRC = \
+	arduino-support/libraries/Audio/src/Audio.cpp \
+	arduino-support/libraries/Audio/src/DAC.cpp
+Audio_avr_C_SRC =
 Audio_avr_INC_DIRS = \
-	-Iarduino-support/libraries/Audio/src
+	arduino-support/libraries/Audio/src
 
 # Audio for sam
-Audio_sam_CPPS = \
-	arduino-support/libraries/Audio/src/DAC.cpp \
-	arduino-support/libraries/Audio/src/Audio.cpp
+Audio_sam_CXX_SRC = \
+	arduino-support/libraries/Audio/src/Audio.cpp \
+	arduino-support/libraries/Audio/src/DAC.cpp
+Audio_sam_C_SRC =
 Audio_sam_INC_DIRS = \
-	-Iarduino-support/libraries/Audio/src
+	arduino-support/libraries/Audio/src
 
 # Bridge for avr
-Bridge_avr_CPPS = \
-	arduino-support/libraries/Bridge/src/Console.cpp \
-	arduino-support/libraries/Bridge/src/FileIO.cpp \
+Bridge_avr_CXX_SRC = \
 	arduino-support/libraries/Bridge/src/HttpClient.cpp \
-	arduino-support/libraries/Bridge/src/Mailbox.cpp \
 	arduino-support/libraries/Bridge/src/Process.cpp \
-	arduino-support/libraries/Bridge/src/YunClient.cpp \
+	arduino-support/libraries/Bridge/src/FileIO.cpp \
+	arduino-support/libraries/Bridge/src/Bridge.cpp \
 	arduino-support/libraries/Bridge/src/YunServer.cpp \
-	arduino-support/libraries/Bridge/src/Bridge.cpp
+	arduino-support/libraries/Bridge/src/Console.cpp \
+	arduino-support/libraries/Bridge/src/Mailbox.cpp \
+	arduino-support/libraries/Bridge/src/YunClient.cpp
+Bridge_avr_C_SRC =
 Bridge_avr_INC_DIRS = \
-	-Iarduino-support/libraries/Bridge/examples/Temboo/UploadToDropbox \
- 	-Iarduino-support/libraries/Bridge/examples/Temboo/ReadATweet \
- 	-Iarduino-support/libraries/Bridge/src \
- 	-Iarduino-support/libraries/Bridge/examples/Temboo/GetYahooWeatherReport \
- 	-Iarduino-support/libraries/Bridge/examples/Temboo/UpdateFacebookStatus \
- 	-Iarduino-support/libraries/Bridge/examples/Temboo/SendAnEmail \
- 	-Iarduino-support/libraries/Bridge/examples/Temboo/SendDataToGoogleSpreadsheet \
- 	-Iarduino-support/libraries/Bridge/examples/Temboo/SendAnSMS \
- 	-Iarduino-support/libraries/Bridge/examples/Temboo/SendATweet \
- 	-Iarduino-support/libraries/Bridge/examples/Temboo/ToxicFacilitiesSearch
+	arduino-support/libraries/Bridge/src \
+	arduino-support/libraries/Bridge/examples/Temboo/ReadATweet \
+	arduino-support/libraries/Bridge/examples/Temboo/UpdateFacebookStatus \
+	arduino-support/libraries/Bridge/examples/Temboo/SendAnEmail \
+	arduino-support/libraries/Bridge/examples/Temboo/SendAnSMS \
+	arduino-support/libraries/Bridge/examples/Temboo/GetYahooWeatherReport \
+	arduino-support/libraries/Bridge/examples/Temboo/SendATweet \
+	arduino-support/libraries/Bridge/examples/Temboo/ToxicFacilitiesSearch \
+	arduino-support/libraries/Bridge/examples/Temboo/UploadToDropbox \
+	arduino-support/libraries/Bridge/examples/Temboo/SendDataToGoogleSpreadsheet
 
 # Bridge for sam
-Bridge_sam_CPPS = \
-	arduino-support/libraries/Bridge/src/Console.cpp \
-	arduino-support/libraries/Bridge/src/FileIO.cpp \
+Bridge_sam_CXX_SRC = \
 	arduino-support/libraries/Bridge/src/HttpClient.cpp \
-	arduino-support/libraries/Bridge/src/Mailbox.cpp \
 	arduino-support/libraries/Bridge/src/Process.cpp \
-	arduino-support/libraries/Bridge/src/YunClient.cpp \
+	arduino-support/libraries/Bridge/src/FileIO.cpp \
+	arduino-support/libraries/Bridge/src/Bridge.cpp \
 	arduino-support/libraries/Bridge/src/YunServer.cpp \
-	arduino-support/libraries/Bridge/src/Bridge.cpp
+	arduino-support/libraries/Bridge/src/Console.cpp \
+	arduino-support/libraries/Bridge/src/Mailbox.cpp \
+	arduino-support/libraries/Bridge/src/YunClient.cpp
+Bridge_sam_C_SRC =
 Bridge_sam_INC_DIRS = \
-	-Iarduino-support/libraries/Bridge/examples/Temboo/UploadToDropbox \
- 	-Iarduino-support/libraries/Bridge/examples/Temboo/ReadATweet \
- 	-Iarduino-support/libraries/Bridge/src \
- 	-Iarduino-support/libraries/Bridge/examples/Temboo/GetYahooWeatherReport \
- 	-Iarduino-support/libraries/Bridge/examples/Temboo/UpdateFacebookStatus \
- 	-Iarduino-support/libraries/Bridge/examples/Temboo/SendAnEmail \
- 	-Iarduino-support/libraries/Bridge/examples/Temboo/SendDataToGoogleSpreadsheet \
- 	-Iarduino-support/libraries/Bridge/examples/Temboo/SendAnSMS \
- 	-Iarduino-support/libraries/Bridge/examples/Temboo/SendATweet \
- 	-Iarduino-support/libraries/Bridge/examples/Temboo/ToxicFacilitiesSearch
+	arduino-support/libraries/Bridge/src \
+	arduino-support/libraries/Bridge/examples/Temboo/ReadATweet \
+	arduino-support/libraries/Bridge/examples/Temboo/UpdateFacebookStatus \
+	arduino-support/libraries/Bridge/examples/Temboo/SendAnEmail \
+	arduino-support/libraries/Bridge/examples/Temboo/SendAnSMS \
+	arduino-support/libraries/Bridge/examples/Temboo/GetYahooWeatherReport \
+	arduino-support/libraries/Bridge/examples/Temboo/SendATweet \
+	arduino-support/libraries/Bridge/examples/Temboo/ToxicFacilitiesSearch \
+	arduino-support/libraries/Bridge/examples/Temboo/UploadToDropbox \
+	arduino-support/libraries/Bridge/examples/Temboo/SendDataToGoogleSpreadsheet
 
 # EEPROM for avr
+EEPROM_avr_CXX_SRC =
+EEPROM_avr_C_SRC =
 EEPROM_avr_INC_DIRS = \
-	-Iarduino-support/avr/libraries/EEPROM
+	arduino-support/avr/libraries/EEPROM
+
+# EEPROM for sam
+EEPROM_sam_CXX_SRC =
+EEPROM_sam_C_SRC =
+EEPROM_sam_INC_DIRS =
 
 # Esplora for avr
-Esplora_avr_CPPS = \
+Esplora_avr_CXX_SRC = \
 	arduino-support/libraries/Esplora/src/Esplora.cpp
+Esplora_avr_C_SRC =
 Esplora_avr_INC_DIRS = \
-	-Iarduino-support/libraries/Esplora/src
+	arduino-support/libraries/Esplora/src
 
 # Esplora for sam
-Esplora_sam_CPPS = \
+Esplora_sam_CXX_SRC = \
 	arduino-support/libraries/Esplora/src/Esplora.cpp
+Esplora_sam_C_SRC =
 Esplora_sam_INC_DIRS = \
-	-Iarduino-support/libraries/Esplora/src
+	arduino-support/libraries/Esplora/src
 
 # Ethernet for avr
-Ethernet_avr_CPPS = \
+Ethernet_avr_CXX_SRC = \
+	arduino-support/libraries/Ethernet/src/utility/w5100.cpp \
 	arduino-support/libraries/Ethernet/src/Dns.cpp \
+	arduino-support/libraries/Ethernet/src/EthernetServer.cpp \
 	arduino-support/libraries/Ethernet/src/Ethernet.cpp \
 	arduino-support/libraries/Ethernet/src/EthernetClient.cpp \
-	arduino-support/libraries/Ethernet/src/EthernetServer.cpp \
 	arduino-support/libraries/Ethernet/src/EthernetUdp.cpp \
-	arduino-support/libraries/Ethernet/src/utility/w5100.cpp \
-	arduino-support/libraries/Ethernet/src/utility/socket.cpp \
-	arduino-support/libraries/Ethernet/src/Dhcp.cpp
+	arduino-support/libraries/Ethernet/src/Dhcp.cpp \
+	arduino-support/libraries/Ethernet/src/utility/socket.cpp
+Ethernet_avr_C_SRC =
 Ethernet_avr_INC_DIRS = \
-	-Iarduino-support/libraries/Ethernet/src \
- 	-Iarduino-support/libraries/Ethernet/src/utility
+	arduino-support/libraries/Ethernet/src/utility \
+	arduino-support/libraries/Ethernet/src
 
 # Ethernet for sam
-Ethernet_sam_CPPS = \
+Ethernet_sam_CXX_SRC = \
+	arduino-support/libraries/Ethernet/src/utility/w5100.cpp \
 	arduino-support/libraries/Ethernet/src/Dns.cpp \
+	arduino-support/libraries/Ethernet/src/EthernetServer.cpp \
 	arduino-support/libraries/Ethernet/src/Ethernet.cpp \
 	arduino-support/libraries/Ethernet/src/EthernetClient.cpp \
-	arduino-support/libraries/Ethernet/src/EthernetServer.cpp \
 	arduino-support/libraries/Ethernet/src/EthernetUdp.cpp \
-	arduino-support/libraries/Ethernet/src/utility/w5100.cpp \
-	arduino-support/libraries/Ethernet/src/utility/socket.cpp \
-	arduino-support/libraries/Ethernet/src/Dhcp.cpp
+	arduino-support/libraries/Ethernet/src/Dhcp.cpp \
+	arduino-support/libraries/Ethernet/src/utility/socket.cpp
+Ethernet_sam_C_SRC =
 Ethernet_sam_INC_DIRS = \
-	-Iarduino-support/libraries/Ethernet/src \
- 	-Iarduino-support/libraries/Ethernet/src/utility
+	arduino-support/libraries/Ethernet/src/utility \
+	arduino-support/libraries/Ethernet/src
 
 # Firmata for avr
-Firmata_avr_CPPS = \
+Firmata_avr_CXX_SRC = \
 	arduino-support/libraries/Firmata/src/Firmata.cpp
+Firmata_avr_C_SRC =
 Firmata_avr_INC_DIRS = \
-	-Iarduino-support/libraries/Firmata/src
+	arduino-support/libraries/Firmata/src
 
 # Firmata for sam
-Firmata_sam_CPPS = \
+Firmata_sam_CXX_SRC = \
 	arduino-support/libraries/Firmata/src/Firmata.cpp
+Firmata_sam_C_SRC =
 Firmata_sam_INC_DIRS = \
-	-Iarduino-support/libraries/Firmata/src
+	arduino-support/libraries/Firmata/src
 
 # GSM for avr
-GSM_avr_CPPS = \
-	arduino-support/libraries/GSM/src/GSM3MobileAccessProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3MobileCellManagement.cpp \
-	arduino-support/libraries/GSM/src/GSM3MobileClientService.cpp \
-	arduino-support/libraries/GSM/src/GSM3MobileDataNetworkProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3MobileMockupProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3MobileSMSProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3MobileServerProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3MobileServerService.cpp \
-	arduino-support/libraries/GSM/src/GSM3SMSService.cpp \
-	arduino-support/libraries/GSM/src/GSM3ShieldV1.cpp \
-	arduino-support/libraries/GSM/src/GSM3ShieldV1BandManagement.cpp \
-	arduino-support/libraries/GSM/src/GSM3ShieldV1BaseProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3MobileVoiceProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3ShieldV1AccessProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3ShieldV1ModemVerification.cpp \
-	arduino-support/libraries/GSM/src/GSM3ShieldV1MultiClientProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3ShieldV1MultiServerProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3ShieldV1PinManagement.cpp \
-	arduino-support/libraries/GSM/src/GSM3ShieldV1ScanNetworks.cpp \
+GSM_avr_CXX_SRC = \
 	arduino-support/libraries/GSM/src/GSM3ShieldV1ServerProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3ShieldV1ModemCore.cpp \
-	arduino-support/libraries/GSM/src/GSM3ShieldV1SMSProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3CircularBuffer.cpp \
-	arduino-support/libraries/GSM/src/GSM3MobileClientProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3MobileNetworkProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3MobileNetworkRegistry.cpp \
-	arduino-support/libraries/GSM/src/GSM3SoftSerial.cpp \
-	arduino-support/libraries/GSM/src/GSM3ShieldV1CellManagement.cpp \
-	arduino-support/libraries/GSM/src/GSM3ShieldV1ClientProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3MobileClientService.cpp \
 	arduino-support/libraries/GSM/src/GSM3ShieldV1DataNetworkProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3ShieldV1DirectModemProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3MobileAccessProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3ShieldV1BandManagement.cpp \
+	arduino-support/libraries/GSM/src/GSM3MobileServerService.cpp \
+	arduino-support/libraries/GSM/src/GSM3MobileNetworkProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3ShieldV1ClientProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3ShieldV1MultiServerProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3MobileNetworkRegistry.cpp \
+	arduino-support/libraries/GSM/src/GSM3ShieldV1ScanNetworks.cpp \
 	arduino-support/libraries/GSM/src/GSM3ShieldV1VoiceProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3VoiceCallService.cpp
+	arduino-support/libraries/GSM/src/GSM3ShieldV1CellManagement.cpp \
+	arduino-support/libraries/GSM/src/GSM3MobileCellManagement.cpp \
+	arduino-support/libraries/GSM/src/GSM3MobileVoiceProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3MobileSMSProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3VoiceCallService.cpp \
+	arduino-support/libraries/GSM/src/GSM3CircularBuffer.cpp \
+	arduino-support/libraries/GSM/src/GSM3ShieldV1BaseProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3ShieldV1MultiClientProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3ShieldV1PinManagement.cpp \
+	arduino-support/libraries/GSM/src/GSM3MobileMockupProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3MobileDataNetworkProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3ShieldV1.cpp \
+	arduino-support/libraries/GSM/src/GSM3MobileServerProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3ShieldV1ModemVerification.cpp \
+	arduino-support/libraries/GSM/src/GSM3ShieldV1AccessProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3ShieldV1ModemCore.cpp \
+	arduino-support/libraries/GSM/src/GSM3MobileClientProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3ShieldV1DirectModemProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3SoftSerial.cpp \
+	arduino-support/libraries/GSM/src/GSM3ShieldV1SMSProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3SMSService.cpp
+GSM_avr_C_SRC =
 GSM_avr_INC_DIRS = \
-	-Iarduino-support/libraries/GSM/src
+	arduino-support/libraries/GSM/src
 
 # GSM for sam
-GSM_sam_CPPS = \
-	arduino-support/libraries/GSM/src/GSM3MobileAccessProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3MobileCellManagement.cpp \
-	arduino-support/libraries/GSM/src/GSM3MobileClientService.cpp \
-	arduino-support/libraries/GSM/src/GSM3MobileDataNetworkProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3MobileMockupProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3MobileSMSProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3MobileServerProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3MobileServerService.cpp \
-	arduino-support/libraries/GSM/src/GSM3SMSService.cpp \
-	arduino-support/libraries/GSM/src/GSM3ShieldV1.cpp \
-	arduino-support/libraries/GSM/src/GSM3ShieldV1BandManagement.cpp \
-	arduino-support/libraries/GSM/src/GSM3ShieldV1BaseProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3MobileVoiceProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3ShieldV1AccessProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3ShieldV1ModemVerification.cpp \
-	arduino-support/libraries/GSM/src/GSM3ShieldV1MultiClientProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3ShieldV1MultiServerProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3ShieldV1PinManagement.cpp \
-	arduino-support/libraries/GSM/src/GSM3ShieldV1ScanNetworks.cpp \
+GSM_sam_CXX_SRC = \
 	arduino-support/libraries/GSM/src/GSM3ShieldV1ServerProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3ShieldV1ModemCore.cpp \
-	arduino-support/libraries/GSM/src/GSM3ShieldV1SMSProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3CircularBuffer.cpp \
-	arduino-support/libraries/GSM/src/GSM3MobileClientProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3MobileNetworkProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3MobileNetworkRegistry.cpp \
-	arduino-support/libraries/GSM/src/GSM3SoftSerial.cpp \
-	arduino-support/libraries/GSM/src/GSM3ShieldV1CellManagement.cpp \
-	arduino-support/libraries/GSM/src/GSM3ShieldV1ClientProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3MobileClientService.cpp \
 	arduino-support/libraries/GSM/src/GSM3ShieldV1DataNetworkProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3ShieldV1DirectModemProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3MobileAccessProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3ShieldV1BandManagement.cpp \
+	arduino-support/libraries/GSM/src/GSM3MobileServerService.cpp \
+	arduino-support/libraries/GSM/src/GSM3MobileNetworkProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3ShieldV1ClientProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3ShieldV1MultiServerProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3MobileNetworkRegistry.cpp \
+	arduino-support/libraries/GSM/src/GSM3ShieldV1ScanNetworks.cpp \
 	arduino-support/libraries/GSM/src/GSM3ShieldV1VoiceProvider.cpp \
-	arduino-support/libraries/GSM/src/GSM3VoiceCallService.cpp
+	arduino-support/libraries/GSM/src/GSM3ShieldV1CellManagement.cpp \
+	arduino-support/libraries/GSM/src/GSM3MobileCellManagement.cpp \
+	arduino-support/libraries/GSM/src/GSM3MobileVoiceProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3MobileSMSProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3VoiceCallService.cpp \
+	arduino-support/libraries/GSM/src/GSM3CircularBuffer.cpp \
+	arduino-support/libraries/GSM/src/GSM3ShieldV1BaseProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3ShieldV1MultiClientProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3ShieldV1PinManagement.cpp \
+	arduino-support/libraries/GSM/src/GSM3MobileMockupProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3MobileDataNetworkProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3ShieldV1.cpp \
+	arduino-support/libraries/GSM/src/GSM3MobileServerProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3ShieldV1ModemVerification.cpp \
+	arduino-support/libraries/GSM/src/GSM3ShieldV1AccessProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3ShieldV1ModemCore.cpp \
+	arduino-support/libraries/GSM/src/GSM3MobileClientProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3ShieldV1DirectModemProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3SoftSerial.cpp \
+	arduino-support/libraries/GSM/src/GSM3ShieldV1SMSProvider.cpp \
+	arduino-support/libraries/GSM/src/GSM3SMSService.cpp
+GSM_sam_C_SRC =
 GSM_sam_INC_DIRS = \
-	-Iarduino-support/libraries/GSM/src
+	arduino-support/libraries/GSM/src
 
 # LiquidCrystal for avr
-LiquidCrystal_avr_CPPS = \
+LiquidCrystal_avr_CXX_SRC = \
 	arduino-support/libraries/LiquidCrystal/src/LiquidCrystal.cpp
+LiquidCrystal_avr_C_SRC =
 LiquidCrystal_avr_INC_DIRS = \
-	-Iarduino-support/libraries/LiquidCrystal/src
+	arduino-support/libraries/LiquidCrystal/src
 
 # LiquidCrystal for sam
-LiquidCrystal_sam_CPPS = \
+LiquidCrystal_sam_CXX_SRC = \
 	arduino-support/libraries/LiquidCrystal/src/LiquidCrystal.cpp
+LiquidCrystal_sam_C_SRC =
 LiquidCrystal_sam_INC_DIRS = \
-	-Iarduino-support/libraries/LiquidCrystal/src
+	arduino-support/libraries/LiquidCrystal/src
 
 # RobotIRremote for avr
-RobotIRremote_avr_CPPS = \
-	arduino-support/libraries/RobotIRremote/src/IRremoteTools.cpp \
-	arduino-support/libraries/RobotIRremote/src/IRremote.cpp
+RobotIRremote_avr_CXX_SRC = \
+	arduino-support/libraries/RobotIRremote/src/IRremote.cpp \
+	arduino-support/libraries/RobotIRremote/src/IRremoteTools.cpp
+RobotIRremote_avr_C_SRC =
 RobotIRremote_avr_INC_DIRS = \
-	-Iarduino-support/libraries/RobotIRremote/src
+	arduino-support/libraries/RobotIRremote/src
 
 # RobotIRremote for sam
-RobotIRremote_sam_CPPS = \
-	arduino-support/libraries/RobotIRremote/src/IRremoteTools.cpp \
-	arduino-support/libraries/RobotIRremote/src/IRremote.cpp
+RobotIRremote_sam_CXX_SRC = \
+	arduino-support/libraries/RobotIRremote/src/IRremote.cpp \
+	arduino-support/libraries/RobotIRremote/src/IRremoteTools.cpp
+RobotIRremote_sam_C_SRC =
 RobotIRremote_sam_INC_DIRS = \
-	-Iarduino-support/libraries/RobotIRremote/src
+	arduino-support/libraries/RobotIRremote/src
 
 # Robot_Control for avr
-Robot_Control_avr_CPPS = \
-	arduino-support/libraries/Robot_Control/src/Arduino_LCD.cpp \
-	arduino-support/libraries/Robot_Control/src/Compass.cpp \
-	arduino-support/libraries/Robot_Control/src/EEPROM_I2C.cpp \
-	arduino-support/libraries/Robot_Control/src/EasyTransfer2.cpp \
+Robot_Control_avr_CXX_SRC = \
 	arduino-support/libraries/Robot_Control/src/Fat16.cpp \
-	arduino-support/libraries/Robot_Control/src/Melody.cpp \
 	arduino-support/libraries/Robot_Control/src/Motors.cpp \
-	arduino-support/libraries/Robot_Control/src/Multiplexer.cpp \
-	arduino-support/libraries/Robot_Control/src/RobotSdCard.cpp \
 	arduino-support/libraries/Robot_Control/src/SdCard.cpp \
-	arduino-support/libraries/Robot_Control/src/lcd.cpp \
-	arduino-support/libraries/Robot_Control/src/Sensors.cpp \
-	arduino-support/libraries/Robot_Control/src/Squawk.cpp \
-	arduino-support/libraries/Robot_Control/src/SquawkSD.cpp \
-	arduino-support/libraries/Robot_Control/src/communication.cpp \
-	arduino-support/libraries/Robot_Control/src/glcdfont.c \
-	arduino-support/libraries/Robot_Control/src/helper.cpp \
-	arduino-support/libraries/Robot_Control/src/information.cpp \
-	arduino-support/libraries/Robot_Control/src/keyboard.cpp \
-	arduino-support/libraries/Robot_Control/src/utility/VirtualKeyboard.cpp \
-	arduino-support/libraries/Robot_Control/src/utility/Adafruit_GFX.cpp \
 	arduino-support/libraries/Robot_Control/src/utility/RobotTextManager.cpp \
-	arduino-support/libraries/Robot_Control/src/ArduinoRobot.cpp
+	arduino-support/libraries/Robot_Control/src/Multiplexer.cpp \
+	arduino-support/libraries/Robot_Control/src/EEPROM_I2C.cpp \
+	arduino-support/libraries/Robot_Control/src/lcd.cpp \
+	arduino-support/libraries/Robot_Control/src/Squawk.cpp \
+	arduino-support/libraries/Robot_Control/src/information.cpp \
+	arduino-support/libraries/Robot_Control/src/utility/VirtualKeyboard.cpp \
+	arduino-support/libraries/Robot_Control/src/EasyTransfer2.cpp \
+	arduino-support/libraries/Robot_Control/src/SquawkSD.cpp \
+	arduino-support/libraries/Robot_Control/src/utility/Adafruit_GFX.cpp \
+	arduino-support/libraries/Robot_Control/src/RobotSdCard.cpp \
+	arduino-support/libraries/Robot_Control/src/keyboard.cpp \
+	arduino-support/libraries/Robot_Control/src/ArduinoRobot.cpp \
+	arduino-support/libraries/Robot_Control/src/Melody.cpp \
+	arduino-support/libraries/Robot_Control/src/helper.cpp \
+	arduino-support/libraries/Robot_Control/src/Compass.cpp \
+	arduino-support/libraries/Robot_Control/src/communication.cpp \
+	arduino-support/libraries/Robot_Control/src/Sensors.cpp \
+	arduino-support/libraries/Robot_Control/src/Arduino_LCD.cpp
+Robot_Control_avr_C_SRC = \
+	arduino-support/libraries/Robot_Control/src/glcdfont.c
 Robot_Control_avr_INC_DIRS = \
-	-Iarduino-support/libraries/Robot_Control/src \
- 	-Iarduino-support/libraries/Robot_Control/src/utility \
- 	-Iarduino-support/libraries/Robot_Control/examples/explore/R06_Wheel_Calibration
+	arduino-support/libraries/Robot_Control/src/utility \
+	arduino-support/libraries/Robot_Control/src \
+	arduino-support/libraries/Robot_Control/examples/explore/R06_Wheel_Calibration
 
 # Robot_Control for sam
-Robot_Control_sam_CPPS = \
-	arduino-support/libraries/Robot_Control/src/Arduino_LCD.cpp \
-	arduino-support/libraries/Robot_Control/src/Compass.cpp \
-	arduino-support/libraries/Robot_Control/src/EEPROM_I2C.cpp \
-	arduino-support/libraries/Robot_Control/src/EasyTransfer2.cpp \
+Robot_Control_sam_CXX_SRC = \
 	arduino-support/libraries/Robot_Control/src/Fat16.cpp \
-	arduino-support/libraries/Robot_Control/src/Melody.cpp \
 	arduino-support/libraries/Robot_Control/src/Motors.cpp \
-	arduino-support/libraries/Robot_Control/src/Multiplexer.cpp \
-	arduino-support/libraries/Robot_Control/src/RobotSdCard.cpp \
 	arduino-support/libraries/Robot_Control/src/SdCard.cpp \
-	arduino-support/libraries/Robot_Control/src/lcd.cpp \
-	arduino-support/libraries/Robot_Control/src/Sensors.cpp \
-	arduino-support/libraries/Robot_Control/src/Squawk.cpp \
-	arduino-support/libraries/Robot_Control/src/SquawkSD.cpp \
-	arduino-support/libraries/Robot_Control/src/communication.cpp \
-	arduino-support/libraries/Robot_Control/src/glcdfont.c \
-	arduino-support/libraries/Robot_Control/src/helper.cpp \
-	arduino-support/libraries/Robot_Control/src/information.cpp \
-	arduino-support/libraries/Robot_Control/src/keyboard.cpp \
-	arduino-support/libraries/Robot_Control/src/utility/VirtualKeyboard.cpp \
-	arduino-support/libraries/Robot_Control/src/utility/Adafruit_GFX.cpp \
 	arduino-support/libraries/Robot_Control/src/utility/RobotTextManager.cpp \
-	arduino-support/libraries/Robot_Control/src/ArduinoRobot.cpp
+	arduino-support/libraries/Robot_Control/src/Multiplexer.cpp \
+	arduino-support/libraries/Robot_Control/src/EEPROM_I2C.cpp \
+	arduino-support/libraries/Robot_Control/src/lcd.cpp \
+	arduino-support/libraries/Robot_Control/src/Squawk.cpp \
+	arduino-support/libraries/Robot_Control/src/information.cpp \
+	arduino-support/libraries/Robot_Control/src/utility/VirtualKeyboard.cpp \
+	arduino-support/libraries/Robot_Control/src/EasyTransfer2.cpp \
+	arduino-support/libraries/Robot_Control/src/SquawkSD.cpp \
+	arduino-support/libraries/Robot_Control/src/utility/Adafruit_GFX.cpp \
+	arduino-support/libraries/Robot_Control/src/RobotSdCard.cpp \
+	arduino-support/libraries/Robot_Control/src/keyboard.cpp \
+	arduino-support/libraries/Robot_Control/src/ArduinoRobot.cpp \
+	arduino-support/libraries/Robot_Control/src/Melody.cpp \
+	arduino-support/libraries/Robot_Control/src/helper.cpp \
+	arduino-support/libraries/Robot_Control/src/Compass.cpp \
+	arduino-support/libraries/Robot_Control/src/communication.cpp \
+	arduino-support/libraries/Robot_Control/src/Sensors.cpp \
+	arduino-support/libraries/Robot_Control/src/Arduino_LCD.cpp
+Robot_Control_sam_C_SRC = \
+	arduino-support/libraries/Robot_Control/src/glcdfont.c
 Robot_Control_sam_INC_DIRS = \
-	-Iarduino-support/libraries/Robot_Control/src \
- 	-Iarduino-support/libraries/Robot_Control/src/utility \
- 	-Iarduino-support/libraries/Robot_Control/examples/explore/R06_Wheel_Calibration
+	arduino-support/libraries/Robot_Control/src/utility \
+	arduino-support/libraries/Robot_Control/src \
+	arduino-support/libraries/Robot_Control/examples/explore/R06_Wheel_Calibration
 
 # Robot_Motor for avr
-Robot_Motor_avr_CPPS = \
-	arduino-support/libraries/Robot_Motor/src/EasyTransfer2.cpp \
+Robot_Motor_avr_CXX_SRC = \
 	arduino-support/libraries/Robot_Motor/src/Multiplexer.cpp \
-	arduino-support/libraries/Robot_Motor/src/lineFollow.cpp \
-	arduino-support/libraries/Robot_Motor/src/ArduinoRobotMotorBoard.cpp
+	arduino-support/libraries/Robot_Motor/src/ArduinoRobotMotorBoard.cpp \
+	arduino-support/libraries/Robot_Motor/src/EasyTransfer2.cpp \
+	arduino-support/libraries/Robot_Motor/src/lineFollow.cpp
+Robot_Motor_avr_C_SRC =
 Robot_Motor_avr_INC_DIRS = \
-	-Iarduino-support/libraries/Robot_Motor/src
+	arduino-support/libraries/Robot_Motor/src
 
 # Robot_Motor for sam
-Robot_Motor_sam_CPPS = \
-	arduino-support/libraries/Robot_Motor/src/EasyTransfer2.cpp \
+Robot_Motor_sam_CXX_SRC = \
 	arduino-support/libraries/Robot_Motor/src/Multiplexer.cpp \
-	arduino-support/libraries/Robot_Motor/src/lineFollow.cpp \
-	arduino-support/libraries/Robot_Motor/src/ArduinoRobotMotorBoard.cpp
+	arduino-support/libraries/Robot_Motor/src/ArduinoRobotMotorBoard.cpp \
+	arduino-support/libraries/Robot_Motor/src/EasyTransfer2.cpp \
+	arduino-support/libraries/Robot_Motor/src/lineFollow.cpp
+Robot_Motor_sam_C_SRC =
 Robot_Motor_sam_INC_DIRS = \
-	-Iarduino-support/libraries/Robot_Motor/src
+	arduino-support/libraries/Robot_Motor/src
 
 # SD for avr
-SD_avr_CPPS = \
-	arduino-support/libraries/SD/src/SD.cpp \
-	arduino-support/libraries/SD/src/utility/Sd2Card.cpp \
+SD_avr_CXX_SRC = \
 	arduino-support/libraries/SD/src/utility/SdFile.cpp \
+	arduino-support/libraries/SD/src/File.cpp \
+	arduino-support/libraries/SD/src/SD.cpp \
 	arduino-support/libraries/SD/src/utility/SdVolume.cpp \
-	arduino-support/libraries/SD/src/File.cpp
+	arduino-support/libraries/SD/src/utility/Sd2Card.cpp
+SD_avr_C_SRC =
 SD_avr_INC_DIRS = \
-	-Iarduino-support/libraries/SD/src \
- 	-Iarduino-support/libraries/SD/src/utility
+	arduino-support/libraries/SD/src/utility \
+	arduino-support/libraries/SD/src
 
 # SD for sam
-SD_sam_CPPS = \
-	arduino-support/libraries/SD/src/SD.cpp \
-	arduino-support/libraries/SD/src/utility/Sd2Card.cpp \
+SD_sam_CXX_SRC = \
 	arduino-support/libraries/SD/src/utility/SdFile.cpp \
+	arduino-support/libraries/SD/src/File.cpp \
+	arduino-support/libraries/SD/src/SD.cpp \
 	arduino-support/libraries/SD/src/utility/SdVolume.cpp \
-	arduino-support/libraries/SD/src/File.cpp
+	arduino-support/libraries/SD/src/utility/Sd2Card.cpp
+SD_sam_C_SRC =
 SD_sam_INC_DIRS = \
-	-Iarduino-support/libraries/SD/src \
- 	-Iarduino-support/libraries/SD/src/utility
+	arduino-support/libraries/SD/src/utility \
+	arduino-support/libraries/SD/src
 
 # SPI for avr
-SPI_avr_CPPS = \
+SPI_avr_CXX_SRC = \
 	arduino-support/avr/libraries/SPI/SPI.cpp
+SPI_avr_C_SRC =
 SPI_avr_INC_DIRS = \
-	-Iarduino-support/avr/libraries/SPI
+	arduino-support/avr/libraries/SPI
 
 # SPI for sam
-SPI_sam_CPPS = \
+SPI_sam_CXX_SRC = \
 	arduino-support/sam/libraries/SPI/SPI.cpp
+SPI_sam_C_SRC =
 SPI_sam_INC_DIRS = \
-	-Iarduino-support/sam/libraries/SPI
+	arduino-support/sam/libraries/SPI
 
 # Scheduler for avr
-Scheduler_avr_CPPS = \
+Scheduler_avr_CXX_SRC = \
 	arduino-support/libraries/Scheduler/src/Scheduler.cpp
+Scheduler_avr_C_SRC =
 Scheduler_avr_INC_DIRS = \
-	-Iarduino-support/libraries/Scheduler/src
+	arduino-support/libraries/Scheduler/src
 
 # Scheduler for sam
-Scheduler_sam_CPPS = \
+Scheduler_sam_CXX_SRC = \
 	arduino-support/libraries/Scheduler/src/Scheduler.cpp
+Scheduler_sam_C_SRC =
 Scheduler_sam_INC_DIRS = \
-	-Iarduino-support/libraries/Scheduler/src
+	arduino-support/libraries/Scheduler/src
 
 # Servo for avr
-Servo_avr_CPPS = \
-	arduino-support/libraries/Servo/src/avr/Servo.cpp \
-	arduino-support/libraries/Servo/src/sam/Servo.cpp
+Servo_avr_CXX_SRC = \
+	arduino-support/libraries/Servo/src/sam/Servo.cpp \
+	arduino-support/libraries/Servo/src/avr/Servo.cpp
+Servo_avr_C_SRC =
 Servo_avr_INC_DIRS = \
-	-Iarduino-support/libraries/Servo/src/sam \
- 	-Iarduino-support/libraries/Servo/src \
- 	-Iarduino-support/libraries/Servo/src/avr
+	arduino-support/libraries/Servo/src \
+	arduino-support/libraries/Servo/src/avr \
+	arduino-support/libraries/Servo/src/sam
 
 # Servo for sam
-Servo_sam_CPPS = \
-	arduino-support/libraries/Servo/src/avr/Servo.cpp \
-	arduino-support/libraries/Servo/src/sam/Servo.cpp
+Servo_sam_CXX_SRC = \
+	arduino-support/libraries/Servo/src/sam/Servo.cpp \
+	arduino-support/libraries/Servo/src/avr/Servo.cpp
+Servo_sam_C_SRC =
 Servo_sam_INC_DIRS = \
-	-Iarduino-support/libraries/Servo/src/sam \
- 	-Iarduino-support/libraries/Servo/src \
- 	-Iarduino-support/libraries/Servo/src/avr
+	arduino-support/libraries/Servo/src \
+	arduino-support/libraries/Servo/src/avr \
+	arduino-support/libraries/Servo/src/sam
 
 # SoftwareSerial for avr
-SoftwareSerial_avr_CPPS = \
+SoftwareSerial_avr_CXX_SRC = \
 	arduino-support/avr/libraries/SoftwareSerial/SoftwareSerial.cpp
+SoftwareSerial_avr_C_SRC =
 SoftwareSerial_avr_INC_DIRS = \
-	-Iarduino-support/avr/libraries/SoftwareSerial
+	arduino-support/avr/libraries/SoftwareSerial
+
+# SoftwareSerial for sam
+SoftwareSerial_sam_CXX_SRC =
+SoftwareSerial_sam_C_SRC =
+SoftwareSerial_sam_INC_DIRS =
 
 # SpacebrewYun for avr
-SpacebrewYun_avr_CPPS = \
+SpacebrewYun_avr_CXX_SRC = \
 	arduino-support/libraries/SpacebrewYun/src/SpacebrewYun.cpp
+SpacebrewYun_avr_C_SRC =
 SpacebrewYun_avr_INC_DIRS = \
-	-Iarduino-support/libraries/SpacebrewYun/src
+	arduino-support/libraries/SpacebrewYun/src
 
 # SpacebrewYun for sam
-SpacebrewYun_sam_CPPS = \
+SpacebrewYun_sam_CXX_SRC = \
 	arduino-support/libraries/SpacebrewYun/src/SpacebrewYun.cpp
+SpacebrewYun_sam_C_SRC =
 SpacebrewYun_sam_INC_DIRS = \
-	-Iarduino-support/libraries/SpacebrewYun/src
+	arduino-support/libraries/SpacebrewYun/src
 
 # Stepper for avr
-Stepper_avr_CPPS = \
+Stepper_avr_CXX_SRC = \
 	arduino-support/libraries/Stepper/src/Stepper.cpp
+Stepper_avr_C_SRC =
 Stepper_avr_INC_DIRS = \
-	-Iarduino-support/libraries/Stepper/src
+	arduino-support/libraries/Stepper/src
 
 # Stepper for sam
-Stepper_sam_CPPS = \
+Stepper_sam_CXX_SRC = \
 	arduino-support/libraries/Stepper/src/Stepper.cpp
+Stepper_sam_C_SRC =
 Stepper_sam_INC_DIRS = \
-	-Iarduino-support/libraries/Stepper/src
+	arduino-support/libraries/Stepper/src
 
 # TFT for avr
-TFT_avr_CPPS = \
-	arduino-support/libraries/TFT/src/utility/glcdfont.c \
-	arduino-support/libraries/TFT/src/utility/Adafruit_GFX.cpp \
+TFT_avr_CXX_SRC = \
 	arduino-support/libraries/TFT/src/utility/Adafruit_ST7735.cpp \
-	arduino-support/libraries/TFT/src/TFT.cpp
+	arduino-support/libraries/TFT/src/TFT.cpp \
+	arduino-support/libraries/TFT/src/utility/Adafruit_GFX.cpp
+TFT_avr_C_SRC = \
+	arduino-support/libraries/TFT/src/utility/glcdfont.c
 TFT_avr_INC_DIRS = \
-	-Iarduino-support/libraries/TFT/src \
- 	-Iarduino-support/libraries/TFT/src/utility
+	arduino-support/libraries/TFT/src/utility \
+	arduino-support/libraries/TFT/src
 
 # TFT for sam
-TFT_sam_CPPS = \
-	arduino-support/libraries/TFT/src/utility/glcdfont.c \
-	arduino-support/libraries/TFT/src/utility/Adafruit_GFX.cpp \
+TFT_sam_CXX_SRC = \
 	arduino-support/libraries/TFT/src/utility/Adafruit_ST7735.cpp \
-	arduino-support/libraries/TFT/src/TFT.cpp
+	arduino-support/libraries/TFT/src/TFT.cpp \
+	arduino-support/libraries/TFT/src/utility/Adafruit_GFX.cpp
+TFT_sam_C_SRC = \
+	arduino-support/libraries/TFT/src/utility/glcdfont.c
 TFT_sam_INC_DIRS = \
-	-Iarduino-support/libraries/TFT/src \
- 	-Iarduino-support/libraries/TFT/src/utility
+	arduino-support/libraries/TFT/src/utility \
+	arduino-support/libraries/TFT/src
 
 # Temboo for avr
-Temboo_avr_CPPS = \
-	arduino-support/libraries/Temboo/src/utility/ChoreoInput.cpp \
-	arduino-support/libraries/Temboo/src/utility/ChoreoInputSet.cpp \
-	arduino-support/libraries/Temboo/src/utility/ChoreoOutput.cpp \
-	arduino-support/libraries/Temboo/src/utility/ChoreoOutputSet.cpp \
-	arduino-support/libraries/Temboo/src/utility/ChoreoPreset.cpp \
-	arduino-support/libraries/Temboo/src/utility/DataFormatter.cpp \
-	arduino-support/libraries/Temboo/src/utility/TembooGlobal.c \
-	arduino-support/libraries/Temboo/src/utility/TembooSession.cpp \
-	arduino-support/libraries/Temboo/src/utility/tmbhmac.cpp \
-	arduino-support/libraries/Temboo/src/utility/tmbmd5.cpp \
-	arduino-support/libraries/Temboo/src/utility/BaseFormatter.cpp \
+Temboo_avr_CXX_SRC = \
 	arduino-support/libraries/Temboo/src/utility/ChoreoInputFormatter.cpp \
+	arduino-support/libraries/Temboo/src/Temboo.cpp \
+	arduino-support/libraries/Temboo/src/utility/ChoreoOutput.cpp \
+	arduino-support/libraries/Temboo/src/utility/BaseFormatter.cpp \
+	arduino-support/libraries/Temboo/src/utility/ChoreoOutputSet.cpp \
+	arduino-support/libraries/Temboo/src/utility/tmbmd5.cpp \
+	arduino-support/libraries/Temboo/src/utility/ChoreoInputSet.cpp \
+	arduino-support/libraries/Temboo/src/utility/ChoreoInput.cpp \
+	arduino-support/libraries/Temboo/src/utility/DataFormatter.cpp \
+	arduino-support/libraries/Temboo/src/utility/ChoreoPreset.cpp \
+	arduino-support/libraries/Temboo/src/utility/TembooSession.cpp \
 	arduino-support/libraries/Temboo/src/utility/ChoreoOutputFormatter.cpp \
 	arduino-support/libraries/Temboo/src/utility/ChoreoPresetFormatter.cpp \
-	arduino-support/libraries/Temboo/src/Temboo.cpp
+	arduino-support/libraries/Temboo/src/utility/tmbhmac.cpp
+Temboo_avr_C_SRC = \
+	arduino-support/libraries/Temboo/src/utility/TembooGlobal.c
 Temboo_avr_INC_DIRS = \
-	-Iarduino-support/libraries/Temboo/src/utility \
- 	-Iarduino-support/libraries/Temboo/src
+	arduino-support/libraries/Temboo/src/utility \
+	arduino-support/libraries/Temboo/src
 
 # Temboo for sam
-Temboo_sam_CPPS = \
-	arduino-support/libraries/Temboo/src/utility/ChoreoInput.cpp \
-	arduino-support/libraries/Temboo/src/utility/ChoreoInputSet.cpp \
-	arduino-support/libraries/Temboo/src/utility/ChoreoOutput.cpp \
-	arduino-support/libraries/Temboo/src/utility/ChoreoOutputSet.cpp \
-	arduino-support/libraries/Temboo/src/utility/ChoreoPreset.cpp \
-	arduino-support/libraries/Temboo/src/utility/DataFormatter.cpp \
-	arduino-support/libraries/Temboo/src/utility/TembooGlobal.c \
-	arduino-support/libraries/Temboo/src/utility/TembooSession.cpp \
-	arduino-support/libraries/Temboo/src/utility/tmbhmac.cpp \
-	arduino-support/libraries/Temboo/src/utility/tmbmd5.cpp \
-	arduino-support/libraries/Temboo/src/utility/BaseFormatter.cpp \
+Temboo_sam_CXX_SRC = \
 	arduino-support/libraries/Temboo/src/utility/ChoreoInputFormatter.cpp \
+	arduino-support/libraries/Temboo/src/Temboo.cpp \
+	arduino-support/libraries/Temboo/src/utility/ChoreoOutput.cpp \
+	arduino-support/libraries/Temboo/src/utility/BaseFormatter.cpp \
+	arduino-support/libraries/Temboo/src/utility/ChoreoOutputSet.cpp \
+	arduino-support/libraries/Temboo/src/utility/tmbmd5.cpp \
+	arduino-support/libraries/Temboo/src/utility/ChoreoInputSet.cpp \
+	arduino-support/libraries/Temboo/src/utility/ChoreoInput.cpp \
+	arduino-support/libraries/Temboo/src/utility/DataFormatter.cpp \
+	arduino-support/libraries/Temboo/src/utility/ChoreoPreset.cpp \
+	arduino-support/libraries/Temboo/src/utility/TembooSession.cpp \
 	arduino-support/libraries/Temboo/src/utility/ChoreoOutputFormatter.cpp \
 	arduino-support/libraries/Temboo/src/utility/ChoreoPresetFormatter.cpp \
-	arduino-support/libraries/Temboo/src/Temboo.cpp
+	arduino-support/libraries/Temboo/src/utility/tmbhmac.cpp
+Temboo_sam_C_SRC = \
+	arduino-support/libraries/Temboo/src/utility/TembooGlobal.c
 Temboo_sam_INC_DIRS = \
-	-Iarduino-support/libraries/Temboo/src/utility \
- 	-Iarduino-support/libraries/Temboo/src
+	arduino-support/libraries/Temboo/src/utility \
+	arduino-support/libraries/Temboo/src
 
 # USBHost for avr
-USBHost_avr_CPPS = \
-	arduino-support/libraries/USBHost/src/Usb.cpp \
-	arduino-support/libraries/USBHost/src/adk.cpp \
-	arduino-support/libraries/USBHost/src/hid2.cpp \
-	arduino-support/libraries/USBHost/src/hidboot.cpp \
-	arduino-support/libraries/USBHost/src/parsetools.cpp \
+USBHost_avr_CXX_SRC = \
 	arduino-support/libraries/USBHost/src/KeyboardController.cpp \
-	arduino-support/libraries/USBHost/src/MouseController.cpp
+	arduino-support/libraries/USBHost/src/hidboot.cpp \
+	arduino-support/libraries/USBHost/src/adk.cpp \
+	arduino-support/libraries/USBHost/src/MouseController.cpp \
+	arduino-support/libraries/USBHost/src/Usb.cpp \
+	arduino-support/libraries/USBHost/src/parsetools.cpp \
+	arduino-support/libraries/USBHost/src/hid2.cpp
+USBHost_avr_C_SRC =
 USBHost_avr_INC_DIRS = \
-	-Iarduino-support/libraries/USBHost/src
+	arduino-support/libraries/USBHost/src
 
 # USBHost for sam
-USBHost_sam_CPPS = \
-	arduino-support/libraries/USBHost/src/Usb.cpp \
-	arduino-support/libraries/USBHost/src/adk.cpp \
-	arduino-support/libraries/USBHost/src/hid2.cpp \
-	arduino-support/libraries/USBHost/src/hidboot.cpp \
-	arduino-support/libraries/USBHost/src/parsetools.cpp \
+USBHost_sam_CXX_SRC = \
 	arduino-support/libraries/USBHost/src/KeyboardController.cpp \
-	arduino-support/libraries/USBHost/src/MouseController.cpp
+	arduino-support/libraries/USBHost/src/hidboot.cpp \
+	arduino-support/libraries/USBHost/src/adk.cpp \
+	arduino-support/libraries/USBHost/src/MouseController.cpp \
+	arduino-support/libraries/USBHost/src/Usb.cpp \
+	arduino-support/libraries/USBHost/src/parsetools.cpp \
+	arduino-support/libraries/USBHost/src/hid2.cpp
+USBHost_sam_C_SRC =
 USBHost_sam_INC_DIRS = \
-	-Iarduino-support/libraries/USBHost/src
+	arduino-support/libraries/USBHost/src
 
 # WiFi for avr
-WiFi_avr_CPPS = \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/ARDUINO/led.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/EVK1105/led.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx_mem.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/EBI/SMC/smc.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/EIC/eic.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC/flashc.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/GPIO/gpio.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/INTC/intc.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PDCA/pdca.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm_conf_clocks.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/power_clocks_lib.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/RTC/rtc.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/SPI/spi.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/TC/tc.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/USART/usart.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/DELAY/delay.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/dns.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/init.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/mem.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/memp.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/icmp.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/igmp.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/inet.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/inet_chksum.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/ip.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/ip_addr.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/ip_frag.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/autoip.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/netif.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/pbuf.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/raw.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/stats.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/tcp.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/tcp_in.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/tcp_out.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/udp.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/dhcp.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/netif/loopif.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/netif/etharp.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if/netif/wlif.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/MEMORY/CTRL_ACCESS/ctrl_access.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/print_funcs.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/debug.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/ard_tcp.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/ard_utils.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/avr32_spi.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/board_init.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/cmd_wl.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/console.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/fw_download_extflash.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/lwip_setup.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/main.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/nvram.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/owl_os.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/ping.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/printf-stdarg.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/timer.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/util.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/wl_cm.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/ard_spi.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/ARDUINO/led.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/EVK1105/led.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx_mem.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC/flashc.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/GPIO/gpio.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/INTC/intc.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm_conf_clocks.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/power_clocks_lib.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/SPI/spi.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/USART/usart.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/SERVICES/MEMORY/CTRL_ACCESS/ctrl_access.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/print_funcs.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/debug.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/flash_fw.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/nor_flash.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/printf-stdarg.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/startup.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/clocks.c \
-	arduino-support/libraries/WiFi/src/WiFiClient.cpp \
-	arduino-support/libraries/WiFi/src/WiFiServer.cpp \
-	arduino-support/libraries/WiFi/src/WiFiUdp.cpp \
+WiFi_avr_CXX_SRC = \
 	arduino-support/libraries/WiFi/src/utility/server_drv.cpp \
 	arduino-support/libraries/WiFi/src/utility/spi_drv.cpp \
+	arduino-support/libraries/WiFi/src/WiFiServer.cpp \
 	arduino-support/libraries/WiFi/src/utility/wifi_drv.cpp \
-	arduino-support/libraries/WiFi/src/WiFi.cpp
+	arduino-support/libraries/WiFi/src/WiFi.cpp \
+	arduino-support/libraries/WiFi/src/WiFiClient.cpp \
+	arduino-support/libraries/WiFi/src/WiFiUdp.cpp
+WiFi_avr_C_SRC = \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/mem.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/lwip_setup.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/print_funcs.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/igmp.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/fw_download_extflash.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/stats.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm_conf_clocks.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/DELAY/delay.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if/netif/wlif.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PDCA/pdca.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/pbuf.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/icmp.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/EBI/SMC/smc.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/inet.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/udp.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/debug.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/ARDUINO/led.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/nor_flash.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/ard_tcp.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/board_init.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/GPIO/gpio.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/ip_addr.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/owl_os.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/netif/loopif.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/EVK1105/led.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/autoip.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/clocks.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/INTC/intc.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/netif/etharp.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/ard_utils.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/printf-stdarg.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/USART/usart.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/util.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/tcp.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/nvram.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC/flashc.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/USART/usart.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/GPIO/gpio.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/main.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/EVK1105/led.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm_conf_clocks.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx_mem.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/tcp_in.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/cmd_wl.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/SPI/spi.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/dhcp.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/SERVICES/MEMORY/CTRL_ACCESS/ctrl_access.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/MEMORY/CTRL_ACCESS/ctrl_access.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/RTC/rtc.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/flash_fw.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/raw.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/SPI/spi.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/dns.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/netif.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/ARDUINO/led.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/init.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/ip.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/console.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/ard_spi.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/timer.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/printf-stdarg.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/wl_cm.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/power_clocks_lib.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/print_funcs.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/avr32_spi.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/memp.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/startup.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/ip_frag.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/ping.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/TC/tc.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/EIC/eic.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/power_clocks_lib.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC/flashc.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/inet_chksum.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/INTC/intc.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/debug.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx_mem.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/tcp_out.c
 WiFi_avr_INC_DIRS = \
-	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/EVK1105 \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/netif \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/USART \
- 	-Iarduino-support/libraries/WiFi/src \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/SPI \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/PM \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PDCA \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if/include/netif \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/USART \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/CONFIG \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/ARDUINO \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if/include \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/SERVICES/MEMORY/CTRL_ACCESS \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/GPIO \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/EBI/SMC \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/MEMORY/CTRL_ACCESS \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/CONFIG \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/ARDUINO \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/TC \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/SPI \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PM \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/RTC \
- 	-Iarduino-support/libraries/WiFi/src/utility \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/EIC \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/INTC \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/INTC \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/GPIO \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if/include/arch \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/EVK1105 \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/CPU/CYCLE_COUNTER \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/DELAY \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/ipv4/lwip \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/SPI \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/RTC \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/PM \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/netif \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/INTC \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if/include \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if/include/netif \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/CONFIG \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PDCA \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/EVK1105 \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/CONFIG \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PM \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/ARDUINO \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/TC \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/EBI/SMC \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/EIC \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS \
+	arduino-support/libraries/WiFi/extras/wifiHD/src \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/INTC \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if/include/arch \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/DELAY \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/SERVICES/MEMORY/CTRL_ACCESS \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/USART \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/GPIO \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/ARDUINO \
+	arduino-support/libraries/WiFi/src/utility \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/MEMORY/CTRL_ACCESS \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/GPIO \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/SPI \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/EVK1105 \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/CPU/CYCLE_COUNTER \
+	arduino-support/libraries/WiFi/src \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/USART \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/ipv4/lwip
 
 # WiFi for sam
-WiFi_sam_CPPS = \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/ARDUINO/led.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/EVK1105/led.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx_mem.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/EBI/SMC/smc.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/EIC/eic.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC/flashc.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/GPIO/gpio.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/INTC/intc.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PDCA/pdca.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm_conf_clocks.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/power_clocks_lib.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/RTC/rtc.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/SPI/spi.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/TC/tc.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/USART/usart.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/DELAY/delay.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/dns.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/init.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/mem.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/memp.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/icmp.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/igmp.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/inet.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/inet_chksum.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/ip.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/ip_addr.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/ip_frag.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/autoip.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/netif.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/pbuf.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/raw.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/stats.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/tcp.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/tcp_in.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/tcp_out.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/udp.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/dhcp.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/netif/loopif.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/netif/etharp.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if/netif/wlif.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/MEMORY/CTRL_ACCESS/ctrl_access.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/print_funcs.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/debug.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/ard_tcp.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/ard_utils.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/avr32_spi.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/board_init.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/cmd_wl.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/console.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/fw_download_extflash.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/lwip_setup.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/main.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/nvram.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/owl_os.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/ping.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/printf-stdarg.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/timer.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/util.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/wl_cm.c \
-	arduino-support/libraries/WiFi/extras/wifiHD/src/ard_spi.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/ARDUINO/led.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/EVK1105/led.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx_mem.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC/flashc.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/GPIO/gpio.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/INTC/intc.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm_conf_clocks.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/power_clocks_lib.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/SPI/spi.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/USART/usart.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/SERVICES/MEMORY/CTRL_ACCESS/ctrl_access.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/print_funcs.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/debug.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/flash_fw.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/nor_flash.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/printf-stdarg.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/startup.c \
-	arduino-support/libraries/WiFi/extras/wifi_dnld/src/clocks.c \
-	arduino-support/libraries/WiFi/src/WiFiClient.cpp \
-	arduino-support/libraries/WiFi/src/WiFiServer.cpp \
-	arduino-support/libraries/WiFi/src/WiFiUdp.cpp \
+WiFi_sam_CXX_SRC = \
 	arduino-support/libraries/WiFi/src/utility/server_drv.cpp \
 	arduino-support/libraries/WiFi/src/utility/spi_drv.cpp \
+	arduino-support/libraries/WiFi/src/WiFiServer.cpp \
 	arduino-support/libraries/WiFi/src/utility/wifi_drv.cpp \
-	arduino-support/libraries/WiFi/src/WiFi.cpp
+	arduino-support/libraries/WiFi/src/WiFi.cpp \
+	arduino-support/libraries/WiFi/src/WiFiClient.cpp \
+	arduino-support/libraries/WiFi/src/WiFiUdp.cpp
+WiFi_sam_C_SRC = \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/mem.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/lwip_setup.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/print_funcs.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/igmp.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/fw_download_extflash.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/stats.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm_conf_clocks.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/DELAY/delay.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if/netif/wlif.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PDCA/pdca.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/pbuf.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/icmp.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/EBI/SMC/smc.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/inet.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/udp.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/debug.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/ARDUINO/led.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/nor_flash.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/ard_tcp.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/board_init.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/GPIO/gpio.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/ip_addr.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/owl_os.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/netif/loopif.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/EVK1105/led.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/autoip.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/clocks.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/INTC/intc.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/netif/etharp.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/ard_utils.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/printf-stdarg.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/USART/usart.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/util.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/tcp.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/nvram.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC/flashc.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/USART/usart.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/GPIO/gpio.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/main.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/EVK1105/led.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/pm_conf_clocks.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx_mem.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/tcp_in.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/cmd_wl.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/SPI/spi.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/dhcp.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/SERVICES/MEMORY/CTRL_ACCESS/ctrl_access.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/MEMORY/CTRL_ACCESS/ctrl_access.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/RTC/rtc.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/flash_fw.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/raw.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/SPI/spi.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/dns.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/netif.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/ARDUINO/led.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/init.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/ip.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/console.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/ard_spi.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/timer.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/printf-stdarg.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/wl_cm.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/power_clocks_lib.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/print_funcs.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/avr32_spi.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/memp.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/startup.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/ip_frag.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/ping.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/TC/tc.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/EIC/eic.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PM/power_clocks_lib.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC/flashc.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/ipv4/inet_chksum.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/INTC/intc.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG/debug.c \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX/at45dbx_mem.c \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/core/tcp_out.c
 WiFi_sam_INC_DIRS = \
-	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/EVK1105 \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/netif \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/USART \
- 	-Iarduino-support/libraries/WiFi/src \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/SPI \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/PM \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PDCA \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if/include/netif \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/USART \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/CONFIG \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/ARDUINO \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if/include \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/SERVICES/MEMORY/CTRL_ACCESS \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/GPIO \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/EBI/SMC \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/MEMORY/CTRL_ACCESS \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/CONFIG \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/ARDUINO \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/TC \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/SPI \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PM \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/RTC \
- 	-Iarduino-support/libraries/WiFi/src/utility \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/EIC \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/INTC \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/INTC \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/GPIO \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if/include/arch \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/EVK1105 \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/CPU/CYCLE_COUNTER \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/DELAY \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD \
- 	-Iarduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/ipv4/lwip \
- 	-Iarduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/SPI \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/RTC \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/PM \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/netif \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/INTC \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if/include \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if/include/netif \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/CONFIG \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PDCA \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/EVK1105 \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/CONFIG \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/lwip \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/PM \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS/ARDUINO \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/TC \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/EBI/SMC \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/BOARDS \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/DEBUG \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/EIC \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS \
+	arduino-support/libraries/WiFi/extras/wifiHD/src \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/INTC \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS/LIBS/NEWLIB_ADDONS/INCLUDE \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-port-1.3.2/HD/if/include/arch \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/DELAY \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/SERVICES/MEMORY/CTRL_ACCESS \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/COMPONENTS/WIFI/HD \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/COMPONENTS/MEMORY/DATA_FLASH/AT45DBX \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/USART \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/GPIO \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/ARDUINO \
+	arduino-support/libraries/WiFi/src/utility \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/MEMORY/CTRL_ACCESS \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/GPIO \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/SPI \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/UTILS \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/BOARDS/EVK1105 \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/DRIVERS/CPU/CYCLE_COUNTER \
+	arduino-support/libraries/WiFi/src \
+	arduino-support/libraries/WiFi/extras/wifi_dnld/src/SOFTWARE_FRAMEWORK/DRIVERS/USART \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR \
+	arduino-support/libraries/WiFi/extras/wifiHD/src/SOFTWARE_FRAMEWORK/SERVICES/LWIP/lwip-1.3.2/src/include/ipv4/lwip
 
 # Wire for avr
-Wire_avr_CPPS = \
-	arduino-support/avr/libraries/Wire/utility/twi.c \
+Wire_avr_CXX_SRC = \
 	arduino-support/avr/libraries/Wire/Wire.cpp
+Wire_avr_C_SRC = \
+	arduino-support/avr/libraries/Wire/utility/twi.c
 Wire_avr_INC_DIRS = \
-	-Iarduino-support/avr/libraries/Wire/utility \
- 	-Iarduino-support/avr/libraries/Wire
+	arduino-support/avr/libraries/Wire \
+	arduino-support/avr/libraries/Wire/utility
 
 # Wire for sam
-Wire_sam_CPPS = \
+Wire_sam_CXX_SRC = \
 	arduino-support/sam/libraries/Wire/Wire.cpp
+Wire_sam_C_SRC =
 Wire_sam_INC_DIRS = \
-	-Iarduino-support/sam/libraries/Wire
+	arduino-support/sam/libraries/Wire
 
