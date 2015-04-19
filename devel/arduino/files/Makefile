@@ -85,22 +85,12 @@ TARGET = ${.CURDIR:C/.*\///g}
 
 ARDUINO = arduino-support
 AVR_TOOLS_PATH = ${LOCALBASE}/bin
-SRC =	${ARDUINO}/${ARDUINO_ARCH}/cores/arduino/wiring.c \
-	${ARDUINO}/${ARDUINO_ARCH}/cores/arduino/wiring_analog.c \
-	${ARDUINO}/${ARDUINO_ARCH}/cores/arduino/wiring_digital.c \
-	${ARDUINO}/${ARDUINO_ARCH}/cores/arduino/wiring_pulse.c \
-	${ARDUINO}/${ARDUINO_ARCH}/cores/arduino/wiring_shift.c \
-	${ARDUINO}/${ARDUINO_ARCH}/cores/arduino/WInterrupts.c \
-	${ARDUINO}/${ARDUINO_ARCH}/cores/arduino/hooks.c
-CXXSRC =${ARDUINO}/${ARDUINO_ARCH}/cores/arduino/HardwareSerial.cpp \
-	${ARDUINO}/${ARDUINO_ARCH}/cores/arduino/WMath.cpp \
-	${ARDUINO}/${ARDUINO_ARCH}/cores/arduino/Print.cpp \
-	${ARDUINO}/${ARDUINO_ARCH}/cores/arduino/WString.cpp
 
 .include "${LOCALBASE}/share/arduino/mk/alibs.mk"
 .for l in ${LIBRARIES}
-CXXSRC +=	${${l}_${ARDUINO_ARCH}_CPPS}
-LIBINC +=	${${l}_${ARDUINO_ARCH}_INC_DIRS}
+CXXSRC +=	${${l}_${ARDUINO_ARCH}_CXX_SRC}
+SRC +=		${${l}_${ARDUINO_ARCH}_C_SRC}
+LIBINC +=	${${l}_${ARDUINO_ARCH}_INC_DIRS:S/^/-I/}
 .endfor
 FORMAT = ihex
 
@@ -115,8 +105,7 @@ DEBUG = stabs
 # C options
 COPT = s
 CDEFS = -DF_CPU=$(F_CPU) -DARDUINO=100 -DARDUINO_ARCH_AVR
-CINCS = $(LIBINC) \
-	-I${ARDUINO}/${ARDUINO_ARCH}/cores/arduino \
+CINCS = $(LIBINC) ${COREINC} \
 	-I$(ARDUINO)/${ARDUINO_ARCH}/variants/$(VARIANT)
 CSTANDARD = -std=gnu99
 CDEBUG = -g$(DEBUG)
