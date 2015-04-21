@@ -29,7 +29,7 @@ LIB_DEPENDS =		audio/openal \
 			x11/vlc \
 			${MODPY_LIB_DEPENDS}
 RUN_DEPENDS = 		devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=Release \
 			-DSYSCONF_DIR=${SYSCONFDIR}/gemrb/ \
