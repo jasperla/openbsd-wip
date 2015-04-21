@@ -97,7 +97,6 @@ www/p5-Session-Storage-Secure		ready to import, sent to ports@ 2015-01-24 (garce
 www/p5-Dancer2-Session-Cookie		ready to import, sent to ports@ 2015-01-24 (garcer)
 net/gophervr				ready to import, waiting for unlock (bcallah@)
 net/ocserv				ready, waiting for unlock -sthen
-net/py-pafy (may change category)	ready to import, waiting for unlock (bcallah@)
 multimedia/mps-youtube			ready to import, waiting for unlock (bcallah@)
 graphics/glfw				ready to import, waiting for unlock (bcallah@)
 graphics/mandelbulber2			ready to import, waiting for unlock (bcallah@)
