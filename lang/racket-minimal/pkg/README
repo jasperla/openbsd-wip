@@ -15,4 +15,4 @@ Known issues
 Limitations
 ===========
 
-Racket only supports CPUs with SSE extension.
+Racket's JIT only supports CPUs with SSE2 extension.
