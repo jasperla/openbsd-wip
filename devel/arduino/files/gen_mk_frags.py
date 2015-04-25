@@ -36,6 +36,7 @@ class CompilationInfo(object):
     def empty(cls):
         return cls([], [], [])
 
+    # generate make source code assigning a make var
     def cxx_src_mk(self, var):
         return _make_assign(var, self.cxx_src)
 
@@ -45,7 +46,21 @@ class CompilationInfo(object):
     def inc_dir_mk(self, var):
         return _make_assign(var, self.inc_dirs)
 
-def collect_files(path):
+def intermediate_inc_dirs(stop_path, path):
+    result = [path]
+    while path != stop_path:
+        path = os.path.dirname(path)
+        result.append(path)
+    return result
+
+def collect_files(path, root=None):
+    if root is None:
+        root = path
+
+    # we don't want examples included
+    if os.path.basename(path) == "examples":
+        return [], [], []
+
     cxx_src = []
     c_src = []
     inc_dirs = []
@@ -59,9 +74,12 @@ def collect_files(path):
             elif f.endswith(".c"):
                 c_src.append(fpath)
             elif f.endswith(".h"):
-                inc_dirs.append(os.path.dirname(fpath))
+                inc_dir = os.path.dirname(fpath)
+                more_inc_dirs = intermediate_inc_dirs(root, inc_dir)
+                inc_dirs.extend(more_inc_dirs)
         elif os.path.isdir(fpath):
-            n_cxx_src, n_c_src, n_inc_dirs = collect_files(fpath) # recurse
+            # recurse
+            n_cxx_src, n_c_src, n_inc_dirs = collect_files(fpath, root)
             cxx_src.extend(n_cxx_src)
             c_src.extend(n_c_src)
             inc_dirs.extend(n_inc_dirs)
