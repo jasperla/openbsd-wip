@@ -3,21 +3,28 @@
 @bin bin/mocp
 lib/moc/
 lib/moc/decoder_plugins/
+lib/moc/decoder_plugins/libaac_decoder.a
+lib/moc/decoder_plugins/libaac_decoder.la
+lib/moc/decoder_plugins/libffmpeg_decoder.a
+lib/moc/decoder_plugins/libffmpeg_decoder.la
 lib/moc/decoder_plugins/libflac_decoder.a
 lib/moc/decoder_plugins/libflac_decoder.la
 lib/moc/decoder_plugins/libmp3_decoder.a
 lib/moc/decoder_plugins/libmp3_decoder.la
 lib/moc/decoder_plugins/libmusepack_decoder.a
 lib/moc/decoder_plugins/libmusepack_decoder.la
-lib/moc/decoder_plugins/libsndfile_formats_decoder.a
-lib/moc/decoder_plugins/libsndfile_formats_decoder.la
+lib/moc/decoder_plugins/libsndfile_decoder.a
+lib/moc/decoder_plugins/libsndfile_decoder.la
 lib/moc/decoder_plugins/libspeex_decoder.a
 lib/moc/decoder_plugins/libspeex_decoder.la
 lib/moc/decoder_plugins/libvorbis_decoder.a
 lib/moc/decoder_plugins/libvorbis_decoder.la
+lib/moc/decoder_plugins/libwavpack_decoder.a
+lib/moc/decoder_plugins/libwavpack_decoder.la
 @man man/man1/mocp.1
 share/doc/moc/
 share/doc/moc/README
+share/doc/moc/README_equalizer
 share/doc/moc/THANKS
 share/doc/moc/config.example
 share/doc/moc/keymap.example

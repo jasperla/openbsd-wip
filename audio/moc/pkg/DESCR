@@ -1,26 +1,12 @@
-MOC (music on console) is a console audio player for LINUX/UNIX
-designed to be powerful and easy to use.
+MOC (music on console) is a console audio player for LINUX/UNIX designed
+to be powerful and easy to use.
 
-MOC plays smoothly, regardless of system or I/O load because it
-uses the output buffer in a separate thread. It provides gapelss
-playback because the next file to be played is precached while the
-current file is playing.
+MOC plays smoothly, regardless of system or I/O load because it uses the
+output buffer in a separate thread. It provides gapelss playback because
+the next file to be played is precached while the current file is
+playing.
 
-Internet streams (Icecast, Shoutcast) are supported. Key mapping
-can be fully customized.
-
-Supported file formats include: MP3, Ogg Vorbis, FLAC, Musepack,
-Speex, WAVE (and other less popular formats supported by Sndfile),
-MOD, WavPack, AAC, SID, MIDI. Moreover most audio formats recognized
-by FFMpeg/LibAV are also supported (e.g. MP4, Opus, WMA, APE, AC3,
-DTS - even embedded in video files).
-
-Other features:
-  * Mixer (both software and hardware) and simple equalizer
-  * Color themes
-  * Searching playlist or a directory
-  * Configurable title creation from filenames and file tags
-  * Optional character set conversion for file tags using iconv()
-  * OSS, ALSA, JACK and SNDIO output
-  * User defined keys
-  * Cache for files' tags
+Supported file formats are: MP3, Ogg Vorbis, FLAC, Musepack (mpc),
+Speex, Opus, WAVE, those supported by FFmpeg/LibAV (e.g., WMA,
+RealAudio, AAC, MP4), AIFF, AU, SVX, Sphere Nist WAV, IRCAM SF, Creative
+VOC, SID, wavpack.

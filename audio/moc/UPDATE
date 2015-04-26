@@ -1,0 +1,18 @@
+2015-04-15 Michael Seyfert <michael@codesand.org>
+
+ * Update to 2.5.0
+ * Port is now in working state (for me at least, amd64).
+
+TODO:
+Test gettext with other languages
+Optional libtimidity for MIDI
+
+Check insecure functions:
+server.o(.text+0xbff): In function `server_init':
+moc-2.5.0/server.c:363: warning: strcpy() is almost always misused, please use strlcpy()
+playlist.o(.text+0x2317): In function `plist_shuffle':
+moc-2.5.0/playlist.c:777: warning: rand() may return deterministic values, is that what you want?
+interface.o(.text+0x28ff): In function `go_to_dir':
+moc-2.5.0/interface.c:1264: warning: strcat() is almost always misused, please use strlcat()
+server.o(.text+0x2e4e): In function `update_eq_name':
+moc-2.5.0/server.c:1268: warning: sprintf() is often misused, please use snprintf()

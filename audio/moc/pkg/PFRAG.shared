@@ -1,7 +1,10 @@
 @comment $OpenBSD$
+lib/moc/decoder_plugins/libaac_decoder.so
+lib/moc/decoder_plugins/libffmpeg_decoder.so
 lib/moc/decoder_plugins/libflac_decoder.so
 lib/moc/decoder_plugins/libmp3_decoder.so
 lib/moc/decoder_plugins/libmusepack_decoder.so
-lib/moc/decoder_plugins/libsndfile_formats_decoder.so
+lib/moc/decoder_plugins/libsndfile_decoder.so
 lib/moc/decoder_plugins/libspeex_decoder.so
 lib/moc/decoder_plugins/libvorbis_decoder.so
+lib/moc/decoder_plugins/libwavpack_decoder.so
