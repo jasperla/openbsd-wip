@@ -1,0 +1,3 @@
+io.js is a JavaScript platform built on Chrome's V8 runtime.
+This project began as a fork of Joyent's Node.js and is compatible
+with the npm ecosystem.
