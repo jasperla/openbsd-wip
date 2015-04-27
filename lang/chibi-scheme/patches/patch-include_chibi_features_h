@@ -1,15 +1,6 @@
 $OpenBSD$
 --- include/chibi/features.h.orig	Sun Mar  1 12:35:16 2015
 +++ include/chibi/features.h	Sun Mar  1 12:44:47 2015
-@@ -114,7 +114,7 @@
- 
- /* uncomment to install a default signal handler in main() for segfaults */
- /*   This will print a helpful backtrace. */
--/* #define SEXP_USE_PRINT_BACKTRACE_ON_SEGFAULT 1 */
-+#define SEXP_USE_PRINT_BACKTRACE_ON_SEGFAULT 1
- 
- /* uncomment this to make the heap common to all contexts */
- /*   By default separate contexts can have separate heaps, */
 @@ -228,7 +228,7 @@
  
  /* uncomment this to make the VM adhere to alignment rules */
