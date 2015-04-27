@@ -45,6 +45,9 @@ lib/chibi/srfi/98/
 lib/chibi/srfi/98/env.so
 @lib lib/libchibi-scheme.so.${LIBchibi-scheme_VERSION}
 lib/pkgconfig/chibi-scheme.pc
+@man man/man1/chibi-doc.1
+@man man/man1/chibi-ffi.1
+@man man/man1/chibi-scheme.1
 share/chibi/
 share/chibi/.chibi.meta
 share/chibi/.scheme.meta
@@ -304,8 +307,3 @@ share/chibi/srfi/99/records/procedural.scm
 share/chibi/srfi/99/records/procedural.sld
 share/chibi/srfi/99/records/syntactic.scm
 share/chibi/srfi/99/records/syntactic.sld
-share/man/
-share/man/man1/
-@man share/man/man1/chibi-doc.1
-@man share/man/man1/chibi-ffi.1
-@man share/man/man1/chibi-scheme.1
