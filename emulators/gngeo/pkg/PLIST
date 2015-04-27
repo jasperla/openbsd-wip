@@ -1,5 +1,0 @@
-@comment $OpenBSD$
-@bin bin/gngeo
-@man man/man1/gngeo.1
-share/gngeo/
-share/gngeo/gngeo_data.zip
