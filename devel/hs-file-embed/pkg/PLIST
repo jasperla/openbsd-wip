@@ -1,0 +1,27 @@
+@comment $OpenBSD$
+lib/ghc/${DISTNAME}/
+lib/ghc/${DISTNAME}/Data/
+lib/ghc/${DISTNAME}/Data/FileEmbed.hi
+lib/ghc/${DISTNAME}/Data/FileEmbed.p_hi
+lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
+lib/ghc/${DISTNAME}/register.sh
+share/doc/${FULLPKGNAME}/
+share/doc/${FULLPKGNAME}/LICENSE
+share/doc/${FULLPKGNAME}/html/
+share/doc/${FULLPKGNAME}/html/Data-FileEmbed.html
+share/doc/${FULLPKGNAME}/html/doc-index.html
+share/doc/${FULLPKGNAME}/html/file-embed.haddock
+share/doc/${FULLPKGNAME}/html/frames.html
+share/doc/${FULLPKGNAME}/html/haddock-util.js
+share/doc/${FULLPKGNAME}/html/hslogo-16.png
+share/doc/${FULLPKGNAME}/html/index-frames.html
+share/doc/${FULLPKGNAME}/html/index.html
+share/doc/${FULLPKGNAME}/html/mini_Data-FileEmbed.html
+share/doc/${FULLPKGNAME}/html/minus.gif
+share/doc/${FULLPKGNAME}/html/ocean.css
+share/doc/${FULLPKGNAME}/html/plus.gif
+share/doc/${FULLPKGNAME}/html/synopsis.png
+@exec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/register.sh -v0
+@unexec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/unregister.sh -v0 --force
+lib/ghc/${DISTNAME}/unregister.sh
