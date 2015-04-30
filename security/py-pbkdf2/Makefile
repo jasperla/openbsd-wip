@@ -1,3 +1,5 @@
+# $OpenBSD$
+
 COMMENT =	Python implementation of PBKDF2
 
 MODPY_EGG_VERSION =	1.3
