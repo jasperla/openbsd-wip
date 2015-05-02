@@ -13,7 +13,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-# requires hs-HUnit
 NO_TEST =		Yes
 
 .include <bsd.port.mk>
