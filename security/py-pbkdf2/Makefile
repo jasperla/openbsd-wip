@@ -19,8 +19,6 @@ MODULES =		lang/python
 
 MODPY_SETUPTOOLS =	Yes
 
-TEST_DEPENDS =		devel/py-unittest2
-
 do-test: fake
 	@cd ${WRKSRC}/test && ${MAKE_ENV} \
 		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} ./test_pbkdf2.py
