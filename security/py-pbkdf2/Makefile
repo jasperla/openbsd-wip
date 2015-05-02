@@ -18,6 +18,9 @@ MODPY_PI = 		Yes
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
+FLAVORS =		python3
+FLAVOR ?=
+
 do-test: fake
 	@cd ${WRKSRC}/test && ${MAKE_ENV} \
 		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} ./test_pbkdf2.py
