@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.3
 DISTNAME =		pbkdf2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		security devel
+
 MAINTAINER =		Giannis Tsaraias <yannis@cryptolab.net>
 
 HOMEPAGE =		http://wwww.dlitz.net/software/python-pbkdf2/
@@ -14,9 +15,7 @@ HOMEPAGE =		http://wwww.dlitz.net/software/python-pbkdf2/
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODPY_PI = 		Yes
-
 MODULES =		lang/python
-
 MODPY_SETUPTOOLS =	Yes
 
 do-test: fake
