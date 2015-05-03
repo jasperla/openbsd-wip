@@ -32,9 +32,4 @@ MAKE_ENV +=	LIBRSYNC_DIR=${LOCALBASE}
 # TEST_DEPENDS =	devel/py-mock
 NO_TEST =	Yes
 
-# XXX 600 mode prevents from reading the man page;
-# check if still required at next update
-post-extract:
-	chmod 644 ${WRKSRC}/bin/*.1
-
 .include <bsd.port.mk>
