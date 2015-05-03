@@ -2,7 +2,7 @@
 
 COMMENT=	filter which improves readability of email and Usenet posts
 
-DISTNAME=	t-prot-2.101
+DISTNAME=	t-prot-3.4
 CATEGORIES=    	mail news
 
 MAINTAINER=	Andrew Fresh <andrew@afresh1.com>

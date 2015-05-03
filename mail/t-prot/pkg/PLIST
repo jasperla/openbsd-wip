@@ -10,9 +10,5 @@ share/examples/t-prot/README.patches
 share/examples/t-prot/filter_innd.pl
 share/examples/t-prot/mailcap.t-prot
 share/examples/t-prot/muttrc.t-prot
-share/examples/t-prot/muttrc.t-prot.m1512
 share/examples/t-prot/nailrc.t-prot
-share/examples/t-prot/t-prot-r1.238-gpg126.diff
-share/examples/t-prot/t-prot-r1.311-mutt1512.diff
 share/examples/t-prot/t-prot.sl
-share/examples/t-prot/t-prot.sl-slang2.diff
