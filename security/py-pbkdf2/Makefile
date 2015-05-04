@@ -22,7 +22,7 @@ FLAVORS =		python3
 FLAVOR ?=
 
 do-test: fake
-	@cd ${WRKSRC}/test && ${MAKE_ENV} \
+	cd ${WRKSRC}/test && env \
 		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} ./test_pbkdf2.py
 
 .include <bsd.port.mk>
