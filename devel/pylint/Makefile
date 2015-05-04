@@ -3,7 +3,7 @@
 COMMENT-main=		lint-like code checker for Python code
 COMMENT-gui=		GUI for pylint
 
-VERSION=		1.4.1
+VERSION=		1.4.3
 DISTNAME=		pylint-${VERSION}
 PKGNAME-main=		pylint-${VERSION}
 PKGNAME-gui=		pylint-gui-${VERSION}
@@ -40,11 +40,7 @@ MODPY_ADJ_FILES =	bin/epylint \
 
 # Note: pytest here is not the same as in devel/py-test
 do-test: fake
-.if ${FLAVOR:Mpython3}
-	cp -R ${WRKINST}${MODPY_SITEPKG}/pylint/test ${WRKSRC}
-	rm ${WRKSRC}/test/functional/invalid_encoded_data.{py,txt}
-.endif
-	cd ${WRKSRC}/test && env \
+	cd ${WRKINST}${MODPY_SITEPKG} && env \
 		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
 		PYLINTHOME=${WRKINST} \
 		${MODPY_BIN} /usr/local/bin/pytest${MODPY_BIN_SUFFIX}

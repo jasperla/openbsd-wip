@@ -273,6 +273,8 @@ lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/undefined_variab
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/undefined_variable_py30.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/undefined_variable_py30.rc
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/undefined_variable_py30.txt
+lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/unidiomatic_typecheck.py
+lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/unidiomatic_typecheck.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/uninferable_all_object.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/unnecessary_lambda.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/unnecessary_lambda.txt
@@ -402,8 +404,6 @@ lib/python${MODPY_VERSION}/site-packages/pylint/test/input/func_r0901.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/input/func_r0902.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/input/func_r0903.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/input/func_r0904.py
-lib/python${MODPY_VERSION}/site-packages/pylint/test/input/func_r0921.py
-lib/python${MODPY_VERSION}/site-packages/pylint/test/input/func_r0922.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/input/func_r0923.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/input/func_reqattrs.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/input/func_return_outside_func.py
@@ -434,7 +434,6 @@ lib/python${MODPY_VERSION}/site-packages/pylint/test/input/func_w0111.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/input/func_w0112.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/input/func_w0122_py_30.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/input/func_w0151.py
-lib/python${MODPY_VERSION}/site-packages/pylint/test/input/func_w0152.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/input/func_w0202.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/input/func_w0205.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/input/func_w0233.py
@@ -546,8 +545,6 @@ lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func_r0901.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func_r0902.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func_r0903.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func_r0904.txt
-lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func_r0921.txt
-lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func_r0922.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func_r0923.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func_raw_escapes.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func_reqattrs.txt
@@ -584,8 +581,6 @@ lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func_w0111.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func_w0112.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func_w0122_py_30.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func_w0151.txt
-lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func_w0152_py29.txt
-lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func_w0152_py30.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func_w0202.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func_w0205.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/messages/func_w0233.txt
@@ -638,6 +633,7 @@ lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/package_all/
 lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/package_all/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/package_all/notmissing.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/precedence_test.py
+lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/py3k_error_flag.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/special_attr_scope_lookup_crash.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/try_finally_disable_msg_crash.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/test_func.py
