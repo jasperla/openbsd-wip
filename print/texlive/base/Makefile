@@ -27,10 +27,8 @@ RUN_DEPENDS =		print/ghostscript/gnu \
 			print/latex-mk \
 			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset
 
-LIB_DEPENDS =		devel/t1lib \
-			graphics/png \
+LIB_DEPENDS =		graphics/png \
 			graphics/gd \
-			print/freetype \
 			print/poppler \
 			graphics/cairo \
 			textproc/icu4c \
@@ -44,12 +42,9 @@ MODULES =		textproc/intltool converters/libiconv perl
 # Never set SEPARATE_BUILD
 CONFIGURE_STYLE =	gnu
 
-# Don't put ${PREFIX}/include in CPPFLAGS or system icu .h's are picked up
-# TeX Live uses a modified version of icu.
 CPPFLAGS =	-I${X11BASE}/include \
 		-I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/poppler \
-		-I${LOCALBASE}/include/freetype1/freetype
+		-I${LOCALBASE}/include/poppler
 
 LDFLAGS =	-L${LOCALBASE}/lib \
 		-L${X11BASE}/lib
@@ -86,13 +81,11 @@ PKG_ARGS +=		-Dxindy=0
 # Do not link with system icu. TeXLive ICU is not vanilla (Yet)!
 CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--with-system-freetype2 \
-			--with-system-freetype \
 			--with-system-gd \
 			--with-system-libpng \
 			--with-system-ncurses \
 			--with-system-pnglib \
 			--with-system-zlib \
-			--with-system-t1lib \
 			--enable-texinfo=no \
 			--with-xdvi-x-toolkit=xaw \
 			--enable-texi2html=no \
