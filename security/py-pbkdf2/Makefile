@@ -24,7 +24,7 @@ FLAVOR ?=
 TEST_ENV =		PYTHONPATH=${WRKINST}${MODPY_SITEPKG}
 
 do-test: fake
-	cd ${WRKSRC}/test; ${SETENV} ${TEST_ENV}\
+	cd ${WRKSRC}/test; ${SETENV} ${ALL_TEST_ENV} \
 		${MODPY_BIN} ./test_pbkdf2.py
 
 .include <bsd.port.mk>
