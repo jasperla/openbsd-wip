@@ -21,8 +21,10 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =		python3
 FLAVOR ?=
 
+TEST_ENV =		PYTHONPATH=${WRKINST}${MODPY_SITEPKG}
+
 do-test: fake
-	cd ${WRKSRC}/test && env \
-		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} ./test_pbkdf2.py
+	cd ${WRKSRC}/test; ${SETENV} ${TEST_ENV}\
+		${MODPY_BIN} ./test_pbkdf2.py
 
 .include <bsd.port.mk>
