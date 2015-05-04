@@ -12,7 +12,7 @@ HOMEPAGE =		http://www.astroid.org/
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=a/astroid/}
+MODPY_PI =		Yes
 
 MODULES =		lang/python
 RUN_DEPENDS =		devel/py-logilab-common${MODPY_FLAVOR} \

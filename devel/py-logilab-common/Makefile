@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.logilab.org/projects/common/
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=l/logilab-common/}
+MODPY_PI =		Yes
 
 MODULES=	lang/python
 

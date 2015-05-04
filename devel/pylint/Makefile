@@ -14,7 +14,7 @@ HOMEPAGE=		http://www.pylint.org/
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=p/pylint/}
+MODPY_PI =		Yes
 
 MULTI_PACKAGES=		-main -gui
 
