@@ -11,9 +11,7 @@ COMMENT-buildset =	smallest texlive texmf for building ports
 #   * Add a more restrictive RUN_DEPEND upon the buildset.
 
 DISTNAME =		texlive-${DIST_V}-texmf
-MASTER_SITES0 =		http://spacehopper.org/mirrors/ \
-			http://theunixzoo.co.uk/distfiles/
-MASTER_SITES0 =		http://theunixzoo.co.uk/distfiles/
+MASTER_SITES0 =		http://spacehopper.org/mirrors/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
 			texmf-var-pregen-${V}${EXTRACT_SUFX}:0
@@ -97,7 +95,7 @@ do-install:
 	#
 	# The rest of share/texmf-dist/doc/man does not appear
 	# in the packing list, so the PDF versions will not be installed.
-	# 
+	#
 	# I am told by upstream that any manual page not under
 	# texmf-dist/doc/man is intentionally this way and should not be
 	# moved into the system manual path. So be it.
