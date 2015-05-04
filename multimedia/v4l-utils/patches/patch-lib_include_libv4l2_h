@@ -1,0 +1,12 @@
+$OpenBSD$
+--- lib/include/libv4l2.h.orig	Sun May  3 10:48:16 2015
++++ lib/include/libv4l2.h	Sun May  3 10:51:46 2015
+@@ -23,6 +23,8 @@
+ #include <unistd.h>
+ #include <stdint.h>
+ 
++#define V4L2_FMT_FLAG_EMULATED   0x0002
++
+ #ifdef __cplusplus
+ extern "C" {
+ #endif /* __cplusplus */

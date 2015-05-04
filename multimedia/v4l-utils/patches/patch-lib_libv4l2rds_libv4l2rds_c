@@ -1,0 +1,12 @@
+$OpenBSD$
+--- lib/libv4l2rds/libv4l2rds.c.orig	Fri Apr 10 19:20:40 2015
++++ lib/libv4l2rds/libv4l2rds.c	Fri Apr 10 19:20:52 2015
+@@ -27,7 +27,7 @@
+ #include <sys/types.h>
+ #include <sys/mman.h>
+ 
+-#include <linux/videodev2.h>
++#include <sys/videoio.h>
+ 
+ #include "../include/libv4l2rds.h"
+ 

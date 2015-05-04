@@ -1,0 +1,16 @@
+$OpenBSD$
+--- configure.orig	Tue Apr  7 19:41:51 2015
++++ configure	Tue Apr  7 19:41:56 2015
+@@ -19929,12 +19929,6 @@ fi
+ 
+ # misc
+ 
+-if test "x$linux_os" = "xyes"; then
+-  CPPFLAGS="-I\$(top_srcdir)/include $CPPFLAGS"
+-else
+-  CPPFLAGS="-I\$(top_srcdir)/contrib/freebsd/include $CPPFLAGS"
+-fi
+-
+ CPPFLAGS="-I\$(top_srcdir)/lib/include -Wall -Wpointer-arith -D_GNU_SOURCE $CPPFLAGS"
+ 
+ cat >confcache <<\_ACEOF

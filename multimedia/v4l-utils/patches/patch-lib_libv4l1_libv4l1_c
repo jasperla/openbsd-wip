@@ -1,0 +1,23 @@
+$OpenBSD$
+--- lib/libv4l1/libv4l1.c.orig	Fri Apr 10 19:19:09 2015
++++ lib/libv4l1/libv4l1.c	Fri Apr 10 19:19:45 2015
+@@ -58,7 +58,7 @@
+ #include <sys/types.h>
+ #include <sys/mman.h>
+ #include "../libv4lconvert/libv4lsyscall-priv.h"
+-#include <linux/videodev2.h>
++#include <sys/videoio.h>
+ #include <libv4l2.h>
+ #include "libv4l1.h"
+ #include "libv4l1-priv.h"
+@@ -518,8 +518,8 @@ int v4l1_ioctl(int fd, unsigned long int request, ...)
+ 		if (result < 0)
+ 			break;
+ 
+-		if (cap2.capabilities & V4L2_CAP_DEVICE_CAPS)
+-			cap2.capabilities = cap2.device_caps;
++		/* if (cap2.capabilities & V4L2_CAP_DEVICE_CAPS)
++			cap2.capabilities = cap2.device_caps; */
+ 		if (cap2.capabilities & V4L2_CAP_VIDEO_OVERLAY) {
+ 			result = v4l2_ioctl(fd, VIDIOC_G_FBUF, &fbuf);
+ 			if (result < 0)
