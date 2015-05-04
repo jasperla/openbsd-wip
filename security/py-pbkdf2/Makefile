@@ -19,7 +19,6 @@ MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
 
 TEST_ENV =		PYTHONPATH=${WRKBUILD}
 
