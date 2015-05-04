@@ -33,7 +33,8 @@ Syntax Highlighting
 * vim:   http://www.vim.org/scripts/script.php?script_id=2654
 * emacs: https://github.com/bookest/arduino-mode
 
-Sam (ARM) support
-=================
+Unsupported Acrhitectures
+=========================
 
-The Makefile does not yet support Sam (ARM) Arduino boards.
+Currently, the project Makefile does not support Sam (ARM) or AVR32 Arduino
+boards.

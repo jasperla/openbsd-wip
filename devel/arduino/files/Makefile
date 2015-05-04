@@ -32,51 +32,68 @@
 # Below are some known working hardware configurations. If you find other
 # working configurations, please feed them back to the OpenBSD port maintainer.
 
-PORT = /dev/cuaU0
+PORT ?= /dev/cuaU0
 
 ## Arduino Uno
-ARDUINO_ARCH=avr
-UPLOAD_RATE = 115200
-AVRDUDE_PROGRAMMER = arduino
-MCU = atmega328p
-F_CPU = 16000000
-VARIANT = standard
+ARDUINO_ARCH?=avr
+UPLOAD_RATE ?= 115200
+AVRDUDE_PROGRAMMER ?= arduino
+MCU ?= atmega328p
+F_CPU ?= 16000000
+VARIANT ?= standard
 
 # Arduino Duemilanove
-#ARDUINO_ARCH=avr
-#UPLOAD_RATE = 57600
-#AVRDUDE_PROGRAMMER = arduino
-#MCU = atmega328p
-#F_CPU = 16000000
-#VARIANT = standard
+#ARDUINO_ARCH?=avr
+#UPLOAD_RATE ?= 57600
+#AVRDUDE_PROGRAMMER ?= arduino
+#MCU ?= atmega328p
+#F_CPU ?= 16000000
+#VARIANT ?= standard
 
 ## Arduino Mega
-#ARDUINO_ARCH=avr
-#UPLOAD_RATE = 57600
-#AVRDUDE_PROGRAMMER = arduino
-#MCU = atmega1280
-#F_CPU = 16000000
-#VARIANT = mega
+#ARDUINO_ARCH?=avr
+#UPLOAD_RATE ?= 57600
+#AVRDUDE_PROGRAMMER ?= arduino
+#MCU ?= atmega1280
+#F_CPU ?= 16000000
+#VARIANT ?= mega
 
 ## older Arduino
-#ARDUINO_ARCH=avr
-#UPLOAD_RATE = 19200
-#AVRDUDE_PROGRAMMER = stk500
-#MCU = atmega328p
-#F_CPU = 16000000
-#VARIANT = standard
+#ARDUINO_ARCH?=avr
+#UPLOAD_RATE ?= 19200
+#AVRDUDE_PROGRAMMER ?= stk500
+#MCU ?= atmega328p
+#F_CPU ?= 16000000
+#VARIANT ?= standard
 
 # If your sketch uses any libraries, list them here.
 #
 # E.g.:
-#LIBRARIES=LiquidCrystal
+#LIBRARIES?=LiquidCrystal
 #
 # Or for ethernet support (which depends upon SPI support)
-#LIBRARIES=Ethernet SPI
+#LIBRARIES?=Ethernet SPI
 #
 # For a full list see ${LOCALBASE}/share/arduino/mk/alibs.mk
 
-LIBRARIES=
+LIBRARIES?=
+
+# You can add extra flags and sources here if you know what you are doing
+#
+#USER_CFLAGS=
+#USER_CXXFLAGS=
+#USER_LDFLAGS=
+#USER_ASFLAGS=
+
+#USER_CXX_SRC=myfile.cpp
+#USER_C_SRC=myfile.c
+#USER_INC_DIRS=/extra/include/dir
+
+# Some boards, like the Esplora, require you to define some USB details:
+#USER_CXXFLAGS +=	-DUSB_VID=0x2341  \
+#			-DUSB_PID=0x803c \
+#			-DUSB_MANUFACTURER=Unknown \
+#			-DUSB_PRODUCT='Arduino Esplora'
 
 ############################################################################
 # Below here nothing should be changed...
@@ -97,6 +114,11 @@ CXXSRC +=	${${l}_${ARDUINO_ARCH}_CXX_SRC}
 SRC +=		${${l}_${ARDUINO_ARCH}_C_SRC}
 LIBINC +=	${${l}_${ARDUINO_ARCH}_INC_DIRS:S/^/-I/}
 .endfor
+
+CXXSRC += ${USER_CXX_SRC}
+SRC += ${USER_C_SRC}
+LIBINC += ${USER_INC_DIRS:S/^/-I/}
+
 FORMAT = ihex
 
 # Name of this Makefile (used for "make depend").
@@ -134,7 +156,8 @@ CXXFLAGS = $(CXXDEBUG) $(CXXDEFS) $(CXXINCS) -O$(CXXOPT) $(CXXWARN) \
 	 $(CXXSTANDARD) $(CXXEXTRA) $(CXXTUNING)
 
 # Linker stuff
-LDFLAGS = -lm -Wl,--gc-sections
+# Web search shows it is important for -lm to come last.
+LDFLAGS = -Wl,--gc-sections ${USER_LDFLAGS} -lm
 
 # Assembler stuff
 #ASFLAGS = -Wa,-adhlns=$(<:.S=.lst),-gstabs
@@ -170,9 +193,9 @@ LST = $(ASRC:.S=.lst) $(CXXSRC:.cpp=.lst) $(SRC:.c=.lst)
 
 # Combine all necessary flags and optional flags.
 # Add target processor to flags.
-ALL_CFLAGS = -mmcu=$(MCU) -I. $(CFLAGS)
-ALL_CXXFLAGS = -mmcu=$(MCU) -I. $(CXXFLAGS)
-ALL_ASFLAGS = -mmcu=$(MCU) -I. -x assembler-with-cpp $(ASFLAGS)
+ALL_CFLAGS = -mmcu=$(MCU) -I. $(CFLAGS) ${USER_CFLAGS}
+ALL_CXXFLAGS = -mmcu=$(MCU) -I. $(CXXFLAGS) ${USER_CXXFLAGS}
+ALL_ASFLAGS = -mmcu=$(MCU) -I. -x assembler-with-cpp $(ASFLAGS) ${USER_ASFLAGS}
 
 
 # Default target.
@@ -260,8 +283,9 @@ extcoff: $(TARGET).elf
 	$(NM) -n $< > $@
 
 # Link: create ELF output file from library.
+# Link with ${CC}. In some cases linking with ${CXX} gives undefined symbols.
 applet/$(TARGET).elf: $(TARGET).ino applet/core.a
-	$(CXX) $(ALL_CXXFLAGS) -o $@ applet/$(TARGET).cpp -L. applet/core.a $(LDFLAGS)
+	$(CC) $(ALL_CXXFLAGS) -o $@ applet/$(TARGET).cpp -L. applet/core.a $(LDFLAGS)
 
 applet/core.a: $(OBJ)
 	@for i in $(OBJ); do echo $(AR) rcs applet/core.a $$i; $(AR) rcs applet/core.a $$i; done
