@@ -1,7 +1,7 @@
 $OpenBSD$
---- configure.orig	Tue Apr  7 19:41:51 2015
-+++ configure	Tue Apr  7 19:41:56 2015
-@@ -19929,12 +19929,6 @@ fi
+--- configure.ac.orig	Mon May  4 21:16:48 2015
++++ configure.ac	Mon May  4 21:21:25 2015
+@@ -294,12 +294,6 @@ AS_IF([test x$enable_libv4l = xno],   [AC_SUBST([ENFOR
  
  # misc
  
@@ -13,4 +13,4 @@ $OpenBSD$
 -
  CPPFLAGS="-I\$(top_srcdir)/lib/include -Wall -Wpointer-arith -D_GNU_SOURCE $CPPFLAGS"
  
- cat >confcache <<\_ACEOF
+ AC_OUTPUT
