@@ -9,6 +9,9 @@
 # This makefile allows you to build sketches from the command line
 # without the Arduino environment (or Java).
 #
+# If you have problems, please add a test case and raise an issue here:
+# https://github.com/vext01/openbsd_arduino_tests
+#
 # Usage:
 #  1) Define your target and libraries below.
 #  2) make
@@ -138,6 +141,11 @@ CSTANDARD = -std=gnu99
 CDEBUG = -g$(DEBUG)
 CWARN = -Wall -Wstrict-prototypes
 CTUNING = -ffunction-sections -fdata-sections
+
+# Avoids undefined symbols for e.g. Ethernet library
+# https://github.com/Pinoccio/core-pinoccio/commit/e0a452af2704ce671610d38b90aa3bb8a229c9cf
+CTUNING += -fno-threadsafe-statics
+
 #CTUNING = -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums
 #CEXTRA = -Wa,-adhlns=$(<:.c=.lst)
 CFLAGS = $(CDEBUG) $(CDEFS) $(CINCS) -O$(OPT) $(CWARN) \
