@@ -1,6 +1,6 @@
 $OpenBSD$
 --- lib/include/libv4lconvert.h.orig	Wed Oct  1 13:17:31 2014
-+++ lib/include/libv4lconvert.h	Fri Apr 10 19:04:32 2015
++++ lib/include/libv4lconvert.h	Tue May  5 06:44:57 2015
 @@ -28,7 +28,7 @@
  #include <linux/ioctl.h>
  #endif
@@ -10,12 +10,15 @@ $OpenBSD$
  #include <sys/time.h>
  #include <sys/types.h>
  #include <sys/ioctl.h>
-@@ -36,7 +36,83 @@
+@@ -36,7 +36,87 @@
  
  /* end broken header workaround includes */
  
--#include <linux/videodev2.h>
++#if defined(__OpenBSD__)
 +#include <sys/videoio.h>
++#else
+ #include <linux/videodev2.h>
++#endif
 +
 +/* RGB formats */
 +#define V4L2_PIX_FMT_ABGR32  v4l2_fourcc('A', 'R', '2', '4') /* 32  BGRA-8-8-8-8  */

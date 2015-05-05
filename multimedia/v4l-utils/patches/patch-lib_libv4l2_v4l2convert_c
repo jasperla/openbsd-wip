@@ -1,12 +1,15 @@
 $OpenBSD$
 --- lib/libv4l2/v4l2convert.c.orig	Fri Jun 28 22:10:56 2013
-+++ lib/libv4l2/v4l2convert.c	Tue Apr 14 18:13:13 2015
-@@ -33,7 +33,7 @@
++++ lib/libv4l2/v4l2convert.c	Tue May  5 06:35:27 2015
+@@ -33,7 +33,11 @@
  #include <sys/ioctl.h>
  #include <sys/mman.h>
  #include "../libv4lconvert/libv4lsyscall-priv.h"
--#include <linux/videodev2.h>
++#if defined(__OpenBSD__)
 +#include <sys/videoio.h>
++#else
+ #include <linux/videodev2.h>
++#endif
  #include <libv4l2.h>
  
  /* Check that open/read/mmap is not a define */
