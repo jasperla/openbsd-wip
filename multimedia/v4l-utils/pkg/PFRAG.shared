@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+lib/libv4l/plugins/libv4l-mplane.so
 lib/libv4l/v4l1compat.so
 lib/libv4l/v4l2convert.so
 lib/v4l1compat.so

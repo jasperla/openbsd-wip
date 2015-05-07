@@ -1,5 +1,6 @@
 @comment $OpenBSD$
 %%SHARED%%
+@bin bin/qv4l2
 include/libv4l-plugin.h
 include/libv4l1-videodev.h
 include/libv4l1.h
@@ -9,6 +10,9 @@ include/libv4lconvert.h
 lib/libv4l/
 @bin lib/libv4l/ov511-decomp
 @bin lib/libv4l/ov518-decomp
+lib/libv4l/plugins/
+lib/libv4l/plugins/libv4l-mplane.a
+lib/libv4l/plugins/libv4l-mplane.la
 lib/libv4l/v4l1compat.la
 lib/libv4l/v4l2convert.la
 lib/libv4l1.a
@@ -27,3 +31,4 @@ lib/pkgconfig/libv4l1.pc
 lib/pkgconfig/libv4l2.pc
 lib/pkgconfig/libv4l2rds.pc
 lib/pkgconfig/libv4lconvert.pc
+@man man/man1/qv4l2.1
