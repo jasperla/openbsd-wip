@@ -4,46 +4,50 @@ bin/fsharpi
 bin/fsharpiAnyCpu
 lib/mono/2.0/policy.2.0.FSharp.Core.dll
 lib/mono/2.0/policy.2.3.FSharp.Core.dll
-lib/mono/4.0/FSharp.Build.dll
-lib/mono/4.0/FSharp.Build.xml
-lib/mono/4.0/FSharp.Compiler.Interactive.Settings.dll
-lib/mono/4.0/FSharp.Compiler.Interactive.Settings.xml
-lib/mono/4.0/FSharp.Compiler.Server.Shared.dll
-lib/mono/4.0/FSharp.Compiler.Server.Shared.xml
-lib/mono/4.0/FSharp.Compiler.dll
-lib/mono/4.0/FSharp.Compiler.xml
 lib/mono/4.0/FSharp.Core.dll
 lib/mono/4.0/FSharp.Core.optdata
 lib/mono/4.0/FSharp.Core.sigdata
 lib/mono/4.0/FSharp.Core.xml
-lib/mono/4.0/FSharp.Data.TypeProviders.dll
-lib/mono/4.0/FSharp.Data.TypeProviders.xml
-lib/mono/4.0/Microsoft.FSharp.Targets
-lib/mono/4.0/Microsoft.Portable.FSharp.Targets
-lib/mono/4.0/fsc.exe
-lib/mono/4.0/fsi.exe
-lib/mono/4.0/fsiAnyCpu.exe
-lib/mono/4.0/policy.2.0.FSharp.Core.dll
-lib/mono/4.0/policy.2.3.FSharp.Core.dll
-lib/mono/4.0/policy.3.3.FSharp.Core.dll
-lib/mono/4.0/policy.4.0.FSharp.Core.dll
-lib/mono/4.0/policy.4.3.FSharp.Core.dll
+lib/mono/4.5/FSharp.Build.dll
+lib/mono/4.5/FSharp.Build.xml
+lib/mono/4.5/FSharp.Compiler.Interactive.Settings.dll
+lib/mono/4.5/FSharp.Compiler.Interactive.Settings.xml
+lib/mono/4.5/FSharp.Compiler.Server.Shared.dll
+lib/mono/4.5/FSharp.Compiler.Server.Shared.xml
+lib/mono/4.5/FSharp.Compiler.dll
+lib/mono/4.5/FSharp.Compiler.xml
+lib/mono/4.5/FSharp.Core.dll
+lib/mono/4.5/FSharp.Core.optdata
+lib/mono/4.5/FSharp.Core.sigdata
+lib/mono/4.5/FSharp.Core.xml
+lib/mono/4.5/FSharp.Data.TypeProviders.dll
+lib/mono/4.5/FSharp.Data.TypeProviders.xml
+lib/mono/4.5/Microsoft.FSharp.Targets
+lib/mono/4.5/Microsoft.Portable.FSharp.Targets
+lib/mono/4.5/fsc.exe
+lib/mono/4.5/fsi.exe
+lib/mono/4.5/fsiAnyCpu.exe
+lib/mono/4.5/policy.2.0.FSharp.Core.dll
+lib/mono/4.5/policy.2.3.FSharp.Core.dll
+lib/mono/4.5/policy.3.3.FSharp.Core.dll
+lib/mono/4.5/policy.4.0.FSharp.Core.dll
+lib/mono/4.5/policy.4.3.FSharp.Core.dll
 lib/mono/Microsoft F#/
-lib/mono/Microsoft F#/v4.0/
-lib/mono/Microsoft F#/v4.0/Microsoft.FSharp.Targets
-lib/mono/Microsoft F#/v4.0/Microsoft.Portable.FSharp.Targets
+lib/mono/Microsoft F#/v4.5/
+lib/mono/Microsoft F#/v4.5/Microsoft.FSharp.Targets
+lib/mono/Microsoft F#/v4.5/Microsoft.Portable.FSharp.Targets
 lib/mono/Microsoft SDKs/
 lib/mono/Microsoft SDKs/F#/
 lib/mono/Microsoft SDKs/F#/3.0/
 lib/mono/Microsoft SDKs/F#/3.0/Framework/
-lib/mono/Microsoft SDKs/F#/3.0/Framework/v4.0/
-lib/mono/Microsoft SDKs/F#/3.0/Framework/v4.0/Microsoft.FSharp.Targets
-lib/mono/Microsoft SDKs/F#/3.0/Framework/v4.0/Microsoft.Portable.FSharp.Targets
+lib/mono/Microsoft SDKs/F#/3.0/Framework/v4.5/
+lib/mono/Microsoft SDKs/F#/3.0/Framework/v4.5/Microsoft.FSharp.Targets
+lib/mono/Microsoft SDKs/F#/3.0/Framework/v4.5/Microsoft.Portable.FSharp.Targets
 lib/mono/Microsoft SDKs/F#/3.1/
 lib/mono/Microsoft SDKs/F#/3.1/Framework/
-lib/mono/Microsoft SDKs/F#/3.1/Framework/v4.0/
-lib/mono/Microsoft SDKs/F#/3.1/Framework/v4.0/Microsoft.FSharp.Targets
-lib/mono/Microsoft SDKs/F#/3.1/Framework/v4.0/Microsoft.Portable.FSharp.Targets
+lib/mono/Microsoft SDKs/F#/3.1/Framework/v4.5/
+lib/mono/Microsoft SDKs/F#/3.1/Framework/v4.5/Microsoft.FSharp.Targets
+lib/mono/Microsoft SDKs/F#/3.1/Framework/v4.5/Microsoft.Portable.FSharp.Targets
 lib/mono/gac/FSharp.Compiler/
 lib/mono/gac/FSharp.Compiler.Interactive.Settings/
 lib/mono/gac/FSharp.Compiler.Interactive.Settings/4.3.1.0__f536804aa0eb945b/
@@ -60,12 +64,6 @@ lib/mono/gac/FSharp.Compiler/4.3.1.0__f536804aa0eb945b/FSharp.Compiler.dll
 lib/mono/gac/FSharp.Compiler/4.3.1.0__f536804aa0eb945b/FSharp.Compiler.dll.mdb
 lib/mono/gac/FSharp.Compiler/4.3.1.0__f536804aa0eb945b/FSharp.Compiler.xml
 lib/mono/gac/FSharp.Core/
-lib/mono/gac/FSharp.Core/2.3.98.1__b03f5f7f11d50a3a/
-lib/mono/gac/FSharp.Core/2.3.98.1__b03f5f7f11d50a3a/FSharp.Core.dll
-lib/mono/gac/FSharp.Core/2.3.98.1__b03f5f7f11d50a3a/FSharp.Core.dll.mdb
-lib/mono/gac/FSharp.Core/2.3.98.1__b03f5f7f11d50a3a/FSharp.Core.optdata
-lib/mono/gac/FSharp.Core/2.3.98.1__b03f5f7f11d50a3a/FSharp.Core.sigdata
-lib/mono/gac/FSharp.Core/2.3.98.1__b03f5f7f11d50a3a/FSharp.Core.xml
 lib/mono/gac/FSharp.Core/4.3.0.0__b03f5f7f11d50a3a/
 lib/mono/gac/FSharp.Core/4.3.0.0__b03f5f7f11d50a3a/FSharp.Core.dll
 lib/mono/gac/FSharp.Core/4.3.0.0__b03f5f7f11d50a3a/FSharp.Core.dll.mdb
@@ -103,16 +101,6 @@ lib/mono/gac/policy.4.3.FSharp.Core/
 lib/mono/gac/policy.4.3.FSharp.Core/0.0.0.0__b03f5f7f11d50a3a/
 lib/mono/gac/policy.4.3.FSharp.Core/0.0.0.0__b03f5f7f11d50a3a/policy.4.3.FSharp.Core.dll
 lib/mono/gac/policy.4.3.FSharp.Core/0.0.0.0__b03f5f7f11d50a3a/policy.4.3.FSharp.Core.dll.config
-lib/mono/monodroid/
-lib/mono/monodroid/FSharp.Core.dll
-lib/mono/monodroid/FSharp.Core.optdata
-lib/mono/monodroid/FSharp.Core.sigdata
-lib/mono/monodroid/FSharp.Core.xml
-lib/mono/monotouch/
-lib/mono/monotouch/FSharp.Core.dll
-lib/mono/monotouch/FSharp.Core.optdata
-lib/mono/monotouch/FSharp.Core.sigdata
-lib/mono/monotouch/FSharp.Core.xml
 lib/mono/xbuild/Microsoft/VisualStudio/v/
 lib/mono/xbuild/Microsoft/VisualStudio/v/FSharp/
 lib/mono/xbuild/Microsoft/VisualStudio/v/FSharp/Microsoft.FSharp.Targets

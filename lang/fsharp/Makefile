@@ -4,7 +4,7 @@ COMMENT=	functional-first programming language
 
 GH_ACCOUNT=	fsharp
 GH_PROJECT=	fsharp
-GH_TAGNAME=	3.1.1.31
+GH_TAGNAME=	3.1.1.32
 
 DISTNAME=	fsharp-${GH_TAGNAME}
 PKGNAME=	${DISTNAME}
