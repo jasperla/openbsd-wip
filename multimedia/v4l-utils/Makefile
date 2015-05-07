@@ -24,7 +24,8 @@ MASTER_SITES =		http://linuxtv.org/downloads/v4l-utils/
 EXTRACT_SUFX =		.tar.bz2
 
 BUILD_DEPENDS =		devel/argp-standalone
-LIB_DEPENDS =		graphics/jpeg
+LIB_DEPENDS =		graphics/jpeg \
+			x11/qt4
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.9
@@ -32,6 +33,7 @@ SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	autoconf
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			PKG_CONFIG_PATH="${LOCALBASE}/lib/qt4/pkgconfig"
 
 .include <bsd.port.mk>
