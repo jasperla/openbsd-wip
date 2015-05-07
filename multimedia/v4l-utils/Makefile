@@ -1,7 +1,7 @@
 # $OpenBSD$
 COMMENT =		libv4l userspace library
 
-DISTNAME =		v4l-utils-1.6.2
+DISTNAME =		v4l-utils-1.6.3
 
 SHARED_LIBS +=  v4l1                      0.0 # 0.0
 SHARED_LIBS +=  v4l2                      0.0 # 0.0
