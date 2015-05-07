@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2014/11/11 07:05:08 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2015/03/27 08:11:26 ajacoutot Exp $
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	http://www.calligra-suite.org/
-DISTNAME =	calligra-2.8.90
-PKGNAME =	calligra-2.9.0-beta
+DISTNAME =	calligra-2.9.4
 CATEGORIES =	editors
 
 DIST_SUBDIR =	kde
-MASTER_SITES =	${MASTER_SITE_KDE:=unstable/${DISTNAME}/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/${DISTNAME}/}
 
 MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
 
@@ -21,74 +20,93 @@ MODULES =	x11/kde4 \
 
 MODKDE4_USE =	pim
 
-SHARED_LIBS =   RtfReader                 51.0 # 1.0
-SHARED_LIBS +=  basicflakes               14.0 # 1.0
-SHARED_LIBS +=  braindumpcore             14.0 # 10.0
-SHARED_LIBS +=  calligradb                14.0 # 1.0
-SHARED_LIBS +=  calligrakdchart           14.0 # 1.0
-SHARED_LIBS +=  calligrakdgantt           14.0 # 1.0
-SHARED_LIBS +=  calligrasheetscommon      14.0 # 10.0
-SHARED_LIBS +=  calligrasheetsodf         14.0 # 10.0
-SHARED_LIBS +=  calligrastageprivate      14.0 # 1.0
-SHARED_LIBS +=  flake                     14.0 # 1.0
-SHARED_LIBS +=  flowprivate               14.0 # 1.0
-SHARED_LIBS +=  karboncommon              14.0 # 1.0
-SHARED_LIBS +=  karbonui                  14.0 # 1.0
-SHARED_LIBS +=  kexicore                  14.0 # 1.0
-SHARED_LIBS +=  kexidatatable             14.0 # 1.0
-SHARED_LIBS +=  kexidataviewcommon        14.0 # 1.0
-SHARED_LIBS +=  kexidb                    14.0 # 1.0
-SHARED_LIBS +=  kexiextendedwidgets       14.0 # 1.0
-SHARED_LIBS +=  kexiformutils             14.0 # 1.0
-SHARED_LIBS +=  kexiguiutils              14.0 # 1.0
-SHARED_LIBS +=  keximain                  14.0 # 1.0
-SHARED_LIBS +=  keximigrate               14.0 # 1.0
-SHARED_LIBS +=  kexirelationsview         14.0 # 1.0
-SHARED_LIBS +=  kexiutils                 14.0 # 1.0
-SHARED_LIBS +=  kformdesigner             14.0 # 1.0
-SHARED_LIBS +=  kokross                   14.0 # 1.0
-SHARED_LIBS +=  komain                    14.0 # 1.0
-SHARED_LIBS +=  koodf                     14.0 # 1.0
-SHARED_LIBS +=  kopageapp                 14.0 # 1.0
-SHARED_LIBS +=  koplugin                  14.0 # 1.0
-SHARED_LIBS +=  koproperty                14.0 # 1.0
-SHARED_LIBS +=  kordf                     14.0 # 1.0
-SHARED_LIBS +=  koreport                  14.0 # 1.0
-SHARED_LIBS +=  kotext                    14.0 # 1.0
-SHARED_LIBS +=  kowidgets                 14.0 # 1.0
-SHARED_LIBS +=  kowidgetutils             14.0 # 1.0
-SHARED_LIBS +=  kowv2                     9.0  # 1.0
-SHARED_LIBS +=  kplatokernel              14.0 # 1.0
-SHARED_LIBS +=  kplatomodels              14.0 # 1.0
-SHARED_LIBS +=  kplatoui                  14.0 # 1.0
-SHARED_LIBS +=  kritaimage                14.0 # 1.0
-SHARED_LIBS +=  kritalibbrush             14.0 # 1.0
-SHARED_LIBS +=  kritalibpaintop           14.0 # 1.0
-SHARED_LIBS +=  kritaui                   14.0 # 1.0
-SHARED_LIBS +=  kundo2                    14.0 # 1.0
-SHARED_LIBS +=  pigmentcms                14.0 # 1.0
-SHARED_LIBS +=  planprivate               14.0 # 1.0
-SHARED_LIBS +=  planworkapp               14.0 # 1.0
-SHARED_LIBS +=  planworkfactory           14.0 # 1.0
-SHARED_LIBS +=  rcps_plan                 14.0 # 1.0
+SHARED_LIBS =   RtfReader                 50.0 # 0.0
+SHARED_LIBS +=  basicflakes               50.0 # 0.0
+SHARED_LIBS +=  braindumpcore             50.0 # 9.0
+SHARED_LIBS +=  calligradb                50.0 # 0.0
+SHARED_LIBS +=  calligrakdchart           50.0 # 0.0
+SHARED_LIBS +=  calligrakdgantt           50.0 # 0.0
+SHARED_LIBS +=  calligrasheetscommon      50.0 # 9.0
+SHARED_LIBS +=  calligrasheetsodf         50.0 # 9.0
+SHARED_LIBS +=  calligrastageprivate      50.0 # 0.0
+SHARED_LIBS +=  flake                     50.0 # 0.0
+SHARED_LIBS +=  flowprivate               50.0 # 0.0
+SHARED_LIBS +=  karboncommon              50.0 # 0.0
+SHARED_LIBS +=  karbonui                  50.0 # 0.0
+SHARED_LIBS +=  kexicore                  50.0 # 0.0
+SHARED_LIBS +=  kexidatatable             50.0 # 0.0
+SHARED_LIBS +=  kexidataviewcommon        50.0 # 0.0
+SHARED_LIBS +=  kexidb                    50.0 # 0.0
+SHARED_LIBS +=  kexiextendedwidgets       50.0 # 0.0
+SHARED_LIBS +=  kexiformutils             50.0 # 0.0
+SHARED_LIBS +=  kexiguiutils              50.0 # 0.0
+SHARED_LIBS +=  keximain                  50.0 # 0.0
+SHARED_LIBS +=  keximigrate               50.0 # 0.0
+SHARED_LIBS +=  kexirelationsview         50.0 # 0.0
+SHARED_LIBS +=  kexiutils                 50.0 # 0.0
+SHARED_LIBS +=  kformdesigner             50.0 # 0.0
+SHARED_LIBS +=  kokross                   50.0 # 0.0
+SHARED_LIBS +=  komain                    50.0 # 0.0
+SHARED_LIBS +=  koodf                     50.0 # 0.0
+SHARED_LIBS +=  kopageapp                 50.0 # 0.0
+SHARED_LIBS +=  koplugin                  50.0 # 0.0
+SHARED_LIBS +=  koproperty                50.0 # 0.0
+SHARED_LIBS +=  kordf                     50.0 # 0.0
+SHARED_LIBS +=  koreport                  50.0 # 0.0
+SHARED_LIBS +=  kotext                    50.0 # 0.0
+SHARED_LIBS +=  kowidgets                 50.0 # 0.0
+SHARED_LIBS +=  kowidgetutils             50.0 # 0.0
+SHARED_LIBS +=  kowv2                     50.0 # 0.0
+SHARED_LIBS +=  kplatokernel              50.0 # 0.0
+SHARED_LIBS +=  kplatomodels              50.0 # 0.0
+SHARED_LIBS +=  kplatoui                  50.0 # 0.0
+SHARED_LIBS +=  kritaimage                50.0 # 0.0
+SHARED_LIBS +=  kritalibbrush             50.0 # 0.0
+SHARED_LIBS +=  kritalibpaintop           50.0 # 0.0
+SHARED_LIBS +=  kritaui                   50.0 # 0.0
+SHARED_LIBS +=  kundo2                    50.0 # 0.0
+SHARED_LIBS +=  pigmentcms                50.0 # 0.0
+SHARED_LIBS +=  planprivate               50.0 # 0.0
+SHARED_LIBS +=  planworkapp               50.0 # 0.0
+SHARED_LIBS +=  planworkfactory           50.0 # 0.0
+SHARED_LIBS +=  rcps_plan                 50.0 # 0.0
+SHARED_LIBS +=  kformula                  50.0 # 13.0
+SHARED_LIBS +=  komsooxml                 50.0 # 13.0
+SHARED_LIBS +=  koodf2                    50.0 # 13.0
+SHARED_LIBS +=  koodfreader               50.0 # 13.0
+SHARED_LIBS +=  kotextlayout              50.0 # 13.0
+SHARED_LIBS +=  kovectorimage             50.0 # 13.0
+SHARED_LIBS +=  koversion                 0.0 # 14.0
+SHARED_LIBS +=  kritacolor                0.0 # 14.0
 SHARED_LIBS +=  wordsprivate              14.0 # 1.0
-SHARED_LIBS +=  kformula                  14.0 # 14.0
-SHARED_LIBS +=  komsooxml                 14.0 # 14.0
-SHARED_LIBS +=  koodf2                    14.0 # 14.0
-SHARED_LIBS +=  koodfreader               14.0 # 14.0
-SHARED_LIBS +=  kotextlayout              14.0 # 14.0
-SHARED_LIBS +=  kovectorimage             14.0 # 14.0
-SHARED_LIBS +=  koversion                 14.0 # 15.0
+SHARED_LIBS +=  libglobal                 0.0 # 14.0
+SHARED_LIBS +=  libkispsd                 0.0 # 14.0
 
-WANTLIB += GL GLEW GLU Half ICE Iex IlmImf IlmThread Imath OpenColorIO
-WANTLIB += QtDBus QtDeclarative QtGui QtNetwork QtOpenGL QtScript
-WANTLIB += QtSvg QtWebKit QtXml SM X11 Xext akonadi-kde c exiv2
-WANTLIB += fftw3 glib-2.0 gsl gslcblas icui18n icuuc jpeg kabc
-WANTLIB += kactivities kcalcore kdcraw kdeclarative kdeui kfile
-WANTLIB += khtml kio kjs kparts kresources krosscore krossui lcms2
-WANTLIB += m marblewidget mysqlclient nepomuk nepomukutils okularcore
-WANTLIB += phonon_sexperimental png poppler poppler-qt4 pthread
-WANTLIB += soprano sqlite3 sybdb tiff z
+WANTLIB =  c m pthread z
+WANTLIB += GL GLEW GLU Half ICE Iex IlmImf IlmThread Imath SM X11 Xext Xi
+WANTLIB += fontconfig
+WANTLIB += lib/qt4/QtDeclarative lib/qt4/QtWebKit lib/qt4/QtDBus
+WANTLIB += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg lib/qt4/QtOpenGL
+WANTLIB += lib/qt4/QtScript lib/qt4/QtXml
+WANTLIB +=  lib/qt4/QtSql
+WANTLIB += ${KDE4LIB}/akonadi-contact ${KDE4LIB}/akonadi-kde
+WANTLIB += ${KDE4LIB}/kabc ${KDE4LIB}/kactivities
+WANTLIB += ${KDE4LIB}/kcalcore ${KDE4LIB}/kcmutils ${KDE4LIB}/kdcraw
+WANTLIB += ${KDE4LIB}/kdeclarative
+WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kfile ${KDE4LIB}/khtml
+WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kjs ${KDE4LIB}/kmime
+WANTLIB += ${KDE4LIB}/knotifyconfig
+WANTLIB += ${KDE4LIB}/kparts ${KDE4LIB}/kpimutils ${KDE4LIB}/kresources
+WANTLIB += ${KDE4LIB}/krosscore ${KDE4LIB}/krossui
+WANTLIB += ${KDE4LIB}/marblewidget
+WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
+WANTLIB += ${KDE4LIB}/okularcore
+WANTLIB += ${KDE4LIB}/phonon_sexperimental ${KDE4LIB}/threadweaver
+WANTLIB += OpenColorIO exiv2 fftw3 freetype glib-2.0 gsl icui18n icuuc
+WANTLIB += jpeg lcms2 mysqlclient openjpeg png poppler poppler-qt4 pqxx
+WANTLIB += qca2 soprano sqlite3 sybdb tiff
+WANTLIB += boost_system-mt curl ktexteditor gslcblas
+
 
 # kexi needs headers in postgresql,{-main,-server}
 # kexi needs all db drivers to be present while building
@@ -96,7 +114,7 @@ BUILD_DEPENDS =	devel/boost \
 		databases/mariadb \
 		databases/postgresql,-main \
 		databases/postgresql,-server \
-		math/eigen2 \
+		math/eigen3 \
 		productivity/librcps
 
 # kexi needs all db driver installed to run,
@@ -108,7 +126,7 @@ RUN_DEPENDS =	databases/mariadb \
 		devel/desktop-file-utils \
 		misc/shared-mime-info \
 		productivity/librcps \
-		x11/gtk+2,-guic
+		x11/gtk+3,-guic
 
 LIB_DEPENDS =	databases/freetds \
 		databases/libpqxx>=3,<5 \
@@ -123,11 +141,17 @@ LIB_DEPENDS =	databases/freetds \
 		graphics/png \
 		graphics/tiff \
 		math/fftw3,double \
+		net/curl \
 		print/poppler,,-qt4 \
+		security/qca2 \
 		textproc/icu4c \
 		${MODKDE4_DEP_DIR}/libkdcraw \
 		${MODKDE4_DEP_DIR}/marble \
 		${MODKDE4_DEP_DIR}/okular
+
+# XXX FindPqxx.cmake should be fixed instead of hardcoding version here
+CONFIGURE_ARGS =	-DPQXX_VERSION=4.0.1 \
+	-DOPENJPEG_INCLUDE_DIR=${LOCALBASE}/include/openjpeg-1.5
 
 # Stuff we don't have ATM. Do not bother about CreateResources, it's
 # pure optional run-time dependency.
@@ -144,6 +168,9 @@ CONFIGURE_ARGS +=	-DWITH_Cauchy:BOOL=Off \
 
 # Karbon wants SVG support through a shareware plugin for pstoedit
 CONFIGURE_ARGS +=	-DWITH_Pstoedit:BOOL=Off
+
+# XXX Silently ignore non-existent dependencies
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0046=OLD
 
 # Running D-Bus daemon is required
 TEST_IS_INTERACTIVE =	X11
