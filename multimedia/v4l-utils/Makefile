@@ -17,7 +17,10 @@ MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 # LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		c jpeg m pthread
+WANTLIB += GL ICE QtCore QtGui QtOpenGL SM X11 X11-xcb Xau Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrender Xxf86vm c drm
+WANTLIB += fontconfig freetype glapi jpeg m pthread pthread-stubs
+WANTLIB += stdc++ xcb xcb-dri2 xcb-glx
 
 MASTER_SITES =		http://linuxtv.org/downloads/v4l-utils/
 
@@ -31,7 +34,10 @@ AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.9
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	autoconf
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
+			--disable-libdvbv5 \
+			--enable-qv4l2 \
+			--enable-v4l-utils
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			PKG_CONFIG_PATH="${LOCALBASE}/lib/qt4/pkgconfig"

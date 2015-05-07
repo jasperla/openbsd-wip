@@ -1,0 +1,25 @@
+$OpenBSD$
+--- utils/v4l2-ctl/vivid-tpg.h.orig	Wed May  6 21:24:59 2015
++++ utils/v4l2-ctl/vivid-tpg.h	Thu May  7 20:06:27 2015
+@@ -20,7 +20,11 @@
+ #ifndef _VIVID_TPG_H_
+ #define _VIVID_TPG_H_
+ 
++#if defined __OpenBSD__
++#include <sys/types.h>
++#else
+ #include <linux/types.h>
++#endif
+ #include <linux/videodev2.h>
+ 
+ #include <stdbool.h>
+@@ -34,7 +38,9 @@ typedef __s16 s16;
+ typedef __u8 u8;
+ typedef __s8 s8;
+ 
++#ifndef __OpenBSD__
+ #define __packed __attribute__((packed))
++#endif
+ 
+ static inline void vfree(void *p)
+ {
