@@ -1,0 +1,83 @@
+$OpenBSD$
+--- utils/v4l2-compliance/v4l2-test-io-config.cpp.orig	Fri May  8 19:09:56 2015
++++ utils/v4l2-compliance/v4l2-test-io-config.cpp	Fri May  8 19:11:02 2015
+@@ -44,7 +44,7 @@ static int checkStd(struct node *node, bool has_std, v
+ 		return fail("STD cap set, but could not get standard\n");
+ 	if (!ret && !has_std)
+ 		return fail("STD cap not set, but could still get a standard\n");
+-	if (ret != ENOTTY && ret != ENODATA && !has_std)
++	if (ret != ENOTTY && !has_std)
+ 		return fail("STD cap not set, but got wrong error code (%d)\n", ret);
+ 	if (!ret && has_std) {
+ 		if (std & ~mask)
+@@ -61,7 +61,7 @@ static int checkStd(struct node *node, bool has_std, v
+ 		return fail("STD cap not set, but could still set a standard\n");
+ 	std = V4L2_STD_ATSC;
+ 	ret = doioctl(node, VIDIOC_S_STD, &std);
+-	if (ret != ENODATA && ret != EINVAL && ret != ENOTTY)
++	if (ret != EINVAL && ret != ENOTTY)
+ 		return fail("could set standard to ATSC, which is not supported anymore\n");
+ 	for (i = 0; ; i++) {
+ 		memset(&enumstd, 0xff, sizeof(enumstd));
+@@ -91,7 +91,7 @@ static int checkStd(struct node *node, bool has_std, v
+ 		return fail("STD cap set, but no standards can be enumerated\n");
+ 	if (i && !has_std)
+ 		return fail("STD cap was not set, but standards can be enumerated\n");
+-	if (ret != ENOTTY && ret != ENODATA && !has_std)
++	if (ret != ENOTTY && !has_std)
+ 		return fail("STD cap not set, but got wrong error code for enumeration (%d)\n", ret);
+ 	if (std_mask & V4L2_STD_ATSC)
+ 		return fail("STD mask contains ATSC standards. This is no longer supported\n");
+@@ -101,7 +101,7 @@ static int checkStd(struct node *node, bool has_std, v
+ 	ret = doioctl(node, VIDIOC_QUERYSTD, &std);
+ 	if (!ret && !has_std)
+ 		return fail("STD cap was not set, but could still query standard\n");
+-	if (ret != ENOTTY && ret != ENODATA && !has_std)
++	if (ret != ENOTTY && !has_std)
+ 		return fail("STD cap not set, but got wrong error code for query (%d)\n", ret);
+ 	if (ret != ENOTTY && !is_input)
+ 		return fail("this is an output, but could still query standard\n");
+@@ -172,7 +172,7 @@ static int checkTimings(struct node *node, bool has_ti
+ 		return fail("TIMINGS cap set, but could not get current timings\n");
+ 	if (!ret && !has_timings)
+ 		return fail("TIMINGS cap not set, but could still get timings\n");
+-	if (ret != ENOTTY && ret != ENODATA && !has_timings)
++	if (ret != ENOTTY && !has_timings)
+ 		return fail("TIMINGS cap not set, but got wrong error code (%d)\n", ret);
+ 
+ 	for (i = 0; ; i++) {
+@@ -203,14 +203,14 @@ static int checkTimings(struct node *node, bool has_ti
+ 		return fail("TIMINGS cap set, but no timings can be enumerated\n");
+ 	if (i && !has_timings)
+ 		return fail("TIMINGS cap was not set, but timings can be enumerated\n");
+-	if (ret != ENOTTY && ret != ENODATA && !has_timings)
++	if (ret != ENOTTY && !has_timings)
+ 		return fail("TIMINGS cap not set, but got wrong error code for enumeration (%d)\n", ret);
+ 	if (has_timings)
+ 		fail_on_test(doioctl(node, VIDIOC_S_DV_TIMINGS, &timings));
+ 	ret = doioctl(node, VIDIOC_QUERY_DV_TIMINGS, &timings);
+ 	if (!ret && !has_timings)
+ 		return fail("TIMINGS cap was not set, but could still query timings\n");
+-	if (ret != ENOTTY && ret != ENODATA && !has_timings)
++	if (ret != ENOTTY && !has_timings)
+ 		return fail("TIMINGS cap not set, but got wrong error code for query (%d)\n", ret);
+ 	if (ret != ENOTTY && !is_input)
+ 		return fail("this is an output, but could still query timings\n");
+@@ -350,7 +350,7 @@ static int checkEdid(struct node *node, unsigned pad, 
+ 	fail_on_test(edid.blocks != blocks);
+ 	edid.start_block = edid.blocks ? edid.blocks : 1;
+ 	ret = doioctl(node, VIDIOC_G_EDID, &edid);
+-	fail_on_test(ret != EINVAL && ret != ENODATA);
++	fail_on_test(ret != EINVAL);
+ 	if (blocks > 1) {
+ 		edid.start_block = 1;
+ 		edid.blocks = blocks;
+@@ -360,7 +360,7 @@ static int checkEdid(struct node *node, unsigned pad, 
+ 	edid.start_block = 0;
+ 	edid.blocks = 256;
+ 	ret = doioctl(node, VIDIOC_G_EDID, &edid);
+-	fail_on_test(ret && ret != ENODATA);
++	fail_on_test(ret);
+ 	if (!ret)
+ 		fail_on_test(edid.blocks != blocks);
+ 

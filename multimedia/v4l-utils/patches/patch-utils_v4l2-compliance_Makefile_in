@@ -1,0 +1,12 @@
+$OpenBSD$
+--- utils/v4l2-compliance/Makefile.in.orig	Fri May  8 19:13:00 2015
++++ utils/v4l2-compliance/Makefile.in	Fri May  8 19:13:21 2015
+@@ -388,7 +388,7 @@ v4l2_compliance_SOURCES = v4l2-compliance.cpp v4l2-tes
+ 	v4l2-test-codecs.cpp v4l2-compliance.h cv4l-helpers.h v4l-helpers.h
+ 
+ v4l2_compliance_LDADD = ../../lib/libv4l2/libv4l2.la ../../lib/libv4lconvert/libv4lconvert.la
+-v4l2_compliance_LDFLAGS = -lrt
++v4l2_compliance_LDFLAGS = 
+ EXTRA_DIST = Android.mk fixme.txt
+ all: all-am
+ 
