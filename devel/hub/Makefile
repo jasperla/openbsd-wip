@@ -3,6 +3,7 @@
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 COMMENT =		wraps git in order to extend it with extra features
+
 V =			2.2.1
 GH_ACCOUNT =		github
 GH_PROJECT =		hub
@@ -29,5 +30,8 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hub ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/hub.1 ${PREFIX}/man/man1
+
+do-test:
+	cd ${WRKSRC} && git init && script/test
 
 .include <bsd.port.mk>
