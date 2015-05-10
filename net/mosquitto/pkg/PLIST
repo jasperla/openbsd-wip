@@ -1,0 +1,30 @@
+@comment $OpenBSD$
+@bin bin/mosquitto_passwd
+@bin bin/mosquitto_pub
+@bin bin/mosquitto_sub
+etc/
+etc/mosquitto/
+etc/mosquitto/aclfile.example
+etc/mosquitto/mosquitto.conf
+etc/mosquitto/pskfile.example
+etc/mosquitto/pwfile.example
+include/mosquitto.h
+include/mosquitto_plugin.h
+include/mosquittopp.h
+@lib lib/libmosquitto.so.${LIBmosquitto_VERSION}
+@lib lib/libmosquittopp.so.${LIBmosquittopp_VERSION}
+@bin sbin/mosquitto
+share/man/
+share/man/man1/
+@man share/man/man1/mosquitto_passwd.1
+@man share/man/man1/mosquitto_pub.1
+@man share/man/man1/mosquitto_sub.1
+share/man/man3/
+@man share/man/man3/libmosquitto.3
+share/man/man5/
+@man share/man/man5/mosquitto.conf.5
+share/man/man7/
+@man share/man/man7/mosquitto-tls.7
+@man share/man/man7/mqtt.7
+share/man/man8/
+@man share/man/man8/mosquitto.8

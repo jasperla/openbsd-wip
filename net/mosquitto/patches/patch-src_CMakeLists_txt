@@ -1,0 +1,21 @@
+$OpenBSD$
+--- src/CMakeLists.txt.orig	Thu May  7 14:21:22 2015
++++ src/CMakeLists.txt	Sun May 10 12:58:59 2015
+@@ -85,6 +85,8 @@ set (MOSQ_LIBS ${MOSQ_LIBS} ${OPENSSL_LIBRARIES})
+ if (UNIX)
+ 	if (APPLE)
+ 		set (MOSQ_LIBS ${MOSQ_LIBS} dl m)
++	elseif (${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
++		set (MOSQ_LIBS ${MOSQ_LIBS} m)
+ 	else (APPLE)
+ 		set (MOSQ_LIBS ${MOSQ_LIBS} rt dl m)
+ 	endif (APPLE)
+@@ -112,6 +114,8 @@ target_link_libraries(mosquitto ${MOSQ_LIBS})
+ if (UNIX)
+ 	if (APPLE)
+ 		set_target_properties(mosquitto PROPERTIES LINK_FLAGS "-Wl,-exported_symbols_list -Wl,${mosquitto_SOURCE_DIR}/src/linker-macosx.syms")
++	elseif (${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
++		set_target_properties(mosquitto PROPERTIES LINK_FLAGS "-L${LOCALBASE}/lib")
+ 	else (APPLE)
+ 		set_target_properties(mosquitto PROPERTIES LINK_FLAGS "-Wl,-dynamic-list=${mosquitto_SOURCE_DIR}/src/linker.syms")
+ 	endif (APPLE)

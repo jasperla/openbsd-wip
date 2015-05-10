@@ -1,0 +1,15 @@
+$OpenBSD$
+--- lib/CMakeLists.txt.orig	Thu May  7 14:21:22 2015
++++ lib/CMakeLists.txt	Sun May 10 12:21:19 2015
+@@ -43,9 +43,9 @@ add_library(libmosquitto SHARED
+ 
+ set (LIBRARIES ${OPENSSL_LIBRARIES} ${PTHREAD_LIBRARIES})
+ 
+-if (UNIX AND NOT APPLE)
++if (UNIX AND NOT APPLE AND NOT ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
+ 	set (LIBRARIES ${LIBRARIES} rt)
+-endif (UNIX AND NOT APPLE)
++endif (UNIX AND NOT APPLE AND NOT ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
+ 
+ if (WIN32)
+ 	set (LIBRARIES ${LIBRARIES} ws2_32)
