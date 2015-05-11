@@ -1,0 +1,12 @@
+$OpenBSD$
+--- utils/v4l2-compliance/v4l2-compliance.h.orig	Mon May 11 18:15:38 2015
++++ utils/v4l2-compliance/v4l2-compliance.h	Mon May 11 18:16:06 2015
+@@ -34,7 +34,7 @@
+ 
+ #include <cv4l-helpers.h>
+ 
+-#if !defined(ENODATA) && (defined(__FreeBSD__) || defined(__FreeBSD_kernel__))
++#if !defined(ENODATA) && (defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__OpenBSD__))
+ #define ENODATA ENOTSUP
+ #endif
+ 
