@@ -52,3 +52,4 @@ do-install:
 
 .if ${NO_SHARED_LIBS} == Yes
 MAKE_FLAGS +=	STATIC=yes
+.endif
