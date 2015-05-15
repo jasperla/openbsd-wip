@@ -28,7 +28,9 @@ OPTIONAL_DEPENDS = 	graphics/py-matplotlib \
 			www/py-httplib2 \
 			www/py-beautifulsoup4 \
 			devel/py-html5lib \
-			devel/ipython
+			devel/ipython \
+			x11/py-gtk2 \
+			x11/xclip
 
 BUILD_DEPENDS =		${RUN_DEPENDS} \
 			${OPTIONAL_DEPENDS}
@@ -41,6 +43,8 @@ TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/py-nose \
 			${FULLPKGNAME}:math/py-pandas \
 			${OPTIONAL_DEPENDS}
+
+USE_X11 = 		Yes # for clipboard tests
 
 do-test:
 	${LOCALBASE}/bin/nosetests pandas -v
