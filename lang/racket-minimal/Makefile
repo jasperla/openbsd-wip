@@ -14,7 +14,7 @@ ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		multi-paradigm programming language
 
-V =			6.1.90.900
+V =			6.1.91.900
 PKGNAME =		racket-minimal-$V
 DISTNAME =		racket-minimal-$V-src-builtpkgs
 
@@ -84,16 +84,9 @@ CONFIGURE_ARGS +=	--disable-strip \
 CFLAGS += -ggdb3
 .endif
 
-# The LOCKpkgs.rktd line (apparently) fixes this bug:
-# $ raco pkg show
-# Installation-wide:
-# open-output-file: cannot open output file
-#   path: /usr/local/share/racket/pkgs/.LOCKpkgs.rktd
-#     system error: Permission denied; errno=13
 post-install:
 	@perl -i -pe 's/installation-name . "snapshot"/installation-name . "$V"/g' ${WRKINST}/etc/racket/config.rktd
 	@mv ${WRKINST}/etc/racket ${PREFIX}/share/examples
-	@touch ${PREFIX}/share/racket/pkgs/.LOCKpkgs.rktd
 
 # Since 5.3.4 if __SSE_MATH__ is defined (C_COMPILER_USES_SSE) and
 # MZ_TRY_EXTFLONUMS enabled, MZ_LONG_DOUBLE (extflonum) is turned on. Also
