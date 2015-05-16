@@ -1,0 +1,6 @@
+A library for working with most OpenStack-based cloud deployments,
+though it originally targeted the Rackspace public cloud. For example,
+the code for cloudfiles contains the ability to publish your content
+on Rackspace's CDN network, even though CDN support is not part of
+OpenStack Swift. But if you don't use any of the CDN-related code,
+your app will work fine on any standard Swift deployment.
