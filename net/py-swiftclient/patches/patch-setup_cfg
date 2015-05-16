@@ -1,0 +1,12 @@
+$OpenBSD$
+--- setup.cfg.orig	Sun May  3 19:46:08 2015
++++ setup.cfg	Sun May  3 19:46:15 2015
+@@ -30,7 +30,7 @@ packages = 
+ scripts = 
+ 	bin/swift
+ data_files = 
+-	share/man/man1 = doc/manpages/swift.1
++	man/man1 = doc/manpages/swift.1
+ 
+ [entry_points]
+ console_scripts = 

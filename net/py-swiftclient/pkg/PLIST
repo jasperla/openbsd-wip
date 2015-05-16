@@ -1,0 +1,31 @@
+@comment $OpenBSD$
+bin/swift
+lib/python${MODPY_VERSION}/site-packages/python_swiftclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/python_swiftclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/python_swiftclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/python_swiftclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/python_swiftclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/python_swiftclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/python_swiftclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
+lib/python${MODPY_VERSION}/site-packages/python_swiftclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/python_swiftclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/swiftclient/
+lib/python${MODPY_VERSION}/site-packages/swiftclient/__init__.py
+lib/python${MODPY_VERSION}/site-packages/swiftclient/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/swiftclient/client.py
+lib/python${MODPY_VERSION}/site-packages/swiftclient/client.pyc
+lib/python${MODPY_VERSION}/site-packages/swiftclient/command_helpers.py
+lib/python${MODPY_VERSION}/site-packages/swiftclient/command_helpers.pyc
+lib/python${MODPY_VERSION}/site-packages/swiftclient/exceptions.py
+lib/python${MODPY_VERSION}/site-packages/swiftclient/exceptions.pyc
+lib/python${MODPY_VERSION}/site-packages/swiftclient/multithreading.py
+lib/python${MODPY_VERSION}/site-packages/swiftclient/multithreading.pyc
+lib/python${MODPY_VERSION}/site-packages/swiftclient/service.py
+lib/python${MODPY_VERSION}/site-packages/swiftclient/service.pyc
+lib/python${MODPY_VERSION}/site-packages/swiftclient/shell.py
+lib/python${MODPY_VERSION}/site-packages/swiftclient/shell.pyc
+lib/python${MODPY_VERSION}/site-packages/swiftclient/utils.py
+lib/python${MODPY_VERSION}/site-packages/swiftclient/utils.pyc
+lib/python${MODPY_VERSION}/site-packages/swiftclient/version.py
+lib/python${MODPY_VERSION}/site-packages/swiftclient/version.pyc
+@man man/man1/swift.1
