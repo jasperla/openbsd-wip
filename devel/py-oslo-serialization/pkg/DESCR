@@ -1,0 +1,3 @@
+The oslo.serialization library provides support for representing
+objects in transmittable and storable formats, such as JSON and
+MessagePack.
