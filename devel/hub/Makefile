@@ -1,7 +1,5 @@
 # $OpenBSD$
 
-ONLY_FOR_ARCHS =	${GO_ARCHS}
-
 COMMENT =		wraps git in order to extend it with extra features
 
 V =			2.2.1
@@ -20,18 +18,23 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c pthread
 
-BUILD_DEPENDS =		lang/go \
-			shells/bash
+MODULES =		lang/go
+
+BUILD_DEPENDS =		shells/bash
 RUN_DEPENDS =		devel/git
 
-do-build:
-	cd ${WRKSRC} && script/build
+post-extract:
+	mkdir -p ${WRKSRC}/src/github.com/github
+	ln -s ${WRKSRC} ${WRKSRC}/src/github.com/github/hub
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/hub ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/hub.1 ${PREFIX}/man/man1
+do-build:
+	GOPATH=${GOPATH} go install github.com/github/hub
 
 do-test:
-	cd ${WRKSRC} && git init && script/test
+	cd ${WRKSRC} && git init && GOPATH=${GOPATH} go test ./...
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/hub ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/hub.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
