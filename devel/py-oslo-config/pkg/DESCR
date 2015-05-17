@@ -1,0 +1,3 @@
+slo configuration API supports parsing command line arguments and
+.ini style configuration files.
+
