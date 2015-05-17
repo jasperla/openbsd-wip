@@ -1,0 +1,27 @@
+@comment $OpenBSD$
+lib/python${MODPY_VERSION}/site-packages/debtcollector/
+lib/python${MODPY_VERSION}/site-packages/debtcollector-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/debtcollector-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/debtcollector-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/debtcollector-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/debtcollector-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/debtcollector-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
+lib/python${MODPY_VERSION}/site-packages/debtcollector-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/debtcollector-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/debtcollector/__init__.py
+lib/python${MODPY_VERSION}/site-packages/debtcollector/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/debtcollector/_utils.py
+lib/python${MODPY_VERSION}/site-packages/debtcollector/_utils.pyc
+lib/python${MODPY_VERSION}/site-packages/debtcollector/moves.py
+lib/python${MODPY_VERSION}/site-packages/debtcollector/moves.pyc
+lib/python${MODPY_VERSION}/site-packages/debtcollector/removals.py
+lib/python${MODPY_VERSION}/site-packages/debtcollector/removals.pyc
+lib/python${MODPY_VERSION}/site-packages/debtcollector/renames.py
+lib/python${MODPY_VERSION}/site-packages/debtcollector/renames.pyc
+lib/python${MODPY_VERSION}/site-packages/debtcollector/tests/
+lib/python${MODPY_VERSION}/site-packages/debtcollector/tests/__init__.py
+lib/python${MODPY_VERSION}/site-packages/debtcollector/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/debtcollector/tests/base.py
+lib/python${MODPY_VERSION}/site-packages/debtcollector/tests/base.pyc
+lib/python${MODPY_VERSION}/site-packages/debtcollector/tests/test_deprecation.py
+lib/python${MODPY_VERSION}/site-packages/debtcollector/tests/test_deprecation.pyc
