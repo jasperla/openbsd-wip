@@ -1,0 +1,3 @@
+his is a client for the OpenStack Identity API, implemented by
+Keystone. There’s a Python API (the keystoneclient module), and a
+command-line script (keystone).
