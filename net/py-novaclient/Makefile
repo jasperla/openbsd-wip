@@ -2,7 +2,7 @@
 
 COMMENT =	python interface to OpenStack Nova API
 
-MODPY_EGG_VERSION = 2.24.1
+MODPY_EGG_VERSION = 2.25.0
 DISTNAME =	python-novaclient-${MODPY_EGG_VERSION}
 PKGNAME = 	py-novaclient-${MODPY_EGG_VERSION}
 CATEGORIES =	net
@@ -17,7 +17,18 @@ MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =		textproc/py-prettytable \
-			www/py-httplib2
+			www/py-httplib2 \
+			devel/py-pbr \
+			devel/py-iso8601 \
+			devel/py-oslo-i18n \
+			devel/py-oslo-serialization \
+			devel/py-oslo-utils \
+			textproc/py-prettytable \
+			www/py-requests \
+			devel/py-simplejson \
+			devel/py-six \
+			devel/py-babel \
+			net/py-keystoneclient
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
