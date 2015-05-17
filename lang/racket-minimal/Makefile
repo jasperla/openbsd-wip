@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile,v 1.20 2014/11/12 02:35:29 juanfra Exp $
 
-# Racket devs use something like "6.1.90.900" for pre-release versions
+PORTROACH_COMMENT =	hide pre-release versions (e.g. 6.1.90.900)
 PORTROACH =		limit:!.*\.[0-9][0-9][0-9]-src-builtpkgs$$
 
 SHARED_ONLY =		Yes
