@@ -2,7 +2,7 @@
 
 COMMENT =		lightweight scientific IDE for Python
 
-MODPY_EGG_VERSION =	2.3.2
+MODPY_EGG_VERSION =	2.3.4
 DISTNAME =		spyder-${MODPY_EGG_VERSION}
 CATEGORIES =		editors devel
 HOMEPAGE =		https://code.google.com/p/spyderlib/
@@ -10,18 +10,19 @@ HOMEPAGE =		https://code.google.com/p/spyderlib/
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=s/spyder/}
+MODPY_PI =	Yes
 EXTRACT_SUFX =	.zip
 
 MODULES =	lang/python
 
 BUILD_DEPENDS +=	textproc/py-sphinx
-RUN_DEPENDS +=		devel/py-rope \
+RUN_DEPENDS +=		devel/desktop-file-utils \
+			devel/py-rope \
 			x11/py-qt4
 
 NO_TEST =	Yes
 
-post-patch:
+post-configure:
 	${SUBST_CMD} ${WRKSRC}/spyderlib/__init__.py
 
 post-install:
