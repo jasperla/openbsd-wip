@@ -160,7 +160,6 @@ lib/python${MODPY_VERSION}/site-packages/spyderlib/images/editor/unindent.png
 lib/python${MODPY_VERSION}/site-packages/spyderlib/images/editor/versplit.png
 lib/python${MODPY_VERSION}/site-packages/spyderlib/images/editor/warning.png
 lib/python${MODPY_VERSION}/site-packages/spyderlib/images/editor/wng_list.png
-lib/python${MODPY_VERSION}/site-packages/spyderlib/images/ext_tools.png
 lib/python${MODPY_VERSION}/site-packages/spyderlib/images/file/
 lib/python${MODPY_VERSION}/site-packages/spyderlib/images/file/fileclose.png
 lib/python${MODPY_VERSION}/site-packages/spyderlib/images/file/filecloseall.png
@@ -671,10 +670,14 @@ lib/python${MODPY_VERSION}/site-packages/spyderlib/utils/inspector/tutorial.rst
 lib/python${MODPY_VERSION}/site-packages/spyderlib/utils/introspection/
 lib/python${MODPY_VERSION}/site-packages/spyderlib/utils/introspection/__init__.py
 lib/python${MODPY_VERSION}/site-packages/spyderlib/utils/introspection/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/spyderlib/utils/introspection/base.py
-lib/python${MODPY_VERSION}/site-packages/spyderlib/utils/introspection/base.pyc
+lib/python${MODPY_VERSION}/site-packages/spyderlib/utils/introspection/fallback_plugin.py
+lib/python${MODPY_VERSION}/site-packages/spyderlib/utils/introspection/fallback_plugin.pyc
+lib/python${MODPY_VERSION}/site-packages/spyderlib/utils/introspection/jedi_plugin.py
+lib/python${MODPY_VERSION}/site-packages/spyderlib/utils/introspection/jedi_plugin.pyc
 lib/python${MODPY_VERSION}/site-packages/spyderlib/utils/introspection/module_completion.py
 lib/python${MODPY_VERSION}/site-packages/spyderlib/utils/introspection/module_completion.pyc
+lib/python${MODPY_VERSION}/site-packages/spyderlib/utils/introspection/plugin_manager.py
+lib/python${MODPY_VERSION}/site-packages/spyderlib/utils/introspection/plugin_manager.pyc
 lib/python${MODPY_VERSION}/site-packages/spyderlib/utils/introspection/rope_plugin.py
 lib/python${MODPY_VERSION}/site-packages/spyderlib/utils/introspection/rope_plugin.pyc
 lib/python${MODPY_VERSION}/site-packages/spyderlib/utils/iofuncs.py
@@ -730,6 +733,8 @@ lib/python${MODPY_VERSION}/site-packages/spyderlib/widgets/externalshell/__init_
 lib/python${MODPY_VERSION}/site-packages/spyderlib/widgets/externalshell/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/spyderlib/widgets/externalshell/baseshell.py
 lib/python${MODPY_VERSION}/site-packages/spyderlib/widgets/externalshell/baseshell.pyc
+lib/python${MODPY_VERSION}/site-packages/spyderlib/widgets/externalshell/inputhooks.py
+lib/python${MODPY_VERSION}/site-packages/spyderlib/widgets/externalshell/inputhooks.pyc
 lib/python${MODPY_VERSION}/site-packages/spyderlib/widgets/externalshell/introspection.py
 lib/python${MODPY_VERSION}/site-packages/spyderlib/widgets/externalshell/introspection.pyc
 lib/python${MODPY_VERSION}/site-packages/spyderlib/widgets/externalshell/monitor.py
@@ -825,6 +830,7 @@ lib/python${MODPY_VERSION}/site-packages/spyderplugins/widgets/profilergui.py
 lib/python${MODPY_VERSION}/site-packages/spyderplugins/widgets/profilergui.pyc
 lib/python${MODPY_VERSION}/site-packages/spyderplugins/widgets/pylintgui.py
 lib/python${MODPY_VERSION}/site-packages/spyderplugins/widgets/pylintgui.pyc
+share/applications/spyder.desktop
 share/doc/spyder/
 share/doc/spyder/.buildinfo
 share/doc/spyder/_images/
@@ -923,3 +929,7 @@ share/doc/spyder/pylint.html
 share/doc/spyder/search.html
 share/doc/spyder/searchindex.js
 share/doc/spyder/variableexplorer.html
+share/pixmaps/
+share/pixmaps/spyder.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
