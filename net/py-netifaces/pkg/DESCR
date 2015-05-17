@@ -1,0 +1,11 @@
+It’s been annoying me for some time that there’s no easy way
+to get the address(es) of the machine’s network interfaces from
+Python. There is a good reason for this difficulty, which is that
+it is virtually impossible to do so in a portable manner. However,
+it seems to me that there should be a package you can easy_install
+that will take care of working out the details of doing so on the
+machine you’re using, then you can get on with writing Python code
+without concerning yourself with the nitty gritty of system-dependent
+low-level networking APIs.
+
+This package attempts to solve that problem.
