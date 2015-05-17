@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# $OpenBSD: cvsyncd.rc,v 1.1 2012/04/10 19:52:44 phessler Exp $
+
+daemon="/usr/local/sbin/mosquitto"
+daemon_flags="-d -c /etc/mosquitto/mosquitto.conf"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1
