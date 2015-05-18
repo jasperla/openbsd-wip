@@ -21,7 +21,6 @@ CFLAGS +=		-DEPROTO=ECONNABORTED \
 MASTER_SITES =		http://mosquitto.org/files/source/
 
 MODULES =		devel/cmake
-#USE_GMAKE = 		Yes
 
 # Pre-shared key support was intentionally removed from libressl
 CONFIGURE_ARGS +=	-DWITH_TLS_PSK=no
