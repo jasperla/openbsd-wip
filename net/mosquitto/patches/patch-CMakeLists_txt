@@ -1,0 +1,11 @@
+$OpenBSD$
+--- CMakeLists.txt.orig	Mon May 18 08:26:58 2015
++++ CMakeLists.txt	Mon May 18 08:27:59 2015
+@@ -44,7 +44,6 @@ else (WIN32)
+ 	endif (${CMAKE_INSTALL_PREFIX} STREQUAL /usr)
+ 	
+ 	set (LIBDIR lib${LIB_SUFFIX})
+-	set (CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${LIBDIR}")
+ 	set (INCLUDEDIR include)
+ 	set (DATAROOTDIR share)
+ 	set (MANDIR ${DATAROOTDIR}/man)

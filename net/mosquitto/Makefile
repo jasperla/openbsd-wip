@@ -26,12 +26,6 @@ USE_GMAKE = 		Yes
 # undefined reference to `SSL_CTX_set_psk_client_callback'
 CONFIGURE_ARGS +=	-DWITH_TLS_PSK=no
 
-# XXX would like to remove the need for the patch and this subst.
-#CONFIGURE_ARGS +=	-DCMAKE_LIBRARY_PATH=${LOCALBASE}/lib
-# ^^^ should work, but does not
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/src/CMakeLists.txt
-
 MANDIRS = 		1 3 5 7 8
 post-install:
 	mv ${PREFIX}/etc ${PREFIX}/share/examples/mosquitto
