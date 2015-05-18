@@ -21,21 +21,15 @@ CFLAGS +=		-DEPROTO=ECONNABORTED \
 MASTER_SITES =		http://mosquitto.org/files/source/
 
 MODULES =		devel/cmake
-USE_GMAKE = 		Yes
+#USE_GMAKE = 		Yes
 
-# undefined reference to `SSL_CTX_set_psk_client_callback'
+# Pre-shared key support was intentionally removed from libressl
 CONFIGURE_ARGS +=	-DWITH_TLS_PSK=no
 
-MANDIRS = 		1 3 5 7 8
 post-install:
-	mv ${PREFIX}/etc ${PREFIX}/share/examples/mosquitto
+	mv ${PREFIX}/etc/mosquitto ${PREFIX}/share/examples/mosquitto
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/mosquitto
-.for i in ${MANDIRS}
-	mv ${PREFIX}/share/man/man${i}/*.${i} ${PREFIX}/man/man${i}/
-	rmdir ${PREFIX}/share/man/man${i}
-.endfor
-	rmdir ${PREFIX}/share/man
-	mkdir ${WRKINST}/${SYSCONFDIR}/mosquitto
+	rmdir ${PREFIX}/etc
 
 LIB_DEPENDS =		sysutils/e2fsprogs
 NO_TEST =		Yes

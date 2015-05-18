@@ -19,10 +19,9 @@ include/mosquittopp.h
 @man man/man8/mosquitto.8
 @bin sbin/mosquitto
 share/examples/mosquitto/
-share/examples/mosquitto/mosquitto/
 @sample ${SYSCONFDIR}/mosquitto/
-share/examples/mosquitto/mosquitto/aclfile.example
-share/examples/mosquitto/mosquitto/mosquitto.conf
+share/examples/mosquitto/aclfile.example
+share/examples/mosquitto/mosquitto.conf
 @mode 770
 @owner _mosquitto
 @group _mosquitto
@@ -30,6 +29,7 @@ share/examples/mosquitto/mosquitto/mosquitto.conf
 @mode
 @owner
 @group
-share/examples/mosquitto/mosquitto/pskfile.example
-share/examples/mosquitto/mosquitto/pwfile.example
+share/examples/mosquitto/pskfile.example
+share/examples/mosquitto/pwfile.example
 @rcscript ${RCDIR}/mosquitto
+@extra /var/run/mosquitto.pid
