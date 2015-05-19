@@ -13,7 +13,7 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # 3-clause BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c crypto m pthread ssl stdc++ uuid
+WANTLIB +=		c crypto m pthread ssl stdc++ uuid
 
 # No EPROTO in OpenBSD.
 CFLAGS +=		-DEPROTO=ECONNABORTED \
@@ -25,12 +25,8 @@ MODULES =		devel/cmake
 # Pre-shared key support was intentionally removed from libressl
 CONFIGURE_ARGS +=	-DWITH_TLS_PSK=no
 
-post-install:
-	mv ${PREFIX}/etc/mosquitto ${PREFIX}/share/examples/mosquitto
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/mosquitto
-	rmdir ${PREFIX}/etc
-
 LIB_DEPENDS =		sysutils/e2fsprogs
+
 NO_TEST =		Yes
 
 .include <bsd.port.mk>

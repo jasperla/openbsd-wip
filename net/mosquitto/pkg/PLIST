@@ -22,12 +22,10 @@ share/examples/mosquitto/
 @sample ${SYSCONFDIR}/mosquitto/
 share/examples/mosquitto/aclfile.example
 share/examples/mosquitto/mosquitto.conf
-@mode 770
-@owner _mosquitto
+@mode 640
 @group _mosquitto
 @sample ${SYSCONFDIR}/mosquitto/mosquitto.conf
 @mode
-@owner
 @group
 share/examples/mosquitto/pskfile.example
 share/examples/mosquitto/pwfile.example
