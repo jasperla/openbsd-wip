@@ -14,16 +14,17 @@ MODPY_PI =		Yes
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =	lang/python
+MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
-RUN_DEPENDS =	devel/py-pbr \
-				devel/py-six \
-				net/py-netaddr \
-				devel/py-stevedore
+RUN_DEPENDS =		devel/py-pbr \
+			devel/py-six \
+			net/py-netaddr \
+			devel/py-stevedore
 
-BUILD_DEPENDS =	${RUN_DEPENDS}
+BUILD_DEPENDS =		${RUN_DEPENDS}
 
-#NO_TEST =	Yes
+# Has strange ideas about deps
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
