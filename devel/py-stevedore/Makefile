@@ -20,6 +20,7 @@ MODPY_SETUPTOOLS =	Yes
 RUN_DEPENDS =	devel/py-pbr \
 				devel/py-six
 
-#NO_TEST =	Yes
+# Missing dependencies
+NO_TEST =	Yes
 
 .include <bsd.port.mk>
