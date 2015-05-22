@@ -8,7 +8,6 @@ lib/python${MODPY_VERSION}/site-packages/pbr-${MODPY_EGG_VERSION}-py${MODPY_VERS
 lib/python${MODPY_VERSION}/site-packages/pbr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/pbr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/pbr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
-lib/python${MODPY_VERSION}/site-packages/pbr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/pbr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pbr/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pbr/__init__.pyc
@@ -61,10 +60,14 @@ lib/python${MODPY_VERSION}/site-packages/pbr/tests/test_files.py
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/test_files.pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/test_hooks.py
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/test_hooks.pyc
+lib/python${MODPY_VERSION}/site-packages/pbr/tests/test_integration.py
+lib/python${MODPY_VERSION}/site-packages/pbr/tests/test_integration.pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/test_packaging.py
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/test_packaging.pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/test_setup.py
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/test_setup.pyc
+lib/python${MODPY_VERSION}/site-packages/pbr/tests/test_util.py
+lib/python${MODPY_VERSION}/site-packages/pbr/tests/test_util.pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/test_version.py
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/test_version.pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/
