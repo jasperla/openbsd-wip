@@ -18,7 +18,7 @@ MODULES =		lang/python
 
 MODPY_SETUPTOOLS =	Yes
 
-#FLAVORS =		python3
-#FLAVOR ?=
+# Requires a script that isn't included, fails on FreeBSD too
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
