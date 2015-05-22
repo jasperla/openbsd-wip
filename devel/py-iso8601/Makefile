@@ -20,9 +20,9 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS=		python3
 FLAVOR?=
 
-#do-test: fake
-#	cd ${WRKSRC}/pytz/tests && ${MAKE_ENV} \
-#		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
-#		${MODPY_BIN} ./test_tzinfo.py
+TEST_DEPENDS =		devel/py-test
+
+do-test:
+	cd ${WRKSRC} && py.test --verbose iso8601
 
 .include <bsd.port.mk>
