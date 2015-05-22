@@ -24,6 +24,7 @@ RUN_DEPENDS =		devel/py-pbr \
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
-#NO_TEST =	Yes
+# Missing deps
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
