@@ -1,14 +1,14 @@
 # $OpenBSD$
 
-COMMENT =	python interface to OpenStack Nova API
+COMMENT =		python interface to OpenStack Nova API
 
-MODPY_EGG_VERSION = 2.25.0
-DISTNAME =	python-novaclient-${MODPY_EGG_VERSION}
-PKGNAME = 	py-novaclient-${MODPY_EGG_VERSION}
-CATEGORIES =	net
+MODPY_EGG_VERSION =	2.25.0
+DISTNAME =		python-novaclient-${MODPY_EGG_VERSION}
+PKGNAME = 		py-novaclient-${MODPY_EGG_VERSION}
+CATEGORIES =		net
 
-HOMEPAGE =	https://git.openstack.org/cgit/openstack/python-novaclient
-MODPY_PI =	Yes
+HOMEPAGE =		https://git.openstack.org/cgit/openstack/python-novaclient
+MODPY_PI =		Yes
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes
@@ -34,8 +34,5 @@ BUILD_DEPENDS =		${RUN_DEPENDS}
 
 # XXX Haven't looked yet into what tests do
 #NO_TEST =		Yes
-
-#post-extract:
-#	@perl -pi -e 's,setup_requires.*,,' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
