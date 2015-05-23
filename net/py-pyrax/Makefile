@@ -1,14 +1,14 @@
 # $OpenBSD$
 
-COMMENT =	python interface to OpenStack API
+COMMENT =		python interface to OpenStack API
 
-MODPY_EGG_VERSION = 1.9.4
-DISTNAME =	pyrax-${MODPY_EGG_VERSION}
-PKGNAME = 	py-pyrax-${MODPY_EGG_VERSION}
-CATEGORIES =	net
+MODPY_EGG_VERSION =	1.9.4
+DISTNAME =		pyrax-${MODPY_EGG_VERSION}
+PKGNAME = 		py-pyrax-${MODPY_EGG_VERSION}
+CATEGORIES =		net
 
-HOMEPAGE =	https://github.com/rackspace/pyrax
-MODPY_PI =	Yes
+HOMEPAGE =		https://github.com/rackspace/pyrax
+MODPY_PI =		Yes
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes
@@ -28,8 +28,5 @@ BUILD_DEPENDS =		${RUN_DEPENDS}
 
 # XXX Haven't looked yet into what tests do
 #NO_TEST =		Yes
-
-#post-extract:
-#	@perl -pi -e 's,setup_requires.*,,' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
