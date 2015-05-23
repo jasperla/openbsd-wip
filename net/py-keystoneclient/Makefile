@@ -19,7 +19,7 @@ MODPY_SETUPTOOLS =	Yes
 RUN_DEPENDS =		devel/py-six \
 			devel/py-pbr \
 			devel/py-babel \
-			devel/py-iso8601 \
+			textproc/py-iso8601 \
 			devel/py-oslo-config \
 			devel/py-oslo-i18n \
 			devel/py-oslo-serialization \

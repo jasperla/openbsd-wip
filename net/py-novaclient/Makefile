@@ -19,7 +19,7 @@ MODPY_SETUPTOOLS =	Yes
 RUN_DEPENDS =		textproc/py-prettytable \
 			www/py-httplib2 \
 			devel/py-pbr \
-			devel/py-iso8601 \
+			textproc/py-iso8601 \
 			devel/py-oslo-i18n \
 			devel/py-oslo-serialization \
 			devel/py-oslo-utils \
