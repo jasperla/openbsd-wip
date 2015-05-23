@@ -54,9 +54,8 @@ SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.61
 CONFIGURE_ARGS	=	${CONFIGURE_SHARED} \
-		--with-fftw \
-		--without-mpi \
-		--without-hdf5
+			--disable-gui \
+			--without-hdf5
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		F77=${FC} \
