@@ -32,7 +32,7 @@ RUN_DEPENDS =		textproc/py-prettytable \
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
-# XXX Haven't looked yet into what tests do
-#NO_TEST =		Yes
+# Missing dependencies
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
