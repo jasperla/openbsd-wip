@@ -29,7 +29,8 @@ MASTER_SITES =	${MASTER_SITE_GNU:=octave/}
 MODULES =	fortran
 MODFORTRAN_COMPILER = g77
 
-BUILD_DEPENDS =	${MODFORTRAN_BUILD_DEPENDS}
+BUILD_DEPENDS =	${MODFORTRAN_BUILD_DEPENDS} \
+		textproc/gsed
 
 # configure checks for desktop-file-install(1)
 BUILD_DEPENDS +=devel/desktop-file-utils
