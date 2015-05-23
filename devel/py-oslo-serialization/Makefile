@@ -22,7 +22,7 @@ RUN_DEPENDS =	devel/py-pbr \
 				devel/py-six \
 				net/py-msgpack \
 				devel/py-oslo-utils \
-				devel/py-iso8601 \
+				textproc/py-iso8601 \
 				devel/py-tz
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
