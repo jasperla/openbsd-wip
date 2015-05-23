@@ -29,7 +29,8 @@ MASTER_SITES =	${MASTER_SITE_GNU:=octave/}
 MODULES =	fortran
 MODFORTRAN_COMPILER = g77
 
-BUILD_DEPENDS =	${MODFORTRAN_BUILD_DEPENDS}
+BUILD_DEPENDS =	${MODFORTRAN_BUILD_DEPENDS} \
+		textproc/gsed
 
 # configure checks for desktop-file-install(1)
 BUILD_DEPENDS +=devel/desktop-file-utils
@@ -53,9 +54,8 @@ SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.61
 CONFIGURE_ARGS	=	${CONFIGURE_SHARED} \
-		--with-fftw \
-		--without-mpi \
-		--without-hdf5
+			--disable-gui \
+			--without-hdf5
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		F77=${FC} \
