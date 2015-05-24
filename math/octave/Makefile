@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2015/01/02 14:26:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.71 2015/04/21 18:24:22 sthen Exp $
 
 # vax:   no IEEE arithmetic
 # sparc: fPIC version of libgcc.a needed but not available
@@ -27,7 +27,6 @@ WANTLIB=	c m ncurses readline stdc++ z ${MODFORTRAN_WANTLIB} \
 MASTER_SITES =	${MASTER_SITE_GNU:=octave/}
 
 MODULES =	fortran
-MODFORTRAN_COMPILER = g77
 
 BUILD_DEPENDS =	${MODFORTRAN_BUILD_DEPENDS} \
 		textproc/gsed
@@ -39,7 +38,9 @@ RUN_DEPENDS =	devel/gmake \
 		devel/desktop-file-utils
 
 LIB_DEPENDS =	${MODFORTRAN_LIB_DEPENDS} \
+		devel/glpk \
 		math/fftw3 \
+		math/fftw3,float \
 		math/lapack \
 		math/blas \
 		math/amd \
@@ -47,19 +48,18 @@ LIB_DEPENDS =	${MODFORTRAN_LIB_DEPENDS} \
 		devel/pcre \
 		net/curl
 
-USE_GMAKE =	Yes
-USE_GROFF =	Yes
-
 SEPARATE_BUILD =	Yes
-CONFIGURE_STYLE =	autoconf
-AUTOCONF_VERSION =	2.61
+USE_GMAKE =		Yes
+USE_LIBTOOL =		gnu
+#CONFIGURE_STYLE =	autoconf
+#AUTOCONF_VERSION =	2.69
+CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS	=	${CONFIGURE_SHARED} \
 			--disable-gui \
 			--without-hdf5
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		F77=${FC} \
-		SED=/usr/bin/sed
+		F77=${FC}
 MAKE_ENV =	LIBcruft_VERSION=${LIBcruft_VERSION} \
 		LIBoctave_VERSION=${LIBoctave_VERSION} \
 		LIBoctinterp_VERSION=${LIBoctinterp_VERSION}
@@ -69,14 +69,14 @@ CONFIGURE_ENV +=	FFLAGS="${FFLAGS}"
 .endif
 
 # needed to build on amd64
-GCC_ARCH =	${MACHINE_ARCH}-unknown-openbsd${OSREV}
-GNU_ARCH =	${GCC_ARCH:S/amd64/x86_64/}
-SUBST_VARS =	GNU_ARCH VERSION
+#GCC_ARCH =	${MACHINE_ARCH}-unknown-openbsd${OSREV}
+#GNU_ARCH =	${GCC_ARCH:S/amd64/x86_64/}
+#SUBST_VARS =	GNU_ARCH VERSION
 
 # need to use fpic version of libgcc.a
-post-configure:
-	@perl -pi -e 's#(gcc-lib/${GCC_ARCH}/[\d.]+)\s#\1/fpic #' \
-		${WRKBUILD}/Makeconf
+#post-configure:
+#	@perl -pi -e 's#(gcc-lib/${GCC_ARCH}/[\d.]+)\s#\1/fpic #' \
+#		${WRKBUILD}/Makeconf
 
 .ifmake test
 # some tests need HOME to be writable
