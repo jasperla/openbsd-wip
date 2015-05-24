@@ -1,0 +1,2 @@
+this port will try to follow rustc-beta channel, in order to prepare inclusion
+of it in ports@ when it will become stable.
