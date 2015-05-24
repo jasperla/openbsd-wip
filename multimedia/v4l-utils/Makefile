@@ -42,4 +42,7 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			PKG_CONFIG_PATH="${LOCALBASE}/lib/qt4/pkgconfig"
 
+post-extract:
+	rm -R ${WRKSRC}/contrib/freebsd/include
+
 .include <bsd.port.mk>

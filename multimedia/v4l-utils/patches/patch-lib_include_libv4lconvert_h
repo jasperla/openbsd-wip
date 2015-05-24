@@ -1,12 +1,15 @@
 $OpenBSD$
---- lib/include/libv4lconvert.h.orig	Wed Oct  1 13:17:31 2014
-+++ lib/include/libv4lconvert.h	Tue May  5 06:44:57 2015
-@@ -28,7 +28,7 @@
- #include <linux/ioctl.h>
- #endif
+--- lib/include/libv4lconvert.h.orig	Thu May 14 23:00:33 2015
++++ lib/include/libv4lconvert.h	Thu May 14 23:01:36 2015
+@@ -36,7 +36,11 @@
  
--#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
-+#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__OpenBSD__)
- #include <sys/time.h>
- #include <sys/types.h>
- #include <sys/ioctl.h>
+ /* end broken header workaround includes */
+ 
++#if defined(__OpenBSD__)
++#include <sys/videoio.h>
++#else
+ #include <linux/videodev2.h>
++#endif
+ 
+ #ifdef __cplusplus
+ extern "C" {

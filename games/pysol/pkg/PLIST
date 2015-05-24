@@ -2766,8 +2766,8 @@ share/PySolFC/themes/clearlooks/clearlooks/tree-n.gif
 share/PySolFC/themes/clearlooks/clearlooks/tree-p.gif
 share/PySolFC/themes/clearlooks/clearlooks8.4.tcl
 share/PySolFC/themes/clearlooks/clearlooks8.5.tcl
-share/PySolFC/themes/clearlooks/convert_imgs.sh
-share/PySolFC/themes/clearlooks/create_imgs.py
+@comment share/PySolFC/themes/clearlooks/convert_imgs.sh
+@comment share/PySolFC/themes/clearlooks/create_imgs.py
 share/PySolFC/themes/clearlooks/pkgIndex.tcl
 share/PySolFC/tiles/
 share/PySolFC/tiles/Baize.gif
@@ -2788,14 +2788,12 @@ share/PySolFC/tiles/stretch/Blue_Fractal.jpg
 share/PySolFC/tiles/stretch/Castle.gif
 share/PySolFC/tiles/stretch/Sunset.gif
 share/applications/pysol.desktop
-share/icons/pysol01.png
-share/icons/pysol02.png
 share/locale/ru/LC_MESSAGES/pysol.mo
 share/locale/ru_RU/
 share/locale/ru_RU/LC_MESSAGES/
 share/locale/ru_RU/LC_MESSAGES/pysol.mo
 share/pixmaps/
-share/pixmaps/pysol.xbm
-share/pixmaps/pysol.xpm
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+share/pixmaps/pysol01.png
+share/pixmaps/pysol02.png
