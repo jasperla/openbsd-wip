@@ -89,6 +89,8 @@ CONFIGURE_ARGS +=	--disable-valgrind-rpass \
 			--prefix="${LOCALBASE}" \
 			--mandir="${LOCALBASE}/man"
 
+CONFIGURE_ENV +=	ac_cv_header_execinfo_h=no
+
 # need for libbacktrace
 USE_LIBTOOL =		gnu
 
