@@ -22,7 +22,6 @@ MODULES =		lang/go
 
 BUILD_DEPENDS =		shells/bash
 RUN_DEPENDS =		devel/git
-GOPATH =		${WRKSRC}
 
 post-extract:
 	mkdir -p ${WRKSRC}/src/github.com/github
