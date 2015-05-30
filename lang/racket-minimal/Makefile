@@ -41,14 +41,10 @@ EXTRACT_SUFX =		.tgz
 
 MODULES +=		converters/libiconv
 
-# http://docs.racket-lang.org/draw/libs.html
-# http://docs.racket-lang.org/gui/libs.html
-# Some deps are listed in the README, others in the doc and others
-# are called by ffi.
 LIB_DEPENDS =		devel/libffi>=3.0.9p2
 
 WANTLIB += c m pthread ffi
-# Loaded using FFI
+# Loaded using FFI (just a placeholder for now)
 WANTLIB +=
 
 WRKDIST =		${WRKDIR}/racket-$V
