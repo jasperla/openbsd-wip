@@ -5,7 +5,7 @@ previously).
 - Add instructions to README about how to install packages and add
 .racket/version/bin to the PATH. Use drracket as an example.
 
-- Add "gui-pkg-manager" to README.
+- Add "gui-pkg-manager" to README. Run "racket-package-manager". Available fromCatalog.
 
 - Change the name to racket-minimal. Add the entry to devel/quirks.
 
@@ -13,8 +13,11 @@ previously).
 
 - raco pkg install --jobs 2 --auto --binary-lib drracket
 
-- raco pkg install --jobs 2 --auto --binary main-distribution
+- raco pkg install --jobs $(sysctl -n hw.ncpu) --auto --binary main-distribution
 
 - Racket is transitioning to a small core + packages model. The traditional "big
 package" is now just an distribution. In fact, you can create your own
 distribution mixing private and public packages.
+
+- export PATH="$PATH:$(racket-user-bin-paths)"
+
