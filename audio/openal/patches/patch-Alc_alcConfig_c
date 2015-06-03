@@ -1,0 +1,21 @@
+$OpenBSD$
+--- Alc/alcConfig.c.orig	Mon May  4 01:08:33 2015
++++ Alc/alcConfig.c	Wed May 13 14:47:22 2015
+@@ -342,7 +342,7 @@ void ReadALConfig(void)
+     const char *str;
+     FILE *f;
+ 
+-    str = "/etc/openal/alsoft.conf";
++    str = SYSCONFDIR "/openal/alsoft.conf";
+ 
+     TRACE("Loading config %s...\n", str);
+     f = al_fopen(str, "r");
+@@ -353,7 +353,7 @@ void ReadALConfig(void)
+     }
+ 
+     if(!(str=getenv("XDG_CONFIG_DIRS")) || str[0] == 0)
+-        str = "/etc/xdg";
++        str = SYSCONFDIR "/xdg";
+     strncpy(buffer, str, sizeof(buffer)-1);
+     buffer[sizeof(buffer)-1] = 0;
+     /* Go through the list in reverse, since "the order of base directories
