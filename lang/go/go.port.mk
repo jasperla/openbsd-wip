@@ -29,7 +29,7 @@ MODGO_TEST_CMD =	${MODGO_CMD} test ${MODGO_FLAGS}
 RUN_DEPENDS +=		${MODGO_RUN_DEPENDS}
 .endif
 
-.if !empty(GH_ACCOUNT) && !empty(GH_PROJECT)
+.if defined(GH_ACCOUNT) && defined(GH_PROJECT)
 ALL_TARGET ?=		github.com/${GH_ACCOUNT}/${GH_PROJECT}
 .endif
 TEST_TARGET ?=		${ALL_TARGET}
