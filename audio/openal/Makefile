@@ -10,7 +10,7 @@ EPOCH =		0
 DISTNAME =	openal-soft-1.16.0
 PKGNAME =	${DISTNAME:openal-soft%=openal%}
 CATEGORIES =	audio
-SHARED_LIBS =	openal	2.2
+SHARED_LIBS =	openal	2.3
 
 HOMEPAGE =	http://kcat.strangesoft.net/openal.html
 
