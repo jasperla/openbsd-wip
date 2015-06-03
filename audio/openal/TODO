@@ -1,2 +1,3 @@
+ * verify whether major bump in library version is required
  * add recording capability to sndio backend or
  * enable some backend with recording support
