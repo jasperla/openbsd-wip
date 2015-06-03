@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.13 2013/08/25 11:57:27 jsing Exp $
+# $OpenBSD: Makefile,v 1.25 2015/05/06 08:28:26 jasper Exp $
 
-ONLY_FOR_ARCHS =	amd64 i386
+ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 COMMENT =		Go programming language
 
-VERSION =		1.2rc5
+VERSION =		1.4.2
 EXTRACT_SUFX =		.src.tar.gz
 DISTNAME = 		go${VERSION}
 PKGNAME = 		go-${VERSION}
 CATEGORIES =		lang
 
-HOMEPAGE =		http://www.golang.org/
+HOMEPAGE =		http://golang.org/
 
 MAINTAINER = 		Joel Sing <jsing@openbsd.org>
 
@@ -19,9 +19,10 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c m pthread
 
-MASTER_SITES =		https://go.googlecode.com/files/
+MASTER_SITES =		http://golang.org/dl/
 
 BUILD_DEPENDS =		shells/bash
+RUN_DEPENDS =		devel/go-tools
 
 SEPARATE_BUILD =	simple
 CONFIGURE_STYLE =	None
@@ -60,6 +61,8 @@ do-configure:
 
 do-build:
 	@cd ${WRKSRC} && \
+		CC="${CC}" \
+		CXX="${CXX}" \
 		GOROOT=${WRKDIST} \
 		GOBIN=${WRKDIST}/bin \
 		GOROOT_FINAL=${GOROOT} ./make.bash --no-banner
