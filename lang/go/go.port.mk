@@ -11,32 +11,49 @@ MODGO_BUILD_DEPENDS =	lang/go
 BUILD_DEPENDS +=	${MODGO_BUILD_DEPENDS}
 .endif
 
-GO_PKG ?=		pkg/tool/openbsd_${MACHINE_ARCH:S/i386/386/}
+MODGO_PACKAGES =	go/pkg/openbsd_${MACHINE_ARCH:S/i386/386/}
+MODGO_SOURCES =		go/src
+MODGO_TOOLS =		${MODGO_PACKAGES}/tool/openbsd_${MACHINE_ARCH:S/i386/386/}
 
-SUBST_VARS +=		GO_PKG
+SUBST_VARS +=		MODGO_TOOLS MODGO_PACKAGES MODGO_SOURCES
 
 MODGO_SUBDIR ?=		${WRKDIST}
-MODGO_TYPE ?=
-WORKSPACE ?=		${WRKDIR}/go
-GO =			GOPATH="${WORKSPACE}" WORK="${WRKBUILD}" go
-GO_FLAGS +=		-x -work
+MODGO_TYPE ?=		bin
+MODGO_WORKSPACE ?=	${WRKDIR}/go
+MODGO_CMD ?=		GOPATH="${MODGO_WORKSPACE}" WORK="${WRKBUILD}" go
+MODGO_FLAGS +=		-x -work
+MODGO_BUILD_CMD =	${MODGO_CMD} install ${MODGO_FLAGS}
+MODGO_TEST_CMD =	${MODGO_CMD} test ${MODGO_FLAGS}
+
+.if ${MODGO_TYPE:L:Mlib}
+RUN_DEPENDS +=		${MODGO_RUN_DEPENDS}
+.endif
+
+.if !empty(GH_ACCOUNT) && !empty(GH_PROJECT)
+ALL_TARGET ?=		github.com/${GH_ACCOUNT}/${GH_PROJECT}
+.endif
+TEST_TARGET ?=		${ALL_TARGET}
 
 SEPARATE_BUILD ?=	Yes
-WRKSRC ?=		${WORKSPACE}/src/${MODGO_PKGNAME}
+WRKSRC ?=		${MODGO_WORKSPACE}/src/${ALL_TARGET}
 
 MODGO_SETUP_WORKSPACE =	mkdir -p ${WRKSRC:H}; mv ${MODGO_SUBDIR} ${WRKSRC};
 
-MODGO_BUILD_TARGET =	${GO} install ${GO_FLAGS} ${MODGO_PKGNAME}
+MODGO_BUILD_TARGET =	${MODGO_BUILD_CMD} ${ALL_TARGET}
 
+# Go source files serve the purpose of libraries, so sources should be included
+# with library ports
 .if ${MODGO_TYPE:L:Mlib}
 MODGO_INSTALL_TARGET =	${INSTALL_DATA_DIR} ${PREFIX}/go; \
-			cp -R ${WORKSPACE}/pkg ${WORKSPACE}/src ${PREFIX}/go;
+			cp -R ${MODGO_WORKSPACE}/pkg \
+			      ${MODGO_WORKSPACE}/src \
+					${PREFIX}/go;
 .endif
 .if ${MODGO_TYPE:L:Mbin}
-MODGO_INSTALL_TARGET += cp ${WORKSPACE}/bin/* ${PREFIX}/bin
+MODGO_INSTALL_TARGET += cp ${MODGO_WORKSPACE}/bin/* ${PREFIX}/bin
 .endif
 
-MODGO_TEST_TARGET =	${GO} test ${GO_FLAGS} ${MODGO_PKGNAME}
+MODGO_TEST_TARGET =	${MODGO_TEST_CMD} ${TEST_TARGET}
 
 .if empty(CONFIGURE_STYLE)
 .  if !target(post-patch)

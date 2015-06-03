@@ -23,9 +23,6 @@ MODULES =		lang/go
 BUILD_DEPENDS =		shells/bash
 RUN_DEPENDS =		devel/git
 
-MODGO_PKGNAME =		github.com/github/hub
-MODGO_TYPE =		bin
-
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/hub.1 ${PREFIX}/man/man1/
 

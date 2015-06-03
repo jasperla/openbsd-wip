@@ -14,11 +14,9 @@ NO_TEST=	Yes
 
 WANTLIB +=	c pthread
 
-MODGO_PKGNAME =	github.com/${GH_ACCOUNT}/${GH_PROJECT}
-MODGO_TYPE =	bin
-
 do-install:
-	${INSTALL_PROGRAM} ${WORKSPACE}/bin/logstash-forwarder ${PREFIX}/sbin/
+	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/logstash-forwarder \
+		${PREFIX}/sbin/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/logstash-forwarder/
 	${INSTALL_DATA} ${WRKSRC}/README.md \
 		${PREFIX}/share/doc/logstash-forwarder/

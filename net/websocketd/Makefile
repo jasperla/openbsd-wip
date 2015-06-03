@@ -26,8 +26,6 @@ MODULES +=		lang/go
 BUILD_DEPENDS =		net/go-websocket
 
 NO_TEST =		Yes
-MODGO_PKGNAME =		github.com/joewalnes/websocketd
-MODGO_TYPE =		bin
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/release/websocketd.man			\

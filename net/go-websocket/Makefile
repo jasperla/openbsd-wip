@@ -25,6 +25,6 @@ MODULES =		lang/go
 GO_PKG =		pkg/openbsd_${MACHINE_ARCH:S/i386/386/}
 MODGO_TYPE =		lib
 MODGO_SUBDIR =		${WRKDIST}/websocket
-MODGO_PKGNAME =		golang.org/x/net/websocket
+ALL_TARGET =		golang.org/x/net/websocket
 
 .include <bsd.port.mk>

@@ -22,7 +22,6 @@ WANTLIB =		c m pthread
 MASTER_SITES =		http://golang.org/dl/
 
 BUILD_DEPENDS =		shells/bash
-RUN_DEPENDS =		devel/go-tools
 
 SEPARATE_BUILD =	simple
 CONFIGURE_STYLE =	None

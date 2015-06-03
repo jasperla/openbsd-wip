@@ -17,11 +17,9 @@ WANTLIB += c pthread
 
 MODULES =		lang/go
 
-# lang/go has a runtime dependency on go-tools
-#RUN_DEPENDS =		${MODGO_RUN_DEPENDS}
+RUN_DEPENDS =		${MODGO_RUN_DEPENDS}
 
-MODGO_TYPE =		bin tool
-MODGO_PKGNAME =		golang.org/x/tools/cmd/benchcmp \
+ALL_TARGET =		golang.org/x/tools/cmd/benchcmp \
 			golang.org/x/tools/cmd/callgraph \
 			golang.org/x/tools/cmd/cover \
 			golang.org/x/tools/cmd/digraph \
@@ -41,22 +39,24 @@ MODGO_PKGNAME =		golang.org/x/tools/cmd/benchcmp \
 #			golang.org/x/tools/cmd/html2article \
 #			golang.org/x/tools/cmd/present \
 
+MODGO_TYPE =		bin tool
+MODGO_FLAGS =		-n
+
 post-patch:
-	mkdir -p ${WORKSPACE}/src/golang.org/x
-	mv ${WRKDIST} ${WORKSPACE}/src/golang.org/x/tools
+	mkdir -p ${MODGO_WORKSPACE}/src/golang.org/x
+	mv ${WRKDIST} ${MODGO_WORKSPACE}/src/golang.org/x/tools
 
 do-build:
-	mkdir -p ${WORKSPACE}/${GO_PKG:H}
-	${GO} install ${GO_FLAGS:= -n} ${MODGO_PKGNAME} 2>&1 | sed \
-					-e "s, ${LOCALBASE}/go, ${WORKSPACE}," \
-					-e "s,\$$WORK,${WRKBUILD},g" | sh -v
+	mkdir -p ${MODGO_WORKSPACE}/${MODGO_TOOLS}
+	${MODGO_BUILD_TARGET} 2>&1 | sed \
+				-e "s, ${LOCALBASE}/go, ${MODGO_WORKSPACE}," \
+				-e "s,\$$WORK,${WRKBUILD},g" | sh -v
 
-do-install:
-	${MODGO_INSTALL_TARGET}
-	${INSTALL_DATA_DIR} ${PREFIX}/go/${GO_PKG}
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/${MODGO_TOOLS}
 .for tool in vet cover
-	${INSTALL_PROGRAM} ${WORKSPACE}/${GO_PKG}/${tool} \
-					${PREFIX}/go/${GO_PKG}/${tool}
+	${INSTALL_PROGRAM} ${WRKDIR}/${MODGO_TOOLS}/${tool} \
+					${PREFIX}/${MODGO_TOOLS}/${tool}
 .endfor
 
 .include <bsd.port.mk>

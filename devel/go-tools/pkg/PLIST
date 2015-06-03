@@ -16,6 +16,5 @@
 @bin bin/ssadump
 @bin bin/stress
 @bin bin/stringer
-@bin go/${GO_PKG}/cover
-@bin go/${GO_PKG}/vet
-@rcscript ${RCDIR}/godoc
+@bin ${MODGO_TOOLS}/cover
+@bin ${MODGO_TOOLS}/vet
