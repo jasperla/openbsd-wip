@@ -23,18 +23,10 @@ MODULES =		lang/go
 BUILD_DEPENDS =		shells/bash
 RUN_DEPENDS =		devel/git
 
-post-extract:
-	mkdir -p ${WRKSRC}/src/github.com/github
-	ln -s ${WRKSRC} ${WRKSRC}/src/github.com/github/hub
+MODGO_PKGNAME =		github.com/github/hub
+MODGO_TYPE =		bin
 
-do-build:
-	GOPATH=${GOPATH} go install github.com/github/hub
-
-do-test:
-	cd ${WRKSRC} && git init && GOPATH=${GOPATH} go test ./...
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/hub ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/hub.1 ${PREFIX}/man/man1
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/man/hub.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
