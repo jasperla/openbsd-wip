@@ -1,2 +1,0 @@
-- Needs a libedit.pc file installed, otherwise -d support doesn't get built
-- split into two packages, mgba and mgba-qt
