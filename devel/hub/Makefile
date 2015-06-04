@@ -20,7 +20,6 @@ WANTLIB += c pthread
 
 MODULES =		lang/go
 
-BUILD_DEPENDS =		shells/bash
 RUN_DEPENDS =		devel/git
 
 post-install:
