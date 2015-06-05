@@ -2,7 +2,7 @@
 
 COMMENT =		Gnu All Mobile Management Utilities
 
-DISTNAME =		gammu-1.33.0
+DISTNAME =		gammu-1.36.1
 
 SHARED_LIBS += 		Gammu 0.0 # 7.1
 SHARED_LIBS += 		gsmsd 0.0 # 7.1
@@ -16,21 +16,20 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c curl glib-2.0 gobject-2.0 m pthread usb-1.0 ${MODPY_WANTLIB}
+WANTLIB += c curl dbi glib-2.0 gobject-2.0 m pthread usb-1.0
 
 MASTER_SITES =		http://dl.cihar.com/gammu/releases/
 
 MODULES =		devel/cmake \
-			devel/gettext \
-			lang/python
+			devel/gettext
 
 RUN_DEPENDS =		misc/dialog
-LIB_DEPENDS =		devel/glib2 \
+LIB_DEPENDS =		databases/libdbi \
+			devel/glib2 \
 			devel/libusb1 \
 			net/curl
 TEST_DEPENDS = 		devel/cmake
 
-USE_LIBTOOL =		Yes
 CONFIGURE_ARGS +=	-DINSTALL_MAN_DIR:STRING=man \
 			-DINSTALL_BASH_COMPLETION=OFF \
 			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib -liconv -lintl"
@@ -39,20 +38,22 @@ FLAVORS += 		mysql pgsql
 FLAVOR ?=
 SEPARATE_BUILD = 	flavored
 
+.if !${FLAVOR:Mpgsql} && !${FLAVOR:Mmysql}
+RUN_DEPENDS += 		databases/libdbi-drivers,-sqlite3
+.endif
+
 .if ${FLAVOR:Mmysql}
 CONFIGURE_ARGS += 	-DMYSQL_BACKEND=ON
-LIB_DEPENDS += 		databases/mysql
-WANTLIB += 		crypto mysqlclient ssl z
+LIB_DEPENDS += 		databases/mariadb
+#RUN_DEPENDS +=		databases/libdbi-drivers \
+WANTLIB += 		mysqlclient
 .endif
 
 .if ${FLAVOR:Mpgsql}
 CONFIGURE_ARGS += 	-DPSQL_BACKEND=ON
 LIB_DEPENDS += 		databases/postgresql
+RUN_DEPENDS +=		databases/libdbi-drivers,-pgsql \
 WANTLIB += 		pq
 .endif
-
-post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gammu
 
 .include <bsd.port.mk>
