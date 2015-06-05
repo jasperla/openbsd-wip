@@ -2,7 +2,7 @@
 
 COMMENT =		Gnu All Mobile Management Utilities GUI
 
-MODPY_EGG_VERSION = 	0.37
+MODPY_EGG_VERSION = 	0.38
 DISTNAME =		wammu-${MODPY_EGG_VERSION}
 
 CATEGORIES =		comms x11
@@ -18,7 +18,7 @@ MASTER_SITES =		http://dl.cihar.com/wammu/v0/
 
 MODULES =		devel/gettext lang/python
 
-RUN_DEPENDS =		comms/gammu \
+RUN_DEPENDS =		comms/py-gammu \
 			devel/desktop-file-utils \
 			x11/py-wxPython
 
