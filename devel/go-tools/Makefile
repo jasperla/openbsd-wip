@@ -46,12 +46,6 @@ post-patch:
 	mkdir -p ${MODGO_WORKSPACE}/src/golang.org/x
 	mv ${WRKDIST} ${MODGO_WORKSPACE}/src/golang.org/x/tools
 
-do-build:
-	mkdir -p ${MODGO_WORKSPACE}/${MODGO_TOOLS}
-	${MODGO_BUILD_TARGET} 2>&1 | sed \
-				-e "s, ${LOCALBASE}/go, ${MODGO_WORKSPACE}," \
-				-e "s,\$$WORK,${WRKBUILD},g" | sh -v
-
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${MODGO_TOOLS}
 .for tool in vet cover

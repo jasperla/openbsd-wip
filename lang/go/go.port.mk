@@ -20,8 +20,8 @@ SUBST_VARS +=		MODGO_TOOLS MODGO_PACKAGES MODGO_SOURCES
 MODGO_SUBDIR ?=		${WRKDIST}
 MODGO_TYPE ?=		bin
 MODGO_WORKSPACE ?=	${WRKDIR}/go
-MODGO_CMD ?=		GOPATH="${MODGO_WORKSPACE}" WORK="${WRKBUILD}" go
-MODGO_FLAGS +=		-x -work
+MODGO_CMD ?=		unset GOPATH; export GOPATH="${MODGO_WORKSPACE}"; go
+MODGO_FLAGS +=		-a -x -work
 MODGO_BUILD_CMD =	${MODGO_CMD} install ${MODGO_FLAGS}
 MODGO_TEST_CMD =	${MODGO_CMD} test ${MODGO_FLAGS}
 
@@ -39,10 +39,18 @@ WRKSRC ?=		${MODGO_WORKSPACE}/src/${ALL_TARGET}
 
 MODGO_SETUP_WORKSPACE =	mkdir -p ${WRKSRC:H}; mv ${MODGO_SUBDIR} ${WRKSRC};
 
-MODGO_BUILD_TARGET =	${MODGO_BUILD_CMD} ${ALL_TARGET}
+# Go tends to ignore environment and place some files to system-wide
+# directories.  To prevent such behavior, this modules fixes paths in
+# auto-generated build instructions, and then feeds fixed script to shell
+# The "operation not permitted" filter is needed because Go outputs permission
+# error if USE_SYSTRACE=Yes option is set.
+MODGO_BUILD_TARGET =	${MODGO_BUILD_CMD} ${ALL_TARGET} 2>&1 | sed -E \
+				-e 's, ${LOCALBASE}/go, ${MODGO_WORKSPACE},' \
+				-e '/operation not permitted/d' \
+				-e 's,\$$WORK,${WRKBUILD},g' | sh -v
 
 # Go source files serve the purpose of libraries, so sources should be included
-# with library ports
+# with library ports.
 .if ${MODGO_TYPE:L:Mlib}
 MODGO_INSTALL_TARGET =	${INSTALL_DATA_DIR} ${PREFIX}/go; \
 			cp -R ${MODGO_WORKSPACE}/pkg \
