@@ -1,6 +1,6 @@
 $OpenBSD$
 --- Alc/backends/sndio.c.orig	Fri Aug 15 09:06:59 2014
-+++ Alc/backends/sndio.c	Sat Jun  6 18:49:02 2015
++++ Alc/backends/sndio.c	Sat Jun  6 20:11:19 2015
 @@ -45,6 +45,8 @@ typedef struct {
  
      ALvoid *mix_data;
@@ -152,14 +152,34 @@ $OpenBSD$
  {
      sndio_data *data = device->ExtraData;
      int res;
-@@ -255,18 +279,31 @@ static void sndio_stop_playback(ALCdevice *device)
+@@ -255,18 +279,51 @@ static void sndio_stop_playback(ALCdevice *device)
  }
  
  
 +static ALCenum sndio_capture_samples(ALCdevice *device, ALCvoid *buffer, ALCuint samples)
 +{
++    size_t len, read;
++    void *ReadPtr = buffer;
++
 +    sndio_data *data = device->ExtraData;
-+    sio_read(data->sndHandle, buffer, samples * data->frame_size);
++    len = samples * data->frame_size;
++
++    while(len > 0 && !data->killNow)
++    {
++        read = sio_read(data->sndHandle, ReadPtr, len);
++        if(read == 0)
++        {
++            ERR("sio_read failed\n");
++            ALCdevice_Lock(device);
++            aluHandleDisconnect(device);
++            ALCdevice_Unlock(device);
++            break;
++        }
++
++        len -= read;
++        ReadPtr += read;
++    }
++
 +    return ALC_NO_ERROR;
 +}
 +
@@ -193,7 +213,7 @@ $OpenBSD$
      ALCdevice_GetLatencyDefault
  };
  
-@@ -290,6 +327,7 @@ void alc_sndio_probe(enum DevProbe type)
+@@ -290,6 +347,7 @@ void alc_sndio_probe(enum DevProbe type)
              AppendAllDevicesList(sndio_device);
              break;
          case CAPTURE_DEVICE_PROBE:

@@ -1,21 +1,3 @@
-The diff seems good, except the way samples are read: sio_read()
-may return less than the requested number of bytes, so when a fixed
-amount of samples is needed, the proper paradigm is:
-
-	todo = len;
-	ptr = buf;
-	while (todo > 0) {
-		n = sio_read(hdl, ptr, todo);
-		if (n == 0) {
-			/* error */
-			...
-		}
-		todo -= n;
-		ptr += n;
-	}
-
-There are few other points that could be improved later:
-
 - the sndio_available_samples() returns always that data is
   available, but this can't be true, and if no data is available
   (i.e. the second time it's called) sniod_captire_samples() will
