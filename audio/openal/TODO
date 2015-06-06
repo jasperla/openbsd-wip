@@ -1,3 +1,43 @@
- * verify whether major bump in library version is required
- * add recording capability to sndio backend or
- * enable some backend with recording support
+The diff seems good, except the way samples are read: sio_read()
+may return less than the requested number of bytes, so when a fixed
+amount of samples is needed, the proper paradigm is:
+
+	todo = len;
+	ptr = buf;
+	while (todo > 0) {
+		n = sio_read(hdl, ptr, todo);
+		if (n == 0) {
+			/* error */
+			...
+		}
+		todo -= n;
+		ptr += n;
+	}
+
+There are few other points that could be improved later:
+
+- the sndio_available_samples() returns always that data is
+  available, but this can't be true, and if no data is available
+  (i.e. the second time it's called) sniod_captire_samples() will
+  block during one block and prevent the program from progressing,
+  in turn causing possible degradation in responsiveness.
+
+  Fixing this would require a thread to be started, and a counter
+  indicating the available bytes to be exposed, which requires
+  locking and so on.
+
+  The ./playback_mic program doesn't work for small blocks which is
+  likely to be related to this problem. For instance, kill sndiod
+  and start:
+
+	sudo sndiod -ddd -a on -z 256
+
+  then run ./playback_mic in another window.
+
+- depending on how openal is used, the play end could be improved
+  to buffer a single block (which is simpler), which would reduce
+  latency at no stability cost. Or possibly multiple blocks
+  masquaraded as a signle UpdateSize.
+
+Above points require a lot of testing, as bugs don't crash
+programs. They simply affect responsiveness or latency.

@@ -1,6 +1,6 @@
 $OpenBSD$
---- CMakeLists.txt.orig	Mon May  4 01:08:33 2015
-+++ CMakeLists.txt	Thu May 14 08:24:56 2015
+--- CMakeLists.txt.orig	Fri Aug 15 09:06:59 2014
++++ CMakeLists.txt	Sat Jun  6 15:59:05 2015
 @@ -36,9 +36,13 @@ OPTION(ALSOFT_NO_CONFIG_UTIL "Disable building the als
  OPTION(ALSOFT_EXAMPLES  "Build and install example programs"  ON)
  
@@ -15,7 +15,7 @@ $OpenBSD$
  IF(WIN32)
      SET(LIBNAME OpenAL32)
      ADD_DEFINITIONS("-D_WIN32 -D_WIN32_WINNT=0x0502")
-@@ -310,6 +314,7 @@ ELSE()
+@@ -321,6 +325,7 @@ ELSE()
      ENDIF()
  
      SET(CMAKE_REQUIRED_FLAGS "${OLD_REQUIRED_FLAGS}")
@@ -23,7 +23,7 @@ $OpenBSD$
  ENDIF()
  
  SET(SSE_SWITCH "")
-@@ -1152,7 +1157,7 @@ ENDIF()
+@@ -1134,7 +1139,7 @@ ENDIF()
  # Install alsoft.conf configuration file
  IF(ALSOFT_CONFIG)
      INSTALL(FILES alsoftrc.sample
