@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:41:32 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2015/02/16 22:57:13 naddy Exp $
 
 COMMENT=		forensic toolkit based on TCT
 
