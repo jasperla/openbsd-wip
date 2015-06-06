@@ -8,7 +8,7 @@ COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
 # WARNING: upstream don't provide versioned archive for beta
-V =			1.1.0beta
+V =			1.1.0beta2
 RUST_HASH =		e4d77fca
 DISTNAME =		rustc-beta-src
 
@@ -63,7 +63,7 @@ MODGCC4_LANGS =		c++
 MODGCC4_ARCHS =		*
 
 # need to be keep in sync
-LIBESTDC_VERSION =	16.0
+LIBESTDC_VERSION =	17.0
 
 # note: VERBOSE permit to unhide Makefile processing
 # 	RUSTFLAGS extra flags passed to rust
