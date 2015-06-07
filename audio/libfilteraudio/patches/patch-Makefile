@@ -1,0 +1,35 @@
+$OpenBSD$
+--- Makefile.orig	Fri Apr 10 15:47:16 2015
++++ Makefile	Thu May 14 11:15:15 2015
+@@ -26,6 +26,11 @@ else ifeq ($(UNAME_S), FreeBSD)
+     SHARED_LIB = $(BASE_NAME).$(SHARED_EXT).$(shell echo $(VERSION) | rev | cut -d "." -f 1 | rev)
+     LDFLAGS += -Wl,-soname=$(SHARED_LIB)
+     LIBDIR = lib
++else ifeq ($(UNAME_S), OpenBSD)
++    SHARED_EXT = so
++    TARGET = $(BASE_NAME).$(SHARED_EXT).$(VERSION)
++    SHARED_LIB = $(TARGET)
++    LIBDIR = lib
+ else ifeq ($(UNAME_S), Darwin)
+     SHARED_EXT = dylib
+     TARGET = $(BASE_NAME).$(VERSION).$(SHARED_EXT)
+@@ -43,16 +48,11 @@ endif
+ all: $(TARGET)
+ 
+ $(TARGET): $(OBJ)
+-	@echo "  LD    $@"
+-	@$(CC) $(LDFLAGS) -shared -o $@ $^
+-	@if [ "$(NO_STATIC)" != "1" ]; then \
+-		echo "  AR    $(STATIC_LIB)" ;\
+-		ar rcs $(STATIC_LIB) $(OBJ) ;\
+-	fi
++	$(CC) $(LDFLAGS) -shared -o $@ $^
++	$(AR) $(ARFLAGS) $(STATIC_LIB) $(OBJ)
+ 
+ %.o: %.c
+-	@echo "  CC    $@"
+-	@$(CC) $(CFLAGS) -fPIC -c -o $@ $<
++	$(CC) $(CFLAGS) -fPIC -c -o $@ $<
+ 
+ install: $(TARGET) $(HEADER) $(PC_FILE)
+ 	mkdir -p $(abspath $(DESTDIR)/$(PREFIX)/$(LIBDIR)/pkgconfig)
