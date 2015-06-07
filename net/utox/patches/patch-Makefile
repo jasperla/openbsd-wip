@@ -1,0 +1,49 @@
+$OpenBSD$
+--- Makefile.orig	Mon May 18 05:51:03 2015
++++ Makefile	Sun Jun  7 19:08:42 2015
+@@ -26,7 +26,8 @@ endif
+ 
+ UNAME_S := $(shell uname -s)
+ 
+-CFLAGS += -g -Wall -Wshadow -pthread -std=gnu99
++CFLAGS ?= -g -Wall -Wshadow
++CFLAGS += -pthread -std=gnu99
+ CFLAGS += $(shell pkg-config --cflags $(DEPS))
+ LDFLAGS = -pthread -lm
+ LDFLAGS += $(shell pkg-config --libs $(DEPS))
+@@ -53,6 +54,7 @@ endif
+ 
+ DESTDIR ?=
+ PREFIX ?= /usr/local
++MANDIR ?= ${PREFIX}/share/man
+ 
+ SRC = $(wildcard *.c png/png.c)
+ OBJ = $(SRC:.c=.o)
+@@ -60,8 +62,7 @@ OBJ = $(SRC:.c=.o)
+ all: utox
+ 
+ utox: $(OBJ)
+-	@echo "  LD    $@"
+-	@$(CC) $(CFLAGS) -o utox $(OBJ) $(LDFLAGS)
++	$(CC) $(CFLAGS) -o utox $(OBJ) $(LDFLAGS)
+ 
+ install: utox
+ 	mkdir -p $(DESTDIR)$(PREFIX)/bin
+@@ -102,14 +103,13 @@ install: utox
+ 	install -m 644 utox.desktop $(DESTDIR)$(PREFIX)/share/applications/utox.desktop
+ 	if [ "$UNITY" -eq "1" ]; then echo "X-MessagingMenu-UsesChatSection=true" >> $(DESTDIR)$(PREFIX)/share/applications/utox.desktop; fi
+ 	
+-	mkdir -p $(DESTDIR)$(PREFIX)/share/man/man1
+-	install -m 644 utox.1 $(DESTDIR)$(PREFIX)/share/man/man1/utox.1
++	mkdir -p $(DESTDIR)$(MANDIR)/man1
++	install -m 644 utox.1 $(DESTDIR)$(MANDIR)/man1/utox.1
+ 
+ main.o: xlib/main.c xlib/keysym2ucs.c
+ 
+ .c.o:
+-	@echo "  CC    $@"
+-	@$(CC) $(CFLAGS) -o $@ -c $<
++	$(CC) $(CFLAGS) -o $@ -c $<
+ 
+ clean:
+ 	rm -f utox *.o png/*.o
