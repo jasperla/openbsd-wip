@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =		GNU Backgammon
-V =			1.04.000
+V =			1.05.000
 DISTNAME =		gnubg-release-${V}-sources
 PKGNAME =		gnubg-${V}
 CATEGORIES =		games x11
@@ -53,7 +53,7 @@ WANTLIB += xcb-shm z
 FONTSDIR =		"${X11BASE}/lib/X11/fonts/TTF"
 CFLAGS +=	-DFONT_VERA=\\\"${FONTSDIR}/DejaVuSans.ttf\\\" \
 		-DFONT_VERA_SERIF_BOLD=\\\"${FONTSDIR}/DejaVuSerif-Bold.ttf\\\"
-CFLAGS += "-g" # XXX DEBUG
+CFLAGS +=	-g -Wall -Wextra # DEBUG
 
 MODULES +=		lang/python \
 			x11/gnome
@@ -65,7 +65,7 @@ LIB_DEPENDS +=		${MODPY_LIB_DEPENDS} \
 			x11/gtkglext
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/gnubg ${PREFIX}/bin/gnubg # XXX DEBUG
+	${INSTALL_PROGRAM} ${WRKSRC}/gnubg ${PREFIX}/bin/gnubg
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
 	${INSTALL_DATA} ${FILESDIR}/gnubg.desktop ${PREFIX}/share/applications/
 .endif

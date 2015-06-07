@@ -1,7 +1,7 @@
 $OpenBSD$
---- configure.ac.orig	Tue Oct 21 20:26:33 2014
-+++ configure.ac	Sat Apr  4 14:29:49 2015
-@@ -126,11 +126,13 @@ dnl
+--- configure.ac.orig	Sat Jan 17 23:04:04 2015
++++ configure.ac	Sun Jun  7 00:58:47 2015
+@@ -127,11 +127,13 @@ dnl
  PKG_CHECK_MODULES(GLIB, [glib-2.0 >= 2.6.0], have_glib="yes", AC_MSG_ERROR([You need to have glib2 to compile GNU backgammon]))
  PKG_CHECK_MODULES(GOBJECT, [gobject-2.0], have_gobject="yes", AC_MSG_WARN([no gobject support in glib]))
  PKG_CHECK_MODULES(GTHREAD, [gthread-2.0], have_gthread="yes", AC_MSG_WARN([no thread support in glib]))
@@ -19,7 +19,7 @@ $OpenBSD$
  
  if test "x$win32" == "xyes"; then
      have_canberra="no"
-@@ -138,14 +140,18 @@ if test "x$win32" == "xyes"; then
+@@ -139,14 +141,18 @@ if test "x$win32" == "xyes"; then
  else
      if test "x$darwin" == "xyes"; then
          have_canberra="no"
