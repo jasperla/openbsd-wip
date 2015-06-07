@@ -1,0 +1,2 @@
+The port is basically ready, but upstream discourages packaging because of API
+instability.  Probably this port should stage here ATM.

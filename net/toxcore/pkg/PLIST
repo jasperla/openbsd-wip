@@ -1,0 +1,35 @@
+@comment $OpenBSD$
+@bin bin/DHT_bootstrap
+include/tox/
+include/tox/tox.h
+include/tox/tox_old.h
+include/tox/toxav.h
+include/tox/toxdns.h
+include/tox/toxencryptsave.h
+lib/libtoxav.a
+lib/libtoxav.la
+@lib lib/libtoxav.so.${LIBtoxav_VERSION}
+lib/libtoxcore.a
+lib/libtoxcore.la
+@lib lib/libtoxcore.so.${LIBtoxcore_VERSION}
+lib/libtoxdns.a
+lib/libtoxdns.la
+@lib lib/libtoxdns.so.${LIBtoxdns_VERSION}
+lib/libtoxencryptsave.a
+lib/libtoxencryptsave.la
+@lib lib/libtoxencryptsave.so.${LIBtoxencryptsave_VERSION}
+lib/pkgconfig/libtoxav.pc
+lib/pkgconfig/libtoxcore.pc
+share/doc/tox/
+share/doc/tox/Crypto.md
+share/doc/tox/DHT.md
+share/doc/tox/Group-Chats.md
+share/doc/tox/Hardening.txt
+share/doc/tox/Hardening_docs.txt
+share/doc/tox/Prevent_Tracking.txt
+share/doc/tox/Spam-Prevention.md
+share/doc/tox/Symmetric-NAT-Transversal.md
+share/doc/tox/TCP_Network.txt
+share/doc/tox/TODO.md
+share/doc/tox/Tox_middle_level_network_protocol.txt
+share/doc/tox/av_api.md
