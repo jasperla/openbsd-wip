@@ -5,7 +5,7 @@ DISTNAME =	libstrophe-0.8.7
 CATEGORIES =	net devel
 
 HOMEPAGE =	http://strophe.im/libstrophe/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
 
 # Dual licensed: MIT and GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
