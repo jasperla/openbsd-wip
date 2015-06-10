@@ -5,7 +5,7 @@ DISTNAME =	profanity-0.4.6
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.profanity.im/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -21,6 +21,7 @@ BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE)DEPENDS}
 
 LIB_DEPENDS =	devel/libnotify \
+		devel/cmocka \
 		net/curl \
 		net/libstrophe \
 		security/libotr
@@ -32,7 +33,6 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.11
 
-# We lack a port of cmocka, so no tests.
 NO_TEST =	Yes
 
 pre-configure:
