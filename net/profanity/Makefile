@@ -26,7 +26,7 @@ LIB_DEPENDS =	devel/libnotify \
 		net/libstrophe \
 		security/libotr
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
@@ -34,10 +34,5 @@ AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.11
 
 NO_TEST =	Yes
-
-pre-configure:
-	cd ${WRKSRC} && \
-		${SETENV} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-			AUTOCONF_VERSION=${AUTOCONF_VERSION} autoreconf -i
 
 .include <bsd.port.mk>
