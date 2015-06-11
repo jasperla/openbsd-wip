@@ -223,7 +223,6 @@ include/kde4/calligra/KoResourceServerAdapter.h
 include/kde4/calligra/KoResourceServerObserver.h
 include/kde4/calligra/KoResourceServerProvider.h
 include/kde4/calligra/KoResourceTagStore.h
-include/kde4/calligra/KoResourceTaggingManager.h
 include/kde4/calligra/KoRgbColorSpaceTraits.h
 include/kde4/calligra/KoRow.h
 include/kde4/calligra/KoRowStyle.h
@@ -414,7 +413,7 @@ include/kde4/krita/kis_paint_device.h
 include/kde4/krita/kis_painter.h
 include/kde4/krita/kis_paintop_option.h
 include/kde4/krita/kis_paintop_options_model.h
-include/kde4/krita/kis_paintop_options_widget.h
+include/kde4/krita/kis_paintop_settings_widget.h
 include/kde4/krita/kis_perspectivetransform_worker.h
 include/kde4/krita/kis_processing_information.h
 include/kde4/krita/kis_properties_configuration.h
@@ -739,6 +738,7 @@ lib/kde4/kritaposterize.so
 lib/kde4/kritappmexport.so
 lib/kde4/kritappmimport.so
 lib/kde4/kritapresetdocker.so
+lib/kde4/kritapresethistory.so
 lib/kde4/kritapsdexport.so
 lib/kde4/kritapsdimport.so
 lib/kde4/kritaqmlexport.so
@@ -6377,6 +6377,8 @@ share/apps/krita/pics/krita_tool_ruler_assistant.png
 share/apps/krita/pics/krita_tool_transform.png
 share/apps/krita/pics/krita_tool_transform_recursive.png
 share/apps/krita/pics/landscape.png
+share/apps/krita/pics/layer-style-disabled.png
+share/apps/krita/pics/layer-style-enabled.png
 share/apps/krita/pics/light_addlayer.png
 share/apps/krita/pics/light_addtofolder.png
 share/apps/krita/pics/light_arrowdown.png
@@ -6452,6 +6454,8 @@ share/apps/krita/pics/paintop_presets_disabled.png
 share/apps/krita/pics/paintop_settings_01.png
 share/apps/krita/pics/paintop_settings_02.png
 share/apps/krita/pics/paintop_settings_disabled.png
+share/apps/krita/pics/passthrough-disabled.png
+share/apps/krita/pics/passthrough-enabled.png
 share/apps/krita/pics/polyline.png
 share/apps/krita/pics/portrait.png
 share/apps/krita/pics/precise-pick-layer-icon.xpm
@@ -7723,6 +7727,7 @@ share/kde4/services/calligra/krita_png_import.desktop
 share/kde4/services/calligra/krita_ppm_export.desktop
 share/kde4/services/calligra/krita_ppm_import.desktop
 share/kde4/services/calligra/krita_presetdocker.desktop
+share/kde4/services/calligra/krita_presethistory.desktop
 share/kde4/services/calligra/krita_psd_export.desktop
 share/kde4/services/calligra/krita_psd_import.desktop
 share/kde4/services/calligra/krita_qml_export.desktop
