@@ -1,0 +1,102 @@
+$OpenBSD$
+--- duply.orig	Mon Oct 13 16:28:36 2014
++++ duply	Tue Apr 28 20:17:42 2015
+@@ -439,8 +439,8 @@ function using_info {
+   duplicity_version_get
+   # freebsd awk (--version only), debian mawk (-W version only), deliver '' so awk does not wait for input
+   AWK_VERSION=$((awk --version '' 2>/dev/null || awk -W version '' 2>/dev/null) | awk '/.+/{sub(/^[Aa][Ww][Kk][ \t]*/,"",$0);print $0;exit}')
+-  PYTHON_VERSION=$(python -V 2>&1| awk '{print tolower($0);exit}')
+-  GPG_INFO=`gpg --version 2>/dev/null| awk '/^gpg/{v=$1" "$3};/^Home/{print v" ("$0")"}'`
++  PYTHON_VERSION=$(python${MODPY_VERSION} -V 2>&1| awk '{print tolower($0);exit}')
++  GPG_INFO=`gpg2 --version 2>/dev/null| awk '/^gpg/{v=$1" "$3};/^Home/{print v" ("$0")"}'`
+   BASH_VERSION=$(bash --version | awk '/^GNU bash, version/{sub(/GNU bash, version[ ]+/,"",$0);print $0}')
+   echo -e "Using installed duplicity version ${DUPL_VERSION:-(not found)}${PYTHON_VERSION+, $PYTHON_VERSION}\
+ ${GPG_INFO:+, $GPG_INFO}${AWK_VERSION:+, awk '${AWK_VERSION}'}${BASH_VERSION:+, bash '${BASH_VERSION}'}."
+@@ -886,11 +886,11 @@ function error_gpg {
+   error "$1
+ 
+ Hint${hint:+s}:
+-  ${hint}Maybe you have not created a gpg key yet (e.g. gpg --gen-key)?
++  ${hint}Maybe you have not created a gpg key yet (e.g. gpg2 --gen-key)?
+   Don't forget the used _password_ as you will need it.
+   When done enter the 8 digit id & the password in the profile conf file.
+ 
+-  The key id can be found doing a 'gpg --list-keys'. In the  example output 
++  The key id can be found doing a 'gpg2 --list-keys'. In the  example output 
+   below the key id would be FFFFFFFF for the public key.
+ 
+   pub   1024D/FFFFFFFF 2007-12-17
+@@ -903,7 +903,7 @@ function error_gpg_key {
+   local KEY_ID="$1"
+   local KIND="$2"
+   error_gpg "${KIND} gpg key '${KEY_ID}' cannot be found." \
+-"Doublecheck if the above key is listed by 'gpg --list-keys' or available 
++"Doublecheck if the above key is listed by 'gpg2 --list-keys' or available 
+   as gpg key file '$(basename "$(gpg_keyfile "${KEY_ID}")")' in the profile folder.
+   If not you can put it there and $ME will autoimport it on the next run.
+   Alternatively import it manually as the user you plan to run $ME with."
+@@ -1133,7 +1133,7 @@ function date_fix {
+ 		echo $date && return
+ 	## some date commands do not support giving a time w/o setting it systemwide (irix,solaris,others?)
+ 	# python fallback
+-	date=$(python -c "import time;print time.strftime('${1:-$DEFAULTFORMAT}',time.localtime(${2}))" 2> /dev/null) && \
++	date=$(python${MODPY_VERSION} -c "import time;print time.strftime('${1:-$DEFAULTFORMAT}',time.localtime(${2}))" 2> /dev/null) && \
+ 		echo $date && return
+ 	# awk fallback
+ 	date=$(awk "BEGIN{print strftime(\"${1:-$DEFAULTFORMAT}\"${2:+,$2})}" 2> /dev/null) && \
+@@ -1179,7 +1179,7 @@ function var_isset {
+ 
+ function url_encode {
+   # utilize python, silently do nothing on error - because no python no duplicity
+-  OUT=$(python -c "
++  OUT=$(python${MODPY_VERSION} -c "
+ try: import urllib.request as urllib
+ except ImportError: import urllib
+ print(urllib.${2}quote('$1'));
+@@ -1350,12 +1350,12 @@ function gpg_key_cache {
+   local RES
+   local MODE=$1
+   shift
+-  local PREFIX="GPG_KEY"
++  local GPGPREFIX="GPG_KEY"
+   local SUFFIX=$(gpg_key_legalize "$@")
+   local KEYID="$*"
+-  local CACHE="${PREFIX}_${MODE}_${SUFFIX}"
++  local CACHE="${GPGPREFIX}_${MODE}_${SUFFIX}"
+   if [ "$MODE" = "RESET" ]; then
+-    eval unset ${PREFIX}_PUB_$SUFFIX ${PREFIX}_SEC_$SUFFIX
++    eval unset ${GPGPREFIX}_PUB_$SUFFIX ${GPGPREFIX}_SEC_$SUFFIX
+     return 255
+   elif ! var_isset "$CACHE"; then
+     if [ "$MODE" = "PUB" ]; then
+@@ -1395,10 +1395,10 @@ function gpg_split_keyset2 {
+ }
+ 
+ function gpg_prefix_keyset {
+-  local PREFIX="$1" OUT=""
++  local GPGPREFIX="$1" OUT=""
+   shift
+   for KEY_ID in "$@"; do
+-    OUT="${OUT} $PREFIX $(qw ${KEY_ID})"
++    OUT="${OUT} $GPGPREFIX $(qw ${KEY_ID})"
+   done
+   echo $OUT
+ }
+@@ -1727,7 +1727,7 @@ fi
+ 
+ # GPG availability check (now we know if gpg is really needed)#################
+ if ! gpg_disabled; then 
+-	GPG="$(which gpg 2>/dev/null)"
++	GPG="$(which gpg2 2>/dev/null)"
+ 	[ -z "$GPG" ] && error_path "gpg missing. installed und available in path?"
+ fi
+ 
+@@ -1904,7 +1904,7 @@ if [ ${#GPG_KEYS_ENC_ARRAY[@]} -gt 0 ]; then
+   if [ "$CMD_ERR" != "0" ]; then 
+     KEY_NOTRUST=$(echo "$CMD_OUT"|awk '/^\[GNUPG:\] INV_RECP 10/ { print $4 }')
+     [ -n "$KEY_NOTRUST" ] && HINT="Key '${KEY_NOTRUST}' seems to be untrusted. If you really trust this key try to
+-  'gpg --edit-key "$KEY_NOTRUST"' and raise the trust level to ultimate. If you
++  'gpg2 --edit-key "$KEY_NOTRUST"' and raise the trust level to ultimate. If you
+   can trust all of your keys set GPG_OPTS='--trust-model always' in conf file."
+     error_gpg_test "Encryption failed (Code $CMD_ERR).${CMD_OUT:+\n$CMD_OUT}" "$HINT"
+   fi
