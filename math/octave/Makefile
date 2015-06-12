@@ -6,7 +6,7 @@ NOT_FOR_ARCHS =	vax sparc
 
 COMMENT =	high-level language for numerical computations
 
-VERSION =	3.8.2
+VERSION =	4.0.0
 DISTNAME =	octave-${VERSION}
 CATEGORIES =	math
 
@@ -22,11 +22,12 @@ MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB=	c m ncurses readline stdc++ z ${MODFORTRAN_WANTLIB} \
-		fftw3>=3 lapack>=3 blas>=1 amd umfpack pcre>=1 curl>=6
+		fltk fftw3>=3 lapack>=3 blas>=1 pcre>=1 curl>=6
 
 MASTER_SITES =	${MASTER_SITE_GNU:=octave/}
 
-MODULES =	fortran
+MODULES =	fortran \
+		x11/qt4
 
 BUILD_DEPENDS =	${MODFORTRAN_BUILD_DEPENDS} \
 		textproc/gsed
@@ -43,10 +44,9 @@ LIB_DEPENDS =	${MODFORTRAN_LIB_DEPENDS} \
 		math/fftw3,float \
 		math/lapack \
 		math/blas \
-		math/amd \
-		math/umfpack \
 		devel/pcre \
-		net/curl
+		net/curl \
+		x11/fltk
 
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
@@ -55,10 +55,10 @@ USE_LIBTOOL =		gnu
 #AUTOCONF_VERSION =	2.69
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS	=	${CONFIGURE_SHARED} \
-			--disable-gui \
 			--without-hdf5
-CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
+CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+		LRELEASE="lrelease4" \
 		F77=${FC}
 MAKE_ENV =	LIBcruft_VERSION=${LIBcruft_VERSION} \
 		LIBoctave_VERSION=${LIBoctave_VERSION} \
@@ -72,6 +72,7 @@ CONFIGURE_ENV +=	FFLAGS="${FFLAGS}"
 #GCC_ARCH =	${MACHINE_ARCH}-unknown-openbsd${OSREV}
 #GNU_ARCH =	${GCC_ARCH:S/amd64/x86_64/}
 #SUBST_VARS =	GNU_ARCH VERSION
+SUBST_VARS = VERSION
 
 # need to use fpic version of libgcc.a
 #post-configure:
