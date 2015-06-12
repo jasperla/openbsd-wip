@@ -2,7 +2,7 @@
 
 COMMENT=	SSL encryption wrapper for standard network daemons
 
-DISTNAME=	stunnel-5.06
+DISTNAME=	stunnel-5.18
 CATEGORIES=	security
 
 MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
@@ -14,9 +14,8 @@ WANTLIB += c crypto pthread ssl util z
 
 HOMEPAGE=	http://www.stunnel.org/
 
-# Origin server: https://www.stunnel.org/downloads/archive/5.x/
-# Doesn't currently work with ftp(1) ssl support.
-MASTER_SITES=	http://ftp.nluug.nl/pub/networking/stunnel/archive/5.x/ \
+MASTER_SITES=	https://www.stunnel.org/downloads/archive/5.x/ \
+		http://ftp.nluug.nl/pub/networking/stunnel/archive/5.x/ \
 		http://mirror.bit.nl/stunnel/archive/5.x/ \
 		ftp://ftp.stunnel.org/stunnel/archive/5.x/
 
@@ -30,11 +29,14 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/auto
 NO_TEST=		Yes
 USE_GMAKE=		Yes
 
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/tools/stunnel.conf-sample.in
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/src/stunnel ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/doc/stunnel.8 ${PREFIX}/man/man8
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/stunnel
-	${INSTALL_DATA} ${WRKBUILD}/tools/stunnel.conf-sample \
-		${PREFIX}/share/examples/stunnel
+	${INSTALL_DATA} ${WRKSRC}/tools/stunnel.conf-sample.in \
+		${PREFIX}/share/examples/stunnel/stunnel.conf-sample
 
 .include <bsd.port.mk>
