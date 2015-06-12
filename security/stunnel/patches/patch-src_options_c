@@ -1,0 +1,31 @@
+$OpenBSD$
+--- src/options.c.orig	Mon Jun  1 11:25:32 2015
++++ src/options.c	Fri Jun 12 14:08:52 2015
+@@ -2450,9 +2450,12 @@ NOEXPORT char *parse_service_option(CMD cmd, SERVICE_O
+     /* sslVersion */
+     switch(cmd) {
+     case CMD_BEGIN:
+-#if OPENSSL_VERSION_NUMBER>=0x10100000L
++#if OPENSSL_VERSION_NUMBER>=0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+         section->client_method=(SSL_METHOD *)TLS_client_method();
+         section->server_method=(SSL_METHOD *)TLS_server_method();
++#elif defined(LIBRESSL_VERSION_NUMBER)
++	section->client_method=(SSL_METHOD *)TLSv1_client_method();
++	section->server_method=(SSL_METHOD *)TLSv1_server_method();
+ #else
+         section->client_method=(SSL_METHOD *)SSLv23_client_method();
+         section->server_method=(SSL_METHOD *)SSLv23_server_method();
+@@ -2462,9 +2465,12 @@ NOEXPORT char *parse_service_option(CMD cmd, SERVICE_O
+         if(strcasecmp(opt, "sslVersion"))
+             break;
+         if(!strcasecmp(arg, "all")) {
+-#if OPENSSL_VERSION_NUMBER>=0x10100000L
++#if OPENSSL_VERSION_NUMBER>=0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+             section->client_method=(SSL_METHOD *)TLS_client_method();
+             section->server_method=(SSL_METHOD *)TLS_server_method();
++#elif defined(LIBRESSL_VERSION_NUMBER)
++	section->client_method=(SSL_METHOD *)TLSv1_client_method();
++	section->server_method=(SSL_METHOD *)TLSv1_server_method();
+ #else
+             section->client_method=(SSL_METHOD *)SSLv23_client_method();
+             section->server_method=(SSL_METHOD *)SSLv23_server_method();
