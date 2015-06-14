@@ -40,11 +40,13 @@ RUN_DEPENDS =	devel/gmake \
 
 LIB_DEPENDS =	${MODFORTRAN_LIB_DEPENDS} \
 		devel/glpk \
+		devel/pcre \
 		math/fftw3 \
 		math/fftw3,float \
 		math/lapack \
 		math/blas \
-		devel/pcre \
+		math/qhull \
+		math/qrupdate \
 		net/curl \
 		x11/fltk
 
