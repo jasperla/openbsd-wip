@@ -4,7 +4,7 @@ COMMENT=		download flash video files from various sites
 
 GH_ACCOUNT =		njtaylor
 GH_PROJECT =		get-flash-videos
-GH_TAGNAME =		v1.24.20150614
+GH_TAGNAME =		v1.24.20150615
 DISTNAME=		${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME=		${GH_PROJECT:S/-/_/g}-${GH_TAGNAME:S/v//}
 CATEGORIES=		multimedia
