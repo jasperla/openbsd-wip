@@ -1,0 +1,12 @@
+$OpenBSD$
+--- modules/core/src/parallel_pthreads.cpp.orig	Wed Jun  3 19:21:34 2015
++++ modules/core/src/parallel_pthreads.cpp	Thu Jun  4 22:08:25 2015
+@@ -245,7 +245,7 @@ class ThreadManager (private)
+ };
+ 
+ #ifndef PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP
+-#define PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP PTHREAD_RECURSIVE_MUTEX_INITIALIZER
++#define PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP PTHREAD_MUTEX_INITIALIZER
+ #endif
+ 
+ pthread_mutex_t ThreadManager::m_manager_access_mutex = PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP;

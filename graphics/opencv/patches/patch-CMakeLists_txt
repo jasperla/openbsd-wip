@@ -1,12 +1,22 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2014/06/03 20:41:36 zhuk Exp $
---- CMakeLists.txt.orig	Wed Oct  1 09:33:36 2014
-+++ CMakeLists.txt	Sun Dec 21 20:16:55 2014
-@@ -438,7 +438,7 @@ if(UNIX)
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2015/01/24 10:56:43 zhuk Exp $
+--- CMakeLists.txt.orig	Wed Jun  3 19:21:34 2015
++++ CMakeLists.txt	Wed Jun 10 17:35:32 2015
+@@ -373,7 +373,8 @@ else()
+     set(OPENCV_LIB_INSTALL_PATH     lib${LIB_SUFFIX})
+     set(OPENCV_3P_LIB_INSTALL_PATH  share/OpenCV/3rdparty/${OPENCV_LIB_INSTALL_PATH})
+     set(OPENCV_SAMPLES_SRC_INSTALL_PATH    share/OpenCV/samples)
+-    set(OPENCV_JAR_INSTALL_PATH share/OpenCV/java)
++    # JNI shared object is installed in the same directory, so this should
++    set(OPENCV_JAR_INSTALL_PATH lib/OpenCV/java)
+     set(OPENCV_OTHER_INSTALL_PATH   share/OpenCV)
+   endif()
+   set(OPENCV_INCLUDE_INSTALL_PATH "include")
+@@ -488,7 +489,7 @@ if(UNIX)
      CHECK_INCLUDE_FILE(pthread.h HAVE_LIBPTHREAD)
      if(ANDROID)
        set(OPENCV_LINKER_LIBS ${OPENCV_LINKER_LIBS} dl m log)
 -    elseif(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD|NetBSD|DragonFly")
 +    elseif(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD|NetBSD|DragonFly|OpenBSD")
        set(OPENCV_LINKER_LIBS ${OPENCV_LINKER_LIBS} m pthread)
-     else()
-       set(OPENCV_LINKER_LIBS ${OPENCV_LINKER_LIBS} dl m pthread rt)
+     elseif(EMSCRIPTEN)
+       # no need to link to system libs with emscripten
