@@ -1,6 +1,4 @@
 @comment $OpenBSD$
-go/
-go/pkg/
 ${MODGO_PACKAGES}/
 ${MODGO_PACKAGES}/github.com/
 ${MODGO_PACKAGES}/github.com/tealeg/
