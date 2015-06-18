@@ -32,6 +32,7 @@ LIB_DEPENDS =		devel/libinotify \
 			security/qtkeychain
 
 CONFIGURE_ARGS +=	-DBUILD_WITH_QT4=ON \
+			-DSYSCONF_INSTALL_DIR=${SYSCONFDIR} \
 			-DCMAKE_C_FLAGS="${CFLAGS} -DHAVE_ICONV -DHAVE_ICONV_H \
 				-I${LOCALBASE}/include/inotify" \
 			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include/inotify" \
@@ -44,6 +45,6 @@ post-extract:
 		${WRKSRC}/cmake/modules/FindIconv_local.cmake
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
-	mv ${PREFIX}/etc ${PREFIX}/share/examples/mirall
+	mv ${WRKINST}/etc ${PREFIX}/share/examples/mirall
 
 .include <bsd.port.mk>
