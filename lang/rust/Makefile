@@ -8,7 +8,7 @@ COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
 # WARNING: upstream don't provide versioned archive for beta
-V =			1.1.0beta2
+V =			1.1.0beta4
 RUST_HASH =		e4d77fca
 DISTNAME =		rustc-beta-src
 
