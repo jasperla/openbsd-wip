@@ -3452,6 +3452,7 @@ share/doc/rust/html/std/net/parser/sidebar-items.js
 share/doc/rust/html/std/net/parser/struct.AddrParseError.html
 share/doc/rust/html/std/net/sidebar-items.js
 share/doc/rust/html/std/net/struct.AddrParseError.html
+share/doc/rust/html/std/net/struct.Incoming.html
 share/doc/rust/html/std/net/struct.Ipv4Addr.html
 share/doc/rust/html/std/net/struct.Ipv6Addr.html
 share/doc/rust/html/std/net/struct.LookupHost.html
@@ -3463,6 +3464,7 @@ share/doc/rust/html/std/net/struct.UdpSocket.html
 share/doc/rust/html/std/net/tcp/
 share/doc/rust/html/std/net/tcp/index.html
 share/doc/rust/html/std/net/tcp/sidebar-items.js
+share/doc/rust/html/std/net/tcp/struct.Incoming.html
 share/doc/rust/html/std/net/tcp/struct.TcpListener.html
 share/doc/rust/html/std/net/tcp/struct.TcpStream.html
 share/doc/rust/html/std/net/trait.ToSocketAddrs.html
@@ -3587,7 +3589,6 @@ share/doc/rust/html/std/os/unix/fs/constant.USER_WRITE.html
 share/doc/rust/html/std/os/unix/fs/fn.symlink.html
 share/doc/rust/html/std/os/unix/fs/index.html
 share/doc/rust/html/std/os/unix/fs/sidebar-items.js
-share/doc/rust/html/std/os/unix/fs/struct.Metadata.html
 share/doc/rust/html/std/os/unix/fs/trait.DirBuilderExt.html
 share/doc/rust/html/std/os/unix/fs/trait.DirEntryExt.html
 share/doc/rust/html/std/os/unix/fs/trait.MetadataExt.html
@@ -4051,7 +4052,6 @@ share/doc/rust/html/std/sys/ext/fs/constant.USER_WRITE.html
 share/doc/rust/html/std/sys/ext/fs/fn.symlink.html
 share/doc/rust/html/std/sys/ext/fs/index.html
 share/doc/rust/html/std/sys/ext/fs/sidebar-items.js
-share/doc/rust/html/std/sys/ext/fs/struct.Metadata.html
 share/doc/rust/html/std/sys/ext/fs/trait.DirBuilderExt.html
 share/doc/rust/html/std/sys/ext/fs/trait.DirEntryExt.html
 share/doc/rust/html/std/sys/ext/fs/trait.MetadataExt.html

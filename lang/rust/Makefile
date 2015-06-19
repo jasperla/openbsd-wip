@@ -9,7 +9,7 @@ COMMENT-doc =		html documentation for rustc
 
 # WARNING: upstream don't provide versioned archive for beta
 V =			1.1.0beta4
-RUST_HASH =		e4d77fca
+RUST_HASH =		3e868d46
 DISTNAME =		rustc-beta-src
 
 SUBST_VARS +=		RUST_HASH
