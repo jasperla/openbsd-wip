@@ -3608,6 +3608,7 @@ share/doc/rust/html/std/os/unix/prelude/trait.AsRawFd.html
 share/doc/rust/html/std/os/unix/prelude/trait.CommandExt.html
 share/doc/rust/html/std/os/unix/prelude/trait.DirEntryExt.html
 share/doc/rust/html/std/os/unix/prelude/trait.ExitStatusExt.html
+share/doc/rust/html/std/os/unix/prelude/trait.FromRawFd.html
 share/doc/rust/html/std/os/unix/prelude/trait.MetadataExt.html
 share/doc/rust/html/std/os/unix/prelude/trait.OpenOptionsExt.html
 share/doc/rust/html/std/os/unix/prelude/trait.OsStrExt.html
