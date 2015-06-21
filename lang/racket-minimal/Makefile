@@ -14,10 +14,10 @@ ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		multi-paradigm programming language
 
-V =			6.1.91.900
+V =			6.2
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
-			racket-openbsd${EXTRACT_SUFX}
+			racket-openbsd-$V${EXTRACT_SUFX}
 
 CATEGORIES =		lang
 HOMEPAGE =		http://racket-lang.org/
@@ -85,7 +85,6 @@ post-install:
 	@perl -i -pe 's/installation-name . "snapshot"/installation-name . "$V"/g' ${WRKINST}/etc/racket/config.rktd
 	@mv ${WRKINST}/etc/racket ${PREFIX}/share/examples
 	@cp ${WRKDIR}/racket-openbsd/racket-user-bin-paths ${PREFIX}/bin
-	@rm ${PREFIX}/share/racket/collects/setup/unixstyle-install.rkt.orig
 
 # Since 5.3.4 if __SSE_MATH__ is defined (C_COMPILER_USES_SSE) and
 # MZ_TRY_EXTFLONUMS enabled, MZ_LONG_DOUBLE (extflonum) is turned on. Also
