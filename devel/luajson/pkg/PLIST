@@ -1,0 +1,22 @@
+@comment $OpenBSD$
+lib/lua/${MODLUA_VERSION}/json/
+lib/lua/${MODLUA_VERSION}/json.lua
+lib/lua/${MODLUA_VERSION}/json/decode/
+lib/lua/${MODLUA_VERSION}/json/decode.lua
+lib/lua/${MODLUA_VERSION}/json/decode/composite.lua
+lib/lua/${MODLUA_VERSION}/json/decode/number.lua
+lib/lua/${MODLUA_VERSION}/json/decode/others.lua
+lib/lua/${MODLUA_VERSION}/json/decode/state.lua
+lib/lua/${MODLUA_VERSION}/json/decode/strings.lua
+lib/lua/${MODLUA_VERSION}/json/decode/util.lua
+lib/lua/${MODLUA_VERSION}/json/encode/
+lib/lua/${MODLUA_VERSION}/json/encode.lua
+lib/lua/${MODLUA_VERSION}/json/encode/array.lua
+lib/lua/${MODLUA_VERSION}/json/encode/calls.lua
+lib/lua/${MODLUA_VERSION}/json/encode/number.lua
+lib/lua/${MODLUA_VERSION}/json/encode/object.lua
+lib/lua/${MODLUA_VERSION}/json/encode/others.lua
+lib/lua/${MODLUA_VERSION}/json/encode/output.lua
+lib/lua/${MODLUA_VERSION}/json/encode/output_utility.lua
+lib/lua/${MODLUA_VERSION}/json/encode/strings.lua
+lib/lua/${MODLUA_VERSION}/json/util.lua

@@ -1,0 +1,9 @@
+$OpenBSD$
+--- Makefile.orig	Tue Jun 23 23:34:02 2015
++++ Makefile	Tue Jun 23 23:34:07 2015
+@@ -53,4 +53,4 @@ distcheck: distcheck-zip distcheck-tar
+ 
+ install:
+ 	$(MKDIR) $(DESTDIR)$(INSTALL_LMOD)
+-	cp -p -r lua/* $(DESTDIR)$(INSTALL_LMOD)
++	cp -r lua/* $(DESTDIR)$(INSTALL_LMOD)
