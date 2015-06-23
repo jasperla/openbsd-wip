@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+@shell bin/mksh
+@man man/man1/mksh.1
+share/examples/mksh/
+share/examples/mksh/dot.mkshrc

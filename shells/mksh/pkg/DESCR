@@ -1,0 +1,13 @@
+mksh is a direct descendant from the OpenBSD /bin/ksh and contains most of its
+bug fixes and enhancements except the "GNU bash-like $PS1", "POSIX character
+class support in globbing" changes, the incompatible "ulimit can handle multiple
+limits in one invocation" and several minor difference.
+
+The set -o emacs-usemeta command is no longer needed because the emacs editing
+mode has been changed for Unicode/UTF-8 mode, which adds a new set -o utf8-mode
+flag. The set -o sh command has been completely removed, set -o posix merely
+turns off brace expansion as side effect. There limit on array sizes is relaxed.
+Many bugs and security holes have been closed in mksh and are still in oksh and
+OpenBSD ksh. The user interface has much less bugs and surprises; emacs editing
+mode is enabled by default. In contrast to oksh, set -o arc4random can be used
+to control which generator for $RANDOM is used.
