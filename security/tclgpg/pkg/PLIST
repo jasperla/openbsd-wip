@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+lib/gpg1.0/
+@lib lib/gpg1.0/libgpg10.so.${LIBgpg10_VERSION}
+lib/gpg1.0/pkgIndex.tcl
+lib/gpg1.0/tclgpg.tcl
+@man man/mann/gpg.n
