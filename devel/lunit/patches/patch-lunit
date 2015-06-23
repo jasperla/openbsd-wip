@@ -1,0 +1,12 @@
+$OpenBSD$
+--- lunit.orig	Sat Nov  9 20:06:59 2013
++++ lunit	Sat Nov  9 20:08:14 2013
+@@ -38,7 +38,7 @@ if [ `uname` = "Darwin" ]; then 
+ else
+   scriptname="$(readlink -n -f "$0")"
+ fi
+-interpreter="lua"
++interpreter="${MODLUA_BIN}"
+ options=""
+ 
+ while true ; do

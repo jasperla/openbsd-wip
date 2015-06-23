@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+bin/lunit
+lib/lua/${MODLUA_VERSION}/lunit-console.lua
+lib/lua/${MODLUA_VERSION}/lunit.lua
