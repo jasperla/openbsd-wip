@@ -2,7 +2,7 @@
 
 COMMENT =		Tox client library
 
-DISTNAME =		toxcore-20150509
+DISTNAME =		toxcore-20150624
 CATEGORIES =		net telephony
 HOMEPAGE =		http://tox.im/
 
@@ -21,7 +21,7 @@ WANTLIB = c m opus pthread stdc++ sodium vpx
 
 GH_ACCOUNT =		irungentoo
 GH_PROJECT =		toxcore
-GH_COMMIT =		b2350f2e26e4fd2c1e9627680663170d94b6d0b8
+GH_COMMIT =		1434b319f3956fa3a62033486851ab3815775901
 
 MODULES =		gnu
 
