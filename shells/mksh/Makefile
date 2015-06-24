@@ -5,7 +5,6 @@ DISTNAME =		mksh-R50f
 PKGNAME =		${DISTNAME:S/R//}
 CATEGORIES =		shells
 HOMEPAGE =		http://mirbsd.de/mksh
-MAINTAINER =		Dmitrij D. Czarkoff
 
 # BSD (The MirOS Licence, 3-clause BSD and ISC)
 PERMIT_PACKAGE_CDROM =	Yes
