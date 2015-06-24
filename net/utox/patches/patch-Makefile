@@ -1,6 +1,6 @@
 $OpenBSD$
---- Makefile.orig	Mon May 18 05:51:03 2015
-+++ Makefile	Sun Jun  7 19:08:42 2015
+--- Makefile.orig	Sun Jun  7 20:12:47 2015
++++ Makefile	Wed Jun 24 01:41:12 2015
 @@ -26,7 +26,8 @@ endif
  
  UNAME_S := $(shell uname -s)
@@ -19,7 +19,7 @@ $OpenBSD$
  
  SRC = $(wildcard *.c png/png.c)
  OBJ = $(SRC:.c=.o)
-@@ -60,8 +62,7 @@ OBJ = $(SRC:.c=.o)
+@@ -61,8 +63,7 @@ GIT_V = $(shell git describe --abbrev=8 --dirty --alwa
  all: utox
  
  utox: $(OBJ)
@@ -29,10 +29,10 @@ $OpenBSD$
  
  install: utox
  	mkdir -p $(DESTDIR)$(PREFIX)/bin
-@@ -102,14 +103,13 @@ install: utox
+@@ -103,14 +104,13 @@ install: utox
  	install -m 644 utox.desktop $(DESTDIR)$(PREFIX)/share/applications/utox.desktop
- 	if [ "$UNITY" -eq "1" ]; then echo "X-MessagingMenu-UsesChatSection=true" >> $(DESTDIR)$(PREFIX)/share/applications/utox.desktop; fi
- 	
+ 	if [ "$(UNITY)" -eq "1" ]; then echo "X-MessagingMenu-UsesChatSection=true" >> $(DESTDIR)$(PREFIX)/share/applications/utox.desktop; fi
+ 
 -	mkdir -p $(DESTDIR)$(PREFIX)/share/man/man1
 -	install -m 644 utox.1 $(DESTDIR)$(PREFIX)/share/man/man1/utox.1
 +	mkdir -p $(DESTDIR)$(MANDIR)/man1
@@ -42,8 +42,8 @@ $OpenBSD$
  
  .c.o:
 -	@echo "  CC    $@"
--	@$(CC) $(CFLAGS) -o $@ -c $<
-+	$(CC) $(CFLAGS) -o $@ -c $<
+-	@$(CC) $(CFLAGS) -o $@ -c -DGIT_VERSION=\"$(GIT_V)\" $<
++	$(CC) $(CFLAGS) -o $@ -c -DGIT_VERSION=\"$(GIT_V)\" $<
  
  clean:
  	rm -f utox *.o png/*.o
