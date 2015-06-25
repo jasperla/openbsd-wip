@@ -2,7 +2,7 @@
 
 COMMENT =		owncloud sync client
 
-DISTNAME =		owncloudclient-1.8.1
+DISTNAME =		owncloudclient-1.8.3
 
 SHARED_LIBS =		owncloudsync	1.0
 SHARED_LIBS +=		ocsync		1.0
@@ -17,7 +17,7 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += QtDBus QtGui QtNetwork QtSql QtWebKit QtXml c
-WANTLIB += crypto lib/inotify/inotify m pthread qtkeychain
+WANTLIB += crypto lib/inotify/inotify m neon pthread qtkeychain
 WANTLIB += sqlite3 ssl
 
 MASTER_SITES =		https://download.owncloud.com/desktop/stable/
@@ -29,6 +29,7 @@ MODGCC4_LANGS += 	c++
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 LIB_DEPENDS =		devel/libinotify \
+			net/neon \
 			security/qtkeychain
 
 CONFIGURE_ARGS +=	-DBUILD_WITH_QT4=ON \
