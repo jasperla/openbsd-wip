@@ -1,1 +1,1 @@
-Tcl interface to GNU Privacy Guard with interface similar to TclGPGME.
+GnuPG 2-based replacement for TclGPGME.
