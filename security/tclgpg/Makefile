@@ -6,7 +6,7 @@ DISTNAME =		tclgpg-20150324
 CATEGORIES =		security
 HOMEPAGE =		https://chiselapp.com/user/sgolovan/repository/tclgpg/
 
-MAINTAINER =		Dmitrij D. Czarkoff <czakoff@gmail.com>
+MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
 
 SHARED_LIBS +=		gpg10 0.0 # 1.0
 

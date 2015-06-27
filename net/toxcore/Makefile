@@ -6,7 +6,7 @@ DISTNAME =		toxcore-20150624
 CATEGORIES =		net telephony
 HOMEPAGE =		http://tox.im/
 
-MAINTAINER =		Dmitrij D. Czarkoff <czakoff@gmail.com>
+MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
