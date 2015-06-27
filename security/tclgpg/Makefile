@@ -2,7 +2,6 @@
 
 COMMENT =		Tcl interface to GNU Privacy Guard
 
-UUID =			4cfd9fa949c98386eead3382d6a90f3511fa7429
 DISTNAME =		tclgpg-20150324
 CATEGORIES =		security
 HOMEPAGE =		https://chiselapp.com/user/sgolovan/repository/tclgpg/
@@ -18,6 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 # and chooses checkin to serve based on "uuid" query key
 MASTER_SITES =		${HOMEPAGE:=tarball/}
 _FILENAME =		${DISTNAME}${EXTRACT_SUFX}
+UUID =			4cfd9fa949c98386eead3382d6a90f3511fa7429
 DISTFILES =		${_FILENAME}{${_FILENAME}?uuid=${UUID}}
 
 MODULES =		lang/tcl
