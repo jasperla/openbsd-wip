@@ -1,14 +1,13 @@
 # $OpenBSD$
 
-COMMENT =		Tcl interface to GNU Privacy Guard
+SHARED_ONLY =		Yes
 
+COMMENT =		Tcl interface to GNU Privacy Guard
 DISTNAME =		tclgpg-20150324
 CATEGORIES =		security
 HOMEPAGE =		https://chiselapp.com/user/sgolovan/repository/tclgpg/
 
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
-
-SHARED_LIBS +=		gpg10 0.0 # 1.0
 
 # 2-clause BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -22,12 +21,15 @@ DISTFILES =		${_FILENAME}{${_FILENAME}?uuid=${UUID}}
 
 MODULES =		lang/tcl
 BUILD_DEPENDS =		${MODTCL_BUILD_DEPENDS}
-RUN_DEPENDS =		${MODTCL_RUN_DEPENDS}
 LIB_DEPENDS =		${MODTCL_LIB_DEPENDS}
+RUN_DEPENDS =		${MODTCL_RUN_DEPENDS} \
+			security/gnupg
 USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	autoconf
-CONFIGURE_ARGS +=	--with-tcl=${MODTCL_LIBDIR}
+CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
+			--with-tcl=${MODTCL_LIBDIR} \
+			--libdir=${MODTCL_TCLDIR}
 CONFIGURE_ENV =		LIBgpg10_VERSION=${LIBgpg10_VERSION}
 AUTOCONF_VERSION =	2.59
 TEST_TARGET =		test
