@@ -1,0 +1,3 @@
+Rakia is a SIP connection manager for the Telepathy framework, supporting voice
+and video calls.  Install this package to use Telepathy instant messaging
+clients with  servers, including numerous VoIP call-out providers.
