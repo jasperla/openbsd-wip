@@ -10,7 +10,7 @@ HOMEPAGE = http://moc.daper.net/
 MASTER_SITES = http://ftp.daper.net/pub/soft/moc/stable/
 EXTRACT_SUFX = .tar.bz2
 
-# License: GPLv2 (or later version)
+# License: GPLv3+
 PERMIT_PACKAGE_CDROM = Yes
 PERMIT_PACKAGE_FTP = Yes
 PERMIT_DISTFILES_FTP = Yes
@@ -18,10 +18,9 @@ PERMIT_DISTFILES_FTP = Yes
 WANTLIB = db>=4
 WANTLIB += FLAC avcodec avformat avutil bz2 c crypto curl faad
 WANTLIB += gsm id3tag idn ltdl m mad mp3lame mpcdec ncursesw ogg
-WANTLIB += opus orc-0.4 pthread samplerate schroedinger-1.0 sndfile
-WANTLIB += sndio speex ssl stdc++ swresample tag tag_c theoradec
-WANTLIB += theoraenc vorbis vorbisenc vorbisfile vpx wavpack x264
-WANTLIB += x265 xvidcore z
+WANTLIB += opus pthread samplerate sndfile sndio speex ssl stdc++
+WANTLIB += swresample tag tag_c vorbis vorbisenc vorbisfile vpx
+WANTLIB += wavpack x264 x265 xvidcore z
 
 MODULES = devel/gettext
 

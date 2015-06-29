@@ -1,3 +1,10 @@
+2015-06-20 Michael Seyfert <michael@codesand.org>
+
+1. License should be GPLv3+ due to embedded code in md5.c.
+2. Remove mention of ALSA, OSS, and JACK from the example config file.
+3. Remove lib schroedinger from WANTLIB .
+
+
 2015-04-15 Michael Seyfert <michael@codesand.org>
 
  * Update to 2.5.0
