@@ -33,6 +33,7 @@ BOOST_LIBS=	boost_atomic-mt \
 		boost_prg_exec_monitor-mt boost_prg_exec_monitor \
 		boost_program_options-mt boost_program_options \
 		boost_python-mt boost_python \
+		boost_python3-mt boost_python3 \
 		boost_random-mt boost_random \
 		boost_regex-mt boost_regex \
 		boost_serialization-mt boost_serialization \
@@ -74,7 +75,8 @@ BJAM_CONFIG=	-sICONV_PATH=${LOCALBASE} \
 		cflags='${CFLAGS} -pthread' cxxflags='${CXXFLAGS} -pthread' \
 		python=${MODPY_VERSION} \
 		variant=release link=static,shared threading=single,multi \
-		--layout=tagged
+		--layout=tagged \
+		--user-config=${WRKSRC}/tools/build/user-config.jam
 
 # context uses MD bits and is missing support for Alpha,
 # PA-RISC, SPARC and SuperH. The author does not care

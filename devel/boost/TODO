@@ -1,4 +1,0 @@
-- -lib/libboost_python3-mt.a
-  -@lib lib/libboost_python3-mt.so.${LIBboost_python3-mt_VERSION}
-  -lib/libboost_python3.a
-  -@lib lib/libboost_python3.so.${LIBboost_python3_VERSION}
