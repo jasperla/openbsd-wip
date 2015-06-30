@@ -2,7 +2,7 @@ MOC (music on console) is a console audio player for LINUX/UNIX designed
 to be powerful and easy to use.
 
 MOC plays smoothly, regardless of system or I/O load because it uses the
-output buffer in a separate thread. It provides gapelss playback because
+output buffer in a separate thread. It provides gapless playback because
 the next file to be played is precached while the current file is
 playing.
 
