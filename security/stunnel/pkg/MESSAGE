@@ -1,4 +1,0 @@
-After stunnel is installed, you have to create a server certificate and
-put the result in ${SYSCONFDIR}/ssl/stunnel.pem. For more information on
-how to create certificates, read ssl(8). For more information on stunnel,
-read stunnel(8).
