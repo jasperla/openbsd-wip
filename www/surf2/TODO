@@ -1,0 +1,10 @@
+This port is held here mostly for testing/tracking purposes.  Although already
+usable, GTK+3 branch of surf is not released yet.  It is likely that in future
+it will be merged into mainline surf, but in the mean time it might be a good
+idea to keep surf2 as a separate port here.
+
+Note, this port of surf has two customizations that are not present upstream:
+
+ * xterm is used instead of st and
+ * DOWNLOAD macros was reworked to make download window display fetched URL and
+   then stay until dismissed.
