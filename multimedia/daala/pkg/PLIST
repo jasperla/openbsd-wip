@@ -1,0 +1,23 @@
+@comment $OpenBSD$
+@bin bin/analyzer
+@bin bin/dump_video
+@bin bin/encoder_example
+@bin bin/player_example
+include/daala/
+include/daala/codec.h
+include/daala/daaladec.h
+include/daala/daalaenc.h
+lib/libdaalabase.a
+lib/libdaalabase.la
+@lib lib/libdaalabase.so.${LIBdaalabase_VERSION}
+lib/libdaaladec.a
+lib/libdaaladec.la
+@lib lib/libdaaladec.so.${LIBdaaladec_VERSION}
+lib/libdaalaenc.a
+lib/libdaalaenc.la
+@lib lib/libdaalaenc.so.${LIBdaalaenc_VERSION}
+lib/pkgconfig/daaladec.pc
+lib/pkgconfig/daalaenc.pc
+share/doc/daala/
+share/doc/daala/AUTHORS
+share/doc/daala/COPYING

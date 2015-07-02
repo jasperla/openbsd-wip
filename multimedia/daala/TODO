@@ -1,0 +1,4 @@
+ * get rid of GNU Libtool if possible and if upstream allows
+ * test and make sure everything works
+ * test the effect of configure flags
+ * drop tools when daala support will land to ffmpeg and players
