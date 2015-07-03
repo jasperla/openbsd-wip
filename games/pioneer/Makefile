@@ -2,7 +2,7 @@
 
 COMMENT =		game of lonely space and adventure
 
-V =			20140804
+V =			20150701
 DISTNAME =		pioneer-0.${V}
 
 CATEGORIES =		games
@@ -16,7 +16,6 @@ WANTLIB += GL SDL2 SDL2_image assimp c freetype m png pthread
 WANTLIB += sigc-2.0 vorbisfile z
 
 GH_ACCOUNT =		pioneerspacesim
-GH_COMMIT =		c32a0519ce8ae6136883bae38ef6bd0943c5e355
 GH_PROJECT =		pioneer
 GH_TAGNAME =		${V}
 
