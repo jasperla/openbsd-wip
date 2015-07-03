@@ -33,6 +33,7 @@ include/assimp/matrix3x3.inl
 include/assimp/matrix4x4.h
 include/assimp/matrix4x4.inl
 include/assimp/mesh.h
+include/assimp/metadata.h
 include/assimp/postprocess.h
 include/assimp/quaternion.h
 include/assimp/quaternion.inl
@@ -49,5 +50,4 @@ lib/cmake/${PKGNAME}/
 lib/cmake/${PKGNAME}/assimp-config-version.cmake
 lib/cmake/${PKGNAME}/assimp-config.cmake
 @lib lib/libassimp.so.${LIBassimp_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/assimp.pc

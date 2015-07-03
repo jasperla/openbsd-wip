@@ -1,14 +1,13 @@
 # $OpenBSD$
 
-V =		3.0
+V =		3.1.1
 COMMENT =	open asset import library
-DISTNAME =	assimp--${V}.1270-source-only
-PKGNAME =	assimp-${V}
+DISTNAME =	assimp-$V
 EXTRACT_SUFX =	.zip
 CATEGORIES =	multimedia
 SUBST_VARS +=	PKGNAME
 
-SHARED_LIBS +=  assimp                    0.0 # 3.0
+SHARED_LIBS +=  assimp                    0.0 # 3.1
 
 HOMEPAGE =	http://assimp.sourceforge.net/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
