@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2015/04/21 18:24:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.72 2015/06/17 20:03:11 sthen Exp $
 
 # vax:   no IEEE arithmetic
 # sparc: fPIC version of libgcc.a needed but not available
@@ -41,10 +41,12 @@ RUN_DEPENDS =	devel/gmake \
 LIB_DEPENDS =	${MODFORTRAN_LIB_DEPENDS} \
 		devel/glpk \
 		devel/pcre \
+		graphics/GraphicsMagick \
 		math/fftw3 \
 		math/fftw3,float \
 		math/lapack \
 		math/blas \
+		math/hdf5 \
 		math/qhull \
 		math/qrupdate \
 		net/curl \
@@ -56,8 +58,7 @@ USE_LIBTOOL =		gnu
 #CONFIGURE_STYLE =	autoconf
 #AUTOCONF_VERSION =	2.69
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS	=	${CONFIGURE_SHARED} \
-			--without-hdf5
+CONFIGURE_ARGS	=	${CONFIGURE_SHARED}
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		LRELEASE="lrelease4" \
