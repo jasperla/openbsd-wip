@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-lib/libauxfun.a
-lib/liblensfun.a
