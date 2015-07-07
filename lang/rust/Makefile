@@ -8,8 +8,8 @@ COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
 # WARNING: upstream don't provide versioned archive for beta
-V =			1.1.0beta5
-RUST_HASH =		7aef8d7d
+V =			1.2.0beta1
+RUST_HASH =		c3ffd275
 DISTNAME =		rustc-beta-src
 
 SUBST_VARS +=		RUST_HASH
@@ -21,7 +21,7 @@ PKGNAME-doc =		rust-doc-${V}
 MULTI_PACKAGES =	-main -doc
 
 # the snapshot version should be the version in src/snapshots.txt
-SNAPSHOT-amd64 =	rust-stage0-2015-04-27-857ef6e-openbsd-x86_64-20046defe7d1f3f37e25b5b2714cd54e61cabc61.tar.bz2
+SNAPSHOT-amd64 =	rust-stage0-2015-05-24-ba0e1cd-openbsd-x86_64-7c249db2a0f4e6ace9c3a343ba62c990635d665a.tar.bz2
 
 CATEGORIES =		lang
 
