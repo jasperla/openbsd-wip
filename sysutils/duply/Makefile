@@ -92,7 +92,7 @@ MODULES =		lang/python
 #BUILD_DEPENDS =	???
 RUN_DEPENDS =		shells/bash \
 					sysutils/duplicity \
-					security/gnupg2
+					security/gnupg2>=2
 #LIB_DEPENDS =		???
 #TEST_DEPENDS =		???
 
