@@ -1,47 +1,29 @@
 $OpenBSD: patch-bin_duplicity_1,v 1.2 2014/11/14 07:49:33 brad Exp $
 Document the ssh backend change from paramiko to pexpect.
---- bin/duplicity.1.orig	Wed Mar 11 12:33:38 2015
-+++ bin/duplicity.1	Tue Apr  7 21:25:33 2015
-@@ -119,7 +119,7 @@ There are two
- for scp/sftp/ssh access (also see
- .BR "A NOTE ON SSH BACKENDS" ).
- .TP
--.BR "ssh paramiko backend" " (enabled by default)"
-+.B "ssh paramiko backend"
- .B paramiko
- (SSH2 for python)
- - http://pypi.python.org/pypi/paramiko (downloads); http://github.com/paramiko/paramiko (project page)
-@@ -128,7 +128,7 @@ for scp/sftp/ssh access (also see
- (Python Cryptography Toolkit)
- - http://www.dlitz.net/software/pycrypto/
- .TP
--.B ssh pexpect backend
-+.BR "ssh pexpect backend" " (default on OpenBSD)"
- .B sftp/scp client binaries
- OpenSSH - http://www.openssh.com/
- .br
-@@ -1257,9 +1257,9 @@ scp://.. or
+--- bin/duplicity.1.orig	Mon May 11 12:33:53 2015
++++ bin/duplicity.1	Wed Jul  8 20:22:22 2015
+@@ -1127,9 +1127,9 @@ scp://.. or
  .br
  sftp://user[:password]@other.host[:port]/[relative|/absolute]_path
  .PP
 -.BR "defaults" " are paramiko+scp:// and paramiko+sftp://"
-+.BR "defaults" " are pexpect+scp:// and pexpect+sftp://"
++.BR "defaults" " are pexpect+scp://, pexpect+sftp://, lftp+sftp://"
  .br
 -.BR "alternatively" " try pexpect+scp://, pexpect+sftp://, lftp+sftp://"
-+.BR "alternatively" " try paramiko+scp://, paramiko+sftp://, lftp+sftp://"
++.BR "alternatively" " try paramiko+scp:// and paramiko+sftp://"
  .br
  See also
  .BR --ssh-askpass ,
-@@ -1812,7 +1812,7 @@ backend allows to define
+@@ -1659,7 +1659,7 @@ backend allows to define
  .BR --scp-command " and"
  .BR --sftp-command .
  .PP
 -.BR "SSH paramiko backend " "(selected by default)"
-+.B "SSH paramiko backend"
++.B "SSH paramiko backend "
  is a complete reimplementation of ssh protocols natively in python. Advantages
  are speed and maintainability. Minor disadvantage is that extra packages are
  needed as listed in
-@@ -1825,7 +1825,7 @@ mode (
+@@ -1672,7 +1672,7 @@ mode (
  .I --use-scp
  ) though scp access is used for put/get operations but listing is done via ssh remote shell.
  .PP
@@ -50,3 +32,21 @@ Document the ssh backend change from paramiko to pexpect.
  is the legacy ssh backend using the command line ssh binaries via pexpect.
  Older versions used
  .I scp
+@@ -1965,7 +1965,7 @@ There are two
+ for scp/sftp/ssh access (also see
+ .BR "A NOTE ON SSH BACKENDS" ).
+ .TP
+-.BR "ssh paramiko backend" " (enabled by default)"
++.B "ssh paramiko backend"
+ .B paramiko
+ (SSH2 for python)
+ - http://pypi.python.org/pypi/paramiko (downloads); http://github.com/paramiko/paramiko (project page)
+@@ -1974,7 +1974,7 @@ for scp/sftp/ssh access (also see
+ (Python Cryptography Toolkit)
+ - http://www.dlitz.net/software/pycrypto/
+ .TP
+-.B ssh pexpect backend
++.BR "ssh pexpect backend" " (default on OpenBSD)"
+ .B sftp/scp client binaries
+ OpenSSH - http://www.openssh.com/
+ .br

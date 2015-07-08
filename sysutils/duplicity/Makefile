@@ -2,7 +2,7 @@
 
 COMMENT =	encrypted backup using rsync algorithm
 
-MODPY_EGG_VERSION = 0.7.02
+MODPY_EGG_VERSION = 0.7.03
 DISTNAME =	duplicity-${MODPY_EGG_VERSION}
 
 CATEGORIES =	sysutils
@@ -24,7 +24,8 @@ LIB_DEPENDS +=	net/librsync \
 RUN_DEPENDS +=	devel/py-pexpect \
 		net/py-boto \
 		net/ncftp \
-		sysutils/py-lockfile
+		sysutils/py-lockfile \
+		net/py-pyrax
 
 MAKE_ENV +=	LIBRSYNC_DIR=${LOCALBASE}
 
