@@ -22,10 +22,11 @@ LIB_DEPENDS +=	net/librsync \
 		${MODPY_LIB_DEPENDS}
 
 RUN_DEPENDS +=	devel/py-pexpect \
-		net/py-boto \
 		net/ncftp \
-		sysutils/py-lockfile \
+		net/py-boto \
 		net/py-pyrax
+		gnupg->=2:security/gnupg2 \
+		sysutils/py-lockfile
 
 MAKE_ENV +=	LIBRSYNC_DIR=${LOCALBASE}
 
