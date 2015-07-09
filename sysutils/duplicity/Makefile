@@ -24,7 +24,7 @@ LIB_DEPENDS +=	net/librsync \
 RUN_DEPENDS +=	devel/py-pexpect \
 		net/ncftp \
 		net/py-boto \
-		net/py-pyrax
+		net/py-pyrax \
 		gnupg->=2:security/gnupg2 \
 		sysutils/py-lockfile
 
