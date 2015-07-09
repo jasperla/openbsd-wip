@@ -21,15 +21,18 @@ DISTFILES =		${_FILENAME}{${_FILENAME}?uuid=${UUID}}
 
 MODULES =		lang/tcl
 BUILD_DEPENDS =		${MODTCL_BUILD_DEPENDS}
-LIB_DEPENDS =		${MODTCL_LIB_DEPENDS}
 RUN_DEPENDS =		${MODTCL_RUN_DEPENDS} \
 			security/gnupg
-USE_GMAKE =		Yes
 
-CONFIGURE_STYLE =	autoconf
+FAKE_FLAFS =		INSTALL_PROGRAM='$${INSTALL_DATA}' \
+			pkglibdir='$$(libdir)/tcl/$$(PKG_DIR)' \
+			PKG_DIR='$$(PACKAGE_NAME)'
+
+SEPARATE_BUILD =	Yes
+CONFIGURE_STYLE =	autoconf no-autoheader
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--with-tcl=${MODTCL_LIBDIR} \
-			--libdir=${MODTCL_TCLDIR}
+			--with-tcl=${MODTCL_LIBDIR}
+
 AUTOCONF_VERSION =	2.59
 TEST_TARGET =		test
 
