@@ -21,7 +21,7 @@ MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 # GPL v3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB=	c m ncurses readline stdc++ z ${MODFORTRAN_WANTLIB} \
+WANTLIB=	c m ncurses stdc++ z ${MODFORTRAN_WANTLIB} \
 		fltk fftw3>=3 lapack>=3 blas>=1 pcre>=1 curl>=6
 
 MASTER_SITES =	${MASTER_SITE_GNU:=octave/}
@@ -39,6 +39,9 @@ RUN_DEPENDS =	devel/gmake \
 		devel/desktop-file-utils
 
 LIB_DEPENDS =	${MODFORTRAN_LIB_DEPENDS} \
+		audio/libsndfile \
+		audio/portaudio-svn \
+		editors/qscintilla \
 		devel/glpk \
 		devel/pcre \
 		graphics/GraphicsMagick \
@@ -58,7 +61,9 @@ USE_LIBTOOL =		gnu
 #CONFIGURE_STYLE =	autoconf
 #AUTOCONF_VERSION =	2.69
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS	=	${CONFIGURE_SHARED}
+# needs GNU readline
+CONFIGURE_ARGS	=	${CONFIGURE_SHARED} \
+			--disable-readline
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		LRELEASE="lrelease4" \
