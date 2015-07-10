@@ -2,13 +2,13 @@
 
 COMMENT = console audio player
 
-DISTNAME = moc-2.5.0
+DISTNAME = moc-2.6-alpha1
 CATEGORIES = audio
 
 HOMEPAGE = http://moc.daper.net/
 
-MASTER_SITES = http://ftp.daper.net/pub/soft/moc/stable/
-EXTRACT_SUFX = .tar.bz2
+MASTER_SITES = http://ftp.daper.net/pub/soft/moc/unstable/
+EXTRACT_SUFX = .tar.xz
 
 # License: GPLv3+
 PERMIT_PACKAGE_CDROM = Yes
@@ -17,10 +17,10 @@ PERMIT_DISTFILES_FTP = Yes
 
 WANTLIB = db>=4
 WANTLIB += FLAC avcodec avformat avutil bz2 c crypto curl faad
-WANTLIB += gsm id3tag idn ltdl m mad mp3lame mpcdec ncursesw ogg
-WANTLIB += opus pthread samplerate sndfile sndio speex ssl stdc++
-WANTLIB += swresample tag tag_c vorbis vorbisenc vorbisfile vpx
-WANTLIB += wavpack x264 x265 xvidcore z
+WANTLIB += gsm id3tag idn ltdl m mad magic mp3lame mpcdec ncursesw
+WANTLIB += ogg opus pthread samplerate sndfile sndio speex ssl
+WANTLIB += stdc++ swresample tag tag_c vorbis vorbisenc vorbisfile
+WANTLIB += vpx wavpack x264 x265 xvidcore z
 
 MODULES = devel/gettext
 
@@ -38,6 +38,7 @@ LIB_DEPENDS = \
 			audio/wavpack \
 			databases/db/v4 \
 			devel/libidn \
+			devel/libmagic \
 			devel/libtool,-ltdl \
 			graphics/ffmpeg \
 			net/curl
