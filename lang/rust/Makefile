@@ -8,8 +8,8 @@ COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
 # WARNING: upstream don't provide versioned archive for beta
-V =			1.2.0beta1
-RUST_HASH =		c3ffd275
+V =			1.2.0beta2
+RUST_HASH =		9365d89b
 DISTNAME =		rustc-beta-src
 
 SUBST_VARS +=		RUST_HASH
