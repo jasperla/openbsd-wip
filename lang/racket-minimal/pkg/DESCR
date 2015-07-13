@@ -6,8 +6,6 @@ The primary components of Racket platform are:
 
 - The implementation of Racket (including a rich run-time system,
   various libraries, JIT compiler, and more).
-- DrRacket, the Racket program development environment.
-- Teachpacks to use together with various books.
 - pkg.racket-lang.org, Racket's web-based package distribution system
   for user-contributed packages.
 - raco, command line tool for finding documentation, compiling Racket
