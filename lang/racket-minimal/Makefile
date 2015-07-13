@@ -17,7 +17,7 @@ COMMENT =		multi-paradigm programming language
 V =			6.2
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
-			racket-openbsd-$V${EXTRACT_SUFX}
+			racket-openbsd-1${EXTRACT_SUFX}
 
 CATEGORIES =		lang
 HOMEPAGE =		http://racket-lang.org/
