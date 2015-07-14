@@ -1,46 +1,32 @@
 $OpenBSD: patch-pki_generate_server,v 1.1.1.1 2014/07/12 22:08:35 landry Exp $
---- pki/generate.server.orig	Wed Jan 15 23:47:49 2014
-+++ pki/generate.server	Tue Jun 24 11:25:44 2014
-@@ -1,26 +1,38 @@
--#!/bin/bash
-+#!/bin/sh
+--- pki/generate.server.orig	Sun May 10 21:35:22 2015
++++ pki/generate.server	Tue Jul 14 20:11:58 2015
+@@ -1,7 +1,7 @@
+ #!/bin/sh
  
  # Take the correct binary to create the certificates
 -CERTTOOL=$(which gnutls-certtool || which certtool)
 +CERTTOOL=$(which certtool)
- if [[ -z "${CERTTOOL}" ]]
+ if [ -z "$CERTTOOL" ]
  then
    echo "ERROR: No certtool found" >&2
-   exit 1
- fi
+@@ -11,7 +11,7 @@ fi
+ . ./vars
  
-+dnsnames="`hostname`"
-+ipaddrs=$(for ip in `ifconfig -A | awk '/inet/ {print $2}' | egrep -v '(^::1$|^fe80:|^127\.)'` ; do
-+        echo -n "$ip "
-+done)
-+
-+. ./vars
-+
- # Create a server key.
- ${CERTTOOL} \
-   --generate-privkey \
-+  --bits=$bits \
-   --outfile server.key.pem
- 
- chmod 600 server.key.pem
- 
- # Sign a server cert using the key.
+ DNSNAMES="`hostname`"
+-IPADDRS=$(for ip in $(ifconfig -a | awk '/inet/ {print $2}' | egrep -v '(^::1$|^fe80:|^127\.)') ; do
++IPADDRS=$(for ip in $(ifconfig -A | awk '/inet/ {print $2}' | egrep -v '(^::1$|^fe80:|^127\.)') ; do
+   if [ -n "$ip" ]
+   then
+     echo "$ip "
+@@ -29,6 +29,12 @@ chmod 600 server.key.pem
  cat <<EOF >server.info
--organization = Göteborg Bit Factory
--cn = Göteborg Bit Factory
--dns_name = "tasktools.org"
--ip_address = "97.107.141.107"
-+organization = $organization
-+cn = $cn
-+$(for host in $dnsnames ; do
+ organization = $ORGANIZATION
+ cn = $CN
++$(for host in $DNSNAMES ; do
 +	echo dns_name = $host
 +done)
-+$(for ip in $ipaddrs ; do
++$(for ip in $IPADDRS ; do
 +	echo ip_address = $ip
 +done)
  tls_www_server
