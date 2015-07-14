@@ -51,6 +51,9 @@ Install racket-minimal and run:
 
 raco pkg install --jobs $(sysctl -n hw.ncpu) --auto drracket
 
+Add "--binary-lib" if you don't want to generate the documentation (requires
+additional dependencies).
+
 I installed DrRacket but I don't see the launcher. Where is it?
 ---------------------------------------------------------------
 
