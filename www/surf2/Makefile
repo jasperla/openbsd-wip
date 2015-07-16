@@ -2,8 +2,8 @@
 
 COMMENT =	simple webbrowser based on webkit/gtk+
 
-COMMIT =	a06af0f911a32be114c1eede7f9d63112affd560
-DISTNAME =	surf2-0.0.20150627
+COMMIT =	9343744a6d163409b06bd8dcd26a988ada991b76
+DISTNAME =	surf2-0.0.20150714
 CATEGORIES =	www
 HOMEPAGE =	http://surf.suckless.org/
 
