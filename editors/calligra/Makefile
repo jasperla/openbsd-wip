@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	https://www.calligra-suite.org/
-DISTNAME =	calligra-2.9.5
+DISTNAME =	calligra-2.9.6
 CATEGORIES =	editors
 
 DIST_SUBDIR =	kde
@@ -79,8 +79,8 @@ SHARED_LIBS +=  kovectorimage             50.0 # 13.0
 SHARED_LIBS +=  koversion                 0.0 # 14.0
 SHARED_LIBS +=  kritacolor                0.0 # 14.0
 SHARED_LIBS +=  wordsprivate              14.0 # 1.0
-SHARED_LIBS +=  libglobal                 0.0 # 14.0
-SHARED_LIBS +=  libkispsd                 0.0 # 14.0
+SHARED_LIBS +=  kritaglobal               14.0 # 1.0
+SHARED_LIBS +=  kritapsd                  14.0 # 1.0
 
 WANTLIB =  c m pthread z
 WANTLIB += GL GLEW GLU Half ICE Iex IlmImf IlmThread Imath SM X11 Xext Xi
