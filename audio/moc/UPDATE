@@ -1,3 +1,7 @@
+2015-07-17 Michael Seyfert <michael@codesand.org>
+
+ * Update to 2.6-alpha1, This should be just as stable as 2.5.0.
+
 2015-06-20 Michael Seyfert <michael@codesand.org>
 
 1. License should be GPLv3+ due to embedded code in md5.c.
