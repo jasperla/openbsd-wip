@@ -1,0 +1,12 @@
+$OpenBSD: patch-pki_generate_crl,v 1.1.1.1 2014/07/12 22:08:35 landry Exp $
+--- pki/generate.crl.orig	Sun May 10 21:35:22 2015
++++ pki/generate.crl	Tue Jul 14 20:04:09 2015
+@@ -1,7 +1,7 @@
+ #!/bin/sh
+ 
+ # Take the correct binary to create the certificates
+-CERTTOOL=$(which gnutls-certtool || which certtool)
++CERTTOOL=$(which certtool)
+ if [ -z "$CERTTOOL" ]
+ then
+   echo "ERROR: No certtool found" >&2

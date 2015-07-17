@@ -1,7 +1,7 @@
 $OpenBSD$
---- CMakeLists.txt.orig	Wed May 29 13:49:13 2013
-+++ CMakeLists.txt	Thu Oct 30 21:08:34 2014
-@@ -25,6 +25,9 @@ option (MYSQL_TESTING "Enable testing of MySQL SMSD ba
+--- CMakeLists.txt.orig	Mon Jun 15 10:11:01 2015
++++ CMakeLists.txt	Mon Jun 15 21:16:35 2015
+@@ -22,6 +22,9 @@ option (MYSQL_TESTING "Enable testing of MySQL SMSD ba
  option (ODBC_TESTING "Enable testing of ODBC MySQL SMSD backend" OFF)
  option (BUILD_SHARED_LIBS "Build shared libraries" ON)
  
@@ -11,7 +11,7 @@ $OpenBSD$
  option (LARGE_FILES "Support for large files" ON)
  if (LARGE_FILES)
      add_definitions(-D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64)
-@@ -120,7 +123,7 @@ check_symbol_exists (getpwnam "pwd.h" HAVE_GETPWNAM)
+@@ -116,7 +119,7 @@ check_symbol_exists (getpwnam "pwd.h" HAVE_GETPWNAM)
  check_symbol_exists (getgrnam "grp.h" HAVE_GETGRNAM)
  check_symbol_exists (getpwuid "pwd.h" HAVE_GETPWUID)
  check_symbol_exists (getuid "unistd.h" HAVE_GETUID)
@@ -20,8 +20,8 @@ $OpenBSD$
  check_symbol_exists (setuid "unistd.h" HAVE_SETUID)
  check_symbol_exists (setgid "unistd.h" HAVE_SETGID)
  check_symbol_exists (SIGHUP "signal.h" HAVE_SIGHUP)
-@@ -229,9 +232,12 @@ if (PYTHON_EXECUTABLE)
- endif (PYTHON_EXECUTABLE)
+@@ -171,9 +174,12 @@ find_program(PSQL_BIN psql)
+ find_package(PythonInterp 2)
  
  # Packages in sources
 -macro_optional_find_package (MySQL)

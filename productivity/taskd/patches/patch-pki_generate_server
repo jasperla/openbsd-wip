@@ -1,0 +1,34 @@
+$OpenBSD: patch-pki_generate_server,v 1.1.1.1 2014/07/12 22:08:35 landry Exp $
+--- pki/generate.server.orig	Sun May 10 21:35:22 2015
++++ pki/generate.server	Tue Jul 14 20:11:58 2015
+@@ -1,7 +1,7 @@
+ #!/bin/sh
+ 
+ # Take the correct binary to create the certificates
+-CERTTOOL=$(which gnutls-certtool || which certtool)
++CERTTOOL=$(which certtool)
+ if [ -z "$CERTTOOL" ]
+ then
+   echo "ERROR: No certtool found" >&2
+@@ -11,7 +11,7 @@ fi
+ . ./vars
+ 
+ DNSNAMES="`hostname`"
+-IPADDRS=$(for ip in $(ifconfig -a | awk '/inet/ {print $2}' | egrep -v '(^::1$|^fe80:|^127\.)') ; do
++IPADDRS=$(for ip in $(ifconfig -A | awk '/inet/ {print $2}' | egrep -v '(^::1$|^fe80:|^127\.)') ; do
+   if [ -n "$ip" ]
+   then
+     echo "$ip "
+@@ -29,6 +29,12 @@ chmod 600 server.key.pem
+ cat <<EOF >server.info
+ organization = $ORGANIZATION
+ cn = $CN
++$(for host in $DNSNAMES ; do
++	echo dns_name = $host
++done)
++$(for ip in $IPADDRS ; do
++	echo ip_address = $ip
++done)
+ tls_www_server
+ encryption_key
+ signing_key

@@ -2,7 +2,7 @@
 
 COMMENT =		Gnu All Mobile Management Utilities
 
-DISTNAME =		gammu-1.36.1
+DISTNAME =		gammu-1.36.3
 
 SHARED_LIBS += 		Gammu 0.0 # 7.1
 SHARED_LIBS += 		gsmsd 0.0 # 7.1
@@ -52,7 +52,7 @@ WANTLIB += 		mysqlclient
 .if ${FLAVOR:Mpgsql}
 CONFIGURE_ARGS += 	-DPSQL_BACKEND=ON
 LIB_DEPENDS += 		databases/postgresql
-RUN_DEPENDS +=		databases/libdbi-drivers,-pgsql \
+RUN_DEPENDS +=		databases/libdbi-drivers,-pgsql
 WANTLIB += 		pq
 .endif
 

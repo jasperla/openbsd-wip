@@ -1,17 +1,17 @@
 $OpenBSD$
---- tests/CMakeLists.txt.orig	Fri Aug 30 22:47:45 2013
-+++ tests/CMakeLists.txt	Fri Aug 30 22:48:32 2013
-@@ -58,9 +58,10 @@ if (HAVE_MYSQL_MYSQL_H OR LIBDBI_FOUND OR HAVE_POSTGRE
+--- tests/CMakeLists.txt.orig	Mon Jun 15 10:11:01 2015
++++ tests/CMakeLists.txt	Mon Jun 15 21:20:50 2015
+@@ -63,9 +63,10 @@ if (HAVE_MYSQL_MYSQL_H OR LIBDBI_FOUND OR HAVE_POSTGRE
          include_directories (${POSTGRES_INCLUDE_DIR})
      endif (POSTGRES_FOUND)
  
 -    add_executable(sql-parse-date sql-parse-date.c)
 -    target_link_libraries (sql-parse-date gsmsd)
--    add_test(sql-parse-date "${GAMMU_TEST_PATH}/sql-parse-date${GAMMU_TEST_SUFFIX}")
+-    add_test(sql-parse-date "${GAMMU_TEST_PATH}/sql-parse-date${CMAKE_EXECUTABLE_SUFFIX}")
 +# Disable SQL tests
 +#    add_executable(sql-parse-date sql-parse-date.c)
 +#    target_link_libraries (sql-parse-date gsmsd)
-+#    add_test(sql-parse-date "${GAMMU_TEST_PATH}/sql-parse-date${GAMMU_TEST_SUFFIX}")
++#    add_test(sql-parse-date "${GAMMU_TEST_PATH}/sql-parse-date${CMAKE_EXECUTABLE_SUFFIX}")
  endif (HAVE_MYSQL_MYSQL_H OR LIBDBI_FOUND OR HAVE_POSTGRESQL_LIBPQ_FE_H)
  
  # Backup comments
