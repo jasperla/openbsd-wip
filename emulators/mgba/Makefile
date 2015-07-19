@@ -11,9 +11,8 @@ PKGNAME-qt =		mgba-qt-$V
 MULTI_PACKAGES =	-main -qt
 
 .include <bsd.port.arch.mk>
-.if ${BUILD_PACKAGES:M-main}
+
 SHARED_LIBS +=  mgba                      0.0 # 0.1
-.endif
 
 CATEGORIES =		emulators
 
@@ -24,11 +23,10 @@ MAINTAINER =		Anthony J. Bentley <anthony@cathet.us>
 # MPL 2.0
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB-common =	GL GLU MagickCore MagickWand SDL avcodec avformat \
+WANTLIB-main =		GL GLU MagickCore MagickWand SDL avcodec avformat \
 			avresample avutil c edit m png pthread swscale \
 			termcap z zip
-WANTLIB-main =		${WANTLIB-common}
-WANTLIB-qt =		${WANTLIB-common} Qt5Core Qt5Gui Qt5Multimedia \
+WANTLIB-qt =		${WANTLIB-main} Qt5Core Qt5Gui Qt5Multimedia \
 			Qt5Network Qt5OpenGL Qt5Widgets estdc++ mgba
 
 GH_ACCOUNT =		mgba-emu
@@ -44,14 +42,13 @@ LIB_DEPENDS-common =	archivers/libzip \
 			graphics/ffmpeg \
 			devel/sdl
 LIB_DEPENDS-main =	${LIB_DEPENDS-common}
-LIB_DEPENDS-qt =	${LIB_DEPENDS-common} ${MODQT_LIB_DEPENDS} \
+LIB_DEPENDS-qt =	${LIB_DEPENDS-common} \
+			${MODQT_LIB_DEPENDS} \
 			emulators/mgba,-main
 
 .if ${BUILD_PACKAGES:M-qt}
 MODULES +=		x11/qt5
 .endif
-
-CONFIGURE_ARGS +=	-DUSE_PIXMAN=No
 
 NO_TEST =		Yes
 
