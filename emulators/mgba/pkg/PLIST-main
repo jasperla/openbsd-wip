@@ -1,6 +1,0 @@
-@comment $OpenBSD$
-@bin bin/mgba
-@lib lib/libmgba.so.${LIBmgba_VERSION}
-share/doc/mGBA/
-share/doc/mGBA/CHANGES
-share/doc/mGBA/README.md
