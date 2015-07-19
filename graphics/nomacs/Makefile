@@ -2,7 +2,7 @@
 
 COMMENT =		small and fast Qt image viewer
 
-V = 			2.2.0
+V = 			2.4.4
 DISTNAME =		nomacs-${V}-source
 PKGNAME =		nomacs-${V}
 
@@ -22,15 +22,24 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=nomacs/}
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		devel/cmake \
-			x11/qt4
+			x11/qt4 \
+			gcc4
+
+MODGCC4_ARCHS =		*
+MODGCC4_LANGS =		c c++
 
 RUN_DEPENDS =		devel/desktop-file-utils
 
-LIB_DEPENDS =		graphics/exiv2 \
+LIB_DEPENDS =		archivers/quazip \
+			graphics/libwebp \
+			graphics/exiv2 \
 			graphics/lcms2 \
 			graphics/libraw \
 			graphics/opencv \
 			graphics/tiff
+
+CONFIGURE_ARGS =	-DUSE_SYSTEM_WEBP:Bool=ON \
+			-DUSE_SYSTEM_QUAZIP:Bool=ON
 
 WRKDIST =		${WRKDIR}/${PKGNAME}
 

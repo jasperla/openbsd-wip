@@ -1,7 +1,7 @@
 $OpenBSD$
---- cmake/UnixBuildTarget.cmake.orig	Mon Dec 22 21:20:03 2014
-+++ cmake/UnixBuildTarget.cmake	Mon Dec 22 21:20:49 2014
-@@ -19,7 +19,7 @@ if(NOT ENABLE_PLUGINS)
+--- cmake/UnixBuildTarget.cmake.orig	Wed Apr 15 11:05:16 2015
++++ cmake/UnixBuildTarget.cmake	Sun Jul 19 21:05:46 2015
+@@ -32,7 +32,7 @@ if(NOT ENABLE_PLUGINS)
    #  translations
    install(FILES ${NOMACS_QM} DESTINATION share/nomacs/translations)
    #  manpage

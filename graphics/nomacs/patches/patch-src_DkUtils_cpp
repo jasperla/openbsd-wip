@@ -1,25 +1,22 @@
 $OpenBSD$
-
 No sys/sysinfo.h under OpenBSD. Remove Q_WS_X11 sections.
-
---- src/DkUtils.cpp.orig	Mon Dec 22 08:41:46 2014
-+++ src/DkUtils.cpp	Mon Dec 22 08:42:32 2014
-@@ -28,10 +28,6 @@
- #include "DkUtils.h"
+--- src/DkUtils.cpp.orig	Sun Jul 19 21:21:23 2015
++++ src/DkUtils.cpp	Sun Jul 19 21:22:06 2015
+@@ -29,10 +29,6 @@
  #include "DkMath.h"
+ #include "DkSettings.h"
  
 -#ifdef Q_WS_X11
 -#include <sys/sysinfo.h>
 -#endif
 -
- int nmc::DkUtils::debugLevel = DK_MODULE;
- 
- namespace nmc {
-@@ -50,15 +46,6 @@ double DkMemory::getTotalMemory() {
- 	if (GlobalMemoryStatusEx(&MemoryStatus)) {
- 		mem = MemoryStatus.ullTotalPhys;
+ #pragma warning(push, 0)	// no warnings from includes - begin
+ #include <QString>
+ #include <QFileInfo>
+@@ -79,14 +75,6 @@ double DkMemory::getTotalMemory() {
+ 		mem = (double)MemoryStatus.ullTotalPhys;
  	}
--
+ 
 -#elif defined Q_WS_X11
 -
 -	struct sysinfo info;
@@ -31,9 +28,9 @@ No sys/sysinfo.h under OpenBSD. Remove Q_WS_X11 sections.
  #elif defined Q_WS_MAC
  	// TODO: could somebody (with a mac please add the corresponding calls?
  #endif
-@@ -85,13 +72,6 @@ double DkMemory::getFreeMemory() {
+@@ -113,13 +101,6 @@ double DkMemory::getFreeMemory() {
  	if (GlobalMemoryStatusEx(&MemoryStatus)) {
- 		mem = MemoryStatus.ullAvailPhys;
+ 		mem = (double)MemoryStatus.ullAvailPhys;
  	}
 -
 -#elif defined Q_WS_X11
