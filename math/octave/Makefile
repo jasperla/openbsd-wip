@@ -1,8 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2015/06/17 20:03:11 sthen Exp $
-
-# vax:   no IEEE arithmetic
-# sparc: fPIC version of libgcc.a needed but not available
-NOT_FOR_ARCHS =	vax sparc
+# $OpenBSD: Makefile,v 1.73 2015/07/20 23:14:58 ajacoutot Exp $
 
 COMMENT =	high-level language for numerical computations
 
@@ -10,19 +6,29 @@ VERSION =	4.0.0
 DISTNAME =	octave-${VERSION}
 CATEGORIES =	math
 
-SHARED_LIBS =	cruft		5.0 \
-		octave		5.0 \
-		octinterp	4.0
+SHARED_LIBS +=	octave		6.0 # 3.0
+SHARED_LIBS +=	octgui		0.0 # 1.0
+SHARED_LIBS +=	octinterp	5.0 # 3.0
 
 HOMEPAGE =	https://www.gnu.org/software/octave/
 
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 
-# GPL v3
+# GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB=	c m ncurses stdc++ z ${MODFORTRAN_WANTLIB} \
-		fltk fftw3>=3 lapack>=3 blas>=1 pcre>=1 curl>=6
+WANTLIB += ${MODFORTRAN_WANTLIB}
+WANTLIB += FLAC GL GLU GraphicsMagick GraphicsMagick++ ICE QtGui
+WANTLIB += QtNetwork QtOpenGL SM X11 X11-xcb Xau Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xft Xi Xinerama Xrandr Xrender Xt
+WANTLIB += Xxf86vm amd arpack blas bz2 c camd ccolamd cholmod
+WANTLIB += colamd crypto curl cxsparse drm expat fftw3 fftw3_threads
+WANTLIB += fftw3f fftw3f_threads fltk fltk_gl fontconfig freetype
+WANTLIB += g2c gl2ps glapi glpk gmp hdf5 iconv idn intl lapack
+WANTLIB += lcms2 ltdl lzma m ncurses ogg pcre portaudio pthread
+WANTLIB += pthread-stubs qhull qrupdate qscintilla2 sndfile sndio
+WANTLIB += ssl stdc++ suitesparseconfig umfpack usbhid util vorbis
+WANTLIB += vorbisenc xcb xcb-dri2 xcb-glx z
 
 MASTER_SITES =	${MASTER_SITE_GNU:=octave/}
 
@@ -30,13 +36,10 @@ MODULES =	fortran \
 		x11/qt4
 
 BUILD_DEPENDS =	${MODFORTRAN_BUILD_DEPENDS} \
+		devel/desktop-file-utils \
 		textproc/gsed
 
-# configure checks for desktop-file-install(1)
-BUILD_DEPENDS +=devel/desktop-file-utils
-
-RUN_DEPENDS =	devel/gmake \
-		devel/desktop-file-utils
+RUN_DEPENDS =	devel/desktop-file-utils
 
 LIB_DEPENDS =	${MODFORTRAN_LIB_DEPENDS} \
 		audio/libsndfile \
@@ -45,6 +48,7 @@ LIB_DEPENDS =	${MODFORTRAN_LIB_DEPENDS} \
 		devel/glpk \
 		devel/pcre \
 		graphics/GraphicsMagick \
+		math/arpack \
 		math/fftw3 \
 		math/fftw3,float \
 		math/lapack \
@@ -52,62 +56,26 @@ LIB_DEPENDS =	${MODFORTRAN_LIB_DEPENDS} \
 		math/hdf5 \
 		math/qhull \
 		math/qrupdate \
+		math/suitesparse \
 		net/curl \
+		print/gl2ps \
 		x11/fltk
 
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
-USE_LIBTOOL =		gnu
-#CONFIGURE_STYLE =	autoconf
-#AUTOCONF_VERSION =	2.69
 CONFIGURE_STYLE =	gnu
 # needs GNU readline
 CONFIGURE_ARGS	=	${CONFIGURE_SHARED} \
-			--disable-readline
+			--disable-readline \
+			--disable-java
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		LRELEASE="lrelease4" \
 		F77=${FC}
-MAKE_ENV =	LIBcruft_VERSION=${LIBcruft_VERSION} \
-		LIBoctave_VERSION=${LIBoctave_VERSION} \
-		LIBoctinterp_VERSION=${LIBoctinterp_VERSION}
-
-.if ${MACHINE_ARCH} == "alpha"
-CONFIGURE_ENV +=	FFLAGS="${FFLAGS}"
-.endif
 
 # needed to build on amd64
-#GCC_ARCH =	${MACHINE_ARCH}-unknown-openbsd${OSREV}
-#GNU_ARCH =	${GCC_ARCH:S/amd64/x86_64/}
-#SUBST_VARS =	GNU_ARCH VERSION
-SUBST_VARS = VERSION
-
-# need to use fpic version of libgcc.a
-#post-configure:
-#	@perl -pi -e 's#(gcc-lib/${GCC_ARCH}/[\d.]+)\s#\1/fpic #' \
-#		${WRKBUILD}/Makeconf
-
-.ifmake test
-# some tests need HOME to be writable
-PORTHOME =	/tmp
-# define some user for tilde expansion test
-MAKE_ENV +=	USER=nobody
-.endif
-
-post-test:
-	@rm -f /tmp/oct-*
-
-# fix ls-R and install HTML documentation
-HTMLDOCS =	interpreter liboctave
-post-install:
-	@cd ${PREFIX}/share/octave && \
-		perl -pi -e "s,${PREFIX},${TRUEPREFIX}," ls-R
-	@cd ${PREFIX}/libexec/octave && \
-		perl -pi -e "s,${PREFIX},${TRUEPREFIX}," ls-R
-.for d in ${HTMLDOCS}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/octave/${d}
-	${INSTALL_DATA} ${WRKBUILD}/doc/${d}/HTML/*.html \
-		${PREFIX}/share/doc/octave/${d}
-.endfor
+GCC_ARCH =	${MACHINE_ARCH}-unknown-openbsd${OSREV}
+GNU_ARCH =	${GCC_ARCH:S/amd64/x86_64/}
+SUBST_VARS =	GNU_ARCH VERSION
 
 .include <bsd.port.mk>
