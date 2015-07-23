@@ -788,7 +788,7 @@ include/${FULLPKGNAME}/octave/xpow.h
 include/${FULLPKGNAME}/octave/zfstream.h
 @info info/liboctave.info
 @info info/octave.info
-lib/charset.alias
+@comment lib/charset.alias
 lib/octave/
 lib/octave/${VERSION}/
 lib/octave/${VERSION}/__delaunayn__.a

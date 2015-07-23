@@ -1,6 +1,5 @@
 - Enable GNU readline (ereadline)?
 - Enable Java?
 - Investigate "OSMesa library not found.  Offscreen rendering with OpenGL will be disabled."
-- Ship HTML documentation?
 - Not tested on !amd64 platforms
-- Test Octave package installation (https://www.gnu.org/software/octave/doc/interpreter/Installing-and-Removing-Packages.html)
+- PLIST has conflict with converters/libiconv, so @comment lib/charset.alias
