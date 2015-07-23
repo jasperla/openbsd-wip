@@ -1,8 +1,11 @@
+# $OpenBSD$
+
+ONLY_FOR_ARCHS =	${GO_ARCHS}
+
 COMMENT =		Go programming language
 
-EXTRACT_SUFX =		.src.tar.gz
-DISTNAME = 		go${VERSION}${PATCHLEVEL}
-PKGNAME = 		go-${VERSION}${PATCHLEVEL}
+EXTRACT_SUFX =		.tar.gz
+DISTNAME = 		go-${VERSION}${PL}
 CATEGORIES =		lang
 
 HOMEPAGE =		http://golang.org/
@@ -14,7 +17,11 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c m pthread
 
-MASTER_SITES ?=		http://golang.org/dl/
+MASTER_SITES0 ?=	http://golang.org/dl/
+MASTER_SITES1 =		https://github.com/golang/tools/archive/
+
+DISTFILES =		${DISTNAME}{go${VERSION}${PL}.src}${EXTRACT_SUFX}:0 \
+			go-tools-${GT_DATE}{${GT_COMMIT}}${EXTRACT_SUFX}:1
 
 SEPARATE_BUILD =	simple
 CONFIGURE_STYLE =	None
@@ -46,20 +53,31 @@ PKG_ARGS += 		-Damd64=0 -Di386=0
 GOCFG =			/${GOOS}_${GOARCH}
 GOEXE =			${GOCFG}/${EXEPREFIX}
 
-MAKE_ENV +=		CC="${CC}" \
+MAKE_ENV =		CC="${CC}" \
 			CXX="${CXX}" \
 			GOROOT=${WRKDIST} \
 			GOBIN=${WRKDIST}/bin \
 			GOROOT_FINAL=${GOROOT}
+
+# Go 1.5+ needs this, and 1.4 ignores this
+MAKE_ENV +=		GOROOT_BOOTSTRAP=${GOROOT:H}/1.4
+
+# Go tools need this
+MAKE_ENV +=		GOPATH="${WRKDIR}/tools/go"
 
 do-configure:
 .	if ${GOARCH} == "unknown"
 		@echo "Unable to determine GOARCH for ${MACHINE_ARCH}."
 		@exit 1
 .	endif
+	mkdir -p ${WRKDIR}/tools/go/src/golang.org/x
+	mv ${WRKDIR}/tools-${GT_COMMIT} ${WRKDIR}/tools/go/src/golang.org/x/tools
 
 do-build:
 	@cd ${WRKSRC} && ${MAKE_ENV} ./make.bash --no-banner
+.for tool in ${TOOLS}
+	${MAKE_ENV} ${WRKDIST}/bin/go install golang.org/x/tools/cmd/${tool}
+.endfor
 
 do-test:
 	@cd ${WRKSRC} && \
@@ -69,7 +87,7 @@ do-test:
 do-install:
 	${INSTALL_PROGRAM_DIR} ${GOROOT}/bin
 
-	${INSTALL_PROGRAM} -p ${WRKDIST}/bin/go{,fmt} ${GOROOT}/bin
+	${INSTALL_PROGRAM} -p ${WRKDIST}/bin/* ${GOROOT}/bin
 
 	@cd ${WRKDIST} && \
 		find . ! -name .hg\* -type f -maxdepth 1 \

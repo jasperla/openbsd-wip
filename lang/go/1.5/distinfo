@@ -1,2 +1,4 @@
-SHA256 (go1.5.src.tar.gz) = lBmXfxxmy8L9SnY5wfN6YTcM0Pk1BeVlMyH1KTxwbZI=
-SIZE (go1.5.src.tar.gz) = 12198437
+SHA256 (go-1.5.tar.gz) = lBmXfxxmy8L9SnY5wfN6YTcM0Pk1BeVlMyH1KTxwbZI=
+SHA256 (go-tools-20150716.tar.gz) = AIaAH1VKrbJrncPhy3k8Lj2uu+lzG8ONlxyhvsbQmNo=
+SIZE (go-1.5.tar.gz) = 12198437
+SIZE (go-tools-20150716.tar.gz) = 1628915

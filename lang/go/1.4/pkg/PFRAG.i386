@@ -1,5 +1,5 @@
 @comment $OpenBSD: PFRAG.i386,v 1.5 2014/12/23 12:21:37 jsing Exp $
-go/1.4/src/runtime/zasm_openbsd_386.h
-go/1.4/src/runtime/zgoarch_386.go
-go/1.4/src/runtime/zruntime_defs_openbsd_386.go
-go/1.4/src/runtime/zsys_openbsd_386.s
+go/${VERSION}/src/runtime/zasm_openbsd_386.h
+go/${VERSION}/src/runtime/zgoarch_386.go
+go/${VERSION}/src/runtime/zruntime_defs_openbsd_386.go
+go/${VERSION}/src/runtime/zsys_openbsd_386.s

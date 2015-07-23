@@ -1,0 +1,21 @@
+$OpenBSD$
+--- src/cmd/go/build.go.orig	Mon Jul 20 16:15:37 2015
++++ src/cmd/go/build.go	Mon Jul 20 16:19:19 2015
+@@ -73,6 +73,8 @@ and test commands:
+ 	-work
+ 		print the name of the temporary work directory and
+ 		do not delete it when exiting.
++		Work directory is rooted under $GOWORKDIR, or $TMPDIR if former was not
++		specified.
+ 	-x
+ 		print the commands.
+ 
+@@ -674,7 +676,7 @@ func (b *builder) init() {
+ 	if buildN {
+ 		b.work = "$WORK"
+ 	} else {
+-		b.work, err = ioutil.TempDir("", "go-build")
++		b.work, err = ioutil.TempDir(os.Getenv("GOWORKDIR"), "go-build")
+ 		if err != nil {
+ 			fatalf("%s", err)
+ 		}

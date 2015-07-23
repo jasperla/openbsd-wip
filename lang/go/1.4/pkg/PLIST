@@ -1,6 +1,7 @@
 @comment $OpenBSD: PLIST,v 1.12 2014/12/23 12:21:37 jsing Exp $
 @option no-default-conflict
 @conflict go->=1.4,<1.5
+@pkgpath devel/go-tools
 %%amd64%%
 %%i386%%
 go/
@@ -11,8 +12,25 @@ go/${VERSION}/LICENSE
 go/${VERSION}/PATENTS
 go/${VERSION}/README
 go/${VERSION}/VERSION
+go/${VERSION}/bin/
+@bin go/${VERSION}/bin/benchcmp
+@bin go/${VERSION}/bin/callgraph
+@bin go/${VERSION}/bin/digraph
+@bin go/${VERSION}/bin/eg
+@bin go/${VERSION}/bin/fiximports
 @bin go/${VERSION}/bin/go
+@bin go/${VERSION}/bin/godex
+@bin go/${VERSION}/bin/godoc
 @bin go/${VERSION}/bin/gofmt
+@bin go/${VERSION}/bin/goimports
+@bin go/${VERSION}/bin/gomvpkg
+@bin go/${VERSION}/bin/gorename
+@bin go/${VERSION}/bin/gotype
+@bin go/${VERSION}/bin/oracle
+@bin go/${VERSION}/bin/ssadump
+@bin go/${VERSION}/bin/stress
+@bin go/${VERSION}/bin/stringer
+@bin go/${VERSION}/bin/tipgodoc
 go/${VERSION}/doc/
 go/${VERSION}/doc/articles/
 go/${VERSION}/doc/articles/go_command.html
@@ -644,6 +662,7 @@ go/${VERSION}/pkg/tool${GOCFG}/
 @bin go/${VERSION}/pkg/tool${GOEXE}l
 @bin go/${VERSION}/pkg/tool${GOCFG}/addr2line
 @bin go/${VERSION}/pkg/tool${GOCFG}/cgo
+@bin go/${VERSION}/pkg/tool${GOCFG}/cover
 @bin go/${VERSION}/pkg/tool${GOCFG}/dist
 @bin go/${VERSION}/pkg/tool${GOCFG}/fix
 @bin go/${VERSION}/pkg/tool${GOCFG}/nm
@@ -3704,3 +3723,4 @@ go/${VERSION}/src/unicode/utf8/utf8.go
 go/${VERSION}/src/unicode/utf8/utf8_test.go
 go/${VERSION}/src/unsafe/
 go/${VERSION}/src/unsafe/unsafe.go
+@rcscript ${RCDIR}/godoc
