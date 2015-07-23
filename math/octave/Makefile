@@ -44,9 +44,9 @@ RUN_DEPENDS =	devel/desktop-file-utils
 LIB_DEPENDS =	${MODFORTRAN_LIB_DEPENDS} \
 		audio/libsndfile \
 		audio/portaudio-svn \
-		editors/qscintilla \
 		devel/glpk \
 		devel/pcre \
+		editors/qscintilla \
 		graphics/GraphicsMagick \
 		math/arpack \
 		math/fftw3 \
@@ -64,10 +64,12 @@ LIB_DEPENDS =	${MODFORTRAN_LIB_DEPENDS} \
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
-# needs GNU readline
+# --disable-readline: needs GNU readline
+# --without-OSMesa: "OSMesa library not found.  Offscreen rendering with OpenGL will be disabled."
 CONFIGURE_ARGS	=	${CONFIGURE_SHARED} \
 			--disable-readline \
-			--disable-java
+			--disable-java \
+			--without-OSMesa
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		LRELEASE="lrelease4" \
