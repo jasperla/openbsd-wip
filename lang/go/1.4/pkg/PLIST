@@ -3221,6 +3221,7 @@ go/${VERSION}/src/runtime/rt0_windows_386.s
 go/${VERSION}/src/runtime/rt0_windows_amd64.s
 go/${VERSION}/src/runtime/rune.go
 go/${VERSION}/src/runtime/runtime-gdb.py
+go/${VERSION}/src/runtime/runtime-gdb.pyc
 go/${VERSION}/src/runtime/runtime.c
 go/${VERSION}/src/runtime/runtime.go
 go/${VERSION}/src/runtime/runtime.h

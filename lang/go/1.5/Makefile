@@ -14,7 +14,7 @@ DIRS =			doc lib misc src pkg
 TOOLS =			benchcmp callgraph cover digraph eg fiximports godex \
 			godoc goimports gomvpkg gorename gotype oracle ssadump \
 			stress stringer tipgodoc
-#TOOLS +=		html2article present 
+#TOOLS +=		html2article present
 
 post-extract:
 	mv ${WRKDIR}/go-go1.5beta2 ${WRKDIR}/go

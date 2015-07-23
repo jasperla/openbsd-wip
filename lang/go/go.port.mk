@@ -40,7 +40,7 @@ MODGO_SETUP_WORKSPACE =	mkdir -p ${WRKSRC:H}; \
 
 MODGO_BUILD_TARGET =	${MODGO_BUILD_CMD} ${ALL_TARGET}
 
-MODGO_FLAGS ?=		-x -work -pkgdir "${WRKBUILD}" 
+MODGO_FLAGS ?=		-x -work -pkgdir "${WRKBUILD}"
 
 MODGO_TYPE ?=		bin
 

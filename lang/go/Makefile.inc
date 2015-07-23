@@ -27,6 +27,8 @@ SEPARATE_BUILD =	simple
 CONFIGURE_STYLE =	None
 SUBST_VARS =		GOEXE GOCFG VERSION
 
+MODULES =		lang/python
+
 BUILD_DEPENDS +=	shells/bash
 
 WRKDIST =		${WRKDIR}/go
@@ -109,3 +111,7 @@ do-install:
 	${INSTALL_PROGRAM_DIR} ${GOROOT}/pkg/tool/${GOOS}_${GOARCH}
 	${INSTALL_PROGRAM} -p ${WRKDIST}/pkg/tool/${GOOS}_${GOARCH}/* \
 		${GOROOT}/pkg/tool/${GOOS}_${GOARCH}
+
+	# Compile python scripts
+	@find ${PREFIX} -name \*.py \
+		-exec ${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py {} +
