@@ -2,16 +2,16 @@
 
 COMMENT =		c++ protocol buffers
 
-DISTNAME =		protobuf-2.4.1
-REVISION =		2
+V =			2.6.1
+DISTNAME =		protobuf-$V
 
-SHARED_LIBS +=		protobuf	1.0   # 7.0
-SHARED_LIBS +=		protoc		1.0   # 7.0
-SHARED_LIBS +=		protobuf-lite	1.0   # 7.0
+SHARED_LIBS +=		protobuf	2.0   # 7.0
+SHARED_LIBS +=		protoc		2.0   # 7.0
+SHARED_LIBS +=		protobuf-lite	2.0   # 7.0
 
 CATEGORIES =		devel
 
-HOMEPAGE =		https://code.google.com/p/protobuf/
+HOMEPAGE =		https://developers.google.com/protocol-buffers/
 
 MAINTAINER =		Vincent Auclair <auclair.vincent@gmail.com>
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=	c m pthread stdc++ z
 
-MASTER_SITES =		https://protobuf.googlecode.com/files/
+MASTER_SITES =	https://github.com/google/protobuf/releases/download/v$V/
 
 TEST_DEPENDS =	devel/gtest
 

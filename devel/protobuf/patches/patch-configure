@@ -1,7 +1,7 @@
 $OpenBSD: patch-configure,v 1.4 2013/11/03 07:52:02 ajacoutot Exp $
---- configure.orig	Sat Apr 30 19:24:59 2011
-+++ configure	Sat Jul  9 02:36:18 2011
-@@ -904,7 +904,6 @@ CXX
+--- configure.orig	Wed Oct 22 14:10:28 2014
++++ configure	Tue Jul 14 01:29:04 2015
+@@ -806,7 +806,6 @@ CXX
  CXXFLAGS
  CCC
  CXXCPP'
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure,v 1.4 2013/11/03 07:52:02 ajacoutot Exp $
  
  # Initialize some variables set by options.
  ac_init_help=
-@@ -15569,7 +15568,7 @@ test -n "$PTHREAD_CC" || PTHREAD_CC="${CC}"
+@@ -16470,7 +16469,7 @@ test -n "$PTHREAD_CC" || PTHREAD_CC="${CC}"
  	# FIXME: -fPIC is required for -shared on many architectures,
  	# so we specify it here, but the right way would probably be to
  	# properly detect whether it is actually required.
@@ -18,9 +18,9 @@ $OpenBSD: patch-configure,v 1.4 2013/11/03 07:52:02 ajacoutot Exp $
  	LIBS="$PTHREAD_LIBS $LIBS"
  	CC="$PTHREAD_CC"
  
-@@ -15947,14 +15946,6 @@ $as_echo "$as_me: WARNING: could not find an STL hash_
-    fi
- 
+@@ -16917,14 +16916,6 @@ fi
+     ;;
+ esac
  
 -# HACK:  Make gtest's configure script pick up our copy of CFLAGS and CXXFLAGS,
 -#   since the flags added by ACX_CHECK_SUNCC must be used when compiling gtest
