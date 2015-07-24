@@ -1,5 +1,9 @@
 # $OpenBSD: Makefile,v 1.73 2015/07/20 23:14:58 ajacoutot Exp $
 
+# vax:   no IEEE arithmetic
+# sparc: fPIC version of libgcc.a needed but not available
+NOT_FOR_ARCHS =	vax sparc
+
 COMMENT =	high-level language for numerical computations
 
 VERSION =	4.0.0
@@ -20,24 +24,27 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += ${MODFORTRAN_WANTLIB}
 WANTLIB += FLAC GL GLU GraphicsMagick GraphicsMagick++ ICE QtGui
 WANTLIB += QtNetwork QtOpenGL SM X11 X11-xcb Xau Xcursor Xdamage
-WANTLIB += Xdmcp Xext Xfixes Xft Xi Xinerama Xrandr Xrender Xt
-WANTLIB += Xxf86vm amd arpack blas bz2 c camd ccolamd cholmod
+WANTLIB += Xdmcp Xext Xfixes Xft Xi Xinerama Xmu Xrandr Xrender
+WANTLIB += Xt Xxf86vm amd arpack blas bz2 c camd ccolamd cholmod
 WANTLIB += colamd crypto curl cxsparse drm expat fftw3 fftw3_threads
 WANTLIB += fftw3f fftw3f_threads fltk fltk_gl fontconfig freetype
-WANTLIB += g2c gl2ps glapi glpk gmp hdf5 iconv idn intl lapack
-WANTLIB += lcms2 ltdl lzma m ncurses ogg pcre portaudio pthread
+WANTLIB += g2c gl2ps glapi glpk glut gmp hdf5 idn lapack lcms2
+WANTLIB += ltdl lzma m ncurses ogg pcre png portaudio pthread
 WANTLIB += pthread-stubs qhull qrupdate qscintilla2 sndfile sndio
 WANTLIB += ssl stdc++ suitesparseconfig umfpack usbhid util vorbis
 WANTLIB += vorbisenc xcb xcb-dri2 xcb-glx z
 
 MASTER_SITES =	${MASTER_SITE_GNU:=octave/}
 
-MODULES =	fortran \
+MODULES =	devel/gettext \
+		fortran \
 		x11/qt4
 
 BUILD_DEPENDS =	${MODFORTRAN_BUILD_DEPENDS} \
-		devel/desktop-file-utils \
 		textproc/gsed
+
+# configure checks for desktop-file-install(1)
+BUILD_DEPENDS +=devel/desktop-file-utils
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
@@ -51,8 +58,6 @@ LIB_DEPENDS =	${MODFORTRAN_LIB_DEPENDS} \
 		math/arpack \
 		math/fftw3 \
 		math/fftw3,float \
-		math/lapack \
-		math/blas \
 		math/hdf5 \
 		math/qhull \
 		math/qrupdate \
