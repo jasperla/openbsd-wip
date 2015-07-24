@@ -1,0 +1,8 @@
+Valhalla is an open source routing engine and accompanying libraries for use
+with Open Street Map data. This library, Mjolnir, serves as a set of
+applications suited to creating tiled routing data for use in the routing
+and searching projects under the valhalla organization. In keeping with the
+Norse mythological theme, the name Mjolnir was chosen as it represents a
+weapon of mass destruction. This seemed fitting since the main application
+deals mostly with pounding planet sized OSM data into tiny routable tile
+fragments.

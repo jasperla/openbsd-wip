@@ -1,0 +1,7 @@
+Valhalla is an open source routing engine and accompanying libraries for
+use with Open Street Map data. This library, Baldr, serves as a set of
+routing-specific data structures distilled into a library for use within
+other projects under the valhalla organization. In keeping with the Norse
+mythological theme, the name Baldr was chosen as a backronym standing for:
+Base ALgorithms and Data Resource, since the library deals mostly with
+accessing routing data and algorithms related to routing subproblems.

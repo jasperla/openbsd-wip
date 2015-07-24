@@ -1,0 +1,6 @@
+Valhalla is an open source routing engine and accompanying libraries for use
+with Open Street Map data. This library, Sif, provides dynamic, extensible
+costing for edges and transitions between edges (turn costs). Its primary
+use is in the routing engine when forming the best path between locations.
+In keeping with the Norse mythological theme, the name Sif was chosen since
+Sif is a companion to Thor.

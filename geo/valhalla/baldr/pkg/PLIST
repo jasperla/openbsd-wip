@@ -1,0 +1,38 @@
+@comment $OpenBSD$
+@bin bin/srtmtest
+include/valhalla/
+include/valhalla/baldr/
+include/valhalla/baldr/admin.h
+include/valhalla/baldr/admininfo.h
+include/valhalla/baldr/connectivity_map.h
+include/valhalla/baldr/datetime.h
+include/valhalla/baldr/directededge.h
+include/valhalla/baldr/edgeinfo.h
+include/valhalla/baldr/graphconstants.h
+include/valhalla/baldr/graphid.h
+include/valhalla/baldr/graphreader.h
+include/valhalla/baldr/graphtile.h
+include/valhalla/baldr/graphtileheader.h
+include/valhalla/baldr/json.h
+include/valhalla/baldr/location.h
+include/valhalla/baldr/nodeinfo.h
+include/valhalla/baldr/pathlocation.h
+include/valhalla/baldr/sign.h
+include/valhalla/baldr/signinfo.h
+include/valhalla/baldr/srtmtile.h
+include/valhalla/baldr/streetname.h
+include/valhalla/baldr/streetname_us.h
+include/valhalla/baldr/streetnames.h
+include/valhalla/baldr/streetnames_factory.h
+include/valhalla/baldr/streetnames_us.h
+include/valhalla/baldr/tilehierarchy.h
+include/valhalla/baldr/transitcalendar.h
+include/valhalla/baldr/transitdeparture.h
+include/valhalla/baldr/transitroute.h
+include/valhalla/baldr/transitstop.h
+include/valhalla/baldr/transittransfer.h
+include/valhalla/baldr/transittrip.h
+include/valhalla/baldr/turn.h
+lib/libvalhalla_baldr.a
+lib/libvalhalla_baldr.la
+@lib lib/libvalhalla_baldr.so.${LIBvalhalla_baldr_VERSION}

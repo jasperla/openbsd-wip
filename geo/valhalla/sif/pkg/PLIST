@@ -1,0 +1,15 @@
+@comment $OpenBSD$
+include/valhalla/
+include/valhalla/sif/
+include/valhalla/sif/autocost.h
+include/valhalla/sif/bicyclecost.h
+include/valhalla/sif/costconstants.h
+include/valhalla/sif/costfactory.h
+include/valhalla/sif/dynamiccost.h
+include/valhalla/sif/edgelabel.h
+include/valhalla/sif/hierarchylimits.h
+include/valhalla/sif/pedestriancost.h
+include/valhalla/sif/transitcost.h
+lib/libvalhalla_sif.a
+lib/libvalhalla_sif.la
+@lib lib/libvalhalla_sif.so.${LIBvalhalla_sif_VERSION}

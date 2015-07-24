@@ -1,0 +1,16 @@
+@comment $OpenBSD$
+@bin bin/citytest
+@bin bin/pathtest
+@bin bin/thor_service
+include/valhalla/
+include/valhalla/thor/
+include/valhalla/thor/adjacencylist.h
+include/valhalla/thor/astarheuristic.h
+include/valhalla/thor/edgestatus.h
+include/valhalla/thor/pathalgorithm.h
+include/valhalla/thor/pathinfo.h
+include/valhalla/thor/service.h
+include/valhalla/thor/trippathbuilder.h
+lib/libvalhalla_thor.a
+lib/libvalhalla_thor.la
+@lib lib/libvalhalla_thor.so.${LIBvalhalla_thor_VERSION}
