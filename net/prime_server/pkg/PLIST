@@ -1,0 +1,15 @@
+@comment $OpenBSD$
+@bin bin/prime_httpd
+@bin bin/prime_proxyd
+@bin bin/prime_serverd
+@bin bin/prime_workerd
+include/prime_server/
+include/prime_server/http_protocol.hpp
+include/prime_server/logging.hpp
+include/prime_server/netstring_protocol.hpp
+include/prime_server/prime_server.hpp
+include/prime_server/zmq_helpers.hpp
+lib/libprime_server.a
+lib/libprime_server.la
+@lib lib/libprime_server.so.${LIBprime_server_VERSION}
+lib/pkgconfig/libprime_server.pc
