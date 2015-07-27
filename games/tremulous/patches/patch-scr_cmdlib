@@ -1,3 +1,5 @@
+fix compile with -Werror
+
 --- src/tools/asm/cmdlib.c.orig	Sat Jul 25 13:22:03 2015
 +++ src/tools/asm/cmdlib.c	Sat Jul 25 13:22:31 2015
 @@ -313,7 +313,7 @@

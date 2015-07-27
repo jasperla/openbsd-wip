@@ -14,12 +14,10 @@ HOMEPAGE=	http://www.tremulous.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tremulous/}
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=	Yes
 
-WANTLIB=	c m pthread
+WANTLIB=	c m pthread SDL>=7
 LIB_DEPENDS=	devel/sdl
 
 ALL_TARGET=	build_release
@@ -27,12 +25,14 @@ MAKE_FLAGS=	USE_OPENAL=0
 
 WRKDIST=	${WRKDIR}/tremulous/tremulous-1.1.0-src/
 
+SUBST_VARS=	LOCALBASE
+
 post-extract:
 	@cd ${WRKDIR}/tremulous/ && tar zxf ${PKGNAME}-src.tar.gz
 
 do-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/wrapper ${PREFIX}/bin/tremulous
-	perl -pi -e 's,%%BASEPATH%%,${LOCALBASE}/share/tremulous/,g' ${PREFIX}/bin/tremulous
+	${SUBST_PROGRAM} ${FILESDIR}/tremulous ${PREFIX}/bin/tremulous
+	${SUBST_PROGRAM} ${FILESDIR}/tremulous-server ${PREFIX}/bin/tremulous-server
 	${INSTALL_PROGRAM} ${WRKDIST}/build/release-openbsd-x86-64/tremulous.x86-64 ${PREFIX}/bin/tremulous-bin
 	${INSTALL_PROGRAM} ${WRKDIST}/build/release-openbsd-x86-64/tremded.x86-64 ${PREFIX}/bin/tremulous-dedicated
 	${INSTALL_DATA_DIR} ${PREFIX}/share/tremulous/base

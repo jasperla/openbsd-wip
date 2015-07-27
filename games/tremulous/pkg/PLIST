@@ -1,7 +1,8 @@
 @comment $OpenBSD$
 bin/tremulous
-bin/tremulous-bin
-bin/tremulous-dedicated
+bin/tremulous-server
+@bin bin/tremulous-bin
+@bin bin/tremulous-dedicated
 share/doc/tremulous/
 share/doc/tremulous/CC
 share/doc/tremulous/COPYING
