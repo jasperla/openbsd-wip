@@ -1,0 +1,23 @@
+From: Tim Angus <tma>
+Date: Thu, 15 Jul 2010 23:57:17 +0100
+Subject: [PATCH] Fixed sort by ping
+
+Origin: upstream, commit:756
+---
+ ui/joinserver.menu |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/ui/joinserver.menu b/ui/joinserver.menu
+index 38ee1b1..37d30a9 100644
+--- ui/joinserver.menu
++++ ui/joinserver.menu
+@@ -411,7 +411,7 @@
+       action
+       {
+         play "sound/misc/menu1.wav"; 
+-        uiScript ServerSort 4; 
++        uiScript ServerSort 3; 
+       
+         setitemcolor grpColumn backcolor 0 0 0 0; 
+         setitemcolor pingColumn backcolor 0.3 1 1 0.5
+-- 

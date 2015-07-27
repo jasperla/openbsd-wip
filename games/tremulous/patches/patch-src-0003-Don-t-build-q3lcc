@@ -1,0 +1,31 @@
+From: Damien Laniel <heretik@tuxfamily.org>
+Date: Mon, 12 Jul 2010 22:51:19 +0100
+Subject: [PATCH] Don't build q3lcc
+
+---
+ Makefile |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 5be1e5a..de9a1e4 100644
+--- Makefile
++++ Makefile
+@@ -709,7 +709,7 @@ ifeq ($(BUILD_MASTER_SERVER),1)
+ endif
+ 
+ build_release: B=$(BR)
+-build_release: makedirs tools
++build_release: makedirs #tools
+ 	$(MAKE) targets B=$(BR) CFLAGS="$(CFLAGS) $(RELEASE_CFLAGS) $(DEPEND_CFLAGS)"
+ ifeq ($(BUILD_MASTER_SERVER),1)
+ 	$(MAKE) -C $(MASTERDIR) release
+@@ -1507,7 +1507,7 @@ toolsclean:
+ 	$(MAKE) -C $(TOOLSDIR)/asm clean uninstall
+ 	$(MAKE) -C $(TOOLSDIR)/lcc clean uninstall
+ 
+-distclean: clean toolsclean
++distclean: clean #toolsclean
+ 	rm -rf $(BUILD_DIR)
+ 
+ installer: build_release
+-- 

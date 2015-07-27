@@ -1,0 +1,281 @@
+From: Simon McVittie <smcv@debian.org>
+Date: Sun, 19 Feb 2012 23:18:28 +0000
+Subject: Annotate printf- and scanf-like functions with gcc attributes
+
+This isn't necessarily suitable for upstream (non-portable) but it
+makes -Werror=format-security work better.
+
+Origin: vendor, Debian
+---
+ src/botlib/be_aas_main.h |    2 +-
+ src/botlib/botlib.h      |    2 +-
+ src/botlib/l_log.h       |    4 ++--
+ src/botlib/l_precomp.h   |    4 ++--
+ src/botlib/l_script.h    |    4 ++--
+ src/cgame/cg_local.h     |    4 ++--
+ src/game/bg_lib.h        |    2 +-
+ src/game/g_local.h       |    6 +++---
+ src/master/common.h      |    2 +-
+ src/qcommon/q_shared.h   |   12 ++++++------
+ src/qcommon/qcommon.h    |   10 +++++-----
+ src/renderer/tr_public.h |    4 ++--
+ src/server/server.h      |    2 +-
+ src/ui/ui_shared.h       |    4 ++--
+ 14 files changed, 31 insertions(+), 31 deletions(-)
+
+diff --git a/src/botlib/be_aas_main.h b/src/botlib/be_aas_main.h
+index 9f97818..e6b9eec 100644
+--- src/botlib/be_aas_main.h
++++ src/botlib/be_aas_main.h
+@@ -35,7 +35,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ extern aas_t aasworld;
+ 
+ //AAS error message
+-void QDECL AAS_Error(char *fmt, ...);
++void QDECL AAS_Error(char *fmt, ...) __attribute__((format(printf, 1, 2)));
+ //set AAS initialized
+ void AAS_SetInitialized(void);
+ //setup AAS with the given number of entities and clients
+diff --git a/src/botlib/botlib.h b/src/botlib/botlib.h
+index 6c5147d..1ae8442 100644
+--- src/botlib/botlib.h
++++ src/botlib/botlib.h
+@@ -170,7 +170,7 @@ typedef struct bot_entitystate_s
+ typedef struct botlib_import_s
+ {
+ 	//print messages from the bot library
+-	void		(QDECL *Print)(int type, char *fmt, ...);
++	void		(QDECL *Print)(int type, char *fmt, ...) __attribute__((format(printf, 2, 3)));
+ 	//trace a bbox through the world
+ 	void		(*Trace)(bsp_trace_t *trace, vec3_t start, vec3_t mins, vec3_t maxs, vec3_t end, int passent, int contentmask);
+ 	//trace a bbox against a specific entity
+diff --git a/src/botlib/l_log.h b/src/botlib/l_log.h
+index 91cbd95..154f981 100644
+--- src/botlib/l_log.h
++++ src/botlib/l_log.h
+@@ -37,9 +37,9 @@ void Log_Close(void);
+ //close log file if present
+ void Log_Shutdown(void);
+ //write to the current opened log file
+-void QDECL Log_Write(char *fmt, ...);
++void QDECL Log_Write(char *fmt, ...) __attribute__((format(printf, 1, 2)));
+ //write to the current opened log file with a time stamp
+-void QDECL Log_WriteTimeStamped(char *fmt, ...);
++void QDECL Log_WriteTimeStamped(char *fmt, ...) __attribute__((format(printf, 1, 2)));
+ //returns a pointer to the log file
+ FILE *Log_FilePointer(void);
+ //flush log file
+diff --git a/src/botlib/l_precomp.h b/src/botlib/l_precomp.h
+index b61125b..929db61 100644
+--- src/botlib/l_precomp.h
++++ src/botlib/l_precomp.h
+@@ -153,9 +153,9 @@ source_t *LoadSourceMemory(char *ptr, int length, char *name);
+ //free the given source
+ void FreeSource(source_t *source);
+ //print a source error
+-void QDECL SourceError(source_t *source, char *str, ...);
++void QDECL SourceError(source_t *source, char *str, ...) __attribute__((format(printf, 2, 3)));
+ //print a source warning
+-void QDECL SourceWarning(source_t *source, char *str, ...);
++void QDECL SourceWarning(source_t *source, char *str, ...) __attribute__((format(printf, 2, 3)));
+ 
+ #ifdef BSPC
+ // some of BSPC source does include game/q_shared.h and some does not
+diff --git a/src/botlib/l_script.h b/src/botlib/l_script.h
+index a779e62..a5cab5a 100644
+--- src/botlib/l_script.h
++++ src/botlib/l_script.h
+@@ -241,8 +241,8 @@ void FreeScript(script_t *script);
+ //set the base folder to load files from
+ void PS_SetBaseFolder(char *path);
+ //print a script error with filename and line number
+-void QDECL ScriptError(script_t *script, char *str, ...);
++void QDECL ScriptError(script_t *script, char *str, ...) __attribute__((format(printf, 2, 3)));
+ //print a script warning with filename and line number
+-void QDECL ScriptWarning(script_t *script, char *str, ...);
++void QDECL ScriptWarning(script_t *script, char *str, ...) __attribute__((format(printf, 2, 3)));
+ 
+ 
+diff --git a/src/cgame/cg_local.h b/src/cgame/cg_local.h
+index 320e060..7673919 100644
+--- src/cgame/cg_local.h
++++ src/cgame/cg_local.h
+@@ -1505,8 +1505,8 @@ extern  vmCvar_t    cg_debugRandom;
+ const char  *CG_ConfigString( int index );
+ const char  *CG_Argv( int arg );
+ 
+-void QDECL  CG_Printf( const char *msg, ... );
+-void QDECL  CG_Error( const char *msg, ... );
++void QDECL  CG_Printf( const char *msg, ... ) __attribute__((format(printf, 1, 2)));
++void QDECL  CG_Error( const char *msg, ... ) __attribute__((format(printf, 1, 2)));
+ 
+ void        CG_StartMusic( void );
+ int         CG_PlayerCount( void );
+diff --git a/src/game/bg_lib.h b/src/game/bg_lib.h
+index 021ebc3..01579a5 100644
+--- src/game/bg_lib.h
++++ src/game/bg_lib.h
+@@ -80,7 +80,7 @@ int     _atoi( const char **stringPtr );
+ 
+ 
+ int     vsprintf( char *buffer, const char *fmt, va_list argptr );
+-int     sscanf( const char *buffer, const char *fmt, ... );
++int     sscanf( const char *buffer, const char *fmt, ... ) __attribute__((format(scanf, 2, 3)));
+ 
+ // Memory functions
+ void    *memmove( void *dest, const void *src, size_t count );
+diff --git a/src/game/g_local.h b/src/game/g_local.h
+index 82f294b..830d5af 100644
+--- src/game/g_local.h
++++ src/game/g_local.h
+@@ -881,10 +881,10 @@ void MoveClientToIntermission( gentity_t *client );
+ void CalculateRanks( void );
+ void FindIntermissionPoint( void );
+ void G_RunThink( gentity_t *ent );
+-void QDECL G_LogPrintf( const char *fmt, ... );
++void QDECL G_LogPrintf( const char *fmt, ... ) __attribute__((format(printf, 1, 2)));
+ void SendScoreboardMessageToAllClients( void );
+-void QDECL G_Printf( const char *fmt, ... );
+-void QDECL G_Error( const char *fmt, ... );
++void QDECL G_Printf( const char *fmt, ... ) __attribute__((format(printf, 1, 2)));
++void QDECL G_Error( const char *fmt, ... ) __attribute__((format(printf, 1, 2)));
+ 
+ //
+ // g_client.c
+diff --git a/src/master/common.h b/src/master/common.h
+index 47c29a9..c237bcd 100644
+--- src/master/common.h
++++ src/master/common.h
+@@ -82,7 +82,7 @@ extern char peer_address [128];
+ #endif
+ 
+ // Print a message to screen, depending on its verbose level
+-int MsgPrint (msg_level_t msg_level, const char* format, ...);
++int MsgPrint (msg_level_t msg_level, const char* format, ...) __attribute__((format(printf, 2, 3)));
+ 
+ void RecordClientStat( const char *address, const char *version, const char *renderer );
+ void RecordGameStat( const char *address, const char *dataText );
+diff --git a/src/qcommon/q_shared.h b/src/qcommon/q_shared.h
+index 83f5789..8c83a5f 100644
+--- src/qcommon/q_shared.h
++++ src/qcommon/q_shared.h
+@@ -636,8 +636,8 @@ int		COM_GetCurrentParseLine( void );
+ char	*COM_Parse( char **data_p );
+ char	*COM_ParseExt( char **data_p, qboolean allowLineBreak );
+ int		COM_Compress( char *data_p );
+-void	COM_ParseError( char *format, ... );
+-void	COM_ParseWarning( char *format, ... );
++void	COM_ParseError( char *format, ... ) __attribute__((format(printf, 1, 2)));
++void	COM_ParseWarning( char *format, ... ) __attribute__((format(printf, 1, 2)));
+ //int		COM_ParseInfos( char *buf, int max, char infos[][MAX_INFO_STRING] );
+ 
+ #define MAX_TOKENLENGTH		1024
+@@ -671,7 +671,7 @@ void Parse1DMatrix (char **buf_p, int x, float *m);
+ void Parse2DMatrix (char **buf_p, int y, int x, float *m);
+ void Parse3DMatrix (char **buf_p, int z, int y, int x, float *m);
+ 
+-void	QDECL Com_sprintf (char *dest, int size, const char *fmt, ...);
++void	QDECL Com_sprintf (char *dest, int size, const char *fmt, ...) __attribute__((format(printf, 3, 4)));
+ 
+ char *Com_SkipTokens( char *s, int numTokens, char *sep );
+ char *Com_SkipCharset( char *s, char *sep );
+@@ -743,7 +743,7 @@ float	LittleFloat (const float *l);
+ 
+ void	Swap_Init (void);
+ */
+-char	* QDECL va(char *format, ...);
++char	* QDECL va(char *format, ...) __attribute__((format(printf, 1, 2)));
+ 
+ #define TRUNCATE_LENGTH	64
+ void Com_TruncateLongString( char *buffer, const char *s );
+@@ -762,8 +762,8 @@ qboolean Info_Validate( const char *s );
+ void Info_NextPair( const char **s, char *key, char *value );
+ 
+ // this is only here so the functions in q_shared.c and bg_*.c can link
+-void	QDECL Com_Error( int level, const char *error, ... );
+-void	QDECL Com_Printf( const char *msg, ... );
++void	QDECL Com_Error( int level, const char *error, ... ) __attribute__((format(printf, 2, 3)));
++void	QDECL Com_Printf( const char *msg, ... ) __attribute__((format(printf, 1, 2)));
+ 
+ 
+ /*
+diff --git a/src/qcommon/qcommon.h b/src/qcommon/qcommon.h
+index 7b2fb8a..5db3699 100644
+--- src/qcommon/qcommon.h
++++ src/qcommon/qcommon.h
+@@ -162,7 +162,7 @@ void		NET_Restart( void );
+ void		NET_Config( qboolean enableNetworking );
+ 
+ void		NET_SendPacket (netsrc_t sock, int length, const void *data, netadr_t to);
+-void		QDECL NET_OutOfBandPrint( netsrc_t net_socket, netadr_t adr, const char *format, ...);
++void		QDECL NET_OutOfBandPrint( netsrc_t net_socket, netadr_t adr, const char *format, ...) __attribute__((format(printf, 3, 4)));
+ void		QDECL NET_OutOfBandData( netsrc_t sock, netadr_t adr, byte *format, int len );
+ 
+ qboolean	NET_CompareAdr (netadr_t a, netadr_t b);
+@@ -719,9 +719,9 @@ void		Info_Print( const char *s );
+ 
+ void		Com_BeginRedirect (char *buffer, int buffersize, void (*flush)(char *));
+ void		Com_EndRedirect( void );
+-void 		QDECL Com_Printf( const char *fmt, ... );
+-void 		QDECL Com_DPrintf( const char *fmt, ... );
+-void 		QDECL Com_Error( int code, const char *fmt, ... );
++void 		QDECL Com_Printf( const char *fmt, ... ) __attribute__((format(printf, 1, 2)));
++void 		QDECL Com_DPrintf( const char *fmt, ... ) __attribute__((format(printf, 1, 2)));
++void 		QDECL Com_Error( int code, const char *fmt, ... ) __attribute__((format(printf, 2, 3)));
+ void 		Com_Quit_f( void );
+ int			Com_EventLoop( void );
+ int			Com_Milliseconds( void );	// will be journaled properly
+@@ -978,7 +978,7 @@ void	*Sys_GetBotLibAPI( void *parms );
+ 
+ char	*Sys_GetCurrentUser( void );
+ 
+-void	QDECL Sys_Error( const char *error, ...);
++void	QDECL Sys_Error( const char *error, ...) __attribute__((format(printf, 1, 2)));
+ void	Sys_Quit (void);
+ char	*Sys_GetClipboardData( void );	// note that this isn't journaled...
+ 
+diff --git a/src/renderer/tr_public.h b/src/renderer/tr_public.h
+index e4e4d04..8f3bb78 100644
+--- src/renderer/tr_public.h
++++ src/renderer/tr_public.h
+@@ -107,10 +107,10 @@ typedef struct {
+ //
+ typedef struct {
+ 	// print message on the local console
+-	void	(QDECL *Printf)( int printLevel, const char *fmt, ...);
++	void	(QDECL *Printf)( int printLevel, const char *fmt, ...) __attribute__((format(printf, 2, 3)));
+ 
+ 	// abort the game
+-	void	(QDECL *Error)( int errorLevel, const char *fmt, ...);
++	void	(QDECL *Error)( int errorLevel, const char *fmt, ...) __attribute__((format(printf, 2, 3)));
+ 
+ 	// milliseconds should only be used for profiling, never
+ 	// for anything game related.  Get time from the refdef
+diff --git a/src/server/server.h b/src/server/server.h
+index 8eb4355..d1e764e 100644
+--- src/server/server.h
++++ src/server/server.h
+@@ -251,7 +251,7 @@ extern	cvar_t	*sv_lanForceRate;
+ // sv_main.c
+ //
+ void SV_FinalMessage (char *message);
+-void QDECL SV_SendServerCommand( client_t *cl, const char *fmt, ...);
++void QDECL SV_SendServerCommand( client_t *cl, const char *fmt, ...) __attribute__((format(printf, 2, 3)));
+ 
+ 
+ void SV_AddOperatorCommands (void);
+diff --git a/src/ui/ui_shared.h b/src/ui/ui_shared.h
+index 09de834..737900d 100644
+--- src/ui/ui_shared.h
++++ src/ui/ui_shared.h
+@@ -352,8 +352,8 @@ typedef struct {
+   void (*getBindingBuf)( int keynum, char *buf, int buflen );
+   void (*setBinding)( int keynum, const char *binding );
+   void (*executeText)(int exec_when, const char *text );
+-  void (*Error)(int level, const char *error, ...);
+-  void (*Print)(const char *msg, ...);
++  void (*Error)(int level, const char *error, ...) __attribute__((format(printf, 2, 3)));
++  void (*Print)(const char *msg, ...) __attribute__((format(printf, 1, 2)));
+   void (*Pause)(qboolean b);
+   int (*ownerDrawWidth)(int ownerDraw, float scale);
+   sfxHandle_t (*registerSound)(const char *name, qboolean compressed);

@@ -1,0 +1,20 @@
+--- src/tools/asm/cmdlib.c.orig	Sat Jul 25 13:22:03 2015
++++ src/tools/asm/cmdlib.c	Sat Jul 25 13:22:31 2015
+@@ -313,7 +313,7 @@
+ char *ExpandPath (const char *path)
+ {
+ 	static char full[1024];
+-	if (!qdir)
++	if (!qdir[0])
+ 		Error ("ExpandPath called without qdir set");
+ 	if (path[0] == '/' || path[0] == '\\' || path[1] == ':') {
+ 		strcpy( full, path );
+@@ -326,7 +326,7 @@
+ char *ExpandGamePath (const char *path)
+ {
+ 	static char full[1024];
+-	if (!qdir)
++	if (!qdir[0])
+ 		Error ("ExpandGamePath called without qdir set");
+ 	if (path[0] == '/' || path[0] == '\\' || path[1] == ':') {
+ 		strcpy( full, path );

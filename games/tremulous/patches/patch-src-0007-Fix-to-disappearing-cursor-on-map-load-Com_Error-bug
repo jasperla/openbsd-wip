@@ -1,0 +1,23 @@
+From: Tim Angus <tma>
+Date: Thu, 15 Jul 2010 23:45:11 +0100
+Subject: [PATCH] Fix to disappearing cursor on map load Com_Error bug
+
+Origin: upstream, commit:785 (partial)
+Bug: http://bugzilla.icculus.org/show_bug.cgi?id=2699
+---
+ src/ui/ui_main.c |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+diff --git a/src/ui/ui_main.c b/src/ui/ui_main.c
+index 30b4c9f..7509d9b 100644
+--- src/ui/ui_main.c
++++ src/ui/ui_main.c
+@@ -5663,6 +5663,7 @@ void _UI_SetActiveMenu( uiMenuCommand_t menu ) {
+       }
+       Menus_CloseAll();
+       Menus_ActivateByName("main");
++      trap_Cvar_Set( "ui_loading", "0" );
+       trap_Cvar_VariableStringBuffer("com_errorMessage", buf, sizeof(buf));
+       if (strlen(buf)) {
+         if (!ui_singlePlayerActive.integer) {
+-- 
