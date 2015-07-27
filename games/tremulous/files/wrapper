@@ -1,0 +1,33 @@
+#!/bin/sh
+# 
+# $OpenBSD$
+#
+
+# Wrapper script for Tremulous.
+
+BASEPATH=%%BASEPATH%%
+BIN=tremulous-bin
+
+usage()
+{
+	echo "Switches:"
+	echo "-h          this help"
+	echo "-d          run dedicated server"
+	exit 1
+}
+
+args=`getopt hd $*`
+set -- $args
+while [ $# -ge 0 ]; do
+	case "$1" in
+		-h) usage; shift ;;
+		-d) BIN=tremulous-dedicated; shift 2 ;;
+		--) shift; break ;;
+	esac
+done
+
+# Run the wanted process
+exec \
+	$BIN \
+	+set fs_basepath $BASEPATH \
+	"$@"

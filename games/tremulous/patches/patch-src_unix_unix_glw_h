@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/unix/unix_glw.h.orig	Sat Dec 10 22:19:52 2005
++++ src/unix/unix_glw.h	Sat Nov  3 11:50:48 2007
+@@ -20,7 +20,7 @@ along with Tremulous; if not, write to the Free Softwa
+ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ ===========================================================================
+ */
+-#if !( defined __linux__ || defined __FreeBSD__ || defined __sun || defined MACOS_X )
++#if !( defined __linux__ || defined __FreeBSD__ || defined __sun || defined MACOS_X || defined __OpenBSD__ )
+ #error You should include this file only on Linux/FreeBSD/Solaris platforms
+ #endif
+ 

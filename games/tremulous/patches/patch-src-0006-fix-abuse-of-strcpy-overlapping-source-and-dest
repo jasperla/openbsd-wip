@@ -1,0 +1,49 @@
+From: Andreas Bierfert <andreas.bierfert at lowlatency.de>
+Date: Mon, 12 Jul 2010 23:16:02 +0100
+Subject: [PATCH] fix abuse of strcpy (overlapping source and dest)
+
+Reviewed-by: Ludwig Nussel
+Bug: http://bugzilla.icculus.org/show_bug.cgi?id=4331
+Bug-Debian: http://bugs.debian.org/583939
+Bug-Fedora: http://bugzilla.redhat.com/show_bug.cgi?id=526338
+---
+ src/botlib/l_precomp.c |    2 +-
+ src/botlib/l_script.c  |    4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/src/botlib/l_precomp.c b/src/botlib/l_precomp.c
+index 5a0acac..1bd1e0d 100644
+--- src/botlib/l_precomp.c
++++ src/botlib/l_precomp.c
+@@ -952,7 +952,7 @@ void PC_ConvertPath(char *path)
+ 		if ((*ptr == '\\' || *ptr == '/') &&
+ 				(*(ptr+1) == '\\' || *(ptr+1) == '/'))
+ 		{
+-			strcpy(ptr, ptr+1);
++			memmove(ptr, ptr+1, strlen(ptr));
+ 		} //end if
+ 		else
+ 		{
+diff --git a/src/botlib/l_script.c b/src/botlib/l_script.c
+index 485254f..7b2e2ad 100644
+--- src/botlib/l_script.c
++++ src/botlib/l_script.c
+@@ -1119,7 +1119,7 @@ void StripDoubleQuotes(char *string)
+ {
+ 	if (*string == '\"')
+ 	{
+-		strcpy(string, string+1);
++		memmove(string, string+1, strlen(string));
+ 	} //end if
+ 	if (string[strlen(string)-1] == '\"')
+ 	{
+@@ -1136,7 +1136,7 @@ void StripSingleQuotes(char *string)
+ {
+ 	if (*string == '\'')
+ 	{
+-		strcpy(string, string+1);
++		memmove(string, string+1, strlen(string));
+ 	} //end if
+ 	if (string[strlen(string)-1] == '\'')
+ 	{
+-- 

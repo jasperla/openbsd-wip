@@ -1,0 +1,133 @@
+From: Simon McVittie <smcv@debian.org>
+Date: Sun, 19 Feb 2012 23:16:49 +0000
+Subject: Avoid non-literal format strings
+
+This is a precautionary measure against potential exploits; none of these
+instances is known to be exploitable.
+
+Origin: vendor, Debian
+---
+ src/botlib/be_aas_main.c |    2 +-
+ src/botlib/l_script.c    |    2 +-
+ src/client/cl_cgame.c    |    2 +-
+ src/client/cl_main.c     |    2 +-
+ src/client/cl_parse.c    |    2 +-
+ src/game/g_combat.c      |    6 +++---
+ src/ui/ui_main.c         |    4 ++--
+ 7 files changed, 10 insertions(+), 10 deletions(-)
+
+diff --git a/src/botlib/be_aas_main.c b/src/botlib/be_aas_main.c
+index 264c784..3a9a569 100644
+--- src/botlib/be_aas_main.c
++++ src/botlib/be_aas_main.c
+@@ -63,7 +63,7 @@ void QDECL AAS_Error(char *fmt, ...)
+ 	va_start(arglist, fmt);
+ 	vsprintf(str, fmt, arglist);
+ 	va_end(arglist);
+-	botimport.Print(PRT_FATAL, str);
++	botimport.Print(PRT_FATAL, "%s", str);
+ } //end of the function AAS_Error
+ //===========================================================================
+ //
+diff --git a/src/botlib/l_script.c b/src/botlib/l_script.c
+index 7b2e2ad..749afd4 100644
+--- src/botlib/l_script.c
++++ src/botlib/l_script.c
+@@ -1429,6 +1429,6 @@ void PS_SetBaseFolder(char *path)
+ #ifdef BSPC
+ 	sprintf(basefolder, path);
+ #else
+-	Com_sprintf(basefolder, sizeof(basefolder), path);
++	Com_sprintf(basefolder, sizeof(basefolder), "%s", path);
+ #endif
+ } //end of the function PS_SetBaseFolder
+diff --git a/src/client/cl_cgame.c b/src/client/cl_cgame.c
+index 7d4c0a9..e9c341e 100644
+--- src/client/cl_cgame.c
++++ src/client/cl_cgame.c
+@@ -298,7 +298,7 @@ rescan:
+ 		// https://zerowing.idsoftware.com/bugzilla/show_bug.cgi?id=552
+ 		// allow server to indicate why they were disconnected
+ 		if ( argc >= 2 )
+-			Com_Error (ERR_SERVERDISCONNECT, va( "Server Disconnected - %s", Cmd_Argv( 1 ) ) );
++			Com_Error (ERR_SERVERDISCONNECT, "Server Disconnected - %s", Cmd_Argv( 1 ) );
+ 		else
+ 			Com_Error (ERR_SERVERDISCONNECT,"Server disconnected\n");
+ 	}
+diff --git a/src/client/cl_main.c b/src/client/cl_main.c
+index 78cf9e7..b4e2c23 100644
+--- src/client/cl_main.c
++++ src/client/cl_main.c
+@@ -2967,7 +2967,7 @@ void CL_GlobalServers_f( void ) {
+ 		buffptr += sprintf( buffptr, " demo" );
+ 	}
+ 
+-	NET_OutOfBandPrint( NS_SERVER, to, command );
++	NET_OutOfBandPrint( NS_SERVER, to, "%s", command );
+ }
+ 
+ 
+diff --git a/src/client/cl_parse.c b/src/client/cl_parse.c
+index 2d36aa1..23f82ea 100644
+--- src/client/cl_parse.c
++++ src/client/cl_parse.c
+@@ -520,7 +520,7 @@ void CL_ParseDownload ( msg_t *msg ) {
+ 
+ 		if (clc.downloadSize < 0)
+ 		{
+-			Com_Error(ERR_DROP, MSG_ReadString( msg ) );
++			Com_Error(ERR_DROP, "%s", MSG_ReadString( msg ) );
+ 			return;
+ 		}
+ 	}
+diff --git a/src/game/g_combat.c b/src/game/g_combat.c
+index 7e38f11..1f48bba 100644
+--- src/game/g_combat.c
++++ src/game/g_combat.c
+@@ -831,13 +831,13 @@ void G_InitDamageLocations( void )
+     len = trap_FS_FOpenFile( filename, &fileHandle, FS_READ );
+     if ( !fileHandle )
+     {
+-      G_Printf( va( S_COLOR_RED "file not found: %s\n", filename ) );
++      G_Printf( S_COLOR_RED "file not found: %s\n", filename );
+       continue;
+     }
+ 
+     if( len >= MAX_LOCDAMAGE_TEXT )
+     {
+-      G_Printf( va( S_COLOR_RED "file too large: %s is %i, max allowed is %i", filename, len, MAX_LOCDAMAGE_TEXT ) );
++      G_Printf( S_COLOR_RED "file too large: %s is %i, max allowed is %i", filename, len, MAX_LOCDAMAGE_TEXT );
+       trap_FS_FCloseFile( fileHandle );
+       continue;
+     }
+@@ -862,7 +862,7 @@ void G_InitDamageLocations( void )
+ 
+     if( len >= MAX_LOCDAMAGE_TEXT )
+     {
+-      G_Printf( va( S_COLOR_RED "file too large: %s is %i, max allowed is %i", filename, len, MAX_LOCDAMAGE_TEXT ) );
++      G_Printf( S_COLOR_RED "file too large: %s is %i, max allowed is %i", filename, len, MAX_LOCDAMAGE_TEXT );
+       trap_FS_FCloseFile( fileHandle );
+       continue;
+     }
+diff --git a/src/ui/ui_main.c b/src/ui/ui_main.c
+index 604e709..ee60f0f 100644
+--- src/ui/ui_main.c
++++ src/ui/ui_main.c
+@@ -5382,7 +5382,7 @@ static void UI_BuildQ3Model_List( void )
+       if (Q_stricmpn(skinname, "icon_", 5) == 0 && !(Q_stricmp(skinname,"icon_blue") == 0 || Q_stricmp(skinname,"icon_red") == 0))
+       {
+         if (Q_stricmp(skinname, "icon_default") == 0) {
+-          Com_sprintf( scratch, sizeof(scratch), dirptr);
++          Com_sprintf( scratch, sizeof(scratch), "%s", dirptr);
+         } else {
+           Com_sprintf( scratch, sizeof(scratch), "%s/%s",dirptr, skinname + 5);
+         }
+@@ -5394,7 +5394,7 @@ static void UI_BuildQ3Model_List( void )
+           }
+         }
+         if (!dirty) {
+-          Com_sprintf( uiInfo.q3HeadNames[uiInfo.q3HeadCount], sizeof(uiInfo.q3HeadNames[uiInfo.q3HeadCount]), scratch);
++          Com_sprintf( uiInfo.q3HeadNames[uiInfo.q3HeadCount], sizeof(uiInfo.q3HeadNames[uiInfo.q3HeadCount]), "%s", scratch);
+           uiInfo.q3HeadIcons[uiInfo.q3HeadCount++] = trap_R_RegisterShaderNoMip(va("models/players/%s/%s",dirptr,skinname));
+         }
+       }
