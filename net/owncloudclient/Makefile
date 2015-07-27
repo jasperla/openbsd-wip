@@ -37,7 +37,8 @@ CONFIGURE_ARGS +=	-DBUILD_WITH_QT4=ON \
 			-DCMAKE_C_FLAGS="${CFLAGS} -DHAVE_ICONV -DHAVE_ICONV_H \
 				-I${LOCALBASE}/include/inotify" \
 			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include/inotify" \
-			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} -L${LOCALBASE}/lib/inotify -linotify"
+			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} -L${LOCALBASE}/lib/inotify -linotify \
+				-Wl,-rpath=${LOCALBASE}/lib/inotify"
 
 NO_TEST =		Yes
 
