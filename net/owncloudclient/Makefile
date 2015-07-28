@@ -34,11 +34,15 @@ LIB_DEPENDS =		devel/libinotify \
 
 CONFIGURE_ARGS +=	-DBUILD_WITH_QT4=ON \
 			-DSYSCONF_INSTALL_DIR=${SYSCONFDIR} \
-			-DCMAKE_C_FLAGS="${CFLAGS} -DHAVE_ICONV -DHAVE_ICONV_H \
+			-DCMAKE_C_FLAGS="${CFLAGS} \
 				-I${LOCALBASE}/include/inotify" \
 			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include/inotify" \
-			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} -L${LOCALBASE}/lib/inotify -linotify \
+			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} \
+				-L${LOCALBASE}/lib/inotify -linotify \
 				-Wl,-rpath=${LOCALBASE}/lib/inotify"
+
+CFLAGS += 		 -DHAVE_ICONV -DHAVE_ICONV_H
+CXXFLAGS += 		 -DHAVE_ICONV -DHAVE_ICONV_H
 
 NO_TEST =		Yes
 

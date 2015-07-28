@@ -1,4 +1,7 @@
 $OpenBSD$
+
+Disable Thread-Local-Storage
+
 --- csync/src/std/c_private.h.orig	Tue Jul 28 11:58:41 2015
 +++ csync/src/std/c_private.h	Tue Jul 28 11:59:23 2015
 @@ -148,7 +148,7 @@ int c_close_iconv(void);
