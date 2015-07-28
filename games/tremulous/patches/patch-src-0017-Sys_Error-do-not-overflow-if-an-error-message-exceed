@@ -1,0 +1,29 @@
+From: Simon McVittie <smcv@debian.org>
+Date: Sun, 19 Feb 2012 22:25:33 +0000
+Subject: Sys_Error: do not overflow if an error message exceeds 1024
+ characters
+
+Backport of ioquake3 r1141 by Thilo Schulz. Not known to be exploitable,
+but it can't hurt.
+
+If this turns out to be exploitable, please mention ioquake3 r1141
+prominently in any advisory.
+
+Origin: backport
+---
+ src/unix/unix_main.c |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/src/unix/unix_main.c b/src/unix/unix_main.c
+index eb81568..375d76e 100644
+--- src/unix/unix_main.c
++++ src/unix/unix_main.c
+@@ -437,7 +437,7 @@ void  Sys_Error( const char *error, ...)
+   CL_Shutdown ();
+ 
+   va_start (argptr,error);
+-  vsprintf (string,error,argptr);
++  Q_vsnprintf (string, sizeof(string), error, argptr);
+   va_end (argptr);
+   fprintf(stderr, "Sys_Error: %s\n", string);
+ 

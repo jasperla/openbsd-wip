@@ -1,0 +1,44 @@
+$OpenBSD$
+--- src/qcommon/q_platform.h.orig	Sat Jan 14 03:12:32 2006
++++ src/qcommon/q_platform.h	Sat Nov  3 11:50:48 2007
+@@ -219,6 +219,31 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
+ 
+ #endif
+ 
++//================================================================ OpenBSD ===
++
++// This is very much like the FreeBSD one and can probably be merged
++#ifdef __OpenBSD__
++
++#include <machine/endian.h>
++
++#define OS_STRING "openbsd"
++#define ID_INLINE inline
++#define PATH_SEP '/'
++
++#ifdef __i386__
++#define ARCH_STRING "x86-64"
++#endif
++
++#if BYTE_ORDER == BIG_ENDIAN
++#define Q3_BIG_ENDIAN
++#else
++#define Q3_LITTLE_ENDIAN
++#endif
++
++#define DLL_EXT ".so"
++
++#endif
++
+ //================================================================= SUNOS ===
+ 
+ #ifdef __sun
+@@ -268,7 +268,7 @@
+ #endif
+ 
+ #if !defined( ARCH_STRING )
+-#error "Architecture not supported"
++#define ARCH_STRING "x86-64"
+ #endif
+ 
+ #ifndef ID_INLINE

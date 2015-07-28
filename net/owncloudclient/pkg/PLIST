@@ -1,4 +1,8 @@
 @comment $OpenBSD: PLIST,v 1.2 2014/06/24 09:53:59 ajacoutot Exp $
+@conflict ocsync-*
+@conflict mirall-*
+@pkgpath net/ocsync
+@pkgpath net/mirall
 @bin bin/owncloud
 @bin bin/owncloudcmd
 include/httpbf.h

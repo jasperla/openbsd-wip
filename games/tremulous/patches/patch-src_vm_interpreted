@@ -1,0 +1,28 @@
+--- src/qcommon/vm_interpreted.c.orig	2010-01-12 15:10:42.000000000 +0100
++++ src/qcommon/vm_interpreted.c	2010-01-12 15:20:22.000000000 +0100
+@@ -517,16 +517,16 @@
+ //VM_LogSyscalls( (int *)&image[ programStack + 4 ] );
+ 				{
+ 					intptr_t* argptr = (intptr_t *)&image[ programStack + 4 ];
+-				#if __WORDSIZE == 64
+-				// the vm has ints on the stack, we expect
+-				// longs so we have to convert it
+-					intptr_t argarr[16];
+-					int i;
+-					for (i = 0; i < 16; ++i) {
+-						argarr[i] = *(int*)&image[ programStack + 4 + 4*i ];
++					// the vm has ints on the stack, we expect
++					// longs so we might have to convert it
++					if (sizeof(long) == 8) {
++						intptr_t argarr[16];
++						int i;
++						for (i = 0; i < 16; ++i) {
++							argarr[i] = *(int*)&image[ programStack + 4 + 4*i ];
++						}
++						argptr = argarr;
+ 					}
+-					argptr = argarr;
+-				#endif
+ 					r = vm->systemCall( argptr );
+ 				}
+ 

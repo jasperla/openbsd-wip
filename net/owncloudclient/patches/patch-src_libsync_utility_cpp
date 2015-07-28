@@ -1,7 +1,14 @@
 $OpenBSD: patch-src_mirall_utility_cpp,v 1.1.1.1 2014/06/24 09:20:03 kirby Exp $
---- src/libsync/utility.cpp.orig	Mon Mar 16 17:28:58 2015
-+++ src/libsync/utility.cpp	Sat Apr  4 19:07:13 2015
-@@ -178,8 +178,8 @@ qint64 Utility::freeDiskSpace(const QString &path, boo
+--- src/libsync/utility.cpp.orig	Mon Jun 22 17:28:35 2015
++++ src/libsync/utility.cpp	Thu Jun 25 16:47:04 2015
+@@ -182,14 +182,14 @@ void Utility::setLaunchOnStartup(const QString &appNam
+ 
+ qint64 Utility::freeDiskSpace(const QString &path, bool *ok)
+ {
+-#if defined(Q_OS_MAC) || defined(Q_OS_FREEBSD) || defined(Q_OS_FREEBSD_KERNEL) || defined(Q_OS_NETBSD)
++#if defined(Q_OS_MAC) || defined(Q_OS_FREEBSD) || defined(Q_OS_FREEBSD_KERNEL) || defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
+     struct statvfs stat;
+     statvfs(path.toUtf8().data(), &stat);
      return (qint64) stat.f_bavail * stat.f_frsize;
  #elif defined(Q_OS_UNIX)
      Q_UNUSED(ok)
@@ -12,3 +19,12 @@ $OpenBSD: patch-src_mirall_utility_cpp,v 1.1.1.1 2014/06/24 09:20:03 kirby Exp $
      return (qint64) stat.f_bavail * stat.f_frsize;
  #elif defined(Q_OS_WIN)
      ULARGE_INTEGER freeBytes;
+@@ -389,7 +389,7 @@ bool Utility::isLinux()
+ 
+ bool Utility::isBSD()
+ {
+-#if defined(Q_OS_FREEBSD) || defined(Q_OS_NETBSD)
++#if defined(Q_OS_FREEBSD) || defined(Q_OS_NETBSD) || defined(Q_OS_OPENBSD)
+     return true;
+ #else
+     return false;

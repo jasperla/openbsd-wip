@@ -1,0 +1,42 @@
+#!/bin/sh
+
+BINARY="tremulous-dedicated"
+BASE_PATH="${LOCALBASE}/share/tremulous"
+CONFIG_FILE="server.cfg"
+
+excuse ()
+{
+cat << END
+Tremulous server wrapper
+
+Usage:
+    -h, --help          Display this help
+    -q, --quiet         Disable console output
+    +FOO                Execute the console command FOO
+    +set dedicated 2    Advertise this server to the master server
+END
+}
+
+
+# Tremulous binaries don't understand "regular" command line parameters. Let's
+# catch them here, to avoid accidently launching the binary.
+
+while [ "$1" != "" ]; do {
+	case "$1" in
+		+*)
+			break
+			;;
+		-h|--help)
+			excuse
+			exit 0
+			;;
+		-q|--quiet)
+			QUIET=1
+			;;
+	esac
+	shift
+}; done
+
+# Ready to rumble!
+
+exec ${BINARY} +set dedicated 1 +set fs_basepath ${BASE_PATH} +exec ${CONFIG_FILE} "$@"

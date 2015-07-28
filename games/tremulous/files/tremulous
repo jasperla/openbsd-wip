@@ -1,0 +1,46 @@
+#!/bin/sh
+
+BINARY="tremulous-bin"
+BASE_PATH="${LOCALBASE}/share/tremulous"
+QUIET=0
+
+excuse ()
+{
+cat << END
+Tremulous client wrapper
+
+Usage:
+    -h, --help          Display this help
+    -q, --quiet         Disable console output
+    +FOO                Execute the console command FOO
+END
+}
+
+# Tremulous binaries don't understand "regular" command line parameters. Let's
+# catch them here, to avoid accidently launching the binary.
+
+while [ "$1" != "" ]; do {
+	case "$1" in
+		+*)
+			break
+			;;
+		-h|--help)
+			excuse
+			exit 0
+			;;
+		-q|--quiet)
+			QUIET=1
+			;;
+	esac
+	shift
+}; done
+
+# Ready to rumble!
+
+if [ ${QUIET} -eq 1 ]; then
+	exec ${BINARY} +set fs_basepath ${BASE_PATH} +set ttycon 0 "$@" >/dev/null 2>&1
+else
+	exec ${BINARY} +set fs_basepath ${BASE_PATH} "$@"
+fi
+
+exit $?

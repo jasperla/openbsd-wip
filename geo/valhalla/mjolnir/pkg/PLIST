@@ -1,0 +1,40 @@
+@comment $OpenBSD$
+@bin bin/adminbenchmark
+@bin bin/connectivitymap
+@bin bin/pbfadminbuilder
+@bin bin/pbfgraphbuilder
+include/valhalla/
+include/valhalla/mjolnir/
+include/valhalla/mjolnir/admininfobuilder.h
+include/valhalla/mjolnir/dataquality.h
+include/valhalla/mjolnir/directededgebuilder.h
+include/valhalla/mjolnir/edgeinfobuilder.h
+include/valhalla/mjolnir/ferry_connections.h
+include/valhalla/mjolnir/graphbuilder.h
+include/valhalla/mjolnir/graphenhancer.h
+include/valhalla/mjolnir/graphtilebuilder.h
+include/valhalla/mjolnir/graphtileheaderbuilder.h
+include/valhalla/mjolnir/graphvalidator.h
+include/valhalla/mjolnir/hierarchybuilder.h
+include/valhalla/mjolnir/idtable.h
+include/valhalla/mjolnir/linkclassification.h
+include/valhalla/mjolnir/luatagtransform.h
+include/valhalla/mjolnir/node_expander.h
+include/valhalla/mjolnir/nodeinfobuilder.h
+include/valhalla/mjolnir/osmadmin.h
+include/valhalla/mjolnir/osmdata.h
+include/valhalla/mjolnir/osmnode.h
+include/valhalla/mjolnir/osmpbfparser.h
+include/valhalla/mjolnir/osmrestriction.h
+include/valhalla/mjolnir/osmway.h
+include/valhalla/mjolnir/pbfadminparser.h
+include/valhalla/mjolnir/pbfgraphparser.h
+include/valhalla/mjolnir/sequence.h
+include/valhalla/mjolnir/signbuilder.h
+include/valhalla/mjolnir/statistics.h
+include/valhalla/mjolnir/transitbuilder.h
+include/valhalla/mjolnir/uniquenames.h
+include/valhalla/mjolnir/util.h
+lib/libvalhalla_mjolnir.a
+lib/libvalhalla_mjolnir.la
+@lib lib/libvalhalla_mjolnir.so.${LIBvalhalla_mjolnir_VERSION}

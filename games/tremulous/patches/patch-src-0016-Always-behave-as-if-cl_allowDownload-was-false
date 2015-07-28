@@ -1,0 +1,39 @@
+From: Simon McVittie <smcv@debian.org>
+Date: Mon, 20 Feb 2012 23:03:45 +0000
+Subject: Always behave as if cl_allowDownload was false
+
+Even in current versions of ioquake3, it is not at all obvious whether
+running untrusted bytecode is safe. In this older version, it's certainly
+not safe, so let's knock out auto-downloading functionality.
+
+Origin: vendor, Debian
+Forwarded: no, Debian-specific removal of functionality
+---
+ src/client/cl_main.c |    7 +++++--
+ 1 files changed, 5 insertions(+), 2 deletions(-)
+
+diff --git a/src/client/cl_main.c b/src/client/cl_main.c
+index 7b562bd..8b96dd4 100644
+--- src/client/cl_main.c
++++ src/client/cl_main.c
+@@ -1430,7 +1430,10 @@ and determine if we need to download them
+ void CL_InitDownloads(void) {
+   char missingfiles[1024];
+ 
+-  if ( !cl_allowDownload->integer )
++  // Debian-specific patch to allow for longer-term support: auto-downloading
++  // is not safe in this version of the engine, so always behave as if
++  // cl_allowDownload had been disabled.
++  if ( 1 )
+   {
+     // autodownload is disabled on the client
+     // but it's possible that some referenced files on the server are missing
+@@ -1440,7 +1443,7 @@ void CL_InitDownloads(void) {
+       //   but at this point while joining the game we don't know wether we will successfully join or not
+       Com_Printf( "\nWARNING: You are missing some files referenced by the server:\n%s"
+                   "You might not be able to join the game\n"
+-                  "Go to the setting menu to turn on autodownload, or get the file elsewhere\n\n", missingfiles );
++                  "\n", missingfiles );
+     }
+   }
+   else if ( FS_ComparePaks( clc.downloadList, sizeof( clc.downloadList ) , qtrue ) ) {

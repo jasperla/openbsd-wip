@@ -1,0 +1,17 @@
+--- src/tools/asm/q3asm.c.orig	Sat Jul 25 13:28:36 2015
++++ src/tools/asm/q3asm.c	Sat Jul 25 13:29:12 2015
+@@ -956,12 +956,11 @@
+ 
+ ASM(ENDPROC)
+ {
+-	int		v, v2;
+ 	if ( !strcmp( token, "endproc" ) ) {
+ STAT("ENDPROC");
+ 		Parse();				// skip the function name
+-		v = ParseValue();		// locals
+-		v2 = ParseValue();		// arg marshalling
++		ParseValue();		// locals
++		ParseValue();		// arg marshalling
+ 
+ 		// all functions must leave something on the opstack
+ 		instructionCount++;

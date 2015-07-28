@@ -1,0 +1,26 @@
+@comment $OpenBSD$
+bin/tremulous
+bin/tremulous-server
+@bin bin/tremulous-bin
+@bin bin/tremulous-dedicated
+share/doc/tremulous/
+share/doc/tremulous/CC
+share/doc/tremulous/COPYING
+share/doc/tremulous/ChangeLog
+share/doc/tremulous/GPL
+share/doc/tremulous/manual.pdf
+share/tremulous/
+share/tremulous/base/
+share/tremulous/base/data-1.1.0.pk3
+share/tremulous/base/map-arachnid2-1.1.0.pk3
+share/tremulous/base/map-atcs-1.1.0.pk3
+share/tremulous/base/map-karith-1.1.0.pk3
+share/tremulous/base/map-nexus6-1.1.0.pk3
+share/tremulous/base/map-niveus-1.1.0.pk3
+share/tremulous/base/map-transit-1.1.0.pk3
+share/tremulous/base/map-tremor-1.1.0.pk3
+share/tremulous/base/map-uncreation-1.1.0.pk3
+share/tremulous/base/maprotation.cfg
+share/tremulous/base/server.cfg
+share/tremulous/base/vms-1.1.0.pk3
+share/tremulous/tremulous.xpm

@@ -1,0 +1,22 @@
+$OpenBSD$
+--- version.sh.orig	Mon Jul  6 05:58:56 2015
++++ version.sh	Wed Jul  8 21:29:45 2015
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ #grabs the version string from the header file for use autotools
+ #which then throws it into a pc file so that pkg-config can use it
+@@ -8,9 +8,9 @@ if [ ! -f prime_server/prime_server.hpp ]; then
+ 	exit 1
+ fi
+ 
+-major=$(grep -m1 -F VERSION_MAJOR prime_server/prime_server.hpp | sed -e "s/.*MAJOR \([0-9]\+\)/\1/g")
+-minor=$(grep -m1 -F VERSION_MINOR prime_server/prime_server.hpp | sed -e "s/.*MINOR \([0-9]\+\)/\1/g")
+-patch=$(grep -m1 -F VERSION_PATCH prime_server/prime_server.hpp | sed -e "s/.*PATCH \([0-9]\+\)/\1/g")
++major=$(ggrep -m1 -F VERSION_MAJOR prime_server/prime_server.hpp | gsed -e "s/.*MAJOR \([0-9]\+\)/\1/g")
++minor=$(ggrep -m1 -F VERSION_MINOR prime_server/prime_server.hpp | gsed -e "s/.*MINOR \([0-9]\+\)/\1/g")
++patch=$(ggrep -m1 -F VERSION_PATCH prime_server/prime_server.hpp | gsed -e "s/.*PATCH \([0-9]\+\)/\1/g")
+ 
+ if [ -z $major ] || [ -z $minor ] || [ -z $patch ]; then
+ 	echo "Malformed version information"

@@ -1,0 +1,11 @@
+@comment $OpenBSD$
+include/zconf.h
+include/zlib.h
+lib/libez.a
+lib/libez.so
+lib/libez.so.0
+@lib lib/libez.so.${LIBez_VERSION}
+lib/pkgconfig/zlib.pc
+share/man/
+share/man/man3/
+@man share/man/man3/zlib.3

@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/renderer/tr_types.h.orig	Sun Nov  4 22:21:35 2007
++++ src/renderer/tr_types.h	Sun Nov  4 22:21:41 2007
+@@ -228,7 +228,7 @@ typedef struct {
+ 
+ #define _3DFX_DRIVER_NAME	"libMesaVoodooGL.so"
+ // https://zerowing.idsoftware.com/bugzilla/show_bug.cgi?id=524
+-#define OPENGL_DRIVER_NAME	"libGL.so.1"
++#define OPENGL_DRIVER_NAME	"libGL.so"
+ 
+ #endif	// !defined _WIN32
+ 

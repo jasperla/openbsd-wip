@@ -1,0 +1,36 @@
+From: Patrick Baggett <unknown>
+Date: Mon, 12 Jul 2010 23:07:55 +0100
+Subject: [PATCH] Fix unaligned access issue
+
+Bug: http://bugzilla.icculus.org/show_bug.cgi?id=3756
+Bug-Debian: http://bugs.debian.org/382121
+---
+ src/qcommon/vm_interpreted.c |   14 ++++----------
+ 1 files changed, 4 insertions(+), 10 deletions(-)
+
+diff --git a/src/qcommon/vm_interpreted.c b/src/qcommon/vm_interpreted.c
+index 44b6e5d..99dea92 100644
+--- src/qcommon/vm_interpreted.c
++++ src/qcommon/vm_interpreted.c
+@@ -492,16 +492,10 @@ nextInstruction2:
+ 				count = ((srci + count) & dataMask) - srci;
+ 				count = ((desti + count) & dataMask) - desti;
+ 
+-				src = (int *)&image[ r0&dataMask ];
+-				dest = (int *)&image[ r1&dataMask ];
+-				if ( ( (intptr_t)src | (intptr_t)dest | count ) & 3 ) {
+-					// happens in westernq3
+-					Com_Printf( S_COLOR_YELLOW "Warning: OP_BLOCK_COPY not dword aligned\n");
+-				}
+-				count >>= 2;
+-				for ( i = count-1 ; i>= 0 ; i-- ) {
+-					dest[i] = src[i];
+-				}
++				src = (int *)&image[ srci ];
++				dest = (int *)&image[ desti ];
++
++				memcpy(dest, src, count);
+ 				programCounter += 4;
+ 				opStack -= 2;
+ 			}
+-- 

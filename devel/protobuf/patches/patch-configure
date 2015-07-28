@@ -1,0 +1,35 @@
+$OpenBSD: patch-configure,v 1.4 2013/11/03 07:52:02 ajacoutot Exp $
+--- configure.orig	Wed Oct 22 14:10:28 2014
++++ configure	Tue Jul 14 01:29:04 2015
+@@ -806,7 +806,6 @@ CXX
+ CXXFLAGS
+ CCC
+ CXXCPP'
+-ac_subdirs_all='gtest'
+ 
+ # Initialize some variables set by options.
+ ac_init_help=
+@@ -16470,7 +16469,7 @@ test -n "$PTHREAD_CC" || PTHREAD_CC="${CC}"
+ 	# FIXME: -fPIC is required for -shared on many architectures,
+ 	# so we specify it here, but the right way would probably be to
+ 	# properly detect whether it is actually required.
+-	CFLAGS="-shared -fPIC -Wl,-z,defs $CFLAGS $PTHREAD_CFLAGS"
++	CFLAGS="-shared -fPIC $CFLAGS $PTHREAD_CFLAGS"
+ 	LIBS="$PTHREAD_LIBS $LIBS"
+ 	CC="$PTHREAD_CC"
+ 
+@@ -16917,14 +16916,6 @@ fi
+     ;;
+ esac
+ 
+-# HACK:  Make gtest's configure script pick up our copy of CFLAGS and CXXFLAGS,
+-#   since the flags added by ACX_CHECK_SUNCC must be used when compiling gtest
+-#   too.
+-export CFLAGS
+-export CXXFLAGS
+-
+-
+-subdirs="$subdirs gtest"
+ 
+ 
+ ac_config_files="$ac_config_files Makefile src/Makefile protobuf.pc protobuf-lite.pc"
