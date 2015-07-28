@@ -2,9 +2,9 @@ $OpenBSD: patch-src_mirall_application_cpp,v 1.2 2014/10/28 09:02:58 kirby Exp $
 
 Disable update check on statrup.
 
---- src/gui/application.cpp.orig	Mon Mar 16 17:28:58 2015
-+++ src/gui/application.cpp	Sat Apr  4 19:13:50 2015
-@@ -168,12 +168,6 @@ Application::Application(int &argc, char **argv) :
+--- src/gui/application.cpp.orig	Mon Jun 22 17:28:35 2015
++++ src/gui/application.cpp	Thu Jun 25 16:03:58 2015
+@@ -177,12 +177,6 @@ Application::Application(int &argc, char **argv) :
      // Also check immediatly
      QTimer::singleShot( 0, this, SLOT( slotCheckConnection() ));
  
