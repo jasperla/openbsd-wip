@@ -16,7 +16,7 @@ MAINTAINER =		Rafael Sadowski <rafael@sizeofvoid.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += QtGui QtNetwork X11 c exiv2 lcms2 m opencv_core opencv_imgproc
-WANTLIB += pthread raw stdc++ tiff z
+WANTLIB += pthread raw quazip stdc++ webp tiff z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=nomacs/}
 EXTRACT_SUFX =		.tar.bz2
