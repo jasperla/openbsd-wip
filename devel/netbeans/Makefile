@@ -4,27 +4,26 @@ SHARED_ONLY=		Yes
 
 COMMENT=		NetBeans Java IDE
 
-V=			7.3
-REVISION=		0
-DISTNAME=		netbeans-${V}-201302132200
+V=			8.0.2
+DISTNAME=		netbeans-${V}-201411181905
 PKGNAME=		netbeans-${V}
 CATEGORIES=		devel
 
-HOMEPAGE=		http://www.netbeans.org/
+HOMEPAGE=		https://www.netbeans.org/
 
 MAINTAINER=		Rafael Sadowski <rafael@sizeofvoid.org>
 
 # CDDL and GPLv2 dual-licensed
 #
 # For external components see:
-#   http://www.netbeans.info/downloads/licence/netbeans-3rd-party.txt
+#   https://netbeans.org/downloads/jdk-bundle/8.0.2/nb802-THIRDPARTYLICENSE.txt
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://dlc.sun.com.edgesuite.net/netbeans/${V}/final/zip/
+MASTER_SITES=		http://download.netbeans.org/netbeans/${V}/final/zip/
 EXTRACT_SUFX=		.zip
 
 MODULES=		java
-MODJAVA_VER=		1.7+
+MODJAVA_VER=		1.8+
 
 RUN_DEPENDS=		java/javaPathHelper \
 			devel/desktop-file-utils
