@@ -8,36 +8,36 @@ COMMENT-main =		library of programming functions for real time cv
 COMMENT-java =		Java bindings for OpenCV
 
 V =			3.0.0
-DISTNAME =		opencv-$V
+DISTNAME =		opencv-${V}
 PKGNAME-main =		${PKGNAME}
-PKGNAME-java =		opencv-java-$V
+PKGNAME-java =		opencv-java-${V}
 
 HOMEPAGE =		http://www.opencv.org/
 MAINTAINER =		Rafael Sadowski <rafael@sizeofvoid.org>
 
-SHARED_LIBS =		opencv_calib3d			1.0 #2.1
-SHARED_LIBS +=		opencv_core			1.0 #2.1
-SHARED_LIBS +=		opencv_features2d		1.0 #2.1
-SHARED_LIBS +=		opencv_flann			1.0 #2.1
-SHARED_LIBS +=		opencv_highgui			1.0 #2.1
-SHARED_LIBS +=		opencv_imgcodecs		0.0 #3.0
-SHARED_LIBS +=		opencv_imgproc			1.0 #2.1
-SHARED_LIBS +=		opencv_ml			1.0 #2.1
-SHARED_LIBS +=		opencv_objdetect		1.0 #2.1
-SHARED_LIBS +=		opencv_photo			0.0 #1.1
-SHARED_LIBS +=		opencv_shape			0.0 #3.0
-SHARED_LIBS +=		opencv_stitching		0.0 #1.1
-SHARED_LIBS +=		opencv_superres			0.0 #1.1
-SHARED_LIBS +=		opencv_video			1.0 #2.1
-SHARED_LIBS +=		opencv_videoio			0.0 #3.0
-SHARED_LIBS +=		opencv_videostab		0.0 #1.1
+SHARED_LIBS =		opencv_calib3d			2.0 #1.1
+SHARED_LIBS +=		opencv_core			2.0 #1.1
+SHARED_LIBS +=		opencv_features2d		2.0 #1.1
+SHARED_LIBS +=		opencv_flann			2.0 #1.1
+SHARED_LIBS +=		opencv_highgui			2.0 #1.1
+SHARED_LIBS +=		opencv_imgcodecs		0.0 #1.0
+SHARED_LIBS +=		opencv_imgproc			2.0 #1.1
+SHARED_LIBS +=		opencv_ml			2.0 #1.1
+SHARED_LIBS +=		opencv_objdetect		2.0 #1.1
+SHARED_LIBS +=		opencv_photo			1.0 #0.1
+SHARED_LIBS +=		opencv_shape			0.0 #1.0
+SHARED_LIBS +=		opencv_stitching		0.0 #1.0
+SHARED_LIBS +=		opencv_superres			1.0 #0.1
+SHARED_LIBS +=		opencv_video			2.0 #1.1
+SHARED_LIBS +=		opencv_videoio			0.0 #1.0
+SHARED_LIBS +=		opencv_videostab		1.0 #0.1
 
 EXTRACT_SUFX =		.zip
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=opencvlibrary/}
 
 WANTLIB-main =  Half Iex IlmImf IlmThread Imath X11 Xcomposite Xcursor
 WANTLIB-main += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
-WANTLIB-main += avcodec avformat avutil bz2 c cairo fontconfig
+WANTLIB-main += avcodec avformat avutil bz2 c cairo fontconfig intl
 WANTLIB-main += freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB-main += gobject-2.0 gstapp-1.0 gstbase-1.0 gstpbutils-1.0
 WANTLIB-main += avresample cairo-gobject gdk-3 gtk-3
@@ -46,17 +46,17 @@ WANTLIB-main += jasper jpeg m pango-1.0 pangocairo-1.0
 WANTLIB-main += pangoft2-1.0 png pthread stdc++ swscale tiff xml2 z
 WANTLIB-main += ${MODGETTEXT_WANTLIB} ${MODPY_WANTLIB}
 
-WANTLIB-java += m pthread stdc++
-WANTLIB-java += opencv_calib3d opencv_core opencv_features2d opencv_flann
-WANTLIB-java += opencv_highgui opencv_imgproc opencv_ml opencv_objdetect
-WANTLIB-java += opencv_photo opencv_video
+WANTLIB-java = m pthread stdc++
+WANTLIB-java += opencv_calib3d>=2.0 opencv_core>=2.0 opencv_features2d>=2.0 opencv_flann>=2.0
+WANTLIB-java += opencv_highgui>=2.0 opencv_imgproc>=2.0 opencv_ml>=2.0 opencv_objdetect>=2.0
+WANTLIB-java += opencv_photo>=1.0 opencv_video>=2.0
 
 MULTI_PACKAGES =	-main -java
 PSEUDO_FLAVORS =	no_java
 FLAVOR ?=
 
 # BSDL
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
 .include <bsd.port.arch.mk>
 
