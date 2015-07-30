@@ -496,6 +496,7 @@ share/examples/gemrb/
 share/examples/gemrb/GemRB.cfg.noinstall.sample
 share/examples/gemrb/GemRB.cfg.sample
 @sample ${SYSCONFDIR}/gemrb/GemRB.cfg
+share/examples/gemrb/baldurs_gate_1.cfg
 share/gemrb/
 share/gemrb/GUIScripts/
 share/gemrb/GUIScripts/Actor.py
@@ -610,6 +611,8 @@ share/gemrb/GUIScripts/bg1/GUIINV.pyc
 share/gemrb/GUIScripts/bg1/GUIJRNL.py
 share/gemrb/GUIScripts/bg1/GUIJRNL.pyc
 share/gemrb/GUIScripts/bg1/GUIMOVIE.py
+share/gemrb/GUIScripts/bg1/GUIMOVIE.py.orig
+share/gemrb/GUIScripts/bg1/GUIMOVIE.pyc
 share/gemrb/GUIScripts/bg1/GUIMP.py
 share/gemrb/GUIScripts/bg1/GUIMP.pyc
 share/gemrb/GUIScripts/bg1/GUISONGS.py

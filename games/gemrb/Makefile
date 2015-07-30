@@ -55,5 +55,7 @@ post-install:
 	 cd ${PREFIX}/share/gemrb/GUIScripts/ && find * -name \*.py \
 		-exec ${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/share/gemrb/GUIScripts/{} \;
+	 ${SUBST_CMD} -c ${FILESDIR}/baldurs_gate_1.cfg \
+		 ${PREFIX}/share/examples/gemrb/baldurs_gate_1.cfg
 
 .include <bsd.port.mk>
