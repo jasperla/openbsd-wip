@@ -30,6 +30,6 @@ RUN_DEPENDS=		converters/p5-DateManip
 NO_TEST=		Yes
 
 pre-configure:
-	@perl -pi -e "s:%%PREFIX%%:${PREFIX}:" ${WRKSRC}/man/sorter.1
+	@sed -i 's:%%PREFIX%%:${PREFIX}:' ${WRKSRC}/man/sorter.1
 
 .include <bsd.port.mk>
