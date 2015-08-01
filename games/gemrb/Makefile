@@ -57,5 +57,6 @@ post-install:
 		${PREFIX}/share/gemrb/GUIScripts/{} \;
 	 ${SUBST_CMD} -c ${FILESDIR}/baldurs_gate_1.cfg \
 		 ${PREFIX}/share/examples/gemrb/baldurs_gate_1.cfg
+	rm ${PREFIX}/share/gemrb/GUIScripts/bg1/GUIMOVIE.py.orig
 
 .include <bsd.port.mk>
