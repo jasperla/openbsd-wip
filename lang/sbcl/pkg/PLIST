@@ -1,0 +1,51 @@
+@comment $OpenBSD: PLIST,v 1.8 2013/12/10 17:37:54 joshe Exp $
+@bin bin/sbcl
+@info info/asdf.info
+@info info/sbcl.info
+lib/sbcl/
+lib/sbcl/contrib/
+lib/sbcl/contrib/asdf.fasl
+lib/sbcl/contrib/sb-aclrepl.asd
+lib/sbcl/contrib/sb-aclrepl.fasl
+lib/sbcl/contrib/sb-bsd-sockets.asd
+lib/sbcl/contrib/sb-bsd-sockets.fasl
+lib/sbcl/contrib/sb-cltl2.asd
+lib/sbcl/contrib/sb-cltl2.fasl
+lib/sbcl/contrib/sb-concurrency.asd
+lib/sbcl/contrib/sb-concurrency.fasl
+lib/sbcl/contrib/sb-cover.asd
+lib/sbcl/contrib/sb-cover.fasl
+lib/sbcl/contrib/sb-executable.asd
+lib/sbcl/contrib/sb-executable.fasl
+lib/sbcl/contrib/sb-gmp.asd
+lib/sbcl/contrib/sb-gmp.fasl
+lib/sbcl/contrib/sb-grovel.asd
+lib/sbcl/contrib/sb-grovel.fasl
+lib/sbcl/contrib/sb-introspect.asd
+lib/sbcl/contrib/sb-introspect.fasl
+lib/sbcl/contrib/sb-md5.asd
+lib/sbcl/contrib/sb-md5.fasl
+lib/sbcl/contrib/sb-mpfr.asd
+lib/sbcl/contrib/sb-mpfr.fasl
+lib/sbcl/contrib/sb-posix.asd
+lib/sbcl/contrib/sb-posix.fasl
+lib/sbcl/contrib/sb-queue.asd
+lib/sbcl/contrib/sb-queue.fasl
+lib/sbcl/contrib/sb-rotate-byte.asd
+lib/sbcl/contrib/sb-rotate-byte.fasl
+lib/sbcl/contrib/sb-rt.asd
+lib/sbcl/contrib/sb-rt.fasl
+lib/sbcl/contrib/sb-simple-streams.asd
+lib/sbcl/contrib/sb-simple-streams.fasl
+lib/sbcl/contrib/sb-sprof.asd
+lib/sbcl/contrib/sb-sprof.fasl
+lib/sbcl/contrib/uiop.fasl
+lib/sbcl/sbcl.core
+lib/sbcl/site-systems/
+@man man/man1/sbcl.1
+share/doc/sbcl/
+share/doc/sbcl/BUGS
+share/doc/sbcl/COPYING
+share/doc/sbcl/CREDITS
+share/doc/sbcl/NEWS
+
