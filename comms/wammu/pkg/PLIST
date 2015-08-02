@@ -96,6 +96,10 @@ lib/python${MODPY_VERSION}/site-packages/Wammu/Wizard.py
 lib/python${MODPY_VERSION}/site-packages/Wammu/Wizard.pyc
 lib/python${MODPY_VERSION}/site-packages/Wammu/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Wammu/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/test_paths.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/test_paths.pyc
+lib/python${MODPY_VERSION}/site-packages/Wammu/test_utils.py
+lib/python${MODPY_VERSION}/site-packages/Wammu/test_utils.pyc
 lib/python${MODPY_VERSION}/site-packages/wammu-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 man/cs/
 man/cs/man1/
