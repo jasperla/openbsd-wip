@@ -1,20 +1,21 @@
 $OpenBSD$
---- x2goclient.pro.orig	Tue Dec 17 15:39:48 2013
-+++ x2goclient.pro	Wed Jan  1 22:06:20 2014
-@@ -105,7 +105,7 @@ SOURCES += sharewidget.cpp \
-            appdialog.cpp \
-            x2goutils.cpp
+--- x2goclient.pro.orig	Tue Jul 28 22:32:19 2015
++++ x2goclient.pro	Tue Jul 28 22:33:12 2015
+@@ -124,7 +124,7 @@ SOURCES += src/sharewidget.cpp \
+            src/non_modal_messagebox.cpp \
+            src/help.cpp
  
 -LIBS += -lssh
 +LIBS += -lssh -lldap -lcups -lX11 -lXpm
+ win32:LIBS += -lAdvAPI32 -lshell32 -lUser32
  
  plugin {
- 	TARGET = x2goplugin
-@@ -139,6 +139,7 @@ else:message(No translation files in project)
+@@ -166,7 +166,7 @@ else:message("No translation files in project")
+ 
  TEMPLATE = app
  DEPENDPATH += .
- INCLUDEPATH += .
-+INCLUDEPATH += /usr/X11R6/include
- RESOURCES += resources.rcc
+-INCLUDEPATH += src
++INCLUDEPATH += src /usr/X11R6/include
+ RESOURCES += res/resources.rcc
  
- linux-g++ {
+ exists(res/txt/git-info) {

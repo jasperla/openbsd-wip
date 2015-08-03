@@ -2,7 +2,7 @@
 
 CATEGORIES =	x11
 COMMENT =	Qt client for the X2Go system
-VERSION =	4.0.2.0
+VERSION =	4.0.5.0
 PKGNAME =	x2goclient-${VERSION}
 DISTNAME =	x2goclient-${VERSION}
 HOMEPAGE =	http://www.x2go.org

@@ -1,2 +1,2 @@
 @comment $OpenBSD$
-bin/x2goclient
+@bin bin/x2goclient
