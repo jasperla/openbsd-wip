@@ -9,8 +9,8 @@ COMMENT-doc =		html documentation for rustc
 
 # WARNING: upstream don't provide versioned archive for beta
 # RUST_HASH = echo -n 'X.Y.Z-beta.N' | md5 | cut -c1-8
-V =			1.2.0beta6
-RUST_HASH =		fc5f0b4b
+V =			1.3.0beta1
+RUST_HASH =		cd3ae5ac
 DISTNAME =		rustc-beta-src
 
 SUBST_VARS +=		RUST_HASH
@@ -22,13 +22,13 @@ PKGNAME-doc =		rust-doc-${V}
 MULTI_PACKAGES =	-main -doc
 
 # the snapshot version should be the version in src/snapshots.txt
-SNAPSHOT-amd64 =	rust-stage0-2015-05-24-ba0e1cd-openbsd-x86_64-7c249db2a0f4e6ace9c3a343ba62c990635d665a.tar.bz2
+SNAPSHOT-amd64 =	rust-stage0-2015-07-26-a5c12f4-openbsd-x86_64-8b21d574a65c38e7c7b0bbbb8d675d8a44cec214.tar.bz2
 
 CATEGORIES =		lang
 
 HOMEPAGE =		http://www.rust-lang.org/
 
-MAINTAINER =		Sebastien Marie <semarie-openbsd@latrappe.fr>
+MAINTAINER =		Sebastien Marie <semarie@openbsd.org>
 
 # both MIT and Apache2.0
 # with portions covered by various BSD-like licenses

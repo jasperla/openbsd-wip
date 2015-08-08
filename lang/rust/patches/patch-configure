@@ -2,7 +2,6 @@ $OpenBSD: patch-configure,v 1.1 2015/04/10 18:13:06 naddy Exp $
 Remove requirement for curl or wget.
 The snapshot isn't downloaded but copied by post-configure.
 
-Allow LLVM version 3.7
 https://github.com/rust-lang/rust/pull/26535
 --- configure.orig	Tue Jun 23 22:40:10 2015
 +++ configure	Thu Jun 25 18:05:18 2015
@@ -15,12 +14,3 @@ https://github.com/rust-lang/rust/pull/26535
  if [ -z "$CFG_PYTHON_PROVIDED" ]; then
      probe_need CFG_PYTHON      python2.7 python2.6 python2 python
  fi
-@@ -920,7 +920,7 @@ then
-     LLVM_VERSION=$($LLVM_CONFIG --version)
- 
-     case $LLVM_VERSION in
--        (3.[5-6]*)
-+        (3.[5-7]*)
-             msg "found ok version of LLVM: $LLVM_VERSION"
-             ;;
-         (*)
