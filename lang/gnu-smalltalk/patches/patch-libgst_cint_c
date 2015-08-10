@@ -1,0 +1,39 @@
+$OpenBSD$
+--- libgst/cint.c.orig	Mon Feb 24 21:52:54 2014
++++ libgst/cint.c	Mon Feb 24 21:58:17 2014
+@@ -196,7 +196,9 @@ static int my_lstat (const char *name,
+ 		     OOP out);
+ #endif
+ static int my_putenv (const char *str);
++#ifndef __OpenBSD__
+ static char **get_environ (void);
++#endif
+ static int my_chdir (const char *str);
+ static int my_chown (const char *file, const char *owner, const char *group);
+ static int my_symlink (const char* oldpath, const char* newpath);
+@@ -396,13 +398,14 @@ my_putenv (const char *str)
+   return (putenv (clone));
+ }
+ 
++#ifndef __OpenBSD__
+ static char **
+ get_environ (void)
+ {
+   return environ;
+ }
++#endif
+ 
+-
+ int
+ my_chdir (const char *dir)
+ {
+@@ -621,7 +624,9 @@ _gst_init_cfuncs (void)
+   /* Access to C library */
+   _gst_define_cfunc ("system", system);
+   _gst_define_cfunc ("getenv", getenv);
++#ifndef __OpenBSD__
+   _gst_define_cfunc ("environ", get_environ);
++#endif
+   _gst_define_cfunc ("putenv", my_putenv);
+   _gst_define_cfunc ("printf", printf);
+ 

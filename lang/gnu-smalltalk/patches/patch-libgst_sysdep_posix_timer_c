@@ -1,0 +1,24 @@
+$OpenBSD$
+
+no librt and no timer_create()
+
+--- libgst/sysdep/posix/timer.c.orig	Mon Feb 24 21:59:14 2014
++++ libgst/sysdep/posix/timer.c	Mon Feb 24 22:01:38 2014
+@@ -110,7 +110,8 @@ _gst_sigalrm_at (int64_t nsTime)
+ 
+ void
+ _gst_init_sysdep_timer (void)
+-{ 
++{
++#ifndef __OpenBSD__
+ #if defined HAVE_TIMER_CREATE && defined _POSIX_MONOTONIC_CLOCK
+   struct sigevent sev;
+   memset(&sev, 0, sizeof(sev));
+@@ -118,6 +119,7 @@ _gst_init_sysdep_timer (void)
+   sev.sigev_signo = SIGALRM;
+   if (timer_create (CLOCK_MONOTONIC, &sev, &timer) != -1)
+     have_timer = true;
++#endif
+ #endif
+ }
+ 

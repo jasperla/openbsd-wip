@@ -1,0 +1,26 @@
+$OpenBSD$
+--- configure.orig	Mon Apr  8 07:52:20 2013
++++ configure	Mon Feb 24 22:21:02 2014
+@@ -3076,13 +3076,6 @@ fi
+   test -n "$AWK" && break
+ done
+ 
+-case $AWK in
+-  *gawk) ;;
+-  *) case `"$AWK" --version 2>&1` in
+-       *GNU*) ;;
+-       *) as_fn_error $? "Building GNU Smalltalk requires GNU awk." "$LINENO" 5 ;;
+-     esac ;;
+-esac
+ am__api_version='1.11'
+ 
+ # Find a good install program.  We prefer a C program (faster),
+@@ -6876,7 +6869,7 @@ esac
+     aix*) CPPFLAGS="$CPPFLAGS -D_THREAD_SAFE" ;;
+     freebsd*) CPPFLAGS="$CPPFLAGS -D_THREAD_SAFE" LIBTHREAD=-pthread ;;
+     solaris*) CPPFLAGS="$CPPFLAGS -D_REENTRANT" LIBTHREAD=-lpthread ;;
+-    hpux*) LIBTHREAD=-lpthread ;;
++    hpux*|openbsd*) LIBTHREAD=-lpthread ;;
+   esac
+ 
+   ac_fn_c_check_header_mongrel "$LINENO" "pthread.h" "ac_cv_header_pthread_h" "$ac_includes_default"

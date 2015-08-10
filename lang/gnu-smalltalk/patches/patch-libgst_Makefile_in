@@ -1,0 +1,12 @@
+$OpenBSD$
+--- libgst/Makefile.in.orig	Mon Feb 24 22:19:44 2014
++++ libgst/Makefile.in	Mon Feb 24 22:21:25 2014
+@@ -415,7 +415,7 @@ CLEANFILES = genprims$(EXEEXT) genbc$(EXEEXT) genvm$(E
+ # definitions for libgst.la
+ libgst_la_LIBADD = $(top_builddir)/lib-src/library.la \
+ 	$(LIBSIGSEGV) $(LIBFFI) $(LIBSNPRINTFV) $(LIBREADLINE) $(LIBLTDL) \
+-	$(LIBGMP) $(LIBTHREAD)
++	$(LIBGMP) $(LIBTHREAD) -lexecinfo
+ 
+ libgst_la_DEPENDENCIES = $(top_builddir)/lib-src/library.la $(LIBSNPRINTFV)
+ libgst_la_LDFLAGS = -version-info $(VERSION_INFO) -no-undefined \

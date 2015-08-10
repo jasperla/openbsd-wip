@@ -1,0 +1,9 @@
+Warning: symlink(s) point to non-existent /usr/obj/ports/smalltalk-3.2.5/fake-amd64/usr/obj/ports/smalltalk-3.2.5/fake-amd64/usr/local/man/man1/gst-load.1
+	/usr/obj/ports/smalltalk-3.2.5/fake-amd64/usr/local/man/man1/gst-reload.1
+
+get gst-blox working
+
+- get gmp support working
+  - checking how to link with GMP... not found
+
+- re-add gdbm support
