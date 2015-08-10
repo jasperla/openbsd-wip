@@ -12,7 +12,9 @@ MASTER_SITES =	${HOMEPAGE}/download/
 # MIT
 PERMIT_PACKAGE_CDROM =		Yes
 
-MODULES =		devel/cmake
+MODULES =		devel/cmake gcc4
+MODGCC4_LANGS = 	c++
+MODGCC4_ARCHS = 	*
 
 WANTLIB += c gnutls m pthread stdc++ uuid
 
