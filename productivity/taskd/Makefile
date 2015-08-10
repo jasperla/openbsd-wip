@@ -38,6 +38,5 @@ post-install:
 		${PREFIX}/share/examples/taskd/pki/
 	${SUBST_DATA} ${FILESDIR}/config \
 		${PREFIX}/share/examples/taskd/config
-	${INSTALL_DATA} ${FILESDIR}/vars.dist ${PREFIX}/share/examples/taskd/pki/
 
 .include <bsd.port.mk>

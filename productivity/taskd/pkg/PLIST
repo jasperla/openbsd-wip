@@ -38,8 +38,6 @@ share/examples/taskd/pki/generate.client
 share/examples/taskd/pki/generate.crl
 share/examples/taskd/pki/generate.server
 share/examples/taskd/pki/vars
-share/examples/taskd/pki/vars.dist
-@sample share/examples/taskd/pki/vars
 share/taskd/
 share/taskd/AUTHORS
 share/taskd/COPYING
