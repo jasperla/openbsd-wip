@@ -26,6 +26,7 @@ MODGCC4_LANGS =		c++
 MODGCC4_VERSION =	4.9
 
 CONFIGURE_STYLE =	cmake
+NO_NINJA = 			yes
 
 MODULES =		devel/cmake \
 			lang/python \
