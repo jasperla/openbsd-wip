@@ -3,19 +3,22 @@
 COMMENT =	lua binding of libevent
 SHARED_ONLY =	Yes
 
-DISTNAME =	luaevent-prosody-0.1.1
-PKGNAME=	luaevent-0.2.1
-REVISION =	2
+V = 0.4.3
+DISTNAME=	luaevent-${V}
 CATEGORIES =	devel
 
 HOMEPAGE =	http://prosody.im/doc/libevent
+
+GH_ACCOUNT = harningt
+GH_PROJECT = luaevent
+GH_TAGNAME = v${V}
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	event ${MODLUA_WANTLIB}
 
-MASTER_SITES =	http://matthewwild.co.uk/uploads/
+#MASTER_SITES =	http://matthewwild.co.uk/uploads/
 
 MODULES =	lang/lua
 
