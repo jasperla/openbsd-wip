@@ -9,8 +9,8 @@ COMMENT-doc =		html documentation for rustc
 
 # WARNING: upstream don't provide versioned archive for beta
 # RUST_HASH = echo -n 'X.Y.Z-beta.N' | md5 | cut -c1-8
-V =			1.3.0beta1
-RUST_HASH =		cd3ae5ac
+V =			1.3.0beta2
+RUST_HASH =		6eca8e2b
 DISTNAME =		rustc-beta-src
 
 SUBST_VARS +=		RUST_HASH
