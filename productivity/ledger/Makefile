@@ -2,10 +2,9 @@
 
 COMMENT =		command line double-entry accounting ledger
 
-VERSION =		3.1
-PKGNAME =		ledger-${VERSION}
+GH_TAGNAME =		v3.1
+DISTNAME = 		ledger-${GH_TAGNAME:S/v//}
 CATEGORIES =		productivity
-DISTNAME = 		v${VERSION}
 
 HOMEPAGE =		http://www.ledger-cli.org
 
@@ -22,11 +21,7 @@ GH_PROJECT =		ledger
 WANTLIB =		c gmp>=4 m pcre stdc++
 
 MODGCC4_ARCHS =		*
-MODGCC4_LANGS =		c++
-MODGCC4_VERSION =	4.9
-
-CONFIGURE_STYLE =	cmake
-NO_NINJA = 			yes
+MODGCC4_LANGS +=	c++
 
 MODULES =		devel/cmake \
 			lang/python \
@@ -37,8 +32,6 @@ LIB_DEPENDS =		devel/boost \
 			devel/mpfr  \
 			devel/pcre  \
 			devel/utfcpp
-
-WRKDIST =		${WRKDIR}/ledger-${VERSION}
 
 FILES =			LICENSE 	\
 			ledger.1 	\
