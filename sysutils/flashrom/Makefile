@@ -4,30 +4,27 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT=	flash-ROM programmer for BIOS etc
 
-DISTNAME=	flashrom-0.9.7
+DISTNAME=	flashrom-0.9.8
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.flashrom.org/
 
-# GPLv2 (only, for most files)
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c ftdi pthread usb z
 
 MASTER_SITES=	http://download.flashrom.org/releases/
 
+BUILD_DEPENDS=	sysutils/pciutils # static library
 RUN_DEPENDS=	sysutils/dmidecode
-LIB_DEPENDS=	devel/libftdi
-# static lib
-BUILD_DEPENDS=	sysutils/pciutils
+LIB_DEPENDS=	devel/libusb-compat \
+		devel/libftdi
+FAKE_FLAGS=	PREFIX="${TRUEPREFIX}" MANDIR="${TRUEPREFIX}/man"
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-FAKE_FLAGS=	PREFIX="${PREFIX}" MANDIR="${PREFIX}/man"
 
 .include <bsd.port.mk>
