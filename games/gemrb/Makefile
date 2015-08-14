@@ -6,14 +6,7 @@ SHARED_LIBS += 		gemrb_core 0.0
 
 COMMENT =		open-source implementation of Bioware's Infinity Engine
 
-# XXX put back when SF unbreaks itself
-#DISTNAME =		gemrb-0.8.3
-
-# XXX remove when SF unbreaks
-PKGNAME =		gemrb-0.8.3
-DISTNAME =		v0.8.3
-EXTRACT_SUFX =		.zip
-WRKDIST =		${WRKDIR}/gemrb-0.8.3
+DISTNAME =		gemrb-0.8.3
 
 CATEGORIES =		games emulators x11
 
@@ -24,9 +17,7 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-# XXX SF currently broken for 0.8.3
-#MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gemrb/}
-MASTER_SITES =		https://github.com/gemrb/gemrb/archive/
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gemrb/}
 
 WANTLIB += SDL SDL_mixer c freetype m openal png pthread stdc++
 WANTLIB += vlc vorbisfile z ${MODPY_WANTLIB}
