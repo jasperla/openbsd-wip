@@ -6,8 +6,11 @@ COMMENT-main =		library for creating GUIs for games and 3D applications
 COMMENT-demo =		MyGUI demos
 COMMENT-tools = 	MyGUI tools
 
-V = 			3.2.0
-DISTNAME =		MyGUI_${V}
+V = 			3.2.2
+GH_ACCOUNT = 		MyGUI
+GH_PROJECT = 		mygui
+GH_TAGNAME = 		MyGUI${V}
+DISTNAME = 		mygui-${V}
 PKGNAME-main =		mygui-${V}
 PKGNAME-demo =		mygui-demo-${V}
 PKGNAME-tools = 	mygui-tools-${V}
@@ -25,35 +28,26 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 # LGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB-main += OgreMain freetype m pthread stdc++
-WANTLIB-demo += ${WANTLIB-main} MyGUIEngine MyGUI.OgrePlatform OIS boost_system-mt c
+WANTLIB-main += X11 OIS OgreMain boost_atomic-mt boost_chrono-mt boost_date_time-mt
+WANTLIB-main += boost_system-mt boost_thread-mt freetype m pthread stdc++
+WANTLIB-demo += MyGUIEngine MyGUI.OgrePlatform c ${WANTLIB-main}
 WANTLIB-tools += ${WANTLIB-demo}
-
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=my-gui/}
-EXTRACT_SUFX =		.zip
 
 MODULES =		devel/cmake
 BUILD_DEPENDS =		devel/ois
-LIB_DEPENDS-main =	x11/ogre,-main
+LIB_DEPENDS-main =	x11/ogre,-main \
+			devel/ois
 LIB_DEPENDS-demo = 	devel/mygui,-main \
 			devel/ois
 LIB_DEPENDS-tools = 	${LIB_DEPENDS-demo}
 
-CONFIGURE_ARGS += 	-DCMAKE_BUILD_TYPE=Release \
-			-DMYGUI_INSTALL_SAMPLES=true \
+CONFIGURE_ARGS += 	-DMYGUI_INSTALL_SAMPLES=true \
 			-DMYGUI_INSTALL_TOOLS=true \
-			-DCMAKE_SHARED_LINKER_FLAGS=-L${LOCALBASE}/lib
+			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -fPIC"
 
 NO_TEST =		Yes
 
-# Add -pthread to trigger BOOST_HAS_THREADS.
-CFLAGS +=		-pthread
-
 post-extract:
 	rm ${WRKSRC}/CMake/Packages/FindFreetype.cmake
-
-pre-configure:
-	@${SUBST_CMD} ${WRKSRC}/CMake/InstallResources.cmake \
-		${WRKSRC}/Common/Base/Ogre/BaseManager.cpp
 
 .include <bsd.port.mk>

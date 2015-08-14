@@ -23,13 +23,16 @@ include/MYGUI/MyGUI_ControllerFadeAlpha.h
 include/MYGUI/MyGUI_ControllerItem.h
 include/MYGUI/MyGUI_ControllerManager.h
 include/MYGUI/MyGUI_ControllerPosition.h
+include/MYGUI/MyGUI_ControllerRepeatClick.h
 include/MYGUI/MyGUI_CoordConverter.h
 include/MYGUI/MyGUI_CustomAllocator.h
 include/MYGUI/MyGUI_DDContainer.h
 include/MYGUI/MyGUI_DDItemInfo.h
 include/MYGUI/MyGUI_DataFileStream.h
 include/MYGUI/MyGUI_DataManager.h
+include/MYGUI/MyGUI_DataMemoryStream.h
 include/MYGUI/MyGUI_DataStream.h
+include/MYGUI/MyGUI_DataStreamHolder.h
 include/MYGUI/MyGUI_Delegate.h
 include/MYGUI/MyGUI_DelegateImplement.h
 include/MYGUI/MyGUI_DeprecatedTypes.h
@@ -177,12 +180,14 @@ include/MYGUI/MyGUI_WidgetToolTip.h
 include/MYGUI/MyGUI_WidgetTranslate.h
 include/MYGUI/MyGUI_WidgetUserData.h
 include/MYGUI/MyGUI_Window.h
+include/MYGUI/MyGUI_WindowsClipboardHandler.h
 include/MYGUI/MyGUI_XmlDocument.h
 include/MYGUI/Plugin.h
 include/MYGUI/StrangeButton.h
+lib/Plugin_StrangeButton.so
+lib/libEditorFramework.so
 @lib lib/libMyGUI.OgrePlatform.so.${LIBMyGUI.OgrePlatform_VERSION}
 @lib lib/libMyGUIEngine.so.${LIBMyGUIEngine_VERSION}
-lib/libPlugin_StrangeButton.so
 lib/pkgconfig/MYGUI.pc
 share/MYGUI/
 @sample ${SYSCONFDIR}/MYGUI/

@@ -1,7 +1,7 @@
 $OpenBSD$
---- Platforms/Ogre/OgrePlatform/CMakeLists.txt.orig	Mon May 13 15:20:19 2013
-+++ Platforms/Ogre/OgrePlatform/CMakeLists.txt	Mon May 13 15:30:01 2013
-@@ -8,11 +8,12 @@ include_directories(
+--- Platforms/Ogre/OgrePlatform/CMakeLists.txt.orig	Thu Aug 13 18:48:01 2015
++++ Platforms/Ogre/OgrePlatform/CMakeLists.txt	Thu Aug 13 18:49:22 2015
+@@ -8,7 +8,8 @@ include_directories(
  
  include(${PROJECTNAME}.list)
  
@@ -11,8 +11,3 @@ $OpenBSD$
  
  add_dependencies(${PROJECTNAME} MyGUIEngine)
  
--target_link_libraries(${PROJECTNAME} ${OGRE_LIBRARIES})
-+target_link_libraries(${PROJECTNAME} ${OGRE_LIBRARIES} MyGUIEngine)
- link_directories(${OGRE_LIB_DIR})
- 
- install(FILES ${HEADER_FILES}

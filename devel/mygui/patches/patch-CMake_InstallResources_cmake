@@ -1,6 +1,6 @@
 $OpenBSD$
---- CMake/InstallResources.cmake.orig	Wed Feb 22 22:27:34 2012
-+++ CMake/InstallResources.cmake	Thu Jul 18 07:49:53 2013
+--- CMake/InstallResources.cmake.orig	Thu Aug 13 17:08:51 2015
++++ CMake/InstallResources.cmake	Thu Aug 13 17:11:01 2015
 @@ -24,7 +24,7 @@ function(install_file FILENAME)
  	else ()
  		install(FILES
@@ -10,12 +10,3 @@ $OpenBSD$
  		)
  	endif ()
  endfunction(install_file)
-@@ -41,7 +41,7 @@ if (MYGUI_RENDERSYSTEM EQUAL 2)
- 			set(MYGUI_NO_PLUGIN_OGRE_DIRECTX "#")
- 		endif ()
- 	elseif (UNIX)
--		set(MYGUI_PLUGIN_DIR "/usr/lib/OGRE")
-+		set(MYGUI_PLUGIN_DIR "${LOCALBASE}/lib/OGRE")
- 		set(MYGUI_NO_PLUGIN_OGRE_DIRECTX "#")
- 	endif()
- endif ()
