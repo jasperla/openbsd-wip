@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/racket/src/gmp/gmplonglong.h.orig	Thu Aug 13 17:01:30 2015
-+++ src/racket/src/gmp/gmplonglong.h	Thu Aug 13 18:51:28 2015
+--- src/racket/src/gmp/gmplonglong.h.orig	Thu Aug 21 07:36:39 2014
++++ src/racket/src/gmp/gmplonglong.h	Fri Aug 14 02:01:21 2015
 @@ -1,35 +1,56 @@
  /* longlong.h -- definitions for mixed size 32/64 bit arithmetic.
  
@@ -1822,7 +1822,7 @@ $OpenBSD$
 +#endif
 +
 +#ifdef COUNT_LEADING_ZEROS_NEED_CLZ_TAB
-+extern const unsigned char __GMP_DECLSPEC __clz_tab[129];
++extern const unsigned char __clz_tab[129];
 +#endif
 +
  #if !defined (count_trailing_zeros)

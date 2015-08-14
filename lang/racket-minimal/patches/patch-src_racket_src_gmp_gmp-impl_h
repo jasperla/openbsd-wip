@@ -1,0 +1,13 @@
+$OpenBSD$
+--- src/racket/src/gmp/gmp-impl.h.orig	Fri Aug 14 02:11:42 2015
++++ src/racket/src/gmp/gmp-impl.h	Fri Aug 14 02:13:00 2015
+@@ -1130,6 +1130,9 @@ extern mp_size_t mpn_fft_table[2][MPN_FFT_TABLE_SIZE];
+ 
+ #endif /* TUNE_PROGRAM_BUILD */
+ 
++#define LIKELY(cond)                   __GMP_LIKELY(cond)
++#define UNLIKELY(cond)                 __GMP_UNLIKELY(cond)
++
+ #if defined (__cplusplus)
+ }
+ #endif
