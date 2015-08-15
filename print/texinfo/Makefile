@@ -20,14 +20,18 @@ WANTLIB += c ncurses
 MASTER_SITES =		${MASTER_SITE_GNU:=texinfo/}
 
 MODULES =		devel/gettext
-BUILD_DEPENDS =		lang/gawk
-# TODO: check wether this should depend on Hevea or not.
+BUILD_DEPENDS =		devel/help2man \
+			lang/gawk
 TEST_DEPENDS =		print/texlive/base
+
+FAKE_FLAGS =		TEXMF=${PREFIX}/share/texmf-local
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--program-prefix=g
 CONFIGURE_ENV =		ac_cv_prog_AWK=gawk
+
+INSTALL_TARGET =	install install-tex
 
 post-install:
 	cd ${PREFIX}/info && for i in *.info*; do mv $$i g$$i; done
