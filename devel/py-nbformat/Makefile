@@ -10,10 +10,10 @@ CATEGORIES =		devel
 
 HOMEPAGE =		http://jupyter.org
 
-# XXX jsonschema
 RUN_DEPENDS =		devel/py-ipython_genutils \
 			devel/py-traitlets \
-			devel/jupyter_core
+			devel/py-jupyter_core \
+			devel/py-jsonschema
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
