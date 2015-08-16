@@ -1,0 +1,28 @@
+# $OpenBSD: Makefile.template,v 1.72 2015/04/08 17:53:19 sthen Exp $
+
+COMMENT =		implementation of JSON Schema validation for Python
+
+MODPY_EGG_VERSION =	2.5.1
+DISTNAME =		jsonschema-${MODPY_EGG_VERSION}
+PKGNAME =		py-${DISTNAME}
+
+CATEGORIES =		devel
+
+HOMEPAGE =		http://github.com/Julian/jsonschema
+
+# XXX functools32
+#RUN_DEPENDS =		devel/py-ipython_genutils
+TEST_DEPENDS =		${RUN_DEPENDS} \
+			devel/py-test
+
+# MIT
+PERMIT_PACKAGE_CDROM =	Yes
+
+MODULES =		lang/python
+MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
+
+do-test:
+	cd ${WRKSRC} && ${LOCALBASE}/bin/py.test
+
+.include <bsd.port.mk>
