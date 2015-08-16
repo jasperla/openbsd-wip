@@ -5,7 +5,7 @@ $OpenBSD$
  set_source_files_properties(${GENERATED_SRC}/layout_default.xml.h PROPERTIES GENERATED 1)
  
  # Targets for flex/bison   generated files
-+set(FLEX_EXECUTABLE /usr/local/bin/gflex)
++SET(FLEX_EXECUTABLE "/usr/local/bin/gflex")
  FLEX_TARGET(scanner        scanner.l        ${GENERATED_SRC}/scanner.cpp        COMPILE_FLAGS "-PscannerYY")
  FLEX_TARGET(code           code.l           ${GENERATED_SRC}/code.cpp           COMPILE_FLAGS "-PcodeYY")
  FLEX_TARGET(pyscanner      pyscanner.l      ${GENERATED_SRC}/pyscanner.cpp      COMPILE_FLAGS "-PpyscannerYY")

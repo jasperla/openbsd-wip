@@ -20,7 +20,7 @@ MASTER_SITES=	http://ftp.stack.nl/pub/users/dimitri/ \
 
 PSEUDO_FLAVORS=	no_gui bootstrap
 
-WANTLIB-gui = lib/qt4/QtCore.9.0
+#WANTLIB-gui = lib/qt4/QtCore
 
 MODULES+=	gcc4
 MODGCC4_ARCHS=	*
