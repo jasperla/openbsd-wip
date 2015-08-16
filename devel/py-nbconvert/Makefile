@@ -10,12 +10,12 @@ CATEGORIES =		devel
 
 HOMEPAGE =		http://jupyter.org/
 
-# XXX nbformat
 # XXX mistune
 RUN_DEPENDS =		www/py-jinja2 \
 			textproc/py-pygments \
 			devel/py-traitlets \
-			devel/jupyter_core
+			devel/jupyter_core \
+			devel/py-nbformat
 
 # XXX
 #TEST_DEPENDS =		${RUN_DEPENDS} \
