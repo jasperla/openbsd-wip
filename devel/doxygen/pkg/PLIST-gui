@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-gui,v 1.2 2010/11/04 20:13:10 sthen Exp $
+@bin bin/doxywizard
