@@ -10,8 +10,7 @@ CATEGORIES =		devel
 
 HOMEPAGE =		http://github.com/Julian/jsonschema
 
-# XXX functools32
-#RUN_DEPENDS =		devel/py-ipython_genutils
+RUN_DEPENDS =		devel/py-functools32
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/py-test
 
@@ -23,6 +22,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 do-test:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/py.test
+	cd ${WRKSRC}/jsonschema && \
+		${LOCALBASE}/bin/py.test
 
 .include <bsd.port.mk>
