@@ -1,0 +1,15 @@
+$OpenBSD: patch-setupbase_py,v 1.5 2014/04/28 21:19:41 edd Exp $
+
+Put man pages where they belong.
+
+--- setupbase.py.orig	Wed Aug 12 02:04:53 2015
++++ setupbase.py	Fri Aug 14 18:22:06 2015
+@@ -207,7 +207,7 @@ def find_data_files():
+     Just man pages at this point.
+     """
+ 
+-    manpagebase = pjoin('share', 'man', 'man1')
++    manpagebase = pjoin('man', 'man1')
+ 
+     # Simple file lists can be made by hand
+     manpages = [f for f in glob(pjoin('docs','man','*.1.gz')) if isfile(f)]

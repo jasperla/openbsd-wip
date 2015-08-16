@@ -1,0 +1,16 @@
+$OpenBSD: patch-docs_source_conf_py,v 1.2 2014/04/28 21:19:41 edd Exp $
+
+A problem with inheritance diagrams. Causes build to crash. Even if it
+did work, the generated diagrams have non-deterministic names, making
+putting their name in a PLIST somewhat difficult.
+
+--- docs/source/conf.py.orig	Wed Aug 12 02:04:53 2015
++++ docs/source/conf.py	Fri Aug 14 18:22:06 2015
+@@ -56,7 +56,6 @@ extensions = [
+     'sphinx.ext.autodoc',
+     'sphinx.ext.autosummary',
+     'sphinx.ext.doctest',
+-    'sphinx.ext.inheritance_diagram',
+     'sphinx.ext.intersphinx',
+     'IPython.sphinxext.ipython_console_highlighting',
+     'IPython.sphinxext.ipython_directive',
