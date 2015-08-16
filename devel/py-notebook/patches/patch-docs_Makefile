@@ -1,0 +1,12 @@
+$OpenBSD$
+--- docs/Makefile.orig	Sun Aug 16 21:45:51 2015
++++ docs/Makefile	Sun Aug 16 21:46:12 2015
+@@ -58,7 +58,7 @@ html: source/config.rst ipynb2rst
+ 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
+ 
+ source/config.rst:
+-	python3 autogen_config.py
++	${MODPY_BIN} autogen_config.py
+ 	@echo "Created docs for config options"
+ 
+ ipynb2rst:
