@@ -2,3 +2,4 @@
 @pkgpath devel/doxygen,gui
 @pkgpath devel/doxygen
 @bin bin/doxygen
+@man man/man1/doxygen.1

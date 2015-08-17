@@ -50,7 +50,12 @@ CONFIGURE_ARGS+=-Denglish_only:Bool=ON
 BUILD_DEPENDS += devel/bison \
 		 devel/flex
 
-RUN_DEPENDS= 	print/ghostscript/gnu
+RUN_DEPENDS= 	print/ghostscript/gnu \
+		math/graphviz
+
+
+CONFIGURE_ARGS+=-Dbuild_doc:Bool=ON \
+		-DFLEX_EXECUTABLE=${LOCALBASE}/bin/gflex
 
 WRKDIST=	${WRKDIR}/doxygen-${VERSION}
 
