@@ -20,6 +20,9 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/setup.py
+
 do-test:
 	${LOCALBASE}/bin/py.test ${MODPY_LIBDIR}/site-packages/test_path.py
 
