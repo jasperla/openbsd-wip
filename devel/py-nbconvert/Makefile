@@ -10,16 +10,18 @@ CATEGORIES =		devel
 
 HOMEPAGE =		http://jupyter.org/
 
-# XXX mistune
 RUN_DEPENDS =		www/py-jinja2 \
 			textproc/py-pygments \
 			devel/py-traitlets \
-			devel/jupyter_core \
-			devel/py-nbformat
-
-# XXX
-#TEST_DEPENDS =		${RUN_DEPENDS} \
-#			devel/py-nose
+			devel/py-jupyter_core \
+			devel/py-nbformat \
+			textproc/py-mistune \
+			www/py-tornado>=4.2 \
+			devel/py-jupyter_client
+TEST_DEPENDS =		${RUN_DEPENDS} \
+			devel/py-nose \
+			devel/py-ipykernel \
+			${FULLPKGNAME}:${FULLPKGPATH}
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -27,7 +29,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 
-#do-test:
-#	cd ${WRKSRC} && nosetests
+do-test:
+	cd ${WRKSRC} && ${LOCALBASE}/bin/nosetests ${MODPY_SITEPKG}/nbconvert
 
 .include <bsd.port.mk>
