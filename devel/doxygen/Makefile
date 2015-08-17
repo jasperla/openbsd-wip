@@ -18,28 +18,41 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	http://ftp.stack.nl/pub/users/dimitri/ \
 		ftp://ftp.stack.nl/pub/users/dimitri/
 
+MULTI_PACKAGES=	-main -gui
 PSEUDO_FLAVORS=	no_gui bootstrap
 
-#WANTLIB-gui = lib/qt4/QtCore
+COMMON_WANTLIB = c m pthread stdc++
+WANTLIB-main += iconv z ${COMMON_WANTLIB}
+WANTLIB-gui += QtCore QtGui QtXml ${COMMON_WANTLIB}
+
+COMMON_LIB_DEPENDS =	${MODLIBICONV_LIB_DEPENDS}
+LIB_DEPENDS-main = ${COMMON_LIB_DEPENDS}
+LIB_DEPENDS-gui=${COMMON_LIB_DEPENDS} ${MODQT_LIB_DEPENDS}
+RUN_DEPENDS-gui=doxygen-${VERSION}:${BUILD_PKGPATH}
 
 MODULES+=	gcc4
 MODGCC4_ARCHS=	*
 MODGCC4_LANGS=	c++
 
 MODULES =	devel/cmake \
-		x11/qt4
+		converters/libiconv
 
-MULTI_PACKAGES=	-main -gui
+.include <bsd.port.arch.mk>
+.if ${BUILD_PACKAGES:M-gui}
+CONFIGURE_ARGS+=-Dbuild_wizard:Bool=ON
+MODULES+=	x11/qt4
+.endif
+.if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
+# ld(1) fails
+CONFIGURE_ARGS+=-Denglish_only:Bool=ON
+.endif
 
 BUILD_DEPENDS += devel/bison \
-		 devel/flex \
+		 devel/flex
 
 RUN_DEPENDS= 	print/ghostscript/gnu
 
 WRKDIST=	${WRKDIR}/doxygen-${VERSION}
-
-CONFIGURE_ARGS =	-Dbuild_wizard:Bool=ON \
-			-Dbuild_search:Bool=ON
 
 NO_TEST=	Yes
 

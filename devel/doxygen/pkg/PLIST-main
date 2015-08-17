@@ -2,5 +2,3 @@
 @pkgpath devel/doxygen,gui
 @pkgpath devel/doxygen
 @bin bin/doxygen
-@bin bin/doxyindexer
-@bin bin/doxysearch.cgi
