@@ -1,0 +1,6 @@
+* boost/threads
+  hack modification of /usr/local/include/boost/config/suffix.hpp
+
+* hack in CMakeFiles.txt not to copy files (Linux specific)
+  stuff commented
+  

@@ -1,0 +1,19 @@
+$OpenBSD$
+
+# from NetBSD pkgsrc
+
+--- src/minizip/ioapi.c.orig	Tue Aug 18 09:59:50 2015
++++ src/minizip/ioapi.c	Tue Aug 18 10:01:02 2015
+@@ -14,6 +14,12 @@
+         #define _CRT_SECURE_NO_WARNINGS
+ #endif
+ 
++#if defined(__OpenBSD__)
++#define fopen64 fopen
++#define fseeko64 fseek
++#define ftello64 ftello
++#endif
++
+ #include "ioapi.h"
+ 
+ voidpf call_zopen64 (const zlib_filefunc64_32_def* pfilefunc,const void*filename,int mode)
