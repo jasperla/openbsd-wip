@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# $OpenBSD$
+
+daemon="${TRUEPREFIX}/bin/fiche"
+daemon_flags="-o /var/www/fiche/"
+daemon_user="_fiche"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1
