@@ -4,12 +4,14 @@ ONLY_FOR_ARCHS =	amd64 i386
 ONLY_FOR_ARCHS-java =	${ONLY_FOR_ARCHS}
 
 CATEGORIES =		graphics devel
+COMMENT-docs =		OpenCV documentation and examples
 COMMENT-main =		library of programming functions for real time cv
 COMMENT-java =		Java bindings for OpenCV
 
 V =			3.0.0
 DISTNAME =		opencv-${V}
 PKGNAME-main =		${PKGNAME}
+PKGNAME-docs =		opencv-docs-$V
 PKGNAME-java =		opencv-java-${V}
 
 HOMEPAGE =		http://www.opencv.org/
@@ -46,13 +48,15 @@ WANTLIB-main += jasper jpeg m pango-1.0 pangocairo-1.0
 WANTLIB-main += pangoft2-1.0 png pthread stdc++ swscale tiff xml2 z
 WANTLIB-main += ${MODGETTEXT_WANTLIB} ${MODPY_WANTLIB}
 
-WANTLIB-java = m pthread stdc++
+WANTLIB-docs =
+
+WANTLIB-java =  m pthread stdc++
 WANTLIB-java += opencv_calib3d>=2.0 opencv_core>=2.0 opencv_features2d>=2.0 opencv_flann>=2.0
 WANTLIB-java += opencv_highgui>=2.0 opencv_imgproc>=2.0 opencv_ml>=2.0 opencv_objdetect>=2.0
 WANTLIB-java += opencv_photo>=1.0 opencv_video>=2.0
 
-MULTI_PACKAGES =	-main -java
-PSEUDO_FLAVORS =	no_java
+MULTI_PACKAGES =	-main -docs -java
+PSEUDO_FLAVORS =	no_docs no_java
 FLAVOR ?=
 
 # BSDL
@@ -70,11 +74,12 @@ MODCLANG_LANGS =	c c++
 
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_2}
 
-BUILD_DEPENDS =		devel/doxygen \
+BUILD_DEPENDS =		devel/doxygen>=1.8.10 \
 			math/py-numpy \
 			math/eigen3
 
 RUN_DEPENDS-main =	math/py-numpy
+RUN_DEPENDS-docs =	${BUILD_PKGPATH},-main
 RUN_DEPENDS-java =	${MODJAVA_RUN_DEPENDS}
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
@@ -111,9 +116,20 @@ CONFIGURE_ARGS =	-DWITH_1394:Bool=Off \
 			-DWITH_OPENCLAMDFFT:Bool=Off \
 			-DWITH_OPENCLAMDBLAS:Bool=Off \
 			-DBUILD_TESTS:Bool=On \
-			-DINSTALL_C_EXAMPLES:Bool=On \
-			-DINSTALL_PYTHON_EXAMPLES:Bool=On \
 			-DPYTHON_EXECUTABLE:FILEPATH=${MODPY_BIN}
+
+.if ${BUILD_PACKAGES:M-docs}
+BUILD_DEPENDS +=	textproc/py-sphinx
+ALL_TARGET =		all doxygen
+CONFIGURE_ARGS +=	-DBUILD_DOCS:Bool=On \
+			-DBUILD_EXAMPLES:Bool=On \
+			-DINSTALL_C_EXAMPLES:Bool=On \
+			-DINSTALL_PYTHON_EXAMPLES:Bool=On
+.else
+CONFIGURE_ARGS +=	-DBUILD_DOCS:Bool=Off \
+			-DBUILD_EXAMPLES:Bool=Off \
+			-DINSTALL_PYTHON_EXAMPLES:Bool=Off
+.endif
 
 .if ${BUILD_PACKAGES:M-java}
 MODULES +=		java
