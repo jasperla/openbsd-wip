@@ -14,7 +14,7 @@ HOMEPAGE =		http://www.gemrb.org/
 
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gemrb/}
@@ -22,7 +22,9 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gemrb/}
 WANTLIB += SDL SDL_mixer c freetype m openal png pthread stdc++
 WANTLIB += vlc vorbisfile z ${MODPY_WANTLIB}
 
-MODULES =		converters/libiconv devel/cmake lang/python
+MODULES =		converters/libiconv \
+			devel/cmake \
+			lang/python
 LIB_DEPENDS =		audio/openal \
 			devel/sdl-mixer \
 			graphics/png \
@@ -31,8 +33,7 @@ LIB_DEPENDS =		audio/openal \
 RUN_DEPENDS = 		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
-CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=Release \
-			-DSYSCONF_DIR=${SYSCONFDIR}/gemrb/ \
+CONFIGURE_ARGS +=	-DSYSCONF_DIR=${SYSCONFDIR}/gemrb \
 			-DEXAMPLE_CONF_DIR=${PREFIX}/share/examples/gemrb/ \
 			-DMAN_DIR=${PREFIX}/man/man6 \
 			-DCMAKE_MODULE_LINKER_FLAGS=-lc \
