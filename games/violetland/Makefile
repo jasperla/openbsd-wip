@@ -9,7 +9,7 @@ CATEGORIES =		games x11
 
 HOMEPAGE =		https://code.google.com/p/violetland/
 
-MAINTAINER =		Kirill Bychkov <yason@linklevel.net>
+MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
 # GPLv3 / Creative Commons 3.0 BY-SA
 PERMIT_PACKAGE_CDROM =	Yes
@@ -27,8 +27,6 @@ LIB_DEPENDS =		devel/boost \
 			devel/sdl-mixer \
 			devel/sdl-ttf
 RUN_DEPENDS = 		devel/desktop-file-utils
-
-CONFIGURE_ARGS = 	-DCMAKE_INSTALL_PREFIX="${PREFIX}"
 
 NO_TEST =		Yes
 
