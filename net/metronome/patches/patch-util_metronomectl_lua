@@ -1,0 +1,12 @@
+$OpenBSD$
+--- util/metronomectl.lua.orig	Fri Mar 27 22:49:01 2015
++++ util/metronomectl.lua	Tue Aug 18 21:57:35 2015
+@@ -219,7 +219,7 @@ function start()
+ 	if not CFG_SOURCEDIR then
+ 		os.execute("./metronome");
+ 	else
+-		os.execute(CFG_SOURCEDIR.."/../../bin/metronome");
++		os.execute(CFG_SOURCEDIR.."/../../sbin/metronome");
+ 	end
+ 	return true;
+ end

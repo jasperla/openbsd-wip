@@ -1,6 +1,6 @@
 @comment $OpenBSD: PLIST,v 1.10 2015/04/03 15:23:57 edd Exp $
-@newgroup _prosody:638
-@newuser _prosody:638:_prosody:daemon:prosody user:/nonexistent:/sbin/nologin
+@newgroup _metronome:756
+@newuser _metronome:756:_metronome:daemon:metronome user:/nonexistent:/sbin/nologin
 lib/prosody/
 lib/prosody/core/
 lib/prosody/core/certmanager.lua
@@ -161,7 +161,7 @@ share/examples/prosody/certs/localhost.cnf
 share/examples/prosody/certs/localhost.crt
 @sample ${SYSCONFDIR}/prosody/certs/localhost.crt
 @mode 400
-@owner _prosody
+@owner _metronome
 share/examples/prosody/certs/localhost.key
 @sample ${SYSCONFDIR}/prosody/certs/localhost.key
 @mode
@@ -171,8 +171,8 @@ share/examples/prosody/certs/openssl.cnf
 share/examples/prosody/prosody.cfg.lua
 @sample ${SYSCONFDIR}/prosody/prosody.cfg.lua
 @mode 770
-@owner _prosody
-@group _prosody
+@owner _metronome
+@group _metronome
 @sample /var/prosody/
 share/examples/prosody/prosody.log
 @mode 660

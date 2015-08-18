@@ -1,0 +1,9 @@
+$OpenBSD$
+--- metronomectl.orig	Tue Aug 18 21:56:21 2015
++++ metronomectl	Tue Aug 18 21:54:52 2015
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env lua
++#!${MODLUA_BIN}
+ -- * Metronome IM *
+ --
+ -- This file is part of the Metronome XMPP server and is released under the

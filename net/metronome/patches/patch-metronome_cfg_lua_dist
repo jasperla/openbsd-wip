@@ -1,0 +1,35 @@
+$OpenBSD$
+--- metronome.cfg.lua.dist.orig	Fri Mar 27 22:49:01 2015
++++ metronome.cfg.lua.dist	Tue Aug 18 21:53:53 2015
+@@ -51,7 +51,7 @@ modules_enabled = {
+ 		  	--"admin_telnet"; -- administration console, telnet to port 5582
+ 			--"admin_web"; -- administration web interface
+ 			--"bosh"; -- Enable support for BOSH clients, aka "XMPP over Bidirectional Streams over Synchronous HTTP"
+-			--"compression"; -- Allow clients to enable Stream Compression
++			"compression"; -- Allow clients to enable Stream Compression
+ 			--"incidents_handling"; -- Enable Incidents Handling support (can be administered via adhoc commands)
+ 			--"mam"; -- Enable server-side message archives using Message Archive Management
+ 			--"server_presence"; -- Enables Server Buddies extension support
+@@ -59,8 +59,21 @@ modules_enabled = {
+ 			
+ };
+ 
++-- Drop privileges
++metronome_user = "_metronome"
++metronome_group = "_metronome"
++
+ -- Default pidfile path
+-pidfile = "/var/run/metronome/metronome.pid";
++pidfile = "/var/metronome/metronome.pid";
++
++-- Logging configuration
++-- For advanced logging see http://prosody.im/doc/logging
++log = {
++	info = "/var/prosody/prosody.log"; -- Change 'info' to 'debug' for verbose logging
++	error = "/var/prosody/prosody.err";
++	-- "*syslog"; -- Uncomment this for logging to syslog
++	-- "*console"; -- Log to the console, useful for debugging with daemonize=false
++}
+  
+ -- Disable account creation by default, for security
+ allow_registration = false;
