@@ -27,7 +27,7 @@ LIB_DEPENDS = 		databases/mariadb,-main \
 			devel/sdl-mixer \
 			devel/sdl-ttf \
 			x11/wxWidgets
-			
+
 MAKE_FILE = 		${WRKSRC}/makefile
 
 ALL_TARGET = 		main map_editor
@@ -46,13 +46,15 @@ do-install:
 .for i in zod zod_map_editor
 	${INSTALL_PROGRAM} ${WRKSRC}/$i ${PREFIX}/share/zod/
 	@echo "#!/bin/sh" > ${WRKSRC}/$i.sh
-	@echo "cd $(LOCALBASE)/share/zod/; ./$i \$$*; exit \$$?" >> ${WRKSRC}/$i.sh
+	@echo "cd $(LOCALBASE)/share/zod/; ./$i \$$*; exit \$$?" \
+		>> ${WRKSRC}/$i.sh
 	$(INSTALL_SCRIPT) ${WRKSRC}/$i.sh $(PREFIX)/bin/$i
 .endfor
 	${INSTALL_PROGRAM} ${WRKDIST}/zod_launcher_src/zod_launcher \
 		${PREFIX}/share/zod/
 	@echo "#!/bin/sh" > ${WRKSRC}/zod_launcher.sh
-	@echo "cd $(LOCALBASE)/share/zod/; ./zod_launcher \$$*; exit \$$?" >> ${WRKSRC}/zod_launcher.sh
+	@echo "cd $(LOCALBASE)/share/zod/; ./zod_launcher \$$*; exit \$$?" \
+		>> ${WRKSRC}/zod_launcher.sh
 	$(INSTALL_SCRIPT) ${WRKSRC}/zod_launcher.sh $(PREFIX)/bin/zod_launcher
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zod/assets
 	cd ${WRKDIST}/assets && pax -rw . ${PREFIX}/share/zod/assets
