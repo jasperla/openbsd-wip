@@ -45,8 +45,7 @@ FAKE_FLAGS+=	CONFIG=${DESTDIR}${PREFIX}/share/examples/metronome
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/metronome ${WRKSRC}/metronomectl \
-		${WRKSRC}/certs/Makefile \
-		${WRKSRC}/tests/run_tests.sh
+		${WRKSRC}/certs/Makefile
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/metronome
