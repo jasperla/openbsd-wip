@@ -69,6 +69,8 @@ share/racket/collects/compiler/compiled/distribute_rkt.dep
 share/racket/collects/compiler/compiled/distribute_rkt.zo
 share/racket/collects/compiler/compiled/embed_rkt.dep
 share/racket/collects/compiler/compiled/embed_rkt.zo
+share/racket/collects/compiler/compiled/exe-dylib-path_rkt.dep
+share/racket/collects/compiler/compiled/exe-dylib-path_rkt.zo
 share/racket/collects/compiler/compiled/find-exe_rkt.dep
 share/racket/collects/compiler/compiled/find-exe_rkt.zo
 share/racket/collects/compiler/compiled/option_rkt.dep
@@ -76,6 +78,7 @@ share/racket/collects/compiler/compiled/option_rkt.zo
 share/racket/collects/compiler/compiler.rkt
 share/racket/collects/compiler/distribute.rkt
 share/racket/collects/compiler/embed.rkt
+share/racket/collects/compiler/exe-dylib-path.rkt
 share/racket/collects/compiler/find-exe.rkt
 share/racket/collects/compiler/option.rkt
 share/racket/collects/compiler/private/
@@ -331,6 +334,10 @@ share/racket/collects/net/compiled/uri-codec_rkt.dep
 share/racket/collects/net/compiled/uri-codec_rkt.zo
 share/racket/collects/net/compiled/url-connect_rkt.dep
 share/racket/collects/net/compiled/url-connect_rkt.zo
+share/racket/collects/net/compiled/url-exception_rkt.dep
+share/racket/collects/net/compiled/url-exception_rkt.zo
+share/racket/collects/net/compiled/url-string_rkt.dep
+share/racket/collects/net/compiled/url-string_rkt.zo
 share/racket/collects/net/compiled/url-structs_rkt.dep
 share/racket/collects/net/compiled/url-structs_rkt.zo
 share/racket/collects/net/compiled/url_rkt.dep
@@ -342,6 +349,8 @@ share/racket/collects/net/head.rkt
 share/racket/collects/net/http-client.rkt
 share/racket/collects/net/uri-codec.rkt
 share/racket/collects/net/url-connect.rkt
+share/racket/collects/net/url-exception.rkt
+share/racket/collects/net/url-string.rkt
 share/racket/collects/net/url-structs.rkt
 share/racket/collects/net/url.rkt
 share/racket/collects/net/win32-ssl.rkt
@@ -718,6 +727,8 @@ share/racket/collects/racket/compiled/string_rkt.dep
 share/racket/collects/racket/compiled/string_rkt.zo
 share/racket/collects/racket/compiled/struct-info_rkt.dep
 share/racket/collects/racket/compiled/struct-info_rkt.zo
+share/racket/collects/racket/compiled/struct_rkt.dep
+share/racket/collects/racket/compiled/struct_rkt.zo
 share/racket/collects/racket/compiled/stxparam-exptime_rkt.dep
 share/racket/collects/racket/compiled/stxparam-exptime_rkt.zo
 share/racket/collects/racket/compiled/stxparam_rkt.dep
@@ -1040,6 +1051,8 @@ share/racket/collects/racket/private/compiled/cond_rkt.dep
 share/racket/collects/racket/private/compiled/cond_rkt.zo
 share/racket/collects/racket/private/compiled/custom-hash_rkt.dep
 share/racket/collects/racket/private/compiled/custom-hash_rkt.zo
+share/racket/collects/racket/private/compiled/custom-write_rkt.dep
+share/racket/collects/racket/private/compiled/custom-write_rkt.zo
 share/racket/collects/racket/private/compiled/define-et-al_rkt.dep
 share/racket/collects/racket/private/compiled/define-et-al_rkt.zo
 share/racket/collects/racket/private/compiled/define-struct_rkt.dep
@@ -1108,8 +1121,6 @@ share/racket/collects/racket/private/compiled/procedure-alias_rkt.dep
 share/racket/collects/racket/private/compiled/procedure-alias_rkt.zo
 share/racket/collects/racket/private/compiled/promise_rkt.dep
 share/racket/collects/racket/private/compiled/promise_rkt.zo
-share/racket/collects/racket/private/compiled/qar_rkt.dep
-share/racket/collects/racket/private/compiled/qar_rkt.zo
 share/racket/collects/racket/private/compiled/qq-and-or_rkt.dep
 share/racket/collects/racket/private/compiled/qq-and-or_rkt.zo
 share/racket/collects/racket/private/compiled/qqstx_rkt.dep
@@ -1188,6 +1199,7 @@ share/racket/collects/racket/private/compiled/with-stx_rkt.dep
 share/racket/collects/racket/private/compiled/with-stx_rkt.zo
 share/racket/collects/racket/private/cond.rkt
 share/racket/collects/racket/private/custom-hash.rkt
+share/racket/collects/racket/private/custom-write.rkt
 share/racket/collects/racket/private/define-et-al.rkt
 share/racket/collects/racket/private/define-struct.rkt
 share/racket/collects/racket/private/define.rkt
@@ -1222,7 +1234,6 @@ share/racket/collects/racket/private/portlines.rkt
 share/racket/collects/racket/private/pre-base.rkt
 share/racket/collects/racket/private/procedure-alias.rkt
 share/racket/collects/racket/private/promise.rkt
-share/racket/collects/racket/private/qar.rkt
 share/racket/collects/racket/private/qq-and-or.rkt
 share/racket/collects/racket/private/qqstx.rkt
 share/racket/collects/racket/private/reqprov.rkt
@@ -1290,6 +1301,7 @@ share/racket/collects/racket/splicing.rkt
 share/racket/collects/racket/stream.rkt
 share/racket/collects/racket/string.rkt
 share/racket/collects/racket/struct-info.rkt
+share/racket/collects/racket/struct.rkt
 share/racket/collects/racket/stxparam-exptime.rkt
 share/racket/collects/racket/stxparam.rkt
 share/racket/collects/racket/surrogate.rkt
@@ -1804,16 +1816,10 @@ share/racket/collects/unstable/compiled/custom-write_rkt.dep
 share/racket/collects/unstable/compiled/custom-write_rkt.zo
 share/racket/collects/unstable/compiled/error_rkt.dep
 share/racket/collects/unstable/compiled/error_rkt.zo
-share/racket/collects/unstable/compiled/sequence_rkt.dep
-share/racket/collects/unstable/compiled/sequence_rkt.zo
-share/racket/collects/unstable/compiled/socket_rkt.dep
-share/racket/collects/unstable/compiled/socket_rkt.zo
 share/racket/collects/unstable/compiled/struct_rkt.dep
 share/racket/collects/unstable/compiled/struct_rkt.zo
 share/racket/collects/unstable/custom-write.rkt
 share/racket/collects/unstable/error.rkt
-share/racket/collects/unstable/sequence.rkt
-share/racket/collects/unstable/socket.rkt
 share/racket/collects/unstable/struct.rkt
 share/racket/collects/version/
 share/racket/collects/version/check.rkt
