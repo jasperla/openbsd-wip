@@ -1,0 +1,28 @@
+$OpenBSD$
+--- plugins/node.d/amavis.orig	Sun Aug 16 07:47:06 2015
++++ plugins/node.d/amavis	Fri Aug 21 17:57:18 2015
+@@ -18,11 +18,11 @@ The configuration environment variables are available
+ 
+ =item amavislog
+ 
+-Path to logfile (Default: "/var/log/mail/mail.info")
++Path to logfile (Default: "/var/log/maillog")
+ 
+ =item logtail
+ 
+-Path to logtail command (Default: "logtail")
++Path to logtail command (Default: "/usr/local/bin/logtail")
+ 
+ =back
+ 
+@@ -39,8 +39,8 @@ the full path for the program.
+ The following shows a typical configuration:
+ 
+   [amavis]
+-     env.amavislog     /var/log/mail/mail.info
+-     env.logtail       /usr/bin/logtail
++     env.amavislog     /var/log/maillog
++     env.logtail       /usr/local/bin/logtail
+      group adm
+ 
+ =head2 DEFAULT CONFIGURATION

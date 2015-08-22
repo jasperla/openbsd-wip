@@ -1,0 +1,14 @@
+$OpenBSD$
+--- plugins/node.d/named.orig	Sun Aug 16 07:47:06 2015
++++ plugins/node.d/named	Fri Aug 21 17:57:18 2015
+@@ -73,8 +73,8 @@ munin-node.
+ if [ -n "$logfile" ]; then
+     SYSLOGFILE=$logfile
+ else 
+-    if [ -f /var/adm/messages ]; then
+-	SYSLOGFILE=/var/adm/messages
++    if [ -f /var/log/daemon ]; then
++	SYSLOGFILE=/var/log/daemon
+     else
+ 	SYSLOGFILE=/var/log/daemon.log
+     fi

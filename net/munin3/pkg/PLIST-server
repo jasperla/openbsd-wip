@@ -1,0 +1,201 @@
+@comment $OpenBSD: PLIST-server,v 1.6 2014/05/30 10:28:17 kirby Exp $
+@extraunexec rm -rf /var/www/htdocs/munin/*
+@extraunexec rm -rf /var/db/munin/*
+@owner www
+@sample /var/db/munin/cgi-tmp/
+@owner _munin
+@sample /var/www/htdocs/munin/
+@owner
+bin/munin-cron
+bin/munin-httpd
+bin/munin-limits
+bin/munin-run
+bin/munin-update
+libexec/munin/
+@man man/man1/munin-limits.1
+@man man/man1/munin-run.1
+@man man/man1/munin-update.1
+share/examples/munin/
+@sample ${SYSCONFDIR}/munin/munin-conf.d/
+share/examples/munin/munin.conf.sample
+@sample ${SYSCONFDIR}/munin/munin.conf
+share/examples/munin/static/
+@sample ${SYSCONFDIR}/munin/static/
+share/examples/munin/static/css/
+@sample ${SYSCONFDIR}/munin/static/css/
+share/examples/munin/static/css/_responsive.scss
+share/examples/munin/static/css/style.css
+@sample ${SYSCONFDIR}/munin/static/css/style.css
+share/examples/munin/static/css/style.scss
+@sample ${SYSCONFDIR}/munin/static/css/style.scss
+share/examples/munin/static/dynazoom.html
+@sample ${SYSCONFDIR}/munin/static/dynazoom.html
+share/examples/munin/static/img/
+@sample ${SYSCONFDIR}/munin/static/img/
+share/examples/munin/static/img/favicons/
+@sample ${SYSCONFDIR}/munin/static/img/favicons/
+share/examples/munin/static/img/favicons/android-chrome-144x144.png
+@sample ${SYSCONFDIR}/munin/static/img/favicons/android-chrome-144x144.png
+share/examples/munin/static/img/favicons/android-chrome-192x192.png
+@sample ${SYSCONFDIR}/munin/static/img/favicons/android-chrome-192x192.png
+share/examples/munin/static/img/favicons/android-chrome-36x36.png
+@sample ${SYSCONFDIR}/munin/static/img/favicons/android-chrome-36x36.png
+share/examples/munin/static/img/favicons/android-chrome-48x48.png
+@sample ${SYSCONFDIR}/munin/static/img/favicons/android-chrome-48x48.png
+share/examples/munin/static/img/favicons/android-chrome-72x72.png
+@sample ${SYSCONFDIR}/munin/static/img/favicons/android-chrome-72x72.png
+share/examples/munin/static/img/favicons/android-chrome-96x96.png
+@sample ${SYSCONFDIR}/munin/static/img/favicons/android-chrome-96x96.png
+share/examples/munin/static/img/favicons/apple-touch-icon-114x114.png
+@sample ${SYSCONFDIR}/munin/static/img/favicons/apple-touch-icon-114x114.png
+share/examples/munin/static/img/favicons/apple-touch-icon-120x120.png
+@sample ${SYSCONFDIR}/munin/static/img/favicons/apple-touch-icon-120x120.png
+share/examples/munin/static/img/favicons/apple-touch-icon-144x144.png
+@sample ${SYSCONFDIR}/munin/static/img/favicons/apple-touch-icon-144x144.png
+share/examples/munin/static/img/favicons/apple-touch-icon-152x152.png
+@sample ${SYSCONFDIR}/munin/static/img/favicons/apple-touch-icon-152x152.png
+share/examples/munin/static/img/favicons/apple-touch-icon-180x180.png
+@sample ${SYSCONFDIR}/munin/static/img/favicons/apple-touch-icon-180x180.png
+share/examples/munin/static/img/favicons/apple-touch-icon-57x57.png
+@sample ${SYSCONFDIR}/munin/static/img/favicons/apple-touch-icon-57x57.png
+share/examples/munin/static/img/favicons/apple-touch-icon-60x60.png
+@sample ${SYSCONFDIR}/munin/static/img/favicons/apple-touch-icon-60x60.png
+share/examples/munin/static/img/favicons/apple-touch-icon-72x72.png
+@sample ${SYSCONFDIR}/munin/static/img/favicons/apple-touch-icon-72x72.png
+share/examples/munin/static/img/favicons/apple-touch-icon-76x76.png
+@sample ${SYSCONFDIR}/munin/static/img/favicons/apple-touch-icon-76x76.png
+share/examples/munin/static/img/favicons/apple-touch-icon-precomposed.png
+@sample ${SYSCONFDIR}/munin/static/img/favicons/apple-touch-icon-precomposed.png
+share/examples/munin/static/img/favicons/apple-touch-icon.png
+@sample ${SYSCONFDIR}/munin/static/img/favicons/apple-touch-icon.png
+share/examples/munin/static/img/favicons/browserconfig.xml
+@sample ${SYSCONFDIR}/munin/static/img/favicons/browserconfig.xml
+share/examples/munin/static/img/favicons/favicon-16x16.png
+@sample ${SYSCONFDIR}/munin/static/img/favicons/favicon-16x16.png
+share/examples/munin/static/img/favicons/favicon-194x194.png
+@sample ${SYSCONFDIR}/munin/static/img/favicons/favicon-194x194.png
+share/examples/munin/static/img/favicons/favicon-32x32.png
+@sample ${SYSCONFDIR}/munin/static/img/favicons/favicon-32x32.png
+share/examples/munin/static/img/favicons/favicon-96x96.png
+@sample ${SYSCONFDIR}/munin/static/img/favicons/favicon-96x96.png
+share/examples/munin/static/img/favicons/favicon.ico
+@sample ${SYSCONFDIR}/munin/static/img/favicons/favicon.ico
+share/examples/munin/static/img/favicons/manifest.json
+@sample ${SYSCONFDIR}/munin/static/img/favicons/manifest.json
+share/examples/munin/static/img/favicons/mstile-144x144.png
+@sample ${SYSCONFDIR}/munin/static/img/favicons/mstile-144x144.png
+share/examples/munin/static/img/favicons/mstile-150x150.png
+@sample ${SYSCONFDIR}/munin/static/img/favicons/mstile-150x150.png
+share/examples/munin/static/img/favicons/mstile-310x150.png
+@sample ${SYSCONFDIR}/munin/static/img/favicons/mstile-310x150.png
+share/examples/munin/static/img/favicons/mstile-310x310.png
+@sample ${SYSCONFDIR}/munin/static/img/favicons/mstile-310x310.png
+share/examples/munin/static/img/favicons/mstile-70x70.png
+@sample ${SYSCONFDIR}/munin/static/img/favicons/mstile-70x70.png
+share/examples/munin/static/img/icons/
+@sample ${SYSCONFDIR}/munin/static/img/icons/
+share/examples/munin/static/img/icons/breadcrumb-separator.png
+@sample ${SYSCONFDIR}/munin/static/img/icons/breadcrumb-separator.png
+share/examples/munin/static/img/icons/eventrulerhandle.png
+@sample ${SYSCONFDIR}/munin/static/img/icons/eventrulerhandle.png
+share/examples/munin/static/img/icons/expand-reduce.png
+@sample ${SYSCONFDIR}/munin/static/img/icons/expand-reduce.png
+share/examples/munin/static/img/icons/expand.png
+@sample ${SYSCONFDIR}/munin/static/img/icons/expand.png
+share/examples/munin/static/img/icons/glyphicons-208-remove-2-white.png
+@sample ${SYSCONFDIR}/munin/static/img/icons/glyphicons-208-remove-2-white.png
+share/examples/munin/static/img/icons/glyphicons-28-search-white.png
+@sample ${SYSCONFDIR}/munin/static/img/icons/glyphicons-28-search-white.png
+share/examples/munin/static/img/icons/glyphicons-390-new-window-alt-white.png
+@sample ${SYSCONFDIR}/munin/static/img/icons/glyphicons-390-new-window-alt-white.png
+share/examples/munin/static/img/icons/glyphicons-429-git-compare.png
+@sample ${SYSCONFDIR}/munin/static/img/icons/glyphicons-429-git-compare.png
+share/examples/munin/static/img/loading.gif
+@sample ${SYSCONFDIR}/munin/static/img/loading.gif
+share/examples/munin/static/img/logo-h-neg.png
+@sample ${SYSCONFDIR}/munin/static/img/logo-h-neg.png
+share/examples/munin/static/img/logo-h-neg.svg
+@sample ${SYSCONFDIR}/munin/static/img/logo-h-neg.svg
+share/examples/munin/static/img/logo-h.png
+@sample ${SYSCONFDIR}/munin/static/img/logo-h.png
+share/examples/munin/static/img/logo.png
+@sample ${SYSCONFDIR}/munin/static/img/logo.png
+share/examples/munin/static/img/placeholder.gif
+@sample ${SYSCONFDIR}/munin/static/img/placeholder.gif
+share/examples/munin/static/js/
+@sample ${SYSCONFDIR}/munin/static/js/
+share/examples/munin/static/js/component-autorefresh.js
+@sample ${SYSCONFDIR}/munin/static/js/component-autorefresh.js
+share/examples/munin/static/js/component-dynazoom-modal.js
+@sample ${SYSCONFDIR}/munin/static/js/component-dynazoom-modal.js
+share/examples/munin/static/js/component-eventruler.js
+@sample ${SYSCONFDIR}/munin/static/js/component-eventruler.js
+share/examples/munin/static/js/component-tabs.js
+@sample ${SYSCONFDIR}/munin/static/js/component-tabs.js
+share/examples/munin/static/js/formatdate.js
+@sample ${SYSCONFDIR}/munin/static/js/formatdate.js
+share/examples/munin/static/js/jquery-1.8.3.js
+@sample ${SYSCONFDIR}/munin/static/js/jquery-1.8.3.js
+share/examples/munin/static/js/jquery.lazyload-1.9.3.js
+@sample ${SYSCONFDIR}/munin/static/js/jquery.lazyload-1.9.3.js
+share/examples/munin/static/js/munin-categoryview.js
+@sample ${SYSCONFDIR}/munin/static/js/munin-categoryview.js
+share/examples/munin/static/js/munin-comparison.js
+@sample ${SYSCONFDIR}/munin/static/js/munin-comparison.js
+share/examples/munin/static/js/munin-domainview-treeview.js
+@sample ${SYSCONFDIR}/munin/static/js/munin-domainview-treeview.js
+share/examples/munin/static/js/munin-domainview.js
+@sample ${SYSCONFDIR}/munin/static/js/munin-domainview.js
+share/examples/munin/static/js/munin-dynazoom.js
+@sample ${SYSCONFDIR}/munin/static/js/munin-dynazoom.js
+share/examples/munin/static/js/munin-nodeview-timerangeswitch.js
+@sample ${SYSCONFDIR}/munin/static/js/munin-nodeview-timerangeswitch.js
+share/examples/munin/static/js/munin-nodeview.js
+@sample ${SYSCONFDIR}/munin/static/js/munin-nodeview.js
+share/examples/munin/static/js/munin-overview.js
+@sample ${SYSCONFDIR}/munin/static/js/munin-overview.js
+share/examples/munin/static/js/munin-serviceview.js
+@sample ${SYSCONFDIR}/munin/static/js/munin-serviceview.js
+share/examples/munin/static/js/querystring.js
+@sample ${SYSCONFDIR}/munin/static/js/querystring.js
+share/examples/munin/static/js/script.js
+@sample ${SYSCONFDIR}/munin/static/js/script.js
+share/examples/munin/templates/
+@sample ${SYSCONFDIR}/munin/templates/
+share/examples/munin/templates/munin-categoryview.tmpl
+@sample ${SYSCONFDIR}/munin/templates/munin-categoryview.tmpl
+share/examples/munin/templates/munin-comparison.tmpl
+@sample ${SYSCONFDIR}/munin/templates/munin-comparison.tmpl
+share/examples/munin/templates/munin-domainview.tmpl
+@sample ${SYSCONFDIR}/munin/templates/munin-domainview.tmpl
+share/examples/munin/templates/munin-dynazoom.tmpl
+@sample ${SYSCONFDIR}/munin/templates/munin-dynazoom.tmpl
+share/examples/munin/templates/munin-htaccess.in
+@sample /var/www/cgi-bin/.htaccess
+share/examples/munin/templates/munin-nodeview.tmpl
+@sample ${SYSCONFDIR}/munin/templates/munin-nodeview.tmpl
+share/examples/munin/templates/munin-overview.tmpl
+@sample ${SYSCONFDIR}/munin/templates/munin-overview.tmpl
+share/examples/munin/templates/munin-problemview.tmpl
+@sample ${SYSCONFDIR}/munin/templates/munin-problemview.tmpl
+share/examples/munin/templates/munin-serviceview.tmpl
+@sample ${SYSCONFDIR}/munin/templates/munin-serviceview.tmpl
+share/examples/munin/templates/partial/
+@sample ${SYSCONFDIR}/munin/templates/partial/
+share/examples/munin/templates/partial/bottom_navigation.tmpl
+@sample ${SYSCONFDIR}/munin/templates/partial/bottom_navigation.tmpl
+share/examples/munin/templates/partial/footer.tmpl
+@sample ${SYSCONFDIR}/munin/templates/partial/footer.tmpl
+share/examples/munin/templates/partial/generated_by.tmpl
+@sample ${SYSCONFDIR}/munin/templates/partial/generated_by.tmpl
+share/examples/munin/templates/partial/head.tmpl
+@sample ${SYSCONFDIR}/munin/templates/partial/head.tmpl
+share/examples/munin/templates/partial/logo_navigation.tmpl
+@sample ${SYSCONFDIR}/munin/templates/partial/logo_navigation.tmpl
+share/examples/munin/templates/partial/logo_navigation_comparison.tmpl
+@sample ${SYSCONFDIR}/munin/templates/partial/logo_navigation_comparison.tmpl
+share/examples/munin/templates/partial/logo_navigation_problem.tmpl
+@sample ${SYSCONFDIR}/munin/templates/partial/logo_navigation_problem.tmpl
+share/examples/munin/templates/partial/navigation.tmpl
+@sample ${SYSCONFDIR}/munin/templates/partial/navigation.tmpl
+share/doc/pkg-readmes/${FULLPKGNAME}

@@ -1,0 +1,14 @@
+$OpenBSD$
+--- script/munin-node-configure.orig	Sun Aug 16 07:47:06 2015
++++ script/munin-node-configure	Fri Aug 21 17:57:18 2015
+@@ -22,6 +22,10 @@ use warnings;
+ 
+ use Getopt::Long;
+ 
++# plugins run in taint mode because the uid is changed, so the path
++# must not contain writable directories.
++$ENV{PATH}='/bin:/sbin:/usr/bin:/usr/sbin:${PREFIX}/bin:${PREFIX}/sbin';
++
+ use Munin::Common::Defaults;
+ use Munin::Node::Configure::PluginList;
+ use Munin::Node::Configure::Debug;

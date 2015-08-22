@@ -1,0 +1,13 @@
+$OpenBSD$
+--- script/munin-node.orig	Sun Aug 16 07:47:06 2015
++++ script/munin-node	Fri Aug 21 17:57:18 2015
+@@ -51,6 +51,9 @@ sub main
+         $ENV{$key} =~ /^(.*)$/;
+         $ENV{$key} = $1;
+     }
++    # plugins run in taint mode because the uid is changed, so the path
++    # must not contain writable directories.
++    $ENV{PATH}='/bin:/sbin:/usr/bin:/usr/sbin:${PREFIX}/bin:${PREFIX}/sbin';
+ 
+     parse_args();
+ 
