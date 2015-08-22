@@ -1,6 +1,7 @@
 # $OpenBSD$
 
 SUBDIR =
+SUBDIR += ccnet
 SUBDIR += seafile
 SUBDIR += seahub
 
