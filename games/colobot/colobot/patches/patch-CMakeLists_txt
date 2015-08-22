@@ -1,0 +1,20 @@
+$OpenBSD$
+--- CMakeLists.txt.orig	Fri Aug 21 13:43:09 2015
++++ CMakeLists.txt	Fri Aug 21 13:43:18 2015
+@@ -129,16 +129,12 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+         message(FATAL_ERROR "${PROJECT_NAME} requires GCC 4.6 or greater.")
+     endif()
+     set(NORMAL_CXX_FLAGS "-Wall -Wold-style-cast")
+-    set(RELEASE_CXX_FLAGS "-O2")
+-    set(DEBUG_CXX_FLAGS "-g -O0")
+     set(TEST_CXX_FLAGS "-pthread")
+     add_definitions(-DNOEXCEPT=noexcept)
+ elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+     message(STATUS "Detected Clang compiler")
+     set(CXX11_FLAGS "-std=c++11")
+     set(NORMAL_CXX_FLAGS "-Wall -Wold-style-cast")
+-    set(RELEASE_CXX_FLAGS "-O2")
+-    set(DEBUG_CXX_FLAGS "-g -O0")
+     set(TEST_CXX_FLAGS "-pthread")
+     add_definitions(-DOVERRIDE=override)
+     add_definitions(-DNOEXCEPT=noexcept)
