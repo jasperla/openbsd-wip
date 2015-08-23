@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD: munin_asyncd.rc,v 1.2 2015/07/15 19:40:58 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/bin/munin-asyncd --fork"
+daemon_user="_munin"
+
+. /etc/rc.d/rc.subr
+
+pexp="perl: munin-asyncd .*"
+rc_bg=YES
+
+rc_cmd $1

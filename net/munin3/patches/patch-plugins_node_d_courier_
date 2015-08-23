@@ -1,0 +1,14 @@
+$OpenBSD$
+--- plugins/node.d/courier_.orig	Sun Aug 16 07:47:06 2015
++++ plugins/node.d/courier_	Fri Aug 21 17:57:18 2015
+@@ -26,8 +26,8 @@ variable to "imaplogin" and "courierpop3login", respec
+ The default configuration is:
+ 
+  [courier_*]
+-  env.logtail /usr/sbin/logtail
+-  env.logfile /var/log/mail.log
++  env.logtail /usr/local/bin/logtail
++  env.logfile /var/log/maillog
+   env.service <Whatever follows "courier_" in the file name>
+   env.mktemp_command /bin/mktemp
+ 

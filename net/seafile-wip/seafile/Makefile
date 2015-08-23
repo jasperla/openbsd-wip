@@ -4,7 +4,6 @@ COMMENT-main =		seafile daemon
 COMMENT-server = 	seafile server
 
 GH_PROJECT =		seafile
-GH_COMMIT = 		e2ec7141503a7035868cf7b9ab72627c906e00bc
 PKGNAME-main = 		${GH_PROJECT}-daemon-${V}
 PKGNAME-server = 	${GH_PROJECT}-server-${V}
 
@@ -24,18 +23,18 @@ BUILD_DEPENDS =		devel/libtool \
 			lang/vala
 RUN_DEPENDS-main =	devel/py-simplejson
 LIB_DEPENDS-main =	devel/libinotify \
-			net/seafile/ccnet
+			net/seafile-wip/ccnet
 LIB_DEPENDS-server = 	archivers/libarchive \
 			archivers/xz \
 			databases/libzdb \
 			devel/libevhtp \
-			net/seafile/seafile,-main
+			net/seafile-wip/seafile,-main
 RUN_DEPENDS-server = 	devel/py-simplejson \
 			graphics/py-Pillow
 #			www/py-djblets
 
 USE_GMAKE =		Yes
-CONFIGURE_STYLE =	autoconf automake
+CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--disable-fuse \
 			--enable-server
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/inotify" \
@@ -51,17 +50,6 @@ MODPY_ADJ_FILES = 	scripts/*.py scripts/build/*.py scripts/upgrade/*.py \
 			tools/seafile-admin app/seaf-cli
 
 SUBST_VARS += 		VARBASE
-
-post-extract:
-	cd ${WRKSRC} && perl -pi -e 's,-levent ,\@LIBEVENT_LIBS\@ ,g' \
-		controller/Makefile.am \
-		daemon/Makefile.am \
-		fileserver/Makefile.am \
-		fuse/Makefile.am \
-		lib/Makefile.am \
-		server/Makefile.am \
-		server/gc/Makefile.am \
-		tests/Makefile.am
 
 pre-configure:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \

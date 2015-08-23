@@ -1,0 +1,12 @@
+$OpenBSD$
+--- plugins/node.d/postfix_mailstats.orig	Sun Aug 16 07:47:06 2015
++++ plugins/node.d/postfix_mailstats	Fri Aug 21 17:57:18 2015
+@@ -18,7 +18,7 @@ if you need to override the defaults below:
+ 
+  [postfix_mailstats]
+   env.logdir  /var/log
+-  env.logfile mail.log
++  env.logfile maillog
+ 
+ =head1 AUTHOR
+ 

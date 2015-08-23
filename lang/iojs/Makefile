@@ -10,10 +10,16 @@ COMMENT=	V8 ES6 JavaScript for clients and servers
 
 GH_ACCOUNT=	iojs
 GH_PROJECT=	io.js
-GH_TAGNAME=	v1.8.1
+GH_TAGNAME=	v3.1.0
+
+IOARCH=		x86_64
+.if ${MACHINE_ARCH} != "amd64"
+IOARCH=		x86
+.endif
 
 DISTNAME=	iojs-${GH_TAGNAME}
 PKGNAME=	${DISTNAME:S/v//g}
+WRKDIST=	${WRKDIR}/${PKGNAME:S/iojs/node/g}
 
 CATEGORIES=	lang devel
 
@@ -43,13 +49,13 @@ RUN_DEPENDS=	devel/gmake \
 TEST_TARGET= test
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS= --prefix=${PREFIX} \
-		--shared-openssl \
 		--shared-zlib
 
 SUBST_VARS+=	CFLAGS
 SUBST_VARS+= 	PREFIX
 SUBST_VARS+= 	LOCALBASE
 SUBST_VARS+= 	DISTFILES
+SUBST_VARS+=	IOARCH
 
 MODGCC4_ARCHS = *
 MODGCC4_LANGS =	c++

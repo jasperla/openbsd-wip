@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/Test/
+${P5SITE}/Test/API.pm
+@man man/man3p/Test::API.3p

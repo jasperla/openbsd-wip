@@ -1,0 +1,23 @@
+$OpenBSD$
+--- etc/munin-node.conf.PL.orig	Sun Aug 16 07:47:06 2015
++++ etc/munin-node.conf.PL	Fri Aug 21 17:57:18 2015
+@@ -31,7 +31,7 @@ background 1
+ setsid 1
+ 
+ user root
+-group root
++group wheel
+ 
+ # This is the timeout for the whole transaction.
+ # Units are in sec. Default is 15 min
+@@ -77,8 +77,8 @@ allow ^::1$
+ # cidr_deny  192.0.2.42/32
+ 
+ # Which address to bind to;
+-host *
+-# host 127.0.0.1
++# host *
++host 127.0.0.1
+ 
+ # And which port
+ port 4949

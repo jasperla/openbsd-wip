@@ -1,0 +1,103 @@
+$OpenBSD$
+--- Makefile.config.orig	Sun Aug 16 07:47:06 2015
++++ Makefile.config	Fri Aug 21 17:57:18 2015
+@@ -16,10 +16,10 @@
+ #
+ # the base of the Munin installation.
+ #
+-PREFIX     = $(DESTDIR)/opt/munin
++#PREFIX     = $(DESTDIR)/opt/munin
+ 
+ # Where Munin keeps its configurations (server.conf, client.conf, ++)
+-CONFDIR    = $(DESTDIR)/etc/opt/munin
++#CONFDIR    = $(DESTDIR)/etc/opt/munin
+ 
+ # Server only - where to put munin-cron
+ BINDIR     = $(PREFIX)/bin
+@@ -27,6 +27,9 @@ BINDIR     = $(PREFIX)/bin
+ # Client only - where to put munin-node, munin-node-configure, and munin-run
+ SBINDIR    = $(PREFIX)/sbin
+ 
++# Where to put templates and other shared files
++SHAREDIR   = $(PREFIX)/share/munin
++
+ # Where to put text and html documentation
+ DOCDIR     = $(PREFIX)/doc
+ 
+@@ -34,20 +37,20 @@ DOCDIR     = $(PREFIX)/doc
+ MANDIR     = $(PREFIX)/man
+ 
+ # Where to put internal binaries and plugin repository
+-LIBDIR     = $(PREFIX)/lib
++LIBDIR     = $(PREFIX)/libexec/munin
+ 
+ # Server only - Output directory
+-HTMLDIR    = $(PREFIX)/www/docs
+-CGIDIR     = $(PREFIX)/www/cgi
++HTMLDIR    = $(DESTDIR)/var/www/htdocs/munin
++CGIDIR     = $(DESTDIR)/var/www/cgi-bin
+ 
+ # Where to put internal data for master (RRD, internal files, ...)
+-DBDIR      = $(DESTDIR)/var/opt/munin
++DBDIR      = $(DESTDIR)/var/db/munin
+ 
+ # Where to put CGI cached files (for master only)
+ CGITMPDIR  = $(DBDIR)/cgi-tmp
+ 
+ # Where to put internal data for node (plugin state, ...)
+-DBDIRNODE  = $(DESTDIR)/var/opt/munin-node
++DBDIRNODE  = $(DESTDIR)/var/db/munin-node
+ 
+ # Client only - Where the spool files are written. Must be writable by
+ # group "munin", and should be preserved between reboots
+@@ -55,10 +58,10 @@ SPOOLDIR   = $(DBDIR)/spool
+ 
+ # Client only - Where plugins should put their states. Must be writable by
+ # group "munin", and should be preserved between reboots
+-PLUGSTATE  = $(DBDIRNODE)/plugin-state
++PLUGSTATE  = $(DESTDIR)/var/db/munin-pluginstate
+ 
+ # Where Munin should place its logs.
+-LOGDIR     = $(PREFIX)/log/munin
++LOGDIR     = $(DESTDIR)/var/log/munin
+ 
+ # Location of PID files and other statefiles. On the server, must be
+ # writable by the user "munin".
+@@ -68,7 +71,7 @@ STATEDIR   = $(DESTDIR)/var/run/munin
+ PERL       := $(shell which perl)
+ 
+ # The python interpreter to use (used by some plugins)
+-PYTHON     := /usr/bin/env python
++#PYTHON     := /usr/bin/env python
+ 
+ # The ruby interpreter to use (used by some plugins)
+ RUBY       := /usr/bin/env ruby
+@@ -116,14 +119,14 @@ OSTYPE     := $(shell uname | LANG=C tr '[A-Z]' '[a-z]
+ 
+ # How to figure out the hostname. (Only used in default configuration
+ # files)
+-HOSTNAME   := $(shell hostname)
++HOSTNAME   := localhost
+ 
+ # Munin version number.
+ VERSION    := $(shell ./getversion)
+ 
+ # User to run munin as
+-USER       := munin
+-GROUP      := munin
++USER       := _munin
++GROUP      := _munin
+ 
+ # Default user to run the plugins as
+ PLUGINUSER := nobody
+@@ -135,8 +138,8 @@ CGIUSER := nobody
+ # These will work on most modern OSes:
+ #
+ GETENT     := $(shell which getent || which true 2>/dev/null)
+-CHECKUSER  := $(shell $(GETENT) passwd $(USER) >/dev/null 2>/dev/null || (echo "echo User $(USER) nonexistent. Create the user and retry; exit 2"))
+-CHECKGROUP := $(shell $(GETENT) group $(GROUP) >/dev/null 2>/dev/null || (echo "echo Group $(GROUP) nonexistent. Create the group and retry; exit 2"))
++CHECKUSER  :=
++CHECKGROUP :=
+ 
+ # For OSX, comment out the previous two lines and comment in these
+ #
