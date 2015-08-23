@@ -1,0 +1,15 @@
+$OpenBSD$
+--- bin/netbeans.orig	Sun Aug 23 21:29:15 2015
++++ bin/netbeans	Sun Aug 23 21:29:32 2015
+@@ -209,9 +209,9 @@ launchNbexec() {
+     done | head -n 1`
+     sh=sh
+     # #73162: Ubuntu uses the ancient Bourne shell, which does not implement trap well.
+-    if [ -x /bin/bash ]
++    if [ -x /bin/ksh ]
+     then
+-        sh=/bin/bash
++        sh=/bin/ksh
+     fi
+     if [ "${founduserdir}" = "yes" ]; then
+         exec $sh "$nbexec" "$@"

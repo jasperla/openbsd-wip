@@ -1,0 +1,12 @@
+$OpenBSD$
+--- etc/netbeans.conf.orig	Sun Aug 23 21:29:49 2015
++++ etc/netbeans.conf	Sun Aug 23 21:30:30 2015
+@@ -54,7 +54,7 @@ netbeans_default_options="-J-client -J-Xss2m -J-Xms32m
+ # installer points to one of those in the NetBeans application shortcut 
+ # based on the Java version selected at installation time.
+ #
+-#netbeans_jdkhome="/path/to/jdk"
++netbeans_jdkhome=`/usr/local/bin/javaPathHelper -h netbeans`
+ 
+ # Additional module clusters:
+ # using ${path.separator} (';' on Windows or ':' on Unix):
