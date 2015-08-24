@@ -1,0 +1,7 @@
+@comment $OpenBSD$
+${P5SITE}/Web/
+${P5SITE}/Web/Query/
+${P5SITE}/Web/Query.pm
+${P5SITE}/Web/Query/LibXML.pm
+@man man/man3p/Web::Query.3p
+@man man/man3p/Web::Query::LibXML.3p

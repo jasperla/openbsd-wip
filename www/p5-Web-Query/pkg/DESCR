@@ -1,0 +1,3 @@
+Web::Query is a yet another scraping framework, have a jQuery like interface.
+It's built at top of the CPAN modules, HTML::TreeBuilder::XPath,
+LWP::UserAgent, and HTML::Selector::XPath.
