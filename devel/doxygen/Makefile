@@ -30,10 +30,6 @@ LIB_DEPENDS-main = ${COMMON_LIB_DEPENDS}
 LIB_DEPENDS-gui = ${COMMON_LIB_DEPENDS} ${MODQT_LIB_DEPENDS}
 RUN_DEPENDS-gui = doxygen-${VERSION}:${BUILD_PKGPATH}
 
-MODULES+=	gcc4
-MODGCC4_ARCHS=	*
-MODGCC4_LANGS=	c++
-
 MODULES =	devel/cmake \
 		converters/libiconv
 

@@ -1,0 +1,11 @@
+$OpenBSD$
+--- CMakeLists.txt.orig	Wed Aug 26 20:14:54 2015
++++ CMakeLists.txt	Wed Aug 26 20:15:23 2015
+@@ -122,7 +122,6 @@ if (win_static)
+ endif()
+ 
+ 
+-add_subdirectory(libmd5)
+ add_subdirectory(qtools)
+ add_subdirectory(vhdlparser)
+ add_subdirectory(src)

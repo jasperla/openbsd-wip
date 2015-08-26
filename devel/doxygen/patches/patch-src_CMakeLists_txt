@@ -1,0 +1,19 @@
+$OpenBSD$
+--- src/CMakeLists.txt.orig	Wed Aug 26 20:15:31 2015
++++ src/CMakeLists.txt	Wed Aug 26 20:15:50 2015
+@@ -2,7 +2,6 @@
+ 
+ include_directories(
+     ${CMAKE_SOURCE_DIR}/qtools
+-    ${CMAKE_SOURCE_DIR}/libmd5
+     ${CMAKE_SOURCE_DIR}/vhdlparser/
+     ${CMAKE_SOURCE_DIR}/src
+     ${CLANG_INCLUDEDIR}
+@@ -229,7 +228,6 @@ target_link_libraries(doxygen
+     _doxygen
+     doxycfg
+     qtools
+-    md5
+     vhdlparser
+     ${SQLITE3_LIBRARIES}
+     ${ICONV_LIBRARIES}

@@ -26,15 +26,3 @@ ports should be installed:
 
 Flavors:
         * gui -- build Qt frontend
-
-Note:
-
-When generating certain filenames (for example directory listing with
-the html backend), doxygen uses an md5 sum of the source path.  This
-is a problem for the ports framework, as the sources location can vary
-(/usr/obj/ports/..., usr/ports/.../w-..., /usr/ports/mystuff/.../w-...).
-
-This port has been modified so that when running doxygen, the
-DOXYGEN_ENCODE_PATH_STRIP environment variable can be set to a prefix
-to be stripped from a path before its md5 sum is calculated.  Ports
-using doxygen should use "DOXYGEN_ENCODE_PATH_STRIP=${WRKSRC}".
