@@ -3,10 +3,10 @@
 COMMENT-main=		lint-like code checker for Python code
 COMMENT-gui=		GUI for pylint
 
-VERSION=		1.4.3
-DISTNAME=		pylint-${VERSION}
-PKGNAME-main=		pylint-${VERSION}
-PKGNAME-gui=		pylint-gui-${VERSION}
+MODPY_EGG_VERSION=		1.4.4
+DISTNAME=		pylint-${MODPY_EGG_VERSION}
+PKGNAME-main=		pylint-${MODPY_EGG_VERSION}
+PKGNAME-gui=		pylint-gui-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.pylint.org/
@@ -23,10 +23,8 @@ RUN_DEPENDS=		devel/py-logilab-common${MODPY_FLAVOR} \
 			devel/py-astroid${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR}
 RUN_DEPENDS-gui=	${MODPY_TKINTER_DEPENDS} \
-			devel/pylint=${VERSION}
+			devel/pylint=${MODPY_EGG_VERSION}
 TEST_DEPENDS=	${RUN_DEPENDS}
-
-SUBST_VARS+=		VERSION
 
 FLAVORS =	python3
 FLAVOR ?=

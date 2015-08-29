@@ -1,7 +1,7 @@
 $OpenBSD$
---- spyderlib/__init__.py.orig	Wed Dec 24 01:37:58 2014
-+++ spyderlib/__init__.py	Wed Dec 24 01:51:25 2014
-@@ -35,6 +35,7 @@ __forum_url__   = 'http://groups.google.com/group/spyd
+--- spyderlib/__init__.py.orig	Mon Aug 24 21:10:08 2015
++++ spyderlib/__init__.py	Sat Aug 29 13:48:40 2015
+@@ -36,6 +36,7 @@ __forum_url__   = 'http://groups.google.com/group/spyd
  # Dear (Debian, RPM, ...) package makers, please feel free to customize the
  # following path to module's data (images) and translations:
  DATAPATH = LOCALEPATH = DOCPATH = MATHJAXPATH = JQUERYPATH = ''

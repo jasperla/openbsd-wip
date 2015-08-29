@@ -92,6 +92,8 @@ lib/python${MODPY_VERSION}/site-packages/spyderlib/images/arredit.png
 lib/python${MODPY_VERSION}/site-packages/spyderlib/images/arrow.png
 lib/python${MODPY_VERSION}/site-packages/spyderlib/images/bold.png
 lib/python${MODPY_VERSION}/site-packages/spyderlib/images/browser.png
+lib/python${MODPY_VERSION}/site-packages/spyderlib/images/chevron-left.png
+lib/python${MODPY_VERSION}/site-packages/spyderlib/images/chevron-right.png
 lib/python${MODPY_VERSION}/site-packages/spyderlib/images/console/
 lib/python${MODPY_VERSION}/site-packages/spyderlib/images/console/clear.png
 lib/python${MODPY_VERSION}/site-packages/spyderlib/images/console/cmdprompt_t.png
@@ -286,6 +288,7 @@ lib/python${MODPY_VERSION}/site-packages/spyderlib/locale/es/LC_MESSAGES/spyderl
 lib/python${MODPY_VERSION}/site-packages/spyderlib/locale/fr/
 lib/python${MODPY_VERSION}/site-packages/spyderlib/locale/fr/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/spyderlib/locale/fr/LC_MESSAGES/spyderlib.mo
+lib/python${MODPY_VERSION}/site-packages/spyderlib/mac_stylesheet.qss
 lib/python${MODPY_VERSION}/site-packages/spyderlib/otherplugins.py
 lib/python${MODPY_VERSION}/site-packages/spyderlib/otherplugins.pyc
 lib/python${MODPY_VERSION}/site-packages/spyderlib/pil_patch.py
