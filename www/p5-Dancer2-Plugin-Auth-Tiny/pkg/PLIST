@@ -1,5 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/Dancer2/Plugin/
-${P5SITE}/Dancer2/Plugin/Auth/
-${P5SITE}/Dancer2/Plugin/Auth/Tiny.pm
-@man man/man3p/Dancer2::Plugin::Auth::Tiny.3p
