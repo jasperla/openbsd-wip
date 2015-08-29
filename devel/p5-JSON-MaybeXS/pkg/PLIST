@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/JSON/
-${P5SITE}/JSON/MaybeXS.pm
-@man man/man3p/JSON::MaybeXS.3p
