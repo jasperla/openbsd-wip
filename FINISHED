@@ -73,13 +73,10 @@ www/p5-Tapper-Model		ready to import, sent to ports@ 2014-05-23
 textproc/p5-Text-Balanced	ready to import, sent to ports@ 2014-05-23
 games/gnome-hearts	ready to import (bcallah@), sent to ports 2014-10-09
 sysutils/sleuthkit		sent to ports@ 2014-10-08 (nigel)
-devel/p5-Parallel-Prefork		ready to import, sent to ports@ 2015-01-08 (garcer)
 www/p5-Starlet				ready to import, sent to ports@ 2015-01-08 (garcer)
 www/p5-Plack-Middleware-MethodOverride	ready to import
-devel/p5-JSON-MaybeXS			ready to import
 www/p5-CGI-Struct			ready to import
 www/p5-URI-ws				ready to import
-www/p5-Dancer-Plugin-Database-Core	ready to import, sent to ports@ 2015-01-18 (garcer)
 devel/p5-String-Compare-ConstantTime	ready to import, sent to ports@ 2015-01-24 (garcer)
 security/p5-Crypt-URandom		ready to import, sent to ports@ 2015-01-24 (garcer)
 devel/p5-Sereal-Encoder			ready to import, sent to ports@ 2015-01-24 (garcer)
