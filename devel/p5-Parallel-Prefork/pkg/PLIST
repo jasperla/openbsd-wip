@@ -1,9 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/Parallel/
-${P5SITE}/Parallel/Prefork/
-${P5SITE}/Parallel/Prefork.pm
-${P5SITE}/Parallel/Prefork/SpareWorkers/
-${P5SITE}/Parallel/Prefork/SpareWorkers.pm
-${P5SITE}/Parallel/Prefork/SpareWorkers/Scoreboard.pm
-@man man/man3p/Parallel::Prefork.3p
-@man man/man3p/Parallel::Prefork::SpareWorkers.3p
