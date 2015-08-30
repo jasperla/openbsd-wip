@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+bin/tv_augment
 bin/tv_augment_tz
 bin/tv_cat
 bin/tv_check
@@ -12,6 +13,7 @@ bin/tv_grab_combiner
 bin/tv_grab_dk_dr
 bin/tv_grab_dtv_la
 bin/tv_grab_es_laguiatv
+bin/tv_grab_eu_dotmedia
 bin/tv_grab_eu_egon
 bin/tv_grab_eu_epgdata
 bin/tv_grab_fi
@@ -37,7 +39,6 @@ bin/tv_grab_uk_atlas
 bin/tv_grab_uk_bleb
 bin/tv_grab_uk_rt
 bin/tv_grab_uk_tvguide
-bin/tv_grab_za
 bin/tv_grep
 bin/tv_imdb
 bin/tv_merge
@@ -55,6 +56,7 @@ ${P5SITE}/XMLTV/Ask/
 ${P5SITE}/XMLTV/Ask.pm
 ${P5SITE}/XMLTV/Ask/Term.pm
 ${P5SITE}/XMLTV/Ask/Tk.pm
+${P5SITE}/XMLTV/Augment.pm
 ${P5SITE}/XMLTV/Capabilities.pm
 ${P5SITE}/XMLTV/Clumps.pm
 ${P5SITE}/XMLTV/Config_file.pm
@@ -89,6 +91,7 @@ ${P5SITE}/XMLTV/Usage.pm
 ${P5SITE}/XMLTV/ValidateFile.pm
 ${P5SITE}/XMLTV/ValidateGrabber.pm
 ${P5SITE}/XMLTV/Version.pm
+@man man/man1/tv_augment.1
 @man man/man1/tv_augment_tz.1
 @man man/man1/tv_cat.1
 @man man/man1/tv_check.1
@@ -99,8 +102,10 @@ ${P5SITE}/XMLTV/Version.pm
 @man man/man1/tv_grab_ar.1
 @man man/man1/tv_grab_ch_search.1
 @man man/man1/tv_grab_combiner.1
+@man man/man1/tv_grab_dk_dr.1
 @man man/man1/tv_grab_dtv_la.1
 @man man/man1/tv_grab_es_laguiatv.1
+@man man/man1/tv_grab_eu_dotmedia.1
 @man man/man1/tv_grab_eu_egon.1
 @man man/man1/tv_grab_eu_epgdata.1
 @man man/man1/tv_grab_fi.1
@@ -126,7 +131,6 @@ ${P5SITE}/XMLTV/Version.pm
 @man man/man1/tv_grab_uk_bleb.1
 @man man/man1/tv_grab_uk_rt.1
 @man man/man1/tv_grab_uk_tvguide.1
-@man man/man1/tv_grab_za.1
 @man man/man1/tv_grep.1
 @man man/man1/tv_imdb.1
 @man man/man1/tv_merge.1
@@ -138,21 +142,22 @@ ${P5SITE}/XMLTV/Version.pm
 @man man/man1/tv_to_text.1
 @man man/man1/tv_validate_file.1
 @man man/man1/tv_validate_grabber.1
-@man man/man3p/Configure.3
-@man man/man3p/Configure::Writer.3
-@man man/man3p/Data::Recursive::Encode.3
-@man man/man3p/Options.3
-@man man/man3p/PreferredMethod.3
-@man man/man3p/ValidateFile.3
-@man man/man3p/ValidateGrabber.3
-@man man/man3p/Version.3
 @man man/man3p/XMLTV.3
+@man man/man3p/XMLTV::Augment.3
+@man man/man3p/XMLTV::Configure.3
+@man man/man3p/XMLTV::Configure::Writer.3
+@man man/man3p/XMLTV::Data::Recursive::Encode.3
 @man man/man3p/XMLTV::Date.3
 @man man/man3p/XMLTV::GUI.3
 @man man/man3p/XMLTV::Grab_XML.3
 @man man/man3p/XMLTV::Gunzip.3
+@man man/man3p/XMLTV::Options.3
+@man man/man3p/XMLTV::PreferredMethod.3
 @man man/man3p/XMLTV::Summarize.3
 @man man/man3p/XMLTV::Supplement.3
+@man man/man3p/XMLTV::ValidateFile.3
+@man man/man3p/XMLTV::ValidateGrabber.3
+@man man/man3p/XMLTV::Version.3
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/xmltv/
 share/doc/xmltv/COPYING
@@ -163,6 +168,9 @@ share/doc/xmltv/README.win32
 share/doc/xmltv/tv_check_doc.html
 share/doc/xmltv/tv_check_doc.jpg
 share/xmltv/
+share/xmltv/tv_augment/
+share/xmltv/tv_augment/augment.conf
+share/xmltv/tv_augment/augment.rules
 share/xmltv/tv_grab_eu_epgdata/
 share/xmltv/tv_grab_eu_epgdata/channel_ids
 share/xmltv/tv_grab_huro/

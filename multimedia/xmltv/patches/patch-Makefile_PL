@@ -3,8 +3,8 @@ $OpenBSD$
 Use xmltv rather than xmltv-version for docs.
 Remove dvb linux specific.
 
---- Makefile.PL.orig	Tue Oct 21 07:55:31 2014
-+++ Makefile.PL	Tue Oct 21 16:17:54 2014
+--- Makefile.PL.orig	Tue Aug 25 04:53:23 2015
++++ Makefile.PL	Sun Aug 30 10:39:18 2015
 @@ -79,7 +79,7 @@ my $location = '$(DESTDIR)/./$(PREFIX)';
  our %extra_constants;
  %extra_constants
@@ -14,7 +14,7 @@ Remove dvb linux specific.
       INST_SHARE      => 'blib/share',
       INSTALLSHARE    => "$location/share/xmltv",
  
-@@ -533,22 +533,22 @@ my @opt_components
+@@ -575,22 +575,22 @@ my @opt_components
         grab_need_share => [ 'it' ],
       },
  
@@ -29,10 +29,10 @@ Remove dvb linux specific.
 -       to_clean => [ 'grab/it_dvb/tv_grab_it_dvb' ],
 -       deps => [ 'grab/it_dvb/tv_grab_it_dvb' => [ 'grab/it_dvb/tv_grab_it_dvb.in' ] ],
 -       grab_need_share => [ 'it_dvb' ],
--       prereqs => { 'Data::Dump' => 0,
--                    'IO::Select' => 0,
--                    'Linux::DVB' => 0,
--                    'Time::HiRes' => 0 } ,
+-       prereqs => { 'Data::Dump'  => 0,
+-                    'IO::Select'  => 0,
+-                    'Linux::DVB'  => 0,
+-                    'Time::HiRes' => 0, } ,
 -     },
 +#     { name => 'tv_grab_it_dvb',
 +#       blurb => 'Grabber for Italy from DVB-S stream',
@@ -45,11 +45,11 @@ Remove dvb linux specific.
 +#       to_clean => [ 'grab/it_dvb/tv_grab_it_dvb' ],
 +#       deps => [ 'grab/it_dvb/tv_grab_it_dvb' => [ 'grab/it_dvb/tv_grab_it_dvb.in' ] ],
 +#       grab_need_share => [ 'it_dvb' ],
-+#       prereqs => { 'Data::Dump' => 0,
-+#                    'IO::Select' => 0,
-+#                    'Linux::DVB' => 0,
-+#                    'Time::HiRes' => 0 } ,
++#       prereqs => { 'Data::Dump'  => 0,
++#                    'IO::Select'  => 0,
++#                    'Linux::DVB'  => 0,
++#                    'Time::HiRes' => 0, } ,
 +#     },
  
- # 2013-05-13 xmltv feed disabled by What's On due to TOS violations. It may come back
- #     { name     => 'tv_grab_in',
+ # 2009-03-05 rmeden - source site seems to be blocking our agent string
+ #     { name => 'tv_grab_jp',
