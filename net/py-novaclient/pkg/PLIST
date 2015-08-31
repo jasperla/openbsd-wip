@@ -53,6 +53,11 @@ lib/python${MODPY_VERSION}/site-packages/novaclient/tests/functional/
 lib/python${MODPY_VERSION}/site-packages/novaclient/tests/functional/README.rst
 lib/python${MODPY_VERSION}/site-packages/novaclient/tests/functional/__init__.py
 lib/python${MODPY_VERSION}/site-packages/novaclient/tests/functional/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/novaclient/tests/functional/api/
+lib/python${MODPY_VERSION}/site-packages/novaclient/tests/functional/api/__init__.py
+lib/python${MODPY_VERSION}/site-packages/novaclient/tests/functional/api/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/novaclient/tests/functional/api/test_servers.py
+lib/python${MODPY_VERSION}/site-packages/novaclient/tests/functional/api/test_servers.pyc
 lib/python${MODPY_VERSION}/site-packages/novaclient/tests/functional/base.py
 lib/python${MODPY_VERSION}/site-packages/novaclient/tests/functional/base.pyc
 lib/python${MODPY_VERSION}/site-packages/novaclient/tests/functional/hooks/
@@ -223,8 +228,6 @@ lib/python${MODPY_VERSION}/site-packages/novaclient/tests/unit/v2/test_versions.
 lib/python${MODPY_VERSION}/site-packages/novaclient/tests/unit/v2/test_volumes.py
 lib/python${MODPY_VERSION}/site-packages/novaclient/tests/unit/v2/test_volumes.pyc
 lib/python${MODPY_VERSION}/site-packages/novaclient/tests/unit/v2/testfile.txt
-lib/python${MODPY_VERSION}/site-packages/novaclient/tests/unit/v2/utils.py
-lib/python${MODPY_VERSION}/site-packages/novaclient/tests/unit/v2/utils.pyc
 lib/python${MODPY_VERSION}/site-packages/novaclient/utils.py
 lib/python${MODPY_VERSION}/site-packages/novaclient/utils.pyc
 lib/python${MODPY_VERSION}/site-packages/novaclient/v1_1/
