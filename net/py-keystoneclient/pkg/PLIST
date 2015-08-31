@@ -35,6 +35,8 @@ lib/python${MODPY_VERSION}/site-packages/keystoneclient/auth/identity/generic/__
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/auth/identity/generic/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/auth/identity/generic/base.py
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/auth/identity/generic/base.pyc
+lib/python${MODPY_VERSION}/site-packages/keystoneclient/auth/identity/generic/cli.py
+lib/python${MODPY_VERSION}/site-packages/keystoneclient/auth/identity/generic/cli.pyc
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/auth/identity/generic/password.py
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/auth/identity/generic/password.pyc
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/auth/identity/generic/token.py
@@ -158,8 +160,6 @@ lib/python${MODPY_VERSION}/site-packages/keystoneclient/openstack/common/apiclie
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/openstack/common/apiclient/utils.pyc
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/openstack/common/memorycache.py
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/openstack/common/memorycache.pyc
-lib/python${MODPY_VERSION}/site-packages/keystoneclient/openstack/common/uuidutils.py
-lib/python${MODPY_VERSION}/site-packages/keystoneclient/openstack/common/uuidutils.pyc
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/service_catalog.py
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/service_catalog.pyc
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/session.py
@@ -174,6 +174,8 @@ lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/functional/__init_
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/functional/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/functional/hooks/
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/functional/hooks/post_test_hook.sh
+lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/functional/test_access.py
+lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/functional/test_access.pyc
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/functional/test_cli.py
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/functional/test_cli.pyc
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/
@@ -189,10 +191,14 @@ lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/auth/__init__
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/auth/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/auth/test_access.py
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/auth/test_access.pyc
+lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/auth/test_auth.py
+lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/auth/test_auth.pyc
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/auth/test_cli.py
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/auth/test_cli.pyc
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/auth/test_conf.py
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/auth/test_conf.pyc
+lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/auth/test_default_cli.py
+lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/auth/test_default_cli.pyc
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/auth/test_identity_common.py
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/auth/test_identity_common.pyc
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/auth/test_identity_v2.py
@@ -201,6 +207,8 @@ lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/auth/test_ide
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/auth/test_identity_v3.pyc
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/auth/test_identity_v3_federated.py
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/auth/test_identity_v3_federated.pyc
+lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/auth/test_loading.py
+lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/auth/test_loading.pyc
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/auth/test_password.py
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/auth/test_password.pyc
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/auth/test_token.py
@@ -312,6 +320,8 @@ lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/v3/test_disco
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/v3/test_discover.pyc
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/v3/test_domains.py
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/v3/test_domains.pyc
+lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/v3/test_ec2.py
+lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/v3/test_ec2.pyc
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/v3/test_endpoint_filter.py
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/v3/test_endpoint_filter.pyc
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/tests/unit/v3/test_endpoint_policy.py
@@ -404,6 +414,8 @@ lib/python${MODPY_VERSION}/site-packages/keystoneclient/v3/contrib/federation/pr
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/v3/contrib/federation/projects.pyc
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/v3/contrib/federation/protocols.py
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/v3/contrib/federation/protocols.pyc
+lib/python${MODPY_VERSION}/site-packages/keystoneclient/v3/contrib/federation/saml.py
+lib/python${MODPY_VERSION}/site-packages/keystoneclient/v3/contrib/federation/saml.pyc
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/v3/contrib/federation/service_providers.py
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/v3/contrib/federation/service_providers.pyc
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/v3/contrib/oauth1/
@@ -429,6 +441,8 @@ lib/python${MODPY_VERSION}/site-packages/keystoneclient/v3/credentials.py
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/v3/credentials.pyc
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/v3/domains.py
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/v3/domains.pyc
+lib/python${MODPY_VERSION}/site-packages/keystoneclient/v3/ec2.py
+lib/python${MODPY_VERSION}/site-packages/keystoneclient/v3/ec2.pyc
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/v3/endpoints.py
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/v3/endpoints.pyc
 lib/python${MODPY_VERSION}/site-packages/keystoneclient/v3/groups.py

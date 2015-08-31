@@ -2,7 +2,7 @@
 
 COMMENT =		python client library for OpenStack Identiti (Keystone)
 
-MODPY_EGG_VERSION =	1.3.1
+MODPY_EGG_VERSION =	1.6.0
 DISTNAME =		python-keystoneclient-${MODPY_EGG_VERSION}
 PKGNAME = 		py-keystoneclient-${MODPY_EGG_VERSION}
 CATEGORIES =		net
