@@ -2,7 +2,7 @@
 
 COMMENT =		Oslo Utility library
 
-MODPY_EGG_VERSION =	1.5.0
+MODPY_EGG_VERSION =	2.4.0
 DISTNAME =		oslo.utils-${MODPY_EGG_VERSION}
 PKGNAME =		py-oslo-utils-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
@@ -19,6 +19,7 @@ MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =		devel/py-pbr \
 			devel/py-babel \
+			devel/py-monotonic \
 			devel/py-six \
 			textproc/py-iso8601 \
 			devel/py-oslo-i18n \
