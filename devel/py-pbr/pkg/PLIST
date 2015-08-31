@@ -70,6 +70,8 @@ lib/python${MODPY_VERSION}/site-packages/pbr/tests/test_util.py
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/test_util.pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/test_version.py
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/test_version.pyc
+lib/python${MODPY_VERSION}/site-packages/pbr/tests/test_wsgi.py
+lib/python${MODPY_VERSION}/site-packages/pbr/tests/test_wsgi.pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/CHANGES.txt
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/LICENSE.txt
@@ -93,11 +95,14 @@ lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/pbr_testpackage/e
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/pbr_testpackage/package_data/
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/pbr_testpackage/package_data/1.txt
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/pbr_testpackage/package_data/2.txt
+lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/pbr_testpackage/wsgi.py
+lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/pbr_testpackage/wsgi.pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/setup.cfg
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/setup.py
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/setup.pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/src/
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/src/testext.c
+lib/python${MODPY_VERSION}/site-packages/pbr/tests/testpackage/test-requirements.txt
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/util.py
 lib/python${MODPY_VERSION}/site-packages/pbr/tests/util.pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/util.py
