@@ -2,7 +2,7 @@
 
 COMMENT =		Python Build Reasonableness
 
-MODPY_EGG_VERSION =	1.5.0
+MODPY_EGG_VERSION =	1.8.0
 DISTNAME =		oslo.serialization-${MODPY_EGG_VERSION}
 PKGNAME =		py-oslo-serialization-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
