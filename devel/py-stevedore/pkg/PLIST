@@ -38,6 +38,8 @@ lib/python${MODPY_VERSION}/site-packages/stevedore/hook.py
 lib/python${MODPY_VERSION}/site-packages/stevedore/hook.pyc
 lib/python${MODPY_VERSION}/site-packages/stevedore/named.py
 lib/python${MODPY_VERSION}/site-packages/stevedore/named.pyc
+lib/python${MODPY_VERSION}/site-packages/stevedore/sphinxext.py
+lib/python${MODPY_VERSION}/site-packages/stevedore/sphinxext.pyc
 lib/python${MODPY_VERSION}/site-packages/stevedore/tests/
 lib/python${MODPY_VERSION}/site-packages/stevedore/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/stevedore/tests/__init__.pyc
@@ -63,6 +65,8 @@ lib/python${MODPY_VERSION}/site-packages/stevedore/tests/test_hook.py
 lib/python${MODPY_VERSION}/site-packages/stevedore/tests/test_hook.pyc
 lib/python${MODPY_VERSION}/site-packages/stevedore/tests/test_named.py
 lib/python${MODPY_VERSION}/site-packages/stevedore/tests/test_named.pyc
+lib/python${MODPY_VERSION}/site-packages/stevedore/tests/test_sphinxext.py
+lib/python${MODPY_VERSION}/site-packages/stevedore/tests/test_sphinxext.pyc
 lib/python${MODPY_VERSION}/site-packages/stevedore/tests/test_test_manager.py
 lib/python${MODPY_VERSION}/site-packages/stevedore/tests/test_test_manager.pyc
 lib/python${MODPY_VERSION}/site-packages/stevedore/tests/utils.py

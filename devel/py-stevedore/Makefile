@@ -2,7 +2,7 @@
 
 COMMENT =		manage dynamic plugins for Python applications
 
-MODPY_EGG_VERSION =	1.4.0
+MODPY_EGG_VERSION =	1.7.0
 DISTNAME =		stevedore-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
