@@ -1,6 +1,15 @@
 $OpenBSD$
 --- metronome.cfg.lua.dist.orig	Fri Mar 27 22:49:01 2015
-+++ metronome.cfg.lua.dist	Tue Aug 18 21:53:53 2015
++++ metronome.cfg.lua.dist	Wed Aug 19 19:09:57 2015
+@@ -9,7 +9,7 @@
+ -- A table is a list of values, except each value has a name. An 
+ -- example would be:
+ --
+--- ssl = { key = "keyfile.key", certificate = "certificate.cert" }
++-- ssl = { key = "keyfile.key", certificate = "certificate.crt" }
+ --
+ -- Tip: You can check that the syntax of this file is correct when you have finished
+ -- by running: luac -p metronome.cfg.lua
 @@ -51,7 +51,7 @@ modules_enabled = {
  		  	--"admin_telnet"; -- administration console, telnet to port 5582
  			--"admin_web"; -- administration web interface
@@ -25,11 +34,29 @@ $OpenBSD$
 +-- Logging configuration
 +-- For advanced logging see http://prosody.im/doc/logging
 +log = {
-+	info = "/var/prosody/prosody.log"; -- Change 'info' to 'debug' for verbose logging
-+	error = "/var/prosody/prosody.err";
++	info = "/var/metronome/metronome.log"; -- Change 'info' to 'debug' for verbose logging
++	error = "/var/metronome/metronome.err";
 +	-- "*syslog"; -- Uncomment this for logging to syslog
 +	-- "*console"; -- Log to the console, useful for debugging with daemonize=false
 +}
   
  -- Disable account creation by default, for security
  allow_registration = false;
+@@ -69,7 +82,7 @@ allow_registration = false;
+ -- to use SSL/TLS, you may comment or remove this
+ ssl = { 
+ 	key = "certs/localhost.key";
+-	certificate = "certs/localhost.cert";
++	certificate = "certs/localhost.crt";
+ }
+ 
+ -- This allows clients to connect to localhost. No harm in it.
+@@ -84,7 +97,7 @@ VirtualHost "example.com"
+ 	-- use the global one.
+ 	ssl = { 
+ 		key = "certs/example.com.key";
+-		certificate = "certs/example.com.cert";
++		certificate = "certs/example.com.crt";
+ 	}
+  
+ 	enabled = false -- This will disable the host, preserving the config, but denying connections

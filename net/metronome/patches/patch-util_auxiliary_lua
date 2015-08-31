@@ -1,0 +1,12 @@
+$OpenBSD$
+--- util/auxiliary.lua.orig	Fri Mar 27 22:49:01 2015
++++ util/auxiliary.lua	Wed Aug 19 17:21:26 2015
+@@ -27,7 +27,7 @@ function get_openssl_version()
+ 	-- openssl.
+ 	local version = popen("openssl version"):read();
+ 	if version then
+-		version = version:match("^OpenSSL%s([%d%p]+)"):gsub("%p", "");
++		version = version:match("^LibreSSL%s([%d%p]+)"):gsub("%p", "");
+ 		return tonumber(version);
+ 	else
+ 		return false;
