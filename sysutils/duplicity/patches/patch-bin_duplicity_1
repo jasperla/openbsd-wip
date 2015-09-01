@@ -1,8 +1,8 @@
 $OpenBSD: patch-bin_duplicity_1,v 1.2 2014/11/14 07:49:33 brad Exp $
 Document the ssh backend change from paramiko to pexpect.
---- bin/duplicity.1.orig	Mon May 11 12:33:53 2015
-+++ bin/duplicity.1	Wed Jul  8 20:22:22 2015
-@@ -1127,9 +1127,9 @@ scp://.. or
+--- bin/duplicity.1.orig	Sun Aug  2 11:35:45 2015
++++ bin/duplicity.1	Tue Sep  1 20:34:04 2015
+@@ -1137,9 +1137,9 @@ scp://.. or
  .br
  sftp://user[:password]@other.host[:port]/[relative|/absolute]_path
  .PP
@@ -14,16 +14,25 @@ Document the ssh backend change from paramiko to pexpect.
  .br
  See also
  .BR --ssh-askpass ,
-@@ -1659,7 +1659,7 @@ backend allows to define
+@@ -1750,7 +1750,7 @@ about the requirements for a server to support
+ .I scp/ssh
+ access.
+ To make it even more confusing the user can choose between several ssh backends via a scheme prefix:
+-paramiko+ (default), pexpect+, lftp+... .
++paramiko+, pexpect+ (default), lftp+... .
+ .br
+ paramiko & pexpect support
+ .BR --use-scp ,
+@@ -1762,7 +1762,7 @@ backend allows to define
  .BR --scp-command " and"
  .BR --sftp-command .
  .PP
--.BR "SSH paramiko backend " "(selected by default)"
-+.B "SSH paramiko backend "
+-.BR "SSH paramiko backend " "(default)"
++.BR "SSH paramiko backend"
  is a complete reimplementation of ssh protocols natively in python. Advantages
  are speed and maintainability. Minor disadvantage is that extra packages are
  needed as listed in
-@@ -1672,7 +1672,7 @@ mode (
+@@ -1775,7 +1775,7 @@ mode (
  .I --use-scp
  ) though scp access is used for put/get operations but listing is done via ssh remote shell.
  .PP
@@ -32,16 +41,7 @@ Document the ssh backend change from paramiko to pexpect.
  is the legacy ssh backend using the command line ssh binaries via pexpect.
  Older versions used
  .I scp
-@@ -1965,7 +1965,7 @@ There are two
- for scp/sftp/ssh access (also see
- .BR "A NOTE ON SSH BACKENDS" ).
- .TP
--.BR "ssh paramiko backend" " (enabled by default)"
-+.B "ssh paramiko backend"
- .B paramiko
- (SSH2 for python)
- - http://pypi.python.org/pypi/paramiko (downloads); http://github.com/paramiko/paramiko (project page)
-@@ -1974,7 +1974,7 @@ for scp/sftp/ssh access (also see
+@@ -2036,7 +2036,7 @@ see pydrive backend
  (Python Cryptography Toolkit)
  - http://www.dlitz.net/software/pycrypto/
  .TP
