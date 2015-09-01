@@ -1,18 +1,27 @@
 $OpenBSD$
---- duply.orig	Mon Oct 13 16:28:36 2014
-+++ duply	Tue Apr 28 20:17:42 2015
-@@ -439,8 +439,8 @@ function using_info {
-   duplicity_version_get
+--- duply.orig	Wed Aug 19 14:57:44 2015
++++ duply	Tue Sep  1 21:30:49 2015
+@@ -423,7 +423,7 @@ DEFAULT_SOURCE='/path/of/source'
+ DEFAULT_TARGET='scheme://user[:password]@host[:port]/[/]path'
+ DEFAULT_TARGET_USER='_backend_username_'
+ DEFAULT_TARGET_PASS='_backend_password_'
+-DEFAULT_GPG='gpg'
++DEFAULT_GPG='gpg2'
+ DEFAULT_GPG_KEY='_KEY_ID_'
+ DEFAULT_GPG_PW='_GPG_PASSWORD_'
+ 
+@@ -492,8 +492,8 @@ function using_info {
    # freebsd awk (--version only), debian mawk (-W version only), deliver '' so awk does not wait for input
-   AWK_VERSION=$((awk --version '' 2>/dev/null || awk -W version '' 2>/dev/null) | awk '/.+/{sub(/^[Aa][Ww][Kk][ \t]*/,"",$0);print $0;exit}')
--  PYTHON_VERSION=$(python -V 2>&1| awk '{print tolower($0);exit}')
--  GPG_INFO=`gpg --version 2>/dev/null| awk '/^gpg/{v=$1" "$3};/^Home/{print v" ("$0")"}'`
-+  PYTHON_VERSION=$(python${MODPY_VERSION} -V 2>&1| awk '{print tolower($0);exit}')
-+  GPG_INFO=`gpg2 --version 2>/dev/null| awk '/^gpg/{v=$1" "$3};/^Home/{print v" ("$0")"}'`
-   BASH_VERSION=$(bash --version | awk '/^GNU bash, version/{sub(/GNU bash, version[ ]+/,"",$0);print $0}')
-   echo -e "Using installed duplicity version ${DUPL_VERSION:-(not found)}${PYTHON_VERSION+, $PYTHON_VERSION}\
- ${GPG_INFO:+, $GPG_INFO}${AWK_VERSION:+, awk '${AWK_VERSION}'}${BASH_VERSION:+, bash '${BASH_VERSION}'}."
-@@ -886,11 +886,11 @@ function error_gpg {
+   local AWK_VERSION=$( lookup awk && (awk --version 2>/dev/null || awk -W version 2>&1) | awk 'NR<=2&&tolower($0)~/(busybox|awk)/{success=1;print;exit} END{if(success<1) print "unknown"}' || echo "$NOTFOUND" )
+   local GREP_VERSION=$( lookup grep && grep --version 2>&1 | awk 'NR<=2&&tolower($0)~/(busybox|grep.*[0-9]+\.[0-9]+)/{success=1;print;exit} END{if(success<1) print "unknown"}' || echo "$NOTFOUND" )
+-  local PYTHON_VERSION=$(lookup python && python -V 2>&1| awk '{print tolower($0);exit}' || echo "python $NOTFOUND" )
+-  local GPG_INFO=$(gpg_avail && gpg --version 2>&1| awk 'NR==1{v=$1" "$3};/^Home:/{print v" ("$0")"}' || echo "gpg $NOTFOUND")
++  local PYTHON_VERSION=$(lookup python${MODPY_VERSION} && python${MODPY_VERSION} -V 2>&1| awk '{print tolower($0);exit}' || echo "python $NOTFOUND" )
++  local GPG_INFO=$(gpg_avail && gpg2 --version 2>&1| awk 'NR==1{v=$1" "$3};/^Home:/{print v" ("$0")"}' || echo "gpg $NOTFOUND")
+   local BASH_VERSION=$(bash --version | awk 'NR==1{IGNORECASE=1;sub(/GNU bash, version[ ]+/,"",$0);print $0}')
+   echo -e "Using installed duplicity version ${DUPL_VERSION:-$NOTFOUND}\
+ ${PYTHON_VERSION+, $PYTHON_VERSION${PYTHONPATH:+ 'PYTHONPATH=$PYTHONPATH'}}\
+@@ -933,11 +933,11 @@ function error_gpg {
    error "$1
  
  Hint${hint:+s}:
@@ -26,16 +35,16 @@ $OpenBSD$
    below the key id would be FFFFFFFF for the public key.
  
    pub   1024D/FFFFFFFF 2007-12-17
-@@ -903,7 +903,7 @@ function error_gpg_key {
+@@ -950,7 +950,7 @@ function error_gpg_key {
    local KEY_ID="$1"
    local KIND="$2"
    error_gpg "${KIND} gpg key '${KEY_ID}' cannot be found." \
 -"Doublecheck if the above key is listed by 'gpg --list-keys' or available 
 +"Doublecheck if the above key is listed by 'gpg2 --list-keys' or available 
    as gpg key file '$(basename "$(gpg_keyfile "${KEY_ID}")")' in the profile folder.
-   If not you can put it there and $ME will autoimport it on the next run.
-   Alternatively import it manually as the user you plan to run $ME with."
-@@ -1133,7 +1133,7 @@ function date_fix {
+   If not you can put it there and $ME_NAME will autoimport it on the next run.
+   Alternatively import it manually as the user you plan to run $ME_NAME with."
+@@ -1181,7 +1181,7 @@ function date_fix {
  		echo $date && return
  	## some date commands do not support giving a time w/o setting it systemwide (irix,solaris,others?)
  	# python fallback
@@ -44,7 +53,7 @@ $OpenBSD$
  		echo $date && return
  	# awk fallback
  	date=$(awk "BEGIN{print strftime(\"${1:-$DEFAULTFORMAT}\"${2:+,$2})}" 2> /dev/null) && \
-@@ -1179,7 +1179,7 @@ function var_isset {
+@@ -1227,7 +1227,7 @@ function var_isset {
  
  function url_encode {
    # utilize python, silently do nothing on error - because no python no duplicity
@@ -53,7 +62,7 @@ $OpenBSD$
  try: import urllib.request as urllib
  except ImportError: import urllib
  print(urllib.${2}quote('$1'));
-@@ -1350,12 +1350,12 @@ function gpg_key_cache {
+@@ -1400,12 +1400,12 @@ function gpg_key_cache {
    local RES
    local MODE=$1
    shift
@@ -69,7 +78,7 @@ $OpenBSD$
      return 255
    elif ! var_isset "$CACHE"; then
      if [ "$MODE" = "PUB" ]; then
-@@ -1395,10 +1395,10 @@ function gpg_split_keyset2 {
+@@ -1445,10 +1445,10 @@ function gpg_split_keyset2 {
  }
  
  function gpg_prefix_keyset {
@@ -82,16 +91,7 @@ $OpenBSD$
    done
    echo $OUT
  }
-@@ -1727,7 +1727,7 @@ fi
- 
- # GPG availability check (now we know if gpg is really needed)#################
- if ! gpg_disabled; then 
--	GPG="$(which gpg 2>/dev/null)"
-+	GPG="$(which gpg2 2>/dev/null)"
- 	[ -z "$GPG" ] && error_path "gpg missing. installed und available in path?"
- fi
- 
-@@ -1904,7 +1904,7 @@ if [ ${#GPG_KEYS_ENC_ARRAY[@]} -gt 0 ]; then
+@@ -1951,7 +1951,7 @@ if [ ${#GPG_KEYS_ENC_ARRAY[@]} -gt 0 ]; then
    if [ "$CMD_ERR" != "0" ]; then 
      KEY_NOTRUST=$(echo "$CMD_OUT"|awk '/^\[GNUPG:\] INV_RECP 10/ { print $4 }')
      [ -n "$KEY_NOTRUST" ] && HINT="Key '${KEY_NOTRUST}' seems to be untrusted. If you really trust this key try to
