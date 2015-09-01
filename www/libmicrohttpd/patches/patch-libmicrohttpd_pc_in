@@ -1,13 +1,13 @@
 $OpenBSD$
---- libmicrohttpd.pc.in.orig	Wed Sep 30 23:11:15 2009
-+++ libmicrohttpd.pc.in	Wed Mar 16 23:01:16 2011
-@@ -8,6 +8,6 @@ Description: A library for creating an embedded HTTP s
- Version: @VERSION@
+--- libmicrohttpd.pc.in.orig	Fri Mar 20 19:45:31 2015
++++ libmicrohttpd.pc.in	Tue Sep  1 15:07:24 2015
+@@ -9,6 +9,6 @@ Version: @VERSION@
  Requires:
+ Requires.private: @MHD_REQ_PRIVATE@
  Conflicts:
 -Libs: -L${libdir} -lmicrohttpd
--Libs.private: @MHD_LIBDEPS@
+-Libs.private: @MHD_LIBDEPS_PKGCFG@
 -Cflags: -I${includedir}
 +Libs: -pthread -L${libdir} -lmicrohttpd
-+Libs.private: -pthread @MHD_LIBDEPS@
++Libs.private: -pthread @MHD_LIBDEPS_PKGCFG@
 +Cflags: -pthread -I${includedir}

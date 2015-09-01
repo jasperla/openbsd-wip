@@ -1,10 +1,10 @@
 # $OpenBSD$
 
-SHARED_LIBS +=	microhttpd	0.0	# 38.0
+SHARED_LIBS +=	microhttpd	0.0	# 42.0
 
 COMMENT =	small http server library
 
-VERSION =	0.9.38
+VERSION =	0.9.42
 DISTNAME =	libmicrohttpd-${VERSION}
 
 CATEGORIES =	www
@@ -16,7 +16,7 @@ MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM =	 Yes
 
-WANTLIB +=	ffi gcrypt gmp gnutls gpg-error hogweed nettle 
+WANTLIB +=	ffi gcrypt gmp gnutls gpg-error hogweed nettle
 WANTLIB +=	p11-kit pthread tasn1 z
 
 MASTER_SITES =	${MASTER_SITE_GNU:=libmicrohttpd/}
