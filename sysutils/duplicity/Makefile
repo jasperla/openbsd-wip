@@ -1,8 +1,11 @@
 # $OpenBSD: Makefile,v 1.32 2015/01/02 20:11:18 jca Exp $
 
+# optional dependencies
+# py-pyrax
+
 COMMENT =	encrypted backup using rsync algorithm
 
-MODPY_EGG_VERSION = 0.7.03
+MODPY_EGG_VERSION = 0.7.04
 DISTNAME =	duplicity-${MODPY_EGG_VERSION}
 
 CATEGORIES =	sysutils
@@ -24,7 +27,6 @@ LIB_DEPENDS +=	net/librsync \
 RUN_DEPENDS +=	devel/py-pexpect \
 		net/ncftp \
 		net/py-boto \
-		net/py-pyrax \
 		gnupg->=2:security/gnupg2 \
 		sysutils/py-lockfile
 
