@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+${P5SITE}/Module/
+${P5SITE}/Module/Install/
+${P5SITE}/Module/Install/AutoLicense.pm
+@man man/man3p/Module::Install::AutoLicense.3p
