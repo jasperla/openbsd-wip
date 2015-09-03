@@ -1,0 +1,2 @@
+A Module::Install extension to check if tester is
+a CPAN tester.
