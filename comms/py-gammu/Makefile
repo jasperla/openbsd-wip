@@ -2,7 +2,7 @@
 
 COMMENT =		python bindings for Gammu
 
-MODPY_EGG_VERSION = 	2.3
+MODPY_EGG_VERSION = 	2.4
 DISTNAME =		python-gammu-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/python/py/}
 
@@ -22,10 +22,10 @@ MASTER_SITES =		http://dl.cihar.com/python-gammu/
 MODULES =		lang/python
 LIB_DEPENDS =		comms/gammu
 
+SEPARATE_BUILD = 	Yes
+
 MODPY_SETUPTOOLS = 	Yes
 
 TEST_IS_INTERCATIVE =	Yes
-
-PKG_ARCH =		*
 
 .include <bsd.port.mk>
