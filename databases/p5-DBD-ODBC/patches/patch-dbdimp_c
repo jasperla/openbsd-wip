@@ -1,0 +1,12 @@
+$OpenBSD$
+--- dbdimp.c.orig	Fri Sep  4 08:39:40 2015
++++ dbdimp.c	Fri Sep  4 08:39:52 2015
+@@ -6377,7 +6377,7 @@ static void AllODBCErrors(
+         /* ErrorMsg must not be greater than SQL_MAX_MESSAGE_LENGTH */
+         UCHAR ErrorMsg[SQL_MAX_MESSAGE_LENGTH];
+         SWORD ErrorMsgLen;
+-        SDWORD NativeError;
++        SQLINTEGER NativeError;
+ 
+         /* TBD: 3.0 update */
+         rc=SQLError(henv, hdbc, hstmt,
