@@ -71,7 +71,6 @@ www/p5-Tapper-Reports-DPath	ready to import, sent to ports@ 2014-05-23
 www/p5-Tapper-Reports-API	ready to import, sent to ports@ 2014-05-23
 www/p5-Tapper-Model		ready to import, sent to ports@ 2014-05-23
 textproc/p5-Text-Balanced	ready to import, sent to ports@ 2014-05-23
-games/gnome-hearts	ready to import (bcallah@), sent to ports 2014-10-09
 sysutils/sleuthkit		sent to ports@ 2014-10-08 (nigel)
 www/p5-Starlet				ready to import, sent to ports@ 2015-01-08 (garcer)
 www/p5-Plack-Middleware-MethodOverride	ready to import
@@ -86,15 +85,8 @@ math/p5-Math-Random-ISAAC-XS		ready to import, sent to ports@ 2015-01-24 (garcer
 devel/p5-Number-Tolerant		ready to import, sent to ports@ 2015-01-24 (garcer)
 www/p5-Session-Storage-Secure		ready to import, sent to ports@ 2015-01-24 (garcer)
 www/p5-Dancer2-Session-Cookie		ready to import, sent to ports@ 2015-01-24 (garcer)
-net/gophervr				ready to import, waiting for unlock (bcallah@)
 net/ocserv				ready, waiting for unlock -sthen
-multimedia/mps-youtube			ready to import, waiting for unlock (bcallah@)
-graphics/glfw				ready to import, waiting for unlock (bcallah@)
-graphics/mandelbulber2			ready to import, waiting for unlock (bcallah@)
 comms/ems-flasher			ready to import, waiting for unlock (bentley@)
-x11/walcommander			ready to import, waiting for unlock (bcallah@)
-graphics/lumee				ready to import, waiting for unlock (bcallah@)
-games/freeblocks			ready to import, waiting for unlock (bcallah@)
 devel/hs-file-embed			ready to import, sent to ports@ 2015-05-08 (diethyl)
 devel/p5-Test-API			ready to import, sent to ports@ 2015-08-23 (garcer)
 devel/p5-Test-Modern			ready to import, sent to ports@ 2015-08-23 (garcer)

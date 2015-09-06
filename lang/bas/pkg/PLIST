@@ -1,5 +1,0 @@
-@comment $OpenBSD$
-@bin bin/bas
-lib/libbas.a
-@man man/man1/bas.1
-share/locale/de/LC_MESSAGES/bas.mo

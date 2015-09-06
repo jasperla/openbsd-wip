@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@bin bin/vimb
-@man man/man1/vimb.1
