@@ -1,3 +1,5 @@
+# $OpenBSD$
+
 COMMENT = package manager for Rust language (bootstrap)
 
 CARGO_VERSION = 0.4.0
@@ -84,9 +86,11 @@ DISTFILES    += winapi-0.1.23.tar.gz{winapi/0.1.23/download}:1
 DISTFILES    += winapi-0.2.1.tar.gz{winapi/0.2.1/download}:1
 DISTFILES    += winapi-build-0.1.0.tar.gz{winapi-build/0.1.0/download}:1
 
-do-build:
+pre-configure:
 	# XXX: This is fixed in upstream git, but not yet in a release.
-	patch -d ${WRKDIR}/curl-sys-0.1.25 <patches/curl-sys
+	patch -d ${WRKDIR}/curl-sys-0.1.25 <files/curl-sys.patch
+
+do-build:
 	${WRKDIST}/bootstrap.py \
 		--cargo-root ${WRKDIR}/cargo-${CARGO_VERSION} \
 		--target-dir ${WRKDIR} \
@@ -101,7 +105,12 @@ do-install:
 	cp ${WRKDIR}/cargo-"$$(echo ${CARGO_VERSION} | sed 's/\./_/g')" \
 		${WRKINST}${LOCALBASE}/libexec/cargo-bootstrap/cargo
 
-BUILD_DEPENDS = lang/rust
+MODULES         = lang/python
+MODPY_RUNDEP    = No # only the build script is python
+MODPY_ADJ_FILES = bootstrap.py
+
+BUILD_DEPENDS = devel/py-dulwich lang/rust
+# TODO: BUILD_DEPENDS += devel/py-toml
 LIB_DEPENDS   = net/curl security/libssh2
 
 NO_TEST = Yes
