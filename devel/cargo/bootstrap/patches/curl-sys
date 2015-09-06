@@ -1,0 +1,10 @@
+Backported from GitHub until a new release is made:
+  https://github.com/carllerche/curl-rust/commit/bf2c9da3f30ce2c77650b591a5cda38c5adbfdc5
+--- Cargo.toml.orig	Sat Aug 29 17:49:26 2015
++++ Cargo.toml	Sat Aug 29 17:49:15 2015
+@@ -39,3 +39,5 @@
+ openssl-sys = "0.6.0"
+ [target.x86_64-unknown-bitrig.dependencies]
+ openssl-sys = "0.6.0"
++[target.x86_64-unknown-openbsd.dependencies]
++openssl-sys = "0.6.0"

@@ -1,0 +1,3 @@
+@comment $OpenBSD$
+libexec/cargo-bootstrap/
+@bin libexec/cargo-bootstrap/cargo

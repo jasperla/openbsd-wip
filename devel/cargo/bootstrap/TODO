@@ -1,0 +1,3 @@
+ - link against libgit2 from ports instead of an embedded version
+   (requires an update to devel/libgit2)
+ - create a pytoml port to depend on
