@@ -30,6 +30,7 @@ lib/racket/mans.rktd
 lib/racket/mzdyn3m.o
 @bin lib/racket/starter
 lib/racket/starter-sh
+lib/racket/system.rktd
 @man man/man1/racket.1
 @man man/man1/raco.1
 share/applications/
@@ -73,6 +74,8 @@ share/racket/collects/compiler/compiled/exe-dylib-path_rkt.dep
 share/racket/collects/compiler/compiled/exe-dylib-path_rkt.zo
 share/racket/collects/compiler/compiled/find-exe_rkt.dep
 share/racket/collects/compiler/compiled/find-exe_rkt.zo
+share/racket/collects/compiler/compiled/module-suffix_rkt.dep
+share/racket/collects/compiler/compiled/module-suffix_rkt.zo
 share/racket/collects/compiler/compiled/option_rkt.dep
 share/racket/collects/compiler/compiled/option_rkt.zo
 share/racket/collects/compiler/compiler.rkt
@@ -80,6 +83,7 @@ share/racket/collects/compiler/distribute.rkt
 share/racket/collects/compiler/embed.rkt
 share/racket/collects/compiler/exe-dylib-path.rkt
 share/racket/collects/compiler/find-exe.rkt
+share/racket/collects/compiler/module-suffix.rkt
 share/racket/collects/compiler/option.rkt
 share/racket/collects/compiler/private/
 share/racket/collects/compiler/private/collects-path.rkt
@@ -98,6 +102,8 @@ share/racket/collects/compiler/private/compiled/macfw_rkt.dep
 share/racket/collects/compiler/private/compiled/macfw_rkt.zo
 share/racket/collects/compiler/private/compiled/mach-o_rkt.dep
 share/racket/collects/compiler/private/compiled/mach-o_rkt.zo
+share/racket/collects/compiler/private/compiled/pe-rsrc_rkt.dep
+share/racket/collects/compiler/private/compiled/pe-rsrc_rkt.zo
 share/racket/collects/compiler/private/compiled/read-bstr_rkt.dep
 share/racket/collects/compiler/private/compiled/read-bstr_rkt.zo
 share/racket/collects/compiler/private/compiled/windlldir_rkt.dep
@@ -114,6 +120,7 @@ share/racket/collects/compiler/private/elf.rkt
 share/racket/collects/compiler/private/embed.rkt
 share/racket/collects/compiler/private/macfw.rkt
 share/racket/collects/compiler/private/mach-o.rkt
+share/racket/collects/compiler/private/pe-rsrc.rkt
 share/racket/collects/compiler/private/read-bstr.rkt
 share/racket/collects/compiler/private/windlldir.rkt
 share/racket/collects/compiler/private/winsubsys.rkt
@@ -284,7 +291,10 @@ share/racket/collects/file/gzip.rkt
 share/racket/collects/file/ico.rkt
 share/racket/collects/file/md5.rkt
 share/racket/collects/file/private/
+share/racket/collects/file/private/check-path.rkt
 share/racket/collects/file/private/compiled/
+share/racket/collects/file/private/compiled/check-path_rkt.dep
+share/racket/collects/file/private/compiled/check-path_rkt.zo
 share/racket/collects/file/private/compiled/strip-prefix_rkt.dep
 share/racket/collects/file/private/compiled/strip-prefix_rkt.zo
 share/racket/collects/file/private/strip-prefix.rkt
@@ -1415,6 +1425,8 @@ share/racket/collects/setup/compiled/collection-search_rkt.dep
 share/racket/collects/setup/compiled/collection-search_rkt.zo
 share/racket/collects/setup/compiled/collects_rkt.dep
 share/racket/collects/setup/compiled/collects_rkt.zo
+share/racket/collects/setup/compiled/cross-system_rkt.dep
+share/racket/collects/setup/compiled/cross-system_rkt.zo
 share/racket/collects/setup/compiled/dirs_rkt.dep
 share/racket/collects/setup/compiled/dirs_rkt.zo
 share/racket/collects/setup/compiled/doc-db_rkt.dep
@@ -1467,6 +1479,7 @@ share/racket/collects/setup/compiled/winvers-change_rkt.dep
 share/racket/collects/setup/compiled/winvers-change_rkt.zo
 share/racket/collects/setup/compiled/winvers_rkt.dep
 share/racket/collects/setup/compiled/winvers_rkt.zo
+share/racket/collects/setup/cross-system.rkt
 share/racket/collects/setup/dirs.rkt
 share/racket/collects/setup/doc-db.rkt
 share/racket/collects/setup/getinfo.rkt
@@ -1499,6 +1512,8 @@ share/racket/collects/setup/private/compiled/cc-struct_rkt.dep
 share/racket/collects/setup/private/compiled/cc-struct_rkt.zo
 share/racket/collects/setup/private/compiled/command-name_rkt.dep
 share/racket/collects/setup/private/compiled/command-name_rkt.zo
+share/racket/collects/setup/private/compiled/dirs_rkt.dep
+share/racket/collects/setup/private/compiled/dirs_rkt.zo
 share/racket/collects/setup/private/compiled/dylib_rkt.dep
 share/racket/collects/setup/private/compiled/dylib_rkt.zo
 share/racket/collects/setup/private/compiled/elf_rkt.dep
@@ -1511,6 +1526,7 @@ share/racket/collects/setup/private/compiled/omitted-paths_rkt.dep
 share/racket/collects/setup/private/compiled/omitted-paths_rkt.zo
 share/racket/collects/setup/private/compiled/pkg-deps_rkt.dep
 share/racket/collects/setup/private/compiled/pkg-deps_rkt.zo
+share/racket/collects/setup/private/dirs.rkt
 share/racket/collects/setup/private/dylib.rkt
 share/racket/collects/setup/private/elf.rkt
 share/racket/collects/setup/private/format-error.rkt
@@ -1701,6 +1717,8 @@ share/racket/collects/syntax/parse/private/compiled/lib_rkt.dep
 share/racket/collects/syntax/parse/private/compiled/lib_rkt.zo
 share/racket/collects/syntax/parse/private/compiled/litconv_rkt.dep
 share/racket/collects/syntax/parse/private/compiled/litconv_rkt.zo
+share/racket/collects/syntax/parse/private/compiled/make_rkt.dep
+share/racket/collects/syntax/parse/private/compiled/make_rkt.zo
 share/racket/collects/syntax/parse/private/compiled/minimatch_rkt.dep
 share/racket/collects/syntax/parse/private/compiled/minimatch_rkt.zo
 share/racket/collects/syntax/parse/private/compiled/opt_rkt.dep
@@ -1741,6 +1759,7 @@ share/racket/collects/syntax/parse/private/keywords.rkt
 share/racket/collects/syntax/parse/private/kws.rkt
 share/racket/collects/syntax/parse/private/lib.rkt
 share/racket/collects/syntax/parse/private/litconv.rkt
+share/racket/collects/syntax/parse/private/make.rkt
 share/racket/collects/syntax/parse/private/minimatch.rkt
 share/racket/collects/syntax/parse/private/opt.rkt
 share/racket/collects/syntax/parse/private/parse-aux.rkt
@@ -1812,15 +1831,9 @@ share/racket/collects/syntax/unsafe/for-transform.rkt
 share/racket/collects/syntax/wrap-modbeg.rkt
 share/racket/collects/unstable/
 share/racket/collects/unstable/compiled/
-share/racket/collects/unstable/compiled/custom-write_rkt.dep
-share/racket/collects/unstable/compiled/custom-write_rkt.zo
 share/racket/collects/unstable/compiled/error_rkt.dep
 share/racket/collects/unstable/compiled/error_rkt.zo
-share/racket/collects/unstable/compiled/struct_rkt.dep
-share/racket/collects/unstable/compiled/struct_rkt.zo
-share/racket/collects/unstable/custom-write.rkt
 share/racket/collects/unstable/error.rkt
-share/racket/collects/unstable/struct.rkt
 share/racket/collects/version/
 share/racket/collects/version/check.rkt
 share/racket/collects/version/compiled/
