@@ -26,7 +26,6 @@ share/doc/HTML/ca/stage/menus.docbook
 share/doc/HTML/ca/stage/options.docbook
 share/doc/HTML/ca/stage/tutorial.docbook
 share/locale/ca/LC_MESSAGES/KarbonTools.mo
-share/locale/ca/LC_MESSAGES/KexiRelationDesignShapePlugin.mo
 share/locale/ca/LC_MESSAGES/braindump.appdata.mo
 share/locale/ca/LC_MESSAGES/braindump.mo
 share/locale/ca/LC_MESSAGES/calligra-defaulttools.mo

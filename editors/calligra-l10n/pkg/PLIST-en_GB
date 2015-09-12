@@ -1,6 +1,5 @@
 @comment $OpenBSD$
 share/locale/en_GB/LC_MESSAGES/KarbonTools.mo
-share/locale/en_GB/LC_MESSAGES/KexiRelationDesignShapePlugin.mo
 share/locale/en_GB/LC_MESSAGES/braindump.appdata.mo
 share/locale/en_GB/LC_MESSAGES/braindump.mo
 share/locale/en_GB/LC_MESSAGES/calligra-defaulttools.mo

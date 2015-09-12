@@ -4,7 +4,6 @@ share/apps/calligra/
 share/apps/calligra/autocorrect/
 share/apps/calligra/autocorrect/nb.xml
 share/locale/nb/LC_MESSAGES/KarbonTools.mo
-share/locale/nb/LC_MESSAGES/KexiRelationDesignShapePlugin.mo
 share/locale/nb/LC_MESSAGES/braindump.mo
 share/locale/nb/LC_MESSAGES/calligra-defaulttools.mo
 share/locale/nb/LC_MESSAGES/calligra-dockers.mo
