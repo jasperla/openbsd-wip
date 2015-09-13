@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+${P5SITE}/HTML/TreeBuilder/LibXML/
+${P5SITE}/HTML/TreeBuilder/LibXML.pm
+${P5SITE}/HTML/TreeBuilder/LibXML/Node.pm
+@man man/man3p/HTML::TreeBuilder::LibXML.3p
+@man man/man3p/HTML::TreeBuilder::LibXML::Node.3p
