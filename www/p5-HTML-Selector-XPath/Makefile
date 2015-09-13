@@ -13,7 +13,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 CPAN_AUTHOR =		CORION
 
-TEST_DEPENDS =		devel/p5-Test-Base \
-			www/p5-HTML-TreeBuilder-XPath
+TEST_DEPENDS =		www/p5-HTML-TreeBuilder-XPath \
+			devel/p5-Test-Base
+
+CONFIGURE_STYLE +=	modinst
 
 .include <bsd.port.mk>
