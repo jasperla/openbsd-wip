@@ -492,6 +492,8 @@ share/racket/collects/pkg/private/compiled/migrate_rkt.dep
 share/racket/collects/pkg/private/compiled/migrate_rkt.zo
 share/racket/collects/pkg/private/compiled/mod-paths_rkt.dep
 share/racket/collects/pkg/private/compiled/mod-paths_rkt.zo
+share/racket/collects/pkg/private/compiled/network_rkt.dep
+share/racket/collects/pkg/private/compiled/network_rkt.zo
 share/racket/collects/pkg/private/compiled/new_rkt.dep
 share/racket/collects/pkg/private/compiled/new_rkt.zo
 share/racket/collects/pkg/private/compiled/orig-pkg_rkt.dep
@@ -502,6 +504,8 @@ share/racket/collects/pkg/private/compiled/path_rkt.dep
 share/racket/collects/pkg/private/compiled/path_rkt.zo
 share/racket/collects/pkg/private/compiled/pkg-db_rkt.dep
 share/racket/collects/pkg/private/compiled/pkg-db_rkt.zo
+share/racket/collects/pkg/private/compiled/prefetch_rkt.dep
+share/racket/collects/pkg/private/compiled/prefetch_rkt.zo
 share/racket/collects/pkg/private/compiled/print_rkt.dep
 share/racket/collects/pkg/private/compiled/print_rkt.zo
 share/racket/collects/pkg/private/compiled/remove_rkt.dep
@@ -531,11 +535,13 @@ share/racket/collects/pkg/private/lock.rkt
 share/racket/collects/pkg/private/metadata.rkt
 share/racket/collects/pkg/private/migrate.rkt
 share/racket/collects/pkg/private/mod-paths.rkt
+share/racket/collects/pkg/private/network.rkt
 share/racket/collects/pkg/private/new.rkt
 share/racket/collects/pkg/private/orig-pkg.rkt
 share/racket/collects/pkg/private/params.rkt
 share/racket/collects/pkg/private/path.rkt
 share/racket/collects/pkg/private/pkg-db.rkt
+share/racket/collects/pkg/private/prefetch.rkt
 share/racket/collects/pkg/private/print.rkt
 share/racket/collects/pkg/private/remove.rkt
 share/racket/collects/pkg/private/repo-path.rkt
@@ -1831,9 +1837,6 @@ share/racket/collects/syntax/unsafe/for-transform.rkt
 share/racket/collects/syntax/wrap-modbeg.rkt
 share/racket/collects/unstable/
 share/racket/collects/unstable/compiled/
-share/racket/collects/unstable/compiled/error_rkt.dep
-share/racket/collects/unstable/compiled/error_rkt.zo
-share/racket/collects/unstable/error.rkt
 share/racket/collects/version/
 share/racket/collects/version/check.rkt
 share/racket/collects/version/compiled/
