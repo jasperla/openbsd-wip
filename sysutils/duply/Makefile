@@ -24,7 +24,7 @@ EXTRACT_SUFX =		.tgz
 MODULES =		lang/python
 RUN_DEPENDS =		shells/bash \
 					sysutils/duplicity \
-					security/gnupg2>=2
+					security/gnupg<2
 
 NO_BUILD =		Yes
 #NO_TEST =		Yes
