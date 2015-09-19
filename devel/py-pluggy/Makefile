@@ -2,7 +2,7 @@
 
 COMMENT =		plugin and hook calling mechanisms for python
 
-MODPY_EGG_VERSION =	0.3.0
+MODPY_EGG_VERSION =	0.3.1
 DISTNAME =		pluggy-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
