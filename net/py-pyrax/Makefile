@@ -2,7 +2,7 @@
 
 COMMENT =		python interface to OpenStack API
 
-MODPY_EGG_VERSION =	1.9.4
+MODPY_EGG_VERSION =	1.9.5
 DISTNAME =		pyrax-${MODPY_EGG_VERSION}
 PKGNAME = 		py-pyrax-${MODPY_EGG_VERSION}
 CATEGORIES =		net
