@@ -7,7 +7,6 @@ lib/python${MODPY_VERSION}/site-packages/pbr-${MODPY_EGG_VERSION}-py${MODPY_VERS
 lib/python${MODPY_VERSION}/site-packages/pbr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/pbr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/pbr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
-lib/python${MODPY_VERSION}/site-packages/pbr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/pbr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pbr/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pbr/__init__.pyc
