@@ -4,7 +4,7 @@ COMMENT =		free video codec
 DISTNAME =		daala-0.0.20150701
 CATEGORIES =		multimedia graphics
 HOMEPAGE =		https://xiph.org/daala/
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
+MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # 2-clause BSD
 PERMIT_PACKAGE_CDROM =	Yes

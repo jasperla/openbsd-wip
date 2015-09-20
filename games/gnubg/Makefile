@@ -7,7 +7,7 @@ PKGNAME =		gnubg-${V}
 CATEGORIES =		games x11
 HOMEPAGE =		http://gnubg.org/
 
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
+MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes

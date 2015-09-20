@@ -4,7 +4,7 @@ COMMENT =		easy to use audio filtering library
 DISTNAME =		libfilteraudio-20150516
 CATEGORIES =		audio
 HOMEPAGE =		https://github.com/irungentoo/libfilteraudio/
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
+MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 SHARED_LIBS +=  filteraudio               0.0
 

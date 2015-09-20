@@ -5,7 +5,7 @@ DISTNAME =		utox-${GH_TAGNAME:v%=%}
 CATEGORIES =		net telephony
 HOMEPAGE =		http://utox.org/
 
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
+MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

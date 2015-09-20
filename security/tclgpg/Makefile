@@ -7,7 +7,7 @@ DISTNAME =		tclgpg-20150324
 CATEGORIES =		security
 HOMEPAGE =		https://chiselapp.com/user/sgolovan/repository/tclgpg/
 
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
+MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # 2-clause BSD
 PERMIT_PACKAGE_CDROM =	Yes
