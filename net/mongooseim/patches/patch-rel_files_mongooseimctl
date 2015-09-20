@@ -1,0 +1,12 @@
+$OpenBSD$
+--- rel/files/mongooseimctl.orig	Thu Apr  2 09:56:01 2015
++++ rel/files/mongooseimctl	Sun Sep 20 19:56:04 2015
+@@ -87,7 +87,7 @@ ctl ()
+     MAXCONNID=100
+     CONNLOCKDIR=$EJABBERD_DIR/var/lock/mongooseimctl
+     mkdir -p $CONNLOCKDIR
+-    FLOCK='/usr/bin/flock'
++    FLOCK='${PREFIX}/bin/flock'
+     if [ ! -x "$FLOCK" ] || [ ! -d "$CONNLOCKDIR" ] ; then
+ 	JOT='/usr/bin/jot'
+ 	if [ ! -x "$JOT" ] ; then

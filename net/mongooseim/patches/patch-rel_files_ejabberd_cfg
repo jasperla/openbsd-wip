@@ -1,0 +1,27 @@
+$OpenBSD$
+--- rel/files/ejabberd.cfg.orig	Thu Apr  2 09:56:01 2015
++++ rel/files/ejabberd.cfg	Sun Sep 20 20:09:39 2015
+@@ -179,7 +179,7 @@
+   %%{5223, ejabberd_c2s, [
+   %%			{access, c2s},
+   %%			{shaper, c2s_shaper},
+-  %%			{certfile, "/path/to/ssl.pem"}, tls,
++  %%			{certfile, "${SYSCONFDIR}/mongooseim/myserver.pem"}, tls,
+   %%			{max_stanza_size, 65536}
+   %%		       ]},
+ 
+@@ -212,12 +212,12 @@
+ %% Allowed values are: false optional required required_trusted
+ %% You must specify a certificate file.
+ %%
+-%%{s2s_use_starttls, optional}.
++{s2s_use_starttls, optional}.
+ 
+ %%
+ %% s2s_certfile: Specify a certificate file.
+ %%
+-%%{s2s_certfile, "/path/to/ssl.pem"}.
++{s2s_certfile, "{${SYSCONFDIR}/mongooseim/myserver.pem"}.
+ 
+ %% https://www.openssl.org/docs/apps/ciphers.html#CIPHER_STRINGS
+ %% {s2s_ciphers, "DEFAULT:!EXPORT:!LOW:!SSLv2"}.
