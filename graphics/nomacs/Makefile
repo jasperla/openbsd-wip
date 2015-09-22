@@ -2,7 +2,7 @@
 
 COMMENT =		small and fast Qt image viewer
 
-V = 			2.4.4
+V = 			2.4.6
 DISTNAME =		nomacs-${V}-source
 PKGNAME =		nomacs-${V}
 

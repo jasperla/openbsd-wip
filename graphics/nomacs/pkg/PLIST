@@ -5,6 +5,7 @@ share/applications/nomacs.desktop
 share/nomacs/
 share/nomacs/translations/
 share/nomacs/translations/nomacs_als.qm
+share/nomacs/translations/nomacs_ar.qm
 share/nomacs/translations/nomacs_az.qm
 share/nomacs/translations/nomacs_cs.qm
 share/nomacs/translations/nomacs_de.qm
@@ -13,6 +14,7 @@ share/nomacs/translations/nomacs_es.qm
 share/nomacs/translations/nomacs_fr.qm
 share/nomacs/translations/nomacs_it.qm
 share/nomacs/translations/nomacs_ja.qm
+share/nomacs/translations/nomacs_nl.qm
 share/nomacs/translations/nomacs_pl.qm
 share/nomacs/translations/nomacs_pt.qm
 share/nomacs/translations/nomacs_ru.qm
