@@ -1,0 +1,12 @@
+$OpenBSD$
+--- shared.mk.orig	Wed Sep 23 15:59:10 2015
++++ shared.mk	Wed Sep 23 16:00:12 2015
+@@ -6,7 +6,7 @@ CXX ?= g++
+ EMCC = emcc
+ EMCCFLAGS = -O1 -W -Wall
+ 
+-COMMON_FLAGS = -fno-omit-frame-pointer -no-canonical-prefixes -O2
++COMMON_FLAGS = -fno-omit-frame-pointer -no-canonical-prefixes
+ 
+ ifeq ($(OS), Darwin)
+   CPPFLAGS += -DOS_MACOSX
