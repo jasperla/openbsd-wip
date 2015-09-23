@@ -2,7 +2,7 @@
 
 COMMENT =		obfuscate Tor traffic
 
-MODPY_EGG_VERSION =	0.2.6
+MODPY_EGG_VERSION =	0.2.13
 DISTNAME =		obfsproxy-${MODPY_EGG_VERSION}
 
 CATEGORIES =		net
