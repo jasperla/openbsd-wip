@@ -1,4 +1,4 @@
-# OpenBSD$
+# $OpenBSD$
 
 COMMENT =		HTML::TreeBuilder/XPath libxml compatible interface
 

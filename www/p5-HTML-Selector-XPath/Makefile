@@ -1,4 +1,4 @@
-# OpenBSD$
+# $OpenBSD$
 
 COMMENT =		CSS Selector to XPath compiler
 
