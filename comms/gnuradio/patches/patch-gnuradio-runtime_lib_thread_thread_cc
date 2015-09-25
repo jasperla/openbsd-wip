@@ -1,0 +1,22 @@
+$OpenBSD$
+--- gnuradio-runtime/lib/thread/thread.cc.orig	Fri Sep 25 12:27:45 2015
++++ gnuradio-runtime/lib/thread/thread.cc	Fri Sep 25 12:30:33 2015
+@@ -158,7 +158,7 @@ namespace gr {
+ 
+ 
+ #elif defined(macintosh) || defined(__APPLE__) || defined(__APPLE_CC__) || \
+-    defined(__FreeBSD__)
++    defined(__FreeBSD__) || defined(__OpenBSD__)
+ 
+ namespace gr {
+   namespace thread {
+@@ -242,7 +242,9 @@ namespace gr {
+ #include <sstream>
+ #include <stdexcept>
+ #include <pthread.h>
++#if !defined(__OpenBSD__)
+ #include <sys/prctl.h>
++#endif
+ 
+ namespace gr {
+   namespace thread {

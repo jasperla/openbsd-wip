@@ -2,26 +2,30 @@
 
 COMMENT=	signal-processing toolkit for SDR (software-defined radio)
 
-DISTNAME=	gnuradio-3.6.3.1
+DISTNAME=	gnuradio-3.7.5
 
-SHARED_LIBS +=  gnuradio-analog           0.0
-SHARED_LIBS +=  gnuradio-atsc             0.0
-SHARED_LIBS +=  gnuradio-audio            0.0
-SHARED_LIBS +=  gnuradio-blocks           0.0
-SHARED_LIBS +=  gnuradio-core             0.0
-SHARED_LIBS +=  gnuradio-digital          0.0
-SHARED_LIBS +=  gnuradio-fcd              0.0
-SHARED_LIBS +=  gnuradio-fft              0.0
-SHARED_LIBS +=  gnuradio-filter           0.0
-SHARED_LIBS +=  gnuradio-noaa             0.0
-SHARED_LIBS +=  gnuradio-pager            0.0
-SHARED_LIBS +=  gnuradio-qtgui            0.0
-SHARED_LIBS +=  gnuradio-trellis          0.0
-SHARED_LIBS +=  gnuradio-video-sdl        0.0
-SHARED_LIBS +=  gnuradio-vocoder          0.0
-SHARED_LIBS +=  gnuradio-wavelet          0.0
-SHARED_LIBS +=  gruel                     0.0
-SHARED_LIBS +=  volk                      0.0
+SHARED_LIBS +=  gnuradio-analog           0.0 # 3.7
+SHARED_LIBS +=  gnuradio-atsc             0.0 # 3.7
+SHARED_LIBS +=  gnuradio-audio            0.0 # 3.7
+SHARED_LIBS +=  gnuradio-blocks           0.0 # 3.7
+SHARED_LIBS +=  gnuradio-channels         0.0 # 3.7
+SHARED_LIBS +=  gnuradio-digital          0.0 # 3.7
+SHARED_LIBS +=  gnuradio-dtv              0.0 # 3.7
+SHARED_LIBS +=  gnuradio-fcd              0.0 # 3.7
+SHARED_LIBS +=  gnuradio-fec              0.0 # 3.7
+SHARED_LIBS +=  gnuradio-fft              0.0 # 3.7
+SHARED_LIBS +=  gnuradio-filter           0.0 # 3.7
+SHARED_LIBS +=  gnuradio-noaa             0.0 # 3.7
+SHARED_LIBS +=  gnuradio-pager            0.0 # 3.7
+SHARED_LIBS +=  gnuradio-pmt              0.0 # 3.7
+SHARED_LIBS +=  gnuradio-qtgui            0.0 # 3.7
+SHARED_LIBS +=  gnuradio-runtime          0.0 # 3.7
+SHARED_LIBS +=  gnuradio-trellis          0.0 # 3.7
+SHARED_LIBS +=  gnuradio-video-sdl        0.0 # 3.7
+SHARED_LIBS +=  gnuradio-vocoder          0.0 # 3.7
+SHARED_LIBS +=  gnuradio-wavelet          0.0 # 3.7
+SHARED_LIBS +=  gnuradio-wxgui            0.0 # 3.7
+SHARED_LIBS +=  volk                      0.0 # 3.7
 
 CATEGORIES=	comms
 
@@ -41,6 +45,8 @@ MASTER_SITES=	http://gnuradio.org/releases/gnuradio/
 MODULES=	converters/libiconv \
 		devel/cmake \
 		lang/python
+
+USE_NINJA=	No
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		devel/cppunit \
@@ -87,6 +93,8 @@ CONFIGURE_ARGS+= -DENABLE_DOXYGEN=OFF \
 		-DENABLE_GR_SHD=OFF
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -pthread" \
 		LDFLAGS="-L${LOCALBASE}/lib -liconv"
+
+MAKE_ENV=	VERBOSE=1
 
 #NO_TEST=	Yes
 
