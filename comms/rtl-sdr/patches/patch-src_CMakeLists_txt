@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2013/04/21 11:45:08 sthen Exp $
+--- src/CMakeLists.txt.orig	Fri Sep 25 14:59:31 2015
++++ src/CMakeLists.txt	Fri Sep 25 15:00:08 2015
+@@ -115,12 +115,17 @@ if(UNIX)
+ target_link_libraries(rtl_fm m)
+ target_link_libraries(rtl_adsb m)
+ target_link_libraries(rtl_power m)
+-if(APPLE)
+-    target_link_libraries(rtl_test m)
+-else()
+-    target_link_libraries(rtl_test m rt)
+-endif()
+-endif()
++
++include(CheckFunctionExists)
++check_function_exists(clock_gettime LIBRT_LIBC_HAS_CLOCK_GETTIME)
++if(LIBRT_LIBC_HAS_CLOCK_GETTIME)
++    set(LIBRT_LIBRARIES)
++else(LIBRT_LIBC_HAS_CLOCK_GETTIME)
++    find_library(LIBRT_LIBRARIES NAMES rt )
++endif(LIBRT_LIBC_HAS_CLOCK_GETTIME)
++
++target_link_libraries(rtl_test m ${LIBRT_LIBRARIES})
++endif(UNIX)
+ 
+ if(WIN32)
+ target_link_libraries(rtl_sdr libgetopt_static)
