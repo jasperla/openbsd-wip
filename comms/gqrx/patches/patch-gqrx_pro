@@ -1,0 +1,11 @@
+$OpenBSD$
+--- gqrx.pro.orig	Fri Sep 25 15:34:57 2015
++++ gqrx.pro	Fri Sep 25 15:35:13 2015
+@@ -206,7 +206,6 @@ PKGCONFIG += gnuradio-analog \
+ 
+ unix:!macx {
+     LIBS += -lboost_system$$BOOST_SUFFIX -lboost_program_options$$BOOST_SUFFIX
+-    LIBS += -lrt  # need to include on some distros
+ }
+ 
+ macx {

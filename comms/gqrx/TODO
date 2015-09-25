@@ -1,0 +1,2 @@
+- Broken. App starts if pulseaudio is started.. then craps its britches.
+- Verify install only wants the one file
