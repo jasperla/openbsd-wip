@@ -1,5 +1,0 @@
- * Some documentation should be installed, so that development based on these
-   libraries could be carried out offline.
- * We need some tools to test emulated formats.
- * If Qt util is to be distributed, it should be subpackaged, with pseudo flavor
-   "no_qt" to disable Qt dependency at build time.

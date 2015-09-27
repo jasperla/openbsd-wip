@@ -1,7 +1,5 @@
 @comment $OpenBSD$
 %%SHARED%%
-@bin bin/qv4l2
-@bin bin/v4l2-compliance
 include/libv4l-plugin.h
 include/libv4l1-videodev.h
 include/libv4l1.h
@@ -32,4 +30,3 @@ lib/pkgconfig/libv4l1.pc
 lib/pkgconfig/libv4l2.pc
 lib/pkgconfig/libv4l2rds.pc
 lib/pkgconfig/libv4lconvert.pc
-@man man/man1/qv4l2.1

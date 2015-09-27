@@ -1,6 +1,6 @@
 $OpenBSD$
---- lib/libv4lconvert/libv4lsyscall-priv.h.orig	Fri Jun 28 22:10:56 2013
-+++ lib/libv4lconvert/libv4lsyscall-priv.h	Wed Apr 15 21:31:00 2015
+--- lib/libv4lconvert/libv4lsyscall-priv.h.orig	Sun Sep 27 17:48:48 2015
++++ lib/libv4lconvert/libv4lsyscall-priv.h	Sun Sep 27 17:51:20 2015
 @@ -62,6 +62,15 @@
  typedef off_t __off_t;
  #endif
@@ -14,10 +14,10 @@ $OpenBSD$
 +#define	MMAP2_PAGE_SHIFT 0
 +#endif
 +
- #undef SYS_OPEN
- #undef SYS_CLOSE
- #undef SYS_IOCTL
-@@ -96,6 +105,11 @@ typedef off_t __off_t;
+ #if defined(ANDROID)
+ typedef off_t __off_t;
+ #endif
+@@ -100,6 +109,11 @@ typedef off_t __off_t;
  #define SYS_MMAP(addr, len, prot, flags, fd, off) \
  	syscall(SYS_mmap, (void *)(addr), (size_t)(len), \
  			(int)(prot), (int)(flags), (int)(fd), (__off_t)(off))
