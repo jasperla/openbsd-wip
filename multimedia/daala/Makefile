@@ -13,6 +13,7 @@ SHARED_LIBS +=  daalabase                 0.0 # 0.1
 SHARED_LIBS +=  daaladec                  0.0 # 0.1
 SHARED_LIBS +=  daalaenc                  0.0 # 0.1
 
+WANTLIB += m
 
 GH_ACCOUNT =		xiph
 GH_PROJECT =		daala
@@ -22,7 +23,6 @@ BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
 			devel/check \
 			devel/libtool
-LIB_DEPENDS =		audio/libogg
 TEST_DEPENDS =		devel/check
 
 SEPARATE_BUILD =	Yes
