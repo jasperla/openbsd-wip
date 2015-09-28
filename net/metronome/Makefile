@@ -32,6 +32,7 @@ SUBST_VARS+=	FLAVOR MAKE_PROGRAM
 
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS+=--prefix="${PREFIX}" \
+		--ostype=openbsd \
 		--sysconfdir="${SYSCONFDIR}/metronome" \
 		--datadir="/var/metronome" \
 		--with-lua="${LOCALBASE}" \
