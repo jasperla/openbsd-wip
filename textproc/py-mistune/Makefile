@@ -23,6 +23,6 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 do-test:
-	cd ${WRKSRC} && nosetests
+	cd ${WRKSRC} && ${LOCALBASE}/bin/nosetests
 
 .include <bsd.port.mk>
