@@ -31,7 +31,8 @@ USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-player \
-			--disable-tools
+			--disable-tools \
+			--disable-docs
 
 CONFIGURE_ENV =		LDFLAGS="${LDFLAGS}"
 
