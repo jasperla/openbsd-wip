@@ -1,0 +1,38 @@
+$OpenBSD: patch-prosody_cfg_lua_dist,v 1.6 2014/11/27 08:12:51 landry Exp $
+--- prosody.cfg.lua.dist.orig	Sun Sep 27 03:42:37 2015
++++ prosody.cfg.lua.dist	Thu Oct  1 14:56:46 2015
+@@ -22,6 +22,14 @@
+ -- Example: admins = { "user1@example.com", "user2@example.net" }
+ admins = { }
+ 
++-- Drop privileges
++prosody_user = "_prosody"
++prosody_group = "_prosody"
++
++-- Enable POSIX-only options
++daemonize = true
++pidfile = "/var/prosody/prosody.pid"
++
+ -- Enable use of libevent for better performance under high load
+ -- For more information see: http://prosody.im/doc/libevent
+ --use_libevent = true
+@@ -44,7 +52,7 @@ modules_enabled = {
+ 	
+ 	-- These are commented by default as they have a performance impact
+ 		--"blocklist"; -- Allow users to block communications with other users
+-		--"compression"; -- Stream compression
++		"compression"; -- Stream compression
+ 
+ 	-- Nice to have
+ 		"version"; -- Replies to server version requests
+@@ -139,8 +147,8 @@ authentication = "internal_plain"
+ -- Logging configuration
+ -- For advanced logging see http://prosody.im/doc/logging
+ log = {
+-	info = "prosody.log"; -- Change 'info' to 'debug' for verbose logging
+-	error = "prosody.err";
++	info = "/var/prosody/prosody.log"; -- Change 'info' to 'debug' for verbose logging
++	error = "/var/prosody/prosody.err";
+ 	-- "*syslog"; -- Uncomment this for logging to syslog
+ 	-- "*console"; -- Log to the console, useful for debugging with daemonize=false
+ }
