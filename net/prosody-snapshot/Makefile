@@ -3,8 +3,8 @@
 SHARED_ONLY=	Yes
 
 COMMENT=	communications server for Jabber/XMPP written in Lua
-DISTNAME =	prosody-0.10
 BUILD =		165
+DISTNAME =	prosody-0.10-${BUILD}
 #REVISION =	1
 CATEGORIES=	net
 MASTER_SITES=	http://prosody.im/nightly/0.10/build${BUILD}/
@@ -44,7 +44,7 @@ CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 
 FAKE_FLAGS+=	CONFIG=${DESTDIR}${PREFIX}/share/examples/prosody
 
-WRKDIST =	${WRKDIR}/${DISTNAME}-1nightly${BUILD}
+WRKDIST =	${WRKDIR}/prosody-0.10-1nightly${BUILD}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/prosody ${WRKSRC}/prosodyctl \
