@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	simple, lightweight XMPP C library
-DISTNAME =	libstrophe-0.8.7
+DISTNAME =	libstrophe-0.8.8
 CATEGORIES =	net devel
 
 HOMEPAGE =	http://strophe.im/libstrophe/
