@@ -10,10 +10,9 @@ MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
 # Dual licensed: MIT and GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-
 GH_ACCOUNT =	strophe
 GH_PROJECT =	libstrophe
-GH_COMMIT =	2093aac817cfd37fcbcd8465af6234280a383961
+GH_COMMIT =	cd92f69c76cdb93e73e8d15c3634d1b5a9eeea57
 
 SHARED_LIBS =   strophe                 0.0 # 0.0
 
@@ -37,13 +36,11 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-
 post-patch:
 	@mkdir -p ${WRKSRC}/m4 # need for autoreconf
 
 pre-configure:
 	cd ${WRKSRC} && ${SETENV} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-				AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-				autoreconf --install
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} autoreconf --install
 
 .include <bsd.port.mk>

@@ -1,20 +1,20 @@
 $OpenBSD$
---- Makefile.am.orig	Mon May 18 23:46:07 2015
-+++ Makefile.am	Mon May 18 23:47:30 2015
-@@ -7,6 +7,7 @@ PARSER_CFLAGS=@PARSER_CFLAGS@
- PARSER_LIBS=@PARSER_LIBS@
+--- Makefile.am.orig	Tue Aug 18 23:07:06 2015
++++ Makefile.am	Sat Oct  3 14:43:10 2015
+@@ -8,6 +8,7 @@ PARSER_LIBS=@PARSER_LIBS@
  
+ SSL_CFLAGS = @openssl_CFLAGS@
  SSL_LIBS = @openssl_LIBS@
 +PTHREAD_LIBS = @pthread_LIBS@
  
  STROPHE_FLAGS = -I$(top_srcdir)
  STROPHE_LIBS = libstrophe.la
-@@ -15,7 +16,7 @@ STROPHE_LIBS = libstrophe.la
+@@ -16,7 +17,7 @@ STROPHE_LIBS = libstrophe.la
  lib_LTLIBRARIES = libstrophe.la
  
- libstrophe_la_CFLAGS = $(STROPHE_FLAGS) $(PARSER_CFLAGS)
+ libstrophe_la_CFLAGS = $(SSL_CFLAGS) $(STROPHE_FLAGS) $(PARSER_CFLAGS)
 -libstrophe_la_LDFLAGS = $(SSL_LIBS) $(PARSER_LIBS)
-+libstrophe_la_LDFLAGS = $(PTHREAD_LIBS) $(SSL_LIBS) $(PARSER_LIBS)
++libstrophe_la_LDFLAGS = $(SSL_LIBS) $(PARSER_LIBS) $(PTHREAD_LIBS)
  # Export only public API
  libstrophe_la_LDFLAGS += -export-symbols-regex '^xmpp_'
  libstrophe_la_SOURCES = src/auth.c src/conn.c src/ctx.c \
