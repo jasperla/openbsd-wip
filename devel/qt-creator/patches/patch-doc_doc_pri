@@ -1,17 +1,17 @@
-$OpenBSD: patch-doc_doc_pri,v 1.1 2010/05/28 12:49:05 espie Exp $
---- doc/doc.pri.orig	Fri Aug 23 14:27:18 2013
-+++ doc/doc.pri	Sun Oct 20 22:13:29 2013
-@@ -39,14 +39,14 @@ HELP_DEP_FILES = $$PWD/src/qtcreator.qdoc \
-                  $$PWD/config/qt-html-default-styles.qdocconf \
-                  $$PWD/qtcreator$${COMPAT}.qdocconf
+$OpenBSD$
+--- doc/doc.pri.orig	Sat Oct  3 14:51:08 2015
++++ doc/doc.pri	Sat Oct  3 14:50:50 2015
+@@ -28,14 +28,14 @@ HELP_DEP_FILES = $$PWD/src/qtcreator.qdoc \
+                  $$PWD/config/qt-cpp-ignore.qdocconf \
+                  $$PWD/config/qt-defines.qdocconf
  
--html_docs.commands = $$qdoc($$OUT_PWD/doc/html) $$PWD/qtcreator$${COMPAT}.qdocconf
-+html_docs.commands = $$qdoc($$OUT_PWD/doc/html) $$PWD/qtcreator$${COMPAT}.qdocconf && touch $@
+-html_docs.commands = $$qdoc($$OUT_PWD/doc/html) $$PWD/qtcreator.qdocconf
++html_docs.commands = $$qdoc($$OUT_PWD/doc/html) $$PWD/qtcreator.qdocconf && touch $@
  html_docs.depends += $$HELP_DEP_FILES
  html_docs.files = $$QHP_FILE
  
--html_docs_online.commands = $$qdoc($$OUT_PWD/doc/html) $$PWD/qtcreator-online$${COMPAT}.qdocconf
-+html_docs_online.commands = $$qdoc($$OUT_PWD/doc/html) $$PWD/qtcreator-online$${COMPAT}.qdocconf && touch $@
+-html_docs_online.commands = $$qdoc($$OUT_PWD/doc/html) $$PWD/qtcreator-online.qdocconf
++html_docs_online.commands = $$qdoc($$OUT_PWD/doc/html) $$PWD/qtcreator-online.qdocconf && touch $@
  html_docs_online.depends += $$HELP_DEP_FILES
  
 -qch_docs.commands = $$HELPGENERATOR -o \"$$QCH_FILE\" $$QHP_FILE
@@ -19,16 +19,16 @@ $OpenBSD: patch-doc_doc_pri,v 1.1 2010/05/28 12:49:05 espie Exp $
  qch_docs.depends += html_docs
  
  DEV_QHP_FILE = $$OUT_PWD/doc/html-dev/qtcreator-dev.qhp
-@@ -66,13 +66,13 @@ DEV_HELP_DEP_FILES = \
-     $$PWD/api/pluginmanager.qdoc \
-     $$PWD/api/qtcreator-dev$${COMPAT}.qdocconf
+@@ -57,13 +57,13 @@ DEV_HELP_DEP_FILES = \
+     $$PWD/api/qtcreator-ui-text.qdoc \
+     $$PWD/api/qtcreator-dev.qdocconf
  
--dev_html_docs.commands = $$qdoc($$OUT_PWD/doc/html-dev) $$PWD/api/qtcreator-dev$${COMPAT}.qdocconf
-+dev_html_docs.commands = $$qdoc($$OUT_PWD/doc/html-dev) $$PWD/api/qtcreator-dev$${COMPAT}.qdocconf && touch $@
+-dev_html_docs.commands = $$qdoc($$OUT_PWD/doc/html-dev) $$PWD/api/qtcreator-dev.qdocconf
++dev_html_docs.commands = $$qdoc($$OUT_PWD/doc/html-dev) $$PWD/api/qtcreator-dev.qdocconf && touch $@
  dev_html_docs.depends += $$DEV_HELP_DEP_FILES
  
--dev_html_docs_online.commands = $$qdoc($$OUT_PWD/doc/html-dev) $$PWD/api/qtcreator-dev-online$${COMPAT}.qdocconf
-+dev_html_docs_online.commands = $$qdoc($$OUT_PWD/doc/html-dev) $$PWD/api/qtcreator-dev-online$${COMPAT}.qdocconf && touch $@
+-dev_html_docs_online.commands = $$qdoc($$OUT_PWD/doc/html-dev) $$PWD/api/qtcreator-dev-online.qdocconf
++dev_html_docs_online.commands = $$qdoc($$OUT_PWD/doc/html-dev) $$PWD/api/qtcreator-dev-online.qdocconf && touch $@
  dev_html_docs_online.depends += $$DEV_HELP_DEP_FILES
  
 -dev_qch_docs.commands = $$HELPGENERATOR -o \"$$DEV_QCH_FILE\" $$DEV_QHP_FILE

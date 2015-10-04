@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/shared/qbs/src/lib/corelib/tools/tools.pri.orig	Sat Oct  3 11:57:05 2015
++++ src/shared/qbs/src/lib/corelib/tools/tools.pri	Sat Oct  3 11:57:41 2015
+@@ -70,6 +70,8 @@ SOURCES += \
+     $$PWD/qttools.cpp \
+     $$PWD/version.cpp
+ 
++openbsd:LIBS += -lkvm
++
+ win32 {
+     SOURCES += $$PWD/filetime_win.cpp
+ }
