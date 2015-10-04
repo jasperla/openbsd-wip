@@ -1,0 +1,17 @@
+$OpenBSD$
+--- wxglade.orig	Sat Oct  3 21:22:12 2015
++++ wxglade	Sat Oct  3 21:22:31 2015
+@@ -13,11 +13,11 @@
+ #  2. in the module directory of the current Python
+ #  3. in a parallel Python module directory
+ 
+-PYTHON_BIN=${PYTHON_BIN:=python2}
++PYTHON_BIN=${PYTHON_BIN:=python2.7}
+ 
+ ${PYTHON_BIN} --version > /dev/null 2>&1
+ if [ $? -ne 0 ]; then
+-  echo "ERROR: Python interpreter \"${PYTHON_BIN}\" found!"
++  echo "ERROR: Python interpreter \"${PYTHON_BIN}\" not found!"
+   exit 1
+ fi
+ 
