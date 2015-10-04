@@ -1,24 +1,12 @@
 $OpenBSD$
---- src/plugins/projectexplorer/gcctoolchain.cpp.orig	Fri Aug 23 14:27:18 2013
-+++ src/plugins/projectexplorer/gcctoolchain.cpp	Mon Oct 21 02:52:05 2013
-@@ -259,6 +259,11 @@ static QList<Abi> guessGccAbi(const QString &m, const 
-             if (flavor == Abi::UnknownFlavor)
-                 flavor = Abi::FreeBsdFlavor;
-             format = Abi::ElfFormat;
-+        } else if (p.startsWith(QLatin1String("openbsd"))) {
-+            os = Abi::BsdOS;
-+            if (flavor == Abi::UnknownFlavor)
-+                flavor = Abi::OpenBsdFlavor;
-+            format = Abi::ElfFormat;
-         } else if (p == QLatin1String("mingw32") || p == QLatin1String("win32") || p == QLatin1String("mingw32msvc")) {
-             arch = Abi::X86Architecture;
-             os = Abi::WindowsOS;
-@@ -598,7 +603,7 @@ QList<FileName> GccToolChain::suggestedMkspecList() co
+--- src/plugins/projectexplorer/gcctoolchain.cpp.orig	Sat Oct  3 13:45:54 2015
++++ src/plugins/projectexplorer/gcctoolchain.cpp	Sat Oct  3 13:46:03 2015
+@@ -620,7 +620,7 @@ QList<FileName> GccToolChain::suggestedMkspecList() co
  
- QString GccToolChain::makeCommand(const Utils::Environment &environment) const
+ QString GccToolChain::makeCommand(const Environment &environment) const
  {
 -    QString make = QLatin1String("make");
 +    QString make = QLatin1String("gmake");
-     QString tmp = environment.searchInPath(make);
-     return tmp.isEmpty() ? make : tmp;
+     FileName tmp = environment.searchInPath(make);
+     return tmp.isEmpty() ? make : tmp.toString();
  }

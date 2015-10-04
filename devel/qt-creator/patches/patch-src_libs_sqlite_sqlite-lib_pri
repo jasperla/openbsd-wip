@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/libs/sqlite/sqlite-lib.pri.orig	Fri Oct  2 09:44:04 2015
++++ src/libs/sqlite/sqlite-lib.pri	Fri Oct  2 09:44:10 2015
+@@ -6,7 +6,7 @@ contains(CONFIG, dll) {
+ 
+ INCLUDEPATH += $$PWD
+ 
+-unix:LIBS += -ldl
++unix:!openbsd:LIBS += -ldl
+ 
+ include(../3rdparty/sqlite/sqlite.pri)
+ 

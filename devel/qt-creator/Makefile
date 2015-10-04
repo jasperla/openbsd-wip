@@ -1,27 +1,26 @@
 # $OpenBSD: Makefile,v 1.15 2013/03/19 13:07:13 nigel Exp $
 
-BROKEN-powerpc =	qdoc3 goes into an infinite loop
-
 COMMENT =		cross-platform IDE for use with Qt
 SHARED_ONLY =		Yes
-V = 			2.8.1
-DISTNAME =		qt-creator-${V}-src
+V = 			3.5.0
+DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
 
-SHARED_LIBS =	Aggregation		0.0
-SHARED_LIBS +=	CPlusPlus		0.0
-#SHARED_LIBS +=	DebuggingHelper		0.0
-SHARED_LIBS +=	ExtensionSystem		0.0
-SHARED_LIBS +=	GLSL			0.0 # 1.0
-SHARED_LIBS +=	LanguageUtils		0.0 # 1.0
-SHARED_LIBS +=	QmlDebug		0.0 # 1.0
-SHARED_LIBS +=	QmlEditorWidgets	0.0 # 1.0
-SHARED_LIBS +=	QmlJS			0.0 # 1.0
-#SHARED_LIBS +=	QtConcurrent		0.0
-SHARED_LIBS +=	QtcSsh			0.0 # 1.0
-SHARED_LIBS +=	Utils			0.0
-SHARED_LIBS +=	qbscore			0.0 # 1.0
-SHARED_LIBS +=  zeroconf		0.0 # 1.0
+SHARED_LIBS +=	Aggregation               0.0 # 0.0
+SHARED_LIBS +=	CPlusPlus                 0.0 # 0.0
+SHARED_LIBS +=	ExtensionSystem           0.0 # 0.0
+SHARED_LIBS +=	GLSL                      0.0 # 0.0
+SHARED_LIBS +=	LanguageUtils             0.0 # 0.0
+SHARED_LIBS +=	QmlDebug                  0.0 # 0.0
+SHARED_LIBS +=	QmlEditorWidgets          0.0 # 0.0
+SHARED_LIBS +=	QmlJS                     0.0 # 0.0
+SHARED_LIBS +=	QtcSsh                    0.0 # 0.0
+SHARED_LIBS +=	Utils                     0.0 # 0.0
+SHARED_LIBS +=	qbscore                   0.0 # 0.0
+SHARED_LIBS +=	Clangbackendipc           1.0 # 1.0
+SHARED_LIBS +=	Sqlite                    1.0 # 1.0
+SHARED_LIBS +=	Timeline                  1.0 # 1.0
+SHARED_LIBS +=	qbsqtprofilesetup         1.4 # 1.4
 
 MAKE_FLAGS =	BUILD_TESTS=1
 .for _l _v in ${SHARED_LIBS}
@@ -30,30 +29,26 @@ MAKE_FLAGS +=	LIB${_l}_VERSION=${_v}
 
 CATEGORIES =	devel editors
 
-HOMEPAGE =	http://qt-project.org/doc/qtcreator-2.8/
+HOMEPAGE =	https://www.qt.io/ide/
 
+# XXX: is this still accurate?
 # LGPL 2.1 with C++ headers exception (more permissive than LGPL)
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	c m pthread stdc++
-WANTLIB +=	ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
-WANTLIB +=	lib/qt4/QtDeclarative lib/qt4/QtDesigner>=7
-WANTLIB +=	lib/qt4/QtDesignerComponents>=7
-WANTLIB +=	lib/qt4/QtGui>=8 lib/qt4/QtHelp lib/qt4/QtNetwork>=7
-WANTLIB +=	lib/qt4/QtScript lib/qt4/QtSql>=7 lib/qt4/QtSvg>=7
-WANTLIB +=	lib/qt4/QtXml>=7 lib/qt4/QtXmlPatterns lib/qt4/QtWebKit
+WANTLIB += c kvm m pthread
+WANTLIB += GL Qt5Concurrent Qt5Core Qt5Designer Qt5DesignerComponents
+WANTLIB += Qt5Gui Qt5Help Qt5Network Qt5PrintSupport Qt5Qml Qt5Quick
+WANTLIB += Qt5QuickWidgets Qt5Script Qt5Sql Qt5Svg Qt5WebKit Qt5WebKitWidgets
+WANTLIB += Qt5Widgets Qt5Xml
 
-MASTER_SITES =	http://download.qt-project.org/official_releases/qtcreator/${V:R}/${V}/
+MASTER_SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/${V}/
 
-MODULES =	x11/qt4
+MODULES =	x11/qt5
 
 RUN_DEPENDS = 	devel/gdb \
-		devel/gmake \
-		x11/gtk+2,-guic
+		devel/gmake
 
 PORTHOME =		${WRKDIR}
-
-SEPARATE_BUILD =	Yes
 
 ALL_TARGET = 		all qch_docs
 
@@ -68,18 +63,19 @@ GDB_ADJ_FILES = \
 	tests/system/suite_general/tst_openqt_creator/testdata/projecttree_creator.tsv
 
 pre-configure:
-	mkdir -p ${WRKDIR}/bin/tools/qdoc3
 	mkdir -p ${WRKDIR}/bin/bin
-	ln -sf ${PREFIX}/lib/qt4/bin/qdoc3 ${WRKDIR}/bin/tools/qdoc3
-	ln -sf ${PREFIX}/lib/qt4/bin/qhelpgenerator ${WRKDIR}/bin/bin
-	cd ${WRKSRC}; perl -pi -e 's,"gdb","egdb",g' ${GDB_ADJ_FILES}
+	ln -sf ${PREFIX}/lib/qt5/bin/qhelpgenerator ${WRKDIR}/bin/bin
+	cd ${WRKSRC}; sed -i 's,"gdb","egdb",g' ${GDB_ADJ_FILES}
 
 do-configure:
-	cd ${WRKBUILD} && QTDIR=${WRKDIR}/bin qmake4 ${WRKSRC}/qtcreator.pro #CONFIG+=debug
+	cd ${WRKBUILD} && QTDIR=${WRKDIR}/bin qmake-qt5 -r #CONFIG+=debug
 
 post-install:
 .for _l _v in ${SHARED_LIBS}
 	ln -sf qtcreator/lib${_l}.so.${_v} ${PREFIX}/lib
 .endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/qtcreator
+	${INSTALL_DATA} ${WRKSRC}/share/doc/qtcreator/qtcreator.qch \
+	    ${PREFIX}/share/doc/qtcreator/qtcreator.qch
 
 .include <bsd.port.mk>
