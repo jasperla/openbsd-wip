@@ -95,4 +95,5 @@ www/p5-Dancer2-Plugin-DBIC		ready to import, sent to ports@ 2015-08-23 (garcer)
 www/p5-HTML-Selector-XPath		ready to import (garcer)
 www/p5-Web-Query			ready to import (garcer)
 www/p5-HTML-TreeBuilder-LibXML		ready to import (garcer)
-devel/deviceatlas-enterprise-c      ready to import (devnexen)
+devel/deviceatlas-enterprise-c      	ready to import (devnexen)
+devel/wxglade				ready to import, sent to ports@ 2015-10-03
