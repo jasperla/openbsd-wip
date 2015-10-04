@@ -12,6 +12,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += X11 Xss c crypto curl expat gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gobject-2.0 ncursesw notify otr pthread ssl
+WANTLIB += assuan ereadline gpg-error gpgme strophe
 
 MASTER_SITES =	http://www.profanity.im/
 
@@ -23,10 +24,12 @@ BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
 LIB_DEPENDS =	devel/libnotify \
 		devel/readline>=6.1p2 \
 		devel/cmocka \
+		devel/uuid \
 		net/curl \
 		net/libstrophe \
 		security/libotr \
-		security/gpgme
+		security/gpgme \
+		security/libgpg-error
 
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
