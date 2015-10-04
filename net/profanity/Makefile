@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =	console based XMPP client
-DISTNAME =	profanity-0.4.6
+DISTNAME =	profanity-0.4.7
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.profanity.im/
@@ -21,14 +21,18 @@ BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE)DEPENDS}
 
 LIB_DEPENDS =	devel/libnotify \
+		devel/readline>=6.1p2 \
 		devel/cmocka \
 		net/curl \
 		net/libstrophe \
-		security/libotr
+		security/libotr \
+		security/gpgme
 
 CONFIGURE_STYLE=	autoconf
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+CONFIGURE_ARGS=	--with-xscreensaver=no
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.11
