@@ -12,20 +12,21 @@ MAINTAINER=		Edd Barrett <edd@openbsd.org>
 
 MODULES=		lang/python
 
-# XXX check all this
-RUN_DEPENDS +=		graphics/py-matplotlib>=1.2.0 \
-			textproc/py-pygments \
-			math/graphviz \
-			devel/py-ipykernel
-# Oddly enough, Ipython installs the test suite, so we can run it right out
-# of ${LOCALBASE}. Note that if you have pdb++ installed, tests will fail.
+RUN_DEPENDS +=		devel/py-decorator \
+			databases/py-pickleshare \
+			devel/py-simplegeneric \
+			devel/py-traitlets
+# Note that if you have pdb++ installed, tests will fail.
 TEST_DEPENDS =		${FULLPKGNAME}:devel/ipython \
 			devel/py-nose \
-			devel/py-mock
+			devel/py-mock \
+			www/py-requests
+# XXX tests need testpath
 BUILD_DEPENDS =		${RUN_DEPENDS} \
 			textproc/py-sphinx \
 			textproc/py-numpydoc \
-			devel/desktop-file-utils
+			devel/desktop-file-utils \
+			devel/py-ipykernel
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -62,15 +63,8 @@ post-install:
 pre-build:
 	${SUBST_CMD} ${WRKBUILD}/IPython/core/tests/test_interactiveshell.py
 
+# Many test failures. XXX
 do-test:
 	PYTHONIOENCODING='utf-8' ${LOCALBASE}/bin/iptest
-
-# A test failure, reported upstream:
-# https://github.com/ipython/ipython/issues/5217
-# To repro:
-# python2.7 /usr/local/lib/python2.7/site-packages/IPython/testing/iptest.py -vvs IPython.core
-
-# Note also that tests will fail if pdb++ is installed! Bug raised:
-# https://github.com/ipython/ipython/issues/6004
 
 .include <bsd.port.mk>
