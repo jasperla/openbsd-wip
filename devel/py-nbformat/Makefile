@@ -21,6 +21,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 
-NO_TEST =		Yes
+do-test:
+	${LOCALBASE}/bin/nosetests ${MODPY_SITEPKG}/nbformat
 
 .include <bsd.port.mk>
