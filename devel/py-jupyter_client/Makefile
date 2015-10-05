@@ -10,10 +10,13 @@ CATEGORIES =		devel
 
 HOMEPAGE =		http://jupyter.org/
 
-RUN_DEPENDS +=		devel/py-jupyter_core
-BUILD_DEPENDS =		${RUN_DEPENDS}
+RUN_DEPENDS +=		devel/py-jupyter_core \
+			devel/py-traitlets \
+			net/py-zmq
 TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-nose
+			devel/py-nose \
+			devel/py-ipykernel \
+			${FULLPKGNAME}:${PKGPATH}
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -22,6 +25,6 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 
 do-test:
-	cd ${WRKSRC} && nosetests
+	${LOCALBASE}/bin/nosetests ${MODPY_SITEPKG}/jupyter_client
 
 .include <bsd.port.mk>
