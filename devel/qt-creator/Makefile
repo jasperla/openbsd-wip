@@ -56,7 +56,7 @@ ALL_TARGET = 		all qch_docs
 
 FAKE_FLAGS =		INSTALL_ROOT=${WRKINST}${TRUEPREFIX}
 GDB_ADJ_FILES = \
-	src/plugins/debugger/debuggerkitinformation.cpp \
+	src/plugins/debugger/debuggeritemmanager.cpp \
 	src/tools/qtcreatorcrashhandler/backtracecollector.cpp \
 	src/tools/qtpromaker/main.cpp \
 	tests/auto/debugger/tst_dumpers.cpp \
