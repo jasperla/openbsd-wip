@@ -859,6 +859,7 @@ lib/python${MODPY_VERSION}/site-packages/wxglade/xml_parse.py
 lib/python${MODPY_VERSION}/site-packages/wxglade/xml_parse.pyc
 lib/python${MODPY_VERSION}/site-packages/wxglade/xrc2wxg.py
 lib/python${MODPY_VERSION}/site-packages/wxglade/xrc2wxg.pyc
+@man man/man1/wxglade.1
 share/applications/wxGlade.desktop
 share/doc/wxglade/
 share/doc/wxglade/CHANGES.txt
@@ -979,6 +980,5 @@ share/doc/wxglade/install/update-po.py
 share/doc/wxglade/license.txt
 share/doc/wxglade/manpage.xml
 share/doc/wxglade/manual.xml
-@man share/man/man1/wxglade.1
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

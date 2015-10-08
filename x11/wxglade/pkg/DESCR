@@ -9,6 +9,4 @@ the look & feel (but not a line of code).
 
 It is not (and will never be) a full featured IDE, but simply a
 "designer": the generated code does nothing apart from displaying the
-created widgets. If you are looking for a complete IDE, maybe Boa
-Constructor, PythonCard or Spe (which includes wxGlade itself, BTW...)
-is the right tool.
+created widgets.
