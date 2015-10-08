@@ -1,7 +1,7 @@
 # $OpenBSD:$
 
 COMMENT =		Virtual Private Network (VPN) daemon
-DISTNAME =		tinc-1.0.23
+DISTNAME =		tinc-1.0.26
 CATEGORIES =		net security
 
 HOMEPAGE =		http://www.tinc-vpn.org/
@@ -12,7 +12,6 @@ MAINTAINER =		Rafael Sadowski <rafael@sizeofvoid.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c crypto lzo2 z
-
 
 MASTER_SITES =		http://www.tinc-vpn.org/packages/
 

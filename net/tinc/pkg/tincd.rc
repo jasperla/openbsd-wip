@@ -1,10 +1,21 @@
+# $OpenBSD: 
 #!/bin/sh
-#
-# $OpenBSD:$
 
 daemon="${TRUEPREFIX}/sbin/tincd"
 
 . /etc/rc.d/rc.subr
 
+
+rc_start() {
+	${daemon}
+}
+
+rc_reload() {
+	${daemon} --kill=HUP
+}
+
+rc_stop() {
+	${daemon} -k
+}
 
 rc_cmd $1
