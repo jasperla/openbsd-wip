@@ -20,8 +20,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c m
 
-NO_TEST =		Yes
-
 do-build:
 	cd ${WRKDIST} && ${SETENV} CC="${CC}" LINKER="${CC}" \
 		COMP_FLAGS="${CFLAGS}" sh build.sh
@@ -39,5 +37,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${PREFIX}/share/doc/nim
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nim
 	${INSTALL_DATA} ${WRKSRC}/config/*.cfg ${PREFIX}/share/examples/nim
+
+do-test:
+	cd ${WRKSRC} && ${SETENV} ./koch test all -d:release --parallelBuild:1
 
 .include <bsd.port.mk>
