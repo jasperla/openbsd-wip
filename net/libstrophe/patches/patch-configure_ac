@@ -1,7 +1,7 @@
 $OpenBSD$
 --- configure.ac.orig	Tue Aug 18 23:07:06 2015
-+++ configure.ac	Sun Oct  4 03:07:00 2015
-@@ -10,19 +10,31 @@ PKG_PROG_PKG_CONFIG
++++ configure.ac	Fri Oct  9 09:07:02 2015
+@@ -10,13 +10,14 @@ PKG_PROG_PKG_CONFIG
  AC_CANONICAL_HOST
  AS_CASE([$host_os],
    [freebsd*], [PLATFORM="freebsd"],
@@ -18,24 +18,7 @@ $OpenBSD$
                               ],
                               [AC_MSG_ERROR([openssl not found; openssl required])]
                              )])
- 
- PKG_CHECK_MODULES([check], [check >= 0.9.4], [], [AC_MSG_WARN([libcheck not found; unit tests will not be compilable])])
- 
-+if test "x$PLATFORM" = xfreebsd || test "x$PLATFORM" = xopenbsd; then
-+PKG_CHECK_MODULES([pthread], [pthread], [PC_REQUIRES="pthread ${PC_REQUIRES}"],
-+            [AC_CHECK_HEADER([pthread.h],
-+                             [
-+                              pthread_LIBS="-lpthread"
-+                              PC_LIBS="${pthread_LIBS} ${PC_LIBS}"
-+                             ],
-+                             [AC_MSG_ERROR([pthread not found; pthread required])]
-+                            )])
-+fi
-+
- AC_ARG_WITH([libxml2],
-             [AS_HELP_STRING([--with-libxml2], [use libxml2 for XML parsing])],
-             [with_libxml2=check],
-@@ -32,7 +44,7 @@ if test "x$with_libxml2" != xno; then
+@@ -32,7 +33,7 @@ if test "x$with_libxml2" != xno; then
    PKG_CHECK_MODULES([libxml2], [libxml-2.0 >= 2.7],
                      [
                       with_libxml2=yes
@@ -44,7 +27,7 @@ $OpenBSD$
                      ],
                      [
                       old_CFLAGS=$CFLAGS
-@@ -42,19 +54,19 @@ if test "x$with_libxml2" != xno; then
+@@ -42,19 +43,19 @@ if test "x$with_libxml2" != xno; then
                                        with_libxml2=yes
                                        libxml2_CFLAGS="-I${includedir}/libxml2"
                                        libxml2_LIBS="-lxml2"
@@ -68,12 +51,12 @@ $OpenBSD$
                                       ],
                                       [AC_MSG_ERROR([expat not found; expat required.])]
                                      )
-@@ -76,13 +88,13 @@ fi
+@@ -76,13 +77,13 @@ fi
  AC_MSG_NOTICE([libstrophe will use the $with_parser XML parser])
  AC_SEARCH_LIBS([socket], [socket])
  
 -if test "x$PLATFORM" != xfreebsd; then
-+if test "x$PLATFORM" = "xnix"; then
++if test "x$PLATFORM" != xfreebsd || test "x$PLATFORM" != xopenbsd; then
          AC_CHECK_LIB([resolv], [res_query], [],
              [AC_CHECK_LIB([resolv], [__res_query], [],
                  [AC_MSG_ERROR([libresolv not found; libresolv required.])])])
@@ -85,9 +68,12 @@ $OpenBSD$
  fi
  
  AC_CHECK_HEADERS([arpa/nameser_compat.h])
-@@ -97,9 +109,9 @@ m4_ifdef([PKG_INSTALLDIR], [PKG_INSTALLDIR],
+@@ -95,11 +96,11 @@ m4_ifdef([PKG_INSTALLDIR], [PKG_INSTALLDIR],
+                 [],[with_pkgconfigdir='$(libdir)/pkgconfig'])
+         AC_SUBST([pkgconfigdir], [${with_pkgconfigdir}])])
  
- AM_CONDITIONAL([PARSER_EXPAT], [test x$with_parser != xlibxml2])
+-AM_CONDITIONAL([PARSER_EXPAT], [test x$with_parser != xlibxml2])
++am_CONDITIONAL([PARSER_EXPAT], [test x$with_parser != xlibxml2])
  
 -AC_SUBST([PC_REQUIRES], [${PC_REQUIRES[[@]]}])
 -AC_SUBST([PC_CFLAGS], [${PC_CFLAGS[[@]]}])
