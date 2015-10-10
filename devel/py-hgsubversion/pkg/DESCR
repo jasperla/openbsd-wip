@@ -1,0 +1,7 @@
+hgsubversion is an extension for Mercurial that allows using Mercurial as a
+Subversion client.  It allows cloning subversion repository with as if it was a
+regular Mercurial repository:
+
+ $ hg clone <repository URI> [destination]
+
+and subsequently working with it using only Mercurial.
