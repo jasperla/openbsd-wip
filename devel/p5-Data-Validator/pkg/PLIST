@@ -1,0 +1,22 @@
+@comment $OpenBSD$
+${P5SITE}/Data/
+${P5SITE}/Data/Validator/
+${P5SITE}/Data/Validator.pm
+${P5SITE}/Data/Validator/Role/
+${P5SITE}/Data/Validator/Role/AllowExtra.pm
+${P5SITE}/Data/Validator/Role/Croak.pm
+${P5SITE}/Data/Validator/Role/Method.pm
+${P5SITE}/Data/Validator/Role/NoRestricted.pm
+${P5SITE}/Data/Validator/Role/NoThrow.pm
+${P5SITE}/Data/Validator/Role/Sequenced.pm
+${P5SITE}/Data/Validator/Role/SmartSequenced.pm
+${P5SITE}/Data/Validator/Role/StrictSequenced.pm
+@man man/man3p/Data::Validator.3p
+@man man/man3p/Data::Validator::Role::AllowExtra.3p
+@man man/man3p/Data::Validator::Role::Croak.3p
+@man man/man3p/Data::Validator::Role::Method.3p
+@man man/man3p/Data::Validator::Role::NoRestricted.3p
+@man man/man3p/Data::Validator::Role::NoThrow.3p
+@man man/man3p/Data::Validator::Role::Sequenced.3p
+@man man/man3p/Data::Validator::Role::SmartSequenced.3p
+@man man/man3p/Data::Validator::Role::StrictSequenced.3p

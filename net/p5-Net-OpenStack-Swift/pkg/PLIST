@@ -1,0 +1,7 @@
+@comment $OpenBSD$
+${P5SITE}/Net/OpenStack/
+${P5SITE}/Net/OpenStack/Swift/
+${P5SITE}/Net/OpenStack/Swift.pm
+${P5SITE}/Net/OpenStack/Swift/InnerKeystone.pm
+${P5SITE}/Net/OpenStack/Swift/Util.pm
+@man man/man3p/Net::OpenStack::Swift.3p

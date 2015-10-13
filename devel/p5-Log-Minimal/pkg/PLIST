@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/Log/
+${P5SITE}/Log/Minimal.pm
+@man man/man3p/Log::Minimal.3p

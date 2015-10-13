@@ -1,0 +1,14 @@
+@comment $OpenBSD$
+${P5SITE}/Furl/
+${P5SITE}/Furl.pm
+${P5SITE}/Furl/ConnectionCache.pm
+${P5SITE}/Furl/HTTP.pm
+${P5SITE}/Furl/Headers.pm
+${P5SITE}/Furl/Request.pm
+${P5SITE}/Furl/Response.pm
+${P5SITE}/Furl/ZlibStream.pm
+@man man/man3p/Furl.3p
+@man man/man3p/Furl::HTTP.3p
+@man man/man3p/Furl::Headers.3p
+@man man/man3p/Furl::Request.3p
+@man man/man3p/Furl::Response.3p

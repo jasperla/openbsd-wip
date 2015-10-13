@@ -1,0 +1,7 @@
+@comment $OpenBSD$
+${P5SITE}/HTTP/
+${P5SITE}/HTTP/CookieJar/
+${P5SITE}/HTTP/CookieJar.pm
+${P5SITE}/HTTP/CookieJar/LWP.pm
+@man man/man3p/HTTP::CookieJar.3p
+@man man/man3p/HTTP::CookieJar::LWP.3p
