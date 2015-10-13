@@ -200,6 +200,8 @@ share/doc/gammu/manual/python/index.rst
 share/doc/gammu/manual/python/objects.rst
 share/doc/gammu/manual/python/smsd.rst
 share/doc/gammu/manual/python/worker.rst
+share/doc/gammu/manual/quick/
+share/doc/gammu/manual/quick/index.rst
 share/doc/gammu/manual/smsd/
 share/doc/gammu/manual/smsd/backends.rst
 share/doc/gammu/manual/smsd/code.rst
