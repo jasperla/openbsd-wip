@@ -1,7 +1,7 @@
 $OpenBSD$
---- src/plugins/projectexplorer/gcctoolchain.cpp.orig	Sat Oct  3 13:45:54 2015
-+++ src/plugins/projectexplorer/gcctoolchain.cpp	Sat Oct  3 13:46:03 2015
-@@ -620,7 +620,7 @@ QList<FileName> GccToolChain::suggestedMkspecList() co
+--- src/plugins/projectexplorer/gcctoolchain.cpp.orig	Fri Oct  2 15:55:32 2015
++++ src/plugins/projectexplorer/gcctoolchain.cpp	Fri Oct 16 09:54:44 2015
+@@ -621,7 +621,7 @@ QList<FileName> GccToolChain::suggestedMkspecList() co
  
  QString GccToolChain::makeCommand(const Environment &environment) const
  {

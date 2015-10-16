@@ -1,2 +1,5 @@
  * Verify that patch for src/shared/qbs/src/lib/corelib/tools/processutils.cpp
    does what it is supposed to do.
+ * Auto-detect Qt version 5 and add it to the available Qt versions
+ * Auto-detect eg{cc,++} and add it to the available compilers
+ * Add QTest::newRow() to abi.cpp?

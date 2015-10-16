@@ -553,6 +553,7 @@ share/qtcreator/qml/qmlpuppet/qmlprivategate/metaobject.h
 share/qtcreator/qml/qmlpuppet/qmlprivategate/qmlprivategate.cpp
 share/qtcreator/qml/qmlpuppet/qmlprivategate/qmlprivategate.h
 share/qtcreator/qml/qmlpuppet/qmlprivategate/qmlprivategate.pri
+share/qtcreator/qml/qmlpuppet/qmlprivategate/qmlprivategate_56.cpp
 share/qtcreator/qml/qmlpuppet/qmlpuppet.qrc
 share/qtcreator/qml/qmlpuppet/qmlpuppet_utilities.pri
 share/qtcreator/qml/qmlpuppet/types/

@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/plugins/projectexplorer/abi.cpp.orig	Sun Oct  4 16:21:06 2015
-+++ src/plugins/projectexplorer/abi.cpp	Sun Oct  4 16:20:40 2015
+--- src/plugins/projectexplorer/abi.cpp.orig	Fri Oct  2 15:55:32 2015
++++ src/plugins/projectexplorer/abi.cpp	Fri Oct 16 09:58:22 2015
 @@ -512,6 +512,11 @@ Abi Abi::abiFromTargetTriplet(const QString &triple)
              if (flavor == Abi::UnknownFlavor)
                  flavor = Abi::FreeBsdFlavor;
@@ -10,6 +10,6 @@ $OpenBSD$
 +            if (flavor == Abi::UnknownFlavor)
 +                flavor = Abi::OpenBsdFlavor;
 +            format = Abi::ElfFormat;
-         } else if (p == QLatin1String("mingw32") || p == QLatin1String("win32") || p == QLatin1String("mingw32msvc")) {
+         } else if (p == QLatin1String("mingw32") || p == QLatin1String("win32")
+                    || p == QLatin1String("mingw32msvc") || p == QLatin1String("msys")) {
              arch = Abi::X86Architecture;
-             os = Abi::WindowsOS;
