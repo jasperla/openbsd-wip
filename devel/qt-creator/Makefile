@@ -2,7 +2,7 @@
 
 COMMENT =		cross-platform IDE for use with Qt
 SHARED_ONLY =		Yes
-V = 			3.5.0
+V = 			3.5.1
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
 
@@ -46,7 +46,8 @@ MASTER_SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/${V}/
 MODULES =	x11/qt5
 
 RUN_DEPENDS = 	devel/gdb \
-		devel/gmake
+		devel/gmake \
+		x11/gtk+3,-guic
 
 PORTHOME =		${WRKDIR}
 
