@@ -1,0 +1,31 @@
+@comment $OpenBSD$
+${P5SITE}/JSON/
+${P5SITE}/JSON/RPC/
+${P5SITE}/JSON/RPC.pm
+${P5SITE}/JSON/RPC/Constants.pm
+${P5SITE}/JSON/RPC/Dispatch.pm
+${P5SITE}/JSON/RPC/Legacy/
+${P5SITE}/JSON/RPC/Legacy.pm
+${P5SITE}/JSON/RPC/Legacy/Client.pm
+${P5SITE}/JSON/RPC/Legacy/Procedure.pm
+${P5SITE}/JSON/RPC/Legacy/Server/
+${P5SITE}/JSON/RPC/Legacy/Server.pm
+${P5SITE}/JSON/RPC/Legacy/Server/Apache2.pm
+${P5SITE}/JSON/RPC/Legacy/Server/CGI.pm
+${P5SITE}/JSON/RPC/Legacy/Server/Daemon.pm
+${P5SITE}/JSON/RPC/Parser.pm
+${P5SITE}/JSON/RPC/Procedure.pm
+${P5SITE}/JSON/RPC/Test.pm
+@man man/man3p/JSON::RPC.3p
+@man man/man3p/JSON::RPC::Constants.3p
+@man man/man3p/JSON::RPC::Dispatch.3p
+@man man/man3p/JSON::RPC::Legacy.3p
+@man man/man3p/JSON::RPC::Legacy::Client.3p
+@man man/man3p/JSON::RPC::Legacy::Procedure.3p
+@man man/man3p/JSON::RPC::Legacy::Server.3p
+@man man/man3p/JSON::RPC::Legacy::Server::Apache2.3p
+@man man/man3p/JSON::RPC::Legacy::Server::CGI.3p
+@man man/man3p/JSON::RPC::Legacy::Server::Daemon.3p
+@man man/man3p/JSON::RPC::Parser.3p
+@man man/man3p/JSON::RPC::Procedure.3p
+@man man/man3p/JSON::RPC::Test.3p

@@ -1,0 +1,13 @@
+@comment $OpenBSD$
+${P5SITE}/Router/
+${P5SITE}/Router/Simple/
+${P5SITE}/Router/Simple.pm
+${P5SITE}/Router/Simple/Cookbook.pod
+${P5SITE}/Router/Simple/Declare.pm
+${P5SITE}/Router/Simple/Route.pm
+${P5SITE}/Router/Simple/SubMapper.pm
+@man man/man3p/Router::Simple.3p
+@man man/man3p/Router::Simple::Cookbook.3p
+@man man/man3p/Router::Simple::Declare.3p
+@man man/man3p/Router::Simple::Route.3p
+@man man/man3p/Router::Simple::SubMapper.3p

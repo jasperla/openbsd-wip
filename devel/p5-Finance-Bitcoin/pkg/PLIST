@@ -1,0 +1,14 @@
+@comment $OpenBSD$
+${P5SITE}/Finance/
+${P5SITE}/Finance/Bitcoin/
+${P5SITE}/Finance/Bitcoin.pm
+${P5SITE}/Finance/Bitcoin/API.pm
+${P5SITE}/Finance/Bitcoin/Address.pm
+${P5SITE}/Finance/Bitcoin/Role/
+${P5SITE}/Finance/Bitcoin/Role/HasAPI.pm
+${P5SITE}/Finance/Bitcoin/Wallet.pm
+@man man/man3p/Finance::Bitcoin.3p
+@man man/man3p/Finance::Bitcoin::API.3p
+@man man/man3p/Finance::Bitcoin::Address.3p
+@man man/man3p/Finance::Bitcoin::Role::HasAPI.3p
+@man man/man3p/Finance::Bitcoin::Wallet.3p
