@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Prefer qmake-qt5 to qmake4 by removing the QDir::Reversed flag.
+
+--- src/libs/utils/buildablehelperlibrary.cpp.orig	Fri Oct 16 13:55:23 2015
++++ src/libs/utils/buildablehelperlibrary.cpp	Fri Oct 16 14:00:53 2015
+@@ -92,8 +92,7 @@ FileName BuildableHelperLibrary::findSystemQt(const En
+                 return FileName::fromString(qmakePath);
+         }
+ 
+-        // Prefer qmake-qt5 to qmake-qt4 by sorting the filenames in reverse order.
+-        foreach (const QFileInfo &fi, dir.entryInfoList(possibleQMakeCommands(), QDir::Files, QDir::Name | QDir::Reversed)) {
++        foreach (const QFileInfo &fi, dir.entryInfoList(possibleQMakeCommands(), QDir::Files, QDir::Name)) {
+             if (fi.fileName() == qmake)
+                 continue;
+ 
