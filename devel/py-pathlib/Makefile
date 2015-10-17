@@ -17,13 +17,15 @@ MODPY_PI =		Yes
 MODULES =		lang/python
 BUILD_DEPENDS =		textproc/sphinx
 
-post-build:
-	cd ${WRKBUILD}/docs && ${MAKE}
-
 DOCDIR = ${PREFIX}/share/doc/py-pathlib
+
+post-build:
+	cd ${WRKBUILD}/docs && ${MAKE} html
+
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
-	# XXX
+	cp -r ${WRKBUILD}/docs/_build/html/* ${DOCDIR}
+	chown -R ${SHAREOWN}:${SHAREGRP} ${DOCDIR}
 
 # XXX
 # https://bitbucket.org/pitrou/pathlib/issues/30/tests-do-not-run
