@@ -17,7 +17,8 @@ RUN_DEPENDS =		www/py-jinja2 \
 			devel/py-nbformat \
 			textproc/py-mistune \
 			www/py-tornado>=4.2 \
-			devel/py-jupyter_client
+			devel/py-jupyter_client \
+			textproc/py-pygments
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/py-nose \
 			devel/py-ipykernel \
@@ -30,6 +31,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 
 do-test:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/nosetests ${MODPY_SITEPKG}/nbconvert
+	cd ${WRKSRC} && env LC_CTYPE=en_US.UTF-8 \
+		${LOCALBASE}/bin/nosetests ${MODPY_SITEPKG}/nbconvert
 
 .include <bsd.port.mk>
