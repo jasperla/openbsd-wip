@@ -16,6 +16,7 @@ lib/python${MODPY_VERSION}/site-packages/gevent/_sslgte279.pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/_threading.py
 lib/python${MODPY_VERSION}/site-packages/gevent/_threading.pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/_util.so
+lib/python${MODPY_VERSION}/site-packages/gevent/ares.so
 lib/python${MODPY_VERSION}/site-packages/gevent/backdoor.py
 lib/python${MODPY_VERSION}/site-packages/gevent/backdoor.pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/baseserver.py

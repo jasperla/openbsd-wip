@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2015/04/02 14:21:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2015/09/29 10:51:53 sthen Exp $
 
 COMMENT =		network library for easy and scalable concurrency
 
@@ -13,15 +13,19 @@ HOMEPAGE =		http://www.gevent.org/
 # MPL
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ${MODPY_WANTLIB} event eventextra pthread
+WANTLIB += ${MODPY_WANTLIB} cares ev pthread
 
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-#MODPY_DISTUTILS_BUILD =	build --build-base=${WRKSRC} \
-#			-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
-LIB_DEPENDS =		devel/libeventextra
+LIB_DEPENDS =		devel/libev \
+			net/libcares
 RUN_DEPENDS =		devel/py-greenlet
+TEST_DEPENDS =		${RUN_DEPENDS}
+
+MAKE_ENV =		CARES_EMBED=0 LIBEV_EMBED=0
+CFLAGS +=		-I/usr/local/include
+LDFLAGS +=		-L/usr/local/lib
 
 .include <bsd.port.mk>
