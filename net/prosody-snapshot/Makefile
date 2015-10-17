@@ -3,7 +3,7 @@
 SHARED_ONLY=	Yes
 
 COMMENT=	communications server for Jabber/XMPP written in Lua
-BUILD =		166
+BUILD =		168
 DISTNAME =	prosody-0.10beta${BUILD}
 #REVISION =	1
 CATEGORIES=	net
@@ -22,6 +22,7 @@ MODULES=	lang/lua
 LIB_DEPENDS=	devel/libidn
 MODLUA_RUN_DEPENDS+= archivers/luazlib \
 		databases/luadbi \
+		devel/luabitop \
 		devel/luaevent \
 		devel/luafs \
 		security/luasec \
