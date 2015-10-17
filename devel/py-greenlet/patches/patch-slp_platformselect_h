@@ -1,0 +1,22 @@
+$OpenBSD: patch-slp_platformselect_h,v 1.1 2012/08/17 21:51:49 landry Exp $
+Give it a chance to build on ppc & mips
+--- slp_platformselect.h.orig	Sun May 31 19:06:02 2015
++++ slp_platformselect.h	Sat Oct 17 10:34:13 2015
+@@ -20,6 +20,8 @@
+ #include "platform/switch_ppc_macosx.h" /* Apple MacOS X on PowerPC */
+ #elif defined(__GNUC__) && defined(_ARCH_PPC) && defined(_AIX)
+ #include "platform/switch_ppc_aix.h" /* gcc on AIX/PowerPC */
++#elif defined(__GNUC__) && defined(__powerpc__)
++#include "platform/switch_ppc_unix.h" /* gcc on unix/PowerPC */
+ #elif defined(__GNUC__) && defined(sparc)
+ #include "platform/switch_sparc_sun_gcc.h" /* SunOS sparc with gcc */
+ #elif defined(__SUNPRO_C) && defined(sparc) && defined(sun)
+@@ -41,7 +43,7 @@
+ #else
+ #include "platform/switch_arm32_gcc.h" /* gcc using arm32 */
+ #endif
+-#elif defined(__GNUC__) && defined(__mips__) && defined(__linux__)
++#elif defined(__GNUC__) && defined(__mips__)
+ #include "platform/switch_mips_unix.h" /* Linux/MIPS */
+ #elif defined(__GNUC__) && defined(__aarch64__)
+ #include "platform/switch_aarch64_gcc.h" /* Aarch64 ABI */
