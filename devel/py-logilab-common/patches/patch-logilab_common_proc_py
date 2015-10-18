@@ -1,9 +1,9 @@
-$OpenBSD: patch-proc_py,v 1.1 2011/08/31 12:39:19 mpi Exp $
+$OpenBSD$
 
 OpenBSD doesn't support RLIMIT_AS
 
---- proc.py.orig	Sun Nov 30 23:41:53 2014
-+++ proc.py	Wed Dec 17 14:56:22 2014
+--- logilab/common/proc.py.orig	Mon Oct 12 20:39:18 2015
++++ logilab/common/proc.py	Sun Oct 18 17:05:28 2015
 @@ -30,7 +30,7 @@ __docformat__ = "restructuredtext en"
  
  import os
