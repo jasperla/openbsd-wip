@@ -1,8 +1,8 @@
 # $OpenBSD: Makefile.template,v 1.72 2015/04/08 17:53:19 sthen Exp $
 
-COMMENT =		the fastest markdown parser in pure Python
+COMMENT =		markdown parser for Python
 
-MODPY_EGG_VERSION =	0.7
+MODPY_EGG_VERSION =	0.7.1
 DISTNAME =		mistune-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -10,10 +10,7 @@ CATEGORIES =		textproc
 
 HOMEPAGE =		https://github.com/lepture/mistune
 
-WANTLIB +=		pthread python2.7
-
-TEST_DEPENDS =		devel/py-nose
-LIB_DEPENDS +=		${MODPY_LIB_DEPENDS}
+TEST_DEPENDS +=		devel/py-nose
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
