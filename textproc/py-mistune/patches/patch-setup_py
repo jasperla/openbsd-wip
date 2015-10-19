@@ -1,6 +1,6 @@
 $OpenBSD$
 
-Disable cython for now. Will make it esier to port to Python3 on OpenBSD.
+Disable cython for now. Will make it easier to port to Python3 on OpenBSD.
 
 --- setup.py.orig	Mon Oct 19 21:50:54 2015
 +++ setup.py	Mon Oct 19 21:51:12 2015
