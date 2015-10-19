@@ -8,7 +8,7 @@ PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		devel
 
-HOMEPAGE =		https://pathlib.readthedocs.org/en/pep428/
+HOMEPAGE =		https://pathlib.readthedocs.org/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODPY_PI =		Yes
 MODULES =		lang/python
 BUILD_DEPENDS =		textproc/sphinx
+TEST_DEPENDS =		lang/python/${MODPY_VERSION},-tests
 
 DOCDIR = ${PREFIX}/share/doc/py-pathlib
 
@@ -27,8 +28,7 @@ post-install:
 	cp -r ${WRKBUILD}/docs/_build/html/* ${DOCDIR}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${DOCDIR}
 
-# XXX
-# https://bitbucket.org/pitrou/pathlib/issues/30/tests-do-not-run
-NO_TEST = Yes
+do-test:
+	${MODPY_BIN} ${WRKBUILD}/test_pathlib.py
 
 .include <bsd.port.mk>
