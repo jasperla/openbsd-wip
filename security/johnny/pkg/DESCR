@@ -1,0 +1,9 @@
+Johnny is a cross-platform Open Source GUI frontend for the popular password
+cracker John the Ripper. As well as automating and simplifying the process,
+it adds extra desktop/GUI functionality, such as improved hash and password
+workflow, multiple attacks and session management, easy definition of complex
+attack rules, visual feedback and statistics.
+
+The application uses John The Ripper for the actual work - both the official
+core (proper) version and the community-enhanced (jumbo) version are supported,
+the latter exposing more functionality (extra cracking modes and hash types).
