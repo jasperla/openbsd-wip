@@ -14,9 +14,9 @@ ONLY_FOR_ARCHS =	i386 amd64 sparc64
 
 COMMENT =		multi-paradigm programming language
 
-V =			6.2.900.17
+V =			6.2.0.900
 PKGNAME =		racket-minimal-$V
-DISTFILES =		min-racket-$V-src-builtpkgs${EXTRACT_SUFX} \
+DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
 
 CATEGORIES =		lang
