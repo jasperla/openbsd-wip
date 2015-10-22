@@ -60,15 +60,17 @@ CONFIGURE_ARGS +=	--enable-libffi \
 			--enable-gracket \
 			--enable-foreign \
 			--enable-lt=${LIBTOOL}
-# "backtrace" is expensive.
-# http://article.gmane.org/gmane.comp.lang.racket.devel/6700
-# disable "docs" to reduce the number of deps and the build time
-# "places" and "futures" require thread-local storage and atomic CAS
-# http://article.gmane.org/gmane.comp.lang.racket.user/16723
+# - "backtrace" is expensive.
+#   http://article.gmane.org/gmane.comp.lang.racket.devel/6700
+# - disable "docs" to reduce the number of deps and the build time
+# - "places" and "futures" require thread-local storage and atomic CAS
+#   http://article.gmane.org/gmane.comp.lang.racket.user/16723
+# - The installation of shared libraries is not recommended.
 CONFIGURE_ARGS +=	--disable-backtrace \
 			--disable-docs \
-			--disable-places \
-			--disable-futures
+			--disable-libs \
+			--disable-shared \
+			--disable-places --disable-futures
 
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
