@@ -3,6 +3,7 @@
 lib/girepository-1.0/Workrave-1.0.typelib
 lib/libworkrave-private-1.0.a
 lib/libworkrave-private-1.0.la
+@lib lib/libworkrave-private-1.0.so.${LIBworkrave-private-1.0_VERSION}
 share/applications/workrave.desktop
 share/dbus-1/services/org.workrave.Workrave.service
 share/gir-1.0/Workrave-1.0.gir

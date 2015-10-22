@@ -1,2 +1,0 @@
-@comment $OpenBSD$
-@lib lib/libworkrave-private-1.0.so.${LIBworkrave-private-1.0_VERSION}
