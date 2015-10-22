@@ -18,7 +18,7 @@ WANTLIB += gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0
 WANTLIB += glibmm-2.4 gmodule-2.0 gobject-2.0 graphite2 gstreamer-0.10
 WANTLIB += gthread-2.0 gtk-3 gtkmm-3.0 harfbuzz lzma m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre pixman-1
-WANTLIB += png pthread pthread-stubs sigc-2.0 stdc++ xcb xcb-render
+WANTLIB += png pthread pthread-stubs sigc-2.0 xcb xcb-render
 WANTLIB += xcb-shm xml2 z
 
 SHARED_LIBS +=		workrave-private-1.0      0.0
@@ -49,11 +49,17 @@ CONFIGURE_ARGS+=	--disable-xml \
 			--disable-pulse \
 			--enable-dbus
 
+# c++11 needed by libsigc++
+MODULES +=              gcc4
+MODGCC4_ARCHS=          *
+MODGCC4_LANGS=          c++
+
 # gnome support requires libpanelapplet
 CONFIGURE_ARGS+=	--disable-gnome2 \
 			--disable-gnome3
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+			CXXFLAGS=-std=c++11
 
 pre-configure:
 	@cd ${WRKSRC}; env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
