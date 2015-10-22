@@ -34,11 +34,16 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 LIB_DEPENDS=		devel/gconf2 \
 			multimedia/gstreamer-0.10/core \
 			x11/dbus-glib \
-			x11/gtk3mm
+			x11/gtk3mm>=2.24.4
 
 MODULES=		devel/gettext \
 			lang/python \
 			textproc/intltool
+
+# c++11 (although only for building against libsigc++)
+MODULES +=		gcc4
+MODGCC4_ARCHS=		*
+MODGCC4_LANGS=		c++
 
 USE_GMAKE=		Yes
 
@@ -49,17 +54,15 @@ CONFIGURE_ARGS+=	--disable-xml \
 			--disable-pulse \
 			--enable-dbus
 
-# c++11 needed by libsigc++
-MODULES +=              gcc4
-MODGCC4_ARCHS=          *
-MODGCC4_LANGS=          c++
-
-# gnome support requires libpanelapplet
+# Someone can add Gnome support later if they like
+# (Gnome support requires libpanelapplet)
 CONFIGURE_ARGS+=	--disable-gnome2 \
 			--disable-gnome3
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			CXXFLAGS=-std=c++11
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+# libsigc++ headers use C++11 features.
+CONFIGURE_ENV +=	CXXFLAGS=-std=c++11
 
 pre-configure:
 	@cd ${WRKSRC}; env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
