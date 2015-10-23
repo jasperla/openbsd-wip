@@ -40,7 +40,7 @@ RUN_DEPENDS+=	devel/p5-Term-ReadKey \
 		textproc/p5-XML-Simple
 
 pre-configure:
-	cd ${WRKSRC}; perl -pi -e \
+	cd ${WRKSRC}; sed -i \
 	    's,/etc/get_flash_videosrc,${SYSCONFDIR}/get_flash_videosrc,g' \
 	    doc/get_flash_videos.pod get_flash_videos
 
