@@ -34,7 +34,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 LIB_DEPENDS=		devel/gconf2 \
 			multimedia/gstreamer-0.10/core \
 			x11/dbus-glib \
-			x11/gtk3mm>=2.24.4
+			x11/gtk3mm
 
 MODULES=		devel/gettext \
 			lang/python \
