@@ -2,8 +2,8 @@
 
 COMMENT=	download flash video files from various sites
 
-DISTNAME=	App-${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME=	${GH_PROJECT:S/-/_/g}-${GH_TAGNAME}
+DISTNAME=	App-${PKGNAME}
 CATEGORIES=	multimedia
 
 HOMEPAGE=	https://get-flash-videos.googlecode.com/
