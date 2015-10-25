@@ -1,5 +1,8 @@
 # $OpenBSD: Makefile,v 1.38 2015/03/27 08:14:14 ajacoutot Exp $
 
+# XXX check if still needed at next update
+CXXFLAGS +=		-std=c++11
+
 COMMENT=		reminder program for prevention of RSI
 
 DISTNAME=		workrave-1.10.1
@@ -26,6 +29,7 @@ SHARED_LIBS +=		workrave-private-1.0      0.0
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=workrave/}
 
 BUILD_DEPENDS=		devel/py-cheetah \
+			devel/gobject-introspection \
 			${MODGNU_AUTOCONF_DEPENDS} \
                         ${MODGNU_AUTOMAKE_DEPENDS}
 
@@ -60,9 +64,6 @@ CONFIGURE_ARGS+=	--disable-gnome2 \
 			--disable-gnome3
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-
-# libsigc++ headers use C++11 features.
-CXXFLAGS +=		-std=c++11
 
 pre-configure:
 	@cd ${WRKSRC}; env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
