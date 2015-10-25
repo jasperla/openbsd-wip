@@ -7,12 +7,12 @@ lib/libworkrave-private-1.0.la
 share/applications/workrave.desktop
 share/dbus-1/services/org.workrave.Workrave.service
 share/gir-1.0/Workrave-1.0.gir
-share/gnome-shell/
-share/gnome-shell/extensions/
-share/gnome-shell/extensions/workrave@workrave.org/
-share/gnome-shell/extensions/workrave@workrave.org/extension.js
-share/gnome-shell/extensions/workrave@workrave.org/metadata.json
-share/gnome-shell/extensions/workrave@workrave.org/stylesheet.css
+@comment share/gnome-shell/
+@comment share/gnome-shell/extensions/
+@comment share/gnome-shell/extensions/workrave@workrave.org/
+@comment share/gnome-shell/extensions/workrave@workrave.org/extension.js
+@comment share/gnome-shell/extensions/workrave@workrave.org/metadata.json
+@comment share/gnome-shell/extensions/workrave@workrave.org/stylesheet.css
 share/icons/hicolor/128x128/apps/workrave.png
 share/icons/hicolor/16x16/apps/workrave.png
 share/icons/hicolor/24x24/apps/workrave.png

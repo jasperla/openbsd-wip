@@ -54,15 +54,15 @@ CONFIGURE_ARGS+=	--disable-xml \
 			--disable-pulse \
 			--enable-dbus
 
-# Someone can add Gnome support later if they like
-# (Gnome support requires libpanelapplet)
+# Someone can add GNOME support later if they like
+# (GNOME support requires libpanelapplet)
 CONFIGURE_ARGS+=	--disable-gnome2 \
 			--disable-gnome3
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 # libsigc++ headers use C++11 features.
-CONFIGURE_ENV +=	CXXFLAGS=-std=c++11
+CXXFLAGS +=		-std=c++11
 
 pre-configure:
 	@cd ${WRKSRC}; env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
