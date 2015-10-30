@@ -4,7 +4,7 @@ SHARED_LIBS +=	microhttpd	0.0	# 42.0
 
 COMMENT =	small http server library
 
-VERSION =	0.9.42
+VERSION =	0.9.44
 DISTNAME =	libmicrohttpd-${VERSION}
 
 CATEGORIES =	www
