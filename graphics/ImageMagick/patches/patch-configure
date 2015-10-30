@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.9 2015/05/14 06:39:13 ajacoutot Exp $
+--- configure.orig	Sat Oct 10 11:50:07 2015
++++ configure	Thu Oct 29 22:52:14 2015
+@@ -4377,7 +4377,7 @@ MAGICK_PATCHLEVEL_VERSION=4
+ 
+ MAGICK_VERSION=6.9.2-4
+ 
+-MAGICK_GIT_REVISION=10274:b10ea36:20151010
++MAGICK_GIT_REVISION=
+ 
+ 
+ # Substitute library versioning
