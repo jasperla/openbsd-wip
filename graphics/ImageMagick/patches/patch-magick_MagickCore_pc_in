@@ -1,7 +1,17 @@
 $OpenBSD: patch-magick_MagickCore_pc_in,v 1.2 2015/05/14 06:39:13 ajacoutot Exp $
 --- magick/MagickCore.pc.in.orig	Sat Oct 10 11:45:02 2015
-+++ magick/MagickCore.pc.in	Thu Oct 29 22:17:58 2015
-@@ -9,6 +9,6 @@ moduledir=@libdir@/ImageMagick-@MAGICK_MAJOR_VERSION@.
++++ magick/MagickCore.pc.in	Fri Oct 30 00:14:21 2015
+@@ -1,14 +1,14 @@
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+ libdir=@libdir@
+-includedir=@includedir@/ImageMagick-@MAGICK_MAJOR_VERSION@
+-includearchdir=@INCLUDEARCH_DIR@/ImageMagick-@MAGICK_MAJOR_VERSION@
++includedir=@includedir@/ImageMagick
++includearchdir=@INCLUDEARCH_DIR@/ImageMagick
+ libname=MagickCore-@MAGICK_MAJOR_VERSION@.@MAGICK_ABI_SUFFIX@
+ moduledir=@libdir@/ImageMagick-@MAGICK_MAJOR_VERSION@.@MAGICK_MINOR_VERSION@.@MAGICK_MICRO_VERSION@/modules-@MAGICK_ABI_SUFFIX@
+ 
  Name: MagickCore
  Description: MagickCore - C API for ImageMagick (ABI @MAGICK_ABI_SUFFIX@)
  Version: @PACKAGE_VERSION@
