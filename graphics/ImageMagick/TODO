@@ -3,4 +3,5 @@
 .libs/libMagickCore-6.Q16.so.0.0: undefined reference to `DestroyMagickWand'
 [....], e.g. building libfprint
 
+https://github.com/jcupitt/libvips/issues/343 /
 http://www.imagemagick.org/discourse-server/viewtopic.php?f=3&t=28603
