@@ -16,6 +16,6 @@ $OpenBSD: patch-magick_MagickCore_pc_in,v 1.2 2015/05/14 06:39:13 ajacoutot Exp 
  Description: MagickCore - C API for ImageMagick (ABI @MAGICK_ABI_SUFFIX@)
  Version: @PACKAGE_VERSION@
 -Libs: -L${libdir} -l${libname}
-+Libs: -L${libdir} -L${X11BASE}/lib -lMagickCore
++Libs: -L${libdir} -L${X11BASE}/lib -l${libname}
  Libs.private: -L${libdir} -l${libname} @MAGICK_LIBS@ @MATH_LIBS@
  Cflags: -I${includearchdir} -I${includedir} @MAGICK_PCFLAGS@
