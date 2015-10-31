@@ -1,0 +1,6 @@
+.libs/libMagickCore-6.Q16.so.0.0: undefined reference to `DrawSetViewbox'
+.libs/libMagickCore-6.Q16.so.0.0: undefined reference to `DrawScale'
+.libs/libMagickCore-6.Q16.so.0.0: undefined reference to `DestroyMagickWand'
+[....], e.g. building libfprint
+
+http://www.imagemagick.org/discourse-server/viewtopic.php?f=3&t=28603
