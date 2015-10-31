@@ -55,7 +55,7 @@ ALL_TARGET=		all perl-build
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=	--with-gcc-arch= \
+CONFIGURE_ARGS+=	--without-gcc-arch \
 			--with-quantum-depth=16 \
 			--with-wmf \
 			--without-dps \
