@@ -1,0 +1,21 @@
+$OpenBSD: patch-convert_conf,v 1.3 2009/07/12 19:58:28 sthen Exp $
+--- convert.conf.orig	Mon Jun 15 23:02:33 2009
++++ convert.conf	Sat Jul  4 15:00:23 2009
+@@ -175,7 +175,7 @@ aac wav * *
+ 
+ mov aif * *
+ 	# FR
+-	[mov123] $FILE$
++	[faad] -w -f 2 $FILE$
+ 
+ wma wma * *
+ 	-
+@@ -222,7 +222,7 @@ aac flc * *
+ 
+ mov flc * *
+ 	# FR
+-	[mov123] $FILE$ | [flac] -cs --totally-silent --compression-level-0 --endian big --sign signed --channels 2 --bps 16 --sample-rate 44100 -
++	[faad] -w -f 2 $FILE$ | [flac] -cs --totally-silent --compression-level-0 --endian big --sign signed --channels 2 --bps 16 --sample-rate 44100 -
+ 
+ alc flc * *
+ 	# F

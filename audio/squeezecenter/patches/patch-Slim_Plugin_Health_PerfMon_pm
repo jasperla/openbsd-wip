@@ -1,0 +1,12 @@
+$OpenBSD$
+--- Slim/Plugin/Health/PerfMon.pm.orig	Mon Jun 15 23:01:53 2009
++++ Slim/Plugin/Health/PerfMon.pm	Sun Nov  1 14:15:04 2015
+@@ -14,7 +14,7 @@
+ package Slim::Plugin::Health::PerfMon;
+ 
+ use base qw(Slim::Plugin::Base);
+-use Class::C3;
++use mro 'c3';
+ 
+ use strict;
+ 

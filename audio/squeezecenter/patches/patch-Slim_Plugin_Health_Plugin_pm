@@ -1,0 +1,13 @@
+$OpenBSD$
+--- Slim/Plugin/Health/Plugin.pm.orig	Mon Jun 15 23:01:53 2009
++++ Slim/Plugin/Health/Plugin.pm	Sun Nov  1 14:15:35 2015
+@@ -14,8 +14,6 @@ package Slim::Plugin::Health::Plugin;
+ # Plugin is implemented in two sub plugins:
+ 
+ use base qw(Slim::Plugin::Health::NetTest Slim::Plugin::Health::PerfMon);
+-use Class::C3;
+-
+-Class::C3::initialize();
++use mro 'c3';
+ 
+ 1;

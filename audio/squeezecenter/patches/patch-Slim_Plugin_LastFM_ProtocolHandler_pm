@@ -1,0 +1,14 @@
+support current JSON::XS version, diff from FreeBSD ports.
+
+$OpenBSD: patch-Slim_Plugin_LastFM_ProtocolHandler_pm,v 1.2 2009/01/28 01:36:00 sthen Exp $
+--- Slim/Plugin/LastFM/ProtocolHandler.pm.orig	Mon Jun 15 23:01:52 2009
++++ Slim/Plugin/LastFM/ProtocolHandler.pm	Sun Nov  1 17:19:05 2015
+@@ -7,7 +7,7 @@ package Slim::Plugin::LastFM::ProtocolHandler;
+ use strict;
+ use base qw(Slim::Player::Protocols::HTTP);
+ 
+-use JSON::XS qw(from_json);
++use JSON::XS::VersionOenAndTwo qw(from_json);
+ use URI::Escape qw(uri_escape_utf8);
+ 
+ use Slim::Player::Playlist;

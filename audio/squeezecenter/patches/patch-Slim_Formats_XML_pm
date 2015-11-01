@@ -1,0 +1,12 @@
+$OpenBSD$
+--- Slim/Formats/XML.pm.orig	Mon Jun 15 23:01:54 2009
++++ Slim/Formats/XML.pm	Sun Nov  1 17:23:08 2015
+@@ -13,7 +13,7 @@ package Slim::Formats::XML;
+ use strict;
+ use File::Slurp;
+ use HTML::Entities;
+-use JSON::XS qw(from_json);
++use JSON::XS::VersionOneAndTwo qw(from_json);
+ use Scalar::Util qw(weaken);
+ use URI::Escape qw(uri_escape);
+ use XML::Simple;
