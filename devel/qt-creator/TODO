@@ -1,3 +1,11 @@
  * Verify that patch for src/shared/qbs/src/lib/corelib/tools/processutils.cpp
    does what it is supposed to do.
- * Fix/test integration with gdb.
+ * Even when the compiler for a Qt kit is set to eg++, Qt Creator compiles the
+   code using g++...
+
+Optional:
+ * Do we want to auto-detect both Qt 5 and Qt 4? Currently, only one version
+   is auto-detected and set up at a time.
+ * Do we want to RUN_DEPENDS on lang/gcc/${MODGCC4_VERSION},-c++? Newer g++ is
+   not required for compiling programs with Qt 5 but it might be a nice idea.
+ * Add QTest::newRow() to abi.cpp?
