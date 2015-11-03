@@ -5,7 +5,7 @@ SHARED_ONLY=		Yes
 COMMENT=		NetBeans Java IDE
 
 V=			8.1
-DISTNAME=		netbeans-${V}beta-201508041349
+DISTNAME=		netbeans-${V}rc2-201510122201
 PKGNAME=		netbeans-${V}
 CATEGORIES=		devel
 
@@ -19,7 +19,7 @@ MAINTAINER=		Rafael Sadowski <rafael@sizeofvoid.org>
 # https://netbeans.org/downloads/jdk-bundle/8.0.2/nb802-THIRDPARTYLICENSE.txt
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://download.netbeans.org/netbeans/${V}/beta/zip/
+MASTER_SITES=		http://download.netbeans.org/netbeans/${V}/rc2/zip/
 EXTRACT_SUFX=		.zip
 
 MODULES=		java
