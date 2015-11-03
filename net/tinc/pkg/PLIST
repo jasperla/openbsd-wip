@@ -1,6 +1,0 @@
-@comment $OpenBSD$
-@info info/tinc.info
-@man man/man5/tinc.conf.5
-@man man/man8/tincd.8
-@bin sbin/tincd
-@rcscript ${RCDIR}/tincd
