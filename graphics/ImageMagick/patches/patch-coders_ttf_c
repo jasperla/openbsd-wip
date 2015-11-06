@@ -1,15 +1,0 @@
-$OpenBSD: patch-coders_ttf_c,v 1.1 2014/02/13 08:33:02 sthen Exp $
-
-Diff is hand-edited to avoid ^L
-
---- coders/ttf.c.orig	Sat Oct 10 11:45:02 2015
-+++ coders/ttf.c	Thu Oct 29 22:17:58 2015
-@@ -62,7 +62,7 @@
- #if defined(FT_FREETYPE_H)
- #  include FT_FREETYPE_H
- #else
--#  include <freetype/freetype.h>
-+#  include <freetype.h>
- #endif
- #endif
- 
