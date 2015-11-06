@@ -47,6 +47,7 @@ MODULES =	x11/qt5
 
 RUN_DEPENDS = 	devel/gdb \
 		devel/gmake \
+		lang/gcc/${MODGCC4_VERSION},-c++ \
 		x11/gtk+3,-guic
 
 PORTHOME =		${WRKDIR}
