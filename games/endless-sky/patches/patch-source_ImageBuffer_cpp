@@ -1,0 +1,12 @@
+$OpenBSD$
+--- source/ImageBuffer.cpp.orig	Thu Nov  5 21:30:22 2015
++++ source/ImageBuffer.cpp	Thu Nov  5 21:20:05 2015
+@@ -230,7 +230,7 @@ namespace {
+ 		
+ 		jpeg_stdio_src(&cinfo, file);
+ 		jpeg_read_header(&cinfo, true);
+-		cinfo.out_color_space = JCS_EXT_BGRA;
++		//cinfo.out_color_space = JCS_EXT_BGRA;
+ 		
+ 		jpeg_start_decompress(&cinfo);
+ 		int width = cinfo.image_width;
