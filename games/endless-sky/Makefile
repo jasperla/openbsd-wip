@@ -32,8 +32,4 @@ LIB_DEPENDS =		audio/openal \
 
 NO_TEST =		Yes
 
-# TODO: Remove debugging flags
-CFLAGS =		
-CXXFLAGS =		-g -O0
-
 .include <bsd.port.mk>
