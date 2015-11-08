@@ -32,4 +32,7 @@ LIB_DEPENDS =		audio/openal \
 
 NO_TEST =		Yes
 
+post-patch:
+	sed -i "s,/usr/local,${TRUEPREFIX}," ${WRKSRC}/source/Files.cpp
+
 .include <bsd.port.mk>

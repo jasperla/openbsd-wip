@@ -1,5 +1,3 @@
 - Do we need libjpeg-turbo?
   (i.e., check consequences of patch-source_ImageBuffer_cpp)
-- Use $PREFIX instead of hardcoded /usr/local/ in Files.cpp?
-- Avoid hardcoded /usr/local/share/endless-sky in Files.cpp
 - Avoid gzipped man page? (man/man6/endless-sky.6.gz)

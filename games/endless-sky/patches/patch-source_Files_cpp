@@ -1,16 +1,19 @@
 $OpenBSD$
 --- source/Files.cpp.orig	Tue Oct  6 23:52:04 2015
-+++ source/Files.cpp	Sat Nov  7 12:50:39 2015
-@@ -65,7 +65,7 @@ void Files::Init(const char * const *argv)
++++ source/Files.cpp	Sun Nov  8 09:17:10 2015
+@@ -65,7 +65,10 @@ void Files::Init(const char * const *argv)
  		// Find the path to the resource directory. This will depend on the
  		// operating system, and can be overridden by a command line argument.
  		char *str = SDL_GetBasePath();
 -		resources = str;
-+		resources = "/usr/local/share/endless-sky/";
++		if (str == NULL)
++			resources = "/usr/local/share/endless-sky/";
++		else
++			resources = str;
  		SDL_free(str);
  	}
  #if defined _WIN32
-@@ -73,12 +73,12 @@ void Files::Init(const char * const *argv)
+@@ -73,12 +76,12 @@ void Files::Init(const char * const *argv)
  #endif
  	if(resources.back() != '/')
  		resources += '/';
