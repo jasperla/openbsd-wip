@@ -2,7 +2,7 @@
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	https://www.calligra-suite.org/
-DISTNAME =	calligra-2.9.8
+DISTNAME =	calligra-2.9.9
 CATEGORIES =	editors
 
 DIST_SUBDIR =	kde
