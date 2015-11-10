@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile.template,v 1.72 2015/04/08 17:53:19 sthen Exp $
 
-COMMENT =		a configuration system for Python applications
+COMMENT =		configuration system for Python applications
 
 MODPY_EGG_VERSION =	4.0.0
 DISTNAME =		traitlets-${MODPY_EGG_VERSION}
