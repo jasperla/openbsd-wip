@@ -2,9 +2,9 @@
 
 COMMENT =		small and fast Qt image viewer
 
-V = 			2.4.6
+V = 			3.0.0
 DISTNAME =		nomacs-${V}-source
-PKGNAME =		nomacs-${V}
+PKGNAME =		nomacs-${V}-beta
 
 CATEGORIES =		graphics
 
@@ -12,14 +12,16 @@ HOMEPAGE =		http://www.nomacs.org
 
 MAINTAINER =		Rafael Sadowski <rafael@sizeofvoid.org>
 
+GH_ACCOUNT =		nomacs
+GH_PROJECT =		nomacs
+GH_COMMIT =		7b4458cdeb84d39ccd0d201e51f7868cce3e4c02
+
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += QtGui QtNetwork X11 c exiv2 lcms2 m opencv_core opencv_imgproc
 WANTLIB += pthread raw quazip stdc++ webp tiff z
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=nomacs/}
-EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		devel/cmake \
 			x11/qt4 \
@@ -41,7 +43,7 @@ LIB_DEPENDS =		archivers/quazip \
 CONFIGURE_ARGS =	-DUSE_SYSTEM_WEBP:Bool=ON \
 			-DUSE_SYSTEM_QUAZIP:Bool=ON
 
-WRKDIST =		${WRKDIR}/${PKGNAME}
+WRKDIST =		${WRKDIR}/nomacs-${GH_COMMIT}/ImageLounge
 
 NO_TEST =		Yes
 
