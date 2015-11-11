@@ -20,13 +20,15 @@ RUN_DEPENDS +=		devel/py-decorator \
 TEST_DEPENDS =		${FULLPKGNAME}:devel/ipython \
 			devel/py-nose \
 			devel/py-mock \
-			www/py-requests
+			www/py-requests \
+			devel/py-testpath
 # XXX tests need testpath
 BUILD_DEPENDS =		${RUN_DEPENDS} \
 			textproc/py-sphinx \
 			textproc/py-numpydoc \
 			devel/desktop-file-utils \
-			devel/py-ipykernel
+			devel/py-ipykernel \
+			graphics/py-matplotlib
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -63,7 +65,7 @@ post-install:
 pre-build:
 	${SUBST_CMD} ${WRKBUILD}/IPython/core/tests/test_interactiveshell.py
 
-# Many test failures. XXX
+# XXX one failing test
 do-test:
 	PYTHONIOENCODING='utf-8' ${LOCALBASE}/bin/iptest
 
