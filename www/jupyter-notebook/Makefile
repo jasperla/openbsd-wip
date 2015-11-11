@@ -30,14 +30,22 @@ BUILD_DEPENDS =		${RUN_DEPENDS} \
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/py-mock \
 			devel/py-nose \
-			www/py-requests	
+			www/py-requests	\
+			${FULLPKGNAME}:${FULLPKGPATH}
 
 MODULES =		lang/python
 MODPY_PI =		Yes
 
 # XXX make docs
 
+# one test fails due to abscence of terminado
+# https://github.com/jupyter/notebook/issues/716
+TEST_TMP =		${WRKDIR}/tmp
 do-test:
-	cd ${WRKBUILD} && ${LOCALBASE}/bin/nosetests
+	mkdir -p ${TEST_TMP}
+	cd ${TEST_TMP} && \
+		env TMPDIR=${TEST_TMP} LC_CTYPE="en_US.UTF-8" \
+		PYTHONIOENCODING='utf-8' \
+		${LOCALBASE}/bin/nosetests ${MODPY_SITEPKG}/notebook
 
 .include <bsd.port.mk>
