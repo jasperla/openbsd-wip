@@ -65,8 +65,8 @@ post-install:
 pre-build:
 	${SUBST_CMD} ${WRKBUILD}/IPython/core/tests/test_interactiveshell.py
 
-# XXX one failing test
 do-test:
-	PYTHONIOENCODING='utf-8' ${LOCALBASE}/bin/iptest
+	env LC_CTYPE='en_US.UTF-8' PYTHONIOENCODING='utf-8' \
+		${LOCALBASE}/bin/iptest
 
 .include <bsd.port.mk>
