@@ -1,7 +1,7 @@
 $OpenBSD$
---- source/ImageBuffer.cpp.orig	Thu Nov  5 21:30:22 2015
-+++ source/ImageBuffer.cpp	Thu Nov  5 21:20:05 2015
-@@ -230,7 +230,7 @@ namespace {
+--- source/ImageBuffer.cpp.orig	Thu Nov 12 05:09:37 2015
++++ source/ImageBuffer.cpp	Thu Nov 12 19:22:59 2015
+@@ -232,7 +232,7 @@ namespace {
  		
  		jpeg_stdio_src(&cinfo, file);
  		jpeg_read_header(&cinfo, true);
