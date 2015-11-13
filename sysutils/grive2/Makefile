@@ -19,9 +19,9 @@ GH_COMMIT =	44cb91f94e67bcdad77ca564b4d8083cedf72251
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += boost_filesystem-mt boost_program_options-mt boost_system-mt
-WANTLIB += boost_unit_test_framework-mt c curl expat gcrypt gpg-error
-WANTLIB += iberty m pthread yajl z boost_regex-mt
+WANTLIB += boost_filesystem-mt boost_program_options-mt boost_regex-mt
+WANTLIB += boost_system-mt boost_unit_test_framework-mt c curl
+WANTLIB += expat gcrypt gpg-error iberty m pthread yajl z
 
 MODULES =	devel/cmake \
 		gcc4
@@ -33,7 +33,5 @@ LIB_DEPENDS =	devel/boost \
 		devel/libyajl \
 		net/curl \
 		security/libgcrypt
-
-CXXFLAGS += -I${LOCALBASE}/include
 
 .include <bsd.port.mk>
