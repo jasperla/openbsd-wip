@@ -2,7 +2,7 @@
 
 COMMENT =		space exploration and combat game similar to Escape Velocity
 
-VERSION =		0.8.4
+VERSION =		0.8.7
 DISTNAME =		endless-sky-${VERSION}
 
 CATEGORIES =		games
@@ -16,7 +16,7 @@ WANTLIB += GL GLEW SDL2 c jpeg m openal png pthread
 
 GH_ACCOUNT =		endless-sky
 GH_PROJECT =		endless-sky
-GH_TAGNAME =		v${VERSION}
+GH_TAGNAME =		${VERSION}
 
 MODULES =		devel/scons \
 			gcc4
