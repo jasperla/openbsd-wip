@@ -3,8 +3,8 @@
 COMMENT =	third-party client for Google Drive
 
 VERSION =	0.4.2-dev
-DISTNAME =	grive-${VERSION}
-PKGNAME =	grive-${VERSION:S/-dev//}
+DISTNAME =	grive2-${VERSION}
+PKGNAME =	grive2-${VERSION:S/-dev//}
 
 CATEGORIES =	sysutils
 
