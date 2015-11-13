@@ -2,13 +2,15 @@
 
 COMMENT =	third-party client for Google Drive
 
-VERSION =	0.4.2-pre
+VERSION =	0.4.2-dev
 DISTNAME =	grive-${VERSION}
 PKGNAME =	grive-${VERSION:S/-dev//}
 
 CATEGORIES =	sysutils
 
 MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
+
+HOMEPAGE = 	http://yourcmc.ru/wiki/Grive2
 
 GH_ACCOUNT =	vitalif
 GH_PROJECT =	grive2
