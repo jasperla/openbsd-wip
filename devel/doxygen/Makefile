@@ -1,5 +1,10 @@
 # $OpenBSD: Makefile,v 1.32 2014/03/24 20:59:47 miod Exp $
 
+# Memory hog, stuck for days on the same file (configoptions.cpp) during build.
+# XXX check with different optimizer level? see doc/install.doc
+NOT_FOR_ARCHS=	m88k sh
+BROKEN-alpha=	.got subsegment exceeds 64K
+
 COMMENT-main=	source code documentation generator tool
 COMMENT-gui=	GUI front-end for doxygen
 
@@ -21,14 +26,13 @@ MASTER_SITES=	http://ftp.stack.nl/pub/users/dimitri/ \
 MULTI_PACKAGES=	-main -gui
 PSEUDO_FLAVORS=	no_gui bootstrap
 
-COMMON_WANTLIB = c m pthread stdc++
-WANTLIB-main += iconv z ${COMMON_WANTLIB}
-WANTLIB-gui += QtCore QtGui QtXml ${COMMON_WANTLIB}
+WANTLIB-main += c m pthread stdc++
+WANTLIB-gui += QtCore QtGui QtXml ${WANTLIB-main}
 
-COMMON_LIB_DEPENDS = ${MODLIBICONV_LIB_DEPENDS}
-LIB_DEPENDS-main = ${COMMON_LIB_DEPENDS}
-LIB_DEPENDS-gui = ${COMMON_LIB_DEPENDS} ${MODQT_LIB_DEPENDS}
-RUN_DEPENDS-gui = doxygen-${VERSION}:${BUILD_PKGPATH}
+COMMON_LIB_DEPENDS= ${MODLIBICONV_LIB_DEPENDS}
+LIB_DEPENDS-main= ${COMMON_LIB_DEPENDS}
+LIB_DEPENDS-gui= ${COMMON_LIB_DEPENDS} ${MODQT_LIB_DEPENDS}
+RUN_DEPENDS-gui= doxygen-${VERSION}:${BUILD_PKGPATH}
 
 MODULES =	devel/cmake \
 		converters/libiconv
@@ -43,10 +47,10 @@ MODULES+=	x11/qt4
 CONFIGURE_ARGS+=-Denglish_only:Bool=ON
 .endif
 
-BUILD_DEPENDS += devel/bison \
-		 devel/flex
+BUILD_DEPENDS+=	devel/bison \
+		devel/flex
 
-RUN_DEPENDS= 	print/ghostscript/gnu \
+RUN_DEPENDS+=	print/ghostscript/gnu \
 		math/graphviz
 
 
