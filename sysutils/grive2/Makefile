@@ -16,7 +16,7 @@ GH_ACCOUNT =	vitalif
 GH_PROJECT =	grive2
 GH_COMMIT =	44cb91f94e67bcdad77ca564b4d8083cedf72251
 
-# GPLv2
+# GPLv2 only
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += boost_filesystem-mt boost_program_options-mt boost_regex-mt
