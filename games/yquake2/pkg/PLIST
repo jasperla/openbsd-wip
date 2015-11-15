@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+%%SHARED%%
+share/yquake2/
+share/yquake2/baseq2/
+@bin share/yquake2/q2ded
+@bin share/yquake2/quake2
