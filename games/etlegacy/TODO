@@ -4,3 +4,5 @@ platforms.  If this isn't desireable default to disabling pure server?
 
 - dlopening cgame seems to require a greater than default datasize limit,
   need to set a lower com_hunkMegs value (in some cases?) ie 64
+
+- disable 'update available' messages

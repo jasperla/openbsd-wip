@@ -1,7 +1,7 @@
 $OpenBSD$
---- src/qcommon/common.c.orig	Sun Jul 14 02:33:26 2013
-+++ src/qcommon/common.c	Sun Jul 14 02:33:45 2013
-@@ -61,7 +61,7 @@ int demo_protocols[] =
+--- src/qcommon/common.c.orig	Thu Aug 20 08:16:41 2015
++++ src/qcommon/common.c	Sun Nov 15 15:04:59 2015
+@@ -60,7 +60,7 @@ int demo_protocols[] =
  #ifdef FEATURE_INC_HUNKMEGS
  #define DEF_COMHUNKMEGS             256
  #else
@@ -9,4 +9,4 @@ $OpenBSD$
 +#define DEF_COMHUNKMEGS             64
  #endif
  
- #define DEF_COMZONEMEGS             24
+ #ifdef DEDICATED
