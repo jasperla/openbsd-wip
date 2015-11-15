@@ -11,12 +11,11 @@ MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ICE SM X11 Xext Xi Xinerama Xpm Xrender c fontconfig
-WANTLIB += cups ldap ssh freetype m pthread stdc++
-WANTLIB += lib/qt4/QtCore lib/qt4/QtGui lib/qt4/QtNetwork
-WANTLIB += lib/qt4/QtSvg
+WANTLIB += ICE QtCore QtGui QtNetwork QtSvg SM X11 Xext Xi Xinerama
+WANTLIB += Xpm Xrender c cups fontconfig freetype ldap m pthread
+WANTLIB += ssh stdc++
 
-MASTER_SITES=	http://code.x2go.org/releases/source/x2goclient/
+MASTER_SITES =	http://code.x2go.org/releases/source/x2goclient/
 
 LIB_DEPENDS =	x11/nx/nxcomp \
 		x11/nx/nxproxy \
