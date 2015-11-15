@@ -1,4 +1,4 @@
 @comment $OpenBSD$
-share/enemy-territory/legacy/cgame.mp.obsd.${MACHINE_ARCH}.so
 share/enemy-territory/legacy/qagame.mp.obsd.${MACHINE_ARCH}.so
-share/enemy-territory/legacy/ui.mp.obsd.${MACHINE_ARCH}.so
+share/enemy-territory/librenderer_opengl1_${MACHINE_ARCH}.so
+share/enemy-territory/librenderer_opengl2_${MACHINE_ARCH}.so

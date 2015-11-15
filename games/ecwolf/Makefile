@@ -1,7 +1,7 @@
 #	$OpenBSD$
 
 COMMENT=	source port for Wolfenstein 3D and Spear of Destiny
-V=		1.3.1
+V=		1.3.2
 DISTNAME=	ecwolf-${V}-src
 PKGNAME=	ecwolf-${V}
 CATEGORIES=	games x11

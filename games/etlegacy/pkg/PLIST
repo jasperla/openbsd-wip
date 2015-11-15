@@ -1,25 +1,27 @@
 @comment $OpenBSD$
 %%SHARED%%
 bin/etlegacy
-share/applications/
 share/applications/etlegacy.desktop
-share/enemy-territory/README.md
 @bin share/enemy-territory/etl
 @bin share/enemy-territory/etlded
 share/enemy-territory/legacy/
 share/enemy-territory/legacy/campaigncycle.cfg
-share/enemy-territory/legacy/etl_bin_2.71rc3-dirty.pk3
+share/enemy-territory/legacy/etl_bin_2.73-dirty.pk3
 share/enemy-territory/legacy/etl_server.cfg
 share/enemy-territory/legacy/legacy.cfg
 share/enemy-territory/legacy/lmscycle.cfg
 share/enemy-territory/legacy/mapvotecycle.cfg
 share/enemy-territory/legacy/objectivecycle.cfg
-share/enemy-territory/legacy/pak3_2.71rc3-dirty.pk3
+share/enemy-territory/legacy/pak3_2.73-dirty.pk3
 share/icons/
 share/icons/hicolor/
 share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/etl.svg
+share/man/
+share/man/man6/
+@man share/man/man6/etl.6
+@man share/man/man6/etlded.6
 share/mime/
 share/mime/packages/
 share/mime/packages/etlegacy.xml

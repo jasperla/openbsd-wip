@@ -1,0 +1,12 @@
+$OpenBSD$
+--- cmake/ETLPlatform.cmake.orig	Sun Nov 15 15:14:55 2015
++++ cmake/ETLPlatform.cmake	Sun Nov 15 15:15:48 2015
+@@ -45,6 +45,8 @@ if(UNIX)
+ 	if(CMAKE_SYSTEM MATCHES "OpenBSD*")
+ 		set(OS_LIBRARIES m pthread)
+ 		set(LIB_SUFFIX ".mp.obsd.")
++		# no need for sysv *64 horrors here
++		add_definitions(-DUSE_FILE32API)
+ 	elseif(CMAKE_SYSTEM MATCHES "FreeBSD")
+ 		set(OS_LIBRARIES m pthread)
+ 		set(LIB_SUFFIX ".mp.fbsd.")
