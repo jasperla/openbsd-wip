@@ -1,8 +1,9 @@
 @comment $OpenBSD$
 share/xonotic/
 share/xonotic/data/
-share/xonotic/data/font-xolonium-20150113.pk3
-share/xonotic/data/xonotic-20150113-data.pk3
-share/xonotic/data/xonotic-20150113-maps.pk3
-share/xonotic/data/xonotic-20150113-music.pk3
-share/xonotic/data/xonotic-20150113-nexcompat.pk3
+share/xonotic/data/font-unifont-20150825.pk3
+share/xonotic/data/font-xolonium-20150825.pk3
+share/xonotic/data/xonotic-20150825-data.pk3
+share/xonotic/data/xonotic-20150825-maps.pk3
+share/xonotic/data/xonotic-20150825-music.pk3
+share/xonotic/data/xonotic-20150825-nexcompat.pk3
