@@ -16,6 +16,7 @@ MAINTAINER=		Rafael Sadowski <rafael@sizeofvoid.org>
 # CDDL and GPLv2 dual-licensed
 #
 # For external components see:
+# https://netbeans.org/downloads/licence/8.1/nb81-THIRDPARTYLICENSE.txt
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		http://download.netbeans.org/netbeans/${V}/zip/
