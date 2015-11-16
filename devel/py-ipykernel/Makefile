@@ -13,8 +13,8 @@ HOMEPAGE =		http://ipython.org/
 RUN_DEPENDS +=		devel/py-jupyter_client \
 			devel/py-traitlets
 BUILD_DEPENDS =		${RUN_DEPENDS}
-TEST_DEPENDS =		${FULLPKGNAME}:${FULLPKGPATH} \
-			${RUN_DEPENDS} \
+TEST_DEPENDS =		${RUN_DEPENDS} \
+			${FULLPKGNAME}:${FULLPKGPATH} \
 			devel/py-nose \
 			devel/ipython>=4.0.0 \
 			devel/py-mock
@@ -25,10 +25,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 
-# XXX: one failing test:
-# No output from 'python2.7 -m IPython kernel --help-all'
-# Expects output.
 do-test:
-	${LOCALBASE}/bin/nosetests ${MODPY_SITEPKG}/ipykernel
+	LC_CTYPE=en_US.UTF-8 ${LOCALBASE}/bin/nosetests \
+		 ${MODPY_SITEPKG}/ipykernel
 
 .include <bsd.port.mk>
