@@ -39,7 +39,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${NB}
 	@tar -czf - -C ${WRKDIR}/netbeans . | tar xzf - -C ${NB}
 	@rm -rf ${NB}/profiler ${NB}/{ide,cnd,dlight}/bin \
-		${NB}/platform/modules/lib/{i386,amd64}/linux
+		${NB}/platform/modules/lib/{i386,amd64,x86}
 	@find ${NB} -name "*.dll" -o -name "*.exe" -o -name "*.cmd" \
 		-o -name "*.bat" -o -name "*.orig" | xargs rm
 	@${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} -c \

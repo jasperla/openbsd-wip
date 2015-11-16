@@ -6817,10 +6817,7 @@ netbeans/platform/modules/ext/swing-layout-1.0.4.jar
 netbeans/platform/modules/ext/testng-6.8.1-dist.jar
 netbeans/platform/modules/ext/updater.jar
 netbeans/platform/modules/lib/
-netbeans/platform/modules/lib/${MACHINE_ARCH}/
-netbeans/platform/modules/lib/i386/
 netbeans/platform/modules/lib/libjnidispatch-410.jnilib
-netbeans/platform/modules/lib/x86/
 netbeans/platform/modules/locale/
 netbeans/platform/modules/locale/org-jdesktop-layout_ja.jar
 netbeans/platform/modules/locale/org-jdesktop-layout_pt_BR.jar
