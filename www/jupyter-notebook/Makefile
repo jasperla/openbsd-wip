@@ -22,7 +22,8 @@ RUN_DEPENDS +=		www/py-jinja2 \
 			devel/py-nbformat \
 			devel/py-nbconvert \
 			devel/py-ipykernel \
-			devel/ipython
+			devel/ipython \
+			www/py-terminado
 
 BUILD_DEPENDS =		${RUN_DEPENDS} \
 			textproc/py-sphinx
