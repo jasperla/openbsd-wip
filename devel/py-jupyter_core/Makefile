@@ -23,6 +23,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 
+# One test failure:
+# https://github.com/jupyter/jupyter_core/issues/68
 do-test:
 	${LOCALBASE}/bin/py.test ${MODPY_SITEPKG}/jupyter_core/tests/
 
