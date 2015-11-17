@@ -1,0 +1,12 @@
+$OpenBSD$
+--- share/qtcreator/qml/qmlpuppet/qml2puppet/qml2puppet.pri.orig	Fri Oct  9 09:29:35 2015
++++ share/qtcreator/qml/qmlpuppet/qml2puppet/qml2puppet.pri	Fri Oct  9 09:29:45 2015
+@@ -37,7 +37,7 @@ DEFINES -= QT_NO_CAST_FROM_ASCII
+ 
+ DISTFILES += Info.plist
+ 
+-unix:!osx:LIBS += -lrt # posix shared memory
++unix:!openbsd:!osx:LIBS += -lrt # posix shared memory
+ 
+ osx {
+     CONFIG -= app_bundle

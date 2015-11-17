@@ -1,0 +1,16 @@
+$OpenBSD$
+
+When calling gmake, override the CXX and LINK variables in Makefiles generated
+by qmake by setting gmake's command line arguments. Makes it possible to
+compile C++11 code.
+
+--- src/plugins/qmakeprojectmanager/qmakebuildconfiguration.cpp.orig	Fri Oct  2 15:55:32 2015
++++ src/plugins/qmakeprojectmanager/qmakebuildconfiguration.cpp	Fri Nov  6 11:49:19 2015
+@@ -648,6 +648,7 @@ void QmakeBuildConfigurationFactory::configureBuildCon
+     buildSteps->insertStep(0, qmakeStep);
+ 
+     MakeStep *makeStep = new MakeStep(buildSteps);
++    makeStep->setUserArguments(QLatin1String("CXX=eg++ LINK=eg++"));
+     buildSteps->insertStep(1, makeStep);
+ 
+     MakeStep *cleanStep = new MakeStep(cleanSteps);

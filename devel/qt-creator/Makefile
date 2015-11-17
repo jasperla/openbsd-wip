@@ -2,7 +2,7 @@
 
 COMMENT =		cross-platform IDE for use with Qt
 SHARED_ONLY =		Yes
-V = 			3.5.0
+V = 			3.5.1
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
 
@@ -46,7 +46,9 @@ MASTER_SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/${V}/
 MODULES =	x11/qt5
 
 RUN_DEPENDS = 	devel/gdb \
-		devel/gmake
+		devel/gmake \
+		lang/gcc/${MODGCC4_VERSION},-c++ \
+		x11/gtk+3,-guic
 
 PORTHOME =		${WRKDIR}
 
@@ -56,7 +58,7 @@ ALL_TARGET = 		all qch_docs
 
 FAKE_FLAGS =		INSTALL_ROOT=${WRKINST}${TRUEPREFIX}
 GDB_ADJ_FILES = \
-	src/plugins/debugger/debuggerkitinformation.cpp \
+	src/plugins/debugger/debuggeritemmanager.cpp \
 	src/tools/qtcreatorcrashhandler/backtracecollector.cpp \
 	src/tools/qtpromaker/main.cpp \
 	tests/auto/debugger/tst_dumpers.cpp \

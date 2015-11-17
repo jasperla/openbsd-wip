@@ -1,47 +1,35 @@
 $OpenBSD$
---- src/shared/qbs/src/lib/corelib/tools/processutils.cpp.orig	Fri Aug 14 10:58:37 2015
-+++ src/shared/qbs/src/lib/corelib/tools/processutils.cpp	Sun Oct  4 12:31:45 2015
-@@ -41,9 +41,16 @@
+--- src/shared/qbs/src/lib/corelib/tools/processutils.cpp.orig	Fri Oct  2 15:13:10 2015
++++ src/shared/qbs/src/lib/corelib/tools/processutils.cpp	Fri Nov  6 17:39:37 2015
+@@ -40,6 +40,11 @@
+ #   include "fileinfo.h"
  #   include <unistd.h>
  #   include <cstdio>
++#elif defined(Q_OS_OPENBSD)
++#   include <sys/param.h>
++#   include <sys/sysctl.h>
++#   include <fcntl.h>
++#   include <kvm.h>
  #elif defined(Q_OS_BSD4)
--#   include <libutil.h>
--#   include <sys/types.h>
--#   include <sys/user.h>
-+#   if defined(Q_OS_OPENBSD)
-+#       include <sys/param.h>
-+#       include <sys/sysctl.h>
-+#       include <fcntl.h>
-+#       include <kvm.h>
-+#   else
-+#       include <util.h>
-+#       include <sys/types.h>
-+#       include <sys/user.h>
-+#   endif
- #else
- #   error Missing implementation of processNameByPid for this platform.
- #endif
-@@ -82,12 +89,23 @@ QString processNameByPid(qint64 pid)
+ #   include <libutil.h>
+ #   include <sys/types.h>
+@@ -81,6 +86,19 @@ QString processNameByPid(qint64 pid)
+     sprintf(exePath, "/proc/%lld/exe", pid);
      readlink(exePath, buf, sizeof(buf));
      return FileInfo::fileName(QString::fromUtf8(buf));
- #elif defined(Q_OS_BSD4)
-+# if defined(Q_OS_OPENBSD)
++#elif defined(Q_OS_OPENBSD)
 +    kvm_t *kd = kvm_open(NULL, NULL, NULL, KVM_NO_FILES, NULL);
-+    if (kd == NULL)
++    if (!kd)
 +        return QString();
 +    int cnt;
 +    struct kinfo_proc *kp = kvm_getprocs(kd, KERN_PROC_PID, pid, sizeof(*kp), &cnt);
-+    if (kp == NULL)
++    if (!kp || cnt < 1) {
++        kvm_close(kd);
 +        return QString();
-+    return QString::fromUtf8(kp->p_comm);
-+# else
++    }
++    QString name = QString::fromUtf8(kp->p_comm);
++    kvm_close(kd);
++    return name;
+ #elif defined(Q_OS_BSD4)
      kinfo_proc *proc = kinfo_getproc(pid);
      if (!proc)
-         return QString();
-     QString name = QString::fromUtf8(proc->ki_comm);
-     free(proc);
-     return name;
-+# endif // defined(Q_OS_OPENBSD)
- #else
-     return QString();
- #endif
