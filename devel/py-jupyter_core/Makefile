@@ -24,6 +24,6 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 
 do-test:
-	py.test ${MODPY_SITEPKG}/jupyter_core/tests/
+	${LOCALBASE}/bin/py.test ${MODPY_SITEPKG}/jupyter_core/tests/
 
 .include <bsd.port.mk>
