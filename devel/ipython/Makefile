@@ -22,7 +22,6 @@ TEST_DEPENDS =		${FULLPKGNAME}:devel/ipython \
 			devel/py-mock \
 			www/py-requests \
 			devel/py-testpath
-# XXX tests need testpath
 BUILD_DEPENDS =		${RUN_DEPENDS} \
 			textproc/py-sphinx \
 			textproc/py-numpydoc \
