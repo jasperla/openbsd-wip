@@ -109,7 +109,7 @@ MODULES         = lang/python
 MODPY_RUNDEP    = No # only the build script is python
 MODPY_ADJ_FILES = bootstrap.py
 
-BUILD_DEPENDS = devel/py-dulwich lang/rust
+BUILD_DEPENDS = devel/py-dulwich lang/rust textproc/py-toml
 # TODO: BUILD_DEPENDS += devel/py-toml
 LIB_DEPENDS   = net/curl security/libssh2
 
