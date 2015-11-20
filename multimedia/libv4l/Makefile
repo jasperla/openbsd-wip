@@ -1,7 +1,7 @@
 # $OpenBSD$
 COMMENT =		libv4l userspace library
 
-VERSION =		1.8.0
+VERSION =		1.8.1
 DISTNAME =		v4l-utils-${VERSION}
 PKGNAME =		libv4l-${VERSION}
 
