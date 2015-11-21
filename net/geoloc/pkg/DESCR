@@ -1,0 +1,3 @@
+geoloc is a simple unix socket which delivers some geolocalisation data
+based on the IP address. The result highly depends on the backend chosen.
+

@@ -1,7 +1,30 @@
 $OpenBSD$
---- bin/netbeans.orig	Sun Aug 23 21:29:15 2015
-+++ bin/netbeans	Sun Aug 23 21:29:32 2015
-@@ -209,9 +209,9 @@ launchNbexec() {
+
+- fix heap_size calculation for OpenBSD
+- use public domain Korn shell
+
+--- bin/netbeans.orig	Thu Oct 22 22:46:42 2015
++++ bin/netbeans	Mon Nov 16 23:06:44 2015
+@@ -152,13 +152,17 @@ fi
+ heap_size () {
+     mem=640
+     case "`uname`" in
+-        Linux*)
++    Linux*)
+         mem=`cat /proc/meminfo | grep MemTotal | tr -d [:space:][:alpha:]:`
+         mem=`expr $mem / 1024`
+         ;;
+     SunOS*)
+         mem=`/usr/sbin/prtconf | grep Memory | /usr/bin/tr -dc '[0-9]'`
+         ;;
++    OpenBSD*)
++        mem=`/sbin/sysctl -n hw.physmem | tr -d [:alpha:][:space:].:`
++        mem=`expr $mem / 1048576`
++        ;;
+     Darwin*)
+         mem=`/usr/sbin/sysctl hw.memsize | tr -d [:alpha:][:space:].:`
+         mem=`expr $mem / 1048576`
+@@ -209,9 +213,9 @@ launchNbexec() {
      done | head -n 1`
      sh=sh
      # #73162: Ubuntu uses the ancient Bourne shell, which does not implement trap well.

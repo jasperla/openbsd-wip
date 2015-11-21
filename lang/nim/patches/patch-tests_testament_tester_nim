@@ -1,0 +1,29 @@
+$OpenBSD: patch-tests_testament_tester_nim,v 1.1.1.1 2015/10/19 21:50:14 juanfra Exp $
+
+"compiler/nodejs" breaks the tests:
+
+"tester.nim(15, 22) Error: cannot open 'compiler/nodejs'
+nim cc --taintMode:on tests/testament/tester
+FAILURE
+Error 1 in . (Makefile:42 'do-test')"
+
+--- tests/testament/tester.nim.orig	Tue Oct 27 22:41:26 2015
++++ tests/testament/tester.nim	Wed Nov 11 23:10:24 2015
+@@ -12,7 +12,7 @@
+ import
+   parseutils, strutils, pegs, os, osproc, streams, parsecfg, json,
+   marshal, backend, parseopt, specs, htmlgen, browsers, terminal,
+-  algorithm, compiler/nodejs, re, times
++  algorithm, re, times
+ 
+ const
+   resultsFile = "testresults.html"
+@@ -317,7 +317,7 @@ proc testSpec(r: var TResults, test: TTest) =
+       r.addResult(test, expected.outp, "executable not found", reExeNotFound)
+       return
+ 
+-    let nodejs = if isJsTarget: findNodeJs() else: ""
++    let nodejs = ""
+     if isJsTarget and nodejs == "":
+       r.addResult(test, expected.outp, "nodejs binary not in PATH",
+                   reExeNotFound)

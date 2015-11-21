@@ -1,0 +1,30 @@
+$OpenBSD$
+--- source/Files.cpp.orig	Thu Nov 12 05:09:37 2015
++++ source/Files.cpp	Thu Nov 12 19:22:59 2015
+@@ -95,7 +95,10 @@ void Files::Init(const char * const *argv)
+ 		// Find the path to the resource directory. This will depend on the
+ 		// operating system, and can be overridden by a command line argument.
+ 		char *str = SDL_GetBasePath();
+-		resources = str;
++		if (str == NULL)
++			resources = "/usr/local/share/endless-sky/";
++		else
++			resources = str;
+ 		SDL_free(str);
+ 	}
+ #if defined _WIN32
+@@ -103,12 +106,12 @@ void Files::Init(const char * const *argv)
+ #endif
+ 	if(resources.back() != '/')
+ 		resources += '/';
+-#if defined __linux__ || defined __FreeBSD__ || defined __DragonFly__
++#if defined __linux__ || defined __FreeBSD__ || defined __DragonFly__ || defined __OpenBSD__
+ 	// Special case, for Linux: the resource files are not in the same place as
+ 	// the executable, but are under the same prefix (/usr or /usr/local).
+ 	static const string LOCAL_PATH = "/usr/local/";
+ 	static const string STANDARD_PATH = "/usr/";
+-	static const string RESOURCE_PATH = "share/games/endless-sky/";
++	static const string RESOURCE_PATH = "share/endless-sky/";
+ 	if(!resources.compare(0, LOCAL_PATH.length(), LOCAL_PATH))
+ 		resources = LOCAL_PATH + RESOURCE_PATH;
+ 	else if(!resources.compare(0, STANDARD_PATH.length(), STANDARD_PATH))

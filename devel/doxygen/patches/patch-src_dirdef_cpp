@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/dirdef.cpp.orig	Thu Feb 26 20:30:27 2015
-+++ src/dirdef.cpp	Wed Aug 26 20:06:36 2015
++++ src/dirdef.cpp	Sat Nov 14 13:50:29 2015
 @@ -1,4 +1,5 @@
 -#include "md5.h"
 +#include <sys/types.h>
@@ -8,7 +8,7 @@ $OpenBSD$
  
  #include "dirdef.h"
  #include "filename.h"
-@@ -81,10 +82,8 @@ void DirDef::addFile(FileDef *fd)
+@@ -81,10 +82,16 @@ void DirDef::addFile(FileDef *fd)
  static QCString encodeDirName(const QCString &anchor)
  {
    // convert to md5 hash
@@ -16,7 +16,15 @@ $OpenBSD$
    QCString sigStr(33);
 -  MD5Buffer((const unsigned char *)anchor.data(),anchor.length(),md5_sig);
 -  MD5SigToString(md5_sig,sigStr.rawData(),33);
-+  MD5Data((const unsigned char *)anchor.data(),anchor.length(),sigStr.rawData());
++  char *name, *prefix;
++  name = (char*)anchor.data();
++
++  prefix = getenv("DOXYGEN_ENCODE_PATH_STRIP");
++  if(prefix != NULL)
++    if (strstr(name, prefix) == name)
++      name += strlen(prefix);
++
++  MD5Data((const unsigned char *)name, strlen(name), sigStr.rawData());
    return sigStr;
  
    // old algorithm

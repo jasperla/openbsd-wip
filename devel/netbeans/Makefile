@@ -5,7 +5,7 @@ SHARED_ONLY=		Yes
 COMMENT=		NetBeans Java IDE
 
 V=			8.1
-DISTNAME=		netbeans-${V}beta-201508041349
+DISTNAME=		netbeans-${V}-201510222201
 PKGNAME=		netbeans-${V}
 CATEGORIES=		devel
 
@@ -16,10 +16,10 @@ MAINTAINER=		Rafael Sadowski <rafael@sizeofvoid.org>
 # CDDL and GPLv2 dual-licensed
 #
 # For external components see:
-# https://netbeans.org/downloads/jdk-bundle/8.0.2/nb802-THIRDPARTYLICENSE.txt
+# https://netbeans.org/downloads/licence/8.1/nb81-THIRDPARTYLICENSE.txt
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://download.netbeans.org/netbeans/${V}/beta/zip/
+MASTER_SITES=		http://download.netbeans.org/netbeans/${V}/zip/
 EXTRACT_SUFX=		.zip
 
 MODULES=		java
@@ -38,15 +38,13 @@ NB=			${PREFIX}/netbeans
 do-install:
 	${INSTALL_DATA_DIR} ${NB}
 	@tar -czf - -C ${WRKDIR}/netbeans . | tar xzf - -C ${NB}
-	@rm -rf ${NB}/profiler3
+	@rm -rf ${NB}/profiler ${NB}/{ide,cnd,dlight}/bin \
+		${NB}/platform/modules/lib/{i386,amd64,x86}
 	@find ${NB} -name "*.dll" -o -name "*.exe" -o -name "*.cmd" \
 		-o -name "*.bat" -o -name "*.orig" | xargs rm
 	@${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} -c \
 		${FILESDIR}/netbeans \
 		${PREFIX}/bin/netbeans
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	@${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c \
-		${FILESDIR}/netbeans.desktop \
-		${PREFIX}/share/applications/netbeans.desktop
 
 .include <bsd.port.mk>

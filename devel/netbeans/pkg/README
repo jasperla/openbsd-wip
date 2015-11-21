@@ -4,21 +4,6 @@ $OpenBSD: README,v 1.2 2011/06/02 13:41:38 ajacoutot Exp $
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-Help System
-===========
-
-NetBeans relies on the presence of a firefox binary for access to
-the online help system. Firefox is not set up as a runtime dependency
-as this dependency is optional.
-
-If you have Firefox 3.5 on your system you may want to set up the
-following symbolic link:
-
-ln -s ${LOCALBASE}/bin/firefox35 ${LOCALBASE}/bin/firefox
-
-You can also customize this setting within the IDE by going to
-Tools> Options> General> Web Browser.
-
 Font issues in the output window
 ================================
 

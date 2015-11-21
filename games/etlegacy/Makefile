@@ -7,12 +7,13 @@ COMMENT=	Wolfenstein Enemy Territory (ET Legacy)
 HOMEPAGE=	http://www.etlegacy.com/
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
-V=		2.71rc3
+V=		2.74
 DISTNAME=	etlegacy-${V}
-MASTER_SITES=	https://github.com/etlegacy/
-DISTFILES =	etlegacy-{etlegacy/archive/v}${V}${EXTRACT_SUFX}
+GH_ACCOUNT=	etlegacy
+GH_PROJECT=	etlegacy
+GH_TAGNAME=	v${V}
 
-LIB_DEPENDS=	devel/sdl \
+LIB_DEPENDS=	devel/sdl2 \
 		graphics/jpeg \
 		graphics/glew \
 		net/curl \
@@ -21,12 +22,12 @@ BUILD_DEPENDS=	archivers/zip
 RUN_DEPENDS=	games/enemy-territory-data \
 		devel/desktop-file-utils
 
-WANTLIB=	GL GLEW GLU ICE SDL SM X11 Xext c curl jpeg m ogg pthread \
-		vorbis vorbisfile
-WANTLIB+=	${MODLUA_WANTLIB}
-
 MODULES=	devel/cmake \
 		lang/lua
+
+WANTLIB=	GL GLEW GLU SDL2 c curl freetype iconv jpeg m \
+		ogg pthread stdc++ vorbis vorbisfile
+WANTLIB+=	${MODLUA_WANTLIB}
 
 CONFIGURE_ARGS =	-DINSTALL_DEFAULT_MODDIR:String=share/enemy-territory \
 			-DINSTALL_DEFAULT_BINDIR:String=share/enemy-territory \

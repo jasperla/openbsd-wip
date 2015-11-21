@@ -1,0 +1,9 @@
+@comment $OpenBSD$
+sbin/geolocd
+sbin/geolocctl
+share/examples/geolocd/
+share/examples/geolocd/geolocd.conf
+@sample ${SYSCONFDIR}/geolocd.conf
+@man man/man1/geolocctl.1
+@man man/man5/geolocd.conf.5
+@man man/man8/geolocd.8

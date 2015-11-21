@@ -1,0 +1,20 @@
+-- Could NOT find Spnav (missing:  SPNAV_LIBRARY SPNAV_INCLUDE_DIR) 
+CMake Error at CMakeLists.txt:594 (find_package):
+  By not providing "FindShiboken.cmake" in CMAKE_MODULE_PATH this project has
+  asked CMake to find a package configuration file provided by "Shiboken",
+  but CMake did not find one.
+
+  Could not find a package configuration file provided by "Shiboken" with any
+  of the following names:
+
+    ShibokenConfig.cmake
+    shiboken-config.cmake
+
+  Add the installation prefix of "Shiboken" to CMAKE_PREFIX_PATH or set
+  "Shiboken_DIR" to a directory containing one of the above files.  If
+  "Shiboken" provides a separate development package or SDK, be sure it has
+  been installed.
+
+
+-- Configuring incomplete, errors occurred!
+
