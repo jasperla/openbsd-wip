@@ -1,4 +1,7 @@
 # $OpenBSD$
+
+SHARED_ONLY =		Yes
+
 COMMENT =		libv4l userspace library
 
 VERSION =		1.8.1
