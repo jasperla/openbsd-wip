@@ -11,12 +11,10 @@ CATEGORIES =		devel
 HOMEPAGE =		http://ipython.org/
 
 RUN_DEPENDS +=		devel/py-jupyter_client \
-			devel/py-traitlets
-BUILD_DEPENDS =		${RUN_DEPENDS}
+			devel/py-traitlets \
+			devel/ipython>=4.0.0
 TEST_DEPENDS =		${RUN_DEPENDS} \
-			${FULLPKGNAME}:${FULLPKGPATH} \
 			devel/py-nose \
-			devel/ipython>=4.0.0 \
 			devel/py-mock
 
 # BSD
@@ -26,7 +24,6 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 
 do-test:
-	LC_CTYPE=en_US.UTF-8 ${LOCALBASE}/bin/nosetests \
-		 ${MODPY_SITEPKG}/ipykernel
+	cd ${WRKSRC}; LC_CTYPE=en_US.UTF-8 ${LOCALBASE}/bin/nosetests ipykernel
 
 .include <bsd.port.mk>
