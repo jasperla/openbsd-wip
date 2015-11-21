@@ -47,15 +47,13 @@ MODULES+=	x11/qt4
 CONFIGURE_ARGS+=-Denglish_only:Bool=ON
 .endif
 
-BUILD_DEPENDS+=	devel/bison \
-		devel/flex
+BUILD_DEPENDS+=	devel/bison
 
 RUN_DEPENDS+=	print/ghostscript/gnu \
 		math/graphviz
 
 
-CONFIGURE_ARGS+=-Dbuild_doc:Bool=ON \
-		-DFLEX_EXECUTABLE=${LOCALBASE}/bin/gflex
+CONFIGURE_ARGS+=-Dbuild_doc:Bool=ON
 
 WRKDIST=	${WRKDIR}/doxygen-${VERSION}
 
