@@ -10,7 +10,7 @@ CATEGORIES =		www devel
 
 HOMEPAGE =		http://jupyter.org/
 
-# BSD XXX
+# BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
 RUN_DEPENDS +=		www/py-jinja2 \
@@ -25,8 +25,7 @@ RUN_DEPENDS +=		www/py-jinja2 \
 			devel/ipython \
 			www/py-terminado
 
-BUILD_DEPENDS =		${RUN_DEPENDS} \
-			textproc/py-sphinx
+BUILD_DEPENDS =		${RUN_DEPENDS}
 
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/py-mock \
@@ -36,7 +35,7 @@ TEST_DEPENDS =		${RUN_DEPENDS} \
 MODULES =		lang/python
 MODPY_PI =		Yes
 
-# XXX make docs
+# XXX once we have a port of pandoc, we can make docs.
 
 do-test:
 	cd ${WRKSRC} && \
