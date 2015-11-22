@@ -14,6 +14,8 @@ RUN_DEPENDS =		devel/py-ipython_genutils \
 			devel/py-traitlets \
 			devel/py-jupyter_core \
 			devel/py-jsonschema
+TEST_DEPENDS =		${RUN_DEPENDS} \
+			devel/py-nose
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -22,6 +24,6 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 
 do-test:
-	${LOCALBASE}/bin/nosetests ${MODPY_SITEPKG}/nbformat
+	cd ${WRKSRC}; ${LOCALBASE}/bin/nosetests nbformat
 
 .include <bsd.port.mk>

@@ -15,18 +15,17 @@ MODULES=		lang/python
 RUN_DEPENDS +=		devel/py-decorator \
 			databases/py-pickleshare \
 			devel/py-simplegeneric \
-			devel/py-traitlets
+			devel/py-traitlets \
+			devel/desktop-file-utils
 # Note that if you have pdb++ installed, tests will fail.
 TEST_DEPENDS =		${FULLPKGNAME}:devel/ipython \
 			devel/py-nose \
 			devel/py-mock \
 			www/py-requests \
 			devel/py-testpath
-# XXX tests need testpath
 BUILD_DEPENDS =		${RUN_DEPENDS} \
 			textproc/py-sphinx \
 			textproc/py-numpydoc \
-			devel/desktop-file-utils \
 			devel/py-ipykernel \
 			graphics/py-matplotlib
 
@@ -42,7 +41,6 @@ pre-patch:
 MAKE_ENV +=	PYTHONPATH=${WRKSRC}
 post-build:
 	cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
-	${SUBST_CMD} ${WRKBUILD}/IPython/core/tests/test_interactiveshell.py
 
 # Despite the fact that setupbase.py defines paths for examples to
 # be installed into, we still have to do it manually for some reason.

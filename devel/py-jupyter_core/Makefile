@@ -14,8 +14,7 @@ RUN_DEPENDS =		devel/py-traitlets
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/py-test \
 			devel/py-mock \
-			devel/ipython>=4.0.0 \
-			${FULLPKGNAME}:${FULLPKGPATH}
+			devel/ipython>=4.0.0
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -24,6 +23,6 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 
 do-test:
-	py.test ${MODPY_SITEPKG}/jupyter_core/tests/
+	cd ${WRKSRC} && ${LOCALBASE}/bin/py.test jupyter_core
 
 .include <bsd.port.mk>
