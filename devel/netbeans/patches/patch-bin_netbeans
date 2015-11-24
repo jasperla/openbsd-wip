@@ -2,9 +2,11 @@ $OpenBSD$
 
 - fix heap_size calculation for OpenBSD
 - use public domain Korn shell
+- fix font issues in the output window
+-- lcd: Anti-aliasing tuned for many popular LCD monitors
 
 --- bin/netbeans.orig	Thu Oct 22 22:46:42 2015
-+++ bin/netbeans	Mon Nov 16 23:06:44 2015
++++ bin/netbeans	Tue Nov 24 21:26:09 2015
 @@ -152,13 +152,17 @@ fi
  heap_size () {
      mem=640
@@ -36,3 +38,11 @@ $OpenBSD$
      fi
      if [ "${founduserdir}" = "yes" ]; then
          exec $sh "$nbexec" "$@"
+@@ -245,6 +249,7 @@ case "`uname`" in
+             --jdkhome '"$netbeans_jdkhome"' \
+             --branding nb \
+             --clusters '"$netbeans_clusters"' \
++	    -J-Dawt.useSystemAAFontSettings=lcd \
+             -J-Dnetbeans.importclass=org.netbeans.upgrade.AutoUpgrade \
+             -J-Dnetbeans.accept_license_class=org.netbeans.license.AcceptLicense \
+             ${netbeans_default_options} \
