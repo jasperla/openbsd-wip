@@ -20,7 +20,7 @@ MAINTAINER=		Daniel Dickman <daniel@openbsd.org>, \
 # https://netbeans.org/about/legal/index.html
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://download.netbeans.org/netbeans/${V}/zip/
+MASTER_SITES=		http://download.netbeans.org/netbeans/${V}/final/zip/
 EXTRACT_SUFX=		.zip
 
 MODULES=		java
