@@ -10,7 +10,7 @@ SHARED_ONLY =		Yes
 # is buggy and the devs can't fix the problems because they have not access
 # to these architectures. In addition, the C code is extremely slow compared
 # with the JIT.
-ONLY_FOR_ARCHS =	i386 amd64 sparc64
+ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		multi-paradigm programming language
 
@@ -26,8 +26,8 @@ MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 # LGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		https://www.cs.utah.edu/plt/installers/${V}/ \
-			http://mirror.racket-lang.org/installers/${V}/ \
+MASTER_SITES =		http://mirror.racket-lang.org/installers/${V}/ \
+			https://www.cs.utah.edu/plt/installers/${V}/ \
 			http://www.eecs.northwestern.edu/racket/${V}/ \
 			http://mirror.informatik.uni-tuebingen.de/mirror/racket/${V}/ \
 			http://racket.infogroep.be/${V}/ \
