@@ -11,9 +11,9 @@ CATEGORIES =		devel
 HOMEPAGE =		http://ipython.org/
 
 RUN_DEPENDS +=		devel/py-jupyter_client \
-			devel/py-traitlets \
-			devel/ipython>=4.0.0
+			devel/py-traitlets
 TEST_DEPENDS =		${RUN_DEPENDS} \
+			devel/ipython>=4.0.0 \
 			devel/py-nose \
 			devel/py-mock
 
