@@ -1,0 +1,9 @@
+LordsAWar! is a free, turn-based strategy game where up to 8 players strive for
+control of as many cities as possible. Produce new armies in cities to conquer
+nearby cities. Using the income from those cities, make more armies to take more
+cities. Send a hero to a temple to get a quest, or maybe search a nearby ruin
+instead. Play with others or against the computer.
+
+The goal of this project is to make a game that is similar to Warlords II and is
+playable on GNU+Linux, Windows, and Macintosh. This project has a longer history
+than most people realize!
