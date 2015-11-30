@@ -1,0 +1,11 @@
+$OpenBSD$
+--- c_code/7_2/stdlib_nativesockets.c.orig	Mon Nov 23 02:43:51 2015
++++ c_code/7_2/stdlib_nativesockets.c	Mon Nov 23 02:45:04 2015
+@@ -215,7 +215,6 @@ N_NIMCALL(struct addrinfo*, getaddrinfo_560408)(NimStr
+ 	hints.ai_family = toint_559829(domain);
+ 	hints.ai_socktype = toint_559835(socktype);
+ 	hints.ai_protocol = toint_559841(protocol);
+-	hints.ai_flags = AI_V4MAPPED;
+ 	LOC1 = 0;
+ 	LOC1 = HEX24_8801(port);
+ 	gairesult = getaddrinfo(address->data, LOC1->data, (&hints), &result);

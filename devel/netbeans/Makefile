@@ -11,15 +11,16 @@ CATEGORIES=		devel
 
 HOMEPAGE=		https://www.netbeans.org/
 
-MAINTAINER=		Rafael Sadowski <rafael@sizeofvoid.org>
+MAINTAINER=		Daniel Dickman <daniel@openbsd.org>, \
+			Rafael Sadowski <rafael@sizeofvoid.org>
 
 # CDDL and GPLv2 dual-licensed
 #
-# For external components see:
-# https://netbeans.org/downloads/licence/8.1/nb81-THIRDPARTYLICENSE.txt
+# See:
+# https://netbeans.org/about/legal/index.html
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://download.netbeans.org/netbeans/${V}/zip/
+MASTER_SITES=		http://download.netbeans.org/netbeans/${V}/final/zip/
 EXTRACT_SUFX=		.zip
 
 MODULES=		java
@@ -41,7 +42,8 @@ do-install:
 	@rm -rf ${NB}/profiler ${NB}/{ide,cnd,dlight}/bin \
 		${NB}/platform/modules/lib/{i386,amd64,x86}
 	@find ${NB} -name "*.dll" -o -name "*.exe" -o -name "*.cmd" \
-		-o -name "*.bat" -o -name "*.orig" | xargs rm
+		-o -name "*.bat" -o -name ".lastModified" \
+		-o -name "*.orig" | xargs rm
 	@${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} -c \
 		${FILESDIR}/netbeans \
 		${PREFIX}/bin/netbeans

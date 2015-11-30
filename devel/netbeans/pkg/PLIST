@@ -6,7 +6,6 @@ netbeans/LICENSE.txt
 netbeans/README.html
 netbeans/THIRDPARTYLICENSE.txt
 netbeans/apisupport/
-netbeans/apisupport/.lastModified
 netbeans/apisupport/VERSION.txt
 netbeans/apisupport/ant/
 netbeans/apisupport/ant/nblib/
@@ -103,7 +102,6 @@ netbeans/apisupport/update_tracking/org-netbeans-modules-maven-apisupport.xml
 netbeans/bin/
 netbeans/bin/netbeans
 netbeans/cnd/
-netbeans/cnd/.lastModified
 netbeans/cnd/VERSION.txt
 netbeans/cnd/config/
 netbeans/cnd/config/Modules/
@@ -473,7 +471,6 @@ netbeans/cnd/update_tracking/org-netbeans-modules-cnd-utils.xml
 netbeans/cnd/update_tracking/org-netbeans-modules-cnd.xml
 netbeans/cnd/update_tracking/org-netbeans-modules-jellytools-cnd.xml
 netbeans/cndext/
-netbeans/cndext/.lastModified
 netbeans/cndext/VERSION.txt
 netbeans/cndext/config/
 netbeans/cndext/config/Modules/
@@ -488,7 +485,6 @@ netbeans/cndext/modules/org-netbeans-modules-cnd-mixeddev.jar
 netbeans/cndext/update_tracking/
 netbeans/cndext/update_tracking/org-netbeans-modules-cnd-mixeddev.xml
 netbeans/dlight/
-netbeans/dlight/.lastModified
 netbeans/dlight/VERSION.txt
 netbeans/dlight/config/
 netbeans/dlight/config/Modules/
@@ -573,7 +569,6 @@ netbeans/dlight/update_tracking/org-netbeans-modules-remotefs-versioning-api.xml
 netbeans/dlight/update_tracking/org-netbeans-modules-remotefs-versioning.xml
 netbeans/dlight/update_tracking/org-netbeans-modules-subversion-remote.xml
 netbeans/enterprise/
-netbeans/enterprise/.lastModified
 netbeans/enterprise/VERSION.txt
 netbeans/enterprise/ant/
 netbeans/enterprise/ant/extra/
@@ -1516,7 +1511,6 @@ netbeans/enterprise/update_tracking/org-netbeans-modules-websvc-wsitconf.xml
 netbeans/enterprise/update_tracking/org-netbeans-modules-websvc-wsitmodelext.xml
 netbeans/enterprise/update_tracking/org-netbeans-modules-websvc-wsstackapi.xml
 netbeans/ergonomics/
-netbeans/ergonomics/.lastModified
 netbeans/ergonomics/config/
 netbeans/ergonomics/config/Modules/
 netbeans/ergonomics/config/Modules/org-apache-tools-ant-module.xml
@@ -1825,7 +1819,6 @@ netbeans/etc/netbeans.clusters
 netbeans/etc/netbeans.conf
 netbeans/etc/netbeans.import
 netbeans/extide/
-netbeans/extide/.lastModified
 netbeans/extide/VERSION.txt
 netbeans/extide/ant/
 netbeans/extide/ant/bin/
@@ -1902,7 +1895,6 @@ netbeans/extide/update_tracking/
 netbeans/extide/update_tracking/org-apache-tools-ant-module.xml
 netbeans/extide/update_tracking/org-netbeans-modules-options-java.xml
 netbeans/groovy/
-netbeans/groovy/.lastModified
 netbeans/groovy/VERSION.txt
 netbeans/groovy/config/
 netbeans/groovy/config/Modules/
@@ -1989,7 +1981,6 @@ netbeans/groovy/update_tracking/org-netbeans-modules-groovy-support.xml
 netbeans/groovy/update_tracking/org-netbeans-modules-libs-groovy.xml
 netbeans/groovy/update_tracking/org-netbeans-modules-maven-groovy.xml
 netbeans/harness/
-netbeans/harness/.lastModified
 netbeans/harness/README
 netbeans/harness/antlib/
 netbeans/harness/antlib/bindex-2.2.jar
@@ -2176,7 +2167,6 @@ netbeans/harness/update_tracking/org-netbeans-modules-jellytools-platform.xml
 netbeans/harness/update_tracking/org-netbeans-modules-jemmy.xml
 netbeans/harness/update_tracking/org-netbeans-modules-nbjunit.xml
 netbeans/ide/
-netbeans/ide/.lastModified
 netbeans/ide/VERSION.txt
 netbeans/ide/config/
 netbeans/ide/config/ModuleAutoDeps/
@@ -3951,7 +3941,6 @@ netbeans/ide/update_tracking/org-netbeans-spi-viewmodel.xml
 netbeans/ide/update_tracking/org-netbeans-swing-dirchooser.xml
 netbeans/ide/update_tracking/org-openidex-util.xml
 netbeans/java/
-netbeans/java/.lastModified
 netbeans/java/VERSION.txt
 netbeans/java/ant/
 netbeans/java/ant/extra/
@@ -5101,7 +5090,6 @@ netbeans/java/update_tracking/org-netbeans-modules-xml-tools-java.xml
 netbeans/java/update_tracking/org-netbeans-spi-debugger-jpda-ui.xml
 netbeans/java/update_tracking/org-netbeans-spi-java-hints.xml
 netbeans/javacard/
-netbeans/javacard/.lastModified
 netbeans/javacard/JCDK3.0.2_ConnectedEdition/
 netbeans/javacard/JCDK3.0.2_ConnectedEdition/COPYRIGHT-docs.html
 netbeans/javacard/JCDK3.0.2_ConnectedEdition/COPYRIGHT-software.html
@@ -5953,7 +5941,6 @@ netbeans/javacard/update_tracking/org-netbeans-modules-properties-based-dataobje
 netbeans/javacard/update_tracking/org-netbeans-modules-simple-project-templates.xml
 netbeans/javacard/update_tracking/org-netbeans-modules-swing-customizerlayout.xml
 netbeans/javafx/
-netbeans/javafx/.lastModified
 netbeans/javafx/VERSION.txt
 netbeans/javafx/config/
 netbeans/javafx/config/Modules/
@@ -6003,7 +5990,6 @@ netbeans/javafx/update_tracking/org-netbeans-modules-javafx2-project.xml
 netbeans/javafx/update_tracking/org-netbeans-modules-javafx2-samples.xml
 netbeans/javafx/update_tracking/org-netbeans-modules-javafx2-scenebuilder.xml
 netbeans/mobility/
-netbeans/mobility/.lastModified
 netbeans/mobility/VERSION.txt
 netbeans/mobility/ant/
 netbeans/mobility/ant/nblib/
@@ -6113,7 +6099,6 @@ netbeans/mobility/update_tracking/org-netbeans-modules-mobility-jsr172.xml
 netbeans/mobility/update_tracking/org-netbeans-modules-mobility-licensing.xml
 netbeans/mobility/update_tracking/org-netbeans-modules-mobility-project-ant.xml
 netbeans/nb/
-netbeans/nb/.lastModified
 netbeans/nb/VERSION.txt
 netbeans/nb/build_info
 netbeans/nb/config/
@@ -6248,7 +6233,6 @@ netbeans/nb/update_tracking/org-netbeans-modules-welcome.xml
 netbeans/nb/update_tracking/org-netbeans-upgrader.xml
 netbeans/netbeans.css
 netbeans/php/
-netbeans/php/.lastModified
 netbeans/php/VERSION.txt
 netbeans/php/config/
 netbeans/php/config/Modules/
@@ -6624,7 +6608,6 @@ netbeans/php/update_tracking/org-netbeans-modules-websvc-saas-codegen-php.xml
 netbeans/php/zend/
 netbeans/php/zend/NetBeansCommandsProvider.php
 netbeans/platform/
-netbeans/platform/.lastModified
 netbeans/platform/VERSION.txt
 netbeans/platform/config/
 netbeans/platform/config/ModuleAutoDeps/
@@ -7345,7 +7328,6 @@ netbeans/platform/update_tracking/org-openide-util-ui.xml
 netbeans/platform/update_tracking/org-openide-util.xml
 netbeans/platform/update_tracking/org-openide-windows.xml
 netbeans/webcommon/
-netbeans/webcommon/.lastModified
 netbeans/webcommon/VERSION.txt
 netbeans/webcommon/ant/
 netbeans/webcommon/ant/extra/
@@ -7588,7 +7570,6 @@ netbeans/webcommon/update_tracking/org-netbeans-modules-web-inspect.xml
 netbeans/webcommon/update_tracking/org-netbeans-modules-web-javascript-debugger.xml
 netbeans/webcommon/update_tracking/org-netbeans-modules-web-webkit-tooling.xml
 netbeans/websvccommon/
-netbeans/websvccommon/.lastModified
 netbeans/websvccommon/VERSION.txt
 netbeans/websvccommon/config/
 netbeans/websvccommon/config/Modules/

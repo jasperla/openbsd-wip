@@ -31,11 +31,11 @@ LIB_DEPENDS =	devel/libnotify \
 		security/gpgme \
 		security/libgpg-error
 
-CONFIGURE_STYLE=	autoconf
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_STYLE = autoconf
+CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-CONFIGURE_ARGS=	--with-xscreensaver=no
+CONFIGURE_ARGS = --with-xscreensaver=no
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.11

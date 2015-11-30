@@ -21,8 +21,7 @@ RUN_DEPENDS =		www/py-jinja2 \
 			textproc/py-pygments
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/py-nose \
-			devel/py-ipykernel \
-			${FULLPKGNAME}:${FULLPKGPATH}
+			devel/py-ipykernel
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -31,7 +30,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 
 do-test:
-	cd ${WRKSRC} && env LC_CTYPE=en_US.UTF-8 \
-		${LOCALBASE}/bin/nosetests ${MODPY_SITEPKG}/nbconvert
+	cd ${WRKSRC}; LC_CTYPE=en_US.UTF-8 PYTHONPATH=${WRKSRC} \
+		${LOCALBASE}/bin/nosetests nbconvert
 
 .include <bsd.port.mk>

@@ -15,8 +15,7 @@ RUN_DEPENDS +=		devel/py-jupyter_core \
 			net/py-zmq
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/py-nose \
-			devel/py-ipykernel \
-			${FULLPKGNAME}:${PKGPATH}
+			devel/py-ipykernel
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -25,6 +24,6 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 
 do-test:
-	${LOCALBASE}/bin/nosetests ${MODPY_SITEPKG}/jupyter_client
+	cd ${WRKSRC}; ${LOCALBASE}/bin/nosetests jupyter_client
 
 .include <bsd.port.mk>

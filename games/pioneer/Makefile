@@ -2,8 +2,8 @@
 
 COMMENT =		game of lonely space and adventure
 
-V =			20150701
-DISTNAME =		pioneer-0.${V}
+V =			20151102
+DISTNAME =		pioneer-0.$V
 
 CATEGORIES =		games
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://pioneerspacesim.net/
 # GPLv3 only
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL SDL2 SDL2_image assimp c freetype m png pthread
+WANTLIB += GL SDL2 SDL2_image assimp c curl freetype m png pthread
 WANTLIB += sigc-2.0 vorbisfile z
 
 GH_ACCOUNT =		pioneerspacesim
@@ -27,7 +27,8 @@ BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
 LIB_DEPENDS =		audio/libvorbis \
 			devel/libsigc++-2 \
 			devel/sdl2-image \
-			multimedia/assimp
+			multimedia/assimp \
+			net/curl
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu

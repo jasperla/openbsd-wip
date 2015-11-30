@@ -998,7 +998,6 @@ share/doc/ipython/html/interactive/reference.html
 share/doc/ipython/html/interactive/shell.html
 share/doc/ipython/html/interactive/tips.html
 share/doc/ipython/html/interactive/tutorial.html
-share/doc/ipython/html/np-modindex.html
 share/doc/ipython/html/objects.inv
 share/doc/ipython/html/overview.html
 share/doc/ipython/html/parallel/
@@ -1027,7 +1026,6 @@ share/doc/ipython/html/whatsnew/version2.0.html
 share/doc/ipython/html/whatsnew/version3.html
 share/doc/ipython/html/whatsnew/version3_widget_migration.html
 share/doc/ipython/html/whatsnew/version4.html
-share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/ipython/
 share/examples/ipython/Embedding/
 share/examples/ipython/Embedding/Index.ipynb

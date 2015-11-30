@@ -1,8 +1,8 @@
 $OpenBSD$
 ISSUE: http://code.google.com/p/yagf/issues/detail?id=45
---- src/core/qipblackandwhiteimage.cpp.orig	Mon Aug 18 08:37:41 2014
-+++ src/core/qipblackandwhiteimage.cpp	Thu Oct  2 16:49:50 2014
-@@ -77,7 +77,7 @@ bool QIPBlackAndWhiteImage::compareElements(quint8 **s
+--- src/core/qipblackandwhiteimage.cpp.orig	Wed Jan 28 18:02:16 2015
++++ src/core/qipblackandwhiteimage.cpp	Thu Jul 30 15:24:04 2015
+@@ -81,7 +81,7 @@ bool QIPBlackAndWhiteImage::compareElements(quint8 **s
  
  IntRect QIPBlackAndWhiteImage::cropInternal(bool upperLeft) const
  {
@@ -11,7 +11,7 @@ ISSUE: http://code.google.com/p/yagf/issues/detail?id=45
      if (upperLeft) {
          for (int y = 0; y < h; y++) {
              quint32 stepCount = 0;
-@@ -142,9 +142,16 @@ IntRect QIPBlackAndWhiteImage::cropInternal(bool upper
+@@ -146,9 +146,16 @@ IntRect QIPBlackAndWhiteImage::cropInternal(bool upper
  
  void QIPBlackAndWhiteImage::copyInternal(quint8 * data, int x1, int x2, int y1, int y2) const
  {
@@ -29,7 +29,7 @@ ISSUE: http://code.google.com/p/yagf/issues/detail?id=45
  }
  
  QImage QIPBlackAndWhiteImage::toImage() const
-@@ -167,6 +174,13 @@ QImage QIPBlackAndWhiteImage::toImage() const
+@@ -171,6 +178,13 @@ QImage QIPBlackAndWhiteImage::toImage() const
  
  QIPBlackAndWhiteImage QIPBlackAndWhiteImage::copy(quint32 x1, quint32 x2, quint32 y1, quint32 y2) const
  {
@@ -43,7 +43,22 @@ ISSUE: http://code.google.com/p/yagf/issues/detail?id=45
      QIPBlackAndWhiteImage result(x2-x1, y2-y1);
  #ifndef IPRIT_MULTITHREADING
      copyInternal(result.data.data(), x1, x2, y1, y2);
-@@ -356,7 +370,7 @@ QRect QIPBlackAndWhiteImage::cropGrayScaleImage(const 
+@@ -186,12 +200,12 @@ QIPBlackAndWhiteImage QIPBlackAndWhiteImage::copy(quin
+     return result;
+ }
+ 
+-quint32 QIPBlackAndWhiteImage::width()
++quint32 QIPBlackAndWhiteImage::width() const
+ {
+     return w;
+ }
+ 
+-quint32 QIPBlackAndWhiteImage::height()
++quint32 QIPBlackAndWhiteImage::height() const
+ {
+     return h;
+ }
+@@ -360,7 +374,7 @@ QRect QIPBlackAndWhiteImage::cropGrayScaleImage(const 
         // QIPGrayscaleImage tmp = image->copy(r1.x1, r2.x2, r1.y1, r2.y2);
         // delete *image;
         // (*image) = tmp;

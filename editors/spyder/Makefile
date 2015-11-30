@@ -2,10 +2,10 @@
 
 COMMENT =		lightweight scientific IDE for Python
 
-MODPY_EGG_VERSION =	2.3.6
+MODPY_EGG_VERSION =	2.3.7
 DISTNAME =		spyder-${MODPY_EGG_VERSION}
 CATEGORIES =		editors devel
-HOMEPAGE =		https://code.google.com/p/spyderlib/
+HOMEPAGE =		https://github.com/spyder-ide/spyder
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

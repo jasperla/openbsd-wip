@@ -1,0 +1,19 @@
+$OpenBSD$
+Unbreak build.
+--- src/core/qipblackandwhiteimage.h.orig	Thu Jul 30 15:29:00 2015
++++ src/core/qipblackandwhiteimage.h	Thu Jul 30 15:28:38 2015
+@@ -57,12 +57,12 @@ class QIPBlackAndWhiteImage (public)
+      *  Returns the image's width.
+      * \sa height
+     */
+-    quint32 width();
++    quint32 width() const;
+     /*!
+      *  Returns the image's height.
+      * \sa width
+     */
+-    quint32 height();
++    quint32 height() const;
+ 
+ 
+     /*!

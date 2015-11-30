@@ -2,7 +2,7 @@
 
 SHARED_ONLY =		Yes
 COMMENT =		GUI wrapper for tesseract and cuneiform
-DISTNAME =		yagf-0.9.4.3
+DISTNAME =		yagf-0.9.5
 
 CATEGORIES =		graphics
 HOMEPAGE =		http://symmetrica.net/cuneiform-linux/yagf-en.html
@@ -21,7 +21,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			graphics/tesseract \
 			graphics/xsane \
 			poppler-utils-*|ghostscript-*:print/poppler,-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 
 LIB_DEPENDS =		textproc/aspell/core
 
