@@ -1,0 +1,4 @@
+xoreos is an open source implementation of BioWare's Aurora engine and its
+derivatives, licensed under the terms of the GPLv3 or later. The goal is
+to have all games using this engine working in a portable manner, starting
+with Neverwinter Nights and ending with Dragon Age II.

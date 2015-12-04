@@ -1,0 +1,42 @@
+@comment $OpenBSD$
+@bin bin/cbgt2tga
+@bin bin/cdpth2tga
+@bin bin/convert2da
+@bin bin/desmall
+@bin bin/gff2xml
+@bin bin/nbfs2tga
+@bin bin/ncgr2tga
+@bin bin/tlk2xml
+@bin bin/unerf
+@bin bin/unherf
+@bin bin/unkeybif
+@bin bin/unnds
+@bin bin/unnsbtx
+@bin bin/unrim
+@bin bin/xml2tlk
+@bin bin/xoreostex2tga
+@man man/man1/cbgt2tga.1
+@man man/man1/cdpth2tga.1
+@man man/man1/convert2da.1
+@man man/man1/desmall.1
+@man man/man1/gff2xml.1
+@man man/man1/nbfs2tga.1
+@man man/man1/ncgr2tga.1
+@man man/man1/tlk2xml.1
+@man man/man1/unerf.1
+@man man/man1/unherf.1
+@man man/man1/unkeybif.1
+@man man/man1/unnds.1
+@man man/man1/unnsbtx.1
+@man man/man1/unrim.1
+@man man/man1/xml2tlk.1
+@man man/man1/xoreostex2tga.1
+share/doc/xoreos-tools/
+share/doc/xoreos-tools/AUTHORS
+share/doc/xoreos-tools/CODE_OF_CONDUCT.md
+share/doc/xoreos-tools/CONTRIBUTING.md
+share/doc/xoreos-tools/COPYING
+share/doc/xoreos-tools/ChangeLog
+share/doc/xoreos-tools/NEWS.md
+share/doc/xoreos-tools/README.md
+share/doc/xoreos-tools/TODO

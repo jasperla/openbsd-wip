@@ -1,0 +1,4 @@
+0.0.3 doesn't link on OpenBSD for some reason. But it should be fixed
+in the next release:
+
+https://github.com/xoreos/xoreos/issues/109
