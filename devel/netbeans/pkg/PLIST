@@ -103,6 +103,8 @@ netbeans/bin/
 netbeans/bin/netbeans
 netbeans/cnd/
 netbeans/cnd/VERSION.txt
+netbeans/cnd/bin/
+netbeans/cnd/bin/dorun.sh
 netbeans/cnd/config/
 netbeans/cnd/config/Modules/
 netbeans/cnd/config/Modules/org-netbeans-libs-clank.xml
