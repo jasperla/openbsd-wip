@@ -1,6 +1,4 @@
 @comment $OpenBSD$
-share/fonts/
-share/fonts/noto/
 share/fonts/noto/Arimo-Bold.ttf
 share/fonts/noto/Arimo-BoldItalic.ttf
 share/fonts/noto/Arimo-Italic.ttf
@@ -9,7 +7,6 @@ share/fonts/noto/Cousine-Bold.ttf
 share/fonts/noto/Cousine-BoldItalic.ttf
 share/fonts/noto/Cousine-Italic.ttf
 share/fonts/noto/Cousine-Regular.ttf
-share/fonts/noto/NotoEmoji-Regular.ttf
 share/fonts/noto/NotoKufiArabic-Bold.ttf
 share/fonts/noto/NotoKufiArabic-Regular.ttf
 share/fonts/noto/NotoNaskhArabic-Bold.ttf
@@ -26,7 +23,6 @@ share/fonts/noto/NotoSansBengali-Bold.ttf
 share/fonts/noto/NotoSansBengali-Regular.ttf
 share/fonts/noto/NotoSansBengaliUI-Bold.ttf
 share/fonts/noto/NotoSansBengaliUI-Regular.ttf
-share/fonts/noto/NotoSansCJK.ttc
 share/fonts/noto/NotoSansCham-Bold.ttf
 share/fonts/noto/NotoSansCham-Regular.ttf
 share/fonts/noto/NotoSansDevanagari-Bold.ttf
@@ -111,5 +107,3 @@ share/fonts/noto/Tinos-Bold.ttf
 share/fonts/noto/Tinos-BoldItalic.ttf
 share/fonts/noto/Tinos-Italic.ttf
 share/fonts/noto/Tinos-Regular.ttf
-share/fonts/noto/fonts.dir
-share/fonts/noto/fonts.scale
