@@ -8,7 +8,7 @@ HOMEPAGE =		http://www.lordsawar.com/
 
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
 
-# GPLv2+
+# GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
@@ -32,24 +32,14 @@ MODULES =		devel/gettext \
 MODULES +=		gcc4
 MODGCC4_ARCHS=		*
 MODGCC4_LANGS=		c++
-#BUILD_DEPENDS =	???
-#RUN_DEPENDS =		???
 LIB_DEPENDS =		archivers/libarchive \
 			devel/libsigc++-2 \
 			multimedia/gstreamer1/mm \
 			textproc/libxml++ \
 			textproc/libxslt,-main \
 			x11/gtk3mm
-#TEST_DEPENDS =		???
-
-#MAKE_FLAGS =		???
-#MAKE_ENV =		???
-#FAKE_FLAGS =		???
-#TEST_FLAGS =		???
 
 USE_GMAKE =		Yes
-#USE_LIBTOOL=		gnu
-#SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.69
 
