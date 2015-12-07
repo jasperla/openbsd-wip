@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT=	quake
-DISTNAME=	quakespasm-0.90.0
+DISTNAME=	quakespasm-0.90.1
 EXTRACT_SUFX=	.tgz
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=quakespasm/}
