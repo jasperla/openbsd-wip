@@ -46,6 +46,9 @@ do-install:
 		-o -name "*.orig" | xargs rm
 	@${INSTALL_DATA_DIR} ${PREFIX}/netbeans/cnd/bin
 	@${INSTALL_SCRIPT} ${WRKDIR}/netbeans/cnd/bin/dorun.sh ${NB}/cnd/bin/
+	@${INSTALL_DATA_DIR} ${PREFIX}/netbeans/ide/bin/nativeexecution
+	@${INSTALL_SCRIPT} ${WRKDIR}/netbeans/ide/bin/nativeexecution/hostinfo.sh \
+	${NB}/ide/bin/nativeexecution/
 	@${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} -c \
 		${FILESDIR}/netbeans \
 		${PREFIX}/bin/netbeans

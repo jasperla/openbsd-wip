@@ -2170,6 +2170,9 @@ netbeans/harness/update_tracking/org-netbeans-modules-jemmy.xml
 netbeans/harness/update_tracking/org-netbeans-modules-nbjunit.xml
 netbeans/ide/
 netbeans/ide/VERSION.txt
+netbeans/ide/bin/
+netbeans/ide/bin/nativeexecution/
+netbeans/ide/bin/nativeexecution/hostinfo.sh
 netbeans/ide/config/
 netbeans/ide/config/ModuleAutoDeps/
 netbeans/ide/config/ModuleAutoDeps/org-netbeans-api-xml.xml
