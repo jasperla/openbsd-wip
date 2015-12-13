@@ -2,7 +2,7 @@
 
 COMMENT =		shell frontend for duplicity backup tool
 
-V =				1.10.1
+V =				1.11
 DISTNAME =		duply_${V}
 PKGNAME =		duply-${V}
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 # XXX should use ${MASTER_SITE_SOURCEFORGE:=ftplicity/} but % in the
 # XXX path causes problems
-MASTER_SITES =		http://downloads.sourceforge.net/project/ftplicity/duply%20%28simple%20duplicity%29/1.10.x/
+MASTER_SITES =		http://downloads.sourceforge.net/project/ftplicity/duply%20%28simple%20duplicity%29/1.11.x/
 #MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ftplicity/'duply%20%28simple%20duplicity%29'/1.9.x/}
 #MASTER_SITES =		${MASTER_SITE_foo:=subdir/}
 

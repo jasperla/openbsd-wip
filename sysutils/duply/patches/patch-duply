@@ -1,7 +1,7 @@
 $OpenBSD$
---- duply.orig	Wed Aug 19 14:57:44 2015
-+++ duply	Sat Sep 19 19:57:36 2015
-@@ -391,7 +391,8 @@
+--- duply.orig	Tue Nov 24 13:26:37 2015
++++ duply	Sat Dec 12 22:54:43 2015
+@@ -402,7 +402,8 @@
  
  # wrap grep to override possible env set GREP_OPTIONS=--color=always
  function grep {
@@ -11,37 +11,25 @@ $OpenBSD$
  }
  
  # implement basename in plain bash
-@@ -490,9 +491,9 @@ function using_info {
+@@ -444,7 +445,7 @@ DEFAULT_TARGET_PASS='_backend_password_'
+ DEFAULT_GPG='gpg'
+ DEFAULT_GPG_KEY='_KEY_ID_'
+ DEFAULT_GPG_PW='_GPG_PASSWORD_'
+-DEFAULT_PYTHON='python2'
++DEFAULT_PYTHON='python2.7'
+ 
+ # function definitions ##########################
+ 
+@@ -513,7 +514,7 @@ function using_info {
    lookup duplicity && duplicity_version_get
    local NOTFOUND="MISSING"
    # freebsd awk (--version only), debian mawk (-W version only), deliver '' so awk does not wait for input
 -  local AWK_VERSION=$( lookup awk && (awk --version 2>/dev/null || awk -W version 2>&1) | awk 'NR<=2&&tolower($0)~/(busybox|awk)/{success=1;print;exit} END{if(success<1) print "unknown"}' || echo "$NOTFOUND" )
 +  local AWK_VERSION=$( lookup awk && (awk --version 2>/dev/null || awk -V || awk -W version 2>&1) | awk 'NR<=2&&tolower($0)~/(busybox|awk)/{success=1;print;exit} END{if(success<1) print "unknown"}' || echo "$NOTFOUND" )
    local GREP_VERSION=$( lookup grep && grep --version 2>&1 | awk 'NR<=2&&tolower($0)~/(busybox|grep.*[0-9]+\.[0-9]+)/{success=1;print;exit} END{if(success<1) print "unknown"}' || echo "$NOTFOUND" )
--  local PYTHON_VERSION=$(lookup python && python -V 2>&1| awk '{print tolower($0);exit}' || echo "python $NOTFOUND" )
-+  local PYTHON_VERSION=$(lookup python${MODPY_VERSION} && python${MODPY_VERSION} -V 2>&1| awk '{print tolower($0);exit}' || echo "python $NOTFOUND" )
-   local GPG_INFO=$(gpg_avail && gpg --version 2>&1| awk 'NR==1{v=$1" "$3};/^Home:/{print v" ("$0")"}' || echo "gpg $NOTFOUND")
-   local BASH_VERSION=$(bash --version | awk 'NR==1{IGNORECASE=1;sub(/GNU bash, version[ ]+/,"",$0);print $0}')
-   echo -e "Using installed duplicity version ${DUPL_VERSION:-$NOTFOUND}\
-@@ -1181,7 +1182,7 @@ function date_fix {
- 		echo $date && return
- 	## some date commands do not support giving a time w/o setting it systemwide (irix,solaris,others?)
- 	# python fallback
--	date=$(python -c "import time;print time.strftime('${1:-$DEFAULTFORMAT}',time.localtime(${2}))" 2> /dev/null) && \
-+	date=$(python${MODPY_VERSION} -c "import time;print time.strftime('${1:-$DEFAULTFORMAT}',time.localtime(${2}))" 2> /dev/null) && \
- 		echo $date && return
- 	# awk fallback
- 	date=$(awk "BEGIN{print strftime(\"${1:-$DEFAULTFORMAT}\"${2:+,$2})}" 2> /dev/null) && \
-@@ -1227,7 +1228,7 @@ function var_isset {
- 
- function url_encode {
-   # utilize python, silently do nothing on error - because no python no duplicity
--  OUT=$(python -c "
-+  OUT=$(python${MODPY_VERSION} -c "
- try: import urllib.request as urllib
- except ImportError: import urllib
- print(urllib.${2}quote('$1'));
-@@ -1400,12 +1401,12 @@ function gpg_key_cache {
+   local PYTHON_RUNNER=$(python_binary)
+   local PYTHON_VERSION=$(lookup "$PYTHON_RUNNER" && "$PYTHON_RUNNER" -V 2>&1| awk '{print tolower($0);exit}' || echo "'$PYTHON_RUNNER' $NOTFOUND" )
+@@ -1436,12 +1437,12 @@ function gpg_key_cache {
    local RES
    local MODE=$1
    shift
@@ -57,7 +45,7 @@ $OpenBSD$
      return 255
    elif ! var_isset "$CACHE"; then
      if [ "$MODE" = "PUB" ]; then
-@@ -1445,10 +1446,10 @@ function gpg_split_keyset2 {
+@@ -1481,10 +1482,10 @@ function gpg_split_keyset2 {
  }
  
  function gpg_prefix_keyset {
