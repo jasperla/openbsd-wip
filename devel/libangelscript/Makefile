@@ -23,4 +23,7 @@ WANTLIB +=              c stdc++
 WRKDIST =               ${WRKDIR}/sdk
 WRKSRC =                ${WRKDIR}/sdk/angelscript/projects/gnuc
 
+post-extract:
+			perl -i -pe 's/\r$$//' ${WRKDIST}/angelscript/source/as_memory.cpp
+
 .include <bsd.port.mk>
