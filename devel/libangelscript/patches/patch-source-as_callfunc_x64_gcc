@@ -1,0 +1,43 @@
+$OpenBSD$
+--- angelscript/source/as_callfunc_x64_gcc.cpp.orig	Sat Jul 11 18:30:10 2015
++++ angelscript/source/as_callfunc_x64_gcc.cpp	Thu Dec 17 22:20:31 2015
+@@ -72,6 +72,9 @@ static asQWORD __attribute__((noinline)) X64_CallFunct
+ 	// Reference: http://www.x86-64.org/documentation/abi.pdf
+ 
+ 	__asm__ __volatile__ (
++#ifdef __OPTIMIZE__
++		"  .cfi_startproc \n"
++#endif
+ 
+ 		"  movq %0, %%rcx \n"	// rcx = cnt
+ 		"  movq %1, %%r10 \n"	// r10 = args
+@@ -105,6 +108,9 @@ static asQWORD __attribute__((noinline)) X64_CallFunct
+ 		"  subl $1, %%esi \n"
+ 		"  xorl %%edx, %%edx \n"
+ 		"  leaq 8(, %%rsi, 8), %%rcx \n"
++#ifdef __OPTIMIZE__
++		"  .cfi_endproc \n"
++#endif
+ 		"loopstack: \n"
+ 		"  movq 112(%%r10, %%rdx), %%rax \n"
+ 		"  pushq %%rax \n"
+@@ -112,6 +118,9 @@ static asQWORD __attribute__((noinline)) X64_CallFunct
+ 		"  cmpq %%rcx, %%rdx \n"
+ 		"  jne loopstack \n"
+ 		"endstack: \n"
++#ifdef __OPTIMIZE__
++		"  .cfi_startproc \n"
++#endif
+ 
+ 	// Populate integer and floating point parameters
+ 		"  movq %%r10, %%rax \n"
+@@ -152,6 +161,9 @@ static asQWORD __attribute__((noinline)) X64_CallFunct
+ 		"  lea %4, %%rdx \n"
+ 		"  movq %%xmm1, (%%rdx) \n"
+ 		"  jmp endcall \n"
++#ifdef __OPTIMIZE__
++		"  .cfi_endproc \n"
++#endif
+ 		"intret: \n"
+ 		"  movq %%rax, %3 \n"
+ 		"  movq %%rdx, %4 \n"
