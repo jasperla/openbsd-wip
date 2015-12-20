@@ -3,7 +3,7 @@
 COMMENT-main=		lint-like code checker for Python code
 COMMENT-gui=		GUI for pylint
 
-MODPY_EGG_VERSION=		1.4.4
+MODPY_EGG_VERSION=		1.5.1
 DISTNAME=		pylint-${MODPY_EGG_VERSION}
 PKGNAME-main=		pylint-${MODPY_EGG_VERSION}
 PKGNAME-gui=		pylint-gui-${MODPY_EGG_VERSION}
@@ -30,11 +30,11 @@ FLAVORS =	python3
 FLAVOR ?=
 
 MODPY_SETUPTOOLS =	Yes
-MODPY_ADJ_FILES =	bin/epylint \
-			bin/pylint \
-			bin/pylint-gui \
-			bin/pyreverse \
-			bin/symilar
+#MODPY_ADJ_FILES =	bin/epylint \
+#			bin/pylint \
+#			bin/pylint-gui \
+#			bin/pyreverse \
+#			bin/symilar
 
 # Note: pytest here is not the same as in devel/py-test
 do-test: fake
