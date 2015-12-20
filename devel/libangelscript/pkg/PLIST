@@ -1,4 +1,4 @@
 @comment $OpenBSD$
 include/angelscript.h
 lib/libangelscript.a
-lib/libangelscript_s.so.2.30.2
+@lib lib/libangelscript_s.so.0.0
