@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@bin bin/grive
-@man man/man1/grive.1
