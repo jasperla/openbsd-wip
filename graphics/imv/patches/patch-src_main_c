@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/main.c.orig	Fri Dec 11 16:46:17 2015
-+++ src/main.c	Mon Dec 21 02:08:55 2015
++++ src/main.c	Mon Dec 21 23:55:38 2015
 @@ -32,7 +32,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Bos
  
  struct {
@@ -10,6 +10,15 @@ $OpenBSD$
    int recursive;
    int actual;
    int nearest_neighbour;
+@@ -46,7 +46,7 @@ struct {
+   char *overlay_str;
+   const char *start_at;
+   const char *font;
+-} g_options = {0,0,0,0,0,1,0,0,0,0,0,0,NULL,NULL,"FreeMono:24"};
++} g_options = {0,0,0,0,0,1,0,0,0,0,0,0,NULL,NULL,"Monospace:24"};
+ 
+ void print_usage(const char* name)
+ {
 @@ -120,7 +120,7 @@ void parse_args(int argc, char** argv)
      switch(o) {
        case 'f': g_options.fullscreen = 1;   break;

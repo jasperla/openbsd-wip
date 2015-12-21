@@ -1,0 +1,4 @@
+Something is wrong with scaling.  Apparently "nearest neighbour" is always
+picked up, although code seems to point SDL2 to the right direction.
+
+Maybe get rid of inotify as well?  It is kqueue here in the end anyway.
