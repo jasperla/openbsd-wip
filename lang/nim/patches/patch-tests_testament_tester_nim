@@ -7,18 +7,38 @@ nim cc --taintMode:on tests/testament/tester
 FAILURE
 Error 1 in . (Makefile:42 'do-test')"
 
+"backend.nim(11, 9) Error: undeclared identifier: 'DbConn'
+nim cc --taintMode:on tests/testament/tester
+FAILURE"
+
 --- tests/testament/tester.nim.orig	Tue Oct 27 22:41:26 2015
-+++ tests/testament/tester.nim	Wed Nov 11 23:10:24 2015
-@@ -12,7 +12,7 @@
++++ tests/testament/tester.nim	Tue Dec 22 01:30:19 2015
+@@ -11,8 +11,8 @@
+ 
  import
    parseutils, strutils, pegs, os, osproc, streams, parsecfg, json,
-   marshal, backend, parseopt, specs, htmlgen, browsers, terminal,
+-  marshal, backend, parseopt, specs, htmlgen, browsers, terminal,
 -  algorithm, compiler/nodejs, re, times
++  marshal, parseopt, specs, browsers, terminal,
 +  algorithm, re, times
  
  const
    resultsFile = "testresults.html"
-@@ -317,7 +317,7 @@ proc testSpec(r: var TResults, test: TTest) =
+@@ -151,13 +151,6 @@ proc addResult(r: var TResults, test: TTest,
+                expected, given: string, success: TResultEnum) =
+   let name = test.name.extractFilename & test.options
+   let duration = epochTime() - test.startTime
+-  backend.writeTestResult(name = name,
+-                          category = test.cat.string,
+-                          target = $test.target,
+-                          action = $test.action,
+-                          result = $success,
+-                          expected = expected,
+-                          given = given)
+   r.data.addf("$#\t$#\t$#\t$#", name, expected, given, $success)
+   if success == reSuccess:
+     styledEcho fgGreen, "PASS: ", fgCyan, name
+@@ -317,7 +310,7 @@ proc testSpec(r: var TResults, test: TTest) =
        r.addResult(test, expected.outp, "executable not found", reExeNotFound)
        return
  
@@ -27,3 +47,30 @@ Error 1 in . (Makefile:42 'do-test')"
      if isJsTarget and nodejs == "":
        r.addResult(test, expected.outp, "nodejs binary not in PATH",
                    reExeNotFound)
+@@ -390,7 +383,6 @@ proc main() =
+   os.putenv "NIMTEST_NO_COLOR", "1"
+   os.putenv "NIMTEST_OUTPUT_LVL", "PRINT_FAILURES"
+ 
+-  backend.open()
+   var optPrintResults = false
+   var optFailing = false
+   var optPedantic = false
+@@ -426,18 +418,12 @@ proc main() =
+     let (_, subdir) = splitPath(dir)
+     var cat = Category(subdir)
+     processCategory(r, cat, p.cmdLineRest.string, file)
+-  of "html":
+-    var commit = 0
+-    discard parseInt(p.cmdLineRest.string, commit)
+-    generateHtml(resultsFile, commit, optFailing)
+-    generateJson(jsonFile, commit)
+   else:
+     quit Usage
+ 
+   if optPrintResults:
+     if action == "html": openDefaultBrowser(resultsFile)
+     else: echo r, r.data
+-  backend.close()
+   if optPedantic:
+     var failed = r.total - r.passed - r.skipped
+     if failed > 0 : quit(QuitFailure)

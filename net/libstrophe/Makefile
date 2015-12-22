@@ -26,15 +26,16 @@ BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
 # Check must be present at build time for tests to work.
 BUILD_DEPENDS +=	devel/check
 
-MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS}"
+USE_GMAKE =		Yes
+CONFIGURE_STYLE = 	gnu
+
+MAKE_FLAGS =		CC="${CC}" CFLAGS="${CFLAGS}"
+
+CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.11
-
-USE_GMAKE =		Yes
-CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
 	@mkdir -p ${WRKSRC}/m4 # need for autoreconf

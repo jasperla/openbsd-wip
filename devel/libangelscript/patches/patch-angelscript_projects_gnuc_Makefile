@@ -1,0 +1,19 @@
+$OpenBSD$
+--- angelscript/projects/gnuc/Makefile.orig	Mon Nov 17 19:20:42 2014
++++ angelscript/projects/gnuc/Makefile	Sun Dec 20 00:45:31 2015
+@@ -142,14 +142,7 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.s
+ 	$(CXX) $(CXXFLAGS) -o $@ -c $<
+ 
+ install_shared:
+-	@ver=`awk -F\" '/#define ANGELSCRIPT_VERSION_STRING/{print $$2}' ../../include/angelscript.h | cut -d" " -f1`; \
+-	if [ "$$ver" = "" ]; then \
+-		echo "Skipping creation of symbolic links..."; \
+-	else \
+-		( install -Dm 755 $(LIBDIR)/$(SHLIB) $(LIBRARYDEST)$(LIBNAME)_s-$$ver.so && \
+-		ln -fs $(LIBRARYDEST)$(LIBNAME)_s-$$ver.so $(LIBRARYDEST)$(SHLIB) && \
+-		ln -fs $(LIBRARYDEST)$(LIBNAME)_s-$$ver.so $(LIBRARYDEST)$(SHLIB).$$ver ) \
+-	fi ;
++	install -Dm 755 $(LIBDIR)/$(SHLIB) $(LIBRARYDEST)$(LIBNAME)_s.so.$(SHLIB_VERSION)
+ 
+ 
+ clean:

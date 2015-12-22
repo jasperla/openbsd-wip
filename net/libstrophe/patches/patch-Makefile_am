@@ -1,14 +1,7 @@
 $OpenBSD$
 --- Makefile.am.orig	Tue Aug 18 23:07:06 2015
-+++ Makefile.am	Fri Oct  9 09:03:07 2015
-@@ -16,16 +16,16 @@ STROPHE_LIBS = libstrophe.la
- lib_LTLIBRARIES = libstrophe.la
- 
- libstrophe_la_CFLAGS = $(SSL_CFLAGS) $(STROPHE_FLAGS) $(PARSER_CFLAGS)
--libstrophe_la_LDFLAGS = $(SSL_LIBS) $(PARSER_LIBS)
-+libstrophe_la_LDFLAGS = $(SSL_LIBS) $(PARSER_LIBS) $(PTHREAD_LIBS)
- # Export only public API
- libstrophe_la_LDFLAGS += -export-symbols-regex '^xmpp_'
++++ Makefile.am	Sun Dec 20 14:39:41 2015
+@@ -22,10 +22,10 @@ libstrophe_la_LDFLAGS += -export-symbols-regex '^xmpp_
  libstrophe_la_SOURCES = src/auth.c src/conn.c src/ctx.c \
  	src/event.c src/handler.c src/hash.c \
  	src/jid.c src/md5.c src/sasl.c src/scram.c src/sha1.c \

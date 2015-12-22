@@ -1,0 +1,3 @@
+@comment $OpenBSD$
+bin/pass
+@man man/man1/pass.1

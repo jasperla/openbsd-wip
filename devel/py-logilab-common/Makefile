@@ -2,12 +2,12 @@
 
 COMMENT=	common low-level libraries for logilab projects
 
-MODPY_EGG_VERSION =	0.63.2
+MODPY_EGG_VERSION =	1.1.0
 DISTNAME=	logilab-common-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
 
-HOMEPAGE=	http://www.logilab.org/projects/common/
+HOMEPAGE=	https://www.logilab.org/project/logilab-common
 
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -28,9 +28,9 @@ RUN_DEPENDS +=	devel/py-mxDateTime
 .endif
 
 MODPY_SETUPTOOLS =	Yes
-MODPY_ADJ_FILES =	bin/pytest
 
 do-test: fake
+	@touch ${WRKINST}${MODPY_SITEPKG}/logilab/__init__.py
 	@cd ${WRKSRC}/test && \
 	env PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} ../bin/pytest
 
