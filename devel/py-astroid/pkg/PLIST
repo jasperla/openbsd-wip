@@ -1,7 +1,5 @@
 @comment $OpenBSD$
 @pkgpath devel/py-logilab-astng
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/astroid/
 lib/python${MODPY_VERSION}/site-packages/astroid-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/astroid-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
