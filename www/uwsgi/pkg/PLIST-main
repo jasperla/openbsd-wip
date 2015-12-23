@@ -4,3 +4,4 @@ lib/uwsgi/cache_plugin.so
 lib/uwsgi/ping_plugin.so
 lib/uwsgi/psgi_plugin.so
 @bin sbin/uwsgi
+@rcscript ${RCDIR}/uwsgi

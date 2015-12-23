@@ -1,7 +1,7 @@
 $OpenBSD$
---- uwsgiconfig.py.orig	Tue Dec 16 22:00:20 2014
-+++ uwsgiconfig.py	Tue Dec 16 22:01:25 2014
-@@ -1277,7 +1277,7 @@ class uConf(object):
+--- uwsgiconfig.py.orig	Wed Oct  7 05:34:01 2015
++++ uwsgiconfig.py	Wed Dec 23 23:29:08 2015
+@@ -1284,7 +1284,7 @@ class uConf(object):
                  report['xml'] = 'expat'
  
          if self.get('plugin_dir'):
