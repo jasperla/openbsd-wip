@@ -1,13 +1,10 @@
 $OpenBSD$
 
-- fix heap_size calculation for OpenBSD
 - use public domain Korn shell
-- fix font issues in the output window
--- lcd: Anti-aliasing tuned for many popular LCD monitors
 
 --- bin/netbeans.orig	Thu Oct 22 22:46:42 2015
-+++ bin/netbeans	Tue Nov 24 21:26:09 2015
-@@ -152,13 +152,17 @@ fi
++++ bin/netbeans	Thu Dec  3 20:16:56 2015
+@@ -152,7 +152,7 @@ fi
  heap_size () {
      mem=640
      case "`uname`" in
@@ -16,17 +13,7 @@ $OpenBSD$
          mem=`cat /proc/meminfo | grep MemTotal | tr -d [:space:][:alpha:]:`
          mem=`expr $mem / 1024`
          ;;
-     SunOS*)
-         mem=`/usr/sbin/prtconf | grep Memory | /usr/bin/tr -dc '[0-9]'`
-         ;;
-+    OpenBSD*)
-+        mem=`/sbin/sysctl -n hw.physmem | tr -d [:alpha:][:space:].:`
-+        mem=`expr $mem / 1048576`
-+        ;;
-     Darwin*)
-         mem=`/usr/sbin/sysctl hw.memsize | tr -d [:alpha:][:space:].:`
-         mem=`expr $mem / 1048576`
-@@ -209,9 +213,9 @@ launchNbexec() {
+@@ -209,9 +209,9 @@ launchNbexec() {
      done | head -n 1`
      sh=sh
      # #73162: Ubuntu uses the ancient Bourne shell, which does not implement trap well.
@@ -38,7 +25,7 @@ $OpenBSD$
      fi
      if [ "${founduserdir}" = "yes" ]; then
          exec $sh "$nbexec" "$@"
-@@ -245,6 +249,7 @@ case "`uname`" in
+@@ -245,6 +245,7 @@ case "`uname`" in
              --jdkhome '"$netbeans_jdkhome"' \
              --branding nb \
              --clusters '"$netbeans_clusters"' \

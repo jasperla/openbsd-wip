@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/Makefile.orig	Mon Dec  7 05:19:54 2015
++++ src/Makefile	Mon Dec  7 05:20:29 2015
+@@ -25,7 +25,7 @@ RETRO =		retro.o Input.o GameLogic.o Hero.o Fuzz.o Obj
+ 
+ 
+ retrobattle:	$(RETRO)
+-		g++ -o $@ $^ $(LIBS)
++		$(CXX) -o $@ $(RETRO) $(LIBS)
+ 		mv $@ ..
+ 
+ clean:

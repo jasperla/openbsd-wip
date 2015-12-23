@@ -103,6 +103,7 @@ lib/prosody/util/
 lib/prosody/util/adhoc.lua
 lib/prosody/util/array.lua
 lib/prosody/util/async.lua
+lib/prosody/util/cache.lua
 lib/prosody/util/caps.lua
 lib/prosody/util/dataforms.lua
 lib/prosody/util/datamanager.lua
@@ -146,6 +147,7 @@ lib/prosody/util/sasl/plain.lua
 lib/prosody/util/sasl/scram.lua
 lib/prosody/util/sasl_cyrus.lua
 lib/prosody/util/serialization.lua
+lib/prosody/util/session.lua
 lib/prosody/util/set.lua
 lib/prosody/util/signal.so
 lib/prosody/util/sql.lua

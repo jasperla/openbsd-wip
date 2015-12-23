@@ -1,0 +1,8 @@
+Occasional seemingly random crash during gameplay:
+
+Program received signal SIGSEGV, Segmentation fault.
+strcmp () at /usr/src/lib/libc/arch/amd64/string/strcmp.S:44
+44              movq    8(%rdi),%rax
+Current language:  auto; currently asm
+
+(Where's the backtrace?)

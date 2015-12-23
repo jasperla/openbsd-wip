@@ -1,2 +1,0 @@
-jupyter nbconvert converts notebooks to various other formats via
-Jinja templates.

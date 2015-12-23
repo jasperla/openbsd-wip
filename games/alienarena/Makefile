@@ -8,12 +8,12 @@ COMMENT-main=	Alien Arena
 COMMENT-data=	Alien Arena data
 
 N=	alienarena
-V=	7.65
-DATE=	20130207
-PKGNAME-main=	${N}-${V}
-PKGNAME-data=	${N}-data-${V}
-DISTNAME=	${N}-${V}-linux${DATE}
-WRKDIST=	${WRKDIR}/${N}-${V}
+V=	7.66
+DATE=	20130827
+PKGNAME-main=	$N-$V
+PKGNAME-data=	$N-data-$V
+DISTNAME=	$N-$V-linux${DATE}
+WRKDIST=	${WRKDIR}/$N-$V
 
 CATEGORIES=	games x11
 MASTER_SITES=	http://red.planetarena.org/files/ \
@@ -41,7 +41,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--with-xf86vm --with-xf86dga
 USE_GMAKE=		Yes
-AUTOCONF_VERSION=	2.68
+AUTOCONF_VERSION=	2.69
 
 NO_TEST=		Yes
 

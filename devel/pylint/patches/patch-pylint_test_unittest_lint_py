@@ -7,7 +7,7 @@ $OpenBSD$
      def test_pylint_home(self):
 +        if os.environ['PYLINTHOME']:
 +            pylintd = os.environ['PYLINTHOME']
-+            reload(config)
++            reload_module(config)
 +            self.assertEqual(config.PYLINT_HOME, pylintd)
 +            return
 +

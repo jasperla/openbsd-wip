@@ -1,0 +1,49 @@
+$OpenBSD$
+
+This patch is obtained from upstream and is likely to hit the tree by the time
+of next lordsawar release.
+
+--- configure.ac.orig	Fri Jul  3 22:03:50 2015
++++ configure.ac	Sun Nov 22 11:42:58 2015
+@@ -95,7 +95,7 @@ AC_ARG_ENABLE(sound, [  --enable-sound         Enable 
+                 use_sound="$enableval", use_sound="yes")
+ 
+ if test $use_sound = yes; then
+-PKG_CHECK_MODULES(GSTREAMER, gstreamermm-0.10)
++PKG_CHECK_MODULES(GSTREAMER, gstreamermm-1.0)
+ AC_SUBST(GSTREAMER_CFLAGS)
+ AC_SUBST(GSTREAMER_LIBS)
+ AC_DEFINE([LW_SOUND], 1, [enables sound])
+$OpenBSD$
+--- src/snd.cpp.orig	Fri Jul  3 22:03:50 2015
++++ src/snd.cpp	Sun Nov 22 11:42:58 2015
+@@ -32,6 +32,7 @@
+ 
+ #ifdef LW_SOUND
+ #include <gstreamermm.h>
++#include <gstreamermm/playbin.h>
+ #endif
+ 
+ //#define debug(x) {std::cerr<<__FILE__<<": "<<__LINE__<<": "<<x<<std::endl<<std::flush;}
+@@ -41,8 +42,8 @@ struct Snd::Impl
+ {
+ #ifdef LW_SOUND
+   // currently playing background and foreground piece
+-  Glib::RefPtr<Gst::PlayBin2> back;
+-  Glib::RefPtr<Gst::PlayBin2> effect;
++  Glib::RefPtr<Gst::PlayBin> back;
++  Glib::RefPtr<Gst::PlayBin> effect;
+ #endif
+   int placeholder;
+ };
+@@ -83,8 +84,8 @@ Snd::Snd()
+     helper.close();
+ 
+ #ifdef LW_SOUND
+-    impl->back = Gst::PlayBin2::create();
+-    impl->effect = Gst::PlayBin2::create();
++    impl->back = Gst::PlayBin::create();
++    impl->effect = Gst::PlayBin::create();
+     impl->effect->get_bus()->add_watch(sigc::bind(sigc::hide<0>(sigc::mem_fun(*this, &Snd::on_bus_message)), 0));
+     impl->back->get_bus()->add_watch(sigc::bind(sigc::hide<0>(sigc::mem_fun(*this, &Snd::on_bus_message)), 1));
+ #endif

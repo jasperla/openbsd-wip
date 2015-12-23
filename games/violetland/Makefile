@@ -2,12 +2,12 @@
 
 COMMENT =		top view shooting game
 
-DISTNAME =		violetland-v0.4.3-src
-PKGNAME =		violetland-0.4.3
+V =			0.4.3
+DISTNAME =		violetland-$V
 
 CATEGORIES =		games x11
 
-HOMEPAGE =		https://code.google.com/p/violetland/
+HOMEPAGE =		https://violetland.github.io/
 
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
@@ -17,8 +17,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += GL GLU ICE SDL SDL_image SDL_mixer SDL_ttf SM X11 Xext
 WANTLIB += boost_filesystem-mt boost_system-mt c intl m pthread stdc++
 
-MASTER_SITES =		https://violetland.googlecode.com/files/
-EXTRACT_SUFX =		.zip
+GH_ACCOUNT =		ooxi
+GH_PROJECT =		violetland
+GH_TAGNAME =		$V
 
 MODULES =		devel/gettext devel/cmake
 LIB_DEPENDS =		devel/boost \
