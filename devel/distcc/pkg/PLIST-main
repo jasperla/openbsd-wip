@@ -88,6 +88,7 @@ share/doc/distcc/protocol-gssapi.txt
 share/doc/distcc/reporting-bugs.txt
 share/doc/distcc/status-1.txt
 share/doc/distcc/survey.txt
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/distcc/
 @sample ${SYSCONFDIR}/distcc/
 share/examples/distcc/default/
@@ -99,3 +100,4 @@ share/examples/distcc/distcc/commands.allow.sh
 @sample ${SYSCONFDIR}/distcc/commands.allow.sh
 share/examples/distcc/distcc/hosts
 @sample ${SYSCONFDIR}/distcc/hosts
+@rcscript ${RCDIR}/distccd
