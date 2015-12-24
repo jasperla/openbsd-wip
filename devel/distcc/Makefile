@@ -2,6 +2,7 @@
 
 COMMENT-main =		distributed builds for C, C++ and Objective C
 COMMENT-gtk =		GTK+ monitor for distcc
+COMMENT-server =	distcc server
 
 # latest commit to master
 GH_COMMIT =		267fe5be154ca375ac574875894b476b60f19af0
@@ -11,25 +12,32 @@ VERSION =		3.1.1
 DISTNAME =		distcc-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-gtk =		distcc-gtk-${VERSION}
+PKGNAME-server =	distcc-server-${VERSION}
 CATEGORIES =		devel net
 
 HOMEPAGE =		https://github.com/distcc/distcc
 
+MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MULTI_PACKAGES =	-main -gtk
+MULTI_PACKAGES =	-main -gtk -server
 
 MODULES =		devel/gettext \
 			lang/python
 
 WANTLIB +=		c popt pthread
+LIB_DEPENDS =		devel/popt
 
-LIB_DEPENDS-main =	devel/popt
+LIB_DEPENDS-main =	${LIB_DEPENDS}
 WANTLIB-main =		${WANTLIB} ${MODPY_WANTLIB}
 
+WANTLIB-server =	${WANTLIB}
+LIB_DEPENDS-server =	${LIB_DEPENDS}
+
 LIB_DEPENDS-gtk =	${MODGETTEXT_LIB_DEPENDS} \
-			devel/popt \
+			${LIB_DEPENDS} \
 			x11/gtk+2
 RUN_DEPENDS-gtk =	${MODGETTEXT_LIB_DEPENDS} \
 			devel/desktop-file-utils
@@ -45,7 +53,7 @@ CONFIGURE_ARGS +=	--without-libiberty \
 			--without-avahi \
 			--with-gtk
 
-FAKE_FLAGS =		sysconfdir="${PREFIX}/share/examples/distcc"
+FAKE_FLAGS =		sysconfdir="${PREFIX}/share/examples/"
 
 # autohell
 AUTOCONF_VERSION =      2.62
@@ -61,5 +69,9 @@ pre-configure:
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		    	/bin/sh ./autogen.sh
 # /autohell
+
+# remove RH junk
+post-install:
+	rm -r ${PREFIX}/share/examples/default
 
 .include <bsd.port.mk>

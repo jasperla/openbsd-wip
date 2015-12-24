@@ -11,12 +11,7 @@ such as the following can be used as `~/.distcc/hosts`:
 
     localhost 192.168.178.13
 
+or `/etc/distcc/hosts` for a system-wide configuration.
+
 Then set `$CC` to `distcc` to distribute compilation jobs across the
 configured nodes.
-
-distccd
-=======
-In order to allow incoming connections to a "worker", one has to
-modify `distccd_flags` to reflect the address/subnet of originating
-connections.
-

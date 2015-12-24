@@ -1,8 +1,5 @@
 @comment $OpenBSD$
-@newgroup _distcc:764
-@newuser _distcc:764:_distcc:daemon:distcc user:/nonexistent:/sbin/nologin
 @bin bin/distcc
-@bin bin/distccd
 @bin bin/distccmon-text
 @bin bin/lsdistcc
 bin/pump
@@ -58,7 +55,6 @@ lib/python${MODPY_VERSION}/site-packages/include_server/setup.pyc
 lib/python${MODPY_VERSION}/site-packages/include_server/statistics.py
 lib/python${MODPY_VERSION}/site-packages/include_server/statistics.pyc
 @man man/man1/distcc.1
-@man man/man1/distccd.1
 @man man/man1/distccmon-text.1
 @man man/man1/include_server.1
 @man man/man1/lsdistcc.1
@@ -91,13 +87,9 @@ share/doc/distcc/survey.txt
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/distcc/
 @sample ${SYSCONFDIR}/distcc/
-share/examples/distcc/default/
-share/examples/distcc/default/distcc
-share/examples/distcc/distcc/
-share/examples/distcc/distcc/clients.allow
+share/examples/distcc/clients.allow
 @sample ${SYSCONFDIR}/distcc/clients.allow
-share/examples/distcc/distcc/commands.allow.sh
+share/examples/distcc//commands.allow.sh
 @sample ${SYSCONFDIR}/distcc/commands.allow.sh
-share/examples/distcc/distcc/hosts
+share/examples/distcc//hosts
 @sample ${SYSCONFDIR}/distcc/hosts
-@rcscript ${RCDIR}/distccd
