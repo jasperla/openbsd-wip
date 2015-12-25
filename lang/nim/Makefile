@@ -22,10 +22,6 @@ WANTLIB =		c m
 
 TEST_DEPENDS =		lang/nim
 
-post-patch:
-	find ${WRKSRC} -iname 'stdlib_nativesockets.c' \
-		-exec sed -i '/hints\.ai\_flags\ \=\ AI\_V4MAPPED\;/d' {} \;
-
 do-build:
 	cd ${WRKDIST} && ${SETENV} CC="${CC}" LINKER="${CC}" \
 		COMP_FLAGS="${CFLAGS}" sh build.sh
