@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		open source implementation of TES III: Morrowind
 
-V =			0.30.0
+V =			0.37.0
 DISTNAME =		openmw-$V
 
 CATEGORIES =		games
@@ -19,13 +19,17 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILE_CDROM =	not for sale
 PERMIT_DISTFILE_FTP =	Yes
 
-WANTLIB += BulletCollision BulletDynamics LinearMath MyGUI.OgrePlatform
-WANTLIB += MyGUIEngine OgreMain QtGui QtNetwork SDL2 avcodec avformat
-WANTLIB += avutil boost_filesystem-mt boost_program_options-mt
-WANTLIB += boost_system-mt boost_thread-mt boost_wave-mt c m openal
-WANTLIB += pthread swscale unshield
+WANTLIB += BulletCollision GL LinearMath MyGUIEngine OpenThreads
+WANTLIB += QtGui QtNetwork QtOpenGL SDL2 Xt avcodec avformat avutil
+WANTLIB += boost_filesystem-mt boost_program_options-mt boost_system-mt
+WANTLIB += boost_thread-mt c freetype m openal osg osgAnimation
+WANTLIB += osgDB osgFX osgGA osgParticle osgQt osgText osgUtil
+WANTLIB += osgViewer pthread swresample swscale unshield
 
-MASTER_SITES =		https://github.com/OpenMW/openmw/archive/
+MASTER_SITES =		${MASTER_SITES_GITHUB}
+GH_ACCOUNT =		OpenMW
+GH_PROJECT =		openmw
+GH_TAG =		openmw-$V
 
 MODULES =		gcc4 devel/cmake x11/qt4
 MODGCC4_ARCHS = 	*
@@ -36,7 +40,7 @@ LIB_DEPENDS =		audio/openal \
 			devel/mygui \
 			devel/sdl2 \
 			graphics/ffmpeg \
-			x11/ogre,-main>=1.8.1 \
+			graphics/openscenegraph \
 			archivers/unshield
 RUN_DEPENDS  = 		devel/desktop-file-utils
 
@@ -44,13 +48,13 @@ CONFIGURE_ARGS += 	-DBINDIR=${LOCALBASE}/bin \
 			-DDATADIR:PATH=${LOCALBASE}/share/openmw \
 			-DSYSCONFDIR=${PREFIX}/share/examples/openmw \
 			-DCMAKE_EXE_LINKER_FLAGS="-L${X11BASE}/lib" \
-			-DMORROWIND_DATA_FILES="${LOCALBASE}/share/openmw/data" \
-			-DMORROWIND_RESOURCE_FILES="${LOCALBASE}/share/openmw/resources"
+			-DMORROWIND_DATA_FILES="${LOCALBASE}/share/openmw/data"
 
 NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/openmw-openmw-$V
 
-CFLAGS += 		-pthread
+CFLAGS += 		-I${X11BASE}/include -pthread
+CXXFLAGS += 		-I${X11BASE}/include -pthread
 
 .include <bsd.port.mk>
