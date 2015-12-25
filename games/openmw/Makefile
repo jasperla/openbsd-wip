@@ -47,6 +47,7 @@ RUN_DEPENDS  = 		devel/desktop-file-utils
 CONFIGURE_ARGS += 	-DBINDIR=${LOCALBASE}/bin \
 			-DDATADIR:PATH=${LOCALBASE}/share/openmw \
 			-DSYSCONFDIR=${PREFIX}/share/examples/openmw \
+			-DGLOBAL_CONFIG_PATH="${SYSCONFDIR}" \
 			-DCMAKE_EXE_LINKER_FLAGS="-L${X11BASE}/lib" \
 			-DMORROWIND_DATA_FILES="${LOCALBASE}/share/openmw/data"
 
