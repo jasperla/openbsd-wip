@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+lib/psi/
+lib/psi/plugins/
+lib/psi/plugins/libgstprovider.so

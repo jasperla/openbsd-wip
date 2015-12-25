@@ -1,0 +1,44 @@
+$OpenBSD$
+--- gstprovider/devices.cpp.orig	Tue Jun  9 14:12:11 2009
++++ gstprovider/devices.cpp	Wed Apr 24 22:42:13 2013
+@@ -88,6 +88,8 @@ static bool element_should_use_probe(const QString &el
+ 	// these should use DeviceEnum
+ 	if(element_name == "alsasrc" ||
+ 		element_name == "alsasink" ||
++		element_name == "sndiosrc" ||
++		element_name == "sndiosink" ||
+ 		element_name == "osssrc" ||
+ 		element_name == "osssink" ||
+ 		element_name == "v4lsrc" ||
+@@ -205,6 +207,13 @@ static QString element_name_for_driver(const QString &
+ 		else if(type == PDevice::AudioIn)
+ 			element_name = "alsasrc";
+ 	}
++	else if(driver == "sndio")
++	{
++		if(type == PDevice::AudioOut)
++			element_name = "sndiosink";
++		else if(type == PDevice::AudioIn)
++			element_name = "sndiosrc";
++	}
+ 	else if(driver == "oss")
+ 	{
+ 		if(type == PDevice::AudioOut)
+@@ -425,7 +434,7 @@ QList<GstDevice> devices_list(PDevice::Type type)
+ #elif defined(Q_OS_LINUX)
+ 		<< "alsa"
+ #else
+-		<< "oss"
++		<< "sndio"
+ #endif
+ 		<< "directsound";
+ 	}
+@@ -437,7 +446,7 @@ QList<GstDevice> devices_list(PDevice::Type type)
+ #elif defined(Q_OS_LINUX)
+ 		<< "alsa"
+ #else
+-		<< "oss"
++		<< "sndio"
+ #endif
+ 		<< "directsound";
+ 	}

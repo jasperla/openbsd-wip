@@ -1,0 +1,12 @@
+$OpenBSD$
+--- gstprovider/gstcustomelements/gstcustomelements.h.orig	Wed Apr 24 14:46:41 2013
++++ gstprovider/gstcustomelements/gstcustomelements.h	Wed Apr 24 14:47:27 2013
+@@ -21,7 +21,7 @@
+ #ifndef GSTCUSTOMELEMENTS_H
+ #define GSTCUSTOMELEMENTS_H
+ 
+-#include <glib/gthread.h>
++#include <glib.h>
+ #include <gst/gst.h>
+ #include <gst/base/gstpushsrc.h>
+ #include <gst/video/video.h>

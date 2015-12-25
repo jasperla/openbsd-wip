@@ -1,0 +1,55 @@
+$OpenBSD$
+--- gstprovider/deviceenum/deviceenum_unix.cpp.orig	Wed Nov 19 07:10:01 2008
++++ gstprovider/deviceenum/deviceenum_unix.cpp	Thu Apr 25 00:35:27 2013
+@@ -85,6 +85,33 @@ static bool check_oss(const QString &dev, bool input)
+ 	return true;
+ }
+ 
++static QList<Item> get_sndio_items(int type)
++{
++	QList<Item> out;
++
++	if(type & DIR_INPUT) {
++		Item i;
++		i.type = Item::Audio;
++		i.dir = Item::Input;
++		i.name = "default";
++		i.driver = "sndio";
++		i.id = "";
++		out += i;
++	}
++
++	if(type & DIR_OUTPUT) {
++		Item i;
++		i.type = Item::Audio;
++		i.dir = Item::Output;
++		i.name = "default";
++		i.driver = "sndio";
++		i.id = "";
++		out += i;
++	}
++
++	return out;
++}
++
+ static QList<Item> get_oss_items(int type)
+ {
+ 	QList<Item> out;
+@@ -614,6 +641,8 @@ static QList<Item> get_v4l2_items()
+ QList<Item> audioOutputItems(const QString &driver)
+ {
+ 	QList<Item> out;
++	if(driver.isEmpty() || driver == "sndio")
++		out += get_sndio_items(DIR_OUTPUT);
+ 	if(driver.isEmpty() || driver == "oss")
+ 		out += get_oss_items(DIR_OUTPUT);
+ 	if(driver.isEmpty() || driver == "alsa")
+@@ -624,6 +653,8 @@ QList<Item> audioOutputItems(const QString &driver)
+ QList<Item> audioInputItems(const QString &driver)
+ {
+ 	QList<Item> out;
++	if(driver.isEmpty() || driver == "sndio")
++		out += get_sndio_items(DIR_INPUT);
+ 	if(driver.isEmpty() || driver == "oss")
+ 		out += get_oss_items(DIR_INPUT);
+ 	if(driver.isEmpty() || driver == "alsa")

@@ -1,0 +1,12 @@
+$OpenBSD$
+--- gstprovider/gstthread.cpp.orig	Sun May 17 23:55:27 2009
++++ gstprovider/gstthread.cpp	Wed Apr 24 22:28:53 2013
+@@ -239,7 +239,7 @@ class GstSession (public)
+ 			<< "v4l2src";
+ #elif defined(Q_OS_UNIX)
+ 			reqelem
+-			<< "osssrc" << "osssink";
++			<< "sndiosrc" << "sndiosink";
+ #elif defined(Q_OS_WIN)
+ 			reqelem
+ 			<< "directsoundsrc" << "directsoundsink"
