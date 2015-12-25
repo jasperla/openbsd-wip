@@ -1,12 +1,33 @@
 $OpenBSD$
---- retrace/glws_egl_xlib.cpp.orig	Sun Jul 21 17:36:26 2013
-+++ retrace/glws_egl_xlib.cpp	Sun Jul 21 17:36:42 2013
-@@ -415,7 +415,7 @@ createContext(const Visual *_visual, Context *shareCon
+--- retrace/glws_egl_xlib.cpp.orig	Tue Nov 24 09:19:57 2015
++++ retrace/glws_egl_xlib.cpp	Fri Dec 25 22:39:57 2015
+@@ -247,7 +247,7 @@ load(const char *filename)
  
-     switch (profile) {
-     case PROFILE_COMPAT:
+ void
+ init(void) {
+-    load("libEGL.so.1");
++    load("libEGL.so");
+ 
+     initX();
+ 
+@@ -414,7 +414,7 @@ createContext(const Visual *_visual, Context *shareCon
+ 
+     int contextFlags = 0;
+     if (profile.api == glprofile::API_GL) {
 -        load("libGL.so.1");
 +        load("libGL.so");
-         eglBindAPI(EGL_OPENGL_API);
-         break;
-     case PROFILE_CORE:
+ 
+         if (has_EGL_KHR_create_context) {
+             attribs.add(EGL_CONTEXT_MAJOR_VERSION_KHR, profile.major);
+@@ -430,9 +430,9 @@ createContext(const Visual *_visual, Context *shareCon
+         }
+     } else if (profile.api == glprofile::API_GLES) {
+         if (profile.major >= 2) {
+-            load("libGLESv2.so.2");
++            load("libGLESv2.so");
+         } else {
+-            load("libGLESv1_CM.so.1");
++            load("libGLESv1_CM.so");
+         }
+ 
+         if (has_EGL_KHR_create_context) {
