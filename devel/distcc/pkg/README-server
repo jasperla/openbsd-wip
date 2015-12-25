@@ -11,6 +11,3 @@ daemon has to be running on the remote hosts. Jobs will run by default
 as the unprivileged `_distcc` user. In order to allow incoming
 connections to a "worker", one has to modify `distccd_flags` to
 reflect the address/subnet of originating connections.
-
-For SSH connections prefix hosts with `@` in the host
-specification. distcc will run the jobs as the user invoking distcc.
