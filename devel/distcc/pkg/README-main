@@ -15,3 +15,16 @@ or `/etc/distcc/hosts` for a system-wide configuration.
 
 Then set `$CC` to `distcc` to distribute compilation jobs across the
 configured nodes.
+
+#ifdef notyet
+USE_DISTCC
+==========
+To allow building ports with distcc, set `USE_DISTCC=Yes` either in the
+environment or in `/etc/mk.conf`. When using `USE_DISTCC` the the `DISTCC_DIR`
+is set to ${WRKOBJDIR}/.distcc.
+
+Note that it's currently not (yet) possible to enable both `USE_DISTCC` and
+`USE_CCACHE`. Also pumping mode is not setup/enabled at this moment.
+
+To monitor a build be sure to point DISTCC_DIR to the correct directory.
+#endif
