@@ -29,7 +29,7 @@ WANTLIB += osgViewer pthread swresample swscale unshield
 MASTER_SITES =		${MASTER_SITES_GITHUB}
 GH_ACCOUNT =		OpenMW
 GH_PROJECT =		openmw
-GH_TAG =		openmw-$V
+GH_TAGNAME =		openmw-$V
 
 MODULES =		gcc4 devel/cmake x11/qt4
 MODGCC4_ARCHS = 	*
