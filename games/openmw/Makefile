@@ -13,11 +13,8 @@ HOMEPAGE =		https://openmw.org/en/
 
 MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
-# GPLv3 / OFLv1.1 / Daedric font not for sale!
-PERMIT_PACKAGE_CDROM =	not for sale
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILE_CDROM =	not for sale
-PERMIT_DISTFILE_FTP =	Yes
+# GPLv3 / custom BSD-like font license
+PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += BulletCollision GL LinearMath MyGUIEngine OpenThreads
 WANTLIB += QtGui QtNetwork QtOpenGL SDL2 Xt avcodec avformat avutil
@@ -49,7 +46,8 @@ CONFIGURE_ARGS += 	-DBINDIR=${LOCALBASE}/bin \
 			-DSYSCONFDIR=${PREFIX}/share/examples/openmw \
 			-DGLOBAL_CONFIG_PATH="${SYSCONFDIR}" \
 			-DCMAKE_EXE_LINKER_FLAGS="-L${X11BASE}/lib" \
-			-DMORROWIND_DATA_FILES="${LOCALBASE}/share/openmw/data"
+			-DMORROWIND_DATA_FILES="${LOCALBASE}/share/openmw/data"\
+			-DOPENMW_RESOURCE_FILES="${LOCALBASE}/share/openmw/resources"
 
 NO_TEST =		Yes
 

@@ -15,6 +15,7 @@ share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/openmw/
 @sample ${SYSCONFDIR}/openmw/
 share/examples/openmw/gamecontrollerdb.txt
+@sample ${SYSCONFDIR}/openmw/gamecontrollerdb.txt
 share/examples/openmw/opencs.ini
 @sample ${SYSCONFDIR}/openmw/opencs.ini
 share/examples/openmw/openmw.cfg
@@ -22,6 +23,7 @@ share/examples/openmw/openmw.cfg
 share/examples/openmw/settings-default.cfg
 @sample ${SYSCONFDIR}/openmw/settings-default.cfg
 share/examples/openmw/version
+@sample ${SYSCONFDIR}/openmw/version
 share/licenses/
 share/licenses/openmw/
 share/licenses/openmw/DejaVu Font License.txt
