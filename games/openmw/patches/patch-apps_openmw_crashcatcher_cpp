@@ -1,7 +1,7 @@
 $OpenBSD$
---- apps/openmw/crashcatcher.cpp.orig	Fri May 23 13:55:47 2014
-+++ apps/openmw/crashcatcher.cpp	Fri Jul 11 23:46:54 2014
-@@ -5,11 +5,14 @@
+--- apps/openmw/crashcatcher.cpp.orig	Sun Nov 22 19:54:17 2015
++++ apps/openmw/crashcatcher.cpp	Sat Dec 26 18:01:49 2015
+@@ -5,7 +5,9 @@
  #include <sys/stat.h>
  #include <sys/wait.h>
  #include <sys/param.h>
@@ -11,8 +11,12 @@ $OpenBSD$
  #include <sys/utsname.h>
  #include <string.h>
  #include <errno.h>
- #include <limits.h>
-+#include <signal.h>
+@@ -24,7 +26,7 @@
+ #ifndef PR_SET_PTRACER
+ #define PR_SET_PTRACER 0x59616d61
+ #endif
+-#elif defined (__APPLE__)
++#elif defined (__APPLE__) || defined(__OpenBSD__)
+ #include <signal.h>
+ #endif
  
- 
- #include <pthread.h>

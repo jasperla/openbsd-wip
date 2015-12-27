@@ -7,12 +7,10 @@ COMMENT-server =	Worms-like strategy game, server
 
 MULTI_PACKAGES =	-main -server
 
-#SHARED_LIBS +=  avwrapper                 0.0 # 0.0
-#SHARED_LIBS +=  hwphysfs                  0.0 # 2.1
 SHARED_LIBS +=  physlayer                 0.0 # 0.0
 
-R =			0.9.21
-V =			$R.1
+R =			0.9.22
+V =			$R
 DISTNAME =		hedgewars-src-$V
 PKGNAME-main =		hedgewars-$V
 PKGNAME-server =	hedgewars-server-$V
@@ -33,7 +31,7 @@ WANTLIB-main += ${MODLUA_WANTLIB} ${MODQT4_WANTLIB}
 # dlopen()ed; do not remove.
 WANTLIB-main += GL GLU glut
 
-WANTLIB-server = c m pthread z ${MODLIBICONV_WANTLIB}
+WANTLIB-server = c m pthread ${MODLIBICONV_WANTLIB}
 
 MASTER_SITES =		http://download.gna.org/hedgewars/
 EXTRACT_SUFX =		.tar.bz2
@@ -42,8 +40,6 @@ MODULES =		devel/cmake \
 			x11/qt4 \
 			lang/lua \
 			converters/libiconv
-#MODCLANG_LANGS =	c c++
-#MODCLANG_ARCHS =	*
 USE_NINJA =		No
 BUILD_DEPENDS =		lang/fpc
 LIB_DEPENDS-main =	devel/sdl-image \
@@ -57,6 +53,8 @@ LIB_DEPENDS-server =	converters/libiconv
 
 CONFIGURE_ARGS +=	-DNOVIDEOREC=ON
 
+CONFIGURE_ENV +=	HOME="${WRKBUILD}"
+
 PSEUDO_FLAVORS = no_server
 FLAVOR ?=
 
@@ -66,17 +64,15 @@ CONFIGURE_ARGS +=	-DNOSERVER=ON
 MODULES +=		lang/ghc
 BUILD_DEPENDS +=	devel/hs-vector \
 			devel/hs-network \
-			devel/hs-dataenc \
 			devel/hs-random \
 			devel/hs-hslogger \
+			devel/hs-dataenc \
 			security/hs-SHA \
 			security/hs-entropy \
 			textproc/hs-bytestring-show \
 			archivers/hs-zlib
 MODGHC_BUILD =		nort
 .endif
-
-#CFLAGS +=		-I${X11BASE}/include
 
 NO_TEST =		Yes
 

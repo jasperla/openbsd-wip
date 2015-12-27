@@ -17,4 +17,6 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
+MODGHC_PACKAGE_KEY =	0ooW8jYoKWjDUFkZlEvhJX
+
 .include <bsd.port.mk>

@@ -1,3 +1,0 @@
- - patch default configs
- - install configs in /usr/local and @sample them to /etc
- - check whether devel/uuid is a RDEP

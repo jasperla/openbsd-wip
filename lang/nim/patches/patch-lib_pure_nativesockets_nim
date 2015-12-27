@@ -1,22 +1,12 @@
 $OpenBSD$
---- lib/pure/nativesockets.nim.orig	Tue Oct 27 22:41:25 2015
-+++ lib/pure/nativesockets.nim	Tue Dec 22 01:08:49 2015
-@@ -203,9 +203,6 @@ proc getAddrInfo*(address: string, port: Port, domain:
-   hints.ai_family = toInt(domain)
+--- lib/pure/nativesockets.nim.orig	Fri Dec 25 00:12:35 2015
++++ lib/pure/nativesockets.nim	Fri Dec 25 00:13:00 2015
+@@ -204,7 +204,7 @@ proc getAddrInfo*(address: string, port: Port, domain:
    hints.ai_socktype = toInt(sockType)
    hints.ai_protocol = toInt(protocol)
--  # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=198092
+   # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=198092
 -  when not defined(freebsd):
--    hints.ai_flags = AI_V4MAPPED
++  when not defined(freebsd) and not defined(openbsd) and not defined(netbsd):
+     hints.ai_flags = AI_V4MAPPED
    var gaiResult = getaddrinfo(address, $port, addr(hints), result)
    if gaiResult != 0'i32:
-     when useWinVersion:
-@@ -353,8 +350,6 @@ proc getAddrString*(sockAddr: ptr SockAddr): string =
-       let addr6 = addr cast[ptr Sockaddr_in6](sockAddr).sin6_addr
-       discard posix.inet_ntop(posix.AF_INET6, addr6, result.cstring,
-           result.len.int32)
--      if posix.IN6_IS_ADDR_V4MAPPED(addr6) != 0:
--        result = result.substr("::ffff:".len)
-   else:
-     raiseOSError(osLastError(), "unknown socket family in getAddrString")
- 

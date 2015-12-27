@@ -2,7 +2,7 @@
 
 COMMENT=		HTML parser/tokeniser based for HTML5
 
-MODPY_EGG_VERSION=	0.999
+MODPY_EGG_VERSION=	0.9999999
 DISTNAME=		html5lib-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=    		devel www textproc
@@ -16,6 +16,16 @@ PKG_ARCH=		*
 MODULES=		lang/python
 MODPY_PI =		Yes
 
-TEST_DEPENDS=	devel/py-simplejson
+RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
+TEST_DEPENDS =		${RUN_DEPENDS} \
+			devel/py-nose${MODPY_FLAVOR}
+
+FLAVORS =		python3
+FLAVOR ?=
+
+MODPY_SETUPTOOLS =	Yes
+
+do-test: fake
+	cd ${WRKSRC} && ${LOCALBASE}/bin/nosetests${MODPY_BIN_SUFFIX}
 
 .include <bsd.port.mk>

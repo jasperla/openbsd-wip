@@ -1,7 +1,7 @@
 $OpenBSD: patch-config_nim_cfg,v 1.1.1.1 2015/10/19 21:50:14 juanfra Exp $
 --- config/nim.cfg.orig	Tue Oct 27 22:41:25 2015
-+++ config/nim.cfg	Tue Dec 22 04:27:39 2015
-@@ -75,7 +78,7 @@ path="$lib/pure"
++++ config/nim.cfg	Fri Dec 25 00:08:46 2015
+@@ -75,7 +75,7 @@ path="$lib/pure"
    @end
    @if bsd or haiku:
      # BSD got posix_spawn only recently, so we deactivate it for osproc:
@@ -10,7 +10,7 @@ $OpenBSD: patch-config_nim_cfg,v 1.1.1.1 2015/10/19 21:50:14 juanfra Exp $
      # at least NetBSD has problems with thread local storage:
      tlsEmulation:on
    @end
-@@ -103,6 +106,8 @@ path="$lib/pure"
+@@ -103,6 +103,8 @@ path="$lib/pure"
  @else:
    gcc.options.always = "-w"
    gcc.cpp.options.always = "-w -fpermissive"
@@ -19,7 +19,7 @@ $OpenBSD: patch-config_nim_cfg,v 1.1.1.1 2015/10/19 21:50:14 juanfra Exp $
  @end
  
  # Configuration for Objective-C compiler:
-@@ -135,15 +140,20 @@ clang.objc.options.linker = "-lobjc -lgnustep-base"
+@@ -135,15 +137,20 @@ clang.objc.options.linker = "-lobjc -lgnustep-base"
    gcc.options.linker %= "-L $WIND_BASE/target/lib/usr/lib/ppc/PPC32/common -mrtp -fno-strict-aliasing -D_C99 -D_HAS_C9X -std=c99 -fasm -Wall -Wno-write-strings"
  @end
  
@@ -42,7 +42,7 @@ $OpenBSD: patch-config_nim_cfg,v 1.1.1.1 2015/10/19 21:50:14 juanfra Exp $
  # Configuration for the LLVM GCC compiler:
  llvm_gcc.options.debug = "-g"
  llvm_gcc.options.always = "-w"
-@@ -153,7 +163,7 @@ llvm_gcc.options.size = "-Os"
+@@ -153,7 +160,7 @@ llvm_gcc.options.size = "-Os"
  # Configuration for the LLVM CLang compiler:
  clang.options.debug = "-g"
  clang.options.always = "-w"
