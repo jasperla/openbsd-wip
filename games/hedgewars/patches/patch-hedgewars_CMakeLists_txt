@@ -1,7 +1,7 @@
 $OpenBSD$
---- hedgewars/CMakeLists.txt.orig	Tue Jan  6 21:56:00 2015
-+++ hedgewars/CMakeLists.txt	Mon Apr  6 00:21:08 2015
-@@ -148,7 +148,7 @@ if(LUA_SYSTEM)
+--- hedgewars/CMakeLists.txt.orig	Thu Jul 30 23:31:06 2015
++++ hedgewars/CMakeLists.txt	Sun Dec 27 11:40:11 2015
+@@ -162,7 +162,7 @@ if(LUA_SYSTEM)
      get_filename_component(LUA_LIBRARY_DIR ${LUA_LIBRARY} PATH)
      get_filename_component(LUA_LIBRARY_NAME ${LUA_LIBRARY} NAME)
      #NAME_WE would strip the .1 (or .2) next to the ".so"

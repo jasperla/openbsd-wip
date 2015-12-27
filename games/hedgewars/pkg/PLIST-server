@@ -1,5 +1,5 @@
 @comment $OpenBSD$
-@newgroup _hedgewars:751
-@newuser _hedgewars:751:751:daemon:Hedgewars server:/nonexistent:/sbin/nologin
+@newgroup _hedgewars:765
+@newuser _hedgewars:765:765:daemon:Hedgewars server:/nonexistent:/sbin/nologin
 @bin bin/hedgewars-server
 @rcscript ${RCDIR}/hedgewars_server
