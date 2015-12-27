@@ -57,5 +57,7 @@ post-install:
 		chown ${BINOWN}:${BINGRP} lazarus startlazarus lazbuild && \
 		chmod ${BINMODE} lazarus startlazarus lazbuild
 	find ${PREFIX} -name '*.orig' -exec rm -f {} \+
+	cd ${PREFIX}/share/lazarus/components/chmhelp/lhelp/lhelp.app/Contents/MacOS \
+		&& ln -sf ../../../../lhelp .
 
 .include <bsd.port.mk>
