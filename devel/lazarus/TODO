@@ -1,6 +1,3 @@
-- fpc.port.mk ?
-- access violation on startup
-
 Warning: symlink(s) point to non-existent /usr/ports/pobj/lazarus-1.0.10/fake-amd64/usr/local/share/lazarus/components/chmhelp/lhelp/lhelp.app/Contents/MacOS/../../../lhelp
         /usr/ports/pobj/lazarus-1.0.10/fake-amd64/usr/local/share/lazarus/components/chmhelp/lhelp/lhelp.app/Contents/MacOS/lhelp
 

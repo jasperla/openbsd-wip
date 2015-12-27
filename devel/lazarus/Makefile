@@ -4,11 +4,11 @@ ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		class libraries for FPC that emulate Delphi
 
-V =			1.2
+V =			1.4.4
 DISTNAME =		lazarus-${V}-0
 PKGNAME =		lazarus-${V}
 
-FPC_V =			2.6.4
+FPC_V =			3.0.0
 
 CATEGORIES =		devel
 
@@ -16,7 +16,7 @@ HOMEPAGE =		http://lazarus.freepascal.org/
 
 MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
-# GPLv2
+# GPLv2+ / LGPL / MPL
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += X11 atk-1.0 c cairo gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0
@@ -49,16 +49,6 @@ USE_GMAKE =		Yes
 
 WRKDIST =		${WRKDIR}/lazarus
 
-post-extract:
-	cd ${WRKSRC}/ide/include && mkdir openbsd && cp netbsd/lazconf.inc \
-		openbsd
-
-do-configure:
-	${LOCALBASE}/bin/fpcmkcfg -d "basepath=${LOCALBASE}/lib/fpc/${FPC_V}" \
-		-o ${WRKDIR}/fpc.cfg
-	cd ${WRKSRC} && env FPCDIR="${LOCALBASE}/lib/fpc/${FPC_V}" \
-		find . -name Makefile.fpc -exec ${LOCALBASE}/bin/fpcmake {} \;
-
 post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/lazarus
 	find ${PREFIX}/share/lazarus -type d -exec chmod ${DIRMODE} {} \+
@@ -66,10 +56,6 @@ post-install:
 	cd ${PREFIX}/share/lazarus && \
 		chown ${BINOWN}:${BINGRP} lazarus startlazarus lazbuild && \
 		chmod ${BINMODE} lazarus startlazarus lazbuild
-.for _b in lazarus-ide lazarus
-	cd ${PREFIX}/bin && ln -sf ../share/lazarus/lazarus ${_b}
-.endfor
-	cd ${PREFIX}/bin && ln -sf ../share/lazarus/startlazarus .
-	cd ${PREFIX}/bin && ln -sf ../share/lazarus/lazbuild .
+	find ${PREFIX} -name '*.orig' -exec rm -f {} \+
 
 .include <bsd.port.mk>
