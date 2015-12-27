@@ -2,9 +2,9 @@ $OpenBSD$
 
 Append eg++ before g++ so eg++ is used by default.
 
---- src/plugins/projectexplorer/gcctoolchain.cpp.orig	Fri Oct  2 15:55:32 2015
-+++ src/plugins/projectexplorer/gcctoolchain.cpp	Fri Oct 16 15:21:00 2015
-@@ -621,7 +621,7 @@ QList<FileName> GccToolChain::suggestedMkspecList() co
+--- src/plugins/projectexplorer/gcctoolchain.cpp.orig	Tue Nov 24 13:59:51 2015
++++ src/plugins/projectexplorer/gcctoolchain.cpp	Sat Nov 28 12:44:19 2015
+@@ -606,7 +606,7 @@ QList<FileName> GccToolChain::suggestedMkspecList() co
  
  QString GccToolChain::makeCommand(const Environment &environment) const
  {
@@ -13,11 +13,12 @@ Append eg++ before g++ so eg++ is used by default.
      FileName tmp = environment.searchInPath(make);
      return tmp.isEmpty() ? make : tmp.toString();
  }
-@@ -798,6 +798,7 @@ QList<ToolChain *> GccToolChainFactory::autoDetect()
-         tcs.append(autoDetectToolchains(QLatin1String("g++-4.0"), Abi::hostAbi()));
-         tcs.append(autoDetectToolchains(QLatin1String("g++-4.2"), Abi::hostAbi()));
+@@ -784,6 +784,8 @@ QList<ToolChain *> GccToolChainFactory::autoDetect(con
+         tcs.append(autoDetectToolchains(QLatin1String("g++-4.2"), Abi::hostAbi(),
+                                         Constants::GCC_TOOLCHAIN_TYPEID, alreadyKnown));
      }
-+    tcs.append(autoDetectToolchains(QLatin1String("eg++"), Abi::hostAbi()));
-     tcs.append(autoDetectToolchains(QLatin1String("g++"), Abi::hostAbi()));
++    tcs.append(autoDetectToolchains(QLatin1String("eg++"), Abi::hostAbi(),
++                                    Constants::GCC_TOOLCHAIN_TYPEID, alreadyKnown));
+     tcs.append(autoDetectToolchains(QLatin1String("g++"), Abi::hostAbi(),
+                                     Constants::GCC_TOOLCHAIN_TYPEID,alreadyKnown));
  
-     return tcs;
