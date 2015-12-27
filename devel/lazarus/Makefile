@@ -45,7 +45,7 @@ SUBST_VARS +=		CONFIG
 
 USE_GMAKE =		Yes
 
-#NO_REGRESS =		Yes
+NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/lazarus
 
