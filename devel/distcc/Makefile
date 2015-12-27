@@ -26,11 +26,14 @@ MULTI_PACKAGES =	-main -gtk -server
 
 MODULES =		devel/gettext \
 			lang/python
+# Only -main needs an RDEP
+MODPY_RUNDEP =		No
 
 WANTLIB +=		c popt pthread
 LIB_DEPENDS =		devel/popt
 
 LIB_DEPENDS-main =	${LIB_DEPENDS}
+RUN_DEPENDS-main +=	${MODPY_RUN_DEPENDS}
 WANTLIB-main =		${WANTLIB} ${MODPY_WANTLIB}
 
 WANTLIB-server =	${WANTLIB}
