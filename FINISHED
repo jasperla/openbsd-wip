@@ -14,7 +14,6 @@ games/glob2 		sent to ports@ 2010-09-02 and 2009-08-26
 geo/mtkbabel		sent to ports 2011-03-30
 graphics/jpegexiforient ready to import
 math/p5-Math-GSL:	ready for import, did not sent to ports@, regress depends on devel/p5-Test-Most (wenheping)
-misc/dvtm		sent to ports@ 2012/12/04. Ready for import.
 misc/notebook 		sent to ports 2013-06-29
 misc/py-asciinema	sent to ports 2014-01-24
 multimedia/fuzemux	sent to ports 2013-01-13
