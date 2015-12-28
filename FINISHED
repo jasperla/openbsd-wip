@@ -84,7 +84,6 @@ math/p5-Math-Random-ISAAC-XS		ready to import, sent to ports@ 2015-01-24 (garcer
 devel/p5-Number-Tolerant		ready to import, sent to ports@ 2015-01-24 (garcer)
 www/p5-Session-Storage-Secure		ready to import, sent to ports@ 2015-01-24 (garcer)
 www/p5-Dancer2-Session-Cookie		ready to import, sent to ports@ 2015-01-24 (garcer)
-net/ocserv				ready, waiting for unlock -sthen
 comms/ems-flasher			ready to import, waiting for unlock (bentley@)
 devel/hs-file-embed			ready to import, sent to ports@ 2015-05-08 (diethyl)
 devel/p5-Test-API			ready to import, sent to ports@ 2015-08-23 (garcer)
