@@ -15,13 +15,14 @@ HOMEPAGE =		https://www.apertium.org/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c iconv lttoolbox3-3.3 lzma m pcre pcrecpp pcreposix pthread
+WANTLIB += c lttoolbox3-3.3 lzma m pcre pcrecpp pcreposix pthread
 WANTLIB += stdc++ xml2 z
+
+MODULES =		converters/libiconv
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=apertium/}
 
-BUILD_DEPENDS =		shells/bash \
-			textproc/libxslt
+BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		shells/bash \
 			textproc/libxslt
 LIB_DEPENDS =		devel/pcre \
