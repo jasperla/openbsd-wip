@@ -37,4 +37,5 @@ pre-configure:
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		autoreconf -i
+
 .include <bsd.port.mk>
