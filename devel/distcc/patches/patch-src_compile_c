@@ -2,14 +2,16 @@ $OpenBSD$
 
 warning: format '%ld' expects type 'long int', but argument N has type 'time_t'
 
---- src/compile.c.orig	Wed Dec 23 22:31:21 2015
-+++ src/compile.c	Wed Dec 23 22:35:13 2015
-@@ -819,7 +819,7 @@ int dcc_build_somewhere_timed(char *argv[],
+--- src/compile.c.orig	Mon Aug 24 17:08:43 2015
++++ src/compile.c	Mon Dec 28 09:08:18 2015
+@@ -819,8 +819,8 @@ int dcc_build_somewhere_timed(char *argv[],
          timeval_subtract(&delta, &after, &before);
  
          rs_log(RS_LOG_INFO|RS_LOG_NONAME,
 -               "elapsed compilation time %ld.%06lds",
+-               delta.tv_sec, (long) delta.tv_usec);
 +               "elapsed compilation time %lld.%06lds",
-                delta.tv_sec, (long) delta.tv_usec);
++               (long long) delta.tv_sec, (long) delta.tv_usec);
      }
  
+     return ret;

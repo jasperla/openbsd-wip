@@ -2,9 +2,9 @@ $OpenBSD$
 
 warning: format '%ld' expects type 'long int', but argument N has type 'time_t'
 
---- src/exec.c.orig	Wed Dec 23 22:35:54 2015
-+++ src/exec.c	Wed Dec 23 22:36:12 2015
-@@ -489,7 +489,7 @@ int dcc_collect_child(const char *what, pid_t pid,
+--- src/exec.c.orig	Mon Aug 24 17:08:43 2015
++++ src/exec.c	Mon Dec 28 09:08:16 2015
+@@ -489,11 +489,11 @@ int dcc_collect_child(const char *what, pid_t pid,
               * critique_status(). */
              rs_trace("%s child %ld terminated with status %#x",
                       what, (long) ret_pid, *wait_status);
@@ -12,4 +12,10 @@ warning: format '%ld' expects type 'long int', but argument N has type 'time_t'
 +            rs_log_info("%s times: user %lld.%06lds, system %lld.%06lds, "
                          "%ld minflt, %ld majflt",
                          what,
-                         ru.ru_utime.tv_sec, (long) ru.ru_utime.tv_usec,
+-                        ru.ru_utime.tv_sec, (long) ru.ru_utime.tv_usec,
+-                        ru.ru_stime.tv_sec, (long) ru.ru_stime.tv_usec,
++                        (long long) ru.ru_utime.tv_sec, (long) ru.ru_utime.tv_usec,
++                        (long long) ru.ru_stime.tv_sec, (long) ru.ru_stime.tv_usec,
+                         ru.ru_minflt, ru.ru_majflt);
+ 
+             return 0;

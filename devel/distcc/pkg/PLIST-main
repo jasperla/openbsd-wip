@@ -89,7 +89,7 @@ share/examples/distcc/
 @sample ${SYSCONFDIR}/distcc/
 share/examples/distcc/clients.allow
 @sample ${SYSCONFDIR}/distcc/clients.allow
-share/examples/distcc//commands.allow.sh
+share/examples/distcc/commands.allow.sh
 @sample ${SYSCONFDIR}/distcc/commands.allow.sh
-share/examples/distcc//hosts
+share/examples/distcc/hosts
 @sample ${SYSCONFDIR}/distcc/hosts
