@@ -1,1 +1,1 @@
-Maybe get rid of inotify as well?  It is kqueue here in the end anyway.
+Waiting for v1.2.0+ release.

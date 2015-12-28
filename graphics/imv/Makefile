@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-V =			1.2.0
+V =			1.2.1
 COMMENT =		simple image viewer
 DISTNAME =		imv-$V
 CATEGORIES =		graphics x11
@@ -9,26 +9,30 @@ MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += lib/inotify/inotify SDL2 SDL2_ttf c fontconfig freeimage pthread
+WANTLIB += SDL2 SDL2_ttf c fontconfig freeimage pthread
 
 GH_ACCOUNT =		eXeC64
 GH_PROJECT =		imv
 GH_TAGNAME =		v$V
 
+# This will go away once upstream releases v1.2.0+
+GH_TAGNAME =
+GH_COMMIT =		287b549ce0e473e91dcf0e06e5f20a1c3b966aea
+
 MODULES =		lang/clang
 MODCLANG_ARCHS =	*
-LIB_DEPENDS =		devel/libinotify \
-			devel/sdl2 \
+LIB_DEPENDS =		devel/sdl2 \
 			devel/sdl2-ttf \
 			graphics/freeimage
-MAKE_FLAGS =		prefix=${PREFIX}
+MAKE_FLAGS +=		V=1 BUILDDIR="${WRKDIR}/build-${ARCH}"
+FAKE_FLAGS +=		$(MAKE_FLAGS) MANPREFIX=${PREFIX}/man PREFIX=${PREFIX}
 
 USE_GMAKE =		Yes
 
 .if !empty(DEBUG)
 ALL_TARGET =		debug
 .else
-ALL_TARGET =		imv
+ALL_TARGET =		${WRKDIR}/build-${ARCH}/imv
 .endif
 
 .include <bsd.port.mk>
