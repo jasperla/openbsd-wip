@@ -4,7 +4,10 @@ SHARED_ONLY =	Yes
 
 COMMENT =	modular IRC client with many features (ipv6,socks,proxy)
 
-DISTNAME =	irssi-0.8.17
+GH_ACCOUNT = 	irssi
+GH_PROJECT = 	irssi
+GH_TAGNAME = 	0.8.17
+DISTNAME =	irssi-${GH_TAGNAME}
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.irssi.org/
