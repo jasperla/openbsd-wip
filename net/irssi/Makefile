@@ -17,6 +17,8 @@ MAINTAINER =	Wiktor Izdebski <vicviq@gmail.com>
 # GPL
 PERMIT_PACKAGE_CDROM =	Yes
 
+MASTER_SITES = 	https://github.com/irssi/irssi/releases/download/${GH_TAGNAME}/
+
 WANTLIB =	c crypto m ncurses perl pthread ssl util \
 		pcre glib-2.0 gmodule-2.0
 

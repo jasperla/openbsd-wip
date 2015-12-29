@@ -79,6 +79,7 @@ include/irssi/src/fe-common/irc/dcc/
 include/irssi/src/fe-common/irc/dcc/fe-dcc.h
 include/irssi/src/fe-common/irc/dcc/module-formats.h
 include/irssi/src/fe-common/irc/dcc/module.h
+include/irssi/src/fe-common/irc/fe-irc-channels.h
 include/irssi/src/fe-common/irc/fe-irc-server.h
 include/irssi/src/fe-common/irc/module-formats.h
 include/irssi/src/fe-common/irc/module.h
@@ -92,6 +93,7 @@ include/irssi/src/irc/core/
 include/irssi/src/irc/core/bans.h
 include/irssi/src/irc/core/channel-rejoin.h
 include/irssi/src/irc/core/ctcp.h
+include/irssi/src/irc/core/irc-cap.h
 include/irssi/src/irc/core/irc-channels.h
 include/irssi/src/irc/core/irc-chatnets.h
 include/irssi/src/irc/core/irc-commands.h
@@ -105,6 +107,7 @@ include/irssi/src/irc/core/mode-lists.h
 include/irssi/src/irc/core/modes.h
 include/irssi/src/irc/core/module.h
 include/irssi/src/irc/core/netsplit.h
+include/irssi/src/irc/core/sasl.h
 include/irssi/src/irc/core/servers-idle.h
 include/irssi/src/irc/core/servers-redirect.h
 include/irssi/src/irc/dcc/
@@ -189,12 +192,8 @@ share/examples/irssi/scripts/quitmsg.pl
 @sample ${SYSCONFDIR}/irssi/scripts/quitmsg.pl
 share/examples/irssi/scripts/redirect.pl
 @sample ${SYSCONFDIR}/irssi/scripts/redirect.pl
-share/examples/irssi/scripts/sb_search.pl
-@sample ${SYSCONFDIR}/irssi/scripts/sb_search.pl
 share/examples/irssi/scripts/scriptassist.pl
 @sample ${SYSCONFDIR}/irssi/scripts/scriptassist.pl
-share/examples/irssi/scripts/splitlong.pl
-@sample ${SYSCONFDIR}/irssi/scripts/splitlong.pl
 share/examples/irssi/scripts/usercount.pl
 @sample ${SYSCONFDIR}/irssi/scripts/usercount.pl
 share/examples/irssi/themes/
@@ -238,6 +237,7 @@ share/irssi/help/hilight
 share/irssi/help/ignore
 share/irssi/help/info
 share/irssi/help/invite
+share/irssi/help/irssiproxy
 share/irssi/help/ison
 share/irssi/help/join
 share/irssi/help/kick
