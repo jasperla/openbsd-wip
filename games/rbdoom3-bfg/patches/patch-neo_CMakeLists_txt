@@ -1,7 +1,7 @@
 $OpenBSD$
---- neo/CMakeLists.txt.orig	Mon Jul 21 18:04:12 2014
-+++ neo/CMakeLists.txt	Mon Jul 21 20:01:32 2014
-@@ -1322,7 +1322,7 @@ else()
+--- neo/CMakeLists.txt.orig	Sat Mar  7 14:46:38 2015
++++ neo/CMakeLists.txt	Tue Dec 29 21:55:43 2015
+@@ -1421,7 +1421,7 @@ else()
  		${SYS_INCLUDES} ${SYS_SOURCES})
  	
  	find_package(OpenGL REQUIRED)
@@ -10,7 +10,7 @@ $OpenBSD$
  
  	if(UNIX)
  		if(FFMPEG)
-@@ -1449,11 +1449,13 @@ else()
+@@ -1548,11 +1548,13 @@ else()
  	
  
  	if(NOT WIN32)
