@@ -6,7 +6,7 @@ COMMENT =	modular IRC client with many features (ipv6,socks,proxy)
 
 GH_ACCOUNT = 	irssi
 GH_PROJECT = 	irssi
-GH_TAGNAME = 	0.8.17
+GH_TAGNAME = 	0.8.18-beta1
 DISTNAME =	irssi-${GH_TAGNAME}
 CATEGORIES =	net
 
@@ -16,8 +16,6 @@ MAINTAINER =	Wiktor Izdebski <vicviq@gmail.com>
 
 # GPL
 PERMIT_PACKAGE_CDROM =	Yes
-
-MASTER_SITES =   ${HOMEPAGE}files/
 
 WANTLIB =	c crypto m ncurses perl pthread ssl util \
 		pcre glib-2.0 gmodule-2.0
