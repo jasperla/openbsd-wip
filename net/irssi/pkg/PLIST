@@ -134,10 +134,6 @@ lib/irssi/
 lib/irssi/modules/
 lib/irssi/modules/libirc_proxy.la
 lib/irssi/modules/libirc_proxy.so
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Irc/Irc.bs
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/Irssi.bs
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/TextUI/TextUI.bs
-@comment libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Irssi/UI/UI.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi.pm
