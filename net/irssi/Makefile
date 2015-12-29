@@ -4,7 +4,7 @@ SHARED_ONLY =	Yes
 
 COMMENT =	modular IRC client with many features (ipv6,socks,proxy)
 
-V = 	0.8.18-beta1
+V =	 	0.8.18-beta1
 DISTNAME =	irssi-${V}
 CATEGORIES =	net
 
