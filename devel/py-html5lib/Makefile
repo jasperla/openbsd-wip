@@ -12,20 +12,16 @@ HOMEPAGE=		https://github.com/html5lib/html5lib-python/
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-PKG_ARCH=		*
 MODULES=		lang/python
 MODPY_PI =		Yes
 
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			devel/py-nose${MODPY_FLAVOR}
+TEST_DEPENDS =		${RUN_DEPENDS}
 
 FLAVORS =		python3
 FLAVOR ?=
 
-MODPY_SETUPTOOLS =	Yes
-
-do-test: fake
-	cd ${WRKSRC} && ${LOCALBASE}/bin/nosetests${MODPY_BIN_SUFFIX}
+do-test:
+	cd ${WRKSRC} && ${MODPY_BIN} -m unittest discover
 
 .include <bsd.port.mk>
