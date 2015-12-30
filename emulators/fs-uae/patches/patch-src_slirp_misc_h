@@ -1,0 +1,63 @@
+$OpenBSD$
+
+Fix collision with <ctype.h>
+
+--- src/slirp/misc.h.orig	Wed Dec 30 18:20:28 2015
++++ src/slirp/misc.h	Wed Dec 30 18:21:13 2015
+@@ -19,15 +19,15 @@ struct ex_list {
+ extern struct ex_list *exec_list;
+ extern u_int curtime, time_fasttimo, last_slowtimo, detach_time, detach_wait;
+ 
+-extern int (*lprint_print) _P((void *, const char *, va_list));
++extern int (*lprint_print) SLIRP_PROTO((void *, const char *, va_list));
+ extern char *lprint_ptr, *lprint_ptr2, **lprint_arg;
+ extern struct sbuf *lprint_sb;
+ 
+ #ifndef HAVE_STRDUP
+-char *strdup _P((const char *));
++char *strdup SLIRP_PROTO((const char *));
+ #endif
+ 
+-void do_wait _P((int));
++void do_wait SLIRP_PROTO((int));
+ 
+ #define EMU_NONE 0x0
+ 
+@@ -67,21 +67,21 @@ extern struct emu_t *tcpemu;
+ 
+ extern int x_port, x_server, x_display;
+ 
+-int show_x _P((char *, struct socket *));
+-void redir_x _P((u_int32_t, int, int, int));
+-void getouraddr _P((void));
+-void slirp_insque  _P((void *, void *));
+-void slirp_remque  _P((void *));
+-int add_exec _P((struct ex_list **, int, char *, int, int));
+-int slirp_openpty _P((int *, int *));
+-int fork_exec _P((struct socket *, char *, int));
+-void snooze_hup _P((int));
+-void snooze _P((void));
+-void relay _P((int));
+-void add_emu _P((char *));
+-void u_sleep _P((int));
+-void fd_nonblock _P((SOCKET));
+-void fd_block _P((SOCKET));
+-int rsh_exec _P((struct socket *, struct socket *, char *, char *, char *));
++int show_x SLIRP_PROTO((char *, struct socket *));
++void redir_x SLIRP_PROTO((u_int32_t, int, int, int));
++void getouraddr SLIRP_PROTO((void));
++void slirp_insque  SLIRP_PROTO((void *, void *));
++void slirp_remque  SLIRP_PROTO((void *));
++int add_exec SLIRP_PROTO((struct ex_list **, int, char *, int, int));
++int slirp_openpty SLIRP_PROTO((int *, int *));
++int fork_exec SLIRP_PROTO((struct socket *, char *, int));
++void snooze_hup SLIRP_PROTO((int));
++void snooze SLIRP_PROTO((void));
++void relay SLIRP_PROTO((int));
++void add_emu SLIRP_PROTO((char *));
++void u_sleep SLIRP_PROTO((int));
++void fd_nonblock SLIRP_PROTO((SOCKET));
++void fd_block SLIRP_PROTO((SOCKET));
++int rsh_exec SLIRP_PROTO((struct socket *, struct socket *, char *, char *, char *));
+ 
+ #endif

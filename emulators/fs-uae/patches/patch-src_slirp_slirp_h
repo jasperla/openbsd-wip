@@ -1,0 +1,178 @@
+$OpenBSD$
+
+Fix collision with <ctype.h>
+
+--- src/slirp/slirp.h.orig	Wed Dec 30 17:50:26 2015
++++ src/slirp/slirp.h	Wed Dec 30 17:54:18 2015
+@@ -143,11 +143,11 @@ typedef u_int32_t uint32;
+ #include <sys/uio.h>
+ #endif
+ 
+-#ifndef _P
++#ifndef SLIRP_PROTO
+ #ifndef NO_PROTOTYPES
+-#  define   _P(x)   x
++#  define   SLIRP_PROTO(x)   x
+ #else
+-#  define   _P(x)   ()
++#  define   SLIRP_PROTO(x)   ()
+ #endif
+ #endif
+ 
+@@ -162,17 +162,17 @@ typedef u_int32_t uint32;
+ 
+ /* Systems lacking strdup() definition in <string.h>. */
+ #if defined(ultrix)
+-char *strdup _P((const char *));
++char *strdup SLIRP_PROTO((const char *));
+ #endif
+ 
+ /* Systems lacking malloc() definition in <stdlib.h>. */
+ #if defined(ultrix) || defined(hcx)
+-void *malloc _P((size_t arg));
+-void free _P((void *ptr));
++void *malloc SLIRP_PROTO((size_t arg));
++void free SLIRP_PROTO((void *ptr));
+ #endif
+ 
+ #ifndef HAVE_INET_ATON
+-int inet_aton _P((const char *cp, struct in_addr *ia));
++int inet_aton SLIRP_PROTO((const char *cp, struct in_addr *ia));
+ #endif
+ 
+ #include <fcntl.h>
+@@ -285,41 +285,41 @@ extern struct ttys *ttys_unit[MAX_INTERFACES];
+ #endif
+ 
+ #ifndef FULL_BOLT
+-void if_start _P((void));
++void if_start SLIRP_PROTO((void));
+ #else
+-void if_start _P((struct ttys *));
++void if_start SLIRP_PROTO((struct ttys *));
+ #endif
+ 
+ #ifdef BAD_SPRINTF
+ # define vsprintf vsprintf_len
+ # define sprintf sprintf_len
+- extern int vsprintf_len _P((char *, const char *, va_list));
+- extern int sprintf_len _P((char *, const char *, ...));
++ extern int vsprintf_len SLIRP_PROTO((char *, const char *, va_list));
++ extern int sprintf_len SLIRP_PROTO((char *, const char *, ...));
+ #endif
+ 
+ #ifdef DECLARE_SPRINTF
+ # ifndef BAD_SPRINTF
+- extern int vsprintf _P((char *, const char *, va_list));
++ extern int vsprintf SLIRP_PROTO((char *, const char *, va_list));
+ # endif
+- extern int vfprintf _P((FILE *, const char *, va_list));
++ extern int vfprintf SLIRP_PROTO((FILE *, const char *, va_list));
+ #endif
+ 
+ #ifndef HAVE_STRERROR
+- extern char *strerror _P((int error));
++ extern char *strerror SLIRP_PROTO((int error));
+ #endif
+ 
+ #ifdef FSUAE
+ #else
+ #ifndef HAVE_INDEX
+- char *index _P((const char *, int));
++ char *index SLIRP_PROTO((const char *, int));
+ #endif
+ #endif
+ 
+ #ifndef HAVE_GETHOSTID
+- long gethostid _P((void));
++ long gethostid SLIRP_PROTO((void));
+ #endif
+ 
+-void lprint _P((const char *, ...));
++void lprint SLIRP_PROTO((const char *, ...));
+ 
+ #ifndef _WIN32
+ #include <netdb.h>
+@@ -331,49 +331,49 @@ void lprint _P((const char *, ...));
+ int cksum(struct mbuf *m, int len);
+ 
+ /* if.c */
+-void if_init _P((void));
+-void if_output _P((struct socket *, struct mbuf *));
++void if_init SLIRP_PROTO((void));
++void if_output SLIRP_PROTO((struct socket *, struct mbuf *));
+ 
+ /* ip_input.c */
+-void ip_init _P((void));
+-void ip_cleanup _P((void));
+-void ip_input _P((struct mbuf *));
+-struct ip * ip_reass _P((struct ip *, struct ipq *));
+-void ip_freef _P((struct ipq *));
+-void ip_enq _P((register struct ipasfrag *, register struct ipasfrag *));
+-void ip_deq _P((register struct ipasfrag *));
+-void ip_slowtimo _P((void));
+-void ip_stripoptions _P((register struct mbuf *, struct mbuf *));
++void ip_init SLIRP_PROTO((void));
++void ip_cleanup SLIRP_PROTO((void));
++void ip_input SLIRP_PROTO((struct mbuf *));
++struct ip * ip_reass SLIRP_PROTO((struct ip *, struct ipq *));
++void ip_freef SLIRP_PROTO((struct ipq *));
++void ip_enq SLIRP_PROTO((register struct ipasfrag *, register struct ipasfrag *));
++void ip_deq SLIRP_PROTO((register struct ipasfrag *));
++void ip_slowtimo SLIRP_PROTO((void));
++void ip_stripoptions SLIRP_PROTO((register struct mbuf *, struct mbuf *));
+ 
+ /* ip_output.c */
+-int ip_output _P((struct socket *, struct mbuf *));
++int ip_output SLIRP_PROTO((struct socket *, struct mbuf *));
+ 
+ /* tcp_input.c */
+-int tcp_reass _P((register struct tcpcb *, register struct tcpiphdr *, struct mbuf *));
+-void tcp_input _P((register struct mbuf *, int, struct socket *));
+-void tcp_dooptions _P((struct tcpcb *, u_char *, int, struct tcpiphdr *));
+-void tcp_xmit_timer _P((register struct tcpcb *, int));
+-int tcp_mss _P((register struct tcpcb *, u_int));
++int tcp_reass SLIRP_PROTO((register struct tcpcb *, register struct tcpiphdr *, struct mbuf *));
++void tcp_input SLIRP_PROTO((register struct mbuf *, int, struct socket *));
++void tcp_dooptions SLIRP_PROTO((struct tcpcb *, u_char *, int, struct tcpiphdr *));
++void tcp_xmit_timer SLIRP_PROTO((register struct tcpcb *, int));
++int tcp_mss SLIRP_PROTO((register struct tcpcb *, u_int));
+ 
+ /* tcp_output.c */
+-int tcp_output _P((register struct tcpcb *));
+-void tcp_setpersist _P((register struct tcpcb *));
++int tcp_output SLIRP_PROTO((register struct tcpcb *));
++void tcp_setpersist SLIRP_PROTO((register struct tcpcb *));
+ 
+ /* tcp_subr.c */
+-void tcp_init _P((void));
+-void tcp_cleanup _P((void));
+-void tcp_template _P((struct tcpcb *));
+-void tcp_respond _P((struct tcpcb *, register struct tcpiphdr *, register struct mbuf *, tcp_seq, tcp_seq, int));
+-struct tcpcb * tcp_newtcpcb _P((struct socket *));
+-struct tcpcb * tcp_close _P((register struct tcpcb *));
+-void tcp_drain _P((void));
+-void tcp_sockclosed _P((struct tcpcb *));
+-SOCKET tcp_fconnect _P((struct socket *));
+-void tcp_connect _P((struct socket *));
+-int tcp_attach _P((struct socket *));
+-u_int8_t tcp_tos _P((struct socket *));
+-int tcp_emu _P((struct socket *, struct mbuf *));
+-int tcp_ctl _P((struct socket *));
++void tcp_init SLIRP_PROTO((void));
++void tcp_cleanup SLIRP_PROTO((void));
++void tcp_template SLIRP_PROTO((struct tcpcb *));
++void tcp_respond SLIRP_PROTO((struct tcpcb *, register struct tcpiphdr *, register struct mbuf *, tcp_seq, tcp_seq, int));
++struct tcpcb * tcp_newtcpcb SLIRP_PROTO((struct socket *));
++struct tcpcb * tcp_close SLIRP_PROTO((register struct tcpcb *));
++void tcp_drain SLIRP_PROTO((void));
++void tcp_sockclosed SLIRP_PROTO((struct tcpcb *));
++SOCKET tcp_fconnect SLIRP_PROTO((struct socket *));
++void tcp_connect SLIRP_PROTO((struct socket *));
++int tcp_attach SLIRP_PROTO((struct socket *));
++u_int8_t tcp_tos SLIRP_PROTO((struct socket *));
++int tcp_emu SLIRP_PROTO((struct socket *, struct mbuf *));
++int tcp_ctl SLIRP_PROTO((struct socket *));
+ struct tcpcb *tcp_drop(struct tcpcb *tp, int err);
+ 
+ #ifdef USE_PPP

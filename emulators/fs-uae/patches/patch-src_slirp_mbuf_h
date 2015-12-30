@@ -1,0 +1,32 @@
+$OpenBSD$
+
+Fix collision with <ctype.h>
+
+--- src/slirp/mbuf.h.orig	Wed Dec 30 18:28:42 2015
++++ src/slirp/mbuf.h	Wed Dec 30 18:29:04 2015
+@@ -130,15 +130,15 @@ extern int mbuf_alloced;
+ extern struct mbuf m_freelist, m_usedlist;
+ extern int mbuf_max;
+ 
+-void m_init _P((void));
+-void m_cleanup _P((void));
+-void msize_init _P((void));
+-struct mbuf * m_get _P((void));
+-void m_free _P((struct mbuf *));
+-void m_cat _P((register struct mbuf *, register struct mbuf *));
+-void m_inc _P((struct mbuf *, int));
+-void m_adj _P((struct mbuf *, int));
+-int m_copy _P((struct mbuf *, struct mbuf *, int, int));
+-struct mbuf * dtom _P((void *));
++void m_init SLIRP_PROTO((void));
++void m_cleanup SLIRP_PROTO((void));
++void msize_init SLIRP_PROTO((void));
++struct mbuf * m_get SLIRP_PROTO((void));
++void m_free SLIRP_PROTO((struct mbuf *));
++void m_cat SLIRP_PROTO((register struct mbuf *, register struct mbuf *));
++void m_inc SLIRP_PROTO((struct mbuf *, int));
++void m_adj SLIRP_PROTO((struct mbuf *, int));
++int m_copy SLIRP_PROTO((struct mbuf *, struct mbuf *, int, int));
++struct mbuf * dtom SLIRP_PROTO((void *));
+ 
+ #endif

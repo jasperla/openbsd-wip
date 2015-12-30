@@ -1,0 +1,19 @@
+$OpenBSD$
+
+Fix collision with <ctype.h>
+
+--- src/slirp/ip_icmp.h.orig	Wed Dec 30 18:22:10 2015
++++ src/slirp/ip_icmp.h	Wed Dec 30 18:22:28 2015
+@@ -157,9 +157,9 @@ struct icmp {
+ 
+ void icmp_init(void);
+ void icmp_cleanup(void);
+-void icmp_input _P((struct mbuf *, int));
+-void icmp_error _P((struct mbuf *, u_char, u_char, int, const char *));
+-void icmp_reflect _P((struct mbuf *));
++void icmp_input SLIRP_PROTO((struct mbuf *, int));
++void icmp_error SLIRP_PROTO((struct mbuf *, u_char, u_char, int, const char *));
++void icmp_reflect SLIRP_PROTO((struct mbuf *));
+ void icmp_receive(struct socket *so);
+ void icmp_detach(struct socket *so);
+ 
