@@ -1,6 +1,7 @@
 @comment $OpenBSD: PLIST,v 1.20 2014/06/14 10:34:45 sthen Exp $
 @bin bin/irssi
 include/irssi/
+include/irssi/irssi-config
 include/irssi/irssi-config.h
 include/irssi/irssi-version.h
 include/irssi/src/
