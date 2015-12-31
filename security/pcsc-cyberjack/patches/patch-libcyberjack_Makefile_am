@@ -1,0 +1,10 @@
+$OpenBSD$
+--- libcyberjack/Makefile.am.orig	Wed Dec 30 14:39:59 2015
++++ libcyberjack/Makefile.am	Wed Dec 30 14:40:16 2015
+@@ -45,5 +45,5 @@ noinst_HEADERS=\
+ noinst_PROGRAMS=libtest
+ 
+ libtest_SOURCES=libtest.cpp
+-libtest_LDADD=libcyberjack.la -ldl -lstdc++ $(pcsc_libraries) $(pcsc_lib) $(libusb_LIBS)
++libtest_LDADD=libcyberjack.la -lstdc++ $(pcsc_libraries) $(pcsc_lib) $(libusb_LIBS)
+ #libtest_LDFLAGS=-all-static
