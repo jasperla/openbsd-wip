@@ -808,6 +808,7 @@ lib/python${MODPY_VERSION}/site-packages/pylint/test/unittest_checker_misc.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/unittest_checker_python3.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/unittest_checker_similar.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/unittest_checker_spelling.py
+lib/python${MODPY_VERSION}/site-packages/pylint/test/unittest_checker_stdlib.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/unittest_checker_strings.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/unittest_checker_typecheck.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/unittest_checker_variables.py
