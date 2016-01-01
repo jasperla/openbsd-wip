@@ -96,7 +96,3 @@ www/p5-HTML-TreeBuilder-LibXML		ready to import (garcer)
 devel/deviceatlas-enterprise-c      	ready to import (devnexen)
 devel/wxglade				ready to import, sent to ports@ 2015-10-03
 devel/libangelscript			ready to import, sent to ports@ 2015-12-20
-textproc/apertium			ready, sent to ports@ 2015-12-23 (bentley)
-textproc/apertium-dicts			ready, sent to ports@ 2015-12-23 (bentley)
-textproc/apertium-lex-tools		ready, sent to ports@ 2015-12-23 (bentley)
-textproc/lttoolbox			ready, sent to ports@ 2015-12-23 (bentley)
