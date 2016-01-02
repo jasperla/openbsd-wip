@@ -1,0 +1,32 @@
+$OpenBSD$
+--- test/playback_mic.c.orig	Sat Jan  2 20:24:24 2016
++++ test/playback_mic.c	Sat Jan  2 20:30:51 2016
+@@ -3,6 +3,7 @@
+ #include <string.h> 
+ #include <unistd.h>
+ #include <math.h>
++#include <signal.h>
+ 
+ #include <AL/al.h>
+ #include <AL/alc.h> 
+@@ -45,6 +46,11 @@ static void sourceplaybuffer(ALuint source, int16_t *d
+     }
+ }
+ 
++static void handler(int sig)
++{
++	exit(0);
++}
++
+ int main()
+ {
+     unsigned int sample_rate = 48000;
+@@ -82,6 +88,8 @@ int main()
+     alcCaptureStart(device_in);
+ 
+     printf("Starting\n");
++
++    (void)signal(SIGHUP, handler);
+ 
+     while (1) {
+         ALint samples;
