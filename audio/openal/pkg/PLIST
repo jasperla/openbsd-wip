@@ -1,4 +1,6 @@
 @comment $OpenBSD: PLIST,v 1.6 2013/03/11 15:26:15 bcallah Exp $
+@bin bin/altonegen
+@bin bin/bsincgen
 @bin bin/makehrtf
 @bin bin/openal-info
 include/AL/

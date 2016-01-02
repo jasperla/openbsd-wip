@@ -1,0 +1,633 @@
+===>  Cleaning for openal-1.17.1v0
+===> openal-1.17.1v0 depends on: cmake->=3.4.1p0 -> cmake-3.4.1p0
+===> openal-1.17.1v0 depends on: ninja->=1.5.1 -> ninja-1.6.0
+===> openal-1.17.1v0 depends on: llvm->=3.5.20140228p27 -> llvm-3.5.20140228p35
+===>  Checking files for openal-1.17.1v0
+`/usr/ports/distfiles/openal-1.17.1.tar.gz' is up to date.
+>> (SHA256) openal-1.17.1.tar.gz: OK
+===>  Extracting for openal-1.17.1v0
+===>  Patching for openal-1.17.1v0
+===>  Configuring for openal-1.17.1v0
+-- The C compiler identification is Clang 3.5.0
+-- The CXX compiler identification is Clang 3.5.0
+-- Check for working C compiler using: Ninja
+-- Check for working C compiler using: Ninja -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler using: Ninja
+-- Check for working CXX compiler using: Ninja -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - failed
+-- Looking for sys/types.h
+-- Looking for sys/types.h - found
+-- Looking for stdint.h
+-- Looking for stdint.h - found
+-- Looking for stddef.h
+-- Looking for stddef.h - found
+-- Check size of long
+-- Check size of long - done
+-- Check size of long long
+-- Check size of long long - done
+-- Performing Test HAVE_STD_C11
+-- Performing Test HAVE_STD_C11 - Success
+-- Looking for posix_memalign
+-- Looking for posix_memalign - found
+-- Checking _FILE_OFFSET_BITS for large files
+-- Checking _FILE_OFFSET_BITS for large files - not needed
+-- Performing Test HAVE_C99_VLA
+-- Performing Test HAVE_C99_VLA - Success
+-- Performing Test HAVE_C99_BOOL
+-- Performing Test HAVE_C99_BOOL - Success
+-- Performing Test HAVE_C11_STATIC_ASSERT
+-- Performing Test HAVE_C11_STATIC_ASSERT - Success
+-- Performing Test HAVE_C11_ALIGNAS
+-- Performing Test HAVE_C11_ALIGNAS - Success
+-- Performing Test HAVE_C11_ATOMIC
+-- Performing Test HAVE_C11_ATOMIC - Failed
+-- Performing Test HAVE_W_EXTRA
+-- Performing Test HAVE_W_EXTRA - Success
+-- Performing Test HAVE_GCC_DESTRUCTOR
+-- Performing Test HAVE_GCC_DESTRUCTOR - Success
+-- Performing Test HAVE_GCC_PROTECTED_VISIBILITY
+-- Performing Test HAVE_GCC_PROTECTED_VISIBILITY - Success
+-- Performing Test HAVE_VISIBILITY_HIDDEN_SWITCH
+-- Performing Test HAVE_VISIBILITY_HIDDEN_SWITCH - Success
+-- Performing Test HAVE_ATTRIBUTE_ALIGNED
+-- Performing Test HAVE_ATTRIBUTE_ALIGNED - Success
+-- Performing Test HAVE_MSSE_SWITCH
+-- Performing Test HAVE_MSSE_SWITCH - Success
+-- Performing Test HAVE_MSSE2_SWITCH
+-- Performing Test HAVE_MSSE2_SWITCH - Success
+-- Performing Test HAVE_MSSE3_SWITCH
+-- Performing Test HAVE_MSSE3_SWITCH - Success
+-- Performing Test HAVE_MSSE4_1_SWITCH
+-- Performing Test HAVE_MSSE4_1_SWITCH - Success
+-- Performing Test HAVE_GCC_FORMAT
+-- Performing Test HAVE_GCC_FORMAT - Success
+-- Looking for stdbool.h
+-- Looking for stdbool.h - found
+-- Looking for stdalign.h
+-- Looking for stdalign.h - found
+-- Looking for malloc.h
+-- Looking for malloc.h - found
+-- Looking for dirent.h
+-- Looking for dirent.h - found
+-- Looking for io.h
+-- Looking for io.h - not found
+-- Looking for strings.h
+-- Looking for strings.h - found
+-- Looking for cpuid.h
+-- Looking for cpuid.h - found
+-- Looking for intrin.h
+-- Looking for intrin.h - not found
+-- Looking for sys/sysconf.h
+-- Looking for sys/sysconf.h - not found
+-- Looking for fenv.h
+-- Looking for fenv.h - found
+-- Looking for float.h
+-- Looking for float.h - found
+-- Looking for ieeefp.h
+-- Looking for ieeefp.h - found
+-- Looking for guiddef.h
+-- Looking for guiddef.h - not found
+-- Looking for initguid.h
+-- Looking for initguid.h - not found
+-- Performing Test HAVE_GCC_GET_CPUID
+-- Performing Test HAVE_GCC_GET_CPUID - Success
+-- Looking for pow in m
+-- Looking for pow in m - found
+-- Looking for aligned_alloc
+-- Looking for aligned_alloc - not found
+-- Looking for posix_memalign
+-- Looking for posix_memalign - found
+-- Looking for _aligned_malloc
+-- Looking for _aligned_malloc - not found
+-- Looking for lrintf
+-- Looking for lrintf - found
+-- Looking for modff
+-- Looking for modff - found
+-- Looking for _controlfp
+-- Looking for _controlfp - not found
+-- Looking for __control87_2
+-- Looking for __control87_2 - not found
+-- Looking for strtof
+-- Looking for strtof - found
+-- Looking for stat
+-- Looking for stat - found
+-- Looking for strcasecmp
+-- Looking for strcasecmp - found
+-- Looking for strncasecmp
+-- Looking for strncasecmp - found
+-- Looking for snprintf
+-- Looking for snprintf - found
+-- Looking for isfinite
+-- Looking for isfinite - found
+-- Looking for isnan
+-- Looking for isnan - found
+-- Looking for dlfcn.h
+-- Looking for dlfcn.h - found
+-- Looking for dlopen in dl
+-- Looking for dlopen in dl - not found
+-- Looking for windows.h
+-- Looking for windows.h - not found
+-- Looking for gettimeofday
+-- Looking for gettimeofday - found
+-- Looking for nanosleep
+-- Looking for nanosleep - found
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for include files pthread.h, pthread_np.h
+-- Looking for include files pthread.h, pthread_np.h - found
+-- Performing Test HAVE_PTHREAD
+-- Performing Test HAVE_PTHREAD - Success
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Looking for pthread_setschedparam
+-- Looking for pthread_setschedparam - found
+-- Looking for pthread_setname_np
+-- Looking for pthread_setname_np - not found
+-- Looking for pthread_set_name_np
+-- Looking for pthread_set_name_np - found
+-- Looking for pthread_mutexattr_setkind_np
+-- Looking for pthread_mutexattr_setkind_np - found
+-- Looking for pthread_mutex_timedlock
+-- Looking for pthread_mutex_timedlock - found
+-- Looking for clock_gettime in rt
+-- Looking for clock_gettime in rt - not found
+-- Looking for xmmintrin.h
+-- Looking for xmmintrin.h - found
+-- Looking for emmintrin.h
+-- Looking for emmintrin.h - found
+-- Looking for pmmintrin.h
+-- Looking for pmmintrin.h - found
+-- Looking for smmintrin.h
+-- Looking for smmintrin.h - found
+-- Looking for arm_neon.h
+-- Looking for arm_neon.h - not found
+-- Could NOT find ALSA (missing:  ALSA_LIBRARY ALSA_INCLUDE_DIR) 
+-- Could NOT find OSS (missing:  OSS_INCLUDE_DIR) 
+-- Found AudioIO: /usr/include  
+-- Found SoundIO: /usr/lib/libsndio.so.6.1  
+-- Could NOT find QSA (missing:  QSA_LIBRARY QSA_INCLUDE_DIR) 
+-- Could NOT find PortAudio (missing:  PORTAUDIO_LIBRARY PORTAUDIO_INCLUDE_DIR) 
+-- Found PulseAudio: /usr/local/lib/libpulse.so.4.1 (found version "7.1.0") 
+-- Could NOT find JACK (missing:  JACK_LIBRARY JACK_INCLUDE_DIR) 
+-- Looking for include files SLES/OpenSLES.h, SLES/OpenSLES_Android.h
+-- Looking for include files SLES/OpenSLES.h, SLES/OpenSLES_Android.h - not found
+-- Found unsuitable Qt version "" from NOTFOUND
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - found
+-- Found Threads: TRUE  
+-- Found SDL2: /usr/local/lib/libSDL2main.a;/usr/local/lib/libSDL2.so.0.1  
+-- Found SDL_sound: /usr/local/lib/libSDL_sound.so.2.0;/usr/local/lib/libSDL2main.a;/usr/local/lib/libSDL2.so.0.1 (found version "1.0.3") 
+-- Found PkgConfig: /usr/bin/pkg-config (found version "0.27.1") 
+-- Checking for module 'libavcodec'
+--   Found libavcodec, version 56.60.100
+-- Checking for module 'libavformat'
+--   Found libavformat, version 56.40.101
+-- Checking for module 'libavdevice'
+--   Found libavdevice, version 56.4.100
+-- Checking for module 'libavutil'
+--   Found libavutil, version 54.31.100
+-- Checking for module 'libswscale'
+--   Found libswscale, version 3.1.101
+-- Checking for module 'libswresample'
+--   Found libswresample, version 1.2.101
+-- Checking for module 'libpostproc'
+--   Found libpostproc, version 53.3.100
+-- Found FFmpeg: /usr/local/lib/libavformat.so.19.4;/usr/local/lib/libavcodec.so.22.2;/usr/local/lib/libavutil.so.12.4;/usr/local/lib/libswscale.so.6.1;/usr/local/lib/libswresample.so.1.2  
+-- 
+-- Building OpenAL with support for the following backends:
+--      Solaris, SndIO (linked), PulseAudio, WaveFile, Null
+-- 
+-- Building with support for CPU extensions:
+--     Default, SSE, SSE2, SSE3, SSE4.1
+-- 
+-- Installing sample configuration
+-- 
+-- Installing HRTF definitions
+-- 
+-- Building utility programs
+-- 
+-- Building test programs
+-- 
+-- Building SDL and FFmpeg example programs
+-- 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /usr/ports/pobj/openal-1.17.1/build-amd64
+-- Cache values
+// The ALSA (asound) include directory
+ALSA_INCLUDE_DIR:PATH=ALSA_INCLUDE_DIR-NOTFOUND
+
+// The ALSA (asound) library
+ALSA_LIBRARY:FILEPATH=ALSA_LIBRARY-NOTFOUND
+
+// Enable PulseAudio backend
+ALSOFT_BACKEND_PULSEAUDIO:BOOL=ON
+
+// Enable SndIO backend
+ALSOFT_BACKEND_SNDIO:BOOL=ON
+
+// Enable Solaris backend
+ALSOFT_BACKEND_SOLARIS:BOOL=ON
+
+// Enable Wave Writer backend
+ALSOFT_BACKEND_WAVE:BOOL=ON
+
+// Install alsoft.conf sample configuration file
+ALSOFT_CONFIG:BOOL=ON
+
+// Set destination for example configureation file
+ALSOFT_CONFIG_DESTINATION:BOOL=OFF
+
+// Enable SSE support
+ALSOFT_CPUEXT_SSE:BOOL=ON
+
+// Enable SSE2 support
+ALSOFT_CPUEXT_SSE2:BOOL=ON
+
+// Enable SSE3 support
+ALSOFT_CPUEXT_SSE3:BOOL=ON
+
+// Enable SSE4.1 support
+ALSOFT_CPUEXT_SSE4_1:BOOL=ON
+
+// Check for the dlopen API for loading optional libs
+ALSOFT_DLOPEN:BOOL=ON
+
+// Build and install example programs
+ALSOFT_EXAMPLES:BOOL=ON
+
+// Install HRTF definition files
+ALSOFT_HRTF_DEFS:BOOL=ON
+
+// Install headers and libraries
+ALSOFT_INSTALL:BOOL=ON
+
+// Disable building the alsoft-config utility
+ALSOFT_NO_CONFIG_UTIL:BOOL=OFF
+
+// Require ALSA backend
+ALSOFT_REQUIRE_ALSA:BOOL=OFF
+
+// Require CoreAudio backend
+ALSOFT_REQUIRE_COREAUDIO:BOOL=OFF
+
+// Require DirectSound backend
+ALSOFT_REQUIRE_DSOUND:BOOL=OFF
+
+// Require JACK backend
+ALSOFT_REQUIRE_JACK:BOOL=OFF
+
+// Require MMDevApi backend
+ALSOFT_REQUIRE_MMDEVAPI:BOOL=OFF
+
+// Require ARM Neon support
+ALSOFT_REQUIRE_NEON:BOOL=OFF
+
+// Require OpenSL backend
+ALSOFT_REQUIRE_OPENSL:BOOL=OFF
+
+// Require OSS backend
+ALSOFT_REQUIRE_OSS:BOOL=OFF
+
+// Require PortAudio backend
+ALSOFT_REQUIRE_PORTAUDIO:BOOL=OFF
+
+// Require PulseAudio backend
+ALSOFT_REQUIRE_PULSEAUDIO:BOOL=OFF
+
+// Require QSA backend
+ALSOFT_REQUIRE_QSA:BOOL=OFF
+
+// Require SndIO backend
+ALSOFT_REQUIRE_SNDIO:BOOL=OFF
+
+// Require Solaris backend
+ALSOFT_REQUIRE_SOLARIS:BOOL=OFF
+
+// Require SSE support
+ALSOFT_REQUIRE_SSE:BOOL=OFF
+
+// Require SSE3 support
+ALSOFT_REQUIRE_SSE2:BOOL=OFF
+
+// Require SSE4.1 support
+ALSOFT_REQUIRE_SSE4_1:BOOL=OFF
+
+// Require Windows Multimedia backend
+ALSOFT_REQUIRE_WINMM:BOOL=OFF
+
+// Set system configuration directory
+ALSOFT_SYSCONFDIR:BOOL=OFF
+
+// Build and install test programs
+ALSOFT_TESTS:BOOL=ON
+
+// Build and install utility programs
+ALSOFT_UTILS:BOOL=ON
+
+// Treat compile warnings as errors
+ALSOFT_WERROR:BOOL=OFF
+
+// The AudioIO include directory
+AUDIOIO_INCLUDE_DIR:PATH=/usr/include
+
+// The AVCODEC CFLAGS.
+AVCODEC_DEFINITIONS:STRING=
+
+// Path to a file.
+AVCODEC_INCLUDE_DIRS:PATH=/usr/local/include
+
+// Path to a library.
+AVCODEC_LIBRARIES:FILEPATH=/usr/local/lib/libavcodec.so.22.2
+
+// The AVCODEC version number.
+AVCODEC_VERSION:STRING=56.60.100
+
+// The AVDEVICE CFLAGS.
+AVDEVICE_DEFINITIONS:STRING=
+
+// Path to a file.
+AVDEVICE_INCLUDE_DIRS:PATH=/usr/local/include
+
+// Path to a library.
+AVDEVICE_LIBRARIES:FILEPATH=/usr/local/lib/libavdevice.so.10.0
+
+// The AVDEVICE version number.
+AVDEVICE_VERSION:STRING=56.4.100
+
+// The AVFORMAT CFLAGS.
+AVFORMAT_DEFINITIONS:STRING=
+
+// Path to a file.
+AVFORMAT_INCLUDE_DIRS:PATH=/usr/local/include
+
+// Path to a library.
+AVFORMAT_LIBRARIES:FILEPATH=/usr/local/lib/libavformat.so.19.4
+
+// The AVFORMAT version number.
+AVFORMAT_VERSION:STRING=56.40.101
+
+// The AVUTIL CFLAGS.
+AVUTIL_DEFINITIONS:STRING=
+
+// Path to a file.
+AVUTIL_INCLUDE_DIRS:PATH=/usr/local/include
+
+// Path to a library.
+AVUTIL_LIBRARIES:FILEPATH=/usr/local/lib/libavutil.so.12.4
+
+// The AVUTIL version number.
+AVUTIL_VERSION:STRING=54.31.100
+
+// Path to a program.
+CMAKE_AR:FILEPATH=/usr/bin/ar
+
+// No help, variable specified on the command line.
+CMAKE_BUILD_TYPE:STRING=Debug
+
+// CXX compiler
+CMAKE_CXX_COMPILER:FILEPATH=/usr/ports/pobj/openal-1.17.1/bin/c++
+
+// Flags used by the compiler during all build types.
+CMAKE_CXX_FLAGS:STRING=-O2 -pipe -g   
+
+// Flags used by the compiler during debug builds.
+CMAKE_CXX_FLAGS_DEBUG:STRING=-g
+
+// Flags used by the compiler during release builds for minimum size.
+CMAKE_CXX_FLAGS_MINSIZEREL:STRING=-DNDEBUG
+
+// Flags used by the compiler during release builds.
+CMAKE_CXX_FLAGS_RELEASE:STRING=-DNDEBUG
+
+// Flags used by the compiler during release builds with debug info.
+CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-g -DNDEBUG
+
+// C compiler
+CMAKE_C_COMPILER:FILEPATH=/usr/ports/pobj/openal-1.17.1/bin/cc
+
+// Flags used by the compiler during all build types.
+CMAKE_C_FLAGS:STRING=-O2 -pipe -g  -Wall -Wpointer-arith -Wuninitialized -Wstrict-prototypes -Wmissing-prototypes -Wunused -Wsign-compare -Wshadow -Wdeclaration-after-statement 
+
+// Flags used by the compiler during debug builds.
+CMAKE_C_FLAGS_DEBUG:STRING=-g
+
+// Flags used by the compiler during release builds for minimum size.
+CMAKE_C_FLAGS_MINSIZEREL:STRING=-DNDEBUG
+
+// Flags used by the compiler during release builds.
+CMAKE_C_FLAGS_RELEASE:STRING=-DNDEBUG
+
+// Flags used by the compiler during release builds with debug info.
+CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=-g -DNDEBUG
+
+// Library postfix for debug builds. Normally left blank.
+CMAKE_DEBUG_POSTFIX:STRING=
+
+// Flags used by the linker.
+CMAKE_EXE_LINKER_FLAGS:STRING=
+
+// Flags used by the linker during debug builds.
+CMAKE_EXE_LINKER_FLAGS_DEBUG:STRING=
+
+// Flags used by the linker during release minsize builds.
+CMAKE_EXE_LINKER_FLAGS_MINSIZEREL:STRING=
+
+// Flags used by the linker during release builds.
+CMAKE_EXE_LINKER_FLAGS_RELEASE:STRING=
+
+// Flags used by the linker during Release with Debug Info builds.
+CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
+
+// Enable/Disable output of compile commands during generation.
+CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=OFF
+
+// Install path prefix, prepended onto install directories.
+CMAKE_INSTALL_PREFIX:PATH=/usr/local
+
+// Path to a program.
+CMAKE_LINKER:FILEPATH=/usr/bin/ld
+
+// Program used to build from build.ninja files.
+CMAKE_MAKE_PROGRAM:FILEPATH=/usr/local/bin/ninja
+
+// Flags used by the linker during the creation of modules.
+CMAKE_MODULE_LINKER_FLAGS:STRING=
+
+// Flags used by the linker during debug builds.
+CMAKE_MODULE_LINKER_FLAGS_DEBUG:STRING=
+
+// Flags used by the linker during release minsize builds.
+CMAKE_MODULE_LINKER_FLAGS_MINSIZEREL:STRING=
+
+// Flags used by the linker during release builds.
+CMAKE_MODULE_LINKER_FLAGS_RELEASE:STRING=
+
+// Flags used by the linker during Release with Debug Info builds.
+CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
+
+// Path to a program.
+CMAKE_NM:FILEPATH=/usr/bin/nm
+
+// Path to a program.
+CMAKE_OBJCOPY:FILEPATH=/usr/bin/objcopy
+
+// Path to a program.
+CMAKE_OBJDUMP:FILEPATH=/usr/bin/objdump
+
+// Path to a program.
+CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
+
+// Flags used by the linker during the creation of dll's.
+CMAKE_SHARED_LINKER_FLAGS:STRING=
+
+// Flags used by the linker during debug builds.
+CMAKE_SHARED_LINKER_FLAGS_DEBUG:STRING=
+
+// Flags used by the linker during release minsize builds.
+CMAKE_SHARED_LINKER_FLAGS_MINSIZEREL:STRING=
+
+// Flags used by the linker during release builds.
+CMAKE_SHARED_LINKER_FLAGS_RELEASE:STRING=
+
+// Flags used by the linker during Release with Debug Info builds.
+CMAKE_SHARED_LINKER_FLAGS_RELWITHDEBINFO:STRING=
+
+// No help, variable specified on the command line.
+CMAKE_SKIP_INSTALL_ALL_DEPENDENCY:STRING=True
+
+// If set, runtime paths are not added when installing shared libraries, but are added when building.
+CMAKE_SKIP_INSTALL_RPATH:BOOL=NO
+
+// If set, runtime paths are not added when using shared libraries.
+CMAKE_SKIP_RPATH:BOOL=NO
+
+// Flags used by the linker during the creation of static libraries.
+CMAKE_STATIC_LINKER_FLAGS:STRING=
+
+// Flags used by the linker during debug builds.
+CMAKE_STATIC_LINKER_FLAGS_DEBUG:STRING=
+
+// Flags used by the linker during release minsize builds.
+CMAKE_STATIC_LINKER_FLAGS_MINSIZEREL:STRING=
+
+// Flags used by the linker during release builds.
+CMAKE_STATIC_LINKER_FLAGS_RELEASE:STRING=
+
+// Flags used by the linker during Release with Debug Info builds.
+CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
+
+// Path to a program.
+CMAKE_STRIP:FILEPATH=/usr/bin/strip
+
+// If this value is on, makefiles will be generated without the .SILENT directive, and all commands will be echoed to the console during the make.  This is useful for debugging only. With Visual Studio IDE projects all commands are done without /nologo.
+CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
+
+// Path to a library.
+COREAUDIO_FRAMEWORK:FILEPATH=COREAUDIO_FRAMEWORK-NOTFOUND
+
+// The FFmpeg cflags.
+FFMPEG_DEFINITIONS:STRING=
+
+// The FFmpeg include directories.
+FFMPEG_INCLUDE_DIRS:STRING=/usr/local/include
+
+// The FFmpeg libraries.
+FFMPEG_LIBRARIES:STRING=/usr/local/lib/libavformat.so.19.4;/usr/local/lib/libavcodec.so.22.2;/usr/local/lib/libavutil.so.12.4;/usr/local/lib/libswscale.so.6.1;/usr/local/lib/libswresample.so.1.2
+
+// The JACK include directory
+JACK_INCLUDE_DIR:PATH=JACK_INCLUDE_DIR-NOTFOUND
+
+// The JACK library
+JACK_LIBRARY:FILEPATH=JACK_LIBRARY-NOTFOUND
+
+// The OSS include directory
+OSS_INCLUDE_DIR:PATH=OSS_INCLUDE_DIR-NOTFOUND
+
+// pkg-config executable
+PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
+
+// The PortAudio include directory
+PORTAUDIO_INCLUDE_DIR:PATH=PORTAUDIO_INCLUDE_DIR-NOTFOUND
+
+// The PortAudio library
+PORTAUDIO_LIBRARY:FILEPATH=PORTAUDIO_LIBRARY-NOTFOUND
+
+// The POSTPROC CFLAGS.
+POSTPROC_DEFINITIONS:STRING=
+
+// Path to a file.
+POSTPROC_INCLUDE_DIRS:PATH=/usr/local/include
+
+// Path to a library.
+POSTPROC_LIBRARIES:FILEPATH=/usr/local/lib/libpostproc.so.16.1
+
+// The POSTPROC version number.
+POSTPROC_VERSION:STRING=53.3.100
+
+// The PulseAudio include directory
+PULSEAUDIO_INCLUDE_DIR:PATH=/usr/local/include
+
+// The PulseAudio library
+PULSEAUDIO_LIBRARY:FILEPATH=/usr/local/lib/libpulse.so.4.1
+
+// 
+QT_QMAKE_EXECUTABLE:FILEPATH=NOTFOUND
+
+// Path to a library.
+SDL2MAIN_LIBRARY:FILEPATH=/usr/local/lib/libSDL2main.a
+
+// Path to a file.
+SDL2_INCLUDE_DIR:PATH=/usr/local/include/SDL2
+
+// Where the SDL2 Library can be found
+SDL2_LIBRARY:STRING=/usr/local/lib/libSDL2main.a;/usr/local/lib/libSDL2.so.0.1
+
+// SDL_sound extra flags
+SDL_SOUND_EXTRAS:STRING=
+
+// Path to a file.
+SDL_SOUND_INCLUDE_DIR:PATH=/usr/local/include/SDL
+
+// Path to a library.
+SDL_SOUND_LIBRARY:FILEPATH=/usr/local/lib/libSDL_sound.so.2.0
+
+// The SoundIO include directory
+SOUNDIO_INCLUDE_DIR:PATH=/usr/include
+
+// The SoundIO library
+SOUNDIO_LIBRARY:FILEPATH=/usr/lib/libsndio.so.6.1
+
+// The SWRESAMPLE CFLAGS.
+SWRESAMPLE_DEFINITIONS:STRING=
+
+// Path to a file.
+SWRESAMPLE_INCLUDE_DIRS:PATH=/usr/local/include
+
+// Path to a library.
+SWRESAMPLE_LIBRARIES:FILEPATH=/usr/local/lib/libswresample.so.1.2
+
+// The SWRESAMPLE version number.
+SWRESAMPLE_VERSION:STRING=1.2.101
+
+// The SWSCALE CFLAGS.
+SWSCALE_DEFINITIONS:STRING=
+
+// Path to a file.
+SWSCALE_INCLUDE_DIRS:PATH=/usr/local/include
+
+// Path to a library.
+SWSCALE_LIBRARIES:FILEPATH=/usr/local/lib/libswscale.so.6.1
+
+// The SWSCALE version number.
+SWSCALE_VERSION:STRING=3.1.101
+
