@@ -1,0 +1,15 @@
+$OpenBSD$
+--- lib/libv4lconvert/processing/libv4lprocessing.h.orig	Sat Sep 19 20:54:17 2015
++++ lib/libv4lconvert/processing/libv4lprocessing.h	Sun Nov 22 10:50:26 2015
+@@ -22,7 +22,11 @@
+ #define __LIBV4LPROCESSING_H
+ 
+ #include "../libv4lsyscall-priv.h"
++#if defined(__OpenBSD__)
++#include <sys/videoio.h>
++#else
+ #include <linux/videodev2.h>
++#endif
+ 
+ struct v4lprocessing_data;
+ struct v4lcontrol_data;

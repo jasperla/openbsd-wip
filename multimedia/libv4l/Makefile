@@ -32,9 +32,12 @@ BUILD_DEPENDS =		devel/argp-standalone
 LIB_DEPENDS =		graphics/jpeg
 
 SEPARATE_BUILD =	Yes
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	gnu autoconf
 CONFIGURE_ARGS =	${CONFIGURE_SHARED}
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.15
 
 .include <bsd.port.mk>
