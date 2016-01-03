@@ -1,0 +1,9 @@
+#!/bin/sh
+# this script shows not-yet-packaged sub-ports
+
+make show=PKGFILE |
+awk '/===/{P=$2} /^\// {print P, $1}' |
+while read p f; do
+	p=${p##*/}
+	test -e $f || echo $p
+done

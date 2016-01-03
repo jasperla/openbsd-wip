@@ -1,0 +1,18 @@
+$OpenBSD$
+De-conflict with x11/kde4/kactivities.
+--- src/lib/core/manager_p.cpp.orig	Sat Dec 26 02:19:09 2015
++++ src/lib/core/manager_p.cpp	Sat Dec 26 02:19:30 2015
+@@ -75,11 +75,11 @@ Manager *Manager::self()
+                          ->property("org.kde.KActivities.core.disableAutostart")
+                          .toBool()) {
+                     qCDebug(KAMD_CORELIB) << "Starting the activity manager daemon";
+-                    QProcess::startDetached(QStringLiteral("kactivitymanagerd"));
++                    QProcess::startDetached(QStringLiteral("kactivitymanagerd5"));
+                 }
+ 
+                 #else
+-                QProcess::startDetached(QStringLiteral("kactivitymanagerd"));
++                QProcess::startDetached(QStringLiteral("kactivitymanagerd5"));
+                 #endif
+             }
+ 
