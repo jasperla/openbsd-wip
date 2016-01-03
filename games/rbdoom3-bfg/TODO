@@ -1,1 +1,3 @@
 - figure out the crash on exit in __cxa_finalize
+- uninitialised memory causes a crash on selecting a game via malloc 'J'
+- remove optimisation flags -O3 -fomit-frame-pointer, -ffast-math?
