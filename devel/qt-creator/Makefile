@@ -2,7 +2,7 @@
 
 COMMENT =		cross-platform IDE for use with Qt
 SHARED_ONLY =		Yes
-V = 			3.5.1
+V = 			3.6.0
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
 
@@ -21,6 +21,7 @@ SHARED_LIBS +=	Clangbackendipc           1.0 # 1.0
 SHARED_LIBS +=	Sqlite                    1.0 # 1.0
 SHARED_LIBS +=	Timeline                  1.0 # 1.0
 SHARED_LIBS +=	qbsqtprofilesetup         1.4 # 1.4
+SHARED_LIBS +=  Modeling                  1.0 # 1.0
 
 MAKE_FLAGS =	BUILD_TESTS=1
 .for _l _v in ${SHARED_LIBS}
@@ -51,6 +52,9 @@ RUN_DEPENDS = 	devel/gdb \
 		x11/gtk+3,-guic
 
 PORTHOME =		${WRKDIR}
+
+# XXX
+#SEPARATE_BUILD =	Yes
 
 ALL_TARGET = 		all qch_docs
 

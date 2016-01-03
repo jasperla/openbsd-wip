@@ -1,6 +1,6 @@
 $OpenBSD$
---- neo/sys/sys_public.h.orig	Mon Jul 21 18:04:12 2014
-+++ neo/sys/sys_public.h	Mon Jul 21 20:01:32 2014
+--- neo/sys/sys_public.h.orig	Sat Mar  7 14:46:38 2015
++++ neo/sys/sys_public.h	Tue Dec 29 21:55:43 2015
 @@ -40,7 +40,7 @@ If you have questions concerning this license or the a
  ===============================================================================
  */
@@ -10,7 +10,7 @@ $OpenBSD$
  {
  	CPUID_NONE							= 0x00000,
  	CPUID_UNSUPPORTED					= 0x00001,	// unsupported (386/486)
-@@ -471,7 +471,7 @@ double			Sys_GetClockTicks();
+@@ -517,7 +517,7 @@ double			Sys_GetClockTicks();
  double			Sys_ClockTicksPerSecond();
  
  // returns a selection of the CPUID_* flags
@@ -19,7 +19,7 @@ $OpenBSD$
  const char* 	Sys_GetProcessorString();
  
  // returns true if the FPU stack is empty
-@@ -761,7 +761,7 @@ class idSys (public)
+@@ -808,7 +808,7 @@ class idSys (public)
  	
  	virtual double			GetClockTicks() = 0;
  	virtual double			ClockTicksPerSecond() = 0;

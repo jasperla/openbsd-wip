@@ -1,7 +1,7 @@
 $OpenBSD$
---- share/qtcreator/qml/qmlpuppet/qml2puppet/qml2puppet.pri.orig	Fri Oct  9 09:29:35 2015
-+++ share/qtcreator/qml/qmlpuppet/qml2puppet/qml2puppet.pri	Fri Oct  9 09:29:45 2015
-@@ -37,7 +37,7 @@ DEFINES -= QT_NO_CAST_FROM_ASCII
+--- share/qtcreator/qml/qmlpuppet/qml2puppet/qml2puppet.pri.orig	Fri Oct 23 14:53:28 2015
++++ share/qtcreator/qml/qmlpuppet/qml2puppet/qml2puppet.pri	Thu Oct 29 12:44:08 2015
+@@ -24,7 +24,7 @@ DEFINES -= QT_NO_CAST_FROM_ASCII
  
  DISTFILES += Info.plist
  

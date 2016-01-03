@@ -1,7 +1,7 @@
 $OpenBSD$
---- neo/sys/win32/win_main.cpp.orig	Mon Jul 21 18:04:12 2014
-+++ neo/sys/win32/win_main.cpp	Mon Jul 21 20:01:32 2014
-@@ -1245,7 +1245,7 @@ void Sys_Init() {
+--- neo/sys/win32/win_main.cpp.orig	Sat Mar  7 14:46:38 2015
++++ neo/sys/win32/win_main.cpp	Tue Dec 29 21:55:43 2015
+@@ -1251,7 +1251,7 @@ void Sys_Init() {
  			common->Printf( "WARNING: unknown sys_cpustring '%s'\n", win32.sys_cpustring.GetString() );
  			id = CPUID_GENERIC;
  		}
@@ -10,7 +10,7 @@ $OpenBSD$
  	}
  
  	common->Printf( "%s\n", win32.sys_cpustring.GetString() );
-@@ -1272,7 +1272,7 @@ void Sys_Shutdown() {
+@@ -1276,7 +1276,7 @@ void Sys_Shutdown() {
  Sys_GetProcessorId
  ================
  */

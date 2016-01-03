@@ -18,9 +18,9 @@ lib/apitrace/wrappers/
 share/doc/apitrace/
 share/doc/apitrace/BUGS.markdown
 share/doc/apitrace/LICENSE-libpng.txt
-share/doc/apitrace/LICENSE-qjson.txt
 share/doc/apitrace/LICENSE-snappy.txt
 share/doc/apitrace/LICENSE-zlib.txt
 share/doc/apitrace/LICENSE.txt
 share/doc/apitrace/NEWS.markdown
 share/doc/apitrace/README.markdown
+share/doc/apitrace/USAGE.markdown

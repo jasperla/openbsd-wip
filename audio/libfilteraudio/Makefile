@@ -3,7 +3,6 @@
 COMMENT =		easy to use audio filtering library
 DISTNAME =		libfilteraudio-20150516
 CATEGORIES =		audio
-HOMEPAGE =		https://github.com/irungentoo/libfilteraudio/
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 SHARED_LIBS +=  filteraudio               0.0
@@ -37,8 +36,8 @@ do-test:
 	${CC} -g -Wall -o ${WRKBUILD}/filteraudio-test -I${LOCALBASE}/include \
 		${WRKSRC}/test/playback_mic.c ${WRKBUILD}/libfilteraudio.a \
 		-L${LOCALBASE}/lib -lopenal -lpthread -lm
-	${WRKBUILD}/filteraudio-test &
-	@echo "\n\tYou should hear your microphone input\n" && sleep 15
-	pkill filteraudio-test
+	@echo "\n\tYou should hear your microphone input\n"
+	@sleep 15 && pkill -HUP filteraudio-test &
+	${WRKBUILD}/filteraudio-test
 
 .include <bsd.port.mk>

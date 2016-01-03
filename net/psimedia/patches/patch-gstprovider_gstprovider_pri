@@ -1,0 +1,9 @@
+$OpenBSD$
+--- gstprovider/gstprovider.pri.orig	Wed Apr 24 16:01:30 2013
++++ gstprovider/gstprovider.pri	Wed Apr 24 16:01:36 2013
+@@ -1,4 +1,4 @@
+-CONFIG += link_prl depend_prl
++CONFIG += link_prl
+ 
+ LIBS += -L$$PWD/gstelements/static/lib -lgstelements_static
+ 

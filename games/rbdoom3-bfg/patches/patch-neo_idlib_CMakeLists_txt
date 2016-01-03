@@ -1,7 +1,7 @@
 $OpenBSD$
---- neo/idlib/CMakeLists.txt.orig	Mon Jul 21 18:04:12 2014
-+++ neo/idlib/CMakeLists.txt	Mon Jul 21 20:01:32 2014
-@@ -112,6 +112,8 @@ else()
+--- neo/idlib/CMakeLists.txt.orig	Sat Mar  7 14:46:38 2015
++++ neo/idlib/CMakeLists.txt	Tue Dec 29 21:55:43 2015
+@@ -110,6 +110,8 @@ else()
  			)
  	endforeach()
  	

@@ -2,7 +2,7 @@
 
 COMMENT =		Tox client library
 
-DISTNAME =		toxcore-20150624
+DISTNAME =		toxcore-20151216
 CATEGORIES =		net telephony
 HOMEPAGE =		http://tox.im/
 
@@ -21,9 +21,11 @@ WANTLIB = c m opus pthread stdc++ sodium vpx
 
 GH_ACCOUNT =		irungentoo
 GH_PROJECT =		toxcore
-GH_COMMIT =		1434b319f3956fa3a62033486851ab3815775901
+GH_COMMIT =		0938ba08d9a839df4111168f3414099268d69737
 
 MODULES =		gnu
+#MODULES +=		lang/clang
+#MODCLANG_ARCHS =	*
 
 BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
@@ -34,6 +36,7 @@ LIB_DEPENDS =		audio/opus \
 			multimedia/libvpx \
 			security/libsodium
 
+SEPATATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		LDFLAGS=${LDFLAGS} CPPFLAGS=${CPPFLAGS}
 CONFIGURE_ARGS =	DISABLE_RT=yes
@@ -41,7 +44,7 @@ CONFIGURE_ARGS =	DISABLE_RT=yes
 TEST_TARGET =		check
 
 AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.11
+AUTOMAKE_VERSION =	1.15
 
 DOCS =			Group-Chats.md Hardening.txt Hardening_docs.txt \
 			Prevent_Tracking.txt TCP_Network.txt TODO.md \

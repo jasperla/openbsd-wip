@@ -1,0 +1,33 @@
+$OpenBSD$
+
+Fix collision with <ctype.h>
+
+--- src/slirp/debug.h.orig	Wed Dec 30 17:55:19 2015
++++ src/slirp/debug.h	Wed Dec 30 17:55:47 2015
+@@ -36,15 +36,15 @@ extern int slirp_debug;
+ 
+ #endif
+ 
+-void debug_init _P((char *, int));
+-//void ttystats _P((struct ttys *));
+-void allttystats _P((void));
+-void ipstats _P((void));
+-void vjstats _P((void));
+-void tcpstats _P((void));
+-void udpstats _P((void));
+-void icmpstats _P((void));
+-void mbufstats _P((void));
+-void sockstats _P((void));
+-void slirp_exit _P((int));
++void debug_init SLIRP_PROTO((char *, int));
++//void ttystats SLIRP_PROTO((struct ttys *));
++void allttystats SLIRP_PROTO((void));
++void ipstats SLIRP_PROTO((void));
++void vjstats SLIRP_PROTO((void));
++void tcpstats SLIRP_PROTO((void));
++void udpstats SLIRP_PROTO((void));
++void icmpstats SLIRP_PROTO((void));
++void mbufstats SLIRP_PROTO((void));
++void sockstats SLIRP_PROTO((void));
++void slirp_exit SLIRP_PROTO((int));
+ 

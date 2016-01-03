@@ -2,7 +2,7 @@
 
 COMMENT =		high-performance, easy-to-use data analysis for Python
 
-MODPY_EGG_VERSION =	0.16.0
+MODPY_EGG_VERSION =	0.17.1
 DISTNAME =		pandas-${MODPY_EGG_VERSION}
 PKGNAME =		py-pandas-${MODPY_EGG_VERSION}
 
@@ -43,8 +43,7 @@ TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/py-nose \
 			${FULLPKGNAME}:math/py-pandas \
 			${OPTIONAL_DEPENDS}
-
-USE_X11 = 		Yes # for clipboard tests
+#TEST_IS_INTERACTIVE =	X11
 
 do-test:
 	${LOCALBASE}/bin/nosetests pandas -v

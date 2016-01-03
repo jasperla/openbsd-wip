@@ -1,0 +1,10 @@
+$OpenBSD$
+--- psimedia.pro.orig	Wed Apr 24 14:51:51 2013
++++ psimedia.pro	Wed Apr 24 14:51:58 2013
+@@ -1,6 +1,5 @@
+ TEMPLATE = subdirs
+ 
+ SUBDIRS += gstprovider/gstelements/static
+-SUBDIRS += demo
+ 
+ SUBDIRS += gstprovider

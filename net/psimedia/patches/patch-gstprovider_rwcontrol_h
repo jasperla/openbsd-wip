@@ -1,0 +1,12 @@
+$OpenBSD$
+--- gstprovider/rwcontrol.h.orig	Wed Apr 24 14:43:59 2013
++++ gstprovider/rwcontrol.h	Wed Apr 24 14:44:58 2013
+@@ -28,7 +28,7 @@
+ #include <QMutex>
+ #include <QWaitCondition>
+ #include <QTimer>
+-#include <glib/gmain.h>
++#include <glib.h>
+ #include "psimediaprovider.h"
+ #include "rtpworker.h"
+ 

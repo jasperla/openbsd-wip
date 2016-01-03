@@ -1,15 +1,12 @@
 $OpenBSD$
---- lib/pure/nativesockets.nim.orig	Mon Nov 23 02:18:23 2015
-+++ lib/pure/nativesockets.nim	Mon Nov 23 02:19:32 2015
-@@ -203,8 +203,9 @@ proc getAddrInfo*(address: string, port: Port, domain:
-   hints.ai_family = toInt(domain)
+--- lib/pure/nativesockets.nim.orig	Fri Dec 25 00:12:35 2015
++++ lib/pure/nativesockets.nim	Fri Dec 25 00:13:00 2015
+@@ -204,7 +204,7 @@ proc getAddrInfo*(address: string, port: Port, domain:
    hints.ai_socktype = toInt(sockType)
    hints.ai_protocol = toInt(protocol)
--  # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=198092
+   # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=198092
 -  when not defined(freebsd):
-+  # FreeBSD: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=198092
-+  # OpenBSD: AI_V4MAPPED is not supported
-+  when not defined(freebsd) or defined(openbsd):
++  when not defined(freebsd) and not defined(openbsd) and not defined(netbsd):
      hints.ai_flags = AI_V4MAPPED
    var gaiResult = getaddrinfo(address, $port, addr(hints), result)
    if gaiResult != 0'i32:

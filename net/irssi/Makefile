@@ -1,54 +1,61 @@
-# $OpenBSD: Makefile,v 1.59 2014/06/14 10:34:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2015/12/29 22:54:49 sthen Exp $
 
-SHARED_ONLY=	Yes
+SHARED_ONLY =	Yes
 
-COMMENT=	modular IRC client with many features (ipv6,socks,proxy)
+COMMENT =	modular IRC client with many features (ipv6,socks,proxy)
 
-DISTNAME=	irssi-0.8.17
-CATEGORIES=	net
+V =		0.8.18-beta1
+DISTNAME =	irssi-${V}
+PKGNAME =	irssi-${V:S/-beta/beta/}
+PKGSPEC =	irssi-=${V:S/-beta/beta/}
 
-HOMEPAGE=	http://www.irssi.org/
+CATEGORIES =	net
 
-MAINTAINER=	Wiktor Izdebski <vicviq@gmail.com>
+HOMEPAGE =	http://www.irssi.org/
 
-# GPL
-PERMIT_PACKAGE_CDROM=	Yes
+MAINTAINER =	Wiktor Izdebski <vicviq@gmail.com>
 
-MASTER_SITES=   ${HOMEPAGE}files/
+# GPLv2+
+PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB=	c crypto m ncurses perl pthread ssl util \
-		pcre glib-2.0 gmodule-2.0
+WANTLIB += c crypto m ncurses perl pthread ssl util pcre glib-2.0
+WANTLIB += gmodule-2.0
 
-MODULES=	devel/gettext
+MASTER_SITES =	https://github.com/irssi/irssi/releases/download/${V}/
 
-LIB_DEPENDS=	devel/glib2
+FLAVORS =	socks
+FLAVOR ?=
 
-LIBTOOL_FLAGS+=	--tag=disable-static
-CONFIGURE_STYLE=gnu
-MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}
-CONFIGURE_ARGS+=--with-pic \
-		--with-proxy \
-		--with-perl=yes \
-		--with-perl-lib=${PREFIX}/libdata/perl5/site_perl
+MODULES =	devel/gettext
+LIB_DEPENDS =	devel/glib2
 
-FLAVORS=	socks
-FLAVOR?=
+LIBTOOL_FLAGS +=	--tag=disable-static
+
+MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC}
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS +=	--with-pic \
+			--with-proxy \
+			--with-perl=yes \
+			--with-perl-lib=${PREFIX}/libdata/perl5/site_perl
 
 .if ${FLAVOR:Msocks}
-CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=	--with-socks
-LIB_DEPENDS+=		security/dante
-WANTLIB+=		socks
+CONFIGURE_ARGS +=	--with-socks
+LIB_DEPENDS +=		security/dante
+WANTLIB +=		socks
 .endif
 
-MAKE_FLAGS=	scriptdir="${SYSCONFDIR}/irssi/scripts" \
+MAKE_FLAGS =	scriptdir="${SYSCONFDIR}/irssi/scripts" \
 		themedir="${SYSCONFDIR}/irssi/themes"
-FAKE_FLAGS=	confdir="${PREFIX}/share/examples/irssi" \
+FAKE_FLAGS =	confdir="${PREFIX}/share/examples/irssi" \
 		scriptdir="${PREFIX}/share/examples/irssi/scripts" \
 		themedir="${PREFIX}/share/examples/irssi/themes"
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/docs/irssi.1
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/irssi-config ${PREFIX}/include/irssi/
 
 .include <bsd.port.mk>

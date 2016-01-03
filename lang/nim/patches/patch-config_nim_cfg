@@ -1,6 +1,6 @@
 $OpenBSD: patch-config_nim_cfg,v 1.1.1.1 2015/10/19 21:50:14 juanfra Exp $
 --- config/nim.cfg.orig	Tue Oct 27 22:41:25 2015
-+++ config/nim.cfg	Wed Nov 11 23:01:13 2015
++++ config/nim.cfg	Fri Dec 25 00:08:46 2015
 @@ -75,7 +75,7 @@ path="$lib/pure"
    @end
    @if bsd or haiku:

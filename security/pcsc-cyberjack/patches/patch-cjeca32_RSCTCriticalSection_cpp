@@ -1,0 +1,12 @@
+$OpenBSD$
+--- cjeca32/RSCTCriticalSection.cpp.orig	Wed Dec 30 21:27:00 2015
++++ cjeca32/RSCTCriticalSection.cpp	Wed Dec 30 21:27:25 2015
+@@ -22,7 +22,7 @@ void CRSCTCriticalSection::Leave(void)
+ 	LeaveCriticalSection(&m_hCritSec);
+ }
+ 
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_OPENBSD)
+ 
+ CRSCTCriticalSection::CRSCTCriticalSection(void){
+ }

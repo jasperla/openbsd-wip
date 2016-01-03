@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+@bin bin/imv
+@man man/man1/imv.1
+share/applications/
+share/applications/imv.desktop
