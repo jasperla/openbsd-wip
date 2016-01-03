@@ -9,22 +9,22 @@ DISTNAME =	wxWidgets-${V}
 
 CATEGORIES =	x11
 
-SHARED_LIBS +=  wx_base-3.0               0.0 # 0.0
-SHARED_LIBS +=  wx_base_net-3.0           0.0 # 0.0
-SHARED_LIBS +=  wx_base_xml-3.0           0.0 # 0.0
-SHARED_LIBS +=  wx_gtk2_adv-3.0           0.0 # 0.0
-SHARED_LIBS +=  wx_gtk2_aui-3.0           0.0 # 0.0
-SHARED_LIBS +=  wx_gtk2_core-3.0          0.0 # 0.0
-SHARED_LIBS +=  wx_gtk2_gl-3.0            0.0 # 0.0
-SHARED_LIBS +=  wx_gtk2_html-3.0          0.0 # 0.0
-SHARED_LIBS +=  wx_gtk2_media-3.0         0.0 # 0.0
-SHARED_LIBS +=  wx_gtk2_propgrid-3.0      0.0 # 0.0
-SHARED_LIBS +=  wx_gtk2_qa-3.0            0.0 # 0.0
-SHARED_LIBS +=  wx_gtk2_ribbon-3.0        0.0 # 0.0
-SHARED_LIBS +=  wx_gtk2_richtext-3.0      0.0 # 0.0
-SHARED_LIBS +=  wx_gtk2_stc-3.0           0.0 # 0.0
-SHARED_LIBS +=  wx_gtk2_webview-3.0       0.0 # 0.0
-SHARED_LIBS +=  wx_gtk2_xrc-3.0           0.0 # 0.0
+SHARED_LIBS +=  wx_baseu-3.0              0.0 # 0.0
+SHARED_LIBS +=  wx_baseu_net-3.0          0.0 # 0.0
+SHARED_LIBS +=  wx_baseu_xml-3.0          0.0 # 0.0
+SHARED_LIBS +=  wx_gtk2u_adv-3.0          0.0 # 0.0
+SHARED_LIBS +=  wx_gtk2u_aui-3.0          0.0 # 0.0
+SHARED_LIBS +=  wx_gtk2u_core-3.0         0.0 # 0.0
+SHARED_LIBS +=  wx_gtk2u_gl-3.0           0.0 # 0.0
+SHARED_LIBS +=  wx_gtk2u_html-3.0         0.0 # 0.0
+SHARED_LIBS +=  wx_gtk2u_media-3.0        0.0 # 0.0
+SHARED_LIBS +=  wx_gtk2u_propgrid-3.0     0.0 # 0.0
+SHARED_LIBS +=  wx_gtk2u_qa-3.0           0.0 # 0.0
+SHARED_LIBS +=  wx_gtk2u_ribbon-3.0       0.0 # 0.0
+SHARED_LIBS +=  wx_gtk2u_richtext-3.0     0.0 # 0.0
+SHARED_LIBS +=  wx_gtk2u_stc-3.0          0.0 # 0.0
+SHARED_LIBS +=  wx_gtk2u_webview-3.0      0.0 # 0.0
+SHARED_LIBS +=  wx_gtk2u_xrc-3.0          0.0 # 0.0
 
 HOMEPAGE =	http://www.wxwidgets.org/
 
@@ -53,8 +53,6 @@ LIB_DEPENDS =		devel/libnotify \
 			x11/gtk+2 \
 			www/webkit
 TEST_DEPENDS =		${BUILD_PKGPATH}>=${V}
-
-MAKE_FLAGS =	WXUNICODEFLAG=""
 
 USE_GMAKE =	Yes
 CONFIGURE_STYLE=gnu
