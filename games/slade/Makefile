@@ -35,8 +35,9 @@ LIB_DEPENDS =		audio/fluidsynth \
 ALL_TARGET =		all pk3
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/slade ${PREFIX}/bin/
-	${INSTALL_DATA_DIR} ${PREFIX}/share/SLADE
-	${INSTALL_DATA} ${WRKBUILD}/slade.pk3 ${PREFIX}/share/SLADE
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/SLADE
+	${INSTALL_PROGRAM} ${WRKBUILD}/slade ${PREFIX}/lib/SLADE
+	${INSTALL_DATA} ${WRKBUILD}/slade.pk3 ${PREFIX}/lib/SLADE
+	@${SUBST_PROGRAM} ${FILESDIR}/slade ${PREFIX}/bin/slade
 
 .include <bsd.port.mk>

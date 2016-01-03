@@ -1,4 +1,3 @@
-- is the pk3 actually needed or can we just install into ${PREFIX}/share/SLADE and use a wrapper script?
 - ** (slade:17293): WARNING **: Invalid borders specified for theme pixmap:
         /usr/local/share/themes/Adwaita/gtk-2.0/Buttons/button-pressed.png,
   borders don't fit within the image
