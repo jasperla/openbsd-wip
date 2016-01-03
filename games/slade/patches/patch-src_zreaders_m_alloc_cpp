@@ -1,0 +1,15 @@
+$OpenBSD$
+
+OpenBSD doesn't have malloc_{,usable_}size()
+
+--- src/zreaders/m_alloc.cpp.orig	Sun Jan  3 13:19:00 2016
++++ src/zreaders/m_alloc.cpp	Sun Jan  3 13:20:47 2016
+@@ -57,7 +57,7 @@ namespace GC
+ #endif
+ #if defined(__APPLE__)
+ #define _msize(p)				malloc_size(p)
+-#elif defined(__sun)
++#elif defined(__sun) || defined(__OpenBSD__)
+ #define _msize(p)				(*((size_t*)(p)-1))
+ #elif !defined(_WIN32)
+ #define _msize(p)				malloc_usable_size(p)	// from glibc/FreeBSD

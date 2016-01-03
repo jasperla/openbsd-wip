@@ -1,0 +1,15 @@
+SLADE3 is a modern editor for Doom-engine based games and source ports.
+It has the ability to view, modify, and write many different
+game-specific formats, and even convert between some of them, or from/to
+other generic formats such as PNG.
+
+SLADE has many different features, allowing for a simple yet
+comprehensive editing experience:
+
+	- Basic archive/resource editing
+	- Simple tabbed interface
+	- Many supported game formats
+	- Map editing
+	- Advanced text editor
+	- Graphic conversion
+	- Texture editing
