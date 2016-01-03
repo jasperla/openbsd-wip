@@ -36,7 +36,8 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=wxwindows/}
 EXTRACT_SUFX =		.zip
 WRKDIST =		${WRKDIR}
 
-MODULES	=		devel/gettext
+MODULES	=		devel/gettext \
+			lang/python
 
 WANTLIB += GL GLU SDL SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
@@ -74,8 +75,12 @@ CONFIGURE_ENV += wx_cv_version_script=no
 CONFIGURE_ARGS += --enable-debug
 .endif
 
+MODPY_ADJ_FILES =src/stc/gen_iface.py
+
 pre-configure:
+	perl -pi -e 's/\r$$//' ${WRKSRC}/src/stc/gen_iface.py
 	${SUBST_CMD} ${WRKSRC}/Makefile.in
+	${MODPYTHON_pre-configure}
 
 # - resolve conflict with x11/wxWidgets (v2)
 # - fix DOS linebreaks
