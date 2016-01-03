@@ -14,16 +14,16 @@ WANTLIB += X11 Xext Xrender c filteraudio fontconfig freetype
 WANTLIB += m openal opus pthread sodium toxav toxcore toxdns toxencryptsave
 WANTLIB += vpx z
 
-GH_ACCOUNT =		notsecure
+GH_ACCOUNT =		GrayHatter
 GH_PROJECT =		uTox
-GH_TAGNAME =		v0.3.2
+GH_TAGNAME =		v0.5.0
 
 LIB_DEPENDS =		audio/openal \
 			audio/libfilteraudio \
 			net/toxcore
 
 MAKE_FLAGS =		DBUS=0 V4LCONVERT=0 \
-			GIT_V=d16f53912b161893431fd16025af94d4d8a14f53
+			GIT_V=7e2907470835746b6819d631b48dd54bc9c4de66
 FAKE_FLAGS =		PREFIX=${TRUEPREFIX} MANDIR=${TRUEPREFIX}/man
 
 USE_GMAKE =		Yes
