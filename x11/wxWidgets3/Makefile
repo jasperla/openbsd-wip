@@ -77,11 +77,14 @@ CONFIGURE_ARGS += --enable-debug
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Makefile.in
 
-# resolve conflict with x11/wxWidgets (v2) and fix DOS linebreaks
+# - resolve conflict with x11/wxWidgets (v2)
+# - fix DOS linebreaks
+# - use a medium-sized hammer to remove library links
 post-install:
 	mv ${PREFIX}/bin/wx-config ${PREFIX}/bin/wx-config-3.0
 	rm ${PREFIX}/bin/wxrc
 	perl -pi -e 's/\r$$//' ${PREFIX}/lib/wx/config/gtk2-unicode-3.0
+	find ${PREFIX}/lib/ -type l -name libwx\* -exec rm {} \;
 
 do-test:
 	@cd ${WRKSRC}/tests && \

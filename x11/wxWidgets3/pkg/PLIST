@@ -731,53 +731,21 @@ include/wx-3.0/wx/xtitypes.h
 include/wx-3.0/wx/xtixml.h
 include/wx-3.0/wx/zipstrm.h
 include/wx-3.0/wx/zstream.h
-lib/libwx_baseu-3.0.so
-lib/libwx_baseu-3.0.so.0
 @lib lib/libwx_baseu-3.0.so.${LIBwx_baseu-3.0_VERSION}
-lib/libwx_baseu_net-3.0.so
-lib/libwx_baseu_net-3.0.so.0
 @lib lib/libwx_baseu_net-3.0.so.${LIBwx_baseu_net-3.0_VERSION}
-lib/libwx_baseu_xml-3.0.so
-lib/libwx_baseu_xml-3.0.so.0
 @lib lib/libwx_baseu_xml-3.0.so.${LIBwx_baseu_xml-3.0_VERSION}
-lib/libwx_gtk2u_adv-3.0.so
-lib/libwx_gtk2u_adv-3.0.so.0
 @lib lib/libwx_gtk2u_adv-3.0.so.${LIBwx_gtk2u_adv-3.0_VERSION}
-lib/libwx_gtk2u_aui-3.0.so
-lib/libwx_gtk2u_aui-3.0.so.0
 @lib lib/libwx_gtk2u_aui-3.0.so.${LIBwx_gtk2u_aui-3.0_VERSION}
-lib/libwx_gtk2u_core-3.0.so
-lib/libwx_gtk2u_core-3.0.so.0
 @lib lib/libwx_gtk2u_core-3.0.so.${LIBwx_gtk2u_core-3.0_VERSION}
-lib/libwx_gtk2u_gl-3.0.so
-lib/libwx_gtk2u_gl-3.0.so.0
 @lib lib/libwx_gtk2u_gl-3.0.so.${LIBwx_gtk2u_gl-3.0_VERSION}
-lib/libwx_gtk2u_html-3.0.so
-lib/libwx_gtk2u_html-3.0.so.0
 @lib lib/libwx_gtk2u_html-3.0.so.${LIBwx_gtk2u_html-3.0_VERSION}
-lib/libwx_gtk2u_media-3.0.so
-lib/libwx_gtk2u_media-3.0.so.0
 @lib lib/libwx_gtk2u_media-3.0.so.${LIBwx_gtk2u_media-3.0_VERSION}
-lib/libwx_gtk2u_propgrid-3.0.so
-lib/libwx_gtk2u_propgrid-3.0.so.0
 @lib lib/libwx_gtk2u_propgrid-3.0.so.${LIBwx_gtk2u_propgrid-3.0_VERSION}
-lib/libwx_gtk2u_qa-3.0.so
-lib/libwx_gtk2u_qa-3.0.so.0
 @lib lib/libwx_gtk2u_qa-3.0.so.${LIBwx_gtk2u_qa-3.0_VERSION}
-lib/libwx_gtk2u_ribbon-3.0.so
-lib/libwx_gtk2u_ribbon-3.0.so.0
 @lib lib/libwx_gtk2u_ribbon-3.0.so.${LIBwx_gtk2u_ribbon-3.0_VERSION}
-lib/libwx_gtk2u_richtext-3.0.so
-lib/libwx_gtk2u_richtext-3.0.so.0
 @lib lib/libwx_gtk2u_richtext-3.0.so.${LIBwx_gtk2u_richtext-3.0_VERSION}
-lib/libwx_gtk2u_stc-3.0.so
-lib/libwx_gtk2u_stc-3.0.so.0
 @lib lib/libwx_gtk2u_stc-3.0.so.${LIBwx_gtk2u_stc-3.0_VERSION}
-lib/libwx_gtk2u_webview-3.0.so
-lib/libwx_gtk2u_webview-3.0.so.0
 @lib lib/libwx_gtk2u_webview-3.0.so.${LIBwx_gtk2u_webview-3.0_VERSION}
-lib/libwx_gtk2u_xrc-3.0.so
-lib/libwx_gtk2u_xrc-3.0.so.0
 @lib lib/libwx_gtk2u_xrc-3.0.so.${LIBwx_gtk2u_xrc-3.0_VERSION}
 lib/wx/
 lib/wx/config/
