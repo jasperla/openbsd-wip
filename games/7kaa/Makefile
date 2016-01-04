@@ -3,9 +3,12 @@
 COMMENT-main = 		real-time startegy game
 COMMENT-data = 		7kaa data files
 
-DISTNAME =		7kaa-source-2.14.4
-PKGNAME-main = 		${DISTNAME:S/-source//}
-PKGNAME-data = 		${DISTNAME:S/source/data/}
+GH_ACCOUNT = 		the3dfxdude
+GH_PROJECT = 		7kaa
+GH_TAGNAME = 		v2.14.5
+DISTNAME = 		7kaa-${GH_TAGNAME:S/v//}
+PKGNAME-main = 		${DISTNAME}
+PKGNAME-data = 		7kaa-data-${GH_TAGNAME:S/v//}
 
 MULTI_PACKAGES = 	-main -data
 
@@ -18,14 +21,18 @@ MAINTAINER = 		Kirill Bychkov <kirby@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =  Yes
 
-MASTER_SITES = 		${MASTER_SITE_SOURCEFORGE:=skfans/}
-EXTRACT_SUFX = 		.tar.bz2
-
-WANTLIB-main += SDL SDL_net c m openal pthread stdc++
+WANTLIB-main += SDL2 c enet m openal pthread stdc++ ${WANTLIB}
 WANTLIB-data =
 
+MODULES = 		devel/gettext #converters/libiconv
+BUILD_DEPENDS = 	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool
+
 LIB_DEPENDS-main = 	audio/openal \
-			devel/sdl-net
+			devel/sdl2 \
+			net/enet \
+			${LIB_DEPENDS}
 RUN_DEPENDS-main = 	games/7kaa,-data
 
 CONFIGURE_STYLE =	gnu
@@ -33,12 +40,20 @@ CONFIGURE_ARGS +=	--bindir=${PREFIX}/share/7kaa
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			LIBS="-pthread"
+AUTOCONF_VERSION = 	2.69
+AUTOMAKE_VERSION = 	1.11
 
 NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/${PKGNAME-main}
 
 PKG_ARCH-data = 	*
+
+pre-configure:
+	cd ${WRKSRC} && \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		autoreconf -fi
 
 post-install:
 	echo "#!/bin/sh" > ${WRKSRC}/7kaa.sh
