@@ -19,21 +19,27 @@ PKG_ARCH =		*
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
-RUN_DEPENDS =		security/py-paramiko \
-			textproc/py-yaml \
-			www/py-requests
+RUN_DEPENDS =		security/py-paramiko${MODPY_FLAVOR} \
+			textproc/py-yaml${MODPY_FLAVOR} \
+			www/py-requests${MODPY_FLAVOR}
 
 BUILD_DEPENDS =		${RUN_DEPENDS} \
 			textproc/py-sphinx \
 
-TEST_DEPENDS =		devel/py-nose
+TEST_DEPENDS =		${RUN_DEPENDS} \
+			devel/py-httpretty${MODPY_FLAVOR} \
+			devel/py-nose${MODPY_FLAVOR} \
+			devel/py-mock${MODPY_FLAVOR}
 
-DOCDIR =		${PREFIX}/share/doc/py-boto
+DOCDIR =		${PREFIX}/share/doc/${MODPY_PY_PREFIX}-boto
+
+FLAVORS =		python3
+FLAVOR ?=
 
 post-build:
 	cd ${WRKSRC} && \
-		PYTHONPATH=${WRKSRC}\
-		 ${LOCALBASE}/bin/sphinx-build -N -b text docs/source \
+		PYTHONPATH=${WRKSRC} \
+		${LOCALBASE}/bin/sphinx-build -N -b text docs/source \
 		build/doc
 
 post-install:
