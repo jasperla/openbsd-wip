@@ -32,6 +32,7 @@ BUILD_DEPENDS =		devel/argp-standalone
 LIB_DEPENDS =		graphics/jpeg
 
 SEPARATE_BUILD =	Yes
+LIBTOOL_FLAGS =		--tag=disable-static
 CONFIGURE_STYLE =	gnu autoconf
 CONFIGURE_ARGS =	${CONFIGURE_SHARED}
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
