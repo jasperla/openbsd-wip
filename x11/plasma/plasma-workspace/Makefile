@@ -7,6 +7,14 @@ DISTNAME =		plasma-workspace-${VERSION}
 
 WANTLIB =		
 
-#LIB_DEPENDS =		foo/bar
+LIB_DEPENDS =		devel/kf5/kidletime \
+			devel/kf5/kdbusaddons \
+			devel/kf5/kjsembed \
+			devel/kf5/knotifyconfig \
+			devel/kf5/kxmlrpcclient \
+			x11/plasma/ksysguard
+
+CONFIGURE_ARGS = \
+	-DCMAKE_DISABLE_FIND_PACKAGE_KF5NetworkManagerQt=Yes
 
 .include <bsd.port.mk>

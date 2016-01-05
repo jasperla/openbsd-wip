@@ -7,6 +7,6 @@ DISTNAME =		ksysguard-${VERSION}
 
 WANTLIB =		
 
-#LIB_DEPENDS =		foo/bar
+LIB_DEPENDS =		x11/plasma/libksysguard
 
 .include <bsd.port.mk>

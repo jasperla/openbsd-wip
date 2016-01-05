@@ -1,0 +1,9 @@
+@comment $OpenBSD$
+@mode 4555
+@bin bin/kwrited
+@mode
+share/examples/xdg/
+share/examples/xdg/autostart/
+share/examples/xdg/autostart/kwrited-autostart.desktop
+share/knotifications5/
+share/knotifications5/kwrited.notifyrc

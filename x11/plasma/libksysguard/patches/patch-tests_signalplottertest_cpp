@@ -1,0 +1,13 @@
+$OpenBSD$
+Unbreak compilation.
+--- tests/signalplottertest.cpp.orig	Tue Jan  5 23:03:25 2016
++++ tests/signalplottertest.cpp	Tue Jan  5 23:03:38 2016
+@@ -5,6 +5,8 @@
+ #include <QtGui>
+ #include <limits>
+ 
++using namespace std;
++
+ void TestSignalPlotter::init()
+ {
+     s = new KSignalPlotter;

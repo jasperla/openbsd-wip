@@ -29,4 +29,6 @@ LIB_DEPENDS =		devel/kf5/kcmutils \
 			devel/kf5/kio \
 			devel/kf5/kwindowsystem
 
+KDE4_L10N_CONFLICT =	Yes
+
 .include <bsd.port.mk>

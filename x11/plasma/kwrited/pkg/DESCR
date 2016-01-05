@@ -1,0 +1,1 @@
+Watch for messages from local users sent with write(1) or wall(1).

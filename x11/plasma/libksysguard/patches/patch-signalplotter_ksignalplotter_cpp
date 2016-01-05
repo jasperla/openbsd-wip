@@ -1,0 +1,13 @@
+$OpenBSD$
+Unbreak compilation.
+--- signalplotter/ksignalplotter.cpp.orig	Tue Jan  5 22:26:50 2016
++++ signalplotter/ksignalplotter.cpp	Tue Jan  5 22:27:08 2016
+@@ -56,6 +56,8 @@
+ #include <Plasma/Svg>
+ #endif
+ 
++using namespace std;
++
+ 
+ #define VERTICAL_LINE_OFFSET 1
+ //Never store less 1000 samples if not visible.  This is kinda arbituary

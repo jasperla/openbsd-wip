@@ -15,4 +15,9 @@ MODULES :=		devel/kf5 ${MODULES}
 
 MASTER_SITES =		${MASTER_SITE_KDE:=stable/plasma/${VERSION}/}
 
+KDE4_L10N_CONFLICT ?=	No
+.if ${KDE4_L10N_CONFLICT:L} != "no"
+PKG_ARGS +=		-f ${.CURDIR}/../PFRAG.l10n
+.endif
+
 DIST_SUBDIR =		kde

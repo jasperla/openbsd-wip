@@ -1,5 +1,7 @@
 # $OpenBSD$
 
+# XXX requires Wayland
+
 COMMENT =		foo something
 DISTNAME =		kscreenlocker-${VERSION}
 

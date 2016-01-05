@@ -1,12 +1,11 @@
 # $OpenBSD$
 
-COMMENT =		foo something
+COMMENT =		KDE5 internal components for X screens management
 DISTNAME =		libkscreen-${VERSION}
 
-#SHARED_LIBS =		KF5Foo		0.0
+SHARED_LIBS =		KF5Screen		0.0
 
-WANTLIB =		
-
-#LIB_DEPENDS =		foo/bar
+WANTLIB =  Qt5Core Qt5DBus Qt5Gui Qt5X11Extras c m pthread xcb
+WANTLIB += xcb-randr
 
 .include <bsd.port.mk>

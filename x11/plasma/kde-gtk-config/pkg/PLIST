@@ -1,8 +1,8 @@
 @comment $OpenBSD$
 lib/kf5/plugins/kcm_kdegtkconfig.so
-@bin lib/libexec/gtk3_preview
-@bin lib/libexec/gtk_preview
-@bin lib/libexec/reload_gtk_apps
+@bin libexec/gtk3_preview
+@bin libexec/gtk_preview
+@bin libexec/reload_gtk_apps
 share/examples/xdg/cgcgtk3.knsrc
 share/examples/xdg/cgcicon.knsrc
 share/examples/xdg/cgctheme.knsrc

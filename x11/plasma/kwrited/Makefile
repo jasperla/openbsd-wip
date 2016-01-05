@@ -1,12 +1,14 @@
 # $OpenBSD$
 
-COMMENT =		foo something
+COMMENT =		write/wall listener
 DISTNAME =		kwrited-${VERSION}
 
-#SHARED_LIBS =		KF5Foo		0.0
+WANTLIB =  KF5CoreAddons KF5I18n KF5Notifications KF5Pty Qt5Core
+WANTLIB += Qt5Gui Qt5Widgets c m pthread
 
-WANTLIB =		
-
-#LIB_DEPENDS =		foo/bar
+LIB_DEPENDS =		devel/kf5/kcoreaddons \
+			devel/kf5/ki18n \
+			devel/kf5/knotifications \
+			devel/kf5/kpty
 
 .include <bsd.port.mk>
