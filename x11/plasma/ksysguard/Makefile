@@ -9,4 +9,6 @@ WANTLIB =
 
 LIB_DEPENDS =		x11/plasma/libksysguard
 
+CONFIGURE_ARGS =	CMAKE_DISABLE_FIND_PACKAGE_Sensors=Yes
+
 .include <bsd.port.mk>

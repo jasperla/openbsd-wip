@@ -1,0 +1,12 @@
+$OpenBSD$
+--- kded/device.cpp.orig	Wed Jan  6 14:27:28 2016
++++ kded/device.cpp	Wed Jan  6 14:30:32 2016
+@@ -19,7 +19,7 @@
+ 
+ #include "device.h"
+ #include "debug.h"
+-#include "kded/freedesktop_interface.h"
++#include <freedesktop_interface.h>
+ 
+ #include <QLoggingCategory>
+ 

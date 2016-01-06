@@ -7,6 +7,8 @@ DISTNAME =		plasma-desktop-${VERSION}
 
 WANTLIB =		
 
-#LIB_DEPENDS =		foo/bar
+LIB_DEPENDS =		devel/kf5/kpeople \
+			x11/plasma/libksysguard \
+			x11/plasma/plasma-workspace
 
 .include <bsd.port.mk>

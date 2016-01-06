@@ -1,4 +1,6 @@
 @comment $OpenBSD$
+@option no-default-conflict
+@conflict libkscreen->=5
 include/KF5/
 include/KF5/KScreen/
 include/KF5/KScreen/KScreen/
