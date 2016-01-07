@@ -1,1 +1,1 @@
-Segfaults in tests.
+test_fetch_renames tests fail, so renaming may be broken.

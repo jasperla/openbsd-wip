@@ -2,7 +2,7 @@
 
 COMMENT =		Subversion client Mercurial extension
 
-MODPY_EGG_VERSION =	1.8.3
+MODPY_EGG_VERSION =	1.8.4
 DISTNAME =		py-hgsubversion-${MODPY_EGG_VERSION}
 CATEGORIES =		devel net
 
@@ -23,7 +23,9 @@ RUN_DEPENDS =		devel/mercurial \
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/py-nose
 
-WRKDIST =		${WRKDIR}/durin42-hgsubversion-759cafce6bec
+# Instead of updating WRKDIST manually on every update, just move the directory
+post-extract:
+	@mv ${WRKDIR}/durin42-hgsubversion-???????????? ${WRKDIST}
 
 do-test:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} tests/run.py -v
