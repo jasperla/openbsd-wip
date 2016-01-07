@@ -4,7 +4,7 @@ V =			1.2.1
 COMMENT =		simple image viewer
 DISTNAME =		imv-$V
 CATEGORIES =		graphics x11
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
+MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
