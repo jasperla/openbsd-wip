@@ -2,7 +2,7 @@
 
 COMMENT =		shell frontend for duplicity backup tool
 
-V =				1.11
+V =			1.11.1
 DISTNAME =		duply_${V}
 PKGNAME =		duply-${V}
 
@@ -23,8 +23,8 @@ EXTRACT_SUFX =		.tgz
 
 MODULES =		lang/python
 RUN_DEPENDS =		shells/bash \
-					sysutils/duplicity \
-					security/gnupg<2
+			sysutils/duplicity \
+			security/gnupg<2
 
 NO_BUILD =		Yes
 #NO_TEST =		Yes

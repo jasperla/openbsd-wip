@@ -1,7 +1,7 @@
 $OpenBSD$
---- duply.orig	Tue Nov 24 13:26:37 2015
-+++ duply	Sat Dec 12 22:54:43 2015
-@@ -402,7 +402,8 @@
+--- duply.orig	Fri Dec 18 11:17:20 2015
++++ duply	Wed Jan  6 21:18:36 2016
+@@ -406,7 +406,8 @@
  
  # wrap grep to override possible env set GREP_OPTIONS=--color=always
  function grep {
@@ -11,16 +11,16 @@ $OpenBSD$
  }
  
  # implement basename in plain bash
-@@ -444,7 +445,7 @@ DEFAULT_TARGET_PASS='_backend_password_'
+@@ -448,7 +449,7 @@ DEFAULT_TARGET_PASS='_backend_password_'
  DEFAULT_GPG='gpg'
  DEFAULT_GPG_KEY='_KEY_ID_'
  DEFAULT_GPG_PW='_GPG_PASSWORD_'
--DEFAULT_PYTHON='python2'
+-DEFAULT_PYTHON='python'
 +DEFAULT_PYTHON='python2.7'
  
  # function definitions ##########################
  
-@@ -513,7 +514,7 @@ function using_info {
+@@ -517,7 +518,7 @@ function using_info {
    lookup duplicity && duplicity_version_get
    local NOTFOUND="MISSING"
    # freebsd awk (--version only), debian mawk (-W version only), deliver '' so awk does not wait for input
@@ -29,7 +29,7 @@ $OpenBSD$
    local GREP_VERSION=$( lookup grep && grep --version 2>&1 | awk 'NR<=2&&tolower($0)~/(busybox|grep.*[0-9]+\.[0-9]+)/{success=1;print;exit} END{if(success<1) print "unknown"}' || echo "$NOTFOUND" )
    local PYTHON_RUNNER=$(python_binary)
    local PYTHON_VERSION=$(lookup "$PYTHON_RUNNER" && "$PYTHON_RUNNER" -V 2>&1| awk '{print tolower($0);exit}' || echo "'$PYTHON_RUNNER' $NOTFOUND" )
-@@ -1436,12 +1437,12 @@ function gpg_key_cache {
+@@ -1443,12 +1444,12 @@ function gpg_key_cache {
    local RES
    local MODE=$1
    shift
@@ -45,7 +45,7 @@ $OpenBSD$
      return 255
    elif ! var_isset "$CACHE"; then
      if [ "$MODE" = "PUB" ]; then
-@@ -1481,10 +1482,10 @@ function gpg_split_keyset2 {
+@@ -1488,10 +1489,10 @@ function gpg_split_keyset2 {
  }
  
  function gpg_prefix_keyset {
