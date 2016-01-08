@@ -31,7 +31,7 @@ TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/py-nose${MODPY_FLAVOR} \
 			devel/py-mock${MODPY_FLAVOR}
 
-DOCDIR =		${PREFIX}/share/doc/${MODPY_PY_PREFIX}-boto
+DOCDIR =		${PREFIX}/share/doc/${MODPY_PY_PREFIX}boto
 
 FLAVORS =		python3
 FLAVOR ?=
@@ -47,6 +47,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README.rst ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/build/doc/*.txt ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/build/doc/ref/*.txt ${DOCDIR}/ref
+.if ${FLAVOR:Mpython3}
+	cd ${PREFIX}/bin && find . -name '*' -exec mv {} {}${MODPY_BIN_SUFFIX} \;
+.endif
 
 # We can run the offline unit tests at least
 do-test:
