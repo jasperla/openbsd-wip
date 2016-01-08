@@ -19,7 +19,7 @@ GH_PROJECT =		uTox
 GH_TAGNAME =		v0.5.0
 
 LIB_DEPENDS =		audio/openal \
-			audio/libfilteraudio \
+			audio/filteraudio \
 			net/toxcore
 
 MAKE_FLAGS =		DBUS=0 V4LCONVERT=0 \
