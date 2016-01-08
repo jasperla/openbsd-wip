@@ -20,8 +20,11 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR} \
-			devel/py-sure${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
+			devel/py-nose${MODPY_FLAVOR} \
+			devel/py-sure${MODPY_FLAVOR} \
+			www/py-httplib2${MODPY_FLAVOR} \
+			www/py-requests${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR ?=
