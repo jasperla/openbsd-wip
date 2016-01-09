@@ -5,19 +5,13 @@ PORTROACH =		limit:!.*\.[0-9][0-9][0-9]-src-builtpkgs$$
 
 SHARED_ONLY =		Yes
 
-# Racket includes C fallback code for architectures without JIT support but
-# nobody tests regularly this code outside of amd64 (Linux/OSX). The code
-# is buggy and the devs can't fix the problems because they have not access
-# to these architectures. In addition, the C code is extremely slow compared
-# with the JIT.
-ONLY_FOR_ARCHS =	i386 amd64 sparc64 powerpc
+ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 
 COMMENT =		multi-paradigm programming language
 
-V =			6.3
-REVISION =		1
+V =			6.3.0.13
 PKGNAME =		racket-minimal-$V
-DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
+DISTFILES =		min-racket-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
 
 CATEGORIES =		lang
@@ -64,15 +58,11 @@ CONFIGURE_ARGS +=	--enable-libffi \
 # - "backtrace" is expensive.
 #   http://article.gmane.org/gmane.comp.lang.racket.devel/6700
 # - disable "docs" to reduce the number of deps and the build time
-# - "places" and "futures" require thread-local storage and atomic CAS
-#   http://article.gmane.org/gmane.comp.lang.racket.user/16723
 # - The installation of shared libraries is not recommended.
 CONFIGURE_ARGS +=	--disable-backtrace \
 			--disable-docs \
 			--disable-libs \
-			--disable-shared \
-			--disable-places \
-			--disable-futures
+			--disable-shared
 
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
@@ -86,10 +76,29 @@ CONFIGURE_ARGS +=	--disable-strip \
 CFLAGS += -ggdb3
 .endif
 
+# - "places" and "futures" require thread-local storage, atomic CAS and JIT
+#   http://article.gmane.org/gmane.comp.lang.racket.user/16723
+# - Using gcc4 to enable "places". It broke Racket in the past. Testing it again.
 .if ${FLAVOR:Mno_jit}
-ONLY_FOR_ARCHS =	i386 amd64 powerpc
-CONFIGURE_ARGS +=	--disable-jit
+ONLY_FOR_ARCHS =	amd64 i386 powerpc
+CONFIGURE_ARGS +=	--disable-jit \
+			--disable-places \
+			--disable-futures
+.elif ${MACHINE_ARCH} != "sparc64"
+MODULES +=		gcc4
+MODGCC4_LANGS =		c c++
+MODGCC4_ARCHS =		amd64 i386 powerpc
+CONFIGURE_ARGS +=	--enable-jit \
+			--enable-places \
+			--enable-futures
+.else
+CONFIGURE_ARGS +=	--disable-jit \
+			--disable-places \
+			--disable-futures
 .endif
+
+# XXX Probably fixes a bunch of bugs
+#CFLAGS += -Wall -fno-strict-aliasing
 
 post-install:
 	@perl -i -pe 's/installation-name . "snapshot"/installation-name . "$V"/g' ${WRKINST}/etc/racket/config.rktd
@@ -100,8 +109,10 @@ post-install:
 # MZ_TRY_EXTFLONUMS enabled, MZ_LONG_DOUBLE (extflonum) is turned on. Also
 # C_COMPILER_USES_SSE turn on MZ_USE_JIT_SSE.
 # "-msse -mfpmath=sse" required by extflonum on i386.
-# The GNU Lightning minimum requirement is SSE2.
-.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
+# The GNU Lightning minimum requirement for i386 is SSE2.
+.if ${FLAVOR:Mno_jit} && ${MACHINE_ARCH} == "i386"
+CONFIGURE_ARGS +=	--disable-extflonum
+.elif ${MACHINE_ARCH} == "i386"
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -msse -msse2 -mfpmath=sse"
 CONFIGURE_ARGS +=	--enable-extflonum
 .endif
