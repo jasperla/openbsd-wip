@@ -17,7 +17,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 # XXX path causes problems
 MASTER_SITES =		http://downloads.sourceforge.net/project/ftplicity/duply%20%28simple%20duplicity%29/1.11.x/
 #MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ftplicity/'duply%20%28simple%20duplicity%29'/1.9.x/}
-#MASTER_SITES =		${MASTER_SITE_foo:=subdir/}
 
 EXTRACT_SUFX =		.tgz
 
@@ -27,7 +26,7 @@ RUN_DEPENDS =		shells/bash \
 			security/gnupg<2
 
 NO_BUILD =		Yes
-#NO_TEST =		Yes
+NO_TEST =		Yes
 
 SUBST_VARS +=	MODPY_VERSION
 
