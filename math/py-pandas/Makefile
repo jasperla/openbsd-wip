@@ -13,7 +13,7 @@ HOMEPAGE =		http://pandas.pydata.org/
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		m pthread python2.7 stdc++
+WANTLIB +=		m pthread ${MODPY_WANTLIB} stdc++
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
@@ -22,18 +22,14 @@ MODULES =		lang/python
 
 # These are optional runtime dependencies that should be around for
 # building the docs and running the tests.
-OPTIONAL_DEPENDS = 	graphics/py-matplotlib \
-			net/py-boto \
-			x11/py-qt4 \
-			www/py-httplib2 \
-			www/py-beautifulsoup4 \
+OPTIONAL_DEPENDS = 	devel/ipython \
 			devel/py-html5lib \
-			devel/ipython \
-			x11/py-gtk2 \
+			graphics/py-matplotlib \
+			math/py-scipy \
+			net/py-boto \
+			www/py-beautifulsoup4 \
+			www/py-httplib2 \
 			x11/xclip
-
-BUILD_DEPENDS =		${RUN_DEPENDS} \
-			${OPTIONAL_DEPENDS}
 
 RUN_DEPENDS =		devel/py-tz \
 			devel/py-dateutil \
@@ -41,12 +37,10 @@ RUN_DEPENDS =		devel/py-tz \
 
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/py-nose \
-			${FULLPKGNAME}:math/py-pandas \
 			${OPTIONAL_DEPENDS}
 #TEST_IS_INTERACTIVE =	X11
 
-do-test:
-	${LOCALBASE}/bin/nosetests pandas -v
+# XXX for build doc need X
 
 # http://pandas.pydata.org/pandas-docs/stable/install.html
 #
@@ -55,13 +49,12 @@ do-test:
 # place"
 #
 # Building docs will fail if we don't do this.
-post-build:
-	cd ${WRKBUILD} && ${MODPY_CMD} build_ext --inplace
-	cd ${WRKBUILD}/doc && ${MODPY_BIN} make.py
+#post-build:
+#	cd ${WRKBUILD} && ${MODPY_CMD} build_ext --inplace
+#	cd ${WRKBUILD}/doc && ${MODPY_BIN} make.py
 
-post-install:
-	cp -r ${WRKBUILD}/doc/build/html ${PREFIX}/share/doc/py-pandas
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/py-pandas
-
+#post-install:
+#	cp -r ${WRKBUILD}/doc/build/html ${PREFIX}/share/doc/py-pandas
+#	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/py-pandas
 
 .include <bsd.port.mk>
