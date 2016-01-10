@@ -15,7 +15,6 @@ MAINTAINER =	Jim Razmus II <jim@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-PKG_ARCH =		*
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 

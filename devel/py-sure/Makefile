@@ -14,7 +14,6 @@ MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-PKG_ARCH =		*
 MODULES =		lang/python
 
 MODPY_PI =		Yes
