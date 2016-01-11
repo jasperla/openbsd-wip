@@ -1,0 +1,21 @@
+$OpenBSD$
+--- wscript_build.py.orig	Sun Jan 10 14:30:31 2016
++++ wscript_build.py	Mon Jan 11 04:40:53 2016
+@@ -444,7 +444,7 @@ def build(ctx):
+             install_path = ctx.env.BINDIR
+         )
+         for f in ['example.conf', 'input.conf', 'mplayer-input.conf', \
+-                  'restore-old-bindings.conf']:
++                  'restore-old-bindings.conf', 'encoding-profiles.conf']:
+             ctx.install_as(os.path.join(ctx.env.DOCDIR, f),
+                            os.path.join('etc/', f))
+ 
+@@ -559,8 +559,6 @@ def build(ctx):
+         ctx.install_files(
+             ctx.env.DATADIR + '/applications',
+             ['etc/mpv.desktop'] )
+-
+-        ctx.install_files(ctx.env.CONFDIR, ['etc/encoding-profiles.conf'] )
+ 
+         for size in '16x16 32x32 64x64'.split():
+             ctx.install_as(
