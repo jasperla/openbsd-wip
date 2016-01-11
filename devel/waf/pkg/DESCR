@@ -1,0 +1,6 @@
+The Waf framework supports the major usecases encountered when working on a
+software project. It is essentially a library of components that are suitable
+for use in a build system, with an emphasis on extensibility. Although the
+default distribution contains various plugins for several programming languages
+and different tools (c, d, ocaml, java, etc), it is by no means a frozen
+product. Creating new extensions is both a standard and a recommended practice.
