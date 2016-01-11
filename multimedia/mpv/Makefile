@@ -8,7 +8,7 @@ COMMENT =		movie player based on MPlayer/mplayer2
 DISTNAME =		mpv-0.14.1
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
-GH_COMMIT =		459b40cc4bfa57befde753d3bf761d98cac3fd42
+GH_COMMIT =		a1f949d3b83224306e099c7d670f11eb8f249b84
 
 CATEGORIES =		multimedia x11
 
@@ -86,15 +86,18 @@ CONFIGURE_ARGS +=	--confdir=${SYSCONFDIR}/mpv \
 CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib" CFLAGS="${CFLAGS}"
 
 MAKE_FLAGS =		V=1
-FAKE_FLAGS =		CONFDIR=${DESTDIR}${PREFIX}/share/examples/mpv
+FAKE_FLAGS =		--confdir=${DESTDIR}${PREFIX}/share/examples/mpv
 
 USE_GROFF =		Yes
 NO_TEST =		Yes
 
 post-install:
 	@${INSTALL_DATA} ${WRKDIST}/TOOLS/mpv_identify.sh \
-	                ${WRKDIST}/TOOLS/umpv \
-	                	${PREFIX}/share/examples/mpv
+	                 ${WRKDIST}/TOOLS/umpv \
+	                			${PREFIX}/share/examples/mpv
+	@mv ${DESTDIR}/etc/mpv/encoding-profiles.conf \
+						${PREFIX}/share/examples/mpv
+	@rm -Rf ${DESTDIR}/etc/mpv
 	@sed -Ei 's,(/dev/dvd|/dev/cdrom),/dev/rcd0c,' ${PREFIX}/man/man1/mpv.1
 
 .include <bsd.port.mk>

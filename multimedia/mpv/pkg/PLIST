@@ -1,7 +1,4 @@
 @comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/11 08:21:39 bentley Exp $
-@comment bin/chmap
-@comment bin/chmap_sel
-@comment bin/gl_video
 @bin bin/mpv
 @man man/man1/mpv.1
 share/applications/mpv.desktop
