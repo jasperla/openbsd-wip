@@ -8,7 +8,7 @@ COMMENT =		movie player based on MPlayer/mplayer2
 DISTNAME =		mpv-0.14.1
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
-GH_COMMIT =		a1f949d3b83224306e099c7d670f11eb8f249b84
+GH_COMMIT =		968bcfd3ba8e5585d878d8176d02220c04e09487
 
 CATEGORIES =		multimedia x11
 
@@ -50,18 +50,14 @@ LIB_DEPENDS =		audio/libcdio \
 			multimedia/libv4l \
 			net/samba
 
-# zsh.pl needs to find the binary that was just built
-PORTPATH =		\
-	${WRKDIR}/bin:${WRKBUILD}:/usr/bin:/bin:/usr/sbin:/sbin:${DEPBASE}/bin:${LOCALBASE}/bin:${X11BASE}/bin
-
+MODPY_RUNDEP ?=		No
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
-CFLAGS +=		-I${WRKSRC} -I${LOCALBASE}/include
-
 CONFIGURE_STYLE =	waf
 MODWAF_SYSTEM_WAF =	Yes
-CONFIGURE_ARGS +=	--confdir=${SYSCONFDIR}/mpv \
+CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
+			--confdir=${LOCALBASE}/share/examples/mpv \
 			--mandir=${LOCALBASE}/man \
 			--docdir=${LOCALBASE}/share/examples/mpv \
 			--zshdir=${LOCALBASE}/share/zsh/vendor-completions \
@@ -81,23 +77,19 @@ CONFIGURE_ARGS +=	--confdir=${SYSCONFDIR}/mpv \
 			--disable-uchardet \
 			--disable-optimize \
 			--disable-gpl3
-#			--enable-test \
 
-CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib" CFLAGS="${CFLAGS}"
-
-MAKE_FLAGS =		V=1
-FAKE_FLAGS =		--confdir=${DESTDIR}${PREFIX}/share/examples/mpv
+MAKE_ENV +=		LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_GROFF =		Yes
 NO_TEST =		Yes
+
+CFLAGS +=		-I${WRKSRC} -I${LOCALBASE}/include
 
 post-install:
 	@${INSTALL_DATA} ${WRKDIST}/TOOLS/mpv_identify.sh \
 	                 ${WRKDIST}/TOOLS/umpv \
 	                			${PREFIX}/share/examples/mpv
-	@mv ${DESTDIR}/etc/mpv/encoding-profiles.conf \
-						${PREFIX}/share/examples/mpv
-	@rm -Rf ${DESTDIR}/etc/mpv
-	@sed -Ei 's,(/dev/dvd|/dev/cdrom),/dev/rcd0c,' ${PREFIX}/man/man1/mpv.1
+	@${MODPY_BIN_ADJ} ${PREFIX}/share/examples/mpv/umpv
+	@sed -Ei 's,(/dev/dvd|/dev/cdrom),/dev/rcd0c,g' ${PREFIX}/man/man1/mpv.1
 
 .include <bsd.port.mk>
