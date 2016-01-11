@@ -15,8 +15,8 @@ MASTER_SITES =		${HOMEPAGE}
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		lang/python
+
 CONFIGURE_STYLE =	No
-NO_BUILD =		Yes
 NO_TEST =		Yes
 
 _WAF_REVISION =		4bb74d2af0d005ad4420ee36f19f050a
@@ -25,9 +25,11 @@ _WAF_WAFDIR =		${LOCALBASE}/lib
 
 SUBST_VARS +=		V _WAF_REVISION _WAF_GIT _WAF_INSTALL _WAF_WAFDIR
 
+do-build:
+	${MODPY_BIN} -m compileall ${WRKSRC}/waflib
+
 do-install:
 	${SUBST_CMD} -c -m 755 ${FILESDIR}/waf ${PREFIX}/bin/waf
 	cp -R ${WRKSRC}/waflib ${DESTDIR}${_WAF_WAFDIR}/waflib
-	${MODPY_BIN} -m compileall ${DESTDIR}${_WAF_WAFDIR}/waflib
 
 .include <bsd.port.mk>
