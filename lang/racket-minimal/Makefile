@@ -9,7 +9,7 @@ ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 
 COMMENT =		multi-paradigm programming language
 
-V =			6.3.0.13
+V =			6.3.0.14
 PKGNAME =		racket-minimal-$V
 DISTFILES =		min-racket-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
@@ -21,8 +21,8 @@ MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 # LGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		https://www.cs.utah.edu/plt/installers/${V}/ \
-			http://mirror.racket-lang.org/installers/${V}/ \
+MASTER_SITES =		https://mirror.racket-lang.org/installers/${V}/ \
+			https://www.cs.utah.edu/plt/installers/${V}/ \
 			http://www.eecs.northwestern.edu/racket/${V}/ \
 			http://mirror.informatik.uni-tuebingen.de/mirror/racket/${V}/ \
 			http://racket.infogroep.be/${V}/ \
