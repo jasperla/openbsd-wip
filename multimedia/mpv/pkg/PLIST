@@ -6,9 +6,9 @@ share/examples/mpv/
 @sample ${SYSCONFDIR}/mpv/
 share/examples/mpv/encoding-profiles.conf
 @sample ${SYSCONFDIR}/mpv/encoding-profiles.conf
-share/examples/mpv/example.conf
 share/examples/mpv/input.conf
 share/examples/mpv/mplayer-input.conf
+share/examples/mpv/mpv.conf
 share/examples/mpv/mpv_identify.sh
 share/examples/mpv/restore-old-bindings.conf
 share/examples/mpv/umpv

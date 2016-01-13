@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.21 2016/01/08 18:47:01 feinerer Exp $
+# $OpenBSD$
 
 # archs with atomic ops
 ONLY_FOR_ARCHS =	alpha amd64 i386 mips64 mips64el powerpc sparc64
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
-DISTNAME =		mpv-0.14.1
+DISTNAME =		mpv-0.14.2
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
-GH_COMMIT =		968bcfd3ba8e5585d878d8176d02220c04e09487
+GH_COMMIT =		dd973da108165ebb95e856dbc82326cb35fb45a5
 
 CATEGORIES =		multimedia x11
 
@@ -66,24 +66,39 @@ CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
 			--enable-zsh-comp \
 			--disable-alsa \
 			--disable-caca \
+			--disable-dxva2-hwaccel \
 			--disable-enca \
+			--disable-gpl3 \
 			--disable-jack \
 			--disable-libarchive \
 			--disable-libguess \
+			--disable-rubberband \
 			--disable-oss-audio \
 			--disable-openal \
+			--disable-optimize \
 			--disable-pulse \
 			--disable-rsound \
 			--disable-uchardet \
-			--disable-optimize \
-			--disable-gpl3
+			--disable-vaapi \
+			--disable-vaapi-glx \
+			--disable-vaapi-hwaccel \
+			--disable-vaapi-x-egl \
+			--disable-vaapi-x11 \
+			--disable-vaapi-wayland \
+			--disable-vapoursynth \
+			--disable-vapoursynth-lazy \
+			--disable-vdpau \
+			--disable-vdpau-hwaccel \
+			--disable-videotoolbox-hwaccel \
+			--disable-videotoolbox-gl \
+			--disable-wayland
+CONFIGURE_ARGS +=	-c yes
 
 MAKE_ENV +=		LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_ENV +=		CPPFLAGS="-I${LOCALBASE}/include"
 
 USE_GROFF =		Yes
 NO_TEST =		Yes
-
-CFLAGS +=		-I${WRKSRC} -I${LOCALBASE}/include
 
 post-install:
 	@${INSTALL_DATA} ${WRKDIST}/TOOLS/mpv_identify.sh \
