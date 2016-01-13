@@ -1,0 +1,4 @@
+The R-curl package provides bindings to the libcurl C library for R. The
+package supports retrieving data in-memory, downloading to disk, or
+streaming using the R “connection” interface. Some knowledge of curl
+is recommended to use this package.
