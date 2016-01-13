@@ -32,11 +32,15 @@ USE_CCACHE =			No
 R_LIBDIR =			${PREFIX}/lib/R/library
 SUBST_VARS +=			DESTDIR R_LIBDIR WRKSRC
 
+# File(s) we modified and need to regen the checksum for
+UPDATED_FILES =			configure
+
 post-extract:
 	sed -i 's,^#!/bin/bash,#!/bin/sh,' ${WRKSRC}/configure
-	# Now touch-up the md5 sum for 'configure'
+.for f in ${UPDATED_FILES}
 	cd ${WRKSRC} && \
-		sed -i "s,.* \(\*configure\)$$,`md5 -q configure` \1," MD5
+		sed -i "s,.* \(\*$f\)$$,`md5 -q $f` \1," MD5
+.endfor
 	${SUBST_CMD} -m 0644 -c ${FILESDIR}/install.R ${WRKDIR}/install.R
 
 do-install:
