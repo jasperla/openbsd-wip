@@ -1,2 +1,1 @@
-- is the RDEP on bash really needed or does /bin/sh suffice?
 - is install.Rout always created in ${BASE_PKGPATH} ?

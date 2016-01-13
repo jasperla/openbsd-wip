@@ -19,8 +19,7 @@ MASTER_SITES =			https://cran.r-project.org/src/contrib/
 WRKDIST =			${WRKDIR}/curl/
 
 WANTLIB =			curl
-BUILD_DEPENDS =			math/R \
-				shells/bash
+BUILD_DEPENDS =			math/R
 LIB_DEPENDS =			net/curl
 RUN_DEPENDS =			math/R
 
@@ -33,9 +32,8 @@ USE_CCACHE =			No
 R_LIBDIR =			${PREFIX}/lib/R/library
 SUBST_VARS +=			DESTDIR R_LIBDIR WRKSRC
 
-# XXX: really needed or will /bin/sh suffice?
 post-extract:
-	sed -i 's,^#!/bin/bash,#!${LOCALBASE}/bin/bash,' ${WRKSRC}/configure
+	sed -i 's,^#!/bin/bash,#!/bin/sh,' ${WRKSRC}/configure
 	# Now touch-up the md5 sum for 'configure'
 	cd ${WRKSRC} && \
 		sed -i "s,.* \(\*configure\)$$,`md5 -q configure` \1," MD5
