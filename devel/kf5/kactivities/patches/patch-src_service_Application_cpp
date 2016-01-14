@@ -1,0 +1,13 @@
+$OpenBSD$
+De-conflict with x11/kde4/kactivities.
+--- src/service/Application.cpp.orig	Sat Dec 26 02:20:13 2015
++++ src/service/Application.cpp	Sat Dec 26 02:20:36 2015
+@@ -364,7 +364,7 @@ int main(int argc, char **argv)
+         // Starting the dameon
+ 
+         QProcess::startDetached(
+-                KAMD_INSTALL_PREFIX "/bin/kactivitymanagerd",
++                KAMD_INSTALL_PREFIX "/bin/kactivitymanagerd5",
+                 QStringList{"start-daemon"}
+             );
+ 

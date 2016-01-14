@@ -1,0 +1,41 @@
+$OpenBSD$
+
+Don't build internal libmpeg2. Remove C warning.
+
+--- Makefile.am.orig	Fri Sep 25 16:15:28 2015
++++ Makefile.am	Wed Dec 30 20:38:33 2015
+@@ -1,7 +1,5 @@
+ # Makefile.am for FS-UAE
+ 
+-SUBDIRS = libmpeg2
+-
+ WARNINGS =
+ 
+ CM_CFLAGS =
+@@ -23,10 +21,6 @@ if F_NO_STRICT_OVERFLOW
+ CM_CFLAGS += -fno-strict-overflow
+ endif
+ 
+-if W_MISSING_DECLARATIONS
+-CM_CFLAGS += -Wmissing-declarations
+-endif
+-
+ if W_ADDRESS
+ CM_CFLAGS += -Waddress
+ endif
+@@ -1048,15 +1042,8 @@ libsoftfloat_a_SOURCES = \
+ 	softfloat/softfloatx80.h
+ endif
+ 
+-if BUILTIN_LIBMPEG2
+-AM_CPPFLAGS += -I$(s)/libmpeg2/include
+-fs_uae_LDADD += \
+-	libmpeg2/libmpeg2/.libs/libmpeg2.a \
+-	libmpeg2/libmpeg2/convert/.libs/libmpeg2convert.a
+-else
+ CM_CFLAGS += @LIBMPEG2_CFLAGS@
+ LIBS += @LIBMPEG2_LIBS@
+-endif
+ 
+ noinst_LIBRARIES += libdummy.a
+ nodist_libdummy_a_SOURCES = \

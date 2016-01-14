@@ -1,0 +1,2 @@
+HTTPretty is a HTTP client mock library for Python 100% inspired on ruby's
+FakeWeb. If you come from ruby this would probably sound familiar.

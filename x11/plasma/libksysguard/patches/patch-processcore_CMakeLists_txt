@@ -1,0 +1,27 @@
+$OpenBSD$
+Unbreak and rework OpenBSD support, using libkvm.
+--- processcore/CMakeLists.txt.orig	Tue Dec 22 13:38:11 2015
++++ processcore/CMakeLists.txt	Tue Jan  5 22:29:40 2016
+@@ -26,9 +26,9 @@ target_link_libraries(processcore
+     ${ZLIB_LIBRARIES}
+ )
+ 
+-if( ${CMAKE_SYSTEM_NAME} MATCHES "NetBSD" )
+-  message(STATUS "Adding kvm library on NetBSD")
+-  target_link_libraries(processcore kvm)
++if( ${CMAKE_SYSTEM_NAME} MATCHES "NetBSD" OR ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD" )
++  message(STATUS "Adding kvm library on NetBSD/OpenBSD")
++  target_link_libraries(processcore PRIVATE kvm)
+ endif()
+ 
+ target_include_directories(processcore PUBLIC "$<BUILD_INTERFACE:${libksysguard_SOURCE_DIR}>" "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/ksysguard>")
+@@ -50,6 +50,9 @@ set(ksysguardprocesslist_helper_srcs
+ 
+ add_executable(ksysguardprocesslist_helper ${ksysguardprocesslist_helper_srcs})
+ target_link_libraries(ksysguardprocesslist_helper Qt5::Core KF5::Auth KF5::I18n)
++if( ${CMAKE_SYSTEM_NAME} MATCHES "NetBSD" OR ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD" )
++  target_link_libraries(ksysguardprocesslist_helper kvm)
++endif()
+ install(TARGETS ksysguardprocesslist_helper DESTINATION ${KAUTH_HELPER_INSTALL_DIR})
+ 
+ kauth_install_helper_files(ksysguardprocesslist_helper org.kde.ksysguard.processlisthelper root)

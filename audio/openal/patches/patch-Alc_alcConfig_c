@@ -1,7 +1,7 @@
 $OpenBSD$
---- Alc/alcConfig.c.orig	Fri Aug 15 09:06:59 2014
-+++ Alc/alcConfig.c	Sat Jun  6 15:59:05 2015
-@@ -326,7 +326,7 @@ void ReadALConfig(void)
+--- Alc/alcConfig.c.orig	Thu Dec 10 13:45:30 2015
++++ Alc/alcConfig.c	Sat Jan  2 19:04:13 2016
+@@ -353,7 +353,7 @@ void ReadALConfig(void)
      const char *str;
      FILE *f;
  
@@ -10,7 +10,7 @@ $OpenBSD$
  
      TRACE("Loading config %s...\n", str);
      f = al_fopen(str, "r");
-@@ -337,7 +337,7 @@ void ReadALConfig(void)
+@@ -364,7 +364,7 @@ void ReadALConfig(void)
      }
  
      if(!(str=getenv("XDG_CONFIG_DIRS")) || str[0] == 0)

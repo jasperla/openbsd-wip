@@ -1,0 +1,8 @@
+GTK configuration dialogs for KDE5. Features:
+
+ * Themes installation
+ * Themes uninstallation
+ * Icon themes selection
+ * Icon themes fallback selection
+ * Themes selection
+ * Fonts selection

@@ -1,0 +1,79 @@
+./datetime/datetimetest.cpp:1289:Assertion
+Test name: DateTimeTestCase::TestDateWeekFormat
+equality assertion failed
+- Expected: 2015-01
+- Actual  : 2015-53
+
+./intl/intltest.cpp:107:Assertion
+Test name: IntlTestCase::RestoreLocale
+equality assertion failed
+- Expected: ,
+- Actual  : .
+
+./intl/intltest.cpp:200:Assertion
+Test name: IntlTestCase::DateTimeFmtFrench
+equality assertion failed
+- Expected: %d/%m/%Y
+- Actual  : %m/%d/%y
+- French short date
+
+./intl/intltest.cpp:229:Assertion
+Test name: IntlTestCase::DateTimeFmtC
+equality assertion failed
+- Expected: %d/%m/%Y
+- Actual  : %m/%d/%y
+- C short date
+
+./strings/numformatter.cpp:100:Assertion
+Test name: NumFormatterTestCase::LongToString
+equality assertion failed
+- Expected: 1,234
+- Actual  : 1234
+
+./strings/numformatter.cpp:123:Assertion
+Test name: NumFormatterTestCase::LongLongToString
+equality assertion failed
+- Expected: 1,234
+- Actual  : 1234
+
+./strings/numformatter.cpp:143:Assertion
+Test name: NumFormatterTestCase::DoubleToString
+equality assertion failed
+- Expected: 1,234.56
+- Actual  : 1234.56
+
+./strings/numformatter.cpp:220:Assertion
+Test name: NumFormatterTestCase::LongFromString
+assertion failed
+- Expression: wxNumberFormatter::FromString("1,234", &l)
+
+./strings/numformatter.cpp:256:Assertion
+Test name: NumFormatterTestCase::LongLongFromString
+assertion failed
+- Expression: wxNumberFormatter::FromString("1,234", &l)
+
+./strings/numformatter.cpp:291:Assertion
+Test name: NumFormatterTestCase::DoubleFromString
+assertion failed
+- Expression: wxNumberFormatter::FromString("1,234.56789012", &d)
+
+./strings/strings.cpp:188:Assertion
+Test name: StringTestCase::FormatUnicode
+equality assertion failed
+- Expected:
+- Actual  :
+
+./strings/strings.cpp:816:Assertion
+Test name: StringTestCase::ToDouble
+equality assertion failed
+- Expected: 1
+- Actual  : 0
+
+./strings/strings.cpp:865:Assertion
+Test name: StringTestCase::FromDouble
+equality assertion failed
+- Expected: 1,23
+- Actual  : 1.23
+
+Failures !!!
+Run: 1260   Failure total: 13   Failures: 13   Errors: 0

@@ -1,0 +1,8 @@
+The SystemSettings provides the user with a centralized and convenient way to
+configure all of the settings for your desktop.
+
+SystemSettings is made up of multiple modules. Each module is a separate
+application, however the SystemSettings organizes all of these applications into
+a single location.
+
+Each SystemSettings module can be executed individually.

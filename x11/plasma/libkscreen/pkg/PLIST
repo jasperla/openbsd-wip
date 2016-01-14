@@ -1,0 +1,51 @@
+@comment $OpenBSD$
+@option no-default-conflict
+@conflict libkscreen->=5
+include/KF5/
+include/KF5/KScreen/
+include/KF5/KScreen/KScreen/
+include/KF5/KScreen/KScreen/Config
+include/KF5/KScreen/KScreen/ConfigMonitor
+include/KF5/KScreen/KScreen/ConfigOperation
+include/KF5/KScreen/KScreen/EDID
+include/KF5/KScreen/KScreen/GetConfigOperation
+include/KF5/KScreen/KScreen/Mode
+include/KF5/KScreen/KScreen/Output
+include/KF5/KScreen/KScreen/Screen
+include/KF5/KScreen/KScreen/SetConfigOperation
+include/KF5/KScreen/KScreen/Types
+include/KF5/KScreen/kscreen/
+include/KF5/KScreen/kscreen/backendmanager_p.h
+include/KF5/KScreen/kscreen/config.h
+include/KF5/KScreen/kscreen/configmonitor.h
+include/KF5/KScreen/kscreen/configoperation.h
+include/KF5/KScreen/kscreen/edid.h
+include/KF5/KScreen/kscreen/getconfigoperation.h
+include/KF5/KScreen/kscreen/kscreen_export.h
+include/KF5/KScreen/kscreen/mode.h
+include/KF5/KScreen/kscreen/output.h
+include/KF5/KScreen/kscreen/screen.h
+include/KF5/KScreen/kscreen/setconfigoperation.h
+include/KF5/KScreen/kscreen/types.h
+include/KF5/kscreen_version.h
+lib/cmake/KF5Screen/
+lib/cmake/KF5Screen/KF5ScreenConfig.cmake
+lib/cmake/KF5Screen/KF5ScreenConfigVersion.cmake
+lib/cmake/KF5Screen/KF5ScreenTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF5Screen/KF5ScreenTargets.cmake
+lib/kf5/
+lib/kf5/plugins/
+lib/kf5/plugins/kf5/
+lib/kf5/plugins/kf5/kscreen/
+lib/kf5/plugins/kf5/kscreen/KSC_Fake.so
+lib/kf5/plugins/kf5/kscreen/KSC_QScreen.so
+lib/kf5/plugins/kf5/kscreen/KSC_XRandR.so
+lib/kf5/plugins/kf5/kscreen/KSC_XRandR11.so
+@lib lib/libKF5Screen.so.${LIBKF5Screen_VERSION}
+lib/pkgconfig/kscreen2.pc
+libexec/kf5/
+@bin libexec/kf5/kscreen_backend_launcher
+share/dbus-1/services/org.kde.kscreen.service
+share/kf5/
+share/kf5/mkspecs/
+share/kf5/mkspecs/qt_KScreen.pri

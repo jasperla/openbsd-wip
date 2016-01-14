@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+bin/slade
+lib/SLADE/
+@bin lib/SLADE/slade
+lib/SLADE/slade.pk3

@@ -1,0 +1,2 @@
+This package contains only KDE5 internal components for managing running
+processes. For actual applications, see the ksysguard package instead.

@@ -1,0 +1,14 @@
+This package contains collection of KDE5 utilities intended to be run on
+the command line rather than via GUI:
+
+  * kcmshell5 - hosts KDE control modules independently of SystemSettings;
+  * kdecp5 - analog of cp(1) but with GUI;
+  * kdeeject5 - script used by kdesktop to eject removable media (CDROM, etc.);
+  * kdemv5 - analog of mv(1) but with GUI;
+  * kdesu5 - graphical frontend to the su/sudo/doas command;
+  * keditfiletype5 - MIME types editor;
+  * kioclient5 - command-line interface to KIO framework;
+  * kmimetypefinder5 - determines MIME type of the given file;
+  * kstart5 - starts KDE apps with given (default) window state;
+  * ksvgtopng5 - simple SVG-to-PNG converter;
+  * ktraderclient5 - client for KDE trader system.

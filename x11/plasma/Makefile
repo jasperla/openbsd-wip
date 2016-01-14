@@ -1,0 +1,43 @@
+# $OpenBSD$
+SUBDIR =
+SUBDIR += bluedevil
+SUBDIR += breeze
+SUBDIR += breeze-gtk
+SUBDIR += discover
+SUBDIR += kde-cli-tools
+SUBDIR += kde-gtk-config
+SUBDIR += kdecoration
+SUBDIR += kdeplasma-addons
+SUBDIR += kgamma5
+SUBDIR += khelpcenter
+SUBDIR += khotkeys
+SUBDIR += kinfocenter
+SUBDIR += kmenuedit
+SUBDIR += kscreen
+SUBDIR += kscreenlocker
+SUBDIR += ksshaskpass
+SUBDIR += ksysguard
+SUBDIR += kwallet-pam
+SUBDIR += kwayland
+SUBDIR += kwayland-integration
+SUBDIR += kwin
+SUBDIR += kwrited
+SUBDIR += libkscreen
+SUBDIR += libksysguard
+SUBDIR += milou
+SUBDIR += oxygen
+SUBDIR += oxygen-fonts
+SUBDIR += plasma-desktop
+SUBDIR += plasma-mediacenter
+SUBDIR += plasma-nm
+SUBDIR += plasma-pa
+SUBDIR += plasma-sdk
+SUBDIR += plasma-workspace
+SUBDIR += plasma-workspace-wallpapers
+SUBDIR += polkit-kde-agent-1
+SUBDIR += powerdevil
+SUBDIR += sddm-kcm
+SUBDIR += systemsettings
+SUBDIR += user-manager
+
+.include <bsd.port.subdir.mk>

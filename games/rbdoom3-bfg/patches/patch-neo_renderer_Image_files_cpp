@@ -1,0 +1,42 @@
+$OpenBSD$
+--- neo/renderer/Image_files.cpp.orig	Sun Mar  8 00:46:38 2015
++++ neo/renderer/Image_files.cpp	Sun Jan  3 00:03:59 2016
+@@ -636,9 +636,10 @@ extern "C"
+ 	
+ 	static void	png_ReadData( png_structp pngPtr, png_bytep data, png_size_t length )
+ 	{
+-		memcpy( data, ( byte* )pngPtr->io_ptr, length );
+-		
+-		pngPtr->io_ptr = ( ( byte* ) pngPtr->io_ptr ) + length;
++		png_voidp io_ptr = png_get_io_ptr( pngPtr );
++		memcpy( data, ( byte* )io_ptr, length );
++		io_ptr = ((byte *)io_ptr) + length;
++		png_set_read_fn( pngPtr, io_ptr, png_ReadData );
+ 	}
+ 	
+ }
+@@ -766,18 +767,20 @@ static void LoadPNG( const char* filename, unsigned ch
+ 
+ extern "C"
+ {
++	
++	static void	png_FlushData( png_structp pngPtr ) { }
+ 
+ 	static int png_compressedSize = 0;
+ 	static void	png_WriteData( png_structp pngPtr, png_bytep data, png_size_t length )
+ 	{
+-		memcpy( ( byte* )pngPtr->io_ptr, data, length );
++		png_voidp io_ptr = png_get_io_ptr( pngPtr );
++		memcpy( ( byte* )io_ptr, data, length );
+ 		
+-		pngPtr->io_ptr = ( ( byte* ) pngPtr->io_ptr ) + length;
++		io_ptr = ( ( byte* ) io_ptr ) + length;
++		png_set_write_fn( pngPtr, io_ptr, png_WriteData, png_FlushData );
+ 		
+ 		png_compressedSize += length;
+ 	}
+-	
+-	static void	png_FlushData( png_structp pngPtr ) { }
+ 	
+ }
+ 

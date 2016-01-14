@@ -1,0 +1,21 @@
+$OpenBSD$
+--- src/MainApp.cpp.orig	Fri Sep 18 13:28:53 2015
++++ src/MainApp.cpp	Sun Jan  3 14:34:02 2016
+@@ -126,7 +126,7 @@ EXTERN_CVAR(Bool, map_show_selection_numbers)
+  * getTraceString(). wxStackWalker is currently unimplemented on mac,
+  * so unfortunately it has to be disabled there
+  *******************************************************************/
+-#ifndef __APPLE__
++#if !defined(__APPLE__) && !defined(__OpenBSD__)
+ class SLADEStackTrace : public wxStackWalker
+ {
+ private:
+@@ -873,7 +873,7 @@ int MainApp::OnExit()
+ 
+ void MainApp::OnFatalException()
+ {
+-#ifndef __APPLE__
++#if !defined(__APPLE__) && !defined(__OpenBSD__)
+ #ifndef _DEBUG
+ 	SLADEStackTrace st;
+ 	st.WalkFromException();

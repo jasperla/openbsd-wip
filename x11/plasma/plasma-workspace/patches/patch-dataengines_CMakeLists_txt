@@ -1,0 +1,15 @@
+$OpenBSD$
+Make NetworkManagerQt dependency optional.
+--- dataengines/CMakeLists.txt.orig	Mon Jan  4 13:05:53 2016
++++ dataengines/CMakeLists.txt	Mon Jan  4 13:06:36 2016
+@@ -9,7 +9,9 @@ add_subdirectory(dict)
+ add_subdirectory(executable)
+ add_subdirectory(favicons)
+ add_subdirectory(filebrowser)
+-add_subdirectory(geolocation)
++if (KF5NetworkManagerQt_FOUND)
++  add_subdirectory(geolocation)
++endif ()
+ add_subdirectory(hotplug)
+ add_subdirectory(keystate)
+ add_subdirectory(mpris2)

@@ -1,0 +1,6 @@
+This package provides graphical access to KDE5 help system.
+Many KDE applications ship help files, but to make help info
+actually accessible this package is needed.
+
+For full-text search the ht://dig needs to be installed
+(not ported yet).

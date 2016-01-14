@@ -1,0 +1,6 @@
+wxWidgets 3.0.2
+
+Compared to wxWidgets it the port doesn't strip the version suffix
+(3.0) and the -media package is merged into -main. This is because
+when webkit is enabled, both link against webkit, which in turn
+depends on gstreamer.

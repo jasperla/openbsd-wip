@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-@bin bin/lrx-comp
-@bin bin/lrx-proc
-@bin bin/multitrans

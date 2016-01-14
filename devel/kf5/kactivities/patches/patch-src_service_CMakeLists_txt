@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/service/CMakeLists.txt.orig	Sat Dec 26 02:18:05 2015
++++ src/service/CMakeLists.txt	Sat Dec 26 02:17:44 2015
+@@ -65,6 +65,8 @@ qt5_add_dbus_adaptor (
+    )
+ 
+ add_executable (kactivitymanagerd ${kactivitymanager_SRCS})
++set_target_properties (kactivitymanagerd PROPERTIES
++   OUTPUT_NAME kactivitymanagerd5)
+ 
+ target_link_libraries (kactivitymanagerd
+    Qt5::Core

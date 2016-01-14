@@ -1,0 +1,12 @@
+$OpenBSD$
+--- gstprovider/gstthread.h.orig	Wed Apr 24 14:45:17 2013
++++ gstprovider/gstthread.h	Wed Apr 24 14:45:26 2013
+@@ -22,7 +22,7 @@
+ #define PSI_GSTTHREAD_H
+ 
+ #include <QThread>
+-#include <glib/gmain.h>
++#include <glib.h>
+ 
+ namespace PsiMedia {
+ 

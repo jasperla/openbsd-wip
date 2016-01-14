@@ -1,0 +1,89 @@
+$OpenBSD: README,v 1.3 2014/03/15 13:04:16 edd Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Kickstart ROM
+==============
+
+You will need a Kickstart ROM for the system you wish to emulate.
+Kickstart is the name given to the chip in a real Amiga that contains
+the bootloader and other stuff. The Kickstart ROM can either be dumped
+from a real Amiga using a tool like Amiga Explorer for Windows.
+Alternatively you can buy the Kickstart ROM from AmigaForever. More
+details here:
+
+http://www.amigakickstart.com/
+
+The Kickstart ROMs are copyrighted. You should obtain them legally.
+
+Launcher
+========
+
+The majority of emulator configuration, including the import of Kickstarts,
+can now be done via the launcher. This is now an external package
+(emulators/fs-uae-launcher).
+
+Joysticks
+=========
+
+The launcher should detect your joystick automagically, but incase it
+does not, here are the instructions for configuring one manually.
+
+Under Linux, SDL joysticks show up as named devices and ideally there
+would be a config file in ${TRUEPREFIX}/share/fs-uae/input for each
+Under OpenBSD however, SDL joysticks are named "joystick (n)", where n
+is the uhid device number. Due to these differences, joystick setup is
+slightly different. This is best shown by example.
+
+Suppose we want to configure this device as a joystick:
+
+uhidev0 at uhub4 port 1 configuration 1 interface 0 "WiseGroup.,Ltd MP-8888 USB Joypad" rev 1.10/3.00 addr 2
+uhidev0: iclass 3/0
+uhid0 at uhidev0: input=7, output=3, feature=0
+
+First find a matching or similar device config in
+${TRUEPREFIX}/share/fs-uae/input/.
+
+In this case of our example, a close match is:
+wisegroup_ltd/tigergame_ps_ps2_game_controller_adapter.ini
+
+To use this joystick configuration:
+
+ $ cp ${TRUEPREFIX}/share/fs-uae/input/wisegroup_ltd/tigergame_ps_ps2_game_controller_adapter.ini \
+ 	~/FS-UAE/Controllers/joystick_0.ini
+
+Now edit your config file and uncomment this line:
+#joystick_port_1 = joystick (0)
+
+Note that we "plug the controller in" to the second joystick port. This
+is because on a real Amiga, port 0 (the first port) is usually occupied
+by a mouse.
+
+When you next boot fs-uae the joystick should now work.
+
+Useful Keyboard Shortcuts
+=========================
+
+The keyboard shortcuts you absolutely need to know are:
+
+F12:		Show menu.
+Alt + Enter:	Toggle fullscreen.
+Middle click:	Release mouse from FS-UAE.
+F12 + g:	Release mouse from FS-UAE.
+F12 + q:	Quit
+
+If you have no real joystick configured, you can use the emulated one.
+Cursor keys controls the joystick stick and right ctrl or right alt
+controls the fire button.
+
+FS-UAE is Slow?
+===============
+
+Play with 'video_sync' and 'accuracy' in the config file.
+
+Documentation
+=============
+
+See http://fengestad.no/fs-uae/documentation

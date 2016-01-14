@@ -1,0 +1,11 @@
+BlueDevil runtime dependencies:
+ - bluez5
+   - General Bluetooth management
+
+ - bluez-obexd
+   - Be able to "Browse File" aka kio_obexftp
+   - Be able to "Send Files" (bluedevil-sendfile)
+   - Be able to receive files
+
+ -pulseaudio-module-bluetooth
+   - Be able to connect A2DP profile

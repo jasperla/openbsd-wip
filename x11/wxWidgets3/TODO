@@ -1,0 +1,3 @@
+- test with upcoming SLADE port
+- look into failed regress tests and old 2.8 patches
+- resolve conflict with wxwidgets 2.8

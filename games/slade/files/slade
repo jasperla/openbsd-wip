@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# $OpenBSD$
+
+${PREFIX}/lib/slade "$@"
