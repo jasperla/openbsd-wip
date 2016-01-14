@@ -9,9 +9,9 @@ ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 
 COMMENT =		multi-paradigm programming language
 
-V =			6.3.0.14
+V =			6.3.90.900
 PKGNAME =		racket-minimal-$V
-DISTFILES =		min-racket-$V-src-builtpkgs${EXTRACT_SUFX} \
+DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
 
 CATEGORIES =		lang
@@ -101,6 +101,7 @@ CONFIGURE_ARGS +=	--disable-jit \
 #CFLAGS += -Wall -fno-strict-aliasing
 
 post-install:
+	@find ${PREFIX} -type f -name '*.orig' -exec rm -f {} \;
 	@perl -i -pe 's/installation-name . "snapshot"/installation-name . "$V"/g' ${WRKINST}/etc/racket/config.rktd
 	@mv ${WRKINST}/etc/racket ${PREFIX}/share/examples
 	@cp ${WRKDIR}/racket-openbsd/racket-user-bin-paths ${PREFIX}/bin
