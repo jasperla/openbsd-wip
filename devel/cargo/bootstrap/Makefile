@@ -2,7 +2,7 @@
 
 COMMENT = package manager for Rust language (bootstrap)
 
-CARGO_VERSION = 0.4.0
+CARGO_VERSION = 0.5.0
 DISTNAME   = cargo-bootstrap-${CARGO_VERSION}
 PKGNAME    = ${DISTNAME}
 CATEGORIES = devel
@@ -25,78 +25,89 @@ DIST_SUBDIR = cargo-bootstrap
 
 # We can't use GH_* because we need multiple GitHub sources.
 MASTER_SITES = https://github.com/dhuseby/cargo-bootstrap/archive/
-CB_COMMIT    = 08fe920504fe7165e7404574a5153b0309100e98
+CB_COMMIT    = a9d60d470d0b27b7d1087c325f0f2944d27dfe37
 DISTFILES   += cargo-bootstrap-${CB_COMMIT}.tar.gz{${CB_COMMIT}.tar.gz}
 WRKDIST      = ${WRKDIR}/cargo-bootstrap-${CB_COMMIT}
 
 MASTER_SITES0 = https://github.com/rust-lang/crates.io-index/archive/
-CRATES_COMMIT = f2df62f243781ce14973c03d6e917b4f683cdfe5
+CRATES_COMMIT = 82abe5d6678eb07c64742767203698b9870b73ab
 DISTFILES    += crates.io-index-${CRATES_COMMIT}.tar.gz{${CRATES_COMMIT}.tar.gz}:0
 
+CRATES += cargo-${CARGO_VERSION} \
+	  advapi32-sys-0.1.2 \
+	  aho-corasick-0.3.2 \
+	  bitflags-0.1.1 \
+	  cmake-0.1.4 \
+	  crates-io-0.1.0 \
+	  curl-0.2.11 \
+	  curl-sys-0.1.25 \
+	  docopt-0.6.72 \
+	  encoding-0.2.32 \
+	  encoding-index-japanese-1.20141219.5 \
+	  encoding-index-korean-1.20141219.5 \
+	  encoding-index-simpchinese-1.20141219.5 \
+	  encoding-index-singlebyte-1.20141219.5 \
+	  encoding-index-tradchinese-1.20141219.5 \
+	  encoding_index_tests-0.1.4 \
+	  env_logger-0.3.1 \
+	  filetime-0.1.5 \
+	  flate2-0.2.9 \
+	  gcc-0.3.16 \
+	  git2-0.2.14 \
+	  git2-curl-0.2.4 \
+	  glob-0.2.10 \
+	  heapsize-0.1.2 \
+	  heapsize_plugin-0.0.1 \
+	  kernel32-sys-0.1.4 \
+	  libc-0.1.10 \
+	  libgit2-sys-0.2.20 \
+	  libssh2-sys-0.1.30 \
+	  libz-sys-0.1.8 \
+	  log-0.3.2 \
+	  matches-0.1.2 \
+	  memchr-0.1.6 \
+	  miniz-sys-0.1.6 \
+	  num-0.1.27 \
+	  num_cpus-0.2.6 \
+	  openssl-sys-0.6.5 \
+	  pkg-config-0.3.5 \
+	  rand-0.3.11 \
+	  regex-0.1.41 \
+	  regex-syntax-0.2.2 \
+	  rustc-serialize-0.3.16 \
+	  semver-0.1.20 \
+	  serde-0.5.3 \
+	  serde-0.6.0 \
+	  strsim-0.3.0 \
+	  tar-0.3.1 \
+	  term-0.2.11 \
+	  threadpool-0.1.4 \
+	  time-0.1.32 \
+	  toml-0.1.22 \
+	  url-0.2.37 \
+	  winapi-0.2.4 \
+	  winapi-build-0.1.1
+
+
 MASTER_SITES1 = https://crates.io/api/v1/crates/
-DISTFILES    += cargo-${CARGO_VERSION}.tar.gz{cargo/${CARGO_VERSION}/download}:1
-DISTFILES    += advapi32-sys-0.1.2.tar.gz{advapi32-sys/0.1.2/download}:1
-DISTFILES    += aho-corasick-0.3.0.tar.gz{aho-corasick/0.3.0/download}:1
-DISTFILES    += bitflags-0.1.1.tar.gz{bitflags/0.1.1/download}:1
-DISTFILES    += crates-io-0.1.0.tar.gz{crates-io/0.1.0/download}:1
-DISTFILES    += curl-0.2.10.tar.gz{curl/0.2.10/download}:1
-DISTFILES    += curl-sys-0.1.25.tar.gz{curl-sys/0.1.25/download}:1
-DISTFILES    += docopt-0.6.67.tar.gz{docopt/0.6.67/download}:1
-DISTFILES    += encoding-0.2.32.tar.gz{encoding/0.2.32/download}:1
-DISTFILES    += encoding-index-japanese-1.20141219.5.tar.gz{encoding-index-japanese/1.20141219.5/download}:1
-DISTFILES    += encoding-index-korean-1.20141219.5.tar.gz{encoding-index-korean/1.20141219.5/download}:1
-DISTFILES    += encoding-index-simpchinese-1.20141219.5.tar.gz{encoding-index-simpchinese/1.20141219.5/download}:1
-DISTFILES    += encoding-index-singlebyte-1.20141219.5.tar.gz{encoding-index-singlebyte/1.20141219.5/download}:1
-DISTFILES    += encoding-index-tradchinese-1.20141219.5.tar.gz{encoding-index-tradchinese/1.20141219.5/download}:1
-DISTFILES    += encoding_index_tests-0.1.4.tar.gz{encoding_index_tests/0.1.4/download}:1
-DISTFILES    += env_logger-0.3.1.tar.gz{env_logger/0.3.1/download}:1
-DISTFILES    += filetime-0.1.4.tar.gz{filetime/0.1.4/download}:1
-DISTFILES    += flate2-0.2.7.tar.gz{flate2/0.2.7/download}:1
-DISTFILES    += gcc-0.3.10.tar.gz{gcc/0.3.10/download}:1
-DISTFILES    += git2-0.2.13.tar.gz{git2/0.2.13/download}:1
-DISTFILES    += git2-curl-0.2.4.tar.gz{git2-curl/0.2.4/download}:1
-DISTFILES    += glob-0.2.10.tar.gz{glob/0.2.10/download}:1
-DISTFILES    += kernel32-sys-0.1.2.tar.gz{kernel32-sys/0.1.2/download}:1
-DISTFILES    += libc-0.1.9.tar.gz{libc/0.1.9/download}:1
-DISTFILES    += libgit2-sys-0.2.20.tar.gz{libgit2-sys/0.2.20/download}:1
-DISTFILES    += libssh2-sys-0.1.26.tar.gz{libssh2-sys/0.1.26/download}:1
-DISTFILES    += libz-sys-0.1.6.tar.gz{libz-sys/0.1.6/download}:1
-DISTFILES    += log-0.3.1.tar.gz{log/0.3.1/download}:1
-DISTFILES    += matches-0.1.2.tar.gz{matches/0.1.2/download}:1
-DISTFILES    += memchr-0.1.3.tar.gz{memchr/0.1.3/download}:1
-DISTFILES    += miniz-sys-0.1.5.tar.gz{miniz-sys/0.1.5/download}:1
-DISTFILES    += num-0.1.25.tar.gz{num/0.1.25/download}:1
-DISTFILES    += num_cpus-0.2.6.tar.gz{num_cpus/0.2.6/download}:1
-DISTFILES    += openssl-sys-0.6.4.tar.gz{openssl-sys/0.6.4/download}:1
-DISTFILES    += pkg-config-0.3.5.tar.gz{pkg-config/0.3.5/download}:1
-DISTFILES    += rand-0.3.8.tar.gz{rand/0.3.8/download}:1
-DISTFILES    += regex-0.1.41.tar.gz{regex/0.1.41/download}:1
-DISTFILES    += regex-syntax-0.2.0.tar.gz{regex-syntax/0.2.0/download}:1
-DISTFILES    += rustc-serialize-0.3.15.tar.gz{rustc-serialize/0.3.15/download}:1
-DISTFILES    += semver-0.1.19.tar.gz{semver/0.1.19/download}:1
-DISTFILES    += serde-0.4.3.tar.gz{serde/0.4.3/download}:1
-DISTFILES    += strsim-0.3.0.tar.gz{strsim/0.3.0/download}:1
-DISTFILES    += tar-0.2.14.tar.gz{tar/0.2.14/download}:1
-DISTFILES    += term-0.2.11.tar.gz{term/0.2.11/download}:1
-DISTFILES    += threadpool-0.1.4.tar.gz{threadpool/0.1.4/download}:1
-DISTFILES    += time-0.1.31.tar.gz{time/0.1.31/download}:1
-DISTFILES    += toml-0.1.21.tar.gz{toml/0.1.21/download}:1
-DISTFILES    += url-0.2.36.tar.gz{url/0.2.36/download}:1
-DISTFILES    += winapi-0.1.23.tar.gz{winapi/0.1.23/download}:1
-DISTFILES    += winapi-0.2.1.tar.gz{winapi/0.2.1/download}:1
-DISTFILES    += winapi-build-0.1.0.tar.gz{winapi-build/0.1.0/download}:1
+.for _crate in ${CRATES}
+DISTFILES    += ${_crate}.tar.gz{${_crate:C/-[^-]*$//}/${_crate:C/^.*-//}/download}:1
+.endfor
+
+MAKE_ENV += LIBSSH2_SYS_USE_PKG_CONFIG=1
 
 pre-configure:
 	# XXX: This is fixed in upstream git, but not yet in a release.
-	patch -d ${WRKDIR}/curl-sys-0.1.25 <files/curl-sys.patch
+	sed -i 's/-bitrig/-openbsd/' ${WRKDIR}/curl-sys-0.1.25/Cargo.toml
+	# Remove "heapsize" and "heapsize_plugin" dependencies from "url"
+	sed -i '/dependencies\.heapsize/,/^$$/d' ${WRKDIR}/url-0.2.37/Cargo.toml
 
 do-build:
-	${WRKDIST}/bootstrap.py \
+	env -i ${MAKE_ENV} ${WRKDIST}/bootstrap.py \
 		--cargo-root ${WRKDIR}/cargo-${CARGO_VERSION} \
 		--target-dir ${WRKDIR} \
 		--crate-index ${WRKDIR}/crates.io-index-${CRATES_COMMIT} \
 		--no-clean \
-		--no-download \
 		--no-git \
 		--target x86_64-unknown-openbsd
 
@@ -109,9 +120,13 @@ MODULES         = lang/python
 MODPY_RUNDEP    = No # only the build script is python
 MODPY_ADJ_FILES = bootstrap.py
 
-BUILD_DEPENDS = devel/py-dulwich lang/rust textproc/py-toml
-# TODO: BUILD_DEPENDS += devel/py-toml
-LIB_DEPENDS   = net/curl security/libssh2
+BUILD_DEPENDS = devel/libgit2/libgit2 \
+		devel/py-dulwich \
+		lang/rust>=1.5.0p0 \
+		textproc/py-toml
+LIB_DEPENDS   = net/curl \
+		security/libssh2
+RUN_DEPENDS   = lang/rust
 
 NO_TEST = Yes
 
