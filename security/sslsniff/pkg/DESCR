@@ -1,4 +1,0 @@
-This tool was originally written to demonstrate and exploit IE's vulnerability
-to a specific "basicConstraints" man-in-the-middle attack. While Microsoft has
-since fixed the vulnerability that allowed leaf certificates to act as signing
-certificates, this tool is still occasionally useful for other purposes.

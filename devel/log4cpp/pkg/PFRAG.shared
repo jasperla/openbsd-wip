@@ -1,2 +1,0 @@
-@comment $OpenBSD$
-@lib lib/liblog4cpp.so.${LIBlog4cpp_VERSION}
