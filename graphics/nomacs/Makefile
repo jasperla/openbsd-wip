@@ -4,7 +4,7 @@ COMMENT =		small and fast Qt image viewer
 
 V = 			3.0.0
 DISTNAME =		nomacs-${V}-source
-PKGNAME =		nomacs-${V}-beta
+PKGNAME =		nomacs-${V}
 
 CATEGORIES =		graphics
 
@@ -14,7 +14,7 @@ MAINTAINER =		Rafael Sadowski <rafael@sizeofvoid.org>
 
 GH_ACCOUNT =		nomacs
 GH_PROJECT =		nomacs
-GH_COMMIT =		7b4458cdeb84d39ccd0d201e51f7868cce3e4c02
+GH_COMMIT =		5821af531ea267822791b69eb18196dcbcf9cc2e
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
