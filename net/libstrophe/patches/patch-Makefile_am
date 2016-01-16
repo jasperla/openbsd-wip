@@ -1,4 +1,9 @@
 $OpenBSD$
+
+remove thread.{c,h} discussed on
+https://github.com/strophe/libstrophe/pull/72
+
+
 --- Makefile.am.orig	Tue Aug 18 23:07:06 2015
 +++ Makefile.am	Sun Dec 20 14:39:41 2015
 @@ -22,10 +22,10 @@ libstrophe_la_LDFLAGS += -export-symbols-regex '^xmpp_

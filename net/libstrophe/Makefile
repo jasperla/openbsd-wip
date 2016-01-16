@@ -16,7 +16,7 @@ GH_COMMIT =	cd92f69c76cdb93e73e8d15c3634d1b5a9eeea57
 
 SHARED_LIBS =   strophe                 0.0 # 0.0
 
-WANTLIB += crypto expat pthread ssl
+WANTLIB += crypto expat ssl
 
 BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
