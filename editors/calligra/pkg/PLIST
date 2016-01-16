@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/11/11 09:34:23 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.8 2015/12/19 15:46:01 benoit Exp $
 @conflict koffice-*
 @bin bin/braindump
 @bin bin/calligra
