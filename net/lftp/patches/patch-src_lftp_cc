@@ -1,0 +1,19 @@
+$OpenBSD$
+
+add pledge(2)
+
+--- src/lftp.cc.orig	Thu Dec 10 13:17:48 2015
++++ src/lftp.cc	Sat Jan 16 20:39:37 2016
+@@ -537,6 +537,12 @@ char *program_name;
+ 
+ int   main(int argc,char **argv)
+ {
++    if (pledge("stdio rpath dns tty inet proc exec fattr", NULL) == -1)
++    {
++        fprintf(stderr, "lftp: pledge\n");
++        exit(1);
++    }
++
+    program_name=argv[0];
+ 
+ #ifdef SOCKS4
