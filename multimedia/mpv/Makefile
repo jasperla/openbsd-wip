@@ -5,10 +5,10 @@ ONLY_FOR_ARCHS =	alpha amd64 i386 mips64 mips64el powerpc sparc64
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
-DISTNAME =		mpv-0.14.2
+DISTNAME =		mpv-0.14.3
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
-GH_COMMIT =		dd973da108165ebb95e856dbc82326cb35fb45a5
+GH_COMMIT =		bc1dce5d5b8eabc29813b85ea79dd6d69a9367a3
 
 CATEGORIES =		multimedia x11
 

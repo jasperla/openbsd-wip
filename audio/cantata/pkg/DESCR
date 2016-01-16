@@ -1,4 +1,0 @@
-Cantata started off as a fork of QtMPC, mainly to provide better KDE
-integration - by using KDE libraries/classes wherever possible. However, the
-code (and user interface) is now *very* different to that of QtMPC, and both
-KDE and Qt (Linux) builds have the same feature set.

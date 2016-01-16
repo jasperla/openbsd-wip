@@ -1,9 +1,0 @@
-- configure break down (can't find libboost-thread):
-
-checking boost/filesystem.hpp usability... yes
-checking boost/filesystem.hpp presence... yes
-checking for boost/filesystem.hpp... yes
-checking boost/thread.hpp usability... no
-checking boost/thread.hpp presence... no
-checking for boost/thread.hpp... no
-configure: error: libboost-thread1.35-dev library is not installed.
