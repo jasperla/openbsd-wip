@@ -8,7 +8,7 @@ BROKEN-alpha=	.got subsegment exceeds 64K
 COMMENT-main=	source code documentation generator tool
 COMMENT-gui=	GUI front-end for doxygen
 
-VERSION=	1.8.10
+VERSION=	1.8.11
 DISTNAME=	doxygen-${VERSION}.src
 PKGNAME-main=	doxygen-${VERSION}
 FULLPKGNAME-gui=doxygen-gui-${VERSION}

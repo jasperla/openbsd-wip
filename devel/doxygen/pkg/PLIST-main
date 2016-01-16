@@ -3,3 +3,5 @@
 @pkgpath devel/doxygen
 @bin bin/doxygen
 @man man/man1/doxygen.1
+@man man/man1/doxyindexer.1
+@man man/man1/doxysearch.1
