@@ -1,0 +1,5 @@
+wayland-protocols contains protocols and protocol extensions
+complementing the Wayland core protocol with additional functionality. As
+of this release, projects can start to add a build time dependency on
+wayland-protocols and use wayland-scanner to generate protocol C API
+using the XML protocol files installed by wayland-protocols.

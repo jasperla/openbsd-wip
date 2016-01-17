@@ -1,0 +1,32 @@
+$OpenBSD$
+TEMPORARY PATCH!
+--- tests/event-loop-test.c.orig	Sat Jun 13 01:31:24 2015
++++ tests/event-loop-test.c	Mon Jan 11 19:05:35 2016
+@@ -24,6 +24,10 @@
+  * SOFTWARE.
+  */
+ 
++#include "../config.h"
++
++#include <err.h>
++
+ #include <stdlib.h>
+ #include <assert.h>
+ #include <unistd.h>
+@@ -207,6 +211,7 @@ TEST(event_loop_multiple_same_signals)
+ 	/* Try it again  with one source */
+ 	calls_no = 0;
+ 	kill(getpid(), SIGUSR1);
++	sleep(1);    /* give enough time for signal being accounted */
+ 	assert(wl_event_loop_dispatch(loop, 0) == 0);
+ 	assert(calls_no == 1);
+ 
+@@ -229,7 +234,7 @@ TEST(event_loop_timer)
+ {
+ 	struct wl_event_loop *loop = wl_event_loop_create();
+ 	struct wl_event_source *source;
+-	int got_it = 0;
++	volatile int got_it = 0;
+ 
+ 	source = wl_event_loop_add_timer(loop, timer_callback, &got_it);
+ 	assert(source);

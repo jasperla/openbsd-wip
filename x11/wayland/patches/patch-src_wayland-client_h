@@ -1,0 +1,15 @@
+$OpenBSD$
+Unbreak build.
+--- src/wayland-client.h.orig	Sat Jan  9 16:23:58 2016
++++ src/wayland-client.h	Sat Jan  9 16:24:23 2016
+@@ -33,6 +33,10 @@
+ #ifndef WAYLAND_CLIENT_H
+ #define WAYLAND_CLIENT_H
+ 
++#ifndef EPROTO
++# define EPROTO ENOPROTOOPT
++#endif
++
+ #include "wayland-client-core.h"
+ #include "wayland-client-protocol.h"
+ 

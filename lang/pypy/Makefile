@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.15 2015/05/28 10:17:24 pascal Exp $
+# $OpenBSD: Makefile,v 1.18 2015/12/03 21:24:30 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		fast implementation of the Python language
 
 # To update PyPy to a new version:
-#   * Bump ${V} but set ${BOOTSTRAP_V} to the old ${V}
+#   * Bump ${V} but set ${BOOTSTRAP_V} to the old ${V} (keeping
+#     any bootstrap version suffix intact, e.g. "-1")
 #   * FLAVOR=no_bootstrap make makesum
 #   * FLAVOR=no_bootstrap make plist (fix anything along the way)
 #   * FLAVOR=no_bootstrap make package
 #   * Set BOOTSTRAP_V back to ${V} in the port Makefile
 #   * make bootstrap && make makesum (note, FLAVOR no longer set)
 #   * Try the build using the bootstrap
-V =			2.6.0
+V =			4.0.1
 BOOTSTRAP_V =		${V}
 DISTNAME =		pypy-${V}-src
 PKGNAME =		pypy-${V}
@@ -31,7 +32,7 @@ WANTLIB +=		bz2 c crypto curses expat ffi gdbm m ncurses panel
 WANTLIB +=		pthread sqlite3 ssl ${MODTCL_LIB} ${MODTK_LIB} util z
 
 MASTER_SITES =		https://bitbucket.org/pypy/pypy/downloads/
-MASTER_SITES0 =		http://spacehopper.org/mirrors/
+MASTER_SITES0 =		https://spacehopper.org/mirrors/
 EXTRACT_SUFX =		.tar.bz2
 
 PSEUDO_FLAVORS =	no_bootstrap
