@@ -2,7 +2,7 @@
 
 CATEGORIES =		editors editors/calligra-l10n
 COMMENT =		Calligra localization pack
-VERSION =		2.9.7
+VERSION =		2.9.10
 DISTNAME =		calligra-l10n-${L10N_LANG}-${VERSION}
 
 PERMIT_PACKAGE_CDROM =	Yes

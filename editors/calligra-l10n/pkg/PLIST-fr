@@ -90,6 +90,7 @@ share/locale/fr/LC_MESSAGES/krossmoduleplan.mo
 share/locale/fr/LC_MESSAGES/krossmodulesheets.mo
 share/locale/fr/LC_MESSAGES/krossmodulewords.mo
 share/locale/fr/LC_MESSAGES/okularGenerator_odp.mo
+share/locale/fr/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/fr/LC_MESSAGES/plan.appdata.mo
 share/locale/fr/LC_MESSAGES/plan.mo
 share/locale/fr/LC_MESSAGES/planlibs.mo
