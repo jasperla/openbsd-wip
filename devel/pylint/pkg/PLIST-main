@@ -174,6 +174,9 @@ lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/assert_on_tuple.
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/assert_on_tuple.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/assigning_non_slot.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/assigning_non_slot.txt
+lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/async_functions.py
+lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/async_functions.rc
+lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/async_functions.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/attribute_defined_outside_init.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/attribute_defined_outside_init.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/bad_builtin.py
@@ -458,6 +461,9 @@ lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/statement_withou
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/statement_without_effect.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/string_formatting.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/string_formatting.txt
+lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/string_formatting_disable.py
+lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/string_formatting_disable.rc
+lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/string_formatting_disable.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/string_formatting_failed_inference.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/string_formatting_py27.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/functional/string_formatting_py27.rc
@@ -791,6 +797,7 @@ lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/package_all/n
 lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/precedence_test.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/py3k_error_flag.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/special_attr_scope_lookup_crash.py
+lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/syntax_error.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/try_finally_disable_msg_crash.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/regrtest_data/wrong_import_position.py
 lib/python${MODPY_VERSION}/site-packages/pylint/test/test_func.py
