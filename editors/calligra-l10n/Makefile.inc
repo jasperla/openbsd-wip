@@ -1,6 +1,5 @@
 # $OpenBSD: Makefile.inc,v 1.8 2015/04/12 18:06:32 zhuk Exp $
 
-IGNORE_SILENT =		Yes
 CATEGORIES =		editors editors/calligra-l10n
 COMMENT =		Calligra localization pack
 VERSION =		2.9.7
