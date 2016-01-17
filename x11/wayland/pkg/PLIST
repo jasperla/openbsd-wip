@@ -1,0 +1,150 @@
+@comment $OpenBSD$
+@bin bin/wayland-scanner
+include/wayland-client-core.h
+include/wayland-client-protocol.h
+include/wayland-client.h
+include/wayland-cursor.h
+include/wayland-egl-core.h
+include/wayland-egl.h
+include/wayland-server-core.h
+include/wayland-server-protocol.h
+include/wayland-server.h
+include/wayland-util.h
+include/wayland-version.h
+lib/libwayland-client.a
+lib/libwayland-client.la
+@lib lib/libwayland-client.so.${LIBwayland-client_VERSION}
+lib/libwayland-cursor.a
+lib/libwayland-cursor.la
+@lib lib/libwayland-cursor.so.${LIBwayland-cursor_VERSION}
+lib/libwayland-server.a
+lib/libwayland-server.la
+@lib lib/libwayland-server.so.${LIBwayland-server_VERSION}
+lib/pkgconfig/wayland-client.pc
+lib/pkgconfig/wayland-cursor.pc
+lib/pkgconfig/wayland-scanner.pc
+lib/pkgconfig/wayland-server.pc
+@man man/man3/wl_argument.3
+@man man/man3/wl_array.3
+@man man/man3/wl_array_add.3
+@man man/man3/wl_array_copy.3
+@man man/man3/wl_array_for_each.3
+@man man/man3/wl_array_init.3
+@man man/man3/wl_array_release.3
+@man man/man3/wl_buffer.3
+@man man/man3/wl_client.3
+@man man/man3/wl_client_create.3
+@man man/man3/wl_client_flush.3
+@man man/man3/wl_client_get_credentials.3
+@man man/man3/wl_client_get_display.3
+@man man/man3/wl_client_get_object.3
+@man man/man3/wl_container_of.3
+@man man/man3/wl_dispatcher_func_t.3
+@man man/man3/wl_display.3
+@man man/man3/wl_display_add_shm_format.3
+@man man/man3/wl_display_add_socket.3
+@man man/man3/wl_display_cancel_read.3
+@man man/man3/wl_display_connect.3
+@man man/man3/wl_display_connect_to_fd.3
+@man man/man3/wl_display_create.3
+@man man/man3/wl_display_create_queue.3
+@man man/man3/wl_display_destroy.3
+@man man/man3/wl_display_disconnect.3
+@man man/man3/wl_display_dispatch.3
+@man man/man3/wl_display_dispatch_pending.3
+@man man/man3/wl_display_dispatch_queue.3
+@man man/man3/wl_display_dispatch_queue_pending.3
+@man man/man3/wl_display_flush.3
+@man man/man3/wl_display_get_additional_shm_formats.3
+@man man/man3/wl_display_get_error.3
+@man man/man3/wl_display_get_fd.3
+@man man/man3/wl_display_get_protocol_error.3
+@man man/man3/wl_display_get_serial.3
+@man man/man3/wl_display_next_serial.3
+@man man/man3/wl_display_prepare_read.3
+@man man/man3/wl_display_prepare_read_queue.3
+@man man/man3/wl_display_read_events.3
+@man man/man3/wl_display_roundtrip.3
+@man man/man3/wl_display_roundtrip_queue.3
+@man man/man3/wl_event_queue.3
+@man man/man3/wl_event_queue_destroy.3
+@man man/man3/wl_fixed_t.3
+@man man/man3/wl_global.3
+@man man/man3/wl_interface.3
+@man man/man3/wl_list.3
+@man man/man3/wl_list_empty.3
+@man man/man3/wl_list_for_each.3
+@man man/man3/wl_list_for_each_reverse.3
+@man man/man3/wl_list_for_each_reverse_safe.3
+@man man/man3/wl_list_for_each_safe.3
+@man man/man3/wl_list_init.3
+@man man/man3/wl_list_insert.3
+@man man/man3/wl_list_insert_list.3
+@man man/man3/wl_list_length.3
+@man man/man3/wl_list_remove.3
+@man man/man3/wl_listener.3
+@man man/man3/wl_log_func_t.3
+@man man/man3/wl_message.3
+@man man/man3/wl_object.3
+@man man/man3/wl_proxy.3
+@man man/man3/wl_proxy_add_dispatcher.3
+@man man/man3/wl_proxy_add_listener.3
+@man man/man3/wl_proxy_create.3
+@man man/man3/wl_proxy_destroy.3
+@man man/man3/wl_proxy_get_class.3
+@man man/man3/wl_proxy_get_id.3
+@man man/man3/wl_proxy_get_listener.3
+@man man/man3/wl_proxy_get_user_data.3
+@man man/man3/wl_proxy_marshal.3
+@man man/man3/wl_proxy_marshal_array.3
+@man man/man3/wl_proxy_marshal_array_constructor.3
+@man man/man3/wl_proxy_marshal_constructor.3
+@man man/man3/wl_proxy_set_queue.3
+@man man/man3/wl_proxy_set_user_data.3
+@man man/man3/wl_resource.3
+@man man/man3/wl_shm_buffer.3
+@man man/man3/wl_shm_buffer_begin_access.3
+@man man/man3/wl_shm_buffer_end_access.3
+@man man/man3/wl_shm_buffer_get_data.3
+@man man/man3/wl_shm_buffer_ref_pool.3
+@man man/man3/wl_shm_pool.3
+@man man/man3/wl_shm_pool_unref.3
+@man man/man3/wl_shm_sigbus_data.3
+@man man/man3/wl_signal.3
+@man man/man3/wl_signal_add.3
+@man man/man3/wl_signal_emit.3
+@man man/man3/wl_signal_get.3
+@man man/man3/wl_signal_init.3
+@man man/man3/wl_socket.3
+share/aclocal/
+share/aclocal/wayland-scanner.m4
+share/doc/wayland/
+share/doc/wayland/Wayland/
+share/doc/wayland/Wayland/en-US/
+share/doc/wayland/Wayland/en-US/html/
+share/doc/wayland/Wayland/en-US/html/Wayland.proc
+share/doc/wayland/Wayland/en-US/html/apa.html
+share/doc/wayland/Wayland/en-US/html/apb.html
+share/doc/wayland/Wayland/en-US/html/apc.html
+share/doc/wayland/Wayland/en-US/html/ch01.html
+share/doc/wayland/Wayland/en-US/html/ch02.html
+share/doc/wayland/Wayland/en-US/html/ch03.html
+share/doc/wayland/Wayland/en-US/html/ch04.html
+share/doc/wayland/Wayland/en-US/html/css/
+share/doc/wayland/Wayland/en-US/html/css/brand.css
+share/doc/wayland/Wayland/en-US/html/css/common.css
+share/doc/wayland/Wayland/en-US/html/css/default.css
+share/doc/wayland/Wayland/en-US/html/css/epub.css
+share/doc/wayland/Wayland/en-US/html/css/print.css
+share/doc/wayland/Wayland/en-US/html/images/
+share/doc/wayland/Wayland/en-US/html/images/icon.svg
+share/doc/wayland/Wayland/en-US/html/images/wayland-architecture.png
+share/doc/wayland/Wayland/en-US/html/images/wayland.png
+share/doc/wayland/Wayland/en-US/html/images/x-architecture.png
+share/doc/wayland/Wayland/en-US/html/index.html
+share/doc/wayland/Wayland/en-US/html/pr01.html
+share/doc/wayland/Wayland/en-US/html/pr02.html
+share/wayland/
+share/wayland/wayland-scanner.mk
+share/wayland/wayland.dtd
+share/wayland/wayland.xml

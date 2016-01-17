@@ -1,0 +1,55 @@
+$OpenBSD$
+Add *BSD support.
+--- tests/test-helpers.c.orig	Sat Jun 13 01:31:24 2015
++++ tests/test-helpers.c	Sun Jan 10 16:17:47 2016
+@@ -23,6 +23,16 @@
+  * SOFTWARE.
+  */
+ 
++#include "../config.h"
++
++#ifdef USE_LIBKVM
++#include <sys/types.h>
++#include <sys/sysctl.h>
++#include <fcntl.h>
++#include <kvm.h>
++#include <limits.h>
++#endif
++
+ #include <assert.h>
+ #include <errno.h>
+ #include <dirent.h>
+@@ -35,6 +45,25 @@
+ int
+ count_open_fds(void)
+ {
++#ifdef USE_LIBKVM
++	/* Use BSD-specific kernel memory interface */
++
++	struct kinfo_file *kif;
++	kvm_t *kd;
++	int count;
++	char errstr[_POSIX2_LINE_MAX];
++
++	kd = kvm_openfiles(NULL, NULL, NULL, O_RDONLY|KVM_NO_FILES, errstr);
++	assert(kd != NULL);
++	kif = kvm_getfiles(kd, KERN_FILE_BYPID, getpid(), sizeof(struct kinfo_file), &count);
++	assert(kif != NULL);
++
++	/* KVM library frees memory on itself */
++	kvm_close(kd);
++	return count;
++#else
++	/* Use /proc filesystem. */
++
+ 	DIR *dir;
+ 	struct dirent *ent;
+ 	int count = 0;
+@@ -54,6 +83,7 @@ count_open_fds(void)
+ 	closedir(dir);
+ 
+ 	return count;
++#endif
+ }
+ 
+ void

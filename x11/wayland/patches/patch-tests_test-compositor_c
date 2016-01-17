@@ -1,0 +1,53 @@
+$OpenBSD$
+Add *BSD support.
+--- tests/test-compositor.c.orig	Sun Jan 10 12:27:38 2016
++++ tests/test-compositor.c	Sun Jan 10 12:42:39 2016
+@@ -85,8 +85,8 @@ get_socket_name(void)
+ 	static char retval[64];
+ 
+ 	gettimeofday(&tv, NULL);
+-	snprintf(retval, sizeof retval, "wayland-test-%d-%ld%ld",
+-		 getpid(), tv.tv_sec, tv.tv_usec);
++	snprintf(retval, sizeof retval, "wayland-test-%d-%lld%lld",
++		 getpid(), (long long)tv.tv_sec, (long long)tv.tv_usec);
+ 
+ 	return retval;
+ }
+@@ -99,11 +99,16 @@ client_destroyed(struct wl_listener *listener, void *d
+ {
+ 	struct display *d;
+ 	struct client_info *ci;
++#ifdef HAVE_WAITID
+ 	siginfo_t status;
++#else
++	int istatus;
++#endif
+ 
+ 	ci = wl_container_of(listener, ci, destroy_listener);
+ 	d = ci->display;
+ 
++#ifdef HAVE_WAITID
+ 	assert(waitid(P_PID, ci->pid, &status, WEXITED) != -1);
+ 
+ 	switch (status.si_code) {
+@@ -121,6 +126,20 @@ client_destroyed(struct wl_listener *listener, void *d
+ 		ci->exit_code = status.si_status;
+ 		break;
+ 	}
++#else
++	assert(waitpid(ci->pid, &istatus, WNOHANG) != -1);
++
++	if (WIFSIGNALED(istatus)) {
++		fprintf(stderr, "Client '%s' was killed by signal %d\n",
++			ci->name, WTERMSIG(istatus));
++		ci->exit_code = WEXITSTATUS(istatus);
++	} else if (WIFEXITED(istatus)) {
++		if (WEXITSTATUS(istatus) != EXIT_SUCCESS)
++			fprintf(stderr, "Client '%s' exited with code %d\n",
++				ci->name, WEXITSTATUS(istatus));
++		ci->exit_code = WEXITSTATUS(istatus);
++	}
++#endif
+ 
+ 	++d->clients_terminated_no;
+ 	if (d->clients_no == d->clients_terminated_no) {
