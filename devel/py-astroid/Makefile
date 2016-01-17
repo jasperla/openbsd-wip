@@ -2,7 +2,7 @@
 
 COMMENT =		common base representation of Python source code
 
-MODPY_EGG_VERSION =	1.4.3
+MODPY_EGG_VERSION =	1.4.4
 DISTNAME =		astroid-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
@@ -14,9 +14,11 @@ MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODPY_PI =		Yes
-
 MODULES =		lang/python
+
+MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
+
 RUN_DEPENDS =		devel/py-logilab-common${MODPY_FLAVOR} \
 			devel/py-lazy-object-proxy${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR} \
@@ -25,8 +27,6 @@ TEST_DEPENDS =		${RUN_DEPENDS}
 
 FLAVORS =	python3
 FLAVOR ?=
-
-MODPY_SETUPTOOLS =	Yes
 
 do-test:
 	@cd ${WRKSRC} && \
