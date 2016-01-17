@@ -3,7 +3,7 @@ Add *BSD support.
 
 Based on the work done by kwm81 at Github.
 --- src/event-loop.c.orig	Fri Jun 26 07:08:19 2015
-+++ src/event-loop.c	Sun Jan 17 22:28:41 2016
++++ src/event-loop.c	Sun Jan 17 22:50:43 2016
 @@ -23,6 +23,8 @@
   * SOFTWARE.
   */
@@ -17,21 +17,24 @@ Based on the work done by kwm81 at Github.
  #include <fcntl.h>
  #include <sys/socket.h>
  #include <sys/un.h>
+-#include <sys/epoll.h>
+-#include <sys/signalfd.h>
+-#include <sys/timerfd.h>
 +
 +#ifdef HAVE_SYS_EPOLL_H
- #include <sys/epoll.h>
-+#ifdef HAVE_SYS_SIGNALFD_H
- #include <sys/signalfd.h>
-+#endif /* signalfd */
-+#ifdef HAVE_SYS_TIMERFD_H
- #include <sys/timerfd.h>
-+#endif /* timerfd */
++# include <sys/epoll.h>
++# ifdef HAVE_SYS_SIGNALFD_H
++#  include <sys/signalfd.h>
++# endif /* signalfd */
++# ifdef HAVE_SYS_TIMERFD_H
++#  include <sys/timerfd.h>
++# endif /* timerfd */
 +#elif HAVE_SYS_EVENT_H
-+#include <sys/types.h>
-+#include <sys/event.h>
-+#include <sys/time.h>
++# include <sys/types.h>
++# include <sys/event.h>
++# include <sys/time.h>
 +#else /* !epoll && !kqueue */
-+#error "Unsupported event system. Only epoll and kqueue are supported."
++# error "Unsupported event system. Only epoll and kqueue are supported."
 +#endif
 +
  #include <unistd.h>
@@ -74,12 +77,11 @@ Based on the work done by kwm81 at Github.
  };
  
  struct wl_event_source {
-@@ -66,9 +99,13 @@ struct wl_event_source {
+@@ -66,9 +99,12 @@ struct wl_event_source {
  struct wl_event_source_fd {
  	struct wl_event_source base;
  	wl_event_loop_fd_func_t func;
 +#if defined(HAVE_SYS_SIGNALFD_H)
-+	/* for signalfd() */
  	int fd;
 +#endif
  };
@@ -88,7 +90,7 @@ Based on the work done by kwm81 at Github.
  static int
  wl_event_source_fd_dispatch(struct wl_event_source *source,
  			    struct epoll_event *ep)
-@@ -88,11 +125,35 @@ wl_event_source_fd_dispatch(struct wl_event_source *so
+@@ -88,11 +124,35 @@ wl_event_source_fd_dispatch(struct wl_event_source *so
  
  	return fd_source->func(fd_source->fd, mask, source->data);
  }
@@ -124,7 +126,7 @@ Based on the work done by kwm81 at Github.
  static struct wl_event_source *
  add_source(struct wl_event_loop *loop,
  	   struct wl_event_source *source, uint32_t mask, void *data)
-@@ -123,7 +184,48 @@ add_source(struct wl_event_loop *loop,
+@@ -123,7 +183,48 @@ add_source(struct wl_event_loop *loop,
  
  	return source;
  }
@@ -137,7 +139,7 @@ Based on the work done by kwm81 at Github.
 +	unsigned int num_events = 0;
  
 +	if (source->fd < 0) {
-+		fprintf(stderr, "could not add source\n: %m");
++		fprintf(stderr, "invalid source FD: %d\n", source->fd);
 +		free(source);
 +		return NULL;
 +	}
@@ -159,7 +161,7 @@ Based on the work done by kwm81 at Github.
 +	}
 +
 +	if (kevent(loop->event_fd, events, num_events, NULL, 0, NULL) < 0) {
-+		fprintf(stderr, "error adding source %i (%p) to loop %p: %s\n",
++		fprintf(stderr, "error adding FD %i (%p) to event loop %p: %s\n",
 +		        source->fd, source, loop, strerror(errno));
 +		close(source->fd);
 +		free(source);
@@ -173,11 +175,13 @@ Based on the work done by kwm81 at Github.
  WL_EXPORT struct wl_event_source *
  wl_event_loop_add_fd(struct wl_event_loop *loop,
  		     int fd, uint32_t mask,
-@@ -139,11 +241,11 @@ wl_event_loop_add_fd(struct wl_event_loop *loop,
+@@ -139,11 +240,14 @@ wl_event_loop_add_fd(struct wl_event_loop *loop,
  	source->base.interface = &fd_source_interface;
  	source->base.fd = wl_os_dupfd_cloexec(fd, 0);
  	source->func = func;
--	source->fd = fd;
++#if defined(HAVE_SYS_SIGNALFD_H)
+ 	source->fd = fd;
++#endif
  
  	return add_source(loop, &source->base, mask, data);
  }
@@ -186,7 +190,7 @@ Based on the work done by kwm81 at Github.
  WL_EXPORT int
  wl_event_source_fd_update(struct wl_event_source *source, uint32_t mask)
  {
-@@ -157,14 +259,43 @@ wl_event_source_fd_update(struct wl_event_source *sour
+@@ -157,14 +261,42 @@ wl_event_source_fd_update(struct wl_event_source *sour
  		ep.events |= EPOLLOUT;
  	ep.data.ptr = source;
  
@@ -222,7 +226,6 @@ Based on the work done by kwm81 at Github.
  	wl_event_loop_timer_func_t func;
 +#if HAVE_SYS_EVENT_H
 +	struct wl_list timer_link;
-+	wl_event_loop_timer_func_t real_func;
 +#endif
  };
  
@@ -231,7 +234,7 @@ Based on the work done by kwm81 at Github.
  static int
  wl_event_source_timer_dispatch(struct wl_event_source *source,
  			       struct epoll_event *ep)
-@@ -181,7 +312,21 @@ wl_event_source_timer_dispatch(struct wl_event_source 
+@@ -181,7 +313,21 @@ wl_event_source_timer_dispatch(struct wl_event_source 
  
  	return timer_source->func(timer_source->base.data);
  }
@@ -253,7 +256,7 @@ Based on the work done by kwm81 at Github.
  struct wl_event_source_interface timer_source_interface = {
  	wl_event_source_timer_dispatch,
  };
-@@ -191,6 +336,10 @@ wl_event_loop_add_timer(struct wl_event_loop *loop,
+@@ -191,6 +337,10 @@ wl_event_loop_add_timer(struct wl_event_loop *loop,
  			wl_event_loop_timer_func_t func,
  			void *data)
  {
@@ -264,7 +267,7 @@ Based on the work done by kwm81 at Github.
  	struct wl_event_source_timer *source;
  
  	source = malloc(sizeof *source);
-@@ -201,13 +350,36 @@ wl_event_loop_add_timer(struct wl_event_loop *loop,
+@@ -201,13 +351,36 @@ wl_event_loop_add_timer(struct wl_event_loop *loop,
  	source->base.fd = timerfd_create(CLOCK_MONOTONIC,
  					 TFD_CLOEXEC | TFD_NONBLOCK);
  	source->func = func;
@@ -302,7 +305,7 @@ Based on the work done by kwm81 at Github.
  	struct itimerspec its;
  
  	its.it_interval.tv_sec = 0;
-@@ -218,23 +390,40 @@ wl_event_source_timer_update(struct wl_event_source *s
+@@ -218,23 +391,40 @@ wl_event_source_timer_update(struct wl_event_source *s
  		return -1;
  
  	return 0;
@@ -346,7 +349,7 @@ Based on the work done by kwm81 at Github.
  	len = read(source->fd, &signal_info, sizeof signal_info);
  	if (!(len == -1 && errno == EAGAIN) && len != sizeof signal_info)
  		/* Is there anything we can do here?  Will this ever happen? */
-@@ -243,35 +432,103 @@ wl_event_source_signal_dispatch(struct wl_event_source
+@@ -243,35 +433,103 @@ wl_event_source_signal_dispatch(struct wl_event_source
  	return signal_source->func(signal_source->signal_number,
  				   signal_source->base.data);
  }
@@ -458,7 +461,7 @@ Based on the work done by kwm81 at Github.
  }
  
  struct wl_event_source_idle {
-@@ -312,15 +569,19 @@ wl_event_source_check(struct wl_event_source *source)
+@@ -312,15 +570,19 @@ wl_event_source_check(struct wl_event_source *source)
  	wl_list_insert(source->loop->check_list.prev, &source->link);
  }
  
@@ -481,7 +484,7 @@ Based on the work done by kwm81 at Github.
  		close(source->fd);
  		source->fd = -1;
  	}
-@@ -330,7 +591,90 @@ wl_event_source_remove(struct wl_event_source *source)
+@@ -330,7 +592,90 @@ wl_event_source_remove(struct wl_event_source *source)
  
  	return 0;
  }
@@ -572,7 +575,7 @@ Based on the work done by kwm81 at Github.
  static void
  wl_event_loop_process_destroy_list(struct wl_event_loop *loop)
  {
-@@ -346,20 +690,29 @@ WL_EXPORT struct wl_event_loop *
+@@ -346,20 +691,29 @@ WL_EXPORT struct wl_event_loop *
  wl_event_loop_create(void)
  {
  	struct wl_event_loop *loop;
@@ -605,7 +608,7 @@ Based on the work done by kwm81 at Github.
  	wl_signal_init(&loop->destroy_signal);
  
  	return loop;
-@@ -371,23 +724,35 @@ wl_event_loop_destroy(struct wl_event_loop *loop)
+@@ -371,23 +725,35 @@ wl_event_loop_destroy(struct wl_event_loop *loop)
  	wl_signal_emit(&loop->destroy_signal, loop);
  
  	wl_event_loop_process_destroy_list(loop);
@@ -643,7 +646,7 @@ Based on the work done by kwm81 at Github.
  }
  
  WL_EXPORT void
-@@ -403,6 +768,7 @@ wl_event_loop_dispatch_idle(struct wl_event_loop *loop
+@@ -403,6 +769,7 @@ wl_event_loop_dispatch_idle(struct wl_event_loop *loop
  	}
  }
  
@@ -651,7 +654,7 @@ Based on the work done by kwm81 at Github.
  WL_EXPORT int
  wl_event_loop_dispatch(struct wl_event_loop *loop, int timeout)
  {
-@@ -412,7 +778,7 @@ wl_event_loop_dispatch(struct wl_event_loop *loop, int
+@@ -412,7 +779,7 @@ wl_event_loop_dispatch(struct wl_event_loop *loop, int
  
  	wl_event_loop_dispatch_idle(loop);
  
@@ -660,7 +663,7 @@ Based on the work done by kwm81 at Github.
  	if (count < 0)
  		return -1;
  
-@@ -432,11 +798,52 @@ wl_event_loop_dispatch(struct wl_event_loop *loop, int
+@@ -432,11 +799,52 @@ wl_event_loop_dispatch(struct wl_event_loop *loop, int
  
  	return 0;
  }
