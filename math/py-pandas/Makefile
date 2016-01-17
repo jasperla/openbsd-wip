@@ -23,7 +23,7 @@ MODULES =		lang/python
 # These are optional runtime dependencies that should be around for
 # building the docs and running the tests.
 OPTIONAL_DEPENDS = 	graphics/py-matplotlib \
-			net/py-boto3 \
+			net/py-boto \
 			x11/py-qt4 \
 			www/py-httplib2 \
 			www/py-beautifulsoup4 \
