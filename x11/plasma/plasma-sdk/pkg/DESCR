@@ -1,0 +1,7 @@
+This package contains skeleton parts for building plasmoids, and also
+the following development utilities:
+
+ * cuttlefish - icon previewer for artists and developers;
+ * plasmaengineexplorer - provides direct access to plasma data engines;
+ * plasmathemeexplorer - Plasma theme explorer.
+ * plasmoidviewer - run Plasma widgets in their own window.

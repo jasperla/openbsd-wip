@@ -1,7 +1,7 @@
 $OpenBSD$
 Add *BSD support.
 --- tests/os-wrappers-test.c.orig	Sat Jun 13 01:31:24 2015
-+++ tests/os-wrappers-test.c	Sun Jan 10 16:41:21 2016
++++ tests/os-wrappers-test.c	Sun Jan 17 22:30:02 2016
 @@ -37,7 +37,11 @@
  #include <stdarg.h>
  #include <fcntl.h>
@@ -94,19 +94,42 @@ Add *BSD support.
  static void
  do_os_wrappers_socket_cloexec(int n)
  {
-@@ -333,6 +369,7 @@ TEST(os_wrappers_recvmsg_cloexec_fallback)
- 	do_os_wrappers_recvmsg_cloexec(1);
+@@ -334,14 +370,14 @@ TEST(os_wrappers_recvmsg_cloexec_fallback)
  }
  
-+#ifdef HAVE_SYS_EPOLL_H
  static void
- do_os_wrappers_epoll_create_cloexec(int n)
+-do_os_wrappers_epoll_create_cloexec(int n)
++do_os_wrappers_queue_create_cloexec(int n)
  {
-@@ -364,5 +401,8 @@ TEST(os_wrappers_epoll_create_cloexec_fallback)
- 	init_fallbacks(1);
- 	do_os_wrappers_epoll_create_cloexec(2);
+ 	int fd;
+ 	int nr_fds;
+ 
+ 	nr_fds = count_open_fds();
+ 
+-	fd = wl_os_epoll_create_cloexec();
++	fd = wl_os_queue_create_cloexec();
+ 	assert(fd >= 0);
+ 
+ #ifdef EPOLL_CLOEXEC
+@@ -353,16 +389,18 @@ do_os_wrappers_epoll_create_cloexec(int n)
+ 	exec_fd_leak_check(nr_fds);
  }
-+#endif
+ 
+-TEST(os_wrappers_epoll_create_cloexec)
++TEST(os_wrappers_queue_create_cloexec)
+ {
+ 	init_fallbacks(0);
+-	do_os_wrappers_epoll_create_cloexec(1);
++	do_os_wrappers_queue_create_cloexec(1);
+ }
+ 
+-TEST(os_wrappers_epoll_create_cloexec_fallback)
++TEST(os_wrappers_queue_create_cloexec_fallback)
+ {
+ 	init_fallbacks(1);
+-	do_os_wrappers_epoll_create_cloexec(2);
++	do_os_wrappers_queue_create_cloexec(2);
+ }
  
  /* FIXME: add tests for wl_os_accept_cloexec() */
 +
