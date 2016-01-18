@@ -20,7 +20,6 @@ MASTER_SITES =		http://downloads.sourceforge.net/project/ftplicity/duply%20%28si
 
 EXTRACT_SUFX =		.tgz
 
-MODULES =		lang/python
 RUN_DEPENDS =		shells/bash \
 			sysutils/duplicity \
 			security/gnupg<2
@@ -28,9 +27,7 @@ RUN_DEPENDS =		shells/bash \
 NO_BUILD =		Yes
 NO_TEST =		Yes
 
-SUBST_VARS +=	MODPY_VERSION
-
 do-install:
-	${SUBST_PROGRAM} ${WRKSRC}/duply ${PREFIX}/bin/duply
+	${INSTALL_SCRIPT} ${WRKSRC}/duply ${PREFIX}/bin/duply
 
 .include <bsd.port.mk>
