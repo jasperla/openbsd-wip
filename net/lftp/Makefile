@@ -26,7 +26,8 @@ LIBTOOL_FLAGS=	--tag=disable-shared
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-openssl \
 		--without-gnutls \
-		--disable-shared
+		--disable-shared \
+		 --with-debug # XXX
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/ereadline -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

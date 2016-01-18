@@ -3,16 +3,18 @@ $OpenBSD$
 add pledge(2)
 
 --- src/lftp.cc.orig	Thu Dec 10 13:17:48 2015
-+++ src/lftp.cc	Sat Jan 16 20:39:37 2016
-@@ -537,6 +537,12 @@ char *program_name;
++++ src/lftp.cc	Sun Jan 17 00:51:58 2016
+@@ -537,6 +537,14 @@ char *program_name;
  
  int   main(int argc,char **argv)
  {
-+    if (pledge("stdio rpath dns tty inet proc exec fattr", NULL) == -1)
++#ifdef __OpenBSD__
++    if (pledge("stdio rpath wpath cpath fattr flock inet dns getpw unix proc id tty", NULL) == -1)
 +    {
 +        fprintf(stderr, "lftp: pledge\n");
 +        exit(1);
 +    }
++#endif
 +
     program_name=argv[0];
  
