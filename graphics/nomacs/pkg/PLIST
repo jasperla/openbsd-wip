@@ -1,10 +1,8 @@
 @comment $OpenBSD$
 @bin bin/nomacs
 lib/libnomacslib.so
+@man man/man1/nomacs.1
 share/applications/nomacs.desktop
-share/man/
-share/man/man1/
-@man share/man/man1/nomacs.1
 share/nomacs/
 share/nomacs/translations/
 share/nomacs/translations/nomacs_als.qm

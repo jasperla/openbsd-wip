@@ -22,7 +22,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += Qt5Concurrent Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Svg Qt5Widgets c exiv2 lcms2 m opencv_core opencv_imgproc
-WANTLIB += pthread raw stdc++ tiff webp
+WANTLIB += pthread raw tiff webp quazip
 
 MODULES =		devel/cmake \
 			x11/qt5 \
@@ -41,6 +41,7 @@ LIB_DEPENDS =		archivers/quazip \
 			graphics/tiff
 
 CONFIGURE_ARGS =	-DUSE_SYSTEM_WEBP:Bool=ON \
+			-DUSE_SYSTEM_QUAZIP:Bool=ON \
 			-DDISABLE_QT_DEBUG:Bool=ON
 
 WRKDIST =		${WRKDIR}/nomacs-${GH_COMMIT}/ImageLounge
