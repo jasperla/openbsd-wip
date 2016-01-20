@@ -1,0 +1,33 @@
+$OpenBSD$
+
+commit 4da6cfdf2ab611318e131fa8afbda8194f5a6196
+Author: Caspar Schutijser <caspar@schutijser.com>
+Date:   Sat Jan 16 17:08:44 2016 +0100
+
+    Abi: add OpenBSD
+
+--- src/plugins/projectexplorer/abi.cpp.orig	Fri Dec 11 13:45:01 2015
++++ src/plugins/projectexplorer/abi.cpp	Wed Jan 20 18:54:39 2016
+@@ -513,6 +513,11 @@ Abi Abi::abiFromTargetTriplet(const QString &triple)
+             if (flavor == Abi::UnknownFlavor)
+                 flavor = Abi::FreeBsdFlavor;
+             format = Abi::ElfFormat;
++        } else if (p.startsWith(QLatin1String("openbsd"))) {
++            os = Abi::BsdOS;
++            if (flavor == Abi::UnknownFlavor)
++                flavor = Abi::OpenBsdFlavor;
++            format = Abi::ElfFormat;
+         } else if (p == QLatin1String("mingw32") || p == QLatin1String("win32")
+                    || p == QLatin1String("mingw32msvc") || p == QLatin1String("msys")
+                    || p == QLatin1String("cygwin")) {
+@@ -1127,6 +1132,10 @@ void ProjectExplorer::ProjectExplorerPlugin::testAbiFr
+     QTest::newRow("arm-wrs-vxworks") << int(Abi::ArmArchitecture)
+                                      << int(Abi::VxWorks) << int(Abi::VxWorksFlavor)
+                                      << int(Abi::ElfFormat) << 32;
++
++    QTest::newRow("x86_64-unknown-openbsd") << int(Abi::X86Architecture)
++                                            << int(Abi::BsdOS) << int(Abi::OpenBsdFlavor)
++                                            << int(Abi::ElfFormat) << 64;
+ }
+ 
+ void ProjectExplorer::ProjectExplorerPlugin::testAbiFromTargetTriplet()
