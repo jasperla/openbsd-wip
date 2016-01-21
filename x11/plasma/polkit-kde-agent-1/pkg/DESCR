@@ -1,0 +1,4 @@
+This package provides PolicyKit-1 authentication agent for KDE5. Whenever some
+PolicyKit-enabled program try to implement some priviledged task, a dialog
+window will popup, asking user if he wants to allow or deny the action
+requested.

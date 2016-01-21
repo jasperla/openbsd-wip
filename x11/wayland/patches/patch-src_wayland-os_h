@@ -1,0 +1,18 @@
+$OpenBSD$
+Add *BSD support.
+
+Based on the work done by kwm81 at Github.
+--- src/wayland-os.h.orig	Sat Jun 13 01:31:24 2015
++++ src/wayland-os.h	Sun Jan 17 22:28:57 2016
+@@ -36,7 +36,10 @@ ssize_t
+ wl_os_recvmsg_cloexec(int sockfd, struct msghdr *msg, int flags);
+ 
+ int
+-wl_os_epoll_create_cloexec(void);
++wl_os_queue_create_cloexec(void);
++
++int
++wl_os_kqueue_create_cloexec(void);
+ 
+ int
+ wl_os_accept_cloexec(int sockfd, struct sockaddr *addr, socklen_t *addrlen);

@@ -10,9 +10,8 @@ MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += X11 Xss c crypto curl expat gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gobject-2.0 ncursesw notify otr pthread ssl
-WANTLIB += assuan ereadline gpg-error gpgme strophe
+WANTLIB += assuan c curl ereadline glib-2.0 gpg-error gpgme ncursesw
+WANTLIB += otr pthread strophe
 
 MASTER_SITES =	http://www.profanity.im/
 

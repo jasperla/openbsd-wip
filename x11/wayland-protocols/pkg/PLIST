@@ -1,0 +1,16 @@
+@comment $OpenBSD$
+share/pkgconfig/wayland-protocols.pc
+share/wayland-protocols/
+share/wayland-protocols/unstable/
+share/wayland-protocols/unstable/fullscreen-shell/
+share/wayland-protocols/unstable/fullscreen-shell/fullscreen-shell-unstable-v1.xml
+share/wayland-protocols/unstable/input-method/
+share/wayland-protocols/unstable/input-method/input-method-unstable-v1.xml
+share/wayland-protocols/unstable/linux-dmabuf/
+share/wayland-protocols/unstable/linux-dmabuf/linux-dmabuf-unstable-v1.xml
+share/wayland-protocols/unstable/pointer-gestures/
+share/wayland-protocols/unstable/pointer-gestures/pointer-gestures-unstable-v1.xml
+share/wayland-protocols/unstable/text-input/
+share/wayland-protocols/unstable/text-input/text-input-unstable-v1.xml
+share/wayland-protocols/unstable/xdg-shell/
+share/wayland-protocols/unstable/xdg-shell/xdg-shell-unstable-v5.xml

@@ -1,0 +1,719 @@
+$OpenBSD$
+Add *BSD support.
+
+Based on the work done by kwm81 at Github.
+--- src/event-loop.c.orig	Fri Jun 26 07:08:19 2015
++++ src/event-loop.c	Sun Jan 17 22:50:43 2016
+@@ -23,6 +23,8 @@
+  * SOFTWARE.
+  */
+ 
++#include "../config.h"
++
+ #include <stddef.h>
+ #include <stdio.h>
+ #include <errno.h>
+@@ -32,27 +34,58 @@
+ #include <fcntl.h>
+ #include <sys/socket.h>
+ #include <sys/un.h>
+-#include <sys/epoll.h>
+-#include <sys/signalfd.h>
+-#include <sys/timerfd.h>
++
++#ifdef HAVE_SYS_EPOLL_H
++# include <sys/epoll.h>
++# ifdef HAVE_SYS_SIGNALFD_H
++#  include <sys/signalfd.h>
++# endif /* signalfd */
++# ifdef HAVE_SYS_TIMERFD_H
++#  include <sys/timerfd.h>
++# endif /* timerfd */
++#elif HAVE_SYS_EVENT_H
++# include <sys/types.h>
++# include <sys/event.h>
++# include <sys/time.h>
++#else /* !epoll && !kqueue */
++# error "Unsupported event system. Only epoll and kqueue are supported."
++#endif
++
+ #include <unistd.h>
+-#include <assert.h>
+ #include "wayland-private.h"
+ #include "wayland-server.h"
+ #include "wayland-os.h"
+ 
+ struct wl_event_loop {
+-	int epoll_fd;
++	int event_fd;
+ 	struct wl_list check_list;
+ 	struct wl_list idle_list;
+ 	struct wl_list destroy_list;
+ 
+ 	struct wl_signal destroy_signal;
++
++#if defined(HAVE_SYS_EVENT_H)
++	/* 
++	 * kqueue doesn't allow to setup multiple handlers of the same signal.
++	 * Also, with kqueue we need to keep list of registered timers,
++	 * to avoid accidental timer ID reuse.
++	 * Thus we have to maintain lists of signal & timer handlers separately.
++	 *
++	 * TODO: locking.
++	 */
++	struct wl_list signals[NSIG];
++	struct wl_list timers;
++#endif
+ };
+ 
+ struct wl_event_source_interface {
++#if defined(HAVE_SYS_EPOLL_H)
+ 	int (*dispatch)(struct wl_event_source *source,
+ 			struct epoll_event *ep);
++#elif defined(HAVE_SYS_EVENT_H)
++	int (*dispatch)(struct wl_event_source *source,
++			struct kevent *ep);
++#endif
+ };
+ 
+ struct wl_event_source {
+@@ -66,9 +99,12 @@ struct wl_event_source {
+ struct wl_event_source_fd {
+ 	struct wl_event_source base;
+ 	wl_event_loop_fd_func_t func;
++#if defined(HAVE_SYS_SIGNALFD_H)
+ 	int fd;
++#endif
+ };
+ 
++#ifdef HAVE_SYS_EPOLL_H
+ static int
+ wl_event_source_fd_dispatch(struct wl_event_source *source,
+ 			    struct epoll_event *ep)
+@@ -88,11 +124,35 @@ wl_event_source_fd_dispatch(struct wl_event_source *so
+ 
+ 	return fd_source->func(fd_source->fd, mask, source->data);
+ }
++#elif HAVE_SYS_EVENT_H
++static int
++wl_event_source_fd_dispatch(struct wl_event_source *source,
++                            struct kevent *ev)
++{
++	struct wl_event_source_fd *fd_source =
++		(struct wl_event_source_fd *) source;
++	uint32_t mask;
+ 
++	mask = 0;
++	if (ev->filter == EVFILT_READ)
++		mask |= WL_EVENT_READABLE;
++	if (ev->filter == EVFILT_WRITE)
++		mask |= WL_EVENT_WRITABLE;
++	if (ev->flags & EV_ERROR)
++		mask |= WL_EVENT_ERROR;
++	if (ev->flags & EV_EOF)
++		mask |= WL_EVENT_HANGUP;
++
++	return fd_source->func(source->fd, mask, source->data);
++}
++#endif
++
++
+ struct wl_event_source_interface fd_source_interface = {
+ 	wl_event_source_fd_dispatch,
+ };
+ 
++#ifdef HAVE_SYS_EPOLL_H
+ static struct wl_event_source *
+ add_source(struct wl_event_loop *loop,
+ 	   struct wl_event_source *source, uint32_t mask, void *data)
+@@ -123,7 +183,48 @@ add_source(struct wl_event_loop *loop,
+ 
+ 	return source;
+ }
++#elif HAVE_SYS_EVENT_H
++static struct wl_event_source *
++add_source(struct wl_event_loop *loop,
++	   struct wl_event_source *source, uint32_t mask, void *data)
++{
++	struct kevent events[2];
++	unsigned int num_events = 0;
+ 
++	if (source->fd < 0) {
++		fprintf(stderr, "invalid source FD: %d\n", source->fd);
++		free(source);
++		return NULL;
++	}
++
++	source->loop = loop;
++	source->data = data;
++	wl_list_init(&source->link);
++
++	if (mask & WL_EVENT_READABLE) {
++		EV_SET(&events[num_events], source->fd, EVFILT_READ,
++		       EV_ADD | EV_ENABLE, 0, 0, source);
++		num_events++;
++	}
++
++	if (mask & WL_EVENT_WRITABLE) {
++		EV_SET(&events[num_events], source->fd, EVFILT_WRITE,
++		       EV_ADD | EV_ENABLE, 0, 0, source);
++		num_events++;
++	}
++
++	if (kevent(loop->event_fd, events, num_events, NULL, 0, NULL) < 0) {
++		fprintf(stderr, "error adding FD %i (%p) to event loop %p: %s\n",
++		        source->fd, source, loop, strerror(errno));
++		close(source->fd);
++		free(source);
++		return NULL;
++	}
++
++	return source;
++}
++#endif
++
+ WL_EXPORT struct wl_event_source *
+ wl_event_loop_add_fd(struct wl_event_loop *loop,
+ 		     int fd, uint32_t mask,
+@@ -139,11 +240,14 @@ wl_event_loop_add_fd(struct wl_event_loop *loop,
+ 	source->base.interface = &fd_source_interface;
+ 	source->base.fd = wl_os_dupfd_cloexec(fd, 0);
+ 	source->func = func;
++#if defined(HAVE_SYS_SIGNALFD_H)
+ 	source->fd = fd;
++#endif
+ 
+ 	return add_source(loop, &source->base, mask, data);
+ }
+ 
++#ifdef HAVE_SYS_EPOLL_H
+ WL_EXPORT int
+ wl_event_source_fd_update(struct wl_event_source *source, uint32_t mask)
+ {
+@@ -157,14 +261,42 @@ wl_event_source_fd_update(struct wl_event_source *sour
+ 		ep.events |= EPOLLOUT;
+ 	ep.data.ptr = source;
+ 
+-	return epoll_ctl(loop->epoll_fd, EPOLL_CTL_MOD, source->fd, &ep);
++	return epoll_ctl(loop->event_fd, EPOLL_CTL_MOD, source->fd, &ep);
+ }
++#elif HAVE_SYS_EVENT_H
++WL_EXPORT int
++wl_event_source_fd_update(struct wl_event_source *source, uint32_t mask)
++{
++	struct wl_event_loop *loop = source->loop;
++	struct kevent events[2];
++	unsigned int num_events = 0;
+ 
++	if (mask & WL_EVENT_READABLE) {
++		EV_SET(&events[num_events], source->fd, EVFILT_READ,
++		       EV_ADD | EV_ENABLE, 0, 0, source);
++		num_events++;
++	}
++
++	if (mask & WL_EVENT_WRITABLE) {
++		EV_SET(&events[num_events], source->fd, EVFILT_WRITE,
++		       EV_ADD | EV_ENABLE, 0, 0, source);
++		num_events++;
++	}
++
++	return kevent(loop->event_fd, events, num_events, NULL, 0, NULL);
++}
++#endif
++
+ struct wl_event_source_timer {
+ 	struct wl_event_source base;
+ 	wl_event_loop_timer_func_t func;
++#if HAVE_SYS_EVENT_H
++	struct wl_list timer_link;
++#endif
+ };
+ 
++#if HAVE_SYS_EPOLL_H
++/* Linux. Read the number of missed expirations from the FD. */
+ static int
+ wl_event_source_timer_dispatch(struct wl_event_source *source,
+ 			       struct epoll_event *ep)
+@@ -181,7 +313,21 @@ wl_event_source_timer_dispatch(struct wl_event_source 
+ 
+ 	return timer_source->func(timer_source->base.data);
+ }
++#elif HAVE_SYS_EVENT_H
++/* BSD. Grab the number of missed expires from the kevent. */
++static int
++wl_event_source_timer_dispatch(struct wl_event_source *source,
++                               struct kevent *ev)
++{
++	struct wl_event_source_timer *timer_source =
++		(struct wl_event_source_timer *) source;
++	uint64_t expires;
+ 
++	expires = ev->data;    /* XXX unused?! */
++	return timer_source->func(timer_source->base.data);
++}
++#endif
++
+ struct wl_event_source_interface timer_source_interface = {
+ 	wl_event_source_timer_dispatch,
+ };
+@@ -191,6 +337,10 @@ wl_event_loop_add_timer(struct wl_event_loop *loop,
+ 			wl_event_loop_timer_func_t func,
+ 			void *data)
+ {
++#if defined(HAVE_SYS_TIMERFD_H)
++	/*
++	 * Linux. Create special FD to poll for timer notifications.
++	 */
+ 	struct wl_event_source_timer *source;
+ 
+ 	source = malloc(sizeof *source);
+@@ -201,13 +351,36 @@ wl_event_loop_add_timer(struct wl_event_loop *loop,
+ 	source->base.fd = timerfd_create(CLOCK_MONOTONIC,
+ 					 TFD_CLOEXEC | TFD_NONBLOCK);
+ 	source->func = func;
+-
+ 	return add_source(loop, &source->base, WL_EVENT_READABLE, data);
++#elif defined(HAVE_SYS_EVENT_H)
++	/*
++	 * BSD. We use kqueue() timers directly, without additional FD.
++	 * See: wl_event_source_timer_update().
++	 *
++	 * FIXME: timer ID wrapping: need to keep list of used timers.
++	 */
++	static int next_timer_id = 0;
++	struct wl_event_source_timer *source;
++
++	source = malloc(sizeof *source);
++	if (source == NULL)
++		return NULL;
++	source->base.interface = &timer_source_interface;
++	source->base.fd = next_timer_id++;    /* TODO: locking/atomic ops */
++	source->base.loop = loop;
++	source->base.data = data;
++	source->func = func;
++	wl_list_insert(&loop->timers, &source->timer_link);
++
++	return &source->base;
++#endif
+ }
+ 
+ WL_EXPORT int
+ wl_event_source_timer_update(struct wl_event_source *source, int ms_delay)
+ {
++#ifdef HAVE_SYS_TIMERFD_H
++	/* Linux */
+ 	struct itimerspec its;
+ 
+ 	its.it_interval.tv_sec = 0;
+@@ -218,23 +391,40 @@ wl_event_source_timer_update(struct wl_event_source *s
+ 		return -1;
+ 
+ 	return 0;
++#else
++	/* BSD */
++	struct kevent ev;
++
++	EV_SET(&ev, source->fd, EVFILT_TIMER, EV_ADD | EV_ENABLE, 0,
++	       ms_delay, source);
++	if (kevent(source->loop->event_fd, &ev, 1, NULL, 0, NULL) < 0) {
++		fprintf(stderr, "could not set kqueue timer\n: %m");
++		return -1;
++	}
++
++	return 0;
++#endif
+ }
+ 
+ struct wl_event_source_signal {
+ 	struct wl_event_source base;
+ 	int signal_number;
+ 	wl_event_loop_signal_func_t func;
++#if defined(HAVE_SYS_EVENT_H)
++	struct wl_list signal_link;
++#endif
+ };
+ 
++#if defined(HAVE_SYS_SIGNALFD_H)
+ static int
+ wl_event_source_signal_dispatch(struct wl_event_source *source,
+-			       struct epoll_event *ep)
++                                struct epoll_event *ep)
+ {
+-	struct wl_event_source_signal *signal_source =
+-		(struct wl_event_source_signal *) source;
++	struct wl_event_source_signal *signal_source;
+ 	struct signalfd_siginfo signal_info;
+ 	int len;
+ 
++	signal_source = (struct wl_event_source_signal *) source;
+ 	len = read(source->fd, &signal_info, sizeof signal_info);
+ 	if (!(len == -1 && errno == EAGAIN) && len != sizeof signal_info)
+ 		/* Is there anything we can do here?  Will this ever happen? */
+@@ -243,35 +433,103 @@ wl_event_source_signal_dispatch(struct wl_event_source
+ 	return signal_source->func(signal_source->signal_number,
+ 				   signal_source->base.data);
+ }
++#elif defined(HAVE_SYS_EVENT_H)
++static int
++wl_event_source_signal_dispatch(struct wl_event_source *source,
++                                struct kevent *ev)
++{
++	struct wl_event_source_signal *signal_source;
+ 
++	signal_source = (struct wl_event_source_signal *) source;
++	return signal_source->func(signal_source->base.fd,
++				   signal_source->base.data);
++}
++#endif
++
+ struct wl_event_source_interface signal_source_interface = {
+ 	wl_event_source_signal_dispatch,
+ };
+ 
+-WL_EXPORT struct wl_event_source *
+-wl_event_loop_add_signal(struct wl_event_loop *loop,
+-			int signal_number,
+-			wl_event_loop_signal_func_t func,
+-			void *data)
++static struct wl_event_source_signal *
++wl_event_loop_create_signal_source(int signal_number,
++                                   wl_event_loop_signal_func_t func)
+ {
+ 	struct wl_event_source_signal *source;
+ 	sigset_t mask;
+ 
+-	source = malloc(sizeof *source);
++	source = calloc(1, sizeof(struct wl_event_source_signal));
+ 	if (source == NULL)
+ 		return NULL;
+ 
+ 	source->base.interface = &signal_source_interface;
+ 	source->signal_number = signal_number;
++	source->func = func;
+ 
++	/* Block delivery of signal_number to this process. */
+ 	sigemptyset(&mask);
+ 	sigaddset(&mask, signal_number);
+-	source->base.fd = signalfd(-1, &mask, SFD_CLOEXEC | SFD_NONBLOCK);
+ 	sigprocmask(SIG_BLOCK, &mask, NULL);
+ 
+-	source->func = func;
++	return source;
++}
+ 
++#if defined(HAVE_SYS_EVENT_H)
++static int
++wl_event_loop_dispatch_signal_event(struct wl_event_loop *loop, int signal_number)
++{
++	struct wl_event_source_signal *ksh, *next;
++	int n;
++
++	n = 0;
++	wl_list_for_each_safe(ksh, next, &loop->signals[signal_number], signal_link)
++		n += ksh->func(signal_number, ksh->base.data);
++	return n;
++}
++#endif
++
++WL_EXPORT struct wl_event_source *
++wl_event_loop_add_signal(struct wl_event_loop *loop,
++			int signal_number,
++			wl_event_loop_signal_func_t func,
++			void *data)
++{
++#if defined(HAVE_SYS_EVENT_H)
++	struct kevent ev;
++#endif
++	struct wl_event_source_signal *source = NULL;;
++
++#if defined(HAVE_SYS_SIGNALFD_H)
++	/* Linux. Use signalfd. Multiple handlers are possible. */
++	source = wl_event_loop_create_signal_source(signal_number, func);
++	if (source == NULL)
++		return NULL;
++	source->base.fd = signalfd(-1, &mask, SFD_CLOEXEC | SFD_NONBLOCK);
+ 	return add_source(loop, &source->base, WL_EVENT_READABLE, data);
++#elif defined(HAVE_SYS_EVENT_H)
++	/* BSD. Use kqueue. Multiple handlers need special treatment. */
++
++	source = wl_event_loop_create_signal_source(signal_number, func);
++	if (source == NULL)
++		return NULL;
++	source->base.loop = loop;
++	source->base.data = data;
++	if (wl_list_empty(&loop->signals[signal_number])) {
++		/* set up kevent object */
++		EV_SET(&ev, signal_number, EVFILT_SIGNAL, EV_ADD | EV_ENABLE,
++		       0, 0, NULL);
++		if (kevent(loop->event_fd, &ev, 1, NULL, 0, NULL) < 0) {
++			fprintf(stderr,
++			        "error adding handler for signal %i (%p) "
++				"in event loop %p: %s",
++			        signal_number, source, loop, strerror(errno));
++			free(source);
++			return NULL;
++		}
++	}
++
++	wl_list_insert(&loop->signals[signal_number], &source->signal_link);
++	return &source->base;
++#endif
+ }
+ 
+ struct wl_event_source_idle {
+@@ -312,15 +570,19 @@ wl_event_source_check(struct wl_event_source *source)
+ 	wl_list_insert(source->loop->check_list.prev, &source->link);
+ }
+ 
++
++#ifdef HAVE_SYS_EPOLL_H
+ WL_EXPORT int
+ wl_event_source_remove(struct wl_event_source *source)
+ {
+ 	struct wl_event_loop *loop = source->loop;
+ 
+-	/* We need to explicitly remove the fd, since closing the fd
+-	 * isn't enough in case we've dup'ed the fd. */
++	/*
++	 * We need to explicitly remove the fd, since closing the fd
++	 * isn't enough in case we've dup'ed the fd.
++	 */
+ 	if (source->fd >= 0) {
+-		epoll_ctl(loop->epoll_fd, EPOLL_CTL_DEL, source->fd, NULL);
++		epoll_ctl(loop->event_fd, EPOLL_CTL_DEL, source->fd, NULL);
+ 		close(source->fd);
+ 		source->fd = -1;
+ 	}
+@@ -330,7 +592,90 @@ wl_event_source_remove(struct wl_event_source *source)
+ 
+ 	return 0;
+ }
++#elif HAVE_SYS_EVENT_H
++WL_EXPORT int
++wl_event_source_remove(struct wl_event_source *source)
++{
++	struct wl_event_loop *loop = source->loop;
++	int ret = 0, saved_errno = 0;
+ 
++	/*
++	 * Since BSD doesn't treat all event sources as FDs, we need to
++	 * differentiate by source interface.
++	 */
++	if (source->interface == &fd_source_interface && source->fd >= 0) {
++		struct kevent ev[2];
++		int _ret[2], _saved_errno[2];
++
++		/*
++		 * We haven't stored state about the mask used when adding the
++		 * source, so we have to try and remove both READ and WRITE
++		 * filters. One may fail, which is OK. Removal of the source has
++		 * only failed if _both_ kevent() calls fail. We have to do two
++		 * kevent() calls so that we can get independent return values
++		 * for the two kevents.
++		 */
++		EV_SET(&ev[0], source->fd, EVFILT_READ, EV_DELETE, 0, 0,
++		      source);
++		EV_SET(&ev[1], source->fd, EVFILT_WRITE, EV_DELETE, 0, 0,
++		      source);
++
++		_ret[0] = kevent(loop->event_fd, &ev[0], 1, NULL, 0, NULL);
++		_saved_errno[0] = errno;
++		_ret[1] = kevent(loop->event_fd, &ev[1], 1, NULL, 0, NULL);
++		_saved_errno[1] = errno;
++
++		if (_ret[0] >= _ret[1]) {
++			ret = _ret[0];
++			saved_errno = _saved_errno[0];
++		} else {
++			ret = _ret[1];
++			saved_errno = _saved_errno[1];
++		}
++
++		close(source->fd);
++	} else if (source->interface == &timer_source_interface) {
++		struct kevent ev;
++		struct wl_event_source_timer *source_t;
++
++		EV_SET(&ev, source->fd, EVFILT_TIMER, EV_DELETE, 0, 0, source);
++		ret = kevent(loop->event_fd, &ev, 1, NULL, 0, NULL);
++		saved_errno = errno;
++		source_t = (struct wl_event_source_timer*)source;
++		wl_list_remove(&source_t->timer_link);
++	} else if (source->interface == &signal_source_interface) {
++		struct kevent ev;
++		struct wl_event_source_signal *source_s;
++
++		// TODO remove item from list first, then only kevent if empty
++		source_s = (struct wl_event_source_signal *) source;
++		wl_list_remove(&source_s->signal_link);
++
++		if (wl_list_empty(&loop->signals[source->fd])) {
++			EV_SET(&ev, source->fd, EVFILT_SIGNAL, EV_DELETE, 0, 0,
++			       source);
++			ret = kevent(loop->event_fd, &ev, 1, NULL, 0, NULL);
++			saved_errno = errno;
++		}
++	}
++
++	/* Handle any errors from kevent() calls. */
++	if (ret < 0) {
++		fprintf(stderr,
++		        "error removing event (%i) from kqueue: %s\n",
++		        source->fd, strerror(saved_errno));
++	}
++
++	/* Tidy up the source. */
++	source->fd = -1;
++
++	wl_list_remove(&source->link);
++	wl_list_insert(&loop->destroy_list, &source->link);
++
++	return 0;
++}
++#endif
++
+ static void
+ wl_event_loop_process_destroy_list(struct wl_event_loop *loop)
+ {
+@@ -346,20 +691,29 @@ WL_EXPORT struct wl_event_loop *
+ wl_event_loop_create(void)
+ {
+ 	struct wl_event_loop *loop;
++#if defined(HAVE_SYS_EVENT_H)
++	int i;
++#endif
+ 
+ 	loop = malloc(sizeof *loop);
+ 	if (loop == NULL)
+ 		return NULL;
+-
+-	loop->epoll_fd = wl_os_epoll_create_cloexec();
+-	if (loop->epoll_fd < 0) {
++	loop->event_fd = wl_os_queue_create_cloexec();
++	if (loop->event_fd < 0) {
+ 		free(loop);
+ 		return NULL;
+ 	}
++
+ 	wl_list_init(&loop->check_list);
+ 	wl_list_init(&loop->idle_list);
+ 	wl_list_init(&loop->destroy_list);
+ 
++#if defined(HAVE_SYS_EVENT_H)
++	wl_list_init(&loop->timers);
++	for (i = 0; i < NSIG; i++)
++		wl_list_init(&loop->signals[i]);
++#endif
++
+ 	wl_signal_init(&loop->destroy_signal);
+ 
+ 	return loop;
+@@ -371,23 +725,35 @@ wl_event_loop_destroy(struct wl_event_loop *loop)
+ 	wl_signal_emit(&loop->destroy_signal, loop);
+ 
+ 	wl_event_loop_process_destroy_list(loop);
+-	close(loop->epoll_fd);
++	close(loop->event_fd);
+ 	free(loop);
+ }
+ 
+ static int
+ post_dispatch_check(struct wl_event_loop *loop)
+ {
+-	struct epoll_event ep;
++#ifdef HAVE_SYS_EPOLL_H
+ 	struct wl_event_source *source, *next;
+ 	int n;
++	struct epoll_event ep;
+ 
+ 	ep.events = 0;
+ 	n = 0;
+ 	wl_list_for_each_safe(source, next, &loop->check_list, link)
+ 		n += source->interface->dispatch(source, &ep);
++	return n;
+ 
++#elif HAVE_SYS_EVENT_H
++	struct wl_event_source *source, *next;
++	int n;
++	struct kevent ev;
++
++	ev.filter = 0;
++	n = 0;
++	wl_list_for_each_safe(source, next, &loop->check_list, link)
++		n += source->interface->dispatch(source, &ev);
+ 	return n;
++#endif
+ }
+ 
+ WL_EXPORT void
+@@ -403,6 +769,7 @@ wl_event_loop_dispatch_idle(struct wl_event_loop *loop
+ 	}
+ }
+ 
++#ifdef HAVE_SYS_EPOLL_H
+ WL_EXPORT int
+ wl_event_loop_dispatch(struct wl_event_loop *loop, int timeout)
+ {
+@@ -412,7 +779,7 @@ wl_event_loop_dispatch(struct wl_event_loop *loop, int
+ 
+ 	wl_event_loop_dispatch_idle(loop);
+ 
+-	count = epoll_wait(loop->epoll_fd, ep, ARRAY_LENGTH(ep), timeout);
++	count = epoll_wait(loop->event_fd, ep, ARRAY_LENGTH(ep), timeout);
+ 	if (count < 0)
+ 		return -1;
+ 
+@@ -432,11 +799,52 @@ wl_event_loop_dispatch(struct wl_event_loop *loop, int
+ 
+ 	return 0;
+ }
++#elif HAVE_SYS_EVENT_H
++WL_EXPORT int
++wl_event_loop_dispatch(struct wl_event_loop *loop, int timeout)
++{
++	/* kqueue sends separate events */
++	struct kevent ev[64];     
++	struct wl_event_source *source;
++	int i, count, n;
++	struct timespec timeout_spec;
+ 
++	wl_event_loop_dispatch_idle(loop);
++
++	/* timeout is provided in milliseconds */
++	timeout_spec.tv_sec = timeout / 1000;
++	timeout_spec.tv_nsec = (timeout % 1000) * 1000000;
++
++	count = kevent(loop->event_fd, NULL, 0, ev, ARRAY_LENGTH(ev),
++	               (timeout != -1) ? &timeout_spec : NULL);
++	if (count < 0)
++		return -1;
++
++	for (i = 0; i < count; i++) {
++		source = ev[i].udata;
++		if (source->fd != -1) {
++			if (source->interface == &signal_source_interface)
++				wl_event_loop_dispatch_signal_event(loop, source->fd);
++			else
++				source->interface->dispatch(source, &ev[i]);
++		}
++	}
++
++	wl_event_loop_process_destroy_list(loop);
++
++	do {
++		n = post_dispatch_check(loop);
++	} while (n > 0);
++
++	return 0;
++}
++#endif
++
++
+ WL_EXPORT int
+ wl_event_loop_get_fd(struct wl_event_loop *loop)
+ {
+-	return loop->epoll_fd;
++	return loop->event_fd;
+ }
+ 
+ WL_EXPORT void
