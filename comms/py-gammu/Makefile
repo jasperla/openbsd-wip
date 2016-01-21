@@ -2,7 +2,7 @@
 
 COMMENT =		python bindings for Gammu
 
-MODPY_EGG_VERSION = 	2.4
+MODPY_EGG_VERSION = 	2.5
 DISTNAME =		python-gammu-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/python/py/}
 
