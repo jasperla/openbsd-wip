@@ -1,7 +1,7 @@
 $OpenBSD$
---- tests/CMakeLists.txt.orig	Mon Jun 15 10:11:01 2015
-+++ tests/CMakeLists.txt	Mon Jun 15 21:20:50 2015
-@@ -63,9 +63,10 @@ if (HAVE_MYSQL_MYSQL_H OR LIBDBI_FOUND OR HAVE_POSTGRE
+--- tests/CMakeLists.txt.orig	Tue Dec  8 13:38:12 2015
++++ tests/CMakeLists.txt	Wed Dec  9 13:40:35 2015
+@@ -61,9 +61,10 @@ if (HAVE_MYSQL_MYSQL_H OR LIBDBI_FOUND OR HAVE_POSTGRE
          include_directories (${POSTGRES_INCLUDE_DIR})
      endif (POSTGRES_FOUND)
  
