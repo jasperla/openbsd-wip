@@ -1,0 +1,11 @@
+$OpenBSD$
+--- Makefile.am.orig	Sat Jan 23 22:19:01 2016
++++ Makefile.am	Sat Jan 23 22:19:38 2016
+@@ -34,7 +34,6 @@ EXTRA_DIST = csync2.cfg csync2.xinetd
+ 
+ AM_YFLAGS = -d
+ BUILT_SOURCES = cfgfile_parser.h
+-LIBS += -ldl
+ CLEANFILES = cfgfile_parser.c cfgfile_parser.h cfgfile_scanner.c	\
+              private_librsync private_libsqlite config.log		
+ 
