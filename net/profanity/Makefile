@@ -15,19 +15,18 @@ MASTER_SITES =	http://www.profanity.im/
 WANTLIB += assuan c curl ereadline glib-2.0 gpg-error gpgme ncursesw
 WANTLIB += otr pthread strophe uuid intl
 
-BUILD_DEPENDS +=${MODGNU_AUTOCONF_DEPENDS} \
+BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE)DEPENDS} \
 		devel/gettext-tools
 
-
-LIB_DEPENDS +=	security/gpgme \
-		security/libotr \
-		sysutils/e2fsprogs \
+LIB_DEPENDS =	devel/readline>=6.1p2 \
+		devel/cmocka \
+		devel/libnotify \
 		net/libstrophe \
 		net/curl \
-		devel/readline>=6.1p2 \
-		devel/cmocka \
-		devel/libnotify
+		security/gpgme \
+		security/libotr \
+		sysutils/e2fsprogs
 
 CONFIGURE_STYLE = autoconf
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
