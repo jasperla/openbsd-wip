@@ -1,7 +1,8 @@
 # $OpenBSD:
 
-COMMENT =	maintained ctags implementation
+COMMENT =	multilanguage reimplementation of the Unix ctags utility
 
+# commit date YYMMDD
 VERSION =	20151208
 DISTNAME =	universal-ctags-${VERSION}
 
