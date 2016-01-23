@@ -12,22 +12,22 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =	http://www.profanity.im/
 
-MODULES =	devel/gettext
-
 WANTLIB += assuan c curl ereadline glib-2.0 gpg-error gpgme ncursesw
-WANTLIB += otr pthread strophe
+WANTLIB += otr pthread strophe uuid intl
 
 BUILD_DEPENDS +=${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE)DEPENDS}
+		${MODGNU_AUTOMAKE)DEPENDS} \
+		devel/gettext-tools
+
 
 LIB_DEPENDS +=	security/gpgme \
 		security/libotr \
+		sysutils/e2fsprogs \
 		net/libstrophe \
-		devel/uuid \
+		net/curl \
 		devel/readline>=6.1p2 \
 		devel/cmocka \
-		devel/libnotify \
-		net/curl
+		devel/libnotify
 
 CONFIGURE_STYLE = autoconf
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
