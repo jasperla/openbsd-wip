@@ -10,7 +10,7 @@ HOMEPAGE =	https://vifm.info/
 
 MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
