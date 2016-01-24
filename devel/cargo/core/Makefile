@@ -92,6 +92,7 @@ USE_GMAKE =	Yes
 
 BUILD_DEPENDS =	devel/cargo/bootstrap \
 		devel/libgit2/libgit2 \
+		devel/cmake \
 		lang/rust>=1.5.0p0
 
 LIB_DEPENDS =	net/curl \
