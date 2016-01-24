@@ -1,9 +1,9 @@
 $OpenBSD$
 - found python2.7
 - remove need of curl or wget
---- configure.orig	Sat Jan 23 17:57:07 2016
-+++ configure	Sat Jan 23 17:57:23 2016
-@@ -341,8 +341,8 @@ validate_opt
+--- configure.orig	Sun Jan 24 14:12:38 2016
++++ configure	Sun Jan 24 14:12:46 2016
+@@ -341,8 +341,7 @@ validate_opt
  
  step_msg "looking for build programs"
  
