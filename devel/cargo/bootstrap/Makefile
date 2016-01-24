@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP = bootstrap only
 
 WANTLIB = c crypto curl m pthread ssh2 ssl z
 
-DIST_SUBDIR = cargo-bootstrap
+DIST_SUBDIR = cargo
 
 # We can't use GH_* because we need multiple GitHub sources.
 MASTER_SITES = https://github.com/dhuseby/cargo-bootstrap/archive/
