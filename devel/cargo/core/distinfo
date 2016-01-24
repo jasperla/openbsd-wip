@@ -1,0 +1,6 @@
+SHA256 (cargo/cargo-0.8.0.tar.gz) = lOJEahk4cRCeOGRFmW0NXgllGgYSq/4K55HJr5UarrM=
+SHA256 (cargo/cargo-deps-0.8.0.tar.gz) = HX3f7zmm9Ysx52R1x3HoQ0aUe/uIHTYUWfQPabCGGLE=
+SHA256 (cargo/crates-io-0.1.0.tar.gz) = 9R9jseo/xC7ctitmszQBKI1iBn7H2d3Zg46nCwD6g9I=
+SIZE (cargo/cargo-0.8.0.tar.gz) = 549433
+SIZE (cargo/cargo-deps-0.8.0.tar.gz) = 40697880
+SIZE (cargo/crates-io-0.1.0.tar.gz) = 2671
