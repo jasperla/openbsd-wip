@@ -2,7 +2,7 @@
 
 COMMENT =	python interface to amazon web services
 
-MODPY_EGG_VERSION = 2.38.0
+MODPY_EGG_VERSION = 2.39.0
 DISTNAME =	boto-${MODPY_EGG_VERSION}
 PKGNAME = 	py-${DISTNAME}
 CATEGORIES =	net
