@@ -5,7 +5,6 @@ CARGO_VERSION =		0.8.0
 CRATESIO_VERSION =	0.1.0
 
 DISTNAME =	cargo-${CARGO_VERSION}
-PKGNAME =	${DISTNAME}
 CATEGORIES =	devel
 
 HOMEPAGE =	https://doc.crates.io/
