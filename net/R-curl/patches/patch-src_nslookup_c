@@ -1,0 +1,18 @@
+$OpenBSD$
+
+nslookup.c:24: error: dereferencing pointer to incomplete type
+nslookup.c:24: error: 'AF_INET' undeclared (first use in this function)
+nslookup.c:24: error: (Each undeclared identifier is reported only once
+nslookup.c:24: error: for each function it appears in.)
+nslookup.c:29: error: 'AF_INET6' undeclared (first use in this function)
+
+--- src/nslookup.c.orig	Sun Jan 24 21:25:21 2016
++++ src/nslookup.c	Sun Jan 24 21:25:45 2016
+@@ -6,6 +6,7 @@
+ #include <ws2tcpip.h>
+ const char *inet_ntop(int af, const void *src, char *dst, socklen_t size);
+ #else
++#include <sys/socket.h>
+ #include <netdb.h>
+ #include <arpa/inet.h>
+ #endif

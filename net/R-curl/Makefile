@@ -4,12 +4,14 @@ SHARED_ONLY =			Yes
 
 COMMENT =			modern and flexible web client for R
 
-V =				0.9.4
+V =				0.9.5
 DISTNAME =			curl_${V}
 PKGNAME =			R-${DISTNAME:S/_/-/}
 CATEGORIES =			net
 
 HOMEPAGE =			https://cran.r-project.org/web/packages/curl/
+
+MAINTAINER =			Jasper Lievisse Adriaase <jasper@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =		Yes
@@ -33,7 +35,7 @@ R_LIBDIR =			${PREFIX}/lib/R/library
 SUBST_VARS +=			DESTDIR R_LIBDIR WRKSRC
 
 # File(s) we modified and need to regen the checksum for
-UPDATED_FILES =			configure
+UPDATED_FILES =			configure src/nslookup.c
 
 post-extract:
 	sed -i 's,^#!/bin/bash,#!/bin/sh,' ${WRKSRC}/configure
