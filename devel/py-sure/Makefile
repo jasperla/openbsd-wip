@@ -19,12 +19,12 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-FLAVORS =		python3
-FLAVOR ?=
-
 RUN_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR}
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/py-nose${MODPY_FLAVOR}
+
+FLAVORS =		python3
+FLAVOR ?=
 
 .include <bsd.port.mk>
