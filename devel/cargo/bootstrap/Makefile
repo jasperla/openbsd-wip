@@ -112,9 +112,9 @@ do-build:
 		--target x86_64-unknown-openbsd
 
 do-install:
-	mkdir -p ${WRKINST}${LOCALBASE}/libexec/cargo-bootstrap/
+	mkdir -p ${PREFIX}/libexec/cargo-bootstrap/
 	cp ${WRKDIR}/cargo-"$$(echo ${CARGO_VERSION} | sed 's/\./_/g')" \
-		${WRKINST}${LOCALBASE}/libexec/cargo-bootstrap/cargo
+		${PREFIX}/libexec/cargo-bootstrap/cargo
 
 MODULES         = lang/python
 MODPY_RUNDEP    = No # only the build script is python
