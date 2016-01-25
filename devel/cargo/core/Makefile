@@ -18,10 +18,14 @@ MAINTAINER =	Sebastien Marie <semarie@openbsd.org>
 #  - Unlicense/MIT
 #  - MIT/Apache-2.0
 #  - MPL-2.0
-#  - one with no indication of licence XXX
-PERMIT_PACKAGE_CDROM = TODO
-PERMIT_PACKAGE_FTP   = TODO
-PERMIT_DISTFILES_FTP = TODO
+#  - one with no indication of licence (hamcrest)
+#
+# hamcrest is used only for the testsuite, and isn't builded with cargo.
+# so the package doesn't contains it.
+#
+PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE_FTP   = Yes
+PERMIT_DISTFILES_FTP = No as hamcrest has no license information
 
 WANTLIB = c crypto curl m pthread ssh2 ssl z
 
@@ -48,7 +52,7 @@ CRATES +=	gdi32-sys-0.1.1			# MIT
 CRATES +=	git2-0.3.3			# MIT/Apache-2.0
 CRATES +=	git2-curl-0.3.0			# MIT/Apache-2.0
 CRATES +=	glob-0.2.10			# MIT/Apache-2.0
-CRATES +=	hamcrest-0.1.0			# XXX no license indication
+CRATES +=	hamcrest-0.1.0			# no license indication (testsuite only)
 CRATES +=	kernel32-sys-0.1.4		# MIT
 CRATES +=	kernel32-sys-0.2.1		# MIT
 CRATES +=	libc-0.2.4			# MIT/Apache-2.0

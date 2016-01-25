@@ -1,5 +1,3 @@
-- licence marker (specially third-parties)
-
 - make "make test" to pass
 
   test result: FAILED. 473 passed; 60 failed; 0 ignored; 0 measured
