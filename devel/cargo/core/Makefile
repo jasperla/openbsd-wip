@@ -2,6 +2,7 @@
 COMMENT = package manager for Rust language
 
 CARGO_VERSION =		0.8.0
+RUSTINSTALL_INDEX =	c37d3747da75c280237dc2d6b925078e69555499
 CRATESIO_INDEX =	327db553f3ea4dbba48a9f74b663e5bf09461250
 
 DISTNAME =	cargo-${CARGO_VERSION}
@@ -25,11 +26,10 @@ PERMIT_DISTFILES_FTP = TODO
 WANTLIB = c crypto curl m pthread ssh2 ssl z
 
 DIST_SUBDIR =	cargo
-MASTER_SITES =	https://github.com/rust-lang/cargo/archive/
-DISTFILES =	cargo-${CARGO_VERSION}.tar.gz{${CARGO_VERSION}.tar.gz}
-
-MASTER_SITES0 =	https://github.com/rust-lang/crates.io-index/archive/
-DISTFILES +=	crates.io-index-${CRATESIO_INDEX}.tar.gz{${CRATESIO_INDEX}.tar.gz}:0
+MASTER_SITES =	https://github.com/rust-lang/
+DISTFILES +=	cargo-${CARGO_VERSION}.tar.gz{cargo/archive/${CARGO_VERSION}.tar.gz}
+DISTFILES +=	rust-installer-${RUSTINSTALL_INDEX}.tar.gz{rust-installer/archive/${RUSTINSTALL_INDEX}.tar.gz}
+DISTFILES +=	crates.io-index-${CRATESIO_INDEX}.tar.gz{crates.io-index/archive/${CRATESIO_INDEX}.tar.gz}
 
 CRATES +=	advapi32-sys-0.1.2		# MIT
 CRATES +=	aho-corasick-0.4.0		# Unlicense/MIT
@@ -83,9 +83,9 @@ CRATES +=	winapi-0.2.5			# MIT
 CRATES +=	winapi-build-0.1.1		# MIT
 CRATES +=	ws2_32-sys-0.2.1		# MIT
 
-MASTER_SITES1 =	https://crates.io/api/v1/crates/
+MASTER_SITES0 =	https://crates.io/api/v1/crates/
 .for _crate in ${CRATES}
-DISTFILES +=	${_crate}.tar.gz{${_crate:C/-[^-]*$//}/${_crate:C/^.*-//}/download}:1
+DISTFILES +=	${_crate}.tar.gz{${_crate:C/-[^-]*$//}/${_crate:C/^.*-//}/download}:0
 .endfor
 
 MODULES =	lang/python
@@ -115,6 +115,9 @@ MAKE_ENV +=	CARGO_HOME=${WRKDIR}/cargo-home \
 		LIBSSH2_SYS_USE_PKG_CONFIG=1
 
 post-extract:
+	rmdir ${WRKSRC}/src/rust-installer
+	mv ${WRKDIR}/rust-installer-${RUSTINSTALL_INDEX} \
+		${WRKSRC}/src/rust-installer
 	mkdir -p ${WRKDIR}/cargo-home/registry/{cache,index,src}
 	mkdir ${WRKDIR}/cargo-home/registry/{cache,src}/github.com-0a35038f75765ae4
 	mv ${WRKDIR}/crates.io-index-${CRATESIO_INDEX} \

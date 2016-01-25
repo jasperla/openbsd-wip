@@ -37,6 +37,7 @@ SHA256 (cargo/pnacl-build-helper-1.4.10.tar.gz) = YckjHTGuqEUAdEPWL8u1i7aUmrnBgI
 SHA256 (cargo/rand-0.3.13.tar.gz) = JBa4u9ljNjEcL/nm/KczjMdqV6I116FTruiJKKBrNlc=
 SHA256 (cargo/regex-0.1.44.tar.gz) = 4JQK1r+Kv3njIQgJpqSeGZ/I4At96vwNk5QVf1b1QB4=
 SHA256 (cargo/regex-syntax-0.2.2.tar.gz) = /PHoBbCiPIRb4qMDE22EChURKEcnvB8fwy0HlVLvkB8=
+SHA256 (cargo/rust-installer-c37d3747da75c280237dc2d6b925078e69555499.tar.gz) = YyZDTCJdJca/0o/4u8MQjjMa5l6JpcONrIosj/oJcys=
 SHA256 (cargo/rustc-serialize-0.3.16.tar.gz) = GkhUamTK5H0GiF6bzK25nQVH2HepTFFn+kUeozpIRFY=
 SHA256 (cargo/semver-0.2.0.tar.gz) = K7aNvmJ9SzV2MER9kIb3We3Bp+UP6UpRXSV+ormyz8k=
 SHA256 (cargo/strsim-0.3.0.tar.gz) = 5Nc6LDak0JXtGm31y+rBWYYxc0R/eoKz9HV0JoRKuCU=
@@ -90,6 +91,7 @@ SIZE (cargo/pnacl-build-helper-1.4.10.tar.gz) = 5470
 SIZE (cargo/rand-0.3.13.tar.gz) = 54603
 SIZE (cargo/regex-0.1.44.tar.gz) = 86053
 SIZE (cargo/regex-syntax-0.2.2.tar.gz) = 102311
+SIZE (cargo/rust-installer-c37d3747da75c280237dc2d6b925078e69555499.tar.gz) = 19296
 SIZE (cargo/rustc-serialize-0.3.16.tar.gz) = 39970
 SIZE (cargo/semver-0.2.0.tar.gz) = 15967
 SIZE (cargo/strsim-0.3.0.tar.gz) = 4320
