@@ -2,7 +2,7 @@
 
 COMMENT =		HTTP client mock for Python
 
-MODPY_EGG_VERSION =	0.8.12
+MODPY_EGG_VERSION =	0.8.14
 DISTNAME =		httpretty-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel

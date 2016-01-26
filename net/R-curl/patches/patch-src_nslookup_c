@@ -1,0 +1,17 @@
+$OpenBSD$
+
+From f4cc2fd08b5b3a8e5fb1b37e4d2a988962ab9d61 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Mon, 25 Jan 2016 09:50:35 +0100
+Subject: [PATCH] include sys/socket.h on non-win32 which is required for AF_INET/AF_INET6
+
+--- src/nslookup.c.orig	Sun Jan 24 21:25:21 2016
++++ src/nslookup.c	Sun Jan 24 21:25:45 2016
+@@ -6,6 +6,7 @@
+ #include <ws2tcpip.h>
+ const char *inet_ntop(int af, const void *src, char *dst, socklen_t size);
+ #else
++#include <sys/socket.h>
+ #include <netdb.h>
+ #include <arpa/inet.h>
+ #endif

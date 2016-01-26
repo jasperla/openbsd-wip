@@ -3,7 +3,7 @@ libstrophe, inspired by irssi.
 
 Features:
 
-* Supports XMPP chat services, including Google Talk and Facebook.
+* Supports XMPP chat services.
 * Command driven user interface.
 * Customizable functionality and user interface.
 * OTR (Off The Record) message encryption.

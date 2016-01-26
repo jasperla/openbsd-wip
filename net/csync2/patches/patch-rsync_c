@@ -1,0 +1,31 @@
+$OpenBSD$
+--- rsync.c.orig	Sat Jan 23 22:10:43 2016
++++ rsync.c	Sat Jan 23 22:12:14 2016
+@@ -41,27 +41,6 @@
+ 
+ /* This has been taken from rsync:lib/compat.c */
+ 
+-/**
+- * Like strncpy but does not 0 fill the buffer and always null
+- * terminates.
+- *
+- * @param bufsize is the size of the destination buffer.
+- *
+- * @return index of the terminating byte.
+- **/
+-static size_t strlcpy(char *d, const char *s, size_t bufsize)
+-{
+-        size_t len = strlen(s);
+-        size_t ret = len;
+-        if (bufsize > 0) {
+-                if (len >= bufsize)
+-                        len = bufsize-1;
+-                memcpy(d, s, len);
+-                d[len] = 0;
+-        }
+-        return ret;
+-}
+-
+ /* splits filepath at the last '/', if any, like so:
+  *	dirname		basename	filepath
+  *	"/"		""		"/"

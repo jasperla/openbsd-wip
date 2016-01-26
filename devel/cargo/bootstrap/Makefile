@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP = bootstrap only
 
 WANTLIB = c crypto curl m pthread ssh2 ssl z
 
-DIST_SUBDIR = cargo-bootstrap
+DIST_SUBDIR = cargo
 
 # We can't use GH_* because we need multiple GitHub sources.
 MASTER_SITES = https://github.com/dhuseby/cargo-bootstrap/archive/
@@ -112,9 +112,9 @@ do-build:
 		--target x86_64-unknown-openbsd
 
 do-install:
-	mkdir -p ${WRKINST}${LOCALBASE}/libexec/cargo-bootstrap/
+	mkdir -p ${PREFIX}/libexec/cargo-bootstrap/
 	cp ${WRKDIR}/cargo-"$$(echo ${CARGO_VERSION} | sed 's/\./_/g')" \
-		${WRKINST}${LOCALBASE}/libexec/cargo-bootstrap/cargo
+		${PREFIX}/libexec/cargo-bootstrap/cargo
 
 MODULES         = lang/python
 MODPY_RUNDEP    = No # only the build script is python

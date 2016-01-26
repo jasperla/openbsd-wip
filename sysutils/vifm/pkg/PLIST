@@ -1,0 +1,60 @@
+@comment $OpenBSD$
+@bin bin/vifm
+bin/vifm-convert-dircolors
+bin/vifm-pause
+bin/vifm-screen-split
+@man man/man1/vifm-convert-dircolors.1
+@man man/man1/vifm-pause.1
+@man man/man1/vifm-screen-split.1
+@man man/man1/vifm.1
+share/applications/vifm.desktop
+share/doc/vifm/
+share/doc/vifm/AUTHORS
+share/doc/vifm/BUGS
+share/doc/vifm/COPYING
+share/doc/vifm/ChangeLog
+share/doc/vifm/FAQ
+share/doc/vifm/INSTALL
+share/doc/vifm/NEWS
+share/doc/vifm/README
+share/doc/vifm/TODO
+share/pixmaps/
+share/pixmaps/vifm.png
+share/vifm/
+share/vifm/colors/
+share/vifm/colors/astrell-root.vifm
+share/vifm/colors/astrell-user.vifm
+share/vifm/colors/dmilith-root.vifm
+share/vifm/colors/dmilith-user.vifm
+share/vifm/colors/istib-solarized-dark.vifm
+share/vifm/colors/juef-zenburn.vifm
+share/vifm/colors/reicheltd-light.vifm
+share/vifm/vifm-help.txt
+share/vifm/vifmrc
+share/vifm/vifmrc-osx
+share/vifm/vim/
+share/vifm/vim-doc/
+share/vifm/vim-doc/doc/
+share/vifm/vim-doc/doc/tags
+share/vifm/vim-doc/doc/vifm-app.txt
+share/vifm/vim/autoload/
+share/vifm/vim/autoload/vifm/
+share/vifm/vim/autoload/vifm/edit.vim
+share/vifm/vim/doc/
+share/vifm/vim/doc/tags
+share/vifm/vim/doc/vifm-plugin.txt
+share/vifm/vim/ftdetect/
+share/vifm/vim/ftdetect/vifm-rename.vim
+share/vifm/vim/ftdetect/vifm.vim
+share/vifm/vim/ftplugin/
+share/vifm/vim/ftplugin/mail_vifm.vim
+share/vifm/vim/ftplugin/vifm-cmdedit.vim
+share/vifm/vim/ftplugin/vifm-edit.vim
+share/vifm/vim/ftplugin/vifm-rename.vim
+share/vifm/vim/ftplugin/vifm.vim
+share/vifm/vim/plugin/
+share/vifm/vim/plugin/vifm.vim
+share/vifm/vim/syntax/
+share/vifm/vim/syntax/vifm.vim
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

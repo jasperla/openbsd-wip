@@ -1,0 +1,9 @@
+@comment $OpenBSD$
+@man man/man1/csync2.1
+@bin sbin/csync2
+sbin/csync2-compare
+share/doc/csync2/
+share/doc/csync2/AUTHORS
+share/doc/csync2/ChangeLog
+share/doc/csync2/README
+share/doc/csync2/csync2_paper.pdf

@@ -21,7 +21,7 @@ EXTRACT_SUFX =		.tar.xz
 
 MODULES =		devel/gettext x11/qt4
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+2,-guic
+			x11/gtk+3,-guic
 LIB_DEPENDS =		audio/openal \
 			graphics/ffmpeg>=20111126 \
 			graphics/glew \
@@ -34,7 +34,5 @@ CONFIGURE_ARGS +=	--without-equalizer \
 
 CONFIGURE_ENV += 	CPPFLAGS="-I${X11BASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib -Wl,-z,muldefs"
-
-NO_TEST =		Yes
 
 .include <bsd.port.mk>
