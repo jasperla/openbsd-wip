@@ -9,7 +9,7 @@ DISTNAME =			curl_${V}
 PKGNAME =			R-${DISTNAME:S/_/-/}
 CATEGORIES =			net
 
-HOMEPAGE =			https://cran.r-project.org/web/packages/curl/
+HOMEPAGE =			https://cran.r-project.org/package=curl
 
 MAINTAINER =			Jasper Lievisse Adriaase <jasper@openbsd.org>
 
@@ -20,10 +20,9 @@ MASTER_SITES =			https://cran.r-project.org/src/contrib/
 
 WRKDIST =			${WRKDIR}/curl/
 
-WANTLIB =			curl
-BUILD_DEPENDS =			math/R
-LIB_DEPENDS =			net/curl
-RUN_DEPENDS =			math/R
+WANTLIB =			lib/R/lib/R curl
+LIB_DEPENDS =			math/R \
+				net/curl
 
 # not really, but there's no Makefile to open
 NO_BUILD =			Yes
@@ -34,15 +33,8 @@ USE_CCACHE =			No
 R_LIBDIR =			${PREFIX}/lib/R/library
 SUBST_VARS +=			DESTDIR R_LIBDIR WRKSRC
 
-# File(s) we modified and need to regen the checksum for
-UPDATED_FILES =			configure src/nslookup.c
-
 post-extract:
 	sed -i 's,^#!/bin/bash,#!/bin/sh,' ${WRKSRC}/configure
-.for f in ${UPDATED_FILES}
-	cd ${WRKSRC} && \
-		sed -i "s,.* \(\*$f\)$$,`md5 -q $f` \1," MD5
-.endfor
 	${SUBST_CMD} -m 0644 -c ${FILESDIR}/install.R ${WRKDIR}/install.R
 
 do-install:
