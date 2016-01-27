@@ -1,3 +1,0 @@
-- Do we need libjpeg-turbo?
-  (i.e., check consequences of patch-source_ImageBuffer_cpp)
-- Avoid gzipped man page? (man/man6/endless-sky.6.gz)
