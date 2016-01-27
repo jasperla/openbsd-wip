@@ -1,3 +1,0 @@
-- rc.subr does not like rc scripts that begin with a digit
-- needs better / less noisy default config
-- ${LOCALBASE}/bin/proxy @conflict with libproxy
