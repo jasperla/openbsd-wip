@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/HTTP/Cache/
-${P5SITE}/HTTP/Cache/Transparent.pm
-@man man/man3p/HTTP::Cache::Transparent.3p

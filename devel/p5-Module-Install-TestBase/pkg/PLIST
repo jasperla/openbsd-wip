@@ -1,7 +1,0 @@
-@comment $OpenBSD$
-@conflict p5-Test-Base-<0.85
-${P5SITE}/Module/
-${P5SITE}/Module/Install/
-${P5SITE}/Module/Install/TestBase.pm
-${P5SITE}/Module/Install/TestBase.pod
-@man man/man3p/Module::Install::TestBase.3p

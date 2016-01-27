@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/Unicode/
-${P5SITE}/Unicode/UTF8simple.pm
-@man man/man3p/Unicode::UTF8simple.3
