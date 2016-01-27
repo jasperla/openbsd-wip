@@ -1,4 +1,0 @@
-version bump to 1.2.2
-
-fixed patch rejects in configure script
-added @bin to binaries

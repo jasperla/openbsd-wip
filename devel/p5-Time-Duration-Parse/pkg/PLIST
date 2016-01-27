@@ -1,5 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/Time/
-${P5SITE}/Time/Duration/
-${P5SITE}/Time/Duration/Parse.pm
-@man man/man3p/Time::Duration::Parse.3p

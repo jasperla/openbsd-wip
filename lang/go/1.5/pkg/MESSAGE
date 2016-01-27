@@ -1,4 +1,0 @@
-If you want to use this package as your default system go, as root
-create symbolic links like so (overwriting any previous default):
- ln -sf ${PREFIX}/go/${VERSION}/bin/go ${PREFIX}/bin/go
- ln -sf ${PREFIX}/go/${VERSION}/bin/gofmt ${PREFIX}/bin/gofmt

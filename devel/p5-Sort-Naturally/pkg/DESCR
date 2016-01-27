@@ -1,3 +1,0 @@
-The Sort::Naturally module exports two functions, nsort and ncmp. Under
-"natural sorting", numeric substrings are compared numerically, and
-other word-characters are compared lexically.

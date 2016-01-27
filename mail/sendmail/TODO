@@ -1,5 +1,0 @@
-- how will editmap, mailstats, makemap, praliases in base be dealt with?
-- generate default .cf to put into /etc/mail?
-- libmilter?
-- rc script
-- document how to setup mailwrapper with ports sendmail
