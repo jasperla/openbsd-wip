@@ -1,7 +1,0 @@
-While it now compiles and installs, it is likely to crash as many C functions
-are not fully or properly implemented for OpenBSD.
-
-Regress tests do not pass completely and many of them are skipped.
-
-The split between FreeBSD and OpenBSD platform specific code should be cleaned
-up and sent upstream, the code base currently assumes BSD == FreeBSD.

@@ -1,7 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/Catalyst/
-${P5SITE}/Catalyst/Plugin/
-${P5SITE}/Catalyst/Plugin/Session/
-${P5SITE}/Catalyst/Plugin/Session/State/
-${P5SITE}/Catalyst/Plugin/Session/State/Cookie.pm
-@man man/man3p/Catalyst::Plugin::Session::State::Cookie.3p

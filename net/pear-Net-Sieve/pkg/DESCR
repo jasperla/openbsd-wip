@@ -1,2 +1,0 @@
-pear-Net-Sieve contains a class for talking to managesieve servers,
-for example cyrus-imapd's "timsieved", or dovecot-pigeonhole.
