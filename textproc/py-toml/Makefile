@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.68 2013/10/02 07:34:45 ajacoutot Exp $
+# $OpenBSD$
 
 COMMENT =		parser for TOML-0.4.0
 
