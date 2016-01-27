@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@lib lib/libgps.so.${LIBgps_VERSION}
-@lib lib/libgpsd.so.${LIBgpsd_VERSION}
