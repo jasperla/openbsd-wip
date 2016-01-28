@@ -1,5 +1,0 @@
-BarnOwl is a fully integrated tty-based instant messaging client.
-Currently it supports AOL Instant Messenger, MIT Zephyr, Jabber,
-IRC, and Twitter.  It is curses-based, allows for emacs-style editing
-of outgoing messages, and uses Perl as an extension and configuration
-language.
