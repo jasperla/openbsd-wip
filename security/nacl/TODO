@@ -1,5 +1,0 @@
-- fucking obnoxious build system *barf*
-- runs tests during build
-- segfaults
-- hostname in builddir
-- install hierarchy?
