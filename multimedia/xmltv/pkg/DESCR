@@ -1,4 +1,0 @@
-XMLTV is a set of programs to process TV (tvguide) listings and manage
-your TV viewing, storing listings in an XML format. There are backends
-to download TV listings for several countries, filter programs and Perl
-libraries to process listings

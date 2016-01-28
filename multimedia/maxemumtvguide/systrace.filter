@@ -1,1 +1,0 @@
-native-fswrite: filename eq "/usr/local/lib/qt3/etc/settings" then permit

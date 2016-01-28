@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@lib lib/libtbb.so.${LIBtbb_VERSION}
-@lib lib/libtbbmalloc.so.${LIBtbbmalloc_VERSION}

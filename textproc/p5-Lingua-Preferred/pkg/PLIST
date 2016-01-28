@@ -1,8 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/Lingua/
-${P5SITE}/Lingua/Preferred.pm
-${P5SITE}/auto/
-${P5SITE}/auto/Lingua/
-${P5SITE}/auto/Lingua/Preferred/
-${P5SITE}/auto/Lingua/Preferred/autosplit.ix
-@man man/man3p/Lingua::Preferred.3p
