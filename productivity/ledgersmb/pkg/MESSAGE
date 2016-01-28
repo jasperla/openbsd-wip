@@ -1,6 +1,0 @@
-You may wish to add:
-p5-Image-Size for image embedding in LaTeX templates.
-p5-Net-TCLink for POS module credit card processing support.
-p5-Template-Plugin-Latex for PDF and Postscript output.
-You may install manually or use tools/full_files_dbsetup.pl to help with the
-installation process. LedgerSMB does not run chrooted.
