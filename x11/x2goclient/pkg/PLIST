@@ -4,5 +4,6 @@
 share/doc/x2goclient/
 share/doc/x2goclient/LICENSE
 share/examples/x2goclient/
+share/examples/x2goclient/HOWTO.GPGCARD
 share/examples/x2goclient/x2goclient-cli
 share/examples/x2goclient/x2goplugin-apache.conf
