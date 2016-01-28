@@ -1,8 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/MooseX/
-${P5SITE}/MooseX/FollowPBP/
-${P5SITE}/MooseX/FollowPBP.pm
-${P5SITE}/MooseX/FollowPBP/Role/
-${P5SITE}/MooseX/FollowPBP/Role/Attribute.pm
-@man man/man3p/MooseX::FollowPBP.3p
-@man man/man3p/MooseX::FollowPBP::Role::Attribute.3p
