@@ -1,6 +1,0 @@
-@comment $OpenBSD$
-include/avahi-tqt/
-include/avahi-tqt/qt-watch.h
-lib/libavahi-tqt.la
-@lib lib/libavahi-tqt.so.${LIBavahi-tqt_VERSION}
-lib/pkgconfig/avahi-tqt.pc
