@@ -1,5 +1,0 @@
-LedgerSMB is an open source, robust financial accounting and ERP
-management suite for small to midsize businesses. LedgerSMB uses
-multiple physical databases for separate companies. Database users are
-global to the database cluster, they may be shared (or not) between
-companies.
