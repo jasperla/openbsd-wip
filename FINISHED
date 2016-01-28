@@ -10,13 +10,10 @@ comms/gammu				Ready for import. Sent to ports@ 2012-10-09 (yason)
 comms/wammu				Ready for import. Sent to ports@ 2012-10-09 (yason)
 devel/libextractor			sent to ports 2013-06-29
 devel/libtap				ready to import
-games/glob2				sent to ports@ 2010-09-02 and 2009-08-26
 geo/mtkbabel				sent to ports 2011-03-30
 graphics/jpegexiforient			ready to import
 math/p5-Math-GSL			ready for import, did not sent to ports@, regress depends on devel/p5-Test-Most (wenheping)
 misc/notebook				sent to ports 2013-06-29
-multimedia/fuzemux			sent to ports 2013-01-13
-multimedia/video4fuze			sent to ports 2013-01-13
 net/bitcoin				sent to ports 2013-03-19, and again 2013-06-29
 productivity/py-nv			send to ports 2013-10-21
 sysutils/fsx				sent to ports 2013-12-09
@@ -63,7 +60,6 @@ www/p5-Tapper-Reports-DPath		ready to import, sent to ports@ 2014-05-23
 www/p5-Tapper-Reports-API		ready to import, sent to ports@ 2014-05-23
 www/p5-Tapper-Model			ready to import, sent to ports@ 2014-05-23
 textproc/p5-Text-Balanced		ready to import, sent to ports@ 2014-05-23
-sysutils/sleuthkit			sent to ports@ 2014-10-08 (nigel)
 www/p5-Starlet				ready to import, sent to ports@ 2015-01-08 (garcer)
 www/p5-Plack-Middleware-MethodOverride	ready to import
 www/p5-CGI-Struct			ready to import
