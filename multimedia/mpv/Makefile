@@ -9,9 +9,9 @@ GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
 GH_TAGNAME =		v0.15.0
 
-DISTNAME =		mpv-0.14.3
+DISTNAME =		mpv-0.14.4
 GH_TAGNAME =
-GH_COMMIT =		aaafbfcc06a8e69bca78641af70f43b2ad12e56a
+GH_COMMIT =		946ee29a7ded5edf99942b07227cd81eb1bcc274
 
 CATEGORIES =		multimedia x11
 
