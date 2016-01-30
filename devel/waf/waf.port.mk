@@ -30,6 +30,13 @@ MODWAF_BUILD_TARGET =		cd ${WRKSRC} && ${MODWAF_CMD} build -v \
 MODWAF_INSTALL_TARGET =		cd ${WRKSRC} && ${MODWAF_CMD} install \
 					${MODWAF_ARGS} ${MODWAF_INSTALL_FLAGS}
 
+
+.if ${MODWAF_COLOR:L:Myes}
+CONFIGURE_FLAGS +=		-c yes
+.else
+CONFIGURE_FLAGS +=		-c no
+.endif
+
 .if ${CONFIGURE_STYLE:Mwaf}
 . if !target(do-configure)
 do-configure:

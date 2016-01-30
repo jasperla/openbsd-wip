@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =		python-based build system
-V =             	1.8.18
+V =             	1.8.19
 DISTNAME =		waf-${V}
 CATEGORIES =		devel
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>

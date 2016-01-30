@@ -4,7 +4,7 @@ COMMENT-main=	web service hosting stack
 COMMENT-python=	python plugin for uWSGI web service hosting stack
 COMMENT-lua=	lua plugin for uWSGI web service hosting stack
 
-V=		2.0.11.2
+V=		2.0.12
 DISTNAME=	uwsgi-$V
 PKGNAME-main=	uwsgi-$V
 PKGNAME-python=	uwsgi-plugin-python2.7-$V

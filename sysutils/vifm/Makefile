@@ -1,6 +1,6 @@
 # $OpenBSD:
 
-COMMENT =	vi(m) like file manager
+COMMENT =	ncurses file manager with vi keybindings
 
 DISTNAME =	vifm-0.8.1
 

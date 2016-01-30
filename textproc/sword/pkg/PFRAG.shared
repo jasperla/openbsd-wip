@@ -1,2 +1,0 @@
-@comment $OpenBSD$
-@lib lib/libsword.so.${LIBsword_VERSION}

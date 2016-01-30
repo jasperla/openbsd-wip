@@ -17,7 +17,7 @@ GH_TAGNAME =		v$V
 
 # This will go away once upstream releases v1.2.0+
 GH_TAGNAME =
-GH_COMMIT =		35cabe381df4a3cddc29ca7805fe8b51701f4903
+GH_COMMIT =		7e1e553ba9fab75a5e2fb23337d0eba02593c820
 
 MODULES =		lang/clang
 MODCLANG_ARCHS =	*

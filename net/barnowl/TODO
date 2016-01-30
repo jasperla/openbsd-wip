@@ -1,2 +1,0 @@
-- jabber not connecting; ktrace shows it's not even attempting to call
-  connect(2)
