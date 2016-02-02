@@ -26,6 +26,10 @@ CONFIGURE_STYLE =	gnu
 RUN_DEPENDS =		devel/desktop-file-utils
 
 .if ${FLAVOR:Mno_x11}
+LIB_DEPENDS +=		devel/libmagic
+CONFIGURE_ARGS +=	--without-gtk \
+			--without-X11
+.else
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 cairo fontconfig freetype gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
@@ -35,10 +39,6 @@ CONFIGURE_ARGS +=	--without-libmagic \
 			--without-dyn-x11
 MODULES =		devel/gettext
 LIB_DEPENDS +=		x11/gtk+2
-.else
-LIB_DEPENDS +=		devel/libmagic
-CONFIGURE_ARGS +=	--without-gtk \
-			--without-X11
 .endif
 
 .include <bsd.port.mk>
