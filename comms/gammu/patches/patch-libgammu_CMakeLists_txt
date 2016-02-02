@@ -1,12 +1,18 @@
 $OpenBSD$
---- libgammu/CMakeLists.txt.orig	Wed Dec  9 14:00:38 2015
-+++ libgammu/CMakeLists.txt	Wed Dec  9 14:01:10 2015
-@@ -94,7 +94,7 @@ if (WIN32 AND NOT CYGWIN)
+
+upstream commit 3db3d2dbc1efc003fc23a1da7fde52fba1a4154e
+
+--- libgammu/CMakeLists.txt.orig	Tue Dec  8 13:38:12 2015
++++ libgammu/CMakeLists.txt	Tue Feb  2 15:55:28 2016
+@@ -93,9 +93,9 @@ endif (OSX_BLUE_FOUND)
+ if (WIN32 AND NOT CYGWIN)
      list (APPEND LIBRARY_SRC device/bluetoth/blue_w32.c)
  endif (WIN32 AND NOT CYGWIN)
- if (NOT WIN32 AND HAVE_PTHREAD)
--    list (APPEND LIBRARY_SRC device/proxy/proxy.c)
-+#    list (APPEND LIBRARY_SRC device/proxy/proxy.c)
- endif (NOT WIN32 AND HAVE_PTHREAD)
+-if (NOT WIN32 AND HAVE_PTHREAD)
++if (NOT WIN32 AND HAVE_PTHREAD AND HAVE_SIGTIMEDWAIT)
+     list (APPEND LIBRARY_SRC device/proxy/proxy.c)
+-endif (NOT WIN32 AND HAVE_PTHREAD)
++endif (NOT WIN32 AND HAVE_PTHREAD AND HAVE_SIGTIMEDWAIT)
  
  if (CYGWIN OR NOT WIN32 AND NOT DJGPP)
+     list (APPEND LIBRARY_SRC device/serial/ser_unx.c)

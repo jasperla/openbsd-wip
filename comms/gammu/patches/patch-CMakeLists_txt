@@ -1,6 +1,6 @@
 $OpenBSD$
 --- CMakeLists.txt.orig	Tue Dec  8 13:38:11 2015
-+++ CMakeLists.txt	Wed Dec  9 13:40:47 2015
++++ CMakeLists.txt	Tue Feb  2 15:58:25 2016
 @@ -22,6 +22,9 @@ option (MYSQL_TESTING "Enable testing of MySQL SMSD ba
  option (ODBC_TESTING "Enable testing of ODBC MySQL SMSD backend" OFF)
  option (BUILD_SHARED_LIBS "Build shared libraries" ON)
@@ -11,7 +11,12 @@ $OpenBSD$
  option (LARGE_FILES "Support for large files" ON)
  if (LARGE_FILES)
      add_definitions(-D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64)
-@@ -116,7 +119,7 @@ check_symbol_exists (getpwnam "pwd.h" HAVE_GETPWNAM)
+@@ -112,11 +115,12 @@ endif (ENABLE_GETOPT)
+ check_symbol_exists (daemon "unistd.h" HAVE_DAEMON_UNISTD)
+ check_symbol_exists (daemon "stdlib.h" HAVE_DAEMON_STDLIB)
+ check_symbol_exists (kill "signal.h" HAVE_KILL)
++check_symbol_exists (sigtimedwait "signal.h" HAVE_SIGTIMEDWAIT)
+ check_symbol_exists (getpwnam "pwd.h" HAVE_GETPWNAM)
  check_symbol_exists (getgrnam "grp.h" HAVE_GETGRNAM)
  check_symbol_exists (getpwuid "pwd.h" HAVE_GETPWUID)
  check_symbol_exists (getuid "unistd.h" HAVE_GETUID)
@@ -20,7 +25,7 @@ $OpenBSD$
  check_symbol_exists (setuid "unistd.h" HAVE_SETUID)
  check_symbol_exists (setgid "unistd.h" HAVE_SETGID)
  check_symbol_exists (SIGHUP "signal.h" HAVE_SIGHUP)
-@@ -173,9 +176,12 @@ find_package (Threads)
+@@ -173,9 +177,12 @@ find_package (Threads)
  find_package(PythonInterp 2)
  
  # Packages in sources
@@ -36,7 +41,7 @@ $OpenBSD$
  macro_optional_find_package (LibDBI)
  macro_optional_find_package (Libintl)
  macro_optional_find_package (Iconv)
-@@ -441,7 +447,6 @@ if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_MINGW 
+@@ -441,7 +448,6 @@ if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_MINGW 
      MACRO_TUNE_COMPILER("-Wno-pointer-sign")
  
      MACRO_TUNE_COMPILER("-Wwrite-strings")
