@@ -24,18 +24,13 @@ FLAVORS =		no_x11
 SEPARATE_BUILD =	Yes
 
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	--without-libmagic
 
 RUN_DEPENDS =		devel/desktop-file-utils
 
 .if ${FLAVOR:Mno_x11}
-WANTLIB += magic
-
-LIB_DEPENDS +=		devel/libmagic
-
 CONFIGURE_ARGS +=	--without-gtk \
 			--without-X11
-CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib" \
-			CPPFLAGS="-I${LOCALBASE}/include"
 .else
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 cairo fontconfig freetype gdk-x11-2.0
@@ -46,8 +41,7 @@ MODULES =		devel/gettext
 
 LIB_DEPENDS +=		x11/gtk+2
 
-CONFIGURE_ARGS +=	--without-libmagic \
-			--without-dyn-X11
+CONFIGURE_ARGS +=	--without-dyn-X11
 .endif
 
 .include <bsd.port.mk>
