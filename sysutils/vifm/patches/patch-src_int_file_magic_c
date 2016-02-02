@@ -1,0 +1,31 @@
+$OpenBSD$
+
+Make file(1)-based mime type detection a bit safer.
+
+--- src/int/file_magic.c.orig	Wed Feb  3 00:26:01 2016
++++ src/int/file_magic.c	Wed Feb  3 00:33:03 2016
+@@ -145,9 +145,23 @@ get_file_mimetype(const char *filename, char *buf, siz
+ #ifdef HAVE_FILE_PROG
+ 	FILE *pipe;
+ 	char command[1024];
++	char quoted_filename[PATH_MAX*2], *qp;
+ 
++	if (strchr(filename, '\''))
++	{
++		qp = quoted_filename;
++
++		do {
++			if (*filename == '\'')
++				*qp++ = '\\';
++			*qp++ = *filename;
++		} while (*filename++ != '\0');
++
++		filename = quoted_filename;
++	}
++
+ 	/* Use the file command to get mimetype */
+-	snprintf(command, sizeof(command), "file \"%s\" -b --mime-type", filename);
++	snprintf(command, sizeof(command), "file \'%s\' -b --mime-type", filename);
+ 
+ 	if((pipe = popen(command, "r")) == NULL)
+ 	{
