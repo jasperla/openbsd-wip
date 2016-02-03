@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# $OpenBSD$
+#
+# OpenBSD-specific startup script for PyCharm IDE
+
+PYCHARM_HOME=${TRUEPREFIX}/pycharm
+
+#-----------------------------------------------------------------------------
+# Determine configuration settings
+#-----------------------------------------------------------------------------
+
+export PYCHARM_JDK=${JAVA_HOME}
+
+if [ ! -x "${PYCHARM_JDK}/bin/java" ]; then
+	echo "Error: JAVA_HOME may not be defined correctly: ${PYCHARM_JDK}"
+	echo "       Unable to find Java binary ${PYCHARM_JDK}/bin/java"
+        exit 1
+fi
+
+# Check if 'pycharm' executable can be found
+if [ ! -x "${PYCHARM_HOME}/bin/pycharm.sh" ]; then
+	echo "Error: PYCHARM_HOME may not be defined correctly: ${PYCHARM_HOME}"
+	echo "       Unable to find launcher binary: ${PYCHARM_HOME}/bin/pycharm.sh"
+	exit 1
+fi
+
+PATH=${PYCHARM_JDK}/bin:$PATH exec "${PYCHARM_HOME}/bin/pycharm.sh" $@
