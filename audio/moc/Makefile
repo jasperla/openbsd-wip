@@ -3,6 +3,9 @@
 COMMENT = console audio player
 
 DISTNAME = moc-2.6-alpha1
+# XXX our tools don't know about "alpha" suffix, see PackageName.pm
+# XXX we'd use "pl1" suffix, or smth. like that, after release, if any.
+PKGNAME = moc-2.6
 CATEGORIES = audio
 
 HOMEPAGE = http://moc.daper.net/
