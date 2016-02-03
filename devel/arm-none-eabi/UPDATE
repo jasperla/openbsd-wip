@@ -1,0 +1,26 @@
+MOTIVATIONS:
+To build libstdc++-v3 as part of devel/arm-none-eabi. This update allows
+software like libmaple[1] and rambutan[2] to build clearly.
+
+CHANGES:
+* split gcc-linaro/ in two, one of them being the gcc-linaro-bootstrap/
+  and the other gcc-linaro/ itself. The former is used to build newlib
+  and then to build gcc-linaro/ with support to libstdc++-v3 (following
+  pretty much what was done in devel/avr32[3])
+* remove a patch to Makefile.in which was used to select targets and use
+  bsd.port.mk ALL_TARGET and INSTALL_TARGET
+* set GCC_V and SUBST_VARS+=GCC_V and substitute this in PLIST, so it's
+  easier to see what's happening with any future update diffs
+  (suggestion from Stuart Henderson on ports@)
+* bumped REVISION for newlib/ and gcc-linaro/, but not for
+  gcc-linaro-bootstrap/, since it's new
+
+OBSERVATIONS:
+Positive feedback from Brandon Mercer[4]. There is a patch ready to be
+applied to the tree on ports@[5].
+
+[1] http://leaflabs.com/docs/libmaple.html
+[2] http://rambutan.cc/
+[3] http://marc.info/?l=openbsd-ports&m=138987178409779&w=2
+[4] http://marc.info/?l=openbsd-ports&m=145271967705109&w=2
+[5] http://marc.info/?l=openbsd-ports&m=145277745819399&w=2
