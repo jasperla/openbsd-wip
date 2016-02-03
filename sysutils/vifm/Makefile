@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c ncursesw pthread
 
-MASTER_SITES =		http://prdownloads.sourceforge.net/vifm/
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=vifm/}
 EXTRACT_SUFX =		.tar.bz2
 
 FLAVOR ?=
