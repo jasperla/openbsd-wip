@@ -23,7 +23,9 @@ NO_TEST =		Yes
 FONTDIR =		${PREFIX}/lib/X11/fonts/profont
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/X11/fonts/profont
-	${INSTALL_DATA} ${WRKDIR}/*.t{tf,xt} ${PREFIX}/lib/X11/fonts/profont
+	${INSTALL_DATA_DIR} ${FONTDIR}
+	${INSTALL_DATA} ${WRKDIR}/*.ttf ${FONTDIR}
+	${INSTALL_DATA} ${WRKDIR}/ProFont\ Redistribution\ Terms.txt \
+		${FONTDIR}/ProFont_Redistribution_Terms.txt
 
 .include <bsd.port.mk>
