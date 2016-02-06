@@ -1,0 +1,2 @@
+1. break/fix: transmission-gtk segfaults in gdk-pixbuf2 on amd64
+2. await next upstream release to post to ports@
