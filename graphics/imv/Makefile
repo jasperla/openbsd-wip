@@ -18,6 +18,8 @@ MODCLANG_ARCHS =	*
 LIB_DEPENDS =		devel/sdl2 \
 			devel/sdl2-ttf \
 			graphics/freeimage
+RUN_DEPENDS =		devel/desktop-file-utils
+
 MAKE_FLAGS +=		V=1 BUILDDIR="${WRKDIR}/build-${ARCH}"
 FAKE_FLAGS +=		$(MAKE_FLAGS) MANPREFIX=${PREFIX}/man PREFIX=${PREFIX}
 
