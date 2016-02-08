@@ -112,6 +112,8 @@ share/racket/collects/compiler/private/compiled/winsubsys_rkt.dep
 share/racket/collects/compiler/private/compiled/winsubsys_rkt.zo
 share/racket/collects/compiler/private/compiled/winutf16_rkt.dep
 share/racket/collects/compiler/private/compiled/winutf16_rkt.zo
+share/racket/collects/compiler/private/compiled/write-perm_rkt.dep
+share/racket/collects/compiler/private/compiled/write-perm_rkt.zo
 share/racket/collects/compiler/private/compiled/xform_rkt.dep
 share/racket/collects/compiler/private/compiled/xform_rkt.zo
 share/racket/collects/compiler/private/configdir.rkt
@@ -125,6 +127,7 @@ share/racket/collects/compiler/private/read-bstr.rkt
 share/racket/collects/compiler/private/windlldir.rkt
 share/racket/collects/compiler/private/winsubsys.rkt
 share/racket/collects/compiler/private/winutf16.rkt
+share/racket/collects/compiler/private/write-perm.rkt
 share/racket/collects/compiler/private/xform.rkt
 share/racket/collects/data/
 share/racket/collects/data/bit-vector.rkt
