@@ -10,7 +10,7 @@ GH_PROJECT =		mpv
 GH_TAGNAME =		v0.16.0
 
 GH_TAGNAME =
-GH_COMMIT =		b7e613f261c1b21ab2c9f4477d331edadfd561b2
+GH_COMMIT =		7caecc53b0b8ac1805fa498fb9dbe9379f3053d4
 DISTNAME =		mpv-0.15.1
 
 CATEGORIES =		multimedia x11
@@ -32,10 +32,10 @@ WANTLIB += EGL GL SDL2 X11 X11-xcb Xau Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xinerama Xrandr Xrender Xss Xv Xxf86vm ass avcodec
 WANTLIB += avdevice avfilter avformat avresample avutil bluray
 WANTLIB += c cdio cdio_cdda cdio_paranoia drm dvdnav dvdread expat
-WANTLIB += fontconfig freetype fribidi jpeg lcms2 m opus postproc
-WANTLIB += pthread pthread-stubs smbclient sndio speex swresample
-WANTLIB += swscale v4l2 v4lconvert vpx x264 x265 xcb xcb-dri2
-WANTLIB += xcb-glx z ${MODLUA_WANTLIB}
+WANTLIB += fontconfig freetype fribidi lcms2 m opus postproc pthread
+WANTLIB += pthread-stubs smbclient sndio speex swresample swscale
+WANTLIB += v4l2 v4lconvert vpx x264 x265 xcb xcb-dri2 xcb-glx
+WANTLIB += z ${MODLUA_WANTLIB}
 
 MODULES =		converters/libiconv \
 			lang/lua \
@@ -49,13 +49,13 @@ LIB_DEPENDS =		audio/libcdio \
 			devel/libdvdread \
 			devel/sdl2 \
 			graphics/ffmpeg>=20151112 \
-			graphics/jpeg \
 			graphics/lcms2 \
 			multimedia/libass \
 			multimedia/libbluray>=0.8.0 \
 			multimedia/libdvdnav \
 			multimedia/libv4l \
 			net/samba
+#			graphics/jpeg \
 
 MODPY_RUNDEP ?=		No
 RUN_DEPENDS =		devel/desktop-file-utils \
@@ -102,6 +102,10 @@ MAKE_FLAGS =		-o "${WRKBUILD}" -t "${WRKSRC}" --destdir="${DESTDIR}"
 
 USE_GROFF =		Yes
 NO_TEST =		Yes
+
+.if ${MACHINE_ARCH} == "i386"
+CFLAGS +=		-march=i586
+.endif
 
 do-configure:
 	cp ${DISTDIR}/${WAF:T} ${WAF}
