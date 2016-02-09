@@ -1,0 +1,15 @@
+$OpenBSD$
+--- greentest/test___example_servers.py.orig	Tue Feb  9 13:29:28 2016
++++ greentest/test___example_servers.py	Tue Feb  9 13:32:30 2016
+@@ -23,9 +23,9 @@ class Test_wsgiserver(util.TestServer):
+         url = self.URL + path
+         try:
+             if self.ssl_ctx is not None:
+-                response = urllib2.urlopen(url, None, 2, context=self.ssl_ctx)
++                response = urllib2.urlopen(url, None, context=self.ssl_ctx)
+             else:
+-                response = urllib2.urlopen(url, None, 2)
++                response = urllib2.urlopen(url, None)
+         except urllib2.HTTPError:
+             response = sys.exc_info()[1]
+         result = '%s %s' % (response.code, response.msg), response.read()
