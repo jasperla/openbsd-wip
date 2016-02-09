@@ -8,7 +8,7 @@ $OpenBSD$
 -            self.client.ssl_version = ssl.PROTOCOL_SSLv3
 -            self.client.auth()
 -            self.assertRaises(ValueError, self.client.auth)
-+            if 'PROTOCOL_SSLv3' in dir(ssl):
++            if hasattr(ssl, 'PROTOCOL_SSLv3'):
 +                self.client.ssl_version = ssl.PROTOCOL_SSLv3
 +                self.client.auth()
 +                self.assertRaises(ValueError, self.client.auth)
