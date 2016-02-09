@@ -24,7 +24,8 @@ LIB_DEPENDS =		devel/libev \
 			net/libcares
 RUN_DEPENDS =		devel/py-greenlet
 TEST_DEPENDS =		${RUN_DEPENDS} \
-			lang/python/2.7,-tests
+			lang/python/2.7,-tests \
+			sysutils/py-psutil
 
 MAKE_ENV =		CARES_EMBED=0 LIBEV_EMBED=0
 CFLAGS +=		-I${LOCALBASE}/include
