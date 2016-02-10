@@ -2,7 +2,7 @@
 
 COMMENT =		Subversion client Mercurial extension
 
-MODPY_EGG_VERSION =	1.8.4
+MODPY_EGG_VERSION =	1.8.5
 DISTNAME =		py-hgsubversion-${MODPY_EGG_VERSION}
 CATEGORIES =		devel net
 
