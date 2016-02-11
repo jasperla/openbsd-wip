@@ -1,5 +1,4 @@
 @comment $OpenBSD$
-%%SHARED%%
 @bin bin/atsa
 @bin bin/cs
 @bin bin/csanalyze
@@ -61,5 +60,39 @@ include/csound/text.h
 include/csound/version.h
 lib/csound/
 lib/csound/plugins-6.0/
+lib/csound/plugins-6.0/csladspa.so
+lib/csound/plugins-6.0/libLuaCsound.so
+lib/csound/plugins-6.0/libampmidid.so
+lib/csound/plugins-6.0/libbuchla.so
+lib/csound/plugins-6.0/libcellular.so
+lib/csound/plugins-6.0/libchua.so
+lib/csound/plugins-6.0/libcontrol.so
+lib/csound/plugins-6.0/libcs_date.so
+lib/csound/plugins-6.0/libdoppler.so
+lib/csound/plugins-6.0/libexciter.so
+lib/csound/plugins-6.0/libfareygen.so
+lib/csound/plugins-6.0/libfluidOpcodes.so
+lib/csound/plugins-6.0/libfractalnoise.so
+lib/csound/plugins-6.0/libframebuffer.so
+lib/csound/plugins-6.0/libimage.so
+lib/csound/plugins-6.0/libipmidi.so
+lib/csound/plugins-6.0/libjackTransport.so
+lib/csound/plugins-6.0/libjacko.so
+lib/csound/plugins-6.0/libmixer.so
+lib/csound/plugins-6.0/libosc.so
+lib/csound/plugins-6.0/libpadsynth.so
+lib/csound/plugins-6.0/libplaterev.so
+lib/csound/plugins-6.0/libpy.so
+lib/csound/plugins-6.0/librtjack.so
+lib/csound/plugins-6.0/librtpa.so
+lib/csound/plugins-6.0/librtpulse.so
+lib/csound/plugins-6.0/libscansyn.so
+lib/csound/plugins-6.0/libserial.so
+lib/csound/plugins-6.0/libsignalflowgraph.so
+lib/csound/plugins-6.0/libstdutil.so
+lib/csound/plugins-6.0/libsystem_call.so
+lib/csound/plugins-6.0/liburandom.so
+lib/csound/plugins-6.0/libvirtual.so
+lib/csound/plugins-6.0/libwidgets.so
 @lib lib/libcsnd6.so.${LIBcsnd6_VERSION}
 @lib lib/libcsound64.so.${LIBcsound64_VERSION}
