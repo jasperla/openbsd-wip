@@ -1,0 +1,2 @@
+- See if pulseaudio is really required
+- Check if there is a better way to do luajit
