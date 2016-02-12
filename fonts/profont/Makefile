@@ -20,7 +20,7 @@ EXTRACT_SUFX =		.zip
 NO_BUILD=		Yes
 NO_TEST =		Yes
 
-FONTDIR =		${PREFIX}/lib/X11/fonts/profont
+FONTDIR =		${PREFIX}/share/fonts/profont
 
 do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR}

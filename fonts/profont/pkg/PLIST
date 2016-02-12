@@ -1,5 +1,5 @@
 @comment $OpenBSD$
-lib/X11/fonts/
-@fontdir lib/X11/fonts/profont/
-lib/X11/fonts/profont/ProFont_Redistribution_Terms.txt
-lib/X11/fonts/profont/ProFontWindows.ttf
+share/fonts/
+@fontdir share/fonts/profont/
+share/fonts/profont/ProFont_Redistribution_Terms.txt
+share/fonts/profont/ProFontWindows.ttf
