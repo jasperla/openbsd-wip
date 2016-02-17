@@ -2,7 +2,7 @@
 
 COMMENT =		network library for easy and scalable concurrency
 
-MODPY_EGG_VERSION =	1.1rc3
+MODPY_EGG_VERSION =	1.1rc4
 DISTNAME =		gevent-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
