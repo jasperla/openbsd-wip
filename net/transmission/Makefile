@@ -93,6 +93,12 @@ CONFIGURE_ARGS+=--without-gtk
 pre-patch:
 	@cd ${WRKSRC}/third-party/libutp; perl -pi -e 's/\r$$//' *.h *.cpp
 
+# fix a missing prototype due to transmission using a deprecated function.
+.if ${BUILD_PACKAGES:M-gtk}
+post-configure:
+	@cd ${WRKSRC}/gtk; perl -pi -e 's/-DGDK_PIXBUF_DISABLE_DEPRECATED//' Makefile
+.endif
+
 .if ${BUILD_PACKAGES:M-qt}
 post-build:
 	cd ${WRKSRC}/qt; qmake-qt5 ${QMAKE_ARGS} qtr.pro; make ${MAKE_FLAGS}

@@ -1,16 +1,1 @@
-1. break/fix: transmission-gtk segfaults in gdk-pixbuf2 on amd64
-
-   The segfault has been traced to a truncated pointer returning from
-   gdk_pixbuf_new_from_inline, a library function of graphics/gdk-pixbuf.
-   The call is from gtk/actions.c.  The problem occurs on amd64, but
-   not on i386 (of course).
-
-   The top 32-bits of the returned value will be 0x00000000 or 0xffffffff.
-   It's fine in the library, and truncated upon return to the application.
-   
-   This is from debugging with fprintf()s sprinkled through the mentioned
-   source module and the gdk-pixbuf library.  gdb/egdb isn't very helpful,
-   as the multithreaded operation of the application precludes clean step
-   through.  
-
-2. await next upstream release to post to ports@
+1. await next upstream release to post to ports@
