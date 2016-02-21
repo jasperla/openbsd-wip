@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# $OpenBSD: $
+
+daemon="${TRUEPREFIX}/bin/syncthing"
+daemon_flags="-no-browser"
+daemon_user="_syncthing"
+
+. /etc/rc.d/rc.subr
+
+pexp="${TRUEPREFIX}/bin/syncthing.*"
+
+rc_reload=NO
+rc_bg=YES
+
+rc_cmd $1

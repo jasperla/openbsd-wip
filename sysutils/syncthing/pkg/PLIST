@@ -1,4 +1,6 @@
 @comment $OpenBSD$
+@newgroup _syncthing:767
+@newuser _syncthing:767:_syncthing:daemon:syncthing user:/nonexistent:/sbin/nologin
 @bin bin/syncthing
 man/syncthing-bep.7
 man/syncthing-config.5
@@ -14,3 +16,4 @@ man/syncthing-security.7
 man/syncthing-stignore.5
 man/syncthing-versioning.7
 man/syncthing.1
+@rcscript ${RCDIR}/syncthing

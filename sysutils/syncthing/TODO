@@ -1,2 +1,6 @@
- * Add rc script.
+ * Veirfy rc script. **
  * Figure out whether package is needed (some syncthing addons may use it?)
+
+** I have been using a slightly different version of this rc script for a while.
+No issues so far. Not sure on the use of _syncthing as the daemon user. I
+believe most people will want to specify the user it runs as.
