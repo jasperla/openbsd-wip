@@ -34,6 +34,7 @@ lib/prosody/modules/mod_c2s.lua
 lib/prosody/modules/mod_carbons.lua
 lib/prosody/modules/mod_component.lua
 lib/prosody/modules/mod_compression.lua
+lib/prosody/modules/mod_debug_sql.lua
 lib/prosody/modules/mod_dialback.lua
 lib/prosody/modules/mod_disco.lua
 lib/prosody/modules/mod_groups.lua
