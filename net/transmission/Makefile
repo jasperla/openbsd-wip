@@ -4,7 +4,7 @@ COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
 COMMENT-qt=	BitTorrent client with Qt interface
 
-TRUNK=		14679
+TRUNK=		14682
 VER=		2.84
 DISTNAME=	transmission-${VER}+
 DISTFILES=	transmission-trunk-r${TRUNK}${EXTRACT_SUFX}
@@ -72,8 +72,7 @@ RUN_DEPENDS-qt=	${PKGNAME-main}:${BUILD_PKGPATH} \
 		devel/desktop-file-utils
 
 USE_GMAKE=	Yes
-CONFIGURE_STYLE=gnu autoconf no-autoheader
-AUTOCONF_VERSION=2.69
+CONFIGURE_STYLE=gnu
 
 CONFIGURE_ARGS=	--disable-shared \
 		--enable-cli \

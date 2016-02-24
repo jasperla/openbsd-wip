@@ -14,16 +14,5 @@ Significant changes:
 
 All applications appear to be working on amd64.
 
-Note:
-	Circumvention in a patch to gtk/Makefile.in for a deprecated 
-	gdk_pixbuf function prototype affecting transmission-gtk 
-	on 64-bit archs.  Upstream devs reviewing issue.
-
-	http://marc.info/?t=145593948000001&r=1&w=2
-
-	Added autoconf and no-autoheader to $CONFIGURE_STYLE
-	in order to have post-patch touches to avoid triggering
-	autoconf after patching gtk/Makefile.in.
-
 To-do: await next upstream release, will update and retest 
        once or twice per month to stay up-to-date.
