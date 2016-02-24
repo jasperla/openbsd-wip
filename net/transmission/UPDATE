@@ -1,10 +1,6 @@
 Preparing for the next release of the app, using an svn trunk
 from their development branch.
 
-If testing, manually download the appropriate "nightly tarball"
-from the upstream website and store in $DISTDIR.  These tarballs
-are stored on a non-$MASTER_SITES server.
-
 ---
 
 Significant changes:
