@@ -1,0 +1,11 @@
+$OpenBSD$
+--- cfg/targets/install.mk.orig	Wed Feb 24 18:46:37 2016
++++ cfg/targets/install.mk	Wed Feb 24 18:46:44 2016
+@@ -35,7 +35,6 @@ install: $(BUILD_DIR)/toxic
+ 		mv temp_file $$file ;\
+ 		sed -e 's:__DATADIR__:'$(abspath $(DATADIR))':g' $$file > temp_file && \
+ 		mv temp_file $$file ;\
+-		gzip -f -9 $$file ;\
+ 	done
+ 
+ .PHONY: install

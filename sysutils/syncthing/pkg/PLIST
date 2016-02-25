@@ -1,0 +1,22 @@
+@comment $OpenBSD$
+@newgroup _syncthing:767
+@newuser _syncthing:767:_syncthing:daemon:syncthing user:/var/syncthing:/sbin/nologin
+@bin bin/syncthing
+man/syncthing-bep.7
+man/syncthing-config.5
+man/syncthing-device-ids.7
+man/syncthing-event-api.7
+man/syncthing-faq.7
+man/syncthing-globaldisco.7
+man/syncthing-localdisco.7
+man/syncthing-networking.7
+man/syncthing-relay.7
+man/syncthing-rest-api.7
+man/syncthing-security.7
+man/syncthing-stignore.5
+man/syncthing-versioning.7
+man/syncthing.1
+@rcscript ${RCDIR}/syncthing
+@owner _syncthing
+@group _syncthing
+@sample /var/syncthing/

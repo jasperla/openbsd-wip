@@ -34,6 +34,7 @@ lib/prosody/modules/mod_c2s.lua
 lib/prosody/modules/mod_carbons.lua
 lib/prosody/modules/mod_component.lua
 lib/prosody/modules/mod_compression.lua
+lib/prosody/modules/mod_debug_sql.lua
 lib/prosody/modules/mod_dialback.lua
 lib/prosody/modules/mod_disco.lua
 lib/prosody/modules/mod_groups.lua
@@ -67,7 +68,7 @@ lib/prosody/modules/mod_saslauth.lua
 lib/prosody/modules/mod_storage_internal.lua
 lib/prosody/modules/mod_storage_none.lua
 lib/prosody/modules/mod_storage_sql.lua
-lib/prosody/modules/mod_storage_sql2.lua
+lib/prosody/modules/mod_storage_sql1.lua
 lib/prosody/modules/mod_storage_xep0227.lua
 lib/prosody/modules/mod_time.lua
 lib/prosody/modules/mod_tls.lua
@@ -138,6 +139,7 @@ lib/prosody/util/pubsub.lua
 lib/prosody/util/queue.lua
 lib/prosody/util/random.lua
 lib/prosody/util/rfc6724.lua
+lib/prosody/util/ringbuffer.so
 lib/prosody/util/sasl/
 lib/prosody/util/sasl.lua
 lib/prosody/util/sasl/anonymous.lua
@@ -176,9 +178,6 @@ share/examples/prosody/certs/
 @sample ${SYSCONFDIR}/prosody/certs/
 share/examples/prosody/certs/Makefile
 @sample ${SYSCONFDIR}/prosody/certs/Makefile
-share/examples/prosody/certs/example.com.cnf
-share/examples/prosody/certs/example.com.crt
-share/examples/prosody/certs/example.com.key
 share/examples/prosody/certs/localhost.cnf
 share/examples/prosody/certs/localhost.crt
 @sample ${SYSCONFDIR}/prosody/certs/localhost.crt

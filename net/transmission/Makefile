@@ -4,7 +4,7 @@ COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
 COMMENT-qt=	BitTorrent client with Qt interface
 
-TRUNK=		14675
+TRUNK=		14682
 VER=		2.84
 DISTNAME=	transmission-${VER}+
 DISTFILES=	transmission-trunk-r${TRUNK}${EXTRACT_SUFX}
@@ -73,6 +73,7 @@ RUN_DEPENDS-qt=	${PKGNAME-main}:${BUILD_PKGPATH} \
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
+
 CONFIGURE_ARGS=	--disable-shared \
 		--enable-cli \
 		--enable-external-natpmp
@@ -92,6 +93,12 @@ CONFIGURE_ARGS+=--without-gtk
 
 pre-patch:
 	@cd ${WRKSRC}/third-party/libutp; perl -pi -e 's/\r$$//' *.h *.cpp
+
+# fix a missing prototype due to transmission using a deprecated function.
+.if ${BUILD_PACKAGES:M-gtk}
+post-configure:
+	@cd ${WRKSRC}/gtk; perl -pi -e 's/-DGDK_PIXBUF_DISABLE_DEPRECATED//' Makefile
+.endif
 
 .if ${BUILD_PACKAGES:M-qt}
 post-build:
