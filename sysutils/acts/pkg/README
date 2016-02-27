@@ -1,0 +1,19 @@
+# $OpenBSD$
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Script locations
+================
+The ACTS script is installed in ${PREFIX}/libexec/acts, with pre and
+post execution script examples located in ${PREFIX}/share/examples/acts.
+If you use them, you may deploy them to ${PREFIX}/libexec or any other
+convenient location.
+
+Provisioning
+============
+The ${SYSCONFDIR}/acts.conf file should be modified to fit your
+execution requirements.  ACTS is normally executed by cron(8), either
+by provisioning an appropriate crontab(8) or by adding it to daily(8)
+tasks in /etc/daily.local.
