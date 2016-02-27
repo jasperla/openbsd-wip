@@ -21,7 +21,7 @@ MODULES =		devel/gettext \
 WANTLIB += c freetype glib-2.0 graphite2 harfbuzz m pcre pthread
 WANTLIB += stdc++ z
 
-LIB_DEPENDS-main =	devel/harfbuzz
+LIB_DEPENDS =		devel/harfbuzz
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--without-doc \
