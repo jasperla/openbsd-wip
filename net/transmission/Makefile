@@ -4,15 +4,14 @@ COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
 COMMENT-qt=	BitTorrent client with Qt interface
 
-TRUNK=		14682
-VER=		2.84
-DISTNAME=	transmission-${VER}+
+TRUNK=		14691
+VER=		2.90
+DISTNAME=	transmission-${VER}
 DISTFILES=	transmission-trunk-r${TRUNK}${EXTRACT_SUFX}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
 PKGNAME-qt=	transmission-qt-${VER}
 CATEGORIES=	net
-REVISION=	6
 HOMEPAGE=	http://www.transmissionbt.com/
 MAINTAINER=	Josh Grosse <josh@jggimi.homeip.net>
 
@@ -93,12 +92,6 @@ CONFIGURE_ARGS+=--without-gtk
 
 pre-patch:
 	@cd ${WRKSRC}/third-party/libutp; perl -pi -e 's/\r$$//' *.h *.cpp
-
-# fix a missing prototype due to transmission using a deprecated function.
-.if ${BUILD_PACKAGES:M-gtk}
-post-configure:
-	@cd ${WRKSRC}/gtk; perl -pi -e 's/-DGDK_PIXBUF_DISABLE_DEPRECATED//' Makefile
-.endif
 
 .if ${BUILD_PACKAGES:M-qt}
 post-build:
