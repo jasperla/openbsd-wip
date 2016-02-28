@@ -6,8 +6,11 @@ https://github.com/racket/racket/commit/9a8fd29
 "Avoid compiler warnings"
 https://github.com/racket/racket/commit/65eaff3
 
+"fix mishandling of the continuation-mark depth"
+https://github.com/racket/racket/commit/81b5d74ed695b4d73b341194ccb77128b54a3fef
+
 --- src/racket/src/fun.c.orig	Sun Jan 24 16:39:49 2016
-+++ src/racket/src/fun.c	Wed Feb 10 00:05:51 2016
++++ src/racket/src/fun.c	Sun Feb 28 00:33:35 2016
 @@ -1202,7 +1202,7 @@ void scheme_set_dynamic_state(Scheme_Dynamic_State *st
    state->menv              = menv;
  }
@@ -26,6 +29,15 @@ https://github.com/racket/racket/commit/65eaff3
      if (scheme_closure_preserves_marks(e)) {
        i |= 0x1;
      }
+@@ -3640,7 +3640,7 @@ static Scheme_Object *_apply_native(Scheme_Object *obj
+   obj = data->start_code(obj, num_rands, rands EXTRA_NATIVE_ARGUMENT);
+ 
+   if (obj == SCHEME_TAIL_CALL_WAITING)
+-    obj = force_values(obj, 1);
++    obj = scheme_force_value_same_mark(obj);
+ 
+   MZ_CONT_MARK_STACK = old_cont_mark_stack;
+   MZ_CONT_MARK_POS -= 2;
 @@ -9834,7 +9834,8 @@ static Scheme_Object *seconds_to_date(int argc, Scheme
  {
    UNBUNDLE_TIME_TYPE lnow;
