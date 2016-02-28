@@ -112,3 +112,5 @@ share/transmission/web/style/transmission/mobile.css
 @owner _transmission
 @group _transmission
 @sample /var/transmission/
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
