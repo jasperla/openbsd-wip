@@ -25,7 +25,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB-main =  ${MODGCC4_CPPWANTLIB} SDL SDL_image X11 avcodec
 WANTLIB-main += avdevice avformat avutil c cairo exif gdk-x11-2.0
 WANTLIB-main += gdk_pixbuf-2.0 glib-2.0 gobject-2.0 jack m pango-1.0
-WANTLIB-main += pangoft2-1.0 pthread sox swfdec-0.8 swscale xml2
+WANTLIB-main += pangoft2-1.0 pthread sox swfdec-0.8 swscale xml2 fftw3
 
 WANTLIB-gpl2 =  ${MODGCC4_CPPWANTLIB} ${MODQT4_WANTLIB} lib/qt4/QtGui
 WANTLIB-gpl2 += lib/qt4/QtSvg lib/qt4/QtXml lib/qt4/QtOpenGL
@@ -55,6 +55,7 @@ LIB_DEPENDS-main =	${MODGCC4_CPPLIBDEP} \
 			graphics/ffmpeg \
 			graphics/libexif \
 			graphics/swfdec \
+			math/fftw3 \
 			x11/gtk+2,-main
 
 LIB_DEPENDS-gpl2 =	${BUILD_PKGPATH},-main \

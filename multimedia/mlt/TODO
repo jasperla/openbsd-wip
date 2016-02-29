@@ -1,6 +1,0 @@
-found fftw by src/modules/qt/configure
-
-mlt-6.0.0(multimedia/mlt,-main):
-Missing lib: fftw3.7 (/usr/local/lib/mlt/libmltplus.so) (NOT REACHABLE)
-Asking ports for dependency mlt-0.9.6(multimedia/mlt,-main)
-
