@@ -1,0 +1,2 @@
+Go-sqlite3 provides SQLite3 backend for database/sql package from standard go
+distribution.
