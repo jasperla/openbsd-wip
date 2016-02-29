@@ -15,22 +15,6 @@
 @man man/man1/transmission-remote.1
 @man man/man1/transmission-show.1
 @comment share/applications/
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
-share/icons/hicolor/256x256/
-share/icons/hicolor/256x256/apps/
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/transmission/
 share/transmission/web/
 share/transmission/web/LICENSE
