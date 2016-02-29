@@ -1,0 +1,11 @@
+--- acts.conf.sample.orig	Tue Sep 22 01:24:35 2015
++++ acts.conf.sample	Wed Sep 23 22:08:40 2015
+@@ -9,7 +9,7 @@ backuptargets="var etc home root"
+ # tarsnap
+ # What command to call for 'tarsnap'.
+ # Default: tarsnap
+-tarsnap="nice -n19 ionice -c3 tarsnap"
++tarsnap="/usr/bin/nice /usr/local/bin/tarsnap"
+ 
+ # tarsnapbackupoptions
+ # What options to use when backing up.
