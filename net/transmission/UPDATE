@@ -1,4 +1,4 @@
-Preparing for the next release of the app, using an svn trunk
+Preparing for the new 2.90 release of the app, using an svn trunk
 from their development branch.
 
 ---
@@ -10,5 +10,5 @@ Significant changes:
 
 All applications appear to be working on amd64.
 
-To-do: await next upstream release, will update and retest 
-       once or twice per month to stay up-to-date.
+To-do: adjust linker search directory order so that WRKSRC is 
+       ahead of /usr/local/lib

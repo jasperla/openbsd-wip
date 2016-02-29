@@ -4,10 +4,9 @@ COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
 COMMENT-qt=	BitTorrent client with Qt interface
 
-TRUNK=		14691
 VER=		2.90
 DISTNAME=	transmission-${VER}
-DISTFILES=	transmission-trunk-r${TRUNK}${EXTRACT_SUFX}
+DISTFILES=	transmission-${VER}${EXTRACT_SUFX}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
 PKGNAME-qt=	transmission-qt-${VER}
@@ -18,8 +17,7 @@ MAINTAINER=	Josh Grosse <josh@jggimi.homeip.net>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	https://build.transmissionbt.com/job/trunk-linux/lastBuild/artifact/
-#MASTER_SITES=	http://download.transmissionbt.com/files/
+MASTER_SITES=	http://download.transmissionbt.com/files/
 EXTRACT_SUFX=	.tar.xz
 
 MULTI_PACKAGES=	-main -gtk -qt
@@ -46,7 +44,7 @@ WANTLIB-gtk=	${WANTLIB-common} ICE SM X11 Xcomposite Xcursor Xdamage \
 WANTLIB-qt=	${WANTLIB-common} ${MODQT_WANTLIB} \
 		GL Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets \
 		ICE SM X11 Xext Xi Xinerama Xrender \
-		fontconfig freetype stdc++
+		fontconfig freetype estdc++
 
 MODULES=	devel/gettext textproc/intltool
 .if ${BUILD_PACKAGES:M-qt}
@@ -85,9 +83,6 @@ CONFIGURE_ARGS=	--disable-shared \
 CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/third-party -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-QMAKE_ARGS=	QMAKE_CXX="eg++" \
-		QMAKE_CXXFLAGS="${CXXFLAGS}"
-
 .if !${BUILD_PACKAGES:M-gtk}
 CONFIGURE_ARGS+=--without-gtk
 .endif
@@ -97,7 +92,8 @@ pre-patch:
 
 .if ${BUILD_PACKAGES:M-qt}
 post-build:
-	cd ${WRKSRC}/qt; qmake-qt5 ${QMAKE_ARGS} qtr.pro; make ${MAKE_FLAGS}
+	cd ${WRKSRC}/qt; qmake-qt5 qtr.pro; ${MAKE_ENV} ${MAKE_PROGRAM} \
+	    ${MAKE_FLAGS}
 
 post-install:
 	cd ${WRKSRC}/qt; make ${MAKE_FLAGS} install INSTALL_ROOT=${PREFIX} \
