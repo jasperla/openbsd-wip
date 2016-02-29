@@ -1,2 +1,0 @@
-adjust linker search directory order so that WRKSRC is 
-ahead of /usr/local/lib
