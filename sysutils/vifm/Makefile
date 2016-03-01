@@ -31,7 +31,6 @@ RUN_DEPENDS =		devel/desktop-file-utils
 .if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS +=	--without-gtk \
 			--without-X11
-
 .else
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 cairo fontconfig freetype gdk-x11-2.0

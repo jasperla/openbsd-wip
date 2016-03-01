@@ -1,0 +1,3 @@
+Elvish is a command interpreter (shell) with no backwards compatibility to
+classic Unix shells.  It provides "user-friendly" command-line editor, custom
+syntax and hash tables.

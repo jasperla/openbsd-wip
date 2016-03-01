@@ -1,0 +1,4 @@
+Only slightly tested.  At least redirecting builtin commands' output causes
+issues.
+
+Obviously, needs better DESCR.
