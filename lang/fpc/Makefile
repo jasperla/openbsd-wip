@@ -62,6 +62,8 @@ USE_GMAKE =		Yes
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/fpcsrc/compiler/systems/t_bsd.pas
+	# We need to save a clean copy of FPC for Lazarus
+	cp -Rf ${WRKSRC}/fpcsrc ${WRKDIR}/src
 
 post-install:
 	cd ${PREFIX}/bin && ln -s ../lib/fpc/${V}/${COMPNAME} .
@@ -75,6 +77,11 @@ post-install:
 	# generate sample config file
 	${PREFIX}/bin/fpcmkcfg -d "basepath=${TRUEPREFIX}/lib/fpc/$V" \
 		-o ${PREFIX}/share/examples/fpc-$V/fpc.cfg.sample
+	# Lazarus will look for the source code of FPC here at runtime
+	mv ${WRKDIR}/src ${PREFIX}/lib/fpc/
+	chown -R ${BINOWN}:${BINGRP} ${PREFIX}/lib/fpc/src
+	find ${PREFIX}/lib/fpc/src -type d -exec chmod ${DIRMODE} {} +
+	find ${PREFIX}/lib/fpc/src -type f -exec chmod ${BINMODE} {} +
 
 do-test:
 	find ${WRKSRC} -name Package.fpc | xargs rm -f
