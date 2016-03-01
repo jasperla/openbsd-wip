@@ -6,7 +6,6 @@ COMMENT-qt=	BitTorrent client with Qt interface
 
 VER=		2.90
 DISTNAME=	transmission-${VER}
-DISTFILES=	transmission-${VER}${EXTRACT_SUFX}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
 PKGNAME-qt=	transmission-qt-${VER}
