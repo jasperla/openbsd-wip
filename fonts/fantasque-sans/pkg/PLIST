@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+@pkgpath fonts/cosmic-sans-neue-mono
 share/fonts/
 @fontdir share/fonts/fantasque-sans/
 share/fonts/fantasque-sans/FantasqueSans.ttf
