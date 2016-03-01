@@ -1,0 +1,12 @@
+$OpenBSD$
+--- ide/environmentopts.pp.orig	Mon Feb 29 03:29:50 2016
++++ ide/environmentopts.pp	Mon Feb 29 03:34:00 2016
+@@ -55,7 +55,7 @@ const
+   {$IFDEF Windows}
+   DefaultMakefilename = '$Path($(CompPath))make.exe';
+   {$ELSE}
+-    {$IFDEF FreeBSD}
++    {$IF defined(FreeBSD) or defined(OpenBSD)}
+     DefaultMakefilename = 'gmake';
+     {$ELSE}
+     DefaultMakefilename = 'make';
