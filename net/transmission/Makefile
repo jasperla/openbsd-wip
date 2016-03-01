@@ -61,8 +61,6 @@ LIB_DEPENDS-gtk=${LIB_DEPENDS-common} \
 LIB_DEPENDS-qt=	${LIB_DEPENDS-common} \
 		${MODQT_LIB_DEPENDS}
 
-RUN_DEPENDS-main=x11/gtk+3,-guic
-
 RUN_DEPENDS-gtk=${PKGNAME-main}:${BUILD_PKGPATH} \
 		devel/desktop-file-utils \
 		x11/gtk+3,-guic
