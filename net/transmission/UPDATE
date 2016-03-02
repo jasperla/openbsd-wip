@@ -7,7 +7,4 @@ Significant changes:
     qt4 -> qt5
     addition of c++11 and gnu++11
 
-All applications appear to be working on amd64.
-
-To-do: adjust linker search directory order so that WRKSRC is 
-       ahead of /usr/local/lib
+Finished.  Sent to ports@ 2016-02-29.
