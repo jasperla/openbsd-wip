@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile.template,v 1.68 2013/10/02 07:34:45 ajacoutot Exp $
+# $OpenBSD$
 
 COMMENT =		friendly interactive shell
 
-DISTNAME =		fish-2.1.0
+V =			2.2.0
+DISTNAME =		fish-$V
 
 CATEGORIES =		shells
 
@@ -13,7 +14,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c m ncurses pthread stdc++
 
-MASTER_SITES =		http://fishshell.com/files/2.1.0/
+MASTER_SITES =		http://fishshell.com/files/$V/
 
 MODULES =		devel/gettext \
 			lang/python
@@ -31,6 +32,6 @@ CONFIGURE_STYLE =	gnu
 TEST_TARGET =		test
 
 pre-configure:
-	perl -pi -e 's,getopt,gnugetopt,' ${WRKSRC}/share/functions/*.fish
+	sed -i 's/getopt/gnugetopt/' ${WRKSRC}/share/functions/*.fish
 
 .include <bsd.port.mk>

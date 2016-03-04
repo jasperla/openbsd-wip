@@ -1,8 +1,0 @@
-To create video files for the Sansa Fuze (without using the
-official "Sansa Media Converter", which is Windows-only, produces files
-with bad A/V sync, and is a bit annoying), the video has to be
-transcoded to mpeg-4 part 2 video and mp3 audio, with specific codec
-settings, frame rate, resolution etc.
-
-The purpose of fuzemux is therefore to remux avi files into the exact
-container format required for playing them on the Fuze.

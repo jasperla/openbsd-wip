@@ -1,6 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/Lingua/
-${P5SITE}/Lingua/EN/
-${P5SITE}/Lingua/EN/Numbers/
-${P5SITE}/Lingua/EN/Numbers/Ordinate.pm
-@man man/man3p/Lingua::EN::Numbers::Ordinate.3p

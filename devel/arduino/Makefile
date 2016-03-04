@@ -2,7 +2,7 @@
 
 COMMENT=	open-source electronics prototyping platform
 
-V=		1.6.3
+V=		1.6.7
 PKGNAME=	arduino-${V}
 DISTNAME=	arduino-${V}-src
 EPOCH=		0
@@ -16,7 +16,7 @@ DISTFILES +=	${DISTNAME}${EXTRACT_SUFX} \
 
 GH_ACCOUNT =           arduino
 GH_PROJECT =           Arduino
-GH_TAGNAME =           1.6.3
+GH_TAGNAME =           ${V}
 
 # arduino core + libraries: LGPLv2.1
 # frontend application: GPLv2 (not shipped yet)
@@ -34,17 +34,18 @@ NO_TEST=     Yes
 PKG_ARCH=       *
 WRKDIST=	${WRKDIR}/Arduino-${V}
 
+# XXX check -m args
 do-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/{,doc,examples}/arduino
-	@${SUBST_CMD} -c ${FILESDIR}/arduinoboot \
+	@${SUBST_CMD} -m 755 -c ${FILESDIR}/arduinoboot \
                 ${PREFIX}/bin/arduinoboot
-	@${SUBST_CMD} -c ${FILESDIR}/arduinoproject \
+	@${SUBST_CMD} -m 755 -c ${FILESDIR}/arduinoproject \
                 ${PREFIX}/bin/arduinoproject
 	@chown ${BINOWN}:${BINGRP} ${PREFIX}/bin/*
 	@chmod ${BINMODE} ${PREFIX}/bin/*
-	@${SUBST_CMD} -c ${FILESDIR}/Makefile \
+	@${SUBST_CMD} -m 755 -c ${FILESDIR}/Makefile \
                 ${PREFIX}/share/examples/arduino/Makefile
-	@${SUBST_CMD} -c ${FILESDIR}/template.ino \
+	@${SUBST_CMD} -m 755 -c ${FILESDIR}/template.ino \
                 ${PREFIX}/share/examples/arduino/template.ino
 	@chmod	a+r ${PREFIX}/share/examples/arduino/*
 	@cp -r	${WRKSRC}/build/shared/examples/* \
@@ -58,5 +59,7 @@ do-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/arduino/mk
 	@${INSTALL_DATA} -c ${FILESDIR}/alibs.mk ${PREFIX}/share/arduino/mk/
 	@${INSTALL_DATA} -c ${FILESDIR}/acores.mk ${PREFIX}/share/arduino/mk/
+
+# XXX plug in test suite.
 
 .include <bsd.port.mk>

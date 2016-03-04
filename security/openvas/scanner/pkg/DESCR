@@ -1,7 +1,0 @@
-OpenVAS Server
-
-OpenVAS is a Network Security Scanner, a fork of the Nessus v2.
-
-The OpenVAS server runs as a daemon, connected to by the
-OpenVAS client which can then ask the server to perform a
-number of scans and checks against a set of target platforms.

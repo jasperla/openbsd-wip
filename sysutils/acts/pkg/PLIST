@@ -1,0 +1,10 @@
+@comment $OpenBSD$
+libexec/acts
+share/doc/acts/
+share/doc/acts/README.md
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/acts/
+share/examples/acts/acts-post.sh
+share/examples/acts/acts-pre.sh
+share/examples/acts/acts.conf
+@sample ${SYSCONFDIR}/acts.conf

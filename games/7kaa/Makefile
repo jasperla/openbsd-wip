@@ -6,7 +6,6 @@ COMMENT-data = 		7kaa data files
 GH_ACCOUNT = 		the3dfxdude
 GH_PROJECT = 		7kaa
 GH_TAGNAME = 		v2.14.5
-DISTNAME = 		7kaa-${GH_TAGNAME:S/v//}
 PKGNAME-main = 		${DISTNAME}
 PKGNAME-data = 		7kaa-data-${GH_TAGNAME:S/v//}
 
@@ -44,8 +43,6 @@ AUTOCONF_VERSION = 	2.69
 AUTOMAKE_VERSION = 	1.11
 
 NO_TEST =		Yes
-
-WRKDIST =		${WRKDIR}/${PKGNAME-main}
 
 PKG_ARCH-data = 	*
 

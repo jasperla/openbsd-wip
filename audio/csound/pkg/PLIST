@@ -1,0 +1,98 @@
+@comment $OpenBSD$
+@bin bin/atsa
+@bin bin/cs
+@bin bin/csanalyze
+@bin bin/csb64enc
+@bin bin/csbeats
+@bin bin/csdebugger
+@bin bin/csound
+@bin bin/cvanal
+@bin bin/dnoise
+@bin bin/envext
+@bin bin/extract
+@bin bin/extractor
+@bin bin/het_export
+@bin bin/het_import
+@bin bin/hetro
+@bin bin/lpanal
+@bin bin/lpc_export
+@bin bin/lpc_import
+@bin bin/makecsd
+@bin bin/mixer
+@bin bin/pv_export
+@bin bin/pv_import
+@bin bin/pvanal
+@bin bin/pvlook
+@bin bin/scale
+@bin bin/scot
+@bin bin/scsort
+@bin bin/sdif2ad
+@bin bin/sndinfo
+@bin bin/src_conv
+@bin bin/srconv
+include/csound/
+include/csound/CppSound.hpp
+include/csound/CsoundFile.hpp
+include/csound/OpcodeBase.hpp
+include/csound/cfgvar.h
+include/csound/csPerfThread.hpp
+include/csound/cs_par_structs.h
+include/csound/cscore.h
+include/csound/csdebug.h
+include/csound/csdl.h
+include/csound/csound.h
+include/csound/csound.hpp
+include/csound/csoundCore.h
+include/csound/csound_data_structures.h
+include/csound/csound_standard_types.h
+include/csound/csound_type_system.h
+include/csound/cwindow.h
+include/csound/filebuilding.h
+include/csound/float-version.h
+include/csound/interlocks.h
+include/csound/msg_attr.h
+include/csound/pools.h
+include/csound/pstream.h
+include/csound/pvfileio.h
+include/csound/soundio.h
+include/csound/sysdep.h
+include/csound/text.h
+include/csound/version.h
+lib/csound/
+lib/csound/plugins-6.0/
+lib/csound/plugins-6.0/csladspa.so
+lib/csound/plugins-6.0/libLuaCsound.so
+lib/csound/plugins-6.0/libampmidid.so
+lib/csound/plugins-6.0/libbuchla.so
+lib/csound/plugins-6.0/libcellular.so
+lib/csound/plugins-6.0/libchua.so
+lib/csound/plugins-6.0/libcontrol.so
+lib/csound/plugins-6.0/libcs_date.so
+lib/csound/plugins-6.0/libdoppler.so
+lib/csound/plugins-6.0/libexciter.so
+lib/csound/plugins-6.0/libfareygen.so
+lib/csound/plugins-6.0/libfluidOpcodes.so
+lib/csound/plugins-6.0/libfractalnoise.so
+lib/csound/plugins-6.0/libframebuffer.so
+lib/csound/plugins-6.0/libimage.so
+lib/csound/plugins-6.0/libipmidi.so
+lib/csound/plugins-6.0/libjackTransport.so
+lib/csound/plugins-6.0/libjacko.so
+lib/csound/plugins-6.0/libmixer.so
+lib/csound/plugins-6.0/libosc.so
+lib/csound/plugins-6.0/libpadsynth.so
+lib/csound/plugins-6.0/libplaterev.so
+lib/csound/plugins-6.0/libpy.so
+lib/csound/plugins-6.0/librtjack.so
+lib/csound/plugins-6.0/librtpa.so
+lib/csound/plugins-6.0/librtpulse.so
+lib/csound/plugins-6.0/libscansyn.so
+lib/csound/plugins-6.0/libserial.so
+lib/csound/plugins-6.0/libsignalflowgraph.so
+lib/csound/plugins-6.0/libstdutil.so
+lib/csound/plugins-6.0/libsystem_call.so
+lib/csound/plugins-6.0/liburandom.so
+lib/csound/plugins-6.0/libvirtual.so
+lib/csound/plugins-6.0/libwidgets.so
+@lib lib/libcsnd6.so.${LIBcsnd6_VERSION}
+@lib lib/libcsound64.so.${LIBcsound64_VERSION}

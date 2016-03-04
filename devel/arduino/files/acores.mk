@@ -4,6 +4,7 @@
 sam_CORE_CXX_SRC = \
 	arduino-support/sam/cores/arduino/new.cpp \
 	arduino-support/sam/cores/arduino/USB/USBCore.cpp \
+	arduino-support/sam/cores/arduino/USB/PluggableUSB.cpp \
 	arduino-support/sam/cores/arduino/Reset.cpp \
 	arduino-support/sam/cores/arduino/WString.cpp \
 	arduino-support/sam/cores/arduino/UARTClass.cpp \
@@ -11,10 +12,10 @@ sam_CORE_CXX_SRC = \
 	arduino-support/sam/cores/arduino/abi.cpp \
 	arduino-support/sam/cores/arduino/RingBuffer.cpp \
 	arduino-support/sam/cores/arduino/WMath.cpp \
-	arduino-support/sam/cores/arduino/USB/HID.cpp \
 	arduino-support/sam/cores/arduino/wiring_pulse.cpp \
 	arduino-support/sam/cores/arduino/USARTClass.cpp \
 	arduino-support/sam/cores/arduino/USB/CDC.cpp \
+	arduino-support/sam/cores/arduino/watchdog.cpp \
 	arduino-support/sam/cores/arduino/Stream.cpp \
 	arduino-support/sam/cores/arduino/main.cpp \
 	arduino-support/sam/cores/arduino/IPAddress.cpp
@@ -38,15 +39,15 @@ sam_CORE_INC_DIRS = \
 # avr core
 avr_CORE_CXX_SRC = \
 	arduino-support/avr/cores/arduino/CDC.cpp \
-	arduino-support/avr/cores/arduino/HardwareSerial.cpp \
+	arduino-support/avr/cores/arduino/Print.cpp \
 	arduino-support/avr/cores/arduino/main.cpp \
-	arduino-support/avr/cores/arduino/HID.cpp \
 	arduino-support/avr/cores/arduino/HardwareSerial2.cpp \
 	arduino-support/avr/cores/arduino/new.cpp \
 	arduino-support/avr/cores/arduino/IPAddress.cpp \
 	arduino-support/avr/cores/arduino/USBCore.cpp \
-	arduino-support/avr/cores/arduino/Print.cpp \
+	arduino-support/avr/cores/arduino/HardwareSerial.cpp \
 	arduino-support/avr/cores/arduino/HardwareSerial3.cpp \
+	arduino-support/avr/cores/arduino/PluggableUSB.cpp \
 	arduino-support/avr/cores/arduino/Tone.cpp \
 	arduino-support/avr/cores/arduino/HardwareSerial0.cpp \
 	arduino-support/avr/cores/arduino/Stream.cpp \

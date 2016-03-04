@@ -1,9 +1,0 @@
-Netrek is an Internet game for up to 16 players, written almost
-entirely in cross-platform open source software. It combines features
-of multi-directional shooters and team-based real-time strategy
-games. Players attempt to disable or destroy their opponents' ships
-in real-time combat, while taking over enemy planets by bombing
-them and dropping off armies they pick up on friendly planets. The
-goal of the game is to capture all the opposing team's planets.
-
-This package contains the netrek server.

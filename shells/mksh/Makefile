@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =		MirBSD Korn Shell
-DISTNAME =		mksh-R52
+DISTNAME =		mksh-R52b
 PKGNAME =		${DISTNAME:S/R//}
 CATEGORIES =		shells
 HOMEPAGE =		http://mirbsd.de/mksh

@@ -1,0 +1,12 @@
+$OpenBSD$
+--- Top/threads.c.orig	Thu Feb 11 10:19:59 2016
++++ Top/threads.c	Thu Feb 11 10:20:18 2016
+@@ -152,7 +152,7 @@ PUBLIC void csoundSleep(size_t milliseconds)
+ 
+ 
+ #if defined(LINUX) || defined(__MACH__) || defined(__HAIKU__) || \
+-    defined(ANDROID) || defined(WIN32)
++    defined(ANDROID) || defined(WIN32) || defined(__OpenBSD__)
+ 
+ #include <errno.h>
+ #include <pthread.h>

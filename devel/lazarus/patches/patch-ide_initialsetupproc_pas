@@ -1,0 +1,12 @@
+$OpenBSD$
+--- ide/initialsetupproc.pas.orig	Mon Feb 29 03:22:59 2016
++++ ide/initialsetupproc.pas	Mon Feb 29 03:23:46 2016
+@@ -848,7 +848,7 @@ begin
+         if CheckFile(Files[i],Result) then exit;
+ 
+     // check PATH
+-    {$IFDEF FreeBSD}
++    {$IF defined(FreeBSD) or defined(OpenBSD)}
+     AFilename:='gmake';
+     {$ELSE}
+     AFilename:='make';

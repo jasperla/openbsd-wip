@@ -1,0 +1,26 @@
+$OpenBSD$
+--- frontends/csound/csound_main.c.orig	Thu Feb 11 08:41:49 2016
++++ frontends/csound/csound_main.c	Thu Feb 11 08:43:00 2016
+@@ -195,7 +195,7 @@ static char *signal_to_string(int sig)
+     }
+ }
+ 
+-static void psignal(int sig, char *str)
++static void psignal_(int sig, char *str)
+ {
+     fprintf(stderr, "%s: %s\n", str, signal_to_string(sig));
+ }
+@@ -212,11 +212,11 @@ static void signal_handler(int sig)
+ {
+ #if defined(SIGPIPE)
+     if (sig == (int) SIGPIPE) {
+-      psignal(sig, "Csound ignoring SIGPIPE");
++      psignal_(sig, "Csound ignoring SIGPIPE");
+       return;
+     }
+ #endif
+-    psignal(sig, "\ncsound command");
++    psignal_(sig, "\ncsound command");
+     if ((sig == (int) SIGINT || sig == (int) SIGTERM)) {
+       if(_csound) csoundStop(_csound);
+       _result = -1;

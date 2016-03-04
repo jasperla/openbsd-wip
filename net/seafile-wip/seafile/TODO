@@ -1,8 +1,0 @@
- - fix depends for -server
- - add README
- - add rc script ?
- - feed seafile.conf to server
- - add user for seafile server ???
- - cleanup KERN_PROC in seafile-controller.c
- - fix pathc to pids directory in seafile-controller.c (currently it creates directory in cwd)
- - test, test, test

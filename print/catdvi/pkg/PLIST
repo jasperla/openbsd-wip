@@ -1,0 +1,3 @@
+@comment $OpenBSD$
+@bin bin/catdvi
+@man man/man1/catdvi.1

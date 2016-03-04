@@ -1,17 +1,20 @@
 $OpenBSD$
---- CMakeLists.txt.orig	Thu Dec 10 13:45:30 2015
-+++ CMakeLists.txt	Sat Jan  2 19:05:53 2016
-@@ -37,7 +37,9 @@ OPTION(ALSOFT_EXAMPLES  "Build and install example pro
- OPTION(ALSOFT_TESTS     "Build and install test programs"     ON)
+--- CMakeLists.txt.orig	Mon Jan 25 04:12:39 2016
++++ CMakeLists.txt	Wed Feb 10 13:14:15 2016
+@@ -41,10 +41,12 @@ OPTION(ALSOFT_TESTS     "Build and install test progra
  
  OPTION(ALSOFT_CONFIG "Install alsoft.conf sample configuration file" ON)
-+OPTION(ALSOFT_CONFIG_DESTINATION "Set destination for example configureation file" share/openal)
  OPTION(ALSOFT_HRTF_DEFS "Install HRTF definition files" ON)
 +OPTION(ALSOFT_SYSCONFDIR "Set system configuration directory" /etc)
  OPTION(ALSOFT_INSTALL "Install headers and libraries" ON)
  
  
-@@ -327,6 +329,7 @@ ELSE()
+ set(SHARE_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/share" CACHE STRING "The share install dir")
++OPTION(ALSOFT_SAMPLES_DIR "Set configuration samples directory" "${SHARE_INSTALL_DIR}/openal")
+ 
+ 
+ IF(NOT WIN32)
+@@ -354,6 +356,7 @@ ELSE()
      ENDIF()
  
      SET(CMAKE_REQUIRED_FLAGS "${OLD_REQUIRED_FLAGS}")
@@ -19,12 +22,12 @@ $OpenBSD$
  ENDIF()
  
  SET(SSE_SWITCH "")
-@@ -1159,7 +1162,7 @@ ENDIF()
+@@ -1207,7 +1210,7 @@ ENDIF()
  # Install alsoft.conf configuration file
  IF(ALSOFT_CONFIG)
      INSTALL(FILES alsoftrc.sample
--            DESTINATION share/openal
-+            DESTINATION ${ALSOFT_CONFIG_DESTINATION}
+-            DESTINATION ${SHARE_INSTALL_DIR}/openal
++            DESTINATION ${ALSOFT_SAMPLES_DIR}
      )
      MESSAGE(STATUS "Installing sample configuration")
      MESSAGE(STATUS "")

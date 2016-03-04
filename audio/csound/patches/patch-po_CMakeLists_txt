@@ -1,0 +1,41 @@
+$OpenBSD$
+--- po/CMakeLists.txt.orig	Thu Feb 11 09:31:57 2016
++++ po/CMakeLists.txt	Thu Feb 11 09:35:00 2016
+@@ -1,29 +1,12 @@
+-# cmake 2.8.7 has a macro GETTEXT_PROCESS_PO_FILES
+-# We don't use it because it may be too new.
+-function(compile_po code _infile)
+-    set(_mofile "${CMAKE_CURRENT_BINARY_DIR}/${code}.mo")
+-    set(_pofile "${CMAKE_CURRENT_SOURCE_DIR}/${_infile}")
+-    add_custom_command(
+-        OUTPUT ${_mofile}
+-        COMMAND ${GETTEXT_MSGFMT_EXECUTABLE} ARGS -o ${_mofile} ${_pofile}
+-        DEPENDS ${_pofile}
+-        )
+-    INSTALL(FILES ${_mofile}
+-        DESTINATION ${LOCALE_INSTALL_DIR}/${code}/LC_MESSAGES/
+-        RENAME "csound6.mo"
+-        )
+-    add_custom_target(${code}.mo ALL DEPENDS ${_mofile})
+-    add_dependencies(translations ${code}.mo)
+-endfunction(compile_po)
+-
++# cmake >= 2.8.7 has a macro GETTEXT_PROCESS_PO_FILES
+ if(USE_GETTEXT)
+     ADD_CUSTOM_TARGET(translations ALL echo "Building translations")
+-    compile_po(en_US american.po)
+-    compile_po(es_CO es_CO.po)
+-    compile_po(fr french.po)
+-    compile_po(de german.po)
+-    compile_po(it italian.po)
+-    compile_po(ro romanian.po)
+-    compile_po(ru russian.po)
++    GETTEXT_PROCESS_PO_FILES(en_US ${LOCALE_INSTALL_DIR}/en_US/LC_MESSAGES/ american.po)
++    GETTEXT_PROCESS_PO_FILES(es_CO ${LOCALE_INSTALL_DIR}/es_CO/LC_MESSAGES/ es_CO.po)
++    GETTEXT_PROCESS_PO_FILES(fr ${LOCALE_INSTALL_DIR}/fr/LC_MESSAGES/ french.po)
++    GETTEXT_PROCESS_PO_FILES(de ${LOCALE_INSTALL_DIR}/de/LC_MESSAGES/ german.po)
++    GETTEXT_PROCESS_PO_FILES(it ${LOCALE_INSTALL_DIR}/it/LC_MESSAGES/ italian.po)
++    GETTEXT_PROCESS_PO_FILES(ro ${LOCALE_INSTALL_DIR}/ro/LC_MESSAGES/ romanian.po)
++    GETTEXT_PROCESS_PO_FILES(ru ${LOCALE_INSTALL_DIR}/ru/LC_MESSAGES/ russian.po)
+ endif()
+ 

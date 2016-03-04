@@ -1,9 +1,0 @@
-$OpenBSD$
---- collects/compiler/embed.rkt.orig	Tue Jan 12 03:24:07 2016
-+++ collects/compiler/embed.rkt	Tue Jan 12 03:47:11 2016
-@@ -1820,4 +1820,4 @@
- ;; Restores old permissions (if not #f)
- (define (done-writable dest-exe old-perms)
-   (when old-perms
--    (file-or-directory-permissions dest-exe old-perms)))
-+    (file-or-directory-permissions dest-exe #o755)))

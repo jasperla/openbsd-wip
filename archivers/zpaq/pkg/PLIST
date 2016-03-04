@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@bin bin/zpaq
-@man man/man1/zpaq.1

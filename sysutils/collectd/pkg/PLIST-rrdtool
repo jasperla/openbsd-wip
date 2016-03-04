@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST-rrdtool,v 1.2 2010/06/24 06:53:37 landry Exp $
-@comment lib/collectd/rrdtool.la
-lib/collectd/rrdtool.so

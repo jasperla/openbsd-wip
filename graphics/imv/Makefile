@@ -1,8 +1,10 @@
 # $OpenBSD$
 
-V =			1.2.1
+GH_ACCOUNT =		eXeC64
+GH_PROJECT =		imv
+GH_TAGNAME =		v2.0.0
+
 COMMENT =		simple image viewer
-DISTNAME =		imv-$V
 CATEGORIES =		graphics x11
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
@@ -11,19 +13,13 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += SDL2 SDL2_ttf c fontconfig freeimage pthread
 
-GH_ACCOUNT =		eXeC64
-GH_PROJECT =		imv
-GH_TAGNAME =		v$V
-
-# This will go away once upstream releases v1.2.0+
-GH_TAGNAME =
-GH_COMMIT =		35cabe381df4a3cddc29ca7805fe8b51701f4903
-
 MODULES =		lang/clang
 MODCLANG_ARCHS =	*
 LIB_DEPENDS =		devel/sdl2 \
 			devel/sdl2-ttf \
 			graphics/freeimage
+RUN_DEPENDS =		devel/desktop-file-utils
+
 MAKE_FLAGS +=		V=1 BUILDDIR="${WRKDIR}/build-${ARCH}"
 FAKE_FLAGS +=		$(MAKE_FLAGS) MANPREFIX=${PREFIX}/man PREFIX=${PREFIX}
 
@@ -34,5 +30,7 @@ ALL_TARGET =		debug
 .else
 ALL_TARGET =		${WRKDIR}/build-${ARCH}/imv
 .endif
+
+TEST_TARGET =		check
 
 .include <bsd.port.mk>

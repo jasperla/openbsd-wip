@@ -1,2 +1,0 @@
-@comment $OpenBSD$
-${P5ARCH}/auto/B/Hooks/OP/Check/Check.so

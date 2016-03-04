@@ -1,6 +1,0 @@
-@comment $OpenBSD$
-include/evhtp-config.h
-include/evhtp.h
-include/evthr.h
-include/htparse.h
-@lib lib/libevhtp.so.${LIBevhtp_VERSION}

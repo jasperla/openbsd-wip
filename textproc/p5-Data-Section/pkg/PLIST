@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/Data/Section.pm
-@man man/man3p/Data::Section.3p

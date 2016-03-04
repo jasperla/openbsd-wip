@@ -1,2 +1,0 @@
-Module::Install::GithubMeta is a Module::Install extension to include
-GitHub <http://github.com> meta information in "META.yml".

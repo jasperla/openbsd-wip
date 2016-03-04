@@ -1,0 +1,3 @@
+This is a minimal boostrap cross-compiler to compile
+arm-none-eabi-newlib.  It is needed to avoid a circular dependency while
+building arm-none-eabi-gcc-linaro.

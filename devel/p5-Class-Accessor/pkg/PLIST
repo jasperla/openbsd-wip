@@ -1,9 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/Class/
-${P5SITE}/Class/Accessor/
-${P5SITE}/Class/Accessor.pm
-${P5SITE}/Class/Accessor/Fast.pm
-${P5SITE}/Class/Accessor/Faster.pm
-@man man/man3p/Class::Accessor.3p
-@man man/man3p/Class::Accessor::Fast.3p
-@man man/man3p/Class::Accessor::Faster.3p

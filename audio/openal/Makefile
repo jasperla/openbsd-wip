@@ -5,8 +5,8 @@ ONLY_FOR_ARCHS =	${LLVM_ARCHS}
 COMMENT =		cross-platform 3D audio API
 
 EPOCH =			0
-DISTNAME =		openal-soft-1.17.1
-PKGNAME =		openal-1.17.1
+DISTNAME =		openal-soft-1.17.2
+PKGNAME =		openal-1.17.2
 CATEGORIES =		audio
 SHARED_LIBS =		openal	2.3
 
@@ -22,7 +22,7 @@ WANTLIB += c m pthread sndio
 
 CONFIGURE_ARGS =	-DCMAKE_BUILD_TYPE=OpenBSD \
 			-DALSOFT_SYSCONFDIR=${SYSCONFDIR} \
-			-DALSOFT_CONFIG_DESTINATION=share/examples/openal \
+			-DALSOFT_SAMPLES_DIR=share/examples/openal \
 			-DALSOFT_DLOPEN=Off \
 			-DALSOFT_UTILS=On \
 			-DALSOFT_EXAMPLES=Off \

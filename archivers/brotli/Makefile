@@ -4,9 +4,6 @@ SHARED_ONLY =		Yes
 
 COMMENT =		generic lossless compressor
 
-V =			0.2.0
-DISTNAME =		brotli-$V
-
 CATEGORIES =		archivers
 
 HOMEPAGE =		https://github.com/google/brotli
@@ -20,7 +17,7 @@ WANTLIB += c m
 
 GH_ACCOUNT =		google
 GH_PROJECT =		brotli
-GH_TAGNAME =		v${V}
+GH_TAGNAME =		v0.3.0
 MASTER_SITES =		${MASTER_SITES_GITHUB}
 
 MODULES =		gcc4

@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST-kamera,v 1.5 2005/03/29 21:18:36 espie Exp $
-lib/trinity/kcm_kamera.la
-lib/trinity/kcm_kamera.so
-lib/trinity/kio_kamera.la
-lib/trinity/kio_kamera.so
-share/applnk/

@@ -1,13 +1,4 @@
-Lots of errors/warnings surrounding each command invocation:
-
-fish: Unknown command 'prompt_pwd'
-/usr/local/share/fish/functions/fish_prompt.fish (line 6): prompt_pwd
-
-fish: Unknown command '__fish_pwd'
-Standard input: echo $_ " "; __fish_pwd
-
-
-"make test" seems to gobble up a ton of memory.
-
-
-Manpages need checking against mandoc/groff.
+* "make test" seems to hang at some point.
+* Manpages need checking against mandoc/groff.
+* Some completions may be wrong.  BSD- (jot, etc.) and OpenBSD-specific
+  completions (rcctl, pkg_add) should probably be added.

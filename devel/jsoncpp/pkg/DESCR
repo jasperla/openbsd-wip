@@ -1,5 +1,0 @@
-JsonCpp is a simple API to manipulate JSON value, handle serialization
-and unserialization to string. It can also preserve existing comment in
-unserialization/serialization steps, making it a convenient format to
-store user input files. Unserialization parsing is user friendly and
-provides precise error reports.

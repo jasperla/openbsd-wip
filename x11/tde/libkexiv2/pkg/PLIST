@@ -1,8 +1,0 @@
-@comment $OpenBSD$
-include/libkexiv2/
-include/libkexiv2/kexiv2.h
-include/libkexiv2/libkexiv2_export.h
-include/libkexiv2/version.h
-lib/libkexiv2.la
-@lib lib/libkexiv2.so.${LIBkexiv2_VERSION}
-lib/pkgconfig/libkexiv2.pc

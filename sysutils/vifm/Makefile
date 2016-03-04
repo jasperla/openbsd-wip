@@ -1,37 +1,47 @@
-# $OpenBSD:
+# $OpenBSD$
 
-COMMENT =	vi(m) like file manager
+COMMENT =		ncurses file manager with vi keybindings
 
-DISTNAME =	vifm-0.8.1
+DISTNAME =		vifm-0.8.1a
 
-CATEGORIES =	sysutils
+CATEGORIES =		sysutils
 
-HOMEPAGE =	https://vifm.info/
+HOMEPAGE =		https://vifm.info/
 
-MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
+MAINTAINER =		Rafael Sadowski <rafael@sizeofvoid.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 c cairo fontconfig freetype
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += gtk-x11-2.0 intl ncursesw pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pthread z
+WANTLIB += c ncursesw pthread
 
-MASTER_SITES =	http://prdownloads.sourceforge.net/vifm/
-EXTRACT_SUFX =	.tar.bz2
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=vifm/}
+EXTRACT_SUFX =		.tar.bz2
 
-MODULES =	devel/gettext
+FLAVOR ?=
+FLAVORS =		no_x11
 
-LIB_DEPENDS =	devel/pango \
-		devel/glib2 \
-		devel/atk \
-		x11/gtk+2 \
-		graphics/gdk-pixbuf2
-
-RUN_DEPENDS =	devel/desktop-file-utils
+SEPARATE_BUILD =	Yes
 
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	--without-libmagic
+
+RUN_DEPENDS =		devel/desktop-file-utils
+
+.if ${FLAVOR:Mno_x11}
+CONFIGURE_ARGS +=	--without-gtk \
+			--without-X11
+.else
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 cairo fontconfig freetype gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 z
+
+MODULES =		devel/gettext
+
+LIB_DEPENDS +=		x11/gtk+2
+
+CONFIGURE_ARGS +=	--without-dyn-X11
+.endif
 
 .include <bsd.port.mk>

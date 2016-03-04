@@ -1,7 +1,2 @@
  * Verify that patch for src/shared/qbs/src/lib/corelib/tools/processutils.cpp
    does what it is supposed to do.
-
-Optional:
- * Do we want to auto-detect both Qt 5 and Qt 4? Currently, only one version
-   is auto-detected and set up at a time.
- * Add QTest::newRow() to abi.cpp?

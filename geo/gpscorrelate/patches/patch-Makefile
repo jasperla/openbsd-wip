@@ -1,9 +1,0 @@
-$OpenBSD$
---- Makefile.orig	Thu Mar 11 15:10:04 2010
-+++ Makefile	Thu Mar 11 15:11:25 2010
-@@ -48,4 +48,4 @@ doc/gpscorrelate-manpage.xml: doc/gpscorrelate-manpage
- 	sed  's,@DOCDIR@,$(docdir),' $< > $@
- 
- gpscorrelate.1: doc/gpscorrelate-manpage.xml
--	xsltproc http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl $<
-+	xsltproc ${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl $<

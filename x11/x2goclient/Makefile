@@ -17,19 +17,16 @@ WANTLIB += ssh stdc++
 
 MASTER_SITES =	http://code.x2go.org/releases/source/x2goclient/
 
-LIB_DEPENDS =	x11/nx/nxcomp \
-		x11/nx/nxproxy \
-		security/libssh \
+LIB_DEPENDS =	security/libssh \
 		x11/qt4 \
 		databases/openldap \
-		print/cups
+		print/cups-filters
 
 BUILD_DEPENDS =	x11/nx/nxcomp \
 		x11/nx/nxproxy \
 		security/libssh \
 		x11/qt4 \
-		databases/openldap \
-		print/cups
+		databases/openldap
 
 DOCSDIR =	${PREFIX}/share/doc/x2goclient
 EXAMPLESDIR =	${PREFIX}/share/examples/x2goclient
@@ -50,6 +47,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/x2goclient-cli ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/HOWTO.GPGCARD ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/provider/etc/x2goplugin-apache.conf \
 		${EXAMPLESDIR}
 

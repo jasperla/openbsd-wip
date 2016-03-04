@@ -1,13 +1,13 @@
 $OpenBSD$
---- core/utils.c.orig	Sun Oct 26 04:30:44 2014
-+++ core/utils.c	Tue Dec 16 21:31:40 2014
+--- core/utils.c.orig	Wed Dec 30 09:08:49 2015
++++ core/utils.c	Thu Jan 28 21:01:32 2016
 @@ -1,4 +1,5 @@
  #include <uwsgi.h>
 +#include <uuid.h>
  
  
  extern struct uwsgi_server uwsgi;
-@@ -3987,32 +3988,14 @@ char *uwsgi_strip(char *src) {
+@@ -3996,32 +3997,14 @@ char *uwsgi_strip(char *src) {
  }
  
  void uwsgi_uuid(char *buf) {
