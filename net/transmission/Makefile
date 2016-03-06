@@ -46,12 +46,6 @@ WANTLIB-qt=	${WANTLIB-common} ${MODQT_WANTLIB} \
 
 MODULES=	devel/gettext textproc/intltool
 
-.if ${BUILD_PACKAGES:M-qt}
-MODULES+=	x11/qt5
-.else
-MODULES+=	gcc4
-.endif
-
 LIB_DEPENDS-common=${MODGETTEXT_LIB_DEPENDS} \
 		devel/libevent2 \
 		net/curl \
@@ -82,6 +76,16 @@ CONFIGURE_ARGS=	--disable-shared \
 CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/third-party -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+.if ${BUILD_PACKAGES:M-qt}
+MODULES+=		x11/qt5
+MODQMAKE_PROJECTS=	qt/qtr.pro
+CONFIGURE_STYLE+=	qmake
+SEPARATE_BUILD=		No
+MODQMAKE_INSTALL_ROOT=	${PREFIX}
+.else
+MODULES+=		gcc4
+.endif
+
 .if !${BUILD_PACKAGES:M-gtk}
 CONFIGURE_ARGS+=--without-gtk
 .endif
@@ -91,13 +95,10 @@ pre-patch:
 
 .if ${BUILD_PACKAGES:M-qt}
 post-build:
-	cd ${WRKSRC}/qt; qmake-qt5 qtr.pro; ${MAKE_ENV} ${MAKE_PROGRAM} \
-	    ${MAKE_FLAGS}
+	${MODQMAKE_build}
 
 post-install:
-	cd ${WRKSRC}/qt; make ${MAKE_FLAGS} install INSTALL_ROOT=${PREFIX} \
-	    INSTALL_FILE="${INSTALL_DATA}" \
-	    INSTALL_PROGRAM="${INSTALL_PROGRAM}"
+	${MODQMAKE_install}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/qt/transmission-qt.desktop \
 	    ${PREFIX}/share/applications/
