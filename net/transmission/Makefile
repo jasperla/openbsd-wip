@@ -42,12 +42,14 @@ WANTLIB-gtk=	${WANTLIB-common} ICE SM X11 Xcomposite Xcursor Xdamage \
 		xcb-render xcb-shm epoxy idn nghttp2
 WANTLIB-qt=	${WANTLIB-common} ${MODQT_WANTLIB} \
 		GL Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets \
-		ICE SM X11 Xext Xi Xinerama Xrender \
 		fontconfig freetype estdc++
 
 MODULES=	devel/gettext textproc/intltool
+
 .if ${BUILD_PACKAGES:M-qt}
 MODULES+=	x11/qt5
+.else
+MODULES+=	gcc4
 .endif
 
 LIB_DEPENDS-common=${MODGETTEXT_LIB_DEPENDS} \
