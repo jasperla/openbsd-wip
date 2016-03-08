@@ -6,6 +6,7 @@ COMMENT =	modular IRC client with many features (ipv6,socks,proxy)
 
 V =		0.8.18
 DISTNAME =	irssi-${V}
+PKGSPEC =	irssi-=${V}
 
 CATEGORIES =	net
 
