@@ -21,7 +21,8 @@ EXTRACT_SUFX=	.tar.xz
 
 MULTI_PACKAGES=	-main -gtk -qt
 
-ONLY_FOR_ARCHS=	${GCC4_ARCHS}
+ONLY_FOR_ARCHS-qt=	${MODGCC4_ARCHS}
+MODGCC4_ARCHS=	amd64 arm hppa i386 mips64 mips64el powerpc sparc sparc64
 
 PSEUDO_FLAVORS=	no_gtk no_qt
 FLAVOR?=
