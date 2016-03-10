@@ -2,7 +2,7 @@
 
 COMMENT =		network library for easy and scalable concurrency
 
-MODPY_EGG_VERSION =	1.1rc4
+MODPY_EGG_VERSION =	1.1.0
 DISTNAME =		gevent-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
@@ -28,6 +28,7 @@ TEST_DEPENDS =		${RUN_DEPENDS} \
 			sysutils/py-psutil
 
 MAKE_ENV =		CARES_EMBED=0 LIBEV_EMBED=0
+TEST_ENV =		APPVEYOR=Yes
 CFLAGS +=		-I${LOCALBASE}/include
 LDFLAGS +=		-L${LOCALBASE}/lib
 

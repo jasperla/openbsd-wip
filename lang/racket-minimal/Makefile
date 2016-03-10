@@ -78,16 +78,18 @@ CFLAGS += -ggdb3
 
 # - "places" and "futures" require thread-local storage, atomic CAS and JIT
 #   http://article.gmane.org/gmane.comp.lang.racket.user/16723
-# - Using gcc4 to enable "places". It broke Racket in the past. Testing it again.
+# - Using gcc4 to enable "places". It broke Racket in the past.
+# - The JIT doesn't work on powerpc when TLS is enabled
+#   https://github.com/racket/racket/issues/1239
 .if ${FLAVOR:Mno_jit}
-ONLY_FOR_ARCHS =	amd64 i386 powerpc
+ONLY_FOR_ARCHS =	amd64 i386
 CONFIGURE_ARGS +=	--disable-jit \
 			--disable-places \
 			--disable-futures
-.elif ${MACHINE_ARCH} != "sparc64"
+.elif ${MACHINE_ARCH} != "sparc64" && ${MACHINE_ARCH} != "powerpc"
 MODULES +=		gcc4
 MODGCC4_LANGS =		c c++
-MODGCC4_ARCHS =		amd64 i386 powerpc
+MODGCC4_ARCHS =		amd64 i386
 CONFIGURE_ARGS +=	--enable-jit \
 			--enable-places \
 			--enable-futures
@@ -96,9 +98,6 @@ CONFIGURE_ARGS +=	--disable-jit \
 			--disable-places \
 			--disable-futures
 .endif
-
-# XXX Probably fixes a bunch of bugs
-#CFLAGS += -Wall -fno-strict-aliasing
 
 post-install:
 	@find ${PREFIX} -type f -name '*.orig' -exec rm -f {} \;

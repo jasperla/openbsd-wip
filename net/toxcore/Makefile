@@ -55,7 +55,7 @@ DOCS =			Group-Chats.md Hardening.txt Hardening_docs.txt \
 
 pre-configure:
 	cd ${WRKSRC} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	                AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autogen.sh
+	                AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tox
