@@ -8,7 +8,7 @@ COMMENT-docs =		OpenCV documentation and examples
 COMMENT-main =		library of programming functions for real time cv
 COMMENT-java =		Java bindings for OpenCV
 
-V =			3.0.0
+V =			3.1.0
 DISTNAME =		opencv-${V}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-docs =		opencv-docs-$V
@@ -37,20 +37,17 @@ SHARED_LIBS +=		opencv_videostab		1.0 #0.1
 EXTRACT_SUFX =		.zip
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=opencvlibrary/}
 
-WANTLIB-main =  Half Iex IlmImf IlmThread Imath X11 Xcomposite Xcursor
-WANTLIB-main += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
-WANTLIB-main += avcodec avformat avutil bz2 c cairo fontconfig intl
-WANTLIB-main += freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB-main += gobject-2.0 gstapp-1.0 gstbase-1.0 gstpbutils-1.0
-WANTLIB-main += avresample cairo-gobject gdk-3 gtk-3
-WANTLIB-main += gstreamer-1.0 gstriff-1.0 gstvideo-1.0 gthread-2.0
-WANTLIB-main += jasper jpeg m pango-1.0 pangocairo-1.0
-WANTLIB-main += pangoft2-1.0 png pthread stdc++ swscale tiff xml2 z
+WANTLIB-main = Half Iex IlmImf IlmThread Imath atk-1.0 avcodec avformat
+WANTLIB-main += avresample avutil bz2 c cairo cairo-gobject estdc++
+WANTLIB-main += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gstapp-1.0
+WANTLIB-main += gstbase-1.0 gstpbutils-1.0 gstreamer-1.0 gstriff-1.0
+WANTLIB-main += gstvideo-1.0 gthread-2.0 gtk-3 jasper jpeg m pango-1.0
+WANTLIB-main += pangocairo-1.0 png pthread swscale tiff webp z
 WANTLIB-main += ${MODGETTEXT_WANTLIB} ${MODPY_WANTLIB}
 
 WANTLIB-docs =
 
-WANTLIB-java =  m pthread stdc++
+WANTLIB-java =  m pthread estdc++
 WANTLIB-java += opencv_calib3d>=2.0 opencv_core>=2.0 opencv_features2d>=2.0 opencv_flann>=2.0
 WANTLIB-java += opencv_highgui>=2.0 opencv_imgproc>=2.0 opencv_ml>=2.0 opencv_objdetect>=2.0
 WANTLIB-java += opencv_photo>=1.0 opencv_video>=2.0 opencv_imgcodecs opencv_videoio
@@ -72,8 +69,6 @@ MODULES =		lang/clang \
 MODCLANG_ARCHS =	amd64 i386
 MODCLANG_LANGS =	c c++
 
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_2}
-
 BUILD_DEPENDS =		devel/doxygen>=1.8.10 \
 			math/py-numpy \
 			math/eigen3
@@ -91,6 +86,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			graphics/jpeg \
 			graphics/openexr \
 			graphics/png \
+			graphics/libwebp \
 			graphics/tiff
 
 LIB_DEPENDS-java =	${BUILD_PKGPATH},-main=${V}
@@ -107,16 +103,11 @@ CONFIGURE_ENV =		CFLAGS="${CFLAGS} -fPIC" \
 CONFIGURE_ARGS =	-DWITH_1394:Bool=Off \
 			-DWITH_VTK:Bool=Off \
 			-DWITH_CUDA:Bool=Off \
-			-DWITH_CUFFT:Bool=Off \
 			-DWITH_EIGEN:Bool=Off \
 			-DWITH_V4L:Bool=Off \
-			-DWITH_LIBV4L:Bool=Off \
 			-DWITH_IPP:Bool=Off \
 			-DWITH_OPENCL:Bool=Off \
-			-DWITH_OPENCLAMDFFT:Bool=Off \
-			-DWITH_OPENCLAMDBLAS:Bool=Off \
-			-DBUILD_TESTS:Bool=On \
-			-DPYTHON_EXECUTABLE:FILEPATH=${MODPY_BIN}
+			-DBUILD_TESTS:Bool=On
 
 .if ${BUILD_PACKAGES:M-docs}
 BUILD_DEPENDS +=	textproc/py-sphinx
@@ -133,7 +124,7 @@ CONFIGURE_ARGS +=	-DBUILD_DOCS:Bool=Off \
 
 .if ${BUILD_PACKAGES:M-java}
 MODULES +=		java
-MODJAVA_VER =		1.7+
+MODJAVA_VER =		1.8+
 BUILD_DEPENDS +=	devel/apache-ant
 .else
 # Safe: Java will be detected, if present, but won't be used
@@ -144,12 +135,6 @@ CONFIG_ADJ_CMD =	perl -pi
 .for _l _v in ${SHARED_LIBS}
 CONFIG_ADJ_CMD +=	-e 's,lib${_l}.so([^.]),lib${_l}.so.${_v}$$1,g;'
 .endfor
-
-post-patch:
-	# remove BOM (byte order mark)
-	find ${WRKSRC} -type f \( -name "*.cpp" -or -name \
-		"*.h" -or -name "*.hpp" \) -exec perl -CD -pi -e 'tr/\x{feff}//d' \
-		"{}" \;
 
 post-install:
 	${CONFIG_ADJ_CMD} ${PREFIX}/share/OpenCV/OpenCVConfig.cmake

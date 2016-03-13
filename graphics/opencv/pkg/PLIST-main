@@ -67,10 +67,19 @@ include/opencv2/core/cvstd.hpp
 include/opencv2/core/cvstd.inl.hpp
 include/opencv2/core/directx.hpp
 include/opencv2/core/eigen.hpp
+include/opencv2/core/fast_math.hpp
+include/opencv2/core/hal/
+include/opencv2/core/hal/hal.hpp
+include/opencv2/core/hal/interface.h
+include/opencv2/core/hal/intrin.hpp
+include/opencv2/core/hal/intrin_cpp.hpp
+include/opencv2/core/hal/intrin_neon.hpp
+include/opencv2/core/hal/intrin_sse.hpp
 include/opencv2/core/ippasync.hpp
 include/opencv2/core/mat.hpp
 include/opencv2/core/mat.inl.hpp
 include/opencv2/core/matx.hpp
+include/opencv2/core/neon_utils.hpp
 include/opencv2/core/ocl.hpp
 include/opencv2/core/ocl_genbase.hpp
 include/opencv2/core/opengl.hpp
@@ -80,11 +89,13 @@ include/opencv2/core/persistence.hpp
 include/opencv2/core/private.cuda.hpp
 include/opencv2/core/private.hpp
 include/opencv2/core/ptr.inl.hpp
+include/opencv2/core/saturate.hpp
 include/opencv2/core/sse_utils.hpp
 include/opencv2/core/traits.hpp
 include/opencv2/core/types.hpp
 include/opencv2/core/types_c.h
 include/opencv2/core/utility.hpp
+include/opencv2/core/va_intel.hpp
 include/opencv2/core/version.hpp
 include/opencv2/core/wimage.hpp
 include/opencv2/cvconfig.h
@@ -129,13 +140,6 @@ include/opencv2/flann/sampling.h
 include/opencv2/flann/saving.h
 include/opencv2/flann/simplex_downhill.h
 include/opencv2/flann/timer.h
-include/opencv2/hal/
-include/opencv2/hal.hpp
-include/opencv2/hal/defs.h
-include/opencv2/hal/intrin.hpp
-include/opencv2/hal/intrin_cpp.hpp
-include/opencv2/hal/intrin_neon.hpp
-include/opencv2/hal/intrin_sse.hpp
 include/opencv2/highgui/
 include/opencv2/highgui.hpp
 include/opencv2/highgui/highgui.hpp
@@ -147,6 +151,8 @@ include/opencv2/imgcodecs/imgcodecs_c.h
 include/opencv2/imgcodecs/ios.h
 include/opencv2/imgproc/
 include/opencv2/imgproc.hpp
+include/opencv2/imgproc/detail/
+include/opencv2/imgproc/detail/distortion_model.hpp
 include/opencv2/imgproc/imgproc.hpp
 include/opencv2/imgproc/imgproc_c.h
 include/opencv2/imgproc/types_c.h
@@ -222,7 +228,6 @@ include/opencv2/videostab/wobble_suppression.hpp
 @lib lib/libopencv_core.so.${LIBopencv_core_VERSION}
 @lib lib/libopencv_features2d.so.${LIBopencv_features2d_VERSION}
 @lib lib/libopencv_flann.so.${LIBopencv_flann_VERSION}
-lib/libopencv_hal.a
 @lib lib/libopencv_highgui.so.${LIBopencv_highgui_VERSION}
 @lib lib/libopencv_imgcodecs.so.${LIBopencv_imgcodecs_VERSION}
 @lib lib/libopencv_imgproc.so.${LIBopencv_imgproc_VERSION}

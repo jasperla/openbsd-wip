@@ -1,0 +1,12 @@
+$OpenBSD$
+--- modules/imgcodecs/src/rgbe.cpp.orig	Fri Mar 11 22:10:47 2016
++++ modules/imgcodecs/src/rgbe.cpp	Fri Mar 11 22:11:04 2016
+@@ -44,7 +44,7 @@
+ #include "rgbe.hpp"
+ #include <math.h>
+ #if !defined(__APPLE__)
+-#include <malloc.h>
++#include <stdlib.h>
+ #endif
+ #include <string.h>
+ #include <ctype.h>
