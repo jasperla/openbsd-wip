@@ -10,6 +10,8 @@ HOMEPAGE=	http://include-what-you-use.org
 MASTER_SITES=	${HOMEPAGE}/downloads/
 WRKDIST=	${WRKDIR}/include-what-you-use
 
+MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
+
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
