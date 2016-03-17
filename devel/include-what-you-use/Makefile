@@ -22,8 +22,6 @@ MODGCC4_LANGS =		c++
 MODGCC4_ARCHS =		*
 CONFIGURE_ARGS=		-DIWYU_LLVM_ROOT_PATH=${LOCALBASE}
 
-post-install:
-	@perl -pi -e 's,/usr/bin/env python,/usr/bin/env python${MODPY_VERSION},g' \
-		${PREFIX}/bin/{fix_includes,iwyu_tool}.py
+MODPY_ADJ_FILES = fix_includes.py iwyu_tool.py
 
 .include <bsd.port.mk>
