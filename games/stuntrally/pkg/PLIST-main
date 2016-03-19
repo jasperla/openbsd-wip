@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@bin bin/sr-editor
-@bin bin/stuntrally
