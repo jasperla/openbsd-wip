@@ -3,17 +3,25 @@
 # This is how we generate the OpenBSD packing lists for TeX Live.
 # It is hooked in to the plist target in the port makefile.
 
+import re
+import sys
+from texscythe import config, subset, orm
+
+
 PLIST_BUILDSET_OUT = "../pkg/PLIST-buildset"
 PLIST_MAIN_OUT = "../pkg/PLIST-main"
 PLIST_FULL_OUT = "../pkg/PLIST-full"
 PLIST_DOCS_OUT = "../pkg/PLIST-docs"
 PLIST_CONTEXT_OUT = "../pkg/PLIST-context"
 
-import re
-from texscythe import config, subset
-
 YEAR = 2014
 MAN_INFO_REGEX = "texmf-dist\/doc\/(man\/man[0-9]\/.*[0-9]|info\/.*\.info)$"
+
+if len(sys.argv) != 2:
+    print("Please specify a tlpdb file")
+    sys.exit(1)
+
+TLPDB = sys.argv[1]
 
 
 class NastyError(Exception):
@@ -190,13 +198,16 @@ def filter_junk(filelist):
 
 def collect_files(specs, regex=None):
     cfg = config.Config(
+        TLPDB,
         inc_pkgspecs=specs,
         plist=None,  # return file list
         prefix_filenames="share/",
         dirs=False,  # Do this manually as we will filter the list
         regex=regex,
     )
-    files = subset.compute_subset(cfg)
+    sess = orm.init_orm(cfg)
+    files = subset.compute_subset(cfg, sess)
+    sess.close()
     files = relocate_mans_and_infos(files)
     files = filter_junk(files)
     return sorted(files)
