@@ -1,8 +1,0 @@
-@comment $OpenBSD$
-lib/warsow/basewsw/cgame.so
-lib/warsow/basewsw/game.so
-lib/warsow/basewsw/ui.so
-lib/warsow/libs/angelwrap.so
-lib/warsow/libs/cin.so
-lib/warsow/libs/irc.so
-lib/warsow/libs/snd_openal.so
