@@ -1,0 +1,17 @@
+$OpenBSD$
+--- cmake/OpenCVFindLibsGrfmt.cmake.orig	Fri Dec 18 16:02:16 2015
++++ cmake/OpenCVFindLibsGrfmt.cmake	Thu Mar 10 23:29:48 2016
+@@ -157,12 +157,7 @@ if(WITH_PNG)
+     include(FindPNG)
+     if(PNG_FOUND)
+       include(CheckIncludeFile)
+-      check_include_file("${PNG_PNG_INCLUDE_DIR}/libpng/png.h" HAVE_LIBPNG_PNG_H)
+-      if(HAVE_LIBPNG_PNG_H)
+-        ocv_parse_header("${PNG_PNG_INCLUDE_DIR}/libpng/png.h" PNG_VERSION_LINES PNG_LIBPNG_VER_MAJOR PNG_LIBPNG_VER_MINOR PNG_LIBPNG_VER_RELEASE)
+-      else()
+-        ocv_parse_header("${PNG_PNG_INCLUDE_DIR}/png.h" PNG_VERSION_LINES PNG_LIBPNG_VER_MAJOR PNG_LIBPNG_VER_MINOR PNG_LIBPNG_VER_RELEASE)
+-      endif()
++      ocv_parse_header("${PNG_PNG_INCLUDE_DIR}/png.h" PNG_VERSION_LINES PNG_LIBPNG_VER_MAJOR PNG_LIBPNG_VER_MINOR PNG_LIBPNG_VER_RELEASE)
+     endif()
+   endif()
+ 

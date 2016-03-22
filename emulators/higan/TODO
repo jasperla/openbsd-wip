@@ -1,3 +1,0 @@
-- SDL video backend is incredibly slow (as it isn't synced to refresh?)
-- Xvideo backend is useable
-- OpenGL backend seems to segfault...
