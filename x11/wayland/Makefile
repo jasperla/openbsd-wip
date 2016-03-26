@@ -16,9 +16,9 @@ MAINTAINER =		Vadim Zhukov <persgray@gmail.com>
 # MIT, examples (not packaged) are GPL
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c expat ffi lzma m pthread xml z
+WANTLIB =		c expat ffi lzma m pthread xml2 z
 
-MODULES =		converters/iconv
+MODULES =		converters/libiconv
 
 MASTER_SITES =		http://wayland.freedesktop.org/releases/
 EXTRACT_SUFX =		.tar.xz
