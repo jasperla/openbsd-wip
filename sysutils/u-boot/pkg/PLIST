@@ -30,6 +30,12 @@ share/u-boot/am335x_boneblack/u-boot.img
 share/u-boot/am57xx_evm_nodt/
 share/u-boot/am57xx_evm_nodt/MLO
 share/u-boot/am57xx_evm_nodt/u-boot.img
+share/u-boot/cm_fx6/
+share/u-boot/cm_fx6/SPL
+share/u-boot/cm_fx6/u-boot.img
+share/u-boot/mx6cuboxi/
+share/u-boot/mx6cuboxi/SPL
+share/u-boot/mx6cuboxi/u-boot.img
 share/u-boot/nitrogen6q/
 share/u-boot/nitrogen6q/u-boot.imx
 share/u-boot/novena/
@@ -41,6 +47,9 @@ share/u-boot/omap3_beagle/u-boot.img
 share/u-boot/omap4_panda/
 share/u-boot/omap4_panda/MLO
 share/u-boot/omap4_panda/u-boot.img
+share/u-boot/udoo/
+share/u-boot/udoo/SPL
+share/u-boot/udoo/u-boot.img
 share/u-boot/wandboard/
 share/u-boot/wandboard/SPL
 share/u-boot/wandboard/u-boot.img

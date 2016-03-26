@@ -31,7 +31,10 @@ BOARDS=\
 	Linksprite_pcDuino3_Nano \
 	wandboard \
 	novena \
-	nitrogen6q
+	nitrogen6q \
+	mx6cuboxi \
+	udoo \
+	cm_fx6
 
 FILES=\
 	MLO \
