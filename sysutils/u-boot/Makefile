@@ -20,28 +20,35 @@ BOARDS=\
 	omap3_beagle \
 	omap4_panda \
 	am335x_boneblack \
-	am57xx_evm_nodt \
+	am57xx_evm \
+	A10-OLinuXino-Lime \
+	A20-OLinuXino-Lime \
+	A20-OLinuXino-Lime2 \
+	A20-OLinuXino_MICRO \
+	Bananapi \
+	Bananapro \
 	Cubieboard \
 	Cubieboard2 \
 	Cubietruck \
-	Bananapi \
-	Bananapro \
 	Lamobo_R1 \
 	Linksprite_pcDuino \
+	Linksprite_pcDuino3 \
 	Linksprite_pcDuino3_Nano \
-	wandboard \
-	novena \
-	nitrogen6q \
+	cm_fx6 \
 	mx6cuboxi \
+	nitrogen6q \
+	novena \
 	udoo \
-	cm_fx6
+	wandboard \
+	clearfog
 
 FILES=\
 	MLO \
 	SPL \
 	u-boot.img \
 	u-boot-sunxi-with-spl.bin \
-	u-boot.imx
+	u-boot.imx \
+	u-boot-spl.kwb
 
 do-build:
 .for BOARD in ${BOARDS}
