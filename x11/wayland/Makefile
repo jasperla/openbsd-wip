@@ -1,7 +1,5 @@
 # $OpenBSD$
 
-SHARED_ONLY =		Yes
-
 COMMENT =		X server replacement
 DISTNAME =		wayland-1.10.0
 
