@@ -1,8 +1,8 @@
 $OpenBSD$
 Add *BSD support.
---- Makefile.am.orig	Sun Jan 10 16:05:02 2016
-+++ Makefile.am	Sun Jan 10 16:05:44 2016
-@@ -181,7 +181,7 @@ libtest_runner_la_LIBADD =			\
+--- Makefile.am.orig	Mon Nov 23 23:06:44 2015
++++ Makefile.am	Thu Mar 24 16:21:31 2016
+@@ -183,7 +183,7 @@ libtest_runner_la_LIBADD =			\
  	libwayland-util.la			\
  	libwayland-client.la			\
  	libwayland-server.la			\

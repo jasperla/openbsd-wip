@@ -2,8 +2,8 @@ $OpenBSD$
 Add *BSD support.
 
 Based on the work done by kwm81 at Github.
---- src/wayland-shm.c.orig	Sat Jun 13 01:31:24 2015
-+++ src/wayland-shm.c	Sat Jan  9 16:02:54 2016
+--- src/wayland-shm.c.orig	Fri Feb  5 03:37:40 2016
++++ src/wayland-shm.c	Thu Mar 24 17:44:22 2016
 @@ -30,6 +30,8 @@
  
  #define _GNU_SOURCE
@@ -144,140 +144,11 @@ Based on the work done by kwm81 at Github.
  
  	pool->resource =
  		wl_resource_create(client, &wl_shm_pool_interface, 1, id);
-@@ -315,41 +404,6 @@ wl_display_init_shm(struct wl_display *display)
- }
- 
- WL_EXPORT struct wl_shm_buffer *
--wl_shm_buffer_create(struct wl_client *client,
--		     uint32_t id, int32_t width, int32_t height,
--		     int32_t stride, uint32_t format)
--{
--	struct wl_shm_buffer *buffer;
--
--	if (!format_is_supported(client, format))
--		return NULL;
--
--	buffer = malloc(sizeof *buffer + stride * height);
--	if (buffer == NULL)
--		return NULL;
--
--	buffer->width = width;
--	buffer->height = height;
--	buffer->format = format;
--	buffer->stride = stride;
--	buffer->offset = 0;
--	buffer->pool = NULL;
--
--	buffer->resource =
--		wl_resource_create(client, &wl_buffer_interface, 1, id);
--	if (buffer->resource == NULL) {
--		free(buffer);
--		return NULL;
--	}
--
--	wl_resource_set_implementation(buffer->resource,
--				       &shm_buffer_interface,
--				       buffer, destroy_buffer);
--
--	return buffer;
--}
--
--WL_EXPORT struct wl_shm_buffer *
- wl_shm_buffer_get(struct wl_resource *resource)
+@@ -332,7 +421,6 @@ wl_shm_buffer_get_stride(struct wl_shm_buffer *buffer)
  {
- 	if (resource == NULL)
-@@ -368,7 +422,6 @@ wl_shm_buffer_get_stride(struct wl_shm_buffer *buffer)
  	return buffer->stride;
  }
- 
 -
+ 
  /** Get a pointer to the memory for the SHM buffer
   *
-  * \param buffer The buffer object
-@@ -388,10 +441,12 @@ wl_shm_buffer_get_stride(struct wl_shm_buffer *buffer)
- WL_EXPORT void *
- wl_shm_buffer_get_data(struct wl_shm_buffer *buffer)
- {
--	if (buffer->pool)
--		return buffer->pool->data + buffer->offset;
--	else
--		return buffer + 1;
-+	assert(buffer->pool);
-+
-+	if (!buffer->pool)
-+		return NULL;
-+
-+	return buffer->pool->data + buffer->offset;
- }
- 
- WL_EXPORT uint32_t
-@@ -412,6 +467,48 @@ wl_shm_buffer_get_height(struct wl_shm_buffer *buffer)
- 	return buffer->height;
- }
- 
-+/** Get a reference to a shm_buffer's shm_pool
-+ *
-+ * \param buffer The buffer object
-+ *
-+ * Returns a pointer to a buffer's shm_pool and increases the
-+ * shm_pool refcount.
-+ *
-+ * The compositor must remember to call wl_shm_pool_unref when
-+ * it no longer needs the reference to ensure proper destruction
-+ * of the pool.
-+ *
-+ * \memberof wl_shm_buffer
-+ * \sa wl_shm_pool_unref
-+ */
-+WL_EXPORT struct wl_shm_pool *
-+wl_shm_buffer_ref_pool(struct wl_shm_buffer *buffer)
-+{
-+	assert(buffer->pool->refcount);
-+
-+	buffer->pool->refcount++;
-+	return buffer->pool;
-+}
-+
-+/** Unreference a shm_pool
-+ *
-+ * \param buffer The pool object
-+ *
-+ * Drops a reference to a wl_shm_pool object.
-+ *
-+ * This is only necessary if the compositor has explicitly
-+ * taken a reference with wl_shm_buffer_ref_pool(), otherwise
-+ * the pool will be automatically destroyed when appropriate.
-+ *
-+ * \memberof wl_shm_pool
-+ * \sa wl_shm_buffer_ref_pool
-+ */
-+WL_EXPORT void
-+wl_shm_pool_unref(struct wl_shm_pool *pool)
-+{
-+	shm_pool_unref(pool);
-+}
-+
- static void
- reraise_sigbus(void)
- {
-@@ -573,3 +670,20 @@ wl_shm_buffer_end_access(struct wl_shm_buffer *buffer)
- 		sigbus_data->current_pool = NULL;
- 	}
- }
-+
-+/** \cond */ /* Deprecated functions below. */
-+
-+WL_EXPORT struct wl_shm_buffer *
-+wl_shm_buffer_create(struct wl_client *client,
-+		     uint32_t id, int32_t width, int32_t height,
-+		     int32_t stride, uint32_t format)
-+{
-+	return NULL;
-+}
-+
-+/** \endcond */
-+
-+/* Functions at the end of this file are deprecated.  Instead of adding new
-+ * code here, add it before the comment above that states:
-+ * Deprecated functions below.
-+ */
