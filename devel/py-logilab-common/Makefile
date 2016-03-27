@@ -2,7 +2,7 @@
 
 COMMENT=	common low-level libraries for logilab projects
 
-MODPY_EGG_VERSION =	1.1.0
+MODPY_EGG_VERSION =	1.2.0
 DISTNAME=	logilab-common-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
@@ -17,7 +17,8 @@ MODPY_PI =		Yes
 MODULES=	lang/python
 
 RUN_DEPENDS =	devel/py-six${MODPY_FLAVOR}
-TEST_DEPENDS =	${RUN_DEPENDS} \
+TEST_DEPENDS =	${FULLPKGNAME}:${FULLPKGPATH} \
+		${RUN_DEPENDS} \
 		devel/py-tz${MODPY_FLAVOR}
 
 FLAVORS =	python3
@@ -29,14 +30,11 @@ RUN_DEPENDS +=	devel/py-mxDateTime
 
 MODPY_SETUPTOOLS =	Yes
 
-do-test: fake
-	@touch ${WRKINST}${MODPY_SITEPKG}/logilab/__init__.py
-	@cd ${WRKSRC}/test && \
-	env PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} ../bin/pytest
+do-test:
+	@cd ${WRKSRC} && ${MODPY_BIN} bin/pytest
 
-post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKINST}${MODPY_SITEPKG}
 .if ${FLAVOR:Mpython3}
+post-install:
 	mv ${PREFIX}/bin/pytest ${PREFIX}/bin/pytest${MODPY_BIN_SUFFIX}
 .endif
 
