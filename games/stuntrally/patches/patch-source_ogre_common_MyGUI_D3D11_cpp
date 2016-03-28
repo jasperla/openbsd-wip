@@ -1,9 +1,0 @@
-$OpenBSD$
---- source/ogre/common/MyGUI_D3D11.cpp.orig	Mon Jul 15 02:26:31 2013
-+++ source/ogre/common/MyGUI_D3D11.cpp	Mon Jul 15 02:26:56 2013
-@@ -1,4 +1,4 @@
--﻿#include "pch.h"
-+#include "pch.h"
- #include "MyGUI_Prerequest.h"
- #include "MyGUI_OgreDataManager.h"
- #include "MyGUI_OgreRenderManager.h"

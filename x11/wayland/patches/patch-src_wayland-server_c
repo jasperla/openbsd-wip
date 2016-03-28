@@ -2,8 +2,8 @@ $OpenBSD$
 Add *BSD support.
 
 Based on the work done by kwm81 at Github.
---- src/wayland-server.c.orig	Sat Jun 13 01:34:55 2015
-+++ src/wayland-server.c	Sat Jan  9 15:57:37 2016
+--- src/wayland-server.c.orig	Tue Feb  2 04:26:01 2016
++++ src/wayland-server.c	Thu Mar 24 16:21:31 2016
 @@ -25,6 +25,8 @@
  
  #define _GNU_SOURCE
@@ -13,9 +13,9 @@ Based on the work done by kwm81 at Github.
  #include <stdlib.h>
  #include <stdint.h>
  #include <stddef.h>
-@@ -44,6 +46,11 @@
+@@ -43,6 +45,11 @@
+ #include <sys/file.h>
  #include <sys/stat.h>
- #include <ffi.h>
  
 +#ifdef HAVE_SYS_UCRED_H
 +#include <sys/types.h>
@@ -25,7 +25,7 @@ Based on the work done by kwm81 at Github.
  #include "wayland-private.h"
  #include "wayland-server.h"
  #include "wayland-server-protocol.h"
-@@ -80,7 +87,13 @@ struct wl_client {
+@@ -79,7 +86,13 @@ struct wl_client {
  	struct wl_list link;
  	struct wl_map objects;
  	struct wl_signal destroy_signal;
@@ -39,7 +39,7 @@ Based on the work done by kwm81 at Github.
  	int error;
  };
  
-@@ -429,10 +442,29 @@ wl_client_create(struct wl_display *display, int fd)
+@@ -428,10 +441,29 @@ wl_client_create(struct wl_display *display, int fd)
  	if (!client->source)
  		goto err_client;
  
@@ -69,7 +69,7 @@ Based on the work done by kwm81 at Github.
  
  	client->connection = wl_connection_create(fd);
  	if (client->connection == NULL)
-@@ -484,12 +516,22 @@ WL_EXPORT void
+@@ -483,12 +515,22 @@ WL_EXPORT void
  wl_client_get_credentials(struct wl_client *client,
  			  pid_t *pid, uid_t *uid, gid_t *gid)
  {
@@ -91,4 +91,4 @@ Based on the work done by kwm81 at Github.
 +#endif
  }
  
- /** Look up an object in the client name space
+ /** Get the file descriptor for the client

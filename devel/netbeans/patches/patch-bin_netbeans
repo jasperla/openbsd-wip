@@ -3,7 +3,7 @@ $OpenBSD$
 - use public domain Korn shell
 
 --- bin/netbeans.orig	Thu Oct 22 22:46:42 2015
-+++ bin/netbeans	Thu Dec  3 20:16:56 2015
++++ bin/netbeans	Tue Dec 22 20:11:17 2015
 @@ -152,7 +152,7 @@ fi
  heap_size () {
      mem=640
@@ -13,7 +13,18 @@ $OpenBSD$
          mem=`cat /proc/meminfo | grep MemTotal | tr -d [:space:][:alpha:]:`
          mem=`expr $mem / 1024`
          ;;
-@@ -209,9 +209,9 @@ launchNbexec() {
+@@ -163,6 +163,10 @@ heap_size () {
+         mem=`/usr/sbin/sysctl hw.memsize | tr -d [:alpha:][:space:].:`
+         mem=`expr $mem / 1048576`
+         ;;
++    OpenBSD*)
++        mem=`/sbin/sysctl hw.usermem | tr -d [:space:][:alpha:]=.:`
++        ((mem=$mem/1048576))
++        ;;
+         *)
+         ;;
+     esac
+@@ -209,9 +213,9 @@ launchNbexec() {
      done | head -n 1`
      sh=sh
      # #73162: Ubuntu uses the ancient Bourne shell, which does not implement trap well.
@@ -25,7 +36,7 @@ $OpenBSD$
      fi
      if [ "${founduserdir}" = "yes" ]; then
          exec $sh "$nbexec" "$@"
-@@ -245,6 +245,7 @@ case "`uname`" in
+@@ -245,6 +249,7 @@ case "`uname`" in
              --jdkhome '"$netbeans_jdkhome"' \
              --branding nb \
              --clusters '"$netbeans_clusters"' \

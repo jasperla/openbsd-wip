@@ -1,0 +1,12 @@
+$OpenBSD$
+--- lib/sha1.c.orig	Sat Mar 26 11:41:03 2016
++++ lib/sha1.c	Sat Mar 26 11:41:14 2016
+@@ -36,7 +36,7 @@
+ #include <string.h>
+ #endif /* USE_HOSTCC */
+ #include <watchdog.h>
+-#include "sha1.h"
++#include <u-boot/sha1.h>
+ 
+ /*
+  * 32-bit integer manipulation macros (big endian)

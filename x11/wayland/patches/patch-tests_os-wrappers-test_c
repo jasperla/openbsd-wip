@@ -1,8 +1,18 @@
 $OpenBSD$
 Add *BSD support.
---- tests/os-wrappers-test.c.orig	Sat Jun 13 01:31:24 2015
-+++ tests/os-wrappers-test.c	Sun Jan 17 22:30:02 2016
-@@ -37,7 +37,11 @@
+
+Note: wrapping fcntl() on OpenBSD isn't possible, so tests will fail.
+--- tests/os-wrappers-test.c.orig	Mon Jul  6 22:38:51 2015
++++ tests/os-wrappers-test.c	Sat Mar 26 19:26:32 2016
+@@ -26,6 +26,7 @@
+ 
+ #define _GNU_SOURCE
+ 
++#include <err.h>
+ #include <stdlib.h>
+ #include <assert.h>
+ #include <sys/types.h>
+@@ -37,7 +38,11 @@
  #include <stdarg.h>
  #include <fcntl.h>
  #include <stdio.h>
@@ -15,7 +25,7 @@ Add *BSD support.
  
  #include "wayland-private.h"
  #include "test-runner.h"
-@@ -54,9 +58,16 @@ static int wrapped_calls_fcntl;
+@@ -54,9 +59,16 @@ static int wrapped_calls_fcntl;
  static ssize_t (*real_recvmsg)(int, struct msghdr *, int);
  static int wrapped_calls_recvmsg;
  
@@ -32,7 +42,7 @@ Add *BSD support.
  static void
  init_fallbacks(int do_fallbacks)
  {
-@@ -64,7 +75,12 @@ init_fallbacks(int do_fallbacks)
+@@ -64,7 +76,12 @@ init_fallbacks(int do_fallbacks)
  	real_socket = dlsym(RTLD_NEXT, "socket");
  	real_fcntl = dlsym(RTLD_NEXT, "fcntl");
  	real_recvmsg = dlsym(RTLD_NEXT, "recvmsg");
@@ -45,15 +55,16 @@ Add *BSD support.
  }
  
  __attribute__ ((visibility("default"))) int
-@@ -80,6 +96,7 @@ socket(int domain, int type, int protocol)
+@@ -80,6 +97,8 @@ socket(int domain, int type, int protocol)
  	return real_socket(domain, type, protocol);
  }
  
-+#if 0
++/* won't work on OpenBSD, since real fcntl have to be called early */
++#if !defined(__OpenBSD__)
  __attribute__ ((visibility("default"))) int
  fcntl(int fd, int cmd, ...)
  {
-@@ -99,6 +116,7 @@ fcntl(int fd, int cmd, ...)
+@@ -99,6 +118,7 @@ fcntl(int fd, int cmd, ...)
  
  	return real_fcntl(fd, cmd, arg);
  }
@@ -61,7 +72,7 @@ Add *BSD support.
  
  __attribute__ ((visibility("default"))) ssize_t
  recvmsg(int sockfd, struct msghdr *msg, int flags)
-@@ -113,6 +131,7 @@ recvmsg(int sockfd, struct msghdr *msg, int flags)
+@@ -113,6 +133,7 @@ recvmsg(int sockfd, struct msghdr *msg, int flags)
  	return real_recvmsg(sockfd, msg, flags);
  }
  
@@ -69,7 +80,7 @@ Add *BSD support.
  __attribute__ ((visibility("default"))) int
  epoll_create1(int flags)
  {
-@@ -126,7 +145,24 @@ epoll_create1(int flags)
+@@ -126,7 +147,24 @@ epoll_create1(int flags)
  
  	return real_epoll_create1(flags);
  }
@@ -94,7 +105,15 @@ Add *BSD support.
  static void
  do_os_wrappers_socket_cloexec(int n)
  {
-@@ -334,14 +370,14 @@ TEST(os_wrappers_recvmsg_cloexec_fallback)
+@@ -183,6 +221,7 @@ do_os_wrappers_dupfd_cloexec(int n)
+ 	 * Must have 4 calls if falling back, but must also allow
+ 	 * falling back without a forced fallback.
+ 	 */
++	warnx("wrapped_calls_fcntl is %d, should be larger than %d", wrapped_calls_fcntl, n);
+ 	assert(wrapped_calls_fcntl > n);
+ 
+ 	exec_fd_leak_check(nr_fds);
+@@ -334,14 +373,14 @@ TEST(os_wrappers_recvmsg_cloexec_fallback)
  }
  
  static void
@@ -111,7 +130,7 @@ Add *BSD support.
  	assert(fd >= 0);
  
  #ifdef EPOLL_CLOEXEC
-@@ -353,16 +389,18 @@ do_os_wrappers_epoll_create_cloexec(int n)
+@@ -353,16 +392,18 @@ do_os_wrappers_epoll_create_cloexec(int n)
  	exec_fd_leak_check(nr_fds);
  }
  

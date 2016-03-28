@@ -1,6 +1,0 @@
-seen when loading irssi-icb :
-
-irssi:/usr/local/lib/irssi/modules/libfe_icb.so: undefined symbol 'icb_split_free'
-irssi:/usr/local/lib/irssi/modules/libfe_icb.so: undefined symbol 'icb_command'
-irssi:/usr/local/lib/irssi/modules/libfe_icb.so: undefined symbol 'icb_split'
-irssi:/usr/local/lib/irssi/modules/libfe_icb.so: undefined symbol 'icb_nicklist_insert'

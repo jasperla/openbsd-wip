@@ -1,9 +1,0 @@
-$OpenBSD$
---- source/ogre/common/MyGUI_D3D11.h.orig	Sun Jul 14 20:12:07 2013
-+++ source/ogre/common/MyGUI_D3D11.h	Sun Jul 14 20:12:40 2013
-@@ -1,4 +1,4 @@
--﻿#ifndef __MYGUI_OGRE_D3D11PLATFORM_H__
-+#ifndef __MYGUI_OGRE_D3D11PLATFORM_H__
- #define __MYGUI_OGRE_D3D11PLATFORM_H__
- 
- #include "MyGUI_OgreTexture.h"
