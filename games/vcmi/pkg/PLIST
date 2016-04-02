@@ -116,19 +116,9 @@ lib/vcmi/libminizip.so
 @lib lib/vcmi/libvcmi.so.${LIBvcmi_VERSION}
 share/applications/vcmiclient.desktop
 share/doc/pkg-readmes/${FULLPKGNAME}
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/256x256/
-share/icons/hicolor/256x256/apps/
 share/icons/hicolor/256x256/apps/vcmiclient.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/vcmiclient.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/vcmiclient.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/vcmiclient.png
 share/vcmi/
 share/vcmi/Mods/
@@ -152,9 +142,50 @@ share/vcmi/Mods/vcmi/Data/stackWindow/info-panel-0.png
 share/vcmi/Mods/vcmi/Data/stackWindow/info-panel-1.png
 share/vcmi/Mods/vcmi/Data/stackWindow/info-panel-2.png
 share/vcmi/Mods/vcmi/Data/stackWindow/spell-effects.png
+share/vcmi/Mods/vcmi/Mods/
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Analogy/
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Analogy/Content/
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Analogy/Content/config/
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Analogy/Content/config/defaultTemplates/
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Analogy/Content/config/defaultTemplates/analogy.json
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Analogy/mod.json
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Clash of Dragons/
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Clash of Dragons/Content/
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Clash of Dragons/Content/config/
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Clash of Dragons/Content/config/defaultTemplates/
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Clash of Dragons/Content/config/defaultTemplates/clashOfDragons.json
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Clash of Dragons/mod.json
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Coldshadows Fantasy/
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Coldshadows Fantasy/Content/
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Coldshadows Fantasy/Content/config/
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Coldshadows Fantasy/Content/config/defaultTemplates/
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Coldshadows Fantasy/Content/config/defaultTemplates/coldshadowsFantasy.json
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Coldshadows Fantasy/mod.json
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Golden Ring/
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Golden Ring/Content/
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Golden Ring/Content/config/
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Golden Ring/Content/config/defaultTemplates/
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Golden Ring/Content/config/defaultTemplates/goldenRing.json
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Golden Ring/mod.json
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Jebus Cross/
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Jebus Cross/Content/
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Jebus Cross/Content/config/
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Jebus Cross/Content/config/defaultTemplates/
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Jebus Cross/Content/config/defaultTemplates/jebusCross.json
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Jebus Cross/mod.json
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Upgrade/
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Upgrade/Content/
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Upgrade/Content/config/
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Upgrade/Content/config/defaultTemplates/
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Upgrade/Content/config/defaultTemplates/upgrade.json
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/Mods/Upgrade/mod.json
+share/vcmi/Mods/vcmi/Mods/defaultTemplates/mod.json
 share/vcmi/Mods/vcmi/Sprites/
 share/vcmi/Mods/vcmi/Sprites/PortraitsLarge.json
 share/vcmi/Mods/vcmi/Sprites/PortraitsSmall.json
+share/vcmi/Mods/vcmi/Sprites/ScSelC.json
 share/vcmi/Mods/vcmi/Sprites/buttons/
 share/vcmi/Mods/vcmi/Sprites/buttons/commander.json
 share/vcmi/Mods/vcmi/Sprites/buttons/commanderNormal.png
@@ -163,6 +194,8 @@ share/vcmi/Mods/vcmi/Sprites/buttons/resolution.json
 share/vcmi/Mods/vcmi/Sprites/buttons/resolutionNormal.png
 share/vcmi/Mods/vcmi/Sprites/buttons/resolutionPressed.png
 share/vcmi/Mods/vcmi/Sprites/itpa.json
+share/vcmi/Mods/vcmi/Sprites/mapFormatIcons/
+share/vcmi/Mods/vcmi/Sprites/mapFormatIcons/vcmi1.png
 share/vcmi/Mods/vcmi/Sprites/stackWindow/
 share/vcmi/Mods/vcmi/Sprites/stackWindow/cancel-normal.png
 share/vcmi/Mods/vcmi/Sprites/stackWindow/cancel-pressed.png
@@ -247,7 +280,6 @@ share/vcmi/config/objects/rewardable.json
 share/vcmi/config/obstacles.json
 share/vcmi/config/resolutions.json
 share/vcmi/config/resources.json
-share/vcmi/config/rmg.json
 share/vcmi/config/schemas/
 share/vcmi/config/schemas/artifact.json
 share/vcmi/config/schemas/bonus.json
@@ -262,6 +294,7 @@ share/vcmi/config/schemas/objectTemplate.json
 share/vcmi/config/schemas/objectType.json
 share/vcmi/config/schemas/settings.json
 share/vcmi/config/schemas/spell.json
+share/vcmi/config/schemas/template.json
 share/vcmi/config/schemas/townBuilding.json
 share/vcmi/config/schemas/townSiege.json
 share/vcmi/config/schemas/townStructure.json
