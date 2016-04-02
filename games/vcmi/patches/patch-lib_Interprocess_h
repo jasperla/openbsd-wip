@@ -1,6 +1,6 @@
 $OpenBSD$
---- lib/Interprocess.h.orig	Mon Apr  2 15:14:38 2012
-+++ lib/Interprocess.h	Fri Jun 28 19:29:36 2013
+--- lib/Interprocess.h.orig	Mon Mar 14 15:28:17 2016
++++ lib/Interprocess.h	Sat Apr  2 02:34:56 2016
 @@ -1,6 +1,7 @@
  #pragma once
  
@@ -14,5 +14,4 @@ $OpenBSD$
  		boost::interprocess::shared_memory_object::remove("vcmi_memory");
  	}
 -};
-\ No newline at end of file
 +};
