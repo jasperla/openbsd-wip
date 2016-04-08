@@ -28,8 +28,9 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # PyPy is MIT; the Python libs it comes with have the same license as Python
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		bz2 c crypto curses expat ffi gdbm m ncurses panel
-WANTLIB +=		pthread sqlite3 ssl ${MODTCL_LIB} ${MODTK_LIB} util z
+WANTLIB +=		bz2 c crypto curses expat ffi gdbm iconv intl m
+WANTLIB +=		ncurses panel pthread sqlite3 ssl ${MODTCL_LIB}
+WANTLIB +=		${MODTK_LIB} util z
 
 MASTER_SITES =		https://bitbucket.org/pypy/pypy/downloads/
 MASTER_SITES0 =		https://spacehopper.org/mirrors/
@@ -46,7 +47,7 @@ DISTFILES +=		${BOOTSTRAP-${MACHINE_ARCH}}:0
 # if adding archs, list *all* bootstraps in SUPDISTFILES
 SUPDISTFILES =		${BOOTSTRAP-amd64}:0
 
-MODULES +=		devel/gettext lang/python gcc4 lang/tcl x11/tk
+MODULES +=		lang/python gcc4 lang/tcl x11/tk
 MODPY_VERSION =		2.7
 MODGCC4_ARCHS =		*
 MODGCC4_LANGS =		c
