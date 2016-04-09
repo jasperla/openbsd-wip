@@ -25,6 +25,8 @@ ${PREFIX-web}/zoneminder/api/app/Config/database.php
 - email settings in
 ${PREFIX-web}/zoneminder/api/app/Config/email.php ??
 
+- needs notes on how to load the db schema, setup users etc
+
 .....
 
 
