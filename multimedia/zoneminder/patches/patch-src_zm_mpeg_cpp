@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/zm_mpeg.cpp.orig	Wed Feb  3 19:30:55 2016
++++ src/zm_mpeg.cpp	Sat Apr  9 09:50:13 2016
+@@ -19,7 +19,7 @@
+ 
+ #include <stdlib.h>
+ #include <string.h>
+-
++#include <errno.h> 
+ #include "zm.h"
+ #include "zm_rgb.h"
+ #include "zm_mpeg.h"

@@ -1,11 +1,11 @@
 # $OpenBSD$
 
 COMMENT =		extensions to the Wayland protocol
-DISTNAME =		wayland-protocols-1.0
+DISTNAME =		wayland-protocols-1.3
 CATEGORIES =		x11
 HOMEPAGE =		http://wayland.freedesktop.org/
 
-#MAINTAINER =		???
+MAINTAINER =		Vadim Zhukov <persgray@gmail.com>
 
 # MIT, examples are GPL
 PERMIT_PACKAGE_CDROM =	Yes
@@ -15,6 +15,8 @@ EXTRACT_SUFX =		.tar.xz
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
+
+BUILD_DEPENDS =		x11/wayland
 
 PKG_ARCH =		*
 

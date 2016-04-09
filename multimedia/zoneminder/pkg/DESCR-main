@@ -1,0 +1,9 @@
+ZoneMinder is an integrated set of applications which provide a complete
+surveillance solution allowing capture, analysis, recording and
+monitoring of a wide range of CCTV or security cameras.
+
+It supports network and directly-connected cameras using video(4) and
+bktr(4) and provides a full-featured web interface; apps for Android and
+iOS are also available.
+
+The optional "vlc" flavour builds with support to access cameras via VLC.

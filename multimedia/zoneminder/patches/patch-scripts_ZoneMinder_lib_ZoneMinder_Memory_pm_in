@@ -1,0 +1,16 @@
+$OpenBSD$
+--- scripts/ZoneMinder/lib/ZoneMinder/Memory.pm.in.orig	Wed Feb  3 19:30:54 2016
++++ scripts/ZoneMinder/lib/ZoneMinder/Memory.pm.in	Sat Apr  9 14:22:09 2016
+@@ -133,11 +133,7 @@ delete @ENV{qw(IFS CDPATH ENV BASH_ENV)};
+ 
+ # Native architecture
+ 
+-# The following returned the wrong result on some 32 bit distros running on 64 bit hardware
+-#our $arch = int(3.2*length(~0));
+-
+-# New method for determining the bitness
+-our $arch = 32 + 32*( qx(uname -m) =~ /64/ );
++our $arch = 64;
+ 
+ our $native = $arch/8;
+ our $mem_seq = 0;

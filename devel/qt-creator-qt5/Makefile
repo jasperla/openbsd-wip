@@ -2,7 +2,7 @@
 
 COMMENT =		cross-platform IDE for use with Qt
 SHARED_ONLY =		Yes
-V = 			3.6.0
+V = 			3.6.1
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
 

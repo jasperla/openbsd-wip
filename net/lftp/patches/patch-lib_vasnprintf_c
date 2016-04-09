@@ -1,0 +1,22 @@
+$OpenBSD: patch-lib_vasnprintf_c,v 1.3 2013/05/29 14:08:06 jasper Exp $
+Initialize variable e
+--- lib/vasnprintf.c.orig	Thu Jan 24 12:00:48 2013
++++ lib/vasnprintf.c	Thu May 16 09:53:26 2013
+@@ -1293,7 +1293,7 @@ scale10_round_decimal_decoded (int e, mpn_t m, void *m
+ static char *
+ scale10_round_decimal_long_double (long double x, int n)
+ {
+-  int e IF_LINT(= 0);
++  int e = 0;
+   mpn_t m;
+   void *memory = decode_long_double (x, &e, &m);
+   return scale10_round_decimal_decoded (e, m, memory, n);
+@@ -1311,7 +1311,7 @@ scale10_round_decimal_long_double (long double x, int 
+ static char *
+ scale10_round_decimal_double (double x, int n)
+ {
+-  int e IF_LINT(= 0);
++  int e = 0;
+   mpn_t m;
+   void *memory = decode_double (x, &e, &m);
+   return scale10_round_decimal_decoded (e, m, memory, n);

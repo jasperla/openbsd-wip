@@ -3,7 +3,7 @@
 COMMENT-main=		lint-like code checker for Python code
 COMMENT-gui=		GUI for pylint
 
-MODPY_EGG_VERSION=		1.5.4
+MODPY_EGG_VERSION=		1.5.5
 DISTNAME=		pylint-${MODPY_EGG_VERSION}
 PKGNAME-main=		pylint-${MODPY_EGG_VERSION}
 PKGNAME-gui=		pylint-gui-${MODPY_EGG_VERSION}

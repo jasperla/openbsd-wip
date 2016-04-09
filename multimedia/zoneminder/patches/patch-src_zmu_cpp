@@ -1,0 +1,45 @@
+$OpenBSD$
+
+may need +#include <iostream>
+
+--- src/zmu.cpp.orig	Wed Feb  3 19:30:55 2016
++++ src/zmu.cpp	Sat Apr  9 11:23:04 2016
+@@ -526,7 +526,7 @@ int main( int argc, char *argv[] )
+ 				else
+ 				{
+ 					if ( have_output ) printf( "%c", separator );
+-					printf( "%ld.%02ld", timestamp.tv_sec, timestamp.tv_usec/10000 );
++					printf( "%lld.%02ld", (long long)timestamp.tv_sec, timestamp.tv_usec/10000 );
+ 					have_output = true;
+ 				}
+ 			}
+@@ -793,12 +793,12 @@ int main( int argc, char *argv[] )
+ 						if ( monitor && monitor->connect() )
+ 						{
+ 							struct timeval tv = monitor->GetTimestamp();
+-							printf( "%4d%5d%6d%9d%11ld.%02ld%6d%6d%8d%8.2f\n",
++							printf( "%4d%5d%6d%9d%11lld.%02ld%6d%6d%8d%8.2f\n",
+ 								monitor->Id(),
+ 								function,
+ 								monitor->GetState(),
+ 								monitor->GetTriggerState(),
+-								tv.tv_sec, tv.tv_usec/10000,
++								(long long)tv.tv_sec, tv.tv_usec/10000,
+ 								monitor->GetLastReadIndex(),
+ 								monitor->GetLastWriteIndex(),
+ 								monitor->GetLastEvent(),
+@@ -810,12 +810,12 @@ int main( int argc, char *argv[] )
+ 					else
+ 					{
+ 						struct timeval tv = { 0, 0 };
+-						printf( "%4d%5d%6d%9d%11ld.%02ld%6d%6d%8d%8.2f\n",
++						printf( "%4d%5d%6d%9d%11lld.%02ld%6d%6d%8d%8.2f\n",
+ 							mon_id,
+ 							function,
+ 							0,
+ 							0,
+-							tv.tv_sec, tv.tv_usec/10000,
++							(long long)tv.tv_sec, tv.tv_usec/10000,
+ 							0,
+ 							0,
+ 							0,

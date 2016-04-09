@@ -1,0 +1,12 @@
+$OpenBSD$
+--- configure.orig	Sat Apr  2 23:30:18 2016
++++ configure	Sat Apr  2 23:30:42 2016
+@@ -48257,7 +48257,7 @@ fi
+ 	    readline_include_dir="$readline_include_dir/readline"
+ 	fi
+         readline_ld_flags="-L$readline_prefix/lib"
+-        readline_lib_flags="-lreadline"
++        readline_lib_flags="-lereadline"
+         run_readline_test="yes"
+     elif test "$readline_requested" = "yes"; then
+         if test -n "$readline_include_dir" -a -n "$readline_lib_flags"; then

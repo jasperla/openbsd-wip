@@ -1,0 +1,12 @@
+$OpenBSD$
+--- cmake/Modules/Pod2Man.cmake.orig	Sat Apr  9 11:41:43 2016
++++ cmake/Modules/Pod2Man.cmake	Sat Apr  9 11:42:38 2016
+@@ -58,7 +58,7 @@ MACRO(POD2MAN PODFILE MANFILE SECTION)
+ 
+ 	INSTALL(
+ 		FILES ${CMAKE_CURRENT_BINARY_DIR}/${MANFILE}.${SECTION}.gz
+-		DESTINATION share/man/man${SECTION}
++		DESTINATION man/man${SECTION}
+     	)
+ ENDMACRO(POD2MAN PODFILE MANFILE SECTION)
+ 
