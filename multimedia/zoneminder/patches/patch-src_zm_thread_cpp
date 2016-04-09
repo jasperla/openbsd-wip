@@ -1,0 +1,15 @@
+$OpenBSD$
+--- src/zm_thread.cpp.orig	Wed Feb  3 19:30:55 2016
++++ src/zm_thread.cpp	Sat Apr  9 10:50:45 2016
+@@ -234,7 +234,11 @@ template <class T> void ThreadData<T>::updateValueBroa
+ 
+ Thread::Thread() :
+     mThreadCondition( mThreadMutex ),
++#ifdef __OpenBSD__
++    mPid( NULL ),
++#else
+     mPid( -1 ),
++#endif
+     mStarted( false ),
+     mRunning( false )
+ {

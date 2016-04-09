@@ -1,0 +1,21 @@
+$OpenBSD$
+--- src/zm_local_camera.h.orig	Wed Feb  3 19:30:54 2016
++++ src/zm_local_camera.h	Sat Apr  9 14:28:27 2016
+@@ -35,6 +35,9 @@
+ #ifdef HAVE_LINUX_VIDEODEV2_H
+ #include <linux/videodev2.h>
+ #endif // HAVE_LINUX_VIDEODEV2_H
++#ifdef HAVE_SYS_VIDEOIO_H
++#include <sys/videoio.h>
++#endif // HAVE_SYS_VIDEOIO_H
+ 
+ #include "zm_ffmpeg.h"
+ 
+@@ -89,6 +92,7 @@ class LocalCamera : public Camera (protected)
+ 	
+ 	uint32_t AutoSelectFormat(int p_colours);
+ 
++/* if adding bktr(4), parts from freebsd's patch-src_zm_local_camera.h need adding around here */
+ 	static int camera_count;
+ 	static int channel_count;
+ 	static int channels[VIDEO_MAX_FRAME];
