@@ -16,7 +16,7 @@ WANTLIB += assuan c curl ereadline glib-2.0 gpg-error gpgme ncursesw
 WANTLIB += otr pthread strophe uuid intl
 
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE)DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS} \
 		devel/gettext-tools
 
 LIB_DEPENDS =	devel/readline>=6.1p2 \
