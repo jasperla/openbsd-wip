@@ -1,0 +1,16 @@
+$OpenBSD$
+--- src/zm_remote_camera.h.orig	Wed Feb  3 19:30:55 2016
++++ src/zm_remote_camera.h	Sat Apr  9 09:50:13 2016
+@@ -23,10 +23,12 @@
+ #include "zm_camera.h"
+ #include "zm_rtsp_auth.h"
+ 
++#include <netinet/in.h>
+ #include <string>
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <netdb.h>
++#include <unistd.h>
+ 
+ //
+ // Class representing 'remote' cameras, i.e. those which are

@@ -1,0 +1,24 @@
+$OpenBSD$
+
+fix runtime issues on systems with long long time_t (backwards compatibly)
+
+--- src/zm_logger.cpp.orig	Wed Feb  3 19:30:54 2016
++++ src/zm_logger.cpp	Sat Apr  9 11:00:06 2016
+@@ -33,6 +33,8 @@
+ #include <errno.h>
+ #ifdef __FreeBSD__
+ #include <sys/thr.h>
++#endif
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <libgen.h>
+ #endif
+ 
+@@ -604,7 +606,7 @@ void Logger::logPrint( bool hex, const char * const fi
+ 
+             mysql_real_escape_string( &mDbConnection, escapedString, syslogStart, strlen(syslogStart) );
+ 			
+-            snprintf( sql, sizeof(sql), "insert into Logs ( TimeKey, Component, ServerId, Pid, Level, Code, Message, File, Line ) values ( %ld.%06ld, '%s', %d, %d, %d, '%s', '%s', '%s', %d )", timeVal.tv_sec, timeVal.tv_usec, mId.c_str(), staticConfig.SERVER_ID, tid, level, classString, escapedString, file, line );
++            snprintf( sql, sizeof(sql), "insert into Logs ( TimeKey, Component, ServerId, Pid, Level, Code, Message, File, Line ) values ( %lld.%06ld, '%s', %d, %d, %d, '%s', '%s', '%s', %d )", (long long)timeVal.tv_sec, timeVal.tv_usec, mId.c_str(), staticConfig.SERVER_ID, tid, level, classString, escapedString, file, line );
+             if ( mysql_query( &mDbConnection, sql ) )
+             {
+                 databaseLevel( NOLOG );

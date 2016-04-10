@@ -5,12 +5,11 @@ DISTNAME =	kauth-${VERSION}
 
 SHARED_LIBS =	KF5Auth		0.0
 
-WANTLIB =	KF5CoreAddons Qt5Core Qt5DBus Qt5Gui Qt5Widgets m
+WANTLIB =	KF5CoreAddons Qt5Core Qt5DBus Qt5Gui Qt5Widgets
+WANTLIB +=	c m polkit-qt5-core-1
 
-BUILD_DEPENDS =	x11/polkit-qt,qt5
-RUN_DEPENDS =	x11/polkit-qt,qt5
-
-LIB_DEPENDS =	devel/kf5/kcoreaddons
+LIB_DEPENDS =	devel/kf5/kcoreaddons \
+		x11/polkit-qt,qt5
 
 TEST_IS_INTERACTIVE =	X11
 

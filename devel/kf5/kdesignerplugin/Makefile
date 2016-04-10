@@ -9,9 +9,11 @@ WANTLIB += KF5IconThemes KF5ItemViews KF5JobWidgets KF5KIOCore
 WANTLIB += KF5KIOFileWidgets KF5KIOWidgets KF5Plotting KF5Service
 WANTLIB += KF5Solid KF5SonnetCore KF5SonnetUi KF5TextWidgets KF5WebKit
 WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml c m pthread
+WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml c m
 
-BUILD_DEPENDS =	devel/kf5/kdoctools
+BUILD_DEPENDS =	devel/gettext-tools \
+		devel/kf5/kdoctools
+
 RUN_DEPENDS =	devel/kf5/kdoctools
 
 LIB_DEPENDS =	devel/kf5/kcompletion \

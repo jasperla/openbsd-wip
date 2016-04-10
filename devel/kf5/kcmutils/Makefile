@@ -11,7 +11,7 @@ WANTLIB += KF5QuickAddons KF5Service KF5WidgetsAddons KF5XmlGui
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5Widgets
 WANTLIB += Qt5Xml m
 
-MODULES =	devel/gettext
+BUILD_DEPENDS =	devel/gettext-tools
 
 LIB_DEPENDS =	devel/kf5/kconfigwidgets \
 		devel/kf5/kcoreaddons \

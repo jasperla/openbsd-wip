@@ -3,12 +3,17 @@
 COMMENT =	create documentation from DocBook
 DISTNAME =	kdoctools-${VERSION}
 
-WANTLIB +=	KF5Archive Qt5Core c exslt m pthread xml2 xslt
+WANTLIB =	KF5Archive Qt5Core c exslt m xml2 xslt
 
-MODULES =	devel/gettext
+BUILD_DEPENDS =	devel/gettext-tools \
+		devel/kf5/ki18n \
+		textproc/docbook-xsl
 
-BUILD_DEPENDS =	devel/kf5/ki18n
-RUN_DEPENDS =	devel/kf5/ki18n
-LIB_DEPENDS =	devel/kf5/karchive
+RUN_DEPENDS =	devel/kf5/ki18n \
+		textproc/docbook-xsl
+
+LIB_DEPENDS =	devel/kf5/karchive \
+		textproc/libxml \
+		textproc/libxslt
 
 .include <bsd.port.mk>

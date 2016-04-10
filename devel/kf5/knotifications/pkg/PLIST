@@ -23,6 +23,7 @@ lib/cmake/KF5Notifications/KF5NotificationsTargets.cmake
 share/dbus-1/interfaces/kf5_org.kde.StatusNotifierItem.xml
 share/dbus-1/interfaces/kf5_org.kde.StatusNotifierWatcher.xml
 share/kf5/mkspecs/qt_KNotifications.pri
+share/kservicetypes5/
 share/kservicetypes5/knotificationplugin.desktop
 share/locale/af/LC_MESSAGES/knotifications5_qt.qm
 share/locale/ar/LC_MESSAGES/knotifications5_qt.qm

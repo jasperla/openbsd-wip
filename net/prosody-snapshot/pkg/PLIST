@@ -103,7 +103,6 @@ lib/prosody/prosody.version
 lib/prosody/util/
 lib/prosody/util/adhoc.lua
 lib/prosody/util/array.lua
-lib/prosody/util/async.lua
 lib/prosody/util/cache.lua
 lib/prosody/util/caps.lua
 lib/prosody/util/dataforms.lua
@@ -134,6 +133,7 @@ lib/prosody/util/openssl.lua
 lib/prosody/util/paths.lua
 lib/prosody/util/pluginloader.lua
 lib/prosody/util/pposix.so
+lib/prosody/util/presence.lua
 lib/prosody/util/prosodyctl.lua
 lib/prosody/util/pubsub.lua
 lib/prosody/util/queue.lua

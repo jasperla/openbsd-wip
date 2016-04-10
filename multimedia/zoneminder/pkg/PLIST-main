@@ -1,0 +1,195 @@
+@comment $OpenBSD$
+@bin bin/zma
+bin/zmaudit.pl
+@bin bin/zmc
+bin/zmcamtool.pl
+bin/zmcontrol.pl
+bin/zmdc.pl
+@bin bin/zmf
+bin/zmfilter.pl
+bin/zmpkg.pl
+@bin bin/zmstreamer
+bin/zmsystemctl.pl
+bin/zmtrack.pl
+bin/zmtrigger.pl
+@bin bin/zmu
+bin/zmupdate.pl
+bin/zmvideo.pl
+bin/zmwatch.pl
+bin/zmx10.pl
+libdata/perl5/site_perl/ZoneMinder/
+libdata/perl5/site_perl/ZoneMinder.pm
+libdata/perl5/site_perl/ZoneMinder/Base.pm
+libdata/perl5/site_perl/ZoneMinder/Config.pm
+libdata/perl5/site_perl/ZoneMinder/ConfigAdmin.pm
+libdata/perl5/site_perl/ZoneMinder/ConfigData.pm
+libdata/perl5/site_perl/ZoneMinder/Control/
+libdata/perl5/site_perl/ZoneMinder/Control.pm
+libdata/perl5/site_perl/ZoneMinder/Control/3S.pm
+libdata/perl5/site_perl/ZoneMinder/Control/AxisV2.pm
+libdata/perl5/site_perl/ZoneMinder/Control/FI8608W_Y2k.pm
+libdata/perl5/site_perl/ZoneMinder/Control/FI8620_Y2k.pm
+libdata/perl5/site_perl/ZoneMinder/Control/FI8908W.pm
+libdata/perl5/site_perl/ZoneMinder/Control/FI8918W.pm
+libdata/perl5/site_perl/ZoneMinder/Control/FI9821W_Y2k.pm
+libdata/perl5/site_perl/ZoneMinder/Control/FI9831W.pm
+libdata/perl5/site_perl/ZoneMinder/Control/LoftekSentinel.pm
+libdata/perl5/site_perl/ZoneMinder/Control/M8640.pm
+libdata/perl5/site_perl/ZoneMinder/Control/Ncs370.pm
+libdata/perl5/site_perl/ZoneMinder/Control/PanasonicIP.pm
+libdata/perl5/site_perl/ZoneMinder/Control/PelcoD.pm
+libdata/perl5/site_perl/ZoneMinder/Control/PelcoP.pm
+libdata/perl5/site_perl/ZoneMinder/Control/SPP1802SWPTZ.pm
+libdata/perl5/site_perl/ZoneMinder/Control/SkyIPCam7xx.pm
+libdata/perl5/site_perl/ZoneMinder/Control/TVIP862.pm
+libdata/perl5/site_perl/ZoneMinder/Control/Toshiba_IK_WB11A.pm
+libdata/perl5/site_perl/ZoneMinder/Control/Visca.pm
+libdata/perl5/site_perl/ZoneMinder/Control/Wanscam.pm
+libdata/perl5/site_perl/ZoneMinder/Control/mjpgStreamer.pm
+libdata/perl5/site_perl/ZoneMinder/Control/onvif.pm
+libdata/perl5/site_perl/ZoneMinder/Database.pm
+libdata/perl5/site_perl/ZoneMinder/General.pm
+libdata/perl5/site_perl/ZoneMinder/Logger.pm
+libdata/perl5/site_perl/ZoneMinder/Memory/
+libdata/perl5/site_perl/ZoneMinder/Memory.pm
+libdata/perl5/site_perl/ZoneMinder/Memory/Mapped.pm
+libdata/perl5/site_perl/ZoneMinder/Memory/Shared.pm
+libdata/perl5/site_perl/ZoneMinder/Server.pm
+libdata/perl5/site_perl/ZoneMinder/Trigger/
+libdata/perl5/site_perl/ZoneMinder/Trigger/Channel/
+libdata/perl5/site_perl/ZoneMinder/Trigger/Channel.pm
+libdata/perl5/site_perl/ZoneMinder/Trigger/Channel/File.pm
+libdata/perl5/site_perl/ZoneMinder/Trigger/Channel/Handle.pm
+libdata/perl5/site_perl/ZoneMinder/Trigger/Channel/Inet.pm
+libdata/perl5/site_perl/ZoneMinder/Trigger/Channel/Serial.pm
+libdata/perl5/site_perl/ZoneMinder/Trigger/Channel/Spawning.pm
+libdata/perl5/site_perl/ZoneMinder/Trigger/Channel/Unix.pm
+libdata/perl5/site_perl/ZoneMinder/Trigger/Connection/
+libdata/perl5/site_perl/ZoneMinder/Trigger/Connection.pm
+libdata/perl5/site_perl/ZoneMinder/Trigger/Connection/Example.pm
+@man man/man3p/ZoneMinder.3p
+@man man/man3p/ZoneMinder::Base.3p
+@man man/man3p/ZoneMinder::Config.3p
+@man man/man3p/ZoneMinder::ConfigAdmin.3p
+@man man/man3p/ZoneMinder::ConfigData.3p
+@man man/man3p/ZoneMinder::Control.3p
+@man man/man3p/ZoneMinder::Control::3S.3p
+@man man/man3p/ZoneMinder::Control::AxisV2.3p
+@man man/man3p/ZoneMinder::Control::FI8608W_Y2k.3p
+@man man/man3p/ZoneMinder::Control::FI8620_Y2k.3p
+@man man/man3p/ZoneMinder::Control::FI8908W.3p
+@man man/man3p/ZoneMinder::Control::FI8918W.3p
+@man man/man3p/ZoneMinder::Control::FI9821W_Y2k.3p
+@man man/man3p/ZoneMinder::Control::FI9831W.3p
+@man man/man3p/ZoneMinder::Control::M8640.3p
+@man man/man3p/ZoneMinder::Control::Ncs370.3p
+@man man/man3p/ZoneMinder::Control::PanasonicIP.3p
+@man man/man3p/ZoneMinder::Control::PelcoD.3p
+@man man/man3p/ZoneMinder::Control::PelcoP.3p
+@man man/man3p/ZoneMinder::Control::SPP1802SWPTZ.3p
+@man man/man3p/ZoneMinder::Control::SkyIPCam7xx.3p
+@man man/man3p/ZoneMinder::Control::TVIP862.3p
+@man man/man3p/ZoneMinder::Control::Toshiba_IK_WB11A.3p
+@man man/man3p/ZoneMinder::Control::Visca.3p
+@man man/man3p/ZoneMinder::Control::Wanscam.3p
+@man man/man3p/ZoneMinder::Control::mjpgStreamer.3p
+@man man/man3p/ZoneMinder::Database.3p
+@man man/man3p/ZoneMinder::General.3p
+@man man/man3p/ZoneMinder::Logger.3p
+@man man/man3p/ZoneMinder::Memory.3p
+@man man/man3p/ZoneMinder::Server.3p
+@man man/man3p/ZoneMinder::Trigger::Channel.3p
+@man man/man3p/ZoneMinder::Trigger::Channel::File.3p
+@man man/man3p/ZoneMinder::Trigger::Channel::Handle.3p
+@man man/man3p/ZoneMinder::Trigger::Channel::Inet.3p
+@man man/man3p/ZoneMinder::Trigger::Channel::Serial.3p
+@man man/man3p/ZoneMinder::Trigger::Channel::Spawning.3p
+@man man/man3p/ZoneMinder::Trigger::Channel::Unix.3p
+@man man/man3p/ZoneMinder::Trigger::Connection.3p
+@man man/man3p/ZoneMinder::Trigger::Connection::Example.3p
+@man man/man8/zoneminder-zma.8
+@man man/man8/zoneminder-zmc.8
+@man man/man8/zoneminder-zmf.8
+@man man/man8/zoneminder-zmstreamer.8
+@man man/man8/zoneminder-zmu.8
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/zoneminder/
+share/doc/zoneminder/COPYING
+share/doc/zoneminder/INSTALL
+share/examples/zoneminder/
+share/examples/zoneminder/zm.conf
+@sample ${SYSCONFDIR}/zm/
+@sample ${SYSCONFDIR}/zm/zm.conf
+share/polkit-1/
+share/polkit-1/actions/
+share/polkit-1/actions/com.zoneminder.systemctl.policy
+share/polkit-1/rules.d/
+share/polkit-1/rules.d/com.zoneminder.systemctl.rules
+share/zoneminder/
+share/zoneminder/db/
+share/zoneminder/db/zm_create.sql
+share/zoneminder/db/zm_update-0.0.1.sql
+share/zoneminder/db/zm_update-0.9.10.sql
+share/zoneminder/db/zm_update-0.9.11.sql
+share/zoneminder/db/zm_update-0.9.12.sql
+share/zoneminder/db/zm_update-0.9.13.sql
+share/zoneminder/db/zm_update-0.9.15.sql
+share/zoneminder/db/zm_update-0.9.16.sql
+share/zoneminder/db/zm_update-0.9.7.sql
+share/zoneminder/db/zm_update-0.9.8.sql
+share/zoneminder/db/zm_update-0.9.9.sql
+share/zoneminder/db/zm_update-1.17.1.sql
+share/zoneminder/db/zm_update-1.17.2.sql
+share/zoneminder/db/zm_update-1.18.0.sql
+share/zoneminder/db/zm_update-1.18.1.sql
+share/zoneminder/db/zm_update-1.19.0.sql
+share/zoneminder/db/zm_update-1.19.1.sql
+share/zoneminder/db/zm_update-1.19.2.sql
+share/zoneminder/db/zm_update-1.19.3.sql
+share/zoneminder/db/zm_update-1.19.4.sql
+share/zoneminder/db/zm_update-1.19.5.sql
+share/zoneminder/db/zm_update-1.20.0.sql
+share/zoneminder/db/zm_update-1.20.1.sql
+share/zoneminder/db/zm_update-1.21.0.sql
+share/zoneminder/db/zm_update-1.21.1.sql
+share/zoneminder/db/zm_update-1.21.2.sql
+share/zoneminder/db/zm_update-1.21.3.sql
+share/zoneminder/db/zm_update-1.21.4.sql
+share/zoneminder/db/zm_update-1.22.0.sql
+share/zoneminder/db/zm_update-1.22.1.sql
+share/zoneminder/db/zm_update-1.22.2.sql
+share/zoneminder/db/zm_update-1.22.3.sql
+share/zoneminder/db/zm_update-1.23.0.sql
+share/zoneminder/db/zm_update-1.23.1.sql
+share/zoneminder/db/zm_update-1.23.2.sql
+share/zoneminder/db/zm_update-1.23.3.sql
+share/zoneminder/db/zm_update-1.24.0.sql
+share/zoneminder/db/zm_update-1.24.1.sql
+share/zoneminder/db/zm_update-1.24.2.sql
+share/zoneminder/db/zm_update-1.24.3.sql
+share/zoneminder/db/zm_update-1.24.4.sql
+share/zoneminder/db/zm_update-1.26.0.sql
+share/zoneminder/db/zm_update-1.26.1.sql
+share/zoneminder/db/zm_update-1.26.2.sql
+share/zoneminder/db/zm_update-1.26.3.sql
+share/zoneminder/db/zm_update-1.26.5.sql
+share/zoneminder/db/zm_update-1.27.0.sql
+share/zoneminder/db/zm_update-1.27.99.0.sql
+share/zoneminder/db/zm_update-1.28.0.sql
+share/zoneminder/db/zm_update-1.28.1.sql
+share/zoneminder/db/zm_update-1.28.100.sql
+share/zoneminder/db/zm_update-1.28.101.sql
+share/zoneminder/db/zm_update-1.28.102.sql
+share/zoneminder/db/zm_update-1.28.103.sql
+share/zoneminder/db/zm_update-1.28.104.sql
+share/zoneminder/db/zm_update-1.28.105.sql
+share/zoneminder/db/zm_update-1.28.106.sql
+share/zoneminder/db/zm_update-1.28.107.sql
+share/zoneminder/db/zm_update-1.28.108.sql
+share/zoneminder/db/zm_update-1.28.109.sql
+share/zoneminder/db/zm_update-1.28.110.sql
+share/zoneminder/db/zm_update-1.28.99.sql
+share/zoneminder/db/zm_update-1.29.0.sql
+@cwd /var/www
+cgi-bin/nph-zms
+@bin cgi-bin/zms

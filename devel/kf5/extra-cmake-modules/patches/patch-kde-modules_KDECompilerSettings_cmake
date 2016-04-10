@@ -1,17 +1,17 @@
 $OpenBSD$
 Allow KDE5 libraries to be built without having to link to libc explicitly.
---- kde-modules/KDECompilerSettings.cmake.orig	Sun Jul 19 12:45:16 2015
-+++ kde-modules/KDECompilerSettings.cmake	Sun Jul 19 12:46:16 2015
-@@ -310,6 +310,8 @@ endfunction()
+--- kde-modules/KDECompilerSettings.cmake.orig	Sat Feb 13 15:26:05 2016
++++ kde-modules/KDECompilerSettings.cmake	Sat Mar 26 19:48:42 2016
+@@ -319,6 +319,8 @@ endfunction()
  # Better diagnostics (warnings, errors)
  ############################################################
  
 +set(ALLOW_UNDEFINED_LIB_SYMBOLS No CACHE BOOL "allow undefined symbols in generated shared objects")
 +
- if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" OR
-         ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" AND NOT APPLE) OR
-         ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Intel" AND NOT WIN32))
-@@ -317,9 +319,11 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" OR
+ if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR
+         (CMAKE_CXX_COMPILER_ID STREQUAL "Clang" AND NOT APPLE) OR
+         (CMAKE_CXX_COMPILER_ID STREQUAL "Intel" AND NOT WIN32))
+@@ -326,9 +328,11 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR
      set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--fatal-warnings ${CMAKE_SHARED_LINKER_FLAGS}")
      set(CMAKE_MODULE_LINKER_FLAGS "-Wl,--fatal-warnings ${CMAKE_MODULE_LINKER_FLAGS}")
  

@@ -10,6 +10,8 @@ BUILD_DEPENDS =		textproc/py-sphinx
 
 CONFIGURE_ARGS =	-DBUILD_QTHELP_DOCS=True
 
+PKG_ARCH =		*
+
 post-install:
 	rm ${PREFIX}/share/ECM/kde-modules/*.orig
 

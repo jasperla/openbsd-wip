@@ -1112,6 +1112,9 @@ share/doc/HTML/en/kcontrol/kcm_ssl5/module.png
 share/doc/HTML/en/kdebugdialog5/
 share/doc/HTML/en/kdebugdialog5/index.cache.bz2
 share/doc/HTML/en/kdebugdialog5/index.docbook
+share/doc/HTML/it/kdebugdialog5/
+share/doc/HTML/it/kdebugdialog5/index.cache.bz2
+share/doc/HTML/it/kdebugdialog5/index.docbook
 share/doc/HTML/nl/kdebugdialog5/
 share/doc/HTML/nl/kdebugdialog5/index.cache.bz2
 share/doc/HTML/nl/kdebugdialog5/index.docbook
@@ -1119,6 +1122,13 @@ share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/kdebugdialog5/
 share/doc/HTML/pt_BR/kdebugdialog5/index.cache.bz2
 share/doc/HTML/pt_BR/kdebugdialog5/index.docbook
+share/doc/HTML/sr/kdebugdialog5/
+share/doc/HTML/sr/kdebugdialog5/index.cache.bz2
+share/doc/HTML/sr/kdebugdialog5/index.docbook
+share/doc/HTML/sr@latin/
+share/doc/HTML/sr@latin/kdebugdialog5/
+share/doc/HTML/sr@latin/kdebugdialog5/index.cache.bz2
+share/doc/HTML/sr@latin/kdebugdialog5/index.docbook
 share/doc/HTML/sv/kdebugdialog5/
 share/doc/HTML/sv/kdebugdialog5/index.cache.bz2
 share/doc/HTML/sv/kdebugdialog5/index.docbook

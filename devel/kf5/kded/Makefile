@@ -6,10 +6,11 @@ DISTNAME =	kded-${VERSION}
 SHARED_LIBS =	kdeinit5_kded5		0.0
 
 WANTLIB =  KF5ConfigCore KF5CoreAddons KF5Crash KF5DBusAddons
-WANTLIB += KF5Service Qt5Core Qt5DBus Qt5Gui Qt5Widgets c m pthread
+WANTLIB += KF5Service Qt5Core Qt5DBus Qt5Gui Qt5Widgets c m
 
 BUILD_DEPENDS =	devel/kf5/kdoctools \
 		devel/kf5/kinit
+
 RUN_DEPENDS =	devel/kf5/kdoctools \
 		devel/kf5/kinit
 

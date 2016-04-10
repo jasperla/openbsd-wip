@@ -6,6 +6,7 @@ include/KF5/KCoreAddons/KAboutData
 include/KF5/KCoreAddons/KAutoSaveFile
 include/KF5/KCoreAddons/KBackup
 include/KF5/KCoreAddons/KCompositeJob
+include/KF5/KCoreAddons/KCoreAddons
 include/KF5/KCoreAddons/KDirWatch
 include/KF5/KCoreAddons/KExportPlugin
 include/KF5/KCoreAddons/KFileSystemType
@@ -34,6 +35,7 @@ include/KF5/KCoreAddons/kaboutdata.h
 include/KF5/KCoreAddons/kautosavefile.h
 include/KF5/KCoreAddons/kbackup.h
 include/KF5/KCoreAddons/kcompositejob.h
+include/KF5/KCoreAddons/kcoreaddons.h
 include/KF5/KCoreAddons/kcoreaddons_export.h
 include/KF5/KCoreAddons/kdelibs4configmigrator.h
 include/KF5/KCoreAddons/kdelibs4migration.h

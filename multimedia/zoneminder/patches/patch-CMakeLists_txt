@@ -1,0 +1,70 @@
+$OpenBSD$
+
+check_type_size was setting HAVE_UCONTEXT_T on OpenBSD even though it has
+no ucontext support; ifdefs in code are using this instead of HAVE_UCONTEXT_H
+thus failing.  alternative fix: change ifdefs.
+
+support systems with clock_gettime in libc.
+
+--- CMakeLists.txt.orig	Wed Feb  3 19:30:53 2016
++++ CMakeLists.txt	Sat Apr  9 13:33:38 2016
+@@ -199,6 +199,7 @@ if(NOT HAVE_LIBV4L1_VIDEODEV_H)
+ 	check_include_file("linux/videodev.h" HAVE_LINUX_VIDEODEV_H)
+ endif(NOT HAVE_LIBV4L1_VIDEODEV_H)
+ check_include_file("linux/videodev2.h" HAVE_LINUX_VIDEODEV2_H)
++check_include_file("sys/videoio.h" HAVE_SYS_VIDEOIO_H)
+ check_include_file("execinfo.h" HAVE_EXECINFO_H)
+ if (HAVE_EXECINFO_H)
+   check_function_exists("backtrace" HAVE_DECL_BACKTRACE)
+@@ -217,17 +218,22 @@ check_function_exists("syscall" HAVE_SYSCALL)
+ check_function_exists("sendfile" HAVE_SENDFILE)
+ check_function_exists("posix_memalign" HAVE_POSIX_MEMALIGN)
+ check_type_size("siginfo_t" HAVE_SIGINFO_T)
++if (HAVE_UCONTEXT_H)
+ check_type_size("ucontext_t" HAVE_UCONTEXT_T)
++endif (HAVE_UCONTEXT_H)
+ 
+ # *** LIBRARY CHECKS ***
+ 
+ if (UNIX)
+     include (CheckLibraryExists)
+-    CHECK_LIBRARY_EXISTS(rt clock_gettime "time.h" HAVE_CLOCK_GETTIME)
++    CHECK_LIBRARY_EXISTS(c clock_gettime "time.h" HAVE_CLOCK_GETTIME)
+     if(NOT HAVE_CLOCK_GETTIME)
+-        message(FATAL_ERROR "clock_gettime not found")
+-    else(NOT HAVE_CLOCK_GETTIME)
+-        list(APPEND ZM_BIN_LIBS "-lrt")
++      CHECK_LIBRARY_EXISTS(rt clock_gettime "time.h" HAVE_CLOCK_GETTIME)
++      if(NOT HAVE_CLOCK_GETTIME)
++          message(FATAL_ERROR "clock_gettime not found")
++      else(NOT HAVE_CLOCK_GETTIME)
++          list(APPEND ZM_BIN_LIBS "-lrt")
++      endif(NOT HAVE_CLOCK_GETTIME)
+     endif(NOT HAVE_CLOCK_GETTIME)
+ endif(UNIX)
+ 
+@@ -529,18 +535,20 @@ if(HAVE_LINUX_VIDEODEV_H OR HAVE_LIBV4L1_VIDEODEV_H)
+ 	set(ZM_HAS_V4L 1)
+ 	set(ZM_HAS_V4L1 1)
+ endif(HAVE_LINUX_VIDEODEV_H OR HAVE_LIBV4L1_VIDEODEV_H)
+-if(HAVE_LINUX_VIDEODEV2_H)
++if(HAVE_LINUX_VIDEODEV2_H OR HAVE_SYS_VIDEOIO_H)
+ 	set(ZM_HAS_V4L 1)
+ 	set(ZM_HAS_V4L2 1)
+-endif(HAVE_LINUX_VIDEODEV2_H)
++endif(HAVE_LINUX_VIDEODEV2_H OR HAVE_SYS_VIDEOIO_H)
+ if((NOT HAVE_LINUX_VIDEODEV_H) 
+     AND (NOT HAVE_LIBV4L1_VIDEODEV_H) 
+-    AND (NOT HAVE_LINUX_VIDEODEV2_H))
++    AND (NOT HAVE_LINUX_VIDEODEV2_H)
++    AND (NOT HAVE_SYS_VIDEOIO_H))
+ 	message(AUTHOR_WARNING 
+             "Video 4 Linux headers weren't found - Analog and USB camera support will not be available")
+ endif((NOT HAVE_LINUX_VIDEODEV_H) 
+     AND (NOT HAVE_LIBV4L1_VIDEODEV_H) 
+-    AND (NOT HAVE_LINUX_VIDEODEV2_H))
++    AND (NOT HAVE_LINUX_VIDEODEV2_H)
++    AND (NOT HAVE_SYS_VIDEOIO_H))
+ # Check for PCRE and enable ZM_PCRE accordingly
+ set(ZM_PCRE 0)
+ if(HAVE_LIBPCRE AND HAVE_PCRE_H)
