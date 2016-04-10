@@ -15,9 +15,11 @@ MODULES :=		devel/kf5 ${MODULES}
 
 IS_PORTING_AID ?=	No
 .if ${IS_PORTING_AID:L} == "yes"
-MASTER_SITES =		${MASTER_SITE_KDE:=stable/frameworks/${VERSION:R}/portingAids/}
+MASTER_SITES ?=		${MASTER_SITE_KDE:=stable/frameworks/${VERSION:R}/portingAids/}
 .else
-MASTER_SITES =		${MASTER_SITE_KDE:=stable/frameworks/${VERSION:R}/}
+MASTER_SITES ?=		${MASTER_SITE_KDE:=stable/frameworks/${VERSION:R}/}
 .endif
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0048=OLD
 
 DIST_SUBDIR =		kde

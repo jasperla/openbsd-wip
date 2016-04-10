@@ -9,13 +9,16 @@ WANTLIB =  KF5Attica KF5Auth KF5Codecs KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5GlobalAccel KF5I18n KF5IconThemes
 WANTLIB += KF5ItemViews KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
 WANTLIB += KF5WindowSystem Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Widgets Qt5Xml c m pthread
+WANTLIB += Qt5Widgets Qt5Xml c m
 
-MODULES =		devel/gettext lang/python
+MODULES =		lang/python
+
+BUILD_DEPENDS =		devel/gettext-tools
 
 LIB_DEPENDS =		devel/kf5/attica \
 			devel/kf5/kconfig \
 			devel/kf5/kconfigwidgets \
+			devel/kf5/kcoreaddons \
 			devel/kf5/kglobalaccel \
 			devel/kf5/ki18n \
 			devel/kf5/kiconthemes \

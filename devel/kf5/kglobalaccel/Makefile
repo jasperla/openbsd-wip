@@ -8,7 +8,7 @@ SHARED_LIBS +=	KF5GlobalAccelPrivate	0.0
 
 WANTLIB =  KF5ConfigCore KF5CoreAddons KF5Crash KF5DBusAddons
 WANTLIB += KF5WindowSystem Qt5Core Qt5DBus Qt5Gui Qt5Widgets Qt5X11Extras
-WANTLIB += c m pthread xcb xcb-keysyms
+WANTLIB += c m xcb xcb-keysyms
 
 LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kcoreaddons \

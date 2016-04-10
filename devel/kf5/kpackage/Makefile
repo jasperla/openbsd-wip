@@ -6,11 +6,11 @@ DISTNAME =		kpackage-${VERSION}
 SHARED_LIBS =		KF5Package		0.0
 
 WANTLIB =  KF5Archive KF5ConfigCore KF5CoreAddons KF5I18n Qt5Core
-WANTLIB += c m pthread
+WANTLIB += c m
 
-MODULES =		devel/gettext
+BUILD_DEPENDS =		devel/gettext-tools \
+			devel/kf5/kdoctools
 
-BUILD_DEPENDS =		devel/kf5/kdoctools
 RUN_DEPENDS =		devel/kf5/kdoctools
 
 LIB_DEPENDS =		devel/kf5/karchive \
@@ -20,5 +20,8 @@ LIB_DEPENDS =		devel/kf5/karchive \
 
 PORTHOME =		${WRKDIR}
 TEST_IS_INTERACTIVE =	X11
+
+# TODO: The following tests FAILED (upstream fault?):
+#          2 - plasma-packagestructuretest (Failed)
 
 .include <bsd.port.mk>

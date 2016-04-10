@@ -11,16 +11,17 @@ WANTLIB =  KF5Completion KF5ConfigCore KF5ConfigGui KF5CoreAddons
 WANTLIB += KF5GlobalAccel KF5I18n KF5IconThemes KF5JobWidgets
 WANTLIB += KF5KIOCore KF5KIOWidgets KF5Package KF5Service KF5WidgetsAddons
 WANTLIB += KF5WindowSystem Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml
-WANTLIB += Qt5Quick Qt5Widgets Qt5Xml c epoxy m pthread
+WANTLIB += Qt5Quick Qt5Widgets Qt5Xml c epoxy m
 
-MODULES =	devel/gettext
+BUILD_DEPENDS =	devel/gettext-tools \
+		devel/kf5/kguiaddons
 
-BUILD_DEPENDS =	devel/kf5/kguiaddons
 RUN_DEPENDS =	devel/kf5/kguiaddons
 
 LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kglobalaccel \
 		devel/kf5/ki18n \
+		devel/kf5/kiconthemes \
 		devel/kf5/kio \
 		devel/kf5/kpackage \
 		devel/kf5/kwidgetsaddons \

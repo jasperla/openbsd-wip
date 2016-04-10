@@ -9,7 +9,9 @@ WANTLIB =  KF5Auth KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5CoreAddons KF5IconThemes KF5WidgetsAddons KF5XmlGui
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Widgets Qt5Xml m
 
-MODULES =		devel/gettext lang/python
+MODULES =		lang/python
+
+BUILD_DEPENDS =		devel/gettext-tools
 
 LIB_DEPENDS =		devel/kf5/kcodecs \
 			devel/kf5/kconfig \

@@ -163,6 +163,12 @@ include/KF5/KIOFileWidgets/kpreviewwidgetbase.h
 include/KF5/KIOFileWidgets/krecentdirs.h
 include/KF5/KIOFileWidgets/kstatusbarofflineindicator.h
 include/KF5/KIOFileWidgets/kurlnavigator.h
+include/KF5/KIOGui/
+include/KF5/KIOGui/KIO/
+include/KF5/KIOGui/KIO/FavIconRequestJob
+include/KF5/KIOGui/kio/
+include/KF5/KIOGui/kio/faviconrequestjob.h
+include/KF5/KIOGui/kiogui_export.h
 include/KF5/KIOWidgets/
 include/KF5/KIOWidgets/KAbstractFileItemActionPlugin
 include/KF5/KIOWidgets/KAutoMount
@@ -274,6 +280,7 @@ lib/kf5/plugins/kf5/urifilters/kurisearchfilter.so
 lib/kf5/plugins/kf5/urifilters/localdomainurifilter.so
 @lib lib/libKF5KIOCore.so.${LIBKF5KIOCore_VERSION}
 @lib lib/libKF5KIOFileWidgets.so.${LIBKF5KIOFileWidgets_VERSION}
+@lib lib/libKF5KIOGui.so.${LIBKF5KIOGui_VERSION}
 @lib lib/libKF5KIONTLM.so.${LIBKF5KIONTLM_VERSION}
 @lib lib/libKF5KIOWidgets.so.${LIBKF5KIOWidgets_VERSION}
 @bin libexec/kf5/kio_http_cache_cleaner
@@ -289,7 +296,10 @@ share/dbus-1/interfaces/kf5_org.kde.KDirNotify.xml
 share/dbus-1/interfaces/kf5_org.kde.KPasswdServer.xml
 share/dbus-1/interfaces/kf5_org.kde.KSlaveLauncher.xml
 share/dbus-1/interfaces/kf5_org.kde.kio.FileUndoManager.xml
+share/dbus-1/services/org.kde.kcookiejar5.service
 share/dbus-1/services/org.kde.kiod5.service
+share/dbus-1/services/org.kde.kpasswdserver.service
+share/dbus-1/services/org.kde.kssld5.service
 share/doc/HTML/en/kioslave5/
 share/doc/HTML/en/kioslave5/data/
 share/doc/HTML/en/kioslave5/data/index.cache.bz2
@@ -324,20 +334,15 @@ share/kf5/kcookiejar/
 share/kf5/kcookiejar/domain_info
 share/kf5/mkspecs/qt_KIOCore.pri
 share/kf5/mkspecs/qt_KIOFileWidgets.pri
+share/kf5/mkspecs/qt_KIOGui.pri
 share/kf5/mkspecs/qt_KIOWidgets.pri
 share/kf5/mkspecs/qt_KNTLM.pri
 share/knotifications5/proxyscout.notifyrc
 share/kservices5/cache.desktop
 share/kservices5/cookies.desktop
 share/kservices5/data.protocol
-share/kservices5/file.protocol
 share/kservices5/fixhosturifilter.desktop
-share/kservices5/ftp.protocol
-share/kservices5/ghelp.protocol
-share/kservices5/help.protocol
-share/kservices5/http.protocol
 share/kservices5/http_cache_cleaner.desktop
-share/kservices5/https.protocol
 share/kservices5/kcmtrash.desktop
 share/kservices5/kshorturifilter.desktop
 share/kservices5/kuriikwsfilter.desktop
@@ -482,7 +487,6 @@ share/kservices5/searchproviders/yahoo_shopping.desktop
 share/kservices5/searchproviders/yahoo_video.desktop
 share/kservices5/searchproviders/youtube.desktop
 share/kservices5/smb.desktop
-share/kservices5/trash.protocol
 share/kservices5/useragent.desktop
 share/kservices5/useragentstrings/
 share/kservices5/useragentstrings/android10.desktop
@@ -525,8 +529,6 @@ share/kservices5/useragentstrings/safari517.desktop
 share/kservices5/useragentstrings/safari60.desktop
 share/kservices5/useragentstrings/w3moncurrent.desktop
 share/kservices5/useragentstrings/wgetoncurrent.desktop
-share/kservices5/webdav.protocol
-share/kservices5/webdavs.protocol
 share/kservices5/webshortcuts.desktop
 share/kservicetypes5/kfileitemactionplugin.desktop
 share/kservicetypes5/kiodndpopupmenuplugin.desktop

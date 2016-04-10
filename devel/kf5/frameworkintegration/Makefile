@@ -13,7 +13,7 @@ WANTLIB += KF5Solid KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5X11Extras Qt5Xml Xcursor
 WANTLIB += m xcb
 
-MODULES =	devel/gettext
+BUILD_DEPENDS =	devel/gettext-tools
 
 RUN_DEPENDS =	fonts/noto/fonts
 
@@ -25,6 +25,14 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/knotifications \
 		devel/kf5/kwidgetsaddons
 
+PORTHOME =	${WRKDIR}
+TEST_IS_INTERACTIVE =	X11
+
+# TODO: The following tests FAILED:
+#          1 - frameworkintegration-kdeplatformtheme_unittest (Failed)
+#          4 - frameworkintegration-kfiledialog_unittest (Failed)
+#          7 - frameworkintegration-kfiledialogqml_unittest (Failed)
+
 # allow to use "semi-internal" Qt headers
 pre-configure:
 .for d in src/platformtheme autotests
@@ -32,8 +40,5 @@ pre-configure:
 	ln -s ${LOCALBASE}/include/X11/qt5/QtGui/5.*/QtGui/qpa \
 	       ${WRKSRC}/$d/qpa
 .endfor
-
-PORTHOME =	${WRKDIR}
-TEST_IS_INTERACTIVE =	X11
 
 .include <bsd.port.mk>
