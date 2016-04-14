@@ -1,0 +1,7 @@
+@comment $OpenBSD$
+${P5SITE}/WWW/
+${P5SITE}/WWW/Wunderground/
+${P5SITE}/WWW/Wunderground/API.pm
+${P5SITE}/WWW/Wunderground/README.pod
+@man man/man3p/WWW::Wunderground::API.3p
+@man man/man3p/WWW::Wunderground::README.3p
