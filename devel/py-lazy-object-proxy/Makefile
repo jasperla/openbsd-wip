@@ -2,12 +2,16 @@
 
 COMMENT =		fast and thorough lazy object proxy
 
-MODPY_EGG_VERSION =	1.2.1
+MODPY_EGG_VERSION =	1.2.2
 DISTNAME =		lazy-object-proxy-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
 
 HOMEPAGE =		https://python-lazy-object-proxy.readthedocs.org
+
+MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
+
+WANTLIB += pthread ${MODPY_WANTLIB}
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
