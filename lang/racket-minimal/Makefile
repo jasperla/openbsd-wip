@@ -33,7 +33,8 @@ MASTER_SITES =		https://mirror.racket-lang.org/installers/${V}/ \
 			ftp://download.tuxfamily.org/jod/lang/racket/
 EXTRACT_SUFX =		.tgz
 
-LIB_DEPENDS =		devel/libffi>=3.0.9p2
+LIB_DEPENDS =		converters/libiconv \
+			devel/libffi>=3.0.9p2
 
 WANTLIB += c ffi iconv m pthread
 # Loaded using FFI (just a placeholder for now)
