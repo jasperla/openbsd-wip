@@ -1,0 +1,22 @@
+$OpenBSD: README.template,v 1.4 2011/06/02 13:44:40 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Starting Syncthing
+==================
+
+There are two ways to start Syncthing.
+
+The first way is to use the included rc script to start syncthing as a
+system service. This is fine for single user setups. Under this mode of
+operation, Syncthing will run as the _syncthing user and store the
+default 'Sync' folder under /var/syncthing.
+
+The other way is to simply invoke ${TRUEPREFIX}/bin/syncthing manually.
+This is a better choice for situations where several users all want to
+run their own instances of Syncthing. Under this mode, the default
+'Sync' folder will be stored in the user's home directory. Users will
+have to configure Syncthing to listen on different TCP ports for this
+method to work.

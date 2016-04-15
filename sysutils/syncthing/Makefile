@@ -2,7 +2,7 @@
 
 GH_ACCOUNT =	syncthing
 GH_PROJECT =	syncthing
-GH_TAGNAME =	v0.12.19
+GH_TAGNAME =	v0.12.22
 COMMENT =	open decentralized synchronization utility
 CATEGORIES =	sysutils net www
 HOMEPAGE =	https://syncthing.net/
@@ -19,7 +19,7 @@ MODGO_TYPE =		bin
 
 do-build:
 	cd ${WRKSRC} && ${MODGO_CMD} run build.go \
-					-version ${GH_TAGNAME} -no-upgrade
+		-version ${GH_TAGNAME} -no-upgrade
 
 do-test:
 	cd ${WRKSRC} && ${MODGO_CMD} run build.go test
