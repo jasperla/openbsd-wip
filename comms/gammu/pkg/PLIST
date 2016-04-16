@@ -235,16 +235,12 @@ share/gammu/
 share/gammu/gammu-s60-remote.sis
 share/gammu/gnapplet.ini
 share/gammu/gnapplet.sis
-share/locale/af/
-share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/gammu.mo
 share/locale/af/LC_MESSAGES/libgammu.mo
 share/locale/ar/LC_MESSAGES/gammu.mo
 share/locale/ar/LC_MESSAGES/libgammu.mo
 share/locale/bg/LC_MESSAGES/gammu.mo
 share/locale/bg/LC_MESSAGES/libgammu.mo
-share/locale/bn/
-share/locale/bn/LC_MESSAGES/
 share/locale/bn/LC_MESSAGES/gammu.mo
 share/locale/bn/LC_MESSAGES/libgammu.mo
 share/locale/ca/LC_MESSAGES/gammu.mo
@@ -257,8 +253,6 @@ share/locale/de/LC_MESSAGES/gammu.mo
 share/locale/de/LC_MESSAGES/libgammu.mo
 share/locale/el/LC_MESSAGES/gammu.mo
 share/locale/el/LC_MESSAGES/libgammu.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gammu.mo
 share/locale/en_GB/LC_MESSAGES/libgammu.mo
 share/locale/es/LC_MESSAGES/gammu.mo
