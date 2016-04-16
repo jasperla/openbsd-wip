@@ -4,7 +4,8 @@ GH_ACCOUNT =	syncthing
 GH_PROJECT =	syncthing
 GH_TAGNAME =	v0.12.22
 COMMENT =	open decentralized synchronization utility
-CATEGORIES =	sysutils net www
+
+CATEGORIES =	net
 HOMEPAGE =	https://syncthing.net/
 
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
