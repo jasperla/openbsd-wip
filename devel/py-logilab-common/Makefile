@@ -9,6 +9,8 @@ CATEGORIES=	devel
 
 HOMEPAGE=	https://www.logilab.org/project/logilab-common
 
+MAINTAINER =	Alexandr Shadchin <shadchin@openbsd.org>
+
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
 

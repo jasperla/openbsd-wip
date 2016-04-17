@@ -25,11 +25,11 @@ RUN_DEPENDS =		devel/py-logilab-common${MODPY_FLAVOR} \
 			devel/py-wrapt${MODPY_FLAVOR}
 TEST_DEPENDS =		${RUN_DEPENDS}
 
-FLAVORS =	python3
+FLAVORS =		python3
 FLAVOR ?=
 
 do-test:
-	@cd ${WRKSRC} && \
+	cd ${WRKSRC} && \
 	    ${MODPY_BIN} -m unittest discover -p "unittest*.py"
 
 .include <bsd.port.mk>

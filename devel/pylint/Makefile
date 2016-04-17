@@ -3,13 +3,15 @@
 COMMENT-main=		lint-like code checker for Python code
 COMMENT-gui=		GUI for pylint
 
-MODPY_EGG_VERSION=		1.5.5
+MODPY_EGG_VERSION=	1.5.5
 DISTNAME=		pylint-${MODPY_EGG_VERSION}
 PKGNAME-main=		pylint-${MODPY_EGG_VERSION}
 PKGNAME-gui=		pylint-gui-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.pylint.org/
+
+MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,11 +27,18 @@ RUN_DEPENDS=		devel/py-logilab-common${MODPY_FLAVOR} \
 			devel/py-astroid${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR}
 RUN_DEPENDS-gui=	${MODPY_TKINTER_DEPENDS} \
-			devel/pylint=${MODPY_EGG_VERSION}
+			devel/pylint${MODPY_FLAVOR}=${MODPY_EGG_VERSION}
 TEST_DEPENDS=		${RUN_DEPENDS}
 
-FLAVORS =	python3
+FLAVORS =		python3
 FLAVOR ?=
+
+.if ${FLAVOR:Mpython3}
+FULLPKGNAME-main=	${PKGNAME-main:S/pylint/pylint3/}
+FULLPKGPATH-main=	devel/pylint,-main${MODPY_FLAVOR}
+FULLPKGNAME-gui=	${PKGNAME-gui:S/pylint/pylint3/}
+FULLPKGPATH-gui=	devel/pylint,-gui${MODPY_FLAVOR}
+.endif
 
 # Note: pytest here is not the same as in devel/py-test
 do-test: fake
