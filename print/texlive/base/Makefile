@@ -82,7 +82,6 @@ PKG_ARGS +=		-Dxindy=1
 PKG_ARGS +=		-Dxindy=0
 .endif
 
-# Do not link with system icu. TeXLive ICU is not vanilla (Yet)!
 CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--with-system-freetype2 \
 			--with-system-gd \
@@ -123,6 +122,7 @@ SUBST_VARS +=		TRUEPREFIX LOCALBASE
 pre-install:
 	mkdir -p ${WRKSRC}/inst
 
+# XXX update
 # Symlinks that would have been installed by texlinks.
 # texlinks can not do this itself in the fake dir, as it requires
 # a fully hashed texmf tree and working kpse configuration.
