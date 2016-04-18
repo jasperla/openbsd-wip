@@ -13,12 +13,12 @@ lib/cmake/KF5Emoticons/KF5EmoticonsConfig.cmake
 lib/cmake/KF5Emoticons/KF5EmoticonsConfigVersion.cmake
 lib/cmake/KF5Emoticons/KF5EmoticonsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Emoticons/KF5EmoticonsTargets.cmake
-lib/kf5/plugins/kf5/KEmoticonsIntegrationPlugin.so
-lib/kf5/plugins/kf5/emoticonsthemes/
-lib/kf5/plugins/kf5/emoticonsthemes/adium.so
-lib/kf5/plugins/kf5/emoticonsthemes/kde.so
-lib/kf5/plugins/kf5/emoticonsthemes/pidgin.so
-lib/kf5/plugins/kf5/emoticonsthemes/xmpp.so
+lib/qt5/plugins/kf5/KEmoticonsIntegrationPlugin.so
+lib/qt5/plugins/kf5/emoticonsthemes/
+lib/qt5/plugins/kf5/emoticonsthemes/adium.so
+lib/qt5/plugins/kf5/emoticonsthemes/kde.so
+lib/qt5/plugins/kf5/emoticonsthemes/pidgin.so
+lib/qt5/plugins/kf5/emoticonsthemes/xmpp.so
 @lib lib/libKF5Emoticons.so.${LIBKF5Emoticons_VERSION}
 share/emoticons/
 share/emoticons/Breeze/

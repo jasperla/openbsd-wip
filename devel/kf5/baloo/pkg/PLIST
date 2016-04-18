@@ -33,10 +33,10 @@ lib/cmake/KF5Baloo/KF5BalooConfig.cmake
 lib/cmake/KF5Baloo/KF5BalooConfigVersion.cmake
 lib/cmake/KF5Baloo/KF5BalooTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Baloo/KF5BalooTargets.cmake
-lib/kf5/plugins/kded_baloosearch_kio.so
-lib/kf5/plugins/kf5/kio/baloosearch.so
-lib/kf5/plugins/kf5/kio/tags.so
-lib/kf5/plugins/kf5/kio/timeline.so
+lib/qt5/plugins/kded_baloosearch_kio.so
+lib/qt5/plugins/kf5/kio/baloosearch.so
+lib/qt5/plugins/kf5/kio/tags.so
+lib/qt5/plugins/kf5/kio/timeline.so
 @lib lib/libKF5Baloo.so.${LIBKF5Baloo_VERSION}
 @lib lib/libKF5BalooXapian.so.${LIBKF5BalooXapian_VERSION}
 lib/qml/org/kde/baloo/

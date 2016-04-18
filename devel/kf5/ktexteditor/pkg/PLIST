@@ -61,8 +61,8 @@ lib/cmake/KF5TextEditor/KF5TextEditorConfig.cmake
 lib/cmake/KF5TextEditor/KF5TextEditorConfigVersion.cmake
 lib/cmake/KF5TextEditor/KF5TextEditorTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5TextEditor/KF5TextEditorTargets.cmake
-lib/kf5/plugins/kf5/parts/
-lib/kf5/plugins/kf5/parts/katepart.so
+lib/qt5/plugins/kf5/parts/
+lib/qt5/plugins/kf5/parts/katepart.so
 @lib lib/libKF5TextEditor.so.${LIBKF5TextEditor_VERSION}
 share/katepart5/
 share/katepart5/script/

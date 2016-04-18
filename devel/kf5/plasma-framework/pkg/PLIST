@@ -66,15 +66,15 @@ lib/cmake/KF5PlasmaQuick/KF5PlasmaQuickConfig.cmake
 lib/cmake/KF5PlasmaQuick/KF5PlasmaQuickConfigVersion.cmake
 lib/cmake/KF5PlasmaQuick/KF5PlasmaQuickTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5PlasmaQuick/KF5PlasmaQuickTargets.cmake
-lib/kf5/plugins/plasma/
-lib/kf5/plugins/plasma/dataengine/
-lib/kf5/plugins/plasma/dataengine/plasma_dataengine_example_customDataContainers.so
-lib/kf5/plugins/plasma/dataengine/plasma_dataengine_example_simpleEngine.so
-lib/kf5/plugins/plasma/dataengine/plasma_dataengine_example_sourcesOnRequest.so
-lib/kf5/plugins/plasma/scriptengines/
-lib/kf5/plugins/plasma/scriptengines/plasma_appletscript_declarative.so
-lib/kf5/plugins/plasma_containmentactions_test.so
-lib/kf5/plugins/plasma_engine_testengine.so
+lib/qt5/plugins/plasma/
+lib/qt5/plugins/plasma/dataengine/
+lib/qt5/plugins/plasma/dataengine/plasma_dataengine_example_customDataContainers.so
+lib/qt5/plugins/plasma/dataengine/plasma_dataengine_example_simpleEngine.so
+lib/qt5/plugins/plasma/dataengine/plasma_dataengine_example_sourcesOnRequest.so
+lib/qt5/plugins/plasma/scriptengines/
+lib/qt5/plugins/plasma/scriptengines/plasma_appletscript_declarative.so
+lib/qt5/plugins/plasma_containmentactions_test.so
+lib/qt5/plugins/plasma_engine_testengine.so
 @lib lib/libKF5Plasma.so.${LIBKF5Plasma_VERSION}
 @lib lib/libKF5PlasmaQuick.so.${LIBKF5PlasmaQuick_VERSION}
 lib/qml/QtQuick/

@@ -13,11 +13,11 @@ lib/cmake/KF5IdleTime/KF5IdleTimeConfigVersion.cmake
 lib/cmake/KF5IdleTime/KF5IdleTimeTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5IdleTime/KF5IdleTimeTargets.cmake
 lib/kf5/
-lib/kf5/plugins/
-lib/kf5/plugins/kf5/
-lib/kf5/plugins/kf5/org.kde.kidletime.platforms/
-lib/kf5/plugins/kf5/org.kde.kidletime.platforms/KF5IdleTimeXcbPlugin0.so
-lib/kf5/plugins/kf5/org.kde.kidletime.platforms/KF5IdleTimeXcbPlugin1.so
+lib/qt5/plugins/
+lib/qt5/plugins/kf5/
+lib/qt5/plugins/kf5/org.kde.kidletime.platforms/
+lib/qt5/plugins/kf5/org.kde.kidletime.platforms/KF5IdleTimeXcbPlugin0.so
+lib/qt5/plugins/kf5/org.kde.kidletime.platforms/KF5IdleTimeXcbPlugin1.so
 @lib lib/libKF5IdleTime.so.${LIBKF5IdleTime_VERSION}
 share/kf5/
 share/kf5/mkspecs/

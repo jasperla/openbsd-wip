@@ -28,15 +28,15 @@ lib/cmake/KF5FileMetaData/KF5FileMetaDataConfig.cmake
 lib/cmake/KF5FileMetaData/KF5FileMetaDataConfigVersion.cmake
 lib/cmake/KF5FileMetaData/KF5FileMetaDataTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5FileMetaData/KF5FileMetaDataTargets.cmake
-lib/kf5/plugins/kf5/kfilemetadata/
-lib/kf5/plugins/kf5/kfilemetadata/kfilemetadata_epubextractor.so
-lib/kf5/plugins/kf5/kfilemetadata/kfilemetadata_exiv2extractor.so
-lib/kf5/plugins/kf5/kfilemetadata/kfilemetadata_ffmpegextractor.so
-lib/kf5/plugins/kf5/kfilemetadata/kfilemetadata_odfextractor.so
-lib/kf5/plugins/kf5/kfilemetadata/kfilemetadata_office2007extractor.so
-lib/kf5/plugins/kf5/kfilemetadata/kfilemetadata_officeextractor.so
-lib/kf5/plugins/kf5/kfilemetadata/kfilemetadata_plaintextextractor.so
-lib/kf5/plugins/kf5/kfilemetadata/kfilemetadata_poextractor.so
-lib/kf5/plugins/kf5/kfilemetadata/kfilemetadata_popplerextractor.so
-lib/kf5/plugins/kf5/kfilemetadata/kfilemetadata_taglibextractor.so
+lib/qt5/plugins/kf5/kfilemetadata/
+lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_epubextractor.so
+lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_exiv2extractor.so
+lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_ffmpegextractor.so
+lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_odfextractor.so
+lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_office2007extractor.so
+lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_officeextractor.so
+lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_plaintextextractor.so
+lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_poextractor.so
+lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_popplerextractor.so
+lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_taglibextractor.so
 @lib lib/libKF5FileMetaData.so.${LIBKF5FileMetaData_VERSION}

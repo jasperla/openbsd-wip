@@ -39,11 +39,11 @@ lib/cmake/KF5WindowSystem/KF5WindowSystemConfigVersion.cmake
 lib/cmake/KF5WindowSystem/KF5WindowSystemTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5WindowSystem/KF5WindowSystemTargets.cmake
 lib/kf5/
-lib/kf5/plugins/
-lib/kf5/plugins/kf5/
-lib/kf5/plugins/kf5/org.kde.kwindowsystem.platforms/
-lib/kf5/plugins/kf5/org.kde.kwindowsystem.platforms/KF5WindowSystemWaylandPlugin.so
-lib/kf5/plugins/kf5/org.kde.kwindowsystem.platforms/KF5WindowSystemX11Plugin.so
+lib/qt5/plugins/
+lib/qt5/plugins/kf5/
+lib/qt5/plugins/kf5/org.kde.kwindowsystem.platforms/
+lib/qt5/plugins/kf5/org.kde.kwindowsystem.platforms/KF5WindowSystemWaylandPlugin.so
+lib/qt5/plugins/kf5/org.kde.kwindowsystem.platforms/KF5WindowSystemX11Plugin.so
 @lib lib/libKF5WindowSystem.so.${LIBKF5WindowSystem_VERSION}
 share/kf5/
 share/kf5/mkspecs/
