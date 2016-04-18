@@ -8,7 +8,7 @@ COMMENT =	open decentralized synchronization utility
 CATEGORIES =	net
 HOMEPAGE =	https://syncthing.net/
 
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
+MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
 # MPL 2.0
 PERMIT_PACKAGE_CDROM =	Yes

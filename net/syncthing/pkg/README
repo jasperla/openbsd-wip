@@ -9,7 +9,7 @@ Starting Syncthing
 
 There are two ways to start Syncthing.
 
-The first way is to use the included rc script to start syncthing as a
+The first way is to use the included rc script to start Syncthing as a
 system service. This is fine for single user setups. Under this mode of
 operation, Syncthing will run as the _syncthing user and store the
 default 'Sync' folder under /var/syncthing.
