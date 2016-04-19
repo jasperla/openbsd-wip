@@ -26,7 +26,7 @@ MODGO_SUBDIR =		${WRKDIR}/syncthing
 
 do-build:
 	cd ${WRKSRC} && ${MODGO_CMD} run build.go \
-		-no-upgrade
+		-version v${V} -no-upgrade
 
 do-test:
 	cd ${WRKSRC} && ${MODGO_CMD} run build.go test
