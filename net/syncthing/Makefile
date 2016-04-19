@@ -1,9 +1,10 @@
 # $OpenBSD$
 
-GH_ACCOUNT =	syncthing
-GH_PROJECT =	syncthing
-GH_TAGNAME =	v0.12.22
 COMMENT =	open decentralized synchronization utility
+
+V =		0.12.22
+DISTNAME =	syncthing-${V}
+DISTFILES =	syncthing-source-v${V}${EXTRACT_SUFX}
 
 CATEGORIES =	net
 HOMEPAGE =	https://syncthing.net/
@@ -15,12 +16,17 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c pthread
 
+MASTER_SITES = https://github.com/syncthing/syncthing/releases/download/v${V}/
+
+WRKSRC =		${WRKDIR}/go/src/github.com/syncthing/syncthing
+
 MODULES =		lang/go
 MODGO_TYPE =		bin
+MODGO_SUBDIR =		${WRKDIR}/syncthing
 
 do-build:
 	cd ${WRKSRC} && ${MODGO_CMD} run build.go \
-		-version ${GH_TAGNAME} -no-upgrade
+		-no-upgrade
 
 do-test:
 	cd ${WRKSRC} && ${MODGO_CMD} run build.go test

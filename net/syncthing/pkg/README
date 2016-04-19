@@ -20,3 +20,16 @@ run their own instances of Syncthing. Under this mode, the default
 'Sync' folder will be stored in the user's home directory. Users will
 have to configure Syncthing to listen on different TCP ports for this
 method to work.
+
+In multi user setups it might be desirable to have syncthing executed
+on system reboot for each user individually. To achieve this a crontab
+entry can be created on per-user basis:
+
+@reboot tmux new-session -d '${TRUEPREFIX}/bin/syncthing'
+
+this entry will result in a new tmux session being spawned for that
+user on each system boot. The user can later on tmux attach to that
+session to view and control his syncthing process. Keep in mind
+that you might have to set different ports for each user before
+setting up cron jobs.
+
