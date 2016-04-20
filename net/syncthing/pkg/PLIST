@@ -1,6 +1,6 @@
 @comment $OpenBSD$
 @newgroup _syncthing:768
-@newuser _syncthing:768:_syncthing:daemon:Syncthing user:/var/syncthing:/sbin/nologin
+@newuser _syncthing:768:_syncthing:daemon:Syncthing user:${VARBASE}/syncthing:/sbin/nologin
 @bin bin/syncthing
 share/doc/pkg-readmes/${FULLPKGNAME}
 man/syncthing-bep.7
@@ -20,4 +20,4 @@ man/syncthing.1
 @rcscript ${RCDIR}/syncthing
 @owner _syncthing
 @group _syncthing
-@sample /var/syncthing/
+@sample ${VARBASE}/syncthing/

@@ -19,6 +19,7 @@ WANTLIB += c pthread
 MASTER_SITES = https://github.com/syncthing/syncthing/releases/download/v${V}/
 
 WRKSRC =		${WRKDIR}/go/src/github.com/syncthing/syncthing
+SUBST_VARS +=		VARBASE
 
 MODULES =		lang/go
 MODGO_TYPE =		bin
