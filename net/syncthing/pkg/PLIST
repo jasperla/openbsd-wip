@@ -1,6 +1,6 @@
 @comment $OpenBSD$
-@newgroup _syncthing:767
-@newuser _syncthing:767:_syncthing:daemon:syncthing user:/var/syncthing:/sbin/nologin
+@newgroup _syncthing:768
+@newuser _syncthing:768:_syncthing:daemon:Syncthing user:/var/syncthing:/sbin/nologin
 @bin bin/syncthing
 share/doc/pkg-readmes/${FULLPKGNAME}
 man/syncthing-bep.7
