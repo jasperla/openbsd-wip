@@ -1,0 +1,4 @@
+This port is supposed to provide ports tree as it was during bulk build.  It is
+supposed to serve a foundation for ports customization framework.  Potentially
+it may serve as a ports tree distribution for CDs.  For now it is not entirely
+clear what is the best way to arrange things.
