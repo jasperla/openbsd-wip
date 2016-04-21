@@ -4,7 +4,7 @@ COMMENT =		clone of the turn-based strategy game Warlords II
 DISTNAME =		lordsawar-0.3.0
 CATEGORIES =		games x11
 
-HOMEPAGE =		http://www.lordsawar.com/
+HOMEPAGE =		http://www.nongnu.org/lordsawar/
 
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
