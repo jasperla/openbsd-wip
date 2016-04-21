@@ -33,7 +33,8 @@ do-test:
 	cd ${WRKSRC} && ${MODGO_CMD} run build.go test
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/syncthing ${PREFIX}/bin/
+	# Note: Don't use INSTALL_PROGRAM. It strips, and go hates this.
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/syncthing ${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/man/*.{1,5,7} ${PREFIX}/man/
 
 .include <bsd.port.mk>
