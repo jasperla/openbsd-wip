@@ -53,12 +53,12 @@ udfclient interactive commands
 ------------------------------
 
 These are ftp-like, with some differences.  Use the 'help' command at
-the UDF> prompt to display a short summary of them.
+the "UDF>" prompt to display a short summary of them.
 
 Example
 =======
 
-$ mkdir /tmp
+$ cd /tmp
 $ dd if=/dev/zero of=test.iso bs=10m count=10
 $ newfs_udf -S test -P test -L test -b 2048 test.iso
 $ touch test.file.one test.file.two
