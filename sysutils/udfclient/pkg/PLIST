@@ -1,0 +1,7 @@
+@comment $OpenBSD$
+@bin bin/cd_disect
+@bin bin/cd_sessions
+@bin bin/mmc_format
+@bin bin/newfs_udf
+@bin bin/udfclient
+@bin bin/udfdump
