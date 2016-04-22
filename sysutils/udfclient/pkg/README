@@ -42,13 +42,6 @@ interactively.
 Only the logical volume name is required by newfs_udf, but undefined
 options will be assigned values which you may not desire.
 
-POSIX Semantics
----------------
-
-Files written by udfclient retain their uid numbers and file modes, with
-gid set to 0.  Directories are assigned 0777 file modes with both uid
-and gid set to -1.
-
 udfclient interactive commands
 ------------------------------
 
