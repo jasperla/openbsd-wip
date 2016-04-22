@@ -7,19 +7,19 @@ $OpenBSD:
 Installed
 =========
 
-cd_disect	Display SCSI / ATAPI device information.  Untested.
+cd_disect       Display SCSI / ATAPI device information.  Untested.
 
-cd_sessions	Optical device session management.  Untested.
+cd_sessions     Optical device session management.  Untested.
 
-mmc_format	Format optical media.  Untested.
+mmc_format      Format optical media.  Untested.
 
-newfs_udf	Format a filesystem
+newfs_udf       Format a filesystem
 
-udfclient	Read or write to a filesystem
+udfclient       Read or write to a filesystem
 
-udfdump		Display contents of filesystem
+udfdump         Display contents of a filesystem
 
-Issuing any command without options will produce a list of
+Issuing any command without options will produce a short summary  of
 options.
 
 Considerations
@@ -27,15 +27,13 @@ Considerations
 
 Interoperability with mount_udf(8)
 ----------------------------------
-This requires a 2048-byte block size, as mount_udf() is intended
-for use with optical drives.  Such filesystems are
-unlikely to be interoperable with other OSes unless placed on
-optical media.  Other blocksizes (such as 512 or 4096-byte, used with disk drives)
-will not be mountable.
+This requires a 2048-byte block size, as mount_udf() is intended for use
+with optical drives.  Such filesystems are unlikely to be interoperable
+with other OSes unless placed on optical media.  Other blocksizes (such
+as 512 or 4096-byte, used with disk drives) will not be mountable.
 
-Use use a 2048 byte blocksize 
-when formatting a filesystem, and explicitly with udfclient
-in order to be ale to use mount_udf().  
+Use use a 2048 byte blocksize when formatting a filesystem, and
+explicitly with udfclient in order to be ale to use mount_udf().
 
 UDF root directory
 ------------------
@@ -44,7 +42,7 @@ The UDF root directory is named with colon separated strings.
 
   "<volume set>:<primary volume>:<logical volume>:<additional tag>"
 
-The udfclient requires a 'cd' into this root directory before you can 
+The udfclient requires a 'cd' into this root directory before you can
 read or write files and directories.
 
 udfclient interactive commands
@@ -53,8 +51,8 @@ udfclient interactive commands
 These are ftp-like, with some differences.  Use the 'help' command at
 the "UDF>" prompt to display a short summary of them.
 
-Of particular value is a 'get' or 'put' of a directory.  This will 
-copy the entire structure in or out of the filesystem.
+Of particular value is a 'get' or 'put' of a directory.  This will copy
+the entire structure in or out of the filesystem.
 
 Example
 =======
@@ -77,10 +75,10 @@ Current FS working directory /tmp
 UDF> put test.directory
 A total of 0 kb transfered at an overal average of 0 kb/sec
 UDF> get test.directory new.directory
-new.directory/a                                        0 /          0 bytes    --- KB/s (   --- KB/s) ETA --- finished
-new.directory/b                                        0 /          0 bytes    --- KB/s (   --- KB/s) ETA --- finished
-new.directory/c                                        0 /          0 bytes    --- KB/s (   --- KB/s) ETA --- finished
-new.directory/d                                        0 /          0 bytes    --- KB/s (   --- KB/s) ETA --- finished
+new.directory/a  ... 
+new.directory/b  ...
+new.directory/c  ...
+new.directory/d  ...
 A total of 0 kb transfered at an overal average of 115 kb/sec
 UDF> quit
 .
