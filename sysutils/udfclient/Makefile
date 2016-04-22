@@ -1,5 +1,8 @@
 # $OpenBSD
 COMMENT =	userland implementation of the UDF filingsystem
+
+V =		0.8.1
+
 DISTNAME =	UDFclient.${V}
 PKGNAME =	udfclient-${V}
 CATEGORIES =	sysutils

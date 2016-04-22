@@ -55,6 +55,8 @@ $ cd /tmp
 $ dd if=/dev/zero of=test.iso bs=10m count=10
 $ newfs_udf -S test -P test -L test -b 2048 test.iso
 $ touch test.file.one test.file.two
+$ mkdir test.directory
+$ touch test.directory/{a,b,c,d}
 
 $ udfclient -b 2048 -W test.iso
 .
@@ -70,6 +72,8 @@ UDF> put test.file.one
 Opening logical volume `test`:`test`:`test`
 A total of 0 kb transfered at an overal average of 0 kb/sec
 UDF> put test.file.two
+A total of 0 kb transfered at an overal average of 0 kb/sec
+UDF> mput test.directory
 A total of 0 kb transfered at an overal average of 0 kb/sec
 UDF> quit
 
