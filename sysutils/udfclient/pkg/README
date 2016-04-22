@@ -7,11 +7,11 @@ $OpenBSD:
 Installed
 =========
 
-cd_disect	<untested>
+cd_disect	Display SCSI / ATAPI device information.  Untested.
 
-cd_sessions	<untested>
+cd_sessions	Optical device session management.  Untested.
 
-mmc_format	<untested>
+mmc_format	Format optical media.  Untested.
 
 newfs_udf	Format a filesystem
 
@@ -27,20 +27,25 @@ Considerations
 
 Interoperability with mount_udf(8)
 ----------------------------------
-Use a 2048 byte blocksize when formatting a filesystem and explicitly
-when writing to the filesystem with udfclient.
+This requires a 2048-byte block size, as mount_udf() is intended
+for use with optical drives.  Such filesystems are
+unlikely to be interoperable with other OSes unless placed on
+optical media.  Other blocksizes (such as 512 or 4096-byte, used with disk drives)
+will not be mountable.
+
+Use use a 2048 byte blocksize 
+when formatting a filesystem, and explicitly with udfclient
+in order to be ale to use mount_udf().  
 
 UDF root directory
 ------------------
 
-The udfclient root directory is named with a concatenation of the volume
-set name, the primary volume name, the logical volume name, and the tag
-"fileset" concatenated with colons.  The udfclient requires a 'cd' into
-this root directory before you can write or read files and directories
-interactively.
+The UDF root directory is named with colon separated strings.
 
-Only the logical volume name is required by newfs_udf, but undefined
-options will be assigned values which you may not desire.
+  "<volume set>:<primary volume>:<logical volume>:<additional tag>"
+
+The udfclient requires a 'cd' into this root directory before you can 
+read or write files and directories.
 
 udfclient interactive commands
 ------------------------------
@@ -48,17 +53,18 @@ udfclient interactive commands
 These are ftp-like, with some differences.  Use the 'help' command at
 the "UDF>" prompt to display a short summary of them.
 
+Of particular value is a 'get' or 'put' of a directory.  This will 
+copy the entire structure in or out of the filesystem.
+
 Example
 =======
 
 $ cd /tmp
-$ dd if=/dev/zero of=test.iso bs=10m count=10
-$ newfs_udf -S test -P test -L test -b 2048 test.iso
-$ touch test.file.one test.file.two
 $ mkdir test.directory
 $ touch test.directory/{a,b,c,d}
-
-$ udfclient -b 2048 -W test.iso
+$ dd if=/dev/zero of=test.iso bs=10m count=10
+$ newfs_udf -S test -P test -L test test.iso
+$ udfclient -W test.iso
 .
 .
 .
@@ -68,14 +74,18 @@ drwxrwxrwx     -1     -1          40  test:test:test:fileset
 UDF> cd test:test:test:fileset
 UDF working directory is     /test:test:test:fileset
 Current FS working directory /tmp
-UDF> put test.file.one
-Opening logical volume `test`:`test`:`test`
-A total of 0 kb transfered at an overal average of 0 kb/sec
-UDF> put test.file.two
-A total of 0 kb transfered at an overal average of 0 kb/sec
 UDF> put test.directory
 A total of 0 kb transfered at an overal average of 0 kb/sec
+UDF> get test.directory new.directory
+new.directory/a                                        0 /          0 bytes    --- KB/s (   --- KB/s) ETA --- finished
+new.directory/b                                        0 /          0 bytes    --- KB/s (   --- KB/s) ETA --- finished
+new.directory/c                                        0 /          0 bytes    --- KB/s (   --- KB/s) ETA --- finished
+new.directory/d                                        0 /          0 bytes    --- KB/s (   --- KB/s) ETA --- finished
+A total of 0 kb transfered at an overal average of 115 kb/sec
 UDF> quit
-
-# vnconfig vnd0 test.iso
-# mount -t udf /dev/vnd0c /mnt
+.
+.
+.
+$ ls new.directory
+a b c d
+$
