@@ -1,196 +1,21 @@
-# $OpenBSD: Makefile.template,v 1.75 2016/03/20 17:19:49 naddy Exp $
-#
-# Replace ??? with appropriate values
-# Remove extraneous comments before commit
-# Use /usr/ports/infrastructure/bin/portcheck
-
-# Reasons why the port/package shouldn't be built
-#
-#ONLY_FOR_ARCHS =	???
-#NOT_FOR_ARCHS =	???
-#COMES_WITH =		???
-#BROKEN =		reason
-
-#
-# Very short description of the package, 60 chars max
-#		|----------------------------------------------------------|
+# $OpenBSD
 COMMENT =	userland implementation of the UDF filingsystem
-# COMMENT-foo =	???	for multi packages
-
-#
-# What port/package will be created
-#
-V = 		0.8.1
 DISTNAME =	UDFclient.${V}
 PKGNAME =	udfclient-${V}
-#PKGNAME-foo =	???	for multi packages
-
-#
-# For github: traditional tarballs in /releases/download are normally
-# preferred if available; use them with DISTNAME/MASTER_SITES lines as
-# normal. For projects using auto-generated tarballs, set GH_ACCOUNT,
-# GH_PROJECT, and *one* of GH_TAGNAME or GH_COMMIT. For GH_COMMIT, also
-# set DISTNAME. For GH_TAGNAME, set DISTNAME if the default is no good.
-#
-#GH_ACCOUNT =	username
-#GH_PROJECT =	project
-#GH_TAGNAME =	1.0
-#GH_COMMIT =	abab123456789abacafeabab123123b1e4ble4bl
-
-# for any port that creates shared libraries.
-# both libtool and cmake automatically set filenames based on this variable.
-# for libtool- or cmake-based ports, have a look at WRKBUILD/shared_libs.log
-#SHARED_LIBS =	???
-
-# the category used in the directory name, /usr/ports/<category>/portname,
-# must be included and listed first.
 CATEGORIES =	sysutils
 
 HOMEPAGE =	http://www.13thmonkey.org/udfclient/
 
-# person who is responsible for the port. Use a complete email address with
-# a real name, e.g., "MAINTAINER = John Doe <doe57@machine.somewhere.org>".
-# If you maintain several ports, use the same line each time.
-# If you no longer use the port, or are unwilling/unable to handle issues
-# in a timely manner, *leave the field blank*.
-# Default value is ports@openbsd.org, no need to fill in
 MAINTAINER =	Josh Grosse <josh@jggimi.homeip.net>
 
-# Licensing:  This determines what we can distribute.
-# When you determine the license type, make sure to look at ALL distfiles.
-# Every distfile can have a different license.  The PERMIT_* values are
-# determined by the most restrictive license.  If you have two licenses
-# that are in conflict, set PERMIT_* based on the most restrictive one.
-# Make SURE you get these values right.
-
-# Put a comment there to state what's going on.
-# Can be as brief as `BSD' or `GPLv2+', but it'd better be easy to check,
-# if someone wants to double-check licensing.
-# For GPL, the applicable versions must be included (e.g. v2+, v2 only, v3+).
-# If all PERMIT_* are Yes, just setting 'PERMIT_PACKAGE_CDROM=Yes' is enough.
-# Clarified Artistic
+# Clarified Artistic License
 PERMIT_PACKAGE_CDROM =	Yes
-#PERMIT_PACKAGE_FTP =	Yes | Reason if No
-#PERMIT_DISTFILES_FTP =	Yes | Reason if No
 
-# "make port-lib-depends-check" can help
 WANTLIB =	c pthread
 
-# where the source files and patches can be fetched
-#
 MASTER_SITES =		http://www.13thmonkey.org/udfclient/releases/
-#MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=subdir/}
-#MASTER_SITES =		${MASTER_SITE_foo:=subdir/}
-
-# if more master sites are needed...
-#MASTER_SITES0 =
-# ...
-#DISTFILES =		???
-#EXTRACT_ONLY =		???
 EXTRACT_SUFX =		.tgz
 
-#DIST_SUBDIR =		???
-
-# PATCHFILES are also retrieved from MASTER_SITES*
-#PATCHFILES =		???
-#PATCH_DIST_STRIP =	-p0
-
-# Dependencies
-#
-#MODULES =		???
-#BUILD_DEPENDS =	???
-#RUN_DEPENDS =		???
-#LIB_DEPENDS =		???
-#TEST_DEPENDS =		???
-
-#MAKE_FLAGS =		???
-#MAKE_ENV =		???
-#FAKE_FLAGS =		???
-#TEST_FLAGS =		???
-
-# build/configuration variables
-#
-#SEPARATE_BUILD =	Yes (build in a directory other than WRKSRC)
-#SEPARATE_BUILD =	flavored (distinct flavors may share a common WRKSRC)
-#USE_GMAKE =		Yes
-#USE_GROFF =		Yes
-# Programs that require GNU libtool to build instead of the OpenBSD one
-# should use this option. Add a comment explaining why. Don't use this if
-# a port requires libtool's .m4 files but otherwise can use OpenBSD libtool,
-# in that case use "BUILD_DEPENDS=devel/libtool" instead.
-#USE_LIBTOOL=		gnu
-# Set CONFIGURE_STYLE to value corresponding to some standard configuration
-# 	  perl [modbuild]: perl's MakeMaker Makefile.PL (modbuild: perl's
-#	  Module::Build Build.PL)
-# 	  gnu [autoconf] [old] [dest]: gnu style configure (old: no
-# 	  sysconfdir), (dest: add DESTDIR, does not handle it),
-# 	  (autoconf: needed by port, implies gnu)
-# 	XXX: cygnus products do NOT use autoconf for making the main
-# 		configure from configure.in
-# 	  imake [noman]: port uses imake for configuration.
-#	  (noman: no man page installation)
-# 	  simple: port has its own configure script
 CONFIGURE_STYLE =	gnu
-#CONFIGURE_SCRIPT =	??? (if other than configure)
-#CONFIGURE_ARGS =	???
-#CONFIGURE_ENV =	???
-
-# for gnu stuff
-#AUTOCONF_VERSION =	??? (defaults to 2.13)
-#AUTOMAKE_VERSION =	??? (defaults to 1.4)
-# config.guess and others are copied here
-#MODGNU_CONFIG_GUESS_DIRS = ??? (defaults to ${WRKSRC})
-
-# Is the build automagic or is it interactive
-#
-#IS_INTERACTIVE =		Yes
-#TEST_IS_INTERACTIVE =		Yes
-
-# Assume you have one multiple choice flavor: 1 2 3 and switches a b.
-# You would write
-#
-#FLAVORS =	1 2 3 a b
-#FLAVOR ?=
-# grab multiple choice value
-#CHOICE = ${FLAVOR:Na:Nb}
-# check that CHOICE is 1 OR 2 OR 3, or error out
-#.if ${CHOICE} == "1"
-# code for 1
-#.elif ${CHOICE} == "2"
-# code for 2
-#.elif ${CHOICE} == "3"
-# code for 3
-#.else
-#ERRORS += "Fatal: Conflicting flavor: ${FLAVOR}"
-#.endif
-# check for switches
-#.if ${FLAVOR:Ma}
-# code for a
-#.endif
-#.if ${FLAVOR:Mb}
-# code for b
-#.endif
-
-# Things that we don't want to do for this port/package
-# Generally, DON'T set anything to No if it's not needed.
-# The time gained is not worth it.
-#
-#NO_BUILD =		Yes
-#NO_TEST =		Yes
-
-# Overrides for default values
-#
-#CFLAGS =		???
-#LDFLAGS =		???
-#MAKE_FILE =		???
-#PKG_ARCH =		??? (* for arch-independent packages)
-#WRKDIST =		??? if other than ${WRKDIR}/${DISTNAME}
-#WRKSRC =		??? if other than ${WRKDIST}
-#WRKBUILD =		??? if other than ${WRKSRC}
-#WRKCONF =		??? if other than ${WRKBUILD}
-
-#ALL_TARGET =		???
-#INSTALL_TARGET =	???
-#TEST_TARGET =		???
 
 .include <bsd.port.mk>
