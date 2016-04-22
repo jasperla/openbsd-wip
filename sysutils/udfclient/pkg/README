@@ -1,0 +1,84 @@
+$OpenBSD:
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Installed
+=========
+
+cd_disect	<untested>
+
+cd_sessions	<untested>
+
+mmc_format	<untested>
+
+newfs_udf	Format a filesystem
+
+udfclient	Read or write to a filesystem
+
+udfdump		Display contents of filesystem
+
+Issuing any command without options will produce a list of
+options.
+
+Considerations
+==============
+
+Interoperability with mount_udf(8)
+----------------------------------
+Use a 2048 byte blocksize when formatting a filesystem and explicitly
+when writing to the filesystem with udfclient.
+
+UDF root directory
+------------------
+
+The udfclient root directory is named with a concatenation of the volume
+set name, the primary volume name, the logical volume name, and the tag
+"fileset" concatenated with colons.  The udfclient requires a 'cd' into
+this root directory before you can write or read files and directories
+interactively.
+
+Only the logical volume name is required by newfs_udf, but undefined
+options will be assigned values which you may not desire.
+
+POSIX Semantics
+---------------
+
+Files written by udfclient retain their uid numbers and file modes, with
+gid set to 0.  Directories are assigned 0777 file modes with both uid
+and gid set to -1.
+
+udfclient interactive commands
+------------------------------
+
+These are ftp-like, with some differences.  Use the 'help' command at
+the UDF> prompt to display a short summary of them.
+
+Example
+=======
+
+$ mkdir /tmp
+$ dd if=/dev/zero of=test.iso bs=10m count=10
+$ newfs_udf -S test -P test -L test -b 2048 test.iso
+$ touch test.file.one test.file.two
+
+$ udfclient -b 2048 -W test.iso
+.
+.
+.
+UDF> ls
+Directory listing of /
+drwxrwxrwx     -1     -1          40  test:test:test:fileset
+UDF> cd test:test:test:fileset
+UDF working directory is     /test:test:test:fileset
+Current FS working directory /tmp
+UDF> put test.file.one
+Opening logical volume `test`:`test`:`test`
+A total of 0 kb transfered at an overal average of 0 kb/sec
+UDF> put test.file.two
+A total of 0 kb transfered at an overal average of 0 kb/sec
+UDF> quit
+
+# vnconfig vnd0 test.iso
+# mount -t udf /dev/vnd0c /mnt
