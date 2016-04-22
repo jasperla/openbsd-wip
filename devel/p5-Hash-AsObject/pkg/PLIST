@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/Hash/
+${P5SITE}/Hash/AsObject.pm
+@man man/man3p/Hash::AsObject.3p

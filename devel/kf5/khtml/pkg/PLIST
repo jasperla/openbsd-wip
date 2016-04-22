@@ -48,12 +48,12 @@ lib/cmake/KF5KHtml/KF5KHtmlConfig.cmake
 lib/cmake/KF5KHtml/KF5KHtmlConfigVersion.cmake
 lib/cmake/KF5KHtml/KF5KHtmlTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5KHtml/KF5KHtmlTargets.cmake
-lib/kf5/plugins/kf5/parts/
-lib/kf5/plugins/kf5/parts/khtmladaptorpart.so
-lib/kf5/plugins/kf5/parts/khtmlimagepart.so
-lib/kf5/plugins/kf5/parts/khtmlpart.so
-lib/kf5/plugins/kf5/parts/kjavaappletviewer.so
-lib/kf5/plugins/kf5/parts/kmultipart.so
+lib/qt5/plugins/kf5/parts/
+lib/qt5/plugins/kf5/parts/khtmladaptorpart.so
+lib/qt5/plugins/kf5/parts/khtmlimagepart.so
+lib/qt5/plugins/kf5/parts/khtmlpart.so
+lib/qt5/plugins/kf5/parts/kjavaappletviewer.so
+lib/qt5/plugins/kf5/parts/kmultipart.so
 @lib lib/libKF5KHtml.so.${LIBKF5KHtml_VERSION}
 share/examples/xdg/khtmlrc
 share/kf5/khtml/

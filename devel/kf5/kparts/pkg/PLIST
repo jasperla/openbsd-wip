@@ -72,8 +72,8 @@ lib/cmake/KF5Parts/KF5PartsConfig.cmake
 lib/cmake/KF5Parts/KF5PartsConfigVersion.cmake
 lib/cmake/KF5Parts/KF5PartsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Parts/KF5PartsTargets.cmake
-lib/kf5/plugins/notepadpart.so
-lib/kf5/plugins/spellcheckplugin.so
+lib/qt5/plugins/notepadpart.so
+lib/qt5/plugins/spellcheckplugin.so
 @lib lib/libKF5Parts.so.${LIBKF5Parts_VERSION}
 share/kf5/mkspecs/qt_KParts.pri
 share/kservicetypes5/browserview.desktop

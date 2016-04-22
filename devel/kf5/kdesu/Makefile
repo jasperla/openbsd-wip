@@ -6,9 +6,9 @@ DISTNAME =	kdesu-${VERSION}
 SHARED_LIBS =	KF5Su		0.0
 
 WANTLIB =  ICE KF5ConfigCore KF5CoreAddons KF5I18n KF5Pty KF5Service
-WANTLIB += Qt5Core SM X11 Xext c m pthread
+WANTLIB += Qt5Core SM X11 Xext c m
 
-MODULES =	devel/gettext
+BUILD_DEPENDS =	devel/gettext-tools
 
 LIB_DEPENDS =	devel/kf5/kcoreaddons \
 		devel/kf5/ki18n \

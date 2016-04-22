@@ -16,6 +16,7 @@ share/ECM/find-modules/FindKF5.cmake
 share/ECM/find-modules/FindLibGit2.cmake
 share/ECM/find-modules/FindOpenEXR.cmake
 share/ECM/find-modules/FindPng2Ico.cmake
+share/ECM/find-modules/FindPoppler.cmake
 share/ECM/find-modules/FindQtWaylandScanner.cmake
 share/ECM/find-modules/FindSharedMimeInfo.cmake
 share/ECM/find-modules/FindWayland.cmake
@@ -27,6 +28,7 @@ share/ECM/kde-modules/KDECMakeSettings.cmake
 share/ECM/kde-modules/KDECompilerSettings.cmake
 share/ECM/kde-modules/KDEFrameworkCompilerSettings.cmake
 share/ECM/kde-modules/KDEInstallDirs.cmake
+share/ECM/kde-modules/KDEPackageAppTemplates.cmake
 share/ECM/modules/
 share/ECM/modules/ECMAddAppIcon.cmake
 share/ECM/modules/ECMAddTests.cmake
@@ -67,6 +69,7 @@ share/doc/ECM/html/_sources/find-module/FindKF5.txt
 share/doc/ECM/html/_sources/find-module/FindLibGit2.txt
 share/doc/ECM/html/_sources/find-module/FindOpenEXR.txt
 share/doc/ECM/html/_sources/find-module/FindPng2Ico.txt
+share/doc/ECM/html/_sources/find-module/FindPoppler.txt
 share/doc/ECM/html/_sources/find-module/FindQtWaylandScanner.txt
 share/doc/ECM/html/_sources/find-module/FindSharedMimeInfo.txt
 share/doc/ECM/html/_sources/find-module/FindWayland.txt
@@ -79,6 +82,7 @@ share/doc/ECM/html/_sources/kde-module/KDECMakeSettings.txt
 share/doc/ECM/html/_sources/kde-module/KDECompilerSettings.txt
 share/doc/ECM/html/_sources/kde-module/KDEFrameworkCompilerSettings.txt
 share/doc/ECM/html/_sources/kde-module/KDEInstallDirs.txt
+share/doc/ECM/html/_sources/kde-module/KDEPackageAppTemplates.txt
 share/doc/ECM/html/_sources/manual/
 share/doc/ECM/html/_sources/manual/ecm-developer.7.txt
 share/doc/ECM/html/_sources/manual/ecm-find-modules.7.txt
@@ -137,6 +141,7 @@ share/doc/ECM/html/find-module/FindKF5.html
 share/doc/ECM/html/find-module/FindLibGit2.html
 share/doc/ECM/html/find-module/FindOpenEXR.html
 share/doc/ECM/html/find-module/FindPng2Ico.html
+share/doc/ECM/html/find-module/FindPoppler.html
 share/doc/ECM/html/find-module/FindQtWaylandScanner.html
 share/doc/ECM/html/find-module/FindSharedMimeInfo.html
 share/doc/ECM/html/find-module/FindWayland.html
@@ -150,6 +155,7 @@ share/doc/ECM/html/kde-module/KDECMakeSettings.html
 share/doc/ECM/html/kde-module/KDECompilerSettings.html
 share/doc/ECM/html/kde-module/KDEFrameworkCompilerSettings.html
 share/doc/ECM/html/kde-module/KDEInstallDirs.html
+share/doc/ECM/html/kde-module/KDEPackageAppTemplates.html
 share/doc/ECM/html/manual/
 share/doc/ECM/html/manual/ecm-developer.7.html
 share/doc/ECM/html/manual/ecm-find-modules.7.html

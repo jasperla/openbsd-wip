@@ -5,9 +5,13 @@ DISTNAME =	ki18n-${VERSION}
 
 SHARED_LIBS =	KF5I18n		0.0
 
-WANTLIB =	Qt5Core Qt5Script m
+WANTLIB =	Qt5Core Qt5Script intl m
 
-MODULES =	devel/gettext lang/python
+MODULES =	lang/python
+
+BUILD_DEPENDS =	devel/gettext-tools
+
+LIB_DEPENDS =	devel/gettext
 
 CONFIGURE_ARGS =	-DCMAKE_POLICY_DEFAULT_CMP0037=OLD
 

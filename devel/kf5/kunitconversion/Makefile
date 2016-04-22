@@ -7,7 +7,7 @@ SHARED_LIBS =	KF5UnitConversion	0.0
 
 WANTLIB =	KF5I18n Qt5Core Qt5Network Qt5Xml m
 
-MODULES =	devel/gettext
+BUILD_DEPENDS =	devel/gettext-tools
 
 LIB_DEPENDS =	devel/kf5/ki18n
 

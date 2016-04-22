@@ -9,7 +9,9 @@ WANTLIB =  KF5Completion KF5ConfigCore KF5CoreAddons KF5I18n KF5JobWidgets
 WANTLIB += KF5KIOCore KF5KIOWidgets KF5Service KF5WidgetsAddons
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets m phonon4qt5experimental
 
-MODULES =	multimedia/phonon devel/gettext
+MODULES =	multimedia/phonon
+
+BUILD_DEPENDS =	devel/gettext-tools
 
 LIB_DEPENDS =	devel/kf5/kcompletion \
 		devel/kf5/kconfig \

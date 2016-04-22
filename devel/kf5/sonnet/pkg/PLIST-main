@@ -33,9 +33,9 @@ lib/cmake/KF5Sonnet/KF5SonnetConfigVersion.cmake
 lib/cmake/KF5Sonnet/KF5SonnetTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Sonnet/KF5SonnetTargets.cmake
 lib/kf5/
-lib/kf5/plugins/
-lib/kf5/plugins/kf5/
-lib/kf5/plugins/kf5/sonnet/
+lib/qt5/plugins/
+lib/qt5/plugins/kf5/
+lib/qt5/plugins/kf5/sonnet/
 @lib lib/libKF5SonnetCore.so.${LIBKF5SonnetCore_VERSION}
 @lib lib/libKF5SonnetUi.so.${LIBKF5SonnetUi_VERSION}
 share/kf5/

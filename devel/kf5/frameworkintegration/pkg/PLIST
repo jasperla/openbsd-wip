@@ -9,7 +9,7 @@ lib/cmake/KF5FrameworkIntegration/KF5FrameworkIntegrationConfig.cmake
 lib/cmake/KF5FrameworkIntegration/KF5FrameworkIntegrationConfigVersion.cmake
 lib/cmake/KF5FrameworkIntegration/KF5FrameworkIntegrationTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5FrameworkIntegration/KF5FrameworkIntegrationTargets.cmake
-lib/kf5/plugins/kf5/FrameworkIntegrationPlugin.so
+lib/qt5/plugins/kf5/FrameworkIntegrationPlugin.so
 @lib lib/libKF5Style.so.${LIBKF5Style_VERSION}
 lib/qt5/plugins/platformthemes/KDEPlatformTheme.so
 share/kconf_update/

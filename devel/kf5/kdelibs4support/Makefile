@@ -14,13 +14,15 @@ WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5UnitConversion
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Core
 WANTLIB += Qt5DBus Qt5Designer Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Svg Qt5Test Qt5Widgets Qt5X11Extras Qt5Xml SM X11
-WANTLIB += Xext c m pthread
+WANTLIB += Xext c m
 
-MODULES =		devel/gettext
-
-BUILD_DEPENDS =		devel/kf5/kdesignerplugin \
+BUILD_DEPENDS =		devel/gettext-tools \
+			devel/kf5/kded \
+			devel/kf5/kdesignerplugin \
 			devel/kf5/kdoctools
-RUN_DEPENDS =		devel/kf5/kdesignerplugin \
+
+RUN_DEPENDS =		devel/kf5/kded \
+			devel/kf5/kdesignerplugin \
 			devel/kf5/kdoctools \
 			devel/kf5/kemoticons \
 			devel/kf5/kitemmodels
@@ -48,11 +50,12 @@ IS_PORTING_AID =	Yes
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_NetworkManager=Yes
 
-#The following tests FAILED:
+# TODO: The following tests FAILED:
 #         18 - ktabwidget_unittest (Failed)
 #         24 - ksavefiletest (Failed)
 #         27 - kmimetypetest (Failed)
 #         29 - kstandarddirstest (Failed)
+
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}
 

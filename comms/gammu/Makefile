@@ -2,7 +2,7 @@
 
 COMMENT =		Gnu All Mobile Management Utilities
 
-DISTNAME =		gammu-1.37.0
+DISTNAME =		gammu-1.37.2
 
 SHARED_LIBS += 		Gammu 0.0 # 7.1
 SHARED_LIBS += 		gsmsd 0.0 # 7.1
@@ -16,12 +16,11 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c curl dbi glib-2.0 gobject-2.0 m pthread usb-1.0
+WANTLIB += c curl dbi glib-2.0 gobject-2.0 iconv intl m pthread usb-1.0
 
 MASTER_SITES =		http://dl.cihar.com/gammu/releases/
 
-MODULES =		devel/cmake \
-			devel/gettext
+MODULES =		devel/cmake
 
 RUN_DEPENDS =		misc/dialog
 LIB_DEPENDS =		databases/libdbi \

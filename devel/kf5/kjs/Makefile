@@ -8,8 +8,12 @@ SHARED_LIBS +=		KF5JSApi	0.0
 
 WANTLIB =		Qt5Core c m pcre pcreposix pthread
 
-BUILD_DEPENDS =		devel/kf5/kdoctools
+BUILD_DEPENDS =		devel/gettext-tools \
+			devel/kf5/kdoctools
+
 RUN_DEPENDS =		devel/kf5/kdoctools
+
+LIB_DEPENDS =		devel/pcre
 
 IS_PORTING_AID =	Yes
 

@@ -12,7 +12,7 @@ WANTLIB += KF5KIOWidgets KF5Service KF5SonnetUi KF5TextWidgets
 WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Widgets Qt5Xml m
 
-MODULES =		devel/gettext
+BUILD_DEPENDS =		devel/gettext-tools
 
 LIB_DEPENDS =		devel/kf5/karchive \
 			devel/kf5/attica \
@@ -30,5 +30,8 @@ LIB_DEPENDS =		devel/kf5/karchive \
 
 PORTHOME =		${WRKDIR}
 TEST_IS_INTERACTIVE =	X11
+
+# TODO: The following tests FAILED:
+#          3 - kmoretoolstest (Failed)
 
 .include <bsd.port.mk>

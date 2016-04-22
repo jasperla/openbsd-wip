@@ -13,7 +13,7 @@ WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Script Qt5Widgets
 WANTLIB += Qt5Xml git2 m
 
-MODULES =		devel/gettext
+BUILD_DEPENDS =		devel/gettext-tools
 
 LIB_DEPENDS =		devel/kf5/karchive \
 			devel/kf5/kconfig \
@@ -25,9 +25,10 @@ LIB_DEPENDS =		devel/kf5/karchive \
 			devel/kf5/sonnet \
 			devel/libgit2/libgit2
 
-#The following tests FAILED:
+# TODO: The following tests FAILED:
 #         48 - bug205447 (Failed)
 #         49 - katesyntaxtest (OTHER_FAULT)
+
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}
 

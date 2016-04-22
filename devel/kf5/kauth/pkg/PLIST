@@ -23,18 +23,19 @@ lib/cmake/KF5Auth/KF5AuthTargets.cmake
 lib/cmake/KF5Auth/KF5AuthToolsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Auth/KF5AuthToolsTargets.cmake
 lib/kf5/
-lib/kf5/plugins/
-lib/kf5/plugins/kauth/
-lib/kf5/plugins/kauth/backend/
-lib/kf5/plugins/kauth/backend/kauth_backend_plugin.so
-lib/kf5/plugins/kauth/helper/
-lib/kf5/plugins/kauth/helper/kauth_helper_plugin.so
+lib/qt5/plugins/
+lib/qt5/plugins/kauth/
+lib/qt5/plugins/kauth/backend/
+lib/qt5/plugins/kauth/backend/kauth_backend_plugin.so
+lib/qt5/plugins/kauth/helper/
+lib/qt5/plugins/kauth/helper/kauth_helper_plugin.so
 @lib lib/libKF5Auth.so.${LIBKF5Auth_VERSION}
 libexec/kauth/
 @bin libexec/kauth/kauth-policy-gen
-share/examples/dbus-1/
-share/examples/dbus-1/system.d/
-share/examples/dbus-1/system.d/org.kde.kf5auth.conf
+share/examples/kde/
+share/examples/kde/dbus-1/
+share/examples/kde/dbus-1/system.d/
+share/examples/kde/dbus-1/system.d/org.kde.kf5auth.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.kf5auth.conf
 share/kf5/kauth/
 share/kf5/kauth/dbus_policy.stub

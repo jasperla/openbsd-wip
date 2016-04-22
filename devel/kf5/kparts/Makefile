@@ -11,14 +11,14 @@ WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOWidgets KF5Service KF5SonnetUi
 WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Test Qt5Widgets Qt5Xml m
 
-MODULES =		devel/gettext
+BUILD_DEPENDS =		devel/gettext-tools
 
 LIB_DEPENDS =		devel/kf5/kconfig \
 			devel/kf5/kcoreaddons \
 			devel/kf5/ki18n \
 			devel/kf5/kiconthemes \
-			devel/kf5/kjobwidgets \
 			devel/kf5/kio \
+			devel/kf5/kjobwidgets \
 			devel/kf5/kservice \
 			devel/kf5/ktextwidgets \
 			devel/kf5/kwidgetsaddons \

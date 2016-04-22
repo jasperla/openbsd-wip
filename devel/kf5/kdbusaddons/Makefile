@@ -5,7 +5,7 @@ DISTNAME =	kdbusaddons-${VERSION}
 
 SHARED_LIBS =	KF5DBusAddons		0.0
 
-WANTLIB =	Qt5Core Qt5DBus Qt5Gui Qt5X11Extras c m pthread
+WANTLIB =	Qt5Core Qt5DBus Qt5Gui Qt5X11Extras c m
 
 # XXX tests stuck anyway
 #PORTHOME =		${WRKDIR}

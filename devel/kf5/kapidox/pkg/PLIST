@@ -32,6 +32,7 @@ lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/icons/bad.png
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/icons/ok.png
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/icons/warning.png
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/jquery-2.1.0.min.js
+lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/kde-white.svg
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/kde.css
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/notetip.js
 lib/python${MODPY_VERSION}/site-packages/kapidox/data/htmlresource/top-kde.jpg

@@ -15,7 +15,9 @@ WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
 WANTLIB += Qt5X11Extras Qt5Xml SM X11 Xext gif jpeg m png z
 WANTLIB += phonon4qt5experimental
 
-MODULES =		multimedia/phonon devel/gettext
+MODULES =		multimedia/phonon
+
+BUILD_DEPENDS =		devel/gettext-tools
 
 LIB_DEPENDS =		devel/kf5/karchive \
 			devel/kf5/kcodecs \
@@ -31,7 +33,10 @@ LIB_DEPENDS =		devel/kf5/karchive \
 			devel/kf5/kwidgetsaddons \
 			devel/kf5/kwindowsystem \
 			devel/kf5/kxmlgui \
-			devel/kf5/sonnet
+			devel/kf5/sonnet \
+			graphics/giflib \
+			graphics/jpeg \
+			graphics/png
 
 IS_PORTING_AID =	Yes
 

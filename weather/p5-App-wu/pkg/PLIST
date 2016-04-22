@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+bin/wu
+${P5SITE}/App/
+${P5SITE}/App/wu.pm
+@man man/man1/wu.1
+@man man/man3p/App::wu.3p

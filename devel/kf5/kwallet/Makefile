@@ -7,14 +7,15 @@ PKGNAME =		kf5-kwallet-${VERSION}
 SHARED_LIBS =		KF5Wallet		0.0
 SHARED_LIBS +=		kwalletbackend5		0.0
 
-WANTLIB =  KF5ConfigCore KF5CoreAddons KF5DBusAddons KF5I18n KF5IconThemes
+WANTLIB =  KF5Auth KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
+WANTLIB += KF5CoreAddons KF5DBusAddons KF5Gpgmepp KF5I18n KF5IconThemes
 WANTLIB += KF5Notifications KF5Service KF5WidgetsAddons KF5WindowSystem
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Widgets X11 c gcrypt m pthread
-WANTLIB += KF5Gpgmepp assuan gpg-error gpgme
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Widgets Qt5Xml
+WANTLIB += X11 assuan c gcrypt gpg-error gpgme m pthread
 
-MODULES =		devel/gettext
+BUILD_DEPENDS =		devel/gettext-tools \
+			devel/kf5/kdoctools
 
-BUILD_DEPENDS =		devel/kf5/kdoctools
 RUN_DEPENDS =		devel/kf5/kdoctools
 
 LIB_DEPENDS =		devel/kf5/kconfig \

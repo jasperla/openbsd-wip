@@ -1,7 +1,0 @@
-@comment $OpenBSD$
-@bin bin/jp2a
-@man man/man1/jp2a.1
-share/doc/jp2a/
-share/doc/jp2a/AUTHORS
-share/doc/jp2a/COPYING
-share/doc/jp2a/LICENSES

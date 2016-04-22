@@ -1,2 +1,2 @@
 @comment $OpenBSD$
-lib/kf5/plugins/kf5/sonnet/aspell.so
+lib/qt5/plugins/kf5/sonnet/aspell.so

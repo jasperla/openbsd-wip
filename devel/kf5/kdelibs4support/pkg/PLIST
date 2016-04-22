@@ -1083,9 +1083,9 @@ lib/cmake/KF5KDELibs4Support/config-alsa.h.cmake
 lib/cmake/KF5KDELibs4Support/create_exe_symlink.cmake
 lib/cmake/KF5KDELibs4Support/kde4_exec_via_sh.cmake
 lib/cmake/KF5KDELibs4Support/kde4uic.cmake
-lib/kf5/plugins/kcm_ssl.so
-lib/kf5/plugins/kf5/kded/networkstatus.so
-lib/kf5/plugins/kf5/kio/metainfo.so
+lib/qt5/plugins/kcm_ssl.so
+lib/qt5/plugins/kf5/kded/networkstatus.so
+lib/qt5/plugins/kf5/kio/metainfo.so
 @lib lib/libKF5KDELibs4Support.so.${LIBKF5KDELibs4Support_VERSION}
 lib/qt5/plugins/designer/kf5deprecatedwidgets.so
 libexec/kf5/filesharelist
@@ -1112,6 +1112,9 @@ share/doc/HTML/en/kcontrol/kcm_ssl5/module.png
 share/doc/HTML/en/kdebugdialog5/
 share/doc/HTML/en/kdebugdialog5/index.cache.bz2
 share/doc/HTML/en/kdebugdialog5/index.docbook
+share/doc/HTML/it/kdebugdialog5/
+share/doc/HTML/it/kdebugdialog5/index.cache.bz2
+share/doc/HTML/it/kdebugdialog5/index.docbook
 share/doc/HTML/nl/kdebugdialog5/
 share/doc/HTML/nl/kdebugdialog5/index.cache.bz2
 share/doc/HTML/nl/kdebugdialog5/index.docbook
@@ -1119,6 +1122,13 @@ share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/kdebugdialog5/
 share/doc/HTML/pt_BR/kdebugdialog5/index.cache.bz2
 share/doc/HTML/pt_BR/kdebugdialog5/index.docbook
+share/doc/HTML/sr/kdebugdialog5/
+share/doc/HTML/sr/kdebugdialog5/index.cache.bz2
+share/doc/HTML/sr/kdebugdialog5/index.docbook
+share/doc/HTML/sr@latin/
+share/doc/HTML/sr@latin/kdebugdialog5/
+share/doc/HTML/sr@latin/kdebugdialog5/index.cache.bz2
+share/doc/HTML/sr@latin/kdebugdialog5/index.docbook
 share/doc/HTML/sv/kdebugdialog5/
 share/doc/HTML/sv/kdebugdialog5/index.cache.bz2
 share/doc/HTML/sv/kdebugdialog5/index.docbook

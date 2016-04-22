@@ -2,7 +2,7 @@
 @conflict teTeX_base-*
 @conflict pdfjam-*
 @conflict ht-<2
-@conflict texlive_texmf-buildset-<2013
+@conflict texlive_texmf-buildset-<2016
 @pkgpath print/teTeX/base
 @pkgpath print/pdfjam
 @pkgpath print/teTeX/base,-fmt

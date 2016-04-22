@@ -16,8 +16,8 @@ lib/cmake/KF5GlobalAccel/KF5GlobalAccelConfig.cmake
 lib/cmake/KF5GlobalAccel/KF5GlobalAccelConfigVersion.cmake
 lib/cmake/KF5GlobalAccel/KF5GlobalAccelTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5GlobalAccel/KF5GlobalAccelTargets.cmake
-lib/kf5/plugins/org.kde.kglobalaccel5.platforms/
-lib/kf5/plugins/org.kde.kglobalaccel5.platforms/KF5GlobalAccelPrivateXcb.so
+lib/qt5/plugins/org.kde.kglobalaccel5.platforms/
+lib/qt5/plugins/org.kde.kglobalaccel5.platforms/KF5GlobalAccelPrivateXcb.so
 @lib lib/libKF5GlobalAccel.so.${LIBKF5GlobalAccel_VERSION}
 @lib lib/libKF5GlobalAccelPrivate.so.${LIBKF5GlobalAccelPrivate_VERSION}
 share/dbus-1/interfaces/kf5_org.kde.KGlobalAccel.xml
