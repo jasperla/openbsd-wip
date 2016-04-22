@@ -73,7 +73,7 @@ Opening logical volume `test`:`test`:`test`
 A total of 0 kb transfered at an overal average of 0 kb/sec
 UDF> put test.file.two
 A total of 0 kb transfered at an overal average of 0 kb/sec
-UDF> mput test.directory
+UDF> put test.directory
 A total of 0 kb transfered at an overal average of 0 kb/sec
 UDF> quit
 
