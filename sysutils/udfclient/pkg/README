@@ -33,7 +33,7 @@ with other OSes unless placed on optical media.  Other blocksizes (such
 as 512 or 4096-byte, used with disk drives) will not be mountable.
 
 Use use a 2048 byte blocksize when formatting a filesystem, and
-explicitly with udfclient in order to be ale to use mount_udf().
+explicitly with udfclient in order to be able to use mount_udf().
 
 UDF root directory
 ------------------
