@@ -4,19 +4,14 @@ $OpenBSD$
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-Installed
+Utilities
 =========
 
 cd_disect       Display SCSI / ATAPI device information
-
 cd_sessions     Optical device session management
-
 mmc_format      Format optical media
-
 newfs_udf       Format a filesystem
-
 udfclient       Read or write to a filesystem
-
 udfdump         Display contents of a filesystem
 
 Issuing any command without options will produce a usage summary.
@@ -24,20 +19,31 @@ Issuing any command without options will produce a usage summary.
 Considerations
 ==============
 
+Special files and links
+-----------------------
+
+* All links will be followed and files replicated when copied to
+  a UDF filesystem, whether hard or symbolic links.
+
+* Block, character, FIFO, and socket special files are not
+  supported.
+
 UDF on disk drives
 ------------------
 
 MBRs are not used, the filesystem begins at LBA 0.  Partition "c"
 should be used if writing directly to a drive instead of an image
-file:
+file.  If an MBR or GPT exists on the drive, consider zeroing the
+leading sectors before use, as shown in the first command below.
 
+# dd if=/dev/zero of=/dev/rsd9c count=63
 # newfs_udf -L shared.drive /dev/rsd9c
 # ufsclient -W /dev/rsd9c
 
 Interoperability with mount_udf(8)
 ----------------------------------
 
-Kernel recognition (virtual disklabel "a") and mounting r/o with
+Kernel recognition (virtual partition "a") and mounting r/o with
 mount_udf() requires a 2048-byte block size, to map a filesystem
 image to an optical drive's sector size.
 
@@ -45,8 +51,8 @@ This precludes direct use with sd(4) devices, and may prevent use
 of the filesystem by other OSes unless the image is transferred
 to optical media.
 
-Use '-b 2048' with newfs_udf when formatting  and with udfclient
-when writing.
+Use '-b 2048' with newfs_udf when formatting these image files
+and with udfclient when writing these image files.
 
 UDF root directory
 ------------------
