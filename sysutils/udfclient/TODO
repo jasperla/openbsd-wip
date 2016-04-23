@@ -1,2 +1,0 @@
-Test the three optical utilites.  cd_disect works on sd(4) devices, 
-recognizing that the device is a disk drive. 

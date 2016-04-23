@@ -1,5 +1,5 @@
 # $OpenBSD$
-COMMENT =	userland implementation of the UDF filingsystem
+COMMENT =	userland implementation of the UDF filesystem
 
 V =		0.8.1
 
@@ -16,8 +16,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	c pthread
 
-MASTER_SITES =		http://www.13thmonkey.org/udfclient/releases/
-EXTRACT_SUFX =		.tgz
+MASTER_SITES =	http://www.13thmonkey.org/udfclient/releases/
+EXTRACT_SUFX =	.tgz
 
 CONFIGURE_STYLE =	gnu
 
