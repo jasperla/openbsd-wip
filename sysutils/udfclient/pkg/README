@@ -7,11 +7,11 @@ $OpenBSD$
 Installed
 =========
 
-cd_disect       Display SCSI / ATAPI device information.  Untested.
+cd_disect       Display SCSI / ATAPI device information
 
-cd_sessions     Optical device session management.  Untested.
+cd_sessions     Optical device session management
 
-mmc_format      Format optical media.  Untested.
+mmc_format      Format optical media
 
 newfs_udf       Format a filesystem
 
@@ -19,21 +19,34 @@ udfclient       Read or write to a filesystem
 
 udfdump         Display contents of a filesystem
 
-Issuing any command without options will produce a short summary of
-options.
+Issuing any command without options will produce a usage summary.
 
 Considerations
 ==============
 
+UDF on disk drives
+------------------
+
+MBRs are not used, the filesystem begins at LBA 0.  Partition "c"
+should be used if writing directly to a drive instead of an image
+file:
+
+# newfs_udf -L shared.drive /dev/rsd9c
+# ufsclient -W /dev/rsd9c
+
 Interoperability with mount_udf(8)
 ----------------------------------
-This requires a 2048-byte block size, as mount_udf() is intended for use
-with optical drives.  Such filesystems are unlikely to be interoperable
-with other OSes unless placed on optical media.  Other blocksizes (such
-as 512 or 4096-byte, used with disk drives) will not be mountable.
 
-Use use a 2048 byte blocksize when formatting a filesystem, and
-explicitly with udfclient in order to be able to use mount_udf().
+Kernel recognition (virtual disklabel "a") and mounting r/o with
+mount_udf() requires a 2048-byte block size, to map a filesystem
+image to an optical drive's sector size.
+
+This precludes direct use with sd(4) devices, and may prevent use
+of the filesystem by other OSes unless the image is transferred
+to optical media.
+
+Use '-b 2048' with newfs_udf when formatting  and with udfclient
+when writing.
 
 UDF root directory
 ------------------
@@ -43,13 +56,14 @@ The UDF root directory is named with colon separated strings.
   "<volume set>:<primary volume>:<logical volume>:<additional tag>"
 
 The udfclient requires a 'cd' into this root directory before you can
-read or write files and directories.
+read or write files and directories. Spaces will require quoting the
+string between " " characters.
 
 udfclient interactive commands
 ------------------------------
 
 These are ftp-like, with some differences.  Use the 'help' command at
-the "UDF>" prompt to display a short summary of them.
+the "UDF>" prompt to display a summary.
 
 Of particular value is a 'get' or 'put' of a directory.  This will copy
 the entire structure in or out of the filesystem.
