@@ -1,4 +1,4 @@
-$OpenBSD:
+$OpenBSD$
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -19,7 +19,7 @@ udfclient       Read or write to a filesystem
 
 udfdump         Display contents of a filesystem
 
-Issuing any command without options will produce a short summary  of
+Issuing any command without options will produce a short summary of
 options.
 
 Considerations
@@ -75,7 +75,7 @@ Current FS working directory /tmp
 UDF> put test.directory
 A total of 0 kb transfered at an overal average of 0 kb/sec
 UDF> get test.directory new.directory
-new.directory/a  ... 
+new.directory/a  ...
 new.directory/b  ...
 new.directory/c  ...
 new.directory/d  ...

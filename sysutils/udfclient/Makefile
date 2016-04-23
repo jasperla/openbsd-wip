@@ -1,4 +1,4 @@
-# $OpenBSD
+# $OpenBSD$
 COMMENT =	userland implementation of the UDF filingsystem
 
 V =		0.8.1
