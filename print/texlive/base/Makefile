@@ -119,7 +119,6 @@ SUBST_VARS +=		TRUEPREFIX LOCALBASE
 pre-install:
 	mkdir -p ${WRKSRC}/inst
 
-# XXX update
 # Symlinks that would have been installed by texlinks.
 # texlinks can not do this itself in the fake dir, as it requires
 # a fully hashed texmf tree and working kpse configuration.

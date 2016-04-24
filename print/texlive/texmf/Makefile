@@ -122,8 +122,16 @@ post-install:
 # This target requires py-texscythe.
 update-plist: plist
 plist:
-	cd ${FILESDIR} && ${MODPY_BIN} mk_plists.py \
-		${TRUEPREFIX}/share/examples/py-texscythe/texlive2015.tlpdb.gz
+	# XXX XXX XXX
+	#cp ~/source/
+	# /XXX XXX XXX
 
+	#cd ${FILESDIR} && ${LOCALBASE}/bin/texscyther --initdb \
+	#	-t ${LOCALBASE}//share/examples/py-texscythe/texlive2014.tlpdb.gz && \
+	#	${MODPY_BIN} mk_plists.py
+	cd ${FILESDIR} && ~/source/texscythe/texscyther --initdb \
+		-t ~/source/texscythe/texlive2015.tlpdb.gz && \
+		PYTHONPATH=~/source/texscythe ${MODPY_BIN} mk_plists.py \
+		~/source/texscythe/texlive2015.tlpdb.gz
 
 .include <bsd.port.mk>
