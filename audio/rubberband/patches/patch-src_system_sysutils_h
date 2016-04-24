@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/system/sysutils.h.orig	Sat Mar 26 19:36:33 2016
++++ src/system/sysutils.h	Sat Mar 26 19:36:51 2016
+@@ -41,7 +41,7 @@
+ #include <malloc.h>
+ #else
+ #ifndef __MSVC__
+-#include <alloca.h>
++#include <stdlib.h> /* alloca() */
+ #endif
+ #endif
+ 
