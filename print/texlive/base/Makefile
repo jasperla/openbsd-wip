@@ -10,18 +10,17 @@ PKGNAME =		texlive_base-${V}
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
 
-SHARED_LIBS =		kpathsea	8.0
-SHARED_LIBS +=		ptexenc		5.0
+SHARED_LIBS =		kpathsea	8.0 # 8.1
+SHARED_LIBS +=		ptexenc		5.0 # 4.3
 SHARED_LIBS +=		synctex		0.0 # 18.0
 SHARED_LIBS +=		texlua52	0.0 # 7.4
-
 
 WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xi Xmu Xpm Xrender Xt
 WANTLIB += c cairo expat fontconfig freetype gd glib-2.0 graphite2
 WANTLIB += harfbuzz harfbuzz-icu icudata icui18n icuio icuuc intl
 WANTLIB += jpeg lcms2 m openjpeg paper pcre pixman-1 png poppler
-WANTLIB += pthread pthread-stubs stdc++ tiff vpx xcb xcb-render
-WANTLIB += xcb-shm z zzip
+WANTLIB += potrace pthread pthread-stubs stdc++ tiff vpx xcb
+WANTLIB += xcb-render xcb-shm z zzip
 
 RUN_DEPENDS =		print/ghostscript/gnu \
 			print/detex \
@@ -39,7 +38,8 @@ LIB_DEPENDS =		graphics/png \
 			graphics/graphite2 \
 			devel/harfbuzz,-icu \
 			print/libpaper \
-			archivers/zziplib
+			archivers/zziplib \
+			graphics/potrace
 
 MODULES =		textproc/intltool converters/libiconv perl
 
@@ -110,11 +110,8 @@ CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--with-system-graphite2 \
 			--with-system-poppler \
 			--with-system-libpaper \
-			--with-system-zziplib
-# XXX need to hack graphics/potrace to emit a library and header.
-# Looks like you add --with-libpotrace to its CONFIGURE_ARGS. Then add a
-# LIB_DEPENDS obviously.
-#--with-system-potrace
+			--with-system-zziplib \
+			--with-system-potrace
 
 SUBST_VARS +=		TRUEPREFIX LOCALBASE
 

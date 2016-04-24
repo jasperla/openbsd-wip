@@ -14,7 +14,7 @@ PLIST_FULL_OUT = "../pkg/PLIST-full"
 PLIST_DOCS_OUT = "../pkg/PLIST-docs"
 PLIST_CONTEXT_OUT = "../pkg/PLIST-context"
 
-YEAR = 2014
+YEAR = 2015
 MAN_INFO_REGEX = "texmf-dist\/doc\/(man\/man[0-9]\/.*[0-9]|info\/.*\.info)$"
 
 if len(sys.argv) != 2:
