@@ -31,11 +31,12 @@ Special files and links
 UDF on disk drives
 ------------------
 
-MBRs are not used, the filesystem begins at LBA 0.  Partition "c"
-should be used if writing directly to a drive instead of an image
-file.  If an MBR or GPT exists on the drive, or the drive contains
-prior data, zero the leading sectors before use as shown in the
-first command below.
+Disklabels are not used, except for virtual disklabel "a" with
+2048-byte blocksize devices.  MBRs are not used, the filesystem
+begins at LBA 0.  Partition "c" should be used if writing directly
+to a drive instead of an image file.  If the drive contains prior
+data, zero the leading sectors before use as shown in the first
+command below.
 
 # dd if=/dev/zero of=/dev/rsd9c count=63
 # newfs_udf -L shared.drive /dev/rsd9c
