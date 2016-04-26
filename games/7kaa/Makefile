@@ -20,18 +20,18 @@ MAINTAINER = 		Kirill Bychkov <kirby@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =  Yes
 
-WANTLIB-main += SDL2 c enet m openal pthread stdc++ ${WANTLIB}
+WANTLIB-main += SDL2 c enet iconv intl m openal pthread stdc++
 WANTLIB-data =
 
-MODULES = 		devel/gettext #converters/libiconv
 BUILD_DEPENDS = 	${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/gettext-tools \
 			devel/libtool
 
 LIB_DEPENDS-main = 	audio/openal \
+			devel/gettext \
 			devel/sdl2 \
-			net/enet \
-			${LIB_DEPENDS}
+			net/enet
 RUN_DEPENDS-main = 	games/7kaa,-data
 
 CONFIGURE_STYLE =	gnu
