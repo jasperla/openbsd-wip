@@ -37,7 +37,7 @@ begins at LBA 0.  Partition "c" should be used if writing directly
 to a drive instead of an image file.  If the drive contains prior
 data, zero the leading sectors before use as shown in the first
 command below.
-
+ 
 # dd if=/dev/zero of=/dev/rsd9c count=63
 # newfs_udf -L shared.drive /dev/rsd9c
 # ufsclient -W /dev/rsd9c
@@ -51,7 +51,7 @@ filesystem image to an optical drive's sector size.
 
 This precludes direct use with sd(4) devices, and may prevent
 interoperability with other OSes unless the image is transferred
-to optical media, as a logial block size must map to the physical
+to optical media, as a logical block size must map to the physical
 sector size per the OSTA specification for UDF.
 
 Use '-b 2048' with newfs_udf when formatting these image files
