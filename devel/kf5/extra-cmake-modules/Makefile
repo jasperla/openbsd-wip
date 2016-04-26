@@ -8,7 +8,8 @@ WANTLIB- =
 
 BUILD_DEPENDS =		textproc/py-sphinx
 
-CONFIGURE_ARGS =	-DBUILD_QTHELP_DOCS=True
+CONFIGURE_ARGS =	-DBUILD_QTHELP_DOCS=True \
+			-DQCollectionGenerator_EXECUTABLE=${MODQT_LIBDIR}/bin/qcollectiongenerator
 
 PKG_ARCH =		*
 
