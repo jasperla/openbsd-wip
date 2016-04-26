@@ -1,6 +1,5 @@
 # $OpenBSD$
 
-SHARED_ONLY ?=		Yes
 MODKF5_VERSION =	5.21.0
 
 MAINTAINER ?=		KDE porting team <openbsd-kde@googlegroups.com>

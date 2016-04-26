@@ -2,7 +2,7 @@
 
 COMMENT =		network library for easy and scalable concurrency
 
-MODPY_EGG_VERSION =	1.1.0
+MODPY_EGG_VERSION =	1.1.1
 DISTNAME =		gevent-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
@@ -19,8 +19,8 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
+BUILD_DEPENDS =		lang/cython
 LIB_DEPENDS =		devel/libev \
-			lang/cython \
 			net/libcares
 RUN_DEPENDS =		devel/py-greenlet
 TEST_DEPENDS =		${RUN_DEPENDS} \
@@ -28,7 +28,6 @@ TEST_DEPENDS =		${RUN_DEPENDS} \
 			sysutils/py-psutil
 
 MAKE_ENV =		CARES_EMBED=0 LIBEV_EMBED=0
-TEST_ENV =		APPVEYOR=Yes
 CFLAGS +=		-I${LOCALBASE}/include
 LDFLAGS +=		-L${LOCALBASE}/lib
 

@@ -1,6 +1,0 @@
-@comment $OpenBSD$
-include/strophe.h
-lib/libstrophe.a
-lib/libstrophe.la
-@lib lib/libstrophe.so.${LIBstrophe_VERSION}
-lib/pkgconfig/libstrophe.pc

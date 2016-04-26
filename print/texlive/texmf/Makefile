@@ -93,6 +93,11 @@ do-install:
 	mv ${WRKDIST}/texmf-dist ${PREFIX}/share
 
 	# plug in my pregenerated map and formats
+	#
+	# These are created (as root) with:
+	#   updmap-sys
+	#   fmtutil-sys --all
+	#   context --make
 	mv ${WRKDIR}/texmf-var ${PREFIX}/share
 
 	# Put manuals in the right place.
@@ -122,8 +127,8 @@ post-install:
 # This target requires py-texscythe.
 update-plist: plist
 plist:
-	cd ${FILESDIR} && ${LOCALBASE}/bin/texscyther --initdb \
-		-t ${LOCALBASE}//share/examples/py-texscythe/texlive2014.tlpdb.gz && \
-		${MODPY_BIN} mk_plists.py
+	cd ${FILESDIR} && ${MODPY_BIN} mk_plists.py \
+		${TRUEPREFIX}/share/examples/py-texscythe/texlive2015.tlpdb.gz
+
 
 .include <bsd.port.mk>

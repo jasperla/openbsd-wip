@@ -5,3 +5,4 @@
 @bin bin/newfs_udf
 @bin bin/udfclient
 @bin bin/udfdump
+share/doc/pkg-readmes/${FULLPKGNAME}

@@ -1,5 +1,8 @@
-# $OpenBSD
-COMMENT =	userland implementation of the UDF filingsystem
+# $OpenBSD$
+
+COMMENT =	userland implementation of the UDF filesystem
+
+V =		0.8.1
 DISTNAME =	UDFclient.${V}
 PKGNAME =	udfclient-${V}
 CATEGORIES =	sysutils
@@ -13,9 +16,11 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	c pthread
 
-MASTER_SITES =		http://www.13thmonkey.org/udfclient/releases/
-EXTRACT_SUFX =		.tgz
+MASTER_SITES =	http://www.13thmonkey.org/udfclient/releases/
+EXTRACT_SUFX =	.tgz
 
 CONFIGURE_STYLE =	gnu
+
+FAKE_FLAGS =	prefix=${WRKINST}${PREFIX}
 
 .include <bsd.port.mk>
