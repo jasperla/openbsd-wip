@@ -8,6 +8,8 @@ CATEGORIES=	x11 x11/kde
 
 HOMEPAGE=	http://www.krusader.org
 
+MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
+
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
@@ -24,7 +26,11 @@ MODULES=	x11/kde4 \
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
+BUILD_DEPENDS =	devel/gettext-tools
+
 LIB_DEPENDS =	${MODKDE4_DEP_DIR}/baseapps>=${MODKDE4_DEP_VERSION}
+
+NO_TEST = 	Yes
 
 # XXX Silently ignore non-existent dependencies
 CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0046=OLD
