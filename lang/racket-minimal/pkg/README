@@ -8,8 +8,7 @@ Limitations
 ===========
 
 - Racket's JIT only supports CPUs with SSE2 extensions or PowerPC CPUs. There
-  is a "no_jit" flavor for i386 and amd64. The JIT on PowerPC is disabled by
-  default due to a bug which breaks the build.
+  is a "no_jit" flavor for amd64, i386 and powerpc.
 - DrRacket doesn't work correctly with the "no_jit" flavor.
 - Racket is slightly broken here and there on powerpc.
 - FFI is broken on sparc64.
