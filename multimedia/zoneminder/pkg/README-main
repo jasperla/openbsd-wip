@@ -12,13 +12,19 @@ details:
 zoneminder notes, needs expanding and fleshing out into readme below
 
 
+load schema and add users:
+
+mysql -u root -p
+\. /usr/local/share/zoneminder/db/zm_create.sql
+grant select,insert,update,delete on <database name>.* to '<database user>'@localhost identified by '<database password>'; 
+
+
 - set database user/password in ${SYSCONFDIR}/zm/zm.conf and
 ${PREFIX-web}/zoneminder/api/app/Config/database.php
 (check for other files with @ZM_DB_ HOST/USER/PASS/NAME).
 
 - generate new random tokens:
 ${PREFIX-web}/zoneminder/api/app/Config/core.php
-${PREFIX-web}/zoneminder/api/app/Config/database.php
 - @ZM_API_SALT@ should be 40 char alphanumeric
 - @ZM_API_SEED@ should be (<= ?) 29 char numeric
 
@@ -27,7 +33,29 @@ ${PREFIX-web}/zoneminder/api/app/Config/email.php ??
 
 - needs notes on how to load the db schema, setup users etc
 
+
 .....
+
+apache config:
+
+Alias /zm /var/www/zoneminder
+<Directory "/var/www/zoneminder">
+  php_flag register_globals off
+  Options Indexes FollowSymLinks
+  <IfModule mod_dir.c>
+    DirectoryIndex index.php
+  </IfModule>
+  Require all granted
+</Directory>
+
+
+
+
+running:
+
+# mkdir /var/run/zm
+# chown www /var/run/zm
+# sudo -u www zmpkg.pl start 
 
 
 ------------------------8<------------------------
