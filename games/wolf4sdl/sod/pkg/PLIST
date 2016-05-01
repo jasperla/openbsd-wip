@@ -1,7 +1,0 @@
-@comment $OpenBSD$
-@bin bin/spear
-share/doc/wolf4sdl-sod/
-share/doc/wolf4sdl-sod/Changes.txt
-share/doc/wolf4sdl-sod/README.txt
-share/doc/wolf4sdl-sod/license-id.txt
-share/doc/wolf4sdl-sod/license-mame.txt

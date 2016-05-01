@@ -1,5 +1,0 @@
-@comment $OpenBSD$
-share/u-boot/
-share/u-boot/mx6_cubox-i/
-share/u-boot/mx6_cubox-i/SPL
-share/u-boot/mx6_cubox-i/u-boot.img

@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-lib/apitrace/wrappers/egltrace.so
-lib/apitrace/wrappers/glxtrace.so

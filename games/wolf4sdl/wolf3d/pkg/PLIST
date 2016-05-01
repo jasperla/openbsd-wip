@@ -1,7 +1,0 @@
-@comment $OpenBSD$
-@bin bin/wolf3d
-share/doc/wolf4sdl-wolf3d/
-share/doc/wolf4sdl-wolf3d/Changes.txt
-share/doc/wolf4sdl-wolf3d/README.txt
-share/doc/wolf4sdl-wolf3d/license-id.txt
-share/doc/wolf4sdl-wolf3d/license-mame.txt
