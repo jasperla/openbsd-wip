@@ -2,7 +2,7 @@
 
 COMMENT =	userland implementation of the UDF filesystem
 
-V =		0.8.1
+V =		0.8.5
 DISTNAME =	UDFclient.${V}
 PKGNAME =	udfclient-${V}
 CATEGORIES =	sysutils
@@ -20,7 +20,5 @@ MASTER_SITES =	http://www.13thmonkey.org/udfclient/releases/
 EXTRACT_SUFX =	.tgz
 
 CONFIGURE_STYLE =	gnu
-
-FAKE_FLAGS =	prefix=${WRKINST}${PREFIX}
 
 .include <bsd.port.mk>

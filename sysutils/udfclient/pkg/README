@@ -8,7 +8,7 @@ Utilities
 =========
 
 cd_disect       Display SCSI / ATAPI device information
-cd_sessions     Optical device session management
+cd_sessions     Optical device sessions report
 mmc_format      Format optical media
 newfs_udf       Format a filesystem
 udfclient       Read or write to a filesystem
@@ -31,31 +31,35 @@ Special files and links
 UDF on disk drives
 ------------------
 
-Disklabels are not used, except for virtual disklabel "a" with
+Disklabels are not used, except for virtual partition "a" with
 2048-byte blocksize devices.  MBRs are not used, the filesystem
 begins at LBA 0.  Partition "c" should be used if writing directly
 to a drive instead of an image file.  If the drive contains prior
 data, zero the leading sectors before use as shown in the first
 command below.
- 
+
 # dd if=/dev/zero of=/dev/rsd9c count=63
 # newfs_udf -L shared.drive /dev/rsd9c
 # ufsclient -W /dev/rsd9c
+
+While it is possible to direct a filesystem image to a disklabel
+partition, there would be no interoperability with other OSes.
 
 Interoperability with mount_udf(8)
 ----------------------------------
 
 Kernel recognition (virtual partition "a") and mounting r/o with
-mount_udf() requires a 2048-byte logial block size, to map a
-filesystem image to an optical drive's sector size.
+mount_udf() currently requires a 2048-byte logial block size, to
+map a filesystem image to an optical drive's sector size.
 
 This precludes direct use with sd(4) devices, and may prevent
-interoperability with other OSes unless the image is transferred
-to optical media, as a logical block size must map to the physical
-sector size per the OSTA specification for UDF.
+interoperability with other OSes.  The OSTA specification
+requires a logical blocksize equal to the media sector size, and
+the filesystem does not include a Virtual Allocation Table
+required for -R media.
 
-Use '-b 2048' with newfs_udf when formatting these image files
-and with udfclient when writing these image files.
+If you wish to use mount_udf(), include '-b 2048' with both
+the newfs_udf and udfclient utilities.
 
 UDF root directory
 ------------------
