@@ -49,7 +49,7 @@ Interoperability with mount_udf(8)
 ----------------------------------
 
 Kernel recognition (virtual partition "a") and mounting r/o with
-mount_udf() currently requires a 2048-byte logial block size, to
+mount_udf() currently requires a 2048-byte logical block size, to
 map a filesystem image to an optical drive's sector size.
 
 This precludes direct use with sd(4) devices, and may prevent
