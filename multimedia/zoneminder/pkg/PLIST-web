@@ -2082,3 +2082,6 @@ zoneminder/tools/mootools/mootools-more.js
 zoneminder/views/
 zoneminder/views/file.php
 zoneminder/views/image.php
+@owner www
+@sample zoneminder/events/
+@sample zoneminder/images/

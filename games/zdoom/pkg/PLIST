@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-@bin bin/zdoom
-share/zdoom/
-share/zdoom/zdoom.pk3
