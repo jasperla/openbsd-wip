@@ -11,9 +11,11 @@ HOMEPAGE =	http://www.a-rostin.de
 MASTER_SITES =	${HOMEPAGE}/klogic/releases/
 EXTRACT_SUFX =	.tar.gz
 
-WANTLIB += QtDBus QtGui QtNetwork QtSvg QtXml c kdeui kio m pthread
+WANTLIB += QtDBus QtGui QtNetwork QtSvg QtXml c
+WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio m pthread
 
-# GPLv
+# License information from homepage
+# GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	x11/kde4 \
