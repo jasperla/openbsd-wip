@@ -1,0 +1,63 @@
+$OpenBSD$
+backport https://github.com/rust-lang/cargo/commit/d521a9a007c596a8fdbdfbac5a812f789c145ac5
+Remove non-inline modules in blocks
+--- src/bin/cargo.rs.orig	Sun Jan 17 01:56:58 2016
++++ src/bin/cargo.rs	Thu May  5 13:31:57 2016
+@@ -14,7 +14,7 @@ use cargo::execute_main_without_stdin;
+ use cargo::util::{self, CliResult, lev_distance, Config, human, CargoResult};
+ 
+ #[derive(RustcDecodable)]
+-struct Flags {
++pub struct Flags {
+     flag_list: bool,
+     flag_verbose: bool,
+     flag_quiet: bool,
+@@ -60,7 +60,7 @@ fn main() {
+ }
+ 
+ macro_rules! each_subcommand{
+-    ($mac:ident) => ({
++    ($mac:ident) => {
+         $mac!(bench);
+         $mac!(build);
+         $mac!(clean);
+@@ -88,9 +88,16 @@ macro_rules! each_subcommand{
+         $mac!(verify_project);
+         $mac!(version);
+         $mac!(yank);
+-    })
++    }
+ }
+ 
++mod subcommands {
++    macro_rules! declare_mod {
++        ($name:ident) => ( pub mod $name; )
++    }
++each_subcommand!(declare_mod);
++}
++
+ /**
+   The top-level `cargo` command handles configuration and project location
+   because they are fundamental (and intertwined). Other commands can rely
+@@ -143,10 +150,9 @@ fn execute(flags: Flags, config: &Config) -> CliResult
+ 
+     macro_rules! cmd{
+         ($name:ident) => (if args[1] == stringify!($name).replace("_", "-") {
+-            mod $name;
+             config.shell().set_verbose(true);
+-            let r = cargo::call_main_without_stdin($name::execute, config,
+-                                                   $name::USAGE,
++            let r = cargo::call_main_without_stdin(subcommands::$name::execute, config,
++                                                   subcommands::$name::USAGE,
+                                                    &args,
+                                                    false);
+             cargo::process_executed(r, &mut config.shell());
+@@ -223,7 +229,7 @@ fn list_commands(config: &Config) -> BTreeSet<String> 
+     }
+ 
+     macro_rules! add_cmd {
+-        ($cmd:ident) => (commands.insert(stringify!($cmd).replace("_", "-")))
++        ($cmd:ident) => ({commands.insert(stringify!($cmd).replace("_", "-")); })
+     }
+     each_subcommand!(add_cmd);
+     commands

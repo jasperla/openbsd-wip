@@ -1,0 +1,21 @@
+$OpenBSD$
+--- src/bin/locate_project.rs.orig	Thu May  5 13:28:06 2016
++++ src/bin/locate_project.rs	Thu May  5 13:29:49 2016
+@@ -2,7 +2,7 @@ use cargo::util::{CliResult, CliError, human, ChainErr
+ use cargo::util::important_paths::{find_root_manifest_for_wd};
+ 
+ #[derive(RustcDecodable)]
+-struct LocateProjectFlags {
++pub struct LocateProjectFlags {
+     flag_manifest_path: Option<String>,
+ }
+ 
+@@ -18,7 +18,7 @@ Options:
+ ";
+ 
+ #[derive(RustcEncodable)]
+-struct ProjectLocation {
++pub struct ProjectLocation {
+     root: String
+ }
+ 

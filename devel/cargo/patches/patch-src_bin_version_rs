@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/bin/version.rs.orig	Thu May  5 13:28:06 2016
++++ src/bin/version.rs	Thu May  5 13:30:35 2016
+@@ -4,7 +4,7 @@ use cargo;
+ use cargo::util::{CliResult, Config};
+ 
+ #[derive(RustcDecodable)]
+-struct Options;
++pub struct Options;
+ 
+ pub const USAGE: &'static str = "
+ Show version information

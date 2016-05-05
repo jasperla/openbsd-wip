@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/bin/build.rs.orig	Thu May  5 13:28:06 2016
++++ src/bin/build.rs	Thu May  5 13:29:20 2016
+@@ -6,7 +6,7 @@ use cargo::util::important_paths::{find_root_manifest_
+ use cargo::util::{CliResult, Config};
+ 
+ #[derive(RustcDecodable)]
+-struct Options {
++pub struct Options {
+     flag_package: Vec<String>,
+     flag_jobs: Option<u32>,
+     flag_features: Vec<String>,

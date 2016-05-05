@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/bin/publish.rs.orig	Thu May  5 13:28:06 2016
++++ src/bin/publish.rs	Thu May  5 13:30:08 2016
+@@ -3,7 +3,7 @@ use cargo::util::{CliResult, Config};
+ use cargo::util::important_paths::find_root_manifest_for_wd;
+ 
+ #[derive(RustcDecodable)]
+-struct Options {
++pub struct Options {
+     flag_host: Option<String>,
+     flag_token: Option<String>,
+     flag_manifest_path: Option<String>,

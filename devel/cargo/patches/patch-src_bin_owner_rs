@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/bin/owner.rs.orig	Thu May  5 13:28:06 2016
++++ src/bin/owner.rs	Thu May  5 13:29:58 2016
+@@ -2,7 +2,7 @@ use cargo::ops;
+ use cargo::util::{CliResult, Config};
+ 
+ #[derive(RustcDecodable)]
+-struct Options {
++pub struct Options {
+     arg_crate: Option<String>,
+     flag_token: Option<String>,
+     flag_add: Option<Vec<String>>,
