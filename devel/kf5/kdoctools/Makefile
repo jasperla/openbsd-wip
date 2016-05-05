@@ -7,7 +7,8 @@ WANTLIB =	KF5Archive Qt5Core c exslt m xml2 xslt
 
 BUILD_DEPENDS =	devel/gettext-tools \
 		devel/kf5/ki18n \
-		textproc/docbook-xsl
+		textproc/docbook-xsl \
+		www/p5-URI
 
 RUN_DEPENDS =	devel/kf5/ki18n \
 		textproc/docbook-xsl
