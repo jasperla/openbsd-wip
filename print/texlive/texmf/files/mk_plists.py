@@ -31,22 +31,6 @@ class NastyError(Exception):
 # Files from our pre-generated 'texmf-var' tarball.
 # This will change from year to year.
 TEXMF_VAR_FILES = [
-    "share/texmf-var/luatex-cache/",
-    "share/texmf-var/luatex-cache/context/",
-    "share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/",
-    "share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/trees/",
-    "share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/trees/aaa83cff85f3dc7faeec97741da9bdea.lua",
-    "share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/trees/ae1ce25587f690ea775a5039ecdbe030.lua",
-    "share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/trees/ae1ce25587f690ea775a5039ecdbe030.luc",
-    "share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/trees/aaa83cff85f3dc7faeec97741da9bdea.luc",
-    "share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/",
-    "share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/",
-    "share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-en.luv",
-    "share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-en.lui",
-    "share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-en.fmt",
-    "share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-nl.luv",
-    "share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-nl.lui",
-    "share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-nl.fmt",
     "share/texmf-var/web2c/",
     "share/texmf-var/web2c/eptex/",
     "share/texmf-var/web2c/eptex/platex.fmt",
@@ -147,15 +131,6 @@ CONFLICT_FILES = [
 ]
 
 # Files that are missing due to a bug in the tlpdb
-BUG_MISSING_FILES = [
-    "share/texmf-dist/doc/latex/l3ctr2e/",
-    "share/texmf-dist/doc/latex/l3ctr2e/README",
-    "share/texmf-dist/doc/latex/l3ctr2e/l3ctr2e.pdf",
-    "share/texmf-dist/tex/latex/l3ctr2e/",
-    "share/texmf-dist/tex/latex/l3ctr2e/l3ctr2e.sty",
-]
-
-# XXX
 BUG_MISSING_FILES = []
 
 # Don't need to add dir entries for these
@@ -315,7 +290,7 @@ buildset_top_matter = [
     "@conflict texlive_base-<%s" % YEAR,
     "@conflict texlive_texmf-docs-<%s" % YEAR,
     "@conflict texlive_texmf-minimal-<%s" % YEAR,
-    "@conflict texlive_texmf-full-<%sp0" % YEAR,
+    "@conflict texlive_texmf-full-<%s" % YEAR,
     "@conflict texlive_texmf-context-<%s" % YEAR,
     "@pkgpath print/texlive/texmf-minimal",
     "@pkgpath print/teTeX/texmf",
@@ -385,6 +360,7 @@ context_top_matter = [
     "@conflict texlive_texmf-buildset-<%s" % YEAR,
     "@conflict texlive_texmf-minimal-<%s" % YEAR,
 ]
+
 context_bottom_matter = [
     "@unexec rm -Rf %D/share/texmf-var/luatex-cache",
     "@exec %D/bin/mtxrun --generate > /dev/null 2>&1",

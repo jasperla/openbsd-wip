@@ -3,7 +3,7 @@
 @conflict texlive_base-<2015
 @conflict texlive_texmf-docs-<2015
 @conflict texlive_texmf-minimal-<2015
-@conflict texlive_texmf-full-<2015p0
+@conflict texlive_texmf-full-<2015
 @conflict texlive_texmf-context-<2015
 @pkgpath print/texlive/texmf-minimal
 @pkgpath print/teTeX/texmf
@@ -5616,22 +5616,6 @@ share/texmf-var/fonts/map/pdftex/updmap/
 share/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 share/texmf-var/fonts/map/pdftex/updmap/pdftex_dl14.map
 share/texmf-var/fonts/map/pdftex/updmap/pdftex_ndl14.map
-share/texmf-var/luatex-cache/
-share/texmf-var/luatex-cache/context/
-share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/
-share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/
-share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/
-share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-en.fmt
-share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-en.lui
-share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-en.luv
-share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-nl.fmt
-share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-nl.lui
-share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-nl.luv
-share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/trees/
-share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/trees/aaa83cff85f3dc7faeec97741da9bdea.lua
-share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/trees/aaa83cff85f3dc7faeec97741da9bdea.luc
-share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/trees/ae1ce25587f690ea775a5039ecdbe030.lua
-share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/trees/ae1ce25587f690ea775a5039ecdbe030.luc
 share/texmf-var/web2c/
 share/texmf-var/web2c/aleph/
 share/texmf-var/web2c/aleph/aleph.fmt
