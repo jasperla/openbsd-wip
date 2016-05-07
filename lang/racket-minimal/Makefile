@@ -33,11 +33,11 @@ MASTER_SITES =		https://mirror.racket-lang.org/installers/${V}/ \
 			ftp://download.tuxfamily.org/jod/lang/racket/
 EXTRACT_SUFX =		.tgz
 
-# GCC4 is only needed by the TLS flavor.
-# Using this for everything for consistency.
+# GCC4 is only needed by the TLS flavor. "places" and "futures" only work
+# correctly on amd64 for this version.
 MODULES +=		gcc4
 MODGCC4_LANGS =		c c++
-MODGCC4_ARCHS =		*
+MODGCC4_ARCHS =		amd64
 LIB_DEPENDS =		converters/libiconv \
 			devel/libffi>=3.0.9p2
 
@@ -91,13 +91,13 @@ ONLY_FOR_ARCHS =	amd64 i386 powerpc
 CONFIGURE_ARGS +=	--disable-jit \
 			--disable-places \
 			--disable-futures
-.elif ${MACHINE_ARCH} != "sparc64" && ${MACHINE_ARCH} != "powerpc"
+.elif ${MACHINE_ARCH} == "amd64"
 CONFIGURE_ARGS +=	--enable-jit \
 			--enable-places \
 			--enable-futures
-.elif ${MACHINE_ARCH} == "powerpc"
-CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -O0 -Wall -Wno-unused-value" \
-			CPPFLAGS="${CPPFLAGS} -O0 -Wall -Wno-unused-value"
+.elif ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
+#CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -O0 -Wall -Wno-unused-value" \
+#			CPPFLAGS="${CPPFLAGS} -O0 -Wall -Wno-unused-value"
 CONFIGURE_ARGS +=	--enable-jit \
 			--disable-places \
 			--disable-futures
