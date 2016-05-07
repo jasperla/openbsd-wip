@@ -20,7 +20,7 @@ MODPY_ADJ_FILES =	${SCRIPTS_DIR}/de-macro/de-macro \
 			${SCRIPTS_DIR}/lilyglyphs/lily-rebuild-pdfs.py \
 			${SCRIPTS_DIR}/lilyglyphs/lilyglyphs_common.py \
 			${SCRIPTS_DIR}/pygmentex/pygmentex.py \
-			${SCRIPTS_DIR}/pythontex/depythontex.py
+			${SCRIPTS_DIR}/pythontex/depythontex.py \
 			${SCRIPTS_DIR}/pythontex/depythontex2.py \
 			${SCRIPTS_DIR}/pythontex/depythontex3.py \
 			${SCRIPTS_DIR}/pythontex/pythontex.py \

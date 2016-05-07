@@ -61,7 +61,6 @@ MODPY_RUNDEP =		No
 
 SUBST_VARS +=		RUBY
 
-# XXX update
 # Substitute correct interpreter paths into scripts.
 # Some are done automatically by MODULES
 pre-configure:
