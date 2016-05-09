@@ -1,0 +1,35 @@
+@comment $OpenBSD$
+@bin bin/filebeat
+@bin bin/hwsensorsbeat
+@bin bin/packetbeat
+@bin bin/topbeat
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/filebeat/
+@sample ${SYSCONFDIR}/filebeat/
+share/examples/filebeat/README.md
+share/examples/filebeat/filebeat.template.json
+@sample ${SYSCONFDIR}/filebeat/filebeat.template.json
+share/examples/filebeat/filebeat.yml
+@sample ${SYSCONFDIR}/filebeat/filebeat.yml
+share/examples/hwsensorsbeat/
+@sample ${SYSCONFDIR}/hwsensorsbeat/
+share/examples/hwsensorsbeat/hwsensorsbeat.template.json
+@sample ${SYSCONFDIR}/hwsensorsbeat/hwsensorsbeat.template.json
+share/examples/hwsensorsbeat/hwsensorsbeat.yml
+@sample ${SYSCONFDIR}/hwsensorsbeat/hwsensorsbeat.yml
+share/examples/packetbeat/
+@sample ${SYSCONFDIR}/packetbeat/
+share/examples/packetbeat/packetbeat.template.json
+@sample ${SYSCONFDIR}/packetbeat/packetbeat.template.json
+share/examples/packetbeat/packetbeat.yml
+@sample ${SYSCONFDIR}/packetbeat/packetbeat.yml
+share/examples/topbeat/
+@sample ${SYSCONFDIR}/topbeat/
+share/examples/topbeat/topbeat.template.json
+@sample ${SYSCONFDIR}/topbeat/topbeat.template.json
+share/examples/topbeat/topbeat.yml
+@sample ${SYSCONFDIR}/topbeat/topbeat.yml
+@rcscript ${RCDIR}/filebeat
+@rcscript ${RCDIR}/hwsensorsbeat
+@rcscript ${RCDIR}/packetbeat
+@rcscript ${RCDIR}/topbeat
