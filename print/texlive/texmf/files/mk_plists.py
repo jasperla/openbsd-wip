@@ -323,11 +323,14 @@ context_pkgs = [
     "!context",
     "!context-account",
     "!context-algorithmic",
+    "!context-animation",
+    "!context-annotation",
     "!context-bnf",
     "!context-chromato",
     "!context-construction-plan",
     "!context-cyrillicnumbers",
     "!context-degrade",
+    "!context-fancybreak",
     "!context-filter",
     "!context-fixme",
     "!context-french",
@@ -344,10 +347,12 @@ context_pkgs = [
     "!context-ruby",
     "!context-simplefonts",
     "!context-simpleslides",
+    "!context-title",
     "!context-transliterator",
     "!context-typearea",
     "!context-typescripts",
-    "!context-vim"
+    "!context-vim",
+    "!context-visualcounter",
 ]
 
 print(">>> PLIST-context")

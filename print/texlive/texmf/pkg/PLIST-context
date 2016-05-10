@@ -2130,13 +2130,17 @@ share/texmf-dist/tex/context/interface/keys-ro.xml
 share/texmf-dist/tex/context/interface/third/
 share/texmf-dist/tex/context/interface/third/lettrine.xml
 share/texmf-dist/tex/context/interface/third/t-account.xml
+share/texmf-dist/tex/context/interface/third/t-animation.xml
+share/texmf-dist/tex/context/interface/third/t-annotation.xml
 share/texmf-dist/tex/context/interface/third/t-cyrillicnumbers.xml
+share/texmf-dist/tex/context/interface/third/t-fancybreak.xml
 share/texmf-dist/tex/context/interface/third/t-fullpage.xml
 share/texmf-dist/tex/context/interface/third/t-letter.xml
 share/texmf-dist/tex/context/interface/third/t-mathsets.xml
 share/texmf-dist/tex/context/interface/third/t-memo.xml
 share/texmf-dist/tex/context/interface/third/t-rst.xml
 share/texmf-dist/tex/context/interface/third/t-simpleslides.xml
+share/texmf-dist/tex/context/interface/third/t-title.xml
 share/texmf-dist/tex/context/interface/third/t-transliterator.xml
 share/texmf-dist/tex/context/patterns/
 share/texmf-dist/tex/context/patterns/lang-af.hyp
@@ -2360,6 +2364,11 @@ share/texmf-dist/tex/context/third/account/t-floatnumber.tex
 share/texmf-dist/tex/context/third/algorithmic/
 share/texmf-dist/tex/context/third/algorithmic/t-algorithmic.mkii
 share/texmf-dist/tex/context/third/algorithmic/t-algorithmic.mkiv
+share/texmf-dist/tex/context/third/animation/
+share/texmf-dist/tex/context/third/animation/t-animation.mkvi
+share/texmf-dist/tex/context/third/annotation/
+share/texmf-dist/tex/context/third/annotation/t-annotation.lua
+share/texmf-dist/tex/context/third/annotation/t-annotation.mkvi
 share/texmf-dist/tex/context/third/bnf/
 share/texmf-dist/tex/context/third/bnf/t-bnf.tex
 share/texmf-dist/tex/context/third/chromato/
@@ -2372,6 +2381,9 @@ share/texmf-dist/tex/context/third/cyrillicnumbers/t-cyrillicnumbers.mkii
 share/texmf-dist/tex/context/third/cyrillicnumbers/t-cyrillicnumbers.mkvi
 share/texmf-dist/tex/context/third/degrade/
 share/texmf-dist/tex/context/third/degrade/t-degrade.tex
+share/texmf-dist/tex/context/third/fancybreak/
+share/texmf-dist/tex/context/third/fancybreak/t-fancybreak.mkii
+share/texmf-dist/tex/context/third/fancybreak/t-fancybreak.mkvi
 share/texmf-dist/tex/context/third/filter/
 share/texmf-dist/tex/context/third/filter/t-filter.mkii
 share/texmf-dist/tex/context/third/filter/t-filter.mkiv
@@ -2515,6 +2527,8 @@ share/texmf-dist/tex/context/third/simpleslides/s-simpleslides-ThickStripes.tex
 share/texmf-dist/tex/context/third/simpleslides/s-simpleslides-default.tex
 share/texmf-dist/tex/context/third/simpleslides/s-simpleslides-fontsdefault.mkiv
 share/texmf-dist/tex/context/third/simpleslides/t-simpleslides.mkiv
+share/texmf-dist/tex/context/third/title/
+share/texmf-dist/tex/context/third/title/t-title.mkvi
 share/texmf-dist/tex/context/third/transliterator/
 share/texmf-dist/tex/context/third/transliterator/t-transliterator.ctl
 share/texmf-dist/tex/context/third/transliterator/t-transliterator.log
@@ -2612,6 +2626,8 @@ share/texmf-dist/tex/context/third/vim/t-syntax-groups.tex
 share/texmf-dist/tex/context/third/vim/t-syntax-highlight.mkii
 share/texmf-dist/tex/context/third/vim/t-syntax-highlight.mkiv
 share/texmf-dist/tex/context/third/vim/t-vim.tex
+share/texmf-dist/tex/context/third/visualcounter/
+share/texmf-dist/tex/context/third/visualcounter/t-visualcounter.mkvi
 share/texmf-dist/tex/context/user/
 share/texmf-dist/tex/context/user/cont-sys.rme
 share/texmf-dist/tex/generic/
