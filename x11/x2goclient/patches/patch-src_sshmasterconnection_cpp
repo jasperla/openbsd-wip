@@ -1,0 +1,17 @@
+--- src/sshmasterconnection.cpp Sun May  8 16:58:37 2016
++++ src/sshmasterconnection.cpp Sun May  8 17:02:54 2016
+@@ -54,6 +54,7 @@
+ // #define SSH_DEBUG
+ 
+ static bool isLibSshInited=false;
++char buffer[1024*512]; //512K buffer
+ 
+ const QString SshMasterConnection::challenge_auth_code_prompts_[] = {
+   "Verification code:",
+@@ -1464,7 +1465,6 @@
+             copy();
+         copyRequestMutex.unlock();
+ 
+-        char buffer[1024*512]; //512K buffer
+         int nbytes;
+         fd_set rfds;
