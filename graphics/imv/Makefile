@@ -2,7 +2,7 @@
 
 GH_ACCOUNT =		eXeC64
 GH_PROJECT =		imv
-GH_TAGNAME =		v2.0.0
+GH_TAGNAME =		v2.1.0
 
 COMMENT =		simple image viewer
 CATEGORIES =		graphics x11

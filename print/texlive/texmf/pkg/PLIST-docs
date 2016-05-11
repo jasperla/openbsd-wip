@@ -1,4 +1,4 @@
-@comment $OpenBSD: mk_plists.py,v 1.2 2015/09/25 12:13:47 dcoppa Exp $
+@comment $OpenBSD$
 @conflict teTeX_texmf-doc-*
 @conflict texlive_base-<2015
 @conflict texlive_texmf-minimal-<2015

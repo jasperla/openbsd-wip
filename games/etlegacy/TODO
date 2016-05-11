@@ -1,8 +1,0 @@
-- Figure out the pure server situation, normally the server
-has a etl_bin.pk3 with valid ui/cgame libraries for supported
-platforms.  If this isn't desireable default to disabling pure server?
-
-- dlopening cgame seems to require a greater than default datasize limit,
-  need to set a lower com_hunkMegs value (in some cases?) ie 64
-
-- disable 'update available' messages

@@ -1,0 +1,19 @@
+Apache Subversion exists to be universally recognized and adopted as an
+open-source, centralized version control system characterized by its
+reliability as a safe haven for valuable data; the simplicity of its
+model and usage; and its ability to support the needs of a wide variety
+of users and projects, from individuals to large-scale enterprise
+operations.
+
+Note that you need to install the following subpackages to gain the
+appropriate functionality:
+        -perl           Perl bindings to Subversion
+        -python         Python bindings to Subversion
+        -ruby           Ruby bindings to Subversion
+        -ap2            Apache httpd 2 modules for Subversion
+        -gnome-keyring  Store Subversion passwords in gnome-keyring
+
+Also note that plaintext-password caching is disabled by default by
+setting "store-plaintext-passwords" to "no" in ${SYSCONFDIR}/subversion/servers.
+This is a different default behaviour to a standard Subversion install,
+which would ask the user before storing passwords in plaintext.

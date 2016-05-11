@@ -1,0 +1,12 @@
+$OpenBSD$
+--- krusader/Konfigurator/kgdependencies.cpp.orig	Wed Apr 27 20:22:33 2016
++++ krusader/Konfigurator/kgdependencies.cpp	Wed Apr 27 20:23:03 2016
+@@ -72,7 +72,7 @@ KgDependencies::KgDependencies(bool first, QWidget* pa
+     addApplication("locate",   pathsGrid, 6, general_tab, PAGE_GENERAL);
+     addApplication("mount",    pathsGrid, 7, general_tab, PAGE_GENERAL);
+     addApplication("umount",   pathsGrid, 8, general_tab, PAGE_GENERAL);
+-    addApplication("updatedb", pathsGrid, 9, general_tab, PAGE_GENERAL);
++    addApplication("locate.updatedb", pathsGrid, 9, general_tab, PAGE_GENERAL);
+ 
+     //  ---------------------------- PACKERS TAB -------------------------------------
+     QWidget *packers_tab = new QWidget(tabWidget);

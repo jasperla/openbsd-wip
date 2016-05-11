@@ -22,10 +22,6 @@ PKGNAME-docs =		texlive_texmf-docs-${V}
 PKGNAME-context =	texlive_texmf-context-${V}
 PKGNAME-buildset =	texlive_texmf-buildset-${V}
 
-REVISION-main =		0
-REVISION-full =		0
-REVISION-buildset =	0
-
 NO_BUILD =		Yes
 NO_TEST =		Yes
 PKG_ARCH =		*
@@ -42,7 +38,7 @@ MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
 
 RUN_DEPENDS-main +=	texlive_base-${V}:print/texlive/base \
-			texlive_texmf-buildset-${V}p0:print/texlive/texmf,-buildset
+			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset
 
 RUN_DEPENDS-full =	texlive_texmf-minimal-${V}:print/texlive/texmf,-main \
 			${MODPY_RUN_DEPENDS} \

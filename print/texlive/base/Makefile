@@ -28,7 +28,7 @@ RUN_DEPENDS =		print/ghostscript/gnu \
 			print/ps2eps \
 			print/psutils \
 			print/t1utils \
-			texlive_texmf-buildset-${V}p0:print/texlive/texmf,-buildset
+			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset
 
 LIB_DEPENDS =		graphics/png \
 			graphics/gd \

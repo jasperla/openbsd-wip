@@ -85,3 +85,4 @@ devel/libangelscript			ready to import, sent to ports@ 2015-12-20
 devel/arm-none-eabi                     ready to import, sent to ports@ 2015-12-31, there is a patch ready to apply to the tree
 graphics/imv				ready to import, waiting for ports unlock (czarkoff)
 net/transmission			ready to import, sent to ports 2016-02-29
+sysutils/udfclient			imported 2016-05-01

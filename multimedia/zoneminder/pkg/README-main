@@ -11,6 +11,21 @@ details:
 
 zoneminder notes, needs expanding and fleshing out into readme below
 
+After the installation you need to set up a relational database
+using MariaDB or MySQL. This does not have to be on the same machine,
+which is why the server is not a dependency of this port
+
+XXX Maybe a flavor that depends on the -server port too?
+
+Once you have the db server up and running, you need to load 
+the ZoneMinder schema, add users and grant them permission;
+run the mysql command as shown, first using '.' to source
+a SQL script, then setting permissions.
+
+mysql -u root -p
+\. /usr/local/share/zoneminder/db/zm_create.sql
+grant select,insert,update,delete on <database name>.* to '<database user>'@localhost identified by '<database password>'; 
+
 
 - set database user/password in ${SYSCONFDIR}/zm/zm.conf and
 ${PREFIX-web}/zoneminder/api/app/Config/database.php
@@ -18,17 +33,45 @@ ${PREFIX-web}/zoneminder/api/app/Config/database.php
 
 - generate new random tokens:
 ${PREFIX-web}/zoneminder/api/app/Config/core.php
-${PREFIX-web}/zoneminder/api/app/Config/database.php
 - @ZM_API_SALT@ should be 40 char alphanumeric
 - @ZM_API_SEED@ should be (<= ?) 29 char numeric
 
 - email settings in
 ${PREFIX-web}/zoneminder/api/app/Config/email.php ??
 
-- needs notes on how to load the db schema, setup users etc
-
 .....
 
+apache config:
+
+Alias /zm /var/www/zoneminder
+<Directory "/var/www/zoneminder">
+  php_flag register_globals off
+  Options Indexes FollowSymLinks
+  <IfModule mod_dir.c>
+    DirectoryIndex index.php
+  </IfModule>
+  Require all granted
+</Directory>
+
+
+nginx configuration:
+
+???
+
+httpd configuration:
+
+???
+
+
+
+running:
+
+# mkdir /var/run/zm
+# chown www /var/run/zm
+# sudo -u www zmpkg.pl start 
+
+XXX zmpkg.pl should be replaced by a rc.d script, 
+or called from one.
 
 ------------------------8<------------------------
 $OpenBSD: README.template,v 1.4 2011/06/02 13:44:40 ajacoutot Exp $
