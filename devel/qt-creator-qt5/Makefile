@@ -1,8 +1,7 @@
 # $OpenBSD: Makefile,v 1.15 2013/03/19 13:07:13 nigel Exp $
 
 COMMENT =		cross-platform IDE for use with Qt
-SHARED_ONLY =		Yes
-V = 			3.6.1
+V = 			4.0.0
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
 
@@ -32,8 +31,7 @@ CATEGORIES =	devel editors
 
 HOMEPAGE =	https://www.qt.io/ide/
 
-# XXX: is this still accurate?
-# LGPL 2.1 with C++ headers exception (more permissive than LGPL)
+# XXX GPLv3 with some exceptions
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c kvm m pthread
