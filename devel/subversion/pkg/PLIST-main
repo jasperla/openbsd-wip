@@ -1,0 +1,240 @@
+@comment $OpenBSD: PLIST-main,v 1.14 2015/03/19 20:25:26 naddy Exp $
+@pkgpath devel/subversion,no_bindings
+@pkgpath devel/subversion,-main,gnome_keyring
+@pkgpath devel/subversion
+@conflict subversion-*-gnome_keyring
+@comment @bin bin/diff
+@comment @bin bin/diff3
+@comment @bin bin/diff4
+@bin bin/fsfs-access-map
+@bin bin/svn
+@bin bin/svn-populate-node-origins-index
+@bin bin/svnadmin
+@bin bin/svnauthz
+@bin bin/svnauthz-validate
+@bin bin/svnbench
+@bin bin/svndumpfilter
+@bin bin/svnfsfs
+@bin bin/svnlook
+@bin bin/svnmucc
+@bin bin/svnraisetreeconflict
+@bin bin/svnrdump
+@bin bin/svnserve
+@bin bin/svnsync
+@bin bin/svnversion
+@bin bin/x509-parser
+include/subversion-1/
+include/subversion-1/svn-revision.txt
+include/subversion-1/svn_auth.h
+include/subversion-1/svn_base64.h
+include/subversion-1/svn_cache_config.h
+include/subversion-1/svn_checksum.h
+include/subversion-1/svn_client.h
+include/subversion-1/svn_cmdline.h
+include/subversion-1/svn_compat.h
+include/subversion-1/svn_config.h
+include/subversion-1/svn_ctype.h
+include/subversion-1/svn_dav.h
+include/subversion-1/svn_delta.h
+include/subversion-1/svn_diff.h
+include/subversion-1/svn_dirent_uri.h
+include/subversion-1/svn_dso.h
+include/subversion-1/svn_error.h
+include/subversion-1/svn_error_codes.h
+include/subversion-1/svn_fs.h
+include/subversion-1/svn_hash.h
+include/subversion-1/svn_io.h
+include/subversion-1/svn_iter.h
+include/subversion-1/svn_md5.h
+include/subversion-1/svn_mergeinfo.h
+include/subversion-1/svn_nls.h
+include/subversion-1/svn_opt.h
+include/subversion-1/svn_path.h
+include/subversion-1/svn_pools.h
+include/subversion-1/svn_props.h
+include/subversion-1/svn_quoprint.h
+include/subversion-1/svn_ra.h
+include/subversion-1/svn_ra_svn.h
+include/subversion-1/svn_repos.h
+include/subversion-1/svn_sorts.h
+include/subversion-1/svn_string.h
+include/subversion-1/svn_subst.h
+include/subversion-1/svn_time.h
+include/subversion-1/svn_types.h
+include/subversion-1/svn_user.h
+include/subversion-1/svn_utf.h
+include/subversion-1/svn_version.h
+include/subversion-1/svn_wc.h
+include/subversion-1/svn_x509.h
+include/subversion-1/svn_xml.h
+@comment lib/apache2/
+lib/libsvn_client-1.a
+lib/libsvn_client-1.la
+@lib lib/libsvn_client-1.so.${LIBsvn_client-1_VERSION}
+lib/libsvn_delta-1.a
+lib/libsvn_delta-1.la
+@lib lib/libsvn_delta-1.so.${LIBsvn_delta-1_VERSION}
+lib/libsvn_diff-1.a
+lib/libsvn_diff-1.la
+@lib lib/libsvn_diff-1.so.${LIBsvn_diff-1_VERSION}
+lib/libsvn_fs-1.a
+lib/libsvn_fs-1.la
+@lib lib/libsvn_fs-1.so.${LIBsvn_fs-1_VERSION}
+lib/libsvn_fs_base-1.a
+lib/libsvn_fs_base-1.la
+@lib lib/libsvn_fs_base-1.so.${LIBsvn_fs_base-1_VERSION}
+lib/libsvn_fs_fs-1.a
+lib/libsvn_fs_fs-1.la
+@lib lib/libsvn_fs_fs-1.so.${LIBsvn_fs_fs-1_VERSION}
+lib/libsvn_fs_util-1.a
+lib/libsvn_fs_util-1.la
+@lib lib/libsvn_fs_util-1.so.${LIBsvn_fs_util-1_VERSION}
+lib/libsvn_fs_x-1.a
+lib/libsvn_fs_x-1.la
+@lib lib/libsvn_fs_x-1.so.${LIBsvn_fs_x-1_VERSION}
+lib/libsvn_ra-1.a
+lib/libsvn_ra-1.la
+@lib lib/libsvn_ra-1.so.${LIBsvn_ra-1_VERSION}
+lib/libsvn_ra_local-1.a
+lib/libsvn_ra_local-1.la
+@lib lib/libsvn_ra_local-1.so.${LIBsvn_ra_local-1_VERSION}
+lib/libsvn_ra_serf-1.a
+lib/libsvn_ra_serf-1.la
+@lib lib/libsvn_ra_serf-1.so.${LIBsvn_ra_serf-1_VERSION}
+lib/libsvn_ra_svn-1.a
+lib/libsvn_ra_svn-1.la
+@lib lib/libsvn_ra_svn-1.so.${LIBsvn_ra_svn-1_VERSION}
+lib/libsvn_repos-1.a
+lib/libsvn_repos-1.la
+@lib lib/libsvn_repos-1.so.${LIBsvn_repos-1_VERSION}
+lib/libsvn_subr-1.a
+lib/libsvn_subr-1.la
+@lib lib/libsvn_subr-1.so.${LIBsvn_subr-1_VERSION}
+lib/libsvn_wc-1.a
+lib/libsvn_wc-1.la
+@lib lib/libsvn_wc-1.so.${LIBsvn_wc-1_VERSION}
+@comment lib/python${MODPY_VERSION}/
+@comment lib/python${MODPY_VERSION}/site-packages/
+@comment lib/ruby/
+@comment lib/ruby/site_ruby/
+@comment lib/ruby/site_ruby/${MODRUBY_LIBREV}/
+@comment lib/ruby/site_ruby/${MODRUBY_LIBREV}/${MODRUBY_ARCH}/
+@man man/man1/svn.1
+@man man/man1/svnadmin.1
+@man man/man1/svndumpfilter.1
+@man man/man1/svnlook.1
+@man man/man1/svnmucc.1
+@man man/man1/svnrdump.1
+@man man/man1/svnsync.1
+@man man/man1/svnversion.1
+@man man/man5/svnserve.conf.5
+@man man/man8/svnserve.8
+share/examples/subversion/
+@sample ${SYSCONFDIR}/subversion/
+share/examples/subversion/ExampleAuthn.java
+share/examples/subversion/ExampleAuthnOld.java
+share/examples/subversion/ExampleAuthnVeryOld.java
+share/examples/subversion/SvnCLBrowse
+share/examples/subversion/backup/
+share/examples/subversion/backup/hot-backup.py
+share/examples/subversion/bdb/
+share/examples/subversion/bdb/erase-all-text-data.py
+share/examples/subversion/bdb/skel.py
+share/examples/subversion/bdb/svn-bdb-view.py
+share/examples/subversion/bdb/svnfs.py
+share/examples/subversion/bdb/whatis-rep.py
+share/examples/subversion/blame.py
+share/examples/subversion/cgi/
+share/examples/subversion/check-modified.py
+share/examples/subversion/client-side/
+share/examples/subversion/client-side/bash_completion
+share/examples/subversion/client-side/change-svn-wc-format.py
+share/examples/subversion/client-side/detach.py
+share/examples/subversion/client-side/emacs/
+share/examples/subversion/client-side/mergeinfo-sanitizer.py
+share/examples/subversion/client-side/server-version.py
+share/examples/subversion/client-side/svn-graph.pl
+share/examples/subversion/client-side/svn-ssl-fingerprints.sh
+share/examples/subversion/client-side/svn-vendor.py
+share/examples/subversion/client-side/svn-viewspec.py
+share/examples/subversion/client-side/svn2cl/
+share/examples/subversion/client-side/svn_load_dirs/
+share/examples/subversion/client-side/wcfind
+share/examples/subversion/dumpprops.py
+share/examples/subversion/get-location-segments.py
+share/examples/subversion/getfile.py
+share/examples/subversion/getlocks_test.c
+share/examples/subversion/geturl.py
+share/examples/subversion/headrev.c
+share/examples/subversion/hook-scripts/
+share/examples/subversion/hook-scripts/commit-access-control.cfg.example
+share/examples/subversion/hook-scripts/commit-access-control.pl
+share/examples/subversion/hook-scripts/commit-email.rb
+share/examples/subversion/hook-scripts/enforcer/
+share/examples/subversion/hook-scripts/log-police.py
+share/examples/subversion/hook-scripts/mailer/
+share/examples/subversion/hook-scripts/mailer/mailer.conf.example
+share/examples/subversion/hook-scripts/mailer/mailer.py
+share/examples/subversion/hook-scripts/mailer/tests/
+share/examples/subversion/hook-scripts/mailer/tests/mailer-init.sh
+share/examples/subversion/hook-scripts/mailer/tests/mailer-t1.output
+share/examples/subversion/hook-scripts/mailer/tests/mailer-t1.sh
+share/examples/subversion/hook-scripts/mailer/tests/mailer-tweak.py
+share/examples/subversion/hook-scripts/mailer/tests/mailer.conf
+share/examples/subversion/hook-scripts/svn2feed.py
+share/examples/subversion/hook-scripts/svnperms.conf.example
+share/examples/subversion/hook-scripts/svnperms.py
+share/examples/subversion/hook-scripts/verify-po.py
+share/examples/subversion/info.rb
+share/examples/subversion/minimal_client.c
+share/examples/subversion/putfile.py
+share/examples/subversion/revplist.py
+share/examples/subversion/server-side/
+share/examples/subversion/server-side/fsfs-reshard.py
+@comment mod_dontdothat should be compiled and installed
+@comment so that it can be loaded into apache
+share/examples/subversion/server-side/mod_dontdothat/
+share/examples/subversion/server-side/svn-backup-dumps.py
+share/examples/subversion/server-side/svn-populate-node-origins-index.c
+share/examples/subversion/servers
+@sample ${SYSCONFDIR}/subversion/servers
+share/examples/subversion/svnlog2html.rb
+share/examples/subversion/svnlook.py
+share/examples/subversion/svnlook.rb
+share/examples/subversion/svnput.c
+share/examples/subversion/svnserve-sgid.c
+share/examples/subversion/svnshell.py
+share/examples/subversion/svnshell.rb
+share/examples/subversion/testwrite.c
+share/examples/subversion/walk-config-auth.py
+share/examples/subversion/xslt/
+share/examples/subversion/xslt/svnindex.css
+share/examples/subversion/xslt/svnindex.xsl
+share/locale/de/LC_MESSAGES/subversion.mo
+share/locale/es/LC_MESSAGES/subversion.mo
+share/locale/fr/LC_MESSAGES/subversion.mo
+share/locale/it/LC_MESSAGES/subversion.mo
+share/locale/ja/LC_MESSAGES/subversion.mo
+share/locale/ko/LC_MESSAGES/subversion.mo
+share/locale/nb/LC_MESSAGES/subversion.mo
+share/locale/pl/LC_MESSAGES/subversion.mo
+share/locale/pt_BR/LC_MESSAGES/subversion.mo
+share/locale/sv/LC_MESSAGES/subversion.mo
+share/locale/zh_CN/LC_MESSAGES/subversion.mo
+share/locale/zh_TW/LC_MESSAGES/subversion.mo
+share/pkgconfig/libsvn_auth_gnome_keyring.pc
+share/pkgconfig/libsvn_client.pc
+share/pkgconfig/libsvn_delta.pc
+share/pkgconfig/libsvn_diff.pc
+share/pkgconfig/libsvn_fs.pc
+share/pkgconfig/libsvn_fs_base.pc
+share/pkgconfig/libsvn_fs_fs.pc
+share/pkgconfig/libsvn_fs_util.pc
+share/pkgconfig/libsvn_fs_x.pc
+share/pkgconfig/libsvn_ra.pc
+share/pkgconfig/libsvn_ra_local.pc
+share/pkgconfig/libsvn_ra_serf.pc
+share/pkgconfig/libsvn_ra_svn.pc
+share/pkgconfig/libsvn_repos.pc
+share/pkgconfig/libsvn_subr.pc
+share/pkgconfig/libsvn_wc.pc
