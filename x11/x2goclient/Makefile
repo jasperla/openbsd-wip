@@ -2,7 +2,7 @@
 
 CATEGORIES =	x11
 COMMENT =	Qt client for the X2Go system
-VERSION =	4.0.5.0
+VERSION =	4.0.5.1
 DISTNAME =	x2goclient-${VERSION}
 HOMEPAGE =	http://www.x2go.org
 
@@ -17,19 +17,21 @@ WANTLIB += ssh stdc++
 
 MASTER_SITES =	http://code.x2go.org/releases/source/x2goclient/
 
+MODULES +=	x11/qt4
+
 LIB_DEPENDS =	security/libssh \
-		x11/qt4 \
 		databases/openldap \
 		print/cups-filters
 
 BUILD_DEPENDS =	x11/nx/nxcomp \
 		x11/nx/nxproxy \
 		security/libssh \
-		x11/qt4 \
 		databases/openldap
 
 DOCSDIR =	${PREFIX}/share/doc/x2goclient
 EXAMPLESDIR =	${PREFIX}/share/examples/x2goclient
+
+LRELEASE=	${LOCALBASE}/bin/lrelease4
 
 do-configure:
 	find ${WRKSRC} -type f -iname "*.cpp"  -exec \
@@ -38,7 +40,8 @@ do-configure:
 	find ${WRKSRC} -type f -iname "*.h" -exec \
 		perl -pi -e 's,Q_OS_LINUX,Q_OS_UNIX,g;' \
 		-e 's,#include <linux/fs.h>,,g;' {} \;
-	cd ${WRKSRC} && lrelease x2goclient.pro && qmake4 x2goclient.pro
+	cd ${WRKSRC} && ${LRELEASE} x2goclient.pro \
+		&& ${MODQT4_QMAKE} x2goclient.pro
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/x2goclient ${PREFIX}/bin

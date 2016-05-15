@@ -38,12 +38,12 @@ EXTRACT_SUFX =		.zip
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=opencvlibrary/}
 
 WANTLIB-main = Half Iex IlmImf IlmThread Imath atk-1.0 avcodec avformat
-WANTLIB-main += avresample avutil bz2 c cairo cairo-gobject estdc++
+WANTLIB-main += avresample avutil bz2 c cairo cairo-gobject estdc++ intl
 WANTLIB-main += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gstapp-1.0
 WANTLIB-main += gstbase-1.0 gstpbutils-1.0 gstreamer-1.0 gstriff-1.0
 WANTLIB-main += gstvideo-1.0 gthread-2.0 gtk-3 jasper jpeg m pango-1.0
 WANTLIB-main += pangocairo-1.0 png pthread swscale tiff webp z
-WANTLIB-main += ${MODGETTEXT_WANTLIB} ${MODPY_WANTLIB}
+WANTLIB-main += gphoto2 gphoto2_port ${MODPY_WANTLIB}
 
 WANTLIB-docs =
 
@@ -63,7 +63,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/clang \
 			devel/cmake \
-			devel/gettext \
 			lang/python
 
 MODCLANG_ARCHS =	amd64 i386
@@ -84,9 +83,10 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			graphics/ffmpeg \
 			graphics/ilmbase \
 			graphics/jpeg \
+			graphics/libgphoto2 \
+			graphics/libwebp \
 			graphics/openexr \
 			graphics/png \
-			graphics/libwebp \
 			graphics/tiff
 
 LIB_DEPENDS-java =	${BUILD_PKGPATH},-main=${V}
