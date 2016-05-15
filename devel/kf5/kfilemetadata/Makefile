@@ -28,7 +28,7 @@ LIB_DEPENDS-main =	audio/taglib \
 			devel/kf5/ki18n \
 			graphics/exiv2 \
 			graphics/ffmpeg \
-			print/poppler,-qt5 \
+			print/poppler,,-qt5 \
 			textproc/ebook-tools
 
 PKG_ARCH-locale =	*

@@ -1,3 +1,0 @@
-Cargo is a package manager and builder for the Rust programming language. Cargo
-and its dependencies typically require Cargo to build; this port allows
-bootstrapping Cargo from scratch.
