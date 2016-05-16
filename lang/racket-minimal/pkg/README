@@ -14,6 +14,8 @@ Limitations
 - FFI is broken on sparc64.
 - Never run "raco pkg" commands as root, even when the commands are suggested
   by upstream. You're going to break the racket package.
+- Racket "places" and "futures" (using threads instead of processes) is
+  only supported on amd64.
 
 FAQ
 ===
