@@ -27,7 +27,8 @@ BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
 RUN_DEPENDS =		devel/desktop-file-utils
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--disable-unicode
+CONFIGURE_ARGS +=	--disable-unicode \
+			--disable-taskstats
 ALL_TARGET =		debug
 
 AUTOCONF_VERSION =	2.69
