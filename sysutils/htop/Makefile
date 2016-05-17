@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 #MASTER_SITES =		http://hisham.hm/htop/releases/${VERSION}/
 
-WANTLIB +=		c m kvm ncursesw
+WANTLIB +=		c m kvm ncurses
 
 MODULES =		lang/python
 
@@ -27,6 +27,7 @@ BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
 RUN_DEPENDS =		devel/desktop-file-utils
 
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS +=	--disable-unicode
 ALL_TARGET =		debug
 
 AUTOCONF_VERSION =	2.69
