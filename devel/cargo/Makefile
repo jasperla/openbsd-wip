@@ -15,7 +15,7 @@ CRATESIO_INDEX =	9df16a42b9f2e03378292a6bb1743c0473adec35
 # cargo version used for bootstrapping
 BOOTSTRAP_VERSION =	0.8.0-20160505
 
-# registry index (dependant of bootstrap version)
+# registry index
 # see ${WRKDIR}/cargo-home/registry/index/github.com-${REGISTRY_INDEX}
 REGISTRY_INDEX =	88ac128001ac3a9a
 
@@ -154,6 +154,10 @@ post-extract:
 	touch ${WRKDIR}/cargo-home/registry/src/github.com-${REGISTRY_INDEX}/${_crate}/.cargo-ok
 	touch ${WRKDIR}/cargo-home/registry/cache/github.com-${REGISTRY_INDEX}/${_crate}.crate
 .endfor
+
+SUBST_VARS +=	WRKBUILD
+pre-test:
+	${SUBST_CMD} ${WRKSRC}/tests/support/paths.rs
 
 post-install:
 	rm -rf ${PREFIX}/lib/rustlib

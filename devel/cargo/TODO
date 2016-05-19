@@ -1,5 +1,6 @@
 - make "make test" to pass
 
-  test result: FAILED. 473 passed; 60 failed; 0 ignored; 0 measured
+failures:
+    test_cargo_new::author_prefers_cargo
 
-  but several error are related to rustdoc (lang/rust)
+test result: FAILED. 654 passed; 1 failed; 0 ignored; 0 measured
