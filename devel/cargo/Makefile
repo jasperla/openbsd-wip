@@ -39,7 +39,6 @@ MAINTAINER =	Sebastien Marie <semarie@openbsd.org>
 # so the package doesn't contains it.
 #
 PERMIT_PACKAGE_CDROM = Yes
-PERMIT_PACKAGE_FTP   = Yes
 PERMIT_DISTFILES_FTP = No as hamcrest has no license information
 
 WANTLIB = c crypto curl m pthread ssh2 ssl z
@@ -150,7 +149,8 @@ post-extract:
 	mv ${WRKDIR}/crates.io-index-${CRATESIO_INDEX} \
 		${WRKDIR}/cargo-home/registry/index/github.com-${REGISTRY_INDEX}
 .for _crate in ${CRATES}
-	mv ${WRKDIR}/${_crate} ${WRKDIR}/cargo-home/registry/src/github.com-${REGISTRY_INDEX}
+	mv ${WRKDIR}/${_crate} \
+		${WRKDIR}/cargo-home/registry/src/github.com-${REGISTRY_INDEX}
 	touch ${WRKDIR}/cargo-home/registry/src/github.com-${REGISTRY_INDEX}/${_crate}/.cargo-ok
 	touch ${WRKDIR}/cargo-home/registry/cache/github.com-${REGISTRY_INDEX}/${_crate}.crate
 .endfor
