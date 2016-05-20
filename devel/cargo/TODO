@@ -1,6 +1,0 @@
-- make "make test" to pass
-
-failures:
-    test_cargo_new::author_prefers_cargo
-
-test result: FAILED. 654 passed; 1 failed; 0 ignored; 0 measured
