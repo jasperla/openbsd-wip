@@ -1,0 +1,35 @@
+@comment $OpenBSD$
+@bin bin/mozcerts-qt5
+@bin bin/qcatool-qt5
+include/X11/qt5/QtCrypto/
+include/X11/qt5/QtCrypto/QtCrypto
+include/X11/qt5/QtCrypto/qca.h
+include/X11/qt5/QtCrypto/qca_basic.h
+include/X11/qt5/QtCrypto/qca_cert.h
+include/X11/qt5/QtCrypto/qca_core.h
+include/X11/qt5/QtCrypto/qca_export.h
+include/X11/qt5/QtCrypto/qca_keystore.h
+include/X11/qt5/QtCrypto/qca_publickey.h
+include/X11/qt5/QtCrypto/qca_safetimer.h
+include/X11/qt5/QtCrypto/qca_securelayer.h
+include/X11/qt5/QtCrypto/qca_securemessage.h
+include/X11/qt5/QtCrypto/qca_support.h
+include/X11/qt5/QtCrypto/qca_textfilter.h
+include/X11/qt5/QtCrypto/qca_tools.h
+include/X11/qt5/QtCrypto/qca_version.h
+include/X11/qt5/QtCrypto/qcaprovider.h
+include/X11/qt5/QtCrypto/qpipe.h
+@lib lib/libqca-qt5.so.${LIBqca-qt5_VERSION}
+lib/qt5/certs/
+lib/qt5/certs/rootcerts.pem
+lib/qt5/cmake/Qca/
+lib/qt5/cmake/Qca/QcaConfig.cmake
+lib/qt5/cmake/Qca/QcaConfigVersion.cmake
+lib/qt5/cmake/Qca/QcaTargets${MODCMAKE_BUILD_SUFFIX}
+lib/qt5/cmake/Qca/QcaTargets.cmake
+@lib lib/qt5/libqca-qt5.so.${LIBqca-qt5_VERSION}
+lib/qt5/man/
+lib/qt5/man/man1/
+@man lib/qt5/man/man1/qcatool-qt5.1
+lib/qt5/mkspecs/features/crypto.prf
+lib/qt5/pkgconfig/qca2-qt5.pc
