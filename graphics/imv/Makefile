@@ -2,7 +2,7 @@
 
 GH_ACCOUNT =		eXeC64
 GH_PROJECT =		imv
-GH_TAGNAME =		v2.1.0
+GH_TAGNAME =		v2.1.1
 
 COMMENT =		simple image viewer
 CATEGORIES =		graphics x11
@@ -13,8 +13,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += SDL2 SDL2_ttf c fontconfig freeimage pthread
 
-MODULES =		lang/clang
-MODCLANG_ARCHS =	*
 LIB_DEPENDS =		devel/sdl2 \
 			devel/sdl2-ttf \
 			graphics/freeimage
