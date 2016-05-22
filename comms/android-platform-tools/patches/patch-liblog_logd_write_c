@@ -1,0 +1,13 @@
+$OpenBSD$
+--- liblog/logd_write.c.orig	Sat Mar 26 01:48:14 2016
++++ liblog/logd_write.c	Sun May 22 12:08:08 2016
+@@ -22,7 +22,9 @@
+ #include <pthread.h>
+ #endif
+ #include <stdarg.h>
++#if (FAKE_LOG_DEVICE == 0)
+ #include <stdatomic.h>
++#endif
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
