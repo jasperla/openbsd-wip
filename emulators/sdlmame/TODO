@@ -1,0 +1,3 @@
+- Check if some 0.160 patches are still relevant
+- Re-enable fetching history${V}.zip? What's the license?
+- Take care of sdlmess port as well
