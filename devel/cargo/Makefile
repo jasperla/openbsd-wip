@@ -149,7 +149,7 @@ post-extract:
 		${WRKDIR}/cargo-home/registry/index/github.com-${REGISTRY_INDEX}
 	touch ${WRKDIR}/cargo-home/registry/index/github.com-${REGISTRY_INDEX}/.cargo-index-lock
 .for _crate in ${CRATES}
-	ln -s ${DISTDIR}/${DIST_SUBDIR}/${_crate}${EXTRACT_SUFX} \
+	ln -s ${FULLDISTDIR}/${_crate}${EXTRACT_SUFX} \
 		${WRKDIR}/cargo-home/registry/cache/github.com-${REGISTRY_INDEX}/${_crate}.crate
 	mv ${WRKDIR}/${_crate} \
 		${WRKDIR}/cargo-home/registry/src/github.com-${REGISTRY_INDEX}
