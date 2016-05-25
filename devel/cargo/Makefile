@@ -8,12 +8,12 @@ CARGO_VERSION =		0.10.0
 # in cargo/src/rust-installer
 RUSTINSTALL_INDEX =	c37d3747da75c280237dc2d6b925078e69555499
 
-# cartes.io commit for CARGO_VERSION
+# crates.io commit for CARGO_VERSION
 # https://github.com/rust-lang/crates.io-index/commits/master/ca/rg/cargo
 CRATESIO_INDEX =	9df16a42b9f2e03378292a6bb1743c0473adec35
 
 # cargo version used for bootstrapping
-BOOTSTRAP_VERSION =	0.8.0-20160505
+BOOTSTRAP_VERSION =	0.10.0-20160523
 
 # registry index
 # see ${WRKDIR}/cargo-home/registry/index/github.com-${REGISTRY_INDEX}
@@ -27,7 +27,7 @@ HOMEPAGE =	https://doc.crates.io/
 
 MAINTAINER =	Sebastien Marie <semarie@openbsd.org>
 
-# cargo is dual licencied MIT/Apache-2.0
+# cargo is dual licensed MIT/Apache-2.0
 # third-parties (detail below):
 #  - MIT
 #  - Unlicense/MIT
@@ -36,7 +36,7 @@ MAINTAINER =	Sebastien Marie <semarie@openbsd.org>
 #  - one with no indication of licence (hamcrest)
 #
 # hamcrest is used only for the testsuite, and isn't builded with cargo.
-# so the package doesn't contains it.
+# so the package doesn't contain it.
 #
 PERMIT_PACKAGE_CDROM = Yes
 PERMIT_DISTFILES_FTP = No as hamcrest has no license information
@@ -122,7 +122,7 @@ USE_GMAKE =	Yes
 
 BUILD_DEPENDS =	devel/libgit2/libgit2 \
 		devel/cmake \
-		lang/rust>=1.8
+		lang/rust>=1.8.0p1
 
 LIB_DEPENDS =	net/curl \
 		security/libssh2
@@ -132,7 +132,6 @@ RUN_DEPENDS =	lang/rust
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--prefix=${LOCALBASE} \
 			--mandir=${LOCALBASE}/man \
-			--sysconfdir=${LOCALBASE}/share/examples/cargo \
 			--local-rust-root=${LOCALBASE} \
 			--local-cargo=${WRKDIR}/cargo-bootstrap-${BOOTSTRAP_VERSION}/cargo
 
@@ -148,11 +147,13 @@ post-extract:
 	mkdir ${WRKDIR}/cargo-home/registry/{cache,src}/github.com-${REGISTRY_INDEX}
 	mv ${WRKDIR}/crates.io-index-${CRATESIO_INDEX} \
 		${WRKDIR}/cargo-home/registry/index/github.com-${REGISTRY_INDEX}
+	touch ${WRKDIR}/cargo-home/registry/index/github.com-${REGISTRY_INDEX}/.cargo-index-lock
 .for _crate in ${CRATES}
+	ln -s ${DISTDIR}/${DIST_SUBDIR}/${_crate}${EXTRACT_SUFX} \
+		${WRKDIR}/cargo-home/registry/cache/github.com-${REGISTRY_INDEX}/${_crate}.crate
 	mv ${WRKDIR}/${_crate} \
 		${WRKDIR}/cargo-home/registry/src/github.com-${REGISTRY_INDEX}
 	touch ${WRKDIR}/cargo-home/registry/src/github.com-${REGISTRY_INDEX}/${_crate}/.cargo-ok
-	touch ${WRKDIR}/cargo-home/registry/cache/github.com-${REGISTRY_INDEX}/${_crate}.crate
 .endfor
 
 SUBST_VARS +=	WRKBUILD
@@ -162,6 +163,24 @@ pre-test:
 post-install:
 	rm -rf ${PREFIX}/lib/rustlib
 	rm -rf ${PREFIX}/man ; mv ${PREFIX}/share/man ${PREFIX}/man
-	mv ${PREFIX}/etc ${PREFIX}/share/examples/cargo
+	mkdir -p ${PREFIX}/share/bash-completion/completions
+	mv ${PREFIX}${SYSCONFDIR}/bash_completion.d/cargo \
+	       ${PREFIX}/share/bash-completion/completions
+	rmdir ${PREFIX}${SYSCONFDIR}/bash_completion.d \
+		${PREFIX}${SYSCONFDIR}
+
+# make a directory suitable for bootstrapping
+BOOTSTRAP_NVERSION = ${CARGO_VERSION}-new
+bootstrap: fake
+	rm -rf ${WRKDIR}/cargo-bootstrap-${BOOTSTRAP_NVERSION}
+	mkdir -p ${WRKDIR}/cargo-bootstrap-${BOOTSTRAP_NVERSION}
+	cp ${WRKDIR}/cargo-bootstrap-${BOOTSTRAP_VERSION}/cargo \
+		${WRKDIR}/cargo-bootstrap-${BOOTSTRAP_NVERSION}/cargo
+	cp ${WRKINST}${PREFIX}/bin/cargo \
+		${WRKDIR}/cargo-bootstrap-${BOOTSTRAP_NVERSION}/cargo.bin
+	ldd ${WRKDIR}/cargo-bootstrap-${BOOTSTRAP_NVERSION}/cargo.bin \
+		| sed -ne 's,.* \(/.*/lib/lib.*\.so[.0-9]*\)$$,\1,p' \
+		| xargs -r -J % cp % \
+			${WRKDIR}/cargo-bootstrap-${BOOTSTRAP_NVERSION}
 
 .include <bsd.port.mk>

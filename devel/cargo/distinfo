@@ -3,7 +3,7 @@ SHA256 (cargo/aho-corasick-0.5.1.tar.gz) = Zwd0ePCgOVK+0uZ4YzjUANQMJemDbgitUK+WY
 SHA256 (cargo/bitflags-0.1.1.tar.gz) = KmV3UX7NDuCTT0inKVqJqu8+bfr+rEBPlMCzRIUY3f4=
 SHA256 (cargo/bufstream-0.1.1.tar.gz) = fkk95qiu1RaXCI423FJF6j7dNOaHLjLHMuX5lu1bI7I=
 SHA256 (cargo/cargo-0.10.0.tar.gz) = HnPAOGgf4wgZVCe3EyKmNQxl07jL6hmeRce2crR1Tg4=
-SHA256 (cargo/cargo-bootstrap-0.8.0-20160505.tar.gz) = IO2lg6N1KKDR86lraLI30DmdsEHCEVor1XvAIlatSAs=
+SHA256 (cargo/cargo-bootstrap-0.10.0-20160523.tar.gz) = HG6j5m2zrAYca0jZB3jZo7pm1TAlfznQqDQjm0MiQ1E=
 SHA256 (cargo/cmake-0.1.16.tar.gz) = 62Go07Zfjgr1KsV5kj7Ei91cpOM1wP3kBx5YYOtlBTI=
 SHA256 (cargo/crates.io-index-9df16a42b9f2e03378292a6bb1743c0473adec35.tar.gz) = x1j7F8fdDWvWiIxDwVZjDnyPjkm9+znvZGrMKzWVng0=
 SHA256 (cargo/crossbeam-0.2.8.tar.gz) = NIIozp+T0g/8MMGOV1+C+kG5yL8GSAbGXUHrpHcVlaA=
@@ -62,7 +62,7 @@ SIZE (cargo/aho-corasick-0.5.1.tar.gz) = 29015
 SIZE (cargo/bitflags-0.1.1.tar.gz) = 8719
 SIZE (cargo/bufstream-0.1.1.tar.gz) = 7437
 SIZE (cargo/cargo-0.10.0.tar.gz) = 553862
-SIZE (cargo/cargo-bootstrap-0.8.0-20160505.tar.gz) = 7813824
+SIZE (cargo/cargo-bootstrap-0.10.0-20160523.tar.gz) = 8277650
 SIZE (cargo/cmake-0.1.16.tar.gz) = 10125
 SIZE (cargo/crates.io-index-9df16a42b9f2e03378292a6bb1743c0473adec35.tar.gz) = 1686495
 SIZE (cargo/crossbeam-0.2.8.tar.gz) = 31266
