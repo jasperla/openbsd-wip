@@ -140,17 +140,19 @@ MAKE_ENV +=	CARGO_HOME=${WRKDIR}/cargo-home \
 		LIBSSH2_SYS_USE_PKG_CONFIG=1
 
 post-extract:
+	# place rust-installer inside WRKSRC
 	rmdir ${WRKSRC}/src/rust-installer
 	mv ${WRKDIR}/rust-installer-${RUSTINSTALL_INDEX} \
 		${WRKSRC}/src/rust-installer
+	# populate cargo registry to avoid downloading crates
 	mkdir -p ${WRKDIR}/cargo-home/registry/{cache,index,src}
 	mkdir ${WRKDIR}/cargo-home/registry/{cache,src}/github.com-${REGISTRY_INDEX}
 	mv ${WRKDIR}/crates.io-index-${CRATESIO_INDEX} \
 		${WRKDIR}/cargo-home/registry/index/github.com-${REGISTRY_INDEX}
 	touch ${WRKDIR}/cargo-home/registry/index/github.com-${REGISTRY_INDEX}/.cargo-index-lock
 .for _crate in ${CRATES}
-	ln -s ${FULLDISTDIR}/${_crate}${EXTRACT_SUFX} \
-		${WRKDIR}/cargo-home/registry/cache/github.com-${REGISTRY_INDEX}/${_crate}.crate
+	gzip < /dev/null \
+		> ${WRKDIR}/cargo-home/registry/cache/github.com-${REGISTRY_INDEX}/${_crate}.crate
 	mv ${WRKDIR}/${_crate} \
 		${WRKDIR}/cargo-home/registry/src/github.com-${REGISTRY_INDEX}
 	touch ${WRKDIR}/cargo-home/registry/src/github.com-${REGISTRY_INDEX}/${_crate}/.cargo-ok
