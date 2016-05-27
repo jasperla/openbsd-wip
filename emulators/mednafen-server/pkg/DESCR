@@ -1,0 +1,3 @@
+Network play server for the Mednafen multi-system emulator. This network
+play server will work best on LANs, or small-scale WANs. It will work on the
+Internet, but... physics might not be in your favor.
