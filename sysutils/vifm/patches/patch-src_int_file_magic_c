@@ -2,16 +2,39 @@ $OpenBSD$
 
 Make file(1)-based mime type detection a bit safer.
 
---- src/int/file_magic.c.orig	Wed Feb  3 00:26:01 2016
-+++ src/int/file_magic.c	Wed Feb  3 00:33:03 2016
-@@ -145,9 +145,23 @@ get_file_mimetype(const char *filename, char *buf, siz
+--- src/int/file_magic.c.orig	Sat Jan  2 19:28:29 2016
++++ src/int/file_magic.c	Sun May 29 10:42:17 2016
+@@ -31,7 +31,11 @@
+ #include <stddef.h> /* size_t */
+ #include <stdio.h> /* popen() */
+ #include <string.h> /* strcpy() */
++#ifdef HAVE_FILE_PROG
++#include <unistd.h>
+ 
++#endif /* #ifdef HAVE_FILE_PROG */
++
+ #include "../utils/str.h"
+ #include "../filetype.h"
+ #include "../status.h"
+@@ -143,26 +147,43 @@ static int
+ get_file_mimetype(const char *filename, char *buf, size_t buf_sz)
+ {
  #ifdef HAVE_FILE_PROG
- 	FILE *pipe;
+-	FILE *pipe;
  	char command[1024];
 +	char quoted_filename[PATH_MAX*2], *qp;
++	int pipes[2];
  
+-	/* Use the file command to get mimetype */
+-	snprintf(command, sizeof(command), "file \"%s\" -b --mime-type", filename);
++	if (pipe(pipes) == -1)
++		return -1;
+ 
+-	if((pipe = popen(command, "r")) == NULL)
++	/* replace single quotes with double */
 +	if (strchr(filename, '\''))
-+	{
+ 	{
+-		return -1;
 +		qp = quoted_filename;
 +
 +		do {
@@ -21,11 +44,31 @@ Make file(1)-based mime type detection a bit safer.
 +		} while (*filename++ != '\0');
 +
 +		filename = quoted_filename;
-+	}
-+
- 	/* Use the file command to get mimetype */
--	snprintf(command, sizeof(command), "file \"%s\" -b --mime-type", filename);
-+	snprintf(command, sizeof(command), "file \'%s\' -b --mime-type", filename);
+ 	}
  
- 	if((pipe = popen(command, "r")) == NULL)
+-	if(fgets(buf, buf_sz, pipe) != buf)
++	switch (fork())
  	{
+-		pclose(pipe);
+-		return -1;
++		case -1:
++			printf("ERROR: forking child process failed\n");
++			return -1;
++		case 0:
++			dup2 (pipes[1], STDOUT_FILENO);
++			close(pipes[0]);
++			close(pipes[1]);
++			/* Use the file command to get mimetype */
++			execl("/usr/bin/file", "file", "-b", "--mime-type", filename);
++			exit(0);
++		default:
++			close(pipes[1]);
++			(void)read(pipes[0], buf, buf_sz);
+ 	}
+-
+-	pclose(pipe);
+-	chomp(buf);
+-
+ 	return 0;
+ #else /* #ifdef HAVE_FILE_PROG */
+ 	return -1;

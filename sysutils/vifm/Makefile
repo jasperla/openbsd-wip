@@ -32,15 +32,17 @@ RUN_DEPENDS =		devel/desktop-file-utils
 CONFIGURE_ARGS +=	--without-gtk \
 			--without-X11
 .else
+CONFIGURE_ARGS +=	--without-dyn-X11
+
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 cairo fontconfig freetype gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += intl pango-1.0 pangocairo-1.0 pangoft2-1.0 z
 
-LIB_DEPENDS +=		devel/gettext \
-			x11/gtk+2
+BUILD_DEPENDS = 	devel/gettext-tools
 
-CONFIGURE_ARGS +=	--without-dyn-X11
+LIB_DEPENDS =		devel/gettext \
+			x11/gtk+2
 .endif
 
 .include <bsd.port.mk>
