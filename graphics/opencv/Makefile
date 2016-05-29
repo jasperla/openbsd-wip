@@ -107,6 +107,7 @@ CONFIGURE_ARGS =	-DWITH_1394:Bool=Off \
 			-DWITH_V4L:Bool=Off \
 			-DWITH_IPP:Bool=Off \
 			-DWITH_OPENCL:Bool=Off \
+			-DENABLE_SSE3:Bool=Off \
 			-DBUILD_TESTS:Bool=On
 
 .if ${BUILD_PACKAGES:M-docs}
