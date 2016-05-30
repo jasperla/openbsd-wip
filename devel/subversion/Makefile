@@ -21,7 +21,7 @@ FULLPKGPATH-ap2=	devel/subversion,-ap2
 FULLPKGNAME-gnome-keyring= gnome-keyring-subversion-${VERSION}
 FULLPKGPATH-gnome-keyring= devel/subversion,-gnome-keyring
 
-SO_VERSION=	1.5
+SO_VERSION=	2.0
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
 		svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1 svn_fs_x-1 \
 		svn_ra-1 svn_ra_serf-1 svn_ra_local-1 \
