@@ -295,11 +295,12 @@ post-install:
 			${PREFIX}/share/examples/subversion/hook-scripts/mailer
 	${INSTALL_DATA} ${WRKSRC}/tools/hook-scripts/mailer/tests/* \
 			${PREFIX}/share/examples/subversion/hook-scripts/mailer/tests
-	find ${PREFIX}/share/examples/subversion -type f | xargs perl -pi \
-		-e "s,.*/usr/bin/ruby.*,#!${RUBY},;" \
-		-e "s,.*env ruby.*,#!${RUBY},;" \
-		-e "s,.*/usr/bin/python.*,#!${MODPY_BIN},;" \
-		-e "s,.*env python.*,#!${MODPY_BIN},;"
+	find ${PREFIX}/share/examples/subversion -type f -exec sed -Ei \
+		-e "s,.*/usr/bin/ruby.*,#!${RUBY}," \
+		-e "s,.*env ruby.*,#!${RUBY}," \
+		-e "s,.*/usr/bin/python.*,#!${MODPY_BIN}," \
+		-e "s,.*env python.*,#!${MODPY_BIN}," \
+			{} +
 	find ${PREFIX}/share/examples/subversion -type f -name '*\.orig' \
 		-exec rm -f {} \;
 
