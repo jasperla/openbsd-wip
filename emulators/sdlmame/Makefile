@@ -10,7 +10,7 @@ MULTI_PACKAGES =	-main -tools
 COMMENT-main =		emulates a massive variety of arcades machines
 COMMENT-tools =		tools to manipulate MAME/MESS roms and disk images
 
-V =			173
+V =			174
 
 GH_ACCOUNT =		mamedev
 GH_PROJECT =		mame
