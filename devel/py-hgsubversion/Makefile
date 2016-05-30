@@ -2,7 +2,7 @@
 
 COMMENT =		Subversion client Mercurial extension
 
-MODPY_EGG_VERSION =	1.8.5
+MODPY_EGG_VERSION =	1.8.6
 DISTNAME =		py-hgsubversion-${MODPY_EGG_VERSION}
 CATEGORIES =		devel net
 
@@ -19,7 +19,7 @@ DISTFILES =		${DISTNAME}{${MODPY_EGG_VERSION}}${EXTRACT_SUFX}
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 RUN_DEPENDS =		devel/mercurial \
-			devel/py-subvertpy
+			devel/subversion,-python
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/py-nose
 
