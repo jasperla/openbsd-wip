@@ -17,18 +17,14 @@ LIB_DEPENDS =		devel/sdl2 \
 			devel/sdl2-ttf \
 			graphics/freeimage
 RUN_DEPENDS =		devel/desktop-file-utils
+TEST_DEPENDS =		devel/cmocka
 
 MAKE_FLAGS +=		V=1 BUILDDIR="${WRKDIR}/build-${ARCH}"
 FAKE_FLAGS +=		$(MAKE_FLAGS) MANPREFIX=${PREFIX}/man PREFIX=${PREFIX}
 
 USE_GMAKE =		Yes
 
-.if !empty(DEBUG)
-ALL_TARGET =		debug
-.else
-ALL_TARGET =		${WRKDIR}/build-${ARCH}/imv
-.endif
-
+ALL_TARGET =		imv
 TEST_TARGET =		check
 
 .include <bsd.port.mk>
