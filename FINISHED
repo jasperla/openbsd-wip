@@ -87,3 +87,4 @@ net/transmission			ready to import, sent to ports 2016-02-29
 sysutils/udfclient			imported 2016-05-01
 devel/subversion			ready to import, sent to ports@ 2016-05-29 (czarkoff)
 graphics/imv				ready to import, sent to ports@ 2015-05-31 (czarkoff)
+sysutils/tarsnap-guie  sent to ports@ 07-05-2016, committed 30-05-2016 (grosse)
