@@ -443,7 +443,7 @@ print("\n\n")
 # /----------------------------------------------------------
 # | DOCS
 # +----------------------------------------------------------
-# | All remaining docs
+# | Docs for TeX packages in -buildset and -minimal only.
 # \----------------------------------------------------------
 
 # exclude manuals and info files

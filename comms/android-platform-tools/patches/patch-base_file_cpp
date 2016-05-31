@@ -1,0 +1,11 @@
+$OpenBSD$
+--- base/file.cpp.orig	Sat Mar 26 01:48:14 2016
++++ base/file.cpp	Sun May 22 12:07:44 2016
+@@ -21,6 +21,7 @@
+ #include <sys/stat.h>
+ #include <sys/types.h>
+ 
++#include <cstring> // strerror
+ #include <string>
+ 
+ #include "base/macros.h"  // For TEMP_FAILURE_RETRY on Darwin.

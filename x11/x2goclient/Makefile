@@ -1,9 +1,11 @@
 # $OpenBSD$
 
+COMMENT =	Qt4 client for the X2Go system
+
+DISTNAME =	x2goclient-4.0.5.1
+
 CATEGORIES =	x11
-COMMENT =	Qt client for the X2Go system
-VERSION =	4.0.5.1
-DISTNAME =	x2goclient-${VERSION}
+
 HOMEPAGE =	http://www.x2go.org
 
 MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
@@ -11,9 +13,9 @@ MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ICE QtCore QtGui QtNetwork QtSvg SM X11 Xext Xi Xinerama
-WANTLIB += Xpm Xrender c cups fontconfig freetype ldap m pthread
-WANTLIB += ssh stdc++
+WANTLIB += ICE QtGui QtNetwork QtSvg SM X11 Xext Xi Xinerama Xpm
+WANTLIB += Xrender c cups fontconfig freetype ldap m pthread ssh
+WANTLIB += stdc++
 
 MASTER_SITES =	http://code.x2go.org/releases/source/x2goclient/
 
@@ -21,17 +23,15 @@ MODULES +=	x11/qt4
 
 LIB_DEPENDS =	security/libssh \
 		databases/openldap \
-		print/cups-filters
+		print/cups,-libs
 
 BUILD_DEPENDS =	x11/nx/nxcomp \
-		x11/nx/nxproxy \
-		security/libssh \
-		databases/openldap
+		x11/nx/nxproxy
 
 DOCSDIR =	${PREFIX}/share/doc/x2goclient
 EXAMPLESDIR =	${PREFIX}/share/examples/x2goclient
 
-LRELEASE=	${LOCALBASE}/bin/lrelease4
+LRELEASE =	${LOCALBASE}/bin/lrelease4
 
 do-configure:
 	find ${WRKSRC} -type f -iname "*.cpp"  -exec \

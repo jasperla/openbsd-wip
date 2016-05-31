@@ -222,7 +222,6 @@ share/locale/pt_BR/LC_MESSAGES/subversion.mo
 share/locale/sv/LC_MESSAGES/subversion.mo
 share/locale/zh_CN/LC_MESSAGES/subversion.mo
 share/locale/zh_TW/LC_MESSAGES/subversion.mo
-share/pkgconfig/libsvn_auth_gnome_keyring.pc
 share/pkgconfig/libsvn_client.pc
 share/pkgconfig/libsvn_delta.pc
 share/pkgconfig/libsvn_diff.pc
@@ -238,3 +237,4 @@ share/pkgconfig/libsvn_ra_svn.pc
 share/pkgconfig/libsvn_repos.pc
 share/pkgconfig/libsvn_subr.pc
 share/pkgconfig/libsvn_wc.pc
+@rcscript ${RCDIR}/svnserve

@@ -36,7 +36,7 @@ EXTRACT_SUFX =		.tgz
 # GCC4 is only needed by the TLS flavor. "places" and "futures" only work
 # correctly on amd64 for this version.
 MODULES +=		gcc4
-MODGCC4_LANGS =		c c++
+MODGCC4_LANGS =		c
 MODGCC4_ARCHS =		amd64
 LIB_DEPENDS =		converters/libiconv \
 			devel/libffi>=3.0.9p2
@@ -96,11 +96,12 @@ CONFIGURE_ARGS +=	--enable-jit \
 			--enable-places \
 			--enable-futures
 .elif ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
-#CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -O0 -Wall -Wno-unused-value" \
-#			CPPFLAGS="${CPPFLAGS} -O0 -Wall -Wno-unused-value"
 CONFIGURE_ARGS +=	--enable-jit \
 			--disable-places \
 			--disable-futures
+.elif ${MACHINE_ARCH} == "powerpc"
+CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -O0 -Wall -Wno-unused-value" \
+			CPPFLAGS="${CPPFLAGS} -O0 -Wall -Wno-unused-value"
 .else
 CONFIGURE_ARGS +=	--disable-jit \
 			--disable-places \

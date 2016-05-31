@@ -21,7 +21,7 @@ FULLPKGPATH-ap2=	devel/subversion,-ap2
 FULLPKGNAME-gnome-keyring= gnome-keyring-subversion-${VERSION}
 FULLPKGPATH-gnome-keyring= devel/subversion,-gnome-keyring
 
-SO_VERSION=	1.5
+SO_VERSION=	2.0
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
 		svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1 svn_fs_x-1 \
 		svn_ra-1 svn_ra_serf-1 svn_ra_local-1 \
@@ -295,9 +295,12 @@ post-install:
 			${PREFIX}/share/examples/subversion/hook-scripts/mailer
 	${INSTALL_DATA} ${WRKSRC}/tools/hook-scripts/mailer/tests/* \
 			${PREFIX}/share/examples/subversion/hook-scripts/mailer/tests
-	find ${PREFIX}/share/examples/subversion -type f | xargs perl -pi \
-		-e "s,.*/usr/bin/python.*,#!${MODPY_BIN},;" \
-		-e "s,.*env python.*,#!${MODPY_BIN},;"
+	find ${PREFIX}/share/examples/subversion -type f -exec sed -Ei \
+		-e "s,.*/usr/bin/ruby.*,#!${RUBY}," \
+		-e "s,.*env ruby.*,#!${RUBY}," \
+		-e "s,.*/usr/bin/python.*,#!${MODPY_BIN}," \
+		-e "s,.*env python.*,#!${MODPY_BIN}," \
+			{} +
 	find ${PREFIX}/share/examples/subversion -type f -name '*\.orig' \
 		-exec rm -f {} \;
 

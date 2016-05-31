@@ -1,0 +1,15 @@
+This is a WIP update to the latest version of MAME (0.174). Since
+version 0.172, MAME is now GPLv2+ licensed [1], which means binary
+packages could be built and distributed again.
+
+Upstream switched build systems and now uses Genie [2]. Some blocks
+were missing to be able to build on OpenBSD. The patches I sent
+upstream have been accepted, so 0.174 starts building without any
+patches.
+
+MAME now requires C++14 so port has been updated to use MODGCC4,
+however some required stuff seems to be missing from our libraries
+so it currently doesn't build, see ERROR file for the log.
+
+[1] http://mamedev.org/?p=424
+[2] https://github.com/bkaradzic/GENie
