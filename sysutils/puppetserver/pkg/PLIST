@@ -1,0 +1,30 @@
+@comment $OpenBSD$
+bin/puppetserver
+share/examples/puppetserver/
+@sample ${SYSCONFDIR}/puppetlabs/puppetserver/
+share/examples/puppetserver/bootstrap.cfg
+@sample ${SYSCONFDIR}/puppetlabs/puppetserver/bootstrap.cfg
+share/examples/puppetserver/conf.d/
+@sample ${SYSCONFDIR}/puppetlabs/puppetserver/conf.d/
+share/examples/puppetserver/conf.d/auth.conf
+@sample ${SYSCONFDIR}/puppetlabs/puppetserver/conf.d/auth.conf
+share/examples/puppetserver/conf.d/global.conf
+@sample ${SYSCONFDIR}/puppetlabs/puppetserver/conf.d/global.conf
+share/examples/puppetserver/conf.d/puppetserver.conf
+@sample ${SYSCONFDIR}/puppetlabs/puppetserver/conf.d/puppetserver.conf
+share/examples/puppetserver/conf.d/web-routes.conf
+@sample ${SYSCONFDIR}/puppetlabs/puppetserver/conf.d/web-routes.conf
+share/examples/puppetserver/conf.d/webserver.conf
+@sample ${SYSCONFDIR}/puppetlabs/puppetserver/conf.d/webserver.conf
+share/examples/puppetserver/logback.xml
+@sample ${SYSCONFDIR}/puppetlabs/puppetserver/logback.xml
+share/puppetserver/
+share/puppetserver/cli/
+share/puppetserver/cli/apps/
+share/puppetserver/cli/apps/foreground
+share/puppetserver/cli/apps/gem
+share/puppetserver/cli/apps/irb
+share/puppetserver/cli/apps/ruby
+share/puppetserver/puppet-server-release.jar
+@sample /var/puppet/jruby-gems/
+@rcscript ${RCDIR}/puppetserver

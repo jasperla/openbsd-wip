@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# $OpenBSD$
+
+daemon=$(/usr/local/bin/javaPathHelper -c puppetserver)
+daemon_flags="-XX:HeapDumpPath=/var/log/puppetlabs/puppetserver -cp ${PREFIX}/share/puppetserver/puppet-server-release.jar clojure.main -m puppetlabs.trapperkeeper.main services --config ${SYSCONFDIR}/puppetlabs/puppetserver/conf.d/ -b ${SYSCONFDIR}/puppetlabs/puppetserver/bootstrap.cfg"
+daemon_timeout=120
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1
