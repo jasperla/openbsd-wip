@@ -1,0 +1,31 @@
+$OpenBSD$
+--- ext/config/conf.d/puppetserver.conf.orig	Tue Apr 26 20:41:58 2016
++++ ext/config/conf.d/puppetserver.conf	Thu Apr 28 20:08:55 2016
+@@ -2,7 +2,7 @@
+ jruby-puppet: {
+     # Where the puppet-agent dependency places puppet, facter, etc...
+     # Puppet server expects to load Puppet from this location
+-    ruby-load-path: [/opt/puppetlabs/puppet/lib/ruby/vendor_ruby]
++    ruby-load-path: [${LOCALBASE}/lib/ruby/vendor_ruby/2.2,${LOCALBASE}/lib/ruby/site_ruby/2.2]
+ 
+     # This setting determines where JRuby will look for gems.  It is also
+     # used by the `puppetserver gem` command line tool.
+@@ -22,15 +22,15 @@ jruby-puppet: {
+ 
+     # (optional) path to puppet conf dir; if not specified, will use
+     # /etc/puppetlabs/puppet
+-    master-conf-dir: /etc/puppetlabs/puppet
++    master-conf-dir: ${SYSCONFDIR}/puppetlabs/puppet
+ 
+     # (optional) path to puppet code dir; if not specified, will use
+     # /etc/puppetlabs/code
+-    master-code-dir: /etc/puppetlabs/code
++    master-code-dir: ${SYSCONFDIR}/puppetlabs/code
+ 
+     # (optional) path to puppet var dir; if not specified, will use
+     # /opt/puppetlabs/server/data/puppetserver
+-    master-var-dir: /opt/puppetlabs/server/data/puppetserver
++    master-var-dir: /var/puppetlabs/server/data/puppetserver
+ 
+     # (optional) path to puppet run dir; if not specified, will use
+     # /var/run/puppetlabs/puppetserver

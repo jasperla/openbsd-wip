@@ -1,0 +1,20 @@
+$OpenBSD$
+--- ext/bin/puppetserver.orig	Tue May 17 16:57:33 2016
++++ ext/bin/puppetserver	Tue May 31 20:24:06 2016
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!${LOCALBASE}/bin/bash
+ 
+ set -a
+ if [ -r "/etc/default/puppetserver" ] ; then
+@@ -9,8 +9,8 @@ elif [ `uname` == "OpenBSD" ] ; then
+     JAVA_BIN=$(javaPathHelper -c puppetserver)
+     JAVA_ARGS="-Xms2g -Xmx2g -XX:MaxPermSize=256m"
+     USER="_puppet"
+-    INSTALL_DIR="/opt/puppetlabs/server/apps/puppetserver"
+-    CONFIG="/etc/puppetlabs/puppetserver/conf.d"
++    INSTALL_DIR="${PREFIX}/share/puppetserver/"
++    CONFIG="${SYSCONFDIR}/puppetlabs/puppetserver/conf.d"
+ else
+     echo "You seem to be missing some important configuration files; could not find /etc/default/puppetserver or /etc/sysconfig/puppetserver" >&2
+     exit 1
