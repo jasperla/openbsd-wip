@@ -1,7 +1,5 @@
 # $OpenBSD: Makefile,v 1.28 2015/05/25 07:54:27 jasper Exp $
 
-SHARED_ONLY=		Yes
-
 COMMENT=		NetBeans Java IDE
 
 V=			8.1
