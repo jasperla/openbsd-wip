@@ -1,9 +1,0 @@
-This software requires access to /dev/mem, your system's physical memory.
-This has an impact on system security, and is not done by default.
-
-To grant this permission, boot in single-user mode, or temporarily set
-sysctl kern.securelevel=-1 in /etc/rc.securelevel.
-
-To revoke this permission after use, revert rc.securelevel to its
-previous setting, and set sysctl kern.securelevel=1 to have it take
-effect immediately.
