@@ -1,2 +1,0 @@
-Use on the local system (rather than with e.g. a buspirate) needed a patched
-pciutils, see http://patchwork.coreboot.org/patch/1538/ and pciutils.diff
