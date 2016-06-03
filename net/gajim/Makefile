@@ -1,6 +1,5 @@
 # $OpenBSD: Makefile,v 1.65 2014/01/02 11:35:18 jasper Exp $
 
-SHARED_ONLY=	Yes
 
 COMMENT=	jabber client written in pygtk
 DISTNAME=	gajim-0.16.1

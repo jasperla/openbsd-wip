@@ -1,6 +1,5 @@
 # $OpenBSD$
 
-SHARED_ONLY =			Yes
 
 COMMENT =			modern and flexible web client for R
 

@@ -69,7 +69,6 @@ CONFIGURE_STYLE =	gnu
 #CONFIGURE_SCRIPT =	??? (if other than configure)
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 #CONFIGURE_ENV =	???
-SHARED_ONLY=Yes
 
 # for gnu stuff
 #AUTOCONF_VERSION =	??? (defaults to 2.13)

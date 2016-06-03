@@ -2,7 +2,6 @@
 
 COMMENT =		fast, compact, powerful binary serialization
 
-SHARED_ONLY =		yes
 MODULES =		cpan
 DISTNAME =		Sereal-Encoder-3.005
 CATEGORIES =		devel

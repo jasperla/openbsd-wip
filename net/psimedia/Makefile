@@ -1,6 +1,5 @@
 # $OpenBSD$
 
-SHARED_ONLY =	Yes
 
 COMMENT =	voice and video API for Psi-like IM clients
 

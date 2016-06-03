@@ -25,6 +25,5 @@ MASTER_SITES =		http://pgfoundry.org/frs/download.php/1387/
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
-SHARED_ONLY=Yes
 
 .include <bsd.port.mk>
