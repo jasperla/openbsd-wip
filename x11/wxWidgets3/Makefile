@@ -1,6 +1,5 @@
 # $OpenBSD$
 
-SHARED_ONLY =	Yes
 
 COMMENT =	C++ cross-platform GUI toolkit
 

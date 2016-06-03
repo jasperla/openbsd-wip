@@ -1,6 +1,5 @@
 # $OpenBSD$
 
-SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
 
 COMMENT=		multi-language software development environment

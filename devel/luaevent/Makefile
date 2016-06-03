@@ -1,7 +1,6 @@
 # $OpenBSD: Makefile,v 1.14 2014/11/18 10:17:18 brad Exp $
 
 COMMENT =	lua binding of libevent
-SHARED_ONLY =	Yes
 
 V = 0.4.3
 DISTNAME=	luaevent-${V}

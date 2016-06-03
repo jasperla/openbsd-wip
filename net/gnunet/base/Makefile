@@ -1,6 +1,5 @@
 # $OpenBSD$
 
-SHARED_ONLY =		Yes
 
 COMMENT =		secure P2P framework
 

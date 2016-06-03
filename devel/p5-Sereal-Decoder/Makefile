@@ -2,7 +2,6 @@
 
 COMMENT =		fast, compact, powerful binary deserialization
 
-SHARED_ONLY =		yes
 MODULES =		cpan
 DISTNAME =		Sereal-Decoder-3.005
 CATEGORIES =		devel

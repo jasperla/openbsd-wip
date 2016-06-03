@@ -2,7 +2,6 @@
 
 COMMENT =		timing side-channel protected string compare
 
-SHARED_ONLY =		Yes
 MODULES =		cpan
 DISTNAME =		String-Compare-ConstantTime-0.310
 CATEGORIES =		devel

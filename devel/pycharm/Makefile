@@ -1,6 +1,5 @@
 # $OpenBSD: Makefile,v 1.29 2016/01/20 21:49:47 zhuk Exp $
 
-SHARED_ONLY=		Yes
 
 COMMENT=		PyCharm Python IDE
 

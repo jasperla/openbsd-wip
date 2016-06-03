@@ -1,5 +1,4 @@
 # $OpenBSD$
-SHARED_ONLY =		Yes
 COMMENT =		FFmpeg wrapper for Java
 VERSION =		5.6beta
 PKGNAME =		xuggler-${VERSION}
