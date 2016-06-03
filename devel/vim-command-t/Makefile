@@ -19,7 +19,6 @@ WANTLIB +=		c m ${MODRUBY_WANTLIB}
 
 MASTER_SITES =		http://spacehopper.org/mirrors/
 
-SHARED_ONLY =		Yes
 
 # Must stay in sync with the version vim is using!
 MODRUBY_REV =		1.8

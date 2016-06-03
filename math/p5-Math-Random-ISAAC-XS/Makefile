@@ -2,7 +2,6 @@
 
 COMMENT =		interface to the ISAAC PRNG algorithm
 
-SHARED_ONLY =		yes
 MODULES =		cpan
 DISTNAME =		Math-Random-ISAAC-XS-1.004
 CATEGORIES =		math
