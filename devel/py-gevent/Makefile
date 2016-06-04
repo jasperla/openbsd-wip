@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2015/10/18 14:50:31 czarkoff Exp $
+# $OpenBSD$
 
 COMMENT =		network library for easy and scalable concurrency
 
