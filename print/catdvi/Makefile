@@ -5,7 +5,7 @@ DISTNAME =	catdvi-0.14
 CATEGORIES =	print textproc
 HOMEPAGE =	http://catdvi.sourceforge.net/
 
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
+MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
