@@ -8,8 +8,8 @@ Fix paths in manual.
  .TP
  \fB\-T\fP \fITHEME\fP, \fB\-\-theme\fP \fITHEME\fP
  Use a theme file.  If the path is not absolute, the file will be searched
--for in \fB/usr/share/moc/themes/\fP,
-+for in \fB${TRUEPREFIX}/share/moc/themes/\fP (depends on installation prefix),
+-for in \fB/usr/share/moc/themes/\fP (depends on installation prefix),
++for in \fB${TRUEPREFIX}/share/moc/themes/\fP,
  \fB~/.moc/themes/\fP and the current directory.
  .LP
  .TP
