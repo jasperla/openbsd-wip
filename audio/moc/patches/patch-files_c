@@ -1,0 +1,91 @@
+$OpenBSD$
+
+Spawn file(1) instead of less secure libmagic and gtk's magic.
+
+--- files.c.orig	Sat Aug 30 04:31:51 2014
++++ files.c	Sat Feb  6 00:24:31 2016
+@@ -25,6 +25,8 @@
+ #ifdef HAVE_LIBMAGIC
+ #include <magic.h>
+ #include <pthread.h>
++#else
++#include <sys/wait.h>
+ #endif
+ 
+ /* Include dirent for various systems */
+@@ -123,6 +125,7 @@ enum file_type file_type (const char *file)
+ 
+ 	assert (file != NULL);
+ 
++	logit("file_type: detecting type of %s", file);
+ 	if (is_url(file))
+ 		return F_URL;
+ 	if (stat(file, &file_stat) == -1)
+@@ -137,7 +140,7 @@ enum file_type file_type (const char *file)
+ }
+ 
+ /* Given a file name, return the mime type or NULL. */
+-char *file_mime_type (const char *file ATTR_UNUSED)
++char *file_mime_type (const char *file)
+ {
+ 	char *result = NULL;
+ 
+@@ -164,6 +167,58 @@ char *file_mime_type (const char *file ATTR_UNUSED)
+ 		}
+ 		UNLOCK(magic_mutex);
+ 	}
++#else
++	int std_out[2];
++	int status;
++	pid_t pid;
++	FILE *stream;
++	char *out;
++	size_t len;
++
++	if (pipe (std_out) == -1) {
++		logit ("Error interrogating file: %s", strerror (errno));
++		return result;
++	}
++
++	pid = fork();
++	if (pid == -1) {
++		logit ("Error interrogating file: %s", strerror (errno));
++		return result;
++	} else if (pid == 0) {
++		close (std_out[0]);
++		if (dup2 (std_out[1], STDOUT_FILENO) == -1)
++			_exit(1);
++		close(std_out[1]);
++
++		execlp ("/usr/bin/file", "file", "-bi", file, NULL);
++		logit ("Error interrogating file: %s", strerror (errno));
++		_exit(1);
++	}
++
++	close (std_out[1]);
++
++	if ((stream = fdopen (std_out[0], "r")) == NULL) {
++		logit ("Error interrogating file: %s", strerror (errno));
++		close(std_out[0]);
++		return result;
++	}
++
++	if ((out = fgetln (stream, &len)) == NULL) {
++		logit ("Error interrogating file: %s", strerror (errno));
++		fclose(stream);
++		return result;
++	}
++
++	if (len == 0) {
++		logit ("Error interrogating file: file(1) failed");
++		return result;
++	}
++	out[len - 1] = '\0';
++	result = xstrdup (out);
++
++	fclose (stream);
++
++	waitpid (pid, &status, 0);
+ #endif
+ 
+ 	return result;
