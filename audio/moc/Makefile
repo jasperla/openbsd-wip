@@ -45,7 +45,7 @@ CONFIGURE_ARGS += ${CONFIGURE_SHARED} \
 		--without-rcc \
 		--without-included-ltdl \
 		--without-timidity \
-		--without-magic \
+		--with-magic \
 		--with-ltdl-include=${LOCALBASE}/include \
 		--with-ltdl-lib=${LOCALBASE}/lib
 CONFIGURE_ENV = CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/db4" \
