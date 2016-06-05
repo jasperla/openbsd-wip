@@ -1,0 +1,15 @@
+$OpenBSD$
+
+The only rand(3) call in moc - computation in playlist_c - is replaced with
+arc4random_uniform(3).  Thus srand(3) call is not needed any more.
+
+--- main.c.orig	Sun Jun  5 13:42:03 2016
++++ main.c	Sun Jun  5 13:53:54 2016
+@@ -851,7 +851,6 @@ int main (int argc, char *argv[])
+ 	io_init ();
+ 	rcc_init ();
+ 	decoder_init (params.debug);
+-	srand (time(NULL));
+ 
+ 	if (!params.only_server && params.dont_run_iface)
+ 		server_command (&params, args);
