@@ -12,10 +12,11 @@ PERMIT_PACKAGE_CDROM = Yes
 
 # uses pledge()
 WANTLIB += FLAC avcodec avformat avutil bz2 c crypto curl db estdc++
-WANTLIB += faad gsm id3tag idn ltdl m mad mp3lame mpcdec ncursesw
-WANTLIB += nghttp2 ogg opus pthread samplerate sndfile sndio speex
-WANTLIB += ssl stdc++ swresample tag tag_c vorbis vorbisenc vorbisfile
-WANTLIB += vpx wavpack x264 x265 xvidcore z
+WANTLIB += faad gsm id3tag idn ltdl m mad magic mp3lame mpcdec
+WANTLIB += ncursesw nghttp2 ogg opus pthread samplerate sndfile
+WANTLIB += sndio speex ssl stdc++ swresample tag tag_c vorbis
+WANTLIB += vorbisenc vorbisfile vpx wavpack x264 x265 xvidcore
+WANTLIB += z
 
 MODULES =	devel/gettext
 
@@ -31,6 +32,7 @@ LIB_DEPENDS =	audio/faad \
 		audio/speex \
 		audio/taglib \
 		databases/db/v4 \
+		devel/libmagic \
 		devel/libtool,-ltdl \
 		graphics/ffmpeg \
 		net/curl
