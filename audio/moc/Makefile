@@ -10,6 +10,7 @@ EXTRACT_SUFX =	.tar.bz2
 # GPLv3+
 PERMIT_PACKAGE_CDROM = Yes
 
+# uses pledge()
 WANTLIB += FLAC avcodec avformat avutil bz2 c crypto curl db estdc++
 WANTLIB += faad gsm id3tag idn ltdl m mad mp3lame mpcdec ncursesw
 WANTLIB += nghttp2 ogg opus pthread samplerate sndfile sndio speex
