@@ -10,9 +10,9 @@ COMMENT-java =		Java bindings for OpenCV
 
 V =			3.1.0
 DISTNAME =		opencv-${V}
-PKGNAME-main =		${PKGNAME}
-PKGNAME-docs =		opencv-docs-$V
-PKGNAME-java =		opencv-java-${V}
+PKGNAME-main =		popencv3-${V}
+PKGNAME-docs =		opencv3-docs-$V
+PKGNAME-java =		opencv3-java-${V}
 
 HOMEPAGE =		http://www.opencv.org/
 MAINTAINER =		Rafael Sadowski <rafael@sizeofvoid.org>
