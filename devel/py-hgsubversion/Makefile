@@ -27,6 +27,7 @@ post-extract:
 	@mv ${WRKDIR}/durin42-hgsubversion-???????????? ${WRKDIST}
 
 do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} tests/run.py --bindings=swig
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} tests/run.py \
+								--bindings=swig
 
 .include <bsd.port.mk>
