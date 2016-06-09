@@ -3,10 +3,13 @@ $OpenBSD$
 Make file(1)-based mime type detection a bit safer.
 
 --- src/int/file_magic.c.orig	Sat Jan  2 19:28:29 2016
-+++ src/int/file_magic.c	Sun May 29 10:42:17 2016
-@@ -31,7 +31,11 @@
++++ src/int/file_magic.c	Thu Jun  9 20:13:50 2016
+@@ -29,9 +29,13 @@
+ #endif
+ 
  #include <stddef.h> /* size_t */
- #include <stdio.h> /* popen() */
+-#include <stdio.h> /* popen() */
++#include <stdlib.h> /* exit() */
  #include <string.h> /* strcpy() */
 +#ifdef HAVE_FILE_PROG
 +#include <unistd.h>
@@ -16,12 +19,12 @@ Make file(1)-based mime type detection a bit safer.
  #include "../utils/str.h"
  #include "../filetype.h"
  #include "../status.h"
-@@ -143,26 +147,43 @@ static int
+@@ -143,26 +147,42 @@ static int
  get_file_mimetype(const char *filename, char *buf, size_t buf_sz)
  {
  #ifdef HAVE_FILE_PROG
 -	FILE *pipe;
- 	char command[1024];
+-	char command[1024];
 +	char quoted_filename[PATH_MAX*2], *qp;
 +	int pipes[2];
  
@@ -59,7 +62,7 @@ Make file(1)-based mime type detection a bit safer.
 +			close(pipes[0]);
 +			close(pipes[1]);
 +			/* Use the file command to get mimetype */
-+			execl("/usr/bin/file", "file", "-b", "--mime-type", filename);
++			execl("/usr/bin/file", "file", "-b", "--mime-type", filename, NULL);
 +			exit(0);
 +		default:
 +			close(pipes[1]);
