@@ -3,23 +3,21 @@ $OpenBSD$
 Make file(1)-based mime type detection a bit safer.
 
 --- src/int/file_magic.c.orig	Sat Jan  2 19:28:29 2016
-+++ src/int/file_magic.c	Thu Jun  9 20:13:50 2016
-@@ -29,9 +29,13 @@
++++ src/int/file_magic.c	Fri Jun 10 11:30:00 2016
+@@ -29,8 +29,11 @@
  #endif
  
  #include <stddef.h> /* size_t */
 -#include <stdio.h> /* popen() */
 +#include <stdlib.h> /* exit() */
  #include <string.h> /* strcpy() */
-+#ifdef HAVE_FILE_PROG
-+#include <unistd.h>
++#include <unistd.h> /* read() */
++#include <sys/resource.h> /* WIFEXITED() */
++#include <sys/wait.h> /* wait() */
  
-+#endif /* #ifdef HAVE_FILE_PROG */
-+
  #include "../utils/str.h"
  #include "../filetype.h"
- #include "../status.h"
-@@ -143,26 +147,42 @@ static int
+@@ -143,27 +146,32 @@ static int
  get_file_mimetype(const char *filename, char *buf, size_t buf_sz)
  {
  #ifdef HAVE_FILE_PROG
@@ -27,30 +25,20 @@ Make file(1)-based mime type detection a bit safer.
 -	char command[1024];
 +	char quoted_filename[PATH_MAX*2], *qp;
 +	int pipes[2];
++	pid_t pid;
++	int status;
  
 -	/* Use the file command to get mimetype */
 -	snprintf(command, sizeof(command), "file \"%s\" -b --mime-type", filename);
-+	if (pipe(pipes) == -1)
-+		return -1;
- 
+-
 -	if((pipe = popen(command, "r")) == NULL)
-+	/* replace single quotes with double */
-+	if (strchr(filename, '\''))
- 	{
--		return -1;
-+		qp = quoted_filename;
-+
-+		do {
-+			if (*filename == '\'')
-+				*qp++ = '\\';
-+			*qp++ = *filename;
-+		} while (*filename++ != '\0');
-+
-+		filename = quoted_filename;
- 	}
+-	{
++	if (pipe(pipes) == -1)
+ 		return -1;
+-	}
  
 -	if(fgets(buf, buf_sz, pipe) != buf)
-+	switch (fork())
++	switch (pid = fork())
  	{
 -		pclose(pipe);
 -		return -1;
@@ -63,15 +51,18 @@ Make file(1)-based mime type detection a bit safer.
 +			close(pipes[1]);
 +			/* Use the file command to get mimetype */
 +			execl("/usr/bin/file", "file", "-b", "--mime-type", filename, NULL);
-+			exit(0);
++			_exit(-1);
 +		default:
 +			close(pipes[1]);
 +			(void)read(pipes[0], buf, buf_sz);
++			waitpid(pid, &status, 0);
  	}
 -
 -	pclose(pipe);
 -	chomp(buf);
 -
- 	return 0;
+-	return 0;
++	return WIFEXITED(status) && !WEXITSTATUS(status);
  #else /* #ifdef HAVE_FILE_PROG */
  	return -1;
+ #endif /* #ifdef HAVE_FILE_PROG */
