@@ -7,15 +7,20 @@ COMMENT =		fast implementation of the Python language
 # To update PyPy to a new version:
 #   * Bump ${V} but set ${BOOTSTRAP_V} to the old ${V} (keeping
 #     any bootstrap version suffix intact, e.g. "-1")
-#   * FLAVOR=no_bootstrap make makesum
-#   * FLAVOR=no_bootstrap make plist (fix anything along the way)
-#   * FLAVOR=no_bootstrap make package
+#   * make makesum
+#   * make plist (fix anything along the way)
+#   * make package
 #   * Set BOOTSTRAP_V back to ${V} in the port Makefile
-#   * make bootstrap && make makesum (note, FLAVOR no longer set)
+#   * make bootstrap && make makesum
 #   * Try the build using the bootstrap
-V =			5.1.1
+#
+# If the old bootstrap no longer works (e.g. due to an ABI change), then
+# You can use the no_bootstrap FLAVOR to make a new bootstrap. This uses
+# CPython to build PyPy instead. Note this is slower.
+
+V =			5.3.0
 BOOTSTRAP_V =		${V}
-DISTNAME =		pypy-${V}-src
+DISTNAME =		pypy2-v${V}-src
 PKGNAME =		pypy-${V}
 BOOTSTRAP-amd64 =	pypy-bootstrap-amd64-${BOOTSTRAP_V}.tar.xz
 
@@ -58,8 +63,6 @@ BUILD_DEPENDS =		textproc/py-sphinx \
 			${MODTK_BUILD_DEPENDS}
 RUN_DEPENDS =		${MODTK_RUN_DEPENDS} \
 			databases/gdbm
-
-WRKDIST =		${WRKDIR}/pypy-${V}-src
 
 post-extract:
 	@if [ `ulimit -d` -lt $$((5*1024*1024)) ]; then \
