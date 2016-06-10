@@ -1,4 +1,7 @@
 $OpenBSD$
+
+Remove audio choices that are irrelevant on OpenBSD.
+
 --- config.example.in.orig	Mon Jun 29 12:07:21 2015
 +++ config.example.in	Mon Jun 29 12:08:03 2015
 @@ -121,32 +121,10 @@

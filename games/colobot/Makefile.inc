@@ -1,6 +1,5 @@
 # $OpenBSD: Makefile.template,v 1.72 2015/04/08 17:53:19 sthen Exp $
 
-SHARED_ONLY ?=		Yes
 
 V ?=			0.1.5
 

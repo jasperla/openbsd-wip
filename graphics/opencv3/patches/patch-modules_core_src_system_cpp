@@ -1,0 +1,25 @@
+$OpenBSD: patch-modules_core_src_system_cpp,v 1.1 2015/01/26 21:59:55 zhuk Exp $
+Fix build on i386.
+--- modules/core/src/system.cpp.orig	Fri Dec 18 16:02:16 2015
++++ modules/core/src/system.cpp	Thu Mar 10 22:13:20 2016
+@@ -1,4 +1,4 @@
+-/*M///////////////////////////////////////////////////////////////////////////////////////
++/*m///////////////////////////////////////////////////////////////////////////////////////
+ //
+ //  IMPORTANT: READ BEFORE DOWNLOADING, COPYING, INSTALLING OR USING.
+ //
+@@ -181,9 +181,13 @@ std::wstring GetTempFileNameWinRT(std::wstring prefix)
+ 
+ #endif
+ #else
++#include <fcntl.h>
+ #include <pthread.h>
+-#include <sys/time.h>
++#include <stdlib.h>
+ #include <time.h>
++#include <unistd.h>
++
++#include <sys/time.h>
+ 
+ #if defined __MACH__ && defined __APPLE__
+ #include <mach/mach.h>

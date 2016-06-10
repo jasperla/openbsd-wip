@@ -1,74 +1,84 @@
-# $OpenBSD: Makefile,v 1.34 2015/01/30 21:38:37 zhuk Exp $
+# $OpenBSD: Makefile,v 1.37 2016/04/15 08:53:49 shadchin Exp $
 
-ONLY_FOR_ARCHS =	amd64 i386
-ONLY_FOR_ARCHS-java =	${ONLY_FOR_ARCHS}
+ONLY_FOR_ARCHS =	${GCC4_ARCHS}
+ONLY_FOR_ARCHS-java =	amd64 i386
 
 CATEGORIES =		graphics devel
 COMMENT-docs =		OpenCV documentation and examples
 COMMENT-main =		library of programming functions for real time cv
 COMMENT-java =		Java bindings for OpenCV
 
-V =			3.1.0
-DISTNAME =		opencv-${V}
+V =			2.4.13
+DISTNAME =		opencv-$V
 PKGNAME-main =		${PKGNAME}
 PKGNAME-docs =		opencv-docs-$V
-PKGNAME-java =		opencv-java-${V}
+PKGNAME-java =		opencv-java-$V
 
 HOMEPAGE =		http://www.opencv.org/
 MAINTAINER =		Rafael Sadowski <rafael@sizeofvoid.org>
 
-SHARED_LIBS =		opencv_calib3d			2.0 #1.1
-SHARED_LIBS +=		opencv_core			2.0 #1.1
-SHARED_LIBS +=		opencv_features2d		2.0 #1.1
-SHARED_LIBS +=		opencv_flann			2.0 #1.1
-SHARED_LIBS +=		opencv_highgui			2.0 #1.1
-SHARED_LIBS +=		opencv_imgcodecs		0.0 #1.0
-SHARED_LIBS +=		opencv_imgproc			2.0 #1.1
-SHARED_LIBS +=		opencv_ml			2.0 #1.1
-SHARED_LIBS +=		opencv_objdetect		2.0 #1.1
-SHARED_LIBS +=		opencv_photo			1.0 #0.1
-SHARED_LIBS +=		opencv_shape			0.0 #1.0
-SHARED_LIBS +=		opencv_stitching		0.0 #1.0
-SHARED_LIBS +=		opencv_superres			1.0 #0.1
-SHARED_LIBS +=		opencv_video			2.0 #1.1
-SHARED_LIBS +=		opencv_videoio			0.0 #1.0
-SHARED_LIBS +=		opencv_videostab		1.0 #0.1
+SHARED_LIBS =		opencv_calib3d			1.2 #1.3
+SHARED_LIBS +=		opencv_contrib			1.2 #1.3
+SHARED_LIBS +=		opencv_core			1.2 #1.3
+SHARED_LIBS +=		opencv_features2d		1.2 #1.3
+SHARED_LIBS +=		opencv_flann			1.2 #1.3
+SHARED_LIBS +=		opencv_gpu			1.2 #1.3
+SHARED_LIBS +=		opencv_highgui			1.2 #1.3
+SHARED_LIBS +=		opencv_imgproc			1.2 #1.3
+SHARED_LIBS +=		opencv_legacy			1.2 #1.3
+SHARED_LIBS +=		opencv_ml			1.2 #1.3
+SHARED_LIBS +=		opencv_nonfree			0.2 #0.3
+SHARED_LIBS +=		opencv_objdetect		1.2 #1.3
+SHARED_LIBS +=		opencv_photo			0.2 #0.3
+SHARED_LIBS +=		opencv_stitching		0.2 #0.3
+SHARED_LIBS +=		opencv_superres			0.2 #0.3
+SHARED_LIBS +=		opencv_ts			0.2 #0.3
+SHARED_LIBS +=		opencv_video			1.2 #1.3
+SHARED_LIBS +=		opencv_videostab		0.2 #0.3
+SHARED_LIBS +=		opencv_ocl			0.2 #2.6
 
-EXTRACT_SUFX =		.zip
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=opencvlibrary/}
+GH_ACCOUNT =		Itseez
+GH_PROJECT =		opencv
+GH_TAGNAME = 		${V}
 
-WANTLIB-main = Half Iex IlmImf IlmThread Imath atk-1.0 avcodec avformat
-WANTLIB-main += avresample avutil bz2 c cairo cairo-gobject estdc++ intl
-WANTLIB-main += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gstapp-1.0
-WANTLIB-main += gstbase-1.0 gstpbutils-1.0 gstreamer-1.0 gstriff-1.0
-WANTLIB-main += gstvideo-1.0 gthread-2.0 gtk-3 jasper jpeg m pango-1.0
-WANTLIB-main += pangocairo-1.0 png pthread swscale tiff webp z
-WANTLIB-main += gphoto2 gphoto2_port ${MODPY_WANTLIB}
+WANTLIB-main =  Half Iex IlmImf IlmThread Imath X11 Xcomposite Xcursor
+WANTLIB-main += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
+WANTLIB-main += avcodec avformat avutil bz2 c cairo fontconfig
+WANTLIB-main += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB-main += gobject-2.0 gstapp-1.0 gstbase-1.0 gstpbutils-1.0
+WANTLIB-main += gstreamer-1.0 gstriff-1.0 gstvideo-1.0 gthread-2.0 gtk-x11-2.0
+WANTLIB-main += jasper jpeg m pango-1.0 pangocairo-1.0 avresample
+WANTLIB-main += pangoft2-1.0 png pthread stdc++ swscale tiff z intl
+WANTLIB-main += ${MODGETTEXT_WANTLIB} ${MODPY_WANTLIB}
 
 WANTLIB-docs =
 
-WANTLIB-java =  m pthread estdc++
-WANTLIB-java += opencv_calib3d>=2.0 opencv_core>=2.0 opencv_features2d>=2.0 opencv_flann>=2.0
-WANTLIB-java += opencv_highgui>=2.0 opencv_imgproc>=2.0 opencv_ml>=2.0 opencv_objdetect>=2.0
-WANTLIB-java += opencv_photo>=1.0 opencv_video>=2.0 opencv_imgcodecs opencv_videoio
+WANTLIB-java =  m pthread stdc++
+WANTLIB-java += opencv_calib3d opencv_contrib opencv_core opencv_features2d
+WANTLIB-java += opencv_flann opencv_gpu opencv_highgui opencv_imgproc
+WANTLIB-java += opencv_legacy opencv_ml opencv_nonfree opencv_objdetect
+WANTLIB-java += opencv_ocl opencv_photo opencv_video
+
 
 MULTI_PACKAGES =	-main -docs -java
 PSEUDO_FLAVORS =	no_docs no_java
 FLAVOR ?=
 
+# "patents" means containing some patented algorithms, see
+# http://docs.opencv.org/modules/nonfree/doc/nonfree.html
+# As some source modules include this functionality, we couldn't
+# just subpackage "nonfree". Excluding this, here we have a usual
 # BSDL
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =		Yes
+PERMIT_PACKAGE_CDROM =		patents
+PERMIT_PACKAGE_CDROM-docs =	Yes
 
 .include <bsd.port.arch.mk>
 
-MODULES =		lang/clang \
-			devel/cmake \
+MODULES =		devel/cmake \
 			lang/python
 
-MODCLANG_ARCHS =	amd64 i386
-MODCLANG_LANGS =	c c++
-
-BUILD_DEPENDS =		devel/doxygen>=1.8.10 \
+BUILD_DEPENDS =		devel/doxygen \
 			math/py-numpy \
 			math/eigen3
 
@@ -79,20 +89,18 @@ RUN_DEPENDS-java =	${MODJAVA_RUN_DEPENDS}
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			${MODPY_LIB_DEPENDS} \
 			multimedia/gstreamer1/plugins-base \
-			x11/gtk+3 \
+			x11/gtk+2 \
 			graphics/ffmpeg \
 			graphics/ilmbase \
 			graphics/jpeg \
-			graphics/libgphoto2 \
-			graphics/libwebp \
 			graphics/openexr \
 			graphics/png \
 			graphics/tiff
-
+LIB_DEPENDS-docs =
 LIB_DEPENDS-java =	${BUILD_PKGPATH},-main=${V}
 
 # XXX PIE cannot be produced due to problems with inline assembly.
-# Since OpenCV is mostly used as a LIBrary, switch to PIC.
+# Since OpenCV is mostly used as a library, switch to PIC.
 .if ${ARCH:Mi386}
 CONFIGURE_ENV =		CFLAGS="${CFLAGS} -fPIC" \
 			CXXFLAGS="${CXXFLAGS} -fPIC"
@@ -100,19 +108,32 @@ CONFIGURE_ENV =		CFLAGS="${CFLAGS} -fPIC" \
 
 # ATM opencv requires V4L1 compat, ask them to change it,
 # then see WITH_V4L below.
-CONFIGURE_ARGS =	-DWITH_1394:Bool=Off \
-			-DWITH_VTK:Bool=Off \
+CONFIGURE_ARGS =	-DBUILD_opencv_nonfree:Bool=On \
+			-DBUILD_opencv_python:Bool=On \
+			-DWITH_1394:Bool=Off \
 			-DWITH_CUDA:Bool=Off \
 			-DWITH_EIGEN:Bool=Off \
+			-DWITH_FFMPEG:Bool=On \
+			-DWITH_GSTREAMER:Bool=On \
+			-DWITH_GTK:Bool=On \
+			-DWITH_JPEG:Bool=On \
+			-DWITH_PNG:Bool=On \
+			-DWITH_TIFF:Bool=On \
 			-DWITH_V4L:Bool=Off \
-			-DWITH_IPP:Bool=Off \
-			-DWITH_OPENCL:Bool=Off \
-			-DENABLE_SSE3:Bool=Off \
-			-DBUILD_TESTS:Bool=On
+			-DPYTHON_EXECUTABLE:FILEPATH=${MODPY_BIN}
+
+.if ${BUILD_PACKAGES:M-java}
+MODULES +=		java
+MODJAVA_VER =		1.7+
+BUILD_DEPENDS +=	devel/apache-ant
+.else
+# Safe: Java will be detected, if present, but won't be used
+CONFIGURE_ARGS +=	-DBUILD_opencv_java:Bool=Off
+.endif
 
 .if ${BUILD_PACKAGES:M-docs}
 BUILD_DEPENDS +=	textproc/py-sphinx
-ALL_TARGET =		all doxygen
+ALL_TARGET =		all html_docs
 CONFIGURE_ARGS +=	-DBUILD_DOCS:Bool=On \
 			-DBUILD_EXAMPLES:Bool=On \
 			-DINSTALL_C_EXAMPLES:Bool=On \
@@ -123,26 +144,33 @@ CONFIGURE_ARGS +=	-DBUILD_DOCS:Bool=Off \
 			-DINSTALL_PYTHON_EXAMPLES:Bool=Off
 .endif
 
-.if ${BUILD_PACKAGES:M-java}
-MODULES +=		java
-MODJAVA_VER =		1.8+
-BUILD_DEPENDS +=	devel/apache-ant
-.else
-# Safe: Java will be detected, if present, but won't be used
-CONFIGURE_ARGS +=	-DBUILD_opencv_java:Bool=Off
-.endif
-
 CONFIG_ADJ_CMD =	perl -pi
 .for _l _v in ${SHARED_LIBS}
 CONFIG_ADJ_CMD +=	-e 's,lib${_l}.so([^.]),lib${_l}.so.${_v}$$1,g;'
 .endfor
 
+DOCDIR =		${PREFIX}/share/doc/OpenCV
+
+post-patch:
+	perl -pi -e 's@^.*(#\s*include)@$$1@' \
+		${WRKSRC}/samples/cpp/tutorial_code/core/how_to_scan_images/how_to_scan_images.cpp
+
 post-install:
 	${CONFIG_ADJ_CMD} ${PREFIX}/share/OpenCV/OpenCVConfig.cmake
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKINST}${MODPY_SITEPKG}
+.if ${BUILD_PACKAGES:M-docs}
+	rm -Rf ${DOCDIR}
+	mv ${PREFIX}/share/OpenCV/doc ${DOCDIR}
+	cp -R ${WRKBUILD}/doc/_html ${DOCDIR}/html
+.endif
 
 do-test:
-	cd ${WRKBUILD}; \
-	${MODPY_BIN} ${WRKSRC}/modules/ts/misc/run.py
+	@cd ${WRKBUILD}/bin; \
+	failed=false; \
+	for t in opencv_test*; do \
+		echo "RUNNING TEST: $$t" >&2; \
+		./$$t || failed=true; \
+	done; \
+	$$failed
 
 .include <bsd.port.mk>

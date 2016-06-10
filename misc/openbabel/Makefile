@@ -1,6 +1,5 @@
 # $OpenBSD: Makefile,v 1.13 2011/09/16 10:31:23 espie Exp $
 
-SHARED_ONLY= 	Yes
 
 COMMENT=	chemistry file translation program
 V=		2.3.2

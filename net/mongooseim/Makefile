@@ -36,7 +36,6 @@ FAKE_FLAGS+=		EJABBERDDIR=${WRKINST}/${PREFIX}/lib/ejabberd \
 			SPOOLDIR=${WRKINST}/${EJDBDIR}
 
 CONFIGURE_STYLE=	gnu
-SHARED_ONLY=		Yes
 CONFIGURE_ARGS+=	--disable-pam \
 			--enable-mod_pubsub \
 			--enable-mod_irc \

@@ -1,6 +1,5 @@
 # $OpenBSD: Makefile,v 1.15 2014/10/05 09:49:14 zhuk Exp $
 
-SHARED_ONLY =		Yes
 
 COMMENT =		Qt Widgets for Technical Applications
 DISTNAME =		qwt-6.1.1

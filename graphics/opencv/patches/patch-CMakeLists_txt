@@ -1,23 +1,12 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.5 2015/01/24 10:56:43 zhuk Exp $
---- CMakeLists.txt.orig	Fri Dec 18 16:02:16 2015
-+++ CMakeLists.txt	Thu Mar 10 23:51:55 2016
-@@ -384,7 +384,8 @@ else()
-     set(OPENCV_LIB_INSTALL_PATH     lib${LIB_SUFFIX})
-     set(OPENCV_3P_LIB_INSTALL_PATH  share/OpenCV/3rdparty/${OPENCV_LIB_INSTALL_PATH})
-     set(OPENCV_SAMPLES_SRC_INSTALL_PATH    share/OpenCV/samples)
--    set(OPENCV_JAR_INSTALL_PATH share/OpenCV/java)
-+    # JNI shared object is installed in the same directory, so this should
-+    set(OPENCV_JAR_INSTALL_PATH lib/OpenCV/java)
-     set(OPENCV_OTHER_INSTALL_PATH   share/OpenCV)
-   endif()
-   set(OPENCV_INCLUDE_INSTALL_PATH "include")
-@@ -522,9 +523,6 @@ if(IOS)
-   # test_big_endian needs try_compile, which doesn't work for iOS
-   # http://public.kitware.com/Bug/view.php?id=12288
-   set(WORDS_BIGENDIAN 0)
--else()
--  include(TestBigEndian)
--  test_big_endian(WORDS_BIGENDIAN)
- endif()
- 
- # ----------------------------------------------------------------------------
+$OpenBSD: patch-CMakeLists_txt,v 1.6 2015/11/23 20:34:07 zhuk Exp $
+--- CMakeLists.txt.orig	Mon Oct 26 08:56:34 2015
++++ CMakeLists.txt	Tue Nov  3 01:10:55 2015
+@@ -451,7 +451,7 @@ if(UNIX)
+     CHECK_INCLUDE_FILE(pthread.h HAVE_LIBPTHREAD)
+     if(ANDROID)
+       set(OPENCV_LINKER_LIBS ${OPENCV_LINKER_LIBS} dl m log)
+-    elseif(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD|NetBSD|DragonFly")
++    elseif(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD|NetBSD|DragonFly|OpenBSD")
+       set(OPENCV_LINKER_LIBS ${OPENCV_LINKER_LIBS} m pthread)
+     elseif(${CMAKE_SYSTEM_NAME} MATCHES "QNX")
+       set(OPENCV_LINKER_LIBS ${OPENCV_LINKER_LIBS} m)

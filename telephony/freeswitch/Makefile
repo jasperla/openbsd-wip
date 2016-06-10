@@ -2,7 +2,6 @@
 
 COMMENT =	open source communications platform written in C
 
-SHARED_ONLY =	Yes
 
 DISTNAME =	freeswitch-1.0.6
 CATEGORIES =	telephony
