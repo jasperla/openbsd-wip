@@ -3,7 +3,7 @@ $OpenBSD$
 Make file(1)-based mime type detection a bit safer.
 
 --- src/int/file_magic.c.orig	Sat Jan  2 19:28:29 2016
-+++ src/int/file_magic.c	Sat Jun 11 10:37:41 2016
++++ src/int/file_magic.c	Mon Jun 13 00:14:19 2016
 @@ -29,8 +29,11 @@
  #endif
  
@@ -116,7 +116,7 @@ Make file(1)-based mime type detection a bit safer.
  #else /* #ifdef HAVE_LIBMAGIC */
  	return -1;
  #endif /* #ifdef HAVE_LIBMAGIC */
-@@ -143,27 +172,33 @@ static int
+@@ -143,27 +172,34 @@ static int
  get_file_mimetype(const char *filename, char *buf, size_t buf_sz)
  {
  #ifdef HAVE_FILE_PROG
@@ -152,7 +152,8 @@ Make file(1)-based mime type detection a bit safer.
 +			_exit(-1);
 +		default:
 +			close(pipes[1]);
-+			r = read(pipes[0], buf, buf_sz - 1);
++			if ((r = read(pipes[0], buf, buf_sz - 1)) == -1)
++				r = 0; /* if read(2) failed, we still want buf to be a C string */
 +			buf[r] = '\0';
 +			waitpid(pid, NULL, 0);
 +			close(pipes[0]);
@@ -162,7 +163,7 @@ Make file(1)-based mime type detection a bit safer.
 -	chomp(buf);
 -
 -	return 0;
-+	return (r == 0 || r == -1) ? -1 : 0;
++	return (r == 0) ? -1 : 0;
  #else /* #ifdef HAVE_FILE_PROG */
  	return -1;
  #endif /* #ifdef HAVE_FILE_PROG */

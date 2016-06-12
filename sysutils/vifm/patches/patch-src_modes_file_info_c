@@ -1,6 +1,6 @@
 $OpenBSD$
 --- src/modes/file_info.c.orig	Thu Jan 28 18:29:20 2016
-+++ src/modes/file_info.c	Sat Jun 11 12:33:07 2016
++++ src/modes/file_info.c	Mon Jun 13 00:16:19 2016
 @@ -31,6 +31,15 @@
  #include <string.h> /* strlen() */
  #include <time.h> /* tm localtime() strftime() */
@@ -17,7 +17,7 @@ $OpenBSD$
  #include "../cfg/config.h"
  #include "../compat/fs_limits.h"
  #include "../compat/os.h"
-@@ -267,27 +276,64 @@ show_file_type(FileView *view, int curr_y)
+@@ -267,27 +276,71 @@ show_file_type(FileView *view, int curr_y)
  	}
  	else if(entry->type == FT_EXEC || entry->type == FT_REG)
  	{
@@ -59,28 +59,35 @@ $OpenBSD$
 +				{
 +					magic_close(magic);
 +					close(pipes[1]);
++#ifdef HAVE_FILE_PROG
++					goto file;
++#else
 +					_exit(-1);
++#endif
 +				}
 +
 +				close(pipes[1]);
 +				magic_close(magic);
 +				_exit(0);
-+#else /* #ifdef HAVE_LIBMAGIC */
++#endif /* #ifdef HAVE_LIBMAGIC */
++#ifdef HAVE_FILE_PROG
++file:
 +				dup2 (pipes[1], STDOUT_FILENO);
 +				close(pipes[1]);
 +				/* Use the file command to get mimetype */
-+				execl("/usr/bin/file", "file", "-b", "--mime-type", filename, NULL);
++				execl("/usr/bin/file", "file", "-b", "--mime-type", full_path, NULL);
 +				_exit(-1);
-+#endif /* #ifdef HAVE_LIBMAGIC */
++#endif /* #ifdef HAVE_FILE_PROG */
 +			default:
 +				close(pipes[1]);
-+				r = read(pipes[0], buf, sizeof(buf));
++				if ((r = read(pipes[0], buf, sizeof(buf) - 1)) == -1)
++					r = 0; /* if read(2) failed, we still want buf to be a C string */
 +				buf[r] = '\0';
 +				waitpid(pid, NULL, 0);
 +				close(pipes[0]);
 +		}
 +
-+		if (r == -1 || r == 0)
++		if (r == 0)
 +		{
  			mvwaddstr(menu_win, curr_y, 8, "Unable to open pipe to read file");
  			return 2;
