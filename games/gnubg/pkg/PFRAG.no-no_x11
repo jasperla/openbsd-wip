@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+share/applications/gnubg.desktop
 share/gnubg/flags/
 share/gnubg/flags/czech.png
 share/gnubg/flags/denmark.png
@@ -57,6 +58,20 @@ share/icons/hicolor/22x22/apps/gnubg.png
 share/icons/hicolor/24x24/apps/gnubg.png
 share/icons/hicolor/32x32/apps/gnubg.png
 share/icons/hicolor/48x48/apps/gnubg.png
+share/locale/cs/LC_MESSAGES/gnubg.mo
+share/locale/da/LC_MESSAGES/gnubg.mo
+share/locale/de/LC_MESSAGES/gnubg.mo
+share/locale/en_US/
+share/locale/en_US/LC_MESSAGES/
+share/locale/en_US/LC_MESSAGES/gnubg.mo
+share/locale/es/LC_MESSAGES/gnubg.mo
+share/locale/fr/LC_MESSAGES/gnubg.mo
+share/locale/is/LC_MESSAGES/gnubg.mo
+share/locale/it/LC_MESSAGES/gnubg.mo
+share/locale/ja/LC_MESSAGES/gnubg.mo
+share/locale/ro/LC_MESSAGES/gnubg.mo
+share/locale/ru/LC_MESSAGES/gnubg.mo
+share/locale/tr/LC_MESSAGES/gnubg.mo
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
