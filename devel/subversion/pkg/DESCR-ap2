@@ -1,2 +1,0 @@
-The mod_dav_svn and mod_authz_svn modules allow Apache httpd 2 to
-provide access to a Subversion repository using HTTP.
