@@ -6,7 +6,7 @@ DISTNAME =		toxcore-20151216
 CATEGORIES =		net telephony
 HOMEPAGE =		http://tox.im/
 
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
+MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
