@@ -1,0 +1,102 @@
+$OpenBSD$
+--- src/modes/file_info.c.orig	Thu Jan 28 18:29:20 2016
++++ src/modes/file_info.c	Mon Jun 13 00:16:19 2016
+@@ -31,6 +31,15 @@
+ #include <string.h> /* strlen() */
+ #include <time.h> /* tm localtime() strftime() */
+ 
++#if defined HAVE_FILE_PROG || defined HAVE_LIBMAGIC
++#include <unistd.h>
++#include <sys/wait.h>
++#endif
++
++#ifdef HAVE_LIBMAGIC
++#include <magic.h>
++#endif
++
+ #include "../cfg/config.h"
+ #include "../compat/fs_limits.h"
+ #include "../compat/os.h"
+@@ -267,27 +276,71 @@ show_file_type(FileView *view, int curr_y)
+ 	}
+ 	else if(entry->type == FT_EXEC || entry->type == FT_REG)
+ 	{
+-#ifdef HAVE_FILE_PROG
++#if defined HAVE_FILE_PROG || defined HAVE_LIBMAGIC
+ 		char full_path[PATH_MAX];
+-		FILE *pipe;
+-		char command[1024];
+ 		char buf[NAME_MAX];
++		pid_t pid;
++		int pipes[2];
++		ssize_t r;
++#ifdef HAVE_LIBMAGIC
++		char *descr;
++		magic_t magic;
++#endif
+ 
+ 		get_current_full_path(view, sizeof(full_path), full_path);
+ 
+-		/* Use the file command to get file information. */
+-		snprintf(command, sizeof(command), "file \"%s\" -b", full_path);
++		if(pipe(pipes) == -1)
++			return -1;
+ 
+-		if((pipe = popen(command, "r")) == NULL)
++		switch(pid = fork())
+ 		{
++			case -1:
++				printf("ERROR: forking child process failed\n");
++				return -1;
++			case 0:
++				close(pipes[0]);
++#ifdef HAVE_LIBMAGIC
++				if(pledge("stdio rpath", NULL) == -1 ||
++						(magic = magic_open(MAGIC_NONE)) == NULL ||
++						magic_load(magic, NULL) == -1 ||
++						(descr = magic_file(magic, full_path)) == NULL ||
++						write(pipes[1], descr, strlen(descr)) == -1)
++				{
++					magic_close(magic);
++					close(pipes[1]);
++#ifdef HAVE_FILE_PROG
++					goto file;
++#else
++					_exit(-1);
++#endif
++				}
++
++				close(pipes[1]);
++				magic_close(magic);
++				_exit(0);
++#endif /* #ifdef HAVE_LIBMAGIC */
++#ifdef HAVE_FILE_PROG
++file:
++				dup2 (pipes[1], STDOUT_FILENO);
++				close(pipes[1]);
++				/* Use the file command to get mimetype */
++				execl("/usr/bin/file", "file", "-b", "--mime-type", full_path, NULL);
++				_exit(-1);
++#endif /* #ifdef HAVE_FILE_PROG */
++			default:
++				close(pipes[1]);
++				if ((r = read(pipes[0], buf, sizeof(buf) - 1)) == -1)
++					r = 0; /* if read(2) failed, we still want buf to be a C string */
++				buf[r] = '\0';
++				waitpid(pid, NULL, 0);
++				close(pipes[0]);
++		}
++
++		if (r == 0)
++		{
+ 			mvwaddstr(menu_win, curr_y, 8, "Unable to open pipe to read file");
+ 			return 2;
+ 		}
+-
+-		if(fgets(buf, sizeof(buf), pipe) != buf)
+-			strcpy(buf, "Pipe read error");
+-
+-		pclose(pipe);
+ 
+ 		mvwaddnstr(menu_win, curr_y, 8, buf, x - 9);
+ 		if(x > 9 && strlen(buf) > (size_t)(x - 9))

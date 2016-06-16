@@ -3,10 +3,10 @@
 COMMENT =		an interactive process viewer for Unix
 
 VERSION =		2.0.2
-DISTNAME =		htop-${VERSION}pre20160509
+DISTNAME =		htop-${VERSION}pre20160610
 GH_ACCOUNT =		hishamhm
 GH_PROJECT =		htop
-GH_COMMIT =		7d72715a6bb556882f8f9afbf9d9d8fb03350c1d
+GH_COMMIT =		9ec41d1b650f2501d54fcb9429523751c8eaf285
 
 CATEGORIES =		sysutils
 

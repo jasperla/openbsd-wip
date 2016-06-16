@@ -1,0 +1,13 @@
+@comment $OpenBSD$
+@bin bin/cryptominisat4
+@bin bin/cryptominisat4_simple
+include/cryptominisat4/
+include/cryptominisat4/cryptominisat.h
+include/cryptominisat4/solvertypesmini.h
+lib/cmake/
+lib/cmake/cryptominisat4/
+lib/cmake/cryptominisat4/cryptominisat4Config.cmake
+lib/cmake/cryptominisat4/cryptominisat4Targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/cryptominisat4/cryptominisat4Targets.cmake
+lib/libcryptominisat4.a
+@lib lib/libcryptominisat4.so.${LIBcryptominisat4_VERSION}

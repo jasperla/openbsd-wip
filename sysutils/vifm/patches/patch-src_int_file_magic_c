@@ -3,54 +3,140 @@ $OpenBSD$
 Make file(1)-based mime type detection a bit safer.
 
 --- src/int/file_magic.c.orig	Sat Jan  2 19:28:29 2016
-+++ src/int/file_magic.c	Thu Jun  9 20:13:50 2016
-@@ -29,9 +29,13 @@
++++ src/int/file_magic.c	Mon Jun 13 00:14:19 2016
+@@ -29,8 +29,11 @@
  #endif
  
  #include <stddef.h> /* size_t */
 -#include <stdio.h> /* popen() */
 +#include <stdlib.h> /* exit() */
  #include <string.h> /* strcpy() */
-+#ifdef HAVE_FILE_PROG
-+#include <unistd.h>
++#include <unistd.h> /* read() */
++#include <sys/resource.h> /* WIFEXITED() */
++#include <sys/wait.h> /* wait() */
  
-+#endif /* #ifdef HAVE_FILE_PROG */
-+
  #include "../utils/str.h"
  #include "../filetype.h"
- #include "../status.h"
-@@ -143,26 +147,42 @@ static int
+@@ -40,7 +43,7 @@
+ static assoc_records_t handlers;
+ 
+ static int get_gtk_mimetype(const char *filename, char *buf);
+-static int get_magic_mimetype(const char *filename, char *buf);
++static int get_magic_mimetype(const char *filename, char *buf, size_t buf_sz);
+ static int get_file_mimetype(const char *filename, char *buf, size_t buf_sz);
+ static assoc_records_t get_handlers(const char *mime_type);
+ #if !defined(_WIN32) && defined(ENABLE_DESKTOP_FILES)
+@@ -62,7 +65,7 @@ get_mimetype(const char *file)
+ 
+ 	if(get_gtk_mimetype(file, mimetype) == -1)
+ 	{
+-		if(get_magic_mimetype(file, mimetype) == -1)
++		if(get_magic_mimetype(file, mimetype, sizeof(mimetype)) == -1)
+ 		{
+ 			if(get_file_mimetype(file, mimetype, sizeof(mimetype)) == -1)
+ 				return NULL;
+@@ -103,37 +106,63 @@ get_gtk_mimetype(const char *filename, char *buf)
+ }
+ 
+ static int
+-get_magic_mimetype(const char *filename, char *buf)
++get_magic_mimetype(const char *filename, char *buf, size_t buf_sz)
+ {
+ #ifdef HAVE_LIBMAGIC
+ 	magic_t magic;
+ 	const char *descr;
++	pid_t pid;
++	int pipes[2];
++	ssize_t r;
+ 
++	if (pipe(pipes) == -1)
++		return -1;
++
++	switch (pid = fork()) {
++		case -1:
++			return -1;
++		case 0:
++			close(pipes[0]);
++
++			if (pledge("stdio rpath", NULL) == -1)
++				_exit(-1);
++
+ #if HAVE_DECL_MAGIC_MIME_TYPE
+-	magic = magic_open(MAGIC_MIME_TYPE);
++			magic = magic_open(MAGIC_MIME_TYPE);
+ #else
+-	magic = magic_open(MAGIC_MIME);
++			magic = magic_open(MAGIC_MIME);
+ #endif
+-	if(magic == NULL)
+-	{
+-		return -1;
+-	}
++			if (magic == NULL)
++				_exit(-1);
+ 
+-	magic_load(magic, NULL);
++			if (magic_load(magic, NULL) == -1) {
++				magic_close(magic);
++				_exit(-1);
++			}
+ 
+-	descr = magic_file(magic, filename);
+-	if(descr == NULL)
+-	{
+-		return -1;
+-	}
++			if((descr = magic_file(magic, filename)) == NULL) {
++				magic_close(magic);
++				_exit(-1);
++			}
+ 
+-	strcpy(buf, descr);
+ #if !HAVE_DECL_MAGIC_MIME_TYPE
+-	break_atr(buf, ';');
++			break_atr(descr, ';');
+ #endif
+ 
+-	magic_close(magic);
+-	return 0;
++			if (write(pipes[1], descr, strlen(descr)) == -1)
++				_exit(-1);
++			close(pipes[1]);
++			magic_close(magic);
++			_exit(0);
++		default:
++			close(pipes[1]);
++			r = read(pipes[0], buf, buf_sz - 1);
++			buf[r] = '\0';
++			close(pipes[0]);
++			waitpid(pid, NULL, 0);
++	}
++
++	return (r == -1 || r == 0) ? -1 : 0;
+ #else /* #ifdef HAVE_LIBMAGIC */
+ 	return -1;
+ #endif /* #ifdef HAVE_LIBMAGIC */
+@@ -143,27 +172,34 @@ static int
  get_file_mimetype(const char *filename, char *buf, size_t buf_sz)
  {
  #ifdef HAVE_FILE_PROG
 -	FILE *pipe;
 -	char command[1024];
-+	char quoted_filename[PATH_MAX*2], *qp;
 +	int pipes[2];
++	pid_t pid;
++	ssize_t r;
  
 -	/* Use the file command to get mimetype */
 -	snprintf(command, sizeof(command), "file \"%s\" -b --mime-type", filename);
-+	if (pipe(pipes) == -1)
-+		return -1;
- 
+-
 -	if((pipe = popen(command, "r")) == NULL)
-+	/* replace single quotes with double */
-+	if (strchr(filename, '\''))
- 	{
--		return -1;
-+		qp = quoted_filename;
-+
-+		do {
-+			if (*filename == '\'')
-+				*qp++ = '\\';
-+			*qp++ = *filename;
-+		} while (*filename++ != '\0');
-+
-+		filename = quoted_filename;
- 	}
+-	{
++	if (pipe(pipes) == -1)
+ 		return -1;
+-	}
  
 -	if(fgets(buf, buf_sz, pipe) != buf)
-+	switch (fork())
++	switch (pid = fork())
  	{
 -		pclose(pipe);
 -		return -1;
@@ -63,15 +149,21 @@ Make file(1)-based mime type detection a bit safer.
 +			close(pipes[1]);
 +			/* Use the file command to get mimetype */
 +			execl("/usr/bin/file", "file", "-b", "--mime-type", filename, NULL);
-+			exit(0);
++			_exit(-1);
 +		default:
 +			close(pipes[1]);
-+			(void)read(pipes[0], buf, buf_sz);
++			if ((r = read(pipes[0], buf, buf_sz - 1)) == -1)
++				r = 0; /* if read(2) failed, we still want buf to be a C string */
++			buf[r] = '\0';
++			waitpid(pid, NULL, 0);
++			close(pipes[0]);
  	}
 -
 -	pclose(pipe);
 -	chomp(buf);
 -
- 	return 0;
+-	return 0;
++	return (r == 0) ? -1 : 0;
  #else /* #ifdef HAVE_FILE_PROG */
  	return -1;
+ #endif /* #ifdef HAVE_FILE_PROG */
