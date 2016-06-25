@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/09/04 16:05:38 ajacoutot Exp $
+@comment $OpenBSD$
 @bin bin/mozcerts
 @bin bin/qca2tool
 include/QtCrypto/
