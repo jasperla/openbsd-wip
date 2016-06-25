@@ -230,7 +230,7 @@ lib/python${MODPY_VERSION}/site-packages/cv2.so
 share/OpenCV/
 share/OpenCV/OpenCVConfig-version.cmake
 share/OpenCV/OpenCVConfig.cmake
-share/OpenCV/OpenCVModules-debug.cmake
+share/OpenCV/OpenCVModules${MODCMAKE_BUILD_SUFFIX}
 share/OpenCV/OpenCVModules.cmake
 share/OpenCV/haarcascades/
 share/OpenCV/haarcascades/haarcascade_eye.xml

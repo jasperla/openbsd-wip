@@ -1,7 +1,7 @@
 # $OpenBSD: Makefile,v 1.37 2016/04/15 08:53:49 shadchin Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
-ONLY_FOR_ARCHS-java =	amd64 i386
+ONLY_FOR_ARCHS-java =	${ONLY_FOR_ARCHS}
 
 CATEGORIES =		graphics devel
 COMMENT-docs =		OpenCV documentation and examples
@@ -120,11 +120,12 @@ CONFIGURE_ARGS =	-DBUILD_opencv_nonfree:Bool=On \
 			-DWITH_PNG:Bool=On \
 			-DWITH_TIFF:Bool=On \
 			-DWITH_V4L:Bool=Off \
+			-DENABLE_SSE3:Bool=Off \
 			-DPYTHON_EXECUTABLE:FILEPATH=${MODPY_BIN}
 
 .if ${BUILD_PACKAGES:M-java}
 MODULES +=		java
-MODJAVA_VER =		1.7+
+MODJAVA_VER =		1.8+
 BUILD_DEPENDS +=	devel/apache-ant
 .else
 # Safe: Java will be detected, if present, but won't be used
@@ -165,12 +166,7 @@ post-install:
 .endif
 
 do-test:
-	@cd ${WRKBUILD}/bin; \
-	failed=false; \
-	for t in opencv_test*; do \
-		echo "RUNNING TEST: $$t" >&2; \
-		./$$t || failed=true; \
-	done; \
-	$$failed
+	cd ${WRKBUILD}; \
+	${MODPY_BIN} ${WRKSRC}/modules/ts/misc/run.py
 
 .include <bsd.port.mk>
