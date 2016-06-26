@@ -10,7 +10,7 @@ MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
 
 CATEGORIES =	security
 
-# XXX TODO GPL3 like some py code?
+# GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
 GH_ACCOUNT =		guelfoweb
