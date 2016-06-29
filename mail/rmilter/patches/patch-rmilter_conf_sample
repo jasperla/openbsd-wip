@@ -1,0 +1,12 @@
+$OpenBSD$
+--- rmilter.conf.sample.orig	Wed Jun 29 11:23:11 2016
++++ rmilter.conf.sample	Wed Jun 29 11:25:04 2016
+@@ -252,7 +252,7 @@ dkim {
+ 	# };
+ 	# Universal selector, keys will be checked for pattern /etc/dkim/<domain>.<selector>.key
+     domain {
+-		key = /usr/local/etc/dkim;
++		key = /etc/dkim;
+ 		domain = "*";
+ 		selector = "dkim";
+ 	};
