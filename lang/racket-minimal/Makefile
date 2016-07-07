@@ -7,7 +7,7 @@ ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 
 COMMENT =		multi-paradigm programming language
 
-V =			6.5.0.5
+V =			6.5.0.8
 PKGNAME =		racket-minimal-$V
 DISTFILES =		min-racket-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
@@ -66,7 +66,7 @@ CONFIGURE_ARGS +=	--disable-backtrace \
 			--disable-libs \
 			--disable-shared
 
-CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,-z,wxneeded" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 
 FLAVORS =		debug no_jit
