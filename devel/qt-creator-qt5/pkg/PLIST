@@ -334,8 +334,8 @@ share/qtcreator/qbs/share/qbs/modules/cpp/gcc.js
 share/qtcreator/qbs/share/qbs/modules/cpp/genericunix-gcc.qbs
 share/qtcreator/qbs/share/qbs/modules/cpp/ios-gcc.qbs
 share/qtcreator/qbs/share/qbs/modules/cpp/linux-gcc.qbs
+share/qtcreator/qbs/share/qbs/modules/cpp/macos-gcc.qbs
 share/qtcreator/qbs/share/qbs/modules/cpp/msvc.js
-share/qtcreator/qbs/share/qbs/modules/cpp/osx-gcc.qbs
 share/qtcreator/qbs/share/qbs/modules/cpp/tvos-gcc.qbs
 share/qtcreator/qbs/share/qbs/modules/cpp/watchos-gcc.qbs
 share/qtcreator/qbs/share/qbs/modules/cpp/windows-mingw.qbs
