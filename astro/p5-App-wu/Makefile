@@ -3,7 +3,7 @@
 COMMENT=		"Terminal app providing weather via wunderground api"
 DISTNAME=		App-wu-0.05
 PKGNAME=		p5-${DISTNAME}
-CATEGORIES=		weather perl5
+CATEGORIES=		astro perl5
 
 MAINTAINER=		Todd T. Fries <todd@openbsd.org>
 
