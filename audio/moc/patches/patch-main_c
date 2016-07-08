@@ -47,7 +47,7 @@ $OpenBSD$
  
 -	if (!params.only_server && params.dont_run_iface)
 +	if (!params.only_server && params.dont_run_iface) {
-+		if (pledge("stdio unix", NULL) == -1)
++		if (pledge("cpath rpath stdio unix", NULL) == -1)
 +			fatal ("pledge() failed: %s", strerror(errno));
  		server_command (&params, args);
 -	else
