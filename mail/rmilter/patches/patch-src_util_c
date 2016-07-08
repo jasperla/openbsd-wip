@@ -1,0 +1,41 @@
+$OpenBSD$
+
+From 78b63609bb7f110500a312e34e23c28b31c1dfdd Mon Sep 17 00:00:00 2001
+From: Vsevolod Stakhov <vsevolod@highsecure.ru>
+Date: Mon, 4 Jul 2016 17:43:02 +0100
+Subject: [PATCH] [Fix] Fix support of systems without sendfile
+
+--- src/util.c.orig	Mon Jun 20 11:08:56 2016
++++ src/util.c	Thu Jul  7 09:02:27 2016
+@@ -704,3 +704,31 @@ rmilter_str_lc (char *str, unsigned int size)
+ 	}
+ 
+ }
++
++ssize_t
++rmilter_atomic_write (int fd, const void *buf, size_t len)
++{
++	const char *s = buf;
++	size_t pos = 0;
++	ssize_t res;
++
++	while (len > pos) {
++		res = write (fd, s + pos, len - pos);
++
++		switch (res) {
++		case -1:
++			if (errno == EINTR || errno == EAGAIN) {
++				continue;
++			}
++
++			return -1;
++		case 0:
++			errno = EPIPE;
++			return -1;
++		default:
++			pos += res;
++		}
++	}
++
++	return pos;
++}

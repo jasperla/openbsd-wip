@@ -8,8 +8,6 @@ daemon_user="_rmilter"
 
 . /etc/rc.d/rc.subr
 
-#pexp="/usr/bin/perl -w ${daemon}${daemon_flags:+ ${daemon_flags}}"
-
 rc_pre() {
 	/usr/bin/install -d -o ${daemon_user} /var/run/rmilter
 }

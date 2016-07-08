@@ -29,6 +29,11 @@ CONFIGURE_ARGS=	-DCMAKE_C_OPT_FLAGS="${CFLAGS}" \
 
 NO_TEST=	Yes
 
+# no trailing crlf
+post-extract:
+	cd ${WRKSRC}; for i in contrib/http-parser contrib/xxhash; \
+	    do echo >> $$i/CMakeLists.txt; done
+
 pre-configure:
 	sed -i -e 's,/etc/,${SYSCONFDIR}/,g' \
 	    -e 's,/var/,${LOCALSTATEDIR}/,g' \

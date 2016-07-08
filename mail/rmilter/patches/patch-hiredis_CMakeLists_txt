@@ -1,7 +1,7 @@
 $OpenBSD$
---- hiredis/CMakeLists.txt.orig	Mon Jun 20 11:08:56 2016
-+++ hiredis/CMakeLists.txt	Wed Jun 29 10:46:53 2016
-@@ -6,10 +6,7 @@ SET(HIREDISSRC	async.c
+--- hiredis/CMakeLists.txt.orig	Thu Jul  7 09:00:46 2016
++++ hiredis/CMakeLists.txt	Thu Jul  7 09:00:46 2016
+@@ -6,9 +6,6 @@ SET(HIREDISSRC	async.c
  				sds.c)
  
  SET(HIREDIS_CFLAGS "")
@@ -11,5 +11,3 @@ $OpenBSD$
  
  ADD_LIBRARY(rmilter-hiredis STATIC ${HIREDISSRC})
  
--SET_TARGET_PROPERTIES(rmilter-hiredis PROPERTIES COMPILE_FLAGS "${HIREDIS_CFLAGS}")
-+SET_TARGET_PROPERTIES(rmilter-hiredis PROPERTIES COMPILE_FLAGS "${HIREDIS_CFLAGS}")
