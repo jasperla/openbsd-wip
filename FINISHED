@@ -85,6 +85,5 @@ devel/libangelscript			ready to import, sent to ports@ 2015-12-20
 devel/arm-none-eabi                     ready to import, sent to ports@ 2015-12-31, there is a patch ready to apply to the tree
 net/transmission			ready to import, sent to ports 2016-02-29
 sysutils/udfclient			imported 2016-05-01
-graphics/imv				ready to import, sent to ports@ 2016-05-31 (czarkoff)
 sysutils/tarsnap-guie  sent to ports@ 07-05-2016, committed 30-05-2016 (grosse)
 devel/py-hgsubversion			ready to import, sent to ports@ 2016-06-14 (czarkoff)
