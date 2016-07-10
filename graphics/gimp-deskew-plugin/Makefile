@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.75 2016/03/20 17:19:49 naddy Exp $
+# $OpenBSD$
 
 COMMENT =		deskew plug-in for GIMP
 DISTNAME =		gimp-deskew-plugin-0.0.20141025
@@ -8,7 +8,7 @@ GH_COMMIT =		b9214ddc8acf9ff5b01afdd44a9bdf96fe7d6e8e
 
 CATEGORIES =		graphics x11
 
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
+MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
