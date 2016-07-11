@@ -1,0 +1,12 @@
+$OpenBSD$
+--- programs/Makefile.orig	Fri Jul  8 21:30:43 2016
++++ programs/Makefile	Mon Jul 11 19:20:11 2016
+@@ -34,7 +34,7 @@
+ DESTDIR?=
+ PREFIX ?= /usr/local
+ BINDIR  = $(PREFIX)/bin
+-MANDIR  = $(PREFIX)/share/man/man1
++MANDIR  = $(PREFIX)/man/man1
+ 
+ ZSTDDIR = ../lib
+ 
