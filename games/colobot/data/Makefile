@@ -8,10 +8,12 @@ CATEGORIES =		games
 
 GH_PROJECT =		colobot-data
 
-MODULES +=		lang/python
+MODULES =		devel/cmake \
+			lang/python
 MODPY_SETUPUTILS =	No
 MODPY_RUNDEP =		No
 
+CONFIGURE_ARGS +=	-DMUSIC:=OFF
 CONFIGURE_STYLE =	cmake
 
 .include <bsd.port.mk>
