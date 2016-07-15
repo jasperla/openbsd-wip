@@ -1,1 +1,2 @@
-non-blocking (web)server API for distributed computing and SOA based on zeromq 
+Prime_server is a non-blocking (web)server API for distributed computing and
+service-oriented architecture based on ZeroMQ.

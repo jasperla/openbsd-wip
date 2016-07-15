@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+@bin bin/prime_echod
 @bin bin/prime_httpd
 @bin bin/prime_proxyd
 @bin bin/prime_serverd
