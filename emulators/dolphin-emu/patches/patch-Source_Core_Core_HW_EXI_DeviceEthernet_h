@@ -1,0 +1,17 @@
+$OpenBSD$
+--- Source/Core/Core/HW/EXI_DeviceEthernet.h.orig	Wed Jul 13 23:20:15 2016
++++ Source/Core/Core/HW/EXI_DeviceEthernet.h	Wed Jul 13 23:20:24 2016
+@@ -331,11 +331,11 @@ class CEXIETHERNET : public IEXIDevice (public)
+ 	OVERLAPPED mWriteOverlapped;
+ 	std::vector<u8> mWriteBuffer;
+ 	bool mWritePending;
+-#elif defined(__linux__) || defined(__APPLE__) || defined(__FreeBSD__)
++#elif defined(__linux__) || defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ 	int fd;
+ #endif
+ 
+-#if defined(WIN32) || defined(__linux__) || defined(__APPLE__) || defined(__FreeBSD__)
++#if defined(WIN32) || defined(__linux__) || defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ 	std::thread readThread;
+ 	Common::Flag readEnabled;
+ 	Common::Flag readThreadShutdown;

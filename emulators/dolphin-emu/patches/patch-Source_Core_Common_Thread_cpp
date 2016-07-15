@@ -1,0 +1,21 @@
+$OpenBSD$
+--- Source/Core/Common/Thread.cpp.orig	Wed Jul 13 22:37:19 2016
++++ Source/Core/Common/Thread.cpp	Wed Jul 13 22:39:56 2016
+@@ -12,7 +12,7 @@
+ 
+ #ifdef __APPLE__
+ #include <mach/mach.h>
+-#elif defined BSD4_4 || defined __FreeBSD__
++#elif defined BSD4_4 || defined __FreeBSD__ || defined __OpenBSD__
+ #include <pthread_np.h>
+ #endif
+ 
+@@ -133,7 +133,7 @@ void SetCurrentThreadName(const char* szThreadName)
+ {
+ #ifdef __APPLE__
+ 	pthread_setname_np(szThreadName);
+-#elif defined __FreeBSD__
++#elif defined __FreeBSD__ || defined __OpenBSD__
+ 	pthread_set_name_np(pthread_self(), szThreadName);
+ #else
+ 	// linux doesn't allow to set more than 16 bytes, including \0.

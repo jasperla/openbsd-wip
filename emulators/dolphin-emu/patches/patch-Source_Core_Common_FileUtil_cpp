@@ -1,0 +1,64 @@
+$OpenBSD$
+--- Source/Core/Common/FileUtil.cpp.orig	Wed Jul 13 22:38:02 2016
++++ Source/Core/Common/FileUtil.cpp	Wed Jul 13 22:38:45 2016
+@@ -70,7 +70,7 @@ static void StripTailDirSlashes(std::string& fname)
+ // Returns true if file filename exists
+ bool Exists(const std::string& filename)
+ {
+-	struct stat64 file_info;
++	struct stat file_info;
+ 
+ 	std::string copy(filename);
+ 	StripTailDirSlashes(copy);
+@@ -78,7 +78,7 @@ bool Exists(const std::string& filename)
+ #ifdef _WIN32
+ 	int result = _tstat64(UTF8ToTStr(copy).c_str(), &file_info);
+ #else
+-	int result = stat64(copy.c_str(), &file_info);
++	int result = stat(copy.c_str(), &file_info);
+ #endif
+ 
+ 	return (result == 0);
+@@ -87,7 +87,7 @@ bool Exists(const std::string& filename)
+ // Returns true if filename is a directory
+ bool IsDirectory(const std::string& filename)
+ {
+-	struct stat64 file_info;
++	struct stat file_info;
+ 
+ 	std::string copy(filename);
+ 	StripTailDirSlashes(copy);
+@@ -95,7 +95,7 @@ bool IsDirectory(const std::string& filename)
+ #ifdef _WIN32
+ 	int result = _tstat64(UTF8ToTStr(copy).c_str(), &file_info);
+ #else
+-	int result = stat64(copy.c_str(), &file_info);
++	int result = stat(copy.c_str(), &file_info);
+ #endif
+ 
+ 	if (result < 0)
+@@ -386,11 +386,11 @@ u64 GetSize(const std::string& filename)
+ 		return 0;
+ 	}
+ 
+-	struct stat64 buf;
++	struct stat buf;
+ #ifdef _WIN32
+ 	if (_tstat64(UTF8ToTStr(filename).c_str(), &buf) == 0)
+ #else
+-	if (stat64(filename.c_str(), &buf) == 0)
++	if (stat(filename.c_str(), &buf) == 0)
+ #endif
+ 	{
+ 		DEBUG_LOG(COMMON, "GetSize: %s: %lld",
+@@ -406,8 +406,8 @@ u64 GetSize(const std::string& filename)
+ // Overloaded GetSize, accepts file descriptor
+ u64 GetSize(const int fd)
+ {
+-	struct stat64 buf;
+-	if (fstat64(fd, &buf) != 0)
++	struct stat buf;
++	if (fstat(fd, &buf) != 0)
+ 	{
+ 		ERROR_LOG(COMMON, "GetSize: stat failed %i: %s",
+ 			fd, GetLastErrorMsg().c_str());

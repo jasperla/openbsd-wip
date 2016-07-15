@@ -1,0 +1,13 @@
+$OpenBSD$
+--- Source/Core/Core/IPC_HLE/WII_IPC_HLE_Device_net.cpp.orig	Fri Jun 24 02:09:07 2016
++++ Source/Core/Core/IPC_HLE/WII_IPC_HLE_Device_net.cpp	Wed Jul 13 23:09:37 2016
+@@ -6,6 +6,9 @@
+ #include <cstdio>
+ #include <cstdlib>
+ #include <string>
++#include <netdb.h>
++#include <poll.h>
++#include <arpa/inet.h>
+ 
+ #include "Common/CommonPaths.h"
+ #include "Common/FileUtil.h"

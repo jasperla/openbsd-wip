@@ -1,0 +1,12 @@
+$OpenBSD$
+--- Source/Core/DolphinWX/CMakeLists.txt.orig	Thu Jul 14 12:52:27 2016
++++ Source/Core/DolphinWX/CMakeLists.txt	Thu Jul 14 12:52:35 2016
+@@ -67,7 +67,7 @@ endif()
+ 
+ set(WXLIBS ${wxWidgets_LIBRARIES})
+ 
+-if(NOT CMAKE_SYSTEM_NAME MATCHES FreeBSD)
++if(NOT CMAKE_SYSTEM_NAME MATCHES FreeBSD AND NOT CMAKE_SYSTEM_NAME MATCHES OpenBSD)
+ 	set(WXLIBS ${WXLIBS} dl)
+ endif()
+ 

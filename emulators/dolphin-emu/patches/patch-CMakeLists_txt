@@ -1,0 +1,12 @@
+$OpenBSD$
+--- CMakeLists.txt.orig	Fri Jun 24 02:09:07 2016
++++ CMakeLists.txt	Thu Jul 14 00:50:13 2016
+@@ -415,7 +415,7 @@ if(ANDROID)
+ 	# We are cross compiling, search only the toolchain for libraries and includes
+ 	SET(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
+ 	SET(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
+-elseif(NOT APPLE)
++elseif(NOT APPLE AND NOT ${CMAKE_SYSTEM_NAME} STREQUAL "OpenBSD")
+ 	list(APPEND LIBS rt)
+ endif()
+ 

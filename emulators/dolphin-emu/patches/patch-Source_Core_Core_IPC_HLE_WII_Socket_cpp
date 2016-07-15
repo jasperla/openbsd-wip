@@ -1,0 +1,11 @@
+$OpenBSD$
+--- Source/Core/Core/IPC_HLE/WII_Socket.cpp.orig	Wed Jul 13 23:15:40 2016
++++ Source/Core/Core/IPC_HLE/WII_Socket.cpp	Wed Jul 13 23:15:41 2016
+@@ -6,6 +6,7 @@
+ #ifndef _WIN32
+ #include <unistd.h>
+ #endif
++#include <arpa/inet.h>
+ 
+ #include "Common/FileUtil.h"
+ #include "Core/Core.h"

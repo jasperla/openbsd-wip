@@ -1,0 +1,12 @@
+$OpenBSD$
+--- Source/Core/Common/CMakeLists.txt.orig	Fri Jun 24 02:09:07 2016
++++ Source/Core/Common/CMakeLists.txt	Thu Jul 14 12:17:23 2016
+@@ -94,7 +94,7 @@ elseif(USE_X11)
+     set(LIBS ${LIBS} ${XRANDR_LIBRARIES})
+ endif()
+ 
+-if(NOT CMAKE_SYSTEM_NAME MATCHES FreeBSD)
++if(NOT CMAKE_SYSTEM_NAME MATCHES FreeBSD AND NOT CMAKE_SYSTEM_NAME MATCHES OpenBSD)
+ 	set(LIBS ${LIBS} dl)
+ endif()
+ 

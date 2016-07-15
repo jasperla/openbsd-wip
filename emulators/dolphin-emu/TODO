@@ -1,0 +1,3 @@
+- wxWidgets3 makes the WANTLIB incorrect
+
+- the JIT does not work (requires ucontext.h). without it dolphin is too slow.
