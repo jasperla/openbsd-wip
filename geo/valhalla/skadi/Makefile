@@ -3,19 +3,13 @@
 COMMENT =		library to access digital elevation model data
 
 VALHALLA_PROJECT =	skadi
-VALHALLA_VERSION =	0.0.0
 
 SHARED_LIBS +=  valhalla_skadi            0.0 # 0.0
 
-WANTLIB += boost_date_time-mt boost_filesystem boost_program_options-mt
-WANTLIB += boost_serialization-mt boost_system boost_system-mt
-WANTLIB += boost_thread-mt c crypto curl expat freexl gdal geos
-WANTLIB += geos_c geotiff gif iconv idn intl jasper jpeg json-c
-WANTLIB += lzma m openjp2 pcre png pq prime_server proj pthread
-WANTLIB += sodium spatialite sqlite3 ssl stdc++ tiff valhalla_baldr
-WANTLIB += valhalla_midgard xml2 z zmq
-
-GH_COMMIT =		34b6a161789341096bafccde9e556adfa6a8f315
+WANTLIB += boost_date_time-mt boost_filesystem boost_regex-mt
+WANTLIB += boost_system boost_thread-mt c crypto curl iconv idn
+WANTLIB += intl m nghttp2 prime_server pthread sodium ssl valhalla_baldr
+WANTLIB += valhalla_midgard z zmq
 
 MODULES =		gcc4
 MODGCC4_LANGS =		c c++

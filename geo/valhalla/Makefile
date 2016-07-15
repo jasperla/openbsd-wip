@@ -2,6 +2,7 @@
 
      SUBDIR += baldr
      SUBDIR += loki
+     SUBDIR += meili
      SUBDIR += midgard
      SUBDIR += mjolnir
      SUBDIR += odin

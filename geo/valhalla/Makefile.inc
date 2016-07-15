@@ -1,18 +1,18 @@
 # $OpenBSD: Makefile.inc,v 1.10 2015/03/30 03:01:51 bentley Exp $
 
-CATEGORIES +=	geo
+CATEGORIES +=		geo
 
-# child ports MUST define VALHALLA_{PROJECT,VERSION}
+V =			1.0.9
+DISTNAME ?=		valhalla-${VALHALLA_PROJECT}-$V
 
-DISTNAME ?=	valhalla-${VALHALLA_PROJECT}-${VALHALLA_VERSION}
-
-MAINTAINER ?=	Anthony J. Bentley <anthony@cathet.us>
+MAINTAINER ?=		Anthony J. Bentley <anthony@anjbe.name>
 
 # MIT
 PERMIT_PACKAGE_CDROM ?=	Yes
 
 GH_ACCOUNT ?=		valhalla
 GH_PROJECT ?=		${VALHALLA_PROJECT}
+GH_TAGNAME ?=		$V
 
 # autogen.sh[2]: libtoolize: not found
 USE_LIBTOOL ?=		gnu
@@ -20,6 +20,9 @@ CONFIGURE_STYLE ?=	gnu
 
 AUTOCONF_VERSION ?=	2.69
 AUTOMAKE_VERSION ?=	1.15
+
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
 
 pre-configure:
 	cd ${WRKDIST} && \
