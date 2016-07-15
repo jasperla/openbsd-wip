@@ -23,9 +23,7 @@ MODULES =		gcc4
 MODGCC4_LANGS =		c c++
 MODGCC4_ARCHS =		*
 BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			sysutils/ggrep \
-			textproc/gsed
+			${MODGNU_AUTOMAKE_DEPENDS}
 LIB_DEPENDS =		net/curl \
 			net/zeromq
 
