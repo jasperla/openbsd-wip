@@ -1,7 +1,7 @@
 @comment $OpenBSD$
 @bin bin/dolphin-emu-nogui
+@man man/man6/dolphin-emu-nogui.6
 share/dolphin-emu/
-share/dolphin-emu/license.txt
 share/dolphin-emu/sys/
 share/dolphin-emu/sys/GC/
 share/dolphin-emu/sys/GC/dsp_coef.bin

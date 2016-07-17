@@ -64,9 +64,8 @@ LIB_DEPENDS-nogui =	archivers/lzo2 \
 			x11/gtk+2
 LIB_DEPENDS-main =	${LIB_DEPENDS-nogui} \
 			x11/wxWidgets3
-RUN_DEPENDS-main =	emulators/dolphin-emu,-nogui
-
-# XXX generic is too slow, should be disabled once the jit works
-CONFIGURE_ARGS +=	-DENABLE_GENERIC:=1
+RUN_DEPENDS-main =	devel/desktop-file-utils \
+			emulators/dolphin-emu,-nogui \
+			x11/gtk+3,-guic
 
 .include <bsd.port.mk>
