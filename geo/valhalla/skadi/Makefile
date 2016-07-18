@@ -11,13 +11,22 @@ WANTLIB += boost_system boost_thread-mt c crypto curl iconv idn
 WANTLIB += intl m nghttp2 prime_server pthread sodium ssl valhalla_baldr
 WANTLIB += valhalla_midgard z zmq
 
-MODULES =		gcc4
+MODULES =		gcc4 \
+			lang/python
 MODGCC4_LANGS =		c c++
 MODGCC4_ARCHS =		*
+MODPY_BUILDDEP =	No
 LIB_DEPENDS =		devel/boost \
 			geo/gdal \
 			geo/valhalla/baldr \
 			geo/valhalla/midgard \
 			net/prime_server
+RUN_DEPENDS =		sysutils/coreutils \
+			sysutils/parallel
+
+SUBST_VARS +=		${MODPYTHON_BIN}
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/scripts/valhalla_build_elevation
 
 .include <bsd.port.mk>

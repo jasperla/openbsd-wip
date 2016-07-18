@@ -29,6 +29,9 @@ LIB_DEPENDS =		devel/boost \
 			geo/valhalla/midgard \
 			geo/valhalla/skadi \
 			geo/spatialite/libspatialite
+RUN_DEPENDS =		archivers/unzip \
+			geo/spatialite/tools \
+			textproc/jq
 
 CONFIGURE_ENV =		LUA="${MODLUA_BIN}" \
 			MODLUA_INCLUDE="${MODLUA_INCL_DIR}" \
