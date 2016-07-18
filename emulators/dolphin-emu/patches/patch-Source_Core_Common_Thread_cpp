@@ -1,4 +1,5 @@
 $OpenBSD$
+From upstream 64fb96e4934c7ab36acda84bdd8c36b2363e48e8.
 --- Source/Core/Common/Thread.cpp.orig	Wed Jul 13 22:37:19 2016
 +++ Source/Core/Common/Thread.cpp	Wed Jul 13 22:39:56 2016
 @@ -12,7 +12,7 @@

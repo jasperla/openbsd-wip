@@ -1,4 +1,5 @@
 $OpenBSD$
+From upstream de6babb928c074d1cf0d3a6fb264cfb5d70bbd52.
 --- Source/Core/VideoCommon/DriverDetails.cpp.orig	Wed Jul 13 22:56:28 2016
 +++ Source/Core/VideoCommon/DriverDetails.cpp	Wed Jul 13 22:56:42 2016
 @@ -32,6 +32,8 @@ namespace DriverDetails

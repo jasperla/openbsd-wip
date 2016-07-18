@@ -1,7 +1,20 @@
 $OpenBSD$
---- Source/Core/Common/FileUtil.cpp.orig	Wed Jul 13 22:38:02 2016
-+++ Source/Core/Common/FileUtil.cpp	Wed Jul 13 22:38:45 2016
-@@ -70,7 +70,7 @@ static void StripTailDirSlashes(std::string& fname)
+From upstream 5bab6210ef2642110e27e272e23b05ff3befe383.
+--- Source/Core/Common/FileUtil.cpp.orig	Fri Jun 24 02:09:07 2016
++++ Source/Core/Common/FileUtil.cpp	Mon Jul 18 00:16:17 2016
+@@ -45,11 +45,6 @@
+ #define S_ISDIR(m)  (((m)&S_IFMT) == S_IFDIR)
+ #endif
+ 
+-#if defined BSD4_4 || defined __FreeBSD__
+-#define stat64 stat
+-#define fstat64 fstat
+-#endif
+-
+ // This namespace has various generic functions related to files and paths.
+ // The code still needs a ton of cleanup.
+ // REMEMBER: strdup considered harmful!
+@@ -70,7 +65,7 @@ static void StripTailDirSlashes(std::string& fname)
  // Returns true if file filename exists
  bool Exists(const std::string& filename)
  {
@@ -10,7 +23,7 @@ $OpenBSD$
  
  	std::string copy(filename);
  	StripTailDirSlashes(copy);
-@@ -78,7 +78,7 @@ bool Exists(const std::string& filename)
+@@ -78,7 +73,7 @@ bool Exists(const std::string& filename)
  #ifdef _WIN32
  	int result = _tstat64(UTF8ToTStr(copy).c_str(), &file_info);
  #else
@@ -19,7 +32,7 @@ $OpenBSD$
  #endif
  
  	return (result == 0);
-@@ -87,7 +87,7 @@ bool Exists(const std::string& filename)
+@@ -87,7 +82,7 @@ bool Exists(const std::string& filename)
  // Returns true if filename is a directory
  bool IsDirectory(const std::string& filename)
  {
@@ -28,7 +41,7 @@ $OpenBSD$
  
  	std::string copy(filename);
  	StripTailDirSlashes(copy);
-@@ -95,7 +95,7 @@ bool IsDirectory(const std::string& filename)
+@@ -95,7 +90,7 @@ bool IsDirectory(const std::string& filename)
  #ifdef _WIN32
  	int result = _tstat64(UTF8ToTStr(copy).c_str(), &file_info);
  #else
@@ -37,7 +50,7 @@ $OpenBSD$
  #endif
  
  	if (result < 0)
-@@ -386,11 +386,11 @@ u64 GetSize(const std::string& filename)
+@@ -386,11 +381,11 @@ u64 GetSize(const std::string& filename)
  		return 0;
  	}
  
@@ -51,7 +64,7 @@ $OpenBSD$
  #endif
  	{
  		DEBUG_LOG(COMMON, "GetSize: %s: %lld",
-@@ -406,8 +406,8 @@ u64 GetSize(const std::string& filename)
+@@ -406,8 +401,8 @@ u64 GetSize(const std::string& filename)
  // Overloaded GetSize, accepts file descriptor
  u64 GetSize(const int fd)
  {

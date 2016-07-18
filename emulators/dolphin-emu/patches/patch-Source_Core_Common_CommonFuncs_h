@@ -1,28 +1,13 @@
 $OpenBSD$
---- Source/Core/Common/CommonFuncs.h.orig	Wed Jul 13 22:33:55 2016
-+++ Source/Core/Common/CommonFuncs.h	Wed Jul 13 22:35:28 2016
-@@ -29,7 +29,9 @@ constexpr size_t ArraySize(T (&arr)[N])
- #ifndef _WIN32
+From upstream 9a14cbb225b3859e208bfa9a0988ffc7f2e7f633.
+--- Source/Core/Common/CommonFuncs.h.orig	Fri Jun 24 02:09:07 2016
++++ Source/Core/Common/CommonFuncs.h	Mon Jul 18 00:09:15 2016
+@@ -101,7 +101,7 @@ namespace Common
+ inline u8 swap8(u8 _data) {return _data;}
+ inline u32 swap24(const u8* _data) {return (_data[0] << 16) | (_data[1] << 8) | _data[2];}
  
- #include <errno.h>
--#ifdef __linux__
-+#if defined __OpenBSD__
-+#include <endian.h>
-+#elif defined __linux__
- #include <byteswap.h>
- #elif defined __FreeBSD__
- #include <sys/endian.h>
-@@ -124,6 +126,13 @@ inline __attribute__((always_inline)) u32 swap32(u32 _
- 	{return OSSwapInt32(_data);}
- inline __attribute__((always_inline)) u64 swap64(u64 _data)
- 	{return OSSwapInt64(_data);}
-+#elif __OpenBSD__
-+#undef swap16
-+#undef swap32
-+#undef swap64
-+inline u16 swap16(u16 data) {return (data >> 8) | (data << 8);}
-+inline u32 swap32(u32 data) {return (swap16(data) << 16) | swap16(data >> 16);}
-+inline u64 swap64(u64 data) {return ((u64)swap32(data) << 32) | swap32(data >> 32);}
- #elif __FreeBSD__
- inline u16 swap16(u16 _data) {return bswap16(_data);}
- inline u32 swap32(u32 _data) {return bswap32(_data);}
+-#ifdef ANDROID
++#if defined(ANDROID) || defined(__OpenBSD__)
+ #undef swap16
+ #undef swap32
+ #undef swap64

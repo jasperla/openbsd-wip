@@ -1,4 +1,5 @@
 $OpenBSD$
+From upstream eb4cae78aa75def726b88a853697b7adc6ef8fbd.
 --- Source/Core/Common/CMakeLists.txt.orig	Fri Jun 24 02:09:07 2016
 +++ Source/Core/Common/CMakeLists.txt	Thu Jul 14 12:17:23 2016
 @@ -94,7 +94,7 @@ elseif(USE_X11)
@@ -6,7 +7,7 @@ $OpenBSD$
  endif()
  
 -if(NOT CMAKE_SYSTEM_NAME MATCHES FreeBSD)
-+if(NOT CMAKE_SYSTEM_NAME MATCHES FreeBSD AND NOT CMAKE_SYSTEM_NAME MATCHES OpenBSD)
++if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
  	set(LIBS ${LIBS} dl)
  endif()
  

@@ -27,9 +27,10 @@ cWANTLIB =		GL GLU ICE SDL2 SM SoundTouch X11 Xext Xi Xrandr ao \
 			atk-1.0 avcodec avformat avutil c cairo curl estdc++ \
 			gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 			gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 iconv \
-			lzo2 m miniupnpc openal pango-1.0 pangocairo-1.0 \
-			pangoft2-1.0 pangoxft-1.0 png portaudio pthread pulse \
-			sfml-network sfml-system swscale usb-1.0 z
+			lzo2 m mbedcrypto mbedtls mbedx509 miniupnpc openal \
+			pango-1.0 pangocairo-1.0 pangoft2-1.0 pangoxft-1.0 \
+			png portaudio pthread pulse sfml-network sfml-system \
+			swscale usb-1.0 z
 
 WANTLIB-main =		${cWANTLIB}
 #dolphin-emu-5.0-main(emulators/dolphin-emu,-main):
@@ -61,11 +62,14 @@ LIB_DEPENDS-nogui =	archivers/lzo2 \
 			multimedia/sfml \
 			net/curl \
 			net/miniupnp/miniupnpc \
+			security/polarssl \
 			x11/gtk+2
 LIB_DEPENDS-main =	${LIB_DEPENDS-nogui} \
 			x11/wxWidgets3
 RUN_DEPENDS-main =	devel/desktop-file-utils \
 			emulators/dolphin-emu,-nogui \
 			x11/gtk+3,-guic
+
+CONFIGURE_ARGS +=	-Dmandir:=${PREFIX}/man
 
 .include <bsd.port.mk>

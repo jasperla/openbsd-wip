@@ -1,4 +1,5 @@
 $OpenBSD$
+From upstream cdf62dece39634367e9608db635c4f84c7a3b88c.
 --- Source/Core/Core/HW/EXI_DeviceEthernet.h.orig	Wed Jul 13 23:20:15 2016
 +++ Source/Core/Core/HW/EXI_DeviceEthernet.h	Wed Jul 13 23:20:24 2016
 @@ -331,11 +331,11 @@ class CEXIETHERNET : public IEXIDevice (public)
