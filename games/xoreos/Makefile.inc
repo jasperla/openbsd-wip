@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile.template,v 1.72 2015/04/08 17:53:19 sthen Exp $
 
-V ?=			0.0.3
+V ?=			0.0.4
 DISTNAME ?=		${XOREOS_PROJECT}-$V
 
 CATEGORIES ?=		games
