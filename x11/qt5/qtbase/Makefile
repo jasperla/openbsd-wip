@@ -36,25 +36,18 @@ SHARED_LIBS +=	Qt5XcbQpa		1.0
 WANTLIB-main =  ${WANTLIB}
 WANTLIB-main += EGL GL ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB-main += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo
-WANTLIB-main += cups fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB-main += gio-2.0 glib-2.0 gobject-2.0 gstapp-1.0 execinfo
-WANTLIB-main += gstaudio-1.0 gstbase-1.0 gstpbutils-1.0 gstreamer-1.0
-WANTLIB-main += gstvideo-1.0 gthread-2.0 gtk-x11-2.0 icudata icui18n
-WANTLIB-main += icuuc iodbc jasper jpeg m mng openal pango-1.0 pangocairo-1.0
-WANTLIB-main += pangoft2-1.0 pcre16 png pthread pulse sqlite3 tiff
-WANTLIB-main += webp xcb xcb-glx xcb-icccm xcb-image xcb-keysyms xcb-randr
-WANTLIB-main += xcb-render xcb-render-util xcb-shape xcb-shm xcb-sync
-WANTLIB-main += xcb-xfixes xcb-xkb xkbcommon xkbcommon-x11 xml2 xslt z
-WANTLIB-main += dbus-1 dbus-glib-1 geoclue harfbuzz proxy
+WANTLIB-main += cups dbus-1 execinfo fontconfig freetype gdk-x11-2.0
+WANTLIB-main += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gthread-2.0
+WANTLIB-main += gtk-x11-2.0 harfbuzz icudata icui18n icuuc iodbc jpeg
+WANTLIB-main += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre16 png
+WANTLIB-main += proxy pthread sqlite3 xcb xcb-glx xcb-icccm xcb-image
+WANTLIB-main += xcb-keysyms xcb-randr xcb-render xcb-render-util xcb-shape
+WANTLIB-main += xcb-shm xcb-sync xcb-xfixes xcb-xinerama xcb-xkb xkbcommon
+WANTLIB-main += xkbcommon-x11 z
 
 WANTLIB-examples =  ${MODGCC4_CPPWANTLIB} GL c m pthread
-WANTLIB-examples += Qt5Bluetooth Qt5Concurrent Qt5Core Qt5DBus Qt5Declarative
-WANTLIB-examples += Qt5Gui Qt5Help Qt5Multimedia Qt5MultimediaWidgets Qt5Network
-WANTLIB-examples += Qt5Nfc Qt5OpenGL Qt5Positioning Qt5PrintSupport Qt5Qml
-WANTLIB-examples += Qt5Quick Qt5QuickTest Qt5Script Qt5ScriptTools Qt5Sensors
-WANTLIB-examples += Qt5Sql Qt5Svg Qt5Test Qt5WebKit Qt5WebKitWidgets Qt5Widgets
-WANTLIB-examples += Qt5Xml Qt5XmlPatterns Qt5Designer
-WANTLIB-examples += Qt53DCore Qt53DInput Qt53DQuick Qt53DRenderer Qt5Location
+WANTLIB-examples += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5OpenGL
+WANTLIB-examples += Qt5PrintSupport Qt5Sql Qt5Test Qt5Widgets Qt5Xml
 
 WANTLIB-mysql =		${MODGCC4_CPPWANTLIB} Qt5Core Qt5Sql
 WANTLIB-mysql +=	crypto m pthread mysqlclient_r ssl z
@@ -75,8 +68,6 @@ MODULES =		gcc4 devel/gettext
 
 # no leveldb dependency, requires -lmemenv; QtWebKit uses internal version
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
-			audio/openal \
-			audio/pulseaudio \
 			databases/iodbc \
 			devel/atk \
 			devel/harfbuzz \
@@ -84,14 +75,8 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			devel/pango \
 			graphics/cairo \
 			graphics/gdk-pixbuf2 \
-			graphics/jasper \
-			graphics/libmng \
-			graphics/libwebp \
-			multimedia/gstreamer1/core \
-			multimedia/gstreamer1/plugins-base \
 			print/cups,-libs \
 			textproc/icu4c \
-			textproc/libxslt \
 			x11/gtk+2 \
 			x11/xkbcommon
 
