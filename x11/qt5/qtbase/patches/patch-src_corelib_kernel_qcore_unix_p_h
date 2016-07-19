@@ -1,0 +1,66 @@
+$OpenBSD: patch-qtbase_src_corelib_kernel_qcore_unix_p_h,v 1.2 2015/04/19 13:18:28 zhuk Exp $
+Unbreak compilation.
+TODO: remove
+--- src/corelib/kernel/qcore_unix_p.h.orig	Wed May 25 18:46:17 2016
++++ src/corelib/kernel/qcore_unix_p.h	Sun Jul 10 19:38:09 2016
+@@ -46,21 +46,60 @@
+ //
+ 
+ #include "qplatformdefs.h"
++#  if ! __BSD_VISIBLE
++#  error __BSD_VISIBLE is 0
++#  endif
++
+ #include "qatomic.h"
++#  if ! __BSD_VISIBLE
++#  error __BSD_VISIBLE is 0
++#  endif
++
+ #include "qhash.h"
++#  if ! __BSD_VISIBLE
++#  error __BSD_VISIBLE is 0
++#  endif
+ 
+ #ifndef Q_OS_UNIX
+ # error "qcore_unix_p.h included on a non-Unix system"
+ #endif
+ 
+ #include <string.h>
++#  if ! __BSD_VISIBLE
++#  error __BSD_VISIBLE is 0
++#  endif
++
+ #include <sys/types.h>
++#  if ! __BSD_VISIBLE
++#  error __BSD_VISIBLE is 0
++#  endif
++
+ #include <sys/stat.h>
++#  if ! __BSD_VISIBLE
++#  error __BSD_VISIBLE is 0
++#  endif
++
+ #include <unistd.h>
++#  if ! __BSD_VISIBLE
++#  error __BSD_VISIBLE is 0
++#  endif
+ 
++
+ #include <sys/wait.h>
++#  if ! __BSD_VISIBLE
++#  error __BSD_VISIBLE is 0
++#  endif
++
+ #include <errno.h>
++#  if ! __BSD_VISIBLE
++#  error __BSD_VISIBLE is 0
++#  endif
++
+ #include <fcntl.h>
++#  if ! __BSD_VISIBLE
++#  error __BSD_VISIBLE is 0
++#  endif
++
+ 
+ #if defined(Q_OS_VXWORKS)
+ #  include <ioLib.h>

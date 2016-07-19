@@ -1,0 +1,11 @@
+$OpenBSD$
+--- src/corelib/global/global.pri.orig	Mon Jul 11 14:42:50 2016
++++ src/corelib/global/global.pri	Mon Jul 11 14:42:37 2016
+@@ -63,3 +63,7 @@ journald {
+ syslog {
+     DEFINES += QT_USE_SYSLOG
+ }
++
++openbsd-*: {
++    DEFINES += QT_NO_VERSION_TAGGING
++}
