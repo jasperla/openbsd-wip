@@ -29,7 +29,7 @@ SHARED_LIBS +=  volk                      0.0 # 3.7
 
 CATEGORIES=	comms
 
-HOMEPAGE=	http://gnuradio.org/
+HOMEPAGE=	https://gnuradio.org/
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
