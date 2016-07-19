@@ -1,0 +1,64 @@
+@comment $OpenBSD$
+@conflict qt5-examples-<5.6
+lib/qt5/examples/
+lib/qt5/examples/assistant/
+lib/qt5/examples/assistant/remotecontrol/
+@bin lib/qt5/examples/assistant/remotecontrol/remotecontrol
+lib/qt5/examples/assistant/simpletextviewer/
+lib/qt5/examples/assistant/simpletextviewer/documentation/
+lib/qt5/examples/assistant/simpletextviewer/documentation/about.txt
+lib/qt5/examples/assistant/simpletextviewer/documentation/browse.html
+lib/qt5/examples/assistant/simpletextviewer/documentation/filedialog.html
+lib/qt5/examples/assistant/simpletextviewer/documentation/findfile.html
+lib/qt5/examples/assistant/simpletextviewer/documentation/images/
+lib/qt5/examples/assistant/simpletextviewer/documentation/images/browse.png
+lib/qt5/examples/assistant/simpletextviewer/documentation/images/fadedfilemenu.png
+lib/qt5/examples/assistant/simpletextviewer/documentation/images/filedialog.png
+lib/qt5/examples/assistant/simpletextviewer/documentation/images/handbook.png
+lib/qt5/examples/assistant/simpletextviewer/documentation/images/icon.png
+lib/qt5/examples/assistant/simpletextviewer/documentation/images/mainwindow.png
+lib/qt5/examples/assistant/simpletextviewer/documentation/images/open.png
+lib/qt5/examples/assistant/simpletextviewer/documentation/images/wildcard.png
+lib/qt5/examples/assistant/simpletextviewer/documentation/index.html
+lib/qt5/examples/assistant/simpletextviewer/documentation/intro.html
+lib/qt5/examples/assistant/simpletextviewer/documentation/openfile.html
+lib/qt5/examples/assistant/simpletextviewer/documentation/simpletextviewer.qch
+lib/qt5/examples/assistant/simpletextviewer/documentation/simpletextviewer.qhc
+lib/qt5/examples/assistant/simpletextviewer/documentation/simpletextviewer.qhcp
+lib/qt5/examples/assistant/simpletextviewer/documentation/simpletextviewer.qhp
+lib/qt5/examples/assistant/simpletextviewer/documentation/wildcardmatching.html
+@bin lib/qt5/examples/assistant/simpletextviewer/simpletextviewer
+lib/qt5/examples/designer/
+lib/qt5/examples/designer/calculatorbuilder/
+@bin lib/qt5/examples/designer/calculatorbuilder/calculatorbuilder
+lib/qt5/examples/designer/calculatorform/
+@bin lib/qt5/examples/designer/calculatorform/calculatorform
+lib/qt5/examples/designer/worldtimeclockbuilder/
+@bin lib/qt5/examples/designer/worldtimeclockbuilder/worldtimeclockbuilder
+lib/qt5/examples/help/
+lib/qt5/examples/help/contextsensitivehelp/
+@bin lib/qt5/examples/help/contextsensitivehelp/contextsensitivehelp
+lib/qt5/examples/help/contextsensitivehelp/docs/
+lib/qt5/examples/help/contextsensitivehelp/docs/amount.html
+lib/qt5/examples/help/contextsensitivehelp/docs/filter.html
+lib/qt5/examples/help/contextsensitivehelp/docs/plants.html
+lib/qt5/examples/help/contextsensitivehelp/docs/rain.html
+lib/qt5/examples/help/contextsensitivehelp/docs/source.html
+lib/qt5/examples/help/contextsensitivehelp/docs/temperature.html
+lib/qt5/examples/help/contextsensitivehelp/docs/time.html
+lib/qt5/examples/help/contextsensitivehelp/docs/wateringmachine.qch
+lib/qt5/examples/help/contextsensitivehelp/docs/wateringmachine.qhc
+lib/qt5/examples/help/contextsensitivehelp/docs/wateringmachine.qhcp
+lib/qt5/examples/help/contextsensitivehelp/docs/wateringmachine.qhp
+lib/qt5/examples/linguist/
+lib/qt5/examples/linguist/arrowpad/
+@bin lib/qt5/examples/linguist/arrowpad/arrowpad
+lib/qt5/examples/linguist/hellotr/
+@bin lib/qt5/examples/linguist/hellotr/hellotr
+lib/qt5/examples/linguist/trollprint/
+@bin lib/qt5/examples/linguist/trollprint/trollprint
+lib/qt5/examples/uitools/
+lib/qt5/examples/uitools/multipleinheritance/
+@bin lib/qt5/examples/uitools/multipleinheritance/multipleinheritance
+lib/qt5/examples/uitools/textfinder/
+@bin lib/qt5/examples/uitools/textfinder/textfinder

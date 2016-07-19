@@ -1,4 +1,5 @@
 @comment $OpenBSD: PLIST-html,v 1.4 2016/03/06 11:56:42 zhuk Exp $
+@conflict qt5-html-<5.6
 share/doc/qt5/
 share/doc/qt5/qmake/
 share/doc/qt5/qmake/images/

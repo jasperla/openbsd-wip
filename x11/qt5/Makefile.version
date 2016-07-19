@@ -1,0 +1,5 @@
+# $OpenBSD$
+# Common source for Qt5 version
+
+QT5_VERSION =		5.6.1
+QT5_DIST_VERSION =	5.6.1-1

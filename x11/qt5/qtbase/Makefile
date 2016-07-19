@@ -64,7 +64,7 @@ WANTLIB-tds +=		m pthread sybdb
 
 MULTI_PACKAGES =	-main -examples -html -mysql -psql -qch -sqlite2 -tds
 
-MODULES =		gcc4 devel/gettext
+MODULES =		devel/gettext
 
 # no leveldb dependency, requires -lmemenv; QtWebKit uses internal version
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
@@ -116,8 +116,6 @@ RUN_DEPENDS-psql =
 RUN_DEPENDS-qch =
 RUN_DEPENDS-sqlite2 =
 RUN_DEPENDS-tds =
-
-DESTDIRNAME =		INSTALL_ROOT
 
 #MAKE_ENV =		LD_LIBRARY_PATH=${WRKBUILD}/qtbase/lib
 
@@ -224,35 +222,6 @@ NO_TEST =		Yes
 CONFIGURE_ARGS +=	-nomake tests
 .endif
 
-PROGRAMS5 =	assistant designer linguist lrelease lupdate moc pixeltool \
-		qcollectiongenerator qdbus qdoc qmake qml qtdiag rcc uic
-
-# still need to check if those should get it into ${PREFIX}/bin
-PROGRAMS_IGN =	lconvert \
-		qcollectiongenerator \
-		qdbuscpp2xml \
-		qdbusviewer \
-		qdbusxml2cpp \
-		qdoc \
-		qhelpconverter \
-		qhelpgenerator \
-		qlalr \
-		qml \
-		qml1plugindump \
-		qmlbundle \
-		qmlimportscanner \
-		qmlmin \
-		qmlplugindump \
-		qmlprofiler \
-		qmlscene \
-		qmltestrunner \
-		qmlviewer \
-		qtdiag \
-		qtpaths \
-		syncqt.pl \
-		xmlpatterns \
-		xmlpatternsvalidator
-
 # See qtbase/tests/README for details
 TEST_IS_INTERACTIVE =	X11
 TEST_DEPENDS =		audio/sox \
@@ -271,5 +240,10 @@ pre-configure:
 	perl ${PORTSDIR}/infrastructure/bin/pkg_subst \
 	    -D OPENBSD_INCDIR_PREPEND="$${gccbasedir}include" \
 	    ${WRKSRC}/mkspecs/openbsd-g++/qmake.conf
+
+post-install:
+	# often-used includes directory
+	! test -d ${PREFIX}/lib/qt5 || \
+	    cd ${PREFIX}/lib/qt5 && ln -sf ../../include/X11/qt5 include
 
 .include <bsd.port.mk>

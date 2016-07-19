@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.51 2016/03/20 15:58:26 naddy Exp $
+# $OpenBSD$
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 BROKEN-powerpc =	never built - gcc ICE
 
-VERSION ?=		5.6.1
-DIST_VERSION ?=		5.6.1-1
+.include "Makefile.version"
+
+VERSION ?=		${QT5_VERSION}
+DIST_VERSION ?=		${QT5_DIST_VERSION}
 
 PKGNAME ?=		${DISTNAME:C/-opensource-src//:C/-${DIST_VERSION}/-${VERSION}/}
 PKGNAME-main ?=		${PKGNAME}
@@ -61,8 +63,6 @@ MAKE_FLAGS =		-B -j ${MAKE_JOBS} \
 SEPARATE_BUILD =	Yes
 WRKBUILD =		${WRKSRC}/build-${ARCH}
 
-CONFIGURE_STYLE =	simple
-
 # readability macros
 QT_BASEDIR =	${PREFIX}/lib/qt5
 QT_INCDIR =	${PREFIX}/include/X11/qt5
@@ -89,6 +89,8 @@ ALL_TARGET ?=		first
 TEST_TARGET ?=		check
 
 .include <bsd.port.arch.mk>
+
+FLAVOR ?=
 
 # Force re-running qmake before generating documentation
 # to allow qdoc and qhelpgenerator do their work.
@@ -117,14 +119,19 @@ CONFIGURE_ARGS +=	-nomake tests
 
 SUBST_VARS =		VERSION
 
+DESTDIRNAME =	INSTALL_ROOT
 WRKDIST ?=	${WRKDIR}/${DISTNAME:C/${DIST_VERSION}/${VERSION}/}
 
-PROGRAMS5 ?=
+PROGRAMS5 =	assistant designer linguist lrelease lupdate moc pixeltool \
+		qcollectiongenerator qdbus qdoc qmake qml qtdiag rcc uic
 
-post-install:
+.PHONY: qt5-post-install
+
+qt5-post-install:
 	# programs
 .for p in ${PROGRAMS5}
-	ln -sf ../lib/qt5/bin/$p ${PREFIX}/bin/$p-qt5
+	! test -e ${PREFIX}/lib/qt5/bin/$p || \
+	    ln -sf ../lib/qt5/bin/$p ${PREFIX}/bin/$p-qt5
 .endfor
 	# shared libraries
 .for l v in ${SHARED_LIBS}
@@ -147,10 +154,10 @@ post-install:
 		done; \
 	fi
 	# CMake files get values from QMake config "as is"
-	find ${QT_CMAKEDIR} -type f -print0 | xargs -0 perl -pi \
+	find ${QT_CMAKEDIR} -type f -print0 | xargs -0r perl -pi \
 		-e 's,\$$\(LOCALBASE\),${LOCALBASE},g;' \
 		-e 's,\$$\(X11BASE\),${X11BASE},g;'
 	# remove unpatched files
-	find ${QT_BASEDIR}/mkspecs -name '*${PATCHORIG}' | xargs rm
-	# often-used includes directory
-	cd ${PREFIX}/lib/qt5 && ln -sf ../../include/X11/qt5 include
+	-find ${QT_BASEDIR}/mkspecs -name '*${PATCHORIG}' | xargs -r rm
+
+post-install: qt5-post-install
