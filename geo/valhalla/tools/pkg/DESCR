@@ -1,0 +1,3 @@
+Valhalla is an open source routing engine and accompanying libraries for use
+with Open Street Map data. This package is comprised of command line tools
+meant to exercise various bits of the valhalla libraries.

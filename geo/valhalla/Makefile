@@ -9,6 +9,7 @@
      SUBDIR += sif
      SUBDIR += skadi
      SUBDIR += thor
+     SUBDIR += tools
      SUBDIR += tyr
 
 .include <bsd.port.subdir.mk>
