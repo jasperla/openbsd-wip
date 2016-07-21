@@ -1,0 +1,20 @@
+$OpenBSD$
+
+hotfix for ood code. freopen will open a file descriptor, which is not closed
+in that case.
+
+--- DaemonLinux.cpp.orig	Thu Jul 21 16:34:07 2016
++++ DaemonLinux.cpp	Thu Jul 21 16:37:16 2016
+@@ -74,9 +74,9 @@ namespace i2p
+ 				}
+ 
+ 				// point std{in,out,err} descriptors to /dev/null
+-                stdin  = freopen("/dev/null", "r", stdin);
+-				stdout = freopen("/dev/null", "w", stdout);
+-				stderr = freopen("/dev/null", "w", stderr);
++				freopen("/dev/null", "r", stdin);
++				freopen("/dev/null", "w", stdout);
++				freopen("/dev/null", "w", stderr);
+ 			}
+ 
+ 			// Pidfile
