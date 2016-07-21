@@ -18,5 +18,6 @@ MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 USE_GMAKE =		Yes
+USE_LIBTOOL=		gnu
 
 .include <bsd.port.mk>
