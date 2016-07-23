@@ -16,7 +16,7 @@ WANTLIB += c m
 
 GH_ACCOUNT =		google
 GH_PROJECT =		brotli
-GH_TAGNAME =		v0.3.0
+GH_TAGNAME =		v0.4.0
 MASTER_SITES =		${MASTER_SITES_GITHUB}
 
 MODULES =		gcc4
