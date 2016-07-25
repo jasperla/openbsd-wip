@@ -1,0 +1,16 @@
+$OpenBSD: patch-cmake_UnixBuildTarget_cmake,v 1.2 2016/06/27 05:25:40 landry Exp $
+--- cmake/UnixBuildTarget.cmake.orig	Fri Jul 22 13:43:37 2016
++++ cmake/UnixBuildTarget.cmake	Mon Jul 25 17:55:33 2016
+@@ -83,7 +83,11 @@ install(FILES src/img/nomacs.svg DESTINATION share/pix
+ #  translations
+ install(FILES ${NOMACS_QM} DESTINATION share/nomacs/translations)
+ #  manpage
+-install(FILES Readme/nomacs.1 DESTINATION share/man/man1)
++if(${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
++    install(FILES Readme/nomacs.1 DESTINATION man/man1)
++else()
++    install(FILES Readme/nomacs.1 DESTINATION share/man/man1)
++endif()
+ #  appdata
+ install(FILES nomacs.appdata.xml DESTINATION /usr/share/appdata/)
+ 
