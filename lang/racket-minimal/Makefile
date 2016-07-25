@@ -101,7 +101,8 @@ CONFIGURE_ARGS +=	--enable-jit \
 			--disable-futures
 .elif ${MACHINE_ARCH} == "powerpc"
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -O0 -Wall -Wno-unused-value" \
-			CPPFLAGS="${CPPFLAGS} -O0 -Wall -Wno-unused-value"
+			CPPFLAGS="${CPPFLAGS} -O0 -Wall -Wno-unused-value" \
+			LDFLAGS="${LDFLAGS} -Wl,–gc-sections"
 .else
 CONFIGURE_ARGS +=	--disable-jit \
 			--disable-places \
