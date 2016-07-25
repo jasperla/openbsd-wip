@@ -7,7 +7,7 @@ ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 
 COMMENT =		multi-paradigm programming language
 
-V =			6.5.0.900
+V =			6.6
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
@@ -101,7 +101,8 @@ CONFIGURE_ARGS +=	--enable-jit \
 			--disable-futures
 .elif ${MACHINE_ARCH} == "powerpc"
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -O0 -Wall -Wno-unused-value" \
-			CPPFLAGS="${CPPFLAGS} -O0 -Wall -Wno-unused-value"
+			CPPFLAGS="${CPPFLAGS} -O0 -Wall -Wno-unused-value" \
+			LDFLAGS="${LDFLAGS} -Wl,–gc-sections"
 .else
 CONFIGURE_ARGS +=	--disable-jit \
 			--disable-places \
