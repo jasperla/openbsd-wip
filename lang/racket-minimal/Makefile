@@ -95,14 +95,16 @@ CONFIGURE_ARGS +=	--disable-jit \
 CONFIGURE_ARGS +=	--enable-jit \
 			--enable-places \
 			--enable-futures
-.elif ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
+.elif ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS +=	--enable-jit \
 			--disable-places \
 			--disable-futures
 .elif ${MACHINE_ARCH} == "powerpc"
+CONFIGURE_ARGS +=	--enable-jit \
+			--disable-places \
+			--disable-futures
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -O0 -Wall -Wno-unused-value" \
 			CPPFLAGS="${CPPFLAGS} -O0 -Wall -Wno-unused-value" \
-			LDFLAGS="${LDFLAGS} -Wl,-gc-sections"
 .else
 CONFIGURE_ARGS +=	--disable-jit \
 			--disable-places \
