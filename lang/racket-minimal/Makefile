@@ -104,7 +104,7 @@ CONFIGURE_ARGS +=	--enable-jit \
 			--disable-places \
 			--disable-futures
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -O0 -Wall -Wno-unused-value" \
-			CPPFLAGS="${CPPFLAGS} -O0 -Wall -Wno-unused-value" \
+			CPPFLAGS="${CPPFLAGS} -O0 -Wall -Wno-unused-value"
 .else
 CONFIGURE_ARGS +=	--disable-jit \
 			--disable-places \
