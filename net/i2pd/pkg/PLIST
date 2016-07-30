@@ -1,5 +1,4 @@
 @comment $OpenBSD$
-@bin bin/i2pd
 include/i2pd/
 include/i2pd/AddressBook.cpp
 include/i2pd/AddressBook.h
@@ -117,5 +116,7 @@ include/i2pd/util.cpp
 include/i2pd/util.h
 include/i2pd/version.h
 lib/libi2pd.a
+@bin sbin/i2pd
 share/doc/i2pd/
 share/doc/i2pd/LICENSE
+@rcscript ${RCDIR}/i2pd

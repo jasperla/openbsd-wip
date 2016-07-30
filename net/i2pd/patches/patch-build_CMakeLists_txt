@@ -1,6 +1,15 @@
 $OpenBSD$
---- build/CMakeLists.txt.orig	Thu Jul 21 16:41:41 2016
-+++ build/CMakeLists.txt	Thu Jul 21 16:50:04 2016
+--- build/CMakeLists.txt.orig	Tue Jun 21 03:39:47 2016
++++ build/CMakeLists.txt	Sat Jul 30 20:18:00 2016
+@@ -349,7 +349,7 @@ if (WITH_BINARY)
+   endif ()
+   target_link_libraries( "${PROJECT_NAME}" libi2pd i2pdclient ${DL_LIB} ${Boost_LIBRARIES} ${OPENSSL_LIBRARIES} ${ZLIB_LIBRARY} ${CMAKE_THREAD_LIBS_INIT} ${MINGW_EXTRA} )
+ 
+-  install(TARGETS "${PROJECT_NAME}" RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR} COMPONENT Runtime)
++  install(TARGETS "${PROJECT_NAME}" RUNTIME DESTINATION ${CMAKE_INSTALL_SBINDIR} COMPONENT Runtime)
+   set (APPS "\${CMAKE_INSTALL_PREFIX}/bin/${PROJECT_NAME}${CMAKE_EXECUTABLE_SUFFIX}")
+   set (DIRS "${Boost_LIBRARY_DIR};${OPENSSL_INCLUDE_DIR}/../bin;${ZLIB_INCLUDE_DIR}/../bin;/mingw32/bin")
+   if (MSVC)
 @@ -363,7 +363,7 @@ if (WITH_BINARY)
  endif ()
  
