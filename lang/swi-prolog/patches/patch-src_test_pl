@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_test_pl,v 1.3 2014/04/04 17:53:49 edd Exp $
+
+Turn on verbose reporting.
+
+GMP test appears to use >64MB of stack!?
+
+--- src/test.pl.orig	Tue Aug 25 12:11:51 2015
++++ src/test.pl	Thu Jul 21 12:32:47 2016
+@@ -23,6 +23,7 @@
+ 
+ %:- set_prolog_flag(optimise, true).
+ %:- set_prolog_flag(trace_gc, true).
++:- set_prolog_flag(verbose, normal).
+ :- asserta(user:file_search_path(library, '../packages/plunit')).
+ :- [library(plunit)].
+ :- set_test_options([load(always), silent(true), sto(true), cleanup(true)]).
