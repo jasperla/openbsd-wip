@@ -1,5 +1,4 @@
 @comment $OpenBSD$
-%%SHARED%%
 ${P5ARCH}/
 ${P5ARCH}/Compress/
 ${P5ARCH}/Compress/Raw/
