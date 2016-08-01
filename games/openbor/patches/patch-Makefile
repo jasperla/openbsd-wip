@@ -1,0 +1,79 @@
+$OpenBSD$
+--- Makefile.orig	Mon Aug  1 18:05:45 2016
++++ Makefile	Mon Aug  1 18:07:10 2016
+@@ -261,7 +261,7 @@ ifdef BUILD_WIN
+ STRIP 	        = $(WINDEV)/$(PREFIX)strip$(EXTENSION) $(TARGET) -o $(TARGET_FINAL)
+ endif
+ ifdef BUILD_LINUX
+-STRIP 	        = $(LNXDEV)/$(PREFIX)strip $(TARGET) -o $(TARGET_FINAL)
++STRIP 	        = strip -o $(TARGET_FINAL) $(TARGET)
+ endif
+ ifdef BUILD_DARWIN
+ STRIP           = $(PREFIX)strip $(TARGET) -o $(TARGET_FINAL)
+@@ -310,7 +310,7 @@ endif
+ 
+ 
+ ifdef BUILD_LINUX
+-INCS           += 'libpng-config --prefix'/include/libpng
++INCS           += $(shell libpng-config --prefix)/include/libpng
+ endif
+ 
+ 
+@@ -323,7 +323,7 @@ INCS 	       += sdl/gp2x
+ endif
+ 
+ ifdef BUILD_OPENDINGUX
+-INCS           += '$(OPENDINGUX_TOOLCHAIN_PREFIX)/bin/libpng-config --prefix'/include/libpng
++INCS           += $(shell $(OPENDINGUX_TOOLCHAIN_PREFIX)/bin/libpng-config --prefix)/include/libpng
+ endif
+ 
+ 
+@@ -527,13 +527,13 @@ OBJS            = $(MAIN)                             
+ # Compiler Flags
+ #----------------------------------------------------------------------------------------------------
+ 
+-CFLAGS 	       += $(addprefix -I", $(addsuffix ", $(INCS))) $(ARCHFLAGS) -D$(TARGET_PLATFORM)
+-CFLAGS 	       += -g -Wall -Werror -fsigned-char
++CFLAGS 	       += $(addprefix -I, $(INCS)) $(ARCHFLAGS) -D$(TARGET_PLATFORM)
++CFLAGS 	       += -g -Wall -fsigned-char
+ 
+ ifndef BUILD_GP2X
+ ifndef BUILD_DARWIN
+ ifdef BUILD_LINUX
+-CFLAGS         += -Wno-unused-result `pkg-config sdl2 --cflags`
++CFLAGS         += -Wno-unused-result $(shell pkg-config sdl2 --cflags)
+ endif
+ endif
+ endif
+@@ -773,23 +773,18 @@ endif
+ 
+ ifdef BUILD_SDL
+ all : $(TARGET) $(TARGET_FINAL)
+-	@echo
++
+ %.o : %.asm
+-	@echo Compiling $(TARGET_PLATFORM) Port: $<...
+-	@$(YASM) -D $(TARGET_PLATFORM) -f $(OBJTYPE) -m $(TARGET_ARCH) -o $@ $<
++	$(YASM) -D $(TARGET_PLATFORM) -f $(OBJTYPE) -m $(TARGET_ARCH) -o $@ $<
++
+ %.o : %.c
+-	@echo Compiling $(TARGET_PLATFORM) Port: $<...
+-	@$(CC) $(CFLAGS) -c $< -o $@
++	$(CC) $(CFLAGS) -c $< -o $@
++
+ $(TARGET) : $(OBJS) $(RES)
+-	@echo
+-	@echo Linking $(TARGET_PLATFORM) Port: $(TARGET)...
+-	@$(CC) $(CFLAGS) -o $(TARGET) $(OBJS) $(TARGET_RESOURCE) $(LIBS)
++	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS) $(TARGET_RESOURCE) $(LIBS)
++
+ $(TARGET_FINAL) : $(TARGET)
+-	@echo Stripping $(TARGET_PLATFORM) Port: $(TARGET_FINAL)...
+-	@$(STRIP)
+-	@echo
+-	@echo Completed $(TARGET_PLATFORM) Port!
+-	@echo $(TARGET_FINAL) is now ready!
++	$(STRIP)
+ endif
+ 
+ #----------------------------------------------------------------------------------------------------

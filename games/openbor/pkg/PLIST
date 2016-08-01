@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+@bin bin/openbor
+share/pixmaps/
+share/pixmaps/openbor.png

@@ -1,0 +1,33 @@
+$OpenBSD$
+
+FreeBSD's SVN repo, games/openbor/files/patch-source_ramlib_ram.c, rev. 384732.
+--- sdl/sdlport.c.orig	Mon Aug  1 18:16:51 2016
++++ sdl/sdlport.c	Mon Aug  1 18:17:21 2016
+@@ -6,6 +6,11 @@
+  * Copyright (c) 2004 - 2014 OpenBOR Team
+  */
+ 
++#include <errno.h>
++#include <unistd.h>
++#include <err.h>
++#include <sys/stat.h>
++
+ #include "sdlport.h"
+ #include "packfile.h"
+ #include "ram.h"
+@@ -103,6 +108,15 @@ int main(int argc, char *argv[])
+ #ifdef ANDROID
+ 	dirExists(rootDir, 1);
+     chdir(rootDir);
++#else
++	{
++		if (chdir(getenv("HOME")) != 0)
++			err(1, "cannot cd to $HOME");
++		if (mkdir(".openbor", 0755) != 0 && errno != EEXIST)
++			err(1, "cannot mkdir $HOME/.openbor");
++		if (chdir(".openbor") != 0)
++			err(1, "cannot cd to $HOME/.openbor");
++	}
+ #endif
+ 	dirExists(paksDir, 1);
+ 	dirExists(savesDir, 1);
