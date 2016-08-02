@@ -1,13 +1,10 @@
 # $OpenBSD: Makefile,v 1.5 2016/03/18 23:12:20 naddy Exp $
 
 COMMENT =	D-Bus menu implementation for Qt
-
 V =		0.9.3
-
 DISTNAME =	libdbusmenu-qt_${V}+16.04.20160218
 PKGNAME =	${PKGSTEM}-${V}
 FULLPKGNAME =	${PKGNAME}
-REVISION =	1
 
 CATEGORIES =	x11 devel
 
@@ -34,7 +31,6 @@ FLAVORS =	qt5
 FLAVOR ?=
 
 # XXX run update-plist with qt5 FLAVOR, or it'll go crazy
-
 .if ${FLAVOR:Mqt5}
 MODULES +=	x11/qt5
 WANTLIB =	Qt5Core Qt5DBus Qt5Gui Qt5Widgets m

@@ -1,0 +1,9 @@
+$OpenBSD$
+--- locales/make_locales.sh.orig	Fri Jul  1 07:05:51 2016
++++ locales/make_locales.sh	Thu Jul 14 23:26:35 2016
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ set -e
+ 
+ #install locales locally for testing

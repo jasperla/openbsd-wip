@@ -1,4 +1,4 @@
-$OpenBSD: patch-cmake_Unix_cmake,v 1.1.1.1 2016/01/24 10:06:15 landry Exp $
+$OpenBSD: patch-cmake_Unix_cmake,v 1.2 2016/06/27 05:25:40 landry Exp $
 
 - Avoid forced linkage with libstdc++.
 

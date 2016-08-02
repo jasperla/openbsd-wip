@@ -1,0 +1,13 @@
+$OpenBSD$
+--- src/Makefile.am.orig	Tue Jun  7 03:27:29 2016
++++ src/Makefile.am	Tue Jun  7 03:28:04 2016
+@@ -59,9 +59,6 @@ language_classifier_test_CFLAGS = $(CFLAGS_O3)
+ 
+ pkginclude_HEADERS = libpostal.h
+ 
+-all-local:
+-	./libpostal_data download all $(datadir)/libpostal
+-
+ lexer: scanner.re
+ 	re2c -F -s -b -8 -o scanner.c scanner.re
+ 

@@ -174,6 +174,8 @@ lib/python${MODPY_VERSION}/site-packages/m64py/frontend/rominfo.py
 lib/python${MODPY_VERSION}/site-packages/m64py/frontend/rominfo.pyc
 lib/python${MODPY_VERSION}/site-packages/m64py/frontend/romlist.py
 lib/python${MODPY_VERSION}/site-packages/m64py/frontend/romlist.pyc
+lib/python${MODPY_VERSION}/site-packages/m64py/frontend/romreader.py
+lib/python${MODPY_VERSION}/site-packages/m64py/frontend/romreader.pyc
 lib/python${MODPY_VERSION}/site-packages/m64py/frontend/settings.py
 lib/python${MODPY_VERSION}/site-packages/m64py/frontend/settings.pyc
 lib/python${MODPY_VERSION}/site-packages/m64py/frontend/worker.py
@@ -224,14 +226,7 @@ lib/python${MODPY_VERSION}/site-packages/m64py/ui/settings_ui.pyc
 lib/python${MODPY_VERSION}/site-packages/m64py/utils.py
 lib/python${MODPY_VERSION}/site-packages/m64py/utils.pyc
 share/applications/m64py.desktop
-share/icons/hicolor/96x96/mimetypes/application-x-m64py.png/
-share/icons/hicolor/96x96/mimetypes/application-x-m64py.png/application-x-m64py.xml
-share/mime/packages/application-x-m64py.xml
 share/pixmaps/
 share/pixmaps/m64py.png
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime

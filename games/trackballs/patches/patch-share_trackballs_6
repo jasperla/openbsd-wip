@@ -1,0 +1,12 @@
+$OpenBSD$
+--- share/trackballs.6.orig	Sat Jun  5 13:41:02 2004
++++ share/trackballs.6	Sat Jun  1 09:46:40 2013
+@@ -60,7 +60,7 @@ Mathias Broxvall <matbr@home.se>
+ .SH "CONTRIBUTORS"
+ Music and UI Graphics \- Dietrich Radel <radel@inet.net.nz>
+ .br 
+-Sound Effects \- Benoît Rouits <brouits@free.fr>
++Sound Effects \- Beno\(^it Rouits <brouits@free.fr>
+ 
+ Packagers:
+ .br 

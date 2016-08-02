@@ -32,7 +32,7 @@ inline std::string timestamp() {
     (tp - std::chrono::system_clock::from_time_t(tt)) + std::chrono::seconds(gmt.tm_sec);
   //format the string
   std::string buffer("year/mo/dy hr:mn:sc.xxxxxx");
-  sprintf(&buffer.front(), "%04d/%02d/%02d %02d:%02d:%09f.6", gmt.tm_year + 1900, gmt.tm_mon + 1,
+  sprintf(&buffer.front(), "%04d/%02d/%02d %02d:%02d:%09.6f", gmt.tm_year + 1900, gmt.tm_mon + 1,
     gmt.tm_mday, gmt.tm_hour, gmt.tm_min, fractional_seconds.count());
   return buffer;
 }
@@ -275,35 +275,35 @@ const bool file_logger_registered =
     #define LOG_TRACE(x)
   //all logging output
   #elif defined(LOGGING_LEVEL_ALL)
-    #define LOG_ERROR(x) ::logging::get_logger().log(x, ::logging::log_level::ERROR);
-    #define LOG_WARN(x)  ::logging::get_logger().log(x, ::logging::log_level::WARN);
-    #define LOG_INFO(x)  ::logging::get_logger().log(x, ::logging::log_level::INFO);
-    #define LOG_DEBUG(x) ::logging::get_logger().log(x, ::logging::log_level::DEBUG);
-    #define LOG_TRACE(x) ::logging::get_logger().log(x, ::logging::log_level::TRACE);
+    #define LOG_ERROR(x) ::logging::get_logger().log(x, ::logging::log_level::ERROR)
+    #define LOG_WARN(x)  ::logging::get_logger().log(x, ::logging::log_level::WARN)
+    #define LOG_INFO(x)  ::logging::get_logger().log(x, ::logging::log_level::INFO)
+    #define LOG_DEBUG(x) ::logging::get_logger().log(x, ::logging::log_level::DEBUG)
+    #define LOG_TRACE(x) ::logging::get_logger().log(x, ::logging::log_level::TRACE)
   //some level and up
   #else
     #ifdef LOGGING_LEVEL_ERROR
-      #define LOG_ERROR(x) ::logging::get_logger().log(x, ::logging::log_level::ERROR);
+      #define LOG_ERROR(x) ::logging::get_logger().log(x, ::logging::log_level::ERROR)
     #else
       #define LOG_ERROR(x)
     #endif
     #ifdef LOGGING_LEVEL_WARN
-      #define LOG_WARN(x)  ::logging::get_logger().log(x, ::logging::log_level::WARN);
+      #define LOG_WARN(x)  ::logging::get_logger().log(x, ::logging::log_level::WARN)
     #else
       #define LOG_WARN(x)
     #endif
     #ifdef LOGGING_LEVEL_INFO
-      #define LOG_INFO(x)  ::logging::get_logger().log(x, ::logging::log_level::INFO);
+      #define LOG_INFO(x)  ::logging::get_logger().log(x, ::logging::log_level::INFO)
     #else
       #define LOG_INFO(x);
     #endif
     #ifdef LOGGING_LEVEL_DEBUG
-      #define LOG_DEBUG(x) ::logging::get_logger().log(x, ::logging::log_level::DEBUG);
+      #define LOG_DEBUG(x) ::logging::get_logger().log(x, ::logging::log_level::DEBUG)
     #else
       #define LOG_DEBUG(x)
     #endif
     #ifdef LOGGING_LEVEL_TRACE
-      #define LOG_TRACE(x) ::logging::get_logger().log(x, ::logging::log_level::TRACE);
+      #define LOG_TRACE(x) ::logging::get_logger().log(x, ::logging::log_level::TRACE)
     #else
       #define LOG_TRACE(x)
     #endif

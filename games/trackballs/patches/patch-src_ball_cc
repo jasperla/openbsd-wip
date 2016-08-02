@@ -1,0 +1,14 @@
+$OpenBSD$
+--- src/ball.cc.orig	Sun Dec  6 22:59:05 2015
++++ src/ball.cc	Sun Dec  6 22:59:06 2015
+@@ -553,8 +553,8 @@ Boolean Ball::physics(Real time) {
+     /* Explanation. We cast the address of the ball into an integer in order to get
+        a unique random seed for every ball. Could possibly cause problems on 64 bit platforms, have to
+        look into it. */
+-    rotation[0] += time * 7.0 * (frand((long) Game::current->gameTime + (long) this)-0.5); 
+-    rotation[1] += time * 7.0 * (frand(47 + (long) Game::current->gameTime + (long) this)-0.5); 
++    rotation[0] += time * 7.0 * (frand((long) Game::current->gameTime + arc4random())-0.5); 
++    rotation[1] += time * 7.0 * (frand(47 + (long) Game::current->gameTime + arc4random())-0.5); 
+   }
+ 
+   /*  rotateX(-rotation[1]*time*2.0*M_PI*radius,rotations);

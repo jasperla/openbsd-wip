@@ -3,13 +3,10 @@
 COMMENT =		geographic/metric data structures and algorithms
 
 VALHALLA_PROJECT =	midgard
-VALHALLA_VERSION =	0.0.0
 
 SHARED_LIBS +=  valhalla_midgard          0.0 # 0.0
 
 WANTLIB += m
-
-GH_COMMIT =		f332702a3141a09fd74ec2da12786031dcb9d16e
 
 MODULES =		gcc4
 MODGCC4_LANGS =		c c++

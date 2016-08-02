@@ -1,0 +1,8 @@
+Valhalla is an open source routing engine and accompanying libraries for use
+with Open Street Map data. This library/service, Meili, provides a set of
+algorithms and datastructures for map matching. It matches a sequence of
+locations (usually noisy e.g. GPS trajectory) to the underlying road
+network. In keeping with the Norse mythological theme, the name Meili,
+Thor's brother, was chosen. Since map matching is closely related to routing
+and since Thor is the Valhalla routing library, meili seemed most
+appropriate.

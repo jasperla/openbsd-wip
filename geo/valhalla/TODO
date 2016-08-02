@@ -1,1 +1,5 @@
-No upstream release yet.
+baldr needs xxd (from editors/vim) to build
+
+odin needs protobuf 2.6.1 and xxd
+odin also needs localedef to generate files/locales.h:
+http://pubs.opengroup.org/onlinepubs/9699919799/utilities/localedef.html

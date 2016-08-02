@@ -7,9 +7,9 @@ ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 
 COMMENT =		multi-paradigm programming language
 
-V =			6.5.0.5
+V =			6.6
 PKGNAME =		racket-minimal-$V
-DISTFILES =		min-racket-$V-src-builtpkgs${EXTRACT_SUFX} \
+DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
 
 CATEGORIES =		lang
@@ -66,7 +66,7 @@ CONFIGURE_ARGS +=	--disable-backtrace \
 			--disable-libs \
 			--disable-shared
 
-CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,-z,wxneeded" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 
 FLAVORS =		debug no_jit
@@ -95,11 +95,14 @@ CONFIGURE_ARGS +=	--disable-jit \
 CONFIGURE_ARGS +=	--enable-jit \
 			--enable-places \
 			--enable-futures
-.elif ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
+.elif ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS +=	--enable-jit \
 			--disable-places \
 			--disable-futures
 .elif ${MACHINE_ARCH} == "powerpc"
+CONFIGURE_ARGS +=	--enable-jit \
+			--disable-places \
+			--disable-futures
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -O0 -Wall -Wno-unused-value" \
 			CPPFLAGS="${CPPFLAGS} -O0 -Wall -Wno-unused-value"
 .else

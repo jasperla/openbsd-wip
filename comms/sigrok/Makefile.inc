@@ -2,9 +2,10 @@
 
 CATEGORIES +=		comms/sigrok
 
-MAINTAINER ?=		Anthony J. Bentley <anthony@cathet.us>
+MAINTAINER ?=		Anthony J. Bentley <anthony@anjbe.name>
 HOMEPAGE ?=		http://sigrok.org/
-MASTER_SITES ?=		${MASTER_SITE_SOURCEFORGE:=sigrok/}
+MASTER_SITES ?=		http://sigrok.org/download/source/${SIGROK_PROJECT}/
+DISTNAME ?=		${SIGROK_PROJECT}-${SIGROK_VERSION}
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes

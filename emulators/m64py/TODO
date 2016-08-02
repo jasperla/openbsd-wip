@@ -1,2 +1,9 @@
-Crash when toggling fullscreen:
-https://sourceforge.net/p/m64py/tickets/17/
+If "Enable Video Extension" is checked, m64py runs MUCH slower than
+mupen64plus-ui-console! Why?
+
+
+Crashes when set to fullscreen:
+
+Video: Failed to set 32-bit video mode: 2560x1440
+Segmentation fault (core dumped) 
+

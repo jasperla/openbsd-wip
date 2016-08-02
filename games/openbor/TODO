@@ -1,0 +1,5 @@
+ - There are be weird int-ptr conversions which should probably go.
+ - Segfaults.
+ - It should come with some tools for working with packages.
+ - Build system is insane.  It should probably be sanitized.
+ - Homepage?

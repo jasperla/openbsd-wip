@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# $OpenBSD: $
+
+daemon="${TRUEPREFIX}/sbin/i2pd"
+daemon_flags="--daemon --conf=/etc/i2pd.conf"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1

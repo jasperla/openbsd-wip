@@ -1,0 +1,11 @@
+@comment $OpenBSD$
+@newgroup _rmilter:780
+@newuser _rmilter:780:_rmilter:daemon:rmilter user:/nonexistent:/sbin/nologin
+@man man/man8/rmilter.8
+@bin sbin/rmilter
+share/examples/rmilter/
+share/examples/rmilter/rmilter-grey.conf
+@sample ${SYSCONFDIR}/rmilter-grey.conf
+share/examples/rmilter/rmilter.conf.sample
+@sample ${SYSCONFDIR}/rmilter.conf
+@rcscript ${RCDIR}/rmilter

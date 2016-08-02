@@ -24,6 +24,7 @@ TEST_DEPENDS =		${RUN_DEPENDS}
 
 # Instead of updating WRKDIST manually on every update, just move the directory
 post-extract:
+	@rm -Rf ${WRKDIST}
 	@mv ${WRKDIR}/durin42-hgsubversion-???????????? ${WRKDIST}
 
 do-test:

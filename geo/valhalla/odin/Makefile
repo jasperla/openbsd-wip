@@ -3,29 +3,32 @@
 COMMENT =		open directions and improved narrative
 
 VALHALLA_PROJECT =	odin
-VALHALLA_VERSION =	0.0.0
 
 SHARED_LIBS +=  valhalla_odin             0.0 # 0.0
 
-WANTLIB += boost_date_time-mt boost_filesystem boost_serialization-mt
-WANTLIB += boost_system boost_system-mt boost_thread-mt c crypto
-WANTLIB += curl iconv idn intl m prime_server protobuf pthread
-WANTLIB += sodium ssl stdc++ valhalla_baldr valhalla_midgard z
-WANTLIB += zmq
+WANTLIB += boost_date_time-mt boost_filesystem boost_regex-mt
+WANTLIB += boost_system boost_thread-mt c crypto curl iconv idn
+WANTLIB += intl m nghttp2 prime_server protobuf pthread sodium
+WANTLIB += ssl valhalla_baldr valhalla_midgard z zmq
 
 USE_GMAKE =		Yes
 
-GH_COMMIT =		a1d1668853bacb20f8f479716c3610190dd2c13b
-
 MODULES =		gcc4
-BUILD_DEPENDS =		geo/osmpbf:patch
+BUILD_DEPENDS +=	editors/vim,-main \
+			geo/osmpbf:patch \
+			textproc/jq
 LIB_DEPENDS =		devel/boost \
-			devel/protobuf \
+			devel/protobuf>=2.6.1 \
 			geo/valhalla/baldr \
 			geo/valhalla/midgard \
 			net/prime_server \
 			net/zeromq
 MODGCC4_LANGS =		c c++
 MODGCC4_ARCHS =		*
+
+# XXX this file should be generated at build time,
+# but OpenBSD doesn't have localedef
+post-configure:
+	cp ${FILESDIR}/locales.h ${WRKSRC}/src/odin/
 
 .include <bsd.port.mk>

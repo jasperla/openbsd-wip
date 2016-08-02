@@ -2,7 +2,8 @@
 
 COMMENT =		example signal/protocal dumps for sigrok
 
-DISTNAME =		sigrok-dumps-0.1.0
+SIGROK_PROJECT =        sigrok-dumps
+SIGROK_VERSION =        0.1.0
 
 CONFIGURE_STYLE =
 

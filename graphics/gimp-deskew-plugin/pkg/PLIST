@@ -1,0 +1,9 @@
+@comment $OpenBSD$
+@bin lib/gimp/2.0/plug-ins/deskew
+share/gimp-deskew-plugin/
+share/gimp-deskew-plugin/help/
+share/gimp-deskew-plugin/help/en/
+share/gimp-deskew-plugin/help/en/gimp-help.xml
+share/gimp-deskew-plugin/help/en/index.html
+share/gimp-deskew-plugin/help/images/
+share/gimp-deskew-plugin/help/images/wilber.png

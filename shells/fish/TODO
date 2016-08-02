@@ -1,4 +1,5 @@
-* "make test" seems to hang at some point.
+* Tests fail.
 * Manpages need checking against mandoc/groff.
 * Some completions may be wrong.  BSD- (jot, etc.) and OpenBSD-specific
-  completions (rcctl, pkg_add) should probably be added.
+  completions (rcctl, pkg_add) should be added.  Linux-specific stuff should be
+  removed.

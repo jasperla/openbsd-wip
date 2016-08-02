@@ -1,0 +1,80 @@
+Crash when starting levels on amd64:
+
+#0  0x00000096c5b108a5 in frand (i=Variable "i" is not available.
+) at glHelp.cc:48
+48      double frand(int i) { return fake_rand[i%4711]; }
+(gdb) bt
+#0  0x00000096c5b108a5 in frand (i=Variable "i" is not available.
+) at glHelp.cc:48
+#1  0x00000096c5b2573d in Ball::physics (this=Variable "this" is not available.
+) at ball.cc:556
+#2  0x00000096c5b26003 in Ball::tick (this=0x98cd462400, 
+    time=0.022000000000000242) at ball.cc:533
+#3  0x00000096c5b2900c in Black::tick (this=0x98cd462400, t=Variable "t" is not available.
+) at black.cc:119
+#4  0x00000096c5b27166 in Game::tick (this=0x98ca043000, 
+    t=0.022000000000000242) at game.cc:191
+#5  0x00000096c5b0fc55 in MainMode::idle (this=0x98d2b11000, td=Variable "td" is not available.
+)
+    at mainMode.cc:424
+#6  0x00000096c5b0d033 in innerMain (closure=Variable "closure" is not available.
+) at mmad.cc:433
+#7  0x00000098ca0fe17f in invoke_main_func ()
+   from /usr/local/lib/libguile.so.20.0
+#8  0x00000098ca0d22aa in c_body () from /usr/local/lib/libguile.so.20.0
+#9  0x00000098ca13d0d7 in scm_c_catch () from /usr/local/lib/libguile.so.20.0
+#10 0x00000098ca0d267f in scm_i_with_continuation_barrier ()
+   from /usr/local/lib/libguile.so.20.0
+#11 0x00000098ca0d277e in scm_c_with_continuation_barrier ()
+   from /usr/local/lib/libguile.so.20.0
+#12 0x00000098ca13c134 in scm_i_with_guile_and_parent ()
+   from /usr/local/lib/libguile.so.20.0
+#13 0x00000098ca0fe143 in scm_boot_guile ()
+   from /usr/local/lib/libguile.so.20.0
+#14 0x00000096c5b0c40c in main (argc=1, argv=0x7f7ffffd8728) at mmad.cc:635
+(gdb) bt full
+#0  0x00000096c5b108a5 in frand (i=Variable "i" is not available.
+) at glHelp.cc:48
+No locals.
+#1  0x00000096c5b2573d in Ball::physics (this=Variable "this" is not available.
+) at ball.cc:556
+        waterColor = {-7.60284709e+11, 2.12997367e-43, -2.00070922e+10, 
+  2.12997367e-43}
+        center = {3.242939360894418e-312, 3.2421699844796033e-312, 
+  3.242723071405123e-312}
+        s = Variable "s" is not available.
+
+Another crash:
+
+#0  0x00001bc24c81b195 in EditMode::doCellAction (this=0x1bc450ae8800, 
+    code=206, direction=0) at map.h:69
+69          return cells[(x<0?0:(x>=width?width-1:x))+width*(y<0?0:(y>=height?height-1:y))];
+(gdb) bt
+#0  0x00001bc24c81b195 in EditMode::doCellAction (this=0x1bc450ae8800, 
+    code=206, direction=0) at map.h:69
+#1  0x00001bc24c81cec2 in EditMode::key (this=0x1bc450ae8800, key=32)
+    at editMode.cc:815
+#2  0x00001bc24c80d0e0 in innerMain (closure=Variable "closure" is not available.
+) at mmad.cc:524
+#3  0x00001bc4581ea17f in invoke_main_func ()
+   from /usr/local/lib/libguile.so.20.0
+#4  0x00001bc4581be2aa in c_body () from /usr/local/lib/libguile.so.20.0
+#5  0x00001bc4582290d7 in scm_c_catch () from /usr/local/lib/libguile.so.20.0
+#6  0x00001bc4581be67f in scm_i_with_continuation_barrier ()
+   from /usr/local/lib/libguile.so.20.0
+#7  0x00001bc4581be77e in scm_c_with_continuation_barrier ()
+   from /usr/local/lib/libguile.so.20.0
+#8  0x00001bc458228134 in scm_i_with_guile_and_parent ()
+   from /usr/local/lib/libguile.so.20.0
+#9  0x00001bc4581ea143 in scm_boot_guile ()
+   from /usr/local/lib/libguile.so.20.0
+#10 0x00001bc24c80c40c in main (argc=1, argv=0x7f7ffffc87b8) at mmad.cc:635
+(gdb) bt full
+#0  0x00001bc24c81b195 in EditMode::doCellAction (this=0x1bc450ae8800, 
+    code=206, direction=0) at map.h:69
+        corner = 4
+        xLow = 0
+        xHigh = 0
+        yLow = 0
+        yHigh = 0
+        i = Variable "i" is not available.

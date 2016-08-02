@@ -1,20 +1,21 @@
 $OpenBSD$
---- CMakeLists.txt.orig	Fri Aug 21 13:43:09 2015
-+++ CMakeLists.txt	Fri Aug 21 13:43:18 2015
-@@ -129,16 +129,12 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
-         message(FATAL_ERROR "${PROJECT_NAME} requires GCC 4.6 or greater.")
-     endif()
-     set(NORMAL_CXX_FLAGS "-Wall -Wold-style-cast")
+--- CMakeLists.txt.orig	Fri Jul 15 02:03:39 2016
++++ CMakeLists.txt	Fri Jul 15 02:03:45 2016
+@@ -133,8 +133,6 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+     message(STATUS "Detected GCC version 4.7+")
+ 
+     set(NORMAL_CXX_FLAGS "-std=gnu++11 -Wall -Wold-style-cast")
 -    set(RELEASE_CXX_FLAGS "-O2")
 -    set(DEBUG_CXX_FLAGS "-g -O0")
      set(TEST_CXX_FLAGS "-pthread")
-     add_definitions(-DNOEXCEPT=noexcept)
+     add_definitions(-DNOEXCEPT=noexcept -DHAVE_DEMANGLE)
  elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-     message(STATUS "Detected Clang compiler")
-     set(CXX11_FLAGS "-std=c++11")
-     set(NORMAL_CXX_FLAGS "-Wall -Wold-style-cast")
+@@ -145,8 +143,6 @@ elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+     message(STATUS "Detected Clang version 3.1+")
+ 
+     set(NORMAL_CXX_FLAGS "-std=c++11 -Wall -Wold-style-cast")
 -    set(RELEASE_CXX_FLAGS "-O2")
 -    set(DEBUG_CXX_FLAGS "-g -O0")
      set(TEST_CXX_FLAGS "-pthread")
-     add_definitions(-DOVERRIDE=override)
-     add_definitions(-DNOEXCEPT=noexcept)
+     add_definitions(-DNOEXCEPT=noexcept -DHAVE_DEMANGLE)
+ elseif(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")

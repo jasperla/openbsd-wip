@@ -1,0 +1,14 @@
+@comment $OpenBSD$
+@bin bin/valhalla_benchmark_adjacency_list
+@bin bin/valhalla_benchmark_loki
+@bin bin/valhalla_benchmark_skadi
+@bin bin/valhalla_elevation_service
+@bin bin/valhalla_loki_worker
+@bin bin/valhalla_odin_worker
+@bin bin/valhalla_route_service
+@bin bin/valhalla_run_isochrone
+@bin bin/valhalla_run_matrix
+@bin bin/valhalla_run_route
+@bin bin/valhalla_skadi_worker
+@bin bin/valhalla_thor_worker
+@bin bin/valhalla_tyr_worker

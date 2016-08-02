@@ -1,0 +1,72 @@
+$OpenBSD$
+--- mkspecs/openbsd-g++/qplatformdefs.h.orig	Wed May 25 18:46:17 2016
++++ mkspecs/openbsd-g++/qplatformdefs.h	Sun Jul 10 15:49:56 2016
+@@ -34,40 +34,34 @@
+ #ifndef QPLATFORMDEFS_H
+ #define QPLATFORMDEFS_H
+ 
+-// Get Qt defines/settings
+ 
+-#include "qglobal.h"
+-
+-// Set any POSIX/XOPEN defines at the top of this file to turn on specific APIs
+-
+-#include <unistd.h>
+-
+-
+-// We are hot - unistd.h should have turned on the specific APIs we requested
+-
+-
+-#include <pthread.h>
+-#include <dirent.h>
+-#include <fcntl.h>
+-#include <grp.h>
+-#include <pwd.h>
+-#include <signal.h>
+-#include <dlfcn.h>
+-
+-#include <sys/param.h>
+ #include <sys/types.h>
+ #include <sys/ioctl.h>
+ #include <sys/ipc.h>
+-#include <sys/time.h>
+ #include <sys/shm.h>
+ #include <sys/socket.h>
+ #include <sys/stat.h>
++#include <sys/time.h>
+ #include <sys/wait.h>
++
+ #include <netinet/in.h>
+ #ifndef QT_NO_IPV6IFNAME
+ #include <net/if.h>
+ #endif
+ 
++#include <dirent.h>
++#include <dlfcn.h>
++#include <fcntl.h>
++#include <grp.h>
++#include <pthread.h>
++#include <pwd.h>
++#include <signal.h>
++#include <unistd.h>
++
++// Get Qt defines/settings
++
++#include "qglobal.h"
++
+ #include "../common/posix/qplatformdefs.h"
+ 
+ #undef QT_OPEN_LARGEFILE
+@@ -91,9 +85,9 @@
+ //
+ // Since OpenBSD does define _POSIX_THREAD_SAFE_FUNCTIONS, we have to
+ // undefine it behind its back.
+-#ifdef _POSIX_THREAD_SAFE_FUNCTIONS
+-#undef _POSIX_THREAD_SAFE_FUNCTIONS
+-#endif
++//#ifdef _POSIX_THREAD_SAFE_FUNCTIONS
++//undef _POSIX_THREAD_SAFE_FUNCTIONS
++//endif
+ 
+ // Older OpenBSD versions may still use the a.out format instead of ELF.
+ #ifndef __ELF__

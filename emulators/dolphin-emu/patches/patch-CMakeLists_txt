@@ -1,0 +1,27 @@
+$OpenBSD$
+From upstream fb1627a696a3bbd47440db8c08246a341048102a,
+              eb4cae78aa75def726b88a853697b7adc6ef8fbd.
+--- CMakeLists.txt.orig	Fri Jun 24 02:09:07 2016
++++ CMakeLists.txt	Sun Jul 17 07:06:09 2016
+@@ -415,7 +415,7 @@ if(ANDROID)
+ 	# We are cross compiling, search only the toolchain for libraries and includes
+ 	SET(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
+ 	SET(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
+-elseif(NOT APPLE)
++elseif(NOT APPLE AND NOT CMAKE_SYSTEM_NAME MATCHES OpenBSD)
+ 	list(APPEND LIBS rt)
+ endif()
+ 
+@@ -989,10 +989,10 @@ add_subdirectory(Source)
+ if(NOT APPLE)
+ 	install(DIRECTORY Data/Sys/ DESTINATION ${datadir}/sys PATTERN)
+ endif()
+-if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Linux|FreeBSD|Darwin")
++if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Linux|FreeBSD|OpenBSD|Darwin")
+ 	install(FILES Data/license.txt DESTINATION ${datadir})
+ endif()
+-if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
++if(${CMAKE_SYSTEM_NAME} MATCHES "Linux|FreeBSD|OpenBSD")
+ 	# Install the application icon and menu item
+ 	install(FILES Data/dolphin-emu.svg
+ 		DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/scalable/apps)

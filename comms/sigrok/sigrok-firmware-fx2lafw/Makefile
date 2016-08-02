@@ -2,7 +2,8 @@
 
 COMMENT =		firmware for FX2 logic analyzers
 
-DISTNAME =		sigrok-firmware-fx2lafw-0.1.1
+SIGROK_PROJECT =        sigrok-firmware-fx2lafw
+SIGROK_VERSION =        0.1.3
 
 BUILD_DEPENDS =		devel/sdcc
 
