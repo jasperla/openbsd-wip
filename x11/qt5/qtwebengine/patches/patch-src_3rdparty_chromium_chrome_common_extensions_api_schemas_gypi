@@ -1,0 +1,15 @@
+$OpenBSD$
+--- src/3rdparty/chromium/chrome/common/extensions/api/schemas.gypi.orig.port	Thu Aug  4 16:43:02 2016
++++ src/3rdparty/chromium/chrome/common/extensions/api/schemas.gypi	Thu Aug  4 16:44:30 2016
+@@ -166,6 +166,11 @@
+           '<@(webrtc_schema_files)',
+         ],
+       }],
++      ['enable_webrtc==0', {
++        'schema_files': [
++          'webrtc_logging_private.idl',
++        ],
++      }],
+     ],
+     'cc_dir': 'chrome/common/extensions/api',
+     'root_namespace': 'extensions::api::%(namespace)s',

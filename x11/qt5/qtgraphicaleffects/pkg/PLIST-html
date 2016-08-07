@@ -1,0 +1,24 @@
+@comment $OpenBSD$
+share/doc/qt5/qtgraphicaleffects/
+share/doc/qt5/qtgraphicaleffects/graphicaleffects.html
+share/doc/qt5/qtgraphicaleffects/images/
+share/doc/qt5/qtgraphicaleffects/images/arrow_bc.png
+share/doc/qt5/qtgraphicaleffects/images/bgrContent.png
+share/doc/qt5/qtgraphicaleffects/images/btn_next.png
+share/doc/qt5/qtgraphicaleffects/images/btn_prev.png
+share/doc/qt5/qtgraphicaleffects/images/bullet_dn.png
+share/doc/qt5/qtgraphicaleffects/images/bullet_sq.png
+share/doc/qt5/qtgraphicaleffects/images/home.png
+share/doc/qt5/qtgraphicaleffects/images/ico_note.png
+share/doc/qt5/qtgraphicaleffects/images/ico_note_attention.png
+share/doc/qt5/qtgraphicaleffects/images/ico_out.png
+share/doc/qt5/qtgraphicaleffects/images/logo.png
+share/doc/qt5/qtgraphicaleffects/qtgraphicaleffects-index.html
+share/doc/qt5/qtgraphicaleffects/qtgraphicaleffects-qmlmodule.html
+share/doc/qt5/qtgraphicaleffects/qtgraphicaleffects.index
+share/doc/qt5/qtgraphicaleffects/qtgraphicaleffects.qhp
+share/doc/qt5/qtgraphicaleffects/qtgraphicaleffects.qhp.sha1
+share/doc/qt5/qtgraphicaleffects/qtgraphicaleffects.tags
+share/doc/qt5/qtgraphicaleffects/style/
+share/doc/qt5/qtgraphicaleffects/style/offline-simple.css
+share/doc/qt5/qtgraphicaleffects/style/offline.css

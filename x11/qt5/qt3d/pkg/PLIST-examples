@@ -1,0 +1,97 @@
+@comment $OpenBSD$
+lib/qt5/examples/
+lib/qt5/examples/qt3d/
+lib/qt5/examples/qt3d/anaglyph-rendering/
+@bin lib/qt5/examples/qt3d/anaglyph-rendering/anaglyph-rendering
+lib/qt5/examples/qt3d/assimp/
+lib/qt5/examples/qt3d/assimp-cpp/
+@bin lib/qt5/examples/qt3d/assimp-cpp/assimp-cpp
+@bin lib/qt5/examples/qt3d/assimp/assimp
+lib/qt5/examples/qt3d/audio-visualizer-qml/
+@bin lib/qt5/examples/qt3d/audio-visualizer-qml/audio-visualizer-qml
+lib/qt5/examples/qt3d/basicshapes-cpp/
+@bin lib/qt5/examples/qt3d/basicshapes-cpp/basicshapes-cpp
+lib/qt5/examples/qt3d/bigmodel-qml/
+@bin lib/qt5/examples/qt3d/bigmodel-qml/bigmodel-qml
+lib/qt5/examples/qt3d/bigscene-cpp/
+@bin lib/qt5/examples/qt3d/bigscene-cpp/bigscene-cpp
+lib/qt5/examples/qt3d/bigscene-instanced-qml/
+@bin lib/qt5/examples/qt3d/bigscene-instanced-qml/bigscene-instanced-qml
+lib/qt5/examples/qt3d/clip-planes-qml/
+@bin lib/qt5/examples/qt3d/clip-planes-qml/clip-planes-qml
+lib/qt5/examples/qt3d/controls/
+@bin lib/qt5/examples/qt3d/controls/controls
+lib/qt5/examples/qt3d/cpp_example/
+@bin lib/qt5/examples/qt3d/cpp_example/cpp_example
+lib/qt5/examples/qt3d/custom-mesh-cpp/
+@bin lib/qt5/examples/qt3d/custom-mesh-cpp/custom-mesh-cpp
+lib/qt5/examples/qt3d/custom-mesh-qml/
+@bin lib/qt5/examples/qt3d/custom-mesh-qml/custom-mesh-qml
+lib/qt5/examples/qt3d/cylinder-cpp/
+@bin lib/qt5/examples/qt3d/cylinder-cpp/cylinder-cpp
+lib/qt5/examples/qt3d/cylinder-qml/
+@bin lib/qt5/examples/qt3d/cylinder-qml/cylinder-qml
+lib/qt5/examples/qt3d/deferred-renderer-cpp/
+@bin lib/qt5/examples/qt3d/deferred-renderer-cpp/deferred-renderer-cpp
+lib/qt5/examples/qt3d/deferred-renderer-qml/
+@bin lib/qt5/examples/qt3d/deferred-renderer-qml/deferred-renderer-qml
+lib/qt5/examples/qt3d/dynamicscene-cpp/
+@bin lib/qt5/examples/qt3d/dynamicscene-cpp/dynamicscene-cpp
+lib/qt5/examples/qt3d/enabled-qml/
+@bin lib/qt5/examples/qt3d/enabled-qml/enabled-qml
+lib/qt5/examples/qt3d/gltf/
+@bin lib/qt5/examples/qt3d/gltf/gltf
+lib/qt5/examples/qt3d/gooch-qml/
+@bin lib/qt5/examples/qt3d/gooch-qml/gooch-qml
+lib/qt5/examples/qt3d/instanced-arrays-qml/
+@bin lib/qt5/examples/qt3d/instanced-arrays-qml/instanced-arrays-qml
+lib/qt5/examples/qt3d/keyboardinput-qml/
+@bin lib/qt5/examples/qt3d/keyboardinput-qml/keyboardinput-qml
+lib/qt5/examples/qt3d/lights/
+@bin lib/qt5/examples/qt3d/lights/lights
+lib/qt5/examples/qt3d/loader-qml/
+@bin lib/qt5/examples/qt3d/loader-qml/loader-qml
+lib/qt5/examples/qt3d/materials/
+lib/qt5/examples/qt3d/materials-cpp/
+@bin lib/qt5/examples/qt3d/materials-cpp/materials-cpp
+@bin lib/qt5/examples/qt3d/materials/materials
+lib/qt5/examples/qt3d/mouseinput-qml/
+@bin lib/qt5/examples/qt3d/mouseinput-qml/mouseinput-qml
+lib/qt5/examples/qt3d/multiviewport/
+@bin lib/qt5/examples/qt3d/multiviewport/multiviewport
+lib/qt5/examples/qt3d/picking-qml/
+@bin lib/qt5/examples/qt3d/picking-qml/picking-qml
+lib/qt5/examples/qt3d/planets-qml/
+@bin lib/qt5/examples/qt3d/planets-qml/planets-qml
+lib/qt5/examples/qt3d/plasma/
+@bin lib/qt5/examples/qt3d/plasma/plasma
+lib/qt5/examples/qt3d/playground-qml/
+@bin lib/qt5/examples/qt3d/playground-qml/playground-qml
+lib/qt5/examples/qt3d/scene3d/
+lib/qt5/examples/qt3d/scene3d-loader/
+@bin lib/qt5/examples/qt3d/scene3d-loader/scene3d-loader
+@bin lib/qt5/examples/qt3d/scene3d/scene3d
+lib/qt5/examples/qt3d/shadow-map-qml/
+@bin lib/qt5/examples/qt3d/shadow-map-qml/shadow-map-qml
+lib/qt5/examples/qt3d/simple-cpp/
+@bin lib/qt5/examples/qt3d/simple-cpp/simple-cpp
+lib/qt5/examples/qt3d/simple-qml/
+@bin lib/qt5/examples/qt3d/simple-qml/simple-qml
+lib/qt5/examples/qt3d/simple-shaders-qml/
+@bin lib/qt5/examples/qt3d/simple-shaders-qml/simple-shaders-qml
+lib/qt5/examples/qt3d/skybox/
+@bin lib/qt5/examples/qt3d/skybox/skybox
+lib/qt5/examples/qt3d/tessellation-modes/
+@bin lib/qt5/examples/qt3d/tessellation-modes/tessellation-modes
+lib/qt5/examples/qt3d/torus-qml/
+@bin lib/qt5/examples/qt3d/torus-qml/torus-qml
+lib/qt5/examples/qt3d/transforms-qml/
+@bin lib/qt5/examples/qt3d/transforms-qml/transforms-qml
+lib/qt5/examples/qt3d/transparency-qml/
+lib/qt5/examples/qt3d/transparency-qml-scene3d/
+@bin lib/qt5/examples/qt3d/transparency-qml-scene3d/transparency-qml-scene3d
+@bin lib/qt5/examples/qt3d/transparency-qml/transparency-qml
+lib/qt5/examples/qt3d/wave/
+@bin lib/qt5/examples/qt3d/wave/wave
+lib/qt5/examples/qt3d/wireframe/
+@bin lib/qt5/examples/qt3d/wireframe/wireframe

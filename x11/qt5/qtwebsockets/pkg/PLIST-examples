@@ -1,0 +1,17 @@
+@comment $OpenBSD$
+lib/qt5/examples/
+lib/qt5/examples/websockets/
+lib/qt5/examples/websockets/echoclient/
+@bin lib/qt5/examples/websockets/echoclient/echoclient
+lib/qt5/examples/websockets/echoserver/
+@bin lib/qt5/examples/websockets/echoserver/echoserver
+lib/qt5/examples/websockets/qmlwebsocketclient/
+@bin lib/qt5/examples/websockets/qmlwebsocketclient/qmlwebsocketclient
+lib/qt5/examples/websockets/qmlwebsocketserver/
+@bin lib/qt5/examples/websockets/qmlwebsocketserver/qmlwebsocketserver
+lib/qt5/examples/websockets/simplechat/
+@bin lib/qt5/examples/websockets/simplechat/chatserver
+lib/qt5/examples/websockets/sslechoclient/
+@bin lib/qt5/examples/websockets/sslechoclient/sslechoclient
+lib/qt5/examples/websockets/sslechoserver/
+@bin lib/qt5/examples/websockets/sslechoserver/sslechoserver

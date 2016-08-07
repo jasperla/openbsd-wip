@@ -1,13 +1,11 @@
 # $OpenBSD$
 
 DISTNAME =		qtbase-opensource-src-${DIST_VERSION}
+QT5NAME =		Qt5 core
 
 COMMENT-main =		C++ general-purpose toolkit
-COMMENT-examples =	examples for Qt5
-COMMENT-html =		offline HTML documentation for Qt5
 COMMENT-mysql =		MySQL plugin for Qt5
 COMMENT-psql =		PostgresSQL plugin for Qt5
-COMMENT-qch =		offline QCH documentation for Qt5
 COMMENT-sqlite2 =	SQLite 2.x plugin for Qt5
 COMMENT-tds =		TDS plugin for Qt5
 
@@ -16,8 +14,7 @@ PKGNAME-psql =		qt5-psql-${VERSION}
 PKGNAME-sqlite2 =	qt5-sqlite2-${VERSION}
 PKGNAME-tds =		qt5-tds-${VERSION}
 
-PKG_ARCH-html =		*
-PKG_ARCH-qch =		*
+DPB_PROPERTIES =	parallel
 
 SHARED_LIBS +=	Qt5Concurrent		2.0
 SHARED_LIBS +=	Qt5Core			2.0
@@ -62,9 +59,13 @@ WANTLIB-tds =		${MODGCC4_CPPWANTLIB} Qt5Core Qt5Sql
 WANTLIB-tds +=		m pthread sybdb
 
 
-MULTI_PACKAGES =	-main -examples -html -mysql -psql -qch -sqlite2 -tds
+MULTI_PACKAGES =	-main -examples -mysql -psql -sqlite2 -tds
 
 MODULES =		devel/gettext
+
+# qmake module is used for running tests only here
+MODQT_DEPS =		No
+MODQMAKE_PROJECTS =	tests/tests.pro
 
 # no leveldb dependency, requires -lmemenv; QtWebKit uses internal version
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
@@ -80,26 +81,21 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			x11/gtk+2 \
 			x11/xkbcommon
 
-LIB_DEPENDS-examples =	${BUILD_PKGPATH},-main>=${VERSION:R} \
-			${MODGCC4_CPPLIBDEP}
+LIB_DEPENDS-examples =	${MODGCC4_CPPLIBDEP}
 
-LIB_DEPENDS-html =
-
-LIB_DEPENDS-mysql =	${BUILD_PKGPATH},-main>=${VERSION:R} \
+LIB_DEPENDS-mysql =	${BASE_PKGPATH},-main>=${VERSION:R},<${QT5_NEXT_VERSION} \
 			${MODGCC4_CPPLIBDEP} \
 			databases/mariadb
 
-LIB_DEPENDS-psql =	${BUILD_PKGPATH},-main>=${VERSION:R} \
+LIB_DEPENDS-psql =	${BASE_PKGPATH},-main>=${VERSION:R},<${QT5_NEXT_VERSION} \
 			${MODGCC4_CPPLIBDEP} \
 			databases/postgresql
 
-LIB_DEPENDS-qch =
-
-LIB_DEPENDS-sqlite2 =	${BUILD_PKGPATH},-main>=${VERSION:R} \
+LIB_DEPENDS-sqlite2 =	${BASE_PKGPATH},-main>=${VERSION:R},<${QT5_NEXT_VERSION} \
 			${MODGCC4_CPPLIBDEP} \
 			databases/sqlite
 
-LIB_DEPENDS-tds =	${BUILD_PKGPATH},-main>=${VERSION:R} \
+LIB_DEPENDS-tds =	${BASE_PKGPATH},-main>=${VERSION:R},<${QT5_NEXT_VERSION} \
 			${MODGCC4_CPPLIBDEP} \
 			databases/freetds
 
@@ -110,19 +106,15 @@ RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			geo/geoclue \
 			x11/dbus
 RUN_DEPENDS-examples =
-RUN_DEPENDS-html =
 RUN_DEPENDS-mysql =
 RUN_DEPENDS-psql =
-RUN_DEPENDS-qch =
 RUN_DEPENDS-sqlite2 =
 RUN_DEPENDS-tds =
-
-#MAKE_ENV =		LD_LIBRARY_PATH=${WRKBUILD}/qtbase/lib
 
 CONFIGURE_STYLE =	simple
 
 FLAVORS =		debug
-PSEUDO_FLAVORS =	no_examples no_html no_qch no_tests
+PSEUDO_FLAVORS =	no_examples
 FLAVOR ?=
 
 # readability macros
@@ -140,7 +132,11 @@ CONFIGURE_ARGS =	-confirm-license \
 			-opensource \
 			-rpath \
 			-shared \
-			-verbose
+			-verbose \
+			-no-compile-examples
+
+# don't run tests inside main build
+CONFIGURE_ARGS +=	-nomake tests
 
 .if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS +=	-debug
@@ -188,58 +184,24 @@ CONFIGURE_ARGS +=	-no-sse2
 
 .include <bsd.port.arch.mk>
 
-# QtWebkit (at least, maybe others) plays dirty games with inter-target
-# dependencies, so we'd better use the target qmake always creates
-# first, named "first".
-ALL_TARGET =		sub-src
-FAKE_TARGET =		install
-TEST_TARGET =		sub-tests
-
-# Force re-running qmake before generating documentation
-# to allow qdoc and qhelpgenerator do their work.
-.if ${BUILD_PACKAGES:M-html} || ${BUILD_PACKAGES:M-qch}
-ALL_TARGET +=		sub-qmake-qmake-docs-pro
-.endif
-
-.if ${BUILD_PACKAGES:M-html}
-ALL_TARGET +=		html_docs
-FAKE_TARGET +=		install_html_docs
-.endif
-
-.if ${BUILD_PACKAGES:M-qch}
-ALL_TARGET +=		qch_docs
-FAKE_TARGET +=		install_qch_docs
-.endif
-
-.if ${BUILD_PACKAGES:M-examples}
-ALL_TARGET +=		sub-examples
-.else
-CONFIGURE_ARGS +=	-nomake examples
-.endif
-
-.if ${FLAVOR:Mno_tests}
-NO_TEST =		Yes
-CONFIGURE_ARGS +=	-nomake tests
+.if !${BUILD_PACKAGES:M-examples}
+CONFIGURE_ARGS +=	-no-compile-examples
 .endif
 
 # See qtbase/tests/README for details
 TEST_IS_INTERACTIVE =	X11
-TEST_DEPENDS =		audio/sox \
-			kde4-minimal-*|kdebase-*:meta/kde4,-minimal
-
-post-extract:
-.if ${FLAVOR:Mno_examples}
-	rm -f ${WRKDIST}/examples/examples.pro
-.endif
-.if ${FLAVOR:Mno_tests}
-	rm -f ${WRKDIST}/tests/tests.pro
-.endif
+TEST_DEPENDS =		audio/sox
+#			kde4-minimal-*|kdebase-*:meta/kde4,-minimal
 
 pre-configure:
 	@gccbasedir=`ecpp -print-search-dirs | awk '/^install:/{print $$2}'`; \
 	perl ${PORTSDIR}/infrastructure/bin/pkg_subst \
 	    -D OPENBSD_INCDIR_PREPEND="$${gccbasedir}include" \
 	    ${WRKSRC}/mkspecs/openbsd-g++/qmake.conf
+
+do-test:
+	${MODQMAKE_configure}
+	${MODQMAKE_build}
 
 post-install:
 	# often-used includes directory

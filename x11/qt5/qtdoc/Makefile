@@ -1,9 +1,12 @@
 # $OpenBSD$
 
-DISTNAME =		qtdoc-opensource-src-${DIST_VERSION}
-COMMENT =		Qt5 documentation
+QT5NAME =		QtDoc
+COMMENT-main =		Qt5 commons
 
-MODULES =		x11/qt5 devel/qmake
+MULTI_PACKAGES =	-qch -html
+SUBPACKAGE ?=		-qch
+
 ALL_TARGET =		docs
+FAKE_TARGET =		install_docs
 
 .include <bsd.port.mk>

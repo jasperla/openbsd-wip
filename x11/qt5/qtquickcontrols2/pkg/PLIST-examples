@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+lib/qt5/examples/
+lib/qt5/examples/quickcontrols2/
+lib/qt5/examples/quickcontrols2/gallery/
+@bin lib/qt5/examples/quickcontrols2/gallery/gallery

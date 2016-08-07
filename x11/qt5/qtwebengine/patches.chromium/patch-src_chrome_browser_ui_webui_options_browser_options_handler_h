@@ -1,0 +1,13 @@
+$OpenBSD$
+--- src/chrome/browser/ui/webui/options/browser_options_handler.h.orig.port	Wed May 25 04:54:10 2016
++++ src/chrome/browser/ui/webui/options/browser_options_handler.h	Thu May 26 08:09:42 2016
+@@ -203,7 +203,8 @@ class BrowserOptionsHandler
+ 
+   void ObserveThemeChanged();
+   void ThemesReset(const base::ListValue* args);
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if defined(OS_POSIX) && !defined(OS_CHROMEOS) && !defined(OS_MACOSX) && \
++    !defined(OS_ANDROID)
+   void ThemesSetNative(const base::ListValue* args);
+ #endif
+ 

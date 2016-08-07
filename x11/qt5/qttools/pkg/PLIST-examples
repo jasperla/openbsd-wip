@@ -1,5 +1,9 @@
 @comment $OpenBSD$
 @conflict qt5-examples-<5.6
+lib/qt5/cmake/Qt5Designer/Qt5Designer_AnalogClockPlugin.cmake
+lib/qt5/cmake/Qt5Designer/Qt5Designer_MultiPageWidgetPlugin.cmake
+lib/qt5/cmake/Qt5Designer/Qt5Designer_TicTacToePlugin.cmake
+lib/qt5/cmake/Qt5Designer/Qt5Designer_WorldTimeClockPlugin.cmake
 lib/qt5/examples/
 lib/qt5/examples/assistant/
 lib/qt5/examples/assistant/remotecontrol/
@@ -62,3 +66,8 @@ lib/qt5/examples/uitools/multipleinheritance/
 @bin lib/qt5/examples/uitools/multipleinheritance/multipleinheritance
 lib/qt5/examples/uitools/textfinder/
 @bin lib/qt5/examples/uitools/textfinder/textfinder
+lib/qt5/plugins/designer/
+lib/qt5/plugins/designer/libcontainerextension.so
+lib/qt5/plugins/designer/libcustomwidgetplugin.so
+lib/qt5/plugins/designer/libtaskmenuextension.so
+lib/qt5/plugins/designer/libworldtimeclockplugin.so

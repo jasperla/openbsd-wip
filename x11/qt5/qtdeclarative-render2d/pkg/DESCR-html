@@ -1,0 +1,9 @@
+QtQuick2DRenderer is an alternative renderer for Qt Quick 2 that uses the Raster
+paint engine to render the contents of the scene graph instead of OpenGL.
+As a result of not using OpenGL to render the scene graph, some features and
+optimizations are no longer available. Most Qt Quick 2 applications will run
+without modification though any attempts to use unsupported features will be
+ignored. By using the QtQuick2DRenderer it is now possible to run Qt Quick 2
+applications on hardware and platforms that do not have OpenGL support.
+
+This package contains QtQuick2DRenderer HTML documentation.

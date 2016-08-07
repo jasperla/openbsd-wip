@@ -1,0 +1,25 @@
+@comment $OpenBSD$
+lib/qt5/examples/
+lib/qt5/examples/serialport/
+lib/qt5/examples/serialport/blockingmaster/
+@bin lib/qt5/examples/serialport/blockingmaster/blockingmaster
+lib/qt5/examples/serialport/blockingslave/
+@bin lib/qt5/examples/serialport/blockingslave/blockingslave
+lib/qt5/examples/serialport/cenumerator/
+@bin lib/qt5/examples/serialport/cenumerator/cenumerator
+lib/qt5/examples/serialport/creaderasync/
+@bin lib/qt5/examples/serialport/creaderasync/creaderasync
+lib/qt5/examples/serialport/creadersync/
+@bin lib/qt5/examples/serialport/creadersync/creadersync
+lib/qt5/examples/serialport/cwriterasync/
+@bin lib/qt5/examples/serialport/cwriterasync/cwriterasync
+lib/qt5/examples/serialport/cwritersync/
+@bin lib/qt5/examples/serialport/cwritersync/cwritersync
+lib/qt5/examples/serialport/enumerator/
+@bin lib/qt5/examples/serialport/enumerator/enumerator
+lib/qt5/examples/serialport/master/
+@bin lib/qt5/examples/serialport/master/master
+lib/qt5/examples/serialport/slave/
+@bin lib/qt5/examples/serialport/slave/slave
+lib/qt5/examples/serialport/terminal/
+@bin lib/qt5/examples/serialport/terminal/terminal

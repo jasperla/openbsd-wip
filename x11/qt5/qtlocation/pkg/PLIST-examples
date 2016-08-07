@@ -1,0 +1,22 @@
+@comment $OpenBSD$
+lib/qt5/examples/
+lib/qt5/examples/location/
+lib/qt5/examples/location/mapviewer/
+@bin lib/qt5/examples/location/mapviewer/qml_location_mapviewer
+lib/qt5/examples/location/places/
+@bin lib/qt5/examples/location/places/qml_location_places
+lib/qt5/examples/location/places_list/
+@bin lib/qt5/examples/location/places_list/places_list
+lib/qt5/examples/location/places_map/
+@bin lib/qt5/examples/location/places_map/places_map
+lib/qt5/examples/location/planespotter/
+@bin lib/qt5/examples/location/planespotter/planespotter
+lib/qt5/examples/positioning/
+lib/qt5/examples/positioning/geoflickr/
+@bin lib/qt5/examples/positioning/geoflickr/geoflickr
+lib/qt5/examples/positioning/logfilepositionsource/
+@bin lib/qt5/examples/positioning/logfilepositionsource/logfilepositionsource
+lib/qt5/examples/positioning/satelliteinfo/
+@bin lib/qt5/examples/positioning/satelliteinfo/satelliteinfo
+lib/qt5/examples/positioning/weatherinfo/
+@bin lib/qt5/examples/positioning/weatherinfo/weatherinfo

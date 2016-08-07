@@ -1,0 +1,28 @@
+@comment $OpenBSD$
+lib/qt5/examples/
+lib/qt5/examples/svg/
+lib/qt5/examples/svg/draganddrop/
+lib/qt5/examples/svg/draganddrop/delayedencoding/
+@bin lib/qt5/examples/svg/draganddrop/delayedencoding/delayedencoding
+lib/qt5/examples/svg/embedded/
+lib/qt5/examples/svg/embedded/desktopservices/
+@bin lib/qt5/examples/svg/embedded/desktopservices/desktopservices
+lib/qt5/examples/svg/embedded/fluidlauncher/
+@bin lib/qt5/examples/svg/embedded/fluidlauncher/fluidlauncher
+lib/qt5/examples/svg/embedded/weatherinfo/
+@bin lib/qt5/examples/svg/embedded/weatherinfo/weatherinfo
+lib/qt5/examples/svg/embeddedsvgviewer/
+@bin lib/qt5/examples/svg/embeddedsvgviewer/embeddedsvgviewer
+lib/qt5/examples/svg/network/
+lib/qt5/examples/svg/network/bearercloud/
+@bin lib/qt5/examples/svg/network/bearercloud/bearercloud
+lib/qt5/examples/svg/opengl/
+lib/qt5/examples/svg/opengl/framebufferobject/
+@bin lib/qt5/examples/svg/opengl/framebufferobject/framebufferobject
+lib/qt5/examples/svg/richtext/
+lib/qt5/examples/svg/richtext/textobject/
+@bin lib/qt5/examples/svg/richtext/textobject/textobject
+lib/qt5/examples/svg/svggenerator/
+@bin lib/qt5/examples/svg/svggenerator/svggenerator
+lib/qt5/examples/svg/svgviewer/
+@bin lib/qt5/examples/svg/svgviewer/svgviewer

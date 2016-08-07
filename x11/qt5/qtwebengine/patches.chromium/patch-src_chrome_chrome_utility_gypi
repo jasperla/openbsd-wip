@@ -1,0 +1,11 @@
+$OpenBSD$
+--- src/chrome/chrome_utility.gypi.orig.port	Wed May 25 21:00:58 2016
++++ src/chrome/chrome_utility.gypi	Thu May 26 08:09:42 2016
+@@ -111,6 +111,7 @@
+       'variables': { 'enable_wexit_time_destructors': 1, },
+       'dependencies': [
+         '../base/base.gyp:base',
++	'../chrome/chrome.gyp:safe_browsing_proto',
+         '../components/components_strings.gyp:components_strings',
+         '../components/components.gyp:safe_json_parser_message_filter',
+         '../components/components.gyp:search_engines',

@@ -1,0 +1,9 @@
+$OpenBSD$
+Fix configure.
+--- tools/qmake/config.tests/srtp/srtp.pro.orig.port	Thu Aug  4 11:35:14 2016
++++ tools/qmake/config.tests/srtp/srtp.pro	Thu Aug  4 11:35:22 2016
+@@ -1,3 +1,3 @@
+-linux:SOURCES += srtp.cpp
++linux|openbsd:SOURCES += srtp.cpp
+ LIBS += -lsrtp
+ CONFIG -= qt

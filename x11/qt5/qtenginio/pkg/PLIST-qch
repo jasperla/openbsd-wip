@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+share/doc/qt5/qtenginio.qch
+share/doc/qt5/qtenginiooverview.qch
+share/doc/qt5/qtenginioqml.qch

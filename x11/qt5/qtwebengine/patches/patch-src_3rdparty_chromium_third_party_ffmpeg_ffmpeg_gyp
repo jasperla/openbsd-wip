@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/3rdparty/chromium/third_party/ffmpeg/ffmpeg.gyp.orig.port	Thu Aug  4 14:05:55 2016
++++ src/3rdparty/chromium/third_party/ffmpeg/ffmpeg.gyp	Thu Aug  4 14:07:35 2016
+@@ -311,7 +311,7 @@
+                 ],
+               },
+               'conditions': [
+-                ['OS != "android"', {
++                ['OS != "android" and os_bsd != 1', {
+                   'link_settings': {
+                     'libraries': [
+                       '-lrt',

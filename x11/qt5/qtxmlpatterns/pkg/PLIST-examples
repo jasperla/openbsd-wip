@@ -1,0 +1,9 @@
+@comment $OpenBSD$
+lib/qt5/examples/
+lib/qt5/examples/xmlpatterns/
+lib/qt5/examples/xmlpatterns/filetree/
+@bin lib/qt5/examples/xmlpatterns/filetree/filetree
+lib/qt5/examples/xmlpatterns/recipes/
+@bin lib/qt5/examples/xmlpatterns/recipes/recipes
+lib/qt5/examples/xmlpatterns/schema/
+@bin lib/qt5/examples/xmlpatterns/schema/schema

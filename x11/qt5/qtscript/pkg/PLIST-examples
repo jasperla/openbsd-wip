@@ -1,0 +1,21 @@
+@comment $OpenBSD$
+lib/qt5/examples/
+lib/qt5/examples/script/
+lib/qt5/examples/script/calculator/
+@bin lib/qt5/examples/script/calculator/calculator
+lib/qt5/examples/script/context2d/
+@bin lib/qt5/examples/script/context2d/context2d
+lib/qt5/examples/script/customclass/
+@bin lib/qt5/examples/script/customclass/customclass
+lib/qt5/examples/script/defaultprototypes/
+@bin lib/qt5/examples/script/defaultprototypes/defaultprototypes
+lib/qt5/examples/script/helloscript/
+@bin lib/qt5/examples/script/helloscript/helloscript
+lib/qt5/examples/script/marshal/
+@bin lib/qt5/examples/script/marshal/marshal
+lib/qt5/examples/script/qscript/
+@bin lib/qt5/examples/script/qscript/qscript
+lib/qt5/examples/script/qsdbg/
+@bin lib/qt5/examples/script/qsdbg/qsdbg
+lib/qt5/examples/script/qstetrix/
+@bin lib/qt5/examples/script/qstetrix/qstetrix

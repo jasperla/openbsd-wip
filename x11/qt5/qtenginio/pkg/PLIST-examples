@@ -1,0 +1,19 @@
+@comment $OpenBSD$
+lib/qt5/examples/
+lib/qt5/examples/enginio/
+lib/qt5/examples/enginio/quick/
+lib/qt5/examples/enginio/quick/image-gallery/
+@bin lib/qt5/examples/enginio/quick/image-gallery/image-gallery
+lib/qt5/examples/enginio/quick/socialtodos/
+@bin lib/qt5/examples/enginio/quick/socialtodos/socialtodos
+lib/qt5/examples/enginio/quick/todos/
+@bin lib/qt5/examples/enginio/quick/todos/todos
+lib/qt5/examples/enginio/quick/users/
+@bin lib/qt5/examples/enginio/quick/users/users
+lib/qt5/examples/enginio/widgets/
+lib/qt5/examples/enginio/widgets/cloudaddressbook/
+@bin lib/qt5/examples/enginio/widgets/cloudaddressbook/cloudaddressbook
+lib/qt5/examples/enginio/widgets/image-gallery-cpp/
+@bin lib/qt5/examples/enginio/widgets/image-gallery-cpp/image-gallery
+lib/qt5/examples/enginio/widgets/todos-cpp/
+@bin lib/qt5/examples/enginio/widgets/todos-cpp/todos

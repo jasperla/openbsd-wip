@@ -1,0 +1,20 @@
+@comment $OpenBSD$
+lib/qt5/examples/
+lib/qt5/examples/canvas3d/
+lib/qt5/examples/canvas3d/framebuffer/
+@bin lib/qt5/examples/canvas3d/framebuffer/framebuffer
+lib/qt5/examples/canvas3d/interaction/
+@bin lib/qt5/examples/canvas3d/interaction/interaction
+lib/qt5/examples/canvas3d/jsonmodels/
+@bin lib/qt5/examples/canvas3d/jsonmodels/jsonmodels
+lib/qt5/examples/canvas3d/quickitemtexture/
+@bin lib/qt5/examples/canvas3d/quickitemtexture/quickitemtexture
+lib/qt5/examples/canvas3d/textureandlight/
+@bin lib/qt5/examples/canvas3d/textureandlight/textureandlight
+lib/qt5/examples/canvas3d/threejs/
+lib/qt5/examples/canvas3d/threejs/cellphone/
+@bin lib/qt5/examples/canvas3d/threejs/cellphone/cellphone
+lib/qt5/examples/canvas3d/threejs/oneqt/
+@bin lib/qt5/examples/canvas3d/threejs/oneqt/oneqt
+lib/qt5/examples/canvas3d/threejs/planets/
+@bin lib/qt5/examples/canvas3d/threejs/planets/planets
