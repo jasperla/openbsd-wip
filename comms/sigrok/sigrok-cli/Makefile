@@ -3,7 +3,7 @@
 COMMENT =		command-line frontend for sigrok logic analyzer
 
 SIGROK_PROJECT =        sigrok-cli
-SIGROK_VERSION =        0.5.0
+SIGROK_VERSION =        0.6.0
 
 WANTLIB += c ftdi glib-2.0 iconv intl m pcre pthread serialport
 WANTLIB += sigrok sigrokdecode usb usb-1.0 util z zip

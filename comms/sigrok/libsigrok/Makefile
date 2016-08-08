@@ -3,7 +3,7 @@
 COMMENT =		sigrok hardware driver library
 
 SIGROK_PROJECT =	libsigrok
-SIGROK_VERSION =	0.3.0
+SIGROK_VERSION =	0.4.0
 
 SHARED_LIBS +=  sigrok                    0.0 # 0.0
 
