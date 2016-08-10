@@ -1,0 +1,15 @@
+$OpenBSD$
+--- tests/dbgutil.c.orig	Tue Jul 19 22:24:06 2016
++++ tests/dbgutil.c	Wed Aug 10 14:24:32 2016
+@@ -284,9 +284,9 @@ out:
+ 	/* cleanup */
+ 	if (png_ptr) {
+ 		if (info_ptr)
+-			png_destroy_read_struct(&png_ptr, &info_ptr, png_infopp_NULL);
++			png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp)NULL);
+ 		else
+-			png_destroy_read_struct(&png_ptr, png_infopp_NULL, png_infopp_NULL);
++			png_destroy_read_struct(&png_ptr, (png_infopp)NULL, (png_infopp)NULL);
+ 	}
+ 	if (infile)
+ 		fclose(infile);
