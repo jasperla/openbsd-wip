@@ -16,7 +16,6 @@ MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=utfcpp/}
-
 EXTRACT_SUFX =		.zip
 
 NO_TEST =		Yes
@@ -25,9 +24,8 @@ WRKDIST =		${WRKDIR}
 NO_BUILD =		Yes
 
 do-install:
-		${INSTALL_DATA_DIR} ${PREFIX}/include
-		${INSTALL_DATA_DIR} ${PREFIX}/include/utf8
-		${INSTALL_DATA} ${WRKDIR}/source/*.* ${PREFIX}/include
-		${INSTALL_DATA} ${WRKDIR}/source/utf8/*.* ${PREFIX}/include/utf8/
+	${INSTALL_DATA_DIR} ${PREFIX}/include{,/utf8}
+	${INSTALL_DATA} ${WRKDIR}/source/*.* ${PREFIX}/include
+	${INSTALL_DATA} ${WRKDIR}/source/utf8/*.* ${PREFIX}/include/utf8/
 
 .include <bsd.port.mk>
