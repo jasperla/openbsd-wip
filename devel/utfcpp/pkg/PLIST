@@ -1,6 +1,0 @@
-@comment $OpenBSD$
-include/utf8/
-include/utf8.h
-include/utf8/checked.h
-include/utf8/core.h
-include/utf8/unchecked.h
