@@ -33,16 +33,23 @@ MODQT_LRELEASE ?= ${MODQT5_LRELEASE}
 
 _MODQT5_CMAKE_PKGS = \
 	Qt5 \
+	Qt53DCore \
+	Qt53DInput \
+	Qt53DLogic \
+	Qt53DQuick \
+	Qt53DQuickInput \
+	Qt53DQuickRender \
+	Qt5Render \
 	Qt5Bluetooth \
 	Qt5Concurrent \
 	Qt5Core \
 	Qt5DBus \
-	Qt5Declarative \
 	Qt5Designer \
 	Qt5Enginio \
 	Qt5Gui \
 	Qt5Help \
 	Qt5LinguistTools \
+	Qt5Location \
 	Qt5Multimedia \
 	Qt5MultimediaWidgets \
 	Qt5Network \
@@ -58,11 +65,14 @@ _MODQT5_CMAKE_PKGS = \
 	Qt5Script \
 	Qt5ScriptTools \
 	Qt5Sensors \
+	Qt5SerialBus \
 	Qt5SerialPort \
 	Qt5Sql \
 	Qt5Svg \
 	Qt5Test \
+	Qt5UiPlugin \
 	Qt5UiTools \
+	Qt5WebChannel \
 	Qt5WebKit \
 	Qt5WebKitWidgets \
 	Qt5WebSockets \
@@ -74,19 +84,19 @@ _MODQT5_CMAKE_PKGS = \
 _MODQT5_SETUP +=	${_p}_DIR=${MODQT5_LIBDIR}/cmake
 .endfor
 
-MODQT5_LIB_DEPENDS = 	x11/qt5/qtbase
+MODQT5_LIB_DEPENDS = 	x11/qt5/qtbase,-main
 MODQT_LIB_DEPENDS ?= 	${MODQT5_LIB_DEPENDS}
-LIB_DEPENDS += 		${MODQT5_LIB_DEPENDS}
 
 # qdoc, etc.
-MODQT5_NO_TOOLS_DEP ?=	No
-.if ${MODQT5_NO_TOOLS_DEP:L} == "yes"
-MODQT5_BUILD_DEPENDS =
-.else
 MODQT5_BUILD_DEPENDS = 	x11/qt5/qttools,-main
-.endif
 MODQT_BUILD_DEPENDS ?= 	${MODQT5_BUILD_DEPENDS}
+
+MODQT_DEPS ?=		Yes
+MODQT5_DEPS ?=		${MODQT_DEPS}
+.if ${MODQT5_DEPS:L} == "yes"
+LIB_DEPENDS += 		${MODQT5_LIB_DEPENDS}
 BUILD_DEPENDS += 	${MODQT5_BUILD_DEPENDS}
+.endif
 
 CONFIGURE_ENV +=${_MODQT5_SETUP}
 MAKE_ENV +=	${_MODQT5_SETUP}

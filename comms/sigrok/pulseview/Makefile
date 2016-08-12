@@ -3,7 +3,7 @@
 COMMENT =		command-line frontend for sigrok logic analyzer
 
 SIGROK_PROJECT =        pulseview
-SIGROK_VERSION =        0.2.0
+SIGROK_VERSION =        0.3.0
 
 WANTLIB += c ftdi glib-2.0 gthread-2.0 iconv intl m pcre pthread
 WANTLIB += sigrok sigrokdecode usb usb-1.0 util z zip

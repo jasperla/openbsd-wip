@@ -3,7 +3,7 @@
 COMMENT =		sigrok protocol decoding library
 
 SIGROK_PROJECT =        libsigrokdecode
-SIGROK_VERSION =        0.3.1
+SIGROK_VERSION =        0.4.0
 
 SHARED_LIBS +=  sigrokdecode              0.0 # 0.1
 

@@ -5,7 +5,6 @@
      SUBDIR += qtactiveqt
      SUBDIR += qtbase
      SUBDIR += qtcanvas3d
-     SUBDIR += qtconnectivity
      SUBDIR += qtdeclarative
      SUBDIR += qtdeclarative-render2d
      SUBDIR += qtdoc
@@ -23,13 +22,19 @@
      SUBDIR += qtsvg
      SUBDIR += qttools
      SUBDIR += qttranslations
-     SUBDIR += qtwayland
      SUBDIR += qtwebchannel
-     SUBDIR += qtwebengine
      SUBDIR += qtwebkit
      SUBDIR += qtwebsockets
-     SUBDIR += qtwebview
      SUBDIR += qtx11extras
      SUBDIR += qtxmlpatterns
+
+# no support for Bluetooth or NFC in base
+#     SUBDIR += qtconnectivity
+# no support for Wayland in Xenocara
+#     SUBDIR += qtwayland
+# not ported yet
+#     SUBDIR += qtwebengine
+# requires qtwebengine
+#     SUBDIR += qtwebview
 
 .include <bsd.port.subdir.mk>

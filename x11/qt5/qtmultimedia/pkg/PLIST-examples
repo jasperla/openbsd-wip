@@ -1,0 +1,42 @@
+@comment $OpenBSD$
+lib/qt5/examples/
+lib/qt5/examples/multimedia/
+lib/qt5/examples/multimedia/audiodecoder/
+@bin lib/qt5/examples/multimedia/audiodecoder/audiodecoder
+lib/qt5/examples/multimedia/audiodevices/
+@bin lib/qt5/examples/multimedia/audiodevices/audiodevices
+lib/qt5/examples/multimedia/audioinput/
+@bin lib/qt5/examples/multimedia/audioinput/audioinput
+lib/qt5/examples/multimedia/audiooutput/
+@bin lib/qt5/examples/multimedia/audiooutput/audiooutput
+lib/qt5/examples/multimedia/audiorecorder/
+@bin lib/qt5/examples/multimedia/audiorecorder/audiorecorder
+lib/qt5/examples/multimedia/declarative-camera/
+@bin lib/qt5/examples/multimedia/declarative-camera/declarative-camera
+lib/qt5/examples/multimedia/declarative-radio/
+@bin lib/qt5/examples/multimedia/declarative-radio/declarative-radio
+lib/qt5/examples/multimedia/radio/
+@bin lib/qt5/examples/multimedia/radio/radio
+lib/qt5/examples/multimedia/spectrum/
+lib/qt5/examples/multimedia/spectrum/libfftreal.prl
+@lib lib/qt5/examples/multimedia/spectrum/libfftreal.so.${LIBfftreal_VERSION}
+@bin lib/qt5/examples/multimedia/spectrum/spectrum
+lib/qt5/examples/multimedia/video/
+lib/qt5/examples/multimedia/video/qmlvideo/
+@bin lib/qt5/examples/multimedia/video/qmlvideo/qmlvideo
+lib/qt5/examples/multimedia/video/qmlvideofx/
+@bin lib/qt5/examples/multimedia/video/qmlvideofx/qmlvideofx
+lib/qt5/examples/multimediawidgets/
+lib/qt5/examples/multimediawidgets/camera/
+@bin lib/qt5/examples/multimediawidgets/camera/camera
+lib/qt5/examples/multimediawidgets/customvideosurface/
+lib/qt5/examples/multimediawidgets/customvideosurface/customvideoitem/
+@bin lib/qt5/examples/multimediawidgets/customvideosurface/customvideoitem/customvideoitem
+lib/qt5/examples/multimediawidgets/customvideosurface/customvideowidget/
+@bin lib/qt5/examples/multimediawidgets/customvideosurface/customvideowidget/customvideowidget
+lib/qt5/examples/multimediawidgets/player/
+@bin lib/qt5/examples/multimediawidgets/player/player
+lib/qt5/examples/multimediawidgets/videographicsitem/
+@bin lib/qt5/examples/multimediawidgets/videographicsitem/videographicsitem
+lib/qt5/examples/multimediawidgets/videowidget/
+@bin lib/qt5/examples/multimediawidgets/videowidget/videowidget

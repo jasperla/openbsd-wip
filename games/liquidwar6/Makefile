@@ -2,8 +2,8 @@
 
 COMMENT =		original multiplayer wargame
 
-V =			0.4
-DISTNAME =		liquidwar6-${V}.3681
+V =			0.6
+DISTNAME =		liquidwar6-${V}.3902
 PKGNAME =		liquidwar6-${V}
 
 CATEGORIES =		games
@@ -44,8 +44,14 @@ LIB_DEPENDS =		devel/cunit \
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--enable-cunit \
 			--enable-allinone \
-			--enable-optimize
+			--disable-doxygen
 CONFIGURE_ENV =		LDFLAGS=-L${LOCALBASE}/lib \
 			LIBS=-lexecinfo
+
+# Tests write home
+PORTHOME = ${WRKBUILD}
+
+post-install:
+	@rm -Rf ${PREFIX}/libexec/*-test
 
 .include <bsd.port.mk>

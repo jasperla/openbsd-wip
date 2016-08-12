@@ -1,0 +1,30 @@
+@comment $OpenBSD$
+lib/qt5/examples/
+lib/qt5/examples/bluetooth/
+lib/qt5/examples/bluetooth/btchat/
+@bin lib/qt5/examples/bluetooth/btchat/btchat
+lib/qt5/examples/bluetooth/btfiletransfer/
+@bin lib/qt5/examples/bluetooth/btfiletransfer/btfiletransfer
+lib/qt5/examples/bluetooth/btscanner/
+@bin lib/qt5/examples/bluetooth/btscanner/btscanner
+lib/qt5/examples/bluetooth/chat/
+@bin lib/qt5/examples/bluetooth/chat/qml_chat
+lib/qt5/examples/bluetooth/heartlistener/
+@bin lib/qt5/examples/bluetooth/heartlistener/heartlistener
+lib/qt5/examples/bluetooth/lowenergyscanner/
+@bin lib/qt5/examples/bluetooth/lowenergyscanner/lowenergyscanner
+lib/qt5/examples/bluetooth/picturetransfer/
+@bin lib/qt5/examples/bluetooth/picturetransfer/qml_picturetransfer
+lib/qt5/examples/bluetooth/pingpong/
+@bin lib/qt5/examples/bluetooth/pingpong/pingpong
+lib/qt5/examples/bluetooth/scanner/
+@bin lib/qt5/examples/bluetooth/scanner/qml_scanner
+lib/qt5/examples/nfc/
+lib/qt5/examples/nfc/annotatedurl/
+@bin lib/qt5/examples/nfc/annotatedurl/annotatedurl
+lib/qt5/examples/nfc/corkboard/
+@bin lib/qt5/examples/nfc/corkboard/qml_corkboard
+lib/qt5/examples/nfc/ndefeditor/
+@bin lib/qt5/examples/nfc/ndefeditor/ndefeditor
+lib/qt5/examples/nfc/poster/
+@bin lib/qt5/examples/nfc/poster/qml_poster

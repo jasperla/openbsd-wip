@@ -7,6 +7,7 @@ BROKEN-powerpc =	never built - gcc ICE
 
 VERSION ?=		${QT5_VERSION}
 DIST_VERSION ?=		${QT5_DIST_VERSION}
+DISTNAME ?=		${QT5NAME:L}-opensource-src-${DIST_VERSION}
 
 PKGNAME ?=		${DISTNAME:C/-opensource-src//:C/-${DIST_VERSION}/-${VERSION}/}
 PKGNAME-main ?=		${PKGNAME}
@@ -14,9 +15,9 @@ PKGNAME-examples ?=	${PKGNAME:C/(-[0-9])/-examples\1/}
 PKGNAME-html ?=		${PKGNAME:C/(-[0-9])/-html\1/}
 PKGNAME-qch ?=		${PKGNAME:C/(-[0-9])/-qch\1/}
 
-COMMENT-examples ?=	examples for ${COMMENT-main}
-COMMENT-html ?=		HTML documentation for ${COMMENT-main}
-COMMENT-qch ?=		compiled documentation for ${COMMENT-main}
+COMMENT-examples ?=	${QT5NAME} development examples
+COMMENT-html ?=		HTML documentation for ${QT5NAME}
+COMMENT-qch ?=		qdoc-compiled documentation for ${QT5NAME}
 
 PKG_ARCH-html =		*
 PKG_ARCH-qch =		*
@@ -28,7 +29,27 @@ HOMEPAGE ?=		http://www.qt-project.org/
 MAINTAINER ?=		KDE porting team <openbsd-kde@googlegroups.com>
 
 WANTLIB-html =
+LIB_DEPENDS-html =
+RUN_DEPENDS-html ?=
+
 WANTLIB-qch =
+LIB_DEPENDS-qch =
+RUN_DEPENDS-qch ?=
+
+NEXT_VERSION ?=		${QT5_NEXT_VERSION}
+
+.if defined(MULTI_PACKAGES)
+. if ${MULTI_PACKAGES:M-main}
+RUN_DEPENDS-qch +=	${BASE_PKGPATH},-main>=${VERSION:R},<${NEXT_VERSION}
+RUN_DEPENDS-html +=	${BASE_PKGPATH},-main>=${VERSION:R},<${NEXT_VERSION}
+
+# XXX this will be wrong for Enginio
+RUN_DEPENDS-examples ?=	${RUN_DEPENDS}
+RUN_DEPENDS-examples +=	${BASE_PKGPATH},-main>=${VERSION:R},<${NEXT_VERSION}
+LIB_DEPENDS-examples ?=	${LIB_DEPENDS}
+LIB_DEPENDS-examples +=	${BASE_PKGPATH},-main>=${VERSION:R},<${NEXT_VERSION}
+. endif
+.endif
 
 # Mostly LGPLv2.1 or LGPLv3 for code; FDLv1.3 for documentation.
 # Some third-party parts are BSD-licensed.
@@ -40,11 +61,8 @@ PERMIT_PACKAGE_CDROM ?=	Yes
 MASTER_SITES ?=		http://download.qt.io/official_releases/qt/${VERSION:R}/${DIST_VERSION}/submodules/
 DIST_SUBDIR ?=		qt
 
-MODULES +=		gcc4
-.if ${MODULES:Mgcc4}
-MODGCC4_LANGS =		c++
-MODGCC4_ARCHS =		*
-.endif
+CONFIGURE_STYLE ?=	qmake
+MODULES +=		devel/qmake x11/qt5
 
 DESTDIRNAME =		INSTALL_ROOT
 
@@ -60,7 +78,7 @@ MAKE_FLAGS =		-B -j ${MAKE_JOBS} \
 # qmake supports so-called "shadow" builds: it's like normal
 # out-of-source build but build directory is required to be located
 # under source root.
-SEPARATE_BUILD =	Yes
+SEPARATE_BUILD ?=	Yes
 WRKBUILD =		${WRKSRC}/build-${ARCH}
 
 # readability macros
@@ -85,7 +103,8 @@ CONFIGURE_ENV += LDFLAGS="-Wl,--relax"
 # dependencies, so we'd better use the target qmake always creates
 # first, named "first".
 ALL_TARGET ?=		first
-#FAKE_TARGET ?=		install
+#ALL_TARGET ?=		all
+FAKE_TARGET ?=		install
 TEST_TARGET ?=		check
 
 .include <bsd.port.arch.mk>
@@ -94,9 +113,9 @@ FLAVOR ?=
 
 # Force re-running qmake before generating documentation
 # to allow qdoc and qhelpgenerator do their work.
-.if ${BUILD_PACKAGES:M-html} || ${BUILD_PACKAGES:M-qch}
-ALL_TARGET +=		qmake_all
-.endif
+#.if ${BUILD_PACKAGES:M-html} || ${BUILD_PACKAGES:M-qch}
+#ALL_TARGET +=		qmake_all
+#.endif
 
 .if ${BUILD_PACKAGES:M-html}
 ALL_TARGET +=		html_docs
@@ -108,16 +127,17 @@ ALL_TARGET +=		qch_docs
 FAKE_TARGET +=		install_qch_docs
 .endif
 
-.if !${BUILD_PACKAGES:M-examples}
-CONFIGURE_ARGS +=	-nomake examples
+.if ${CONFIGURE_STYLE:Mqmake}
+. if !${BUILD_PACKAGES:M-examples}
+MODQMAKE_ARGS +=	CONFIG-=examples
+. endif
 .endif
 
 .if ${FLAVOR:Mno_tests}
 NO_TEST =		Yes
-CONFIGURE_ARGS +=	-nomake tests
 .endif
 
-SUBST_VARS =		VERSION
+SUBST_VARS +=		VERSION
 
 DESTDIRNAME =	INSTALL_ROOT
 WRKDIST ?=	${WRKDIR}/${DISTNAME:C/${DIST_VERSION}/${VERSION}/}
@@ -161,3 +181,35 @@ qt5-post-install:
 	-find ${QT_BASEDIR}/mkspecs -name '*${PATCHORIG}' | xargs -r rm
 
 post-install: qt5-post-install
+
+# Generates DESCR-* from DESCR-main, and PLIST-* from PLIST-main.
+# Don't forget to run "rm pkg/PLIST-*; make plist" before this.
+gen_pkg:
+	test -e ${PKGDIR}/PLIST-main
+	test -e ${PKGDIR}/DESCR-main
+.if ${BUILD_PACKAGES:M-examples}
+	echo '@comment $$OpenBSD$$' >${PKGDIR}/PLIST-examples
+	egrep '^(@.* )?lib/qt5/examples/' ${PKGDIR}/PLIST-main >>${PKGDIR}/PLIST-examples
+	sed -Ei '\,^(@.* )?lib/qt5/examples/,d' ${PKGDIR}/PLIST-main
+	sed '$$s/.*/This package contains ${QT5NAME} compiled examples and their sources./' \
+		<${PKGDIR}/DESCR-main >${PKGDIR}/DESCR-examples
+.endif
+# note that -qch should be handled before -html here
+.if ${BUILD_PACKAGES:M-qch}
+	echo '@comment $$OpenBSD$$' >${PKGDIR}/PLIST-qch
+	egrep '^(@.* )?share/doc/qt5/[^/]+\.qch?$$' ${PKGDIR}/PLIST-main >>${PKGDIR}/PLIST-qch
+	sed -Ei '\,^(@.* )?share/doc/qt5/.*\.qch,d' ${PKGDIR}/PLIST-main
+	sed '$$s/.*/This package contains compiled ${QT5NAME} documentation./' \
+		<${PKGDIR}/DESCR-main >${PKGDIR}/DESCR-qch
+.endif
+.if ${BUILD_PACKAGES:M-html}
+	echo '@comment $$OpenBSD$$' >${PKGDIR}/PLIST-html
+	egrep '^(@.* )?share/doc/qt5/' ${PKGDIR}/PLIST-main >>${PKGDIR}/PLIST-html
+	sed -Ei '\,^(@.* )?share/doc/qt5/,d' ${PKGDIR}/PLIST-main
+	sed '$$s/.*/This package contains ${QT5NAME} HTML documentation./' \
+		<${PKGDIR}/DESCR-main >${PKGDIR}/DESCR-html
+.endif
+
+show_deps:
+	@find ${WRKSRC} -name '*.pr[iof]' -print0 | \
+		xargs -0r egrep -A 2 '\<(qtHaveModule|QT_CONFIG)\>'

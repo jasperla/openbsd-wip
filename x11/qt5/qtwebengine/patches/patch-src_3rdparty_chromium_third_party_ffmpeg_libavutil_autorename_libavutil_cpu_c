@@ -1,0 +1,14 @@
+$OpenBSD$
+--- src/3rdparty/chromium/third_party/ffmpeg/libavutil/autorename_libavutil_cpu.c.orig.port	Sat Aug  6 00:14:59 2016
++++ src/3rdparty/chromium/third_party/ffmpeg/libavutil/autorename_libavutil_cpu.c	Sat Aug  6 19:57:57 2016
+@@ -16,6 +16,10 @@
+  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+  */
+ 
++#ifndef _BSD_SOURCE
++# define _BSD_SOURCE
++#endif
++
+ #include <stdint.h>
+ 
+ #include "cpu.h"

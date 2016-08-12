@@ -1,6 +1,1 @@
-sigrok-firmware-fx2lafw build fails on amd64:
-
-sdcclib ints.lib ep0ack_isr.rel ep0in_isr.rel ep0out_isr.rel ep0ping_isr.rel ep1in_isr.rel ep1out_isr.rel ep1ping_isr.rel ep2ef_isr.rel ep2ff_isr.rel ep2isoerr_isr.rel ep2_isr.rel ep2pf_isr.rel ep2ping_isr.rel ep4ef_isr.rel ep4ff_isr.rel ep4isoerr_isr.rel ep4_isr.rel ep4pf_isr.rel ep4ping_isr.rel ep6ef_isr.rel ep6ff_isr.rel ep6isoerr_isr.rel ep6_isr.rel ep6pf_isr.rel ep6ping_isr.rel ep8ef_isr.rel ep8ff_isr.rel ep8isoerr_isr.rel ep8_isr.rel ep8pf_isr.rel ep8ping_isr.rel errlimit_isr.rel gpifdone_isr.rel gpifwf_isr.rel hispeed_isr.rel ibn_isr.rel sof_isr.rel spare_isr.rel sudav_isr.rel suspend_isr.rel sutok_isr.rel usbreset_isr.rel
-*** Signal SIGSEGV in fx2lib/lib/interrupts (Makefile:371 'ints.lib')
-
-Should try updating sdcc first...
+Nothing left to do except test (but who can find the time...?).

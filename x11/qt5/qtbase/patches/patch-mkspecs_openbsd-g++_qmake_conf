@@ -8,7 +8,7 @@ $OpenBSD$
 5. Fix --no-undefined usage and sync other things with current OpenBSD style.
 6. Allow C++11 to work.
 --- mkspecs/openbsd-g++/qmake.conf.orig	Wed May 25 18:46:17 2016
-+++ mkspecs/openbsd-g++/qmake.conf	Mon Jul 18 22:58:04 2016
++++ mkspecs/openbsd-g++/qmake.conf	Tue Jul 19 20:55:47 2016
 @@ -4,45 +4,38 @@
  
  MAKEFILE_GENERATOR      = UNIX
@@ -38,7 +38,7 @@ $OpenBSD$
 +QMAKE_CFLAGS_STATIC_LIB = -fPIC
  QMAKE_CFLAGS_YACC       = -Wno-unused -Wno-parentheses
 -QMAKE_CFLAGS_THREAD     = -pthread
-+# QMAKE_CFLAGS_THREAD     = -pthread
++QMAKE_CFLAGS_THREAD     =
 +QMAKE_CFLAGS_OPTIMIZE_FULL = $$QMAKE_CFLAGS_RELEASE
  
  QMAKE_CXX               = g++
@@ -67,14 +67,11 @@ $OpenBSD$
 +QMAKE_LIBDIR_X11        = $(X11BASE)/lib
 +QMAKE_INCDIR_OPENGL     = $(X11BASE)/include
 +QMAKE_LIBDIR_OPENGL     = $(X11BASE)/lib
-+QMAKE_INCDIR_PREPEND    = /usr/local/lib/gcc/x86_64-unknown-openbsd6.0/4.9.3/include
++QMAKE_INCDIR_PREPEND    = ${OPENBSD_INCDIR_PREPEND}
  
  QMAKE_LINK              = g++
  QMAKE_LINK_SHLIB        = g++
-@@ -51,20 +44,18 @@ QMAKE_LINK_C_SHLIB      = gcc
- QMAKE_LINK_SHLIB_CMD    = $$QMAKE_LINK_SHLIB $(LFLAGS) \
-                           $$QMAKE_CFLAGS_SHLIB $$QMAKE_LFLAGS \
-                           -o $(TARGETD) $(OBJECTS) $(OBJMOC) $(LIBS)
+@@ -54,17 +47,15 @@ QMAKE_LINK_SHLIB_CMD    = $$QMAKE_LINK_SHLIB $(LFLAGS)
  QMAKE_LFLAGS            =
  QMAKE_LFLAGS_RELEASE    =
  QMAKE_LFLAGS_DEBUG      =

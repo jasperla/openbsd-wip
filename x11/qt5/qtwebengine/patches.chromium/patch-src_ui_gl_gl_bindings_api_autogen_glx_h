@@ -1,0 +1,11 @@
+$OpenBSD$
+--- src/ui/gl/gl_bindings_api_autogen_glx.h.orig.port	Thu Mar  3 10:17:08 2016
++++ src/ui/gl/gl_bindings_api_autogen_glx.h	Thu Mar  3 10:17:19 2016
+@@ -84,6 +84,7 @@ bool glXGetMscRateOMLFn(Display* dpy,
+                         GLXDrawable drawable,
+                         int32_t* numerator,
+                         int32_t* denominator) override;
++__GLXextFuncPtr glXGetProcAddressARBFn(const GLubyte* procName) override;
+ void glXGetSelectedEventFn(Display* dpy,
+                            GLXDrawable drawable,
+                            unsigned long* mask) override;

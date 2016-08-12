@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+share/doc/qt5/qtquickcontrols.qch
+share/doc/qt5/qtquickdialogs.qch
+share/doc/qt5/qtquickextras.qch
+share/doc/qt5/qtquicklayouts.qch

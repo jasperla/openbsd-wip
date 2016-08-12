@@ -1,11 +1,9 @@
 # $OpenBSD$
 
-DISTNAME =		qttools-opensource-src-${DIST_VERSION}
-COMMENT-main =		Qt tools
-COMMENT-examples =	Qt tools development examples
+QT5NAME =		QtTools
+COMMENT-main =		Qt development tools
 
-PKGNAME-main =		${PKGNAME}
-PKGNAME-examples =	qttools-examples-${VERSION}
+DPB_PROPERTIES =	parallel
 
 MULTI_PACKAGES =	-main -examples
 
@@ -21,9 +19,11 @@ WANTLIB-main += Qt5Sql Qt5Widgets Qt5Xml c m pthread
 WANTLIB-examples =  ${WANTLIB}
 WANTLIB-examples += GL Qt5Core Qt5Gui Qt5Help Qt5Widgets c m pthread
 
-MODULES =		x11/qt5 devel/qmake
-MODQT5_NO_TOOLS_DEP =	Yes
+MODQT5_DEPS =		No
+LIB_DEPENDS-main =	x11/qt5/qtbase,-main>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 
-LIB_DEPENDS-examples =	${BASE_PKGPATH},-main
+FLAVORS =		debug
+PSEUDO_FLAVORS =	no_examples
+FLAVOR ?=
 
 .include <bsd.port.mk>

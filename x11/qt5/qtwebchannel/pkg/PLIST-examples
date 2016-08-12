@@ -1,0 +1,24 @@
+@comment $OpenBSD$
+lib/qt5/examples/
+lib/qt5/examples/webchannel/
+lib/qt5/examples/webchannel/chatclient-html/
+lib/qt5/examples/webchannel/chatclient-html/chatclient.html
+lib/qt5/examples/webchannel/chatclient-html/qwebchannel.js
+lib/qt5/examples/webchannel/chatclient-qml/
+lib/qt5/examples/webchannel/chatclient-qml/qmlchatclient.qml
+lib/qt5/examples/webchannel/chatclient-qml/qwebchannel.js
+lib/qt5/examples/webchannel/chatserver-cpp/
+@bin lib/qt5/examples/webchannel/chatserver-cpp/chatserver
+lib/qt5/examples/webchannel/nodejs/
+lib/qt5/examples/webchannel/nodejs/chatclient.js
+lib/qt5/examples/webchannel/nodejs/package.json
+lib/qt5/examples/webchannel/nodejs/qwebchannel.js
+lib/qt5/examples/webchannel/qwclient/
+lib/qt5/examples/webchannel/qwclient/README
+lib/qt5/examples/webchannel/qwclient/package.json
+lib/qt5/examples/webchannel/qwclient/qwclient.js
+lib/qt5/examples/webchannel/qwclient/qwebchannel.js
+lib/qt5/examples/webchannel/standalone/
+lib/qt5/examples/webchannel/standalone/index.html
+lib/qt5/examples/webchannel/standalone/qwebchannel.js
+@bin lib/qt5/examples/webchannel/standalone/standalone

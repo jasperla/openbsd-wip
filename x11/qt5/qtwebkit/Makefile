@@ -1,75 +1,39 @@
 # $OpenBSD: Makefile,v 1.51 2016/03/20 15:58:26 naddy Exp $
 
-DISTNAME =		qtwebkit-opensource-src-${VERSION}
-
+QT5NAME =		QtWebkit
 COMMENT-main =		old Webkit integration framework for Qt
 
-SHARED_LIBS +=	Qt5WebKit		1.1
-SHARED_LIBS +=	Qt5WebKitWidgets	1.1
+SHARED_LIBS +=		Qt5WebKit		2.0
+SHARED_LIBS +=		Qt5WebKitWidgets	2.0
 
 CATEGORIES =		www
 
-# Mostly LGPLv2.1 or LGPLv3 for code; FDLv1.3 for documentation.
-# Some third-party parts are BSD-licensed.
-# Also, many parts have are dual-licensed having either commercial, GPL,
-# Apache 2.0 or other type of license as an alternative option.
-# A few components, including QtWebEngine, are LGPLv3 only, no LGPLv2.1.
-PERMIT_PACKAGE_CDROM =	Yes
+WANTLIB-main =  ${WANTLIB}
+WANTLIB-main += GL Qt5Core Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport
+WANTLIB-main += Qt5Sql Qt5Widgets X11 Xext Xrender c gio-2.0 glib-2.0
+WANTLIB-main += gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstpbutils-1.0
+WANTLIB-main += gstreamer-1.0 gstvideo-1.0 icudata icui18n icuuc jpeg
+WANTLIB-main += m png pthread sqlite3 webp xml2 xslt z
 
-MULTI_PACKAGES =	-main -examples -html -qch
+MULTI_PACKAGES =	-main -html -qch
 
 MASTER_SITES =		http://download.qt.io/community_releases/${VERSION:R}/${VERSION}/
 
-MODULES =		gcc4 devel/gettext perl lang/python lang/ruby
-MODGCC4_LANGS =		c++
-MODGCC4_ARCHS =		*
+MODULES =		devel/gettext perl lang/python lang/ruby
 MODPY_RUNDEP =		No
 MODRUBY_RUNDEP =	No
 
 # no leveldb dependency, requires -lmemenv; QtWebKit uses internal version
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
-			audio/openal \
-			audio/pulseaudio \
-			databases/iodbc \
-			devel/atk \
-			devel/harfbuzz \
-			devel/libexecinfo \
-			devel/pango \
-			graphics/cairo \
-			graphics/gdk-pixbuf2 \
-			graphics/jasper \
-			graphics/libmng \
 			graphics/libwebp \
 			multimedia/gstreamer1/core \
 			multimedia/gstreamer1/plugins-base \
-			print/cups,-libs \
 			textproc/icu4c \
-			textproc/libxslt \
-			x11/gtk+2 \
-			x11/xkbcommon
-
-LIB_DEPENDS-examples =	${BUILD_PKGPATH},-main>=${VERSION:R} \
-			${MODGCC4_CPPLIBDEP}
+			textproc/libxslt
 
 LIB_DEPENDS-html =
 
-LIB_DEPENDS-mysql =	${BUILD_PKGPATH},-main>=${VERSION:R} \
-			${MODGCC4_CPPLIBDEP} \
-			databases/mariadb
-
-LIB_DEPENDS-psql =	${BUILD_PKGPATH},-main>=${VERSION:R} \
-			${MODGCC4_CPPLIBDEP} \
-			databases/postgresql
-
 LIB_DEPENDS-qch =
-
-LIB_DEPENDS-sqlite2 =	${BUILD_PKGPATH},-main>=${VERSION:R} \
-			${MODGCC4_CPPLIBDEP} \
-			databases/sqlite
-
-LIB_DEPENDS-tds =	${BUILD_PKGPATH},-main>=${VERSION:R} \
-			${MODGCC4_CPPLIBDEP} \
-			databases/freetds
 
 BUILD_DEPENDS =		devel/bison \
 			devel/gperf \
@@ -80,13 +44,6 @@ BUILD_DEPENDS =		devel/bison \
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			geo/geoclue \
 			x11/dbus
-RUN_DEPENDS-examples =
-RUN_DEPENDS-html =
-RUN_DEPENDS-mysql =
-RUN_DEPENDS-psql =
-RUN_DEPENDS-qch =
-RUN_DEPENDS-sqlite2 =
-RUN_DEPENDS-tds =
 
 MAKE_ENV =		NINJA_PATH="${LOCALBASE}/bin/ninja" \
 			PYTHON=${MODPY_BIN} \
@@ -96,7 +53,7 @@ MAKE_FLAGS =		PYTHON=${MODPY_BIN} \
 			RUBY=${RUBY}
 
 FLAVORS =		debug
-PSEUDO_FLAVORS =	no_examples no_html no_tests
+PSEUDO_FLAVORS =	no_html no_tests
 FLAVOR ?=
 
 # See qtbase/tests/README for details
@@ -105,8 +62,6 @@ TEST_DEPENDS =		${MODPY_RUN_DEPENDS} \
 			${MODRUBY_RUN_DEPENDS} \
 			audio/sox \
 			kde4-minimal-*|kdebase-*:meta/kde4,-minimal
-
-PATCHORIG =		.ports.orig
 
 pre-configure:
 	# Python and Ruby are used for building mainly, those paths

@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+@bin bin/quirc-demo
+@bin bin/quirc-scanner
+include/quirc.h
+lib/libquirc.a
+@lib lib/libquirc.so.${LIBquirc_VERSION}

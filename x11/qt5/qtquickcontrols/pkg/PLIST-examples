@@ -1,0 +1,32 @@
+@comment $OpenBSD$
+lib/qt5/examples/
+lib/qt5/examples/quickcontrols/
+lib/qt5/examples/quickcontrols/controls/
+lib/qt5/examples/quickcontrols/controls/basiclayouts/
+@bin lib/qt5/examples/quickcontrols/controls/basiclayouts/basiclayouts
+lib/qt5/examples/quickcontrols/controls/calendar/
+@bin lib/qt5/examples/quickcontrols/controls/calendar/calendar
+lib/qt5/examples/quickcontrols/controls/filesystembrowser/
+@bin lib/qt5/examples/quickcontrols/controls/filesystembrowser/filesystembrowser
+lib/qt5/examples/quickcontrols/controls/gallery/
+@bin lib/qt5/examples/quickcontrols/controls/gallery/gallery
+lib/qt5/examples/quickcontrols/controls/styles/
+@bin lib/qt5/examples/quickcontrols/controls/styles/styles
+lib/qt5/examples/quickcontrols/controls/tableview/
+@bin lib/qt5/examples/quickcontrols/controls/tableview/tableview
+lib/qt5/examples/quickcontrols/controls/texteditor/
+@bin lib/qt5/examples/quickcontrols/controls/texteditor/texteditor
+lib/qt5/examples/quickcontrols/controls/touch/
+@bin lib/qt5/examples/quickcontrols/controls/touch/touch
+lib/qt5/examples/quickcontrols/controls/uiforms/
+@bin lib/qt5/examples/quickcontrols/controls/uiforms/uiforms
+lib/qt5/examples/quickcontrols/dialogs/
+lib/qt5/examples/quickcontrols/dialogs/systemdialogs/
+@bin lib/qt5/examples/quickcontrols/dialogs/systemdialogs/systemdialogs
+lib/qt5/examples/quickcontrols/extras/
+lib/qt5/examples/quickcontrols/extras/dashboard/
+@bin lib/qt5/examples/quickcontrols/extras/dashboard/dashboard
+lib/qt5/examples/quickcontrols/extras/flat/
+@bin lib/qt5/examples/quickcontrols/extras/flat/flat
+lib/qt5/examples/quickcontrols/extras/gallery/
+@bin lib/qt5/examples/quickcontrols/extras/gallery/gallery

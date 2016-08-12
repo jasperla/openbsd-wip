@@ -1,0 +1,66 @@
+$OpenBSD$
+--- Makefile.orig	Tue Jul 19 22:24:06 2016
++++ Makefile	Wed Aug 10 15:18:29 2016
+@@ -19,9 +19,9 @@ SDL_CFLAGS := $(shell pkg-config --cflags sdl)
+ SDL_LIBS := $(shell pkg-config --libs sdl)
+ 
+ LIB_VERSION = 1.0
+-LIB_SONAME = libquirc.so.1
++LIB_SONAME = libquirc.so.${LIBquirc_VERSION}
+ 
+-QUIRC_CFLAGS = -O3 -Wall -Ilib $(CFLAGS) $(SDL_CFLAGS)
++QUIRC_CFLAGS = -Ilib $(CFLAGS) $(SDL_CFLAGS)
+ LIB_OBJ = \
+     lib/decode.o \
+     lib/identify.o \
+@@ -35,27 +35,27 @@ DEMO_OBJ = \
+     demo/dthash.o \
+     demo/demoutil.o
+ 
+-all: libquirc.so qrtest inspect quirc-demo quirc-scanner
++all: $(LIB_SONAME) qrtest inspect quirc-demo quirc-scanner
+ 
+ qrtest: tests/dbgutil.o tests/qrtest.o libquirc.a
+-	$(CC) -o $@ $^ -lm -ljpeg -lpng
++	$(CC) -o $@ $^ $(LDFLAGS) -lm -ljpeg -lpng
+ 
+ inspect: tests/dbgutil.o tests/inspect.o libquirc.a
+-	$(CC) -o $@ $^ -lm -ljpeg -lpng $(SDL_LIBS) -lSDL_gfx
++	$(CC) -o $@ $^ $(LDFLAGS) -lm -ljpeg -lpng $(SDL_LIBS) -lSDL_gfx
+ 
+ quirc-demo: $(DEMO_OBJ) demo/demo.o libquirc.a
+-	$(CC) -o $@ $^ -lm -ljpeg $(SDL_LIBS) -lSDL_gfx
++	$(CC) -o $@ $^ $(LDFLAGS) -lm -ljpeg $(SDL_LIBS) -lSDL_gfx
+ 
+ quirc-scanner: $(DEMO_OBJ) demo/scanner.o libquirc.a
+-	$(CC) -o $@ $^ -lm -ljpeg
++	$(CC) -o $@ $^ $(LDFLAGS) -lm -ljpeg
+ 
+ libquirc.a: $(LIB_OBJ)
+ 	rm -f $@
+ 	ar cru $@ $^
+ 	ranlib $@
+ 
+-libquirc.so: $(LIB_SOBJ)
+-	$(CC) -shared -Wl,-soname=$(LIB_SONAME) -o $@ $^ -lm
++$(LIB_SONAME): $(LIB_SOBJ)
++	$(CC) -shared $(PICFLAG) -o $@ $^ $(LDFLAGS) -lm
+ 
+ %.o: %.c
+ 	$(CC) $(QUIRC_CFLAGS) -o $*.o -c $*.c
+@@ -63,13 +63,10 @@ libquirc.so: $(LIB_SOBJ)
+ %.lo: %.c
+ 	$(CC) -fPIC $(QUIRC_CFLAGS) -o $*.lo -c $*.c
+ 
+-install: libquirc.a libquirc.so quirc-demo quirc-scanner
++install: libquirc.a $(LIB_SONAME) quirc-demo quirc-scanner
+ 	install -o root -g root -m 0644 lib/quirc.h $(DESTDIR)$(PREFIX)/include
+ 	install -o root -g root -m 0644 libquirc.a $(DESTDIR)$(PREFIX)/lib
+-	install -o root -g root -m 0755 libquirc.so \
+-		$(DESTDIR)$(PREFIX)/lib/libquirc.so.$(LIB_VERSION)
+-	ln -sf libquirc.so.$(LIB_VERSION) $(DESTDIR)$(PREFIX)/lib/$(LIB_SONAME)
+-	ln -sf libquirc.so.$(LIB_VERSION) $(DESTDIR)$(PREFIX)/lib/libquirc.so
++	install -o root -g root -m 0755 $(LIB_SONAME) $(DESTDIR)$(PREFIX)/lib
+ 	install -o root -g root -m 0755 quirc-demo $(DESTDIR)$(PREFIX)/bin
+ 	install -o root -g root -m 0755 quirc-scanner $(DESTDIR)$(PREFIX)/bin
+ 
