@@ -88,5 +88,3 @@ sysutils/udfclient			imported 2016-05-01
 sysutils/tarsnap-guie  sent to ports@ 07-05-2016, committed 30-05-2016 (grosse)
 devel/py-hgsubversion			ready to import, sent to ports@ 2016-06-14 (czarkoff)
 emulators/retroarch			ready to import, waiting for unlock 2016-07-18 (bentley)
-sysutils/udfclient			update imported 2016-08-12
-sysutils/shunt				update imported 2016-08-12
