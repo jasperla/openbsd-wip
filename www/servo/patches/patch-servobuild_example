@@ -1,0 +1,21 @@
+$OpenBSD$
+--- servobuild.example.orig	Wed Aug 10 11:36:00 2016
++++ servobuild.example	Wed Aug 10 11:36:37 2016
+@@ -18,14 +18,14 @@ cargo-home-dir = "./.cargo"
+ # when building. Similarly for Cargo. This takes care of PATH as well as
+ # [DY]LD_LIBRARY_PATH.
+ # rust-root and cargo-root default to <servo-repo>/
+-system-rust = false
++system-rust = true
+ #rust-root = "/path/to/rust"
+-system-cargo = false
++system-cargo = true
+ #cargo-root = "/path/to/cargo"
+ 
+ # If rustc-with-gold is true, will try to find and use gold linker with rustc.
+ # Defaults to true
+-rustc-with-gold = true
++rustc-with-gold = false
+ 
+ [build]
+ # Set "mode = dev" or use `mach build --dev` to build the project with warning.
