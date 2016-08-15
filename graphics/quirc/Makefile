@@ -1,10 +1,10 @@
 # $OpenBSD$
 
 COMMENT =		QR decoder library
-DISTNAME =		libquirc-1.0.20160719
+DISTNAME =		libquirc-0.0.20160815
 GH_ACCOUNT =		dlbeer
 GH_PROJECT =		quirc
-GH_COMMIT =		d968f0ae33a95061559c6f04192e6d63387f15a8
+GH_COMMIT =		b0fc6bfd5f66dc5e7691e84b31944f1ab2c7d04b
 CATEGORIES =		graphics
 
 SHARED_LIBS +=		quirc 0.0 # 1.0
@@ -22,24 +22,23 @@ TEST_DEPENDS =		graphics/ImageMagick \
 			graphics/libqrencode \
 			graphics/png
 
-LIB_SONAME =		libquirc.so.${LIBquirc_VERSION}
-MAKE_FLAGS =		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+MAKE_FLAGS =		CFLAGS="${CFLAGS} ${PIC_FLAG} -I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
-			LIB_SONAME="${LIB_SONAME}"
+			LIB_VERSION=${LIBquirc_VERSION}
 FAKE_FLAGS =		DESTDIR=""
 
-USE_GMAKE =		Yes
-
-ALL_TARGET =		libquirc.a $(LIB_SONAME) quirc-scanner quirc-demo
+ALL_TARGET =		libquirc.a libquirc.so quirc-scanner quirc-demo
 TEST_TARGET =		qrtest
-TEST_DATA =		${WRKBUILD}/test_data
+TESTDIR =		${WRKBUILD}/test_data
 
 pre-test:
-	${INSTALL_DATA_DIR} ${TEST_DATA}
-	qrencode -o ${TEST_DATA}/1.png "${DISTNAME} - ${COMMENT}"
+	@${INSTALL_DATA_DIR} ${TESTDIR}
+	@qrencode "${DISTNAME} - ${COMMENT}" -o - | convert - "${TESTDIR}/1.png"
+	@cat pkg/PLIST | qrencode -o - | convert - "${TESTDIR}/2.png"
 
 post-test:
-	${WRKBUILD}/qrtest ${TEST_DATA} | sed 1,4d | tee ${WRKBUILD}/test.out
-	cmp ${WRKBUILD}/test.out ${FILESDIR}/test.out
+	@${WRKBUILD}/qrtest ${TESTDIR} | grep '^${TESTDIR:T}' | \
+		tee ${WRKBUILD}/test.out
+	@cmp ${WRKBUILD}/test.out ${FILESDIR}/test.out
 
 .include <bsd.port.mk>
