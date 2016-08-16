@@ -21,14 +21,17 @@ LIB_DEPENDS =		devel/sdl-gfx \
 TEST_DEPENDS =		graphics/libqrencode \
 			graphics/png
 
-MAKE_FLAGS =		CFLAGS="${CFLAGS} ${PICFLAG} -I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			LIB_VERSION=${LIBquirc_VERSION}
+MAKE_FLAGS =		LIB_VERSION=${LIBquirc_VERSION}
+MAKE_ENV =		LDFLAGS="${LDFLAGS}"
 FAKE_FLAGS =		DESTDIR=""
 
 ALL_TARGET =		libquirc.a libquirc.so quirc-scanner quirc-demo
 TEST_TARGET =		qrtest
 TESTDIR =		${WRKBUILD}/test_data
+
+CFLAGS +=		${PICFLAG} -I${LOCALBASE}/include \
+			-DQUIRC_MAX_REGIONS=65534
+LDFLAGS +=		-L${LOCALBASE}/lib
 
 pre-test:
 	@${INSTALL_DATA_DIR} ${TESTDIR}
