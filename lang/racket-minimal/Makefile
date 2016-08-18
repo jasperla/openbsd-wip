@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2016/06/05 02:20:34 juanfra Exp $
+# $OpenBSD: Makefile,v 1.25 2016/07/30 18:47:28 juanfra Exp $
+
+USE_WXNEEDED =		Yes
 
 PORTROACH_COMMENT =	hide pre-release versions (e.g. 6.1.90.900)
 PORTROACH =		limit:!.*\.[0-9][0-9][0-9]-src-builtpkgs$$
@@ -7,9 +9,9 @@ ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 
 COMMENT =		multi-paradigm programming language
 
-V =			6.6
+V =			6.6.0.3
 PKGNAME =		racket-minimal-$V
-DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
+DISTFILES =		min-racket-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
 
 CATEGORIES =		lang
@@ -66,7 +68,7 @@ CONFIGURE_ARGS +=	--disable-backtrace \
 			--disable-libs \
 			--disable-shared
 
-CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,-z,wxneeded" \
+CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 
 FLAVORS =		debug no_jit
