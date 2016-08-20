@@ -68,7 +68,7 @@ CONFIGURE_ARGS +=	--disable-backtrace \
 			--disable-libs \
 			--disable-shared
 
-CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,-z,wxneeded" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 
 FLAVORS =		debug no_jit
