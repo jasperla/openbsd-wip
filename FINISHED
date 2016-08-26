@@ -83,7 +83,3 @@ www/p5-HTML-TreeBuilder-LibXML		ready to import (garcer)
 devel/deviceatlas-enterprise-c		ready to import (devnexen)
 devel/libangelscript			ready to import, sent to ports@ 2015-12-20
 devel/arm-none-eabi                     ready to import, sent to ports@ 2015-12-31, there is a patch ready to apply to the tree
-net/transmission			ready to import, sent to ports 2016-02-29
-sysutils/udfclient			imported 2016-05-01
-sysutils/tarsnap-guie  sent to ports@ 07-05-2016, committed 30-05-2016 (grosse)
-emulators/retroarch			ready to import, waiting for unlock 2016-07-18 (bentley)
