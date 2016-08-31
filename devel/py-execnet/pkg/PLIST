@@ -7,7 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/execnet-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/execnet-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/execnet-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/execnet/__init__.py
-${MODPY_COMMENT} lib/python${MODPY_VERSION}/site-packages/execnet/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/execnet/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/execnet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/execnet/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/execnet/${MODPY_PYCACHE}deprecated.${MODPY_PYC_MAGIC_TAG}pyc
@@ -32,7 +32,7 @@ lib/python${MODPY_VERSION}/site-packages/execnet/rsync.py
 lib/python${MODPY_VERSION}/site-packages/execnet/rsync_remote.py
 lib/python${MODPY_VERSION}/site-packages/execnet/script/
 lib/python${MODPY_VERSION}/site-packages/execnet/script/__init__.py
-${MODPY_COMMENT} lib/python${MODPY_VERSION}/site-packages/execnet/script/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/execnet/script/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/execnet/script/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/execnet/script/${MODPY_PYCACHE}loop_socketserver.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/execnet/script/${MODPY_PYCACHE}quitserver.${MODPY_PYC_MAGIC_TAG}pyc

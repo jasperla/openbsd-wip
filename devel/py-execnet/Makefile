@@ -19,15 +19,15 @@ FLAVOR ?=
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
-RUN_DEPENDS +=		devel/py-apipkg \
-			devel/py-setuptools_scm
+RUN_DEPENDS +=		devel/py-apipkg${MODPY_FLAVOR} \
+			devel/py-setuptools_scm${MODPY_FLAVOR}
 TEST_DEPENDS +=		${RUN_DEPENDS} \
-			devel/py-test \
+			devel/py-test${MODPY_FLAVOR} \
 			${FULLPKGNAME}:${FULLPKGPATH}
 
 PKG_ARCH =		*
 
 do-test:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/py.test -v testing
+	cd ${WRKSRC} && ${LOCALBASE}/bin/py.test${MODPY_BIN_SUFFIX} -v testing
 
 .include <bsd.port.mk>
