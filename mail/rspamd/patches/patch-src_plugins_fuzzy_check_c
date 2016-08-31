@@ -1,0 +1,21 @@
+$OpenBSD$
+
+Crash caused by bad format string. Applied upstream to next version.
+
+--- src/plugins/fuzzy_check.c.orig	Thu Aug 18 12:19:52 2016
++++ src/plugins/fuzzy_check.c	Wed Aug 31 13:57:55 2016
+@@ -578,9 +578,11 @@ fuzzy_parse_rule (struct rspamd_config *cfg, const ucl
+ 					cb_id);
+ 		}
+ 
+-		msg_info_config ("added fuzzy rule %s, key: %6xs, "
+-				"shingles_key: %6xs, algorithm: %s",
+-				rule->symbol, rule->hash_key->str, rule->shingles_key->str,
++		msg_info_config ("added fuzzy rule %s, key: %*xs, "
++				"shingles_key: %*xs, algorithm: %s",
++				rule->symbol,
++				6, rule->hash_key->str,
++				6, rule->shingles_key->str,
+ 				rule->algorithm_str);
+ 	}
+ 
