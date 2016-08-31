@@ -25,9 +25,7 @@ TEST_DEPENDS +=		${RUN_DEPENDS} \
 			devel/py-test${MODPY_FLAVOR} \
 			${FULLPKGNAME}:${FULLPKGPATH}
 
-PKG_ARCH =		*
-
 do-test:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/py.test${MODPY_BIN_SUFFIX} -v testing
+	cd ${WRKSRC} && ${MODPY_BIN} -m pytest testing
 
 .include <bsd.port.mk>
