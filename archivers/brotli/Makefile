@@ -7,7 +7,7 @@ CATEGORIES =		archivers
 
 HOMEPAGE =		https://github.com/google/brotli
 
-MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # Apache2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -16,24 +16,10 @@ WANTLIB += c m
 
 GH_ACCOUNT =		google
 GH_PROJECT =		brotli
-GH_TAGNAME =		v0.4.0
+GH_TAGNAME =		v0.5.2
 MASTER_SITES =		${MASTER_SITES_GITHUB}
 
-MODULES =		gcc4
-MODGCC4_LANGS =		c c++
-MODGCC4_ARCHS =		*
+MODULES =		devel/cmake
 
-USE_GMAKE =		Yes
-MAKE_ENV =		CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
-			CXXFLAGS="${CXXFLAGS}"
-
-WRKSRC =		${WRKDIST}/tools
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bro ${PREFIX}/bin
-
-do-test:
-	cd ${WRKDIST}/tests && env -i ${ALL_TEST_ENV} ${MAKE_PROGRAM} \
-		${ALL_TEST_FLAGS} -f ${MAKE_FILE} ${TEST_TARGET} ${TEST_LOG}
 
 .include <bsd.port.mk>
