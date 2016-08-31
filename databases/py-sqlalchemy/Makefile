@@ -2,33 +2,34 @@
 
 COMMENT =		database toolkit for Python
 
-MODPY_EGG_VERSION =	0.8.2
+MODPY_EGG_VERSION =	1.0.14
 DISTNAME =		SQLAlchemy-${MODPY_EGG_VERSION}
 PKGNAME =		py-sqlalchemy-${MODPY_EGG_VERSION:S/p/./}
-REVISION =		1
 
 CATEGORIES =		databases
 
 HOMEPAGE =		http://www.sqlalchemy.org/
 
-MAINTAINER =		Will Maier <wcmaier@openbsd.org>
-
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=sqlalchemy/}
+WANTLIB += ${MODPY_WANTLIB}
+WANTLIB += pthread
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
-PKG_ARCH =		*
-
-WANTLIB+=		${MODPY_WANTLIB}
+MODPY_PI = 		Yes
 
 MAKE_ENV +=		PYTHONPATH=.
 
+RUN_DEPENDS +=		devel/py-apipkg
+
 # Other DB connectors would work, too.
-TEST_DEPENDS =	databases/py-sqlite2 \
-			devel/py-nose
+# XXX needs py-test-xdist
+TEST_DEPENDS =		${RUN_DEPENDS} \
+			databases/py-sqlite2>=2.8.3 \
+			devel/py-test \
+			devel/py-mock
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-sqlalchemy
