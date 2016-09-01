@@ -1,7 +1,7 @@
 $OpenBSD$
---- programs/Makefile.orig	Fri Jul  8 21:30:43 2016
-+++ programs/Makefile	Mon Jul 11 19:20:11 2016
-@@ -34,7 +34,7 @@
+--- programs/Makefile.orig	Wed Aug 31 18:09:10 2016
++++ programs/Makefile	Thu Sep  1 03:13:09 2016
+@@ -17,7 +17,7 @@
  DESTDIR?=
  PREFIX ?= /usr/local
  BINDIR  = $(PREFIX)/bin
