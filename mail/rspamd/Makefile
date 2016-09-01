@@ -3,7 +3,7 @@
 BROKEN-macppc=	error: unknown register name 'edx' in 'asm'
 COMMENT=	event-driven spam filtering system in C/Lua
 
-DISTNAME =	rspamd-1.3.4
+DISTNAME =	rspamd-1.3.5
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	mail
@@ -26,6 +26,11 @@ LIB_DEPENDS=	devel/libmagic \
 		lang/luajit \
 		mail/gmime
 BUILD_DEPENDS +=devel/ragel
+# XXX check redis is actually needed
+# XXX robot
+# XXX demjson
+TEST_DEPENDS +=	databases/redis \
+		sysutils/py-psutil
 
 CONFIGURE_ARGS+=-DOPENBSD_BUILD=1 \
 		-DCONFDIR="${SYSCONFDIR}/rspamd" \
@@ -35,14 +40,17 @@ CONFIGURE_ARGS+=-DOPENBSD_BUILD=1 \
 		-DRUNDIR="${LOCALSTATEDIR}/run/rspamd" \
 		-DRSPAMD_USER="_rspamd" \
 		-DRSPAMD_GROUP="_rspamd"
+# Make sure we pick up the base libevent, never the ports one!
+CONFIGURE_ARGS +=	-DLIBEVENT_ROOT_DIR=/usr
 
-# XXX Known problems:
-# - tests currently need clang as an assembler due to use of AVX.
-# - if aio test is run after dns test, it hangs:
-# ${WRKBUILD}/test/rspamd-test -p /rspamd/aio -p /rspamd/dns     
-# XXX these are the wrong tests -- use functional tests (requires more python
-# dependencies than we have in-tree).
-TEST_TARGET=	run-test
+# XXX port missing deps
+# Make sure yo have no rspamd instances of your own running when you run tests
+do-test:
+	cd ${WRKSRC} && \
+		env RSPAMADM=${WRKBUILD}/src/rspamadm \
+		 RSPAMC=${WRKBUILD}/src/client/rspamc \
+		 RSPAMD=/usr/local/bin/rspamd ~/.local/bin/robot \
+		 test/functional/cases
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/interface/README.md
