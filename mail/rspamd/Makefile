@@ -29,7 +29,7 @@ BUILD_DEPENDS +=devel/ragel
 TEST_DEPENDS +=	databases/redis \
 		sysutils/py-psutil \
 		textproc/py-demjson \
-		devel/robotframework
+		devel/py-robotframework
 
 CONFIGURE_ARGS+=-DOPENBSD_BUILD=1 \
 		-DCONFDIR="${SYSCONFDIR}/rspamd" \
@@ -42,12 +42,19 @@ CONFIGURE_ARGS+=-DOPENBSD_BUILD=1 \
 # Make sure we pick up the base libevent, never the ports one!
 CONFIGURE_ARGS +=	-DLIBEVENT_ROOT_DIR=/usr
 
-# Make sure you have no rspamd instances of your own running when you run tests
+# /var/rspamd needs to exist for tests to run
+TEST_DEPENDS = ${FULLPKGNAME}:${FULLPKGPATH}
+
+# Make sure you have no rspamd or redis instances running and note that the
+# test suite uses the network.
+#
+# In the event of failing tests, look at log.html in ${WRKSRC}
 do-test:
 	cd ${WRKSRC} && \
-		env RSPAMADM=${WRKBUILD}/src/rspamadm \
+		env RSPAMADM=${WRKBUILD}/src/rspamadm/rspamadm \
 		RSPAMC=${WRKBUILD}/src/client/rspamc \
-		RSPAMD=/usr/local/bin/rspamd ktrace ${LOCALBASE}/bin/robot \
+		RSPAMD=/usr/local/bin/rspamd \
+		${LOCALBASE}/bin/robot \
 		test/functional/cases
 
 pre-configure:
