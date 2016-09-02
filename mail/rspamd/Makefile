@@ -26,11 +26,10 @@ LIB_DEPENDS=	devel/libmagic \
 		lang/luajit \
 		mail/gmime
 BUILD_DEPENDS +=devel/ragel
-# XXX check redis is actually needed
-# XXX robot
-# XXX demjson
 TEST_DEPENDS +=	databases/redis \
-		sysutils/py-psutil
+		sysutils/py-psutil \
+		textproc/py-demjson \
+		devel/robotframework
 
 CONFIGURE_ARGS+=-DOPENBSD_BUILD=1 \
 		-DCONFDIR="${SYSCONFDIR}/rspamd" \
@@ -43,14 +42,13 @@ CONFIGURE_ARGS+=-DOPENBSD_BUILD=1 \
 # Make sure we pick up the base libevent, never the ports one!
 CONFIGURE_ARGS +=	-DLIBEVENT_ROOT_DIR=/usr
 
-# XXX port missing deps
-# Make sure yo have no rspamd instances of your own running when you run tests
+# Make sure you have no rspamd instances of your own running when you run tests
 do-test:
 	cd ${WRKSRC} && \
 		env RSPAMADM=${WRKBUILD}/src/rspamadm \
-		 RSPAMC=${WRKBUILD}/src/client/rspamc \
-		 RSPAMD=/usr/local/bin/rspamd ~/.local/bin/robot \
-		 test/functional/cases
+		RSPAMC=${WRKBUILD}/src/client/rspamc \
+		RSPAMD=/usr/local/bin/rspamd ktrace ${LOCALBASE}/bin/robot \
+		test/functional/cases
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/interface/README.md
