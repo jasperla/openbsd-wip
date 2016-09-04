@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/Makefile.std.orig	Sun Sep  4 16:48:49 2016
++++ src/Makefile.std	Sun Sep  4 16:49:33 2016
+@@ -46,7 +46,7 @@ SYS_gcu = -DUSE_GCU -DUSE_NCURSES -lncursesw
+ # Basic compiler stuff
+ CC = gcc
+ WARNINGS = -W -Wall -Wextra -Wold-style-definition -Wdeclaration-after-statement -Wmissing-declarations -Wredundant-decls -Wpointer-arith -Wcast-align -Wwrite-strings -Winline -Wformat-security -Winit-self -Wmissing-include-dirs -Wundef -Wmissing-format-attribute -Wnested-externs -Wunreachable-code -Wno-unused-parameter -Wno-missing-field-initializers
+-CFLAGS = -O0 -g $(WARNINGS)
++CFLAGS = $(WARNINGS)
+ 
+ # Add additional search directives here
+ # Example: -I/usr/X11R6/include -I/usr/include/ncurses
