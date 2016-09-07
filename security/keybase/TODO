@@ -1,0 +1,3 @@
+- apply patches from commit: c3962a722fa512f14b8cd6479c6c089144a5abe9
+- set tag to be actual 1.0.17 tag
+- expand DESCR
