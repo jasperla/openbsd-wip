@@ -1,0 +1,12 @@
+$OpenBSD$
+--- go/install/install_unix.go.orig	Wed Sep  7 08:25:44 2016
++++ go/install/install_unix.go	Wed Sep  7 08:25:48 2016
+@@ -1,7 +1,7 @@
+ // Copyright 2015 Keybase, Inc. All rights reserved. Use of
+ // this source code is governed by the included BSD license.
+ 
+-// +build linux freebsd
++// +build linux freebsd openbsd
+ 
+ package install
+ 

@@ -1,0 +1,12 @@
+$OpenBSD$
+--- go/logger/redirect_stderr_nix.go.orig	Wed Sep  7 08:22:21 2016
++++ go/logger/redirect_stderr_nix.go	Wed Sep  7 08:22:27 2016
+@@ -1,7 +1,7 @@
+ // Copyright 2016 Keybase, Inc. All rights reserved. Use of
+ // this source code is governed by the included BSD license.
+ 
+-// +build linux,!android darwin freebsd
++// +build linux,!android darwin freebsd openbsd
+ 
+ package logger
+ 
