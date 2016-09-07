@@ -8,7 +8,6 @@ GH_PROJECT =	client
 GH_TAGNAME =	v${V}
 
 DISTNAME =	keybase-${V}
-PKGNAME =	keybase-${V}
 
 CATEGORIES =	security
 HOMEPAGE =	https://keybase.io
@@ -17,6 +16,8 @@ MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
+
+RUN_DEPENDS =	security/gnupg2
 
 WANTLIB += c pthread
 
