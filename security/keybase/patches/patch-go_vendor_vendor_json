@@ -1,4 +1,8 @@
 $OpenBSD$
+
+This can be removed in the next release of keybase:
+https://github.com/keybase/client/pull/3832/files
+
 --- go/vendor/vendor.json.orig	Tue Aug  9 11:52:34 2016
 +++ go/vendor/vendor.json	Wed Sep  7 08:15:22 2016
 @@ -204,14 +204,16 @@

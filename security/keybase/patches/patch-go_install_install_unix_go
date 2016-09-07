@@ -1,4 +1,8 @@
 $OpenBSD$
+
+This can be removed in the next release of keybase:
+https://github.com/keybase/client/pull/3832/files
+
 --- go/install/install_unix.go.orig	Wed Sep  7 08:25:44 2016
 +++ go/install/install_unix.go	Wed Sep  7 08:25:48 2016
 @@ -1,7 +1,7 @@

@@ -1,4 +1,8 @@
 $OpenBSD$
+
+This can be removed in the next release of keybase:
+https://github.com/keybase/client/pull/3832/files
+
 --- go/vendor/github.com/keybase/go-ps/process_openbsd.go.orig	Wed Sep  7 08:14:47 2016
 +++ go/vendor/github.com/keybase/go-ps/process_openbsd.go	Wed Sep  7 08:14:47 2016
 @@ -0,0 +1,302 @@
