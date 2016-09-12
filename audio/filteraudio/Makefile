@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =		easy to use audio filtering library
-DISTNAME =		filteraudio-20150516
+DISTNAME =		filteraudio-20160614
 CATEGORIES =		audio
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
@@ -14,7 +14,7 @@ WANTLIB += m pthread
 
 GH_ACCOUNT =		irungentoo
 GH_PROJECT =		filter_audio
-GH_COMMIT =		612c5a102550c614e4c8f859e753ea64c0b7250c
+GH_COMMIT =		2fc669581e2a0ff87fba8de85861b49133306094
 
 BUILD_DEPENDS =		audio/openal
 
