@@ -8,6 +8,8 @@ GH_COMMIT =		b9214ddc8acf9ff5b01afdd44a9bdf96fe7d6e8e
 
 CATEGORIES =		graphics x11
 
+HOMEPAGE =		http://registry.gimp.org/node/2958
+
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # GPLv2+
