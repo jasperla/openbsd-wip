@@ -23,18 +23,20 @@ WANTLIB += z
 
 MODULES =		textproc/intltool
 BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/gettext-tools
 LIB_DEPENDS =		graphics/gimp/stable
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 			AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
 
-AUTOCONF_VERSION =	2.58
-AUTOMAKE_VERSION =	1.9
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.15
 
 pre-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} autoheader
+	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} aclocal
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} automake --add-missing
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} autoconf
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} glib-gettextize --force
