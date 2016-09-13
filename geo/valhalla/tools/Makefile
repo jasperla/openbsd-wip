@@ -7,14 +7,15 @@ VALHALLA_PROJECT =	tools
 WANTLIB += boost_date_time-mt boost_filesystem boost_program_options-mt
 WANTLIB += boost_regex-mt boost_system boost_thread-mt c crypto
 WANTLIB += curl iconv idn intl m nghttp2 prime_server protobuf
-WANTLIB += pthread sodium ssl valhalla_baldr valhalla_loki valhalla_midgard
-WANTLIB += valhalla_odin valhalla_sif valhalla_skadi valhalla_thor
-WANTLIB += valhalla_tyr z zmq
+WANTLIB += pthread sodium ssl valhalla_baldr valhalla_loki valhalla_meili
+WANTLIB += valhalla_midgard valhalla_odin valhalla_sif valhalla_skadi
+WANTLIB += valhalla_thor valhalla_tyr z zmq
 
 MODULES =		gcc4
 MODGCC4_LANGS =		c c++
 MODGCC4_ARCHS =		*
 LIB_DEPENDS =		geo/valhalla/loki \
+			geo/valhalla/meili \
 			geo/valhalla/sif \
 			geo/valhalla/skadi \
 			geo/valhalla/thor \

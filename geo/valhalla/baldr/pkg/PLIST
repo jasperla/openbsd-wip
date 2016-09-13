@@ -7,6 +7,7 @@ include/valhalla/baldr/connectivity_map.h
 include/valhalla/baldr/datetime.h
 include/valhalla/baldr/directededge.h
 include/valhalla/baldr/edgeinfo.h
+include/valhalla/baldr/geojson.h
 include/valhalla/baldr/graphconstants.h
 include/valhalla/baldr/graphid.h
 include/valhalla/baldr/graphreader.h

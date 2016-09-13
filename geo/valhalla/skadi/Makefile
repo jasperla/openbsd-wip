@@ -26,7 +26,7 @@ RUN_DEPENDS =		sysutils/coreutils \
 
 SUBST_VARS +=		${MODPYTHON_BIN}
 
-pre-configure:
+post-configure:
 	${SUBST_CMD} ${WRKSRC}/scripts/valhalla_build_elevation
 
 .include <bsd.port.mk>

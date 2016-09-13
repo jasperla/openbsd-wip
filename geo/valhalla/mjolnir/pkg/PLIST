@@ -2,6 +2,7 @@
 @bin bin/valhalla_benchmark_admins
 @bin bin/valhalla_build_admins
 @bin bin/valhalla_build_connectivity
+@bin bin/valhalla_build_speeds
 @bin bin/valhalla_build_statistics
 @bin bin/valhalla_build_tiles
 bin/valhalla_build_timezones
@@ -34,7 +35,6 @@ include/valhalla/mjolnir/osmrestriction.h
 include/valhalla/mjolnir/osmway.h
 include/valhalla/mjolnir/pbfadminparser.h
 include/valhalla/mjolnir/pbfgraphparser.h
-include/valhalla/mjolnir/statistics.h
 include/valhalla/mjolnir/transitbuilder.h
 include/valhalla/mjolnir/uniquenames.h
 include/valhalla/mjolnir/util.h

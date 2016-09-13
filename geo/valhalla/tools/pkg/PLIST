@@ -3,6 +3,7 @@
 @bin bin/valhalla_benchmark_loki
 @bin bin/valhalla_benchmark_skadi
 @bin bin/valhalla_elevation_service
+@bin bin/valhalla_export_edges
 @bin bin/valhalla_loki_worker
 @bin bin/valhalla_odin_worker
 @bin bin/valhalla_route_service

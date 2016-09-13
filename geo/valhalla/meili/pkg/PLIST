@@ -11,8 +11,12 @@ include/valhalla/meili/geojson_writer.h
 include/valhalla/meili/geometry_helpers.h
 include/valhalla/meili/graph_helpers.h
 include/valhalla/meili/grid_range_query.h
+include/valhalla/meili/grid_traversal.h
+include/valhalla/meili/map_matcher.h
+include/valhalla/meili/map_matcher_factory.h
 include/valhalla/meili/map_matching.h
 include/valhalla/meili/match_result.h
+include/valhalla/meili/match_route.h
 include/valhalla/meili/measurement.h
 include/valhalla/meili/priority_queue.h
 include/valhalla/meili/routing.h

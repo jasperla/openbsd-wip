@@ -16,6 +16,7 @@ MODULES =		gcc4
 MODGCC4_LANGS =		c c++
 MODGCC4_ARCHS =		*
 MODGCC4_VERSION =	4.9
+BUILD_DEPENDS =		textproc/rapidjson
 LIB_DEPENDS =		devel/boost \
 			devel/libidn \
 			geo/valhalla/baldr \
@@ -26,7 +27,6 @@ LIB_DEPENDS =		devel/boost \
 			net/zeromq \
 			security/libsodium \
 			textproc/intltool \
-			textproc/rapidjson \
 			www/nghttp2
 
 .include <bsd.port.mk>
