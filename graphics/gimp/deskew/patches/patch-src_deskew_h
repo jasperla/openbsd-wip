@@ -1,0 +1,11 @@
+$OpenBSD$
+--- src/deskew.h.orig	Wed Sep 14 00:19:52 2016
++++ src/deskew.h	Wed Sep 14 00:20:12 2016
+@@ -7,6 +7,7 @@
+ #include <libgimp/gimp.h>
+ 
+ // #define DEBUG 1
++#define DEBUG 0
+ 
+ #if DEBUG
+ #include <stdio.h>
