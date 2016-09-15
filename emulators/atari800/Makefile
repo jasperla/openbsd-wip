@@ -1,0 +1,33 @@
+# $OpenBSD: mk.conf.template,v 1.23 2016/04/26 10:57:00 sthen Exp $
+
+COMMENT =	Atari 8-bit computer systems and 5200 game console emulator
+
+DISTNAME =	atari800-3.1.0
+CATEGORIES =	emulators
+
+HOMEPAGE =	http://atari800.sourceforge.net/
+
+MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
+
+# GPLv2+
+PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB +=	SDL c m ossaudio pthread readline termcap z
+
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=atari800/}
+
+LIB_DEPENDS =	devel/sdl
+
+WRKSRC =	${WRKDIST}/src
+
+CONFIGURE_STYLE = gnu
+
+USE_GMAKE =	Yes
+
+NO_TEST =	Yes
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/atari800 ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/atari800.man ${PREFIX}/man/man1/atari800.1
+
+.include <bsd.port.mk>
