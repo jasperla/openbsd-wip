@@ -1,0 +1,11 @@
+@comment $OpenBSD$
+include/libbinio/
+include/libbinio/binfile.h
+include/libbinio/binio.h
+include/libbinio/binstr.h
+include/libbinio/binwrap.h
+@info info/libbinio.info
+lib/libbinio.a
+lib/libbinio.la
+@lib lib/libbinio.so.${LIBbinio_VERSION}
+lib/pkgconfig/libbinio.pc
