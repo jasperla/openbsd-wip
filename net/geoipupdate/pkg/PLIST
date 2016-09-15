@@ -1,0 +1,8 @@
+@comment $OpenBSD$
+@bin bin/geoipupdate
+@man man/man1/geoipupdate.1
+@man man/man5/GeoIP.conf.5
+share/examples/geoipupdate/
+share/examples/geoipupdate/GeoIP.conf
+@sample ${SYSCONFDIR}/GeoIP.conf
+@comment share/examples/geoipupdate/GeoIP.conf.default

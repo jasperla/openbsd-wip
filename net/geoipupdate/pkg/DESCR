@@ -1,0 +1,5 @@
+The GeoIP Update program performs automatic updates of GeoIP2 and GeoIP
+Legacy binary databases.
+
+Configuration instructions for free GeoLite2 and GeoLite Legacy databases
+can be found here : https://dev.maxmind.com/geoip/geoipupdate/
