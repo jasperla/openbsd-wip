@@ -12,7 +12,7 @@ CATEGORIES =	www
 
 HOMEPAGE =	https://kore.io/
 
-MAINTAINER =	Frederic Cambus <fred@statdns.com>
+MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes

@@ -10,7 +10,7 @@ SHARED_LIBS +=	postal	0.0	# 0.0
 
 CATEGORIES =	geo
 
-MAINTAINER =	Frederic Cambus <fred@statdns.com>
+MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
