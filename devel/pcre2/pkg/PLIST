@@ -25,6 +25,7 @@ lib/pkgconfig/libpcre2-posix.pc
 @man man/man1/pcre2test.1
 @man man/man3/pcre2.3
 @man man/man3/pcre2_callout_enumerate.3
+@man man/man3/pcre2_code_copy.3
 @man man/man3/pcre2_code_free.3
 @man man/man3/pcre2_compile.3
 @man man/man3/pcre2_compile_context_copy.3
@@ -112,6 +113,7 @@ share/doc/pcre2/html/index.html
 share/doc/pcre2/html/pcre2-config.html
 share/doc/pcre2/html/pcre2.html
 share/doc/pcre2/html/pcre2_callout_enumerate.html
+share/doc/pcre2/html/pcre2_code_copy.html
 share/doc/pcre2/html/pcre2_code_free.html
 share/doc/pcre2/html/pcre2_compile.html
 share/doc/pcre2/html/pcre2_compile_context_copy.html

@@ -2,7 +2,7 @@
 
 COMMENT =	perl-compatible regular expression library, version 2
 
-DISTNAME =	pcre2-10.21
+DISTNAME =	pcre2-10.22
 
 SHARED_LIBS +=  pcre2-16                  0.0 # 3.0
 SHARED_LIBS +=  pcre2-32                  0.0 # 3.0
@@ -22,6 +22,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += bz2 c curses pthread readline z
 
 LIB_DEPENDS =		archivers/bzip2
+
+USE_WXNEEDED =		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-pcre2-16 \
