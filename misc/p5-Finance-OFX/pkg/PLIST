@@ -1,0 +1,18 @@
+@comment $OpenBSD$
+${P5SITE}/Finance/
+${P5SITE}/Finance/Build.pl
+${P5SITE}/Finance/OFX/
+${P5SITE}/Finance/OFX.pm
+${P5SITE}/Finance/OFX/Account.pm
+${P5SITE}/Finance/OFX/Institution.pm
+${P5SITE}/Finance/OFX/Parse.pm
+${P5SITE}/Finance/OFX/Response.pm
+${P5SITE}/Finance/OFX/Tree.pm
+${P5SITE}/Finance/OFX/UserAgent.pm
+@man man/man3p/Finance::OFX.3p
+@man man/man3p/Finance::OFX::Account.3p
+@man man/man3p/Finance::OFX::Institution.3p
+@man man/man3p/Finance::OFX::Parse.3p
+@man man/man3p/Finance::OFX::Response.3p
+@man man/man3p/Finance::OFX::Tree.3p
+@man man/man3p/Finance::OFX::UserAgent.3p
