@@ -1,0 +1,274 @@
+$OpenBSD$
+--- Alc/backends/sndio.c.orig	Mon Jan 25 04:12:39 2016
++++ Alc/backends/sndio.c	Mon Sep 26 00:15:42 2016
+@@ -31,9 +31,13 @@
+ #include <sndio.h>
+ 
+ 
+-static const ALCchar sndio_device[] = "SndIO Default";
++#define SNDIO_PLAY 0
++#define SNDIO_REC  1
+ 
+ 
++static const ALCchar *sndio_device = "SndIO Default";
++
++
+ static ALCboolean sndio_load(void)
+ {
+     return ALC_TRUE;
+@@ -41,9 +45,11 @@ static ALCboolean sndio_load(void)
+ 
+ 
+ typedef struct {
+-    struct sio_hdl *sndHandle;
++    struct sio_hdl *sndHandle[2];
+ 
+     ALvoid *mix_data;
++    ALsizei frame_size;
++    ALsizei buffer_size;
+     ALsizei data_size;
+ 
+     volatile int killNow;
+@@ -71,7 +77,7 @@ static int sndio_proc(void *ptr)
+         aluMixData(device, WritePtr, len/frameSize);
+         while(len > 0 && !data->killNow)
+         {
+-            wrote = sio_write(data->sndHandle, WritePtr, len);
++            wrote = sio_write(data->sndHandle[SNDIO_PLAY], WritePtr, len);
+             if(wrote == 0)
+             {
+                 ERR("sio_write failed\n");
+@@ -91,51 +97,92 @@ static int sndio_proc(void *ptr)
+ 
+ 
+ 
+-static ALCenum sndio_open_playback(ALCdevice *device, const ALCchar *deviceName)
++static ALCenum sndio_open(ALCdevice *device, const ALCchar *deviceName, int mode)
+ {
+     sndio_data *data;
++    const char *sio_device_name = SIO_DEVANY;
++    struct sio_hdl *handle;
++    unsigned int direction;
+ 
+-    if(!deviceName)
++    if (!deviceName)
+         deviceName = sndio_device;
+-    else if(strcmp(deviceName, sndio_device) != 0)
+-        return ALC_INVALID_VALUE;
++    else if (strcmp(deviceName, sndio_device) != 0)
++        sio_device_name = deviceName;
+ 
+-    data = calloc(1, sizeof(*data));
+-    data->killNow = 0;
++    direction = (mode == SNDIO_PLAY) ? SIO_PLAY : SIO_REC;
++    handle = sio_open(sio_device_name, direction, 0);
+ 
+-    data->sndHandle = sio_open(NULL, SIO_PLAY, 0);
+-    if(data->sndHandle == NULL)
++    if (handle == NULL)
+     {
+-        free(data);
+         ERR("Could not open device\n");
+         return ALC_INVALID_VALUE;
+     }
+ 
+-    al_string_copy_cstr(&device->DeviceName, deviceName);
+-    device->ExtraData = data;
++    if ((data = device->ExtraData) == NULL) {
++        data = calloc(1, sizeof(*data));
++        data->killNow = 0;
+ 
++        al_string_copy_cstr(&device->DeviceName, deviceName);
++        device->ExtraData = data;
++    }
++    data->sndHandle[mode] = handle;
++
+     return ALC_NO_ERROR;
+ }
+ 
+-static void sndio_close_playback(ALCdevice *device)
++
++static ALCenum sndio_open_playback(ALCdevice *device, const ALCchar *deviceName)
+ {
++    return sndio_open(device, deviceName, SNDIO_PLAY);
++}
++
++
++static ALCenum sndio_open_capture(ALCdevice *device, const ALCchar *deviceName)
++{
++    return sndio_open(device, deviceName, SNDIO_REC);
++}
++
++
++static void sndio_close(ALCdevice *device, int mode)
++{
+     sndio_data *data = device->ExtraData;
+ 
+-    sio_close(data->sndHandle);
++    sio_close(data->sndHandle[mode]);
++    if (data->sndHandle[!mode])
++        return;
++
+     free(data);
+     device->ExtraData = NULL;
+ }
+ 
+-static ALCboolean sndio_reset_playback(ALCdevice *device)
++
++static void sndio_close_playback(ALCdevice *device)
+ {
++    sndio_close(device, SNDIO_PLAY);
++}
++
++
++static void sndio_close_capture(ALCdevice *device)
++{
++    sndio_close(device, SNDIO_REC);
++}
++
++
++static ALCboolean sndio_reset(ALCdevice *device, int mode)
++{
+     sndio_data *data = device->ExtraData;
+     struct sio_par par;
++    struct sio_hdl *handle = data->sndHandle[mode];
+ 
+     sio_initpar(&par);
+ 
+     par.rate = device->Frequency;
+-    par.pchan = ((device->FmtChans != DevFmtMono) ? 2 : 1);
+ 
++    if (mode == SNDIO_PLAY)
++        par.pchan = ((device->FmtChans != DevFmtMono) ? 2 : 1);
++    else
++        par.rchan = ((device->FmtChans != DevFmtMono) ? 2 : 1);
++
+     switch(device->FmtType)
+     {
+         case DevFmtByte:
+@@ -170,11 +217,13 @@ static ALCboolean sndio_reset_playback(ALCdevice *devi
+     par.appbufsz = device->UpdateSize * (device->NumUpdates-1);
+     if(!par.appbufsz) par.appbufsz = device->UpdateSize;
+ 
+-    if(!sio_setpar(data->sndHandle, &par) || !sio_getpar(data->sndHandle, &par))
++    if(!sio_setpar(handle, &par) || !sio_getpar(handle, &par))
+     {
+         ERR("Failed to set device parameters\n");
+         return ALC_FALSE;
+     }
++    data->buffer_size = par.bufsz;
++    data->frame_size = FrameSizeFromDevFmt(device->FmtChans, device->FmtType);
+ 
+     if(par.bits != par.bps*8)
+     {
+@@ -211,23 +260,30 @@ static ALCboolean sndio_reset_playback(ALCdevice *devi
+     return ALC_TRUE;
+ }
+ 
++
++static ALCboolean sndio_reset_playback(ALCdevice *device)
++{
++    return sndio_reset(device, SNDIO_PLAY);
++}
++
++
+ static ALCboolean sndio_start_playback(ALCdevice *device)
+ {
+     sndio_data *data = device->ExtraData;
+ 
+-    if(!sio_start(data->sndHandle))
++    if(!sio_start(data->sndHandle[SNDIO_PLAY]))
+     {
+         ERR("Error starting playback\n");
+         return ALC_FALSE;
+     }
+ 
+-    data->data_size = device->UpdateSize * FrameSizeFromDevFmt(device->FmtChans, device->FmtType);
++    data->data_size = device->UpdateSize * data->frame_size;
+     data->mix_data = calloc(1, data->data_size);
+ 
+     data->killNow = 0;
+     if(althrd_create(&data->thread, sndio_proc, device) != althrd_success)
+     {
+-        sio_stop(data->sndHandle);
++        sio_stop(data->sndHandle[SNDIO_PLAY]);
+         free(data->mix_data);
+         data->mix_data = NULL;
+         return ALC_FALSE;
+@@ -247,7 +303,7 @@ static void sndio_stop_playback(ALCdevice *device)
+     data->killNow = 1;
+     althrd_join(data->thread, &res);
+ 
+-    if(!sio_stop(data->sndHandle))
++    if(!sio_stop(data->sndHandle[SNDIO_PLAY]))
+         ERR("Error stopping device\n");
+ 
+     free(data->mix_data);
+@@ -255,18 +311,53 @@ static void sndio_stop_playback(ALCdevice *device)
+ }
+ 
+ 
++static void sndio_start_capture(ALCdevice *device)
++{
++    sndio_data *data = device->ExtraData;
++
++    sndio_reset(device, SNDIO_REC);
++    if(!sio_start(data->sndHandle[SNDIO_REC]))
++        ERR("Error starting device\n");
++}
++
++
++static void sndio_stop_capture(ALCdevice *device)
++{
++    sndio_data *data = device->ExtraData;
++
++    if(!sio_stop(data->sndHandle[SNDIO_REC]))
++        ERR("Error stopping device\n");
++}
++
++
++static ALCenum sndio_capture_samples(ALCdevice *device, void *buf, ALCuint samples)
++{
++    sndio_data *data = device->ExtraData;
++
++    sio_read(data->sndHandle[SNDIO_REC], buf, samples * data->frame_size);
++    return ALC_TRUE;
++}
++
++
++static ALCuint sndio_available_samples(ALCdevice *device)
++{
++    sndio_data *data = device->ExtraData;
++    return data->buffer_size / data->frame_size;
++}
++
++
+ static const BackendFuncs sndio_funcs = {
+     sndio_open_playback,
+     sndio_close_playback,
+     sndio_reset_playback,
+     sndio_start_playback,
+     sndio_stop_playback,
+-    NULL,
+-    NULL,
+-    NULL,
+-    NULL,
+-    NULL,
+-    NULL
++    sndio_open_capture,
++    sndio_close_capture,
++    sndio_start_capture,
++    sndio_stop_capture,
++    sndio_capture_samples,
++    sndio_available_samples
+ };
+ 
+ ALCboolean alc_sndio_init(BackendFuncs *func_list)
+@@ -289,6 +380,7 @@ void alc_sndio_probe(enum DevProbe type)
+             AppendAllDevicesList(sndio_device);
+             break;
+         case CAPTURE_DEVICE_PROBE:
++            AppendCaptureDeviceList(sndio_device);
+             break;
+     }
+ }
