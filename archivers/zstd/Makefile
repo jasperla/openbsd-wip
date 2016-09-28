@@ -4,7 +4,7 @@ COMMENT =		zstandard fast real-time compression algorithm
 
 GH_ACCOUNT =		facebook
 GH_PROJECT =		zstd
-GH_TAGNAME =		v1.0.0
+GH_TAGNAME =		v1.1.0
 
 CATEGORIES =		archivers
 
@@ -21,7 +21,8 @@ MODULES =		gcc4
 MODGCC4_LANGS =		c
 MODGCC4_ARCHS =		*
 
-MAKE_ENV =		CC="${CC}" CFLAGS="${CFLAGS}"
+MAKE_ENV =		CC="${CC}" CXX="${CXX}" \
+			CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 FAKE_FLAGS =		PREFIX="${PREFIX}"
 
 USE_GMAKE =		Yes
