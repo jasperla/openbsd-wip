@@ -13,23 +13,29 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =	http://www.profanity.im/
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender assuan c crypto curl ereadline expat
-WANTLIB += ffi fontconfig freetype gcrypt gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gpg-error gpgme gthread-2.0 iconv idn intl
-WANTLIB += m ncursesw nghttp2 otr pcre pixman-1 pthread pthread-stubs
+WANTLIB += Xrandr Xrender assuan atk-1.0 c cairo crypto curl ereadline
+WANTLIB += expat ffi fontconfig freetype gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
+WANTLIB += gpgme graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz iconv
+WANTLIB += idn intl m ncursesw nghttp2 otr pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += ssl strophe xcb xcb-render xcb-shm z
+WANTLIB += notify
 
 BUILD_DEPENDS +=${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 
-LIB_DEPENDS +=	net/curl \
+LIB_DEPENDS +=	devel/glib2 \
+		devel/libnotify \
 		devel/readline>=6.1p2 \
-		devel/glib2 \
+		graphics/gdk-pixbuf2 \
+		net/curl \
 		net/libstrophe>=0.9.1 \
 		security/gpgme \
 		security/libotr \
 		sysutils/e2fsprogs \
-		www/nghttp2
+		www/nghttp2 \
+		x11/gtk+2
 
 TEST_DEPENDS =	devel/cmocka
 
