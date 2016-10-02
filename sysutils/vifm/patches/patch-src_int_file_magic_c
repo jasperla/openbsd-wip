@@ -2,12 +2,12 @@ $OpenBSD$
 
 Make file(1)-based mime type detection a bit safer.
 
---- src/int/file_magic.c.orig	Sat Jan  2 19:28:29 2016
-+++ src/int/file_magic.c	Mon Jun 13 00:14:19 2016
-@@ -29,8 +29,11 @@
- #endif
+--- src/int/file_magic.c.orig	Fri Jun  3 20:59:17 2016
++++ src/int/file_magic.c	Sun Oct  2 15:14:27 2016
+@@ -30,8 +30,11 @@
  
  #include <stddef.h> /* size_t */
+ #include <stdlib.h> /* free() */
 -#include <stdio.h> /* popen() */
 +#include <stdlib.h> /* exit() */
  #include <string.h> /* strcpy() */
@@ -15,18 +15,18 @@ Make file(1)-based mime type detection a bit safer.
 +#include <sys/resource.h> /* WIFEXITED() */
 +#include <sys/wait.h> /* wait() */
  
+ #include "../utils/path.h"
  #include "../utils/str.h"
- #include "../filetype.h"
-@@ -40,7 +43,7 @@
+@@ -42,7 +45,7 @@
  static assoc_records_t handlers;
  
- static int get_gtk_mimetype(const char *filename, char *buf);
--static int get_magic_mimetype(const char *filename, char *buf);
+ static int get_gtk_mimetype(const char filename[], char buf[]);
+-static int get_magic_mimetype(const char filename[], char buf[]);
 +static int get_magic_mimetype(const char *filename, char *buf, size_t buf_sz);
- static int get_file_mimetype(const char *filename, char *buf, size_t buf_sz);
- static assoc_records_t get_handlers(const char *mime_type);
+ static int get_file_mimetype(const char filename[], char buf[], size_t buf_sz);
+ static assoc_records_t get_handlers(const char mime_type[]);
  #if !defined(_WIN32) && defined(ENABLE_DESKTOP_FILES)
-@@ -62,7 +65,7 @@ get_mimetype(const char *file)
+@@ -63,7 +66,7 @@ get_mimetype(const char file[])
  
  	if(get_gtk_mimetype(file, mimetype) == -1)
  	{
@@ -34,12 +34,12 @@ Make file(1)-based mime type detection a bit safer.
 +		if(get_magic_mimetype(file, mimetype, sizeof(mimetype)) == -1)
  		{
  			if(get_file_mimetype(file, mimetype, sizeof(mimetype)) == -1)
- 				return NULL;
-@@ -103,37 +106,63 @@ get_gtk_mimetype(const char *filename, char *buf)
+ 			{
+@@ -106,37 +109,61 @@ get_gtk_mimetype(const char filename[], char buf[])
  }
  
  static int
--get_magic_mimetype(const char *filename, char *buf)
+-get_magic_mimetype(const char filename[], char buf[])
 +get_magic_mimetype(const char *filename, char *buf, size_t buf_sz)
  {
  #ifdef HAVE_LIBMAGIC
@@ -96,7 +96,7 @@ Make file(1)-based mime type detection a bit safer.
 -	break_atr(buf, ';');
 +			break_atr(descr, ';');
  #endif
- 
+-
 -	magic_close(magic);
 -	return 0;
 +			if (write(pipes[1], descr, strlen(descr)) == -1)
@@ -111,23 +111,25 @@ Make file(1)-based mime type detection a bit safer.
 +			close(pipes[0]);
 +			waitpid(pid, NULL, 0);
 +	}
-+
 +	return (r == -1 || r == 0) ? -1 : 0;
  #else /* #ifdef HAVE_LIBMAGIC */
  	return -1;
  #endif /* #ifdef HAVE_LIBMAGIC */
-@@ -143,27 +172,34 @@ static int
- get_file_mimetype(const char *filename, char *buf, size_t buf_sz)
+@@ -146,30 +173,35 @@ static int
+ get_file_mimetype(const char filename[], char buf[], size_t buf_sz)
  {
  #ifdef HAVE_FILE_PROG
 -	FILE *pipe;
 -	char command[1024];
+ 	char *const escaped_filename = shell_like_escape(filename, 0);
 +	int pipes[2];
 +	pid_t pid;
 +	ssize_t r;
  
 -	/* Use the file command to get mimetype */
--	snprintf(command, sizeof(command), "file \"%s\" -b --mime-type", filename);
+-	snprintf(command, sizeof(command), "file %s -b --mime-type",
+-			escaped_filename);
+-	free(escaped_filename);
 -
 -	if((pipe = popen(command, "r")) == NULL)
 -	{
@@ -148,7 +150,7 @@ Make file(1)-based mime type detection a bit safer.
 +			close(pipes[0]);
 +			close(pipes[1]);
 +			/* Use the file command to get mimetype */
-+			execl("/usr/bin/file", "file", "-b", "--mime-type", filename, NULL);
++			execl("/usr/bin/file", "file", "-b", "--mime-type", escaped_filename, NULL);
 +			_exit(-1);
 +		default:
 +			close(pipes[1]);
