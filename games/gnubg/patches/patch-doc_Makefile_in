@@ -1,4 +1,7 @@
 $OpenBSD$
+
+"install-data-hook" compresses manual pages.  Stop doing that.
+
 --- doc/Makefile.in.orig	Sat Oct  1 15:05:36 2016
 +++ doc/Makefile.in	Sat Oct  1 15:06:26 2016
 @@ -616,7 +616,6 @@ info-am:

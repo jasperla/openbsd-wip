@@ -1,4 +1,8 @@
 $OpenBSD$
+
+We make GNU Backgammon use system-supplied DejaVu fonts instead of bundling Vera
+fonts.  Thus stop building dynamically allocated paths for fonts.
+
 --- board3d/font3d.c.orig	Sun Apr  5 10:05:29 2015
 +++ board3d/font3d.c	Sun Apr  5 10:10:56 2015
 @@ -73,7 +73,6 @@ static int RenderGlyph(const FT_Outline * pOutline);

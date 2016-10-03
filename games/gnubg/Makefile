@@ -55,7 +55,7 @@ CONFIGURE_ARGS +=	--enable-simd=no
 
 FONT_SANS =		${X11BASE}/lib/X11/fonts/TTF/DejaVuSans.ttf
 FONT_SERIF =		${X11BASE}/lib/X11/fonts/TTF/DejaVuSerif-Bold.ttf
-CFLAGS =		-DFONT_VERA=\\\"${FONT_SANS}\\\" \
+CFLAGS +=		-DFONT_VERA=\\\"${FONT_SANS}\\\" \
 			-DFONT_VERA_SERIF_BOLD=\\\"${FONT_SERIF}\\\"
 
 WRKDIST =		${WRKDIR}/gnubg-$V

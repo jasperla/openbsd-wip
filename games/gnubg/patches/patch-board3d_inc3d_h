@@ -1,4 +1,7 @@
 $OpenBSD$
+
+Use system-supplied DejaVu fonts instead of bundling Vera fonts.
+
 --- board3d/inc3d.h.orig	Sun Aug  2 23:22:23 2015
 +++ board3d/inc3d.h	Sat Oct  1 09:42:14 2016
 @@ -82,9 +82,6 @@ typedef enum _BoardState {
