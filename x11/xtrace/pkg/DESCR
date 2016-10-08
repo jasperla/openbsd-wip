@@ -1,0 +1,3 @@
+Xtrace fakes an X server and forwards all connections to a real X
+server, displaying the communication between the clients and the server
+in an (well, thoretically) human readable form.

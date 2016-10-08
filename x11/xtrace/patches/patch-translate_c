@@ -1,0 +1,15 @@
+$OpenBSD$
+--- translate.c.orig	Tue Nov  6 05:24:34 2012
++++ translate.c	Tue Nov  6 05:23:52 2012
+@@ -2201,9 +2201,11 @@ bool parser_free(struct parser *parser) {
+ 		enum variable_type vt;
+ 
+ 		assert( ns->refcount == 0 );
++#if 0
+ 		for( vt = 0 ; vt < vt_COUNT ; vt ++ ) {
+ 			tdestroy(ns->variables[vt], free_varname);
+ 		}
++#endif
+ 		free(ns->name);
+ 		free(ns->extension);
+ 		for( i = 0 ; i < ns->num_requests ; i++ ) {
