@@ -13,8 +13,8 @@ MODPY_EGG_VERSION =	1.5.3
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-LIB_DEPENDS =		devel/libusb-compat \
-			${MODPY_LIB_DEPENDS}
+RUN_DEPENDS =		devel/libusb-compat
+TEST_DEPENDS =		${RUN_DEPENDS}
 
 FLAVORS =		python3
 FLAVOR ?=
