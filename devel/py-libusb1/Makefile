@@ -5,6 +5,8 @@ DISTNAME =		libusb1-${MODPY_EGG_VERSION}
 PKGNAME =		${MODPY_PY_PREFIX}${DISTNAME}
 CATEGORIES =		devel
 
+MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
+
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM =	Yes
 
