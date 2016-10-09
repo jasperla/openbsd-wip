@@ -22,8 +22,6 @@ TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR}
 FLAVORS =		python3
 FLAVOR ?=
 
-NOSE =		
-
 do-test:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} nosetests${MODPY_BIN_SUFFIX} \
 		-d -w fastimport/tests
