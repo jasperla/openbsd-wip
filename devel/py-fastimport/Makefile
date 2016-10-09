@@ -9,8 +9,9 @@ HOMEPAGE =		https://github.com/jelmer/python-fastimport
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM =	Useless to end users
-PERMIT_PACKAGE_FTP =	Useless to end users
+PERMIT_PACKAGE_CDROM =	bootstrap only
+PERMIT_PACKAGE_FTP =	bootstrap only
+PERMIT_DISTFILES_FTP =  bootstrap only
 
 MODULES =		lang/python
 MODPY_EGG_VERSION =	0.9.6
