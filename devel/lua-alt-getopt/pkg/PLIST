@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+share/lua/${MODLUA_VERSION}/alt_getopt.lua

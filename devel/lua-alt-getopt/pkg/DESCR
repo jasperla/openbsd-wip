@@ -1,0 +1,3 @@
+alt-getopt is a Lua module for processing application's arguments the
+same way BSD/GNU getopt_long(3) functions do.
+
