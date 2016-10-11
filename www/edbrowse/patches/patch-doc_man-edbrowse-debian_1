@@ -1,0 +1,12 @@
+$OpenBSD$
+--- doc/man-edbrowse-debian.1.orig	Tue Oct 11 14:52:13 2016
++++ doc/man-edbrowse-debian.1	Tue Oct 11 14:52:36 2016
+@@ -72,7 +72,7 @@ browsing functions can be found in the HTML documentat
+ .SH EXAMPLES
+ To read the HTML documentation on a Debian system you can do
+ .IP
+-.BR "edbrowse file:///usr/share/doc/edbrowse/usersguide.html"
++.BR "edbrowse file://${LOCALBASE}/share/doc/edbrowse/usersguide.html"
+ .PP
+ To read (say) 20 lines of the buffer at a time starting from
+ the top use the command

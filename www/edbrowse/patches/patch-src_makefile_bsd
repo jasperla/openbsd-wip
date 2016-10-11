@@ -1,0 +1,48 @@
+$OpenBSD$
+--- src/makefile.bsd.orig	Tue Jan 19 05:07:50 2016
++++ src/makefile.bsd	Tue Oct 11 14:46:00 2016
+@@ -3,9 +3,6 @@
+ #  Flags for gcc compilation.
+ JS_CXXFLAGS =-I/usr/include/mozjs-24
+ 
+-# we need to only use the js flags when building with c++, so use CXXFLAGS
+-CXXFLAGS += $(JS_CXXFLAGS)
+-
+ #  Tell the dynamic linker to look in the pkg area.
+ LFLAGS = -s -Wl,--rpath -Wl,/usr/pkg/lib
+ 
+@@ -23,16 +20,18 @@ all: edbrowse
+ EBOBJS = main.o buffers.o sendmail.o fetchmail.o \
+ 	html.o format.o cookies.o ebjs.o plugin.o ebrc.o \
+ 	messages.o url.o stringfile.o html-tidy.o decorate.o \
+-	msg-strings.o http.o auth.o
+-ifeq ($BUILD_EDBR_ODBC = on)
++	msg-strings.o http.o auth.o jseng-moz.o startwindow.o
++
++BUILD_EDBR_ODBC ?= off
++.if ${BUILD_EDBR_ODBC:L:Mon}
+ EBOBJS += dbodbc.o dbinfx.o dbops.o
+ LDLIBS += -lodbc
+-else
++.else
+ EBOBJS += dbstubs.o
+-endif
++.endif
+ 
+ #  Header file dependencies.
+-$(EBOBJS) jseng-moz.o : eb.h ebprot.h messages.h ebjs.h
++$(EBOBJS) : eb.h ebprot.h messages.h ebjs.h
+ dbodbc.o dbinfx.o dbops.o : dbapi.h
+ 
+ startwindow.c: startwindow.js
+@@ -46,8 +45,8 @@ msg-strings.c: ../lang/msg-*
+ 
+ # The implicit linking rule isn't good enough, because we don't have an
+ # edbrowse.o object, and it expects one.
+-edbrowse: $(EBOBJS) startwindow.o
+-	cc $(LFLAGS) -o edbrowse startwindow.o dbstubs.o $(EBOBJS) $(LIBS) $(JSLIB) -lstdc++
++edbrowse: $(EBOBJS)
++	cc $(LFLAGS) -o edbrowse $> $(LDLIBS) $(JSLIB) -lstdc++
+ 
+ clean:
+ 	rm -f *.o edbrowse \
