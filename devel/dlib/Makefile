@@ -30,11 +30,11 @@ MODULES =		lang/clang \
 MODCLANG_ARCHS =	amd64 i386
 MODCLANG_LANGS =	c c++
 
+# XXX optional OpenBLAS
 LIB_DEPENDS =		graphics/jpeg \
 			graphics/png \
 			graphics/giflib \
 			databases/sqlite3
-#math/blas \
 
 
 NO_TEST =		Yes
