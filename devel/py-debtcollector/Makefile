@@ -2,7 +2,7 @@
 
 COMMENT =		Python deprecation patterns and strategies
 
-MODPY_EGG_VERSION =	0.7.0
+MODPY_EGG_VERSION =	0.8.0
 DISTNAME =		debtcollector-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel

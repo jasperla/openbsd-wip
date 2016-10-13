@@ -2,7 +2,7 @@
 
 COMMENT =		Oslo Utility library
 
-MODPY_EGG_VERSION =	2.4.0
+MODPY_EGG_VERSION =	2.5.0
 DISTNAME =		oslo.utils-${MODPY_EGG_VERSION}
 PKGNAME =		py-oslo-utils-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
