@@ -7,6 +7,8 @@ GH_PROJECT =	synapse
 GH_ACCOUNT =	matrix-org
 CATEGORIES =   	net
 
+PKGNAME =	py-${GH_PROJECT}-${GH_TAGNAME:S/v//}
+
 HOMEPAGE =	https://github.com/matrix-org/synapse
 
 # Python License
@@ -19,7 +21,8 @@ MODPY_SETUPTOOLS = Yes
 RUN_DEPENDS =	devel/libffi \
 		devel/py-virtualenv \
 		graphics/jpeg \
-		textproc/libxslt,-python
+		textproc/libxslt,-python \
+		security/py-bcrypt
 		
 
 .include <bsd.port.mk>
