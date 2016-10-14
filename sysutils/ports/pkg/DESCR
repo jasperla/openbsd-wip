@@ -1,0 +1,4 @@
+This package contains OpenBSD ports collection as was used for building
+corresponding package set.  Its primary function is to allow building customized
+packages without having to track down the appropriate revisions of the ports
+collection files.
