@@ -22,10 +22,16 @@ MODULES =	lang/lua
 
 RUN_DEPENDS =	devel/lpeg
 
+TEST_DEPENDS =	${BUILD_PKGPATH}
+
+FLAVORS =	lua52 lua53
+FLAVOR ?=
+
 MAKE_ENV =	LUA_DIR=${MODLUA_DATADIR}
 
 USE_GMAKE =	Yes
 
-NO_TEST =	Yes
+do-test:
+	cd ${WRKDIST}/tests && ${MODLUA_BIN} test_cosmo.lua
 
 .include <bsd.port.mk>
