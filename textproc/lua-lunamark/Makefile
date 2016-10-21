@@ -2,7 +2,7 @@
 
 COMMENT =	Lua library for conversion between markup formats
 
-V =		0.4.0
+V =		0.5.0
 PKGNAME =	lua-lunamark-${V}
 
 GH_ACCOUNT =	jgm
@@ -16,17 +16,23 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-PKG_ARCH =	*
-
 MODULES =	lang/lua
 
-RUN_DEPENDS =	devel/lpeg \
-		devel/lua-utf8 \
-		textproc/lua-cosmo
+FLAVORS =	lua52 lua53
+FLAVOR ?=
+
+MODLUA_RUN_DEPENDS =	devel/lpeg \
+			textproc/lua-cosmo
+
+.if !${FLAVOR:Mlua53}
+MODLUA_RUN_DEPENDS +=	devel/lua-utf8
+.endif
 
 NO_BUILD =	Yes
 
 NO_TEST =	Yes
+
+PKG_ARCH =	*
 
 do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_DATADIR}
