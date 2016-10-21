@@ -20,6 +20,9 @@ MODULES =	lang/lua
 TEST_DEPENDS +=	${BASE_PKGPATH}
 WANTLIB +=	${MODLUA_WANTLIB}
 
+FLAVORS =	lua52 lua53
+FLAVOR ?=
+
 CFLAGS +=	`pkg-config --cflags ${MODLUA_DEP}`
 LINK =		${CC} ${CFLAGS} -fPIC -shared -L${LOCALBASE}/lib -o
 
@@ -29,6 +32,8 @@ do-build:
 do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/lua-utf8.so ${MODLUA_LIBDIR}
+	${INSTALL_DATA_DIR} ${MODLUA_DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${MODLUA_DOCDIR}
 
 do-test:
 	cd ${WRKDIST} && ${MODLUA_BIN} test.lua
