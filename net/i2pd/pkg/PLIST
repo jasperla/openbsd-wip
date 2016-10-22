@@ -14,6 +14,7 @@ include/i2pd/Crypto.cpp
 include/i2pd/Crypto.h
 include/i2pd/Daemon.cpp
 include/i2pd/Daemon.h
+include/i2pd/DaemonAndroid.cpp
 include/i2pd/DaemonLinux.cpp
 include/i2pd/DaemonQT.cpp
 include/i2pd/DaemonWin32.cpp
@@ -27,6 +28,8 @@ include/i2pd/Family.cpp
 include/i2pd/Family.h
 include/i2pd/Garlic.cpp
 include/i2pd/Garlic.h
+include/i2pd/Gzip.cpp
+include/i2pd/Gzip.h
 include/i2pd/HTTP.cpp
 include/i2pd/HTTP.h
 include/i2pd/HTTPProxy.cpp
@@ -81,6 +84,8 @@ include/i2pd/Signature.cpp
 include/i2pd/Signature.h
 include/i2pd/Streaming.cpp
 include/i2pd/Streaming.h
+include/i2pd/Tag.h
+include/i2pd/Timestamp.cpp
 include/i2pd/Timestamp.h
 include/i2pd/TransitTunnel.cpp
 include/i2pd/TransitTunnel.h
@@ -104,9 +109,11 @@ include/i2pd/Win32Service.cpp
 include/i2pd/api.cpp
 include/i2pd/api.h
 include/i2pd/i2pd.cpp
+include/i2pd/i2pd_android.cpp
 include/i2pd/mainwindow.cpp
 include/i2pd/stdafx.cpp
 include/i2pd/stdafx.h
+include/i2pd/test-base-64.cpp
 include/i2pd/test-http-merge_chunked.cpp
 include/i2pd/test-http-req.cpp
 include/i2pd/test-http-res.cpp

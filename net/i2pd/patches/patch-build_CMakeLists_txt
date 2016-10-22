@@ -1,16 +1,16 @@
 $OpenBSD$
---- build/CMakeLists.txt.orig	Tue Jun 21 03:39:47 2016
-+++ build/CMakeLists.txt	Sat Jul 30 20:18:00 2016
-@@ -349,7 +349,7 @@ if (WITH_BINARY)
-   endif ()
-   target_link_libraries( "${PROJECT_NAME}" libi2pd i2pdclient ${DL_LIB} ${Boost_LIBRARIES} ${OPENSSL_LIBRARIES} ${ZLIB_LIBRARY} ${CMAKE_THREAD_LIBS_INIT} ${MINGW_EXTRA} )
+--- build/CMakeLists.txt.orig	Mon Oct 17 06:37:40 2016
++++ build/CMakeLists.txt	Sat Oct 22 14:18:17 2016
+@@ -407,7 +407,7 @@ if (WITH_BINARY)
+   endif()
+   target_link_libraries( "${PROJECT_NAME}" libi2pd i2pdclient ${DL_LIB} ${Boost_LIBRARIES} ${OPENSSL_LIBRARIES} ${ZLIB_LIBRARY} ${CMAKE_THREAD_LIBS_INIT} ${MINGW_EXTRA} ${DL_LIB})
  
 -  install(TARGETS "${PROJECT_NAME}" RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR} COMPONENT Runtime)
 +  install(TARGETS "${PROJECT_NAME}" RUNTIME DESTINATION ${CMAKE_INSTALL_SBINDIR} COMPONENT Runtime)
    set (APPS "\${CMAKE_INSTALL_PREFIX}/bin/${PROJECT_NAME}${CMAKE_EXECUTABLE_SUFFIX}")
    set (DIRS "${Boost_LIBRARY_DIR};${OPENSSL_INCLUDE_DIR}/../bin;${ZLIB_INCLUDE_DIR}/../bin;/mingw32/bin")
    if (MSVC)
-@@ -363,7 +363,7 @@ if (WITH_BINARY)
+@@ -421,7 +421,7 @@ if (WITH_BINARY)
  endif ()
  
  install(FILES ../LICENSE
@@ -19,7 +19,7 @@ $OpenBSD$
    COMPONENT Runtime
    )
  # Take a copy on Appveyor
-@@ -374,8 +374,8 @@ install(FILES "C:/projects/openssl-$ENV{OPENSSL}/LICEN
+@@ -432,8 +432,8 @@ install(FILES "C:/projects/openssl-$ENV{OPENSSL}/LICEN
    OPTIONAL                      # for local builds only!
    )
  
@@ -30,7 +30,7 @@ $OpenBSD$
  # install(DIRECTORY ../ DESTINATION src/
  #   # OPTIONAL
  #   COMPONENT Source FILES_MATCHING
-@@ -384,7 +384,7 @@ install(FILES ${I2PD_SOURCES} DESTINATION src/ COMPONE
+@@ -442,7 +442,7 @@ install(FILES ${I2PD_SOURCES} DESTINATION src/ COMPONE
  #   )
  
  file(GLOB I2PD_HEADERS "../*.h")

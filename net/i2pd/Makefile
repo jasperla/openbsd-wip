@@ -1,12 +1,10 @@
 # $OpenBSD:$
 
 COMMENT =	full-featured C++ implementation of I2P client
-VERSION =	2.8.0
-DISTNAME =	i2pd-${VERSION}
 
 GH_ACCOUNT =	PurpleI2P
 GH_PROJECT =	i2pd
-GH_TAGNAME =	${VERSION}
+GH_TAGNAME =	2.10.0
 
 CATEGORIES =	net
 
