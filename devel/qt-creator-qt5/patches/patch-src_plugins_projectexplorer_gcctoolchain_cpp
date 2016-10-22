@@ -2,9 +2,9 @@ $OpenBSD$
 
 Append eg++ before g++ so eg++ is used by default.
 
---- src/plugins/projectexplorer/gcctoolchain.cpp.orig	Mon May  9 15:11:50 2016
-+++ src/plugins/projectexplorer/gcctoolchain.cpp	Sun Jun  5 14:51:31 2016
-@@ -614,7 +614,7 @@ FileNameList GccToolChain::suggestedMkspecList() const
+--- src/plugins/projectexplorer/gcctoolchain.cpp.orig	Tue Aug 23 14:36:42 2016
++++ src/plugins/projectexplorer/gcctoolchain.cpp	Sat Oct 22 12:44:49 2016
+@@ -605,7 +605,7 @@ FileNameList GccToolChain::suggestedMkspecList() const
  
  QString GccToolChain::makeCommand(const Environment &environment) const
  {
@@ -13,7 +13,7 @@ Append eg++ before g++ so eg++ is used by default.
      FileName tmp = environment.searchInPath(make);
      return tmp.isEmpty() ? make : tmp.toString();
  }
-@@ -799,6 +799,8 @@ QList<ToolChain *> GccToolChainFactory::autoDetect(con
+@@ -790,6 +790,8 @@ QList<ToolChain *> GccToolChainFactory::autoDetect(con
          tcs.append(autoDetectToolchains(QLatin1String("g++-4.2"), Abi::hostAbi(),
                                          Constants::GCC_TOOLCHAIN_TYPEID, alreadyKnown));
      }

@@ -1,6 +1,6 @@
 $OpenBSD$
---- src/shared/qbs/src/lib/corelib/tools/processutils.cpp.orig	Fri Oct  2 15:13:10 2015
-+++ src/shared/qbs/src/lib/corelib/tools/processutils.cpp	Fri Nov  6 17:39:37 2015
+--- src/shared/qbs/src/lib/corelib/tools/processutils.cpp.orig	Fri Aug 19 09:23:24 2016
++++ src/shared/qbs/src/lib/corelib/tools/processutils.cpp	Sat Oct 22 12:44:49 2016
 @@ -40,6 +40,11 @@
  #   include "fileinfo.h"
  #   include <unistd.h>
@@ -11,9 +11,9 @@ $OpenBSD$
 +#   include <fcntl.h>
 +#   include <kvm.h>
  #elif defined(Q_OS_BSD4)
- #   include <libutil.h>
- #   include <sys/types.h>
-@@ -81,6 +86,19 @@ QString processNameByPid(qint64 pid)
+ # include <QFile>
+ #   include <sys/cdefs.h>
+@@ -85,6 +90,19 @@ QString processNameByPid(qint64 pid)
      sprintf(exePath, "/proc/%lld/exe", pid);
      readlink(exePath, buf, sizeof(buf));
      return FileInfo::fileName(QString::fromUtf8(buf));
@@ -31,5 +31,5 @@ $OpenBSD$
 +    kvm_close(kd);
 +    return name;
  #elif defined(Q_OS_BSD4)
-     kinfo_proc *proc = kinfo_getproc(pid);
-     if (!proc)
+ # if defined(Q_OS_NETBSD)
+     struct kinfo_proc2 kp;
