@@ -1,5 +1,0 @@
-@comment $OpenBSD$
-share/lua/${MODLUA_VERSION}/cosmo/
-share/lua/${MODLUA_VERSION}/cosmo.lua
-share/lua/${MODLUA_VERSION}/cosmo/fill.lua
-share/lua/${MODLUA_VERSION}/cosmo/grammar.lua
