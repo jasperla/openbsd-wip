@@ -2,7 +2,7 @@
 
 COMMENT =	Qt4 client for the X2Go system
 
-DISTNAME =	x2goclient-4.0.5.1
+DISTNAME =	x2goclient-4.0.5.2
 
 CATEGORIES =	x11
 

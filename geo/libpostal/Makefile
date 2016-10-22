@@ -4,9 +4,9 @@ COMMENT =	library for parsing/normalizing street addresses
 
 GH_ACCOUNT =	openvenues
 GH_PROJECT =	libpostal
-GH_TAGNAME =	v0.3
+GH_TAGNAME =	v0.3.1
 
-SHARED_LIBS +=	postal	0.0	# 0.0
+SHARED_LIBS +=	postal	0.0	# 0.3
 
 CATEGORIES =	geo
 
@@ -17,8 +17,12 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=	snappy
 
-BUILD_DEPENDS = ${MODGNU_AUTOCONF_DEPENDS} \
-                ${MODGNU_AUTOMAKE_DEPENDS}
+AUTOMAKE_VERSION = 1.15
+AUTOCONF_VERSION = 2.69
+
+BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS} \
+		devel/libtool
 
 LIB_DEPENDS =	archivers/snappy
 
