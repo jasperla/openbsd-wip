@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+lib/lua/${MODLUA_VERSION}/iconv.so
+share/doc/${FULLPKGNAME}/
+share/doc/${FULLPKGNAME}/README
