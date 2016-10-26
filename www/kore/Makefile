@@ -4,7 +4,7 @@ COMMENT =	web application framework for writing scalable web APIs in C
 
 GH_ACCOUNT =	jorisvink
 GH_PROJECT =	kore
-GH_TAGNAME =	1.2.3-release
+GH_TAGNAME =	2.0.0-release
 
 PKGNAME = 	${DISTNAME:S/-release//}
 
@@ -17,7 +17,7 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	c crypto pthread ssl z
+WANTLIB +=	c crypto pthread ssl
 
 FLAVORS =	pgsql
 FLAVOR ?=
@@ -27,8 +27,6 @@ MAKE_ENV =	PGSQL=1
 WANTLIB +=	pq
 LIB_DEPENDS +=	databases/postgresql,-main
 .endif
-
-CONFIGURE_STYLE = none
 
 USE_GMAKE =	Yes
 MAKE_ENV +=	DEBUG=1 TASKS=1

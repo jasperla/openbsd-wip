@@ -2,7 +2,7 @@
 @bin bin/kore
 include/kore/
 include/kore/http.h
+include/kore/jsonrpc.h
 include/kore/kore.h
 include/kore/pgsql.h
-include/kore/spdy.h
 include/kore/tasks.h
