@@ -1,7 +1,0 @@
-@comment $OpenBSD$
-bin/unzstd
-@bin bin/zstd
-bin/zstdcat
-@man man/man1/unzstd.1
-@man man/man1/zstd.1
-@man man/man1/zstdcat.1

@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-%%dynlink%%
-lib/ocaml/cppo_ocamlbuild/ocamlbuild_cppo.a
-lib/ocaml/cppo_ocamlbuild/ocamlbuild_cppo.cmxa
