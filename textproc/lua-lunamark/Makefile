@@ -24,6 +24,7 @@ FLAVOR ?=
 MODLUA_RUN_DEPENDS =	devel/lpeg \
 			textproc/lua-cosmo
 
+# Lua 5.3 has a builtin module for UTF-8
 .if !${FLAVOR:Mlua53}
 MODLUA_RUN_DEPENDS +=	devel/lua-utf8
 .endif
