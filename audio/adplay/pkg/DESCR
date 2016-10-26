@@ -1,0 +1,6 @@
+AdPlay/UNIX is AdPlug's UNIX console-based frontend. AdPlug is a free,
+universal OPL2 audio playback library. AdPlay/UNIX supports the full range
+of AdPlug's file format playback features. Despite this, at the moment, only
+emulated OPL2 output is supported by AdPlay/UNIX, but this on a wide range
+of output devices.
+
