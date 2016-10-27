@@ -9,16 +9,18 @@ GH_ACCOUNT =	ittner
 GH_PROJECT =	lua-iconv
 GH_TAGNAME =	lua-iconv-${V}
 
-CATEGORIES =	devel
+CATEGORIES =	converters
 
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
+LIB_DEPENDS =	converters/libiconv
+
 MODULES =	lang/lua
 TEST_DEPENDS +=	${BASE_PKGPATH}
-WANTLIB +=	${MODLUA_WANTLIB}
+WANTLIB +=	${MODLUA_WANTLIB} iconv
 
 FLAVORS =	lua52 lua53
 FLAVOR ?=
