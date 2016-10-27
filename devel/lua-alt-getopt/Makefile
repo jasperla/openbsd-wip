@@ -16,11 +16,14 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-PKG_ARCH =	*
-
 MODULES =	lang/lua
 
+FLAVORS =	lua52 lua53
+FLAVOR ?=
+
 NO_BUILD =	Yes
+
+PKG_ARCH =	*
 
 do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_DATADIR}
