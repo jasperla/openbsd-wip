@@ -29,4 +29,8 @@ do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/alt_getopt.lua ${MODLUA_DATADIR}
 
+do-test:
+	sed -i 's,/usr/bin/env lua,${MODLUA_BIN},g' ${WRKSRC}/alt_getopt
+	cd ${WRKSRC}/tests && ./test.sh
+
 .include <bsd.port.mk>
