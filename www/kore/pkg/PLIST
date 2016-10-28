@@ -6,3 +6,7 @@ include/kore/jsonrpc.h
 include/kore/kore.h
 include/kore/pgsql.h
 include/kore/tasks.h
+share/doc/kore/
+share/doc/kore/README.md
+share/examples/kore/
+share/examples/kore/kore.conf.example
