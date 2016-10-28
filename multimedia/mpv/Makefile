@@ -25,27 +25,42 @@ EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 PERMIT_PACKAGE_CDROM =	patents
 PERMIT_PACKAGE_FTP =	Yes
 
-WANTLIB += EGL GL SDL2 X11 X11-xcb Xau Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xinerama Xrandr Xrender Xss Xv Xxf86vm ass avcodec
-WANTLIB += avdevice avfilter avformat avresample avutil bluray
-WANTLIB += c cdio cdio_cdda cdio_paranoia drm dvdnav dvdread expat
-WANTLIB += fontconfig freetype fribidi gbm iconv jpeg lcms2 m opus postproc
-WANTLIB += pthread pthread-stubs smbclient sndio speex swresample
-WANTLIB += swscale v4l2 v4lconvert vpx x264 x265 xcb xcb-dri2
-WANTLIB += xcb-glx z ${MODLUA_WANTLIB}
+WANTLIB += EGL GL X11 X11-xcb Xau Xdamage Xdmcp Xext Xfixes Xinerama
+WANTLIB += Xrandr Xrender Xss Xv Xxf86vm avcodec avfilter avformat
+WANTLIB += avresample avutil c drm gbm m opus postproc pthread
+WANTLIB += pthread-stubs sndio speex swresample swscale vpx x264
+WANTLIB += x265 xcb xcb-dri2 xcb-glx z
 
-MODULES =		lang/lua \
-			lang/python
+MODULES =		lang/python
 
 BUILD_DEPENDS =		audio/ladspa \
-			graphics/libmng \
 			textproc/py-docutils
+#			graphics/libmng \
 
-LIB_DEPENDS =		audio/libcdio \
+LIB_DEPENDS =		graphics/ffmpeg>=20151112
+
+MODPY_RUNDEP =		No
+RUN_DEPENDS =		devel/desktop-file-utils \
+			x11/gtk+3,-guic
+
+FLAVORS ?=		lite
+FLAVOR ?=
+
+.if ${FLAVOR:L:Mlite}
+TOGGLE =		disable
+.else
+TOGGLE =		enable
+
+WANTLIB += SDL2 ass avdevice bluray cdio cdio_cdda cdio_paranoia
+WANTLIB += dvdnav dvdread expat fontconfig freetype fribidi iconv
+WANTLIB += jpeg lcms2 smbclient v4l2 v4lconvert ${MODLUA_WANTLIB}
+
+MODULES +=		lang/lua
+
+LIB_DEPENDS +=		audio/libcdio \
 			converters/libiconv \
 			devel/libdvdread \
 			devel/sdl2 \
-			graphics/ffmpeg>=20151112 \
 			graphics/jpeg \
 			graphics/lcms2 \
 			multimedia/libass \
@@ -53,19 +68,15 @@ LIB_DEPENDS =		audio/libcdio \
 			multimedia/libdvdnav \
 			multimedia/libv4l \
 			net/samba
+.endif
 
-MODPY_RUNDEP =		No
-RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+3,-guic
 
 CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
 			--confdir=${LOCALBASE}/share/examples/mpv \
 			--mandir=${LOCALBASE}/man \
 			--docdir=${LOCALBASE}/share/examples/mpv \
 			--zshdir=${LOCALBASE}/share/zsh/vendor-completions \
-			--enable-encoding \
 			--enable-sndio \
-			--enable-sdl2 \
 			--enable-zsh-comp \
 			--disable-alsa \
 			--disable-caca \
@@ -92,7 +103,23 @@ CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
 			--disable-vdpau-hwaccel \
 			--disable-videotoolbox-hwaccel \
 			--disable-videotoolbox-gl \
-			--disable-wayland
+			--disable-wayland \
+			--${TOGGLE}-audio-input \
+			--${TOGGLE}-cdda \
+			--${TOGGLE}-dvdread \
+			--${TOGGLE}-dvdnav \
+			--${TOGGLE}-encoding \
+			--${TOGGLE}-iconv \
+			--${TOGGLE}-jpeg \
+			--${TOGGLE}-lcms2 \
+			--${TOGGLE}-libass \
+			--${TOGGLE}-libavdevice \
+			--${TOGGLE}-libbluray \
+			--${TOGGLE}-libsmbclient \
+			--${TOGGLE}-libv4l2 \
+			--${TOGGLE}-lua \
+			--${TOGGLE}-sdl2 \
+			--${TOGGLE}-tv
 
 MAKE_ENV +=		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 MAKE_ENV +=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
