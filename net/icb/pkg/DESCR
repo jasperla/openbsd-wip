@@ -1,0 +1,10 @@
+Icb is a minimalistic FIFO- and filesystem-based Internet Citizen's Band (ICB)
+client. It creates an icb directory with subdirectory for ICB server, where
+subdirectries for group and nick name directories. In the leaf directories a
+FIFO file in and and normal file out are placed. The in file is used to
+communicate with the server and the out file contains the chat log. For every
+nick name there will be new in and out files. The basic idea of this is to be
+able to communicate with an ICB server with basic command line tools.
+
+Icb lacks its own networking support. It relies on UCSPI-compliant network
+client instead.
