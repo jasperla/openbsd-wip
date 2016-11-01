@@ -22,9 +22,9 @@ MASTER_SITES =		http://dl.cihar.com/gammu/releases/
 
 MODULES =		devel/cmake
 
+BUILD_DEPENDS = 	devel/gettext-tools
 RUN_DEPENDS =		misc/dialog
-LIB_DEPENDS =		databases/libdbi \
-			devel/glib2 \
+LIB_DEPENDS =		devel/glib2 \
 			devel/libusb1 \
 			net/curl
 TEST_DEPENDS = 		devel/cmake
