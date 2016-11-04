@@ -64,7 +64,7 @@ MAKE_ENV +=		OSTYPE=openbsd \
 			PREFIX=${PREFIX} \
 			PYTHON=${MODPY_BIN} \
 			SHAREDIR=${PREFIX}/libexec/munin/ \
-			DBDIR=/var/db/munin
+			MUNIN_DBDIR=/var/db/munin
 
 CONFIGURE_ENV += 	${MAKE_ENV}
 
@@ -87,6 +87,7 @@ post-extract:
 	${SUBST_CMD} -m 444 -c ${SUBST_LIST}
 	chmod -R +x ${WRKSRC}/plugins/node.d.openbsd
 	rm ${WRKSRC}/plugins/node.d.openbsd/swap # we have no in/out fields
+	rm -r ${WRKSRC}/plugins/node.d/example-graphs
 
 # Fixup hardcoded paths in plugins to use TRUEPREFIX/LOCALBASE as appropriate,
 # there are far too many to handle this via patches/SUBST_CMD, and this method
