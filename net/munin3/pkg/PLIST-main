@@ -79,7 +79,6 @@ libexec/munin/plugins/apc_envunit_
 libexec/munin/plugins/apc_nis
 libexec/munin/plugins/asterisk
 libexec/munin/plugins/bgpd
-libexec/munin/plugins/bind9
 libexec/munin/plugins/bind9_rndc
 libexec/munin/plugins/cmc_tc_sensor_
 libexec/munin/plugins/courier_
