@@ -2,7 +2,7 @@
 
 COMMENT =		high-performance, easy-to-use data analysis for Python
 
-MODPY_EGG_VERSION =	0.17.1
+MODPY_EGG_VERSION =	0.19.1
 DISTNAME =		pandas-${MODPY_EGG_VERSION}
 PKGNAME =		py-pandas-${MODPY_EGG_VERSION}
 
@@ -13,7 +13,7 @@ HOMEPAGE =		http://pandas.pydata.org/
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		m pthread python2.7 stdc++
+WANTLIB +=		m pthread ${MODPY_WANTLIB} stdc++
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
@@ -22,31 +22,30 @@ MODULES =		lang/python
 
 # These are optional runtime dependencies that should be around for
 # building the docs and running the tests.
-OPTIONAL_DEPENDS = 	graphics/py-matplotlib \
-			net/py-boto \
-			x11/py-qt4 \
-			www/py-httplib2 \
-			www/py-beautifulsoup4 \
+OPTIONAL_DEPENDS = 	devel/ipython \
 			devel/py-html5lib \
-			devel/ipython \
-			x11/py-gtk2 \
+			graphics/py-matplotlib \
+			net/py-boto \
+			textproc/py-lxml \
+			www/py-beautifulsoup4 \
+			www/py-httplib2 \
 			x11/xclip
 
 BUILD_DEPENDS =		${RUN_DEPENDS} \
 			${OPTIONAL_DEPENDS}
 
-RUN_DEPENDS =		devel/py-tz \
-			devel/py-dateutil \
+RUN_DEPENDS =		devel/py-dateutil \
+			devel/py-tz \
 			math/py-numpy
 
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/py-nose \
-			${FULLPKGNAME}:math/py-pandas \
 			${OPTIONAL_DEPENDS}
+#			${BASE_PKGPATH} \
 #TEST_IS_INTERACTIVE =	X11
 
-do-test:
-	${LOCALBASE}/bin/nosetests pandas -v
+#do-test:
+#	${LOCALBASE}/bin/nosetests pandas -v
 
 # http://pandas.pydata.org/pandas-docs/stable/install.html
 #
@@ -60,8 +59,7 @@ post-build:
 	cd ${WRKBUILD}/doc && ${MODPY_BIN} make.py
 
 post-install:
-	cp -r ${WRKBUILD}/doc/build/html ${PREFIX}/share/doc/py-pandas
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/py-pandas
-
+	cp -r ${WRKBUILD}/doc/build/html ${PREFIX}/share/doc/${MODPY_PY_PREFIX}pandas
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}pandas
 
 .include <bsd.port.mk>
