@@ -5,4 +5,3 @@ writers or modify existing ones. The markdown parser is written using a PEG
 grammar and can also be modified by the user.
 
 The API is described at http://jgm.github.io/lunamark/doc/
-

@@ -1,6 +1,4 @@
 @comment $OpenBSD$
-bin/lunadoc${MODLUA_DEP_VERSION}
-bin/lunamark${MODLUA_DEP_VERSION}
 share/lua/${MODLUA_VERSION}/lunamark/
 share/lua/${MODLUA_VERSION}/lunamark.lua
 share/lua/${MODLUA_VERSION}/lunamark/entities.lua
