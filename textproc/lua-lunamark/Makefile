@@ -21,13 +21,9 @@ MODULES =	lang/lua
 FLAVORS =	lua52 lua53
 FLAVOR ?=
 
-MODLUA_RUN_DEPENDS =	devel/lpeg \
+MODLUA_RUN_DEPENDS =	converters/lua-utf8 \
+			devel/lpeg \
 			textproc/lua-cosmo
-
-# Lua 5.3 has a builtin UTF-8 module
-.if !${FLAVOR:Mlua53}
-MODLUA_RUN_DEPENDS +=	converters/lua-utf8
-.endif
 
 NO_BUILD =	Yes
 
