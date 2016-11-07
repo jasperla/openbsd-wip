@@ -21,7 +21,7 @@ $OpenBSD$
      sh=sh
      # #73162: Ubuntu uses the ancient Bourne shell, which does not implement trap well.
 -    if [ -x /bin/bash ]
-+    if [ -x /bin/ksh]
++    if [ -x /bin/ksh ]
      then
 -        sh=/bin/bash
 +        sh=/bin/ksh
