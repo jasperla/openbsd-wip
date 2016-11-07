@@ -2,8 +2,8 @@
 
 COMMENT=		NetBeans Java IDE
 
-V=			8.1
-DISTNAME=		netbeans-${V}-201510222201
+V=			8.2
+DISTNAME=		netbeans-${V}-201609300101
 PKGNAME=		netbeans-${V}
 CATEGORIES=		devel
 
