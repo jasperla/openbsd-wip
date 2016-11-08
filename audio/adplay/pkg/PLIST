@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@bin bin/adplay
-@man man/man1/adplay.1
