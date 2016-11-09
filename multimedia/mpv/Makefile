@@ -26,10 +26,11 @@ PERMIT_PACKAGE_CDROM =	patents
 PERMIT_PACKAGE_FTP =	Yes
 
 WANTLIB += EGL GL X11 X11-xcb Xau Xdamage Xdmcp Xext Xfixes Xinerama
-WANTLIB += Xrandr Xrender Xss Xv Xxf86vm avcodec avfilter avformat
-WANTLIB += avresample avutil c drm gbm m opus postproc pthread
-WANTLIB += pthread-stubs sndio speex swresample swscale vpx x264
-WANTLIB += x265 xcb xcb-dri2 xcb-glx z
+WANTLIB += Xrandr Xrender Xss Xv Xxf86vm ass avcodec avfilter
+WANTLIB += avformat avresample avutil c drm expat fontconfig freetype
+WANTLIB += fribidi gbm m opus postproc pthread pthread-stubs sndio
+WANTLIB += speex swresample swscale vpx x264 x265 xcb xcb-dri2
+WANTLIB += xcb-glx z
 
 MODULES =		lang/python
 
@@ -37,7 +38,8 @@ BUILD_DEPENDS =		audio/ladspa \
 			textproc/py-docutils
 #			graphics/libmng \
 
-LIB_DEPENDS =		graphics/ffmpeg>=20151112
+LIB_DEPENDS =		graphics/ffmpeg>=20151112 \
+			multimedia/libass
 
 MODPY_RUNDEP =		No
 RUN_DEPENDS =		devel/desktop-file-utils \
@@ -63,7 +65,6 @@ LIB_DEPENDS +=		audio/libcdio \
 			devel/sdl2 \
 			graphics/jpeg \
 			graphics/lcms2 \
-			multimedia/libass \
 			multimedia/libbluray>=0.8.0 \
 			multimedia/libdvdnav \
 			multimedia/libv4l \
@@ -112,7 +113,6 @@ CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
 			--${TOGGLE}-iconv \
 			--${TOGGLE}-jpeg \
 			--${TOGGLE}-lcms2 \
-			--${TOGGLE}-libass \
 			--${TOGGLE}-libavdevice \
 			--${TOGGLE}-libbluray \
 			--${TOGGLE}-libsmbclient \
