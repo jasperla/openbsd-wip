@@ -18,9 +18,13 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM = 	Yes
 
-WANTLIB += Half Iex IlmImf IlmThread Imath fftw3 jpeg m png stdc++ tiff z
+WANTLIB += Half Iex IlmImf IlmThread Imath boost_atomic-mt boost_chrono-mt
+WANTLIB += boost_date_time-mt boost_system-mt boost_thread-mt
+WANTLIB += fftw3 jpeg m png pthread tiff z
 
-MODULES =		devel/cmake
+MODULES =		devel/cmake gcc4
+MODGCC4_LANGS += 	c++
+MODGCC4_ARCHS = 	*
 LIB_DEPENDS =		devel/boost \
 			graphics/jpeg \
 			graphics/openexr \
