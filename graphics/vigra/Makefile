@@ -2,10 +2,10 @@
 
 COMMENT =		image processing and analysis library
 
-DISTNAME =		vigra-1.10.0
 GH_ACCOUNT =		ukoethe
 GH_PROJECT =		vigra
-GH_COMMIT =		e6c21f3506d783242222c44b2f4f4ec55afdab01
+GH_TAGNAME = 		Version-1-11-0
+DISTNAME =		vigra-1.11.0
 
 SHARED_LIBS =		vigraimpex 0.0 # 5.1
 
@@ -18,14 +18,19 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM = 	Yes
 
-WANTLIB =		jpeg m png stdc++ tiff z
+WANTLIB += Half Iex IlmImf IlmThread Imath fftw3 jpeg m png stdc++ tiff z
 
 MODULES =		devel/cmake
-LIB_DEPENDS =		graphics/jpeg \
+LIB_DEPENDS =		devel/boost \
+			graphics/jpeg \
+			graphics/openexr \
 			graphics/png \
-			graphics/tiff
+			graphics/tiff \
+			math/fftw3
 
 CONFIGURE_ARGS +=	-DWITH_VIGRANUMPY=0 \
-			-DDOCINSTALL=share/doc/
+			-DDOCINSTALL=share/doc/ \
+			-DWITH_BOOST_THREAD=1 \
+			-DWITH_OPENEXR=1
 
 .include <bsd.port.mk>
