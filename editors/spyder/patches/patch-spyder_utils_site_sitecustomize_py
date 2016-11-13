@@ -1,0 +1,12 @@
+$OpenBSD$
+--- spyder/utils/site/sitecustomize.py.orig	Sun Nov 13 13:49:05 2016
++++ spyder/utils/site/sitecustomize.py	Sun Nov 13 13:48:32 2016
+@@ -212,7 +212,7 @@ except ImportError:
+ # Add default filesystem encoding on Linux to avoid an error with
+ # Matplotlib 1.5 in Python 2 (Fixes Issue 2793)
+ #==============================================================================
+-if PY2 and sys.platform.startswith('linux'):
++if PY2 and sys.platform.startswith(('linux', 'openbsd')):
+     def _getfilesystemencoding_wrapper():
+         return 'utf-8'
+ 

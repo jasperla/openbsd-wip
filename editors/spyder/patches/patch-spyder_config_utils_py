@@ -1,0 +1,12 @@
+$OpenBSD$
+--- spyder/config/utils.py.orig	Sun Nov 13 16:03:01 2016
++++ spyder/config/utils.py	Sun Nov 13 16:03:18 2016
+@@ -157,7 +157,7 @@ def is_ubuntu():
+ 
+ def is_gtk_desktop():
+     "Detect if we are running in a Gtk-based desktop"
+-    if sys.platform.startswith('linux'):
++    if sys.platform.startswith(('linux', 'openbsd')):
+         xdg_desktop = os.environ.get('XDG_CURRENT_DESKTOP', '')
+         if xdg_desktop:
+             gtk_desktops = ['Unity', 'GNOME', 'XFCE']

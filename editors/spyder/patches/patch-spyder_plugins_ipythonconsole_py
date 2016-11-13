@@ -1,0 +1,12 @@
+$OpenBSD$
+--- spyder/plugins/ipythonconsole.py.orig	Sun Nov 13 16:06:10 2016
++++ spyder/plugins/ipythonconsole.py	Sun Nov 13 16:06:26 2016
+@@ -362,7 +362,7 @@ class IPythonConsoleConfigPage(PluginConfigPage):
+ 
+         if sys.platform == 'darwin':
+             backends.append( ("OS X", 4) )
+-        if sys.platform.startswith('linux'):
++        if sys.platform.startswith(('linux', 'openbsd')):
+             backends.append( ("Gtk3", 5) )
+             backends.append( ("Gtk", 6) )
+         if PY2:

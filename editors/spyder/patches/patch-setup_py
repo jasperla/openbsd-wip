@@ -6,7 +6,7 @@ $OpenBSD$
  def get_data_files():
      """Return data_files in a platform dependent manner"""
 -    if sys.platform.startswith('linux'):
-+    if sys.platform.startswith('linux') or sys.platform.startswith('openbsd'):
++    if sys.platform.startswith(('linux', 'openbsd')):
          if PY3:
              data_files = [('share/applications', ['scripts/spyder3.desktop']),
                            ('share/pixmaps', ['img_src/spyder3.png'])]
