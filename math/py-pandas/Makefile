@@ -27,6 +27,7 @@ MODULES =		lang/python
 OPTIONAL_DEPENDS =	devel/py-html5lib${MODPY_FLAVOR} \
 			graphics/py-matplotlib${MODPY_FLAVOR} \
 			math/py-bottleneck${MODPY_FLAVOR} \
+			math/py-numexpr${MODPY_FLAVOR} \
 			net/py-boto${MODPY_FLAVOR} \
 			textproc/py-lxml${MODPY_FLAVOR} \
 			www/py-beautifulsoup4${MODPY_FLAVOR} \
