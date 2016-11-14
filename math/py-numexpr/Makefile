@@ -26,9 +26,6 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =		python3
 FLAVOR ?=
 
-CFLAGS = -g
-CXXFLAGS = -g
-
 do-test: fake
 	PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} -c \
 	    "import numexpr; numexpr.test()"
