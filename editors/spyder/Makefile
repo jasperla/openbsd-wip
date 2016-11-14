@@ -25,6 +25,7 @@ RUN_DEPENDS =		databases/py-pickleshare \
 			devel/pyflakes \
 			devel/pylint \
 			net/py-zmq \
+			shells/py-qtconsole \
 			sysutils/py-psutil \
 			x11/py-qt5 \
 			x11/py-qtawesome \
