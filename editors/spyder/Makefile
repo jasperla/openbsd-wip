@@ -19,6 +19,7 @@ BUILD_DEPENDS =		textproc/py-sphinx
 RUN_DEPENDS =		databases/py-pickleshare \
 			devel/desktop-file-utils \
 			devel/pep8 \
+			devel/py-jedi \
 			devel/py-nbconvert \
 			devel/py-rope \
 			devel/pyflakes \
