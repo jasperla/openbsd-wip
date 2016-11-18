@@ -5,7 +5,7 @@ GH_ACCOUNT =		htacg
 GH_PROJECT =		tidy-html5
 GH_TAGNAME =		5.2.0
 SHARED_LIBS +=		tidy 0.0 # 5.2
-CATEGORIES =		www devel
+CATEGORIES =		textproc devel
 HOMEPAGE =		http://www.html-tidy.org/
 
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>

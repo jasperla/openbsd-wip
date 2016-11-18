@@ -20,7 +20,7 @@ MODCLANG_ARCHS =	*
 LIB_DEPENDS =		net/curl \
 			devel/spidermonkey \
 			devel/pcre \
-			www/tidy-html5
+			textproc/tidy-html5
 
 WRKSRC =		${WRKDIST}/src
 MAKE_FILE =		${WRKSRC}/makefile.bsd
