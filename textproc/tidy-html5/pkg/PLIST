@@ -7,6 +7,4 @@ include/tidyenum.h
 include/tidyplatform.h
 @lib lib/libtidy.so.${LIBtidy_VERSION}
 lib/libtidys.a
-share/man/
-share/man/man1/
-@man share/man/man1/tidy.1
+@man man/man1/tidy.1

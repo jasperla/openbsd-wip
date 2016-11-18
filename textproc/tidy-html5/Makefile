@@ -17,6 +17,8 @@ WANTLIB += c
 MODULES =		devel/cmake
 BUILD_DEPENDS =		textproc/libxslt,-main
 
+CONFIGURE_ARGS =	-DMAN_INSTALL_DIR=man/man1
+
 NO_TEST =		Yes
 
 post-extract:
