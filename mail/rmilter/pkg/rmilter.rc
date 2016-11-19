@@ -3,7 +3,7 @@
 # $OpenBSD$
 
 daemon="${TRUEPREFIX}/sbin/rmilter"
-daemon_flags="-c ${SYSCONFDIR}/rmilter.conf"
+daemon_flags="-c ${SYSCONFDIR}/rmilter/rmilter.conf"
 daemon_user="_rmilter"
 
 . /etc/rc.d/rc.subr
