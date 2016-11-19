@@ -1,11 +1,23 @@
 $OpenBSD$
---- etc/netbeans.conf.orig	Sun Aug 23 21:29:49 2015
-+++ etc/netbeans.conf	Sun Aug 23 21:30:30 2015
-@@ -54,7 +54,7 @@ netbeans_default_options="-J-client -J-Xss2m -J-Xms32m
- # installer points to one of those in the NetBeans application shortcut 
+
+- Disable plugin manager
+- Fix netbeans_jdkhome
+
+--- etc/netbeans.conf.orig	Sat Nov 19 21:53:50 2016
++++ etc/netbeans.conf	Sat Nov 19 22:00:43 2016
+@@ -43,7 +43,7 @@ netbeans_default_cachedir="${DEFAULT_CACHEDIR_ROOT}/8.
+ # Concurrent Mark & Sweep garbage collector.
+ # (see http://wiki.netbeans.org/FaqGCPauses)
+ #
+-netbeans_default_options="-J-client -J-Xss2m -J-Xms32m -J-Dapple.laf.useScreenMenuBar=true -J-Dapple.awt.graphics.UseQuartz=true -J-Dsun.java2d.noddraw=true -J-Dsun.java2d.dpiaware=true -J-Dsun.zip.disableMemoryMapping=true"
++netbeans_default_options="-J-client -J-Xss2m -J-Xms32m -J-Dapple.laf.useScreenMenuBar=true -J-Dapple.awt.graphics.UseQuartz=true -J-Dsun.java2d.noddraw=true -J-Dsun.java2d.dpiaware=true -J-Dsun.zip.disableMemoryMapping=true -J-Dplugin.manager.check.updates=false -J-Dplugin.manager.check.interval=NEVER"
+ 
+ # Default location of JDK:
+ # (set by installer or commented out if launcher should decide)
+@@ -55,6 +55,7 @@ netbeans_default_options="-J-client -J-Xss2m -J-Xms32m
  # based on the Java version selected at installation time.
  #
--#netbeans_jdkhome="/path/to/jdk"
+ #netbeans_jdkhome="/path/to/jdk"
 +netbeans_jdkhome=`/usr/local/bin/javaPathHelper -h netbeans`
  
  # Additional module clusters:
