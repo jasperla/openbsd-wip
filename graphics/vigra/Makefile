@@ -32,9 +32,15 @@ LIB_DEPENDS =		devel/boost \
 			graphics/tiff \
 			math/fftw3
 
-CONFIGURE_ARGS +=	-DWITH_VIGRANUMPY=0 \
+CONFIGURE_ARGS =	-DWITH_VIGRANUMPY=0 \
 			-DDOCINSTALL=share/doc/ \
 			-DWITH_BOOST_THREAD=1 \
-			-DWITH_OPENEXR=1
+			-DWITH_OPENEXR=1 \
+			-DDWITH_HDF5=0 \
+			-DCREATE_CTEST_TARGETS=ON \
+			-DAUTOBUILD_TESTS=ON \
+			-DAUTOEXEC_TESTS:BOOL=OFF
+
+CXXFLAGS += 		-std=c++11 -pthread
 
 .include <bsd.port.mk>
