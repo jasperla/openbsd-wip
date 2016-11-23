@@ -1,6 +1,0 @@
-@comment $OpenBSD$
-bin/tapper-simnow-start
-${P5SITE}/Tapper/
-${P5SITE}/Tapper/SimNow.pm
-@man man/man1/tapper-simnow-start.1
-@man man/man3p/Tapper::SimNow.3p

@@ -1,9 +1,0 @@
-Warning: prerequisite LockFile::Simple 0.208 not found. We have 0.207.
-
-$ tapper-notify-daemon
-defined(@array) is deprecated at /usr/local/libdata/perl5/site_perl/LockFile/Simple.pm line 135.
-        (Maybe you should just omit the defined()?)
-defined(@array) is deprecated at /usr/local/libdata/perl5/site_perl/LockFile/Simple.pm line 136.
-        (Maybe you should just omit the defined()?)
-Undefined subroutine &main::tempfile called at /usr/local/bin/tapper-notify-daemon line 15.
-

@@ -8,7 +8,7 @@ COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
-GH_TAGNAME =		v0.21.0
+GH_TAGNAME =		v0.22.0
 
 CATEGORIES =		multimedia x11
 
@@ -36,7 +36,6 @@ MODULES =		lang/python
 
 BUILD_DEPENDS =		audio/ladspa \
 			textproc/py-docutils
-#			graphics/libmng \
 
 LIB_DEPENDS =		graphics/ffmpeg>=20151112 \
 			multimedia/libass

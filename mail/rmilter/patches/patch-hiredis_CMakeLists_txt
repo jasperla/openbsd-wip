@@ -1,6 +1,6 @@
 $OpenBSD$
---- hiredis/CMakeLists.txt.orig	Thu Jul  7 09:00:46 2016
-+++ hiredis/CMakeLists.txt	Thu Jul  7 09:00:46 2016
+--- hiredis/CMakeLists.txt.orig	Mon Sep 12 13:03:58 2016
++++ hiredis/CMakeLists.txt	Mon Sep 19 19:58:37 2016
 @@ -6,9 +6,6 @@ SET(HIREDISSRC	async.c
  				sds.c)
  

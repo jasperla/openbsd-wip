@@ -1,0 +1,4 @@
+phrasen|drescher is a cracking tool used for the purpose of finding the pass
+phrase for RSA or DSA keys as they would be used by SSH for instance. It
+performs wordlist and rule based attacks against the key. The tool can be used
+on multiple keys at once.

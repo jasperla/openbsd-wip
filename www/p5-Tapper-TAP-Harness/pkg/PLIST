@@ -1,5 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/Tapper/
-${P5SITE}/Tapper/TAP/
-${P5SITE}/Tapper/TAP/Harness.pm
-@man man/man3p/Tapper::TAP::Harness.3p

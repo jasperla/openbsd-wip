@@ -2,7 +2,7 @@
 
 COMMENT =		utility belt for automated testing in python for python
 
-MODPY_EGG_VERSION =	1.2.24
+MODPY_EGG_VERSION =	1.4.0
 DISTNAME =		sure-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel

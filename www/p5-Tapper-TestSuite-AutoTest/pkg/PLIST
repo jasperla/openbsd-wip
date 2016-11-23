@@ -1,7 +1,0 @@
-@comment $OpenBSD$
-bin/tapper-testsuite-autotest
-${P5SITE}/Tapper/
-${P5SITE}/Tapper/TestSuite/
-${P5SITE}/Tapper/TestSuite/AutoTest.pm
-@man man/man1/tapper-testsuite-autotest.1
-@man man/man3p/Tapper::TestSuite::AutoTest.3p

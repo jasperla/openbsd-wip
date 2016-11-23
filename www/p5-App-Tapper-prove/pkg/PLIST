@@ -1,7 +1,0 @@
-@comment $OpenBSD$
-bin/tprove
-${P5SITE}/App/
-${P5SITE}/App/Tapper/
-${P5SITE}/App/Tapper/prove.pm
-@man man/man1/tprove.1
-@man man/man3p/App::Tapper::prove.3p

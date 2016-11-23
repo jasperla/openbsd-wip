@@ -2,9 +2,10 @@
 
 COMMENT=	milter for rspamd (also supports clamav, rate-limiting, etc)
 
+DISTNAME=	rmilter-2.10.0pre20161118
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rmilter
-GH_TAGNAME=	1.8.6
+GH_COMMIT=	d4421aeb2e4d3708ede215650eb596691ee69e43
 
 CATEGORIES=	mail
 
@@ -13,13 +14,14 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c crypto m memcached memcachedutil milter opendkim
-WANTLIB += pcre pthread ssl
+WANTLIB += c crypto glib-2.0 intl m milter opendkim pcre pthread ssl
 
-MODULES=	devel/cmake
+MODULES+=	devel/cmake \
+		gcc4
+MODGCC4_ARCHS=	*
 
 BUILD_DEPENDS=	devel/bison
-LIB_DEPENDS=	devel/libmemcached \
+LIB_DEPENDS=	devel/glib2 \
 		devel/pcre \
 		mail/sendmail,-libmilter \
 		mail/opendkim

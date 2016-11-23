@@ -1,9 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/Tapper/
-${P5SITE}/Tapper/Remote/
-${P5SITE}/Tapper/Remote.pm
-${P5SITE}/Tapper/Remote/Config.pm
-${P5SITE}/Tapper/Remote/Net.pm
-@man man/man3p/Tapper::Remote.3p
-@man man/man3p/Tapper::Remote::Config.3p
-@man man/man3p/Tapper::Remote::Net.3p
