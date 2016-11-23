@@ -21,8 +21,18 @@ MODPY_SETUPTOOLS = Yes
 RUN_DEPENDS =	devel/libffi \
 		devel/py-virtualenv \
 		graphics/jpeg \
+		devel/py-frozendict \
+		devel/py-pydenticon \
 		textproc/libxslt,-python \
-		security/py-bcrypt
+		net/py-msgpack \
+		security/py-bcrypt \
+		textproc/py-yaml \
+		devel/py-blist \
+		graphics/py-Pillow \
+		security/py-openssl \
+		devel/py-service_identity
+
+#devel/py-pymacaroons_pynacl \
 		
 
 .include <bsd.port.mk>
