@@ -1,8 +1,0 @@
-@comment $OpenBSD$
-bin/tapper-testsuite-benchmark-s3
-${P5SITE}/Tapper/
-${P5SITE}/Tapper/TestSuite/
-${P5SITE}/Tapper/TestSuite/Benchmark/
-${P5SITE}/Tapper/TestSuite/Benchmark/S3.pm
-@man man/man1/tapper-testsuite-benchmark-s3.1
-@man man/man3p/Tapper::TestSuite::Benchmark::S3.3p

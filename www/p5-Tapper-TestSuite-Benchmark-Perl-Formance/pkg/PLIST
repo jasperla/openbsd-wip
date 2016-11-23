@@ -1,9 +1,0 @@
-@comment $OpenBSD$
-bin/tapper-testsuite-benchmark-perlformance
-${P5SITE}/Tapper/
-${P5SITE}/Tapper/TestSuite/
-${P5SITE}/Tapper/TestSuite/Benchmark/
-${P5SITE}/Tapper/TestSuite/Benchmark/Perl/
-${P5SITE}/Tapper/TestSuite/Benchmark/Perl/Formance.pm
-@man man/man1/tapper-testsuite-benchmark-perlformance.1
-@man man/man3p/Tapper::TestSuite::Benchmark::Perl::Formance.3p
