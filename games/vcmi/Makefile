@@ -2,8 +2,7 @@
 
 GH_ACCOUNT = 		vcmi
 GH_PROJECT = 		vcmi
-GH_COMMIT = 		2e70d29479d3452d0dd0b5dd3bcf7ba50ce9ea22
-DISTNAME = 		vcmi-0.99b
+GH_TAGNAME = 		0.99
 
 COMMENT =		rewrite of the HoMM3 engine
 
@@ -18,10 +17,11 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 SHARED_LIBS =		vcmi	0.0 # 0.0
 
-WANTLIB += SDL2 SDL2_image SDL2_mixer SDL2_ttf avcodec avformat avutil
-WANTLIB += boost_date_time-mt boost_filesystem-mt boost_program_options-mt
+WANTLIB += SDL2 SDL2_image SDL2_mixer SDL2_ttf avcodec avformat
+WANTLIB += avutil boost_atomic-mt boost_chrono-mt boost_date_time-mt
+WANTLIB += boost_filesystem-mt boost_locale-mt boost_program_options-mt
 WANTLIB += boost_system-mt boost_thread-mt boost_unit_test_framework-mt
-WANTLIB += boost_locale-mt c execinfo m pthread swscale z
+WANTLIB += c execinfo m pthread swscale z
 
 MODULES =		devel/cmake gcc4
 MODGCC4_ARCHS = 	*
