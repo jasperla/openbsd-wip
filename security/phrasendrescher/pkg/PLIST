@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@bin bin/phrasendrescher
-@man man/man1/phrasendrescher.1
