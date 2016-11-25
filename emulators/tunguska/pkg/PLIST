@@ -1,0 +1,14 @@
+@comment $OpenBSD$
+@bin bin/tg_assembler
+@bin bin/tunguska
+@bin bin/tunguska_3cc
+share/doc/tunguska/
+share/doc/tunguska/MOREHELP
+share/doc/tunguska/The_Fine_Manual.dvi
+share/doc/tunguska/The_Fine_Manual.lyx
+share/doc/tunguska/The_Fine_Manual.pdf
+share/tunguska/
+share/tunguska/bg.bmp
+share/tunguska/memory_image_3cc.tar.gz
+share/tunguska/memory_image_asm.tar.gz
+share/tunguska/symbols.bmp

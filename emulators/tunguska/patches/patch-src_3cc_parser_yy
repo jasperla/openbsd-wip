@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src_3cc/parser.yy.orig	Fri Nov 25 10:42:28 2016
++++ src_3cc/parser.yy	Fri Nov 25 10:32:29 2016
+@@ -54,7 +54,7 @@ expression* auto_assign(expression* target, expression
+ 
+ type* matrix_type(type* t, sllist* dimensions) {
+ 	while(dimensions) {
+-		t = new t_array(t, (int)dimensions->data);
++		t = new t_array(t, (intptr_t)dimensions->data);
+ 		dimensions=dimensions->next;
+ 	}
+ 	return t;
