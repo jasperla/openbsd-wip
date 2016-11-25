@@ -24,7 +24,8 @@ MODULES =		devel/cmake
 
 BUILD_DEPENDS = 	devel/gettext-tools
 RUN_DEPENDS =		misc/dialog
-LIB_DEPENDS =		devel/glib2 \
+LIB_DEPENDS =		databases/libdbi \
+			devel/glib2 \
 			devel/libusb1 \
 			net/curl
 TEST_DEPENDS = 		devel/cmake
@@ -44,7 +45,7 @@ RUN_DEPENDS += 		databases/libdbi-drivers,-sqlite3
 .if ${FLAVOR:Mmysql}
 CONFIGURE_ARGS += 	-DMYSQL_BACKEND=ON
 LIB_DEPENDS += 		databases/mariadb
-#RUN_DEPENDS +=		databases/libdbi-drivers \
+RUN_DEPENDS +=		databases/libdbi-drivers
 WANTLIB += 		mysqlclient
 .endif
 
