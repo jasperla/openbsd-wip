@@ -6,9 +6,6 @@
 # For example:
 # net/gnaughty				ready for import, sent to ports@ (jasperla)
 
-comms/gammu				Ready for import. Sent to ports@ 2016-11-01 (yason)
-comms/py-gammu				Ready for import. Sent to ports@ 2016-11-01 (yason)
-comms/wammu				Ready for import. Sent to ports@ 2016-11-01 (yason)
 devel/libextractor			sent to ports 2013-06-29
 devel/libtap				ready to import
 geo/mtkbabel				sent to ports 2011-03-30
