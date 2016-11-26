@@ -21,6 +21,9 @@ MASTER_SITES =	${HOMEPAGE}
 LIB_DEPENDS =	devel/unibilium
 
 USE_GMAKE =	Yes
-USE_LIBTOOL=	gnu
+#USE_LIBTOOL=	gnu
+
+MAKE_FLAGS =	PREFIX=${PREFIX} \
+		MANDIR=${PREFIX}/man
 
 .include <bsd.port.mk>
