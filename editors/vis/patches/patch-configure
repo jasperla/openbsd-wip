@@ -1,0 +1,12 @@
+$OpenBSD$
+--- configure.orig	Sun Nov 27 00:03:24 2016
++++ configure	Sun Nov 27 00:03:35 2016
+@@ -322,7 +322,7 @@ int main(int argc, char *argv[]) {
+ }
+ EOF
+ 
+-	for liblua in lua lua5.2 lua5.3; do
++	for liblua in lua lua52 lua53; do
+ 		printf " checking for %s... " "$liblua"
+ 
+ 		if test "$have_pkgconfig" = "yes" ; then

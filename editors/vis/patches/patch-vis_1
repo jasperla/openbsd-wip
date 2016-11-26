@@ -1,0 +1,24 @@
+$OpenBSD$
+--- vis.1.orig	Sun Nov 27 00:29:57 2016
++++ vis.1	Sun Nov 27 00:35:43 2016
+@@ -1,9 +1,9 @@
+-.TH VIS 1 vis\-VERSION
++.TH VISE 1 vise\-VERSION
+ .nh
+ .SH NAME
+ vis - a vim like text editor
+ .SH SYNOPSIS
+-.B vis
++.B vise
+ .RI [ +command ...]
+ .RI [ files ...|-]
+ .br
+@@ -47,3 +47,8 @@ Type
+ to get a list of currently active key bindings and their respective meaning.
+ .SH AUTHOR
+ vis is written by Marc André Tanner <mat at brain-dump.org>
++.SH OPENBSD SPECIFICS
++Although the project is called "vis" and the binary is supposed to be called
++"vis", on OpenBSD the binary is called
++.B vise
++due to the conflict with vis(1) from base.
