@@ -17,7 +17,9 @@ MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
 # LGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
+MAKE_FLAGS =	PREFIX=${PREFIX} \
+		MANDIR=${PREFIX}/man
+
 USE_GMAKE =		Yes
-USE_LIBTOOL=		gnu
 
 .include <bsd.port.mk>
