@@ -22,8 +22,7 @@ RUN_DEPENDS =		devel/lpeg,${MODLUA_FLAVOR}
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--prefix="${PREFIX}" \
-			--mandir="${PREFIX}/man" \
-			--enable-lua
+			--mandir="${PREFIX}/man"
 NO_TEST =		Yes
 
 post-install:
