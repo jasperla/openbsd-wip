@@ -1,0 +1,7 @@
+@comment $OpenBSD$
+@bin bin/doxyapp
+@bin bin/doxygen
+@bin bin/doxyindexer
+@bin bin/doxysearch.cgi
+@man man/man1/doxygen.1
+@man man/man1/doxywizard.1

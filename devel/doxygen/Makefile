@@ -5,16 +5,11 @@
 NOT_FOR_ARCHS=	m88k sh
 BROKEN-alpha=	.got subsegment exceeds 64K
 
-COMMENT-main=	source code documentation generator tool
-COMMENT-gui=	GUI front-end for doxygen
+COMMENT=	source code documentation generator tool
 
 VERSION=	1.8.12
 DISTNAME=	doxygen-${VERSION}.src
-PKGNAME-main=	doxygen-${VERSION}
-FULLPKGNAME-gui=doxygen-gui-${VERSION}
-
-REVISION-main=	0
-REVISION-gui=	0
+PKGNAME=	doxygen-${VERSION}
 
 CATEGORIES=	devel textproc
 
@@ -28,18 +23,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	http://ftp.stack.nl/pub/users/dimitri/ \
 		ftp://ftp.stack.nl/pub/users/dimitri/
 
-MULTI_PACKAGES=	-main -gui
-PSEUDO_FLAVORS=	no_gui bootstrap
-
-WANTLIB-main +=	c iconv m pthread stdc++ xapian z
-WANTLIB-gui +=	QtCore QtGui QtXml c m stdc++
-
 LIB_DEPENDS-main=	converters/libiconv \
 			databases/xapian-core
-
-LIB_DEPENDS-gui=	${MODQT_LIB_DEPENDS}
-
-RUN_DEPENDS-gui= doxygen-${VERSION}:${BUILD_PKGPATH}
 
 MODULES=	devel/cmake \
 		lang/python
@@ -47,11 +32,6 @@ MODULES=	devel/cmake \
 MODPY_RUNDEP=	No
 
 .include <bsd.port.arch.mk>
-.if ${BUILD_PACKAGES:M-gui}
-CONFIGURE_ARGS+=-Dbuild_wizard:Bool=ON
-CONFIGURE_ARGS+=-Dforce_qt4:Bool=ON
-MODULES+=	x11/qt4
-.endif
 .if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
 # ld(1) fails
 CONFIGURE_ARGS+=-Denglish_only:Bool=ON
