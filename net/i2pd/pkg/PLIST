@@ -126,4 +126,7 @@ lib/libi2pd.a
 @bin sbin/i2pd
 share/doc/i2pd/
 share/doc/i2pd/LICENSE
+share/examples/i2pd/
+share/examples/i2pd/i2pd.conf
+share/examples/i2pd/tunnels.conf
 @rcscript ${RCDIR}/i2pd

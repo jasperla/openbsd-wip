@@ -30,4 +30,9 @@ LIB_DEPENDS =		devel/boost
 
 WRKSRC =		${WRKDIST}/build
 
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/i2pd
+	${INSTALL_DATA} ${WRKDIST}/docs/{i2pd.conf,tunnels.conf} \
+		${PREFIX}/share/examples/i2pd
+
 .include <bsd.port.mk>
