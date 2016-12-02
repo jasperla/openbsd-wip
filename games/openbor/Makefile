@@ -3,7 +3,7 @@
 ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		engine for "beat em up" and "hack n slash" games
-DISTNAME =		openbor-3.0.r4167
+DISTNAME =		openbor-3.0.r4235
 CATEGORIES =		games
 HOMEPAGE =		http://www.chronocrash.com
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
