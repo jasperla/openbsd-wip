@@ -13,12 +13,3 @@ $OpenBSD$
  .RI [ +command ...]
  .RI [ files ...|-]
  .br
-@@ -47,3 +47,8 @@ Type
- to get a list of currently active key bindings and their respective meaning.
- .SH AUTHOR
- vis is written by Marc André Tanner <mat at brain-dump.org>
-+.SH OPENBSD SPECIFICS
-+Although the project is called "vis" and the binary is supposed to be called
-+"vis", on OpenBSD the binary is called
-+.B vise
-+due to the conflict with vis(1) from base.

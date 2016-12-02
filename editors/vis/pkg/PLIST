@@ -3,6 +3,7 @@
 bin/vise-clipboard
 bin/vise-open
 @man man/man1/vise.1
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/vis/
 share/vis/lexers/
 share/vis/lexers/LICENSE
