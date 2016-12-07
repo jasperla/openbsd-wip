@@ -16,7 +16,8 @@ WANTLIB +=		m pthread ${MODPY_WANTLIB} stdc++
 
 MODULES =		lang/python
 
-RUN_DEPENDS =		devel/py-ipykernel${MODPY_FLAVOR} \
+RUN_DEPENDS =		devel/ipython${MODPY_FLAVOR} \
+			devel/py-ipykernel${MODPY_FLAVOR} \
 			devel/py-jupyter_client${MODPY_FLAVOR} \
 			devel/py-jupyter_core${MODPY_FLAVOR} \
 			devel/py-pexpect${MODPY_FLAVOR} \
