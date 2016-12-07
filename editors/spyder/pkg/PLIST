@@ -853,13 +853,6 @@ lib/python${MODPY_VERSION}/site-packages/spyder/widgets/status.py
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/status.pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tabs.py
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tabs.pyc
-lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tests/
-lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tests/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tests/test_array_builder.py
-lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tests/test_array_builder.pyc
-lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tests/test_editor.py
-lib/python${MODPY_VERSION}/site-packages/spyder/widgets/tests/test_editor.pyc
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/variableexplorer/
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/variableexplorer/__init__.py
 lib/python${MODPY_VERSION}/site-packages/spyder/widgets/variableexplorer/__init__.pyc
