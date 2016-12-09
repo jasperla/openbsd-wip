@@ -23,7 +23,27 @@ MODULES=	devel/kf5 \
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
-BUILD_DEPENDS =	devel/gettext-tools
+BUILD_DEPENDS =	devel/gettext-tools \
+		devel/kf5/karchive \
+		devel/kf5/kbookmarks \
+		devel/kf5/kcodecs \
+		devel/kf5/kcompletion \
+		devel/kf5/kcoreaddons\
+		devel/kf5/kconfig \
+		devel/kf5/kdoctools \
+		devel/kf5/ki18n \
+		devel/kf5/kiconthemes \
+		devel/kf5/kitemviews \
+		devel/kf5/kio \
+		devel/kf5/knotifications \
+		devel/kf5/kparts \
+		devel/kf5/solid \
+		devel/kf5/ktextwidgets \
+		devel/kf5/kwallet \
+		devel/kf5/kwidgetsaddons \
+		devel/kf5/kwindowsystem \
+		devel/kf5/kxmlgui \
+		devel/kf5/kguiaddons
 
 NO_TEST = 	Yes
 
