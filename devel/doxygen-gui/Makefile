@@ -28,8 +28,6 @@ MASTER_SITES=	http://ftp.stack.nl/pub/users/dimitri/ \
 
 LIB_DEPENDS=	${MODQT_LIB_DEPENDS}
 
-RUN_DEPENDS=	doxygen-${VERSION}:${BUILD_PKGPATH}
-
 MODULES=	devel/cmake \
 		x11/qt4 \
 		lang/python
