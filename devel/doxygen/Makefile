@@ -26,8 +26,8 @@ WANTLIB += c iconv m pthread stdc++ xapian z
 MASTER_SITES=	http://ftp.stack.nl/pub/users/dimitri/ \
 		ftp://ftp.stack.nl/pub/users/dimitri/
 
-LIB_DEPENDS-main=	converters/libiconv \
-			databases/xapian-core
+LIB_DEPENDS=	converters/libiconv \
+		databases/xapian-core
 
 MODULES=	devel/cmake \
 		lang/python
