@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+@pkgpath devel/doxygen,-main
 @bin bin/doxyapp
 @bin bin/doxygen
 @bin bin/doxyindexer
