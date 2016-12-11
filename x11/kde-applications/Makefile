@@ -168,7 +168,7 @@
 	#SUBDIR += libgravatar
 	#SUBDIR += libkcddb
 	#SUBDIR += libkcompactdisc
-	#SUBDIR += libkdcraw
+	SUBDIR += libkdcraw
 	#SUBDIR += libkdegames
 	#SUBDIR += libkdepim
 	#SUBDIR += libkeduvocdocument
