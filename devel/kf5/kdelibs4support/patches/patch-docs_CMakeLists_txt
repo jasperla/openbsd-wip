@@ -1,0 +1,12 @@
+$OpenBSD$
+
+Do no install docs for kcontrol to avoid conflicts with kde-runtime-4 kcontrol
+documentation
+
+--- docs/CMakeLists.txt.orig	Sat Dec 10 17:43:47 2016
++++ docs/CMakeLists.txt	Sat Dec 10 17:43:52 2016
+@@ -1,3 +1,3 @@
+ add_subdirectory(kf5-config)
+ add_subdirectory(kdebugdialog5)
+-add_subdirectory(kcontrol)
++#add_subdirectory(kcontrol)
