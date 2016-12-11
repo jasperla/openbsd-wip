@@ -14,7 +14,7 @@ SHARED_LIBS +=  protoc                    0.0 # 11.0
 
 CATEGORIES =		devel
 
-HOMEPAGE =		https://github.com/google/protobuf
+HOMEPAGE =		https://developers.google.com/protocol-buffers/
 
 WANTLIB += c m pthread z
 
