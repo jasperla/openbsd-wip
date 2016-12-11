@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile,v 1.15 2016/10/01 11:54:15 naddy Exp $
 
-COMMENT =		c++ protocol buffers
+COMMENT =		C++ protocol buffers
 
 V =			3.1.0
 DISTNAME =		protobuf-cpp-${V}
@@ -16,24 +16,22 @@ CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/google/protobuf
 
-MAINTAINER =		Vincent Auclair <auclair.vincent@gmail.com>
+WANTLIB += c m pthread z
 
 MASTER_SITES =		https://github.com/google/protobuf/releases/download/v${V}/
 
 # New BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =               gcc4
-MODGCC4_LANGS =         c++
-MODGCC4_ARCHS =         *
+MODULES =		gcc4
+MODGCC4_LANGS =		c++
+MODGCC4_ARCHS =		*
 
-WANTLIB +=	c m pthread stdc++ z
-
-TEST_DEPENDS =	devel/gtest>=1.8.0
+TEST_DEPENDS =		devel/gtest>=1.8.0
 
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--with-zlib 
+CONFIGURE_ARGS +=	--with-zlib
 
 .include <bsd.port.mk>
