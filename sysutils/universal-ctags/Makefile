@@ -39,4 +39,9 @@ pre-configure:
 	cd ${WRKSRC} && ${SETENV} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} ./autogen.sh
 
+do-install:
+	${INSTALL_PROGRAM} ${WRKBUILD}/ctags ${PREFIX}/bin/uctags
+	${INSTALL_PROGRAM} ${WRKBUILD}/readtags ${PREFIX}/bin/readtags
+	${INSTALL_MAN} ${WRKSRC}/ctags.1 ${PREFIX}/man/man1/uctags.1
+
 .include <bsd.port.mk>
