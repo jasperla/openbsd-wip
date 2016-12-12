@@ -1,0 +1,12 @@
+$OpenBSD$
+--- rpython/rlib/rposix.py.orig	Tue Nov  8 08:52:16 2016
++++ rpython/rlib/rposix.py	Sun Dec 11 16:24:25 2016
+@@ -236,7 +236,7 @@ else:
+                 'utime.h', 'sys/time.h', 'sys/times.h',
+                 'grp.h', 'dirent.h', 'sys/stat.h', 'fcntl.h',
+                 'signal.h', 'sys/utsname.h', _ptyh]
+-    if sys.platform.startswith('freebsd'):
++    if sys.platform.startswith(('freebsd', 'openbsd')):
+         includes.append('sys/ttycom.h')
+     libraries = ['util']
+ eci = ExternalCompilationInfo(
