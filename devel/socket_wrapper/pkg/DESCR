@@ -1,0 +1,6 @@
+socket_wrapper, part of the cwrap set of tools, provides an LD_PRELOAD-able
+library wrapping socket functions.
+
+cwrap is meant for testing complex network-based and privileged software
+stacks on UNIX machines with limited network access and without root
+privileges.
