@@ -2,6 +2,7 @@
 lib/qt5/examples/
 lib/qt5/examples/serialbus/
 lib/qt5/examples/serialbus/can/
+@bin lib/qt5/examples/serialbus/can/can
 lib/qt5/examples/serialbus/can/can.pro
 lib/qt5/examples/serialbus/can/can.qrc
 lib/qt5/examples/serialbus/can/connectdialog.cpp
@@ -18,6 +19,7 @@ lib/qt5/examples/serialbus/can/mainwindow.h
 lib/qt5/examples/serialbus/can/mainwindow.ui
 lib/qt5/examples/serialbus/modbus/
 lib/qt5/examples/serialbus/modbus/adueditor/
+@bin lib/qt5/examples/serialbus/modbus/adueditor/adueditor
 lib/qt5/examples/serialbus/modbus/adueditor/adueditor.pro
 lib/qt5/examples/serialbus/modbus/adueditor/interface.ui
 lib/qt5/examples/serialbus/modbus/adueditor/main.cpp
@@ -28,6 +30,11 @@ lib/qt5/examples/serialbus/modbus/adueditor/modbustcpclient.h
 lib/qt5/examples/serialbus/modbus/adueditor/modbustcpclient_p.h
 lib/qt5/examples/serialbus/modbus/adueditor/plaintextedit.h
 lib/qt5/examples/serialbus/modbus/master/
+lib/qt5/examples/serialbus/modbus/master/doc/
+lib/qt5/examples/serialbus/modbus/master/doc/images/
+lib/qt5/examples/serialbus/modbus/master/doc/images/modbusmaster.png
+lib/qt5/examples/serialbus/modbus/master/doc/src/
+lib/qt5/examples/serialbus/modbus/master/doc/src/modbusmaster.qdoc
 lib/qt5/examples/serialbus/modbus/master/images/
 lib/qt5/examples/serialbus/modbus/master/images/application-exit.png
 lib/qt5/examples/serialbus/modbus/master/images/connect.png
@@ -39,6 +46,7 @@ lib/qt5/examples/serialbus/modbus/master/mainwindow.h
 lib/qt5/examples/serialbus/modbus/master/mainwindow.ui
 lib/qt5/examples/serialbus/modbus/master/master.pro
 lib/qt5/examples/serialbus/modbus/master/master.qrc
+@bin lib/qt5/examples/serialbus/modbus/master/modbusmaster
 lib/qt5/examples/serialbus/modbus/master/settingsdialog.cpp
 lib/qt5/examples/serialbus/modbus/master/settingsdialog.h
 lib/qt5/examples/serialbus/modbus/master/settingsdialog.ui
@@ -46,6 +54,11 @@ lib/qt5/examples/serialbus/modbus/master/writeregistermodel.cpp
 lib/qt5/examples/serialbus/modbus/master/writeregistermodel.h
 lib/qt5/examples/serialbus/modbus/modbus.pro
 lib/qt5/examples/serialbus/modbus/slave/
+lib/qt5/examples/serialbus/modbus/slave/doc/
+lib/qt5/examples/serialbus/modbus/slave/doc/images/
+lib/qt5/examples/serialbus/modbus/slave/doc/images/modbusserver.png
+lib/qt5/examples/serialbus/modbus/slave/doc/src/
+lib/qt5/examples/serialbus/modbus/slave/doc/src/modbusslave.qdoc
 lib/qt5/examples/serialbus/modbus/slave/images/
 lib/qt5/examples/serialbus/modbus/slave/images/application-exit.png
 lib/qt5/examples/serialbus/modbus/slave/images/connect.png
@@ -55,6 +68,7 @@ lib/qt5/examples/serialbus/modbus/slave/main.cpp
 lib/qt5/examples/serialbus/modbus/slave/mainwindow.cpp
 lib/qt5/examples/serialbus/modbus/slave/mainwindow.h
 lib/qt5/examples/serialbus/modbus/slave/mainwindow.ui
+@bin lib/qt5/examples/serialbus/modbus/slave/modbusslave
 lib/qt5/examples/serialbus/modbus/slave/settingsdialog.cpp
 lib/qt5/examples/serialbus/modbus/slave/settingsdialog.h
 lib/qt5/examples/serialbus/modbus/slave/settingsdialog.ui

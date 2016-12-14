@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 QT5NAME =		QtImageFormats
-COMMENT-main =		Qt5 multimedia components
+COMMENT-main =		support for additional image formats in Qt5
 
 MULTI_PACKAGES =	-main -qch -html
 

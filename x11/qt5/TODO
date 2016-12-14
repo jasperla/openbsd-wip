@@ -1,1 +1,4 @@
 * Get more info which part are broken on powerpc, to move BROKEN marker.
+
+* At least Multimedia and Svg write invalid lib[...].so.5.6.1 strings
+  in [...]Config.cmake files.

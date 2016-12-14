@@ -115,3 +115,11 @@ lib/qt5/mkspecs/modules/qt_lib_webkitwidgets.pri
 lib/qt5/mkspecs/modules/qt_lib_webkitwidgets_private.pri
 lib/qt5/pkgconfig/Qt5WebKit.pc
 lib/qt5/pkgconfig/Qt5WebKitWidgets.pc
+lib/qt5/qml/
+lib/qt5/qml/QtWebKit/
+lib/qt5/qml/QtWebKit/experimental/
+lib/qt5/qml/QtWebKit/experimental/libqmlwebkitexperimentalplugin.so
+lib/qt5/qml/QtWebKit/experimental/qmldir
+lib/qt5/qml/QtWebKit/libqmlwebkitplugin.so
+lib/qt5/qml/QtWebKit/plugins.qmltypes
+lib/qt5/qml/QtWebKit/qmldir

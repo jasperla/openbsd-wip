@@ -5,8 +5,7 @@
      SUBDIR += qtactiveqt
      SUBDIR += qtbase
      SUBDIR += qtcanvas3d
-     SUBDIR += qtdeclarative
-     SUBDIR += qtdeclarative-render2d
+     SUBDIR += qtdeclarative,
      SUBDIR += qtdoc
      SUBDIR += qtenginio
      SUBDIR += qtgraphicaleffects

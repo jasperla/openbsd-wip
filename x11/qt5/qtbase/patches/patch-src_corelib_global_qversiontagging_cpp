@@ -1,8 +1,8 @@
 $OpenBSD$
 Disable symbol versioning, fixes linking.
---- src/corelib/global/qversiontagging.cpp.orig	Sun Jul 17 21:07:21 2016
-+++ src/corelib/global/qversiontagging.cpp	Sun Jul 17 21:07:36 2016
-@@ -36,7 +36,7 @@
+--- src/corelib/global/qversiontagging.cpp.orig	Fri Sep 16 08:49:42 2016
++++ src/corelib/global/qversiontagging.cpp	Tue Nov 29 14:17:49 2016
+@@ -36,11 +36,12 @@
  #define SYM QT_MANGLE_NAMESPACE(qt_version_tag)
  //#define SSYM QT_STRINGIFY(SYM)
  
@@ -11,3 +11,8 @@ Disable symbol versioning, fixes linking.
  #  define make_versioned_symbol2(sym, m, n, separator)     \
      Q_CORE_EXPORT extern const char sym ## _ ## m ## _ ## n = 0; \
      asm(".symver " QT_STRINGIFY(sym) "_" QT_STRINGIFY(m) "_" QT_STRINGIFY(n) ", " \
+         QT_STRINGIFY(sym) separator "Qt_" QT_STRINGIFY(m) "." QT_STRINGIFY(n))
++#  error "trying to create versioned symbol"
+ #else
+ #  define make_versioned_symbol2(sym, m, n, separator)
+ #endif

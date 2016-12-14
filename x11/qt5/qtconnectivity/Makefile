@@ -9,7 +9,7 @@ SHARED_LIBS +=		Qt5Nfc			2.0
 MULTI_PACKAGES =	-main -examples -qch -html
 
 WANTLIB-main =		${WANTLIB}
-WANTLIB-main +=		GL Qt5Concurrent Qt5Core Qt5Gui Qt5Network Qt5Qml
+WANTLIB-main +=		GL Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml
 WANTLIB-main +=		Qt5Quick m pthread
 
 WANTLIB-examples =	${WANTLIB}

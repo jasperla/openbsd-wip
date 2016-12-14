@@ -3,6 +3,8 @@
 QT5NAME =		QtActiveQt
 COMMENT-main =		Active Qt
 
+# this package is Windows-specific, but documentation still could have some use
+
 MULTI_PACKAGES =	-qch -html
 SUBPACKAGE ?=		-qch
 

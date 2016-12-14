@@ -14,8 +14,8 @@ WANTLIB-main +=		GL Qt5Core Qt5Gui Qt5Network Qt5Qml Qt5Quick m pthread
 WANTLIB-examples =	${WANTLIB}
 WANTLIB-examples +=	GL Qt5Core Qt5Gui Qt5Network Qt5Qml Qt5Quick c m pthread
 
-BUILD_DEPENDS =		x11/qt5/qtdeclarative>=${QT5_VERSION},<${QT5_NEXT_VERSION}
-RUN_DEPENDS =		x11/qt5/qtdeclarative>=${QT5_VERSION},<${QT5_NEXT_VERSION}
+BUILD_DEPENDS =		x11/qt5/qtdeclarative>=${QT5_VERSION:R},<${QT5_NEXT_VERSION}
+RUN_DEPENDS =		x11/qt5/qtdeclarative>=${QT5_VERSION:R},<${QT5_NEXT_VERSION}
 
 FLAVORS =		debug
 PSEUDO_FLAVORS =	no_examples no_qch no_html

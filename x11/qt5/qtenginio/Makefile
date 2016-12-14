@@ -2,9 +2,9 @@
 
 QT5NAME =		QtEnginio
 VERSION =		${ENGINIO_VERSION}
-DIST_VERSION =		${ENGINIO_VERSION}
+DIST_VERSION =		${VERSION}
 NEXT_VERSION =		${ENGINIO_NEXT_VERSION}
-COMMENT-main =		Qt5 multimedia components
+COMMENT-main =		Qt5 cloud data storage engine
 
 MULTI_PACKAGES =	-main -examples -qch -html
 

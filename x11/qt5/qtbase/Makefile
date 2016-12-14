@@ -14,6 +14,8 @@ PKGNAME-psql =		qt5-psql-${VERSION}
 PKGNAME-sqlite2 =	qt5-sqlite2-${VERSION}
 PKGNAME-tds =		qt5-tds-${VERSION}
 
+PKG_ARCH-examples =	*
+
 DPB_PROPERTIES =	parallel
 
 SHARED_LIBS +=	Qt5Concurrent		2.0
@@ -41,10 +43,9 @@ WANTLIB-main += proxy pthread sqlite3 xcb xcb-glx xcb-icccm xcb-image
 WANTLIB-main += xcb-keysyms xcb-randr xcb-render xcb-render-util xcb-shape
 WANTLIB-main += xcb-shm xcb-sync xcb-xfixes xcb-xinerama xcb-xkb xkbcommon
 WANTLIB-main += xkbcommon-x11 z
+WANTLIB-main += drm gbm
 
-WANTLIB-examples =  ${MODGCC4_CPPWANTLIB} GL c m pthread
-WANTLIB-examples += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5OpenGL
-WANTLIB-examples += Qt5PrintSupport Qt5Sql Qt5Test Qt5Widgets Qt5Xml
+WANTLIB-examples =
 
 WANTLIB-mysql =		${MODGCC4_CPPWANTLIB} Qt5Core Qt5Sql
 WANTLIB-mysql +=	crypto m pthread mysqlclient_r ssl z
@@ -58,7 +59,7 @@ WANTLIB-sqlite2 +=	m pthread sqlite
 WANTLIB-tds =		${MODGCC4_CPPWANTLIB} Qt5Core Qt5Sql
 WANTLIB-tds +=		m pthread sybdb
 
-
+# there is no -sqlite3 because it's heavily used by Qt itself (.qch files)
 MULTI_PACKAGES =	-main -examples -mysql -psql -sqlite2 -tds
 
 MODULES =		devel/gettext
@@ -67,9 +68,13 @@ MODULES =		devel/gettext
 MODQT_DEPS =		No
 MODQMAKE_PROJECTS =	tests/tests.pro
 
+# nothing in qtbase links to pulseaudio, but config
+BUILD_DEPENDS =		audio/pulseaudio
+
 # no leveldb dependency, requires -lmemenv; QtWebKit uses internal version
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			databases/iodbc \
+			databases/sqlite3 \
 			devel/atk \
 			devel/harfbuzz \
 			devel/libexecinfo \
@@ -81,7 +86,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			x11/gtk+2 \
 			x11/xkbcommon
 
-LIB_DEPENDS-examples =	${MODGCC4_CPPLIBDEP}
+LIB_DEPENDS-examples =
 
 LIB_DEPENDS-mysql =	${BASE_PKGPATH},-main>=${VERSION:R},<${QT5_NEXT_VERSION} \
 			${MODGCC4_CPPLIBDEP} \
@@ -133,9 +138,11 @@ CONFIGURE_ARGS =	-confirm-license \
 			-rpath \
 			-shared \
 			-verbose \
-			-no-compile-examples
+			-no-pch
+#			-no-compile-examples
 
-# don't run tests inside main build
+# Don't run tests inside main build.
+# XXX It looks like affecting other Qt modules as well.
 CONFIGURE_ARGS +=	-nomake tests
 
 .if ${FLAVOR:Mdebug}
@@ -184,10 +191,6 @@ CONFIGURE_ARGS +=	-no-sse2
 
 .include <bsd.port.arch.mk>
 
-.if !${BUILD_PACKAGES:M-examples}
-CONFIGURE_ARGS +=	-no-compile-examples
-.endif
-
 # See qtbase/tests/README for details
 TEST_IS_INTERACTIVE =	X11
 TEST_DEPENDS =		audio/sox
@@ -195,11 +198,16 @@ TEST_DEPENDS =		audio/sox
 
 pre-configure:
 	@gccbasedir=`ecpp -print-search-dirs | awk '/^install:/{print $$2}'`; \
-	perl ${PORTSDIR}/infrastructure/bin/pkg_subst \
-	    -D OPENBSD_INCDIR_PREPEND="$${gccbasedir}include" \
-	    ${WRKSRC}/mkspecs/openbsd-g++/qmake.conf
+#	perl ${PORTSDIR}/infrastructure/bin/pkg_subst \
+#	    -D OPENBSD_INCDIR_PREPEND="$${gccbasedir}include" \
+#	    ${WRKSRC}/mkspecs/openbsd-g++/qmake.conf
 
 do-test:
+	#
+	# WARNING!
+	# Many tests won't run if window manager has either
+	# "focus follows pointer", or "click to activate" policy.
+	#
 	${MODQMAKE_configure}
 	${MODQMAKE_build}
 

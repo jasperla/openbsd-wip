@@ -26,5 +26,3 @@ lib/qt5/libQt5SerialPort.prl
 lib/qt5/mkspecs/modules/qt_lib_serialport.pri
 lib/qt5/mkspecs/modules/qt_lib_serialport_private.pri
 lib/qt5/pkgconfig/Qt5SerialPort.pc
-share/doc/qt5/qtserialport/
-share/doc/qt5/qtserialport/examples-manifest.xml

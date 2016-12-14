@@ -6,6 +6,7 @@ ONLY_FOR_ARCHS =	i386 amd64
 QT5NAME =		QtWebEngine
 COMMENT-main =		Chromium-based web engine for Qt5
 CATEGORIES =		www
+USE_WXNEEDED =		Yes
 
 SHARED_LIBS =		Qt5WebEngine		0.0
 

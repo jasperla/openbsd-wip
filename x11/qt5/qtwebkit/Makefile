@@ -2,6 +2,7 @@
 
 QT5NAME =		QtWebkit
 COMMENT-main =		old Webkit integration framework for Qt
+USE_WXNEEDED =		Yes
 
 SHARED_LIBS +=		Qt5WebKit		2.0
 SHARED_LIBS +=		Qt5WebKitWidgets	2.0
@@ -9,10 +10,10 @@ SHARED_LIBS +=		Qt5WebKitWidgets	2.0
 CATEGORIES =		www
 
 WANTLIB-main =  ${WANTLIB}
-WANTLIB-main += GL Qt5Core Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport
-WANTLIB-main += Qt5Sql Qt5Widgets X11 Xext Xrender c gio-2.0 glib-2.0
+WANTLIB-main += GL Qt5Core Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport Qt5Qml
+WANTLIB-main += Qt5Quick Qt5Sql Qt5Widgets X11 Xext Xrender c gio-2.0 glib-2.0
 WANTLIB-main += gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstpbutils-1.0
-WANTLIB-main += gstreamer-1.0 gstvideo-1.0 icudata icui18n icuuc jpeg
+WANTLIB-main += gstreamer-1.0 gstvideo-1.0 icudata icui18n icuuc jpeg lzma
 WANTLIB-main += m png pthread sqlite3 webp xml2 xslt z
 
 MULTI_PACKAGES =	-main -html -qch
@@ -25,11 +26,14 @@ MODRUBY_RUNDEP =	No
 
 # no leveldb dependency, requires -lmemenv; QtWebKit uses internal version
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
+			archivers/xz \
+			databases/sqlite3 \
 			graphics/libwebp \
 			multimedia/gstreamer1/core \
 			multimedia/gstreamer1/plugins-base \
 			textproc/icu4c \
-			textproc/libxslt
+			textproc/libxslt \
+			x11/qt5/qtdeclarative>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 
 LIB_DEPENDS-html =
 

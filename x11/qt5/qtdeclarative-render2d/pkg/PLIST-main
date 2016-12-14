@@ -1,5 +1,0 @@
-@comment $OpenBSD$
-lib/qt5/cmake/Qt5Quick/
-lib/qt5/cmake/Qt5Quick/Qt5Quick_ContextPlugin.cmake
-lib/qt5/plugins/scenegraph/
-lib/qt5/plugins/scenegraph/libsoftwarecontext.so

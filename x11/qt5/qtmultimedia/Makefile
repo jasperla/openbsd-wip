@@ -30,16 +30,14 @@ RUN_DEPENDS-main =	multimedia/gstreamer1/mm \
 			multimedia/gstreamer1/plugins-base \
 			multimedia/gstreamer1/plugins-bad
 
-# no_examples to avoid cyclic dependency
-
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			audio/openal \
 			audio/pulseaudio \
 			multimedia/gstreamer1/core \
-			x11/qt5/qtdeclarative,no_examples>=${QT5_VERSION},<${QT5_NEXT_VERSION}
+			x11/qt5/qtdeclarative>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 
 LIB_DEPENDS-examples =	${LIB_DEPENDS} \
-			x11/qt5/qtdeclarative,no_examples>=${QT5_VERSION},<${QT5_NEXT_VERSION}
+			x11/qt5/qtdeclarative>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 
 FLAVORS =		debug
 PSEUDO_FLAVORS =	no_examples no_qch no_html

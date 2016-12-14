@@ -204,7 +204,6 @@ lib/qt5/mkspecs/modules/qt_lib_nfc.pri
 lib/qt5/mkspecs/modules/qt_lib_nfc_private.pri
 lib/qt5/pkgconfig/Qt5Bluetooth.pc
 lib/qt5/pkgconfig/Qt5Nfc.pc
-lib/qt5/qml/
 lib/qt5/qml/QtBluetooth/
 lib/qt5/qml/QtBluetooth/libdeclarative_bluetooth.so
 lib/qt5/qml/QtBluetooth/plugins.qmltypes

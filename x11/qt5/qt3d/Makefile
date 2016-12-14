@@ -22,8 +22,8 @@ WANTLIB-examples +=	GL Qt53DCore Qt53DInput Qt53DLogic Qt53DQuick Qt53DRender
 WANTLIB-examples +=	Qt5Concurrent Qt5Core Qt5Gui Qt5Multimedia Qt5Network
 WANTLIB-examples +=	Qt5Qml Qt5Quick Qt5Widgets c m pthread
 
-BUILD_DEPENDS =		x11/qt5/qtmultimedia>=${QT5_VERSION},<${QT5_NEXT_VERSION}
-RUN_DEPENDS-examples =	x11/qt5/qtmultimedia>=${QT5_VERSION},<${QT5_NEXT_VERSION}
+BUILD_DEPENDS =		x11/qt5/qtmultimedia>=${QT5_VERSION:R},<${QT5_NEXT_VERSION}
+RUN_DEPENDS-examples =	x11/qt5/qtmultimedia>=${QT5_VERSION:R},<${QT5_NEXT_VERSION}
 
 LIB_DEPENDS =		x11/qt5/qtdeclarative>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 

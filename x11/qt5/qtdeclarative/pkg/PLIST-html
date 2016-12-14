@@ -961,6 +961,10 @@ share/doc/qt5/qtquick/qml-qtquick-xmllistmodel-xmlrole-members.html
 share/doc/qt5/qtquick/qml-qtquick-xmllistmodel-xmlrole.html
 share/doc/qt5/qtquick/qml-qtquick-yanimator-members.html
 share/doc/qt5/qtquick/qml-qtquick-yanimator.html
+share/doc/qt5/qtquick/qml-qttest-signalspy-members.html
+share/doc/qt5/qtquick/qml-qttest-signalspy.html
+share/doc/qt5/qtquick/qml-qttest-testcase-members.html
+share/doc/qt5/qtquick/qml-qttest-testcase.html
 share/doc/qt5/qtquick/qml-quaternion.html
 share/doc/qt5/qtquick/qml-tutorial.html
 share/doc/qt5/qtquick/qml-tutorial1.html

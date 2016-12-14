@@ -34,20 +34,20 @@ RUN_DEPENDS-html ?=
 
 WANTLIB-qch =
 LIB_DEPENDS-qch =
-RUN_DEPENDS-qch ?=
+RUN_DEPENDS-qch +=	x11/qt5/qtbase>=${QT5_VERSION:R},<${QT5_NEXT_VERSION}
 
 NEXT_VERSION ?=		${QT5_NEXT_VERSION}
 
 .if defined(MULTI_PACKAGES)
 . if ${MULTI_PACKAGES:M-main}
-RUN_DEPENDS-qch +=	${BASE_PKGPATH},-main>=${VERSION:R},<${NEXT_VERSION}
-RUN_DEPENDS-html +=	${BASE_PKGPATH},-main>=${VERSION:R},<${NEXT_VERSION}
+RUN_DEPENDS-qch +=	${BUILD_PKGPATH},-main>=${VERSION:R},<${NEXT_VERSION}
+RUN_DEPENDS-html +=	${BUILD_PKGPATH},-main>=${VERSION:R},<${NEXT_VERSION}
 
 # XXX this will be wrong for Enginio
 RUN_DEPENDS-examples ?=	${RUN_DEPENDS}
-RUN_DEPENDS-examples +=	${BASE_PKGPATH},-main>=${VERSION:R},<${NEXT_VERSION}
+RUN_DEPENDS-examples +=	${BUILD_PKGPATH},-main>=${VERSION:R},<${NEXT_VERSION}
 LIB_DEPENDS-examples ?=	${LIB_DEPENDS}
-LIB_DEPENDS-examples +=	${BASE_PKGPATH},-main>=${VERSION:R},<${NEXT_VERSION}
+LIB_DEPENDS-examples +=	${BUILD_PKGPATH},-main>=${VERSION:R},<${NEXT_VERSION}
 . endif
 .endif
 
@@ -58,7 +58,7 @@ LIB_DEPENDS-examples +=	${BASE_PKGPATH},-main>=${VERSION:R},<${NEXT_VERSION}
 # A few components, including QtWebEngine, are LGPLv3 only, no LGPLv2.1.
 PERMIT_PACKAGE_CDROM ?=	Yes
 
-MASTER_SITES ?=		http://download.qt.io/official_releases/qt/${VERSION:R}/${DIST_VERSION}/submodules/
+MASTER_SITES ?=		http://download.qt.io/official_releases/qt/${DIST_VERSION:R}/${DIST_VERSION}/submodules/
 DIST_SUBDIR ?=		qt
 
 CONFIGURE_STYLE ?=	qmake
@@ -111,11 +111,11 @@ TEST_TARGET ?=		check
 
 FLAVOR ?=
 
+.if ${BUILD_PACKAGES:M-html} || ${BUILD_PACKAGES:M-qch}
 # Force re-running qmake before generating documentation
 # to allow qdoc and qhelpgenerator do their work.
-#.if ${BUILD_PACKAGES:M-html} || ${BUILD_PACKAGES:M-qch}
 #ALL_TARGET +=		qmake_all
-#.endif
+.endif
 
 .if ${BUILD_PACKAGES:M-html}
 ALL_TARGET +=		html_docs
@@ -145,8 +145,16 @@ WRKDIST ?=	${WRKDIR}/${DISTNAME:C/${DIST_VERSION}/${VERSION}/}
 PROGRAMS5 =	assistant designer linguist lrelease lupdate moc pixeltool \
 		qcollectiongenerator qdbus qdoc qmake qml qtdiag rcc uic
 
-.PHONY: qt5-post-install
+.PHONY: qt5-post-extract qt5-post-install
 
+post-extract: qt5-post-extract
+qt5-post-extract:
+# qt_parts qmake feature checks presence of this file exactly
+.if !${BUILD_PACKAGES:M-examples}
+	rm -f ${WRKDIST}/examples/examples.pro
+.endif
+
+post-install: qt5-post-install
 qt5-post-install:
 	# programs
 .for p in ${PROGRAMS5}
@@ -178,9 +186,12 @@ qt5-post-install:
 		-e 's,\$$\(LOCALBASE\),${LOCALBASE},g;' \
 		-e 's,\$$\(X11BASE\),${X11BASE},g;'
 	# remove unpatched files
-	-find ${QT_BASEDIR}/mkspecs -name '*${PATCHORIG}' | xargs -r rm
-
-post-install: qt5-post-install
+	find ${QT_BASEDIR}/mkspecs -name '*${PATCHORIG}' | xargs -r rm
+.if ${CONFIGURE_STYLE:Mqmake} && ${BUILD_PACKAGES:M-examples}
+	# install examples sources
+	cd ${WRKSRC}/examples; \
+	pax -rw */ ${PREFIX}/lib/qt5/examples
+.endif
 
 # Generates DESCR-* from DESCR-main, and PLIST-* from PLIST-main.
 # Don't forget to run "rm pkg/PLIST-*; make plist" before this.
@@ -209,7 +220,3 @@ gen_pkg:
 	sed '$$s/.*/This package contains ${QT5NAME} HTML documentation./' \
 		<${PKGDIR}/DESCR-main >${PKGDIR}/DESCR-html
 .endif
-
-show_deps:
-	@find ${WRKSRC} -name '*.pr[iof]' -print0 | \
-		xargs -0r egrep -A 2 '\<(qtHaveModule|QT_CONFIG)\>'
