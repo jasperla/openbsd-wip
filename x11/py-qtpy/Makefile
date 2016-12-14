@@ -16,8 +16,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
 
-#RUN_DEPENDS =		devel/py-nose${MODPY_FLAVOR}
-
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
