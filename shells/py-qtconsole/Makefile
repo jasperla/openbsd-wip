@@ -12,17 +12,16 @@ MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		m pthread ${MODPY_WANTLIB} stdc++
-
 MODULES =		lang/python
 
-RUN_DEPENDS =		devel/ipython${MODPY_FLAVOR} \
+RUN_DEPENDS =		devel/ipython${MODPY_FLAVOR}>=5.1.0 \
 			devel/py-ipykernel${MODPY_FLAVOR} \
 			devel/py-jupyter_client${MODPY_FLAVOR} \
 			devel/py-jupyter_core${MODPY_FLAVOR} \
 			devel/py-pexpect${MODPY_FLAVOR} \
 			devel/py-traitlets${MODPY_FLAVOR} \
-			textproc/py-pygments${MODPY_FLAVOR}
+			textproc/py-pygments${MODPY_FLAVOR} \
+			x11/py-qt5${MODPY_FLAVOR}
 TEST_DEPENDS =		${RUN_DEPENDS}
 
 MODPY_PI =		Yes
