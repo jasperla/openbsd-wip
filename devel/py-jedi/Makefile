@@ -24,8 +24,6 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =		python3
 FLAVOR ?=
 
-#PORTHOME =		${WRKSRC}
-
 do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} -m pytest test
 
