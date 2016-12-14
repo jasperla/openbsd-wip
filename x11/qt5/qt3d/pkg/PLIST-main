@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+@conflict qt5-<5.6
 include/X11/qt5/Qt3DCore/
 include/X11/qt5/Qt3DCore/${VERSION}/
 include/X11/qt5/Qt3DCore/${VERSION}/Qt3DCore/

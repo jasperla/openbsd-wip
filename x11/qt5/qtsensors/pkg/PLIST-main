@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+@conflict qt5-<5.6
 include/X11/qt5/QtSensors/
 include/X11/qt5/QtSensors/${VERSION}/
 include/X11/qt5/QtSensors/${VERSION}/QtSensors/

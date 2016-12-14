@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+@conflict qt5-<5.6
 bin/qml-qt5
 include/X11/qt5/QtQml/
 include/X11/qt5/QtQml/${VERSION}/
