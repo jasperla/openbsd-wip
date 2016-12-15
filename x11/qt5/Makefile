@@ -5,6 +5,7 @@
      SUBDIR += qtactiveqt
      SUBDIR += qtbase
      SUBDIR += qtcanvas3d
+     SUBDIR += qtconnectivity
      SUBDIR += qtdeclarative,
      SUBDIR += qtdoc
      SUBDIR += qtenginio
@@ -27,8 +28,6 @@
      SUBDIR += qtx11extras
      SUBDIR += qtxmlpatterns
 
-# no support for Bluetooth or NFC in base
-#     SUBDIR += qtconnectivity
 # no support for Wayland in Xenocara
 #     SUBDIR += qtwayland
 # not ported yet
