@@ -35,7 +35,6 @@ lib/qt5/examples/qml/networkaccessmanagerfactory/doc/
 lib/qt5/examples/qml/networkaccessmanagerfactory/doc/src/
 lib/qt5/examples/qml/networkaccessmanagerfactory/doc/src/networkaccessmanagerfactory.qdoc
 lib/qt5/examples/qml/networkaccessmanagerfactory/main.cpp
-@bin lib/qt5/examples/qml/networkaccessmanagerfactory/networkaccessmanagerfactory
 lib/qt5/examples/qml/networkaccessmanagerfactory/networkaccessmanagerfactory.pro
 lib/qt5/examples/qml/networkaccessmanagerfactory/networkaccessmanagerfactory.qmlproject
 lib/qt5/examples/qml/networkaccessmanagerfactory/networkaccessmanagerfactory.qrc
@@ -65,7 +64,6 @@ lib/qt5/examples/qml/qmlextensionplugins/imports/TimeExample/Clock.qml
 lib/qt5/examples/qml/qmlextensionplugins/imports/TimeExample/center.png
 lib/qt5/examples/qml/qmlextensionplugins/imports/TimeExample/clock.png
 lib/qt5/examples/qml/qmlextensionplugins/imports/TimeExample/hour.png
-lib/qt5/examples/qml/qmlextensionplugins/imports/TimeExample/libqmlqtimeexampleplugin.so
 lib/qt5/examples/qml/qmlextensionplugins/imports/TimeExample/minute.png
 lib/qt5/examples/qml/qmlextensionplugins/imports/TimeExample/qmldir
 lib/qt5/examples/qml/qmlextensionplugins/plugin.cpp
@@ -74,7 +72,6 @@ lib/qt5/examples/qml/qmlextensionplugins/plugins.qmlproject
 lib/qt5/examples/qml/qmlextensionplugins/qmlextensionplugins.pro
 lib/qt5/examples/qml/referenceexamples/
 lib/qt5/examples/qml/referenceexamples/adding/
-@bin lib/qt5/examples/qml/referenceexamples/adding/adding
 lib/qt5/examples/qml/referenceexamples/adding/adding.pro
 lib/qt5/examples/qml/referenceexamples/adding/adding.qrc
 lib/qt5/examples/qml/referenceexamples/adding/example.qml
@@ -82,7 +79,6 @@ lib/qt5/examples/qml/referenceexamples/adding/main.cpp
 lib/qt5/examples/qml/referenceexamples/adding/person.cpp
 lib/qt5/examples/qml/referenceexamples/adding/person.h
 lib/qt5/examples/qml/referenceexamples/attached/
-@bin lib/qt5/examples/qml/referenceexamples/attached/attached
 lib/qt5/examples/qml/referenceexamples/attached/attached.pro
 lib/qt5/examples/qml/referenceexamples/attached/attached.qrc
 lib/qt5/examples/qml/referenceexamples/attached/birthdayparty.cpp
@@ -92,7 +88,6 @@ lib/qt5/examples/qml/referenceexamples/attached/main.cpp
 lib/qt5/examples/qml/referenceexamples/attached/person.cpp
 lib/qt5/examples/qml/referenceexamples/attached/person.h
 lib/qt5/examples/qml/referenceexamples/binding/
-@bin lib/qt5/examples/qml/referenceexamples/binding/binding
 lib/qt5/examples/qml/referenceexamples/binding/binding.pro
 lib/qt5/examples/qml/referenceexamples/binding/binding.qrc
 lib/qt5/examples/qml/referenceexamples/binding/birthdayparty.cpp
@@ -106,7 +101,6 @@ lib/qt5/examples/qml/referenceexamples/binding/person.h
 lib/qt5/examples/qml/referenceexamples/coercion/
 lib/qt5/examples/qml/referenceexamples/coercion/birthdayparty.cpp
 lib/qt5/examples/qml/referenceexamples/coercion/birthdayparty.h
-@bin lib/qt5/examples/qml/referenceexamples/coercion/coercion
 lib/qt5/examples/qml/referenceexamples/coercion/coercion.pro
 lib/qt5/examples/qml/referenceexamples/coercion/coercion.qrc
 lib/qt5/examples/qml/referenceexamples/coercion/example.qml
@@ -116,7 +110,6 @@ lib/qt5/examples/qml/referenceexamples/coercion/person.h
 lib/qt5/examples/qml/referenceexamples/default/
 lib/qt5/examples/qml/referenceexamples/default/birthdayparty.cpp
 lib/qt5/examples/qml/referenceexamples/default/birthdayparty.h
-@bin lib/qt5/examples/qml/referenceexamples/default/default
 lib/qt5/examples/qml/referenceexamples/default/default.pro
 lib/qt5/examples/qml/referenceexamples/default/default.qrc
 lib/qt5/examples/qml/referenceexamples/default/example.qml
@@ -125,7 +118,6 @@ lib/qt5/examples/qml/referenceexamples/default/person.cpp
 lib/qt5/examples/qml/referenceexamples/default/person.h
 lib/qt5/examples/qml/referenceexamples/extended/
 lib/qt5/examples/qml/referenceexamples/extended/example.qml
-@bin lib/qt5/examples/qml/referenceexamples/extended/extended
 lib/qt5/examples/qml/referenceexamples/extended/extended.pro
 lib/qt5/examples/qml/referenceexamples/extended/extended.qrc
 lib/qt5/examples/qml/referenceexamples/extended/lineedit.cpp
@@ -135,7 +127,6 @@ lib/qt5/examples/qml/referenceexamples/grouped/
 lib/qt5/examples/qml/referenceexamples/grouped/birthdayparty.cpp
 lib/qt5/examples/qml/referenceexamples/grouped/birthdayparty.h
 lib/qt5/examples/qml/referenceexamples/grouped/example.qml
-@bin lib/qt5/examples/qml/referenceexamples/grouped/grouped
 lib/qt5/examples/qml/referenceexamples/grouped/grouped.pro
 lib/qt5/examples/qml/referenceexamples/grouped/grouped.qrc
 lib/qt5/examples/qml/referenceexamples/grouped/main.cpp
@@ -146,7 +137,6 @@ lib/qt5/examples/qml/referenceexamples/methods/birthdayparty.cpp
 lib/qt5/examples/qml/referenceexamples/methods/birthdayparty.h
 lib/qt5/examples/qml/referenceexamples/methods/example.qml
 lib/qt5/examples/qml/referenceexamples/methods/main.cpp
-@bin lib/qt5/examples/qml/referenceexamples/methods/methods
 lib/qt5/examples/qml/referenceexamples/methods/methods.pro
 lib/qt5/examples/qml/referenceexamples/methods/methods.qrc
 lib/qt5/examples/qml/referenceexamples/methods/person.cpp
@@ -158,7 +148,6 @@ lib/qt5/examples/qml/referenceexamples/properties/example.qml
 lib/qt5/examples/qml/referenceexamples/properties/main.cpp
 lib/qt5/examples/qml/referenceexamples/properties/person.cpp
 lib/qt5/examples/qml/referenceexamples/properties/person.h
-@bin lib/qt5/examples/qml/referenceexamples/properties/properties
 lib/qt5/examples/qml/referenceexamples/properties/properties.pro
 lib/qt5/examples/qml/referenceexamples/properties/properties.qrc
 lib/qt5/examples/qml/referenceexamples/referenceexamples.pro
@@ -170,7 +159,6 @@ lib/qt5/examples/qml/referenceexamples/signal/example.qml
 lib/qt5/examples/qml/referenceexamples/signal/main.cpp
 lib/qt5/examples/qml/referenceexamples/signal/person.cpp
 lib/qt5/examples/qml/referenceexamples/signal/person.h
-@bin lib/qt5/examples/qml/referenceexamples/signal/signal
 lib/qt5/examples/qml/referenceexamples/signal/signal.pro
 lib/qt5/examples/qml/referenceexamples/signal/signal.qrc
 lib/qt5/examples/qml/referenceexamples/valuesource/
@@ -182,18 +170,15 @@ lib/qt5/examples/qml/referenceexamples/valuesource/happybirthdaysong.h
 lib/qt5/examples/qml/referenceexamples/valuesource/main.cpp
 lib/qt5/examples/qml/referenceexamples/valuesource/person.cpp
 lib/qt5/examples/qml/referenceexamples/valuesource/person.h
-@bin lib/qt5/examples/qml/referenceexamples/valuesource/valuesource
 lib/qt5/examples/qml/referenceexamples/valuesource/valuesource.pro
 lib/qt5/examples/qml/referenceexamples/valuesource/valuesource.qrc
 lib/qt5/examples/qml/shell/
 lib/qt5/examples/qml/shell/main.cpp
-@bin lib/qt5/examples/qml/shell/shell
 lib/qt5/examples/qml/shell/shell.pro
 lib/qt5/examples/qml/tutorials/
 lib/qt5/examples/qml/tutorials/extending-qml/
 lib/qt5/examples/qml/tutorials/extending-qml/chapter1-basics/
 lib/qt5/examples/qml/tutorials/extending-qml/chapter1-basics/app.qml
-@bin lib/qt5/examples/qml/tutorials/extending-qml/chapter1-basics/chapter1-basics
 lib/qt5/examples/qml/tutorials/extending-qml/chapter1-basics/chapter1-basics.pro
 lib/qt5/examples/qml/tutorials/extending-qml/chapter1-basics/chapter1-basics.qrc
 lib/qt5/examples/qml/tutorials/extending-qml/chapter1-basics/main.cpp
@@ -201,7 +186,6 @@ lib/qt5/examples/qml/tutorials/extending-qml/chapter1-basics/piechart.cpp
 lib/qt5/examples/qml/tutorials/extending-qml/chapter1-basics/piechart.h
 lib/qt5/examples/qml/tutorials/extending-qml/chapter2-methods/
 lib/qt5/examples/qml/tutorials/extending-qml/chapter2-methods/app.qml
-@bin lib/qt5/examples/qml/tutorials/extending-qml/chapter2-methods/chapter2-methods
 lib/qt5/examples/qml/tutorials/extending-qml/chapter2-methods/chapter2-methods.pro
 lib/qt5/examples/qml/tutorials/extending-qml/chapter2-methods/chapter2-methods.qrc
 lib/qt5/examples/qml/tutorials/extending-qml/chapter2-methods/main.cpp
@@ -209,7 +193,6 @@ lib/qt5/examples/qml/tutorials/extending-qml/chapter2-methods/piechart.cpp
 lib/qt5/examples/qml/tutorials/extending-qml/chapter2-methods/piechart.h
 lib/qt5/examples/qml/tutorials/extending-qml/chapter3-bindings/
 lib/qt5/examples/qml/tutorials/extending-qml/chapter3-bindings/app.qml
-@bin lib/qt5/examples/qml/tutorials/extending-qml/chapter3-bindings/chapter3-bindings
 lib/qt5/examples/qml/tutorials/extending-qml/chapter3-bindings/chapter3-bindings.pro
 lib/qt5/examples/qml/tutorials/extending-qml/chapter3-bindings/chapter3-bindings.qrc
 lib/qt5/examples/qml/tutorials/extending-qml/chapter3-bindings/main.cpp
@@ -217,7 +200,6 @@ lib/qt5/examples/qml/tutorials/extending-qml/chapter3-bindings/piechart.cpp
 lib/qt5/examples/qml/tutorials/extending-qml/chapter3-bindings/piechart.h
 lib/qt5/examples/qml/tutorials/extending-qml/chapter4-customPropertyTypes/
 lib/qt5/examples/qml/tutorials/extending-qml/chapter4-customPropertyTypes/app.qml
-@bin lib/qt5/examples/qml/tutorials/extending-qml/chapter4-customPropertyTypes/chapter4-customPropertyTypes
 lib/qt5/examples/qml/tutorials/extending-qml/chapter4-customPropertyTypes/chapter4-customPropertyTypes.pro
 lib/qt5/examples/qml/tutorials/extending-qml/chapter4-customPropertyTypes/chapter4-customPropertyTypes.qrc
 lib/qt5/examples/qml/tutorials/extending-qml/chapter4-customPropertyTypes/main.cpp
@@ -227,7 +209,6 @@ lib/qt5/examples/qml/tutorials/extending-qml/chapter4-customPropertyTypes/piesli
 lib/qt5/examples/qml/tutorials/extending-qml/chapter4-customPropertyTypes/pieslice.h
 lib/qt5/examples/qml/tutorials/extending-qml/chapter5-listproperties/
 lib/qt5/examples/qml/tutorials/extending-qml/chapter5-listproperties/app.qml
-@bin lib/qt5/examples/qml/tutorials/extending-qml/chapter5-listproperties/chapter5-listproperties
 lib/qt5/examples/qml/tutorials/extending-qml/chapter5-listproperties/chapter5-listproperties.pro
 lib/qt5/examples/qml/tutorials/extending-qml/chapter5-listproperties/chapter5-listproperties.qrc
 lib/qt5/examples/qml/tutorials/extending-qml/chapter5-listproperties/main.cpp
@@ -236,13 +217,9 @@ lib/qt5/examples/qml/tutorials/extending-qml/chapter5-listproperties/piechart.h
 lib/qt5/examples/qml/tutorials/extending-qml/chapter5-listproperties/pieslice.cpp
 lib/qt5/examples/qml/tutorials/extending-qml/chapter5-listproperties/pieslice.h
 lib/qt5/examples/qml/tutorials/extending-qml/chapter6-plugins/
-lib/qt5/examples/qml/tutorials/extending-qml/chapter6-plugins/Charts/
-lib/qt5/examples/qml/tutorials/extending-qml/chapter6-plugins/Charts/libchartsplugin.so
-lib/qt5/examples/qml/tutorials/extending-qml/chapter6-plugins/Charts/qmldir
 lib/qt5/examples/qml/tutorials/extending-qml/chapter6-plugins/app.pro
 lib/qt5/examples/qml/tutorials/extending-qml/chapter6-plugins/app.qml
 lib/qt5/examples/qml/tutorials/extending-qml/chapter6-plugins/app.qrc
-@bin lib/qt5/examples/qml/tutorials/extending-qml/chapter6-plugins/chapter6-plugins
 lib/qt5/examples/qml/tutorials/extending-qml/chapter6-plugins/chapter6-plugins.pro
 lib/qt5/examples/qml/tutorials/extending-qml/chapter6-plugins/import/
 lib/qt5/examples/qml/tutorials/extending-qml/chapter6-plugins/import/chartsplugin.cpp
@@ -265,7 +242,6 @@ lib/qt5/examples/qml/xmlhttprequest/doc/src/
 lib/qt5/examples/qml/xmlhttprequest/doc/src/xmlhttprequest.qdoc
 lib/qt5/examples/qml/xmlhttprequest/get.qml
 lib/qt5/examples/qml/xmlhttprequest/main.cpp
-@bin lib/qt5/examples/qml/xmlhttprequest/xmlhttprequest
 lib/qt5/examples/qml/xmlhttprequest/xmlhttprequest.pro
 lib/qt5/examples/qml/xmlhttprequest/xmlhttprequest.qml
 lib/qt5/examples/qml/xmlhttprequest/xmlhttprequest.qmlproject
@@ -277,10 +253,8 @@ lib/qt5/examples/qmltest/qmltest/qmltest.pro
 lib/qt5/examples/qmltest/qmltest/tst_basic.qml
 lib/qt5/examples/qmltest/qmltest/tst_item.qml
 lib/qt5/examples/qmltest/qmltest/tst_qmltest.cpp
-@bin lib/qt5/examples/qmltest/qmltest/tst_qmltestexample
 lib/qt5/examples/quick/
 lib/qt5/examples/quick/animation/
-@bin lib/qt5/examples/quick/animation/animation
 lib/qt5/examples/quick/animation/animation.pro
 lib/qt5/examples/quick/animation/animation.qml
 lib/qt5/examples/quick/animation/animation.qmlproject
@@ -319,7 +293,6 @@ lib/qt5/examples/quick/animation/states/transitions.qml
 lib/qt5/examples/quick/canvas/
 lib/qt5/examples/quick/canvas/bezierCurve/
 lib/qt5/examples/quick/canvas/bezierCurve/bezierCurve.qml
-@bin lib/qt5/examples/quick/canvas/canvas
 lib/qt5/examples/quick/canvas/canvas.pro
 lib/qt5/examples/quick/canvas/canvas.qml
 lib/qt5/examples/quick/canvas/canvas.qrc
@@ -385,7 +358,6 @@ lib/qt5/examples/quick/customitems/maskedmousearea/images/cloud_1.png
 lib/qt5/examples/quick/customitems/maskedmousearea/images/cloud_2.png
 lib/qt5/examples/quick/customitems/maskedmousearea/images/moon.png
 lib/qt5/examples/quick/customitems/maskedmousearea/main.cpp
-@bin lib/qt5/examples/quick/customitems/maskedmousearea/maskedmousearea
 lib/qt5/examples/quick/customitems/maskedmousearea/maskedmousearea.cpp
 lib/qt5/examples/quick/customitems/maskedmousearea/maskedmousearea.h
 lib/qt5/examples/quick/customitems/maskedmousearea/maskedmousearea.pro
@@ -394,7 +366,6 @@ lib/qt5/examples/quick/customitems/maskedmousearea/maskedmousearea.qmlproject
 lib/qt5/examples/quick/customitems/maskedmousearea/maskedmousearea.qrc
 lib/qt5/examples/quick/customitems/painteditem/
 lib/qt5/examples/quick/customitems/painteditem/TextBalloonPlugin/
-lib/qt5/examples/quick/customitems/painteditem/TextBalloonPlugin/libqmltextballoonplugin.so
 lib/qt5/examples/quick/customitems/painteditem/TextBalloonPlugin/plugin.h
 lib/qt5/examples/quick/customitems/painteditem/TextBalloonPlugin/qmldir
 lib/qt5/examples/quick/customitems/painteditem/doc/
@@ -461,7 +432,6 @@ lib/qt5/examples/quick/customitems/tabwidget/main.qml
 lib/qt5/examples/quick/customitems/tabwidget/tabwidget.qmlproject
 lib/qt5/examples/quick/demos/
 lib/qt5/examples/quick/demos/calqlatr/
-@bin lib/qt5/examples/quick/demos/calqlatr/calqlatr
 lib/qt5/examples/quick/demos/calqlatr/calqlatr.pro
 lib/qt5/examples/quick/demos/calqlatr/calqlatr.qml
 lib/qt5/examples/quick/demos/calqlatr/calqlatr.qmlproject
@@ -482,7 +452,6 @@ lib/qt5/examples/quick/demos/calqlatr/doc/src/
 lib/qt5/examples/quick/demos/calqlatr/doc/src/calqlatr.qdoc
 lib/qt5/examples/quick/demos/calqlatr/main.cpp
 lib/qt5/examples/quick/demos/clocks/
-@bin lib/qt5/examples/quick/demos/clocks/clocks
 lib/qt5/examples/quick/demos/clocks/clocks.pro
 lib/qt5/examples/quick/demos/clocks/clocks.qml
 lib/qt5/examples/quick/demos/clocks/clocks.qmlproject
@@ -588,7 +557,6 @@ lib/qt5/examples/quick/demos/maroon/doc/images/qtquick-demo-maroon-med-6.jpg
 lib/qt5/examples/quick/demos/maroon/doc/src/
 lib/qt5/examples/quick/demos/maroon/doc/src/maroon.qdoc
 lib/qt5/examples/quick/demos/maroon/main.cpp
-@bin lib/qt5/examples/quick/demos/maroon/maroon
 lib/qt5/examples/quick/demos/maroon/maroon.pro
 lib/qt5/examples/quick/demos/maroon/maroon.qml
 lib/qt5/examples/quick/demos/maroon/maroon.qmlproject
@@ -600,7 +568,6 @@ lib/qt5/examples/quick/demos/photosurface/doc/images/qtquick-demo-photosurface-s
 lib/qt5/examples/quick/demos/photosurface/doc/src/
 lib/qt5/examples/quick/demos/photosurface/doc/src/photosurface.qdoc
 lib/qt5/examples/quick/demos/photosurface/main.cpp
-@bin lib/qt5/examples/quick/demos/photosurface/photosurface
 lib/qt5/examples/quick/demos/photosurface/photosurface.pro
 lib/qt5/examples/quick/demos/photosurface/photosurface.qml
 lib/qt5/examples/quick/demos/photosurface/photosurface.qmlproject
@@ -756,7 +723,6 @@ lib/qt5/examples/quick/demos/samegame/doc/images/qtquick-demo-samegame-med-2.png
 lib/qt5/examples/quick/demos/samegame/doc/src/
 lib/qt5/examples/quick/demos/samegame/doc/src/samegame.qdoc
 lib/qt5/examples/quick/demos/samegame/main.cpp
-@bin lib/qt5/examples/quick/demos/samegame/samegame
 lib/qt5/examples/quick/demos/samegame/samegame.pro
 lib/qt5/examples/quick/demos/samegame/samegame.qml
 lib/qt5/examples/quick/demos/samegame/samegame.qmlproject
@@ -786,7 +752,6 @@ lib/qt5/examples/quick/demos/stocqt/doc/images/qtquick-demo-stocqt.png
 lib/qt5/examples/quick/demos/stocqt/doc/src/
 lib/qt5/examples/quick/demos/stocqt/doc/src/stocqt.qdoc
 lib/qt5/examples/quick/demos/stocqt/main.cpp
-@bin lib/qt5/examples/quick/demos/stocqt/stocqt
 lib/qt5/examples/quick/demos/stocqt/stocqt.pro
 lib/qt5/examples/quick/demos/stocqt/stocqt.qml
 lib/qt5/examples/quick/demos/stocqt/stocqt.qmlproject
@@ -815,7 +780,6 @@ lib/qt5/examples/quick/demos/tweetsearch/doc/images/qtquick-demo-tweetsearch-med
 lib/qt5/examples/quick/demos/tweetsearch/doc/src/
 lib/qt5/examples/quick/demos/tweetsearch/doc/src/tweetsearch.qdoc
 lib/qt5/examples/quick/demos/tweetsearch/main.cpp
-@bin lib/qt5/examples/quick/demos/tweetsearch/tweetsearch
 lib/qt5/examples/quick/demos/tweetsearch/tweetsearch.pro
 lib/qt5/examples/quick/demos/tweetsearch/tweetsearch.qml
 lib/qt5/examples/quick/demos/tweetsearch/tweetsearch.qmlproject
@@ -826,7 +790,6 @@ lib/qt5/examples/quick/draganddrop/doc/images/
 lib/qt5/examples/quick/draganddrop/doc/images/qml-draganddrop-example.png
 lib/qt5/examples/quick/draganddrop/doc/src/
 lib/qt5/examples/quick/draganddrop/doc/src/draganddrop.qdoc
-@bin lib/qt5/examples/quick/draganddrop/draganddrop
 lib/qt5/examples/quick/draganddrop/draganddrop.pro
 lib/qt5/examples/quick/draganddrop/draganddrop.qml
 lib/qt5/examples/quick/draganddrop/draganddrop.qmlproject
@@ -840,7 +803,6 @@ lib/qt5/examples/quick/draganddrop/views/
 lib/qt5/examples/quick/draganddrop/views/gridview.qml
 lib/qt5/examples/quick/embeddedinwidgets/
 lib/qt5/examples/quick/embeddedinwidgets/TextBox.qml
-@bin lib/qt5/examples/quick/embeddedinwidgets/embeddedinwidgets
 lib/qt5/examples/quick/embeddedinwidgets/embeddedinwidgets.pro
 lib/qt5/examples/quick/embeddedinwidgets/embeddedinwidgets.qrc
 lib/qt5/examples/quick/embeddedinwidgets/main.cpp
@@ -852,7 +814,6 @@ lib/qt5/examples/quick/externaldraganddrop/doc/images/
 lib/qt5/examples/quick/externaldraganddrop/doc/images/qml-dnd2-example.png
 lib/qt5/examples/quick/externaldraganddrop/doc/src/
 lib/qt5/examples/quick/externaldraganddrop/doc/src/externaldraganddrop.qdoc
-@bin lib/qt5/examples/quick/externaldraganddrop/externaldraganddrop
 lib/qt5/examples/quick/externaldraganddrop/externaldraganddrop.pro
 lib/qt5/examples/quick/externaldraganddrop/externaldraganddrop.qml
 lib/qt5/examples/quick/externaldraganddrop/externaldraganddrop.qmlproject
@@ -881,7 +842,6 @@ lib/qt5/examples/quick/imageelements/doc/images/qml-imageelements-example.png
 lib/qt5/examples/quick/imageelements/doc/src/
 lib/qt5/examples/quick/imageelements/doc/src/imageelements.qdoc
 lib/qt5/examples/quick/imageelements/image.qml
-@bin lib/qt5/examples/quick/imageelements/imageelements
 lib/qt5/examples/quick/imageelements/imageelements.pro
 lib/qt5/examples/quick/imageelements/imageelements.qml
 lib/qt5/examples/quick/imageelements/imageelements.qmlproject
@@ -891,7 +851,6 @@ lib/qt5/examples/quick/imageelements/shadows.qml
 lib/qt5/examples/quick/imageelements/spritesequence.qml
 lib/qt5/examples/quick/imageprovider/
 lib/qt5/examples/quick/imageprovider/ImageProviderCore/
-lib/qt5/examples/quick/imageprovider/ImageProviderCore/libqmlimageproviderplugin.so
 lib/qt5/examples/quick/imageprovider/ImageProviderCore/qmldir
 lib/qt5/examples/quick/imageprovider/doc/
 lib/qt5/examples/quick/imageprovider/doc/images/
@@ -904,7 +863,6 @@ lib/qt5/examples/quick/imageprovider/imageprovider.pro
 lib/qt5/examples/quick/imageprovider/imageprovider.qmlproject
 lib/qt5/examples/quick/imageresponseprovider/
 lib/qt5/examples/quick/imageresponseprovider/ImageResponseProviderCore/
-lib/qt5/examples/quick/imageresponseprovider/ImageResponseProviderCore/libqmlimageresponseproviderplugin.so
 lib/qt5/examples/quick/imageresponseprovider/ImageResponseProviderCore/qmldir
 lib/qt5/examples/quick/imageresponseprovider/doc/
 lib/qt5/examples/quick/imageresponseprovider/doc/src/
@@ -930,7 +888,6 @@ lib/qt5/examples/quick/keyinteraction/focus/Core/images/
 lib/qt5/examples/quick/keyinteraction/focus/Core/images/arrow.png
 lib/qt5/examples/quick/keyinteraction/focus/Core/images/qt-logo.png
 lib/qt5/examples/quick/keyinteraction/focus/focus.qml
-@bin lib/qt5/examples/quick/keyinteraction/keyinteraction
 lib/qt5/examples/quick/keyinteraction/keyinteraction.pro
 lib/qt5/examples/quick/keyinteraction/keyinteraction.qml
 lib/qt5/examples/quick/keyinteraction/keyinteraction.qmlproject
@@ -943,7 +900,6 @@ lib/qt5/examples/quick/localstorage/doc/src/localstorage.qdoc
 lib/qt5/examples/quick/localstorage/localstorage/
 lib/qt5/examples/quick/localstorage/localstorage.pro
 lib/qt5/examples/quick/localstorage/localstorage/hello.qml
-@bin lib/qt5/examples/quick/localstorage/localstorage/localstorage
 lib/qt5/examples/quick/localstorage/localstorage/localstorage.pro
 lib/qt5/examples/quick/localstorage/localstorage/localstorage.qml
 lib/qt5/examples/quick/localstorage/localstorage/localstorage.qmlproject
@@ -951,7 +907,6 @@ lib/qt5/examples/quick/localstorage/localstorage/localstorage.qrc
 lib/qt5/examples/quick/localstorage/localstorage/main.cpp
 lib/qt5/examples/quick/models/
 lib/qt5/examples/quick/models/abstractitemmodel/
-@bin lib/qt5/examples/quick/models/abstractitemmodel/abstractitemmodel
 lib/qt5/examples/quick/models/abstractitemmodel/abstractitemmodel.pro
 lib/qt5/examples/quick/models/abstractitemmodel/abstractitemmodel.qrc
 lib/qt5/examples/quick/models/abstractitemmodel/doc/
@@ -973,7 +928,6 @@ lib/qt5/examples/quick/models/objectlistmodel/doc/images/qml-objectlistmodel-exa
 lib/qt5/examples/quick/models/objectlistmodel/doc/src/
 lib/qt5/examples/quick/models/objectlistmodel/doc/src/objectlistmodel-example.qdoc
 lib/qt5/examples/quick/models/objectlistmodel/main.cpp
-@bin lib/qt5/examples/quick/models/objectlistmodel/objectlistmodel
 lib/qt5/examples/quick/models/objectlistmodel/objectlistmodel.pro
 lib/qt5/examples/quick/models/objectlistmodel/objectlistmodel.qrc
 lib/qt5/examples/quick/models/objectlistmodel/view.qml
@@ -984,7 +938,6 @@ lib/qt5/examples/quick/models/stringlistmodel/doc/images/qml-stringlistmodel-exa
 lib/qt5/examples/quick/models/stringlistmodel/doc/src/
 lib/qt5/examples/quick/models/stringlistmodel/doc/src/stringlistmodel-example.qdoc
 lib/qt5/examples/quick/models/stringlistmodel/main.cpp
-@bin lib/qt5/examples/quick/models/stringlistmodel/stringlistmodel
 lib/qt5/examples/quick/models/stringlistmodel/stringlistmodel.pro
 lib/qt5/examples/quick/models/stringlistmodel/stringlistmodel.qrc
 lib/qt5/examples/quick/models/stringlistmodel/view.qml
@@ -995,7 +948,6 @@ lib/qt5/examples/quick/mousearea/doc/images/qml-mousearea-example.png
 lib/qt5/examples/quick/mousearea/doc/src/
 lib/qt5/examples/quick/mousearea/doc/src/mousearea.qdoc
 lib/qt5/examples/quick/mousearea/main.cpp
-@bin lib/qt5/examples/quick/mousearea/mousearea
 lib/qt5/examples/quick/mousearea/mousearea-wheel-example.qml
 lib/qt5/examples/quick/mousearea/mousearea.pro
 lib/qt5/examples/quick/mousearea/mousearea.qml
@@ -1003,7 +955,6 @@ lib/qt5/examples/quick/mousearea/mousearea.qmlproject
 lib/qt5/examples/quick/mousearea/mousearea.qrc
 lib/qt5/examples/quick/particles/
 lib/qt5/examples/quick/particles/affectors/
-@bin lib/qt5/examples/quick/particles/affectors/affectors
 lib/qt5/examples/quick/particles/affectors/affectors.pro
 lib/qt5/examples/quick/particles/affectors/affectors.qml
 lib/qt5/examples/quick/particles/affectors/affectors.qmlproject
@@ -1031,7 +982,6 @@ lib/qt5/examples/quick/particles/customparticle/content/
 lib/qt5/examples/quick/particles/customparticle/content/blurparticles.qml
 lib/qt5/examples/quick/particles/customparticle/content/fragmentshader.qml
 lib/qt5/examples/quick/particles/customparticle/content/imagecolors.qml
-@bin lib/qt5/examples/quick/particles/customparticle/customparticle
 lib/qt5/examples/quick/particles/customparticle/customparticle.pro
 lib/qt5/examples/quick/particles/customparticle/customparticle.qml
 lib/qt5/examples/quick/particles/customparticle/customparticle.qmlproject
@@ -1056,7 +1006,6 @@ lib/qt5/examples/quick/particles/emitters/doc/images/
 lib/qt5/examples/quick/particles/emitters/doc/images/qml-emitters-example.png
 lib/qt5/examples/quick/particles/emitters/doc/src/
 lib/qt5/examples/quick/particles/emitters/doc/src/emitters.qdoc
-@bin lib/qt5/examples/quick/particles/emitters/emitters
 lib/qt5/examples/quick/particles/emitters/emitters.pro
 lib/qt5/examples/quick/particles/emitters/emitters.qml
 lib/qt5/examples/quick/particles/emitters/emitters.qmlproject
@@ -1076,7 +1025,6 @@ lib/qt5/examples/quick/particles/imageparticle/doc/images/
 lib/qt5/examples/quick/particles/imageparticle/doc/images/qml-imageparticle-example.png
 lib/qt5/examples/quick/particles/imageparticle/doc/src/
 lib/qt5/examples/quick/particles/imageparticle/doc/src/imageparticle.qdoc
-@bin lib/qt5/examples/quick/particles/imageparticle/imageparticle
 lib/qt5/examples/quick/particles/imageparticle/imageparticle.pro
 lib/qt5/examples/quick/particles/imageparticle/imageparticle.qml
 lib/qt5/examples/quick/particles/imageparticle/imageparticle.qmlproject
@@ -1139,7 +1087,6 @@ lib/qt5/examples/quick/particles/system/doc/images/qml-system-example.png
 lib/qt5/examples/quick/particles/system/doc/src/
 lib/qt5/examples/quick/particles/system/doc/src/system.qdoc
 lib/qt5/examples/quick/particles/system/main.cpp
-@bin lib/qt5/examples/quick/particles/system/system
 lib/qt5/examples/quick/particles/system/system.pro
 lib/qt5/examples/quick/particles/system/system.qml
 lib/qt5/examples/quick/particles/system/system.qmlproject
@@ -1151,7 +1098,6 @@ lib/qt5/examples/quick/positioners/doc/images/qml-positioners-example.png
 lib/qt5/examples/quick/positioners/doc/src/
 lib/qt5/examples/quick/positioners/doc/src/positioners.qdoc
 lib/qt5/examples/quick/positioners/main.cpp
-@bin lib/qt5/examples/quick/positioners/positioners
 lib/qt5/examples/quick/positioners/positioners-attachedproperties.qml
 lib/qt5/examples/quick/positioners/positioners-transitions.qml
 lib/qt5/examples/quick/positioners/positioners.pro
@@ -1170,7 +1116,6 @@ lib/qt5/examples/quick/quick-accessibility/doc/
 lib/qt5/examples/quick/quick-accessibility/doc/src/
 lib/qt5/examples/quick/quick-accessibility/doc/src/accessibility.qdoc
 lib/qt5/examples/quick/quick-accessibility/main.cpp
-@bin lib/qt5/examples/quick/quick-accessibility/quick-accessibility
 lib/qt5/examples/quick/quick-accessibility/quick-accessibility.pro
 lib/qt5/examples/quick/quick.pro
 lib/qt5/examples/quick/quickwidgets/
@@ -1182,7 +1127,6 @@ lib/qt5/examples/quick/quickwidgets/qquickviewcomparison/logo.h
 lib/qt5/examples/quick/quickwidgets/qquickviewcomparison/main.cpp
 lib/qt5/examples/quick/quickwidgets/qquickviewcomparison/mainwindow.cpp
 lib/qt5/examples/quick/quickwidgets/qquickviewcomparison/mainwindow.h
-@bin lib/qt5/examples/quick/quickwidgets/qquickviewcomparison/qquickviewcomparison
 lib/qt5/examples/quick/quickwidgets/qquickviewcomparison/qquickviewcomparison.pro
 lib/qt5/examples/quick/quickwidgets/qquickviewcomparison/qquickviewcomparison.qrc
 lib/qt5/examples/quick/quickwidgets/qquickviewcomparison/test.qml
@@ -1193,7 +1137,6 @@ lib/qt5/examples/quick/quickwidgets/quickwidget/doc/images/qtquickwidgets-exampl
 lib/qt5/examples/quick/quickwidgets/quickwidget/doc/src/
 lib/qt5/examples/quick/quickwidgets/quickwidget/doc/src/quickwidget.qdoc
 lib/qt5/examples/quick/quickwidgets/quickwidget/main.cpp
-@bin lib/qt5/examples/quick/quickwidgets/quickwidget/quickwidget
 lib/qt5/examples/quick/quickwidgets/quickwidget/quickwidget.pro
 lib/qt5/examples/quick/quickwidgets/quickwidget/quickwidget.qrc
 lib/qt5/examples/quick/quickwidgets/quickwidget/rotatingsquare.qml
@@ -1208,7 +1151,6 @@ lib/qt5/examples/quick/rendercontrol/doc/images/rendercontrol-example.jpg
 lib/qt5/examples/quick/rendercontrol/doc/src/
 lib/qt5/examples/quick/rendercontrol/doc/src/rendercontrol.qdoc
 lib/qt5/examples/quick/rendercontrol/main.cpp
-@bin lib/qt5/examples/quick/rendercontrol/rendercontrol
 lib/qt5/examples/quick/rendercontrol/rendercontrol.pro
 lib/qt5/examples/quick/rendercontrol/rendercontrol.qrc
 lib/qt5/examples/quick/rendercontrol/window_multithreaded.cpp
@@ -1228,7 +1170,6 @@ lib/qt5/examples/quick/righttoleft/layoutmirroring/
 lib/qt5/examples/quick/righttoleft/layoutmirroring/layoutmirroring.qml
 lib/qt5/examples/quick/righttoleft/layoutmirroring/layoutmirroring.qmlproject
 lib/qt5/examples/quick/righttoleft/main.cpp
-@bin lib/qt5/examples/quick/righttoleft/righttoleft
 lib/qt5/examples/quick/righttoleft/righttoleft.pro
 lib/qt5/examples/quick/righttoleft/righttoleft.qml
 lib/qt5/examples/quick/righttoleft/righttoleft.qmlproject
@@ -1240,7 +1181,6 @@ lib/qt5/examples/quick/scenegraph/
 lib/qt5/examples/quick/scenegraph/customgeometry/
 lib/qt5/examples/quick/scenegraph/customgeometry/beziercurve.cpp
 lib/qt5/examples/quick/scenegraph/customgeometry/beziercurve.h
-@bin lib/qt5/examples/quick/scenegraph/customgeometry/customgeometry
 lib/qt5/examples/quick/scenegraph/customgeometry/customgeometry.pro
 lib/qt5/examples/quick/scenegraph/customgeometry/customgeometry.qrc
 lib/qt5/examples/quick/scenegraph/customgeometry/doc/
@@ -1256,7 +1196,6 @@ lib/qt5/examples/quick/scenegraph/graph/doc/images/
 lib/qt5/examples/quick/scenegraph/graph/doc/images/graph-example.jpg
 lib/qt5/examples/quick/scenegraph/graph/doc/src/
 lib/qt5/examples/quick/scenegraph/graph/doc/src/graph.qdoc
-@bin lib/qt5/examples/quick/scenegraph/graph/graph
 lib/qt5/examples/quick/scenegraph/graph/graph.cpp
 lib/qt5/examples/quick/scenegraph/graph/graph.h
 lib/qt5/examples/quick/scenegraph/graph/graph.pro
@@ -1282,7 +1221,6 @@ lib/qt5/examples/quick/scenegraph/openglunderqml/doc/src/
 lib/qt5/examples/quick/scenegraph/openglunderqml/doc/src/openglunderqml.qdoc
 lib/qt5/examples/quick/scenegraph/openglunderqml/main.cpp
 lib/qt5/examples/quick/scenegraph/openglunderqml/main.qml
-@bin lib/qt5/examples/quick/scenegraph/openglunderqml/openglunderqml
 lib/qt5/examples/quick/scenegraph/openglunderqml/openglunderqml.pro
 lib/qt5/examples/quick/scenegraph/openglunderqml/openglunderqml.qrc
 lib/qt5/examples/quick/scenegraph/openglunderqml/squircle.cpp
@@ -1291,7 +1229,6 @@ lib/qt5/examples/quick/scenegraph/scenegraph.pro
 lib/qt5/examples/quick/scenegraph/sgengine/
 lib/qt5/examples/quick/scenegraph/sgengine/face-smile.png
 lib/qt5/examples/quick/scenegraph/sgengine/main.cpp
-@bin lib/qt5/examples/quick/scenegraph/sgengine/sgengine
 lib/qt5/examples/quick/scenegraph/sgengine/sgengine.pro
 lib/qt5/examples/quick/scenegraph/sgengine/sgengine.qrc
 lib/qt5/examples/quick/scenegraph/sgengine/window.cpp
@@ -1306,7 +1243,6 @@ lib/qt5/examples/quick/scenegraph/simplematerial/doc/images/simplematerial-examp
 lib/qt5/examples/quick/scenegraph/simplematerial/doc/src/
 lib/qt5/examples/quick/scenegraph/simplematerial/doc/src/simplematerial.qdoc
 lib/qt5/examples/quick/scenegraph/simplematerial/main.qml
-@bin lib/qt5/examples/quick/scenegraph/simplematerial/simplematerial
 lib/qt5/examples/quick/scenegraph/simplematerial/simplematerial.cpp
 lib/qt5/examples/quick/scenegraph/simplematerial/simplematerial.pro
 lib/qt5/examples/quick/scenegraph/simplematerial/simplematerial.qrc
@@ -1320,7 +1256,6 @@ lib/qt5/examples/quick/scenegraph/textureinsgnode/fboinsgrenderer.cpp
 lib/qt5/examples/quick/scenegraph/textureinsgnode/fboinsgrenderer.h
 lib/qt5/examples/quick/scenegraph/textureinsgnode/main.cpp
 lib/qt5/examples/quick/scenegraph/textureinsgnode/main.qml
-@bin lib/qt5/examples/quick/scenegraph/textureinsgnode/textureinsgnode
 lib/qt5/examples/quick/scenegraph/textureinsgnode/textureinsgnode.pro
 lib/qt5/examples/quick/scenegraph/textureinsgnode/textureinsgnode.qrc
 lib/qt5/examples/quick/scenegraph/textureinthread/
@@ -1332,7 +1267,6 @@ lib/qt5/examples/quick/scenegraph/textureinthread/doc/src/textureinthread.qdoc
 lib/qt5/examples/quick/scenegraph/textureinthread/error.qml
 lib/qt5/examples/quick/scenegraph/textureinthread/main.cpp
 lib/qt5/examples/quick/scenegraph/textureinthread/main.qml
-@bin lib/qt5/examples/quick/scenegraph/textureinthread/textureinthread
 lib/qt5/examples/quick/scenegraph/textureinthread/textureinthread.pro
 lib/qt5/examples/quick/scenegraph/textureinthread/textureinthread.qrc
 lib/qt5/examples/quick/scenegraph/textureinthread/threadrenderer.cpp
@@ -1343,7 +1277,6 @@ lib/qt5/examples/quick/scenegraph/threadedanimation/main.qml
 lib/qt5/examples/quick/scenegraph/threadedanimation/spinner.cpp
 lib/qt5/examples/quick/scenegraph/threadedanimation/spinner.h
 lib/qt5/examples/quick/scenegraph/threadedanimation/spinner.png
-@bin lib/qt5/examples/quick/scenegraph/threadedanimation/threadedanimation
 lib/qt5/examples/quick/scenegraph/threadedanimation/threadedanimation.pro
 lib/qt5/examples/quick/scenegraph/threadedanimation/threadedanimation.qrc
 lib/qt5/examples/quick/scenegraph/twotextureproviders/
@@ -1354,7 +1287,6 @@ lib/qt5/examples/quick/scenegraph/twotextureproviders/doc/src/
 lib/qt5/examples/quick/scenegraph/twotextureproviders/doc/src/twotextureproviders.qdoc
 lib/qt5/examples/quick/scenegraph/twotextureproviders/main.cpp
 lib/qt5/examples/quick/scenegraph/twotextureproviders/main.qml
-@bin lib/qt5/examples/quick/scenegraph/twotextureproviders/twotextureproviders
 lib/qt5/examples/quick/scenegraph/twotextureproviders/twotextureproviders.pro
 lib/qt5/examples/quick/scenegraph/twotextureproviders/twotextureproviders.qrc
 lib/qt5/examples/quick/scenegraph/twotextureproviders/xorblender.cpp
@@ -1370,7 +1302,6 @@ lib/qt5/examples/quick/shadereffects/doc/images/qml-shadereffects-example.png
 lib/qt5/examples/quick/shadereffects/doc/src/
 lib/qt5/examples/quick/shadereffects/doc/src/shadereffects.qdoc
 lib/qt5/examples/quick/shadereffects/main.cpp
-@bin lib/qt5/examples/quick/shadereffects/shadereffects
 lib/qt5/examples/quick/shadereffects/shadereffects.pro
 lib/qt5/examples/quick/shadereffects/shadereffects.qml
 lib/qt5/examples/quick/shadereffects/shadereffects.qmlproject
@@ -1421,7 +1352,6 @@ lib/qt5/examples/quick/text/imgtag/images/starfish_2.png
 lib/qt5/examples/quick/text/imgtag/imgtag.qml
 lib/qt5/examples/quick/text/main.cpp
 lib/qt5/examples/quick/text/styledtext-layout.qml
-@bin lib/qt5/examples/quick/text/text
 lib/qt5/examples/quick/text/text.pro
 lib/qt5/examples/quick/text/text.qml
 lib/qt5/examples/quick/text/text.qmlproject
@@ -1441,7 +1371,6 @@ lib/qt5/examples/quick/textureprovider/images/
 lib/qt5/examples/quick/textureprovider/images/qt-logo.jpg
 lib/qt5/examples/quick/textureprovider/images/qt-logo.pkm
 lib/qt5/examples/quick/textureprovider/main.cpp
-@bin lib/qt5/examples/quick/textureprovider/textureprovider
 lib/qt5/examples/quick/textureprovider/textureprovider.pro
 lib/qt5/examples/quick/textureprovider/textureprovider.qml
 lib/qt5/examples/quick/textureprovider/textureprovider.qrc
@@ -1459,7 +1388,6 @@ lib/qt5/examples/quick/threading/threadedlistmodel/doc/src/
 lib/qt5/examples/quick/threading/threadedlistmodel/doc/src/threadedlistmodel.qdoc
 lib/qt5/examples/quick/threading/threadedlistmodel/threadedlistmodel.qmlproject
 lib/qt5/examples/quick/threading/threadedlistmodel/timedisplay.qml
-@bin lib/qt5/examples/quick/threading/threading
 lib/qt5/examples/quick/threading/threading.pro
 lib/qt5/examples/quick/threading/threading.qml
 lib/qt5/examples/quick/threading/threading.qmlproject
@@ -1503,7 +1431,6 @@ lib/qt5/examples/quick/touchinteraction/multipointtouch/multiflame.qml
 lib/qt5/examples/quick/touchinteraction/pincharea/
 lib/qt5/examples/quick/touchinteraction/pincharea/flickresize.qml
 lib/qt5/examples/quick/touchinteraction/pincharea/qt-logo.jpg
-@bin lib/qt5/examples/quick/touchinteraction/touchinteraction
 lib/qt5/examples/quick/touchinteraction/touchinteraction.pro
 lib/qt5/examples/quick/touchinteraction/touchinteraction.qml
 lib/qt5/examples/quick/touchinteraction/touchinteraction.qmlproject
@@ -1684,7 +1611,6 @@ lib/qt5/examples/quick/views/pathview/pics/DateBook_48.png
 lib/qt5/examples/quick/views/pathview/pics/EMail_48.png
 lib/qt5/examples/quick/views/pathview/pics/TodoList_48.png
 lib/qt5/examples/quick/views/pathview/pics/VideoPlayer_48.png
-@bin lib/qt5/examples/quick/views/views
 lib/qt5/examples/quick/views/views.pro
 lib/qt5/examples/quick/views/views.qml
 lib/qt5/examples/quick/views/views.qmlproject
@@ -1708,7 +1634,6 @@ lib/qt5/examples/quick/window/resources/icon.ico
 lib/qt5/examples/quick/window/resources/icon.svg
 lib/qt5/examples/quick/window/resources/icon64.png
 lib/qt5/examples/quick/window/resources/window.rc
-@bin lib/qt5/examples/quick/window/window
 lib/qt5/examples/quick/window/window.pro
 lib/qt5/examples/quick/window/window.qml
 lib/qt5/examples/quick/window/window.qrc

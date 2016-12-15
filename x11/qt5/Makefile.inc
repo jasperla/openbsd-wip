@@ -7,6 +7,7 @@ BROKEN-powerpc =	never built - gcc ICE
 
 VERSION ?=		${QT5_VERSION}
 DIST_VERSION ?=		${QT5_DIST_VERSION}
+NEXT_VERSION ?=		${QT5_NEXT_VERSION}
 DISTNAME ?=		${QT5NAME:L}-opensource-src-${DIST_VERSION}
 
 PKGNAME ?=		${DISTNAME:C/-opensource-src//:C/-${DIST_VERSION}/-${VERSION}/}
@@ -19,6 +20,7 @@ COMMENT-examples ?=	${QT5NAME} development examples
 COMMENT-html ?=		HTML documentation for ${QT5NAME}
 COMMENT-qch ?=		qdoc-compiled documentation for ${QT5NAME}
 
+PKG_ARCH-examples =	*
 PKG_ARCH-html =		*
 PKG_ARCH-qch =		*
 
@@ -28,6 +30,12 @@ CATEGORIES +=		x11 x11/qt5 devel
 HOMEPAGE ?=		http://www.qt-project.org/
 MAINTAINER ?=		KDE porting team <openbsd-kde@googlegroups.com>
 
+# We don't build examples, but provide sources only.
+WANTLIB-examples ?=
+LIB_DEPENDS-examples ?=
+RUN_DEPENDS-examples ?=	${RUN_DEPENDS}
+RUN_DEPENDS-examples +=	${BUILD_PKGPATH},-main>=${VERSION:R},<${NEXT_VERSION}
+
 WANTLIB-html =
 LIB_DEPENDS-html =
 RUN_DEPENDS-html ?=
@@ -36,18 +44,10 @@ WANTLIB-qch =
 LIB_DEPENDS-qch =
 RUN_DEPENDS-qch +=	x11/qt5/qtbase>=${QT5_VERSION:R},<${QT5_NEXT_VERSION}
 
-NEXT_VERSION ?=		${QT5_NEXT_VERSION}
-
 .if defined(MULTI_PACKAGES)
 . if ${MULTI_PACKAGES:M-main}
 RUN_DEPENDS-qch +=	${BUILD_PKGPATH},-main>=${VERSION:R},<${NEXT_VERSION}
 RUN_DEPENDS-html +=	${BUILD_PKGPATH},-main>=${VERSION:R},<${NEXT_VERSION}
-
-# XXX this will be wrong for Enginio
-RUN_DEPENDS-examples ?=	${RUN_DEPENDS}
-RUN_DEPENDS-examples +=	${BUILD_PKGPATH},-main>=${VERSION:R},<${NEXT_VERSION}
-LIB_DEPENDS-examples ?=	${LIB_DEPENDS}
-LIB_DEPENDS-examples +=	${BUILD_PKGPATH},-main>=${VERSION:R},<${NEXT_VERSION}
 . endif
 .endif
 
@@ -149,14 +149,13 @@ PROGRAMS5 =	assistant designer linguist lrelease lupdate moc pixeltool \
 
 post-extract: qt5-post-extract
 qt5-post-extract:
-# qt_parts qmake feature checks presence of this file exactly
-.if !${BUILD_PACKAGES:M-examples}
+	# Avoid building examples, we'll simply package sources;
+	# qt_parts qmake feature checks presence of this file exactly.
 	rm -f ${WRKDIST}/examples/examples.pro
-.endif
 
 post-install: qt5-post-install
 qt5-post-install:
-	# programs
+	# public programs
 .for p in ${PROGRAMS5}
 	! test -e ${PREFIX}/lib/qt5/bin/$p || \
 	    ln -sf ../lib/qt5/bin/$p ${PREFIX}/bin/$p-qt5
@@ -165,11 +164,6 @@ qt5-post-install:
 .for l v in ${SHARED_LIBS}
 	cd ${PREFIX}/lib; \
 	f=qt5/lib$l.so.$v; \
-	! test -f $$f || ln -sf $$f .
-.endfor
-.for l v in ${SHARED_LIBS-examples}
-	cd ${PREFIX}/lib; \
-	f=qt5/examples/*/*/lib$l.so.$v; \
 	! test -f $$f || ln -sf $$f .
 .endfor
 	# pkg-config files
@@ -189,34 +183,51 @@ qt5-post-install:
 	find ${QT_BASEDIR}/mkspecs -name '*${PATCHORIG}' | xargs -r rm
 .if ${CONFIGURE_STYLE:Mqmake} && ${BUILD_PACKAGES:M-examples}
 	# install examples sources
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/qt5/examples
 	cd ${WRKSRC}/examples; \
 	pax -rw */ ${PREFIX}/lib/qt5/examples
 .endif
 
-# Generates DESCR-* from DESCR-main, and PLIST-* from PLIST-main.
-# Don't forget to run "rm pkg/PLIST-*; make plist" before this.
-gen_pkg:
-	test -e ${PKGDIR}/PLIST-main
+#
+# Helper targets, used during port development.
+#
+
+.PHONY: gen_pkg gen_pkg_plist gen_pkg_descr
+gen_pkg: gen_pkg_plist gen_pkg_descr
+
+# Generates DESCR-* from DESCR-main.
+gen_pkg_descr:
 	test -e ${PKGDIR}/DESCR-main
+.if ${BUILD_PACKAGES:M-examples}
+	sed '$$s/.*/This package contains sources for ${QT5NAME} usage examples./' \
+		<${PKGDIR}/DESCR-main >${PKGDIR}/DESCR-examples
+.endif
+.if ${BUILD_PACKAGES:M-qch}
+	sed '$$s/.*/This package contains compiled ${QT5NAME} documentation./' \
+		<${PKGDIR}/DESCR-main >${PKGDIR}/DESCR-qch
+.endif
+.if ${BUILD_PACKAGES:M-html}
+	sed '$$s/.*/This package contains ${QT5NAME} HTML documentation./' \
+		<${PKGDIR}/DESCR-main >${PKGDIR}/DESCR-html
+.endif
+
+# Generates PLIST-* from PLIST-main.
+# Don't forget to run "rm pkg/PLIST-*; make plist" before this.
+# Note that -qch should be handled before -html here.
+gen_pkg_plist:
+	test -e ${PKGDIR}/PLIST-main
 .if ${BUILD_PACKAGES:M-examples}
 	echo '@comment $$OpenBSD$$' >${PKGDIR}/PLIST-examples
 	egrep '^(@.* )?lib/qt5/examples/' ${PKGDIR}/PLIST-main >>${PKGDIR}/PLIST-examples
 	sed -Ei '\,^(@.* )?lib/qt5/examples/,d' ${PKGDIR}/PLIST-main
-	sed '$$s/.*/This package contains ${QT5NAME} compiled examples and their sources./' \
-		<${PKGDIR}/DESCR-main >${PKGDIR}/DESCR-examples
 .endif
-# note that -qch should be handled before -html here
 .if ${BUILD_PACKAGES:M-qch}
 	echo '@comment $$OpenBSD$$' >${PKGDIR}/PLIST-qch
 	egrep '^(@.* )?share/doc/qt5/[^/]+\.qch?$$' ${PKGDIR}/PLIST-main >>${PKGDIR}/PLIST-qch
 	sed -Ei '\,^(@.* )?share/doc/qt5/.*\.qch,d' ${PKGDIR}/PLIST-main
-	sed '$$s/.*/This package contains compiled ${QT5NAME} documentation./' \
-		<${PKGDIR}/DESCR-main >${PKGDIR}/DESCR-qch
 .endif
 .if ${BUILD_PACKAGES:M-html}
 	echo '@comment $$OpenBSD$$' >${PKGDIR}/PLIST-html
 	egrep '^(@.* )?share/doc/qt5/' ${PKGDIR}/PLIST-main >>${PKGDIR}/PLIST-html
 	sed -Ei '\,^(@.* )?share/doc/qt5/,d' ${PKGDIR}/PLIST-main
-	sed '$$s/.*/This package contains ${QT5NAME} HTML documentation./' \
-		<${PKGDIR}/DESCR-main >${PKGDIR}/DESCR-html
 .endif

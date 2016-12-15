@@ -13,7 +13,6 @@ lib/qt5/examples/canvas3d/framebuffer/doc/images/
 lib/qt5/examples/canvas3d/framebuffer/doc/images/framebuffer-example.png
 lib/qt5/examples/canvas3d/framebuffer/doc/src/
 lib/qt5/examples/canvas3d/framebuffer/doc/src/framebuffer.qdoc
-@bin lib/qt5/examples/canvas3d/framebuffer/framebuffer
 lib/qt5/examples/canvas3d/framebuffer/framebuffer.pro
 lib/qt5/examples/canvas3d/framebuffer/framebuffer.qrc
 lib/qt5/examples/canvas3d/framebuffer/main.cpp
@@ -29,7 +28,6 @@ lib/qt5/examples/canvas3d/interaction/doc/images/
 lib/qt5/examples/canvas3d/interaction/doc/images/interaction-example.png
 lib/qt5/examples/canvas3d/interaction/doc/src/
 lib/qt5/examples/canvas3d/interaction/doc/src/interaction.qdoc
-@bin lib/qt5/examples/canvas3d/interaction/interaction
 lib/qt5/examples/canvas3d/interaction/interaction.pro
 lib/qt5/examples/canvas3d/interaction/interaction.qrc
 lib/qt5/examples/canvas3d/interaction/main.cpp
@@ -47,7 +45,6 @@ lib/qt5/examples/canvas3d/jsonmodels/doc/images/
 lib/qt5/examples/canvas3d/jsonmodels/doc/images/jsonmodels-example.png
 lib/qt5/examples/canvas3d/jsonmodels/doc/src/
 lib/qt5/examples/canvas3d/jsonmodels/doc/src/jsonmodels.qdoc
-@bin lib/qt5/examples/canvas3d/jsonmodels/jsonmodels
 lib/qt5/examples/canvas3d/jsonmodels/jsonmodels.pro
 lib/qt5/examples/canvas3d/jsonmodels/main.cpp
 lib/qt5/examples/canvas3d/jsonmodels/qml/
@@ -77,7 +74,6 @@ lib/qt5/examples/canvas3d/quickitemtexture/qml/
 lib/qt5/examples/canvas3d/quickitemtexture/qml/quickitemtexture/
 lib/qt5/examples/canvas3d/quickitemtexture/qml/quickitemtexture/main.qml
 lib/qt5/examples/canvas3d/quickitemtexture/qml/quickitemtexture/quickitemtexture.js
-@bin lib/qt5/examples/canvas3d/quickitemtexture/quickitemtexture
 lib/qt5/examples/canvas3d/quickitemtexture/quickitemtexture.pro
 lib/qt5/examples/canvas3d/quickitemtexture/quickitemtexture.qrc
 lib/qt5/examples/canvas3d/textureandlight/
@@ -92,12 +88,10 @@ lib/qt5/examples/canvas3d/textureandlight/qml/textureandlight/
 lib/qt5/examples/canvas3d/textureandlight/qml/textureandlight/main.qml
 lib/qt5/examples/canvas3d/textureandlight/qml/textureandlight/qtlogo.png
 lib/qt5/examples/canvas3d/textureandlight/qml/textureandlight/textureandlight.js
-@bin lib/qt5/examples/canvas3d/textureandlight/textureandlight
 lib/qt5/examples/canvas3d/textureandlight/textureandlight.pro
 lib/qt5/examples/canvas3d/textureandlight/textureandlight.qrc
 lib/qt5/examples/canvas3d/threejs/
 lib/qt5/examples/canvas3d/threejs/cellphone/
-@bin lib/qt5/examples/canvas3d/threejs/cellphone/cellphone
 lib/qt5/examples/canvas3d/threejs/cellphone/cellphone.pro
 lib/qt5/examples/canvas3d/threejs/cellphone/cellphone.qrc
 lib/qt5/examples/canvas3d/threejs/cellphone/doc/
@@ -166,7 +160,6 @@ lib/qt5/examples/canvas3d/threejs/oneqt/ios/OneQtIcon72x72~ipad.png
 lib/qt5/examples/canvas3d/threejs/oneqt/ios/OneQtIcon76x76@2x~ipad.png
 lib/qt5/examples/canvas3d/threejs/oneqt/ios/OneQtIcon76x76~ipad.png
 lib/qt5/examples/canvas3d/threejs/oneqt/main.cpp
-@bin lib/qt5/examples/canvas3d/threejs/oneqt/oneqt
 lib/qt5/examples/canvas3d/threejs/oneqt/oneqt.pro
 lib/qt5/examples/canvas3d/threejs/oneqt/oneqt.qml
 lib/qt5/examples/canvas3d/threejs/oneqt/oneqt.qrc
@@ -240,7 +233,6 @@ lib/qt5/examples/canvas3d/threejs/planets/ios/AppIcon76x76@2x~ipad.png
 lib/qt5/examples/canvas3d/threejs/planets/ios/AppIcon76x76~ipad.png
 lib/qt5/examples/canvas3d/threejs/planets/ios/Info.plist
 lib/qt5/examples/canvas3d/threejs/planets/main.cpp
-@bin lib/qt5/examples/canvas3d/threejs/planets/planets
 lib/qt5/examples/canvas3d/threejs/planets/planets.js
 lib/qt5/examples/canvas3d/threejs/planets/planets.pro
 lib/qt5/examples/canvas3d/threejs/planets/planets.qml

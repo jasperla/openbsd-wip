@@ -1,35 +1,49 @@
 # $OpenBSD$
 
+# TODO: hidden optional dependency on qtwebkit
+
 QT5NAME =		QtTools
 COMMENT-main =		Qt development tools
+COMMENT-webview =	Webkit-based Qt Designer plugin
 
 DPB_PROPERTIES =	parallel
 
-MULTI_PACKAGES =	-main -examples
+MULTI_PACKAGES =	-main -examples -webview
 
 SHARED_LIBS =	Qt5CLucene		2.0
 SHARED_LIBS +=	Qt5Designer		2.0
 SHARED_LIBS +=	Qt5DesignerComponents	2.0
 SHARED_LIBS +=	Qt5Help			2.0
 
-WANTLIB-main =  ${WANTLIB}
+WANTLIB-main =	${WANTLIB}
 WANTLIB-main += GL c m pthread
-WANTLIB-main += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB-main += Qt5Sql Qt5Widgets Qt5Xml
+WANTLIB-main +=	Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
+WANTLIB-main +=	Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Sql Qt5Widgets Qt5Xml
 
-WANTLIB-examples =  ${WANTLIB}
-WANTLIB-examples += GL c m pthread
-WANTLIB-examples += Qt5Core Qt5Designer Qt5Gui Qt5Help Qt5Network
-WANTLIB-examples += Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Widgets Qt5Xml
+WANTLIB-webview =  ${WANTLIB}
+WANTLIB-webview += GL Qt5Core Qt5Designer Qt5Gui Qt5Network Qt5WebKit
+WANTLIB-webview += Qt5WebKitWidgets Qt5Widgets Qt5Xml m pthread
 
-MODQT5_DEPS =		No
-LIB_DEPENDS-main =	x11/qt5/qtbase>=${QT5_VERSION},<${QT5_NEXT_VERSION}
+# avoid BDEP on ourselves
+MODQT5_DEPS =	No
 
-LIB_DEPENDS-examples =	x11/qt5/qtbase>=${QT5_VERSION},<${QT5_NEXT_VERSION} \
-			x11/qt5/qtdeclarative>=${QT5_VERSION},<${QT5_NEXT_VERSION}
+RUN_DEPENDS =		x11/qt5/qtdeclarative>=${QT5_VERSION:R},<${QT5_NEXT_VERSION}
+RUN_DEPENDS-webview =	${BUILD_PKGPATH}>=${VERSION:R},<${NEXT_VERSION}
+
+LIB_DEPENDS =		x11/qt5/qtbase>=${QT5_VERSION},<${QT5_NEXT_VERSION}
+LIB_DEPENDS-webview =	${LIB_DEPENDS} \
+			x11/qt5/qtwebkit>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 
 FLAVORS =		debug
-PSEUDO_FLAVORS =	no_examples
-FLAVOR ?=
+PSEUDO_FLAVORS =	bootstrap no_examples no_webview
+FLAVOR ?=		bootstrap no_examples no_webview
+
+.include <bsd.port.arch.mk>
+
+.if !${BUILD_PACKAGES:M-webview}
+pre-configure:
+	perl -pi -e 's/^qtHaveModule.*webkitwidgets/\# $$&/' \
+	    ${WRKSRC}/src/designer/src/plugins/plugins.pro
+.endif
 
 .include <bsd.port.mk>

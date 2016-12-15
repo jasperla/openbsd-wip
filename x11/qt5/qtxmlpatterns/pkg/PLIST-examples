@@ -6,7 +6,6 @@ lib/qt5/examples/xmlpatterns/filetree/
 lib/qt5/examples/xmlpatterns/filetree/doc/
 lib/qt5/examples/xmlpatterns/filetree/doc/src/
 lib/qt5/examples/xmlpatterns/filetree/doc/src/filetree.qdoc
-@bin lib/qt5/examples/xmlpatterns/filetree/filetree
 lib/qt5/examples/xmlpatterns/filetree/filetree.cpp
 lib/qt5/examples/xmlpatterns/filetree/filetree.h
 lib/qt5/examples/xmlpatterns/filetree/filetree.pro
@@ -36,7 +35,6 @@ lib/qt5/examples/xmlpatterns/recipes/forms/querywidget_mobiles.ui
 lib/qt5/examples/xmlpatterns/recipes/main.cpp
 lib/qt5/examples/xmlpatterns/recipes/querymainwindow.cpp
 lib/qt5/examples/xmlpatterns/recipes/querymainwindow.h
-@bin lib/qt5/examples/xmlpatterns/recipes/recipes
 lib/qt5/examples/xmlpatterns/recipes/recipes.pro
 lib/qt5/examples/xmlpatterns/recipes/recipes.qrc
 lib/qt5/examples/xmlpatterns/schema/
@@ -56,7 +54,6 @@ lib/qt5/examples/xmlpatterns/schema/files/valid_recipe.xml
 lib/qt5/examples/xmlpatterns/schema/main.cpp
 lib/qt5/examples/xmlpatterns/schema/mainwindow.cpp
 lib/qt5/examples/xmlpatterns/schema/mainwindow.h
-@bin lib/qt5/examples/xmlpatterns/schema/schema
 lib/qt5/examples/xmlpatterns/schema/schema.pro
 lib/qt5/examples/xmlpatterns/schema/schema.qrc
 lib/qt5/examples/xmlpatterns/schema/schema.ui

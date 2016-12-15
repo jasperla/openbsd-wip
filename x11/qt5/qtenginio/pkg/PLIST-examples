@@ -37,7 +37,6 @@ lib/qt5/examples/enginio/quick/image-gallery/doc/images/image-gallery.png
 lib/qt5/examples/enginio/quick/image-gallery/doc/src/
 lib/qt5/examples/enginio/quick/image-gallery/doc/src/image-gallery.qdoc
 lib/qt5/examples/enginio/quick/image-gallery/gallery.qrc
-@bin lib/qt5/examples/enginio/quick/image-gallery/image-gallery
 lib/qt5/examples/enginio/quick/image-gallery/image-gallery.pro
 lib/qt5/examples/enginio/quick/image-gallery/image-gallery.qml
 lib/qt5/examples/enginio/quick/main.cpp
@@ -55,7 +54,6 @@ lib/qt5/examples/enginio/quick/socialtodos/backendconfig/sharedtodo.zip
 lib/qt5/examples/enginio/quick/socialtodos/doc/
 lib/qt5/examples/enginio/quick/socialtodos/doc/src/
 lib/qt5/examples/enginio/quick/socialtodos/doc/src/socialtodos.qdoc
-@bin lib/qt5/examples/enginio/quick/socialtodos/socialtodos
 lib/qt5/examples/enginio/quick/socialtodos/socialtodos.pro
 lib/qt5/examples/enginio/quick/socialtodos/socialtodos.qml
 lib/qt5/examples/enginio/quick/socialtodos/socialtodos.qrc
@@ -67,7 +65,6 @@ lib/qt5/examples/enginio/quick/todos/doc/src/
 lib/qt5/examples/enginio/quick/todos/doc/src/todos.qdoc
 lib/qt5/examples/enginio/quick/todos/todo.qml
 lib/qt5/examples/enginio/quick/todos/todo.qrc
-@bin lib/qt5/examples/enginio/quick/todos/todos
 lib/qt5/examples/enginio/quick/todos/todos.pro
 lib/qt5/examples/enginio/quick/users/
 lib/qt5/examples/enginio/quick/users/Browse.qml
@@ -76,7 +73,6 @@ lib/qt5/examples/enginio/quick/users/Register.qml
 lib/qt5/examples/enginio/quick/users/doc/
 lib/qt5/examples/enginio/quick/users/doc/src/
 lib/qt5/examples/enginio/quick/users/doc/src/users.qdoc
-@bin lib/qt5/examples/enginio/quick/users/users
 lib/qt5/examples/enginio/quick/users/users.pro
 lib/qt5/examples/enginio/quick/users/users.qml
 lib/qt5/examples/enginio/quick/users/users.qrc
@@ -84,7 +80,6 @@ lib/qt5/examples/enginio/widgets/
 lib/qt5/examples/enginio/widgets/cloudaddressbook/
 lib/qt5/examples/enginio/widgets/cloudaddressbook/addressbookmodel.cpp
 lib/qt5/examples/enginio/widgets/cloudaddressbook/addressbookmodel.h
-@bin lib/qt5/examples/enginio/widgets/cloudaddressbook/cloudaddressbook
 lib/qt5/examples/enginio/widgets/cloudaddressbook/cloudaddressbook.pro
 lib/qt5/examples/enginio/widgets/cloudaddressbook/doc/
 lib/qt5/examples/enginio/widgets/cloudaddressbook/doc/src/
@@ -97,7 +92,6 @@ lib/qt5/examples/enginio/widgets/image-gallery-cpp/
 lib/qt5/examples/enginio/widgets/image-gallery-cpp/doc/
 lib/qt5/examples/enginio/widgets/image-gallery-cpp/doc/src/
 lib/qt5/examples/enginio/widgets/image-gallery-cpp/doc/src/image-gallery-cpp.qdoc
-@bin lib/qt5/examples/enginio/widgets/image-gallery-cpp/image-gallery
 lib/qt5/examples/enginio/widgets/image-gallery-cpp/image-gallery-cpp.pro
 lib/qt5/examples/enginio/widgets/image-gallery-cpp/imagemodel.cpp
 lib/qt5/examples/enginio/widgets/image-gallery-cpp/imagemodel.h
@@ -113,7 +107,6 @@ lib/qt5/examples/enginio/widgets/todos-cpp/doc/src/todos-cpp.qdoc
 lib/qt5/examples/enginio/widgets/todos-cpp/main.cpp
 lib/qt5/examples/enginio/widgets/todos-cpp/mainwindow.cpp
 lib/qt5/examples/enginio/widgets/todos-cpp/mainwindow.h
-@bin lib/qt5/examples/enginio/widgets/todos-cpp/todos
 lib/qt5/examples/enginio/widgets/todos-cpp/todos-cpp.pro
 lib/qt5/examples/enginio/widgets/todos-cpp/todosmodel.cpp
 lib/qt5/examples/enginio/widgets/todos-cpp/todosmodel.h

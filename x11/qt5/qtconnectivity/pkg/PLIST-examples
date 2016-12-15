@@ -3,7 +3,6 @@ lib/qt5/examples/
 lib/qt5/examples/bluetooth/
 lib/qt5/examples/bluetooth/bluetooth.pro
 lib/qt5/examples/bluetooth/btchat/
-@bin lib/qt5/examples/bluetooth/btchat/btchat
 lib/qt5/examples/bluetooth/btchat/btchat.pro
 lib/qt5/examples/bluetooth/btchat/chat.cpp
 lib/qt5/examples/bluetooth/btchat/chat.h
@@ -22,7 +21,6 @@ lib/qt5/examples/bluetooth/btchat/remoteselector.cpp
 lib/qt5/examples/bluetooth/btchat/remoteselector.h
 lib/qt5/examples/bluetooth/btchat/remoteselector.ui
 lib/qt5/examples/bluetooth/btfiletransfer/
-@bin lib/qt5/examples/bluetooth/btfiletransfer/btfiletransfer
 lib/qt5/examples/bluetooth/btfiletransfer/btfiletransfer.pro
 lib/qt5/examples/bluetooth/btfiletransfer/btfiletransfer.qrc
 lib/qt5/examples/bluetooth/btfiletransfer/busy.gif
@@ -43,7 +41,6 @@ lib/qt5/examples/bluetooth/btfiletransfer/remoteselector.cpp
 lib/qt5/examples/bluetooth/btfiletransfer/remoteselector.h
 lib/qt5/examples/bluetooth/btfiletransfer/remoteselector.ui
 lib/qt5/examples/bluetooth/btscanner/
-@bin lib/qt5/examples/bluetooth/btscanner/btscanner
 lib/qt5/examples/bluetooth/btscanner/btscanner.pro
 lib/qt5/examples/bluetooth/btscanner/device.cpp
 lib/qt5/examples/bluetooth/btscanner/device.h
@@ -73,7 +70,6 @@ lib/qt5/examples/bluetooth/chat/images/
 lib/qt5/examples/bluetooth/chat/images/clear.png
 lib/qt5/examples/bluetooth/chat/images/default.png
 lib/qt5/examples/bluetooth/chat/images/lineedit-bg.png
-@bin lib/qt5/examples/bluetooth/chat/qml_chat
 lib/qt5/examples/bluetooth/chat/qmlchat.cpp
 lib/qt5/examples/bluetooth/heartlistener/
 lib/qt5/examples/bluetooth/heartlistener/assets/
@@ -98,7 +94,6 @@ lib/qt5/examples/bluetooth/heartlistener/doc/images/heartratemonitor.png
 lib/qt5/examples/bluetooth/heartlistener/doc/images/heartrateresults.png
 lib/qt5/examples/bluetooth/heartlistener/doc/src/
 lib/qt5/examples/bluetooth/heartlistener/doc/src/heartlistener.qdoc
-@bin lib/qt5/examples/bluetooth/heartlistener/heartlistener
 lib/qt5/examples/bluetooth/heartlistener/heartlistener.pro
 lib/qt5/examples/bluetooth/heartlistener/heartrate.cpp
 lib/qt5/examples/bluetooth/heartlistener/heartrate.h
@@ -127,7 +122,6 @@ lib/qt5/examples/bluetooth/lowenergyscanner/doc/images/lowenergyscanner-devices.
 lib/qt5/examples/bluetooth/lowenergyscanner/doc/images/lowenergyscanner-services.png
 lib/qt5/examples/bluetooth/lowenergyscanner/doc/src/
 lib/qt5/examples/bluetooth/lowenergyscanner/doc/src/lowenergyscanner.qdoc
-@bin lib/qt5/examples/bluetooth/lowenergyscanner/lowenergyscanner
 lib/qt5/examples/bluetooth/lowenergyscanner/lowenergyscanner.pro
 lib/qt5/examples/bluetooth/lowenergyscanner/main.cpp
 lib/qt5/examples/bluetooth/lowenergyscanner/resources.qrc
@@ -152,7 +146,6 @@ lib/qt5/examples/bluetooth/picturetransfer/filetransfer.h
 lib/qt5/examples/bluetooth/picturetransfer/icon.png
 lib/qt5/examples/bluetooth/picturetransfer/main.cpp
 lib/qt5/examples/bluetooth/picturetransfer/picturetransfer.pro
-@bin lib/qt5/examples/bluetooth/picturetransfer/qml_picturetransfer
 lib/qt5/examples/bluetooth/picturetransfer/qmltransfer.qrc
 lib/qt5/examples/bluetooth/pingpong/
 lib/qt5/examples/bluetooth/pingpong/assets/
@@ -167,7 +160,6 @@ lib/qt5/examples/bluetooth/pingpong/doc/images/intro1.png
 lib/qt5/examples/bluetooth/pingpong/doc/src/
 lib/qt5/examples/bluetooth/pingpong/doc/src/pingpong.qdoc
 lib/qt5/examples/bluetooth/pingpong/main.cpp
-@bin lib/qt5/examples/bluetooth/pingpong/pingpong
 lib/qt5/examples/bluetooth/pingpong/pingpong.cpp
 lib/qt5/examples/bluetooth/pingpong/pingpong.h
 lib/qt5/examples/bluetooth/pingpong/pingpong.pro
@@ -181,14 +173,12 @@ lib/qt5/examples/bluetooth/scanner/doc/images/devicescan.png
 lib/qt5/examples/bluetooth/scanner/doc/images/servicescan.png
 lib/qt5/examples/bluetooth/scanner/doc/src/
 lib/qt5/examples/bluetooth/scanner/doc/src/scanner.qdoc
-@bin lib/qt5/examples/bluetooth/scanner/qml_scanner
 lib/qt5/examples/bluetooth/scanner/qmlscanner.cpp
 lib/qt5/examples/bluetooth/scanner/scanner.pro
 lib/qt5/examples/bluetooth/scanner/scanner.qml
 lib/qt5/examples/bluetooth/scanner/scanner.qrc
 lib/qt5/examples/nfc/
 lib/qt5/examples/nfc/annotatedurl/
-@bin lib/qt5/examples/nfc/annotatedurl/annotatedurl
 lib/qt5/examples/nfc/annotatedurl/annotatedurl.cpp
 lib/qt5/examples/nfc/annotatedurl/annotatedurl.h
 lib/qt5/examples/nfc/annotatedurl/annotatedurl.pro
@@ -218,7 +208,6 @@ lib/qt5/examples/nfc/corkboard/doc/src/corkboard.qdoc
 lib/qt5/examples/nfc/corkboard/icon.png
 lib/qt5/examples/nfc/corkboard/main.cpp
 lib/qt5/examples/nfc/corkboard/note-yellow.png
-@bin lib/qt5/examples/nfc/corkboard/qml_corkboard
 lib/qt5/examples/nfc/corkboard/tack.png
 lib/qt5/examples/nfc/ndefeditor/
 lib/qt5/examples/nfc/ndefeditor/doc/
@@ -233,7 +222,6 @@ lib/qt5/examples/nfc/ndefeditor/mainwindow.ui
 lib/qt5/examples/nfc/ndefeditor/mimeimagerecordeditor.cpp
 lib/qt5/examples/nfc/ndefeditor/mimeimagerecordeditor.h
 lib/qt5/examples/nfc/ndefeditor/mimeimagerecordeditor.ui
-@bin lib/qt5/examples/nfc/ndefeditor/ndefeditor
 lib/qt5/examples/nfc/ndefeditor/ndefeditor.pro
 lib/qt5/examples/nfc/ndefeditor/textrecordeditor.cpp
 lib/qt5/examples/nfc/ndefeditor/textrecordeditor.h
@@ -251,5 +239,4 @@ lib/qt5/examples/nfc/poster/doc/src/poster.qdoc
 lib/qt5/examples/nfc/poster/poster.pro
 lib/qt5/examples/nfc/poster/poster.qml
 lib/qt5/examples/nfc/poster/poster.qrc
-@bin lib/qt5/examples/nfc/poster/qml_poster
 lib/qt5/examples/nfc/poster/qmlposter.cpp

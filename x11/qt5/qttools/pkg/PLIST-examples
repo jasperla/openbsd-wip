@@ -1,9 +1,5 @@
 @comment $OpenBSD$
 @conflict qt5-examples-<5.6
-lib/qt5/cmake/Qt5Designer/Qt5Designer_AnalogClockPlugin.cmake
-lib/qt5/cmake/Qt5Designer/Qt5Designer_MultiPageWidgetPlugin.cmake
-lib/qt5/cmake/Qt5Designer/Qt5Designer_TicTacToePlugin.cmake
-lib/qt5/cmake/Qt5Designer/Qt5Designer_WorldTimeClockPlugin.cmake
 lib/qt5/examples/
 lib/qt5/examples/assistant/
 lib/qt5/examples/assistant/assistant.pro
@@ -18,7 +14,6 @@ lib/qt5/examples/assistant/doc/src/simpletextviewer.qdoc
 lib/qt5/examples/assistant/remotecontrol/
 lib/qt5/examples/assistant/remotecontrol/enter.png
 lib/qt5/examples/assistant/remotecontrol/main.cpp
-@bin lib/qt5/examples/assistant/remotecontrol/remotecontrol
 lib/qt5/examples/assistant/remotecontrol/remotecontrol.cpp
 lib/qt5/examples/assistant/remotecontrol/remotecontrol.h
 lib/qt5/examples/assistant/remotecontrol/remotecontrol.pro
@@ -54,14 +49,12 @@ lib/qt5/examples/assistant/simpletextviewer/findfiledialog.h
 lib/qt5/examples/assistant/simpletextviewer/main.cpp
 lib/qt5/examples/assistant/simpletextviewer/mainwindow.cpp
 lib/qt5/examples/assistant/simpletextviewer/mainwindow.h
-@bin lib/qt5/examples/assistant/simpletextviewer/simpletextviewer
 lib/qt5/examples/assistant/simpletextviewer/simpletextviewer.pro
 lib/qt5/examples/assistant/simpletextviewer/textedit.cpp
 lib/qt5/examples/assistant/simpletextviewer/textedit.h
 lib/qt5/examples/designer/
 lib/qt5/examples/designer/README
 lib/qt5/examples/designer/calculatorbuilder/
-@bin lib/qt5/examples/designer/calculatorbuilder/calculatorbuilder
 lib/qt5/examples/designer/calculatorbuilder/calculatorbuilder.pro
 lib/qt5/examples/designer/calculatorbuilder/calculatorbuilder.qrc
 lib/qt5/examples/designer/calculatorbuilder/calculatorform.cpp
@@ -69,7 +62,6 @@ lib/qt5/examples/designer/calculatorbuilder/calculatorform.h
 lib/qt5/examples/designer/calculatorbuilder/calculatorform.ui
 lib/qt5/examples/designer/calculatorbuilder/main.cpp
 lib/qt5/examples/designer/calculatorform/
-@bin lib/qt5/examples/designer/calculatorform/calculatorform
 lib/qt5/examples/designer/calculatorform/calculatorform.cpp
 lib/qt5/examples/designer/calculatorform/calculatorform.h
 lib/qt5/examples/designer/calculatorform/calculatorform.pro
@@ -133,7 +125,6 @@ lib/qt5/examples/designer/taskmenuextension/tictactoetaskmenu.h
 lib/qt5/examples/designer/worldtimeclockbuilder/
 lib/qt5/examples/designer/worldtimeclockbuilder/form.ui
 lib/qt5/examples/designer/worldtimeclockbuilder/main.cpp
-@bin lib/qt5/examples/designer/worldtimeclockbuilder/worldtimeclockbuilder
 lib/qt5/examples/designer/worldtimeclockbuilder/worldtimeclockbuilder.pro
 lib/qt5/examples/designer/worldtimeclockbuilder/worldtimeclockbuilder.qrc
 lib/qt5/examples/designer/worldtimeclockplugin/
@@ -145,7 +136,6 @@ lib/qt5/examples/designer/worldtimeclockplugin/worldtimeclockplugin.pro
 lib/qt5/examples/help/
 lib/qt5/examples/help/README
 lib/qt5/examples/help/contextsensitivehelp/
-@bin lib/qt5/examples/help/contextsensitivehelp/contextsensitivehelp
 lib/qt5/examples/help/contextsensitivehelp/contextsensitivehelp.pro
 lib/qt5/examples/help/contextsensitivehelp/docs/
 lib/qt5/examples/help/contextsensitivehelp/docs/amount.html
@@ -172,7 +162,6 @@ lib/qt5/examples/help/help.pro
 lib/qt5/examples/linguist/
 lib/qt5/examples/linguist/README
 lib/qt5/examples/linguist/arrowpad/
-@bin lib/qt5/examples/linguist/arrowpad/arrowpad
 lib/qt5/examples/linguist/arrowpad/arrowpad.cpp
 lib/qt5/examples/linguist/arrowpad/arrowpad.h
 lib/qt5/examples/linguist/arrowpad/arrowpad.pro
@@ -201,7 +190,6 @@ lib/qt5/examples/linguist/doc/src/arrowpad.qdoc
 lib/qt5/examples/linguist/doc/src/hellotr.qdoc
 lib/qt5/examples/linguist/doc/src/trollprint.qdoc
 lib/qt5/examples/linguist/hellotr/
-@bin lib/qt5/examples/linguist/hellotr/hellotr
 lib/qt5/examples/linguist/hellotr/hellotr.pro
 lib/qt5/examples/linguist/hellotr/main.cpp
 lib/qt5/examples/linguist/linguist.pro
@@ -211,7 +199,6 @@ lib/qt5/examples/linguist/trollprint/mainwindow.cpp
 lib/qt5/examples/linguist/trollprint/mainwindow.h
 lib/qt5/examples/linguist/trollprint/printpanel.cpp
 lib/qt5/examples/linguist/trollprint/printpanel.h
-@bin lib/qt5/examples/linguist/trollprint/trollprint
 lib/qt5/examples/linguist/trollprint/trollprint.pro
 lib/qt5/examples/linguist/trollprint/trollprint_pt.ts
 lib/qt5/examples/uitools/
@@ -227,22 +214,14 @@ lib/qt5/examples/uitools/multipleinheritance/calculatorform.cpp
 lib/qt5/examples/uitools/multipleinheritance/calculatorform.h
 lib/qt5/examples/uitools/multipleinheritance/calculatorform.ui
 lib/qt5/examples/uitools/multipleinheritance/main.cpp
-@bin lib/qt5/examples/uitools/multipleinheritance/multipleinheritance
 lib/qt5/examples/uitools/multipleinheritance/multipleinheritance.pro
 lib/qt5/examples/uitools/textfinder/
 lib/qt5/examples/uitools/textfinder/forms/
 lib/qt5/examples/uitools/textfinder/forms/input.txt
 lib/qt5/examples/uitools/textfinder/forms/textfinder.ui
 lib/qt5/examples/uitools/textfinder/main.cpp
-@bin lib/qt5/examples/uitools/textfinder/textfinder
 lib/qt5/examples/uitools/textfinder/textfinder.cpp
 lib/qt5/examples/uitools/textfinder/textfinder.h
 lib/qt5/examples/uitools/textfinder/textfinder.pro
 lib/qt5/examples/uitools/textfinder/textfinder.qrc
 lib/qt5/examples/uitools/uitools.pro
-lib/qt5/plugins/designer/
-lib/qt5/plugins/designer/libcontainerextension.so
-lib/qt5/plugins/designer/libcustomwidgetplugin.so
-lib/qt5/plugins/designer/libqquickwidget.so
-lib/qt5/plugins/designer/libtaskmenuextension.so
-lib/qt5/plugins/designer/libworldtimeclockplugin.so

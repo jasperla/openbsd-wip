@@ -9,12 +9,11 @@ SHARED_LIBS +=		Qt5WebKitWidgets	2.0
 
 CATEGORIES =		www
 
-WANTLIB-main =  ${WANTLIB}
-WANTLIB-main += GL Qt5Core Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport Qt5Qml
-WANTLIB-main += Qt5Quick Qt5Sql Qt5Widgets X11 Xext Xrender c gio-2.0 glib-2.0
-WANTLIB-main += gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstpbutils-1.0
-WANTLIB-main += gstreamer-1.0 gstvideo-1.0 icudata icui18n icuuc jpeg lzma
-WANTLIB-main += m png pthread sqlite3 webp xml2 xslt z
+WANTLIB =  GL Qt5Core Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport Qt5Qml
+WANTLIB += Qt5Quick Qt5Sql Qt5Widgets X11 Xext Xrender c gio-2.0 glib-2.0
+WANTLIB += gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstpbutils-1.0
+WANTLIB += gstreamer-1.0 gstvideo-1.0 icudata icui18n icuuc jpeg lzma
+WANTLIB += m png pthread sqlite3 webp xml2 xslt z
 
 MULTI_PACKAGES =	-main -html -qch
 
@@ -24,9 +23,17 @@ MODULES =		devel/gettext perl lang/python lang/ruby
 MODPY_RUNDEP =		No
 MODRUBY_RUNDEP =	No
 
+BUILD_DEPENDS =		devel/bison \
+			devel/gperf \
+			devel/libsoup \
+			geo/geoclue \
+			x11/dbus
+
+RUN_DEPENDS =		geo/geoclue \
+			x11/dbus
+
 # no leveldb dependency, requires -lmemenv; QtWebKit uses internal version
-LIB_DEPENDS-main =	${LIB_DEPENDS} \
-			archivers/xz \
+LIB_DEPENDS =		archivers/xz \
 			databases/sqlite3 \
 			graphics/libwebp \
 			multimedia/gstreamer1/core \
@@ -34,20 +41,6 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			textproc/icu4c \
 			textproc/libxslt \
 			x11/qt5/qtdeclarative>=${QT5_VERSION},<${QT5_NEXT_VERSION}
-
-LIB_DEPENDS-html =
-
-LIB_DEPENDS-qch =
-
-BUILD_DEPENDS =		devel/bison \
-			devel/gperf \
-			devel/libsoup \
-			geo/geoclue \
-			x11/dbus
-
-RUN_DEPENDS-main =	${RUN_DEPENDS} \
-			geo/geoclue \
-			x11/dbus
 
 MAKE_ENV =		NINJA_PATH="${LOCALBASE}/bin/ninja" \
 			PYTHON=${MODPY_BIN} \

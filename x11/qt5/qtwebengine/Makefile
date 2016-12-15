@@ -14,8 +14,6 @@ MULTI_PACKAGES =	-main -examples -qch -html
 
 WANTLIB-main =		${WANTLIB}
 
-WANTLIB-examples =	${WANTLIB}
-
 # BSD-like
 PERMIT_PACKAGE_CDROM=   patents
 PERMIT_PACKAGE_FTP =    Yes

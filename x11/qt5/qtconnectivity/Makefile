@@ -12,10 +12,6 @@ WANTLIB-main =		${WANTLIB}
 WANTLIB-main +=		GL Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml
 WANTLIB-main +=		Qt5Quick m pthread
 
-WANTLIB-examples =	${WANTLIB}
-WANTLIB-examples +=	GL Qt5Bluetooth Qt5Core Qt5Gui Qt5Network Qt5Nfc
-WANTLIB-examples +=	Qt5Qml Qt5Quick Qt5Widgets c m pthread
-
 LIB_DEPENDS =		x11/qt5/qtdeclarative>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 
 RUN_DEPENDS =		x11/dbus

@@ -364,3 +364,5 @@ lib/qt5/phrasebooks/swedish.qph
 lib/qt5/pkgconfig/Qt5Designer.pc
 lib/qt5/pkgconfig/Qt5Help.pc
 lib/qt5/pkgconfig/Qt5UiTools.pc
+lib/qt5/plugins/designer/
+lib/qt5/plugins/designer/libqquickwidget.so

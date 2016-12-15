@@ -19,7 +19,7 @@
      SUBDIR += qtserialbus
      SUBDIR += qtserialport
      SUBDIR += qtsvg
-     SUBDIR += qttools
+     SUBDIR += qttools,
      SUBDIR += qttranslations
      SUBDIR += qtwebchannel
      SUBDIR += qtwebkit

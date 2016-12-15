@@ -15,16 +15,10 @@ WANTLIB-main =  	${WANTLIB}
 WANTLIB-main +=		GL Qt5Core Qt5Gui Qt5Network Qt5Sql Qt5Test Qt5Widgets
 WANTLIB-main +=		c m pthread
 
-WANTLIB-examples =	${WANTLIB}
-WANTLIB-examples +=	GL Qt5Core Qt5Gui Qt5Multimedia Qt5Network Qt5Qml Qt5Quick
-WANTLIB-examples +=	Qt5QuickTest Qt5QuickWidgets Qt5Sql Qt5Test Qt5Widgets
-WANTLIB-examples +=	c m pthread
-
 MODULES =		lang/python
 MODPY_RUNDEP =		No
 
-LIB_DEPENDS-examples =	${LIB_DEPENDS} \
-			x11/qt5/qtmultimedia>=${QT5_VERSION:R},<${QT5_NEXT_VERSION}
+RUN_DEPENDS-examples =	x11/qt5/qtmultimedia>=${QT5_VERSION:R},<${QT5_NEXT_VERSION}
 
 # bootstrap model is used due to:
 #  1) circular dependency with qtmultimedia (used by qtdeclarative-examples);

@@ -9,7 +9,6 @@ lib/qt5/examples/webchannel/chatclient-html/doc/images/
 lib/qt5/examples/webchannel/chatclient-html/doc/images/chatclient-html.png
 lib/qt5/examples/webchannel/chatclient-html/doc/src/
 lib/qt5/examples/webchannel/chatclient-html/doc/src/chatclient-html.qdoc
-lib/qt5/examples/webchannel/chatclient-html/qwebchannel.js
 lib/qt5/examples/webchannel/chatclient-qml/
 lib/qt5/examples/webchannel/chatclient-qml/chatclient-qml.pro
 lib/qt5/examples/webchannel/chatclient-qml/doc/
@@ -18,9 +17,7 @@ lib/qt5/examples/webchannel/chatclient-qml/doc/images/chatclient-qml.png
 lib/qt5/examples/webchannel/chatclient-qml/doc/src/
 lib/qt5/examples/webchannel/chatclient-qml/doc/src/chatclient-qml.qdoc
 lib/qt5/examples/webchannel/chatclient-qml/qmlchatclient.qml
-lib/qt5/examples/webchannel/chatclient-qml/qwebchannel.js
 lib/qt5/examples/webchannel/chatserver-cpp/
-@bin lib/qt5/examples/webchannel/chatserver-cpp/chatserver
 lib/qt5/examples/webchannel/chatserver-cpp/chatserver-cpp.pro
 lib/qt5/examples/webchannel/chatserver-cpp/chatserver.cpp
 lib/qt5/examples/webchannel/chatserver-cpp/chatserver.h
@@ -36,13 +33,11 @@ lib/qt5/examples/webchannel/nodejs/README
 lib/qt5/examples/webchannel/nodejs/chatclient.js
 lib/qt5/examples/webchannel/nodejs/nodejs.pro
 lib/qt5/examples/webchannel/nodejs/package.json
-lib/qt5/examples/webchannel/nodejs/qwebchannel.js
 lib/qt5/examples/webchannel/qwclient/
 lib/qt5/examples/webchannel/qwclient/README
 lib/qt5/examples/webchannel/qwclient/package.json
 lib/qt5/examples/webchannel/qwclient/qwclient.js
 lib/qt5/examples/webchannel/qwclient/qwclient.pro
-lib/qt5/examples/webchannel/qwclient/qwebchannel.js
 lib/qt5/examples/webchannel/shared/
 lib/qt5/examples/webchannel/shared/websocketclientwrapper.cpp
 lib/qt5/examples/webchannel/shared/websocketclientwrapper.h
@@ -57,7 +52,5 @@ lib/qt5/examples/webchannel/standalone/doc/src/
 lib/qt5/examples/webchannel/standalone/doc/src/standalone.qdoc
 lib/qt5/examples/webchannel/standalone/index.html
 lib/qt5/examples/webchannel/standalone/main.cpp
-lib/qt5/examples/webchannel/standalone/qwebchannel.js
-@bin lib/qt5/examples/webchannel/standalone/standalone
 lib/qt5/examples/webchannel/standalone/standalone.pro
 lib/qt5/examples/webchannel/webchannel.pro

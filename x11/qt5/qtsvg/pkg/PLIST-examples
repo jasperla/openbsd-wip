@@ -3,7 +3,6 @@ lib/qt5/examples/
 lib/qt5/examples/svg/
 lib/qt5/examples/svg/draganddrop/
 lib/qt5/examples/svg/draganddrop/delayedencoding/
-@bin lib/qt5/examples/svg/draganddrop/delayedencoding/delayedencoding
 lib/qt5/examples/svg/draganddrop/delayedencoding/delayedencoding.pro
 lib/qt5/examples/svg/draganddrop/delayedencoding/delayedencoding.qrc
 lib/qt5/examples/svg/draganddrop/delayedencoding/images/
@@ -24,7 +23,6 @@ lib/qt5/examples/svg/embedded/desktopservices/data/Explosion.wav
 lib/qt5/examples/svg/embedded/desktopservices/data/designer.png
 lib/qt5/examples/svg/embedded/desktopservices/data/monkey_on_64x64.png
 lib/qt5/examples/svg/embedded/desktopservices/data/sax.mp3
-@bin lib/qt5/examples/svg/embedded/desktopservices/desktopservices
 lib/qt5/examples/svg/embedded/desktopservices/desktopservices.pro
 lib/qt5/examples/svg/embedded/desktopservices/desktopservices.qrc
 lib/qt5/examples/svg/embedded/desktopservices/desktopwidget.cpp
@@ -45,7 +43,6 @@ lib/qt5/examples/svg/embedded/fluidlauncher/config_wince/
 lib/qt5/examples/svg/embedded/fluidlauncher/config_wince/config.xml
 lib/qt5/examples/svg/embedded/fluidlauncher/demoapplication.cpp
 lib/qt5/examples/svg/embedded/fluidlauncher/demoapplication.h
-@bin lib/qt5/examples/svg/embedded/fluidlauncher/fluidlauncher
 lib/qt5/examples/svg/embedded/fluidlauncher/fluidlauncher.cpp
 lib/qt5/examples/svg/embedded/fluidlauncher/fluidlauncher.h
 lib/qt5/examples/svg/embedded/fluidlauncher/fluidlauncher.pro
@@ -110,12 +107,10 @@ lib/qt5/examples/svg/embedded/weatherinfo/icons/weather-storm.svg
 lib/qt5/examples/svg/embedded/weatherinfo/icons/weather-sunny-very-few-clouds.svg
 lib/qt5/examples/svg/embedded/weatherinfo/icons/weather-sunny.svg
 lib/qt5/examples/svg/embedded/weatherinfo/icons/weather-thundershower.svg
-@bin lib/qt5/examples/svg/embedded/weatherinfo/weatherinfo
 lib/qt5/examples/svg/embedded/weatherinfo/weatherinfo.cpp
 lib/qt5/examples/svg/embedded/weatherinfo/weatherinfo.pro
 lib/qt5/examples/svg/embedded/weatherinfo/weatherinfo.qrc
 lib/qt5/examples/svg/embeddedsvgviewer/
-@bin lib/qt5/examples/svg/embeddedsvgviewer/embeddedsvgviewer
 lib/qt5/examples/svg/embeddedsvgviewer/embeddedsvgviewer.cpp
 lib/qt5/examples/svg/embeddedsvgviewer/embeddedsvgviewer.h
 lib/qt5/examples/svg/embeddedsvgviewer/embeddedsvgviewer.pro
@@ -126,7 +121,6 @@ lib/qt5/examples/svg/embeddedsvgviewer/files/v-slider-handle.svg
 lib/qt5/examples/svg/embeddedsvgviewer/main.cpp
 lib/qt5/examples/svg/network/
 lib/qt5/examples/svg/network/bearercloud/
-@bin lib/qt5/examples/svg/network/bearercloud/bearercloud
 lib/qt5/examples/svg/network/bearercloud/bearercloud.cpp
 lib/qt5/examples/svg/network/bearercloud/bearercloud.h
 lib/qt5/examples/svg/network/bearercloud/bearercloud.pro
@@ -146,7 +140,6 @@ lib/qt5/examples/svg/opengl/
 lib/qt5/examples/svg/opengl/framebufferobject/
 lib/qt5/examples/svg/opengl/framebufferobject/bubbles.svg
 lib/qt5/examples/svg/opengl/framebufferobject/designer.png
-@bin lib/qt5/examples/svg/opengl/framebufferobject/framebufferobject
 lib/qt5/examples/svg/opengl/framebufferobject/framebufferobject.pro
 lib/qt5/examples/svg/opengl/framebufferobject/framebufferobject.qrc
 lib/qt5/examples/svg/opengl/framebufferobject/glwidget.cpp
@@ -167,7 +160,6 @@ lib/qt5/examples/svg/richtext/textobject/main.cpp
 lib/qt5/examples/svg/richtext/textobject/resources.qrc
 lib/qt5/examples/svg/richtext/textobject/svgtextobject.cpp
 lib/qt5/examples/svg/richtext/textobject/svgtextobject.h
-@bin lib/qt5/examples/svg/richtext/textobject/textobject
 lib/qt5/examples/svg/richtext/textobject/textobject.pro
 lib/qt5/examples/svg/richtext/textobject/window.cpp
 lib/qt5/examples/svg/richtext/textobject/window.h
@@ -185,7 +177,6 @@ lib/qt5/examples/svg/svggenerator/forms/window.ui
 lib/qt5/examples/svg/svggenerator/main.cpp
 lib/qt5/examples/svg/svggenerator/resources/
 lib/qt5/examples/svg/svggenerator/resources/shapes.dat
-@bin lib/qt5/examples/svg/svggenerator/svggenerator
 lib/qt5/examples/svg/svggenerator/svggenerator.pro
 lib/qt5/examples/svg/svggenerator/svggenerator.qrc
 lib/qt5/examples/svg/svggenerator/window.cpp
@@ -205,6 +196,5 @@ lib/qt5/examples/svg/svgviewer/mainwindow.cpp
 lib/qt5/examples/svg/svgviewer/mainwindow.h
 lib/qt5/examples/svg/svgviewer/svgview.cpp
 lib/qt5/examples/svg/svgviewer/svgview.h
-@bin lib/qt5/examples/svg/svgviewer/svgviewer
 lib/qt5/examples/svg/svgviewer/svgviewer.pro
 lib/qt5/examples/svg/svgviewer/svgviewer.qrc

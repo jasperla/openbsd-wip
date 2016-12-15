@@ -3,4 +3,4 @@ The Qt Sensors API also provides a motion gesture recognition API for devices.
 
 Currently the API is supported on Android, iOS, SailFish and WinRT.
 
-This package contains QtSensors compiled examples and their sources.
+This package contains sources for QtSensors usage examples.

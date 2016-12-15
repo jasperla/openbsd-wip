@@ -45,8 +45,6 @@ WANTLIB-main += xcb-shm xcb-sync xcb-xfixes xcb-xinerama xcb-xkb xkbcommon
 WANTLIB-main += xkbcommon-x11 z
 WANTLIB-main += drm gbm
 
-WANTLIB-examples =
-
 WANTLIB-mysql =		${MODGCC4_CPPWANTLIB} Qt5Core Qt5Sql
 WANTLIB-mysql +=	crypto m pthread mysqlclient_r ssl z
 
@@ -85,8 +83,6 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			textproc/icu4c \
 			x11/gtk+2 \
 			x11/xkbcommon
-
-LIB_DEPENDS-examples =
 
 LIB_DEPENDS-mysql =	${BASE_PKGPATH},-main>=${VERSION:R},<${QT5_NEXT_VERSION} \
 			${MODGCC4_CPPLIBDEP} \
@@ -138,8 +134,8 @@ CONFIGURE_ARGS =	-confirm-license \
 			-rpath \
 			-shared \
 			-verbose \
-			-no-pch
-#			-no-compile-examples
+			-no-pch \
+			-no-compile-examples
 
 # Don't run tests inside main build.
 # XXX It looks like affecting other Qt modules as well.

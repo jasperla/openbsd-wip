@@ -3,4 +3,4 @@ industrial serial buses and protocols, such as CAN, ModBus, and others.
 
 The module is currently released as a technology preview.
 
-This package contains QtSerialBus compiled examples and their sources.
+This package contains sources for QtSerialBus usage examples.

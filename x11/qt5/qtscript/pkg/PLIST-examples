@@ -3,14 +3,12 @@ lib/qt5/examples/
 lib/qt5/examples/script/
 lib/qt5/examples/script/README
 lib/qt5/examples/script/calculator/
-@bin lib/qt5/examples/script/calculator/calculator
 lib/qt5/examples/script/calculator/calculator.js
 lib/qt5/examples/script/calculator/calculator.pro
 lib/qt5/examples/script/calculator/calculator.qrc
 lib/qt5/examples/script/calculator/calculator.ui
 lib/qt5/examples/script/calculator/main.cpp
 lib/qt5/examples/script/context2d/
-@bin lib/qt5/examples/script/context2d/context2d
 lib/qt5/examples/script/context2d/context2d.cpp
 lib/qt5/examples/script/context2d/context2d.h
 lib/qt5/examples/script/context2d/context2d.pro
@@ -56,12 +54,10 @@ lib/qt5/examples/script/customclass/bytearrayclass.h
 lib/qt5/examples/script/customclass/bytearrayclass.pri
 lib/qt5/examples/script/customclass/bytearrayprototype.cpp
 lib/qt5/examples/script/customclass/bytearrayprototype.h
-@bin lib/qt5/examples/script/customclass/customclass
 lib/qt5/examples/script/customclass/customclass.pro
 lib/qt5/examples/script/customclass/main.cpp
 lib/qt5/examples/script/defaultprototypes/
 lib/qt5/examples/script/defaultprototypes/code.js
-@bin lib/qt5/examples/script/defaultprototypes/defaultprototypes
 lib/qt5/examples/script/defaultprototypes/defaultprototypes.pro
 lib/qt5/examples/script/defaultprototypes/defaultprototypes.qrc
 lib/qt5/examples/script/defaultprototypes/doc/
@@ -76,23 +72,19 @@ lib/qt5/examples/script/helloscript/
 lib/qt5/examples/script/helloscript/doc/
 lib/qt5/examples/script/helloscript/doc/src/
 lib/qt5/examples/script/helloscript/doc/src/helloscript.qdoc
-@bin lib/qt5/examples/script/helloscript/helloscript
 lib/qt5/examples/script/helloscript/helloscript.js
 lib/qt5/examples/script/helloscript/helloscript.pro
 lib/qt5/examples/script/helloscript/helloscript.qrc
 lib/qt5/examples/script/helloscript/main.cpp
 lib/qt5/examples/script/marshal/
 lib/qt5/examples/script/marshal/main.cpp
-@bin lib/qt5/examples/script/marshal/marshal
 lib/qt5/examples/script/marshal/marshal.pro
 lib/qt5/examples/script/qscript/
 lib/qt5/examples/script/qscript/main.cpp
-@bin lib/qt5/examples/script/qscript/qscript
 lib/qt5/examples/script/qscript/qscript.pro
 lib/qt5/examples/script/qsdbg/
 lib/qt5/examples/script/qsdbg/example.js
 lib/qt5/examples/script/qsdbg/main.cpp
-@bin lib/qt5/examples/script/qsdbg/qsdbg
 lib/qt5/examples/script/qsdbg/qsdbg.pri
 lib/qt5/examples/script/qsdbg/qsdbg.pro
 lib/qt5/examples/script/qsdbg/scriptbreakpointmanager.cpp
@@ -101,7 +93,6 @@ lib/qt5/examples/script/qsdbg/scriptdebugger.cpp
 lib/qt5/examples/script/qsdbg/scriptdebugger.h
 lib/qt5/examples/script/qstetrix/
 lib/qt5/examples/script/qstetrix/main.cpp
-@bin lib/qt5/examples/script/qstetrix/qstetrix
 lib/qt5/examples/script/qstetrix/qstetrix.pro
 lib/qt5/examples/script/qstetrix/tetrix.qrc
 lib/qt5/examples/script/qstetrix/tetrixboard.cpp

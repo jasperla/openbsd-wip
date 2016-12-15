@@ -2,7 +2,6 @@
 lib/qt5/examples/
 lib/qt5/examples/multimedia/
 lib/qt5/examples/multimedia/audiodecoder/
-@bin lib/qt5/examples/multimedia/audiodecoder/audiodecoder
 lib/qt5/examples/multimedia/audiodecoder/audiodecoder.cpp
 lib/qt5/examples/multimedia/audiodecoder/audiodecoder.h
 lib/qt5/examples/multimedia/audiodecoder/audiodecoder.pro
@@ -10,7 +9,6 @@ lib/qt5/examples/multimedia/audiodecoder/main.cpp
 lib/qt5/examples/multimedia/audiodecoder/wavefilewriter.cpp
 lib/qt5/examples/multimedia/audiodecoder/wavefilewriter.h
 lib/qt5/examples/multimedia/audiodevices/
-@bin lib/qt5/examples/multimedia/audiodevices/audiodevices
 lib/qt5/examples/multimedia/audiodevices/audiodevices.cpp
 lib/qt5/examples/multimedia/audiodevices/audiodevices.h
 lib/qt5/examples/multimedia/audiodevices/audiodevices.pro
@@ -35,7 +33,6 @@ lib/qt5/examples/multimedia/audioengine/qml/content/engine-loop.wav
 lib/qt5/examples/multimedia/audioengine/qml/content/horn.wav
 lib/qt5/examples/multimedia/audioengine/qml/content/whistle.wav
 lib/qt5/examples/multimedia/audioinput/
-@bin lib/qt5/examples/multimedia/audioinput/audioinput
 lib/qt5/examples/multimedia/audioinput/audioinput.cpp
 lib/qt5/examples/multimedia/audioinput/audioinput.h
 lib/qt5/examples/multimedia/audioinput/audioinput.pro
@@ -46,7 +43,6 @@ lib/qt5/examples/multimedia/audioinput/doc/src/
 lib/qt5/examples/multimedia/audioinput/doc/src/audioinput.qdoc
 lib/qt5/examples/multimedia/audioinput/main.cpp
 lib/qt5/examples/multimedia/audiooutput/
-@bin lib/qt5/examples/multimedia/audiooutput/audiooutput
 lib/qt5/examples/multimedia/audiooutput/audiooutput.cpp
 lib/qt5/examples/multimedia/audiooutput/audiooutput.h
 lib/qt5/examples/multimedia/audiooutput/audiooutput.pro
@@ -57,7 +53,6 @@ lib/qt5/examples/multimedia/audiooutput/doc/src/
 lib/qt5/examples/multimedia/audiooutput/doc/src/audiooutput.qdoc
 lib/qt5/examples/multimedia/audiooutput/main.cpp
 lib/qt5/examples/multimedia/audiorecorder/
-@bin lib/qt5/examples/multimedia/audiorecorder/audiorecorder
 lib/qt5/examples/multimedia/audiorecorder/audiorecorder.cpp
 lib/qt5/examples/multimedia/audiorecorder/audiorecorder.h
 lib/qt5/examples/multimedia/audiorecorder/audiorecorder.pro
@@ -83,7 +78,6 @@ lib/qt5/examples/multimedia/declarative-camera/Popup.qml
 lib/qt5/examples/multimedia/declarative-camera/VideoCaptureControls.qml
 lib/qt5/examples/multimedia/declarative-camera/VideoPreview.qml
 lib/qt5/examples/multimedia/declarative-camera/ZoomControl.qml
-@bin lib/qt5/examples/multimedia/declarative-camera/declarative-camera
 lib/qt5/examples/multimedia/declarative-camera/declarative-camera.pro
 lib/qt5/examples/multimedia/declarative-camera/declarative-camera.qml
 lib/qt5/examples/multimedia/declarative-camera/declarative-camera.qmlproject
@@ -108,7 +102,6 @@ lib/qt5/examples/multimedia/declarative-camera/images/toolbutton.png
 lib/qt5/examples/multimedia/declarative-camera/images/toolbutton.sci
 lib/qt5/examples/multimedia/declarative-camera/qmlcamera.cpp
 lib/qt5/examples/multimedia/declarative-radio/
-@bin lib/qt5/examples/multimedia/declarative-radio/declarative-radio
 lib/qt5/examples/multimedia/declarative-radio/declarative-radio.pro
 lib/qt5/examples/multimedia/declarative-radio/declarative-radio.qrc
 lib/qt5/examples/multimedia/declarative-radio/doc/
@@ -121,7 +114,6 @@ lib/qt5/examples/multimedia/declarative-radio/view.qml
 lib/qt5/examples/multimedia/multimedia.pro
 lib/qt5/examples/multimedia/radio/
 lib/qt5/examples/multimedia/radio/main.cpp
-@bin lib/qt5/examples/multimedia/radio/radio
 lib/qt5/examples/multimedia/radio/radio.cpp
 lib/qt5/examples/multimedia/radio/radio.h
 lib/qt5/examples/multimedia/radio/radio.pro
@@ -227,9 +219,6 @@ lib/qt5/examples/multimedia/spectrum/doc/images/
 lib/qt5/examples/multimedia/spectrum/doc/images/spectrum-demo.png
 lib/qt5/examples/multimedia/spectrum/doc/src/
 lib/qt5/examples/multimedia/spectrum/doc/src/spectrum.qdoc
-lib/qt5/examples/multimedia/spectrum/libfftreal.prl
-@lib lib/qt5/examples/multimedia/spectrum/libfftreal.so.${LIBfftreal_VERSION}
-@bin lib/qt5/examples/multimedia/spectrum/spectrum
 lib/qt5/examples/multimedia/spectrum/spectrum.pri
 lib/qt5/examples/multimedia/spectrum/spectrum.pro
 lib/qt5/examples/multimedia/video/
@@ -297,7 +286,6 @@ lib/qt5/examples/multimedia/video/qmlvideo/qml/qmlvideo/VideoRotate.qml
 lib/qt5/examples/multimedia/video/qmlvideo/qml/qmlvideo/VideoSeek.qml
 lib/qt5/examples/multimedia/video/qmlvideo/qml/qmlvideo/VideoSpin.qml
 lib/qt5/examples/multimedia/video/qmlvideo/qml/qmlvideo/main.qml
-@bin lib/qt5/examples/multimedia/video/qmlvideo/qmlvideo
 lib/qt5/examples/multimedia/video/qmlvideo/qmlvideo.png
 lib/qt5/examples/multimedia/video/qmlvideo/qmlvideo.pro
 lib/qt5/examples/multimedia/video/qmlvideo/qmlvideo.qrc
@@ -369,7 +357,6 @@ lib/qt5/examples/multimedia/video/qmlvideofx/qmlapplicationviewer/
 lib/qt5/examples/multimedia/video/qmlvideofx/qmlapplicationviewer/qmlapplicationviewer.cpp
 lib/qt5/examples/multimedia/video/qmlvideofx/qmlapplicationviewer/qmlapplicationviewer.h
 lib/qt5/examples/multimedia/video/qmlvideofx/qmlapplicationviewer/qmlapplicationviewer.pri
-@bin lib/qt5/examples/multimedia/video/qmlvideofx/qmlvideofx
 lib/qt5/examples/multimedia/video/qmlvideofx/qmlvideofx.png
 lib/qt5/examples/multimedia/video/qmlvideofx/qmlvideofx.pro
 lib/qt5/examples/multimedia/video/qmlvideofx/qmlvideofx.qrc
@@ -423,7 +410,6 @@ lib/qt5/examples/multimedia/video/snippets/performancemonitor/qml/performancemon
 lib/qt5/examples/multimedia/video/video.pro
 lib/qt5/examples/multimediawidgets/
 lib/qt5/examples/multimediawidgets/camera/
-@bin lib/qt5/examples/multimediawidgets/camera/camera
 lib/qt5/examples/multimediawidgets/camera/camera.cpp
 lib/qt5/examples/multimediawidgets/camera/camera.h
 lib/qt5/examples/multimediawidgets/camera/camera.pro
@@ -442,7 +428,6 @@ lib/qt5/examples/multimediawidgets/camera/videosettings.h
 lib/qt5/examples/multimediawidgets/camera/videosettings.ui
 lib/qt5/examples/multimediawidgets/customvideosurface/
 lib/qt5/examples/multimediawidgets/customvideosurface/customvideoitem/
-@bin lib/qt5/examples/multimediawidgets/customvideosurface/customvideoitem/customvideoitem
 lib/qt5/examples/multimediawidgets/customvideosurface/customvideoitem/customvideoitem.pro
 lib/qt5/examples/multimediawidgets/customvideosurface/customvideoitem/main.cpp
 lib/qt5/examples/multimediawidgets/customvideosurface/customvideoitem/videoitem.cpp
@@ -451,7 +436,6 @@ lib/qt5/examples/multimediawidgets/customvideosurface/customvideoitem/videoplaye
 lib/qt5/examples/multimediawidgets/customvideosurface/customvideoitem/videoplayer.h
 lib/qt5/examples/multimediawidgets/customvideosurface/customvideosurface.pro
 lib/qt5/examples/multimediawidgets/customvideosurface/customvideowidget/
-@bin lib/qt5/examples/multimediawidgets/customvideosurface/customvideowidget/customvideowidget
 lib/qt5/examples/multimediawidgets/customvideosurface/customvideowidget/customvideowidget.pro
 lib/qt5/examples/multimediawidgets/customvideosurface/customvideowidget/main.cpp
 lib/qt5/examples/multimediawidgets/customvideosurface/customvideowidget/videoplayer.cpp
@@ -470,7 +454,6 @@ lib/qt5/examples/multimediawidgets/player/doc/src/player.qdoc
 lib/qt5/examples/multimediawidgets/player/histogramwidget.cpp
 lib/qt5/examples/multimediawidgets/player/histogramwidget.h
 lib/qt5/examples/multimediawidgets/player/main.cpp
-@bin lib/qt5/examples/multimediawidgets/player/player
 lib/qt5/examples/multimediawidgets/player/player.cpp
 lib/qt5/examples/multimediawidgets/player/player.h
 lib/qt5/examples/multimediawidgets/player/player.pro
@@ -487,7 +470,6 @@ lib/qt5/examples/multimediawidgets/videographicsitem/doc/images/video-videograph
 lib/qt5/examples/multimediawidgets/videographicsitem/doc/src/
 lib/qt5/examples/multimediawidgets/videographicsitem/doc/src/videographicsitem.qdoc
 lib/qt5/examples/multimediawidgets/videographicsitem/main.cpp
-@bin lib/qt5/examples/multimediawidgets/videographicsitem/videographicsitem
 lib/qt5/examples/multimediawidgets/videographicsitem/videographicsitem.pro
 lib/qt5/examples/multimediawidgets/videographicsitem/videoplayer.cpp
 lib/qt5/examples/multimediawidgets/videographicsitem/videoplayer.h
@@ -500,5 +482,4 @@ lib/qt5/examples/multimediawidgets/videowidget/doc/src/videowidget.qdoc
 lib/qt5/examples/multimediawidgets/videowidget/main.cpp
 lib/qt5/examples/multimediawidgets/videowidget/videoplayer.cpp
 lib/qt5/examples/multimediawidgets/videowidget/videoplayer.h
-@bin lib/qt5/examples/multimediawidgets/videowidget/videowidget
 lib/qt5/examples/multimediawidgets/videowidget/videowidget.pro

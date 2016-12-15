@@ -125,7 +125,6 @@ lib/pkgconfig/Qt5Sensors.pc
 lib/qt5/cmake/Qt5Sensors/
 lib/qt5/cmake/Qt5Sensors/Qt5SensorsConfig.cmake
 lib/qt5/cmake/Qt5Sensors/Qt5SensorsConfigVersion.cmake
-lib/qt5/cmake/Qt5Sensors/Qt5Sensors_QCounterGesturePlugin.cmake
 lib/qt5/cmake/Qt5Sensors/Qt5Sensors_QShakeSensorGesturePlugin.cmake
 lib/qt5/cmake/Qt5Sensors/Qt5Sensors_QtSensorGesturePlugin.cmake
 lib/qt5/cmake/Qt5Sensors/Qt5Sensors_genericSensorPlugin.cmake
@@ -136,7 +135,6 @@ lib/qt5/mkspecs/modules/qt_lib_sensors.pri
 lib/qt5/mkspecs/modules/qt_lib_sensors_private.pri
 lib/qt5/pkgconfig/Qt5Sensors.pc
 lib/qt5/plugins/sensorgestures/
-lib/qt5/plugins/sensorgestures/libqtsensorgestures_counterplugin.so
 lib/qt5/plugins/sensorgestures/libqtsensorgestures_plugin.so
 lib/qt5/plugins/sensorgestures/libqtsensorgestures_shakeplugin.so
 lib/qt5/plugins/sensors/

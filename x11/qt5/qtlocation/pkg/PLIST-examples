@@ -43,7 +43,6 @@ lib/qt5/examples/location/mapviewer/menus/ItemPopupMenu.qml
 lib/qt5/examples/location/mapviewer/menus/MainMenu.qml
 lib/qt5/examples/location/mapviewer/menus/MapPopupMenu.qml
 lib/qt5/examples/location/mapviewer/menus/MarkerPopupMenu.qml
-@bin lib/qt5/examples/location/mapviewer/qml_location_mapviewer
 lib/qt5/examples/location/mapviewer/resources/
 lib/qt5/examples/location/mapviewer/resources/icon.png
 lib/qt5/examples/location/mapviewer/resources/marker.png
@@ -57,7 +56,6 @@ lib/qt5/examples/location/minimal_map/doc/src/
 lib/qt5/examples/location/minimal_map/doc/src/minimal_map.qdoc
 lib/qt5/examples/location/minimal_map/main.cpp
 lib/qt5/examples/location/minimal_map/main.qml
-@bin lib/qt5/examples/location/minimal_map/minimal_map
 lib/qt5/examples/location/minimal_map/minimal_map.pro
 lib/qt5/examples/location/minimal_map/qml.qrc
 lib/qt5/examples/location/places/
@@ -88,7 +86,6 @@ lib/qt5/examples/location/places/main.cpp
 lib/qt5/examples/location/places/places.pro
 lib/qt5/examples/location/places/places.qml
 lib/qt5/examples/location/places/places.qrc
-@bin lib/qt5/examples/location/places/qml_location_places
 lib/qt5/examples/location/places/resources/
 lib/qt5/examples/location/places/resources/categories.png
 lib/qt5/examples/location/places/resources/left.png
@@ -121,7 +118,6 @@ lib/qt5/examples/location/places_list/doc/src/
 lib/qt5/examples/location/places_list/doc/src/places_list.qdoc
 lib/qt5/examples/location/places_list/main.cpp
 lib/qt5/examples/location/places_list/marker.png
-@bin lib/qt5/examples/location/places_list/places_list
 lib/qt5/examples/location/places_list/places_list.pro
 lib/qt5/examples/location/places_list/places_list.qml
 lib/qt5/examples/location/places_list/places_list.qrc
@@ -133,7 +129,6 @@ lib/qt5/examples/location/places_map/doc/src/
 lib/qt5/examples/location/places_map/doc/src/places_map.qdoc
 lib/qt5/examples/location/places_map/main.cpp
 lib/qt5/examples/location/places_map/marker.png
-@bin lib/qt5/examples/location/places_map/places_map
 lib/qt5/examples/location/places_map/places_map.pro
 lib/qt5/examples/location/places_map/places_map.qml
 lib/qt5/examples/location/places_map/places_map.qrc
@@ -146,7 +141,6 @@ lib/qt5/examples/location/planespotter/doc/images/planespotter.png
 lib/qt5/examples/location/planespotter/doc/src/
 lib/qt5/examples/location/planespotter/doc/src/planespotter.qdoc
 lib/qt5/examples/location/planespotter/main.cpp
-@bin lib/qt5/examples/location/planespotter/planespotter
 lib/qt5/examples/location/planespotter/planespotter.pro
 lib/qt5/examples/location/planespotter/planespotter.qml
 lib/qt5/examples/location/planespotter/qml.qrc
@@ -187,7 +181,6 @@ lib/qt5/examples/positioning/geoflickr/flickrmobile/images/titlebar.sci
 lib/qt5/examples/positioning/geoflickr/flickrmobile/images/toolbutton.png
 lib/qt5/examples/positioning/geoflickr/flickrmobile/images/toolbutton.sci
 lib/qt5/examples/positioning/geoflickr/flickrmobile/nmealog.txt
-@bin lib/qt5/examples/positioning/geoflickr/geoflickr
 lib/qt5/examples/positioning/geoflickr/geoflickr.pro
 lib/qt5/examples/positioning/geoflickr/geoflickr.qmlproject
 lib/qt5/examples/positioning/geoflickr/qmllocationflickr.cpp
@@ -198,7 +191,6 @@ lib/qt5/examples/positioning/logfilepositionsource/doc/
 lib/qt5/examples/positioning/logfilepositionsource/doc/src/
 lib/qt5/examples/positioning/logfilepositionsource/doc/src/logfilepositionsource.qdoc
 lib/qt5/examples/positioning/logfilepositionsource/logfile.qrc
-@bin lib/qt5/examples/positioning/logfilepositionsource/logfilepositionsource
 lib/qt5/examples/positioning/logfilepositionsource/logfilepositionsource.cpp
 lib/qt5/examples/positioning/logfilepositionsource/logfilepositionsource.h
 lib/qt5/examples/positioning/logfilepositionsource/logfilepositionsource.pro
@@ -212,7 +204,6 @@ lib/qt5/examples/positioning/satelliteinfo/doc/images/example-satelliteinfo.png
 lib/qt5/examples/positioning/satelliteinfo/doc/src/
 lib/qt5/examples/positioning/satelliteinfo/doc/src/satelliteinfo.qdoc
 lib/qt5/examples/positioning/satelliteinfo/main.cpp
-@bin lib/qt5/examples/positioning/satelliteinfo/satelliteinfo
 lib/qt5/examples/positioning/satelliteinfo/satelliteinfo.pro
 lib/qt5/examples/positioning/satelliteinfo/satelliteinfo.qml
 lib/qt5/examples/positioning/satelliteinfo/satelliteinfo.qrc
@@ -245,7 +236,6 @@ lib/qt5/examples/positioning/weatherinfo/icons/weather-sunny-very-few-clouds.png
 lib/qt5/examples/positioning/weatherinfo/icons/weather-sunny.png
 lib/qt5/examples/positioning/weatherinfo/icons/weather-thundershower.png
 lib/qt5/examples/positioning/weatherinfo/main.cpp
-@bin lib/qt5/examples/positioning/weatherinfo/weatherinfo
 lib/qt5/examples/positioning/weatherinfo/weatherinfo.pro
 lib/qt5/examples/positioning/weatherinfo/weatherinfo.qml
 lib/qt5/examples/positioning/weatherinfo/weatherinfo.qrc
