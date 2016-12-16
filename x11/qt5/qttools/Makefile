@@ -28,11 +28,11 @@ WANTLIB-webview += Qt5WebKitWidgets Qt5Widgets Qt5Xml m pthread
 # avoid BDEP on ourselves
 MODQT5_DEPS =	No
 
-RUN_DEPENDS =		x11/qt5/qtdeclarative>=${QT5_VERSION:R},<${QT5_NEXT_VERSION}
-RUN_DEPENDS-webview =	${BUILD_PKGPATH}>=${VERSION:R},<${NEXT_VERSION}
-
 LIB_DEPENDS =		x11/qt5/qtbase>=${QT5_VERSION},<${QT5_NEXT_VERSION}
+LIB_DEPENDS-main =	${LIB_DEPENDS} \
+			x11/qt5/qtdeclarative>=${QT5_VERSION:R},<${QT5_NEXT_VERSION}
 LIB_DEPENDS-webview =	${LIB_DEPENDS} \
+			${BUILD_PKGPATH}>=${QT5_VERSION},<${QT5_NEXT_VERSION} \
 			x11/qt5/qtwebkit>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 
 FLAVORS =		debug
