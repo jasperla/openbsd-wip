@@ -139,7 +139,6 @@ NO_TEST =		Yes
 
 SUBST_VARS +=		VERSION
 
-DESTDIRNAME =	INSTALL_ROOT
 WRKDIST ?=	${WRKDIR}/${DISTNAME:C/${DIST_VERSION}/${VERSION}/}
 
 PROGRAMS5 =	assistant designer linguist lrelease lupdate moc pixeltool \
