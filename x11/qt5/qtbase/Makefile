@@ -10,7 +10,7 @@ COMMENT-sqlite2 =	SQLite 2.x plugin for Qt5
 COMMENT-tds =		TDS plugin for Qt5
 
 PKGNAME-mysql =		qt5-mysql-${VERSION}
-PKGNAME-psql =		qt5-psql-${VERSION}
+PKGNAME-psql =		qt5-postgresql-${VERSION}
 PKGNAME-sqlite2 =	qt5-sqlite2-${VERSION}
 PKGNAME-tds =		qt5-tds-${VERSION}
 
@@ -62,7 +62,7 @@ MULTI_PACKAGES =	-main -examples -mysql -psql -sqlite2 -tds
 
 MODULES =		devel/gettext
 
-# qmake module is used for running tests only here
+# qmake module is used only for running tests and setting vars
 MODQT_DEPS =		No
 MODQMAKE_PROJECTS =	tests/tests.pro
 
@@ -184,6 +184,9 @@ CONFIGURE_ARGS +=	-no-ssse3 -no-sse3
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS +=	-no-sse2
 .endif
+
+CONFIGURE_ENV +=	${MODQMAKE_ENV}
+MAKE_ENV +=		${MODQMAKE_ENV}
 
 .include <bsd.port.arch.mk>
 
