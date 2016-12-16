@@ -66,9 +66,6 @@ MODULES =		devel/gettext
 MODQT_DEPS =		No
 MODQMAKE_PROJECTS =	tests/tests.pro
 
-# nothing in qtbase links to pulseaudio, but config
-BUILD_DEPENDS =		audio/pulseaudio
-
 # no leveldb dependency, requires -lmemenv; QtWebKit uses internal version
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			databases/iodbc \
@@ -100,7 +97,10 @@ LIB_DEPENDS-tds =	${BASE_PKGPATH},-main>=${VERSION:R},<${QT5_NEXT_VERSION} \
 			${MODGCC4_CPPLIBDEP} \
 			databases/freetds
 
-BUILD_DEPENDS =		geo/geoclue \
+# nothing in qtbase links to pulseaudio, but configure checks
+# are recorded
+BUILD_DEPENDS =		audio/pulseaudio \
+			geo/geoclue \
 			x11/dbus
 
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
