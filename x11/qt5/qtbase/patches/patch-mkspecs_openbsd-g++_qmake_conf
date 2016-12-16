@@ -7,8 +7,8 @@ $OpenBSD$
 4. Use common GCC options to avoid duplication.
 5. Allow C++11 to work.
 --- mkspecs/openbsd-g++/qmake.conf.orig	Fri Sep 16 08:49:42 2016
-+++ mkspecs/openbsd-g++/qmake.conf	Tue Dec 13 00:30:52 2016
-@@ -5,23 +5,30 @@
++++ mkspecs/openbsd-g++/qmake.conf	Sat Dec 17 01:11:48 2016
+@@ -5,23 +5,31 @@
  MAKEFILE_GENERATOR      = UNIX
  QMAKE_PLATFORM          = openbsd
  
@@ -23,7 +23,8 @@ $OpenBSD$
 +isEmpty(LOCALBASE) {
 +  LOCALBASE             = /usr/local
 +}
-+QMAKE_INCDIR            = $$LOCALBASE/include
++QMAKE_INCDIR            = ${OPENBSD_INCDIR_PREPEND}
++QMAKE_INCDIR           += $$LOCALBASE/include
 +QMAKE_LIBDIR            = $$LOCALBASE/lib
  
  # System provided X11 defaults to X11R6 path on OpenBSD
@@ -48,7 +49,7 @@ $OpenBSD$
  # System compiler is gcc 4.2.1 up to OpenBSD 6.0.
  # For proper C++11 support, we need to use a newer gcc from ports/packages,
  # where compiler commands are renamed to egcc/eg++. Therefore, redefine
-@@ -36,8 +43,11 @@ QMAKE_CXX               = eg++
+@@ -36,8 +44,11 @@ QMAKE_CXX               = eg++
  QMAKE_LINK              = $$QMAKE_CXX
  QMAKE_LINK_SHLIB        = $$QMAKE_CXX
  

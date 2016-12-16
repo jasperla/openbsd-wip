@@ -198,9 +198,9 @@ TEST_DEPENDS =		audio/sox
 
 pre-configure:
 	@gccbasedir=`ecpp -print-search-dirs | awk '/^install:/{print $$2}'`; \
-#	perl ${PORTSDIR}/infrastructure/bin/pkg_subst \
-#	    -D OPENBSD_INCDIR_PREPEND="$${gccbasedir}include" \
-#	    ${WRKSRC}/mkspecs/openbsd-g++/qmake.conf
+	perl ${PORTSDIR}/infrastructure/bin/pkg_subst \
+	    -D OPENBSD_INCDIR_PREPEND="$${gccbasedir}include" \
+	    ${WRKSRC}/mkspecs/openbsd-g++/qmake.conf
 
 do-test:
 	#
