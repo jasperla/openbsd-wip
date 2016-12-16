@@ -4,7 +4,6 @@
 @bin bin/valhalla_run_map_match
 include/valhalla/meili/
 include/valhalla/meili/bucket_queue.h
-include/valhalla/meili/candidate.h
 include/valhalla/meili/candidate_search.h
 include/valhalla/meili/geojson_reader.h
 include/valhalla/meili/geojson_writer.h

@@ -5,6 +5,7 @@ include/valhalla/midgard/aabb2.h
 include/valhalla/midgard/constants.h
 include/valhalla/midgard/distanceapproximator.h
 include/valhalla/midgard/ellipse.h
+include/valhalla/midgard/encoded.h
 include/valhalla/midgard/gridded_data.h
 include/valhalla/midgard/linesegment2.h
 include/valhalla/midgard/logging.h
@@ -13,6 +14,7 @@ include/valhalla/midgard/point2.h
 include/valhalla/midgard/pointll.h
 include/valhalla/midgard/polyline2.h
 include/valhalla/midgard/sequence.h
+include/valhalla/midgard/shape_decoder.h
 include/valhalla/midgard/tiles.h
 include/valhalla/midgard/util.h
 include/valhalla/midgard/vector2.h

@@ -2,7 +2,7 @@
 
 COMMENT =		non-blocking server API for distributed computing
 
-V =			0.3.5
+V =			0.4.0
 DISTNAME =		prime_server-$V
 
 SHARED_LIBS +=  prime_server              0.0 # 0.0
@@ -12,7 +12,7 @@ CATEGORIES =		net
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c crypto curl iconv idn intl m pthread sodium ssl z
+WANTLIB += c crypto curl m nghttp2 pthread sodium ssl z
 WANTLIB += zmq
 
 GH_ACCOUNT =		kevinkreiser
