@@ -76,6 +76,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			devel/pango \
 			graphics/cairo \
 			graphics/gdk-pixbuf2 \
+			net/libproxy \
 			print/cups,-libs \
 			textproc/icu4c \
 			x11/gtk+2 \
