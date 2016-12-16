@@ -16,19 +16,17 @@ WANTLIB += Qt5Widgets glib-2.0 gobject-2.0 gstapp-1.0 gstaudio-1.0
 WANTLIB += gstbase-1.0 gstpbutils-1.0 gstphotography-1.0 gstreamer-1.0
 WANTLIB += gstvideo-1.0 intl m openal pthread pulse
 
-BUILD_DEPENDS =		multimedia/gstreamer1/mm \
-			multimedia/gstreamer1/plugins-base \
-			multimedia/gstreamer1/plugins-bad
+BUILD_DEPENDS =		multimedia/gstreamer1/mm
 
-RUN_DEPENDS-main =	multimedia/gstreamer1/mm \
-			multimedia/gstreamer1/plugins-base \
-			multimedia/gstreamer1/plugins-bad
+RUN_DEPENDS-main =	multimedia/gstreamer1/mm
 
 RUN_DEPENDS-examples =	x11/qt5/qtdeclarative>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 
 LIB_DEPENDS =		audio/openal \
 			audio/pulseaudio \
 			multimedia/gstreamer1/core \
+			multimedia/gstreamer1/plugins-base \
+			multimedia/gstreamer1/plugins-bad \
 			x11/qt5/qtdeclarative>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 
 FLAVORS =		debug
