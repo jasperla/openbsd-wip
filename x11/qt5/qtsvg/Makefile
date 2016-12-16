@@ -3,6 +3,8 @@
 QT5NAME =		QtSVG
 COMMENT-main =		SVG support for Qt5
 
+DPB_PROPERTIES =	parallel
+
 SHARED_LIBS =		Qt5Svg			2.0
 
 MULTI_PACKAGES =	-main -examples -qch -html

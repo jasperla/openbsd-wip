@@ -3,6 +3,7 @@
 QT5NAME =		QtWebkit
 COMMENT-main =		old Webkit integration framework for Qt
 USE_WXNEEDED =		Yes
+DPB_PROPERTIES =	parallel
 
 SHARED_LIBS +=		Qt5WebKit		2.0
 SHARED_LIBS +=		Qt5WebKitWidgets	2.0

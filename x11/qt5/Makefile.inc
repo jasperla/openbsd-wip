@@ -24,7 +24,7 @@ PKG_ARCH-examples =	*
 PKG_ARCH-html =		*
 PKG_ARCH-qch =		*
 
-DPB_PROPERTIES =	parallel nojunk
+DPB_PROPERTIES +=	nojunk
 
 CATEGORIES +=		x11 x11/qt5 devel
 HOMEPAGE ?=		http://www.qt-project.org/

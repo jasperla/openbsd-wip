@@ -4,6 +4,7 @@ QT5NAME =		QtDeclarative
 COMMENT-main =		Qt5 Quick and QML components
 
 MULTI_PACKAGES =	-main -examples -qch -html
+DPB_PROPERTIES =	parallel
 
 SHARED_LIBS =		Qt5Qml			2.0
 SHARED_LIBS +=		Qt5Quick		2.0
