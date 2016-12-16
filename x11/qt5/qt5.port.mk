@@ -114,7 +114,7 @@ MODQT5_USE_GCC4_MODULE ?=	Yes
 MODQT5_VERSION =	${QT5_VERSION}
 MODQT_VERSION ?=	${MODQT5_VERSION}
 
-_MODQT5_PKGMATCH !=	
+_MODQT5_PKGMATCH !=
 show_deps: patch
 	@cpkgs=$$(echo ${_MODQT5_CMAKE_PKGS:NQt5} | sed 's/ /|/g'); \
 	find ${WRKSRC} \( -name '*.pr[iof]' -or -iname '*cmake*' \) -print0 | \
