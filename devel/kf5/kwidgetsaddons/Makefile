@@ -3,7 +3,7 @@
 COMMENT =		large set of KDE widgets
 DISTNAME =		kwidgetsaddons-${VERSION}
 
-SHARED_LIBS =		KF5WidgetsAddons		0.0
+SHARED_LIBS =		KF5WidgetsAddons		1.0
 
 WANTLIB = Qt5Core Qt5Gui Qt5Widgets m
 

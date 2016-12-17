@@ -1,10 +1,4 @@
 @comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:58:57 zhuk Exp $
-@man man/man7/ecm-developer.7
-@man man/man7/ecm-find-modules.7
-@man man/man7/ecm-kde-modules.7
-@man man/man7/ecm-modules.7
-@man man/man7/ecm-toolchains.7
-@man man/man7/ecm.7
 share/ECM/
 share/ECM/cmake/
 share/ECM/cmake/ECMConfig.cmake
@@ -60,6 +54,7 @@ share/ECM/modules/ECMSetupVersion.cmake
 share/ECM/modules/ECMUninstallTarget.cmake
 share/ECM/modules/ECMUseFindModules.cmake
 share/ECM/modules/ECMVersionHeader.h.in
+share/ECM/modules/ECMWinResolveSymlinks.cmake
 share/ECM/modules/ecm_uninstall.cmake.in
 share/ECM/toolchain/
 share/ECM/toolchain/Android.cmake
@@ -193,3 +188,11 @@ share/doc/ECM/html/search.html
 share/doc/ECM/html/searchindex.js
 share/doc/ECM/html/toolchain/
 share/doc/ECM/html/toolchain/Android.html
+share/man/
+share/man/man7/
+@man share/man/man7/ecm-developer.7
+@man share/man/man7/ecm-find-modules.7
+@man share/man/man7/ecm-kde-modules.7
+@man share/man/man7/ecm-modules.7
+@man share/man/man7/ecm-toolchains.7
+@man share/man/man7/ecm.7

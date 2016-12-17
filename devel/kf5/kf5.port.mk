@@ -1,6 +1,6 @@
 # $OpenBSD: kf5.port.mk,v 1.1.1.1 2016/05/26 23:58:57 zhuk Exp $
 
-MODKF5_VERSION =	5.28.0
+MODKF5_VERSION =	5.29.0
 
 MAINTAINER ?=		KDE porting team <openbsd-kde@googlegroups.com>
 
@@ -24,13 +24,10 @@ CONFIGURE_ARGS += \
 	-DKDE_INSTALL_QTPLUGINDIR=${MODQT_LIBDIR}/plugins \
 	-DKDE_INSTALL_SHAREDSTATEDIR=/var \
 	-DKDE_INSTALL_SYSCONFDIR=/etc \
-	-DMAN_INSTALL_DIR=${PREFIX}/man
+	-DKDE_INSTALL_MANDIR=${PREFIX}/man
 
 # XXX it's very strange this is off by default
 CONFIGURE_ARGS +=	-DALLOW_UNDEFINED_LIB_SYMBOLS=Yes
-
-# shut up CMake
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0063=OLD
 .endif
 
 # make sure cmake module preceeds qt5, unless we really want qmake

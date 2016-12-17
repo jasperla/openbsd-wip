@@ -3,7 +3,7 @@
 COMMENT =		plugin framework for KDE desktop services
 DISTNAME =		kservice-${VERSION}
 
-SHARED_LIBS =		KF5Service		0.0
+SHARED_LIBS =		KF5Service		1.0
 
 WANTLIB =  KF5ConfigCore KF5CoreAddons KF5Crash KF5DBusAddons
 WANTLIB += KF5I18n Qt5Core Qt5DBus Qt5Xml c m
@@ -25,13 +25,6 @@ CONFIGURE_ARGS =	-DCMAKE_POLICY_DEFAULT_CMP0058=OLD
 
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}
-
-# TODO: The following tests FAILED:
-#          1 - ksycocatest (Failed)
-#          2 - ksycoca_xdgdirstest (Failed)
-#          5 - ksycocathreadtest (Failed)
-#          6 - kservicetest (Failed)
-#          8 - kplugininfotest (Failed)
 
 # avoid conflict with KDE4
 post-install:

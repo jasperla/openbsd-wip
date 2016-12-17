@@ -3,10 +3,9 @@
 COMMENT =		installation and loading of content packages in KDE
 DISTNAME =		kpackage-${VERSION}
 
-SHARED_LIBS =		KF5Package		0.0
+SHARED_LIBS =		KF5Package		1.0
 
-WANTLIB =  KF5Archive KF5ConfigCore KF5CoreAddons KF5I18n Qt5Core
-WANTLIB += c m
+WANTLIB += KF5Archive KF5CoreAddons KF5I18n Qt5Core c m
 
 BUILD_DEPENDS =		devel/gettext-tools \
 			devel/kf5/kdoctools

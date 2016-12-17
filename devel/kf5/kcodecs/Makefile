@@ -3,7 +3,7 @@
 COMMENT =	string encoding/decoding for KDE
 DISTNAME =	kcodecs-${VERSION}
 
-SHARED_LIBS =	KF5Codecs		0.0
+SHARED_LIBS =	KF5Codecs		1.0
 
 WANTLIB =	Qt5Core m
 

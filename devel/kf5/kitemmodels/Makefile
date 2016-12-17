@@ -3,7 +3,7 @@
 COMMENT =		KDE item models extending the Qt model-view framework
 DISTNAME =		kitemmodels-${VERSION}
 
-SHARED_LIBS =		KF5ItemModels		0.0
+SHARED_LIBS =		KF5ItemModels		1.0
 
 WANTLIB =		Qt5Core m
 

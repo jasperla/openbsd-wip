@@ -3,7 +3,7 @@
 COMMENT =		text completion support for Qt-based apps
 DISTNAME =		kcompletion-${VERSION}
 
-SHARED_LIBS =		KF5Completion		0.0
+SHARED_LIBS =		KF5Completion		1.0
 
 WANTLIB =  KF5ConfigCore KF5ConfigGui KF5WidgetsAddons Qt5Core
 WANTLIB += Qt5Gui Qt5Widgets Qt5Xml m

@@ -5,8 +5,8 @@ VERSION =	15.04.26
 DISTNAME =	baloo-${VERSION}
 PKGNAME =	kf5-${DISTNAME}
 
-SHARED_LIBS =	KF5Baloo		0.0
-SHARED_LIBS +=	KF5BalooXapian		0.0
+SHARED_LIBS =	KF5Baloo		1.0
+SHARED_LIBS +=	KF5BalooXapian		1.0
 
 #
 # Modern version requires LMDB, see databases/openldap/Makefile,
@@ -47,6 +47,8 @@ LIB_DEPENDS =	databases/xapian-core \
 		devel/kf5/kidletime \
 		devel/kf5/kio \
 		devel/kf5/solid
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0063=OLD
 
 # TODO: The following tests FAILED:
 #         11 - filewatchtest (Failed)

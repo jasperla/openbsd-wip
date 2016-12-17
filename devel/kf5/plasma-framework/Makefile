@@ -3,8 +3,8 @@
 COMMENT =	core components and tools of the Plasma Workspaces
 DISTNAME =	plasma-framework-${VERSION}
 
-SHARED_LIBS =	KF5Plasma		0.0
-SHARED_LIBS +=	KF5PlasmaQuick		0.0
+SHARED_LIBS =	KF5Plasma		1.0
+SHARED_LIBS +=	KF5PlasmaQuick		1.0
 
 WANTLIB =  EGL GL ICE KF5Activities KF5Archive KF5Auth KF5CalendarEvents
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
@@ -51,11 +51,11 @@ LIB_DEPENDS =	devel/kf5/kactivities \
 CONFIGURE_ARGS =	-DBUILD_EXAMPLES=Yes
 
 # TODO: The following tests FAILED (some dependencies missing?):
-#          1 - plasma-dialogqmltest (Failed)
-#          3 - plasma-packagestructuretest (Failed)
-#          7 - plasma-iconitemtest (OTHER_FAULT)
-#          8 - dialognativetest (Failed)
-#         10 - plasma-storagetest (Failed)
+# 1 - plasma-dialogqmltest (Failed)
+# 4 - plasma-packagestructuretest (Failed)
+# 6 - plasma-pluginloadertest (Failed)
+# 8 - plasma-iconitemtest (OTHER_FAULT)
+# 11 - dialognativetest (Failed)
 
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}
