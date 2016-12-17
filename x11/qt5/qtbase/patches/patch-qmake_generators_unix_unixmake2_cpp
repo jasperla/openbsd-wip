@@ -5,7 +5,7 @@ $OpenBSD$
    directories.
 3. Respect OpenBSD shared library naming rules.
 --- qmake/generators/unix/unixmake2.cpp.orig	Fri Sep 16 08:49:42 2016
-+++ qmake/generators/unix/unixmake2.cpp	Tue Dec 13 01:12:50 2016
++++ qmake/generators/unix/unixmake2.cpp	Sat Dec 17 14:16:12 2016
 @@ -69,6 +69,10 @@ UnixMakefileGenerator::writeMakefile(QTextStream &t)
      if (writeDummyMakefile(t))
          return true;
@@ -17,15 +17,24 @@ $OpenBSD$
      if (project->first("TEMPLATE") == "app" ||
          project->first("TEMPLATE") == "lib" ||
          project->first("TEMPLATE") == "aux") {
-@@ -176,12 +180,12 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
-     t << "DEFINES       = "
+@@ -171,17 +175,17 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+     ProStringList &bundledFiles = project->values("QMAKE_BUNDLED_FILES");
+ 
+     t << "####### Compiler, tools and options\n\n";
+-    t << "CC            = " << var("QMAKE_CC") << endl;
+-    t << "CXX           = " << var("QMAKE_CXX") << endl;
+-    t << "DEFINES       = "
++    t << "CC           ?= " << var("QMAKE_CC") << endl;
++    t << "CXX          ?= " << var("QMAKE_CXX") << endl;
++    t << "DEFINES      += "
        << varGlue("PRL_EXPORT_DEFINES","-D"," -D"," ")
        << varGlue("DEFINES","-D"," -D","") << endl;
 -    t << "CFLAGS        = " << var("QMAKE_CFLAGS") << " $(DEFINES)\n";
 -    t << "CXXFLAGS      = " << var("QMAKE_CXXFLAGS") << " $(DEFINES)\n";
+-    t << "INCPATH       =";
 +    t << "CFLAGS        = " << var("QMAKE_CFLAGS") << " $(DEFINES) $(COPTS)\n";
 +    t << "CXXFLAGS      = " << var("QMAKE_CXXFLAGS") << " $(DEFINES) $(CXXOPTS)\n";
-     t << "INCPATH       =";
++    t << "INCPATH      +=";
      {
          QString isystem = var("QMAKE_CFLAGS_ISYSTEM");
 -        const ProStringList &incs = project->values("INCLUDEPATH");
@@ -33,7 +42,30 @@ $OpenBSD$
          for(int i = 0; i < incs.size(); ++i) {
              const ProString &inc = incs.at(i);
              if (inc.isEmpty())
-@@ -279,12 +283,19 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+@@ -201,16 +205,17 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+     writeDefaultVariables(t);
+ 
+     if(!project->isActiveConfig("staticlib")) {
+-        t << "LINK          = " << var("QMAKE_LINK") << endl;
+-        t << "LFLAGS        = " << var("QMAKE_LFLAGS") << endl;
+-        t << "LIBS          = $(SUBLIBS) " << fixLibFlags("QMAKE_LIBS").join(' ') << ' '
++        t << "LINK         ?= " << var("QMAKE_LINK") << endl;
++        t << "LFLAGS        = " << var("QMAKE_LFLAGS") << " $(LDFLAGS)" << endl;
++        t << "LIBS         += $(SUBLIBS) " << fixLibFlags("QMAKE_LIBS").join(' ') << ' '
+                                            << fixLibFlags("QMAKE_LIBS_PRIVATE").join(' ') << endl;
+     }
+ 
++    // XXX QMAKE_AR includes args like "cqs", while AR envvar doesn't
+     t << "AR            = " << var("QMAKE_AR") << endl;
+     t << "RANLIB        = " << var("QMAKE_RANLIB") << endl;
+-    t << "SED           = " << var("QMAKE_STREAM_EDITOR") << endl;
+-    t << "STRIP         = " << var("QMAKE_STRIP") << endl;
++    t << "SED          ?= " << var("QMAKE_STREAM_EDITOR") << endl;
++    t << "STRIP        ?= " << var("QMAKE_STRIP") << endl;
+ 
+     t << endl;
+ 
+@@ -279,12 +284,19 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
              t << "TARGET0       = " << fileVar("TARGET_") << endl;
          } else if (!project->isActiveConfig("unversioned_libname")) {
              t << "TARGET0       = " << fileVar("TARGET_") << endl;
@@ -58,7 +90,7 @@ $OpenBSD$
              }
          }
      }
-@@ -605,7 +616,8 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+@@ -605,7 +617,8 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
              if(!project->isEmpty("QMAKE_POST_LINK"))
                  t << "\n\t" << var("QMAKE_POST_LINK");
              t << endl << endl;
@@ -68,7 +100,7 @@ $OpenBSD$
              t << "\n\t";
  
              if (!project->isActiveConfig("unversioned_libname"))
-@@ -639,7 +651,22 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+@@ -639,7 +652,22 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
              if(!project->isEmpty("QMAKE_POST_LINK"))
                  t << "\n\t" << var("QMAKE_POST_LINK");
              t << endl << endl;
@@ -91,7 +123,7 @@ $OpenBSD$
              t << "\n\t"
                << "-$(DEL_FILE) $(TARGET) $(TARGET0)\n\t"
                << var("QMAKE_LINK_SHLIB_CMD") << "\n\t";
-@@ -1191,6 +1218,11 @@ void UnixMakefileGenerator::init2()
+@@ -1191,6 +1219,11 @@ void UnixMakefileGenerator::init2()
                  project->values("TARGET_x").append("lib" + project->first("TARGET") + "." +
                                                          project->first("VER_MAJ"));
              project->values("TARGET") = project->values("TARGET_x");
@@ -103,7 +135,7 @@ $OpenBSD$
          } else if (!project->isEmpty("QMAKE_AIX_SHLIB")) {
              project->values("TARGET_").append(project->first("QMAKE_PREFIX_STATICLIB") + project->first("TARGET")
                      + "." + project->first("QMAKE_EXTENSION_STATICLIB"));
-@@ -1381,18 +1413,32 @@ UnixMakefileGenerator::writeLibtoolFile()
+@@ -1381,18 +1414,32 @@ UnixMakefileGenerator::writeLibtoolFile()
        << QT_VERSION_STR << ")";
      t << "\n";
  
