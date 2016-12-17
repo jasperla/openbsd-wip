@@ -9,4 +9,7 @@ SUBPACKAGE ?=		-qch
 ALL_TARGET =		docs
 FAKE_TARGET =		install_docs
 
+MODQT5_USE_GCC4_MODULE =	No
+NO_CCACHE =			Yes
+
 .include <bsd.port.mk>

@@ -308,6 +308,7 @@ lib/pkgconfig/Qt5UiTools.pc
 lib/qt5/cmake/Qt5Designer/
 lib/qt5/cmake/Qt5Designer/Qt5DesignerConfig.cmake
 lib/qt5/cmake/Qt5Designer/Qt5DesignerConfigVersion.cmake
+lib/qt5/cmake/Qt5Designer/Qt5Designer_QQuickWidgetPlugin.cmake
 lib/qt5/cmake/Qt5Help/
 lib/qt5/cmake/Qt5Help/Qt5HelpConfig.cmake
 lib/qt5/cmake/Qt5Help/Qt5HelpConfigExtras.cmake
@@ -363,3 +364,5 @@ lib/qt5/phrasebooks/swedish.qph
 lib/qt5/pkgconfig/Qt5Designer.pc
 lib/qt5/pkgconfig/Qt5Help.pc
 lib/qt5/pkgconfig/Qt5UiTools.pc
+lib/qt5/plugins/designer/
+lib/qt5/plugins/designer/libqquickwidget.so

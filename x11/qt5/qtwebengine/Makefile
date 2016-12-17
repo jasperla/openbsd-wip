@@ -6,14 +6,13 @@ ONLY_FOR_ARCHS =	i386 amd64
 QT5NAME =		QtWebEngine
 COMMENT-main =		Chromium-based web engine for Qt5
 CATEGORIES =		www
+USE_WXNEEDED =		Yes
 
 SHARED_LIBS =		Qt5WebEngine		0.0
 
 MULTI_PACKAGES =	-main -examples -qch -html
 
 WANTLIB-main =		${WANTLIB}
-
-WANTLIB-examples =	${WANTLIB}
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=   patents

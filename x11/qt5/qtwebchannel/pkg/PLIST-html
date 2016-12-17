@@ -8,6 +8,9 @@ share/doc/qt5/qtwebchannel/images/btn_next.png
 share/doc/qt5/qtwebchannel/images/btn_prev.png
 share/doc/qt5/qtwebchannel/images/bullet_dn.png
 share/doc/qt5/qtwebchannel/images/bullet_sq.png
+share/doc/qt5/qtwebchannel/images/chatclient-html.png
+share/doc/qt5/qtwebchannel/images/chatclient-qml.png
+share/doc/qt5/qtwebchannel/images/chatserver-cpp.png
 share/doc/qt5/qtwebchannel/images/home.png
 share/doc/qt5/qtwebchannel/images/ico_note.png
 share/doc/qt5/qtwebchannel/images/ico_note_attention.png

@@ -10,9 +10,11 @@ COMMENT-sqlite2 =	SQLite 2.x plugin for Qt5
 COMMENT-tds =		TDS plugin for Qt5
 
 PKGNAME-mysql =		qt5-mysql-${VERSION}
-PKGNAME-psql =		qt5-psql-${VERSION}
+PKGNAME-psql =		qt5-postgresql-${VERSION}
 PKGNAME-sqlite2 =	qt5-sqlite2-${VERSION}
 PKGNAME-tds =		qt5-tds-${VERSION}
+
+PKG_ARCH-examples =	*
 
 DPB_PROPERTIES =	parallel
 
@@ -41,10 +43,7 @@ WANTLIB-main += proxy pthread sqlite3 xcb xcb-glx xcb-icccm xcb-image
 WANTLIB-main += xcb-keysyms xcb-randr xcb-render xcb-render-util xcb-shape
 WANTLIB-main += xcb-shm xcb-sync xcb-xfixes xcb-xinerama xcb-xkb xkbcommon
 WANTLIB-main += xkbcommon-x11 z
-
-WANTLIB-examples =  ${MODGCC4_CPPWANTLIB} GL c m pthread
-WANTLIB-examples += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5OpenGL
-WANTLIB-examples += Qt5PrintSupport Qt5Sql Qt5Test Qt5Widgets Qt5Xml
+WANTLIB-main += drm gbm
 
 WANTLIB-mysql =		${MODGCC4_CPPWANTLIB} Qt5Core Qt5Sql
 WANTLIB-mysql +=	crypto m pthread mysqlclient_r ssl z
@@ -58,30 +57,30 @@ WANTLIB-sqlite2 +=	m pthread sqlite
 WANTLIB-tds =		${MODGCC4_CPPWANTLIB} Qt5Core Qt5Sql
 WANTLIB-tds +=		m pthread sybdb
 
-
+# there is no -sqlite3 because it's heavily used by Qt itself (.qch files)
 MULTI_PACKAGES =	-main -examples -mysql -psql -sqlite2 -tds
 
 MODULES =		devel/gettext
 
-# qmake module is used for running tests only here
+# qmake module is used only for running tests and setting vars
 MODQT_DEPS =		No
 MODQMAKE_PROJECTS =	tests/tests.pro
 
 # no leveldb dependency, requires -lmemenv; QtWebKit uses internal version
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			databases/iodbc \
+			databases/sqlite3 \
 			devel/atk \
 			devel/harfbuzz \
 			devel/libexecinfo \
 			devel/pango \
 			graphics/cairo \
 			graphics/gdk-pixbuf2 \
+			net/libproxy \
 			print/cups,-libs \
 			textproc/icu4c \
 			x11/gtk+2 \
 			x11/xkbcommon
-
-LIB_DEPENDS-examples =	${MODGCC4_CPPLIBDEP}
 
 LIB_DEPENDS-mysql =	${BASE_PKGPATH},-main>=${VERSION:R},<${QT5_NEXT_VERSION} \
 			${MODGCC4_CPPLIBDEP} \
@@ -99,7 +98,10 @@ LIB_DEPENDS-tds =	${BASE_PKGPATH},-main>=${VERSION:R},<${QT5_NEXT_VERSION} \
 			${MODGCC4_CPPLIBDEP} \
 			databases/freetds
 
-BUILD_DEPENDS =		geo/geoclue \
+# nothing in qtbase links to pulseaudio, but configure checks
+# are recorded
+BUILD_DEPENDS =		audio/pulseaudio \
+			geo/geoclue \
 			x11/dbus
 
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
@@ -133,9 +135,11 @@ CONFIGURE_ARGS =	-confirm-license \
 			-rpath \
 			-shared \
 			-verbose \
+			-no-pch \
 			-no-compile-examples
 
-# don't run tests inside main build
+# Don't run tests inside main build.
+# XXX It looks like affecting other Qt modules as well.
 CONFIGURE_ARGS +=	-nomake tests
 
 .if ${FLAVOR:Mdebug}
@@ -182,11 +186,10 @@ CONFIGURE_ARGS +=	-no-ssse3 -no-sse3
 CONFIGURE_ARGS +=	-no-sse2
 .endif
 
-.include <bsd.port.arch.mk>
+CONFIGURE_ENV +=	${MODQMAKE_ENV}
+MAKE_ENV +=		${MODQMAKE_ENV}
 
-.if !${BUILD_PACKAGES:M-examples}
-CONFIGURE_ARGS +=	-no-compile-examples
-.endif
+.include <bsd.port.arch.mk>
 
 # See qtbase/tests/README for details
 TEST_IS_INTERACTIVE =	X11
@@ -200,6 +203,11 @@ pre-configure:
 	    ${WRKSRC}/mkspecs/openbsd-g++/qmake.conf
 
 do-test:
+	#
+	# WARNING!
+	# Many tests won't run if window manager has either
+	# "focus follows pointer", or "click to activate" policy.
+	#
 	${MODQMAKE_configure}
 	${MODQMAKE_build}
 

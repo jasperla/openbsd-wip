@@ -11,6 +11,7 @@ bin/valhalla_build_timezones
 @bin bin/valhalla_ways_to_edges
 include/valhalla/mjolnir/
 include/valhalla/mjolnir/admin.h
+include/valhalla/mjolnir/complexrestrictionbuilder.h
 include/valhalla/mjolnir/countryaccess.h
 include/valhalla/mjolnir/dataquality.h
 include/valhalla/mjolnir/directededgebuilder.h
@@ -35,6 +36,8 @@ include/valhalla/mjolnir/osmrestriction.h
 include/valhalla/mjolnir/osmway.h
 include/valhalla/mjolnir/pbfadminparser.h
 include/valhalla/mjolnir/pbfgraphparser.h
+include/valhalla/mjolnir/restrictionbuilder.h
+include/valhalla/mjolnir/shortcutbuilder.h
 include/valhalla/mjolnir/transitbuilder.h
 include/valhalla/mjolnir/uniquenames.h
 include/valhalla/mjolnir/util.h

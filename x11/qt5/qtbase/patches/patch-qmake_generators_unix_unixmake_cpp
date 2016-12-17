@@ -4,8 +4,8 @@ $OpenBSD$
 2. Try to avoid picking up system libraries instead of locally built ones.
 3. Don't special case GNU make, BSD make isn't that bad, too.
 4. Respect OpenBSD shared library naming rules.
---- qmake/generators/unix/unixmake.cpp.orig	Wed May 25 18:46:17 2016
-+++ qmake/generators/unix/unixmake.cpp	Mon Jul 18 22:57:27 2016
+--- qmake/generators/unix/unixmake.cpp.orig	Fri Sep 16 08:49:42 2016
++++ qmake/generators/unix/unixmake.cpp	Mon Dec 12 22:47:27 2016
 @@ -42,7 +42,27 @@
  
  QT_BEGIN_NAMESPACE

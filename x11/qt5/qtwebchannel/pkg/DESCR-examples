@@ -14,4 +14,4 @@ and QML applications with HTML/JavaScript clients. The client must use the
 JavaScript library to access the serialized QObjects published by the host
 applications.
 
-This package contains QtWebChannel compiled examples and their sources.
+This package contains sources for QtWebChannel usage examples.

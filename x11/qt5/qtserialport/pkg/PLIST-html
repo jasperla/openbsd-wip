@@ -1,5 +1,6 @@
 @comment $OpenBSD$
 share/doc/qt5/qtserialport/
+share/doc/qt5/qtserialport/examples-manifest.xml
 share/doc/qt5/qtserialport/images/
 share/doc/qt5/qtserialport/images/arrow_bc.png
 share/doc/qt5/qtserialport/images/bgrContent.png

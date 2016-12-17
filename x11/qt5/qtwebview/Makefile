@@ -9,8 +9,6 @@ MULTI_PACKAGES =	-main -examples -qch -html
 
 WANTLIB-main =		${WANTLIB}
 
-WANTLIB-examples =	${WANTLIB}
-
 LIB_DEPENDS =		x11/qt5/qtdeclarative>=${QT5_VERSION},<${QT5_NEXT_VERSION} \
 			x11/qt5/qtwebengine>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 

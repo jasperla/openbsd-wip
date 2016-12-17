@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+share/doc/qt5/
 share/doc/qt5/activeqt/
 share/doc/qt5/activeqt/activeqt-activeqt-comapp-comapp-pro.html
 share/doc/qt5/activeqt/activeqt-activeqt-comapp-example.html

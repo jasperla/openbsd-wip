@@ -1,12 +1,11 @@
 # $OpenBSD$
 
 QT5NAME =		QtImageFormats
-COMMENT-main =		Qt5 multimedia components
+COMMENT-main =		support for additional image formats in Qt5
 
 MULTI_PACKAGES =	-main -qch -html
 
-WANTLIB-main =		${WANTLIB}
-WANTLIB-main +=		GL Qt5Core Qt5Gui jasper m mng pthread tiff webp
+WANTLIB =	GL Qt5Core Qt5Gui jasper m mng pthread tiff webp
 
 LIB_DEPENDS =		graphics/jasper \
 			graphics/tiff \

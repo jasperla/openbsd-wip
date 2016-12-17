@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+share/doc/qt5/
 share/doc/qt5/qtdoc/
 share/doc/qt5/qtdoc/3rdparty.html
 share/doc/qt5/qtdoc/accelerators.html
@@ -195,7 +196,6 @@ share/doc/qt5/qtdoc/qml-glossary.html
 share/doc/qt5/qtdoc/qmlapplications.html
 share/doc/qt5/qtdoc/qmlbasictypes.html
 share/doc/qt5/qtdoc/qmlfirststeps.html
-share/doc/qt5/qtdoc/qmlmodules.html
 share/doc/qt5/qtdoc/qmltypes.html
 share/doc/qt5/qtdoc/qpa.html
 share/doc/qt5/qtdoc/qt-activex.html

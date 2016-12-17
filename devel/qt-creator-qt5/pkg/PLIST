@@ -7,6 +7,7 @@
 @bin bin/qbs-setup-qt
 @bin bin/qbs-setup-toolchains
 @bin bin/qtcreator
+bin/qtcreator.sh
 @lib lib/libAggregation.so.${LIBAggregation_VERSION}
 @lib lib/libCPlusPlus.so.${LIBCPlusPlus_VERSION}
 @lib lib/libClangbackendipc.so.${LIBClangbackendipc_VERSION}

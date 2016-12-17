@@ -3,10 +3,13 @@ include/valhalla/baldr/
 include/valhalla/baldr/accessrestriction.h
 include/valhalla/baldr/admin.h
 include/valhalla/baldr/admininfo.h
+include/valhalla/baldr/complexrestriction.h
 include/valhalla/baldr/connectivity_map.h
 include/valhalla/baldr/datetime.h
 include/valhalla/baldr/directededge.h
+include/valhalla/baldr/double_bucket_queue.h
 include/valhalla/baldr/edgeinfo.h
+include/valhalla/baldr/errorcode_util.h
 include/valhalla/baldr/geojson.h
 include/valhalla/baldr/graphconstants.h
 include/valhalla/baldr/graphid.h
@@ -15,8 +18,10 @@ include/valhalla/baldr/graphtile.h
 include/valhalla/baldr/graphtileheader.h
 include/valhalla/baldr/json.h
 include/valhalla/baldr/location.h
+include/valhalla/baldr/merge.h
 include/valhalla/baldr/nodeinfo.h
 include/valhalla/baldr/pathlocation.h
+include/valhalla/baldr/reutil.h
 include/valhalla/baldr/sign.h
 include/valhalla/baldr/signinfo.h
 include/valhalla/baldr/streetname.h

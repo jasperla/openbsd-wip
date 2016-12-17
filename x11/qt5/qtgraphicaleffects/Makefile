@@ -7,7 +7,7 @@ MULTI_PACKAGES =	-main -qch -html
 
 WANTLIB =		GL Qt5Core Qt5Gui Qt5Network Qt5Qml Qt5Quick m pthread
 
-LIB_DEPENDS =		x11/qt5/qtdeclarative
+LIB_DEPENDS =		x11/qt5/qtdeclarative>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 
 FLAVORS =		debug
 PSEUDO_FLAVORS =	no_qch no_html

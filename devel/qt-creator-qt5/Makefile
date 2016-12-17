@@ -42,17 +42,24 @@ WANTLIB += Qt5Widgets Qt5Xml
 
 MASTER_SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/${V}/
 
-MODULES =	x11/qt5
+MODULES =	x11/qt5 devel/qmake
+MODQMAKE_INSTALL_ROOT =	${PREFIX}
+
+BUILD_DEPENDS =	x11/qt5/qtquickcontrols
 
 RUN_DEPENDS = 	devel/gdb \
 		devel/gmake \
 		lang/gcc/${MODGCC4_VERSION},-c++ \
-		x11/gtk+3,-guic
+		x11/gtk+3,-guic \
+		x11/qt5/qtquickcontrols
+
+LIB_DEPENDS =	x11/qt5/qtdeclarative \
+		x11/qt5/qtscript \
+		x11/qt5/qtsvg \
+		x11/qt5/qttools \
+		x11/qt5/qtwebkit
 
 PORTHOME =		${WRKDIR}
-
-# XXX
-#SEPARATE_BUILD =	Yes
 
 ALL_TARGET = 		all qch_docs
 
@@ -67,19 +74,14 @@ GDB_ADJ_FILES = \
 	tests/system/suite_general/tst_openqt_creator/testdata/projecttree_creator.tsv
 
 pre-configure:
-	mkdir -p ${WRKDIR}/bin/bin
-	ln -sf ${PREFIX}/lib/qt5/bin/qhelpgenerator ${WRKDIR}/bin/bin
 	cd ${WRKSRC}; sed -i 's,"gdb","egdb",g' ${GDB_ADJ_FILES}
-
-do-configure:
-	cd ${WRKBUILD} && QTDIR=${WRKDIR}/bin qmake-qt5 -r #CONFIG+=debug
 
 post-install:
 .for _l _v in ${SHARED_LIBS}
 	ln -sf qtcreator/lib${_l}.so.${_v} ${PREFIX}/lib
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/qtcreator
-	${INSTALL_DATA} ${WRKSRC}/share/doc/qtcreator/qtcreator.qch \
+	${INSTALL_DATA} ${WRKBUILD}/share/doc/qtcreator/qtcreator.qch \
 	    ${PREFIX}/share/doc/qtcreator/qtcreator.qch
 
 .include <bsd.port.mk>

@@ -7,7 +7,7 @@ CATEGORIES =		graphics
 
 HOMEPAGE =		http://qtpfsgui.sourceforge.net/
 
-MAINTAINER =		Kirill Bychkov <yason@linklevel.net>
+MAINTAINER =		Kirill Bychkov <kirby@openbsd,org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -27,11 +27,7 @@ LIB_DEPENDS =		devel/gsl \
 			graphics/tiff \
 			math/fftw3,float
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/qt4
-
-CONFIGURE_ARGS += 	-DCMAKE_BUILD_TYPE=Release
-
-NO_TEST =		Yes
+			x11/gtk+3,-guic
 
 pre-configure:
 # Allow builds from release distfile to display correct git hash in "About"

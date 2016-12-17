@@ -2,7 +2,6 @@
 share/doc/qt5/qtlocation/
 share/doc/qt5/qtlocation/examples-manifest.xml
 share/doc/qt5/qtlocation/images/
-share/doc/qt5/qtlocation/images/api-map.png
 share/doc/qt5/qtlocation/images/api-mapcircle.png
 share/doc/qt5/qtlocation/images/api-mappolygon.png
 share/doc/qt5/qtlocation/images/api-mappolyline.png
@@ -21,6 +20,7 @@ share/doc/qt5/qtlocation/images/ico_note_attention.png
 share/doc/qt5/qtlocation/images/ico_out.png
 share/doc/qt5/qtlocation/images/logo.png
 share/doc/qt5/qtlocation/images/mapviewer.png
+share/doc/qt5/qtlocation/images/minimal_map.png
 share/doc/qt5/qtlocation/images/places.png
 share/doc/qt5/qtlocation/images/places_list.png
 share/doc/qt5/qtlocation/images/places_map.png
@@ -223,6 +223,11 @@ share/doc/qt5/qtlocation/qtlocation-mapviewer-menus-itempopupmenu-qml.html
 share/doc/qt5/qtlocation/qtlocation-mapviewer-menus-mainmenu-qml.html
 share/doc/qt5/qtlocation/qtlocation-mapviewer-menus-mappopupmenu-qml.html
 share/doc/qt5/qtlocation/qtlocation-mapviewer-menus-markerpopupmenu-qml.html
+share/doc/qt5/qtlocation/qtlocation-minimal-map-example.html
+share/doc/qt5/qtlocation/qtlocation-minimal-map-main-cpp.html
+share/doc/qt5/qtlocation/qtlocation-minimal-map-main-qml.html
+share/doc/qt5/qtlocation/qtlocation-minimal-map-minimal-map-pro.html
+share/doc/qt5/qtlocation/qtlocation-minimal-map-qml-qrc.html
 share/doc/qt5/qtlocation/qtlocation-module.html
 share/doc/qt5/qtlocation/qtlocation-places-example.html
 share/doc/qt5/qtlocation/qtlocation-places-forms-message-qml.html
