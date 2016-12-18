@@ -1,5 +1,6 @@
 @comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:59:01 zhuk Exp $
 @pkgpath x11/kde4/oxygen-icons
+@unexec-delete rm -f %D/share/icons/oxygen/icon-theme.cache
 share/icons/oxygen/
 share/icons/oxygen/base/
 share/icons/oxygen/base/128x128/
