@@ -63,12 +63,12 @@ ALL_LANGS +=	zh_CN zh_TW
 # if needed, mark conflicts with kde-l10n-* packages from KDE 4
 MODKF5_L10N_CONFLICT ?=	no
 .if ${MODKF5_L10N_CONFLICT:L} != "no"
-PKG_ARGS +=		-f ${MAKEFILE_LIST:M*/kf5.port.mk:C,/[^/]+$,,}/PFRAG.l10n
+PKG_ARGS +=	-f ${MAKEFILE_LIST:M*/kf5.port.mk:C,/[^/]+$,,}/PFRAG.l10n
 .endif
 .for _s in ${MULTI_PACKAGES}
 MODKF5_L10N_CONFLICT${_s} ?=	no
 . if ${MODKF5_L10N_CONFLICT${_s}:L} != "no"
-PKG_ARGS${_s} +=	-f ${MAKEFILE_LIST:M*/kf5.port.mk:C,/[^/]+$,,}/PFRAG.l10n
+PKG_ARGS${_s} +=-f ${MAKEFILE_LIST:M*/kf5.port.mk:C,/[^/]+$,,}/PFRAG.l10n
 . endif
 .endfor
 
@@ -79,10 +79,13 @@ MODKF5_post-install += \
 # could not use this in devel/kf5/Makefile.inc because MODKF5_VERSION
 # is not set there yet
 .if ${PKGPATH:Mdevel/kf5/*}
-BUILD_DEPENDS :=	${BUILD_DEPENDS:Mdevel/kf5/*:C,(>=.*)?$,>=${MODKF5_VERSION:R},} \
+BUILD_DEPENDS := \
+	${BUILD_DEPENDS:Mdevel/kf5/*:C,(>=.*)?$,>=${MODKF5_VERSION:R},} \
 			${BUILD_DEPENDS:Ndevel/kf5/*}
-RUN_DEPENDS :=		${RUN_DEPENDS:Mdevel/kf5/*:C,(>=.*)?$,>=${MODKF5_VERSION:R},} \
+RUN_DEPENDS := \
+	${RUN_DEPENDS:Mdevel/kf5/*:C,(>=.*)?$,>=${MODKF5_VERSION:R},} \
 			${RUN_DEPENDS:Ndevel/kf5/*}
-LIB_DEPENDS :=		${LIB_DEPENDS:Mdevel/kf5/*:C,(>=.*)?$,>=${MODKF5_VERSION:R},} \
+LIB_DEPENDS := \
+	${LIB_DEPENDS:Mdevel/kf5/*:C,(>=.*)?$,>=${MODKF5_VERSION:R},} \
 			${LIB_DEPENDS:Ndevel/kf5/*}
 .endif
