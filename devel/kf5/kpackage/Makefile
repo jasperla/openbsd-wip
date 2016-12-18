@@ -13,7 +13,6 @@ BUILD_DEPENDS =		devel/gettext-tools \
 RUN_DEPENDS =		devel/kf5/kdoctools
 
 LIB_DEPENDS =		devel/kf5/karchive \
-			devel/kf5/kconfig \
 			devel/kf5/kcoreaddons \
 			devel/kf5/ki18n
 
