@@ -3,7 +3,7 @@
 COMMENT =		legacy support for kdelibs-4.x compatibility
 DISTNAME =		kdelibs4support-${VERSION}
 
-SHARED_LIBS =		KF5KDELibs4Support	0.0
+SHARED_LIBS =		KF5KDELibs4Support	1.0
 
 WANTLIB =  ICE KF5Auth KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
@@ -52,7 +52,6 @@ IS_PORTING_AID =	Yes
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_NetworkManager=Yes
 
 # TODO: The following tests FAILED:
-#         18 - ktabwidget_unittest (Failed)
 #         24 - ksavefiletest (Failed)
 #         27 - kmimetypetest (Failed)
 #         29 - kstandarddirstest (Failed)

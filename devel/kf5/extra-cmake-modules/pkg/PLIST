@@ -60,6 +60,7 @@ share/ECM/modules/ECMSetupVersion.cmake
 share/ECM/modules/ECMUninstallTarget.cmake
 share/ECM/modules/ECMUseFindModules.cmake
 share/ECM/modules/ECMVersionHeader.h.in
+share/ECM/modules/ECMWinResolveSymlinks.cmake
 share/ECM/modules/ecm_uninstall.cmake.in
 share/ECM/toolchain/
 share/ECM/toolchain/Android.cmake

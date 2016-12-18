@@ -144,14 +144,16 @@ WRKDIST ?=	${WRKDIR}/${DISTNAME:C/${DIST_VERSION}/${VERSION}/}
 PROGRAMS5 =	assistant designer linguist lrelease lupdate moc pixeltool \
 		qcollectiongenerator qdbus qdoc qmake qml qtdiag rcc uic
 
-.PHONY: qt5-post-extract qt5-post-install
-
+.if ${CONFIGURE_STYLE:Mqmake}
+.PHONY: qt5-post-extract
 post-extract: qt5-post-extract
 qt5-post-extract:
 	# Avoid building examples, we'll simply package sources;
 	# qt_parts qmake feature checks presence of this file exactly.
 	rm -f ${WRKDIST}/examples/examples.pro
+.endif
 
+.PHONY: qt5-post-install
 post-install: qt5-post-install
 qt5-post-install:
 	# public programs

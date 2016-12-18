@@ -3,7 +3,7 @@
 COMMENT =	execute actions as privileged user
 DISTNAME =	kauth-${VERSION}
 
-SHARED_LIBS =	KF5Auth		0.0
+SHARED_LIBS =	KF5Auth		1.0
 
 WANTLIB =	KF5CoreAddons Qt5Core Qt5DBus Qt5Gui Qt5Widgets
 WANTLIB +=	c m polkit-qt5-core-1

@@ -15,6 +15,7 @@ RUN_DEPENDS =	x11/qt5,-html
 
 SUBST_VARS =	DISTNAME
 
+# TODO tests/tests  bash script
 NO_TEST =	Yes
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 COMMENT =	KDE framework for converting physical units
 DISTNAME =	kunitconversion-${VERSION}
 
-SHARED_LIBS =	KF5UnitConversion	0.0
+SHARED_LIBS =	KF5UnitConversion	1.0
 
 WANTLIB =	KF5I18n Qt5Core Qt5Network Qt5Xml m
 

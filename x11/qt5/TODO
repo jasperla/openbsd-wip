@@ -1,4 +1,13 @@
 * Get more info which part are broken on powerpc, to move BROKEN marker.
 
-* At least Multimedia and Svg write invalid lib[...].so.5.6.1 strings
-  in [...]Config.cmake files.
+* More CMake problems, in ExtraSourceIncludes.cmake:
+
+list(APPEND _Qt5WebKit_OWN_INCLUDE_DIRS
+    "/usr/obj/p/qtwebkit-5.6.2/qtwebkit-opensource-src-5.6.2/include" "/usr/obj/
+p/qtwebkit-5.6.2/qtwebkit-opensource-src-5.6.2/include/QtWebKit"
+)
+set(Qt5WebKit_PRIVATE_INCLUDE_DIRS
+    "/usr/obj/p/qtwebkit-5.6.2/qtwebkit-opensource-src-5.6.2/include/QtWebKit/5.
+6.2" "/usr/obj/p/qtwebkit-5.6.2/qtwebkit-opensource-src-5.6.2/include/QtWebKit/5
+.6.2/QtWebKit"
+)

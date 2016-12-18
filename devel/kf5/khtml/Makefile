@@ -3,7 +3,7 @@
 COMMENT =		original KDE HTML rendering engine
 DISTNAME =		khtml-${VERSION}
 
-SHARED_LIBS =		KF5KHtml	0.0
+SHARED_LIBS =		KF5KHtml	1.0
 
 WANTLIB =  ICE KF5Archive KF5Auth KF5Bookmarks KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

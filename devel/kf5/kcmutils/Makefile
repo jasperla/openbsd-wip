@@ -3,7 +3,7 @@
 COMMENT =	utility classes for KDE control modules
 DISTNAME =	kcmutils-${VERSION}
 
-SHARED_LIBS =	KF5KCMUtils	0.0
+SHARED_LIBS =	KF5KCMUtils	1.0
 
 WANTLIB += KF5Auth KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5CoreAddons KF5I18n KF5IconThemes KF5ItemViews KF5Package
@@ -22,5 +22,7 @@ LIB_DEPENDS =	devel/kf5/kconfigwidgets \
 		devel/kf5/kpackage \
 		devel/kf5/kservice \
 		devel/kf5/kxmlgui
+
+TEST_NO =	Yes
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 # $OpenBSD: kf5.port.mk,v 1.1.1.1 2016/05/26 23:58:57 zhuk Exp $
 
-MODKF5_VERSION =	5.28.0
+MODKF5_VERSION =	5.29.0
 
 MAINTAINER ?=		KDE porting team <openbsd-kde@googlegroups.com>
 
@@ -24,13 +24,10 @@ CONFIGURE_ARGS += \
 	-DKDE_INSTALL_QTPLUGINDIR=${MODQT_LIBDIR}/plugins \
 	-DKDE_INSTALL_SHAREDSTATEDIR=/var \
 	-DKDE_INSTALL_SYSCONFDIR=/etc \
-	-DMAN_INSTALL_DIR=${PREFIX}/man
+	-DKDE_INSTALL_MANDIR=${PREFIX}/man
 
 # XXX it's very strange this is off by default
 CONFIGURE_ARGS +=	-DALLOW_UNDEFINED_LIB_SYMBOLS=Yes
-
-# shut up CMake
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0063=OLD
 .endif
 
 # make sure cmake module preceeds qt5, unless we really want qmake
@@ -66,12 +63,12 @@ ALL_LANGS +=	zh_CN zh_TW
 # if needed, mark conflicts with kde-l10n-* packages from KDE 4
 MODKF5_L10N_CONFLICT ?=	no
 .if ${MODKF5_L10N_CONFLICT:L} != "no"
-PKG_ARGS +=		-f ${MAKEFILE_LIST:M*/kf5.port.mk:C,/[^/]+$,,}/PFRAG.l10n
+PKG_ARGS +=	-f ${MAKEFILE_LIST:M*/kf5.port.mk:C,/[^/]+$,,}/PFRAG.l10n
 .endif
 .for _s in ${MULTI_PACKAGES}
 MODKF5_L10N_CONFLICT${_s} ?=	no
 . if ${MODKF5_L10N_CONFLICT${_s}:L} != "no"
-PKG_ARGS${_s} +=	-f ${MAKEFILE_LIST:M*/kf5.port.mk:C,/[^/]+$,,}/PFRAG.l10n
+PKG_ARGS${_s} +=-f ${MAKEFILE_LIST:M*/kf5.port.mk:C,/[^/]+$,,}/PFRAG.l10n
 . endif
 .endfor
 
@@ -82,10 +79,13 @@ MODKF5_post-install += \
 # could not use this in devel/kf5/Makefile.inc because MODKF5_VERSION
 # is not set there yet
 .if ${PKGPATH:Mdevel/kf5/*}
-BUILD_DEPENDS :=	${BUILD_DEPENDS:Mdevel/kf5/*:C,(>=.*)?$,>=${MODKF5_VERSION:R},} \
+BUILD_DEPENDS := \
+	${BUILD_DEPENDS:Mdevel/kf5/*:C,(>=.*)?$,>=${MODKF5_VERSION:R},} \
 			${BUILD_DEPENDS:Ndevel/kf5/*}
-RUN_DEPENDS :=		${RUN_DEPENDS:Mdevel/kf5/*:C,(>=.*)?$,>=${MODKF5_VERSION:R},} \
+RUN_DEPENDS := \
+	${RUN_DEPENDS:Mdevel/kf5/*:C,(>=.*)?$,>=${MODKF5_VERSION:R},} \
 			${RUN_DEPENDS:Ndevel/kf5/*}
-LIB_DEPENDS :=		${LIB_DEPENDS:Mdevel/kf5/*:C,(>=.*)?$,>=${MODKF5_VERSION:R},} \
+LIB_DEPENDS := \
+	${LIB_DEPENDS:Mdevel/kf5/*:C,(>=.*)?$,>=${MODKF5_VERSION:R},} \
 			${LIB_DEPENDS:Ndevel/kf5/*}
 .endif

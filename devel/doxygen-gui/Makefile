@@ -36,6 +36,8 @@ MODPY_RUNDEP=	No
 
 BUILD_DEPENDS+=	devel/bison
 
+RUN_DEPENDS=	devel/doxygen
+
 CONFIGURE_ARGS=	-Dbuild_wizard:Bool=ON \
 		-Dforce_qt4:Bool=ON
 

@@ -3,8 +3,8 @@
 COMMENT =	global desktop keyboard shortcuts for KDE
 DISTNAME =	kglobalaccel-${VERSION}
 
-SHARED_LIBS =	KF5GlobalAccel		0.0
-SHARED_LIBS +=	KF5GlobalAccelPrivate	0.0
+SHARED_LIBS =	KF5GlobalAccel		1.0
+SHARED_LIBS +=	KF5GlobalAccelPrivate	1.0
 
 WANTLIB += KF5ConfigCore KF5CoreAddons KF5Crash KF5DBusAddons
 WANTLIB += KF5Service KF5WindowSystem Qt5Core Qt5DBus Qt5Gui Qt5Widgets
