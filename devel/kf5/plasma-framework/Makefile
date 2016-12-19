@@ -52,10 +52,13 @@ CONFIGURE_ARGS =	-DBUILD_EXAMPLES=Yes
 
 # TODO: The following tests FAILED (some dependencies missing?):
 # 1 - plasma-dialogqmltest (Failed)
+# 3 - plasma-fallbackpackagetest (Failed)
 # 4 - plasma-packagestructuretest (Failed)
-# 6 - plasma-pluginloadertest (Failed)
 # 8 - plasma-iconitemtest (OTHER_FAULT)
+# 10 - plasma-configmodeltest (Failed)
 # 11 - dialognativetest (Failed)
+# 13 - plasma-storagetest (Failed)
+
 
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}
