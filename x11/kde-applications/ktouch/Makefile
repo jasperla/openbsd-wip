@@ -1,8 +1,8 @@
 # $OpenBSD$
 
-COMMENT =	KDE advanced text editor
+COMMENT =	KDE typing learning tool
 DISTNAME =	ktouch-${VERSION}
-CATEGORIES =	textproc
+CATEGORIES =	education
 
 VERSION =	16.08.3
 

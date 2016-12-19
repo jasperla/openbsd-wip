@@ -25,6 +25,9 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/knotifications \
 		devel/kf5/kwidgetsaddons
 
+CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_AppStreamQt=Yes \
+			-DCMAKE_DISABLE_FIND_PACKAGE_packagekitqt5=Yes
+
 PORTHOME =	${WRKDIR}
 TEST_IS_INTERACTIVE =	X11
 
