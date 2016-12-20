@@ -71,7 +71,8 @@ SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 # --disable-readline: needs GNU readline
-CONFIGURE_ARGS	=	--disable-java
+CONFIGURE_ARGS	=	--disable-java \
+			--with-qt=4
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 		-I${LOCALBASE}/include/ereadline -g" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
