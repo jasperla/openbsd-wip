@@ -107,6 +107,9 @@ MODQT5_USE_GCC4_MODULE ?=	Yes
   MODULES +=		gcc4
   MODGCC4_LANGS +=	c++
   MODGCC4_ARCHS ?=	*
+  # force using compilers/wrappers from ${WRKDIR}/bin
+  # XXX LINK_C is actually unused by qmake
+  _MODQT5_SETUP +=	CC=cc CXX=c++ LINK_C=cc LINK=c++
 .endif
 
 .include "Makefile.version"
