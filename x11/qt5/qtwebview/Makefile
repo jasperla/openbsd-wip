@@ -7,7 +7,7 @@ SHARED_LIBS =		Qt5WebView		0.0
 
 MULTI_PACKAGES =	-main -examples -qch -html
 
-WANTLIB-main =		${WANTLIB}
+WANTLIB =		Qt5Core Qt5Quick Qt5WebKit
 
 LIB_DEPENDS =		x11/qt5/qtdeclarative>=${QT5_VERSION},<${QT5_NEXT_VERSION} \
 			x11/qt5/qtwebengine>=${QT5_VERSION},<${QT5_NEXT_VERSION}
