@@ -12,7 +12,7 @@ SHARED_LIBS +=	octinterp	7.0 # 4.0
 
 HOMEPAGE =	https://www.gnu.org/software/octave/
 
-MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
+MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
