@@ -18,19 +18,9 @@ GH_PROJECT =		msgpack-c
 GH_TAGNAME =		cpp-${V}
 
 MODULES =		devel/cmake
-BUILD_DEPENDS +=	devel/doxygen
 
 # Requires updated gtest, which breaks protobuf < 3
 CONFIGURE_ARGS +=	-DMSGPACK_BUILD_TESTS=Off
 NO_TEST =		Yes
-
-post-build:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/doxygen
-
-DOC_DIR = ${PREFIX}/share/doc/msgpack
-post-install:
-	${INSTALL_DATA_DIR} ${DOC_DIR}
-	cp -r ${WRKSRC}/doc/html/* ${DOC_DIR}
-	chown -R ${SHAREOWN}:${SHAREGRP} ${DOC_DIR}
 
 .include <bsd.port.mk>
