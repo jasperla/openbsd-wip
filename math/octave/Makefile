@@ -26,7 +26,7 @@ WANTLIB += cxsparse drm ereadline expat fftw3 fftw3_threads fftw3f
 WANTLIB += fftw3f_threads fltk fltk_gl fontconfig freetype gl2ps glapi
 WANTLIB += glpk glut gmp hdf5 lapack lcms2 ltdl lzma m ncurses nghttp2
 WANTLIB += ogg pcre png portaudio pthread pthread-stubs qhull qrupdate
-WANTLIB += qscintilla2 sndfile sndio ssl stdc++ suitesparseconfig
+WANTLIB += qscintilla2 sndfile sndio ssl estdc++ suitesparseconfig
 WANTLIB += umfpack usbhid util vorbis vorbisenc xcb xcb-dri2 xcb-glx z
 
 MASTER_SITES =	${MASTER_SITE_GNU:=octave/}
