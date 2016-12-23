@@ -26,7 +26,7 @@ WANTLIB += cxsparse drm ereadline expat fftw3 fftw3_threads fftw3f
 WANTLIB += fftw3f_threads fltk fltk_gl fontconfig freetype gl2ps glapi
 WANTLIB += glpk glut gmp hdf5 lapack lcms2 ltdl lzma m ncurses nghttp2
 WANTLIB += ogg pcre png portaudio pthread pthread-stubs qhull qrupdate
-WANTLIB += qscintilla2 sndfile sndio ssl estdc++ suitesparseconfig
+WANTLIB += qscintilla2 sndfile sndio ssl suitesparseconfig
 WANTLIB += umfpack usbhid util vorbis vorbisenc xcb xcb-dri2 xcb-glx z
 
 MASTER_SITES =	${MASTER_SITE_GNU:=octave/}
@@ -88,5 +88,11 @@ post-extract:
 .for i in makeinfo texi2dvi texi2pdf
 	ln -s ${LOCALBASE}/bin/g$i ${WRKDIR}/bin/$i
 .endfor
+
+post-configure:
+	find ${WRKBUILD} -name Makefile | while read m; do \
+		awk '/--mode=/{M=0} /--mode=link/{M=1} /--tag=/ {CXX=0} /--tag=CXX/ {CXX=1} / -o / && CXX && M {sub(" -o ", " -lestdc++ -o ", $$0)} /^[A-Za-z]/{M=0; CXX=0} {print}' <$$m >$$m.qwe; \
+		mv $$m.qwe $$m; \
+	done
 
 .include <bsd.port.mk>
