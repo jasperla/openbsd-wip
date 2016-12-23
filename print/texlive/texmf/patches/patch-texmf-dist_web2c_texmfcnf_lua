@@ -1,0 +1,50 @@
+$OpenBSD: patch-texmf-dist_web2c_texmfcnf_lua,v 1.4 2016/06/01 12:47:33 edd Exp $
+--- texmf-dist/web2c/texmfcnf.lua.origy	Sun Apr 12 16:20:30 2015
++++ texmf-dist/web2c/texmfcnf.lua	Sun Apr 17 21:52:47 2016
+@@ -3,9 +3,6 @@
+ -- ConTeXt needs a properly expanded TEXMFLOCAL, so here is a
+ -- bit of lua code to make that happen
+ 
+-local texmflocal = resolvers.prefixes.selfautoparent();
+-texmflocal = string.gsub(texmflocal, "20%d%d$", "texmf-local");
+-
+ return {
+ 
+     type    = "configuration",
+@@ -26,6 +23,10 @@ return {
+ 
+         variables = {
+ 
++            -- Note that in OpenBSD, where we use the old teTeX path convention
++            -- selfautodir does not work.
++            TEXMFROOT       = "${TRUEPREFIX}/share",
++
+             -- The following variable is predefined (but can be overloaded) and in
+             -- most cases you can leve this one untouched. The built-in definition
+             -- permits relocation of the tree.
+@@ -44,7 +45,7 @@ return {
+ 
+             -- only used for FONTCONFIG_PATH & TEXMFCACHE in TeX Live
+ 
+-            TEXMFSYSVAR     = "selfautoparent:texmf-var",
++            TEXMFSYSVAR     = "$TEXMFROOT/texmf-var",
+             TEXMFVAR        = "home:.texlive2015/texmf-var",
+ 
+             -- We have only one cache path but there can be more. The first writable one
+@@ -62,12 +63,12 @@ return {
+             -- entry. This makes the tex root relocatable.
+ 
+             TEXMFOS         = "selfautodir:",
+-            TEXMFDIST       = "selfautoparent:texmf-dist",
++            TEXMFDIST       = "$TEXMFROOT/texmf-dist",
+ 
+             TEXMFLOCAL      = texmflocal,
+-            TEXMFSYSCONFIG  = "selfautoparent:texmf-config",
+-            TEXMFFONTS      = "selfautoparent:texmf-fonts",
+-            TEXMFPROJECT    = "selfautoparent:texmf-project",
++            TEXMFSYSCONFIG  = "$TEXMFROOT/texmf-config",
++            TEXMFFONTS      = "$TEXMFROOT/texmf-fonts",
++            TEXMFPROJECT    = "$TEXMFROOT/texmf-project",
+ 
+             TEXMFHOME       = "home:texmf",
+          -- TEXMFHOME       = os.name == "macosx" and "home:Library/texmf" or "home:texmf",
