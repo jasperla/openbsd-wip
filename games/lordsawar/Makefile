@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =		clone of the turn-based strategy game Warlords II
-DISTNAME =		lordsawar-0.3.0
+DISTNAME =		lordsawar-0.3.1
 CATEGORIES =		games x11
 
 HOMEPAGE =		http://www.nongnu.org/lordsawar/
