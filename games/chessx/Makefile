@@ -5,6 +5,7 @@ V =			1.4.0
 DISTNAME =		chessx-$V
 CATEGORIES =		games
 HOMEPAGE =		http://chessx.sourceforge.net/
+MAINTAINER =		Roman Yakovlev <obsd@51t.ru>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
