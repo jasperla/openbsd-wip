@@ -1,5 +1,0 @@
-@comment $OpenBSD$
-lib/qt5/qml/QtCanvas3D/
-lib/qt5/qml/QtCanvas3D/libqtcanvas3d.so
-lib/qt5/qml/QtCanvas3D/plugins.qmltypes
-lib/qt5/qml/QtCanvas3D/qmldir

@@ -1,9 +1,0 @@
-$OpenBSD$
-Fix configure.
---- tools/qmake/config.tests/snappy/snappy.pro.orig.port	Thu Aug  4 11:34:38 2016
-+++ tools/qmake/config.tests/snappy/snappy.pro	Thu Aug  4 11:34:49 2016
-@@ -1,3 +1,3 @@
--linux:SOURCES += snappy.cpp
-+linux|openbsd:SOURCES += snappy.cpp
- LIBS += -lsnappy
- CONFIG -= qt
