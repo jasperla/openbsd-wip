@@ -1,6 +1,6 @@
 # $OpenBSD$
 
-COMMENT =		free chess database
+COMMENT =		free chess database and analyzer
 V =			1.4.0
 DISTNAME =		chessx-$V
 CATEGORIES =		games
