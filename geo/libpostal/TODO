@@ -1,0 +1,3 @@
+- Check if CC + CFLAGS env variables are respected
+- Remove hardcoded optimization levels, some files are compiled with -O3
+

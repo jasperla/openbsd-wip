@@ -64,6 +64,17 @@ port, please remove it from the repository. In the future, other people can
 rescue your work from the git history. Maintaining the repository will prevent
 it from becoming a graveyard of abandoned ports.**
 
+Branches
+--------
+
+Ideally this repo should contain only one branch, where all development happens.
+If you want to create a feature branch, please consider avoiding it.  Most
+likely your feature branch will desync from master, making it difficult to merge
+and, after some time, difficult to locate in the repo.  Most likely you only
+need edit a handful of ports, so just directly editing them in `master` will
+work.  If you really *need* a feature branch, please, merge it back as soon as
+you know whether things worked out or not.
+
 How to use this tree
 ==================================
 
@@ -97,5 +108,3 @@ How to contribute
 Please let me know if you need write access to this repository. But please
 stick the workflow outlined in this document as well the pointers in
 <http://openbsd.org/porting.html>
-
-To stay posted on the latest commits, follow @openbsd_wip on Twitter.

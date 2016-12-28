@@ -1,0 +1,12 @@
+$OpenBSD$
+From upstream de6babb928c074d1cf0d3a6fb264cfb5d70bbd52.
+--- Source/Core/VideoCommon/DriverDetails.h.orig	Wed Jul 13 22:57:33 2016
++++ Source/Core/VideoCommon/DriverDetails.h	Wed Jul 13 22:57:29 2016
+@@ -17,6 +17,7 @@ namespace DriverDetails
+ 		OS_OSX     = (1 << 3),
+ 		OS_ANDROID = (1 << 4),
+ 		OS_FREEBSD = (1 << 5),
++		OS_OPENBSD = (1 << 6),
+ 	};
+ 	// Enum of known vendors
+ 	// Tegra and Nvidia are separated out due to such substantial differences

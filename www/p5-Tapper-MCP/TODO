@@ -1,4 +1,0 @@
-warnings in tests: Moose version 2 required--this is only version 1.25
-
-$ tapper-mcp-daemon
-Moose version 2 required--this is only version 1.25 at /usr/local/libdata/perl5/site_perl/MooseX/ClassAttribute.pm line 14.

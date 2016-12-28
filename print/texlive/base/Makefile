@@ -1,24 +1,28 @@
-# $OpenBSD: Makefile,v 1.80 2015/09/25 12:13:46 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.85 2016/12/17 20:40:29 zhuk Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
 # This year they used a different datestamp on the -source tarball.
-DIST_V_SOURCE =		${V}0521
-DISTNAME =		texlive-${DIST_V_SOURCE}-source
+DISTNAME =		texlive-${DIST_V}b-source
 PKGNAME =		texlive_base-${V}
+<<<<<<< Makefile
+WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source
+=======
+REVISION =		0
+>>>>>>> 1.85
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
 
-SHARED_LIBS =		kpathsea	8.0 # 8.1
-SHARED_LIBS +=		ptexenc		5.0 # 4.3
-SHARED_LIBS +=		synctex		0.0 # 18.0
+SHARED_LIBS =		kpathsea	8.0 # 8.2
+SHARED_LIBS +=		ptexenc		5.0 # 4.4
+SHARED_LIBS +=		synctex		1.0 # 19.0
 SHARED_LIBS +=		texlua52	0.0 # 7.4
 
 WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xi Xmu Xpm Xrender Xt
 WANTLIB += c cairo expat fontconfig freetype gd glib-2.0 graphite2
-WANTLIB += harfbuzz harfbuzz-icu icudata icui18n icuio icuuc intl
-WANTLIB += jpeg lcms2 m openjpeg paper pcre pixman-1 png poppler
+WANTLIB += harfbuzz harfbuzz-icu iconv icudata icui18n icuio icuuc intl
+WANTLIB += jpeg lcms2 m openjp2 paper pcre pixman-1 png poppler
 WANTLIB += potrace pthread pthread-stubs stdc++ tiff vpx xcb
 WANTLIB += xcb-render xcb-shm z zzip
 
@@ -30,7 +34,8 @@ RUN_DEPENDS =		print/ghostscript/gnu \
 			print/t1utils \
 			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset
 
-LIB_DEPENDS =		graphics/png \
+LIB_DEPENDS =		converters/libiconv \
+			graphics/png \
 			graphics/gd \
 			print/poppler \
 			graphics/cairo \
@@ -41,7 +46,7 @@ LIB_DEPENDS =		graphics/png \
 			archivers/zziplib \
 			graphics/potrace
 
-MODULES =		textproc/intltool converters/libiconv perl
+MODULES =		textproc/intltool perl
 
 # Never set SEPARATE_BUILD
 CONFIGURE_STYLE =	gnu
@@ -103,6 +108,7 @@ CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--disable-native-texlive-build \
 			--with-banner-add="-OpenBSD_Ports" \
 			--disable-luajittex \
+			--disable-mfluajit \
 			--with-system-xpdf \
 			--with-system-icu \
 			--with-system-cairo \

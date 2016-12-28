@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/Tapper/
-${P5SITE}/Tapper/Test.pm
-@man man/man3p/Tapper::Test.3p

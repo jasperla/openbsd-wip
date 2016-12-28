@@ -1,18 +1,21 @@
-# $OpenBSD: Makefile,v 1.50 2015/07/16 01:25:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2016/11/03 07:45:29 kirby Exp $
 
 PORTROACH = 	limitw:1,even
 
 COMMENT-main =	flexible network host monitoring, client
 COMMENT-server =flexible network host monitoring, server
 
-V =		2.99.2.1
+GH_ACCOUNT = 	munin-monitoring
+GH_PROJECT = 	munin
+GH_TAGNAME =	2.999.3
+V = 		${GH_TAGNAME}
 DISTNAME =	munin-$V
 PKGNAME-main =	munin-node-$V
 PKGNAME-server =munin-server-$V
 CATEGORIES =	net
 
 HOMEPAGE =	http://munin-monitoring.org/
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=munin/}
+#MASTER_SITES =	http://downloads.munin-monitoring.org/munin/stable/$V/
 
 # Mostly GPLv2.
 # DejaVuSans.ttf and DejaVuSansMono.ttf has a non-restrictive license.
@@ -25,13 +28,11 @@ MULTI_PACKAGES =	-main -server
 # Used for file locations and MODPY_BIN, RUBY, MODRUBY_ADJ_FILES.
 # Only very minor optional munin plugins use these languages so they
 # aren't forced as dependencies (same for bash).
-MODULES =		lang/python lang/ruby perl
+MODULES =		lang/python lang/ruby
 # No need for MODx_RUNDEP as we already override RUN_DEPENDS-{main,server}
 MODPY_BUILDDEP =	No
 MODRUBY_BUILDDEP =	No
 
-#    !  LWP::UserAgent is not installed
-#    !  Net::SNMP is not installed
 RUN_DEPENDS-main =	logtail-*|logsentry-*:sysutils/logtail \
 			devel/p5-Log-Dispatch \
 			devel/p5-Log-Log4perl \
@@ -53,22 +54,20 @@ RUN_DEPENDS-server +=	databases/p5-DBD-SQLite \
 			www/p5-URI \
 			net/munin,-main
 
-USE_GMAKE =		Yes
-CONFIGURE_ARGS += 	--install_path share=${PREFIX}/libexec/munin \
-			--install_path etc=${SYSCONFDIR}/munin
-ALL_TARGET =		default
-
+CONFIGURE_ARGS += 	--install_path=share=${PREFIX}/libexec/munin \
+			--install_path=etc=${SYSCONFDIR}/munin
 PKG_ARCH =		*
 
 CONFIGURE_STYLE =	modbuild
 
-MAKE_ENV +=		\
-			OSTYPE=openbsd \
+MAKE_ENV +=		OSTYPE=openbsd \
 			PREFIX=${PREFIX} \
 			PYTHON=${MODPY_BIN} \
 			SHAREDIR=${PREFIX}/libexec/munin/ \
-			DBDIR=/var/db/munin
+			MUNIN_DBDIR=/var/db/munin
+
 CONFIGURE_ENV += 	${MAKE_ENV}
+
 MAKE_FLAGS +=		BASH=${LOCALBASE}/bin/bash \
 			PLUGINUSER=_munin-plugin
 
@@ -85,9 +84,10 @@ SUBST_LIST += ${FILESDIR}/$i ${WRKSRC}/plugins/node.d.openbsd/$i
 .endfor
 
 post-extract:
-	${SUBST_CMD} -c ${SUBST_LIST}
+	${SUBST_CMD} -m 444 -c ${SUBST_LIST}
 	chmod -R +x ${WRKSRC}/plugins/node.d.openbsd
 	rm ${WRKSRC}/plugins/node.d.openbsd/swap # we have no in/out fields
+	rm -r ${WRKSRC}/plugins/node.d/example-graphs
 
 # Fixup hardcoded paths in plugins to use TRUEPREFIX/LOCALBASE as appropriate,
 # there are far too many to handle this via patches/SUBST_CMD, and this method

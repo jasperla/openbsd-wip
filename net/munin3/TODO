@@ -1,5 +1,5 @@
- - switch back from binto libexec/munin
  - check paths
  - find out where .htaccess file should be installed
  - replace GOODSH in shebangs
- - fix MUNIN_DBDIR path
+ - fix substitutions in i.e. munin-update
+ - fix rc scripts

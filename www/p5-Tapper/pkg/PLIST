@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/Tapper.pm
-@man man/man3p/Tapper.3p
-share/doc/pkg-readmes/${FULLPKGNAME}

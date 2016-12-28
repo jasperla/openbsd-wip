@@ -1,24 +1,23 @@
 # $OpenBSD: Makefile,v 1.29 2016/01/20 21:49:47 zhuk Exp $
 
-SHARED_ONLY=		Yes
 
 COMMENT=		PyCharm Python IDE
 
-V=			5.0.4
+V=			2016.3.1
 DISTNAME=		pycharm-community-${V}
 PKGNAME=		${DISTNAME:C/-community//}
 CATEGORIES=		devel
 
 HOMEPAGE=		https://www.jetbrains.com/pycharm/
-MAINTAINER=		# Markus Bergkvist?
+#MAINTAINER=		# Markus Bergkvist?
 
 # Apache v2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://download.jetbrains.com/pycharm/
+MASTER_SITES=		https://download.jetbrains.com/python/
 
 MODULES=		java
-MODJAVA_VER=		1.7+
+MODJAVA_VER=		1.8+
 
 BUILD_DEPENDS=		${MODJAVA_RUN_DEPENDS}
 

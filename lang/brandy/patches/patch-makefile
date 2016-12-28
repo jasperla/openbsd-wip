@@ -1,0 +1,15 @@
+$OpenBSD$
+--- makefile.orig	Thu Jun 27 17:09:32 2013
++++ makefile	Fri Nov 25 14:48:49 2016
+@@ -1,9 +1,9 @@
+ # Makefile for brandy under NetBSD and Linux
+ 
+-CC = gcc
++CC ?= gcc
+ LD = gcc
+ 
+-CFLAGS += -g -DDEBUG -I/usr/include/SDL -DUSE_SDL
++CFLAGS += -DUSE_SDL
+ CFLAGS2 = -O2 -I/usr/include/SDL -DUSE_SDL
+ 
+ LDFLAGS +=

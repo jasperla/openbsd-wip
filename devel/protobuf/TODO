@@ -1,0 +1,4 @@
+Regression tests seg:
+https://github.com/google/protobuf/issues/2452
+
+Dependent ports in-tree are not tested.

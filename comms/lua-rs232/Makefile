@@ -1,6 +1,5 @@
 # $OpenBSD$
 
-SHARED_ONLY=	Yes
 
 COMMENT=	Lua library for RS232 communication
 

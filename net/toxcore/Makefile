@@ -2,11 +2,11 @@
 
 COMMENT =		Tox client library
 
-DISTNAME =		toxcore-20151216
+DISTNAME =		toxcore-20160727
 CATEGORIES =		net telephony
-HOMEPAGE =		http://tox.im/
+HOMEPAGE =		https://tox.chat/
 
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
+MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
@@ -17,15 +17,13 @@ SHARED_LIBS +=  toxdns                    0.0 # 0.0
 SHARED_LIBS +=  toxencryptsave            0.0 # 0.0
 
 
-WANTLIB = c m opus pthread stdc++ sodium vpx
+WANTLIB = c m opus pthread sodium vpx ${MODGCC4_CPPWANTLIB}
 
 GH_ACCOUNT =		irungentoo
 GH_PROJECT =		toxcore
-GH_COMMIT =		0938ba08d9a839df4111168f3414099268d69737
+GH_COMMIT =		98446e0818f3954cba42fdc5f8560a823d455ee4
 
-MODULES =		gnu
-#MODULES +=		lang/clang
-#MODCLANG_ARCHS =	*
+MODULES =		gnu gcc4
 
 BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \

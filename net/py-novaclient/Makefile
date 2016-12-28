@@ -2,7 +2,7 @@
 
 COMMENT =		python interface to OpenStack Nova API
 
-MODPY_EGG_VERSION =	2.26.0
+MODPY_EGG_VERSION =	2.29.0
 DISTNAME =		python-novaclient-${MODPY_EGG_VERSION}
 PKGNAME = 		py-novaclient-${MODPY_EGG_VERSION}
 CATEGORIES =		net

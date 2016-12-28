@@ -1,32 +1,37 @@
-# $OpenBSD: Makefile,v 1.12 2015/03/16 18:07:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2016/10/01 11:54:15 naddy Exp $
 
-COMMENT =		c++ protocol buffers
+COMMENT =		C++ protocol buffers
 
-V =			2.6.1
-DISTNAME =		protobuf-$V
+V =			3.1.0
+DISTNAME =		protobuf-cpp-${V}
+PKGNAME = 		protobuf-${V}
 
-SHARED_LIBS +=		protobuf	2.0   # 7.0
-SHARED_LIBS +=		protoc		2.0   # 7.0
-SHARED_LIBS +=		protobuf-lite	2.0   # 7.0
+WRKDIST =		${WRKDIR}/protobuf-${V}
+
+SHARED_LIBS +=  protobuf-lite             0.0 # 11.0
+SHARED_LIBS +=  protobuf                  0.0 # 11.0
+SHARED_LIBS +=  protoc                    0.0 # 11.0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://developers.google.com/protocol-buffers/
 
-MAINTAINER =		Vincent Auclair <auclair.vincent@gmail.com>
+WANTLIB += c m pthread z
+
+MASTER_SITES =		https://github.com/google/protobuf/releases/download/v${V}/
 
 # New BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	c m pthread stdc++ z
+MODULES =		gcc4
+MODGCC4_LANGS =		c++
+MODGCC4_ARCHS =		*
 
-MASTER_SITES =	https://github.com/google/protobuf/releases/download/v$V/
-
-TEST_DEPENDS =	devel/gtest
+TEST_DEPENDS =		devel/gtest>=1.8.0
 
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} --with-zlib 
+CONFIGURE_ARGS +=	--with-zlib
 
 .include <bsd.port.mk>

@@ -1,12 +1,12 @@
 $OpenBSD$
---- setup.py.orig	Sun May 17 20:55:33 2015
-+++ setup.py	Sun May 17 20:54:25 2015
-@@ -65,7 +65,7 @@ def get_subpackages(name):
+--- setup.py.orig	Mon Sep 19 19:16:37 2016
++++ setup.py	Fri Sep 30 21:14:52 2016
+@@ -76,7 +76,7 @@ def get_subpackages(name):
  
  def get_data_files():
      """Return data_files in a platform dependent manner"""
 -    if sys.platform.startswith('linux'):
-+    if sys.platform.startswith('linux') or sys.platform.startswith('openbsd'):
++    if sys.platform.startswith(('linux', 'openbsd')):
          if PY3:
              data_files = [('share/applications', ['scripts/spyder3.desktop']),
                            ('share/pixmaps', ['img_src/spyder3.png'])]

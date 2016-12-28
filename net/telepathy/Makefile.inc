@@ -2,7 +2,6 @@
 
 PORTROACH=	limitw:1,even
 
-SHARED_ONLY?=	Yes
 
 CATEGORIES +=	net
 

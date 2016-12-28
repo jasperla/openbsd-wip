@@ -16,17 +16,10 @@
 @man man/man6/lordsawar.6
 share/appdata/
 share/appdata/lordsawar-appdata.xml
-share/applications/
 share/applications/lordsawar-editor.desktop
 share/applications/lordsawar.desktop
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/lordsawar-editor.png
 share/icons/hicolor/32x32/apps/lordsawar.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/lordsawar-editor.png
 share/icons/hicolor/64x64/apps/lordsawar.png
 share/locale/ca/LC_MESSAGES/lordsawar.mo

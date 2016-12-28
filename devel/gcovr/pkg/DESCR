@@ -1,0 +1,7 @@
+Gcovr provides a utility for managing the use of the GNU gcov utility and
+generating summarized code coverage results. This command is inspired by the
+Python coverage.py package, which provides a similar utility in Python. The
+gcovr command produces either compact human-readable summary reports, machine
+readable XML reports (in Cobertura format) or simple HTML reports. Thus, gcovr
+can be viewed as a command-line alternative to the lcov utility, which runs gcov
+and generates an HTML-formatted report.

@@ -1,6 +1,6 @@
 $OpenBSD$
---- doc/doc.pri.orig	Sat Oct  3 14:51:08 2015
-+++ doc/doc.pri	Sat Oct  3 14:50:50 2015
+--- doc/doc.pri.orig	Tue Aug 23 14:36:42 2016
++++ doc/doc.pri	Sat Oct 22 12:44:49 2016
 @@ -28,14 +28,14 @@ HELP_DEP_FILES = $$PWD/src/qtcreator.qdoc \
                   $$PWD/config/qt-cpp-ignore.qdocconf \
                   $$PWD/config/qt-defines.qdocconf
@@ -35,4 +35,4 @@ $OpenBSD$
 +dev_qch_docs.commands = $$HELPGENERATOR -o \"$$DEV_QCH_FILE\" $$DEV_QHP_FILE && touch $@
  dev_qch_docs.depends += dev_html_docs
  
- !macx {
+ inst_qch_docs.files = $$QCH_FILE

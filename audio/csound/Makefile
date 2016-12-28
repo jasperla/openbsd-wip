@@ -1,6 +1,5 @@
 # $OpenBSD: Makefile.template,v 1.73 2016/01/11 09:17:22 sthen Exp $
 
-SHARED_ONLY=	Yes
 
 COMMENT =	an extensible sound processing language
 

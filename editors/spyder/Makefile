@@ -2,31 +2,44 @@
 
 COMMENT =		lightweight scientific IDE for Python
 
-MODPY_EGG_VERSION =	2.3.8
+MODPY_EGG_VERSION =	3.0.2
 DISTNAME =		spyder-${MODPY_EGG_VERSION}
 CATEGORIES =		editors devel
+
 HOMEPAGE =		https://github.com/spyder-ide/spyder
+
+MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODPY_PI =	Yes
-EXTRACT_SUFX =	.zip
+MODULES =		lang/python
 
-MODULES =	lang/python
-
-BUILD_DEPENDS +=	textproc/py-sphinx
-RUN_DEPENDS +=		devel/desktop-file-utils \
+BUILD_DEPENDS =		textproc/py-sphinx
+RUN_DEPENDS =		databases/py-pickleshare \
+			devel/desktop-file-utils \
+			devel/pep8 \
+			devel/py-jedi \
+			devel/py-nbconvert \
 			devel/py-rope \
-			x11/py-qt4
+			devel/pyflakes \
+			devel/pylint \
+			net/py-zmq \
+			shells/py-qtconsole \
+			sysutils/py-psutil \
+			x11/py-qt5 \
+			x11/py-qtawesome \
+			x11/py-qtpy
 
-NO_TEST =	Yes
+MODPY_PI =		Yes
+
+NO_TEST =		Yes
 
 post-configure:
-	${SUBST_CMD} ${WRKSRC}/spyderlib/__init__.py
+	${SUBST_CMD} ${WRKSRC}/spyder/__init__.py
 
 post-install:
 	rm ${PREFIX}/bin/spyder_win_post_install.py
-	mv ${WRKINST}${MODPY_SITEPKG}/spyderlib/doc ${PREFIX}/share/doc/spyder
+	mv ${WRKINST}${MODPY_SITEPKG}/spyder/doc ${PREFIX}/share/doc/spyder
 
 .include <bsd.port.mk>

@@ -1,6 +1,0 @@
-@comment $OpenBSD$
-${P5SITE}/Task/
-${P5SITE}/Task/Tapper/
-${P5SITE}/Task/Tapper/Hello/
-${P5SITE}/Task/Tapper/Hello/World.pm
-@man man/man3p/Task::Tapper::Hello::World.3p

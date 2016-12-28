@@ -1,2 +1,0 @@
-@comment $OpenBSD$
-@bin lib/ocaml/cppo_ocamlbuild/ocamlbuild_cppo.cmxs

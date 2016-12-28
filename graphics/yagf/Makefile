@@ -1,6 +1,5 @@
 # $OpenBSD$
 
-SHARED_ONLY =		Yes
 COMMENT =		GUI wrapper for tesseract and cuneiform
 DISTNAME =		yagf-0.9.5
 

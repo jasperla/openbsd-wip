@@ -1,0 +1,27 @@
+$OpenBSD$
+
++-------------------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-------------------------------------------------------------------------------
+
+Name of executable
+==================
+
+Although the project is called "vis" and the binary is supposed to be called
+"vis", on OpenBSD the binary is called "vise" due to the conflict with vis(1)
+from base.
+
+Note, as upstream is considering other names for the project, the name of
+executable may change in future.
+
+Using vis with tmux
+===================
+
+Both tmux and libtermkey, a library used for getting keyboard input in vis, wait
+after an escape is input to determine if it is part of a function or meta key
+sequences.  This leads to false positives in meta key sequences detection in
+vis.  To work around this bug one may reduce such delay in tmux to a value below
+the default 50 ms value in libtermkey by setting "escape-time" setting in tmux
+configuration:
+
+	set-option escape-time 40

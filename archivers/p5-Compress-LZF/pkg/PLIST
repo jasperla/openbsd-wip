@@ -1,10 +1,9 @@
 @comment $OpenBSD$
-%%SHARED%%
 ${P5ARCH}/
 ${P5ARCH}/Compress/
 ${P5ARCH}/Compress/LZF.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Compress/
 ${P5ARCH}/auto/Compress/LZF/
-${P5ARCH}/auto/Compress/LZF/LZF.bs
+${P5ARCH}/auto/Compress/LZF/LZF.so
 @man man/man3p/Compress::LZF.3p

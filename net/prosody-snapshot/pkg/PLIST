@@ -156,10 +156,12 @@ lib/prosody/util/sql.lua
 lib/prosody/util/sslconfig.lua
 lib/prosody/util/stanza.lua
 lib/prosody/util/statistics.lua
+lib/prosody/util/statsd.lua
 lib/prosody/util/table.so
 lib/prosody/util/template.lua
 lib/prosody/util/termcolours.lua
 lib/prosody/util/throttle.lua
+lib/prosody/util/time.lua
 lib/prosody/util/timer.lua
 lib/prosody/util/uuid.lua
 lib/prosody/util/watchdog.lua

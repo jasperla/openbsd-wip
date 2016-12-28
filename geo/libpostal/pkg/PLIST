@@ -1,0 +1,8 @@
+@comment $OpenBSD$
+bin/libpostal_data
+include/libpostal/
+include/libpostal/libpostal.h
+lib/libpostal.a
+lib/libpostal.la
+@lib lib/libpostal.so.${LIBpostal_VERSION}
+lib/pkgconfig/libpostal.pc

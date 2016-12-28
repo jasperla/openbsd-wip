@@ -3,19 +3,17 @@
 COMMENT =		costing model used in graph traversal and correlation
 
 VALHALLA_PROJECT =	sif
-VALHALLA_VERSION =	0.0.0
 
 SHARED_LIBS +=  valhalla_sif              0.0 # 0.0
 
-WANTLIB += boost_date_time-mt boost_filesystem boost_serialization-mt
-WANTLIB += boost_system boost_system-mt boost_thread-mt m pthread
-WANTLIB += stdc++ valhalla_baldr valhalla_midgard
-
-GH_COMMIT =		0dde18766900ab7218be7cdc7774f930ddfb32b6
+WANTLIB += boost_date_time-mt boost_filesystem boost_regex-mt
+WANTLIB += boost_system boost_thread-mt m pthread valhalla_baldr
+WANTLIB += valhalla_midgard
 
 MODULES =		gcc4
 MODGCC4_LANGS =		c c++
 MODGCC4_ARCHS =		*
-LIB_DEPENDS =		geo/valhalla/baldr
+LIB_DEPENDS =		geo/valhalla/baldr \
+			geo/valhalla/midgard
 
 .include <bsd.port.mk>

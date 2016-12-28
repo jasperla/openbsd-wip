@@ -1,9 +1,7 @@
 @comment $OpenBSD$
-@bin bin/tyr_service
-@bin bin/tyr_simple_service
-include/valhalla/
 include/valhalla/tyr/
 include/valhalla/tyr/service.h
 lib/libvalhalla_tyr.a
 lib/libvalhalla_tyr.la
 @lib lib/libvalhalla_tyr.so.${LIBvalhalla_tyr_VERSION}
+lib/pkgconfig/libvalhalla_tyr.pc

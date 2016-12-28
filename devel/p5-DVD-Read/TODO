@@ -1,0 +1,14 @@
+figure out why even basic usage does not work:
+
+perl -e 'use strict;use warnings; use DVD::Read; print DVD::Read->new("/dev/rcd0c")->volid()."\n"'
+Subroutine DVD::Read::Dvd::BLOCK_SIZE redefined at /usr/local/libdata/perl5/site_perl/amd64-openbsd/DVD/Read/Dvd/Ifo/Pgc.pm line 12.
+Subroutine DVD::Read::Dvd::_new redefined at /usr/local/libdata/perl5/site_perl/amd64-openbsd/DVD/Read/Dvd/Ifo/Pgc.pm line 12.
+Subroutine DVD::Read::Dvd::volid redefined at /usr/local/libdata/perl5/site_perl/amd64-openbsd/DVD/Read/Dvd/Ifo/Pgc.pm line 12.
+Subroutine DVD::Read::Dvd::DESTROY redefined at /usr/local/libdata/perl5/site_perl/amd64-openbsd/DVD/Read/Dvd/Ifo/Pgc.pm line 12.
+Subroutine DVD::Read::Dvd::File::BLOCK_SIZE redefined at /usr/local/libdata/perl5/site_perl/amd64-openbsd/DVD/Read/Dvd/Ifo/Pgc.pm line 12.
+Subroutine DVD::Read::Dvd::File::new redefined at /usr/local/libdata/perl5/site_perl/amd64-openbsd/DVD/Read/Dvd/Ifo/Pgc.pm line 12.
+Subroutine DVD::Read::Dvd::File::DESTROY redefined at /usr/local/libdata/perl5/site_perl/amd64-openbsd/DVD/Read/Dvd/Ifo/Pgc.pm line 12.
+Subroutine DVD::Read::Dvd::File::size redefined at /usr/local/libdata/perl5/site_perl/amd64-openbsd/DVD/Read/Dvd/Ifo/Pgc.pm line 12.
+Subroutine DVD::Read::Dvd::File::readblock redefined at /usr/local/libdata/perl5/site_perl/amd64-openbsd/DVD/Read/Dvd/Ifo/Pgc.pm line 12.
+Subroutine DVD::Read::Dvd::Ifo::new redefined at /usr/local/libdata/perl5/site_perl/amd64-openbsd/DVD/Read/Dvd/Ifo/Pgc.pm line 12.
+[..]

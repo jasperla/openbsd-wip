@@ -1,11 +1,10 @@
 @comment $OpenBSD$
-@bin bin/skadi_benchmark
-@bin bin/skadi_service
-@bin bin/skadi_simple_service
-include/valhalla/
+bin/valhalla_build_elevation
 include/valhalla/skadi/
 include/valhalla/skadi/sample.h
 include/valhalla/skadi/service.h
+include/valhalla/skadi/util.h
 lib/libvalhalla_skadi.a
 lib/libvalhalla_skadi.la
 @lib lib/libvalhalla_skadi.so.${LIBvalhalla_skadi_VERSION}
+lib/pkgconfig/libvalhalla_skadi.pc

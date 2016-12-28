@@ -6,8 +6,6 @@
 # For example:
 # net/gnaughty				ready for import, sent to ports@ (jasperla)
 
-comms/gammu				Ready for import. Sent to ports@ 2012-10-09 (yason)
-comms/wammu				Ready for import. Sent to ports@ 2012-10-09 (yason)
 devel/libextractor			sent to ports 2013-06-29
 devel/libtap				ready to import
 geo/mtkbabel				sent to ports 2011-03-30
@@ -83,8 +81,3 @@ www/p5-HTML-TreeBuilder-LibXML		ready to import (garcer)
 devel/deviceatlas-enterprise-c		ready to import (devnexen)
 devel/libangelscript			ready to import, sent to ports@ 2015-12-20
 devel/arm-none-eabi                     ready to import, sent to ports@ 2015-12-31, there is a patch ready to apply to the tree
-net/transmission			ready to import, sent to ports 2016-02-29
-sysutils/udfclient			imported 2016-05-01
-devel/subversion			ready to import, sent to ports@ 2016-05-29 (czarkoff)
-graphics/imv				ready to import, sent to ports@ 2015-05-31 (czarkoff)
-sysutils/tarsnap-guie  sent to ports@ 07-05-2016, committed 30-05-2016 (grosse)

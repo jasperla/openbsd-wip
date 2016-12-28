@@ -1,0 +1,25 @@
+$OpenBSD$
+Avoid linking in extra libraries.
+--- configure.ac.orig	Mon May  2 23:07:42 2016
++++ configure.ac	Wed Nov 23 20:58:29 2016
+@@ -46,9 +46,9 @@ case $target in
+ 		PLUGIN_CFLAGS="-DNETBSD -fPIC";;
+     *-openbsd*) 
+ 		SYSTEM_OS=OPENBSD
+-    		PHRASENDRESCHER_CFLAGS="-ldl -DOPENBSD"
+-		PLUGIN_LDFLAGS="-shared -lssl -lssh2 -lgpgme"
+-		PLUGIN_CFLAGS="-DOPENBSD -fPIC";;
++    		PHRASENDRESCHER_CFLAGS="-DOPENBSD"
++		PLUGIN_LDFLAGS="-shared"
++		PLUGIN_CFLAGS="-DOPENBSD";;
+ esac
+ 
+ AC_ARG_WITH(fixed-plugin-dir, [--with-fixed-plugin-dir=DIR], AC_DEFINE_UNQUOTED(FIXED_PLUGIN_DIR,"${withval}"))
+@@ -83,6 +83,7 @@ else
+ 	echo "#########################################################"
+ fi
+ 
++LIBS=
+ AC_SUBST(PLUGIN_LDFLAGS)
+ AC_SUBST(PLUGIN_CFLAGS)
+ AM_CONDITIONAL([BUILD_PLUGINS], [test "$build_plugins" = "true"])

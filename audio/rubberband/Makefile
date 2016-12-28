@@ -22,6 +22,7 @@ DISTFILES =		v${V}${EXTRACT_SUFX}
 LIB_DEPENDS =		audio/libsamplerate \
 			audio/libsndfile \
 			audio/vamp-plugin-sdk \
+			audio/ladspa \
 			math/fftw3
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu

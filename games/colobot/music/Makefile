@@ -2,10 +2,17 @@
 
 COMMENT =		music files for colobot
 
-DISTNAME =		colobot-music-$V
+DISTNAME =		colobot-music_ogg_$V-alpha
+PKGNAME =		colobot-music-$V
 
-GH_PROJECT =		colobot-music
+MASTER_SITES =		https://colobot.info/files/music/
 
-LIB_DEPENDS =		audio/vorbis-tools
+WRKDIST =		${WRKDIR}
+
+NO_BUILD =		Yes
+
+do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/colobot/music
+	${INSTALL_DATA} ${WRKDIST}/*.ogg ${PREFIX}/share/colobot/music
 
 .include <bsd.port.mk>

@@ -2,7 +2,8 @@
 
 COMMENT=	twin panel file manager for KDE
 
-DISTNAME=	krusader-2.4.0-beta3
+VERSION=	2.5.0
+DISTNAME=	krusader-${VERSION}
 
 CATEGORIES=	x11 x11/kde
 
@@ -13,30 +14,37 @@ MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += QtDBus QtGui QtNetwork QtSvg QtXml c ${KDE4LIB}/kdeui
-WANTLIB += kfile ${KDE4LIB}/kio kparts m nepomuk nepomukutils
-WANTLIB += konq pthread solid soprano z
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/krusader/${VERSION}/} \
+EXTRACT_SUFX=	.tar.xz
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=krusader/}
-EXTRACT_SUFX= .tar.bz2
-
-MODULES=	x11/kde4 \
+MODULES=	devel/kf5 \
 		devel/cmake
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
-BUILD_DEPENDS =	devel/gettext-tools
-
-LIB_DEPENDS =	${MODKDE4_DEP_DIR}/baseapps>=${MODKDE4_DEP_VERSION}
+BUILD_DEPENDS =	devel/gettext-tools \
+		devel/kf5/karchive \
+		devel/kf5/kbookmarks \
+		devel/kf5/kcodecs \
+		devel/kf5/kcompletion \
+		devel/kf5/kcoreaddons\
+		devel/kf5/kconfig \
+		devel/kf5/kdoctools \
+		devel/kf5/ki18n \
+		devel/kf5/kiconthemes \
+		devel/kf5/kitemviews \
+		devel/kf5/kio \
+		devel/kf5/knotifications \
+		devel/kf5/kparts \
+		devel/kf5/solid \
+		devel/kf5/ktextwidgets \
+		devel/kf5/kwallet \
+		devel/kf5/kwidgetsaddons \
+		devel/kf5/kwindowsystem \
+		devel/kf5/kxmlgui \
+		devel/kf5/kguiaddons
 
 NO_TEST = 	Yes
-
-# XXX Silently ignore non-existent dependencies
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0046=OLD
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0054=OLD
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0064=OLD
-# XXX Don't treat ``DEFINITIONS`` as a built-in directory property
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0059=OLD
 
 .include <bsd.port.mk>

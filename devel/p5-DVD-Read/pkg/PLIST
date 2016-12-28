@@ -1,0 +1,31 @@
+@comment $OpenBSD$
+${P5ARCH}/
+${P5ARCH}/DVD/
+${P5ARCH}/DVD/Read/
+${P5ARCH}/DVD/Read.pm
+${P5ARCH}/DVD/Read/Dvd/
+${P5ARCH}/DVD/Read/Dvd.pm
+${P5ARCH}/DVD/Read/Dvd/File.pm
+${P5ARCH}/DVD/Read/Dvd/Ifo/
+${P5ARCH}/DVD/Read/Dvd/Ifo.pm
+${P5ARCH}/DVD/Read/Dvd/Ifo/Cell.pm
+${P5ARCH}/DVD/Read/Dvd/Ifo/Pgc.pm
+${P5ARCH}/DVD/Read/Dvd/Ifo/Vmg.pm
+${P5ARCH}/DVD/Read/Dvd/Ifo/Vts.pm
+${P5ARCH}/DVD/Read/Title.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/DVD/
+${P5ARCH}/auto/DVD/Read/
+${P5ARCH}/auto/DVD/Read/Read.so
+${P5ARCH}/auto/DVD/Read/Title/
+${P5ARCH}/auto/DVD/Read/Title/autosplit.ix
+${P5ARCH}/auto/DVD/Read/autosplit.ix
+@man man/man3p/DVD::Read.3p
+@man man/man3p/DVD::Read::Dvd.3p
+@man man/man3p/DVD::Read::Dvd::File.3p
+@man man/man3p/DVD::Read::Dvd::Ifo.3p
+@man man/man3p/DVD::Read::Dvd::Ifo::Cell.3p
+@man man/man3p/DVD::Read::Dvd::Ifo::Pgc.3p
+@man man/man3p/DVD::Read::Dvd::Ifo::Vmg.3p
+@man man/man3p/DVD::Read::Dvd::Ifo::Vts.3p
+@man man/man3p/DVD::Read::Title.3p

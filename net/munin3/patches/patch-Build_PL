@@ -1,6 +1,6 @@
 $OpenBSD$
---- Build.PL.orig	Sun Aug 16 07:47:06 2015
-+++ Build.PL	Fri Aug 21 17:57:18 2015
+--- Build.PL.orig	Sun Sep  4 23:04:49 2016
++++ Build.PL	Fri Nov  4 15:29:19 2016
 @@ -101,7 +101,7 @@ my $build = Module::Build->new(
      release_status     => $release_status,
      dist_author        => 'The Munin Project <project@munin-monitoring.org>',
@@ -10,3 +10,12 @@ $OpenBSD$
      configure_requires => { 'Module::Build' => '0.21', },
      requires           => {
          'perl'                   => '5.10.0',
+@@ -314,7 +314,7 @@ else {
+     $build->install_path(
+         'MUNIN_HTMLDIR' => $build->install_path('var') . '/www/munin' );
+     $build->install_path(
+-        'MUNIN_DBDIR' => $build->install_path('var') . '/lib/munin' );
++        'MUNIN_DBDIR' => $build->install_path('var') . '/db/munin' );
+     $build->install_path(
+         'MUNIN_CGITMPDIR' => $build->install_path('var') . '/cache/munin' );
+     $build->install_path(

@@ -1,0 +1,12 @@
+$OpenBSD$
+--- test/TestMantiuk06Basic.cpp.orig	Sat Dec 17 13:12:50 2016
++++ test/TestMantiuk06Basic.cpp	Sat Dec 17 13:13:14 2016
+@@ -27,7 +27,7 @@
+ #ifdef __clang__
+ #include <tr1/tuple>
+ #else
+-#include <tuple>
++#include <boost/tuple/tuple.hpp>
+ #endif
+ #include "arch/math.h"
+ 

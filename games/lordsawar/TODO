@@ -1,2 +1,3 @@
   *  New user/group for game servers?
   *  Game is very slow, which is much unlike previous versions.  A bug? 
+  *  Game crashes upon completion of quest. (SIGBUS)

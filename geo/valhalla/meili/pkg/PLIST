@@ -1,0 +1,28 @@
+@comment $OpenBSD$
+@bin bin/valhalla_map_match_service
+@bin bin/valhalla_meili_worker
+@bin bin/valhalla_run_map_match
+include/valhalla/meili/
+include/valhalla/meili/bucket_queue.h
+include/valhalla/meili/candidate_search.h
+include/valhalla/meili/geojson_reader.h
+include/valhalla/meili/geojson_writer.h
+include/valhalla/meili/geometry_helpers.h
+include/valhalla/meili/graph_helpers.h
+include/valhalla/meili/grid_range_query.h
+include/valhalla/meili/grid_traversal.h
+include/valhalla/meili/map_matcher.h
+include/valhalla/meili/map_matcher_factory.h
+include/valhalla/meili/map_matching.h
+include/valhalla/meili/match_result.h
+include/valhalla/meili/match_route.h
+include/valhalla/meili/measurement.h
+include/valhalla/meili/priority_queue.h
+include/valhalla/meili/routing.h
+include/valhalla/meili/service.h
+include/valhalla/meili/universal_cost.h
+include/valhalla/meili/viterbi_search.h
+lib/libvalhalla_meili.a
+lib/libvalhalla_meili.la
+@lib lib/libvalhalla_meili.so.${LIBvalhalla_meili_VERSION}
+lib/pkgconfig/libvalhalla_meili.pc

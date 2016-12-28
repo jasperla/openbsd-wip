@@ -2,7 +2,6 @@
 
 COMMENT =		fast, compact, powerful binary (de-)serialization
 
-SHARED_ONLY =		yes
 MODULES =		cpan
 DISTNAME =		Sereal-3.005
 CATEGORIES =		devel

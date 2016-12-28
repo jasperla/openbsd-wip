@@ -2,11 +2,15 @@
 
 COMMENT =		command-line frontend for sigrok logic analyzer
 
-DISTNAME =		sigrok-cli-0.3.1
+SIGROK_PROJECT =        sigrok-cli
+SIGROK_VERSION =        0.6.0
 
-WANTLIB += c ftdi glib-2.0 gthread-2.0 iconv intl m pcre pthread
-WANTLIB += python3.2m sigrok sigrokdecode usb usb-1.0 util z zip
+WANTLIB += c ftdi glib-2.0 iconv intl m pcre pthread serialport
+WANTLIB += sigrok sigrokdecode usb usb-1.0 util z zip
+WANTLIB += ${MODPY_WANTLIB}
 
+MODULES =		lang/python
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 LIB_DEPENDS =		comms/sigrok/libsigrok \
 			comms/sigrok/libsigrokdecode \
 			devel/glib2

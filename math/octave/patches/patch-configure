@@ -1,0 +1,32 @@
+$OpenBSD: patch-configure,v 1.9 2016/04/23 12:44:14 steven Exp $
+
+Use GNU readline as our base readline lacks rl_prefer_env_winsize.
+
+--- configure.orig	Sun Nov 13 17:22:50 2016
++++ configure	Thu Dec 15 12:25:21 2016
+@@ -44606,13 +44606,13 @@ fi
+ 
+     ac_octave_save_LIBS="$LIBS"
+     LIBS="$TERM_LIBS"
+-    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for rl_set_keyboard_input_timeout in -lreadline" >&5
+-$as_echo_n "checking for rl_set_keyboard_input_timeout in -lreadline... " >&6; }
++    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for rl_set_keyboard_input_timeout in -lereadline" >&5
++$as_echo_n "checking for rl_set_keyboard_input_timeout in -lereadline... " >&6; }
+ if ${ac_cv_lib_readline_rl_set_keyboard_input_timeout+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lreadline  $LIBS"
++LIBS="-lereadline  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -44651,7 +44651,7 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_readline_rl_set_keyboard_input_timeout" >&5
+ $as_echo "$ac_cv_lib_readline_rl_set_keyboard_input_timeout" >&6; }
+ if test "x$ac_cv_lib_readline_rl_set_keyboard_input_timeout" = xyes; then :
+-  READLINE_LIBS="-lreadline"
++  READLINE_LIBS="-lereadline"
+ 
+ $as_echo "#define USE_READLINE 1" >>confdefs.h
+ 

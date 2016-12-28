@@ -1,6 +1,5 @@
 # $OpenBSD: Makefile,v 1.34 2015/04/04 11:42:17 edd Exp $
 
-SHARED_ONLY=	Yes
 
 COMMENT=	communications server for Jabber/XMPP written in Lua
 DISTNAME =	metronome-3.7

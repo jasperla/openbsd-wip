@@ -2,7 +2,7 @@
 
 COMMENT =		frontend for the mupen64plus N64 emulator
 
-MODPY_EGG_VERSION =	0.2.1
+MODPY_EGG_VERSION =	0.2.3
 DISTNAME =		m64py-${MODPY_EGG_VERSION}
 
 CATEGORIES =		emulators
@@ -12,15 +12,13 @@ HOMEPAGE =		http://m64py.sourceforge.net/
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=m64py/}
+MASTER_SITES =		https://github.com/mupen64plus/mupen64plus-ui-python/releases/download/${MODPY_EGG_VERSION}/
 
 MODULES =		lang/python
-BUILD_DEPENDS =		x11/py-qt4
+BUILD_DEPENDS =		x11/py-qt5
 RUN_DEPENDS =		devel/desktop-file-utils \
 			meta/mupen64plus \
-			misc/shared-mime-info \
-			x11/gtk+2,-guic \
-			x11/py-qt4
+			x11/py-qt5
 
 NO_TEST =		Yes
 

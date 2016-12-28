@@ -1,2 +1,1 @@
-Aborts unless -O0 is passed to the build.
-https://github.com/colobot/colobot/issues/593
+Builds and installs, but does not run for some reason.

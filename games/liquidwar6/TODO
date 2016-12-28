@@ -1,2 +1,5 @@
 - Seems to segfault on any use
 - disable --enable-allinone ?
+  - IMHO it should be enabled -- czarkoff@
+- tests?
+- doxygen docs?

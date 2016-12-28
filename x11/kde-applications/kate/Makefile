@@ -4,16 +4,16 @@ COMMENT =	KDE advanced text editor
 DISTNAME =	kate-${VERSION}
 CATEGORIES =	textproc
 
-WANTLIB =  KF5Activities KF5Attica KF5Auth KF5Bookmarks KF5Codecs
+WANTLIB += KF5Activities KF5Attica KF5Auth KF5Bookmarks KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5CoreAddons KF5Crash KF5DBusAddons KF5GuiAddons KF5I18n
 WANTLIB += KF5IconThemes KF5ItemModels KF5ItemViews KF5JobWidgets
 WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets KF5NewStuff
-WANTLIB += KF5Notifications KF5Package KF5Parts KF5Plasma KF5Service
-WANTLIB += KF5Solid KF5SonnetUi KF5TextEditor KF5TextWidgets KF5ThreadWeaver
-WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Script Qt5Sql
-WANTLIB += Qt5Widgets Qt5Xml c git2 m
+WANTLIB += KF5Package KF5Parts KF5Plasma KF5Service KF5Solid KF5SonnetUi
+WANTLIB += KF5TextEditor KF5TextWidgets KF5ThreadWeaver KF5Wallet
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Core
+WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Script Qt5Sql Qt5Widgets
+WANTLIB += Qt5Xml c git2 m
 
 KDE5 =		Yes
 

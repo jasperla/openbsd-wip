@@ -1,4 +1,4 @@
-$OpenBSD: patch-texk_bibtex-x_Makefile_in,v 1.2 2015/05/18 21:37:36 edd Exp $
+$OpenBSD: patch-texk_bibtex-x_Makefile_in,v 1.3 2016/06/01 12:46:39 edd Exp $
 
 Missing pthread linkage
 

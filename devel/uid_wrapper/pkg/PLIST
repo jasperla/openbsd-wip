@@ -1,0 +1,8 @@
+@comment $OpenBSD$
+lib/cmake/
+lib/cmake/uid_wrapper/
+lib/cmake/uid_wrapper/uid_wrapper-config-version.cmake
+lib/cmake/uid_wrapper/uid_wrapper-config.cmake
+@lib lib/libuid_wrapper.so.${LIBuid_wrapper_VERSION}
+lib/pkgconfig/uid_wrapper.pc
+@man man/man1/uid_wrapper.1

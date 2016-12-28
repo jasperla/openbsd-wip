@@ -3,19 +3,14 @@
 COMMENT =		tiled hierarchical open routing
 
 VALHALLA_PROJECT =	thor
-VALHALLA_VERSION =	0.0.0
 
 SHARED_LIBS +=  valhalla_thor             0.0 # 0.0
 
 WANTLIB += boost_date_time-mt boost_filesystem boost_program_options-mt
-WANTLIB += boost_serialization-mt boost_system boost_system-mt
-WANTLIB += boost_thread-mt c crypto curl freexl geos geos_c iconv
-WANTLIB += idn intl lzma m prime_server proj protobuf pthread
-WANTLIB += sodium spatialite sqlite3 ssl stdc++ valhalla_baldr
-WANTLIB += valhalla_loki valhalla_midgard valhalla_mjolnir valhalla_odin
-WANTLIB += valhalla_sif xml2 z zmq ${MODLUA_WANTLIB}
-
-GH_COMMIT =		2affaa4060d5bf8a1242e305f33e00bed862bdcc
+WANTLIB += boost_regex-mt boost_system boost_thread-mt c crypto
+WANTLIB += curl iconv idn intl m nghttp2 prime_server protobuf
+WANTLIB += pthread sodium ssl valhalla_baldr valhalla_meili
+WANTLIB += valhalla_midgard valhalla_odin valhalla_sif z zmq
 
 MODULES =		gcc4 \
 			lang/lua
@@ -23,7 +18,9 @@ MODLUA_VERSION =	5.2
 MODGCC4_LANGS =		c c++
 MODGCC4_ARCHS =		*
 LIB_DEPENDS =		geo/valhalla/baldr \
-			geo/valhalla/loki \
-			geo/valhalla/odin
+			geo/valhalla/meili \
+			geo/valhalla/midgard \
+			geo/valhalla/odin \
+			geo/valhalla/sif
 
 .include <bsd.port.mk>

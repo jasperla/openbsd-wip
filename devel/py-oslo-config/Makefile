@@ -2,7 +2,7 @@
 
 COMMENT =		Oslo Configuration API
 
-MODPY_EGG_VERSION =	2.3.0
+MODPY_EGG_VERSION =	2.4.0
 DISTNAME =		oslo.config-${MODPY_EGG_VERSION}
 PKGNAME =		py-oslo-config-${MODPY_EGG_VERSION}
 CATEGORIES =		devel

@@ -23,13 +23,38 @@ share/examples/munin/static/
 @sample ${SYSCONFDIR}/munin/static/
 share/examples/munin/static/css/
 @sample ${SYSCONFDIR}/munin/static/css/
+share/examples/munin/static/css/_base.scss
+@sample ${SYSCONFDIR}/munin/static/css/_base.scss
+share/examples/munin/static/css/_forms.scss
+@sample ${SYSCONFDIR}/munin/static/css/_forms.scss
+share/examples/munin/static/css/_graphs.scss
+@sample ${SYSCONFDIR}/munin/static/css/_graphs.scss
+share/examples/munin/static/css/_header.scss
+@sample ${SYSCONFDIR}/munin/static/css/_header.scss
+share/examples/munin/static/css/_layout.scss
+@sample ${SYSCONFDIR}/munin/static/css/_layout.scss
+share/examples/munin/static/css/_mixins.scss
+@sample ${SYSCONFDIR}/munin/static/css/_mixins.scss
 share/examples/munin/static/css/_responsive.scss
+@sample ${SYSCONFDIR}/munin/static/css/_responsive.scss
+share/examples/munin/static/css/materialdesignicons.css
+@sample ${SYSCONFDIR}/munin/static/css/materialdesignicons.css
 share/examples/munin/static/css/style.css
 @sample ${SYSCONFDIR}/munin/static/css/style.css
 share/examples/munin/static/css/style.scss
 @sample ${SYSCONFDIR}/munin/static/css/style.scss
-share/examples/munin/static/dynazoom.html
-@sample ${SYSCONFDIR}/munin/static/dynazoom.html
+share/examples/munin/static/fonts/
+@sample ${SYSCONFDIR}/munin/static/fonts/
+share/examples/munin/static/fonts/materialdesignicons-webfont.eot
+@sample ${SYSCONFDIR}/munin/static/fonts/materialdesignicons-webfont.eot
+share/examples/munin/static/fonts/materialdesignicons-webfont.svg
+@sample ${SYSCONFDIR}/munin/static/fonts/materialdesignicons-webfont.svg
+share/examples/munin/static/fonts/materialdesignicons-webfont.ttf
+@sample ${SYSCONFDIR}/munin/static/fonts/materialdesignicons-webfont.ttf
+share/examples/munin/static/fonts/materialdesignicons-webfont.woff
+@sample ${SYSCONFDIR}/munin/static/fonts/materialdesignicons-webfont.woff
+share/examples/munin/static/fonts/materialdesignicons-webfont.woff2
+@sample ${SYSCONFDIR}/munin/static/fonts/materialdesignicons-webfont.woff2
 share/examples/munin/static/img/
 @sample ${SYSCONFDIR}/munin/static/img/
 share/examples/munin/static/img/favicons/
@@ -92,24 +117,6 @@ share/examples/munin/static/img/favicons/mstile-310x310.png
 @sample ${SYSCONFDIR}/munin/static/img/favicons/mstile-310x310.png
 share/examples/munin/static/img/favicons/mstile-70x70.png
 @sample ${SYSCONFDIR}/munin/static/img/favicons/mstile-70x70.png
-share/examples/munin/static/img/icons/
-@sample ${SYSCONFDIR}/munin/static/img/icons/
-share/examples/munin/static/img/icons/breadcrumb-separator.png
-@sample ${SYSCONFDIR}/munin/static/img/icons/breadcrumb-separator.png
-share/examples/munin/static/img/icons/eventrulerhandle.png
-@sample ${SYSCONFDIR}/munin/static/img/icons/eventrulerhandle.png
-share/examples/munin/static/img/icons/expand-reduce.png
-@sample ${SYSCONFDIR}/munin/static/img/icons/expand-reduce.png
-share/examples/munin/static/img/icons/expand.png
-@sample ${SYSCONFDIR}/munin/static/img/icons/expand.png
-share/examples/munin/static/img/icons/glyphicons-208-remove-2-white.png
-@sample ${SYSCONFDIR}/munin/static/img/icons/glyphicons-208-remove-2-white.png
-share/examples/munin/static/img/icons/glyphicons-28-search-white.png
-@sample ${SYSCONFDIR}/munin/static/img/icons/glyphicons-28-search-white.png
-share/examples/munin/static/img/icons/glyphicons-390-new-window-alt-white.png
-@sample ${SYSCONFDIR}/munin/static/img/icons/glyphicons-390-new-window-alt-white.png
-share/examples/munin/static/img/icons/glyphicons-429-git-compare.png
-@sample ${SYSCONFDIR}/munin/static/img/icons/glyphicons-429-git-compare.png
 share/examples/munin/static/img/loading.gif
 @sample ${SYSCONFDIR}/munin/static/img/loading.gif
 share/examples/munin/static/img/logo-h-neg.png
@@ -118,38 +125,46 @@ share/examples/munin/static/img/logo-h-neg.svg
 @sample ${SYSCONFDIR}/munin/static/img/logo-h-neg.svg
 share/examples/munin/static/img/logo-h.png
 @sample ${SYSCONFDIR}/munin/static/img/logo-h.png
+share/examples/munin/static/img/logo-h.svg
+@sample ${SYSCONFDIR}/munin/static/img/logo-h.svg
 share/examples/munin/static/img/logo.png
 @sample ${SYSCONFDIR}/munin/static/img/logo.png
 share/examples/munin/static/img/placeholder.gif
 @sample ${SYSCONFDIR}/munin/static/img/placeholder.gif
 share/examples/munin/static/js/
 @sample ${SYSCONFDIR}/munin/static/js/
+share/examples/munin/static/js/component-absolute.js
+@sample ${SYSCONFDIR}/munin/static/js/component-absolute.js
 share/examples/munin/static/js/component-autorefresh.js
 @sample ${SYSCONFDIR}/munin/static/js/component-autorefresh.js
 share/examples/munin/static/js/component-dynazoom-modal.js
 @sample ${SYSCONFDIR}/munin/static/js/component-dynazoom-modal.js
 share/examples/munin/static/js/component-eventruler.js
 @sample ${SYSCONFDIR}/munin/static/js/component-eventruler.js
+share/examples/munin/static/js/component-graph.js
+@sample ${SYSCONFDIR}/munin/static/js/component-graph.js
+share/examples/munin/static/js/component-modal.js
+@sample ${SYSCONFDIR}/munin/static/js/component-modal.js
 share/examples/munin/static/js/component-tabs.js
 @sample ${SYSCONFDIR}/munin/static/js/component-tabs.js
+share/examples/munin/static/js/component-timerangeSwitch.js
+@sample ${SYSCONFDIR}/munin/static/js/component-timerangeSwitch.js
+share/examples/munin/static/js/component-toolbar.js
+@sample ${SYSCONFDIR}/munin/static/js/component-toolbar.js
+share/examples/munin/static/js/component-treeview.js
+@sample ${SYSCONFDIR}/munin/static/js/component-treeview.js
 share/examples/munin/static/js/formatdate.js
 @sample ${SYSCONFDIR}/munin/static/js/formatdate.js
 share/examples/munin/static/js/jquery-1.8.3.js
 @sample ${SYSCONFDIR}/munin/static/js/jquery-1.8.3.js
-share/examples/munin/static/js/jquery.lazyload-1.9.3.js
-@sample ${SYSCONFDIR}/munin/static/js/jquery.lazyload-1.9.3.js
 share/examples/munin/static/js/munin-categoryview.js
 @sample ${SYSCONFDIR}/munin/static/js/munin-categoryview.js
 share/examples/munin/static/js/munin-comparison.js
 @sample ${SYSCONFDIR}/munin/static/js/munin-comparison.js
-share/examples/munin/static/js/munin-domainview-treeview.js
-@sample ${SYSCONFDIR}/munin/static/js/munin-domainview-treeview.js
 share/examples/munin/static/js/munin-domainview.js
 @sample ${SYSCONFDIR}/munin/static/js/munin-domainview.js
 share/examples/munin/static/js/munin-dynazoom.js
 @sample ${SYSCONFDIR}/munin/static/js/munin-dynazoom.js
-share/examples/munin/static/js/munin-nodeview-timerangeswitch.js
-@sample ${SYSCONFDIR}/munin/static/js/munin-nodeview-timerangeswitch.js
 share/examples/munin/static/js/munin-nodeview.js
 @sample ${SYSCONFDIR}/munin/static/js/munin-nodeview.js
 share/examples/munin/static/js/munin-overview.js

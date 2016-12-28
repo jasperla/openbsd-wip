@@ -1,8 +1,9 @@
 @comment $OpenBSD$
-include/sigrok-proto.h
-include/sigrok.h
+include/libsigrok/
+include/libsigrok/libsigrok.h
+include/libsigrok/proto.h
+include/libsigrok/version.h
 lib/libsigrok.a
 lib/libsigrok.la
 @lib lib/libsigrok.so.${LIBsigrok_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libsigrok.pc

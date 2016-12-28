@@ -1,0 +1,8 @@
+@comment $OpenBSD$
+@bin bin/pd
+lib/phrasendrescher/
+lib/phrasendrescher/http-raw.so
+lib/phrasendrescher/mssql.so
+lib/phrasendrescher/pkey.so
+lib/phrasendrescher/ssh.so
+@man man/man1/pd.1

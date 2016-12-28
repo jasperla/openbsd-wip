@@ -1,16 +1,10 @@
 $OpenBSD$
-
-Pick up ncursesw on OpenBSD. We do not deal with ncursesw via pkg-config
-(as it is in openbsd base), which is what the build system appears to
-expect.
-
---- configure.ac.orig	Sat Jan  3 23:45:00 2015
-+++ configure.ac	Mon Apr  6 14:12:11 2015
-@@ -224,17 +224,19 @@ AC_ARG_ENABLE(sdl_mixer,
- 
+--- configure.ac.orig	Sun Apr 17 14:12:47 2016
++++ configure.ac	Sun Sep  4 16:14:21 2016
+@@ -227,16 +227,11 @@ AC_ARG_ENABLE(sdl_mixer,
  MAINFILES="\$(BASEMAINFILES)"
  
--dnl curses checking
+ dnl curses checking
 -if test "$enable_curses" = "yes"; then
 -	AM_PATH_NCURSESW(with_curses=yes, with_curses=no)
 -	if test "$with_curses" = "yes"; then
@@ -21,19 +15,11 @@ expect.
 -		MAINFILES="${MAINFILES} \$(GCUMAINFILES)"
 -	fi 
 -fi
-+dnl curses checking - build system hosed for OpenBSD
-+dnl yes, we have this stuff
-+
-+dnl if test "$enable_curses" = "yes"; then
-+dnl 	AM_PATH_NCURSESW(with_curses=yes, with_curses=no)
-+dnl 	if test "$with_curses" = "yes"; then
-+ 		AC_DEFINE(USE_NCURSES, 1, [Define to 1 if NCurses is found.])
-+ 		AC_DEFINE(USE_GCU, 1, [Define to 1 if using the Curses frontend.])
-+dnl 		CFLAGS="${CFLAGS} ${NCURSES_CFLAGS}"
-+ 		LIBS="${LIBS} -lncursesw"
-+ 		MAINFILES="${MAINFILES} \$(GCUMAINFILES)"
-+dnl 	fi 
-+dnl fi
++AC_DEFINE(USE_NCURSES, 1, [Define to 1 if NCurses is found.])
++AC_DEFINE(USE_GCU, 1, [Define to 1 if using the Curses frontend.])
++CFLAGS="${CFLAGS} -D_XOPEN_SOURCE_EXTENDED"
++LIBS="${LIBS} -lncurses"
++MAINFILES="${MAINFILES} \$(GCUMAINFILES)"
  
  AC_CHECK_FUNCS([mvwaddnwstr use_default_colors can_change_color])
  

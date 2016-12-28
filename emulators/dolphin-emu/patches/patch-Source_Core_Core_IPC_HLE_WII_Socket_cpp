@@ -1,0 +1,12 @@
+$OpenBSD$
+From upstream f4cc52813c36cd68ea444f5b1c5b9e694b303b56.
+--- Source/Core/Core/IPC_HLE/WII_Socket.cpp.orig	Fri Jun 24 02:09:07 2016
++++ Source/Core/Core/IPC_HLE/WII_Socket.cpp	Mon Jul 18 00:12:18 2016
+@@ -4,6 +4,7 @@
+ 
+ #include <algorithm>
+ #ifndef _WIN32
++#include <arpa/inet.h>
+ #include <unistd.h>
+ #endif
+ 

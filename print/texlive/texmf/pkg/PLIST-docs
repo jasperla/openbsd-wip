@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST-docs,v 1.16 2016/06/01 12:47:34 edd Exp $
 @conflict teTeX_texmf-doc-*
 @conflict texlive_base-<2015
 @conflict texlive_texmf-minimal-<2015

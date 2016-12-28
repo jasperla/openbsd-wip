@@ -1,0 +1,12 @@
+$OpenBSD$
+--- test/TestPfsRotate.cpp.orig	Sat Dec 17 13:16:13 2016
++++ test/TestPfsRotate.cpp	Sat Dec 17 13:16:28 2016
+@@ -27,7 +27,7 @@
+ #ifdef __clang__
+ #include <tr1/tuple>
+ #else
+-#include <tuple>
++#include <boost/tuple/tuple.hpp>
+ #endif
+ 
+ #include <Libpfs/array2d.h>

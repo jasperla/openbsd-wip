@@ -2,12 +2,14 @@
 
      SUBDIR += baldr
      SUBDIR += loki
+     SUBDIR += meili
      SUBDIR += midgard
      SUBDIR += mjolnir
      SUBDIR += odin
      SUBDIR += sif
      SUBDIR += skadi
      SUBDIR += thor
+     SUBDIR += tools
      SUBDIR += tyr
 
 .include <bsd.port.subdir.mk>

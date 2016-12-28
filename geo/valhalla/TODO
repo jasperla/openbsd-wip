@@ -1,1 +1,9 @@
-No upstream release yet.
+odin needs protobuf 2.6.1 and xxd
+
+odin also needs localedef to generate files/locales.h:
+http://pubs.opengroup.org/onlinepubs/9699919799/utilities/localedef.html
+
+meili needs rapidjson
+
+baldr and odin need xxd (from editors/vim) to build; seems like a weird dependency
+

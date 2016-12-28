@@ -2,7 +2,7 @@
 
 COMMENT =	Qt4 client for the X2Go system
 
-DISTNAME =	x2goclient-4.0.5.1
+DISTNAME =	x2goclient-4.0.5.2
 
 CATEGORIES =	x11
 
@@ -21,12 +21,14 @@ MASTER_SITES =	http://code.x2go.org/releases/source/x2goclient/
 
 MODULES +=	x11/qt4
 
-LIB_DEPENDS =	security/libssh \
+LIB_DEPENDS +=	security/libssh \
 		databases/openldap \
 		print/cups,-libs
 
-BUILD_DEPENDS =	x11/nx/nxcomp \
+BUILD_DEPENDS +=x11/nx/nxcomp \
 		x11/nx/nxproxy
+
+RUN_DEPENDS +=	shells/bash
 
 DOCSDIR =	${PREFIX}/share/doc/x2goclient
 EXAMPLESDIR =	${PREFIX}/share/examples/x2goclient

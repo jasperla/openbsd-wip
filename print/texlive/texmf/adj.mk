@@ -1,4 +1,4 @@
-# $OpenBSD: adj.mk,v 1.2 2015/05/18 21:37:58 edd Exp $
+# $OpenBSD: adj.mk,v 1.3 2016/06/01 12:47:30 edd Exp $
 #
 # Replace interpreter paths in these files.
 #

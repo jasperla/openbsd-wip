@@ -1,0 +1,7 @@
+ - remaining popen(3) and several system(3) calls should be replaced with
+   fork(2) + execvp(3)
+ - this port requires vim-compatible editor, so probably rdep on vim is required
+ - patches should probably be made upstreamable ("#ifdef HAVE_PLEDGE" and
+   corresponding autoconf glue)
+ - alternatively popen(3) may be reintroduced with shell escape function vifm
+   already has

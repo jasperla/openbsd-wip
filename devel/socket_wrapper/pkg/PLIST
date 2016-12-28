@@ -1,0 +1,8 @@
+@comment $OpenBSD$
+lib/cmake/
+lib/cmake/socket_wrapper/
+lib/cmake/socket_wrapper/socket_wrapper-config-version.cmake
+lib/cmake/socket_wrapper/socket_wrapper-config.cmake
+@lib lib/libsocket_wrapper.so.${LIBsocket_wrapper_VERSION}
+lib/pkgconfig/socket_wrapper.pc
+@man man/man1/socket_wrapper.1

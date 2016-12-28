@@ -1,0 +1,13 @@
+$OpenBSD$
+From upstream 9a14cbb225b3859e208bfa9a0988ffc7f2e7f633.
+--- Source/Core/Common/CommonFuncs.h.orig	Fri Jun 24 02:09:07 2016
++++ Source/Core/Common/CommonFuncs.h	Mon Jul 18 00:09:15 2016
+@@ -101,7 +101,7 @@ namespace Common
+ inline u8 swap8(u8 _data) {return _data;}
+ inline u32 swap24(const u8* _data) {return (_data[0] << 16) | (_data[1] << 8) | _data[2];}
+ 
+-#ifdef ANDROID
++#if defined(ANDROID) || defined(__OpenBSD__)
+ #undef swap16
+ #undef swap32
+ #undef swap64

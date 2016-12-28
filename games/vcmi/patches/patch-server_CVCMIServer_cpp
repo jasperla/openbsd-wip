@@ -1,7 +1,7 @@
 $OpenBSD$
---- server/CVCMIServer.cpp.orig	Mon Mar 14 15:28:17 2016
-+++ server/CVCMIServer.cpp	Sat Apr  2 02:34:56 2016
-@@ -556,7 +556,7 @@ static void handleCommandOptions(int argc, char *argv[
+--- server/CVCMIServer.cpp.orig	Tue Nov  1 21:26:09 2016
++++ server/CVCMIServer.cpp	Mon Nov 14 11:11:25 2016
+@@ -540,7 +540,7 @@ static void handleCommandOptions(int argc, char *argv[
  	}
  }
  
@@ -10,7 +10,7 @@ $OpenBSD$
  void handleLinuxSignal(int sig)
  {
  	const int STACKTRACE_SIZE = 100;
-@@ -587,7 +587,7 @@ int main(int argc, char** argv)
+@@ -571,7 +571,7 @@ int main(int argc, char** argv)
  {
  	// Installs a sig sev segmentation violation handler
  	// to log stacktrace

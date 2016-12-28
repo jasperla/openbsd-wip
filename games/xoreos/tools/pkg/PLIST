@@ -3,9 +3,11 @@
 @bin bin/cdpth2tga
 @bin bin/convert2da
 @bin bin/desmall
+@bin bin/fixpremiumgff
 @bin bin/gff2xml
 @bin bin/nbfs2tga
 @bin bin/ncgr2tga
+@bin bin/ncsdis
 @bin bin/tlk2xml
 @bin bin/unerf
 @bin bin/unherf
@@ -19,9 +21,11 @@
 @man man/man1/cdpth2tga.1
 @man man/man1/convert2da.1
 @man man/man1/desmall.1
+@man man/man1/fixpremiumgff.1
 @man man/man1/gff2xml.1
 @man man/man1/nbfs2tga.1
 @man man/man1/ncgr2tga.1
+@man man/man1/ncsdis.1
 @man man/man1/tlk2xml.1
 @man man/man1/unerf.1
 @man man/man1/unherf.1
@@ -36,6 +40,7 @@ share/doc/xoreos-tools/AUTHORS
 share/doc/xoreos-tools/CODE_OF_CONDUCT.md
 share/doc/xoreos-tools/CONTRIBUTING.md
 share/doc/xoreos-tools/COPYING
+share/doc/xoreos-tools/COPYING.GPLv2
 share/doc/xoreos-tools/ChangeLog
 share/doc/xoreos-tools/NEWS.md
 share/doc/xoreos-tools/README.md

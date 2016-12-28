@@ -1,0 +1,12 @@
+$OpenBSD$
+--- adb/common.py.orig	Sat Oct  8 20:34:13 2016
++++ adb/common.py	Sat Oct  8 20:34:40 2016
+@@ -118,7 +118,7 @@ class UsbHandle(object):
+       if e.value == libusb1.LIBUSB_ERROR_NOT_FOUND:
+         _LOG.warning('Kernel driver not found for interface: %s.', iface_number)
+       else:
+-        raise
++        _LOG.warning('Could not detach kernel driver for interface: %s.', iface_number)
+     handle.claimInterface(iface_number)
+     self._handle = handle
+     self._interface_number = iface_number

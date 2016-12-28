@@ -2,7 +2,7 @@
 
 COMMENT =		reads/writes lzf files/buffers
 
-DISTNAME =		Compress-LZF-3.43
+DISTNAME =		Compress-LZF-3.8
 
 CATEGORIES =		archivers
 
