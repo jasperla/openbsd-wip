@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+include/mpack.h
+lib/libmpack.a
+@lib lib/libmpack.so.${LIBmpack_VERSION}
+lib/pkgconfig/mpack.pc
