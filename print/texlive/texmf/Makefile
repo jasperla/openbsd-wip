@@ -10,11 +10,13 @@ COMMENT-buildset =	smallest texlive texmf for building ports
 #   * Update the buildset conflict markers in PLIST-buildset.
 #   * Add a more restrictive RUN_DEPEND upon the buildset.
 
-DISTNAME =		texlive-${DIST_V}-texmf
+DISTNAME =		texlive-${DIST_V}b-texmf
 MASTER_SITES0 =		https://spacehopper.org/mirrors/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
-			texmf-var-pregen-${V}${EXTRACT_SUFX}:0
+			texlive-${DIST_V}-extra${EXTRACT_SUFX}
+
+# XXX pregen
+#			texmf-var-pregen-${V}${EXTRACT_SUFX}:0
 
 PKGNAME-main =		texlive_texmf-minimal-${V}
 PKGNAME-full =		texlive_texmf-full-${V}
@@ -61,40 +63,45 @@ MODPY_RUNDEP =		No
 
 SUBST_VARS +=		RUBY
 
+WRKDIST =		${WRKDIR}/texlive-${DIST_V}-texmf
+
 # Substitute correct interpreter paths into scripts.
 # Some are done automatically by MODULES
 pre-configure:
+	# XXX re-do these
 	@# Don't use builtin ruby.port.mk substitution. It uses
 	@# find, which takes an age on such a large directory.
-	for F in ${RUBY_ADJ_FILES}; do \
-	    perl -pi -e '($$. == 1) && s@^.*$$@#!${RUBY}@' ${WRKSRC}/$$F; \
-	done
-	for F in ${WISH_ADJ_FILES}; do \
-	    ${MODTCL_WISH_ADJ} ${WRKSRC}/$$F; \
-	done
-	for F in ${TEXLUA_ADJ_FILES}; do \
-	    perl -pi -e '($$. == 1) && s@^.*$$@#!${PREFIX}/bin/texlua@' \
-	    ${WRKSRC}/$$F; \
-	done
-	for F in ${LUA_ADJ_FILES}; do \
-	    perl -pi -e '($$. == 1) && s@^.*$$@#!${MODLUA_BIN}@' ${WRKSRC}/$$F; \
-	done
-	for F in ${BASH_ADJ_FILES}; do \
-	    perl -pi -e '($$. == 1) && s@^.*$$@#!${LOCALBASE}/bin/bash@' \
-	    ${WRKSRC}/$$F; \
-	done
-	${SUBST_CMD} ${WRKSRC}/texmf-dist/scripts/context/stubs/unix/mtxrun
+	#for F in ${RUBY_ADJ_FILES}; do \
+	#    perl -pi -e '($$. == 1) && s@^.*$$@#!${RUBY}@' ${WRKSRC}/$$F; \
+	#done
+	#for F in ${WISH_ADJ_FILES}; do \
+	#    ${MODTCL_WISH_ADJ} ${WRKSRC}/$$F; \
+	#done
+	#for F in ${TEXLUA_ADJ_FILES}; do \
+	#    perl -pi -e '($$. == 1) && s@^.*$$@#!${PREFIX}/bin/texlua@' \
+	#    ${WRKSRC}/$$F; \
+	#done
+	#for F in ${LUA_ADJ_FILES}; do \
+	#    perl -pi -e '($$. == 1) && s@^.*$$@#!${MODLUA_BIN}@' ${WRKSRC}/$$F; \
+	#done
+	#for F in ${BASH_ADJ_FILES}; do \
+	#    perl -pi -e '($$. == 1) && s@^.*$$@#!${LOCALBASE}/bin/bash@' \
+	#    ${WRKSRC}/$$F; \
+	#done
+	#${SUBST_CMD} ${WRKSRC}/texmf-dist/scripts/context/stubs/unix/mtxrun
+	true
 
 do-install:
 	mv ${WRKDIST}/texmf-dist ${PREFIX}/share
 
+	# XXX generate pregen
 	# plug in my pregenerated map and formats
 	#
 	# These are created (as root) with:
 	#   updmap-sys
 	#   fmtutil-sys --all
 	#   context --make
-	mv ${WRKDIR}/texmf-var ${PREFIX}/share
+	#mv ${WRKDIR}/texmf-var ${PREFIX}/share
 
 	# Put manuals in the right place.
 	#
@@ -124,7 +131,10 @@ post-install:
 update-plist: plist
 plist:
 	cd ${FILESDIR} && ${MODPY_BIN} mk_plists.py \
-		${TRUEPREFIX}/share/examples/py-texscythe/texlive2015.tlpdb.gz
+		/home/edd/source/texscythe/texlive2016.tlpdb.gz
+
+# XXX
+#${TRUEPREFIX}/share/examples/py-texscythe/texlive2015.tlpdb.gz
 
 
 .include <bsd.port.mk>
