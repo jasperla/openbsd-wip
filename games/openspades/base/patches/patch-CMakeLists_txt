@@ -1,0 +1,11 @@
+$OpenBSD$
+--- CMakeLists.txt.orig	Thu Dec 29 20:13:27 2016
++++ CMakeLists.txt	Thu Dec 29 20:13:33 2016
+@@ -225,7 +225,6 @@ if(UNIX AND NOT APPLE)
+ 
+ 	# install asset paks (including non-GPL one)
+ 	install(FILES
+-		${CMAKE_BINARY_DIR}/Resources/pak000-Nonfree.pak
+ 		${CMAKE_BINARY_DIR}/Resources/pak002-Base.pak
+ 		${CMAKE_BINARY_DIR}/Resources/pak005-Models.pak
+ 		${CMAKE_BINARY_DIR}/Resources/pak010-BaseSkin.pak
