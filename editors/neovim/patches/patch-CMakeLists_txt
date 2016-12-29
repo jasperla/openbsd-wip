@@ -1,0 +1,15 @@
+$OpenBSD$
+
+Use only luajit for now.
+
+--- CMakeLists.txt.orig	Thu Dec 29 15:06:11 2016
++++ CMakeLists.txt	Thu Dec 29 15:09:45 2016
+@@ -388,7 +388,7 @@ endforeach()
+ include(LuaHelpers)
+ set(LUA_DEPENDENCIES lpeg mpack bit)
+ if(NOT LUA_PRG)
+-  foreach(CURRENT_LUA_PRG luajit lua5.1 lua5.2 lua)
++    foreach(CURRENT_LUA_PRG luajit${LUAJIT_V})
+     # If LUA_PRG is set find_program() will not search
+     unset(LUA_PRG CACHE)
+     unset(LUA_PRG_WORKS)
