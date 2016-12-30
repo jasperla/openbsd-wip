@@ -39,16 +39,17 @@ MODRUBY_RUNDEP =	No
 MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
 
-RUN_DEPENDS-main +=	texlive_base-${V}:print/texlive/base \
-			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset
-
-RUN_DEPENDS-full =	texlive_texmf-minimal-${V}:print/texlive/texmf,-main \
-			${MODPY_RUN_DEPENDS} \
-			${_MODLUA_RUNDEPENDS}
-RUN_DEPENDS-context +=	texlive_texmf-full-${V}:print/texlive/texmf,-full \
-			${MODRUBY_RUNDEPENDS}
-RUN_DEPENDS-docs +=	texlive_base-${V}:print/texlive/base \
-			x11/p5-Tk
+# XXX put back dependencies
+#RUN_DEPENDS-main +=	texlive_base-${V}:print/texlive/base \
+#			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset
+#
+#RUN_DEPENDS-full =	texlive_texmf-minimal-${V}:print/texlive/texmf,-main \
+#			${MODPY_RUN_DEPENDS} \
+#			${_MODLUA_RUNDEPENDS}
+#RUN_DEPENDS-context +=	texlive_texmf-full-${V}:print/texlive/texmf,-full \
+#			${MODRUBY_RUNDEPENDS}
+#RUN_DEPENDS-docs +=	texlive_base-${V}:print/texlive/base \
+#			x11/p5-Tk
 
 MULTI_PACKAGES =	-context -docs -full -main -buildset
 
@@ -68,28 +69,34 @@ WRKDIST =		${WRKDIR}/texlive-${DIST_V}-texmf
 # Substitute correct interpreter paths into scripts.
 # Some are done automatically by MODULES
 pre-configure:
-	# XXX re-do these
+	@# Don't use substitution from the Python port, since we need to swap in
+	@# different versions.
+	for F in ${PYTHON2_ADJ_FILES}; do \
+	    perl -pi -e '($$. == 1) && s@^.*$$@#!${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_2}@' ${WRKSRC}/$$F; \
+	done
+	for F in ${PYTHON3_ADJ_FILES}; do \
+	    perl -pi -e '($$. == 1) && s@^.*$$@#!${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_3}@' ${WRKSRC}/$$F; \
+	done
 	@# Don't use builtin ruby.port.mk substitution. It uses
 	@# find, which takes an age on such a large directory.
-	#for F in ${RUBY_ADJ_FILES}; do \
-	#    perl -pi -e '($$. == 1) && s@^.*$$@#!${RUBY}@' ${WRKSRC}/$$F; \
-	#done
-	#for F in ${WISH_ADJ_FILES}; do \
-	#    ${MODTCL_WISH_ADJ} ${WRKSRC}/$$F; \
-	#done
-	#for F in ${TEXLUA_ADJ_FILES}; do \
-	#    perl -pi -e '($$. == 1) && s@^.*$$@#!${PREFIX}/bin/texlua@' \
-	#    ${WRKSRC}/$$F; \
-	#done
-	#for F in ${LUA_ADJ_FILES}; do \
-	#    perl -pi -e '($$. == 1) && s@^.*$$@#!${MODLUA_BIN}@' ${WRKSRC}/$$F; \
-	#done
-	#for F in ${BASH_ADJ_FILES}; do \
-	#    perl -pi -e '($$. == 1) && s@^.*$$@#!${LOCALBASE}/bin/bash@' \
-	#    ${WRKSRC}/$$F; \
-	#done
-	#${SUBST_CMD} ${WRKSRC}/texmf-dist/scripts/context/stubs/unix/mtxrun
-	true
+	for F in ${RUBY_ADJ_FILES}; do \
+	    perl -pi -e '($$. == 1) && s@^.*$$@#!${RUBY}@' ${WRKSRC}/$$F; \
+	done
+	for F in ${WISH_ADJ_FILES}; do \
+	    ${MODTCL_WISH_ADJ} ${WRKSRC}/$$F; \
+	done
+	for F in ${TEXLUA_ADJ_FILES}; do \
+	    perl -pi -e '($$. == 1) && s@^.*$$@#!${PREFIX}/bin/texlua@' \
+	    ${WRKSRC}/$$F; \
+	done
+	for F in ${LUA_ADJ_FILES}; do \
+	    perl -pi -e '($$. == 1) && s@^.*$$@#!${MODLUA_BIN}@' ${WRKSRC}/$$F; \
+	done
+	for F in ${BASH_ADJ_FILES}; do \
+	    perl -pi -e '($$. == 1) && s@^.*$$@#!${LOCALBASE}/bin/bash@' \
+	    ${WRKSRC}/$$F; \
+	done
+	${SUBST_CMD} ${WRKSRC}/texmf-dist/scripts/context/stubs/unix/mtxrun
 
 do-install:
 	mv ${WRKDIST}/texmf-dist ${PREFIX}/share

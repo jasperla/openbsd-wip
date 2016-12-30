@@ -5,11 +5,7 @@ COMMENT =		base binaries for TeXLive typesetting distribution
 # This year they used a different datestamp on the -source tarball.
 DISTNAME =		texlive-${DIST_V}b-source
 PKGNAME =		texlive_base-${V}
-<<<<<<< Makefile
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source
-=======
-REVISION =		0
->>>>>>> 1.85
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
