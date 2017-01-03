@@ -12,6 +12,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/pandas/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/${MODPY_PYCACHE}info.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pandas/_hash.so
 lib/python${MODPY_VERSION}/site-packages/pandas/_join.so
 lib/python${MODPY_VERSION}/site-packages/pandas/_period.so
 lib/python${MODPY_VERSION}/site-packages/pandas/_sparse.so
@@ -500,8 +501,9 @@ lib/python${MODPY_VERSION}/site-packages/pandas/io/tests/parser/compression.py
 lib/python${MODPY_VERSION}/site-packages/pandas/io/tests/parser/converters.py
 lib/python${MODPY_VERSION}/site-packages/pandas/io/tests/parser/data/
 lib/python${MODPY_VERSION}/site-packages/pandas/io/tests/parser/data/iris.csv
-lib/python${MODPY_VERSION}/site-packages/pandas/io/tests/parser/data/salary.table.csv
-lib/python${MODPY_VERSION}/site-packages/pandas/io/tests/parser/data/salary.table.gz
+lib/python${MODPY_VERSION}/site-packages/pandas/io/tests/parser/data/salaries.csv
+lib/python${MODPY_VERSION}/site-packages/pandas/io/tests/parser/data/salaries.csv.bz2
+lib/python${MODPY_VERSION}/site-packages/pandas/io/tests/parser/data/salaries.csv.gz
 lib/python${MODPY_VERSION}/site-packages/pandas/io/tests/parser/data/sauron.SHIFT_JIS.csv
 lib/python${MODPY_VERSION}/site-packages/pandas/io/tests/parser/data/test1.csv
 lib/python${MODPY_VERSION}/site-packages/pandas/io/tests/parser/data/test1.csv.bz2
@@ -953,11 +955,13 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tools/
 lib/python${MODPY_VERSION}/site-packages/pandas/tools/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pandas/tools/${MODPY_PYCACHE}hashing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tools/${MODPY_PYCACHE}merge.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tools/${MODPY_PYCACHE}pivot.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tools/${MODPY_PYCACHE}plotting.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tools/${MODPY_PYCACHE}tile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tools/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pandas/tools/hashing.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tools/merge.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tools/pivot.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tools/plotting.py
@@ -966,6 +970,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tools/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/tools/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/tools/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tools/tests/${MODPY_PYCACHE}test_concat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pandas/tools/tests/${MODPY_PYCACHE}test_hashing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tools/tests/${MODPY_PYCACHE}test_join.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tools/tests/${MODPY_PYCACHE}test_merge.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/tools/tests/${MODPY_PYCACHE}test_merge_asof.${MODPY_PYC_MAGIC_TAG}pyc
@@ -985,6 +990,7 @@ lib/python${MODPY_VERSION}/site-packages/pandas/tools/tests/data/tolerance.csv
 lib/python${MODPY_VERSION}/site-packages/pandas/tools/tests/data/trades.csv
 lib/python${MODPY_VERSION}/site-packages/pandas/tools/tests/data/trades2.csv
 lib/python${MODPY_VERSION}/site-packages/pandas/tools/tests/test_concat.py
+lib/python${MODPY_VERSION}/site-packages/pandas/tools/tests/test_hashing.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tools/tests/test_join.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tools/tests/test_merge.py
 lib/python${MODPY_VERSION}/site-packages/pandas/tools/tests/test_merge_asof.py
@@ -1096,7 +1102,6 @@ lib/python${MODPY_VERSION}/site-packages/pandas/util/
 lib/python${MODPY_VERSION}/site-packages/pandas/util/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pandas/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pandas/util/${MODPY_PYCACHE}clipboard.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/util/${MODPY_PYCACHE}decorators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/util/${MODPY_PYCACHE}depr_module.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/util/${MODPY_PYCACHE}doctools.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1106,7 +1111,16 @@ lib/python${MODPY_VERSION}/site-packages/pandas/util/${MODPY_PYCACHE}terminal.${
 lib/python${MODPY_VERSION}/site-packages/pandas/util/${MODPY_PYCACHE}testing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/util/${MODPY_PYCACHE}validators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pandas/util/_move.so
-lib/python${MODPY_VERSION}/site-packages/pandas/util/clipboard.py
+lib/python${MODPY_VERSION}/site-packages/pandas/util/clipboard/
+lib/python${MODPY_VERSION}/site-packages/pandas/util/clipboard/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pandas/util/clipboard/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pandas/util/clipboard/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pandas/util/clipboard/${MODPY_PYCACHE}clipboards.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pandas/util/clipboard/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pandas/util/clipboard/${MODPY_PYCACHE}windows.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pandas/util/clipboard/clipboards.py
+lib/python${MODPY_VERSION}/site-packages/pandas/util/clipboard/exceptions.py
+lib/python${MODPY_VERSION}/site-packages/pandas/util/clipboard/windows.py
 lib/python${MODPY_VERSION}/site-packages/pandas/util/decorators.py
 lib/python${MODPY_VERSION}/site-packages/pandas/util/depr_module.py
 lib/python${MODPY_VERSION}/site-packages/pandas/util/doctools.py
