@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+lib/tcl/
+lib/tcl/tcl${MODTCL_VERSION}/
+lib/tcl/tcl${MODTCL_VERSION}/sqlite3/
+lib/tcl/tcl${MODTCL_VERSION}/sqlite3/libtclsqlite3.so
+lib/tcl/tcl${MODTCL_VERSION}/sqlite3/pkgIndex.tcl
