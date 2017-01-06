@@ -2,7 +2,7 @@
 
 COMMENT =		non-blocking server API for distributed computing
 
-V =			0.4.0
+V =			0.6.1
 DISTNAME =		prime_server-$V
 
 SHARED_LIBS +=  prime_server              0.0 # 0.0
@@ -12,7 +12,7 @@ CATEGORIES =		net
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c crypto curl m nghttp2 pthread sodium ssl z
+WANTLIB += c czmq crypto curl m nghttp2 pthread sodium ssl z
 WANTLIB += zmq
 
 GH_ACCOUNT =		kevinkreiser
@@ -25,6 +25,7 @@ MODGCC4_ARCHS =		*
 BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS}
 LIB_DEPENDS =		net/curl \
+			net/czmq \
 			net/zeromq
 
 USE_GMAKE =		Yes

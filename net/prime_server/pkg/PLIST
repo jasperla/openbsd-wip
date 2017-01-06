@@ -1,11 +1,13 @@
 @comment $OpenBSD$
 @bin bin/prime_echod
+@bin bin/prime_filed
 @bin bin/prime_httpd
 @bin bin/prime_proxyd
 @bin bin/prime_serverd
 @bin bin/prime_workerd
 include/prime_server/
 include/prime_server/http_protocol.hpp
+include/prime_server/http_util.hpp
 include/prime_server/logging.hpp
 include/prime_server/netstring_protocol.hpp
 include/prime_server/prime_server.hpp
