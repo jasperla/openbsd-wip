@@ -4,7 +4,7 @@ COMMENT =	library for parsing/normalizing street addresses
 
 GH_ACCOUNT =	openvenues
 GH_PROJECT =	libpostal
-GH_TAGNAME =	v0.3.1
+GH_TAGNAME =	v0.3.2
 
 SHARED_LIBS +=	postal	0.0	# 0.3
 
