@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-@bin bin/mednafen-server
-share/examples/mednafen-server/
-share/examples/mednafen-server/standard.conf
