@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =  GL Qt5Core Qt5Gui Qt5Multimedia Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Svg Qt5Widgets Qt5Xml c m pthread quazip5 z
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=chessx/$V/}
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=chessx/}
 EXTRACT_SUFX =		.tgz
 
 MODULES =		x11/qt5 devel/qmake
@@ -28,7 +28,7 @@ CXXFLAGS +=		-I${LOCALBASE}/include/quazip5
 
 # make sure bundled quazip is not picked up
 post-extract:
-	rm -Rf ${WRKDIST}/src/quazip
+	rm -R ${WRKDIST}/src/quazip
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/release/chessx ${PREFIX}/bin/
