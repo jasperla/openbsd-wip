@@ -1,7 +1,9 @@
 $OpenBSD$
 
+Audio plugins not really expected to work, but do build, so enable them
+anyway to make it easier for people working on porting this.
+
 It should be possible to get linux-v4l2 working with a bit more effort.
-ffmpeg can capture from these sources anyway (source format video4linux2).
 
 --- plugins/CMakeLists.txt.orig	Sat Dec 24 12:44:14 2016
 +++ plugins/CMakeLists.txt	Mon Jan  9 17:52:38 2017
