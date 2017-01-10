@@ -1,0 +1,17 @@
+$OpenBSD$
+
+Flip the default setting so that jackd is started automatically. Otherwise
+obs is unable to connect to the JACK socket, as a result it doesn't display
+the settings page, so you can't tell it to auto-start JACK.
+
+--- plugins/linux-jack/jack-input.c.orig	Tue Jan 10 09:31:00 2017
++++ plugins/linux-jack/jack-input.c	Tue Jan 10 09:31:16 2017
+@@ -117,7 +117,7 @@ static void *jack_create(obs_data_t *settings, obs_sou
+ static void jack_input_defaults(obs_data_t *settings)
+ {
+ 	obs_data_set_default_int(settings, "channels", 2);
+-	obs_data_set_default_bool(settings, "startjack", false);
++	obs_data_set_default_bool(settings, "startjack", true);
+ }
+ 
+ /**
