@@ -13,9 +13,13 @@ Rather than spending time working on these, hacking on a sndio plugin
 would be a better approach, the plugin system is nicely modular so there
 shouldn't too much of a battle with infrastructure.
 
+sndio available via ffmpeg (see pkg/README).
+
 * Video input
 
-Available via ffmpeg (see pkg/README). The linux-v4l2 should be able to
-work with multimedia/libv4l but as usual with V4L2 applications it will
-require various patching to work with OpenBSD.
+linux-v4l2 should be able to work with multimedia/libv4l but as usual
+with V4L2 applications it will require various patching to work with
+OpenBSD.
+
+video4linux2 available via ffmpeg (see pkg/README).
 
