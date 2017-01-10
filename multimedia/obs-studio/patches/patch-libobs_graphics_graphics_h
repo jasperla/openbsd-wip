@@ -1,0 +1,12 @@
+$OpenBSD$
+--- libobs/graphics/graphics.h.orig	Mon Jan  9 17:16:52 2017
++++ libobs/graphics/graphics.h	Mon Jan  9 17:17:09 2017
+@@ -433,7 +433,7 @@ struct gs_window {
+ 	void                    *hwnd;
+ #elif defined(__APPLE__)
+ 	__unsafe_unretained id  view;
+-#elif defined(__linux__) || defined(__FreeBSD__)
++#elif defined(__linux__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ 	/* I'm not sure how portable defining id to uint32_t is. */
+ 	uint32_t id;
+ 	void* display;

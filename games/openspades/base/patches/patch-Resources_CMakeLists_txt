@@ -1,0 +1,20 @@
+$OpenBSD$
+--- Resources/CMakeLists.txt.orig	Thu Dec 29 16:53:15 2016
++++ Resources/CMakeLists.txt	Thu Dec 29 16:53:31 2016
+@@ -1,16 +1,6 @@
+ 
+ if(OPENSPADES_RESOURCES)
+ 
+-	if (WIN32)
+-		# No automatic downloading for Windows (for now)
+-	elseif (UNIX)
+-		add_custom_target(OpenSpades_Resources_DevPaks ALL COMMENT "Downloading non-GPL assets")
+-		add_custom_command(
+-			TARGET OpenSpades_Resources_DevPaks
+-			COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/downloadpak.sh
+-			WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
+-	endif()
+-
+ 	# TODO: subgroups for script files
+ 	file(GLOB_RECURSE SCRIPT_FILES ${CMAKE_CURRENT_SOURCE_DIR}/Scripts/*.as)
+ 	file(GLOB_RECURSE SHADER_FILES ${CMAKE_CURRENT_SOURCE_DIR}/Shaders/*.fs

@@ -1,0 +1,31 @@
+* Audio input
+
+linux-pulseaudio builds, but fails unless you "pulseaudio --start" first,
+even then doesn't allow device selection when pulse input is used as source,
+and doesn't seem to actually record anything whether pulse's input or output 
+is used as a source. 
+ 
+linux-jack builds, I've patched to autostart the daemon (which I think is
+expected for JACK clients anyway), but doesn't allow device selection, and
+doesn't seem able to record anything.
+
+Rather than spending time working on these, hacking on a sndio plugin
+would be a better approach, the plugin system is nicely modular so there
+shouldn't too much of a battle with infrastructure.
+
+sndio available via ffmpeg (see pkg/README).
+
+* Video input
+
+linux-v4l2 should be able to work with multimedia/libv4l but as usual
+with V4L2 applications it will require various patching to work with
+OpenBSD.
+
+video4linux2 available via ffmpeg (see pkg/README).
+
+* General
+
+If you "start recording" and "stop recording" then it sometimes seems
+to hang when stopping.
+
+I haven't tried streaming.

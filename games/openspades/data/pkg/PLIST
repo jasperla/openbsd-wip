@@ -1,0 +1,8 @@
+@comment $OpenBSD$
+share/games/
+share/games/openspades/
+share/games/openspades/Resources/
+share/games/openspades/Resources/LICENSE.pak000.md
+share/games/openspades/Resources/LICENSE.unifont.txt
+share/games/openspades/Resources/font-unifont.pak
+share/games/openspades/Resources/pak000-Nonfree.pak
