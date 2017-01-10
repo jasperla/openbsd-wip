@@ -20,10 +20,11 @@ MAINTAINER=	Jordon <openbsd@sirjorj.com>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL Qt5Core Qt5Gui Qt5Widgets Qt5X11Extras X11 X11-xcb
-WANTLIB += avcodec avdevice avfilter avformat avutil c curl dbus-1
-WANTLIB += fontconfig freetype jansson m pthread speexdsp swresample
-WANTLIB += swscale x264 xcb z
+WANTLIB += GL ICE Qt5Core Qt5Gui Qt5Widgets Qt5X11Extras SM X11
+WANTLIB += X11-xcb Xcomposite Xext Xfixes avcodec avdevice avfilter
+WANTLIB += avformat avutil c curl dbus-1 fdk-aac fontconfig freetype
+WANTLIB += jansson m pthread speexdsp swresample swscale x264
+WANTLIB += xcb xcb-shm xcb-xfixes xcb-xinerama z
 
 MODULES=	devel/cmake \
 		gcc4 \
@@ -31,7 +32,8 @@ MODULES=	devel/cmake \
 MODGCC4_ARCHS=	*
 MODGCC4_LANGS=	c++
 
-LIB_DEPENDS=	devel/jansson \
+LIB_DEPENDS=	audio/fdk-aac \
+		devel/jansson \
 		graphics/ffmpeg \
 		net/curl \
 		x11/qt5/qtx11extras

@@ -1,20 +1,17 @@
 $OpenBSD$
 
-Audio plugins not really expected to work, but do build, so enable them
-anyway to make it easier for people working on porting this.
-
+Audio plugins not really expected to work, but do build.
 It should be possible to get linux-v4l2 working with a bit more effort.
+V+A are supported via ffmpeg.
 
 --- plugins/CMakeLists.txt.orig	Sat Dec 24 12:44:14 2016
 +++ plugins/CMakeLists.txt	Mon Jan  9 17:52:38 2017
-@@ -44,6 +44,10 @@ elseif("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
+@@ -44,6 +44,8 @@ elseif("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
  	add_subdirectory(linux-pulseaudio)
  	add_subdirectory(linux-v4l2)
  	add_subdirectory(linux-jack)
 +elseif("${CMAKE_SYSTEM_NAME}" MATCHES "OpenBSD")
 +	add_subdirectory(linux-capture)
-+	add_subdirectory(linux-pulseaudio)
-+	add_subdirectory(linux-jack)
  endif()
  
  if(WIN32 OR APPLE)
