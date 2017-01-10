@@ -23,3 +23,9 @@ OpenBSD.
 
 video4linux2 available via ffmpeg (see pkg/README).
 
+* General
+
+If you "start recording" and "stop recording" then it sometimes seems
+to hang when stopping.
+
+I haven't tried streaming.
