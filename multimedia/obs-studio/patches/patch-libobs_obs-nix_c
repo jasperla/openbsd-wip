@@ -1,0 +1,53 @@
+$OpenBSD$
+--- libobs/obs-nix.c.orig	Sat Dec 24 12:44:14 2016
++++ libobs/obs-nix.c	Tue Jan 10 08:58:52 2017
+@@ -19,10 +19,12 @@
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <unistd.h>
+-#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <sys/sysctl.h>
+ #endif
++#if !defined(__OpenBSD__)
+ #include <sys/sysinfo.h>
++#endif
+ #include <sys/utsname.h>
+ #include <xcb/xcb.h>
+ #include <X11/Xlib.h>
+@@ -134,7 +136,7 @@ static void log_processor_info(void)
+ 	dstr_free(&processor);
+ 	free(line);
+ }
+-#elif defined(__FreeBSD__)
++#elif defined(__FreeBSD__) || defined(__OpenBSD__)
+ static void log_processor_info(void)
+ {
+ 	int mib[2];
+@@ -158,12 +160,26 @@ static void log_processor_info(void)
+ 
+ static void log_memory_info(void)
+ {
++#if defined(__OpenBSD__)
++	int mib[2];
++	size_t len;
++	int64_t mem;
++
++	mib[0] = CTL_HW;
++	mib[1] = HW_PHYSMEM64;
++	len = sizeof(mem);
++
++	if (sysctl(mib, 2, &mem, &len, NULL, 0) >= 0)
++		blog(LOG_INFO, "Physical Memory: %"PRIi64"MB Total", mem / 1024 / 1024);
++#else
+ 	struct sysinfo info;
+ 	if (sysinfo(&info) < 0)
+ 		return;
+ 
+ 	blog(LOG_INFO, "Physical Memory: %"PRIu64"MB Total",
+ 			(uint64_t)info.totalram * info.mem_unit / 1024 / 1024);
++#endif
++	return;
+ }
+ 
+ static void log_kernel_version(void)
