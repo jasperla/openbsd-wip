@@ -1,6 +1,3 @@
-Investigate test failures
-=========================
-
 ```
 Longest-running tests:
 180.1 seconds: /usr/local/bin/python2.7 -u test__doctests.py
@@ -36,15 +33,3 @@ test_threading_local.py
 Some of these tests are failing because we of IPv4 requests on IPv6 sockets and
 vice versa, but some are not related to this issue.  Things should finally get
 sorted out.
-
-Sort out the trouble with libev configuration
-=============================================
-
-Contrary to upstream's suggestions we do not embed libev and C-Ares with Gevent.
-Due to some implementation details Gevent needs libev's `config.h`.  By default
-it runs `cd libev_sources && ./configure`, which is too fragile for a
-network-related library with potential security impact.  We should work out the
-proper way to provide it.  Possible options are:
-
- * Add it to devel/libev port.
- * Provide a `config.h` in `FILESDIR`.

@@ -20,8 +20,9 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_DISTUTILS_BUILDARGS = --build-base="${WRKBUILD}" --build-lib="${WRKBUILD}"
 
-BUILD_DEPENDS =		lang/cython \
-			devel/py-cffi
+BUILD_DEPENDS =		devel/libev:configure \
+			devel/py-cffi \
+			lang/cython
 LIB_DEPENDS =		devel/libev \
 			net/libcares
 RUN_DEPENDS =		devel/py-greenlet
@@ -36,8 +37,8 @@ LDFLAGS +=		-L${LOCALBASE}/lib
 
 WRKBUILD =		${WRKSRC}/src
 
-post-patch:
-	cp ${FILESDIR}/config.h ${WRKSRC}/deps/libev/config.h
+pre-patch:
+	cp ${WRKDIR}/devel/libev/libev-*/config.h ${WRKSRC}/deps/libev/config.h
 
 do-test:
 	cd ${WRKBUILD}/greentest && ${SETENV} ${ALL_TEST_ENV} ${MODPY_BIN} \

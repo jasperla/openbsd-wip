@@ -1,0 +1,17 @@
+$OpenBSD$
+--- setup.py.orig	Mon Jan 16 15:05:24 2017
++++ setup.py	Mon Jan 16 15:06:37 2017
+@@ -117,13 +117,6 @@ if ((len(sys.argv) >= 2
+ 
+ def run_setup(ext_modules, run_make):
+     if run_make:
+-        if (not LIBEV_EMBED and not WIN and cffi_modules) or PYPY:
+-            # We're not embedding libev but we do want
+-            # to build the CFFI module. We need to configure libev
+-            # because the CORE Extension won't.
+-            # TODO: Generalize this.
+-            system(libev_configure_command)
+-
+         MakeSdist.make()
+ 
+     setup(
