@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/05/26 23:58:58 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/25 14:54:48 zhuk Exp $
 
 COMMENT =	integration of QML and KDE workspaces
 DISTNAME =	kdeclarative-${VERSION}
@@ -25,7 +25,8 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kio \
 		devel/kf5/kpackage \
 		devel/kf5/kwidgetsaddons \
-		devel/kf5/kwindowsystem
+		devel/kf5/kwindowsystem \
+		x11/qt5/qtdeclarative
 
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}

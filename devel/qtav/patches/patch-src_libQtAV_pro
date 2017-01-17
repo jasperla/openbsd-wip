@@ -1,0 +1,13 @@
+$OpenBSD$
+The Unix world is slightly larger than Linux and OS X.
+--- src/libQtAV.pro.orig	Fri Jan 13 17:04:32 2017
++++ src/libQtAV.pro	Fri Jan 13 17:05:03 2017
+@@ -515,7 +515,7 @@ mac {
+    }
+ }
+ 
+-unix:!android:!mac {
++linux:!android {
+ #debian
+ DEB_INSTALL_LIST = .$$[QT_INSTALL_LIBS]/libQt*AV.so.*
+ libqtav.target = libqtav.install

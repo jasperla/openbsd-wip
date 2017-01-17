@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/06/06 11:29:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2016/12/25 14:54:49 zhuk Exp $
 
 COMMENT =		KDE framework for Plasma runners
 DISTNAME =		krunner-${VERSION}
@@ -17,7 +17,8 @@ LIB_DEPENDS =		devel/kf5/kconfig \
 			devel/kf5/kservice \
 			devel/kf5/plasma-framework \
 			devel/kf5/solid \
-			devel/kf5/threadweaver
+			devel/kf5/threadweaver \
+			x11/qt5/qtdeclarative
 
 TEST_IS_INTERACTIVE =	X11
 

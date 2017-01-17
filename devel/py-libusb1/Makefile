@@ -11,7 +11,7 @@ MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
-MODPY_EGG_VERSION =	1.5.3
+MODPY_EGG_VERSION =	1.6.2
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 

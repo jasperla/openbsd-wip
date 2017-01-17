@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/06/06 11:41:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2016/12/25 14:54:49 zhuk Exp $
 
 COMMENT =		interface for media player KParts
 DISTNAME =		kmediaplayer-${VERSION}

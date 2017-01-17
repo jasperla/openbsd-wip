@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/05/26 23:58:59 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/25 14:54:49 zhuk Exp $
 
 COMMENT =		KDE framework for sharing additional application data
+VERSION =		5.30.1
 DISTNAME =		knewstuff-${VERSION}
 
 SHARED_LIBS +=  KF5NewStuff               1.0
@@ -27,7 +28,8 @@ LIB_DEPENDS =		devel/kf5/karchive \
 			devel/kf5/kservice \
 			devel/kf5/ktextwidgets \
 			devel/kf5/kwidgetsaddons \
-			devel/kf5/kxmlgui
+			devel/kf5/kxmlgui \
+			x11/qt5/qtdeclarative
 
 PORTHOME =		${WRKDIR}
 TEST_IS_INTERACTIVE =	X11

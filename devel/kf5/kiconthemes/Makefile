@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/05/26 23:58:58 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/25 14:54:49 zhuk Exp $
 
 COMMENT =		KDE icon GUI utility library
 DISTNAME =		kiconthemes-${VERSION}
@@ -19,7 +19,8 @@ LIB_DEPENDS =		devel/kf5/karchive \
 			devel/kf5/kcoreaddons \
 			devel/kf5/ki18n \
 			devel/kf5/kitemviews \
-			devel/kf5/kwidgetsaddons
+			devel/kf5/kwidgetsaddons \
+			x11/qt5/qtsvg
 
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/05/31 06:25:18 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2016/12/25 14:54:48 zhuk Exp $
 
 COMMENT =		legacy support for kdelibs-4.x compatibility
 DISTNAME =		kdelibs4support-${VERSION}
@@ -45,7 +45,10 @@ LIB_DEPENDS =		devel/kf5/kcompletion \
 			devel/kf5/kunitconversion \
 			devel/kf5/kwidgetsaddons \
 			devel/kf5/kwindowsystem \
-			devel/kf5/kxmlgui
+			devel/kf5/kxmlgui \
+			x11/qt5/qtsvg \
+			x11/qt5/qttools \
+			x11/qt5/qtx11extras
 
 IS_PORTING_AID =	Yes
 

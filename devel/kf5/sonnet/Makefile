@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/05/26 23:58:59 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/25 14:54:49 zhuk Exp $
 
 COMMENT-main =		multi-language spell checker for KDE
 COMMENT-aspell =	ASpell plugin for Sonnet
@@ -20,6 +20,7 @@ WANTLIB-hunspell =	${WANTLIB} KF5SonnetCore Qt5Core hunspell-1.3 m
 LIB_DEPENDS-aspell =	${LIB_DEPENDS} \
 			${BASE_PKGPATH},-main \
 			textproc/aspell/core
+
 LIB_DEPENDS-hunspell =	${LIB_DEPENDS} \
 			${BASE_PKGPATH},-main \
 			textproc/hunspell

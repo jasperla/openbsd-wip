@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_runtime_kwalletd_backend_blowfish_cc,v 1.1.1.1 2016/05/26 23:58:59 zhuk Exp $
+$OpenBSD: patch-src_runtime_kwalletd_backend_blowfish_cc,v 1.2 2016/12/25 14:54:49 zhuk Exp $
 Unbreak build.
 --- src/runtime/kwalletd/backend/blowfish.cc.orig	Sat Nov  5 15:59:12 2016
 +++ src/runtime/kwalletd/backend/blowfish.cc	Sat Dec  3 16:23:16 2016

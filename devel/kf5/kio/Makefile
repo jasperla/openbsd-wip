@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/05/26 23:58:58 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/25 14:54:49 zhuk Exp $
 
 # XXX has some internal dependency problems, look for kpasswdserver.json
 
@@ -45,7 +45,9 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kxmlgui \
 		devel/kf5/solid \
 		textproc/libxml \
-		textproc/libxslt
+		textproc/libxslt \
+		x11/qt5/qtscript \
+		x11/qt5/qtx11extras
 
 # GSSAPI support requires fixing (rewriting?) FindGSSAPI.cmake
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_ACL=Yes \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/05/29 10:50:49 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2016/12/25 14:54:49 zhuk Exp $
 
 COMMENT =		KDE safe desktop-wide storage for passwords
 DISTNAME =		kwallet-${VERSION}

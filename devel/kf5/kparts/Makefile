@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/06/03 19:24:20 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2016/12/25 14:54:49 zhuk Exp $
 
 COMMENT =		KDE plugin framework for user interface components
 DISTNAME =		kparts-${VERSION}

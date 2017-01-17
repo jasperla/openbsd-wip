@@ -9,8 +9,6 @@ CATEGORIES =	devel
 
 HOMEPAGE =	http://www.leonerd.org.uk/code/libtermkey/
 
-MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
-
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 

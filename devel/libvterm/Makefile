@@ -12,8 +12,6 @@ SHARED_LIBS +=  vterm                     0.0 # 0.0
 
 CATEGORIES =	devel
 
-MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
-
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 

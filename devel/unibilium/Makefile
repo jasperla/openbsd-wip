@@ -12,8 +12,6 @@ SHARED_LIBS +=  unibilium                 0.0 # 2.0
 
 CATEGORIES =	devel
 
-MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
-
 # LGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 

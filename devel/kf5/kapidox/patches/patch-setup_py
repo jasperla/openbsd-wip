@@ -1,4 +1,4 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2016/05/26 23:58:57 zhuk Exp $
+$OpenBSD: patch-setup_py,v 1.2 2016/12/25 14:54:48 zhuk Exp $
 Correct manpages install location.
 --- setup.py.orig	Wed Nov 30 23:31:00 2016
 +++ setup.py	Wed Nov 30 23:31:43 2016

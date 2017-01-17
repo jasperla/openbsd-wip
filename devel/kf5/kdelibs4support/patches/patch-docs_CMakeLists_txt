@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-docs_CMakeLists_txt,v 1.1 2016/12/25 14:55:47 zhuk Exp $
 
 Do no install docs for kcontrol to avoid conflicts with kde-runtime-4 kcontrol
 documentation

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/05/26 23:58:59 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2016/12/25 14:54:49 zhuk Exp $
 
 COMMENT =	core components and tools of the Plasma Workspaces
 DISTNAME =	plasma-framework-${VERSION}
@@ -46,9 +46,13 @@ LIB_DEPENDS =	devel/kf5/kactivities \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
-		devel/kf5/kxmlgui
+		devel/kf5/kxmlgui \
+		x11/qt5/qtdeclarative \
+		x11/qt5/qtsvg \
+		x11/qt5/qtx11extras
 
-CONFIGURE_ARGS =	-DBUILD_EXAMPLES=Yes
+CONFIGURE_ARGS =	-DBUILD_EXAMPLES=Yes \
+			-DCMAKE_DISABLE_FIND_PACKAGE_KF5Wayland=Yes
 
 # TODO: The following tests FAILED (some dependencies missing?):
 # 1 - plasma-dialogqmltest (Failed)
@@ -58,7 +62,6 @@ CONFIGURE_ARGS =	-DBUILD_EXAMPLES=Yes
 # 10 - plasma-configmodeltest (Failed)
 # 11 - dialognativetest (Failed)
 # 13 - plasma-storagetest (Failed)
-
 
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}

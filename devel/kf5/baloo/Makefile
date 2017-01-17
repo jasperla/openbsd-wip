@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/05/26 23:58:59 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2016/12/28 18:42:16 zhuk Exp $
 
 COMMENT =	KDE file search and metadata handling framework
 VERSION =	15.04.26
 DISTNAME =	baloo-${VERSION}
 PKGNAME =	kf5-${DISTNAME}
+REVISION =	0
 
 SHARED_LIBS =	KF5Baloo		1.0
 SHARED_LIBS +=	KF5BalooXapian		1.0
@@ -46,7 +47,8 @@ LIB_DEPENDS =	databases/xapian-core \
 		devel/kf5/ki18n \
 		devel/kf5/kidletime \
 		devel/kf5/kio \
-		devel/kf5/solid
+		devel/kf5/solid \
+		x11/qt5/qtdeclarative
 
 CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0063=OLD
 
