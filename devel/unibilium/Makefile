@@ -1,4 +1,4 @@
-# $OpenBSD:
+# $OpenBSD$
 
 COMMENT =	very basic terminfo library
 VERSION =	1.2.0
