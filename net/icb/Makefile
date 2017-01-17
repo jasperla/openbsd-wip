@@ -1,10 +1,10 @@
 # $OpenBSD$
 
-COMMENT =	minimalistic FIFO- and filesystem-based ICB client
-GH_ACCOUNT =	czarkoff
-GH_PROJECT =	icb
-GH_TAGNAME =	0.2
-CATEGORIES =	net
+COMMENT =		minimalistic FIFO- and filesystem-based ICB client
+GH_ACCOUNT =		czarkoff
+GH_PROJECT =		icb
+GH_TAGNAME =		0.2
+CATEGORIES =		net
 
 MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
