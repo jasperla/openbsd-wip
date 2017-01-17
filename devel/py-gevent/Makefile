@@ -18,7 +18,9 @@ WANTLIB += ${MODPY_WANTLIB} cares ev pthread
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_DISTUTILS_BUILDARGS = --build-base="${WRKBUILD}" --build-lib="${WRKBUILD}"
+MODPY_DISTUTILS_BUILDARGS =	--build-base="${WRKBUILD}" \
+				--build-lib="${WRKBUILD}" \
+				--build-temp="tempdir"
 
 BUILD_DEPENDS =		devel/libev:configure \
 			devel/py-cffi \
@@ -39,6 +41,12 @@ WRKBUILD =		${WRKSRC}/src
 
 pre-patch:
 	cp ${WRKDIR}/devel/libev/libev-*/config.h ${WRKSRC}/deps/libev/config.h
+
+post-build:
+	rm -Rf ${WRKBUILD}/tempdir
+
+post-install:
+	rm -Rf ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/greentest
 
 do-test:
 	cd ${WRKBUILD}/greentest && ${SETENV} ${ALL_TEST_ENV} ${MODPY_BIN} \

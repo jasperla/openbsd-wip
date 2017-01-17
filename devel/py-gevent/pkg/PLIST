@@ -7,6 +7,13 @@ lib/python${MODPY_VERSION}/site-packages/gevent-${MODPY_EGG_VERSION}-py${MODPY_V
 lib/python${MODPY_VERSION}/site-packages/gevent-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/gevent-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/gevent-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/gevent.egg-info/
+lib/python${MODPY_VERSION}/site-packages/gevent.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/gevent.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/gevent.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/gevent.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/gevent.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/gevent.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/gevent/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gevent/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/gevent/_compat.py
