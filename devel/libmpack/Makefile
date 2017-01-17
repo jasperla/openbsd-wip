@@ -1,7 +1,5 @@
 # $OpenBSD: Makefile.template,v 1.75 2016/03/20 17:19:49 naddy Exp $
 
-# XXX where is the -O3 coming from?
-
 COMMENT =	simple implementation of msgpack in C
 
 V =		1.0.3
@@ -23,6 +21,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/lua
 USE_GMAKE =		Yes
 
+CPPFLAGS +=		-I${MODLUA_INCL_DIR}
 MAKE_FLAGS +=		config=release
 
 post-build:
