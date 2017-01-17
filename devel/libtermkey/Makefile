@@ -1,25 +1,23 @@
 # $OpenBSD: $
 
-COMMENT =	Library for processing of keyboard entry from terminal
-DISTNAME =	libtermkey-0.18
+COMMENT =	library for processing of keyboard entry from a terminal
+DISTNAME =	libtermkey-0.19
 
-SHARED_LIBS =  termkey                   0.0 # 13.0
+SHARED_LIBS +=	termkey		0.0 # 14.0
 
 CATEGORIES =	devel
-
 HOMEPAGE =	http://www.leonerd.org.uk/code/libtermkey/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += unibilium
+WANTLIB +=	unibilium
 
 MASTER_SITES =	${HOMEPAGE}
 
 LIB_DEPENDS =	devel/unibilium
 
 USE_GMAKE =	Yes
-#USE_LIBTOOL=	gnu
 
 MAKE_FLAGS =	PREFIX=${PREFIX} \
 		MANDIR=${PREFIX}/man
