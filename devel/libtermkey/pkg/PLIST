@@ -28,3 +28,4 @@ lib/pkgconfig/termkey.pc
 @man man/man3/termkey_strpkey.3
 @man man/man3/termkey_waitkey.3
 @man man/man7/termkey.7
+share/doc/pkg-readmes/${FULLPKGNAME}
