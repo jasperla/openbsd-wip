@@ -5,7 +5,7 @@ DISTNAME =		gitless-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
 HOMEPAGE =		http://gitless.com/
 
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
+MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
