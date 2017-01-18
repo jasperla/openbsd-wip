@@ -2,5 +2,4 @@
 include/mpack.h
 lib/libmpack.a
 @lib lib/libmpack.so.${LIBmpack_VERSION}
-lib/lua/${MODLUA_VERSION}/mpack.so
 lib/pkgconfig/mpack.pc

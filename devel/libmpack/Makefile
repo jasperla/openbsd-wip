@@ -1,8 +1,9 @@
 # $OpenBSD: Makefile.template,v 1.75 2016/03/20 17:19:49 naddy Exp $
 
-# XXX where is the -O3 coming from?
+COMMENT-main =	simple implementation of msgpack in C
+COMMENT-lua =	Lua bindings to libmsgpack
 
-COMMENT =	simple implementation of msgpack in C
+PKGNAME-lua =	libmpack-lua-${V}
 
 V =		1.0.3
 DISTNAME =	libmpack-${V}
@@ -17,12 +18,18 @@ CATEGORIES =	devel
 
 HOMEPAGE =	https://github.com/tarruda/libmpack
 
+MULTI_PACKAGES=	-main -lua
+
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
+WANTLIB-lua +=		lua5.1 m
+
 MODULES =		lang/lua
 USE_GMAKE =		Yes
+LIB_DEPENDS-lua +=	${MODLUA_LIB_DEPENDS}
 
+CPPFLAGS +=		-I${MODLUA_INCL_DIR}
 MAKE_FLAGS +=		config=release
 
 post-build:
