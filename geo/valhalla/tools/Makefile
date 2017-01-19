@@ -11,14 +11,20 @@ WANTLIB += pthread sodium ssl valhalla_baldr valhalla_loki valhalla_meili
 WANTLIB += valhalla_midgard valhalla_odin valhalla_sif valhalla_skadi
 WANTLIB += valhalla_thor valhalla_tyr z zmq
 
-MODULES =		gcc4
+MODULES =		gcc4 \
+			lang/python \
+			lang/lua
 MODGCC4_LANGS =		c c++
 MODGCC4_ARCHS =		*
+MODLUA_VERSION =	5.2
 LIB_DEPENDS =		geo/valhalla/loki \
 			geo/valhalla/meili \
+			geo/valhalla/mjolnir \
 			geo/valhalla/sif \
 			geo/valhalla/skadi \
 			geo/valhalla/thor \
 			geo/valhalla/tyr
+
+CONFIGURE_ENV =		PYTHON_VERSION=${MODPY_VERSION}
 
 .include <bsd.port.mk>
