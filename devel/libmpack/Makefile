@@ -8,6 +8,7 @@ PKGNAME-lua =	lua-libmpack-${V}
 
 V =		1.0.3
 DISTNAME =	libmpack-${V}
+PKGNAME-lua =	lua-mpack-${V}
 
 SHARED_LIBS +=	mpack	0.0
 
