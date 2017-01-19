@@ -3,7 +3,8 @@
 COMMENT-main =	simple implementation of msgpack in C
 COMMENT-lua =	Lua bindings to libmsgpack
 
-PKGNAME-lua =	libmpack-lua-${V}
+PKGNAME-main =	libmpack-${V}
+PKGNAME-lua =	lua-libmpack-${V}
 
 V =		1.0.3
 DISTNAME =	libmpack-${V}
@@ -20,10 +21,14 @@ HOMEPAGE =	https://github.com/tarruda/libmpack
 
 MULTI_PACKAGES=	-main -lua
 
+# XXX how to omit flavors of -main?
+FLAVORS =	lua52 lua53
+FLAVOR ?=	${MODLUA_FLAVOR}
+
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB-lua +=		lua5.1 m
+WANTLIB-lua +=		${MODLUA_WANTLIB} m
 
 MODULES =		lang/lua
 USE_GMAKE =		Yes
