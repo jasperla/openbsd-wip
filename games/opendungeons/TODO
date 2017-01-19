@@ -1,0 +1,3 @@
+Builds but does not run (why...?)
+
+(22:36:28) (ConfigManager) [CRITICAL] (ConfigManager.cpp:1620) No valid renderer found. Exiting...
