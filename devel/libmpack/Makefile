@@ -6,6 +6,10 @@ COMMENT-lua =	Lua bindings to libmsgpack
 PKGNAME-main =	libmpack-${V}
 PKGNAME-lua =	lua-libmpack-${V}
 
+# Ensure -main does not get flavored for different lua versions
+FULLPKGNAME-main =	libmpack-$V
+FULLPKGPATH-main =	devel/libmpack,-main
+
 V =		1.0.3
 DISTNAME =	libmpack-${V}
 PKGNAME-lua =	lua-mpack-${V}
@@ -22,7 +26,6 @@ HOMEPAGE =	https://github.com/tarruda/libmpack
 
 MULTI_PACKAGES=	-main -lua
 
-# XXX how to omit flavors of -main?
 FLAVORS =	lua52 lua53
 FLAVOR ?=	${MODLUA_FLAVOR}
 
@@ -34,6 +37,7 @@ WANTLIB-lua +=		${MODLUA_WANTLIB} m
 MODULES =		lang/lua
 USE_GMAKE =		Yes
 LIB_DEPENDS-lua +=	${MODLUA_LIB_DEPENDS}
+RUN_DEPENDS-lua +=	${FULLPKGNAME-main}:${FULLPKGPATH-main}
 
 CPPFLAGS +=		-I${MODLUA_INCL_DIR}
 MAKE_FLAGS +=		config=release
