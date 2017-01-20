@@ -1,12 +1,5 @@
 # $OpenBSD$
 
-# Reasons why the port/package shouldn't be built
-#
-#ONLY_FOR_ARCHS =	???
-#NOT_FOR_ARCHS =	???
-#COMES_WITH =		???
-#BROKEN =		reason
-
 COMMENT =	FFmpeg-based Qt multimedia framework
 
 V =		1.8.0
@@ -24,79 +17,39 @@ CATEGORIES =	devel multimedia
 
 HOMEPAGE =	http://www.qtav.org/
 
-#MAINTAINER =		???
+MAINTAINER =	Vadim Zhukov <zhuk@openbsd.org>
 
-# LGPLv2.1, GPLv3
+# LGPLv2.1 for libraries
+# GPLv3 for executables
 PERMIT_PACKAGE_CDROM =	Yes
 
-# "make port-lib-depends-check" can help
-#WANTLIB =		???
-
-#DIST_SUBDIR =		???
-
-# PATCHFILES are also retrieved from MASTER_SITES*
-#PATCHFILES =		???
-#PATCH_DIST_STRIP =	-p0
+WANTLIB =  GL Qt5Core Qt5Gui Qt5Network Qt5OpenGL Qt5Qml Qt5Quick
+WANTLIB += Qt5Widgets Xv ass avcodec avdevice avfilter avformat
+WANTLIB += avresample avutil c m openal portaudio pthread pulse
+WANTLIB += swresample swscale
 
 MODULES =		devel/qmake x11/qt5
-#BUILD_DEPENDS =	???
-#RUN_DEPENDS =		???
-LIB_DEPENDS =		graphics/ffmpeg
-#TEST_DEPENDS =		???
 
-#MAKE_FLAGS =		???
-#MAKE_ENV =		???
-#FAKE_FLAGS =		???
-#TEST_FLAGS =		???
+RUN_DEPENDS =		devel/desktop-file-utils \
+			x11/gtk+3,-guic
 
-#IS_INTERACTIVE =		Yes
-#TEST_IS_INTERACTIVE =		Yes
+LIB_DEPENDS =		graphics/ffmpeg \
+			audio/openal \
+			audio/portaudio-svn \
+			audio/pulseaudio \
+			x11/qt5/qtdeclarative
 
-# Assume you have one multiple choice flavor: 1 2 3 and switches a b.
-# You would write
-#
-#FLAVORS =	1 2 3 a b
-#FLAVOR ?=
-# grab multiple choice value
-#CHOICE = ${FLAVOR:Na:Nb}
-# check that CHOICE is 1 OR 2 OR 3, or error out
-#.if ${CHOICE} == "1"
-# code for 1
-#.elif ${CHOICE} == "2"
-# code for 2
-#.elif ${CHOICE} == "3"
-# code for 3
-#.else
-#ERRORS += "Fatal: Conflicting flavor: ${FLAVOR}"
-#.endif
-# check for switches
-#.if ${FLAVOR:Ma}
-# code for a
-#.endif
-#.if ${FLAVOR:Mb}
-# code for b
-#.endif
+CONFIGURE_ENV +=	TRUEPREFIX=${TRUEPREFIX}
 
-# Things that we don't want to do for this port/package
-# Generally, DON'T set anything to No if it's not needed.
-# The time gained is not worth it.
-#
-#NO_BUILD =		Yes
-#NO_TEST =		Yes
+# Actually, there are many tests; many of them require
+# having external video/subtitles files, though.
+TEST_IS_INTERACTIVE =	X11
+TEST_LIST =		"ao -ao Pulse" \
+			"ao -ao PortAudio" \
+			"ao -ao OpenAL"
 
-# Overrides for default values
-#
-#CFLAGS =		???
-#LDFLAGS =		???
-#MAKE_FILE =		???
-#PKG_ARCH =		??? (* for arch-independent packages)
-#WRKDIST =		??? if other than ${WRKDIR}/${DISTNAME}
-#WRKSRC =		??? if other than ${WRKDIST}
-#WRKBUILD =		??? if other than ${WRKSRC}
-#WRKCONF =		??? if other than ${WRKBUILD}
-
-#ALL_TARGET =		???
-#INSTALL_TARGET =	???
-#TEST_TARGET =		???
+post-install:
+	rm -Rf ${PREFIX}/share/doc/QtAV-examples-common
+	mv ${PREFIX}/share/doc/common ${PREFIX}/share/doc/QtAV-examples-common
 
 .include <bsd.port.mk>

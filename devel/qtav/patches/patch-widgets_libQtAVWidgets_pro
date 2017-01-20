@@ -1,0 +1,11 @@
+$OpenBSD$
+Fix installation paths.
+--- widgets/libQtAVWidgets.pro.orig	Fri Jan 20 15:52:13 2017
++++ widgets/libQtAVWidgets.pro	Fri Jan 20 15:52:38 2017
+@@ -175,5 +175,5 @@ MODULE_VERSION = $$VERSION
+ include($$PROJECTROOT/deploy.pri)
+ 
+ icon.files = $$PWD/$${TARGET}.svg
+-icon.path = /usr/share/icons/hicolor/64x64/apps
++icon.path = $(TRUEPREFIX)/share/icons/hicolor/64x64/apps
+ INSTALLS += icon
