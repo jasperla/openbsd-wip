@@ -27,7 +27,7 @@ HOMEPAGE =	https://github.com/tarruda/libmpack
 MULTI_PACKAGES=	-main -lua
 
 FLAVORS =	lua52 lua53
-FLAVOR ?=	${MODLUA_FLAVOR}
+FLAVOR ?=
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
@@ -49,7 +49,6 @@ post-build:
 		     LUA_VERSION_MAJ_MIN=${MODLUA_VERSION:S/.//}
 
 post-install:
-	rm -f ${PREFIX}/lib/libmpack.la
 	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR}
 	${INSTALL_DATA} ${WRKBUILD}/binding/lua/mpack.so ${MODLUA_LIBDIR}
 
