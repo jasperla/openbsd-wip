@@ -1,0 +1,10 @@
+LFTP is a command-line driven, shell-like, reliable file transfer program.
+It supports FTP/FTPS, HTTP/HTTPS (including emulated directory listings), FISH,
+SFTP, BitTorrent, file and has partial support for WebDAV. Features include:
+
+- automatic reconnect and retry after errors or timeout
+- modification time preservation
+- mirroring, reverse mirroring, reget/reput
+- rate throttling
+- job queueing, multiple background transfers
+- bookmarks and aliases
