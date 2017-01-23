@@ -7,7 +7,7 @@ GH_PROJECT =		vtclean
 GH_COMMIT =		4fbf7632a2c6d3fbdb9931439bdbbeded02cbe36
 CATEGORIES =		textproc sysutils
 
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
+MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

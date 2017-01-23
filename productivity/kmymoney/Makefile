@@ -6,10 +6,13 @@ MAINTAINER =		Vadim Zhukov <zhuk@openbsd.org>
 VERSION =		4.8.0
 DISTNAME =		kmymoney-${VERSION}
 
-SHARED_LIBS =		kmm_kdchart		1.0
-SHARED_LIBS +=		kmm_mymoney		1.0
-SHARED_LIBS +=		kmm_plugin		1.0
-SHARED_LIBS +=		kmm_widgets		1.0
+SHARED_LIBS =	kmm_kdchart				1.1
+SHARED_LIBS +=	kmm_mymoney				1.1
+SHARED_LIBS +=	kmm_plugin				1.1
+SHARED_LIBS +=	kmm_widgets				1.1
+SHARED_LIBS +=	payeeidentifier_iban_bic		0.0 # 4.14
+SHARED_LIBS +=	payeeidentifier_iban_bic_widgets	0.0 # 4.14
+SHARED_LIBS +=	payeeidentifier_nationalAccount		0.0 # 4.14
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -29,10 +32,11 @@ WANTLIB += ${KDE4LIB}/kpimidentities ${KDE4LIB}/kpimutils
 WANTLIB += alkimia assuan gmp gpg-error gpgme++-pthread gpgme-pthread
 WANTLIB += ical icalss ofx osp qgpgme soprano
 WANTLIB += aqbanking gwengui-cpp gwengui-qt4 gwenhywfar
+WANTLIB += QtDeclarative QtScript krosscore
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/kmymoney/${VERSION}/src/}
 
-MODULES =		x11/kde4 devel/gettext multimedia/phonon
+MODULES =		x11/kde4 devel/gettext lang/python multimedia/phonon
 MODKDE4_USE =		pim
 
 BUILD_DEPENDS =	devel/boost \
@@ -59,5 +63,11 @@ CONFIGURE_ARGS =	-DENABLE_KBANKING:Bool=Yes \
 			-DUSE_QT_DESIGNER:Bool=No
 
 TEST_IS_INTERACTIVE =	X11
+
+# fails to pick up something MOC-generated in kmymoney/plugins/onlinetasks/sepa
+USE_NINJA =	No
+
+post-install:
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/share/apps/kmm_weboob/weboob.py
 
 .include <bsd.port.mk>

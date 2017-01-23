@@ -1,0 +1,22 @@
+$OpenBSD$
+The Unix world is slightly larger than Linux and OS X.
+--- src/libQtAV.pro.orig	Tue Sep  1 08:26:10 2015
++++ src/libQtAV.pro	Fri Jan 20 17:01:25 2017
+@@ -21,7 +21,7 @@ CONFIG *= qtav-buildlib
+ staticlib: DEFINES += BUILD_QTAV_STATIC
+ INCLUDEPATH += $$[QT_INSTALL_HEADERS]
+ icon.files = $$PWD/$${TARGET}.svg
+-icon.path = /usr/share/icons/hicolor/64x64/apps
++icon.path = $$(TRUEPREFIX)/share/icons/hicolor/64x64/apps
+ INSTALLS += icon
+ 
+ #mac: simd.prf will load qt_build_config and the result is soname will prefixed with QT_INSTALL_LIBS and link flag will append soname after QMAKE_LFLAGS_SONAME
+@@ -515,7 +515,7 @@ mac {
+    }
+ }
+ 
+-unix:!android:!mac {
++linux:!android {
+ #debian
+ DEB_INSTALL_LIST = .$$[QT_INSTALL_LIBS]/libQt*AV.so.*
+ libqtav.target = libqtav.install

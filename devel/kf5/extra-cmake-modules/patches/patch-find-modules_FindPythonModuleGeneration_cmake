@@ -1,0 +1,31 @@
+$OpenBSD$
+1. Make sure we pick up pythonx.y executable instead of abstracy python2/python3.
+2. Make sure libclang is found.
+3. Zap extra link flags; -Bsymbolic-functions isn't supported at all.
+--- find-modules/FindPythonModuleGeneration.cmake.orig	Mon Jan 16 10:10:04 2017
++++ find-modules/FindPythonModuleGeneration.cmake	Mon Jan 16 20:32:47 2017
+@@ -102,7 +102,7 @@ macro(_find_python version minor_version)
+     )
+   endif()
+ 
+-  find_program(GPB_PYTHON${version}_COMMAND python${version})
++  find_program(GPB_PYTHON${version}_COMMAND python${_CURRENT_VERSION})
+ endmacro()
+ 
+ macro(_create_imported_python_target version)
+@@ -178,6 +178,7 @@ if (NOT GPB_PYTHON2_COMMAND)
+   _report_NOT_FOUND("The python2 executable is required by clang-python for the ${CMAKE_FIND_PACKAGE_NAME} Module.")
+ endif()
+ 
++find_library(libclang_LIBRARY clang)
+ if (NOT libclang_LIBRARY)
+   set(_LIBCLANG3_MAX_VERSION 16)
+   set(_LIBCLANG3_MIN_VERSION 8)
+@@ -419,7 +420,6 @@ headers = sipAPI${modulename_value}
+ 
+         target_compile_options(Py${pyversion}KF5${modulename_value} PRIVATE -fstack-protector-strong -Wno-deprecated-declarations -Wno-overloaded-virtual)
+         target_include_directories(Py${pyversion}KF5${modulename_value} PRIVATE ${GPB_SIP_INCLUDES})
+-        target_link_libraries(Py${pyversion}KF5${modulename_value} PRIVATE -Wl,-Bsymbolic-functions -Wl,-z,relro)
+ 
+         set_property(TARGET Py${pyversion}KF5${modulename_value} PROPERTY AUTOMOC OFF)
+         set_property(TARGET Py${pyversion}KF5${modulename_value} PROPERTY PREFIX "")

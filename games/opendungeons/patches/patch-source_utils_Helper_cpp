@@ -1,0 +1,14 @@
+$OpenBSD$
+--- source/utils/Helper.cpp.orig	Wed Jan 18 09:18:40 2017
++++ source/utils/Helper.cpp	Wed Jan 18 09:18:55 2017
+@@ -274,6 +274,10 @@ namespace Helper
+     {
+         return TTostring(d);
+     }
++    std::string toString(size_t d)
++    {
++        return TTostring(d);
++    }
+     std::string toString(const Ogre::Vector3& v)
+     {
+         return "(" + TTostring(v.x)

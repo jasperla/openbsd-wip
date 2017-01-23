@@ -1,0 +1,11 @@
+$OpenBSD$
+--- source/utils/Helper.h.orig	Wed Jan 18 09:19:18 2017
++++ source/utils/Helper.h	Wed Jan 18 09:19:09 2017
+@@ -138,6 +138,7 @@ namespace Helper
+     std::string toString(uint32_t d);
+     std::string toString(int64_t d);
+     std::string toString(uint64_t d);
++    std::string toString(size_t d);
+     std::string toString(const Ogre::Vector3& v);
+     std::string toStringWithoutZ(const Ogre::Vector3& v);
+     std::string toString(const Ogre::ColourValue& c);

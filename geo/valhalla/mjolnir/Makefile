@@ -9,7 +9,7 @@ SHARED_LIBS +=  valhalla_mjolnir          0.0 # 0.0
 
 WANTLIB += boost_date_time-mt boost_filesystem boost_program_options-mt
 WANTLIB += boost_regex-mt boost_system boost_thread-mt c crypto
-WANTLIB += curl freexl geos geos_c iconv idn intl lua5.2 lzma
+WANTLIB += curl freexl geos geos_c iconv intl lua5.2 lzma
 WANTLIB += m nghttp2 prime_server proj protobuf pthread sodium
 WANTLIB += spatialite sqlite3 ssl stdc++ valhalla_baldr valhalla_midgard
 WANTLIB += valhalla_skadi xml2 z zmq

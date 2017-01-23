@@ -30,6 +30,7 @@ include/valhalla/baldr/streetnames.h
 include/valhalla/baldr/streetnames_factory.h
 include/valhalla/baldr/streetnames_us.h
 include/valhalla/baldr/tilehierarchy.h
+include/valhalla/baldr/trafficassociation.h
 include/valhalla/baldr/transitdeparture.h
 include/valhalla/baldr/transitroute.h
 include/valhalla/baldr/transitschedule.h
