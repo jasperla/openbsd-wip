@@ -1,0 +1,28 @@
+# $OpenBSD: Makefile,v 1.18 2016/11/12 20:54:09 jca Exp $
+
+BROKEN-hppa =	undefined reference to `std::auto_ptr<geos::geom::Envelope>::~auto_ptr()'
+COMMENT=	2d geometry and topology engine
+DISTNAME=	geos-3.6.1
+REVISION=	2
+CATEGORIES=	geo
+
+# XXX check
+SHARED_LIBS=	geos	9.0 \
+		geos_c	4.2
+
+# LGPLv2.1
+PERMIT_PACKAGE_CDROM=	Yes
+
+HOMEPAGE=		https://trac.osgeo.org/geos/
+MASTER_SITES=		http://download.osgeo.org/geos/
+
+EXTRACT_SUFX=		.tar.bz2
+
+WANTLIB=	m stdc++
+
+USE_GMAKE=	Yes
+
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS=	--with-pic
+
+.include <bsd.port.mk>
