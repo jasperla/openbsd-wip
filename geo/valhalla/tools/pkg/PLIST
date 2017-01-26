@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+@bin bin/valhalla_associate_segments
 @bin bin/valhalla_benchmark_adjacency_list
 @bin bin/valhalla_benchmark_loki
 @bin bin/valhalla_benchmark_skadi
@@ -13,3 +14,5 @@
 @bin bin/valhalla_skadi_worker
 @bin bin/valhalla_thor_worker
 @bin bin/valhalla_tyr_worker
+lib/python${MODPY_VERSION}/site-packages/valhalla.la
+lib/python${MODPY_VERSION}/site-packages/valhalla.so

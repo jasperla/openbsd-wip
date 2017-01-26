@@ -1,0 +1,62 @@
+$OpenBSD$
+--- CMakeLists.txt.orig	Wed Aug 24 13:52:29 2016
++++ CMakeLists.txt	Wed Jan 18 20:41:14 2017
+@@ -30,8 +30,8 @@ if(WIN32)
+     set(OD_BIN_PATH ${CMAKE_INSTALL_PREFIX})
+ else()
+     # Set binary and data install locations if we want to use the installer
+-    set(OD_BIN_PATH ${CMAKE_INSTALL_PREFIX}/games CACHE PATH "Absolute path to the game binary directory")
+-    set(OD_DATA_PATH ${CMAKE_INSTALL_PREFIX}/share/games/${PROJECT_NAME} CACHE PATH "Absolute path to the game data directory")
++    set(OD_BIN_PATH ${CMAKE_INSTALL_PREFIX}/bin CACHE PATH "Absolute path to the game binary directory")
++    set(OD_DATA_PATH ${CMAKE_INSTALL_PREFIX}/share/${PROJECT_NAME} CACHE PATH "Absolute path to the game data directory")
+     set(OD_SHARE_PATH ${CMAKE_INSTALL_PREFIX}/share CACHE PATH "Absolute path to the shared data directory (desktop file, icons, etc.)")
+     # Set the plugins.cfg file path to a common but architecture-dependent location.
+     # Because the plugins.cfg Ogre plugins path path may vary depending on the architecture used.
+@@ -150,7 +150,7 @@ else()
+     if(OD_ENABLE_WARNINGS)
+         # Help getting compilation warnings
+         set(OD_OPT_FLAGS "${OD_OPT_FLAGS} -Wall -Wcast-align -Wcast-qual -Wctor-dtor-privacy -Wdisabled-optimization -Wold-style-cast")
+-        set(OD_OPT_FLAGS "${OD_OPT_FLAGS} -Woverloaded-virtual -Wredundant-decls -Wswitch-default -Wstrict-null-sentinel -Winvalid-pch")
++        set(OD_OPT_FLAGS "${OD_OPT_FLAGS} -Woverloaded-virtual -Wredundant-decls -Wswitch-default -Winvalid-pch")
+         set(OD_OPT_FLAGS "${OD_OPT_FLAGS} -Wswitch-default -Wstack-protector")
+         #for later https://stackoverflow.com/questions/5088460/flags-to-enable-thorough-and-verbose-g-warnings/9862800#9862800:
+         #set(OD_OPT_FLAGS "${OD_OPT_FLAGS} -pedantic -Wextra -Wcast-align -Wcast-qual -Wctor-dtor-privacy -Wdisabled-optimization ")
+@@ -465,7 +465,7 @@ IF (MINGW)
+ ELSEIF(MSVC)
+     SET(OD_SOURCEFILES ${OD_SOURCEFILES} ${SRC}/utils/StackTraceWinMSVC.cpp)
+ ELSEIF(UNIX)
+-    SET(OD_SOURCEFILES ${OD_SOURCEFILES} ${SRC}/utils/StackTraceUnix.cpp)
++    SET(OD_SOURCEFILES ${OD_SOURCEFILES} ${SRC}/utils/StackTraceStub.cpp)
+ ELSE()
+     SET(OD_SOURCEFILES ${OD_SOURCEFILES} ${SRC}/utils/StackTraceStub.cpp)
+ ENDIF ()
+@@ -578,11 +578,6 @@ if(OD_BUILD_SUFFIX)
+     set(CMAKE_DEBUG_POSTFIX ${OD_BUILD_SUFFIX})
+ endif()
+ 
+-# Treat warnings as errors
+-if(NOT MSVC AND OD_TREAT_WARNINGS_AS_ERRORS)
+-    add_compile_options("-Werror")
+-endif()
+-
+ # Create the binary file (WIN32 makes sure there is no console window on windows.)
+ add_executable(${PROJECT_BINARY_NAME} WIN32 ${OD_SOURCEFILES})
+ 
+@@ -738,7 +733,7 @@ if(UNIX)
+             DESTINATION ${OD_BIN_PATH}
+             PERMISSIONS OWNER_WRITE OWNER_READ OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
+     install(FILES ${OD_PLUGINSCFGFILE}
+-            DESTINATION ${OD_PLUGINS_CFG_PATH})
++            DESTINATION ${CMAKE_INSTALL_PREFIX}/share/examples/opendungeons)
+     install(FILES ${OD_RESOURCESFILE}
+             DESTINATION ${OD_DATA_PATH})
+     install(DIRECTORY ${OD_RESOURCES}
+@@ -750,7 +745,7 @@ if(UNIX)
+     install(FILES ${CMAKE_BINARY_DIR}/opendungeons.desktop
+             DESTINATION ${OD_SHARE_PATH}/applications)
+     install(FILES ${CMAKE_BINARY_DIR}/opendungeons.6
+-            DESTINATION ${OD_SHARE_PATH}/man/man6)
++            DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man6)
+     install(FILES ${OD_DOC}
+             DESTINATION ${OD_SHARE_PATH}/doc/${PROJECT_NAME})
+     install(DIRECTORY ${CMAKE_SOURCE_DIR}/dist/hicolor

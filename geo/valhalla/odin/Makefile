@@ -18,7 +18,7 @@ BUILD_DEPENDS +=	editors/vim,-main \
 			geo/osmpbf:patch \
 			textproc/jq
 LIB_DEPENDS =		devel/boost \
-			devel/protobuf>=2.6.1 \
+			devel/protobuf>=3.1.0 \
 			geo/valhalla/baldr \
 			geo/valhalla/midgard \
 			net/prime_server \
