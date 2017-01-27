@@ -39,11 +39,10 @@ HOMEPAGE =	https://www.qt.io/ide/
 # XXX GPLv3 with some exceptions
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c kvm m pthread
 WANTLIB += GL Qt5Concurrent Qt5Core Qt5Designer Qt5DesignerComponents
 WANTLIB += Qt5Gui Qt5Help Qt5Network Qt5PrintSupport Qt5Qml Qt5Quick
-WANTLIB += Qt5QuickWidgets Qt5Script Qt5Sql Qt5Svg Qt5WebKit Qt5WebKitWidgets
-WANTLIB += Qt5Widgets Qt5Xml
+WANTLIB += Qt5QuickWidgets Qt5Script Qt5Sql Qt5Svg Qt5Widgets
+WANTLIB += Qt5Xml c kvm m pthread
 
 MASTER_SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/${V}/
 
