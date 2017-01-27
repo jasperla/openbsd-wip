@@ -69,8 +69,7 @@ RUN_DEPENDS = 	devel/gdb \
 LIB_DEPENDS =	x11/qt5/qtdeclarative \
 		x11/qt5/qtscript \
 		x11/qt5/qtsvg \
-		x11/qt5/qttools \
-		x11/qt5/qtwebkit
+		x11/qt5/qttools
 
 PORTHOME =		${WRKDIR}
 
