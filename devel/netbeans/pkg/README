@@ -1,0 +1,24 @@
+$OpenBSD: README,v 1.2 2011/06/02 13:41:38 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Font issues in the output window
+================================
+
+After hitting the Clean & Build or the Run buttons from
+within the IDE, the output window will show square boxes
+instead of fonts.
+
+Bug 145696 was filed but marked as WONTFIX by NetBeans developers:
+	https://netbeans.org/bugzilla/show_bug.cgi?id=145696
+
+Native Libraries
+================
+
+The profiler module is not included in the port. Additionally,
+the following modules, although included, contain native code which
+will likely not work:
+- cnd
+- dlight
