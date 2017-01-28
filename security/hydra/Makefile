@@ -37,7 +37,6 @@ CONFIGURE_ARGS =	--with-ssl=prefix="/usr/include" \
 .if ${FLAVOR:Mno_x11}
 ALL_TARGET=	hydra pw-inspector
 .else
-MODULES=	devel/gettext
 MULTI_PACKAGES+=-gui
 ALL_TARGET= 	all
 .endif
@@ -51,11 +50,9 @@ RUN_DEPENDS-main=
 
 WANTLIB-main=	${WANTLIB} m crypto curses idn mysqlclient pcre pq ssh ssl
 
-LIB_DEPENDS-gui=x11/gtk+2 \
-		${MODGETTEXT_LIB_DEPENDS}
+LIB_DEPENDS-gui=x11/gtk+2
 
-RUN_DEPENDS-gui=${PKGPATH},-main \
-		${MODGETTEXT_RUN_DEPENDS}
+RUN_DEPENDS-gui=${PKGPATH},-main
 
 WANTLIB-gui=	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama \
 		Xrandr Xrender atk-1.0 cairo fontconfig freetype gdk-x11-2.0 \
