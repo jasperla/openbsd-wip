@@ -41,6 +41,7 @@ include/valhalla/mjolnir/shortcutbuilder.h
 include/valhalla/mjolnir/transitbuilder.h
 include/valhalla/mjolnir/uniquenames.h
 include/valhalla/mjolnir/util.h
+include/valhalla/mjolnir/validatetransit.h
 lib/libvalhalla_mjolnir.a
 lib/libvalhalla_mjolnir.la
 @lib lib/libvalhalla_mjolnir.so.${LIBvalhalla_mjolnir_VERSION}

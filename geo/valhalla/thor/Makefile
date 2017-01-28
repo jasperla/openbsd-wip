@@ -8,7 +8,7 @@ SHARED_LIBS +=  valhalla_thor             0.0 # 0.0
 
 WANTLIB += boost_date_time-mt boost_filesystem boost_program_options-mt
 WANTLIB += boost_regex-mt boost_system boost_thread-mt c crypto
-WANTLIB += curl iconv idn intl m nghttp2 prime_server protobuf
+WANTLIB += curl iconv intl m nghttp2 prime_server protobuf
 WANTLIB += pthread sodium ssl valhalla_baldr valhalla_meili
 WANTLIB += valhalla_midgard valhalla_odin valhalla_sif z zmq
 

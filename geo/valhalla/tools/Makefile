@@ -7,7 +7,7 @@ OSMLR_VER =		87b648b94a178f5cb19346c48c331a03340d76b3
 
 WANTLIB += boost_date_time-mt boost_filesystem boost_program_options-mt
 WANTLIB += boost_regex-mt boost_system boost_thread-mt c crypto
-WANTLIB += curl iconv idn intl m nghttp2 prime_server protobuf
+WANTLIB += curl iconv intl m nghttp2 prime_server protobuf
 WANTLIB += pthread sodium ssl valhalla_baldr valhalla_loki valhalla_meili
 WANTLIB += valhalla_midgard valhalla_odin valhalla_sif valhalla_skadi
 WANTLIB += valhalla_thor valhalla_tyr z zmq

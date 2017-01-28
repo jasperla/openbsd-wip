@@ -1,5 +1,6 @@
 @comment $OpenBSD$
 include/valhalla/loki/
+include/valhalla/loki/node_search.h
 include/valhalla/loki/search.h
 include/valhalla/loki/service.h
 lib/libvalhalla_loki.a

@@ -6,7 +6,7 @@ VALHALLA_PROJECT =	midgard
 
 SHARED_LIBS +=  valhalla_midgard          0.0 # 0.0
 
-WANTLIB += m
+WANTLIB += m pthread
 
 MODULES =		gcc4
 MODGCC4_LANGS =		c c++

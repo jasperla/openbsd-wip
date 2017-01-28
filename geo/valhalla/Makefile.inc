@@ -2,7 +2,7 @@
 
 CATEGORIES +=		geo
 
-V =			2.0.5
+V =			2.0.6
 DISTNAME ?=		valhalla-${VALHALLA_PROJECT}-$V
 
 MAINTAINER ?=		Anthony J. Bentley <anthony@anjbe.name>

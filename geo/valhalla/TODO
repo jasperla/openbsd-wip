@@ -7,3 +7,4 @@ meili needs rapidjson
 
 baldr and odin need xxd (from editors/vim) to build; seems like a weird dependency
 
+tools depends on geo/osmlr-tile-spec which has not seen a formal release yet
