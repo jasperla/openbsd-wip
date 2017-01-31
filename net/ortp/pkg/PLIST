@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.6 2016/11/12 20:50:41 jca Exp $
+include/ortp/
+include/ortp/b64.h
+include/ortp/event.h
+include/ortp/logging.h
+include/ortp/ortp.h
+include/ortp/payloadtype.h
+include/ortp/port.h
+include/ortp/rtcp.h
+include/ortp/rtp.h
+include/ortp/rtpprofile.h
+include/ortp/rtpsession.h
+include/ortp/rtpsignaltable.h
+include/ortp/sessionset.h
+include/ortp/str_utils.h
+include/ortp/telephonyevents.h
+lib/libortp.a
+lib/libortp.la
+@lib lib/libortp.so.${LIBortp_VERSION}
+lib/pkgconfig/ortp.pc

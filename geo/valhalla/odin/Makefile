@@ -7,7 +7,7 @@ VALHALLA_PROJECT =	odin
 SHARED_LIBS +=  valhalla_odin             0.0 # 0.0
 
 WANTLIB += boost_date_time-mt boost_filesystem boost_regex-mt
-WANTLIB += boost_system boost_thread-mt crypto curl
+WANTLIB += boost_system boost_thread-mt crypto curl czmq
 WANTLIB += m nghttp2 prime_server protobuf pthread sodium
 WANTLIB += ssl valhalla_baldr valhalla_midgard z zmq
 

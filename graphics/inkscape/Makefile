@@ -73,15 +73,16 @@ AUTOMAKE_VERSION =	1.11
 
 CONFIGURE_ARGS =	-without-gnome-vfs
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include/ImageMagick \
-			  -I${LOCALBASE}/include -I${X11BASE}/include" \
+			-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
+# XXX todo
 NO_TEST =	Yes
 
 # As discussed on the ports mailing list, remove internationalised manual
 # pages, as our mandoc implementation does not yet deal with them properly.
 RM_MANS =	man/el man/fr man/ja man/man1/inkscape.*.1 \
-		man/sk man/zh_TW
+		man/sk man/zh_TW  man/de
 
 SUBST_VARS +=	RUBY MODRUBY_REV
 pre-configure:

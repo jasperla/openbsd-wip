@@ -4,7 +4,7 @@ COMMENT =	full-featured C++ implementation of I2P client
 
 GH_ACCOUNT =	PurpleI2P
 GH_PROJECT =	i2pd
-GH_TAGNAME =	2.10.0
+GH_TAGNAME =	2.11.0
 
 CATEGORIES =	net
 

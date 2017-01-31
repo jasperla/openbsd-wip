@@ -1,10 +1,17 @@
 @comment $OpenBSD$
 @newgroup _bitcoind:733
 @newuser _bitcoind:733:733:daemon:Bitcoind Account:/var/empty:/sbin/nologin
+@bin bin/bench_bitcoin
 @bin bin/bitcoin-cli
+@bin bin/bitcoin-tx
 @bin bin/bitcoind
 @comment @bin bin/test_bitcoin
 @comment @bin bin/test_bitcoin-qt
+include/bitcoinconsensus.h
+lib/libbitcoinconsensus.a
+lib/libbitcoinconsensus.la
+@lib lib/libbitcoinconsensus.so.${LIBbitcoinconsensus_VERSION}
+lib/pkgconfig/libbitcoinconsensus.pc
 @man man/man1/bitcoind.1
 @man man/man5/bitcoin.conf.5
 share/examples/bitcoin/

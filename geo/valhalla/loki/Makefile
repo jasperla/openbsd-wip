@@ -7,7 +7,7 @@ VALHALLA_PROJECT =	loki
 SHARED_LIBS +=  valhalla_loki             0.0 # 0.0
 
 WANTLIB += boost_date_time-mt boost_filesystem boost_regex-mt
-WANTLIB += boost_system boost_thread-mt crypto curl
+WANTLIB += boost_system boost_thread-mt crypto curl czmq
 WANTLIB += m nghttp2 prime_server pthread sodium ssl valhalla_baldr
 WANTLIB += valhalla_midgard valhalla_sif z zmq
 

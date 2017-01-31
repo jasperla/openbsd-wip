@@ -20,6 +20,7 @@ include/valhalla/meili/measurement.h
 include/valhalla/meili/priority_queue.h
 include/valhalla/meili/routing.h
 include/valhalla/meili/service.h
+include/valhalla/meili/traffic_segment_matcher.h
 include/valhalla/meili/universal_cost.h
 include/valhalla/meili/viterbi_search.h
 lib/libvalhalla_meili.a

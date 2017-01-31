@@ -17,7 +17,6 @@ WANTLIB += c gcrypt gpg-error iconv intl pthread usb-1.0
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libmtp/}
 
-MAKE_ENV+=		DOXYGEN_ENCODE_PATH_STRIP=${WRKSRC}
 LIB_DEPENDS=		devel/libusb1 \
 			security/libgcrypt
 
