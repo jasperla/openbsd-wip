@@ -9,7 +9,6 @@ FLAVOR ?=
 WANTLIB +=		${MODLUA_WANTLIB} m
 
 MODULES =		lang/lua
-LIB_DEPENDS +=		${MODLUA_LIB_DEPENDS}
 RUN_DEPENDS +=		libmpack->=${V}:devel/libmpack/main
 
 CPPFLAGS +=		-I${MODLUA_INCL_DIR}
@@ -18,6 +17,8 @@ WRKSRC =		${WRKDIST}/binding/lua
 MAKE_FLAGS +=		USE_SYSTEM_LUA=yes \
 			LUA_VERSION_MAJ_MIN=${MODLUA_VERSION:S/.//}
 
+# The install target installs in the wrong place. Since it is just one file,
+# it is easier to use a custom target than to patch and SUBST_CMD.
 do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/mpack.so ${MODLUA_LIBDIR}
