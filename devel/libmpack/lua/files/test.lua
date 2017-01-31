@@ -19,4 +19,4 @@ assert(output["two"] == 2)
 assert(output["eleven"] == 11)
 assert(output["eighty"] == 80)
 
-print("Lua test passed")
+print("Lua binding test passed")
