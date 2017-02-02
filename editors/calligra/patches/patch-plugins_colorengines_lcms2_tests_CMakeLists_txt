@@ -1,0 +1,24 @@
+$OpenBSD$
+
+fix ninja: multiple rules generate
+cmake_order_depends_target_TestKoColorSpaceRegistry
+
+--- plugins/colorengines/lcms2/tests/CMakeLists.txt.orig	Tue Jan 31 22:03:38 2017
++++ plugins/colorengines/lcms2/tests/CMakeLists.txt	Tue Jan 31 22:04:01 2017
+@@ -33,14 +33,14 @@ endmacro()
+ 
+ ########### next target ###############
+ 
+-colorengine_lcms_add_unit_test(TestKoLcmsColorProfile
++colorengine_lcms_add_unit_test(colorengine_TestKoLcmsColorProfile
+     TestKoLcmsColorProfile.cpp
+     LINK_LIBRARIES kowidgets pigmentcms KF5::I18n ${LCMS2_LIBRARIES} Qt5::Test
+ )
+ 
+ ########### next target ###############
+ 
+-colorengine_lcms_add_unit_test(TestKoColorSpaceRegistry
++colorengine_lcms_add_unit_test(colorengine_TestKoColorSpaceRegistry
+     TestKoColorSpaceRegistry.cpp
+     LINK_LIBRARIES kowidgets pigmentcms KF5::I18n ${LCMS2_LIBRARIES} Qt5::Test
+ )

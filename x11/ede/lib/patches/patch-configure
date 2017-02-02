@@ -1,0 +1,44 @@
+$OpenBSD: patch-configure,v 1.2 2014/07/11 21:39:04 pascal Exp $
+--- configure.orig	Sat Jun 21 23:24:17 2014
++++ configure	Tue Jan 31 22:01:25 2017
+@@ -2211,7 +2211,7 @@ ac_config_headers="$ac_config_headers config.h:config.
+ EDELIB_MAJOR_VERSION=2
+ EDELIB_MINOR_VERSION=1
+ EDELIB_PATCH_VERSION=0
+-EDELIB_API_VERSION=$PACKAGE_VERSION
++EDELIB_API_VERSION=$API_VER
+ 
+ user_cflags="$CFLAGS"
+ user_cxxflags="$CXXFLAGS"
+@@ -3423,7 +3423,8 @@ IFS=$as_save_IFS
+   ;;
+ esac
+ fi
+-DOXYGEN=$ac_cv_path_DOXYGEN
++# Disable Doxygen docs
++DOXYGEN=
+ if test -n "$DOXYGEN"; then
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: $DOXYGEN" >&5
+ $as_echo "$DOXYGEN" >&6; }
+@@ -4311,7 +4312,6 @@ int
+ main ()
+ {
+ 
+-		extern int daylight;
+ 		int d = daylight;
+ 
+   ;
+@@ -5506,12 +5506,7 @@ $as_echo "$DBUS_CFLAGS" >&6; }
+             { $as_echo "$as_me:${as_lineno-$LINENO}: checking DBUS_LIBS" >&5
+ $as_echo_n "checking DBUS_LIBS... " >&6; }
+             ## don't use --libs since that can do evil things like add -Wl,--export-dynamic
+-            if test "$SHELL" = "/bin/ksh"; then
+-                ## ksh does not do escaping properly
+-                DBUS_LIBS="`$PKG_CONFIG --libs-only-L "dbus-1 >= 1.0"` `$PKG_CONFIG --libs-only-l "dbus-1 >= 1.0"`"
+-            else
+-                DBUS_LIBS="`$PKG_CONFIG --libs-only-L \"dbus-1 >= 1.0\"` `$PKG_CONFIG --libs-only-l \"dbus-1 >= 1.0\"`"
+-            fi
++            DBUS_LIBS="`$PKG_CONFIG --libs-only-L 'dbus-1 >= 1.0'` `$PKG_CONFIG --libs-only-l 'dbus-1 >= 1.0'`"
+ 
+             DBUS_VERSION=`$PKG_CONFIG --modversion "dbus-1 >= 1.0"`
+             { $as_echo "$as_me:${as_lineno-$LINENO}: result: $DBUS_LIBS" >&5
