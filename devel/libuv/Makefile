@@ -2,14 +2,14 @@
 
 COMMENT =	multi-platform library for asynchronous I/O
 
-VER =		1.10.1
+VER =		1.11.0
 DISTNAME =	libuv-v${VER}
 PKGNAME =	libuv-${VER}
 CATEGORIES =	devel
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
-SHARED_LIBS =	uv 0.0	# 1.0.0
+SHARED_LIBS =	uv 0.0	# 1.0
 
 HOMEPAGE =	http://libuv.org/
 
