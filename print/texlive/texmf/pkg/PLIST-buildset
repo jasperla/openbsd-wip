@@ -5143,6 +5143,17 @@ share/texmf-var/fonts/map/pdftex/updmap/
 share/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 share/texmf-var/fonts/map/pdftex/updmap/pdftex_dl14.map
 share/texmf-var/fonts/map/pdftex/updmap/pdftex_ndl14.map
+share/texmf-var/luatex-cache/
+share/texmf-var/luatex-cache/context/
+share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/
+share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/
+share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/
+share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-en.fmt
+share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-en.lui
+share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-en.luv
+share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-nl.fmt
+share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-nl.lui
+share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-nl.luv
 share/texmf-var/web2c/
 share/texmf-var/web2c/aleph/
 share/texmf-var/web2c/aleph/aleph.fmt
@@ -5157,7 +5168,6 @@ share/texmf-var/web2c/luatex/
 share/texmf-var/web2c/luatex/dvilualatex.fmt
 share/texmf-var/web2c/luatex/dviluatex.fmt
 share/texmf-var/web2c/luatex/lualatex.fmt
-share/texmf-var/web2c/luatex/lualollipop.fmt
 share/texmf-var/web2c/luatex/luatex.fmt
 share/texmf-var/web2c/luatex/pdfcsplain.fmt
 share/texmf-var/web2c/metafont/
@@ -5171,7 +5181,6 @@ share/texmf-var/web2c/pdftex/eplain.fmt
 share/texmf-var/web2c/pdftex/etex.fmt
 share/texmf-var/web2c/pdftex/jadetex.fmt
 share/texmf-var/web2c/pdftex/latex.fmt
-share/texmf-var/web2c/pdftex/lollipop.fmt
 share/texmf-var/web2c/pdftex/mex.fmt
 share/texmf-var/web2c/pdftex/mllatex.fmt
 share/texmf-var/web2c/pdftex/mltex.fmt
@@ -5190,6 +5199,7 @@ share/texmf-var/web2c/pdftex/xmltex.fmt
 share/texmf-var/web2c/ptex/
 share/texmf-var/web2c/ptex/ptex.fmt
 share/texmf-var/web2c/tex/
+share/texmf-var/web2c/tex/lollipop.fmt
 share/texmf-var/web2c/tex/tex.fmt
 share/texmf-var/web2c/uptex/
 share/texmf-var/web2c/uptex/uptex.fmt
@@ -5197,6 +5207,5 @@ share/texmf-var/web2c/xetex/
 share/texmf-var/web2c/xetex/cont-en.fmt
 share/texmf-var/web2c/xetex/pdfcsplain.fmt
 share/texmf-var/web2c/xetex/xelatex.fmt
-share/texmf-var/web2c/xetex/xelollipop.fmt
 share/texmf-var/web2c/xetex/xetex.fmt
 @exec-update if [ -e "%D/bin/mktexlsr" ]; then %D/bin/mktexlsr > /dev/null 2>&1; fi
