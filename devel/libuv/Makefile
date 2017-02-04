@@ -1,41 +1,48 @@
-# $OpenBSD: Makefile.template,v 1.72 2015/04/08 17:53:19 sthen Exp $
+# $OpenBSD$
 
-COMMENT =		multi-platform support library
+COMMENT =	multi-platform library for asynchronous I/O
 
-V =			1.7.5
-DISTNAME =		libuv-v${V}
-PKGNAME =		libuv-${V}
+VER =		1.10.1
+DISTNAME =	libuv-v${VER}
+PKGNAME =	libuv-${VER}
+CATEGORIES =	devel
 
-SHARED_LIBS +=		uv	0.0 # 1.0
+MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
-CATEGORIES =		devel
-HOMEPAGE =		http://libuv.org
+SHARED_LIBS =	uv 0.0	# 1.0.0
 
-# MIT+ISC+BSD
-PERMIT_PACKAGE_CDROM =	Yes
+HOMEPAGE =	http://libuv.org/
 
-WANTLIB += kvm pthread
+MASTER_SITES =	http://dist.libuv.org/dist/v${VER}/
 
-MASTER_SITES =		http://dist.libuv.org/dist/v${V}/
+# BSD / GPL
+PERMIT_PACKAGE_CDROM = Yes
 
-AUTOMAKE_VERSION =	1.15
-AUTOCONF_VERSION =	2.69
+WANTLIB += pthread
 
-CONFIGURE_STYLE =	gnu
+BUILD_DEPENDS =	devel/libtool \
+		${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS} \
+		textproc/py-sphinx
 
-# autogen.sh needs libtoolize
-BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool
+USE_GMAKE =	Yes
 
+CONFIGURE_STYLE = gnu
+CONFIGURE_ENV =	cc_cv_cflags__g=no
 
-MAKE_ENV =	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
+AUTOCONF_VERSION = 2.69
+AUTOMAKE_VERSION = 1.14
 
-post-patch:
-	cd ${WRKSRC} && env ${MAKE_ENV} sh autogen.sh
+pre-configure:
+	echo "m4_define([UV_EXTRA_AUTOMAKE_FLAGS], [serial-tests])"\
+		> ${WRKSRC}/m4/libuv-extra-automake-flags.m4
+	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -f -i
 
-# XXX build docs with sphinx
-# XXX one test fails. Raise bug.
+post-build:
+	cd ${WRKSRC} && ${MAKE_PROGRAM} man -C docs
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/docs/build/man/libuv.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
