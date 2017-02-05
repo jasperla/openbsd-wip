@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+@conflict kate-<=4
 @bin bin/kate
 @bin bin/kwrite
 lib/qt5/plugins/ktexteditor/
