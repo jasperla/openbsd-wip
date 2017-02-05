@@ -23,7 +23,8 @@ MAKE_ENV =		EDE_VERSION="${FULL_V}"
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--enable-shared
-CONFIGURE_ENV =		API_VER="${API_VER}"
+CONFIGURE_ENV =		API_VER="${API_VER}" \
+			ac_cv_path_DOXYGEN=""
 
 NO_TEST =		Yes
 
