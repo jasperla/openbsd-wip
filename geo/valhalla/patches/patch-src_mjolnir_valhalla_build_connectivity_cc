@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/mjolnir/valhalla_build_connectivity.cc.orig	Sun Feb  5 00:05:43 2017
++++ src/mjolnir/valhalla_build_connectivity.cc	Sun Feb  5 00:06:08 2017
+@@ -161,7 +161,7 @@ int main(int argc, char** argv) {
+       auto color = colormap.find(c);
+       if (color == colormap.end()) {
+         // Add a random color to the colormap
+-        RGB newcolor(rand() % 200, rand() % 200, rand() % 200);
++        RGB newcolor(arc4random_uniform(200), arc4random_uniform(200), arc4random_uniform(200));
+         ppm.push_back(newcolor);
+         colormap[c] = newcolor;
+       } else {
