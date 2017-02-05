@@ -19,6 +19,3 @@ lib/cmake/KF5KDcraw/KF5KDcrawConfigVersion.cmake
 lib/cmake/KF5KDcraw/KF5KDcrawTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5KDcraw/KF5KDcrawTargets.cmake
 @lib lib/libKF5KDcraw.so.${LIBKF5KDcraw_VERSION}
-share/apps/
-share/apps/cmake/
-share/apps/cmake/modules/
