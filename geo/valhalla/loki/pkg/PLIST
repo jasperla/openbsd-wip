@@ -1,9 +1,0 @@
-@comment $OpenBSD$
-include/valhalla/loki/
-include/valhalla/loki/node_search.h
-include/valhalla/loki/search.h
-include/valhalla/loki/service.h
-lib/libvalhalla_loki.a
-lib/libvalhalla_loki.la
-@lib lib/libvalhalla_loki.so.${LIBvalhalla_loki_VERSION}
-lib/pkgconfig/libvalhalla_loki.pc
