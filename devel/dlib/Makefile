@@ -36,7 +36,19 @@ LIB_DEPENDS =		graphics/jpeg \
 			graphics/giflib \
 			databases/sqlite3
 
+TEST_DEPENDS =		devel/dlib \
+			graphics/giflib
 
-NO_TEST =		Yes
+pre-test:
+	mkdir ${WRKBUILD}/dlib/test && cd ${WRKBUILD}/dlib/test && \
+	${SETENV} CC="${CC}" CFLAGS="${CFLAGS}" \
+	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
+	${CONFIGURE_ENV} ${LOCALBASE}/bin/cmake \
+		-DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY:Bool=True \
+		-G ${_MODCMAKE_GEN} ${CONFIGURE_ARGS} ${WRKSRC}/dlib/test
+do-test:
+	cd ${WRKBUILD}/dlib/test && exec ${SETENV} ${MAKE_ENV} \
+	${NINJA} ${NINJA_FLAGS} ${ALL_TARGET} && ./dtest --runall
+
 
 .include <bsd.port.mk>

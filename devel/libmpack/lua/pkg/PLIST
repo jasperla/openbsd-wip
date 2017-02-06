@@ -1,2 +1,0 @@
-@comment $OpenBSD$
-lib/lua/${MODLUA_VERSION}/mpack.so

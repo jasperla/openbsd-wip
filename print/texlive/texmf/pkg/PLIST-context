@@ -2985,7 +2985,7 @@ share/texmf-dist/tex/latex/context/ppchtex/m-ch-de.sty
 share/texmf-dist/tex/latex/context/ppchtex/m-ch-en.sty
 share/texmf-dist/tex/latex/context/ppchtex/m-ch-nl.sty
 share/texmf-dist/tex/latex/context/ppchtex/m-pictex.sty
-@unexec rm -Rf %D/share/texmf-var/luatex-cache
+@unexec rm -Rf %D/share/texmf-var/luatex-cache/trees
 @exec %D/bin/mtxrun --generate > /dev/null 2>&1
 @exec %D/bin/mktexlsr > /dev/null 2>&1
 @unexec-delete %D/bin/mktexlsr > /dev/null 2>&1

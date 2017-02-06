@@ -13,10 +13,8 @@ COMMENT-buildset =	smallest texlive texmf for building ports
 DISTNAME =		texlive-${DIST_V}b-texmf
 MASTER_SITES0 =		https://spacehopper.org/mirrors/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			texlive-${DIST_V}-extra${EXTRACT_SUFX}
-
-# XXX pregen
-#			texmf-var-pregen-${V}${EXTRACT_SUFX}:0
+			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
+			texmf-var-pregen-${V}${EXTRACT_SUFX}:0
 
 PKGNAME-main =		texlive_texmf-minimal-${V}
 PKGNAME-full =		texlive_texmf-full-${V}
@@ -108,7 +106,11 @@ do-install:
 	#   updmap-sys
 	#   fmtutil-sys --all
 	#   context --make
-	#mv ${WRKDIR}/texmf-var ${PREFIX}/share
+	#
+	# Make sure you hashed the tree before running the above commands:
+	#   mktexlsr
+	#   mtxrun --generate
+	mv ${WRKDIR}/texmf-var ${PREFIX}/share
 
 	# Put manuals in the right place.
 	#
@@ -137,7 +139,7 @@ post-install:
 # This target requires py-texscythe.
 update-plist: plist
 plist:
-	cd ${FILESDIR} && ${MODPY_BIN} mk_plists.py \
+	cd ${FILESDIR} && PYTHONPATH=/home/edd/source/texscythe ${MODPY_BIN} mk_plists.py \
 		/home/edd/source/texscythe/texlive2016.tlpdb.gz
 
 # XXX

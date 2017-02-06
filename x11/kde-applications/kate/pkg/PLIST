@@ -1,4 +1,5 @@
 @comment $OpenBSD$
+@conflict kate-<=4
 @bin bin/kate
 @bin bin/kwrite
 lib/qt5/plugins/ktexteditor/
@@ -157,5 +158,6 @@ share/plasma/plasmoids/org.kde.plasma.katesessions/contents/ui/
 share/plasma/plasmoids/org.kde.plasma.katesessions/contents/ui/KateSessionsItemDelegate.qml
 share/plasma/plasmoids/org.kde.plasma.katesessions/contents/ui/Menu.qml
 share/plasma/plasmoids/org.kde.plasma.katesessions/contents/ui/katesessions.qml
+share/plasma/plasmoids/org.kde.plasma.katesessions/metadata.desktop
 share/plasma/plasmoids/org.kde.plasma.katesessions/metadata.json
 share/plasma/services/org.kde.plasma.katesessions.operations

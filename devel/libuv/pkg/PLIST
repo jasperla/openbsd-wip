@@ -6,6 +6,7 @@ include/uv-unix.h
 include/uv-version.h
 include/uv.h
 lib/libuv.a
-lib/libuv.la
+@comment lib/libuv.la
 @lib lib/libuv.so.${LIBuv_VERSION}
 lib/pkgconfig/libuv.pc
+@man man/man1/libuv.1

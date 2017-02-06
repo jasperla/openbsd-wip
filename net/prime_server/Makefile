@@ -2,7 +2,7 @@
 
 COMMENT =		non-blocking server API for distributed computing
 
-V =			0.6.1
+V =			0.6.3
 DISTNAME =		prime_server-$V
 
 SHARED_LIBS +=  prime_server              0.0 # 0.0
@@ -37,7 +37,7 @@ AUTOMAKE_VERSION =	1.15
 
 post-extract:
 	cp ${FILESDIR}/logging.hpp ${WRKDIST}/prime_server/logging/
-#	cp ${FILESDIR}/testing.hpp ${WRKDIST}/testing/
+	cp ${FILESDIR}/testing.hpp ${WRKDIST}/test/testing/
 
 pre-configure:
 	cd ${WRKDIST} && \
