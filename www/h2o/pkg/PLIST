@@ -1,8 +1,5 @@
 @comment $OpenBSD$
 @bin bin/h2o
-@mode 700
-@owner www
-@group www
 include/h2o/
 include/h2o.h
 include/h2o/cache.h
@@ -103,6 +100,10 @@ share/doc/h2o/search/jquery-1.9.1.min.js
 share/doc/h2o/search/oktavia-english-search.js
 share/doc/h2o/search/oktavia-jquery-ui.js
 share/doc/h2o/search/searchindex.js
+share/examples/h2o/
+@sample ${SYSCONFDIR}/h2o/
+share/examples/h2o/h2o.conf
+@sample ${SYSCONFDIR}/h2o/h2o.conf
 share/h2o/
 share/h2o/annotate-backtrace-symbols
 share/h2o/ca-bundle.crt

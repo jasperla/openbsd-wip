@@ -1,35 +1,40 @@
 # $OpenBSD $
 
-COMMENT =	Web server library
-DISTNAME =	v${V}
-PKGNAME =       h2o-${V}
-V =             2.1.0
+COMMENT =	optimized HTTP server with support for HTTP/1.x and HTTP/2
 
 SHARED_LIBS =	h2o-evloop      0.0
 
 CATEGORIES =	www
 
-HOMEPAGE =	http://h2o.examp1e.net
+GH_ACCOUNT =    h2o
+GH_PROJECT =    h2o
+GH_TAGNAME =    v2.1.0
+
+HOMEPAGE =	https://h2o.examp1e.net/
 
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		https://github.com/h2o/h2o/archive/
-
-MODULES =		devel/cmake gcc4
+MODULES =		devel/cmake \
+			gcc4 \
+			lang/ruby
 MODGCC4_LANGS =         c c++
 MODGCC4_ARCHS =         *
 
-WRKDIST =               ${WRKDIR}/${PKGNAME}
+SUBST_VARS =            RUBY
 
-CONFIGURE_ARGS =	-DWITH_BUNDLED_SSL=OFF \
-			-DBUILD_SHARED_LIBS=ON \
-			-DWITH_MRUBY=OFF \
-			-DCMAKE_INSTALL_SYSCONFDIR=/etc/h2o
+BUILD_DEPENDS =         devel/bison \
+			lang/ruby/${MODRUBY_REV}
 
-NO_TEST =		No
+CONFIGURE_ARGS =	-DCMAKE_INSTALL_SYSCONFDIR=${SYSCONFDIR}/h2o \
+			-DWITH_MRUBY=ON \
+			-DWITH_BUNDLED_SSL=OFF \
+			-DRUBYEXE=${RUBY} \
+			-DBUILD_SHARED_LIBS=ON
+
+USE_NINJA =             No
 
 post-install:
-			@mkdir /etc/h2o
-			${INSTALL_DATA} ${FILESDIR}/h2o.conf /etc/h2o
+	mkdir -p ${PREFIX}/share/examples/h2o
+	${INSTALL_DATA} ${FILESDIR}/h2o.conf ${PREFIX}/share/examples/h2o
 
 .include <bsd.port.mk>
