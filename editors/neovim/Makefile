@@ -18,24 +18,19 @@ MAINTAINER =	Edd Barrett <edd@openbsd.org>
 # Apache 2.0 + Vim License
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c kvm m msgpack pthread termkey unibilium util uv vterm
-
-# For now, build with luajit. Must keep in sync with the version of lua
-# that lang/luajit is currently targetting.
-# XXX Use flavors for plain lua and luajit?
-LUAJIT_V =		51
-SUBST_VARS +=		LUAJIT_V
+WANTLIB += c kvm m msgpackc pthread termkey unibilium util uv vterm
 
 MODULES =		devel/cmake \
 			textproc/intltool \
 			devel/gettext
-BUILD_DEPENDS =		devel/gettext-tools \
-			lang/luajit
+BUILD_DEPENDS =		devel/gettext-tools
 LIB_DEPENDS =		devel/libtermkey \
 			devel/unibilium \
 			devel/msgpack \
 			devel/libuv \
+			devel/libmpack/main \
 			devel/libvterm
+RUN_DEPENDS +=		devel/libmack/lua
 
 MAKE_FLAGS +=		USE_BUNDLED_DEPS=OFF
 
@@ -49,6 +44,7 @@ do-test:
 		${MAKE_FLAGS} -f ${MAKE_FILE} test ${MAKE_FLAGS}
 
 # Plug in correct lua interpreter path
+SUBST_VARS +=	MODLUA_BIN
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
 
