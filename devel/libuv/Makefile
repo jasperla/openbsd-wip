@@ -34,10 +34,8 @@ AUTOCONF_VERSION = 2.69
 AUTOMAKE_VERSION = 1.14
 
 pre-configure:
-	echo "m4_define([UV_EXTRA_AUTOMAKE_FLAGS], [serial-tests])"\
-		> ${WRKSRC}/m4/libuv-extra-automake-flags.m4
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf -f -i
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} sh autogen.sh
 
 post-build:
 	cd ${WRKSRC} && ${MAKE_PROGRAM} man -C docs
