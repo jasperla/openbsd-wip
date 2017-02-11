@@ -21,9 +21,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += c kvm m msgpackc pthread termkey unibilium util uv vterm
 
 MODULES =		devel/cmake \
-			textproc/intltool \
 			devel/gettext \
-			lang/lua
+			lang/lua \
+			textproc/intltool
 BUILD_DEPENDS =		${RUN_DEPENDS} \
 			devel/lpeg \
 			devel/lua-bitop
