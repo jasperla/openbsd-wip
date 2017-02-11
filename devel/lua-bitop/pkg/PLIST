@@ -1,0 +1,2 @@
+@comment $OpenBSD$
+lib/lua/${MODLUA_VERSION}/bit.so
