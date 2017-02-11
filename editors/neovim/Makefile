@@ -22,17 +22,21 @@ WANTLIB += c kvm m msgpackc pthread termkey unibilium util uv vterm
 
 MODULES =		devel/cmake \
 			textproc/intltool \
-			devel/gettext
-BUILD_DEPENDS =		devel/gettext-tools
+			devel/gettext \
+			lang/lua
+# XXX need lua-bit, check if it's a RUN_DEPEND
+BUILD_DEPENDS =		${RUN_DEPENDS}
 LIB_DEPENDS =		devel/libtermkey \
 			devel/unibilium \
 			devel/msgpack \
 			devel/libuv \
 			devel/libmpack/main \
 			devel/libvterm
-RUN_DEPENDS +=		devel/libmack/lua
+RUN_DEPENDS +=		devel/libmpack/lua \
+			devel/lpeg
 
 MAKE_FLAGS +=		USE_BUNDLED_DEPS=OFF
+CONFIGURE_ARGS +=	-DLUA_PRG=${MODLUA_BIN}
 
 # Tests need gmake
 USE_GMAKE = Yes
@@ -42,10 +46,5 @@ USE_GMAKE = Yes
 do-test:
 	cd ${WRKSRC} && env -i ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${MAKE_FLAGS} -f ${MAKE_FILE} test ${MAKE_FLAGS}
-
-# Plug in correct lua interpreter path
-SUBST_VARS +=	MODLUA_BIN
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
