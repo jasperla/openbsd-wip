@@ -3,4 +3,3 @@ by statistical NLP and open geo data.
 
 This library helps convert the free-form addresses that humans use into clean
 normalized forms suitable for machine comparison and full-text indexing.
-
