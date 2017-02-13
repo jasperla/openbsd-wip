@@ -1,6 +1,6 @@
-# $OpenBSD:$
+# $OpenBSD: Makefile,v 1.2 2016/05/27 03:43:20 zhuk Exp $
 
- 	SUBDIR =
+	SUBDIR =
 	#SUBDIR += kde-l10n
 	#SUBDIR += akonadi
 	#SUBDIR += akonadi
@@ -43,7 +43,7 @@
 	#SUBDIR += kanagram
 	#SUBDIR += kapman
 	#SUBDIR += kapptemplate
-	SUBDIR += kate
+	#SUBDIR += kate
 	#SUBDIR += katomic
 	#SUBDIR += kblackbox
 	#SUBDIR += kblocks
@@ -146,7 +146,7 @@
 	#SUBDIR += kteatime
 	#SUBDIR += ktimer
 	#SUBDIR += ktnef
-	SUBDIR += ktouch
+	#SUBDIR += ktouch
 	#SUBDIR += ktp-accounts-kcm
 	#SUBDIR += ktp-approver
 	#SUBDIR += ktp-auth-handler
@@ -174,7 +174,7 @@
 	#SUBDIR += libkeduvocdocument
 	#SUBDIR += libkexiv2
 	#SUBDIR += libkface
-	#SUBDIR += libkgeomap
+	SUBDIR += libkgeomap
 	#SUBDIR += libkipi
 	#SUBDIR += libkleo
 	#SUBDIR += libkmahjongg
