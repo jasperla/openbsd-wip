@@ -1,6 +1,0 @@
-Tunguska is a ternary computer emulator. It is loosely based on the excellent
-design of the (binary) 6502-processor by MOS Technology, but entirely ternary.
-So instead of having two memory cell states (0, 1), it has three (-1, 0, 1).
-
-The machine uses tryte-width (tryte = ternary analog to "byte") 6, with
-3^6=729 states per tryte.
