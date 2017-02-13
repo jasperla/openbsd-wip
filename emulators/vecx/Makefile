@@ -13,6 +13,12 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
+WANTLIB +=	SDL SDL_gfx SDL_image c pthread
+
+LIB_DEPENDS =	devel/sdl \
+		devel/sdl-gfx \
+		devel/sdl-image
+
 USE_GMAKE =	Yes
 
 MAKE_FILE =	Makefile
@@ -25,6 +31,7 @@ pre-configure:
 	@sed -i 's|rom.dat|${PREFIX}/share/vecx/rom.dat|' ${WRKSRC}/osint.c
 
 do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/vecx
 	${INSTALL_PROGRAM} ${WRKSRC}/vecx ${PREFIX}/bin
 
 .include <bsd.port.mk>
