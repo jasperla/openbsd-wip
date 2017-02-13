@@ -1,9 +1,10 @@
 $OpenBSD$
---- src/sparkey/Makefile.am.orig	Fri Oct 21 23:38:12 2016
-+++ src/sparkey/Makefile.am	Fri Oct 21 23:38:29 2016
-@@ -1,4 +1,4 @@
--CFLAGS = -I/usr/local/include -O2 -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Werror -pedantic
-+CFLAGS = -I/usr/local/include -O2 -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Werror -pedantic -fgnu89-inline
+--- src/sparkey/Makefile.am.orig	Thu Feb  9 20:34:15 2017
++++ src/sparkey/Makefile.am	Mon Feb 13 13:41:01 2017
+@@ -1,5 +1,5 @@
+ CFLAGS_CONF = @CFLAGS@
+-CFLAGS = -I/usr/local/include -O2 -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Werror -pedantic $(CFLAGS_CONF)
++CFLAGS = -I/usr/local/include -O2 -Wall -Wextra -Wfloat-equal -Wshadow -Wpointer-arith -Werror -pedantic -fgnu89-inline $(CFLAGS_CONF)
  
  noinst_LTLIBRARIES = libsparkey.la
  libsparkey_la_SOURCES = endiantools.h hashheader.h logheader.h \

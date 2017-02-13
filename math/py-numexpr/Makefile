@@ -2,7 +2,7 @@
 
 COMMENT =		fast numerical expression evaluator for NumPy
 
-MODPY_EGG_VERSION =	2.6.1
+MODPY_EGG_VERSION =	2.6.2
 DISTNAME =		numexpr-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math

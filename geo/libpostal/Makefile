@@ -4,9 +4,9 @@ COMMENT =	library for parsing/normalizing street addresses
 
 GH_ACCOUNT =	openvenues
 GH_PROJECT =	libpostal
-GH_TAGNAME =	v0.3.2
+GH_TAGNAME =	v0.3.4
 
-SHARED_LIBS +=	postal	0.0	# 0.3
+SHARED_LIBS +=	postal	0.0	# 0.0
 
 CATEGORIES =	geo
 
@@ -27,6 +27,8 @@ BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
 LIB_DEPENDS =	archivers/snappy
 
 CONFIGURE_STYLE = gnu
+
+CONFIGURE_ARGS = --disable-data-download
 
 pre-configure:
 	cd ${WRKSRC} && ./bootstrap.sh

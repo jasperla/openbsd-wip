@@ -18,38 +18,42 @@ MAINTAINER =	Edd Barrett <edd@openbsd.org>
 # Apache 2.0 + Vim License
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c kvm m msgpack pthread termkey unibilium util uv vterm
-
-# For now, build with luajit. Must keep in sync with the version of lua
-# that lang/luajit is currently targetting.
-# XXX Use flavors for plain lua and luajit?
-LUAJIT_V =		51
-SUBST_VARS +=		LUAJIT_V
+WANTLIB += c kvm m msgpackc pthread termkey unibilium util uv vterm
 
 MODULES =		devel/cmake \
-			textproc/intltool \
-			devel/gettext
-BUILD_DEPENDS =		devel/gettext-tools \
-			lang/luajit
+			devel/gettext \
+			lang/lua \
+			textproc/intltool
+BUILD_DEPENDS =		${RUN_DEPENDS} \
+			devel/lpeg \
+			devel/lua-bitop
+
 LIB_DEPENDS =		devel/libtermkey \
-			devel/unibilium \
-			devel/msgpack \
 			devel/libuv \
-			devel/libvterm
+			devel/libvterm \
+			devel/msgpack \
+			devel/unibilium
+RUN_DEPENDS +=		devel/libmpack/lua \
+			devel/libmpack/main
 
 MAKE_FLAGS +=		USE_BUNDLED_DEPS=OFF
+CONFIGURE_ARGS +=	-DLUA_PRG=${MODLUA_BIN}
 
 # Tests need gmake
 USE_GMAKE = Yes
 
-# XXX this builds neovim a second time, and then fails
-# ninja: error: unknown target 'functionaltest'
-do-test:
-	cd ${WRKSRC} && env -i ${MAKE_ENV} ${MAKE_PROGRAM} \
-		${MAKE_FLAGS} -f ${MAKE_FILE} test ${MAKE_FLAGS}
+VIMPROG =	${WRKBUILD}/bin/nvim
+SUBST_VARS +=	VIMPROG
+pre-test:
+	${SUBST_CMD} ${WRKSRC}/src/nvim/testdir/test49.vim
 
-# Plug in correct lua interpreter path
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
+# These are the "old tests". To run the newer ones, we need "busted", which is
+# not yet ported. The ninja targets for the new tests are functionaltest,
+# functionaltest-lua and unittest. Don't add -j to this make invocation.
+#
+# XXX tests fails because the terminal is in (what looks like) 80x25. If run
+# outside of the ports tree, all is well.
+do-test:
+	cd ${WRKSRC} && env _TERM_ENV= ${MAKE_PROGRAM} -C src/nvim/testdir VIMPROG=${VIMPROG}
 
 .include <bsd.port.mk>
