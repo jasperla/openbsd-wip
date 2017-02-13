@@ -3,7 +3,7 @@
 COMMENT=	OAuth 2.0 implementation
 
 MODULES=	cpan
-DISTNAME=	Net-OAuth2-0.55
+DISTNAME=	Net-OAuth2-0.63
 CATEGORIES=	net
 CPAN_AUTHOR=	MARKOV
 
