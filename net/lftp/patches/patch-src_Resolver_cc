@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-src_Resolver_cc,v 1.14 2017/02/15 15:27:48 sthen Exp $
 
 "Cast address to IN6_IS_ADDR_LINKLOCAL."
 

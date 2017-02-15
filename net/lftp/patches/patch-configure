@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.15 2016/11/25 23:05:11 jca Exp $
+$OpenBSD: patch-configure,v 1.16 2017/02/15 15:27:48 sthen Exp $
 
 Use GNU readline as our base readline lacks add_history_time().
 
