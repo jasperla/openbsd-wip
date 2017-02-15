@@ -19,9 +19,8 @@ USE_GROFF=	Yes
 
 # lftp needs add_history_time()
 LIB_DEPENDS=	devel/libidn \
+		devel/gettext \
 		devel/readline>=6.1p2
-
-RUN_DEPENDS=	devel/gettext-tools
 
 MASTER_SITES=	http://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/ \
 		http://lftp.yar.ru/ftp/ \
