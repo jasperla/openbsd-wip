@@ -8037,3 +8037,7 @@ share/templates/TextDocument.desktop
 @unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/calligra/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/calligra/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/karbon/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/karbon/icons/hicolor
