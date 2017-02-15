@@ -16,9 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 DPB_PROPERTIES =	parallel
 
 MODULES =	devel/kf5 \
-		multimedia/phonon \
-		devel/cmake \
-		devel/gettext
+		multimedia/phonon
 
 SHARED_LIBS =   RtfReader                 50.0 # 0.0
 SHARED_LIBS +=  basicflakes               50.0 # 0.0
@@ -68,7 +66,9 @@ WANTLIB += z
 
 BUILD_DEPENDS +=devel/boost \
 		math/eigen3 \
-		productivity/librcps
+		productivity/librcps \
+		devel/kf5/kdoctools \
+		devel/gettext-tools
 
 RUN_DEPENDS +=	devel/desktop-file-utils \
 		misc/shared-mime-info \
@@ -83,7 +83,6 @@ LIB_DEPENDS +=	converters/libiconv \
 		devel/kf5/kconfigwidgets \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kdbusaddons \
-		devel/kf5/kdoctools \
 		devel/kf5/kguiaddons\
 		devel/kf5/ki18n \
 		devel/kf5/kiconthemes \
