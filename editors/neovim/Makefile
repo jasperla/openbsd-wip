@@ -18,13 +18,14 @@ MAINTAINER =	Edd Barrett <edd@openbsd.org>
 # Apache 2.0 + Vim License
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c kvm m msgpackc pthread termkey unibilium util uv vterm
+WANTLIB += c m msgpackc pthread termkey unibilium util uv vterm
 
 MODULES =		devel/cmake \
 			devel/gettext \
 			lang/lua \
 			textproc/intltool
 BUILD_DEPENDS =		${RUN_DEPENDS} \
+			devel/gperf \
 			devel/lpeg \
 			devel/lua-bitop
 
@@ -54,6 +55,7 @@ pre-test:
 # XXX tests fails because the terminal is in (what looks like) 80x25. If run
 # outside of the ports tree, all is well.
 do-test:
-	cd ${WRKSRC} && env _TERM_ENV= ${MAKE_PROGRAM} -C src/nvim/testdir VIMPROG=${VIMPROG}
+	cd ${WRKSRC} && ${MAKE_PROGRAM} -C src/nvim/testdir \
+		VIMPROG=${VIMPROG} ${MAKE_FLAGS}
 
 .include <bsd.port.mk>
