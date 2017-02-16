@@ -46,7 +46,7 @@ WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml SM X11 Xext Xi boost_system-mt
 WANTLIB += c curl exiv2 fftw3 gsl gslcblas jpeg lcms2 m png poppler-qt5
 WANTLIB += pthread raw tiff xcb xcb-util z
 
-MASTER_SITES ?=		${MASTER_SITE_KDE:=stable/krita/3.1.2/}
+MASTER_SITES ?=	${MASTER_SITE_KDE:=stable/krita/3.1.2/}
 EXTRACT_SUFX =	.tar.gz
 
 MODULES =	devel/kf5 \
