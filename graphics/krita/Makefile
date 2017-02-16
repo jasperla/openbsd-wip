@@ -55,12 +55,15 @@ MODULES =	devel/kf5 \
 MODGCC4_LANGS =	c++
 MODGCC4_ARCHS =	*
 
+RUN_DEPENDS +=	devel/desktop-file-utils \
+		x11/gtk+3,-guic
+
 LIB_DEPENDS +=		graphics/jpeg \
 			graphics/png \
 			graphics/tiff \
 			graphics/exiv2 \
 			graphics/lcms2 \
-			graphics/opencolorio \
+			graphics/OPEncolorio \
 			graphics/openexr \
 			graphics/libraw \
 			net/curl \
