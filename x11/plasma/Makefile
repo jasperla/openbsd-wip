@@ -2,8 +2,11 @@
 SUBDIR =
 SUBDIR += bluedevil
 SUBDIR += breeze
+#SUBDIR += breeze-grub
 SUBDIR += breeze-gtk
+#SUBDIR += breeze-plymouth
 SUBDIR += discover
+#SUBDIR += kactivitymanagerd
 SUBDIR += kde-cli-tools
 SUBDIR += kde-gtk-config
 SUBDIR += kdecoration
