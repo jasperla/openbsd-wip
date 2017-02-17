@@ -1,5 +1,5 @@
 @comment $OpenBSD$
-lib/kf5/plugins/kcm_kgamma.so
+lib/qt5/plugins/kcm_kgamma.so
 share/doc/HTML/en/kgamma5/
 share/doc/HTML/en/kgamma5/index.cache.bz2
 share/doc/HTML/en/kgamma5/index.docbook
