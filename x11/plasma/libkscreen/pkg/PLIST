@@ -33,16 +33,14 @@ lib/cmake/KF5Screen/KF5ScreenConfig.cmake
 lib/cmake/KF5Screen/KF5ScreenConfigVersion.cmake
 lib/cmake/KF5Screen/KF5ScreenTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Screen/KF5ScreenTargets.cmake
-lib/kf5/
-lib/kf5/plugins/
-lib/kf5/plugins/kf5/
-lib/kf5/plugins/kf5/kscreen/
-lib/kf5/plugins/kf5/kscreen/KSC_Fake.so
-lib/kf5/plugins/kf5/kscreen/KSC_QScreen.so
-lib/kf5/plugins/kf5/kscreen/KSC_XRandR.so
-lib/kf5/plugins/kf5/kscreen/KSC_XRandR11.so
 @lib lib/libKF5Screen.so.${LIBKF5Screen_VERSION}
 lib/pkgconfig/kscreen2.pc
+lib/qt5/plugins/kf5/
+lib/qt5/plugins/kf5/kscreen/
+lib/qt5/plugins/kf5/kscreen/KSC_Fake.so
+lib/qt5/plugins/kf5/kscreen/KSC_QScreen.so
+lib/qt5/plugins/kf5/kscreen/KSC_XRandR.so
+lib/qt5/plugins/kf5/kscreen/KSC_XRandR11.so
 libexec/kf5/
 @bin libexec/kf5/kscreen_backend_launcher
 share/dbus-1/services/org.kde.kscreen.service
