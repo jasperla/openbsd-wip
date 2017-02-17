@@ -49,33 +49,37 @@ SHARED_LIBS +=  kdeinit5_calligrasheets   0.0 # 0.0
 SHARED_LIBS +=  kdeinit5_calligrawords    0.0 # 0.0
 SHARED_LIBS +=  kdeinit5_karbon           0.0 # 0.0
 
-WANTLIB += ICE KF5Activities KF5Archive KF5Auth KF5Bookmarks KF5Codecs
-WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5Crash KF5DBusAddons KF5GuiAddons KF5I18n
-WANTLIB += KF5IconThemes KF5ItemViews KF5JS KF5JobWidgets KF5KCMUtils
-WANTLIB += KF5KDELibs4Support KF5KHtml KF5KIOCore KF5KIOFileWidgets
-WANTLIB += KF5KIOWidgets KF5Notifications KF5NotifyConfig KF5Parts
-WANTLIB += KF5Service KF5Solid KF5SonnetCore KF5SonnetUi KF5TextWidgets
-WANTLIB += KF5UnitConversion KF5Wallet KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5OpenGL
-WANTLIB += Qt5PrintSupport Qt5Qml Qt5Quick Qt5Sql Qt5Svg Qt5WebKit
-WANTLIB += Qt5WebKitWidgets Qt5Widgets Qt5X11Extras Qt5Xml SM
-WANTLIB += X11 Xext c fontconfig freetype gsl jpeg lcms2 m openjpeg
-WANTLIB += phonon4qt5experimental poppler poppler-qt5 pthread
-WANTLIB += z
+WANTLIB += Half ICE Iex IlmImf IlmThread Imath KF5Activities KF5Archive
+WANTLIB += KF5Auth KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
+WANTLIB += KF5DBusAddons KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews
+WANTLIB += KF5JS KF5JobWidgets KF5KCMUtils KF5KDELibs4Support
+WANTLIB += KF5KHtml KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets
+WANTLIB += KF5Notifications KF5NotifyConfig KF5Parts KF5Service
+WANTLIB += KF5Solid KF5SonnetCore KF5SonnetUi KF5TextWidgets KF5UnitConversion
+WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport
+WANTLIB += Qt5Qml Qt5Quick Qt5Sql Qt5Svg Qt5WebKit Qt5WebKitWidgets
+WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml SM X11 Xext c fontconfig
+WANTLIB += freetype gsl iconv jpeg lcms2 m openjpeg phonon4qt5experimental
+WANTLIB += poppler poppler-qt5 pthread z
 
 BUILD_DEPENDS +=devel/boost \
 		math/eigen3 \
 		productivity/librcps \
-		devel/kf5/kdoctools \
-		devel/gettext-tools
+		devel/kf5/kdoctools
 
 RUN_DEPENDS +=	devel/desktop-file-utils \
+		devel/kf5/threadweaver \
+		devel/kf5/ktexteditor \
+		devel/kf5/kross \
 		misc/shared-mime-info \
 		productivity/librcps \
 		x11/gtk+3,-guic
 
-LIB_DEPENDS +=	converters/libiconv \
+LIB_DEPENDS +=	devel/gettext \
+		x11/qt5/qtwebkit \
+		graphics/openexr \
 		devel/kf5/karchive \
 		devel/kf5/kcodecs\
 		devel/kf5/kcompletion \
@@ -92,7 +96,6 @@ LIB_DEPENDS +=	converters/libiconv \
 		devel/kf5/kparts \
 		devel/kf5/ktextwidgets \
 		devel/kf5/sonnet \
-		devel/kf5/threadweaver \
 		devel/kf5/kwallet \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
@@ -101,27 +104,13 @@ LIB_DEPENDS +=	converters/libiconv \
 		devel/kf5/kactivities \
 		devel/kf5/knotifyconfig \
 		devel/kf5/kcmutils \
-		devel/kf5/kross \
-		devel/kf5/ktexteditor \
 		devel/kf5/khtml \
-		databases/freetds \
-		databases/libpqxx>=3,<5 \
-		databases/mariadb \
 		devel/gsl \
-		graphics/exiv2 \
-		graphics/glew \
 		graphics/jpeg \
-		graphics/lcms2 \
-		graphics/opencolorio \
 		graphics/openjpeg \
-		graphics/png \
-		graphics/tiff \
-		math/fftw3,double \
-		net/curl \
-		print/poppler,,-qt5 \
-		security/qca2 \
-		textproc/icu4c \
-		textproc/libwpd
+		graphics/lcms2 \
+		print/poppler,,-qt5
+
 
 # Stuff we don't have ATM. Do not bother about CreateResources, it's
 # pure optional run-time dependency.
