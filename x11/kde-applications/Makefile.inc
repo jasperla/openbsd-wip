@@ -16,7 +16,7 @@ MASTER_SITES ?=		${MASTER_SITE_KDE:=stable/applications/${VERSION}/src/}
 KDE5 ?=			No
 .if ${KDE5:L} == "yes"
 MODULES +=		devel/kf5
-VERSION ?=		16.12.1
+VERSION ?=		16.12.2
 .else
 MODULES +=		x11/kde4
 VERSION ?=		15.08.3
