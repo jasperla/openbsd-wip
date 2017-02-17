@@ -9,20 +9,17 @@
 @bin bin/kstart5
 @bin bin/ksvgtopng5
 @bin bin/ktraderclient5
-lib/kf5/plugins/kcm_filetypes.so
 @lib lib/libkdeinit5_kcmshell5.so.${LIBkdeinit5_kcmshell5_VERSION}
-libexec/kf5/
+lib/qt5/plugins/kcm_filetypes.so
 libexec/kf5/kdeeject
 @bin libexec/kf5/kdesu
 @man man/man1/kdesu.1
-share/doc/HTML/ca/kdesu/
-share/doc/HTML/ca/kdesu/index.cache.bz2
-share/doc/HTML/ca/kdesu/index.docbook
-share/doc/HTML/ca/kdesu/man-kdesu.1.docbook
+share/doc/HTML/de/kdesu/
+share/doc/HTML/de/kdesu/index.cache.bz2
+share/doc/HTML/de/kdesu/index.docbook
 share/doc/HTML/en/kdesu/
 share/doc/HTML/en/kdesu/index.cache.bz2
 share/doc/HTML/en/kdesu/index.docbook
-share/doc/HTML/en/kdesu/man-kdesu.1.docbook
 share/kservices5/filetypes.desktop
 share/locale/af/LC_MESSAGES/filetypes.mo
 share/locale/af/LC_MESSAGES/kcmshell.mo
