@@ -1,17 +1,17 @@
 @comment $OpenBSD$
 @bin bin/bluedevil-sendfile
 @bin bin/bluedevil-wizard
-lib/kf5/plugins/bluetoothfileitemaction.so
-lib/kf5/plugins/kcm_bluedeviladapters.so
-lib/kf5/plugins/kcm_bluedevildevices.so
-lib/kf5/plugins/kcm_bluedevilglobal.so
-lib/kf5/plugins/kf5/kded/bluedevil.so
-lib/kf5/plugins/kio_bluetooth.so
-lib/kf5/plugins/kio_obexftp.so
 lib/qml/org/kde/plasma/private/
 lib/qml/org/kde/plasma/private/bluetooth/
 lib/qml/org/kde/plasma/private/bluetooth/libbluetoothplugin.so
 lib/qml/org/kde/plasma/private/bluetooth/qmldir
+lib/qt5/plugins/bluetoothfileitemaction.so
+lib/qt5/plugins/kcm_bluedeviladapters.so
+lib/qt5/plugins/kcm_bluedevildevices.so
+lib/qt5/plugins/kcm_bluedevilglobal.so
+lib/qt5/plugins/kf5/kded/bluedevil.so
+lib/qt5/plugins/kio_bluetooth.so
+lib/qt5/plugins/kio_obexftp.so
 share/applications/org.kde.bluedevilsendfile.desktop
 share/applications/org.kde.bluedevilwizard.desktop
 share/bluedevilwizard/
@@ -45,13 +45,20 @@ share/locale/en_GB/LC_MESSAGES/bluedevil.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_org.kde.plasma.bluetooth.mo
 share/locale/es/LC_MESSAGES/bluedevil.mo
 share/locale/es/LC_MESSAGES/plasma_applet_org.kde.plasma.bluetooth.mo
+share/locale/et/LC_MESSAGES/bluedevil.mo
+share/locale/et/LC_MESSAGES/plasma_applet_org.kde.plasma.bluetooth.mo
+share/locale/eu/LC_MESSAGES/bluedevil.mo
 share/locale/fi/LC_MESSAGES/bluedevil.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_org.kde.plasma.bluetooth.mo
 share/locale/fr/LC_MESSAGES/bluedevil.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_org.kde.plasma.bluetooth.mo
 share/locale/gl/LC_MESSAGES/bluedevil.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.bluetooth.mo
+share/locale/he/LC_MESSAGES/bluedevil.mo
+share/locale/he/LC_MESSAGES/plasma_applet_org.kde.plasma.bluetooth.mo
 share/locale/hu/LC_MESSAGES/bluedevil.mo
+share/locale/ia/LC_MESSAGES/bluedevil.mo
+share/locale/id/LC_MESSAGES/bluedevil.mo
 share/locale/it/LC_MESSAGES/bluedevil.mo
 share/locale/it/LC_MESSAGES/plasma_applet_org.kde.plasma.bluetooth.mo
 share/locale/ja/LC_MESSAGES/bluedevil.mo
@@ -66,6 +73,7 @@ share/locale/nl/LC_MESSAGES/plasma_applet_org.kde.plasma.bluetooth.mo
 share/locale/nn/LC_MESSAGES/bluedevil.mo
 share/locale/nn/LC_MESSAGES/plasma_applet_org.kde.plasma.bluetooth.mo
 share/locale/pa/LC_MESSAGES/bluedevil.mo
+share/locale/pa/LC_MESSAGES/plasma_applet_org.kde.plasma.bluetooth.mo
 share/locale/pl/LC_MESSAGES/bluedevil.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_org.kde.plasma.bluetooth.mo
 share/locale/pt/LC_MESSAGES/bluedevil.mo
@@ -96,6 +104,8 @@ share/locale/zh_CN/LC_MESSAGES/bluedevil.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_applet_org.kde.plasma.bluetooth.mo
 share/locale/zh_TW/LC_MESSAGES/bluedevil.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.bluetooth.mo
+share/metainfo/
+share/metainfo/org.kde.plasma.bluetooth.appdata.xml
 share/mime/packages/bluedevil-mime.xml
 share/plasma/plasmoids/org.kde.plasma.bluetooth/
 share/plasma/plasmoids/org.kde.plasma.bluetooth/contents/
@@ -111,5 +121,10 @@ share/plasma/plasmoids/org.kde.plasma.bluetooth/contents/ui/MediaPlayer.qml
 share/plasma/plasmoids/org.kde.plasma.bluetooth/contents/ui/SwitchButton.qml
 share/plasma/plasmoids/org.kde.plasma.bluetooth/contents/ui/Toolbar.qml
 share/plasma/plasmoids/org.kde.plasma.bluetooth/metadata.desktop
+share/plasma/plasmoids/org.kde.plasma.bluetooth/metadata.json
 share/remoteview/
 share/remoteview/bluetooth-network.desktop
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
