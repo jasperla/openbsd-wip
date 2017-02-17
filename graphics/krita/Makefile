@@ -63,7 +63,7 @@ LIB_DEPENDS +=		graphics/jpeg \
 			graphics/tiff \
 			graphics/exiv2 \
 			graphics/lcms2 \
-			graphics/OPEncolorio \
+			graphics/opencolorio \
 			graphics/openexr \
 			graphics/libraw \
 			net/curl \
