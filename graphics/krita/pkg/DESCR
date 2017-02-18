@@ -9,8 +9,10 @@ Core features:
 - An adaptive multi-modal interface which works on the desktop and touchscreens
 - A large set of default brushes
 - Customizable brush presets
-- Multiple brush engines, supports pressure sensitivity, tilt and other features of graphics tablets
-- Wrap around mode canvas for creating and visualizing seamlessly tiled textures
+- Multiple brush engines, supports pressure sensitivity, tilt and other
+  features of graphics tablets
+- Wrap around mode canvas for creating and visualizing seamlessly tiled
+  textures
 - OpenGL powered canvas with high-bit-depth monitor support
 - Filters with real-time preview
 - A layer engine that allows deeply nested and grouped layers

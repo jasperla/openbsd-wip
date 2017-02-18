@@ -12,7 +12,9 @@ WANTLIB += KF5TextWidgets KF5UnitConversion KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Widgets Qt5Xml SM X11 Xext Xxf86vm m
 
-BUILD_DEPENDS =		devel/kf5/kdoctools
+BUILD_DEPENDS =		devel/kf5/kdoctools \
+			devel/gettext-tools
+
 RUN_DEPENDS =		devel/kf5/kdoctools
 
 LIB_DEPENDS =		devel/kf5/kdelibs4support \

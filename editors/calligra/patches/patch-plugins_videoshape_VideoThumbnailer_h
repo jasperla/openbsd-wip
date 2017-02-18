@@ -1,0 +1,16 @@
+$OpenBSD$
+--- plugins/videoshape/VideoThumbnailer.h.orig	Sat Feb 18 14:31:19 2017
++++ plugins/videoshape/VideoThumbnailer.h	Sat Feb 18 14:31:50 2017
+@@ -20,9 +20,9 @@
+ #ifndef VIDEOTHUMBNAILER_H
+ #define VIDEOTHUMBNAILER_H
+ 
+-#include <phonon/MediaObject>
+-#include <phonon/Global>
+-#include <phonon/experimental/videodataoutput2.h>
++#include <kde4/phonon/MediaObject>
++#include <kde4/phonon/Global>
++#include <kde4/phonon/experimental/videodataoutput2.h>
+ 
+ #include <QObject>
+ #include <QImage>

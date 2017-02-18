@@ -16,6 +16,8 @@ MODULES =		lang/python
 BUILD_DEPENDS =		devel/kf5/kcmutils
 RUN_DEPENDS =		devel/kf5/kcmutils
 
+BUILD_DEPENDS +=	devel/gettext-tools
+
 LIB_DEPENDS =		devel/kf5/karchive \
 			devel/kf5/kconfigwidgets \
 			devel/kf5/ki18n \
@@ -24,5 +26,7 @@ LIB_DEPENDS =		devel/kf5/karchive \
 			devel/kf5/knewstuff \
 			x11/gtk+2 \
 			x11/gtk+3
+
+TEST_IS_INTERACTIVE =	X11
 
 .include <bsd.port.mk>

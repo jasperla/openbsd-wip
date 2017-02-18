@@ -6,8 +6,6 @@ share/appdata/
 share/appdata/org.kde.krusader.appdata.xml
 share/applications/org.kde.krusader.desktop
 share/applications/org.kde.krusader.root-mode.desktop
-share/doc/HTML/
-share/doc/HTML/de/
 share/doc/HTML/de/krusader/
 share/doc/HTML/de/krusader/advanced-functions.docbook
 share/doc/HTML/de/krusader/archives.docbook
@@ -46,7 +44,6 @@ share/doc/HTML/de/krusader/useraction-xml.docbook
 share/doc/HTML/de/krusader/useractions.docbook
 share/doc/HTML/de/krusader/vfs.docbook
 share/doc/HTML/de/krusader/viewer-editor.docbook
-share/doc/HTML/en/
 share/doc/HTML/en/krusader/
 share/doc/HTML/en/krusader/Icon-edit-delete.png
 share/doc/HTML/en/krusader/actionman.png
@@ -102,7 +99,6 @@ share/doc/HTML/en/krusader/useraction-xml.docbook
 share/doc/HTML/en/krusader/useractions.docbook
 share/doc/HTML/en/krusader/vfs.docbook
 share/doc/HTML/en/krusader/viewer-editor.docbook
-share/doc/HTML/it/
 share/doc/HTML/it/krusader/
 share/doc/HTML/it/krusader/advanced-functions.docbook
 share/doc/HTML/it/krusader/archives.docbook
@@ -141,7 +137,6 @@ share/doc/HTML/it/krusader/useraction-xml.docbook
 share/doc/HTML/it/krusader/useractions.docbook
 share/doc/HTML/it/krusader/vfs.docbook
 share/doc/HTML/it/krusader/viewer-editor.docbook
-share/doc/HTML/nl/
 share/doc/HTML/nl/krusader/
 share/doc/HTML/nl/krusader/advanced-functions.docbook
 share/doc/HTML/nl/krusader/archives.docbook
@@ -180,7 +175,6 @@ share/doc/HTML/nl/krusader/useraction-xml.docbook
 share/doc/HTML/nl/krusader/useractions.docbook
 share/doc/HTML/nl/krusader/vfs.docbook
 share/doc/HTML/nl/krusader/viewer-editor.docbook
-share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/krusader/
 share/doc/HTML/pt_BR/krusader/advanced-functions.docbook
 share/doc/HTML/pt_BR/krusader/archives.docbook
@@ -219,7 +213,6 @@ share/doc/HTML/pt_BR/krusader/useraction-xml.docbook
 share/doc/HTML/pt_BR/krusader/useractions.docbook
 share/doc/HTML/pt_BR/krusader/vfs.docbook
 share/doc/HTML/pt_BR/krusader/viewer-editor.docbook
-share/doc/HTML/sv/
 share/doc/HTML/sv/krusader/
 share/doc/HTML/sv/krusader/advanced-functions.docbook
 share/doc/HTML/sv/krusader/archives.docbook
@@ -258,7 +251,6 @@ share/doc/HTML/sv/krusader/useraction-xml.docbook
 share/doc/HTML/sv/krusader/useractions.docbook
 share/doc/HTML/sv/krusader/vfs.docbook
 share/doc/HTML/sv/krusader/viewer-editor.docbook
-share/doc/HTML/uk/
 share/doc/HTML/uk/krusader/
 share/doc/HTML/uk/krusader/actionman.png
 share/doc/HTML/uk/krusader/advanced-functions.docbook
@@ -309,7 +301,6 @@ share/doc/HTML/uk/krusader/useraction-xml.docbook
 share/doc/HTML/uk/krusader/useractions.docbook
 share/doc/HTML/uk/krusader/vfs.docbook
 share/doc/HTML/uk/krusader/viewer-editor.docbook
-share/examples/xdg/
 share/examples/xdg/kio_isorc
 share/icons/hicolor/128x128/apps/krusader_root.png
 share/icons/hicolor/128x128/apps/krusader_user.png
@@ -370,7 +361,6 @@ share/krusader/total_commander.color
 share/krusader/total_commander.keymap
 share/krusader/total_commander.keymap.info
 share/krusader/useraction_examples.xml
-share/kservices5/
 share/kservices5/iso.protocol
 share/kservices5/krarc.protocol
 share/kxmlgui5/
@@ -415,11 +405,7 @@ share/locale/ru/LC_MESSAGES/krusader.mo
 share/locale/sk/LC_MESSAGES/krusader.mo
 share/locale/sl/LC_MESSAGES/krusader.mo
 share/locale/sr/LC_MESSAGES/krusader.mo
-share/locale/sr@ijekavian/
-share/locale/sr@ijekavian/LC_MESSAGES/
 share/locale/sr@ijekavian/LC_MESSAGES/krusader.mo
-share/locale/sr@ijekavianlatin/
-share/locale/sr@ijekavianlatin/LC_MESSAGES/
 share/locale/sr@ijekavianlatin/LC_MESSAGES/krusader.mo
 share/locale/sr@latin/LC_MESSAGES/krusader.mo
 share/locale/sv/LC_MESSAGES/krusader.mo
@@ -430,7 +416,7 @@ share/locale/zh_CN/LC_MESSAGES/krusader.mo
 share/locale/zh_TW/LC_MESSAGES/krusader.mo
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/locolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/locolor
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/krusader/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/krusader/icons/hicolor
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

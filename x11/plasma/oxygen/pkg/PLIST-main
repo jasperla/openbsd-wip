@@ -1,11 +1,11 @@
 @comment $OpenBSD$
 @bin bin/oxygen-demo5
 @bin bin/oxygen-settings5
-lib/kf5/plugins/org.kde.kdecoration2/
-lib/kf5/plugins/org.kde.kdecoration2/oxygendecoration.so
 @lib lib/liboxygenstyle5.so.${LIBoxygenstyle5_VERSION}
 @lib lib/liboxygenstyleconfig5.so.${LIBoxygenstyleconfig5_VERSION}
 lib/qt5/plugins/kstyle_oxygen_config.so
+lib/qt5/plugins/org.kde.kdecoration2/
+lib/qt5/plugins/org.kde.kdecoration2/oxygendecoration.so
 lib/qt5/plugins/styles/
 lib/qt5/plugins/styles/oxygen.so
 share/icons/hicolor/256x256/apps/oxygen-settings.png
@@ -77,6 +77,7 @@ share/locale/es/LC_MESSAGES/oxygen_kdecoration.mo
 share/locale/es/LC_MESSAGES/oxygen_style_config.mo
 share/locale/es/LC_MESSAGES/oxygen_style_demo.mo
 share/locale/et/LC_MESSAGES/liboxygenstyleconfig.mo
+share/locale/et/LC_MESSAGES/oxygen_kdecoration.mo
 share/locale/et/LC_MESSAGES/oxygen_style_config.mo
 share/locale/et/LC_MESSAGES/oxygen_style_demo.mo
 share/locale/eu/LC_MESSAGES/oxygen_style_config.mo

@@ -1,0 +1,20 @@
+$OpenBSD$
+--- plugins/videoshape/FullScreenPlayer.cpp.orig	Sat Feb 18 14:36:34 2017
++++ plugins/videoshape/FullScreenPlayer.cpp	Sat Feb 18 14:37:00 2017
+@@ -24,11 +24,11 @@
+ 
+ #include <klocalizedstring.h>
+ 
+-#include <phonon/videowidget.h>
+-#include <phonon/audiooutput.h>
+-#include <phonon/mediaobject.h>
+-#include <phonon/VolumeSlider>
+-#include <phonon/SeekSlider>
++#include <kde4/phonon/videowidget.h>
++#include <kde4/phonon/audiooutput.h>
++#include <kde4/phonon/mediaobject.h>
++#include <kde4/phonon/VolumeSlider>
++#include <kde4/phonon/SeekSlider>
+ 
+ #include <QUrl>
+ #include <QVBoxLayout>
