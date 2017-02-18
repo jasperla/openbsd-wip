@@ -1,0 +1,12 @@
+$OpenBSD$
+--- plugins/videoshape/FullScreenPlayer.h.orig	Sat Feb 18 12:22:48 2017
++++ plugins/videoshape/FullScreenPlayer.h	Sat Feb 18 12:22:59 2017
+@@ -21,7 +21,7 @@
+ #define FULLSCREENPLAYER_H
+ 
+ #include <QWidget>
+-#include <phonon/Global>
++#include <kde4/phonon/Global>
+ 
+ namespace Phonon
+ {

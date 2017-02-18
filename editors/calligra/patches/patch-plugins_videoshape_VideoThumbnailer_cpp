@@ -1,0 +1,12 @@
+$OpenBSD$
+--- plugins/videoshape/VideoThumbnailer.cpp.orig	Sat Feb 18 15:08:57 2017
++++ plugins/videoshape/VideoThumbnailer.cpp	Sat Feb 18 15:09:09 2017
+@@ -23,7 +23,7 @@
+ #include "VideoData.h"
+ #include "VideoDebug.h"
+ 
+-#include <phonon/experimental/videoframe2.h>
++#include <kde4/phonon/experimental/videoframe2.h>
+ #include <QTime>
+ #include <QVBoxLayout>
+ #include <QVarLengthArray>
