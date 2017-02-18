@@ -2,12 +2,12 @@
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	https://www.calligra-suite.org/
-DISTNAME =	calligra-3.0.0
+VERSION =	3.0.0.1
+DISTNAME =	calligra-${VERSION}
 CATEGORIES =	editors
 
 DIST_SUBDIR =	kde
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/${DISTNAME}/}
-EXTRACT_SUFX =	.tar.gz
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/calligra/${VERSION}/}
 
 MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
 
@@ -67,6 +67,7 @@ WANTLIB += poppler poppler-qt5 pthread z
 BUILD_DEPENDS +=devel/boost \
 		math/eigen3 \
 		productivity/librcps \
+		devel/gettext-tools \
 		devel/kf5/kdoctools
 
 RUN_DEPENDS +=	devel/desktop-file-utils \
@@ -77,8 +78,7 @@ RUN_DEPENDS +=	devel/desktop-file-utils \
 		productivity/librcps \
 		x11/gtk+3,-guic
 
-LIB_DEPENDS +=	devel/gettext \
-		x11/qt5/qtwebkit \
+LIB_DEPENDS +=	x11/qt5/qtwebkit \
 		graphics/openexr \
 		devel/kf5/karchive \
 		devel/kf5/kcodecs\
