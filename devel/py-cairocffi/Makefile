@@ -2,7 +2,7 @@
 
 COMMENT =		cffi-based cairo bindings for Python
 
-MODPY_EGG_VERSION =	0.7.2
+MODPY_EGG_VERSION =	0.8.0
 DISTNAME =		cairocffi-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/python
 
 RUN_DEPENDS =		devel/py-cffi${MODPY_FLAVOR}
-#			devel/py-ipykernel${MODPY_FLAVOR}
+BUILD_DEPENDS =		${RUN_DEPENDS}
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/py-test${MODPY_FLAVOR}
 
@@ -28,6 +28,6 @@ FLAVORS =		python3
 FLAVOR ?=
 
 do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m pytest cairocffi
+	cd ${WRKSRC}/lib && LC_CTYPE=en_US.UTF-8 ${MODPY_BIN} -m pytest cairocffi
 
 .include <bsd.port.mk>
