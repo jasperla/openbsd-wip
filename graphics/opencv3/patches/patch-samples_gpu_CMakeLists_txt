@@ -1,24 +1,14 @@
 $OpenBSD$
---- samples/gpu/CMakeLists.txt.orig	Fri Dec 18 16:02:16 2015
-+++ samples/gpu/CMakeLists.txt	Fri Mar 11 00:09:20 2016
-@@ -81,10 +81,6 @@ if(BUILD_EXAMPLES AND OCV_DEPENDENCIES_FOUND)
+--- samples/gpu/CMakeLists.txt.orig	Fri Dec 23 13:54:44 2016
++++ samples/gpu/CMakeLists.txt	Sun Feb 19 20:14:37 2017
+@@ -85,6 +85,10 @@ if(BUILD_EXAMPLES AND OCV_DEPENDENCIES_FOUND)
+     list(REMOVE_ITEM all_samples "opengl.cpp")
+   endif()
  
-   file(GLOB all_samples RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.cpp)
- 
--  if(NOT WITH_OPENGL)
--    list(REMOVE_ITEM all_samples "opengl.cpp")
--  endif(NOT WITH_OPENGL)
--
++  if(NOT WITH_OPENGL)
++    list(REMOVE_ITEM all_samples "opengl.cpp")
++  endif(NOT WITH_OPENGL)
++
    foreach(sample_filename ${all_samples})
      get_filename_component(sample ${sample_filename} NAME_WE)
      file(GLOB sample_srcs RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} ${sample}.*)
-@@ -96,9 +92,6 @@ endif()
- 
- if(INSTALL_C_EXAMPLES AND NOT WIN32)
-   file(GLOB install_list *.c *.cpp *.jpg *.png *.data makefile.* build_all.sh *.dsp *.cmd )
--  if(NOT WITH_OPENGL)
--    list(REMOVE_ITEM all_samples "opengl.cpp")
--  endif(NOT WITH_OPENGL)
-   install(FILES ${install_list}
-           DESTINATION ${OPENCV_SAMPLES_SRC_INSTALL_PATH}/gpu
-           PERMISSIONS OWNER_READ GROUP_READ WORLD_READ COMPONENT samples)

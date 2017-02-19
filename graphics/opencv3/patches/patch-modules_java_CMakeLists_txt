@@ -2,9 +2,9 @@ $OpenBSD$
 
 Do not export java in OpenCVModules
 
---- modules/java/CMakeLists.txt.orig	Mon May 30 23:49:29 2016
-+++ modules/java/CMakeLists.txt	Mon May 30 23:53:59 2016
-@@ -421,11 +421,11 @@ if(ANDROID)
+--- modules/java/CMakeLists.txt.orig	Fri Dec 23 13:54:44 2016
++++ modules/java/CMakeLists.txt	Sun Feb 19 20:14:32 2017
+@@ -427,11 +427,11 @@ if(ANDROID)
            ARCHIVE DESTINATION ${OPENCV_LIB_INSTALL_PATH} COMPONENT java)
  else()
    if(NOT INSTALL_CREATE_DISTRIB)
