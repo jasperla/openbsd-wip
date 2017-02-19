@@ -127,13 +127,14 @@ pre-install:
 # Run 'texlinks -u' and then observe the output of
 # 'texlinks -v'. Don't forget to check the links are in the PLIST.
 ALEPH_LN =	lamed
-LUATEX_LN =	dvilualatex dviluatex lualatex lualollipop
-PDFTEX_LN =	amstex cslatex csplain eplain etex jadetex latex lollipop mex mllatex mltex \
+LUATEX_LN =	dvilualatex dviluatex lualatex
+PDFTEX_LN =	amstex cslatex csplain eplain etex jadetex latex mex mllatex mltex \
 		pdfcslatex pdfcsplain pdfetex pdfjadetex pdflatex pdfmex \
 		pdfxmltex texsis utf8mex xmltex
 EPTEX_LN =	platex
-XETEX_LN =	xelatex xelollipop
 EUPTEX_LN =	uplatex
+XETEX_LN =	xelatex
+TEX_LN =	lollipop
 
 EXTRA_ROOT =	${WRKDIR}/texlive-${DIST_V}-extra
 

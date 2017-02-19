@@ -167,13 +167,11 @@ bin/lily-image-commands
 bin/lily-rebuild-pdfs
 bin/listbib
 bin/listings-ext.sh
-bin/lollipop
 bin/ltx2crossrefxml
 bin/ltxfileinfo
 bin/ltximg
 bin/lua2dox_filter
 bin/lualatex
-bin/lualollipop
 bin/luaotfload-tool
 @bin bin/luatex
 bin/luatools
@@ -382,7 +380,6 @@ bin/xdvi
 @bin bin/xdvi-xaw
 @bin bin/xdvipdfmx
 bin/xelatex
-bin/xelollipop
 @bin bin/xetex
 bin/xmltex
 bin/yplan
