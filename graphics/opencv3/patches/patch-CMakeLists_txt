@@ -1,17 +1,7 @@
 $OpenBSD: patch-CMakeLists_txt,v 1.5 2015/01/24 10:56:43 zhuk Exp $
---- CMakeLists.txt.orig	Fri Dec 18 16:02:16 2015
-+++ CMakeLists.txt	Thu Mar 10 23:51:55 2016
-@@ -384,7 +384,8 @@ else()
-     set(OPENCV_LIB_INSTALL_PATH     lib${LIB_SUFFIX})
-     set(OPENCV_3P_LIB_INSTALL_PATH  share/OpenCV/3rdparty/${OPENCV_LIB_INSTALL_PATH})
-     set(OPENCV_SAMPLES_SRC_INSTALL_PATH    share/OpenCV/samples)
--    set(OPENCV_JAR_INSTALL_PATH share/OpenCV/java)
-+    # JNI shared object is installed in the same directory, so this should
-+    set(OPENCV_JAR_INSTALL_PATH lib/OpenCV/java)
-     set(OPENCV_OTHER_INSTALL_PATH   share/OpenCV)
-   endif()
-   set(OPENCV_INCLUDE_INSTALL_PATH "include")
-@@ -522,9 +523,6 @@ if(IOS)
+--- CMakeLists.txt.orig	Fri Dec 23 13:54:44 2016
++++ CMakeLists.txt	Sun Feb 19 20:14:32 2017
+@@ -543,9 +543,6 @@ if(IOS)
    # test_big_endian needs try_compile, which doesn't work for iOS
    # http://public.kitware.com/Bug/view.php?id=12288
    set(WORDS_BIGENDIAN 0)

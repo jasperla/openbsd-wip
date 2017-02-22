@@ -1,21 +1,22 @@
 $OpenBSD$
---- x2goclient.pro.orig	Tue Jul 28 04:50:36 2015
-+++ x2goclient.pro	Thu Aug 13 21:49:53 2015
-@@ -124,7 +124,7 @@ SOURCES += src/sharewidget.cpp \
-            src/non_modal_messagebox.cpp \
-            src/help.cpp
+--- x2goclient.pro.orig	Wed Feb 22 05:11:35 2017
++++ x2goclient.pro	Wed Feb 22 22:18:23 2017
+@@ -130,7 +130,8 @@ SOURCES += src/sharewidget.cpp \
+            src/compat.cpp \
+            src/pulsemanager.cpp
  
 -LIBS += -lssh
 +LIBS += -lssh -lldap -lcups -lX11 -lXpm
++
  win32:LIBS += -lAdvAPI32 -lshell32 -lUser32
  
  plugin {
-@@ -166,7 +166,7 @@ else:message("No translation files in project")
+@@ -172,7 +173,7 @@ else:message("No translation files in project")
  
  TEMPLATE = app
  DEPENDPATH += .
 -INCLUDEPATH += src
 +INCLUDEPATH += src $(X11BASE)/include
- RESOURCES += res/resources.rcc
+ RESOURCES += res/resources.qrc
  
  exists(res/txt/git-info) {

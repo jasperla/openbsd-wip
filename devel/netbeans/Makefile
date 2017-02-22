@@ -47,7 +47,7 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/netbeans/ide/bin/nativeexecution/hostinfo.sh \
 	${NB}/ide/bin/nativeexecution/
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	@${INSTALL_DATA} ${FILESDIR}/netbeans.desktop \
+	@${SUBST_DATA} ${FILESDIR}/netbeans.desktop \
 		${PREFIX}/share/applications/netbeans.desktop
 
 .include <bsd.port.mk>

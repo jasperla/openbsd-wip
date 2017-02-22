@@ -2,7 +2,7 @@
 
 COMMENT =	Qt4 client for the X2Go system
 
-DISTNAME =	x2goclient-4.0.5.2
+DISTNAME =	x2goclient-4.1.0.0
 
 CATEGORIES =	x11
 
@@ -25,7 +25,7 @@ LIB_DEPENDS +=	security/libssh \
 		databases/openldap \
 		print/cups,-libs
 
-BUILD_DEPENDS +=x11/nx/nxcomp \
+RUN_DEPENDS +=	x11/nx/nxcomp \
 		x11/nx/nxproxy
 
 RUN_DEPENDS +=	shells/bash
@@ -42,6 +42,8 @@ do-configure:
 	find ${WRKSRC} -type f -iname "*.h" -exec \
 		perl -pi -e 's,Q_OS_LINUX,Q_OS_UNIX,g;' \
 		-e 's,#include <linux/fs.h>,,g;' {} \;
+	sed -i -e 's,nxproxy -S nx,${LOCALBASE}/NX/bin/nxproxy -S nx,' \
+		${WRKSRC}/src/onmainwindow.cpp
 	cd ${WRKSRC} && ${LRELEASE} x2goclient.pro \
 		&& ${MODQT4_QMAKE} x2goclient.pro
 

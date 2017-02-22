@@ -8,9 +8,9 @@ COMMENT-docs =		OpenCV documentation and examples
 COMMENT-main =		library of programming functions for real time cv
 COMMENT-java =		Java bindings for OpenCV
 
-V =			3.1.0
+V =			3.2.0
 DISTNAME =		opencv-${V}
-PKGNAME-main =		popencv3-${V}
+PKGNAME-main =		opencv3-${V}
 PKGNAME-docs =		opencv3-docs-$V
 PKGNAME-java =		opencv3-java-${V}
 
@@ -136,6 +136,8 @@ CONFIG_ADJ_CMD =	perl -pi
 .for _l _v in ${SHARED_LIBS}
 CONFIG_ADJ_CMD +=	-e 's,lib${_l}.so([^.]),lib${_l}.so.${_v}$$1,g;'
 .endfor
+
+TEST_IS_INTERACTIVE =	X11
 
 post-install:
 	${CONFIG_ADJ_CMD} ${PREFIX}/share/OpenCV/OpenCVConfig.cmake

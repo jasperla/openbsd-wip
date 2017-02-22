@@ -36,7 +36,7 @@ CATEGORIES =	devel editors
 
 HOMEPAGE =	https://www.qt.io/ide/
 
-# XXX GPLv3 with some exceptions
+# GPLv3 with the "Qt Company GPL Exception 1.0"
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL Qt5Concurrent Qt5Core Qt5Designer Qt5DesignerComponents
