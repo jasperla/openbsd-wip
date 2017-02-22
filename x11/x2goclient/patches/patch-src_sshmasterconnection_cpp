@@ -3,9 +3,9 @@ $OpenBSD$
 Increase the thread stack size to the default size on Linux, fixes
 a crash.
 
---- src/sshmasterconnection.cpp.orig	Mon Sep 19 06:17:44 2016
-+++ src/sshmasterconnection.cpp	Fri Dec 16 07:57:57 2016
-@@ -158,7 +158,7 @@ SshMasterConnection::SshMasterConnection (QObject* par
+--- src/sshmasterconnection.cpp.orig	Wed Feb 22 05:11:35 2017
++++ src/sshmasterconnection.cpp	Wed Feb 22 20:59:17 2017
+@@ -159,7 +159,7 @@ SshMasterConnection::SshMasterConnection (QObject* par
          QString proxylogin, QString proxypassword, QString proxykey,
          bool proxyautologin, bool proxyKrbLogin ) : QThread ( parent )
  {
