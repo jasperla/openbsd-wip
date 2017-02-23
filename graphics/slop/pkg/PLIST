@@ -2,4 +2,4 @@
 @bin bin/slop
 include/slop.hpp
 lib/libslopy.so
-@man man/man1/slop.1.gz
+@man man/man1/slop.1

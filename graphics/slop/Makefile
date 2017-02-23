@@ -22,6 +22,9 @@ MODGCC4_ARCHS =	*
 
 BUILD_DEPENDS =	graphics/glm
 
+
+CONFIGURE_ARGS +=	-DCMAKE_COMPRESS_MAN:BOOL=Off
+
 NO_TEST =	Yes
 
 .include <bsd.port.mk>
