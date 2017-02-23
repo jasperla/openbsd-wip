@@ -20,8 +20,7 @@ MODULES =	devel/cmake \
 MODGCC4_LANGS =	c++
 MODGCC4_ARCHS =	*
 
-BUILD_DEPENDS =	graphics/glm
-
+BUILD_DEPENDS +=	graphics/glm
 
 CONFIGURE_ARGS +=	-DCMAKE_COMPRESS_MAN:BOOL=Off
 
