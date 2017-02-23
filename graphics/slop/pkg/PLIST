@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/11/16 16:48:56 bcallah Exp $
+@bin bin/slop
+include/slop.hpp
+lib/libslopy.so
+@man man/man1/slop.1.gz
