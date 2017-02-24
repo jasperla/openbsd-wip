@@ -1,0 +1,28 @@
+$OpenBSD$
+
+- The slop executable requires C++11
+-- commit from upstream 1fd9f104c00f46061ae644b1ae10b22e5022d512
+
+--- CMakeLists.txt.orig	Thu Feb 23 12:54:04 2017
++++ CMakeLists.txt	Fri Feb 24 06:38:36 2017
+@@ -47,6 +47,8 @@ set_property(TARGET ${LIBRARY_NAME} PROPERTY CXX_STAND
+ add_executable(${EXECUTABLE_NAME} src/options.cpp
+                                   src/main.cpp)
+ 
++set_property(TARGET ${EXECUTABLE_NAME} PROPERTY CXX_STANDARD 11)
++
+ set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/modules" )
+ 
+ find_package(GLM REQUIRED)
+@@ -65,8 +67,9 @@ target_link_libraries(${EXECUTABLE_NAME} ${X11_LIBRARI
+                                          ${GLM_LIBRARIES}
+                                          ${OPENGL_LIBRARIES}
+                                          ${GLX_LIBRARY}
+-                                         ${XEXT_LIBRARIES}
+-                                         ${LIBRARY_NAME})
++                                         ${XEXT_LIBRARIES})
++
++target_link_libraries(${EXECUTABLE_NAME} ${LIBRARY_NAME})
+ 
+ install( TARGETS ${EXECUTABLE_NAME} DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" )
+ install( TARGETS ${LIBRARY_NAME} DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" )
