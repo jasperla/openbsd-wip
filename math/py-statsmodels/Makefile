@@ -2,7 +2,7 @@
 
 COMMENT =		statistical computations and models for use with SciPy
 
-MODPY_EGG_VERSION =	0.6.1
+MODPY_EGG_VERSION =	0.8.0
 DISTNAME =		statsmodels-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
@@ -12,7 +12,7 @@ MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		${MODPY_WANTLIB} pthread
+WANTLIB +=		${MODPY_WANTLIB} m pthread
 
 MODULES =		lang/python
 

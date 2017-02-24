@@ -26,6 +26,7 @@ MODULES =		lang/python
 # building the docs and running the tests.
 OPTIONAL_DEPENDS =	devel/ipython${MODPY_FLAVOR} \
 			devel/py-html5lib${MODPY_FLAVOR} \
+			devel/py-xlsxwriter${MODPY_FLAVOR} \
 			graphics/py-matplotlib${MODPY_FLAVOR} \
 			math/py-bottleneck${MODPY_FLAVOR} \
 			math/py-numexpr${MODPY_FLAVOR} \
