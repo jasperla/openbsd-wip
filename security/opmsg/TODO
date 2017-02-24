@@ -1,0 +1,22 @@
+It seems we don't have EVP_MD_CTX_delete anymore:
+
+c++ -Wall -O2 -pedantic -std=c++11  -DHAVE_BN_GENCB_NEW=0 -c keystore.cc
+keystore.cc:96:69: error: use of undeclared identifier 'EVP_MD_CTX_free'
+        unique_ptr<EVP_MD_CTX, EVP_MD_CTX_del> md_ctx(EVP_MD_CTX_create(), EVP_MD_CTX_delete);
+                                                                           ^
+./missing.h:42:27: note: expanded from macro 'EVP_MD_CTX_delete'
+#define EVP_MD_CTX_delete EVP_MD_CTX_free
+                          ^
+keystore.cc:137:69: error: use of undeclared identifier 'EVP_MD_CTX_free'
+        unique_ptr<EVP_MD_CTX, EVP_MD_CTX_del> md_ctx(EVP_MD_CTX_create(), EVP_MD_CTX_delete);
+                                                                           ^
+./missing.h:42:27: note: expanded from macro 'EVP_MD_CTX_delete'
+#define EVP_MD_CTX_delete EVP_MD_CTX_free
+                          ^
+keystore.cc:1149:2: error: use of undeclared identifier 'DH_get0_key'
+        DH_get0_key(dh.get(), &pub_key, nullptr);
+        ^
+keystore.cc:1244:4: error: use of undeclared identifier 'DH_get0_key'
+                        DH_get0_key(dh.get(), &pub_key, nullptr);
+                        ^
+4 errors generated.
