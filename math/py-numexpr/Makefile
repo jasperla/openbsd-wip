@@ -16,12 +16,12 @@ WANTLIB +=		m pthread ${MODPY_WANTLIB} stdc++
 
 MODULES =		lang/python
 
+MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
+
 RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR}
 BUILD_DEPENDS =		${RUN_DEPENDS}
 TEST_DEPENDS =		${RUN_DEPENDS}
-
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
 FLAVOR ?=

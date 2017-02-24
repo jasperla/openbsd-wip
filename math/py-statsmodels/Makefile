@@ -16,6 +16,9 @@ WANTLIB +=		${MODPY_WANTLIB} m pthread
 
 MODULES =		lang/python
 
+MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
+
 BUILD_DEPENDS =		math/py-numpy${MODPY_FLAVOR}
 RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR} \
 			math/py-pandas${MODPY_FLAVOR} \
@@ -23,9 +26,6 @@ RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR} \
 			math/py-scipy${MODPY_FLAVOR}
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/py-nose${MODPY_FLAVOR}
-
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
 FLAVOR ?=

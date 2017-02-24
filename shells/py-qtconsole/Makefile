@@ -14,6 +14,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
 
+MODPY_PI =		Yes
+
 RUN_DEPENDS =		devel/ipython${MODPY_FLAVOR}>=5.1.0 \
 			devel/py-ipykernel${MODPY_FLAVOR} \
 			devel/py-jupyter_client${MODPY_FLAVOR} \
@@ -24,8 +26,6 @@ RUN_DEPENDS =		devel/ipython${MODPY_FLAVOR}>=5.1.0 \
 			x11/py-qt5${MODPY_FLAVOR}
 TEST_DEPENDS =		${RUN_DEPENDS}
 
-MODPY_PI =		Yes
-
 FLAVORS =		python3
 FLAVOR ?=
 
@@ -34,7 +34,7 @@ TEST_DEPENDS +=		devel/py-mock
 .endif
 
 post-install:
-	mv ${PREFIX}/bin/jupyter-qtconsole ${PREFIX}/bin/jupyter-qtconsole${MODPY_BIN_SUFFIX}
+	mv ${PREFIX}/bin/jupyter-qtconsole{,${MODPY_BIN_SUFFIX}}
 
 do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} -m unittest discover

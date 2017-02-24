@@ -17,10 +17,10 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB +=		m pthread ${MODPY_WANTLIB} stdc++
 
+MODULES =		lang/python
+
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-
-MODULES =		lang/python
 
 # These are optional runtime dependencies that should be around for
 # building the docs and running the tests.

@@ -16,10 +16,10 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
 
-RUN_DEPENDS =		www/jupyter-notebook${MODPY_FLAVOR}>=4.2.0
-
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+
+RUN_DEPENDS =		www/jupyter-notebook${MODPY_FLAVOR}>=4.2.0
 
 FLAVORS =		python3
 FLAVOR ?=
