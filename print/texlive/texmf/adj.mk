@@ -46,11 +46,8 @@ RUBY_ADJ_FILES =	${SCRIPTS_DIR}context/ruby/xmltools.rb \
 			${SCRIPTS_DIR}convbkmk/convbkmk.rb \
 			${SCRIPTS_DIR}match_parens/match_parens
 
-# XXX a2ping is not substituted due to no bin/ prefix
-# XXX check a2ping thing
 MODPERL_ADJ_FILES =	${SCRIPTS_DIR}/mkpic/mkpic \
 			${SCRIPTS_DIR}/chktex/deweb.pl \
-			${SCRIPTS_DIR}/a2ping/a2ping.pl \
 			${SCRIPTS_DIR}/authorindex/authorindex \
 			${SCRIPTS_DIR}/ps2eps/ps2eps.pl \
 			${SCRIPTS_DIR}/perltex/perltex.pl \

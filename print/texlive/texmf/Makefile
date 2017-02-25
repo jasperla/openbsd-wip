@@ -37,17 +37,15 @@ MODRUBY_RUNDEP =	No
 MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
 
-# XXX put back dependencies
-#RUN_DEPENDS-main +=	texlive_base-${V}:print/texlive/base \
-#			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset
-#
-#RUN_DEPENDS-full =	texlive_texmf-minimal-${V}:print/texlive/texmf,-main \
-#			${MODPY_RUN_DEPENDS} \
-#			${_MODLUA_RUNDEPENDS}
-#RUN_DEPENDS-context +=	texlive_texmf-full-${V}:print/texlive/texmf,-full \
-#			${MODRUBY_RUNDEPENDS}
-#RUN_DEPENDS-docs +=	texlive_base-${V}:print/texlive/base \
-#			x11/p5-Tk
+RUN_DEPENDS-main +=	texlive_base-${V}:print/texlive/base \
+			texlive_texmf-buildset-${V}:print/texlive/texmf,-buildset
+RUN_DEPENDS-full =	texlive_texmf-minimal-${V}:print/texlive/texmf,-main \
+			${MODPY_RUN_DEPENDS} \
+			${_MODLUA_RUNDEPENDS}
+RUN_DEPENDS-context +=	texlive_texmf-full-${V}:print/texlive/texmf,-full \
+			${MODRUBY_RUNDEPENDS}
+RUN_DEPENDS-docs +=	texlive_base-${V}:print/texlive/base \
+			x11/p5-Tk
 
 MULTI_PACKAGES =	-context -docs -full -main -buildset
 
@@ -99,7 +97,6 @@ pre-configure:
 do-install:
 	mv ${WRKDIST}/texmf-dist ${PREFIX}/share
 
-	# XXX generate pregen
 	# plug in my pregenerated map and formats
 	#
 	# These are created (as root) with:
