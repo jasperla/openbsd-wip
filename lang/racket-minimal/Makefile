@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2016/07/30 18:47:28 juanfra Exp $
+# $OpenBSD: Makefile,v 1.31 2016/10/28 14:40:50 juanfra Exp $
 
 USE_WXNEEDED =		Yes
 
@@ -9,7 +9,7 @@ ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 
 COMMENT =		multi-paradigm programming language
 
-V =			6.7.0.3
+V =			6.8.0.2
 PKGNAME =		racket-minimal-$V
 DISTFILES =		min-racket-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-1${EXTRACT_SUFX}
@@ -41,11 +41,12 @@ MODULES +=		gcc4
 MODGCC4_LANGS =		c
 MODGCC4_ARCHS =		amd64
 LIB_DEPENDS =		converters/libiconv \
+			databases/sqlite3 \
 			devel/libffi>=3.0.9p2
 
 WANTLIB += c ffi iconv m pthread
-# Loaded using FFI (just a placeholder for now)
-WANTLIB +=
+# Loaded using FFI
+WANTLIB += sqlite3
 
 WRKDIST =		${WRKDIR}/racket-$V
 WRKSRC =		${WRKDIST}/src
