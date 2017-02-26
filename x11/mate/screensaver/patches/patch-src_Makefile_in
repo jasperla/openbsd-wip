@@ -1,0 +1,19 @@
+$OpenBSD$
+--- src/Makefile.in.orig	Sun Feb 26 17:54:33 2017
++++ src/Makefile.in	Sun Feb 26 17:55:11 2017
+@@ -622,6 +622,7 @@ EXTRA_mate_screensaver_dialog_SOURCES = \
+ 	gs-auth-pam.c		\
+ 	gs-auth-helper.c	\
+ 	gs-auth-pwent.c		\
++	gs-auth-bsdauth.c	\
+ 	$(NULL)
+ 
+ mate_screensaver_dialog_LDADD = \
+@@ -909,6 +910,7 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gs-auth-helper.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gs-auth-pam.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gs-auth-pwent.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gs-auth-bsdauth.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gs-debug.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gs-fade.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gs-grab-x11.Po@am__quote@

@@ -1,0 +1,67 @@
+$OpenBSD$
+--- configure.ac.orig	Sun Feb 26 17:48:23 2017
++++ configure.ac	Sun Feb 26 17:53:09 2017
+@@ -532,6 +532,45 @@ if test "x$have_libgl" = "xyes"; then
+ fi
+ 
+ dnl ---------------------------------------------------------------------------
++dnl - Check for bsd_auth(3) (OpenBSD)
++dnl ---------------------------------------------------------------------------
++
++have_bsdauth=no
++with_bsdauth_req=unspecified
++NEED_SETUID=no
++
++case "$host" in
++  *-openbsd*)
++    with_bsdauth=yes
++    AUTH_SCHEME=bsdauth
++    NEED_SETUID=no
++    if test "x$enable_locking" = "xyes"; then
++      with_bsdauth_req=yes
++      NEED_SETUID=yes
++    fi
++esac
++
++if test "$with_bsdauth" = yes ; then
++  AC_CACHE_CHECK([for BSD Authentication], ac_cv_bsdauth,
++    [AC_TRY_X_COMPILE([#include <stdlib.h>
++                       #include <unistd.h>
++                       #include <sys/types.h>
++                       #include <bsd_auth.h>],
++      [int ok = auth_userokay("x", 0, "x", "x");],
++      [ac_cv_bsdauth=yes],
++      [ac_cv_bsdauth=no])])
++  if test "$ac_cv_bsdauth" = yes; then
++    have_bsdauth=yes
++  fi
++fi
++
++if test "$have_bsdauth" = yes; then
++  AC_DEFINE(HAVE_BSDAUTH, 1, [Define to 1 if using bsd_auth(3) authentication])
++fi
++
++AC_SUBST(NEED_SETUID)
++
++dnl ---------------------------------------------------------------------------
+ dnl - Check for PAM
+ dnl ---------------------------------------------------------------------------
+ 
+@@ -823,7 +862,7 @@ dnl  Authentication scheme
+ dnl ---------------------------------------------------------------------------
+ 
+ AC_ARG_ENABLE(authentication-scheme,
+-  [  --enable-authentication-scheme=[auto/pam/helper/pwent]  Choose a specific
++  [  --enable-authentication-scheme=[auto/pam/helper/pwent/bsdauth]  Choose a specific
+                           authentication scheme [default=auto]],,
+   enable_authentication_scheme=auto)
+ 
+@@ -842,6 +881,8 @@ elif test x$enable_authentication_scheme = xhelper ; t
+         AUTH_SCHEME="helper"
+ elif test x$enable_authentication_scheme = xpwent ; then
+         AUTH_SCHEME="pwent"
++elif test x$enable_authentication_scheme = xbsdauth ; then
++        AUTH_SCHEME="bsdauth"
+ elif test x$enable_authentication_scheme = xauto ; then
+ 	if test x$have_pam != xno ; then
+ 		AUTH_SCHEME="pam"
