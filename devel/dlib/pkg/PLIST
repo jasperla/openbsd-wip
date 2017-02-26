@@ -1036,6 +1036,7 @@ include/dlib/tokenizer.h
 include/dlib/tokenizer/tokenizer_kernel_1.h
 include/dlib/tokenizer/tokenizer_kernel_abstract.h
 include/dlib/tokenizer/tokenizer_kernel_c.h
+include/dlib/travis/
 include/dlib/tuple/
 include/dlib/tuple.h
 include/dlib/tuple/tuple.h
