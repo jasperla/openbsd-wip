@@ -4,7 +4,7 @@ COMMENT =	full-featured C++ implementation of I2P client
 
 GH_ACCOUNT =	PurpleI2P
 GH_PROJECT =	i2pd
-GH_TAGNAME =	2.11.0
+GH_TAGNAME =	2.12.0
 
 CATEGORIES =	net
 
@@ -29,6 +29,8 @@ MODCLANG_LANGS =	c c++
 LIB_DEPENDS =		devel/boost
 
 WRKSRC =		${WRKDIST}/build
+
+NO_TEST =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/i2pd

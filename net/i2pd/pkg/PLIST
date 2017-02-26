@@ -108,6 +108,8 @@ include/i2pd/TunnelPool.cpp
 include/i2pd/TunnelPool.h
 include/i2pd/UPnP.cpp
 include/i2pd/UPnP.h
+include/i2pd/WebSocks.cpp
+include/i2pd/WebSocks.h
 include/i2pd/Websocket.cpp
 include/i2pd/Websocket.h
 include/i2pd/Win32App.cpp
