@@ -1,6 +1,6 @@
 $OpenBSD$
---- Sources/AngelScript/source/as_callfunc_x64_gcc.cpp.orig	Mon Dec 26 18:16:49 2016
-+++ Sources/AngelScript/source/as_callfunc_x64_gcc.cpp	Mon Dec 26 18:17:07 2016
+--- Sources/AngelScript/source/as_callfunc_x64_gcc.cpp.orig	Sun Feb 26 07:46:06 2017
++++ Sources/AngelScript/source/as_callfunc_x64_gcc.cpp	Sun Feb 26 07:46:27 2017
 @@ -79,12 +79,6 @@ static asQWORD __attribute__((noinline)) X64_CallFunct
  
  	// Backup stack pointer in R15 that is guaranteed to maintain its value over function calls

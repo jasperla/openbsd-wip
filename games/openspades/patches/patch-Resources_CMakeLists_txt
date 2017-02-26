@@ -1,6 +1,6 @@
 $OpenBSD$
---- Resources/CMakeLists.txt.orig	Thu Dec 29 16:53:15 2016
-+++ Resources/CMakeLists.txt	Thu Dec 29 16:53:31 2016
+--- Resources/CMakeLists.txt.orig	Sun Feb 26 07:45:05 2017
++++ Resources/CMakeLists.txt	Sun Feb 26 07:45:16 2017
 @@ -1,16 +1,6 @@
  
  if(OPENSPADES_RESOURCES)

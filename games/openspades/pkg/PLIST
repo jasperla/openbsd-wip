@@ -10,6 +10,9 @@ share/doc/openspades/copyright
 share/games/
 share/games/openspades/
 share/games/openspades/Resources/
+share/games/openspades/Resources/PackageInfo.json
+share/games/openspades/Resources/font-unifont.pak
+share/games/openspades/Resources/pak000-Nonfree.pak
 share/games/openspades/Resources/pak002-Base.pak
 share/games/openspades/Resources/pak005-Models.pak
 share/games/openspades/Resources/pak010-BaseSkin.pak
@@ -41,10 +44,13 @@ share/icons/hicolor/64x64/apps/openspades.png
 share/icons/hicolor/96x96/
 share/icons/hicolor/96x96/apps/
 share/icons/hicolor/96x96/apps/openspades.png
-share/man/
 share/man/man6/
 @man share/man/man6/openspades.6.gz
 share/menu/
 share/menu/openspades
 share/pixmaps/
 share/pixmaps/openspades.xpm
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
