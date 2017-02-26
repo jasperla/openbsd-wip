@@ -26,9 +26,8 @@ LIB_DEPENDS +=	security/libssh \
 		print/cups,-libs
 
 RUN_DEPENDS +=	x11/nx/nxcomp \
-		x11/nx/nxproxy
-
-RUN_DEPENDS +=	shells/bash
+		x11/nx/nxproxy \
+		shells/bash
 
 DOCSDIR =	${PREFIX}/share/doc/x2goclient
 EXAMPLESDIR =	${PREFIX}/share/examples/x2goclient
