@@ -1,3 +1,0 @@
-[3/1190] : && /usr/bin/cc  -O2 -pipe   src/egl/opengles2/CMakeFiles/es2_info.dir/es2_info.c.o  -o src/egl/opengles2/es2_info  -lm -lEGL -lGLESv2 /usr/X11R6/lib/libX11.so.16.0 -Wl,-rpath,/usr/X11R6/lib: -Wl,-rpath-link,/usr/X11R6/lib:/usr/local/lib && :
-FAILED: : && /usr/bin/cc  -O2 -pipe   src/egl/opengles2/CMakeFiles/es2_info.dir/es2_info.c.o  -o src/egl/opengles2/es2_info  -lm -lEGL -lGLESv2 /usr/X11R6/lib/libX11.so.16.0 -Wl,-rpath,/usr/X11R6/lib: -Wl,-rpath-link,/usr/X11R6/lib:/usr/local/lib && :
-/usr/bin/ld: cannot find -lEGL
