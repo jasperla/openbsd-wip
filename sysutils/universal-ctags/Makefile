@@ -3,7 +3,7 @@
 COMMENT =	multilanguage reimplementation of the Unix ctags utility
 
 # commit date YYYYMMDD
-VERSION =	20161129
+VERSION =	20170224
 DISTNAME =	universal-ctags-${VERSION}
 
 GH_ACCOUNT =	universal-ctags
