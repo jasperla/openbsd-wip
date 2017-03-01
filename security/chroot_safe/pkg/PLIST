@@ -1,6 +1,0 @@
-@comment $OpenBSD$
-%%SHARED%%
-libexec/chroot_safe/
-@man man/man1/chroot_safe.1
-@mode 755
-sbin/chroot_safe

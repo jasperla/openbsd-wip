@@ -1,9 +1,0 @@
-chroot_safe is a tool to chroot any dynamically linked application
-in a safe and sane manner. It is designed to replace chroot and
-su nobody -c while at the same time adressing some of the major
-shortcomings of of these tools.
-It doesn't require that all libraries used by the binary must be
-within the chroot jail.
-chroot_safe do runtime linking instrument the application to perform 
-a full chroot and drop all root privileges just after dynamic linking 
-has completed but before the application as such is started.
