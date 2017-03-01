@@ -1,7 +1,8 @@
 @comment $OpenBSD$
 @bin bin/bspc
 @bin bin/bspwm
-man1
+@man man/man1/bspc.1
+@man man/man1/bspwm.1
 share/examples/bspwm/
 share/examples/bspwm/bspwmrc
 share/examples/bspwm/sxhkdrc
