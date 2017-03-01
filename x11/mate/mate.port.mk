@@ -6,7 +6,7 @@
 PORTROACH+=		limitw:1,even
 DISTNAME=		${MATE_PROJECT}-${MATE_VERSION}
 VERSION=		${MATE_VERSION}
-HOMEPAGE?=		http://mate-desktop.com/
+HOMEPAGE?=		http://mate-desktop.org/
 MASTER_SITES?=		http://pub.mate-desktop.org/releases/${MATE_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
 EXTRACT_SUFX?=		.tar.xz
 CATEGORIES+=		x11/mate
