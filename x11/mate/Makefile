@@ -9,6 +9,7 @@
      SUBDIR += libmatemixer
      SUBDIR += libmateweather
      SUBDIR += marco
+     SUBDIR += media
      SUBDIR += menus
      SUBDIR += panel
      SUBDIR += power-manager
@@ -17,5 +18,6 @@
      SUBDIR += settings-daemon
      SUBDIR += terminal
      SUBDIR += themes
+     SUBDIR += utils
 
 .include <bsd.port.subdir.mk>
