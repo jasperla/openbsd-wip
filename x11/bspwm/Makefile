@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.76 2017/02/25 16:04:20 danj Exp $
+# $OpenBSD:
 #
 COMMENT =	tiling window manager based on binary space partitioning
 
