@@ -17,8 +17,7 @@ HOMEPAGE =	https://github.com/stealth/opmsg
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-# "make port-lib-depends-check" can help
-#WANTLIB =		???
+WANTLIB += c crypto m
 
 MODULES =		lang/clang
 MODCLANG_ARCHS =	*
@@ -26,11 +25,16 @@ MODCLANG_LANGS =	c++
 
 WRKSRC =                ${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME}/src
 
-MAKE_FLAGS =		"DEFS=-DHAVE_BN_GENCB_NEW=0"
+MAKE_FLAGS =		DEFS+="-DHAVE_BN_GENCB_NEW=0" \
+			DEFS+="-DHAVE_LIBRESSL"
 
 #BUILD_DEPENDS =	???
 #RUN_DEPENDS =		???
 #LIB_DEPENDS =		???
 #TEST_DEPENDS =		???
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/opmsg ${PREFIX}/bin/
+
 
 .include <bsd.port.mk>
