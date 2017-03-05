@@ -1,0 +1,1 @@
+Makes HTTP::Response objects stringable
