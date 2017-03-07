@@ -34,17 +34,17 @@ NB=			${PREFIX}/netbeans
 
 do-install:
 	${INSTALL_DATA_DIR} ${NB}
-	@tar -czf - -C ${WRKDIR}/netbeans . | tar xzf - -C ${NB}
+	@tar -czf - -C ${WRKDIST} . | tar xzf - -C ${NB}
 	@rm -rf ${NB}/profiler ${NB}/{ide,cnd,dlight}/bin \
 		${NB}/platform/modules/lib/{i386,amd64,x86}
 	@find ${NB} -name "*.dll" -o -name "*.exe" -o -name "*.cmd" \
 		-o -name "*.bat" -o -name ".lastModified" \
 		-o -name "*.orig" | xargs rm
 	@${SUBST_PROGRAM} ${FILESDIR}/netbeans ${PREFIX}/bin/netbeans
-	@${INSTALL_DATA_DIR} ${PREFIX}/netbeans/cnd/bin
-	@${INSTALL_SCRIPT} ${WRKDIR}/netbeans/cnd/bin/dorun.sh ${NB}/cnd/bin/
-	@${INSTALL_DATA_DIR} ${PREFIX}/netbeans/ide/bin/nativeexecution
-	@${INSTALL_SCRIPT} ${WRKDIR}/netbeans/ide/bin/nativeexecution/hostinfo.sh \
+	@${INSTALL_DATA_DIR} ${NB}/cnd/bin
+	@${INSTALL_SCRIPT} ${WRKDIST}/cnd/bin/dorun.sh ${NB}/cnd/bin/
+	@${INSTALL_DATA_DIR} ${NB}/ide/bin/nativeexecution
+	@${INSTALL_SCRIPT} ${WRKDIST}/ide/bin/nativeexecution/hostinfo.sh \
 	${NB}/ide/bin/nativeexecution/
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	@${SUBST_DATA} ${FILESDIR}/netbeans.desktop \
