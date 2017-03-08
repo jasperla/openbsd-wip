@@ -45,7 +45,7 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKDIST}/cnd/bin/dorun.sh ${NB}/cnd/bin/
 	@${INSTALL_DATA_DIR} ${NB}/ide/bin/nativeexecution
 	@${INSTALL_SCRIPT} ${WRKDIST}/ide/bin/nativeexecution/hostinfo.sh \
-	${NB}/ide/bin/nativeexecution/
+		${NB}/ide/bin/nativeexecution/
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	@${SUBST_DATA} ${FILESDIR}/netbeans.desktop \
 		${PREFIX}/share/applications/netbeans.desktop
