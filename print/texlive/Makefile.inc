@@ -14,6 +14,5 @@ EXTRACT_SUFX ?=		.tar.xz
 V ?=		2016
 DIST_V ?=	${V}0523
 
-MASTER_SITES ?=	ftp://ftp.tug.org/texlive/historic/${V}/ \
-		https://spacehopper.org/mirrors/
+MASTER_SITES ?=	ftp://ftp.tug.org/texlive/historic/${V}/
 PATCHORIG ?=	.origy
