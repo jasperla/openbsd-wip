@@ -21,6 +21,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB +=	c pthread
 MODULES =	lang/go
 
-BUILD_DEPENDS+=	devel/go-btcsuite-websocket
+BUILD_DEPENDS+=	devel/go-btcsuite-websocket \
+		devel/go-btcsuite-btcutil \
+		devel/go-btcsuite-btclog
 
 .include <bsd.port.mk>
