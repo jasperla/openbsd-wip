@@ -1,3 +1,0 @@
-@comment $OpenBSD$
-@bin bin/bdfresize
-@man man/man1/bdfresize.1
