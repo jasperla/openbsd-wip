@@ -1,8 +1,0 @@
-@comment $OpenBSD$
-@bin bin/wrk
-share/doc/${FULLPKGNAME}/
-share/doc/${FULLPKGNAME}/LICENSE
-share/doc/${FULLPKGNAME}/NOTICE
-share/doc/${FULLPKGNAME}/README
-share/doc/${FULLPKGNAME}/scripts/
-share/doc/${FULLPKGNAME}/wrk.lua
