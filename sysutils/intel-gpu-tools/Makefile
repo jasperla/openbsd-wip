@@ -12,11 +12,11 @@ MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES = 		http://xorg.freedesktop.org/releases/individual/app/
+MASTER_SITES = 		https://cgit.freedesktop.org/xorg/app/intel-gpu-tools/
 
 BUILD_DEPENDS =		devel/swig \
 			graphics/cairo \
-			lang/python/3.3,-main \
+			lang/python/3.4,-main \
 			sysutils/pciutils
 
 WANTLIB += 		
