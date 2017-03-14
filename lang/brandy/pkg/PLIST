@@ -1,13 +1,7 @@
 @comment $OpenBSD$
 @bin bin/brandy
 share/doc/brandy/
-share/doc/brandy/COPYING
-share/doc/brandy/README
 share/doc/brandy/basic
-share/doc/brandy/compiling
-share/doc/brandy/graphics
-share/doc/brandy/history
-share/doc/brandy/internals
 share/doc/brandy/messages
 share/doc/brandy/use
 share/examples/brandy/

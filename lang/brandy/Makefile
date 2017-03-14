@@ -13,24 +13,20 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	SDL c m
+WANTLIB +=	c m
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=brandy/}
 
-LIB_DEPENDS =	devel/sdl
-
-CFLAGS +=	-I${LOCALBASE}/include/SDL
-
-MAKE_ENV =	LDFLAGS="-L${LOCALBASE}/lib"
-
-MAKE_FILE =	makefile
+MAKE_FILE =	makefile.text tbrandy
 
 NO_TEST =	Yes
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/brandy ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/tbrandy ${PREFIX}/bin/brandy
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/brandy
-	${INSTALL_DATA} ${WRKSRC}/docs/* ${PREFIX}/share/doc/brandy
+	${INSTALL_DATA} ${WRKSRC}/docs/basic ${PREFIX}/share/doc/brandy
+	${INSTALL_DATA} ${WRKSRC}/docs/messages ${PREFIX}/share/doc/brandy
+	${INSTALL_DATA} ${WRKSRC}/docs/use ${PREFIX}/share/doc/brandy
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/brandy
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/share/examples/brandy
 
