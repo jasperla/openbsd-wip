@@ -3,7 +3,6 @@
 COMMENT=	media tools for the MATE desktop
 
 MATE_PROJECT=	mate-media
-MATE_VERSION=	1.17.0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,6 +17,7 @@ WANTLIB += canberra-gtk3 canberra dbus-1 gdk-3 graphite2 gtk-3
 WANTLIB += harfbuzz ltdl ogg pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 vorbis vorbisfile
 WANTLIB += dconf lzma mate-desktop-2 matemixer xml2
+WANTLIB += X11-xcb startup-notification-1 xcb-util
 
 MODULES=	devel/dconf \
 		x11/mate

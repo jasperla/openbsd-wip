@@ -4,20 +4,19 @@
 @bin bin/mate-power-statistics
 @bin libexec/mate-brightness-applet
 @bin libexec/mate-inhibit-applet
+@man man/man1/mate-power-backlight-helper.1
+@man man/man1/mate-power-manager.1
+@man man/man1/mate-power-preferences.1
+@man man/man1/mate-power-statistics.1
 @bin sbin/mate-power-backlight-helper
 share/dbus-1/services/org.mate.PowerManager.service
 share/dbus-1/services/org.mate.panel.applet.BrightnessAppletFactory.service
 share/dbus-1/services/org.mate.panel.applet.InhibitAppletFactory.service
-share/examples/mate-power-manager/
-share/examples/mate-power-manager/xdg/
-share/examples/mate-power-manager/xdg/autostart/
 share/examples/mate-power-manager/xdg/autostart/mate-power-manager.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/mate-power-manager.desktop
 share/examples/mate-power-manager/xdg/autostart/mate-power-preferences.desktop
 share/examples/mate-power-manager/xdg/autostart/mate-power-statistics.desktop
 share/glib-2.0/schemas/org.mate.power-manager.gschema.xml
-share/help/
-share/help/C/
 share/help/C/mate-power-manager/
 share/help/C/mate-power-manager/figures/
 share/help/C/mate-power-manager/figures/applet-brightness.png
@@ -35,7 +34,6 @@ share/help/C/mate-power-manager/figures/gpm-unplugged.png
 share/help/C/mate-power-manager/figures/gs-prefs.png
 share/help/C/mate-power-manager/index.docbook
 share/help/C/mate-power-manager/legal.xml
-share/help/ca/
 share/help/ca/mate-power-manager/
 share/help/ca/mate-power-manager/figures/
 share/help/ca/mate-power-manager/figures/applet-brightness.png
@@ -53,7 +51,6 @@ share/help/ca/mate-power-manager/figures/gpm-unplugged.png
 share/help/ca/mate-power-manager/figures/gs-prefs.png
 share/help/ca/mate-power-manager/index.docbook
 share/help/ca/mate-power-manager/legal.xml
-share/help/de/
 share/help/de/mate-power-manager/
 share/help/de/mate-power-manager/figures/
 share/help/de/mate-power-manager/figures/applet-brightness.png
@@ -71,7 +68,6 @@ share/help/de/mate-power-manager/figures/gpm-unplugged.png
 share/help/de/mate-power-manager/figures/gs-prefs.png
 share/help/de/mate-power-manager/index.docbook
 share/help/de/mate-power-manager/legal.xml
-share/help/el/
 share/help/el/mate-power-manager/
 share/help/el/mate-power-manager/figures/
 share/help/el/mate-power-manager/figures/applet-brightness.png
@@ -89,7 +85,6 @@ share/help/el/mate-power-manager/figures/gpm-unplugged.png
 share/help/el/mate-power-manager/figures/gs-prefs.png
 share/help/el/mate-power-manager/index.docbook
 share/help/el/mate-power-manager/legal.xml
-share/help/en_GB/
 share/help/en_GB/mate-power-manager/
 share/help/en_GB/mate-power-manager/figures/
 share/help/en_GB/mate-power-manager/figures/applet-brightness.png
@@ -107,7 +102,6 @@ share/help/en_GB/mate-power-manager/figures/gpm-unplugged.png
 share/help/en_GB/mate-power-manager/figures/gs-prefs.png
 share/help/en_GB/mate-power-manager/index.docbook
 share/help/en_GB/mate-power-manager/legal.xml
-share/help/es/
 share/help/es/mate-power-manager/
 share/help/es/mate-power-manager/figures/
 share/help/es/mate-power-manager/figures/applet-brightness.png
@@ -125,7 +119,6 @@ share/help/es/mate-power-manager/figures/gpm-unplugged.png
 share/help/es/mate-power-manager/figures/gs-prefs.png
 share/help/es/mate-power-manager/index.docbook
 share/help/es/mate-power-manager/legal.xml
-share/help/eu/
 share/help/eu/mate-power-manager/
 share/help/eu/mate-power-manager/figures/
 share/help/eu/mate-power-manager/figures/applet-brightness.png
@@ -143,7 +136,6 @@ share/help/eu/mate-power-manager/figures/gpm-unplugged.png
 share/help/eu/mate-power-manager/figures/gs-prefs.png
 share/help/eu/mate-power-manager/index.docbook
 share/help/eu/mate-power-manager/legal.xml
-share/help/fi/
 share/help/fi/mate-power-manager/
 share/help/fi/mate-power-manager/figures/
 share/help/fi/mate-power-manager/figures/applet-brightness.png
@@ -161,7 +153,6 @@ share/help/fi/mate-power-manager/figures/gpm-unplugged.png
 share/help/fi/mate-power-manager/figures/gs-prefs.png
 share/help/fi/mate-power-manager/index.docbook
 share/help/fi/mate-power-manager/legal.xml
-share/help/fr/
 share/help/fr/mate-power-manager/
 share/help/fr/mate-power-manager/figures/
 share/help/fr/mate-power-manager/figures/applet-brightness.png
@@ -179,7 +170,6 @@ share/help/fr/mate-power-manager/figures/gpm-unplugged.png
 share/help/fr/mate-power-manager/figures/gs-prefs.png
 share/help/fr/mate-power-manager/index.docbook
 share/help/fr/mate-power-manager/legal.xml
-share/help/hu/
 share/help/hu/mate-power-manager/
 share/help/hu/mate-power-manager/figures/
 share/help/hu/mate-power-manager/figures/applet-brightness.png
@@ -197,7 +187,6 @@ share/help/hu/mate-power-manager/figures/gpm-unplugged.png
 share/help/hu/mate-power-manager/figures/gs-prefs.png
 share/help/hu/mate-power-manager/index.docbook
 share/help/hu/mate-power-manager/legal.xml
-share/help/it/
 share/help/it/mate-power-manager/
 share/help/it/mate-power-manager/figures/
 share/help/it/mate-power-manager/figures/applet-brightness.png
@@ -215,7 +204,6 @@ share/help/it/mate-power-manager/figures/gpm-unplugged.png
 share/help/it/mate-power-manager/figures/gs-prefs.png
 share/help/it/mate-power-manager/index.docbook
 share/help/it/mate-power-manager/legal.xml
-share/help/oc/
 share/help/oc/mate-power-manager/
 share/help/oc/mate-power-manager/figures/
 share/help/oc/mate-power-manager/figures/applet-brightness.png
@@ -233,7 +221,6 @@ share/help/oc/mate-power-manager/figures/gpm-unplugged.png
 share/help/oc/mate-power-manager/figures/gs-prefs.png
 share/help/oc/mate-power-manager/index.docbook
 share/help/oc/mate-power-manager/legal.xml
-share/help/pa/
 share/help/pa/mate-power-manager/
 share/help/pa/mate-power-manager/figures/
 share/help/pa/mate-power-manager/figures/applet-brightness.png
@@ -251,7 +238,6 @@ share/help/pa/mate-power-manager/figures/gpm-unplugged.png
 share/help/pa/mate-power-manager/figures/gs-prefs.png
 share/help/pa/mate-power-manager/index.docbook
 share/help/pa/mate-power-manager/legal.xml
-share/help/ru/
 share/help/ru/mate-power-manager/
 share/help/ru/mate-power-manager/figures/
 share/help/ru/mate-power-manager/figures/applet-brightness.png
@@ -269,7 +255,6 @@ share/help/ru/mate-power-manager/figures/gpm-unplugged.png
 share/help/ru/mate-power-manager/figures/gs-prefs.png
 share/help/ru/mate-power-manager/index.docbook
 share/help/ru/mate-power-manager/legal.xml
-share/help/sv/
 share/help/sv/mate-power-manager/
 share/help/sv/mate-power-manager/figures/
 share/help/sv/mate-power-manager/figures/applet-brightness.png
@@ -287,7 +272,6 @@ share/help/sv/mate-power-manager/figures/gpm-unplugged.png
 share/help/sv/mate-power-manager/figures/gs-prefs.png
 share/help/sv/mate-power-manager/index.docbook
 share/help/sv/mate-power-manager/legal.xml
-share/help/zh_CN/
 share/help/zh_CN/mate-power-manager/
 share/help/zh_CN/mate-power-manager/figures/
 share/help/zh_CN/mate-power-manager/figures/applet-brightness.png
@@ -340,8 +324,6 @@ share/locale/bn_IN/LC_MESSAGES/mate-power-manager.mo
 share/locale/br/LC_MESSAGES/mate-power-manager.mo
 share/locale/ca/LC_MESSAGES/mate-power-manager.mo
 share/locale/ca@valencia/LC_MESSAGES/mate-power-manager.mo
-share/locale/cmn/
-share/locale/cmn/LC_MESSAGES/
 share/locale/cmn/LC_MESSAGES/mate-power-manager.mo
 share/locale/cs/LC_MESSAGES/mate-power-manager.mo
 share/locale/cy/LC_MESSAGES/mate-power-manager.mo
@@ -349,17 +331,11 @@ share/locale/da/LC_MESSAGES/mate-power-manager.mo
 share/locale/de/LC_MESSAGES/mate-power-manager.mo
 share/locale/dz/LC_MESSAGES/mate-power-manager.mo
 share/locale/el/LC_MESSAGES/mate-power-manager.mo
-share/locale/en_AU/
-share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/mate-power-manager.mo
 share/locale/en_CA/LC_MESSAGES/mate-power-manager.mo
 share/locale/en_GB/LC_MESSAGES/mate-power-manager.mo
 share/locale/es/LC_MESSAGES/mate-power-manager.mo
-share/locale/es_CO/
-share/locale/es_CO/LC_MESSAGES/
 share/locale/es_CO/LC_MESSAGES/mate-power-manager.mo
-share/locale/es_MX/
-share/locale/es_MX/LC_MESSAGES/
 share/locale/es_MX/LC_MESSAGES/mate-power-manager.mo
 share/locale/et/LC_MESSAGES/mate-power-manager.mo
 share/locale/eu/LC_MESSAGES/mate-power-manager.mo
@@ -383,8 +359,6 @@ share/locale/kk/LC_MESSAGES/mate-power-manager.mo
 share/locale/kn/LC_MESSAGES/mate-power-manager.mo
 share/locale/ko/LC_MESSAGES/mate-power-manager.mo
 share/locale/ku/LC_MESSAGES/mate-power-manager.mo
-share/locale/ku_IQ/
-share/locale/ku_IQ/LC_MESSAGES/
 share/locale/ku_IQ/LC_MESSAGES/mate-power-manager.mo
 share/locale/ky/LC_MESSAGES/mate-power-manager.mo
 share/locale/lt/LC_MESSAGES/mate-power-manager.mo
@@ -402,8 +376,6 @@ share/locale/oc/LC_MESSAGES/mate-power-manager.mo
 share/locale/or/LC_MESSAGES/mate-power-manager.mo
 share/locale/pa/LC_MESSAGES/mate-power-manager.mo
 share/locale/pl/LC_MESSAGES/mate-power-manager.mo
-share/locale/pms/
-share/locale/pms/LC_MESSAGES/
 share/locale/pms/LC_MESSAGES/mate-power-manager.mo
 share/locale/pt/LC_MESSAGES/mate-power-manager.mo
 share/locale/pt_BR/LC_MESSAGES/mate-power-manager.mo
@@ -427,8 +399,6 @@ share/locale/vi/LC_MESSAGES/mate-power-manager.mo
 share/locale/zh_CN/LC_MESSAGES/mate-power-manager.mo
 share/locale/zh_HK/LC_MESSAGES/mate-power-manager.mo
 share/locale/zh_TW/LC_MESSAGES/mate-power-manager.mo
-share/mate-panel/
-share/mate-panel/applets/
 share/mate-panel/applets/org.mate.BrightnessApplet.mate-panel-applet
 share/mate-panel/applets/org.mate.InhibitApplet.mate-panel-applet
 share/mate-power-manager/
@@ -794,8 +764,6 @@ share/mate-power-manager/icons/hicolor/scalable/status/gpm-ups-missing.svg
 share/mate-power-manager/ui/
 share/mate-power-manager/ui/brightness-applet-menu.xml
 share/mate-power-manager/ui/inhibit-applet-menu.xml
-share/polkit-1/
-share/polkit-1/actions/
 share/polkit-1/actions/org.mate.power.policy
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

@@ -5,7 +5,6 @@ COMMENT=		components for the MATE desktop
 SHARED_LIBS+=		mate-desktop-2		0.0 # 18.4
 
 MATE_PROJECT=		mate-desktop
-MATE_VERSION=		1.17.2
 
 CATEGORIES=		x11
 
@@ -20,11 +19,13 @@ WANTLIB += xcb-render xcb-shm z
 WANTLIB += harfbuzz gtk-3 atk-1.0 atk-bridge-2.0 atspi cairo
 WANTLIB += cairo-gobject dbus-1 gdk-3 gdk_pixbuf-2.0 graphite2
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 png
+WANTLIB += X11-xcb xcb-util startup-notification-1
 
 MODULES=		devel/dconf \
 			x11/mate
 
-LIB_DEPENDS=		x11/gtk+3
+LIB_DEPENDS=		x11/gtk+3 \
+			devel/startup-notification
 
 MODMATE_TOOLS=		desktop-file-utils gobject-introspection
 

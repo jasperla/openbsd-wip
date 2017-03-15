@@ -3,7 +3,6 @@
 COMMENT=	MATE terminal
 
 MATE_PROJECT=	mate-terminal
-MATE_VERSION=	1.17.0
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes

@@ -5,7 +5,6 @@ COMMENT=		implementation of the FreeDesktop menu spec for MATE
 SHARED_LIBS +=  mate-menu                 6.9 # 6.9
 
 MATE_PROJECT=		mate-menus
-MATE_VERSION=		1.17.0
 
 CATEGORIES=		x11
 

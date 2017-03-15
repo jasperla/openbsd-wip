@@ -5,7 +5,6 @@ COMMENT=		the MATE window manager
 SHARED_LIBS +=  marco-private             1.0 # 1.0
 
 MATE_PROJECT=		marco
-MATE_VERSION=		1.17.1
 
 CATEGORIES=		x11
 
@@ -21,6 +20,7 @@ WANTLIB += harfbuzz iconv intl m ogg pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += vorbis vorbisfile xcb xcb-render xcb-shm xcb-util z
 WANTLIB += canberra canberra-gtk3 ltdl startup-notification-1
+WANTLIB += Xau kvm
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			devel/startup-notification

@@ -1,6 +1,7 @@
 # $OpenBSD$
 
      SUBDIR =
+     SUBDIR += calc
      SUBDIR += caja
      SUBDIR += control-center
      SUBDIR += desktop

@@ -6,7 +6,6 @@ SHARED_LIBS +=  mate-slab                 0.0 # 0.0
 SHARED_LIBS +=  mate-window-settings      1.0 # 1.0
 
 MATE_PROJECT=		mate-control-center
-MATE_VERSION=		1.17.3
 
 CATEGORIES=		x11
 
@@ -24,6 +23,7 @@ WANTLIB += matekbdui ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs rsvg-2 vorbis
 WANTLIB += vorbisfile xcb xcb-render xcb-shm xcb-util xkbfile
 WANTLIB += xklavier xml2 z marco-private mate-menu startup-notification-1
+WANTLIB += Xau kvm
 
 MODULES=		x11/mate
 

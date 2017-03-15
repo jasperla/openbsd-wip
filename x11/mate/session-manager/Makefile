@@ -3,7 +3,6 @@
 COMMENT=		MATE session manager
 
 MATE_PROJECT=		mate-session-manager
-MATE_VERSION=		1.17.1
 
 CATEGORIES=		x11
 
@@ -17,22 +16,18 @@ WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
 WANTLIB += harfbuzz iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
-WANTLIB += xcb-shm z execinfo dbus-glib-1 upower-glib
+WANTLIB += xcb-shm z execinfo dbus-glib-1
 
 MODULES=		devel/dconf \
 			x11/mate
 
 MODMATE_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
-CONFIGURE_ARGS=		--enable-upower
-
 LIB_DEPENDS=		devel/libexecinfo \
-			sysutils/upower \
 			x11/dbus-glib
 RUN_DEPENDS=		x11/gnome/keyring \
 			x11/mate/marco \
 			x11/mate/settings-daemon \
-			x11/mate/panel \
 			x11/mate/themes \
 			sysutils/consolekit
 

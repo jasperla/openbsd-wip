@@ -5,7 +5,6 @@ COMMENT=	MATE support utilities
 SHARED_LIBS +=  matedict                  6.7 # 6.7
 
 MATE_PROJECT=	mate-utils
-MATE_VERSION=	1.17.0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

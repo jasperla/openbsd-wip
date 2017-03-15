@@ -3,7 +3,6 @@
 COMMENT=		MATE power manager
 
 MATE_PROJECT=		mate-power-manager
-MATE_VERSION=		1.17.1
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,6 +22,9 @@ MODULES=		devel/dconf \
 			x11/mate
 
 MODMATE_TOOLS=		desktop-file-utils gtk-update-icon-cache
+
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.69
 
 MODMATE_LDFLAGS=	-lexecinfo
 

@@ -135,8 +135,6 @@ share/locale/be/LC_MESSAGES/mate-terminal.mo
 share/locale/bg/LC_MESSAGES/mate-terminal.mo
 share/locale/bn/LC_MESSAGES/mate-terminal.mo
 share/locale/bn_IN/LC_MESSAGES/mate-terminal.mo
-share/locale/br/
-share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/mate-terminal.mo
 share/locale/bs/LC_MESSAGES/mate-terminal.mo
 share/locale/ca/LC_MESSAGES/mate-terminal.mo
@@ -171,8 +169,6 @@ share/locale/fr/LC_MESSAGES/mate-terminal.mo
 share/locale/frp/
 share/locale/frp/LC_MESSAGES/
 share/locale/frp/LC_MESSAGES/mate-terminal.mo
-share/locale/fur/
-share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/mate-terminal.mo
 share/locale/ga/LC_MESSAGES/mate-terminal.mo
 share/locale/gl/LC_MESSAGES/mate-terminal.mo
@@ -194,8 +190,9 @@ share/locale/kk/LC_MESSAGES/mate-terminal.mo
 share/locale/kn/LC_MESSAGES/mate-terminal.mo
 share/locale/ko/LC_MESSAGES/mate-terminal.mo
 share/locale/ku/LC_MESSAGES/mate-terminal.mo
-share/locale/ky/
-share/locale/ky/LC_MESSAGES/
+share/locale/ku_IQ/
+share/locale/ku_IQ/LC_MESSAGES/
+share/locale/ku_IQ/LC_MESSAGES/mate-terminal.mo
 share/locale/ky/LC_MESSAGES/mate-terminal.mo
 share/locale/la/
 share/locale/la/LC_MESSAGES/
@@ -240,11 +237,7 @@ share/locale/th/LC_MESSAGES/mate-terminal.mo
 share/locale/tr/LC_MESSAGES/mate-terminal.mo
 share/locale/ug/LC_MESSAGES/mate-terminal.mo
 share/locale/uk/LC_MESSAGES/mate-terminal.mo
-share/locale/ur/
-share/locale/ur/LC_MESSAGES/
 share/locale/ur/LC_MESSAGES/mate-terminal.mo
-share/locale/uz/
-share/locale/uz/LC_MESSAGES/
 share/locale/uz/LC_MESSAGES/mate-terminal.mo
 share/locale/vi/LC_MESSAGES/mate-terminal.mo
 share/locale/wa/LC_MESSAGES/mate-terminal.mo
