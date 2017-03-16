@@ -3,7 +3,6 @@
 COMMENT=		MATE settings daemon
 
 MATE_PROJECT=		mate-settings-daemon
-MATE_VERSION=		1.17.1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,6 +19,7 @@ WANTLIB += atk-1.0 atk-bridge-2.0 atspi cairo-gobject cairo canberra-gtk3
 WANTLIB += canberra dbus-1 dbus-glib-1 gdk-3 graphite2 gtk-3 harfbuzz ltdl
 WANTLIB += mate-desktop-2 matekbd matekbdui matemixer notify ogg pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 polkit-gobject-1 vorbis vorbisfile xklavier
+WANTLIB += X11-xcb startup-notification-1 xcb-util
 
 MODULES=		devel/dconf \
 			x11/mate

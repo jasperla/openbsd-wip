@@ -3,7 +3,6 @@
 COMMENT=		MATE keyboard configuration library
 
 MATE_PROJECT=		libmatekbd
-MATE_VERSION=		1.17.0
 
 SHARED_LIBS +=  matekbd                   6.0 # 6.0
 SHARED_LIBS +=  matekbdui                 6.0 # 6.0

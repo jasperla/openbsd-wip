@@ -14,6 +14,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 RUN_DEPENDS+= ${BUILD_DEPENDS}
 BUILD_DEPENDS+= converters/p5-JSON-MaybeXS \
+		devel/p5-Moo \
 		devel/p5-Hash-AsObject
 
 MASTER_SITES=    ${MASTER_SITE_PERL_CPAN:=../../authors/id/N/NE/NEBULOUS/}

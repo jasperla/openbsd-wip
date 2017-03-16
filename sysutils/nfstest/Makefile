@@ -3,13 +3,13 @@
 COMMENT =		set of tools for testing NFS client or NFS server	
 
 DISTNAME =		NFStest-1.0.2
-#PKGNAME =		nfstest
+PKGNAME =		${DISTNAME:L}
 
 CATEGORIES =		sysutils devel
 
-HOMEPAGE =		http://linux-nfs.org
+HOMEPAGE =		http://linux-nfs.org/wiki/index.php/NFStest
 
-MAINTAINER =	Sergey Bronnikov <estetus@gmail.com>
+MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

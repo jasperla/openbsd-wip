@@ -2,7 +2,7 @@
 
 COMMENT =		note-taking tool inspired by Notational Velocity
 
-MODPY_EGG_VERSION =     0.9.4
+MODPY_EGG_VERSION =     0.9.7
 DISTNAME =              nvpy-${MODPY_EGG_VERSION}
 CATEGORIES =		productivity
 HOMEPAGE =		https://github.com/cpbotha/nvpy

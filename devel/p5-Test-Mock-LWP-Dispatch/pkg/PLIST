@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+${P5SITE}/Test/
+${P5SITE}/Test/Mock/
+${P5SITE}/Test/Mock/LWP/
+${P5SITE}/Test/Mock/LWP/Dispatch.pm
+@man man/man3p/Test::Mock::LWP::Dispatch.3p

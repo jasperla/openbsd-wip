@@ -1,5 +1,6 @@
 @comment $OpenBSD$
 @unexec-delete rm -f %D/share/icons/mate/icon-theme.cache
+@unexec-delete rm -f %D/share/icons/menta/icon-theme.cache
 share/icons/mate/
 share/icons/mate/16x16/
 share/icons/mate/16x16/actions/
@@ -7564,3 +7565,4 @@ share/icons/menta/48x48/status/nm-no-connection.png
 share/icons/menta/48x48/status/stock_open.png
 share/icons/menta/index.theme
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/mate
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/menta

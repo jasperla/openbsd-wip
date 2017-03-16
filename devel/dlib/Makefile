@@ -4,9 +4,9 @@ ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		C++ toolkit for machine learning and data analysis
 
-DISTNAME =		dlib-19.3
+DISTNAME =		dlib-19.4
 
-SHARED_LIBS +=  dlib                      0.0 # 19.3
+SHARED_LIBS +=  dlib                      0.0 # 19.4
 
 CATEGORIES =		devel
 

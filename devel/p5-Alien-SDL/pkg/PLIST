@@ -1,0 +1,8 @@
+@comment $OpenBSD$
+bin/sdl-config.pl
+${P5SITE}/Alien/
+${P5SITE}/Alien/SDL/
+${P5SITE}/Alien/SDL.pm
+${P5SITE}/Alien/SDL/ConfigData.pm
+@man man/man3p/Alien::SDL.3p
+@man man/man3p/Alien::SDL::ConfigData.3p

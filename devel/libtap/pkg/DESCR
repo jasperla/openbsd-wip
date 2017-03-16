@@ -1,3 +1,0 @@
-libtap is a C library designed to make it easier to write tests 
-for your software. Tests written using libtap produce output 
-that conforms with the Test Anything Protocol (TAP).

@@ -1,6 +1,0 @@
-@comment $OpenBSD$
-%%SHARED%%
-include/tap.h
-lib/libtap.a
-lib/libtap.la
-@man man/man3/tap.3

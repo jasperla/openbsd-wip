@@ -41,8 +41,6 @@ share/applications/mate-disk-usage-analyzer.desktop
 share/applications/mate-screenshot.desktop
 share/applications/mate-search-tool.desktop
 share/applications/mate-system-log.desktop
-share/dbus-1/
-share/dbus-1/services/
 share/dbus-1/services/org.mate.panel.applet.DictionaryAppletFactory.service
 share/glib-2.0/schemas/org.mate.dictionary.gschema.xml
 share/glib-2.0/schemas/org.mate.disk-usage-analyzer.gschema.xml
@@ -70,9 +68,6 @@ share/gtk-doc/html/mate-dict/home.png
 share/gtk-doc/html/mate-dict/index.html
 share/gtk-doc/html/mate-dict/introduction.html
 share/gtk-doc/html/mate-dict/ix01.html
-share/gtk-doc/html/mate-dict/ix02.html
-share/gtk-doc/html/mate-dict/ix03.html
-share/gtk-doc/html/mate-dict/ix04.html
 share/gtk-doc/html/mate-dict/left-insensitive.png
 share/gtk-doc/html/mate-dict/left.png
 share/gtk-doc/html/mate-dict/mate-dict-gdict-utils.html
@@ -84,8 +79,6 @@ share/gtk-doc/html/mate-dict/sources.html
 share/gtk-doc/html/mate-dict/style.css
 share/gtk-doc/html/mate-dict/up-insensitive.png
 share/gtk-doc/html/mate-dict/up.png
-share/help/
-share/help/C/
 share/help/C/mate-dictionary/
 share/help/C/mate-dictionary/figures/
 share/help/C/mate-dictionary/figures/mate-dictionary-add-source.png
@@ -119,7 +112,6 @@ share/help/C/mate-system-log/figures/
 share/help/C/mate-system-log/figures/syslog_window.png
 share/help/C/mate-system-log/index.docbook
 share/help/C/mate-system-log/legal.xml
-share/help/ca/
 share/help/ca/mate-dictionary/
 share/help/ca/mate-dictionary/figures/
 share/help/ca/mate-dictionary/figures/mate-dictionary-add-source.png
@@ -153,7 +145,6 @@ share/help/ca/mate-system-log/figures/
 share/help/ca/mate-system-log/figures/syslog_window.png
 share/help/ca/mate-system-log/index.docbook
 share/help/ca/mate-system-log/legal.xml
-share/help/cs/
 share/help/cs/mate-dictionary/
 share/help/cs/mate-dictionary/figures/
 share/help/cs/mate-dictionary/figures/mate-dictionary-add-source.png
@@ -187,7 +178,6 @@ share/help/cs/mate-system-log/figures/
 share/help/cs/mate-system-log/figures/syslog_window.png
 share/help/cs/mate-system-log/index.docbook
 share/help/cs/mate-system-log/legal.xml
-share/help/da/
 share/help/da/mate-dictionary/
 share/help/da/mate-dictionary/figures/
 share/help/da/mate-dictionary/figures/mate-dictionary-add-source.png
@@ -211,7 +201,6 @@ share/help/da/mate-disk-usage-analyzer/figures/baobab_treemaps.png
 share/help/da/mate-disk-usage-analyzer/figures/baobab_window.png
 share/help/da/mate-disk-usage-analyzer/index.docbook
 share/help/da/mate-disk-usage-analyzer/legal.xml
-share/help/de/
 share/help/de/mate-dictionary/
 share/help/de/mate-dictionary/figures/
 share/help/de/mate-dictionary/figures/mate-dictionary-add-source.png
@@ -245,7 +234,6 @@ share/help/de/mate-system-log/figures/
 share/help/de/mate-system-log/figures/syslog_window.png
 share/help/de/mate-system-log/index.docbook
 share/help/de/mate-system-log/legal.xml
-share/help/el/
 share/help/el/mate-dictionary/
 share/help/el/mate-dictionary/figures/
 share/help/el/mate-dictionary/figures/mate-dictionary-add-source.png
@@ -279,7 +267,6 @@ share/help/el/mate-system-log/figures/
 share/help/el/mate-system-log/figures/syslog_window.png
 share/help/el/mate-system-log/index.docbook
 share/help/el/mate-system-log/legal.xml
-share/help/en_GB/
 share/help/en_GB/mate-dictionary/
 share/help/en_GB/mate-dictionary/figures/
 share/help/en_GB/mate-dictionary/figures/mate-dictionary-add-source.png
@@ -313,7 +300,6 @@ share/help/en_GB/mate-system-log/figures/
 share/help/en_GB/mate-system-log/figures/syslog_window.png
 share/help/en_GB/mate-system-log/index.docbook
 share/help/en_GB/mate-system-log/legal.xml
-share/help/es/
 share/help/es/mate-dictionary/
 share/help/es/mate-dictionary/figures/
 share/help/es/mate-dictionary/figures/mate-dictionary-add-source.png
@@ -347,7 +333,6 @@ share/help/es/mate-system-log/figures/
 share/help/es/mate-system-log/figures/syslog_window.png
 share/help/es/mate-system-log/index.docbook
 share/help/es/mate-system-log/legal.xml
-share/help/eu/
 share/help/eu/mate-dictionary/
 share/help/eu/mate-dictionary/figures/
 share/help/eu/mate-dictionary/figures/mate-dictionary-add-source.png
@@ -381,7 +366,6 @@ share/help/eu/mate-system-log/figures/
 share/help/eu/mate-system-log/figures/syslog_window.png
 share/help/eu/mate-system-log/index.docbook
 share/help/eu/mate-system-log/legal.xml
-share/help/fi/
 share/help/fi/mate-dictionary/
 share/help/fi/mate-dictionary/figures/
 share/help/fi/mate-dictionary/figures/mate-dictionary-add-source.png
@@ -415,7 +399,6 @@ share/help/fi/mate-system-log/figures/
 share/help/fi/mate-system-log/figures/syslog_window.png
 share/help/fi/mate-system-log/index.docbook
 share/help/fi/mate-system-log/legal.xml
-share/help/fr/
 share/help/fr/mate-dictionary/
 share/help/fr/mate-dictionary/figures/
 share/help/fr/mate-dictionary/figures/mate-dictionary-add-source.png
@@ -449,7 +432,6 @@ share/help/fr/mate-system-log/figures/
 share/help/fr/mate-system-log/figures/syslog_window.png
 share/help/fr/mate-system-log/index.docbook
 share/help/fr/mate-system-log/legal.xml
-share/help/it/
 share/help/it/mate-dictionary/
 share/help/it/mate-dictionary/figures/
 share/help/it/mate-dictionary/figures/mate-dictionary-add-source.png
@@ -483,7 +465,6 @@ share/help/it/mate-system-log/figures/
 share/help/it/mate-system-log/figures/syslog_window.png
 share/help/it/mate-system-log/index.docbook
 share/help/it/mate-system-log/legal.xml
-share/help/ko/
 share/help/ko/mate-search-tool/
 share/help/ko/mate-search-tool/figures/
 share/help/ko/mate-search-tool/figures/mate-search-tool_window.png
@@ -494,7 +475,6 @@ share/help/ko/mate-system-log/figures/
 share/help/ko/mate-system-log/figures/syslog_window.png
 share/help/ko/mate-system-log/index.docbook
 share/help/ko/mate-system-log/legal.xml
-share/help/oc/
 share/help/oc/mate-dictionary/
 share/help/oc/mate-dictionary/figures/
 share/help/oc/mate-dictionary/figures/mate-dictionary-add-source.png
@@ -540,7 +520,6 @@ share/help/pl/mate-disk-usage-analyzer/figures/baobab_treemaps.png
 share/help/pl/mate-disk-usage-analyzer/figures/baobab_window.png
 share/help/pl/mate-disk-usage-analyzer/index.docbook
 share/help/pl/mate-disk-usage-analyzer/legal.xml
-share/help/ru/
 share/help/ru/mate-dictionary/
 share/help/ru/mate-dictionary/figures/
 share/help/ru/mate-dictionary/figures/mate-dictionary-add-source.png
@@ -574,7 +553,6 @@ share/help/ru/mate-system-log/figures/
 share/help/ru/mate-system-log/figures/syslog_window.png
 share/help/ru/mate-system-log/index.docbook
 share/help/ru/mate-system-log/legal.xml
-share/help/sv/
 share/help/sv/mate-dictionary/
 share/help/sv/mate-dictionary/figures/
 share/help/sv/mate-dictionary/figures/mate-dictionary-add-source.png
@@ -608,7 +586,6 @@ share/help/sv/mate-system-log/figures/
 share/help/sv/mate-system-log/figures/syslog_window.png
 share/help/sv/mate-system-log/index.docbook
 share/help/sv/mate-system-log/legal.xml
-share/help/uk/
 share/help/uk/mate-dictionary/
 share/help/uk/mate-dictionary/figures/
 share/help/uk/mate-dictionary/figures/mate-dictionary-add-source.png
@@ -642,7 +619,6 @@ share/help/uk/mate-system-log/figures/
 share/help/uk/mate-system-log/figures/syslog_window.png
 share/help/uk/mate-system-log/index.docbook
 share/help/uk/mate-system-log/legal.xml
-share/help/zh_CN/
 share/help/zh_CN/mate-dictionary/
 share/help/zh_CN/mate-dictionary/figures/
 share/help/zh_CN/mate-dictionary/figures/mate-dictionary-add-source.png
@@ -676,7 +652,6 @@ share/help/zh_CN/mate-system-log/figures/
 share/help/zh_CN/mate-system-log/figures/syslog_window.png
 share/help/zh_CN/mate-system-log/index.docbook
 share/help/zh_CN/mate-system-log/legal.xml
-share/help/zh_HK/
 share/help/zh_HK/mate-disk-usage-analyzer/
 share/help/zh_HK/mate-disk-usage-analyzer/figures/
 share/help/zh_HK/mate-disk-usage-analyzer/figures/baobab_fullscan.png
@@ -688,7 +663,6 @@ share/help/zh_HK/mate-disk-usage-analyzer/figures/baobab_treemaps.png
 share/help/zh_HK/mate-disk-usage-analyzer/figures/baobab_window.png
 share/help/zh_HK/mate-disk-usage-analyzer/index.docbook
 share/help/zh_HK/mate-disk-usage-analyzer/legal.xml
-share/help/zh_TW/
 share/help/zh_TW/mate-disk-usage-analyzer/
 share/help/zh_TW/mate-disk-usage-analyzer/figures/
 share/help/zh_TW/mate-disk-usage-analyzer/figures/baobab_fullscan.png
@@ -700,28 +674,12 @@ share/help/zh_TW/mate-disk-usage-analyzer/figures/baobab_treemaps.png
 share/help/zh_TW/mate-disk-usage-analyzer/figures/baobab_window.png
 share/help/zh_TW/mate-disk-usage-analyzer/index.docbook
 share/help/zh_TW/mate-disk-usage-analyzer/legal.xml
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/mate-system-log.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/mate-system-log.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/mate-disk-usage-analyzer.png
-share/icons/hicolor/256x256/
-share/icons/hicolor/256x256/apps/
 share/icons/hicolor/256x256/apps/mate-system-log.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/mate-system-log.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/mate-system-log.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/mate-disk-usage-analyzer.svg
 share/icons/hicolor/scalable/apps/mate-system-log-symbolic.svg
 share/locale/af/LC_MESSAGES/mate-utils.mo
@@ -734,17 +692,11 @@ share/locale/be/LC_MESSAGES/mate-utils.mo
 share/locale/bg/LC_MESSAGES/mate-utils.mo
 share/locale/bn/LC_MESSAGES/mate-utils.mo
 share/locale/bn_IN/LC_MESSAGES/mate-utils.mo
-share/locale/br/
-share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/mate-utils.mo
 share/locale/bs/LC_MESSAGES/mate-utils.mo
 share/locale/ca/LC_MESSAGES/mate-utils.mo
 share/locale/ca@valencia/LC_MESSAGES/mate-utils.mo
-share/locale/cmn/
-share/locale/cmn/LC_MESSAGES/
 share/locale/cmn/LC_MESSAGES/mate-utils.mo
-share/locale/crh/
-share/locale/crh/LC_MESSAGES/
 share/locale/crh/LC_MESSAGES/mate-utils.mo
 share/locale/cs/LC_MESSAGES/mate-utils.mo
 share/locale/cy/LC_MESSAGES/mate-utils.mo
@@ -752,26 +704,18 @@ share/locale/da/LC_MESSAGES/mate-utils.mo
 share/locale/de/LC_MESSAGES/mate-utils.mo
 share/locale/dz/LC_MESSAGES/mate-utils.mo
 share/locale/el/LC_MESSAGES/mate-utils.mo
-share/locale/en_AU/
-share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/mate-utils.mo
 share/locale/en_CA/LC_MESSAGES/mate-utils.mo
 share/locale/en_GB/LC_MESSAGES/mate-utils.mo
 share/locale/eo/LC_MESSAGES/mate-utils.mo
 share/locale/es/LC_MESSAGES/mate-utils.mo
-share/locale/es_CO/
-share/locale/es_CO/LC_MESSAGES/
 share/locale/es_CO/LC_MESSAGES/mate-utils.mo
-share/locale/es_MX/
-share/locale/es_MX/LC_MESSAGES/
 share/locale/es_MX/LC_MESSAGES/mate-utils.mo
 share/locale/et/LC_MESSAGES/mate-utils.mo
 share/locale/eu/LC_MESSAGES/mate-utils.mo
 share/locale/fa/LC_MESSAGES/mate-utils.mo
 share/locale/fi/LC_MESSAGES/mate-utils.mo
 share/locale/fr/LC_MESSAGES/mate-utils.mo
-share/locale/frp/
-share/locale/frp/LC_MESSAGES/
 share/locale/frp/LC_MESSAGES/mate-utils.mo
 share/locale/ga/LC_MESSAGES/mate-utils.mo
 share/locale/gl/LC_MESSAGES/mate-utils.mo
@@ -785,16 +729,12 @@ share/locale/id/LC_MESSAGES/mate-utils.mo
 share/locale/is/LC_MESSAGES/mate-utils.mo
 share/locale/it/LC_MESSAGES/mate-utils.mo
 share/locale/ja/LC_MESSAGES/mate-utils.mo
-share/locale/jv/
-share/locale/jv/LC_MESSAGES/
 share/locale/jv/LC_MESSAGES/mate-utils.mo
 share/locale/ka/LC_MESSAGES/mate-utils.mo
 share/locale/kk/LC_MESSAGES/mate-utils.mo
 share/locale/kn/LC_MESSAGES/mate-utils.mo
 share/locale/ko/LC_MESSAGES/mate-utils.mo
 share/locale/ku/LC_MESSAGES/mate-utils.mo
-share/locale/ku_IQ/
-share/locale/ku_IQ/LC_MESSAGES/
 share/locale/ku_IQ/LC_MESSAGES/mate-utils.mo
 share/locale/ky/LC_MESSAGES/mate-utils.mo
 share/locale/lt/LC_MESSAGES/mate-utils.mo
@@ -815,8 +755,6 @@ share/locale/oc/LC_MESSAGES/mate-utils.mo
 share/locale/or/LC_MESSAGES/mate-utils.mo
 share/locale/pa/LC_MESSAGES/mate-utils.mo
 share/locale/pl/LC_MESSAGES/mate-utils.mo
-share/locale/pms/
-share/locale/pms/LC_MESSAGES/
 share/locale/pms/LC_MESSAGES/mate-utils.mo
 share/locale/ps/LC_MESSAGES/mate-utils.mo
 share/locale/pt/LC_MESSAGES/mate-utils.mo
@@ -837,11 +775,7 @@ share/locale/th/LC_MESSAGES/mate-utils.mo
 share/locale/tr/LC_MESSAGES/mate-utils.mo
 share/locale/ug/LC_MESSAGES/mate-utils.mo
 share/locale/uk/LC_MESSAGES/mate-utils.mo
-share/locale/ur/
-share/locale/ur/LC_MESSAGES/
 share/locale/ur/LC_MESSAGES/mate-utils.mo
-share/locale/uz/
-share/locale/uz/LC_MESSAGES/
 share/locale/uz/LC_MESSAGES/mate-utils.mo
 share/locale/vi/LC_MESSAGES/mate-utils.mo
 share/locale/wa/LC_MESSAGES/mate-utils.mo
@@ -863,15 +797,12 @@ share/mate-disk-usage-analyzer/baobab-dialog-scan-props.ui
 share/mate-disk-usage-analyzer/baobab-main-window.ui
 share/mate-disk-usage-analyzer/pixmaps/
 share/mate-disk-usage-analyzer/pixmaps/shot.png
-share/mate-panel/
-share/mate-panel/applets/
 share/mate-panel/applets/org.mate.DictionaryApplet.mate-panel-applet
 share/mate-screenshot/
 share/mate-screenshot/mate-screenshot.ui
 share/mate-utils/
 share/mate-utils/logview-filter.ui
 share/mate-utils/logview-toolbar.xml
-share/pixmaps/
 share/pixmaps/mate-search-tool/
 share/pixmaps/mate-search-tool/thumbnail_frame.png
 @exec %D/bin/update-desktop-database

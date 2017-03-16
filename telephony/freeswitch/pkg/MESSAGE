@@ -1,7 +1,0 @@
-
-To have Freeswitch start at boot time, you may insert the following
-into /etc/rc.local:
-
-if [ -x ${PREFIX}/sbin/freeswitch ]; then
-        echo -n ' freeswitch';   ${PREFIX}/sbin/freeswitch
-fi

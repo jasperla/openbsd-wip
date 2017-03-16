@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+${P5SITE}/Text/
+${P5SITE}/Text/Patch.pm
+@man man/man3p/Text::Patch.3p

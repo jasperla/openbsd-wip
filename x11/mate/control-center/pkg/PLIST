@@ -92,8 +92,6 @@ share/examples/mate-control-center/xdg/menus/matecc.menu
 @sample ${SYSCONFDIR}/xdg/menus/matecc.menu
 share/glib-2.0/schemas/org.mate.control-center.gschema.xml
 share/glib-2.0/schemas/org.mate.control-center.keybinding.gschema.xml
-share/help/
-share/help/C/
 share/help/C/mate-control-center/
 share/help/C/mate-control-center/config-accessibility-keyboard.xml
 share/help/C/mate-control-center/config-background.xml
@@ -109,7 +107,6 @@ share/help/C/mate-control-center/config-mouse.xml
 share/help/C/mate-control-center/config-screensaver.xml
 share/help/C/mate-control-center/config-themes.xml
 share/help/C/mate-control-center/index.docbook
-share/help/ca/
 share/help/ca/mate-control-center/
 share/help/ca/mate-control-center/config-accessibility-keyboard.xml
 share/help/ca/mate-control-center/config-background.xml
@@ -141,7 +138,6 @@ share/help/ca@valencia/mate-control-center/config-mouse.xml
 share/help/ca@valencia/mate-control-center/config-screensaver.xml
 share/help/ca@valencia/mate-control-center/config-themes.xml
 share/help/ca@valencia/mate-control-center/index.docbook
-share/help/cs/
 share/help/cs/mate-control-center/
 share/help/cs/mate-control-center/config-accessibility-keyboard.xml
 share/help/cs/mate-control-center/config-background.xml
@@ -157,7 +153,6 @@ share/help/cs/mate-control-center/config-mouse.xml
 share/help/cs/mate-control-center/config-screensaver.xml
 share/help/cs/mate-control-center/config-themes.xml
 share/help/cs/mate-control-center/index.docbook
-share/help/de/
 share/help/de/mate-control-center/
 share/help/de/mate-control-center/config-accessibility-keyboard.xml
 share/help/de/mate-control-center/config-background.xml
@@ -173,7 +168,6 @@ share/help/de/mate-control-center/config-mouse.xml
 share/help/de/mate-control-center/config-screensaver.xml
 share/help/de/mate-control-center/config-themes.xml
 share/help/de/mate-control-center/index.docbook
-share/help/el/
 share/help/el/mate-control-center/
 share/help/el/mate-control-center/config-accessibility-keyboard.xml
 share/help/el/mate-control-center/config-background.xml
@@ -189,7 +183,6 @@ share/help/el/mate-control-center/config-mouse.xml
 share/help/el/mate-control-center/config-screensaver.xml
 share/help/el/mate-control-center/config-themes.xml
 share/help/el/mate-control-center/index.docbook
-share/help/en_GB/
 share/help/en_GB/mate-control-center/
 share/help/en_GB/mate-control-center/config-accessibility-keyboard.xml
 share/help/en_GB/mate-control-center/config-background.xml
@@ -205,7 +198,6 @@ share/help/en_GB/mate-control-center/config-mouse.xml
 share/help/en_GB/mate-control-center/config-screensaver.xml
 share/help/en_GB/mate-control-center/config-themes.xml
 share/help/en_GB/mate-control-center/index.docbook
-share/help/es/
 share/help/es/mate-control-center/
 share/help/es/mate-control-center/config-accessibility-keyboard.xml
 share/help/es/mate-control-center/config-background.xml
@@ -221,7 +213,6 @@ share/help/es/mate-control-center/config-mouse.xml
 share/help/es/mate-control-center/config-screensaver.xml
 share/help/es/mate-control-center/config-themes.xml
 share/help/es/mate-control-center/index.docbook
-share/help/fr/
 share/help/fr/mate-control-center/
 share/help/fr/mate-control-center/config-accessibility-keyboard.xml
 share/help/fr/mate-control-center/config-background.xml
@@ -269,7 +260,6 @@ share/help/it/mate-control-center/config-mouse.xml
 share/help/it/mate-control-center/config-screensaver.xml
 share/help/it/mate-control-center/config-themes.xml
 share/help/it/mate-control-center/index.docbook
-share/help/ja/
 share/help/ja/mate-control-center/
 share/help/ja/mate-control-center/config-accessibility-keyboard.xml
 share/help/ja/mate-control-center/config-background.xml
@@ -285,7 +275,6 @@ share/help/ja/mate-control-center/config-mouse.xml
 share/help/ja/mate-control-center/config-screensaver.xml
 share/help/ja/mate-control-center/config-themes.xml
 share/help/ja/mate-control-center/index.docbook
-share/help/oc/
 share/help/oc/mate-control-center/
 share/help/oc/mate-control-center/config-accessibility-keyboard.xml
 share/help/oc/mate-control-center/config-background.xml
@@ -349,7 +338,6 @@ share/help/pt/mate-control-center/config-mouse.xml
 share/help/pt/mate-control-center/config-screensaver.xml
 share/help/pt/mate-control-center/config-themes.xml
 share/help/pt/mate-control-center/index.docbook
-share/help/pt_BR/
 share/help/pt_BR/mate-control-center/
 share/help/pt_BR/mate-control-center/config-accessibility-keyboard.xml
 share/help/pt_BR/mate-control-center/config-background.xml
@@ -365,7 +353,6 @@ share/help/pt_BR/mate-control-center/config-mouse.xml
 share/help/pt_BR/mate-control-center/config-screensaver.xml
 share/help/pt_BR/mate-control-center/config-themes.xml
 share/help/pt_BR/mate-control-center/index.docbook
-share/help/ru/
 share/help/ru/mate-control-center/
 share/help/ru/mate-control-center/config-accessibility-keyboard.xml
 share/help/ru/mate-control-center/config-background.xml
@@ -381,7 +368,6 @@ share/help/ru/mate-control-center/config-mouse.xml
 share/help/ru/mate-control-center/config-screensaver.xml
 share/help/ru/mate-control-center/config-themes.xml
 share/help/ru/mate-control-center/index.docbook
-share/help/sv/
 share/help/sv/mate-control-center/
 share/help/sv/mate-control-center/config-accessibility-keyboard.xml
 share/help/sv/mate-control-center/config-background.xml
@@ -413,7 +399,6 @@ share/help/th/mate-control-center/config-mouse.xml
 share/help/th/mate-control-center/config-screensaver.xml
 share/help/th/mate-control-center/config-themes.xml
 share/help/th/mate-control-center/index.docbook
-share/help/uk/
 share/help/uk/mate-control-center/
 share/help/uk/mate-control-center/config-accessibility-keyboard.xml
 share/help/uk/mate-control-center/config-background.xml
@@ -445,7 +430,6 @@ share/help/vi/mate-control-center/config-mouse.xml
 share/help/vi/mate-control-center/config-screensaver.xml
 share/help/vi/mate-control-center/config-themes.xml
 share/help/vi/mate-control-center/index.docbook
-share/help/zh_CN/
 share/help/zh_CN/mate-control-center/
 share/help/zh_CN/mate-control-center/config-accessibility-keyboard.xml
 share/help/zh_CN/mate-control-center/config-background.xml

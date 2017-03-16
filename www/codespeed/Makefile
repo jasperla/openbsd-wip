@@ -2,7 +2,7 @@
 
 COMMENT =	web app to monitor and analyze the performance of your code
 
-VERSION =	0.10.0
+VERSION =	0.11.0
 DISTNAME =	${VERSION}
 PKGNAME =	codespeed-${VERSION}
 CATEGORIES =	www

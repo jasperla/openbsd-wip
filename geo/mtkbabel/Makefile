@@ -2,7 +2,8 @@
 
 COMMENT =	commandline tool for MediaTek MTK-based GPS devices
 
-DISTNAME =	mtkbabel-0.8.2
+VERSION =	0.8.3.1
+DISTNAME =	mtkbabel-${VERSION}
 CATEGORIES =	geo
 
 HOMEPAGE =	http://mtkbabel.sourceforge.net
@@ -15,11 +16,11 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		perl
 NO_BUILD =		Yes
-NO_TEST =	Yes
+NO_TEST =		Yes
 PKG_ARCH =		*
 
-RUN_DEPENDS =	devel/p5-Time-Format \
-		comms/p5-Device-SerialPort
+RUN_DEPENDS =	comms/p5-Device-SerialPort
+WRKSRC =	${WRKDIR}/${VERSION}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mtkbabel/

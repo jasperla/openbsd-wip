@@ -3,7 +3,7 @@
 COMMENT=	make requests to OAuth2 APIs
 
 MODULES=	cpan
-DISTNAME=	LWP-Authen-OAuth2-0.07
+DISTNAME=	LWP-Authen-OAuth2-0.13
 CATEGORIES=	devel
 
 MAINTAINER =    Todd T. Fries <todd@OpenBSD.org>

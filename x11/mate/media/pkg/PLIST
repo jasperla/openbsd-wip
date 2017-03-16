@@ -39,6 +39,9 @@ share/locale/es/LC_MESSAGES/mate-media.mo
 share/locale/es_AR/LC_MESSAGES/mate-media.mo
 share/locale/es_CO/LC_MESSAGES/mate-media.mo
 share/locale/es_MX/LC_MESSAGES/mate-media.mo
+share/locale/es_PR/
+share/locale/es_PR/LC_MESSAGES/
+share/locale/es_PR/LC_MESSAGES/mate-media.mo
 share/locale/et/LC_MESSAGES/mate-media.mo
 share/locale/eu/LC_MESSAGES/mate-media.mo
 share/locale/fa/LC_MESSAGES/mate-media.mo

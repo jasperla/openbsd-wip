@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+bin/netflix_mover
+${P5SITE}/WWW/
+${P5SITE}/WWW/Netflix.pm
+@man man/man1/netflix_mover.1
+@man man/man3p/WWW::Netflix.3p

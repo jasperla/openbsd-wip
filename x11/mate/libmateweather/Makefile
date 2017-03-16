@@ -5,7 +5,6 @@ COMMENT=		weather library for MATE
 SHARED_LIBS +=  mateweather               7.9 # 7.9
 
 MATE_PROJECT=		libmateweather
-MATE_VERSION=		1.17.0
 
 CATEGORIES=		net
 
@@ -21,7 +20,7 @@ WANTLIB += xml2 z harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += cairo cairo-gobject graphite2 soup-2.4 dbus-1 gdk-3
 WANTLIB += gtk-3 atk-1.0 atk-bridge-2.0 atspi
 
-MODULES=		x11/mate	
+MODULES=		x11/mate
 
 MODMATE_TOOLS=		gtk-update-icon-cache
 

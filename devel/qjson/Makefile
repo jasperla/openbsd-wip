@@ -10,7 +10,7 @@ GH_TAGNAME =	0.9.0
 
 HOMEPAGE =	http://qjson.sourceforge.net/
 
-SHARED_LIBS =	qjson	0.1
+SHARED_LIBS =	qjson	1.0
 
 MODULES =	devel/cmake \
 		x11/qt4

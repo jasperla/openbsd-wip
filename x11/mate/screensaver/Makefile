@@ -1,9 +1,8 @@
 # $OpenBSD$
 
-COMMENT=		MATE screensaver 
+COMMENT=		MATE screensaver
 
 MATE_PROJECT=		mate-screensaver
-MATE_VERSION=		1.17.1
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -15,8 +14,11 @@ WANTLIB += gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += iconv intl lzma m pcre pixman-1 png pthread pthread-stubs
 WANTLIB += xcb xcb-dri2 xcb-glx xcb-render xcb-shm xkbfile xml2
 WANTLIB += z
-
-WANTLIB += atk-1.0 atk-bridge-2.0 atspi cairo-gobject cairo dbus-1 dbus-glib-1 gdk-3 graphite2 gtk-3 harfbuzz mate-desktop-2 mate-menu matekbd matekbdui notify pango-1.0 pangocairo-1.0 pangoft2-1.0 xklavier
+WANTLIB += atk-1.0 atk-bridge-2.0 atspi cairo-gobject cairo dbus-1
+WANTLIB += dbus-glib-1 gdk-3 graphite2 gtk-3 harfbuzz mate-desktop-2
+WANTLIB += mate-menu matekbd matekbdui notify pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 xklavier
+WANTLIB += startup-notification-1 xcb-util
 
 MODULES=		devel/dconf \
 			x11/mate
