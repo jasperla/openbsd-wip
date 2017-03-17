@@ -38,8 +38,10 @@ CONFIGURE_ARGS=		--enable-authentication-scheme=bsdauth
 
 MODMATE_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
-FAKE_FLAGS=		desktopdir=${PREFIX}/share/examples/mate-power-manager/xdg/autostart \
-			sysconfdir=${PREFIX}/share/examples/mate-power-manager \
-			DBUS_SYS_DIR=${PREFIX}/share/examples/mate-power-manager/dbus-1/system.d
+FAKE_FLAGS=		menudir=${PREFIX}/share/examples/mate-screensaver/xdg/menus
+
+post-install:
+	@mv ${WRKINST}/etc/xdg/autostart \
+		${PREFIX}/share/examples/mate-screensaver/xdg/autostart
 
 .include <bsd.port.mk>

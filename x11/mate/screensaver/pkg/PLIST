@@ -14,6 +14,7 @@ libexec/mate-screensaver/
 @man man/man1/mate-screensaver-command.1
 @man man/man1/mate-screensaver-preferences.1
 @man man/man1/mate-screensaver.1
+share/applications/mate-screensaver-preferences.desktop
 share/applications/screensavers/
 share/applications/screensavers/cosmos-slideshow.desktop
 share/applications/screensavers/footlogo-floaters.desktop
@@ -35,16 +36,17 @@ share/backgrounds/cosmos/whirlpool.jpg
 share/dbus-1/services/org.mate.ScreenSaver.service
 share/desktop-directories/
 share/desktop-directories/mate-screensaver.directory
-share/examples/mate-power-manager/
-share/examples/mate-power-manager/xdg/
+share/examples/mate-screensaver/
+share/examples/mate-screensaver/xdg/
 @sample ${SYSCONFDIR}/xdg/
-share/examples/mate-power-manager/xdg/autostart/
+share/examples/mate-screensaver/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/
-share/examples/mate-power-manager/xdg/autostart/mate-screensaver-preferences.desktop
-share/examples/mate-power-manager/xdg/autostart/mate-screensaver.desktop
+share/examples/mate-screensaver/xdg/autostart/mate-screensaver.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/mate-screensaver.desktop
-share/examples/mate-power-manager/xdg/menus/
-share/examples/mate-power-manager/xdg/menus/mate-screensavers.menu
+share/examples/mate-screensaver/xdg/menus/
+@sample ${SYSCONFDIR}/xdg/menus/
+share/examples/mate-screensaver/xdg/menus/mate-screensavers.menu
+@sample ${SYSCONFDIR}/xdg/menus/mate-screensavers.menu
 share/glib-2.0/schemas/org.mate.screensaver.gschema.xml
 share/locale/am/LC_MESSAGES/mate-screensaver.mo
 share/locale/ar/LC_MESSAGES/mate-screensaver.mo
@@ -147,5 +149,7 @@ share/mate-screensaver/mate-screensaver-preferences.ui
 share/pixmaps/
 share/pixmaps/gnome-logo-white.svg
 share/pixmaps/mate-logo-white.svg
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
