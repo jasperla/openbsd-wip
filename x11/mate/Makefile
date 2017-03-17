@@ -4,6 +4,7 @@
      SUBDIR += atril
      SUBDIR += calc
      SUBDIR += caja
+     SUBDIR += caja-extensions
      SUBDIR += control-center
      SUBDIR += desktop
      SUBDIR += icon-theme

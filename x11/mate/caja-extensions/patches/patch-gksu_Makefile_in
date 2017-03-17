@@ -1,0 +1,12 @@
+$OpenBSD$
+--- gksu/Makefile.in.orig	Fri Mar 17 19:39:37 2017
++++ gksu/Makefile.in	Fri Mar 17 19:39:49 2017
+@@ -398,7 +398,7 @@ AM_CPPFLAGS = -DLOCALEDIR=\"$(datadir)/locale\" -DDATA
+ caja_extensiondir = $(libdir)/caja/extensions-2.0
+ caja_extension_LTLIBRARIES = libcaja-gksu.la
+ libcaja_gksu_la_SOURCES = libcaja-gksu.c
+-libcaja_gksu_la_LDFLAGS = LDFLAGS = -module -avoid-version -no-undefined
++libcaja_gksu_la_LDFLAGS = -module -avoid-version -no-undefined
+ libcaja_gksu_la_LIBADD = $(CAJA_LIBS)
+ extensiondir = $(datadir)/caja/extensions
+ extension_in_files = libcaja-gksu.caja-extension.in
