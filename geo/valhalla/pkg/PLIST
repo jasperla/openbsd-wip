@@ -5,6 +5,7 @@
 @bin bin/valhalla_benchmark_loki
 @bin bin/valhalla_benchmark_skadi
 @bin bin/valhalla_build_admins
+bin/valhalla_build_config
 @bin bin/valhalla_build_connectivity
 bin/valhalla_build_elevation
 @bin bin/valhalla_build_speeds
@@ -27,6 +28,7 @@ bin/valhalla_build_timezones
 @bin bin/valhalla_skadi_worker
 @bin bin/valhalla_thor_worker
 @bin bin/valhalla_tyr_worker
+@bin bin/valhalla_validate_transit
 @bin bin/valhalla_ways_to_edges
 include/valhalla/
 include/valhalla/baldr/
@@ -39,6 +41,7 @@ include/valhalla/baldr/datetime.h
 include/valhalla/baldr/directededge.h
 include/valhalla/baldr/double_bucket_queue.h
 include/valhalla/baldr/edgeinfo.h
+include/valhalla/baldr/edgetracker.h
 include/valhalla/baldr/errorcode_util.h
 include/valhalla/baldr/geojson.h
 include/valhalla/baldr/graphconstants.h
@@ -164,6 +167,7 @@ include/valhalla/odin/transitstop.h
 include/valhalla/odin/util.h
 include/valhalla/proto/
 include/valhalla/proto/directions_options.pb.h
+include/valhalla/proto/tripcommon.pb.h
 include/valhalla/proto/tripdirections.pb.h
 include/valhalla/proto/trippath.pb.h
 include/valhalla/sif/
@@ -206,6 +210,8 @@ lib/libvalhalla.a
 lib/libvalhalla.la
 @lib lib/libvalhalla.so.${LIBvalhalla_VERSION}
 lib/pkgconfig/libvalhalla.pc
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/valhalla.a
 lib/python${MODPY_VERSION}/site-packages/valhalla.la
 lib/python${MODPY_VERSION}/site-packages/valhalla.so
