@@ -16,7 +16,7 @@ WANTLIB += Xfixes Xi Xinerama Xrandr Xrender c dconf epoxy expat
 WANTLIB += ffi fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 iconv intl lzma m pcre pixman-1
 WANTLIB += pthread pthread-stubs xcb-render xcb-shm xcb
-WANTLIB += xml2 z
+WANTLIB += xml2 z exempi
 WANTLIB += atk-1.0 atk-bridge-2.0 atspi cairo-gobject cairo
 WANTLIB += dbus-1 gailutil-3 gdk-3 gdk_pixbuf-2.0 graphite2
 WANTLIB += gtk-3 harfbuzz mate-desktop-2 notify pango-1.0
@@ -26,10 +26,14 @@ WANTLIB += X11-xcb startup-notification-1 xcb-util
 MODULES=		devel/dconf \
 			x11/mate
 
+RUN_DEPENDS=		x11/gnome/gvfs
+
 LIB_DEPENDS=		devel/libnotify \
 			graphics/libexif \
+			textproc/exempi \
 			x11/mate/desktop
 
-MODMATE_TOOLS=		shared-mime-info gobject-introspection
+MODMATE_TOOLS=		shared-mime-info gobject-introspection \
+			gtk-update-icon-cache
 
 .include <bsd.port.mk>
