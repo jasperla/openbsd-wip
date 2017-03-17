@@ -17,6 +17,8 @@ WANTLIB +=	c m
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=brandy/}
 
+MAKE_FLAGS =	CC="${CC}" LD="${CC}"
+
 MAKE_FILE =	makefile.text tbrandy
 
 NO_TEST =	Yes
