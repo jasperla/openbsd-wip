@@ -1,7 +1,7 @@
 $OpenBSD$
---- src/Makefile.in.orig	Sun Feb 26 17:54:33 2017
-+++ src/Makefile.in	Sun Feb 26 17:55:11 2017
-@@ -622,6 +622,7 @@ EXTRA_mate_screensaver_dialog_SOURCES = \
+--- src/Makefile.in.orig	Mon Mar 13 12:21:47 2017
++++ src/Makefile.in	Fri Mar 17 17:58:13 2017
+@@ -621,6 +621,7 @@ EXTRA_mate_screensaver_dialog_SOURCES = \
  	gs-auth-pam.c		\
  	gs-auth-helper.c	\
  	gs-auth-pwent.c		\
@@ -9,7 +9,7 @@ $OpenBSD$
  	$(NULL)
  
  mate_screensaver_dialog_LDADD = \
-@@ -909,6 +910,7 @@ distclean-compile:
+@@ -908,6 +909,7 @@ distclean-compile:
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gs-auth-helper.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gs-auth-pam.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gs-auth-pwent.Po@am__quote@

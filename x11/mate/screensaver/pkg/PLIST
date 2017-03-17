@@ -4,7 +4,9 @@
 @bin bin/mate-screensaver-preferences
 lib/pkgconfig/mate-screensaver.pc
 libexec/mate-screensaver/
+@mode u+s
 @bin libexec/mate-screensaver-dialog
+@mode
 @bin libexec/mate-screensaver-gl-helper
 @bin libexec/mate-screensaver/floaters
 @bin libexec/mate-screensaver/popsquares
@@ -35,9 +37,12 @@ share/desktop-directories/
 share/desktop-directories/mate-screensaver.directory
 share/examples/mate-power-manager/
 share/examples/mate-power-manager/xdg/
+@sample ${SYSCONFDIR}/xdg/
 share/examples/mate-power-manager/xdg/autostart/
+@sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/mate-power-manager/xdg/autostart/mate-screensaver-preferences.desktop
 share/examples/mate-power-manager/xdg/autostart/mate-screensaver.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/mate-screensaver.desktop
 share/examples/mate-power-manager/xdg/menus/
 share/examples/mate-power-manager/xdg/menus/mate-screensavers.menu
 share/glib-2.0/schemas/org.mate.screensaver.gschema.xml
