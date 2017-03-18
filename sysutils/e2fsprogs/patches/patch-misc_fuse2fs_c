@@ -1,0 +1,56 @@
+$OpenBSD$
+
+There is no FUSE_MAKE_VERSION macro in base
+
+--- misc/fuse2fs.c.orig	Sat Mar 18 14:52:12 2017
++++ misc/fuse2fs.c	Sat Mar 18 15:08:59 2017
+@@ -72,7 +72,7 @@ static ext2_filsys global_fs; /* Try not to use this d
+ # define dbg_printf(f, a...)
+ #endif
+ 
+-#if FUSE_VERSION >= FUSE_MAKE_VERSION(2, 8)
++#if FUSE_VERSION >= 28
+ # ifdef _IOR
+ #  ifdef _IOW
+ #   define SUPPORT_I_FLAGS
+@@ -3262,7 +3262,7 @@ static int ioctl_fitrim(ext2_filsys fs, struct fuse2fs
+ }
+ #endif /* FITRIM */
+ 
+-#if FUSE_VERSION >= FUSE_MAKE_VERSION(2, 8)
++#if FUSE_VERSION >= 28
+ static int op_ioctl(const char *path EXT2FS_ATTR((unused)), int cmd,
+ 		    void *arg EXT2FS_ATTR((unused)),
+ 		    struct fuse_file_info *fp,
+@@ -3339,7 +3339,7 @@ out:
+ 	return ret;
+ }
+ 
+-#if FUSE_VERSION >= FUSE_MAKE_VERSION(2, 9)
++#if FUSE_VERSION >= 29
+ # ifdef SUPPORT_FALLOCATE
+ static int fallocate_helper(struct fuse_file_info *fp, int mode, off_t offset,
+ 			    off_t len)
+@@ -3610,7 +3610,7 @@ static struct fuse_operations fs_ops = {
+ 	.ftruncate = op_ftruncate,
+ 	.fgetattr = op_fgetattr,
+ 	.utimens = op_utimens,
+-#if FUSE_VERSION >= FUSE_MAKE_VERSION(2, 9)
++#if FUSE_VERSION >= 29
+ # if defined(UTIME_NOW) || defined(UTIME_OMIT)
+ 	.flag_utime_omit_ok = 1,
+ # endif
+@@ -3620,11 +3620,11 @@ static struct fuse_operations fs_ops = {
+ 	.lock = op_lock,
+ 	.poll = op_poll,
+ #endif
+-#if FUSE_VERSION >= FUSE_MAKE_VERSION(2, 8)
++#if FUSE_VERSION >= 28
+ 	.ioctl = op_ioctl,
+ 	.flag_nullpath_ok = 1,
+ #endif
+-#if FUSE_VERSION >= FUSE_MAKE_VERSION(2, 9)
++#if FUSE_VERSION >= 29
+ 	.flag_nopath = 1,
+ # ifdef SUPPORT_FALLOCATE
+ 	.fallocate = op_fallocate,

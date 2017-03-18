@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_e2p_Makefile_in,v 1.3 2013/06/21 22:35:51 sthen Exp $
+--- lib/e2p/Makefile.in.orig	Fri Sep  2 06:17:32 2016
++++ lib/e2p/Makefile.in	Sat Mar 18 14:47:41 2017
+@@ -35,8 +35,8 @@ HFILES= e2p.h
+ LIBRARY= libe2p
+ LIBDIR= e2p
+ 
+-ELF_VERSION = 2.3
+-ELF_SO_VERSION = 2
++ELF_VERSION = $(LIBe2p_VERSION)
++ELF_SO_VERSION = $(LIBe2p_VERSION)
+ ELF_IMAGE = libe2p
+ ELF_MYDIR = e2p
+ ELF_INSTALL_DIR = $(root_libdir)
