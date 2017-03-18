@@ -9,13 +9,18 @@
 @man man/man1/mate-power-preferences.1
 @man man/man1/mate-power-statistics.1
 @bin sbin/mate-power-backlight-helper
+share/applications/mate-power-preferences.desktop
+share/applications/mate-power-statistics.desktop
 share/dbus-1/services/org.mate.PowerManager.service
 share/dbus-1/services/org.mate.panel.applet.BrightnessAppletFactory.service
 share/dbus-1/services/org.mate.panel.applet.InhibitAppletFactory.service
+share/examples/mate-power-manager/
+share/examples/mate-power-manager/xdg/
+@sample ${SYSCONFDIR}/xdg/
+share/examples/mate-power-manager/xdg/autostart/
+@sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/mate-power-manager/xdg/autostart/mate-power-manager.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/mate-power-manager.desktop
-share/examples/mate-power-manager/xdg/autostart/mate-power-preferences.desktop
-share/examples/mate-power-manager/xdg/autostart/mate-power-statistics.desktop
 share/glib-2.0/schemas/org.mate.power-manager.gschema.xml
 share/help/C/mate-power-manager/
 share/help/C/mate-power-manager/figures/

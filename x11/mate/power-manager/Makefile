@@ -28,13 +28,14 @@ AUTOCONF_VERSION=	2.69
 
 MODMATE_LDFLAGS=	-lexecinfo
 
-FAKE_FLAGS=		desktopdir=${PREFIX}/share/examples/mate-power-manager/xdg/autostart \
-			sysconfdir=${PREFIX}/share/examples/mate-power-manager \
-			DBUS_SYS_DIR=${PREFIX}/share/examples/mate-power-manager/dbus-1/system.d
-
 LIB_DEPENDS=		sysutils/upower \
 			devel/libexecinfo \
 			x11/gnome/libgnome-keyring \
 			x11/mate/panel
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${MATE_PROJECT}
+	@mv ${WRKINST}/etc/xdg \
+		${PREFIX}/share/examples/${MATE_PROJECT}/xdg
 
 .include <bsd.port.mk>
