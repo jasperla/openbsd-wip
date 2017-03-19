@@ -65,10 +65,11 @@ Unfortunately, this version of TeX Live shipped with a slightly buggy version
 of LuaLaTeX which can lead to some confusing error messages when compiling
 documents.
 
-Sometimes you can work around this by adding:
-\usepackage{luatex85}
+You can work around this by putting:
 
-to the document preamble.
+    \RequirePackage{luatex85}
+
+as the first line in your source file.
 
 For more information, see:
 http://tex.stackexchange.com/questions/315198/datetime-package-does-not-work-with-lualatex-in-tl-2016
