@@ -42,8 +42,6 @@ CONFIGURE_ARGS +=	--disable-ldap
 
 RUN_DEPENDS = 		security/pinentry
 
-# gpg-agent must be installed to run the regress tests
-# Make sure you dont have gpg aliased (e.g. to gpg2) when running tests.
 TEST_DEPENDS = 	${FULLPKGNAME}:${BUILD_PKGPATH}
 PORTHOME=${WRKDIR}
 
@@ -55,9 +53,6 @@ CONFIGURE_ENV = 	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS += 	docdir=${LOCALBASE}/share/doc/gnupg2 \
 			--enable-gpgtar \
 			--with-adns=no
-
-pre-test:
-	mkdir -p ${WRKDIR}/tests-keychain
 
 # Avoid conflict with gnupg-1.x
 post-install:
