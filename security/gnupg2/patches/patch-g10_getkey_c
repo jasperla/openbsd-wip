@@ -1,0 +1,41 @@
+$OpenBSD$
+
+gpg: Fix attempt to double free an UID structure.
+https://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blobdiff;f=g10/getkey.c;h=be7367faf685e99b6c0f7c92b569d89180f4e2df;hp=163ab801400411fd91b3b2f63bb27ce8a88a8010;hb=4a130bbc2c2f4be6e8c6357512a943f435ade28f;hpb=e6ca015ae182a6dbb0466441efc17c99683e9375
+
+--- g10/getkey.c.orig	Wed Mar  1 13:04:33 2017
++++ g10/getkey.c	Sun Mar 19 17:21:06 2017
+@@ -1592,8 +1592,10 @@ get_best_pubkey_byname (ctrl_t ctrl, GETKEY_CTX *retct
+   if (is_valid_mailbox (name) && ctx)
+     {
+       /* Rank results and return only the most relevant key.  */
+-      struct pubkey_cmp_cookie best = { 0 }, new;
+-      KBNODE new_keyblock;
++      struct pubkey_cmp_cookie best = { 0 };
++      struct pubkey_cmp_cookie new;
++      kbnode_t new_keyblock;
++
+       while (getkey_next (ctx, &new.key, &new_keyblock) == 0)
+         {
+           int diff = pubkey_cmp (ctrl, name, &best, &new, new_keyblock);
+@@ -1610,17 +1612,20 @@ get_best_pubkey_byname (ctrl_t ctrl, GETKEY_CTX *retct
+               /* Old key is better.  */
+               release_public_key_parts (&new.key);
+               free_user_id (new.uid);
++              new.uid = NULL;
+             }
+           else
+             {
+               /* A tie.  Keep the old key.  */
+               release_public_key_parts (&new.key);
+               free_user_id (new.uid);
++              new.uid = NULL;
+             }
+         }
+       getkey_end (ctx);
+       ctx = NULL;
+       free_user_id (best.uid);
++      best.uid = NULL;
+ 
+       if (best.valid)
+         {

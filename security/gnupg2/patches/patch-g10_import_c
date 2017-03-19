@@ -1,0 +1,43 @@
+$OpenBSD$
+
+Fix possible segv when attribute packets are filtered.
+https://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=commit;h=5f6f3f5cae8a95ed469129f9677782c17951dab3
+
+--- g10/import.c.orig	Wed Mar  1 13:04:33 2017
++++ g10/import.c	Sun Mar 19 17:17:38 2017
+@@ -1173,7 +1173,8 @@ impex_filter_getval (void *cookie, const char *propnam
+   static char numbuf[20];
+   const char *result;
+ 
+-  if (node->pkt->pkttype == PKT_USER_ID)
++  if (node->pkt->pkttype == PKT_USER_ID
++      || node->pkt->pkttype == PKT_ATTRIBUTE)
+     {
+       if (!strcmp (propname, "uid"))
+         result = node->pkt->pkt.user_id->name;
+@@ -1191,8 +1192,7 @@ impex_filter_getval (void *cookie, const char *propnam
+       else
+         result = NULL;
+     }
+-  else if (node->pkt->pkttype == PKT_SIGNATURE
+-           || node->pkt->pkttype == PKT_ATTRIBUTE)
++  else if (node->pkt->pkttype == PKT_SIGNATURE)
+     {
+       PKT_signature *sig = node->pkt->pkt.signature;
+ 
+@@ -1313,12 +1313,12 @@ apply_drop_sig_filter (kbnode_t keyblock, recsel_expr_
+       if (node->pkt->pkttype == PKT_PUBLIC_SUBKEY
+           || node->pkt->pkttype == PKT_SECRET_SUBKEY)
+         break; /* ready.  */
+-      if (node->pkt->pkttype == PKT_USER_ID)
++      if (node->pkt->pkttype == PKT_USER_ID
++          || node->pkt->pkttype == PKT_ATTRIBUTE)
+         active = 1;
+       if (!active)
+         continue;
+-      if (node->pkt->pkttype != PKT_SIGNATURE
+-          && node->pkt->pkttype != PKT_ATTRIBUTE)
++      if (node->pkt->pkttype != PKT_SIGNATURE)
+         continue;
+ 
+       sig = node->pkt->pkt.signature;
