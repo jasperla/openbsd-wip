@@ -1153,6 +1153,8 @@ share/racket/collects/racket/private/compiled/logger_rkt.dep
 share/racket/collects/racket/private/compiled/logger_rkt.zo
 share/racket/collects/racket/private/compiled/map_rkt.dep
 share/racket/collects/racket/private/compiled/map_rkt.zo
+share/racket/collects/racket/private/compiled/math-predicates_rkt.dep
+share/racket/collects/racket/private/compiled/math-predicates_rkt.zo
 share/racket/collects/racket/private/compiled/member_rkt.dep
 share/racket/collects/racket/private/compiled/member_rkt.zo
 share/racket/collects/racket/private/compiled/misc_rkt.dep
@@ -1297,6 +1299,7 @@ share/racket/collects/racket/private/load.rkt
 share/racket/collects/racket/private/local.rkt
 share/racket/collects/racket/private/logger.rkt
 share/racket/collects/racket/private/map.rkt
+share/racket/collects/racket/private/math-predicates.rkt
 share/racket/collects/racket/private/member.rkt
 share/racket/collects/racket/private/misc.rkt
 share/racket/collects/racket/private/modbeg.rkt
