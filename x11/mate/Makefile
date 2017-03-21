@@ -14,6 +14,7 @@
      SUBDIR += marco
      SUBDIR += media
      SUBDIR += menus
+     SUBDIR += notification-daemon
      SUBDIR += panel
      SUBDIR += power-manager
      SUBDIR += screensaver
