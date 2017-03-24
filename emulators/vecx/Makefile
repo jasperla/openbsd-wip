@@ -21,7 +21,7 @@ LIB_DEPENDS =	devel/sdl \
 
 USE_GMAKE =	Yes
 
-MAKE_FILE =	Makefile
+MAKE_FLAGS =	CC="${CC}"
 
 ALL_TARGET =	vecx
 
