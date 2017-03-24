@@ -19,12 +19,25 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=brandy/}
 
 MAKE_FLAGS =	CC="${CC}" LD="${CC}"
 
-MAKE_FILE =	makefile.text tbrandy
+FLAVORS = sdl
+FLAVOR ?=
+
+.if ${FLAVOR:Msdl}
+WANTLIB +=	SDL
+LIB_DEPENDS +=	devel/sdl
+CFLAGS +=	-I${LOCALBASE}/include/SDL
+MAKE_FLAGS +=	LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_FILE =	makefile
+BINARY =	brandy
+.else
+MAKE_FILE =	makefile.text
+BINARY =	tbrandy
+.endif
 
 NO_TEST =	Yes
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tbrandy ${PREFIX}/bin/brandy
+	${INSTALL_PROGRAM} ${WRKSRC}/${BINARY} ${PREFIX}/bin/brandy
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/brandy
 	${INSTALL_DATA} ${WRKSRC}/docs/basic ${PREFIX}/share/doc/brandy
 	${INSTALL_DATA} ${WRKSRC}/docs/messages ${PREFIX}/share/doc/brandy
