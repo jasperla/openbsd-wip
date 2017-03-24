@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.5 2014/06/03 13:45:41 bcallah Exp $
+@bin bin/synergyc
+@bin bin/synergyd
+@bin bin/synergys
+@man man/man1/synergyc.1
+@man man/man1/synergys.1
+share/examples/synergy/
+share/examples/synergy/synergy.conf.example
+@sample ${SYSCONFDIR}/synergy.conf
+share/examples/synergy/synergy.conf.example-advanced
+share/examples/synergy/synergy.conf.example-basic
