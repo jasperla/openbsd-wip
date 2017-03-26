@@ -7,6 +7,8 @@
      SUBDIR += caja-extensions
      SUBDIR += control-center
      SUBDIR += desktop
+     SUBDIR += engrampa
+     SUBDIR += eom
      SUBDIR += icon-theme
      SUBDIR += libmatekbd
      SUBDIR += libmatemixer
@@ -16,6 +18,7 @@
      SUBDIR += menus
      SUBDIR += notification-daemon
      SUBDIR += panel
+     SUBDIR += pluma
      SUBDIR += power-manager
      SUBDIR += screensaver
      SUBDIR += session-manager
