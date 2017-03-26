@@ -151,7 +151,6 @@ share/kservices5/plasma-dataengine-katesessions.desktop
 share/metainfo/
 share/metainfo/org.kde.kate.appdata.xml
 share/metainfo/org.kde.kwrite.appdata.xml
-share/metainfo/org.kde.plasma.katesessions.appdata.xml
 share/plasma/plasmoids/org.kde.plasma.katesessions/
 share/plasma/plasmoids/org.kde.plasma.katesessions/contents/
 share/plasma/plasmoids/org.kde.plasma.katesessions/contents/ui/
