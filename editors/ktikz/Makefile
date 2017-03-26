@@ -1,0 +1,37 @@
+# $OpenBSD$
+
+COMMENT =		editor for the TikZ language
+
+V =			0.10
+DISTNAME =		ktikz_${V}
+PKGNAME =		KtikZ-${V}
+
+CATEGORIES =		editors
+HOMEPAGE =		http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language/
+MAINTAINER =		Paul Irofti <pirofti@openbsd.org>
+
+# GPLv2
+PERMIT_PACKAGE_CDROM =	Yes
+
+MASTER_SITES =		http://www.hackenberger.at/ktikz/
+
+MODULES =		devel/qmake \
+			x11/qt4
+MODQMAKE_ARGS=          DESKTOPDIR=${LOCALBASE}/share/applications \
+                        ICONDIR=${LOCALBASE}/share/pixmaps \
+			MIMEDIR=${LOCALBASE}/share/mime/packages \
+			LRELEASECOMMAND=lrelease4
+
+
+WRKDIST =		${WRKDIR}/ktikz
+
+MODQMAKE_PROJECTS =	qtikz.pro \
+			app/app.pro
+
+RUN_DEPENDS =		print/texlive/base
+
+LIB_DEPENDS =		print/poppler
+
+NO_TEST =		Yes
+
+.include <bsd.port.mk>
