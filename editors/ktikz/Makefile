@@ -30,7 +30,8 @@ MODQMAKE_PROJECTS =	qtikz.pro \
 
 RUN_DEPENDS =		print/texlive/base
 
-LIB_DEPENDS =		print/poppler
+# XXX: pkg_add poppler-qt4 because otherwise it pulls qt5 as well
+LIB_DEPENDS =		print/poppler,,-qt4
 
 NO_TEST =		Yes
 
