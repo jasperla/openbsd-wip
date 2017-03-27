@@ -15,20 +15,26 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		http://www.hackenberger.at/ktikz/
 
+WANTLIB += ICE QtGui QtXml SM X11 Xext Xi Xinerama Xrender c fontconfig
+WANTLIB += freetype m pthread stdc++
+
 MODULES =		devel/qmake \
 			x11/qt4
 MODQMAKE_ARGS=          DESKTOPDIR=${LOCALBASE}/share/applications \
                         ICONDIR=${LOCALBASE}/share/pixmaps \
 			MIMEDIR=${LOCALBASE}/share/mime/packages \
-			LRELEASECOMMAND=lrelease4
+			MANDIR=${LOCALBASE}/man \
+			LRELEASECOMMAND=${LOCALBASE}/bin/lrelease4 \
+			QCOLLECTIONGENERATORCOMMAND=${LOCALBASE}/lib/qt4/bin/qcollectiongenerator
 
-
+MAKE_ENV =		MAKEOBJDIR=.
 WRKDIST =		${WRKDIR}/ktikz
 
 MODQMAKE_PROJECTS =	qtikz.pro \
 			app/app.pro
 
-RUN_DEPENDS =		print/texlive/base
+RUN_DEPENDS =		print/texlive/base \
+			print/poppler,-utils
 
 # XXX: pkg_add poppler-qt4 because otherwise it pulls qt5 as well
 LIB_DEPENDS =		print/poppler,,-qt4

@@ -1,0 +1,19 @@
+@comment $OpenBSD$
+@bin bin/qtikz
+@man man/man1/qtikz.1
+share/applications/qtikz.desktop
+share/mime/packages/qtikz.xml
+share/qtikz/
+share/qtikz/LICENSE.GPL2
+share/qtikz/documentation/
+share/qtikz/documentation/qtikz.qch
+share/qtikz/documentation/qtikz.qhc
+share/qtikz/locale/
+share/qtikz/locale/qtikz_de.qm
+share/qtikz/locale/qtikz_es.qm
+share/qtikz/locale/qtikz_fr.qm
+share/qtikz/qtikz-128.png
+share/qtikz/templates/
+share/qtikz/templates/beamer-example-template.pgs
+share/qtikz/templates/template_example.pgs
+share/qtikz/templates/template_example2.pgs
