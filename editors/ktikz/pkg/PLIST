@@ -17,3 +17,7 @@ share/qtikz/templates/
 share/qtikz/templates/beamer-example-template.pgs
 share/qtikz/templates/template_example.pgs
 share/qtikz/templates/template_example2.pgs
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
