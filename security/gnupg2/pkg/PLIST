@@ -125,3 +125,4 @@ share/locale/tr/LC_MESSAGES/gnupg2.mo
 share/locale/uk/LC_MESSAGES/gnupg2.mo
 share/locale/zh_CN/LC_MESSAGES/gnupg2.mo
 share/locale/zh_TW/LC_MESSAGES/gnupg2.mo
+%%ldap%%
