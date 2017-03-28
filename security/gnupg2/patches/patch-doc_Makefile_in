@@ -1,0 +1,18 @@
+$OpenBSD$
+--- doc/Makefile.in.orig	Tue Mar 28 18:06:28 2017
++++ doc/Makefile.in	Tue Mar 28 18:06:50 2017
+@@ -460,14 +460,6 @@ libcommonpth = ../common/libcommonpth.a
+ libcommontls = ../common/libcommontls.a
+ libcommontlsnpth = ../common/libcommontlsnpth.a
+ examples = examples/README examples/scd-event examples/trustlist.txt	\
+-	   examples/systemd-user/README 				\
+-	   examples/systemd-user/dirmngr.service 			\
+-	   examples/systemd-user/dirmngr.socket				\
+-	   examples/systemd-user/gpg-agent.service 			\
+-	   examples/systemd-user/gpg-agent.socket 			\
+-	   examples/systemd-user/gpg-agent-ssh.socket 			\
+-	   examples/systemd-user/gpg-agent-browser.socket		\
+-	   examples/systemd-user/gpg-agent-extra.socket 		\
+ 	   examples/gpgconf.conf examples/pwpattern.list
+ 
+ helpfiles = help.txt help.be.txt help.ca.txt help.cs.txt		\
