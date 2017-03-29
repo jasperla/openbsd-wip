@@ -5,12 +5,12 @@ BROKEN-alpha =		error: invalid 'asm': invalid %xn code
 BROKEN-sparc64 =	error: invalid 'asm': invalid operand output code
 
 COMMENT =		modern Amiga emulator
-V =			2.6.2
+V =			2.8.3
 MODPY_EGG_VERSION =	${V}
 DISTNAME =		fs-uae-$V
 CATEGORIES =		emulators
 
-HOMEPAGE =		http://fengestad.no/fs-uae/
+HOMEPAGE =		http://fs-uae.net/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # GPLv2, LGPLv2.1, BSD
@@ -38,6 +38,11 @@ AUTOMAKE_VERSION =      1.15
 
 CONFIGURE_STYLE =	gnu
 USE_GMAKE =		Yes
+
+CONFIGURE_ARGS +=	--disable-jit \
+			--disable-slirp
+
+CONFIGURE_ENV +=	CFLAGS=-I${LOCALBASE}/include
 
 NO_TEST =		Yes
 
