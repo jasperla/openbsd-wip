@@ -1,12 +1,7 @@
 $OpenBSD$
-
-Disable bundled libraries that are already in ports.
-
-Allow us to install into the system Python tree.
-
---- setup.py.orig	Tue Oct 27 20:54:58 2015
-+++ setup.py	Sun Jan 17 18:44:56 2016
-@@ -5,16 +5,6 @@ if sys.argv[1] == "build_exe":
+--- setup.py.orig	Fri Mar 31 23:48:12 2017
++++ setup.py	Fri Mar 31 23:51:38 2017
+@@ -5,17 +5,6 @@ if sys.argv[1] == "build_exe":
  else:
      from distutils.core import setup
  
@@ -20,32 +15,15 @@ Allow us to install into the system Python tree.
 -        print("install to a custom location, e.g.:")
 -        print("python3 setup.py --install-lib=/usr/share/fs-uae-launcher install")
 -        sys.exit(1)
- 
+-
  title = "FS-UAE Launcher"
  name = "fs-uae-launcher"
-@@ -31,9 +21,7 @@ package_map = {
-     "fstd": ".",
-     "fsui": ".",
-     "game_center": ".",
--    "OpenGL": ".",
+ py_name = "fs_uae_launcher"
+@@ -33,7 +22,6 @@ package_map = {
+     "launcher": ".",
+     "OpenGL": ".",
      "oyoyo": ".",
 -    "six": ".",
+     "workspace": ".",
  }
  packages = sorted(package_map.keys())
- scripts = ["fs-uae-launcher"]
-@@ -51,7 +39,6 @@ setup_cmdclass = {}
- 
- 
- res_dirs = []
--res_dirs.append('OpenGL/res')
- res_dirs.append('fs_uae_launcher/res')
- res_dirs.append('fs_uae_workspace/res')
- res_dirs.append('fsbc/res')
-@@ -60,7 +47,6 @@ res_dirs.append('fstd/res')
- res_dirs.append('fsui/res')
- res_dirs.append('game_center/res')
- res_dirs.append('oyoyo/res')
--res_dirs.append('six/res')
- 
- 
- def add_package(package_name, package_dir_name):
