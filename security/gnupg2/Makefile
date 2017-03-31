@@ -42,6 +42,8 @@ CONFIGURE_ARGS +=	--disable-ldap
 
 RUN_DEPENDS = 		security/pinentry
 
+# One test failure:
+# https://bugs.gnupg.org/gnupg/issue3030
 TEST_DEPENDS = 	${FULLPKGNAME}:${BUILD_PKGPATH}
 PORTHOME=${WRKDIR}
 
