@@ -16,7 +16,7 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # GPLv2, LGPLv2.1, BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL GLEW GLU SDL2 X11 c freetype glib-2.0 gthread-2.0 m mpeg2
+WANTLIB += GL SDL2 X11 c glib-2.0 gthread-2.0 m mpeg2
 WANTLIB += mpeg2convert openal png pthread stdc++ z
 
 MASTER_SITES =		${HOMEPAGE}stable/$V/
@@ -37,7 +37,6 @@ AUTOCONF_VERSION =      2.69
 AUTOMAKE_VERSION =      1.15
 
 CONFIGURE_STYLE =	gnu
-USE_GMAKE =		Yes
 
 CONFIGURE_ARGS +=	--disable-jit \
 			--disable-slirp
