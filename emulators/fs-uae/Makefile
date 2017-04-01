@@ -16,7 +16,7 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # GPLv2, LGPLv2.1, BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL SDL2 X11 c glib-2.0 gthread-2.0 m mpeg2
+WANTLIB += GL GLEW GLU SDL2 X11 c glib-2.0 gthread-2.0 m mpeg2
 WANTLIB += mpeg2convert openal png pthread stdc++ z
 
 MASTER_SITES =		${HOMEPAGE}stable/$V/
@@ -39,9 +39,13 @@ AUTOMAKE_VERSION =      1.15
 CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ARGS +=	--disable-jit \
-			--disable-slirp
+			--disable-slirp \
+			--with-glew
 
 CONFIGURE_ENV +=	CFLAGS=-I${LOCALBASE}/include
+
+# XXX Find out why
+USE_WXNEEDED =		Yes
 
 NO_TEST =		Yes
 
