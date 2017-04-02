@@ -14,8 +14,11 @@ MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 # uses pledge()
-WANTLIB += X11 Xpm c pixman-1 pthread-stubs xcb xcb-image xcb-randr
-WANTLIB += xcb-shm xcb-util
+WANTLIB += X11 Xpm c jpeg pixman-1 png pthread-stubs xcb xcb-image
+WANTLIB += xcb-randr xcb-shm xcb-util
+
+LIB_DEPENDS +=	graphics/jpeg \
+		graphics/png
 
 BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
