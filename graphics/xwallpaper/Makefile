@@ -1,5 +1,5 @@
-# $OpenBSD:
-#
+# $OpenBSD:$
+
 COMMENT =	X wallpaper utility
 
 GH_ACCOUNT =	stoeckmann
