@@ -6,13 +6,14 @@ GH_ACCOUNT =	stoeckmann
 GH_PROJECT =	xwallpaper
 GH_TAGNAME =	v0.2.0
 
-CATEGORIES =	graphics
+CATEGORIES =	graphics x11
 
 MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
 
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes
 
+# uses pledge()
 WANTLIB += X11 Xpm c pixman-1 pthread-stubs xcb xcb-image xcb-randr
 WANTLIB += xcb-shm xcb-util
 
