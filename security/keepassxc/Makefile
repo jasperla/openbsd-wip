@@ -21,13 +21,14 @@ WANTLIB += c gcrypt gpg-error m z
 MODULES =	x11/qt5 \
 		devel/cmake
 
-CONFIGURE_ARGS=	-DWITH_GUI_TESTS=ON
-
 LIB_DEPENDS =	security/libgcrypt
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		x11/gtk+3,-guic
+
+CONFIGURE_ARGS=	-DWITH_GUI_TESTS=ON \
+		-DWITH_XC_HTTP=ON
 
 TEST_IS_INTERACTIVE =	X11
 
