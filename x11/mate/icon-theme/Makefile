@@ -5,6 +5,7 @@ PKG_ARCH=	*
 COMMENT=	base icon theme for MATE
 
 MATE_PROJECT=	mate-icon-theme
+MATE_VERSION=	1.18.1
 
 CATEGORIES=	x11
 
