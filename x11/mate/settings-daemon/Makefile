@@ -3,6 +3,7 @@
 COMMENT=		MATE settings daemon
 
 MATE_PROJECT=		mate-settings-daemon
+MATE_VERSION=		1.18.1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
