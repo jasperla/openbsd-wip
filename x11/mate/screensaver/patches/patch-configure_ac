@@ -1,13 +1,12 @@
 $OpenBSD$
---- configure.ac.orig	Sun Feb 26 17:48:23 2017
-+++ configure.ac	Sun Feb 26 17:53:09 2017
-@@ -532,6 +532,45 @@ if test "x$have_libgl" = "xyes"; then
+--- configure.ac.orig	Mon Mar 13 12:16:31 2017
++++ configure.ac	Tue Mar 28 20:28:07 2017
+@@ -532,6 +532,44 @@ if test "x$have_libgl" = "xyes"; then
  fi
  
  dnl ---------------------------------------------------------------------------
 +dnl - Check for bsd_auth(3) (OpenBSD)
 +dnl ---------------------------------------------------------------------------
-+
 +have_bsdauth=no
 +with_bsdauth_req=unspecified
 +NEED_SETUID=no
@@ -47,7 +46,16 @@ $OpenBSD$
  dnl - Check for PAM
  dnl ---------------------------------------------------------------------------
  
-@@ -823,7 +862,7 @@ dnl  Authentication scheme
+@@ -540,7 +578,7 @@ AC_ARG_ENABLE(pam, AC_HELP_STRING([--enable-pam],
+                    [Enable PAM support @<:@default=auto@:>@],
+                    ),,enable_pam=auto)
+ 
+-if test "x$enable_locking" = "xyes" -a  "x$enable_pam" != "xno"; then
++if test "x$enable_locking" = "xyes" -a "x$enable_pam" != "xno" -a "x$have_bsdauth" = "xno"; then
+ AC_CHECK_LIB(pam, pam_start, have_pam=yes)
+ fi
+ if test "x$have_pam" = "xyes"; then
+@@ -823,7 +861,7 @@ dnl  Authentication scheme
  dnl ---------------------------------------------------------------------------
  
  AC_ARG_ENABLE(authentication-scheme,
@@ -56,12 +64,37 @@ $OpenBSD$
                            authentication scheme [default=auto]],,
    enable_authentication_scheme=auto)
  
-@@ -842,6 +881,8 @@ elif test x$enable_authentication_scheme = xhelper ; t
+@@ -835,6 +873,9 @@ fi
+ if test x$enable_authentication_scheme = xhelper -a x$have_passwd_helper = xno ; then
+ 	AC_MSG_ERROR(Password helper support requested but not available)
+ fi
++if test x$enable_authentication_scheme = xbsdauth -a x$have_bsdauth = xno ; then
++	AC_MSG_ERROR(bsd_auth(3) support requested but not available)
++fi
+ 
+ if test x$enable_authentication_scheme = xpam ; then
+         AUTH_SCHEME="pam"
+@@ -842,11 +883,15 @@ elif test x$enable_authentication_scheme = xhelper ; t
          AUTH_SCHEME="helper"
  elif test x$enable_authentication_scheme = xpwent ; then
          AUTH_SCHEME="pwent"
 +elif test x$enable_authentication_scheme = xbsdauth ; then
-+        AUTH_SCHEME="bsdauth"
++	AUTH_SCHEME="bsdauth"
  elif test x$enable_authentication_scheme = xauto ; then
  	if test x$have_pam != xno ; then
  		AUTH_SCHEME="pam"
+ 	elif test x$have_passwd_helper != xno ; then
+ 		AUTH_SCHEME="helper"
++	elif test x$have_bsdauth != xno ; then
++		AUTH_SCHEME="bsdauth"
+ 	else
+ 		AUTH_SCHEME="pwent"
+         fi
+@@ -1127,6 +1172,7 @@ echo "
+         ConsoleKit support:       ${use_console_kit}
+         libnotify support:        ${have_libnotify}
+         PAM support:              ${have_pam}
++        bsd_auth(3) support:      ${have_bsdauth}
+         Have shadow passwords:    ${have_shadow}
+         Have adjunct shadow:      ${have_shadow_adjunct}
+         Have enhanced shadow:     ${have_shadow_enhanced}

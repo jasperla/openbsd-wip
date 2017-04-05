@@ -1,34 +1,19 @@
 $OpenBSD$
---- src/setuid.c.orig	Sun Feb 26 17:56:21 2017
-+++ src/setuid.c	Sun Feb 26 17:58:07 2017
-@@ -206,7 +206,21 @@ hack_uid (char **nolock_reason,
+--- src/setuid.c.orig	Tue Oct  6 17:32:23 2015
++++ src/setuid.c	Tue Mar 28 20:28:18 2017
+@@ -209,6 +209,15 @@ hack_uid (char **nolock_reason,
+ 
+ 		if (uid != euid || gid != egid)
  		{
- 			*orig_uid = uid_gid_string (euid, egid);
- 		}
--
 +#ifdef HAVE_BSDAUTH /* we need to setgid auth to run the bsd_auth(3) login_* helpers */
-+		{
 +			struct group *authg = getgrnam("auth");
 +			if (!authg || !authg->gr_name || !*authg->gr_name) {
 +				reason = g_strdup ("no such group as \"auth\" for bsdauth.");
 +				ret = FALSE;
 +				goto out;
 +			}
-+			if (! set_ids_by_number (uid, authg->gr_gid, uid_message)) {
-+				reason = g_strdup ("cannot setgid \"auth\" for bsdauth.");
-+				ret = FALSE;
-+				goto out;
-+			}
-+		}
-+#else /* !HAVE_BSDAUTH */
- 		if (uid != euid || gid != egid)
- 		{
++			gid = authg->gr_gid;
++#endif /* !HAVE_BSDAUTH */
  			if (! set_ids_by_number (uid, gid, uid_message))
-@@ -217,6 +231,7 @@ hack_uid (char **nolock_reason,
- 				goto out;
- 			}
- 		}
-+#endif
- 	}
- 
- 
+ 			{
+ 				reason = g_strdup ("unable to discard privileges.");

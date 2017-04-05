@@ -1,19 +1,28 @@
 $OpenBSD$
 --- src/Makefile.in.orig	Mon Mar 13 12:21:47 2017
-+++ src/Makefile.in	Fri Mar 17 17:58:13 2017
-@@ -621,6 +621,7 @@ EXTRA_mate_screensaver_dialog_SOURCES = \
- 	gs-auth-pam.c		\
- 	gs-auth-helper.c	\
- 	gs-auth-pwent.c		\
-+	gs-auth-bsdauth.c	\
- 	$(NULL)
- 
- mate_screensaver_dialog_LDADD = \
-@@ -908,6 +909,7 @@ distclean-compile:
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gs-auth-helper.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gs-auth-pam.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gs-auth-pwent.Po@am__quote@
-+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gs-auth-bsdauth.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gs-debug.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gs-fade.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gs-grab-x11.Po@am__quote@
++++ src/Makefile.in	Tue Mar 28 20:28:13 2017
+@@ -375,7 +375,6 @@ LIB_MATE_MENU_LIBS = @LIB_MATE_MENU_LIBS@
+ LIPO = @LIPO@
+ LN_S = @LN_S@
+ LTLIBOBJS = @LTLIBOBJS@
+-LT_SYS_LIBRARY_PATH = @LT_SYS_LIBRARY_PATH@
+ MAINT = @MAINT@
+ MAKEINFO = @MAKEINFO@
+ MANIFEST_TOOL = @MANIFEST_TOOL@
+@@ -1213,9 +1212,13 @@ install-exec-hook:
+ 	@if [ "x@NEED_SETUID@" = "xyes" ]; then \
+ 	    echo "***" ; \
+ 	    echo "***  Warning: mate-screensaver has been compiled with support for" ; \
+-	    echo "***           shadow passwords.  If your system actually uses shadow" ; \
+-	    echo "***           passwords then it must be installed as a setuid root" ; \
+-	    echo "***           program in order for locking to work.  To do this, you" ; \
++	    if [ "x@AUTH_SCHEME@" = "xbsdauth" ]; then \
++		echo "***           bsd_auth(3) and must be installed as a setuid root" ; \
++	    else \
++	        echo "***           shadow passwords. If your system actually uses shadow" ; \
++	        echo "***           passwords then it must be installed as a setuid root" ; \
++	    fi; \
++	    echo "***           program in order for locking to work. To do this, you" ; \
+ 	    echo "***           must run:" ; \
+ 	    echo "***" ; \
+ 	    echo "***           chown root $(DESTDIR)$(libexecdir)/mate-screensaver-dialog" ; \
