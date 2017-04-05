@@ -5,6 +5,7 @@ COMMENT=	powerful text editor for the MATE desktop
 CATEGORIES=	textproc
 
 MATE_PROJECT=	pluma
+MATE_VERSION=	1.18.1
 
 USE_WXNEEDED=	Yes
 
