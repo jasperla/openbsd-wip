@@ -5,6 +5,7 @@ COMMENT=	image viewer for the MATE desktop
 CATEGORIES=	graphics
 
 MATE_PROJECT=	eom
+MATE_VERSION=	1.18.1
 
 USE_WXNEEDED=	Yes
 
