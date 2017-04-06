@@ -27,7 +27,7 @@ CONFIGURE_ARGS += \
 	-DKDE_INSTALL_MANDIR=${PREFIX}/man
 
 # XXX it's very strange this is off by default
-#CONFIGURE_ARGS +=	-DALLOW_UNDEFINED_LIB_SYMBOLS=Yes
+CONFIGURE_ARGS +=	-DALLOW_UNDEFINED_LIB_SYMBOLS=Yes
 .endif
 
 # make sure cmake module preceeds qt5, unless we really want qmake
