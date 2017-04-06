@@ -39,10 +39,9 @@ LIB_DEPENDS =		graphics/jpeg \
 TEST_DEPENDS =		devel/dlib \
 			graphics/giflib
 
-#	${SETENV} CC="${CC}" CFLAGS="${CFLAGS}" \
-#	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 pre-test:
-	mkdir ${WRKBUILD}/dlib/test && cd ${WRKBUILD}/dlib/test && \
+	test -d ${WRKBUILD}/dlib/test || mkdir ${WRKBUILD}/dlib/test \
+	&& cd ${WRKBUILD}/dlib/test && \
 	${SETENV} CC="${CC}" CFLAGS="${CFLAGS}" \
 	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 	${CONFIGURE_ENV} ${LOCALBASE}/bin/cmake \
