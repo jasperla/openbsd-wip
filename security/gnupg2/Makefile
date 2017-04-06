@@ -2,7 +2,7 @@
 
 COMMENT =	GNU privacy guard - a free PGP replacement
 
-DISTNAME =	gnupg-2.1.19
+DISTNAME =	gnupg-2.1.20
 CATEGORIES = 	security
 
 MASTER_SITES =	${MASTER_SITE_GNUPG:=gnupg/}
@@ -42,8 +42,6 @@ CONFIGURE_ARGS +=	--disable-ldap
 
 RUN_DEPENDS = 		security/pinentry
 
-# One test failure:
-# https://bugs.gnupg.org/gnupg/issue3030
 TEST_DEPENDS = 	${FULLPKGNAME}:${BUILD_PKGPATH}
 PORTHOME=${WRKDIR}
 

@@ -1,10 +1,10 @@
 $OpenBSD$
---- doc/Makefile.in.orig	Tue Mar 28 18:06:28 2017
-+++ doc/Makefile.in	Tue Mar 28 18:06:50 2017
-@@ -460,14 +460,6 @@ libcommonpth = ../common/libcommonpth.a
- libcommontls = ../common/libcommontls.a
+--- doc/Makefile.in.orig	Thu Apr  6 09:49:58 2017
++++ doc/Makefile.in	Thu Apr  6 09:50:22 2017
+@@ -461,14 +461,6 @@ libcommontls = ../common/libcommontls.a
  libcommontlsnpth = ../common/libcommontlsnpth.a
  examples = examples/README examples/scd-event examples/trustlist.txt	\
+ 	   examples/vsnfd.prf examples/debug.prf                        \
 -	   examples/systemd-user/README 				\
 -	   examples/systemd-user/dirmngr.service 			\
 -	   examples/systemd-user/dirmngr.socket				\
