@@ -1,48 +1,48 @@
 # $OpenBSD$
 
-COMMENT =		feature-rich dictionary lookup program
+# Qt4's Webkit
+USE_WXNEEDED =		Yes
 
+COMMENT =		feature-rich dictionary lookup program
 DISTNAME =		goldendict-1.0.1-src
 PKGNAME = 		${DISTNAME:S/-src//}
-
 CATEGORIES =		textproc
 
 HOMEPAGE =		http://www.goldendict.org/
-
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-#MASTER_SITES =		${MASTER_SITE_BERLIOS:=goldendict/}
 MASTER_SITES=   	${MASTER_SITE_SOURCEFORGE:=goldendict/}
 EXTRACT_SUFX =		.tar.bz2
 
-WANTLIB =  lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
-WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml lib/qt4/QtXmlPatterns
-WANTLIB += lib/qt4/phonon X11 Xtst c 
-WANTLIB += iconv m ogg pthread sqlite3 stdc++ vorbis vorbisfile z
+WANTLIB =  ICE SM X11 Xext Xi Xinerama Xrender Xtst fontconfig freetype
+WANTLIB += QtDBus QtGui QtNetwork QtWebKit QtXml phonon
+WANTLIB += c iconv m ogg pthread stdc++ vorbis vorbisfile z
+WANTLIB += hunspell-1.3
 
-MODULES =		x11/qt4
-LIB_DEPENDS =		textproc/hunspell \
-			${MODQT4_LIB_DEPENDS}
-RUN_DEPENDS = 		devel/desktop-file-utils
+MODULES =		x11/qt4 devel/qmake
 
-USE_X11 =		Yes
+RUN_DEPENDS =		devel/desktop-file-utils
+LIB_DEPENDS =		textproc/hunspell
 
-#WRKDIST =		${WRKDIR}/${DISTNAME:S/-x11//}
-WRKSRC =		${WRKDIR}
 WRKDIST =		${WRKDIR}
+SEPARATE_BUILD =	No
 
-do-configure:
-	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/qmake4 \
-		-unix INCLUDEPATH+=${X11BASE}/include \
-		LIBS+=-L${LOCALBASE}/lib ${MAKE_FLAGS} goldendict.pro
+MODQMAKE_ARGS =		INCLUDEPATH+=${X11BASE}/include \
+			LIBS+=-L${LOCALBASE}/lib
+
+ICONDIR =		${TRUEPREFIX}/share/goldendict
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/goldendict ${PREFIX}/bin/
-	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/
-	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
-	${INSTALL_DATA} ${WRKSRC}/redist/icons/goldendict.png ${PREFIX}/share/icons/
-	${INSTALL_DATA} ${WRKSRC}/redist/goldendict.desktop ${PREFIX}/share/applications/
+	${INSTALL_PROGRAM} ${WRKBUILD}/goldendict ${PREFIX}/bin/
+	${INSTALL_DATA_DIR} ${WRKINST}${ICONDIR} ${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKDIST}/redist/icons/goldendict.png \
+	    ${WRKINST}${ICONDIR}
+	sed -e 's,^Icon=.*,Icon=${ICONDIR}/goldendict.png,' \
+	    -e 's,^Exec=.*,Exec=${TRUEPREFIX}/bin/goldendict,' \
+	    <${WRKSRC}/redist/goldendict.desktop \
+	    >${PREFIX}/share/applications/goldendict.desktop
 
 .include <bsd.port.mk>
