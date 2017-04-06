@@ -29,6 +29,7 @@ LIB_DEPENDS =		textproc/hunspell
 
 WRKDIST =		${WRKDIR}
 SEPARATE_BUILD =	No
+NO_TEST =		Yes
 
 MODQMAKE_ARGS =		INCLUDEPATH+=${X11BASE}/include \
 			LIBS+=-L${LOCALBASE}/lib
