@@ -1,0 +1,12 @@
+$OpenBSD$
+--- src/Makefile.orig	Wed Apr  5 23:29:56 2017
++++ src/Makefile	Wed Apr  5 23:31:25 2017
+@@ -2,7 +2,7 @@
+ 
+ CC=gcc
+ CFLAGS0:=$(CFLAGS)
+-CFLAGS+=-I. -Wall -W -O3
++CFLAGS+=-I. -Wall -W
+ LDFLAGS0:=$(LDFLAGS)
+ ifeq ($(findstring darwin,$(OSTYPE)),) # false if OSTYPE contains "darwin"
+ # On Mac OS X using -s gives the following warning:

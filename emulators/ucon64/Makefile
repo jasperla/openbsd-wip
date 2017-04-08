@@ -1,6 +1,6 @@
 # $OpenBSD: Makefile.template,v 1.76 2017/02/25 16:04:20 danj Exp $
 
-COMMENT =	emulator Swiss Army knife program
+COMMENT =	swiss army knife for video game console emulators
 
 DISTNAME =	ucon64-2.0.3-src
 PKGNAME =	${DISTNAME:S/-src//}
@@ -30,5 +30,7 @@ NO_TEST =	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ucon64 ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ucon64
+	${INSTALL_DATA} ${WRKDIST}/faq.html ${PREFIX}/share/doc/ucon64
 
 .include <bsd.port.mk>

@@ -1,2 +1,4 @@
 @comment $OpenBSD$
 @bin bin/ucon64
+share/doc/ucon64/
+share/doc/ucon64/faq.html
