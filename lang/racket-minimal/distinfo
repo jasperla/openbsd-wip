@@ -1,4 +1,4 @@
-SHA256 (min-racket-6.8.0.2-src-builtpkgs.tgz) = 8bQ6+CkNbymK2V7spUq8fjp7QY6ihouMzcd8mck6H5k=
+SHA256 (racket-minimal-6.8.0.900-src-builtpkgs.tgz) = nK+o07NvilvoSciorCl1IT+1E+ZIOpMa6HdNmcuGVPg=
 SHA256 (racket-openbsd-1.tgz) = A41JvC/qwnaia8Umknoh+XQIOVtWVvG/231AdAeXe30=
-SIZE (min-racket-6.8.0.2-src-builtpkgs.tgz) = 11063009
+SIZE (racket-minimal-6.8.0.900-src-builtpkgs.tgz) = 11066221
 SIZE (racket-openbsd-1.tgz) = 276
