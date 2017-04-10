@@ -10,4 +10,7 @@ WANTLIB =		Qt5Core bz2 lzma m z
 LIB_DEPENDS =		archivers/xz \
 			archivers/bzip2
 
+TEST_IS_INTERACTIVE =	Yes
+#2 - kfiltertest (OTHER_FAULT)
+
 .include <bsd.port.mk>
