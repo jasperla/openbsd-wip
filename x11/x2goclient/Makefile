@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ICE QtGui QtNetwork QtSvg SM X11 Xext Xi Xinerama Xpm
 WANTLIB += Xrender c cups fontconfig freetype ldap m pthread ssh
-WANTLIB += stdc++
+WANTLIB += ${LIBCXX}
 
 MASTER_SITES =	http://code.x2go.org/releases/source/x2goclient/
 

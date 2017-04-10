@@ -20,7 +20,7 @@ MAINTAINER=	Rafael Sadowski <rafael@sizeofvoid.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += QtGui QtXml c m stdc++
+WANTLIB += QtGui QtXml c m ${LIBCXX}
 
 MASTER_SITES=	http://ftp.stack.nl/pub/users/dimitri/ \
 		ftp://ftp.stack.nl/pub/users/dimitri/
