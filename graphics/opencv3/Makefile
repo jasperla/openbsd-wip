@@ -15,7 +15,7 @@ PKGNAME-docs =		opencv3-docs-$V
 PKGNAME-java =		opencv3-java-${V}
 
 HOMEPAGE =		http://www.opencv.org/
-MAINTAINER =		Rafael Sadowski <rafael@sizeofvoid.org>
+MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 
 SHARED_LIBS =		opencv_calib3d			2.0 #1.1
 SHARED_LIBS +=		opencv_core			2.0 #1.1

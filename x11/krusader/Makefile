@@ -9,7 +9,7 @@ CATEGORIES=	x11 x11/kde
 
 HOMEPAGE=	http://www.krusader.org
 
-MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
+MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

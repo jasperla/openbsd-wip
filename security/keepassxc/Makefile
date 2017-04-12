@@ -10,7 +10,7 @@ GH_TAGNAME =	2.1.3
 
 HOMEPAGE =	https://keepassxc.org
 
-MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
+MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

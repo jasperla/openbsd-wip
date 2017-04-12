@@ -8,7 +8,7 @@ GH_TAGNAME =	v0.2.0
 
 CATEGORIES =	graphics x11
 
-MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
+MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes

@@ -31,7 +31,7 @@ CATEGORIES =	graphics
 
 HOMEPAGE =	https://krita.org
 
-MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
+MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv2+, LGPLv2+ and GNU FDLv1.2
 PERMIT_PACKAGE_CDROM =	Yes

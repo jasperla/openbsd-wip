@@ -5,7 +5,7 @@ DISTNAME =		vifm-0.8.2
 CATEGORIES =		sysutils
 HOMEPAGE =		https://vifm.info/
 
-MAINTAINER =		Rafael Sadowski <rafael@sizeofvoid.org>
+MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

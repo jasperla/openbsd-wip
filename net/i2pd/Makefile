@@ -10,7 +10,7 @@ CATEGORIES =	net
 
 HOMEPAGE =	http://i2pd.website
 
-MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
+MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

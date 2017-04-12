@@ -9,7 +9,7 @@ CATEGORIES =	editors
 DIST_SUBDIR =	kde
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/calligra/${VERSION}/}
 
-MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
+MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv2+, LGPLv2+ and GNU FDLv1.2
 PERMIT_PACKAGE_CDROM =	Yes

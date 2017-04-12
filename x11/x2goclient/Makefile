@@ -8,7 +8,7 @@ CATEGORIES =	x11
 
 HOMEPAGE =	http://www.x2go.org
 
-MAINTAINER =	Rafael Sadowski <rafael@sizeofvoid.org>
+MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
