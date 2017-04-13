@@ -2,10 +2,8 @@
 @bin bin/krusader
 lib/qt5/plugins/kio_iso.so
 lib/qt5/plugins/kio_krarc.so
-share/appdata/
-share/appdata/org.kde.krusader.appdata.xml
+@man man/man1/krusader.1
 share/applications/org.kde.krusader.desktop
-share/applications/org.kde.krusader.root-mode.desktop
 share/doc/HTML/de/krusader/
 share/doc/HTML/de/krusader/advanced-functions.docbook
 share/doc/HTML/de/krusader/archives.docbook
@@ -57,6 +55,7 @@ share/doc/HTML/en/krusader/checksum.docbook
 share/doc/HTML/en/krusader/cmdline.png
 share/doc/HTML/en/krusader/compare.docbook
 share/doc/HTML/en/krusader/configuration-files.docbook
+share/doc/HTML/en/krusader/copyjob.png
 share/doc/HTML/en/krusader/credits-and-license.docbook
 share/doc/HTML/en/krusader/diskusage.docbook
 share/doc/HTML/en/krusader/editors-note.docbook
@@ -99,44 +98,6 @@ share/doc/HTML/en/krusader/useraction-xml.docbook
 share/doc/HTML/en/krusader/useractions.docbook
 share/doc/HTML/en/krusader/vfs.docbook
 share/doc/HTML/en/krusader/viewer-editor.docbook
-share/doc/HTML/it/krusader/
-share/doc/HTML/it/krusader/advanced-functions.docbook
-share/doc/HTML/it/krusader/archives.docbook
-share/doc/HTML/it/krusader/basic-functions.docbook
-share/doc/HTML/it/krusader/bookmarks.docbook
-share/doc/HTML/it/krusader/checksum.docbook
-share/doc/HTML/it/krusader/compare.docbook
-share/doc/HTML/it/krusader/configuration-files.docbook
-share/doc/HTML/it/krusader/credits-and-license.docbook
-share/doc/HTML/it/krusader/diskusage.docbook
-share/doc/HTML/it/krusader/editors-note.docbook
-share/doc/HTML/it/krusader/faq.docbook
-share/doc/HTML/it/krusader/features.docbook
-share/doc/HTML/it/krusader/glossary.docbook
-share/doc/HTML/it/krusader/help.docbook
-share/doc/HTML/it/krusader/index.cache.bz2
-share/doc/HTML/it/krusader/index.docbook
-share/doc/HTML/it/krusader/installation.docbook
-share/doc/HTML/it/krusader/introduction.docbook
-share/doc/HTML/it/krusader/keyboard-commands.docbook
-share/doc/HTML/it/krusader/konfigurator.docbook
-share/doc/HTML/it/krusader/krusader-tools.docbook
-share/doc/HTML/it/krusader/locate.docbook
-share/doc/HTML/it/krusader/menu-commands.docbook
-share/doc/HTML/it/krusader/mount.docbook
-share/doc/HTML/it/krusader/mouse-commands.docbook
-share/doc/HTML/it/krusader/occupied-space.docbook
-share/doc/HTML/it/krusader/profiles.docbook
-share/doc/HTML/it/krusader/release-overview.docbook
-share/doc/HTML/it/krusader/remote-connections.docbook
-share/doc/HTML/it/krusader/search.docbook
-share/doc/HTML/it/krusader/splitter.docbook
-share/doc/HTML/it/krusader/synchronizer.docbook
-share/doc/HTML/it/krusader/user-interface.docbook
-share/doc/HTML/it/krusader/useraction-xml.docbook
-share/doc/HTML/it/krusader/useractions.docbook
-share/doc/HTML/it/krusader/vfs.docbook
-share/doc/HTML/it/krusader/viewer-editor.docbook
 share/doc/HTML/nl/krusader/
 share/doc/HTML/nl/krusader/advanced-functions.docbook
 share/doc/HTML/nl/krusader/archives.docbook
@@ -414,6 +375,8 @@ share/locale/ug/LC_MESSAGES/krusader.mo
 share/locale/uk/LC_MESSAGES/krusader.mo
 share/locale/zh_CN/LC_MESSAGES/krusader.mo
 share/locale/zh_TW/LC_MESSAGES/krusader.mo
+share/metainfo/
+share/metainfo/org.kde.krusader.appdata.xml
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/krusader/icons/hicolor

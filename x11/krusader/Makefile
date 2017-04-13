@@ -2,7 +2,7 @@
 
 COMMENT=	twin panel file manager for KDE
 
-VERSION=	2.5.0
+VERSION=	2.6.0
 DISTNAME=	krusader-${VERSION}
 
 CATEGORIES=	x11 x11/kde
@@ -20,8 +20,8 @@ WANTLIB += KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets
 WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets KF5Notifications
 WANTLIB += KF5Parts KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
 WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
-WANTLIB += Qt5Xml c m z
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
+WANTLIB += Qt5Widgets Qt5Xml c m z
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/krusader/${VERSION}/} \
 EXTRACT_SUFX=	.tar.xz
