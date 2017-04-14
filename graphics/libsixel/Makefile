@@ -15,17 +15,15 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=	c crypto curl jpeg m nghttp2 png ssl z
+WANTLIB +=	c jpeg m png z
 
 LIB_DEPENDS =	graphics/jpeg \
-		graphics/png \
-		net/curl
-
-CONFIGURE_ARGS += --disable-python
+		graphics/png
 
 CONFIGURE_STYLE = gnu
 
-CONFIGURE_ARGS += --disable-python
+CONFIGURE_ARGS += --disable-python \
+		  --without-libcurl
 
 # Requires Python
 NO_TEST =	Yes
