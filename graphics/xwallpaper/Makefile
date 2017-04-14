@@ -4,7 +4,7 @@ COMMENT =	X wallpaper utility
 
 GH_ACCOUNT =	stoeckmann
 GH_PROJECT =	xwallpaper
-GH_TAGNAME =	v0.2.0
+GH_TAGNAME =	v0.2.1
 
 CATEGORIES =	graphics x11
 
