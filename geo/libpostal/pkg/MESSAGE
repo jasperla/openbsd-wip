@@ -1,4 +1,0 @@
-libpostal requires some data files which can be fetched using the
-following command:
-
-libpostal_data download all ${PREFIX}/share/libpostal
