@@ -1,4 +1,0 @@
-@comment $OpenBSD$
-@extra share/vecx/rom.dat
-@bin bin/vecx
-share/vecx/
