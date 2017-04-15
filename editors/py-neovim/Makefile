@@ -20,10 +20,15 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =		python3
 FLAVOR ?=
 
-# XXX looks like we also need a py3-greenlet port at runtime
 RUN_DEPENDS =		net/py-msgpack${MODPY_FLAVOR} \
 			devel/py-uv${MODPY_FLAVOR}
+.if ${FLAVOR:Mpython3}
+RUN_DEPENDS +=		devel/py-greenlet${MODPY_FLAVOR}
+.endif
+TEST_DEPENDS =		${RUN_DEPENDS} \
+			devel/py-nose${MODPY_FLAVOR}
 
-# XXX TEST_DEPENDS
+do-test:
+	cd ${WRKSRC} && ${LOCALBASE}/bin/nosetests${MODPY_BIN_SUFFIX}
 
 .include <bsd.port.mk>
