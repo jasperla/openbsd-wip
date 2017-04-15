@@ -2,17 +2,16 @@
 #
 COMMENT =	a continuation and extension of Vim
 
-V =		0.1.7
+# pre-0.2 testing version
+V =		20170415
 DISTNAME =	neovim-${V}
 
 GH_ACCOUNT =	neovim
 GH_PROJECT =	neovim
-GH_TAGNAME =	v${V}
+GH_COMMIT =	58d2ce9bdbb6feab7176f451ca0248c78606aa2e
 
 CATEGORIES =	editors devel
-
 HOMEPAGE =	http://neovim.org
-
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
 # Apache 2.0 + Vim License
@@ -27,7 +26,7 @@ MODULES =		devel/cmake \
 BUILD_DEPENDS =		${RUN_DEPENDS} \
 			devel/gperf \
 			devel/lpeg \
-			devel/lua-bitop
+			devel/luabitop
 
 LIB_DEPENDS =		devel/libtermkey \
 			devel/libuv \
@@ -43,19 +42,18 @@ CONFIGURE_ARGS +=	-DLUA_PRG=${MODLUA_BIN}
 # Tests need gmake
 USE_GMAKE = Yes
 
-VIMPROG =	${WRKBUILD}/bin/nvim
+NVIM_PRG =	${WRKBUILD}/bin/nvim
 SUBST_VARS +=	VIMPROG
 pre-test:
 	${SUBST_CMD} ${WRKSRC}/src/nvim/testdir/test49.vim
 
-# These are the "old tests". To run the newer ones, we need "busted", which is
-# not yet ported. The ninja targets for the new tests are functionaltest,
-# functionaltest-lua and unittest. Don't add -j to this make invocation.
+# These are the "old tests". There is also a new suite, but we would need the
+# "busted" test suite for Lua, which is not yet ported.
 #
-# XXX tests fails because the terminal is in (what looks like) 80x25. If run
-# outside of the ports tree, all is well.
+# One test failure, filed upstream:
+#   https://github.com/neovim/neovim/issues/6525
 do-test:
-	cd ${WRKSRC} && ${MAKE_PROGRAM} -C src/nvim/testdir \
-		VIMPROG=${VIMPROG} ${MAKE_FLAGS}
+	cd ${WRKSRC} && env LC_CTYPE=en_US.UTF-8 ${MAKE_PROGRAM} \
+		-C src/nvim/testdir NVIM_PRG=${NVIM_PRG} ${MAKE_FLAGS}
 
 .include <bsd.port.mk>

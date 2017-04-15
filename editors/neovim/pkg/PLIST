@@ -638,6 +638,8 @@ share/nvim/runtime/keymap/
 share/nvim/runtime/keymap/accents.vim
 share/nvim/runtime/keymap/arabic.vim
 share/nvim/runtime/keymap/arabic_utf-8.vim
+share/nvim/runtime/keymap/armenian-eastern_utf-8.vim
+share/nvim/runtime/keymap/armenian-western_utf-8.vim
 share/nvim/runtime/keymap/belarusian-jcuken.vim
 share/nvim/runtime/keymap/bulgarian-bds.vim
 share/nvim/runtime/keymap/bulgarian-phonetic.vim
@@ -699,7 +701,9 @@ share/nvim/runtime/keymap/thaana-phonetic_utf-8.vim
 share/nvim/runtime/keymap/thaana.vim
 share/nvim/runtime/keymap/ukrainian-dvorak.vim
 share/nvim/runtime/keymap/ukrainian-jcuken.vim
+share/nvim/runtime/keymap/vietnamese-telex_utf-8.vim
 share/nvim/runtime/keymap/vietnamese-viqr_utf-8.vim
+share/nvim/runtime/keymap/vietnamese-vni_utf-8.vim
 share/nvim/runtime/macmap.vim
 share/nvim/runtime/macros/
 share/nvim/runtime/macros/editexisting.vim
@@ -735,6 +739,7 @@ share/nvim/runtime/pack/dist/opt/vimball/doc/vimball.txt
 share/nvim/runtime/pack/dist/opt/vimball/plugin/
 share/nvim/runtime/pack/dist/opt/vimball/plugin/vimballPlugin.vim
 share/nvim/runtime/plugin/
+share/nvim/runtime/plugin/gui_shim.vim
 share/nvim/runtime/plugin/gzip.vim
 share/nvim/runtime/plugin/health.vim
 share/nvim/runtime/plugin/man.vim
