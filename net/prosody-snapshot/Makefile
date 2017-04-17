@@ -2,7 +2,8 @@
 
 
 COMMENT=	communications server for Jabber/XMPP written in Lua
-BUILD =		352
+BUILD =		383
+
 DISTNAME =	prosody-0.10beta${BUILD}
 CATEGORIES=	net
 MASTER_SITES=	http://prosody.im/nightly/0.10/build${BUILD}/

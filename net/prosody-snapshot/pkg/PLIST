@@ -124,6 +124,7 @@ lib/prosody/util/helpers.lua
 lib/prosody/util/hex.lua
 lib/prosody/util/hmac.lua
 lib/prosody/util/http.lua
+lib/prosody/util/id.lua
 lib/prosody/util/import.lua
 lib/prosody/util/interpolation.lua
 lib/prosody/util/ip.lua
