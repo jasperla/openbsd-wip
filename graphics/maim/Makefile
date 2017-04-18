@@ -15,7 +15,7 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += GL ICE SM X11 Xext Xfixes Xrandr c jpeg m png pthread
-WANTLIB += z ${LIBCXX}
+WANTLIB += slopy z ${LIBCXX}
 
 MODULES =	devel/cmake \
 		gcc4
@@ -24,9 +24,8 @@ MODGCC4_LANGS =	c++
 MODGCC4_ARCHS =	${GCC3_ARCHS} ${GCC4_ARCHS}
 
 LIB_DEPENDS +=		graphics/jpeg \
-			graphics/png
-
-LIB_DEPENDS +=		graphics/slop
+			graphics/png \
+			graphics/slop
 
 CONFIGURE_ARGS =	-DCMAKE_INSTALL_MANDIR="${LOCALBASE}/man" \
 			-DCMAKE_COMPRESS_MAN=False
