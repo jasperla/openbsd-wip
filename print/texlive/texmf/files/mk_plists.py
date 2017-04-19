@@ -295,7 +295,7 @@ buildset_pkgs = [
 print(">>> texlive_texmf-buildset")
 buildset_specs = runspecs(buildset_pkgs)  # note, no manuals
 buildset_top_matter = [
-    "@comment $OpenBSD$",
+    "@comment $" "OpenBSD$",
     "@conflict teTeX_texmf-*",
     "@conflict texlive_base-<%s" % YEAR,
     "@conflict texlive_texmf-docs-<%s" % YEAR,
@@ -367,7 +367,7 @@ context_pkgs = [
 
 print(">>> PLIST-context")
 context_top_matter = [
-    "@comment $OpenBSD$",
+    "@comment $" "OpenBSD$",
     "@conflict teTeX_texmf-*",
     "@conflict texlive_base-<%s" % YEAR,
     "@conflict texlive_texmf-docs-<%s" % YEAR,
@@ -397,7 +397,7 @@ print("\n\n")
 print(">>> texlive_texmf-minimal")
 minimal_pkgs = ["scheme-tetex"]
 minimal_top_matter = [
-    "@comment $OpenBSD$",
+    "@comment $" "OpenBSD$",
     "@conflict teTeX_texmf-*",
     "@conflict texlive_base-<%s" % YEAR,
     "@conflict texlive_texmf-docs-<%s" % YEAR,
@@ -428,7 +428,7 @@ print("\n\n")
 print(">>> texlive_texmf-full")
 full_pkgs = ["scheme-full"]
 full_top_matter = [
-    "@comment $OpenBSD$",
+    "@comment $" "OpenBSD$",
     "@conflict teTeX_texmf-*",
     "@conflict texlive_base-<%s" % YEAR,
     "@conflict texlive_texmf-docs-<%s" % YEAR,
@@ -463,7 +463,7 @@ NO_MAN_INFO_PDFMAN_REGEX = \
 print(">>> texlive_texmf-docs")
 doc_specs = ["scheme-tetex:doc"]
 doc_top_matter = [
-    "@comment $OpenBSD$",
+    "@comment $" "OpenBSD$",
     "@conflict teTeX_texmf-doc-*",
     "@conflict texlive_base-<%s" % YEAR,
     "@conflict texlive_texmf-minimal-<%s" % YEAR,

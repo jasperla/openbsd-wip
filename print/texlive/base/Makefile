@@ -10,8 +10,8 @@ WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
 
-SHARED_LIBS =		kpathsea	8.0 # 8.2
-SHARED_LIBS +=		ptexenc		5.0 # 4.4
+SHARED_LIBS =		kpathsea	8.1 # 8.2
+SHARED_LIBS +=		ptexenc		5.1 # 4.4
 SHARED_LIBS +=		synctex		1.0 # 19.0
 SHARED_LIBS +=		texlua52	0.0 # 7.4
 
@@ -19,7 +19,7 @@ WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xi Xmu Xpm Xrender Xt
 WANTLIB += c cairo expat fontconfig freetype gd glib-2.0 graphite2
 WANTLIB += harfbuzz harfbuzz-icu iconv icudata icui18n icuio icuuc intl
 WANTLIB += jpeg lcms2 m openjp2 paper pcre pixman-1 png poppler
-WANTLIB += potrace pthread pthread-stubs stdc++ tiff vpx xcb
+WANTLIB += potrace pthread pthread-stubs ${LIBCXX} tiff vpx xcb
 WANTLIB += xcb-render xcb-shm z zzip
 
 RUN_DEPENDS =		print/ghostscript/gnu \
