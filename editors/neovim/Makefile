@@ -3,12 +3,12 @@
 COMMENT =	a continuation and extension of Vim
 
 # pre-0.2 testing version
-V =		20170415
+V =		20170419
 DISTNAME =	neovim-${V}
 
 GH_ACCOUNT =	neovim
 GH_PROJECT =	neovim
-GH_COMMIT =	58d2ce9bdbb6feab7176f451ca0248c78606aa2e
+GH_COMMIT =	14b1becb5466003a65fa6be0517352abb7bc0f42
 
 CATEGORIES =	editors devel
 HOMEPAGE =	http://neovim.org
@@ -49,9 +49,6 @@ pre-test:
 
 # These are the "old tests". There is also a new suite, but we would need the
 # "busted" test suite for Lua, which is not yet ported.
-#
-# One test failure, filed upstream:
-#   https://github.com/neovim/neovim/issues/6525
 do-test:
 	cd ${WRKSRC} && env LC_CTYPE=en_US.UTF-8 ${MAKE_PROGRAM} \
 		-C src/nvim/testdir NVIM_PRG=${NVIM_PRG} ${MAKE_FLAGS}
